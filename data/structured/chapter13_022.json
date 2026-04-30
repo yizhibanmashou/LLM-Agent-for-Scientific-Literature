@@ -1,0 +1,61 @@
+{
+  "id": "chapter13_022",
+  "metadata": {
+    "chapter": "chapter13",
+    "section": "Chapter 13: Selection Gradients and Mean Population Fitness",
+    "subsections": [
+      "Selection Gradients and Mean Population Fitness"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter13_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "13.27a",
+      "13.27b",
+      "13.27c",
+      "13.28a",
+      "13.28b",
+      "13.28c",
+      "13.29"
+    ],
+    "table_references": [
+      "13.1"
+    ],
+    "table_reference_keys": [
+      "chapter13:13.1"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "derivation",
+      "content": "Under appropriate conditions, the selection gradient, $ $, demonstrates how a within-generation change in the vector of trait means maps into a change in the mean fitness of a population. If $ W(z) $ denotes the expected fitness of an individual with a character value of z, then when phenotypes are normally distributed and fitness is frequency-independent (individual fitnesses are not a function of the means of the characters), the directional selection gradient satisfies $ = / $ (Lande 1976; Example A6.3 gives the full multivariate derivation). Hence we can express the breeder's equation as [[SEE_FORMULA:13.27a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "The multivariate version of this partial derivative is the gradient of mean fitness with respect to the vector of character means, which is the vector of partials of the log of mean fitness with respect to each trait mean under consideration [[SEE_FORMULA:13.27b]] with $ _i = / _i $ (the change in log mean fitness from a change in the mean of trait $ i $). The resulting gradient version of the Lande equation becomes [[SEE_FORMULA:13.27c]]"
+    },
+    {
+      "type": "discussion",
+      "content": "The vector $ $ represents the direction for the joint change in the means that maximizes the local increase in mean fitness. In contrast, the actual response involves the product (or projection) of this vector with the genetic covariance matrix G. The resulting response vector is generally not parallel to $ $, as the genetic covariance structure causes the character means to change in a direction that does not necessarily result in the optimal change in population fitness. We examine the implications of genetic constraints imposed by the structure of G in detail in Volume 3."
+    },
+    {
+      "type": "derivation",
+      "content": "We can connect the somewhat abstract notion of variance in fitness with a measurable quantity, the amount of selection, $ $, on a vector, z, of traits, as follows. Walsh and Blows (2009) showed that the additive variance in relative fitness w accounted for by selection on z is [[SEE_FORMULA:13.28a]] where the notation $ _A(x, y) $ denotes the covariance between the breeding values of $ x $ and $ y $. Recalling Robertson's secondary theorem (1968 version; Equation 6.24a), $ _A(, w) = = $ (assuming the conditions for the multivariate breeder's equation hold), yielding [[SEE_FORMULA:13.28b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "The additive variance in fitness that remains unaccounted for after the effects of z are removed becomes [[SEE_FORMULA:13.28c]]"
+    },
+    {
+      "type": "discussion",
+      "content": "In theory, if one had an estimate of $ _A^2(w) $ in hand (Chapter 20), the significance of a set, z, of traits can be determined. If these account for most of the variation, there is little need to consider additional traits. If these account for only a small fraction, important traits are missing."
+    },
+    {
+      "type": "discussion",
+      "content": "[[TABLE:13.1]]). All are based on Equation 13.1, which assumes a linear midparent-offspring regression with slope $ h^ 2 $. This single-generation prediction is a good approximation over multiple generations provided that selection does not result in a significant change in the base-population heritability, a region we call short-term response. Chapter 16 shows that even a single generation of selection will change $ h^ 2 $ through the generation of linkage disequilibrium, but because this is straightforward to correct for when"
+    },
+    {
+      "type": "derivation",
+      "content": "Finally, we can use the multivariate breeder's equation to make a connection with the classical interpretation of Fisher's fundamental theorem (Chapter 6). If the fitness determined by the vector of traits, z, can be expressed as a linear regression (Equation 13.25b), then the expected change in fitness from selection response on these traits is [[SEE_FORMULA:13.29]] From Equation 13.28b, this is just the additive variance in fitness associated with these traits. Thus, we recover Fisher's theorem that the change in mean fitness equals the additive variance in relative fitness (Equation 6.17c)."
+    }
+  ]
+}

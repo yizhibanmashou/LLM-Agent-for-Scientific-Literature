@@ -1,0 +1,52 @@
+{
+  "id": "appendix3_002",
+  "metadata": {
+    "chapter": "appendix3",
+    "section": "MONTE CARLO INTEGRATION",
+    "subsections": [
+      "MONTE CARLO INTEGRATION"
+    ],
+    "source_file": "tmp\\paddle_output\\appendix3_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "To better understand the historical roots of MCMC, we digress for a moment to discuss the original Monte Carlo approach, which used random-number generation to approximate integrals. Suppose we wish to compute a complex integral, $$ \\int_{a}^{b}h(x)dx $$"
+    },
+    {
+      "type": "discussion",
+      "content": "If we can decompose $ h(x) $ into the product of a function, $ f(x) $, and a probability density function, $ p(x) $, defined over the interval $ (a, b) $, then $$ \\int_{a}^{b}h(x)dx=\\int_{a}^{b}f(x)p(x)dx=E_{p(x)}[f(x)] $$ which means that the integral can be expressed as the expectation of $f(x)$ over the density $p(x)$. After sampling a large number of random variables, $(x_ 1,,x_ n)$, from the density $p(x)$, we have that $$ \\int_{a}^{b}h(x)dx=E_{p(x)}[f(x)]\\simeq\\frac{1}{n}\\sum_{i=1}^{n}f(x_{i}) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "This approach is referred to as Monte Carlo integration, and it can be used to approximate posterior (or marginal posterior) distributions required for a Bayesian analysis."
+    },
+    {
+      "type": "discussion",
+      "content": "Consider the integral $ I(y) = f(y x) p(x) \\, dx $, which we approximate by $$ \\widehat{I}(y)=\\frac{1}{n}\\sum_{i=1}^{n}f(y\\mid x_{i}) $$ where again $ x_ i $ are draws from the density $ p(x) $. Since we have framed this integral as an expectation, individual random draws have expected value equal to the integral. The spread of those values around their mean allows us to estimate a Monte Carlo standard error for our approximation, with $$ \\mathrm{SE}^{2}[\\widehat{I}(y)]=\\frac{1}{n}\\left[\\frac{1}{n-1}\\sum_{i=1}^{n}\\left(f(y\\mid x_{i})-\\widehat{I}(y)\\right)^{2}\\right] $$ where the inner term estimates the sampling variance, $ ^2 $. Notice from Equation A3.1e that the standard error scales as $ / $, namely, with the square root of the sample size. Thus, a tenfold improvement in precision requires a hundredfold increase in the sample size."
+    },
+    {
+      "type": "discussion",
+      "content": "Example A3.1. An interesting quantitative-genetic application of Monte Carlo integration was suggested by Ovaskainen et al. (2008) for comparing whether two G matrices are similar. As we detail in Volume 3, there are many proposed methods for comparing matrices, but Ovaskainen et al. suggested a (conceptually) simple approach. The G matrix for a given population is really a description of the distribution of breeding values, and, as such we can think of comparing G matrices as being akin to comparing two multivariate population distributions, whose densities are denoted by f and g. If x denotes a draw from one of these distributions, the probability that it originates from distribution g is simply $ g() / |g() + f()| $. Hence, the probability q, that a random draw from f will be incorrectly assigned to g is calculated as $$ q(f,g)=\\int\\frac{g(\\mathbf{x})}{g(\\mathbf{x})+f(\\mathbf{x})}f(\\mathbf{x})d\\mathbf{x} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "If the two probability distributions are essentially indistinguishable, then $ q(f,g) = 0.5 $, while if they are completely distinguishable then $ q(f,g) = 0 $. Hence, $ 1 - 2q(f,g) $, which ranges from zero (indistinguishable) to one (fully distinguishable), provides a simple metric of the difference between them, and hence the difference between the two G matrices that comprise the distributions of f versus g. Ovaskainen et al. modified this idea further, suggesting the metric $$ d(f,g)=\\sqrt{1-2q(f,g)} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "While Equation A3.2a involves a complex integral, Equation A3.1d suggests that $$ \\widehat{q}(f,g)=\\frac{1}{n}\\sum_{i=1}^{n}\\frac{g(\\mathbf{x}_{i})}{g(\\mathbf{x}_{i})+f(\\mathbf{x}_{i})}\\rightarrow q(f,g) $$ where $ _1,, _n $ are random draws from $ f $. For example, if $ f $ is a multivariate normal with a mean vector of 0 and a variance-covariance matrix of $ _1 $, then $$ f(\\mathbf{x})=(2\\pi)^{-n/2}|\\mathbf{G}_{1}|\\exp\\left(-\\frac{\\mathbf{x}^{T}\\mathbf{G}_{1}^{-1}\\mathbf{x}}{2}\\right) $$ where g is similarly defined, but with $ G_ 2 $ replacing $ G_ 1 $, which yields $$ \\widehat{q}(f,g)=\\frac{1}{n}\\sum_{i=1}^{n}\\frac{\\mid\\mathbf{G}_{2}\\mid\\exp\\left(-\\mathbf{x}_{i}^{T}\\mathbf{G}_{2}^{-1}\\mathbf{x}_{i}/2\\right)}{\\mid\\mathbf{G}_{2}\\mid\\exp\\left(-\\mathbf{x}_{i}^{T}\\mathbf{G}_{2}^{-1}\\mathbf{x}_{i}/2\\right)+\\mid\\mathbf{G}_{1}\\mid\\exp\\left(-\\mathbf{x}_{i}^{T}\\mathbf{G}_{1}^{-1}\\mathbf{x}_{i}/2\\right)} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The expression in the sum is not nearly as imposing as it appears. Both of the determinants, $ | _1| $ and $ | _2| $, are fixed constants, and they only need to be computed once. Likewise, $ _1^ -1 $ and $ _2^ -1 $ need only be inverted once and then can be stored. Monte Carlo integration proceeds by generating a set of random vectors, $ (_1,, _n) $, from a MVN $ (, _1) $."
+    },
+    {
+      "type": "discussion",
+      "content": "Consider any distribution whose probability density function, $ p(x) $, has the same support as some target density, $ q(x) $ (i.e., is nonzero over the same range of x values). Then,"
+    }
+  ]
+}

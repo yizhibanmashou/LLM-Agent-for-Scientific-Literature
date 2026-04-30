@@ -1,0 +1,66 @@
+{
+  "id": "chapter21_010",
+  "metadata": {
+    "chapter": "chapter21",
+    "section": "Chapter 21: THEORY OF EXPECTED SINGLE-CYCLE RESPONSE",
+    "subsections": [
+      "Modifications of the Breeder's Equation for Predicting Family-based Response"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter21_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "21.1a",
+      "21.1b",
+      "21.1c",
+      "21.2a",
+      "21.2b",
+      "21.3a",
+      "21.3b",
+      "21.4a",
+      "21.4b"
+    ],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Response is a function of how selection decisions based on the sib families $ (x_ 1 $ and $ x_ 2) $ translate into selection on the corresponding parents $ (_ 1 $ and $ _ 2) $ of the offspring, y. Phrased in terms of breeding values, we predict response by using the sib information to predict the breeding values of the parents, R, for the next generation. Under the infinitesimal model, the expected mean of the offspring equals the mean breeding value of the chosen parents (Chapters 6 and 13)."
+    },
+    {
+      "type": "derivation",
+      "content": "Making the standard assumption that all appropriate regressions are linear (which follows under the infinitesimal model assumptions; Chapters 6 and 24), the expected response is given by the general form of the breeder's equation (Equations 13.4a and 13.4b), [[SEE_FORMULA:21.1a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Here $ x_ m $ and $ x_ f $ correspond to individuals from the selection units associated with the male (sire/pollen) and female (dam/seed) parents ($ R_ m $ and $ R_ f $) of the offspring, y. Equation 21.1a allows the male and female parents to be chosen by completely different schemes. For example, sib selection could be used on males and individual selection on females when selecting for a female-limited character (Example 13.5). The selection unit-offspring covariance, $ (x,y) $, can be directly computed from the pedigree connecting P, a sib in x, and R through the use of path analysis (LW Appendix 2). The path (or correlation) between selection on the unit, $ x_ f $, through the female parent, $ R_ f $, and its offspring, y, is $$ x_{f}\\leftarrow P\\rightarrow\\mathcal{R}_{f}\\rightarrow y $$ Because the path connecting $ x_f $ and $ y $ is through $ _f $, we often write $ (x,y| _f) $ in place of $ (x_f,y) $ to remind the reader of this fact. Path(s) connecting $ x_m $ and $ y $ through $ _m $ are similarly defined. If $ P $ consists of multiple relatives, each path connecting $ x_i $ and $ _i $ (and hence $ y $) needs to be counted. For example, if $ x_i $ and $ _i $ are full-sibs, we must compute the paths through each of the common parents (e.g., Figure 21.3D). If the selection unit-offspring covariances are the same for both parents, Equation 21.1a simplifies to [[SEE_FORMULA:21.1b]] where $ S_ x = (S_ x_ m + S_ x_ f)/2 $ is the average selection differential on the unit(s) leading to the parents and [[SEE_FORMULA:21.1c]] is the covariance between the value of selection unit, x, and the offspring, y, counting the paths through both parents ($ R_ m $ and $ R_ f $). When covariances are equal, this is twice the single parent-covariance, $ (x, y R_ 1) $. By analogy with the breeder's equation, Equation 21.1b is often written as [[SEE_FORMULA:21.2a]] where the generalized heritability of y given x, [[SEE_FORMULA:21.2b]] is twice the slope of the regression of y on x (LW Chapter 3). Just as the individual heritability, $ h^ 2 $, is the accuracy in using an individual's phenotypic value to predict the breeding value (Chapter 13), the generalized heritability is the accuracy of using the sib data, x, to predict the breeding value of R."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 21.2. Consider family selection, wherein the selection unit is the family mean, $ _ i $, and the recombination units are measured sibs (those whose trait values have been scored) from this family. Assuming the covariance between the sib mean and an individual sib is independent of sex, Equations 21.1b and 21.1c yield a response of $$ R_{b}=\\frac{2\\sigma\\left(\\overline{z}_{i},y\\mid\\mathcal{R}_{i}\\right)}{\\sigma^{2}\\left(\\overline{z}_{i}\\right)}S_{b} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Recall (Equation 21.1c) that the numerator is twice the covariance between the value of the family mean, $ _i $, and the offspring, $ y $, from a parent chosen from this family, $ _i $, which (in this case) is one of the measured sibs. The preceding expression can be more compactly written as $ R_b = h_b^2 S_b $, where the among-family heritability is $$ h_{b}^{2}=\\frac{2\\sigma\\left(\\overline{z}_{i},y\\mid\\mathcal{R}_{i}\\right)}{\\sigma^{2}\\left(\\overline{z}_{i}\\right)} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "We used the notation $ R_b $ and $ h_b^2 $ for “between family” in keeping with the literature (although this is formally among families, as it generally involves more than two families). Similarly, for selection on within-family deviations, the value of the selection unit is $ z_ ij - _i $, which yields $$ R_{FD}=\\frac{2\\sigma(z_{ij}-\\overline{z}_{i},y\\mid\\mathcal{R}_{i})}{\\sigma^{2}(z_{ij}-\\overline{z}_{i})}S_{FD} $$ where $ _i = x_ ij $. Response can also be expressed in terms of the family-deviations heritability, with $ R_ FD = h_ FD ^2 S_ FD $, where $$ h_{FD}^{2}=\\frac{2\\sigma(z_{ij}-\\overline{z}_{i},y\\mid\\mathcal{R}_{i})}{\\sigma^{2}(z_{ij}-\\overline{z}_{i})} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Tables 21.3 and 21.4 (below) give expressions for these variances and covariances."
+    },
+    {
+      "type": "derivation",
+      "content": "Other (equivalent) versions of Equations 21.1a and 21.2a appear in the literature. The selection-intensity version allows for standardized comparisons of different selection schemes. Defining the selection intensity on x by $ = S_x / _x $, Equation 21.1a becomes [[SEE_FORMULA:21.3a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "If the regressions are the same for both parents, [[SEE_FORMULA:21.3b]] where $ _ x = (_ x_ m + _ x_ f)/2 $ is the average selection intensity. This expression is frequently written in terms of the selection unit-offspring correlation, $ (x, y) $, [[SEE_FORMULA:21.4a]] where (counting both parents) $ (x, y) = 2 (x, y) $. Equation 21.4a follows immediately from Equation 21.3b by recalling that $ (x, y) = (x, y)/(_x _y) $ and that the trait variance in the offspring, $ y $, is simply the phenotypic variance of the character $ (_y^2 = _z^2) $. A variant of Equation 21.4a commonly seen in the literature is [[SEE_FORMULA:21.4b]] where $ (x, A_) $, the correlation between the value of the selection unit, x, and the breeding value of a parent, R, of y, is the accuracy of selection (Equation 13.11a). Equation 21.4b holds in the absence of epistasis, while Equations 21.1–21.3 hold for arbitrary epistasis. Recall that the accuracy of individual selection (the correlation between an individual's phenotypic and breeding values) is $ (z_, A_) = h $. A particular family-based approach is favored over individual selection if x is a more accurate predictor of the breeding value of R than is R's phenotypic value, that is when $ (x, A_) > h $."
+    },
+    {
+      "type": "discussion",
+      "content": "Equation 21.4b follows by first recalling that the mean value of an offspring is the average of its parental breeding values, $ y = + (A_ _m /2) + (A_ _f /2) + e_y $. Hence, $$ \\sigma(x,y)=\\frac{1}{2}\\sigma(x,A_{\\mathcal{R}_{m}})+\\frac{1}{2}\\sigma(x,A_{\\mathcal{R}_{f}})+\\sigma(x,e_{y}) $$"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "id": "chapter19_018",
+  "metadata": {
+    "chapter": "chapter19",
+    "section": "MODIFICATIONS OF THE BASIC ANIMAL MODEL",
+    "subsections": [
+      "MODIFICATIONS OF THE BASIC ANIMAL MODEL"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter19_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "In many cases, it is prudent to modify the simple animal model by considering additional fixed and random effects to more fully accommodate any relevant biological features. For example, genetic and environmental effects can be separated without a control population by adding fixed effects to account for environmental trends. Likewise, as we will discuss shortly, it is often reasonable to include additional random effects, such as maternal or litter effects, to reduce potential correlations between the residuals."
+    },
+    {
+      "type": "discussion",
+      "content": "Another modification of the basic model occurs when the phenotypic scores (records) of the parents are unknown. Example 19.5 shows how we can estimate these as random effects, but likely with bias (when selection occurs). As we will cover shortly, an alternative is to treat these breeding values of unmeasured parents as fixed, rather than random."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 19.5. A feature of mixed models is that they can often predict the values of random effects (in this case, a breeding value) for an individual with no records (but whose relatives have records). Let 0 (unmeasured) and 1 (measured) index parents that each have a measured offspring (indexed as 2 and 3, respectively), via unrelated and unmeasured individuals. If we assume that there is a single fixed effect (the mean, $ $), the resulting mixed model becomes $$ \\begin{pmatrix}{{{y_{1}}}} \\\\{{{y_{2}}}} \\\\{{{y_{3}}}}\\end{pmatrix}=\\begin{pmatrix}{{{1}}} \\\\{{{1}}} \\\\{{{1}}}\\end{pmatrix}\\mu+\\begin{pmatrix}{{{0}}}&{{{1}}}&{{{0}}}&{{{0}}} \\\\{{{0}}}&{{{0}}}&{{{1}}}&{{{0}}} \\\\{{{0}}}&{{{0}}}&{{{0}}}&{{{1}}}\\end{pmatrix}\\begin{pmatrix}{{{a_{0}}}} \\\\{{{a_{1}}}} \\\\{{{a_{2}}}} \\\\{{{a_{3}}}}\\end{pmatrix}+\\begin{pmatrix}{{{e_{1}}}} \\\\{{{e_{2}}}} \\\\{{{e_{3}}}}\\end{pmatrix} $$ where $ y_ 1 $ through $ y_ 3 $ denote the values of the three measured individuals. Notice that there is no $ y_ 0 $ in this model (as there is no observed value for individual 0), but that parent 0's breeding value, $ a_ 0 $, is included. To complete the mixed-model analysis, we need the relationship matrix, A. Because all parents are assumed to be unrelated, so are the two measured offspring, yielding $$ \\mathbf{A}=\\begin{pmatrix}{{{1}}}&{{{0}}}&{{{1/2}}}&{{{0}}} \\\\{{{0}}}&{{{1}}}&{{{0}}}&{{{1/2}}} \\\\{{{1/2}}}&{{{0}}}&{{{1}}}&{{{0}}} \\\\{{{0}}}&{{{1/2}}}&{{{0}}}&{{{1}}}\\end{pmatrix} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Provided unmeasured individuals have measured relatives, A allows us to estimate their breeding values. In this case, we can estimate the breeding value, $ a_ 0 $, for the unmeasured parent (for example, by using Equation 19.3b to estimate the vector, a, of the four breeding values), as A shows that information on $ a_ o $ is provided from its observed offspring value, $ y_ 2 $."
+    },
+    {
+      "type": "discussion",
+      "content": "Connections between relatives are often referred to as links, and the number and strengths of links (or the connectivity) in a relationship matrix is one measure of its precision in estimating breeding values (i.e., the prediction error variance; see Kennedy and Trus 1993). The breeding value of an unmeasured individual with few measured relatives will have much less precision than that of an individual with a large number of measured, and close, relatives. Despite this flexibility in predicting breeding values for individuals with missing records, it is important to again stress that the simple inclusion of all pedigree relationships appears not to be sufficient to yield unbiased BLUP/REML estimates when selection occurs. The records (measured values) of all individuals upon which selection decisions have been based must also be included (van der Werf 1990; van der Werf and de Boer 1990; van der Werf and Thompson 1992)."
+    }
+  ]
+}

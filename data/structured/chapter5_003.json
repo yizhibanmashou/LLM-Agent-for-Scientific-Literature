@@ -1,0 +1,78 @@
+{
+  "id": "chapter5_003",
+  "metadata": {
+    "chapter": "chapter5",
+    "section": "Chapter 5: Viability Selection",
+    "subsections": [
+      "Viability Selection"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter5_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "5.1a",
+      "5.1b",
+      "5.1c",
+      "5.2b"
+    ],
+    "table_references": [
+      "5.1"
+    ],
+    "table_reference_keys": [
+      "chapter5:5.1"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "derivation",
+      "content": "Consider the change in the frequency $p$ of allele $A$ over one generation, $ p = p' - p$. As shown in [[SEE_TABLE:5.1]], the number of AA individuals following selection is proportional to $p^2 W_ AA $, the frequency of AA genotypes before selection multiplied by their genotypic fitness. To ensure that post-selection frequencies sum to one, we divide this proportion by a normalization constant, the mean population fitness (the average fitness of a randomly chosen individual), [[SEE_FORMULA:5.1a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Proceeding similarly for the other genotypes allows us to fill out the entries in [[SEE_TABLE:5.1]]. From these new genotypic frequencies, the frequency of A after selection is $$ p^{\\prime}=freq(AA after selection)+\\frac{1}{2}freq(Aa after selection) $$ and applying the results in [[SEE_TABLE:5.1]] gives the expected change in the frequency of A as [[SEE_FORMULA:5.1b]]"
+    },
+    {
+      "type": "discussion",
+      "content": "This equation can also be expressed using the relative fitnesses $ W_ ij / $, abbreviated as $ w_ ij $, with mean fitness then scaling to $ = 1 $. Throughout, we will adhere to a notation whereby upper-case $ W $ corresponds to some absolute measure of fitness, and lower-case $ w $ corresponds to relative fitness."
+    },
+    {
+      "type": "derivation",
+      "content": "If we assign the genotypes $ aa:Aa:AA $ fitnesses of $ 1:1+s(1+h):1+2s $, Equation 5.1b becomes [[SEE_FORMULA:5.1c]] As shown in Figure 5.1, a graph of $ p $ as a function of p provides a useful description of the allele-frequency dynamics under selection. In particular, allele frequencies that satisfy"
+    },
+    {
+      "type": "discussion",
+      "content": "[h]"
+    },
+    {
+      "type": "discussion",
+      "content": "[h]"
+    },
+    {
+      "type": "discussion",
+      "content": "[h]"
+    },
+    {
+      "type": "discussion",
+      "content": "[h]"
+    },
+    {
+      "type": "discussion",
+      "content": "$ p = 0 $ (i.e., no allele-frequency change after selection) are called equilibrium frequencies, which we denote by $ $. Regardless of the values of s or h, trivial boundary equilibria exist when only one allele is present ($ = 0 $ or 1). Equation 5.1c shows that an internal equilibrium, in which both alleles are segregating, requires $ 1 + h(1 - 2) = 0 $, which yields $ = (1 + h)/(2h) $. Thus either h > 1 (overdominance) or h < -1 (underdominance) is required to ensure $ 0 < < 1 $. However, the equilibrium behavior is very different in these two cases. The situation h > 1 represents a stable equilibrium, in which following a small perturbation from $ $, selection returns the allele frequency to $ $ (Figure 5.1C). In contrast, with $h < -1$, there is an unstable equilibrium, selection sends the allele frequency away from $ $ which following a small perturbation (Figure 5.1D)."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 5.1. Letting $ p = (A) $, what is $ p $ when $ W_ AA = 1 + 2s $, $ W_ Aa = 1 + s $, and $ W_ aa = 1 $? These are additive fitnesses, with each copy of allele A adding an amount $ s $ to the fitness. In this case, mean fitness simplifies to $ = 1 + 2sp $ (there is an average of $ 2p $ A alleles per individual, each of which increments fitness by $ s $), and applying Equation 5.1c (setting $ h = 0 $) yields $$ \\Delta p=\\frac{sp(1-p)}{1+2sp} $$"
+    },
+    {
+      "type": "derivation",
+      "content": "Noting that a first-order Taylor expansion (in s) yields $ 1/(1+2sp)=1-2sp+O(s^ 2) $, for $ |s| $ small, we have [[SEE_FORMULA:5.2b]]"
+    },
+    {
+      "type": "discussion",
+      "content": "The notation $ O(s^2) $ denotes terms of order $ s^2 $, which are negligible for $ |s| 1 $."
+    },
+    {
+      "type": "discussion",
+      "content": "The only equilibrium allele frequencies under this model are $ = 0 $ and $ = 1 $. If $ A $ is favored by selection $ (s > 0) $, then $ p > 0 $ for $ 0 < p < 1 $ and the frequency of $ A $ increases to one, regardless of the starting point (Figure 5.1A). Here $ = 1 $ is a stable equilibrium point while $ = 0 $ is unstable, because if even a few copies of $ A $ are introduced, selection drives them to fixation. In contrast, if allele $ a $ is favored $ (s < 0) $, the frequency of allele $ A $ declines to zero regardless of the starting point and $ = 0 $ is stable, while $ = 1 $ is unstable."
+    }
+  ]
+}

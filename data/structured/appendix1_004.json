@@ -1,0 +1,28 @@
+{
+  "id": "appendix1_004",
+  "metadata": {
+    "chapter": "appendix1",
+    "section": "The Kolmogorov Forward Equation",
+    "subsections": [
+      "The Kolmogorov Forward Equation"
+    ],
+    "source_file": "tmp\\paddle_output\\appendix1_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Given $ m(x) $, $ v(x) $, and an initial frequency of p, the diffusion approximation for the dynamics of the probability density function for the realized value x at time t satisfies the Kolmogorov forward equation (or KFE) $$ \\frac{\\partial\\varphi(x,t,p)}{\\partial t}=\\frac{1}{2}\\frac{\\partial^{2}v(x)\\varphi(x,t,p)}{\\partial x^{2}}-\\frac{\\partial m(x)\\varphi(x,t,p)}{\\partial x} $$ where $ (x,t,p) $ is the probability density for x at time t, given that the process starts at p, namely, $$ \\Pr[c\\leq x(t)\\leq d\\mid x(0)=p]=\\int_{c}^{d}\\varphi(x,t,p)dx $$"
+    },
+    {
+      "type": "discussion",
+      "content": "A derivation of the KFE is given below. When they can be found, closed-form solutions of $ (x,t,p) $ are usually complicated (e.g., Example A1.2). The standard approach is to express the solution as a power series: $$ \\varphi(x,t,p)=\\sum_{i=1}^{\\infty}f_{i}(x,p)e^{-\\lambda_{i}t} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Here, the values of $ _i $ are the eigenvalues associated with the partial differential equation given by Equation A1.6, and the functions, $ f_i $, are the associated eigenfunctions. Notice that time, $ t $, only appears as a multiplier of the eigenvalues, while the starting position, $ p $, appears only in the eigenfunctions. Crow and Kimura (1970) presented exact solutions of $ (x, t, p) $ for a number of population-genetic problems. As the next example shows, even in the simplest case (pure drift), the result are rather complex."
+    }
+  ]
+}

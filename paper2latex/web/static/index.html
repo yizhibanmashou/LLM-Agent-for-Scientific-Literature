@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>paper2latex - PDF to LaTeX Converter</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1><i class="fas fa-file-pdf"></i> paper2latex</h1>
+                <p class="subtitle">Convert Scientific Papers to Editable LaTeX</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Upload Section -->
+            <section id="upload-section" class="section">
+                <div class="upload-card">
+                    <div class="upload-icon">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
+                    <h2>Upload Your PDF</h2>
+                    <p>Drop your scientific paper PDF here or click to browse</p>
+
+                    <input type="file" id="pdf-input" accept=".pdf" hidden>
+                    <button id="upload-btn" class="btn btn-primary">
+                        <i class="fas fa-folder-open"></i> Choose PDF File
+                    </button>
+
+                    <div id="file-info" class="file-info" style="display: none;">
+                        <i class="fas fa-file-pdf"></i>
+                        <span id="file-name"></span>
+                        <span id="file-size"></span>
+                    </div>
+
+                    <div class="upload-options" style="margin-top: 20px; text-align: left; width: 100%;">
+                        <label style="display: block; margin-bottom: 10px; font-weight: bold;">Select Engine:</label>
+                        <div style="margin-bottom: 15px;">
+                            <label style="margin-right: 15px;">
+                                <input type="radio" name="engine" value="grobid" checked> GROBID
+                            </label>
+                            <label>
+                                <input type="radio" name="engine" value="paddle"> PaddleOCR Cloud
+                            </label>
+                        </div>
+
+                        <div id="paddle-token-section" style="display: none; margin-bottom: 15px;">
+                            <input type="password" id="paddle-token" class="form-control"
+                                placeholder="AI Studio Access Token (Optional)"
+                                style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                        </div>
+                    </div>
+
+                    <button id="convert-btn" class="btn btn-success" style="display: none; width: 100%;">
+                        <i class="fas fa-magic"></i> Convert to LaTeX
+                    </button>
+                </div>
+            </section>
+
+            <!-- Progress Section -->
+            <section id="progress-section" class="section" style="display: none;">
+                <div class="progress-card">
+                    <div class="spinner"></div>
+                    <h3>Converting PDF to LaTeX...</h3>
+                    <p id="progress-message">Please wait while we process your document</p>
+                    <div class="upload-options"
+                        style="margin-top: 20px; text-align: left; max-width: 400px; margin-left: auto; margin-right: auto;">
+                        <label style="display: block; margin-bottom: 10px; font-weight: bold;">Select Engine:</label>
+                        <div style="margin-bottom: 15px;">
+                            <label style="margin-right: 15px;">
+                                <input type="radio" name="engine" value="grobid" checked> GROBID (Local/Fast)
+                            </label>
+                            <label>
+                                <input type="radio" name="engine" value="paddle"> PaddleOCR Cloud (Better OCR)
+                            </label>
+                        </div>
+
+                        <div id="paddle-token-section" style="display: none;">
+                            <label for="paddle-token" style="font-size: 0.9em;">AI Studio Access Token (Optional if set
+                                in server env):</label>
+                            <input type="password" id="paddle-token" class="form-control"
+                                placeholder="Enter your token here..."
+                                style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px; margin-top: 5px;">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section id="results-section" class="section" style="display: none;">
+                <div class="results-header">
+                    <h2><i class="fas fa-check-circle"></i> Conversion Complete</h2>
+                    <div class="results-actions">
+                        <button id="new-conversion-btn" class="btn btn-outline btn-sm">
+                            <i class="fas fa-plus"></i> New
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Three Column Layout -->
+                <div class="main-layout">
+                    <!-- Left: Original PDF -->
+                    <div class="panel pdf-panel">
+                        <div class="panel-header">
+                            <h3><i class="fas fa-file-pdf"></i> Original PDF</h3>
+                        </div>
+                        <div id="original-pdf-viewer" class="pdf-content">
+                            <div class="placeholder">
+                                <i class="fas fa-file-pdf"></i>
+                                <p>Upload a PDF to view it here</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Middle: File Tree -->
+                    <div class="panel tree-panel">
+                        <div class="panel-header">
+                            <h3><i class="fas fa-folder-tree"></i> Project Files</h3>
+                            <div class="tree-actions">
+                                <button id="refresh-btn" class="icon-btn" title="Refresh"><i
+                                        class="fas fa-sync-alt"></i></button>
+                                <button id="download-btn" class="icon-btn" title="Download ZIP"><i
+                                        class="fas fa-download"></i></button>
+                            </div>
+                        </div>
+                        <div id="file-tree" class="file-tree"></div>
+                    </div>
+
+                    <!-- Right: Content Viewer -->
+                    <div class="panel viewer-panel">
+                        <div class="panel-header">
+                            <h3><i class="fas fa-code"></i> <span id="current-file">Preview</span></h3>
+                            <div class="viewer-actions">
+                                <button id="compile-btn" class="btn btn-primary btn-sm">
+                                    <i class="fas fa-play"></i> Compile
+                                </button>
+                            </div>
+                        </div>
+                        <div id="file-content" class="file-content">
+                            <div class="placeholder">
+                                <i class="fas fa-arrow-left"></i>
+                                <p>Select a file to view content</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Summary Stats -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <i class="fas fa-file-alt"></i>
+                        <div>
+                            <span class="stat-value" id="stat-pages">-</span>
+                            <span class="stat-label">Pages</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-list"></i>
+                        <div>
+                            <span class="stat-value" id="stat-sections">-</span>
+                            <span class="stat-label">Sections</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-quote-right"></i>
+                        <div>
+                            <span class="stat-value" id="stat-citations">-</span>
+                            <span class="stat-label">Citations</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-book"></i>
+                        <div>
+                            <span class="stat-value" id="stat-bib">-</span>
+                            <span class="stat-label">Bibliography</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-superscript"></i>
+                        <div>
+                            <span class="stat-value" id="stat-formulas">-</span>
+                            <span class="stat-label">Formulas</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-image"></i>
+                        <div>
+                            <span class="stat-value" id="stat-figures">-</span>
+                            <span class="stat-label">Figures</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>
+                <i class="fas fa-code"></i> Built with
+                <a href="https://github.com/rudaoshi/paper2latex" target="_blank">paper2latex</a>
+                | <i class="fas fa-book"></i> Powered by GROBID
+            </p>
+        </footer>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+
+</html>

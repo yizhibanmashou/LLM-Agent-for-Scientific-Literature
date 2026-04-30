@@ -1,0 +1,70 @@
+{
+  "id": "chapter14_011",
+  "metadata": {
+    "chapter": "chapter14",
+    "section": "Chapter 14: RESPONSE IN DISCRETE TRAITS: POISSON-DISTRIBUTED CHARACTERS",
+    "subsections": [
+      "RESPONSE IN DISCRETE TRAITS: POISSON-DISTRIBUTED CHARACTERS"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter14_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "14.16",
+      "14.17a",
+      "14.17b",
+      "14.18",
+      "14.19a",
+      "14.19b",
+      "14.20a",
+      "14.20b",
+      "14.21"
+    ],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Discrete characters with a large number of possible states, such as numbers of leaves on a tree, can be treated as a continuous trait. However, what about a discrete trait with a rather compact distribution? A common example is the number of offspring, such as the clutch size of a bird, which might range from 0 to 10 eggs in an observed sample. This discreteness is of special concern when the trait has a significant probability mass at a particular value (especially zero), as often happens with offspring number (corresponding to failure to reproduce)."
+    },
+    {
+      "type": "derivation",
+      "content": "A natural way to model such traits is to use the Poisson distribution, where the probability of observing a trait value of k is given by [[SEE_FORMULA:14.16]] where $ = E[y] $ is the expected value of the trait, which is constrained to $ > 0 $. Motivated by the previous treatment of binary traits, one might imagine some underlying liability value, $ z $, with additive effects (Equation 14.14a) mapped onto a mean value, $ $, constrained to be positive. For example, we can use [[SEE_FORMULA:14.17a]] ensuring that $ > 0$ for all $z$ and hence is a proper expectation for a Poisson. In the context of generalized linear models, $g(z) = (z)$, so that the link function $g^ -1 (z)$ is simply $ (z)$, as $g^ -1 [g(z)] = = z$, yielding [[SEE_FORMULA:14.17b]]"
+    },
+    {
+      "type": "discussion",
+      "content": "This is called a log-linear model, as the log of the distribution parameter, $ $, is a linear function of the variables of interest (in particular, the breeding value)."
+    },
+    {
+      "type": "discussion",
+      "content": "On this log scale, both the breeding and environmental values are assumed to be normal, with a mean of zero and variances of $ _ A ^ 2 $ and $ _ e ^ 2 $. As with binary traits, BLUP selection based on this generalized linear model framework can be used to estimate the $ A_ i $ values (Foulley 1993; Foulley and Im 1993; Korsgaard et al. 2002; Vazques et al. 2009; Morrissey 2015; de Villemereuil et al. 2016). Other models are also possible, such as a zero-inflated Poisson, which has extra probability mass at zero relative to a standard Poisson (e.g., Rodrigues-Motta et al. 2007; see Chapter 29). A trait can also be underdispersed relative to the Poisson (as seems to consistently be the case for bird clutch size; J. Hadfield, pers. comm.), in which case other distributions, such as a zero-truncated Poisson (the nonzero data follow a Poisson distribution) can be used (Chapter 29). A nice discussion of estimation issues under generalized linear models (beyond the binary and log-linear models presented here) is given by de Villemereuil et al. (2016), while Morrissey (2015) presented the theory of selection response under more general settings (which we will examine in Volume 3)."
+    },
+    {
+      "type": "discussion",
+      "content": "Under the log-linear model, the liability, z, of an individual yields an expected value of $ = (z) $, with a realization (e.g., the number of offspring for an individual with trait value z) drawn from a Poisson to return the observed trait value. For example, if the latent value, $ _i $, for individual i has a value of 0.2, then (from Equation 14.16) the probability this individual has a trait of value zero is $ (-0.2) 0.82 $, the probability they have value 1 is $ 0.2 (-0.2) 0.16 $, value 2 is $ 0.2^2 ((-0.2)/2! 0.02 $, and so on."
+    },
+    {
+      "type": "derivation",
+      "content": "The resulting mean trait value in a population under the log-linear model becomes [[SEE_FORMULA:14.18]] where the last step follows because (by construction) A and e are uncorrelated (and thus independent if they are bivariate normal, as is usually assumed), while $ $ is a constant. To compute these expectations, recall that the expression $ E[e^ tx] $ is the moment-generating function of the random variable, x (Johnson and Kotz 1970a). For $ x N(, ^ 2) $, [[SEE_FORMULA:14.19a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "In this case, with a mean, $ $, equal to zero and variance of $ ^ 2 $, setting t = 1 yields [[SEE_FORMULA:14.19b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Substituting into Equation 14.18 shows that the expected mean trait value is a function of both the mean, $ $, and variance, $ _ z ^ 2 $, of the underlying liability value, with [[SEE_FORMULA:14.20a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "One might initially expect that if $A$ is the breeding value for liability, then the mean phenotype of an individual would simply be $ (+ A)$. However, Equation 14.20a shows that if we condition on the breeding value being $A$, the conditional mean now becomes $ + A$ and the variance, $ _A^2$, vanishes, leaving [[SEE_FORMULA:14.20b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Following a single generation of selection, the distribution of liability values has approximately the same variance, but now the mean is shifted to $ + h^ 2 S $ (where S is the selection differential on the liability scale). Applying Equation 14.20a, the response on the phenotypic scale becomes [[SEE_FORMULA:14.21]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Notice that, as was the case for selection on a binary trait, the response to selection is not symmetric, as $ S = + $ does not give the same increment of response as $ S = - $."
+    }
+  ]
+}

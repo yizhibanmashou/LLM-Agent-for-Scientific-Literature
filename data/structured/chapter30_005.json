@@ -1,0 +1,48 @@
+{
+  "id": "chapter30_005",
+  "metadata": {
+    "chapter": "chapter30",
+    "section": "Chapter 30: SELECTION ON MULTIVARIATE PHENOTYPES: DIFFERENTIALS AND GRADIENTS",
+    "subsections": [
+      "Directional Gradients, Fitness Surface Geometry, and Selection Response"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter30_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "30.5a",
+      "30.5b",
+      "30.6"
+    ],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Consider a scalar-valued function, $f()$, whose argument is a vector, $ = (x_1,, x_n)^T$. Recall from vector calculus (Appendix 6) that the gradient vector, $ _ f()$, of $f$ with respect to $ $ is defined as $$ \\nabla_{\\mathbf{x}}f(\\mathbf{x})=\\begin{pmatrix}\\partial f/\\partial x_{1}\\\\ \\partial f/\\partial x_{2}\\\\ \\vdots\\\\ \\partial f/\\partial x_{n}\\end{pmatrix} $$ namely, the vector of each partial of $f$ with respect to $x_ i $, for $1 i n$. Further, recall that the gradient vector of a multivariate function points in the direction of change that will give the greatest (local) increase in $f$."
+    },
+    {
+      "type": "derivation",
+      "content": "When phenotypes are multivariate normal, $ = ^ -1 $ provides a convenient descriptor of the geometries, measured by gradients, of both the individual fitness surface, $ w(z) $, and the mean population landscape, $ $. Let us consider the landscape first. If we assume the z is multivariate normal (MVN), Example A6.3 shows that [[SEE_FORMULA:30.5a]] which holds provided the fitnesses are frequency-independent (Lande 1976, 1979a). In this case, $ $ is the gradient of mean population fitness with respect to the mean vector, $ $, namely, the direction of steepest local increase in $ $. Hence, given the current population mean, $ $ increases most rapidly when the change in the vector of means $ () $ is in the direction given by $ $. If the fitnesses are frequency-dependent (individual fitnesses change as the population mean changes, so that $ 0 $), then provided $ z $ is multivariate-normally distributed, Example A6.3 further shows that [[SEE_FORMULA:30.5b]]"
+    },
+    {
+      "type": "discussion",
+      "content": "The integral in this expression accounts for the effects of frequency-dependence (the change in the individual fitness surface with respect to changes in the mean, $ $) and $ $ is the MVN density function (Lande 1976). The vector $ $ does not point in the direction of steepest increase in $ $ unless the second integral is zero."
+    },
+    {
+      "type": "derivation",
+      "content": "Equation 30.5a shows the connection between the fitness landscape (the mean fitness surface) and $ $ when z is MVN. A similar connection with $ $ occurs (when z is also MVN) with the individual fitness surface. Here $ $ as the average gradient of individual relative fitnesses (over the population distribution of phenotypes), [[SEE_FORMULA:30.6]] which holds provided $ z MVN $ (Lande and Arnold 1983). To see this, we use integration by parts to yield $$ \\int_{\\mathbf{a}}^{\\mathbf{b}}\\nabla_{\\mathbf{z}}[w(\\mathbf{z})]\\varphi(\\mathbf{z})\\mathrm{d}\\mathbf{z}=w(\\mathbf{z})\\varphi(\\mathbf{z})\\bigg|_{\\mathbf{a}}^{\\mathbf{b}}-\\int_{\\mathbf{a}}^{\\mathbf{b}}\\nabla_{\\mathbf{z}}[\\varphi(\\mathbf{z})]w(\\mathbf{z})\\mathrm{d}\\mathbf{z} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "If we take the limit as $ - $ and $ $, the first term on the righthand side vanishes as $ () 0$ when $ $. If $ (,)$, then Equation A6.2a gives $ _ [()] = - () ^ -1 (-)$, implying $$ \\begin{aligned}\\int\\nabla_{\\mathbf{z}}[w(\\mathbf{z})]\\varphi(\\mathbf{z})\\mathrm{d}\\mathbf{z}&=-\\int\\nabla_{\\mathbf{z}}[\\varphi(\\mathbf{z})]w(\\mathbf{z})\\mathrm{d}\\mathbf{z}=\\int w(\\mathbf{z})\\varphi(\\mathbf{z})\\mathbf{P}^{-1}(\\mathbf{z}-\\boldsymbol{\\mu})\\mathrm{d}\\mathbf{z}\\\\&=\\mathbf{P}^{-1}\\left(\\int\\mathbf{z}w(\\mathbf{z})\\varphi(\\mathbf{z})\\mathrm{d}\\mathbf{z}-\\boldsymbol{\\mu}\\int w(\\mathbf{z})\\varphi(\\mathbf{z})\\mathrm{d}\\mathbf{z}\\right)\\\\&=\\mathbf{P}^{-1}\\left(\\boldsymbol{\\mu}^{*}-\\boldsymbol{\\mu}\\right)=\\mathbf{P}^{-1}\\mathbf{S}=\\boldsymbol{\\beta}\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The first integral in the second line corresponds to the mean trait value weighted by relative fitness ($ ^ * $), while the second integral is the average value of relative fitness (1). Note from this derivation that Equation 30.6 holds regardless of whether fitness is frequency-dependent or -independent. This follows because the gradient was taken with respect to z, rather than with respect to the vector of means, $ $."
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, while our focus has been on the role that $ $ plays in measuring phenotypic selection, $ $ also plays an important role in the response to selection. If we can assume that the breeder's equation holds, it is the only measure of phenotypic selection required to predict the response in the means, as the vector, R, of response (changes in means) is calculated by $ = $ (Equation 13.26a). Cheverud (1984b) made the important point that although it is often assumed that a set of phenotypically correlated traits responds to selection in a coordinated fashion, this is not necessarily the case. Because $ $ removes the effects of phenotypic correlations, phenotypic characters will only respond as a group if they are all under direct selection or if they are genetically correlated, a point discussed in detail in Volume 3."
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": "chapter28_020",
+  "metadata": {
+    "chapter": "chapter28",
+    "section": "Chapter 28: Effects of Linkage and Mating Systems",
+    "subsections": [
+      "Effects of Linkage and Mating Systems"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter28_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "28.19"
+    ],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "The more diligent reader may recall situations in two-locus models wherein the effects of linkage disequilibrium were quite considerable (Chapter 5). This occurs in cases where selection is much stronger than recombination. In contrast, the analysis of polygenic models typically assumes that recombination is much stronger than selection at a given locus, resulting in linkage effects being much smaller, often to the point (depending on the problem) that they can be ignored as a good first approximation."
+    },
+    {
+      "type": "discussion",
+      "content": "Most of the above analysis, under either the HCA or Gaussian approximations, extrapolates the additive variance by summing single-locus variances. Recalling Equation 16.2, the additive variance, $ _A^2 $, is the sum of the genic variance, $ _a^2 $ (the additive variance in the absence of linkage disequilibrium), plus the disequilibrium contribution, $ d $, with $ _A^2 = _a^2 + d $. $ _A^2 $ is often called the expressed variation, and $ _a^2 - _A^2 = -d $ the hidden variation (the amount recovered upon decay of LD). Simply summing single-locus results (as we have done multiple times above) recovers the genic variance, $ _a^2 $, not the additive variance, $ _A^2 $, and we expect the genic variance to overestimate the additive variance (as $ d < 0 $ under stabilizing selection; Chapter 16). While the actual value of $ d $ can be considerable, simulations (Turelli 1984; Hastings 1989) and analytic results (Lande 1975; Fleming 1979; Nagylaki 1984; Bürger 1989) show that the relative error by ignoring $ d $ is generally small, negative, and increases (slowly) with $ n $. Fleming found that the zero-order approximation of the distribution of allelic effects was independent of the recombination map, which entered as first-order terms. Assuming $ n $ equivalent loci ($ _i = $, $ _a^2 = _a^2 $), Turelli (1984) used the Lande and Fleming results to find that the relative error in using the linkage equilibrium"
+    },
+    {
+      "type": "derivation",
+      "content": "(LE) value in place of the true additive variance under the Gaussian approximation was [[SEE_FORMULA:28.19]]"
+    },
+    {
+      "type": "discussion",
+      "content": "A simulation study by Hastings (1989), essentially using the HCA approximation, found that the impact of LD is again small and scales with $ n_ $, the total (haploid) mutation rate. If $ n_ < 0.025 $, the contribution from LD was small, less than 10"
+    },
+    {
+      "type": "proposition",
+      "content": "In an exact analysis of a two-locus model, Bürger (1989) found that the impact of linkage depends on the relative strengths of mutation and selection, namely, the HCA versus Gaussian assumptions. Under the Gaussian assumption, the genic variance, $ _ a ^ 2 $, remains constant, while the additive variation decreases as linkage becomes tighter (d becomes more negative). Under the HCA assumption, the genetic variance remains constant under linkage (as long as it is not too tight), while the genic variance increases with decreasing recombination (as seen in Equation 28.18b). If recombination is below a critical value, then the behavior is as for the Gaussian approximation."
+    },
+    {
+      "type": "discussion",
+      "content": "A second issue of potential concern is the mating system. Thus far, we have been assuming random mating. However, previous chapters showed that inbreeding (Chapter 11) and assortative mating (Chapter 16) can both impact the additive-genetic variance. Given these observations, Lande (1977a) obtained the counterintuitive result that these departures from random mating have essentially no impact on the equilibrium additive variance for a Gaussian model with only additive effects. Inbreeding and assortative mating change the rate of approach to the equilibrium, but not its final value. Conversely, Turelli (1986) and Frank and Slatkin (1990b) found that inbreeding does change the equilibrium additive variance under HCA assumptions. Turelli suggested that the robustness of the Gaussian model to the mating system may be an artifact of the high mutation rate per locus required for this model to be accurate."
+    }
+  ]
+}

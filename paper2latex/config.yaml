@@ -1,0 +1,22 @@
+# Default configuration for paper2latex MCP server
+
+# GROBID service endpoint
+grobid_endpoint: "http://localhost:8070"
+
+# Formula processing
+formula_dpi: 300
+formula_ocr: "none"  # "pix2tex" | "none" (v0.1 only supports "none")
+
+# Figure extraction
+figure_extract: true
+
+# Compilation
+enable_compile_check: false
+
+# Paths
+temp_dir: "tmp/paper2latex"
+
+# Processing options
+timeout_sec: 600
+keep_intermediates: true
+language_hint: "auto"

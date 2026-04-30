@@ -1,0 +1,63 @@
+{
+  "id": "chapter29_003",
+  "metadata": {
+    "chapter": "chapter29",
+    "section": "Chapter 29: Assigning Fitness Components",
+    "subsections": [
+      "Assigning Fitness Components"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter29_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "29.1a",
+      "29.1b",
+      "29.1c",
+      "29.2a",
+      "29.2b",
+      "29.2c"
+    ],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "derivation",
+      "content": "We now turn to the task of partitioning measures of individual fitnesses in a longitudinal study into fitness components. A cohort of $n$ individuals (indexed by $1 r n$) is followed through several discrete (nonoverlapping) episodes of selection. Let $W_j(r)$ be the fitness measure for the $j$th episode of selection for individual $r$. For example, if we are following viability, then $W_j$ is either zero (dead) or one (alive) at the census period. Relative fitness components, $w_j(r) = W_j(r)/ _j$ (mean-standardized fitnesses), will turn out to be especially useful (as $ _j = 1$). At the start of a study, the frequency of each individual is $1/n$, yielding the mean fitness for the first (observed) episode of selection as [[SEE_FORMULA:29.1a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "(We note the very real possibility that considerable selection on the focal trait may have already occurred prior to the life-cycle stages being examined; Example 29.1.) Following this first episode, the new fitness-weighted frequency of the $ r^ th $ individual is $ w_ 1 (r)/n $, implying that the mean fitness for the second episode of selection is calculated by [[SEE_FORMULA:29.1b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "In general, for the jth episode of selection, [[SEE_FORMULA:29.1c]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Note that if $ W_j(r) = 0 $, further fitness components for $ r $ are unmeasured. If we let $ p_j(r) $ be the fitness-weighted frequency of individual $ r $ after $ j $ episodes of selection, it follows that $ p_0(r) = 1/n $ and [[SEE_FORMULA:29.2a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "The 1/n term represents the initial frequency of individual $ r $, while the product is the total relative fitness for individual $ r $ following the $ j $ episodes of selection. It immediately follows that Equation 29.1c can be expressed as $ _j = W_j(r) p_ j-1 (r) $. Using these weights allows fitness-weighted moments to be calculated. For example, the fitness-weighted mean of a particular character following the $ j $th episode is given by [[SEE_FORMULA:29.2b]] where $ z(r) $ is the value of the character in individual r. Likewise, the sample variance is [[SEE_FORMULA:29.2c]] As discussed later in the chapter, the fitness distribution over a particular episode (or component) may closely correspond to a standard distribution, such as a Bernoulli random variable (with a value of zero or one) for survival or mating status, or a Poisson for the number of offspring or mates. However, the resulting compound distribution of fitness over several episodes is generally very complex. In particular, we usually expect a large probability mass at zero, representing individuals that did not reproduce. The resulting distribution generally does not correspond to any standard one, nor can it easily be transformed into one. As discussed at the end of the chapter, the aster-model approach can be used to construct the full unconditional distribution of total fitness."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 29.1. Mojica and Kelly (2010) presented an important cautionary study regarding the interpretation of fitness components. They reviewed a number of studies showing a distinct fitness advantage for larger flower size. To test this association, they planted seedlings of three distinct flower-size genotypes (High, Low, and Control) of yellow monkey flower (Mimulus guttatus) in the wild. These lines were the result of selection experiments for increased (High) and decreased (Low) flower size from the starting control population."
+    },
+    {
+      "type": "discussion",
+      "content": "[h]"
+    },
+    {
+      "type": "discussion",
+      "content": "[h]"
+    },
+    {
+      "type": "discussion",
+      "content": "[h] consistent with the literature pattern of larger flowers having a selective advantage. However, the authors also found a massive (over tenfold) difference in survival (middle panel). The large-flower genotype required significantly more time to mature (flower) during a period when water stress becomes increasingly important. Total fitness (fecundity times survival; right panel) shows a very large advantage for the small-flower over the large-flower genotypes, which would be entirely missed in the absence of these transplant experiments. Note also that there is not a significant difference in total fitness between the control and small-flower genotypes, although the control genotype had significantly higher fecundity and significantly lower survival than the small-flower genotype, illustrating tradeoffs between life-history components."
+    },
+    {
+      "type": "discussion",
+      "content": "[h] |c|c| Cell 1 & Cell 2 \\\\ Cell 3 & Cell 4 \\\\"
+    }
+  ]
+}

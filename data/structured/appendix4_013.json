@@ -1,0 +1,56 @@
+{
+  "id": "appendix4_013",
+  "metadata": {
+    "chapter": "appendix4",
+    "section": "Schweder-Spjøtvoll plots",
+    "subsections": [
+      "Schweder-Spjøtvoll plots"
+    ],
+    "source_file": "tmp\\paddle_output\\appendix4_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "A simple graphical approach using the empirical distribution of $p$ values was suggested by Schweder and Spjøtvoll (1982). If one rank-orders the $p$ values from the smallest $p(1)$ to the largest $p(n)$, a plot of $p(i)$ versus $i$ is a straight line under a uniform. Because our interest is usually in detecting an excessive number of small $p$ values (as would be expected if $n_0 < n$), Schweder and Spjøtvoll suggest plotting $1 - p(i)$ values on the horizontal axis, and the ranks of these values (which are the reverse of the ranks of the $p[i]$) on the vertical axis. For example, the first point is $(1 - p[n], 1)$, the second $(1 - p[n-1], 2)$, $ $, and the $n$th $(1 - p[1], n)$. If all of the $p$ values are indeed generated from null hypotheses, then these are drawn from a uniform, and the resulting plot will be a straight line (the solid triangles in Figure A4.1). Conversely, if some of the $p$ values are drawn from hypotheses where the null is false, we expect an excess of small $p$ values, and hence an over-abundance of $1 - p$ values near one (the open circles in Figure A4.1)."
+    },
+    {
+      "type": "discussion",
+      "content": "In addition to providing a quick visual check as to whether the $p$ values follow a uniform, Schweder and Spjøtvoll suggest that these plots can also estimate $n_ 0 $. One fits the best straight line until the upturn (i.e., inflection point) near one appears, extrapolating this line to obtain the $n$ value for $1 - p = 1$ estimates the number of true null hypotheses, $n_ 0 $. As shown in Figure A4.1, this gives a value very close to 80 (for the open circles), the correct number of true nulls used to generate this figure."
+    },
+    {
+      "type": "discussion",
+      "content": "Estimating $ n_ 0 $: Subsampling From a Uniform Distribution As suggested by the Schweder-Spötvoll plot, the distribution of $p$ values offers insight into the number of truly null hypotheses, $n_ 0 $. While this plot offers either a simple visual, or a more formal regression-based, estimator of $n_ 0 $, it tends to overestimate the number of nulls. Further, it can be difficult to specify exactly where the upturn in the plotted values begins. A number of other estimators have been suggested, again based on a uniform distribution of $p$ values for those tests under the null. Recall that the histogram from a sufficiently large number of draws from a uniform distribution is flat, as all values are equally likely (Figure A4.2A). However, if the null is false for at least some of the tests, then the distribution of $p$ values is shifted away from uniform, and usually with a skew toward smaller values (Figure A4.2B), but potentially also skewed toward one (for example, if one-tailed tests are used when a two-tailed test is appropriate; Figure A4.2C)."
+    },
+    {
+      "type": "discussion",
+      "content": "If the collection of tests contains some alternative hypotheses mixed in with true nulls, [h] we expect the distribution to be a mixture, with fraction, $ _0 = n_0/n $, consisting of draws from a uniform and the remaining fraction, $ (1 - n_0/n) $, from some other distribution. Figure A4.3 plots the empirical distribution of $ p $ values from a study by Mosig et al. (2001) on marker-trait associations. While the middle of the distribution appears to be consistent with random sampling around a flat average, there is a large excess of values near zero."
+    },
+    {
+      "type": "discussion",
+      "content": "One simple approach for estimating $ n_ 0 $ is to use the average height for the middle range of the p-value histogram. Presumably, these p values are almost entirely drawn from null hypotheses, though this may not be the case for values near zero (and potentially one). Recall that the probability density function for a uniform over $ (0,1) $ has a very simple form $$ \\phi_{u}(p)=1\\quad for\\quad0\\leq p\\leq1 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "If there are $ n_0 $ truly null tests, then the expected number of $ p $ values from these tests that fall within an interval $ 0 a < b 1 $ is simply $$ \\begin{align*}n_0\\int_a^b\\phi_u(p)dp=n_0\\int_a^b1\\cdot dp=n_0(b-a)\\end{align*} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Hence $$ \\widehat{n}_{0}(a,b)=\\frac{Number of p(i)values in(a,b)}{b-a} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Likewise, an estimate for the fraction $ _ 0 =n_ 0 /n $ of true nulls is $$ \\begin{aligned}\\widehat{\\pi}_{0}(a,b)&=\\frac{Number of p(i)values in(a,b)}{n(b-a)}\\\\&=\\frac{Fraction of p(i)values in(a,b)}{b-a}\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "[h]"
+    },
+    {
+      "type": "discussion",
+      "content": "[h]"
+    }
+  ]
+}

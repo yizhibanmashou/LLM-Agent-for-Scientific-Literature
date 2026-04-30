@@ -1,0 +1,41 @@
+{
+  "id": "chapter10_003",
+  "metadata": {
+    "chapter": "chapter10",
+    "section": "Chapter 10: BRIEF OVERVIEW OF DIVERGENCE-BASED TESTS",
+    "subsections": [
+      "A History of Selection Alters the Ratio of Polymorphic to Divergent Sites"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter10_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "10.1a",
+      "10.1b",
+      "10.1c"
+    ],
+    "table_references": [
+      "inline_1"
+    ],
+    "table_reference_keys": [
+      "chapter10:inline_1"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "derivation",
+      "content": "Population-based tests contrast the patterns of within-species polymorphism and between-species divergence to see if they are in concordance with their neutral expectations. Under the equilibrium neutral model, two standard measures of polymorphism under the infinite-sites model are functions of $ 4N_e $ (where $ $ is the per-site mutation rate): the nucleotide diversity, $ $, and the number of segregating sites, $ S $. These have expected values of $ E[] = 4N_e $ and $ E[S] = 4N_e a_n $, where $ a_n $ is a constant that depends only on the sample size, $ n $ (Equation 9.21a). Under the assumptions of the equilibrium neutral model, the relationship between polymorphism (measured by nucleotide diversity, $ $) and the between-population divergence ($ D $) for the ith gene being considered is [[SEE_FORMULA:10.1a]] where $ N_ e $ is the effective population size, and t is the divergence time in generations. Hence, [[SEE_FORMULA:10.1b]] Because the gene-specific mutation rates cancel, under the equilibrium neutral model, the $ /D $ ratio at all loci should be roughly the same, namely $ 2N_ e /t $ (subject to random sampling). When polymorphism is instead scored as the number of segregating sites, S, then [[SEE_FORMULA:10.1c]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Again, this ratio is expected to be roughly constant over neutral genes. a replacement-site mutation results in an amino acid change, while a silent-site mutation still codes for the ancestral amino acid. Equation 10.1c indicates that, under neutrality, the ratio of the number of segregating sites to the number of fixed differences should be the same for both categories of sites. This results in a simple association test, and significance can be assessed using either a $ ^ 2 $ approximation or the (much better) Fisher's exact test, which accommodates small numbers in the observed table entries. Of the 24 fixed differences between the two species seen by McDonald and Kreitman, 7 were replacement-site mutations and 17 were silent-site mutations. The total number of polymorphic sites segregating in either species was 44, 2 of which were replacement and 42 of which were silent. The resulting association table becomes"
+    },
+    {
+      "type": "discussion",
+      "content": "[h] |c|c| Cell 1 & Cell 2 \\\\ Cell 3 & Cell 4 \\\\"
+    },
+    {
+      "type": "discussion",
+      "content": "Fisher’s exact test gives a p value of 0.0073, indicating a highly significant lack of fit to the neutral equilibrium model. Based on the ratio of 42:2 silent/replacement polymorphisms, the expected number, x, of replacement fixations is 17/x = 42/2, or x = 0.81, i.e., ~1 replacement polymorphism is expected under neutrality. Because 7 were seen, this suggests roughly 6 adaptive substitutions, or that 86"
+    }
+  ]
+}

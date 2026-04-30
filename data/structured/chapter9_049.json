@@ -1,0 +1,55 @@
+{
+  "id": "chapter9_049",
+  "metadata": {
+    "chapter": "chapter9",
+    "section": "Chapter 9: Recombination and Infinite-alleles-based Tests",
+    "subsections": [
+      "Contrasting Allele-frequency vs. Intra-allelic Variation Estimates of Haplotype Age"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter9_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "9.39a",
+      "9.39b"
+    ],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Novembre et al. (2005) examined spatial models of the spread of this allele in Europe, showing that both strong selection and long-distance dispersal are required to account for its current geographic distribution. The agent of selection is thought to be smallpox (reviewed by de Silva and Stumpf 2004; Stumpf and Wilkinson-Herbots 2004; Galvani and Novembre 2005). However, as is often the case with claims of selection, the evidence may not be as definitive as the previous analysis suggests. Sabeti et al. (2005), using refined recombination estimates, obtained an allelic-age estimate of around 280 generations with a 95 As Example 9.14 shows, potential evidence for selection is offered when a frequency-based estimator of age (which assumes a pure-drift model) is too large relative to an estimate based on within-haplotype variation. Because these comparisons involve segregating alleles, they are designed to detect sweeps that are currently underway (ongoing selection) as well as recent partial sweeps (where selection in the past has swept an allele up to near its current frequency, but is either now much weaker or no longer occurring). Intra-allelic age estimators are also important in their own right, as the age of an allele currently under selection, or the time since a sweep has completed, is of interest. We briefly consider three haplotype-based estimators of allelic age here: (i) the persistence of disequilibrium with a marker at a known recombination fraction, c; (ii) the number of segregating sites within a very closely linked region; and (iii) the variance at STRs. The last two measures are assumed to be scored in a sufficiently close region around the allele that recombination can be ignored. The major caveat with any of these approaches is that intra-allelic age estimates generally tend to have a downward bias, making alleles appear too young (Slatkin and Rannala 2000). Given that most contrasts of frequency and intra-allelic variation invoke selection when the frequency estimate is much older than the variation-based estimator, caution is always in order when using this approach."
+    },
+    {
+      "type": "derivation",
+      "content": "The technique of estimating age from the persistence of LD between an allele and a linked marker (Example 2.3) was first proposed by Serre et al. (1990). Again, we assume there is no selection. Let A denote a marker allele at a site closely linked to the target allele, B, that we are trying to age. The marker allele is typically chosen because the target allele is overrepresented on A-bearing haplotypes (relative to its population frequency), suggesting that the initial mutation arose on such a background (i.e., an AB haplotype). Let $ x(t) $ denote the current frequency of B-bearing haplotypes that also contain the marker allele A. If we assume there is a single-origin mutation that occurred on an A background, then $ x(0) = 1 $. If we let y be the frequency of haplotypes carrying A in the ancestral population, we further assume that this ancestral value is close to the present-day value (i.e., we assume that $ t 1/[2N_e] $). The resulting decay in LD by recombination is [[SEE_FORMULA:9.39a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "This follows because $ x(0) - y $ is the initial disequilibrium, which decays at a rate of $ (1 - c) $ per generation (note that this is just a modification of Equation 8.2a). Solving for t yields [[SEE_FORMULA:9.39b]] where x is the current frequency of AB haplotypes. This approach is very closely related to LD mapping (LW Chapter 14), where in the latter, one assumes that t is known and solves for c via Equation 9.39a. Equation 9.39b is a slightly more accurate approach for estimating age than was used in Example 2.3, as it accounts for the population-wide frequency, y, of the marker allele, A. Risch et al. (1995) and McPeek and Strahs (1999) discussed how information from multiple marker loci linked to the target site can be simultaneously used to estimate t. The delicate issue in applying Equation 9.39b is that it is sensitive to c. Using a value of c less than the true value overestimates the age, while the age will be underestimated if too large a c value is used."
+    },
+    {
+      "type": "proposition",
+      "content": "A second approach to estimate the age of an allele using intra-allelic diversity is based on the number of segregating sites in a tightly linked region around the target allele (Example 8.5). This approach is typically used to estimate the age of a sweep (as opposed to, e.g., Equation 9.39b, which provides an age estimate for a contrast to a frequency-based age estimator). Under a hard selective sweep (and hence an approximate star genealogy for the sampled sequences), Equation 8.14 provides a rough estimate of age as $ t = S/ n $, where n is the sample size, S is the number of segregating sites, and $ $ is the total mutation rate for the region being considered. Alternatively, one could use the fact that S follows a Poisson distribution to obtain both an ML estimator and confidence intervals (Example 9.15). Examples 8.5 and 9.15 both assume there is a very defined genealogy, which in reality is unknown, introducing considerable noise (and possible bias) into these estimators. In particular, the assumption of a star genealogy creates a process with too little variation, and hence confidence intervals that are too narrow. As emphasized by Slatkin and Rannala (2000), there is considerable variation in a particular genealogy even under an equilibrium neutral model."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 9.15. Meiklejohn et al. (2004) observed three segregating sites ($S = 3$) in a population sample of $n = 26$ sequences from a region spanning the janB locus in Drosophila simulans. They assumed that the total mutation rate for this region was $ = 1.73 10^ -5 $ per year. For a mutation arising $t$ years ago, the expected number of mutations on a single sampled allele is $ t$. Under the approximation that the coalescence has a star-shaped structure (very little shared coalescence time among sampled alleles, as would be expected in a sweep or partial sweep), each of the $n$ lineages in the sample is essentially independent of the others, giving the expected number of segregating sites in a sample of $n$ alleles as $ = n t$, with the distribution of observed $S$ values within the sample following a Poisson distribution with a parameter of $ $. The resulting MLE for $t$ given these data is simply the value that maximizes the likelihood, given $S = 3$, $$ \\Pr(S=3\\mid t\\mu)=\\frac{\\lambda^{3}}{3!}\\exp(-\\lambda)\\quad where\\quad\\lambda=n\\mu t=0.0004498t $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Plotting this expression as a function of $t$ shows that the maximum of this expression (and hence the MLE) occurs at $t = 6667$ years (which is essentially identical to the simpler estimate given by Equation 8.14). The 95 $$ \\Pr(S\\leq3\\mid\\lambda)=\\exp(-\\lambda)\\left(1+\\lambda+\\frac{\\lambda^{2}}{2!}+\\frac{\\lambda^{3}}{3!}\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Numerically solving this equation yields $ (S 3 = 8.77) = 0.025 $ and $ (S 3 = 1.09) = 0.975 $. Because $ = 8.77 = 26 (1.73 10^ -5) t $, the upper limit of $ t $ becomes $ 8.77 / [26 (1.73 10^ -5)] 19,500 $ years. Similarly, the lower limit is $ 1400 $ years."
+    },
+    {
+      "type": "discussion",
+      "content": "The copy-number variance at an STR also provides an estimator of age. As above, a new mutation arises on a haplotype carrying a specific allele (whose state is defined by repeat copy length) at a linked STR. As that haplotype spreads and ages, variants arise at the STR, generating variance in copy number at the STR for the haplotype carrying the mutation. As noted previously, using copy-number variance to estimate the age is very model dependent, especially given the unknown structure of STR mutation. Assuming a simple stepwise mutation scheme with a mutation rate that is constant over array size, Thomas et al. (1998) noted that the average squared difference between copy number over all sampled haplotypes and the ancestral haplotype has an expectation of $ t $, where $ $ is the microsatellite mutation rate. Much more sophisticated analyses can also be used (e.g., Wilson et al. 2003). Given their high mutation rates, STR variation can allow for more precise estimation of younger alleles than approaches using segregating sites or recombination with very tightly linked sites. The major caveat is that using the wrong mutational model can yield biased estimates (as rates can change with copy number and single mutations may result in copy-number changes greater than one)."
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, we have seen examples in Chapter 8 where the insertion of a mobile element generated an adaptive mutation (most likely due to regulatory changes). Mobile elements provide a unique age-based test for adaptation, as one can date the insertion (and hence the age of the new mutation it creates). A typical element is several kilobases long, and its age of insertion can be estimated by looking at two features. Some elements generate direct or inverted flanking repeats of known length. While typically just a few bases long, divergence between these short repeat segments can be used to date an insertion. Much more information is provided by the sequence divergence of the inserted element itself, which has a mutational target size of several kb. One approach is to compare the insertion against a consensus sequence for active elements. While not fool-proof (there can be existing divergence in active elements and the insertion event itself might be error-prone, such as in retrotransposons), this does provide an approach to age the insertion. See Blumenstiel et al. (2014) for details."
+    }
+  ]
+}

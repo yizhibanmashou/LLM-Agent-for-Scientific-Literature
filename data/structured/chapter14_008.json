@@ -1,0 +1,63 @@
+{
+  "id": "chapter14_008",
+  "metadata": {
+    "chapter": "chapter14",
+    "section": "Chapter 14: Direct Selection on the Threshold, T",
+    "subsections": [
+      "The Logistic Regression Model for Binary Traits"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter14_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "14.10a",
+      "14.10b",
+      "14.11a",
+      "14.11b",
+      "14.11c",
+      "14.12"
+    ],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "derivation",
+      "content": "The threshold approach offers one model for mapping an underlying continuous liability, z, into a discrete character space, y (which is either zero or one, corresponding to trait absence or presence). This is a deterministic model, with all individuals with $ z T $ displaying the trait $ (y = 1) $, while all those with $ z < T $ do not display it $ (y = 0) $. A potentially more realistic model is that trait presence is stochastic, with the underlying liability, z, mapping onto a probability of displaying the trait, e.g., $ p(z) = (y = 1 z) $. Under the threshold model, this probability is 1.0 for $ z T $, and 0 otherwise. From a biological standpoint, one imagines that $ p(z) $ is a monotonically increasing function of z, approaching 0 for low values and 1 for high values. One reasonable candidate that satisfies these requirements is the logistic function, [[SEE_FORMULA:14.10a]] with $ (z) 0 $ for $ z -1, 1 $ for $ z 1 $, and $ (0) = 1/2 $. A more general version is [[SEE_FORMULA:14.10b]] which has a value of 0.5 at $ z = m $ and a scaling factor, $ $, that sets the abruptness of the transition from low to high probability. The larger the value of $ $, the more abrupt is the transition, approaching the threshold model for sufficiently large values (Figure 14.6). Equation 14.10b is often called a logistic regression."
+    },
+    {
+      "type": "discussion",
+      "content": "Biologically speaking, the logistic regression and threshold models may be viewed as essentially identical. To see this, recall that the threshold model very easily extends to the"
+    },
+    {
+      "type": "discussion",
+      "content": "[h] case where T varies over individuals. In such cases, if the liability value of an individual is z, the trait will only be displayed if $ T z $. Now consider the logistic regression model where $ p(z) $ denotes the probability that an individual with a liability value of z displays the trait. One source of this stochasticity could simply be population variation in T, so that $ p(z) $ can be viewed as the cumulative distribution function (cdf; LW Chapter 2) for the threshold value T, e.g., $ p(z) = (T z) $. In this case, a fraction, $ p(z) $, of individuals with a liability of z are above the threshold, and hence display the trait."
+    },
+    {
+      "type": "derivation",
+      "content": "If the logistic gives the cdf of random threshold values, then the logistic distribution, $ (x,, m) $, gives the actual distribution of T. From the definition of a cumulative distribution function, [[SEE_FORMULA:14.11a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Taking derivatives of both sides yields [[SEE_FORMULA:14.11b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Johnson and Kotz (1970b) gave the first three moments of this distribution as [[SEE_FORMULA:14.11c]] As shown in Figure 14.7, the normal and logistic distributions have very similar cumulative distribution functions. Indeed, for a unit normal random variable, U, [[SEE_FORMULA:14.12]]"
+    },
+    {
+      "type": "discussion",
+      "content": "[h]"
+    },
+    {
+      "type": "discussion",
+      "content": "[h] which is the logistic distribution with a variance of 1 (see Equation 14.11c)."
+    },
+    {
+      "type": "discussion",
+      "content": "An interesting biological interpretation of the scale parameter, $ $ (that sets the abruptness of the transition of the logistic regression), is as a measure of the strength of developmental canalization. When $ $ is small, small changes in the liability usually map into small changes in the probability of the trait being displayed ($ = 1 $ in Figure 14.6). When $ $ is large, one sees robustness when the liability is away from the mean, m, as small changes in the liability have very little impact on the probability of the trait being displayed. However, when near m, small liability changes can result in dramatically different probabilities of displaying the trait. Chevin and Lande (2013) essentially used this idea to explore the conditions under which a relatively continuous norm of reaction changes into a very discrete step-function (i.e., the conditions leading to the evolution of a large $ $ value)."
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, we have two approaches for mapping liability values into binary traits: the strict threshold approach (a deterministic mapping of liability onto the discrete trait) and the logistic regression approach (a stochastic mapping translating a liability value into a probability of observing the trait). Given the very close connection between the threshold and logistic regression models, for most purposes using the simple threshold model is a reasonable approach, even if the underlying mapping is stochastic, and as illustrated above, it can easily be used to predict selection response. One setting where the logistic regression is more appropriate is in the actual analysis of the behavior of the threshold when one either knows the liability value or has at least a strong proxy (such as size)."
+    }
+  ]
+}

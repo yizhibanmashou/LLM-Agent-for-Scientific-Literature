@@ -1,0 +1,67 @@
+{
+  "id": "chapter5_019",
+  "metadata": {
+    "chapter": "chapter5",
+    "section": "Chapter 5: Dynamics of Gamete-frequency Change",
+    "subsections": [
+      "Dynamics of Gamete-frequency Change"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter5_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "5.13a",
+      "5.13b",
+      "5.13c",
+      "5.13d",
+      "5.13e"
+    ],
+    "table_references": [
+      "5.2"
+    ],
+    "table_reference_keys": [
+      "chapter5:5.2"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Denote the frequencies of the four different gametes by $ x_ i $, where $$ \\begin{aligned}&freq(g_{1})=freq(AB)=x_{1}\\quad&freq(g_{2})=freq(Ab)=x_{2}\\\\&freq(g_{3})=freq(aB)=x_{3}\\quad&freq(g_{4})=freq(ab)=x_{4}\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Under random mating (the random union of gametes), the frequency of the different (un-ordered) genotypes is given by $$ \\mathrm{freq}(g_{i}g_{j})=\\left\\{\\begin{aligned}&2x_{i}x_{j}&\\text{for}i\\neq j\\\\ &x_{i}^{2}&\\text{for}i=j\\end{aligned}\\right. $$"
+    },
+    {
+      "type": "derivation",
+      "content": "Let the fitness of an individual formed from gametes $ g_i $ and $ g_j $ be $ W_ g_i,g_j = W_ g_j,g_i $ (we use the $ g_i,g_j $ subscript notation to stress that these fitnesses are for specific gametic, as opposed to allelic, combinations). $ W_ g_1,g_4 $ and $ W_ g_2,g_3 $ are of special note, being the fitness of cis (AB/ab) and trans (Ab/aB) double heterozygotes, respectively. One would normally expect these two genotypes to have equal fitness, but certain genetic interactions (such as position effects) can sometimes complicate matters. In addition, if the two loci being considered are themselves in gametic-phase disequilibrium with other loci affecting fitness, cis and trans fitnesses will appear to differ due to fitness associated with loci not considered (Turelli 1982). Denoting the gamete frequencies after selection by $ x'_i $, with constant viability selection ($ W_ g_i,g_j $ constant), no cis-trans effect ($ W_ g_1,g_4 = W_ g_2,g_3 $), and discrete nonoverlapping generations, the gametic recursion equations become [[SEE_FORMULA:5.13a]] [[SEE_FORMULA:5.13b]] [[SEE_FORMULA:5.13c]] [[SEE_FORMULA:5.13d]] where $c$ is the recombination fraction between loci, $D = x_ 1 x_ 4 - x_ 2 x_ 3 $ is a measure of gametic-phase disequilibrium, and $W_ g_i $ is the average fitness of a $g_i$-bearing individual (the marginal fitness of gamete $g_i$), with [[SEE_FORMULA:5.13e]]"
+    },
+    {
+      "type": "discussion",
+      "content": "These equations are due to Kimura (1956) and Lewontin and Kojima (1960). Observe that selection can change gamete frequencies by changing allele frequencies and/or by changing the amount of gametic-phase disequilibrium. Because the four gamete frequencies sum to one, Equations 5.13a–5.13d can be expressed in terms of three equations. Alternatively, one can also parameterize this set of equations using another set of three variables, namely, the allele frequencies p and q for the two loci and their disequilibrium, D."
+    },
+    {
+      "type": "proposition",
+      "content": "Equations 5.13a–5.13d are similar in form to the multiple-allele equation (and identical to Equation 5.7a when c or D equals zero). Unlike allele frequencies (which do not change in the absence of selection under our assumption of infinite population size), gamete frequencies can change from generation to generation due to changes in D from recombination, even in the absence of selection (Chapter 2; LW Chapter 5). If D is zero and remains zero after selection (as occurs when fitnesses are multiplicative across loci, so that $ W_ ijkl = W_ ij W_ kl $), then the new gamete frequency is simply given by the product of the new allele frequencies, e.g., $ x_1' = p_A' p_B' $, and the dynamics can be followed by considering each locus separately (i.e., following $ p_A $ and $ p_B $). However, except in this and a few other special cases, these two-locus equations turn out to be extremely complex. Indeed, as we detail below, there is no general analytic solution for even the simple model of constant fitnesses and viability selection, except when certain symmetry patterns (such as additivity) hold among the fitnesses ([[SEE_TABLE:5.2]])."
+    },
+    {
+      "type": "discussion",
+      "content": "[[TABLE:5.2]])."
+    },
+    {
+      "type": "discussion",
+      "content": "Alleles A and B are dominant for the character z, while fitness increases with the number of loci that are heterozygous."
+    },
+    {
+      "type": "discussion",
+      "content": "Assume that there is gametic-phase equilibrium and that the frequencies of alleles A and B are both 2/3, in which case $ = 1.089 $, $ _z = 1.78 $, and the expected fitnesses for each phenotype become $$ \\begin{array}{cccc}{{{z}}}&{{{0}}}&{{{1}}}&{{{2}}} \\\\{{{W(z)}}}&{{{1.00}}}&{{{1.05}}}&{{{1.10}}} \\\\\\end{array} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "For example, AAbb, Aabb, aaBb, and aaBB all have a trait value of one, and (under linkage equilibrium), each of these genotypes has frequency of 4/81, for a total frequency of 16/81. The expected fitness for z = 1 is therefore $$ \\frac{4/81\\left(W_{AAbb}+W_{Aabb}+W_{aaBb}+W_{aaBB}\\right)}{16/81}=\\frac{1.0+1.1+1.1+1.0}{4}=1.05 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "If we measured the value of $z$ and fitness in a random sample of individuals from this population, we would conclude that $z$ is under directional selection and expect the trait mean $ _z$ to increase over time. However, applying two-locus theory (numerical iteration of Equations 5.13a–5.13d) shows that at equilibrium, $p_A = p_B = 1/2$, $ = 1.1$, and $ _z = 1.50$. Hence, despite the initial positive correlation between $z$ and $W$, selection causes $ _z$ to decline from its initial starting value of 1.78."
+    }
+  ]
+}

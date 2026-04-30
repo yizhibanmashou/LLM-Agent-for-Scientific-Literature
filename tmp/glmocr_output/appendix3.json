@@ -1,0 +1,3214 @@
+[
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "content": "<div align=\"center\">\n\n# Appendix 3\n\n</div>",
+      "bbox_2d": [
+        304,
+        118,
+        567,
+        156
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "<div align=\"center\">\n\n# Markov Chain Monte Carlo and Gibbs Sampling\n\n</div>",
+      "bbox_2d": [
+        251,
+        176,
+        620,
+        230
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "Far better an approximate answer to the right question, which is often vague, than an exact answer to the wrong question, which can always be made precise. Tukey (1962)",
+      "bbox_2d": [
+        154,
+        238,
+        715,
+        268
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "We are convinced nevertheless that Monte Carlo methods will one day reach an impressive maturity. Hammersley and Handscomb (1964)",
+      "bbox_2d": [
+        202,
+        278,
+        666,
+        308
+      ]
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "content": "The practice of MCMC is simple. Set up a Markov chain having the required invariant distribution, and run it on a computer. The folklore of simulation makes this seem more complicated that it really is. None of this folklore is justified by theory and none of it actually helps users do good simulations. Geyer (2011)",
+      "bbox_2d": [
+        152,
+        318,
+        722,
+        376
+      ]
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "content": "A historical impediment to the more widespread use of Bayesian methods was computational: obtaining the posterior distribution requires the integration of high-dimensional functions. This can be very difficult, but several analytic approximations short of direct integration have been proposed (reviewed by Smith 1991; Evans and Swartz 1995; Tanner 1996). Now, however, the widespread development of Markov Chain Monte Carlo (MCMC) methods has made obtaining very complex posteriors relatively easy from a conceptual standpoint (although they may still be rather computationally demanding). Indeed, MCMC allows Bayesian approaches to handle much higher-dimensional problems than other methods. MCMC approaches are so named because one uses the current sample value to randomly generate the next sample value, thus generating a Markov chain.",
+      "bbox_2d": [
+        111,
+        386,
+        759,
+        523
+      ]
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "content": "The realization in the early 1990s (Gelfand and Smith 1990) that one particular MCMC method, the Gibbs sampler, is widely applicable to a broad class of Bayesian problems sparked much of the current expansion in the use of Bayesian analysis. MCMC methods have their roots in the Metropolis algorithm (Metropolis and Ulam 1949; Metropolis et al. 1953), an attempt by physicists to compute complex integrals by expressing them as expectations of a much simpler distribution and then estimating this expectation by drawing samples from that distribution. While the Gibbs sampler had its origins outside of statistics, it is still somewhat surprising that the powerful machinery of MCMC had essentially no impact on the field of statistics until rather recently. MCMC methods were reviewed by Tanner (1996), Gammerman (1997), Chen et al. (2000), Robert and Casella (2004), and Brooks et al. (2011). The types of MCMC machinery used in quantitative genetics (often Gibbs samplers on linear mixed-models, e.g., Chapters 19 and 20) tend to be a bit different from those used in molecular population genetics (ABC methods for treating complex likelihoods, e.g., Chapters 9 and 10). Sorensen and Gianola (2002) extensively reviewed the former, while Marjoram and Tavaré (2006) provided a brief review of the latter. The roundtable discussion on practical issues of MCMC by Kass et al. (1998) is required reading for anyone using MCMC analysis, as is Geyer (2011). Finally, Robert and Casella (2011) presented a nice historical overview of the development of MCMC methods.",
+      "bbox_2d": [
+        111,
+        523,
+        760,
+        769
+      ]
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "content": "## MONTE CARLO INTEGRATION",
+      "bbox_2d": [
+        113,
+        794,
+        370,
+        808
+      ]
+    },
+    {
+      "index": 8,
+      "label": "text",
+      "content": "To better understand the historical roots of MCMC, we digress for a moment to discuss the original Monte Carlo approach, which used random-number generation to approximate",
+      "bbox_2d": [
+        112,
+        821,
+        760,
+        852
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "content": "integrals. Suppose we wish to compute a complex integral,",
+      "bbox_2d": [
+        241,
+        123,
+        667,
+        138
+      ]
+    },
+    {
+      "index": 1,
+      "label": "formula",
+      "content": "$$\n\\int_ {a} ^ {b} h (x) d x\n$$",
+      "bbox_2d": [
+        525,
+        149,
+        608,
+        181
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "If we can decompose $ h ( x ) $ into the product of a function, $ f ( x ) $ , and a probability density function, $ p ( x ) $ , defined over the interval (a,b), then",
+      "bbox_2d": [
+        240,
+        190,
+        889,
+        219
+      ]
+    },
+    {
+      "index": 3,
+      "label": "formula",
+      "content": "$$\n\\int_ {a} ^ {b} h (x) d x = \\int_ {a} ^ {b} f (x) p (x) d x = E _ {p (x)} [ f (x) ]\n$$",
+      "bbox_2d": [
+        406,
+        229,
+        725,
+        263
+      ]
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "content": "which means that the integral can be expressed as the expectation of f(x) over the density p(x). After sampling a large number of random variables, $ ( x_{1},\\cdots,x_{n}), $ from the density p(x), we have that",
+      "bbox_2d": [
+        241,
+        272,
+        889,
+        313
+      ]
+    },
+    {
+      "index": 5,
+      "label": "formula",
+      "content": "$$\n\\int_ {a} ^ {b} h (x) d x = E _ {p (x)} [ f (x) ] \\simeq \\frac {1}{n} \\sum_ {i = 1} ^ {n} f \\left(x _ {i}\\right)\n$$",
+      "bbox_2d": [
+        421,
+        313,
+        711,
+        347
+      ]
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "content": "This approach is referred to as Monte Carlo integration, and it can be used to approximate posterior (or marginal posterior) distributions required for a Bayesian analysis.",
+      "bbox_2d": [
+        241,
+        354,
+        889,
+        381
+      ]
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "content": "Consider the integral $ I (y)=\\int f (y \\mid x) p (x) d x $ , which we approximate by",
+      "bbox_2d": [
+        275,
+        381,
+        799,
+        396
+      ]
+    },
+    {
+      "index": 8,
+      "label": "formula",
+      "content": "$$\n\\widehat {I} (y) = \\frac {1}{n} \\sum_ {i = 1} ^ {n} f \\left(y \\mid x _ {i}\\right)\n$$",
+      "bbox_2d": [
+        486,
+        408,
+        644,
+        443
+      ]
+    },
+    {
+      "index": 9,
+      "label": "text",
+      "content": "where again $ x_{i} $ are draws from the density $ p(x) $ . Since we have framed this integral as an expectation, individual random draws have expected value equal to the integral. The spread of those values around their mean allows us to estimate a Monte Carlo standard error for our approximation, with",
+      "bbox_2d": [
+        241,
+        454,
+        890,
+        510
+      ]
+    },
+    {
+      "index": 10,
+      "label": "formula",
+      "content": "$$\n\\mathrm {S E} ^ {2} [ \\hat {I} (y) ] = \\frac {1}{n} \\left[ \\frac {1}{n - 1} \\sum_ {i = 1} ^ {n} \\left(f (y \\mid x _ {i}) - \\hat {I} (y)\\right) ^ {2} \\right]\n$$",
+      "bbox_2d": [
+        395,
+        520,
+        733,
+        558
+      ]
+    },
+    {
+      "index": 11,
+      "label": "text",
+      "content": "where the inner term estimates the sampling variance, $ \\sigma^{2} $ . Notice from Equation A3.1e that the standard error scales as $ \\sigma /\\sqrt{n} $ , namely, with the square root of the sample size. Thus, a tenfold improvement in precision requires a hundredfold increase in the sample size.",
+      "bbox_2d": [
+        241,
+        569,
+        890,
+        612
+      ]
+    },
+    {
+      "index": 12,
+      "label": "text",
+      "content": "Example A3.1. An interesting quantitative-genetic application of Monte Carlo integration was suggested by Ovaskainen et al. (2008) for comparing whether two G matrices are similar. As we detail in Volume 3, there are many proposed methods for comparing matrices, but Ovaskainen et al. suggested a (conceptually) simple approach. The G matrix for a given population is really a description of the distribution of breeding values, and, as such we can think of comparing G matrices as being akin to comparing two multivariate population distributions, whose densities are denoted by f and g. If x denotes a draw from one of these distributions, the probability that it originates from distribution g is simply $ g (\\mathbf{x}) /[g(\\mathbf{x})+ f(\\mathbf{x})] $ . Hence, the probability, q, that a random draw from f wil be incorrectly assigned to g is calculated as",
+      "bbox_2d": [
+        271,
+        652,
+        869,
+        776
+      ]
+    },
+    {
+      "index": 13,
+      "label": "formula",
+      "content": "$$\nq (f, g) = \\int \\frac {g (\\mathbf {x})}{g (\\mathbf {x}) + f (\\mathbf {x})} f (\\mathbf {x}) d \\mathbf {x}\n$$",
+      "bbox_2d": [
+        454,
+        774,
+        688,
+        803
+      ]
+    },
+    {
+      "index": 14,
+      "label": "text",
+      "content": "If the two probability distributions are essentially indistinquishable, then $ q(f,g)=0.5 $ while if they are completely distinquishable then $ q(f,g)=0 $ . Hence, $ 1-2 q(f,g) $ , which ranges from zero (indistinquishable) to one (fully distinquishable), provides a simple metric of the difference between them, and hence the difference between the two G matrices that",
+      "bbox_2d": [
+        271,
+        809,
+        869,
+        860
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "content": "comprise the distributions of f versus g. Ovaskainen et al. modified this idea further, suggesting the metric",
+      "bbox_2d": [
+        141,
+        123,
+        736,
+        150
+      ]
+    },
+    {
+      "index": 1,
+      "label": "formula",
+      "content": "$$\nd (f, g) = \\sqrt {1 - 2 q (f , g)}\n$$",
+      "bbox_2d": [
+        355,
+        150,
+        524,
+        165
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "While Equation A3.2a involves a complex integral, Equation A3.1d suggests that",
+      "bbox_2d": [
+        141,
+        170,
+        664,
+        185
+      ]
+    },
+    {
+      "index": 3,
+      "label": "formula",
+      "content": "$$\n\\widehat {q} (f, g) = \\frac {1}{n} \\sum_ {i = 1} ^ {n} \\frac {g \\left(\\mathbf {x} _ {i}\\right)}{g \\left(\\mathbf {x} _ {i}\\right) + f \\left(\\mathbf {x} _ {i}\\right)} \\rightarrow q (f, g)\n$$",
+      "bbox_2d": [
+        296,
+        195,
+        584,
+        228
+      ]
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "content": "where $ \\mathbf{x}_{1},\\cdots, \\mathbf{x}_{n} $ are random draws from f. For example, if f is a multivariate normal with a mean vector of 0 and a variance-covariance matrix of $ \\mathbf{G}_{1} $ , then",
+      "bbox_2d": [
+        140,
+        239,
+        739,
+        266
+      ]
+    },
+    {
+      "index": 5,
+      "label": "formula",
+      "content": "$$\nf (\\mathbf {x}) = (2 \\pi) ^ {- n / 2} | \\mathbf {G} _ {1} | \\exp \\left(- \\frac {\\mathbf {x} ^ {T} \\mathbf {G} _ {1} ^ {- 1} \\mathbf {x}}{2}\\right)\n$$",
+      "bbox_2d": [
+        294,
+        274,
+        585,
+        305
+      ]
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "content": "where g is similarly defined,but with $ \\mathbf{G}_{2} $ replacing $ \\mathbf{G}_{1} $ ,which yields",
+      "bbox_2d": [
+        141,
+        315,
+        591,
+        329
+      ]
+    },
+    {
+      "index": 7,
+      "label": "formula",
+      "content": "$$\n\\widehat {q} (f, g) = \\frac {1}{n} \\sum_ {i = 1} ^ {n} \\frac {\\left| \\mathbf {G} _ {2} \\right| \\exp \\left(- \\mathbf {x} _ {i} ^ {T} \\mathbf {G} _ {2} ^ {- 1} \\mathbf {x} _ {i} / 2\\right)}{\\left| \\mathbf {G} _ {2} \\right| \\exp \\left(- \\mathbf {x} _ {i} ^ {T} \\mathbf {G} _ {2} ^ {- 1} \\mathbf {x} _ {i} / 2\\right) + \\left| \\mathbf {G} _ {1} \\right| \\exp \\left(- \\mathbf {x} _ {i} ^ {T} \\mathbf {G} _ {1} ^ {- 1} \\mathbf {x} _ {i} / 2\\right)}\n$$",
+      "bbox_2d": [
+        162,
+        339,
+        662,
+        373
+      ]
+    },
+    {
+      "index": 8,
+      "label": "text",
+      "content": "The expression in the sum is not nearly as imposing as it appears. Both of the determinants, $ | \\mathbf{G}_{1} | $ and $ | \\mathbf{G}_{2} | $ are fixed constants, and they only need to be computed once. Likewise, $ \\mathbf{G}_{1}^{-1} $ and $ \\mathbf{G}_{2}^{-1} $ need only be inverted once and then can be stored. Monte Carlo integration proceeds by generating a set of random vectors, $ \\left( \\mathbf{x}_{1},\\cdots,\\mathbf{x}_{n}\\right) $ , from a MVN $ \\sim $ $ \\left( \\mathbf{0},\\mathbf{G}_{1}\\right) $",
+      "bbox_2d": [
+        141,
+        383,
+        739,
+        437
+      ]
+    },
+    {
+      "index": 9,
+      "label": "text",
+      "content": "## Importance Sampling",
+      "bbox_2d": [
+        113,
+        476,
+        280,
+        491
+      ]
+    },
+    {
+      "index": 10,
+      "label": "text",
+      "content": "Consider any distribution whose probability density function, p(x), has the same support as some target density, q(x) (i.e., is nonzero over the same range of x values). Then,",
+      "bbox_2d": [
+        111,
+        494,
+        759,
+        523
+      ]
+    },
+    {
+      "index": 11,
+      "label": "formula",
+      "content": "$$\n\\int f (x) q (x) d x = \\int f (x) \\left(\\frac {q (x)}{p (x)}\\right) p (x) d x = E _ {p (x)} \\left[ f (x) \\left(\\frac {q (x)}{p (x)}\\right) \\right]\n$$",
+      "bbox_2d": [
+        177,
+        531,
+        639,
+        563
+      ]
+    },
+    {
+      "index": 12,
+      "label": "text",
+      "content": "This forms the basis for the method of importance sampling, with",
+      "bbox_2d": [
+        112,
+        571,
+        590,
+        586
+      ]
+    },
+    {
+      "index": 13,
+      "label": "formula",
+      "content": "$$\n\\int f (x) q (x) d x \\simeq \\frac {1}{n} \\sum_ {i = 1} ^ {n} f \\left(x _ {i}\\right) \\left(\\frac {q \\left(x _ {i}\\right)}{p \\left(x _ {i}\\right)}\\right)\n$$",
+      "bbox_2d": [
+        297,
+        596,
+        571,
+        630
+      ]
+    },
+    {
+      "index": 14,
+      "label": "text",
+      "content": "where again the $ x_{i} $ values are drawn from the distribution given by $ p(x). $ For example, if we are interested in a marginal density as a function of y, $ J(y)=\\int f(y|x)q(x)dx, $ we approximate this by",
+      "bbox_2d": [
+        111,
+        640,
+        759,
+        683
+      ]
+    },
+    {
+      "index": 15,
+      "label": "formula",
+      "content": "$$\nJ (y) \\simeq \\frac {1}{n} \\sum_ {i = 1} ^ {n} f \\left(y \\mid x _ {i}\\right) \\left(\\frac {q \\left(x _ {i}\\right)}{p \\left(x _ {i}\\right)}\\right)\n$$",
+      "bbox_2d": [
+        324,
+        683,
+        546,
+        716
+      ]
+    },
+    {
+      "index": 16,
+      "label": "text",
+      "content": "where $x_{i}$ are drawn from the approximating density $p$.",
+      "bbox_2d": [
+        112,
+        723,
+        505,
+        736
+      ]
+    },
+    {
+      "index": 17,
+      "label": "text",
+      "content": "This method is so named in that a judicious choice of p(x) ensures that values for which f(x) is large (important) are appropriately sampled, which can result in a smaller Monte Carlo variance, and hence a more accurate estimate of the integral. Further, it can be faster to carry out in cases where p is more straightforward to sample from than q. Ideally, we would like p(x) to be large when f(x)q(x) is large, namely, p(x) $ \\propto $ f(x)q(x), although assessing when q(x) is large may be problematic.",
+      "bbox_2d": [
+        112,
+        736,
+        760,
+        817
+      ]
+    },
+    {
+      "index": 18,
+      "label": "text",
+      "content": "One issue that can arise is when $ q ( x ) $ denotes a posterior distribution whose integration constant is unknown, and hence $ q ( x ) $ , as presented, will not be a formal probability distribution if $ \\int q ( x ) \\neq 1 $ . If $ C^{-1}=\\int q ( x ) $ , then $ C q ( x ) $ is formally a pdf. Fortunately, a",
+      "bbox_2d": [
+        112,
+        817,
+        759,
+        860
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "content": "simple trick allows us to use importance sampling to obtain C. Since $ C\\int q(x)dx=1 $ , then",
+      "bbox_2d": [
+        241,
+        123,
+        884,
+        138
+      ]
+    },
+    {
+      "index": 1,
+      "label": "formula",
+      "content": "$$\nC ^ {- 1} = \\int q (x) d x \\simeq \\frac {1}{n} \\sum_ {i = 1} ^ {n} w _ {i} \\quad \\mathrm {w h e r e} \\quad w _ {i} = \\frac {q \\left(x _ {i}\\right)}{p \\left(x _ {i}\\right)}\n$$",
+      "bbox_2d": [
+        383,
+        149,
+        747,
+        182
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "with the $ x_{i} $ drawn from $ p(x). $ Hence",
+      "bbox_2d": [
+        242,
+        195,
+        505,
+        209
+      ]
+    },
+    {
+      "index": 3,
+      "label": "formula",
+      "content": "$$\nC \\cdot \\int f (x) q (x) d x \\simeq \\widehat {I} = \\sum_ {i = 1} ^ {n} w _ {i} f \\left(x _ {i}\\right) / \\sum_ {i = 1} ^ {n} w _ {i}\n$$",
+      "bbox_2d": [
+        403,
+        220,
+        728,
+        256
+      ]
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "content": "which has an associated Monte Carlo variance of",
+      "bbox_2d": [
+        244,
+        266,
+        599,
+        280
+      ]
+    },
+    {
+      "index": 5,
+      "label": "formula",
+      "content": "$$\n\\operatorname {V a r} \\left(\\widehat {I}\\right) = \\sum_ {i = 1} ^ {n} w _ {i} \\left[ f \\left(x _ {i}\\right) - \\widehat {I} \\right] ^ {2} / \\sum_ {i = 1} ^ {n} w _ {i}\n$$",
+      "bbox_2d": [
+        422,
+        289,
+        708,
+        324
+      ]
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "content": "## INTRODUCTION TO MARKOV CHAINS",
+      "bbox_2d": [
+        242,
+        343,
+        569,
+        358
+      ]
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "content": "Before introducing two of the most common MCMC methods, the Metropolis-Hastings algorithm and the Gibbs sampler, a few introductory comments on Markov chains are in order. Let $ X_{t} $ denote the value of a random variable at time t, and let the state space refer to the range of possible X values. A random variable is said to follow a Markov process if the transition probabilities between different values in the state space depend only on the random variable's current state,",
+      "bbox_2d": [
+        241,
+        371,
+        890,
+        454
+      ]
+    },
+    {
+      "index": 8,
+      "label": "formula",
+      "content": "$$\n\\Pr \\left(X _ {t + 1} = s _ {j} \\mid X _ {0} = s _ {k}, \\dots , X _ {t} = s _ {i}\\right) = \\Pr \\left(X _ {t + 1} = s _ {j} \\mid X _ {t} = s _ {i}\\right)\n$$",
+      "bbox_2d": [
+        340,
+        465,
+        791,
+        480
+      ]
+    },
+    {
+      "index": 9,
+      "label": "text",
+      "content": "Thus, the only information about the past needed for a Markov random variable to predict the future is the current state of the random variable. Knowledge of the values of earlier states does not influence the transition probability. A Markov chain refers to a sequence of random variables, $ ( X_{0},\\cdots,X_{n} ) $ , generated by a Markov process. A particular chain is defined by its transition probabilities (or the transition kernel), $ P(i,j)=P(i\\rightarrow j) $ , which is the probability that a process at state space $ s_{i} $ moves to state $ s_{j} $ in a single step",
+      "bbox_2d": [
+        241,
+        491,
+        891,
+        576
+      ]
+    },
+    {
+      "index": 10,
+      "label": "formula",
+      "content": "$$\nP (i, j) = P (i \\rightarrow j) = \\Pr \\left(X _ {t + 1} = s _ {j} \\mid X _ {t} = s _ {i}\\right)\n$$",
+      "bbox_2d": [
+        405,
+        585,
+        727,
+        600
+      ]
+    },
+    {
+      "index": 11,
+      "label": "text",
+      "content": "We use the notation $ P ( i \\rightarrow j ) $ to imply a move from i to j, as some texts define $ P ( i,j)= $ $ P ( j \\rightarrow i ) $ , so we will use the arrow notation to avoid any potential confusion. Let",
+      "bbox_2d": [
+        241,
+        610,
+        888,
+        639
+      ]
+    },
+    {
+      "index": 12,
+      "label": "formula",
+      "content": "$$\n\\pi_ {j} (t) = \\Pr \\left(X _ {t} = s _ {j}\\right)\n$$",
+      "bbox_2d": [
+        491,
+        651,
+        639,
+        666
+      ]
+    },
+    {
+      "index": 13,
+      "label": "text",
+      "content": "denote the probability that the chain is in state j at time t, and let $ \\pi(t) $ denote the row vector of the state space probabilities at step (or time) t. We start the chain by specifying a starting row vector, $ \\pi(0). $ Often all the elements of $ \\pi(0) $ are zero except for a single element of 1, which corresponds to the process starting in that particular state. As the chain progresses, the probability values become more dispersed over the state space. The probability that the chain has a state value of $ s_{j} $ at time (or step) $ t+1 $ is obtained from the Chapman-Kolomogrov (CK) equation, which sums over the probability of being in a particular state at the current step value, t, and the transition probability from that state into state $ s_{j} $",
+      "bbox_2d": [
+        241,
+        677,
+        891,
+        788
+      ]
+    },
+    {
+      "index": 14,
+      "label": "formula",
+      "content": "$$\n\\begin{array}{l} \\pi_ {j} (t + 1) = \\Pr \\left(X _ {t + 1} = s _ {j}\\right) \\\\ = \\sum_ {i} \\Pr \\left(X _ {t + 1} = s _ {j} \\mid X _ {t} = s _ {i}\\right) \\cdot \\Pr \\left(X _ {t} = s _ {i}\\right) \\\\ = \\sum_ {i} P (i \\rightarrow j) \\pi_ {i} (t) = \\sum_ {i} P (i, j) \\pi_ {i} (t) \\\\ \\end{array}\n$$",
+      "bbox_2d": [
+        378,
+        798,
+        754,
+        873
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "content": "Successive iteration of the CK equations describes the evolution of the chain.",
+      "bbox_2d": [
+        112,
+        123,
+        662,
+        136
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "We can more compactly write the CK equations in matrix form, as follows: first we define the probability transition matrix, P, as the matrix whose ijth element is $ P ( i, j ) $ , the probability of moving from state i to state j, $ P ( i \\rightarrow j ) $ . This implies that the rows of P sum to one, as when considering the ith row, $ \\sum_{j} P ( i, j )=\\sum_{j} P ( i \\rightarrow j )=1 $ . In matrix form, the Chapman-Kolomogrov equation becomes",
+      "bbox_2d": [
+        112,
+        137,
+        759,
+        206
+      ]
+    },
+    {
+      "index": 2,
+      "label": "formula",
+      "content": "$$\n\\pi (t + 1) = \\pi (t) \\mathbf {P}\n$$",
+      "bbox_2d": [
+        372,
+        215,
+        498,
+        230
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "Hence,",
+      "bbox_2d": [
+        113,
+        240,
+        169,
+        254
+      ]
+    },
+    {
+      "index": 4,
+      "label": "formula",
+      "content": "$$\n\\pi (t) = \\pi (t - 1) \\mathbf {P} = \\left[ \\pi (t - 2) \\mathbf {P} \\right] \\mathbf {P} = \\pi (t - 2) \\mathbf {P} ^ {2}\n$$",
+      "bbox_2d": [
+        265,
+        252,
+        607,
+        268
+      ]
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "content": "Continuing in this fashion yields the probability distribution in generation t as",
+      "bbox_2d": [
+        112,
+        274,
+        677,
+        288
+      ]
+    },
+    {
+      "index": 6,
+      "label": "formula",
+      "content": "$$\n\\pi (t) = \\pi (0) \\mathrm {P} ^ {t}\n$$",
+      "bbox_2d": [
+        383,
+        297,
+        489,
+        312
+      ]
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "content": "Next we define the n-step transition probability, $ p_{ij}^{(n)} $ , as the probability that the process is in state j, given that it started in state i some n steps ago, namely,",
+      "bbox_2d": [
+        112,
+        324,
+        759,
+        354
+      ]
+    },
+    {
+      "index": 8,
+      "label": "formula",
+      "content": "$$\np _ {i j} ^ {(n)} = \\Pr \\left(X _ {t + n} = s _ {j} \\mid X _ {t} = s _ {i}\\right)\n$$",
+      "bbox_2d": [
+        325,
+        363,
+        545,
+        382
+      ]
+    },
+    {
+      "index": 9,
+      "label": "text",
+      "content": "It immediately follows that $ p_{ij}^{(n)} $ is simply the ijth element of $ \\mathbf{P}^{n} $ , the nth power of the single-step transition matrix. The classic example of a Markov chain in genetics is the Wright-Fisher model of drift (Equations 2.1 and 2.2; Example 2.1).",
+      "bbox_2d": [
+        112,
+        393,
+        759,
+        435
+      ]
+    },
+    {
+      "index": 10,
+      "label": "text",
+      "content": "Finally, a Markov chain is said to be irreducible if there exists a positive integer, $ n_{ij} $ such that $ p_{ij}^{(n_{ij})}>0 $ for all ij. That is, all states communicate with each other, in that the process can always move from any one state to any other state (although this may require multiple steps). Likewise, a chain is said to be aperiodic when the number of steps required to move between two states (say x and y) is not always some multiple of a specific integer. Put another way, the chain is not forced into cycles of fixed length between certain states.",
+      "bbox_2d": [
+        111,
+        437,
+        760,
+        521
+      ]
+    },
+    {
+      "index": 11,
+      "label": "text",
+      "content": "Example A3.2. Suppose the state space consists of three possible weather conditions (Rain, Sunny, Cloudy) and that weather patterns follow a Markov process (of course, they do not!). Under this assumption, the probability of tomorrow's weather simply depends on today's weather, and not on any other previous days. If this is the case, the observation that it has rained for three straight days does not alter the probability of tomorrow's weather compared to the situation where (say) it rained today but was sunny for the last week. Suppose the probability transitions given that today is rainy are",
+      "bbox_2d": [
+        141,
+        561,
+        739,
+        650
+      ]
+    },
+    {
+      "index": 12,
+      "label": "formula",
+      "content": "$$\n\\begin{array}{l} P (R a i n t o m o r r o w \\mid R a i n t o d a y) = 0. 5 \\\\ P (S u n n y t o m o r r o w \\mid R a i n t o d a y) = 0. 2 5 \\\\ P (\\mathrm {C l o u d y t o m o r r o w} \\mid \\mathrm {R a i n t o d a y}) = 0. 2 5 \\\\ \\end{array}\n$$",
+      "bbox_2d": [
+        286,
+        656,
+        564,
+        696
+      ]
+    },
+    {
+      "index": 13,
+      "label": "text",
+      "content": "This results in the first row of the transition probability matrix being (0.5,0.25,0.25). Now suppose that the full transition matrix is",
+      "bbox_2d": [
+        141,
+        707,
+        738,
+        734
+      ]
+    },
+    {
+      "index": 14,
+      "label": "formula",
+      "content": "$$\n\\mathbf {P} = \\left( \\begin{array}{c c c} 0. 5 & 0. 2 5 & 0. 2 5 \\\\ 0. 5 & 0 & 0. 5 \\\\ 0. 2 5 & 0. 2 5 & 0. 5 \\end{array} \\right)\n$$",
+      "bbox_2d": [
+        345,
+        744,
+        531,
+        786
+      ]
+    },
+    {
+      "index": 15,
+      "label": "text",
+      "content": "Note that this Markov chain is irreducible, as all states communicate with each other. Suppose today is sunny. What is the weather expected to be like two days from now? Seven days? Here $ \\pi(0)=\\left( \\begin{array}{lll}0&1&0 \\end{array} \\right) $ , which yeilds",
+      "bbox_2d": [
+        141,
+        795,
+        739,
+        834
+      ]
+    },
+    {
+      "index": 16,
+      "label": "formula",
+      "content": "$$\n\\pi (2) = \\pi (0) \\mathbf {P} ^ {2} = \\left( \\begin{array}{l l l} 0. 3 7 5 & 0. 2 5 & 0. 3 7 5 \\end{array} \\right)\n$$",
+      "bbox_2d": [
+        300,
+        843,
+        580,
+        859
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "content": "and",
+      "bbox_2d": [
+        272,
+        124,
+        304,
+        136
+      ]
+    },
+    {
+      "index": 1,
+      "label": "formula",
+      "content": "$$\n\\pi (7) = \\pi (0) \\mathbf {P} ^ {7} = \\left( \\begin{array}{l l l} 0. 4 & 0. 2 & 0. 4 \\end{array} \\right)\n$$",
+      "bbox_2d": [
+        435,
+        135,
+        676,
+        150
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "Conversely, suppose today is rainy, so $ \\pi(0)=(\\begin{array}{c c c}1&0&0 \\end{array} ). $ The expected future weather becomes",
+      "bbox_2d": [
+        241,
+        157,
+        869,
+        171
+      ]
+    },
+    {
+      "index": 3,
+      "label": "formula",
+      "content": "$$\n\\pi (2) = \\left( \\begin{array}{l l l} 0. 4 3 7 5 & 0. 1 8 7 5 & 0. 3 7 5 \\end{array} \\right) \\mathrm {a n d} \\pi (7) = \\left( \\begin{array}{l l l} 0. 4 & 0. 2 & 0. 4 \\end{array} \\right)\n$$",
+      "bbox_2d": [
+        331,
+        183,
+        781,
+        198
+      ]
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "content": "Note that after a sufficient amount of time, the expected weather is independent of the starting value. In other words, the chain has reached a stationary distribution, where the state space probability values are independent of the actual starting value.",
+      "bbox_2d": [
+        241,
+        210,
+        869,
+        249
+      ]
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "content": "As the above example illustrates, a Markov chain may reach a stationary distribution, $ \\pi^{*} $ , where the vector of probabilities of being in a particular state is independent of the initial starting distribution. The stationary distribution satisfies",
+      "bbox_2d": [
+        241,
+        289,
+        890,
+        331
+      ]
+    },
+    {
+      "index": 6,
+      "label": "formula",
+      "content": "$$\n\\pi^ {*} = \\pi^ {*} \\mathrm {P}\n$$",
+      "bbox_2d": [
+        527,
+        344,
+        605,
+        357
+      ]
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "content": "In other words, $ \\pi^{*} $ is the left eigenvector associated with the eigenvalue $ \\lambda=1 $ of P (Appendix 5). Further, the spectral decomposition of P (Equation A5.9a) implies that the impact of the initial conditions after t steps decays as $ \\lambda_{2}^{t} $ , where $ \\lambda_{2}<1 $ is the second largest eigenvalue of P. If this eigenvalue is very close to one, the impact of the initial conditions can persist for a substantial amount of time. Specifically, if $ \\lambda_{2}=1-\\delta $ , then $ \\lambda_{2}^{t}=(1-\\delta)^{t}\\simeq\\exp(-\\delta t). $ One condition for the existence of a stationary distribution is that the chain must be irreducible and aperiodic. When a chain is periodic, it can cycle in a deterministic fashion between states and may never settle down to a stationary distribution (in effect, this cycling is the stationary distribution for this chain). Equation A5.11d can be used to show that if P has no eigenvalues equal to $ -1 $ , it is aperiodic.",
+      "bbox_2d": [
+        242,
+        371,
+        890,
+        509
+      ]
+    },
+    {
+      "index": 8,
+      "label": "text",
+      "content": "A sufficient condition for a unique stationary distribution is (for all i and j) that the detailed balance equation holds, namely,",
+      "bbox_2d": [
+        241,
+        508,
+        890,
+        536
+      ]
+    },
+    {
+      "index": 9,
+      "label": "formula",
+      "content": "$$\nP (j \\rightarrow i) \\pi_ {j} ^ {*} = P (i \\rightarrow j) \\pi_ {i} ^ {*}\n$$",
+      "bbox_2d": [
+        469,
+        550,
+        662,
+        565
+      ]
+    },
+    {
+      "index": 10,
+      "label": "text",
+      "content": "That is, at equilibrium, the amount of probability flux from state j to stage i is exactly matched by the probability flux in the opposite direction (for i to j), so a balance is reached, with no net flow of probability over the states. If Equation A3.10 holds for all values of i and j, the Markov chain is said to be reversible, and hence Equation A3.10 is also called the reversibility condition. Note that this condition implies that $ \\pi^{*}=\\pi^{*} \\mathbf{P} $ , as the jth element of the row vector $ \\pi^{*} \\mathbf{P} $ is",
+      "bbox_2d": [
+        241,
+        577,
+        891,
+        660
+      ]
+    },
+    {
+      "index": 11,
+      "label": "formula",
+      "content": "$$\n(\\pi^ {*} \\mathbf {P}) _ {j} = \\sum_ {i} \\pi_ {i} ^ {*} P (i \\rightarrow j) = \\sum_ {i} \\pi_ {j} ^ {*} P (j \\rightarrow i) = \\pi_ {j} ^ {*} \\sum_ {i} P (j \\rightarrow i) = \\pi_ {j} ^ {*}\n$$",
+      "bbox_2d": [
+        321,
+        670,
+        810,
+        699
+      ]
+    },
+    {
+      "index": 12,
+      "label": "text",
+      "content": "where the key middle step follows from Equation A3.10, while the last step follows because rows of P sum to one.",
+      "bbox_2d": [
+        241,
+        711,
+        889,
+        738
+      ]
+    },
+    {
+      "index": 13,
+      "label": "text",
+      "content": "The basic idea of a discrete-state Markov chain can be generalized to a continuous-state Markov process by replacing P with a probability kernel, $ P ( x,y) $ , that satisfies",
+      "bbox_2d": [
+        241,
+        738,
+        889,
+        767
+      ]
+    },
+    {
+      "index": 14,
+      "label": "formula",
+      "content": "$$\n\\int P (x, y) d y = 1\n$$",
+      "bbox_2d": [
+        504,
+        779,
+        628,
+        807
+      ]
+    },
+    {
+      "index": 15,
+      "label": "text",
+      "content": "The continuous extension of the Chapman-Kolomogrov equation becomes",
+      "bbox_2d": [
+        242,
+        819,
+        779,
+        834
+      ]
+    },
+    {
+      "index": 16,
+      "label": "formula",
+      "content": "$$\n\\pi_ {t} (y) = \\int \\pi_ {t - 1} (x) P (x, y) d x\n$$",
+      "bbox_2d": [
+        462,
+        846,
+        668,
+        874
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "content": "Finally, at equilibrium, the stationary distribution satisfies",
+      "bbox_2d": [
+        113,
+        123,
+        531,
+        138
+      ]
+    },
+    {
+      "index": 1,
+      "label": "formula",
+      "content": "$$\n\\pi^ {*} (y) = \\int \\pi^ {*} (x) P (x, y) d x\n$$",
+      "bbox_2d": [
+        338,
+        151,
+        533,
+        179
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "## THE METROPOLIS-HASTINGS ALGORITHM",
+      "bbox_2d": [
+        114,
+        209,
+        475,
+        223
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "The roots of MCMC methods trace back to a problem faced by mathematical physicists in applying Monte Carlo integration, namely, generating random samples from some complex distribution in order to apply Equation A3.1. Their solution was the Metropolis-Hastings algorithm (Metropolis and Ulam 1949; Metropolis et al. 1953; Hastings 1970), which was reviewed by Chib and Greenberg (1995).",
+      "bbox_2d": [
+        112,
+        236,
+        759,
+        304
+      ]
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "content": "Suppose our goal is to draw samples from some distribution, $ p(\\theta)=f(\\theta)/K $ , where the normalizing constant, K, may be very difficult to compute. Note that Bayesian posteriors are of this form (Equation A2.4b). The Metropolis algorithm (Metropolis and Ulam 1949; Metropolis et al. 1953), which generates a sequence of draws from this distribution, is as follows:",
+      "bbox_2d": [
+        112,
+        305,
+        759,
+        373
+      ]
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "content": "1. Start with any initial value, $ \\theta_{0} $ , satisfying $ f\\left( \\theta_{0} \\right) > 0. $",
+      "bbox_2d": [
+        113,
+        378,
+        515,
+        392
+      ]
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "content": "2. Using the current value of $ \\theta $ , sample a candidate point, $ \\theta^{*} $ , from some jumping distribution, $ q(\\theta_{1},\\theta_{2})=\\operatorname* {P r}(\\theta_{1}\\rightarrow \\theta_{2}) $ , which is the probability of returning a value of $ \\theta_{2} $ given a previous value of $ \\theta_{1} $ . This distribution is also referred to as the proposal distribution or candidate-generating distribution. The only restriction on the jump density in the Metropolis algorithm is that it is symmetric, with $ q(\\theta_{1},\\theta_{2})=q(\\theta_{2},\\theta_{1}) $",
+      "bbox_2d": [
+        111,
+        396,
+        736,
+        466
+      ]
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "content": "3. Given the candidate point, $ \\theta^{*} $ , calculate the ratio of the density at the candidate and current, $ \\theta_{t-1} $ , points,",
+      "bbox_2d": [
+        112,
+        470,
+        738,
+        498
+      ]
+    },
+    {
+      "index": 8,
+      "label": "formula",
+      "content": "$$\n\\alpha = \\frac {p \\left(\\theta^ {*}\\right)}{p \\left(\\theta_ {t - 1}\\right)} = \\frac {f \\left(\\theta^ {*}\\right)}{f \\left(\\theta_ {t - 1}\\right)}\n$$",
+      "bbox_2d": [
+        356,
+        499,
+        524,
+        529
+      ]
+    },
+    {
+      "index": 9,
+      "label": "text",
+      "content": "Notice that because we are considering the ratio of p(x) under two different values, the normalizing constant, K, cancels out.",
+      "bbox_2d": [
+        146,
+        536,
+        736,
+        565
+      ]
+    },
+    {
+      "index": 10,
+      "label": "text",
+      "content": "4. If the jump increases the density $ (\\alpha>1) $ , accept the candidate point (set $ \\theta_{t}=\\theta^{*} $ ）and return to step 2. If the jump decreases the density $ (\\alpha<1) $ ）then with a probability of $ \\alpha $ we accept the candidate point, else we reject it and return to step 2. Note that $ \\alpha $ is a ratio of two likelihoods, so the probability of accepting a move is the ratio of the candidate to current likelihoods.",
+      "bbox_2d": [
+        111,
+        569,
+        738,
+        638
+      ]
+    },
+    {
+      "index": 11,
+      "label": "text",
+      "content": "We can summarize Metropolis sampling as first computing",
+      "bbox_2d": [
+        114,
+        649,
+        539,
+        663
+      ]
+    },
+    {
+      "index": 12,
+      "label": "formula",
+      "content": "$$\n\\alpha = \\min \\left(\\frac {f \\left(\\theta^ {*}\\right)}{f \\left(\\theta_ {t - 1}\\right)}, 1\\right)\n$$",
+      "bbox_2d": [
+        353,
+        677,
+        515,
+        708
+      ]
+    },
+    {
+      "index": 13,
+      "label": "text",
+      "content": "and then accepting a candidate value, $ \\theta^{*} $ , with probability $ \\alpha $ (the probability of a move). This generates a Markov chain, $ (\\theta_{0},\\theta_{1},\\dots,\\theta_{k},\\dots) $ , as the transition probabilities from $ \\theta_{t} $ to $ \\theta_{t+1} $ depend only on $ \\theta_{t} $ and not on $ (\\theta_{0},\\dots,\\theta_{t-1}) $ . Following a sufficient burn-in period (of, say, k steps), the chain approaches its stationary distribution and (as we will demonstrate shortly) samples from the vector $ (\\theta_{k+1},\\dots,\\theta_{k+n}) $ are samples from $ p(\\theta) $ .",
+      "bbox_2d": [
+        112,
+        720,
+        758,
+        789
+      ]
+    },
+    {
+      "index": 14,
+      "label": "text",
+      "content": "Hastings (1970) generalized the Metropolis algorithm by using an arbitrary (as opposed to strictly symmetric) transition probability function, $ q(\\theta_{1},\\theta_{2})=\\operatorname* {P r}(\\theta_{1}\\rightarrow \\theta_{2}) $ , and setting the acceptance probability for a candidate point as",
+      "bbox_2d": [
+        112,
+        789,
+        759,
+        831
+      ]
+    },
+    {
+      "index": 15,
+      "label": "formula",
+      "content": "$$\n\\alpha = \\min \\left(\\frac {f \\left(\\theta^ {*}\\right) q \\left(\\theta^ {*} , \\theta_ {t - 1}\\right)}{f \\left(\\theta_ {t - 1}\\right) q \\left(\\theta_ {t - 1} , \\theta^ {*}\\right)}, 1\\right)\n$$",
+      "bbox_2d": [
+        315,
+        843,
+        552,
+        875
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "image",
+      "content": "",
+      "bbox_2d": [
+        263,
+        120,
+        877,
+        325
+      ]
+    },
+    {
+      "index": 1,
+      "label": "image",
+      "content": "",
+      "bbox_2d": [
+        265,
+        336,
+        872,
+        520
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "<div align=\"center\">\n\nFigure A3.1 Traces for the samplers discussed in Example A3.3. A: A sample run when the candidate-generating distribution is a uniform over (0,100). B: A sample run when the candidate-generating distribution is a $ \\chi_{1}^{2} $\n\n</div>",
+      "bbox_2d": [
+        271,
+        535,
+        870,
+        575
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "This is the Metropolis-Hastings algorithm, and Equation A3.13 is the Hastings ratio. When the proposal distribution is symmetric, q(x,y) = q(y,x), we recover the original Metropolis algorithm.",
+      "bbox_2d": [
+        241,
+        600,
+        891,
+        642
+      ]
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "content": "Example A3.3. As a toy example, consider the scaled inverse- $ \\chi^{2} $ distribution (Equation A2.30a),",
+      "bbox_2d": [
+        271,
+        684,
+        869,
+        710
+      ]
+    },
+    {
+      "index": 5,
+      "label": "formula",
+      "content": "$$\np (x) = C \\cdot x ^ {- (n / 2 + 1)} \\cdot \\exp \\left(\\frac {- a}{2 x}\\right)\n$$",
+      "bbox_2d": [
+        450,
+        712,
+        687,
+        740
+      ]
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "content": "We wish to use the Metropolis algorithm to simulate draws from this distribution with n=3 degrees of freedom and a scaling factor of a=4. Here",
+      "bbox_2d": [
+        270,
+        749,
+        869,
+        776
+      ]
+    },
+    {
+      "index": 7,
+      "label": "formula",
+      "content": "$$\nf (x) = x ^ {- 5 / 2} \\exp [ - 4 / (2 x) ] = x ^ {- 2. 5} \\exp [ - 2 / x ]\n$$",
+      "bbox_2d": [
+        406,
+        790,
+        734,
+        807
+      ]
+    },
+    {
+      "index": 8,
+      "label": "text",
+      "content": "Suppose we take as our candidate-generating distribution a uniform over (0,100). Clearly, there is probability mass above 100 for the scaled inverse $ \\chi^{2} $ , but we assume this is sufficiently small that we can ignore it. Now let's run the algorithm. Take $ \\theta_{0}=1 $ as our starting value, and suppose the uniform returns a candidate value of $ \\theta^{*} $ = 39.82. Computing",
+      "bbox_2d": [
+        271,
+        821,
+        869,
+        873
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "content": "$ \\alpha $",
+      "bbox_2d": [
+        143,
+        126,
+        162,
+        136
+      ]
+    },
+    {
+      "index": 1,
+      "label": "formula",
+      "content": "$$\n\\alpha = \\min \\left(\\frac {f \\left(\\theta^ {*}\\right)}{f \\left(\\theta_ {t - 1}\\right)}, 1\\right) = \\min \\left(\\frac {(3 9 . 8 2) ^ {- 2 . 5} \\cdot \\exp (- 2 / 3 9 . 8 2)}{(1) ^ {- 2 . 5} \\cdot \\exp (- 2 / 2 \\cdot 1)}, 1\\right) = 0. 0 0 0 7\n$$",
+      "bbox_2d": [
+        183,
+        141,
+        696,
+        171
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "Since $ \\alpha<1 $ , the candidate value, $ \\theta^{*} $ , is accepted with a probability of 0.0007: we randomly draw U from a uniform (0,1) distribution and accept $ \\theta^{*} $ if U $ \\leq\\alpha=0.0007 $ . If U $ >\\alpha $ the candidate value is rejected, and we draw another candidate value from the proposal distribution and continue as above. A sample run resulting from first 500 values of $ \\theta $ is plotted in Figure A3.1A. Notice that there are long flat periods (corresponding to all candidate values, $ \\theta^{*} $ , being rejected). Such a chain is said to be poorly mixing (showing long periods between jumps) and is numerically inefficient for sampling the entire probability space defined by the target distribution. Conversely, balancing the poor mixing is the fact that when jumps occur, they tend to be large, thus exploring the extreme values of this distribution.",
+      "bbox_2d": [
+        140,
+        176,
+        739,
+        290
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "In contrast, suppose our proposal distribution is a $ \\chi_{1}^{2} $ . As this distribution is not symmetric, we must employ Metropolis-Hastings (see Example A3.5 for the details). A resulting Metropolis-Hastings sampling run is shown in Figure A3.1B. Note that the time series looks like white noise, and the chain is said to be well mixing. However, note that most jumps are small (< 5), with fewer extreme values sampled than under the uniform proposal distribution.",
+      "bbox_2d": [
+        140,
+        290,
+        739,
+        353
+      ]
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "content": "Example A3.4. This rather technical example shows that the Markov chain generated by the Metropolis-Hastings algorithm has a stationary distribution which corresponds to $ p ( x ) $ . Hence, draws from the stationary phase of this chain correspond to random draws from the distribution given by $ p ( x ) $ . We do so by showing that, under this chain, $ p ( x ) $ satisfies the detailed balance equation (A3.10), and hence it must be the stationary distribution for the Markov chain.",
+      "bbox_2d": [
+        141,
+        401,
+        737,
+        475
+      ]
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "content": "Under Metropolis-Hasting, we sample from $ q ( x,y)=\\operatorname* {P r} ( x \\rightarrow y \\mid q ) $ and then accept the move with probability $ \\alpha ( x,y), $ so the transition probability kernel is given by",
+      "bbox_2d": [
+        141,
+        476,
+        738,
+        502
+      ]
+    },
+    {
+      "index": 6,
+      "label": "formula",
+      "content": "$$\n\\Pr (x \\rightarrow y) = q (x, y) \\alpha (x, y) = q (x, y) \\cdot \\min \\left[ \\frac {p (y) q (y , x)}{p (x) q (x , y)}, 1 \\right]\n$$",
+      "bbox_2d": [
+        199,
+        507,
+        619,
+        537
+      ]
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "content": "If the Metropolis-Hasting kernel satisfies $ P ( x \\rightarrow y ) p ( x ) = P ( y \\rightarrow x ) p ( y ) $ , or",
+      "bbox_2d": [
+        141,
+        543,
+        655,
+        557
+      ]
+    },
+    {
+      "index": 8,
+      "label": "formula",
+      "content": "$$\nq (x, y) \\alpha (x, y) p (x) = q (y, x) \\alpha (y, x) p (y) \\quad \\mathrm {f o r a l l} x, y\n$$",
+      "bbox_2d": [
+        227,
+        562,
+        592,
+        576
+      ]
+    },
+    {
+      "index": 9,
+      "label": "text",
+      "content": "then the stationary distribution from this kernel corresponds to draws from the target distribution, $ p ( x ) $",
+      "bbox_2d": [
+        140,
+        583,
+        737,
+        606
+      ]
+    },
+    {
+      "index": 10,
+      "label": "text",
+      "content": "We show that the balance equation is indeed satisfied with this kernel by considering the three possible cases for any particular (x,y) pair:",
+      "bbox_2d": [
+        141,
+        607,
+        738,
+        633
+      ]
+    },
+    {
+      "index": 11,
+      "label": "text",
+      "content": "1. $ q ( x, y ) p ( x ) = q ( y, x ) p ( y ) $ . Here $ \\alpha ( x, y ) = \\alpha ( y, x ) = 1 $ implying",
+      "bbox_2d": [
+        142,
+        637,
+        607,
+        651
+      ]
+    },
+    {
+      "index": 12,
+      "label": "formula",
+      "content": "$$\nP (x \\rightarrow y) p (x) = q (x, y) p (x) \\quad \\mathrm {a n d} \\quad P (y \\rightarrow x) p (y) = q (y, x) p (y)\n$$",
+      "bbox_2d": [
+        228,
+        655,
+        680,
+        670
+      ]
+    },
+    {
+      "index": 13,
+      "label": "text",
+      "content": "Under our assumption that $ q ( x,y ) p ( x )=q ( y,x ) p ( y ) $ , this reduces to $ P ( x \\rightarrow y ) p ( x )=P ( y \\rightarrow x ) p ( y ) $ , showing that (for this case), the",
+      "bbox_2d": [
+        172,
+        676,
+        627,
+        706
+      ]
+    },
+    {
+      "index": 14,
+      "label": "text",
+      "content": "detailed balance equation holds.",
+      "bbox_2d": [
+        172,
+        701,
+        384,
+        711
+      ]
+    },
+    {
+      "index": 15,
+      "label": "text",
+      "content": "2. $ q ( x, y ) p ( x ) > q ( y, x ) p ( y ) $ , in which case",
+      "bbox_2d": [
+        141,
+        724,
+        448,
+        737
+      ]
+    },
+    {
+      "index": 16,
+      "label": "formula",
+      "content": "$$\n\\alpha (x, y) = \\frac {p (y) q (y , x)}{p (x) q (x , y)} \\quad \\mathrm {a n d} \\quad \\alpha (y, x) = 1\n$$",
+      "bbox_2d": [
+        310,
+        743,
+        598,
+        772
+      ]
+    },
+    {
+      "index": 17,
+      "label": "text",
+      "content": "Hence,",
+      "bbox_2d": [
+        171,
+        777,
+        222,
+        789
+      ]
+    },
+    {
+      "index": 18,
+      "label": "formula",
+      "content": "$$\n\\begin{array}{l} P (x \\rightarrow y) p (x) = q (x, y) \\alpha (x, y) p (x) \\\\ = q (x, y) \\frac {p (y) q (y , x)}{p (x) q (x , y)} p (x) \\\\ = q (y, x) p (y) = q (y, x) \\alpha (y, x) p (y) \\\\ = P (y \\rightarrow x) p (y) \\\\ \\end{array}\n$$",
+      "bbox_2d": [
+        278,
+        795,
+        630,
+        872
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "content": "3. $ q ( x,y ) p ( x ) < q ( y,x ) p ( y ) $ . Here",
+      "bbox_2d": [
+        270,
+        123,
+        526,
+        138
+      ]
+    },
+    {
+      "index": 1,
+      "label": "formula",
+      "content": "$$\n\\alpha (x, y) = 1 \\quad \\mathrm {a n d} \\quad \\alpha (y, x) = \\frac {q (x , y) p (x)}{q (y , x) p (y)}\n$$",
+      "bbox_2d": [
+        440,
+        147,
+        728,
+        177
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "Following the same logic just used yields",
+      "bbox_2d": [
+        301,
+        185,
+        573,
+        199
+      ]
+    },
+    {
+      "index": 3,
+      "label": "formula",
+      "content": "$$\n\\begin{array}{l} P (y \\rightarrow x) p (y) = q (y, x) \\alpha (y, x) p (y) \\\\ = q (y, x) \\left(\\frac {q (x , y) p (x)}{q (y , x) p (y)}\\right) p (y) \\\\ = q (x, y) p (x) = q (x, y) \\alpha (x, y) p (x) \\\\ = P (x \\rightarrow y) p (x) \\\\ \\end{array}\n$$",
+      "bbox_2d": [
+        406,
+        207,
+        763,
+        287
+      ]
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "content": "which concludes the proof.",
+      "bbox_2d": [
+        302,
+        297,
+        482,
+        310
+      ]
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "content": "## Burning-in the Sampler",
+      "bbox_2d": [
+        243,
+        350,
+        426,
+        364
+      ]
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "content": "A key issue in the successful implementation of Metropolis-Hastings, or any other MCMC sampler, is the number of steps (iterations) until the chain approaches stationarity (the length of the burn-in period), as initial values are somewhat dependent upon the starting position. Typically the first 1,000 to 50,000 (or more) values of the chain are discarded, and then various convergence tests (see below) are used to assess whether stationarity has indeed been reached.",
+      "bbox_2d": [
+        240,
+        367,
+        890,
+        449
+      ]
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "content": "A poor choice of either a proposal distribution or a starting value can greatly increase the required burn-in time, and an area of current research is whether an optimal starting point and proposal distribution can be found. One suggestion is to initiate the chain as close to the center of the distribution as possible, for example, taking a value close to the distribution's mode (such as using an approximate MLE as the starting value). Geyer (2011), however, offered the simple advice that \"any point you don't mind having in a sample is a good starting point.\"",
+      "bbox_2d": [
+        240,
+        450,
+        889,
+        545
+      ]
+    },
+    {
+      "index": 8,
+      "label": "text",
+      "content": "A chain is said to be poorly mixing if it stays in small regions of the parameter space for long periods of time, as opposed to a well-mixing chain, which seems to happily explore the entire space (albeit perhaps by very small steps, requiring very many draws to fully survey the entire space). A poorly mixing chain can arise because the target distribution is multimodal and our choice of starting values (or the chance steps that were initially taken) traps us near one of the modes (such multimodal posteriors can arise if we have a strong prior that is in conflict with the observed data). Two approaches have been suggested for situations where the target distribution may have multiple peaks. The most straightforward is to use widely dispersed initial values to start several different chains (Gelman and Rubin 1992). A less obvious approach, which we will discuss shortly, is to use simulated annealing on a single chain.",
+      "bbox_2d": [
+        241,
+        545,
+        890,
+        695
+      ]
+    },
+    {
+      "index": 9,
+      "label": "text",
+      "content": "Even after an apparently successful burn-in, the real fear for the MCMC practitioner is that the chain is simply showing pseudo-convergence. It appears to have reached an equilibrium, when in fact it is simply exploring (albeit perhaps rather fully) some subset of the entire distribution. If the transition time between different parts of the full distribution is long relative to the sample size, the MCMC user will happily observe convergence and believe that the simulation is a fair representation of the true posterior. The unfortunate feature is that for any MCMC, the skeptic, or a hardened reviewer, can claim (with some justification) that convergence has not been demonstrated. The problem is akin to large-sample results in statistics (such as the large-sample features of ML; LW Appendix 4): the theory says that for a sufficiently large sample, certain desirable properties hold, but usually says rather little about how \"large\" is large. For a complex posterior, the required chain size might be far, far larger than an investigator envisions. The only real solution is to run the chain for as long as possible. In such a setting, Geyer (2011) argued, a burn-in is not required,",
+      "bbox_2d": [
+        240,
+        695,
+        891,
+        874
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "content": "and noted that \"Burn-in is mostly harmless, which is perhaps why the practice persists. But everyone should understand that it is unnecessary, and those who do not use it are not thereby making an error.\"",
+      "bbox_2d": [
+        111,
+        122,
+        760,
+        165
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "## Simulated Annealing",
+      "bbox_2d": [
+        113,
+        183,
+        277,
+        196
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "Simulated annealing was developed for finding the maximum of complex functions with multiple peaks where standard hill-climbing approaches may trap the algorithm on a less than optimal peak (Kirkpatrick et al. 1983). The idea is that when we initially start sampling the space, we will accept a reasonable probability of a down-hill move in order to explore the entire space. As the process proceeds, we decrease the probability of such down-hill moves. The analogy (and hence the term) is the annealing of a crystal as temperature decreases: initially there is a lot of movement, which gets smaller and smaller as the temperature cools. Simulated annealing is very closely related to Metropolis sampling, differing only in that the probability $ \\alpha $ of a move is given by",
+      "bbox_2d": [
+        111,
+        201,
+        760,
+        326
+      ]
+    },
+    {
+      "index": 3,
+      "label": "formula",
+      "content": "$$\n\\alpha_ {S A} = \\min \\left[ 1, \\left(\\frac {f \\left(\\theta^ {*}\\right)}{f \\left(\\theta_ {t - 1}\\right)}\\right) ^ {1 / T (t)} \\right] = \\alpha^ {1 / T (t)}\n$$",
+      "bbox_2d": [
+        277,
+        335,
+        592,
+        372
+      ]
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "content": "where the function $ T ( t ) $ is called the cooling schedule (setting $ T=1 $ recovers Metropolis sampling), and the particular value of $ T $ at any point in the chain is called the temperature For example, suppose $ f(\\theta^{*})/f(\\theta_{t-1})=0.5 $ . If $ T=100,\\alpha=0.93 $ , while for $ T=1,\\alpha=0.5 $ and for $ T=1/10,\\alpha=0.0098 $ . Hence, we start off with a high probability of a jump and then cool down to a very low jump probability. Replacing $ \\alpha $ with the Hastings ratio (Equation A3.13) allows us to apply simulated annealing to Metropolis-Hastings.",
+      "bbox_2d": [
+        112,
+        384,
+        759,
+        466
+      ]
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "content": "A function with geometric decline is typically used for $ T ( t ) $ . For example, to start at $ T_{0} $ and cool down to a final temperature of $ T_{f} $ over n steps, we can set",
+      "bbox_2d": [
+        112,
+        466,
+        759,
+        494
+      ]
+    },
+    {
+      "index": 6,
+      "label": "formula",
+      "content": "$$\nT (t) = T _ {0} \\left(\\frac {T _ {f}}{T _ {0}}\\right) ^ {t / n}\n$$",
+      "bbox_2d": [
+        363,
+        506,
+        506,
+        540
+      ]
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "content": "More generally, if we wish to cool off to $ T_{f} $ by time n and then keep the temperature constant at $ T_{f} $ for the rest of the run, we can take",
+      "bbox_2d": [
+        112,
+        550,
+        759,
+        579
+      ]
+    },
+    {
+      "index": 8,
+      "label": "formula",
+      "content": "$$\nT (t) = \\max \\left(T _ {0} \\left(\\frac {T _ {f}}{T _ {0}}\\right) ^ {t / n}, T _ {f}\\right)\n$$",
+      "bbox_2d": [
+        320,
+        591,
+        548,
+        627
+      ]
+    },
+    {
+      "index": 9,
+      "label": "text",
+      "content": "In particular, to cool down to Metropolis sampling (by step n), we set $ T_{f}=1 $ and the cooling schedule becomes",
+      "bbox_2d": [
+        111,
+        639,
+        759,
+        666
+      ]
+    },
+    {
+      "index": 10,
+      "label": "formula",
+      "content": "$$\nT (t) = \\max \\left(T _ {0} ^ {1 - t / n}, 1\\right)\n$$",
+      "bbox_2d": [
+        348,
+        663,
+        520,
+        686
+      ]
+    },
+    {
+      "index": 11,
+      "label": "text",
+      "content": "## Choosing a Jumping (Proposal) Distribution",
+      "bbox_2d": [
+        112,
+        710,
+        446,
+        725
+      ]
+    },
+    {
+      "index": 12,
+      "label": "text",
+      "content": "The Metropolis sampler works with any symmetric proposal (or jumping) distribution, while Metropolis-Hastings allows for more general distributions. So how do we determine our best option for a proposal distribution? There are two general approaches: random walks and independent chain sampling. Under a sampler using a proposal distribution based on a random-walk chain, the new value, y, equals the current value, x, plus a random variable, namely, z,",
+      "bbox_2d": [
+        111,
+        727,
+        759,
+        811
+      ]
+    },
+    {
+      "index": 13,
+      "label": "formula",
+      "content": "$$\ny = x + z\n$$",
+      "bbox_2d": [
+        399,
+        811,
+        472,
+        824
+      ]
+    },
+    {
+      "index": 14,
+      "label": "text",
+      "content": "In this case, $ q ( x,y)=g ( y-x)=g ( z), $ the density associated with the random variable z. If $ g ( z )=g (- z ), $ i.e., the density for the random variable z is symmetric (as occurs with a",
+      "bbox_2d": [
+        112,
+        830,
+        759,
+        859
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "content": "normal or multivariate normal with a mean of zero, or a uniform centered around zero), then we can use Metropolis sampling, as $ q ( x,y ) / q ( y,x )=g ( z ) / g ( - z )=1 $ . The variance of the proposal distribution can be thought of as a tuning parameter that is adjusted to achieve better mixing.",
+      "bbox_2d": [
+        241,
+        123,
+        889,
+        177
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "Under a proposal distribution using an independent chain, the probability of jumping to point y is independent of the current position (x) of the chain, namely, q(x,y) = g(y). The candidate value is simply drawn from a proposal distribution, independent of the current value (see Examples A3.3 and A3.5). Again, any number of standard distributions can be used for g(y). Note that in this case, except for a uniform, the proposal distribution is generally not symmetric, as g(x) is generally not equal to g(y) (for $ x\\neq y $), and Metropolis-Hasting sampling must be used.",
+      "bbox_2d": [
+        241,
+        178,
+        889,
+        273
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "As mentioned, we can tune the proposal distribution to adjust the mixing, and in particular the acceptance probability, of the chain. This is generally accomplished by adjusting the standard deviation (SD) of the proposal distribution. This can be done by adjusting the variance for a normal or adjusting the eigenvalues of the covariance matrix for a multivariate normal. Likewise, one can increase or decrease the range, $ (-a,a) $ , if a uniform is used, or change the degrees of freedom (df) if a $ \\chi^{2} $ is used (variance increases with the df). To increase the acceptance probability, one decreases the proposal distribution SD. There is a tradeoff in that if the SD is too large, jumps are potentially large (which is good), but are usually not accepted (which is a problem). This leads to high autocorrelation (see below) and very poor mixing, requiring much longer chains. On the other hand, if the proposal SD is too small, moves will generally be accepted (there is a high acceptance probability), but they will also be small, again generating high autocorrelations and poor mixing.",
+      "bbox_2d": [
+        241,
+        273,
+        890,
+        439
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "Example A3.5. Suppose we wish to use a $ \\chi^{2} $ as our proposal distribution. Recall from Equation A2.27b, that for $ x\\sim\\chi_{n}^{2} $",
+      "bbox_2d": [
+        271,
+        479,
+        868,
+        506
+      ]
+    },
+    {
+      "index": 4,
+      "label": "formula",
+      "content": "$$\ng (x) \\propto x ^ {n / 2 - 1} e ^ {- x / 2}\n$$",
+      "bbox_2d": [
+        498,
+        519,
+        643,
+        535
+      ]
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "content": "Thus, $ q ( x,y)=g ( y)=C \\cdot y^{n / 2-1} e^{-y / 2}. $ Note that $ q ( x,y) $ is not symmetric, as $ q ( y,x)= $ $ g ( x ) \\neq g ( y )=q ( x,y). $ Hence, we must use Metropolis-Hastings sampling, with an acceptance probability of",
+      "bbox_2d": [
+        271,
+        549,
+        868,
+        589
+      ]
+    },
+    {
+      "index": 6,
+      "label": "formula",
+      "content": "$$\n\\alpha (x, y) = \\min \\left[ \\frac {p (y) q (y , x)}{p (x) q (x , y)}, 1 \\right] = \\min \\left[ \\frac {p (y) g (x)}{p (x) g (y)}, 1 \\right] = \\min \\left[ \\frac {p (y) x ^ {n / 2 - 1} e ^ {- x / 2}}{p (x) y ^ {n / 2 - 1} e ^ {- y / 2}}, 1 \\right]\n$$",
+      "bbox_2d": [
+        275,
+        602,
+        861,
+        636
+      ]
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "content": "If we use the same target distribution as in Example A3.3 (a scaled inverse- $ \\chi^{2} $ ), $ p ( x )= C \\cdot x^{-2.5} e^{-2 / x} $ , the rejection probability becomes",
+      "bbox_2d": [
+        270,
+        648,
+        868,
+        676
+      ]
+    },
+    {
+      "index": 8,
+      "label": "formula",
+      "content": "$$\n\\alpha (x, y) = \\min \\left[ \\frac {\\left(y ^ {- 2 . 5} e ^ {- 2 / y}\\right) \\left(x ^ {n / 2 - 1} e ^ {- x / 2}\\right)}{\\left(x ^ {- 2 . 5} e ^ {- 2 / x}\\right) \\left(y ^ {n / 2 - 1} e ^ {- y / 2}\\right)}, 1 \\right]\n$$",
+      "bbox_2d": [
+        395,
+        690,
+        742,
+        723
+      ]
+    },
+    {
+      "index": 9,
+      "label": "text",
+      "content": "Results for a run of the sampler under two different proposal distributions (a $ \\chi_{2}^{2} $ and a $ \\chi_{10}^{2} $ are plotted in Figure A3.2. The $ \\chi_{2}^{2} $ has the smaller variance, and thus a higher acceptance probability. Further, it seems to explore more of the distribution space than a $ \\chi_{10}^{2} $ (compare the number of values above 4 in both traces).",
+      "bbox_2d": [
+        271,
+        735,
+        870,
+        788
+      ]
+    },
+    {
+      "index": 10,
+      "label": "text",
+      "content": "## Autocorrelation and Sample Size Inflation",
+      "bbox_2d": [
+        243,
+        826,
+        560,
+        841
+      ]
+    },
+    {
+      "index": 11,
+      "label": "text",
+      "content": "We often expect adjacent members from an MCMC sequence to be positively correlated, and we can quantify the nature of this correlation by using an autocorrelation function. Consider",
+      "bbox_2d": [
+        241,
+        844,
+        889,
+        873
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "content": "<div align=\"center\">\n\n(A) 10 df\n\n</div>",
+      "bbox_2d": [
+        170,
+        120,
+        233,
+        133
+      ]
+    },
+    {
+      "index": 1,
+      "label": "image",
+      "content": "",
+      "bbox_2d": [
+        116,
+        126,
+        758,
+        237
+      ]
+    },
+    {
+      "index": 2,
+      "label": "image",
+      "content": "",
+      "bbox_2d": [
+        116,
+        245,
+        757,
+        449
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "<div align=\"center\">\n\nFigure A3.2 Trace plots for the two samplers discussed in Example A3.5. A: The proposal distribution is a $ \\chi_{10}^{2} $ . B: The proposal distribution is a $ \\chi_{2}^{2} $\n\n</div>",
+      "bbox_2d": [
+        141,
+        461,
+        738,
+        489
+      ]
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "content": "a sequence, $ (\\theta_{1},\\dots ,\\theta_{n}) $ , of length n. Correlations can occur between adjacent members, $ \\rho(\\theta_{i},\\theta_{i+1})\\neq0 $ , and, more generally, between more distant members, $ \\rho(\\theta_{i},\\theta_{i+k})\\neq0 $ . The kth order autocorrelation, $ \\rho_{k} $ , can be estimated by",
+      "bbox_2d": [
+        113,
+        514,
+        758,
+        557
+      ]
+    },
+    {
+      "index": 5,
+      "label": "formula",
+      "content": "$$\n\\widehat {\\rho} _ {k} = \\frac {\\operatorname {C o v} \\left(\\theta_ {t} , \\theta_ {t + k}\\right)}{\\operatorname {V a r} \\left(\\theta_ {t}\\right)} = \\frac {\\sum_ {t = 1} ^ {n - k} \\left(\\theta_ {t} - \\bar {\\theta}\\right) \\left(\\theta_ {t + k} - \\bar {\\theta}\\right)}{\\sum_ {t = 1} ^ {n - k} \\left(\\theta_ {t} - \\bar {\\theta}\\right) ^ {2}}, \\quad \\mathrm {w i t h} \\quad \\bar {\\theta} = \\frac {1}{n} \\sum_ {t = 1} ^ {n} \\theta_ {t}\n$$",
+      "bbox_2d": [
+        156,
+        566,
+        661,
+        639
+      ]
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "content": "An important result from the theory of time series analysis is that if the values of $ \\theta_{t} $ are from a stationary (and correlated) process, correlated draws still provide an unbiased picture of the distribution provided the sample size is sufficiently large. The reason for this large-sample stipulation is that, strictly speaking, Equation A3.16 applies only to a stationary process.",
+      "bbox_2d": [
+        112,
+        648,
+        759,
+        704
+      ]
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "content": "Some indication of the required sample size comes from the theory of a first-order autoregressive process $ ( A R_{1} ) $ ,where",
+      "bbox_2d": [
+        112,
+        704,
+        759,
+        732
+      ]
+    },
+    {
+      "index": 8,
+      "label": "formula",
+      "content": "$$\n\\theta_ {t} = \\mu + \\alpha \\left(\\theta_ {t - 1} - \\mu\\right) + \\epsilon\n$$",
+      "bbox_2d": [
+        342,
+        740,
+        528,
+        755
+      ]
+    },
+    {
+      "index": 9,
+      "label": "text",
+      "content": "where $ | \\alpha | < 1 $ and $ \\epsilon $ is white noise, namely, $ \\epsilon\\sim N(0,\\sigma^{2}) $ . Here $ \\rho_{1}=\\alpha $ and the kth order autocorrelation is given by $ \\rho_{k}=\\rho_{1}^{k}=\\alpha^{k} $ . Under this process, $ E(\\overline{\\theta})=\\mu $ with a standard error of",
+      "bbox_2d": [
+        111,
+        763,
+        759,
+        804
+      ]
+    },
+    {
+      "index": 10,
+      "label": "formula",
+      "content": "$$\n\\mathrm {S E} \\left(\\bar {\\theta}\\right) = \\frac {\\sigma}{\\sqrt {n}} \\sqrt {\\frac {1 + \\rho}{1 - \\rho}}\n$$",
+      "bbox_2d": [
+        352,
+        802,
+        519,
+        833
+      ]
+    },
+    {
+      "index": 11,
+      "label": "text",
+      "content": "The first ratio is the standard error for white noise, while the second ratio, $ \\sqrt{(1+\\rho)}/(1-\\rho) $ is the sample size inflation factor (SSIF), which shows how the autocorrelation inflates the",
+      "bbox_2d": [
+        112,
+        840,
+        757,
+        873
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "content": "sampling variance relative to independent samples. For $ \\rho=0. 5, 0. 7 5, 0. 9, 0. 9 5 $ ,and 0.99,the associated SSIF values become 3,7,19,39,and 199,respectively. With an autocorrelation of 0.95 (which is not uncommon in a Metropolis-Hastings sequence), roughly 40 times as many iterations are required for the same precision as with an uncorrelated sequence.",
+      "bbox_2d": [
+        241,
+        123,
+        890,
+        178
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "One historical strategy for reducing autocorrelation is thinning (or subsampling) the output, which involves storing only every mth point after the burn-in period. Suppose a Metropolis-Hastings sequence follows an $ A R_{1} $ model, with $ \\rho_{1}=0.99 $ . In this case, sampling every 50,100, and 500 points gives the correlation between the thinned samples as 0.605 (= $ 0.99^{50} $ ), 0.366, and 0.007, respectively, returning SSIF values of 2, 1.5, and 1.007. In addition to reducing autocorrelation, thinning the sequence also saves computer memory. However, this throws out a huge amount of the data. If computer memory is not an issue, Geyer (1992) and MacEachern and Berliner (1994) found that it is more efficient (yielding smaller Monte Carlo variances) to keep the entire chain than to use thinning.",
+      "bbox_2d": [
+        240,
+        178,
+        890,
+        301
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "## The Monte Carlo Variance of a MCMC-Based Estimate",
+      "bbox_2d": [
+        242,
+        312,
+        651,
+        326
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "Suppose we are interested in using a burned-in MCMC sequence, $ (\\theta_{1},\\dots,\\theta_{n}) $ , to estimate some function, $ h(\\theta) $ , of the target distribution, such as a mean, variance, or specific quantile (namely, a specific cumulative probability value). Since we are drawing random variables associated with the Monte Carlo estimate, there is a sampling variance of",
+      "bbox_2d": [
+        241,
+        330,
+        889,
+        386
+      ]
+    },
+    {
+      "index": 4,
+      "label": "formula",
+      "content": "$$\n\\widehat {h} = \\frac {1}{n} \\sum_ {i = 1} ^ {n} h \\left(\\theta_ {i}\\right)\n$$",
+      "bbox_2d": [
+        505,
+        394,
+        626,
+        429
+      ]
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "content": "A similar issue arose with the error in Monte Carlo integration, where we used the sample variance around $ \\widehat{h} $ to compute the Monte Carlo variance, dividing this by the number of iterations to yield a standard error (Equations A3.1e and A3.5c). This strategy exploited the fact that draws for Monte Carlo integration are independent and therefore uncorrelated. In stark contrast, we expect draws in an MCMC sequence to be highly dependent. A standard sample variance estimator ignores these correlations, potentially yielding a highly biased estimate of the Monte Carlo variance (see Equation A3.17b).",
+      "bbox_2d": [
+        241,
+        437,
+        890,
+        535
+      ]
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "content": "One direct approach is to run several chains (or extract subsamples from a very long chain) and use the between-chain variance in $ \\widehat{h} $ as our variance estimate. Specifically, if $ \\widehat{h}_{j} $ denotes the estimate for chain j $ (1\\leq j\\leq c) $ , where each of the c chains has the same length, then the estimated variance of the Monte Carlo estimate is",
+      "bbox_2d": [
+        241,
+        535,
+        888,
+        592
+      ]
+    },
+    {
+      "index": 7,
+      "label": "formula",
+      "content": "$$\n\\operatorname {V a r} \\left(\\widehat {h}\\right) = \\frac {1}{c - 1} \\sum_ {j = 1} ^ {c} \\left(\\widehat {h} _ {j} - \\widehat {h ^ {*}}\\right) ^ {2} \\quad \\mathrm {w h e r e} \\quad \\widehat {h ^ {*}} = \\frac {1}{c} \\sum_ {j = 1} ^ {c} \\widehat {h} _ {j}\n$$",
+      "bbox_2d": [
+        357,
+        597,
+        773,
+        634
+      ]
+    },
+    {
+      "index": 8,
+      "label": "text",
+      "content": "Using only a single chain, an alternative approach is to use results from the theory of time series to account for the correlations among members in the chain. To start, we estimate the lag- k autocovariance associated with h by",
+      "bbox_2d": [
+        241,
+        642,
+        890,
+        685
+      ]
+    },
+    {
+      "index": 9,
+      "label": "formula",
+      "content": "$$\n\\widehat {\\gamma} (k) = \\frac {1}{n - 1} \\sum_ {i = 1} ^ {n - k} \\left[ \\left(h \\left(\\theta_ {i}\\right) - \\widehat {h}\\right) \\left(h \\left(\\theta_ {i + k}\\right) - \\widehat {h}\\right) \\right]\n$$",
+      "bbox_2d": [
+        389,
+        695,
+        739,
+        730
+      ]
+    },
+    {
+      "index": 10,
+      "label": "text",
+      "content": "This is natural generalization of the kth order autocorrelation (Equation A3.16) to the random variable generated by $ h(\\theta_{i}) $ . Geyer (1992, 2011) obtained the resulting estimate of the Monte Carlo variance as",
+      "bbox_2d": [
+        241,
+        738,
+        890,
+        779
+      ]
+    },
+    {
+      "index": 11,
+      "label": "formula",
+      "content": "$$\n\\operatorname {V a r} \\left(\\widehat {h}\\right) = \\frac {1}{n} \\left(\\widehat {\\gamma} (0) + 2 \\sum_ {i = 1} ^ {2 \\delta + 1} \\widehat {\\gamma} (i)\\right)\n$$",
+      "bbox_2d": [
+        443,
+        785,
+        686,
+        823
+      ]
+    },
+    {
+      "index": 12,
+      "label": "text",
+      "content": "Note that the zero-lag term, $ \\widehat{\\gamma} (0) $ , is simply the standard variance estimate when observations are uncorrelated, while $ \\delta $ is the largest positive integer satisfying $ \\widehat{\\gamma} (2\\delta)+\\widehat{\\gamma} (2\\delta+1)>0 $ (i.e., the higher order, or lag, autocovariances above $ \\delta $ are zero).",
+      "bbox_2d": [
+        242,
+        830,
+        888,
+        873
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "content": "One measure of the effects of autocorrelation between elements in the sampler is the effective chain size,",
+      "bbox_2d": [
+        111,
+        123,
+        758,
+        150
+      ]
+    },
+    {
+      "index": 1,
+      "label": "formula",
+      "content": "$$\n\\widehat {n} = \\frac {\\widehat {\\gamma} (0)}{\\operatorname {V a r} \\left(\\widehat {h}\\right)}\n$$",
+      "bbox_2d": [
+        385,
+        148,
+        482,
+        185
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "where $ \\widehat{\\gamma} (0) $ is the standard sample variance for uncorrelated observations. In the absence of autocorrelation between members, $ \\widehat{n}=n. $",
+      "bbox_2d": [
+        111,
+        188,
+        759,
+        216
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "## CONVERGENCE DIAGNOSTICS",
+      "bbox_2d": [
+        112,
+        229,
+        375,
+        242
+      ]
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "content": "The careful reader will note that we have still not answered the fundamental, and vexing, question of how to determine whether the sampler has reached its stationary distribution. Many tests for stationarity have been proposed, and all can indeed show that stationarity has not yet been reached. However, it is important to stress that negative results from these tests are not conclusive evidence that the sampler has achieved stationarity. Comments from various published reviews on the subject stress this point: \"all of the methods can fail to detect the sorts of convergence failure that they were designed to identify\" (Cowles and Carlin 1996); \"It is clear that the usefulness of convergence assessment methods are limited by their potential unreliability\" (Brooks and Roberts 1998); \"Diagnostics can only reliably be used to determine a lack of convergence and not detect convergence per se\" (Brooks et al. 2003); and \"no method works in every case\" (El Adlouni et al. 2006). Despite this very serious concern, a variety of methods can certainly show a failure of convergence given the burn-in period used for a sampler. The greater question about trust is what we say when convergence diagnostics do not indicate a problem. We consider a few basic approaches here, while additional diagnostics were reviewed by Gelman and Rubin (1992), Geyer (1992), Raftery and Lewis (1992b), Cowles and Carlin (1996), Brooks and Roberts (1998), Kass et al. (1998), Mengerson et al. (1999), Robert and Casella (2004), El Adlouni et al. (2006), and Peltonen et al. (2009).",
+      "bbox_2d": [
+        111,
+        256,
+        760,
+        501
+      ]
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "content": "An extra level of complications occurs in models using revisable jump MCMC, wherein the chain actually jumps between difference classes of models. For example, suppose the number of QTLs, k, is a random variable. While the chain may come to a nearly equilibrium distribution for the parameters associated with a given value of k fairly quickly, one must also sample a sufficient number of jumps between models with different values of k to fully explore the model space. One might incorrectly assume that there appears to be convergence when the model quickly equilibrates for a given value of k, but jumps very slowly between different values of k so that only a small sample of the k space has been explored.",
+      "bbox_2d": [
+        111,
+        502,
+        760,
+        612
+      ]
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "content": "## Visual Analysis",
+      "bbox_2d": [
+        113,
+        623,
+        235,
+        636
+      ]
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "content": "As shown in Figures A3.1 and A3.2, one should always examine the time series trace, the plot of the random variable being generated versus the number of iterations. In addition to showing evidence for poor mixing, such traces can also suggest a minimum burn-in period for some starting value. For example, suppose the trace moves very slowly away from the initial value to a rather different value (say after 5000 iterations), after which it appears to settle down. Clearly, the burn-in period is at least 5000 in this case. It must be cautioned that the actual burn-in time may be far longer than suggested by the trace. Nevertheless, the trace often indicates that more burn-in time is needed. A second approach is to run either several chains or subsample from a much longer chain, and then compare the traces. The expectation under stationarity is that these samples are drawn from the same distribution. Even if visual analysis suggests that two (or more) chains appear to be very similar and are both well-behaved, the concern is that both might be stuck in the same local maximum region of a complex posterior. In such cases, the impression of stationarity and consistency is presented, but significantly longer runs for each chain would show a different outcome.",
+      "bbox_2d": [
+        111,
+        641,
+        760,
+        832
+      ]
+    },
+    {
+      "index": 8,
+      "label": "text",
+      "content": "Correlograms, which plot serial autocorrelations as a function of the time lag, are also very useful in accessing a run from an MCMC sampler. A plot of $ \\rho_{k} $ versus k (the kth order autocorrelation versus the lag) should show geometric decay if the sampler series closely",
+      "bbox_2d": [
+        111,
+        831,
+        760,
+        873
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "content": "follows an $ A R_{1} $ model. A plot of the partial autocorrelations as a function of lag is also useful. The kth partial autocorrelation is the excess correlation not accounted for by a $ k-1 $ order autogressive model $ (A R_{k-1}) $ . Hence, if the first-order model fully fits the data, the second-order partial autocorrelation is zero, as the lagged autocorrelations are accounted for by the $ A R_{1} $ model (i.e., $ \\rho_{k}=\\rho_{1}^{k} $ ). Both of these autocorrelation plots can indicate an underlying correlation structure that may not be obvious from the time series trace.",
+      "bbox_2d": [
+        241,
+        123,
+        889,
+        206
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "## More Formal Approaches",
+      "bbox_2d": [
+        243,
+        217,
+        438,
+        231
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "Gelman and Rubin's (1992) proposal was to first generate m separate chains at initial locations that are widely dispersed in the parameter space, with each returning a burned-in and thinned (such that autocorrelations between estimates are near zero) sequence of length n. Their approach is essentially an ANOVA, contrasting the estimated among-chain variance with its within-chain value. For the univariate case, let",
+      "bbox_2d": [
+        241,
+        234,
+        890,
+        304
+      ]
+    },
+    {
+      "index": 3,
+      "label": "formula",
+      "content": "$$\nB = \\frac {n}{m - 1} \\sum_ {i = 1} ^ {m} \\left(\\bar {\\theta} _ {i}. - \\bar {\\theta} _ {..}\\right) ^ {2}\n$$",
+      "bbox_2d": [
+        470,
+        314,
+        661,
+        349
+      ]
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "content": "be the among-chain variance, where $ \\overline{\\theta}_{i}. $ is the mean parameter value for chain i, and $ \\overline{\\theta}_{.} $ is the grand mean over all chains. Likewise, for the within-chain variance, we define",
+      "bbox_2d": [
+        241,
+        361,
+        888,
+        391
+      ]
+    },
+    {
+      "index": 5,
+      "label": "formula",
+      "content": "$$\nW = \\frac {1}{m} \\left(\\frac {1}{n - 1} \\sum_ {i = 1} ^ {m} \\sum_ {j = 1} ^ {n} \\left(\\bar {\\theta} _ {i j} - \\bar {\\theta} _ {i .}\\right) ^ {2}\\right)\n$$",
+      "bbox_2d": [
+        431,
+        402,
+        697,
+        444
+      ]
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "content": "A combined estimate of the variance is",
+      "bbox_2d": [
+        243,
+        456,
+        527,
+        470
+      ]
+    },
+    {
+      "index": 7,
+      "label": "formula",
+      "content": "$$\n\\widehat {\\sigma^ {2}} = \\frac {n - 1}{n} W + \\frac {1}{n} B\n$$",
+      "bbox_2d": [
+        489,
+        479,
+        642,
+        506
+      ]
+    },
+    {
+      "index": 8,
+      "label": "text",
+      "content": "Gelman and Rubin defined the potential scale reduction factor (PSRF) as",
+      "bbox_2d": [
+        242,
+        515,
+        775,
+        530
+      ]
+    },
+    {
+      "index": 9,
+      "label": "formula",
+      "content": "$$\nR = \\frac {\\widehat {\\sigma^ {2}}}{W} = 1 + \\frac {1}{n} \\left(\\frac {B}{W} - 1\\right)\n$$",
+      "bbox_2d": [
+        466,
+        541,
+        664,
+        574
+      ]
+    },
+    {
+      "index": 10,
+      "label": "text",
+      "content": "with values of R near one being consistent with convergence. A plot of R over time should converge to a value near one, if the chains are converging.",
+      "bbox_2d": [
+        241,
+        585,
+        889,
+        613
+      ]
+    },
+    {
+      "index": 11,
+      "label": "text",
+      "content": "Because most MCMCs involve many variables, one could either look at the univariate $ R $ trace for each or use the multivariate version suggested by Brooks and Gelman (1998),",
+      "bbox_2d": [
+        242,
+        613,
+        889,
+        641
+      ]
+    },
+    {
+      "index": 12,
+      "label": "formula",
+      "content": "$$\nR = \\frac {n - 1}{n} + \\left(1 + \\frac {1}{m}\\right) \\lambda_ {1}\n$$",
+      "bbox_2d": [
+        470,
+        652,
+        660,
+        681
+      ]
+    },
+    {
+      "index": 13,
+      "label": "text",
+      "content": "where $ \\lambda_{1} $ is the leading eigenvalue of the matrix product $ \\mathbf{W}^{-1}\\mathbf{B}/n $ , and where W and B are the sample within- and among-covariance matrices for the parameters. Again, a value near 1 is consistent with convergence.",
+      "bbox_2d": [
+        240,
+        694,
+        890,
+        736
+      ]
+    },
+    {
+      "index": 14,
+      "label": "text",
+      "content": "The Geweke test (Geweke 1992) splits the sample (after removing a burn-in period) into two parts. If the chain is at stationarity, the means of the two samples should be equal. A modified z-test can be used to compare the two subsamples, and the resulting test statistic is often referred to as a Geweke z-score. A value larger than 2 indicates that the mean of the series is still drifting and a longer burn-in is required before monitoring the chain (to extract a sampler) can begin.",
+      "bbox_2d": [
+        240,
+        736,
+        890,
+        817
+      ]
+    },
+    {
+      "index": 15,
+      "label": "text",
+      "content": "A more informative approach is the Raftery-Lewis test (Raftery and Lewis 1992a). Here, one specifies a particular quantile, q, of the distribution of interest (typically testing both q = 2.5% and 97.5% , to give a 95% confidence interval), an accuracy, $ \\epsilon $ , of the quantile, and a power, 1- $ \\beta $ , for achieving this accuracy on the specified quantile. With these three",
+      "bbox_2d": [
+        240,
+        817,
+        889,
+        873
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "content": "parameter values set, the Raftery-Lewis test breaks the chain into a binary (1,0) sequence, in which an element in the sequence takes on a value of 1 if $ \\theta_{t}\\leq q $ , otherwise it takes on a value of zero. This generates a two-state Markov chain, and the Raftery-Lewis test uses the sequence to estimate the transition probabilities between states. With these probabilities in hand, one can then estimate the number of additional burn-ins (if any) required to approach stationarity, the thinning ratio (how many points should be discarded for each sampled point), and the total chain length required to achieve the preset level of accuracy.",
+      "bbox_2d": [
+        112,
+        123,
+        760,
+        220
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "## Practical MCMC: How Many Chains and How Long Should They Run?",
+      "bbox_2d": [
+        111,
+        230,
+        644,
+        244
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "One can either use a single long chain (Geyer 1992; Raftery and Lewis 1992b) or multiple chains, with each starting from different initial values (Gelman and Rubin 1992). Note that with parallel processing, using multiple chains may be computationally more efficient (given a fixed amount of analysis time) than a single long chain. One suggested approach (Kass et al. 1998) is to use five parallel chains with widely separated starting values, and to start the jth value for parameter $ \\theta_{i} $ at $ \\mu_{i} + (j-2)\\sigma_{i} $ , where $ \\mu_{i} $ and $ \\sigma_{i}^{2} $ are the prior values for $ \\theta_{i} $ . Alternatively, one could randomly sample j from $ (-2,1,0,1,2) $ for each parameter to generate the vector of starting values.",
+      "bbox_2d": [
+        112,
+        248,
+        760,
+        356
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "Geyer (1992, 2011), however, forcefully argued that using a single long chain is the best approach. If the chain transition times between different parts of a distribution are long, then a series of shorter chains may entirely miss this problem, even if their starting values are widely dispersed. Theory basically tells us that, provided we run a chain for a long enough time, the results will be accurate. The best way to do so is to run a single, long chain. Convergent tests (still recognizing their problems mentioned previously) can be applied to subsections of a long chain as efficiently as they can be applied across shorter, parallel-running chains.",
+      "bbox_2d": [
+        111,
+        357,
+        760,
+        466
+      ]
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "content": "Given these concerns, what is the answer to the critical question about how long to run a chain? Geyer's dictums (2011) are that (i) \"the least one can do is to make an overnight run. What better way for your computer to spend its time?\" and (ii) ideally, \"one should start a run when the paper is submitted and keep running until the referees' reports arrive.\"",
+      "bbox_2d": [
+        110,
+        467,
+        759,
+        522
+      ]
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "content": "## THE GIBBS SAMPLER",
+      "bbox_2d": [
+        112,
+        541,
+        292,
+        554
+      ]
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "content": "The Gibbs sampler (introduced in the context of image processing by Geman and German 1984), is a special case of Metropolis-Hastings sampling wherein the random value is always accepted (i.e., $ \\alpha=1 $ ). The key to the Gibbs sampler is that, at any point in the process, one only considers univariate conditional distributions—the distribution when all but one of the random variables are assigned fixed values. Such conditional distributions are far easier to simulate than complex joint distributions and usually have simple forms (often they are normals, inverse- $ \\chi^{2} $ , or other common prior distributions). An important use of conjugate priors (Table A2.2) is that they often result in relatively simple forms for conditional distributions. Thus, one simulates n random variables sequentially from the n univariate conditionals rather than generating a single n-dimensional vector in a single pass using the full joint distribution. Given their great efficiency (every value is accepted), it is often thought that one should strive to generate a Gibbs sampler whenever possible. However, one should consult Geyer (2011) for a different perspective.",
+      "bbox_2d": [
+        111,
+        568,
+        760,
+        746
+      ]
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "content": "To introduce the Gibbs sampler, consider a bivariate random variable $ ( x,y) $ , and suppose we wish to compute one or both of the marginals, $ p ( x ) $ and $ p ( y ) $ . The idea behind the sampler is that it is far easier to consider a sequence of conditional distributions, $ p ( x \\mid y ) $ and $ p ( y \\mid x ) $ , than it is to obtain the marginal by integration of the joint density $ p ( x,y) $ , namely, $ p ( x ) = \\int p ( x,y ) d y $ . The sampler starts with some initial value, $ y_{0} $ , for y and obtains $ x_{0} $ by generating a random variable from the conditional distribution $ p ( x \\mid y=y_{0} ) $ . The sampler then uses $ x_{0} $ to generate a new value of $ y_{1} $ , drawing from the conditional distribution based on the value of $ x_{0} $ , $ p ( y \\mid x=x_{0} ) $ . The sampler proceeds as follows:",
+      "bbox_2d": [
+        111,
+        746,
+        760,
+        856
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "formula",
+      "content": "$$\nx _ {i} \\sim p (x \\mid y = y _ {i - 1})\n$$",
+      "bbox_2d": [
+        494,
+        136,
+        637,
+        152
+      ]
+    },
+    {
+      "index": 1,
+      "label": "formula",
+      "content": "$$\ny _ {i} \\sim p (y \\mid x = x _ {i})\n$$",
+      "bbox_2d": [
+        502,
+        158,
+        629,
+        172
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "Repeating this process k times generates a Gibbs sequence of length k, where a subset of points $ ( x_{j}, y_{j} ) $ for $ 1\\leq j\\leq m<k $ are taken as our simulated draws from the full joint distribution. One iteration of all the univariate distributions is often called a scan of the sampler. To obtain the desired total of m sample values (here each value in the sampler is a vector of realizations of the two random variables), one samples the chain following a sufficient burn-in to remove the effects of the initial starting values, potentially thinning the sequence as well. The Gibbs sequence converges to a stationary (equilibrium) distribution that is independent of the starting values, and by construction this stationary distribution is the target distribution we are trying to simulate (Tierney 1994). As with any MCMC, a guarantee of convergence at some limit is no guarantee that our sample size is sufficiently large to justify the assumption of stationarity for a burned-in (and potentially thinned) sampler.",
+      "bbox_2d": [
+        241,
+        178,
+        890,
+        344
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "Example A3.6. Consider the following distribution from Casella and George (1992). Suppose the joint distribution of x=0,1, $ \\cdots $ n and $ 0\\leq y\\leq 1 $ is given by",
+      "bbox_2d": [
+        271,
+        383,
+        869,
+        409
+      ]
+    },
+    {
+      "index": 4,
+      "label": "formula",
+      "content": "$$\np (x, y) = \\frac {n !}{(n - x) ! x !} y ^ {x + \\alpha - 1} (1 - y) ^ {n - x + \\beta - 1}\n$$",
+      "bbox_2d": [
+        408,
+        419,
+        731,
+        448
+      ]
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "content": "Note that x is discrete and y continuous. While the joint density is complex, the conditional densities are simple distributions. To see this, first recall that a discrete binomial random variable z has a density proportional to",
+      "bbox_2d": [
+        270,
+        458,
+        869,
+        498
+      ]
+    },
+    {
+      "index": 6,
+      "label": "formula",
+      "content": "$$\np (z \\mid q, n) \\propto \\frac {q ^ {z} (1 - q) ^ {n - z}}{z ! (n - z) !} \\quad \\mathrm {f o r} \\quad 0 \\leq z \\leq n\n$$",
+      "bbox_2d": [
+        419,
+        508,
+        721,
+        537
+      ]
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "content": "where 0 < q < 1 is the success parameter and n the number of traits, which we denote by $ z\\sim \\mathrm{B}(n,p). $ Likewise, recall the density for $ z\\sim \\mathrm{Beta}(a,b), $ a beta distribution (Equation A2.38a) with shape parameters a and b is given by",
+      "bbox_2d": [
+        271,
+        548,
+        869,
+        587
+      ]
+    },
+    {
+      "index": 8,
+      "label": "formula",
+      "content": "$$\np (z \\mid a, b) \\propto z ^ {a - 1} (1 - z) ^ {b - 1} \\mathrm {f o r} 0 \\leq z \\leq 1\n$$",
+      "bbox_2d": [
+        415,
+        597,
+        725,
+        613
+      ]
+    },
+    {
+      "index": 9,
+      "label": "text",
+      "content": "Observe that the conditional distribution of x (treating y as a fixed constant) is x $ \\mid y\\sim\\mathrm{B}(n,y), $ while y $ \\mid x\\sim\\mathrm{Beta}(x+\\alpha,n-x+\\beta). $",
+      "bbox_2d": [
+        270,
+        623,
+        865,
+        649
+      ]
+    },
+    {
+      "index": 10,
+      "label": "text",
+      "content": "The power of the Gibbs sampler is that by computing a sequence of these univariate conditional random variables (a binomial and then a beta), we can compute any feature of either marginal distribution. Suppose n=10 and $ \\alpha=1 $ $ \\beta=2 $ . We start the sampler with (say) $ y_{0}=1/2 $ and then take it through three full iterations.",
+      "bbox_2d": [
+        271,
+        649,
+        869,
+        701
+      ]
+    },
+    {
+      "index": 11,
+      "label": "text",
+      "content": "(i) $ x_{0} $ is obtained by generating a random $ \\mathrm{B}(n,y_{0})=\\mathrm{B}(10,1/2) $ random variable, returning $ x_{0}=5 $ in our simulation.",
+      "bbox_2d": [
+        281,
+        704,
+        828,
+        729
+      ]
+    },
+    {
+      "index": 12,
+      "label": "text",
+      "content": "(ii) $ y_{1} $ is obtained from a Beta $ ( x_{0}+\\alpha,n-x_{0}+\\beta)=\\mathrm{Beta}(5+1,10-5+2) $ random variable, returning $ y_{1}=0.33. $",
+      "bbox_2d": [
+        282,
+        734,
+        826,
+        760
+      ]
+    },
+    {
+      "index": 13,
+      "label": "text",
+      "content": "(iii) $ x_{1} $ is a realization of a $ \\mathrm{B}(n,y_{1})=\\mathrm{B}(10,0.33) $ random variable, returning $ x_{1}= $ 3.",
+      "bbox_2d": [
+        281,
+        765,
+        828,
+        789
+      ]
+    },
+    {
+      "index": 14,
+      "label": "text",
+      "content": "(iv) $ y_{2} $ is obtained from a Beta $ ( x_{1}+\\alpha,n-x_{1}+\\beta)=\\mathrm{Beta}(3+1,10-3+2) $",
+      "bbox_2d": [
+        280,
+        795,
+        770,
+        811
+      ]
+    },
+    {
+      "index": 15,
+      "label": "formula",
+      "content": "$$\ny _ {2} = 0. 5 6.\n$$",
+      "bbox_2d": [
+        497,
+        810,
+        564,
+        820
+      ]
+    },
+    {
+      "index": 16,
+      "label": "text",
+      "content": "(v) $ x_{2} $ is obtained from a $ \\mathrm{B}(n,y_{2})=\\mathrm{B}(10,0.56) $ random variable, returning $ x_{2}=7. $",
+      "bbox_2d": [
+        281,
+        825,
+        826,
+        840
+      ]
+    },
+    {
+      "index": 17,
+      "label": "text",
+      "content": "Our particular realization of the Gibbs sequence after three iterations is thus (5,0.5), (3,0.33), (7,0.56). We can continue this process to generate a chain of the desired length. Obviously,",
+      "bbox_2d": [
+        272,
+        846,
+        868,
+        873
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "content": "the initial values in the chain are dependent upon the value of $ y_{0} $ chosen to start the chain. This dependence decays as the sequence length increases, so we typically start recording the sequence only after a sufficient number of burn-in iterations have occurred.",
+      "bbox_2d": [
+        141,
+        123,
+        739,
+        163
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "When more than two variables are involved, the sampler is extended in the obvious fashion. In particular, the value of the kth variable is drawn from the distribution $ p(\\theta^{(k)}|\\Theta^{(-k)}) $ , where $ \\Theta^{(-k)} $ denotes a vector containing all of the variables but k. Thus, during the i th iteration of the sample, to obtain the value of $ \\theta_{i}^{(k)} $ , we draw from the distribution",
+      "bbox_2d": [
+        110,
+        201,
+        760,
+        276
+      ]
+    },
+    {
+      "index": 2,
+      "label": "formula",
+      "content": "$$\n\\theta_ {i} ^ {(k)} \\sim p \\left(\\theta^ {(k)} \\mid \\theta^ {(1)} = \\theta_ {i} ^ {(1)}, \\dots , \\theta^ {(k - 1)} = \\theta_ {i} ^ {(k - 1)}, \\theta^ {(k + 1)} = \\theta_ {i - 1} ^ {(k + 1)}, \\dots , \\theta^ {(n)} = \\theta_ {i - 1} ^ {(n)}\\right)\n$$",
+      "bbox_2d": [
+        159,
+        283,
+        711,
+        304
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "For example, if there are four variables, $ ( w,x,y,z) $ , the sampler becomes",
+      "bbox_2d": [
+        113,
+        314,
+        632,
+        329
+      ]
+    },
+    {
+      "index": 4,
+      "label": "formula",
+      "content": "$$\nw _ {i} \\sim p (w \\mid x = x _ {i - 1}, y = y _ {i - 1}, z = z _ {i - 1})\n$$",
+      "bbox_2d": [
+        294,
+        341,
+        577,
+        355
+      ]
+    },
+    {
+      "index": 5,
+      "label": "formula",
+      "content": "$$\nx _ {i} \\sim p (x \\mid w = w _ {i}, y = y _ {i - 1}, z = z _ {i - 1})\n$$",
+      "bbox_2d": [
+        296,
+        359,
+        564,
+        373
+      ]
+    },
+    {
+      "index": 6,
+      "label": "formula",
+      "content": "$$\ny _ {i} \\sim p \\left(y \\mid w = w _ {i}, x = x _ {i}, z = z _ {i - 1}\\right)\n$$",
+      "bbox_2d": [
+        297,
+        376,
+        551,
+        390
+      ]
+    },
+    {
+      "index": 7,
+      "label": "formula",
+      "content": "$$\nz _ {i} \\sim p \\left(z \\mid w = w _ {i}, x = x _ {i}, y = y _ {i}\\right)\n$$",
+      "bbox_2d": [
+        297,
+        393,
+        532,
+        407
+      ]
+    },
+    {
+      "index": 8,
+      "label": "text",
+      "content": "Gelfand and Smith (1990) illustrated the power of the Gibbs sampler to address a wide variety of statistical issues, while Smith and Roberts (1993) showed the natural marriage of the Gibbs sampler with Bayesian statistics for obtaining posterior distributions. A nice introduction to the sampler was presented by Casella and George (1992), while further details can be found in Tanner (1996), Besag et al. (1995), Sorensen and Gianola (2002), Robert and Casella (2004), and Lee (2013). Note that the Gibbs sampler can be thought of as a stochastic analog to the Expectation-Maximization (EM) approaches (LW Appendix 4) used to obtain likelihood functions when missing data are present. In the sampler, random sampling replaces the expectation and maximization steps.",
+      "bbox_2d": [
+        111,
+        418,
+        760,
+        543
+      ]
+    },
+    {
+      "index": 9,
+      "label": "text",
+      "content": "## Using the Gibbs Sampler to Approximate Marginal Distributions",
+      "bbox_2d": [
+        112,
+        553,
+        600,
+        568
+      ]
+    },
+    {
+      "index": 10,
+      "label": "text",
+      "content": "Any feature of interest for the marginals can be computed from the m realizations of the Gibbs sequence. If $ \\theta_{1},\\cdots,\\theta_{m} $ is an appropriately burned-in set of realizations from a Gibbs sampler, the expectation of any function, f, of the random variable $ \\theta $ is approximated by",
+      "bbox_2d": [
+        111,
+        571,
+        759,
+        614
+      ]
+    },
+    {
+      "index": 11,
+      "label": "formula",
+      "content": "$$\nE [ f (\\theta) ] _ {m} = \\frac {1}{m} \\sum_ {i = 1} ^ {m} f \\left(\\theta_ {i}\\right)\n$$",
+      "bbox_2d": [
+        348,
+        625,
+        522,
+        660
+      ]
+    },
+    {
+      "index": 12,
+      "label": "text",
+      "content": "This is the Monte-Carlo (MC) estimate of $ f (x) $ , as $ E[f(\\theta)]_{m}\\rightarrow E[f(\\theta)] $ as $ m\\rightarrow\\infty $ . Likewise, the MC estimate for any function of n variables $ (\\theta^{(1)},\\dots,\\theta^{(n)}) $ is calculated by",
+      "bbox_2d": [
+        111,
+        671,
+        758,
+        699
+      ]
+    },
+    {
+      "index": 13,
+      "label": "formula",
+      "content": "$$\nE [ f \\left(\\theta^ {(1)}, \\dots , \\theta^ {(n)}\\right) ] _ {m} = \\frac {1}{m} \\sum_ {i = 1} ^ {m} f \\left(\\theta_ {i} ^ {(1)}, \\dots , \\theta_ {i} ^ {(n)}\\right)\n$$",
+      "bbox_2d": [
+        271,
+        712,
+        600,
+        747
+      ]
+    },
+    {
+      "index": 14,
+      "label": "text",
+      "content": "Example A3.7. Although the sequence of length 3 that was computed in Example A3.6 is too short (and too dependent on the starting value) to be a proper Gibbs sequence, for illustrative purposes we can use it to compute Monte-Carlo estimates. The MC estimates of the means of x and y are",
+      "bbox_2d": [
+        141,
+        800,
+        739,
+        849
+      ]
+    },
+    {
+      "index": 15,
+      "label": "formula",
+      "content": "$$\n\\bar {x} _ {3} = \\frac {5 + 3 + 7}{3} = 5, \\quad \\bar {y} _ {3} = \\frac {0 . 5 + 0 . 3 3 + 0 . 5 6}{3} = 0. 4 6\n$$",
+      "bbox_2d": [
+        254,
+        847,
+        626,
+        876
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "content": "We use the subscript 3 throughout to remind the reader of the sample size of this particular Gibbs sampler. Similarly, $ (\\overline{x^{2}})_{3}=27.67,(\\overline{y^{2}})_{3}=0.22 $ , and $ (\\overline{xy})_{3}=2.47 $ , returning the MC estimates of the variances of x and y as",
+      "bbox_2d": [
+        271,
+        124,
+        869,
+        163
+      ]
+    },
+    {
+      "index": 1,
+      "label": "formula",
+      "content": "$$\n\\operatorname {V a r} (x) _ {3} = \\left(\\overline {{x ^ {2}}}\\right) _ {3} - \\left(\\bar {x} _ {3}\\right) ^ {2} = 2. 6 7, \\quad \\operatorname {V a r} (y) _ {3} = \\left(\\overline {{y ^ {2}}}\\right) _ {3} - \\left(\\bar {y} _ {3}\\right) ^ {2} = 0. 2 5\n$$",
+      "bbox_2d": [
+        330,
+        168,
+        810,
+        184
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "and their covariance as",
+      "bbox_2d": [
+        271,
+        189,
+        428,
+        201
+      ]
+    },
+    {
+      "index": 3,
+      "label": "formula",
+      "content": "$$\n\\operatorname {C o v} (x, y) _ {3} = \\left(\\bar {x y}\\right) _ {3} - \\bar {x} _ {3} \\cdot \\bar {y} _ {3} = 2. 4 7 - 5 \\cdot 0. 4 6 = 0. 1 6\n$$",
+      "bbox_2d": [
+        383,
+        206,
+        758,
+        220
+      ]
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "content": "While computing the MC estimate for any moment using the sampler is straightforward, computing the actual shape of the marginal density is slightly more involved. While one might use the empirical histogram of the Gibbs sequence as a rough approximation of the marginal distribution of x, this turns out to be inefficient, especially for obtaining the tails of the distribution. A better approach is to use the average of the conditional densities $ p ( x \\mid y=y_{i} ) $ , as the function form of the conditional density contains more information about the shape of the entire distribution than the sequence of individual realizations, $ x_{i} $ (Gelfand and Smith 1990; Liu et al. 1991). Because",
+      "bbox_2d": [
+        241,
+        267,
+        890,
+        377
+      ]
+    },
+    {
+      "index": 5,
+      "label": "formula",
+      "content": "$$\np (x) = \\int p (x \\mid y) p (y) d y = E _ {y} [ p (x \\mid y) ]\n$$",
+      "bbox_2d": [
+        423,
+        381,
+        707,
+        406
+      ]
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "content": "one can approximate the marginal density using",
+      "bbox_2d": [
+        241,
+        411,
+        594,
+        426
+      ]
+    },
+    {
+      "index": 7,
+      "label": "formula",
+      "content": "$$\n\\widehat {p} _ {m} (x) = \\frac {1}{m} \\sum_ {i = 1} ^ {m} p (x \\mid y = y _ {i})\n$$",
+      "bbox_2d": [
+        464,
+        432,
+        665,
+        465
+      ]
+    },
+    {
+      "index": 8,
+      "label": "text",
+      "content": "Example A3.8. Returning to the Gibbs sequence generated in Example A3.6, recall that the distribution of x given y is binomial, with x $ \\mid y\\sim \\mathrm{B}(n,y). $ If we apply Equation A3.27b, the estimate (based on this sequence) of the marginal distribution of x is the weighted sum of three binomials with success parameters of 0.5, 0.33, and 0.56, yielding",
+      "bbox_2d": [
+        270,
+        511,
+        869,
+        563
+      ]
+    },
+    {
+      "index": 9,
+      "label": "formula",
+      "content": "$$\np _ {3} (x) = \\frac {1 0 !}{x ! (1 0 - x) !} \\left[ \\frac {0 . 5 ^ {x} (1 - 0 . 5) ^ {1 0 - x} + 0 . 3 3 ^ {x} (1 - 0 . 3 3) ^ {1 0 - x} + 0 . 5 6 ^ {x} (1 - 0 . 5 6) ^ {1 0 - x}}{3} \\right]\n$$",
+      "bbox_2d": [
+        262,
+        574,
+        866,
+        607
+      ]
+    },
+    {
+      "index": 10,
+      "label": "text",
+      "content": "As Figure A3.3 shows, the resulting distribution (filled bars), although a weighted sum of binomials, departs substantially from the binomial based on the average (here 0.46) of the success parameter (open bars).",
+      "bbox_2d": [
+        267,
+        609,
+        870,
+        648
+      ]
+    },
+    {
+      "index": 11,
+      "label": "text",
+      "content": "## REJECTION SAMPLING AND APPROXIMATE BAYESIAN COMPUTATION (ABC)",
+      "bbox_2d": [
+        241,
+        695,
+        876,
+        708
+      ]
+    },
+    {
+      "index": 12,
+      "label": "text",
+      "content": "In the words of Marjoram and Tavaré (2006), for many estimation problems in modern population genetics it is \"far easier to simulate than to calculate.\" Consider the number of segregating sites in a sample of alleles from a population that went through a bottleneck of undetermined width at some unknown time in the past. A likelihood calculation running over all possible coalescent structures even in this simple case is extremely challenging. Conversely, if we specify the fractional reduction of the bottleneck and the time when this occurred, it is very easy to simulate a coalescent from this population structure and then randomly apply mutations to generate a sample of alleles. This logic forms the basis of an approach that Beaumont et al. (2002) called approximate Bayesian computation (ABC), although its roots trace back to Tavaré et al. (1997), Weiss and von Haeseler (1998), and Pritchard",
+      "bbox_2d": [
+        241,
+        722,
+        891,
+        860
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "image",
+      "content": "",
+      "bbox_2d": [
+        171,
+        120,
+        704,
+        316
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "<div align=\"center\">\n\nFigure A3.3 The approximation of the marginal posterior distribution for x for the distribution given in Example A3.6 using a Gibbs sequence. The open bars represent the approximation using a binomial with the Gibbs-sequence mean value of y as the success parameter, while the solid bars represent the approximation based on a weighted sum of binomials. See Example A3.8 for details.\n\n</div>",
+      "bbox_2d": [
+        141,
+        331,
+        739,
+        395
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "et al. (1999). ABC is also referred to as likelihood-free computation in the literature (as the likelihood is obtained by simulation, rather than by direct calculation). Reviews of ABC were presented by Marjoram et al. (2003), Beaumont (2010), and Sisson and Fan (2011).",
+      "bbox_2d": [
+        111,
+        421,
+        759,
+        463
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "Although much of the early focus of ABC methods was on population-genetic problems, it has broad applicability in quantitative genetics. For example, Technow et al. (2015) used ABC approaches to combine crop growth models and genomic selection, while Csillery et al. (2010) reviewed a number of applications in evolution and ecology. The use of ABC methods is a rapid growth area and, as such, our treatment is rather basic and likely dated.",
+      "bbox_2d": [
+        111,
+        463,
+        759,
+        531
+      ]
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "content": "A very simple example motivates ABC. Suppose we wish to calculate the posterior distribution for the success probability, p, given that a sample of size 10 has three successes and we assume a prior, $ \\phi(p) $ , for the distribution of possible p values. We can obtain this posterior exactly without ever computing the likelihood as follows: first, we draw a random p value from the prior, $ \\phi(p) $ , and then we generate a random draw from a binomial with n=10 and the sampled value of p. If the binomial random variable generated equals 3, we record the p value (i.e., we accept it into the posterior). If not, we randomly draw a new p from $ \\phi(p) $ and then simulate using this new value of p, repeating this procedure until we have a sufficiently large number of accepted values to approximate the posterior. This is an example of rejection sampling.",
+      "bbox_2d": [
+        110,
+        532,
+        760,
+        667
+      ]
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "content": "More generally, one would draw a candidate vector, $ \\Theta $ , of model parameters from the prior, and then use these in a simulation to generate a dataset, D, which is then compared against the actual dataset, $ D^{*} $ . For our opening example, one would draw values of bottleneck width, time of the bottleneck, and scaled mutation rate from a joint prior. These values are then used to simulate a dataset, D, of polymorphism information for this simulated sample. If $ D=D^{*} $ , then we accept this value of $ \\Theta $ into the posterior and draw again. If not, we reject it and draw again. This generates a value in the MCMC sample without ever having to compute a likelihood.",
+      "bbox_2d": [
+        111,
+        667,
+        760,
+        777
+      ]
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "content": "The complication involved in this basic idea obviously arises when datasets become even slightly complex, as the probability that $ D=D^{*} $ becomes vanishingly small and the rejection probability is essentially one. In this case, one instead tries to match summary statistics from D and $ D^{*} $ . Ideally, these would be sufficient statistics for the parameters of interest. Recall that, conditioned on the value of a sufficient statistic, the distribution of the data does not depend on the parameter of interest all of the information on that parameter in the data is provided by the sufficient statistic. Suppose S is a vector of sufficient statistics",
+      "bbox_2d": [
+        111,
+        777,
+        760,
+        873
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "content": "for the parameters of interest from the simulated dataset, D, and $ S^{*} $ is the analogous vector from $ D^{*} $ (the sufficient statistics based on the original data). A strict rejection method would accept the current draw from the prior if S equals $ S^{*} $ . Here, again, the rejection probability is likely to be quite high. The approximate aspect of this approach arises when we don't require exact equality, but rather simply require that the two are \"close,\" namely, that $ |S-S^{*}|\\leq \\epsilon $ for a single sufficient statistic, or $ m(\\mathbf{S}-\\mathbf{S}^{*})\\leq \\epsilon $ for some distance metric, m (often this is Euclidean distance). In this case, the posterior that is generated is only an approximation. Beaumont et al. (2002) suggested regression approaches that attempt to adjust posterior values, given the distance between the simulated and actual data. A far more serious issue is when we do not use sufficient statistics for the parameters of interest (as these are often unknown, and, indeed, may not even exist). This introduces a second source of error that can be rather critical, especially if a significant amount of the information about an unknown parameter (or parameters) is not captured by S. A number of approaches for dealing with this issue have been suggested (e.g., Joyce and Marjoram 2008; Nunes and Balding 2010; Jung and Marjoram 2011; Aeschbacher et al. 2012), but this is a very active research area with no current clean answer.",
+      "bbox_2d": [
+        241,
+        123,
+        890,
+        341
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "Example A3.9. Recall from Chapter 8 that an issue of much evolutionary interest concerns both the rate of selective sweeps and the average strength of selection for the swept allele. We can quantify the rate of sweeps by estimating the per-nucleotide adaptive evolution rate, $ \\lambda $ and quantify their strength by estimating the average selective advantage, s, of a swept allele. As discussed in Chapter 8, most standard estimates based on polymorphism and divergence data usually confound these two parameters. Jensen et al. (2008) developed an ABC approach to obtain separate estimates of $ \\lambda $ and s. Their idea was to jointly consider the means and variances of several summary statistics measuring various sweep features from sequence polymorphism data. The features they included were nucleotide diversity, $ \\pi $ , and number of segregating sites, S, for polymorphism levels; $ \\theta_{H} $ for departures in the site-frequency spectrum (Equations 9.27); and $ Z_{nS} $ for the local structure of LD (Equation 9.36b).",
+      "bbox_2d": [
+        271,
+        379,
+        869,
+        517
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "Their ABC approach proceeds as follows: First, values of $ \\lambda $ and s are drawn from some joint prior, and then are used to generate a simulation of the sweep. The summary statistics of interest are then computed on this simulated data, and if they are sufficiently close to their observed values, the joint $ \\lambda $ and s values are kept; otherwise, they are rejected and new values are drawn. This procedure is repeated to obtain (at least) several thousand accepted values to generate a joint empirical posterior distribution of $ \\lambda $ and s values that is consistent with the observed data.",
+      "bbox_2d": [
+        271,
+        516,
+        870,
+        605
+      ]
+    }
+  ]
+]

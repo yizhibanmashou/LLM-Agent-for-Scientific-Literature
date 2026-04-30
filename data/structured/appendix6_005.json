@@ -1,0 +1,60 @@
+{
+  "id": "appendix6_005",
+  "metadata": {
+    "chapter": "appendix6",
+    "section": "THE HESSIAN MATRIX, LOCAL MAXIMA/MINIMA, AND MULTIDIMENSIONAL TAYLOR SERIES",
+    "subsections": [
+      "THE HESSIAN MATRIX, LOCAL MAXIMA/MINIMA, AND MULTIDIMENSIONAL TAYLOR SERIES"
+    ],
+    "source_file": "tmp\\paddle_output\\appendix6_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "In univariate calculus, the local extrema of a function occur when its slope (first derivative) is zero. The multivariate extension is that the gradient vector is zero, so the slope of the function with respect to all variables is zero. A point $ x_ e $ where this occurs is called a stationary or equilibrium point, and corresponds to either a local maximum, minimum, saddle point, or inflection point. As with the calculus of single variables, determining which of these cases is correct depends on the second derivative. With n variables, the appropriate generalization is the Hessian matrix $$ \\mathbf{H}_{\\mathbf{X}}[f]=\\nabla_{\\mathbf{X}}\\left[\\left(\\nabla_{\\mathbf{X}}[f]\\right)^{T}\\right]=\\frac{\\partial^{2}f}{\\partial\\mathbf{x}\\partial\\mathbf{x}^{T}}=\\left(\\begin{array}{c c c}\\frac{\\partial^{2}f}{\\partial x_{1}^{2}}&\\cdots&\\frac{\\partial^{2}f}{\\partial x_{1}\\partial x_{n}}\\\\ \\vdots&\\ddots&\\vdots\\\\ \\frac{\\partial^{2}f}{\\partial x_{1}\\partial x_{n}}&\\cdots&\\frac{\\partial^{2}f}{\\partial x_{n}^{2}}\\end{array}\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Note that this is the outer product of $ _ [f] $ with itself. Recall for an $ n $-dimensional column vector $ _ n 1 $ that while the inner product, $ _ 1 n ^T _ n 1 = a_i $, returns a $ 1 1 $ matrix (a scalar), the outer product, $ _ n 1 _ 1 n ^T $, returns an $ n n $ matrix whose $ ij $th element is $ a_i a_j $, or (in our case) $$ \\mathbf{H}_{ij}=\\frac{\\partial\\left(f(\\mathbf{x})/\\partial x_{i}\\right)}{\\partial x_{j}}=\\frac{\\partial^{2}f(\\mathbf{x})}{\\partial x_{i}\\partial x_{j}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "This matrix is symmetric, as mixed partials are equal under suitable continuity conditions, and it measures the local multidimensional curvature of the function."
+    },
+    {
+      "type": "discussion",
+      "content": "Example A6.6. Compute the Hessian matrix for the multivariate normal distribution with respect to the data vector x. If we recall from Equation A6.2a that $ _ [(,)] = - (,) ^ -1 (-) $, we have $$ \\begin{aligned}\\mathbf{H}_{\\mathbf{X}}\\left[\\varphi(\\mathbf{x},\\boldsymbol{\\mu})\\right]&=\\nabla_{\\mathbf{X}}\\left[\\left(\\nabla_{\\mathbf{X}}\\left[\\varphi(\\mathbf{x},\\boldsymbol{\\mu})\\right]\\right)^{T}\\right]=-\\nabla_{\\mathbf{X}}\\left[\\varphi(\\mathbf{x},\\boldsymbol{\\mu})\\cdot(\\mathbf{x}-\\boldsymbol{\\mu})^{T}\\mathbf{V}^{-1}\\right]\\\\&=-\\nabla_{\\mathbf{X}}\\left[\\varphi(\\mathbf{x},\\boldsymbol{\\mu})\\right]\\cdot(\\mathbf{x}-\\boldsymbol{\\mu})^{T}\\mathbf{V}^{-1}-\\varphi(\\mathbf{x},\\boldsymbol{\\mu})\\cdot\\nabla_{\\mathbf{X}}\\left[\\left(\\mathbf{x}-\\boldsymbol{\\mu}\\right)^{T}\\mathbf{V}^{-1}\\right]\\\\&=-\\left[-\\varphi(\\mathbf{x},\\boldsymbol{\\mu})\\cdot\\mathbf{V}^{-1}\\left(\\mathbf{x}-\\boldsymbol{\\mu}\\right)\\right]\\cdot(\\mathbf{x}-\\boldsymbol{\\mu})^{T}\\mathbf{V}^{-1}-\\varphi(\\mathbf{x},\\boldsymbol{\\mu})\\cdot\\left[\\mathbf{V}^{-1}\\right]\\\\&=\\varphi(\\mathbf{x},\\boldsymbol{\\mu})\\cdot\\left(\\mathbf{V}^{-1}\\left(\\mathbf{x}-\\boldsymbol{\\mu}\\right)(\\mathbf{x}-\\boldsymbol{\\mu})^{T}\\mathbf{V}^{-1}-\\mathbf{V}^{-1}\\right)\\quad(A6.6)\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Here we have used the product rule (Equation A6.1i) and Equation A6.1b, respectively (recall that V is a symmetric matrix of constants). In a similar manner, the Hessian with respect to the vector of means, $ $, is $$ \\mathbf{H}\\boldsymbol{\\mu}\\left[\\varphi(\\mathbf{x},\\boldsymbol{\\mu})\\right]=\\varphi(\\mathbf{x},\\boldsymbol{\\mu})\\cdot\\left(\\mathbf{V}^{-1}\\left(\\mathbf{x}-\\boldsymbol{\\mu}\\right)(\\mathbf{x}-\\boldsymbol{\\mu})^{T}\\mathbf{V}^{-1}-\\mathbf{V}^{-1}\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "To see how the Hessian matrix determines the nature of equilibrium points, a slight digression on the multidimensional Taylor series is needed. Consider the (second-order) Taylor series of a scalar function of $n$ variables, $f(x_1,, x_n)$, expanded about the point $ _o$, $$ f(\\mathbf{x})\\simeq f(\\mathbf{x}_{o})+\\sum_{i=1}^{n}(x_{i}-x_{o,i})\\frac{\\partial f}{\\partial x_{i}}+\\frac{1}{2}\\sum_{i=1}^{n}\\sum_{j=1}^{n}(x_{i}-x_{o,i})(x_{j}-x_{o,j})\\frac{\\partial^{2}f}{\\partial x_{i}\\partial x_{j}}+\\cdots $$ where all partials are evaluated at $ _o $. If we note that the first sum is the inner product of the gradient and $ (- _o) $, and the double sum is a quadratic product involving the Hessian, we can express Equation A6.7a in matrix form as $$ f(\\mathbf{x})\\simeq f(\\mathbf{x}_{o})+\\nabla^{T}(\\mathbf{x}-\\mathbf{x}_{o})+\\frac{1}{2}(\\mathbf{x}-\\mathbf{x}_{o})^{T}\\mathbf{H}(\\mathbf{x}-\\mathbf{x}_{o}) $$ where $ $ and H are the gradient and Hessian of f with respect to x when evaluated at $ x_ 0 $, $$ \\nabla\\equiv\\nabla_{\\mathbf{X}}[f]\\left|_{\\mathbf{X}=\\mathbf{X}_{o}}\\right.\\qquad and\\qquad\\mathbf{H}\\equiv\\mathbf{H}_{\\mathbf{X}}[f]\\left|_{\\mathbf{X}=\\mathbf{X}_{o}}\\right. $$"
+    },
+    {
+      "type": "discussion",
+      "content": "At an equilibrium point, $ $, all first partials are zero, so $ (_ [f])^ T $ is evaluated at $ $ is a vector of length zero. Whether this point is a maximum or minimum is then determined by the quadratic product involving the Hessian when evaluated at $ $. Consider a vector, d, of a small change from the equilibrium point $$ f(\\hat{\\mathbf{x}}+\\mathbf{d})-f(\\hat{\\mathbf{x}})\\simeq\\frac{1}{2}\\cdot\\mathbf{d}^{T}\\mathbf{H}\\mathbf{d} $$ Because H is a symmetric matrix, we can diagonalize it and apply a canonical transformation (Equation A5.17a) to simplify the quadratic product in Equation A6.8a, which returns $$ f(\\widehat{\\mathbf{x}}+\\mathbf{d})-f(\\widehat{\\mathbf{x}})\\simeq\\frac{1}{2}\\sum_{i=1}^{n}\\lambda_{i}y_{i}^{2} $$ where $ y_i = e_i^T d $, with $ e_i $ and $ _i $ representing the eigenvectors and eigenvalues of the Hessian when evaluated at $ $. Thus, if $ $ is positive-definite (all eigenvalues of $ $ are positive), $ f $ increases in all directions around $ $, and hence $ $ is a local minimum of $ f $. If $ $ is negative-definite (all eigenvalues of $ $ are negative), $ f $ decreases in all directions around $ $, and $ $ is a local maximum of $ f $. If the eigenvalues differ in sign ($ $ is indefinite), $ $ corresponds to a saddle point (to see this, suppose $ _1 > 0 $ and $ _2 < 0 $; any change along the vector $ e_1 $ results in an increase in $ f $, while any change along $ e_2 $ results in a decrease in $ f $)."
+    },
+    {
+      "type": "discussion",
+      "content": "Example A6.7. Consider the following demonstration (due to Lande 1979a) that the mean population fitness increases. A round of selection changes the current vector of means from $ $ to $ + $. Expanding the log of mean fitness in a Taylor series around the current population mean gives the change in mean population fitness as $$ \\begin{align*}\\Delta\\ln\\overline{W}(\\mu)&=\\ln\\overline{W}(\\mu+\\Delta\\mu)-\\ln\\overline{W}(\\mu)\\\\&\\simeq\\left(\\nabla\\mu\\left[\\ln\\overline{W}(\\mu)\\right]\\right)^{T}\\Delta\\mu+\\frac{1}{2}\\Delta\\mu^{T}\\mathbf{H}\\mu\\left[\\ln\\overline{W}(\\mu)\\right]\\Delta\\mu\\end{align*} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "If we assume that second- and higher-order terms can be neglected (as would occur with weak selection and the population mean away from an equilibrium point), then Equation A6.9a simplifies to $$ \\Delta\\ln\\overline{W}(\\mu)\\simeq\\left(\\nabla_{\\boldsymbol{\\mu}}[\\ln\\overline{W}(\\boldsymbol{\\mu})]\\right)^{T}\\Delta\\boldsymbol{\\mu} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Further assuming that the joint distribution of phenotypes and additive genetic values is MVN, then substituting Equation A6.2e into Equation A6.9b yields $$ \\Delta\\ln\\overline{W}(\\mu)\\simeq\\beta^{T}\\Delta\\mu $$ Because $ $ is the response vector, $ $, rearranging Equation 13.26a yields $ = ^ -1 = ^ -1 $. Substituting this expression into Equation A6.9c yields $$ \\Delta\\ln\\overline{W}(\\mu)\\simeq\\left(\\mathbf{G}^{-1}\\Delta\\mu\\right)^{T}\\Delta\\mu=\\left(\\Delta\\mu\\right)^{T}\\mathbf{G}^{-1}\\Delta\\mu\\geq0 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The inequality follows because $ $ is a variance-covariance matrix and hence is nonnegative-definite (all its eigenvalues are nonnegative). Under these conditions, mean population fitness never decreases, although because $ [()] $, the local increase in fitness does not necessarily improve in the fastest possible manner. Note that $$ \\Delta\\ln\\overline{W}(\\boldsymbol{\\mu})=\\ln\\overline{W}(\\boldsymbol{\\mu}[t+1])-\\ln\\overline{W}(\\boldsymbol{\\mu}[t])=\\ln\\left(\\frac{\\overline{W}(\\boldsymbol{\\mu}[t+1])}{\\overline{W}(\\boldsymbol{\\mu}[t])}\\right) $$ so $ () > 0$ implies $ () > ().$ Notice from Equation A6.2f that when fitnesses are frequency-dependent, $ $ has an extra term beyond $ $, and the above proof does not hold (namely, mean fitness can decrease)."
+    }
+  ]
+}

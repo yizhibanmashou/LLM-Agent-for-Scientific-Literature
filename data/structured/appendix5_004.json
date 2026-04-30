@@ -1,0 +1,44 @@
+{
+  "id": "appendix5_004",
+  "metadata": {
+    "chapter": "appendix5",
+    "section": "Comparing Vectors: Lengths and Angles",
+    "subsections": [
+      "Comparing Vectors: Lengths and Angles"
+    ],
+    "source_file": "tmp\\paddle_output\\appendix5_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "If both x and y are of unit length, then $ = ^ -1 (^T) $, which reveals the close connection between vector angles and inner products. Note that because $ (90^) = (270^) = 0 $, two vectors are orthogonal if, and only if, their inner product is zero, $ ^T = 0 $."
+    },
+    {
+      "type": "discussion",
+      "content": "Another way to compare two vectors is to consider the projection vector of one onto the other. Proj(x on y), the projection of x on y, is a vector in the direction of y, whose length is given by how much of the vector x lies along the direction of y. For any two n-dimensional vectors, the projection of x on y is defined by $$ \\mathrm{Proj}(\\mathbf{x}\\mathrm{on}\\mathbf{y})=\\frac{\\mathbf{x}^{T}\\mathbf{y}}{\\mathbf{y}^{T}\\mathbf{y}}\\mathbf{y}=\\frac{\\mathbf{x}^{T}\\mathbf{y}}{||\\mathbf{y}||^{2}}\\mathbf{y}=\\left(\\cos(\\theta)\\frac{||\\mathbf{x}||}{||\\mathbf{y}||}\\right)\\mathbf{y} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The term in the parentheses (which follows from Equation A5.2a) is a scalar, representing the length that x projects in the direction of y, which means that Proj(x on y) is a scaled version of the vector y onto which we are projecting. If $ \\|y\\| = 1 $, then $$ \\mathbf{P r o j}(\\mathbf{x}\\mathbf{o n}\\mathbf{y})=(\\mathbf{x}^{T}\\mathbf{y})\\mathbf{y}=(\\cos(\\theta)\\left|\\left|\\mathbf{x}\\right|\\right|)\\mathbf{y} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The vector resulting from the projection of x on y is in the same direction as y unless $ 90^ < < 270^ $, in which case $ () < 0 $ and the projection vector is in exactly the opposite direction (the reflection of y about the origin). The length of the projection vector is $$ \\left\\| \\mathbf{Proj}(\\mathbf{x}on\\mathbf{y}) \\right\\|= \\left\\| \\cos(\\theta) \\right\\| \\left\\| \\mathbf{x} \\right\\|\\leq \\left\\| \\mathbf{x} \\right\\| $$"
+    },
+    {
+      "type": "discussion",
+      "content": "If two vectors lie in exactly the same direction ($ = 0 $), the projection of one on the other simply recovers the vector (i.e., $ () = $). Conversely, if two vectors are orthogonal, the projection of one on the other yields a vector of length zero."
+    },
+    {
+      "type": "discussion",
+      "content": "An important property of projection vectors is that if $ _1, _2,, _n $ is any set of mutually orthogonal $ n $-dimensional vectors, then any $ n $-dimensional vector $ x $ can be represented as the sum of projections of $ x $ onto the members of this set, namely, $$ \\mathbf{x}=\\sum_{i=1}^{n}Proj(\\mathbf{x}on\\mathbf{y}_{i}) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "One way to think about such a decomposition is as the transformation from one set of axes (or coordinates) into another (defined by the vectors, $ y_i $, that span, or completely cover, the vector space). We can also consider the projection of a vector into some subspace of a matrix (say $ y_1,, y_k $, where $ k < n $), namely, the projection onto some subset of the vectors that span the space of the original matrix. For example, one might consider the subspace of a covariance matrix imposed by (say) its three largest factors (eigenvalues). The notion of a subspace of the genetic covariance matrix G will prove useful in describing the constraints caused by the genetic covariance structure (Volume 3)."
+    }
+  ]
+}

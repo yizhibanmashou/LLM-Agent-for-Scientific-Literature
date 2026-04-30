@@ -1,0 +1,69 @@
+{
+  "id": "chapter22_022",
+  "metadata": {
+    "chapter": "chapter22",
+    "section": "Chapter 22: Optimal Response",
+    "subsections": [
+      "Optimal Response"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter22_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "22.33a",
+      "22.33b",
+      "22.34a",
+      "22.34b",
+      "22.34c",
+      "22.35a",
+      "22.36b",
+      "22.37a",
+      "22.37b",
+      "22.37c",
+      "22.37d",
+      "22.37e"
+    ],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "derivation",
+      "content": "In the index shown by Equation 22.28a, g is the fraction of weight placed on a random individual from the group that interacts with the focal individual. If this weight is zero, the index reduces to individual selection, while if this weight is 1, all individuals in the group are weighted equally in the selection decision and there is group selection. An obvious question is to determine the optimal value for g that maximizes the selection response. From Equation 22.28g, we see that the optimal response occurs by using those weights in I that maximizes the correlation, $ (A_T, I) $, between I and $ A_T $. To find these optimal weights, we start with the index [[SEE_FORMULA:22.33a]] with no restrictions placed on the ranges of $ b_ 1 $ and $ b_ 2 $. Selection on this index is equivalent to selection using the index [[SEE_FORMULA:22.33b]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Hence, the connection between Equations 22.28a and 22.33a is that $ g = b_2/b_1 $. The difference is that we no longer restrict consideration of $ g $ to between zero and one. All of the previous results for selection response on Equation 22.28a hold for any value of $ g $, but we focused on the range of zero to one given the transition from individual to group selection. More generally, we could have negative weights, or a $ g $ value exceeding one. In the former case, negative $ g $ values correspond to a weighted within-group deviation (e.g., Equation 22.28c). In the latter case ($ g > 1 $), we place more weight on a random individual from the interacting group than on the focal individual. This might occur when associative effects are much larger than direct effects, and hence group members provide more information than the focal individual about the value of $ A_ T $ for that focal individual."
+    },
+    {
+      "type": "derivation",
+      "content": "In Chapter 21, we were able to obtain straightforward expressions for optimal weights in a family index (Equation 21.54). Index selection theory (Volume 3) gives the optimal index weights in the form of a matrix expression (Equation 22.35a), which is greatly simplified under simple family selection (i.e., with no associative effects). Unfortunately, such is not the case here, and so we (very briefly) introduce the machinery for obtaining an optimal index, deferring the full development of the theory to Volume 3. The idea is that there are two potentially different indices: the index I, used for selection (i.e., to choose individuals to form the next generation), and the index H, whose response we wish to maximize. Specifically, we select on some index $ I = b^T x $ where $ x_i $ is the value of trait i used to make selection decisions and $ b_i $ is the weight placed on that trait in the index. In keeping with Equation 22.33a, the vector of phenotypes for individual i is [[SEE_FORMULA:22.34a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Using this index to make selection decisions, we wish to find the weights, b, that maximize the selection response for some weighted combination of variables, $ H = c^T a $. Here the elements of c are the weights and a is the vector of breeding values for the traits of interest. In our case, we wish to maximize response in the total breeding value, which means that [[SEE_FORMULA:22.34b]] where [[SEE_FORMULA:22.34c]]"
+    },
+    {
+      "type": "derivation",
+      "content": "The optimal weights $ b_ s $ in I for maximizing response in H (i.e., to obtain the highest correlation between $ A_ T $ and I) are given by the Smith-Hazel index (Smith 1936; Hazel 1943), which is derived in Example A6.8, where [[SEE_FORMULA:22.35a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "P is the phenotypic covariance matrix for the elements in x, which in our case becomes [[SEE_FORMULA:22.36b]] where we have used Equations 22.30b and 22.30c. G is the matrix of covariances between the breeding values in the index H and the trait values in the index I, with $ G_ ij = (a_i, x_j) $. Because different traits can be involved in the two indices, G need not be symmetric. For our case, [[SEE_FORMULA:22.37a]] where [[SEE_FORMULA:22.37b]] [[SEE_FORMULA:22.37c]] [[SEE_FORMULA:22.37d]] [[SEE_FORMULA:22.37e]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Equations 22.37b through 22.37e follow from the approach used throughout this chapter of a term-by-term evaluation of the covariance. The use of index selection machinery to find the optimal value of g was initially outlined by Ellen et al. (2007)."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 22.9. As an application of the previous theory, consider a trait where $ (A_d, A_s) = 0 $, and there are no correlations between environmental values within the group ($ = 0 $) and no relatives in the group ($ r = 0 $). Equation 22.5d gives $ ^2(z) = ^2(A_d) + (n-1) ^2(A_s) + ^2(e) $, while (with $ (A_d, A_s) = r = = 0 $), Equation 22.31c reduces to $ (z_i, z_j) = (n-2) ^2(A_s) $. Hence, from Equation 22.36b, $$ \\mathbf{P}=\\begin{pmatrix}\\sigma^{2}(z)&(n-1)(n-2)\\sigma^{2}(A_{s})\\ $ n-1)(n-2)\\sigma^{2}(A_{s})&(n-1)\\left[\\sigma^{2}(z)+(n-2)^{2}\\sigma^{2}(A_{s})\\right]\\end{pmatrix} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Likewise, Equations 22.37b through 22.37e imply $$ \\mathbf{G}=\\begin{pmatrix}{{{\\sigma^{2}(A_{d})}}}&{{{0}}} \\\\{{{0}}}&{{{(n-1)\\sigma^{2}(A_{s})}}}\\end{pmatrix} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "What are the optimal weight (g) for a trait with $ ^ 2 (A_ d) = 100, ^ 2 (A_ s) = 9, ^ 2 (e) = 100 $, and n = 10? For these values, Equation 22.35a yields $$ \\mathbf{b}_{s}=\\mathbf{P}^{-1}\\mathbf{G}^{T}\\mathbf{c}=\\begin{pmatrix}{{{281}}}&{{{648}}} \\\\{{{648}}}&{{{9090}}}\\end{pmatrix}^{-1}\\begin{pmatrix}{{{100}}}&{{{0}}} \\\\{{{0}}}&{{{81}}}\\end{pmatrix}\\begin{pmatrix}{{{1}}} \\\\{{{9}}}\\end{pmatrix}=\\begin{pmatrix}{{{0.2046}}} \\\\{{{0.0656}}}\\end{pmatrix} $$"
+    }
+  ]
+}

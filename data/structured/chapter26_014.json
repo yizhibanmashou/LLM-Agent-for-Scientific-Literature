@@ -1,0 +1,62 @@
+{
+  "id": "chapter26_014",
+  "metadata": {
+    "chapter": "chapter26",
+    "section": "Chapter 26: OPTIMAL SELECTION INTENSITIES FOR MAXIMIZING LONG-TERM RESPONSE",
+    "subsections": [
+      "OPTIMAL SELECTION INTENSITIES FOR MAXIMIZING LONG-TERM RESPONSE"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter26_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "26.22",
+      "26.23"
+    ],
+    "table_references": [
+      "26.3",
+      "26.4"
+    ],
+    "table_reference_keys": [
+      "chapter26:26.3",
+      "chapter26:26.4"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "derivation",
+      "content": "When a fixed number, $M$, of individuals is scored, there is a tradeoff between the intensity of selection ($ $) and the amount of drift ($N_e$). If $N$ individuals are allowed to reproduce (implying $p = N/M$ is the fraction saved), decreasing $N$ (and hence $p$) increases $ $ but also decreases $N_e$. Recalling Equation 26.15b, Robertson’s selection limit can be expressed as [[SEE_FORMULA:26.22]] showing that the ultimate response (from the initial variation) depends on the product of $ N_e $ and $ $. While decreasing p results in a larger short-term response due to increased $ $, it also results in a decreased long-term response by decreasing $ N_e $. Hence, the product $ N_e $ decreases for sufficiently large or small values of p, suggesting that some intermediate value of p is optimal (see Equation 26.23). [[SEE_TABLE:26.3]] and Figure 26.5B both illustrate this tradeoff. For example, while the single-generation response using p = 0.50 is less than half that for p = 0.10, it yields a selection limit over twice as large (200 vs. 90)."
+    },
+    {
+      "type": "derivation",
+      "content": "Supporting an earlier conjecture of Dempster (1955b), Robertson (1960a) found (for additive loci and normally distributed phenotypes) that the intensity of selection that yields the largest total response is $p = 0.5$, as $N_e $ is maximized for fixed $M$ when half the population is saved. This can be seen directly for truncation selection on a normally distributed character. Recall from Equation 14.3a that $ = (x_ [1-p]) / p$ (ignoring the correction for finite population size), where $x_p$ satisfies $ (U < x_ [p]) = p$, and with $U$ denoting a unit normal random variable and $ (x)$ denotes the unit normal density function. Because the number saved is $N = M p$, we have (following Hospital and Chevalet 1993) [[SEE_FORMULA:26.23]] Because the term in brackets is independent of $p$, response (as a function of $p$) is maximized at the maximum value of $ (x_ [1-p])$, which occurs at $x = 0$, or a $p$ value of 0.5. As Figure 26.5A illustrates, the selection limit as a function of p becomes extremely flat-topped as M increases, so even fairly large deviations from p = 0.50 yield essentially the same limit. If we relax the assumption of normality, Cockerham and Burrows (1980) found that the optimal proportion for truncation selection is still near 0.50, unless the phenotypic distribution is extremely skewed. Hill and Robertson (1966), Robertson (1970a), and Hospital and Chevalet (1993) found that the optimal proportion increases to above p = 0.50 when linkage is important (recall from Chapter 24 that linkage disequilibrium generates skew in the genotypic distribution, causing it to depart from a normal)."
+    },
+    {
+      "type": "discussion",
+      "content": "[h]"
+    },
+    {
+      "type": "discussion",
+      "content": "[h]"
+    },
+    {
+      "type": "discussion",
+      "content": "[[TABLE:26.4]] illustrates this effect using the same parameters as [[SEE_TABLE:26.3]]. Without incorporating this further reduction in $N_e$, the ratio of expected limits when $p = 0.50$ versus $p = 0.10$ is 200/90 = 2.2. When the reduction in $N_e$ due to selection is accounted for, this ratio increases to 161/47 = 3.4."
+    },
+    {
+      "type": "discussion",
+      "content": "Robertson's prediction of the optimal selection intensity for long-term response is experimentally supported. Madalena and Robertson (1975) selected for decreased sternopleural bristle number in Drosophila. When the best 5 of 25 were chosen, the limit was 18.0 bristles, less extreme than the limit of 17.1 when the best 10 of 25 were chosen. Similar results were seen for increased abdominal bristle number in Drosophila (Jones et al. 1968), increased egg-laying in Tribolium castaneum (Ruano et al. 1975), and increased postweaning weight in mice (Hanrahan et al. 1973)."
+    },
+    {
+      "type": "discussion",
+      "content": "Using $N = pM$ as the effective population size is often a severe overestimate (Chapter 3), especially because, as Equations 26.6b–26.6d show, $N_e/N$ decreases as selection intensity increases. Hence, increasing selection intensity increases drift by both reducing $N = pM$ and by further reducing the ratio of $N_e$ to $N$. [[SEE_TABLE:26.4]] illustrates this effect using the same parameters as [[SEE_TABLE:26.3]]. Without incorporating this further reduction in $N_e$, the ratio of expected limits when $p = 0.50$ versus $p = 0.10$ is 200/90 = 2.2. When the reduction in $N_e$ due to selection is accounted for, this ratio increases to 161/47 = 3.4."
+    },
+    {
+      "type": "discussion",
+      "content": "More generally, Robertson (1970b) obtained the optimal selection intensity when the goal is to maximize the total response (from the initial base population variation) at generation $ t $. Robertson’s derivation follows using Equation 26.15a. As Figure 26.5B shows, the optimal proportion is a function of $ t/M $. Robertson assumed that the infinitesimal model held and that there were equal contributions from each sex. Jódar and López-Fanjul (1977) extended these results to unequal sex ratios, and found that the maximum response occurs when the number of individuals scored and the proportions that are selected are the same in each sex. This follows because effective population size is reduced as the sex ratio deviates from 1:1 (Equation 3.12), which increases the effects of drift. Hospital and Chevalet (1993) examined the effects of linkage and found that the amount by which the optimal value of p exceeds the predicted value (Figure 26.5B) increases with population size. In small populations, the value predicted from drift (for any particular t/M value) is close to the optimal value, while Robertson's value seriously underestimates the optimal p value in larger populations when linkage is present."
+    },
+    {
+      "type": "discussion",
+      "content": "Ruano et al. (1975) and Frankham (1977) tested Robertson's predictions for the optimal response at a particular generation with selection experiments for egg-laying in Tribolium and for abdominal bristle number in Drosophila, respectively. The theory holds up well for $ t/M 0.2 $, but both authors found discrepancies between the observed and predicted rank order of lines subjected to different selection intensities when $ t/M > 0.2 $. One explanation of these discrepancies could be the presence of major alleles, resulting in additive variance declining more rapidly than expected under the infinitesimal model. This results in the optimal proportions being larger than those predicted from Figure 26.5B. Frankham (1977) also suggested that not correcting for the additional decrease in $ N_e $ with increased selection intensity (e.g., [[SEE_TABLE:26.4]]) results in incorrect values of $ N_e $, and hence incorrect optimal proportions. García-Dorado and López-Fanjul (1985) examined the consequences of unequal sex ratios using sternopleural bristle number in Drosophila. Equal sex ratios gave the highest response, and good agreement with the optimal values predicted by Jódar and López-Fanjul was seen when there were unequal sex ratios."
+    }
+  ]
+}

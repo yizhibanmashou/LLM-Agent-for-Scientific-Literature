@@ -1,0 +1,60 @@
+{
+  "id": "appendix1_018",
+  "metadata": {
+    "chapter": "appendix1",
+    "section": "Ornstein-Uhlenbeck Models",
+    "subsections": [
+      "Ornstein-Uhlenbeck Models"
+    ],
+    "source_file": "tmp\\paddle_output\\appendix1_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "The Ornstein-Uhlenbeck process is an extension of the Brownian-motion model to include a linear restoring force back to the origin. The one-dimensional version of this diffusion process for $ - < x < $ is given by $$ m(x)=-ax\\quad and\\quad v(x)=b $$ with a, b > 0. As with Brownian motion, the distribution of $ x_ t $ (given the starting condition $ x_ 0 $) is also normal, but now with a mean and a variance of $$ \\mu_{t}=x_{0}e^{-at}\\quad and\\quad\\sigma_{t}^{2}=\\frac{b}{2a}\\left(1-e^{-2at}\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "See Karlin and Taylor (1981) for a derivation. The resulting stationary distribution is normal with a mean of zero (on the assumed scale) and a variance of $ b/(2a) $. More generally, if $ m(x) = -a(x -) $, so that the resorting force is toward the value $ x = $, then the variance will be unchanged, while $$ \\mu_{t}=\\theta+(x_{0}-\\theta)e^{-at} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Example A1.13. Lande (1976) examined the distribution of phenotypic means under drift and stabilizing selection, using the Gaussian fitness function (Equation 16.17) as a model of stabilizing selection. Here, the expected fitness of an individual with phenotypic value z is given by $$ W(z)=\\exp\\left(-\\frac{z^{2}}{2\\omega^{2}}\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The optimal phenotype is $z = 0$, and the strength of selection is given by the width, $ ^2$, with smaller values of $ ^2$ corresponding to stronger selection (fitness declining faster as one moves away from zero). Under nor-optimal selection, if phenotypes are normally distributed before selection with a mean of $ _t$ and a phenotypic variance of $ _z^2$, they remain normal after selection, with a new mean of $ _t + S$, where $$ S=-\\mu_{t}\\frac{\\sigma_{z}^{2}}{\\sigma_{z}^{2}+\\omega^{2}} $$ and a new variance of $$ \\sigma_{z}^{2}-\\frac{\\sigma_{z}^{4}}{\\sigma_{z}^{2}+\\omega^{2}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "We assume that selection is sufficiently weak ($ ^2 _z^4 $) so that the variance remains effectively unchanged after selection. As expected, nor-optimal selection moves the mean in the direction of the optimum (decreasing the current mean if it is positive, and increasing it if negative). Assuming the breeder's equation ($ R = h^2 S $), the change in the mean becomes $$ \\Delta\\mu=h^{2}S=\\frac{\\sigma_{A}^{2}}{\\sigma_{z}^{2}}\\left(-\\mu_{t}\\frac{\\sigma_{z}^{2}}{\\sigma_{z}^{2}+\\omega^{2}}\\right)=-\\mu_{t}\\left(\\frac{\\sigma_{A}^{2}}{\\sigma_{z}^{2}+\\omega^{2}}\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Suppose we let $ x_t = _t $ be the mean in generation $ t $ of a randomly drawn replicate population. From Equation A1.33a, the resulting distribution of means can then be approximated by an Ornstein-Uhlenbeck process, with $$ a=\\frac{\\sigma_{A}^{2}}{\\sigma_{z}^{2}+\\omega^{2}}\\quad and\\quad b=\\frac{\\sigma_{A}^{2}}{N_{e}} $$ where a follows from the change in mean and b is the drift variance under Brownian motion (Example A.10). From Equation A1.33b, the resulting distribution of phenotypic means in generation t is normal, with a mean of $$ \\mu_{t}=\\mu_{0}\\exp\\Big(-t\\frac{\\sigma_{A}^{2}}{\\sigma_{z}^{2}+\\omega^{2}}\\Big) $$ and variance of $$ \\sigma_{t}^{2}=\\frac{\\sigma_{z}^{2}+\\omega^{2}}{2N_{e}}\\left[1-\\exp\\left(-2t\\frac{\\sigma_{A}^{2}}{\\sigma_{z}^{2}+\\omega^{2}}\\right)\\right] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "At equilibrium, the distribution of the means of replicate populations is normal, with mean of zero (i.e., centered at the fitness optimum) and a variance of $ (_ z ^ 2 + ^ 2) / (2N_ e) $."
+    },
+    {
+      "type": "discussion",
+      "content": "Example A1.14. Example A1.13 shows how diffusion approximations yield a stationary distribution for the phenotypic mean under the joint action of drift and stabilizing selection. More general forms of selection can be considered as well. Suppose our concern is simply the change in the mean of a trait that is under arbitrary selection. Provided the phenotypes are normally distributed within a population, then, from Equation 13.27a the change in mean is $$ \\Delta\\mu=\\sigma_{A}^{2}\\frac{\\partial\\ln[\\overline{W}(\\mu)]}{\\partial\\mu} $$ where the mean fitness, $ () $, is a function of the population mean, $ $. Because no assumptions were made about the nature of selection, any function for mean fitness can be used, provided the distribution of offspring phenotypes remains roughly normal. Hence, an approximating diffusion for the behavior of the mean under selection and drift is to let x equal the current mean and set $$ m(x)=\\sigma_{A}^{2}\\frac{\\partial\\ln(\\overline{W})}{\\partial x}\\quad and\\quad v(x)=\\frac{\\sigma_{A}^{2}}{N_{e}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Substituting Equations A1.35 into Equation A1.12 yields $$ G(x)=\\exp\\left[-2N_{e}\\int\\limits_{\\frac{\\partial y}{\\partial y}}^{x}\\frac{\\partial\\ln(\\overline{W})}{\\partial y}\\partial y\\right]=\\exp[-2N_{e}\\ln(\\overline{W})]=\\overline{W}(x)^{-2N_{e}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, Equation A1.11 gives the equilibrium distribution of population means as $$ \\varphi(x)=\\frac{C}{v(x)G(x)}=\\frac{CN_{e}}{\\sigma_{A}^{2}}\\overline{W}(x)^{2N_{e}}\\propto\\overline{W}(x)^{2N_{e}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "This result, which is from Lande (1976), shows that as the effective population size increases, the probability that the population mean is near a local maximum in fitness also increases. This follows because $ (x) $ becomes increasingly peaked around local maxima relative to other parts of the fitness surface as we increase $ N_e $. If $ $ has multiple peaks, then so does $ (x) $. Equations A1.35 and A1.36 rely on the assumptions that the phenotypic and additive-genetic variances remain constant as the mean changes and (as mentioned above) that the phenotypic distribution remains normal."
+    }
+  ]
+}

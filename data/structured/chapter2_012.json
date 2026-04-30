@@ -1,0 +1,56 @@
+{
+  "id": "chapter2_012",
+  "metadata": {
+    "chapter": "chapter2",
+    "section": "Chapter 2: THE DETAILED STRUCTURE OF NEUTRAL VARIATION",
+    "subsections": [
+      "The Infinite-alleles Model and the Associated Allele-frequency Spectrum"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter2_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "2.30a",
+      "2.30b",
+      "2.31a",
+      "2.31b",
+      "2.32",
+      "2.33a",
+      "2.33b"
+    ],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "proposition",
+      "content": "The infinite-alleles model (briefly introduced earlier) was developed prior to the DNA-sequencing era, but was motivated by emerging knowledge on the structure of DNA sequences. In today's world, different alleles under this model are typically viewed as different sequences (haplotypes) over a region of L nucleotide sites, and the general assumption is that L is large enough that each mutation generates a new haplotype (not preexisting in the population), but small enough that recombination can be ignored (so that mutation is the sole generator of novel sequences). Considering the five short sequences in Figure 2.9, under the infinite-alleles framework, there are three different alleles, although there are only two segregating sites. With allele frequencies 0.4 (AAGACC), 0.4 (AAGGCC), and 0.2 (AAGGCA), the allelic heterozygosity of the sample is 0.64. This is, of course, a rather crude perspective, as it ignores the ways in which alleles differ from each other (in this example, two pairs of alleles differ at a single site, whereas one pair differs at two sites)."
+    },
+    {
+      "type": "derivation",
+      "content": "A key parameter for the infinite-alleles model is the per-locus population mutation rate, $ _L = 4NuL $, which we distinguish from the more commonly used per-site measure, $ = 4Nu $, where $ u $ is the mutation rate per site. As noted previously, under neutrality, provided that the population has been at constant size long enough to be in mutation-drift equilibrium, the expected heterozygosity is given by Equation 2.24b, with $ E(H) _L $ for $ _L 1 $. If the expected heterozygosity is small, a sample will often be monomorphic, consisting of only a single allele, or dimorphic, consisting of just two alleles. However, at higher levels of heterozygosity, multiple alleles can be expected, and a natural measure of variation is the number of different alleles in a sample. Insight into this quantity under drift-mutation equilibrium is given the probability of having $ k $ different alleles in a sample of $ n $ genes, which is [[SEE_FORMULA:2.30a]] [[SEE_FORMULA:2.30b]] where and $ S_n^k $ is the coefficient on the $ _L^k $ term obtained by expanding the polynomial in Equation 2.30b (Ewens 1972). This formula opened up the field of formal statistical tests for whether a pattern of allelic variation is consistent with the equilibrium neutral model. For example, using Equation 2.30a, one can ask if an observed estimate of $ _L $ (obtained in this case as the allelic heterozygosity) is consistent with the observed number $ k $ of different alleles (Chapter 9)."
+    },
+    {
+      "type": "derivation",
+      "content": "Several useful results follow from Equation 2.30a. First, the probability of a monomorphic sample is [[SEE_FORMULA:2.31a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Second, a bit of algebra gives the mean and variance for the number of alleles in a sample as [[SEE_FORMULA:2.31b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "An even more complete description of the segregating allelic variation is given by the allele-frequency spectrum, which describes the joint probability distribution of the number of alleles in the sample and their frequencies. Given that the numbering of alleles is arbitrary, the convention is to consider the vector $ (n_1,, n_n) $, where $ n_i $ denotes the number of alleles that have exactly $ i $ copies in the sample. If the sample is monomorphic, then $ n_n = 1 $, whereas if all $ n $ alleles are unique (singletons), $ n_1 = n $. For the example data set in Figure 2.7, one allele appears as a singleton, whereas the other two alleles both appear as two copies, giving $ n_1 = 1 $, $ n_2 = 2 $, and $ n_3 $, $ n_4 $, $ n_5 = 0 $. The constraint on the $ n_i $ is that [[SEE_FORMULA:2.32]]"
+    },
+    {
+      "type": "derivation",
+      "content": "A very powerful result, due to Ewens (1972) and Karlin and McGregor (1972), is that the joint probability distribution of $ n_ 1,, n_ n $ and k is given by the Ewens sampling formula (Ewens 1972) [[SEE_FORMULA:2.33a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Only nonzero values of $ n_i $ are included. The probability that the sample is monomorphic, Equation 2.31a, directly follows by setting $ k = 1, n_1 = n $. Equations 2.30a and 2.33a show that the conditional distribution of $ n_1,, n_n $ given $ k $ is [[SEE_FORMULA:2.33b]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Note that the righthand side in Equation 2.33a is independent of $ _ L $. This property arises because k is a sufficient statistic for $ _ L $ under the equilibrium neutral model, so that conditioning on k removes any dependence on $ _ L $. It is this independence that forms the basis of the Ewens-Watterson test of neutrality considered in Chapter 9."
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "id": "chapter20_030",
+  "metadata": {
+    "chapter": "chapter20",
+    "section": "Detecting Genetic Trends",
+    "subsections": [
+      "Detecting Genetic Trends"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter20_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "The gold standard for detecting a genetic change is to grow two populations in a common-garden experiment, ensuring that any change is genetic, rather than environmental. With the exception of the use of remnant seed (or, for other organisms where we can freeze or otherwise immortalize individuals), making contemporaneous comparisons of the genetic composition of different generations is usually not possible. However, as we saw in Chapter 19, it is often possible to make this comparison statistically through the animal model, provided the population is sufficiently connected across the generations by sampled relatives. Due to their pedigree depth and connectedness, this is reasonable for most breeding programs and artificially selected populations. The reliability of PBVs in such settings is fairly high, as these conditions reduce the environmental influence on PBVs. Further, PBVs are unbiased (provided individuals are randomized over environments), and taking their average for a sample (such as a generation) smooths out some of the environmental noise associated with individual estimates, thus allowing a plot of mean PBVs over time to show a trend (or lack thereof). In theory, this same approach can be applied to natural populations, provided the genotype-environment correlations are largely ignorable."
+    },
+    {
+      "type": "discussion",
+      "content": "The more delicate issue is that of inference. As we saw in Chapter 18, both OLS and GLS regressions of the selection response on the selection differential gave unbiased estimates of the realized heritability, but because the residuals are heteroscedastic and correlated, the sampling variances under OLS are too small relative to the correct values under GLS (see Example 18.4). As a result, OLS-based tests are anticonservative; namely, the p values (testing for a potential genetic trend by regressing mean breeding value on time) are heavily biased toward smaller, more significant, values. The same issue arises with the error structure of PBVs (Hadfield et al. 2010), as Figure 20.6 illustrates."
+    },
+    {
+      "type": "discussion",
+      "content": "[h]"
+    },
+    {
+      "type": "discussion",
+      "content": "Fortunately, there is a simple solution (Hadfield al. 2010), again within the powerful Bayesian framework that (additionally) accounts for all levels of uncertainty in our analysis. A vector, $ $, from the posterior PBV distribution is drawn from a given iteration of the MCMC sampler (Appendix 3). Then the resulting series of PBVs is used to regress (using OLS) mean PBV on generation number (i.e., time) and the resulting slope is recorded. This sampling process is repeated thousands of times to construct an empirical histogram of the posterior slope distribution, which is then used for inference (see Figure 20.6). The resulting empirical distribution of slopes fully accounts for the correlated structure among the PBVs."
+    },
+    {
+      "type": "proposition",
+      "content": "Detection of a significant genetic trend is not, by itself, evidence of a selection response, as this could arise simply from drift. A powerful feature of the MCMC approach is that it allows for a straightforward test of drift versus selection (Hadfield et al. 2010). First, a value for $ ^ 2 (A) $ is sampled from its marginal posterior. Breeding values are then drawn from a normal distribution (with a mean of zero, and the sampled value of $ ^ 2 [A] $) and assigned to individuals in the pedigree with no past relatives. These parental BVs, coupled with Mendelian sampling (Equation 16.8a), are then used to generate random breeding values (RBVs) for their downstream relatives, generating a set of RBVs over the specific pedigree under the assumption of drift (as the BVs are chosen at random). With a set of RBVs in hand, a genetic trend is computed as above (regression of mean RBVs over generations), and the slope is recorded. Extracting many such samples (redrawing $ ^ 2 (A) $ at the start of each run) generates an empirical histogram of the posterior slope distribution under drift alone, which can be compared with those generated from the MCMC using the full data."
+    },
+    {
+      "type": "discussion",
+      "content": "An issue debated in the literature is whether one should also include a year (or generation) effect in models for trends. When PBVs have low reliability, they are strongly influenced by the environment, with the PBV trend partly reflecting any underlying environmental trend (Postma 2006). Incorporation of a year effect (a fixed value for each year or generation) can account for such an environmental trend, but it will also partly absorb any true genetic trend, thus reducing the power. Postma and Charmantier (2007) offered some guidelines as to how to proceed (Figure 20.7). Given that PBVs are biased toward an environmental trend when their reliability is low, the finding of genetic and environmental trends in opposite directions provides evidence of a genetic trend. If the change is in the same direction and still persists after a year effect has been incorporated, this is also supportive of a genetic trend. Figure 20.7 presents a flow chart for the interpretation of other combinations of trends."
+    },
+    {
+      "type": "discussion",
+      "content": "A final issue is that if one has individuals throughout the pedigree with missing parents, these are treated as de facto founders and their BVs come from a common distribution of those older individuals at the top of the pedigree that really are biologically founders. This effect will generally dampen any inferred trend in breeding values (M. Morrissey, pers. comm.)"
+    },
+    {
+      "type": "discussion",
+      "content": "Example 20.7. Milot et al. (2011) examined the evolution of age at first reproduction (AFR) of human settlers in the isolated island of ile aux Coudres in Québec. This island was populated by thirty families between 1720 and 1772. Because of careful church records, it has a very detailed chronicle of births, marriages, and deaths, which allowed the authors to construct a bivariate animal model for AFR and lifetime reproductive success (LRS). The latter is a proxy for total fitness and was defined in this study as the total number of a woman's offspring reaching age 15. The authors assumed a normal distribution for AFR but a latent Poisson model for LRS. Under this model (discussed in Chapter 14), the breeding value for AFR was defined on an underlying latent scale, with the distribution of LRS for an individual with a liability score of $ y = + A + e $ following a Poisson distribution with a mean of $ e^y $. MCMC methods were used in a Bayesian analysis of this bivariate model, which found significant heritability in both AFR and LRS (the latter as measured on the latent scale). Further, these two traits showed a significant negative genetic correlation (posterior mode of -0.81, 95 As also shown in Figure 20.8, the authors tested whether this trend could be due to drift, using the approach suggested by Hadfield et al. (2010) discussed above. Given the posterior distribution of the additive variance for AFR, RBVs were generated over the known pedigree, and the regression of the RBVs over time was compared to that for PBVs for each run of the sampler. The proportion of times during which the absolute regression slope of the RBVs exceeded the slope based on PBVs was taken as the posterior probability that the response is due to drift, and was found to be less than 0.01. The average slope for RBVs is given by the solid line in Figure 20.8."
+    },
+    {
+      "type": "discussion",
+      "content": "[h]"
+    }
+  ]
+}

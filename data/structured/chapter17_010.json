@@ -1,0 +1,45 @@
+{
+  "id": "chapter17_010",
+  "metadata": {
+    "chapter": "chapter17",
+    "section": "Chapter 17: The Additive Model",
+    "subsections": [
+      "Response From Stabilizing Selection on Phenotypic Value, z"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter17_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "17.7a",
+      "17.7b",
+      "17.8a",
+      "17.8b"
+    ],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "derivation",
+      "content": "We have previously suggested that selection either for, or against, extreme individuals may also result in some selection for genotypes with higher, or lower, environmental variances. We formalize this by considering how selection on a phenotypic value, z, maps onto selection on $ A_ m $ and $ A_ v $. First consider a quadratic fitness model of stabilizing selection. Here, the expected fitness of an individual with a phenotypic value of z is [[SEE_FORMULA:17.7a]] where $ $ is the optimal trait value and $ s $ is the strength of stabilizing selection. This is a weak selection model, as $ W 0 $ only for sufficiently small $ s $ relative to the total variance of $ z $. Note that if we set $ s < 0 $, Equation 17.7a becomes a model of (weak) disruptive selection. Gavrilets and Hastings (1994c) examined how this phenotypic fitness function translates into selection on $ (A_m, A_v) $ under the multiplicative model. To do so, we replace $ z $ by $ A_m + A_v $ and take the expectation over $ e $. Noting that $ [e] = 0 $, $ [e^2] = _e^2 $, the expected fitness as a function of $ A_m $ and $ A_v $ becomes [[SEE_FORMULA:17.7b]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Similar fitnesses arise under the Gaussian model of weak stabilizing selection (Equation 16.17); see Hill and Mulder (2010), and Example 17.3 for a more exact analysis. Equation 17.7b shows that phenotypic stabilizing selection favors $ A_v $ values near zero, thus decreasing $ _E^2 $ (Hansen et al. 2006), which has two important consequences. First, the reduction in phenotypic variance can be significantly greater than predicted from the simple reduction in the additive variance from the Bulmer effect (Chapter 16). And second, there can be cases where the trait heritability, $ h_z^2 $, will increase under stabilizing selection. Because both additive and environmental variances are decreased, if the decrease in environmental variance is sufficiently greater, then $ h_z^2 $ increases. Results for quadratic disruptive selection follow by changing the sign on $ s $, which results in selection to increase $ A_v $."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 17.3. The quadratic fitness function (Equation 17.7a) is a model for weak stabilizing selection, as it can generate negative (and hence undefined) fitness values when selection is sufficiently strong. An alternative model of stabilizing selection without this constraint is normalizing selection (Equation 16.17), where $ $ denotes the optimal phenotypic value and $ ^2 $ denotes the strength of selection around this optimum. Devaux and Lande (2009) used this fitness function in their study of selection on the flower-timing variance within an individual. They assumed that the additive model for genetic variation in $ _e^2 $ (Equation 17.4c) holds and that repeated expressions $ z $ of the trait from an individual with breeding values $ A_m $ (for the trait) and $ A_v $ (for $ _E^2 $) are drawn from a normal, so that $$ p(z\\mid A_{m},A_{v})=\\frac{1}{\\sqrt{2\\pi(\\sigma_{e}^{2}+A_{v})}}\\exp\\left[-\\frac{(z-A_{m})^{2}}{2(\\sigma_{e}^{2}+A_{v})}\\right] $$"
+    },
+    {
+      "type": "derivation",
+      "content": "Integration of $ W(A_m, A_v) = W(z) p(z | A_m, A_v) \\, dz $ yields [[SEE_FORMULA:17.8a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "When $ A_m $, the exponential term is near one (as its numerator is near zero), and so fitness is largely driven by the square root term. For weak selection ($ ^2 _e^2 + A_v $) when $ A_m = $, a first-order Taylor series approximation yields [[SEE_FORMULA:17.8b]] As was the case for weak quadratic selection, fitness increases as $ A_ v $ decreases."
+    },
+    {
+      "type": "discussion",
+      "content": "The more interesting case is that where the population is far from the equilibrium, so $ |A_m - | 1 $, and the numerator in the exponential term in Equation 17.8a is large. In this case, fitness can be improved by increasing the value of $ A_v $ (i.e., moving it closer to $ $), which reduces the magnitude of the exponential term. Thus, as also noted by Lande (1980b) and Bull (1987), stabilizing selection can actually favor an increase in $ _E^2 $ when the population is far from its optimum, as the larger variance increases the chance that some phenotypes will be near $ $. Svardal et al. (2011) similarly found that selection favors increased values of $ _E^2 $ when there are strong fluctuations in $ $ over time."
+    }
+  ]
+}

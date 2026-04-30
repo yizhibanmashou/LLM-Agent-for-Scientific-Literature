@@ -1,0 +1,60 @@
+{
+  "id": "appendix4_017",
+  "metadata": {
+    "chapter": "appendix4",
+    "section": "FDR: THE FALSE-DISCOVERY RATE",
+    "subsections": [
+      "Morton's Posterior Error Rate (PER) and the FDR"
+    ],
+    "source_file": "tmp\\paddle_output\\appendix4_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Sham and Purcell (2014) noted that one can rearrange Equation A4.15a to find the $ $ value to obtain a desired PER value of $ $, with $$ \\begin{align*}\\alpha=\\left({\\gamma\\over1-\\gamma}\\right)\\left({1-\\pi_0\\over\\pi_0}\\right)(1-\\beta)\\end{align*} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "In particular, if there is complete power ($ = 0 $) and only one of the $ n $ tested hypotheses departs from the null ($ _0 = n/[n + 1] $), Equation A4.15c reduces to $$ \\begin{align*}\\alpha=\\left({\\gamma\\over1-\\gamma}\\right)\\left({1\\over n}\\right)\\simeq{\\gamma\\over n}\\end{align*} $$ which recovers the Bonferroni correction (Equation A4.4)."
+    },
+    {
+      "type": "discussion",
+      "content": "The Type-I error rate, $ $, of a random test, and the PER for a significant test, which are often assumed to be the same, are actually very different. In addition to $ $, the PER also depends on the power, $ $, of a test and the fraction, $ _ 0 $, of tests that are truly null (as these latter parameters influence the probability that a test is declared to be significant). Manly et al. (2004) noted that the PER is acceptably low only if the fraction of alternative hypotheses $ (1 - _ 0) $ is well above $ $."
+    },
+    {
+      "type": "discussion",
+      "content": "Thinking in terms of the PER allows us to consider multiple comparisons in a continuum from Bonferroni-type corrections to using FDR to control the PER. If $ _1 = 1 - _0 $ is very small, most tests will truly be from the null hypothesis, and we can control the overall false-positive rate with a Bonferroni-type correction. However, if some fraction of the hypotheses is expected to be false (i.e., $ 1 - _0 $ is at least of modest value), then using FDR corrections makes more sense for controlling the PER."
+    },
+    {
+      "type": "discussion",
+      "content": "Example A4.7. In Morton's original application, because there are 23 pairs of human chromosomes, he argued that two randomly chosen genes had a $ 1/23 0.05 $ prior probability of linkage, namely, $ 1 - _0 = 0.05 $, and thus $ _0 = 0.95 $. Assuming a Type-I error rate of $ = 0.05 $ and 80 $$ \\frac{0.05\\cdot0.95}{0.05\\cdot0.95+0.80\\cdot0.05}=0.54 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Hence, with a Type-I error control of $ = 0.05 $, a random test showing a significant result ($ p 0.05 $) has a 54"
+    },
+    {
+      "type": "discussion",
+      "content": "What value for $ $ is needed under the above parameters to given a PER of 0.05? Solving for $ $ in the expression $$ \\frac{\\alpha\\cdot0.95}{\\alpha\\cdot0.95+0.80\\cdot0.05}=0.05 $$ yields $ = 0.0022 $, and hence, setting this as the Type-I error gives a PER of 5"
+    },
+    {
+      "type": "discussion",
+      "content": "Example A4.8. Suppose we set $ = 0.005 $ for each test, and assume that the resulting power is essentially 1 (i.e., $ 0 $). Consider 5000 tests under two different settings. First, suppose that the alternative is very rare, with $ n_1 = 1 $ ($ _0 = 0.9998 $). Under this setting, we expect $ 4999 0.005 = 24.995 $ false positives and one true positive ($ 1 = 1 $), yielding an expected PER of $$ PER=\\frac{24.995}{24.995+1}=0.961 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, a randomly chosen significant test has a 96.1"
+    },
+    {
+      "type": "discussion",
+      "content": "Now suppose that the alternative is not especially rare, for example $ n_1 = 500 $ ($ _0 = 0.9 $). The expected number of false positives is $ 4500 0.005 = 22.5 $, while the expected number of true positives is 500, yielding a PER of $$ PER=\\frac{22.5}{522.5}=0.043 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The PER is thus rather sensitive to $ _0 $, the fraction of all tests that are truly from the null hypothesis. If $ _0 $ is essentially 1, a PER of $ $ is obtained using the Bonferroni correction, $ = /n $. However, if $ _0 $ departs even slightly from one (i.e., more than a few of the alternative hypotheses are correct), then the per-test level of $ $ to achieve a desired PER rate is considerably larger (i.e., less stringent) than that given by the Bonferroni correction, namely, $ () > /n $. For example, for a 0.04 experiment-wide error rate, $ = 0.04/5000 = 8 10^ -6 $, which is roughly 625 times smaller than the value of $ = 0.005 $ required for a 4"
+    }
+  ]
+}

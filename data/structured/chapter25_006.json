@@ -1,0 +1,49 @@
+{
+  "id": "chapter25_006",
+  "metadata": {
+    "chapter": "chapter25",
+    "section": "Chapter 25: Dynamics of Allele-frequency Change",
+    "subsections": [
+      "Dynamics of Allele-frequency Change"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter25_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "25.5"
+    ],
+    "table_references": [
+      "25.1",
+      "25.2"
+    ],
+    "table_reference_keys": [
+      "chapter25:25.1",
+      "chapter25:25.2"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "derivation",
+      "content": "Example 25.3. An ingenious experiment examining the fit between estimated QTL effects and their projected allele-frequency changes under selection was performed by Falke et al. (2007). By making crosses between inbred lines, the frequency of all segregating alleles in the $ F_1 $ is 1/2. Assuming only additive effects, for $ p = 1/2 $, Equation 25.3 reduces to $ p = a / (4 _z) $. Further, the expected frequency change at a marker allele linked to $ n $ QTLs is [[SEE_FORMULA:25.5]] where $ c_ i $ is the recombination frequency between the ith-marker and the QTL (this expression is only approximate, as it ignores LD among the linked QTLs and quickly breaks down if more than a couple of QTL are linked to the marker)."
+    },
+    {
+      "type": "discussion",
+      "content": "Falke et al. examined two sets of crosses involving European flint maize. The A × B cross used roughly 270 F₂:₃ lines (selfed F₂ lines) for QTL mapping and was subjected to four cycles of selection, while the C × D cross used roughly 130 F₃:₄ (selfed F₃ lines) for QTL mapping and was subjected to seven cycles of selection. As Figure 25.5 shows, while the QTL effect was a modest predictor of change in marker allele frequency in the A × B cross (r = 0.55), the slope of the regression of predicted on observed change was roughly 0.5, implying that the observed marker allele frequency change exceeded the predicted value by roughly two-fold. The association was nonsignificant in the C × D cross (r = 0.13)."
+    },
+    {
+      "type": "discussion",
+      "content": "While the lack of fit should not be surprising given that Equation 25.5 is an approximation, the direction was unexpected. One would expect Equation 25.5 to overpredict (predict a greater change than was seen), rather than underpredict, the allele-frequency change. Overprediction is expected from either the Beavis effects (overestimation of the effect sizes of detected QTLs when power is low; LW Chapter 15; also see Göring et al. 2001; Xu 2003; Goddard et al. 2009) or from the generation of negative linkage disequilibrium among selected loci (Chapter 16), which reduces the selection response below the value predicted by Equation 25.5."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 25.4. As an example of the consequences for the limit, $R$, and half-life, $t_ 0.5 $, as the number of loci increases, consider the exchangeable model with $n$ completely identical additive loci (in the absence of mutational input). Suppose populations with different numbers of loci underlying the character all start with the same initial variances ($ _z^2(0) = 100$ and $ _z^2(0) = 200$) and with an initial frequency of $p_0 = 0.5$. To hold initial additive-genetic variance constant as $n$ increases, the allelic effect, $a$, must decrease as the number of loci increases. If we ignore gametic-phase disequilibrium, then $ _A^2(0) = 2na^2p_0(1 - p_0) = na^2/2 = 100$, implying $a = 10 /n$. From [[SEE_TABLE:25.1]], the selection limit becomes $2na(1 - 1/2) = na = 10 n$. With $p_0 = 1/2$, [[SEE_TABLE:25.1]] gives $p_ 0.5 = [1 + (1/2)]/2 = 3/4$. Substituting these values into Equation 5.3d yields the expected time, $t_ 0.5 $, for this amount of allele-frequency change (from 0.5 to 0.75, or $t_ 0.75,0.5 $ in the notation of Equation 5.3d) as $$ t_{0.5}=t_{0.75,0.5}\\simeq\\frac{1}{s}\\ln\\left(\\frac{\\left(3/4\\right)\\left(1-\\left[1/2\\right]\\right)}{\\left[1/2\\right]\\left(1-\\left[3/4\\right]\\right)}\\right)=\\left(\\frac{\\sigma_{z}}{a\\bar{\\imath}}\\right)\\ln(3)=\\frac{\\sqrt{n}}{\\bar{\\imath}}\\ln(3) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "[[TABLE:25.2]]. For each of the three major-locus genotypes, the distribution of phenotypic values is assumed to be normal with a mean of $ + _i $ and a variance of $ ^2 $. Part of this variance, $ h^2 ^2 $, is from the additive-genetic variance of background polygenes, where $ h^2 $ is the polygenic heritability. As the expression for the trait mean in [[SEE_TABLE:25.2]] suggests, the dynamics of the mean jointly depend on the change in frequency of the major allele ($ p $) and the change in the mean ($ $) of the background polygenes (also see Equation 25.8e). While both $ p $ and $ $ change over time, to avoid excessive notation we suppress the subscript for generation on each."
+    },
+    {
+      "type": "discussion",
+      "content": "At the selection limit, the mean phenotype is usually more extreme than any phenotype observed in the initial base population (R > 3σz). For example, when n = 25, the total response is 5 phenotypic standard deviations. For U ~ N(0,1), Pr(U > 5) = 2.87 · 10⁻⁷. Hence, on average, 2.87 · 10⁻⁷ · 10⁶ = 0.287 such extreme individuals are expected in a base population sample of size 10⁶. From the zero term of the Poisson, the probability that no such individuals are seen in such a sample is e⁻⁰.²⁸⁷ = 0.75. Hence, the limiting mean exceeds any phenotype likely to be found in the initial population. This is not surprising, as the probability of observing the most extreme genotype (BB at all loci) in the base population is $ (1/4)^ 25 10^ -15 $"
+    }
+  ]
+}

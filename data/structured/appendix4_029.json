@@ -1,0 +1,40 @@
+{
+  "id": "appendix4_029",
+  "metadata": {
+    "chapter": "appendix4",
+    "section": "Bias When Estimating Magnitudes",
+    "subsections": [
+      "Bias When Estimating Magnitudes"
+    ],
+    "source_file": "tmp\\paddle_output\\appendix4_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Finally, consider a random-effects setting, in which the parameter of interest, $ _ ii $ in a given study (i) is drawn from normal distribution with a mean of $ $ and a variance of $ _ ^ 2 $, so $ _ i N(, _ ^ 2)$. Suppose we assume the observed effect, $T_ i $, for this study is also normal, but with an additional sampling error, $ _ e ^ 2 $, so that $T_ i N(, _ u ^ 2 + _ e ^ 2)$. This additional variance has no effect on our estimate of the desired mean, $ $, as $E[T_ i] = $. However, in many setting in quantitative genetics (as well as ecology and evolution), our interest may be in the absolute magnitude, $| |$, of the effect, rather than its mean value. An important example of this type of inquiry is the estimation of the average strength of selection, $| |$, on a trait (Chapters 29 and 30). As noted by Hereford et al. (2004) and Morrissey (2016), $E[|T|] > E[\\| \\|]$ when $ _ e ^ 2 > 0$, which will result in an overestimate of the expected absolute value of the effect. In particular, if $ = 0$, then (Example A4.11), $$ E[|\\theta|]=\\sigma_{u}\\sqrt{2/\\pi},\\qquad\\mathrm{w h i l e}\\qquad E[|T|]=\\sqrt{\\sigma_{u}^{2}+\\sigma_{e}^{2}}\\cdot\\sqrt{2/\\pi} $$ which yields a relative error of $$ \\frac{E[|T|]-E[|\\theta|]}{E[|\\theta|]}=\\sqrt{\\frac{\\sigma_{e}^{2}}{\\sigma_{u}^{2}}+1-1} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "[h]"
+    },
+    {
+      "type": "discussion",
+      "content": "[h]"
+    },
+    {
+      "type": "discussion",
+      "content": "[h]"
+    },
+    {
+      "type": "discussion",
+      "content": "[h] which can be a significant overestimation of the average magnitude of an effect if the error variance is large relative to the effect variance (Figure A4.8). Morrissey (2016) presented several additional examples where the concern of a meta-analysis is in some measure of dispersion about a mean, in which case the error variance associated with using an estimate $ (T_i) $ will result in an upwardly biased estimator. Morrissey showed how the use of appropriate mixed models helps to resolve this concern."
+    },
+    {
+      "type": "discussion",
+      "content": "Example A4.11. Hereford et al. (2004) and Morrissey (2016) presented general expressions for $ E[|x|] $ when $ x N(, ^2) $. As shown in Figure A4.8, the distribution of $ |x| $ is given by a folded normal distribution, from which it follows that $$ \\begin{align*}E[|x|]=\\sigma\\sqrt{2\\over\\pi}\\exp\\left(-{\\mu^2\\over2\\sigma^2}\\right)+|\\mu|\\cdot\\textrm{erf}\\left({\\mu|\\over\\sigma\\sqrt{2}}\\right)\\end{align*} $$ where $$ \\mathrm{erf}(x)=\\frac{2}{\\sqrt{\\pi}}\\int_{0}^{x}\\exp(-t^{2})dt $$ is the error function. Taking $ = 0 $, Equation A4.38a reduces to Equation A4.37a. Likewise, when $ ^ 2 $, Equation A4.38a reduces to $$ E[|x|]\\sim|\\mu| $$ which follows because for large values of x, $ e^ -x 0 $ and $ (x) 1 $."
+    }
+  ]
+}

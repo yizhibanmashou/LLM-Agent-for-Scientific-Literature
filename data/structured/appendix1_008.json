@@ -1,0 +1,52 @@
+{
+  "id": "appendix1_008",
+  "metadata": {
+    "chapter": "appendix1",
+    "section": "Stationary Distributions",
+    "subsections": [
+      "Stationary Distributions"
+    ],
+    "source_file": "tmp\\paddle_output\\appendix1_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "At equilibrium, a probability density function does not change over time, namely, $$ \\frac{\\partial\\varphi(x,t,p)}{\\partial t}=0 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "When such a function exists, it is called the stationary distribution and is denoted by $ (x) $. Stationary distributions are independent of the starting conditions: regardless of where the process starts in the interior of the diffusion, it converges to the same distribution. Hence, $ (x, t, p) $ can be decomposed into a transient deviation (dependent on $ t $ and $ p $) and a stationary expectation (independent of both $ t $ and $ p $), $ (x, t, p) = ^*(x, t, p) + (x) $. The transient deviation satisfies $ _ t ^*(x, t, p) = 0 $, and the deviation from the equilibrium distribution decays to zero over time."
+    },
+    {
+      "type": "discussion",
+      "content": "When Equation A1.10a is satisfied, Equation A1.6 becomes $$ \\frac{\\partial^{2}[v(x)\\varphi(x)]}{2\\partial x^{2}}=\\frac{\\partial[m(x)\\varphi(x)]}{\\partial x} $$ and integration of both sides reduces this to the simple differential equation, $$ \\frac{\\partial[v(x)\\varphi(x)]}{\\partial x}=2m(x)\\varphi(x) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Using standard methods for differential equations (e.g., Tenenbaum and Pollard 1963) yields the solution as $$ \\varphi(x)=\\frac{C}{v(x)G(x)} $$ where G (which is called the scale function in the diffusion literature) is defined by the indefinite integral $$ G(x)=\\exp\\left[-2\\int^{x}\\frac{m(y)}{v(y)}dy\\right] $$ and $C$ is a constant such that $ (x)$ integrates to one, ensuring that Equation A1.11 is a proper probability density function. Stationary distributions for population-genetic processes were first obtained by Wright (1931, 1938b), who used a somewhat different approach. Note that $ ^ -1 dx$ may be infinite, in which case no stationary distribution exists. This happens, for example, in the absence of mutation and migration, where both boundaries (allele frequencies of 0 or 1) are absorbing."
+    },
+    {
+      "type": "discussion",
+      "content": "Example A1.3. Consider the case in which random genetic drift is the only force influencing allele-frequency change. From Equation A1.3, $ m(x) = 0 $ and $ v(x) = x(1 - x)/(2N_e) $, which yields $$ G(x)=\\exp\\left[-4N_{e}\\int\\limits_{}^{x}\\frac{0}{y(1-y)}dy\\right]=e^{-4N_{e}0}=1 $$ and from Equation A1.11, $$ \\varphi(x)=\\frac{2N_{e}C}{x(1-x)} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The only valid equilibrium distribution is $ (x)=0 $ (e.g., C=0), as $$ \\int_{0}^{1}x^{-1}(1-x)^{-1}dx=\\infty $$ As shown in Example A1.2, after sufficient time, and in the absence of any force to keep allele frequencies in the interior $ (0 < x < 1) $, all alleles eventually reach a frequency of zero or one. As a result, the equilibrium distribution on the open interval of 0 < x < 1 is zero. a function of the allele frequency, x. Using the definitions of $ m(x) $ and $ v(x) $ from Equation A1.5, $$ \\begin{aligned}\\int^{x}\\frac{m(y)}{v(y)}dy&=2N_{e}\\int^{x}\\frac{y(1-y)d\\ln[\\overline{W}(y)]/(2dy)+(1-y)\\mu-y\\nu}{y(1-y)}dy\\\\&=N_{e}\\int^{x}\\frac{d\\ln[\\overline{W}(y)]}{dy}dy+2N_{e}\\mu\\int^{x}\\frac{1}{y}dy-2N_{e}\\nu\\int^{x}\\frac{1}{1-y}dy\\\\&=N_{e}\\ln[\\overline{W}(x)]+2N_{e}\\mu\\ln(x)+2N_{e}\\nu\\ln(1-x)\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Hence $$ G(x)=\\exp\\left[-2\\int_{}^{x}\\frac{m(y)}{v(y)}d y\\right]=\\overline{W}(x)^{-2N_{e}}x^{-4N_{e}\\mu}\\left(1-x\\right)^{-4N_{e}\\nu} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "If we substitute this expression for $ G(x) $ into Equation A1.11, it returns the stationary distribution as $$ \\varphi(x)=C\\overline{W}(x)^{2N_{e}}x^{4N_{e}\\mu-1}\\left(1-x\\right)^{4N_{e}\\nu-1}\\quad for0<x<1 $$ a result first due to Wright (1931), obtained using a different approach."
+    },
+    {
+      "type": "discussion",
+      "content": "Example A1.5. A particular application of Equation A1.15 is the case of a deleterious recessive allele maintained by mutation. In an infinite population (Chapter 7), the equilibrium frequency of this allele is approximately $ $ (for $ s $), where the fitness of the recessive homozygote is 1 - s and the mutation rate from normal to recessive allele is $ $. Here, $ (x) = 1 - s x^2 $, and because $ (1 - x)^ N_c e^ -x N_c $, we have $$ [\\overline{{W}}(x)]^{2N_{e}}=(1-s x^{2})^{2N_{e}}\\simeq\\exp(-2N_{e}s x^{2}) $$ resulting in an equilibrium distribution of $$ \\varphi(x)=C e^{-2N_{e}s x^{2}}x^{4N_{e}\\mu-1}\\left(1-x\\right)^{4N_{e}\\nu-1}\\quad for0<x<1 $$"
+    }
+  ]
+}

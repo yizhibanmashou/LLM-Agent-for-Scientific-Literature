@@ -1,0 +1,85 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "paper2latex"
+version = "0.1.0"
+description = "MCP server for converting scientific papers (PDF) to editable LaTeX projects"
+authors = [{name = "paper2latex Contributors"}]
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+keywords = ["mcp", "pdf", "latex", "scientific-papers", "document-conversion", "grobid"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Text Processing :: Markup :: LaTeX",
+]
+
+dependencies = [
+    "mcp>=1.0.0",
+    "pymupdf>=1.23.0",
+    "lxml>=4.9.0",
+    "pyyaml>=6.0",
+    "requests>=2.31.0",
+    "pydantic>=2.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "black>=23.0.0",
+    "ruff>=0.1.0",
+]
+
+[project.scripts]
+paper2latex = "paper2latex.server:main"
+
+[project.urls]
+Homepage = "https://github.com/rudaoshi/paper2latex"
+Repository = "https://github.com/rudaoshi/paper2latex"
+Documentation = "https://github.com/rudaoshi/paper2latex#readme"
+"Bug Tracker" = "https://github.com/rudaoshi/paper2latex/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["paper2latex*"]
+
+[tool.black]
+line-length = 100
+target-version = ["py310"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+select = ["E", "F", "I", "N", "W"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+python_classes = "Test*"
+python_functions = "test_*"
+addopts = "-v --tb=short"
+
+[tool.coverage.run]
+source = ["src/paper2latex"]
+omit = ["*/tests/*", "*/test_*.py"]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+]

@@ -1,0 +1,68 @@
+{
+  "id": "chapter11_006",
+  "metadata": {
+    "chapter": "chapter11",
+    "section": "Chapter 11: Impact of Drift Under Nonadditive Variance",
+    "subsections": [
+      "Impact of Drift Under Nonadditive Variance"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter11_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "11.5",
+      "11.6a",
+      "11.6b",
+      "11.6c"
+    ],
+    "table_references": [
+      "11.1",
+      "11.3"
+    ],
+    "table_reference_keys": [
+      "chapter11:11.1",
+      "chapter11:11.3"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "With definitions in hand for the quadratic expressions in the base population ([[SEE_TABLE:11.1]]) and the temporal dynamics of the identity coefficients (Equations 11.3 and 11.4), we are now in a position to explore the impact of finite population size on the components of variance for a quantitative trait with a nonadditive genetic basis. The expected dynamics are determined by summing the products of the seven quadratic terms listed across the top of [[SEE_TABLE:11.3]] with their associated tabulated identity coefficients in the table. For example, the expected within-population dominance variance is $$ [1-3f+2(\\Delta+\\gamma-\\delta)]\\sigma_{D}^{2}+(f+\\delta-2\\gamma)\\sigma_{D I}^{2}+(f+\\Delta-2\\gamma)\\iota^{*}+(\\widetilde{f}-2\\widetilde{\\gamma}+\\widetilde{\\Delta})(\\iota^{2}-\\iota^{*}) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Here, $ _ D ^ 2 $, $ _ DI ^ 2 $, etc. are the base-population values of these components under random mating."
+    },
+    {
+      "type": "derivation",
+      "content": "To gain a more intuitive feel for the source of the expressions in [[SEE_TABLE:11.3]], we first consider the total genetic variance in a collection of lines, each inbred to level f, while ignoring epistasis until the following section. Subscripting loci with k and the two alleles at a locus as i and j, the genotypic value, G (expressed as a deviation from the mean), of an individual can be written as [[SEE_FORMULA:11.5]] where $ _ kij $ is equal to one if the two alleles at a locus are identical by descent and equal to zero otherwise."
+    },
+    {
+      "type": "discussion",
+      "content": "To compute the mean genotypic value, $ _G = E[G] $, note that the expected value of $ _ kij $ is $ f $ and that we can write the expected value of $ G $ as two components: if not inbred $ (_ kij = 0) $, then $ E[_ ki + _ kj + _ kij] = 0 $, as these are deviations from the mean, leaving $$ E[G]=E\\left[\\sum_{k=1}^{n}\\phi_{k i j}(2\\alpha_{k i}+\\delta_{k i i})\\right]=f\\left[\\sum_{k=1}^{n}\\sum_{i=1}^{n_{k}}p_{k i}(2\\alpha_{k i}+\\delta_{k i i})\\right] $$"
+    },
+    {
+      "type": "derivation",
+      "content": "If inbred, the two alleles at locus k are identical, giving the frequency of genotype $ A_ ki A_ ki $ as $ fp_ k,i $, yielding the last equality. Because $ _ i _ ki p_ ki =0 $ (by construction), we are left with $$ E[G]=\\mu_{G}=f\\sum_{k=1}^{n}\\sum_{i=1}^{n_{k}}\\delta_{kii}p_{ki}=f\\cdot\\iota $$ the last step following from the definition of $ $ ([[SEE_TABLE:11.1]]). Under complete inbreeding, $ _G = $, the change in the mean from inbreeding depression (as $ _G = 0 $ under random mating). In addition, [[SEE_FORMULA:11.6a]]"
+    },
+    {
+      "type": "discussion",
+      "content": "The final term in Equation 11.6a summarizes the consequences of joint inbreeding at pairs of loci, with $ $ being the probability that two loci in the same individual are inbred (Figure 11.1) and $ ^2 - ^* = 2 _ k<m ^n _ k _m $ being the sum of cross-products of the locus-specific inbreeding depressions. In obtaining Equation 11.6a, note that all other products across loci have expectations equal to zero because $ E[_ ki] $ is always equal to zero and $ E[_ kij] = 0 $ at non-inbred loci (LW Chapter 4)."
+    },
+    {
+      "type": "derivation",
+      "content": "Recalling that the genetic variance is defined to be $ _ G ^ 2 = E[G^ 2] - _ G ^ 2 $, we obtain [[SEE_FORMULA:11.6b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Further simplification is achieved by adding and subtracting $ f(1 - f) ^* $ on the right side of this expression, which, after using the expressions in [[SEE_TABLE:11.1]], leads to [[SEE_FORMULA:11.6c]] in agreement with the final row in [[SEE_TABLE:11.3]]."
+    },
+    {
+      "type": "discussion",
+      "content": "Although the preceding results apply to the genetic variance summed within and among a set of hypothetical isolated subpopulations, an expression for the average within-population variance can be obtained by removing the among-population component. The simplest route to this result is to recall the general rule that the variance among groups is equivalent to the covariance between individuals within groups (e.g., LW Chapter 18). Using this principle, the contribution of each quadratic component in [[SEE_TABLE:11.1]] to the among-population variance can be obtained in the following way."
+    },
+    {
+      "type": "discussion",
+      "content": "First, in the context of the entire collection of populations, $f$ is equivalent to the probability that single alleles in the same population are identical by descent (the average coefficient of coancestry), so the additive genetic covariance for members of the same population is equal to $2f _A^2$ (LW Chapter 7). Second, two individuals within a population may also share both genes at a locus, in which case they will exhibit dominance genetic covariance, the magnitude of which will depend on whether the locus is inbred or not. From Figure 11.1, we see that the probability that both individuals are inbred and share the same genotype by descent is equal to the identity measure $ $, so the genetic covariance by this route is $ _ D1 ^2$."
+    }
+  ]
+}

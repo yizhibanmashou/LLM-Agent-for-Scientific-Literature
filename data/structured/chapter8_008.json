@@ -1,0 +1,70 @@
+{
+  "id": "chapter8_008",
+  "metadata": {
+    "chapter": "chapter8",
+    "section": "Chapter 8: Allele-frequency Change",
+    "subsections": [
+      "Allele-frequency Change"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter8_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "8.3a",
+      "8.3b",
+      "8.3c",
+      "8.3d",
+      "8.3e",
+      "8.3f",
+      "8.3g",
+      "8.4a"
+    ],
+    "table_references": [
+      "inline_1"
+    ],
+    "table_reference_keys": [
+      "chapter8:inline_1"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "While Equation 8.2c conveys the general notion of competition between recombination and selection, this is a rather crude analysis, as it only considers the time to fixation for A (and hence the end of any opportunity for further recombination) and uses $ _q() $ in place of the real quantity of interest, $ _q $. As presented in Example 8.2, an improved analysis accounts for how the actual change in the frequency of A influences the opportunity for recombination. This problem has received considerable attention, starting with a strictly deterministic analysis by Maynard Smith and Haigh (1974; also see Stephan et al. (2006), followed by analyses allowing for finite population size by Kaplan et al. (1989), Stephan et al. (1992), Barton (1995a, 1998, 2000), Otto and Barton (1997), Durrett and Schweinsberg (2004), Etheridge et al. (2006), Pfaffelhuber et al. (2006), Pfaffelhuber and Studeny (2007), Ewing et al. (2011), and Coop and Ralph (2012)."
+    },
+    {
+      "type": "derivation",
+      "content": "The details for a deterministic analysis accounting for the change in A are given in Example 8.2. Under this analysis, if $ p(0) $ is the starting frequency of A at the time of selection, then for $ c/s 1 $, the change in q at the fixation of A is [[SEE_FORMULA:8.3a]] so as a result, from Equation 8.1d, [[SEE_FORMULA:8.3b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "This result shows that our approximate analysis leading to Equation 8.2c underestimated the effect of a sweep, as it scaled as the power $ 2c/s $, inflating the importance of recombination (Example 8.2 details why this occurs). Recalling that [[SEE_FORMULA:8.3c]] and applying this approximation to Equation 8.3b recovers the original result of Maynard Smith and Haigh (1974), [[SEE_FORMULA:8.3d]] [[SEE_FORMULA:8.3e]]"
+    },
+    {
+      "type": "discussion",
+      "content": "This approximation can fail if $ (c/s) $ is too large, although the more exact Equation 8.3b will still hold. If the favorable mutation is initially linked to deleterious alleles at nearby loci, this will result in a lower net selective advantage during the sweep (diminishing the effective value of s), and hence a diminished value of $ f_s $ (Hartfield and Otto 2011; Good and Desai 2014). As Equation 8.3e shows, the hitchhiking effect for a favorable mutation introduced as a single copy diminishes with increasing population size, reflecting the longer time to reach fixation in larger populations and hence a greater reduction of any initial association by recombination. This effect, however, is rather modest, scaling as the log of population size."
+    },
+    {
+      "type": "derivation",
+      "content": "When dominance is present, so that the fitnesses are 1: 1 + 2hs: 2s, then c/s in Equations 8.3a–8.3d is replaced by c/(2hs) for $ h 0 $. For the case of a completely recessive allele $ (h = 0) $, Maynard Smith and Haigh (1974) found that [[SEE_FORMULA:8.3f]]"
+    },
+    {
+      "type": "discussion",
+      "content": "For example, with $ p(0) = 1/(2N) $, Equation 8.3f becomes $ 1 - (c/s)N $ versus $ 1 - (c/s) (2N) $ (Equation 8.3d). The much weaker hitchhiking effect (smaller value of $ f_s $) reflects the much longer fixation time for a recessive mutation and hence the greater opportunity for recombination to decay any initial disequilibrium. Conversely, the decreased fixation time for a favorable dominant allele ($ h = 1 $) effectively doubles the strength of selection (with $ c/[2s] $ replacing c/s in Equation 8.3a), resulting in a larger region influenced by the sweep (also see Teshima and Przeworski 2006; Ewing et al. 2011)."
+    },
+    {
+      "type": "derivation",
+      "content": "These results are for a deterministic analysis. When an analysis allowing for drift is performed, using the initial frequency $ 1/(2N) $ for a single copy underestimates the effects of hitchhiking, as those alleles that become fixed leave the drift-dominated boundary region of the allele-frequency space faster than would be predicted by a deterministic analysis (Example 8.1). As a reasonable approximation, this can be accommodated by replacing $ p(0) = 1/(2N) $ with $ p(0) = 1/(4N_ e s) $ in all of the previous expressions (as already seen in Equation 8.2c), yielding [[SEE_FORMULA:8.3g]]"
+    },
+    {
+      "type": "discussion",
+      "content": "For those who wish a more refined analysis, there is a growing body of very technical literature focusing on the genealogical structure of a sample from a hard sweep (Kaplan et al. 1989; Barton 1998; Etheridge et al. 2006; Pfaffelhuber et al. 2006; Pfaffelhuber and Studeny 2007; Ewing et al. 2011)."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 8.1. What is the expected time to fixation for an allele with additive fitness effects under strong selection ($ 4N_ e s 1 $? In a strictly deterministic analysis, the fixation time is infinite, as the allele frequency gets arbitrarily close to, but never actually reaches, one. However, in a finite population, once the allele frequency is driven sufficiently close to one by selection, it is rapidly fixed by drift. If the scaled strength of selection is large relative to drift ($ 4N_ e s 1 $), we can approximate the change in $ p(t) $ by a deterministic process, provided $ p $ is not too close to zero or one. Near these boundary values, drift determines the dynamics. Hence, a standard approach is to treat $ p(t) $ as a deterministic process when it is in the range $ < p < 1 - $, for $ 1 $ (Kurtz 1971; Norman 1974; Kaplan et al. 1989; Stephan et al. 1992). Once the allele reaches a frequency of $ 1 - $, it is assumed to be quickly fixed by drift, and this additional time is assumed to be small and thus is ignored."
+    },
+    {
+      "type": "derivation",
+      "content": "Let $ p(t) $ denote the frequency of the favored allele A at time t. If s is small (but $ 4N_ e s $ large), the deterministic allele-frequency dynamics are well approximated by Equation 5.3b, which can alternatively be expressed as [[SEE_FORMULA:8.4a]]"
+    }
+  ]
+}

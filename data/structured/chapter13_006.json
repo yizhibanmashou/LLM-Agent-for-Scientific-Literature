@@ -1,0 +1,50 @@
+{
+  "id": "chapter13_006",
+  "metadata": {
+    "chapter": "chapter13",
+    "section": "Chapter 13: Response Under Sex-Dependent Parent-Offspring Regressions",
+    "subsections": [
+      "The Robertson-Price Identity, $ S = (w, z) $"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter13_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "13.7a",
+      "13.7b",
+      "13.8a",
+      "13.8b",
+      "13.8c"
+    ],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "derivation",
+      "content": "As introduced in Chapter 6, the selection differential can be written as the covariance between relative fitness and trait value [[SEE_FORMULA:13.7a]]"
+    },
+    {
+      "type": "proposition",
+      "content": "This is the Robertson-Price identity (Equation 6.10), which was first noted by Robertson (1966a) and later elaborated on by Price (1970, 1972a). Chapter 6 showed how this expression directly follows from Price's theorem. For an alternative derivation, let $ z_i $, $ p_i $, and $ w_i $ be the trait value, frequency before selection, and relative fitness, respectively, of class i. The selection differential is simply the mean after selection minus the mean before $$ S=\\mu_{s}-\\mu=\\sum z_{i}w_{i}p_{i}-\\sum z_{i}p_{i}=E[z w]-E[z] $$ Because $ E[w] = 1 $ by definition, we can write this as $$ S=E[z w]-E[z]E[w]=\\sigma(w,z) $$ thus recovering the Robertson-Price identity. The last step follows from the standard definition of a covariance (LW Equation 3.8)."
+    },
+    {
+      "type": "derivation",
+      "content": "If, instead of considering the phenotypic value $ (z) $ of a trait, we consider its breeding value, $ A_ z $, then from the Robertson-Price identity, the expected change in breeding value following selection is [[SEE_FORMULA:13.7b]]"
+    },
+    {
+      "type": "proposition",
+      "content": "Under the conditions of the breeder’s equation, this change in the breeding value in the selected parents equals the change in the offspring mean (Chapter 6), thereby equating this covariance with the response (R) in the phenotypic mean of the trait. Equation 13.7b is the 1966 version of Robertson’s secondary theorem of natural selection (Equation 6.25a). The more restricted 1968 version, $ R = (A_z, A_w) $, based on the breeding value of relative fitness ($ A_w $ versus w, Equation 6.24a), appears in the literature as well (Chapters 6 and 20). These covariance-based identities for S and R play important roles in evolutionary quantitative genetics. Chapter 20 examines applications of Equation 13.7b in predicting the selection response in natural populations, while Equation 13.7a routinely appears in selection theory (Chapters 15, 20–23, 29, and 30)."
+    },
+    {
+      "type": "derivation",
+      "content": "An important application of the Robertson-Price identity follows if we consider the slope of the least-squares linear regression of relative fitness $ (w) $ on phenotypic value, z [[SEE_FORMULA:13.8a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "The interpretation of the slope is that a unit change in z results in a change in relative fitness of $ $ (Chapter 29 examines this regression in detail). From the theory of least-squares regression (LW Chapter 3) [[SEE_FORMULA:13.8b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Substituting $ S = _z^2 $ into Equation 13.1 yields [[SEE_FORMULA:13.8c]] which relates the strength of association, $ $, between trait value and fitness with the response. This is the univariate version of the multivariate Lande equation (R = G $ $), to be introduced shortly (Equation 13.26a)."
+    }
+  ]
+}

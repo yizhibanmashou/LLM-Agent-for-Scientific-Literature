@@ -1,0 +1,27 @@
+{
+  "id": "chapter11_002",
+  "metadata": {
+    "chapter": "chapter11",
+    "section": "Chapter 11: Complete Additivity",
+    "subsections": [
+      "Complete Additivity"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter11_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "11.1",
+      "11.2"
+    ],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "derivation",
+      "content": "Consider a diallelic locus (indexed by i) with a strictly additive genetic basis, such that the three genotypic values contributing to a quantitative trait are scaled to be 0, $ a_i $, and $ 2a_i $. Assuming Hardy-Weinberg equilibrium, at any particular generation, $ t $, the total (and additive) genetic variance associated with this locus is $ 2a_i^2p_i(t)[1 - p_i(t)] $, where $ p_i(t) $ is the allele frequency at time $ t $ (LW Chapter 4). Assuming gametic-phase equilibrium, this expression is readily extended to a multilocus trait with a purely additive genetic basis. If we sum over all $ n $ loci contributing to the trait, the expected within-population genetic variance is [[SEE_FORMULA:11.1]] From Chapter 2, we know that the expected heterozygosity after $ t $ generations at an effective population size of $ N_e $ is simply $ [1 - 1/(2N_e)]^t $ times the initial value. Moreover, under the assumption of neutrality, there should be no correlation between allele frequency and effect, so, substituting from Equation 2.5, [[SEE_FORMULA:11.2]] as obtained by Wright (1951)."
+    },
+    {
+      "type": "discussion",
+      "content": "Equation 11.2 illustrates the simplest possible behavior that can be expected for the genetic variance within a finite population, starting with a baseline level of $ _A^2(0) $. For a character with a purely additive genetic basis, in the absence of any significant replenishing forces for variation (mutation or migration), the additive genetic variance within populations is expected to decline exponentially at the rate of $ 1/(2N_e) $ per generation. When linkage disequilibrium is present, the additive genetic (as opposed to the additive genetic) variance declines at this rate (Chapters 16 and 24). A key point worth stressing is that Equation 11.2 describes the expected behavior of the genetic variance, as averaged over a very large number of replicate populations. As discussed below, as a consequence of the stochastic sampling of gene frequencies, any single replicate population can deviate substantially from its expected trajectory."
+    }
+  ]
+}

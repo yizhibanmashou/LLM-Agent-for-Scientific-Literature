@@ -1,0 +1,53 @@
+{
+  "id": "chapter2_016",
+  "metadata": {
+    "chapter": "chapter2",
+    "section": "Chapter 2: MUTATION-MIGRATION-DRIFT EQUILIBRIUM",
+    "subsections": [
+      "MUTATION-MIGRATION-DRIFT EQUILIBRIUM"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter2_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "2.45b",
+      "2.46",
+      "2.47a",
+      "2.47b"
+    ],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "derivation",
+      "content": "On the other hand, the mean coalescence time for two genes randomly drawn from the entire metapopulation is [[SEE_FORMULA:2.45b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "(Li 1976; Slatkin 1991; Nei and Takahata 1993), which is the sum of the previous term and the additional time required for alleles to coalesce into the same deme. Unlike the amount of variation within demes, the differentiation among demes clearly depends on m. Substituting Equations 2.45a and 2.45b into Equation 2.44 yields [[SEE_FORMULA:2.46]]"
+    },
+    {
+      "type": "discussion",
+      "content": "This again shows that the equilibrium level of population subdivision is completely independent of the mutation rate and largely independent of the number of demes (d), provided the latter is at least moderately large."
+    },
+    {
+      "type": "definition",
+      "content": "This type of framework for interpreting $ F_ ST $ is readily extended to populations with a hierarchical structure (Figure 2.11). In the simplest hierarchical model, the metapopulation is arranged into a series of g groups, each of which is further subdivided into d demes. Within each group, the demes exchange migrants according to the island model with total rate of $ m_1 $ (so that $ m_1/[d - 1] $ is the rate at which each deme sends migrants to any other particular deme within its group). By definition, there is less frequent exchange of migrants between the different groups, i.e., $ m_2 < m_1 $. With this type of structure, it is necessary to consider the degree to which the total genetic variation partitions into three components: within demes, among demes within a group, and among groups."
+    },
+    {
+      "type": "discussion",
+      "content": "Each of these components can again be expressed in terms of coalescence times. Let $ _0 $ be the mean coalescence time for two individuals from the same deme, $ _1 $ for two individuals from the same group but different demes, and $ _2 $ for two individuals from different groups. As with the island model, the geographic invariance principle gives the mean coalescence time for two individuals from the same deme as $ _0 = 2Ng d $, i.e., twice the total population size. In order for two individuals in the same group but different demes to coalesce, they must first trace back to the same deme, which for $ m_1 m_2 $ requires approximately $ t'_1 g(d - 1)/(2m_1) $ generations (from the second term in Equation 2.45b), and then take an additional $ _0 $ generations to coalesce within that deme, giving $ _1 = t'_1 + _0 $ (Slatkin and Voelm 1991). Finally, for individuals from different groups to coalesce, they first must trace back to the same group, which requires an average of $ t'_2 (g - 1)/(2m_2) $ generations, then trace back to the same deme within a group $ (t'_1) $, and finally coalesce within that deme, giving $ _2 = t'_2 + t'_1 + _0 $."
+    },
+    {
+      "type": "derivation",
+      "content": "Using these results, three hierarchical $ F $ statistics define the partitioning of the total population variation: $ F_ DG $ among demes within groups, $ F_ GT $ among groups within the total population, and $ F_ ST $ among demes within the total population: [[SEE_FORMULA:2.47a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "(Slatkin and Voelm 1991; Excoffier et al. 2009b). Substituting in the values for the various mean coalescence times noted previously, and assuming $d$ and $g$ moderately large and $m_ 2 m_ 1 $, results in further simplification, [[SEE_FORMULA:2.47b]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Note that these expressions are equivalent in form to that for the simple island model, in this case with the demic population size (N) determining the variation of demes within groups and group size (Nd) determining that for groups within the total population. Such coalescence approaches are readily extended to much more complex situations (e.g., Nordborg 1997; Nagylaki 1998; Pannell and Charlesworth 2000; Pannell 2003)."
+    }
+  ]
+}

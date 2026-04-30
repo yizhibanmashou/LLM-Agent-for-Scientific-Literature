@@ -1,0 +1,73 @@
+{
+  "id": "chapter23_011",
+  "metadata": {
+    "chapter": "chapter23",
+    "section": "Chapter 23: Progeny Testing Using Inbred Offspring",
+    "subsections": [
+      "Progeny Testing Using Inbred Offspring"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter23_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "23.13a",
+      "23.13b",
+      "23.13c",
+      "23.14",
+      "23.15",
+      "23.16",
+      "23.17a",
+      "23.17b",
+      "23.17c"
+    ],
+    "table_references": [
+      "23.2",
+      "23.3"
+    ],
+    "table_reference_keys": [
+      "chapter23:23.2",
+      "chapter23:23.3"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "derivation",
+      "content": "However, it is fairly easily to obtain a variance component-based expression (and hence the ability of estimate the required quantities) for response under general $ S_ i,j $ family selection. Because a member of the recombination unit ($ $) is outcrossed, it passes on only single alleles to each offspring, y. This situation excludes all of the identity states except for $ _3 $ (both alleles in x are IBD, and one is passed on to the offspring y through $ $), $ _8 $ (the alleles in x are unrelated and one is passed onto y via $ $), and $ _9 $ (the alleles in x are unrelated to those in y). As a result, Equation 23.6a implies that the selection unit-offspring covariance only depends on $ _A^2 $ and $ _ ADI $. As shown in Example 23.2 (which can be skipped by the casual reader), the required values of $ _i $ can be obtained by some simple bookkeeping as [[SEE_FORMULA:23.13a]] [[SEE_FORMULA:23.13b]]"
+    },
+    {
+      "type": "discussion",
+      "content": "[[TABLE:23.2]]. Using the results in [[SEE_TABLE:11.1]], a little algebra shows that $ = _ ADI /2 $, which connects Equations 23.12 and 23.14."
+    },
+    {
+      "type": "derivation",
+      "content": "Substituting these results into Equation 23.6b yields [[SEE_FORMULA:23.13c]]"
+    },
+    {
+      "type": "derivation",
+      "content": "The covariance $ _G(x, y) $ immediately follows from Equations 23.6a and 23.6b, where only $ _3 $ and $ _8 $ are nonzero. Because both of the parents of $ y $ come from superior (i.e., selected) families, we double the covariance to give the total (i.e., accounting for both parents of $ y $) selection unit-offspring covariance under $ S_ i,j $ family selection as [[SEE_FORMULA:23.14]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Numerical values for these coefficients are presented in [[SEE_TABLE:23.2]]. Using the results in [[SEE_TABLE:11.1]], a little algebra shows that $ = _ ADI /2 $, which connects Equations 23.12 and 23.14."
+    },
+    {
+      "type": "derivation",
+      "content": "Finally, the genetic variance among $ S_ i,j $ families is [[SEE_FORMULA:23.15]]"
+    },
+    {
+      "type": "derivation",
+      "content": "This expression is derived below in Example 23.7. Substituting Equation 23.14 and 23.15 into Equation 23.7 yields the general expression for a single generation of response to $ S_ i,j $ family selection as [[SEE_FORMULA:23.16]]"
+    },
+    {
+      "type": "derivation",
+      "content": "In particular, the response to S1 family selection (i = 0, j = 1) [[SEE_FORMULA:23.17a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "The response to “classic” $ S_ 2 $ family selection $ (i = 1, j = 2) $ is $$ (3/2)\\sigma_{A}^{2}+(5/4)\\sigma_{A D I} $$ [[SEE_FORMULA:23.17b]] while the response to bulk S₂ family selection (i = 0, j = 2) is [[SEE_FORMULA:23.17c]]"
+    },
+    {
+      "type": "proposition",
+      "content": "[[TABLE:23.3]] presents the response per cycle after accounting for all these factors under the assumption of no dominance (i.e., $ _ ADI = 0 $)."
+    }
+  ]
+}

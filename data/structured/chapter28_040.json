@@ -1,0 +1,61 @@
+{
+  "id": "chapter28_040",
+  "metadata": {
+    "chapter": "chapter28",
+    "section": "Chapter 28: HOW WELL DO THE MODELS FIT THE DATA?",
+    "subsections": [
+      "Strength of Selection: Direct Selection on a Trait"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter28_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [
+      "inline_2"
+    ],
+    "table_reference_keys": [
+      "chapter28:inline_2"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Most of the above models can easily accommodate sufficient genetic variation. Indeed, a strictly neutral model generates too much variation. The more problematic issue is accounting for the observed strength of real (or apparent) stabilizing selection in nature, warranting a more careful look at the assumed literature values. If the strength of real or apparent stabilizing selection is weaker than is typically assumed, many of the apparent contradictions disappear, and a number of models can potentially account for the observations."
+    },
+    {
+      "type": "discussion",
+      "content": "While Turelli's (1984) benchmark of $ V_s 20 _E^2 $ is typically assumed, the data today are both more extensive, and more problematic, than when he extracted this value from the literature. The classic paper by Lande and Arnold (1983), which launched an entire cottage industry on the estimation of these parameters, appeared at essentially the same time as Turelli's analysis. We examine fitness estimation in detail in Chapters 29 and 30, noting here the basic conclusion that there is considerable uncertainty on the strength of natural selection on a typical trait. The relative constancy of many morphological phenotypes over evolutionary time is consistent with some form of stabilizing selection, as are the divergence data for gene-expression levels (Chapter 12). However, the strength of such selection is far less clear. The meta-analysis by Kingsolver et al. (2001) on the quadratic term, $ $, of a Lande-Arnold fitness regression (Figure 30.5) shows that it is equally likely to be positive (disruptive selection) or negative (stabilizing selection). Conditioning on this value being negative, the mean strength is slightly stronger than Turelli's value ($ 10 _E^2 $). If correct, these higher estimates of $ V_s $ are more problematic for the previous models."
+    },
+    {
+      "type": "discussion",
+      "content": "Besides the standard concerns of measurement error and power (especially with an inherently noisy trait like fitness), there are three issues that significantly obscure the actual strength of selection on a trait (Chapters 29 and 30). First, almost all fitness-trait regressions in the literature use a component of fitness (such as mating success, fecundity, or viability), not total fitness itself. Such component-based estimates can be very misleading."
+    },
+    {
+      "type": "discussion",
+      "content": "[h] representing only a fraction of the total fitness (e.g., Johnston et al. 2013). Second, selection acting on phenotypically correlated characters obscures not just the actual strength of selection on a target trait, but more fundamentally can also disguise its true nature. For example, a neutral trait can show a strong signal of stabilizing selection if there is selection on phenotypically correlated traits (Example 28.1). The standard approach for dealing with this concern is a multivariate regression with a number of traits, in the hope that some of them are highly correlated with the actual targets of selection, so their inclusion acts as a covariate to reduce spurious associations. However, this approach is far from foolproof (Chapter 30). As Example 28.1 highlights, what matters for evolution is not the strength of selection on the phenotype, but rather the strength of selection on the breeding value. A highly heritable trait under strong apparent stabilizing selection can experience little to no selection on its breeding value if the target of selection is not the trait itself (Chapters 20, 29, and 30)."
+    },
+    {
+      "type": "discussion",
+      "content": "A more subtle issue is that most estimates of the strength of stabilizing selection are based on the quadratic term in a fitness regression (Equation 28.3; Chapter 29). However, if Gaussian stabilizing selection or quadratic are poor models of the actual nature of nonadditive selection, these regression terms can be very misleading (see Figure 29.9). An alternative class of nonlinear candidate fitness functions are those that reach as asymptotic value (Figure 28.7). The quadratic approximations of such fitness functions are expected to be rather misleading, and (to our knowledge) little work has been done on the maintenance of quantitative-genetic variation under such a fitness function. The drift barrier (Chapter 7) arising from improved alleles eventually having too small a selective advantage to overpower drift could potentially result in considerable levels of variation at equilibrium."
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, there is also the issue of load discussed previously (e.g., Example 28.2), which suggests an upper bound on the number of independent traits under selection. Barton (1990) and Walsh and Blows (2009) suggested that strong selection is likely confined to a few dimensions in the multivariate trait space (i.e., a few indices of trait values), in which case selection impacts a very large number of traits, but each only weakly."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 28.16. Selection acts on multivariate phenotypes. When we examine the nature of selection on a trait-by-trait basis, we are examining the projection of this true multivariate selection surface onto a single dimension, which can be quite misleading. An excellent example of how to examine correlations between strength of stabilizing selection and genetic variation in a multivariate setting is found in Hunt et al. (2007b), which examined selection on mate calls in the cricket Teleogryllus commodus."
+    },
+    {
+      "type": "discussion",
+      "content": "One advantage of this system is that the multivariate trait, call signal, can have any of its individual components artificially changed via computer software, and its impact on the measured fitness component (mate attraction) directly assessed through acoustic playback trials in natural populations (Brooks et al. 2005). Five call components were examined, whose heritabilities ranged from 17"
+    },
+    {
+      "type": "discussion",
+      "content": "Using the methods of Chapter 30, the $ 5 5 $ matrix, $ $, of quadratic selection gradients of call components on mate attractiveness was estimated (Brooks et al. 2005). The diagonal elements $ (_ ii) $ of $ $ correspond to the amount of quadratic selection on call component i, with a large negative value indicating strong stabilizing selection. This can be generalized to consider the amount of quadratic selection acting on some linear combination (i.e., an index) of trait values, $ I = a_i z_i = a^T $, which is given by the quadratic product $ ^T $ (Chapter 30 and Appendix 5). As expected, this generalization recovers the univariate result when the index $ I = z_i $, as $ ^T = _ ii $ when $ a_i = 1 $ and all other elements of $ $ are 0."
+    },
+    {
+      "type": "discussion",
+      "content": "Using these results, Hunt et al. examined the strength of stabilizing (negative values) or disruptive (positive values) selection on the index of trait values, $ _i^T $, whose weights are given by the $ i $th eigenvector. This corresponds to the nature of selection along the $ i $th-largest axis of genetic variation, where the resulting strength of selection is given by $ _i^T _i $."
+    }
+  ]
+}

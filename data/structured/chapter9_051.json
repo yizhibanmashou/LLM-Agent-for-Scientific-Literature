@@ -1,0 +1,34 @@
+{
+  "id": "chapter9_051",
+  "metadata": {
+    "chapter": "chapter9",
+    "section": "Chapter 9: Recombination and Infinite-alleles-based Tests",
+    "subsections": [
+      "Contrasting Allele-frequency vs. Intra-allelic Variation Estimates of Haplotype Age"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter9_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "9.42"
+    ],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "derivation",
+      "content": "Another variant of this basic idea was recently suggested by Field et al (2016). Their singleton density score (SDS) measures the length of haplotypes by calculating the distance to the nearest singleton from a candidate site (looking on either sides). This distance can be turned into an estimate of the mean branch length in the coalescent tree for that allele, and the estimates for the ancestral and deviate allele at a target site are contrasted. Specially, the test statistic is [[SEE_FORMULA:9.42]] where $ $ are the estimated coalescent times from the singleton distance. As with several of the above test, the contrast the two alleles at a site controls for local variation in recombination and mutation rates. Under recent selection, the average branch lengths for an allelic class should be much shorter, resulting in longer distances to singletons. As with other haplotype-based approaches, comparisons are made over classes with the same derived allele frequencies. Field et al found that their SDS test had power to detect very recent selective events (within the last $ $100 generations), a time scale usually too short for other haplotype-based methods (e.g., iHS) to show a strong signal. Further, they showed that with a sample size of 3000 individuals (and a derived allele frequency of 0.7), that they could detect ongoing events with a 2"
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, Barreiro et al. (2009) proposed a hybrid between long-range haplotype tests and diversity tests. Their derived intra-allelic nucleotide diversity (DIND) test compares the nucleotide diversities associated with the ancestral $ (i _A) $ and derived $ (i _D) $ alleles $ (i $ is used to denote that these are intra-allelic nucleotide diversities). A core SNP is used to define the two allelic classes, and the diversity, $ $, within some specified length around each core variant is computed in the same fashion as an estimate of pairwise diversity from a sample (Equation 4.1)). The logic is that derived alleles, being more recent, should show little diversity relative to their ancestral (and thus older) counterparts. The DIND test uses an approach very similar to that of the $ rEHH $ test, plotting $ i _D/i _A $ versus the frequency of the derived allele and then looking for outliers. Both the SDS and DIND tests were designed to fully leverage extensive resequencing data. Fagny et al. (2014) found that both the DIND and $ iHS $ tests were powerful in detecting recent selection, and also robust over demography. However, the DIND was more powerful than the $ iHS $ when the resequencing data had either poor coverage or low-quality genotype calling."
+    },
+    {
+      "type": "discussion",
+      "content": "Long-haplotype Tests Using Between-population Data: XP-EHH, Rsb, rHH, rMHH, and $ _ MD $ Tests based on comparing the haplotype lengths of alternative alleles lose all power as a favorable allele approaches fixation. However, if the favored allele is only fixed in a single population, a between-population comparison of haplotype length still has power immediately following fixation. This approach was proposed by both Tang et al. (2007) and Sabeti et al. (2007), and it follows the same logic leading Equation 9.41a and 9.41b. However, instead of contrasting the EHH or iHS score for alternate alleles in the same population, they contrast values for the same allele in different populations. Sabeti et al. referred to this as the cross-population extended haplotype homozygosity (or XP-EHH) test. A similar test (with a few subtle differences) was proposed by Tang et al., who defined the analog of Equation 9.41b as their $ (Rsb) $ statistic."
+    },
+    {
+      "type": "discussion",
+      "content": "A second cross-population comparison test was suggested by Kimura et al. (2007), who considered two ratios of haplotype homozygosity in a control versus test population. The first, rHH, is the ratio of haplotype homozygosities in the two populations. The second, rMHH, is the ratio of haplotype homozygosities, but computed using just the most frequent haplotype in the control population (i.e., the probability that two random draws of sequences are both the most common haplotype). For a recently fixed allele, the expectation is a low rMHH value (a high population divergence), but a high rHH value (a population-specific decrease in haplotype diversity). Simulation studies with neutral models (under limited demographic conditions) suggested that the combination of low rMHH and high rHH values is rather unusual. Again, this is an outlier-based approach, with outliers on an rMHH-by-rHH plot of the genomic data suggesting potential targets of selection."
+    }
+  ]
+}

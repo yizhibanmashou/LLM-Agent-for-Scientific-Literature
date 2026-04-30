@@ -1,0 +1,40 @@
+{
+  "id": "appendix4_028",
+  "metadata": {
+    "chapter": "appendix4",
+    "section": "Publication and Other Sources in Bias",
+    "subsections": [
+      "Publication and Other Sources in Bias"
+    ],
+    "source_file": "tmp\\paddle_output\\appendix4_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "While funnel asymmetry is essentially an informal visual judgment, the basic idea has been used for more formal tests. The Begg-Mazumdar (1994) rank correlation test looks for associations between the ranks of the standard errors $ (s_ i) $ and study estimates $ (T_ i) $. The Egger regression test (Egger et al. 1997) performs the regression $$ y_{i}=a+bs_{i}+e,\\quad where\\quad y_{i}=(T_{i}-\\overline{T}) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Under a symmetric funnel plot, the data are distributed symmetrically around zero, and the resulting intercept $ (a) $ should be zero. An a value that is significantly different from zero indicates asymmetry. Both of these tests suffer from low power, and they are not recommended when the number of studies is small (ten or fewer). Indeed, Sterne et al. (2011) recommended that these tests \"should be used in only a minority of meta-analysis.\" Further, even a highly significant result does not imply publication bias, and a negative result does not imply that the study is free from such bias (especially if k is relatively small). Another indicator of the potential of publication bias is time-lag bias. Here, the initial studies report larger effects than are seen in follow-up studies. This can be tested by simply including the year of publication as a moderator variable in the original analysis (Nakagawa and Santos 2012)."
+    },
+    {
+      "type": "discussion",
+      "content": "While detecting publication bias can be problematic, correcting for it can be even more so. One approach is the trim-and-fill method of Duval and Tweedie (2000a, 2000b). Again, this method is based on funnel-plot asymmetry. In step one, smaller (i.e., lower-precision) studies are excluded in order to achieve a more symmetric plot, while step two replaces these excluded studies with “missing” studies whose values are imputed from the retained studies. Again, factors other than publication bias can result in asymmetric funnel plots, which compromises this approach."
+    },
+    {
+      "type": "discussion",
+      "content": "The use of contour funnel plots (Figure A4.7) may provide some additional guidance (Peter et al. 2008). These are funnel plots enhanced by overlaying significance contours, which provides a visual test of whether “missing” studies occur in high- or low-probability regions. The former suggests bias, and the latter suggests simple sampling. Figure A4.7 shows two situations of asymmetry, and the region of the funnel plot with “missing” studies that might be imputed under a trim-and-fill approach. The contour plots show that in Figure A4.7A the missing studies were quite likely to have been seen had there been was no publication bias. However, in Figure A4.7B, the missing values are in regions of high significance (and hence could be absent simply by chance, given their low probability under the null), even with a full ascertainment of all studies."
+    },
+    {
+      "type": "discussion",
+      "content": "A metric for assessing the impact of publication bias is the fail-safe number for an analysis (Rosenthal 1979; Rosenberg 2005). This is simply the number of additional studies (i.e., missed studies with no significance) that would have to be added to the analysis to invalidate (i.e., remove the significance of) the current analysis. The rough rule of thumb is that if this number exceeds $ 5k+10 $, then the study is fairly robust (Rosenthal 1979; Rosenberg 2005). Despite often being reported, there are issues with this metric. The most obvious one is that a meta-analysis is usually concerned with the average effect size (or the variance in true effect sizes), rather than whether an effect is significant. Hence, even if the fail-safe number indicates that the current study is robust, it is simply robust to overall significance and not necessarily to overall effect size. Second, as we stressed above, a random effects meta-analysis is generally the most appropriate (which extends to a mixed model if moderator variables are added). Fail-safe numbers in random-effects setting are much smaller than their fixed-effects counterparts and are much more delicate to obtain. Rosenberg (2005) cited a meta-analysis based on 71 studies where the fixed-effects fail-safe number (based on slightly different methods) ranged from 7500 to 8500, while the fail-safe number under a random-effects model was approximately 9."
+    },
+    {
+      "type": "discussion",
+      "content": "The most powerful, and also the most delicate, methods to both detect and adjust for publication bias are model-based approaches. These require a model of the ascertainment scheme. For example, Copas and Shi (2000) proposed an ascertainment model that is very much like the model for a threshold trait (Chapter 14), wherein some underlying latent variable determines whether a study is published or not. In their model, this variable is a function of the standardized effect size, which means that studies with smaller standardized effects, and therefore less significance, are less likely to be published. An excellent example of a model-based ascertainment scheme in quantitative-genetics was the study by Hersch and Phillips (2004). To obtain the bias in estimates of selection gradients, they simulated each study as a random draw of five gradients from a known distribution, for which the results were only reported when one (or more) of the values was significant. Figure 30.7 shows the results of their analysis, which found that such ascertained gradients were overestimated."
+    }
+  ]
+}

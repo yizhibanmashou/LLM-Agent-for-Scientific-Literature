@@ -1,0 +1,62 @@
+{
+  "id": "chapter10_030",
+  "metadata": {
+    "chapter": "chapter10",
+    "section": "Chapter 10: Maximum-likelihood-based Codon Tests",
+    "subsections": [
+      "Maximum-likelihood-based Codon Tests"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter10_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "10.18",
+      "10.19",
+      "10.20",
+      "10.21",
+      "10.22a"
+    ],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Maximum-likelihood (ML) methods following the evolution of a codon over a phylogenetic tree were introduced by Goldman and Yang (1994) and Muse and Gaut (1994). While conceptually straightforward, they involve a fair bit of bookkeeping. They assume that each site is evolving independently, which can be compromised by two rather different factors. First, a substitution at one site can change the nature of selection at other sites (epistasis). Second, high levels of recombination can lead to false signals of selection, as recombination results different parts of the gene having different coalescent structures (Anisimova et al. 2003). While generally not an issue, this can be problematic with viral populations that have high sequence diversity and frequent recombination."
+    },
+    {
+      "type": "derivation",
+      "content": "ML methods require a specific probability model for the movement among the 64 different codons. They start with a vector representing the 61 different nonstop codon states (stop codons are assumed lethal). At any point in time, a codon can mutate to one of nine other codons following a single base change (Figure 10.4). The model given by Goldman and Yang (1994) defines the following relative rates for movement between codons i and j, [[SEE_FORMULA:10.18]]"
+    },
+    {
+      "type": "discussion",
+      "content": "The $ 61 61 $ Q matrix is specified by Equation 10.18. The $ _j $ are the equilibrium frequencies of codon $ j $ (often calculated from the nucleotide frequencies at the three codon positions), while $ $ and $ $ are estimated parameters intended to account for biases in codon changes. Potential differences in transition versus transversion rates are accounted for by $ $. One takes the currently observed codons over the phylogeny, and then runs the model backward in time by considering all possible ancestral codons at each of the internal nodes (ancestors) in the tree. The model thus corrects for multiple hits. The key parameter of interest is $ $, the strength of selection on replacement substitutions. In the early models using"
+    },
+    {
+      "type": "discussion",
+      "content": "[h] this approach, $ $ was a fixed constant over all genes, but later models allowed $ $ to vary over sites (nicely paralleling the development of extensions of the Poisson random field model to allow $ $ to vary over genes/alleles), a point upon which we will expand shortly. Figure 10.4 shows the basic structure of these various state changes for a particular codon. The mutational structure in Equation 10.18 (where mutation rates are functions of $ $ and $ _j $) is known in the molecular evolution literature as the Hasegawa-Kishino-Yano, or HKY, model (Hasegawa et al. 1985)."
+    },
+    {
+      "type": "derivation",
+      "content": "Tests for directional selection on a gene are accomplished by using this codon model superimposed on the phylogenetic tree to run the likelihood calculation (over all codons) to find the ML solutions for the Q matrix parameters. This allows for a direct test that $ > 1 $ using the likelihood-ratio approach (LW Appendix 4). The key to these likelihood calculations is that $ (t) $, the codon state matrix at time t, is related to the instantaneous rate matrix, Q, by [[SEE_FORMULA:10.19]]"
+    },
+    {
+      "type": "derivation",
+      "content": "The corresponding elements of the $ 61 61 $ matrix P are [[SEE_FORMULA:10.20]]"
+    },
+    {
+      "type": "derivation",
+      "content": "The matrix exponential, $ (t) $, is computed by diagonalizing the Q matrix by writing $ = U ^ T $, where A is a diagonal matrix, whose ith diagonal element is the eigenvalue $ _ i $ of Q (Equation A5.10a), and U is a matrix of the eigenvectors of Q (Equation A5.10c). With this transformation, Equation 10.19 now becomes $$ \\exp(\\mathbf{Q}t)=\\mathbf{U}\\exp(t\\boldsymbol{\\Lambda})\\mathbf{U}^{T} $$ where [[SEE_FORMULA:10.21]]"
+    },
+    {
+      "type": "discussion",
+      "content": "A variety of likelihood models based on Equation 10.19 are typically tested (much in the same way that one tests subsets of complex segregation analysis models; see LW Chapter"
+    },
+    {
+      "type": "discussion",
+      "content": "13), adding additional factors (i.e., $ 1 $, etc.) if they improve the model fit (i.e., give a significantly better likelihood ratio). Evidence for positive selection on a gene is indicated if the likelihood-ratio test for $ > 1 $ is significant."
+    },
+    {
+      "type": "derivation",
+      "content": "The base model (Equation 10.18) assumes that all codons within a given gene have the same ω value, which is not only unreasonable but also destroys most of the power of this approach, as it returns an estimate of ω based on a gene-wide average. Given that ω < 1 for most codons, the signal from the majority of codons then masks the signal from any small fraction of codons where indeed ω > 1 (e.g., Example 10.2). Nielsen and Yang (1998) and Yang et al. (2000) extended the base model by assuming a mixture-model (LW Chapter 13), with the codons in a sequence being drawn from one of several selection categories, each with different ω values. For codons from selection category k, Equation 10.18 becomes [[SEE_FORMULA:10.22a]]"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "id": "chapter8_035",
+  "metadata": {
+    "chapter": "chapter8",
+    "section": "Chapter 8: GENOME-WIDE IMPACT OF REPEATED SELECTION AT LINKED SITES",
+    "subsections": [
+      "A Few Large or Many Small Sweeps?"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter8_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "8.25",
+      "8.26"
+    ],
+    "table_references": [
+      "8.2",
+      "8.3"
+    ],
+    "table_reference_keys": [
+      "chapter8:8.2",
+      "chapter8:8.3"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Because reduction in diversity from sweeps is a function of the product $ $, the same average reduction in $ $ could be caused by either a few large sweeps (where $ $ is small and $ $ large) or many smaller sweeps (where $ $ is large and $ $ small), as long as their product is held constant. With rare, strong sweeps, there would be dramatic reduction in variation over a fairly large region, but many regions would see little effect, as no recent sweep would have occurred in their vicinity. Conversely, with many weaker sweeps, most regions would be influenced, but each by a smaller amount. While the expected value of $ $ is the same under both models, the variance in $ $ is expected to be much greater under rare but strong sweeps (Jensen et al. 2008)."
+    },
+    {
+      "type": "proposition",
+      "content": "Distinguishing between the strong and weak selection scenarios requires an independent estimate of either $ $ or $ $ in addition to an estimate of $ $. Methods to accomplish this are more fully developed in Chapter 10, but one approach is as follows. Suppose L sites within a region of interest are examined between two populations that separated t generations ago (for a total divergence time of 2t). If a total of D sites show divergence, $ d = D/L $ is the per-site divergence. Ignoring multiple mutations at the same site, if $ $ denotes the fraction of all divergent sites that are adaptive, $ d $ is the per-site number of adaptive fixations that occurred over 2t generations. This gives the rate as $ = d /(2t) $. Estimates of t can be obtained from several sources (such as rates of neutral divergence), but estimates of the adaptive fraction, $ $, are more elusive. However, as detailed in Chapter 10, estimates of $ $ for coding regions follow by noting that, under the assumption of neutrality, the ratio of the number of silent to replacement polymorphic sites should equal the ratio of the number of silent to replacement substitutions (Example 10.1). An excess of replacement substitutions presumably reflects the role of adaptive evolution, and the amount of excess provides an estimate of $ $ (e.g., Example 10.1), and hence of $ $. As detailed in Chapter 10, this approach for estimating $ $ makes the strong assumption of long-term constancy in $ N_e $."
+    },
+    {
+      "type": "derivation",
+      "content": "Letting $ d_a $ denote the per-site rate of amino acid divergence, and substituting $ = d_a / (2t) $ into Equation 8.24b, yields the Andolfatto regression [[SEE_FORMULA:8.25]] where $ x = d_a / c $ and $ = / (2t) $, and because $ $ is now measured on a per-amino acid basis, $ c $ is now the recombination rate per codon (Andolfatto 2007). In other words, scaling the per-site divergence, $ d_a $, for each gene by its local rate of recombination, $ c $, yields a nonlinear regression between observed nucleotide diversity, $ $, and the recombination-scaled divergence, $ d_a / c $. When one assumes a constant recombination rate, $ c $, among the sampled sites, the regression is just on $ x = d_a $ (which varies over regions), where now $ = / (2tc) $, which (with estimates of $ $, $ c $, and $ t $) returns $ $ (as is done in Figure 8.9). Chapter 10 reviews other approaches for estimating $ $ and/or $ $ from joint polymorphism and divergence data at single loci."
+    },
+    {
+      "type": "discussion",
+      "content": "A technically more demanding approach for gaining insight into the parameters of adaptation is to jointly estimate two of these three parameters ($ $, $ $, or $ $) using the spatial pattern of genetic variation over a genomic region (Macpherson et al. 2007; Jensen et al. 2008). Figure 8.10 shows the motivation for this idea. Jensen et al. (2008) noted that strong selection should produce a higher variance in $ $ and other measures of genetic variation that are impacted by a sweep ([[SEE_TABLE:8.2]]), for example, the number of segregating sites (S), an excess of high-frequency derived alleles, and pairwise linkage disequilibrium (LD). Using simulations, they examined the behavior of the coefficient of variation (CV) for summary statistics for these quantities as a function of the size, L, of the unit of analysis. Over small regions (L of 500 to 1000 bp), there was little difference in the CV between the rare and strong and the frequent and weak sweep models, but as the size of the analysis region increased, so did the CV for strong, but not weak, selection. Based on this observation, Jensen et al. (2008) developed an approximate Bayesian computation (ABC) approach that jointly considers"
+    },
+    {
+      "type": "discussion",
+      "content": "[h]"
+    },
+    {
+      "type": "discussion",
+      "content": "[h]"
+    },
+    {
+      "type": "discussion",
+      "content": "[[TABLE:8.2]]), for example, the number of segregating sites (S), an excess of high-frequency derived alleles, and pairwise linkage disequilibrium (LD). Using simulations, they examined the behavior of the coefficient of variation (CV) for summary statistics for these quantities as a function of the size, L, of the unit of analysis. Over small regions (L of 500 to 1000 bp), there was little difference in the CV between the rare and strong and the frequent and weak sweep models, but as the size of the analysis region increased, so did the CV for strong, but not weak, selection. Based on this observation, Jensen et al. (2008) developed an approximate Bayesian computation (ABC) approach that jointly considers the means and variances of summary statistics measuring these various sweep features to obtain separate estimates of $ $ and s (for details see Example A3.9)."
+    },
+    {
+      "type": "discussion",
+      "content": "Macpherson et al. (2007) also used the chromosomal pattern of nucleotide diversity around putative sweeps to obtain separate estimates of $ $ and $ $. As above, an estimate of the latter was obtained from the regression (Equation 8.24b) of $ $ on $ c_0 $ (nucleotide diversity on local recombination rates). They then introduced a new statistic, $ Q_ s $, the ratio of a minimal estimate of heterozygosity within a region of fixed length (a window) to the average heterozygosity over the region scanned by the windows. They showed that the expected value of $ Q_ s $ is a function of both $ $ and $ $, so that the joint pair of statistics, $ Q_s $ and $ $, allows for separate estimates of $ $ and $ $. One significant caveat, as stressed by the simulations of Schrider et al. (2015), is that the observed minimal region of heterozygosity may poorly correspond to the selected site, which can bias estimates using this method. As summarized in [[SEE_TABLE:8.3]], while estimates of the product, $ $, for various studies in Drosophila are reasonably compatible, individual estimates of its components $ $ (or s) and $ $ differ by several orders of magnitude. There are several potential reasons for this. Different studies of even the same species may use different populations as well as different sets of genes, such as autosomal (Macpherson et al. 2007) versus X-linked (Andolfatto 2007; Bachtrog 2008; Jensen et al. 2008). However, the different methods employed may be the major contributor to the significant disparity between studies. Estimates based on short regions (single genes) as the unit of analysis, such as those by Andolfatto (2007) and Bachtrog (2008), found small estimates of $ $ and s in D. melanogaster ($ $ between 35 and 74, implying an s of around $ 10^ -5 $). Estimates based on much longer regions (10–100 kb), such as Macpherson et al. (2007) and Jensen et al. (2008), found much larger estimates, with $ 10,000 $ to 30,000 and $ s 0.002 $ to 0.01. Estimates obtained by Bachtrog (2008) for D. miranda using a number of small regions were intermediate, with $ = 3000 $, $ s = 10^ -3 $."
+    },
+    {
+      "type": "discussion",
+      "content": "Sella et al. (2009) suggested that these estimates of $ $ and $ $ may actually be more compatible than their spread suggests (Figure 8.10). Weak selection leaves a strong signal over only a very small region, while strong selection leaves a signal over a much larger region. For example, using a recombination rate of 1 cM/Mb ($ c_0 = 10^ -8 $), Equation 8.6a suggests that weak sweeps ($ = 35 $, $ s = 10^ -5 $) influence at most a few hundred bases, while strong sweeps ($ = 10,000 $, $ s = 0.01 $) can influence almost a hundred kilobases. Sella et al. suggested that methods using small regions (such as single genes) for their units of analysis are biased toward the detection of weak selection, while methods using much larger regions are biased toward strong selection. If the size of the region of analysis does not matter, then weak selection accounts for most of the observed between-population divergence, while strong selection accounts for most of the reduction in diversity. Sattah et al. (2011) found strong support for this view by examining the pattern of nucleotide variation around substitutions in Drosophila simulans. As expected from the neutral theory, there was a slight elevation in standing diversity around silent-site substitutions (higher neutral substitution rates implying higher mutation rates, and thus higher levels of polymorphism). After adjusting for this effect, they found a trough in nucleotide diversity around sites that resulted in amino acid substitutions, as would be expected given a sweep. Using a composite-likelihood approach to test for a sweep given the local diversity pattern around a site (Chapter 9), they estimated that around 13"
+    },
+    {
+      "type": "derivation",
+      "content": "Finally, up to this point our analysis of the impact of recurrent sweeps has assumed that all sweeps were hard. At the other extreme are partial sweeps, where an allele increases rapidly in frequency (to a value of x) in one selective environment, which then changes. Equation 8.15 shows the impact of a single partial sweep on $ $. Coop and Ralph (2012) showed that the reduction in nucleotide diversity due to recurrent partial sweeps has a form very similar to Equation 8.24b, namely [[SEE_FORMULA:8.26]] where $ $ is a function of the time for the sweep to reach its target frequency, $ x $ (Equation 8.4e)."
+    }
+  ]
+}

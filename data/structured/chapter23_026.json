@@ -1,0 +1,56 @@
+{
+  "id": "chapter23_026",
+  "metadata": {
+    "chapter": "chapter23",
+    "section": "Chapter 23: Combined Selection",
+    "subsections": [
+      "Combined Selection"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter23_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "23.52",
+      "23.53",
+      "23.54a",
+      "23.54b",
+      "23.55a",
+      "23.55b"
+    ],
+    "table_references": [
+      "23.4"
+    ],
+    "table_reference_keys": [
+      "chapter23:23.4"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "derivation",
+      "content": "An obvious question is what value of b maximizes response? Taking the derivative of Equation 23.45 with respect to b and solving for zero returns the optimal value as [[SEE_FORMULA:23.52]] As with family-index selection (Chapter 21), the selection intensity is reduced by the fact that $ F_3 $ lines from the same $ F_2 $ are related and hence correlated, and we must correct for this correlation. Letting $ $ be the correlation between the index scores from lines in the same cross, if we choose the best $ K $ from $ N = n_2 n_3 $ total lines ($ n_3 $ lines from each of $ n_2 $ $ F_2' $s), then Equation 21.57b returns the adjusted selection intensity as [[SEE_FORMULA:23.53]] where $q = K/N$ is the fraction saved (we use $q$ in place of our normal usage of $p$ to avoid confusion here with $ $) and $ _q$ the infinite-population size selection intensity (Equation 14.3a). To compute the correlation, $ $, between index scores, first note that [[SEE_FORMULA:23.54a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "The third step follows upon recalling Equation 23.50a. The correlation between index scores among individuals from the same line thus becomes [[SEE_FORMULA:23.54b]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Substitution of this value into Equation 23.53 yields the appropriate selection intensity, which is corrected for both finite population size and correlation between lines."
+    },
+    {
+      "type": "derivation",
+      "content": "When there is a fixed total number of lines to examine, there is a tradeoff between selection intensity and accuracy. The optimal design for known (or estimated) genetic variances can be obtained by numerically evaluating different combinations of the $ n_ 2 /n_ 3 $ ratio (for fixed values of N) in Equation 23.45 (and its associated components, Equations 23.49 and 23.51–23.53). Weber (1982, 1984; Wricke and Weber 1986) examines index selection under selfing, including both optimal design (in the absence of dominance) and its extension to additional generations of selfing. For example, Weber (1982) considered the more general situation where each $ F_ 2 $ family consists of $ n_ 3 $ $ F_ 3 $ families, with each $ F_ 3 $ family consisting of $ n_ 4 $ $ F_ 4 $ families and so on to $ F_ j $ families. In this case, the full index is [[SEE_FORMULA:23.55a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "The weights, $ b_ k $, are chosen to maximize the correlation between the index, I, and the final genetic value of the completely inbred lines (which we denote as $ g_ $), which (Weber 1982) implies [[SEE_FORMULA:23.55b]]"
+    },
+    {
+      "type": "discussion",
+      "content": "[[TABLE:23.4]] shows the coefficients for these covariances, as well as those for $ _G^2 $. Note that an additional quadratic component, $ ^2 - ^* $, also appears in the covariance between relatives (which arises because there is a distribution of inbreeding values in the population). As we will see, there is a significant transient component to the immediate response. For selection after reproduction (AR), an outcrossed individual has only one parent under selection (the pollen parent not being under selection), and the covariance in the numerator of Equation 23.56a is replaced by"
+    },
+    {
+      "type": "discussion",
+      "content": "Consult Weber (1982) for further details. Finally, an important extension of combined selection schemes is the work of Cowling et al. (2015), who incorporated multiple-generation family information into a BLUP-based index (i.e., they used the animal model to predict the breeding values of focal individuals."
+    }
+  ]
+}

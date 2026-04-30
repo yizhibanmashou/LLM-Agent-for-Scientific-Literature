@@ -1,0 +1,32 @@
+{
+  "id": "appendix2_005",
+  "metadata": {
+    "chapter": "appendix2",
+    "section": "Marginal Posterior Distributions",
+    "subsections": [
+      "Marginal Posterior Distributions"
+    ],
+    "source_file": "tmp\\paddle_output\\appendix2_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Often only a subset of the unknown parameters is of concern to us, and the rest are nuisance parameters that are of no interest, but still must be fitted in the model. A strong feature of Bayesian analysis is that we can account for all the uncertainty introduced into the parameters of interest by any uncertainty in the values of nuisance parameters. This is accomplished by integrating the nuisance parameters out of the posterior distribution to generate a marginal posterior distribution for the parameters of interest. For example, suppose the mean and variance of data coming from a normal distribution are unknown, but our real interest is only in the variance. Estimating the mean introduces additional uncertainty into our variance estimate, which is not fully captured by standard classical approaches. Under a Bayesian analysis, the marginal posterior distribution for $ ^2 $ is simply $$ p(\\sigma^{2}\\mid\\mathbf{x})=\\int p(\\mu,\\sigma^{2}\\mid\\mathbf{x})d\\mu $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The resulting marginal posterior for $ ^ 2 $ captures all of the uncertainty in the estimation of $ $ that influences the uncertainty in $ ^ 2 $. This is an especially nice feature when a large number of nuisance parameters must be estimated."
+    },
+    {
+      "type": "discussion",
+      "content": "The marginal posterior may involve several parameters (generating joint marginal posteriors). Suppose we write the vector of unknown parameters as $ = (_1, _ nu) $, where $ _ nu $ is the vector of nuisance parameters. Integrating over $ _ nu $ yields the desired marginal for the vector $ _1 $ of parameters of interest as $$ p(\\boldsymbol{\\Theta}_{1}\\mid\\mathbf{y})=\\int_{\\boldsymbol{\\Theta}_{n u}}p(\\boldsymbol{\\Theta}_{1},\\boldsymbol{\\Theta}_{n u}\\mid\\mathbf{y})d\\boldsymbol{\\Theta}_{n u} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "While these complex integrals appear quite daunting (and indeed almost always are from an analytic standpoint), generating draws from the marginal distribution is usually very straightforward using MCMC methods (which are examined in Appendix 3)."
+    }
+  ]
+}

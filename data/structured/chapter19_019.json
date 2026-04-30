@@ -1,0 +1,58 @@
+{
+  "id": "chapter19_019",
+  "metadata": {
+    "chapter": "chapter19",
+    "section": "Chapter 19: Models with Additional Random Effects",
+    "subsections": [
+      "Models with Additional Random Effects"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter19_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "19.20a",
+      "19.20b",
+      "19.20c",
+      "19.21a",
+      "19.21b"
+    ],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "We have assumed that residuals of a mixed model are uncorrelated and homoscedastic, making their covariance matrix $ () = _e^2 $. When additional random effects are present but ignored by the model, they are inadvertently subsumed into the residuals, introducing correlations and heteroscedasticity, which, in turn, may bias the BLUP estimates. For example, if sibs share a common maternal environment, this introduces correlations between them beyond those accounted for by $ $. If the model only includes a and e, this additional covariance appears between the residuals of sibs, and the true covariance matrix for e is no longer the assumed diagonal, which leads to biased estimates of the BLUEs and BLUPs. By suitably incorporating additional random effects, we can develop a new model, in which the residuals again have the simple OLS covariance structure, $ () = _e^2 $."
+    },
+    {
+      "type": "derivation",
+      "content": "Suppose there is a second vector, u, of m random effects (e.g., the common effects from the m families in our sample) in addition to the vector, a, of p breeding values, and vector of residuals, e. Equation 19.1 becomes [[SEE_FORMULA:19.20a]] where X, Z, and W are $ n q $ (n observations and q fixed effects), $ n p $, and $ n m $ incidence matrices. Assuming that common-family effects are not shared across different families (even if the families are related), the assumed covariance structures for the three vectors of random effects become $ () = _A^2, () = _u^2 $, and $ () = _e^2 $, where a, u, and e are uncorrelated. This can be compactly written as [[SEE_FORMULA:19.20b]] yielding a covariance matrix of y as [[SEE_FORMULA:19.20c]]"
+    },
+    {
+      "type": "discussion",
+      "content": "If we had assumed the validity of the model $ = + + $, the resulting covariance matrix for the residuals would be $ () = _u^2 ^T + _e^2 $, which shows how the additional random effects alter the covariance structure, which is no longer of OLS form, $ ^2 $. Analysis of this model assuming an OLS covariance structure would thus be erroneous."
+    },
+    {
+      "type": "derivation",
+      "content": "The resulting set of Henderson’s mixed-model equations (Equation 19.4) for the model specified by Equations 19.20a and 19.20b becomes [[SEE_FORMULA:19.21a]] where [[SEE_FORMULA:19.21b]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Additional vectors of random effects can be incorporated in a similar manner; see LW Chapters 26 and 27 for details. The mixed-model equations again form the basis for iterative REML estimates of the unknown variance components ($ _A^2 $, $ _u^2 $, and $ _c^2 $), as discussed in detail in LW Chapter 27."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 19.6. Often the same trait is measured multiple times in the same individual, for example, the sizes of different litters from a single female. When multiple records are present for at least some individuals, a repeatability model is appropriate (Chapter 13; LW Chapter 26). Repeated measures from the same individual have three components: a breeding value, $ a_k $, and a common (permanent) environmental value, $ p_k $, which are the same in each measurement of individual $ k $, and the residual environmental value, $ e $, which varies between measurements, yielding the $ i $th measurement of the $ k $th individual as $ a_k + p_k + e_ ki $. The repeatability of the trait is $ r = (_A^2 + _p^2)/ _z^2 $, making the variance of the residuals $ _z^2 = (1 - r) _z^2 $ and the variance of permanent environmental effects as $ _p^2 = (r - h^2) _z^2 $, where $ _z^2 $ is the trait variance after accounting for fixed effects. We remind the reader that permanent “environmental” effects can also include nonadditive genetic components, as these are not passed along to offspring under random mating."
+    },
+    {
+      "type": "discussion",
+      "content": "The repeatability model was used by Estany et al. (1989) to examine the selection response for litter size in rabbits. Their model assumed that there are two groups of fixed effects: the year-season (environmental) effects, $ b_t $ which had 22 levels over the course of this experiment (with $ b_0 $ set to zero), and the reproductive state, $ l_i $, of the doe (three levels; because only two of these factors are estimable, $ l_1 $ was assigned a value of zero). Their model had three random effects: $ a_k $ and $ p_k $, for the additive genetic and permanent environmental effect of the $ k $th doe, respectively, and the residual $ e $, resulting in an overall model of $$ y_{t k\\ell i}=\\mu+l_{i}+b_{t}+a_{k}+p_{k}+e_{t k\\ell i} $$ where $ y_ tkl i $ denotes the size of the $ $th litter of doe k in reproductive state i in season-year t. In matrix form, the mixed model becomes $$ \\mathbf{y}=\\mathbf{X}\\boldsymbol{\\beta}+\\mathbf{Z}\\mathbf{a}+\\mathbf{Z}\\mathbf{p}+\\mathbf{e} $$ where a and p are $ n 1 $ vectors corresponding to the n does, $ () = _A^2 $, $ () = _p^2 $, and $ () = _e^2 $. X and Z are incidence matrices, and the vector of fixed effects is $$ \\boldsymbol{\\beta}=\\begin{pmatrix}\\mu\\\\ l_{2}\\\\ l_{3}\\\\ b_{1}\\\\ \\vdots\\\\ b_{22}\\end{pmatrix} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The mixed-model equations are given by Equation 19.21a, with $$ \\lambda_{A}=\\frac{\\sigma_{e}^{2}}{\\sigma_{A}^{2}}=\\frac{1-r}{h^{2}}\\quad and\\quad\\lambda_{u}=\\frac{\\sigma_{e}^{2}}{\\sigma_{p}^{2}}=\\frac{1-r}{r-h^{2}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The careful reader might notice that the two vectors of random effects, the breeding values, a, and permanent environment effects, p, enter the model as Za and Zp, respectively. Why, then, do we simply not combine these as, for example, Zu where $ = + $? The reason we do not do this (and indeed, the reason we can estimate a and p separately) is that a and p have different covariance structures, $ _A^2 $ A versus $ _p^2 $ I. While estimates of a borrow information from relatives (correlated observations provide information to supplement a direct observation), estimates of p depend only on the focal individual (as we assume these are uncorrelated between individuals)."
+    }
+  ]
+}

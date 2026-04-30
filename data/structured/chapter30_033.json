@@ -1,0 +1,40 @@
+{
+  "id": "chapter30_033",
+  "metadata": {
+    "chapter": "chapter30",
+    "section": "PATH ANALYSIS AND FITNESS ESTIMATION",
+    "subsections": [
+      "PATH ANALYSIS AND FITNESS ESTIMATION"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter30_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "As we saw in Figure 29.12, complex life cycles can be represented as graphs, as can a set of cascading developmental traits (Figure 30.13), the elaborate interplay between fitness components (Figure 30.14), or the connection between traits, fitness components, and population growth rate (Figure 30.16). One way to explore these graphical structures is with path analysis, which requires a path diagram, which is a hypothesis about the structure of causality (LW Appendix 2; Kingsolver and Schemske 1991; Mitchell 1992; Shipley 1997). The strengths of relationships in a path diagram are represented by path coefficients, which are correlations among connected items in the path. As a very simple example, consider the impact that seed weight and plant height have on fitness."
+    },
+    {
+      "type": "discussion",
+      "content": "One potential path diagram is seed weight → height → fitness, which states that seed weight only impacts fitness through its effect on plant height. A path analysis of this model first variance-standardizes all of the variables and then performs regressions (or partial regressions), generating correlations among the items in the path. Suppose the resulting coefficients are $$ \\begin{aligned}weight\\quad\\xrightarrow{0.35}\\quad height\\quad\\xrightarrow{0.15}\\quad w\\end{aligned} $$ implying a correlation of $ = 0.35 $ between seed weight and plant height, and a correlation of 0.15 between height and fitness. As drawn, this diagram implies that seed weight does not have a direct effect on fitness, but it does have an indirect effect through height. Because $ ^2 $ is the fraction of variation accounted for by a factor, we see that seed weight explains 13"
+    },
+    {
+      "type": "discussion",
+      "content": "Regression and path analysis offer complementary approaches for examining relationships between phenotypes and fitness. The purpose of a regression analysis is to predict fitness given character values, while path analysis provides a description of the biological nature of character covariances and how they interact with fitness. While regressions simply rely on the correlations among traits (Figure 30.13A), path analysis examines the structure of these correlations (Figures 30.13B and 30.13C), building on the biological intuition of the investigator. A number of authors have applied this approach to the analysis of natural selection (e.g., Arnold 1983b; Maddox and Antonovics 1983; Mitchell-Olds 1987; Crespi and Bookstein 1988; Crespi 1990; Jordan 1991; Weis and Kapelinski 1994; Conner 1996; Pugesek and Tomer 1996; Scheiner et al. 2000; van Tienderen 2000; Coulson et al. 2003; Latta and McCain 2009; Matsumura et al. 2012)."
+    },
+    {
+      "type": "discussion",
+      "content": "The analysis of selection on graphs falls into four categories. First, we have already seen the use of Aster models on life-history graphs to obtain a statistically rigorous distribution of fitness effects (Chapter 29). Second, path analysis can be used to represent a proposed causal structure among life-history components and traits to provide insights that a standard fitness-trait regression can miss. Third, selection could be on one or more latent (unobserved) features that are correlated with observed (and potentially unselected) traits. While the observed traits may show trait-fitness associations, these could all be indirect effects, resulting from the correlation with the latent traits. This setting can also create high collinearity, with many of the measured traits being highly correlated with the latent traits. Path-analysis models can be used in some cases in the analysis of such data. Finally, elasticity path analysis connects selection gradients of a trait on fitness components with the elasticity (Chapter 29) of those components on the population growth rate ($ $) to provide the elasticity of that trait on $ $ (van Tienderen 2000). This approach provides a powerful connection between selection and demography. We address these last three topics in order, while Aster model analysis of life-history graphs were introduced in Chapter 29."
+    },
+    {
+      "type": "discussion",
+      "content": "While powerful, path-analytic methods are not without significant caveats. First, all of the issues with non-Gaussian fitness residuals that are a concern with regression methods fully apply to path analysis (which, itself, is a modified regression method). Second, path analysis assumes that there are only linear interactions, and hence only model directional selection. Scheiner et al. (2000) described how to include quadratic factors by augmenting"
+    },
+    {
+      "type": "discussion",
+      "content": "[h] each variable with its square and then performing a considerable amount of bookkeeping (see their paper for details). Finally, the results from a path analysis are extremely dependent on the assumed causality structure, so the interpretation of the results can be substantially biased if this structure is even slightly incorrect. Echoing the cautionary words of Kingsolver and Schemske (1991), “The uncritical application of path models to the analysis of selection in natural populations is likely to yield misleading and erroneous results.”"
+    }
+  ]
+}

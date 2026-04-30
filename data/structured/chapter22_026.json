@@ -1,0 +1,84 @@
+{
+  "id": "chapter22_026",
+  "metadata": {
+    "chapter": "chapter22",
+    "section": "Chapter 22: BLUP ESTIMATION OF DIRECT AND ASSOCIATIVE EFFECTS",
+    "subsections": [
+      "Mixed-Model Estimation of Direct and Associative Effects"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter22_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "22.40a",
+      "22.40b"
+    ],
+    "table_references": [
+      "inline_2",
+      "inline_3",
+      "inline_4"
+    ],
+    "table_reference_keys": [
+      "chapter22:inline_2",
+      "chapter22:inline_3",
+      "chapter22:inline_4"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Example 22.11. Assigning an element in $ Z_s $ a value of one for each individual within a group weights all interactions equally. This need not be the case, however. For example, Muir (2005) noted that with plants (or other sessile organisms), the distance between two individuals likely influences their effects. In particular, he suggested that if trees are a distance d apart, a reasonable model for their associative interactions would be $ A_s/d^2 $, where a tree has some intrinsic social breeding value $ (A_s) $ whose effect is diminished by distance. In a case of three trees, where $ d_ ij $ is the distance between trees i and j, the resulting incidence matrix for social breeding values would be $$ \\mathbf{Z}_{s}=\\begin{pmatrix}0&1/d_{12}^{2}&1/d_{13}^{2}\\\\1/d_{21}^{2}&0&1/d_{23}^{2}\\\\1/d_{31}^{2}&1/d_{32}^{2}&0\\end{pmatrix} $$"
+    },
+    {
+      "type": "derivation",
+      "content": "Cantet and Cappa (2008) suggested similar “intensity of competition” weights for individuals within groups of animals, such as the total contact time between two individuals. Other measures of interactions could be used and easily incorporated into $ _ s $ (e.g., Wey et al. 2007). Because we allow for the possibility that the direct and social breeding values are correlated, the standard mixed-model equations for two vectors of random effects (Equation 19.21; LW Equations 26.19b and 26.30) must be slightly modified. They become [[SEE_FORMULA:22.40a]] where the weights $ (_ i) $ are related to elements in the inverse of G, namely, [[SEE_FORMULA:22.40b]] as obtained by Muir (2005) and Van Vleck and Cassady (2005)."
+    },
+    {
+      "type": "discussion",
+      "content": "In order to solve these equations, estimates of the variance components—$ ^ 2 (e)$, $ ^ 2 (A_ d)$, $ ^ 2 (A_ s)$, and $ (A_ d, A_ s)$—are required, and within the mixed-model framework, these are obtained by REML (LW Chapter 27). Van Vleck and Cassady (2005) used simulated data to show that, under the appropriate design, REML does indeed provide separable estimates of the genetic variance components. However, two early applications to real data sets, weight gain in pigs within pens by Arango et al. (2005) and weight gain in Hereford cattle in feedlots by Van Vleck et al. (2007), found that the likelihood surface for $ ^ 2 (A_ s)$ was very flat, making model fitting challenging. We will examine such issues of identifiability shortly. While mixed-model methodology is very robust (for example, it easily handles missing data and variable group numbers), it can easily fail if the model is not correctly specified or the experimental design is such that random effects are not separable, points that we will address shortly."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 22.12. Using mixed-model methods, Bergsma et al. (2008) examined four traits (growth rate, feed intake, back-fat thickness, and muscle depth) in a sample of over 14,000 pigs with a known pedigree (from roughly 400 sires and 600 dams). The pigs were placed in pens of 6–12 animals and several different mixed models were fitted."
+    },
+    {
+      "type": "discussion",
+      "content": "First, a mixed model allowing for only direct effects plus a separate vector for common litter effects, c (which is fairly standard; Chapters 19 and 20), was fit. Here, the model was $$ \\mathbf{z}=\\mathbf{X}\\boldsymbol{\\beta}+\\mathbf{Z}_{a}\\mathbf{a}+\\mathbf{Z}_{c}\\mathbf{c}+\\mathbf{e} $$ where $$ \\mathbf{a}\\sim N(\\mathbf{0},\\sigma^{2}(A)\\cdot\\mathbf{A}),\\quad\\mathbf{c}\\sim N(\\mathbf{0},\\sigma^{2}(c)\\cdot\\mathbf{I}),\\quad\\mathbf{e}\\sim N(\\mathbf{0},\\sigma^{2}(e)\\cdot\\mathbf{I}) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The resulting estimates of additive variation and heritability for these traits were found to be"
+    },
+    {
+      "type": "discussion",
+      "content": "[h] |c|c| Cell 1 & Cell 2 \\\\ Cell 3 & Cell 4 \\\\"
+    },
+    {
+      "type": "discussion",
+      "content": "Next, a model was fit that also included a random pen (group) effect, $ g_ p $, common to all members within the same group (but differing across groups). The model now becomes $$ \\mathbf{z}=\\mathbf{X}\\boldsymbol{\\beta}+\\mathbf{Z}_{a}\\mathbf{a}+\\mathbf{Z}_{g}\\mathbf{g}_{p}+\\mathbf{Z}_{c}\\mathbf{c}+\\mathbf{e},\\quad where\\quad\\mathbf{g}_{p}\\sim N(0,\\sigma^{2}(g_{p})\\cdot\\mathbf{I}) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Use of this model did not change the heritability estimates for back fat and muscle depth, but decreased the estimates for growth and feed intake"
+    },
+    {
+      "type": "discussion",
+      "content": "[h] |c|c| Cell 1 & Cell 2 \\\\ Cell 3 & Cell 4 \\\\"
+    },
+    {
+      "type": "discussion",
+      "content": "Comparison with the previous table shows that failure to include a group effect (here, assumed to be entirely nonheritable, i.e., all environmental), resulted in some traits (growth and intake) having their heritabilities overestimated. Finally, a model was fit allowing for heritable social effects $$ \\mathbf{z}=\\mathbf{X}\\boldsymbol{\\beta}+\\mathbf{Z}_{d}\\mathbf{a}_{d}+\\mathbf{Z}_{s}\\mathbf{a}_{s}+\\mathbf{Z}_{g}\\mathbf{g}_{p}+\\mathbf{Z}_{c}\\mathbf{c}+\\mathbf{e} $$ which returned estimates of"
+    },
+    {
+      "type": "discussion",
+      "content": "[h] |c|c| Cell 1 & Cell 2 \\\\ Cell 3 & Cell 4 \\\\"
+    },
+    {
+      "type": "discussion",
+      "content": "The results in the above example are fairly typical of the published results from the animal-breeding literature. Often the estimates of $ (A_d, A_s) $ and $ ^2(A_s) $ are quite small relative to $ ^2(A_d) $, but because terms involving social effects are scaled by roughly $ n $ or $ n^2 $ (for the covariance and variance, respectively), their contributions can be considerable. For example, a series of eight (mostly growth) traits in cattle, pigs, and chicken, $ (n-1) (A_d, A_s) $ was between 5 and 40 As discussed in Chapter 19, one could use a Bayesian analysis of a mixed model instead of BLUP estimates of the random effects and REML estimates of the variance. Recall that a BLUP/REML analysis returns point estimates and associated confidence intervals for variables of interest, while a Bayesian analysis returns the whole posterior distribution of potential values given the data (Chapter 19; Appendices 2 and 3). Arora and Lahiri (1997) showed for mixed models that “empirical BLUP,” namely using REML estimates of variance components to solve the mixed-model equations, generally gives the same average value as a Bayesian analysis, but that the latter returns a smaller mean-squared error and hence offers more precision. Cappa and Cantet (2006, 2008) developed a Gibbs sampler (Appendix 3) for the mixed model with associative effects."
+    },
+    {
+      "type": "discussion",
+      "content": "One of the strengths of mixed models is their flexibility. The basic model shown by Equation 22.38c, which allows for direct and associative effects, can easily be extended. For example, Bouwmann et al. (2010) included a separate maternal genetic effect, distinct from social effects, while Alemu et al. (2014) modified associative effects to allow kin and nonkin interactions to differ."
+    }
+  ]
+}

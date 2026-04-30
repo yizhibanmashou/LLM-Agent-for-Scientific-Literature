@@ -1,0 +1,67 @@
+{
+  "id": "chapter10_023",
+  "metadata": {
+    "chapter": "chapter10",
+    "section": "Chapter 10: Basic Structure of the Model",
+    "subsections": [
+      "Basic Structure of the Model"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter10_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "10.12a",
+      "10.12b",
+      "10.12c",
+      "10.12d",
+      "10.13a",
+      "10.13b",
+      "10.14a",
+      "10.14b",
+      "10.14c",
+      "10.14d"
+    ],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "derivation",
+      "content": "The PRF model assumes that each site evolves independently, and hence there are no effects from selection at linked sites—the assumption is that selection only influences a site by directly acting on it. To obtain the expected values for the entries in a DPRS table, Sawyer and Hartl used results from diffusion theory (Appendix 1) on the equilibrium distributions (under mutation-selection-drift balance) for polymorphisms at neutral and selected sites, as well as the expected divergence between sites. The PRF model is an infinite-sites model (Chapter 2), with each new mutation assumed to be unique and at a different site from previous ones. For a sample of m and n sequences from the two species, the expected values for the DPRS entries are [[SEE_FORMULA:10.12a]] [[SEE_FORMULA:10.12b]] [[SEE_FORMULA:10.12c]] [[SEE_FORMULA:10.12d]] [[SEE_FORMULA:10.13a]] where [[SEE_FORMULA:10.13b]]"
+    },
+    {
+      "type": "discussion",
+      "content": "The full derivation is given by Sawyer and Hartl, but a brief sketch of the underlying ideas is as follows."
+    },
+    {
+      "type": "derivation",
+      "content": "Recall (Equation 7.13b) Wright’s (1938b) classic result for the amount of time that a new segregating mutation (with selection coefficient s) spends in the interval $ (x, x + dx) $, [[SEE_FORMULA:10.14a]] where $x$ is the frequency of the derived allele. In the limit as $ 0$, this reduces to $dx/x$, recovering Watterson's expression for the (unfolded) site-frequency spectrum (SFS) for neutral alleles (Equation 2.34a). Equation 10.14a is the expected equilibrium unfolded frequency spectrum for segregating sites under selection, and it is valid for both positive and negative values of $s$. As a brief aside, we mentioned above that certain maximum-likelihood versions of the basic MK test use a distribution of fitness effects (often denoted as DFE in the literature), $ (s|) $, where $ $ denotes the vector of distribution parameters (such as the $ $ and $ $ parameters for a gamma distribution; see Equation A2.25a) (Bierne and Eyre-Walker 2004; Eyre-Walker et al. 2006; Welch 2006; Boyko et al. 2008; Eyre-Walker and Keightley 2009; Keightley and Eyre-Walker 2012). Under this model, the expected SFS becomes [[SEE_FORMULA:10.14b]]"
+    },
+    {
+      "type": "discussion",
+      "content": "This is simply the average of the frequency spectrum, $ (x N_e, s) $, for alleles with a set value of $ s $ over the assumed distribution, $ (s) $, of $ s $. Equation 10.14b is then used to obtain a maximum-likelihood estimate of the vector of distribution parameters, $ $, given the SFS data, with the resulting DFE used to adjust for the effects of segregating deleterious alleles."
+    },
+    {
+      "type": "derivation",
+      "content": "Returning to the PRF model, we do not use the site-frequency spectrum, but rather translate the SFS into the four cell counts in the DPRS table. If $ x $ is the population frequency of a segregating allele, the probability that we score it as a polymorphic site in a sample of size $ n $ is $ 1 - x^n - (1 - x)^n $, where the last two terms account for all $ n $ draws either being only the derived allele or only the ancestral allele (Equation 2.36b). Hence, the probability that we will score a truly segregating site as polymorphic in a sample of size $ n $ becomes [[SEE_FORMULA:10.14c]]"
+    },
+    {
+      "type": "discussion",
+      "content": "This follows by averaging the probability of scoring a site as polymorphic given a derived allele frequency of $ x $ over the distribution $ (x N_e, s) $ of $ x $ given the selection model. The function $ F(n,) $ given by Equation 10.13a follows upon substitution of Equation 10.14a in Equation 10.14c (a similar approach was used in Chapter 9 for ML-based detection of hard sweeps; see Equation 9.16a)."
+    },
+    {
+      "type": "derivation",
+      "content": "The Sawyer-Hartl model also correctly accounts for the possibility that segregating mutations are scored as substitutions because the sample size is insufficient to contain both alleles. If the derived-allele frequency is x, the probability that we score a polymorphic site as a substitution event (for the derived allele) is $ x^ n $, giving the additional increment to the probability of an observed substitution as [[SEE_FORMULA:10.14d]]"
+    },
+    {
+      "type": "discussion",
+      "content": "This term is added to the probability of a true substitution to give a full accounting of the number of sites in the sample that are scored as substitutions (Equation 10.12c), with $ G(n,) $ following from Equations 10.14a and 10.14d."
+    },
+    {
+      "type": "proposition",
+      "content": "The basic similarities, and fundamental differences, between MK estimators (e.g., Equations 10.7–10.9) and the PRF approach can be easily obscured by the imposing nature of the PRF equations. The similarity is that both approaches use the same data, the four values in a DPRS table. However, the two approaches estimate different quantities and have different underlying model assumptions. MK estimators make no assumption about the nature or strength of selection on replacement sites, but instead estimate $ f $, the reduction in the effectively neutral substitution rate at replacement sites, and $ $, the fraction of replacement substitutions at a gene that are adaptive. The effect of purifying selection enters only through $ f $, while the effects of positive selection enter only through $ $."
+    },
+    {
+      "type": "discussion",
+      "content": "In contrast, the PRF equations estimate $ _a $ and $ _s $, the scaled total mutation rates over all sites of the two categories within the gene. The ratio of $ _a/ _s $ (suitably corrected for the number of sites within each category; see Equation 10.7d) is not an estimate of $ f $, as the PRF model does allow for slightly deleterious alleles to be segregating (i.e., the estimate of $ = 2N_e s $ might be negative). The original Sawyer-Hartl model was very restrictive, with only a single fitness class for replacement sites (which is approximately treated as an average selection coefficient over mutations). Extensions (discussed shortly) remove this restriction, allowing for neutral, deleterious, and advantageous classes, with either constant values of $ $ within each class, or (more generally) class-specific distributions of $ $ values. Thus, the PRF model does not estimate $ $ directly, but given estimates of $ $, we can compute the expected fraction of substitutions that are fixed by positive selection (Example 10.13 and Equation 10.16c)."
+    }
+  ]
+}

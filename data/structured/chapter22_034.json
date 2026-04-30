@@ -1,0 +1,64 @@
+{
+  "id": "chapter22_034",
+  "metadata": {
+    "chapter": "chapter22",
+    "section": "Chapter 22: ASSOCIATIVE-EFFECTS, INCLUSIVE FITNESS, AND FISHER'S THEOREM",
+    "subsections": [
+      "Change in Mean Fitness When Associative Effects are Present"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter22_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "22.47a",
+      "22.47b",
+      "22.47c",
+      "22.48a",
+      "22.48b",
+      "22.48c",
+      "22.48d"
+    ],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "The most important trait in evolution is fitness, W (Chapters 6 and 29). Clearly, the fitness of any particular genotype is partly a function of the environment in which it finds itself. While we normally treat this environment as static, when conspecifics influence fitness (as is generally expected to be the case), part of this environment may also be evolving in response to selection (namely, conspecifics are constantly improving). In these settings, the use of models with associative effects is appropriate. Here, the individual fitness of a focal individual results from a direct fitness effect from its own genotype plus the associative effects on its fitness from the other genotypes with which it interacts. Competition, a detrimental fitness effect from other individuals, is one such associative effect, where the contribution from conspecifics is to lower fitness (e.g., Wilson et al. 2009, 2011). Conversely, with cooperation or mutualism, associative effects increase the fitness of the focal individual."
+    },
+    {
+      "type": "derivation",
+      "content": "Examining the expected change in mean fitness is straightforward. Using previous results, we simply take the trait being followed as individual fitness $ (z = W) $. From Equation 22.1c, the fitness of individual i becomes [[SEE_FORMULA:22.47a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "$ A_ d $ is the direct breeding value of fitness, while $ A_ s $ is the social breeding value (how a focal individual influences the fitness of others in its group). As above, $ A_ s_ i $ does not contribute to $ W_ i $, while $ A_ s_ j $ for $ j i $ does. Likewise, the total breeding value for the fitness of an individual is simply [[SEE_FORMULA:22.47b]] with a variance of [[SEE_FORMULA:22.47c]]"
+    },
+    {
+      "type": "discussion",
+      "content": "The first term, $ ^2(A_d) $, is the classical additive genetic variance in fitness in the absence of associative effects. When interactions are present, there is the potential for substantially more heritable variation in fitness. Indeed, the total genetic variance in fitness has the potential to exceed the actual variance in individual fitness, $ ^2(A_T) > _W^2 $, as much of the variation is hidden in interactions with others, which do not appear in one's individual fitness."
+    },
+    {
+      "type": "derivation",
+      "content": "When the trait is fitness itself, the response equation for individual selection (Equation 22.14) simplifies somewhat. Recall the Robertson-Price identity (Equation 6.10), $ S = (z, w) $, where $ w = W/ $ is relative fitness. When $ z = W $, the selection differential becomes [[SEE_FORMULA:22.48a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Equation 22.14 expresses the response in terms of $ / $. When the trait is fitness itself, Equation 22.48a shows that this simplifies to [[SEE_FORMULA:22.48b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Substituting Equation 22.48b into Equation 22.14 gives the response (the change in mean population fitness) as [[SEE_FORMULA:22.48c]]"
+    },
+    {
+      "type": "discussion",
+      "content": "This is simply Price’s equation (Equation 6.6), where we have restricted our discussion to cases where the transmission is such that mean breeding values of offspring equals the mean breeding values of their parents (and hence the correction term in Equation 6.6 for changes induced solely by transmission disappears). Such is expected to be the case for the infinitesimal model under random mating."
+    },
+    {
+      "type": "derivation",
+      "content": "Applying Equation 22.12c gives the response in terms of the variance components as [[SEE_FORMULA:22.48d]] As we saw for other traits, when r = 0, the possibility of a reversed response occurs if the breeding values for direct and social effects on fitness are sufficiently negatively correlated. Hence, under rather realistic conditions, individual selection can result in a decrease (and a potentially rather significant one) in mean fitness."
+    },
+    {
+      "type": "discussion",
+      "content": "Ironically, even though a negative response can occur in the presence of associative effects, there is actually more total additive-genetic variance in fitness available when such effects are present, as $ ^ 2 (A_ T) > ^ 2 (A_ d) $. However, only a fraction of this variance may be accessible to individual selection, and this fraction (being a covariance rather than a variance) can be negative (Equation 22.4b)."
+    }
+  ]
+}

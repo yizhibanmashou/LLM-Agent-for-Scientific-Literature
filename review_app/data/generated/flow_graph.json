@@ -1,0 +1,93 @@
+{
+  "generated_at": "2026-04-24T13:37:28",
+  "source_doc": "docs/architecture.md",
+  "overview_nodes": [
+    {
+      "id": "ocr_input",
+      "title": "OCR Input",
+      "subtitle": "PDF -> OCR pages",
+      "detail": "原始 PDF 经 OCR 后形成页面级文本与布局信息。"
+    },
+    {
+      "id": "layout_normalizer",
+      "title": "Layout Normalizer",
+      "subtitle": "block sequence",
+      "detail": "统一页面 block 表示，保留结构线索，供后续模块复用。"
+    },
+    {
+      "id": "markdown_structurer",
+      "title": "Markdown Structurer",
+      "subtitle": "main orchestrator",
+      "detail": "负责 heading、chunk 切分、内容分类与库对象装配。"
+    },
+    {
+      "id": "library_builder",
+      "title": "Library Builder",
+      "subtitle": "formula/table assets",
+      "detail": "生成 formula_library 与 table_library，并写回 chunk 引用。"
+    },
+    {
+      "id": "structured_output",
+      "title": "Structured Output",
+      "subtitle": "chunk/formula/table JSON",
+      "detail": "形成可检索、可审核、可追溯的结构化产物。"
+    }
+  ],
+  "subflows": {
+    "formulas": [
+      {
+        "title": "Candidate Builder",
+        "detail": "从局部上下文、编号线索、版面邻近性生成候选公式编号。"
+      },
+      {
+        "title": "Evidence Scorer",
+        "detail": "融合局部证据与全局提及频次，形成候选优先级。"
+      },
+      {
+        "title": "Assignment + Repair",
+        "detail": "通过约束求解与后处理修复编号跳变、缺失、冲突问题。"
+      },
+      {
+        "title": "Formula Library Output",
+        "detail": "输出稳定编号公式对象，并关联 source.unit_id 与上下文。"
+      }
+    ],
+    "tables": [
+      {
+        "title": "Table Detection",
+        "detail": "检测表格块并提取标题、行列结构与 HTML 表示。"
+      },
+      {
+        "title": "Canonicalization",
+        "detail": "统一表格 ID 与编号形式，减少跨版本命名漂移。"
+      },
+      {
+        "title": "Chunk Linking",
+        "detail": "把 table 引用写回 chunk metadata，建立前后向关系。"
+      },
+      {
+        "title": "Table Library Output",
+        "detail": "输出表格资产，供检索与对照审核使用。"
+      }
+    ],
+    "chunks": [
+      {
+        "title": "Section Parsing",
+        "detail": "按章节层级解析标题，建立 section/subsection 路径。"
+      },
+      {
+        "title": "Chunk Segmentation",
+        "detail": "按语义与长度切分 chunk，并保留 block 序列信息。"
+      },
+      {
+        "title": "Reference Enrichment",
+        "detail": "填充 formula_references/table_references 与 source_file。"
+      },
+      {
+        "title": "Chunk JSON Output",
+        "detail": "输出可下游消费的 chunk JSON 列表。"
+      }
+    ]
+  },
+  "risks": []
+}

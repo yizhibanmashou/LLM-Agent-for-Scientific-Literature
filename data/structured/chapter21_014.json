@@ -1,0 +1,66 @@
+{
+  "id": "chapter21_014",
+  "metadata": {
+    "chapter": "chapter21",
+    "section": "Chapter 21: Within-family Selection:",
+    "subsections": [
+      "Within-family Selection:"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter21_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "21.6b",
+      "21.6c",
+      "21.7a",
+      "21.7b",
+      "21.8a",
+      "21.8b",
+      "21.8c",
+      "21.8d",
+      "21.9a"
+    ],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Selection on family deviations (FD) $$ \\sigma(\\left.z_{i j}-\\overline{z}_{i},y\\right|\\mathcal{R}_{1})=\\left(1-r_{n}\\right)\\left(\\sigma_{A}^{2}/2\\right)=\\left\\{\\begin{array}{l l}\\left(1-1/n\\right)\\left(3/8\\right)\\sigma_{A}^{2}&\\mathrm{h a l f-s i b s}\\\\ \\left(1-1/n\\right)\\left(\\sigma_{A}^{2}/4\\right)&\\mathrm{f u l l-s i b s}\\end{array}\\right. $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Strict within-family selection (FW) $$ \\sigma(z_{ij}-\\mu_{i},y\\mid\\mathcal{R}_{1})=(1-r)\\left(\\sigma_{A}^{2}/2\\right)=\\left\\{\\begin{array}{ll}(3/8)\\sigma_{A}^{2}&half-sibs\\\\\\sigma_{A}^{2}/4&full-sibs\\end{array}\\right. $$"
+    },
+    {
+      "type": "derivation",
+      "content": "Using Wright's coefficient, Equation 21.6a simplifies to [[SEE_FORMULA:21.6b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Considering the paths through both parents ($ R_ 1 $ and $ R_ 2 $) of y, [[SEE_FORMULA:21.6c]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Likewise, the covariance between an individual’s family deviation and its offspring’s phenotypic value is [[SEE_FORMULA:21.7a]] which follows because $ (z_ ij, y _1) $ is the parent-offspring covariance, $ _A^2 / 2 $. Doubling the single-parent contribution yields a total contribution (considering both parents of $ y $) of [[SEE_FORMULA:21.7b]]"
+    },
+    {
+      "type": "discussion",
+      "content": "The covariance for strict within-family (WF) selection is slightly different (with $r$ replacing $r_n$; see [[SEE_TABLE:21.3]]), as the appropriate covariance here is $ (z_ ij - _i, y)$, with $ _i$ in place of $ _i$. The rankings of individuals under WF selection is simply their ranking within each family, while their ranking under FD selection further depends on how much an individual actually deviates from its family mean. Thus, the top-ranked individuals in two families are always chosen under WF selection, but may not be chosen under FD selection. As a consequence, FD selection is influenced by the observed family mean, $ _ i $, while WF selection is a function of the true mean, $ _ i $ (Dempfle 1975, 1990; Hill et al. 1996)."
+    },
+    {
+      "type": "discussion",
+      "content": "A few simple rules emerge from [[SEE_TABLE:21.3]]. The number, $n$, of measured sibs only influences the covariance for family selection and family-deviations selection. Even in these cases, its effect is small unless the number of sibs is small. Under sib selection (and family selection ignoring terms of order $1/n$), the selection unit-offspring covariance contributed through one parent ($ _i$) is $ _A^2/8$ when the selection unit consists of half-sibs and $ _A^2/4$ when the selection unit consists of full-sibs. For parental selection and $S_1$ seed designs, this covariance is $ _A^2/4$ (independent of whether full-sibs or half-sibs are used in the selection unit). The covariance under WF selection (and FD selection when ignoring terms of order $1/n$) is $3 _A^2/8$ for half-sibs and $ _A^2/4$ for full-sibs."
+    },
+    {
+      "type": "discussion",
+      "content": "Variance of the Selection Unit, $ _ x ^ 2 $ The variance, $ _ x ^ 2 $, of the selection unit is a function of the within- and among-family variances, and obtaining it requires a bit of bookkeeping. We start by assuming that the total environmental value can be partitioned as $ E = E_ c + E_ s $, a common-family effect ($ E_ c $) plus an individual-specific effect ($ E_ s $). This decomposes the total environmental variances into among- and within-family components, $ _ E ^ 2 = _ E_ c ^ 2 + _ E_ s ^ 2 $. When families are replicated over plots and environments, the environmental variance contains additional structure and is usually partitioned into further components (Equations 21.41 and 21.42)."
+    },
+    {
+      "type": "derivation",
+      "content": "The among-family variance $ _ b ^ 2 $ (the variance among the expected family means, $ _ i $) [[SEE_FORMULA:21.8a]] where $ _ GF ^ 2 $, the among-family genetic variance (the variance in the expected mean genotypic value among families), is developed below (Equations 21.11a and 21.26a). Likewise, the within-family variance about the expected family mean is [[SEE_FORMULA:21.8b]] where $ _ Gw ^ 2 $ is the within-family genetic variance (Equations 21.11b and 21.26b). Note that $ _ b ^ 2 $ and $ _ w ^ 2 $ are functions of the true family mean, $ _ i $, while the variance of the selection unit usually relies upon the variances about the observed mean, $ _ i $, of each family. Replacing $ _ i $ with $ _ i $ results in a slight inflation of the among-family variance and a slight reduction in the within-family variance (this is formally shown below in Example 21.3). With n sibs in each family, the among-family variance based on the observed means becomes [[SEE_FORMULA:21.8c]] namely, the among-family variance, $ ^2(_i) = _b^2 $, plus the variance, $ ^2(_i) = _w^2/n $, in the error from estimating $ _i $ from $ _i $. Because the total variance is the sum of the among- and within-family variances ($ _b^2 + _w^2 $), the within-family variance (about the observed, rather than expected, mean) is correspondingly reduced to [[SEE_FORMULA:21.8d]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Equation 21.8c thus implies [[SEE_FORMULA:21.9a]]"
+    }
+  ]
+}

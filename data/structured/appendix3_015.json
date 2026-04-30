@@ -1,0 +1,24 @@
+{
+  "id": "appendix3_015",
+  "metadata": {
+    "chapter": "appendix3",
+    "section": "Visual Analysis",
+    "subsections": [
+      "Visual Analysis"
+    ],
+    "source_file": "tmp\\paddle_output\\appendix3_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "As shown in Figures A3.1 and A3.2, one should always examine the time series trace, the plot of the random variable being generated versus the number of iterations. In addition to showing evidence for poor mixing, such traces can also suggest a minimum burn-in period for some starting value. For example, suppose the trace moves very slowly away from the initial value to a rather different value (say after 5000 iterations), after which it appears to settle down. Clearly, the burn-in period is at least 5000 in this case. It must be cautioned that the actual burn-in time may be far longer than suggested by the trace. Nevertheless, the trace often indicates that more burn-in time is needed. A second approach is to run either several chains or subsample from a much longer chain, and then compare the traces. The expectation under stationarity is that these samples are drawn from the same distribution. Even if visual analysis suggests that two (or more) chains appear to be very similar and are both well-behaved, the concern is that both might be stuck in the same local maximum region of a complex posterior. In such cases, the impression of stationarity and consistency is presented, but significantly longer runs for each chain would show a different outcome."
+    },
+    {
+      "type": "discussion",
+      "content": "Correlograms, which plot serial autocorrelations as a function of the time lag, are also very useful in accessing a run from an MCMC sampler. A plot of $ _k $ versus $ k $ (the $ k $th order autocorrelation versus the lag) should show geometric decay if the sampler series closely follows an $ AR_1 $ model. A plot of the partial autocorrelations as a function of lag is also useful. The $ k $th partial autocorrelation is the excess correlation not accounted for by a $ k - 1 $ order autogressive model ($ AR_ k-1 $). Hence, if the first-order model fully fits the data, the second-order partial autocorrelation is zero, as the lagged autocorrelations are accounted for by the $ AR_1 $ model (i.e., $ _k = _1^k $). Both of these autocorrelation plots can indicate an underlying correlation structure that may not be obvious from the time series trace."
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "id": "chapter19_025",
+  "metadata": {
+    "chapter": "chapter19",
+    "section": "Chapter 19: Introduction to Bayesian Statistics",
+    "subsections": [
+      "Introduction to Bayesian Statistics"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter19_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Notice that our Gaussian prior for $ $ conjugated with the likelihood function, with the product of the prior and likelihood returning a distribution in the same family as the prior (but whose distribution parameters, which here are the mean and the variance, have been changed from their values in the prior by the data). The use of such conjugate priors (for a given likelihood), which is a key tool in Bayesian analysis, is explored in detail in Appendix 2. For example, with normally distributed data and an unknown variance, using a scaled inverse- $ ^2 $ prior for the variance also conjugates the likelihood, with the posterior distribution for the variance also following a scaled inverse- $ ^2 $, but (as above) also with different distribution parameters (i.e., the shape and scale parameters are changed; Appendix 2)."
+    },
+    {
+      "type": "discussion",
+      "content": "A Bayesian analysis returns distributions, rather than point estimates. A number of summary statistics can be reported for the posterior, such as its mean, median (50"
+    },
+    {
+      "type": "discussion",
+      "content": "What is the relative importance of the prior information, $ p() $, compared to the actual data, y? Equation A2.22b gives the mean of the posterior distribution as $$ \\mu_{*}=\\mu_{0}\\frac{\\sigma_{*}^{2}}{\\sigma_{0}^{2}}+\\overline{y}\\frac{\\sigma_{*}^{2}}{\\sigma^{2}/n} $$ With a very diffuse prior on $ $ (i.e., $ _0^2 ^2$), Equation A2.22b shows that $ _2^* ^2/n$ and thus $ _* $, so with very weak prior information, the mean of the posterior distribution is close to the usual estimate of $ $, which is the sample mean, $ $. Conversely, as we collect enough data (i.e., large $n$), $ _* ^2/n$ and again $ _* $. Thus, even with a very strong prior belief about the location of the mean ($ _0^2$ is small), as our sample size becomes sufficiently large, the mean of the posterior approaches the sample mean. With a modest prior and data (meaning that $ _0^2$ and $n$ are modest), this expression shows how these two contributions are weighted."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 19.9. A simulation study by Sorensen et al. (1994) examined the effects on the posterior estimate of heritiability by using different priors on the variance components. To study the impact of sample size, the data were analyzed in two sets: the entire data set (Large) and a partial subset (Small). The simulated heritability was 0.5. Both uniform and scaled inverse- $ ^ 2 $ priors for the additive and residual variance were used. The uniform spreads belief"
+    },
+    {
+      "type": "discussion",
+      "content": "[h] |c|c| Cell 1 & Cell 2 \\\\ Cell 3 & Cell 4 \\\\"
+    },
+    {
+      "type": "discussion",
+      "content": "Note the disparity of the estimates under the two priors in the partial data case (Small) and their agreement in the full data case (Large). In the partial data case, the effect of the prior had a strong influence, indicating a weak signal (likelihood) for $h^2$ in this particular data set. With the full data set, the signal greatly increased, mitigating the effects of the prior. As expected, the posterior variance, $ ^2[h^2 y]$ decreased under the larger sample size (Small versus Large) for both priors. Also note that the posterior variance was smaller under the assumed inverse-$ ^2$ priors. Thus, the choice of a prior influences not only the mean of the estimate, but also its variance. In this case, while the different priors yielded essentially the same mean heritability in the full data set, their variances differed by an order of magnitude."
+    },
+    {
+      "type": "discussion",
+      "content": "This is an example of a sensitivity analysis using different priors to probe the stability of the posterior. With complex posteriors, one can observe broad stability for many of the variables (insensitivity to changes in the priors), but extreme dependence in the others. The use of different priors provides one means to explore the amount of signal along the different directions (variables) of the likelihood surface."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 19.10. In the context of analyzing a selection response experiment, the vector of breeding values, a, is of interest, while the q fixed effects ($ $) and variances ($ _A^2 $, $ _e^2 $) are often regarded as nuisance parameters. In this case, Equation 19.30 gives the marginal distribution of the breeding values a, given the data y, as $$ p(\\mathbf{a}\\mid\\mathbf{y})=\\int p(\\mathbf{a},\\boldsymbol{\\beta},\\sigma_{A}^{2},\\sigma_{e}^{2}\\mid\\mathbf{y})d\\boldsymbol{\\beta}d\\sigma_{A}^{2}d\\sigma_{e}^{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The integration is over the $ q + 2 $ dimensional space given by the q elements in $ $ and the two variances. This conditioning removes any dependencies of estimates of the response on estimates of the variance components and fixed effects. Uncertainties introduced by estimating these nuisance parameters are automatically accommodated when considering the marginal distribution. While solving this multidimensional integral is extremely challenging, a Gibbs sampler (below) can often be constructed to obtain draws from this marginal distribution. With the marginal density, $ p() $, in hand, and recalling Equation 19.8b, one can obtain estimates of the response to selection, $ ^T $, that are independent of the assumed (or estimated) additive-genetic variance, $ _A^2 $. The error due to estimation of the additive variance from the data is directly incorporated when the marginal is computed, as we integrate over possible values of $ _A^2 $ and their support, given the data. This independence of the estimated selection response from the estimate of additive variance and the subsequent incorporation of the error in estimating $ _A^2 $ in the estimate of the response are two very compelling reasons for performing a Bayesian analysis of response."
+    },
+    {
+      "type": "discussion",
+      "content": "This example hints at a key feature noted by Gianola and Fernando (1986). If all the data on which selection was based are included in the analysis, then (by integrating over all nuisance parameters) the Bayesian approach accounts for any potential bias introduced by selection (provided that the model assumptions, such as multivariate normality, hold)."
+    }
+  ]
+}

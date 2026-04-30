@@ -1,0 +1,67 @@
+{
+  "id": "chapter2_008",
+  "metadata": {
+    "chapter": "chapter2",
+    "section": "Chapter 2: HIGHER-ORDER ALLELE-FREQUENCY MOMENTS",
+    "subsections": [
+      "HIGHER-ORDER ALLELE-FREQUENCY MOMENTS"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter2_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "2.15",
+      "2.16a",
+      "2.16b",
+      "2.16c",
+      "2.16d",
+      "2.17"
+    ],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "In the previous sections, we evaluated the expected values of various population features under neutrality. However, as just noted, in applying such expressions to empirical studies, it is important to keep in mind that the random sampling of allele frequencies across generations will cause the realized behavior of any particular population or group of populations to deviate from the expected pattern. Thus, there is a practical need for expressions for the variance of various population parameters that result from genetic sampling. This in turn requires an understanding of the behavior of higher-order allele-frequency moments. For example, although the expected heterozygosity is a function of $ 2p(1-p) = 2(p-p^2) $, as will be shown later, its variance depends on $ p^3 $ and $ p^4 $."
+    },
+    {
+      "type": "discussion",
+      "content": "For a population obeying the features of the idealized Wright-Fisher model, useful expressions can be obtained by noting that the expected value of an allele-frequency moment in generation $ t + 1 $ can be written as a conditional function of the allele frequency $ p_t $ in the previous generation. For example, letting $ p $ denote the change in allele frequency in the previous generation resulting from gamete sampling, the behavior of the first moment (the mean) can be written as $$ E[p_{t+1}|p_{t}]=E[(p_{t}+\\delta p)|p_{t}] $$"
+    },
+    {
+      "type": "derivation",
+      "content": "In the case of neutrality, there are no directional forces, so $ E(p) = 0 $, and the expected frequency of an allele remains perpetually at its initial value $ (p_ 0) $, [[SEE_FORMULA:2.15]]"
+    },
+    {
+      "type": "discussion",
+      "content": "The second moment is obtained by noting that $$ E[p_{t+1}^{2}|p_{t}]=E[(p_{t}^{2}+2p_{t}\\delta p+\\delta p^{2})|p_{t}] $$ Because $ E(p) = 0 $ and $ E(p^2 | p_t) = p_t(1 - p_t)/(2N) $ under binomial sampling, $$ E[p_{t+1}^{2}|p_{t}]=E\\left(p_{t}^{2}+\\frac{p_{t}-p_{t}^{2}}{2N}\\right) $$"
+    },
+    {
+      "type": "derivation",
+      "content": "Letting $ _ 1 =1-(1/2N) $, and noting that $ E(p_ t)=p_ 0 $, this expression can be rearranged to give the recursion equation $$ E[p_{t+1}^{2}|p_{t}]-p_{0}=[E(p_{t}^{2})-p_{0}]\\lambda_{1} $$ the general solution of which is [[SEE_FORMULA:2.16a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "The general starting expression, which can be extended to all higher-order moments, is [[SEE_FORMULA:2.16b]] where the summation gives the terms in the polynomial expansion. For binomial sampling theory, expressions are available for all expected values of $ p $ (e.g., Johnson et al. 2005), so Equation 2.17 can be solved recursively starting with the lower-order moments."
+    },
+    {
+      "type": "derivation",
+      "content": "Using expectations for higher-order $ p^ k $ terms, expressions for all higher-order moments can be acquired, two of which prove to be particularly useful (Crow and Kimura 1970): [[SEE_FORMULA:2.16c]] [[SEE_FORMULA:2.16d]] where $ _ i =1-(i/2N) $. Modifications for these expressions for populations with separate sexes and 1:1 sex ratios are given by Lynch and Hill (1986)."
+    },
+    {
+      "type": "discussion",
+      "content": "[h]"
+    },
+    {
+      "type": "proposition",
+      "content": "Example 2.5. The preceding expressions can be used to derive the evolutionary (or drift) variance of heterozygosity at a locus under the assumption of Hardy-Weinberg equilibrium, provided there are only two alleles segregating at the locus. Letting $ H_t = 2p_t(1 - p_t) $ denote the heterozygosity at generation $ t $, the expected variance of heterozygosity is $$ \\begin{aligned}\\sigma^{2}(H_{t})&=E\\{[2p_{t}(1-p_{t})]^{2}\\}-\\{E[2p_{t}(1-p_{t})]\\}^{2}\\\\&=E(4p_{t}^{2})-E(8p_{t}^{3})+E(4p_{t}^{4})-[E(2p_{t}-p_{t}^{2})]^{2}\\end{aligned} $$"
+    },
+    {
+      "type": "derivation",
+      "content": "A solution is obtained by substituting Equations 2.16a–2.16d for the expectations of allele-frequency moments, with further simplification made possible by using the approximations $ _1 e^ -t/2N $, $ _2 e^ -2t/2N $, and $ _3 e^ -3t/2N $, yielding [[SEE_FORMULA:2.17]]"
+    },
+    {
+      "type": "discussion",
+      "content": "This quantity can be viewed as either the variance in heterozygosity that develops at a particular neutral locus among replicate populations starting from the same initial allele frequencies or as the variance in heterozygosity among a pool of loci within the same population with identical initial allele frequencies. As with the expected heterozygosity, the temporal dynamics of the evolutionary variance of heterozygosity scale inversely with the size of the population. Moreover, the variation in heterozygosity resulting from genetic drift can be quite high, with the standard deviation always exceeding the expected heterozygosity once $ t > 2N $ generations (Figure 2.8). With more than two alleles per locus, the preceding expressions would need to be modified to account for the negative drift sampling covariance between different alleles at the locus."
+    }
+  ]
+}

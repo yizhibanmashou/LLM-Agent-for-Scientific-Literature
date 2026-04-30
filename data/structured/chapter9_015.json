@@ -1,0 +1,54 @@
+{
+  "id": "chapter9_015",
+  "metadata": {
+    "chapter": "chapter9",
+    "section": "Chapter 9: DIVERGENCE BETWEEN POPULATIONS: TWO-POPULATION COMPARISONS",
+    "subsections": [
+      "DIVERGENCE BETWEEN POPULATIONS: TWO-POPULATION COMPARISONS"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter9_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "9.8"
+    ],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "derivation",
+      "content": "While most of the analysis of divergence data in structured populations is based on $ F_ ST $ statistics (Chapter 2), we start with a few comments on the simple situation in which one is comparing a biallelic locus between two populations. As in the case of the divergence of a single population measured at starting and ending time points, divergence can be measured as the squared allele-frequency difference, [[SEE_FORMULA:9.8]] namely, the squared difference between the frequency in the two populations at some sample time, $t$, following their isolation from a common ancestor in generation 0. Whether $ _ t $ is too large, or too small, relative to drift can be evaluated using a simple modification of the Waples test, wherein the denominator in Equation 9.2d is replaced by $ ^ 2 (_ t,1) + ^ 2 (_ t,2)$, the sum of the allele-frequency sampling variances for each population (defined as in Equation 9.2b). This expression requires estimates of the divergence time, $t$, as well as the average effective sizes for both populations. More generally, because $E = p_ 0 $, in theory one could sample the two populations at different time points $(t_ 1 $ and $t_ 2)$, but now using $ ^ 2 (_ t_ 1,1) + ^ 2 (_ t_ 2,2)$ in the denominator of the test statistic."
+    },
+    {
+      "type": "discussion",
+      "content": "A common scenario involves the comparison of two subpopulations, descendent from a shared ancestor, that presumably have experienced different selection pressures. The typical setting is either selection in one population (e.g., adaptation to elevation assessed by comparing a derived highland population to a lowland control) or lines selected in divergent directions (e.g., meat versus dairy cattle). If one has a fairly dense marker map, adjacent markers should be in LD and the joint use of multiple markers can enhance the signal of selection. A standard approach is a genomic scan using a sliding window of markers, contrasting the average frequency differences between populations for the alleles within windows (Figure 9.1). While the window size is arbitrary, it should be no smaller than the average size of an LD block for the populations being compared. As with temporal data, the significance of divergence data can be assessed using simulations (Example 9.3), although other, less formal approaches are often used to highlight regions of interest. One example of the latter is the work of Prasad et al. (2008), presented in Figure 9.1, which depicts a scan for excess SNP-frequency differences in a sliding window analysis over Bos taurus (cattle) chromosome 19. Regions of interest were identified by a permutation test in which breed labels were randomized over SNPs to generate the null. Threshold values indicate the 95"
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, a very simple statistic that often appears in comparisons of selected versus control populations is Grossman et al.'s (2010) $ DAF $ statistic. This metric is a natural out-growth of the type of comparisons shown in Figure 9.1, which focuses on the difference in the derived allele frequency (DAF) between a control and a selected population. For a candidate SNP, let $ _ NS $ denote the frequency of the derived allele in a nonselected control population (or its average frequency if multiple control populations are used) and its frequency, $ D_ S $, in the putatively selected population, with $ DAF = D_ S - _ NS $. This statistic ranges between plus one and minus one, and standard outlier approaches are used to highlight SNPs with excessive values. common ancestral stock. Whole-genome scans of both populations were performed using 7032 sliding windows of ten adjacent SNPs to measure average allele-frequency change between the corresponding windows for both populations (the difference at each SNP, averaged over all ten sites). Simulations were used to assess significance (extreme departures in average allele-frequency in homologous windows between the two populations) relative to the values expected under drift alone. The authors had to model two issues: linkage and breed formation (time in some initial early domesticated population, and then subsequent time in separate bottlenecks representing the formation of the two specialized breeds)."
+    },
+    {
+      "type": "proposition",
+      "content": "The authors simulated roughly 300 SNPs per chromosome (to account for LD in addition to allele-frequency change), while the population structure during breed formation was modeled as follows. The authors simulated 900 generations of drift and mutation in a base population of $ N_e = 1000 $ to generate a common domesticated stock population. Specialized breed formation from this common stock was then simulated by sampling from this stock population to form two subpopulations of size $ N_e = 125 $, each of which was simulated for an additional 100 generations (these values represented the best assumption regarding these parameters during domestication and breed formation). The observed genome-wide $ F_ ST $ between the Holstein and Angus populations was 0.08, and only simulations whose genome-wide $ F_ ST $ values matched this value were kept as the null."
+    },
+    {
+      "type": "discussion",
+      "content": "Taking those windows in the data set that were in the upper 0.1"
+    },
+    {
+      "type": "discussion",
+      "content": "DIVERGENCE BETWEEN POPULATIONS: $ F_ ST $-BASED TESTS When comparisons involve more than two populations or markers with more than two alleles, a more natural measure of divergence is Wright's $ F_ ST $ statistic of population structure (Wright 1951). Recall from Chapter 2 that this statistic measures the fraction of total variation over a set of populations that is due to among-population differences in allele frequencies, and is easily extended to multiple alleles and multiple populations. For a biallelic locus, $ F_ ST = _B^2(p)/[(1-)] $, where $ _B^2(p) $ is the variance in allele frequency, p, over the populations around its average value, $ $."
+    },
+    {
+      "type": "discussion",
+      "content": "There are important caveats when using $ F_ ST $. First, the analysis of $ F_ ST $ statistics assumes that back mutations are sufficiently rare to be safely ignored. This is not the case for microsatellite (STR/SSR) markers, which have both high mutation rates and a high chance of convergent mutation (alleles of different origins having the same repeat copy number), and their use requires specific divergence metrics, such as $ R_ ST $ (Slatkin 1995a; Goodman 1997). Excoffier et al. (2009b) showed that using $ F_ ST $ in place of $ R_ ST $ for the analysis of STR data can significantly inflate the false-positive rate. Second, the upper limit of $ F_ ST $ is set by the expected heterozygosity, meaning that a highly variable locus has a maximal $ F_ ST $ value smaller than a less variable one (Charlesworth 1998; Hedrick 1999). Jakobsson et al. (2013) and Edge and Rosenberg (2014) provided upper bounds on $ F_ ST $ given the frequency of the most common allele (averaged over all populations), and found that when this is either small (i.e., very many alleles) or large (close to population-wide fixation), $ F_ ST $ is restricted to values far below 1.0. Hence, the levels of diversity within a region constrain the possible $ F_ ST $ values. Various standardization measures of $ F_ ST $ (and related statistics) have been proposed, and their strengths and weaknesses were reviewed by Meirmans and Hedrick (2011)."
+    },
+    {
+      "type": "discussion",
+      "content": "Even using these standardizations, $ F_ ST $-based tests perform poorly when the expected genome-wide divergence due to drift is sufficiently large that many neutral loci are expected to have alternative alleles near fixation between populations. Against such a background, the effect of selection at a candidate region is hard to detect. This situation emphasizes that the tests considered in this chapter apply over ecological time scales, as they assume (for the null) that most neutral markers are segregating in most subpopulations, which puts the time scale for their use at no more than $ N_ e $ generations."
+    },
+    {
+      "type": "discussion",
+      "content": "Ecological geneticists have coined the term landscape genetics for the study of the distribution of genetic variation over spatial structures (Manel et al. 2003; Manel et al. 2010; Manel and Holderegger 2013), and $ F_ ST $ and allele-environmental correlations (discussed in the next section) are central to this emerging field. As a result, the literature on these classes of tests is rapidly expanding."
+    }
+  ]
+}

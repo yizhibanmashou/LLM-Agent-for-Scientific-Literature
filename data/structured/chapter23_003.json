@@ -1,0 +1,41 @@
+{
+  "id": "chapter23_003",
+  "metadata": {
+    "chapter": "chapter23",
+    "section": "Chapter 23: Accounting for Inbreeding Depression",
+    "subsections": [
+      "Accounting for Inbreeding Depression"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter23_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "23.1a",
+      "23.1b",
+      "23.1c",
+      "23.1d"
+    ],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "proposition",
+      "content": "Even in the absence of selection, changes in the population level of inbreeding, f, can induce changes in the mean due to inbreeding depression (LW Chapter 10). Let $ I $ denote the change in mean from inbreeding depression (the difference between the mean of a randomly mated population versus its value under the current level of inbreeding). If dominance is the only nonadditive genetic effect, the change from inbreeding in generation t, $ I_t = Bf_t $, is a linear function of the inbreeding coefficient. The parameter B is the difference in trait mean between a completely inbred (f = 1) and fully outbred (f = 0) population, and it can be estimated by regressing the trait mean on f under the assumption that allele frequencies have not dramatically changed during the inbreeding process, namely, that lines are not lost under inbreeding (LW Chapter 10). If higher-order epistasis is present, then $ I = Bf + Cf^2 + $, where the order of polynomial in f depends on the type of dominant epistatic interactions present, e.g., order two for $ D D $ (LW Chapter 10)."
+    },
+    {
+      "type": "derivation",
+      "content": "The genetic underpinnings of the inbreeding parameter B are as follows: if n diallelic loci underlie the trait, the ith of which has genotypic values of $ 0: a_i + d_i: 2a_i $ with allele frequency $ p_i $, then LW Equation 10.3 yields [[SEE_FORMULA:23.1a]] demonstrating that B changes as allele frequencies change. Inbreeding depression occurs when the values of $ d_ i $ tend to be positive (directional dominance), implying that an average heterozygote has a genotypic value closer to that of the larger-valued homozygote. More generally ([[SEE_TABLE:11.1]]), with $ n_ k $ alleles at locus k, [[SEE_FORMULA:23.1b]] where $ _ iii $ (which is a function of the base-population allele frequencies; LW Chapter 4) is the dominance deviation for the homozygote of allele i at locus k. Equation 23.1b follows because the expected value of the dominance deviations, $ E[_ ij] $, is zero under random mating (LW Chapter 4), but nonzero under inbreeding. With probability f, the two alleles at a locus are IBD, with $ p_i $ being the frequency of $ A_i A_i $ homozygotes in such cases. Hence, the expected value of $ E[_ ij] = (1 - f)E[_ ij] $ not inbred $ + fE[_ ii] = fE[_ ii] $. Summing over all alleles recovers Equation 23.1b. A bit of algebra (using results from LW [[SEE_TABLE:4.1]]) shows that Equation 23.1b reduces to Equation 23.1a for diallelic loci."
+    },
+    {
+      "type": "derivation",
+      "content": "To distinguish between the change due to inbreeding depression and the response due to selection, we decompose the total change in the population mean after t generations as [[SEE_FORMULA:23.1c]] where typically, $ I_t < 0 $. When computing the response to selection, we ignore the change from inbreeding depression, so [[SEE_FORMULA:23.1d]]"
+    },
+    {
+      "type": "discussion",
+      "content": "If the selected population is subsequently randomly mated, the inbreeding depression term disappears, revealing the true genetic response, $ R(t) $."
+    },
+    {
+      "type": "proposition",
+      "content": "Equations 23.1a and 23.1b show that the importance of our standard assumption of very little allele-frequency change (i.e., the infinitesimal model) is magnified when predicting short-term selection response under inbreeding. In addition to concerns about changes in the genetic variances as allele frequencies change, when inbreeding is present, we are additionally concerned with changes in the composite inbreeding depression parameter, B, which is also a function of the allele frequencies in the base population. If these frequencies significantly change under selection, the impact from inbreeding depression will become increasingly unpredictable, reflecting (in part) the unpredictability in the change in B. Note from Equation 23.1a that as one drives alleles toward fixation, B decreases in magnitude, as $ p(1 - p) $, which is maximized at $ p = 1/2 $, approaches zero."
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "id": "chapter12_022",
+  "metadata": {
+    "chapter": "chapter12",
+    "section": "Chapter 12: Hunt's Approach for Comparing Different Models",
+    "subsections": [
+      "Hunt's Approach for Comparing Different Models"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter12_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "This trick allowed them to generate a random value for $ _ GB ^ 2 $, given values of $ _ GW ^ 2 $ and $ F_ ST $. Their scheme to generate the ith sample of $ Q_ ST ^ n $ was as follows: 1) Draw a bootstrap sample of the n markers by sampling with replacement. Compute the mean $ F_ ST $ value for this (the ith) sample, $ _ ST,i $."
+    },
+    {
+      "type": "discussion",
+      "content": "2) Draw a sample value of $ _ GW,i ^ 2 $ as follows: a) If $ _ GW ^2$ is computed by a standard ANOVA, recall that $(MS/df) _ df ^2$, where $MS$ is the observed mean sum of squares and $df$ its degrees of freedom (LW Chapter 18). Generate $X_i$, a draw from a $ _ df ^2$ and take the sample $i$ value for $MS$ as $MS/df X_i$, using this value to compute the variance estimates (O'Hara and Merilä 2005; Whitlock and Guillaume 2009). When $ _ GW ^2$ is estimated as a function of several different sums of squares, compute each in the fashion above, and then use these realizations to compute $ _ GW,i ^2$. b) If $ _ GW ^ 2 $ is estimated by Bayesian methods, then $ _ GW,i ^ 2 $ is a sample drawn from the resulting posterior (i.e., Rogell et al. 2012)."
+    },
+    {
+      "type": "discussion",
+      "content": "4) Use the sample values of $ _ ST,i $ and $ _ GW,i ^ 2 $ with Equation 12.29 to generate a draw of the among-group variance, $ _ GB,i ^ 2 = 2 _ ST,i _ GW,i ^ 2 / (1 - _ ST,i) $."
+    },
+    {
+      "type": "discussion",
+      "content": "4) Take $ Q_ ST,i ^ n = _ GB,i ^ 2 / (_ GB,i ^ 2 + 2 _ GW,i ^ 2) $."
+    },
+    {
+      "type": "discussion",
+      "content": "5) Repeat steps (1) through (4) until a sufficient number of draws (say m) have been computed to generate a sufficiently dense empirical distribution under the null. Figure 12.9 was com- puted using the $m$ values $(_ ST - Q_ ST ^n)$ obtained by subtracting the estimated $Q_ ST $ from each sample drawn from the underlying null distribution $Q_ ST ^n$."
+    }
+  ]
+}

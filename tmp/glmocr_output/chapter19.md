@@ -1,0 +1,1089 @@
+<div align="center">
+
+# Analysis of Short-term Selection Experiments: 2. Mixed-model and Bayesian Approaches
+
+</div>
+
+Unnecessarily complex analysis should not be used as a foil to disguise lower quality datasets: estimates of genetic parameters are only as good as the data on which they are based. Kruuk (2004)
+
+While a least-squares (LS) analysis of a selection experiment distills the data down to the trait mean and variance for each generation, one often has more information. In the extreme, one has measurements (or records) for all individuals throughout the course of the experiment (or breeding program) as well as their complete pedigree. When such additional data are available, an LS analysis simply ignores them. A mixed-model (MM) analysis (LW Chapters 26 and 27), on the other hand, fully considers the covariances between all observations. By virtue of using this additional information, an MM is potentially far more powerful. It is also more flexible, easily incorporating complicated fixed effects and highly unbalanced designs. Finally, breeders and evolutionary biologists are especially concerned with the realized genetic gain from selection, which, due to shifting environments, may be different from the change in mean phenotype. LS estimates the latter, while MM, by estimating the mean breeding value in each generation, estimates the former. An important application of the analysis of selection experiments is in the evaluation of breeding programs, and the success of almost all animal, and increasingly many plant, breeding programs is gauged by examining the response using a mixed-model framework.
+
+There are two different frameworks for a mixed-model analysis. The first is the two-step approach, wherein one first employs REML (LW Chapter 27) or some other method to estimate the appropriate variance components, and then uses these with BLUP (best linear unbiased predictor) to estimate breeding values (LW Chapter 26). With BLUPs for individual breeding values in hand, one can estimate the mean breeding value for any particular generation and directly follow genetic, as opposed to phenotypic, change. This allows for the separation of genetic versus environmental change, even in the absence of a control population. While straightforward, the two-step approach does not account for the uncertainty in BLUP estimates that arises from using estimates of the variances (as opposed to their true values). In contrast, Bayesian approaches provide for an exact accounting of the uncertainty in the estimation of the breeding values by integrating over the uncertainty from the confounding effects of nuisance parameters, such as the variance components.
+
+By building around applications to the analysis of selection experiments (including applied breeding), we use this chapter to review some of the basic statistical machinery behind mixed models (which is also used extensively in Chapters 20 and 22) and to more formally introduce the Bayesian framework (briefly touched upon in Chapter 10, and more fully developed in Appendices 2 and 3). We start with a brief review of the theory of mixed models and then consider various applications of the animal (or individual) model to the analysis of selection experiments. We conclude by briefly examining mixed models under a Bayesian framework.
+
+## MIXED-MODEL VERSUS LEAST-SQUARES ANALYSIS
+
+Figure 19.1 illustrates the result of a mixed-model analysis of selection response. Note that instead of measuring response from the observed phenotypic means (the LS approach), response is measured from the estimated mean breeding values obtained from BLUP. Further, instead of estimating a realized heritability, a mixed-model (REML) analysis estimates the
+
+![](page=1,bbox=[242, 142, 548, 312])
+
+![](page=1,bbox=[580, 142, 888, 311])
+
+<div align="center">
+
+Figure 19.1 Results from high and low selection on 6-week weight in mice. Left: Observed (filled boxes and circles) and predicted (open boxes and circles) mean phenotypic values in the up- and down-selected lines, expressed as deviations from the control population. The predicted mean for a specific generation is given by the estimated mean breeding value plus the estimated environmental value. Right: Estimated mean breeding values for both selected populations and the control. See Examples 19.2 and 19.7 for more details on this experiment. (After Meyer and Hill 1991.)
+
+</div>
+
+additive genetic variance in the base population.
+
+Mixed-models readily allow records to be adjusted for any number of fixed effects (differences between the expected value of individuals from different categories). For example, one might correct for trait differences between sexes, trait differences between individuals from different litter sizes, age effects, known environmental factors, etc. Such adjustments result in a more accurate prediction of an individual's genetic value, and thus a more accurate estimate of the population's genetic response. Further, a properly formatted MM analysis can separate phenotypic changes into genetic and environmental components without using a control population. In contrast, an LS analysis cannot separate genetic from environmental trends when only a single line is considered. Under a mixed model, such a separation is possible because the covariance structure associated with the pedigree of all individuals in the experiment allows information to be borrowed from relatives across generations.
+
+Another advantage of a mixed-model analysis is its enormous flexibility in handling almost any selection design. For example, an MM analysis easily allows for overlapping generations (when a parent contributes offspring over several different years of selection), while analysis of response in overlapping generations under LS can be difficult to formulate correctly. Further, as detailed below, a properly designed MM analysis can also account for assortative mating, drift, and selection-induced gametic-phase disequilibrium (provided we can assume that the infinitesimal model holds).
+
+Nonetheless, despite its power, an MM analysis has tradeoffs relative to a simpler LS analysis. First, an MM analysis requires far greater record keeping (e.g., following all individuals and their relatives) and is more computationally demanding. Second, an MM analysis can be rather model-sensitive. In particular, assumption of the infinitesimal model is critical. If selection-induced changes in allele frequencies are significant during the course of the experiment, the assumptions of an MM analysis will be violated. Finally, MM analysis critically depends on the covariance structure of the random effects. If this is incorrectly specified, an MM analysis can lead to highly biased results.
+
+## BLUP Selection
+
+A previously introduced MM application is BLUP selection (Chapter 13), wherein a mixed
+
+model is used to find those individuals with the highest estimated breeding values, which are then used as parents to form the next generation. This is the main route of selection used by animal and tree breeders, and to a growing extent, by plant breeders working with outcrossing species. BLUP selection uses all of the information up to a given generation to choose the parents for the next cycle of selection.
+
+Conversely, an MM analysis of selection response is a retrospective analysis of the genetic gain of a population, wherein we start at some final time point and infer the trajectory of past genetic gain during the experiment or breeding program. The actual scheme used to choose parents (such as mass, index, or BLUP selection) is irrelevant to the MM analysis of the final genetic gain, which is solely based on the values of all individuals, and their relationships (pedigree), over the course of the experiment.
+
+## BASICS OF MIXED-MODEL ANALYSIS
+
+Here, we start with a quick review of some of the key theoretical results of mixed-model analysis and then examine specific applications. We encourage the reader to review LW Chapters 26 and 27 (either before, or after, reading this short introduction). These chapters provide additional worked examples to give a better feel for mixed models and also consider advanced topics in MM analysis in greater detail.
+
+Mixed models are so named because they consider both fixed and random effects. Recall that fixed effects are unknown constants, while random effects have values that are drawn from some underlying distribution (LW Chapters 8 and 26). Hence, any particular value for a random effect represents just one possible realization from this underlying distribution, which is usually assumed to be normal with a mean of zero and an unknown (yet to be estimated) variance.
+
+A brief example will remind the reader of a powerful feature of random-effects models. Suppose we have T time points and include an environmental value, $ E_{i} $ , for each time point in our model. Treating these values as fixed effects makes no assumption as to how the $ E_{i} $ from different generations are related to each other, but the cost is T degrees of freedom. Conversely, if we make a random-effects assumption that the $ E_{i} $ values are drawn from some underlying distribution, we use far fewer degrees of freedom. If we assume the $ E_{i} $ are independent draws from an underlying normal, then we only need a single degree of freedom (the variance, $ \sigma_{E}^{2} $ , of this distribution, as the mean value of a random effect is zero), no matter the value of T. More generally, one could make additional assumptions about the distribution of the $ E_{i} $ values, at the cost of additional degrees of freedom. For example, one could assume that all the $ E_{i} $ values for adjacent generations are autocorrelated by the same amount, $ \rho $ , which introduces an additional parameter to be estimated.
+
+Typically, statisticians speak of estimating fixed effects and predicting the realized values of random effects. Both LS and MM analyses estimate the fixed effects in a model, while MM analysis also predicts the values of the random effects by using the covariances between observations (after adjusting for fixed effects). (Note that under a Bayesian analysis, as will be discussed later, every effect is assumed to be random, and this distinction between fixed and random effects is more subtle.) The standard mixed model for a vector, y, of n observations is
+
+$$
+\mathrm {y} = \mathrm {X} \beta + \mathrm {Z a} + \mathrm {e}
+$$
+
+where $ \beta $ is a $ q\times1 $ vector of q fixed effects, a is a $ p\times1 $ vector of p random effects (in our case, the breeding values of the individuals in our experiment), and e is the $ n\times1 $ vector of n residuals (which is also random). The matrices X and Z are, respectively, the $ n\times q $ design matrix and the $ n\times p $ incidence matrix associated with the fixed and random effects, respectively.
+
+In the absence of the vector, a, of random effects, Equation 19.1 reduces to a leastsquares model, $ y=X\beta+e $ , and whether ordinary (unweighted) least-squares (OLS) or generalized (weighted) least-squares (GLS) analysis is used to estimate $ \beta $ depends on our assumption about the covariance structure of the vector, e, of the residuals. OLS assumes
+
+that residuals are uncorrelated and homoscedastic, yielding $ \operatorname{V a r} (\mathbf{e})=\sigma_{e}^{2}\mathbf{I}. $ More generally, if $ \operatorname{V a r} (\mathbf{e})=\mathbf{V}, $ where the only constraint is that V be symmetric and positive-definite, then generalized GLS is used (Equation 19.3a).
+
+In order to solve Equation 19.1, we need to specify the covariance structure for the vectors of random effects, a and e. As just noted, it is generally assumed that the residuals are uncorrelated and homoscedastic, so $ \operatorname{V a r} ( \mathbf{e} )=\sigma_{e}^{2} \mathbf{I}. $ The covariance of a (the vector of breeding values) has a more complicated structure, which is given by the pedigree, $ \operatorname{V a r} ( \mathbf{a} )=\sigma_{A}^{2} \mathbf{A}, $ with $ \sigma \left( a_{i}, a_{j} \right)=\sigma_{A}^{2} A_{ij}. $ Here A is a matrix of known constants (the numerator relationship matrix, often abbreviated as simply the relationship matrix), whose elements are given by the pedigree structure (or, more recently, from sufficiently dense marker information). The resulting $ n\times n $ covariance matrix, V, for the vector of observations, y, becomes
+
+$$
+\mathbf {V} = \sigma_ {A} ^ {2} \mathbf {Z A Z} ^ {T} + \sigma_ {e} ^ {2} \mathbf {I}
+$$
+
+For the case of a single phenotypic measurement for each individual with no missing phenotypic data, $ \mathbf{Z}=\mathbf{I} $ and Equation 19.2a reduces to $ \mathbf{V}=\sigma_{A}^{2}\mathbf{A}+\sigma_{e}^{2}\mathbf{I}. $ More generally, when there are multiple observations per individual, or individuals with missing phenotypic data, then Z departs from an identity matrix (e.g., Example 19.5).
+
+The covariance matrix, $ \mathbf{V} $ , is thus a function of the (usually unknown) variance components $ (\sigma_{A}^{2} $ and $ \sigma_{e}^{2} $ ) and matrices of known constants (Z, A, and I). Because a is a vector of breeding values, we can alternatively express $ \mathbf{V} $ as a function of the heritability $ ( h^{2} ) $ and the (fixed-effect-adjusted) phenotypic variance $ (\sigma_{z}^{2}=\sigma_{A}^{2}+\sigma_{e}^{2}) $ of the trait of interest
+
+$$
+\mathbf {V} = \sigma_ {z} ^ {2} \cdot \left(h ^ {2} \mathbf {Z A Z} ^ {T} + \left(1 - h ^ {2}\right) \mathbf {I}\right)
+$$
+
+as $ \sigma_{e}^{2}=\sigma_{z}^{2}-\sigma_{A}^{2}=\sigma_{z}^{2}(1-h^{2}) $ . Because our focus is generally on breeding values, any dominance variance gets swept into $ \sigma_{e}^{2} $ . This potentially results in $ e_{i} $ values within families being correlated (due to full sibs sharing $ \sigma_{D}^{2}/4 $ ), and we will discuss corrections for this shortly.
+
+Assuming V is known exactly, estimation of the vector, $ \beta $ of fixed effects follows from GLS (LW Chapter 8)
+
+$$
+\widehat {\boldsymbol {\beta}} = \left(\mathbf {X} ^ {T} \mathbf {V} ^ {- 1} \mathbf {X}\right) ^ {- 1} \mathbf {X} ^ {T} \mathbf {V} ^ {- 1} \mathbf {y}
+$$
+
+Equation 19.3a is called the best linear unbiased estimator (BLUE) of the vector, $ \beta $ , of fixed effects. The estimability of the fixed effects can be an issue, as the structure of the data indicated by the number of independent columns—the column rank—of X) may not allow for unique estimates of all fixed effects. In such cases, generalized inverses can be used to obtain unique estimates of certain linear combinations of the fixed effects (LW Appendix 2). If X has a column rank of $ \ell\leq q $ , then exactly $ \ell $ combinations of the q fixed effects can be estimated; see LW Chapter 26, and LW Appendix 2, for further details. Finally, note that although the BLUEs are a function of V (and hence of $ \sigma_{A}^{2} $ and $ \sigma_{e}^{2} $ ), applying Equation 19.2b shows that the phenotypic variance, $ \sigma_{z}^{2} $ , in V cancels out in Equation 19.3a $ (V^{-1} $ scales as $ 1 / \sigma_{z}^{2} $ , while the inverse of $ V^{-1} $ scales as $ \sigma_{z}^{2} $ ), leaving the BLUE estimate (for Equation 19.1) as a function of the heritability alone.
+
+If we again assume that V is exactly known, the best linear unbiased predictor (BLUP) of the vector of random effects is given by
+
+$$
+\widehat {\mathbf {a}} = \operatorname {V a r} (\mathbf {a}) \mathbf {Z} ^ {T} \mathbf {V} ^ {- 1} \left(\mathbf {y} - \mathbf {X} \widehat {\beta}\right) = \sigma_ {A} ^ {2} \mathbf {A} \mathbf {Z} ^ {T} \mathbf {V} ^ {- 1} \left(\mathbf {y} - \mathbf {X} \widehat {\beta}\right)
+$$
+
+The BLUPs for breeding values are often called PBVs or EBVs, for predicted or estimated breeding values. Equation 19.3b is the regression of a on $ ( \mathbf{y}-\mathbf{X}\widehat{\beta}) $ , the vector of observations, y, adjusted for their expected mean values, $ \mathbf{X}\widehat{\beta} $ . Recall that for the univariate regression predicting a from y, the scaling of $ ( y-\widehat{y} ) $ is given by the regression slope, $ \sigma( a,y)/\sigma^{2}(y) $ . In Equation 19.3b, this scaling is of the form of the covariance matrix, $ \sigma(\mathbf{a},\mathbf{y})=\sigma(\mathbf{a},\mathbf{Za})= $
+
+$ \sigma_{A}^{2}\mathbf{A Z}^{T} $ times the inverse of $ \mathbf{V}=\sigma(\mathbf{y},\mathbf{y}) $ . Even if the number of random effects exceeds the number of actual observations (i.e., $ p>n $ ), Equation 19.3b still provides unique estimates of each (provided $ \mathbf{V}^{-1} $ exists). This occurs because the $ p\times p $ covariance structure (A) of the vector, a, is incorporated in the model. As with the BLUEs, BLUPs are simply functions of $ h^{2} $ as $ \sigma_{A}^{2}=h^{2}\sigma_{z}^{2} $ , while $ \mathbf{V}^{-1} $ scales as $ 1 / \sigma_{z}^{2} $ . An alternative expression, due to Kennedy and Trus (1993), is
+
+$$
+\widehat {\mathbf {a}} = \left(\mathbf {Z} ^ {T} \mathbf {M} \mathbf {Z} + \lambda \mathbf {A} ^ {- 1}\right) ^ {- 1} \mathbf {Z} ^ {T} \mathbf {M} \mathbf {y}
+$$
+
+where $ \lambda=\sigma_{e}^{2} / \sigma_{A}^{2}=(1-h^{2})/h^{2} $ , and
+
+$$
+\mathbf {M} = \mathbf {I} - \mathbf {X} \left(\mathbf {X} ^ {T} \mathbf {X}\right) ^ {- 1} \mathbf {X} ^ {T}
+$$
+
+is the absorption matrix for the fixed effects, and the design matrix, X, assigns the fixed effects associated with any particular observation (Equation 19.1). As an aside
+
+$$
+\mathbf {H} = \mathbf {X} \left(\mathbf {X} ^ {T} \mathbf {X}\right) ^ {- 1} \mathbf {X} ^ {T}
+$$
+
+is referred to as the hat matrix (Hoaglin and Welsch 1978), because for an OLS estimate
+
+$$
+\hat {\mathbf {y}} = \mathbf {X} \hat {\boldsymbol {\beta}} = \mathbf {X} \left(\mathbf {X} ^ {T} \mathbf {X}\right) ^ {- 1} \mathbf {X} ^ {T} \mathbf {y} = \mathbf {H} \mathbf {y}
+$$
+
+and H maps the observed y values onto those predicted, $ \widehat{\mathbf{y}} $ , by the fixed effects. Hence
+
+$$
+\mathrm {M y} = (\mathrm {I} - \mathrm {H}) \mathrm {y} = \mathrm {y} - \widehat {\mathrm {y}} = \mathrm {y} - \mathrm {X} \widehat {\beta}
+$$
+
+are the adjusted values for y after the fixed effects have been removed, namely, the vector of the deviations of the observations, y, from their expected values, $ \widehat{y} $ (based on fixed effects only).
+
+In practice, Equations 19.3a-19.3c are often not used, as they require the inversion of the potentially very large $ ( n\times n) $ matrix, V. As an alternative, $ \widehat{\beta} $ and $ \widehat{\mathbf{a}} $ can be obtained without computing an inverse by numerically solving (e.g., by applying Gaussian elimination to) Henderson's mixed-model equations, (derived in Example A6.5)
+
+$$
+\left( \begin{array}{c c} \mathbf {X} ^ {T} \mathbf {X} & \mathbf {X} ^ {T} \mathbf {Z} \\ \mathbf {Z} ^ {T} \mathbf {X} & \mathbf {Z} ^ {T} \mathbf {Z} + \lambda \mathbf {A} ^ {- 1} \end{array} \right) \binom {\widehat {\beta}} {\widehat {\mathbf {a}}} = \binom {\mathbf {X} ^ {T} \mathbf {y}} {\mathbf {Z} ^ {T} \mathbf {y}}
+$$
+
+The careful reader might wonder why we worried so much about avoiding computing the inverse of V, given that the mixed-model equations contain A, which at first blush looks just as complicated to invert as V. In fact, however, A turns out to be very easy to invert, as a slight modification of the recursive approach used to compute A from a pedigree can be used to directly compute $ \mathbf{A}^{-1} $ (Henderson 1976; Quaas 1976).
+
+The sampling variance-covariance matrices for $ \hat{\mathbf{a}} $ and $ \hat{\beta} $ also follow from the mixed-model equations. First we partition the inverse of the $ ( p+q)\times( p+q) $ matrix in Equation 19.4 as
+
+$$
+\left( \begin{array}{c c} \mathbf {X} ^ {T} \mathbf {X} & \mathbf {X} ^ {T} \mathbf {Z} \\ \mathbf {Z} ^ {T} \mathbf {X} & \mathbf {Z} ^ {T} \mathbf {Z} + \lambda \mathbf {A} ^ {- 1} \end{array} \right) ^ {- 1} = \left( \begin{array}{c c} \mathbf {C} _ {1 1} & \mathbf {C} _ {1 2} \\ \mathbf {C} _ {1 2} ^ {T} & \mathbf {C} _ {2 2} \end{array} \right)
+$$
+
+where $ \mathbf{C}_{11},\mathbf{C}_{12} $ , and $ \mathbf{C}_{22} $ are, respectively, $ q\times q,q\times p $ , and $ p\times p $ submatrices. Henderson (1975) showed that the $ q\times q $ covariance matrix for the BLUE vector of fixed effects, $ \beta $ , is given by
+
+$$
+\operatorname {V a r} \left(\widehat {\beta}\right) = \sigma_ {e} ^ {2} \mathrm {C} _ {1 1}
+$$
+
+The variance of the predicted breeding values, $ \widehat{\mathbf{a}} $ is a bit more subtle, as our real interest is not $ \operatorname{Var}(\widehat{\mathbf{a}}) $ , but rather the prediction error variances (PEVs), $ \operatorname{Var}(\widehat{\mathbf{a}}-\mathbf{a}) $ . These are the variances and covariances among the vector of prediction errors $ (\widehat{\mathbf{a}}-\mathbf{a}) $ , and they are given by the $ p\times p $ matrix
+
+$$
+\operatorname {V a r} \left(\widehat {\mathbf {a}} - \mathbf {a}\right) = \sigma_ {e} ^ {2} \mathrm {C} _ {2 2}
+$$
+
+Note that
+
+$$
+\operatorname {V a r} (\widehat {\mathbf {a}}) = \operatorname {V a r} (\widehat {\mathbf {a}} - \mathbf {a}) + \operatorname {V a r} (\mathbf {a}) = \sigma_ {e} ^ {2} \mathrm {C} _ {2 2} + \sigma_ {A} ^ {2} \mathrm {A}
+$$
+
+Following Equation 19.3c, Kennedy and Trus (1993) showed that we can also express Equation 19.5c as
+
+$$
+\operatorname {V a r} \left(\widehat {\mathbf {a}} - \mathbf {a}\right) = \sigma_ {e} ^ {2} \left(\mathbf {Z} ^ {T} \mathbf {M} \mathbf {Z} + \lambda \mathbf {A} ^ {- 1}\right) ^ {- 1}
+$$
+
+The prediction error variances for individual EBVs are not of serious interest in this chapter, as we measure selection response by taking the average of the EBVs over all individuals within each generation. However, individual EBVs can be important when we try to disentangle selection in natural populations, and we will revisit PEVs in Chapter 20.
+
+Finally, the covariances between estimated fixed effects and prediction errors are
+
+$$
+\sigma \left(\widehat {\beta}, \widehat {\mathbf {a}} - \mathbf {a}\right) = \sigma_ {e} ^ {2} \mathrm {C} _ {1 2}
+$$
+
+Equations 19.5b-19.5f assume that both $ \sigma_{e}^{2} $ and $ \lambda=\sigma_{e}^{2} / \sigma_{A}^{2} $ are known without error. When BLUP estimates are obtained using estimated values (e.g., $ \widehat{\sigma}_{e}^{2} $), this additional source of error further inflates the sampling variances. Bayesian methods (discussed below) accommodate this additional uncertainty.
+
+One concern is that the BLUPs and BLUEs obtained using these procedures may be biased by selection. However, Henderson (1975) showed that, provided variances are known, the estimates will be unbiased by selection when two conditions hold. First, selection decisions must be based on linear combinations of data (such as truncation selection based on individual phenotypes or a linear index based on the phenotypes of an individual and its relatives). Second, that the model must use estimates of fixed effects that are unbiased when selection is absent. These conditions hold under many reasonable forms of artificial selection.
+
+## REML Estimation of Unknown Variance Components
+
+The variance components $ (\sigma_{A}^{2} $ and $ \sigma_{e}^{2} $ ), or, at a minimum, the heritability $ h^{2}=\sigma_{A}^{2} /(\sigma_{A}^{2}+\sigma_{e}^{2}) $ must be specified to obtain $ \widehat{\beta} $ and $ \widehat{\mathbf{a}} $ . Although these variances are generally unknown, they can be estimated, for example, by using restricted maximum likelihood (REML). REML is closely related to BLUP, with (roughly speaking) REML estimates obtained from iterating and updating BLUP estimates until there is suitable convergence (LW Chapter 27). REML maximizes that part of the likelihood function that is unaffected by fixed effects (Patterson and Thompson 1971). Harville (1977) coined the term restricted ML, but Thompson (2008) noted that REML maximizes a residual likelihood, and hence preferred the term residual maximum likelihood. One advantage of REML estimates (over those obtained by other estimation procedures) is that they are unbiased by the estimates of fixed effects (Patterson and Thompson 1971). For further details, we refer the reader to the extensive discussion of REML variance estimation in LW Chapter 27, and to Hofer (1998), Thompson and Mantysaari (2004), Thompson et al. (2005), Misztal (2008), Thompson (2008), and Gianola and Rosa (2015) for a review of more recent developments, including computational issues.
+
+For much of this chapter, we assume that BLUP variance components are first obtained by REML (although we relax this assumption when discussing Bayesian mixed-model analysis). This two-stage approach of BLUP using estimated variance components (in place of their true values) is called empirical BLUP or REML/BLUP (Sorensen and Kennedy 1986; Kennedy and Sorensen 1988; Harville 1990). Kackar and Harville (1981) and Gianola et al.
+
+(1986, 1988) showed that using REML estimation does not result in biased values for BLUPs, but that the resulting predictors may not be "best" (there may be other linear predictors with smaller mean-squared errors).
+
+The matrix of sample variances and covariances for the REML variance component estimates can be approximated by using the best quadratic fit of the restricted likelihood surface, centered at the REML estimates (Smith and Graser 1986; Graser et al. 1987). If $ \sigma $ is a vector of m estimated variance components $ (\sigma_{A}^{2} $ and $ \sigma_{e}^{2} $ in the models thus far considered), we compute the restricted likelihood, $ L(\sigma) $ , for a grid of values close to the REML solution and then fit the best quadratic surface to the data, using
+
+$$
+L (\sigma) = \mathbf {b} _ {0} + \sigma^ {T} \mathbf {b} _ {1} + \sigma^ {T} \mathbf {Q} \sigma
+$$
+
+With $ v $ variance components, $ \mathbf{b}_{0} $ and $ \mathbf{b}_{1} $ are $ v\times1 $ vectors, and Q is an $ v\times v $ symmetric matrix of quadratic regression terms (in Chapter 30 we discuss the fitting of such quadratic surfaces in the context of fitness surface estimation). The approximate covariance matrix for the vector of REMLs, $ \widehat{\sigma} $ , is calculated by
+
+$$
+\operatorname {V a r} \left(\hat {\sigma}\right) \simeq (- 2 \mathrm {Q}) ^ {- 1}
+$$
+
+The rationale for this approach is that, for large samples, the inverse of the matrix of second-order partial derivatives of the likelihood surface (evaluated at the maximum likelihood estimate, MLE) approaches the covariance matrix of these estimates (LW Appendix 4). Equation 19.6a is a (second-order) multidimensional Taylor series (Equation A6.7b), with 2Q corresponding to the matrix of second-order partial derivatives (the Hessian matrix) of the likelihood function. Alternatively, Meyer (2008) suggested that the use of the likelihood profile function can often return more appropriate estimated confidence intervals than those based on these large-sample variances (see her paper for details).
+
+Although Equation 19.6b returns a large-sample approximation for the uncertainty in REML variance estimates, this cannot be easily translated into how much additional uncertainty is introduced into BLUP estimates by using REML estimates of variance components in place of their true values. These concerns can be addressed in a Bayesian framework (see below), as Bayesian approaches are exact for any sample size (rather than large-sample approximations). Further, they fully incorporate any uncertainty in the variance estimates into the uncertainty in the BLUP estimates.
+
+## REML Often Returns Variance Estimates Unbiased by Selection
+
+As with BLUPs and BLUEs (which assume the presence of known variances),REML variance estimates are often unbiased by selection. As we will show, under the infinitesimal model, the relationship matrix, A, fully accounts for any change in $ \sigma_{A}^{2} $ from disequilibrium, inbreeding, and drift. As a result, if the base population consists of unselected and noninbred individuals in linkage equilibrium and phenotypic data are available for all selected and unselected individuals, then under the infinitesimal model,REML yields essentially unbiased estimates of the additive genetic variance in the base population (Henderson 1949; Henderson et al. 1959; Curnow 1961; Thompson 1973; Rothschild et al. 1979; Sorensen and Kennedy 1984b; Gianola and Fernando 1986; Gianola et al. 1988; Juga and Thompson 1989; Gianola et al. 1989; Im et al. 1989; Fernando and Gianola 1990; Piepho and Möhring 2006). Simulations by van der Werf and de Boer (1990) showed that if the model includes the pedigree information for all individuals but is missing records (trait values) for some, then REML does not necessarily yield unbiased estimates of $ \sigma_{A}^{2} $ , and in this case bias increases with heritability (Jeyaruban and Gibson 1996).
+
+When the base population consists of previously selected individuals, REML no longer provides protection from biased estimates of the additive genetic variance in the population prior to selection, even if the entire pedigree of individuals back to the base population is included (van der Werf 1990; van der Werf and de Boer 1990; van der Werf and Thompson 1992). This arises because of disequilibrium, $ d ( 0 ) \neq 0 $ , in the base population (recall from
+
+Equation 16.2 that d is the difference between the additive genetic and genic variances). While Equation 16.7a allows us to predict the dynamics of d(t), it requires the value of d(t-1), so without knowledge of the actual value of the base population, d(0), the relationship matrix cannot fully account for the dynamics of d. Finally, if selection acts on a suite of unmeasured characters whose breeding values are correlated with characters included in the model, REML can generate biased estimates of the variances and covariances of the measured characters (Schaeffer and Song 1978).
+
+## ANIMAL-MODEL ANALYSIS OF SELECTION EXPERIMENTS
+
+The basic building block of a mixed-model analysis of selection experiments is the animal model (Quaas and Pollak 1980), which estimates the breeding (or additive-genetic) values of all individuals measured during the course of the experiment. We examine its simplest version first, and consider various elaborations in later sections (also see Chapter 22 and LW Chapter 26). While this model has its origin in the animal-breeding literature, it has very widespread applicability. We trust that plant scientists will not be greatly offended, as the "animal" (or better yet, the "individual") model can be used to analyze plant-selection experiments as well (e.g., Piepho et al. 2008; Bernardo 2010).
+
+## The Basic Animal Model
+
+Mixed-models easily allow for overlapping generations by simply predicting breeding values at discrete time points (e.g., every year or at each natural cohort) rather than in each generation. Hence, in the discussion that follows, one can easily replace "generation" by "year" or some other time measure.
+
+To apply the animal model to a selection experiment, one first vectorizes the observations from the entire experiment by letting $ y_{ij} $ denote the trait measurement on the jth individual from generation i, where $ 0\leq i\leq t $ (generation 0 represents the unselected base population) and $ 1\leq j\leq n_{i} $ ,where $ n_{i} $ is the number of measured individuals in generation i. Let the vector y denote the observations on all measured individuals from the entire experiment
+
+$$
+\mathbf {y} = \left( \begin{array}{c} \mathbf {y} _ {0} \\ \mathbf {y} _ {1} \\ \vdots \\ \mathbf {y} _ {t} \end{array} \right) \quad \text {w h e r e} \quad \mathbf {y} _ {i} = \left( \begin{array}{c} \mathbf {y} _ {i 1} \\ \vdots \\ \mathbf {y} _ {i n _ {i}} \end{array} \right)
+$$
+
+The vector $ y_{i} $ includes the values for all measured individuals from generation i, including those culled as well as those that were allowed to reproduce. The simplest animal model for these data is
+
+$$
+y _ {i j} = \mu + a _ {i j} + e _ {i j}
+$$
+
+where $ \mu $ is an overall mean, $ a_{ij} $ is the breeding value of the jth measured individual from generation i, and $ e_{ij} $ , the deviation between breeding and phenotypic values. Equation 19.1 gives the mixed model as $ \mathbf{y}=\mathbf{X}\beta+\mathbf{Z}\mathbf{a}+\mathbf{e} $ . With exactly one record per individual, $ \mathbf{Z}=\mathbf{I} $ In this simple model, the only fixed effect is the mean, returning $ \beta=(\mu) $ and $ \mathbf{X}=\mathbf{1} $ (a vector of ones) thus reducing Equation 19.1 to
+
+$$
+\mathbf {y} = \mu \cdot \mathbf {1} + \mathbf {a} + \mathbf {e}
+$$
+
+where a is the vector of breeding values for all individuals measured during the course of the experiment, with $ \operatorname{V a r} ( \mathbf{a} )=\sigma_{A}^{2} \mathbf{A}. $
+
+The relationship matrix, A, is the key to the animal model, as it includes all of the pedigree information. Because of this information, the animal model is easily extended to allow breeding values to be estimated for individuals without records, provided they have measured relatives in the analysis (see Example 19.5). The diagonal elements of A describe
+
+the amount of inbreeding, with $ A_{ii}=(1+f_{i})=2\Theta_{ii} $ , while the off-diagonal elements given by $ A_{ij}=2\Theta_{ij} $ (twice the coefficient of coancestry; see LW Chapters 7 and 26) describe the relatedness of individuals i and j. Recursive methods for obtaining the elements of A (and $ \mathbf{A}^{-1} $ ), given a pedigree, are discussed in LW Chapter 26. The simple animal model assumes that all genetic variance is additive, so there is no genetic covariance between residuals. In this case, it is generally assumed that $ \operatorname{Var}(\mathbf{e})=\sigma_{e}^{2}\mathbf{I} $ , and the mixed-model equations (Equation 19.4) simplify to
+
+$$
+\binom {\widehat {\mu}} {\widehat {\mathbf {a}}} = \left( \begin{array}{c c} n & \mathbf {1} ^ {T} \\ \mathbf {1} & \mathbf {I} + \lambda \mathbf {A} ^ {- 1} \end{array} \right) ^ {- 1} \binom {n \bar {y}} {\mathbf {y}}
+$$
+
+where n is the total number of individuals in the experiment, $ \lambda=\sigma_{e}^{2} / \sigma_{A}^{2}=(1-h^{2})/h^{2}, $ $ \widehat{\mathbf{a}} $ is the n-dimensional vector of the predicted breeding values of all measured individuals, and 1 is an n-dimensional vector of ones. Likewise, the covariance matrices for the fixed effects estimates, $ \mathbf{C}_{11} $ , the predictor errors for the BLUPs of breeding values, $ \mathbf{C}_{22} $ , and the covariances, $ \mathbf{C}_{12} $ , between these estimates are given by
+
+$$
+\left( \begin{array}{l l} \mathbf {C} _ {1 1} & \mathbf {C} _ {1 2} \\ \mathbf {C} _ {1 2} ^ {T} & \mathbf {C} _ {2 2} \end{array} \right) = \left( \begin{array}{c c} n & \mathbf {1} ^ {T} \\ \mathbf {1} & \mathbf {I} + \lambda \mathbf {A} ^ {- 1} \end{array} \right) ^ {- 1}
+$$
+
+## Response Is Measured by Change in Mean Breeding Values
+
+Under a mixed-model analysis, response is measured by the change in the mean breeding value of a selected population over time. The estimated mean breeding value in generation k (or, alternatively, at time point k) is simply obtained by calculating the average of individual breeding-value estimates for that generation
+
+$$
+\widehat {\bar {a}} _ {k} = \frac {1}{n _ {k}} \sum_ {j = 1} ^ {n _ {k}} \widehat {a} _ {k j}
+$$
+
+Because the predicted mean breeding value in generation 0 (the unselected base population) is zero by construction $ \overline{{a}}_{0}=0 $ , the total (cumulative) response at generation k is $ \overline{{a}}_{k}-\overline{{a}}_{0}=\overline{{a}}_{k} $ . In matrix notation, the vector, $ \overline{{a}} $ , of mean breeding values is estimated by
+
+$$
+\widehat {\mathbf {a}} = \left( \begin{array}{c} \widehat {\bar {a}} _ {0} \\ \vdots \\ \widehat {\bar {a}} _ {t - 1} \end{array} \right) = \mathbf {K} ^ {T} \widehat {\mathbf {a}}
+$$
+
+where elements in the $ k $th row of K are $ 1 / n_{k} $ when the column corresponds to an individual from generation k and otherwise are zero (see Example 19.1). Thus, for $ t $ generations of data (corresponding to $ t-1 $ generations of selection, as the analysis includes the unselected base population, generation 0), K is an $ n\times t $ matrix that satisfies $ \mathbf{K}^{T}\mathbf{1}_{n}=\mathbf{1}_{t} $ (a $ t\times1 $ vector of ones).
+
+From Equation 19.5a, and recalling that $ \mathbf{V a r} (\mathbf{B x})=\mathbf{B} \mathbf{V a r} (\mathbf{x}) \mathbf{B}^{T} $ (LW Equation 8.21b), the sampling covariance matrix for the vector of estimated genotypic means becomes
+
+$$
+\operatorname {V a r} \left(\widehat {\hat {\mathbf {a}}}\right) = \sigma_ {c} ^ {2} \mathbf {K} ^ {T} \mathbf {C} _ {2 2} \mathbf {K}
+$$
+
+where the $ n\times n $ matrix, $ \mathbf{C}_{22} $ , is the solution to Equation 19.7d (under the simple animal model), or more generally, Equation 19.5a. Again, these expressions assume that the residual variance is known without error, and using an estimate for $ \sigma_{e}^{2} $ adds an additional uncertainty by increasing the sample variance.
+
+Example 19.1. As an example of how one performs a mixed-model analysis of a selection experiment, consider the following, very simple, situation. From a base population of unrelated and noninbred individuals, four (indexed by 1-4) are measured and have trait values of 3, 6, 5, and 2, respectively. The two largest individuals are mated, and their resulting offspring (individuals 5-8) have values of 4, 5, 6, and 5. Now suppose that we have either a REML-based estimate of the heritability (which is not advisable here given the very small sample size) or have previous knowledge of its value. Our goal is to estimate the size of the genetic response. Assuming the only fixed effect is the mean, the resulting animal model is $ \mathbf{y}=\mathbf{1}\beta+\mathbf{a}+\mathbf{e} $ where
+
+$$
+\mathbf {y} = \left( \begin{array}{l} y _ {1} \\ y _ {2} \\ y _ {3} \\ y _ {4} \\ y _ {5} \\ y _ {6} \\ y _ {7} \\ y _ {8} \end{array} \right) = \left( \begin{array}{l} 3 \\ 6 \\ 5 \\ 2 \\ 4 \\ 5 \\ 6 \\ 5 \end{array} \right), \quad \mathbf {a} = \left( \begin{array}{l} a _ {1} \\ a _ {2} \\ a _ {3} \\ a _ {4} \\ a _ {5} \\ a _ {6} \\ a _ {7} \\ a _ {8} \end{array} \right), \quad \beta = (\mu), \quad \mathbf {X} = \mathbf {1} = \left( \begin{array}{l} 1 \\ 1 \\ 1 \\ 1 \\ 1 \\ 1 \\ 1 \end{array} \right)
+$$
+
+What is the relationship matrix, A? Because individuals 2 and 3 are the parents and all offspring are full sibs, all related individuals have values of $ A_{ij}=1/2 $ , as $ 2\theta_{ij}=1/2 $ for both parent-offspring pairs and full sibs. The resulting numerator relationship matrix becomes
+
+$$
+\mathbf {A} = \left( \begin{array}{c c c c c c c c} 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 & 1 / 2 & 1 / 2 & 1 / 2 & 1 / 2 \\ 0 & 0 & 1 & 0 & 1 / 2 & 1 / 2 & 1 / 2 & 1 / 2 \\ 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\ 0 & 1 / 2 & 1 / 2 & 0 & 1 & 1 / 2 & 1 / 2 & 1 / 2 \\ 0 & 1 / 2 & 1 / 2 & 0 & 1 / 2 & 1 & 1 / 2 & 1 / 2 \\ 0 & 1 / 2 & 1 / 2 & 0 & 1 / 2 & 1 / 2 & 1 & 1 / 2 \\ 0 & 1 / 2 & 1 / 2 & 0 & 1 / 2 & 1 / 2 & 1 / 2 & 1 \end{array} \right)
+$$
+
+For example, individuals 2 and 5 are parent and offspring, so $ A_{5,2}=A_{2,5}=1/2 $ , as the parent-offspring covariance $ \sigma_{A}^{2}/2 $ . Similarly, individuals 7 and 8 are full-sibs, so $ A_{7,8}= A_{8,7}=1/2 $ . Note that the relationship matrix for the founders (base population members) is given by the $ 4\times 4 $ identity submatrix in the upper left of A. This identity matrix implies that noninbred individuals (diagonal elements are one) and unrelated individuals (off-diagonal elements are zero) formed the base population.
+
+Turning to the covariance matrix of the residuals, we make the standard assumption that $ \operatorname{V a r} \left( \mathbf{e} \right)=\sigma_{e}^{2} \mathbf{I}, $ or in other words, that all residuals are uncorrelated with common variance, $ \sigma_{e}^{2}. $ However, if there is dominance, the residuals among full-sibs will be inflated by $ \sigma_{D}^{2}/4. $ Likewise, if there are common-family effects (e.g., maternal effects or other shared environmental effects), the residuals are inflated by $ \sigma_{c}^{2}, $ where c is the common-family effect. For now we will ignore these possible complications, which are easily accommodated by adding additional vectors of random effects to the model (see below).
+
+Suppose (from REML or prior knowledge) that the heritability of the trait is $ h^{2}=0. 3 $ Applying Equation 19.3a yields
+
+$$
+\widehat {\mu} = \left(\mathbf {1} ^ {T} \mathbf {V} ^ {- 1} \mathbf {1}\right) ^ {- 1} \mathbf {1} ^ {T} \mathbf {V} ^ {- 1} \mathbf {y} = 4. 2 2
+$$
+
+where we have computed V using Equation 19.2b as scaled to remove the phenotypic variance $ \sigma_{z}^{2} $ , for example, $ \mathbf{V}=0.3\mathbf{A}+0.7\mathbf{I} $ (note that $ \sigma_{z}^{2} $ cancels in the above expression, as it appears in both V and $ \mathbf{V}^{-1} $ ). Substituting into Equation 19.3b yields the $ 8\times1 $ vector, $ \widehat{\mathbf{a}} $ , of BLUPs for
+
+the individual genetic values, and the resulting $ 2\times1 $ vector, $ \mathbf{K}^{T}\widehat{\mathbf{a}} $ of genetic means
+
+$$
+\widehat {\mathbf {a}} = \left( \begin{array}{c} - 0. 3 6 6 \\ 0. 6 6 6 \\ 0. 3 6 6 \\ - 0. 6 6 6 \\ 0. 3 8 6 \\ 0. 5 6 2 \\ 0. 7 3 9 \\ 0. 5 6 2 \end{array} \right) \quad \mathbf {K} = \frac {1}{4} \left( \begin{array}{c c} 1 & 0 \\ 1 & 0 \\ 1 & 0 \\ 1 & 0 \\ 0 & 1 \\ 0 & 1 \\ 0 & 1 \end{array} \right) \quad \mathbf {K} ^ {T} \widehat {\mathbf {a}} = \left( \begin{array}{c} 0 \\ 0. 5 6 2 \end{array} \right) \quad \mathbf {K} ^ {T} \mathbf {1} _ {8} = \left( \begin{array}{c} 1 \\ 1 \end{array} \right)
+$$
+
+<div align="center">
+
+Note that (by construction) the mean breeding value in the base population is zero. Hence, the estimated response (for $ h^{2}=0.3 $ ) is 0.562. The estimated genetic gain (response) for different assumed heritabilities is found to be as follows
+
+</div>
+
+<table border="1"><tr><td>$h^{2}$</td><td>Estimated response</td><td>$h^{2}$</td><td>Estimated response</td></tr><tr><td>0.0</td><td>0</td><td>0.6</td><td>0.940</td></tr><tr><td>0.1</td><td>0.211</td><td>0.7</td><td>1.026</td></tr><tr><td>0.2</td><td>0.398</td><td>0.8</td><td>1.083</td></tr><tr><td>0.4</td><td>0.707</td><td>0.9</td><td>1.095</td></tr><tr><td>0.5</td><td>0.833</td><td>1.0</td><td>1.000</td></tr></table>
+
+The estimated gain increases with the assumed $ h^{2} $ until it reaches a maximum of $ \simeq 1.098 $ for $ h^{2}=0.86 $ , after which it decreases as the assumed $ h^{2} $ increases. A Bayesian analysis removes this dependency of the estimated response on $ h^{2} $ by computing a weighted average of response over all possible $ h^{2} $ values (weighted by their posterior values), yielding a marginal posterior distribution for the response that fully accounts for any uncertainty introduced from estimating the heritability.
+
+Turning to a more standard analysis, the selection differential is the mean of the selected parents minus the mean of all parents, $ S=5. 5-4=1. 5 $ . Likewise, the selection response is the mean of the offspring minus the mean in the previous generation, $ 5-4=1 $ , which yields a realized heritability of $ R / S=1. 0 / 1. 5=0. 6 7 $ . Using this value for $ h^{2} $ in the MM analysis returns a genetic gain of 1.000.
+
+As is apparent from the above example, a mixed-model analysis of a selection experiment has a very different character than an LS analysis. In the latter, one estimates the realized heritability from a suitable regression of phenotypic means on selection differentials. Under a REML/BLUP analysis, however, one first estimates the heritability in the base population (using REML), and then uses (empirical) BLUP to estimate breeding values for all individuals. The genetic response in a given generation is given by the mean of the elements in the estimated vector, a, of breeding values in that generation, allowing for the separation of genetic from environmental response, even in the absence of a control population. Thompson and Atkins (1994) noted a fundamental difference between the two approaches in separating genetic from environmental change: an LS analysis typically uses between-population information (e.g., contrasts of the means of selection vs. control, or upvs. down-selected lines), while a REML/BLUP analysis uses within-population information (the connections between relatives across generations contained within A).
+
+Under an MM analysis, the estimate of heritability should be based on REML estimates of the base population variance components, $ \widehat{h}^{2}=\widehat{\sigma}_{A}^{2}/(\widehat{\sigma}_{A}^{2}+\widehat{\sigma}_{e}^{2}) $ . One must avoid the temptation to estimate realized heritabilities using estimated mean breeding values. For example, Blair and Pollak (1984) regressed the BLUP mean breeding values on cumulative selection differentials to obtain a realized heritability estimate. The problem with this approach is that these mean estimates depend on the assumed, rather than the actual, heritability (Thompson 1986; Sorensen and Johannsson 1992; Ollivier 1999). In contrast, under a Bayesian analysis, the marginal posterior estimate of mean breeding value in any particular generation averages over all possible $ h^{2} $ values and is independent of the heritability (Example 19.10).
+
+Hence, a regression of Bayesian-derived mean breeding values on generations can return an unbiased estimate of realized heritability.
+
+## Fixed Effects Alter Heritabilities
+
+Variance components in a mixed model are estimated after any variation introduced by fixed effects is removed, and this has an impact on the estimated heritability. Under the mixed-model framework, $ h^{2}=\sigma_{A}^{2}/(\sigma_{A}^{2}+\sigma_{e}^{2}) $ , where $ \sigma_{e}^{2} $ is the residual variance. Here, the denominator is the fixed-effects-adjusted phenotypic variance (the sum of the variance components). This is potentially different from the more standard $ h^{2}=\sigma_{A}^{2}/\sigma_{z}^{2} $ , which is a function of the (total) phenotypic variance, $ \sigma_{z}^{2} $ . In the absence of fixed effects that differ over individuals (such as sex- or age-specific means), $ \sigma_{z}^{2}=\sigma_{A}^{2}+\sigma_{e}^{2} $ , meaning that the total and fixed-effects-adjusted phenotypic variances are equivalent, as are the two definitions of $ h^{2} $ . However, if such class-specific differences exist and are explicitly modeled in the analysis, then the variation they contribute to the overall phenotype is removed, and the resulting residual variance reduced, so $ \sigma_{z}^{2}>\sigma_{A}^{2}+\sigma_{e}^{2} $ . For example, if a trait mean varies over the sexes, the variance of the trait in the entire population is greater than the variance of the trait within each sex. Consequently, for a model with sex added as a fixed effect, this source of variation is removed, resulting in a smaller residual variance and a larger heritability.
+
+As a result, mixed-model heritability estimates should be larger than estimates that ignore fixed effects. A related issue is that mixed models using the same data but assuming different fixed effects can differ significantly in their estimated residual variances, $ \sigma_{e}^{2} $ , and thus, their resulting heritabilities (Wilson 2008). The implication is that comparison of heritabilities for different traits or populations estimated under a mixed-model framework can be somewhat problematic due to differences in the incorporated fixed effects.
+
+## Model Validation
+
+Given the sensitivity of a mixed-model analysis to the validity of the assumptions (in particular, the infinitesimal model), some form of model validation is required to be able to apply these methods with confidence. One approach is to test the infinitesimal-model prediction that estimates of the base population, $ \sigma_{A}^{2} $ , should remain stable as additional generations of selection are considered. If the infinitesimal model holds, A completely accounts for changes in the additive variance in these later generations from both drift and selection-generated LD (a point that will be more fully developed shortly). If, on the other hand, $ \sigma_{A}^{2} $ changes during selection in ways that are not predictable from the infinitesimal model (e.g., significant allele-frequency change occurs), using data from additional generations of selection may result in rather different estimates of the base-population additive variance.
+
+Example 19.2. One of the first REML/BLUP analyses of a selection experiment was performed by Meyer and Hill (1991), who examined the response to selection for adjusted food intake (AFI) in mice (Figure 19.1). AFI is defined as food intake between 4 and 6 weeks, corrected for 4-week weight. Meyer and Hill had three replicate sets, each consisting of high, low, and control lines, for a total of almost 11,000 mice over the course of the experiment. Within-family selection (Chapter 21) on AFI was followed for 23 generations. Meyer and Hill included a number of fixed effects in their model, as well as adding a random effect to control for common litter (i.e., family) effects (see Example 19.7 for details).
+
+As a check of the validity of the MM assumptions (in particular, the infinitesimal model), Meyer and Hill compared variance estimates based on data from generations 5-7 with estimates based on generations 14-23. In both cases, the full pedigree structure was incorporated into the relationship matrix. While incorporation of the complete pedigree information reduces the bias in estimates of the base-population additive variance, some bias will remain if records from some of these individuals are missing (van der Werf and de Boer 1990). In other words, knowledge of the pedigree is not sufficient; the phenotypic values of these individuals (even if not selected) are also needed to remove bias. Meyer and Hill observed a dramatic
+
+decline in the estimated additive variances (from 19.2 based on generations 5-7 to 2.5 based on generations 14-23). Under the infinitesimal model, both estimates should infer the base-population variance, so this large decrease suggests that the infinitesimal model may not be appropriate for assessing this trait. It is interesting to note that this decrease in the estimate of $ \sigma_{A}^{2} $ occurred even as the total variance increased dramatically (from 23.88 to 33.93). This increase resulted mainly from an increase in the estimated environmental variance (from 12.9 to 25.5), although there was also a slight increase in the litter-effects variance (from 4.78 to 5.96).
+
+Several other REML/BLUP analyses of selection experiments in mice also found differences between estimates of base-population additive variance when comparing data from early and late generations. Beniwal et al. (1992a and 1992b) observed decreases in the estimated additive variance (in body weight, litter size, and lean mass), while Heath et al. (1995) observed an increase in the additive variance in body weight.
+
+In contrast, Martinez et al. (2000) found no changes in estimates of $ \sigma_{A}^{2} $ over 20 generations of selection for body composition (fat pad to body weight ratio) in mice. These authors examined REML estimates of the additive variance (and heritability) using various subsets of the full 20 generation data. Consistent estimates of the additive variance were obtained (i) using the set of all records and the complete pedigree from generations 0-20; (ii) using records from generations 9-20, but with pedigree information from generation 0; and (iii) using only three-generation blocks of the phenotypic data as the entire dataset. They concluded that the selection response, while resulting in a roughly four-fold change in mean, was still well-fit by the infinitesimal model. Finally, Holt et al. (2005) observed no changes in base-population additive variance estimates over time for a high line of mice selected for litter size, but did see a variance reduction in the low line.
+
+## Separating Genetic and Environmental Trends
+
+Observed improvement in a trait over time (such as milk yield) may be due entirely to improvement in the environment (better husbandry and nutrition), entirely from genetic changes (response from selected breeding), or (most likely) a combination of both. Thus, it is critical to partition an observed phenotypic change into genetic and environmental components. For example, Southwood and Kennedy (1991) showed that the improvement in several litter-size-related traits in pigs over a 10-year period in Quebec was entirely due to environmental, rather than genetic, changes. Recent plant examples are given by Laidig et al. (2014, 2017) and Piepho et al. (2014).
+
+In a least-squares analysis, any underlying environmental trend is assumed to be removed by contrasting selected and control populations (or contrasting populations selected in opposite directions). The rationale is that the kth individual from population j in generation t can be described as
+
+$$
+y _ {j, t k} = \mu + b _ {j, t} + a _ {j, t k} + e _ {j, t k}
+$$
+
+where $ b_{j,t} $ is the environmental trend in population j. If the common environmental value is the same in both the selected and the control populations $ (b_{s,t}=b_{c,t}) $ , then the difference in phenotypic means in generation t between these populations is
+
+$$
+\bar {y} _ {s, t} - \bar {y} _ {c, t} = \left(\bar {a} _ {s, t} - \bar {a} _ {c, t}\right) + \left(e _ {s, t} - e _ {c, t}\right)
+$$
+
+Because the residuals, e, have an expected value of zero, this contrast provides an unbiased estimate of $ \overline{a}_{s,t} $ provided there is no significant drift in the mean breeding value of the control population (meaning that $ \overline{a}_{c,t}\simeq 0 $ ). However, if genotype-environment interactions are present, the environmental values can differ between populations, in which case Equation 19.10 has an additional term, $ (b_{s,t}-b_{c,t}) $ . Hence, even when a control population is used, a least-squares analysis can still give biased results if there is significant drift in the mean of the control population $ (|\overline{a}_{c,t}| \gg0) $ or significant $ G\times E $ .
+
+Insight into another way in which the use of a control in an LS analysis can be misleading was offered by Su et al. (1997), who examined response in body weight in chickens starting
+
+from a base population with a known previous history of selection on this trait. Because of prior selection, the base population showed a slippage of the mean back to the original (unselected) value. If this population was used as a control, this slippage would be taken as a decay in the environment over time, resulting in an overestimation of the selection response when using an LS analysis. Because of this concern, Su et al. used a mixed model to estimate the genetic response.
+
+A mixed-model analysis estimates the mean breeding value, rather than the phenotypic mean, of the population, which allows for this separation of the genetic change from any environmental change (Henderson et al. 1959; Blair and Pollak 1984; Sorensen and Kennedy 1984a; Kennedy 1990). Such a separation is possible because A tracks the flow of genes through the population, which allows us to make estimates of breeding values independent of environmental effects by borrowing information from relatives across generations. This is dependent on the model assumptions holding, but when they do, a mixed-model analysis does not require a control population. This being said, Sorensen et al. (2003) showed that the inclusion of a control in an MM analysis generally improves the efficiency of estimates (resulting in smaller standard errors).
+
+Common-environment effects are incorporated into the basic animal model by simply adding a fixed effect, $ b_{t} $ , for the common environmental effect in generation t
+
+$$
+y _ {t k} = \mu + b _ {t} + a _ {t k} + e _ {t k}
+$$
+
+For T generations, there are T estimable fixed effects ( $ \mu $ and all but one $ b_{t} $ ). Typically, one either constrains the $ b_{t} $ to sum to zero or arbitrarily sets one of the $ b_{t} $ equal to zero. We do the latter with $ b_{1} $ , so the vector of fixed effects becomes
+
+$$
+\beta = \left(\mu , b _ {2}, \dots , b _ {T}\right) ^ {T}
+$$
+
+and the corresponding design matrix, X, has zeros or ones in columns 2 though T, corresponding to the generation in which the individual was scored
+
+$$
+\mathbf {X} = \left( \begin{array}{c c c c} 1 & 0 & \dots & 0 \\ 1 & 0 & \dots & 0 \\ \vdots & & & \vdots \\ 1 & 1 & \dots & 0 \\ 1 & 1 & \dots & 0 \\ \vdots & & & \vdots \\ 1 & 0 & \dots & 1 \\ 1 & 0 & \dots & 1 \end{array} \right)
+$$
+
+To remind the reader how X is obtained, recall that $ \mathbf{X}\beta $ returns a vector that adjusts each observation for the fixed effects. From the rules of matrix multiplication, the adjustment for observation i is the inner product, $ \mathbf{x}_{i.}^{T}\beta $ , where the row vector $ \mathbf{x}_{i.}^{T} $ corresponds to the i th row of X. Likewise, the jth column of X corresponds to the vector of weights (over all observations) for the jth fixed effect. Here, the first column is all ones, as all observations contain the mean, $ \mu $ . Entries in column 2 (corresponding to $ b_{2} $ ) are zero, unless an observation is from generation 2 (and hence has a mean of $ \mu+b_{2} $ ), in which case the entry is 1, and so forth. Hence, the first two displayed rows of the above X correspond to observations from generation 1, which have means of $ \mu $ , the second pair of displayed rows to generation 2 (with means of $ \mu+b_{2} $ ), and the last pair to generation T (wth means of $ \mu+b_{T} $ ).
+
+An alternative approach is to treat the $ b_{i} $ as random (as opposed to fixed) effects, drawn independently (i.e., uncorrelated across generations) from a normal distribution with a mean of zero and an unknown variance, $ \sigma_{b}^{2} $ . The assumption of no environmental correlation between adjacent generations can be questionable (at best), and treating the $ b_{i} $ as fixed, rather than random, removes these concerns (although at a cost of absorbing more degrees of freedom than with a random-effects analysis).
+
+Example 19.3. To examine the potential bias from $ G\times E $ and drift in the control population, Blair and Pollak (1984) examined a seven-generation selection experiment on 14-month greasy fleece weight in sheep. The model they assumed was that the mth individual in generation t, with fixed sex effect (male/female), $ v_{i} $ , fixed age of dam effect (mature/immature), $ d_{j} $ , rearing rank effect (single/twin), $ r_{k} $ , and year effect, $ b_{t} $ , had a phenotypic value of
+
+$$
+y _ {i j k t m} = v _ {i} + d _ {j} + r _ {k} + b _ {t} + a _ {t m} + e _ {t m}
+$$
+
+In matrix form, $ \mathbf{y}=\mathbf{X}\beta+\mathbf{Z}\mathbf{a}+\mathbf{e} $ , where the vector, $ \beta $ , contains the fixed effects for sex (v), dam age (d), and rearing rank (r), in addition to the effects for years (b). Both the selected and control lines were subjected to separate BLUP analyses using this model, and three different estimates of selection response were considered:
+
+(i) $ \widehat{\bar{y}}_{s,t}-\widehat{\bar{y}}_{c,t} $ the estimated phenotypic means following adjustment for the fixed effects (v, d, and r), obtained by $ \widehat{\bar{y}}_{x,t}=\widehat{\bar{a}}_{x,t}+\widehat{b}_{x,t} $ , where x = c or s, corresponding to the control and selection lines, respectively. This is an unbiased estimate of the response if there is no drift in the control population $ (\overline{{a}}_{c,t}\simeq0) $ and no $ G\times E $ , so that $ b_{c,t}=b_{s,t}. $
+
+(ii) $ \widehat{\bar{y}}_{s,t}-\widehat{b}_{c,t} $ the (fixed-effects-adjusted) phenotypic mean of the selected population minus the common environmental effect, as estimated from the control population.
+
+(iii) $ \widehat{\overline{a}}_{s,t} $ the BLUP estimate of the mean breeding value in the selected population.
+
+Estimate (i) mimics the estimate used in a least-squares analysis, and Blair and Pollak showed that it is independent of the assumed heritability. Estimates (ii) and (iii) are highly dependent on the assumed (or estimated) heritabilities in the control and selected populations. As Figure 9.2 reveals, all three estimates show a positive genetic trend (following a reversed response over the first few generations). As expected, the estimated response using only the predicted mean breeding value is smoother than the other two estimates.
+
+The potential biases in a least-squares analysis of these data based on the contrast between the control and selected phenotypic means are seen in the two lower graphs in Figure 19.2. The lower left graph plots the difference in the estimated common environmental effects between selected and control populations $ (\widehat{b}_{ct}-\widehat{b}_{st}) $ . Ignoring the inherent variance in estimating the $ \widehat{b} $ , the average difference (via a paired t test) is not significantly different from zero. The right-hand graph plots the predicted mean breeding value of the control population, which is assumed to be zero under the least-squares analysis. As can be seen, there is a slight, but positive, trend in the mean. When the selected mean is adjusted by subtracting from the control mean, the net result is that the LS analysis slightly underestimates the true response, $ \overline{a}_{s,t} $ . Thus, there is no evidence of error being introduced by $ G\times E $ differences between the control and selected lines, but error is introduced if the mean breeding value of the control population departs significantly from zero.
+
+## Validation That a Trend Is Indeed Genetic
+
+The estimated common-environmental (b) and additive-genetic (a) effects are highly dependent on the estimated (or assumed) base population heritability, $ h^{2} $ . Hence, using BLUP to separate genetic from environmental values is highly dependent on the heritability used being close to its true value. Other departures from mixed-model assumptions (e.g., the infinitesimal model and assuming that BLUP and REML estimates are unaffected by selection) can also result in incorrect assignment of the relative importance of environmental versus genetic values. Thus, achieving some sort of validation of a detected trend is critical.
+
+We have already discussed validation of the general animal model, namely, by examining the consistency of the estimated additive variance over different subsets of the data. Similar validation that a trend is indeed genetic can be performed by again examining the consistency across an analysis. For example, if a control population is used, a BLUP
+
+![](page=15,bbox=[245, 115, 877, 351])
+
+![](page=15,bbox=[243, 387, 567, 558])
+
+![](page=15,bbox=[575, 387, 888, 558])
+
+<div align="center">
+
+Figure 19.2 Trends for the selection experiment in Example 19.3. See the example for details.
+
+</div>
+
+analysis can estimate the amount of drift in the mean breeding value from its expected value of zero. Likewise, estimates of the selection and control environmental effects can be compared (Figure 19.2), and if these are reasonably consistent, then a joint analysis (assuming the same environmental values in both populations) may yield more precise estimates of the generational common-environmental values. Likewise, if the common-environmental estimates are significantly different between selected and control populations, the possibility of $ G\times E $ needs to be seriously considered. Even when using a control population, there is still much to be gained by subjecting each group to a mixed-model (e.g., BLUP) analysis (Sorensen et al. 2003).
+
+Even in the absence of a control population, one can still attempt to validate a trend. For example, Boichard et al. (1995) examined several different methods to attempt to validate genetic trends in dairy cattle, all of which involved the comparison of predicted trend values using different subsets of the data. The authors were interested in comparing the performance of a mixed model (AM90) used for French Holsteins from 1990 to 1992 with a more recent model (AM93), whose use started in 1993 (the models differed in their choice of included fixed and random effects). For a variety of reasons, there was concern that the older AM90 model yielded biased trend estimates. One check was based on the fact that milk yield data are in the form of multiple records per individual, so a repeatability model was appropriate (Example 19.6). The authors compared EBVs based only on the
+
+first lactations with estimates using all records. They found that the trends estimated from the first versus all lactations agreed well under the AM93 model, but differed dramatically under the AM90 model. Other measures of consistency (for example, looking at the stability of estimated breeding values of individuals as more information is added) also showed that the newer AM93 model seemed relatively robust, while the older AM90 model seemed to produce biased estimates of the trend.
+
+## Replicate Lines
+
+It is straightforward to jointly analyze multiple lines simultaneously. For n lines, we write the total vector of observations as $ y^{T}=\left(y_{1}^{T},y_{2}^{T},\cdots,y_{n}^{T}\right) $ , where $ y_{k} $ is the vector of all observations from line k. If the generational environmental effects are assumed to be the same across the lines, the model for theith individual in generation t from line k is
+
+$$
+y _ {k, t i} = \mu + b _ {t} + a _ {k, t i} + e _ {k, t i}
+$$
+
+Alternatively, if the environmental effects are potentially different in each line
+
+$$
+y _ {k, t i} = \mu + b _ {k, t} + a _ {k, t i} + e _ {k, t i}
+$$
+
+The power of combining multiple lines arises when environmental effects can be assumed to be the same across the lines. In this case, the effective sample size for estimating each effect is increased, and (presumably) the resulting sampling variance is decreased, improving the precision of the estimates.
+
+The assumed covariance matrix for the vector of joint breeding values over a set of replicates can take several forms. If the founding members for each line are drawn from the same base population (but otherwise unrelated), then the covariance matrix for the vector of breeding values a has a block-diagonal form, with theith block corresponding to $ \sigma_{A}^{2}\mathbf{A}(i) $ the relationship matrix for line i times the base population additive variance. If the founding members of some lines are related, then A is more complex, reflecting these relationships. Further modifications for joint analysis were proposed by Visscher and Thompson (1990), and extended by Beniwal et al. (1992a, 1992b) and Heath et al. (1995) by allowing the additive genic variance to change over time (discussed below; recall from Chapter 16 that the additive genic variance is the value for $ \sigma_{A}^{2} $ in the absence of LD). For example, one might assume that the additive genic variance remains constant for the first few generations of selection, after which it assumes a different value. This is a reasonable, but still ad hoc, approach for attempting to deal with potential departures from the infinitesimal model.
+
+## Estimating the Additive Variance at Generation $ t $
+
+Even under the infinitesimal model, the additive variance changes over time by the generation of disequilibrium (Chapter 16) and inbreeding (Chapters 3 and 24), a point more fully explicated in the next section. While REML provides an estimate of the base population additive genic variance, $ \sigma_{a}^{2}(0) $ (which is unbiased provided the model assumptions hold), it does not immediately provide estimates of the actual additive variance, $ \sigma_{A}^{2}(t)=\sigma_{a}^{2}(t)+d(t) $ in any particular generation of selection. The most straightforward approach is to use the parent-offspring regression for each generation of selection to estimate the additive genetic variance in the parents. With parents from generation t and offspring in generation t+1, the regression estimates the heritability of the parents, $ h_{A}^{2}(t) $ (Robertson 1977b). The drawback with this approach is the typically small sample size associated with each generation (resulting in large standard errors for each heritability or variance estimate). Ideally, one would like to be able to combine information across generations in such a way as to improve the variance estimates.
+
+Sorensen and Kennedy (1984b) suggested one approach, which is to use a mixed-model analysis treating generation t as the base population. In particular, one considers only the data from generation t onward (say, to generation T), and the relationship matrix is adjusted
+
+to assume that generation t is the base population. The resulting covariance matrix for the breeding values becomes
+
+$$
+\operatorname {V a r} \left( \begin{array}{c} \mathbf {a} _ {t} \\ \mathbf {a} _ {t + 1} \\ \vdots \\ \mathbf {a} _ {T} \end{array} \right) = \sigma_ {A} ^ {2} (t) \left( \begin{array}{c c c c} \mathbf {I} & \mathbf {A} _ {t, t + 1} & \dots & \mathbf {A} _ {t, T} \\ \mathbf {A} _ {t, t + 1} & \mathbf {A} _ {t + 1, t + 1} & \dots & \mathbf {A} _ {t + 1, T} \\ \vdots & \ddots & \vdots & \vdots \\ \mathbf {A} _ {t, T} & \mathbf {A} _ {t + 1, T} & \dots & \mathbf {A} _ {T, T} \end{array} \right)
+$$
+
+where $ \mathbf{a}_{k} $ is the vector of breeding values in generation k, and $ \mathbf{A}_{j,k} $ is the relationship matrix of associations between individuals in generations j and k. By taking $ \operatorname{V a r} \left( \mathbf{a}_{t} \right)=\sigma_{A}^{2} ( t ) \mathbf{I} $ we are assuming that all individuals in generation t are unrelated and noninbred, as this is now our base population. All measured individuals from generation t (including those not leaving offspring) are included in the base population. While this approach seems logical, it is still somewhat ad hoc and not exact. Simulation studies by van der Werf and de Boer (1990) showed that Sorensen and Kennedy's approach tends to overestimate the true additive-genetic variance.
+
+Another potential approach to estimating the additive variance in generation t would be to use the variance among the predicted breeding values within a generation
+
+$$
+\operatorname {V a r} \left(A _ {t}\right) = \frac {1}{n - 1} \sum_ {i = 1} ^ {n _ {t}} \left(\widehat {a} _ {t i} - \widehat {\bar {a}} _ {t}\right) ^ {2}
+$$
+
+Again, however, there are complications. One is that the assumed genetic variance used to obtain the BLUP estimates has a strong influence on the values of the estimated $ \widehat{a}_{ti} $ Another is that Equation 19.14 estimates $ \sigma^{2}(\widehat{a}) $ , which is different from $ \sigma_{A}^{2} $ , as the former estimates $ \rho^{2}\sigma_{A}^{2} $ , where $ \rho^{2}<1 $ is the accuracy of the predicted breeding values (Equation 20.23c). Hence, Equation 19.14 is expected to underestimate the true variance, $ \sigma_{A}^{2} $ . Sorensen et al. (2001) noted that the use of Equation 19.14 in a Bayesian framework (wherein the uncertainty in variance estimates is naturally incorporated into the analysis) avoids both of these problems.
+
+## THE RELATIONSHIP MATRIX, A, ACCOUNTS FOR DRIFT AND DISEQUILIBRIUM
+
+There are three potential sources of change in the additive-genetic variance, $ \sigma_{A}^{2} $ , during a selection experiment: allele-frequency change from selection; allele-frequency change from drift; and gametic-phase disequilibrium generated by selection (Chapters 5 and 16). Under the infinitesimal model, selection does not change allele frequencies, leaving only drift and disequilibrium as potential agents of change. If the average effect for any allele is small, allele-frequency changes (from selection) are also small, at least for a modest number of generations (Chapters 5 and 25), and the infinitesimal assumption can be approximately correct. In these settings, the relationship matrix, A, in an MM analysis accounts for the effects of gametic-phase disequilibrium as well as genetic drift (Sorensen and Kennedy 1983, 1984a), and hence for all changes in $ \sigma_{A}^{2} $ , provided the base population consists of unrelated, noninbred individuals in linkage equilibrium. As a result, as long as selection-induced allele-frequency change is negligible, the variance-covariance matrix of the vector of breeding values remains the product of the base population additive-genetic variance and the relationship matrix, $ \operatorname{Var}(\mathbf{a})=\sigma_{A}^{2}\mathbf{A}. $
+
+To both see this point and provide connections among these three potential agents of change, recall two important concepts from Chapter 16. First, the additive-genetic variance can be decomposed as $ \sigma_{A}^{2}=\sigma_{a}^{2}+d $ , the sum of the additive genic variance, $ \sigma_{a}^{2} $ , and the disequilibrium contribution, d (Equation 16.2). The former is the additive variance under linkage equilibrium and Hardy-Weinberg. Under drift and assuming only additive effects, the expected genic variance at generation t is simply $ \sigma_{a}^{2}(t)=\sigma_{a}^{2}(0)(1-f_{t}) $ , where $ f_{t} $ is the inbreeding coefficient in generation t (Equation 16.9c). Second (Equation 16.8a), the regression of the breeding value, $ A_{i} $ , of an individual on the breeding values, $ A_{m_{i}} $ and $ A_{f_{i}} $
+
+of its parents is
+
+$$
+A _ {i} = \frac {1}{2} A _ {f _ {i}} + \frac {1}{2} A _ {m _ {i}} + s _ {i}
+$$
+
+where the segregation residual, s, results from Mendelian sampling due to the segregation of alleles at heterozygous loci in the parents (Example 16.2).
+
+The critical idea in this section—that the conditional independence of the covariance relationships of the vector, a, from selection and drift (given A)—follows as a consequence of the behavior of the segregation residuals under the infinitesimal model. To see this, note that if the joint distribution of breeding values for parent and offspring is multivariate normal (as occurs under the standard infinitesimal model), the regression given by Equation 19.15a is linear and homoscedastic, meaning that s is independent of the parental breeding values. Its variance, $ \sigma_{s_{i}}^{2} $ , for individual i is also independent of parental breeding values, but it does depend on the average inbreeding, $ \overline{f}_{i} $ , of its parents, such that
+
+$$
+\sigma_ {s _ {i}} ^ {2} = \left(1 - \bar {f} _ {i}\right) \sigma_ {a} ^ {2} / 2
+$$
+
+Provided the vector, s, of Mendelian sampling residuals remains multivariate normal, then s $ \sim $ MVN(0, $ [\sigma_{a}^{2}/2] $ F), with F representing a diagonal matrix whose ith element is $ (1-\overline{f}_{i}) $ , namely, one minus the average inbreeding of the parents of i. If k and j are the parents of i, then
+
+$$
+F _ {i i} = \left(1 - \bar {f} _ {i}\right) = \left(1 - \frac {f _ {k} + f _ {j}}{2}\right) = \left(2 - \frac {A _ {k k} + A _ {j j}}{2}\right)
+$$
+
+where $ A_{kk}=(1+f_{k}) $ denotes the kth diagonal element of the relationship matrix, A. Thus, the distribution of the Mendelian sampling terms, s, is unaffected by the breeding values of the parents (and hence by selection or assortative mating), while the effects of drift are fully accounted for by F.
+
+The final key concept is that when we have the complete pedigree of all individuals in the selection experiment, any breeding value can be expressed as a linear function of the base population breeding values and Mendelian sampling terms (Sorensen and Kennedy 1984a; Kennedy et al. 1988). This is an extension of the idea of ancestral regressions discussed in Chapter 15. Example 19.4 shows a critical consequence of this: because the mean breeding value in the base population is zero (by construction), most of the response in a selection experiment comes, not from base individuals with exceptional breeding values, but rather from Mendelian sampling (i.e., segregation) generating new variation.
+
+Example 19.4. Suppose individuals 1 through 4 are from the base population (and assumed unrelated), while individuals 5 and 6 are the offspring from 1 and 2, and 3 and 4, respectively. The offspring breeding values can be written as
+
+$$
+A _ {5} = \frac {1}{2} A _ {1} + \frac {1}{2} A _ {2} + s _ {5} \quad \mathrm {a n d} \quad A _ {6} = \frac {1}{2} A _ {3} + \frac {1}{2} A _ {4} + s _ {6}
+$$
+
+If individual 7 is the offspring of parents 5 and 6, its breeding value is
+
+$$
+\begin{array}{l} A _ {7} = \frac {1}{2} A _ {5} + \frac {1}{2} A _ {6} + s _ {7} = \frac {1}{2} \left(\frac {1}{2} A _ {1} + \frac {1}{2} A _ {2} + s _ {5}\right) + \frac {1}{2} \left(\frac {1}{2} A _ {3} + \frac {1}{2} A _ {4} + s _ {6}\right) + s _ {7} \\ = \frac {1}{4} \left(A _ {1} + A _ {2} + A _ {3} + A _ {4}\right) + \frac {1}{2} \left(s _ {5} + s _ {6}\right) + s _ {7} \\ \end{array}
+$$
+
+Note that as individuals become increasingly more distant from the base population, the majority of their breeding value is determined by Mendelian sampling, rather than the base population breeding values of their ancestors.
+
+This linear relationship, highlighted in the last example, between the $ n\times1 $ vector, a, of all breeding values and the $ m\times1 $ vector, $ \mathbf{a}_{b} $ (breeding values for the m base population founders), and the $ (n-m)\times1 $ vector, s (Mendelian segregation values), can be formally expressed as follows. Defining $ \mathbf{w}^{T}=\left(\mathbf{a}_{b}^{T},\mathbf{s}^{T}\right) $ , we can write
+
+$$
+\mathrm {a} = \mathrm {T w} = \mathrm {T} \left( \begin{array}{c} \mathrm {a} _ {b} \\ \mathrm {s} \end{array} \right)
+$$
+
+where the n $ \times $ n matrix, $ \mathbf{T} $ , describes the flow of genes from ancestors to relatives. Indexing the elements in a so that ancestors precede their relatives, $ \mathbf{T} $ is a lower-triangular matrix (all above-diagonal elements are zero) with diagonal values of one. Further, the upper-left $ m \times m $ submatrix of $ \mathbf{T} $ , corresponding to the base population (and thus, no known ancestors), has all below-diagonal elements with value zero. For descendants of the base population founders, the off-diagonal element of $ \mathbf{T} $ associated with (descendant) individuals i,j is
+
+$$
+T _ {i, j} = \frac {1}{2} \left(T _ {f, j} + T _ {m, j}\right) \quad \mathrm {f o r} \quad j < i
+$$
+
+where f and m correspond to the index for the father and mother of i. Equations 19.17a and 19.17b formalize the decomposition (highlighted in Example 19.4) of a current breeding value into base population and segregation contributions.
+
+From Equation 19.17a
+
+$$
+\operatorname {V a r} (\mathbf {a}) = \operatorname {V a r} (\mathbf {T w}) = \mathbf {T} \operatorname {V a r} (\mathbf {w}) \mathbf {T} ^ {T}
+$$
+
+Because we assume that the base population consists of unrelated individuals $ (\mathbf{A}_{b}=\mathbf{I}) $ in gametic-phase equilibrium (so that $ \sigma_{A}^{2}=\sigma_{a}^{2} $ ), $ \mathbf{Var}(\mathbf{a}_{b})=\sigma_{a}^{2}\mathbf{I} $ , while $ \mathbf{Var}(\mathbf{s})=(\sigma_{a}^{2}/2)\mathbf{F}. $ Under multivariate normality, $ \mathbf{a}_{b} $ and s are independent, and hence uncorrelated, yielding
+
+$$
+\operatorname {V a r} (\mathbf {w}) = \operatorname {V a r} \left( \begin{array}{c} \mathbf {a} _ {b} \\ \mathbf {s} \end{array} \right) = \sigma_ {a} ^ {2} \left( \begin{array}{c c} \mathbf {I} & \mathbf {0} \\ \mathbf {0} & \mathbf {F} / 2 \end{array} \right) = \sigma_ {a} ^ {2} \boldsymbol {\Lambda}
+$$
+
+where A is a diagonal matrix with elements of one when both parents are unknown (base population) and $ 0. 5 ( 1-\overline{f} ) $ when both parents are known. If, due to missing data, only a single parent is known, the diagonal element becomes $ ( 3-f)/4 $ , where f is the inbreeding in the known parent (Kennedy et al. 1988). Putting Equations 19.18a and 19.18b together yields
+
+$$
+\operatorname {V a r} (\mathbf {a}) = \sigma_ {A} ^ {2} \mathbf {A} = \mathbf {T} \operatorname {V a r} (\mathbf {w}) \mathbf {T} ^ {T} = \sigma_ {a} ^ {2} \mathbf {T} A \mathbf {T} ^ {T}
+$$
+
+Assuming $ \sigma_{A}^{2}=\sigma_{a}^{2} $ (no disequilibrium in the base population), then
+
+$$
+\mathbf {A} = \mathbf {T} \boldsymbol {\Lambda} \mathbf {T} ^ {T}
+$$
+
+as obtained by Henderson (1976) and Thompson (1977). As an aside, this expression, coupled with the simple form for $ \mathbf{T} $ , is what allowed Henderson (1976) to obtain a very rapid way of computing $ \mathbf{A}^{-1} $ . The critical feature of Equation 19.18c is that $ \mathbf{A} $ , which describes the Mendelian sampling residuals, is independent of selection and assortative mating (under the infinitesimal model), and also accounts for the reduction in additive variance from genetic drift.
+
+If the infinitesimal model does not hold, then residual values may vary with parental breeding values, and hence selection can influence the distribution of residuals. Provided that the change in allele frequencies over the course of the experiment is small, this bias may not be too serious (e.g., Maki-Tanila and Kennedy 1986). Another key assumption from the infinitesimal model is that the distribution of residuals does not significantly deviate from normality. Chapter 24 examines this rather technical issue in some detail.
+
+When the genic variance, $ \sigma_{a}^{2} $ , itself is changing due to selection, knowledge of A is no longer sufficient to account for all changes in $ \sigma_{A}^{2} $ . Beniwal et al. (1992a) suggested that this
+
+complication might be (somewhat) accommodated by a modification of the additive-genetic covariance matrix. Consider the simple case of two time blocks with different (unknown) genic variances: the breeding values, $ \mathbf{a}_{1} $ , in the first block have a base genic variance, $ \sigma_{a}^{2}(1) $ while the vector of breeding values, $ \mathbf{a}_{2} $ , from the second block start with a genic variance of $ \sigma_{a}^{2}(2) $ . First we decompose the diagonal matrix $ \varLambda $ into two blocks
+
+$$
+\Lambda = \left( \begin{array}{c c} \Lambda_ {1} & 0 \\ 0 & \Lambda_ {2} \end{array} \right)
+$$
+
+where $ \varLambda_{i} $ represents block i. The covariance matrix for the breeding values can be written as
+
+$$
+\operatorname {V a r} (\mathbf {a}) = \operatorname {V a r} \left( \begin{array}{l} \mathbf {a} _ {1} \\ \mathbf {a} _ {2} \end{array} \right) = \sigma_ {a} ^ {2} (1) \mathbf {T} \left( \begin{array}{c c} \Lambda_ {1} & 0 \\ 0 & 0 \end{array} \right) \mathbf {T} ^ {T} + \sigma_ {a} ^ {2} (2) \mathbf {T} \left( \begin{array}{c c} 0 & 0 \\ 0 & \Lambda_ {2} \end{array} \right) \mathbf {T} ^ {T}
+$$
+
+The variances $ \sigma_{a}^{2}(1) $ and $ \sigma_{a}^{2}(2) $ can be estimated separately using REML, and they correspond to the genic variances at the start of each block, which may be reduced by drift within the block. Heath et al. (1995) generalized this approach to allow the genic variance to change in each generation.
+
+## MODIFICATIONS OF THE BASIC ANIMAL MODEL
+
+In many cases, it is prudent to modify the simple animal model by considering additional fixed and random effects to more fully accommodate any relevant biological features. For example, genetic and environmental effects can be separated without a control population by adding fixed effects to account for environmental trends. Likewise, as we will discuss shortly, it is often reasonable to include additional random effects, such as maternal or litter effects, to reduce potential correlations between the residuals.
+
+Another modification of the basic model occurs when the phenotypic scores (records) of the parents are unknown. Example 19.5 shows how we can estimate these as random effects, but likely with bias (when selection occurs). As we will cover shortly, an alternative is to treat these breeding values of unmeasured parents as fixed, rather than random.
+
+Example 19.5. A feature of mixed models is that they can often predict the values of random effects (in this case, a breeding value) for an individual with no records (but whose relatives have records). Let 0 (unmeasured) and 1 (measured) index parents that each have a measured offspring (indexed as 2 and 3, respectively), via unrelated and unmeasured individuals. If we assume that there is a single fixed effect (the mean, $ \mu $ ), the resulting mixed model becomes
+
+$$
+\left( \begin{array}{l} y _ {1} \\ y _ {2} \\ y _ {3} \end{array} \right) = \left( \begin{array}{l} 1 \\ 1 \\ 1 \end{array} \right) \mu + \left( \begin{array}{c c c c} 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \end{array} \right) \left( \begin{array}{l} a _ {0} \\ a _ {1} \\ a _ {2} \\ a _ {3} \end{array} \right) + \left( \begin{array}{l} e _ {1} \\ e _ {2} \\ e _ {3} \end{array} \right)
+$$
+
+where $ y_{1} $ through $ y_{3} $ denote the values of the three measured individuals. Notice that there is no $ y_{0} $ in this model (as there is no observed value for individual 0), but that parent 0's breeding value, $ a_{0}, $ is included. To complete the mixed-model analysis, we need the relationship matrix, A. Because all parents are assumed to be unrelated, so are the two measured offspring, yielding
+
+$$
+\mathbf {A} = \left( \begin{array}{c c c c} 1 & 0 & 1 / 2 & 0 \\ 0 & 1 & 0 & 1 / 2 \\ 1 / 2 & 0 & 1 & 0 \\ 0 & 1 / 2 & 0 & 1 \end{array} \right)
+$$
+
+Provided unmeasured individuals have measured relatives, A allows us to estimate their breeding values. In this case, we can estimate the breeding value, $ a_{0} $ , for the unmeasured
+
+parent (for example, by using Equation 19.3b to estimate the vector, a, of the four breeding values), as A shows that information on $ a_{o} $ is provided from its observed offspring value, $ y_{2}. $
+
+Connections between relatives are often referred to as links, and the number and strengths of links (or the connectiveness) in a relationship matrix is one measure of its precision in estimating breeding values (i.e., the prediction error variance; see Kennedy and Trus 1993). The breeding value of an unmeasured individual with few measured relatives will have much less precision than that of an individual with a large number of measured, and close, relatives. Despite this flexibility in predicting breeding values for individuals with missing records, it is important to again stress that the simple inclusion of all pedigree relationships appears not to be sufficient to yield unbiased BLUP/REML estimates when selection occurs. The records (measured values) of all individuals upon which selection decisions have been based must also be included (van der Werf 1990; van der Werf and de Boer 1990; van der Werf and Thompson 1992).
+
+## Models with Additional Random Effects
+
+We have assumed that residuals of a mixed model are uncorrelated and homoscedastic, making their covariance matrix $ \operatorname{V a r} (\mathbf{e})=\sigma_{e}^{2}\mathbf{I}. $ When additional random effects are present but ignored by the model, they are inadvertently subsumed into the residuals, introducing correlations and heteroscedasticity, which, in turn, may bias the BLUP estimates. For example, if sibs share a common maternal environment, this introduces correlations between them beyond those accounted for by A. If the model only includes a and e, this additional covariance appears between the residuals of sibs, and the true covariance matrix for e is no longer the assumed diagonal, which leads to biased estimates of the BLUEs and BLUPs. By suitably incorporating additional random effects, we can develop a new model, in which the residuals again have the simple OLS covariance structure, $ \operatorname{V a r} (\mathbf{e})=\sigma_{e}^{2}\mathbf{I}. $
+
+Suppose there is a second vector, u, of m random effects (e.g., the common effects from the m families in our sample) in addition to the vector, a, of p breeding values, and vector of residuals, e. Equation 19.1 becomes
+
+$$
+\mathbf {y} = \mathbf {X} \beta + \mathbf {Z} \mathbf {a} + \mathbf {W} \mathbf {u} + \mathbf {e}
+$$
+
+where X, Z, and W are $ n\times q $ (n observations and q fixed effects), $ n\times p $ , and $ n\times m $ incidence matrices. Assuming that common-family effects are not shared across different families (even if the families are related), the assumed covariance structures for the three vectors of random effects become $ \operatorname{Var} (\mathbf{a})=\sigma_{A}^{2}\mathbf{A},\operatorname{Var} (\mathbf{u})=\sigma_{u}^{2}\mathbf{I}, $ and $ \operatorname{Var} (\mathbf{e})=\sigma_{e}^{2}\mathbf{I}, $ where a, u, and e are uncorrelated. This can be compactly written as
+
+$$
+\operatorname {V a r} \left( \begin{array}{l} \mathrm {a} \\ \mathrm {u} \\ \mathrm {e} \end{array} \right) = \left( \begin{array}{c c c} \sigma_ {A} ^ {2} \mathbf {A} & \mathbf {0} & \mathbf {0} \\ \mathbf {0} & \sigma_ {u} ^ {2} \mathbf {I} & \mathbf {0} \\ \mathbf {0} & \mathbf {0} & \sigma_ {e} ^ {2} \mathbf {I} \end{array} \right)
+$$
+
+yielding a covariance matrix of y as
+
+$$
+\operatorname {V a r} (\mathbf {y}) = \mathbf {V} = \sigma_ {A} ^ {2} \mathbf {Z A Z} ^ {T} + \sigma_ {u} ^ {2} \mathbf {W W} ^ {T} + \sigma_ {e} ^ {2} \mathbf {I}
+$$
+
+If we had assumed the validity of the model $ \mathbf{y}=\mathbf{X}\beta+\mathbf{Z}\mathbf{a}+\mathbf{e} $ , the resulting covariance matrix for the residuals would be $ \mathbf{V a r}(\mathbf{e})=\sigma_{u}^{2}\mathbf{W W}^{T}+\sigma_{e}^{2}\mathbf{I} $ , which shows how the additional random effects alter the covariance structure, which is no longer of OLS form, $ \sigma^{2}\mathbf{I}. $ Analysis of this model assuming an OLS covariance structure would thus be erroneous.
+
+The resulting set of Henderson's mixed-model equations (Equation 19.4) for the model specified by Equations 19.20a and 19.20b becomes
+
+$$
+\left( \begin{array}{c c c} \mathbf {X} ^ {T} \mathbf {X} & \mathbf {X} ^ {T} \mathbf {Z} & \mathbf {X} ^ {T} \mathbf {W} \\ \mathbf {Z} ^ {T} \mathbf {X} & \mathbf {Z} ^ {T} \mathbf {Z} + \lambda_ {A} \mathbf {A} ^ {- 1} & \mathbf {Z} ^ {T} \mathbf {W} \\ \mathbf {W} ^ {T} \mathbf {X} & \mathbf {W} ^ {T} \mathbf {Z} & \mathbf {W} ^ {T} \mathbf {W} + \lambda_ {u} \mathbf {I} \end{array} \right) \left( \begin{array}{c} \widehat {\beta} \\ \widehat {\mathbf {a}} \\ \widehat {\mathbf {u}} \end{array} \right) = \left( \begin{array}{c} \mathbf {X} ^ {T} \mathbf {y} \\ \mathbf {Z} ^ {T} \mathbf {y} \\ \mathbf {W} ^ {T} \mathbf {y} \end{array} \right)
+$$
+
+where
+
+$$
+\lambda_ {A} = \frac {\sigma_ {e} ^ {2}}{\sigma_ {A} ^ {2}} \quad \mathrm {a n d} \quad \lambda_ {u} = \frac {\sigma_ {e} ^ {2}}{\sigma_ {u} ^ {2}}
+$$
+
+Additional vectors of random effects can be incorporated in a similar manner; see LW Chapters 26 and 27 for details. The mixed-model equations again form the basis for iterative REML estimates of the unknown variance components $ (\sigma_{A}^{2},\sigma_{u}^{2}, $ and $ \sigma_{e}^{2}) $ , as discussed in detail in LW Chapter 27.
+
+Example 19.6. Often the same trait is measured multiple times in the same individual, for example, the sizes of different litters from a single female. When multiple records are present for at least some individuals, a repeatability model is appropriate (Chapter 13; LW Chapter 26). Repeated measures from the same individual have three components: a breeding value, $ a_{k} $ , and a common (permanent) environmental value, $ p_{k} $ , which are the same in each measurement of individual k, and the residual environmental value, e, which varies between measurements, yielding the i th measurement of the kth individual as $ a_{k}+p_{k}+e_{ki} $ . The repeatability of the trait is $ r=(\sigma_{A}^{2}+\sigma_{p}^{2}) / \sigma_{z}^{2} $ , making the variance of the residuals $ \sigma_{e}^{2}= (1-r)\sigma_{z}^{2} $ and the variance of permanent environmental effects as $ \sigma_{p}^{2}=(r-h^{2})\sigma_{z}^{2} $ , where $ \sigma_{z}^{2} $ is the trait variance after accounting for fixed effects. We remind the reader that permanent "environmental" effects can also include nonadditive genetic components, as these are not passed along to offspring under random mating.
+
+The repeatability model was used by Estany et al. (1989) to examine the selection response for litter size in rabbits. Their model assumed that there are two groups of fixed effects: the year-season (environmental) effects, $ b_{t} $ which had 22 levels over the course of this experiment (with $ b_{0} $ set to zero), and the reproductive state, $ l_{i} $ , of the doe (three levels; because only two of these factors are estimable, $ l_{1} $ was assigned a value of zero). Their model had three random effects: $ a_{k} $ and $ p_{k} $ , for the additive genetic and permanent environmental effect of the kth doe, respectively, and the residual e, resulting in an overall model of
+
+$$
+y _ {t k \ell i} = \mu + l _ {i} + b _ {t} + a _ {k} + p _ {k} + e _ {t k \ell i}
+$$
+
+where $ y_{tk\ell i} $ denotes the size of the $ \ell $th litter of doe k in reproductive state i in season-year t. In matrix form, the mixed model becomes
+
+$$
+\mathrm {y} = \mathrm {X} \beta + \mathrm {Z a} + \mathrm {Z p} + \mathrm {e}
+$$
+
+where a and p are $ n\times1 $ vectors corresponding to the n does, $ \mathbf{Var}(\mathbf{a})=\sigma_{A}^{2}\mathbf{A},\mathbf{Var}(\mathbf{p})=\sigma_{p}^{2}\mathbf{I}, $ and $ \mathbf{Var}(\mathbf{e})=\sigma_{e}^{2}\mathbf{I}. $ X and Z are incidence matrices, and the vector of fixed effects is
+
+$$
+\beta = \left( \begin{array}{c} \mu \\ l _ {2} \\ l _ {3} \\ b _ {1} \\ \vdots \\ b _ {2 2} \end{array} \right)
+$$
+
+The mixed-model equations are given by Equation 19.21a, with
+
+$$
+\lambda_ {A} = \frac {\sigma_ {e} ^ {2}}{\sigma_ {A} ^ {2}} = \frac {1 - r}{h ^ {2}} \quad \mathrm {a n d} \quad \lambda_ {u} = \frac {\sigma_ {e} ^ {2}}{\sigma_ {p} ^ {2}} = \frac {1 - r}{r - h ^ {2}}
+$$
+
+The careful reader might notice that the two vectors of random effects, the breeding values, a, and permanent environment effects, p, enter the model as Za and Zp, respectively. Why, then, do we simply not combine these as, for example, Zu where u = a + p? The reason we do not do this (and indeed, the reason we can estimate a and p separately) is that a and p have different covariance structures, $ \sigma_{A}^{2} $ A versus $ \sigma_{p}^{2} $ I. While estimates of a borrow information from
+
+relatives (correlated observations provide information to supplement a direct observation), estimates of p depend only on the focal individual (as we assume these are uncorrelated between individuals).
+
+## Common Family and Maternal Effects
+
+When sibs are present, any common-family environmental effects (if not included directly in the model) are subsumed into the residuals, creating a correlation between the residuals of sibs. For example, if two sibs (i and j) share a common environmental value, c, then $ \sigma(e_{i},e_{j})=\sigma_{c}^{2} $ . Hence, there are off-diagonal elements in the covariance matrix of residuals, and we no longer have the standard OLS assumption of $ \operatorname{Var}(\mathbf{e})=\sigma_{e}^{2}\mathbf{I}. $ . Such correlations can easily be accommodated by adding an additional vector of random effects.
+
+Example 19.7. Meyer and Hill (1991) examined the response to selection on adjusted food intake (AFI) in mice (Example 19.2) and formulated a model incorporating shared family values, c, as random effects. In addition, their model accounts for fixed effects due to common environmental effects associated with generations (b, 22 levels), lines (L, 3 levels), sex (v male/female), and litter size (l, 7 levels for litters of size 6 to 12 individuals). Under their model, the observed value for AFI from theith individual from generation t, line $ \ell $ and fullsib family k is given by
+
+$$
+y _ {\ell , t k i} = \mu + b _ {t} + L _ {\ell} + v _ {j} + l _ {m} + a _ {\ell , t k i} + c _ {\ell , t k} + e _ {\ell , t k i}
+$$
+
+where this individual has sex j and was reared in a litter of size m. In matrix form, $ \mathbf{y}= $ $ \mathbf{X}\beta+\mathbf{Za}+\mathbf{Wc}+\mathbf{e} $ . The vector of fixed effects, $ \beta $ , contains the b, L, v, and l values, while the random effects are the vector of common family effects, c, the vector of additive genetic values, a, and the vector of residuals, e.
+
+The W incidence matrix has 1 as its ikth element if individual i is from family k, or else the element is 0. Note that Meyer and Hill have two model variables to account for litter effects-a fixed effect, l, common to all litters of the same size, and a random effect, $ c_{\ell,tk} $ that varies between families but is the same for all individuals within a particular family. The resulting REML estimate for heritability was 0.15, while the fraction of the total variation (after removal of the fixed effects) accounted for by random family effects was estimated to be $ \gamma^{2}=\sigma_{c}^{2} / \sigma_{z}^{2}=0.22 $ ,where $ \sigma_{z}^{2}=\sigma_{A}^{2}+\sigma_{c}^{2}+\sigma_{e}^{2} $ is the fixed-effects adjusted trait variance. Because the intraclass correlation between sibs is $ (h^{2}/2)+\gamma^{2} $ (Chapter 21), a larger fraction of the resemblance between sibs is due to shared family environments (potentially including maternal effects), rather than due to shared genes. One caveat is that the model assumes no dominance variance. If this are present, sibs also share dominance variance $ (\sigma_{D}^{2}/4) $ ,but under this model, it would be absorbed into $ \sigma_{c}^{2}. $
+
+Sib correlations (beyond those accounted for by their correlations in breeding value for the focal trait) can arise for multiple reasons. The first is dominance, which we will address shortly. The second and third reasons are common family effects, which can arise from two different sources: shared environmental effects and shared maternal effects with a genetic component (i.e., maternal performance itself has a genetic component; see Chapters 15 and 22). The distinction between the genetic and the environmental components of maternal effects (both of which may be included in a model) was foreshadowed in Example 19.6, in that they result in different covariance structures. Environmental correlations are unique to a given family, while maternal-genetic effects are correlated over relatives, even those in different generations. In Example 19.7, the common environment, c, was assumed to be uncorrelated between sibships, implying that its covariance structure is $ \operatorname{V a r} ( \mathbf{c} )=\sigma_{c}^{2} \mathbf{I}, $ which is a diagonal matrix whose dimension is set by the number of families. There is no correlation across different sibships and thus no shared information.
+
+When a mother has several litters (especially when each may contain a modest to large number of offspring), modifications beyond assigning a single (random) common-family environment value for all her litters may be considered. One approach is to assume that each particular litter has a unique common-family effect, that is uncorrrelated across litters from the same mother. Here, the covariance structure remains $ \operatorname{V a r} ( \mathbf{c} )=\sigma_{c}^{2} \mathbf{I} $ , but now each litter (rather than each mother) has its own c value.
+
+A second, and perhaps biologically more realistic, approach is to consider something akin to a repeatability model (Example 19.6), wherein the contribution from the mother to a particular litter has two components, one shared over all litters, and a second unique to each litter. Under this model, the common-family environmental effect for all sibs in the i th litter from mother k is given by $ c_{ki}+p_{k} $ a permanent environmental effect for this mother, $ p_{k} $ (a common effect shared by all her litters, as in our initial model), plus a unique environment shared by all members of her i th litter, $ c_{ki} $ . For this model, we need to estimate the variances $ \sigma_{p}^{2} $ and $ \sigma_{c}^{2} $ , which correspond to the contributions from $ p_{k} $ and $ c_{ki} $ , respectively. We assume that at least one litter has two or more individuals, otherwise $ c_{ki} $ and $ p_{k} $ cannot be estimated separately. More generally, this model is not expected to be very efficient unless the expected number of offspring per litter is modest to large. If the common-litter effect under this model is environmental, namely, that a mother does not pass along any of her performance genetically to her daughters, then the covariance structure for these two vectors of random effects will be $ \operatorname{Var}(\mathbf{c})=\sigma_{c}^{2}\mathbf{I} $ and $ \operatorname{Var}(\mathbf{p})=\sigma_{p}^{2}\mathbf{I} $ , square matrices whose dimensions are the total number of separate litters in the experiment and the number of mothers, respectively.
+
+However, maternal performance could also have a genetic component, such that female relatives have correlated maternal performances. In this case, we would add a third random effect, $ a_{m} $ (the breeding value of this maternal effect), to the model. This vector of breeding values for maternal performance has a covariance matrix of $ \mathbf{V a r} \left( \mathbf{a}_{m} \right)=\sigma_{A}^{2} \left( a_{m} \right) \mathbf{A}. $ Distinguishing between maternal and direct effects requires that there are paternal, as well as maternal, links in the pedigree (Clément et al. 2001; Kruuk 2004; Chapter 22). A complication is that the breeding values for the focal trait and maternal performance can be correlated. This raises a multiple-trait problem (LW Chapter 27). We discuss maternal effects in greater detail in Chapter 22 in the context of more general models of associative effects.
+
+In summary, from an operational standpoint, if maternal effects are suspected, at a minimum, a common-family effect should be included, and it should be in the form of a repeatability model if the female has multiple litters (provided each has several offspring). More generally, if there are many links between female relatives (with litters) in the data set, one should seriously consider a genetic maternal-effects model. Failure to do so may result in contributions from shared genetic maternal performance being regarded as breeding values for the direct trait, giving a biased picture of the nature of the selection response (Milner et al. 2000; Clément et al. 2001; Kruuk 2004). Chapter 22 will examine in more detail when to include, and when to exclude, random effects when constructing more complex models.
+
+## Treating Certain Breeding Values as Fixed Effects
+
+How should one proceed if the base population has, itself, been under selection? Graser et al. (1987) suggested that if this is known, or suspected, to be the case, the base population breeding values should be treated as fixed, rather than random, effects. The motivation for this suggestion is that if the parents are selected, they are not a random sample from the base population. Because REML variance estimates are unbiased by fixed effects, any bias in the variance of the initial sample is ignored by treating the original parental breeding values as fixed. However, simulation studies show that even if initial bias is reduced by treating the parents as fixed, selection on the resulting offspring (or future generations) introduces additional bias (van der Werf 1990).
+
+Despite this reservation, we briefly review the approach here, as parents (beyond the base population) whose records are missing are also often treated as fixed, which requires
+
+some modifications of the mixed-model equations. Let $ \mathbf{a}_{b} $ be the vector of breeding values for the base population and $ \mathbf{a}_{r} $ be breeding values of the remaining individuals that descend from the base population. Following Graser et al. (1987), we can express the dependence of $ \mathbf{a}_{r} $ on the base population breeding values, $ \mathbf{a}_{b} $ , as follows
+
+$$
+\left( \begin{array}{l} \mathbf {a} _ {\mathrm {b}} \\ \mathbf {a} _ {\mathrm {r}} \end{array} \right) = \left( \begin{array}{c c} \mathbf {I} & \mathbf {0} \\ \mathbf {P} _ {1} & \mathbf {P} _ {2} \end{array} \right) \left( \begin{array}{l} \mathbf {a} _ {\mathrm {b}} \\ \mathbf {a} _ {\mathrm {r}} \end{array} \right) + \left( \begin{array}{l} \mathbf {0} \\ \mathbf {s} \end{array} \right)
+$$
+
+where s is the vector of segregational residuals (Equation 19.15a) and $ \mathbf{P}_{1} $ and $ \mathbf{P}_{2} $ are matrices with values of 1/2 in the parent's column in each row. Here, $ \mathbf{a}_{r} $ is treated as a random effect because it is a function of a fixed effect $ \left( \mathrm{a_{b}} \right) $ and a random effect (s). The resulting mixed-model is
+
+$$
+\mathrm {y} = \mathrm {X} \beta + \mathrm {Z} _ {1} \mathrm {a} _ {\mathrm {b}} + \mathrm {Z} _ {2} \mathrm {a} _ {\mathrm {r}} + \mathrm {e}
+$$
+
+Graser et al. showed that the associated mixed-model equations are
+
+$$
+\left( \begin{array}{c c c} \mathbf {X} ^ {T} \mathbf {X} & \mathbf {X} ^ {T} \mathbf {Z} _ {1} & \mathbf {X} ^ {T} \mathbf {Z} _ {2} \\ \mathbf {Z} _ {1} ^ {T} \mathbf {X} & \mathbf {Z} _ {1} ^ {T} \mathbf {Z} _ {1} + \lambda \mathbf {Q} ^ {T} \mathbf {G} ^ {- 1} \mathbf {Q} & - \lambda \mathbf {Q} ^ {T} \mathbf {G} ^ {- 1} \\ \mathbf {Z} _ {2} ^ {T} \mathbf {X} & - \lambda \mathbf {G} ^ {- 1} \mathbf {Q} & \mathbf {Z} _ {2} ^ {T} \mathbf {Z} _ {2} + \lambda \mathbf {G} ^ {- 1} \end{array} \right) \left( \begin{array}{c} \widehat {\beta} \\ \widehat {\mathbf {a}} _ {\mathbf {b}} \\ \widehat {\mathbf {a}} _ {\mathbf {r}} \end{array} \right) = \left( \begin{array}{c} \mathbf {X} ^ {T} \mathbf {y} \\ \mathbf {Z} _ {1} ^ {T} \mathbf {y} \\ \mathbf {Z} _ {2} ^ {T} \mathbf {y} \end{array} \right)
+$$
+
+where $ \lambda=(2\sigma_{e}^{2} / \sigma_{A}^{2}) $ , and
+
+$$
+\mathbf {Q} = \left(\mathbf {I} - \mathbf {P} _ {2}\right) ^ {- 1} \mathbf {P} _ {1} \quad \mathrm {a n d} \quad \mathbf {G} = \left(\mathbf {I} - \mathbf {P} _ {2}\right) ^ {- 1} \mathbf {F} \left[ \left(\mathbf {I} - \mathbf {P} _ {2}\right) ^ {- 1} \right] ^ {T}
+$$
+
+with the elements of the diagonal matrix, F, given by Equation 19.16. Note that the information used to estimate the additive-genetic variance comes from the vector, s, of segregation values, and thus estimates the additive genic variance, $ \sigma_{a}^{2} $ . If no linkage disequilibrium is present in the base population, this segregation-based estimate is also, then, an estimate of the additive genetic variance, $ \sigma_{A}^{2} $ ; otherwise it is biased (as $ \sigma_{A}^{2}\neq\sigma_{a}^{2} $ when $ d\neq0 $ ; Chapter 15).
+
+## Dominance
+
+Up to this point, we have been assuming that all genetic variation is additive, requiring us to only consider the vector, a, of breeding values and its numerator relationship matrix, A. When nonadditive genetic variance is present, it creates additional genetic correlations between certain relatives beyond those accounted for by A. The simplest setting is that in which dominance occurs, which inflates the covariance among (noninbred) full sibs by $ \sigma_{D}^{2} / 4. $ As demonstrated previously, sibs can also have their covariance inflated by common-family effects, and separating the contribution of dominance from common-family environment is nontrivial, as it requires very specific types of links in the pedigree.
+
+If the goal is simply to reduce the bias in predicted breeding values when dominance is present, an animal model with an additional random factor for common-family effects (e.g., Example 19.7) will often be satisfactory. This model simply estimates the common sib variance, $ \sigma_{c}^{2} $ , which may include contributions from both dominance and shared-family environments.
+
+The goal of estimating the dominance variance directly, and thus predicting dominance values, is considerably more difficult. Misztal (1997) found that roughly 20-fold more data are required for dominance estimates to match the precision of their additive counterparts. This is because information on dominance only arises from relatives with a nonzero coefficient of fraternity (Equations 11.13, 11.19a, and 11.19b; LW Equation 7.7), which requires that each parent from one individual be related to at least one parent of the other individual (see Equation 19.26a). Even in these cases, the coefficient of fraternity (which yields the corresponding weight on $ \sigma_{D}^{2} $ in the covariance between relatives; LW Equation 7.7) is
+
+small (e.g., 0.25 for full sibs, 0.0625 for double first-cousins, and much less for more distant relatives). If the only such links in a pedigree are between full sibs, then common-family environmental effects and dominance are fully confounded and cannot be separated (meaning that one must have a sufficient number of relatives with different, but nonzero, coefficients of fraternity).
+
+Assuming no common-family environmental effects (which is a major assumption), we can attempt to estimate dominance as follows. Letting the vector d denote the dominance effects, the mixed model becomes
+
+$$
+y = X \beta + Z a + Z d + e
+$$
+
+The overall genetic merit of an individual is estimated by $ \widehat{\mathbf{g}}=\widehat{\mathbf{a}}+\widehat{\mathbf{d}} $ . Turning to the covariance structure of this model, as before, $ \operatorname{Var} (\mathbf{a})=\sigma_{A}^{2}\mathbf{A} $ and $ \operatorname{Var} (\mathbf{e})=\sigma_{E}^{2}\mathbf{I} $ , while the covariance matrix for dominance effects is $ \operatorname{Var} (\mathbf{d})=\sigma_{D}^{2}\mathbf{D} $ , yielding
+
+$$
+\operatorname {V a r} (\mathbf {y}) = \mathbf {V} = \sigma_ {A} ^ {2} \mathbf {Z A Z} ^ {T} + \sigma_ {D} ^ {2} \mathbf {Z D Z} ^ {T} + \sigma_ {e} ^ {2} \mathbf {I}
+$$
+
+where D is the dominance genetic relationship matrix, which will be detailed shortly. Equation 19.25b shows that if we assumed the validity of the model
+
+$$
+\mathbf {y} = \mathbf {X} \beta + \mathbf {Z} \mathbf {a} + \mathbf {e} ^ {*}
+$$
+
+then the covariance structure is given by
+
+$$
+\operatorname {V a r} \left(\mathrm {e} ^ {*}\right) = \sigma_ {D} ^ {2} \mathrm {Z D Z} ^ {T} + \sigma_ {c} ^ {2} \mathrm {I}
+$$
+
+If we assumed the validity of Equation 19.25c and the absence of dominance, we would (incorrectly) use $ \sigma_{e}^{2} $ I, instead of the correct error structure, which potentially would bias our estimates of a.
+
+The elements of D are obtained as follows. The covariance between dominance effects for (noninbred) individuals i and j is the product of the dominance genetic variance and the coefficient of fraternity, $ \sigma_{D}^{2}\Delta_{ij} $ . From LW Equation 7.7, this is given by
+
+$$
+\Delta_ {i j} = \Theta_ {g k} \Theta_ {h l} + \Theta_ {g l} \Theta_ {h k}
+$$
+
+where i's parents are indexed by g and h and j's parents are indexed by k and l, and where (as above), $ \Theta $ is the coefficient of coancestry. Recalling that the elements of the numerator relationship matrix, A, are $ 2\Theta_{ij} $ , the off-diagonal elements of D can be computed from the elements of A by
+
+$$
+D _ {i j} = \frac {A _ {g k} A _ {h l} + A _ {g l} A _ {h k}}{4}
+$$
+
+whereas the diagonal elements are all $ D_{ii}=1 $ (when i is not inbred). Note that D is expected to be considerably more sparse (most of its off-diagonal elements are zero) than A, and hence may not contribute information for most individuals. Ovaskainen et al. (2008) noted that Equation 19.26a is an approximation, requiring that the four probabilities (i.e., the $ \Theta_{ij} $ ) determining $ \Delta_{ij} $ be independent. This is usually not a serious problem unless the pedigree is highly inbred. The resulting mixed-model equations for Equation 19.25a become
+
+$$
+\left( \begin{array}{c c c} \mathbf {X} ^ {T} \mathbf {X} & \mathbf {X} ^ {T} \mathbf {Z} & \mathbf {X} ^ {T} \mathbf {Z} \\ \mathbf {Z} ^ {T} \mathbf {X} & \mathbf {Z} ^ {T} \mathbf {Z} + \lambda_ {A} \mathbf {A} ^ {- 1} & \mathbf {Z} ^ {T} \mathbf {Z} \\ \mathbf {Z} ^ {T} \mathbf {X} & \mathbf {Z} ^ {T} \mathbf {Z} & \mathbf {Z} ^ {T} \mathbf {Z} + \lambda_ {D} \mathbf {D} ^ {- 1} \end{array} \right) \left( \begin{array}{c} \widehat {\beta} \\ \widehat {\mathbf {a}} \\ \widehat {\mathbf {d}} \end{array} \right) = \left( \begin{array}{c} \mathbf {X} ^ {T} \mathbf {y} \\ \mathbf {Z} ^ {T} \mathbf {y} \\ \mathbf {Z} ^ {T} \mathbf {y} \end{array} \right)
+$$
+
+where $ \lambda_{A}=\sigma_{e}^{2} / \sigma_{A}^{2} $ and $ \lambda_{D}=\sigma_{e}^{2} / \sigma_{D}^{2} $ . Hoeschele and Van Raden (1991) presented a rapid method for computing $ \mathbf{D}^{-1} $ for a noninbred population.
+
+In addition to these concerns, inbreeding (which occurs in all selection experiments) introduces major complications. First, there may be inbreeding depression. In some situations, this can be dealt with by simply including the level of inbreeding (f) as a covariate, for example, by using a model such as
+
+$$
+y _ {t i} = \mu + \left(B \cdot f _ {t i}\right) + a _ {t i} + b _ {t i} + e _ {t i}
+$$
+
+where $ f_{ti} $ is the inbreeding coefficient for the ith individual in generation t and B is the inbreeding depression under complete inbreeding, which is a fixed factor to be estimated. Because $ A_{ii}=(1+f_{i}) $ , the value for $ f_{ti} $ immediately follows from the diagonal element of A corresponding to individual ti, namely $ f_{ti}=A_{ti,ti}-1. $
+
+When the only nonadditive genetic interaction is dominance, inbreeding depression is a linear function of the inbreeding level, f, but this relationship is nonlinear when certain types of epistasis are present (LW Chapter 10). Thus, if there is significant epistasis, Equation 19.28 may not appropriately correct for inbreeding depression, especially at very high values of f (those approaching one). If the levels of inbreeding are very similar between a selected and a control population, the use of a control can account for nonlinear inbreeding depression. If f is expected to be small or modest (say f $ \leq 0.3 $ ), then $ f^{2} $ will be 0.01 or less and the weighting on any epistatic term will be quite small. In such cases, a simple linear model for inbreeding should be sufficient.
+
+A second, and more subtle, complication is that the covariance between inbred relatives with dominance is no longer a function of just $ \sigma_{A}^{2} $ and $ \sigma_{D}^{2} $ . As discussed in Chapter 11, these covariances now depend upon four other quadratic components $ (\sigma_{DI}^{2},\sigma_{ADI},\iota^{*},\iota^{2}) $ ; see Equation 11.13 and Table 11.2. While one could formulate a mixed model incorporating all six quadratic components (Equations 11.19a and 11.19b present the required covariance structures), the resulting model is extremely complex, numerically very demanding, and expected to yield very low precision estimates of nonadditive genetic effects. A start toward including these other variance components was developed by Smith and Maki-Tanila (1990), who should be consulted for more details. A simpler, but only approximate, approach is to use Equation 19.27, with a D matrix that approximates the elements under inbreeding (Smith and Maki-Tanila 1990). One could also combine the use of a modified D with a covariate for inbreeding depression (Equation 19.28), but this is still a largely ad hoc approach to a complex problem.
+
+Some guidance on dealing with dominance is offered from simulations by de Boer and van Arendonk (1992), who examined the consequences of ignoring a cofactor for inbreeding depression and not using the full (i.e., correct) covariance structure under inbreeding. When a standard dominance model not accounting for inbreeding was used, estimates of both additive and dominance effects were biased. However, when a simple cofactor for inbreeding depression was included, but the full covariance structure under inbreeding was ignored, estimates of a were generally unbiased, at least up to the level of inbreeding used in the simulations ( $ f=0.35 $ ). Thus, simply including a fixed effect for inbreeding depression (Equation 19.28) and a random effect for common-family effects (Example 19.7) appears to be a relatively robust approach for handling dominance, at least for modest levels of inbreeding (those typically seen in most animal-breeding programs). With highly inbred populations (such as selfed lines), other approaches are required (Chapter 23).
+
+The situation with epistasis is even more complex than that for dominance. The encouraging news is that the weighting of the nonadditive-variance component terms for the covariances between even modestly distant relatives is very small (e.g., LW Equation 7.12), so even if nonadditive components are significant, their actual contribution to the genetic covariance of most relatives, especially those separated by more than one generation, are very minor and can usually be ignored. In theory, epistatic terms can be included in the mixed-model equations in a similar fashion as with dominance; see LW Chapter 26 for details, and LW Chapter 27 for modifications of the REML equations to estimate nonadditive variances. In practice this is almost never done, as the effects are generally small and the precision of estimates is quite poor at best.
+
+## BAYESIAN MIXED-MODEL ANALYSIS
+
+As mentioned throughout this chapter, a standard mixed-model analysis does not fully account for the uncertainty introduced into EBVs by using estimates of the model variance components (instead of their true values). While there are large-sample approximations for the sample variance of a REML variance estimator, it is never fully clear what constitutes "large." Further, quantities of interest, such as the heritability, are often functions of the estimated quantities. The sample variances and distributions of such functions are very complicated, and they are typically obtained through either simulations or approximations (e.g., the delta method; LW Appendix 1). Bayesian approaches offer solutions to both of these problems. While Bayesian statistics (as opposed to more standard, or frequentist statistics) are often touted for their ability to incorporate prior information, their key utility is in providing a more complete description of the uncertainty of an estimate.
+
+Frequentists assume that the true value of a parameter is (typically) a constant and the samples are variable. Statistics (such as confidence intervals) are computed by conceptually drawing an infinite number of samples. For example, the frequentist's expectation is that the true value of a parameter is contained within constructed 95% confidence intervals in all but 5% of such draws. In contrast, a Bayesian assumes that the sample is fixed while the parameter is random, the focus being on how the data changes our prior assumptions for the probability distribution for possible locations of the parameter. Thus, the term "Bayesian mixed model" is (formally) inappropriate, as all terms in a Bayesian analysis are assumed to be random, and hence never "mixed." However, we use this term to emphasize that many of the basic foundations (such as the model formulation) of an MM analysis of selection experiments remain unchanged in a Bayesian framework. What does change is how we analyze the data.
+
+Appendix 2 introduces some of the basic ideas in a Bayesian analysis (beyond our short introduction here). Computational issues are extremely important, and they are covered in Appendix 3. Indeed, the recent explosion in the application of Bayesian approaches largely follows from relatively recent computational approaches, such as Markov Chain Monte Carlo (MCMC) methods that allow complex distributions to be handled through straightforward (but computationally intensive) procedures (Appendix 3).
+
+## Introduction to Bayesian Statistics
+
+While very deep (and subtle) differences in philosophy separate hard-core Bayesians from hard-core frequentists (Glymour 1981; Efron 1986), our treatment here of Bayesian methods is motivated simply by their use as a powerful statistical tool. Their introduction into quantitative genetics can be largely credited to the influential paper of Gianola and Fernando (1986), which reviewed Bayesian applications to animal breeding. Blasco (2001, 2017) provided nice overviews of Bayesian versus frequentist approaches in quantitative genetics and both are highly recommended, while a detailed treatment of applications to quantitative genetics was provided by Sorensen and Gianola (2002). Gianola and Rosa (2015) presented an excellent review of the history of statistical methods in animal breeding, culminating with the wide acceptance of Bayesian approaches.
+
+The foundation of Bayesian statistics is Bayes' theorem (Appendix 2), which provides the relationship between $ \operatorname* {P r} ( x \mid y ) $ and $ \operatorname* {P r} ( y \mid x ) $ , namely, the flipped conditional probabilities. The continuous, vector-valued version of this theorem is
+
+$$
+p (\Theta | \mathbf {y}) = \frac {p (\mathbf {y} | \Theta) p (\Theta)}{p (\mathbf {y})} = \frac {p (\mathbf {y} | \Theta) p (\Theta)}{\int p (\mathbf {y} , \Theta) d \Theta}
+$$
+
+where $ \boldsymbol{\Theta}^{T}=(\theta^{(1)},\theta^{(2)},\dots,\theta^{(k)}) $ is a vector of k random variables. Here $ p(\Theta) $ is our prior belief (prior for short) about the distribution of the unknown values, $ \Theta $ , while $ p(\mathbf{y}|\Theta) $ is simply a standard likelihood function for the probability density of the observed vector of data, y, given that the unknown parameters have a specified value of $ \Theta $ (LW Appendix 4). The product of these two variables, normalized by $ p(\mathbf{y}) $ to form a proper probability
+
+distribution (i.e., that integrates to 1), is our posterior belief (the posterior), $ p(\Theta|\mathbf{y}) $ , for the distribution of the unknown parameters, given both the data, $ \mathbf{y} $ , and the prior information, $ p(\Theta) $ . Because $ p(\mathbf{y}) $ , the probability of the data vector $ \mathbf{y} $ , is a constant independent of $ \Theta $ , it is typically ignored, and the posterior is often simply written as
+
+$$
+p (\boldsymbol {\Theta} \mid \mathbf {y}) \propto p (\mathbf {y} \mid \boldsymbol {\Theta}) p (\boldsymbol {\Theta})
+$$
+
+In words, the posterior is the product of the likelihood and the prior multiplied by a normalization constant to return a proper probability distribution.
+
+Often, only a subset of the unknown variables is of concern, with the rest being regarded as nuisance variables (or nuisance parameters) that we wish to remove (or at least ignore). To see how this can be accomplished, partition the vector of unknown parameters as $ \Theta^{T}=(\Theta_{1}^{T},\Theta_{nu}^{T}) $ , where $ \Theta_{nu} $ is the column vector of nuisance variables. Integrating the full posterior over $ \Theta_{nu} $ yields the marginal posterior distribution for the variables of interest, $ \Theta_{1} $ , as
+
+$$
+\begin{array}{l} p \left(\Theta_ {1} \mid \mathbf {y}\right) = \int p \left(\Theta_ {1}, \Theta_ {n u} \mid \mathbf {y}\right) d \Theta_ {n u} \\ = \int p \left(\Theta_ {1} \mid \Theta_ {n u}, \mathbf {y}\right) p \left(\Theta_ {n u} \mid \mathbf {y}\right) d \Theta_ {n u} \\ = E _ {\Theta_ {n u}} \left[ p \left(\Theta_ {1} \mid \Theta_ {n u}, \mathbf {y}\right) \right] \\ \end{array}
+$$
+
+The last line highlights the fact that the marginal posterior is the conditional distribution of the parameters of interest, averaged over the distribution of nuisance parameters.
+
+The marginal posterior is a very powerful tool, as it accounts for how uncertainty in the nuisance variables influences the level of uncertainty in the variable or variables of interest. This marginal probability calculation illustrates both the strength and the weakness of a Bayesian analysis before the advent of MCMC approaches. The strength is that obtaining such a marginal is very powerful for inference. The weakness is that the integration to obtain this marginal can be daunting (at best). Fortunately, MCMC techniques allow one to easily simulate draws from most marginal distributions (Appendix 3).
+
+The dependence of the posterior on the prior (which can be partly assessed by examining the posterior's stability over different priors) provides an indication of how much information on one or more unknown variables is contained in the data. If the posterior is highly dependent on the prior, the data likely will have little signal, while if the posterior is largely unaffected by the shape of the assumed prior, the data will be highly informative. Such explorations of the effects of a prior under a careful Bayesian analysis offer some protection from incorrect conclusions based on weak likelihoods (a flat likelihood surface) or an overly strong prior. It is not uncommon to find, in the same analyses, that the marginal posterior for some variables is very robust to the choice of priors (with the data containing a strong signal generating a highly peaked likelihood surface for these variables), while for other variables, the marginal is highly dependent on the prior (with very little information contained in the data on these variables, generating a flat likelihood surface).
+
+<div align="center">
+
+Example 19.8. As an example of a Bayesian analysis, consider the simple case of n observations from a normal distribution with an unknown mean, $ \mu $ , but known variance, $ \sigma^{2} $ . The details for this analysis (and more realistic cases, such as those in which both the mean and the variance are unknown) are developed in Appendix 2. Assuming the data $ \mathbf{y}=(y_{1},\cdots,y_{n})^{T} $ are n independent draws from this distribution, the resulting likelihood function, which corresponds to $ p(\mathbf{y}|\mu) $ , is
+
+</div>
+
+$$
+p (\mathbf {y} \mid \mu) = \frac {1}{\sqrt {2 \pi \sigma^ {2}}} \exp \left(- \sum_ {i = 1} ^ {n} \frac {\left(y _ {i} - \mu\right) ^ {2}}{2 \sigma^ {2}}\right)
+$$
+
+Suppose we assume a Gaussian prior for the location of the mean, $ \mu\sim\mathrm{N}(\mu_{0},\sigma_{0}^{2}) $ , so that
+
+$$
+p (\mu) = \frac {1}{\sqrt {2 \pi \sigma_ {0} ^ {2}}} \exp \left(- \frac {(\mu - \mu_ {0}) ^ {2}}{2 \sigma_ {0} ^ {2}}\right)
+$$
+
+While $ \mu $ is treated as a fixed (but unknown) value in a standard (frequentist) analysis, it is treated as a random variable in a Bayesian analysis. There are no fixed effects in a Bayesian analysis, as everything is treated as a random variable.
+
+The mean, $ \mu_{0} $ , and variance, $ \sigma_{0}^{2} $ , are referred to as the prior hyperparameters, where $ \mu_{0} $ specifies a prior location for the mean and $ \sigma_{0}^{2} $ specifies the uncertainty in this prior location. The larger is this variance, the greater is our uncertainty. In the limit (as $ \sigma_{o}^{2}\rightarrow\infty $ ), this corresponds to $ p(\mu)=c $ , a constant, which is a uniform or flat prior, where all values of $ \mu $ between some upper and lower value are assumed to be equally likely. (Keynes 1921 called this the principle of indifference all possible outcomes are equally probable.) A little algebra (Appendix 2) yields
+
+$$
+p (\mu \mid \mathbf {y}) \propto p (\mathbf {y} \mid \mu) p (\mu) \propto \exp \left\{- \left(\mu - \mu_ {*}\right) ^ {2} / \left[ 2 \sigma_ {*} ^ {2} \right] \right\}
+$$
+
+where the expressions for $ \mu_{*} $ and $ \sigma_{*}^{2} $ are given in Appendix 2 (Equation A2.22b). Thus, the posterior density function for $ \mu $ is a normal with a mean of $ \mu_{*} $ and variance of $ \sigma_{*}^{2} $ , which can be formally expressed as
+
+$$
+\mu \mid \left(\mathbf {y}, \sigma^ {2}, \mu_ {0}, \sigma_ {0} ^ {2}\right) \sim \mathrm {N} \left(\mu_ {*}, \sigma_ {*} ^ {2}\right)
+$$
+
+Notice that our Gaussian prior for $ \mu $ conjugated with the likelihood function, with the product of the prior and likelihood returning a distribution in the same family as the prior (but whose distribution parameters, which here are the mean and the variance, have been changed from their values in the prior by the data). The use of such conjugate priors (for a given likelihood), which is a key tool in Bayesian analysis, is explored in detail in Appendix 2. For example, with normally distributed data and an unknown variance, using a scaled inverse- $ \chi^{2} $ prior for the variance also conjugates the likelihood, with the posterior distribution for the variance also following a scaled inverse- $ \chi^{2} $ ,but (as above) also with different distribution parameters (i.e., the shape and scale parameters are changed; Appendix 2).
+
+A Bayesian analysis returns distributions, rather than point estimates. A number of summary statistics can be reported for the posterior, such as its mean, median (50% value), and mode (most frequent value, which is equivalent to the MLE in a likelihood analysis). More generally, when closed-form analytical expressions are not available, one can simply plot the posterior distribution via a histogram from values generated through MCMC methods (as discussed in Appendix 3).
+
+What is the relative importance of the prior information, p( $ \mu $ ), compared to the actual data, y? Equation A2.22b gives the mean of the posterior distribution as
+
+$$
+\mu_ {*} = \mu_ {0} \frac {\sigma_ {*} ^ {2}}{\sigma_ {0} ^ {2}} + \bar {y} \frac {\sigma_ {*} ^ {2}}{\sigma^ {2} / n}
+$$
+
+With a very diffuse prior on $ \mu $ (i.e., $ \sigma_{0}^{2}\gg\sigma^{2} $), Equation A2.22b shows that $ \sigma_{*}^{2}\rightarrow\sigma^{2}/n $ and thus $ \mu_{*} \rightarrow \overline{y} $ , so with very weak prior information, the mean of the posterior distribution is close to the usual estimate of $ \mu $ , which is the sample mean, $ \overline{y} $ . Conversely, as we collect enough data (i.e., large n), $ \sigma_{*}^{2}\rightarrow\sigma^{2}/n $ and again $ \mu_{*} \rightarrow \overline{y} $ . Thus, even with a very strong prior belief about the location of the mean $ (\sigma_{0}^{2} $ is small), as our sample size becomes sufficiently large, the mean of the posterior approaches the sample mean. With a modest prior and data (meaning that $ \sigma_{0}^{2} $ and n are modest), this expression shows how these two contributions are weighted.
+
+Example 19.9. A simulation study by Sorensen et al. (1994) examined the effects on the posterior estimate of heritability by using different priors on the variance components. To study the impact of sample size, the data were analyzed in two sets: the entire data set (Large) and a partial subset (Small). The simulated heritability was 0.5. Both uniform and scaled inverse $ - \chi^{2} $ priors for the additive and residual variance were used. The uniform spreads belief
+
+<div align="center">
+
+evenly over all possible values within a defined range, while the inverse- $ \chi^{2} $ places more weight on specific values (Appendix 2). The mean and variance of the marginal posterior distribution for $ h^{2} $ (denoted by $ E[h^{2}|y] $ , and $ \sigma^{2}[h^{2}|y] $ , respectively) in these four cases were as follows
+
+</div>
+
+<table border="1"><tr><td>Data Set</td><td>Prior</td><td>E[h2|y]</td><td>σ2[h2|y]</td></tr><tr><td>Small</td><td>Uniform</td><td>0.737</td><td>0.0226</td></tr><tr><td>Small</td><td>Inverse-χ2</td><td>0.501</td><td>0.0029</td></tr><tr><td>Large</td><td>Uniform</td><td>0.550</td><td>0.0163</td></tr><tr><td>Large</td><td>Inverse-χ2</td><td>0.529</td><td>0.0024</td></tr></table>
+
+Note the disparity of the estimates under the two priors in the partial data case (Small) and their agreement in the full data case (Large). In the partial data case, the effect of the prior had a strong influence, indicating a weak signal (likelihood) for $ h^{2} $ in this particular data set. With the full data set, the signal greatly increased, mitigating the effects of the prior. As expected, the posterior variance, $ \sigma^{2}[h^{2}|y] $ , decreased under the larger sample size (Small versus Large) for both priors. Also note that the posterior variance was smaller under the assumed inverse- $ \chi^{2} $ priors. Thus, the choice of a prior influences not only the mean of the estimate, but also its variance. In this case, while the different priors yielded essentially the same mean heritability in the full data set, their variances differed by an order of magnitude.
+
+This is an example of a sensitivity analysis using different priors to probe the stability of the posterior. With complex posteriors, one can observe broad stability for many of the variables (insensitivity to changes in the priors), but extreme dependence in the others. The use of different priors provides one means to explore the amount of signal along the different directions (variables) of the likelihood surface.
+
+Example 19.10. In the context of analyzing a selection response experiment, the vector of breeding values, a, is of interest, while the q fixed effects ( $ \beta $ ) and variances $ (\sigma_{A}^{2},\sigma_{e}^{2}) $ are often regarded as nuisance parameters. In this case, Equation 19.30 gives the marginal distribution of the breeding values a, given the data y, as
+
+$$
+p (\mathbf {a} \mid \mathbf {y}) = \int p (\mathbf {a}, \boldsymbol {\beta}, \sigma_ {A} ^ {2}, \sigma_ {e} ^ {2} \mid \mathbf {y}) d \boldsymbol {\beta} d \sigma_ {A} ^ {2} d \sigma_ {e} ^ {2}
+$$
+
+The integration is over the q+2 dimensional space given by the q elements in $ \beta $ and the two variances. This conditioning removes any dependencies of estimates of the response on estimates of the variance components and fixed effects. Uncertainties introduced by estimating these nuisance parameters are automatically accommodated when considering the marginal distribution. While solving this multidimensional integral is extremely challenging, a Gibbs sampler (below) can often be constructed to obtain draws from this marginal distribution.
+
+With the marginal density, $ p(\mathbf{a}|\mathbf{y}) $ , in hand, and recalling Equation 19.8b, one can obtain estimates of the response to selection, $ \mathbf{K}^{T}\mathbf{a} $ , that are independent of the assumed (or estimated) additive-genetic variance, $ \sigma_{A}^{2} $ . The error due to estimation of the additive variance from the data is directly incorporated when the marginal is computed, as we integrate over possible values of $ \sigma_{A}^{2} $ and their support, given the data. This independence of the estimated selection response from the estimate of additive variance and the subsequent incorporation of the error in estimating $ \sigma_{A}^{2} $ in the estimate of the response are two very compelling reasons for performing a Bayesian analysis of response.
+
+This example hints at a key feature noted by Gianola and Fernando (1986). If all the data on which selection was based are included in the analysis, then (by integrating over all nuisance parameters) the Bayesian approach accounts for any potential bias introduced by selection provided that the model assumptions, such as multivariate normality, hold).
+
+## Computing Posteriors and Marginals: MCMC and the Gibbs Sampler
+
+Historically, the widespread implementation of Bayesian approaches was limited by the difficulty in obtaining marginal posterior distributions, which typically requires the integration
+
+of complex, high-dimensional functions (e.g., Equations 19.29a and 19.30). Markov Chain Monte Carlo (MCMC) approaches (Appendix 3) provide a solution by offering straightforward (although computationally demanding) procedures for generating random draws from very complex distributions. One such distribution is the posterior (given the data and the prior) in a Bayesian analysis, and it often turns out to be fairly easy to implement a sampler that allows draws from this distribution.
+
+Simulating random vectors directly drawn from some complex target distribution (such as the posterior for a given model and particular data set) can be a very difficult task. The idea behind MCMC approaches is to successively draw samples from far simpler distributions in such a way that the distribution of the samples converges to the target distribution. These approaches are so named because one uses the previous sample value to randomly generate the next sample value, thus generating a Markov chain (Appendix 3). While there are a wide range of MCMC methods, two of the most commonly encountered in the quantitative-genetics literature are the Metropolis-Hastings algorithm (Metropolis and Ulam 1949; Metropolis et al. 1953; Hastings 1970), and the Gibbs sampler (Geman and Geman 1984).
+
+Under Metropolis-Hastings, one simulates draws from a complex target distribution by first drawing a random variable from a specified (and simpler) distribution and then using a probability-based decision rule to decide whether to keep that realization or reject it (details are in Appendix 3). The strength of Metropolis-Hastings is that is can be applied to a very wide range of problems, such as priors that do not conjugate with the likelihood (and hence do not have a simple form). Its weakness is that candidate values can end up being rejected with a very high probability, making the sampler very inefficient (requiring very long runs to produce a reasonably sized trimmed sequence with low correlation between elements), especially in a multivariate setting, where each simulated draw is a vector of random variables.
+
+The Gibbs sampler is a special case of Metropolis-Hastings sampling wherein the random value is always accepted. The key to this sampler is that one only considers univariate conditional distributions—the distribution that results when all of the random variables but one are assigned fixed values. Typically, one uses conjugate priors to form a Gibbs sampler (see below). More generally, one can also use a block implementation of the sampler, generating draws using conditional multivariate distributions
+
+To introduce the Gibbs sampler, consider a bivariate random vector $ ( x,y) $ , and suppose we wish to compute one or both marginals, $ p ( x ) $ and $ p ( y ) $ . The idea behind the sampler is that it is far easier to consider a sequence of conditional distributions, $ p ( x \mid y ) $ and $ p ( y \mid x ) $ , than it is to obtain the marginal by integration of the joint density $ p ( x,y) $ , e.g., $ p ( x ) = \int p ( x,y ) d y $ . The sampler starts with some initial value $ y_{0} $ for y and obtains $ x_{0} $ by generating a random variable from the conditional distribution, $ p ( x \mid y=y_{0} ) $ . The sampler then uses $ x_{0} $ to generate a new value, $ y_{1} $ , drawing from the conditional distribution based on the value $ x_{0} $ , $ p ( y \mid x=x_{0} ) $ The sampler proceeds as follows:
+
+$$
+x _ {i} \sim p (x \mid y = y _ {i - 1})
+$$
+
+$$
+y _ {i} \sim p (y \mid x = x _ {i})
+$$
+
+Repeating this process k times generates a Gibbs sequence of length k, where a subset of points $ ( x_{j}, y_{j} ) $ is taken to represent our simulated draws from the full joint distribution. To obtain the desired total of m sample points, we first sample the chain after a sufficient burnin period to remove the effects of the initial starting values and then at set time points (say, every n samples) following the burn-in (trimming or thinning the sequence). For example, Wang et al. (1994b) created a Gibbs sampler for an animal model that generated a total of 1,205,000 sample vectors. The first 5000 were discarded (corresponding to the burn-in), and then every tenth subsequent iteration was saved (to reduce correlations between sample vectors), to yield a total sample of 120,000 vectors. The burn-in period, and sampling interval following the burn-in can be delicate, and careful analysis of the resulting Gibbs sequence using convergence diagnostic tools is critical (Appendix 3).
+
+When more than two variables are involved, the sampler is extended in the obvious fashion. For example, if there are four variables, (w,x,y,z), the sampler becomes
+
+$$
+\begin{array}{l} w _ {i} \sim p \left(w \mid x = x _ {i - 1}, y = y _ {i - 1}, z = z _ {i - 1}\right) \\ x _ {i} \sim p \left(x \mid w = w _ {i}, y = y _ {i - 1}, z = z _ {i - 1}\right) \\ y _ {i} \sim p \left(y \mid w = w _ {i}, x = x _ {i}, z = z _ {i - 1}\right) \\ z _ {i} \sim p \left(z \mid w = w _ {i}, x = x _ {i}, y = y _ {i}\right) \\ \end{array}
+$$
+
+Any feature of interest for the marginals can be computed from the m realizations of the Gibbs sequence. For example, the expectation of any function, f, of the random variable, x, is approximated by
+
+$$
+E [ f (x) ] _ {m} = \frac {1}{m} \sum_ {i = 1} ^ {m} f \left(x _ {i}\right)
+$$
+
+which is simply the average of the function evaluated over the points in the sampler. This is the Monte Carlo (MC) estimate of $ f(x) $ , as $ E[f(x)]_{m}\rightarrow E[f(x)] $ as $ m\rightarrow\infty $ . Likewise, the MC estimate for any function of n variables $ (\theta^{(1)},\dots,\theta^{(n)}) $ is given by
+
+$$
+E [ f \left(\theta^ {(1)}, \dots , \theta^ {(n)}\right) ] _ {m} = \frac {1}{m} \sum_ {i = 1} ^ {m} f \left(\theta_ {i} ^ {(1)}, \dots , \theta_ {i} ^ {(n)}\right)
+$$
+
+<div align="center">
+
+Example 19.11. As a toy example of how to use the output of a Gibbs sampler, suppose we are interested in the distribution of breeding values in a particular generation (measured by four individuals in the analysis), as well as in the base population heritability. A Gibbs sampler has been implemented and the realizations at three different iterations (say 100, 200, and 300) after a sufficient burn-in period are as follows:
+
+</div>
+
+<table border="1"><tr><td>Factor</td><td>Sample100</td><td>Sample200</td><td>Sample300</td></tr><tr><td>a(1)</td><td>1.5</td><td>1.8</td><td>2.2</td></tr><tr><td>a(2)</td><td>2.1</td><td>3.4</td><td>1.4</td></tr><tr><td>a(3)</td><td>3.1</td><td>2.9</td><td>4.4</td></tr><tr><td>a(4)</td><td>3.3</td><td>4.3</td><td>3.6</td></tr><tr><td>$\sigma_{A}^{2}$</td><td>0.55</td><td>0.64</td><td>0.46</td></tr><tr><td>$\sigma_{e}^{2}$</td><td>1.10</td><td>0.98</td><td>1.20</td></tr></table>
+
+Here a(1) through a(4) correspond to the values (realizations of the posterior distribution) of the four breeding values in that particular iteration of the sampler, and $ \sigma_{A}^{2} $ and $ \sigma_{e}^{2} $ are, similarly, the realizations for the variances in that iteration. The mean and variance for the breeding value of these four individuals, in sample i, are
+
+$$
+\bar {a} _ {i} = \frac {1}{4} \sum_ {j = 1} ^ {4} a _ {i} (j) \quad \mathrm {a n d} \quad \operatorname {V a r} (a) _ {i} = \frac {1}{4 - 1} \sum_ {j = 1} ^ {4} \left[ a _ {i} (j) - \bar {a} _ {i} \right] ^ {2}
+$$
+
+and the base population heritability
+
+$$
+h _ {i} ^ {2} = \sigma_ {A, i} ^ {2} / \left(\sigma_ {A, i} ^ {2} + \sigma_ {e, i} ^ {2}\right)
+$$
+
+Using these three realizations
+
+<table border="1"><tr><td></td><td>Sample100</td><td>Sample200</td><td>Sample300</td></tr><tr><td>$\overline{a}$</td><td>2.5</td><td>3.1</td><td>2.9</td></tr><tr><td>$\mathrm{Var}(a)$</td><td>0.72</td><td>1.09</td><td>1.83</td></tr><tr><td>$h^{2}$</td><td>0.33</td><td>0.40</td><td>0.28</td></tr></table>
+
+Thus, the sampler has returned three values for each of the quantities of interest. Of course, a full sampler consists of thousands to hundreds of thousands of such realization, allowing us to empirically generate the full distribution of any for these functions. For example, the mean of the marginal posterior for the mean breeding value over these four individuals is simply the mean of $ \overline{a} $ over the entire sample from the Gibbs sequence. Likewise, the empirical histogram of $ h_{i}^{2} $ values is the marginal posterior for the heritability, and thus accounts for any source of variation in estimating $ h^{2} $ (given that the assumed model is correct).
+
+## Bayesian Analysis of the Animal Model
+
+The use of Bayesian approaches for the analysis of selection experiments was first suggested by Sorensen and Johansson (1992). Starting with the standard animal model
+
+$$
+\mathbf {y} = \mathbf {X} \boldsymbol {\beta} + \mathbf {Z} \mathbf {a} + \mathbf {e}, \quad \mathrm {w h e r e} \quad \mathbf {y} \sim \mathrm {M V N} \left(\mathbf {X} \boldsymbol {\beta}, \sigma_ {A} ^ {2} \mathbf {Z A Z} ^ {T} + \sigma_ {e} ^ {2} \mathbf {I}\right)
+$$
+
+The (unconditional) mean and variance for this model follow from $ E[\mathbf{y}]=\mathbf{X}\beta $ , and $ \operatorname{Var}(\mathbf{y})=\operatorname{Var}(\mathbf{Za}+\mathbf{e})=\sigma_{A}^{2}\mathbf{ZAZ}^{T}+\sigma_{e}^{2}\mathbf{I}. $ Wang et al. (1993, 1994a, 1994b), Sorensen et al. (1994), and Jensen et al. (1994) developed Gibbs samplers for this model and its extensions. As before, the conditional distribution of the data, given the vectors of fixed effects, $ \beta $ , breeding values, a, and the environmental variance, $ \sigma_{e}^{2} $ , is multivariate normal
+
+$$
+\mathbf {y} \mid \beta , \mathbf {a}, \sigma_ {e} ^ {2} \sim \mathrm {M V N} \left(\mathbf {X} \beta + \mathbf {Z a}, \sigma_ {e} ^ {2} \mathbf {I}\right)
+$$
+
+The infinitesimal model is assumed, with the distribution of breeding values, given the relationship matrix, A, and additive genetic variance, $ \sigma_{A}^{2} $ , being multivariate normal
+
+$$
+\mathbf {a} \mid \mathbf {A}, \sigma_ {A} ^ {2} \sim \mathrm {M V N} \left(\mathbf {0}, \sigma_ {A} ^ {2} \mathbf {A}\right)
+$$
+
+Sorensen et al. (1994) assumed a uniform prior for $ \beta $ , a normal prior for a, and both uniform and inverse- $ \chi^{2} $ priors for the variances. For example, the joint prior for a and $ \sigma_{A}^{2} $ is the product of $ p(\mathbf{a}|\sigma_{A}^{2},\mathbf{A})\cdot p(\sigma_{A}^{2}) $ , where the first distribution is a multivariate normal (Equation 19.33b) and the second is either a uniform or an inverse- $ \chi^{2} $ (Appendix 2). These distributions are chosen because they are conjugate priors (Appendix 2) for the multivariate normal, resulting in analytical expressions for the $ p+q+2 $ univariate conditional distributions for each factor in the model (p breeding values, $ a_{k}, $ q fixed effects, $ \beta_{j} $ , and the variances, $ \sigma_{A}^{2} $ and $ \sigma_{e}^{2} $ ). Using these univariate conditionals, a Gibbs sampler can be constructed. The outline for the sampler is as follows:
+
+1. Set initial values for a, $ \beta, \sigma_{A}^{2} $ , and $ \sigma_{e}^{2}. $
+
+2. Using the current values of a, $ \beta, \sigma_{A}^{2} $ and $ \sigma_{e}^{2} $ and the conditional distributions (see Sorensen et al. 1994 for exact expressions):
+
+(i) Update the fixed effects by sequentially drawing (for $ j=1,\cdots,q $) from the conditionals (which are univariate normals)
+
+$$
+\beta_ {j, i} \sim p \left(\beta_ {j} \mid \beta_ {1, i}, \dots , \beta_ {j - 1, i}, \beta_ {j + 1, i - 1}, \dots , \beta_ {q, i - 1}, \mathbf {a} _ {i - 1}, \sigma_ {A, i - 1} ^ {2}, \sigma_ {e, i - 1} ^ {2}\right)
+$$
+
+where $ \beta_{j,i} $ is the value of $ \beta_{j} $ during the ith iteration of the sample. The current values of these parameters define the mean and variance for a normal, from which a random value is drawn. For factor j, we take the values for a and the variances from the last iteration (i-1), the values of $ \beta_{1} $ to $ \beta_{j-1} $ from the current iteration (i), and the values of $ \beta_{j+1} $ to $ \beta_{q} $ from the last iteration (i-1). These values are inserted to give the parameters (here, the conditional mean and variance) for the univariate normal that corresponds to the conditional distribution for $ \beta_{j} $ and a random variable is drawn from this distribution to yield $ \beta_{j,i}. $
+
+(ii) Update the breeding values by sequentially drawing (for $ i=1,\cdots,p $) from the conditionals (again univariate normals), where the vector, $ \beta $ , of fixed effects is taken as the updated version
+
+$$
+a _ {j, i} \sim p \left(a _ {j} \mid \beta_ {i}, a _ {1, i}, \dots , a _ {j - 1, i}, a _ {j + 1, i - 1}, \dots , a _ {p, i - 1}, \sigma_ {A, i - 1} ^ {2}, \sigma_ {e, i - 1} ^ {2}\right)
+$$
+
+(iii) Update the additive variance by drawing from the conditional (a scaled inverse- $ \chi^{2} $ distribution)
+
+$$
+\sigma_ {A, i} ^ {2} \sim p \left(\sigma_ {A} ^ {2} \mid \beta_ {i}, \mathbf {a} _ {i}, \sigma_ {c, i - 1} ^ {2}\right)
+$$
+
+(iv) Update the error variance by drawing from the conditional (again, a scaled inverse- $ \chi^{2} $ distribution)
+
+$$
+\sigma_ {e, i} ^ {2} \sim p \left(\sigma_ {e} ^ {2} \mid \boldsymbol {\beta} _ {i}, \mathbf {a} _ {i}, \sigma_ {A, i} ^ {2}\right)
+$$
+
+3. Using the updated values, repeat (2) until k samples have been obtained, from which m are extracted (following the burn-in and trimming) for the Gibbs-sampler chain.
+
+This Bayesian analysis makes most of the standard animal-model assumptions, in particular that the infinitesimal model and multivariate normality, hold (as with an MM analysis, a Bayesian approach is potentially biased by selection-induced changes in allele frequencies). A Bayesian analysis has all the advantages of an MM analysis (over an LS analysis) and, in addition, the posterior marginals correctly give the distribution of any parameter of interest, independent of the values assumed for other parameters. Any uncertainty introduced by estimating these additional parameters is fully captured by the marginal posteriors. The Bayesian approach yields the correct distribution (assuming that the model assumptions hold and the prior is reasonable) for the estimated selection response, independent of the additive genetic variance. By contrast, an MM analysis is highly dependent on the assumed (or estimated) additive variance, and the standard error of a REML/BLUP estimate for the response (Equation 19.8c) does not account for the additional uncertainty introduced by using a REML estimate of $ \sigma_{A}^{2} $ . One standard package for Bayesian analysis is Winbugs, and Damgaard (2007) outlined how to apply this software to animal models.
+
+## Application: Estimating Selection Response in Pig Litter-size Components
+
+Blasco et al. (1998) used the method of Sorensen et al. (1994) to estimate the response to selection on ovulation rate and prenatal survival in French Large White pigs. Three lines were followed, with single lines selected separately on each trait (ovulation rate and survival) and a control line. The relevant selection and control lines were jointly analyzed to estimate the selection response. Ovulation rate was examined using the standard animal model
+
+$$
+\mathbf {y} \mid \boldsymbol {\beta}, \mathbf {a}, \sigma_ {e} ^ {2} \sim \mathrm {M V N} \left(\mathbf {X} \boldsymbol {\beta} + \mathbf {Z a}, \mathbf {I} \sigma_ {e} ^ {2}\right) \quad \mathrm {a n d} \quad \mathbf {a} \mid \mathbf {A}, \sigma_ {A} ^ {2} \sim \mathrm {M V N} \left(\mathbf {0}, \mathbf {A} \sigma_ {A} ^ {2}\right)
+$$
+
+Prenatal survival (as a function of the mother) was examined using the repeatability model, where c is the permanent environmental effect of a mother over multiple litters
+
+$$
+\mathrm {y} \mid \beta , \mathrm {a}, \mathrm {c}, \sigma_ {e} ^ {2} \sim \mathrm {M V N} \left(\mathrm {X} \beta + \mathrm {Z a} + \mathrm {W c}, \mathrm {I} \sigma_ {e} ^ {2}\right)
+$$
+
+$$
+\mathbf {a} \mid \mathbf {A}, \sigma_ {A} ^ {2} \sim \mathrm {M V N} \left(\mathbf {0}, \mathbf {A} \sigma_ {A} ^ {2}\right) \quad \mathrm {a n d} \quad \mathbf {c} \mid \sigma_ {c} ^ {2} \sim \mathrm {M V N} \left(\mathbf {0}, \mathbf {I} \sigma_ {c} ^ {2}\right)
+$$
+
+Among the fixed effects in $ \beta $ are terms for the parity of the mother (first litter, second litter, and so on). The marginal posterior distribution for breeding values (and hence, recalling Equation 19.8b, for the response via $ \mathbf{K}^{T}\mathbf{a} $ ) was obtained by using the Gibbs-sampler approach of Sorensen et al. (1994) outlined previously. For each trait, two independent chains
+
+![](page=36,bbox=[114, 146, 759, 313])
+
+<div align="center">
+
+Figure 19.3 Analysis of ovulation rate at puberty in French Large White pigs. Left: Assumed priors for $ \sigma_{A}^{2} $ (see text for details). Right: The Bayesian estimate of selection response is shown by presenting the marginal posterior density for the mean breeding value in ovulation rate in the last generation of selection as a histogram (all three priors gave very similar results). This distribution is approximately normal (the solid curve). (After Blasco et al. 1998.)
+
+</div>
+
+![](page=36,bbox=[106, 445, 749, 613])
+
+<div align="center">
+
+Figure 19.4 Analysis of French Large White pig prenatal survival. Left: Priors for the additive variance (see text for details). Right: Posterior distribution of mean breeding values (at generation 4) in prenatal survival (based on prior 1), which deviates from the best-fitting normal. (After Blasco et al. 1998.)
+
+</div>
+
+of length 100,000 were computed, with the first 10,000 samples discarded (to remove burn-in effects) and sampling at every 30 iterations thereafter, which generated a trimmed sampler of length 3000. The authors obtained these burn-in and resampling values after several initial runs, using the diagnostics suggested by Raftery and Lewis (1992a) for level of precision and Geyer (1992) for autocorrelation between samples. A uniform prior was taken for the fixed effects, while different priors were used for the variances (discussed below).
+
+We will consider the results for ovulation rate at puberty first. Figure 19.3 shows the three priors assumed for the additive variance in this trait. The phenotypic variance of this trait is 6.25, which sets an upper limit on $ \sigma_{A}^{2} $ . Prior 1 is a uniform distribution that weights all values in the parameter space equally. Priors 2 and 3 (which are scaled inverse- $ \chi^{2} $
+
+<div align="center">
+
+Table 19.1 Estimated response to selection for ovulation rate at puberty and prenatal survival in French Large White pigs. Bayesian analysis with three different priors (Figure 19.3 for ovulation and Figure 19.4 for prenatal survival) were used to obtain Monte-Carlo estimates of the mean response and their associated standard deviations (the latter incorporating the additional error from estimating the additive variance and other parameters). For comparison, least-squares (LS) estimates $ \overline{{{z}}}_{i+1}-\overline{{{z}}}_{i} $ and mixed-model (REML/BLUP) estimates are also included. (After Blasco et al. 1998.)
+
+</div>
+
+<table border="1"><tr><td colspan="5">Total Response in Ovulation Rate at Puberty</td></tr><tr><td>Method</td><td>Gen.1</td><td>Gen.2</td><td>Gen.3</td><td>Gen.4</td></tr><tr><td>Bayesian, Prior1</td><td>0.30±0.31</td><td>0.51±0.35</td><td>1.03±0.39</td><td>1.58±0.43</td></tr><tr><td>Bayesian, Prior2</td><td>0.31±0.30</td><td>0.51±0.34</td><td>1.05±0.38</td><td>1.55±0.42</td></tr><tr><td>Bayesian, Prior3</td><td>0.31±0.31</td><td>0.51±0.35</td><td>1.01±0.35</td><td>1.53±0.38</td></tr><tr><td>LS</td><td>-0.09</td><td>0.35</td><td>1.98</td><td>1.87</td></tr><tr><td>REML/BLUP</td><td>0.27</td><td>0.45</td><td>1.00</td><td>1.54</td></tr><tr><td colspan="5">Total Response in Prenatal Survival</td></tr><tr><td>Method</td><td>Gen.1</td><td>Gen.2</td><td>Gen.3</td><td>Gen.4</td></tr><tr><td>Bayesian, Prior1</td><td>-0.53±1.44</td><td>1.23±1.61</td><td>2.83±1.94</td><td>2.89±2.12</td></tr><tr><td>Bayesian, Prior2</td><td>-0.64±1.70</td><td>1.50±1.87</td><td>3.46±2.05</td><td>3.49±2.30</td></tr><tr><td>Bayesian, Prior3</td><td>-0.46±1.45</td><td>1.22±1.60</td><td>2.84±1.82</td><td>2.90±2.01</td></tr><tr><td>LS</td><td>-5.71</td><td>2.11</td><td>4.13</td><td>-2.82</td></tr><tr><td>REML/BLUP</td><td>-0.54</td><td>1.49</td><td>3.26</td><td>3.42</td></tr></table>
+
+distributions) reflect additional information. Published heritabilities for this trait in pigs and rabbits range from 0.1 to 0.6, and prior 2 assumes a broad distribution around the approximate median value $ \sigma_{A}^{2}=0.4\cdot 6.25=2.5). $ A study specifically in French Large Whites gave an estimate of $ h^{2}=0.11\pm 0.02 $ , and the tight distribution around this value is reflected in prior 3. Blasco et al. obtained Monte Carlo estimates of the (base population) heritability under these three priors of $ h^{2}=0.39\pm 0.07,0.39\pm 0.06 $ , and $ 0.32\pm 0.06. $ Table 19.1 shows the estimated cumulative response after each of the four generations of selection, in comparison with the least-squares (differences between generation means) and mixed-model (REML/BLUP) estimates. Note that the three different priors give very consistent estimates of response, implying that the data contained sufficient information to overpower most of the signal coming from the assumed prior. The Bayesian and MM analyses yielded very similar results, while LS analysis yields a substantially different estimates of response.
+
+While the results for ovulation rate were consistent across the three priors and with the MM analysis, those for prenatal survival were more problematic (Table 19.1). Figure 19.4 shows the assumed different priors. In this case, as with ovulation rate, prior 1 is uninformative, weighting all potential additive variances equally. Prior 2 (as with prior 2 for ovulation rate) assumed a broad distribution around the mean heritability $ ( h^{2}\simeq0.2) $ of this trait in a number of studies, while prior 3 used the estimate of $ h^{2}=0.03\pm0.03 $ found using French Large Whites. The three priors returned Monte Carlo estimates of heritability (and its standard deviation) of $ h^{2}=0.12\pm0.06,0.16\pm0.04 $ and $ 0.11\pm0.04 $ . Likewise, these priors give Monte Carlo estimates of the repeatability (r) of $ 0.23\pm0.05,0.23\pm0.04 $ and $ 0.19\pm0.04 $ As Table 19.1 shows, the standard deviations for the Monte Carlo estimates of mean response were very large, but the three priors and the MM analysis gave consistent results, while the LS results were quite different. Clearly, the information on prenatal survival in the experiment was modest, as the posterior is significantly influenced by the prior. Additional early examples of Bayesian analysis of selection experiments involved lean growth in pigs (Rodriguez et al. 1996) and body weight in chickens (Su et al. 1997).
+
+## LS, MM, OR BAYES?
+
+Just what analysis should an investigator use for a selection experiment? Obviously, in the
+
+absence of any pedigree information, a least-squares analysis is the only option, although this could also be placed in a Bayesian framework. With the pedigree in hand (either observed or inferred; see Chapter 20), a mixed-model analysis is much more powerful and is strongly preferred over LS, unless there is strong evidence that model assumptions have been violated. If a mixed-model approach is appropriate and chosen, should the analysis be frequentist or Bayesian? As mentioned, the Bayesian approach does a much better job of treating uncertainty, but this comes at a higher computational cost, especially when one does a proper analysis using several different priors to assess sensitivity. Perhaps the best advice is that offered by Blasco (2001):
+
+"The choice of one school or the other should be related to whether there are solutions in one school that the other does not offer, to how easily the problems are solved, and to how comfortable scientists feel with the way they convey their results."
+
+Blasco's last point is especially important: it is much more important for investigators to use a method with which they are comfortable, in the sense of knowing its limitations and having some intuition into the approach, than to simply use a method because it is new and trendy.
+
+Generally speaking, simpler methods (such as LS) tend to be more robust to model fragility than more complex approaches (e.g., mixed-models). While the latter can be considerably more powerful when the model assumptions do hold, they can also be significantly more biased when they fail. Ideally, one should use several different approaches in the analysis of any dataset. If the results are consistent, one can have additional confidence that the model assumptions may be holding or that the methods are immune to violations. If the results are rather different, this provides a critical indicator to the investigator that a much more careful examination of model assumptions is in order.

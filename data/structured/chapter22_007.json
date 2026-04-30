@@ -1,0 +1,61 @@
+{
+  "id": "chapter22_007",
+  "metadata": {
+    "chapter": "chapter22",
+    "section": "Chapter 22: Trait- vs. Variance Component-based Models",
+    "subsections": [
+      "Trait- vs. Variance Component-based Models"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter22_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "22.2",
+      "22.3",
+      "22.4a",
+      "22.4b"
+    ],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "derivation",
+      "content": "A brief comment is in order, expanding upon our earlier remarks on trait vs. variance-component based modeling (see Bijma 2014 for an extended discussion). The original trait-based model of associative effects was Falconer's (1965) model for litter size in mice (Equation 15.21), namely $$ \\begin{align*}z_i=G_i+e_i+(m\\cdot z_{mo,i})\\end{align*} $$ where $ G_i $ is the direct breeding value for litter size, while the associative effect is a function of the litter size of its mother ($ z_ mo,i $). Building on this idea, Moore et al. (1997) and Wolf et al. (1998) suggested a model wherein the value for trait $ i $ also depends upon the value, $ z_j' $, of trait $ j $ (which may be a different trait from $ i $) in an interacting individual, [[SEE_FORMULA:22.2]] where $ _ ij $ (following Kirkpatrick and Lande 1989) is the multivariate extension of Falconer's m. This class of models can lead to some very interesting behavior, such as feedback loops that significantly modify Equation 22.2. Figure 22.2 illustrates this difference in modeling, while Volume 3 explores trait-based models in some detail."
+    },
+    {
+      "type": "proposition",
+      "content": "Bijma (2014) noted that variance-component approaches are akin to using Robertson’s secondary theorem, $ R = (w, A) $ (Equation 6.25a), to predict response, which ignores any specific traits and simply considers the covariance between breeding value (which we generalize by calculating total breeding value, $ A_T $, below) and relative fitness. In contrast, trait-based approaches are akin to using the multivariate Lande equation, $ = $ (Equation 13.26a), to predict response. The Lande equation returns the response in all traits of interest, but it requires that all relevant traits be included in the analysis and is potentially erroneous if they are not (Volume 3)."
+    },
+    {
+      "type": "derivation",
+      "content": "The Total Breeding Value (TBV) and $ T^ 2 $ Given that an individual contains breeding values for both direct and social effects, what is its contribution to the next generation? We can directly see this from Equation 22.1d, where it is shown as the contribution to the population mean from individual 1 from its direct breeding value $ (A_ d_1) $ plus its contribution to the $ (n-1) $ other individuals in its group through its associative-effects breeding value, $ A_ s_1 $ (Figure 22.1b). Based on this observation, Bijma et al. (2007a) defined the total breeding value (TBV), $ A_T $, of a trait from an individual measured in a group of size $ n $ as the sum of its direct effect plus the total associative effects over all group members, or [[SEE_FORMULA:22.3]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Moore et al. (1997) introduced a similar measure for trait-based models. Noting that the mean of the population is simply the mean breeding value allows Equation 22.3 to recover Equation 22.1d. The critical observation is that when associative effects are present, the total breeding value of an individual contains components that are not expressed in its own phenotype, but rather, only in the phenotypes of other individuals with which it interacts."
+    },
+    {
+      "type": "discussion",
+      "content": "[h] |c|c| Cell 1 & Cell 2 \\\\ Cell 3 & Cell 4 \\\\ Because $n = 4$, $A_T = A_d + 3A_s$. The contribution of the associative effects of the other three group members to $i$'s phenotypic value is given by $ _ j i A_ s_j $. For example, for individual 1, the contributions from individuals 2 through 4 is $-1 + 2 + 3 = 4$. Thus, from Equation 22.1c, the phenotypic value we would observe is $$ z_{i}=20+A_{d_{i}}+\\sum_{j\\neq i}^{4}A_{s_{j}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Individual 1 has the largest direct effect (9) and the largest observed trait value (33). This individual also has the most unfavorable associative value (-4), and the smallest total breeding value (-3). Conversely, it has the largest contribution (4) to its trait value from the associative effects of the other group members. Its high trait value is due to this combination of a high direct effect and a high contribution from the associative effects of the other group members."
+    },
+    {
+      "type": "discussion",
+      "content": "Its unfavorable associative effects do not appear in its own phenotype, but rather are expressed in the trait values of the other group members. As a result, its own phenotypic value is a poor predictor of $ A_ T $."
+    },
+    {
+      "type": "discussion",
+      "content": "If the next generation is formed by crossing the two individuals (1 and 2) with the largest trait values, the expected offspring mean will be $ 20 + (-3 + 2)/2 = 19.5 $, which is the mean plus the average of the two individuals' total breeding values. Although the two largest individuals were chosen, the population mean decreases. Conversely, crossing the two smallest individuals gives an expected offspring mean of $ 20 + (0 + 1)/2 = 20.5 $, increasing the mean. While the two smallest individuals have the smallest direct effects, they also have the most favorable associative effects, and hence result in a more favorable response. The greatest expected response occurs by crossing the two individuals with the largest total breeding values (2 and 4), for an expected mean of $ 20 + (2 + 1)/2 = 21.5 $."
+    },
+    {
+      "type": "derivation",
+      "content": "The covariance between an individual’s phenotype and total breeding value is [[SEE_FORMULA:22.4a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "For now, we assume group members are unrelated, in which case the covariances in the summation are all zero, [[SEE_FORMULA:22.4b]]"
+    }
+  ]
+}

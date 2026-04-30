@@ -1,0 +1,56 @@
+{
+  "id": "appendix1_007",
+  "metadata": {
+    "chapter": "appendix1",
+    "section": "Derivation of the Kolmogorov Forward Equation",
+    "subsections": [
+      "Derivation of the Kolmogorov Forward Equation"
+    ],
+    "source_file": "tmp\\paddle_output\\appendix1_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "For completeness, we present a derivation of Equation A1.6, using the diffusion-approximation assumptions (Equations A1.1a–A1.1c). This section is a bit technical and can be skipped if readers desire. Consider the change from the probability distribution, $ (x, t, p) $, at time $ t $ to a new distribution, $ (x, t + _t, p) $, after some very small time interval, $ _t $. To arrive at $ x $ at time $ t + _t $, the frequency must have previously been at some value, $ x - _x $, and then moved by an amount, $ _x $, over the interval $ _t $. Let $ (_x, x, _t) $ be the probability of jumping by an amount, $ _x $, over the time $ _t $ given the starting point, $ x $. In our case, because we are assuming that there is a move from $ x - _x $ to $ x $, we consider $ (_x, x - _x, _t) $. Integrating over all possible jump values yields the Chapman-Kolmogorov equation $$ \\varphi(x,t+\\delta_{t},p)=\\int\\varphi(x-\\delta_{x},t,p)\\phi(\\delta_{x},x-\\delta_{x},\\delta_{t})d\\delta_{x} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "To simplify notation in the following derivation, we write $ (x,t,p) $ as $ (x,t) $, although the dependence on the initial value p should be kept in mind."
+    },
+    {
+      "type": "discussion",
+      "content": "To solve the Chapman-Kolmogorov equation, we start by using the Taylor series approximation $$ f(x-a)=f(x)-a\\frac{\\partial f(x)}{\\partial x}+\\frac{a^{2}}{2}\\frac{\\partial^{2}f(x)}{\\partial x^{2}}-\\frac{a^{3}}{6}\\frac{\\partial^{3}f(x)}{\\partial x^{3}}+o(a^{3}) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Expanding the function in the integral about $ a = _ x $ yields $$ \\begin{align*}\\varphi(x-\\delta_{x},t)\\phi(\\delta_{x},x-\\delta_{x},\\delta_{t})&=\\varphi(x,t)\\phi(\\delta_{x},x,\\delta_{t})-\\delta_{x}\\frac{\\partial\\big[\\varphi(x,t)\\phi(\\delta_{x},x,\\delta_{t})\\big]}{\\partial x}\\\\&+\\frac{\\delta_{x}^{2}}{2}\\frac{\\partial^{2}\\big[\\varphi(x,t)\\phi(\\delta_{x},x,\\delta_{t})\\big]}{\\partial x^{2}}-\\frac{\\delta_{x}^{3}}{6}\\frac{\\partial^{3}\\big[\\varphi(x,t)\\phi(\\delta_{x},x,\\delta_{t})\\big]}{\\partial x^{3}}+o(\\delta_{x}^{3})\\end{align*} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "If we ignoring terms of $ o(_ x ^ 3) $, i.e., of order $ _ x ^ 4 $ and higher, and integrate, the result is $$ \\begin{align*}\\int\\varphi(x-\\delta_{x},t)\\phi(\\delta_{x},x-\\delta_{x},\\delta_{t})d\\delta_{x}&\\simeq\\int\\varphi(x,t)\\phi(\\delta_{x},x,\\delta_{t})d\\delta_{x}-\\int\\delta_{x}\\frac{\\partial[\\varphi(x,t)\\phi(\\delta_{x},x,\\delta_{t})]}{\\partial x}d\\delta_{x}\\\\+\\int\\frac{\\delta_{x}^{2}}{2}\\frac{\\partial^{2}[\\varphi(x,t)\\phi(\\delta_{x},x,\\delta_{t})]}{\\partial x^{2}}d\\delta_{x}-\\int\\frac{\\delta_{x}^{3}}{6}\\frac{\\partial^{3}[\\varphi(x,t)\\phi(\\delta_{x},x,\\delta_{t})]}{\\partial x^{3}}d\\delta_{x}\\end{align*} $$ Because integration is done with respect to $ _ x $, partials with respect to x can be moved outside of the integrals, as can functions not involving $ _ x $, yielding $$ \\int\\varphi(x-\\delta_{x},t)\\phi(\\delta_{x},x-\\delta_{x},\\delta_{t})d\\delta_{x}=\\varphi(x,t)\\int\\phi(\\delta_{x},x,\\delta_{t})d\\delta_{x}-\\frac{\\partial}{\\partial x}\\left(\\varphi(x,t)\\int\\delta_{x}\\phi(\\delta_{x},x,\\delta_{t})d\\delta_{x}\\right) $$ $$ +\\frac{1}{2}\\frac{\\partial^{2}}{\\partial x^{2}}\\left(\\varphi(x,t)\\int\\delta_{x}^{2}\\phi(\\delta_{x},x,\\delta_{t})d\\delta_{x}\\right)-\\frac{1}{6}\\frac{\\partial^{3}}{\\partial x^{3}}\\left(\\varphi(x,t)\\int\\delta_{x}^{3}\\phi(\\delta_{x},x,\\delta_{t})d\\delta_{x}\\right) $$ Because $ (_x, x, _t) $ is the probability distribution of moves of size $ _x $ over the time interval $ _t $ given we start at position $ x $, we have $$ \\int\\phi(\\delta_{x},x,\\delta_{t})d\\delta_{x}=1 $$ $$ \\int\\delta_{x}\\phi(\\delta_{x},x,\\delta_{t})d\\delta_{x}=E\\left(\\delta_{x}\\mid x_{t}=x\\right)=m(x)\\delta_{t}+o(\\delta_{t}) $$"
+    },
+    {
+      "type": "proposition",
+      "content": "The first identity follows from the fact that the integral over a probability distribution is equal to one, and the second is simply our first diffusion assumption (Equation A1.1a). Next, if we recall that $ E(x^2) = _x^2 + [E(x)]^2 $, we have $$ \\int\\delta_{x}^{2}\\phi(\\delta_{x},x,\\delta_{t})d\\delta_{x}=\\sigma^{2}(\\delta_{x})+[E(\\delta_{x})]^{2} $$ which, using the diffusion approximation (Equations A1.1a and A1.1b), reduces to $$ \\begin{align*}\\int\\delta_{x}^{2}\\phi(\\delta_{x},x,\\delta_{t})d\\delta_{x}&=[v(x)\\delta_{t}+o(\\delta_{t})]+[m(x)\\delta_{t}+o(\\delta_{t})]^{2}\\\\&=v(x)\\delta_{t}+o(\\delta_{t})\\end{align*} $$"
+    },
+    {
+      "type": "proposition",
+      "content": "The last step follows because the contribution from the squared change in the mean is $ o(_t) $, and we sweep all such terms into a single expression. Finally, under the diffusion assumption given by Equation A1.1c, moments of $ _x^3 $ and higher are negligible. Substituting the approximations given by Equations A1.8d and A1.8e into Equation A1.8b yields $$ \\varphi(x,t+\\delta_{t})=\\varphi(x,t)-\\frac{\\partial\\left\\{\\left[m(x)\\delta_{t}+o(\\delta_{t})\\right]\\varphi(x,t)\\right\\}}{\\partial x}+\\frac{1}{2}\\frac{\\partial^{2}\\left\\{\\left[v(x)\\delta_{t}+o(\\delta_{t})\\right]\\varphi(x,t)\\right\\}}{\\partial x^{2}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Subtracting $ (x,t) $ from both sides, dividing both by $ _ t $, and taking the limit at $ _ t 0 $ gives the left-hand size as $$ \\lim_{\\delta_{t}\\to0}\\frac{\\varphi(x,t+\\delta_{t})-\\varphi(x,t)}{\\delta_{t}}=\\frac{\\partial\\varphi(x,t)}{\\partial t} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Likewise, recalling that $ _ _t 0 o(_t)/ _t = 0 $, the last two right-hand-side terms of Equation A1.9 simplify to $$ \\lim_{\\delta_{t}\\to0}\\frac{1}{\\delta_{t}}\\left(\\frac{\\partial\\left\\{\\left[m(x)\\delta_{t}+o(\\delta_{t})\\right]\\varphi(x,t)\\right\\}}{\\partial x}\\right)=\\frac{\\partial[m(x)\\varphi(x,t)]}{\\partial x} $$ $$ \\lim_{\\delta_{t}\\to0}\\frac{1}{\\delta_{t}}\\left(\\frac{\\partial^{2}\\left\\{\\left[v(x)\\delta_{t}+o(\\delta_{t})\\right]\\varphi(x,t)\\right\\}}{\\partial x^{2}}\\right)=\\frac{\\partial^{2}[v(x)\\varphi(x,t)]}{\\partial x^{2}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Together, these simplifications imply $$ \\frac{\\partial\\varphi(x,t)}{\\partial t}=-\\frac{\\partial[m(x)\\varphi(x,t)]}{\\partial x}+\\frac{\\partial^{2}[v(x)\\varphi(x,t)]}{2\\partial x^{2}} $$ which recovers the Kolmogorov forward equation (Equation A1.6), provided we again recall that $ (x,t) $ is really $ (x,t,p) $."
+    }
+  ]
+}

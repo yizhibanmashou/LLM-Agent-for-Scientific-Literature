@@ -1,0 +1,32 @@
+{
+  "id": "appendix5_006",
+  "metadata": {
+    "chapter": "appendix5",
+    "section": "Orthonormal Matrices: Rigid Rotations",
+    "subsections": [
+      "Orthonormal Matrices: Rigid Rotations"
+    ],
+    "source_file": "tmp\\paddle_output\\appendix5_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "A key building block on our way to the partitioning of a matrix into its rotational and scaling components is the idea of an orthonormal matrix. Writing a square $ n n $ matrix, U, as a row vector whose n elements are $ 1 n $ column vectors, $ = (_1, _2,, _n) $, then U is said to be orthonormal if $$ \\begin{align*}\\mathbf{u}_i^T\\mathbf{u}_j=\\begin{cases}1&\\textrm{if}i=j\\\\0&\\textrm{if}i\\neq j\\end{cases}\\end{align*} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Namely, each column of U is of unit length and is orthogonal to every other column. Matrices with this property are also referred to as unitary and satisfy $$ \\mathbf{U}^{T}\\mathbf{U}=\\mathbf{U}\\mathbf{U}^{T}=\\mathbf{I} $$ As a result, the inverse of a unitary matrix is simply its transpose, $$ \\mathbf{U}^{T}=\\mathbf{U}^{-1} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The coordinate transformation induced by an orthonormal matrix has a very simple geometric interpretation: it is a rigid rotation of the original coordinate system—axes of the original coordinates are all rotated by the same angle to create the new coordinate system. To see this, first note that orthonormal matrices preserve all inner products. Taking $ y_1 = Ux_1 $ and $ y_2 = Ux_2 $ $$ \\mathbf{y}_{1}^{T}\\mathbf{y}_{2}=\\mathbf{x}_{1}^{T}(\\mathbf{U}^{T}\\mathbf{U})\\mathbf{x}_{2}=\\mathbf{x}_{1}^{T}\\mathbf{x}_{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, orthonormal matrices do not change (scale) the length of vectors, as $ \\|y_1\\| = y_1^T y_1 = x_1^T x_1 = \\|x_1\\| $. Using these results, note that if $ $ is the angle between the vectors $ x_1 $ and $ x_2 $, then following transformation by an orthonormal matrix $$ \\begin{align*}\\cos(\\theta\\mid\\mathbf{y}_1,\\mathbf{y}_2)=\\frac{\\mathbf{y}_1^T\\mathbf{y}_2}{\\sqrt{\\mid\\mid\\mathbf{y}_1\\mid\\mid\\mid\\mid\\mathbf{y}_2\\mid\\mid}}=\\frac{\\mathbf{x}_1^T\\mathbf{x}_2}{\\sqrt{\\mid\\mid\\mathbf{x}_1\\mid\\mid\\mid\\mid\\mathbf{x}_2\\mid\\mid}}=\\cos(\\theta\\mid\\mathbf{x}_1,\\mathbf{x}_2)\\end{align*} $$ which shows that the angle between the two vectors remains unchanged following their transformation by the same orthonormal matrix."
+    }
+  ]
+}

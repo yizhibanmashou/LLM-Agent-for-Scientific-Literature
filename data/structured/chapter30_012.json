@@ -1,0 +1,46 @@
+{
+  "id": "chapter30_012",
+  "metadata": {
+    "chapter": "chapter30",
+    "section": "Chapter 30: Geometric Aspects",
+    "subsections": [
+      "Geometric Aspects"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter30_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "30.19",
+      "30.20a",
+      "30.20b",
+      "30.21a",
+      "30.21b"
+    ],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "derivation",
+      "content": "Despite their apparent simplicity, multivariate quadratic fitness regressions have a rather rich geometric structure. By adjusting the character values to give them a mean of zero, the general quadratic fitness regression can be written as [[SEE_FORMULA:30.19]]"
+    },
+    {
+      "type": "discussion",
+      "content": "If $ z MVN $, then $ b = $ (the vector of coefficients of the best linear fit). Note that if we regard Equation 30.19 as a second-order Taylor series approximation (Equation A6.7) of $ w(z) $, then $ b $ and $ $ can be interpreted as the gradient and Hessian, respectively, of individual fitness evaluated at the population mean (here $ = 0 $ by construction). Even though a quadratic is the simplest curved surface, its geometry can still be difficult to visualize (Phillips and Arnold 1989; Brodie et al. 1995). The key is that the nature of curvature of Equation 30.19 is determined by the eigenvalues of the $ $ matrix."
+    },
+    {
+      "type": "derivation",
+      "content": "We start our exploration of this geometry by considering the gradient of this best-fitting quadratic fitness surface. Applying Equations A6.1b and A6.1c to Equation 30.19 yields [[SEE_FORMULA:30.20a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Hence, the direction of steepest ascent on the fitness surface (the direction in which to move in phenotype space to maximally increase local individual fitness) around z is the vector $ + $. If the true individual fitness surface is indeed a quadratic, the average gradient of individual fitness taken over the distribution of phenotypes is [[SEE_FORMULA:30.20b]] as the last integral is $ $ (which is zero by construction). Hence, if the true fitness function is quadratic, the average gradient of individual fitness is given by b, independent of the distribution of z."
+    },
+    {
+      "type": "derivation",
+      "content": "Solving for $ _ [w()] = $, shows that a point, $ _0 $, that satisfies $ _0 = - $ is a candidate for a local extremum (also called a stationary point, as the gradient is zero). When $ $ is nonsingular, [[SEE_FORMULA:30.21a]] is the unique stationary point of this quadratic surface. Substituting into Equation 30.19, the expected individual fitness at this point is [[SEE_FORMULA:30.21b]] as obtained by Phillips and Arnold (1989). Because $ ^2 w() / z_i z_j = _ ij $, the Hessian of $ w() $ is just $ $. Thus, $ z_0 $ is a local minimum if $ $ is positive-definite (all eigenvalues are positive), a local maximum if $ $ is negative-definite (all eigenvalues are negative), or a saddle point if the eigenvalues differ in sign (see Equation A6.8b)."
+    },
+    {
+      "type": "discussion",
+      "content": "If $ $ is singular (i.e., it has at least one zero eigenvalue), then there is no unique stationary point. An example of this is seen in Figure 30.3B, where there is a ridge (rather than a single point) of phenotypic values having the highest fitness value. The consequence of a zero eigenvalue is that the fitness surface has no curvature along the axis that is defined by the associated eigenvector. If $ $ has $ k $ zero eigenvalues, then the fitness surface has no curvature along $ k $ dimensions. The remaining fitness space showing curvature has a single stationary point, which is given by Equation 30.21a for $ $ and $ b $ when reduced to the $ n - k $ dimensions showing curvature."
+    }
+  ]
+}

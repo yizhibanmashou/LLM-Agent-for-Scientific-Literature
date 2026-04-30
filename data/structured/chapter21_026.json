@@ -1,0 +1,77 @@
+{
+  "id": "chapter21_026",
+  "metadata": {
+    "chapter": "chapter21",
+    "section": "Chapter 21: Response with Autotetraploids",
+    "subsections": [
+      "Response with Autotetraploids"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter21_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "21.34a",
+      "21.34b",
+      "21.34c",
+      "21.34d",
+      "21.34e"
+    ],
+    "table_references": [
+      "21.6",
+      "inline_2",
+      "inline_3",
+      "inline_4"
+    ],
+    "table_reference_keys": [
+      "chapter21:21.6",
+      "chapter21:inline_2",
+      "chapter21:inline_3",
+      "chapter21:inline_4"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "derivation",
+      "content": "Example 21.6. For the response under family-based selection schemes involving tetraploids, we will need a bit more detailed treatment of resemblance between polyploid relatives than was given in LW Chapter 7. To begin, we label the four alleles in a tetraploid by $ B_1 $, $ B_2 $, $ B_3 $, and $ B_4 $. There are six possible gametes from this parent, $ (B_1, B_2) $, $ (B_1, B_3) $, $ (B_1, B_4) $, $ (B_2, B_3) $, $ (B_2, B_4) $, and $ (B_3, B_4) $. Allowing for nonadditive interaction between alleles, the genotypic value can be decomposed into four additive (single-allele) terms, six dominance (two-allele) terms, four three-way interactions, and one four-way interaction: [[SEE_FORMULA:21.34a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "The resulting total genetic variation can be partitioned as [[SEE_FORMULA:21.34b]]"
+    },
+    {
+      "type": "discussion",
+      "content": "If two relatives share only one allele IBD, then their genetic covariance is $ _a^2 = (1/4) _A^2 $. If they share exactly two IBD alleles, the genetic covariance is $ 2 _a^2 + _d^2 = (1/2) _A^2 + (1/6) _D $. If we fill out the rest of these covariances and let $ _i $ denote the probability that two relatives share exactly $ i $ IBD alleles, we will have"
+    },
+    {
+      "type": "discussion",
+      "content": "[h] |c|c| Cell 1 & Cell 2 \\\\ Cell 3 & Cell 4 \\\\"
+    },
+    {
+      "type": "derivation",
+      "content": "Using these results, observe that the genetic covariance between any two relatives can be expressed as a function of their $ _ i $ values, namely, [[SEE_FORMULA:21.34c]] With a parent-offspring relationship, exactly two alleles are IBD, so that $ _ 2 = 1 $. With half-sibs, by looking at the 36 entries in the $ 6 6 $ table of pairs of gametes from the same parent, we see that 6 share two alleles, 24 share one, and 6 share zero. Hence, $ _ 1 = 24/36 = 2/3 $, $ _ 2 = 6/36 = 1/6 $. Results for full-sibs follow from these half-sib results. Let $ P_ 1 $ and $ P_ 2 $ denote the shared parents. The probability that four alleles are shared is the probability the sibs share two alleles from $ P_ 1 $ times the probability they share two alleles from $ P_ 2 $, or $ _ 4 = (1/6)(1/6) $, assuming the parents are unrelated and not inbred. Now consider the case of sharing exactly two alleles IBD. This can happen in three different ways: sharing one IBD allele from each parent (probability [2/3][2/3]), sharing two IBD alleles from $ P_ 1 $ and zero from $ P_ 2 $ (probability [1/6][1/6]), or sharing two alleles from $ P_ 2 $ and zero from $ P_ 1 $ (probability [1/6][1/6]), yielding $$ \\pi_{2}=\\left(2/3\\right)^{2}+\\left(1/6\\right)^{2}+\\left(1/6\\right)^{2}=18/36=1/2 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Similar logic yields $ _ 1 =2/9 $ and $ _ 3 =2/9 $. To summarize, [h] |c|c| Cell 1 & Cell 2 \\\\ Cell 3 & Cell 4 \\\\"
+    },
+    {
+      "type": "discussion",
+      "content": "Substitution of the above results for the $ _ i $ into the general expression for the covariance yields Equation 21.32a."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 21.7. Example 21.6 computed the $ _1 $, $ _2 $, $ _3 $, and $ _4 $ values for half- and full-sibs. As we saw above, expressions for the selection response under various family-based selection schemes requires the covariance between a member of the selection unit (x) and an offspring (y) of R, a relative of x. We can obtain these covariances by conditioning on the number of IBD alleles shared by x and R, and then computing the probability that R passes along one or two of these IBD alleles to its offspring, y. For example, if x and R share exactly one IBD allele, then with a probability of one-half, that allele is also transmitted to y, in which case x and y share one IBD allele. The 1/2 comes from considering the six possible gametes that R can generate. Let $ B_1 $ denote the IBD allele for x and R. When enumerating all six possible biallelic gametes, we see that three contain $ B_1 $, while the other three do not. Similar enumeration fills out the table below. For example, suppose x and R share two IBD alleles, $ B_1 $ and $ B_2 $. Again counting the six possible gametes of R, only one contains both alleles (1/6 have two IBD), while four of six contain either $ B_1 $ or $ B_2 $ (but not both). The values when x and R share three and four IBD alleles are given below: [[TABLE:21.6]])."
+    },
+    {
+      "type": "discussion",
+      "content": "When $x$ and $ $ are half-sibs, Example 21.6 shows that $2/3$ of sibs share one IBD allele, while $1/6$ share two. We let the notation $(I[x,y]=1)$ and $(I[x,y]=2)$ denote that the pair $(x,y)$ share, respectively, exactly one or two IBD alleles. Using the above table, the probability that $y$ and $x$ share one or two IBD alleles becomes $$ \\begin{aligned}\\pi_{1}=\\Pr(\\mathrm{I}[x,y]=1|\\mathrm{I}[x,\\mathcal{R}]=1)\\Pr(\\mathrm{I}[x,\\mathcal{R}]=1)+\\Pr(\\mathrm{I}[x,y]=1|\\mathrm{I}[x,\\mathcal{R}]=2)\\Pr(\\mathrm{I}[x,\\mathcal{R}]=2)\\\\=(1/2)(2/3)+(2/3)(1/6)=4/9\\end{aligned} $$ $$ \\pi_{2}=\\Pr(\\mathrm{I}[x,y]=2\\mid\\mathrm{I}[x,\\mathcal{R}]=2)\\ \\Pr(\\mathrm{I}[x,\\mathcal{R}]=2)=(1/6)(1/6)=1/36 $$"
+    },
+    {
+      "type": "derivation",
+      "content": "Substituting these into Equation 21.34c returns [[SEE_FORMULA:21.34d]] as the genetic covariance between x and y when the relationship is that of half-uncle (x and R are half-sibs) and nephew (y, an offspring of R)."
+    },
+    {
+      "type": "derivation",
+      "content": "When x and R are full-sibs, Example 21.6 showed that the probability they share one, two, three, and four IBD alleles is 2/9, 1/2, 2/9, and 1/36, respectively. Following the same logic and using the above table, $$ \\pi_{1}=(1/2)(2/9)+(2/3)(1/2)+(1/2)(2/9)+(0)(1/36)=20/36=5/9 $$ $$ \\pi_{2}=(0)(2/9)+(1/6)(1/2)+(1/2)(2/9)+(1)(1/36)=2/9 $$ yielding [[SEE_FORMULA:21.34e]] as the genetic covariance between x and y when the relationship is that of uncle (x and R are full-sibs) and nephew (y, an offspring of R)."
+    }
+  ]
+}

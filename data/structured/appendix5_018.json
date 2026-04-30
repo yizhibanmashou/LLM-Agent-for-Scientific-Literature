@@ -1,0 +1,36 @@
+{
+  "id": "appendix5_018",
+  "metadata": {
+    "chapter": "appendix5",
+    "section": "Mardia's Test: Multivariate Skewness and Kurtosis",
+    "subsections": [
+      "Mardia's Test: Multivariate Skewness and Kurtosis"
+    ],
+    "source_file": "tmp\\paddle_output\\appendix5_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "As was the case for univariate normality, we can test for multivariate normality by examining the sample skewness and kurtosis. Mardia (1970, 1974) proposed multivariate extensions of skewness and kurtosis measures and suggested a large-sample test based on the asymptotic distribution of these statistics. If there are m vectors of observations (with each vector measuring n characters), then the multivariate skewness is estimated by $$ b_{1,n}=\\frac{1}{m^{2}}\\sum_{i=1}^{m}\\sum_{j=1}^{m}\\left[\\left(\\mathbf{z}_{i}-\\overline{\\mathbf{z}}\\right)^{T}\\mathbf{S}_{\\mathbf{Z}}^{-1}\\left(\\mathbf{z}_{j}-\\overline{\\mathbf{z}}\\right)\\right]^{3} $$ while the multivariate kurtosis is estimated by $$ b_{2,n}=\\frac{1}{m}\\sum_{i=1}^{m}\\left[\\left(\\mathbf{z}_{i}-\\overline{\\mathbf{z}}\\right)^{T}\\mathbf{S}_{\\mathbf{Z}}^{-1}\\left(\\mathbf{z}_{i}-\\overline{\\mathbf{z}}\\right)\\right]^{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "If $ z MVN $, then $ b_ 1,n $ and $ b_ 2,n $ have expected values 0 and $ n(n+2) $. For large values of m, Mardia showed that the (scaled) multivariate skewness is asymptotically distributed as a chi-square random variable with f degrees of freedom, with $$ \\frac{m}{6}b_{1,n}\\sim\\chi_{f}^{2},\\qquad\\mathrm{w h e r e~}f=\\frac{n(n+1)(n+2)}{6} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Likewise for large values of m, the multivariate kurtosis (following appropriate scaling) is distributed as a unit-normal, with $$ \\frac{b_{2,n}-n(n+2)}{\\sqrt{8n(n+2)/m}}\\sim N(0,1) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "If either Equation A5.25a or A5.25b is significant, then multivariate normality is rejected."
+    },
+    {
+      "type": "discussion",
+      "content": "Example A5.9. Do the data considered in Example A5.8 display significant skewness or kurtosis? Here $n = 2$ and $m = 24$. Applying Equations A5.25a and A5.25b gives $b_ 1,2 = 0.6792$ and $b_ 2,2 = 7.6043$. Considering skewness first, from Equation A5.25a it follows that the value $$ \\frac{m}{6}b_{1,2}=\\frac{24}{6}0.6792=2.717 $$ is (under MVN) a draw from a chi-square distribution with $ f = 2(2 + 1)(2 + 2)/6 = 4 $ degrees of freedom. Because $ (_4^2 2.717) 0.606 $, this is not significant. Turning to kurtosis, Equation A5.25b yields $$ \\frac{b_{2,n}-n(n+2)}{\\sqrt{8n(n+2)/m}}=\\frac{7.6043-8}{1.633}\\simeq-0.2423 $$ which is also not significant as Prob(|N(0,1)| ≥ 0.2423) ≈ 0.81. Transforming the data by taking logs gives $ b_ 1,2 = 0.2767 $ and $ b_ 2,2 = 7.1501 $, and hence showing a slight decrease in skewness and a slight increase in kurtosis relative to the untransformed data. Reyment (1971) presented a number of other biological examples using Mardia's test."
+    }
+  ]
+}

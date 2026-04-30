@@ -1,0 +1,65 @@
+{
+  "id": "chapter7_011",
+  "metadata": {
+    "chapter": "chapter7",
+    "section": "Chapter 7: JOINT INTERACTION OF SELECTION, DRIFT, AND MUTATION",
+    "subsections": [
+      "JOINT INTERACTION OF SELECTION, DRIFT, AND MUTATION"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter7_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "7.31a",
+      "7.31b",
+      "7.32",
+      "7.33",
+      "7.34",
+      "7.35",
+      "7.36",
+      "7.37"
+    ],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "We now turn to the situation in which selection, drift, and mutation operate simultaneously. Under these conditions, alleles are not simply permanently lost or fixed. Rather, the allele frequencies in a population of constant size eventually reach a stochastic equilibrium (or stationary distribution), $ (x) $, where x denotes the allele frequency. Recall from Chapter 2 that we can interpret such an equilibrium in two different ways. First, given a conceptually large number of replicate populations, $ (x) $ closely approximates the frequency histogram of the numbers of populations with specific allele frequencies at the locus. Conversely, if we were to follow a single population temporally and construct a histogram of the historical record of allele frequencies at the locus over a very large number of widely separated time points, under constant population conditions, we would again recover $ (x) $."
+    },
+    {
+      "type": "derivation",
+      "content": "Diffusion theory provides a general solution to this problem (Appendix 1). For the simple biallelic case in which mutations from allele A to a occur at a rate of $ $, and v is the reciprocal rate, Wright (1949) found that the equilibrium distribution for the advantageous A allele is given by [[SEE_FORMULA:7.31a]] where $C$ is a normalization constant such that Equation 7.31a integrates to one, and hence is a proper probability density (Example A1.4 provides a derivation of this expression). Here, $ $ is the mean population fitness, which is itself a function of $x$ and the selection coefficients associated with different gametic states. Note that when both mutation rates are substantially $<1/(4N_e)$, conditions that may frequently be met for single nucleotide sites (Chapter 4), this simplifies to [[SEE_FORMULA:7.31b]] showing that with weak mutation pressure, the expected allele frequencies that are conditioned on the population being polymorphic are independent of both the mutation rate and the mutation bias."
+    },
+    {
+      "type": "derivation",
+      "content": "This result, which represents yet another counterintuitive consequence of the influence of drift on gene frequencies, can be understood as follows. Suppose that allele A has a selective advantage s over allele a, and again let the rates of mutation from A to a and vice versa be $ $ and v, respectively. At a stationary state, the ratio of times that a population is completely fixed for optimal versus suboptimal alleles is [[SEE_FORMULA:7.32]] where $ S = 4N_e s $ (Wright 1931; Li 1987; Bulmer 1991; McVean and Charlesworth 1999). Note that $ (v/) $ and $ e^S $ are, respectively, the mutation and selection biases in favor of allele A, with the latter being equivalent to the ratio of fixation probabilities of newly arising beneficial and detrimental alleles with the same absolute $ s $ (obtainable from Equation 7.10a). Equation 7.32 demonstrates that although the distribution of allele frequencies that is conditional on polymorphism can be independent of mutational properties, the frequency of alternative fixed classes is not. In addition, it is apparent that the ratio at which the two monomorphic classes produce polymorphisms $ (u/v) $ is perfectly compensated by the differential densities of the two classes, and provided the population is sufficiently small that each new mutation is either lost or fixed before another one is produced at the locus, this effect will not be influenced by secondary mutations. Equation 7.31b breaks down, however, when population sizes are large enough that the waiting times for new mutations are smaller than the sojourn times of mutant alleles. Because Equation 7.31a treats allele frequencies as continuously distributed variables, they may behave aberrantly at the absorbing boundaries of the frequencies x = 0 and 1. However, an approximation for the absolute frequencies of the fixed classes can be obtained by noting that the equation [[SEE_FORMULA:7.33]] is the equilibrium proportion of time for which the sites are polymorphic, with $ _a $ and $ _A $ being, respectively, the mean sojourn times of mutations to alleles $ a $ and $ A $. Using Equation 7.32 and the fact that $ _a + _A + _p = 1 $, the solution can be obtained for all three components of this equation. By multiplying the values of Equation 7.31a by $ _p $ over the range of $ x = 1/(2N) $ to $ 1 - [1/(2N)] $, we then obtain the spectrum of alternative population states of polymorphism."
+    },
+    {
+      "type": "discussion",
+      "content": "Figure 7.6 provides some examples of the form of the stationary distribution for biallelic loci experiencing bidirectional mutation. For neutral mutations, the distribution is highly U- or J-shaped (depending on the magnitude of mutation bias) at low population mutation rates ($ 4N $ and $ 4Nv 1 $), as the population is almost always in a nearly fixed state, with the probability of the alternative fixed states being given by Equation 7.5. The distribution becomes flat with values of $ 4N $ and $ 4Nv $ near 1.0, and then becomes more peaked as $ 4N $ and $ 4Nv $ become progressively larger (with the mean centered on the infinite-population expectation given by Equation 7.5). Selection skews the distribution toward the more favorable allele, but even with an S as large as 10, a moderate frequency of the deleterious allele can be expected (even though fixation of the latter would essentially never occur)."
+    },
+    {
+      "type": "derivation",
+      "content": "Equation 7.31a is useful in a number of applications. Consider, for example, the case of a deleterious recessive allele maintained by mutation (with $ $ being the mutation rate to deleterious alleles, and $ s $ being the selective disadvantage of mutant homozygotes). If we let $ x $ be the frequency of the deleterious allele, the mean population fitness is $ = 1 - s x^2 $. Using the approximation $ (1 - y)^ 2N_e e^ -2N_e y $ for small values of $ y $, so that $ ^ 2N_e e^ -2N_e s x^2 $, and ignoring back mutation to the advantageous allele, yields the equilibrium distribution [[SEE_FORMULA:7.34]]"
+    },
+    {
+      "type": "discussion",
+      "content": "[h] a result originally due to Wright (1938b)."
+    },
+    {
+      "type": "derivation",
+      "content": "Nei (1969) provided a broad overview of the allele-frequency spectrum for lethal mutations, including those that are entirely recessive or overdominant. As neither of these conditions are commonly observed (LW Chapter 10), we note only some of the results for partially recessive lethals. In this case, the average expected frequency at selection-mutation balance is given by Equation 7.6d, essentially independent of population size, and provided that $ 2N_ e hs 1 $ (i.e., the power of selection against heterozygotes exceeds the power of drift), the variance in allele-frequency will be approximately [[SEE_FORMULA:7.35]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Nei (1971) and Li and Nei (1972) gave expressions for the expected total number of individuals affected by a newly arisen deleterious mutation prior to its elimination by selection."
+    },
+    {
+      "type": "derivation",
+      "content": "An area of special interest is the behavior of the four possible nucleotides at a particular site. If we denote the four frequencies as $ x_i $ (where $ i = 1,, 4 $) and their selection coefficients as $ s_i $ (here assumed to be weak and additive), under the assumption that all nucleotides mutate to each other type at the same rate, $ $, Equation 7.31a reduces to [[SEE_FORMULA:7.36]] where $ = 1 + 2 _ i=1 ^ 4 x_i s_i $ is the mean population fitness. It is not surprising that the solution to this trivariate expression $ (x_4 $ being defined as $ 1 - x_1 - x_2 - x_3 $) is quite cumbersome (Li 1987; Zeng et al. 1989; Bulmer 1991; McVean and Charlesworth 1999)."
+    },
+    {
+      "type": "derivation",
+      "content": "Consider, however, the situation in which there is one optimal nucleotide, the frequency of which is denoted by x, with the three others having an equal selective disadvantage, s, in the heterozygous state. If we scale the less-fit alleles to have a fitness of 1, the mean population fitness will then be $ = 1 + 2xs $, which is closely approximated by $ e^ 2xs $ under the assumption of a small s. If we let the mutation rate of all nucleotides to the optimal state be v and the total mutation rate of the optimal nucleotide to the other states be $ $, it follows from Equation 7.32 that the expected frequency of the optimal nucleotide is [[SEE_FORMULA:7.37]]"
+    }
+  ]
+}

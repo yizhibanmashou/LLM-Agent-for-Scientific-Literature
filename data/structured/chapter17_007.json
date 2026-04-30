@@ -1,0 +1,67 @@
+{
+  "id": "chapter17_007",
+  "metadata": {
+    "chapter": "chapter17",
+    "section": "Chapter 17: The Additive Model",
+    "subsections": [
+      "The Additive Model"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter17_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "17.4a",
+      "17.4b",
+      "17.4c"
+    ],
+    "table_references": [
+      "17.1",
+      "17.2"
+    ],
+    "table_reference_keys": [
+      "chapter17:17.1",
+      "chapter17:17.2"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "derivation",
+      "content": "Our last formulation for modeling genetic variation in E was suggested by Hill and Zhang (2004) and Mulder et al. (2007), where [[SEE_FORMULA:17.4a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "This is the additive model, as the environmental variance for an individual with breeding value $ A_ v $ is simply [[SEE_FORMULA:17.4b]] with the constraint on the breeding value being that $ _e^2 + A_v > 0 $. The additive model is a local analysis around the current mean, as selection to decrease $ A_v $ can eventually result in this constraint being violated, which generates a negative variance. Under the additive model, the mean population value for the environmental variance is simply [[SEE_FORMULA:17.4c]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Unlike in the multiplicative and exponential models, changes in $ _ E ^ 2 $ under the additive model depend only on changes in the mean breeding value, and not on its variance ([[SEE_TABLE:17.1]])."
+    },
+    {
+      "type": "discussion",
+      "content": "The additive model has the advantage of being much more tractable, but it has the disadvantage that it breaks down when the breeding value becomes sufficiently negative $ (A_v < - _e^2) $. In contrast, the exponential model has additivity on the log of the variance scale, which is a nice statistical feature, as log variances are approximately normally distributed (Box 1953; Layard 1973). Mulder et al. (2007) discussed additional connections between the additive and exponential models, while Hill and Mulder (2010) reviewed different estimation methods under these models."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 17.2. Here we derive the unconditional variances for the models summarized in [[SEE_TABLE:17.1]]. Consider the multiplicative model first, where $$ \\sigma_{E}^{2}=\\mathrm{E}[\\gamma^{2}\\sigma_{e}^{2}]=\\sigma_{e}^{2}\\mathrm{E}[\\gamma^{2}] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Recalling that $ [x^ 2] = _ x ^ 2 + _ x ^ 2 $ yields $$ \\sigma_{E}^{2}=\\sigma_{e}^{2}\\mathrm{E}[\\gamma^{2}]=\\sigma_{e}^{2}\\left(\\sigma_{\\gamma}^{2}+\\mu_{\\gamma}^{2}\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Now consider the exponential model (Equation 17.3a). By construction, both E and e have expected values equal to zero, and the variances of E and e are simply the expected values of $ E^ 2 $ and $ e^ 2 $. Taking expectations $$ \\sigma_{E}^{2}=\\mathrm{E}\\left[\\left(e\\cdot\\exp\\{A_{v}/2\\}\\right)^{2}\\right]=\\sigma_{e}^{2}\\mathrm{E}\\left[\\left(\\exp\\{A_{v}/2\\}\\right)^{2}\\right]=\\sigma_{e}^{2}\\mathrm{E}\\left[\\exp\\left(A_{v}\\right)\\right] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "This follows by again recalling that $ [(x/2)]^2 = (2x/2) = (x) $. The rightmost expectation in this expression is calculated with respect to the distribution of breeding values, $ A_v $, by recalling (Equation 14.19a) that for a normally distributed random variable, $ x $, with a mean of $ $ and variance of $ ^2 $, $ [e^x] = (+ ^2/2) $. Because we assumed that $ A_v N(_ A_v, _A^2) $, the average environmental variance for the population becomes $$ \\sigma_{E}^{2}=\\sigma_{e}^{2}\\exp\\left(\\mu_{A_{v}}+\\frac{\\sigma_{A_{v}}^{2}}{2}\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The Heritability of the Environmental Variance, $ h_ v ^ 2 $ Estimates of $ ^ 2 (A_ v) $ under any of the models for $ _ E ^ 2 $ reviewed in [[SEE_TABLE:17.1]] are obtained using fairly complicated likelihood functions on data from sets of relatives; see SanCristobal-Gaudy et al. (1998, 2001), Sorensen and Waagepetersen (2003), Ros et al. (2004), or any of the other references in [[SEE_TABLE:17.2]] for details. [[SEE_TABLE:17.2]] presents these estimates scaled as heritabilities and evolvabilities (Equation 13.22b) to facilitate comparison over traits, which raises the issue how the heritability of the environmental variance is defined."
+    },
+    {
+      "type": "definition",
+      "content": "Mulder et al. (2007) suggested that one definition is as the slope of the regression of the breeding value, $ A_ v $, of an individual on some appropriate function of the phenotype value, z. Under the additive-model framework (Equation 17.4a), they show that the appropriate transformation is the square, $ z^ 2 $, of phenotypic value. To see this, recall from Equation 17.4a that under this model $$ z=\\mu+A_{m}+E=\\mu+A_{m}+U\\sqrt{A_{v}+\\sigma_{e}^{2}} $$"
+    }
+  ]
+}

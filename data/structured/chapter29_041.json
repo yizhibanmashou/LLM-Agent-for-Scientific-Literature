@@ -1,0 +1,64 @@
+{
+  "id": "chapter29_041",
+  "metadata": {
+    "chapter": "chapter29",
+    "section": "Chapter 29: Generalized Linear Models for Fitness Components",
+    "subsections": [
+      "Generalized Linear Models for Fitness Components"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter29_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "29.38b",
+      "29.38c",
+      "29.39a",
+      "29.39b",
+      "29.39c",
+      "29.40a",
+      "29.40b",
+      "29.41a",
+      "29.41b",
+      "29.41c",
+      "29.42"
+    ],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "derivation",
+      "content": "One choice is $ g(t) = (t) $, giving the general risk as $ (-) = (- t) $, namely the exponential distribution (a constant, i.e., age-independent, risk), weighted by the risk for phenotype z, [[SEE_FORMULA:29.38b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "If survival at stage j is measured, the proportional-hazards model can be written as [[SEE_FORMULA:29.38c]]"
+    },
+    {
+      "type": "discussion",
+      "content": "One advantage of using proportional-hazards models (due to the memoryless feature of the exponential distribution) is that they can allow for certain types of missing, or censored, data (Little and Rubin 2002), such as the last time a marked individual was recovered."
+    },
+    {
+      "type": "derivation",
+      "content": "Given that an individual has survived and mated, the second broad class of probability models for fitness components involves discrete counting distributions, which range over 0, 1, 2,..., such as number of mates or number of offspring per mating. One candidate distribution is the Poisson (Equation 14.16), which is solely a function of its mean value, $ $. As with Bernoulli data, we need a model for how $ $ varies as a function of the trait value z, in which case the probability of j offspring (or j mates, or j of some other fitness component) is [[SEE_FORMULA:29.39a]] From Equation 14.17b, the log-linear model is a candidate for translating z into a mean for the Poisson, where [[SEE_FORMULA:29.39b]] Because $ (z) $ is constrained to be nonnegative, Equation 29.39b takes an unconstrained linear model and maps it into the range $ (0,) $, corresponding to the allowable range of means for a Poisson. More generally, for n traits we can use the log-linear model, [[SEE_FORMULA:29.39c]] which again can include quadratic terms (e.g., $ a + b_ 1 z + b_ 2 z^ 2 $) and hence model concave or convex selection."
+    },
+    {
+      "type": "derivation",
+      "content": "One limitation of the Poisson is that its mean equals its variance, whereas fitness data are often overdispersed, with the variance exceeding the mean (often, but not always, caused by an excess of zero values). In overdispersed settings, an alternative candidate model is the negative binomial distribution. This models the total number of successes $ (y) $ that occur before $ r $ failures for independent trials with a success probability of $ p $, [[SEE_FORMULA:29.40a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "If a random variable, y, follows a negative-binomial distribution, denoted by $ y NB(r, p) $, then its mean and variance are [[SEE_FORMULA:29.40b]] showing that the variance can exceed the mean by an arbitrary amount. Because of this feature, the negative-binomial is often used in place of a Poisson to allow for overdispersion (Wilson et al. 2005b; Yang et al. 2009). One approach for modeling fitness data using this distribution is to assume a constant r value for all trait values (estimated from the data), and then model $ p(z) $ using the logit function (Equation 29.36b). The negative binomial is the sum of r geometric random variables, and hence is the discrete counterpart of the gamma distribution (which is the sum of r exponential random variables; Appendix 2)."
+    },
+    {
+      "type": "derivation",
+      "content": "Two other approaches for building discrete counting distributions for fitness components deal with the often problematic issue of handling an excess of zero values (Martin et al. 2005). The first is to use a zero-truncated distribution, whose values are conditional on being nonzero (i.e., they ignore zero values entirely). If we let $ (j|z) = (W = j|z) $ denote a discrete counting distribution (such as a Poisson, binomial, or negative binomial), then its zero-truncated version is given by [[SEE_FORMULA:29.41a]] where j equals number of offspring, mates, flower heads, and so forth. For example, the zero-truncated Poisson is [[SEE_FORMULA:29.41b]] As above, the trait-specific mean $ (z) $ can be modeled as a log-linear model (Equations 29.39b and 29.39c). This can be generalized to a k-truncated distribution, wherein the first k states (i.e., 0 to a value of k - 1) are ignored [[SEE_FORMULA:29.41c]] and which occasionally appears in the selection literature (Shaw et al. 2008)."
+    },
+    {
+      "type": "derivation",
+      "content": "The other approach is to construct a zero-inflated distribution, which includes an additional point mass, $ 1 - q(z) $, at zero, [[SEE_FORMULA:29.42]] where (as above) $ (j z) = (W = j z) $ is a discrete counting distribution and $ q(z) $ is the probability that the observation given z is not zero-inflated. As above, we can model $ q(z) $ using the logit function (Equation 29.36b). Alternatively, one can model the zero-inflated"
+    },
+    {
+      "type": "discussion",
+      "content": "[h] distribution as an atom (probability mass) at zero and a zero-truncated distribution if not zero."
+    }
+  ]
+}

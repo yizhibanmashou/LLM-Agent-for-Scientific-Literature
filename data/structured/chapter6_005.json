@@ -1,0 +1,64 @@
+{
+  "id": "chapter6_005",
+  "metadata": {
+    "chapter": "chapter6",
+    "section": "Chapter 6: PRICE'S GENERAL THEOREM OF SELECTION",
+    "subsections": [
+      "The Life and Times of George Price"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter6_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "6.9a",
+      "6.9b"
+    ],
+    "table_references": [
+      "6.1"
+    ],
+    "table_reference_keys": [
+      "chapter6:6.1"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "derivation",
+      "content": "Example 6.1. Let the ancestor (i) be the midparent (the average value of the two parents) with a phenotypic value of $ z_i $ and the descendants be the offspring in the next generation. If the average value of offspring, $ _i $, is exactly the same as the value, $ z_i $, of their ancestral midparent, then $ _i = 0 $ for all $ i $ and, from Equation 6.6, the response is simply $ R = (w_i, z_i) $. From the Robertson-Price identity ([[SEE_TABLE:6.1]], Equation 6.10), $ (w_i, z_i) = S $, the selection differential, so that $ R = S $ in this case of perfect transmission. However, the mean value of offspring generally differs from the average value of their parents, in which case the second term in Equation 6.6 is nonzero. The simplest transmission model is a linear midparent-offspring regression, $ z_ ij = + b(z_i -) + e_ ij $. Here $ z_ ij $ is the trait value for the $ j $th offspring from midparent $ i $, giving the mean value of offspring from $ i $ as $ _i = + b(z_i -) + e_i $. The expected deviation then becomes [[SEE_FORMULA:6.9a]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Hence, $$ \\begin{aligned}E(w_{i}\\overline{\\delta}_{i})&=E\\{w_{i}\\left[(b-1)(z_{i}-\\mu)+e_{i}\\right]\\}\\\\&=(b-1)[E(w_{i}z_{i})-\\mu E(w_{i})]+E(w_{i}e_{i})\\end{aligned} $$"
+    },
+    {
+      "type": "definition",
+      "content": "Recalling that $ E(w_i) = 1 $ gives $$ E(w_{i}\\overline{\\delta}_{i})=(b-1)\\left[E(w_{i}z_{i})-\\mu\\right]+E(w_{i}e_{i}) $$ From the definition of a covariance $$ E(w_{i}z_{i})=\\sigma(w_{i},z_{i})+E(w_{i})E(z_{i})=S+1\\cdot\\mu $$ $$ E(w_{i}e_{i})=\\sigma(w_{i},e_{i})+E(w_{i})E(e_{i})=\\sigma(w_{i},e_{i})+1\\cdot0 $$"
+    },
+    {
+      "type": "derivation",
+      "content": "Putting these results together into Equation 6.6 yields [[SEE_FORMULA:6.9b]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Provided that the residual, $ e_i $, of the midparent-offspring regression and the fitness, $ w_i $, of the midparent are uncorrelated, $ R = bS $. When these are uncorrelated and the midparent-offspring slope equals the heritability, $ b = h^2 $, we recover the breeder's equation. While at first blush Equation 6.9b appears to be a rather general statement about the accuracy of the breeder's equation, we made a few subtle assumptions (besides the obvious one of linearity) about the parent-offspring relationship, although we will defer discussion of these until later sections of this chapter."
+    },
+    {
+      "type": "discussion",
+      "content": "[[TABLE:6.1]], Equation 6.10), $ (w_i, z_i) = S $, the selection differential, so that $ R = S $ in this case of perfect transmission. However, the mean value of offspring generally differs from the average value of their parents, in which case the second term in Equation 6.6 is nonzero. The simplest transmission model is a linear midparent-offspring regression, $ z_ ij = + b(z_i -) + e_ ij $. Here $ z_ ij $ is the trait value for the $ j $th offspring from midparent $ i $, giving the mean value of offspring from $ i $ as $ _i = + b(z_i -) + e_i $. The expected deviation then becomes"
+    },
+    {
+      "type": "proposition",
+      "content": "To apply Price’s theorem, we need to specify the categories to be followed, which we take as the alleles A and a. We index these by $i = 1$ and $i = 2$, respectively, and code their associated values as $z_1 = 1$ and $z_2 = 0$, which implies a mean value of $ = (1 p) + (0) = p$, so $R_z$ represents the change in $p$. In the absence of mutation, transmission is perfect, as the descendant allele from an A allele is always A, resulting in $ _i = 0$. Putting these together, Equation 6.6 becomes $$ \\Delta p=R_{z}=\\sigma(w_{i},z_{i})+E(w_{i}\\cdot0)=\\sigma(w_{i},z_{i}) $$"
+    },
+    {
+      "type": "definition",
+      "content": "Under random mating, the fitness $ W_1 $ of an $ A $ allele is simply its marginal fitness (Equation 5.7b), $ W_1 = pW_ AA + (1 - p)W_ Aa $. Similarly, $ W_2 = pW_ Aa + (1 - p)W_ aa $ and $ E(W_i) = = pW_1 + (1 - p)W_2 $. Recalling that $ w_i = W_i/ $ and the definition of a covariance, we have $$ \\Delta p=\\sigma(w_{i},z_{i})=\\frac{\\sigma(W_{i},z_{i})}{\\overline{W}}=\\frac{1}{\\overline{W}}\\Biggl(E(W_{i}z_{i})-E(W_{i})E(z_{i})\\Biggr) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "To show that this recovers the standard population-genetic equation for allele-frequency change, note that $$ E(W_{i}z_{i})=\\sum_{i=1}^{2}W_{i}z_{i}freq(category i)=\\left[W_{1}\\cdot1\\cdot p\\right]+\\left[W_{2}\\cdot0\\cdot(1-p)\\right]=p\\cdot W_{1} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Using this result along with $ E(W_i) = $ and $ E(z_i) = p $ $$ \\Delta p=\\frac{1}{\\overline{W}}\\left(p W_{1}-\\overline{W}p\\right)=p\\frac{\\left(W_{1}-\\overline{W}\\right)}{\\overline{W}} $$ which recovers Equation 5.7c."
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "id": "chapter5_022",
+  "metadata": {
+    "chapter": "chapter5",
+    "section": "Results for Particular Fitness Models",
+    "subsections": [
+      "Phenotypic Stabilizing Selection and the Maintenance of Genetic Variation"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter5_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [
+      "5.2"
+    ],
+    "table_reference_keys": [
+      "chapter5:5.2"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "We have seen that when the heterozygote is favored at a single locus, selection maintains both alleles (Example 5.4). However, Example 5.6 showed that when a number of loci underlie a trait with an additive genetic basis under stabilizing selection, underdominant selection occurs (encouraging the removal, rather than the maintenance, of genetic variation). All of this begs a simple question (with a very complex answer): under what conditions does stabilizing selection maintain genetic variation at a number of loci? This is of one of many questions that follow from one of the most perplexing observations in quantitative genetics—the maintenance of high levels of genetic variation for most traits under apparent stabilizing selection. We consider this in earnest in Chapter 28, confining our remarks here to the prospect that selection alone can maintain variation. As detailed below in Example 5.11, even Wright's simple quadratic optimum model with additive gene action exhibits considerable complexity. Further, in the virtually certain event that the double heterozygote does not exactly correspond to the optimal phenotypic value, the fitness matrix immediately becomes asymmetric, leaving the general (and hence unsolved) two-locus model, with all of its potentially complex behavior. This is also true with epistasis in the trait under selection. Where does all this modeling leave us? As we detail in Example 5.11, analysis of the highly symmetric Wright model (equal allelic effects, a quadratic fitness function, and a double heterozygote value equal to the optimal phenotypic value) shows that stabilizing selection on an additive trait cannot maintain variation. As we start to disrupt these symmetries (e.g., by allowing unequal allelic effects), we find conditions under which stabilizing selection can maintain variation at one or both loci. Indeed, superficially minor issues, such as subtle differences in fitness functions or noncorrespondence between the double heterozygote and optimal trait value, can result in qualitatively different behavior relative to the Wright model."
+    },
+    {
+      "type": "discussion",
+      "content": "What happens when we move beyond two loci? Ironically, the situation may start to become simpler again. Bürger and Gimelfarb (1999) simulated stabilizing selection under the generalized Wright model and found, for randomly generated parameter sets (linkage, allelic effects, and strength of selection) that roughly 17 As one adds more loci (while keeping the range of phenotypic values constant), the effects of selection on any individual locus will be reduced and the behavior of many models will become much simpler. For example, Hastings and Hom (1989, 1990) showed that, under weak selection, the number of polymorphic loci that can be maintained by stabilizing selection is bounded above by the number of independent traits under selection. Thus, with sufficiently weak selection, stabilizing selection on k independent traits can maintain variation at no more than k loci, implying that if only one trait is under stabilizing selection under these conditions, at most only one underlying locus will be polymorphic. As Example 5.6 showed, it can easily be the case that no loci remain polymorphic (in the absence of new mutation). We examine these issues in more detail in Chapter 28."
+    },
+    {
+      "type": "proposition",
+      "content": "In summary, analyses of strong-selection two-locus models instill caution about general statements of selection in multilocus systems. These concerns are quite valid when a major gene (or genes) accounts for most of the variation in the trait of interest. However, if selection tends to be weak relative to recombination (as might be expected in systems with a large number of loci with equal effects), the response under such genetic architectures may have a simpler and more predictable behavior. As reviewed in the next chapter, the assumption of weak selection on individual loci is the basis of several general statements about the behavior of fitness and trait evolution under weak selection (on the individual underlying loci), such as the breeder's equation. While any such general statements are not true in all settings (as the strong-selection two-locus results bear out), they may be largely true in many biological settings."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 5.11. We now consider the generalized two-locus version of Wright's quadratic optimum model, which provides significant insight into many of the issues concerning the maintenance of variation strictly by selection. This model has been examined by numerous authors (e.g., Wright 1935a, 1935b; Hastings 1987a; Gavrilets and Hastings 1993, 1994a; Bürger and Gimelfarb 1999), and we follow the excellent treatment of Bürger (2000, pp. 204–210). Willensdorfer and Bürger (2003) presented a similar analysis for Gaussian selection."
+    },
+    {
+      "type": "discussion",
+      "content": "The generalized model makes four key assumptions. First, fitness is a quadratic function of the phenotypic value z, $ W(z) = 1 - sz^2 $, with an implicit optimum at z = 0. Second, the genotypic value of the double heterozygote exactly corresponds with the phenotypic optimum. Third, there are no environmental effects. Fourth, the trait under stabilizing selection has a completely additive genetic basis (no dominance or epistasis). Thus $ -a_1: 0: a_1 $ are the genotypic values at the first locus (corresponding to $ aa: Aa: AA $), while the values for the second locus are $ -a_2: 0: a_2 $ (corresponding to $ bb: Bb: BB $)."
+    },
+    {
+      "type": "discussion",
+      "content": "While Wright's original analysis (and that of several other authors) assumed that allelic effects are identical $ (a_1 = a_2) $, the generalized version allows for $ a_1 a_2 $. The resulting trait values become $$ \\begin{array}{cccc}a a&A a&A A\\\\ b b&-(a_{1}+a_{2})&-a_{2}&a_{1}-a_{2}\\\\ B b&-a_{1}&0&a_{1}\\\\ B B&a_{2}-a_{1}&a_{2}&a_{1}+a_{2}\\\\\\end{array} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Substituting these trait values into the quadratic fitness function shows that this model corresponds to the symmetric viability model given in [[SEE_TABLE:5.2]], with $$ a=s(a_{1}+a_{2})^{2},\\quad b=sa_{2}^{2},\\quad d=s(a_{1}-a_{2})^{2},\\quad e=sa_{1}^{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Note that there is a relationship among these selection coefficients, $ a + d = 2(b + e) $, which follows from the quadratic fitness function used."
+    },
+    {
+      "type": "definition",
+      "content": "Depending on parameter values, this model can have up to 11 equilibria, 7 of which are potentially stable (but not simultaneously so). There are always four trivial corner equilibria corresponding to each of the four gametes being fixed. The equilibria corresponding to either AB or ab being fixed are always unstable, but the other two corner equilibria, corresponding to Ab or aB being fixed, are potentially stable (as they yield more intermediate phenotypic values). There may also be two edge equilibria, corresponding to fixation at one locus and segregation at the other. For either of these edge equilibria to be admissible (the equilibrium $ x_i $ values lying on the simplex), $ a_1 $ must exceed $ 2a_2 $ (given our ordering of $ a_1 a_2 $), and hence the designation of A as the major locus. By definition, disequilibrium is zero at both the corner and edge equilibria."
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, there are three potential internal equilibria. The first is the so-called symmetric equilibrium, where both loci are segregating with all alleles at frequency 1/2, with gamete frequencies $$ \\widehat{x}_{AB}=\\widehat{x}_{ab}=\\frac{1}{4}+\\widehat{D}_{AB}\\quad and\\quad\\widehat{x}_{Ab}=\\widehat{x}_{aB}=\\frac{1}{4}-\\widehat{D}_{AB} $$ where $ D_ AB < 0 $, i.e., the AB and ab gametes are underrepresented (see Bürger 2000 for the value of $ _ AB $). This implies hidden genetic variation, with the additive variance for this trait increasing in the event of cessation of selection and the subsequent restoration of linkage equilibrium by recombination. (Chapter 16). While there is additive variance in the trait under selection at the equilibrium mean, as we will see in the next chapter (Example 6.6), there is no additive variance in fitness at equilibrium. Although the symmetric internal equilibrium seems straightforward, there can also be two other stable interior equilibria, the so-called unsymmetric equilibria. The expressions for these are complex (see Bürger 2000, p. 205), and their existence requires that the recombination fraction lie in a narrow range (see Figure 5.4)."
+    },
+    {
+      "type": "discussion",
+      "content": "For this model there are four mutually exclusive regions of the parameter space that correspond to different stable equilibria (Figure 5.4). In region 0, only the two corner equilibria (with either Ab or aB fixed) are stable. Note that if the two loci have equal effects $ (a_2/a_1 = 1 $, as Wright originally assumed), these are the only stable equilibria, and stabilizing selection leads to the removal of variation from both loci. In Region 1, the two edge equilibria (with the major locus being polymorphic and B fixed for either bb or BB), are the only stable equilibria. Note that this requires both rather uneven effects $ (a_1 2a_2) $ and recombination sufficiently large relative to selection. Finally, there are two regions where the internal equilibrium is stable. The very narrow Region 2b corresponds to the two stable unsymmetric internal equilibria, which requires a very specific relationship between selection and recombination. Region 2a corresponds to uneven allelic effects and recombination that is weak relative to selection, where a symmetric equilibrium exists."
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, provided allelic effects are uneven and selection is strong relative to recombination, selection can maintain both alleles at both loci (Kearsey 1968; Kearsey and Gale 1968; Nagylaki 1989a; Gavrilets and Hastings 1993, 1994a, 1994b). Gavrilets and Hastings showed"
+    },
+    {
+      "type": "discussion",
+      "content": "[h] that, with strong selection, the mean trait value at equilibrium does not necessarily coincide with the optimum fitness value, so in general $ _z 0 $. Hence, at equilibrium, there can be the appearance of apparent directional selection."
+    },
+    {
+      "type": "discussion",
+      "content": "The final subtlety is that very different results can arise from a simple change in the fitness function, for example from a quadratic to a Gaussian (Gimelfarb 1996b). Under a quadratic fitness function, $ a + d = 2(b + e) $, which reduces what is normally a cubic equation for the equilibrium value of D to a quadratic equation (Gimelfarb 1996b). Under a Gaussian, this relationship no longer holds and the resulting equilibrium structure is potentially more complex. Indeed, Gimelfarb (1996b) showed that under sufficiently strong Gaussian selection, very unusual behavior can occur, such as the appearance of two internal symmetric equilibria with D values of opposite sign."
+    }
+  ]
+}

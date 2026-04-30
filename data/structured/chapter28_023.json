@@ -1,0 +1,67 @@
+{
+  "id": "chapter28_023",
+  "metadata": {
+    "chapter": "chapter28",
+    "section": "Chapter 28: Effects of Linkage and Mating Systems",
+    "subsections": [
+      "Summary: Implications of Gaussian Versus HCA Approximations"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter28_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "28.22e",
+      "28.22f",
+      "28.22g",
+      "28.23a",
+      "28.23b",
+      "28.23c",
+      "28.23d",
+      "28.24a",
+      "28.24b",
+      "28.24c"
+    ],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "derivation",
+      "content": "In particular, the variance in allelic effects at locus i is given by [[SEE_FORMULA:28.22e]] with the additive-genetic variance contributed by locus i being σ2(A i) = 2σ2(a i)."
+    },
+    {
+      "type": "proposition",
+      "content": "This result of allelic effects at individual loci being normally distributed motivated the continuum-of-alleles models introduced in Chapter 24. Equation 28.22a is referred to as the Gaussian approximation because this weak selection assumption leads to a Gaussian distribution of effects at equilibrium (Equation 28.22d)."
+    },
+    {
+      "type": "derivation",
+      "content": "Ignoring LD, the additive variance is just twice (for the two alleles in a diploid) the sum of the locus-specific allelic variances [[SEE_FORMULA:28.22f]] With loci of equal effects, $ _m^2 = 2n _ ^2 $, implying $ _ ^2 = _m^2/(2n) $. Substituting into Equation 28.22f recovers Equation 28.14a, as [[SEE_FORMULA:28.22g]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Example 28.5. We now turn to the expected equilibrium additive variance under the house-of-cards model. As in Example 28.5, we use $x$ (instead of $a$) to denote a random allelic effect to avoid confusion with $ $, the effect of a new mutation, and $p(x)$ and $f()$, respectively, denote the probability density functions for allelic effects $(x)$ and mutational increments $()$. Under the house-of-cards mutational model, the allelic effect of a new mutation is independent of its current value, $x$ (unlike the incremental model), and is drawn from a common distribution, so that the new allelic effect following a mutation is $x' = $. Under this model, the mutational input term in Equation 28.21c, $ p(x -) f() d $, is replaced by $ f(x)$, yielding a much simpler equation for the equilibrium value of $p(x)$, [[SEE_FORMULA:28.23a]] which has an immediate solution of [[SEE_FORMULA:28.23b]] As noted by Bulmer (1989), the $ ^ 2 (x) $ term—the variance in allelic effects, $ ^ 2 (a) $—is a constant that can be found by noting that $ p(x)dx = 1 $, as $ p(x) $ is a probability density function. Hence, for a given choice of $ f(x) $, one integrates Equation 27.23b, and then solves for the value of $ ^ 2 (x) $ that returns an integral of one."
+    },
+    {
+      "type": "derivation",
+      "content": "If $ x^2 ^2(x) + 2V_s $, then [[SEE_FORMULA:28.23c]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Under this approximation, the expected value of $ x^ k $ [[SEE_FORMULA:28.23d]] namely, a function of the expected $ k - 2 $ power of the mutational effects ($ $). Hence, setting $ k $ equal to 2 and 4, respectively, yields the equilibrium variance and kurtosis of allelic effects for locus $ i $ as $$ \\sigma^{2}(a_{i})\\simeq2V_{s}\\mu_{i}E[\\alpha_{i}^{0}]=2V_{s}\\mu_{i}\\cdot1\\quad\\mathrm{a n d}\\quad E[x_{i}^{4}]\\simeq2V_{s}\\mu_{i}E[\\alpha_{i}^{2}]=2V_{s}\\mu_{i}\\sigma_{\\alpha_{i}}^{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Upon recalling that $ _ A(i) ^2 = 2 ^2(a_i) $, this first expression recovers Equation 28.18a, while the second expression yields Equation 28.18c."
+    },
+    {
+      "type": "derivation",
+      "content": "Example 28.6. An intermediate model between Kimura's Gaussian and Turelli's HCA approximations was offered by Slatkin (1987), and our derivation here is based on his work, as well as that of Bulmer (1989). As with many of the above analyses, we start with a single-locus haploid model, which is extended to a diploid multilocus result by assuming additivity and no significant linkage effects. While our initial focus is on a single locus, the model now has multiple alleles, which we index by the subscript j. Further, our focus shifts from the distribution of allelic effects, $ p(x) $ (from the previous example), to the frequency, $ p_j $, of allele j. Again, the trait is scaled so that the optimum $ = 0 $, and we assume that the current phenotypic mean resides at the optimum. Slatkin assumed a stepwise (as opposed to a continuum) series of alleles, where $ A_j $ mutates to either $ A_ j-1 $ or $ A_ j+1 $, each with rate $ /2 $ (independent of allelic state, j). Further, let us assume that allele $ A_j $ has effect $ a j $. In that case Slatkin showed that the expected allele-frequency change from selection becomes [[SEE_FORMULA:28.24a]] where $ ^ 2 (x) $ is the variance of allelic effects (which changes through time as the value of $ p_ j $ change). The change from mutation is [[SEE_FORMULA:28.24b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Hence, at equilibrium, [[SEE_FORMULA:28.24c]]"
+    },
+    {
+      "type": "discussion",
+      "content": "The mutation term in Equation 28.24c is a second-degree difference equation, which, in the limit, approaches a second derivative, as $$ \\begin{aligned}&\\lim_{\\delta\\rightarrow0}\\left(\\frac{f(x-\\delta)-2f(x)+f(x+\\delta)}{\\delta}\\right)\\\\=&\\lim_{\\delta\\rightarrow0}\\left(\\frac{[f(x-\\delta)-f(x)]-[f(x)-f(x+\\delta)]}{\\delta}\\right)\\rightarrow\\frac{d^{2}f(x)}{dx^{2}}\\end{aligned} $$"
+    }
+  ]
+}

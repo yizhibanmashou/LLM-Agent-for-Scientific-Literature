@@ -1,0 +1,1110 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+
+\title{Evolution and
+Selection of
+Quantitative Traits}
+\author{Unknown Authors}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+
+\end{abstract}
+
+\section{Introduction}
+Bruce Walsh
+University of Arizona
+
+Michael Lynch
+Arizona State University
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\linewidth]{example-image}
+\caption{Figure}
+\end{figure}
+
+Sinauer Associates
+
+NEW YORK OXFORD
+OXFORD UNIVERSITY PRESS
+
+\section{Cover Photo Credits (top to bottom)}
+• Lithophane leeae Walsh 2009 (Noctuid moth). Photo by Bruce Walsh.
+
+• Chuck (Angora rabbit). Photo by Lee Fulmer.
+
+• Maize diversity. Photo by Nick Kaczmar.
+
+- Bony armor variation in Gasterosteus aculeatus (the threespine stickleback). Photo by Rowan Barrett.
+
+\section{OXFORD}
+UNIVERSITY PRESS
+
+Great Clarendon Street, Oxford, OX2 6DP,
+
+United Kingdom
+
+Oxford University Press is a department of the University of Oxford. It furthers the University's objective of excellence in research, scholarship, and education by publishing worldwide. Oxford is a registered trade mark of Oxford University Press in the UK and in certain other countries.
+
+© Bruce Walsh and Michael Lynch, 2018
+
+The moral rights of the authors have been asserted
+
+First Edition published in 2018
+
+Impression: 1
+
+All rights reserved. No part of this publication may be reproduced, stored in a retrieval system, or transmitted, in any form or by any means, without the prior permission in writing of Oxford University Press, or as expressly permitted by law, by licence or under terms agreed with the appropriate reprographics rights organization. Enquiries concerning reproduction outside the scope of the above should be sent to the Rights Department, Oxford University Press, at the address above
+
+You must not circulate this work in any other form and you must impose this same condition on any acquirer
+
+Published in the United States of America by Oxford University Press 198 Madison Avenue, New York, NY 10016, United States of America
+
+British Library Cataloguing in Publication Data
+Data available
+
+Library of Congress Control Number: 2017054086
+
+ISBN 978-0-19-883087-0
+
+DOI: 10.1093/oso/9780198830870.001.0001
+
+Printed in Great Britain by Bell & Bain Ltd., Glasgow
+
+Links to third party websites are provided by Oxford in good faith and for information only. Oxford disclaims any responsibility for the materials contained in any third party website referenced in this work.
+
+Seek simplicity and distrust it. Whitehead (1920)
+
+No efforts of mine could avail to make the book easy reading.
+Fisher (1930. The genetical theory of natural selection)
+
+\section{Contents}
+PREFACE xxvii
+I. INTRODUCTION 1
+1. CHANGES IN QUANTITATIVE TRAITS OVER TIME 3
+A Brief History of the Study of the Evolution of Quantitative Traits 4
+The fusion of population and quantitative genetics 4
+The ongoing fusion of molecular and quantitative genetics 7
+The common thread between breeding and evolution in natural populations 9
+Detecting selection in natural populations 10
+The Theoretical Foundations of Evolutionary Biology 11
+The completeness of evolutionary theory 11
+Nonadaptive hypotheses and our understanding of evolution 14
+Overview and Pathways Through This Volume 16
+Evolution at one and two loci 17
+Drift and quantitative traits 18
+Short-term response on a single character 18
+Selection in structured populations 19
+Population-genetic models of trait response 20
+Measuring selection on traits 20
+Appendices 21
+Volume 3 21
+Notation 22
+II. EVOLUTION AT ONE AND TWO LOCI 23
+2. NEUTRAL EVOLUTION IN ONE- AND TWO-LOCUS SYSTEMS 25
+The Wright-Fisher Model 26
+Loss of Heterozygosity by Random Genetic Drift 28
+Probabilities and Times to Fixation or Loss 31
+The age of a Neutral Allele 33
+Allele-frequency Divergence Among Populations 35
+Buri's Experiment 36
+Higher-order Allele-frequency Moments 40
+Linkage Disequilibrium 43
+Mutation-drift Equilibrium 44
+The Detailed Structure of Neutral Variation 48
+The infinite-alleles model and the associated allele-frequency spectrum 48
+The infinite-sites model and the associated site-frequency spectrum 50
+The Genealogical Structure of a Population 52
+Mutation-migration-drift Equilibrium 54
+Quantifying population structure:  $ F_{ST} $ 54
+Mutation-migration-drift equilibrium values of  $ F_{ST} $ 55
+3. THE GENETIC EFFECTIVE SIZE OF A POPULATION 59
+General Considerations 60
+Monoecy 61
+Dioecy 63
+Age Structure 65
+Variable Population Size 67
+
+vii
+
+viii
+
+Partial Inbreeding ..... 68
+Special Systems of Mating ..... 69
+Population Subdivision ..... 72
+Selection, Recombination, and Hitchhiking Effects ..... 74
+Effects from selection at unlinked loci ..... 74
+Selective sweeps and genetic draft ..... 75
+Background selection ..... 77
+4. THE NONADAPTIVE FORCES OF EVOLUTION ..... 81
+Relative Power of Mutation and Genetic Drift ..... 82
+Nucleotide diversity ..... 82
+Number of segregating sites ..... 83
+Alternative approaches ..... 84
+Empirical observations ..... 85
+Relative Power of Recombination and Genetic Drift ..... 86
+Number of recombinational events in a sample of alleles ..... 87
+Other approaches for narrow genomic intervals ..... 89
+Large-scale analysis ..... 90
+Empirical observations ..... 92
+Effective Population Size ..... 94
+Temporal change in allele frequencies ..... 94
+Single-sample estimators ..... 96
+Empirical observations ..... 97
+Mutation Rate ..... 98
+Divergence analysis ..... 98
+Short-term enrichment ..... 100
+Evolution of the mutation rate ..... 103
+Recombination Rate ..... 106
+Evolution of the recombination rate ..... 107
+General Implications ..... 109
+5. THE POPULATION GENETICS OF SELECTION ..... 113
+Single-locus Selection: Two Alleles ..... 113
+Viability selection ..... 114
+Expected time for allele-frequency change ..... 116
+Differential viability selection on the sexes ..... 117
+Frequency-dependent selection ..... 118
+Fertility/fecundity selection ..... 118
+Sexual selection ..... 119
+Wright's Formula ..... 119
+Adaptive topographies and Wright's formula ..... 122
+Single-locus Selection: Multiple Alleles ..... 122
+Marginal fitnesses and average excesses ..... 122
+Equilibrium frequencies with multiple alleles ..... 124
+Internal, corner, and edge equilibria and basins of attraction ..... 125
+Wright's formula with multiple alleles ..... 126
+Changes in genotypic fitnesses,  $ W_{ij} $, when additional loci are under selection ..... 127
+Selection on Two Loci ..... 128
+Dynamics of gamete-frequency change ..... 129
+Gametic equilibrium frequencies, linkage disequilibrium, and mean fitness ..... 130
+Results for particular fitness models ..... 131
+Phenotypic stabilizing selection and the maintenance of genetic variation ..... 132
+Selection on a Quantitative Trait Locus ..... 135
+Monogenic traits ..... 136
+Many loci of small effect underlying the character ..... 136
+
+ix
+
+6. THEOREMS OF NATURAL SELECTION:
+RESULTS OF PRICE, FISHER, AND ROBERTSON 145
+Price's General Theorem of Selection 146
+The life and times of George Price 146
+Price's theorem,  $ R_{z} = \sigma(w_{i}, z_{i}) + E(w_{i} \overline{\delta}_{i}) $ 147
+The Robertson-Price identity,  $ S = \sigma(w, z) $ 150
+The breeder's equation,  $ R = h^{2}S $ 151
+Fisher's Fundamental Theorem of Natural Selection 154
+The classical interpretation of Fisher's fundamental theorem,  $ R_{w} = \sigma_{A}^{2}(w) $ 154
+What did Fisher really mean? 157
+Implications of Fisher's Theorem for Trait Variation 158
+Traits correlated with fitness have lower heritabilities 160
+Traits correlated with fitness have higher levels of both
+additive and residual variance 162
+Nonadditive genetic variance for traits under selection 164
+Robertson's Secondary Theorem of Natural Selection 165
+1968 version:  $ R_{z} = \sigma_{A}(w, z) $ 165
+1966 version:  $ R_{z} = \sigma(w, A_{z}) $ 166
+Accuracy of the secondary theorem 166
+Connecting Robertson's results with those of Price, Fisher, and Lush 167
+The Breeder's Equation Framed Within the Price Equation 168
+Partial covariance and the spurious response to selection 168
+Parent-offspring regressions before and after selection 171
+Heywood's decomposition of response 172
+7. INTERACTION OF SELECTION, MUTATION, AND DRIFT 175
+Selection and Mutation at Single Loci 175
+Selection and Drift at Single Loci 179
+Probability of fixation under additive selection 180
+Probability of fixation under arbitrary selection 185
+Fixation of overdominant and underdominant alleles 187
+Expected allele frequency in a particular generation 190
+Joint Interaction of Selection, Drift, and Mutation 191
+Haldane's Principle and the Mutation Load 194
+Fixation Issues Involving Two Loci 197
+The Hill-Robertson effect 197
+Mutations with contextual effects 199
+Stochastic tunneling 200
+8. HITCHHIKING AND SELECTIVE SWEEPS 207
+Sweeps: A Brief Overview 207
+Hitchhiking, sweeps, and partial sweeps 207
+Selection alters the coalescent structure at linked neutral sites 208
+Hard vs. soft sweeps 211
+The Behavior of a Neutral Locus Linked to a Selected Site 212
+Allele-frequency change 212
+Reduction in genetic diversity around a sweep 217
+The Messer-Neher estimator of s 220
+Recovery of variation following a sweep 220
+Effects of sweeps on the variance in microsatellite copy number 221
+The site-frequency spectrum 222
+The pattern of linkage disequilibrium 224
+
+Age of a sweep ..... 226
+Partial sweeps ..... 226
+Impacts of inbreeding ..... 227
+Summary: Signatures of a hard sweep ..... 227
+Soft Sweeps ..... 227
+Signatures of a soft sweep ..... 229
+Sweeps using standing variation ..... 230
+How likely is a sweep using standing variation? ..... 231
+“Hardening” and “softening” of a sweep ..... 235
+Recurrent mutation of the favorable allele cannot be ignored ..... 236
+Impact of geographic structure ..... 239
+Polygenic Adaptation ..... 242
+Genome-Wide Impact of Repeated Selection at Linked Sites ..... 243
+Association between levels of variation and localized recombination rates ..... 244
+Impact of recurrent hard sweeps on levels of neutral variation ..... 245
+A few large or many small sweeps? ..... 247
+Selective interference and the Hill-Robertson effect ..... 250
+Background selection: Reduction in variation under low recombination or selfing ..... 251
+Background selection vs. recurrent selective sweeps ..... 254
+Sweeps, background selection, and substitution rates ..... 255
+Sweeps, background selection, and codon usage bias ..... 257
+A paradigm shift away from the neutral theory of molecular evolution? ..... 262
+9. USING MOLECULAR DATA TO DETECT SELECTION:
+   SIGNATURES FROM RECENT SINGLE EVENTS ..... 265
+An Overview of Strategies Based on Segregating Variation ..... 266
+Attempts to account for departures from the equilibrium model ..... 268
+SNP ascertainment bias ..... 268
+SNP polarity assignment errors ..... 269
+Background selection as the more appropriate null? ..... 269
+Structure of the remainder of this chapter ..... 269
+Allele-Frequency Change in a Single Population ..... 269
+Allele-frequency change over two sample points: The Waples adjusted test ..... 270
+Allele-frequency change over a time series: The Fisher-Ford test ..... 272
+Schaffer's linear trend test ..... 274
+Scans and simulation-based approaches ..... 275
+Birthdate selection mapping (BDSM) ..... 275
+Divergence Between Populations: Two-population Comparisons ..... 277
+Divergence Between Populations:  $ F_{ST} $-based Tests ..... 278
+Outlier approaches ..... 279
+Tests based on  $ F_{ST} $-generated branch-lengths ..... 280
+The Lewontin-Krakauer test: Basics ..... 280
+Second-generation Lewontin-Krakauer tests: Model-based adjustments ..... 282
+Third-generation Lewontin-Krakauer tests: Correcting for population structure ..... 283
+Allele-Frequency Correlations With Environmental Variables ..... 284
+Joost's spatial analysis method (SAM) ..... 284
+Accounting for population structure: Coop's Bayenv and Frichot's LFMM ..... 286
+Changes in the Chromosomal Pattern of Neutral Variation ..... 289
+Simple visual scans for changes in nucleotide and STR diversity ..... 289
+Tests based on STR variation across populations ..... 291
+Tests of sweeps using bottleneck models ..... 292
+Tests of sweeps using genomic positional information: CLRT-GOF ..... 293
+Tests of sweeps using genomic positional information: "SweepFinder" ..... 295
+Tests of sweeps using genomic positional information: XP-CLR ..... 297
+Ascertainment issues ..... 299
+
+xi
+
+Model fragility: Demography, mutation, recombination, and gene conversion ..... 299
+Tests Based on Site-frequency Spectrum Statistics ..... 300
+Summary statistics based on infinite-sites models ..... 300
+Tajima's D test ..... 303
+Achaz's Y and Y* tests ..... 305
+Fu and Li's D* and F* tests ..... 305
+Fay and Wu's H test ..... 306
+Zeng et al.'s E test ..... 307
+Adjusting the null to account for nonequilibrium populations ..... 307
+Support via a preponderance of evidence ..... 309
+Recombination makes site-frequency tests conservative ..... 311
+Haplotype-based Tests ..... 311
+Defining and inferring haplotypes ..... 312
+Overview of haplotype-based tests ..... 312
+The Ewens-Watterson test ..... 314
+Other infinite-alleles tests: Conditioning on  $ \widehat{\theta} $ ..... 315
+Other infinite-alleles tests: Conditioning on S ..... 316
+Garud et al.'s H $ _{12} $ and H $ _{2} $ tests ..... 318
+Recombination and infinite-alleles-based tests ..... 318
+Pairwise disequilibrium tests: Kelly's Z $ _{nS} $ and Kim and Nielsen's  $ \omega_{max} $ ..... 319
+Contrasting allele-frequency vs. intra-allelic estimates of haplotype age ..... 320
+Long haplotype tests using within-population data:
+rEHH, LDD, iHS, nS $ _{L} $, SDS, and DIND ..... 324
+Long haplotype tests using between-population data:
+XP-EHH, Rsb, rHH, rMHH, and  $ \chi_{MD} $ ..... 328
+Summary: Tests based on haplotype/LD information ..... 330
+Searches for Selection: Humans ..... 330
+Recent and current selection in humans ..... 331
+Balancing selection in humans ..... 333
+Searches for Selection: Domesticated Organisms ..... 334
+The process of domestication ..... 335
+Finding domestication and improvement genes in crops ..... 336
+Domestication and improvement genes in rice ..... 338
+Domestication and improvement genes in maize ..... 338
+Relative strengths of selection on domestication vs. improvement genes ..... 340
+Silkmoths and flies ..... 341
+Constraints on finding domestication and improvement genes through selective signals ..... 341
+0. USING MOLECULAR DATA TO DETECT SELECTION:
+SIGNATURES FROM MULTIPLE HISTORICAL EVENTS ..... 343
+Brief Overview of Divergence-based Tests ..... 344
+A history of selection alters the ratio of polymorphic to divergent sites ..... 344
+A history of positive selection alters the ratio of silent- to replacement-site substitution rates ..... 345
+Divergence-based tests are biased toward conservative sites ..... 346
+What fraction of the genome is under functional constraints? ..... 346
+The HKA and McDonald-Kreitman Tests ..... 347
+The Hudson-Kreitman-Aguadé (HKA) test ..... 347
+The McDonald-Kreitman (MK) test: Basics ..... 350
+The McDonald-Kreitman test: Caveats ..... 356
+Dominance in fitness and the MK test ..... 359
+Fluctuating selection coefficients and MK tests ..... 359
+Recombinational bias in extended MK tests ..... 360
+Estimating Parameters of Adaptive Evolution ..... 360
+
+xii
+
+Estimating the fraction,  $ \alpha $, of substitutions that are adaptive ..... 360
+How common are adaptive substitutions? ..... 365
+Estimating the rate,  $ \lambda $, of adaptive substitutions ..... 367
+The Sawyer-Hartl Poisson Random Field Model ..... 369
+Basic structure of the model ..... 369
+Bayesian extensions ..... 374
+INSIGHT analysis of human transcription factors ..... 376
+Phylogeny-based Divergence Tests ..... 377
+The  $ K_{a} $ to  $ K_{s} $ ratio,  $ \omega $ ..... 378
+Parsimony-based ancestral reconstruction tests ..... 379
+Maximum-likelihood-based codon tests ..... 380
+Bayesian estimators of sites under positive selection ..... 383
+Connecting the Parameters of Adaptive Evolution ..... 384
+The Search for Selection: Closing Comments ..... 385
+Caution is in order when declaring positive selection ..... 386
+Curbing our enthusiasm ..... 387
+III. DRIFT AND QUANTITATIVE TRAITS ..... 389
+11. CHANGES IN GENETIC VARIANCE INDUCED BY DRIFT ..... 391
+Response of Within-population Genetic Variance to Drift ..... 391
+Complete additivity ..... 391
+The effects of dominance ..... 392
+Quadratic components for inbred populations ..... 393
+One- and two-locus identity coefficients ..... 395
+Impact of drift under nonadditive variance ..... 397
+The effects of epistatis ..... 399
+Sampling error ..... 403
+Empirical data ..... 405
+Covariance Between Inbred Relatives ..... 411
+REML estimates ..... 416
+Empirical observations ..... 417
+Drift-mutation Equilibrium ..... 419
+Subdivided populations ..... 422
+12. THE NEUTRAL DIVERGENCE OF QUANTITATIVE TRAITS ..... 425
+Short-term divergence ..... 426
+Sampling error ..... 427
+Sample variance confidence intervals ..... 429
+Empirical observations ..... 431
+Estimating the among-group variance ..... 432
+Lande's constant variance test,  $ F_{CV} $ ..... 433
+Long-term Divergence ..... 434
+Effectively neutral divergence and the estimation of rates of mutational variance ..... 436
+Testing the Null Hypothesis of Neutral Phenotypic Divergence: Rate-based Tests ..... 438
+Rate tests ..... 439
+Lande's Brownian-motion model of neutral trait evolution ..... 439
+Tests based on the Brownian-motion model ..... 441
+Ornstein-Uhlenbeck models ..... 445
+Divergence in morphological traits ..... 446
+Time Series Divergence Tests ..... 446
+Tests for departures from symmetric random walks ..... 447
+Hunt's approach for comparing different models ..... 448
+Population Structure Based-tests:  $ Q_{ST} $ versus  $ F_{ST} $ ..... 452
+QST: Partitioning additive variance over populations ..... 452
+
+xiii
+
+$P_{ST}$: Approximating $Q_{ST}$ with phenotypic data ..... 454
+Testing $Q_{ST}$ versus $F_{ST}$ ..... 455
+Empirical data ..... 458
+Closing comments: $Q_{ST}$, $F_{STQ}$, and linkage disequilibrium ..... 460
+Trait-augmented Marker-based Approaches: Tests Using QTL Information ..... 462
+Leveraging QTL studies ..... 462
+Orr's QTLST and QTLST-EE sign tests ..... 462
+Applications of QTL sign tests ..... 465
+Trait-augmented Marker-based Approaches: Tests Using GWAS Information ..... 467
+Approaches based on combining signals ..... 467
+Tests based on tSDS scores ..... 467
+The Berg and Coop $Q_{x}$ test ..... 468
+Divergence in Gene Expression ..... 469
+Level of gene expression as a quantitative trait ..... 469
+Rate-based tests for neutrality in divergence of gene expression ..... 470
+Largely neutral evolution of expression levels in primates? ..... 473
+Transcriptional $Q_{ST}$, $tQ_{ST}$ ..... 474
+Cis vs. trans, local vs. distant, and allele-specific expression (ASE) ..... 474
+Applications of sign-based tests to expression data ..... 475
+Evolution of expression levels: Drift, directional, or stabilizing selection? ..... 477
+IV. SHORT-TERM RESPONSE ON A SINGLE CHARACTER ..... 479
+13. SHORT-TERM CHANGES IN THE MEAN:
+1. THE BREEDER'S EQUATION ..... 481
+Single-generation Response: The Breeder's Equation ..... 482
+The breeder's equation: A general approximation for response ..... 482
+The importance of linearity ..... 482
+Response is the change in mean breeding value ..... 483
+Response under sex-dependent parent-offspring regressions ..... 484
+The selection intensity, $\bar{i}$ ..... 486
+The Robertson-Price identity, $S=\sigma(w,z)$ ..... 486
+Correcting for reproductive differences: Effective selection differentials ..... 487
+Expanding the Basic Breeder's Equation ..... 488
+Accuracy ..... 489
+Reducing environmental noise: Stratified mass selection ..... 493
+Reducing environmental noise: Repeated-measures selection ..... 494
+Adjustments for overlapping generations ..... 496
+Maximizing response under the breeder's equation ..... 497
+Maximizing the economic rate of response ..... 499
+Mean- versus variance-standardized response ..... 499
+BLUP Selection ..... 500
+The Multivariate Breeder's Equation ..... 500
+Response with two traits ..... 501
+Accounting for phenotypic correlations: The selection gradient ..... 501
+Accounting for genetic correlations: The Lande equation ..... 502
+Selection gradients and mean population fitness ..... 503
+Limitations of the Breeder's Equation ..... 504
+14. SHORT-TERM CHANGES IN THE MEAN:
+2. TRUNCATION AND THRESHOLD SELECTION ..... 507
+Truncation Selection ..... 507
+Selection intensities and differentials under truncation selection ..... 507
+Correcting the Selection Intensity for Finite Sample Sizes ..... 509
+
+Response in Discrete Traits: Binary Characters ..... 512
+The threshold/liability model ..... 512
+Direct selection on the threshold, T ..... 516
+The logistic regression model for binary traits ..... 516
+BLUP selection with binary data: Generalized linear mixed models ..... 520
+Response in Discrete Traits: Poisson-distributed Characters ..... 522
+
+15. SHORT-TERM CHANGES IN THE MEAN:
+3. PERMANENT VERSUS TRANSIENT RESPONSE ..... 525
+Why all the Focus on  $ h^{2} $? ..... 525
+Genetic Sources of Transient Response ..... 526
+Additive epistasis ..... 526
+Dominance in autotetraploids ..... 529
+Ancestral Regressions ..... 530
+Response due to Environmental Correlations ..... 534
+Selection in the Presence of Heritable Maternal Effects ..... 537
+Decomposing maternal effects ..... 537
+Selection response under Falconer's dilution model ..... 538
+Separate direct and maternal traits ..... 543
+Maternal selection vs. maternal inheritance ..... 545
+
+16. SHORT-TERM CHANGES IN THE VARIANCE:
+1. CHANGES IN THE ADDITIVE VARIANCE ..... 549
+Changes in Variance due to Gametic-Phase Disequilibrium ..... 549
+Changes in Variance Under the Infinitesimal Model ..... 552
+Within- and among-family variance under the infinitesimal model ..... 554
+Accounting for inbreeding and drift ..... 556
+Changes in Variance Under Truncation Selection ..... 557
+Changes in correlated characters ..... 560
+Directional truncation selection: Theory ..... 561
+Directional truncation selection: Experimental results ..... 563
+Effects of epistasis: Does the Grifﬁng effect overpower the Bulmer effect? ..... 563
+Double truncation selection: Theory ..... 564
+Double truncation selection: Experimental results ..... 565
+Response under Normalizing Selection ..... 567
+Selection with Assortative Mating ..... 569
+Results using the infinitesimal model ..... 569
+Assortative mating and enhanced response ..... 570
+Disruptive selection, assortative mating, and reproductive isolation ..... 572
+
+17. SHORT-TERM CHANGES IN THE VARIANCE:
+2. CHANGES IN THE ENVIRONMENTAL VARIANCE ..... 573
+Background: Heritable Variation in  $ \sigma_{E}^{2} $ ..... 573
+Scales of environmental sensitivity ..... 573
+Environmental vs. genetic canalization ..... 574
+Evidence for heritable variation in the environmental variance ..... 575
+Modeling Genetic Variation in  $ \sigma_{E}^{2} $ ..... 576
+The multiplicative model ..... 577
+The exponential model ..... 578
+The additive model ..... 580
+The heritability of the environmental variance,  $ h_{v}^{2} $ ..... 581
+Selection on  $ \sigma_{E}^{2} $ ..... 583
+Translating the response in  $ A_{v} $ into response in  $ \sigma_{E}^{2} $ ..... 583
+Response from stabilizing selection on phenotypic value, z ..... 584
+
+xv
+
+Response from directional selection on z ..... 585
+Direct selection on  $ \sigma_{E}^{2} $ using repeated records ..... 588
+
+18. ANALYSIS OF SHORT-TERM SELECTION EXPERIMENTS:
+1. LEAST-SQUARES APPROACHES ..... 591
+Variance in Short-term Response ..... 591
+Expected variance in response generated by drift ..... 592
+Variance in predicted response versus variance in actual response ..... 595
+Realized Heritabilities ..... 595
+Estimators for several generations of selection ..... 596
+Weighted least-squares estimates of realized heritability ..... 598
+Standard errors of realized heritability estimates ..... 600
+Power: Estimation of  $ h^{2} $ from relatives or selection response? ..... 601
+Empirical versus predicted standard errors ..... 603
+Realized heritability with rank data ..... 604
+Infinitesimal-model corrections for disequilibrium ..... 604
+Experimental Evaluation of the Breeder's Equation ..... 606
+Most traits respond to selection ..... 606
+Sheridan's analysis ..... 607
+Realized heritabilities, selection intensity, and inbreeding ..... 608
+Asymmetric selection response ..... 611
+Reversed response ..... 615
+Control Populations and Experimental Designs ..... 616
+Basic theory of control populations ..... 616
+Divergent selection designs ..... 618
+Variance in response ..... 618
+Control populations and variance in response ..... 619
+Optimal Experimental Designs ..... 620
+Nicholas' criterion ..... 621
+Replicate lines ..... 621
+Line-cross Analysis of Selection Experiments ..... 622
+The simple additive model ..... 622
+The Hammond-Gardner model ..... 623
+Accounting for inbreeding depression and drift ..... 628
+
+9. ANALYSIS OF SHORT-TERM SELECTION EXPERIMENTS:
+2. MIXED-MODEL AND BAYESIAN APPROACHES ..... 631
+Mixed-model vs. Least-squares Analysis ..... 631
+BLUP selection ..... 632
+Basics of Mixed-model Analysis ..... 633
+REML estimation of unknown variance components ..... 636
+REML often returns variance estimates unbiased by selection ..... 637
+Animal-model Analysis of Selection Experiments ..... 638
+The basic animal model ..... 638
+Response is measured by change in mean breeding values ..... 639
+Fixed effects alter heritabilities ..... 642
+Model validation ..... 642
+Separating genetic and environmental trends ..... 643
+Validation that a trend is indeed genetic ..... 645
+Replicate lines ..... 647
+Estimating the additive variance at generation t ..... 647
+The Relationship Matrix, A, Accounts for Drift and Disequilibrium ..... 648
+Modifications of the Basic Animal Model ..... 651
+Models with additional random effects ..... 652
+Common family and maternal effects ..... 654
+
+xvi
+
+Treating certain breeding values as fixed effects ..... 655
+Dominance ..... 656
+Bayesian Mixed-model Analysis ..... 659
+Introduction to Bayesian statistics ..... 659
+Computing posteriors and marginals: MCMC and the Gibbs sampler ..... 662
+Bayesian analysis of the animal model ..... 665
+Application: Estimating selection response in pig litter-size components ..... 666
+LS, MM, or Bayes? ..... 668
+20. SELECTION RESPONSE IN NATURAL POPULATIONS ..... 671
+Evolution in Natural Populations: What Is the Target of Selection? ..... 672
+Direct and correlated responses ..... 672
+Environmentally generated correlations between fitness and traits ..... 674
+The Fisher-Price-Kirkpatrick-Arnold Model for Evolution of Breeding Date ..... 676
+Modifying the Breeder's Equation for Natural Populations ..... 677
+Complications in the absence of environmental change ..... 678
+Additional complications from environmental change ..... 682
+Is a Focal Trait the Direct Target of Selection? ..... 682
+Robertson's theorem: Response prediction without regard to the target of selection ..... 682
+Robertson consistency tests ..... 683
+Rausher's consistency criteria ..... 684
+Morrissey et al.'s consistency criteria ..... 686
+The breeder's equation versus the secondary theorem ..... 687
+Applying Mixed Models to Natural Populations: Basics ..... 688
+Animal-model analysis in natural populations: Overview ..... 689
+Obtaining the relationship matrix: Direct observation of the pedigree ..... 691
+Obtaining the relationship matrix: Marker data ..... 691
+Consequences of pedigree errors ..... 696
+Model selection ..... 697
+Applying Mixed Models to Natural Populations ..... 698
+Consistency tests: Accuracy, reliability, and caveats when using PBVs ..... 698
+Bivariate animal models: REML estimates of  $ \sigma(A_{z}, A_{w}), S_{A}, \text{and } S_{z} $ ..... 702
+Next-generation analysis: Generalized mixed models ..... 703
+Next-generation analysis: Modeling missing data ..... 704
+Detecting genetic trends ..... 706
+Causes of Apparent Failures of Response in Natural Populations ..... 709
+Cryptic evolution: Genetic change masked by environmental change ..... 711
+Antler size in red deer: The focal trait is not the target of selection ..... 713
+Lower heritabilities in environments with stronger selection? ..... 713
+Fitness tradeoffs and multivariate constraints ..... 714
+V. SELECTION IN STRUCTURED POPULATIONS ..... 717
+21. FAMILY-BASED SELECTION ..... 719
+Introduction to Family-based Selection Schemes ..... 719
+Overview of the different types of family-based selection ..... 720
+Plant versus animal breeding ..... 720
+Among- versus within-family selection ..... 722
+Details of Family-based Selection Schemes ..... 722
+Selection and recombination units ..... 722
+Variations of the selection unit ..... 723
+Variations of the recombination unit ..... 725
+Theory of Expected Single-cycle Response ..... 727
+Modifications of the breeder's equation for predicting family-based response ..... 727
+
+The selection unit-offspring covariance,  $ \sigma(x, y) $ ..... 731
+Variance of the selection unit,  $ \sigma_{x}^{2} $ ..... 733
+Response for Particular Designs ..... 736
+Overview of among- and within-family response ..... 736
+Among-family selection ..... 737
+Among-family selection: Which scheme is best? ..... 740
+Within-family selection ..... 741
+Realized heritabilities ..... 743
+Accounting for epistasis ..... 744
+Response with autotetraploids ..... 745
+Efficiency of Family-based Vs. Individual Selection ..... 749
+The relative accuracies of family-based vs. individual selection ..... 749
+Comparing selection intensities: Finite size corrections ..... 753
+Within-family selection has additional long-term advantages ..... 754
+Response when Families are Replicated Over Environments ..... 755
+Among-family variance under replication ..... 755
+Ear-to-row selection ..... 758
+Modified ear-to-row selection ..... 758
+Selection on a Family Index ..... 761
+Response to selection on a family index ..... 762
+Lush's optimal index ..... 763
+Correcting the selection intensity for correlated variables ..... 766
+22. ASSOCIATIVE EFFECTS: COMPETITION, SOCIAL INTERACTIONS, GROUP AND KIN SELECTION ..... 769
+Direct Versus Associative Effects ..... 770
+Early models of competition ..... 771
+Direct and associative effects ..... 771
+Animal well-being and the improvement of the heritable social environment ..... 773
+What do we mean by group? ..... 773
+Trait- vs. variance component-based models ..... 774
+The total breeding value (TBV) and  $ T^{2} $ ..... 775
+ $ A_{s} $ as a function of group size ..... 778
+Selection In the Presence of Associative Effects ..... 779
+Individual selection: Theory ..... 780
+Individual selection: Direct vs. social response ..... 782
+Individual selection: Maternal effects ..... 783
+Group selection: Theory ..... 784
+Group selection: Direct vs. social response ..... 788
+Group selection: Experimental evidence ..... 788
+Incorporating Both Individual and Group Information ..... 789
+Response on a weighted index ..... 789
+Optimal response ..... 793
+BLUP Estimation of Direct and Associative Effects ..... 796
+Mixed-model estimation of direct and associative effects ..... 796
+Muir's experiment: BLUP selection for quail weight ..... 800
+Details: Environmental group effects and the covariance structure of e ..... 802
+Details: Ignoring additive social values introduces bias ..... 804
+Details: Identifiability of variance components ..... 805
+Appropriate designs for estimating direct and associative effects ..... 806
+Using kin groups: A quick-and-dirty way around associative effects? ..... 807
+Associative Effects, Inclusive Fitness, and Fisher's Theorem ..... 807
+Change in mean fitness when associative effects are present ..... 807
+Inclusive fitness ..... 810
+Bijma's theorem: Inclusive fitness and Fisher's fundamental theorem ..... 812
+
+Hamilton's rule ..... 813
+How general is Hamilton's rule? ..... 813
+Queller's generalization of Hamilton's rule ..... 815
+Group Selection, Kin Selection, and Associative Effects ..... 815
+Kin, group, and multilevel selection ..... 815
+Much ado about nothing? ..... 816
+Group and kin selection: Models without trait associative effects ..... 817
+Group and kin selection in the associative-effects framework ..... 821
+Closing comments ..... 823
+23. SELECTION UNDER INBREEDING ..... 825
+Basic Issues in Selection Response Under Inbreeding ..... 826
+Accounting for inbreeding depression ..... 826
+Response under small amounts of inbreeding ..... 827
+Using ancestral regressions to predict response ..... 828
+The covariance between inbred relatives ..... 830
+Limitations ..... 830
+Family Selection with Inbreeding and Random Mating ..... 831
+Family selection using inbred parents ..... 833
+Progeny testing using inbred offspring ..... 835
+S₁, S₂, and Sᵢ,ₙ family selection ..... 836
+Other inbreeding-based family-selection schemes ..... 840
+Cycles of inbreeding and outcrossing ..... 840
+Individual Selection Under Pure Selfing ..... 842
+Response under pure selfing ..... 843
+Response when inbreeding pure-line crosses ..... 846
+The Bulmer effect under selfing ..... 847
+Family Selection Under Pure Selfing ..... 849
+The covariance between relatives in a structured selfing population ..... 850
+Response to family selection ..... 853
+Within-family selection under selfing ..... 855
+Combined selection ..... 856
+Response Under Partial Selfing ..... 859
+An approximate treatment using covariances ..... 859
+A more careful treatment: Kelly's structured linear model ..... 861
+Conclusions: An Incomplete Theory for Short-term Response ..... 864
+The Evolution of Selfing Rates ..... 865
+Automatic selection, inbreeding depression, and reproductive assurance ..... 865
+The Lande-Schemske model: Theory ..... 867
+The Lande-Schemske model: Data ..... 867
+Baker's Law and the demographic advantages of selfing ..... 869
+Group-level selection against selfing ..... 869
+VI. POPULATION-GENETIC MODELS OF TRAIT RESPONSE ..... 873
+24. THE INFINITESIMAL MODEL AND ITS EXTENSIONS ..... 875
+The Infinitesimal: A Family of Models ..... 876
+The Infinitesimal Genetics Model: Empirical Data ..... 877
+Theoretical Implications of the Infinitesimal Genetics Model ..... 879
+Selection does not change allele frequencies ..... 879
+Accounting for dominance ..... 880
+Disequilibrium ..... 881
+Theoretical Implications of the Standard Infinitesimal Model ..... 881
+
+What generates a Gaussian distribution within a family? ..... 881
+Modifications of the Fisher-Bulmer infinitesimal model ..... 882
+Gaussian Continuum-of-alleles Models ..... 883
+Infinite-alleles and continuum-of-alleles models ..... 883
+Drift ..... 884
+Drift and a finite number of loci ..... 885
+The effective number of loci,  $ n_{e} $ ..... 887
+Dynamics:  $ \sigma_{a}^{2} $ and d change on different time scales ..... 888
+How robust is the Gaussian continuum-of-alleles model? ..... 889
+The Bulmer Effect Under Linkage ..... 890
+An approximate treatment ..... 890
+A more careful treatment ..... 892
+Response Under Non-Gaussian Distributions ..... 895
+Describing the genotypic distribution: Moments ..... 895
+Describing the genotypic distribution: Cumulants and Gram-Charlier series ..... 898
+Application: Departure from normality under truncation selection ..... 900
+Short-term response ignoring linkage disequilibrium ..... 902
+Gaussian versus rare-alleles approximations ..... 905
+Short-term response ignoring allele-frequency change ..... 909
+Effects of linkage ..... 911
+Summary: Where Does All This Modeling Leave Us? ..... 911
+25. LONG-TERM RESPONSE:
+1. DETERMINISTIC ASPECTS ..... 913
+Idealized Long-term Response in a Large Population ..... 913
+Deterministic Single-locus Theory ..... 916
+Expected contribution from a single locus ..... 916
+Dudley's estimators of a, n, and  $ p_{0} $ ..... 917
+Dynamics of allele-frequency change ..... 918
+Major Genes Versus Polygenic Response: Theory ..... 922
+Lande's model: Response with a major gene in an infinitesimal background ..... 922
+Major Genes Versus Polygenic Response: Data ..... 927
+Major genes appear to be important in response to anthropogenically induced selection ..... 927
+What is the genetic architecture of response in long-term selection experiments? ..... 928
+An Overview of Long-term Selection Experiments ..... 929
+Estimating selection limits and half-lives ..... 930
+General features of long-term selection experiments ..... 932
+The nature of selection limits ..... 935
+Increases in Variances and Accelerated Responses ..... 937
+Rare alleles ..... 937
+Major mutations ..... 938
+Scale and environmental impacts on variances ..... 941
+Linkage effects ..... 941
+Epistasis ..... 943
+Conflicts Between Natural and Artificial Selection ..... 944
+Accumulation of lethals in selected lines ..... 946
+Lerner's model of genetic homeostasis ..... 949
+Artificial selection countered by natural stabilizing selection ..... 950
+26. LONG-TERM RESPONSE:
+2. FINITE POPULATION SIZE AND MUTATION ..... 953
+The Population Genetics of Selection and Drift ..... 954
+Fixation probabilities for alleles at a QTL ..... 955
+Increased recombination rates following selection ..... 956
+The Effect of Selection on Effective Population Size ..... 956
+
+xx
+
+The expected reduction in  $ N_{e} $ from directional selection ..... 957
+Drift and Long-term Selection Response ..... 961
+Basic theory ..... 961
+Robertson's theory of selection limits ..... 962
+Tests of Robertson's Theory of Selection Limits ..... 965
+Weber's selection experiments on Drosophila flight speed ..... 967
+The Effects of Linkage on the Selection Limit ..... 969
+Optimal Selection Intensities for Maximizing Long-term Response ..... 972
+Effects of Population Structure on Long-term Response ..... 974
+Founder effects and population bottlenecks ..... 974
+Population subdivision ..... 977
+Within-family selection ..... 979
+Asymptotic Response due to Mutational Input ..... 981
+Results for the infinitesimal model ..... 981
+Expected asymptotic response under more general conditions ..... 985
+Additional models of mutational effects ..... 987
+Optimizing the asymptotic selection response ..... 988
+27. LONG-TERM RESPONSE:
+3. ADAPTIVE WALKS ..... 991
+Fisher's Model: The Adaptive Geometry of New Mutations ..... 991
+Fisher-Kimura-Orr adaptive walks ..... 994
+The cost of pleiotropy ..... 999
+Adaptive walks under a moving optimum ..... 1001
+Walks in Sequence Space: Maynard-Smith-Gillespie-Orr Adaptive Walks ..... 1002
+SSWM models and the mutational landscape ..... 1003
+Extreme-value theory (EVT) ..... 1003
+Structure of adaptive walks under the SSWM model ..... 1005
+The fitness distribution of beneficial alleles ..... 1009
+Fisher's Geometry or EVT? ..... 1010
+The Importance of History in Walks: Lessons From Lenksi's LTEE ..... 1012
+28. MAINTENANCE OF QUANTITATIVE GENETIC VARIATION ..... 1015
+Overview: The Maintenance of Variation ..... 1015
+Maintaining genetic variation for quantitative traits ..... 1016
+Mutation-drift Equilibrium ..... 1018
+Mutational models and quantitative variation ..... 1018
+Maintenance of Variation by Direct Selection ..... 1021
+Fitness models of stabilizing selection ..... 1021
+Stabilizing selection on a single trait ..... 1023
+Stabilizing selection on multiple traits ..... 1024
+Stabilizing selection countered by pleiotropic overdominance ..... 1026
+Fluctuating and frequency-dependent stabilizing selection ..... 1027
+Summary of direct-selection models ..... 1028
+Neutral Traits With Pleiotropic Overdominance ..... 1028
+Mutation-stabilizing Selection Balance: Basic Models ..... 1030
+Latter-Bulmer diallelic models ..... 1031
+Kimura-Lande-Fleming continuum-of-alleles models ..... 1033
+Gaussian versus house-of-cards approximations for continuum-of-alleles models ..... 1035
+Epistasis ..... 1039
+Effects of linkage and mating systems ..... 1039
+Spatial and temporal variation in the optimum ..... 1040
+Summary: Implications of Gaussian versus HCA approximations ..... 1042
+Mutation-stabilizing Selection Balance: Drift ..... 1050
+Impact on equilibrium variances ..... 1050
+
+xxi
+
+Near neutrality at the underlying loci? ..... 1051
+Mutation-stabilizing Selection Balance: Pleiotropy ..... 1052
+Gaussian results ..... 1053
+HCA results ..... 1055
+Maintenance of Variation by Pleiotropic Deleterious Alleles ..... 1058
+The Hill-Keightley pleiotropic side-effects model ..... 1058
+Deleterious pleiotropy-stabilizing selection (joint-effects) models ..... 1065
+How Well do the Models Fit the Data? ..... 1069
+Strength of selection: Direct selection on a trait ..... 1070
+Strength of selection: Persistence times of new mutants ..... 1073
+Number of loci and mutation rates ..... 1074
+What Does Genetic Architecture Tell Us? ..... 1075
+Accelerated responses in artificial selection experiments ..... 1076
+Kelly's test for rare recessives ..... 1077
+Summary: What Forces Maintain Quantitative-genetic Variation? ..... 1077
+VII. MEASURING SELECTION ON TRAITS ..... 1079
+29. INDIVIDUAL FITNESS AND THE MEASUREMENT OF UNIVARIATE SELECTION ..... 1081
+Episodes of Selection and the Assignment of Fitness ..... 1082
+Fitness components ..... 1082
+Assigning fitness components ..... 1083
+Potential issues with assigning discrete fitness values ..... 1086
+Assigning components of offspring fitness to their mothers ..... 1086
+Concurrent selective episodes, reproductive timing, and individual fitness,  $ \lambda_{ind} $ ..... 1087
+Sensitivities and elasticities of the elements of L ..... 1090
+Variance in Individual Fitness ..... 1091
+Partitioning I across episodes of selection ..... 1094
+Correcting lifetime reproductive success for random offspring mortality ..... 1095
+Caveats in using the opportunity for selection ..... 1095
+Measuring Sexual Selection ..... 1097
+Bateman's principles ..... 1098
+Variance in mating success ..... 1099
+The sexual selection, or Bateman, gradient ..... 1102
+Describing Phenotypic Selection: Introductory Remarks ..... 1104
+Fitness surfaces and landscapes ..... 1104
+Describing Phenotypic Selection: Changes in Phenotypic Moments ..... 1106
+Henshaw's distributional selection differential (DSD) ..... 1107
+Directional selection ..... 1107
+Quadratic selection ..... 1108
+Under trait normality, gradients describe the local geometry of the fitness landscape ..... 1109
+Under trait normality, gradients appear in selection response equations ..... 1110
+Partitioning changes in means and variances into episodes of selection ..... 1110
+Choice of the reference population: Independent partitioning ..... 1112
+Standard errors for estimates of differentials and gradients ..... 1113
+Describing Phenotypic Selection: Individual Fitness Surfaces ..... 1114
+Linear and quadratic approximations of  $ W(z) $ ..... 1115
+Lande-Arnold fitness regressions ..... 1117
+The geometry of quadratic fitness functions ..... 1119
+Hypothesis testing, approximate confidence intervals, and model validation ..... 1120
+Power ..... 1122
+Mean-standardized gradients and fitness elasticities ..... 1123
+Moving Away From Quadratic Fitness Functions ..... 1125
+
+xxii
+
+Quadratic surfaces can be very misleading ..... 1125
+Gaussian and exponential fitness functions ..... 1126
+Semiparametric approaches: Schluter's cubic-spline estimate ..... 1128
+Janzen-Stein and Morrissey-Sakrejda gradients: Calculating average and landscape gradients under general fitness functions ..... 1128
+More Realistic Models of the Distribution of Fitness Components Generalized linear models for fitness components ..... 1129
+Aster models: Modeling the distribution of total fitness ..... 1133
+The Importance of Experimental Manipulation Performance and eco-evolutionary surfaces ..... 1134
+0. MEASURING MULTIVARIATE SELECTION ..... 1139
+Selection on Multivariate Phenotypes: Differentials and Gradients ..... 1139
+Changes in the mean vector: The directional selection differential, S ..... 1140
+The directional selection gradient vector, β ..... 1140
+Directional gradients, fitness surface geometry, and selection response ..... 1143
+Changes in the covariance matrix: The quadratic selection differential matrix, C ..... 1144
+The quadratic selection gradient matrix, γ ..... 1146
+Quadratic gradients, fitness surface geometry, and selection response ..... 1148
+Fitness surface curvature and within-generation changes in variances and covariances ..... 1148
+Multidimensional Quadratic Fitness Regressions ..... 1149
+Estimation, hypothesis testing, and confidence intervals ..... 1150
+Regression packages and coefficients of γ ..... 1151
+Geometric aspects ..... 1152
+A brief digression: Orthonormal and diagonalized matrices ..... 1153
+Canonical transformation of γ ..... 1154
+Are traits based on canonical axes meaningful? ..... 1157
+Strength of selection: γ_{ii} versus λ ..... 1158
+Significance and confidence regions for a stationary point ..... 1159
+Using Aster models to estimate fitness surfaces ..... 1159
+Multivariate Semiparametric Fitness Surface Estimation ..... 1160
+Projection-pursuit regression and thin-plate splines ..... 1162
+Gradients for general fitness surfaces ..... 1163
+Calsbeek's tensor approach for detecting variation in fitness surfaces ..... 1163
+Model selection ..... 1164
+The Strength and Pattern of Selection in Natural Populations ..... 1165
+Meta-analysis ..... 1165
+Kingsolver's analysis ..... 1166
+Directional selection: Strong or weak? ..... 1168
+Total versus direct selection, tradeoffs, and temporal variation ..... 1171
+Directional selection on body size and Cope's law ..... 1173
+Quadratic selection: Strong or weak? ..... 1173
+Where is all the stabilizing selection? ..... 1175
+A plea to fully publish ..... 1175
+Unmeasured Characters and Other Biological Caveats ..... 1175
+Path Analysis and Fitness Estimation ..... 1177
+Regressions versus path analysis ..... 1179
+Morrissey's extended selection gradient vector, η ..... 1181
+Selection on latent variables ..... 1183
+Elasticity path diagrams ..... 1184
+Levels of Selection ..... 1186
+Contextual analysis ..... 1186
+Selection can be antagonistic across levels ..... 1187
+Group selection is likely density-dependent ..... 1188
+Selection differentials can be misleading in levels of selection ..... 1188
+
+Hard, soft, and group selection: A contextual analysis viewpoint ..... 1190
+Early survival: Offspring or maternal fitness component? ..... 1192
+VIII. APPENDICES ..... 1197
+A1. DIFFUSION THEORY ..... 1199
+Foundations of Diffusion Theory ..... 1199
+The infinitesimal mean,  $ m(x) $, and variance,  $ v(x) $ ..... 1199
+The Kolmogorov forward equation ..... 1200
+Boundary behavior of a diffusion ..... 1202
+Derivation of the Kolmogorov forward equation ..... 1202
+Stationary distributions ..... 1203
+The Kolmogorov backward equation ..... 1205
+Diffusion Applications in Population Genetics ..... 1205
+Probability of fixation ..... 1206
+Time to fixation ..... 1208
+Expectations of more general functions ..... 1211
+Applications in Quantitative Genetics ..... 1212
+Brownian-motion models ..... 1212
+Ornstein-Uhlenbeck models ..... 1215
+A2. INTRODUCTION TO BAYESIAN ANALYSIS ..... 1217
+Why are Bayesian Methods Becoming More Popular? ..... 1217
+Bayes' Theorem ..... 1218
+From Likelihood to Bayesian Analysis ..... 1220
+Marginal posterior distributions ..... 1221
+Summarizing the posterior distribution ..... 1221
+Highest density regions (HDRs) ..... 1222
+Bayes factors and hypothesis testing ..... 1222
+The Choice of a Prior ..... 1224
+Diffuse priors ..... 1224
+The Jeffreys prior ..... 1225
+Posterior Distributions Under Normality Assumptions ..... 1227
+Gaussian likelihood with known variance and unknown mean ..... 1227
+Gamma,  $ \chi^{2} $, inverse-gamma, and  $ \chi^{-2} $ distributions ..... 1228
+Gaussian likelihood with unknown variance: Scaled inverse- $ \chi^{2} $ priors ..... 1231
+Student's t distribution ..... 1232
+General Gaussian likelihood: Unknown mean and variance ..... 1232
+Conjugate Priors ..... 1233
+The beta and Dirichlet distributions ..... 1233
+Wishart and inverse-Wishart distributions ..... 1235
+A3. MARKOV CHAIN MONTE CARLO AND GIBBS SAMPLING ..... 1237
+Monte Carlo Integration ..... 1237
+Importance sampling ..... 1239
+Introduction to Markov Chains ..... 1240
+The Metropolis-Hastings Algorithm ..... 1243
+Burning-in the sampler ..... 1246
+Simulated annealing ..... 1247
+Choosing a jumping (proposal) distribution ..... 1247
+Autocorrelation and sample size inflation ..... 1248
+The Monte Carlo variance of an MCMC-based estimate ..... 1250
+Convergence Diagnostics ..... 1251
+Visual analysis ..... 1251
+
+More formal approaches ..... 1252
+Practical MCMC: How many chains and how long should they run? ..... 1253
+The Gibbs Sampler ..... 1253
+Using the Gibbs sampler to approximate marginal distributions ..... 1255
+Rejection Sampling and Approximate Bayesian Computation (ABC) ..... 1256
+A4. MULTIPLE COMPARISONS: BONFERRONI CORRECTIONS, FALSE-DISCOVERY RATES, AND META-ANALYSIS ..... 1259
+Combining p Values Over Independent Tests ..... 1260
+Fisher's  $ \chi^{2} $ method ..... 1260
+Stouffer's Z score ..... 1261
+Bonferroni Corrections and Their Extensions ..... 1262
+Standard Bonferroni corrections ..... 1262
+Sequential Bonferroni corrections ..... 1263
+Holm's method ..... 1263
+Simes-Hochberg method ..... 1264
+Hommel's method ..... 1264
+Cheverud's method and other approaches for dealing with dependence ..... 1265
+Detecting an Excess Number of Significant Tests ..... 1266
+How many false positives? ..... 1266
+Schweder-Spjötvoll plots ..... 1267
+Estimating  $ n_{0} $: Subsampling from a uniform distribution ..... 1267
+Estimating  $ n_{0} $: Mixture models ..... 1270
+FDR: The False-discovery Rate ..... 1271
+Morton's posterior error rate (PER) and the FDR ..... 1272
+A technical aside: Different definitions of false-discovery rate ..... 1275
+The Benjamini-Hochberg FDR estimator ..... 1276
+A (slightly more) formal derivation of the estimated FDR ..... 1277
+Storey's q value ..... 1278
+Closing caveats in using the FDR ..... 1279
+Formal Meta-analysis ..... 1279
+Informal, or narrative, meta-analysis ..... 1279
+Standardizing effect sizes ..... 1280
+Fixed-effects, random-effects, and mixed-model meta-analysis ..... 1282
+Publication and other sources in bias ..... 1284
+Bias when estimating magnitudes ..... 1287
+A5. THE GEOMETRY OF VECTORS AND MATRICES: EIGENVALUES AND EIGENVECTORS ..... 1291
+The Geometry of Vectors and Matrices ..... 1291
+Comparing vectors: Lengths and angles ..... 1291
+Matrices describe vector transformations ..... 1293
+Orthonormal matrices: Rigid rotations ..... 1294
+Eigenvalues and eigenvectors ..... 1294
+Properties of Symmetric Matrices ..... 1297
+Correlations can be removed by a matrix transformation ..... 1299
+Simultaneous diagonalization ..... 1301
+Canonical Axes of Quadratic Forms ..... 1302
+Implications for the multivariate normal distribution ..... 1304
+Principal components of the variance-covariance matrix ..... 1305
+Testing for Multivariate Normality ..... 1307
+Graphical tests: Chi-square plots ..... 1307
+Mardia's test: Multivariate skewness and kurtosis ..... 1309
+
+A6. DERIVATIVES OF VECTORS AND VECTOR-VALUED FUNCTIONS 1311
+Derivatives of Vectors and Vector-valued Functions 1311
+The Hessian Matrix, Local Maxima/Minima, and Multidimensional Taylor Series 1315
+Optimization Under Constraints 1317
+LITERATURE CITED 1319
+AUTHOR INDEX 1411
+ORGANISM AND TRAIT INDEX 1427
+SUBJECT INDEX 1437
+
+One hundred years ago, Sir Ronald Aylmer Fisher (1918), in a paper that was rejected by the Royal Society of London, laid the foundations for the field that has come to be known as quantitative genetics. This paper, and subsequent work by Fisher and others (often in the search of biologically motivated problems), also gave birth to much of modern statistics. The past century has seen quantitative genetics flourish, and indeed, the field has never been stronger or more vibrant as it moves seamlessly into the post-genomics era with an ever-broadening reach. If Fisher were alive today, we believe that he would be fascinated, and somewhat pleased, both at how much the field has grown, and also at how much it remains very familiar to him, even after all these years.
+
+This text is the second part (out of three) of our treatment of the modern field of quantitative genetics from its humble, but path-breaking, beginnings 100 years ago. Some 20 years ago, we remarked in the introduction to the first part of our treatment (Lynch and Walsh 1998) that “today’s quantitative genetics is not the science that it was 25 (or even 10) years ago,” a statement that is even truer today. Our further comment that “the current machinery of quantitative genetics stands waiting (and its practitioners willing) to incorporate the fine genetic details of complex traits being elucidated by molecular and developmental biologists” has certainly been proven true over the past two decades. Modern quantitative genetics is the glue that connects many disciplines, especially given its ability to model uncertainty while fully accounting for known genetic and genomic features.
+
+The first part of our treatment (Volume 1) dealt with genetics, which is the underpinning of complex traits. While we also remark on some recent developments in this area in this volume, our main focus is on the evolution of such traits, with applied evolution (plant and animal breeding) as an important application. To address these concerns, we have attempted to merge modern population-genetics theory with quantitative genetics and genomics. As a result, some of our treatment is more technical than was presented in Volume 1, as it provides a much fuller development of mathematical models of evolution. We have strived to present a holistic treatment, showing the interplay between theory and data, with extensive discussions on statistical issues relating to the estimation of the biologically relevant parameters for these models. We view quantitative genetics as the bridge between complex mathematical models of trait evolution and real-world data, and have tried to frame our treatment as such.
+
+As with our first volume, a key goal in producing this volume is to increase communication among the various disciplines that make up the very diverse field of quantitative genetics. Twenty years ago, this included plant and animal breeders, evolutionary biologists, human geneticists, and statisticians. This list has only grown with the advent of genomics, which attracts an ever-widening array of those who use quantitative genetics (many of whom may not even be aware of it).
+
+Given a project of this size and scope, and despite our own best efforts, excellent copy editors, and wonderful colleagues, it is likely that errors have escaped scrutiny. Hopefully, most will be obvious and trivial, but the posterior for this process often has a long tail, and, therefore, the potential for some interesting outliers. Please report any errors you find to BW (jbwalsh@email.arizona.edu). Likewise, we have a facebook group, Quantitative Genetics Book, whose file section will contain updated pdf files for current errata, as well as a forum for discussing issues related to the book. Finally, the final part of our treatment, which deals largely with multivariate issues, will be forthcoming in a more timely manner than this volume!
+
+xxvii
+
+\section{Acknowledgments}
+As numerous seasoned readers will know, various components of this book have been in the works for over three decades. For a project of this magnitude, there is a host of people to thank, and we have undoubtedly forgotten to credit individuals who provided us with critical feedback in the earliest years. We profusely apologize for any such slights and blame our slowly fading memories.
+
+As we moved into the field of quantitative genetics in earnest in the 1980s, critical foundational support in the development of our ideas was provided by our colleagues and teachers Stevan Arnold, Reinhard Burger, James Crow, Joe Felsenstein, Wilfried Gabriel, Daniel Gianola, Thomas Hansen, William Hill, Elizabeth Housworth, Alex Kondrashov, Russell Lande, Bill Muir, Tom Nagylaki, Tim Prout, Monty Slaktin, Michael Turelli, and Michael Wade.
+
+We have also greatly benefited from all past and current members of our labs for their comments over the years. These especially include Ph.D. students: Matthew Ackerman, Desiree Allen, Stephan Baehr, David Butcher, Chi Chun Chen, Hong-Wen Deng, Suzanne Estes, Allan Force, Jean-François Pierre Gout, Kyle Hagner, Parul Johri, Vaishali Katju, Weiyi Li, Timothy Licknack, Hongan Long, Samuel Miller, Kendall Morgan, Angela Omilian, Michael Pfrender, Taylor Raborn, Sarah Schaack, Ryan Stikeleather, and Ken Spitze; and post-doctoral associates: Charles Baer, Melania Cristescu, Dee Denver, Thomas Doak, Jeffrey Dudycha, Suzanne Edmands, Jean Francois Gout, Kevin Higgins, David Houle, Sibel Kucukyildirim, Niles Lehman, Hong-An Long, Takahiro Maruki, Martin O'Hely, Susan Ratner, Barrie Robison, Stewart Schultz, Douglas Scofield, and John Willis.
+
+BW also wishes to thank the thousands of students who have attended his short courses on various aspects of quantitative genetics over the past two decades, during which he has taught over 5000 students from roughly 60 countries at various locations around the world (25 countries at last count). This international interaction and feedback have greatly sharpened our ability to present the material in this book to a truly universal audience.
+
+We have been exceptionally blessed with outstanding feedback throughout this project from a long list of colleagues, who directly engaged with the manuscript. Sally Otto and Michael Morrissey read whole parts of the manuscript, while critical comments on specific chapters were provided by Steve Arnold, Nick Barton, Piter Bijma, Mark Kirkpatrick, Bill Muir, Shinichi Nakagawa, Guilherme Rosa, Ruth Shaw, John Storey, and Michael Turelli.
+
+We especially want to acknowledge Bill Hill, who has been a major force throughout this project, and in many ways could be considered its third author. Bill read all of both Volume 1 (Lynch and Walsh) and the current volume, offering very detailed and critical comments, and saving us from much embarrassment. Our goal throughout the project was to present the field with the breadth and depth that Bill carries around in his head. He also kept us going by constantly ending his emails with the reminder to “keep writing!” Hence, we are very pleased to codenicate this volume to Bill.
+
+With respect to the production end, we have greatly enjoyed working with the highly professional staff at Sinauer Associates through the bulk of the editing process, and then with their new colleagues at Oxford during the final phase. Copy editor Nicole Balant and production editor Martha Lorantos faced the thankless task of trying to catch typos in a 1400-page technical manuscript where the lead author is rather dyslexic.
+
+Elizabeth Morales and Ann Chiara did a wonderful job with the illustrations and patiently dealt with us, as we frequently changed our minds on how to best illustrate various concepts, while Michele Beckta dealt with copyright issues regarding the figures. Last, but certainty not least, production manager Chris Small thoughtfully guided us through the typesetting of both this and the previous volume (both of which were typeset by BW using Textures). Any less-than-professional appearance of aspects of this volume are there despite the best efforts of Chris!
+
+We save very special thanks for our publisher and friend, Andy Sinauer. Andy initially started this project in the mid-1980s when we (BW and ML) discovered (via Andy) that
+
+we were both working on separate books on the same subject and he logically queried whether it might be better if we worked together. Indeed it was! Andy has shown incredible patience over the past three decades on the pace of this project, and we hope that he will be pleased with the final outcome, despite its long gestation. We are thus extremely pleased to codenicate this volume to Andy for his long and outstanding service as one of the preeminent publishers of biological science textbooks. Upon his retirement, he has left a gap that will be hard to fill, and his impact on a number of fields, particularly evolutionary biology, is hard to overstate.
+
+In closing, ML is especially grateful to the administration and colleagues at the University of Illinois, his place of first employment, for providing him with a safe environment for making an early (and risky) career transition from limnology to evolutionary genetics. And we both thank NSF and NIH for continuing support for research related to the subject matter of the book.
+
+Finally, and especially, we wish to thank our incredible wives, Emília Martins (ML) and Lee Fulmer (BW), for their enduring patience during this long project.
+
+Bruce Walsh, Tucson
+
+Michael Lynch, Tempe
+
+March 2018
+
+\end{document}

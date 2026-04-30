@@ -1,0 +1,59 @@
+{
+  "id": "chapter9_002",
+  "metadata": {
+    "chapter": "chapter9",
+    "section": "AN OVERVIEW OF STRATEGIES BASED ON SEGREGATING VARIATION",
+    "subsections": [
+      "AN OVERVIEW OF STRATEGIES BASED ON SEGREGATING VARIATION"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter9_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [
+      "9.1",
+      "9.3"
+    ],
+    "table_reference_keys": [
+      "chapter9:9.1",
+      "chapter9:9.3"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "For a multitude of reasons, there is no single omnibus test for selection. First, different scenarios (e.g., hard sweeps, soft sweeps, partial sweeps, balancing selection) leave different, and often conflicting, signatures (Chapter 8), so that tests for one type (e.g., hard sweeps) may easily miss signatures from another (e.g., soft sweeps). Second, different tests are designed to detect signals from different time periods during (and following) a sweep. Third, different sampling schemes are possible. Many tests assume there is only a single sample from a current population, but one might instead have contemporaneous samples from several related populations or a temporal series of samples from a single population."
+    },
+    {
+      "type": "discussion",
+      "content": "Advances in genomics have enormously expanded our ability to score molecular variation, and this is reflected in the historical development of tests. The first test followed changes in a single allele at one locus through time (Examples 9.1 and 9.2), while later tests evolved to use data from genomic scans, where a very large number of sites are scored, and potentially phased (generating haplotype, as opposed to sequence, data). Haasl and Payseur (2016) suggested the terms GWSS (genomewide scans for natural selection) when a whole genome is scanned, and ESS (exomic scans for natural selection) when only coding or transcriptome sequences are used. Approaches to detect recent selection can be classified into five categories, which loosely follow the historical development of the field: 1) Excessive allele-frequency change. The first formal test of selection was proposed by Fisher and Ford (1947), who used the machinery developed in Chapter 2 for the divergence under drift to test for excessive change in a time-series of allele frequencies from a single population. While perhaps the most unambiguous signature of selection, this approach requires long-term monitoring of a population and having some rea sonably independent estimate of $ N_ e $. The ever-increasing availability of ancient DNA (aDNA) samples opens up exciting new data sets for this type of analysis (Mathieson et al. 2015, Malaspinas 2016; Schraiber et al. 2016)."
+    },
+    {
+      "type": "discussion",
+      "content": "2) Excessive allele-frequency divergence. Lewontin and Krakauer (1973) proposed using the divergence between a series of contemporaneously sampled populations (presumably from a common ancestor) to test for selection. The machinery from Chapter 2 predicts the expected divergence under drift, as measured by Wright's $ F_ ST $ statistic for population structure. Loci displaying excessive $ F_ ST $ values relative to drift are selection candidates. Using an incorrect model of population structure can seriously compromise these tests."
+    },
+    {
+      "type": "discussion",
+      "content": "The above two categories require samples from multiple populations (either temporally or spatially), which limits their widespread use. A less demanding design is a single population sample, as employed by the three remaining categories."
+    },
+    {
+      "type": "proposition",
+      "content": "3) Chromosomal spatial patterns of variation. As detailed in Chapter 8, a sweep leaves a characteristic decrease in polymorphism around a selected site, and a number of formal likelihood tests are based on the expected pattern of the nucleotide diversity, $ $, as a function of the recombination distance, c, from the sweep (Equation 8.8a). Early versions of these tests assumed that the population was in mutation-drift equilibrium at the start of the sweep, while more recent versions have relaxed this strong assumption."
+    },
+    {
+      "type": "discussion",
+      "content": "The final two categories divide tests by whether they assume an infinite-sites, or an infinite-alleles, framework, using the neutral equilibrium results for these models developed in Chapter 2. Recall that the infinite-sites framework considers a sequence as a series of separate sites (e.g., SNPs), while the infinite-alleles framework treats each different DNA sequence (haplotype) as a different allele (Figure 2.9). Both models assume that the region being considered is small enough that recombination within the sample can be ignored. Given the large (and diverse) number of tests in both of these categories, each section reviewing these different approaches concludes with a summary table of proposed tests ([[SEE_TABLE:9.1]] for infinite-sites and [[SEE_TABLE:9.3]] for haplotypes)."
+    },
+    {
+      "type": "discussion",
+      "content": "4) Changes in the site-frequency spectrum. Under the infinite-sites model, the frequency spectrum of neutral sites at mutation-drift equilibrium is given by the Watterson distribution (Equation 2.34). Starting with Tajima (1989), a number of tests have been proposed that search for shifts in this spectrum following a sweep, such as an excessive number of sites with rare alleles or with high-frequency derived alleles. The major complication with this class of tests is that changes in population demography (such as a recent expansion or contraction) or the presence of population structure (migration between partly isolated populations) can mimic signatures of selection."
+    },
+    {
+      "type": "discussion",
+      "content": "5) Tests based on haplotype information. Under the infinite-alleles model, the number of alleles (haplotypes) in a sample at mutation-drift equilibrium is given by the Ewens sampling formula (Equation 2.30a) and their allele-frequency spectrum by Equation 2.33b. Starting with Ewens (1972) and Watterson (1977, 1978), a number of tests have used these expressions to detect departures from the neutral equilibrium model. As with tests based on the site-frequency spectrum, significant departures can occur for neutral alleles if the population is not in equilibrium or if population structure is present."
+    },
+    {
+      "type": "discussion",
+      "content": "Two other strategies use haplotype information. The first searches for the distinct signatures in the pattern of pairwise linkage disequilibrium (LD) predicted around a hard or a soft sweep ([[SEE_TABLE:8.2]]). The second considers the frequency of a neutral allele as a function of its age (Equation 2.12). Under neutrality, a common allele is an old allele, with shorter blocks of LD, reflecting a longer history of recombination. The presence of high-frequency alleles with long haplotypes (large blocks of LD) offers a signature of selection (these are often called LRH, for long-range haplotype, tests). A key point is that haplotype structure provides signals that can be missed by site-frequency and hard-sweep tests, and thus offers more power in some settings."
+    }
+  ]
+}

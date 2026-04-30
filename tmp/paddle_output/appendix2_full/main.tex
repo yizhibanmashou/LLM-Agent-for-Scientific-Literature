@@ -1,0 +1,912 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+
+\title{Appendix 2}
+\author{Unknown Authors}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+
+\end{abstract}
+
+\section{Introduction}
+Now I've heard a Bayesian is half a man
+
+With robustness not on his side,
+
+But as the problems get tougher,
+
+I just watch and wonder
+
+As the frequentists run and hide!
+
+— Ain’t Too Proud to Bayes, B. Carlin (ISBA 2000)
+
+The history of statistical methods in genetics closely parallels advances in computation. Before the widespread use of computers, method-of-moments approaches were common as they are relatively easy to obtain. Here, a summary statistic of the data is computed whose expected value is the parameter of interest (e.g., using the sample mean,  $ \overline{x} $, as an estimate of the true mean,  $ \mu_x $, as  $ E[\overline{x}] = \mu_x $). In the mid-1970s, maximum-likelihood (ML) methods became much more common place, as they offer a very flexible platform for statistical analysis (estimation, determining precision, and hypothesis testing), but at the cost of numerically searching an often highly complex multidimensional likelihood surface (LW Appendix 4). Both these approaches typically return point estimators for the variables of interest, along with some measure of their uncertainty. As opposed to these classical (or frequentist) approaches, Bayesian statistics (which can be viewed as a natural extension of likelihood methods) is concerned with generating the full distribution for the parameters,  $ \Theta $, given the data, x, namely, obtaining the posterior distribution,  $ p(\Theta \mid \mathbf{x}) $. As such, Bayesian statistics provides a much more complete picture of the uncertainty in the estimation of the unknown parameters, especially after the confounding effects of nuisance parameters are removed.
+
+Our treatment here is intentionally quite brief. A number of texts have presented excellent treatments of the statistical theory (e.g., Lindley 1965; Berger 1985; Carlin and Louis 2000; Lee 2012; Gelman et al. 2013). Blasco (2017) provided a very lucid introduction to applications in quantitative genetics, while Sorensen and Gianola (2002) offered a more comprehensive treatment. While very deep (and very subtle) differences in philosophy separate hard-core Bayesians from hard-core frequentists (Efron 1986; Glymour 1981), our treatment of Bayesian methods is motivated simply by their use as a powerful statistical tool. This appendix focuses on the basic theory, while the computational approaches that make these methods feasible are examined in Appendix 3.
+
+\section{WHY ARE BAYESIAN METHODS BECOMING MORE POPULAR?}
+In addition to providing a more formal framework for dealing with parameter uncertainty, two specific features have fueled the rapid growth of Bayesian approaches in genetics and genomics. First, under a Bayesian analysis, all parameters are random effects as opposed to fixed effects (Chapter 19). This has profound implications for degrees of freedom. Consider a gene expression study with 30,000 features (genes of interest), whose mRNA levels are contrasted over a set of 100 normal liver cells versus 100 cancerous ones. If we treat the differential expression level of any particular gene as a fixed effect (an unknown constant to be estimated) we will very quickly use all of the degrees of freedom, given the small sample size. Conversely, if these levels are treated as random effects, with the expression difference associated with a particular gene being a random variable drawn from some underlying (and unknown) distribution, then the only degrees of freedom lost will be those used to estimate the associated parameters for this underlying distribution. Further, prediction of the random realization that corresponds to a particular gene borrows information over all
+
+1218
+
+the genes. Thus, a Bayesian analysis can handle high-dimensional experiments in which the number of parameters, p, greatly exceeds the number of observations, n, in a framework that fully manages the uncertainty over all these estimates. Second, Bayesian methods are computationally feasible, as approaches such as MCMC (Appendix 3) allow high-dimensional datasets to be analyzed in a computationally efficient manner. In settings with a large number of nuisance parameters or a high-dimensional dataset, a Bayesian approach not only has considerable appeal, it may be the only approach that is even feasible.
+
+\section{BAYES' THEOREM}
+The foundation of Bayesian statistics is Bayes' theorem. Suppose we observe a random variable, x, and wish to make inferences about another random variable,  $ \theta $, in the case where  $ \theta $ is drawn from some distribution,  $ \operatorname{Pr}(\theta) $. From the definition of conditional probability
+
+\begin{equation}
+\mathrm{Pr}(\theta\mid x)=\frac{\mathrm{Pr}(x,\theta)}{\mathrm{Pr}(x)}
+\end{equation}
+
+where (for now) x and  $ \theta $ are discrete random variables. Again from the definition of conditional probability, we can express the joint probability by conditioning on  $ \theta $ to give
+
+\begin{equation}
+\Pr(x,\theta)=\Pr(x\mid\theta)\Pr(\theta)
+\end{equation}
+
+Putting these together yields Bayes' theorem
+
+\begin{equation}
+\mathrm{Pr}(\theta\mid x)=\frac{\mathrm{Pr}(x\mid\theta)\mathrm{Pr}(\theta)}{\mathrm{Pr}(x)}
+\end{equation}
+
+Bayes' theorem flips the conditioning variable, allowing us to move from  $ \Pr(x \mid \theta) $ to  $ \Pr(\theta \mid x) $. With  $ k $ possible values of  $ \theta $ ( $ \theta_1 $ through  $ \theta_k $), the discrete version of Bayes' theorem becomes
+
+\begin{equation}
+\Pr(\theta_{j}\mid x)=\frac{\Pr(x\mid\theta_{j})\Pr(\theta_{j})}{\Pr(x)}=\frac{\Pr(x\mid\theta_{j})\Pr(\theta_{j})}{\displaystyle\sum_{i=1}^{k}\Pr(\theta_{i})\Pr(x\mid\theta_{i})}\quad for\quad1\leq j\leq k
+\end{equation}
+
+In Bayesian statistics, x represents an observable variable (the data), while  $ \theta $ represents a parameter describing the distribution of x. In this setting,  $ \Pr(\theta) $ is the prior distribution of possible parameter values, while  $ \Pr(\theta \mid x) $ is the subsequent posterior distribution of  $ \theta $ given the observed data x and the prior. In classical statistics, the unknown parameters are treated as fixed and the data are considered random, whereas under a Bayesian analysis, the data are considered fixed and the unknown parameters that generated the data are considered random.
+
+All of the above statements also hold for continuous random variables, for which the probability density function, p, replaces the discrete probability value, Pr. In particular, the continuous multivariate version of Bayes' theorem is
+
+\begin{equation}
+p(\boldsymbol{\Theta}\mid\mathbf{x})=\frac{p(\mathbf{x}\mid\boldsymbol{\Theta})p(\boldsymbol{\Theta})}{p(\mathbf{x})}=\frac{p(\mathbf{x}\mid\boldsymbol{\Theta})p(\boldsymbol{\Theta})}{\int p(\mathbf{x},\boldsymbol{\Theta})d\boldsymbol{\Theta}}
+\end{equation}
+
+where  $ \boldsymbol{\Theta} = (\theta_1, \theta_2, \cdots, \theta_n) $ is a vector of  $ n $ (potentially) continuous variables. As with the univariate case,  $ p(\boldsymbol{\Theta}) $ is the assumed prior distribution of the unknown parameters, while  $ p(\boldsymbol{\Theta} \mid \mathbf{x}) $ is the posterior distribution given the prior,  $ p(\boldsymbol{\Theta}) $, and the data,  $ \mathbf{x} $.
+
+The origin of Bayes' theorem has a fascinating history (Stigler 1983). It is named after the Rev. Thomas Bayes, a priest who never published a mathematical paper during his lifetime. The paper in which the theorem appears was posthumously read before the Royal Society by his friend Richard Price in 1764. Stigler suggests it was first discovered by Nicholas
+
+1219
+
+Saunderson, a blind mathematician and optician who, at age 29, became Lucasian Professor of Mathematics at Cambridge (the position held earlier by Issac Newton). This is an example of Stigler's Law of Eponymy (Stigler 1980), wherein no discovery or invention is named after its first discoverer (an eponym). As is fitting, Stigler's law is self-consistent, as this phenomenon was previously mentioned by Merton (1965).
+
+Example A2.1. Consider a recessive color locus in cattle in which the genotypes BB and Bb are black, while bb is red. Two black-coated parents are crossed, and produce some red offspring, which implies that both parents must be Bb. A black-coated son of theirs is crossed to n red dams (bb), and all of his offspring are black. What is the posterior probability that he is BB?
+
+To solve this problem using Bayes' theorem, we first define the indicator random variable
+
+\begin{equation}
+\theta=\left\{\begin{aligned}0&\quad son is Bb\\ 1&\quad son is BB\end{aligned}\right.
+\end{equation}
+
+Given that both parents are Bb, the expected priors for their offspring are 1/4 for BB and 1/2 for Bb, resulting in a 3/4 prior for a black-coated offspring. Further, from conditional probability (Equation A2.1a), the prior that a black offspring is BB is
+
+\begin{equation}
+\Pr(BB\mid\mathrm{Black})=\frac{\Pr(BB,\mathrm{Black})}{\Pr(\mathrm{Black})}=\frac{\Pr(BB)}{\Pr(\mathrm{Black})}=\frac{1/4}{3/4}=1/3
+\end{equation}
+
+where we used the fact that all BB are black, so that  $ \Pr(BB, \text{Black}) = \Pr(BB) $. Hence, the prior becomes
+
+\begin{equation}
+\Pr(\theta)=\left\{\begin{aligned}&0&is&2/3\\ &1&is&1/3\end{aligned}\right.
+\end{equation}
+
+Further
+
+\begin{equation}
+\Pr(all n offspring are black\mid sire is BB)=1
+\end{equation}
+
+\begin{equation}
+\Pr(all n offspring are black\mid sire is Bb)=(1/2)^{n}
+\end{equation}
+
+and
+
+\begin{equation}
+\begin{aligned}Pr(all n black)&=Pr(all black\mid BB)^{*}Pr(BB)+Pr(all black\mid Bb)^{*}Pr(Bb)\\&=1\cdot1/3+(1/2)^{n}\cdot(2/3)\end{aligned}
+\end{equation}
+
+If we combine the above values, Bayes' theorem yields
+
+\begin{equation}
+\Pr(\theta=1\mid n black offspring)=\frac{\Pr(n\mid\theta=1)Pr(\theta=1)}{\Pr(n)}=\frac{1\cdot(1/3)}{1\cdot(1/3)+(1/2)^{n}\cdot(2/3)}
+\end{equation}
+
+which returns values of 0.5, 0.67, 0.8, 0.89, 0.94, and 0.998 for n = 1, 2, 3, 4, 5, and 10, respectively.
+
+Example A2.2. Suppose a major gene (with alleles Q and q) underlies a character of interest. The distribution of phenotypic values for each major-locus genotype follows a normal distribution with a variance of 1 and means of 2.1, 3.5, and 1.3 for QQ, Qq, and qq, respectively. Suppose the frequencies of these genotypes for a random individual drawn from the population are 0.3, 0.2, and 0.5 (for QQ, Qq, and qq, respectively). If an individual from this population has a phenotypic value of 3, then what is the probability of it being QQ? Qq? qq? Let  $ \varphi(x \mid \mu, 1) = (2\pi)^{-1/2} e^{-(x-\mu)^2 / 2} $ denote the density function for a normal distribution with a mean of  $ \mu $ and variance of 1. To apply Bayes' theorem, note that the values for the priors and the conditionals are as follows:
+
+1220
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+Cell 1 & Cell 2 \\
+\hline
+Cell 3 & Cell 4 \\
+\hline
+\end{tabular}
+\caption{Table Placeholder}
+\end{table}
+
+Because  $ p(3) = \sum_{G} \operatorname{Pr}(G) \cdot p(3|G) = 0.195 $, Bayes' theorem gives the posterior probabilities for the genotypes given the observed value of 3 as:
+
+\begin{equation}
+\Pr(QQ\mid x=3)=0.078/0.195=0.400
+\end{equation}
+
+\begin{equation}
+\Pr(Qq\mid x=3)=0.070/0.195=0.359
+\end{equation}
+
+\begin{equation}
+\Pr(qq\mid x=3)=0.047/0.195=0.241
+\end{equation}
+
+Thus, there is a 40 percent chance that this individual has a genotype of QQ, a 36 percent chance it is Qq, and a 24 percent chance it is qq.
+
+\section{FROM LIKELIHOOD TO BAYESIAN ANALYSIS}
+The method of maximum likelihood (LW Appendix 4) and Bayesian analysis are closely related. Suppose  $ \ell(\boldsymbol{\varTheta}|\mathbf{x}) $ is the assumed likelihood function. Under ML estimation, we would compute the mode of the likelihood function (the maximal value of  $ \ell $, as a function of  $ \boldsymbol{\varTheta} $ given the data  $ \mathbf{x} $), and use the local curvature around the mode to construct confidence intervals. Hypothesis testing follows using likelihood-ratio (LR) statistics. The strengths of ML estimation rely on its large-sample properties, namely, that when the sample size is sufficiently large, we can assume both normality of the estimators and that most LR tests follow  $ \chi^{2} $ distributions. These features, nice as they are, may not hold for small samples. Conversely, a Bayesian analysis is exact for any sample size, given a specified prior.
+
+To transition from a likelihood to a Bayesian analysis, we start with some prior distribution,  $ p(\boldsymbol{\Theta}) $, that captures our initial knowledge (or best guess) about the possible values of the unknown parameters. From Bayes' theorem, the data (likelihood) is combined with the prior to produce a posterior distribution,
+
+\begin{equation}
+p(\boldsymbol{\Theta}\mid\mathbf{x})=\frac{1}{p(\mathbf{x})}\cdot p(\mathbf{x}\mid\boldsymbol{\Theta})\cdot p(\boldsymbol{\Theta})
+\end{equation}
+
+\begin{equation}
+=(normalizing constant)\cdot p(\mathbf{x}\mid\boldsymbol{\Theta})\cdot p(\boldsymbol{\Theta})
+\end{equation}
+
+\begin{equation}
+=constant\cdot likelihood\cdot prior
+\end{equation}
+
+as  $ p(\mathbf{x}|\boldsymbol{\Theta}) = \ell(\boldsymbol{\Theta}|\mathbf{x}) $ is simply the likelihood function (LW Appendix 4) and  $ 1/p(\mathbf{x}) $ is a constant (with respect to  $ \boldsymbol{\Theta} $). Consequently, the posterior distribution is often written as
+
+\begin{equation}
+p(\boldsymbol{\Theta}\mid\mathbf{x})\propto\ell(\boldsymbol{\Theta}\mid\mathbf{x})~p(\boldsymbol{\Theta})
+\end{equation}
+
+where the symbol  $ \propto $ means “proportional to” (equal up to a constant). Note that the constant  $ p(\mathbf{x}) $ normalizes  $ p(\mathbf{x} \mid \boldsymbol{\Theta}) \cdot p(\boldsymbol{\Theta}) $ to one, and hence can be obtained by integration
+
+\begin{equation}
+p(\mathbf{x})=\int_{\boldsymbol{\varTheta}}p(\mathbf{x}\mid\boldsymbol{\varTheta})\cdot p(\boldsymbol{\varTheta})d\boldsymbol{\varTheta}
+\end{equation}
+
+The dependence of the posterior on the prior (which can easily be assessed by trying different priors) provides an indication of how much information on the unknown parameter values is contained in the data (the curvature of the likelihood surface). If the posterior is highly dependent on the prior, then the data likely has little signal (a flat likelihood surface),
+
+1221
+
+while if the posterior is largely unaffected by different priors, then the data are likely highly informative (a sharply peaked likelihood surface). To see this, taking logs on Equation A2.4c yields
+
+\begin{equation}
+\log(posterior)=\log(likelihood)+\log(prior)+constant
+\end{equation}
+
+When the likelihood signal is strong, it largely dominates the prior in the resulting posterior, but when a likelihood is weak, the prior can dominate.
+
+\section{Marginal Posterior Distributions}
+Often only a subset of the unknown parameters is of concern to us, and the rest are nuisance parameters that are of no interest, but still must be fitted in the model. A strong feature of Bayesian analysis is that we can account for all the uncertainty introduced into the parameters of interest by any uncertainty in the values of nuisance parameters. This is accomplished by integrating the nuisance parameters out of the posterior distribution to generate a marginal posterior distribution for the parameters of interest. For example, suppose the mean and variance of data coming from a normal distribution are unknown, but our real interest is only in the variance. Estimating the mean introduces additional uncertainty into our variance estimate, which is not fully captured by standard classical approaches. Under a Bayesian analysis, the marginal posterior distribution for  $ \sigma^2 $ is simply
+
+\begin{equation}
+p(\sigma^{2}\mid\mathbf{x})=\int p(\mu,\sigma^{2}\mid\mathbf{x})d\mu
+\end{equation}
+
+The resulting marginal posterior for  $ \sigma^{2} $ captures all of the uncertainty in the estimation of  $ \mu $ that influences the uncertainty in  $ \sigma^{2} $. This is an especially nice feature when a large number of nuisance parameters must be estimated.
+
+The marginal posterior may involve several parameters (generating joint marginal posteriors). Suppose we write the vector of unknown parameters as  $ \boldsymbol{\Theta} = (\boldsymbol{\Theta}_1, \boldsymbol{\Theta}_{nu}) $, where  $ \boldsymbol{\Theta}_{nu} $ is the vector of nuisance parameters. Integrating over  $ \boldsymbol{\Theta}_{nu} $ yields the desired marginal for the vector  $ \boldsymbol{\Theta}_1 $ of parameters of interest as
+
+\begin{equation}
+p(\boldsymbol{\Theta}_{1}\mid\mathbf{y})=\int_{\boldsymbol{\Theta}_{n u}}p(\boldsymbol{\Theta}_{1},\boldsymbol{\Theta}_{n u}\mid\mathbf{y})d\boldsymbol{\Theta}_{n u}
+\end{equation}
+
+While these complex integrals appear quite daunting (and indeed almost always are from an analytic standpoint), generating draws from the marginal distribution is usually very straightforward using MCMC methods (which are examined in Appendix 3).
+
+\section{SUMMARIZING THE POSTERIOR DISTRIBUTION}
+How do we extract a Bayesian estimator for some unknown parameter,  $ \theta $? If our mindset is to use some sort of point estimator (as is usually done in classical statistics), then there are a number of candidates. We could follow maximum likelihood and use the mode of the posterior distribution (its maximal value)
+
+\begin{equation}
+\widehat{\theta}=\max_{\theta}\left[p(\boldsymbol{\theta}\mid\mathbf{x})\right]
+\end{equation}
+
+We could take the expected value of  $ \theta $ (its mean) given the posterior
+
+\begin{equation}
+\widehat{\boldsymbol{\theta}}=\boldsymbol{E}[\boldsymbol{\theta}\mid\mathbf{x}]=\int\boldsymbol{\theta}\boldsymbol{p}(\boldsymbol{\theta}\mid\mathbf{x})d\boldsymbol{\theta}
+\end{equation}
+
+Another candidate is the median of the posterior, which is more robust than the mean to outliers. Here the estimator satisfies  $ \Pr(\theta > \widehat{\theta} | \mathbf{x}) = \Pr(\theta < \widehat{\theta} | \mathbf{x}) = 0.5 $, hence
+
+\begin{equation}
+\int_{\widehat{\theta}}^{+\infty}p(\theta\mid\mathbf{x})d\theta=\int_{-\infty}^{\widehat{\theta}}p(\theta\mid\mathbf{x})d\theta=\frac{1}{2}
+\end{equation}
+
+1222
+
+However, using any of the above estimators, or even all three simultaneously, loses the full power of a Bayesian analysis, as the full estimator is the entire posterior density itself. If we cannot obtain the full form of the posterior distribution, then these estimates of general features of the distribution can be presented. However, as we will see in Appendix 3, we can generally obtain the full posterior by simulation using MCMC sampling, and hence the Bayesian estimate of a parameter is often presented as a frequency histogram (potentially smoothed) of the MCMC-generated samples from the posterior distribution (an empirical posterior).
+
+\section{Highest Density Regions (HDRs)}
+Given the posterior distribution, the construction of confidence intervals is straightforward. For example, a  $ 100(1 - \alpha)\% $ confidence interval is given by any  $ (L_{\alpha/2}, H_{\alpha/2}) $ satisfying
+
+\begin{equation}
+\int_{L_{\alpha/2}}^{H_{\alpha/2}}p(\theta\mid\mathbf{x})d\theta=1-\alpha
+\end{equation}
+
+To reduce the set of possible candidate intervals, one typically uses highest density regions, or HDRs, where, for a single parameter, the HDR  $ 100(1 - \alpha) $ region(s) are the shortest intervals giving an area of  $ (1 - \alpha) $. More generally, if multiple parameters are being estimated, the HDR region(s) are those with the smallest volume in the parameter space. HDRs are also referred to as Bayesian confidence intervals or (better yet) credible intervals.
+
+It is critical to note that there is a profound difference between a confidence interval (CI) from classical (frequentist) statistics and a Bayesian analysis. The interpretation of a classical confidence interval is that if we were to repeat the experiment a large number of times, and construct CIs in the same fashion, the fraction of the resulting collection of CIs that enclose the unknown parameter approaches  $ (1 - \alpha) $. Thus, the frequentist CI is a measure of the frequency of occurrences in independent experiments in which the CI encloses the true value (and hence the term frequentist for this type of statistics). In contrast, with a Bayesian HDR, there is a probability of  $ (1 - \alpha) $ that the interval contains the true value of the unknown parameter. While at first blush these two intervals appear to be essentially identical, they are not, and indeed they are fundamentally (but subtly) different. Often the CI and Bayesian intervals span essentially the same values, but again the interpretational difference remains. The key point is that the Bayesian prior allows us to make direct probability statements about  $ \theta $, while under classical statistics we can only make statements about the behavior of the statistic if we consider repeating an experiment a large number of times. Given the important conceptual difference between classical and Bayesian intervals, Bayesians typically avoid using the term confidence interval, using the term credible interval instead.
+
+\section{Bayes Factors and Hypothesis Testing}
+In the classical hypothesis-testing framework, we have two alternatives. The null hypothesis,  $ H_0 $, that the unknown parameter,  $ \theta $, belongs to some set or interval,  $ \Theta_0 $ ( $ \theta \in \Theta_0 $), versus the alternative hypothesis,  $ H_1 $, that  $ \theta $ belongs to the alternative set,  $ \Theta_1 $ ( $ \theta \in \Theta_1 $).  $ \Theta_0 $ and  $ \Theta_1 $ contain no common elements ( $ \Theta_0 \cap \Theta_1 = \emptyset $) and the union of  $ \Theta_0 $ and  $ \Theta_1 $ contains the entire space of values for  $ \theta $ (i.e.,  $ \Theta_0 \cup \Theta_1 = \emptyset $).
+
+In the classical statistical framework of the frequentists, one uses the observed data to test the significance of a particular hypothesis, and (if possible) compute a p value (the probability, p, of observing a value equal to, or more extreme than, that of the test statistic if the null hypothesis is indeed correct). Initially, one would think that the idea of a hypothesis test is trivial in a Bayesian framework, as using the posterior distribution provides the expected p values directly, for example,
+
+\begin{equation}
+\Pr(\theta>\theta_{0})=\int_{\theta_{0}}^{\infty}p(\theta\mid\mathbf{x})d\theta\qquad and\qquad\Pr(\theta_{0}<\theta<\theta_{1})=\int_{\theta_{0}}^{\theta_{1}}p(\theta\mid\mathbf{x})d\theta
+\end{equation}
+
+The fault in this logic under a Bayesian framework is that we also have prior information and Bayesian hypothesis testing addresses whether, given the data, we are more or less inclined
+
+1223
+
+to believe the hypothesis than was suggested from the prior. Hence, the prior probabilities influence hypothesis testing. To formalize this idea, let
+
+\begin{equation}
+p_{0}=\Pr(\theta\in\Theta_{0}\mid\mathbf{x})\qquad and\qquad p_{1}=\Pr(\theta\in\Theta_{1}\mid\mathbf{x})
+\end{equation}
+
+denote the probabilities, given the observed data,  $ \mathbf{x} $, that  $ \theta $ is in the null  $ (p_0) $ and alternative  $ (p_1) $ hypothesis sets. Note that these are posterior probabilities. Because  $ \Theta_0 \cap \Theta_1 = \emptyset $ and  $ \Theta_0 \cup \Theta_1 = \Theta $, it follows that  $ p_0 + p_1 = 1 $. Likewise, for the prior probabilities we have
+
+\begin{equation}
+\pi_{0}=\Pr(\theta\in\Theta_{0})\qquad and\qquad\pi_{1}=\Pr(\theta\in\Theta_{1})
+\end{equation}
+
+Thus the prior odds of H0 versus H1 are π0/π1, while the posterior odds are p0/p1.
+
+The Bayes factor,  $ B_{0} $, in favor of  $ H_{0} $ versus  $ H_{1} $ is calculated by the ratio of the posterior odds divided by the prior odds,
+
+\begin{equation}
+B_{0}=\frac{p_{0}/p_{1}}{\pi_{0}/\pi_{1}}=\frac{p_{0}\pi_{1}}{p_{1}\pi_{0}}
+\end{equation}
+
+The Bayes factor is loosely interpreted as the odds in favor of  $ H_0 $ over  $ H_1 $ as given by the data and our prior opinion. Because  $ \pi_1 = 1 - \pi_0 $ and  $ p_1 = 1 - p_0 $, we can also express this as
+
+\begin{equation}
+B_{0}=\frac{p_{0}(1-\pi_{0})}{\pi_{0}(1-p_{0})}
+\end{equation}
+
+By symmetry, note that the Bayes factor, B1, in favor of H1 versus H0 is simply B1 = 1/B0.
+
+Example A2.3. Suppose that the prior distribution of  $ \theta $ is such that  $ \Pr(\theta > \theta_0) = 0.10 $, while for the posterior distribution  $ \Pr(\theta > \theta_0 \mid \mathbf{x}) = 0.05 $. The latter is significant at the 5% level in a classical hypothesis-testing framework, but the data only doubles our confidence in the alternative hypothesis relative to our belief based on prior information. If  $ \Pr(\theta > \theta_0) = 0.50 $ for the prior, then a 5% posterior probability would greatly increase our confidence in the alternative hypothesis. Consider the first case in this example, where the prior and posterior probabilities for the null were  $ \pi_0 = 0.1 $ and  $ p_0 = 0.05 $, respectively. The Bayes factor in favor of  $ H_1 $ versus  $ H_0 $ is
+
+\begin{equation}
+B_{1}=\frac{\pi_{0}(1-p_{0})}{p_{0}(1-\pi_{0})}=\frac{0.1\cdot0.95}{0.05\cdot0.9}=4.22
+\end{equation}
+
+Similarly, for the second example, where the prior for the null was  $ \pi_{0}=0.5 $,
+
+\begin{equation}
+B_{1}=\frac{0.5\cdot0.95}{0.05\cdot0.5}=19
+\end{equation}
+
+Here, the data showed close to a 20-fold improvement (relative to the prior) in support of  $ H_{1} $. Bayes factors and p values represent fundamentally different approaches to an analysis and are not formally comparable. However, a loose interpretation is that a factor of 20 is akin to the level of support of a p = 0.05, and a factor of 100 to p = 0.01.
+
+When the hypotheses are simple (i.e., single values), say  $ \Theta_0 = \theta_0 $ vs.  $ \Theta_1 = \theta_1 $,
+
+\begin{equation}
+p_{i}\propto p(\theta_{i})p(\mathbf{x}\mid\theta_{i})=\pi_{i}p(\mathbf{x}\mid\theta_{i})\quad for\quad i=0,1
+\end{equation}
+
+Thus
+
+\begin{equation}
+\frac{p_{0}}{p_{1}}=\frac{\pi_{0}p(\mathbf{x}\mid\theta_{0})}{\pi_{1}p(\mathbf{x}\mid\theta_{1})}
+\end{equation}
+
+1224
+
+and from Equation A2.10a, the Bayes factor (in favor of the null) reduces to
+
+\begin{equation}
+B_{0}=\frac{p(\mathbf{x}\mid\theta_{0})}{p(\mathbf{x}\mid\theta_{1})}
+\end{equation}
+
+which is simply a likelihood ratio (LW Appendix 4).
+
+When hypotheses are composite (containing multiple elements), the situation is slightly more complicated. First, note that the prior distribution of  $ \theta $ conditioned on  $ H_0 $ or  $ H_1 $ is
+
+\begin{equation}
+p_{i}(\theta)=p(\theta)/\pi_{i}\qquadfor\quad i=0,1
+\end{equation}
+
+as the total probability  $ \theta \in \Theta_i = \pi_i $, so dividing by  $ \pi_i $ normalizes the distribution to integrate to one. Thus,
+
+\begin{equation}
+\begin{aligned}p_{i}&=\Pr(\theta\in\Theta_{i}\mid\mathbf{x})=\int_{\theta\in\Theta_{i}}p(\theta\mid\mathbf{x})d\theta\\&=\frac{1}{p(\mathbf{x})}\int_{\theta\in\Theta_{i}}p(\theta)p(\mathbf{x}\mid\theta)d\theta\\&=\pi_{i}\int_{\theta\in\Theta_{i}}p(\mathbf{x}\mid\theta)p_{i}(\theta)d\theta\\ \end{aligned}
+\end{equation}
+
+where the second step follows from Bayes' theorem, while the final step follows from Equation A2.12. The Bayes factor in favor of the null hypothesis becomes
+
+\begin{equation}
+B_{0}=\left(\frac{p_{0}}{\pi_{0}}\right)\left(\frac{\pi_{1}}{p_{1}}\right)=\frac{\int_{\theta\in\Theta_{0}}p(\mathbf{x}\mid\theta)p_{0}(\theta)d\theta}{\int_{\theta\in\Theta_{1}}p(\mathbf{x}\mid\theta)p_{1}(\theta)d\theta}
+\end{equation}
+
+which is a ratio of the weighted likelihoods of  $ \Theta_{0} $ and  $ \Theta_{1} $
+
+\section{THE CHOICE OF A PRIOR}
+Obviously, a critical feature of any Bayesian analysis is the choice of a prior. The key is that when the data have a sufficiently strong signal, even a poor choice of a prior will still not greatly influence the posterior. In a sense, it is an asymptotic (large-sample) property of Bayesian analysis in that all but pathological priors (those with zero probability where the true value lies) can be overcome by sufficient amounts of data. As mentioned above, one can check the impact of the prior by assessing the stability of posterior over a collection of diverse priors. The location of a parameter (mean or mode) and its precision (the reciprocal of the variance) of the prior is usually more critical than its actual shape in terms of conveying prior information. The shape (family) of the prior distribution is often chosen to facilitate calculation of the posterior, especially through the use of conjugate priors that, for a given likelihood function, return a posterior in the same distribution family as the prior (e.g., a gamma prior returns a gamma posterior when the likelihood is Poisson). We will return to conjugate priors, but first we will discuss other approaches for construction of priors.
+
+\section{Diffuse Priors}
+One of the most commonly used priors is the flat or diffuse (also called uninformative or naive) prior, which is simply a constant
+
+\begin{equation}
+p(\theta)=\frac{1}{b-a}\qquad for\qquad a\leq\theta\leq b
+\end{equation}
+
+This conveys that we have no a priori reason to favor any particular parameter value over another. With a flat prior, the posterior is just a constant C times the likelihood
+
+\begin{equation}
+p(\theta\mid\mathbf{x})=C\ell(\theta\mid\mathbf{x})
+\end{equation}
+
+1225
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\linewidth]{example-image}
+\caption{Figure}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\linewidth]{example-image}
+\caption{Figure}
+\end{figure}
+
+and we typically write that  $ p(\theta|\mathbf{x}) \propto \ell(\theta|\mathbf{x}) $. In many cases, classical expressions from frequentist statistics are obtained by Bayesian analysis through assuming a flat prior.
+
+If the variable (i.e., parameter) of interest ranges over  $ (0, \infty) $ or  $ (-\infty, +\infty) $, then, strictly speaking, a flat prior does not exist as, if the constant takes on any nonzero value, the integral does not exist. In such cases a flat prior (i.e., assuming  $ p[\theta \mid \mathbf{x}] \propto \ell[\theta \mid \mathbf{x}] $) is referred to as an improper prior, and care must be taken to ensure that the product of the prior and the likelihood results in a proper posterior (i.e.,  $ \ell[\theta \mid \mathbf{x}] $ has a finite integral over the parameter range). This is by no means certain.
+
+Another complication involved in using a uniform prior arises when the question of interest resides on a different scale than that used for the prior. A variable uniform on one scale may be far from uniform on a transformed scale. Figure A2.1 shows two examples based on the assumption that there was a flat prior on the variance. A uniform prior on the variance does not result in a uniform prior on the standard deviation (e.g., Van Dongen 2006). Likewise, if one assumes that the additive and residual variances have flat priors, this does not imply a flat prior for  $ h^{2} $, but rather a prior that is sharply peaked at 1/2. When assuming a flat prior, care must be taken that it is truly uninformative on the appropriate scale of biological interest. Otherwise, the choice of what superficially appears as an unbiased prior may instead create a bias that the signal in the data must overcome.
+
+\section{The Jeffreys Prior}
+Jeffreys (1961) proposed a general prior based on the Fisher information information, I, of the likelihood. Recall (LW Appendix 4) that
+
+\begin{equation}
+I(\theta\mid\mathbf{x})=-E\left[\frac{\partial^{2}\ln\ell(\theta\mid\mathbf{x})}{\partial\theta^{2}}\right]
+\end{equation}
+
+The Jeffreys prior is as follows:
+
+\begin{equation}
+p(\theta)\propto\sqrt{I(\theta\mid\mathbf{x})}
+\end{equation}
+
+A full discussion, with derivation, can be found in Lee (2012).
+
+1226
+
+When there are  $ k $ parameters, I is the  $ k \times k $ Fisher information matrix of the expected second partials, where the elements of I are calculated by
+
+\begin{equation}
+\mathbf{I}(\boldsymbol{\Theta}|\mathbf{x})_{i j}=-E_{x}\left[\frac{\partial^{2}\ln\ell(\boldsymbol{\Theta}|\mathbf{x})}{\partial\theta_{i}\partial\theta_{j}}\right]
+\end{equation}
+
+In this case, the Jeffreys prior becomes
+
+\begin{equation}
+p(\boldsymbol{\Theta})\propto\sqrt{\det[\mathbf{I}(\boldsymbol{\theta}\mid\mathbf{x})]}
+\end{equation}
+
+Example A2.4. Consider the likelihood of x successes in n independent draws from a binomial with a success parameter of  $ \theta $,
+
+\begin{equation}
+\ell(\theta\mid\mathbf{x})=C\theta^{x}(1-\theta)^{n-x}
+\end{equation}
+
+where the constant C does not involve  $ \theta $. Taking logs gives
+
+\begin{equation}
+L(\theta\mid\mathbf{x})=\ln\left[\ell(\theta\mid\mathbf{x})\right]=\ln C+x\ln\theta+(n-x)\ln(1-\theta)
+\end{equation}
+
+Thus
+
+\begin{equation}
+\frac{\partial L(\theta\mid\mathbf{x})}{\partial\theta}=\frac{x}{\theta}-\frac{n-x}{1-\theta}
+\end{equation}
+
+and likewise
+
+\begin{equation}
+\frac{\partial^{2}L(\theta\mid\mathbf{x})}{\partial\theta^{2}}=-\frac{x}{\theta^{2}}-(-1)\cdot(-1)\frac{n-x}{(1-\theta)^{2}}=-\left(\frac{x}{\theta^{2}}+\frac{n-x}{(1-\theta)^{2}}\right)
+\end{equation}
+
+Because  $ E[x] = n\theta $, then
+
+\begin{equation}
+-E\left[\frac{\partial^{2}\ln\ell(\theta\mid\mathbf{x})}{\partial\theta^{2}}\right]=\frac{n\theta}{\theta^{2}}+\frac{n(1-\theta)}{(1-\theta)^{2}}=n\theta^{-1}(1-\theta)^{-1}
+\end{equation}
+
+The resulting Jeffreys prior for this likelihood becomes
+
+\begin{equation}
+p(\theta)\propto\sqrt{\theta^{-1}(1-\theta)^{-1}}\propto\theta^{-1/2}(1-\theta)^{-1/2}
+\end{equation}
+
+which is a U-shaped beta distribution with parameters  $ \alpha = \beta = 1/2 $ (Equation A2.38a). This prior puts more weight on extreme values relative to assuming a uniform over  $ (0,1) $, see Figure A2.3.
+
+Example A2.5. Suppose our data consists of $n$ independent draws from a normal distribution with an unknown mean and variance, $\mu$ and $\sigma^{2}$. In LW Appendix 4, we showed that the information matrix in this case is
+
+\begin{equation}
+\mathbf{I}=n\begin{pmatrix}{{{\frac{1}{\sigma^{2}}}}}&{{{0}}} \\{{{0}}}&{{{\frac{1}{2\sigma^{4}}}}}\end{pmatrix}
+\end{equation}
+
+Because the determinant of a diagonal matrix is the product of the diagonal elements,  $ \det(\mathbf{I}) \propto \sigma^{-6} $, giving the Jeffreys prior for  $ \mu $ and  $ \sigma^{2} $ as
+
+\begin{equation}
+p(\boldsymbol{\Theta})\propto\sqrt{\sigma^{-6}}=\sigma^{-3}
+\end{equation}
+
+1227
+
+Because the joint prior does not involve  $ \mu $, this implies a flat prior for  $ \mu $ (i.e.,  $ p[\mu] = c $). Note here that the prior distributions of  $ \mu $ and  $ \sigma^2 $ are independent, as
+
+\begin{equation}
+p(\mu,\theta)=c\cdot\sigma^{-3}=p(\mu)\cdot p(\sigma^{2})
+\end{equation}
+
+\section{POSTERIOR DISTRIBUTIONS UNDER NORMALITY ASSUMPTIONS}
+To introduce the basic ideas of Bayesian analysis, as well as treating a common assumption in quantitative genetics, consider the case where data are drawn from a normal (Gaussian) distribution, giving the likelihood function for the ith observation,  $ x_{i} $, as
+
+\begin{equation}
+\ell(\mu,\sigma^{2}\mid x_{i})=\frac{1}{\sqrt{2\pi\sigma^{2}}}\exp\left(-\frac{(x_{i}-\mu)^{2}}{2\sigma^{2}}\right)
+\end{equation}
+
+If we assume independence, the resulting full likelihood for all n data points (with a sample mean of  $ \overline{x} $) is
+
+\begin{equation}
+\ell(\mu\mid\mathbf{x})=\frac{1}{\sqrt{2\pi\sigma^{2}}}\exp\left(-\sum_{i=1}^{n}\frac{(x_{i}-\mu)^{2}}{2\sigma^{2}}\right)
+\end{equation}
+
+\begin{equation}
+=\frac{1}{\sqrt{2\pi\sigma^{2}}}\exp\left[-\frac{1}{2\sigma^{2}}\left(\sum_{i=1}^{n}x_{i}^{2}-2\mu n\overline{x}+n\mu^{2}\right)\right]
+\end{equation}
+
+The form of the posteriors given these normal likelihoods is a function of the assumed priors. By using the appropriate conjugate priors, these posteriors follow fairly standard distributions, and hence are easier to work with, as we now demonstrate.
+
+\section{Gaussian Likelihood With Known Variance and Unknown Mean}
+As a starting point, assume that the variance,  $ \sigma^2 $, is known, while the mean,  $ \mu $, is unknown. For a Bayesian analysis, it remains to specify the prior for  $ \mu $,  $ p(\mu) $. Suppose we assume a Gaussian prior,  $ \mu \sim \mathrm{N}(\mu_0, \sigma_0^2) $, with
+
+\begin{equation}
+p(\mu)=\frac{1}{\sqrt{2\pi\sigma_{0}^{2}}}\exp\left(-\frac{(\mu-\mu_{0})^{2}}{2\sigma_{0}^{2}}\right)
+\end{equation}
+
+The mean and variance of the prior,  $ \mu_0 $ and  $ \sigma_0^2 $, are referred to as hyperparameters. Here,  $ \mu_0 $ specifies a prior location for the parameter (the unknown mean,  $ \mu $), while  $ \sigma_0^2 $ specifies our uncertainty in this prior location—the larger  $ \sigma_0^2 $, the greater is our uncertainty. In the limit as  $ \sigma_0^2 \to \infty $,  $ p(\mu) $ approaches a flat (and in this case, improper) prior.
+
+A useful device when calculating the posterior distribution is to ignore terms that are constants with respect to the unknown parameters. Suppose x denotes the data and  $ \Theta_1 $ is a vector of known model parameters, while  $ \Theta_2 $ is a vector of unknown parameters. If we can write the posterior as
+
+\begin{equation}
+p(\boldsymbol{\Theta}_{2}\mid\mathbf{x},\boldsymbol{\Theta}_{1})=f(\mathbf{x},\boldsymbol{\Theta}_{1})\cdot g(\mathbf{x},\boldsymbol{\Theta}_{1},\boldsymbol{\Theta}_{2})
+\end{equation}
+
+then
+
+\begin{equation}
+p(\boldsymbol{\Theta}_{2}\mid\mathbf{x},\boldsymbol{\Theta}_{1})\propto g(\mathbf{x},\boldsymbol{\Theta}_{1},\boldsymbol{\Theta}_{2})
+\end{equation}
+
+which follows since  $ f(\mathbf{x}, \boldsymbol{\Theta}_{1}) $ is constant with respect to  $ \boldsymbol{\Theta}_{2} $.
+
+1228
+
+With the prior given by Equation A2.19, we can express the resulting posterior distribution as
+
+\begin{equation}
+\begin{aligned}p(\mu\mid\mathbf{x})&\propto\ell(\mu\mid\mathbf{x})\cdot p(\mu)\\&\propto\exp\left[-\frac{(\mu-\mu_{0})^{2}}{2\sigma_{0}^{2}}-\frac{1}{2\sigma^{2}}\left(\sum_{i=1}^{n}x_{i}^{2}-2\mu n\overline{x}+n\mu^{2}\right)\right]\end{aligned}
+\end{equation}
+
+We can factor out additional terms not involving  $ \mu $ to obtain
+
+\begin{equation}
+p(\mu\mid\mathbf{x})\propto\exp\left(-\frac{\mu^{2}}{2\sigma_{0}^{2}}+\frac{\mu\mu_{0}}{\sigma_{0}^{2}}+\frac{\mu n\overline{x}}{\sigma^{2}}-\frac{n\mu^{2}}{2\sigma^{2}}\right)
+\end{equation}
+
+Factoring in terms of  $ \mu $, the term in the exponential becomes
+
+\begin{equation}
+-\frac{\mu^{2}}{2}\left(\frac{1}{\sigma_{0}^{2}}+\frac{n}{\sigma^{2}}\right)+\mu\left(\frac{\mu_{0}}{\sigma_{0}^{2}}+\frac{n\overline{x}}{\sigma^{2}}\right)=-\frac{\mu^{2}}{\sigma_{*}^{2}}+\frac{2\mu\mu_{*}}{2\sigma_{*}^{2}}
+\end{equation}
+
+where
+
+\begin{equation}
+\sigma_{*}^{2}=\left(\frac{1}{\sigma_{0}^{2}}+\frac{n}{\sigma^{2}}\right)^{-1}\quad and\quad\mu_{*}=\sigma_{*}^{2}\left(\frac{\mu_{0}}{\sigma_{0}^{2}}+\frac{n\overline{x}}{\sigma^{2}}\right)
+\end{equation}
+
+Finally, by completing the square, we have
+
+\begin{equation}
+p(\mu\mid\mathbf{x})\propto\exp\left[-\frac{(\mu-\mu_{*})^{2}}{2\sigma_{*}^{2}}+f(\mathbf{x},\mu_{0},\sigma^{2},\sigma_{0}^{2})\right]
+\end{equation}
+
+Recalling Equation A2.20b, we can ignore the second term in the exponential (as it does not involve  $ \mu $), and the resulting posterior for  $ \mu $ (given the observed data x) becomes
+
+\begin{equation}
+p(\mu\mid\mathbf{x})\propto\exp\left[-\frac{(\mu-\mu_{*})^{2}}{2\sigma_{*}^{2}}\right]
+\end{equation}
+
+demonstrating that the posterior density function for  $ \mu $ is a normal with a mean of  $ \mu_{*} $ and a variance of  $ \sigma_{*}^{2} $, namely,
+
+\begin{equation}
+\mu\mid(\mathbf{x},\sigma^{2})\sim\mathrm{N}\left(\mu_{*},\sigma_{*}^{2}\right)
+\end{equation}
+
+Notice that the posterior density is in the same form as the prior. This occurred because the prior conjugated with the likelihood function—the product of the prior and likelihood returned a distribution in the same family as the prior (but with different distribution parameters). The use of such conjugate priors associated with a given family of likelihood functions is a key concept in Bayesian analysis, and we will explore it more fully below.
+
+We are now in a position to inquire about the relative importance of the prior versus the data. Under the assumed prior, the mean (and in this case, the mode as well) of the posterior distribution is
+
+\begin{equation}
+\mu_{*}=\mu_{0}\frac{\sigma_{*}^{2}}{\sigma_{0}^{2}}+\overline{x}\frac{\sigma_{*}^{2}}{\sigma^{2}/n}
+\end{equation}
+
+With a very diffuse prior on  $ \mu $ (i.e.,  $ \sigma_0^2 \gg \sigma^2 $),  $ \sigma_*\to \sigma^2/n $ and  $ \mu_*\to \overline{x} $. Also note from Equation A2.22b that as we collect enough data (i.e., achieve a sufficiently large value of  $ n $),  $ \sigma_*\to \sigma^2/n $ and again  $ \mu_*\to \overline{x} $, implying that primarily the data, rather than the prior, will influence the posterior when the value of  $ n $ is sufficiently large.
+
+\section{Gamma,  $ \chi^{2} $, Inverse-gamma, and  $ \chi^{-2} $ Distributions}
+Before examining the Gaussian likelihood with unknown variance, a brief aside is needed to develop the inverse chi-square distribution, denoted by  $ \chi^{-2} $. We do this via the gamma and inverse-gamma distributions, as both  $ \chi^{2} $ and  $ \chi^{-2} $ are special cases of these distributions.
+
+1229
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\linewidth]{example-image}
+\caption{Figure}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\linewidth]{example-image}
+\caption{Figure}
+\end{figure}
+
+To motivate the gamma distribution, first consider the simple exponential waiting-time distribution, where  $ \beta $ is the rate (the probability of a success in some small time unit,  $ \delta_{t} $, is given by  $ \beta \delta_{t} $), then the probability density function (pdf) for the exponential is
+
+\begin{equation}
+p(x\mid\beta)=\beta e^{-\beta x}\quad for\quad0\leq x<\infty,\quad\beta>0
+\end{equation}
+
+Because the expected waiting time until a success is  $ \lambda = 1/\beta $, this can be reparameterized in terms of the scale (waiting time) parameter as
+
+\begin{equation}
+p(x\mid\beta)=\lambda^{-1}e^{-x/\lambda}
+\end{equation}
+
+The sum of  $ k $ exponentials with the same rate (or scale) parameter is called an Erlang distribution, and it was initially developed for certain problems in telephone queuing theory. Expressed in terms of the rate parameter, the resulting pdf becomes
+
+\begin{equation}
+p(x\mid k,\beta)=\frac{\beta^{k}}{(k-1)!}\;x^{k-1}\;e^{-\beta x}\quad\mathrm{f o r}\quad0\leq x<\infty
+\end{equation}
+
+where the integer k is called the shape parameter, with k = 1 recovering the exponential.
+
+The gamma distribution follows by allowing the shape parameter to be any positive number,  $ \alpha $, with  $ x \sim \Gamma(\alpha, \beta) $ having its pdf defined by its shape ( $ \alpha $) and rate ( $ \beta $) values,
+
+\begin{equation}
+\begin{align*}p(x\mid\alpha,\beta)=\frac{\beta^\alpha}{\Gamma(\alpha)}x^{\alpha-1}e^{-\beta x}\quad{\rm for}\alpha,\beta,x>0\end{align*}
+\end{equation}
+
+Note that the factorial in the Erlang is replaced by the gamma function,  $ \Gamma(x) $, which is defined below (Equation A2.26a). Figure A2.2 shows how changes in these two parameters influence the shape of the distribution. Note that, as a function of x,
+
+\begin{equation}
+p(x\mid\alpha,\beta)\propto x^{\alpha-1}e^{-\beta x}
+\end{equation}
+
+When expressed in terms of the scale ( $ \lambda = 1/\beta $) parameter, the pdf becomes
+
+\begin{equation}
+p(x\mid\alpha,\lambda)=\frac{\lambda^{-\alpha}}{\Gamma(\alpha)}x^{\alpha-1}e^{-x/\lambda}
+\end{equation}
+
+1230
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+Cell 1 & Cell 2 \\
+\hline
+Cell 3 & Cell 4 \\
+\hline
+\end{tabular}
+\caption{Table Placeholder}
+\end{table}
+
+which yields
+
+\begin{equation}
+p(x\mid\alpha,\lambda)\propto x^{\alpha-1}e^{-x/\lambda}
+\end{equation}
+
+Because both the rate and scale versions of the gamma distribution are widely used, take care to know which version your software package is using (for example, the default in R uses the scale parameter version). We can parameterize a gamma in terms of its mean and variance by noting that
+
+\begin{equation}
+\mu_{x}=\frac{\alpha}{\beta}=\alpha\lambda\qquad and\qquad\sigma_{x}^{2}=\frac{\alpha}{\beta^{2}}=\alpha\lambda^{2}
+\end{equation}
+
+so that
+
+\begin{equation}
+\alpha=\frac{\mu_{x}^{2}}{\sigma_{x}^{2}}\qquad and\qquad\beta=\frac{\mu_{x}}{\sigma_{x}^{2}}
+\end{equation}
+
+ $ \Gamma(\alpha) $, the gamma function evaluated at  $ \alpha $ (which normalizes the gamma distribution), is defined by
+
+\begin{equation}
+\Gamma(\alpha)=\int_{0}^{\infty}y^{\alpha-1}e^{-y}d y\qquadfor\alpha>0
+\end{equation}
+
+This is the generalization of the factorial function from the integers to any positive number. If $n$ is an integer, then $\Gamma(n) = (n - 1)!$ Using integration by parts, one can show that $\Gamma$ satisfies the following identities
+
+\begin{equation}
+\Gamma(\alpha+1)=\alpha\Gamma(\alpha),\quad\Gamma(1)=1,\quad and\quad\Gamma(1/2)=\sqrt{\pi}
+\end{equation}
+
+The chi-square ( $ \chi^2 $) distribution is a special case of the gamma, as a  $ \chi^2 $ random variable with  $ n $ degrees of freedom follows a gamma distribution with parameters  $ \alpha = n/2 $ and  $ \beta = 1/2 $ ( $ \lambda = 2 $), namely,  $ \chi_n^2 \sim \Gamma(\frac{n}{2}, 1/2) $, giving the density function as
+
+\begin{equation}
+p(x\mid n)=\frac{2^{-n/2}}{\Gamma(n/2)}x^{n/2-1}e^{-x/2}
+\end{equation}
+
+Hence for  $ x \sim \chi_{n}^{2} $,
+
+\begin{equation}
+p(x)\propto x^{n/2-1}e^{-x/2}
+\end{equation}
+
+The inverse-gamma distribution will prove useful as a conjugate prior for Gaussian likelihoods with unknown variance. It is defined by the distribution of the random variable  $ y = x^{-1} $, where  $ x \sim \text{Gamma}(\alpha, \beta) $. The resulting density function is
+
+\begin{equation}
+p(x\mid\alpha,\beta)=\frac{\beta^{\alpha}}{\Gamma(\alpha)}x^{-(\alpha+1)}e^{-\beta/x}\quad for\alpha,\beta,x>0
+\end{equation}
+
+The mean and variance for this distribution are only defined (i.e., finite) if  $ \alpha $ is sufficiently large, with
+
+\begin{equation}
+\mu_{x}=\frac{\beta}{\alpha-1}\quad for\alpha>1\quad and\quad\sigma_{x}^{2}=\frac{\beta^{2}}{(\alpha-1)^{2}(\alpha-2)}\quad for\alpha>2
+\end{equation}
+
+1231
+
+Note for the inverse gamma that
+
+\begin{equation}
+p(x\mid\alpha,\beta)\propto x^{-(\alpha+1)}e^{-\beta/x}
+\end{equation}
+
+If  $ y \sim \chi_n^2 $, then  $ x = 1/y $ follows an inverse chi-square distribution, which is denoted by  $ x \sim \chi_n^{-2} $. This is a special case of the inverse gamma, with (as for a normal  $ \chi^2 $)  $ \alpha = n/2 $,  $ \beta = 1/2 $. For  $ n > 4 $ (i.e.,  $ \alpha > 2 $), the resulting density function is
+
+\begin{equation}
+p(x\mid n)=\frac{2^{-n/2}}{\Gamma(n/2)}x^{-(n/2+1)}e^{-1/(2x)}
+\end{equation}
+
+with a mean and variance of
+
+\begin{equation}
+\mu_{x}=\frac{1}{n-2}\qquad and\qquad\sigma_{x}^{2}=\frac{2}{(n-2)^{2}(n-4)}
+\end{equation}
+
+The scaled inverse chi-square distribution is more typically used in a Bayesian analysis, where the rate parameter,  $ \beta $ (which equals 1/2 under a chi-square), is replaced by  $ \beta = \sigma_{0}^{2}/2 $, making the resulting pdf
+
+\begin{equation}
+p(x\mid n)\propto x^{-(n/2+1)}e^{-\sigma_{0}^{2}/(2x)}
+\end{equation}
+
+where the  $ 1/(2x) $ term in the exponential is replaced by a  $ \sigma_0^2/(2x) $ term. The scaled inverse chi-square distribution thus involves two parameters  $ (\sigma_0^2 $ and  $ n) $, and is denoted by  $ \chi_{(n,\sigma_0^2)}^{-2} $ or  $ \mathrm{SI}-\chi^2(n,\sigma_0^2) $. Note that if
+
+\begin{equation}
+x\sim\chi_{(n,\sigma_{0}^{2})}^{-2},\qquad\mathrm{t h e n}\qquad\sigma_{0}^{2}x\sim\chi_{n}^{-2}
+\end{equation}
+
+which shows that  $ \sigma_{0}^{2} $ is a scaling factor on a standard  $ (\beta = 1/2) $ inverse chi-square.
+
+\section{Gaussian Likelihood With Unknown Variance: Scaled Inverse- $ \chi^{2} $ Priors}
+Suppose data are drawn from a normal distribution with a known mean,  $ \mu $, but unknown variance,  $ \sigma^{2} $. The resulting likelihood function can be expressed as
+
+\begin{equation}
+\ell(\sigma^{2}\mid\mathbf{x},\mu)\propto(\sigma^{2})^{-n/2}\exp\left(-\frac{nS^{2}}{2\sigma^{2}}\right)
+\end{equation}
+
+where
+
+\begin{equation}
+S^{2}=\frac{1}{n}\sum_{i=1}^{n}\left(x_{i}-\mu\right)^{2}
+\end{equation}
+
+Notice that since we condition on x and  $ \mu $ (i.e., their values are known),  $ S^2 $ is a constant. Further observe that, as a function of the unknown variance,  $ \sigma^2 $, the likelihood is proportional to a scaled inverse  $ \chi^2 $ distribution (Equation A2.30a). If we take the prior for the unknown variance also as a scaled inverse  $ \chi^2 $ with hyperparameters  $ \nu_0 $ and  $ \sigma_0^2 $, the posterior becomes
+
+\begin{equation}
+\begin{align*}p(\sigma^{2}\mid\mathbf{x},\mu)&\propto(\sigma^{2})^{-n/2}\exp\left(-\frac{nS^{2}}{2\sigma^{2}}\right)(\sigma^{2})^{-\nu_{0}/2-1}\cdot\exp\left(-\frac{\sigma_{0}^{2}}{2\sigma^{2}}\right)\\&=(\sigma^{2})^{-(n+\nu_{0})/2-1}\exp\left(-\frac{nS^{2}+\sigma_{0}^{2}}{2\sigma^{2}}\right)\end{align*}
+\end{equation}
+
+Equation A2.30a shows the resulting posterior is also a scaled inverse  $ \chi^2 $ distribution with parameters  $ \nu_n = (n + \nu_0) $ and  $ \sigma_n^2 = (nS^2 + \sigma_0^2) $. Hence,
+
+\begin{equation}
+\begin{array}{r l}{\mathrm{t h e~p r i o r~}\sigma^{2}\sim\chi_{\nu_{0},\sigma_{0}^{2}}^{-2}}&{{}\mathrm{y i e l d s~t h e~p o s t e r i o r}\quad\sigma^{2}\mid(\mathbf{x},\mu)\sim\chi_{\nu_{n},\sigma_{n}^{2}}^{-2}}\end{array}
+\end{equation}
+
+1232
+
+\section{Student's t Distribution}
+The final distribution needed for a Bayesian analysis of a Gaussian likelihood is the $t$ (or Student's $t$) distribution. Suppose that $x_i \sim N(\mu, \sigma^2)$, so for $n$ independent draws, $\overline{x} \sim N(\mu, \sigma^2/n)$. This implies that $(\overline{x} - \mu)/\sqrt{\sigma^2/n} \sim U$, where $U \sim N(0,1)$ denotes a unit normal. Likewise, the sample variance, $\text{Var}(x)$, follows a scaled chi-square distribution, with $\text{Var}(x) \sim (n-1)\sigma^2\chi_{n-1}^2$ (LW Equation A5.14c). When the estimated variance, $\text{Var}(x)$, is used in place of the true variance, $\sigma^2$, the quantity $(\overline{x} - \mu)/\sqrt{\text{Var}(x)/n}$ follows a $t$ distribution with $n - 1$ degrees of freedom, giving rise to the very familiar $t$-test. Notice that
+
+\begin{equation}
+t_{n-1}=\left(\frac{\overline{x}-\mu}{\sigma/\sqrt{n}}\right)\left(\frac{1}{\sqrt{\mathrm{Var}(x)/\sigma^{2}}}\right)=\frac{U}{\sqrt{\chi_{n-1}^{2}/(n-1)}}
+\end{equation}
+
+Thus, a  $ t_{\nu} $ random variable follows the distribution of a unit normal divided by the square root of a chi-square with  $ \nu $ degrees of freedom,
+
+\begin{equation}
+t_{\nu}=\frac{U}{\sqrt{\chi_{\nu}^{2}/\nu}}
+\end{equation}
+
+Note that  $ E(\chi_{\nu}^{2}) = \nu $, so  $ E(\chi_{\nu}^{2}/\nu) = 1 $. Relative to a normal, a t distribution is more peaked and has heavier tails, and this kurtosis becomes more pronounced as  $ \nu $ decreases. Indeed, the tails fall off sufficiently slowly that a t random variable with two degrees of freedom has an infinite variance, while a t with four (or fewer) degrees of freedom has an infinite fourth moment. The coefficient of kurtosis (LW Equation 2.12a) for a t with  $ \nu > 4 $ degrees of freedom is  $ k_{4} = 6/(\nu - 4) $, which approaches the value (zero) for a normal random variable for large values of  $ \nu $. For  $ \nu > 30 $, the t essentially becomes a unit normal distribution.
+
+As with a unit normal, one can also add scale and location to a standard  $ t_{\nu} $-distributed random variable, thus generating a three-parameter family of distributions,
+
+\begin{equation}
+t_{\nu}(\mu,\sigma)=\mu+\sigma\cdot t_{\nu}
+\end{equation}
+
+The resulting mean and variance this distribution are
+
+\begin{equation}
+E[t_{\nu}(\mu,\sigma)]=\mu\quad and\quad\sigma^{2}[t_{\nu}(\mu,\sigma)]=\sigma^{2}\frac{\nu}{\nu-2}\quad for\nu>2
+\end{equation}
+
+Hence, the choice of  $ \mu $ and  $ \sigma $ control, respectively, the location and scale (uncertainty about the location), while  $ \nu $ controls the kurtosis, with heavy tails for values of  $ \nu $ that are small and little kurtosis for  $ \nu > 20 $. The resulting probability density function thus becomes
+
+\begin{equation}
+p(x\mid\nu,\mu,\sigma)=\frac{\Gamma([\nu+1]/2)}{\Gamma(\nu/2)\sigma\sqrt{\pi\nu}}\left[1+\frac{1}{\nu}\left(\frac{x-\mu}{\sigma}\right)^{2}\right]^{-(\nu+1)/2}
+\end{equation}
+
+The role of the $t$ distribution in Bayesian statistics is twofold. First, it is often used as a more robust prior, as its heavier tails may better account for outliers. Using a $t$ distribution with low degrees of freedom (often $\nu = 5$) offers a prior that is similar to a normal but allows for more frequent extreme values. The second scenario is that the marginal posterior for $\mu$ of a Gaussian likelihood with a normal prior on the mean and an inverse chi-square prior on the variance is a $t$ distribution. This arises after the joint posterior is integrated over all possible $\sigma^{2}$ values (i.e., over an inverse chi-square).
+
+\section{General Gaussian Likelihood: Unknown Mean and Variance}
+If we put all these pieces together, the posterior density for draws from a normal with unknown mean and variance is obtained as follows. First, we write the joint prior by conditioning on the variance,
+
+\begin{equation}
+p(\mu,\sigma^{2})=p(\mu\mid\sigma^{2})\cdot p(\sigma^{2})
+\end{equation}
+
+1233
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+Cell 1 & Cell 2 \\
+\hline
+Cell 3 & Cell 4 \\
+\hline
+\end{tabular}
+\caption{Table Placeholder}
+\end{table}
+
+As above, we assume a scaled inverse chi-square distribution for the variance and, conditioned on the variance, a Gaussian prior for the mean with hyperparameters of  $ \mu_0 $ and  $ \sigma^2/\kappa_0 $, namely,
+
+\begin{equation}
+\sigma^{2}\sim\chi_{\nu_{0},\sigma_{0}^{2}}^{-2}\qquad\mathrm{a n d}\qquad\mu\mid\sigma^{2}\sim\mathrm{N}\left(\mu_{0},\frac{\sigma^{2}}{\kappa_{0}}\right)
+\end{equation}
+
+We write the variance for the conditional mean prior in this way because  $ \sigma^{2} $ is known (as we condition on it) and we scale  $ \sigma^{2} $ by the hyperparameter,  $ \kappa_{0} $. The resulting marginal posterior becomes
+
+\begin{equation}
+\sigma^{2}\left|\textbf{x}\sim\chi_{\nu_{n},\sigma_{n}^{2}}^{-2}\right.\quad\mathrm{a n d}\quad\mu\left|\textbf{x}\sim\textbf{t}_{\nu_{n}}\left(\mu_{n},\frac{\sigma_{n}^{2}}{\kappa_{n}}\right)\right.
+\end{equation}
+
+where  $ t_{n}(\mu,\sigma^{2}) $ denotes a t distribution with n degrees of freedom, mean  $ \mu $, and scale parameter  $ \sigma^{2} $, and where
+
+\begin{equation}
+\nu_{n}=\nu_{0}+n,\qquad\kappa_{n}=\kappa_{0}+n
+\end{equation}
+
+\begin{equation}
+\mu_{n}=\mu_{0}\frac{\kappa_{0}}{\kappa_{n}}+\overline{x}\frac{n}{\kappa_{n}}=\mu_{0}\frac{\kappa_{0}}{\kappa_{0}+n}+\overline{x}\frac{n}{\kappa_{0}+n}
+\end{equation}
+
+\begin{equation}
+\sigma_{n}^{2}=\frac{1}{\nu_{n}}\left(\nu_{0}\sigma_{0}^{2}+\sum_{i=1}^{n}\left(x_{i}-\overline{x}\right)^{2}+\frac{\kappa_{0}n}{\kappa_{n}}\left(\overline{x}-\mu_{0}\right)^{2}\right)
+\end{equation}
+
+\section{CONJUGATE PRIORS}
+The use of a prior density that conjugates the likelihood allows us to develop analytic expressions of the posterior density. As we will see in Appendix 3, this is critical in developing Gibbs samplers for problems of interest. Table A2.2 summarizes the conjugate priors for several common likelihood functions, with the various families of distributions discussed below.
+
+\section{The Beta and Dirichlet Distributions}
+With a binomial, each trial (observation) has two possible outcomes and the likelihood is a function of the sample size (number of trials),  $ n $, and a single success probability,  $ p $ (as the two outcomes on any given trial have probabilities of  $ p $ and  $ 1 - p $). The generalization of this model is the multinomial distribution, where now each trial has  $ k $ possible outcomes, and which requires  $ k - 1 $ success probabilities to describe the likelihood. In particular, for a total of  $ n $ observations, the probability that  $ n_1 $ are in category 1,  $ n_2 $ in category 2,  $ \cdots $, and  $ n_k $ in category  $ k $ is
+
+\begin{equation}
+p(n_{1},\cdots n_{k})=\frac{n!}{n_{1}!n_{2}!\cdots n_{k}!}\ p_{1}^{n_{1}}\cdots p_{k}^{n_{k}}\quad where\quad\sum_{i}n_{i}=n\quad and\quad\sum_{i}p_{i}=1
+\end{equation}
+
+1234
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\linewidth]{example-image}
+\caption{Figure}
+\end{figure}
+
+The conjugate prior for the multinomial likelihood is the Dirichlet distribution. If we let  $ \mathbf{x} = (x_1, x_2, \cdots, x_k) $ denote the  $ k $ success probabilities, when pdf for  $ \mathbf{x} \sim \text{Dirichlet}(\alpha_1, \cdots, \alpha_k) $ is
+
+\begin{equation}
+\begin{align*}p(x_1,\cdots x_k\mid\alpha_1,\cdots,\alpha_k)=\frac{\Gamma(\alpha_0)}{\Gamma(\alpha_1)\cdots\Gamma(\alpha_k)}x_1^{\alpha_1-1}\cdots x_k^{\alpha_k-1}\end{align*}
+\end{equation}
+
+where
+
+\begin{equation}
+\alpha_{0}=\sum_{i=1}^{k}\alpha_{i}\quad with\quad\alpha_{i}>0,\quad and\quad\sum_{i=1}^{k}x_{i}=1\quad with\quad0\leq x_{i}\leq1
+\end{equation}
+
+At first glance, this looks like the multinomial density function (with  $ \alpha_i - 1 = n_i $). The difference is that the multinomial is calculated over a set of discrete random variables ( $ n_i $), thus returning the expected probabilities for any vector of discrete numbers of counts (successes) in each category. Conversely, the Dirichlet treats an equivalent of the vector of outcomes (generalized to non-integers) as fixed and returns the continuous distribution for all possible configurations of the success parameters given this data, which means that the data ( $ \alpha_i $) is fixed, and the success parameters ( $ x_i $) are random. A few key moments of this distribution are
+
+\begin{equation}
+\begin{align*}\mu_{x_i}={\alpha_i\over\alpha_0},\quad\sigma^2(x_i)={\alpha_i(\alpha_0-\alpha_i)\over\alpha_0^2(\alpha_0+1)},\quad{\rm and}\quad\sigma(x_i,x_j)=-{\alpha_i\alpha_j\over\alpha_0^2(\alpha_0+1)}\end{align*}
+\end{equation}
+
+An important special case of the Dirichlet (for k = 2 classes) is the beta distribution, whose pdf is given by
+
+\begin{equation}
+\begin{align*}p(x)=\frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)}\;x^{\alpha-1}(1-x)^{\beta-1}\quad{\rm for}\quad0\le x\le1,\quad\alpha,\;\beta>0\end{align*}
+\end{equation}
+
+which has a mean and a variance of
+
+\begin{equation}
+\begin{align*}\mu=\frac{\alpha}{\alpha+\beta}\qquad{\rm and}\qquad\sigma^2=\frac{\alpha\beta}{(\alpha+\beta)^2(\alpha+\beta-1)}\end{align*}
+\end{equation}
+
+As Figure A2.3 illustrates, the beta distribution is extremely flexible, and can be flat, unimodal, U-, or L-shaped, depending on the choice of  $ \alpha $ and  $ \beta $.
+
+1235
+
+\section{Wishart and Inverse-Wishart Distributions}
+The Wishart distribution can be thought of as the multivariate extension of the  $ \chi^2 $ distribution. Suppose  $ \mathbf{x}_1, \cdots, \mathbf{x}_n $ are independent and identically distributed vectors, with  $ \mathbf{x}_i \sim \text{MVN}_k(\mathbf{0}, \mathbf{V}) $. Using these  $ n $ draws, and assuming that the mean is known to be zero, the resulting random  $ (k \times k \text{ symmetric, positive definite}) $ sample covariance matrix,  $ \mathbf{W} $, is given by
+
+\begin{equation}
+\mathbf{W}=\sum_{i=1}^{n}\mathbf{x}_{i}\mathbf{x}_{i}^{T}\sim W_{n}(\mathbf{V})
+\end{equation}
+
+This sum is defined as a Wishart distribution with $n$ degrees of freedom and a (matrix) parameter $\mathbf{V}$. Recalling that the sum of $n$ squared unit normals follows a $\chi_n^2$ distribution, the Wishart is the extension to the multivariate normal. Indeed, for $k=1$ with $\mathbf{V}=(1)$, the Wishart is simply a $\chi_n^2$ distribution, as $\sum x_i^2 \sim \chi_n^2$, because $x_i \sim N(0,1)$.
+
+The Wishart is the sampling distribution for covariance matrices (just like the  $ \chi^{2} $ is associated with the distribution of a sample variance for data drawn from a normal; Chapter 11). The pdf of the Wishart distribution is
+
+\begin{equation}
+p(\mathbf{W}\mid\mathbf{V})=2^{-n k/2}\pi^{-k(k-1)/k}\mid\mathbf{V}\mid^{-n/2}\mid\mathbf{W}\mid^{(n+k+1)/2}\frac{\exp\left(-\frac{1}{2}\mathbf{t}\mathbf{r}\left[\mathbf{V}^{-1}\mathbf{W}\right]\right)}{\prod_{i=1}^{k}\Gamma\left(\frac{n+1-i}{2}\right)}
+\end{equation}
+
+Recall that the trace (tr) of a matrix is just the sum of its diagonal elements,  $ \mathrm{tr}(\mathbf{A}) = \sum A_{ii} $ (Appendix 5). Odell and Feiveson (1966) presented an algorithm for generating random draws from the Wishart.
+
+If  $  \mathbf{Z} \sim \mathbf{W}_n(\mathbf{V})  $, then  $  \mathbf{Z}^{-1} \sim \mathbf{W}_n^{-1}(\mathbf{V}^{-1})  $, where  $  \mathbf{W}^{-1}  $ denotes the inverse-Wishart distribution. The density function for an inverse-Wishart distributed random matrix,  $  \mathbf{W}  $, is
+
+\begin{equation}
+p(\mathbf{W}|\mathbf{V})=2^{-n k/2}\pi^{-k(k-1)/k}|\mathbf{V}|^{n/2}|\mathbf{W}|^{-(n+k+1)/2}\frac{\exp\left(-\frac{1}{2}\mathbf{t}\mathbf{r}\left[\mathbf{V}\mathbf{W}^{-1}\right]\right)}{\prod_{i=1}^{k}\Gamma\left(\frac{n+1-i}{2}\right)}
+\end{equation}
+
+which is the distribution of the inverse of the sample covariance matrix.
+
+\end{document}

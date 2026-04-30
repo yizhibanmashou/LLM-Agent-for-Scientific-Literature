@@ -1,0 +1,67 @@
+{
+  "id": "chapter7_002",
+  "metadata": {
+    "chapter": "chapter7",
+    "section": "Chapter 7: SELECTION AND MUTATION AT SINGLE LOCI",
+    "subsections": [
+      "SELECTION AND MUTATION AT SINGLE LOCI"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter7_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "7.1",
+      "7.2",
+      "7.3",
+      "7.4",
+      "7.5",
+      "7.6a",
+      "7.6b",
+      "7.6c",
+      "7.6d",
+      "7.7"
+    ],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "As discussed in Chapter 5, many of the central questions in population and quantitative genetics concern the mechanisms responsible for the maintenance of genetic variation in natural populations. Here, we introduce a few classical models for the balance between the opposing forces of mutation and directional selection. Our preliminary focus will be on the simple case of two alleles, as this serves as the foundation for more complex models for the maintenance of quantitative variation, which are covered in Chapter 28."
+    },
+    {
+      "type": "derivation",
+      "content": "Consider a locus with an advantageous allele A and a deleterious allele a, which have respective frequencies of 1 - p and p. Let $ $ be the mutation rate from A to a, let v be the rate of back mutation to A, and assume there is selection preceding mutation in each generation, followed by random mating in a population that is effectively infinite in size. From Chapter 5, the new frequency of a after a generation of viability selection is [[SEE_FORMULA:7.1]] where $ W_a $ is the marginal fitness of $ a $ (Equation 5.7b), and $ $ is the mean fitness. Letting $ p' $ be the allele frequency following mutation, we then have [[SEE_FORMULA:7.2]]"
+    },
+    {
+      "type": "derivation",
+      "content": "This follows because 1 - v is the fraction of a that remains unchanged following mutation, while a fraction $ $ of all A alleles (with frequency 1 - $ p' $) mutate to a. Thus, one generation of the joint action of selection and mutation leads to the new frequency of a [[SEE_FORMULA:7.3]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Haldane (1927) was the first to consider the equilibrium allele frequencies that are eventually reached under this model of opposing mutation and selection pressures. If we let the fitnesses of genotypes AA, Aa, and aa be 1, 1 - hs, and 1 - s, respectively, the equilibrium frequencies, $ $, satisfying $ p = p'' - p = 0 $ are given by the solutions of the rather complicated cubic equation [[SEE_FORMULA:7.4]]"
+    },
+    {
+      "type": "derivation",
+      "content": "(Bürger 2000). Provided 0 < s < 1 and $ h 0.5 $, this expression has a single stable equilibrium and considerable simplification is possible in a number of biologically realistic cases. For example, for the case of neutrality (s = 0), the equilibrium is simply defined by the opposing forces of mutation [[SEE_FORMULA:7.5]]"
+    },
+    {
+      "type": "derivation",
+      "content": "A situation of special interest concerns the polymorphism maintained by a balance between selection and mutation when allele a is at a selective disadvantage. To simplify the solution, it is generally assumed that back mutation to the advantageous allele is a negligible force. There are several mathematical justifications and one biological justification for such an assumption. First, unless the selection coefficient is small relative to the mutation rate, the frequency of the mutant allele will generally be low enough that back mutation will be a second-order effect. Second, although functional genes may mutate to deleterious alleles through numerous mechanisms, precise back mutations to normal alleles will necessarily be much rarer events, i.e., we expect that $ v $. Letting $ v = 0 $, Equation 7.4 can be reduced to a more manageable quadratic equation, with a solution of [[SEE_FORMULA:7.6a]] assuming $ s > $. For the general case of intermediate dominance ($ 0 < h 1 $) [[SEE_FORMULA:7.6b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "For the extreme situation in which a is a completely dominant deleterious mutation (h = 1) [[SEE_FORMULA:7.6c]] whereas if A is recessive $ (h = 0) $ [[SEE_FORMULA:7.6d]]"
+    },
+    {
+      "type": "discussion",
+      "content": "A number of other special cases were presented in Nagylaki (1992a) and Bürger (2000); for example, $ 3 /s $ for sex-linked recessives."
+    },
+    {
+      "type": "derivation",
+      "content": "The multiple-allele version of this model can be obtained in a straightforward manner. Suppose there are $ k $ alleles $ (A_1,, A_k) $ and let $ _ ij $ be the probability that allele $ A_i $ mutates to allele $ A_j $. If we let $ _i = _ j i _ ij $ be the total mutation rate from allele $ A_i $ to any other allele, and assuming constant viability selection followed by mutation and then random mating, the allele-frequency change equations become [[SEE_FORMULA:7.7]] where $ W_ i $ is the marginal fitness of allele $ A_ i $ (Equation 5.7b). The equilibrium behavior of this system can be quite complex, and with sufficiently strong mutation there will be the possibility that stable cycles exists (Bürger 2000)."
+    },
+    {
+      "type": "discussion",
+      "content": "Clark (1998) examined a special case of the multiple-allele model in which there is one optimal allele, and all heterozygotes for single mutations have a fitness of 1 - hs, while heterozygotes for two different mutant alleles have a fitness of 1 - ks, where k is a measure of complementation between two deleterious alleles (with k = 0 implying that each allele compensates for the other allele's deficiencies). Under this model, multiple deleterious alleles are maintained by mutation pressure, and provided k < 1, the sum of their frequencies was higher than expected under the two-allele model. The latter result arises as interallelic complementation reduces the magnitude of selection operating on mutant alleles when they are jointly present in the same genotype."
+    }
+  ]
+}

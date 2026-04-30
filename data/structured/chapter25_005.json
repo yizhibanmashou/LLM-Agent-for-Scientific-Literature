@@ -1,0 +1,59 @@
+{
+  "id": "chapter25_005",
+  "metadata": {
+    "chapter": "chapter25",
+    "section": "Chapter 25: Dynamics of Allele-frequency Change",
+    "subsections": [
+      "Dynamics of Allele-frequency Change"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter25_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "25.3",
+      "25.4"
+    ],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "derivation",
+      "content": "To obtain approximate expressions for the actual dynamics of the selection response in the mean, we need to follow allele-frequency changes over time. Recall from Equation 5.21 that if a character is normally distributed, then the change in the frequency of allele B is $ p (/ _z)p $, where p and $ $ are, respectively, the frequency and average excess of B. This is a weak-selection approximation, as it assumes that $ | / _z| 1 $. It also assumes that the effects of epistasis, gametic-phase disequilibrium, and genotype × environment interactions are negligible. Assuming random mating, the average effect of an allele equals its average excess, and LW Equation 4.15a gives $ = (1 - p)a[1 + k(1 - 2p)] $. Substituting yields [[SEE_FORMULA:25.3]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Recall that this is correct only to linear order (terms of $ a^2 $ and higher order are ignored; see Equation 5.27a). Thus, there are potential pitfalls in applying Equation 25.3 when $ 0 $. One important example of this latter situation is strict stabilizing selection, where $ = 0 $ but allele frequencies can still change due to selection on the phenotypic variance of the character, which enters as quadratic terms, $ a^2 $ (e.g., Equation 5.6f)."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 25.2. The idealized response curves in Figure 25.1 were generated using Equation 25.3 to compute the expected allele-frequency change at each locus, assuming there is no gametic-phase disequilibrium. We assumed complete additivity ($k = 0$ and no epistasis), that $ _E^2 = 100$, and $n$ identical loci underlying the character. Equation 25.3 yields $$ \\Delta p_{t}=\\frac{a\\bar{\\imath}p_{t}(1-p_{t})}{\\sigma_{z}(t)}=\\frac{a\\bar{\\imath}p_{t}(1-p_{t})}{\\sqrt{\\sigma_{A}^{2}(t)+\\sigma_{E}^{2}}}\\simeq\\frac{a\\bar{\\imath}p_{t}(1-p_{t})}{\\sqrt{2na^{2}p_{t}(1-p_{t})+100}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Strictly speaking, the last expression is an approximation, albeit a close one, as $ 2na^2p_t(1-p_t) $ is the genic variance, $ _a^2(t) $, at generation $ t $, while the additive genetic variance equals the genic variance plus the disequilibrium contribution, $ _A^2(t) = _a^2(t) + d(t) $, as discussed in Chapters 16 and 24. Iteration generates the response curves shown in the figure."
+    },
+    {
+      "type": "derivation",
+      "content": "Recall that the results for the single-locus selection response in Chapter 5 used the fitness parameterization where the genotypes $ bb: Bb: BB $ have fitnesses $ 1:1 + s(1 + h):1 + 2s $. For weak selection (e.g., $ |s|, |sh| 1 $), this model gives the change in the frequency of B as $$ \\Delta p\\simeq s p\\left(1-p\\right)\\left[1+h\\left(1-2p\\right)\\right] $$ which follows from Equation 5.1c upon noting that $ 1/ =1+O(s,sh) $, namely, one plus terms of order s and sh. Upon matching terms with Equation 25.3, we find that a QTL under directional selection has approximate selection parameters of [[SEE_FORMULA:25.4]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, as an initial approximation, the dynamics for a QTL with a small effect on a character under directional selection follow those of a locus under these constant fitnesses. If there is gametic-phase disequilibrium or epistasis, single-locus fitnesses change as the background genotype changes (Example 5.7). However, in the absence of these complications, fitnesses still change as the phenotypic variance, $ _z^2 $, changes. As other loci become fixed due to selection and drift, $ _z^2 $ generally decreases as the genetic variance decreases, which in turn increases $ s $. Unless heritability is large, this effect is usually small. For example, assuming that all of the genetic variance is additive, then if $ h^2 = 0.1 $, the phenotypic standard deviation when all loci are fixed is 95"
+    },
+    {
+      "type": "discussion",
+      "content": "We can use these results to compute the expected time to achieve a fraction of the response contributed by a locus in an infinite population. When selection is weak ($ |s|, |hs| 1 $), Equation 5.3c gives the expected time for a favorable allele, B, to reach a frequency of p, given it starts at a frequency of $ p_0 $, for the general fitness model $ 1:1+s(1+h):1+2s $. Equation 5.3d gives the expected time (in generations) when B is additive ($ h=0 $), Equation 5.3e when B is recessive ($ h=-1 $), and Equation 5.3f when B is dominant ($ h=1 $). These expressions, together with Equations 25.1e and 25.4, allow us to obtain approximate expressions for the expected time until a fraction, $ $, of the total contribution from a single locus occurs (namely, the expected time to reach frequency $ p_ $). Note that the rate of allele-frequency change scales as $ s^ -1 = (a/ _z)^ -1 $, meaning that the smaller is the allelic effect, the slower is the expected response time. Substituting $ p_ 0.5 $ for $ p_ $ gives the expected half-life of response associated with the locus under consideration (Figure 25.4). The half-life for rare recessives can be quite long, while the half-life of response for dominant loci increases with allele frequency when B is common (although in such cases, the additional gain made by fixing B is typically very small; see Figure 25.3)."
+    },
+    {
+      "type": "proposition",
+      "content": "These results ignore the effects of gametic-phase disequilibrium. Negative disequilibrium generated by directional selection reduces the average effect of an allele (plus alleles are associated with an excess of minus alleles at other loci, and vice versa, reducing allelic effects relative to a population in gametic-phase equilibrium). This results in a slower change in allele frequency. Hence, the half-lives plotted in Figure 25.4 are slight underestimates. In addition, for major alleles, our assumption that $ |a|/ _ z $ and $ |a k|/ _ z $ are small no longer holds, and the previous expressions for change in allele frequency and expected time to reach a given frequency can be poor approximations. More accurate versions for cases where major alleles are present were given by Latter (1965a) and Frankham and Nurthen (1981)."
+    },
+    {
+      "type": "discussion",
+      "content": "[h]"
+    },
+    {
+      "type": "discussion",
+      "content": "[h]"
+    }
+  ]
+}
