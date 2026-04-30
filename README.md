@@ -31,8 +31,7 @@ PDF
 - `knowledge_engineering/`：把 `main.tex` 清洗、切分、标注并写入 `data/structured/`，同时包含 GLM OCR 辅助修复入口。
 - `data/背景资料/`：原始教材 PDF 和参考资料，原则上不手工改写。
 - `data/structured/`：最终结构化知识产物，是下游 graph、retrieval、memory、agent 的主要输入。
-- `tmp/`：审计报告、修复补丁、GLMOCR/Paddle 输出、LLM 缓存和其他可复现数据统一放在这里，并随仓库上传给老师查看。
-- `docs/release_audit.md`：上传 GitHub 前的路径、环境变量和体积检查记录。
+- `tmp/`：审计报告、修复补丁、GLMOCR/Paddle 输出、LLM 缓存和其他可复现数据统一放在这里。
 
 ## tmp 边界
 
