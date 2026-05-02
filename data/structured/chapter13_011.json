@@ -2,55 +2,59 @@
   "id": "chapter13_011",
   "metadata": {
     "chapter": "chapter13",
-    "section": "Chapter 13: Reducing Environmental Noise: Stratified Mass Selection",
+    "section": "Chapter 13: EXPANDING THE BASIC BREEDER'S EQUATION",
     "subsections": [
-      "Reducing Environmental Noise: Stratified Mass Selection"
+      "Accuracy"
     ],
     "source_file": "tmp\\paddle_output\\chapter13_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
-    "formula_references": [
-      "13.12a",
-      "13.12b",
-      "13.13",
-      "13.14a",
-      "13.14b",
-      "13.14c",
-      "13.15"
-    ],
+    "formula_references": [],
     "table_references": []
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Accuracy (and hence response) can also be increased by using designs that reduce environmental noise. One approach is Gardner's (1961) method of stratified mass selection: a population is stratified into a number of blocks (potentially representing different microenvironments) and selection occurs within each block. The motivation behind Gardner's method was to improve individual selection for yield in maize. At the time of his paper, selection based solely on the observed yield of individual plants resulted in a very poor response, largely because environmental effects overwhelm genetic differences, resulting in very small $ h^{2} $ values. Simply by selecting for plants within blocks of presumably similar environments, Gardner was able to use mass selection to obtain fairly significant gains (about 4% per year). Stratified mass selection is an important component in Burton's (1974, 1982) method of recurrent restricted phenotypic selection (RRPS) for turf grass breeding."
-    },
-    {
-      "type": "derivation",
-      "content": "To obtain the expected response under stratified mass selection, we need to compute the accuracy, which first requires the covariance between within-block deviations and an individual's breeding value. Suppose $n$ individuals are measured within each block, and selection occurs on the deviation from the block mean, e.g., on $z_ ij - _i$ where $z_ ij $ is the $j$th individual from block $i$ and $ _i$ is the block mean. An individual's phenotypic value can be expressed as its genotypic value, $G_ ij $ (indicating the $j$th individual from block $i$), plus an environmental value consisting of a block effect, $B_i$, and the residual environmental value, $e_ ij $, [[SEE_FORMULA:13.12a]]"
-    },
-    {
-      "type": "derivation",
-      "content": "The total environmental variance equals the variance among blocks, $ _ B ^ 2 $, plus the within-block variance, $ _ e ^ 2 $ (the variance of the residuals $ e_ ij $), resulting in a total variance of [[SEE_FORMULA:13.12b]]"
-    },
-    {
-      "type": "derivation",
-      "content": "For the jth individual in block i, the covariance between individual breeding value and within-block deviation is [[SEE_FORMULA:13.13]] as the assumption is that individuals within blocks are unrelated. The variance of deviations within a block is $ _G^2 + _e^2 $, making the accuracy [[SEE_FORMULA:13.14a]]"
-    },
-    {
-      "type": "derivation",
-      "content": "Applying Equation 13.11c yields a the resulting response of [[SEE_FORMULA:13.14b]] where $ $ is the selection intensity within blocks, and the final approximation assumes a large n."
-    },
-    {
-      "type": "derivation",
-      "content": "In contrast, if the effects of blocks are ignored and individuals are simply selected from the entire population, the between-block variance is incorporated into the variance of z, and from Equation 13.6b the response becomes [[SEE_FORMULA:13.14c]]"
-    },
-    {
-      "type": "derivation",
-      "content": "The relative advantage of stratification (assuming the block size is modest to large, so that $ 1 - 1/n 1 $) is [[SEE_FORMULA:13.15]]"
+      "content": "To obtain this, first note that the covariance between the parent and its offspring is $ \\sigma_{A}^{2}/2 $ $$ \\sigma(\\overline{z}_{o},A)=\\frac{1}{n}\\sum_{i=1}^{n}\\sigma\\left(z_{i},A\\right)=\\frac{1}{n}n\\sigma(z_{i},A)=\\sigma_{A}^{2}/2 $$"
     },
     {
       "type": "discussion",
-      "content": "Thus, within-block selection can significantly improve the selection response when the among-block variance accounts for a significant fraction of the total variation. Schutz and Cockerham (1966) extend this idea of selecting within blocks to a number of other designs."
+      "content": "The expression for $ \\sigma^2(\\overline{z}_o) $ requires a bit more bookkeeping, as sips are correlated. Assuming half-sibs and that there are no shared environmental effects, $ \\sigma(z_i, z_j) = \\sigma_A^2/4 $ (for $ i \\neq j $), yielding $$ \\begin{align*}\\sigma^{2}(\\overline{z}_{o})&=\\sigma\\left(\\frac{1}{n}\\sum_{i=1}^{n}z_{i},\\frac{1}{n}\\sum_{j=1}^{n}z_{j}\\right)=\\frac{1}{n^{2}}n\\sigma(z_{i},z_{i})+\\frac{n(n-1)}{n^{2}}\\sigma(z_{i},z_{j})\\\\&=\\frac{\\sigma_{z}^{2}}{n}+\\left(1-\\frac{1}{n}\\right)\\frac{\\sigma_{A}^{2}}{4}=\\frac{\\sigma_{z}^{2}}{4n}\\left[4+(n-1)h^{2}\\right]\\end{align*} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Combining these results yields $$ \\rho(\\overline{z}_{o},A)=\\frac{\\sigma_{A}^{2}/2}{\\sigma_{A}\\sigma_{z}\\sqrt{\\frac{4+(n-1)h^{2}}{4n}}}=\\frac{\\sigma_{A}}{\\sigma_{z}}\\sqrt{\\frac{4n/4}{4+(n-1)h^{2}}}=\\sqrt{\\frac{h^{2}n}{4+(n-1)h^{2}}}=\\sqrt{\\frac{n}{n+\\gamma}} $$ where $ \\gamma = (4 - h^2)/h^2 $. For large $ n $, note that the accuracy approaches one. Substituting this result into Equation 13.11c, the response to selection becomes $$ R=\\bar{\\imath}\\rho(\\overline{z}_{o},A)\\sigma_{A}=\\bar{\\imath}\\sigma_{A}\\sqrt{\\frac{n}{n+\\gamma}}=\\bar{\\imath}\\sigma_{A}\\sqrt{\\frac{h^{2}n}{4+h^{2}(n-1)}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Recalling Equation 13.6b, the ratio of response for progeny testing $ (R_{pt}) $ to mass selection $ (R_{ms}) $ becomes $$ \\begin{aligned}\\frac{R_{pt}}{R_{ms}}&=\\frac{\\bar{i}_{pt}\\rho(\\overline{z}_{o},A)\\sigma_{A}}{\\bar{i}_{ms}\\rho(z,A)\\sigma_{A}}=\\left(\\frac{\\bar{i}_{pt}}{\\bar{i}_{ms}}\\right)\\frac{1}{h}\\sqrt{\\frac{h^{2}n}{4+h^{2}(n-1)}}\\\\&=\\left(\\frac{\\bar{i}_{pt}}{\\bar{i}_{ms}}\\right)\\sqrt{\\frac{n}{4+h^{2}(n-1)}}\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The selection intensity under progeny testing is likely to be lower, as it is easier (and cheaper) to score a phenotype than to progeny test. When the intensities are equal, the ratio of responses approaches 1/h for large n. Assuming $ \\bar{\\tau}_{pt} = \\bar{\\tau}_{ms} $, progeny testing gives a larger response when $ \\rho(\\overline{z}_{o}, A) > \\rho(z, A) $, or when $$ \\sqrt{\\frac{n}{4+h^{2}(n-1)}}>1\\quad or\\quad n>\\frac{4-h^{2}}{1-h^{2}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "In particular, n > 4, 5, and 7 is required for $ h^2 = 0.1 $, 0.25, and 0.5, respectively, for progeny testing to give a larger response. Hence, when the heritability of a trait is high, more offspring must be scored for the accuracy of progeny selection to exceed that of mass selection. A high heritability implies that an individual's phenotype is a good predictor of its breeding value, which requires increasingly more observations of an indirect measure (offspring values) to obtain higher accuracy than the simple direct measure of the individual phenotype."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 13.5. Suppose a character of interest is extremely hard to measure in live individuals. For example, one cannot directly select on individuals that have to be killed to measure a trait such as meat quality. Similarly, consider traits expressed in only one sex, such as milk production. How can we select on males if they do not express the trait themselves? One solution to both of these problems is sib selection (Chapter 21), or using sibs of exceptional individuals as the parents for the next generation (e.g., choosing males based on the milk production of their sisters)."
+    },
+    {
+      "type": "discussion",
+      "content": "Under sib selection, the selection unit $ (x) $ is the trait value in sib $ s_1 $, with the correlation between its phenotypic value $ (z_{s_1}) $ and the breeding value $ (A_{s_2}) $ of sib $ s_2 $ being (LW [[SEE_TABLE:7.3]]) $$ \\sigma(z_{s_{1}},A_{s_{2}})=\\left\\{\\begin{array}{ll}\\sigma_{A}^{2}/2&for full sibs\\\\\\sigma_{A}^{2}/4&for half-sibs\\end{array}\\quad yielding\\quad\\rho(z_{s_{1}},A_{s_{2}})=\\left\\{\\begin{array}{ll}h/2&for full sibs\\\\h/4&for half-sibs\\end{array}\\right.\\right. $$"
+    },
+    {
+      "type": "discussion",
+      "content": "For example, when $ s_{1} $ and $ s_{2} $ denote full sibs $$ \\rho(z_{s_{1}},A_{s_{2}})=\\frac{\\sigma(z_{s_{1}},A_{s_{2}})}{\\sigma(z_{s_{1}})\\cdot\\sigma(A_{s_{2}})}=\\frac{\\sigma_{A}^{2}/2}{\\sigma_{z}\\sigma_{A}}=\\frac{\\sigma_{A}}{2\\sigma_{z}}=\\frac{h}{2} $$ with the correlation between half-sibs obtained similarly. Applying Equation 13.11c, the resulting response to selection (assuming equal selection intensity on both sexes) based on the performance of a sib is $$ R=\\left\\{\\begin{aligned}&\\bar{\\imath}\\left(h/2\\right)\\sigma_{A}\\quad for full sibs\\\\&\\bar{\\imath}\\left(h/4\\right)\\sigma_{A}\\quad for half-sibs\\end{aligned}\\right. $$ where the selection intensity, $ \\bar{\\imath} $, is a function of the fraction of measured sibs chosen in order to have a relative as a parent of the next generation. For example, if only 5% of the measured sibs are chosen to have a sib as a parent in the next generation, then $ \\bar{\\imath} \\simeq 2.06 $ (Example 14.1). Comparison with Equation 13.6b shows that using a single full sib (in place of the measured individual) gives a response that is half that of mass selection, while using a single half-sib gives only a quarter of the response."
+    },
+    {
+      "type": "discussion",
+      "content": "One can also have a mixture of direct and sib selection, as can occur when selection is based on milk production. Here, there is direct selection on females (based on their trait value) and sib selection on males (based on the trait value of a sister). Summing the separate responses from selection on females and males, the expected response becomes $$ R=\\left(1/2\\right)\\bar{\\imath}h\\sigma_{A}+\\left(1/2\\right)\\bar{\\imath}\\left(h/2\\right)\\sigma_{A}=\\left(3/4\\right)\\bar{\\imath}h\\sigma_{A} $$ where the first term is the response from using superior females (Equation 13.11a with selection on only one sex, giving $ \\bar{\\imath}/2 $), and the second term is the response using a brother of a superior sister (full sib selection, or this term divided by two for half-sib selection). Here, we have assumed the same intensity, $ \\bar{\\imath} $, in both sexes, while with different amounts of selection $$ R=\\left(1/2\\right)\\bar{\\imath}_{d}h\\sigma_{A}+\\left(1/2\\right)\\bar{\\imath}_{s}\\left(h/2\\right)\\sigma_{A}=\\left[\\left(2\\bar{\\imath}_{d}+\\bar{\\imath}_{s}\\right)/4\\right]h\\sigma_{A} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "While one could develop additional extensions (for example, by using progeny testing for males), in practice, information from all relatives is handled using BLUP selection, a robust and general approach for predicting response under very diverse schemes of selection that will be introduced shortly."
     }
   ]
 }

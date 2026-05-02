@@ -37,23 +37,23 @@
     },
     {
       "type": "derivation",
-      "content": "The partial regression coefficients ($ $) represent the expected change in fitness when holding the other variables constant (LW Chapter 8). For example, $ \\beta_z $ is the expected change in fitness from a unit change in the phenotype, z, holding the other variables (A and E) constant. In particular, if selection is entirely based on phenotypic value, then $ \\beta_A = \\beta_E = 0 $, because once we have controlled for z, A and E will have no effect on fitness. As shown by Queller (1992a), the condition for this to occur is that the partial covariances (given z) of breeding value and fitness, and of environmental value and fitness, are both zero, [[SEE_FORMULA:20.7b]]"
+      "content": "The partial regression coefficients ($ \\beta $) represent the expected change in fitness when holding the other variables constant (LW Chapter 8). For example, $ \\beta_z $ is the expected change in fitness from a unit change in the phenotype, z, holding the other variables (A and E) constant. In particular, if selection is entirely based on phenotypic value, then $ \\beta_A = \\beta_E = 0 $, because once we have controlled for z, A and E will have no effect on fitness. As shown by Queller (1992a), the condition for this to occur is that the partial covariances (given z) of breeding value and fitness, and of environmental value and fitness, are both zero, [[SEE_FORMULA:20.7b]]"
     },
     {
       "type": "discussion",
-      "content": "We return to this observation in the next section. The notation $ \\sigma ( x,y\\parallel z) $ is used to remind the reader that the partial covariance of x and y (given z) can be different from $ \\sigma ( x,y\\mid z) $ which is the covariance of x and y conditional on z (see Example 6.8)."
+      "content": "We return to this observation in the next section. The notation $ \\sigma(x, y \\mid \\mid z) $ is used to remind the reader that the partial covariance of $ x $ and $ y $ (given $ z $) can be different from $ \\sigma(x, y \\mid z) $, which is the covariance of $ x $ and $ y $ conditional on $ z $ (see Example 6.8)."
     },
     {
       "type": "derivation",
-      "content": "A notational aside is that we use $ $ for the partial regression coefficients with respect to fitness (a special case of which is $ \\beta_i $, the selection gradient on trait $ i $ in the multivariate breeder's equation, e.g., Equation 20.1a), and we use $ b $ in the next section for the slopes of the univariate fitness regressions based on either $ A $, $ E $, or $ z $ separately. For example, for the univariate regression $ w = 1 + b_z z + $, the regression slope is $ b_z = \\sigma(z, w)/\\sigma_z^2 $, while $ \\beta_z $ denotes the partial regression slope on fitness when $ A $ and $ E $ are also included (Equation 20.7a). As developed in the next section, comparing the appropriate univariate ($ b $) and partial ($ $) regression slopes provides information on whether unmeasured variables are potentially influencing response. From multiple regression theory (LW Chapter 8), the partial regression coefficients in Equation 20.7a satisfy the matrix equation [[SEE_FORMULA:20.8a]]"
+      "content": "A notational aside is that we use $ \\beta $ for the partial regression coefficients with respect to fitness (a special case of which is $ \\beta_i $, the selection gradient on trait $ i $ in the multivariate breeder's equation, e.g., Equation 20.1a), and we use $ b $ in the next section for the slopes of the univariate fitness regressions based on either $ A $, $ E $, or $ z $ separately. For example, for the univariate regression $ w = 1 + b_z z + \\epsilon $, the regression slope is $ b_z = \\sigma(z, w)/\\sigma_z^2 $, while $ \\beta_z $ denotes the partial regression slope on fitness when $ A $ and $ E $ are also included (Equation 20.7a). As developed in the next section, comparing the appropriate univariate ($ b $) and partial ($ \\beta $) regression slopes provides information on whether unmeasured variables are potentially influencing response. From multiple regression theory (LW Chapter 8), the partial regression coefficients in Equation 20.7a satisfy the matrix equation [[SEE_FORMULA:20.8a]]"
     },
     {
       "type": "discussion",
-      "content": "The left-most vector contains the covariances between relative fitness, w, and the predictor variables (z, A, and E), with $ S = (w, z) $ following from the Robertson-Price identity"
+      "content": "The left-most vector contains the covariances between relative fitness, w, and the predictor variables (z, A, and E), with $ S = \\sigma(w, z) $ following from the Robertson-Price identity"
     },
     {
       "type": "derivation",
-      "content": "(Equation 6.10) and $ R = (w, A) $ from Robertson’s secondary theorem (his 1966 version; Equation 6.25a). The $ 3 3 $ matrix on the right-hand side of Equation 20.8a is the variance-covariance matrix for the three predictor variables, where the covariance [[SEE_FORMULA:20.8b]]"
+      "content": "(Equation 6.10) and $ R = \\sigma(w, A) $ from Robertson’s secondary theorem (his 1966 version; Equation 6.25a). The $ 3 \\times 3 $ matrix on the right-hand side of Equation 20.8a is the variance-covariance matrix for the three predictor variables, where the covariance [[SEE_FORMULA:20.8b]]"
     },
     {
       "type": "derivation",

@@ -30,7 +30,7 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "Thus, if many alleles are segregating, the differences between the frequencies of adjacent allele are small, we can approximate the rightmost term in Equation 28.24c by the second derivation of $ p_{j} $ with respect to t, and Equation 28.24c becomes Kimura's Gaussian approximation (28.22c). Conversely, if selection is strong relative to mutation, there are typically only three alleles (one that is favored and the two single-step mutations), where $ p_{0} $ is large and $ p_{-1}=p_{1} $ are small. This is Turelli's triallelic model (Equation 28.13a), yielding $ p_{-1}=p_{1}=V_{s}\\mu /a^{2} $ (Equation 28.13b), for a variance of $ \\sigma^{2}(x)=2V_{s}\\mu $ , thus recovering the HCA results."
+      "content": "Thus, if many alleles are segregating, the differences between the frequencies of adjacent allele are small, we can approximate the rightmost term in Equation 28.24c by the second derivation of $p_j$ with respect to $t$, and Equation 28.24c becomes Kimura's Gaussian approximation (28.22c). Conversely, if selection is strong relative to mutation, there are typically only three alleles (one that is favored and the two single-step mutations), where $p_0$ is large and $p_{-1} = p_1$ are small. This is Turelli's triallelic model (Equation 28.13a), yielding $p_{-1} = p_1 = V_s\\mu/a^2$ (Equation 28.13b), for a variance of $\\sigma^2(x) = 2V_s\\mu$, thus recovering the HCA results."
     },
     {
       "type": "derivation",
@@ -42,7 +42,7 @@
     },
     {
       "type": "proposition",
-      "content": "In order to proceed, we need to compute the covariance, $ C_{s} $ , among alleles on the same gamete, and the covariance, B, among alleles on different gametes, after selection. Following Lande, we do so by considering the $ n\\times n $ matrices $ \\mathbf{C}_{s}(t),\\mathbf{B}(t) $ , and $ \\mathbf{C}(t) $ for the $ C_{ij}(t)_{s},B_{ij}(t) $ and $ C_{ij}(t) $ elements. Lande's key assumption is that the joint distribution of allelic affects for the n loci in a gamete is multivariate normal (MVN) before selection. Under Gaussian stabilizing selection, it remains normal after selection. However, Equation 28.25c shows that the distribution of allelic effects following recombination is the weighted sum of two normals (with differing variances), which is not normal (Felsenstein 1977; Fleming 1979; Nagylaki 1984; Turelli 1984; Bürger 1986). Hence, the assumption of multivariate normality is an approximation, a point that Lande himself stressed. The same issue holds with mutation, where even if the mutational increments are Gaussian, Equation 28.25c again becomes a weighted sum of Gaussians, and hence is not strictly normal."
+      "content": "In order to proceed, we need to compute the covariance, $ C_s $, among alleles on the same gamete, and the covariance, $ B $, among alleles on different gametes, after selection. Following Lande, we do so by considering the $ n \\times n $ matrices $ \\mathbf{C}_s(t) $, $ \\mathbf{B}(t) $, and $ \\mathbf{C}(t) $ for the $ C_{ij}(t)_s $, $ B_{ij}(t) $ and $ C_{ij}(t) $ elements. Lande's key assumption is that the joint distribution of allelic affects for the $ n $ loci in a gamete is multivariate normal (MVN) before selection. Under Gaussian stabilizing selection, it remains normal after selection. However, Equation 28.25c shows that the distribution of allelic effects following recombination is the weighted sum of two normals (with differing variances), which is not normal (Felsenstein 1977; Fleming 1979; Nagylaki 1984; Turelli 1984; Bürger 1986). Hence, the assumption of multivariate normality is an approximation, a point that Lande himself stressed. The same issue holds with mutation, where even if the mutational increments are Gaussian, Equation 28.25c again becomes a weighted sum of Gaussians, and hence is not strictly normal."
     },
     {
       "type": "derivation",
@@ -50,11 +50,11 @@
     },
     {
       "type": "derivation",
-      "content": "The matrix 0 of zeros on the off-diagonals corresponds to independent union of gametes (random mating), with the nonzero diagonal matrices, $ (t) $, corresponding to the variances and LD structure (covariances) within each gamete. After Gaussian stabilizing selection, this covariance matrix becomes [[SEE_FORMULA:28.26b]] and the task is to compute the elements of $ (t) $. Under Gaussian stabilizing selection (with an optimal value of zero), the fitness of individuals with genotypic value $ g = (x_i + x_i') $ is [[SEE_FORMULA:28.26c]] where 1 is an $ n n $ matrix of ones (i.e., $ 1_{ij} = 1 $)."
+      "content": "The matrix 0 of zeros on the off-diagonals corresponds to independent union of gametes (random mating), with the nonzero diagonal matrices, $ \\mathbf{C}(t) $, corresponding to the variances and LD structure (covariances) within each gamete. After Gaussian stabilizing selection, this covariance matrix becomes [[SEE_FORMULA:28.26b]] and the task is to compute the elements of $ \\mathbf{K}(t) $. Under Gaussian stabilizing selection (with an optimal value of zero), the fitness of individuals with genotypic value $ g = \\sum(x_i + x_i') $ is [[SEE_FORMULA:28.26c]] where 1 is an $ n \\times n $ matrix of ones (i.e., $ 1_{ij} = 1 $)."
     },
     {
       "type": "derivation",
-      "content": "The distribution of allelic effects after selection is proportional to the product of the maternal and paternal allelic-effect density functions (the independence of these follows because we assumed random mating) times their resulting fitness, yielding [[SEE_FORMULA:28.26d]] Because all three terms contain exponentials of quadratic products, the resulting exponential term is the sum of the quadratic products. The quadratic product in W is given by Equation 28.26c, while the two quadratic products associated with the MVN density functions are of the form $ [-] ^ -1 [-]^T $ (LW Equation 8.24). Because the remaining terms are constants with respect to $ $ and $ ' $, the product given by Equation 28.26d is proportional to $ (-F/2) $, where $ F $ equals the sum of the quadratic products [[SEE_FORMULA:28.26e]] Because the resulting distribution of allelic effects after selection is also MVN with co-variance matrix K, it has an associated quadratic product of [[SEE_FORMULA:28.26f]]"
+      "content": "The distribution of allelic effects after selection is proportional to the product of the maternal and paternal allelic-effect density functions (the independence of these follows because we assumed random mating) times their resulting fitness, yielding [[SEE_FORMULA:28.26d]] Because all three terms contain exponentials of quadratic products, the resulting exponential term is the sum of the quadratic products. The quadratic product in W is given by Equation 28.26c, while the two quadratic products associated with the MVN density functions are of the form $ [\\mathbf{x} - \\boldsymbol{\\mu}] \\mathbf{C}^{-1} [\\mathbf{x} - \\boldsymbol{\\mu}]^T $ (LW Equation 8.24). Because the remaining terms are constants with respect to $ \\mathbf{x} $ and $ \\mathbf{x}' $, the product given by Equation 28.26d is proportional to $ \\exp(-F/2) $, where $ F $ equals the sum of the quadratic products [[SEE_FORMULA:28.26e]] Because the resulting distribution of allelic effects after selection is also MVN with co-variance matrix K, it has an associated quadratic product of [[SEE_FORMULA:28.26f]]"
     },
     {
       "type": "derivation",
@@ -62,7 +62,7 @@
     },
     {
       "type": "derivation",
-      "content": "Lande noted that because $ KK^ -1 = I $, Equations 28.26b and 28.26e imply [[SEE_FORMULA:28.26h]]"
+      "content": "Lande noted that because $ KK^{-1} = I $, Equations 28.26b and 28.26e imply [[SEE_FORMULA:28.26h]]"
     },
     {
       "type": "derivation",

@@ -1351,27 +1351,233 @@ def _merge_table_entries_by_quality(entries: Iterable[TableEntry]) -> list[Table
     return sorted(merged.values(), key=_table_entry_sort_key)
 
 
+PADDLE_RAW_FILE_NAMES = (
+    "paddle_raw_api_response.json",
+    "paddle_raw_response.json",
+)
+PADDLE_BODY_ANCHOR_LABELS = {
+    "text",
+    "paragraph_title",
+    "display_formula",
+    "formula_number",
+    "figure_title",
+}
+PADDLE_RECOVERABLE_FOOTER_LABELS = {"footer"}
+PADDLE_PUBLICATION_FOOTER_PATTERN = re.compile(
+    r"(?:Evolution and Selection of Quantitative Traits|Oxford University Press|Published 20\d{2}|"
+    r"Bruce Walsh|Michael Lynch|DOI\s+10\.)",
+    re.IGNORECASE,
+)
+
+
+def _load_paddle_raw_pages(tex_path: str) -> list[dict[str, Any]]:
+    intermediate_dir = Path(tex_path).resolve().parent / "intermediate"
+    for file_name in PADDLE_RAW_FILE_NAMES:
+        raw_path = intermediate_dir / file_name
+        if not raw_path.exists():
+            continue
+        try:
+            payload = json.loads(raw_path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+
+        if isinstance(payload, list):
+            return [page for page in payload if isinstance(page, dict)]
+
+        result = payload.get("result", {}) if isinstance(payload, dict) else {}
+        pages = result.get("layoutParsingResults", []) if isinstance(result, dict) else []
+        if isinstance(pages, list) and pages:
+            return [page for page in pages if isinstance(page, dict)]
+
+    return []
+
+
+def _paddle_page_rows(page_payload: dict[str, Any]) -> list[dict[str, Any]]:
+    pruned = page_payload.get("prunedResult", {}) if isinstance(page_payload.get("prunedResult"), dict) else page_payload
+    rows = pruned.get("parsing_res_list", [])
+    return rows if isinstance(rows, list) else []
+
+
+def _collapse_ws(text: str) -> str:
+    return re.sub(r"\s+", " ", str(text or "")).strip()
+
+
+def _block_top(row: dict[str, Any]) -> float:
+    bbox = row.get("block_bbox")
+    if isinstance(bbox, list) and len(bbox) >= 2:
+        try:
+            return float(bbox[1])
+        except (TypeError, ValueError):
+            return 999999.0
+    return 999999.0
+
+
+def _is_recoverable_footer_text(content: str) -> bool:
+    text = _collapse_ws(content)
+    if len(text) < 24:
+        return False
+    if is_noise_line(text):
+        return False
+    if PADDLE_PUBLICATION_FOOTER_PATTERN.search(text):
+        return False
+    if CHAPTER_HEADER_PATTERN.fullmatch(text) or PAGE_CHAPTER_HEADER_PATTERN.fullmatch(text):
+        return False
+    if PAGE_TITLE_PATTERN.fullmatch(text):
+        return False
+
+    alpha_count = sum(char.isalpha() for char in text)
+    if alpha_count < 12:
+        return False
+
+    has_sentence_shape = bool(re.search(r"[.!?;,)]", text)) or text[:1].islower()
+    has_math = "$" in text or "\\" in text or any(symbol in text for symbol in ("σ", "μ", "δ", "="))
+    title_words = re.findall(r"\b[A-Z][A-Za-z'’-]*\b", text)
+    all_words = re.findall(r"\b[A-Za-z][A-Za-z'’-]*\b", text)
+    title_like = 2 <= len(all_words) <= 14 and len(title_words) / max(1, len(all_words)) >= 0.45
+    return has_sentence_shape or has_math or title_like
+
+
+def _looks_like_recovered_heading(content: str) -> bool:
+    text = _collapse_ws(content)
+    if not text or text.endswith((".", "?", "!", ";", ",")):
+        return False
+    if text.lower().startswith(("when ", "where ", "which ", "that ", "and ", "or ", "but ", "because ")):
+        return False
+    words = re.findall(r"\b[A-Za-z][A-Za-z'’-]*\b", text)
+    if not 2 <= len(words) <= 14:
+        return False
+    title_words = [word for word in words if word[:1].isupper()]
+    return len(title_words) / max(1, len(words)) >= 0.45
+
+
+def _format_recovered_footer_text(content: str) -> str:
+    text = _collapse_ws(content)
+    if _looks_like_recovered_heading(text):
+        return f"## {text}"
+    return text
+
+
+def _ends_with_hyphenated_fragment(content: str) -> bool:
+    return _collapse_ws(content).rstrip().endswith(("-", "‐", "‑", "‒", "–"))
+
+
+def _anchor_starts_with_lowercase_word(anchor: str) -> bool:
+    match = re.search(r"[A-Za-z]+", _collapse_ws(anchor))
+    return bool(match and match.group(0)[:1].islower())
+
+
+def _body_anchor_from_rows(rows: list[dict[str, Any]], reverse: bool = False) -> str:
+    ordered = sorted(
+        (row for row in rows if isinstance(row, dict)),
+        key=lambda row: (
+            row.get("block_order") is None,
+            row.get("block_order") if row.get("block_order") is not None else 999999,
+            _block_top(row),
+        ),
+        reverse=reverse,
+    )
+    for row in ordered:
+        label = str(row.get("block_label") or "").strip().lower()
+        content = _collapse_ws(str(row.get("block_content") or ""))
+        if label not in PADDLE_BODY_ANCHOR_LABELS or not content:
+            continue
+        if is_noise_line(content) or PADDLE_PUBLICATION_FOOTER_PATTERN.search(content):
+            continue
+        if label == "figure_title" and _classify_figure_table_line(content) == "caption":
+            continue
+        return content
+    return ""
+
+
+def _find_anchor_span(text: str, anchor: str, reverse: bool = False) -> tuple[int, int] | None:
+    anchor_text = _collapse_ws(anchor)
+    tokens = anchor_text.split()
+    if len(tokens) < 4:
+        return None
+    for token_count in (18, 14, 10, 7, 5):
+        if len(tokens) < token_count:
+            continue
+        pattern = r"\s+".join(re.escape(token) for token in tokens[:token_count])
+        matches = list(re.finditer(pattern, text))
+        if matches:
+            match = matches[-1] if reverse else matches[0]
+            return match.start(), match.end()
+    return None
+
+
+def recover_paddle_footer_body_text(plain_text: str, tex_path: str) -> str:
+    pages = _load_paddle_raw_pages(tex_path)
+    if not pages:
+        return plain_text
+
+    updated_text = plain_text
+    normalized_seen = _collapse_ws(updated_text)
+    recovered_count = 0
+
+    for page_index, page_payload in enumerate(pages):
+        rows = _paddle_page_rows(page_payload)
+        next_anchor = ""
+        if page_index + 1 < len(pages):
+            next_anchor = _body_anchor_from_rows(_paddle_page_rows(pages[page_index + 1]))
+        candidates = [
+            row
+            for row in rows
+            if isinstance(row, dict)
+            and str(row.get("block_label") or "").strip().lower() in PADDLE_RECOVERABLE_FOOTER_LABELS
+            and _is_recoverable_footer_text(str(row.get("block_content") or ""))
+        ]
+        if not candidates:
+            continue
+
+        recovered_parts: list[str] = []
+        for row in sorted(candidates, key=_block_top):
+            content = _collapse_ws(str(row.get("block_content") or ""))
+            if _collapse_ws(content) in normalized_seen:
+                continue
+            if _ends_with_hyphenated_fragment(content) and not _anchor_starts_with_lowercase_word(next_anchor):
+                continue
+            recovered_parts.append(_format_recovered_footer_text(content))
+
+        if not recovered_parts:
+            continue
+
+        insertion = "\n\n".join(recovered_parts).strip()
+        inserted = False
+
+        if page_index + 1 < len(pages):
+            span = _find_anchor_span(updated_text, next_anchor) if next_anchor else None
+            if span:
+                start, _ = span
+                updated_text = f"{updated_text[:start].rstrip()}\n\n{insertion}\n\n{updated_text[start:].lstrip()}"
+                inserted = True
+
+        if not inserted:
+            previous_anchor = _body_anchor_from_rows(rows, reverse=True)
+            span = _find_anchor_span(updated_text, previous_anchor, reverse=True) if previous_anchor else None
+            if span:
+                _, end = span
+                updated_text = f"{updated_text[:end].rstrip()}\n\n{insertion}\n\n{updated_text[end:].lstrip()}"
+                inserted = True
+
+        if inserted:
+            recovered_count += len(recovered_parts)
+            normalized_seen = _collapse_ws(updated_text)
+
+    if recovered_count:
+        print(f"  Paddle footer recovery: restored {recovered_count} body-like footer blocks")
+    return updated_text
+
+
 def _extract_tables_from_paddle_raw(tex_path: str, chapter_name: str) -> list[TableEntry]:
-    raw_path = Path(tex_path).resolve().parent / "intermediate" / "paddle_raw_api_response.json"
-    if not raw_path.exists():
-        return []
-
-    try:
-        payload = json.loads(raw_path.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError):
-        return []
-
-    result = payload.get("result", {}) if isinstance(payload, dict) else {}
-    pages = result.get("layoutParsingResults", []) if isinstance(result, dict) else []
-    if not isinstance(pages, list) or not pages:
+    pages = _load_paddle_raw_pages(tex_path)
+    if not pages:
         return []
 
     entries: list[TableEntry] = []
     inline_index = 0
 
     for page_index, page_payload in enumerate(pages, start=1):
-        pruned = page_payload.get("prunedResult", {}) if isinstance(page_payload, dict) else {}
-        rows = pruned.get("parsing_res_list", []) if isinstance(pruned.get("parsing_res_list"), list) else []
+        rows = _paddle_page_rows(page_payload)
         if not rows:
             continue
 
@@ -3028,6 +3234,7 @@ def process_tex_chapter(
     paddle_table_entries = _extract_tables_from_paddle_raw(tex_path, chapter_name)
     initial_table_entries = _merge_table_entries_by_quality([*latex_table_entries, *paddle_table_entries])
     plain_text = strip_latex_markup(tex_with_table_placeholders)
+    plain_text = recover_paddle_footer_body_text(plain_text, tex_path)
     return process_text_chapter(
         raw_text=plain_text,
         output_dir=output_dir,

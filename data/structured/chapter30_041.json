@@ -2,23 +2,59 @@
   "id": "chapter30_041",
   "metadata": {
     "chapter": "chapter30",
-    "section": "Selection Can Be Antagonistic Across Levels",
+    "section": "Chapter 30: Contextual Analysis",
     "subsections": [
-      "Selection Can Be Antagonistic Across Levels"
+      "Contextual Analysis"
     ],
     "source_file": "tmp\\paddle_output\\chapter30_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
-    "formula_references": [],
-    "table_references": []
+    "formula_references": [
+      "30.35a",
+      "30.35b"
+    ],
+    "table_references": [
+      "inline_3"
+    ],
+    "table_reference_keys": [
+      "chapter30:inline_3"
+    ]
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "When selection is operating at both the individual and group levels, there is no a priori reason why its direction should be the same at the two levels. When the direction is the same and group-level effects are ignored, the effects of individual selection are overestimated. The more interesting case is that in which individual and group-level selection are antagonistic, working in opposite directions. Example 30.12 illustrates both cases: for height, selection at both levels was in the same direction, while for stem number, selection was in opposite directions at the individual and group levels. Antagonistic selection is commonly seen in the limited number of studies that have estimated multilevel selection components, although this might, in part, be due to a bias in initially choosing traits that are expected to be under differential individual, versus group, selection pressure."
+      "content": "Heisler and Damuth (1987) proposed that any effects of selection acting at some level above that of the individual can be estimated with the method of contextual analysis, which is widely used in the social sciences (e.g., Boyd and Iversen 1979). This regression-based approach amounts to simply adding group-level traits to a Lande-Arnold regression. Traits scored at the level of groups can be aggregate characters (simple functions of the individual phenotypes within a group, such as the group mean), or they can be global or emergent characters that can only be defined at the group level (such as number of group members or group density). As the following example illustrates, incorporating group-level traits into the Lande-Arnold fitness regression is straightforward."
     },
     {
       "type": "discussion",
-      "content": "One of the first applications of contextual analysis to levels-of-selection was by Stevens et al. (1995), using jewelweed (Impatiens capensis). They found that an overall measure of size was selected to decrease at the group level but to increase at the individual level. This pattern was observed when fitness was taken as either survival rate to two years or as seed production in open-pollinated cleistogamous flowers. The individual and group partial regression slopes (variance-standardized over trait values) for survival rate on overall size were $ \\beta_{I}=1.74 $ and $ \\beta_{group}=-3.03 $ . Hence, group selection was stronger (and of opposite sign) than individual selection. The partial regression slopes for cleistogamus seed production on size were $ \\beta_{I}=0.51 $ and $ \\beta_{group}=-0.52 $ . Similar observations were made by Weinig et al. (2007), who used a set of recombination inbred lines (RILs) in Arabidopsis thaliana, and found that two composite traits (size and elongation) were favored to increase under individual selection but to decrease under group selection. For both traits, individual selection was stronger than group selection (the variance-standardized $ \\beta $ values were roughly twice as large). A final example is a study by Tsuji (1995), who worked with the Japanese queenless ant (Pristomyrmex pungens), an unusual species with no queens, whose workers are able to reproduce parthenogenetically. Larger size was favored at the individual level $ (\\beta_{I}=0.07) $ , but selected against at the colony level $ (\\beta_{group}=-0.11) $ ."
+      "content": "Example 30.12. Aspi et al. (2003) examined the effects of selection on the riparian plant Silene tatarica, a threatened species from Finland in the family Caryophilleaceae. Plants tend to grow in patches and the authors envisioned that plant density within a patch might influence both pollinator visits and herbivory. The individual traits measured were plant height ($ z_{1} $) and number of stems ($ z_{2} $), while two aggregate traits were measured (the means $ \\overline{z}_{1} $ and $ \\overline{z}_{2} $ of each trait for the patch) along with the group-level trait of plant density, d. The resulting regression model for predicting the relative fitness of individual j in patch i becomes $$ w_{ij}=1+\\beta_{1}z_{1,ij}+\\beta_{2}z_{2,ij}+\\beta_{3}\\overline{z}_{1,i}+\\beta_{4}\\overline{z}_{2,i}+\\beta_{5}d_{i}+e_{ij} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The regression coefficients $ \\beta_1 $ and $ \\beta_2 $ correspond to direct selection on individual trait values, while $ \\beta_3 $ and $ \\beta_4 $ correspond to direct selection on the patch mean of each trait, and $ \\beta_5 $ to direct selection on the density within a patch. Aspi et al. variance-standardized all variables, so a one standard deviation change in the variable of interest results in an expected change of $ \\beta $ in fitness. For data collected in 1999, the estimated regression coefficients for a sample of 922 individuals were $$ \\begin{array}{l}\\underline{\\text{Height}}\\quad Mean height\\quad Stem No.\\quad Mean stem No.\\quad Density\\\\\\beta\\quad0.589^{***}\\quad0.653^{***}\\quad0.187^{**}\\quad-0.209^{***}\\quad0.631^{***}\\end{array} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "All of the $ \\beta $ were significant, with $ * $* denoting p < 0.01 and $ * $* $ * $* denoting p < 0.001. Note that (on a standardized scale) selection on group density is as strong as individual selection. Selection on height at the individual and group levels was in the same direction, which the authors suggested was due to pollinator attraction. However, selection on stems was in opposite directions, with individual selection increasing the number of stems, but patch-level selection decreasing them. The authors suggested that patch-level selection may be due to herbivory by reindeer."
+    },
+    {
+      "type": "discussion",
+      "content": "A contextual analysis need not stop at two levels, as this approach easily extends to additional hierarchical levels of population organization, and hence allows for the potential for selection at these higher levels as well. Indeed, in some settings the individual level is ignored, and only higher levels of organization are contrasted. One example of this involves the work of Banschbach and Herbers (1996), who compared selection on nest- versus colony-level traits in a forest ant (Myrmica punctiventris), and found that fertility selection largely operates at the level of the nest, as opposed to the level of multiple-nest colonies."
+    },
+    {
+      "type": "definition",
+      "content": "In many settings, group composition is fairly obvious, due to a patchy distribution of individuals in space. However, in some situations, the appropriate set of individuals to include in a group is unclear. Indeed, for populations where individuals appear to be continuously distributed in space with few obvious breaks, group-level effects may be present when very close individuals are included yet largely disappear as the defined group becomes larger. In theory, one could assign different group sizes and use model-selection approaches to determine the group structure that gives the best fit of the fitness regression. However, care must be taken to distinguish a statistical fit from biological reality. A very reasonable biological definition of a group was offered by Uyenonyama and Feldman (1981), namely, the set of all individuals that influence the fitness of a focal individual."
+    },
+    {
+      "type": "derivation",
+      "content": "An alternative to using group means is to model neighbor interactions that influence fitness (e.g., Equation 22.59a). In such cases, the fitness of a focal individual, i, can be written (for a single trait) as [[SEE_FORMULA:30.35a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Note that under this model, the group mean (which contains the value of the focal individual) is replaced by the interactions caused by the neighbors of the focal individual (the members in the sum). This model is easily connected to the model using the standard selection on group model by noting that $$ \\sum_{i\\neq j}z_{j}=n\\overline{z}-z_{i} $$ when i interacts with n - 1 neighbors. Hence, we can express Equation 30.35a as [[SEE_FORMULA:30.35b]]"
+    },
+    {
+      "type": "discussion",
+      "content": "The subtle distinction between the group-mean (Equation 30.35b) and neighborhood-fitness (Equation 30.35a) models is apparent in the case where only the neighbors influence the fitness of an individual. In this case, $ \\beta_1 = 0 $, $ \\beta_2 \\neq 0 $, so that in the neighborhood-fitness model there is no weight on individual value. However, if a group-mean fitness model is fitted to these same data, there will be a nonzero regression slope on individual fitness (a value of $ -\\beta_2 $), reflecting the input of an individual's value to its group mean. One could also weight the interactions in Equation 30.30a, for example, by replacing $ z_j $ with $ f_{ij}z_j $, where $ f_{ij} $ is some measure of the amount of interaction between i and j, such as distance between plants or fraction of time observed interacting (Chapter 22)."
     }
   ]
 }

@@ -31,11 +31,11 @@
     },
     {
       "type": "derivation",
-      "content": "When the fitness surface is complex (for example, a fine-meshed grid with individual fitness values for each coordinate, such as would be returned by a semiparametric regression), numerical methods can be used to compute the required partials for Equations 29.35a and 29.35b. When $ 0 $, [[SEE_FORMULA:29.35c]] $$ \\left.\\frac{\\partial^{2}w(z)}{\\partial z^{2}}\\right|_{z=z_{i}}\\simeq\\frac{w(z_{i}-\\delta)-2w(z_{i})+w(z_{i}+\\delta)}{\\delta} $$"
+      "content": "When the fitness surface is complex (for example, a fine-meshed grid with individual fitness values for each coordinate, such as would be returned by a semiparametric regression), numerical methods can be used to compute the required partials for Equations 29.35a and 29.35b. When $ \\delta \\simeq 0 $, [[SEE_FORMULA:29.35c]] $$ \\left.\\frac{\\partial^{2}w(z)}{\\partial z^{2}}\\right|_{z=z_{i}}\\simeq\\frac{w(z_{i}-\\delta)-2w(z_{i})+w(z_{i}+\\delta)}{\\delta} $$"
     },
     {
       "type": "discussion",
-      "content": "While average gradients of the individual fitness function provide reasonable summary statistics for discussions about the nature of selection, if the concern is the evolution of these traits over time, then landscape gradients are required. This follows from our extensive discussion in Chapter 24 of selection response when normality no longer holds. The generalized Barton-Turelli selection response equations (Equation 24.26) for changes in the phenotypic moments after a generation of selection requires estimates of various partials of the landscape gradient with respect to the moments of the phenotypic distribution. If the underlying genetics are such that the distribution of breeding values is nearly normal, then (Equation 24.30a) the only measure of selection entering into the equation for the change in mean is the landscape gradient with respect to the population mean. If the distribution of breeding values shows skew and/or kurtosis (specifically, a nonzero value of the scaled kurtosis, $ \\kappa_{4}=[\\mu_{4,G}-3\\sigma_{A}^{4}]/\\sigma_{A}^{4} $ ), then partials of the landscape gradient with respect to the phenotypic variance and skew are required to predict the change in mean."
+      "content": "While average gradients of the individual fitness function provide reasonable summary statistics for discussions about the nature of selection, if the concern is the evolution of these traits over time, then landscape gradients are required. This follows from our extensive discussion in Chapter 24 of selection response when normality no longer holds. The generalized Barton-Turelli selection response equations (Equation 24.26) for changes in the phenotypic moments after a generation of selection requires estimates of various partials of the landscape gradient with respect to the moments of the phenotypic distribution. If the underlying genetics are such that the distribution of breeding values is nearly normal, then (Equation 24.30a) the only measure of selection entering into the equation for the change in mean is the landscape gradient with respect to the population mean. If the distribution of breeding values shows skew and/or kurtosis (specifically, a nonzero value of the scaled kurtosis, $ \\kappa_4 = [\\mu_4, G - 3\\sigma_A^4] / \\sigma_A^4 $), then partials of the landscape gradient with respect to the phenotypic variance and skew are required to predict the change in mean."
     },
     {
       "type": "derivation",
@@ -43,7 +43,7 @@
     },
     {
       "type": "discussion",
-      "content": "A similar expression defines $ \\gamma_{MS} $ . This approach works for general fitness surfaces, such as those estimated using a semiparametric regression, and nonnormal distributions."
+      "content": "A similar expression defines $ \\gamma_{MS} $. This approach works for general fitness surfaces, such as those estimated using a semiparametric regression, and nonnormal distributions."
     }
   ]
 }

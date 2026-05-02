@@ -2,9 +2,9 @@
   "id": "chapter9_033",
   "metadata": {
     "chapter": "chapter9",
-    "section": "TESTS BASED ON SITE-FREQUENCY SPECTRUM STATISTICS",
+    "section": "Ascertainment Issues",
     "subsections": [
-      "TESTS BASED ON SITE-FREQUENCY SPECTRUM STATISTICS"
+      "Model Fragility: Demography, Mutation, Recombination, and Gene Conversion"
     ],
     "source_file": "tmp\\paddle_output\\chapter9_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
@@ -14,15 +14,15 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "Under the infinite-sites model, a sequence is treated as a series of $L$ sites, with each new mutation assumed to occur at a new site (Chapter 4). At mutation-drift equilibrium, most features of this model, including the site-frequency spectrum (SFS), are fully specified by the population-size-scaled mutation rate, $ = 4N_e $. Depending on the nature of the data, an observed frequency spectrum is viewed as either folded or unfolded (Chapter 2). An unfolded spectrum considers the frequency of the derived allele (Equation 2.35a), and such data are said to be polarized (typically using an outgroup to distinguish between ancestral and derived, or mutant, alleles). The folded spectrum (Equation 2.35b) uses the minor-allele frequency, ignoring whether the rarer allele is ancestral or derived. To distinguish between these different spectra, we use the notation that $ _i$ denotes the number of sites that contain exactly $i$ derived alleles ($1 i n-1$), yielding the observed unfolded SFS as the vector $(_1,, _ n-1)$. Similarly, $ _i$ denotes the number of sites with exactly $i$ copies of the minor allele ($1 i $), with $(_1,, _ [n/2])$ being the observed folded SFS, where $$ [n/2]=\\left\\{\\begin{array}{l}n/2for n even\\ $ n-1)/2for n odd\\end{array}\\right. $$"
+      "content": "A concern to always keep in mind when using a sophisticated model is its robustness to errors in the underlying assumptions. Simple approaches often have modest power but considerable robustness, while highly specialized models can be quite powerful when the data fit the assumptions but may be quite fragile when they do not. Given the constant concern about nonequilibrium and structured populations, and hence generation of the appropriate null model, the robustness to demography is critical (Akey et al. 2004)."
     },
     {
       "type": "discussion",
-      "content": "The $ _ i $ and $ _ i $ are simply related by $$ \\eta_{i}=\\zeta_{i}+\\zeta_{n-i}\\quad for\\quad1\\leq i\\leq[n/2] $$"
+      "content": "While sensitivity to demographic assumptions is generally well appreciated, less appreciated are the effects of genomic assumptions, such as constant mutation and recombination rates across the region. We have already stressed that variation in mutation rates can generate peaks and valleys in the background patterns of neutral variation. These patterns can easily be declared as signals of selection by most of the previously mentioned likelihood tests. The exception is XP-CLR, which is based on between-population differences, and thus controls for this problem to some extent. Likewise, although the recombination rate, c, between a neutral site and the selected target appears in most of the likelihood models, operationally one assumes a constant rate, $ c_{0} $, per nucleotide, with $ c = c_{0}L $, where L is the distance in nucleotides. However (as discussed in Chapter 4), recombination rates can vary dramatically over very fine scales (Coop and Przeworski 2007), and gene conversion also needs to be considered (Andolfatto and Nordborg 1998). As mentioned in Chapter 8, conversion events can disrupt the signal expected from a sweep (Jones and Wakeley 2008). For example, Glinka et al. (2006) observed a sharp peak of variation in the middle of a valley of depressed variation around the unc-119 gene in a European population of Drosophila. They reasoned that a sweep plus two conversion events generated this unusual pattern."
     },
     {
       "type": "discussion",
-      "content": "For example, both $ \\zeta_{1} $ and $ \\eta_{1} $ denote the number of sites that are singletons, with $ \\zeta_{1} $ being the number of sites with a single copy of the derived allele and $ \\eta_{1} $ being the number of sites with a single copy of the minor allele. The latter could be due to either a single copy of the derived allele or a single copy of the ancestral allele, with $ \\eta_{1}=\\zeta_{1}+\\zeta_{n-1}. $ As detailed in Chapter 8, both a hard sweep and long-term balancing selection are expected to perturb a starting site-frequency spectrum into some new distribution. A hard sweep increases the frequency of sites with rare derived alleles and also sites with high-frequency derived alleles (Figure 8.5). In a folded frequency spectrum, these jointly appear as an increase in the frequency of sites with rare alleles. Conversely, long-term balancing selection is expected to increase the number of sites with intermediate-frequency alleles, albeit over a region that becomes ever-narrower over time (Chapter 8). While they are widely used, a problem with all site-frequency spectrum tests is that nonequilibrium conditions (e.g., during recovery following a bottleneck) or spatial population structure cause the frequency spectrum of neutral alleles to depart from the benchmark Watterson distribution. Thus, a significant amount of the following discussion deals with these concerns."
+      "content": "Finally, background selection, which is expected to be a function of the ratio of gene density to recombination rate, also creates outliers if there is significant genomic variation in this ratio. To some extent, this can be controlled by examining whether significant tests disproportionately fall into such regions."
     }
   ]
 }

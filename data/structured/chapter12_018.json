@@ -2,63 +2,44 @@
   "id": "chapter12_018",
   "metadata": {
     "chapter": "chapter12",
-    "section": "Chapter 12: Hunt's Approach for Comparing Different Models",
+    "section": "Chapter 12: TIME SERIES DIVERGENCE TESTS",
     "subsections": [
-      "Hunt's Approach for Comparing Different Models"
+      "Tests for Departures From Symmetric Random Walks"
     ],
     "source_file": "tmp\\paddle_output\\chapter12_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [
-      "12.25a",
-      "12.25b"
+      "12.23a",
+      "12.23b",
+      "12.24a",
+      "12.24b"
     ],
-    "table_references": [
-      "12.1"
-    ],
-    "table_reference_keys": [
-      "chapter12:12.1"
-    ]
+    "table_references": []
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Hunt (2006, 2007, 2008a, 2008b; Hunt and Carrano 2010) noted that the low power for tests of departures from symmetric random walks creates a \"tyranny of the null hypothesis,\" potentially overinflating the role of drift. He suggested that instead of testing against"
-    },
-    {
-      "type": "discussion",
-      "content": "[[TABLE:12.1]]. For each fossil series, the fraction of support for the three models was computed using Akaike weights. In only 13/251 (5.2 the random null, one should examine a set of candidate models, using Akaike weights (Anderson et al. 2000) to indicate support for each (see Example 12.5 for details). The Akaike weights for a set of competing models sum to one, providing a useful indicator of their relative support."
-    },
-    {
-      "type": "discussion",
-      "content": "Hunt initially considered three basic models: a symmetric random walk (with an incremental mean value of zero); a directional (or generalized) random walk (mean increment $ \\neq0 $); and stasis. For the two random walks, he modeled the incremental $ \\delta $ (the change over an interval) with normal random variables. For the symmetric random walk, $ \\delta\\sim N(0,\\sigma_{\\delta}^{2}) $ while for the general random walk, $ \\delta\\sim N(\\mu_{\\delta},\\sigma_{\\delta}^{2}) $ , with parameters fit by maximum likelihood. For stasis, he assumed a simple model initially suggested by Sheets and Mitchell (2001). Instead of constructing likelihood models around increments (so that $ z_{t}=z_{0}+\\sum\\delta_{i} $ ), they simply took the trait value at time t to be $ z_{t}\\sim N(\\mu,\\sigma^{2}) $ , namely a constant variance $ (\\sigma^{2}) $ over all time (rather than the linear increased under Brownian motion). While at first glance this appears to be an OU process at stationarity $ (t\\rightarrow\\infty) $ , this is not the case, as an Ornstein-Uhlenbeck process has correlated means (reflecting the shared history on a common evolutionary path). Akaike weights allow for a more nuanced interpretation of model fits (see Figure 12.6), and are based on the relative likelihoods among a set of candidate models, summing to one over all the models considered (Example 12.5). For example, suppose the Akaike weights for a fossil sequence are 0.50, 0.48, and 0.02 for the random, directional, and stasis models, respectively. Clearly, stasis and a random walk are almost equally likely explanations in this case, but the support for a directional model is very slim."
-    },
-    {
-      "type": "discussion",
-      "content": "It should be stressed that the power of this approach is not the initial small set of candidate models, but rather that it serves as a much more general framework for examining an ever-richer set of models. Indeed, Hunt et al. (2015) examined more complex models that allow for the sequence of mean phenotypes to shift between modes (e.g., random vs. stasis) over the time sampled. One could also use the Akaike weights strategy to contrast the simple stasis model used by Hunt with the Ornstein-Uhlenbeck or other competing models of stabilizing selection (Estes and Arnold 2006; Uyeda et al. 2011), as well as considering other models of directional evolution (e.g., Charlesworth 1984b)."
-    },
-    {
-      "type": "discussion",
-      "content": "Using this approach, Hunt (2007), Hopkins and Lidgard (2012), and Hunt et al. (2015) examined an evergrowing number of stratophenetic series (251, 635, and 709 studies, respectively). The basic conclusions from Hunt et al. (2007), which hold for these larger (and more recent) studies as well, are given in [[SEE_TABLE:12.1]]. For each fossil series, the fraction of support for the three models was computed using Akaike weights. In only 13/251 (5.2%) of the sequences was directional selection (a generalized random walk with $ \\mu_{\\delta}\\neq0 $) the most"
-    },
-    {
-      "type": "discussion",
-      "content": "[h] strongly supported model (had the largest Akaike weight). The random walk model was the most supported overall (49"
-    },
-    {
-      "type": "discussion",
-      "content": "An interesting perspective on the rates of macroevolution was offered by Uyeda et al. (2011), who examined a vast data set of traits followed over time, with time-span ranging from fractions of years to over 350 million years. For periods of a million years or less, rapid evolution was seen to occur, but it is constrained, and does not accumulate over time. This matches the earlier observation by Estes and Arnold (2007) that the expected magnitude of divergence over samples is largely time-independent up to about a million generations. However, as Figure 12.7 illustrates, Uyeda et al. observed an accumulation of cases of rapid divergence starting at $ \\sim 1 0^{6} $ year intervals, generating what they called a blunderbuss pattern, as the spread of values resembles the flared muzzle of the seventeenth-century firearm of the same name."
-    },
-    {
-      "type": "discussion",
-      "content": "While Estes and Arnold (2007) were able to account for their observed pattern in terms of stabilizing selection with a fluctuating optimum, this model did not fit the data of Uyeda et al. (2011) presented in Figure 12.7. Rather, the best fit was a model of essentially stasis (the Sheets-Mitchell model), coupled with rare random bursts of significant change (with an average waiting time of $ \\sim10^{7} $ years). The model allowing for multiple (as opposed to single) bursts fit the data best. While this pattern is striking and reproducible over the several different taxonomic data sets used by the authors, the underlying mechanism is unclear. Uyeda et al. suggested that this pattern might be correlated with the opening of new niches following species turnover (as species life spans are typically in the million-year range)."
-    },
-    {
-      "type": "discussion",
-      "content": "[h]"
+      "content": "A number of tests of departure from a symmetric random walk have been proposed. All assume uncorrelated changes over time increments and an equal chance of positive and negative increments (with the mean incremental change equaling zero). Raup (1977) and Raup and Crick (1981) proposed using the Wald–Wolfowitz runs test (under the null hypothesis of an equal number of positive and negative changes). Here the test statistic, $ R_{n} $, for the number of runs (changes in the direction of the walk) in a sample of size n is approximately normally distributed with mean $ n/2 + 1 $ and variance n/4. A sequence showing excessive runs of the same sign is consistent with directional selection, while a sequence with an excessive number of sign reversals is consistent with stabilizing selection (as might be expected for a population mean fluctuating around an optimum). Similarly, one could simply test the number of positive increments against the value expected from a binomial with success parameter 1/2 and sample size n. Both the runs and binomial tests do not use any information on the size of any jump, but rather simply test against a null of equally likely up versus down change over any given time point."
     },
     {
       "type": "derivation",
-      "content": "Example 12.5. Anderson et al. (2000) proposed that a series of candidate models can be compared via their Akaike weights, an approach used by Hunt (2007) to assess the relative fit of a series of candidate models for long-term evolution (Figure 12.6). Suppose one has a series of models that were fit using maximum likelihood. If these models are not nested (so that likelihood-ratio tests for comparing fit are not available; LW Appendix 4), then comparison statistics, such as the Akaike information criterion (AIC; Akaike 1974) can be used to rank them. AIC rewards goodness of fit (higher log-likelihood, L), while penalizing for the number of parameters (k) with smaller AIC values implying a better model. With $ n < 40k $ observations, Anderson et al. suggested that a corrected version of AIC should be used. [[SEE_FORMULA:12.25a]] which differs from the standard AIC measure in the addition of the last term. Suppose that one has a set of m candidate models and computes the support for model i relative to the best fitting of all m models, [[SEE_FORMULA:12.25b]]"
+      "content": "A more sophisticated approach was taken by Bookstein (1987, 1988), who used results from the theory on the maximal excursion of a symmetric random walk. The sequence of measured phenotypes is scaled so that the initial mean is zero, with $ x_i $ denoting the mean of the $ i $th sample. The standard error for the expected divergence over the entire sequence ($ n $ steps) of a symmetric random walk is $ \\sigma\\sqrt{n} $, where $ \\sigma^2 $ is the variance in change per increment. Assuming roughly equal time intervals between samples, this standard error can be estimated as [[SEE_FORMULA:12.23a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Further, define $ S_k $ as the sum of the first $ k $ increments (the displacement of the mean from its original value after $ k $ steps). Bookstein obtained a large- $ n $ expression for the distribution of the largest scaled excursion, [[SEE_FORMULA:12.23b]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Namely, the largest absolute value of the walk $ (max_k \\mid S_k \\mid) $ over any of the sampled times, expressed in terms of the expected standard error of the walk value at the final sample time $ (\\sigma \\sqrt{n}) $. For $ \\gamma > 1 $, critical values (the upper $ p $ in the tail of the null distribution) are very closely given by the corresponding $ p/4 $ critical values for a unit normal. For example, the upper 5% tail corresponds to $ \\gamma = 2.25 $, consistent with the value of 2.24 for a normal with $ p/4 = 0.0125 $. The upper 1% and 0.1% upper tail probabilities correspond to $ \\gamma $ values of 2.8 and 3.5, respectively. Series with values exceeding these critical values are said to be improbably directional, consistent with directional selection (or an environmental trend). Conversely, a series that does not vary enough is said to be improbably constrained, consistent with some sort of stabilizing selection or other cause of stasis. The lower 5%, 1%, and 0.1% values correspond to $ \\gamma $ values of 0.62, 0.49, and 0.41, respectively. Failure to reject the null of a random walk still allows for considerable selection, either due to a lack or power or randomness in the direction of selection over time. Multivariate random-walk tests are discussed by Bookstein (2013)."
+    },
+    {
+      "type": "derivation",
+      "content": "Another widely used test for departures against the null of a symmetric random walk (closely related to Bookstein's approach), called scaled range analysis, is based on Hurst exponents (Hurst 1951). The idea behind this approach is that the absolute difference of a symmetric random walk $ |x_t - x_0| $ scales as $ \\sigma \\sqrt{t} $ (which can be estimated from Equation 12.23a). Defining the standardized range, $ R(\\tau) $, for a time interval $ (\\tau) $ as [[SEE_FORMULA:12.24a]] one then regresses $ R(\\tau) $ on ever-increasing values of $ \\tau $, fitting the log-log regression [[SEE_FORMULA:12.24b]] where the slope (H) is the Hurst exponent (i.e., $ R \\propto \\tau^{H} $). Under a symmetric random walk with uncorrelated increments, absolute trait divergence is expected to scale with the square root of time, giving H = 0.5. As increments become more positively correlated, H increases to 1.0 (directional persistence), consistent with directional selection. As adjacent increments become increasingly negatively correlated, H decreases to zero (anti-persistence), consistent with stabilizing selection or some other form of stasis. Roopnarine (2001) discussed permutation tests for the significance of $ H \\neq 0.5 $. Gingerich's (1993) LRI (log rate versus log interval) method is a version of this test, where the slope (G) of his LRI regression is simply G = H - 1 (Roopnarine et al. 1999)."
+    },
+    {
+      "type": "discussion",
+      "content": "While straightforward and widely applied in the early literature, these methods typically have low power, meaning that the null hypothesis of a symmetric random walk is hard to reject (Roopnarine et al. 1999; Roopnarine 2001; Sheets and Mitchell 2001). This is especially the case with stratophenetic series, with their usual incompleteness and sporadic coverage due to the vagaries of the fossilization process. Further, as noted by Sheets and Mitchell (2001), there is an asymmetry of detection in that stabilizing selection is easier to detect than directional selection. They showed that the Hurst exponent (and, by extension, the LRI method) has the highest power to detect stabilizing selection, followed by Bookstein's approach, and then the runs test. Conversely, for detecting directional selection, the runs test is often the most powerful, followed by the Hurst exponent, and then Bookstein's approach."
     }
   ]
 }

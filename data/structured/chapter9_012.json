@@ -2,26 +2,23 @@
   "id": "chapter9_012",
   "metadata": {
     "chapter": "chapter9",
-    "section": "Chapter 9: Schaffer's Linear Trend Test",
+    "section": "Scans and Simulation-based Approaches",
     "subsections": [
-      "Schaffer's Linear Trend Test"
+      "Scans and Simulation-based Approaches"
     ],
     "source_file": "tmp\\paddle_output\\chapter9_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
-    "formula_references": [
-      "9.7a",
-      "9.7b"
-    ],
+    "formula_references": [],
     "table_references": []
   },
   "blocks": [
     {
-      "type": "derivation",
-      "content": "A variation of the Fisher-Ford test was suggested by Schaffer et al. (1977), who noted that power might be improved by going beyond a simple lack of fit test against the model $ y_ t = + e $ (where $ $ is the transformed initial allele frequency), by asking if a significant linear trend is present. The model now becomes [[SEE_FORMULA:9.7a]] where a trend is indicated if $ $ is significantly different from zero (the Fisher-Ford test assumes $ = 0 $). Such a linear trend is not expected under drift but would be expected under directional selection, assuming that the direction of selection is not changing (migration from a population with a different allele frequency could also generate a linear trend). In general-linear-model form (LW Chapter 8), Equation 9.7a becomes $ y = X + e $, where [[SEE_FORMULA:9.7b]] where the elements of V are given by Equations 9.5c and 9.5d. For the data in Example 9.2, the resulting X matrix and the GLS estimate, $ $, of the vector of parameters becomes $$ \\mathbf{X}=\\begin{pmatrix}{{{1}}}&{{{0}}} \\\\{{{1}}}&{{{4}}} \\\\{{{1}}}&{{{8}}}\\end{pmatrix},\\qquad\\widehat{\\boldsymbol{\\beta}}=\\begin{pmatrix}{{{0.609}}} \\\\{{{-0.028}}}\\end{pmatrix} $$"
+      "type": "discussion",
+      "content": "As presented, these tests for shifts in allele frequencies are performed one marker at a time, as they herald from the days of testing just one or a few unlinked candidate genes. With a few unlinked markers, Bonferroni corrections (or the slightly more powerful sequential methods; Appendix 4) can be applied to assign overall significance levels. Likewise, FDR approaches can use used to assign false-discovery rates among the set of markers declared to be significant (the fraction of tests declared to be significant that are actually from the null; Appendix 4). However, in the genomic-scan era, with the potential for thousands of linked markers on each chromosome, tests are no longer independent, thus compromising FDR approaches (Chen and Storey 2006). Even if tests are largely independent, their vast number makes Bonferroni-type corrections untenable for a test to have any power (Appendix 4). How then can these tests be extended to the dense marker maps used in genomic scans?"
     },
     {
       "type": "discussion",
-      "content": "Applying LW Equation 8.35, the standard error on the slope is found to be 0.0086, showing that it is highly significant. Stuber et al. (1980) used this approach to infer selection at sites linked to several allozyme markers in a series of selected maize lines. One advantage of the linear-trend test is that it does not require highly accurate estimates of $ N_{e} $"
+      "content": "For starters, analyzing markers one at a time is rather inefficient, in that one potentially loses shared information from linked markers. A better approach is to compute the average allele-frequency change within a small sliding window. Starting with the initial allele frequencies within a given window and either their known or assumed recombination rates, simulations under pure drift (and recombination) can generate a null distribution of average change as a comparison point for the actual observed divergence (e.g., Example 9.3; Johansson et al. 2010). Other, less formal approaches can also be used to simply indicate regions of interest (as opposed to regions that are formally statistically supported); see Figure 9.1."
     }
   ]
 }

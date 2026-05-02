@@ -2,84 +2,77 @@
   "id": "chapter15_007",
   "metadata": {
     "chapter": "chapter15",
-    "section": "Chapter 15: RESPONSE DUE TO ENVIRONMENTAL CORRELATIONS",
+    "section": "Chapter 15: ANCESTRAL REGRESSIONS",
     "subsections": [
-      "RESPONSE DUE TO ENVIRONMENTAL CORRELATIONS"
+      "ANCESTRAL REGRESSIONS"
     ],
     "source_file": "tmp\\paddle_output\\chapter15_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [
-      "15.14a",
-      "15.14b",
-      "15.15",
-      "15.16a",
-      "15.16b",
-      "15.16c",
-      "15.17a",
-      "15.17b",
-      "15.18",
-      "15.19a",
-      "15.19b",
-      "15.19c"
+      "15.11a",
+      "15.11b",
+      "15.11c",
+      "15.12a",
+      "15.12b",
+      "15.13a",
+      "15.13b",
+      "15.13c"
     ],
-    "table_references": []
+    "table_references": [
+      "inline_1"
+    ],
+    "table_reference_keys": [
+      "chapter15:inline_1"
+    ]
   },
   "blocks": [
     {
-      "type": "discussion",
-      "content": "Imagine a situation where a bird is large by chance, enabling it to defend a larger and more productive breeding location. As a result, its offspring are better provisioned and are larger themselves, above and beyond any genetic effects on size. This is an example of a shared environmental effect and is a special case of the more general setting where at least part of the environment experienced by an individual is a function of the phenotypes of other individuals with which they interact (Chapter 22). Rossiter (1996), Bonduriansky and Day (2009), and Bonduriansky et al. (2012) reviewed a number of such shared environmental effects, while Day and Bonduriansky (2011) modeled the expected response in a number of different settings using the Price equation framework (Chapter 6). As Equation 15.1a indicates, shared parent-offspring environmental effects—a nonzero value of $ (E_ p, E_ o) $—can influence the selection response. This contribution is also transient. Consider a character whose variation is entirely environmental, in which case the phenotypic value can be decomposed as $$ z=\\mu+E=\\mu+e_{fa}+e_{mo}+e $$ where $ $ is the mean value of the character when environmental effects are randomly distributed, and the environmental value, E, has been decomposed into the maternal and paternal contributions to the offspring due to shared environmental effects ($ e_ mo $ and $ e_ fa $) and a residual due to special environmental effects (e), where $ E[e] = 0 $. In order to predict the shared environmental contribution from a parent, we assume the simplest model, wherein a fraction, b, of the total environmental value of a parent is passed on to its offspring."
-    },
-    {
-      "type": "discussion",
-      "content": "This model serves as a useful introduction to some of the dynamics that can occur for certain models of maternal effects (examined in the next section). It also serves as a model for selection response under epigenetics, wherein a nongenetic modification is passed through generations (e.g., factors bound to the DNA that alter the expression level of a gene). While much excitement is made by some on the role of such epigenetic inheritance in evolution, as we will see, its impact is transient if there is even the smallest amount of imperfection in transmission."
-    },
-    {
-      "type": "discussion",
-      "content": "To simplify matters further, assume that this regression coefficient is independent of the sexes of the parent and offspring, although this condition can easily be relaxed. Here the expected contribution from a father to his offspring is $ e_{fa}=b E_{fa}=b \\left(z_{fa}-\\mu\\right) $ where $ E_{fa} $ is the father's total environmental value. Further assuming that the parents and the offspring have the same phenotypic variance, then $ b=\\rho/2 $ ,where $ \\rho $ is the slope of the midparent-offspring regression. In principal, b can be negative under some environmental conditions, e.g., if parents and offspring compete for a limited common resource, and larger parents gather a disproportionate share of resources, resulting in smaller offspring."
+      "type": "proposition",
+      "content": "A general approach for examining which components of response are transient is to consider the expected value of an offspring as a function of all of its direct relatives that have been under selection (Pearson 1898; Bulmer 1971b, 1980). If this ancestral regression is linear (as would occur if the joint distribution of the phenotypic values of all relatives is multivariate normal), the selection response can be described by specifying the regression coefficients via an obvious extension of the biparental regression, to now include all selected relatives back to the original unselected base population. For example, if selection starts in generation 0, the response in the first generation is $ R(1) = 2 / \\beta_{1,0} S_{0} $, where $ \\beta_{1,0} $ is the regression of offspring at generation 1 on a parent from generation 0 (this assumes that both parents have the same regression coefficients and selection differentials, an assumption that will be relaxed shortly). Likewise, the total response after two generations, $ R(2) = 4 / \\beta_{2,0} S_{0} + 2 / \\beta_{2,1} S_{1} $, depends on the nature of selection on the four grandparents ($ S_{0} $) and both parents ($ S_{1} $) as well as on the transmission from grandparent to grandchild ($ \\beta_{2,0} $) and that from parent to offspring ($ \\beta_{2,1} $). Note that this formulation allows the parent-offspring regression to change through time (e.g., $ \\beta_{2,1} $ need not equal $ \\beta_{1,0} $), as can happen with inbreeding (Chapter 23). Similarly, the response following three generations of selection depends upon the nature of selection on that individual's eight great-grandparents, four grandparents, and two parents. $$ R(3)=8\\beta_{3,0}S_{0}+4\\beta_{3,1}S_{1}+2\\beta_{3,2}S_{2} $$"
     },
     {
       "type": "derivation",
-      "content": "Provided $ E_ fa $ and $ E_ mo $ are uncorrelated, the expected value of an offspring from parents with phenotypic values of $ z_ fa $ and $ z_ mo $ is [[SEE_FORMULA:15.14a]] where $ $ is the population baseline mean under randomized environmental effects. Denoting the mean of adults selected in generation t by $ _ t ^ * $, the mean at generation $ t+1 $ is given by [[SEE_FORMULA:15.14b]] where $ (_t^* -) $ is the average environmental deviation of the selected parents at generation $ t $, a fraction, $ $, of which is passed on to their offspring. If shared environmental effects are only passed on through one parent, $ /2 $ replaces $ $ in Equation 15.14b. Rewriting the mean after selection as $ _t^* = _t + S_t $, [[SEE_FORMULA:15.15]]"
+      "content": "Proceeding in this fashion gives the total response by generation T as [[SEE_FORMULA:15.11a]] where $ \\beta_{T,t} $ is the partial regression coefficient for the phenotype of an individual in generation $ T $ on one (out of $ 2^{T-t} $) of its ancestors in generation $ t < T $ (with selection starting at generation 0). Because the total response is simply the sum of the independent contributions from each generation, the regression coefficients are simply standard univariate regression coefficients (i.e., $ \\beta_i = \\sigma(y, x_i)/\\sigma_{x_i}^2 $), yielding [[SEE_FORMULA:15.11b]] where $ \\sigma_G(T,t) = \\sigma(z_T, z_t) $ is the cross-generation covariance, the phenotypic covariance between an individual in generation $ t $ and its descendant in generation $ T > t $. We usually assume that $ \\sigma(z_T, z_t) $ is entirely genetic (e.g., Examples 15.1 and 15.2), and hence denote it by $ \\sigma_G(T,t) $, although environmental factors shared across generations can also contribute to $ \\sigma(z_T, z_t) $. With pure selfing, each individual has only a single relative, so the $ 2^{T-t} $ term in Equation 15.11a is absent, which makes the ancestral regression [[SEE_FORMULA:15.11c]] As we will see in Chapter 23, ancestral regression offers a powerful approach for the analysis of selection under inbreeding, where the cross-generation covariances depend on both T and t, rather than simply on the number of generations $ (T - t) $ between the ancestor and the descendant. For example, the parent-offspring covariance changes over generations as inbreeding proceeds."
     },
     {
       "type": "derivation",
-      "content": "[h] and defining the change in mean as $ _ t = _ t+1 - _ t $ yields [[SEE_FORMULA:15.16a]]"
-    },
-    {
-      "type": "derivation",
-      "content": "Suppose that constant selection (with a differential of $S$) is applied starting at generation 1. Here, $ _0 = 0$, $S_0 = 0$, and $S_t = S$ for $t 1$. Equation 15.16a then gives $ _1 = S$. Further iterations yield the increment from selection in generation $t$ to the total response as [[SEE_FORMULA:15.16b]] which (like epistasis) decreases in each generation, and approaches zero for large values of t. Hence, even under continued selection, the total response to selection eventually reaches a limit. Note that if $ < 0 $, the sign of the increment-specific response switches in each generation (Figure 15.2)."
-    },
-    {
-      "type": "derivation",
-      "content": "The reason for this decline in the per-generation rate of response, $ _t $, can be seen from Equation 15.16a. The change in the character mean due to previous selection decays, countering the gain from selection in the current generation. Only a fraction, $ $, of the change from generation $ t - 1 $ is passed on, and in general, only $ ^k $ of the response from generation $ t - k $ persists by generation $ t $. Summing over Equation 15.16b, the total response to selection after $ t $ generations is [[SEE_FORMULA:15.16c]]"
-    },
-    {
-      "type": "derivation",
-      "content": "Recalling the partial sum of a geometric series (Equation 15.5b), this reduces to [[SEE_FORMULA:15.17a]]"
-    },
-    {
-      "type": "derivation",
-      "content": "Note from Equation 15.17a that the sign of the total response does not change over $ t $ (as $ | | < 1 $) and equals the sign of $ $. While the per-generation response, $ _ t+1 - _t = ^t S $ (Equation 15.16b), may change sign each generation (provided $ < 0 $), the absolute magnitude of this per-generation change rapidly decreases with $ t $, resulting in no change of sign in the total response. As was the case for epistasis, the total cumulative response reaches an equilibrium value representing the balance between the generation of correlations by selection and their removal by reproduction, with [[SEE_FORMULA:15.17b]]"
-    },
-    {
-      "type": "derivation",
-      "content": "Thus, no matter how long selection is applied, the mean can never change by more than $ S /(1-) $. Further, none of this response is permanent. Suppose selection is stopped after $ t $ generations, resulting in $ S_t = S $, $ S_ t+ = 0 $ for $ 1 $. If we substitute these values of $ S $ into Equation 15.16a and use Equation 15.16b, the expected change in generation $ t + $ is [[SEE_FORMULA:15.18]]"
-    },
-    {
-      "type": "derivation",
-      "content": "Using this result, by generation $ t + $, the cumulative response is [[SEE_FORMULA:15.19a]]"
-    },
-    {
-      "type": "derivation",
-      "content": "The last step follows if we first note from Equation 15.17a that $ S(1 - ^t) = [(1 -)/] R(t) $. Using this identity, and applying Equation 15.15b with $ x = $ and $ n = $, yields [[SEE_FORMULA:15.19b]]"
-    },
-    {
-      "type": "derivation",
-      "content": "Observe that Equation 15.19a converges to zero, with the rate of decay set by $ $ (Figure 15.2). The half-life, $ t_ 1/2 $, of the decay in response follows from solving $ ^ t_ 1/2 = 1/2 $, or [[SEE_FORMULA:15.19c]]"
+      "content": "If different relatives in the same generation experience different amounts of selection, with $ S_{k,i} $ being the selection differential on relative i in generation k, then [[SEE_FORMULA:15.12a]] where $ n(t,T) $ is the number of relatives in generation t that contribute to response in generation T. Note for the case of pure selfing, $ n(t,T) = 1 $, which reduces Equation 15.12a to Equation 15.11c. Finally, we can also allow for different regression coefficients on each relative to completely generalize this approach [[SEE_FORMULA:15.12b]] where $ \\beta_{T,t,i} $ is the regression coefficient of the phenotype of an individual in generation T on its ith relative in generation t."
     },
     {
       "type": "discussion",
-      "content": "Hence, while there can be some selection response when the resemblance between relatives is entirely environmental, any response is transient and decays away once selection stops. Further, no matter how long selection proceeds, the total response asymptotes to a limit beyond which no further response is excepted (Equation 15.17b). As mentioned, these results bear on the role of epigenetic inheritance. The correlation, $ \\rho $ is a measure of the persistence of an epigenetic modification (be it cultural, hormonal, or from proteins bound to DNA). When the persistence of an effect is high $ \\rho $ is close to one), a trait can achieve a significant selection response under purely epigenetic inheritance (Equation 15.17b), and the response can persist for several generations following the cessation of selection (Equation 15.19a). For example if $ \\rho=0.95 $ (a 5% loss of the effect each generation), then a total response of $ S\\cdot0.95/0.05=19 S $ can be achieved. After selection stops, half this expected gain is lost in $ -\\ln(2)/\\ln(0.95)\\simeq14 $ generations (Equation 15.19c). While impressive, from an evolutionary standpoint, none of this short-term gain translates into a long-term, permanent, selection response."
+      "content": "To apply ancestral regression for predicting response, we require that the regression remain linear and that selection-induced changes in the variances and covariances be negligible. Thus, while we allow changes in $ \\beta_{T,t} $ due to the particular genetic system being considered (e.g., selfing, wherein the additive genetic variance decreases by a predictable amount in each generation in the absence of selection), we assume that selection does not confound these changes. Bulmer (1980) showed that the joint distribution of an offspring and all its direct ancestors is multivariate normal, and hence the ancestral regression is linear (LW Chapter 8), under the infinitesimal model. Because selection does not change allele frequencies under the infinitesimal model, this might suggest that the regression coefficients, $ \\beta_{T,t} $ are unaffected by selection. The problem, however, is that selection generates gametic-phase disequilibrium, which can significantly alter the genotypic moments (Chapters 16 and 24). For now, we assume that these changes are small enough to be neglected. In Chapter 19 we show that BLUP estimates of breeding values are a type of ancestral regression, with the relationship matrix, A, accounting for drift and disequilibrium."
+    },
+    {
+      "type": "discussion",
+      "content": "The behavior of the regression coefficients over time informs us about the permanency of the response. Consider the contribution from generation $ \\tau $ at $ t $ generations later, so that in the notation of our previous expressions, $ T = t + \\tau $. Equation 15.11a shows that unless $ 2^t \\beta_{\\tau + t, \\tau} $ remains constant as $ t $ increases, the contribution to cumulative response from selection on adults in generation $ \\tau $ changes over time. For strictly additive loci (under random mating), $ \\sigma_G(\\tau + t, \\tau) = 2^{-t} \\sigma_A^2(\\tau) $ and thus $ 2^t \\beta_{\\tau + t, \\tau} = h_\\tau^2 $, the standard result from the breeder's equation. Conversely, any term of $ \\sigma_G(\\tau + t, \\tau) $ that decreases by more than one half in each generation contributes only to the transient response, as $ 2^t \\sigma_G(\\tau + t, \\tau) \\to 0 $ as $ t \\to \\infty $. An exception to this condition occurs under pure selfing. Here, an individual has only a single ancestor $ t $ generations ago (as opposed to $ 2^t $ ancestors under random mating), resulting in the total contribution in generation $ t + \\tau $ from an ancestor in generation $ \\tau $ of $ \\sigma_G(\\tau + t, \\tau) $. Hence, any term contributing to $ \\sigma_G(\\tau + t, \\tau) $ that decreases to $ 0 $ as $ t \\to \\infty $ contributes only to the transient response."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 15.1. As an application of ancestral regressions, consider the situation that arises with additive-by-additive epistasis. In this case, Cockerham (1984b) found (under the infinitesimal model) that for two linked loci, the cross-generation covariance is $$ \\sigma_{G}(\\tau+t,\\tau)=\\frac{\\sigma_{A}^{2}(\\tau)}{2^{t}}+\\frac{\\sigma_{A A}^{2}(\\tau)}{2}\\left(\\frac{1-c}{2}\\right)^{t} $$ yielding $$ 2^{t}\\sigma_{G}(\\tau+t,\\tau)=\\sigma_{A}^{2}(\\tau)+(1-c)^{t}\\frac{\\sigma_{A A}^{2}(\\tau)}{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Provided the genetic variances remain constant, applying Equation 15.11a recovers Equation 15.3."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 15.2. Consider the expected response under arbitrary levels of additive epistasis (under the infinitesimal model with unlinked loci). LW Equation 7.12 shows the genetic covariance between relatives x and y as $$ \\begin{align*}\\sigma_G^2(x,y)&=(2\\Theta_{x,y})\\sigma^2(A)+(2\\Theta_{x,y})^2\\sigma^2(AA)+\\cdots+(2\\Theta_{x,y})^i\\sigma^2(A^i)\\\\&=\\sum_{i=1}^n\\left(2\\Theta_{x,y}\\right)^i\\sigma^2(A^i)\\end{align*} $$ where $ \\sigma^{2}(A^{i}) $ denotes the genetic variance due to ith-order additive epistasis. The coefficient of coancestry $ \\Theta_{t,t+\\tau} $ between a parent in generation t and a direct descendant in generation $ t+\\tau $ under random mating is $$ \\Theta_{t,t+\\tau}=\\left(\\frac{1}{2}\\right)^{\\tau+1} $$"
+    },
+    {
+      "type": "derivation",
+      "content": "Using this result, the contribution, $ \\sigma_{G,i}(t+\\tau,t) $, to the total genetic covariance due to ith-order additive epistasis ($ A^{i} $) becomes $$ \\sigma_{G,i}(t+\\tau,t)=\\left(2\\Theta_{t+\\tau,t}\\right)^{i}\\sigma^{2}(A^{i})=2^{i}\\left(\\frac{1}{2}\\right)^{(\\tau+1)i}\\sigma^{2}(A^{i})=\\left(\\frac{1}{2}\\right)^{\\tau i}\\sigma^{2}(A^{i}) $$ and the ancestral regression terms involving $ \\sigma^{2}(A^{i}) $ become $$ 2^{\\tau}\\frac{\\sigma_{G,i}(t+\\tau,t)}{\\sigma^{2}(A^{i})}=2^{\\tau}\\frac{(1/2)^{\\tau i}\\sigma^{2}(A^{i})}{\\sigma^{2}(A^{i})}=2^{\\tau}2^{-\\tau i}=\\left(\\frac{1}{2}\\right)^{\\tau(i-1)}=\\left(\\frac{1}{2^{i-1}}\\right)^{\\tau} $$ With constant selection, S, the contribution to total response from ith-order additive epistasis follows from Equation 15.11b: [[SEE_FORMULA:15.13a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Recalling Equation 15.5b, [[SEE_FORMULA:15.13b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "The limit of this sum (as $ t \\to \\infty $) is [[SEE_FORMULA:15.13c]] Because the scaled initial contribution, $ R_{A^{i}}(1)/[S\\sigma^{2}(A^{i})/\\sigma_{z}^{2}] $, equals $ (1/2)^{i-1} $, the additional total increment to response beyond that seen in the first generation follows from Equations 15.13a and 15.13c: $$ \\frac{\\bar{R}_{A^{i}}-R_{A^{i}}(1)}{S\\sigma^{2}(A^{i})/\\sigma_{z}^{2}}=\\frac{1}{2^{i-1}-1}-\\frac{1}{2^{i-1}}=\\frac{1}{(2^{i-1}-1)2^{i-1}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The response in generation one, $ R(1) $, and at the limit, $ \\tilde{R} $ (both scaled in units of $ S\\sigma^{2}(A^{i})/\\sigma_{z}^{2} $), and the fraction of total response occurring in the first generation, $ R(1)/\\tilde{R} $, are as follows: As shown in the second line of this table, the limiting contribution, $ R $, is small for higher-order additive epistasis among unlinked loci. For example, for four-way additive epistasis, the total response is $ \\sim14% $ (0.143/1.000) of the expected response under two-way additive epistasis when the two variance components are equal, $ \\sigma^2(AA) = \\sigma^2(AAAA) $. Further, as the final line in the table shows, $ \\sim88% $ of the total response from four-way additive epistasis occurs in the first generation of selection."
     }
   ]
 }

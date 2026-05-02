@@ -21,7 +21,7 @@
   "blocks": [
     {
       "type": "derivation",
-      "content": "Structure of Adaptive Walks Under the SSWM Model Given that the limiting EVT distribution is largely independent of the details of the underlying distribution generating it, several interesting results follow when the distribution of fitnesses for new mutations falls into the Gumbel domain. First, let $ s_{j} $ denote the fitness advantage of a new allele relative to the current one. Gillespie (1984b) showed that under strong selection and weak mutation (SSWM), the probability of allele j being the next one to be fixed during the walk is where there are k alleles that are more fit than the current one (the set of potential alleles is typically taken as the set of all possible mutations that are one step away from the current allele). Hence, the chance that a mutation is fixed is proportional to its fitness advantage, but the most fit allele is by no means guaranteed of being the next allele fixed. Mutation rates do not appear in [[SEE_FORMULA:27.8a]], as it makes the assumption that mutational change to any of the 3L adjacent sequences is equally likely (Equation 7.38 recovered a similar result for a somewhat different problem)."
+      "content": "Given that the limiting EVT distribution is largely independent of the details of the underlying distribution generating it, several interesting results follow when the distribution of fitnesses for new mutations falls into the Gumbel domain. First, let $ s_{j} $ denote the fitness advantage of a new allele relative to the current one. Gillespie (1984b) showed that under strong selection and weak mutation (SSWM), the probability of allele j being the next one to be fixed during the walk is [[SEE_FORMULA:27.8a]] where there are $ k $ alleles that are more fit than the current one (the set of potential alleles is typically taken as the set of all possible mutations that are one step away from the current allele). Hence, the chance that a mutation is fixed is proportional to its fitness advantage, but the most fit allele is by no means guaranteed of being the next allele fixed. Mutation rates do not appear in Equation 27.8a, as it makes the assumption that mutational change to any of the 3L adjacent sequences is equally likely (Equation 7.38 recovered a similar result for a somewhat different problem)."
     },
     {
       "type": "derivation",
@@ -29,11 +29,11 @@
     },
     {
       "type": "discussion",
-      "content": "The simplification given in Equation 27.8b of Gillespie’s original result is due to Orr (2002). Because Equation 27.8b scales as $ (k) $, the mean number of steps (substitutions) typically ranges between two and five (Gillespie 1994). This sequential series of fixations until the best"
+      "content": "The simplification given in Equation 27.8b of Gillespie’s original result is due to Orr (2002). Because Equation 27.8b scales as $ \\sim\\ln(k) $, the mean number of steps (substitutions) typically ranges between two and five (Gillespie 1994). This sequential series of fixations until the best"
     },
     {
       "type": "discussion",
-      "content": "allele is fixed yields a burst of substitutions followed by stasis (unless there is a significant change in the environment, and thus in the fitness function). The result is an overdispersed molecular clock (a higher variance than expected from the Poisson distribution for substitutions that is generated under drift). Remember that extreme-value theory walks focus on the substitution patterns in a single gene or tightly linked genetic region. Hence, many such walks may simultaneously be ongoing within a (recombining) genome. We return to the important issue of context-specific fitness (i.e., epistasis), and how it alters the walk, shortly."
+      "content": "[h] allele is fixed yields a burst of substitutions followed by stasis (unless there is a significant change in the environment, and thus in the fitness function). The result is an overdispersed molecular clock (a higher variance than expected from the Poisson distribution for substitutions that is generated under drift). Remember that extreme-value theory walks focus on the substitution patterns in a single gene or tightly linked genetic region. Hence, many such walks may simultaneously be ongoing within a (recombining) genome. We return to the important issue of context-specific fitness (i.e., epistasis), and how it alters the walk, shortly."
     },
     {
       "type": "derivation",
@@ -53,7 +53,7 @@
     },
     {
       "type": "discussion",
-      "content": "Unlike Fisher's model, Orr (2002) found that jumps under the SWMM model are few, and substantial, with over 30"
+      "content": "Unlike Fisher's model, Orr (2002) found that jumps under the SWMM model are few, and substantial, with over 30% of the total fitness change from the walk occurring on the first jump, and over 50% occurring from the largest jump. Orr also showed that the distribution of fixed selective effects over a number of such walks (ignoring the very smallest final steps) is again roughly exponential under certain conditions, a statement that we will refine below. Hence, adaptive walks over two very different geometries (continuous phenotypic vs. discrete sequence space), operating on different genetic scales (genomewide vs. a single gene or region), and treating rather different quantities (trait values vs. fitness effects), can both generate the same rough pattern of substitution effects. They differ in that a random walk in sequence space typically has only a few, mostly substantial, steps."
     },
     {
       "type": "discussion",

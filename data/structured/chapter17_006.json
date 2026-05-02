@@ -2,53 +2,48 @@
   "id": "chapter17_006",
   "metadata": {
     "chapter": "chapter17",
-    "section": "Chapter 17: The Exponential Model",
+    "section": "Chapter 17: The Multiplicative Model",
     "subsections": [
-      "The Exponential Model"
+      "The Multiplicative Model"
     ],
     "source_file": "tmp\\paddle_output\\chapter17_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [
-      "17.3a",
-      "17.3b",
-      "17.3c",
-      "17.3d"
+      "17.2a",
+      "17.2b",
+      "17.2c",
+      "17.2d"
     ],
-    "table_references": [
-      "17.1"
-    ],
-    "table_reference_keys": [
-      "chapter17:17.1"
-    ]
+    "table_references": []
   },
   "blocks": [
     {
       "type": "derivation",
-      "content": "While we have presented the multiplicative model within a breeding-value framework, this was not explicitly done by Gavrilets and Hastings (1994c), who (coming from a population-genetics background) were more concerned with the evolution of the environmental variance than with estimating $ A_ v $. Conversely, SanCristobal-Gaudy et al. (1998), coming from an animal breeding background, were more concerned with the estimation of $ A_ v $. They did so by modeling E using an exponential model [[SEE_FORMULA:17.3a]]"
-    },
-    {
-      "type": "discussion",
-      "content": "Why the breeding value appears as $ A_{v} / 2 $ (rather than simply $ A_{v} $ ) will become apparent shortly."
-    },
-    {
-      "type": "discussion",
-      "content": "The connection with the multiplicative model follows if we note that for small $ |x|, $ $ e^{x}\\simeq 1+x $ , so that $ E\\simeq[1+(A_{v}/2)]\\cdot e $ for $ |A_{v}| \\ll 2 $ , implying $ \\gamma_{i}\\simeq 1+(A_{v}/2) $ . By assuming normality and independence (of $ e,A_{v} $ , and $ A_{m} $ ), SanCristobal-Gaudy et al. (1998) obtained likelihood estimators for the breeding values for the environmental variance $ (A_{v}) $ and trait"
-    },
-    {
-      "type": "discussion",
-      "content": "[[TABLE:17.1]]). mean ($ A_ m $). They explicitly considered estimation under either a sire design (using half-sib values to estimate the values of $ A_ v $ and $ A_ m $ in the common parent) or under a model where repeated measurements on a single individual and its relatives are used to estimate breeding values for $ _ E ^ 2 $ (Chapters 13 and 19). SanCristobal-Gaudy et al. (2001) extended this approach to threshold traits (in particular, litter size). Bayesian estimators under this model were developed by Sorensen and Waagepetersen (2003) and Ros et al. (2004)."
+      "content": "Gavrilets and Hastings (1994c) assumed some underlying environmental factor, e (such as temperature), with different genotypes having different sensitivity, $ \\gamma_{i} $, to this factor, hence [[SEE_FORMULA:17.2a]]"
     },
     {
       "type": "derivation",
-      "content": "Given $ A_ v $, the conditional distribution of the environmental variance becomes [[SEE_FORMULA:17.3b]] where the last step follows by recalling that $ [(a)]^2 = (2a) $. Hence, the environmental variance is a constant $ _e^2 $ multiplied by a scaling factor that is an exponential function of the breeding value $ A_v $ for the environmental variance (which motivates our use of $ A_v/2 $ in Equation 17.3a). Decreasing $ A_v $ results in an individual with reduced environmental sensitivity (reduced $ _E^2 $). The constant, $ _e^2 $, can be interpreted as the environmental variance for an individual with an environmental breeding value of zero, $ A_v = 0 $."
-    },
-    {
-      "type": "derivation",
-      "content": "The exponential model is also called the log-additive model, as the breeding value is additive on a log scale [[SEE_FORMULA:17.3c]] As detailed in Example 17.2, the expectation of Equation 17.3b (over the population distribution of $ A_ v $ values) yields a mean environmental variance of [[SEE_FORMULA:17.3d]]"
+      "content": "This multiplicative model is simply the joint-regression model for genotype×environment interactions (LW Equation 22.13b; Volume 3), and was also used by Wagner et al. (1997). Under Equation 17.2a, the conditional environmental variance (given the genotypic value and its environmental sensitivity) is [[SEE_FORMULA:17.2b]] As shown in Example 17.2 (below), taking the expected value over the population distribution of sensitivity values, $ \\gamma \\sim (\\mu_{\\gamma}, \\sigma_{\\gamma}^{2}) $, yields the unconditional environmental variance in the population [[SEE_FORMULA:17.2c]]"
     },
     {
       "type": "discussion",
-      "content": "Equation 17.3d shows that either decreasing the mean breeding value, $ \\mu_{A_{v}} $ , or its additive variance, $ \\sigma_{A_{v}}^{2} $ , decreases the environmental variance. Comparison of Equations 17.2c and 17.3d shows one subtle difference between the multiplicative and exponential models. Under the former, the contribution to the environmental variance is a function of $ \\mu_{A_{v}}^{2} $ meaning that the minimal population environmental variance occurs when $ \\mu_{A_{v}}=0 $ , and any deviation away from zero increases the average environmental variance. By contrast, under the exponential model, decreasing $ \\mu_{A_{v}} $ always decreases the average value of $ \\sigma_{E}^{2} $ in the population. Thus, under the exponential model, $ \\sigma_{E}^{2} $ can be selected to be arbitrarily small, while under the multiplicative model, it has a lower bound set by $ \\sigma_{A_{v}}^{2} $ (and more generally, by the dominance variance as well; see Equation 17.2d). The Additive Model"
+      "content": "Note that while $ \\gamma_i $ can be negative, Equation 17.2b shows that it influences the environmental variance through its square, $ \\gamma_i^2 $. Thus, the magnitude, rather than the sign, of $ \\gamma_i $ determines its impact on $ \\sigma_E^2 $. Under the multiplicative model, the environmental variance for the population decreases by selecting $ \\mu_\\gamma $ to zero and/or by decreasing the variance, $ \\sigma_\\gamma^2 $, of environmental sensitivities. The problematic issue here is modeling the change in the distribution of the genotypic-specific sensitivities, $ \\gamma $. The simplest approach is to assume that the environmental sensitivity, $ \\gamma $, is an entirely additive quantitative trait, so that $ \\gamma = A_v $, namely, the breeding value for the environmental variance."
+    },
+    {
+      "type": "discussion",
+      "content": "Analysis of Equation 17.2c led Gavrilets and Hasting to comment on the relationship between developmental noise and heterozygosity mentioned previously. Lerner (1954) assumed this relationship to be causative, with higher levels of heterozygosity directly causing decreased environmental variance. However, Gavrilets and Hastings noted that when $ \\mu_{\\gamma}^{2} = 0 $, as might occur with selection to decrease $ \\sigma_{E}^{2} $, then under the simple additive model ($ \\gamma = A_{v} $), the environmental variance for a given trait is proportional to the additive genetic variance in environmental sensitivity, $ \\sigma_{\\gamma}^{2} = \\sigma^{2}(A_{v}) $."
+    },
+    {
+      "type": "discussion",
+      "content": "Gavrilets and Hastings noted that a correlation between heterozygosity and $ \\sigma_E^2 $ simply falls out as a consequence of their model, rather than from any functional relationship between the two. They reach this conclusion by using the result that, for an additive trait (in our case, $ \\gamma = A_v $), the genetic variance is a decreasing function of the number of heterozygous loci (Chakraborty 1987), so that when the average heterozygosity in a population increases, $ \\sigma^2(A_v) $ decreases, and hence (from Equation 17.2c), so does $ \\sigma_E^2 $. While their theoretical point is valid, it is actually addressing a slightly different issue than Lerner's argument. The Gavrilets and Hastings model suggests that populations with less heterozygosity are expected to show increased levels of $ \\sigma_E^2 $, while Lerner was suggesting that individuals with reduced heterozygosity show increased $ \\sigma_E^2 $."
+    },
+    {
+      "type": "derivation",
+      "content": "If we allow for dominance in the quantitative-trait formulation of $ \\gamma $, the result is $ \\gamma = A_v + D_v $, where the dominance value, $ D_v $, is not transmitted from parent to offspring. Further, by construction, $ D_v $ has a mean value of zero and under the infinitesimal model, the dominance variance is not changed by selection (Chapter 16). Under this extension, the mean environmental variance becomes [[SEE_FORMULA:17.2d]]"
+    },
+    {
+      "type": "discussion",
+      "content": "This same argument applies if we replace $ \\sigma_{D_v}^2 $ by the total nonadditive genetic variance. While selection can reduce the first component in Equation 17.2d (either by driving the mean breeding value to zero and/or reducing $ \\sigma_{A_v}^2 $), the component involving nonadditive variance remains unchanged. Hence, implicit in assuming a breeding value for this model (or any of the others discussed below) is that any nontransmissible genetic variation in $ \\sigma_E^2 $ remains unchanged by selection. Genetic variation in $ \\sigma_E^2 $, by itself, is not sufficient for a selection response, as the latter requires that at least part of this variation must be transmissible under the breeding scheme being used."
     }
   ]
 }

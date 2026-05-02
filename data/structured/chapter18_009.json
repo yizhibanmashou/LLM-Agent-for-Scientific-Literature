@@ -4,19 +4,24 @@
     "chapter": "chapter18",
     "section": "Chapter 18: Standard Errors of Realized Heritability Estimates",
     "subsections": [
-      "Standard Errors of Realized Heritability Estimates"
+      "Power: Estimation of $ h^{2} $ from Relatives or Selection Response?"
     ],
     "source_file": "tmp\\paddle_output\\chapter18_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [
+      "18.19",
       "18.20"
     ],
     "table_references": []
   },
   "blocks": [
     {
+      "type": "derivation",
+      "content": "Estimates of heritability from relatives are based on variance components (e.g., LW Chapters 17 and 18), while estimates from selection response are based on ratios of means. Thus, one might expect that realized heritability estimates may have greater power than those based on relatives. Is this indeed the case? Consider the sampling variance for the simple ratio estimator (Equation 18.18) $$ \\mathrm{Var}(\\widehat{h}_{r}^{2})=\\frac{\\mathrm{Var}\\left[R_{C}(T)\\right]}{S_{C}^{2}(T)}\\simeq\\frac{(T/N)\\widehat{h}_{r}^{2}\\sigma_{z}^{2}+\\sigma_{z}^{2}/M}{S_{C}^{2}(T)}=\\frac{(T/N)\\widehat{h}_{r}^{2}+1/M}{S_{C}^{2}(T)/\\sigma_{z}^{2}} $$ where T is the number of generations and M individuals are measured per generation, with the most extreme N of these allowed to reproduce. Suppose that the strength of selection is the same in each generation $ (S_i = S) $, in which case we have that $$ S_{C}^{2}(T)/\\sigma_{z}^{2}=T^{2}\\;S^{2}/\\sigma_{z}^{2}=T^{2}\\cdot\\bar{\\imath}^{2} $$ and hence [[SEE_FORMULA:18.19]] where the last step follows by ignoring the $ 1/(T^{2}M) $ term."
+    },
+    {
       "type": "discussion",
-      "content": "Turning to relative-based estimators of $ h^ 2 $, the optimal midparent-offspring design ($ N_ mp $ sets of parents each with a single offspring) has (LW Equation 17.11b) a standard error of $$ \\mathrm{SE}(h_{mp}^{2})=\\left(\\frac{2-h^{4}}{N_{mp}}\\right)^{1/2} $$"
+      "content": "Turning to relative-based estimators of $ h^{2} $, the optimal midparent-offspring design ($ N_{mp} $ sets of parents each with a single offspring) has (LW Equation 17.11b) a standard error of $$ \\mathrm{SE}(h_{mp}^{2})=\\left(\\frac{2-h^{4}}{N_{mp}}\\right)^{1/2} $$"
     },
     {
       "type": "derivation",
@@ -24,7 +29,7 @@
     },
     {
       "type": "discussion",
-      "content": "In applying Equation 18.20 to determine which method $ ( N_{mp} $ midparent-offspring pairs versus TN total adults over the course of a selection experiment) is more accurate, a few points are in order. In a selection experiment, one measures M adults in each generation, where N of these reproduce. Hence, if the limiting factor for an investigator is in raising offspring, then the comparison of $ N_{mp} $ midparents with TN adults that are allowed to reproduce is a fair one. However, if the limiting factor is in the actual measurement of individuals, then the fair comparison should be designs based on TM measured adults versus $ 3 N_{mp} $ midparents (as the latter involves two adults and one offspring measure per pair). As Example 18.5 illustrates, even when T and M are fixed, the choice of N is important, as the standard error (Equation 18.19) is minimized when the product, $ N \\bar{\\iota}^{2} $ , is maximized. There is a tradeoff in this maximization, as increasing selection decreases N but increases $ \\bar{\\iota} $ (which is a nonlinear function of N/M)."
+      "content": "In applying Equation 18.20 to determine which method ($ N_{mp} $ midparent-offspring pairs versus TN total adults over the course of a selection experiment) is more accurate, a few points are in order. In a selection experiment, one measures $ M $ adults in each generation, where $ N $ of these reproduce. Hence, if the limiting factor for an investigator is in raising offspring, then the comparison of $ N_{mp} $ midparents with $ TN $ adults that are allowed to reproduce is a fair one. However, if the limiting factor is in the actual measurement of individuals, then the fair comparison should be designs based on $ TM $ measured adults versus $ 3N_{mp} $ midparents (as the latter involves two adults and one offspring measure per pair). As Example 18.5 illustrates, even when $ T $ and $ M $ are fixed, the choice of $ N $ is important, as the standard error (Equation 18.19) is minimized when the product, $ N\\ \\bar{v}^2 $, is maximized. There is a tradeoff in this maximization, as increasing selection decreases $ N $ but increases $ \\bar{v} $ (which is a nonlinear function of $ N/M $)."
     },
     {
       "type": "discussion",
@@ -36,11 +41,11 @@
     },
     {
       "type": "discussion",
-      "content": "For a T-generation selection experiment, we have $ T M = 3000 $ as the design constraint. Thus, if we measure M initial parents to select the most extreme N, and do this for six generations (the parents = generation 0, followed by selected generations 1, 2, 3, 4, 5), with $ 3000/6 = 500 $ individuals being measured in each generation."
+      "content": "For a T-generation selection experiment, we have $ T \\cdot M = 3000 $ as the design constraint. Thus, if we measure M initial parents to select the most extreme N, and do this for six generations (the parents = generation 0, followed by selected generations 1, 2, 3, 4, 5), with $ 3000/6 = 500 $ individuals being measured in each generation."
     },
     {
       "type": "discussion",
-      "content": "Consider three different designs, with N = 250 (50 $$ \\sqrt{\\frac{h^{2}}{TN\\bar{\\tau}^{2}}}=\\sqrt{\\frac{0.3}{5N\\bar{\\tau}^{2}}} $$ or 0.0194, 0.0175, and 0.0197 (for N = 250, 100, and 50, respectively). Thus, while all three selection-experiment designs have a smaller standard error than the midparent-offspring estimate, the design with N = 100 is the best among the three candidates. Trial and error yields an optimal N of 135, resulting in a standard error of 0.0172. Similar calculations can also be performed assuming experiments of different length (with T varying)."
+      "content": "Consider three different designs, with N = 250 (50% selected), 100 (20%), or 50 (10%). Applying Equation 14.3a, these correspond to selection intensities (not correcting for finite population size) of $ \\bar{\\imath} = 0.80 $, 1.40, and 1.75, respectively. From Equation 18.19, the standard errors for $ h_{r}^{2} $ are given by $$ \\sqrt{\\frac{h^{2}}{TN\\bar{\\tau}^{2}}}=\\sqrt{\\frac{0.3}{5N\\bar{\\tau}^{2}}} $$ or 0.0194, 0.0175, and 0.0197 (for N = 250, 100, and 50, respectively). Thus, while all three selection-experiment designs have a smaller standard error than the midparent-offspring estimate, the design with N = 100 is the best among the three candidates. Trial and error yields an optimal N of 135, resulting in a standard error of 0.0172. Similar calculations can also be performed assuming experiments of different length (with T varying)."
     },
     {
       "type": "discussion",

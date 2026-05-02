@@ -12,8 +12,7 @@
       "18.16a",
       "18.16b",
       "18.17",
-      "18.18",
-      "18.19"
+      "18.18"
     ],
     "table_references": []
   },
@@ -28,15 +27,15 @@
     },
     {
       "type": "derivation",
-      "content": "Finally, consider the variance for the ratio estimator $ b_T $, the total response to total selection (Equation 18.12). Because $ (y/c) = (y)/c^2 $ for a constant, c, we have [[SEE_FORMULA:18.18]]"
+      "content": "Finally, consider the variance for the ratio estimator $ b_T $, the total response to total selection (Equation 18.12). Because $ \\text{Var}(y/c) = \\text{Var}(y)/c^2 $ for a constant, c, we have [[SEE_FORMULA:18.18]]"
     },
     {
       "type": "discussion",
-      "content": "The numerator (the variance in response in generation $ T $ ) follows from the pure-drift approximation (Equation 18.8), assuming that initial sampling can be ignored (e.g., $ M_{0}\\gg1 $ ) and there is no significant between-generation environmental variance $ (\\sigma_{b}^{2}=0) $ . Hill (1972c, 1972d) noted that $ \\widehat{b}_{C} $ (GLS) is generally a slightly better estimator (i.e., returning a smaller standard error) than $ \\widehat{b}_{T} $ when $ h^{2} $ is small, while $ \\widehat{b}_{T} $ is a slightly better estimator when $ h^{2} $ or the number of generations is large."
+      "content": "The numerator (the variance in response in generation $T$) follows from the pure-drift approximation (Equation 18.8), assuming that initial sampling can be ignored (e.g., $M_0 \\gg 1$) and there is no significant between-generation environmental variance ($\\sigma_b^2 = 0$). Hill (1972c, 1972d) noted that $\\widehat{b}_C(\\mathrm{GLS})$ is generally a slightly better estimator (i.e., returning a smaller standard error) than $\\widehat{b}_T$ when $h^2$ is small, while $\\widehat{b}_T$ is a slightly better estimator when $h^2$ or the number of generations is large."
     },
     {
       "type": "discussion",
-      "content": "Example 18.4. Using the data from Examples 18.2 and 18.3, let us compare the standard errors associated with the three different realized heritability estimates. Consider the unweighted regression estimator, $ _ C () $, first. The residual sum of squares is $$ \\sum_{i=1}^{T}\\left(R_{C}(i)-\\widehat{h}_{r}^{2}S_{C}(i)\\right)^{2}=0.091 $$ yielding an estimated residual variance of $ \\widehat{\\sigma}_{e}^{2}=0.091/4=0.0228 $. Equation 18.16a then yields $$ \\mathrm{Var}\\left[\\widehat{b}_{C}(\\mathrm{OLS})\\right]=\\sigma_{e}^{2}\\bigg/\\sum_{i=1}^{T}S_{C}^{2}(i)=\\frac{0.0228}{350.45}=0.0000649 $$"
+      "content": "Example 18.4. Using the data from Examples 18.2 and 18.3, let us compare the standard errors associated with the three different realized heritability estimates. Consider the unweighted regression estimator, $ \\widehat{b}_{C}(\\mathrm{OLS}) $, first. The residual sum of squares is $$ \\sum_{i=1}^{T}\\left(R_{C}(i)-\\widehat{h}_{r}^{2}S_{C}(i)\\right)^{2}=0.091 $$ yielding an estimated residual variance of $ \\widehat{\\sigma}_{e}^{2}=0.091/4=0.0228 $. Equation 18.16a then yields $$ \\mathrm{Var}\\left[\\widehat{b}_{C}(\\mathrm{OLS})\\right]=\\sigma_{e}^{2}\\bigg/\\sum_{i=1}^{T}S_{C}^{2}(i)=\\frac{0.0228}{350.45}=0.0000649 $$"
     },
     {
       "type": "discussion",
@@ -44,7 +43,7 @@
     },
     {
       "type": "discussion",
-      "content": "Turning to the estimate, $ b_{T} $, based on the total response to total selection, Equation 18.18 returns $$ \\mathrm{Var}(\\widehat{b}_{T})=\\frac{(5/20)\\cdot0.21\\cdot3.292+0.03292}{12.51^{2}}=0.00132 $$ for a standard error of 0.0363. Finally, if we substitute the GLS estimate of $ \\widehat{h}_r^2 = 0.222135 $ (Example 18.3) into $ $, Equation 18.17 will yield a variance for this estimate of $ (\\mathbf{S}^T \\mathbf{V}^{-1} \\mathbf{S})^{-1} = 1/790.4 $, for a standard error of 0.0356."
+      "content": "Turning to the estimate, $ b_{T} $, based on the total response to total selection, Equation 18.18 returns $$ \\mathrm{Var}(\\widehat{b}_{T})=\\frac{(5/20)\\cdot0.21\\cdot3.292+0.03292}{12.51^{2}}=0.00132 $$ for a standard error of 0.0363. Finally, if we substitute the GLS estimate of $ \\widehat{h}_r^2 = 0.222135 $ (Example 18.3) into $ \\mathbf{V} $, Equation 18.17 will yield a variance for this estimate of $ (\\mathbf{S}^T \\mathbf{V}^{-1} \\mathbf{S})^{-1} = 1/790.4 $, for a standard error of 0.0356."
     },
     {
       "type": "discussion",
@@ -52,11 +51,7 @@
     },
     {
       "type": "discussion",
-      "content": "Note that the difference in the standard error between $ \\widehat{b}_{C} $ (GLS) and $ \\widehat{b}_{T} $ is very small, with $ \\widehat{b}_{T} $ considerably more straightforward to compute. Also note that the unweighted regression greatly underestimates the standard error, making it four-fold smaller than the other two standard errors."
-    },
-    {
-      "type": "derivation",
-      "content": "Power: Estimation of $ h^ 2 $ from Relatives or Selection Response? Estimates of heritability from relatives are based on variance components (e.g., LW Chapters 17 and 18), while estimates from selection response are based on ratios of means. Thus, one might expect that realized heritability estimates may have greater power than those based on relatives. Is this indeed the case? Consider the sampling variance for the simple ratio estimator (Equation 18.18) $$ \\mathrm{Var}(\\widehat{h}_{r}^{2})=\\frac{\\mathrm{Var}\\left[R_{C}(T)\\right]}{S_{C}^{2}(T)}\\simeq\\frac{(T/N)\\widehat{h}_{r}^{2}\\sigma_{z}^{2}+\\sigma_{z}^{2}/M}{S_{C}^{2}(T)}=\\frac{(T/N)\\widehat{h}_{r}^{2}+1/M}{S_{C}^{2}(T)/\\sigma_{z}^{2}} $$ where T is the number of generations and M individuals are measured per generation, with the most extreme N of these allowed to reproduce. Suppose that the strength of selection is the same in each generation $ (S_i = S) $, in which case we have that $$ S_{C}^{2}(T)/\\sigma_{z}^{2}=T^{2}\\;S^{2}/\\sigma_{z}^{2}=T^{2}\\cdot\\bar{\\imath}^{2} $$ and hence [[SEE_FORMULA:18.19]] where the last step follows by ignoring the $ 1/(T^ 2 M) $ term."
+      "content": "Note that the difference in the standard error between $ \\widehat{b}_{C} $(GLS) and $ \\widehat{b}_{T} $ is very small, with $ \\widehat{b}_{T} $ considerably more straightforward to compute. Also note that the unweighted regression greatly underestimates the standard error, making it four-fold smaller than the other two standard errors."
     }
   ]
 }

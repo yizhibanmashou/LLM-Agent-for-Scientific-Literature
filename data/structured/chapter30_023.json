@@ -2,9 +2,9 @@
   "id": "chapter30_023",
   "metadata": {
     "chapter": "chapter30",
-    "section": "THE STRENGTH AND PATTERN OF SELECTION IN NATURAL POPULATIONS",
+    "section": "Model Selection",
     "subsections": [
-      "THE STRENGTH AND PATTERN OF SELECTION IN NATURAL POPULATIONS"
+      "Model Selection"
     ],
     "source_file": "tmp\\paddle_output\\chapter30_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
@@ -14,11 +14,19 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "Just how strong is selection in natural populations? When phrased in this way, the question is ambiguous, as it is not clear if the focus is on individual variance in fitness or direct selection on particular traits. One can observe a very high variance in individual fitness, and hence much potential for phenotypic selection, but if all variation in fitness is random (character-independent), then (in the extreme) there will be no phenotypic selection. In focusing on the strength of selection for particular traits, Darwin (1859) felt that characters change very slowly, and hence selection on them is weak. Conversely, there are classical examples (e.g., insecticide resistance and industrial melanism) of rapid responses, and hence presumably strong selection, although such cases are often the result of sudden shifts in the environment (such as anthropogenic changes), and how representative they are remains unclear."
+      "content": "Given the plethora of choices for modeling fitness surfaces (which traits to include, what method to use, what type of function to fit, etc.), a few comments on the delicate issue of model selection are in order (see Burham and Anderson 2002 for a complete treatment). If one has a candidate set of models, which should be used? If the models are nested (with one being a subset of the other), then standard likelihood-ratio tests can be used choose between them (LW Appendix 4). However, most models are not nested. In such cases, various informal statistics are used to compare models, and we focus on two, the AIC and BIC metrics. For both of these metrics, a smaller value means it is a better model. We stress that while both metrics are fully grounded in theoretical principles (Burham and Anderson 2004), comparing values for two different models is largely ad hoc in that there is no formal test for significance (i.e., no formal criterion for determining when one model is clearly better than the other)."
     },
     {
       "type": "discussion",
-      "content": "Attempts at measuring selection on quantitative traits in nature trace back to Bumpus (1899) and Weldon (1901). The classical book by Endler (1986), which was one of the first attempts to summarize the average strength of selection, found that strong selection “is not rare and may even be common,” a conclusion that (at the time) was surprising to many. In 2001, Kingsolver and colleagues (Hoekstra et al. 2001; Kingsolver et al. 2001) started to harvest of the rich literature of Lande-Arnold fitness estimates that had been accumulating for almost two decades, and reached the conclusion that the average strength of selection was modest. As detailed shortly, these papers generated much discussion, with some proponents claiming they supported weak to modest selection and others claiming that they supported strong selection."
+      "content": "The idea behind both metrics (as in a likelihood-ratio test) is reward goodness of fit (i.e., smaller values of $ -2 \\ln[L] $ imply better fits, where L is the model likelihood), but also to penalize for the number of model parameters, k. One of the widely used model-comparison metrics is the Akaike information criterion (1973), $$ \\mathrm{AIC}=-2\\ln(L)+2k $$ which was adjusted for the sample size, n, by Sugiura (1978), $$ \\mathrm{AIC}_{c}=-2\\ln(L)+2k+\\frac{2k(k+1)}{n-k-1}=-2\\ln(L)+\\frac{2kn}{n-k-1} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The latter was briefly introduced (Equation 12.25a) in Example 12.5. AIC $ _{c} $ should be used in place of AIC unless n/k > 40 (Burham and Anderson 2004)."
+    },
+    {
+      "type": "discussion",
+      "content": "The other widely used metric is the Bayes information criterion. $$ \\mathrm{BIC}=-2\\ln(L)+\\ln(n)k $$ which was introduced by Schwarz (1978), and thus is also known as the Schwarz criterion. While AIC and BIC are often used interchangeably, they are actually designed for slightly different purposes. When one of the models being compared is the true model, then BIC picks this model with a probability approaching one in large samples. Conversely, AIC considers the situation where none of the candidate models may be correct and then tries to pick among the best of these. As noted by Shaw and Geyer (2010), if one is just considering a few traits, BIC should be used, but with a large number of traits AIC (or $ AIC_{c} $) is a better choice. Investigators often report both, as the two metrics often rank models differently."
     }
   ]
 }

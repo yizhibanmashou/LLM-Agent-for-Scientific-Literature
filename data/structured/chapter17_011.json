@@ -2,66 +2,48 @@
   "id": "chapter17_011",
   "metadata": {
     "chapter": "chapter17",
-    "section": "Chapter 17: Response From Directional Selection on z",
+    "section": "Chapter 17: SELECTION ON $ \\sigma_{E}^{2} $",
     "subsections": [
-      "Response From Directional Selection on z"
+      "Translating the Response in $ A_{v} $ Into Response in $ \\sigma_{E}^{2} $"
     ],
     "source_file": "tmp\\paddle_output\\chapter17_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [
-      "17.9a",
-      "17.9b",
-      "17.10a",
-      "17.10b",
-      "17.10c"
+      "17.6a",
+      "17.6b",
+      "17.6c"
     ],
     "table_references": [
-      "17.2"
+      "17.1"
     ],
     "table_reference_keys": [
-      "chapter17:17.2"
+      "chapter17:17.1"
     ]
   },
   "blocks": [
     {
-      "type": "derivation",
-      "content": "Now consider directional selection on the trait phenotype, z. We first assume that the multiplicative model holds and that we have a simple linear fitness function [[SEE_FORMULA:17.9a]]"
-    },
-    {
-      "type": "derivation",
-      "content": "Taking the expectation over environmental values, Gavrilets and Hastings (1994c) found that [[SEE_FORMULA:17.9b]]"
-    },
-    {
       "type": "discussion",
-      "content": "Under this setting, there is no direct selection on $ A_ v $."
+      "content": "A number of authors have modeled the selection response of the phenotypic variance (from either direct or indirect selection on the variance) when there are heritable differences in environmental sensitivity (Gavrilets and Hastings 1994c; Wagner et al. 1997; SanCristobal-Gaudy et al. 1998, 2001; Sorensen and Waagepetersen 2003; Hill and Zhang 2004; Ros et al. 2004; Mulder et al. 2007, 2008). A critical step in modeling this selection response is treating the phenotypic value and residual variance as two separate (and potentially correlated) traits, both with heritable (i.e., additive-genetic) variation. While some models (Gavrilets and Hastings 1994c; Wagner et al. 1997; Hill and Zhang 2004) are based on strict population-genetic analysis (following the change in individual allele frequencies), most are based on schemes that assign breeding values to the heritable component of $ \\sigma_{E}^{2} $ ([[SEE_TABLE:17.1]]). Under the infinitesimal model, the expected breeding value in the offspring (for either $ A_{m} $ or $ A_{v} $) is simply the mean breeding values of its parents (Chapter 13). Using the expressions given in [[SEE_TABLE:17.1]] allows us to map changes in $ \\mu_{A_{v}} $, the mean breeding value for environmental sensitivity, onto changes in $ \\sigma_{E}^{2} $."
     },
     {
       "type": "derivation",
-      "content": "A rather different outcome was noted by both Hill and Zhang (2004) and Mulder et al. (2007) for truncation selection on a normally distributed trait. As a measure of fitness, Hill and Zhang considered the probability, $ P(a, b) $, that a genotype with a mean of $ + a $ and a variance of $ ^2 + b $ is selected by using a multidimensional Taylor series approximation (Equation A6.6a) for the probability that such a genotype exceeds the truncation threshold when a fraction, $ p $, is saved and $ z N(, ^2) $. Keeping only first-order terms in $ a $ and $ b $ yields [[SEE_FORMULA:17.10a]]"
+      "content": "The simplest case is the additive model (Equation 17.4b). Suppose we let the selection response, $ R_{A_v} $, denote the change in the mean breeding value (for the environmental variance) of the selected parents from the mean breeding value of the entire population. The resulting change in $ \\sigma_E^2 $ becomes [[SEE_FORMULA:17.6a]]"
     },
     {
       "type": "derivation",
-      "content": "Here $ $ is the selection intensity (Equation 14.3a), and $x_ [1-p] $ satisfies $ (U x_ [1-p]) = p$, where $U N(0,1)$. Thus, truncation selection generates selection pressure, $ $, on $A_m$ and $ x_ [1-p] $ on $A_v$. When $A_m$ and $A_v$ are uncorrelated, the expected response in the trait mean is simply our standard result from Chapter 13 (Equation 13.6b), [[SEE_FORMULA:17.10b]]"
+      "content": "The response is a bit more complex under the multiplicative and exponential models, as the mean population value, $ \\sigma_{E}^{2} $, for the environmental variance is a nonlinear function of both the mean and the variance of $ A_{v} $ ([[SEE_TABLE:17.1]]). For the multiplicative model $$ \\sigma_{E}^{2}=\\left[\\mu_{A_{v}}^{2}+\\sigma^{2}(A_{v})\\right]\\sigma_{e}^{2} $$ Because the mean breeding value in generation $ t+1 $ can be expressed as the previous mean plus the response, $ \\mu_{A_v}(t+1) = \\mu_{A_v}(t) + R_{A_v}(t) $, if we assume that there is no change in the additive variance of environmental sensitivities following selection ($ \\Delta\\sigma^2(A_v) = 0 $), we have [[SEE_FORMULA:17.6b]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Change in $ \\sigma^{2}(A_{v}) $ due to selection-generated linkage disequilibrium can be similarly accounted for by using Equation 16.8b."
     },
     {
       "type": "derivation",
-      "content": "Under the additive model for the environmental variance (Equation 17.4a), Hill and Zhang found that the response in the mean breeding value for the environmental variance is [[SEE_FORMULA:17.10c]] which is also the response in $ _E^2 $ (Equation 17.6a). Equation 17.10a assumes that the population distribution of the trait value, $ z $, is approximately normal, which breaks down at extreme trait values when there is heritable variation in $ _E^2 $ (as $ z $ is now no longer normally distributed, but rather has become a weighted mixture of normals). Hence, for strong selection these results are potentially biased."
+      "content": "Under the exponential model and again assuming that there is no change in $ \\sigma_{A_{v}}^{2} $, Equation 17.3d implies that [[SEE_FORMULA:17.6c]]"
     },
     {
       "type": "discussion",
-      "content": "Example 17.4. Consider a trait with $ _z^2 = 100 $, $ h_m^2 = 0.3 $, and $ h_v^2 = 0.03 $ (the latter a typical value from [[SEE_TABLE:17.2]]). Assume that the additive model for the environmental variance (Equation 17.4b) holds. What is the expected response in the mean and $ _z^2 $ following a single generation of truncation selection with $ p = 0.1 $? Because $ h_m^2 _z = h_v^2 _z^2 = 3 $, Equations 17.10b and 17.10c show that any difference in response is due entirely to differences in the strength of selection ($ $ vs. $ _ 1-p $), not the genetic variances of these traits. Noting that $ (U > 1.282) = 0.1 $, we have $ x_ [1-0.1] = 1.282 $ and (recalling Equation 14.3a) $ = (1.282)/0.1 = 1.755 $, with Equations 17.10b and 17.10c yielding $$ R_{A_{m}}=0.3\\cdot1.755\\cdot10=5.265\\quad and\\quad R_{A_{v}}=0.03\\cdot1.755\\cdot1.282\\cdot100=6.750 $$ meaning that a single generation of selection increases the mean by 5.3 and the environmental variance increases by 6.75."
-    },
-    {
-      "type": "discussion",
-      "content": "Using these same parameter values, the Bulmer equation (Equation 16.12d) yields the change in the additive genetic variance of the trait, $ \\sigma^{2}(A_{m}) $ , after one generation of selection as $ d=-3.74 $ , for (ignoring changes in $ \\sigma_{E}^{2} $ ) a phenotypic variance of 100-3.74=96.26 and a heritability of (30-3.74)/(100-3.74)=0.27. Accounting for changes in $ \\sigma_{E}^{2} $ yields a phenotypic variance after one generation of 100-3.74+6.75=103.1 and heritability of (30- 3.74)/103.1=0.25. Because the response in the trait mean is given by $ R(t)=h^{2}(t)\\bar{\\iota}\\sigma_{z}(t) $ the decrease in $ h^{2} $ (from increased $ \\sigma_{E}^{2} $ ) is somewhat offset by the increase in the phenotypic variance. The response in the trait mean in generation 2 becomes 0.27 $ \\cdot $ 1.77 $ \\cdot $ $ \\sqrt{96.26}=4.69 $ when ignoring the change in $ \\sigma_{E}^{2} $ and 0.25 $ \\cdot $ 1.77 $ \\cdot $ $ \\sqrt{103.1}=4.49 $ when including it."
-    },
-    {
-      "type": "discussion",
-      "content": "Now consider stronger selection, p = 0.01. Here $ x_ [1-p] = 2.326 $ and $ = 2.666 $, yielding $$ R_{A_{m}}=0.3\\cdot2.666\\cdot10=7.998\\quad and\\quad R_{A_{v}}=0.03\\cdot2.666\\cdot2.326\\cdot100=18.603 $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Relative to p = 0.1, this is roughly a 50"
+      "content": "These expressions translate a response, $ R_{A_v} $, in the mean breeding value for the environmental variance into the expected change in $ \\sigma_E^2 $ for the different transmission models reviewed in [[SEE_TABLE:17.1]]. We now consider two different settings by which such a response can occur: as a consequence of direct selection on phenotypic value, $ z $, and as the result of direct selection on $ \\sigma_E^2 $ itself. A third possibility—a correlated response in $ A_v $ (i.e., in the environmental variance of the trait) due to direct selection on $ A_m $ (i.e., the value $ z $ of the trait itself) when $ \\rho(A_v, A_m) \\neq 0 $—is examined in Volume 3."
     }
   ]
 }

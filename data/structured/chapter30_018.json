@@ -2,35 +2,32 @@
   "id": "chapter30_018",
   "metadata": {
     "chapter": "chapter30",
-    "section": "MULTIVARIATE SEMIPARAMETRIC FITNESS SURFACE ESTIMATION",
+    "section": "Chapter 30: Canonical Transformation of $ \\gamma $",
     "subsections": [
-      "MULTIVARIATE SEMIPARAMETRIC FITNESS SURFACE ESTIMATION"
+      "Using Aster Models to Estimate Fitness Surfaces"
     ],
     "source_file": "tmp\\paddle_output\\chapter30_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [],
-    "table_references": []
+    "table_references": [
+      "30.1"
+    ],
+    "table_reference_keys": [
+      "chapter30:30.1"
+    ]
   },
   "blocks": [
     {
+      "type": "discussion",
+      "content": "Most of the approaches presented in this chapter (and in much of Chapter 29) make normality assumptions, which come in two different flavors: first, the assumed multivariate normality (MVN) of the distribution of trait values, z; and second, the assumed MVN for the distribution of residuals in the fitness regression, $ \\mathbf{e} = w(\\mathbf{z}) - \\widehat{w}(\\mathbf{z}) $. We address these in turn. As summarized in [[SEE_TABLE:30.1]], when $ z \\sim MVN $, a variety of results hold that relate $ \\beta $ and $ \\gamma $ to measures of the geometries of the individual fitness surface and the mean fitness landscape. Further, as with the univariate case, for $ \\beta $ and $ \\gamma $ to equal, respectively, the linear and quadratic coefficients in a quadratic fitness regression also requires z to be MVN (lack of skew and the kurtosis of a normal, see Equations 29.28a and 29.28b)."
+    },
+    {
       "type": "proposition",
-      "content": "As discussed in Chapter 29, using the best-fitting univariate quadratic can result in a very misleading picture when there are multiple peaks or sharp thresholds (such as truncation selection) in the individual fitness surface. This also holds in multivariate space, and hence regressions predicting fitness given a vector z of traits that are nonparametric (free of any assumed functional form) certainly have some advantages. Because some assumption about the residual structure is typically needed to fit such regressions, they are formally called semiparametric, but we will still refer to them as nonparametric owing to the minimal number of assumptions they involve concerning about the functional form of $ w(z) $."
+      "content": "Perhaps the more critical normality assumption involves the distributional behavior of the fitness residuals. As mentioned in Chapter 29, the assumption that $ z \\sim MVN $ is not required to fit a regression, although when z is MVN, one can then equate estimated regression coefficients with the properties just mentioned. However, the assumption of multivariate normality of the fitness residuals is required, either directly (for hypotheses testing and constructing confidence intervals) or indirectly (the OLS assumption of homoscedastic residues is satisfied when residuals are MVN). Unfortunately, as mentioned in Chapter 29, most biologically realistic models for fitness components generate residuals that are both heteroscedastic and nonnormal. As introduced in Chapter 29, Aster models (Geyer et al. 2007; Geyer and Shaw 2008, 2010a, 2010b; Shaw et al. 2008; Geyer 2010; Shaw and Geyer 2010) allow for a very wide range of distributional assumptions for the fitness-component residuals, and allow one to build up the distribution of total fitness by convoluting distributions across selection episodes. By fully, and correctly, accounting for the residua error structure, Aster models are far more statistically rigorous than Lande-Arnold estimation and can result in less bias when estimating the fitness surface. For example, in a simulated two-trait dataset fit by Shaw and Geyer (2010), Aster models correctly detected multivariate stabilizing selection (two negative eigenvalues for $ \\gamma $), while a Lande-Arnold regression of the same dataset suggested a saddle point (one positive and one negative eigenvalue). An OLS regression assumes that each value is equally weighted (the homoscedastic residual assumption), but when observations vary in their quality (such as heteroscedastic fitness residuals), weighting them properly (as done in Aster models) reduces bias."
     },
     {
       "type": "discussion",
-      "content": "Despite the advantage of having a minimal number of assumptions, these estimators also have significant disadvantages. We have already seen the difficulty in visualizing the multivariate fitness surface when only a simple quadratic function is assumed, but in this case the eigenvalues of $ \\gamma $ provide significant help in interpretation. However, with general nonparametric methods, there is no corresponding metric for the fitness surface geometry, and thus one must resort to actual visualization of the fitness surface. This requires an examination of successive pairwise cross-sections of the fitness surface (projections onto two of the axes of the fitness function), generating a series of 3-D surfaces (one fitness axis and two trait axes; see Figure 30.4). Further, because these methods typically first construct new axes (linear combinations of the traits; e.g., $ x_{1}=\\mathbf{a}_{1}^{T}\\mathbf{z}, $ $ x_{2}=\\mathbf{a}_{2}^{T}\\mathbf{z} $ ), and then use them to construct the"
-    },
-    {
-      "type": "discussion",
-      "content": "[h]"
-    },
-    {
-      "type": "discussion",
-      "content": "[h]"
-    },
-    {
-      "type": "discussion",
-      "content": "fitness surface, they display the pattern of selection on a series of composite traits, and not the actual traits themselves. This can make interpretation of the nature of selection on specific traits or combinations of traits problematic at best. Finally, the results from a nonparametric regression do not immediately provide coefficients to predict the response to selection, while (under normality assumptions) these follow automatically with a quadratic regression. Given these complementary strengths and weaknesses, researchers should use both quadratic and nonparametric regressions in the analysis of their selection data."
+      "content": "While Aster models accommodate complex residual structures, they are not a panacea when it comes to estimating nonlinear fitness surfaces. In the fitness-estimation literature, nonlinear is often taken as synonymous with quadratic, but we have seen how misleading quadratic approximations can be (Figure 29.10). While the link functions used by the GLMs of an Aster model (transforming some underlying linear model into the expected data scale; Chapter 29) can induce nonlinearities (curvature), the transformation is also monotonic (Geyer et al 2007; Geyer 2010, Shaw and Geyer 2010). Hence, while nonlinearities may be introduced, additional peaks are not. In their current form, Aster models assume a quadratic geometry (at most, a single extremum) when the underlying input is a quadratic function of trait values. Hence, many of the issues involved in estimating a fitness landscape by assuming a quadratic geometry remain when using the current Aster framework."
     }
   ]
 }

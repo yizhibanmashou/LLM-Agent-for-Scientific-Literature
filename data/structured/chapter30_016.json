@@ -2,29 +2,35 @@
   "id": "chapter30_016",
   "metadata": {
     "chapter": "chapter30",
-    "section": "Chapter 30: Canonical Transformation of $ $",
+    "section": "Chapter 30: Canonical Transformation of $ \\gamma $",
     "subsections": [
-      "Significance and Confidence Regions for a Stationary Point"
+      "Strength of Selection: $ \\gamma_{ii} $ Versus $ \\lambda $"
     ],
     "source_file": "tmp\\paddle_output\\chapter30_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
-    "formula_references": [
-      "30.28"
-    ],
+    "formula_references": [],
     "table_references": []
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Recall from Equation 30.21a that when $ \\gamma $ is nonsingular (i.e., it contains no zero eigenvalues) then $ \\mathbf{z}_{0}=-\\gamma^{-1}\\mathbf{b} $ is the unique extremum (stationary point) in the quadratic regression. If $ \\gamma $ contains k zero eigenvalues, there is no curvature along the trait combinations given by the k associated eigenvectors (the fitness surface is a k-dimensional hyperplane along these directions), while there is curvature (and a unique stationary point) in the remaining fitness space. As mentioned, this stationary value is a maximum if all of the eigenvalues are negative (and hence a test for significance for a maximum is that all of the eigenvalues should be significantly less than zero). Likewise, it is a local minimum if all the eigenvalues are positive (which can also be tested in the same manner). If $ \\gamma $ contains both (significant) positive and negative eigenvalues, then $ \\mathbf{z}_{0} $ is a saddle point. Thus, tests for maxima or minima are straightforward. But what about the confidence region (or more correctly, a confidence volume) for the location of the stationary point?"
+      "content": "Recall from Equation 30.11a that $(\\gamma_{ii}/2)(z_i - \\mu_i)^2$ is the contribution toward relative fitness, $w$, from squared deviations of trait $i$ from its mean. It is therefore natural to assume that if $\\gamma_{ii} < 0$ (concave selection), this implies at least the potential of stabilizing selection on trait $i$. Figure 30.3 showed that using only the diagonal elements of $\\gamma$ can potentially give a very misleading picture of the nature of quadratic selection. However, the eigenvalues ($\\lambda$) of $\\gamma$ provide a more exact description of the true nature of selection. Blows and Brooks (2003) stressed this point, and noted in an analysis of 19 studies that $|\\gamma_{ii}|_{\\max} < |\\lambda|_{\\max}$. Thus, studies that report weak values for quadratic selection are potentially biased if they use $\\gamma_{ii}$ values, rather than the full geometry of $\\gamma$, as described by its eigenvalues. A further point (mentioned above) is that many published studies report only half the true value for $\\lambda_{ii}$ due to incorrect translation of the coefficient of the quadratic regression."
     },
     {
       "type": "discussion",
-      "content": "A classical result for a quadratic regression is the Box-Hunter confidence region. Suppose we let $ d_z $ denote the gradient vector of the best quadratic regression of w on z, which (Equation 30.20a) is calculated by $$ \\mathbf{d}_{\\mathbf{Z}}=\\nabla_{\\mathbf{Z}}[w(\\mathbf{z})]=\\mathbf{b}+\\gamma\\mathbf{z} $$"
+      "content": "Blows and Brooks (2003) noted several advantages of focusing on estimation of the $ \\lambda_i $ versus estimation of all of the $ \\gamma_{ij} $, noting that there are $ n $ eigenvalues, and $ n(n + 1)/2 $ elements in $ \\gamma $. Further, given that many eigenvalues may be close to zero, a subspace of $ \\gamma $, such as the space spanned by the first few principal (i.e., canonical) components of $ \\gamma $ may essentially capture all of the relevant information on the quadratic fitness surface. Following Simms (1990) and Simms and Rausher (1993), Blows and Brooks suggested that estimation and hypothesis testing can occur if we first obtain the eigenvectors of $ \\gamma $, and then use them to generate the transformed variables $ \\mathbf{y} = \\mathbf{U}^T \\mathbf{z} $ in the quadratic regression given by Equation 30.26. This approach is often referred to as a double regression, as one first uses the eigenvectors of $ \\gamma $ to generate $ y $ and then fits a quadratic regression of $ w $ using $ y $. The quadratic terms in the regression correspond to the eigenvalues of $ \\gamma $ (Equation 30.26), and confidence intervals and significance levels can be conducted within the standard GLM framework (LW Chapter 8). Bisgaard and Ankenman (1996) provided a formal statistical framework for generating standard errors for the estimated $ \\lambda_i $ when using this procedure. However, Reynolds et al. (2010) noted that the initial transformation (to generate $ y $) biases tests of significance of the $ \\lambda_i $, and they suggested a permutation method to obtain correct type-I error rates."
     },
     {
-      "type": "derivation",
-      "content": "Suppose there are k traits and n observations, and the residuals to the quadratic regression are independent and homoscedastic normal variables (as mentioned, for fitness data, this assumption is usually problematic). Box and Hunter (1954) showed that a 100 $ (1-\\alpha) \\% $ confidence volume is given by those vectors z that satisfy the quadratic inequality where F is the $ (1-\\alpha) $ value for an F distribution with k and n-p degrees of freedom $ (p=k(k+3)/2 $ is the total number of estimated regression coefficients) and V is an estimate of the covariance matrix for $ \\mathbf{d}_{z} $ . Values of z that satisfy [[SEE_FORMULA:30.28]] are within the confidence volume for the stationary point. See Del Castillo and Cahya (2001) and Peterson et al. (2002) for further discussion and developments. It is critical to stress that these methods all make the strong assumption that fitness residuals are normally distributed, which typically fails. We strongly favor using aster models (Chapter 29), which correctly model the fitness distribution and for which Geyer and Shaw (2010a) developed likelihood-based approaches for hypothesis testing and confidence intervals."
+      "type": "proposition",
+      "content": "Kruuk and Garant (2007) noted that the Mercer-Mercer theorem (2000) states that the magnitude of the largest eigenvalue of $ \\gamma $ is as least as great as the largest magnitude of the diagonal elements of $ \\gamma $. Thus, it is “algebraically inevitable” that at least one combination of traits will show stronger quadratic selection than any of the original traits (provided all values of $ \\gamma_{ii} \\neq 0 $). Nevertheless, the biological issue here is whether $ \\lambda_i $ is significantly greater than $ \\gamma_{ii} $ (as opposed to only being slightly larger). Reynolds et al. (2010) found higher power for detecting curvature (nonzero eigenvalues of $ \\gamma $) using canonical analysis than when testing each value of $ \\gamma_{ii} $ separately."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 30.6. Brooks and Endler (2001) examined four color traits in male guppies associated with sexual selection. The estimated $ \\gamma $ matrix was $$ \\gamma=\\begin{pmatrix}0.032&-0.016&-0.028&0.103\\\\-0.016&0.0001&0.066&-0.131\\\\-0.028&0.066&-0.022&-0.099\\\\0.103&-0.131&-0.099&0.060\\end{pmatrix} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The diagonal elements suggest evidence for weak convex selection ($ \\gamma_{44} = 0.060 $, $ \\gamma_{11} = 0.032 $) and some evidence for very weak concave selection ($ \\gamma_{33} = -0.022 $). However, the eigenvalues of $ \\gamma $ are 0.262, 0.012, -0.077, and -0.123. Of these eigenvalues, only the leading one (0.262) is significantly different from zero, with an amount of convex selection over four times that suggested from the largest $ \\gamma_{ii} $ value (0.060). The take-home message is that simply relying upon a visual inspection of the diagonal elements of $ \\gamma $ can depict a very misleading view of the nature of selection."
     }
   ]
 }

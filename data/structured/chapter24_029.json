@@ -2,27 +2,26 @@
   "id": "chapter24_029",
   "metadata": {
     "chapter": "chapter24",
-    "section": "SUMMARY: WHERE DOES ALL THIS MODELING LEAVE US?",
+    "section": "Chapter 24: Effects of Linkage",
     "subsections": [
-      "SUMMARY: WHERE DOES ALL THIS MODELING LEAVE US?"
+      "Effects of Linkage"
     ],
     "source_file": "tmp\\paddle_output\\chapter24_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
-    "formula_references": [],
+    "formula_references": [
+      "24.34",
+      "24.35"
+    ],
     "table_references": []
   },
   "blocks": [
     {
-      "type": "discussion",
-      "content": "Predicting selection response is complicated. Even in the ideal setting where the breeder's equation holds exactly, drift and segregation generate a variance in response about the expected value (Chapter 18). Thus, any specific realization of the selection response will be randomly distributed about its expected value, and hence be less predictable than suggested by the deterministic result for the expected response. Further, even when the initial parentoffspring regression is linear and homoscedastic, there is still a large number of confounding factors for even the single-generation response ([[SEE_TABLE:13.2]]). Despite these concerns, shortterm prediction of the response to artificial selection is reasonable for many traits (Chapter 18), but far less so for natural selection, in part due to uncertainty as to the target(s) of selection (Chapter 20). In contrast, the prediction of long-term response is an unobtainable goal unless one essentially knows all of the very fine (microscopic) genetic details of a trait, including the distribution of allelic effects and frequencies. As we have seen here and elsewhere (Chapters 5 and 16), selection compromises the simple breeder's equation, $ R=h^{2} S $ , prediction in two different ways. First, when some of the underlying loci harbor alleles of modest to large effect, this can generate locus-specific selection coefficients sufficiently large to significantly change allele frequencies over short time scales (Equations 5.3 and 5.21). Such changes alter the base-population heritability in ways that are not predictable from observable macroscopic features (such as the initial additive variance). Rather, the dynamics of selection response depend on very fine (microscopic) details of the trait's genetic architecture. A more subtle consequence of allele-frequency change is that it can drive a genotypic distribution away from normality by generating locus-specific skewness and kurtosis. This results in nonlinear and heteroscedastic parentoffspring regressions, and hence potential failure of the breeder's equation, even when correctly updated values of $ h^{2} $ are used."
+      "type": "derivation",
+      "content": "As might be expected, when these results are generalized to allow for arbitrary linkage (as opposed to the previous expressions, which assume unlinked loci), they become rather complex, even when we assume that there is no allele-frequency change (Turelli and Barton 1990, 1994; Bürger 2000). However, when selection is weak, we can include linkage into an approximation for the asymptotic response for a generalized infinitesimal model that makes no assumptions about the distribution of genotypic values (Turelli and Barton 1990). In particular, Turelli and Barton showed under weak selection that higher-order genotypic moments can be expressed in terms of the initial additive variance in the absence of gametic-phase disequilibrium (the genic variance, $ \\sigma_{a}^{2} $, which is assumed to be constant). Using this result, the asymptotic response to selection can be found to be approximately [[SEE_FORMULA:24.34]] where $ r_{H_2} $ and $ r_{H_3} $ are the harmonic mean recombination rates (weighted by the allelic contributions at each locus) between pairs and triplets of loci (Turelli and Barton 1990). At equilibrium, the higher-order genotypic moments are constant, as allele frequencies do not change and, with constant selection, covariances between loci approach equilibrium values. Under these conditions, the expected change in the mean following t generations of selection is just t times Equation 24.34."
     },
     {
-      "type": "discussion",
-      "content": "Dealing with the second consequence of selection, generation of linkage (or, more correctly, gametic-phase) disequilibrium, is often much more manageable than accounting for changes in allele frequencies. Indeed, in the absence of allele-frequency change, changes in LD are temporary, and decay away under random mating following the cessation of selection. Further, unless linkage is very tight or there are genes of very large effect, changes in LD occur on a much faster time scale than do allele-frequency changes. When the trait is controlled by a large number of loci, each of small effect, allele-frequency change is negligible over short time scales. However, selection-induced correlations (even among unlinked loci) change not only the genetic variance (Chapter 16), but can also generate skewness and kurtosis via the creation of third- and fourth-order disequilibrium. While these two latter effects drive a genotypic distribution away from normality, this effect is often modest and does not greatly compromise predictions of response. Further, as we saw in Chapter 16, the Bulmer equation accounts for changes in variances from disequilibrium using easily observed parameters. In the words of Turelli and Barton (1990), “Though our work shows that the distribution of breeding values for an additive polygenic character is unlikely to be precisely Gaussian, we expect that the Gaussian approximation suffices for predicting short-term selection response in all but the most extreme cases.”"
-    },
-    {
-      "type": "discussion",
-      "content": "Allele-frequency change is the more pernicious feature of selection (relative to disequilibrium), but (for short time scales) it is restricted to traits whose underlying genetic architectures harbor one or more alleles of large effect. Chapters 25 and 26 examine the long-term consequences of allele-frequency change, while the additional role of mutation when directional and stabilizing selection is occurring is examined in Chapters 26 and 28, respectively."
+      "type": "derivation",
+      "content": "Recalling Equations 24.12a and 24.12b (the fitness gradients for the mean and variance of a normally distributed trait), if phenotypes are approximately normal, the asymptotic rate of response further reduces to [[SEE_FORMULA:24.35]] where $ \\widetilde{\\sigma}_{z}^{2} $ is the equilibrium phenotypic variance and $ \\delta(\\sigma_{z}^{2}) $ is the equilibrium within-generation change in phenotypic variance due to selection. This generalizes Bulmer's results (Chapter 16), which correct the breeder's equation for changes in the variance due to pairwise disequilibrium. Equation 24.35 demonstrates that further corrections are required to account for the third- (and higher-order) disequilibrium generated by selection."
     }
   ]
 }

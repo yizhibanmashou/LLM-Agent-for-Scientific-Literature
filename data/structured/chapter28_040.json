@@ -10,10 +10,14 @@
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [],
     "table_references": [
-      "inline_2"
+      "inline_2",
+      "inline_3",
+      "inline_4"
     ],
     "table_reference_keys": [
-      "chapter28:inline_2"
+      "chapter28:inline_2",
+      "chapter28:inline_3",
+      "chapter28:inline_4"
     ]
   },
   "blocks": [
@@ -23,7 +27,7 @@
     },
     {
       "type": "discussion",
-      "content": "While Turelli's (1984) benchmark of $ V_{s} \\simeq 2 0 \\sigma_{E}^{2} $ is typically assumed, the data today are both more extensive, and more problematic, than when he extracted this value from the literature. The classic paper by Lande and Arnold (1983), which launched an entire cottage industry on the estimation of these parameters, appeared at essentially the same time as Turelli's analysis. We examine fitness estimation in detail in Chapters 29 and 30, noting here the basic conclusion that there is considerable uncertainty on the strength of natural selection on a typical trait. The relative constancy of many morphological phenotypes over evolutionary time is consistent with some form of stabilizing selection, as are the divergence data for gene-expression levels (Chapter 12). However, the strength of such selection is far less clear. The meta-analysis by Kingsolver et al. (2001) on the quadratic term, $ \\gamma $ , of a Lande-Arnold fitness regression (Figure 30.5) shows that it is equally likely to be positive (disruptive selection) or negative (stabilizing selection). Conditioning on this value being negative, the mean strength is slightly stronger than Turelli's value $ (\\sim 1 0 \\sigma_{E}^{2}) $ . If correct, these higher estimates of $ V_{s} $ are more problematic for the previous models."
+      "content": "While Turelli's (1984) benchmark of $ V_s \\simeq 20\\sigma_E^2 $ is typically assumed, the data today are both more extensive, and more problematic, than when he extracted this value from the literature. The classic paper by Lande and Arnold (1983), which launched an entire cottage industry on the estimation of these parameters, appeared at essentially the same time as Turelli's analysis. We examine fitness estimation in detail in Chapters 29 and 30, noting here the basic conclusion that there is considerable uncertainty on the strength of natural selection on a typical trait. The relative constancy of many morphological phenotypes over evolutionary time is consistent with some form of stabilizing selection, as are the divergence data for gene-expression levels (Chapter 12). However, the strength of such selection is far less clear. The meta-analysis by Kingsolver et al. (2001) on the quadratic term, $ \\gamma $, of a Lande-Arnold fitness regression (Figure 30.5) shows that it is equally likely to be positive (disruptive selection) or negative (stabilizing selection). Conditioning on this value being negative, the mean strength is slightly stronger than Turelli's value ($ \\sim 10\\sigma_E^2 $). If correct, these higher estimates of $ V_s $ are more problematic for the previous models."
     },
     {
       "type": "discussion",
@@ -31,7 +35,7 @@
     },
     {
       "type": "discussion",
-      "content": "representing only a fraction of the total fitness (e.g., Johnston et al. 2013). Second, selection acting on phenotypically correlated characters obscures not just the actual strength of selection on a target trait, but more fundamentally can also disguise its true nature. For example, a neutral trait can show a strong signal of stabilizing selection if there is selection on phenotypically correlated traits (Example 28.1). The standard approach for dealing with this concern is a multivariate regression with a number of traits, in the hope that some of them are highly correlated with the actual targets of selection, so their inclusion acts as a covariate to reduce spurious associations. However, this approach is far from foolproof (Chapter 30). As Example 28.1 highlights, what matters for evolution is not the strength of selection on the phenotype, but rather the strength of selection on the breeding value. A highly heritable trait under strong apparent stabilizing selection can experience little to no selection on its breeding value if the target of selection is not the trait itself (Chapters 20, 29, and 30)."
+      "content": "[h] representing only a fraction of the total fitness (e.g., Johnston et al. 2013). Second, selection acting on phenotypically correlated characters obscures not just the actual strength of selection on a target trait, but more fundamentally can also disguise its true nature. For example, a neutral trait can show a strong signal of stabilizing selection if there is selection on phenotypically correlated traits (Example 28.1). The standard approach for dealing with this concern is a multivariate regression with a number of traits, in the hope that some of them are highly correlated with the actual targets of selection, so their inclusion acts as a covariate to reduce spurious associations. However, this approach is far from foolproof (Chapter 30). As Example 28.1 highlights, what matters for evolution is not the strength of selection on the phenotype, but rather the strength of selection on the breeding value. A highly heritable trait under strong apparent stabilizing selection can experience little to no selection on its breeding value if the target of selection is not the trait itself (Chapters 20, 29, and 30)."
     },
     {
       "type": "discussion",
@@ -47,15 +51,31 @@
     },
     {
       "type": "discussion",
-      "content": "One advantage of this system is that the multivariate trait, call signal, can have any of its individual components artificially changed via computer software, and its impact on the measured fitness component (mate attraction) directly assessed through acoustic playback trials in natural populations (Brooks et al. 2005). Five call components were examined, whose heritabilities ranged from 17"
+      "content": "One advantage of this system is that the multivariate trait, call signal, can have any of its individual components artificially changed via computer software, and its impact on the measured fitness component (mate attraction) directly assessed through acoustic playback trials in natural populations (Brooks et al. 2005). Five call components were examined, whose heritabilities ranged from 17% to 72%. These components were also strongly genetically correlated, with values ranging from -0.65 to 0.40. Factor-analytic modeling (Hine and Blows 2006) gave strong support for three dimensions of the resulting genetic variance-covariance (G) matrix for these five traits, with the first three eigenvalues ($ \\lambda_1 $ to $ \\lambda_3 $) accounting for 90% of the total additive-genetic variation. Here we denote their associated eigenvectors by $ g_1 $, $ g_2 $, and $ g_3 $. There was also close to significant support for the fourth eigenvalue, but no support for the final (fifth) dimension, as $ \\lambda_5 $ was not significantly different from zero."
     },
     {
       "type": "discussion",
-      "content": "Using the methods of Chapter 30, the $ 5\\times 5 $ matrix, $ \\gamma $ , of quadratic selection gradients of call components on mate attractiveness was estimated (Brooks et al. 2005). The diagonal elements $ (\\gamma_{ii}) $ of $ \\gamma $ correspond to the amount of quadratic selection on call component i, with a large negative value indicating strong stabilizing selection. This can be generalized to consider the amount of quadratic selection acting on some linear combination (i.e., an index) of trait values, $ I=\\sum a_{i}z_{i}=\\mathbf{a}^{T}\\mathbf{z} $ , which is given by the quadratic product $ \\mathbf{a}^{T}\\gamma\\mathbf{a} $ (Chapter 30 and Appendix 5). As expected, this generalization recovers the univariate result when the index $ I=z_{i} $ , as $ \\mathbf{a}^{T}\\gamma\\mathbf{a}=\\gamma_{ii} $ when $ a_{i}=1 $ and all other elements of a are 0."
+      "content": "Using the methods of Chapter 30, the $ 5 \\times 5 $ matrix, $ \\gamma $, of quadratic selection gradients of call components on mate attractiveness was estimated (Brooks et al. 2005). The diagonal elements $ (\\gamma_{ii}) $ of $ \\gamma $ correspond to the amount of quadratic selection on call component i, with a large negative value indicating strong stabilizing selection. This can be generalized to consider the amount of quadratic selection acting on some linear combination (i.e., an index) of trait values, $ I = \\sum a_i z_i = a^T \\mathbf{z} $, which is given by the quadratic product $ \\mathbf{a}^T \\gamma \\mathbf{a} $ (Chapter 30 and Appendix 5). As expected, this generalization recovers the univariate result when the index $ I = z_i $, as $ \\mathbf{a}^T \\gamma \\mathbf{a} = \\gamma_{ii} $ when $ a_i = 1 $ and all other elements of $ \\mathbf{a} $ are 0."
     },
     {
       "type": "discussion",
-      "content": "Using these results, Hunt et al. examined the strength of stabilizing (negative values) or disruptive (positive values) selection on the index of trait values, $ \\mathbf{g}_{i}^{T}\\mathbf{z} $ , whose weights are given by the ith eigenvector. This corresponds to the nature of selection along the ith-largest axis of genetic variation, where the resulting strength of selection is given by $ \\mathbf{g}_{i}^{T}\\gamma\\mathbf{g}_{i}. $"
+      "content": "Using these results, Hunt et al. examined the strength of stabilizing (negative values) or disruptive (positive values) selection on the index of trait values, $ \\mathbf{g}_i^T \\mathbf{z} $, whose weights are given by the $ i $th eigenvector. This corresponds to the nature of selection along the $ i $th-largest axis of genetic variation, where the resulting strength of selection is given by $ \\mathbf{g}_i^T \\gamma \\mathbf{g}_i $. As the above table shows, there was very weak disruptive selection along the first eigenvector $ (g_1^T \\gamma g_1 = 0.005 $, which was not significantly different from zero), and increasingly strong stabilizing selection on eigenvectors 2 through 4. As the strength of stabilizing selection increased (-0.012, -0.051, -0.097), the amount of genetic variation in that direction decreased (25.6%, 12.9%, 6.9%). The eigenvector $ g_5 $ breaks this pattern, but $ \\lambda_5 $ was not significantly different from zero, and hence this direction of G could simply be residual noise (Volume 3 examines the estimation of the true dimensionality of G matrices in some detail). As summarized in the table, axes (combinations of trait values) with stronger stabilizing selection showed less genetic variation."
+    },
+    {
+      "type": "discussion",
+      "content": "Another measure of the impact of selection is the expected within-generation change in G from selection, which is given by $ \\Delta G = G \\gamma G $ (in the absence of directional selection; Volume 3). The amount of change in the additive-genetic variance of a composite trait, $ a^T z $, is $$ \\Delta\\sigma_{A}^{2}(\\mathbf{a}^{T}\\mathbf{z})=\\mathbf{a}^{T}\\Delta\\mathbf{G}\\mathbf{a}=\\mathbf{a}^{T}\\mathbf{G}\\gamma\\mathbf{G}\\mathbf{a} $$ so that the amount of change in the genetic variance along the direction given by eigenvector $i$ becomes $\\Delta\\sigma_A^2(\\mathbf{g}_i) = \\mathbf{g}_i^T \\Delta\\mathbf{G}\\mathbf{g}_i = \\mathbf{g}_i^T \\mathbf{G} \\gamma \\mathbf{G}\\mathbf{g}_i$. The resulting absolute and percentage change in the genetic variance along each of the eigenvalues were as follows: The expected change in the additive-genetic variance along the directions given by eigenvectors 2, 3, and 4 are $ -8% $, $ -11% $, and $ -13% $, respectively. Axes (trait combinations) with the strongest amounts of stabilizing selection are expected to show the fastest erosion of additive variation, and this is the pattern seen in the above table."
+    },
+    {
+      "type": "discussion",
+      "content": "For the five call components considered here, when considered one trait at a time (but still correcting for the fitness correlation among traits), the heritabilities and strengths of selection on the individual traits were"
+    },
+    {
+      "type": "discussion",
+      "content": "While the previous pattern of lower heritabilities for traits under stronger selection still holds, note that stabilizing selection along the direction given by the eigenvectors of G (i.e., on an index of trait values in this direction) is stronger than selection on any given trait (compare the magnitudes of $ \\gamma_{ii} $ with those for $ \\mathbf{g}_i^T \\gamma \\mathbf{g}_i $). If the strength of stabilizing selection was estimated in a truly univariate fashion (computing $ \\gamma_{ii} $ ignoring the other four call components), estimates of the strength of quadratic selection would be even more untrustworthy given the strong correlations among these traits."
+    },
+    {
+      "type": "discussion",
+      "content": "The message here is that a full multivariate analysis gives a much more accurate picture than a series of univariate analyses focusing on single traits, which can be very misleading (Blows and Walsh 2009; Walsh and Blows 2009; Volume 3). Assessment of the success of a model for the maintenance of variation has typically been applied to one trait at a time, by attempting to reconcile the observed values of $ V_s $ ($ \\simeq -1/\\gamma_{ii} $; Equation 28.3i) with their corresponding $ h_i^2 $ values. As this example shows, a more accurate comparison is to examine the additive-genetic variance for the composite traits, $ y_i = \\mathbf{g}_i^T \\mathbf{z} $, based on the eigenvalues of $ \\mathbf{G} $, and their corresponding multivariate measure of stabilizing selection, $ \\mathbf{g}_i^T \\gamma \\mathbf{g}_i $."
     }
   ]
 }

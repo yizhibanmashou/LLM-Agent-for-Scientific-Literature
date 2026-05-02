@@ -13,12 +13,7 @@
       "12.8b",
       "12.8c",
       "12.8d",
-      "12.8e",
-      "12.9a",
-      "12.9b",
-      "12.9c",
-      "12.9d",
-      "12.9e"
+      "12.8e"
     ],
     "table_references": []
   },
@@ -29,31 +24,7 @@
     },
     {
       "type": "derivation",
-      "content": "These expressions for $ V_B $ overestimate the true among-line variance $ \\sigma_B^2 $, as the sample means are measured with error. In particular, $ \\overline{z}_i = \\mu_i + e_i $, so that [[SEE_FORMULA:12.8d]] where $ \\sigma_z^2 $ is the trait variance and $ n $ is the sample sized used to estimate $ \\mu_i $. When $ \\sigma_B^2 = 2f_t\\sigma_A^2 \\gg \\sigma_z^2/n $ (which is equivalent to $ 2f_t h^2 1/n $), the difference between $ \\sigma^2(\\overline{z}_i) $ and $ \\sigma_B^2 $ is small. As suggested by a number of authors (Lynch 1988a, 1990; Turelli et al. 1988; Bjöklund 1991; Savalli 1993), a simple way to avoid this issue is to estimate the among-group variance from a standard one-way ANOVA, with [[SEE_FORMULA:12.8e]] using the among- and within-group mean squares $ (MS_{B} $ and $ MS_{W} $, respectively), with $ n_{0} $ being a measure of the average sample size per group (see LW [[SEE_TABLE:18.1]])."
-    },
-    {
-      "type": "derivation",
-      "content": "Lande's Constant Variance Test, $ F_ CV $ Is an observed divergence over a modest amount of time significantly different than that expected by drift? For the case in which one has only a single estimate of the among-population divergence, Lande (1977b) suggested the statistic [[SEE_FORMULA:12.9a]] as a test for neutrality, where $ V_A(0) $ is an estimate of the base-population additive variance, and $ t $ is the number of generations of divergence among the replications. This is the $ $ $ $ version of $ $ test, as it assumes that the additive variance remains unchanged over the time period being followed (Turelli et al. 1988). As noted by $ $, under approximate assumptions, his test statistic $ F_ CV $ follows an $ F $ distribution (LW Appendix 5), which can be shown as follows. If we assume the trait is normally distributed, then so is the sample mean $ _i N[(0), _B^2(t)] $, where we have assumed that terms associated with the sampling variance of the mean are small enough to be ignored (i.e., $ _B^2 _z^2/n $). With $ L $ independent lines drawn from a common population at the same time (i.e., a star phylogeny), Equation 12.5a yields [[SEE_FORMULA:12.9b]]"
-    },
-    {
-      "type": "derivation",
-      "content": "If we ignore the (usually) small founder effect, Equation 12.1b returns [[SEE_FORMULA:12.9c]] and hence [[SEE_FORMULA:12.9d]]"
-    },
-    {
-      "type": "derivation",
-      "content": "Assuming that $ _ A (0) $ is a good estimate of $ _ A ^ 2 (0) $, substitution of Equation 12.9d into Equation 12.9a yields [[SEE_FORMULA:12.9e]]"
-    },
-    {
-      "type": "definition",
-      "content": "The last step follows from the definition of an F distribution (LW Appendix 5). Hence, Lande's $ F_{CV} $ statistic follows an F distribution with L-1 numerator and infinite denominator degrees of freedom. More generally, because $ \\sigma_{A}^{2}(0) $ is estimated by $ \\operatorname{V a r}_{A}(0) $ , the denominator degrees of freedom are those associated with this estimate (e.g., $ F_{CV}\\sim F_{L-1,df} $ where df is the degrees of freedom associated with the estimate of $ \\sigma_{A}^{2}[0] $ ). As noted in the previous section, Lande's original test statistic can be improved by using Equation 12.8e to estimate $ V_{B}(t) $"
-    },
-    {
-      "type": "discussion",
-      "content": "A couple of approximations were required to reach Equation 12.9e. One check of their validity is that if the distribution of some summary statistic $ x $ is given by a scaled- $ ^2 $, with $ x ^2 _n^2 / n $, then the variance of $ x $ should equal $ 2 ^2 / n $ (as $ ^2(_n^2) = 2n $; LW Equation A5.15b). Hence, the numerator of Equation 12.9a should have a variance approximately equal to $ 2[2ft _A^2(0)]^2 / (L - 1) $. Ignoring the added contribution from sampling error, note that this last result matches Equation 12.3 when $ N_ fo $ is large and $ _f^2(t) $ is small. Thus, Lande's approach should be restricted to lines with at least moderate effective population size. Moreover, as we will see below, all of the preceding formulae for $ _B^2 $ become questionable for $ t > N_e $ because they ignore the contribution from new mutations. Hence, Lande's $ F_ CV $ test is best thought of as one for short-term divergence, such as would be seen in a laboratory experiment or, at most, a modest amount of time in a set of natural populations. $$ F_{CV,1}=\\frac{6.62}{150\\cdot0.88/1000}=50.15,\\quad and\\quad F_{CV,2}=\\frac{4.37}{150\\cdot0.77/1000}=37.84 $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Given that $ \\operatorname* {P r} ( F_{4, \\infty} > 4. 6)=0. 0 0 1 $ , both values are highly significant. Thus, the hypothesis that the observed line divergence is solely attributable to random genetic drift can be rejected confidently. More likely, the different thermal conditions resulted in selection for different wing lengths."
+      "content": "These expressions for $ V_B $ overestimate the true among-line variance $ \\sigma_B^2 $, as the sample means are measured with error. In particular, $ \\overline{z}_i = \\mu_i + e_i $, so that [[SEE_FORMULA:12.8d]] where $ \\sigma_z^2 $ is the trait variance and $ n $ is the sample sized used to estimate $ \\mu_i $. When $ \\sigma_B^2 = 2f_t\\sigma_A^2 \\gg \\sigma_z^2/n $ (which is equivalent to $ 2f_t h^2 \\gg 1/n $), the difference between $ \\sigma^2(\\overline{z}_i) $ and $ \\sigma_B^2 $ is small. As suggested by a number of authors (Lynch 1988a, 1990; Turelli et al. 1988; Bjöklund 1991; Savalli 1993), a simple way to avoid this issue is to estimate the among-group variance from a standard one-way ANOVA, with [[SEE_FORMULA:12.8e]] using the among- and within-group mean squares $ (MS_{B} $ and $ MS_{W} $, respectively), with $ n_{0} $ being a measure of the average sample size per group (see LW [[SEE_TABLE:18.1]])."
     }
   ]
 }

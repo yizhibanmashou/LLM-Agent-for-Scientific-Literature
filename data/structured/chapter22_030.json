@@ -2,42 +2,38 @@
   "id": "chapter22_030",
   "metadata": {
     "chapter": "chapter22",
-    "section": "Chapter 22: Details: Identifiability of Variance Components",
+    "section": "Chapter 22: BLUP ESTIMATION OF DIRECT AND ASSOCIATIVE EFFECTS",
     "subsections": [
-      "Details: Identifiability of Variance Components"
+      "Details: Ignoring Additive Social Values Introduces Bias"
     ],
     "source_file": "tmp\\paddle_output\\chapter22_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [
-      "22.44a",
-      "22.44b",
-      "22.45a",
-      "22.45b",
-      "22.46a",
-      "22.46b"
+      "22.42",
+      "22.43"
     ],
     "table_references": []
   },
   "blocks": [
     {
-      "type": "discussion",
-      "content": "Due to potential confounding of effects, any particular design might not allow for all variables of interest to be uniquely estimated. For the vector $ \\beta $ of fixed effects, the uniqueness of an estimated variable is indicated the concept of estimability (LW Chapter 26). For $ \\mathbf{z}\\sim(\\mathbf{X}\\beta,\\mathbf{V}) $ , the vector of fixed effects is estimable ( $ \\beta $ has a unique value) if $ (\\mathbf{X}^{T}\\mathbf{V}^{-1}\\mathbf{X})^{-1} $ exists. Otherwise, some of the fixed effects are confounded and cannot be separated by the design (X) being used. A similar concept, identifiability, exists for random effects and is based on whether variance components (often called the dispersal parameters) can be uniquely estimated. If variance components are not identifiable in the design, then BLUPs for their associated vectors of random effects do not exist, and the model will fail."
+      "type": "derivation",
+      "content": "Before models directly accounting for social effects were developed, it was not unusual to add a fixed or random group effect to the standard animal model to account for common environments due to individuals being raised in the same pen, cage, or group. For example, if group effects are random, the corresponding animal model becomes [[SEE_FORMULA:22.42]] where we (initially) assume $ \\sigma(\\mathbf{g}_p) = \\sigma^2(g_p)\\mathbf{I} $. In this model, a would be the estimated vector of (direct) breeding values. As detailed above, $ \\mathbf{g}_p $ can often account for any shared environmental social values (i.e., $ E_s $). However, if heritable associative effects are present, simply adding a group effect is insufficient, as it results in overestimation of $ \\sigma^2(g_p) $ and often an overestimation of the (direct) additive variance (Example 22.12). Hence, an analysis that simply includes a group effect (but no $ \\mathbf{a}_s $ vector) results in biased estimates of the direct breeding values when heritable associative effects are present."
     },
     {
       "type": "discussion",
-      "content": "The lack of identifiability has been a problem in some attempts to estimate associative effects, with lack of convergence of REML estimates, convergence to multiple peaks in the likelihood surface (depending on starting conditions), and very flat likelihood surfaces all being seen (Arango et al. 2005; Van Vleck et al. 2007; Chen et al. 2008). Cantet and Cappa (2008) formally showed that using a fixed group effect results in a lack of identifiability when the design matrix, $ Z_{g} $ contains equal weights for all group members. Thus, treating group effects as fixed is not recommended, while treating them as random can often account for environmental correlations (as discussed above). Another common reason for lack of identifiability is the composition of the group. If all group members are from a single half-sib or full-sib family, the covariance of group members equals the covariance among family members within a group, confounding variance components and leading to a lack of identifiability (Cheng et al. 2009). Bijma et al. (2007b) noted that this problem plagued one of the early attempts to estimate social variance components (Wolf 2003). The important caveat is that lack of identifiability can easily arise in attempts to estimate social effects even when using seemingly innocent designs (such as a fixed group effect or having each group be a single family). One key is that family members must be spread over at least two groups, and each group should contain at least two different families. This avoids confounding within groups and allows $ A_{s} $ to be estimated by borrowing information (via relatives) across groups."
+      "content": "Van Vleck and Cassady (2005) showed how the presence of additive associative effects inflates the estimate of group variance. Consider two members in the same group (with a common group effect, $ g_{p} $), $$ z_{1}=A_{d_{1}}+A_{s_{2}}+\\sum_{k=3}^{n}A_{s_{k}}+g_{p}+e_{1} $$ $$ z_{2}=A_{d_{2}}+A_{s_{1}}+\\sum_{k=3}^{n}A_{s_{k}}+g_{p}+e_{2} $$"
     },
     {
       "type": "derivation",
-      "content": "Conditions for identifiability of REML estimates of (co)variance components were given by Rothenberg (1971), Jiang (1996), and Cantet and Cappa (2008). Before presenting these conditions, we first review a few details about REML. Recall (LW Chapter 27) that REML estimates are those that maximize that part of the likelihood function independent of the fixed effects (this is often stated as being the translation invariant part of the likelihood). Let V be the covariance matrix of z, which is a function of its variance components. As detailed in LW Chapter 27, Harville (1977) showed that (if it exists) the transformation provided by the matrix [[SEE_FORMULA:22.44a]] plays a critical role in REML estimates. (To be consistent with the literature, we use P for this transformation matrix, despite our previous use of P to indicate the phenotype variance-covariance matrix. The distinction between these two usages should be obvious given the context of the issue being discussed.) That the matrix given by Equation 22.44a can remove fixed effects can be seen by recalling that (under GLS), $ = (^ T ^ -1)^ -1 ^ T ^ -1 $, and hence Equation 22.44a implies that [[SEE_FORMULA:22.44b]] where the vector Pz is a function of the data z adjusted by the estimated fixed effects, $ $ (i.e., centered to have a mean of zero). Now consider covariance structures of the form [[SEE_FORMULA:22.45a]] where $ V_i $ is a matrix of known constants and the $ _i $ are unknown variances and covariances to be estimated. This is the structure for all of the V matrices presented in this chapter. The equations to maximize the likelihood over the restricted space (the REML estimates) are given by LW Equations 27.18 and 27.19, and are solved iteratively. These equations involve the trace (the sum of the diagonal elements) of matrix products involving P and the $ V_i $. Recall (LW Appendix 4) that for a vector $ $ of n unknowns, the Fisher information matrix, F (the matrix of second partial derivatives of the likelihood with respect to the parameters), can be used to provide large-sample standard errors. The resulting $ n n $ information matrix for REML estimates of the unknown $ _i $ in Equation 22.45a has as its $ i $th element [[SEE_FORMULA:22.45b]]"
-    },
-    {
-      "type": "derivation",
-      "content": "Much in the same fashion that the existence of $ ^T ^ -1)^ -1 $ informs us that all fixed effects are estimable in a given design, all variance components, $ _i $, are identifiable if all of the eigenvalues of the matrix $ $ are positive, that is if $ $ is positive-definite (Rothenberg 1971; Jiang 1996). For the simplest associative-effects mixed model (Equation 22.38c), Equation 22.45a becomes [[SEE_FORMULA:22.46a]] where [[SEE_FORMULA:22.46b]]"
+      "content": "Using the standard ANOVA identity that the covariance within a group equals the variance among groups (LW Chapter 18), for unrelated individuals, $ \\sigma^{2}(g_{p}) $, is estimated from the within-group covariance, which reduces to [[SEE_FORMULA:22.43]]"
     },
     {
       "type": "discussion",
-      "content": "Substituting Equations 22.44a and 22.46b into Equation 22.45b fills out the F matrix (which is only $ 4\\times 4 $ in this case, given the four unknown variance components). For any particular design (the values of A, $ \\mathbf{Z}_{d} $ , and $ \\mathbf{Z}_{s} $ ), the eigenvalues of this matrix can be computed to determine if the variance components are all identifiable. Cheng et al. (2009) used this approach to show that two of the eigenvalues of their information matrix were zero for a design where groups consist entirely of single full-sib families, showing the lack of identifiability in such settings."
+      "content": "If the residuals are uncorrelated, the bias in the within-group covariance-based estimate of $ \\sigma^2(g_p) $ is $ 2\\sigma(A_d, A_s) + (n - 2)\\sigma^2(A_s) $, which can be considerable. Hence, when additive (i.e., heritable) associative effects are present, the simple model given by Equation 22.42 is inappropriate. This model, however, can be useful in a preliminary analysis. Van Vleck and Cassady suggested that obtaining a large estimated group variance when using Equation"
+    },
+    {
+      "type": "discussion",
+      "content": "22.42 indicates that a more detailed model including additive associative effects should be fit to the data. Hence, one approach is to do a quick fit to Equation 22.42. If the group variance is sufficiently small, it is unlikely that additive associative effects are present. However, this approach is not always foolproof. Inspection of Equation 22.43 shows that a sufficiently negative covariance between direct and social breeding values may result in a small estimated group variance."
     }
   ]
 }

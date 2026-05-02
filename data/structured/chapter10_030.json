@@ -28,23 +28,23 @@
     },
     {
       "type": "discussion",
-      "content": "The $ 6 1 \\times6 1 $ Q matrix is specified by Equation 10.18. The $ \\pi_{j} $ are the equilibrium frequencies of codon j (often calculated from the nucleotide frequencies at the three codon positions), while $ \\kappa $ and $ \\omega $ are estimated parameters intended to account for biases in codon changes. Potential differences in transition versus transversion rates are accounted for by $ \\kappa $ . One takes the currently observed codons over the phylogeny, and then runs the model backward in time by considering all possible ancestral codons at each of the internal nodes (ancestors) in the tree. The model thus corrects for multiple hits. The key parameter of interest is $ \\omega $ , the strength of selection on replacement substitutions. In the early models using"
+      "content": "The $ 61 \\times 61 $ Q matrix is specified by Equation 10.18. The $ \\pi_j $ are the equilibrium frequencies of codon $ j $ (often calculated from the nucleotide frequencies at the three codon positions), while $ \\kappa $ and $ \\omega $ are estimated parameters intended to account for biases in codon changes. Potential differences in transition versus transversion rates are accounted for by $ \\kappa $. One takes the currently observed codons over the phylogeny, and then runs the model backward in time by considering all possible ancestral codons at each of the internal nodes (ancestors) in the tree. The model thus corrects for multiple hits. The key parameter of interest is $ \\omega $, the strength of selection on replacement substitutions. In the early models using"
     },
     {
       "type": "discussion",
-      "content": "this approach, $ \\omega $ was a fixed constant over all genes, but later models allowed $ \\omega $ to vary over sites (nicely paralleling the development of extensions of the Poisson random field model to allow $ \\gamma $ to vary over genes/alleles), a point upon which we will expand shortly. Figure 10.4 shows the basic structure of these various state changes for a particular codon. The mutational structure in Equation 10.18 (where mutation rates are functions of $ \\kappa $ and $ \\pi_{j} $ ) is known in the molecular evolution literature as the Hasegawa-Kishino-Yano, or HKY, model (Hasegawa et al. 1985)."
+      "content": "[h] this approach, $ \\omega $ was a fixed constant over all genes, but later models allowed $ \\omega $ to vary over sites (nicely paralleling the development of extensions of the Poisson random field model to allow $ \\gamma $ to vary over genes/alleles), a point upon which we will expand shortly. Figure 10.4 shows the basic structure of these various state changes for a particular codon. The mutational structure in Equation 10.18 (where mutation rates are functions of $ \\kappa $ and $ \\pi_j $) is known in the molecular evolution literature as the Hasegawa-Kishino-Yano, or HKY, model (Hasegawa et al. 1985)."
     },
     {
       "type": "derivation",
-      "content": "Tests for directional selection on a gene are accomplished by using this codon model superimposed on the phylogenetic tree to run the likelihood calculation (over all codons) to find the ML solutions for the Q matrix parameters. This allows for a direct test that $ > 1 $ using the likelihood-ratio approach (LW Appendix 4). The key to these likelihood calculations is that $ (t) $, the codon state matrix at time t, is related to the instantaneous rate matrix, Q, by [[SEE_FORMULA:10.19]]"
+      "content": "Tests for directional selection on a gene are accomplished by using this codon model superimposed on the phylogenetic tree to run the likelihood calculation (over all codons) to find the ML solutions for the Q matrix parameters. This allows for a direct test that $ \\omega > 1 $ using the likelihood-ratio approach (LW Appendix 4). The key to these likelihood calculations is that $ \\mathbf{P}(t) $, the codon state matrix at time t, is related to the instantaneous rate matrix, Q, by [[SEE_FORMULA:10.19]]"
     },
     {
       "type": "derivation",
-      "content": "The corresponding elements of the $ 61 61 $ matrix P are [[SEE_FORMULA:10.20]]"
+      "content": "The corresponding elements of the $ 61 \\times 61 $ matrix P are [[SEE_FORMULA:10.20]]"
     },
     {
       "type": "derivation",
-      "content": "The matrix exponential, $ (t) $, is computed by diagonalizing the Q matrix by writing $ \\mathbf{Q} = U\\Lambda\\mathbf{U}^{T} $, where A is a diagonal matrix, whose ith diagonal element is the eigenvalue $ \\lambda_{i} $ of Q (Equation A5.10a), and U is a matrix of the eigenvectors of Q (Equation A5.10c). With this transformation, Equation 10.19 now becomes $$ \\exp(\\mathbf{Q}t)=\\mathbf{U}\\exp(t\\boldsymbol{\\Lambda})\\mathbf{U}^{T} $$ where [[SEE_FORMULA:10.21]]"
+      "content": "The matrix exponential, $ \\exp(\\mathbf{Q}t) $, is computed by diagonalizing the Q matrix by writing $ \\mathbf{Q} = U\\Lambda\\mathbf{U}^{T} $, where A is a diagonal matrix, whose ith diagonal element is the eigenvalue $ \\lambda_{i} $ of Q (Equation A5.10a), and U is a matrix of the eigenvectors of Q (Equation A5.10c). With this transformation, Equation 10.19 now becomes $$ \\exp(\\mathbf{Q}t)=\\mathbf{U}\\exp(t\\boldsymbol{\\Lambda})\\mathbf{U}^{T} $$ where [[SEE_FORMULA:10.21]]"
     },
     {
       "type": "discussion",
@@ -52,7 +52,7 @@
     },
     {
       "type": "discussion",
-      "content": "13), adding additional factors (i.e., $ 1 $, etc.) if they improve the model fit (i.e., give a significantly better likelihood ratio). Evidence for positive selection on a gene is indicated if the likelihood-ratio test for $ > 1 $ is significant."
+      "content": "13), adding additional factors (i.e., $ \\kappa \\neq 1 $, etc.) if they improve the model fit (i.e., give a significantly better likelihood ratio). Evidence for positive selection on a gene is indicated if the likelihood-ratio test for $ \\omega > 1 $ is significant."
     },
     {
       "type": "derivation",

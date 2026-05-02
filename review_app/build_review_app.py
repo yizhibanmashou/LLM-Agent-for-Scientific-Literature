@@ -1971,6 +1971,11 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         default="",
         help="Refresh only tmp locator artifacts for comma-separated chapters, reusing generated review_dataset.json.",
     )
+    parser.add_argument(
+        "--skip-locator",
+        action="store_true",
+        help="Refresh generated review datasets without rebuilding the slower PDF locator index.",
+    )
     return parser.parse_args(argv)
 
 
@@ -2171,18 +2176,24 @@ def main(argv: list[str] | None = None) -> None:
     formula_ocr_index, ocr_coverage = build_formula_ocr_index(config)
     review_dataset = build_review_dataset(config, ocr_coverage=ocr_coverage)
     flow_graph = build_flow_graph(config)
-    review_locator_index = build_review_locator_index(review_dataset, formula_ocr_index)
+    review_locator_index = (
+        load_json(REVIEW_LOCATOR_INDEX_PATH)
+        if args.skip_locator and REVIEW_LOCATOR_INDEX_PATH.exists()
+        else build_review_locator_index(review_dataset, formula_ocr_index)
+    )
     chunk_line_index = build_chunk_line_index(CHUNK_LINE_POC_CHAPTERS)
 
     write_json(REVIEW_DATASET_PATH, review_dataset)
     write_json(FLOW_GRAPH_PATH, flow_graph)
     write_json(FORMULA_OCR_INDEX_PATH, formula_ocr_index)
-    write_json(REVIEW_LOCATOR_INDEX_PATH, review_locator_index)
+    if not args.skip_locator:
+        write_json(REVIEW_LOCATOR_INDEX_PATH, review_locator_index)
     write_json(CHUNK_LINE_INDEX_PATH, chunk_line_index)
     write_json(
         BUILD_TRACE_PATH,
         {
             "generated_at": datetime.now().isoformat(timespec="seconds"),
+            "review_locator_skipped": bool(args.skip_locator),
             "chapter_count": len(review_dataset.get("chapters", [])),
             "chapters_without_pdf": [
                 chapter.get("id")
@@ -2222,7 +2233,10 @@ def main(argv: list[str] | None = None) -> None:
     print(f"  {REVIEW_DATASET_PATH}")
     print(f"  {FLOW_GRAPH_PATH}")
     print(f"  {FORMULA_OCR_INDEX_PATH}")
-    print(f"  {REVIEW_LOCATOR_INDEX_PATH}")
+    if args.skip_locator:
+        print(f"  {REVIEW_LOCATOR_INDEX_PATH} (reused; locator rebuild skipped)")
+    else:
+        print(f"  {REVIEW_LOCATOR_INDEX_PATH}")
     print(f"  {CHUNK_LINE_INDEX_PATH}")
     print(f"  {BUILD_TRACE_PATH}")
 

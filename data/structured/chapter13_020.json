@@ -4,25 +4,29 @@
     "chapter": "chapter13",
     "section": "Chapter 13: Response With Two Traits",
     "subsections": [
-      "Accounting for Phenotypic Correlations: The Selection Gradient"
+      "Response With Two Traits"
     ],
     "source_file": "tmp\\paddle_output\\chapter13_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [
-      "13.25a",
-      "13.25b",
-      "13.25c"
+      "13.24a",
+      "13.24b",
+      "13.24c"
     ],
     "table_references": []
   },
   "blocks": [
     {
       "type": "derivation",
-      "content": "Recall from Equation 13.8b that the univariate directional selection gradient, $ = S/ _z^2 $, is the slope of the linear regression of relative fitness, $ w $, as a function of the phenotypic value, $ z $, of the trait (Equation 13.8a). The multivariate extension is given by [[SEE_FORMULA:13.25a]] where the vector $ = (_1,, _n)^T $ contains the coefficients for the multiple linear regression [[SEE_FORMULA:13.25b]] of relative fitness, w, on the vector, z, of trait values (LW Equation 8.10c). The interpretation of $ _i $ is that it represents the change in relative fitness given a one unit change in trait i while holding all other trait values constant. In other words, $ _i $ measures the amount of direct selection on trait i, removing any indirect effects from selection on phenotypically correlated traits included in the analysis, i.e., all traits in the vector z (Chapter 30). Because $ = P^ -1 S $, then $ = $, resulting in an observed selection differential of [[SEE_FORMULA:13.25c]]"
+      "content": "One expects that selection is always acting on more than a single trait, as even with strong artificial selection on a single character, natural selection is likely operating on other traits as well. What risks do we run by ignoring this expectation and treating selection as a univariate problem? While this is examined much more fully in Volume 3, we can gain significant insight by considering the simple case of two traits, both of which are potentially under selection. Equation 13.23b gives the expected vector of responses as [[SEE_FORMULA:13.24a]]"
     },
     {
-      "type": "discussion",
-      "content": "The within-generation change, $ S_{i} $ , in the mean of trait i following selection thus consists of an effect from direct selection on that trait $ (P_{ii}\\beta_{i}) $ plus the effects of selection on all other phenotypically correlated traits $ (P_{ij}\\beta_{j}\\neq0) $ . Hence, the sign of $ S_{i} $ tells us nothing about the sign of $ \\beta_{i} $ (the amount of direct selection on that trait), as correlated selection $ (P_{ij}\\beta_{j} $ terms) can easily overpower the direct effect. The selection gradient, $ \\beta $ , presents the correct picture of which traits are under selection, provided there are no additional traits under direct selection that are phenotypically correlated with our focal vector, z, of traits (Chapter 30)."
+      "type": "derivation",
+      "content": "Using LW Equation 8.11 to compute the inverse of P, and, recalling for a covariance that $ P_{12} = \\rho_{z} \\sqrt{P_{11} P_{22}} $, where $ \\rho_{z} $ is the phenotypic correlation between the two traits, yields [[SEE_FORMULA:13.24b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Substituting into Equation 13.24a and recalling that $ h_{i}^{2} = G_{ii} / P_{ii} $, the response in trait one becomes [[SEE_FORMULA:13.24c]] with an analogous expression for $ R_{2} $. The breeder's equation is recovered only when trait one is phenotypically $ (P_{12} = \\rho_{z} = 0) $ and genetically $ (G_{12} = 0) $ uncorrelated with trait two. As we now demonstrate, this complicated expression masks the rather different roles played by phenotypic and genetic correlations, impacting (respectively) the within- and between-generation changes. Volume 3 examines these points in some detail."
     }
   ]
 }

@@ -2,44 +2,35 @@
   "id": "chapter9_039",
   "metadata": {
     "chapter": "chapter9",
-    "section": "Chapter 9: Zeng et al.'s E Test",
+    "section": "Chapter 9: Fay and Wu's H Test",
     "subsections": [
-      "Adjusting the Null to Account for Nonequilibrium Populations"
+      "Fay and Wu's H Test"
     ],
     "source_file": "tmp\\paddle_output\\chapter9_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [
-      "9.1"
+    "formula_references": [
+      "9.27a",
+      "9.27b",
+      "9.27c"
     ],
-    "table_reference_keys": [
-      "chapter9:9.1"
-    ]
+    "table_references": []
   },
   "blocks": [
     {
-      "type": "discussion",
-      "content": "The site-frequency tests summarized in [[SEE_TABLE:9.1]] critically depend on the Watterson distribution as the null model, as do the entire family of $ \\theta $ estimators given by Equation 9.23. As such, they are especially susceptible to false positives when samples come from a population not satisfying the underlying assumptions (a panmictic population in mutation-drift equilibrium). Four strategies have been proposed to address this concern. The first three"
+      "type": "derivation",
+      "content": "The first test to use the full power of the unfolded frequency spectrum was proposed by Fay and Wu (2000), who noted that a hard sweep results in an excess of sites with high-frequency derived alleles (Figure 8.5). Although the signature is rather fleeting (Figure 9.4), this excess forms the basis for their $ H $ test. Their idea is to disproportionately weight sites containing derived alleles at high frequencies, and they chose to do so using the weights $ c_i = i^2 $. From Equation 9.23b, these weights imply $ h(n) = n(n - 1)/2 $, and Equation 9.23c yields [[SEE_FORMULA:9.27a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "The H test is the scaled difference between Fay and Wu's estimator for $ \\theta $ and that based on average pairwise differences, [[SEE_FORMULA:9.27b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Zeng et al. (2006) obtain the sampling variance as [[SEE_FORMULA:9.27c]] As above, Equation 9.21b is used for $ \\theta $ and $ \\theta^{2} $ when computing Equation 9.27c. Because II is a measure of the intermediate-frequency sites, H is a contrast between high- and intermediate-frequency variation, with a negative H indicating an excess of sites with a high frequency of derived alleles. Jointly negative (and significant) values of D and H are consistent with a selective sweep, indicating both an excess of rare alleles and an excess of high-frequency derived alleles. One caution when applying the H test is its extreme sensitivity to polarity errors (Baudry and Depaulis 2003)."
     },
     {
       "type": "discussion",
-      "content": "[h]"
-    },
-    {
-      "type": "discussion",
-      "content": "are standard approaches to refine the null to better suit the sampled population: (i) using the empirical distribution of test statistics from a set of genes in the sample (the outlier approach), (ii) using coalescent simulations with marker-based estimates of demographic parameters, and (iii) using the empirical site-frequency spectrum at reference locations as the null. The final strategy, support via a preponderance of evidence, considers the joint signatures from a number of different tests and will be discussed separately. While approaches attempting to account for nonequilibrium populations offer improvements over tests based on the standard (i.e., equilibrium) neutral model, they still do not guarantee that significant signatures represent true regions influenced by positive selection. Because of this, the current operational use for many of these tests (such as Tajima's D) are as convenient summary statistics for features in a region of interest, such as whether there is an excess of rare alleles."
-    },
-    {
-      "type": "discussion",
-      "content": "The first approach assumes that the empirical distribution of a test statistic over a large number of genes sampled from the target population can provide useful information. Under the equilibrium neutral model, the test statistics reviewed in [[SEE_TABLE:9.1]] should have a mean of zero, while the empirical distribution shows whether the tests trend away from this expectation in the target population. Figure 9.5 gives examples of the empirical distribution of D for 201 genes in two different human populations. For African-Americans, the mean D is negative, while it is positive for European-Americans. A gene whose negative D value is significant under the equilibrium neutral model is likely to be even more significant in this European-American population (given this population's trend toward a positive D), but is problematic in this sample of African-Americans (given that random tests in this group trend toward a negative D). While the mean of this distribution can be informative, one cannot simply use it to adjust test statistics for individual genes. This is because departures from the standard neutral model often inflate the variance of test statistics (Nielsen 2001). Thus, even when the mean of the empirical distribution is zero, the variance under the standard model may be too narrow, and hence significance can be overstated. Finally, the empirical distribution is largely shaped by common demographic features that influence all genes. Allelic surfing of neutral alleles does not leave a constant genome-wide signature, and sites experiencing surfing can easily create outliers, mimicking signatures of selection."
-    },
-    {
-      "type": "discussion",
-      "content": "The second approach to account for a nonequilibrium population is to use genomic data to infer demographic parameters (such as the size and duration of any past bottleneck), which are then used as the basis for coalescent simulations (Chapter 2). This generates a more appropriate null distribution of the test statistic for the target population (e.g., Figure 9.5). An example of this approach was provided by Schaffner et al. (2005), who used human data to find the best-fitting model over a rather rich parameter space, including population structure, bottleneck times, and variation in recombination rates. Tenaillon et al. (2004) performed a similar analysis on the bottleneck during the formation of maize from teosinte. With estimated demographic parameters in hand, coalescent simulation programs such as MSMS (Ewing and Hermisson 2010), GENOME (Liang et al. 2007), cosi (Schaffner et al. 2005), or MS (Hudson 2002) can be used. Again, this approach only corrects for demographic features that leave a common signal over the entire genome, implying that sites experiencing allelic surfing can still generate false signals of selection even after this correction. As recently summarized by Li et al. (2012), the joint estimation of both demographic and selection parameters is still somewhat problematic."
-    },
-    {
-      "type": "discussion",
-      "content": "The final approach is to use the empirical site-frequency spectrum vector, p, from a reference set—as opposed to the Watterson distribution—as the null (Nielsen et al. 2005b, 2009). Here $ p_{i} $ is the fraction of sites in the reference set with i copies of the allele (derived or minor, for the unfolded and folded spectra, respectively). A standard goodness-of-fit test (such as the G-test; LW Appendix 2) is then used to assess whether the spectrum $ n_{1},\\dots n_{n-1} $ in a candidate region is consistent with the multinominal probabilities given by p. One can also compare different parts of the spectrum, such as searching for an excess of low-frequency alleles, or high-frequency derived alleles, relative to this standard. Nielsen et al. (2009) used this approach for their MWU-low and MWU-high tests, respectively, where MWU stands for the Mann-Whitney U test (a common nonparametric test for comparing two groups, e.g., Conover 1999). One major reservation with these nonparametric approaches is the choice of the reference set of sites for the neutral background spectrum. Even if these site are neutral, local effects such as differences in the mutation rates (and hence in $ \\theta $ ) and the background recombination rates that influence the levels of standing variation (Chapter 8) can result in the target sites (even if strictly neutral) differing from the distribution at reference sites. If one assumes background selection as the appropriate null, the sites used in constructing p should (at a minimum) come from genomic regions with very similar values of gene density to recombination rates as the tested region."
+      "content": "Przeworski (2002) showed that both the D and H tests have moderate power immediately after a sweep but the power of the H test rapidly dissipates (within $ \\sim0.2N_e $ generations) as the high-frequency alleles become fixed (Figure 9.4). The D test retains power a bit longer ($ \\sim0.5N_e $ generations), as it is sensitive to the generation of rare alleles by new mutations immediately after the sweep. As a result of using different signatures in the SFS, one can easily encounter situations where, following a sweep, one test is highly significant while the other is not. Even for a strong hard sweep, neither D nor H may be significantly negative, depending on the time since the sweep was completed (Figure 9.4)."
     }
   ]
 }

@@ -2,79 +2,55 @@
   "id": "chapter13_012",
   "metadata": {
     "chapter": "chapter13",
-    "section": "Chapter 13: Reducing Environmental Noise: Repeated-Measures Selection",
+    "section": "Chapter 13: Reducing Environmental Noise: Stratified Mass Selection",
     "subsections": [
-      "Reducing Environmental Noise: Repeated-Measures Selection"
+      "Reducing Environmental Noise: Stratified Mass Selection"
     ],
     "source_file": "tmp\\paddle_output\\chapter13_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [
-      "13.16a",
-      "13.16b",
-      "13.16c",
-      "13.17a",
-      "13.17b",
-      "13.17c",
-      "13.18a",
-      "13.18b",
-      "13.19a",
-      "13.19b"
+      "13.12a",
+      "13.12b",
+      "13.13",
+      "13.14a",
+      "13.14b",
+      "13.14c",
+      "13.15"
     ],
-    "table_references": [
-      "inline_4"
-    ],
-    "table_reference_keys": [
-      "chapter13:inline_4"
-    ]
+    "table_references": []
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "The repeated-measures design is a second example of increasing accuracy (and response) by providing some control over environmental noise. Here the character of interest is measured n different times on each individual, and selection occurs on $ \\overline{z}_{i} $ , the mean value for individual i. For example, if we are considering the number of days to ripening, a better approach is to use a collection of fruit, rather than a single one, to assign a value to an individual tree. Repeated-measures selection is a common design in behavioral experiments, wherein a single measure (such as wheel-running speed) may vary greatly within an individual over time."
+      "content": "Accuracy (and hence response) can also be increased by using designs that reduce environmental noise. One approach is Gardner's (1961) method of stratified mass selection: a population is stratified into a number of blocks (potentially representing different microenvironments) and selection occurs within each block. The motivation behind Gardner's method was to improve individual selection for yield in maize. At the time of his paper, selection based solely on the observed yield of individual plants resulted in a very poor response, largely because environmental effects overwhelm genetic differences, resulting in very small $ h^{2} $ values. Simply by selecting for plants within blocks of presumably similar environments, Gardner was able to use mass selection to obtain fairly significant gains (about 4% per year). Stratified mass selection is an important component in Burton's (1974, 1982) method of recurrent restricted phenotypic selection (RRPS) for turf grass breeding."
     },
     {
       "type": "derivation",
-      "content": "Our analysis depends on the repeatability (LW Chapter 6) of the trait. The character value for the jth measure of individual i is decomposed as [[SEE_FORMULA:13.16a]] where $ G_i $ and $ E_i $ are the genotypic and (permanent) environmental values common to all measures of $ i $, and $ e_ ij $ is the special environmental value restricted to the $ j $th measure of $ i $, with the repeatability, $ r $, being defined as [[SEE_FORMULA:13.16b]] yielding [[SEE_FORMULA:13.16c]]"
+      "content": "To obtain the expected response under stratified mass selection, we need to compute the accuracy, which first requires the covariance between within-block deviations and an individual's breeding value. Suppose $n$ individuals are measured within each block, and selection occurs on the deviation from the block mean, e.g., on $z_{ij} - \\overline{z}_i$ where $z_{ij}$ is the $j$th individual from block $i$ and $\\overline{z}_i$ is the block mean. An individual's phenotypic value can be expressed as its genotypic value, $G_{ij}$ (indicating the $j$th individual from block $i$), plus an environmental value consisting of a block effect, $B_i$, and the residual environmental value, $e_{ij}$, [[SEE_FORMULA:13.12a]]"
     },
     {
       "type": "derivation",
-      "content": "To obtain the accuracy in using $ _ i $ to predict $ A_ i $, we need both the covariance between $ _ i $ and $ A_ i $, and the variance of $ _ i $. The former is simply [[SEE_FORMULA:13.17a]]"
+      "content": "The total environmental variance equals the variance among blocks, $ \\sigma_{B}^{2} $, plus the within-block variance, $ \\sigma_{e}^{2} $ (the variance of the residuals $ e_{ij} $), resulting in a total variance of [[SEE_FORMULA:13.12b]]"
     },
     {
       "type": "derivation",
-      "content": "To obtain the variance of $ _ i $, starting with [[SEE_FORMULA:13.17b]] [[SEE_FORMULA:13.17c]] it immediately follows from Equation 13.16c that"
+      "content": "For the jth individual in block i, the covariance between individual breeding value and within-block deviation is [[SEE_FORMULA:13.13]] as the assumption is that individuals within blocks are unrelated. The variance of deviations within a block is $ \\sigma_G^2 + \\sigma_e^2 $, making the accuracy [[SEE_FORMULA:13.14a]]"
     },
     {
       "type": "derivation",
-      "content": "The resulting accuracy in using $ _ i $ to predict $ A_ i $ becomes [[SEE_FORMULA:13.18a]] giving the response as [[SEE_FORMULA:13.18b]]"
+      "content": "Applying Equation 13.11c yields a the resulting response of [[SEE_FORMULA:13.14b]] where $ \\bar{\\imath} $ is the selection intensity within blocks, and the final approximation assumes a large n."
     },
     {
       "type": "derivation",
-      "content": "The ratio of accuracies under repeated-measures versus (single-measure) mass selection becomes [[SEE_FORMULA:13.19a]] which approaches $ 1/ $ for large values of $ n $. Hence, when repeatability is low ($ _e^2 _G^2 + _E^2 $), repeated-measures selection can result in a considerable improvement in response."
+      "content": "In contrast, if the effects of blocks are ignored and individuals are simply selected from the entire population, the between-block variance is incorporated into the variance of z, and from Equation 13.6b the response becomes [[SEE_FORMULA:13.14c]]"
     },
     {
       "type": "derivation",
-      "content": "This comparison assumes the same selection intensity under single- versus repeated-measures selection, but one might imagine that they could differ. For example, if one has the time and resources to only score 500 individuals, and (for breeding reasons) must keep (at least) 50 parents, then the fraction to be saved can be as small as 50/500 = 10 [[SEE_FORMULA:13.19b]]"
+      "content": "The relative advantage of stratification (assuming the block size is modest to large, so that $ 1 - 1/n \\simeq 1 $) is [[SEE_FORMULA:13.15]]"
     },
     {
       "type": "discussion",
-      "content": "Finally, we note that our analysis of repeated-measures selection assumes that the additive-genetic correlation across individual measurements is 1.0, which is expected for many traits. However, if measures are sufficiently separated in time that age effects are important, or if they represent significantly distinct events (such as litter size at different parities, i.e., distinct litters), these correlations can be less than one. In other words, the traits measured at different ages may not be the same genetically. In such cases, one should treat these measurements as a set of correlated traits and use index-selection theory (Volume 3). With measurements at arbitrary time points that may differ over individuals, the method of random regression (Volume 3) is used."
-    },
-    {
-      "type": "discussion",
-      "content": "[h] |c|c| Cell 1 & Cell 2 \\\\ Cell 3 & Cell 4 \\\\ where j indexes the individuals. Suppose the uppermost 25"
-    },
-    {
-      "type": "discussion",
-      "content": "If we use repeated-measures selection, the overall mean of the five-sample averages for each individual is 49.74, while the mean of selected individuals is 55.14, resulting in an $S$ of 5.39. The smaller value of $S$ under repeated measures under the same selection intensity, $ $, is a simple consequence of the reduced variance associated with using the mean (repeated measures) versus a single observation. To see this, note from Equation 13.6a that $S_ /S_z = (_)/(_z) < 1$, as $ _ < _z$ (Equation 13.17c). From the breeder's equation, the expected response based on single measures is $$ R=h^{2}S=0.1\\cdot11.23=1.12 $$"
-    },
-    {
-      "type": "discussion",
-      "content": "To express the response given by Equation 13.18b (the repeated-measures expression) in terms of $S$, note that here $ = _A^2 / (_A _z) = _A / _z$, and hence $R = _A = _A^2 / _z = (_z) _A^2 / _z = S _A^2 / _z$, which, using Equation 13.17c, yields $$ R=h^{2}\\left(\\frac{n}{1+(n-1)r}\\right)S=0.1\\cdot2.78\\cdot5.39=1.50 $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Thus, the reduction in $S$ under repeated measures (5.39 versus 11.23) is more than made up for by increased accuracy, yielding a larger expected response relative to mass selection (i.e., selection based on single measures). From Equation 13.19a, the expected ratio of the accuracies (and hence responses, assuming the same selection intensities) of the five-measure to single-measure schemes is 1.67, which approaches $1/ 2.24$ for large values of $n$. The value of the response ratio for our simulated data (1.50/1.12 = 1.34) deviated from the expected value due to the small number (20) of randomly sampled individuals."
+      "content": "Thus, within-block selection can significantly improve the selection response when the among-block variance accounts for a significant fraction of the total variation. Schutz and Cockerham (1966) extend this idea of selecting within blocks to a number of other designs."
     }
   ]
 }

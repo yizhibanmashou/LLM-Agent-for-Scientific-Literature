@@ -14,7 +14,7 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "Once the type of family (half-sib, full-sib, nested, or inbred $ S_{i} $ ) has been specified, there is still the issue of how to incorporate sib information when making selection decisions. To distinguish between a particular sib and the trait value of that sib, we use $ x_{i} $ to denote the i th sib and $ z_{i} $ to denote its trait value, and more generally, $ x_{ij} $ and $ z_{ij} $ for the jth individual from the i th family. We select the uppermost fraction, p, of the relevant population, with m families each with n sibs, for a total of M=mn scored individuals, which we use to choose N parents. Four different approaches for weighting sib information are commonly used: 1. Among-family selection: Individuals are selected solely on the basis of their family means, $ \\overline{z}_{i} $ with the result that all individuals from the same family have the same selective rank. Here, the best N=pm families are chosen."
+      "content": "Once the type of family (half-sib, full-sib, nested, or inbred $ S_i $) has been specified, there is still the issue of how to incorporate sib information when making selection decisions. To distinguish between a particular sib and the trait value of that sib, we use $ x_i $ to denote the ith sib and $ z_i $ to denote its trait value, and more generally, $ x_{ij} $ and $ z_{ij} $ for the jth individual. from the ith family. We select the uppermost fraction, p, of the relevant population, with m families each with n sibs, for a total of M = mn scored individuals, which we use to choose N parents. Four different approaches for weighting sib information are commonly used: 1. Among-family selection: Individuals are selected solely on the basis of their family means, $ \\overline{z}_{i} $, with the result that all individuals from the same family have the same selective rank. Here, the best N = pm families are chosen."
     },
     {
       "type": "discussion",
@@ -22,7 +22,7 @@
     },
     {
       "type": "discussion",
-      "content": "3. Selection on within-family deviations (FD): Individuals are ranked solely on the basis of their within-family deviation, $ z_{ij}-\\bar{z}_{i} $ . The N=pM individuals with the largest deviations (regardless of family) are chosen."
+      "content": "3. Selection on within-family deviations (FD): Individuals are ranked solely on the basis of their within-family deviation, $ z_{ij} - \\overline{z}_i $. The $ N = pM $ individuals with the largest deviations (regardless of family) are chosen."
     },
     {
       "type": "discussion",
@@ -34,7 +34,7 @@
     },
     {
       "type": "discussion",
-      "content": "The choice of the particular scheme has implications for the selection intensity (Example 21.1). When the fraction saved (p) is fixed, among-family and strict within-family selection have lower selection intensities than family-deviations, index, or mass selection. The former selects the best pm of m families and pn of n sibs, while the latter three select the best pM of M individuals. Because M is greater than either n or m, the finite-sample value for i is larger when sampling from M than from n or m (Chapter 14). $$ \\begin{array}{ll}Individual selection(infinite population)&Best20\\%\\quad\\overline{i}_{\\infty}=1.40\\\\ Individual selection,index selection,&\\\\ family-deviations(FDs)selection&Best20of100\\quad\\overline{i}_{(20,100)}=1.39\\\\ Among-family selection&Best4of20\\quad\\overline{i}_{(4,20)}=1.33\\\\ Strict within-family selection(WF)&Best1of5\\quad\\overline{i}_{(1,5)}=1.16\\\\\\end{array} $$ As shown later (Equations 21.40 and 21.57), additional corrections to the selection intensity are required in some cases, as family members are correlated, which changes the variance"
+      "content": "The choice of the particular scheme has implications for the selection intensity (Example 21.1). When the fraction saved (p) is fixed, among-family and strict within-family selection have lower selection intensities than family-deviations, index, or mass selection. The former selects the best pm of m families and pn of n sibs, while the latter three select the best pM of M individuals. Because M is greater than either n or m, the finite-sample value for i is larger when sampling from M than from n or m (Chapter 14). $$ \\begin{array}{ll}Individual selection(infinite population)&Best20%\\quad\\overline{i}_{\\infty}=1.40\\\\ Individual selection,index selection,&\\\\ family-deviations(FDs)selection&Best20of100\\quad\\overline{i}_{(20,100)}=1.39\\\\ Among-family selection&Best4of20\\quad\\overline{i}_{(4,20)}=1.33\\\\ Strict within-family selection(WF)&Best1of5\\quad\\overline{i}_{(1,5)}=1.16\\\\\\end{array} $$ As shown later (Equations 21.40 and 21.57), additional corrections to the selection intensity are required in some cases, as family members are correlated, which changes the variance"
     },
     {
       "type": "discussion",
@@ -42,7 +42,7 @@
     },
     {
       "type": "discussion",
-      "content": "relative to n unrelated individuals. Ignoring this correction (for now), note that strict withinfamily (WF) selection has only 83% of the selection intensity (for this example) as family deviations (FDs) selection."
+      "content": "[h] relative to n unrelated individuals. Ignoring this correction (for now), note that strict within-family (WF) selection has only 83% of the selection intensity (for this example) as family-deviations (FDs) selection."
     },
     {
       "type": "discussion",

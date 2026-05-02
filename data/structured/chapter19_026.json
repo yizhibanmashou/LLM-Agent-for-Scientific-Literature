@@ -42,7 +42,7 @@
     },
     {
       "type": "derivation",
-      "content": "To introduce the Gibbs sampler, consider a bivariate random vector $ (x, y) $, and suppose we wish to compute one or both marginals, $ p(x) $ and $ p(y) $. The idea behind the sampler is that it is far easier to consider a sequence of conditional distributions, $ p(x y) $ and $ p(y x) $, than it is to obtain the marginal by integration of the joint density $ p(x, y) $, e.g., $ p(x) = p(x, y) \\, dy $. The sampler starts with some initial value $ y_0 $ for $ y $ and obtains $ x_0 $ by generating a random variable from the conditional distribution, $ p(x y = y_0) $. The sampler then uses $ x_0 $ to generate a new value, $ y_1 $, drawing from the conditional distribution based on the value $ x_0 $, $ p(y x = x_0) $. The sampler proceeds as follows: [[SEE_FORMULA:19.31a]] [[SEE_FORMULA:19.31b]]"
+      "content": "To introduce the Gibbs sampler, consider a bivariate random vector $ (x, y) $, and suppose we wish to compute one or both marginals, $ p(x) $ and $ p(y) $. The idea behind the sampler is that it is far easier to consider a sequence of conditional distributions, $ p(x \\mid y) $ and $ p(y \\mid x) $, than it is to obtain the marginal by integration of the joint density $ p(x, y) $, e.g., $ p(x) = \\int p(x, y) \\, dy $. The sampler starts with some initial value $ y_0 $ for $ y $ and obtains $ x_0 $ by generating a random variable from the conditional distribution, $ p(x \\mid y = y_0) $. The sampler then uses $ x_0 $ to generate a new value, $ y_1 $, drawing from the conditional distribution based on the value $ x_0 $, $ p(y \\mid x = x_0) $. The sampler proceeds as follows: [[SEE_FORMULA:19.31a]] [[SEE_FORMULA:19.31b]]"
     },
     {
       "type": "discussion",
@@ -54,15 +54,11 @@
     },
     {
       "type": "derivation",
-      "content": "Any feature of interest for the marginals can be computed from the m realizations of the Gibbs sequence. For example, the expectation of any function, f, of the random variable, x, is approximated by [[SEE_FORMULA:19.32a]] which is simply the average of the function evaluated over the points in the sampler. This is the Monte Carlo (MC) estimate of $ f(x) $, as $ E[f(x)]_m E[f(x)] $ as $ m $. Likewise, the MC estimate for any function of $ n $ variables $ (\\theta^{(1)}, \\cdots, \\theta^{(n)}) $ is given by [[SEE_FORMULA:19.32b]]"
+      "content": "Any feature of interest for the marginals can be computed from the m realizations of the Gibbs sequence. For example, the expectation of any function, f, of the random variable, x, is approximated by [[SEE_FORMULA:19.32a]] which is simply the average of the function evaluated over the points in the sampler. This is the Monte Carlo (MC) estimate of $ f(x) $, as $ E[f(x)]_m \\to E[f(x)] $ as $ m \\to \\infty $. Likewise, the MC estimate for any function of $ n $ variables $ (\\theta^{(1)}, \\cdots, \\theta^{(n)}) $ is given by [[SEE_FORMULA:19.32b]]"
     },
     {
       "type": "discussion",
-      "content": "[h] |c|c| Cell 1 & Cell 2 \\\\ Cell 3 & Cell 4 \\\\"
-    },
-    {
-      "type": "discussion",
-      "content": "Here $ a(1) $ through $ a(4) $ correspond to the values (realizations of the posterior distribution) of the four breeding values in that particular iteration of the sampler, and $ _A^2 $ and $ _e^2 $ are, similarly, the realizations for the variances in that iteration. The mean and variance for the breeding value of these four individuals, in sample $ i $, are $$ \\overline{a}_{i}=\\frac{1}{4}\\sum_{j=1}^{4}a_{i}(j)\\quad and\\quad\\operatorname{Var}(a)_{i}=\\frac{1}{4-1}\\sum_{j=1}^{4}\\left[a_{i}(j)-\\overline{a}_{i}\\right]^{2} $$ and the base population heritability $$ h_{i}^{2}=\\sigma_{A,i}^{2}/(\\sigma_{A,i}^{2}+\\sigma_{e,i}^{2}) $$"
+      "content": "Here $ a(1) $ through $ a(4) $ correspond to the values (realizations of the posterior distribution) of the four breeding values in that particular iteration of the sampler, and $ \\sigma_A^2 $ and $ \\sigma_e^2 $ are, similarly, the realizations for the variances in that iteration. The mean and variance for the breeding value of these four individuals, in sample $ i $, are $$ \\overline{a}_{i}=\\frac{1}{4}\\sum_{j=1}^{4}a_{i}(j)\\quad and\\quad\\operatorname{Var}(a)_{i}=\\frac{1}{4-1}\\sum_{j=1}^{4}\\left[a_{i}(j)-\\overline{a}_{i}\\right]^{2} $$ and the base population heritability $$ h_{i}^{2}=\\sigma_{A,i}^{2}/(\\sigma_{A,i}^{2}+\\sigma_{e,i}^{2}) $$"
     },
     {
       "type": "discussion",
@@ -70,11 +66,7 @@
     },
     {
       "type": "discussion",
-      "content": "[h] |c|c| Cell 1 & Cell 2 \\\\ Cell 3 & Cell 4 \\\\"
-    },
-    {
-      "type": "discussion",
-      "content": "Thus, the sampler has returned three values for each of the quantities of interest. Of course, a full sampler consists of thousands to hundreds of thousands of such realization, allowing us to empirically generate the full distribution of any for these functions. For example, the mean of the marginal posterior for the mean breeding value over these four individuals is simply the mean of $ \\overline{a} $ over the entire sample from the Gibbs sequence. Likewise, the empirical histogram of $ h_{i}^{2} $ values is the marginal posterior for the heritability, and thus accounts for any source of variation in estimating $ h^{2} $ (given that the assumed model is correct)."
+      "content": "Thus, the sampler has returned three values for each of the quantities of interest. Of course, a full sampler consists of thousands to hundreds of thousands of such realization, allowing us to empirically generate the full distribution of any for these functions. For example, the mean of the marginal posterior for the mean breeding value over these four individuals is simply the mean of $ \\bar{a} $ over the entire sample from the Gibbs sequence. Likewise, the empirical histogram of $ h_i^2 $ values is the marginal posterior for the heritability, and thus accounts for any source of variation in estimating $ h^2 $ (given that the assumed model is correct)."
     }
   ]
 }

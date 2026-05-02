@@ -2,28 +2,33 @@
   "id": "chapter26_016",
   "metadata": {
     "chapter": "chapter26",
-    "section": "Chapter 26: Founder Effects and Population Bottlenecks",
+    "section": "Chapter 26: OPTIMAL SELECTION INTENSITIES FOR MAXIMIZING LONG-TERM RESPONSE",
     "subsections": [
-      "Founder Effects and Population Bottlenecks"
+      "OPTIMAL SELECTION INTENSITIES FOR MAXIMIZING LONG-TERM RESPONSE"
     ],
     "source_file": "tmp\\paddle_output\\chapter26_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [
-      "26.24a",
-      "26.24b",
-      "26.25a",
-      "26.25b"
+      "26.22",
+      "26.23"
     ],
-    "table_references": []
+    "table_references": [
+      "26.3",
+      "26.4"
+    ],
+    "table_reference_keys": [
+      "chapter26:26.3",
+      "chapter26:26.4"
+    ]
   },
   "blocks": [
     {
-      "type": "discussion",
-      "content": "So far, we have been considering only the effects of drift due to selecting N adults in each generation from an initial base population that is assumed to be infinite. However, drift can also occur prior to selection if the base population itself was founded by sampling individuals from some larger population. By altering the starting additive variance, this initial sampling modifies the expected response, and (provided the founding event is severe), can have a significant impact on the selection response. Robertson (1966b), reporting on the unpublished thesis of Da Silva (1961), found that lines formed from a single parental pair underwent a decrease in the selection response of roughly 30"
+      "type": "derivation",
+      "content": "When a fixed number, $M$, of individuals is scored, there is a tradeoff between the intensity of selection ($\\bar{t}$) and the amount of drift ($N_e$). If $N$ individuals are allowed to reproduce (implying $p = N/M$ is the fraction saved), decreasing $N$ (and hence $p$) increases $\\bar{t}$ but also decreases $N_e$. Recalling Equation 26.15b, Robertson’s selection limit can be expressed as [[SEE_FORMULA:26.22]] showing that the ultimate response (from the initial variation) depends on the product of $ N_e $ and $ \\bar{\\nu} $. While decreasing p results in a larger short-term response due to increased $ \\bar{\\nu} $, it also results in a decreased long-term response by decreasing $ N_e $. Hence, the product $ N_e $ decreases for sufficiently large or small values of p, suggesting that some intermediate value of p is optimal (see Equation 26.23). [[SEE_TABLE:26.3]] and Figure 26.5B both illustrate this tradeoff. For example, while the single-generation response using p = 0.50 is less than half that for p = 0.10, it yields a selection limit over twice as large (200 vs. 90)."
     },
     {
-      "type": "discussion",
-      "content": "Using this reasoning, Robertson (1960a) predicted that the effect of restricting population size after several generations of selection is expected to be small, as favored alleles are expected to be at intermediate to high frequencies. However, Jones et al. (1968) found that, even after many generations of selection, such bottlenecks can have a large effect. Sublines formed by taking ten pairs of adults from a parental line selected for 16"
+      "type": "derivation",
+      "content": "Supporting an earlier conjecture of Dempster (1955b), Robertson (1960a) found (for additive loci and normally distributed phenotypes) that the intensity of selection that yields the largest total response is $p = 0.5$, as $N_e \\bar{i}$ is maximized for fixed $M$ when half the population is saved. This can be seen directly for truncation selection on a normally distributed character. Recall from Equation 14.3a that $\\bar{i} = \\varphi(x_{[1-p]}) / p$ (ignoring the correction for finite population size), where $x_p$ satisfies $\\Pr(U < x_{[p]}) = p$, and with $U$ denoting a unit normal random variable and $\\varphi(x)$ denotes the unit normal density function. Because the number saved is $N = M p$, we have (following Hospital and Chevalet 1993) [[SEE_FORMULA:26.23]] Because the term in brackets is independent of $p$, response (as a function of $p$) is maximized at the maximum value of $\\varphi(x_{[1-p]})$, which occurs at $x = 0$, or a $p$ value of 0.5. As Figure 26.5A illustrates, the selection limit as a function of p becomes extremely flat-topped as M increases, so even fairly large deviations from p = 0.50 yield essentially the same limit. If we relax the assumption of normality, Cockerham and Burrows (1980) found that the optimal proportion for truncation selection is still near 0.50, unless the phenotypic distribution is extremely skewed. Hill and Robertson (1966), Robertson (1970a), and Hospital and Chevalet (1993) found that the optimal proportion increases to above p = 0.50 when linkage is important (recall from Chapter 24 that linkage disequilibrium generates skew in the genotypic distribution, causing it to depart from a normal)."
     },
     {
       "type": "discussion",
@@ -31,35 +36,27 @@
     },
     {
       "type": "discussion",
-      "content": "generations showed reduced response relative to their parent lines (Figure 26.6B). One explanation for the results of Jones et al. is that there were still desirable alleles at low frequencies following 16 generations of selection. These alleles can be lost when the population passes through a bottleneck, reducing response. One source for these rare major alleles could be new mutations. Alternative explanations were considered by Frankham (1983b)."
-    },
-    {
-      "type": "derivation",
-      "content": "To present the theory for the impact of bottlenecks on selection response a bit more formally, results are developed for a single additive locus, and extended by assuming gametic-phase equilibrium and no epistasis. If $ N_0 $ is the number of founders, the initial expected additive-genetic variance in the founder population is $ [1 - 1/(2N_0)] _A^2(0) $, with the expected response for the first generation of selection from a bottlenecked population being $ [1 - 1/(2N_0)] $ times that for an initially infinite population (Jones 1970). The long-term effects of an initial bottleneck are more unpredictable, depending on initial allele frequencies and the relative strength of selection. When selection is weak at all loci (the infinitesimal model), the arguments leading to Equation 26.15a yield the expected response starting with a founder population of size $ N_0 $ as [[SEE_FORMULA:26.24a]] where $ R(t) $ is the response expected when the initial base population is infinite (Equation 26.15a). More generally, if two replicate populations of the same size are created using different numbers of founders ($ N_ 01, N_ 02 $) from a common, and large, base population, the ratio of the expected response at any generation is [[SEE_FORMULA:26.24b]]"
+      "content": "[h]"
     },
     {
       "type": "discussion",
-      "content": "Thus, if selection at all loci is weak and all genetic variance is additive, the effect of a bottleneck depends only on the number of founders, $ N_{0} $"
-    },
-    {
-      "type": "derivation",
-      "content": "Founder effects are most serious when rare favorable alleles of large effect are present, but predicting the magnitude of the effect in any given population is difficult. When selection on a locus is strong ($ 2N_ e s 1 $), the probability that a selected line formed from a bottlenecked base population will eventually become fixed for the favored allele converges to [[SEE_FORMULA:26.25a]] where $ p_0 $ is the major-allele frequency in the population being sampled. This follows because if selection is sufficiently strong, the favored allele will become fixed if it is found in the initial sample, which occurs with a probability of $ 1 - (1 - p_0)^ 2N_0 $. Using this approximation, the ratio of the expected limiting contribution from such a locus to the expected contribution when the founding population is infinite is [[SEE_FORMULA:26.25b]]"
+      "content": "[[TABLE:26.4]] illustrates this effect using the same parameters as [[SEE_TABLE:26.3]]. Without incorporating this further reduction in $N_e$, the ratio of expected limits when $p = 0.50$ versus $p = 0.10$ is 200/90 = 2.2. When the reduction in $N_e$ due to selection is accounted for, this ratio increases to 161/47 = 3.4."
     },
     {
       "type": "discussion",
-      "content": "A more accurate measure would be to weight the fixation probability, $ u ( p ) $ , by the sampling probability given a starting allele frequency, $ \\sum_{i=1}^{2 N_{0}} \\operatorname* {P r} ( i \\mid p_{0}, 2 N_{0} ) u ( i / [ 2 N_{0} ] ) $ , where $ \\operatorname* {P r} ( i \\mid p_{0}, 2 N_{0} ) $ is the $ i $th term in a binomial with parameters of $ p_{0} $ and $ 2 N_{0} $ . Because the initial frequencies of major alleles are unknown, the long-term effect of a bottleneck, even when all genetic variance is additive, is unpredictable. To see this, suppose that a rare $ ( p_{0}\\simeq0) $ ,but favorable (a is large), allele is initially present. Its contribution to the initial additive variance is $ V=2 a^{2} p_{0}(1-p_{0}) $ ,while (if fixed), its contribution to the response is $ R=2 a(1-p_{0}) $ . Hence, $ R=V / ( a p_{0} ) $ , so that if $ a p_{0}\\ll1 $ ,but a is large, it makes a large contribution if it is fixed, but only a small contribution to the initial variance. If $ p_{0}\\simeq0 $ , an allele with a large effect can easily be lost by drift, with only a small effect on the additive variance, but leading to a large potential loss of response. Many artificial selection experiments examining the genetic architecture of a trait first start by breeding a wild-caught sample in the lab for many generations. This generates additional drift, and can result in rare (but important) alleles from the sampled population not being present at the start of artificial selection. Zhang and Hill (2005a) showed that a consequence of this sampling (coupled with selection-generated disequilibrium) is that a population with a significant number of rare alleles (and hence the potential for an accelerated response as rare alleles of large effect increase in frequency, increasing $ h^{2} $ ; Chapter 25) often generates a response no different from that expected under an infinitesimal model."
+      "content": "Robertson's prediction of the optimal selection intensity for long-term response is experimentally supported. Madalena and Robertson (1975) selected for decreased sternopleural bristle number in Drosophila. When the best 5 of 25 were chosen, the limit was 18.0 bristles, less extreme than the limit of 17.1 when the best 10 of 25 were chosen. Similar results were seen for increased abdominal bristle number in Drosophila (Jones et al. 1968), increased egg-laying in Tribolium castaneum (Ruano et al. 1975), and increased postweaning weight in mice (Hanrahan et al. 1973)."
     },
     {
       "type": "discussion",
-      "content": "Frankham (1980) examined founder effects in Drosophila populations that were selected for increased abdominal bristle number. As shown in Figure 26.7, the limit of bottlenecked populations formed from two founders was between 0.69 and 0.72 of that for nonbottle-necked populations, which is quite close to the value of $ [1 - 1/(2N_0)] = 0.75 $ that is predicted for additive loci under weak selection (Equation 26.24b). Frankham reported similar unpublished thesis results of Da Silva (1961) and Hammond (1973). However, while D. Robertson (1969, reported in James 1970) observed a decrease in response with decreasing number of"
+      "content": "Using $N = pM$ as the effective population size is often a severe overestimate (Chapter 3), especially because, as Equations 26.6b–26.6d show, $N_e/N$ decreases as selection intensity increases. Hence, increasing selection intensity increases drift by both reducing $N = pM$ and by further reducing the ratio of $N_e$ to $N$. [[SEE_TABLE:26.4]] illustrates this effect using the same parameters as [[SEE_TABLE:26.3]]. Without incorporating this further reduction in $N_e$, the ratio of expected limits when $p = 0.50$ versus $p = 0.10$ is 200/90 = 2.2. When the reduction in $N_e$ due to selection is accounted for, this ratio increases to 161/47 = 3.4."
     },
     {
       "type": "discussion",
-      "content": "founders when the number of selected parents $ ( N_{e} ) $ was 10, there was no obvious effect when $ N_{e} $ was 40 (which is not unexpected because 1-1/80 is negligible). We have been unable to find any reports of response increasing significantly when the population is passed through a bottleneck, as can occur if significant nonadditive variance is present (Chapter 11). Clearly, there is a need for further experiments."
+      "content": "More generally, Robertson (1970b) obtained the optimal selection intensity when the goal is to maximize the total response (from the initial base population variation) at generation $ t $. Robertson’s derivation follows using Equation 26.15a. As Figure 26.5B shows, the optimal proportion is a function of $ t/M $. Robertson assumed that the infinitesimal model held and that there were equal contributions from each sex. Jódar and López-Fanjul (1977) extended these results to unequal sex ratios, and found that the maximum response occurs when the number of individuals scored and the proportions that are selected are the same in each sex. This follows because effective population size is reduced as the sex ratio deviates from 1:1 (Equation 3.12), which increases the effects of drift. Hospital and Chevalet (1993) examined the effects of linkage and found that the amount by which the optimal value of p exceeds the predicted value (Figure 26.5B) increases with population size. In small populations, the value predicted from drift (for any particular t/M value) is close to the optimal value, while Robertson's value seriously underestimates the optimal p value in larger populations when linkage is present."
     },
     {
-      "type": "proposition",
-      "content": "An especially interesting experiment on founder effects was performed by Skibinski and Shereif (1989), who examined sternopleural bristle number in Drosophila melanogaster. Three initial lines were created from a large base population by taking parents from different parts of the distribution of bristle number to generate a high line, a low line, and a line from the central part of the distribution. The central line had the largest total response to divergent selection. Skibinski and Shereif suggested that these results were consistent with the assumption that a few major alleles underlay the trait, with the central line having higher heterozygosity at these loci (and hence more usable genetic variance) than the extreme lines. One caveat with this interpretation is that the central line had a larger initial population size than either extreme line."
+      "type": "discussion",
+      "content": "Ruano et al. (1975) and Frankham (1977) tested Robertson's predictions for the optimal response at a particular generation with selection experiments for egg-laying in Tribolium and for abdominal bristle number in Drosophila, respectively. The theory holds up well for $ t/M \\leq 0.2 $, but both authors found discrepancies between the observed and predicted rank order of lines subjected to different selection intensities when $ t/M > 0.2 $. One explanation of these discrepancies could be the presence of major alleles, resulting in additive variance declining more rapidly than expected under the infinitesimal model. This results in the optimal proportions being larger than those predicted from Figure 26.5B. Frankham (1977) also suggested that not correcting for the additional decrease in $ N_e $ with increased selection intensity (e.g., [[SEE_TABLE:26.4]]) results in incorrect values of $ N_e $, and hence incorrect optimal proportions. García-Dorado and López-Fanjul (1985) examined the consequences of unequal sex ratios using sternopleural bristle number in Drosophila. Equal sex ratios gave the highest response, and good agreement with the optimal values predicted by Jódar and López-Fanjul was seen when there were unequal sex ratios."
     }
   ]
 }

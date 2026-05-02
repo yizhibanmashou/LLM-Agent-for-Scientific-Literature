@@ -22,11 +22,11 @@
   "blocks": [
     {
       "type": "derivation",
-      "content": "We solve for the regression coefficients $ b_1 $ and $ b_2 $ by transforming Equation 29.27a into a standard multiple regression problem by setting $ x_1 = z $ and $ x_2 = (z - \\mu_z)^2 $ and applying the methods of LW Chapter 8. To proceed, we need expressions for $ (x_1, x_2) $, $ (x_1, w) $, and $ (x_2, w) $. From LW Equation A1.14, $ \\sigma(x_1, x_2) = \\sigma(z, [z - \\mu_z]^2) = \\mu_{3,z} $, the skew of the phenotypic distribution before selection. Likewise, from Equations 13.7a and 29.17, $ (x_1, w) = (z, w) = S $ and $ \\sigma(x_2, w) = \\sigma([z - \\mu_z]^2, w) = C $. Substituting these values into the results from LW Example 8.3 (which gives exact expressions for the partial regression coefficients of a bivariate regression), and note that $ ^ 2 (|z- _ z |^ 2)= _ 4.z - _ s ^ 4 $, we obtain [[SEE_FORMULA:29.28a]]"
+      "content": "We solve for the regression coefficients $ b_1 $ and $ b_2 $ by transforming Equation 29.27a into a standard multiple regression problem by setting $ x_1 = z $ and $ x_2 = (z - \\mu_z)^2 $ and applying the methods of LW Chapter 8. To proceed, we need expressions for $ \\sigma(x_1, x_2) $, $ \\sigma(x_1, w) $, and $ \\sigma(x_2, w) $. From LW Equation A1.14, $ \\sigma(x_1, x_2) = \\sigma(z, [z - \\mu_z]^2) = \\mu_{3,z} $, the skew of the phenotypic distribution before selection. Likewise, from Equations 13.7a and 29.17, $ \\sigma(x_1, w) = \\sigma(z, w) = S $ and $ \\sigma(x_2, w) = \\sigma([z - \\mu_z]^2, w) = C $. Substituting these values into the results from LW Example 8.3 (which gives exact expressions for the partial regression coefficients of a bivariate regression), and note that $ \\sigma^{2}(|z-\\mu_{z}|^{2})=\\mu_{4.z}-\\sigma_{s}^{4} $, we obtain [[SEE_FORMULA:29.28a]]"
     },
     {
       "type": "discussion",
-      "content": "The estimators of $ b_{1} $ and $ b_{2} $ are obtained by replacing $ \\mu_{k,z} $ with their sample estimates and using $ \\widehat{C} $ and $ \\widehat{S} $"
+      "content": "The estimators of $ b_1 $ and $ b_2 $ are obtained by replacing $ \\mu_{k,z} $ with their sample estimates and using $ \\widehat{C} $ and $ \\widehat{S} $."
     },
     {
       "type": "discussion",
@@ -38,15 +38,15 @@
     },
     {
       "type": "proposition",
-      "content": "Equations 29.29a and 29.29b provide a connection between selection gradients (directional and stabilizing, $ \\beta $ and $ \\gamma $ , respectively) and quadratic approximations of the individual fitness surface, provided z is normally distributed and residuals follow the OLS assumption."
+      "content": "Equations 29.29a and 29.29b provide a connection between selection gradients (directional and stabilizing, $ \\beta $ and $ \\gamma $, respectively) and quadratic approximations of the individual fitness surface, provided z is normally distributed and residuals follow the OLS assumption."
     },
     {
       "type": "discussion",
-      "content": "An important point from Equation 29.28a is that if skew is present in the trait distribution $ (\\mu_{3,z}\\neq0) $ , then $ b_{1}\\neq\\beta $ , and hence the slope $ (\\beta) $ in the linear regression (the best linear fit) of $ w(z) $ differs from the linear slope term $ (b_{1}) $ in the best quadratic fit of $ w(z) $ . This inequality arises because the presence of skew generates a covariance between z and $ (z-\\mu_{z})^{2} $ . The biological significance of this inequality can be seen by reconsidering Figure 29.7, where the presence of skew in the phenotypic distribution results in a change in the mean of a population under strict stabilizing selection (defined as the population mean being at the optimum of the individual fitness surface). From the Robertson-Price identity (Equation 6.10), the within-generation change in the mean equals the covariance between phenotypic value and relative fitness. Because covariances measure the amount of linear association between variables, in describing the change in mean, the correct measure is the slope of the best linear fit of the individual fitness surface, which is unbiased by skew (Lande and Arnold 1983). If skew is present, using $ b_{1} $ from the quadratic regression to describe the change in mean is incorrect, as this quadratic regression removes the effects on relative fitness from a linear change in z due to the correlation between z and $ (z-\\mu_{z})^{2} $ ."
+      "content": "An important point from Equation 29.28a is that if skew is present in the trait distribution ($ \\mu_{3,z} \\neq 0 $), then $ b_1 \\neq \\beta $, and hence the slope ($ \\beta $) in the linear regression (the best linear fit) of $ w(z) $ differs from the linear slope term ($ b_1 $) in the best quadratic fit of $ w(z) $. This inequality arises because the presence of skew generates a covariance between $ z $ and $ (z - \\mu_z)^2 $. The biological significance of this inequality can be seen by reconsidering Figure 29.7, where the presence of skew in the phenotypic distribution results in a change in the mean of a population under strict stabilizing selection (defined as the population mean being at the optimum of the individual fitness surface). From the Robertson-Price identity (Equation 6.10), the within-generation change in the mean equals the covariance between phenotypic value and relative fitness. Because covariances measure the amount of linear association between variables, in describing the change in mean, the correct measure is the slope of the best linear fit of the individual fitness surface, which is unbiased by skew (Lande and Arnold 1983). If skew is present, using $ b_1 $ from the quadratic regression to describe the change in mean is incorrect, as this quadratic regression removes the effects on relative fitness from a linear change in $ z $ due to the correlation between $ z $ and $ (z - \\mu_z)^2 $."
     },
     {
       "type": "derivation",
-      "content": "Observe from Equation 29.28b that the presence of skew (and kurtosis) also results in $ 2b_{2} $ being a biased estimator of $ $. Despite this bias, $ 2b_{2} $ remains the standard estimate for $ $ in the literature. Shifting the trait to give it a mean of zero, a less-biased estimator of $ $ follows from a quadratic regression with no linear term, [[SEE_FORMULA:29.29c]] From standard regression theory (LW Chapter 3), the slope of Equation 29.29c is $ b = \\sigma(z^2, w)/\\sigma^2(z^2) $, and using the covariances obtained for Equation 29.28 yields [[SEE_FORMULA:29.29d]]"
+      "content": "Observe from Equation 29.28b that the presence of skew (and kurtosis) also results in $ 2b_{2} $ being a biased estimator of $ \\gamma $. Despite this bias, $ 2b_{2} $ remains the standard estimate for $ \\gamma $ in the literature. Shifting the trait to give it a mean of zero, a less-biased estimator of $ \\gamma $ follows from a quadratic regression with no linear term, [[SEE_FORMULA:29.29c]] From standard regression theory (LW Chapter 3), the slope of Equation 29.29c is $ b = \\sigma(z^2, w)/\\sigma^2(z^2) $, and using the covariances obtained for Equation 29.28 yields [[SEE_FORMULA:29.29d]]"
     },
     {
       "type": "derivation",
@@ -54,7 +54,7 @@
     },
     {
       "type": "derivation",
-      "content": "For a normal, $ \\kappa_4 = 0 $, and $ 2E[b] = $. When kurtosis is present, using the sample estimate of $ \\widehat{\\kappa}_4 $ yields [[SEE_FORMULA:29.29f]] which is an improved estimate of the quadratic gradient. Finally, despite these corrections, we should point out that bias induced by skewness and kurtosis is a matter of degree. Both of these moments have their own sampling problems, and using poor estimates of them to correct $ $ and $ $ can be problematic."
+      "content": "For a normal, $ \\kappa_4 = 0 $, and $ 2E[b] = \\gamma $. When kurtosis is present, using the sample estimate of $ \\widehat{\\kappa}_4 $ yields [[SEE_FORMULA:29.29f]] which is an improved estimate of the quadratic gradient. Finally, despite these corrections, we should point out that bias induced by skewness and kurtosis is a matter of degree. Both of these moments have their own sampling problems, and using poor estimates of them to correct $ \\beta $ and $ \\gamma $ can be problematic."
     }
   ]
 }

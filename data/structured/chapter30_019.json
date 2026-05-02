@@ -2,50 +2,35 @@
   "id": "chapter30_019",
   "metadata": {
     "chapter": "chapter30",
-    "section": "Chapter 30: Projection-pursuit Regression and Thin-plate Splines",
+    "section": "MULTIVARIATE SEMIPARAMETRIC FITNESS SURFACE ESTIMATION",
     "subsections": [
-      "Projection-pursuit Regression and Thin-plate Splines"
+      "MULTIVARIATE SEMIPARAMETRIC FITNESS SURFACE ESTIMATION"
     ],
     "source_file": "tmp\\paddle_output\\chapter30_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
-    "formula_references": [
-      "30.29"
-    ],
-    "table_references": [
-      "30.1"
-    ],
-    "table_reference_keys": [
-      "chapter30:30.1"
-    ]
+    "formula_references": [],
+    "table_references": []
   },
   "blocks": [
     {
-      "type": "derivation",
-      "content": "Schluter and Nychka (1994) extended Schluter's (1988) cubic spline univariate regressions (Chapter 29) to a vector of traits by using projection-pursuit regression (PPR; Friedman and Stuetzle 1981). The basic idea behind PPR is to approximate some complex function, $ f() $, with a series of projection vectors, $ a_i $, and associated ridge functions, $ f_i $, [[SEE_FORMULA:30.29]]"
-    },
-    {
       "type": "proposition",
-      "content": "Solutions require two numerically intensive steps: estimation of the best-fitting projection vectors $ \\left( \\mathbf{a}_{1},\\dots,\\mathbf{a}_{k}\\right) $ , and then estimation of their associated ridge functions (Schluter and Nychka used cubic splines for the latter). Thus, one chooses optimality and smoothing criteria and then obtains the first projection vector while fitting a cubic spline to the data along this projection. One then moves on to fitting the second projection vector, and so on. The assumption is that a rather low-dimensional space captures most of the structure of the fitness surface, so the first few projection vectors are sufficient to approximate individual fitness. As with the eigenvectors of $ \\gamma $ in a quadratic regression, the projection vectors $ \\left( \\mathbf{a}_{i}\\right) $ are those trait combinations (indices of trait values) that experience the strongest nonlinear selection. Visualization of the resulting complex surface is attempted by considering the pairwise projections on the first few projection vectors (Example 30.7 and Figure 30.4)."
-    },
-    {
-      "type": "proposition",
-      "content": "It is important to note that the projection vectors for a PPR do not necessarily correspond to the canonical axis of the $ \\gamma $ matrix from a quadratic regression (Example 30.7). They do, however, correspond to the trait combinations under the strongest selection, but without the assumption of a quadratic fitness surface. As such, they represent a more general, and potentially natural, geometry for the axes of selection (Morrissey 2014b)."
+      "content": "As discussed in Chapter 29, using the best-fitting univariate quadratic can result in a very misleading picture when there are multiple peaks or sharp thresholds (such as truncation selection) in the individual fitness surface. This also holds in multivariate space, and hence regressions predicting fitness given a vector z of traits that are nonparametric (free of any assumed functional form) certainly have some advantages. Because some assumption about the residual structure is typically needed to fit such regressions, they are formally called semiparametric, but we will still refer to them as nonparametric owing to the minimal number of assumptions they involve concerning about the functional form of $ w(z) $."
     },
     {
       "type": "discussion",
-      "content": "Another nonparametric approach is thin-plate splines, which are the two dimensional analog of univariate cubic splines. Using a projection onto two trait axes, thin-plate splines can be used to find the best-fitting 3-D surface on this reduced set of axes, thus employing another approach for visualizing complex surfaces."
+      "content": "Despite the advantage of having a minimal number of assumptions, these estimators also have significant disadvantages. We have already seen the difficulty in visualizing the multivariate fitness surface when only a simple quadratic function is assumed, but in this case the eigenvalues of $\\gamma$ provide significant help in interpretation. However, with general nonparametric methods, there is no corresponding metric for the fitness surface geometry, and thus one must resort to actual visualization of the fitness surface. This requires an examination of successive pairwise cross-sections of the fitness surface (projections onto two of the axes of the fitness function), generating a series of 3-D surfaces (one fitness axis and two trait axes; see Figure 30.4). Further, because these methods typically first construct new axes (linear combinations of the traits; e.g., $x_1 = a_1^T z$, $x_2 = a_2^T z$), and then use them to construct the"
     },
     {
       "type": "discussion",
-      "content": "The importance of allowing for more general fitness functions is highlighted by the work of Martin and Wainwright (2013), who examined fitness surfaces for a nascent adaptive radiation in a Bahamian clade of pupfish in the genus Cyprinodon. Using thin-plate splines, they found a fitness surface with multiple peaks, which corresponded to the morphology of existing populations in this radiation. Fitting the same data with a quadratic regression would have only resulted in a single peak (at most), which would have completely obscured important biological conclusions."
+      "content": "[h]"
     },
     {
       "type": "discussion",
-      "content": "[[TABLE:30.1]] shows that when z is multivariate-normal, Lande-Arnold gradients describe the average geometry of an individual fitness surface and are the sole measure of selection in response equations (provided breeding values are Gaussian). When z is not multivariate normal, these features do not necessarily hold. We addressed the issue of how univariate generalized gradients are computed in such settings (and what they imply) in Chapter 29, and these same concepts easily extend to multivariate settings. Janzen-Stein gradients (Equations 29.35a and 29.35b) measure the average geometry of the individual fitness surface. Suppose we let $ \\mathbf{z}_{i},\\cdots, \\mathbf{z}_{n} $ denote the n vectors of phenotypic observations. For trait i,"
+      "content": "[h]"
     },
     {
       "type": "discussion",
-      "content": "Note that these two sets of projection vectors from the different regressions are rather distinct. If we apply Equation A5.2b, the angle between $ \\mathbf{e}_{1} $ and $ \\mathbf{a}_{1} $ will be $ 88^{\\circ} $ , while the angle between $ \\mathbf{e}_{2} $ and $ \\mathbf{a}_{2} $ will be $ 87.5^{\\circ} $ . Thus, the major axes of the fitness surface are different (here, they are essentially orthogonal) if one uses a quadratic approximation as opposed to a projection-pursuit regression approximation. As Figure 30.4A shows, the best-fitting quadratic regression using $ \\mathbf{e}_{1} $ and $ \\mathbf{e}_{2} $ (where $ y_{1}=\\mathbf{e}_{1}^{T}\\mathbf{z} $ and $ y_{2}=\\mathbf{e}_{2}^{T}\\mathbf{z} $ are the trait values on this fitness surface for an individual with a trait vector, $ \\mathbf{z} $ ) shows disruptive selection, with fitness rising in all directions from a central minimum. If one uses these axes but then fits the data using thin-plate splines, the result is a rather different-looking fitness function (Figure 30.4B), but one that also shows multiple peaks corresponding to different combinations of the traits that females find attractive. When projection-pursuit regression is used (Figure 30.4C), the fitness surface (in rough appearance) is similar to that for thin-plate splines using the quadratic axes $ (\\mathbf{e}_{1},\\mathbf{e}_{2}) $ . However, because the values for the two sets of axes $ (x_{1}=\\mathbf{a}_{1}^{T}\\mathbf{z},x_{2}=\\mathbf{a}_{2}^{T}\\mathbf{z} $ versus $ y_{1}=\\mathbf{e}_{1}^{T}\\mathbf{z},y_{2}=\\mathbf{e}_{2}^{T}\\mathbf{z} $ ) are rather different, this superficial visual appearance must be mapped into trait values (as indicated in Figure 30.4). Again, the result is that the fitness surface has multiple peaks."
+      "content": "[h] fitness surface, they display the pattern of selection on a series of composite traits, and not the actual traits themselves. This can make interpretation of the nature of selection on specific traits or combinations of traits problematic at best. Finally, the results from a nonparametric regression do not immediately provide coefficients to predict the response to selection, while (under normality assumptions) these follow automatically with a quadratic regression. Given these complementary strengths and weaknesses, researchers should use both quadratic and nonparametric regressions in the analysis of their selection data."
     }
   ]
 }

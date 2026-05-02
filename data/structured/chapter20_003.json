@@ -13,10 +13,12 @@
       "20.1b"
     ],
     "table_references": [
+      "inline_1",
       "inline_2",
       "inline_3"
     ],
     "table_reference_keys": [
+      "chapter20:inline_1",
       "chapter20:inline_2",
       "chapter20:inline_3"
     ]
@@ -24,47 +26,31 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "Bias from correlated traits can be removed by using the multivariate breeder's equation, provided all relevant traits are included. This equation expresses the vector, R, of responses (changes in means) as a function of the genetic (breeding value), G, and phenotypic, P, covariance matrices for the traits of interest, and the vector, S, of their selection differentials. From Equations 13.23b and 13.26a, $$ \\mathbf{R}=\\mathbf{G}\\mathbf{P}^{-1}\\mathbf{S}=\\mathbf{G}\\boldsymbol{\\beta} $$ where the selection gradient, $ = ^ -1 $, controls for any phenotypic correlations among the measured traits, returning the amount of direct selection acting on each particular character (LW Chapter 8; Chapter 30)."
+      "content": "Bias from correlated traits can be removed by using the multivariate breeder's equation, provided all relevant traits are included. This equation expresses the vector, R, of responses (changes in means) as a function of the genetic (breeding value), G, and phenotypic, P, covariance matrices for the traits of interest, and the vector, S, of their selection differentials. From Equations 13.23b and 13.26a, $$ \\mathbf{R}=\\mathbf{G}\\mathbf{P}^{-1}\\mathbf{S}=\\mathbf{G}\\boldsymbol{\\beta} $$ where the selection gradient, $ \\beta = \\mathbf{P}^{-1}\\mathbf{S} $, controls for any phenotypic correlations among the measured traits, returning the amount of direct selection acting on each particular character (LW Chapter 8; Chapter 30)."
     },
     {
       "type": "derivation",
-      "content": "Focusing on the bivariate version of this equation provides insight into some of the complications that can arise by ignoring selection on correlated traits. Suppose we are following trait 1, which is influenced by a second (and unmeasured) feature, which we denote as trait 2. Noting that $ = $, the selection differential on trait 1 becomes [[SEE_FORMULA:20.1a]]"
+      "content": "Focusing on the bivariate version of this equation provides insight into some of the complications that can arise by ignoring selection on correlated traits. Suppose we are following trait 1, which is influenced by a second (and unmeasured) feature, which we denote as trait 2. Noting that $ \\mathbf{S} = \\mathbf{P}\\beta $, the selection differential on trait 1 becomes [[SEE_FORMULA:20.1a]]"
     },
     {
       "type": "derivation",
-      "content": "A within-generation change $ (S_1 0) $ in trait 1 occurs from: (i) direct selection on trait 1 $ (\\beta_1 \\neq 0) $, and/or (ii) indirect selection from a phenotypically correlated one (trait 2) under directional selection ($ \\beta_2 \\neq 0 $ and $ (z_1, z_2) 0 $). As a result, the signs of $ S_1 $ and $ \\beta_1 $ can differ, and even strong direct selection ($ \\beta_1 \\neq 0 $) on a trait can still be associated with a net selection differential of nearly zero (or worse, of opposite sign). Turning to the expected response in trait 1, [[SEE_FORMULA:20.1b]]"
+      "content": "A within-generation change $ (S_1 \\neq 0) $ in trait 1 occurs from: (i) direct selection on trait 1 $ (\\beta_1 \\neq 0) $, and/or (ii) indirect selection from a phenotypically correlated one (trait 2) under directional selection ($ \\beta_2 \\neq 0 $ and $ \\sigma(z_1, z_2) \\neq 0 $). As a result, the signs of $ S_1 $ and $ \\beta_1 $ can differ, and even strong direct selection ($ \\beta_1 \\neq 0 $) on a trait can still be associated with a net selection differential of nearly zero (or worse, of opposite sign). Turning to the expected response in trait 1, [[SEE_FORMULA:20.1b]]"
     },
     {
       "type": "discussion",
-      "content": "Trait 1 can evolve as a consequence of direct selection (if it has additive variation) or as a correlated response from direct selection on another genetically correlated trait (with the breeding values of the two traits being correlated within individuals, $ (A_1, A_2) 0 $). As the following example highlights, some of the best studies of the response to selection in natural populations come from birds (reviewed by Merilä et al. 2001b; Merilä and Sheldon 2001; Gienapp et al. 2008; Kruuk et al. 2008; Clutton-Brock and Sheldon 2010; Charmantier et al. 2014). In certain settings (such as isolated islands), the entire population can be banded and all nests located (often through the use of nest boxes), allowing for accurate measurement of individual fitness (Chapter 29)."
+      "content": "Trait 1 can evolve as a consequence of direct selection (if it has additive variation) or as a correlated response from direct selection on another genetically correlated trait (with the breeding values of the two traits being correlated within individuals, $ \\sigma(A_1, A_2) \\neq 0 $). As the following example highlights, some of the best studies of the response to selection in natural populations come from birds (reviewed by Merilä et al. 2001b; Merilä and Sheldon 2001; Gienapp et al. 2008; Kruuk et al. 2008; Clutton-Brock and Sheldon 2010; Charmantier et al. 2014). In certain settings (such as isolated islands), the entire population can be banded and all nests located (often through the use of nest boxes), allowing for accurate measurement of individual fitness (Chapter 29)."
     },
     {
       "type": "discussion",
-      "content": "[h] |c|c| Cell 1 & Cell 2 \\\\ Cell 3 & Cell 4 \\\\"
+      "content": "Although there was a significant selection differential (which is presented as the selection intensity, $ \\bar{i} $, because the trait was scaled in standard deviations; Equation 13.6a) on tarsus length in two of the years (and in the pooled data), there was no significant direct selection on tarsus length itself (none of the estimated selection gradients for this trait were significant). Rather, direct selection was on fledgling weight. While there is a significant phenotypic correlation between tarsus length and fledgling weight (r = 0.32; p < 0.001), it appears to be entirely due to within-individual correlations of environmental effects, as there is no correlation between the fledgling weight of an offspring and the tarsus length of its parent (r = -0.01; p > 0.1). The latter observation implies an absence of a genetic correlation between tarsus length and fledgling weight, and hence (from Equation 20.1b) no response in tarsus length is expected."
     },
     {
       "type": "discussion",
-      "content": "Although there was a significant selection differential (which is presented as the selection intensity, $ \\bar{i} $ because the trait was scaled in standard deviations; Equation 13.6a) on tarsus length in two of the years (and in the pooled data), there was no significant direct selection on tarsus length itself (none of the estimated selection gradients for this trait were significant). Rather, direct selection was on fledgling weight. While there is a significant phenotypic correlation between tarsus length and fledgling weight （ $ r=0.32; p<0.001 $ ）, it appears to be entirely due to within-individual correlations of environmental effects, as there is no correlation between the fledging weight of an offspring and the tarsus length of its parent （ $ r=-0.01; p>0.1 $ ）. The latter observation implies an absence of a genetic correlation between tarsus length and fledgling weight, and hence (from Equation 20.1b) no response in tarsus length is expected."
+      "content": "Example 20.2. As reviewed in Grant and Grant (1995, 2002; and references therein), one of the best documented cases of natural selection is on body size and bill morphology in Darwin's finches (Geospiza fortis) on the Galápagos island of Daphne Major. Two strong episodes of selection were observed during their long-term study, due to serious droughts in 1976–1977 (when the population crashed from 634 birds down to 95, a 15% survival rate), and in 1984–1986 (556 birds reduced to 180, a 32% survival rate). Six (log-transformed) morphological traits were followed through both episodes, and (after rescaling all traits to have unit variances) the selection differentials, $ S = \\bar{t} $ (as traits are scaled to unit variance), and gradients, $ \\beta $, for the two episodes were as follows (where $ * $ denotes p < 0.05): Two striking features are apparent. First, the observed (within-generation) change in the mean, $ \\bar{\\tau} $, was not a good predictor of the actual amount of direct selection, $ \\beta $, on a trait, and can even have a different sign (e.g., bill length). Second, the nature of selection changed over the two drought periods. During the 1976–1977 drought, larger individuals were favored, and there was selection on bill shape (increased bill depth, decreased bill width). A change in the dominant food supply during a subsequent drought in 1984–1986 resulted in selection favoring smaller birds. Hence, the two episodes of selection were in opposite directions (at least in terms of body size)."
     },
     {
       "type": "discussion",
-      "content": "Example 20.2. As reviewed in Grant and Grant (1995, 2002; and references therein), one of the best documented cases of natural selection is on body size and bill morphology in Darwin's finches (Geospiza fortis) on the Galápagos island of Daphne Major. Two strong episodes of selection were observed during their long-term study, due to serious droughts in 1976-1977 (when the population crashed from 634 birds down to 95, a 15% survival rate), and in 1984- 1986 (556 birds reduced to 180, a 32% survival rate). Six (log-transformed) morphological traits were followed through both episodes, and (after rescaling all traits to have unit variances) the selection differentials, $ S=\\bar{\\iota} $ (as traits are scaled to unit variance), and gradients, $ \\beta $ , for the two episodes were as follows (where $ ^{*} $ denotes p < 0.05):"
-    },
-    {
-      "type": "discussion",
-      "content": "[h] |c|c| Cell 1 & Cell 2 \\\\ Cell 3 & Cell 4 \\\\"
-    },
-    {
-      "type": "discussion",
-      "content": "Two striking features are apparent. First, the observed (within-generation) change in the mean, $ \\bar{\\iota} $ , was not a good predictor of the actual amount of direct selection, $ \\beta $ , on a trait, and can even have a different sign (e.g., bill length). Second, the nature of selection changed over the two drought periods. During the 1976-1977 drought, larger individuals were favored, and there was selection on bill shape (increased bill depth, decreased bill width). A change in the dominant food supply during a subsequent drought in 1984-1986 resulted in selection favoring smaller birds. Hence, the two episodes of selection were in opposite directions (at least in terms of body size)."
-    },
-    {
-      "type": "discussion",
-      "content": "Grant and Grant had an estimate of the genetic variance matrix, G, for these traits in hand, allowing them to substitute these estimated $ \\beta s $ into the multivariate breeder's equation (13.26a) to examine how well responses were predicted. Response was well predicted in 1976, but overpredicted in three of the six traits in the 1984 episode. They suggested that the main reason for these discrepancies was a change in the biotic environment. Higher population densities for offspring in 1984 retarded growth, resulting in an overprediction of size-related traits."
-    },
-    {
-      "type": "discussion",
-      "content": "[h] |c|c| Cell 1 & Cell 2 \\\\ Cell 3 & Cell 4 \\\\ $$ ^{*}p<0.05,\\qquad^{**}p<0.01,\\qquad^{***}p<0.001 $$"
+      "content": "Grant and Grant had an estimate of the genetic variance matrix, G, for these traits in hand, allowing them to substitute these estimated $ \\beta $s into the multivariate breeder's equation (13.26a) to examine how well responses were predicted. Response was well predicted in 1976, but overpredicted in three of the six traits in the 1984 episode. They suggested that the main reason for these discrepancies was a change in the biotic environment. Higher population densities for offspring in 1984 retarded growth, resulting in an overprediction of size-related traits. $$ ^{*}p<0.05,\\qquad^{**}p<0.01,\\qquad^{***}p<0.001 $$"
     }
   ]
 }

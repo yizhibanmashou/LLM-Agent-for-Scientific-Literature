@@ -2,48 +2,35 @@
   "id": "chapter17_005",
   "metadata": {
     "chapter": "chapter17",
-    "section": "Chapter 17: The Multiplicative Model",
+    "section": "Chapter 17: Environmental vs. Genetic Canalization",
     "subsections": [
-      "The Multiplicative Model"
+      "MODELING GENETIC VARIATION IN $ \\sigma_{E}^{2} $"
     ],
     "source_file": "tmp\\paddle_output\\chapter17_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [
-      "17.2a",
-      "17.2b",
-      "17.2c",
-      "17.2d"
+      "17.1a",
+      "17.1b"
     ],
-    "table_references": []
+    "table_references": [
+      "17.1"
+    ],
+    "table_reference_keys": [
+      "chapter17:17.1"
+    ]
   },
   "blocks": [
     {
       "type": "derivation",
-      "content": "Gavrilets and Hastings (1994c) assumed some underlying environmental factor, e (such as temperature), with different genotypes having different sensitivity, $ _ i $, to this factor, hence [[SEE_FORMULA:17.2a]]"
+      "content": "A variety of statistical models have been proposed to account for the heritable transmission of at least part of the environmental variance. The starting point for each model is that the phenotypic value of an individual of genotype i can be written as [[SEE_FORMULA:17.1a]]"
     },
     {
       "type": "derivation",
-      "content": "This multiplicative model is simply the joint-regression model for genotype×environment interactions (LW Equation 22.13b; Volume 3), and was also used by Wagner et al. (1997). Under Equation 17.2a, the conditional environmental variance (given the genotypic value and its environmental sensitivity) is [[SEE_FORMULA:17.2b]] As shown in Example 17.2 (below), taking the expected value over the population distribution of sensitivity values, $ (_, _ ^ 2) $, yields the unconditional environmental variance in the population [[SEE_FORMULA:17.2c]]"
+      "content": "The notation $ x \\sim (\\mu, \\sigma^2) $ denotes that $ x $ comes from a distribution with a mean of $ \\mu $ and variance of $ \\sigma^2 $. For ease of development, we generally assume that the trait has an entirely additive-genetic basis, meaning that $ G = A $, namely the standard breeding value for the trait. Normally, this breeding value is either unsubscripted or is denoted as $ A_z $ to connect it with $ z $. However, for models with a heritable (i.e., a breeding-value) component to $ \\sigma_E^2 $, we need to keep track of two separate breeding values, both of which influence $ z $. One, $ A_m $, influences the mean of $ z $ (so that $ G = A_m $ in Equation 17.1a), while another breeding value, $ A_v $, influences the environmental variance of $ z $. As we will detail shortly, several different models have been proposed to connect $ A_v $ and $ \\sigma_E^2 $ (reviewed in [[SEE_TABLE:17.1]]). These two breeding values, $ A_m $ and $ A_v $, can be correlated, which further complicates the dynamics of selection response. Changes in the mean of $ A_m $ change the mean of $ z $ (the standard response to selection as measured by a change in the mean), while changes in the mean of $ A_v $ change the average value of $ \\sigma_E^2 $ (yielding a response in the environmental variance). Because we allow $ \\sigma_{E}^{2} $ to vary over genotypes, its population value is not the usual constant that was assumed in previous chapters, but rather an average value that may change over time. Taking the expectation (to avoid confusion, in this chapter we will use roman E for expectation and italic E for environmental values), the population environmental variance is the average of the $ \\sigma_{i}^{2} $, [[SEE_FORMULA:17.1b]]"
     },
     {
       "type": "discussion",
-      "content": "Note that while $ \\gamma_{i} $ can be negative, Equation 17.2b shows that it influences the environmental variance through its square, $ \\gamma_{i}^{2} $ . Thus, the magnitude, rather than the sign, of $ \\gamma_{i} $ determines its impact on $ \\sigma_{E}^{2} $ . Under the multiplicative model, the environmental variance for the population decreases by selecting $ \\mu_{\\gamma} $ to zero and/or by decreasing the variance, $ \\sigma_{\\gamma}^{2} $ of environmental sensitivities. The problematic issue here is modeling the change in the distribution of the genotypic-specific sensitivities, $ \\gamma $ . The simplest approach is to assume that the environmental sensitivity, $ \\gamma $ , is an entirely additive quantitative trait, so that $ \\gamma = A_{v} $ namely, the breeding value for the environmental variance."
-    },
-    {
-      "type": "discussion",
-      "content": "Analysis of Equation 17.2c led Gavrilets and Hasting to comment on the relationship between developmental noise and heterozygosity mentioned previously. Lerner (1954) assumed this relationship to be causative, with higher levels of heterozygosity directly causing decreased environmental variance. However, Gavrilets and Hastings noted that when $ \\mu_{\\gamma}^{2}=0 $ , as might occur with selection to decrease $ \\sigma_{E}^{2} $ , then under the simple additive model $ (\\gamma=A_{v}) $ , the environmental variance for a given trait is proportional to the additive genetic variance in environmental sensitivity, $ \\sigma_{\\gamma}^{2}=\\sigma^{2}(A_{v}) $ ."
-    },
-    {
-      "type": "discussion",
-      "content": "Gavrilets and Hastings noted that a correlation between heterozygosity and $ \\sigma_{E}^{2} $ simply falls out as a consequence of their model, rather than from any functional relationship between the two. They reach this conclusion by using the result that, for an additive trait (in our case, $ \\gamma=A_{v} $ ), the genetic variance is a decreasing function of the number of heterozygous loci (Chakraborty 1987), so that when the average heterozygosity in a population increases, $ \\sigma^{2}(A_{v}) $ decreases, and hence (from Equation 17.2c), so does $ \\sigma_{E}^{2} $ . While their theoretical point is valid, it is actually addressing a slightly different issue than Lerner's argument. The Gavrilets and Hastings model suggests that populations with less heterozygosity are expected to show increased levels of $ \\sigma_{E}^{2} $ , while Lerner was suggesting that individuals with reduced heterozygosity show increased $ \\sigma_{E}^{2} $ ."
-    },
-    {
-      "type": "derivation",
-      "content": "If we allow for dominance in the quantitative-trait formulation of $ $, the result is $ = A_v + D_v $, where the dominance value, $ D_v $, is not transmitted from parent to offspring. Further, by construction, $ D_v $ has a mean value of zero and under the infinitesimal model, the dominance variance is not changed by selection (Chapter 16). Under this extension, the mean environmental variance becomes [[SEE_FORMULA:17.2d]]"
-    },
-    {
-      "type": "discussion",
-      "content": "This same argument applies if we replace $ \\sigma_{D_{v}}^{2} $ by the total nonadditive genetic variance. While selection can reduce the first component in Equation 17.2d (either by driving the mean breeding value to zero and/or reducing $ \\sigma_{A_{v}}^{2} $ ), the component involving nonadditive variance remains unchanged. Hence, implicit in assuming a breeding value for this model (or any of the others discussed below) is that any nontransmissible genetic variation in $ \\sigma_{E}^{2} $ remains unchanged by selection. Genetic variation in $ \\sigma_{E}^{2} $ , by itself, is not sufficient for a selection response, as the latter requires that at least part of this variation must be transmissible under the breeding scheme being used."
+      "content": "When working with a series of pure lines, one can estimate $ \\sigma_i^2 $ directly. The more interesting (and difficult) problem arises when considering an outbred population. In this case, we have to deal with both estimation and the vexing issue of modeling transmission. Models allowing for heterogeneity of environmental variance were introduced by breeders in the 1990s (e.g., Foulley et al. 1992; Foulley and Quaas 1995; Cullis et al. 1996), but these models ignored the question of selection (and evolution) of the environmental variance itself. As outlined below, the first formal analyses of the evolution of the environmental variance were population-genetic models presented by Gavrilets and Hastings (1994c) and Wagner et al. (1997), and breeding-value-based models presented by SanCristobal-Gaudy et al. (1998)."
     }
   ]
 }

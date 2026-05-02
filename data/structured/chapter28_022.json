@@ -31,15 +31,15 @@
     },
     {
       "type": "discussion",
-      "content": "Example 28.4. Before proceeding with the derivation of Kimura's (1965a) result, recall the important distinction between an allele effect, a, and a mutational effect, $ \\alpha $ . Under the incremental model, the allelic effect following a new mutation is $ a^{\\prime}=a+\\alpha $ . Our interest is in the variance of allelic effects, $ \\sigma^{2}(a) $ , as this is half of the additive variance contributed by a locus (for a diploid and assuming additivity). As we will see, in many models, $ \\sigma^{2}(a) $ is a function of the variance in the mutational effects, $ \\sigma_{\\alpha}^{2} $ . In what follows, because a and $ \\alpha $ are very similar in appearance, we use x for the allelic effect in much of the deviation, before returning to express $ \\sigma^{2}(x) $ as $ \\sigma^{2}(a) $ in the discussion. Finally, while our focus is for a particular locus, we suppress the subscript throughout much of the derivation to keep the notation simpler. Kimura (1965a) considered a haploid continuum-of-alleles model, following the distribution, p(x), of allelic effects at a locus with no linkage disequilibrium. He assumed a continuous time model in Hardy-Weinberg equilibrium and under quadratic stabilizing selection (Equation 28.3a). Our treatment follows Bulmer (1989), who obtained the same result under Gaussian stabilizing selection (with the population mean set at $ \\theta $ ). In this setting, Bulmer showed that the expected infinitesimal change in the distribution of allelic effects from selection is"
+      "content": "Example 28.4. Before proceeding with the derivation of Kimura’s (1965a) result, recall the important distinction between an allele effect, $a$, and a mutational effect, $\\alpha$. Under the incremental model, the allelic effect following a new mutation is $a' = a + \\alpha$. Our interest is in the variance of allelic effects, $\\sigma^2(a)$, as this is half of the additive variance contributed by a locus (for a diploid and assuming additivity). As we will see, in many models, $\\sigma^2(a)$ is a function of the variance in the mutational effects, $\\sigma_\\alpha^2$. In what follows, because $a$ and $\\alpha$ are very similar in appearance, we use $x$ for the allelic effect in much of the deviation, before returning to express $\\sigma^2(x)$ as $\\sigma^2(a)$ in the discussion. Finally, while our focus is for a particular locus, we suppress the subscript throughout much of the derivation to keep the notation simpler."
     },
     {
       "type": "derivation",
-      "content": "Kimura (1965a) considered a haploid continuum-of-alleles model, following the distribution, $ p(x) $, of allelic effects at a locus with no linkage disequilibrium. He assumed a continuous-time model in Hardy-Weinberg equilibrium and under quadratic stabilizing selection (Equation 28.3a). Our treatment follows Bulmer (1989), who obtained the same result under Gaussian stabilizing selection (with the population mean set at $ $). In this setting, Bulmer showed that the expected infinitesimal change in the distribution of allelic effects from selection is [[SEE_FORMULA:28.21a]] where $ \\sigma^{2}(x)=\\sigma^{2}(a) $ is the variance in allelic effects at the focal locus."
+      "content": "Kimura (1965a) considered a haploid continuum-of-alleles model, following the distribution, $ p(x) $, of allelic effects at a locus with no linkage disequilibrium. He assumed a continuous-time model in Hardy-Weinberg equilibrium and under quadratic stabilizing selection (Equation 28.3a). Our treatment follows Bulmer (1989), who obtained the same result under Gaussian stabilizing selection (with the population mean set at $ \\theta $). In this setting, Bulmer showed that the expected infinitesimal change in the distribution of allelic effects from selection is [[SEE_FORMULA:28.21a]] where $ \\sigma^{2}(x)=\\sigma^{2}(a) $ is the variance in allelic effects at the focal locus."
     },
     {
       "type": "derivation",
-      "content": "Under the incremental mutational model, $ f() $ is the probability that an allele mutates from value x to value $ x + $, where $ E() = 0 $ and $ E(\\alpha^2) = \\sigma_\\alpha^2 $. The resulting rate of change from mutation becomes [[SEE_FORMULA:28.21b]]"
+      "content": "Under the incremental mutational model, $ \\mu f(\\alpha) $ is the probability that an allele mutates from value x to value $ x + \\alpha $, where $ E(\\alpha) = 0 $ and $ E(\\alpha^2) = \\sigma_\\alpha^2 $. The resulting rate of change from mutation becomes [[SEE_FORMULA:28.21b]]"
     },
     {
       "type": "discussion",
@@ -47,7 +47,7 @@
     },
     {
       "type": "derivation",
-      "content": "Formally, if the life cycle is selection followed by mutation, then $ p(x) $ in the Equation 28.21b is replaced by $ p'(x) $, the postselection value. However, for weak selection and mutation, we can simply sum Equations 28.21a and 28.21b to yield the integro-differential equation for the distribution of allelic effects at time t. The equilibrium distribution is reached when [[SEE_FORMULA:28.21c]] or which Bulmer (1989) called the fundamental equation of the continuum-of-alleles model. Most early workers assumed that such an equilibrium distribution exists and that it is unique, but this was not formally shown until the publications of Bürger (1986, 1988a, 1988b, 1988c, 1991b; Bürger and Bomze 1996). Notice that the solution to Equation 28.21c depends strongly on the choice of $ f() $, the assumed probability density function for new mutational effects."
+      "content": "Formally, if the life cycle is selection followed by mutation, then $ p(x) $ in the Equation 28.21b is replaced by $ p'(x) $, the postselection value. However, for weak selection and mutation, we can simply sum Equations 28.21a and 28.21b to yield the integro-differential equation for the distribution of allelic effects at time t. The equilibrium distribution is reached when [[SEE_FORMULA:28.21c]] or which Bulmer (1989) called the fundamental equation of the continuum-of-alleles model. Most early workers assumed that such an equilibrium distribution exists and that it is unique, but this was not formally shown until the publications of Bürger (1986, 1988a, 1988b, 1988c, 1991b; Bürger and Bomze 1996). Notice that the solution to Equation 28.21c depends strongly on the choice of $ f(\\alpha) $, the assumed probability density function for new mutational effects."
     },
     {
       "type": "proposition",
@@ -55,11 +55,11 @@
     },
     {
       "type": "derivation",
-      "content": "Different approximations have been used to proceed from Equation 28.21c to an explicit solution. Kimura assumed that mutational effects, $ $, are sufficiently small to approximate $ p(x -) $ by a second-order Taylor series [[SEE_FORMULA:28.22a]]"
+      "content": "Different approximations have been used to proceed from Equation 28.21c to an explicit solution. Kimura assumed that mutational effects, $ \\alpha $, are sufficiently small to approximate $ p(x - \\alpha) $ by a second-order Taylor series [[SEE_FORMULA:28.22a]]"
     },
     {
       "type": "derivation",
-      "content": "This approximation requires that $ \\sigma_\\alpha^2 \\ll \\sigma^2(x) = \\sigma^2(a) $, namely, that the effect of a new mutation is much smaller than the current variance in allelic effects. Substituting this approximation into the integral in Equation 28.21c yields [[SEE_FORMULA:28.22b]] where we have used $ f() d = E[] = 0 $. Using the approximation given by Equation 28.22a, the equilibrium solution of $ p(x) $ satisfies the differential equation [[SEE_FORMULA:28.22c]]"
+      "content": "This approximation requires that $ \\sigma_\\alpha^2 \\ll \\sigma^2(x) = \\sigma^2(a) $, namely, that the effect of a new mutation is much smaller than the current variance in allelic effects. Substituting this approximation into the integral in Equation 28.21c yields [[SEE_FORMULA:28.22b]] where we have used $ \\int \\alpha f(\\alpha) d\\alpha = E[\\alpha] = 0 $. Using the approximation given by Equation 28.22a, the equilibrium solution of $ p(x) $ satisfies the differential equation [[SEE_FORMULA:28.22c]]"
     },
     {
       "type": "derivation",

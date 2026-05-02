@@ -4,11 +4,16 @@
     "chapter": "chapter10",
     "section": "Chapter 10: How Common Are Adaptive Substitutions?",
     "subsections": [
-      "How Common Are Adaptive Substitutions?"
+      "Estimating the Rate, $ \\lambda $, of Adaptive Substitutions"
     ],
     "source_file": "tmp\\paddle_output\\chapter10_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
-    "formula_references": [],
+    "formula_references": [
+      "10.11a",
+      "10.11b",
+      "10.11c",
+      "10.11d"
+    ],
     "table_references": [
       "10.1"
     ],
@@ -18,36 +23,28 @@
   },
   "blocks": [
     {
-      "type": "discussion",
-      "content": "There has been an explosion of genomewide estimates of $ \\overline{\\alpha} $ (Eyre-Walker 2006) that will likely continue, as the required data (the amount of divergence between a set of genes in two species, and polymorphism data, or the number of segregating sites, for the same genes from one, or both, species) are becoming increasingly easy to obtain. [[SEE_TABLE:10.1]] summarizes some of these studies, and Figure 10.2 shows an analysis from ten species-pairs in plants. The quest for $ \\overline{\\alpha} $ values is very reminiscent of the mad \"find them and grind them\" dash in the 1970s to estimate levels of protein variation in a menagerie of species (e.g., Lewontin 1974)."
+      "type": "derivation",
+      "content": "A quantity that prominently appeared in expressions in Chapter 8 on the effects of recurrent sweeps was $ \\lambda $, the per-generation rate at which adaptive substitutions occur. While it might seem that estimates of $ \\lambda $ (the number of adaptive substitutions per site divided by the total time of divergence, $ 2t) $ would be very difficult to obtain, fortunately this is not the case, as they follow almost directly from estimates of $ \\alpha $ (Smith and Eyre-Walker 2002; Andolfatto 2007). If $ d_{a} = D_{a}/n_{a} $ denotes the per-site number of replacement substitutions between two species that separated t generations ago, then an upper bound for $ \\lambda $ is simply $ d_{a}/(2t) $. The use of $ D_{a} $ to compute $ d_{a} $ involves the assumption that all substitutions have been observed, so that no corrections for multiple substitutions at the same site are needed, which is not unreasonable when comparing two closely related species. With an estimate of $ \\alpha $, the number of adaptive replacement substitutions is just $ \\alpha D_{a} $, yielding Andolfatto's estimator (2007), [[SEE_FORMULA:10.11a]] for the per-site, per-generation rate of adaptive substitutions."
+    },
+    {
+      "type": "derivation",
+      "content": "In order to apply Equation 10.11a, one must have an estimate of the divergence time, t. This can be estimated (scaled as $ \\tau = t/(2N_e) $ generations) from the ratio of $ D_s/P_s $, as follows. From Equations 10.12a and 10.12b, [[SEE_FORMULA:10.11b]] where m and n are the sample sizes for the two populations and the sample size feature, $ a_{x} $, is given by Equation 4.3b. Substituting the observed values of $ D_{s} $ and $ P_{s} $ for their expected values and rearranging provides a simple method-of-moments estimator for the scaled divergence time [[SEE_FORMULA:10.11c]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Using this estimate yields $ \\widehat{t} = 2N_e\\widehat{\\tau} $, and substituting into Equation 10.11a yields [[SEE_FORMULA:10.11d]]"
     },
     {
       "type": "discussion",
-      "content": "The general observation for Drosophila is that estimates of $ $ for amino acid substitutions are high, averaging around 50"
+      "content": "Note that the estimate offered by Equations 10.11a and 10.11d for the rate, $ \\lambda $, is typically based on structural changes, namely, the adaptive rate of amino acid replacement substitutions in protein-coding genes. A more inclusive estimate would also account for regulatory adaptations, which are expected to be at least on par with protein structural adaptations (Chapter 9)."
     },
     {
       "type": "discussion",
-      "content": "One trend that has been suggested is that $ \\overline{\\alpha} $ increases with effective population size (Eyre-Walker 2006). While intriguing, there are also apparent counterexamples. For example, Bachtrog (2008) found that D. miranda, which is thought to have a low effective population size, has a similar value of $ \\overline{\\alpha} $ as Drosophila species thought to have a significantly larger values for $ N_{e} $"
+      "content": "Example 10.12. The estimated amino acid divergence between human and chimpanzee proteins is $ d_{\\alpha} = 0.008 $ (Chimpanzee Sequencing and Analysis Consortium 2005), with a divergence time of roughly 7 million years. If we take $ \\alpha = 0.10 $ (10% of replacement substitutions are adaptive, the rough average for human studies in [[SEE_TABLE:10.1]]), then from Equation 10.11a, our estimate of the rate of adaptive replacement substitutions per site, per generation is $$ \\lambda=\\frac{0.10\\cdot0.008}{14\\cdot10^{6}}=5.7\\cdot10^{-11}per site,per year $$"
     },
     {
       "type": "discussion",
-      "content": "Drawing a clear conclusion from these initial data is problematic for several reasons. First, even in the same species, different genes may be used or different populations may be chosen as the polymorphism benchmark. The effect of the latter is especially prominent in Figure 10.2, with the same divergence data between two sunflower species (Helianthus annuus versus H. petiolaris) showing a significantly positive estimate of mean $ \\alpha $ when using Helianthus petiolaris as the polymorphism reference population, but a negative (but not significant) estimate when using H. annuus as the reference population (reminiscent of Example 10.9). Differences in $ N_{e} $ values between the two species being considered can inflate or deflate estimates of $ \\alpha $ (Equation 10.10). Second, different studies used different methods, ranging from simple MK-type estimators (Equations 10.8 and 10.9) to much more sophisticated, ML-based estimators that attempt to account for both changes in $ N_{e} $ and the presence of segregating deleterious alleles (Bierne and Eyre-Walker 2004; Welch 2006; Eyre-Walker and Keightley 2009). While they are certainly powerful when the modeling assumptions are correct, the robustness of these ML approaches against model misspecification is unclear."
-    },
-    {
-      "type": "discussion",
-      "content": "Despite these potential misgivings, the pattern of estimates of $ \\overline{\\alpha} $ over species, and even"
-    },
-    {
-      "type": "discussion",
-      "content": "within genomes, is of fundamental importance to evolutionary biologists. If, indeed, some species have very low $ \\overline{\\alpha} $ values, does this automatically imply that they have lower rates of adaptation? One surprising taxon that shows a very low estimated $ \\overline{\\alpha} $ is the Hawaiian silversword plant genus Schiedea (family Caryophyllaceae), a group with rapid (and dramatic) morphological evolution over a very recent time window (Gossmann et al. 2010). One possible resolution to this apparent disconnect is that most current studies have focused on the estimation of $ \\alpha $ in coding sequences, whereas considerable adaptation (especially over short time scales) may occur at the level of gene regulation. Based upon the estimated $ \\alpha $ values in noncoding regions, Andolfatto (2005, Wright and Andolfatto 2008) suggested that the number of adaptive substitutions in noncoding regions in Drosophila could be far greater than the number of adaptive replacement substitutions. Given that Drosophila has a compact genome relative to humans and many other metazoans and land plants, the bulk of adaptive variation may not reside in the coding regions that are the focus of most current estimates of $ \\overline{\\alpha} $ . An alternative, and not necessarily exclusive, explanation for the Schiedea data is that only a few key genes underlie most of the morphological change, resulting in very little change in the genomewide value of $ \\overline{\\alpha} $ ."
-    },
-    {
-      "type": "discussion",
-      "content": "One observation consistent with the importance of regulatory changes derives from the work of Torgerson et al. (2009), who compared polymorphism and divergence levels in roughly 15,000 conserved noncoding (CNC) regions flanking human genes. CNCs are"
-    },
-    {
-      "type": "discussion",
-      "content": "[[TABLE:10.1]] and Figure 10.2). Low levels in Arabidopsis thaliana were originally attributed to the high levels of selfing in this species (Bustamante et al. 2002), but a close outcrossing relative (A. lyrata) similarly shows very low levels of $ $ (Foxe et al. 2008). The case receiving the most interest is humans, where an initially rather high estimate of 0.35 by Fay et al. (2001) for a small set of genes was followed by several studies showing much lower values ([[SEE_TABLE:10.1]]). operationally defined as noncoding sequences of at least 100 nucleotides in length that show at least 70"
+      "content": "Assuming a generation time of 25 years, this corresponds to a rate of $ 2.3 \\cdot 10^{-12} $ per site, per generation. As a point of comparison, Andolfatto (2007) contrasted X chromosome genes in Drosophila melanogaster (for polymorphism data) and D. simulans (as the outgroup for divergence). The estimated $ \\alpha $ was 0.5, while $ d_a = 0.028 $, and $ t = 10^7 $ generations, yielding $$ \\lambda=\\frac{0.50\\cdot0.028}{2\\cdot10^{7}}=7.0\\cdot10^{-10}per site,per generation $$ Hence (for these data), Drosophila have a 12-fold higher per-site adaptation rate than humans."
     }
   ]
 }

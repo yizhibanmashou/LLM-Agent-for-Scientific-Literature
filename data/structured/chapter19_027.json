@@ -21,7 +21,7 @@
     },
     {
       "type": "derivation",
-      "content": "The (unconditional) mean and variance for this model follow from $ E[] = / $, and $ \\operatorname{Var}(\\mathbf{y}) = \\operatorname{Var}(\\mathbf{Z} \\mathbf{a} + \\mathbf{e}) = \\sigma_A^2 \\mathbf{Z} \\mathbf{A} \\mathbf{Z}^T + \\sigma_e^2 \\mathbf{I} $. Wang et al. (1993, 1994a, 1994b), Sorensen et al. (1994), and Jensen et al. (1994) developed Gibbs samplers for this model and its extensions. As before, the conditional distribution of the data, given the vectors of fixed effects, $ $, breeding values, a, and the environmental variance, $ \\sigma_e^2 $, is multivariate normal [[SEE_FORMULA:19.33a]]"
+      "content": "The (unconditional) mean and variance for this model follow from $ E[\\mathbf{y}] = \\mathbf{X} / \\beta $, and $ \\operatorname{Var}(\\mathbf{y}) = \\operatorname{Var}(\\mathbf{Z} \\mathbf{a} + \\mathbf{e}) = \\sigma_A^2 \\mathbf{Z} \\mathbf{A} \\mathbf{Z}^T + \\sigma_e^2 \\mathbf{I} $. Wang et al. (1993, 1994a, 1994b), Sorensen et al. (1994), and Jensen et al. (1994) developed Gibbs samplers for this model and its extensions. As before, the conditional distribution of the data, given the vectors of fixed effects, $ \\beta $, breeding values, a, and the environmental variance, $ \\sigma_e^2 $, is multivariate normal [[SEE_FORMULA:19.33a]]"
     },
     {
       "type": "derivation",
@@ -29,27 +29,7 @@
     },
     {
       "type": "discussion",
-      "content": "Sorensen et al. (1994) assumed a uniform prior for $ $, a normal prior for a, and both uniform and inverse- $ ^2 $ priors for the variances. For example, the joint prior for a and $ _A^2 $ is the product of $ p(_A^2,) p(_A^2) $, where the first distribution is a multivariate normal (Equation 19.33b) and the second is either a uniform or an inverse- $ ^2 $ (Appendix 2). These distributions are chosen because they are conjugate priors (Appendix 2) for the multivariate normal, resulting in analytical expressions for the $ p + q + 2 $ univariate conditional distributions for each factor in the model ($ p $ breeding values, $ a_k $, $ q $ fixed effects, $ _j $, and the variances, $ _A^2 $ and $ _e^2 $). Using these univariate conditionals, a Gibbs sampler can be constructed. The outline for the sampler is as follows: 1. Set initial values for a, $ $, $ _ A ^ 2 $, and $ _ e ^ 2 $. 2. Using the current values of a, $ $, $ _ A ^ 2 $, and $ _ e ^ 2 $ and the conditional distributions (see Sorensen et al. 1994 for exact expressions): (i) Update the fixed effects by sequentially drawing (for $ j = 1,, q $) from the conditionals (which are univariate normals) $$ \\beta_{j,i}\\sim p(\\beta_{j}\\mid\\beta_{1,i},\\cdot,\\beta_{j-1,i},\\beta_{j+1,i-1},\\cdot,\\beta_{q,i-1},\\mathbf{a}_{i-1},\\sigma_{A,i-1}^{2},\\sigma_{e,i-1}^{2}) $$ where $ _ j,i $ is the value of $ _j $ during the $ i $th iteration of the sample. The current values of these parameters define the mean and variance for a normal, from which a random value is drawn. For factor $ j $, we take the values for a and the variances from the last iteration $ (i-1) $, the values of $ _1 $ to $ _ j-1 $ from the current iteration $ (i) $, and the values of $ _ j+1 $ to $ _q $ from the last iteration $ (i-1) $. These values are inserted to give the parameters (here, the conditional mean and variance) for the univariate normal that corresponds to the conditional distribution for $ _j $ and a random variable is drawn from this distribution to yield $ _ j,i $."
-    },
-    {
-      "type": "discussion",
-      "content": "(ii) Update the breeding values by sequentially drawing (for $ i = 1,, p $) from the conditionals (again univariate normals), where the vector, $ $, of fixed effects is taken as the updated version $$ a_{j,i}\\sim p(a_{j}\\mid\\beta_{i},a_{1,i},\\cdots,a_{j-1,i},a_{j+1,i-1},\\cdots,a_{p,i-1},\\sigma_{A,i-1}^{2},\\sigma_{e,i-1}^{2}) $$"
-    },
-    {
-      "type": "discussion",
-      "content": "(iii) Update the additive variance by drawing from the conditional (a scaled inverse- $ ^ 2 $ distribution) $$ \\sigma_{A,i}^{2}\\sim p(\\sigma_{A}^{2}\\mid\\boldsymbol{\\beta}_{i},\\mathbf{a}_{i},\\sigma_{e,i-1}^{2}) $$"
-    },
-    {
-      "type": "discussion",
-      "content": "(iv) Update the error variance by drawing from the conditional (again, a scaled inverse- $ ^ 2 $ distribution) $$ \\sigma_{e,i}^{2}\\sim p(\\sigma_{e}^{2}\\mid\\boldsymbol{\\beta}_{i},\\mathbf{a}_{i},\\sigma_{A,i}^{2}) $$"
-    },
-    {
-      "type": "discussion",
-      "content": "3. Using the updated values, repeat (2) until k samples have been obtained, from which m are extracted (following the burn-in and trimming) for the Gibbs-sampler chain."
-    },
-    {
-      "type": "discussion",
-      "content": "This Bayesian analysis makes most of the standard animal-model assumptions, in particular that the infinitesimal model and multivariate normality, hold (as with an MM analysis, a Bayesian approach is potentially biased by selection-induced changes in allele frequencies). A Bayesian analysis has all the advantages of an MM analysis (over an LS analysis) and, in addition, the posterior marginals correctly give the distribution of any parameter of interest, independent of the values assumed for other parameters. Any uncertainty introduced by estimating these additional parameters is fully captured by the marginal posteriors. The Bayesian approach yields the correct distribution (assuming that the model assumptions hold and the prior is reasonable) for the estimated selection response, independent of the additive genetic variance. By contrast, an MM analysis is highly dependent on the assumed (or estimated) additive variance, and the standard error of a REML/BLUP estimate for the response (Equation 19.8c) does not account for the additional uncertainty introduced by using a REML estimate of $ \\sigma_{A}^{2} $ . One standard package for Bayesian analysis is Winbugs, and Damgaard (2007) outlined how to apply this software to animal models."
+      "content": "Sorensen et al. (1994) assumed a uniform prior for $ \\beta $, a normal prior for a, and both uniform and inverse- $ \\chi^2 $ priors for the variances. For example, the joint prior for a and $ \\sigma_A^2 $ is the product of $ p(\\mathbf{a} \\mid \\sigma_A^2, \\mathbf{A}) \\cdot p(\\sigma_A^2) $, where the first distribution is a multivariate normal (Equation 19.33b) and the second is either a uniform or an inverse- $ \\chi^2 $ (Appendix 2). These distributions are chosen because they are conjugate priors (Appendix 2) for the multivariate normal, resulting in analytical expressions for the $ p + q + 2 $ univariate conditional distributions for each factor in the model ($ p $ breeding values, $ a_k $, $ q $ fixed effects, $ \\beta_j $, and the variances, $ \\sigma_A^2 $ and $ \\sigma_e^2 $). Using these univariate conditionals, a Gibbs sampler can be constructed. The outline for the sampler is as follows:"
     }
   ]
 }

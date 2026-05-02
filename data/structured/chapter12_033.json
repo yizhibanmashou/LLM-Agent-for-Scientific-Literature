@@ -2,60 +2,43 @@
   "id": "chapter12_033",
   "metadata": {
     "chapter": "chapter12",
-    "section": "Chapter 12: DIVERGENCE IN GENE EXPRESSION",
+    "section": "Chapter 12: Tests Based on tSDS Scores",
     "subsections": [
-      "Rate-based Tests for Neutrality in Divergence of Gene Expression"
+      "The Berg and Coop $ Q_{x} $ Test"
     ],
     "source_file": "tmp\\paddle_output\\chapter12_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [
-      "12.34a",
-      "12.34b",
-      "12.34c",
-      "12.34d"
+      "12.33a",
+      "12.33b",
+      "12.33h"
     ],
     "table_references": []
   },
   "blocks": [
     {
       "type": "derivation",
-      "content": "Early attempts to detect departures of gene expression evolution from neutral trait predictions used rate-based approaches, based on Lande's $ F_ MDE $ test (Equation 12.20a). While the standard version of this test uses the ratio of the observed among-group variance, $ V_ B $, to the expected among-group variance (expressed as $ 2t _ m ^ 2 $, where t is the separation time in generations), a modified version uses an estimate of $ V_ A $ (the additive-genetic variance of expression in the reference population or species) in place of $ 2t _ m ^ 2 $. An important caveat is that these early studies were based on the phenotypic variance, such as the among-line variance, as a surrogate in place of the additive-genetic variance (Hsieh et al. 2003; Rifkin et al. 2003; and Nuzhdin et al. 2004). This approach raises some of the issues discussed previously when using $ P_ ST $ as a surrogate of $ Q_ ST $; see Example 12.9. With this concern in mind, the version of Lande's test used by these investigators starts by noting that $ E[V_A] = 2N_e _m^2 $ for an additive trait at mutation-drift equilibrium (Equation 11.20c). Assuming expression values are drawn from a normal distribution under the null model, then when $ L $ lineages are used to estimate the among-group variance and $ k $ individuals per line were used to estimate $ V_A $, Equation 12.5a shows that both estimators approximately follow $ ^2 $ distributions, with [[SEE_FORMULA:12.34a]] where t is the time of divergence since the common ancestor. These expressions suggest a modified version of Lande's $ F_ MDE $ test statistic, [[SEE_FORMULA:12.34b]] where this statistic follows an $F$ distribution, with $F_ MDE ^* F_ L-1,k-1 $ (as it is the ratio of two $ ^2$ random variables, scaled by their degrees of freedom; see LW Appendix 5). A scaled ratio less than a critical value of $F_ /2 $ is suggestive (at level $ $) of too little divergence, and hence suggestive of stabilizing selection, while a scaled ratio in excess of $F_ 1- /2 $ implies too much divergence, suggestive of directional selection. These critical values are given by [[SEE_FORMULA:12.34c]] where $ F_,M,N $ denotes critical values for an F distribution and satisfies $$ \\Pr\\left(F_{M,N}\\leq F_{\\alpha,M,N}\\right)=\\alpha $$"
+      "content": "The final approach leveraging GWAS-estimated marker effects for a target trait is due to Berg and Coop (2014), building on previous work by them (Coop et al. 2010; Günther and Coop 2013) as well as by Ovaskainen et al. (2011). Let $ \\mathbf{p}_i^T = (p_{i,1}, p_{i,2}, \\cdots, p_{i,m}) $ denote the vector of allele frequencies for the $ i $th marker over $ m $ subpopulations, where $ p_{i,j} $ denotes the allele frequency in population $ j $. Example 9.5 showed that the expected distribution of $ \\mathbf{p}_i $ under neutrality is approximately given by [[SEE_FORMULA:12.33a]] where $ \\Omega $ is a (marker-estimated) matrix of expected covariances in allele frequencies over the subpopulations and $ p_{i,0} $ is the allele frequency in the ancestral population. As detailed in Chapter 9, this formed the basis of Coop's Bayenv test for excessive divergence at a specific locus. Berg and Coop (2014) extended this result to a trait-based test as follows. Suppose n GWAS hits are discovered for the focal trait, where the trait-increasing allele for the $ i $th marker changes the trait by a value of $ g_i $, with $ p_{i,j} $ denoting the frequency of this allele in population j. The GWAS-predicted mean genetic value for the trait in population j thus becomes [[SEE_FORMULA:12.33b]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Letting $ \\mathbf{a}^{T}=(a_{1},a_{2},\\cdots,a_{m}) $ be the vector of mean trait genetic values over the m populations, then combining Equations 12.33b and 12.33a gives the expected distribution of trait means under drift as $$ \\mathbf{a}\\sim\\mathrm{M V N}_{m}\\left[\\mu\\mathbf{1},2V_{A}\\boldsymbol{\\Omega}\\right] $$ (13.33c) where $$ \\mu=\\frac{2}{m}\\sum_{i=1}^{n}g_{i}p_{i,0}\\qquad and\\qquad V_{A}=2\\sum_{i=1}^{n}g_{i}^{2}p_{i,0}(1-p_{i,0}) $$ (13.33d) represent the expected genetic value and additive variance in the ancestral population."
+    },
+    {
+      "type": "discussion",
+      "content": "To proceed, Berg and Coop expressed all of the $ a_j $ values as deviations from the grand mean, yielding $ a_j^* = a_j - \\bar{a} $. This uses one degree of freedom, and returns the vector $ (\\mathbf{a}^*)^T = (a_1^*, a_2^*, \\cdots, a_{m-1}^*) $, where one population is dropped. As Berg and Coop note, information from the dropped population is fully retained by the vector $ a^* $, so that the choice of which population to drop has no impact on the resulting analysis. The resulting vector is now distributed as $$ (\\mathbf{a}^{*})^{T}\\sim\\mathrm{M V N}_{m-1}\\left[\\mathbf{0},2V_{A}\\boldsymbol{\\varOmega}\\right] $$ (13.33e) As discussed in Appendix 5, a standard trick with a vector of correlated variables is to use a transformation to return a vector of uncorrelated variables of unit variance. Berg and Coop did this by using the Cholskey decomposition (Appendix 5) of $ \\Omega = CC^{T} $, using the transformation $$ \\mathbf{x}=\\frac{1}{\\sqrt{2V_{A}}}\\mathbf{C}^{-1}\\mathbf{a}^{*} $$ (13.33f) which returns $$ \\mathbf{x}\\sim\\mathrm{MVN}_{m-1}(\\mathbf{0},\\mathbf{I}) $$ (13.33g)"
     },
     {
       "type": "derivation",
-      "content": "In the case where just two populations (L = 2) are compared by using their squared difference, $ d^2 $, then recalling that $ V_B = d^2/2 $ (Equation 12.8c), the conditions given by Equation 12.34c become [[SEE_FORMULA:12.34d]]"
+      "content": "This is the basis for the Berg-Coop $ Q_{x} $ test, whose statistic is given by [[SEE_FORMULA:12.33h]]"
     },
     {
       "type": "discussion",
-      "content": "Example 12.9. Rifkin et al. (2003) examined variation in gene expression at the start of metamorphosis in six inbred lines of Drosophila: four melanogaster, one simulans, and one yakuba. Of the roughly 12,900 genes whose transcripts were examined, 52"
+      "content": "Under neutrality, $ Q_x \\sim \\chi^2_{m-1} $, as $ \\mathbf{x}^T \\mathbf{x} $ is the sum of $ (m-1) $ squared unit-normal random variables. Note by comparing this result to Equation 9.13c, that the $ Q_x $ test is very similar in form to the Günther-Coop (2013) $ \\mathbf{X}^T \\mathbf{X} $ test for selection on a single site, but with estimated trait genetic values replacing allele frequencies."
     },
     {
       "type": "discussion",
-      "content": "The evolutionary forces acting on the remaining 527 genes were examined using Equation 12.34b. Divergence was scored separately between melanogaster and each of the other two species (L = 2) using $ d^2 $, with $ V_A $ estimated from the among-group variance in four fully inbred D. melanogaster lines (k = 4). Because $ d^2 $ is used, critical values are given by Equation 12.34d, with one correction. The expected among-group variance (for an additive trait) between a set of fully inbred lines is twice the additive variance (from [[SEE_TABLE:11.3]], with $ 2f = 2 $), so that $ 2N_e $ replaces $ N_e $ in the critical values. The resulting upper and lower 2.5 first by noting that $ (F_ 1,3 17.4) = 0.025 $ and $ (F_ 1,3 0.001) = 0.025 $. These authors used an estimated effective population size for $ D.\\ melanogaster $ of $ N_e = 3 10^6 $, while the total divergence times (twice the separation time, in generations) were estimated as $ 2t = 4.6 10^7 $ (melanogaster-simulans) and $ 2t = 10.2 10^7 $ (melanogaster-yakuba). Hence, the critical values for excessive divergence were $$ F_{c,mel-sim}=17.4\\cdot\\frac{4.6\\cdot10^{7}}{6\\cdot10^{6}}=133.4\\quad and\\quad F_{c,mel-yak}=17.4\\cdot\\frac{10.2\\cdot10^{7}}{6\\cdot10^{6}}=195.8 $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Transcripts whose ratio of $ d^{2} / V_{A} $ exceeded these values are unusually divergent. Using this criterion (as well as the lower threshold for too little divergence), of these remaining 527 genes, 464 were consistent with drift, while 63 were consistent with excessive divergence between at least one species pair."
-    },
-    {
-      "type": "discussion",
-      "content": "One caveat with using half the among-group variance over a set of fully inbred lines as an estimate of $ \\sigma_{A}^{2} $ is that, when dominance is present, the among-line genetic variance becomes $ 2\\sigma_{A}^{2}+2\\sigma_{ADI}+\\sigma_{DI}^{2} $ (Equation 11.6a). Depending on the sign in the middle covariance and the magnitude of the last two terms, this can be considerably larger, or smaller, than $ 2\\sigma_{A}^{2} $ , and hence can bias the results."
-    },
-    {
-      "type": "discussion",
-      "content": "While straightforward to apply, a concern with Equation 12.34b is the estimation of $ t $ and $ N_e $. One approach is that, under neutrality, the ratio of the expected divergence $ D_s $ at silent sites divided by their expected polymorphism ($ P_s $) is $ D_s/P_s t/(2N_e) $ (Equation 10.1b). While this marker-based estimate could be substituted into Equation 12.34b, this is an ad hoc approach, as the sampling error of this estimator of $ t/N_e $ is ignored. The idea of combining silent-site information with the within- and between-population expression variances was also considered by Warnefors and Eyre-Walker (2012), who proposed a MacDonald-Kreitman-type approach (Chapter 10); see their paper for details. Again, these are useful metrics, but not formal statistical tests."
-    },
-    {
-      "type": "discussion",
-      "content": "The rate-based test given by Equation 12.34b was scaled to be independent of $ \\sigma_{m}^{2} $ at the cost of assuming or estimating an effective population size. Conversely, Equation 12.20d can be used to compare the rate divergence to that of candidate values of $ \\sigma_{m}^{2} $ (or $ h_{m}^{2} $ ), which circumvents the potentially problematic issue of estimating $ N_{e} $ , although (as with Equation 12.34b) one must still estimate t. This was the approach taken by Lemos et al. (2005). Using a diverse series of lineage comparisons (within mice strains, populations of Drosophila, and between species in primates and flies), and assuming $ h_{m}^{2} $ is in the range of $ 10^{-4} $ to $ 10^{-2} $ , they found that the majority of gene-expression differences were consistent with stabilizing selection (an average of 85% of all transcripts), with drift comprising the next largest category (an average 11.5%) , and directional selection comprising the smallest (an average of < 4%)."
-    },
-    {
-      "type": "proposition",
-      "content": "These approaches either ignore $ \\sigma_{m}^{2} $ or estimate its required value under drift given the observed divergence. A more arduous approach is to directly estimate $ \\sigma_{m}^{2} $ from a mutationaccumulation experiment (LW Chapter 12). This estimate is then used to predict either the within-population variation $ (2 N_{e} \\sigma_{m}^{2}) $ or the among-population divergence $ (2 t \\sigma_{m}^{2}) $ and to assess if these are consistent or too extreme. The general conclusion from such studies is that stabilizing selection plays a prominent role in reducing the amount of variation in gene expression below the neutral expectation—both within and among species, levels of variation are much lower than expected based on the estimated mutational variance. For example, using lines of the nematode C.elegans from a long-term (280 generation) mutationaccumulation experiment, Denver et al. (2005) estimated values of $ \\sigma_{m}^{2} $ for several thousand genes. By comparing levels of variation among a global collection of natural isolates, they found that the gene-specific ratios of the standing level of genetic variance to the estimated $ \\sigma_{m}^{2} $ value were generally no greater than a few hundred. Given that this ratio provides an estimate of $ 4 N_{e} $ under the assumption of neutrality in a selfing organism (as opposed to $ 2 N_{e} $ in an outcrosser, as $ \\sigma_{A}^{2} $ is inflated by 2f=2 with complete inbreeding), these observations provide a firm rejection of the hypothesis that gene-expression levels evolve in a neutral fashion. Rifkin et al. (2005) were able to estimate mutational heritabilities for expression in mutation-accumulation lines of D. melanogaster by factoring out the variance at the level of the individual fly to obtain an estimate of $ \\sigma_{e}^{2} $ . They found a median of $ h_{m}^{2}\\simeq 2.4\\cdot 10^{-5} $ across all genes, and they showed that although interspecific variance in the expression of a gene was correlated with its mutational variance (in qualitative accordance with the neutral theory), the absolute level of divergence was too low to be compatible with neutrality consistent with the results of Denver et al. (2015)."
-    },
-    {
-      "type": "discussion",
-      "content": "An especially interesting analysis of expression levels was offered by Hodgins-Davis et al. (2015), who used the machinery developed in Chapter 28 on the expected level of variation under a balance between mutation and stabilizing selection. Using data sets for yeast and Drosophila, they found that the model of mutation-selection balance that best explains the observed pattern of variation is one of large mutational effects and weak stabilizing selection (details are given in Example 28.3)."
+      "content": "Robinson et al. (2015) applied this test to height and BMI based on ~9400 individuals from 14 European countries, finding evidence that selection favored increased height and reduced BMI. Mathieson et al. (2015) also applied this test to Europeans, but used ancient DNA from 230 individuals (who lived between 6400 to 300BC), and reported evidence for two independent episodes of selection for height."
     }
   ]
 }

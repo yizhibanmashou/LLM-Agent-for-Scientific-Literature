@@ -4,7 +4,7 @@
     "chapter": "chapter9",
     "section": "Ascertainment Issues",
     "subsections": [
-      "Model Fragility: Demography, Mutation, Recombination, and Gene Conversion"
+      "Ascertainment Issues"
     ],
     "source_file": "tmp\\paddle_output\\chapter9_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
@@ -14,15 +14,11 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "A concern to always keep in mind when using a sophisticated model is its robustness to errors in the underlying assumptions. Simple approaches often have modest power but considerable robustness, while highly specialized models can be quite powerful when the data fit the assumptions but may be quite fragile when they do not. Given the constant concern about nonequilibrium and structured populations, and hence generation of the appropriate null model, the robustness to demography is critical (Akey et al. 2004)."
+      "content": "Because many of these likelihood models exploiting genomic positional information are computationally demanding, they are typically employed following a general scan of a genome for some signature of selection, such as regions of depressed variation, or showing unusual site-frequency spectra (such as those with a negative Tajima's D or positive Fay and Wu's H values, which are discussed in the next section). Choosing the region or regions in which to perform the likelihood tests based on the appearance of these special features creates a strong ascertainment bias that dramatically shifts the null distribution. (Note that this is different from SNP ascertainment bias arising from the nonrandom choice of SNPs at the start of the analysis.) The coalescent process can be noisy, and regions with unusual underlying genealogies (such as strong compression of the nodes) can occur by chance even under the equilibrium neutral model. This is especially true when a large number of sites are sampled, presenting more draws from the same underlying process, some of which will be realizations that are extreme values."
     },
     {
       "type": "discussion",
-      "content": "While sensitivity to demographic assumptions is generally well appreciated, less appreciated are the effects of genomic assumptions, such as constant mutation and recombination rates across the region. We have already stressed that variation in mutation rates can generate peaks and valleys in the background patterns of neutral variation. These patterns can easily be declared as signals of selection by most of the previously mentioned likelihood tests. The exception is XP-CLR, which is based on between-population differences, and thus controls for this problem to some extent. Likewise, although the recombination rate, c, between a neutral site and the selected target appears in most of the likelihood models, operationally one assumes a constant rate, $ c_{0} $ per nucleotide, with $ c=c_{0} L $ , where L is the distance in nucleotides. However (as discussed in Chapter 4), recombination rates can vary dramatically over very fine scales (Coop and Przeworski 2007), and gene conversion also needs to be considered (Andolfatto and Nordborg 1998). As mentioned in Chapter 8, conversion events can disrupt the signal expected from a sweep (Jones and Wakeley 2008). For example, Glinka et al. (2006) observed a sharp peak of variation in the middle of a valley of depressed variation around the unc-119 gene in a European population of Drosophila. They reasoned that a sweep plus two conversion events generated this unusual pattern."
-    },
-    {
-      "type": "discussion",
-      "content": "Finally, background selection, which is expected to be a function of the ratio of gene density to recombination rate, also creates outliers if there is significant genomic variation in this ratio. To some extent, this can be controlled by examining whether significant tests disproportionately fall into such regions."
+      "content": "Thornton and Jensen (2007) outlined an approach to adjust for both ascertainment and nonequilibrium population structure when simulating the neutral null distribution. First, genome-scan data are used to estimate the parameters for an appropriate demographic model (such as the time and duration of a bottleneck). Next, these are used in neutral coalescent simulations. Normally, this would be the null distribution, but we need to also model the ascertainment process itself as well. For example, suppose the lowermost 2% of regions of reduced variation are chosen for follow-up CLR tests. The appropriate null would be constructed by also sampling such low-variation regions from the unconditional null, and then using these as the appropriately ascertained null distribution. Thornton and Jensen noted that increasing the length of the region of analysis is a good general strategy for increasing power. Likewise, they and Teshima et al. (2006) both noted that measures of either diversity (such as reduced heterozygosity) or population differentiation (such as $ F_{ST} $ values) seem more reliable for identifying outliers than do frequency-spectrum based approaches."
     }
   ]
 }

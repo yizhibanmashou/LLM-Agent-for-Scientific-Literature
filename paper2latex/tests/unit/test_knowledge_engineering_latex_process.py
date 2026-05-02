@@ -1,5 +1,6 @@
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 from uuid import uuid4
 
 from knowledge_engineering.runtime import (
@@ -18,6 +19,7 @@ from knowledge_engineering.process import (
     extract_tables_and_replace,
     preprocess_extracted_text,
     refine_chunks_for_output,
+    recover_paddle_footer_body_text,
     split_tex_book,
     strip_latex_markup,
 )
@@ -45,6 +47,106 @@ class TestKnowledgeEngineeringLatexProcess(unittest.TestCase):
     def test_derive_chapter_name_from_chapter_full_dir(self):
         tex_path = str(Path("data") / "paddle_output" / "chapter6_full" / "main.tex")
         self.assertEqual(derive_chapter_name(tex_path), "chapter6")
+
+    def test_recover_paddle_footer_body_text_restores_body_footer_before_next_anchor(self):
+        pages = [
+            {
+                "parsing_res_list": [
+                    {
+                        "block_label": "text",
+                        "block_content": "Putting these results together into Equation 6.6 yields",
+                        "block_order": 1,
+                        "block_bbox": [0, 100, 100, 120],
+                    },
+                    {
+                        "block_label": "footer",
+                        "block_content": "The Robertson-Price Identity, $ S = \\sigma(w, z) $",
+                        "block_bbox": [0, 700, 100, 720],
+                    },
+                    {
+                        "block_label": "footer",
+                        "block_content": (
+                            "When our concern is strictly on the within-generation change in trait value, "
+                            "then $ \\Delta\\overline{z} = \\mu_{z}^{*} - \\mu_{z} $."
+                        ),
+                        "block_bbox": [0, 730, 100, 750],
+                    },
+                ]
+            },
+            {
+                "parsing_res_list": [
+                    {
+                        "block_label": "text",
+                        "block_content": (
+                            "fitness-weighted mean after selection continues here with enough tokens "
+                            "for anchor matching"
+                        ),
+                        "block_order": 1,
+                        "block_bbox": [0, 100, 100, 120],
+                    }
+                ]
+            },
+        ]
+        plain_text = (
+            "Putting these results together into Equation 6.6 yields\n\n"
+            "fitness-weighted mean after selection continues here with enough tokens for anchor matching"
+        )
+
+        with patch("knowledge_engineering.process._load_paddle_raw_pages", return_value=pages):
+            recovered = recover_paddle_footer_body_text(plain_text, "chapter6_full/main.tex")
+
+        self.assertIn("## The Robertson-Price Identity, $ S = \\sigma(w, z) $", recovered)
+        self.assertIn("When our concern is strictly on the within-generation change", recovered)
+        self.assertLess(
+            recovered.index("When our concern is strictly"),
+            recovered.index("fitness-weighted mean after selection"),
+        )
+
+    def test_recover_paddle_footer_body_text_skips_hyphen_fragment_without_lowercase_anchor(self):
+        pages = [
+            {
+                "parsing_res_list": [
+                    {
+                        "block_label": "text",
+                        "block_content": "Newly arising lethals could be due to new mutation.",
+                        "block_order": 1,
+                        "block_bbox": [0, 100, 100, 120],
+                    },
+                    {
+                        "block_label": "footer",
+                        "block_content": (
+                            "Example 25.9. Consider the following estimated variance components from "
+                            "a selection ex-"
+                        ),
+                        "block_bbox": [0, 730, 100, 750],
+                    },
+                ]
+            },
+            {
+                "parsing_res_list": [
+                    {
+                        "block_label": "text",
+                        "block_content": (
+                            "The selected line shows large increases in additive variance and "
+                            "heritability relative to the base population."
+                        ),
+                        "block_order": 1,
+                        "block_bbox": [0, 100, 100, 120],
+                    }
+                ]
+            },
+        ]
+        plain_text = (
+            "Newly arising lethals could be due to new mutation.\n\n"
+            "The selected line shows large increases in additive variance and heritability "
+            "relative to the base population."
+        )
+
+        with patch("knowledge_engineering.process._load_paddle_raw_pages", return_value=pages):
+            recovered = recover_paddle_footer_body_text(plain_text, "chapter25_full/main.tex")
+
+        self.assertNotIn("Example 25.9", recovered)
+        self.assertEqual(recovered, plain_text)
 
     def test_strip_latex_markup_extracts_inline_tail_equation_labels(self):
         sample = (
@@ -653,7 +755,7 @@ class TestKnowledgeEngineeringLatexProcess(unittest.TestCase):
                 "max_chunk_change_ratio": 1.0,
                 "max_type_override_ratio": 1.0,
             },
-            artifacts_dir=str(Path("tmp") / "test_artifacts" / "llm_review"),
+            artifacts_dir=str(Path("tmp") / "test_runtime" / "llm_review"),
         )
 
         self.assertEqual(stats["attempted"], 1)
@@ -696,7 +798,7 @@ class TestKnowledgeEngineeringLatexProcess(unittest.TestCase):
                 "max_chunk_change_ratio": 1.0,
                 "max_type_override_ratio": 1.0,
             },
-            artifacts_dir=str(Path("tmp") / "test_artifacts" / "llm_review"),
+            artifacts_dir=str(Path("tmp") / "test_runtime" / "llm_review"),
         )
 
         self.assertEqual(stats["attempted"], 1)

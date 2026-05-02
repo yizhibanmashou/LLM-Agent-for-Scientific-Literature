@@ -9,36 +9,56 @@
     "source_file": "tmp\\paddle_output\\chapter15_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [
-      "15.6b",
-      "15.7",
-      "15.8"
+      "15.2",
+      "15.3",
+      "15.4a",
+      "15.4b",
+      "15.5a",
+      "15.5b",
+      "15.6a"
     ],
     "table_references": []
   },
   "blocks": [
     {
-      "type": "derivation",
-      "content": "The expected time, $ t_ 1/2 $, for half the total epistatic response to accumulate, $ R_ AA (t_ 1/2) = _ AA /2 $, is obtained by noting from Equations 15.4b and 15.6a that this occurs when $ 1 - (1 - c)^ t_ 1/2 = 1/2 $, or [[SEE_FORMULA:15.6b]]"
+      "type": "discussion",
+      "content": "Pairwise epistasis involves interactions between either single alleles at different loci (additive-by-additive epistasis, $ A \\times A $), between entire genotypes at different loci (dominance-by-dominance epistasis, $ D \\times D $), or between an allele at one locus and the genotype at a second (additive-by-dominance epistasis, $ A \\times D $). Because a randomly mating diploid passes along a single allele at each locus to its offspring, additive ($ A \\times A $, $ A \\times A \\times A $, etc.) interactions between alleles at different loci can be passed from a parent to its offspring. Under random mating in a diploid, any epistatic term involving dominance ($ A \\times D $, $ D \\times D $, etc.) cannot be passed along, as a parent must contribute both alleles at a given locus to its offspring to transmit a D component."
     },
     {
       "type": "discussion",
-      "content": "For small value of c, this is approximately $ 0.68/c $. As linkage becomes tighter, the total cumulative epistatic response increases, as does the time for half of this total response to occur (Figure 15.1)."
+      "content": "Before proceeding, it is important to realize the important distinction between epistatic effects (the expected multilocus value does not equal the sum of the single-locus values) and epistatic variances. The former can be quite large and yet the latter can still remain small. In large part this is due to the additive genetic variance being the variance accounted for by the best linear fit of a potentially highly nonlinear system, so that (as is the case for dominance) epistatic effects are partly accounted through $ \\sigma_A^2 $ (Crow 2010; LW Chapter 5). Under fairly general patterns of multilocus interactions, extreme allele frequencies (near zero or one), as would be expected under drift (Chapter 2), result in most of the genetic variance being additive even when the genotypic values have a highly nonadditive basis (Hill et al. 2008; Mäki-Tanila and Hill 2014). Our concern here is how the residual nonadditive effects (e.g., $ \\sigma_{AA}^{2} $) that are not absorbed into additive variance influence the selection response."
     },
     {
       "type": "derivation",
-      "content": "Once selection stops, the epistatic contribution decays to zero. With $ t $ generations of selection followed by $ $ generations of random mating, the cumulative response under the infinitesimal model is [[SEE_FORMULA:15.7]] which (for large $ $) converges to $ R = t h^2 S $, the value predicted from the breeder's equation. The half-life for decay of the epistatic response, $ R_ AA $, is also given by Equation 15.6b."
-    },
-    {
-      "type": "discussion",
-      "content": "The presence of epistasis can result in a curvilinear selection response if $ \\sigma_{AA}^{2} / \\sigma_{z}^{2} $ is sufficiently large. However, as Figure 15.1 shows, any such curvilinearity is usually difficult to distinguish from a linear response, especially given the very noisy nature of selection response data (Chapter 18). Unless there is tight linkage, most of the nonlinearity occurs in the first few generations (Equation 15.6b). With a constant selection differential, the additional increment to response from epistasis decreases in each generation as $ R_{AA} $ approaches its limiting value, $ \\tilde{R}_{AA} $ , at which point the per-generation response is simply $ h^{2}S $ and linear over future generations."
-    },
-    {
-      "type": "discussion",
-      "content": "Under the infinitesimal model, once selection is relaxed, the total response decays back to that predicted from the breeder's equation. It is interestingly that this situation mimics the effects of natural selection countering artificial selection, which also result in a decay of the cumulative response once artificial selection stops. Thus, in order to predict the permanent response correctly, we must know $ h^{2} $ . If only the parent-offspring slope is estimated, this may overestimate the final amount of response due to the inclusion of $ \\sigma_{AA}^{2} $ and higher-order (additive) epistatic variances, although the bias is generally likely to be small, as the values of the higher-order variances are expected to be small relative to $ \\sigma_{A}^{2}. $"
+      "content": "Although Lush (1948) and Kempthorne (1957) clearly grasped the key idea that the component of selection response from additive epistasis is transient, the first quantitative analysis was by Griffing (1960a, 1960b), who assumed the infinitesimal model. Under the assumptions that (i) phenotypes are normally distributed, (ii) effects at any particular locus are very small relative to the total phenotypic variation, and (iii) no third- (or higher-) order additive epistasis is present, the response to one generation of selection is [[SEE_FORMULA:15.2]]"
     },
     {
       "type": "derivation",
-      "content": "Griffing’s analysis is restricted to two loci, and hence limited to only pairwise (additive × additive) epistasis. In contrast, Equation 15.1 gives the single-generation response for arbitrary levels of additive epistasis, provided the biparental offspring regression is linear. These higher-order contributions also rapidly decay under random mating. Again assuming the infinitesimal model (and unlinked loci), Bulmer (1980) found that the response due to a single generation of selection (Equation 15.1) decays after one generation of random mating to [[SEE_FORMULA:15.8]] which again rapidly converges to $ R = h^2 S $ after several generations of random mating. For $ n $-locus additive epistasis (e.g., $ _ A A ^2 $, where there are $ n $ $ A $'s), the per-generation decay rate for unlinked loci is $ (1/2)^ n-1 $, which is the probability that a parental gamete containing specific alleles at $ n $ unlinked loci is passed on intact to an offspring. The probability that such a gamete will remain unchanged after $ t $ generations is $ 2^ -t(n-1) $, which rapidly converges to zero. Example 15.2 (below) uses the method of ancestral regressions to more fully examine the response under $ n $-locus additive epistasis. A final caveat is that these results apply to infinite populations. As shown in Chapter 11, in finite populations, some of the additive epistatic contribution can be permanent due to some of $ _ AA ^2 $ being transformed into simple additive variation by drift."
+      "content": "One might expect that $ R(t) $, the cumulative response after t generations of selection, is simply t times the result given by Equation 15.2. However, any increased response (relative to $ Sh^{2} $) due to epistasis is only temporary, reflecting gametic-phase disequilibrium generated by selection. As disequilibrium decays under recombination, so does the component of response due to epistasis. This occurs because the $ A \\times A $ contribution comes from favorable combinations of alleles at different loci, above and beyond their individual contributions (which are accounted for by changes in the mean breeding value of the selected parents, $ h^{2}S $). Recombination breaks down these combinations, removing the epistatic contribution. Griffing showed that for two linked loci separated by a recombination fraction of c, the response when a generation of selection is followed by $ \\tau $ generations of random mating is [[SEE_FORMULA:15.3]] which converges to $ h^2S $ as $ \\tau \\to \\infty $. Equation 15.3 follows by noting that the probability of a gamete containing specific alleles from both loci remaining intact following one generation of recombination is $ 1 - c $. Thus, after $ \\tau $ generations, only $ (1 - c)^{\\tau} $ of the favorable two-locus combinations selected at $ \\tau = 0 $ remain unaltered by recombination. This transient component of response from epistasis is often called the Griffing effect."
+    },
+    {
+      "type": "derivation",
+      "content": "Summing Equation 15.3 over $ t $ yields the cumulative response after $ t $ generations with a constant selection differential, $ S $, as [[SEE_FORMULA:15.4a]] where [[SEE_FORMULA:15.4b]] denotes the cumulative additive $ \\times $ additive epistatic contribution. The last equality follows using the partial sum of a geometric series [[SEE_FORMULA:15.5a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "A related result (used later in the chapter) is that [[SEE_FORMULA:15.5b]]"
+    },
+    {
+      "type": "discussion",
+      "content": "[h]"
+    },
+    {
+      "type": "discussion",
+      "content": "[h]"
+    },
+    {
+      "type": "derivation",
+      "content": "If loci are completely linked $ (c = 0) $, $ R_{AA}(t) = t S \\sigma_{AA}^{2}/(2\\sigma_{z}^{2}) $, but provided $ c > 0 $, the total epistatic contribution approaches a limiting value of [[SEE_FORMULA:15.6a]]"
+    },
+    {
+      "type": "discussion",
+      "content": "$ \\widetilde{R}_{AA} $ represents the balance between selection generating disequilibrium and its removal by recombination. Equation 15.6a shows that the limiting contribution is 1/c times the epistatic response in the first generation. For unlinked loci (c = 0.5), this is simply twice the initial response. With tight linkage, the total response can be significantly larger."
     }
   ]
 }

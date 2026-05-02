@@ -2,23 +2,30 @@
   "id": "chapter13_017",
   "metadata": {
     "chapter": "chapter13",
-    "section": "BLUP SELECTION",
+    "section": "Chapter 13: Mean- Versus Variance-Standardized Response",
     "subsections": [
-      "BLUP SELECTION"
+      "Mean- Versus Variance-Standardized Response"
     ],
     "source_file": "tmp\\paddle_output\\chapter13_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
-    "formula_references": [],
+    "formula_references": [
+      "13.22a",
+      "13.22b"
+    ],
     "table_references": []
   },
   "blocks": [
     {
-      "type": "discussion",
-      "content": "LW Chapter 26 introduced the basic mixed model for estimating a vector, a, of breeding values for a set of individuals given some vector, y, of records (observations), a relationship matrix, A, connecting individuals with records with individuals whose breeding values are of interest, and a set, $ $, of fixed effects to estimate $$ \\mathbf{y}=\\mathbf{X}\\boldsymbol{\\beta}+\\mathbf{Z}\\mathbf{a}+\\mathbf{e},\\quad\\mathbf{a}\\sim MVN(\\mathbf{0},\\sigma_{A}^{2}\\cdot\\mathbf{A}),\\quad\\mathbf{e}\\sim MVN(\\mathbf{0},\\sigma_{e}^{2}\\cdot\\mathbf{I}) $$ where (as detailed in Chapters 19 and 20) the matrices X and Z are given from the data (relating which observations contribute information to which fixed and random effects), and A is obtained from the pedigree or from sufficiently dense genetic markers. Solving the model returns a vector, $ $, of BLUP (best linear unbiased prediction) breeding values."
+      "type": "derivation",
+      "content": "As was the case with the selection differential, S, in order to assess the relative strength of response one needs some sort of standardization. One obvious approach is to express the response in units of phenotypic standard deviations (variance-standardization). From Equation 13.6b, [[SEE_FORMULA:13.22a]] implying that a (scaled) strength of selection of $ \\bar{\\imath} = 1/h^2 $ is required for a standard deviation of response. For example, with $ h^2 = 0.25 $, a total selection intensity of $ \\bar{\\imath} = 4 $ is required to achieve a total response of one phenotypic standard deviation. Example 14.1 shows that $ \\bar{\\imath} = 2.06 $ for truncation selection saving the upper 5%, so that only two generations of such selection are required for a one standard deviation change in the trait mean."
     },
     {
       "type": "discussion",
-      "content": "Much of modern animal breeding (and a growing amount of plant breeding) is based on using BLUP estimates to select individuals with the highest breeding values for the trait to form the next generation. This is called BLUP selection. The expected response is simply given by the difference between the mean breeding value of selected parents and the population from which they were chosen. This is an extremely flexible methodology, with all of the examples in this chapter being special cases of this general approach. Indeed, provided relatives are measured, BLUP can be used to predict the breeding value of individuals with no phenotypic values (such as milk production in sires). Relatedness information for all measured individuals enters through A, and multiple records (repeated measurements) from the same individual are easily incorporated, as are additional fixed (and random) factors such as plot, location, and herd effects. Further, the effects of age structure are fully accounted for by the relationship matrix A. Chapters 19, 20, and 22 discuss features of BLUP estimation of breeding values, while more technical details (such as maximal avoidance of inbreeding) are deferred until Volume 3 (also see Henderson 1984; Simm 1998; Bernardo 2010; and Mrode 2014)."
+      "content": "While scaling traits in units of phenotypic standard deviations is extremely common, it can potentially be rather misleading (Houle 1992; Houle et al. 2011). To see this, imagine two traits, both with a standard deviation of 2.0. Trait one has a mean of 10 and trait two has a mean of 100. A response of one standard deviation increases trait one by 20%, but trait two by only 2%. From a variance-standardized viewpoint, the response is equal, but as a proportional response of the total mean, trait one has clearly experienced a stronger response."
+    },
+    {
+      "type": "derivation",
+      "content": "Houle and colleagues (Houle 1992; Hansen et al. 2003; Hansen et al. 2011; Houle et al. 2011) argued that using mean-standardization, $ R/\\mu_{z} $, namely the proportional amount of response, is often more appropriate. Again using Equation 13.6b, [[SEE_FORMULA:13.22b]] where $ CV_A = \\sigma_A / \\mu_z $, the coefficient of additive genetic variation, is Houle's (1992) evolvability index, which he argued was a better measure of evolutionary potential than $ h^2 $ (Chapter 6). Houle (1992) and Hansen et al. (2011) found that $ h^2 $ is essentially uncorrelated with evolvability, so that a trait with a lower $ h^2 $ could still have high evolvability (i.e., potential for a significant proportional change in the mean), and vice versa."
     }
   ]
 }

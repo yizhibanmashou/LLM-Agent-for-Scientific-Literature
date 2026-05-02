@@ -4,70 +4,68 @@
     "chapter": "chapter30",
     "section": "Chapter 30: Group Selection Is Likely Density-Dependent",
     "subsections": [
-      "Early Survival: Offspring or Maternal Fitness Component?"
+      "Hard, Soft, and Group Selection: A Contextual Analysis Viewpoint"
     ],
     "source_file": "tmp\\paddle_output\\chapter30_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [
-      "30.40a",
-      "30.40b",
-      "30.40c",
-      "30.40d",
-      "30.41a",
-      "30.41b",
-      "30.41d",
-      "30.42"
+      "30.38a",
+      "30.38b",
+      "30.38c",
+      "30.39a",
+      "30.39b"
     ],
-    "table_references": []
+    "table_references": [
+      "30.2"
+    ],
+    "table_reference_keys": [
+      "chapter30:30.2"
+    ]
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "As mentioned in Chapters 15 and 22, a classic example of a levels-of-selection problem is maternal care, wherein features of both the mother and offspring may influence offspring survival. An area of some contention, especially among biologists working with species that display extensive maternal care (i.e., ornithologists and mammalianogists), is whether the fitness associated with early survival should be assigned to the mother (acknowledging her maternal performance) or to the offspring (acknowledging features of their own that enhance survival). As mentioned in Chapter 29, the fitness of a mother is often scored as the number of her offspring remaining after some interval of potential early offspring mortality, rather than simply the total number of offspring that she produced. For birds, the number of hatchlings, fledglings, or recruits (offspring that have mated) are used as the measure of female fitness, rather than the number of eggs. In mammals, the number of weaned offspring or recruits is often used in place of number of births. This notion of fitness crossing generations has proponents (e.g., Clutton-Brock 1988) and opponents (Arnold 1983a; Lande and Arnold 1983; Cheverud 1984b; Thomson and Hadfield 2017), in part because different questions are being asked by the two sides. The implications of assigning fitnesses of offspring to their mothers (i.e., their early survival is part of their mother's fitness), and what potential biases this may induce, were examined by Wolf and Wade (2009; also see Thomson and Hadfield 2017), whose approach we closely follow."
+      "content": "Evolutionary biology has had an unfortunate history of, at times, being constrained by thinking about complex evolutionary processes in terms of simple catch phrases. We have seen examples of this with kin versus group selection, showing in Chapter 22 that these are special cases of the more general problem of selection with interacting individuals. Likewise, in this (and the previous) chapter, we have seen that the widely used terms of stabilizing and disruptive selection are special cases of the more general situation of a quadratic term (curvature) in the individual fitness surface. It should therefore not be surprising that there is some confusion with the exact meaning of group selection in the more general context of multilevel selection (reviewed by Okasha 2004, 2006). In the Price covariance framework, group selection is indicated by a nonzero covariance between the mean fitness and the mean trait value of a group, $ \\sigma(\\overline{z}_i, \\overline{w}_i) \\neq 0 $. This line of reasoning implies that across groups there must be variance in mean fitness, $ \\sigma^2(\\overline{w}_i) \\neq 0 $, for group selection to exist. However, as stressed by Goodnight et al. (1992; Goodnight 2013, 2015), these covariance conditions for defining group selection are misleading. One can have group selection in the absence of variance in mean fitness across groups, and likewise, strict individual selection can still generate a covariance between group mean fitness and group mean trait value."
+    },
+    {
+      "type": "discussion",
+      "content": "Just as the more general framework of selection in interacting populations removes much of the historical confusion between group selection and kin selection (Chapter 22), multilevel selection removes much of the confusion over whether group selection is occurring. Under multilevel selection, we simply have the fact that the fitness of a focal individual is influenced by other individuals, and hence selection has both individual and group components. The latter are very clearly defined by nonzero regression coefficients on group traits in a contextual analysis. As succinctly stated by Goodnight et al. (1992), “with contextual analysis, whether selection is acting at a particular level becomes a statistical rather than a philosophical question.”"
     },
     {
       "type": "derivation",
-      "content": "Suppose the true fitness (such as early offspring survival) is a function of the offspring phenotype, $ z_ o(t) $, and the value of some trait in their mother, $ z_ m(t-1) $, where t indexes the current offspring generation and t - 1 indexes a phenotype (in this case its mother) in the previous generation. This is an example of what Kirkpatrick and Lande (1989) called maternal selection (Chapter 15). The relative fitness of a male offspring is given by [[SEE_FORMULA:30.40a]] where $ b_ o $ and $ b_ m $ measure the strengths of selection on offspring value and maternal care, respectively. In female offspring, there is an additional source of potential selection, as a sex-limited maternal trait can have a cost. For example, a mother with a trait for increased"
+      "content": "Wallace’s (1968, 1976) distinction between hard and soft selection serves to highlight the differences between the covariance and multiple-regression definitions of group selection (Goodnight et al. 1992). Hard selection occurs when the fitness of a focal individual is solely determined by its phenotype and is unaffected by any group members. This results in the mean fitness of groups differing, with some groups leaving more offspring than others, as by chance, some groups are compromised of more fit individuals than others. Conversely, soft selection occurs when each group contributes equally to the next generation, which means that group mean fitness is a constant and there is no variance in mean fitness among groups. The law of constant yield is an example of soft selection, with fitness (number of seeds) being largely independent of patch density. Figure 30.17 shows the different consequences of hard, soft, and (strict) group selection on the within- and among-group regressions of phenotype on fitness. As summarized in [[SEE_TABLE:30.2]], hard, soft, and strict group selection can all be modeled as special cases of a contextual analysis regression. For simplicity, we focus on a single trait, and the resulting regression has the form [[SEE_FORMULA:30.38a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "We can also rewrite this regression in terms of selection on the within-group deviation plus selection on the group means, [[SEE_FORMULA:30.38b]]"
     },
     {
       "type": "discussion",
       "content": "[h]"
     },
     {
-      "type": "derivation",
-      "content": "[h] foraging enhances the survival of her offspring, but also increases her own risk of predation. Incorporating the direct cost $ (b_ d) $ of such a trait in females yields [[SEE_FORMULA:30.40b]]"
+      "type": "discussion",
+      "content": "[[TABLE:30.2]], hard, soft, and strict group selection can all be modeled as special cases of a contextual analysis regression. For simplicity, we focus on a single trait, and the resulting regression has the form"
     },
     {
       "type": "derivation",
-      "content": "Figure 30.18A presents the path diagram for this fitness model. If we assume that Equations 30.40a and 30.40b represent the correct fitness model, the selection differential, $ S_ m $, on the maternal trait value, $ z_ m $, can be computed from the Robertson-Price identity (Equation 6.10). Because $ w(t) $ depends on whether the offspring is male or female, we let $ _ f $ be a zero (for male) or one (for female) indicator variable. Equations 30.40a, 30.40b and 6.10 yield [[SEE_FORMULA:30.40c]] Because the total differential is the weighted average over both sexes (Equation 13.5), [[SEE_FORMULA:30.40d]]"
+      "content": "We use $ \\beta_{i}^{*} $ to stress to the reader that the regression coefficients in Equation 30.38b can differ from those in Equation 30.38a. To see the connection, note that [[SEE_FORMULA:30.38c]] showing that $ \\beta_{1} $ is the same under both models $ (\\beta_{1}=\\beta_{1}^{*}) $, while $ \\beta_{2}=\\beta_{2}^{*}-\\beta_{1}^{*} $."
     },
     {
       "type": "discussion",
-      "content": "This last step assumes that $ \\sigma ( z_{o(t)}, z_{m(t)})=\\sigma ( A_{o(t)}+e_{o(t)}, A_{m(t)}+e_{m(t)})=\\sigma ( A_{m}, A_{o}) $ namely, that the environment effects between the maternal and direct effects are uncorrelated within an individual."
+      "content": "Hard selection occurs when selection is entirely on individual value, so that $ \\beta_{2}=0 $ and hence there is no group component to multilevel selection. However, by chance, some groups will have more high-fitness individuals than others. This generates variance in group mean fitness and a nonzero covariance between group-mean trait values and mean fitness (Goodnight et al. 1992). Under this covariance criteria, one would infer group selection, even though it is absent. Here, a nonzero among-group selection differential arises as a correlated response to direct selection on individual value. In this simple case, the contextual analysis clearly shows no multilevel selection, but a simple univariate regression might suggest otherwise (e.g., Equation 30.37a)."
     },
     {
       "type": "derivation",
-      "content": "Now suppose that an investigator assumes the offspring fitness is assigned to its mother (Figure 30.18B), which Thomson and Hadfield (2017) call the mixed-fitness model. The mother's total fitness can be considered as the sum of two separate episodes: selection on early survival in her offspring, $ w_ o(t) $, and selection on her maternal trait, $ w_ m(t-1) $, where [[SEE_FORMULA:30.41a]] [[SEE_FORMULA:30.41b]] giving her total fitness as $$ w_{o(t)}+w_{m(t-1)}=\\left(\\alpha_{o(t)}+\\alpha_{m(t-1)}\\right)+b_{m}z_{m(t-1)}+b_{d}z_{m(t-1)}+b_{o}z_{o(t)}+\\left(\\epsilon_{(t)}+\\epsilon_{(t-1)}\\right) $$"
+      "content": "The opposite conclusion arises with soft selection. Here selection is entirely based on within-group deviations (such as within-family selection; Chapter 21). Hence, $ \\beta_{1} = -\\beta_{2} $ as the regression of fitness becomes [[SEE_FORMULA:30.39a]]"
+    },
+    {
+      "type": "definition",
+      "content": "Under soft selection, there is no variation in mean fitness across groups and $ \\sigma(\\overline{z}_i, \\overline{w}_i) = 0 $. Hence, under Price's covariance definition, one might infer that there was no group selection. However, there is clearly multilevel selection occurring, as $ \\beta_2 \\neq 0 $ (cf. Equation 30.38a and Equation 30.39a). The lack of among-group variance in fitness shows that the effects of individual selection at the group level are exactly countered by selection at the group level."
     },
     {
       "type": "derivation",
-      "content": "The difference between this expression (mother-assigned offspring early-viability fitness) and Equation 30.40b (offspring assigned their own fitness) is in the direct fitness of the maternal effect. This component is weighted by $ b_ m z_ m(t-1) $ in Equation 30.41c (the value of the mother), and by $ b_ m z_ m(t) $ in Equation 30.40b (the cost to the offspring). Following the same logic leading to Equation 30.40d, the selection differential on the maternal trait becomes [[SEE_FORMULA:30.41d]]"
-    },
-    {
-      "type": "derivation",
-      "content": "Subtracting Equation 30.41d from Equation 30.40d yields [[SEE_FORMULA:30.42]]"
-    },
-    {
-      "type": "discussion",
-      "content": "The first term shows that maternal selection is overestimated by assigning fitness to mothers, as only a fraction (the additive variance, $ \\sigma^{2}[A_{m}]$ ) of the total maternal trait variation, $ \\sigma^{2}(z_{m}) $ is passed to the offspring. The second term either reduces this overestimation or amplifies it, depending the sign of the genetic covariance between the maternal trait and the offspring trait. Wolf and Wade (2001) stated that there is no reason to expect that these terms will largely cancel, making estimates of maternal selection when offspring fitness is assigned to mothers problematic in many cases."
-    },
-    {
-      "type": "discussion",
-      "content": "Conversely, Equation 30.42 shows the conditions under which assigning fitnesses to mothers is unbiased. First, the maternal and offspring traits must be uncorrelated $$ \\sigma\\left(z_{o(t)},z_{m(t)}\\right)=0 $$ implying that $ (A_m, A_o) = 0 $, provided that $ (e_o, e_m) = 0 $. Second, and more problematic, the maternal trait must have a very high heritability, such that $ ^2(z_m) ^2(A_m) $. As a result, as Wolf and Wade (2001) suggested, assigning offspring viability as a component of offspring fitness is less biased. Thomson and Hadfield (2017) echoed this point, noting that the conditions are even more restrictive for the mixed-fitness model to be unbiased if the parental trait influencing offspring fitness (upon which selection against the parent can occur) is not sex-limited. They also note that roughly 40"
-    },
-    {
-      "type": "discussion",
-      "content": "Both sets of authors pointed out that unless a fitness regression of the form given by Equation 30.40b is used, the levels-of-selection impact from a parent can easily be missed. Unfortunately, this requires one to either know, or at least have a good idea of, the potential parental traits that impact offspring survival. By using a list of such candidate traits, one can fit regressions of this form to test which traits (if any) have a significant impact on offspring fitness."
+      "content": "Finally, consider strict group selection, when an individual’s fitness is entirely a function of its group mean, [[SEE_FORMULA:30.39b]] while written here as a univariate regression, formally we have $ \\beta_1 = 0 $ if the regression given by Equation 30.38a is fitted. If one simply fits an individual selection model ($ w_{ij} = 1 + \\beta z_{ij} + e_{ij} $), there is a nonzero regression slope if group effects are ignored, and hence $ E_i[\\sigma(w_{ij}, z_{ij})] \\neq 0 $ (Goodnight et al 1992). Again this occurs because individual value and group mean are correlated, as $ \\sigma(z_{ij}, \\overline{z}_i) = \\sigma_z^2 / n $ (plus addition terms if group members are correlated; see Equation 22.25b). Hence, direct selection on one results in indirect selection (and hence a covariance) in the other. With contextual analysis, we reach the correct conclusion of selection only on group values."
     }
   ]
 }

@@ -2,57 +2,23 @@
   "id": "chapter30_026",
   "metadata": {
     "chapter": "chapter30",
-    "section": "Chapter 30: Directional Selection: Strong or Weak?",
+    "section": "Kingsolver's Analysis",
     "subsections": [
-      "Directional Selection: Strong or Weak?"
+      "Kingsolver's Analysis"
     ],
     "source_file": "tmp\\paddle_output\\chapter30_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
-    "formula_references": [
-      "30.31"
-    ],
+    "formula_references": [],
     "table_references": []
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Has the case for \"weak\" selection been made? As pointed out by Conner (2001), even so-called weak selection can be very effective at changing trait means. Consider Kingsolver's median value of $ \\beta_{sd}=0.16 $ $ \\beta=0.16\\cdot\\sigma_{z} $ . From Equation 13.22a, the single-generation expected change in the mean (in phenotypic standard deviations) is $ h^{2}\\cdot0.16 $ . With a typical heritability of 0.4, only 16 generations of selection are required to shift the population mean by one standard deviation, and only 80 generations are required to shift it by five standard deviations. Another way to think about the impact of a \"weak\" selection gradient of $ \\beta_{sd}=0.16 $ was mentioned by Hereford et al. (2004). They noted that even a population of modest size spans over four standard deviations of variation, implying a fitness range of $ 4\\cdot0.16=0.64 $ , or a 64% variation in relative fitness among individuals within the population (assuming that the fitness-surface approximation holds over this span of phenotypic values)."
-    },
-    {
-      "type": "derivation",
-      "content": "Conversely, if concerns about publication bias and low power are correct, the true median value of $ | _ sd | $ may be substantially less than the “weak” median value of 0.16 found by Kingsolver. Hersch and Phillips (2004) and Knapczyk and Conner (2007) examined the validity of these concerns. Figure 29.9 presented power curves for a univariate analysis (a single-trait fitness regression), which is a function of $ = / $. Hersch and Phillips showed that when multiple (potentially correlated) traits are considered, the adjusted version of the trait-fitness correlation, $ $, used in power calculations becomes [[SEE_FORMULA:30.31]]"
+      "content": "In a series of landmark papers, Kingsolver and colleagues (Hoekstra et al. 2001; Kingsolver et al. 2001) performed an informal meta-analysis on estimates of β and γ from 63 studies of natural populations published between 1984 and 1997. Their resulting frequency distributions of variance-standardized gradients (βsd = σzβ and γsd = σ²zγ) are shown in Figure 30.5. These earlier findings have been updated using much larger datasets, but the basic conclusions from the initial 2001 papers remain the same, with narrative analyses by Geber and Griffen (2003), Kingsolver and Pfenning (2007), Cox and Calsbeek (2009), Siepielski et al. (2009, 2011, 2013), and Kingsolver and Diamond (2011) and more formal (mixed-model) analyses by Kingsolver et al. (2012), Morrissey and Hadfield (2012), and Morrissey (2016)."
     },
     {
       "type": "discussion",
-      "content": "Hence, $ \\bar{\\iota}^{2} $ is replaced by $ \\beta_{sd}^{T} $ s (where s is the vector of variance-standardized selection differentials, i.e., a vector of selection intensities), which accounts for the correlations among the (measured) traits. Using Equation 30.31, Hersch and Phillips found that most of the studies summarized by Kingsolver for which power calculations could be performed (i.e., those that included estimates of I) were very underpowered, supporting Kingsolver's concern about the underreporting of small values and hence skewing the distribution of estimates of $ |\\beta_{sd}| $ upwards."
-    },
-    {
-      "type": "discussion",
-      "content": "The impact of publication bias, which is also called the \"file-drawer effect\" (Rosenthal"
-    },
-    {
-      "type": "discussion",
-      "content": "[h]"
-    },
-    {
-      "type": "discussion",
-      "content": "1979; Rosenberg 2005), as nonsignificant results are not published and hence simply \"left in a file,\" was also examined by Hersch and Phillips (2004). They simulated cases where results were only published when one (or more) of the gradients in a study were found to be significant. Although such a model does indeed allow for many nonsignificant values in the database, these are still biased because they were conditioned on at least one of the results being significant. This ascertainment scheme is certainly one reasonable model for quantifying publication bias. For each \"publication,\" the simulation chose five \"traits\" by drawing five $ \\beta_{sd} $ values at random. If one (or more) of the five tests was significant, all the values were retained, and if not, they all were discarded. As shown in Figure 30.7, this conditional sampling resulted in the median value of $ \\beta $ being substantially overestimated when either the sample size or the amount of variation explained by the effects was small (low $ R^{2} $ values), both of which are settings that result in low power. This is essentially another manifestation of the Beavis effect, overestimation when using statistics that are conditional on success (significance)"
-    },
-    {
-      "type": "discussion",
-      "content": "Knapczyk and Conner (2007) also considered sampling error and publication bias, but they arrived at the very different conclusion that \"our understanding of selection is not strongly biased by these commonly invoked sources of error.\" To examine publication bias, they binned the datasets examined by Kingsolver based on sample size. If there was no publication bias, the distribution of $ \\mid \\beta_{sd}\\mid $ values should have a similar form over different sample sizes (following the exponential observed for the entire set by Kingsolver). They found departures from this pattern for studies with very small sample sizes (less than 40), but did not find departures for studies with larger sample sizes. Indeed, compared to the exponential distribution, they found an excess of weak selection gradients in the larger studies. Thus, they concluded that publication bias, except in the smallest studies, did not upwardly bias estimates of $ \\mid \\beta_{sd}\\mid $ in any appreciative way. Appendix 4 presents a number of metrics to assess publication bias."
-    },
-    {
-      "type": "discussion",
-      "content": "Further complicating matters is the paper by Hereford et al. (2004), who found that using mean-standardized gradients $ \\left( \\beta_{\\mu}=\\mu\\beta\\right) $ ; Equation 29.33a) gave very different results. Recall that the mean-standardized gradient is $ \\beta_{\\mu}=1 $ when the trait is fitness itself, providing"
-    },
-    {
-      "type": "discussion",
-      "content": "[h] a benchmark for the strength of selection on a trait (Equation 29.33c). Using a subset of the Kingsolver data (38 studies yielding 580 estimates) that included the required information for this standardization (i.e., those that reported the trait means), they found a median $ | _ | $ of 0.54, or 54"
-    },
-    {
-      "type": "discussion",
-      "content": "A final perspective on the strength of directional selection was offered by Hendry and Kinnison (1999) and Kinnison and Hendry (2001), who compiled data on over 2000 estimated rates of microevolution. While rates of divergence in trait means confound the strength of selection with the transmission genetics of the trait, an advantage of this approach is that such estimates focus on an average rate of change over time, thus smoothing out large values caused by brief episodes of strong selection. Such episodes are more likely to catch our attention, and considering only these episodes results in a biased view of the average strength of selection over time. Figure 30.8 plots the cumulative selection intensities obtained by Endler (1986) and Kingsolver et al. (2001) as well as the inferred average selection intensity values given the observed rates of microevolution, assuming heritabilities of 0.1 and 0.4. As can be seen, under either assumed heritability, there is an excess of weak selection (small $ \\bar{\\tau} $ ) values relative to those seen by Kingsolver and Endler. While this suggests that weak selection is the norm, an argument for strong selection can also be made. While strong selection can certainly occur over brief episodes, if it continues over a sufficient amount of time, genetic variation for the selection response will be eroded and further response must wait for new variation (from mutation and immigration). Thus, with strong persistent selection, $ h^{2} $ will likely become much smaller than 0.1. Conversely, if selection is episodic, selection to reduce $ h^{2} $ will be smaller and genetic variation will erode less quickly."
+      "content": "Kingsolver’s initial analysis noted several trends. First, the distribution of absolute values of the variance-standardized directional selection gradients ($ \\beta_{sd} $) closely followed an exponential distribution, with a median (50% value) of 0.16. A $ \\beta_{sd} $ of 0.16 implies that a change of one standard deviation in the trait changes relative fitness by 16%. Based on this observation, Kingsolver suggested that most directional selection in nature is fairly weak, although (as a result of the long tail of the exponential), there are a few large estimates (10% of estimates exceeded 0.5). Caution, however, is required with this initial estimate. It is well known that estimates of the expected absolute value, $ |x| $, of a random variable, x, are inflated by sampling error (Equation A4.38a; Hereford et al. 2004; Morrissey 2016). For example, if"
     },
     {
       "type": "discussion",
@@ -64,11 +30,23 @@
     },
     {
       "type": "discussion",
-      "content": "An apparent excess of small selection intensities could reflect true low selection intensities when averaged over many generations, thus smoothing out strong episodes. However, it could equally likely reflect strong persistent selection quickly eroding heritability and hence reducing response."
+      "content": "$x \\sim N(0, \\sigma_x^2)$, then $E[|x|] = \\sigma_x \\sqrt{2/\\pi}$ (Equation A4.37a), while if $\\sigma_e^2$ is the error associated with estimating $x$ using a sample value, $\\widehat{x}$, then $E[\\|\\widehat{x}\\|] = \\sqrt{\\sigma_x^2 + \\sigma_e^2} \\sqrt{2/\\pi} > E[|x|]$. Hence, the average true strength of directional selection, $E[\\|\\beta\\|]$, is less than the estimated strength, $E[|\\widehat{\\beta}|]$. Indeed, Morrissey (2016) suggested that the initial Kingsolver value was roughly a twofold overestimate."
     },
     {
       "type": "discussion",
-      "content": "Three other evolutionary questions can be partly addressed through a meta-analysis of estimated gradients: the relative importance of correlated traits, the impact of fitness-component tradeoffs, and the magnitude of temporal variation."
+      "content": "Two additional sources of bias can result in a further overestimation of the average strength of $ \\beta $, both of which are related to low power: Beavis effects (the overestimation of true effect size when using only values that are declared to be significant) and publication bias (the failure to publish nonsignificant results). Together, all these sources of bias strengthen the claim of weak selection. Consistent with this suggestion, most of the larger estimates of $ |\\beta_{sd}| $ occur in studies with small sample sizes, with most estimates below 0.1 occurring when the sample size was 1000 or greater. Hence, it is possible that some of the large $ \\beta_{sd} $ values are simply a consequence of the larger estimation variance in smaller sample (the Beavis effect was discussed in LW Chapter 14 in the context of QTL mapping)."
+    },
+    {
+      "type": "discussion",
+      "content": "The discussion of $ \\beta $ was focused on absolute values because their sign is likely to vary when considering a large set of traits and (without reference to a specific trait) the sign is usually not particularly relevant. Such is not the case with $ \\gamma_{ii} $, whose sign has an unambiguous meaning. Specifically, negative values indicate concave (and potentially stabilizing) selection, and positive values indicate convex (and potentially disruptive) selection. This leads to the second trend in selection data noted by Kingsolver, concerning the widespread belief that stabilizing selection is far more common than disruptive selection (Chapter 28). Rather than seeing this pattern (a skew toward negative $ \\gamma_{ii} $ values), Kingsolver observed an essentially symmetric distribution of $ \\gamma_{sd} $ values with a mean of zero (Figure 30.5), which implied that positively and negatively curved fitness surfaces are equally common. Further, the average strength of quadratic selection was weak, with an (again overestimated) median value of 0.10 for $ |\\gamma_{sd}| $. A more recent analysis of larger datasets reaffirmed this trend (Kingsolver and Diamond 2011; Kingsolver et al. 2012)."
+    },
+    {
+      "type": "discussion",
+      "content": "Kingsolver's third trend was that variance-standardized gradients, $ \\beta_{sd} $, for mating success and fecundity were larger than those for viability selection (Figure 30.6). This pattern of the weakest gradients often being associated with episodes of viability selection is seen in later (and larger) studies (Siepielski et al. 2011; Kingsolver and Diamond 2011). All of these authors noted that there is likely to be an intrinsic basis for mating traits in that most studies focused on measuring gradients for highly ornamental traits that were likely to be under strong sexual selection. However, no such apparent bias occurs in the choice of fecundity versus viability traits. This apparent pattern of higher variance-standardized gradients on fecundity than on viability provides some justification for the common tendency of studies of long-lived organisms to use annual fecundity (as opposed to annual survival) as a surrogate for total fitness."
+    },
+    {
+      "type": "discussion",
+      "content": "However, this conclusion that fecundity is under stronger selection than viability is based on variance-standardized gradients. Recall our discussion from Chapter 29 on mean-standardized gradients, which measure fitness elasticity, and hence are a more natural metric for fitness effects. Crone (2001) found that most long-lived species had higher mean-standardized gradients for annual survival (viability) than for annual fecundity. Based on this result, Crone suggested that, contrary to the standard practice, annual viability may be a better surrogate for total fitness than annual fecundity. One notable exception to this pattern was in perennial semelparous plants (those with a single episode of reproduction), where the elasticity of growth rate was the largest, followed by fecundity, and then survival. For short-lived species, fecundity tends to have a higher elasticity than in longer-lived species. The most accurate approach for assessing the impact of these fitness components on total fitness is to weight the survival and fecundity gradients by the elasticity of each component on the population growth rate, $ \\lambda $; see Equation 29.33f."
     }
   ]
 }

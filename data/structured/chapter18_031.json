@@ -14,19 +14,11 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "Solving for the vector of parameter estimates yields $$ \\begin{aligned}\\left(\\begin{array}{c}\\widehat{m}\\\\\\widehat{A}\\\\\\widehat{D}_{0}\\\\\\widehat{D}\\\\\\end{array}\\right)=\\left(\\mathbf{X}^{T}\\mathbf{X}\\right)^{-1}\\mathbf{X}^{T}\\mathbf{y}=\\left(\\begin{array}{c}4.266\\\\1.072\\\\57.402\\\\0.523\\\\\\end{array}\\right)\\end{aligned} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Based on this subset of data, we note that there is considerable initial dominance ($ D_0 = 57.402 $) influencing the initial value of the trait. Of the per-generation change of $ A + D = 1.595 $ per generation, roughly two-thirds are from $ A $ (1.072), and one-third is from $ D $ (0.5223). Standard errors for these estimates follow using standard OLS machinery (LW Chapter 9)."
-    },
-    {
-      "type": "discussion",
       "content": "Example 18.10. Here we derive the line and cross means when dominance is present. Because the focus is on the contribution from a specific locus, for ease of presentation we suppress the subscript (on a, d, and p) denoting the locus being followed. Assuming no epistasis, the mean is derived by summing the contributions over all loci. To allow for dominance, the genotypic values at our target locus become 0: a + d: 2a. With p being the frequency of the favorable allele, the mean contribution from this locus is $$ 0\\cdot(1-p^{2})+(a+d)\\cdot2p(1-p)+(2a)\\cdot p^{2}=2ap+2dp(1-p) $$"
     },
     {
       "type": "discussion",
-      "content": "Notice that the contribution from $a$ is a linear function of the allele frequency (and hence a linear function of allele frequency change), while the contribution from $d$ has both linear ($p$) and quadratic ($p^2$) components. The contribution from this locus to the line mean in cycle $k$ follows by replacing $p$ with $p(k) p + k p$ in Equation 18.36b to yield $$ \\begin{aligned}C_{k}&=\\mu+2ap(k)+2dp(k)[1-p(k)]\\\\&=\\mu+2a[p+k\\Delta p]+2d[p+k\\Delta p][1-(p-k\\Delta p)]\\\\&=\\left(\\mu+2ap\\right)+k\\cdot2a\\Delta p+2dp(1-p)+k\\cdot2d\\Delta p\\cdot(1-2p)-k^{2}\\cdot2d\\left(\\Delta p\\right)^{2}\\\\&=m+k\\cdot A+D_{0}+k\\cdot D+k^{2}\\cdot D_{q}\\\\ \\end{aligned} $$"
+      "content": "Notice that the contribution from $a$ is a linear function of the allele frequency (and hence a linear function of allele frequency change), while the contribution from $d$ has both linear ($p$) and quadratic ($p^2$) components. The contribution from this locus to the line mean in cycle $k$ follows by replacing $p$ with $p(k) \\simeq p + k \\Delta p$ in Equation 18.36b to yield $$ \\begin{aligned}C_{k}&=\\mu+2ap(k)+2dp(k)[1-p(k)]\\\\&=\\mu+2a[p+k\\Delta p]+2d[p+k\\Delta p][1-(p-k\\Delta p)]\\\\&=\\left(\\mu+2ap\\right)+k\\cdot2a\\Delta p+2dp(1-p)+k\\cdot2d\\Delta p\\cdot(1-2p)-k^{2}\\cdot2d\\left(\\Delta p\\right)^{2}\\\\&=m+k\\cdot A+D_{0}+k\\cdot D+k^{2}\\cdot D_{q}\\\\ \\end{aligned} $$"
     },
     {
       "type": "discussion",
@@ -42,11 +34,11 @@
     },
     {
       "type": "discussion",
-      "content": "If we self these individuals to form an $ F_{2} $ , by the same argument used above for selfing a line, each of the dominance terms is reduced by one-half, recovering Equation 18.38d."
+      "content": "If we self these individuals to form an $ F_{2} $, by the same argument used above for selfing a line, each of the dominance terms is reduced by one-half, recovering Equation 18.38d."
     },
     {
       "type": "discussion",
-      "content": "Finally, when we form an $ F_ 2 $ by randomly mating the $ F_ 1 $ progeny from a line cross, the new allele frequency is $$ \\frac{p(k)+p(j)}{2}\\simeq p+\\frac{k+j}{2}\\Delta p $$ yielding a mean of $$ \\begin{align*}C_{k\\times j}(rm)&=\\mu+2a\\left(p+\\frac{k+j}{2}\\Delta p\\right)+2d\\left(p+\\frac{k+j}{2}\\Delta p\\right)\\left(1-p-\\frac{k+j}{2}\\Delta p\\right)\\\\=(\\mu+2ap)+\\frac{k+j}{2}2a\\Delta p+2dp(1-p)+\\frac{k+j}{2}2d\\Delta p(1-2p)-\\left(\\frac{k+j}{2}\\right)^{2}2d(\\Delta p)^{2}\\\\&=m+\\frac{k+j}{2}\\cdot A+D_{0}+\\frac{k+j}{2}\\cdot D+\\left(\\frac{k+j}{2}\\right)^{2}\\cdot D_{q}\\end{align*} $$"
+      "content": "Finally, when we form an $ F_{2} $ by randomly mating the $ F_{1} $ progeny from a line cross, the new allele frequency is $$ \\frac{p(k)+p(j)}{2}\\simeq p+\\frac{k+j}{2}\\Delta p $$ yielding a mean of $$ \\begin{align*}C_{k\\times j}(rm)&=\\mu+2a\\left(p+\\frac{k+j}{2}\\Delta p\\right)+2d\\left(p+\\frac{k+j}{2}\\Delta p\\right)\\left(1-p-\\frac{k+j}{2}\\Delta p\\right)\\\\=(\\mu+2ap)+\\frac{k+j}{2}2a\\Delta p+2dp(1-p)+\\frac{k+j}{2}2d\\Delta p(1-2p)-\\left(\\frac{k+j}{2}\\right)^{2}2d(\\Delta p)^{2}\\\\&=m+\\frac{k+j}{2}\\cdot A+D_{0}+\\frac{k+j}{2}\\cdot D+\\left(\\frac{k+j}{2}\\right)^{2}\\cdot D_{q}\\end{align*} $$"
     },
     {
       "type": "discussion",
@@ -54,11 +46,11 @@
     },
     {
       "type": "discussion",
-      "content": "The additional term is due to the decay in heterosis following random mating, as the heterosis in the $ F_ 1 $ cross between lines from cycles j and k is $$ \\begin{aligned}H&=\\sum(p_{i}(k)-p_{i}(j))^{2}d_{i}=\\sum(p+k\\Delta p-p-j\\Delta p)^{2}d_{i}\\\\&=(k-j)^{2}\\sum(\\Delta p)^{2}d_{i}=-(k-j)^{2}D_{q}/2\\end{aligned} $$"
+      "content": "The additional term is due to the decay in heterosis following random mating, as the heterosis in the $ F_{1} $ cross between lines from cycles j and k is $$ \\begin{aligned}H&=\\sum(p_{i}(k)-p_{i}(j))^{2}d_{i}=\\sum(p+k\\Delta p-p-j\\Delta p)^{2}d_{i}\\\\&=(k-j)^{2}\\sum(\\Delta p)^{2}d_{i}=-(k-j)^{2}D_{q}/2\\end{aligned} $$"
     },
     {
       "type": "discussion",
-      "content": "Recall (LW Chapter 9) that the amount, H, of heterosis from the $ F_ 1 $ is reduced to $ H/2 $ in the (random-mating generated) $ F_ 2 $. Hence $$ C_{k\\times j}(rm)-C_{k\\times j}=-\\frac{H}{2}=(k-j)^{2}\\frac{D_{q}}{4} $$ as found above."
+      "content": "Recall (LW Chapter 9) that the amount, H, of heterosis from the $ F_{1} $ is reduced to $ H/2 $ in the (random-mating generated) $ F_{2} $. Hence $$ C_{k\\times j}(rm)-C_{k\\times j}=-\\frac{H}{2}=(k-j)^{2}\\frac{D_{q}}{4} $$ as found above."
     }
   ]
 }

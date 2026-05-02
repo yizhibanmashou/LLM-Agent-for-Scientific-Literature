@@ -9,73 +9,62 @@
     "source_file": "tmp\\paddle_output\\chapter22_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [
-      "22.30c",
-      "22.30d",
-      "22.31b",
-      "22.31c",
-      "22.32a",
-      "22.32b",
-      "22.32c",
-      "22.32d"
+      "22.28a",
+      "22.28b",
+      "22.28c",
+      "22.28d",
+      "22.28e",
+      "22.28f",
+      "22.28g",
+      "22.29a",
+      "22.29b",
+      "22.29c",
+      "22.29d",
+      "22.30a",
+      "22.30b"
     ],
     "table_references": []
   },
   "blocks": [
     {
       "type": "derivation",
-      "content": "If all group members have the same relationship, then and [[SEE_FORMULA:22.30c]]"
+      "content": "To combine both individual and group selection, consider the index, I, where the value of the index for the ith individual is given by [[SEE_FORMULA:22.28a]]"
     },
     {
       "type": "derivation",
-      "content": "Substituting these last two expressions into Equation 22.30a and collecting terms gives [[SEE_FORMULA:22.30d]] As a check of Equation 22.30d, note that (as expected) this reduces to $ _z^2 $ when $ g = 0 $ and to $ n _z^2 + n(n - 1) (z_i, z_j) $ when $ g = 1 $. Equation 22.13a gives the expression for $ _z^2 $ when all relatives within the group are related by $ r $. It remains to obtain $ (z_i, z_j) $, the phenotypic covariance of group members, in order to apply Equation 22.30d. From Equation 22.1c, and ignoring the constant, $ $, [[SEE_FORMULA:22.31b]]"
+      "content": "This is a modification of the initial proposal by Griffing (1977). Letting $ \\overline{z}_{i} $ denote the mean of the group containing individual i, this index can also be written as [[SEE_FORMULA:22.28b]] showing that individual selection corresponds to $g=0$ and group selection to $g=1$. Thus, the index given by Equation 22.28b includes both individual and group selection as special cases. Selection of individuals based on within-group deviations is also a special case of Equation 22.28a, as setting $g=-1/n$ yields [[SEE_FORMULA:22.28c]]"
     },
     {
       "type": "derivation",
-      "content": "If we expand and evaluate these covariance terms and collect the common terms, Equation 22.31b ultimately reduces to [[SEE_FORMULA:22.31c]]"
-    },
-    {
-      "type": "discussion",
-      "content": "Notice, by comparison to Equation 22.4c, that the term appearing when group members are related $ ( r\\neq0) $ is the variance of $ A_{T} $ when the group size is $ ( n-1) $ plus the correction $ ( n-1)\\sigma^{2} \\left( A_{s} \\right) $ . Equations 22.29d and 22.30d are substituted into Equation 22.28d to obtain the response. The interplay of $ \\sigma \\left( A_{T}, I \\right) $ and $ \\sigma_{I}^{2} $ (as functions of g and r) determine the accuracy of any particular index (Figure 22.3)."
-    },
-    {
-      "type": "discussion",
-      "content": "[h]"
-    },
-    {
-      "type": "discussion",
-      "content": "Example 22.8. Ellen et al. (2008) estimated the following values for survival days in chickens raised in groups of $n = 4$: $ ^2(A_d) = 915$, $ (A_d, A_d) = 62$, $ ^2(A_s) = 134$, $ ^2(e) = 11$, $500$, and $ = 0.08$. Applying Equation 22.4c yields $$ \\begin{aligned}\\sigma^{2}(A_{T})&=\\sigma^{2}(A_{d})+2(n-1)\\sigma(A_{d},A_{s})+(n-1)^{2}\\sigma^{2}(A_{s})\\\\&=915+(2\\cdot3\\cdot62)+\\left(3^{2}\\cdot134\\right)=2493\\end{aligned} $$ while $$ \\sigma^{2}(A_{d})+(n-1)\\sigma(A_{s},A_{d})=915+(3\\cdot62)=1101 $$"
+      "content": "The response in the trait mean $ (\\mu_{z}) $ from selection on this index is [[SEE_FORMULA:22.28d]]"
     },
     {
       "type": "derivation",
-      "content": "Substituting these results into Equation 22.29d returns a covariance between I and total breeding value of [[SEE_FORMULA:22.32a]]"
-    },
-    {
-      "type": "discussion",
-      "content": "To obtain the variance in I using Equation 22.30d, we first need expressions for $ ^2(z) $ and $ (z_i, z_j) $. From Equation 22.5d, the phenotypic variance when the group contains unrelated individuals is $$ \\sigma^{2}(z\\mid r=0)=\\sigma^{2}(A_{d})+(n-1)\\sigma^{2}(A_{s})+\\sigma^{2}(e)=915+(3\\cdot134)+11,500=12,817 $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Noting that $$ (n-1)\\left[2\\sigma(A_{s},A_{d})+(n-2)\\sigma^{2}(A_{d})\\right]=3\\cdot\\left[(2\\cdot62)+(2\\cdot915)\\right]=5862 $$"
+      "content": "This can also be written in terms of the accuracy of selection, a concept first introduced in Chapter 13 (Equation 13.11a), which is the correlation between the target of selection (here I) and the breeding objective (here the total breeding value, $ A_{T} $). We can express the ratio in Equation 22.28d as [[SEE_FORMULA:22.28e]] where the accuracy [[SEE_FORMULA:22.28f]] is the correlation between the index value of an individual and its breeding value. Using this result, Equation 22.28d becomes [[SEE_FORMULA:22.28g]] which is simply Equation 13.11c for the selection criteria $ x = I $. This is a very useful expression for comparing different selection schemes, as $ \\sigma(A_T) $ remains unchanged (provided group size remains fixed), so the maximal response occurs by maximizing $ \\rho(A_T, I) $ $ \\bar{\\nu}_I $. Given that the fraction saved largely sets the selection intensity $ \\bar{\\nu}_I $ (subject to minor variation due to finite populations; see Equation 14.4b), the optimal scheme (i.e., the optimal weight, $ g $) is that which maximizes the accuracy, $ \\rho(A_T, I) $."
     },
     {
       "type": "derivation",
-      "content": "Equation 22.13b shows the phenotypic variance for a group with relationship r as [[SEE_FORMULA:22.32b]]"
-    },
-    {
-      "type": "discussion",
-      "content": "To obtain $ (z_ i, z_ j) $, we first find that $$ 2\\sigma(A_{d},A_{s})+(n-2)\\sigma^{2}(A_{s})+\\rho\\sigma^{2}(e)=(2\\cdot62)+(2\\cdot134)+(0.08\\cdot11,550)=1312 $$ and $$ \\begin{aligned}\\sigma^{2}(A_{d})&+2(n-2)\\sigma(A_{d},A_{s})+\\left[(n-1)+(n-2)^{2}\\right]\\sigma^{2}(A_{s})\\\\&=915+(2\\cdot2\\cdot62)+\\left[(3+2^{2})\\cdot134\\right]=2101\\end{aligned} $$"
+      "content": "To obtain a general expression for response for any combination of group selection fraction $ (g) $ and average relatedness within groups $ (r) $, we first need the covariance of I and $ A_{T} $ within an individual. This is obtained as follows. First, note that [[SEE_FORMULA:22.29a]]"
     },
     {
       "type": "derivation",
-      "content": "Substituting into Equation 22.31c gives the general covariance between group members when all members are related by an amount, r, as [[SEE_FORMULA:22.32c]]"
+      "content": "When group members are unrelated, Equations 22.4b and 22.19b give [[SEE_FORMULA:22.29b]]"
     },
     {
       "type": "derivation",
-      "content": "Finally, substituting Equations 22.32b and 22.32c into Equation 22.30d gives the variance in I as [[SEE_FORMULA:22.32d]]"
+      "content": "When group members all have the same relationship, Equations 22.12e and 22.19c yield [[SEE_FORMULA:22.29c]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Collecting terms, Equation 22.29c reduces to [[SEE_FORMULA:22.29d]]"
     },
     {
       "type": "discussion",
-      "content": "Note from Equation 22.32a that the roles of relatedness (r) and amount of group selection (g) are fully interchangeable in the covariance between $I$ and $A_T$. However, Equation 22.32d shows that this is not the case for $ _I^2$, and hence the expected responses when the values of $r$ and $g$ are swapped are not expected to be equal. For example, for $r = 0.5$, $g = 0$, $$ \\sigma(I,A_{T})=1797,\\quad\\sigma_{I}^{2}=15,748,\\quad\\rho(A_{T},I)=0.287,\\quad R=14.32\\bar{\\nu} $$ where $ (A_T, I) $ is given by Equation 22.28f. For $ r = 0, g = 0.5 $, $$ \\sigma(I,A_{T})=1797,\\quad\\sigma_{I}^{2}=28,334,\\quad\\rho(A_{T},I)=0.214,\\qquad R=10.68 讠 $$ As points of reference, the accuracy and response under individual selection with no relatives in the group $ (g = r = 0) $ are $ (A_T, I) = 0.195 $ and $ R = 9.73 $, while for group selection with unrelated individuals within the group $ (g = 1, r = 0) $, the accuracy and response become $ (A_T, I) = 0.193 $ and $ R = 9.63 $."
+      "content": "While parts of this result (in a bit more cryptic form) appear in Griffing (1977), this, more general, version is due to Bijma et al. (2007a). Note that g and r have symmetric roles in the covariance between the index and the total breeding value. Thus, from the standpoint of this covariance, relatedness and group selection (r and g) are interchangeable. However, as we will soon demonstrate, g and r do not play symmetric roles in the variance, $ \\sigma_{1}^{2} $, of the index, so interchanging r and g values results in a different variance, and hence a different selection response (see Equation 22.28d and Example 22.8)."
+    },
+    {
+      "type": "derivation",
+      "content": "Now consider the variance of the index, I. From Equation 22.28a, [[SEE_FORMULA:22.30a]] [[SEE_FORMULA:22.30b]]"
     }
   ]
 }

@@ -2,32 +2,29 @@
   "id": "chapter30_017",
   "metadata": {
     "chapter": "chapter30",
-    "section": "Chapter 30: Canonical Transformation of $ $",
+    "section": "Chapter 30: Canonical Transformation of $ \\gamma $",
     "subsections": [
-      "Using Aster Models to Estimate Fitness Surfaces"
+      "Significance and Confidence Regions for a Stationary Point"
     ],
     "source_file": "tmp\\paddle_output\\chapter30_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [
-      "30.1"
+    "formula_references": [
+      "30.28"
     ],
-    "table_reference_keys": [
-      "chapter30:30.1"
-    ]
+    "table_references": []
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Most of the approaches presented in this chapter (and in much of Chapter 29) make normality assumptions, which come in two different flavors: first, the assumed multivariate normality (MVN) of the distribution of trait values, z; and second, the assumed MVN for the distribution of residuals in the fitness regression, $ \\mathbf{e}=w(\\mathbf{z})-\\widehat{w}(\\mathbf{z}) $ . We address these in turn. As summarized in [[SEE_TABLE:30.1]], when z $ \\sim $ MVN, a variety of results hold that relate $ \\beta $ and $ \\gamma $ to measures of the geometries of the individual fitness surface and the mean fitness landscape. Further, as with the univariate case, for $ \\beta $ and $ \\gamma $ to equal, respectively, the linear and quadratic coefficients in a quadratic fitness regression also requires z to be MVN (lack of skew and the kurtosis of a normal, see Equations 29.28a and 29.28b)."
-    },
-    {
-      "type": "proposition",
-      "content": "Perhaps the more critical normality assumption involves the distributional behavior of the fitness residuals. As mentioned in Chapter 29, the assumption that z ~ MVN is not required to fit a regression, although when z is MVN, one can then equate estimated regression coefficients with the properties just mentioned. However, the assumption of multivariate normality of the fitness residuals is required, either directly (for hypotheses testing and constructing confidence intervals) or indirectly (the OLS assumption of homoscedastic residues is satisfied when residuals are MVN). Unfortunately, as mentioned in Chapter 29, most biologically realistic models for fitness components generate residuals that are both heteroscedastic and nonnormal. As introduced in Chapter 29, Aster models (Geyer et al. 2007; Geyer and Shaw 2008, 2010a, 2010b; Shaw et al. 2008; Geyer 2010; Shaw and Geyer 2010) allow for a very wide range of distributional assumptions for the fitness-component residuals, and allow one to build up the distribution of total fitness by convoluting distributions across selection episodes. By fully, and correctly, accounting for the residua error structure, Aster models are far more statistically rigorous than Lande-Arnold estimation and can result in less bias when estimating the fitness surface. For example, in a simulated two-trait dataset fit by Shaw and Geyer (2010), Aster models correctly detected multivariate stabilizing selection (two negative eigenvalues for $ \\gamma $ ), while a Lande-Arnold regression of the same dataset suggested a saddle point (one positive and one negative eigenvalue). An OLS regression assumes that each value is equally weighted (the homoscedastic residual assumption), but when observations vary in their quality (such as heteroscedastic fitness residuals), weighting them properly (as done in Aster models) reduces bias."
+      "content": "Recall from Equation 30.21a that when $ \\gamma $ is nonsingular (i.e., it contains no zero eigenvalues), then $ z_0 = -\\gamma^{-1}b $ is the unique extremum (stationary point) in the quadratic regression. If $ \\gamma $ contains $ k $ zero eigenvalues, there is no curvature along the trait combinations given by the $ k $ associated eigenvectors (the fitness surface is a $ k $-dimensional hyperplane along these directions), while there is curvature (and a unique stationary point) in the remaining fitness space. As mentioned, this stationary value is a maximum if all of the eigenvalues are negative (and hence a test for significance for a maximum is that all of the eigenvalues should be significantly less than zero). Likewise, it is a local minimum if all the eigenvalues are positive (which can also be tested in the same manner). If $ \\gamma $ contains both (significant) positive and negative eigenvalues, then $ z_0 $ is a saddle point. Thus, tests for maxima or minima are straightforward. But what about the confidence region (or more correctly, a confidence volume) for the location of the stationary point?"
     },
     {
       "type": "discussion",
-      "content": "While Aster models accommodate complex residual structures, they are not a panacea when it comes to estimating nonlinear fitness surfaces. In the fitness-estimation literature, nonlinear is often taken as synonymous with quadratic, but we have seen how misleading quadratic approximations can be (Figure 29.10). While the link functions used by the GLMs of an Aster model (transforming some underlying linear model into the expected data scale; Chapter 29) can induce nonlinearities (curvature), the transformation is also monotonic (Geyer et al 2007; Geyer 2010, Shaw and Geyer 2010). Hence, while nonlinearities may be introduced, additional peaks are not. In their current form, Aster models assume a quadratic geometry (at most, a single extremum) when the underlying input is a quadratic function of trait values. Hence, many of the issues involved in estimating a fitness landscape by assuming a quadratic geometry remain when using the current Aster framework."
+      "content": "A classical result for a quadratic regression is the Box-Hunter confidence region. Suppose we let $ d_z $ denote the gradient vector of the best quadratic regression of w on z, which (Equation 30.20a) is calculated by $$ \\mathbf{d}_{\\mathbf{Z}}=\\nabla_{\\mathbf{Z}}[w(\\mathbf{z})]=\\mathbf{b}+\\gamma\\mathbf{z} $$"
+    },
+    {
+      "type": "derivation",
+      "content": "Suppose there are k traits and n observations, and the residuals to the quadratic regression are independent and homoscedastic normal variables (as mentioned, for fitness data, this assumption is usually problematic). Box and Hunter (1954) showed that a $ 100(1 - \\alpha)% $ confidence volume is given by those vectors z that satisfy the quadratic inequality [[SEE_FORMULA:30.28]] where $F$ is the $(1-\\alpha)$ value for an $F$ distribution with $k$ and $n-p$ degrees of freedom $(p=k(k+3)/2)$ is the total number of estimated regression coefficients) and $\\mathbf{V}$ is an estimate of the covariance matrix for $\\mathbf{d}_{\\mathbf{z}}$. Values of $z$ that satisfy Equation 30.28 are within the confidence volume for the stationary point. See Del Castillo and Cahya (2001) and Peterson et al. (2002) for further discussion and developments. It is critical to stress that these methods all make the strong assumption that fitness residuals are normally distributed, which typically fails. We strongly favor using aster models (Chapter 29), which correctly model the fitness distribution and for which Geyer and Shaw (2010a) developed likelihood-based approaches for hypothesis testing and confidence intervals."
     }
   ]
 }

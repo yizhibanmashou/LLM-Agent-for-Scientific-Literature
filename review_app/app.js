@@ -49,6 +49,7 @@ const STATE = {
   highlightSpec: null,
   lastLocatedItemKey: null,
   candidatePages: [],
+  locateRequestId: 0,
   indexWarmup: {},
   overlayManualPosition: null,
   overlayDrag: null,
@@ -76,6 +77,7 @@ let PDF_STAGE_RESIZE_OBSERVER = null;
 let PDF_STAGE_RESIZE_TIMER = null;
 let MATH_RENDER_RETRY_TIMER = null;
 let MATH_RENDER_RETRY_COUNT = 0;
+let SEARCH_LOCATE_TIMER = null;
 
 document.addEventListener("DOMContentLoaded", () => {
   initialize().catch((error) => {
@@ -163,18 +165,26 @@ function bindGlobalControls() {
     await locateSelectedItemInPdf(true);
   });
 
-  document.getElementById("statusFilter").addEventListener("change", (event) => {
+  document.getElementById("statusFilter").addEventListener("change", async (event) => {
     STATE.statusFilter = event.target.value;
     STATE.selectedItemId = null;
     STATE.selectedItemKey = null;
+    STATE.lastLocatedItemKey = null;
+    STATE.highlightSpec = null;
+    STATE.candidatePages = [];
     renderReview();
+    await locateSelectedItemInPdf(true);
   });
 
   document.getElementById("searchInput").addEventListener("input", (event) => {
     STATE.searchQuery = String(event.target.value || "");
     STATE.selectedItemId = null;
     STATE.selectedItemKey = null;
+    STATE.lastLocatedItemKey = null;
+    STATE.highlightSpec = null;
+    STATE.candidatePages = [];
     renderReview();
+    scheduleLocateSelectedItemInPdf();
   });
 
   document.getElementById("pdfPrev").addEventListener("click", async () => {
@@ -326,6 +336,18 @@ function bindPdfStageAutoFit() {
   PDF_STAGE_RESIZE_OBSERVER.observe(stage);
 }
 
+function scheduleLocateSelectedItemInPdf(delayMs = 180) {
+  if (SEARCH_LOCATE_TIMER) {
+    window.clearTimeout(SEARCH_LOCATE_TIMER);
+  }
+  SEARCH_LOCATE_TIMER = window.setTimeout(() => {
+    SEARCH_LOCATE_TIMER = null;
+    locateSelectedItemInPdf(true).catch((error) => {
+      console.warn("scheduled pdf locate failed", error);
+    });
+  }, delayMs);
+}
+
 function isTypingTarget(target) {
   if (!(target instanceof HTMLElement)) {
     return false;
@@ -396,7 +418,16 @@ function renderViewTabs() {
 }
 
 function currentChapterMeta() {
-  return (DATA.review?.chapters || []).find((chapter) => chapter.id === STATE.chapterId) || null;
+  return chapterMetaById(STATE.chapterId);
+}
+
+function chapterMetaById(chapterId) {
+  const normalizedChapterId = String(chapterId || "").trim().toLowerCase();
+  return (DATA.review?.chapters || []).find((chapter) => chapter.id === normalizedChapterId) || null;
+}
+
+function itemChapterId(item) {
+  return String(item?.chapter || STATE.chapterId || "").trim().toLowerCase();
 }
 
 function currentItemsRaw() {
@@ -404,7 +435,7 @@ function currentItemsRaw() {
 }
 
 function recordKeyForItem(item) {
-  return `${STATE.chapterId}::${STATE.viewId}::${item.id}`;
+  return item?.item_key || `${itemChapterId(item)}::${STATE.viewId}::${item?.id || ""}`;
 }
 
 function normalizeRecordPayload(payload) {
@@ -840,11 +871,11 @@ async function moveItemSelection(delta) {
   await locateSelectedItemInPdf(true);
 }
 
-async function loadPdfForCurrentChapter() {
-  const chapterMeta = currentChapterMeta();
+async function loadPdfForChapter(chapterId, requestId = null) {
+  const chapterMeta = chapterMetaById(chapterId);
   if (!chapterMeta) {
     STATE.pdfDoc = null;
-    updatePdfStatus("未选择章节。");
+    updatePdfStatus("未选择可用章节。");
     return false;
   }
 
@@ -873,12 +904,14 @@ async function loadPdfForCurrentChapter() {
     doc = await window.pdfjsLib.getDocument({ url }).promise;
     DATA.pdfDocs.set(chapterMeta.id, doc);
   }
+  if (requestId !== null && STATE.locateRequestId !== requestId) {
+    return false;
+  }
   STATE.pdfDoc = doc;
   STATE.pdfChapterId = chapterMeta.id;
   STATE.pdfPage = Math.min(Math.max(1, STATE.pdfPage), doc.numPages);
   STATE.highlightSpec = null;
   STATE.candidatePages = [];
-  await renderPdfPage();
   startChapterWarmup(chapterMeta.id);
   return true;
 }
@@ -1084,12 +1117,6 @@ function appendHighlightRect(root, rect, kind) {
   node.style.top = `${rect.y}px`;
   node.style.width = `${rect.width}px`;
   node.style.height = `${rect.height}px`;
-  if (normalizedKind !== "text") {
-    const tag = document.createElement("span");
-    tag.className = "highlight-tag";
-    tag.textContent = highlightKindLabel(normalizedKind);
-    node.appendChild(tag);
-  }
   root.appendChild(node);
 }
 
@@ -1384,7 +1411,8 @@ async function renderPdfPage() {
   const warm = STATE.indexWarmup[STATE.pdfChapterId];
   const warmText = warm && !warm.ready ? ` · 索引 ${warm.done}/${warm.total}` : "";
   const fitText = STATE.pdfFitMode ? "fit" : `${effectiveScale.toFixed(2)}x`;
-  document.getElementById("pdfPageInfo").textContent = `${pageNumber} / ${STATE.pdfDoc.numPages} · ${fitText}${warmText}`;
+  const chapterLabel = chapterMetaById(STATE.pdfChapterId)?.label || STATE.pdfChapterId || "PDF";
+  document.getElementById("pdfPageInfo").textContent = `${chapterLabel} · ${pageNumber} / ${STATE.pdfDoc.numPages} · ${fitText}${warmText}`;
   document.getElementById("pdfFitToggle").textContent = STATE.pdfFitMode ? "退出适配" : "适配视口";
 }
 
@@ -1463,12 +1491,12 @@ function normalizeRawCandidates(rawCandidates, fallbackSource, options) {
   return normalizeCandidates(parsed);
 }
 
-function getReviewLocatorCandidatesForItem(item) {
-  const chapterPayload = DATA.reviewLocators?.chapters?.[STATE.chapterId];
+function getReviewLocatorCandidatesForItem(item, chapterId = itemChapterId(item), viewId = STATE.viewId) {
+  const chapterPayload = DATA.reviewLocators?.chapters?.[chapterId];
   if (!chapterPayload || typeof chapterPayload !== "object") {
     return [];
   }
-  const viewPayload = chapterPayload[STATE.viewId];
+  const viewPayload = chapterPayload[viewId];
   if (!viewPayload || typeof viewPayload !== "object") {
     return [];
   }
@@ -1480,16 +1508,16 @@ function getReviewLocatorCandidatesForItem(item) {
     if (!entry || !Array.isArray(entry.candidates)) {
       continue;
     }
-    return normalizeRawCandidates(entry.candidates, `layout_${STATE.viewId}`, { requireBoxes: true });
+    return normalizeRawCandidates(entry.candidates, `layout_${viewId}`, { requireBoxes: true });
   }
   return [];
 }
 
-function getOcrCandidatesForItem(item) {
-  if (STATE.viewId !== "formulas") {
+function getOcrCandidatesForItem(item, chapterId = itemChapterId(item), viewId = STATE.viewId) {
+  if (viewId !== "formulas") {
     return [];
   }
-  const chapterPayload = DATA.formulaOcr?.chapters?.[STATE.chapterId];
+  const chapterPayload = DATA.formulaOcr?.chapters?.[chapterId];
   if (!chapterPayload || typeof chapterPayload !== "object") {
     return [];
   }
@@ -1549,16 +1577,16 @@ function buildCandidatePageWindow(item, numPages) {
   return Array.from(pages).sort((a, b) => a - b);
 }
 
-async function scoreCandidatePages(item, pages, tokens) {
+async function scoreCandidatePages(item, pages, tokens, chapterId = STATE.pdfChapterId, viewId = STATE.viewId) {
   const locator = item.locator || {};
   const subsectionNorm = normalizeMatchText(locator.subsection || item.subtitle || "");
   const hint = Number(locator.toc_page_hint) || null;
   const sourceNorm = normalizeMatchText(locator.source_unit_id || item.source_unit_id || "");
-  const formulaRegex = STATE.viewId === "formulas" ? formulaIdRegex(item.id) : null;
+  const formulaRegex = viewId === "formulas" ? formulaIdRegex(item.id) : null;
   const scored = [];
 
   for (const page of pages) {
-    const cache = await getPageTextCache(STATE.pdfChapterId, page);
+    const cache = await getPageTextCache(chapterId, page);
     const tokenScore = pageTokenScore(cache.joined, tokens);
     let score = tokenScore.score;
 
@@ -1675,12 +1703,30 @@ function shouldForceFitCurrentView() {
 }
 
 async function locateSelectedItemInPdf(force) {
+  const requestId = STATE.locateRequestId + 1;
+  STATE.locateRequestId = requestId;
   const item = selectedItem();
+  const targetChapterId = item ? itemChapterId(item) : String(STATE.chapterId || "").trim().toLowerCase();
   if (!item) {
+    STATE.highlightSpec = null;
+    STATE.lastLocatedItemKey = null;
+    STATE.candidatePages = [];
+    const loaded = await loadPdfForChapter(targetChapterId, requestId);
+    if (STATE.locateRequestId !== requestId) {
+      return;
+    }
+    if (loaded && STATE.pdfDoc) {
+      STATE.pdfPage = 1;
+      await renderPdfPage();
+    }
+    renderCandidatePages();
     return;
   }
 
-  const loaded = await loadPdfForCurrentChapter();
+  const loaded = await loadPdfForChapter(targetChapterId, requestId);
+  if (STATE.locateRequestId !== requestId) {
+    return;
+  }
   if (!loaded || !STATE.pdfDoc) {
     return;
   }
@@ -1695,7 +1741,10 @@ async function locateSelectedItemInPdf(force) {
     return;
   }
 
-  const boxedCandidates = normalizeCandidates([...getReviewLocatorCandidatesForItem(item), ...getOcrCandidatesForItem(item)]).slice(0, 3);
+  const boxedCandidates = normalizeCandidates([
+    ...getReviewLocatorCandidatesForItem(item, targetChapterId, STATE.viewId),
+    ...getOcrCandidatesForItem(item, targetChapterId, STATE.viewId),
+  ]).slice(0, 3);
   if (boxedCandidates.length) {
     const best = boxedCandidates[0];
     STATE.pdfPage = best.page;
@@ -1727,11 +1776,17 @@ async function locateSelectedItemInPdf(force) {
   const numPages = STATE.pdfDoc.numPages;
   const windowPages = buildCandidatePageWindow(item, numPages);
   const primaryPages = windowPages.length ? windowPages : Array.from({ length: numPages }, (_, i) => i + 1);
-  let candidates = await scoreCandidatePages(item, primaryPages, tokens);
+  let candidates = await scoreCandidatePages(item, primaryPages, tokens, targetChapterId, STATE.viewId);
+  if (STATE.locateRequestId !== requestId) {
+    return;
+  }
 
   if (needsGlobalFallback(item, candidates) && primaryPages.length < numPages) {
     const fullPages = Array.from({ length: numPages }, (_, i) => i + 1);
-    const fallback = await scoreCandidatePages(item, fullPages, tokens);
+    const fallback = await scoreCandidatePages(item, fullPages, tokens, targetChapterId, STATE.viewId);
+    if (STATE.locateRequestId !== requestId) {
+      return;
+    }
     fallback.forEach((candidate) => {
       candidate.source = "fallback_global";
     });
@@ -1978,25 +2033,6 @@ function isChunkHighlightVisible(kind) {
     return true;
   }
   return Boolean(STATE.chunkHighlightLegend[semantic]);
-}
-
-function highlightKindLabel(kind) {
-  const normalized = sanitizeHighlightKind(kind);
-  const chunkMeta = CHUNK_HIGHLIGHT_META.find((item) => item.kind === normalized);
-  if (chunkMeta) {
-    return chunkMeta.label;
-  }
-  const labelMap = {
-    display_formula: "Display Formula",
-    inline_formula: "Inline Formula",
-    formula_number: "Formula Number",
-    figure_title: "Figure Title",
-    paragraph_title: "Paragraph Title",
-    doc_title: "Doc Title",
-    table: "Table",
-    text: "Text",
-  };
-  return labelMap[normalized] || normalized;
 }
 
 function renderChunkTextMath(root) {

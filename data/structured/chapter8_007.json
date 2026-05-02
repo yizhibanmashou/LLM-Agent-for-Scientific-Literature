@@ -23,7 +23,7 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "To quantify the impact of a sweep, we need to determine how selection influences the frequency of a neutral allele, m, at a linked locus. The ultimate variable of interest is $ q(t) $, the frequency of m in generation t of the sweep, with $ q() $ denoting its frequency at the sweep's completion. In the absence of any recombination during the sweep, $ q() = 1 $, as the initial haplotype bearing the new favorable mutation (and m) is swept to fixation. The degree to which $ q() $ actually approaches one depends on the relative strengths of recombination, c (between the selected site and the neutral marker), and the strength of selection, s, on the favored site. In Chapter 5 we showed that the time to fixation from selection scales with 1/s, so it is reasonable to expect that $ q() $ is some function of c/s."
+      "content": "To quantify the impact of a sweep, we need to determine how selection influences the frequency of a neutral allele, m, at a linked locus. The ultimate variable of interest is $ q(t) $, the frequency of m in generation t of the sweep, with $ q(\\infty) $ denoting its frequency at the sweep's completion. In the absence of any recombination during the sweep, $ q(\\infty) = 1 $, as the initial haplotype bearing the new favorable mutation (and m) is swept to fixation. The degree to which $ q(\\infty) $ actually approaches one depends on the relative strengths of recombination, c (between the selected site and the neutral marker), and the strength of selection, s, on the favored site. In Chapter 5 we showed that the time to fixation from selection scales with 1/s, so it is reasonable to expect that $ q(\\infty) $ is some function of c/s."
     },
     {
       "type": "derivation",
@@ -31,7 +31,7 @@
     },
     {
       "type": "discussion",
-      "content": "A related quantity is the difference, $ \\delta_{q} $ , in the frequency of m on these two backgrounds"
+      "content": "A related quantity is the difference, $ \\delta_{q} $, in the frequency of m on these two backgrounds"
     },
     {
       "type": "derivation",
@@ -39,11 +39,11 @@
     },
     {
       "type": "derivation",
-      "content": "Nonzero values of $ \\delta_q $ imply linkage disequilibrium between $ A $ and $ m $, with the frequency of $ m $ on $ A $-bearing chromosomes differing from its unconditional frequency in the general population. Hitchhiking is basically a race between the rate of recombination reducing the initial disequilibrium (and hence $ \\delta_q $) and the rate of selection fixing $ A $, eliminating any further recombination. Smaller values of $ c $ (slower rates of recombination) and/or larger values of $ s $ (faster time to fixation) increase the impact of a sweep. When $ A $ is introduced as just one or a few copies, then $ q_a(0) q(0) $, as essentially all of the copies of $ m $ are on a chromosomes. If $ A $ arises as a single copy on an $ m $-bearing chromosome, then $ q_A(0) = 1 $ (as the only $ A $-bearing chromosome contains $ m $), yielding $ \\delta_q(0) = 1 - q(0) $. Finally, let [[SEE_FORMULA:8.1c]] denote the final change in the frequency of the linked neutral allele m after A has swept to fixation. Summarizing our notation to this point, we have $$ \\[q(t)\\qquad $$ $$ q_{A}(t)\\qquad\\qquad\\mathrm{C o n d i t i o n a l~f r e q u e n c y~o f~}m\\mathrm{~o n~}A\\mathrm{-b e a r i n g~c h r o m o s o m e s} $$ $$ q_{a}(t)\\qquad\\qquad\\mathrm{C o n d i t i o n a l~f r e q u e n c y~o f~}m\\mathrm{~o n~}a\\mathrm{-b e a r i n g~c h r o m o s o m e s} $$ $$ \\delta_{q}(t)=q_{A}(t)-q_{a}(t)\\quad\\mathrm{D i f f e r e n c e~i n~f r e q u e n c y~o f~}m\\mathrm{~o n~}A\\mathrm{-~v e r s u s~}a\\mathrm{-b e a r i n g~c h r o m o s o m e s} $$ $$ \\Delta_{q}=q(\\infty)-q(0)\\quad\\text{Change in frequency of}m\\text{ after a sweep} $$"
+      "content": "Nonzero values of $ \\delta_q $ imply linkage disequilibrium between $ A $ and $ m $, with the frequency of $ m $ on $ A $-bearing chromosomes differing from its unconditional frequency in the general population. Hitchhiking is basically a race between the rate of recombination reducing the initial disequilibrium (and hence $ \\delta_q $) and the rate of selection fixing $ A $, eliminating any further recombination. Smaller values of $ c $ (slower rates of recombination) and/or larger values of $ s $ (faster time to fixation) increase the impact of a sweep. When $ A $ is introduced as just one or a few copies, then $ q_a(0) \\simeq q(0) $, as essentially all of the copies of $ m $ are on a chromosomes. If $ A $ arises as a single copy on an $ m $-bearing chromosome, then $ q_A(0) = 1 $ (as the only $ A $-bearing chromosome contains $ m $), yielding $ \\delta_q(0) = 1 - q(0) $. Finally, let [[SEE_FORMULA:8.1c]] denote the final change in the frequency of the linked neutral allele m after A has swept to fixation. Summarizing our notation to this point, we have $$ \\[q(t)\\qquad $$ $$ q_{A}(t)\\qquad\\qquad\\mathrm{C o n d i t i o n a l~f r e q u e n c y~o f~}m\\mathrm{~o n~}A\\mathrm{-b e a r i n g~c h r o m o s o m e s} $$ $$ q_{a}(t)\\qquad\\qquad\\mathrm{C o n d i t i o n a l~f r e q u e n c y~o f~}m\\mathrm{~o n~}a\\mathrm{-b e a r i n g~c h r o m o s o m e s} $$ $$ \\delta_{q}(t)=q_{A}(t)-q_{a}(t)\\quad\\mathrm{D i f f e r e n c e~i n~f r e q u e n c y~o f~}m\\mathrm{~o n~}A\\mathrm{-~v e r s u s~}a\\mathrm{-b e a r i n g~c h r o m o s o m e s} $$ $$ \\Delta_{q}=q(\\infty)-q(0)\\quad\\text{Change in frequency of}m\\text{ after a sweep} $$"
     },
     {
       "type": "discussion",
-      "content": "In particular, note that $ \\delta_{q} (\\infty) $ and $ \\Delta_{q} $ , while related, are still distinct."
+      "content": "In particular, note that $ \\delta_{q}(\\infty) $ and $ \\Delta_{q} $, while related, are still distinct."
     },
     {
       "type": "derivation",
@@ -59,7 +59,7 @@
     },
     {
       "type": "discussion",
-      "content": "This shows that the fraction of initial association that persists following the sweep is a function of $ c/s $, which is the key parameter for determining the strength of hitchhiking. When $ c/s 1 $, most of the initial association remains at the conclusion of the sweep, while as ever-more-distant sites are considered (so that $ c/s $ increases), any initial association decay toward zero."
+      "content": "This shows that the fraction of initial association that persists following the sweep is a function of $ c/s $, which is the key parameter for determining the strength of hitchhiking. When $ c/s \\ll 1 $, most of the initial association remains at the conclusion of the sweep, while as ever-more-distant sites are considered (so that $ c/s $ increases), any initial association decay toward zero."
     }
   ]
 }

@@ -4,51 +4,71 @@
     "chapter": "chapter30",
     "section": "Chapter 30: Directional Selection: Strong or Weak?",
     "subsections": [
-      "Total Versus Direct Selection, Tradeoffs, and Temporal Variation"
+      "Directional Selection: Strong or Weak?"
     ],
     "source_file": "tmp\\paddle_output\\chapter30_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [
-      "30.32"
+      "30.31"
     ],
     "table_references": []
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "The amount of total selection on a trait is given by S (and its variance-standardized counterpart, s = $ \\bar{\\iota} $ ), which is the sum of the amount of direct $ (\\beta, \\beta_{sd}) $ and correlated selection (Equation 30.3). When $ \\beta_{sd} $ is estimated from a multiple-trait regression, a plot of s versus $ \\beta_{sd} $ can provide insight into the relative importance of direct versus correlated selection. A major caveat concerning this type of analysis is that it is only as good as the characters that are included in the regression. If causally important fitness traits that are correlated with a focal trait are not included, their effect can incorrectly be attributed to direct selection. Using this approach, Kingsolver and Diamond (2011) found that correlated selection had little impact, with s often falling very close to $ \\beta_{sd} $ in value. An exception is size, where total selection is generally less than direct selection, which suggests negative correlations with other traits under selection. An analysis by Geber and Griffen (2003) of performance traits in plants found a different pattern than was seen by Kingsolver and Diamond. For these traits, they observed that $ |\\beta_{sd}| $ tended to be smaller than $ |s| $ , so not only were correlated effects important, but they also tended to be in the same direction as direct effects. Geber and Griffen estimated that $ \\sim 40\\% $ of the amount of directional selection on a trait was the result of correlated effects. Moreover, they found the same pattern $ \\left( \\left| \\gamma_{sd} \\right| < \\left| C / \\sigma^{4} \\right| \\right) $ for quadratic selection, with correlated effects accounting for an average of $ \\sim 60\\% $ of the total effect."
-    },
-    {
-      "type": "discussion",
-      "content": "A second area of interest to evolutionary biologists is the relative importance of tradeoffs between different fitness components. For example, a trait that improves variability might do so at the expense of mating success or fecundity, so simply measuring the impact of a trait on one fitness component can give a very misleading view of its evolutionary potential (e.g., Example 29.1). Kingsolver and Diamond (2011) addressed this issue by plotting $ \\beta_{sd} $ values for the same trait in those few studies that measured multiple episodes of selection. As shown in Figure 30.9, while examples of tradeoffs exist (the values of $ \\beta_{sd} $ have different signs across episodes), there is no evidence that it is widespread. Indeed, in 57% of the comparisons, the two gradients had the same sign, thus reinforcing, rather than masking, selective effects."
-    },
-    {
-      "type": "discussion",
-      "content": "Another potential tradeoff is, not between different episodes of selection, but rather between the sexes. Males and females may experience different amounts of selection for the same trait, and in the extreme may have opposite signs, or sexually antagonistic selection (SA). In part, the limit that any such SA may place on evolution depends on genetic correlation of a trait between the sexes. If this correlation is less than perfect (i.e., different sets of genes may be involved between the sexes), then we have a two-trait evolution question (Equation 13.26c), and whether the presence of different patterns of selection on the separate traits constrains their joint evolution depends as much on their genetic covariance structure (G) as it does on their strength of selection ( $ \\beta $ ). By ignoring this concern and instead focusing on selection itself, the potential importance of SA was examined in a narrative meta-analysis by Cox and Calsbeek (2009), who compared values of $ |\\beta_{male}-\\beta_{female}| $ over traits, and obtained a median value of 0.13 (for variance-standardized gradients). Note that this is close to the initial Kingsolver value for absolute selection on traits, suggesting that between-sex differences are on par with the level of absolute selection on a trait. When it was broken down by fitness components, Cox and Calsbeek found that the median value of $ |\\beta_{male}-\\beta_{female}| $ was smallest for viability and fecundity selection and largest for both sexual selection and total selection (a median value of around 0.2 to 0.3)."
-    },
-    {
-      "type": "discussion",
-      "content": "A strong caveat concerning these conclusions was noted by Morrissey (2016). As with $ |\\beta| $ estimates of an absolute difference, $ |\\beta_{male}-\\beta_{female}| $ are inflated by sampling noise. Indeed, the expected value of $ |x_{i}-x_{j}| $ for two random draws $ (x_{i},x_{j}) $ from the same distribution is $ 2\\sigma_{x} / \\sqrt{\\pi} $ (Nair 1936). Morrissey noted that such comparisons are best performed in a bivariate mixed-model framework (similar to the analysis used for Equations 20.26 through 20.29). His reanalysis of the Cox and Calsbeek data found that the correlation between male and female selection gradients was $ \\sim0.8 $ , thus showing that selection gradients are highly positively correlated between the sexes and that SA is rare."
-    },
-    {
-      "type": "discussion",
-      "content": "The final issue is the impact of temporal variation in selection strength and direction (Siepielski et al. 2009, 2011, 2013; Kingsolver and Diamond 2011). There are numerous ways to quantify temporal variation, such as measuring the standard deviation over a set of estimates (which compounds actual variation with sampling variation) or the fraction of times the sign changes (which can be high for a trait under very weak selection). A simple metric is to plot $ |mean(s)| $ versus $ mean(|s|) $. If sign reversals are common, then $ |mean(s)| < mean(|s|) $, while if the two are roughly equal, little sign reversal has occurred. While this metric obscures any variation in the strength of selection, it does address the impact of temporal variation in its direction. As shown in Figure 30.9, for the existing data, any directional variation is relatively modest, and it is greatest for traits under weak selection ($ mean[|s|] $ small), which could simply reflect sampling error."
-    },
-    {
-      "type": "discussion",
-      "content": "These data were reexamined by Morrissey and Hadfield (2012), who performed a random-effects meta-analysis (Appendix 4) on a subset (consisting of those studies that reported standard errors, and hence allowed for a formal meta-analysis). If we let $ _ ij $ denote the jth temporal value from the ith study-trait combination, the model becomes $$ \\beta_{ij}=\\mu+u_{i}+t_{ij}+e_{ij} $$ where $ + u_i $ is the expected value for the gradient in the $ i $th study-trait combination, $ t_ ij $ is the residual due to temporal variance, and $ e_ ij $ is the sampling error. The last three variables are treated as random effects, and one can estimate their variances in a mixed-model setting. Of interest is the ratio $ _u^2 / (_u^2 + _t^2) $, namely, the amount of variance due to among study-trait means relative to the trait plus temporal variance. Morrissey and Hadfield found this ratio was quite high, measuring 0.88 (with a 95"
-    },
-    {
-      "type": "discussion",
-      "content": "Siepielski et al. (2011) examined how the temporal strength of selection varied over different fitness components (viability, mating success, and fecundity). The temporal variation among variance-standardized gradients was highest for mating success and roughly equal for survival and fecundity. Given potential differences in sampling error over these different fitness components, this result could simply imply higher sampling variation in mating success over other components. They also found that reversals of signs were highest for survival, followed by mating, and then fecundity. They noted that frequent sign reversals could occur if a trait under viability stabilizing selection has its mean close to the optimum $ \\left( \\theta\\right) $ . In such a setting, small fluctuations of the mean around $ \\theta $ result in sign variation in $ \\beta $"
+      "content": "Has the case for “weak” selection been made? As pointed out by Conner (2001), even so-called weak selection can be very effective at changing trait means. Consider Kingsolver’s median value of $ \\beta_{sd} = 0.16 $ ($ \\beta = 0.16 \\cdot \\sigma_z $). From Equation 13.22a, the single-generation expected change in the mean (in phenotypic standard deviations) is $ h^2 \\cdot 0.16 $. With a typical heritability of 0.4, only 16 generations of selection are required to shift the population mean by one standard deviation, and only 80 generations are required to shift it by five standard deviations. Another way to think about the impact of a “weak” selection gradient of $ \\beta_{sd} = 0.16 $ was mentioned by Hereford et al. (2004). They noted that even a population of modest size spans over four standard deviations of variation, implying a fitness range of $ 4 \\cdot 0.16 = 0.64 $, or a 64% variation in relative fitness among individuals within the population (assuming that the fitness-surface approximation holds over this span of phenotypic values)."
     },
     {
       "type": "derivation",
-      "content": "To examine if this is the case, Siepielski et al. applied a result from Estes and Arnold (2007), who used $ _ sd $ and $ _ sd $ to estimate the distance of a population mean from an optimum, [[SEE_FORMULA:30.32]]"
+      "content": "Conversely, if concerns about publication bias and low power are correct, the true median value of $ |\\beta_{sd}| $ may be substantially less than the “weak” median value of 0.16 found by Kingsolver. Hersch and Phillips (2004) and Knapczyk and Conner (2007) examined the validity of these concerns. Figure 29.9 presented power curves for a univariate analysis (a single-trait fitness regression), which is a function of $ \\rho = \\bar{\\eta}/\\sqrt{I} $. Hersch and Phillips showed that when multiple (potentially correlated) traits are considered, the adjusted version of the trait-fitness correlation, $ \\rho $, used in power calculations becomes [[SEE_FORMULA:30.31]]"
     },
     {
       "type": "discussion",
-      "content": "This follows from Equation 30.21a, and it assumes a normally distributed trait with a fitness function that is well approximated (over the bulk of its phenotypic distribution) by a quadratic. Using Equation 30.32, Siepielski et al. found a value for the standardized difference of the mean from an optimum of $ 2.28 0.54 $ for survival traits in their dataset, but values of $ 14.59 9.14 $ for mating success and $ 11.62 5.48 $ for fecundity. While Equation 30.32 is a crude metric, which is fraught with numerous pitfalls, it does suggest that survival traits might be closer to their optimum (provided it exists)."
+      "content": "Hence, $ \\bar{\\imath}^{2} $ is replaced by $ \\beta_{sd}^{T}s $ (where s is the vector of variance-standardized selection differentials, i.e., a vector of selection intensities), which accounts for the correlations among the (measured) traits. Using Equation 30.31, Hersch and Phillips found that most of the studies summarized by Kingsolver for which power calculations could be performed (i.e., those that included estimates of I) were very underpowered, supporting Kingsolver's concern about the underreporting of small values and hence skewing the distribution of estimates of $ |\\beta_{sd}| $ upwards."
+    },
+    {
+      "type": "discussion",
+      "content": "The impact of publication bias, which is also called the \"file-drawer effect\" (Rosenthal"
+    },
+    {
+      "type": "discussion",
+      "content": "[h]"
+    },
+    {
+      "type": "discussion",
+      "content": "1979; Rosenberg 2005), as nonsignificant results are not published and hence simply “left in a file,” was also examined by Hersch and Phillips (2004). They simulated cases where results were only published when one (or more) of the gradients in a study were found to be significant. Although such a model does indeed allow for many nonsignificant values in the database, these are still biased because they were conditioned on at least one of the results being significant. This ascertainment scheme is certainly one reasonable model for quantifying publication bias. For each “publication,” the simulation chose five “traits” by drawing five $ \\beta_{sd} $ values at random. If one (or more) of the five tests was significant, all the values were retained, and if not, they all were discarded. As shown in Figure 30.7, this conditional sampling resulted in the median value of $ \\beta $ being substantially overestimated when either the sample size or the amount of variation explained by the effects was small (low $ R^{2} $ values), both of which are settings that result in low power. This is essentially another manifestation of the Beavis effect, overestimation when using statistics that are conditional on success (significance)."
+    },
+    {
+      "type": "discussion",
+      "content": "Knapczyk and Conner (2007) also considered sampling error and publication bias, but they arrived at the very different conclusion that “our understanding of selection is not strongly biased by these commonly invoked sources of error.” To examine publication bias, they binned the datasets examined by Kingsolver based on sample size. If there was no publication bias, the distribution of $ |\\beta_{sd}| $ values should have a similar form over different sample sizes (following the exponential observed for the entire set by Kingsolver). They found departures from this pattern for studies with very small sample sizes (less than 40), but did not find departures for studies with larger sample sizes. Indeed, compared to the exponential distribution, they found an excess of weak selection gradients in the larger studies. Thus, they concluded that publication bias, except in the smallest studies, did not upwardly bias estimates of $ |\\beta_{sd}| $ in any appreciative way. Appendix 4 presents a number of metrics to assess publication bias."
+    },
+    {
+      "type": "discussion",
+      "content": "Further complicating matters is the paper by Hereford et al. (2004), who found that using mean-standardized gradients ($ \\beta_{\\mu} = \\mu\\beta $; Equation 29.33a) gave very different results. Recall that the mean-standardized gradient is $ \\beta_{\\mu} = 1 $ when the trait is fitness itself, providing"
+    },
+    {
+      "type": "discussion",
+      "content": "[h] a benchmark for the strength of selection on a trait (Equation 29.33c). Using a subset of the Kingsolver data (38 studies yielding 580 estimates) that included the required information for this standardization (i.e., those that reported the trait means), they found a median $ |\\beta_{\\mu}| $ of 0.54, or 54% of the strength of selection on fitness. This is indeed strong selection. Even using a correction for the upward bias generated by sampling error (Equation A4.37a), which reduced the median value to 0.31, still left strong selection. The observed strengths of selection were so large that the authors suggested that the selection gradients were likely inflated by focusing on single episodes of selection rather than lifetime fitness. In essence, they suggested that tradeoffs resulted in the actual gradient of lifetime fitness for a trait being significantly less than the gradients based on single episodes of selection. However, as we discuss shortly, there appears to be little evidence for tradeoffs among the traits in the currently analyzed databases (Figure 30.9)."
+    },
+    {
+      "type": "discussion",
+      "content": "A final perspective on the strength of directional selection was offered by Hendry and Kinnison (1999) and Kinnison and Hendry (2001), who compiled data on over 2000 estimated rates of microevolution. While rates of divergence in trait means confound the strength of selection with the transmission genetics of the trait, an advantage of this approach is that such estimates focus on an average rate of change over time, thus smoothing out large values caused by brief episodes of strong selection. Such episodes are more likely to catch our attention, and considering only these episodes results in a biased view of the average strength of selection over time. Figure 30.8 plots the cumulative selection intensities obtained by Endler (1986) and Kingsolver et al. (2001) as well as the inferred average selection intensity values given the observed rates of microevolution, assuming heritabilities of 0.1 and 0.4. As can be seen, under either assumed heritability, there is an excess of weak selection (small $ \\bar{\\tau} $) values relative to those seen by Kingsolver and Endler. While this suggests that weak selection is the norm, an argument for strong selection can also be made. While strong selection can certainly occur over brief episodes, if it continues over a sufficient amount of time, genetic variation for the selection response will be eroded and further response must wait for new variation (from mutation and immigration). Thus, with strong persistent selection, $ h^{2} $ will likely become much smaller than 0.1. Conversely, if selection is episodic, selection to reduce $ h^{2} $ will be smaller and genetic variation will erode less quickly."
+    },
+    {
+      "type": "discussion",
+      "content": "[h]"
+    },
+    {
+      "type": "discussion",
+      "content": "[h]"
+    },
+    {
+      "type": "discussion",
+      "content": "An apparent excess of small selection intensities could reflect true low selection intensities when averaged over many generations, thus smoothing out strong episodes. However, it could equally likely reflect strong persistent selection quickly eroding heritability and hence reducing response."
+    },
+    {
+      "type": "discussion",
+      "content": "Three other evolutionary questions can be partly addressed through a meta-analysis of estimated gradients: the relative importance of correlated traits, the impact of fitness-component tradeoffs, and the magnitude of temporal variation."
     }
   ]
 }

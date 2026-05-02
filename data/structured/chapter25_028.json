@@ -4,50 +4,31 @@
     "chapter": "chapter25",
     "section": "Chapter 25: Lerner's Model of Genetic Homeostasis",
     "subsections": [
-      "Artificial Selection Countered by Natural Stabilizing Selection"
+      "Lerner's Model of Genetic Homeostasis"
     ],
     "source_file": "tmp\\paddle_output\\chapter25_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [
-      "25.17a",
-      "25.17b",
-      "25.17c",
-      "25.17d",
-      "25.18a",
-      "25.18b",
-      "25.18c",
-      "25.18d"
+      "25.16"
     ],
     "table_references": []
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Lerner's model is an example in which the QTL influencing a character under artificial selection also influences fitness under natural selection through paths that are independent of the phenotypic value of the focal trait. Under his model, extreme phenotypes are less fit because they are more homozygous than intermediate phenotypes. Alternatively, the phenotypic value, z, itself could be under natural selection. Here, extreme phenotypes are intrinsically less fit, independent of their genotypes. For example, z could be under natural selection for an intermediate optimum, with directional artificial selection being opposed by stabilizing natural selection. This can also lead initially to an apparent selection limit in the presence of additive variance in the artificially selected trait (Latter 1960; James 1962; Zeng and Hill 1986; Hill and Mbaga 1998)."
+      "content": "A second class of models assuming pleiotropic fitness effects is based on Lerner's (1954) theory of genetic homeostasis, which was motivated by the notion that natural selection tends to favor heterozygotes, a view that is still controversial and has weak support at best. Under Lerner's model, alleles segregating at a QTL are favored as heterozygotes by natural selection. The simplest case is that in which the QTL is additive for the character under selection. Let the genotypes $ bb:Bb:BB $ have fitnesses (under natural selection) of $ 1-s_{2}:1:1-s_{1} $. Further, suppose the expected trait values for these offspring are $ \\mu-a:\\mu:\\mu+a $, where the trait is normally distributed and a is small. Then, from Equation 5.21, the fitnesses under directional selection are approximately $ 1 - \\bar{\\imath} a / \\sigma_z: 1: 1 + \\bar{\\imath} a / \\sigma_z $, resulting in (assuming weak selection; e.g. $ s_1, s_2, \\bar{\\imath} a / \\sigma \\ll 1 $) approximate total fitnesses of $$ (1-s_{2})(1-\\bar{\\imath}a/\\sigma_{z}):1:(1-s_{1})(1+\\bar{\\imath}a/\\sigma_{z}) $$"
     },
     {
       "type": "derivation",
-      "content": "Suppose we assume that stabilizing selection is occurring according to Equation 16.17, with the width of the selection function given by $ ^2 $ (with smaller values implying stronger stabilizing selection) and the optimum set at zero. From Equation 16.18b, the selection differential imparted on a population whose mean is at a distance of $ $ from the optimum is [[SEE_FORMULA:25.17a]] and, from Equation 16.18a, the new phenotypic variance after stabilizing selection becomes [[SEE_FORMULA:25.17b]]"
-    },
-    {
-      "type": "derivation",
-      "content": "Now suppose directional selection operates with a selection intensity of $ $, yielding a selection differential from artificial selection of [[SEE_FORMULA:25.17c]] for a total selection differential of [[SEE_FORMULA:25.17d]]"
-    },
-    {
-      "type": "derivation",
-      "content": "Response stops (a limit is reached) when $ h^2S = 0 $, which can occur for $ h^2 0 $ when $ S = 0 $. Setting Equation 25.17d equal to zero and solving for the limiting mean yields [[SEE_FORMULA:25.18a]] or a total response of $ _ - _0 $, a result first obtained by James (1962). Note that this limit does not appear to depend on $ h^2 $ (provided it is nonzero at the limit). However, this expected response is an approximation, as disequilibrium and allele-frequency change alter $ h^2 $, changing the value of $ _z^2 $ and altering the ultimate limit."
-    },
-    {
-      "type": "derivation",
-      "content": "Hill and Mbaga (1998) noted that for standard $ $ values of 1 to 2 (corresponding to saving between 5 [[SEE_FORMULA:25.18b]] returning the ratio of the total to initial response as [[SEE_FORMULA:25.18c]]"
-    },
-    {
-      "type": "derivation",
-      "content": "The half-life of response (in generations) is [[SEE_FORMULA:25.18d]] as found by James (1962) and Zeng and Hill (1986)."
+      "content": "If artificial selection is sufficiently strong relative to natural selection ($ \\bar{\\nu}a/\\sigma_z > s_1 $), $ B $ is fixed. However, if $ s_1 > \\bar{\\nu}(a/\\sigma_z) $, the total fitness shows overdominance, and there is an internally stable equilibrium of [[SEE_FORMULA:25.16]]"
     },
     {
       "type": "discussion",
-      "content": "While the population will display additive variation in the selected trait when these forces of directional and stabilizing selection balance, this situation is similar to strict stabilizing selection. As introduced in Example 5.6 (and discussed at length in Chapter 28), in the absence of mutation, strict stabilizing selection eventually results in the loss of essentially all genetic variation (Robertson 1956). Hence, the balance between artificial directional and natural stabilizing selection is not, by itself, sufficient to maintain variation. However, the loss of additive variation may be rather slow once the limit is reached (Chapter 28), leading to the appearance of the maintenance of variation over moderate time scales."
+      "content": "This weak-selection result is due to Verghese (1974) and Nicholas and Robertson (1980), while Minvielle (1980) gave a more general equilibrium condition for alleles of major effect. The additive genetic variance for the trait contributed by this locus at equilibrium is $ 2a^2 \\widehat{p}(1 - \\widehat{p}) $, which can be considerable."
+    },
+    {
+      "type": "discussion",
+      "content": "Changes in reproductive fitness in divergent selection lines (Chapter 18) are often asymmetric, with lines selected in one direction showing a much larger decrease in fitness than lines selected in the opposite direction. Such asymmetries are not necessarily inconsistent with genetic homeostasis, as they can be accounted for by directional dominance in fitness (e.g., if $ s_1 < s_2 $, namely, that alleles increasing the character under artificial selection also tend to be more fit as homozygotes, holds for most loci)."
     }
   ]
 }

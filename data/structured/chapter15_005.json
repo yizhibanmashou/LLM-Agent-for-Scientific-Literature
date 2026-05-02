@@ -2,45 +2,43 @@
   "id": "chapter15_005",
   "metadata": {
     "chapter": "chapter15",
-    "section": "Chapter 15: Dominance in Autotetraploids",
+    "section": "Chapter 15: Additive Epistasis",
     "subsections": [
-      "Dominance in Autotetraploids"
+      "Additive Epistasis"
     ],
     "source_file": "tmp\\paddle_output\\chapter15_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [
-      "15.9",
-      "15.10a",
-      "15.10b",
-      "15.10c",
-      "15.10d"
+      "15.6b",
+      "15.7",
+      "15.8"
     ],
     "table_references": []
   },
   "blocks": [
     {
-      "type": "discussion",
-      "content": "Polyploidy, which is very common in plants and occurs in some animals (e.g., salmonid fishes), can introduce complications in predicting selection response (Gallais 2003). In particular, the dynamics of selection response for autotetraploids with dominance is very similar to the dynamics of diploids with epistasis. From LW Equation 7.22 and LW [[SEE_TABLE:7.5]], the tetraploid parent-offspring covariance when dominance (but no epistasis) is present is $$ \\sigma(z_{p},z_{o})=\\frac{\\sigma_{A}^{2}}{2}+\\frac{\\sigma_{D}^{2}}{6} $$"
-    },
-    {
       "type": "derivation",
-      "content": "The inflation of the parent-offspring covariance over that for a diploid is due to dominance interactions between the two alleles per locus that each tetraploid parent passes on to its offspring. Thus, like additive epistasis in diploids, favorable combinations of alleles can be passed down from parent to offspring in polyploids. With equal amounts of selection on both sexes (e.g., selection occurs before pollination), the resulting response (assuming linearity of the parent-offspring regression) is [[SEE_FORMULA:15.9]]"
-    },
-    {
-      "type": "derivation",
-      "content": "If selection occurs after pollination, S is replaced by S/2. Gallais (1975) extended Griffing's (1960a) method (and hence assumed normally distributed phenotypes, with each gene having very small effects on the character) to obtain the response after t generations of selection with a constant differential of S, [[SEE_FORMULA:15.10a]] where [[SEE_FORMULA:15.10b]] which converges to a limiting value of [[SEE_FORMULA:15.10c]]"
+      "content": "The expected time, $ t_{1/2} $, for half the total epistatic response to accumulate, $ R_{AA}(t_{1/2}) = \\widetilde{R}_{AA}/2 $, is obtained by noting from Equations 15.4b and 15.6a that this occurs when $ 1 - (1 - c)^{t_{1/2}} = 1/2 $, or [[SEE_FORMULA:15.6b]]"
     },
     {
       "type": "discussion",
-      "content": "This is just a 50"
+      "content": "For small value of c, this is approximately $ \\simeq 0.68/c $. As linkage becomes tighter, the total cumulative epistatic response increases, as does the time for half of this total response to occur (Figure 15.1)."
     },
     {
       "type": "derivation",
-      "content": "Again, as with epistasis, the contribution from dominance decays upon the cessation of selection as genotype frequencies return to their Hardy-Weinberg values. As discussed in LW Chapter 4, the rate of approach to tetraploid Hardy-Weinberg expectations depends on the probability, c, of a double reduction. This is the chance that a gamete contains two copies of one of the four alleles in the parent, an event that requires a crossover (see LW Figure 4.3). In the absence of double reduction (c = 0), as would occur for a locus completely linked to the centromere, the difference in the frequency of pairs of alleles from Hardy-Weinberg expectation decays by one third in each generation (and this is assumed in obtaining Equation 15.10b). In such a setting, the response to t generations of selection followed by τ generations of random mating is [[SEE_FORMULA:15.10d]] which again rapidly converges to $t h^2$ $S$. More generally, if $c$ is the per-generation probability of a double reduction, the decay rate of $(1/3)^t$ is replaced in Equations 15.10b and 15.10d by $(1 - c)/3^t$. Swanson et al. (1974) found that if some double reductions occur $(c > 0)$, the additive genetic variance is slightly inflated over the value expected with no double reductions $(c = 0)$, which permanently increases selection response. This results from the slight excess of homozygotes at equilibrium over the Hardy-Weinberg expectation (see LW Chapter 4)."
+      "content": "Once selection stops, the epistatic contribution decays to zero. With $ t $ generations of selection followed by $ \\tau $ generations of random mating, the cumulative response under the infinitesimal model is [[SEE_FORMULA:15.7]] which (for large $ \\tau $) converges to $ R = t h^2 S $, the value predicted from the breeder's equation. The half-life for decay of the epistatic response, $ R_{AA} $, is also given by Equation 15.6b."
     },
     {
       "type": "discussion",
-      "content": "Wricke and Weber (1986) discussed additional topics on tetraploid selection, while selection under single-locus tetraploid models was examined by R. Hill (1971; Hagg and Hill 1974; Hill and Hagg 1974; Rowe and Hill 1984). By far the most complete treatment of selection with polyploids was presented by Gallais (2003)."
+      "content": "The presence of epistasis can result in a curvilinear selection response if $ \\sigma_{AA}^{2}/\\sigma_{z}^{2} $ is sufficiently large. However, as Figure 15.1 shows, any such curvilinearity is usually difficult to distinguish from a linear response, especially given the very noisy nature of selection response data (Chapter 18). Unless there is tight linkage, most of the nonlinearity occurs in the first few generations (Equation 15.6b). With a constant selection differential, the additional increment to response from epistasis decreases in each generation as $ R_{AA} $ approaches its limiting value, $ \\bar{R}_{AA} $, at which point the per-generation response is simply $ h^{2}S $ and linear over future generations."
+    },
+    {
+      "type": "discussion",
+      "content": "Under the infinitesimal model, once selection is relaxed, the total response decays back to that predicted from the breeder's equation. It is interestingly that this situation mimics the effects of natural selection countering artificial selection, which also result in a decay of the cumulative response once artificial selection stops. Thus, in order to predict the permanent response correctly, we must know $ h^2 $. If only the parent-offspring slope is estimated, this may overestimate the final amount of response due to the inclusion of $ \\sigma_{AA}^2 $ and higher-order (additive) epistatic variances, although the bias is generally likely to be small, as the values of the higher-order variances are expected to be small relative to $ \\sigma_A^2 $."
+    },
+    {
+      "type": "derivation",
+      "content": "Griffing’s analysis is restricted to two loci, and hence limited to only pairwise (additive × additive) epistasis. In contrast, Equation 15.1 gives the single-generation response for arbitrary levels of additive epistasis, provided the biparental offspring regression is linear. These higher-order contributions also rapidly decay under random mating. Again assuming the infinitesimal model (and unlinked loci), Bulmer (1980) found that the response due to a single generation of selection (Equation 15.1) decays after one generation of random mating to [[SEE_FORMULA:15.8]] which again rapidly converges to $ R = h^2 S $ after several generations of random mating. For $ n $-locus additive epistasis (e.g., $ \\sigma_{A\\cdots A}^2 $, where there are $ n $ $ A $'s), the per-generation decay rate for unlinked loci is $ (1/2)^{n-1} $, which is the probability that a parental gamete containing specific alleles at $ n $ unlinked loci is passed on intact to an offspring. The probability that such a gamete will remain unchanged after $ t $ generations is $ 2^{-t(n-1)} $, which rapidly converges to zero. Example 15.2 (below) uses the method of ancestral regressions to more fully examine the response under $ n $-locus additive epistasis. A final caveat is that these results apply to infinite populations. As shown in Chapter 11, in finite populations, some of the additive epistatic contribution can be permanent due to some of $ \\sigma_{AA}^2 $ being transformed into simple additive variation by drift."
     }
   ]
 }

@@ -8,56 +8,29 @@
     ],
     "source_file": "tmp\\paddle_output\\chapter10_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
-    "formula_references": [
-      "10.15",
-      "10.16a",
-      "10.16b",
-      "10.16c",
-      "10.16d",
-      "10.16e"
-    ],
+    "formula_references": [],
     "table_references": []
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "The original Sawyer-Hartl analysis equated the observed entries in a DPRS table with their corresponding expected values (Equations 10.12a–10.12d), and then solved for the unknowns of interest (the ratio $ _a/ _s = _a/ _s $, the scaled average strength of selection $ = 2N_e s $, and the scaled time of divergence $ = t/[2N_e] $). A value of $ $ significantly different from zero implies selection on replacement sites, with $ > 0 $ implying positive selection and $ < 0 $ implying negative selection (the latter applies only to mildly deleterious alleles, as the PRF model treats very deleterious alleles by lowering the mutation rate: these are assumed to be not seen as either polymorphisms or divergences). This original model, which only assumes a single selective class with silent sites being neutral, can be placed in a likelihood framework by recalling that each observed entry in a DPRS table is an independent Poisson random variable. The probability that the count $ X $ in a specific category is $ x $, given its expected value $ $, follows from the Poisson distribution, $$ Prob(X=x\\mid\\zeta)=\\zeta^{x}\\exp(-\\zeta)/x!,\\quad where\\quad\\zeta=E[X] $$"
-    },
-    {
-      "type": "derivation",
-      "content": "The likelihood of the data in the DPRS table for gene i is thus given by [[SEE_FORMULA:10.15]] where $ x_ i,j $ denotes the observed DPRS table values for category j in gene i, with $$ x_{i,1}=P_{s,i},\\quad x_{i,2}=P_{a,i},\\quad x_{i,3}=D_{s,i},\\quad x_{i,4}=D_{s,i} $$ and $ _ i,j $ are the corresponding gene-specific expected values, $$ \\zeta_{i,1}=E[P_{s,i}],\\quad\\zeta_{i,2}=E[P_{a,i}],\\quad\\zeta_{i,3}=E[D_{s,i}],\\quad\\zeta_{i,4}=E[D_{a,i}] $$"
+      "content": "If we assume that 50% of all new mutation are deleterious ($p_0 = 1 - p_b - 0.5 = 0.485$), then $\\alpha = 0.38$. A key point of this example is that $\\alpha$ can be quite substantial even when $p_b$ is very small."
     },
     {
       "type": "proposition",
-      "content": "Note from Equations 10.12a–10.12d that $ _ i,1 $ through $ _ i,4 $ are functions of the unknown parameters $ (_ a,i, _ S,i, _i,) $ that we wish to estimate by ML. A numerical search over all possible values of these parameters for the combination that maximizes Equation 10.15 given the data (treating the $ x_ i,j $ as fixed constants) yields the ML solutions (LW Appendix 4). Under the assumption of independence across genes, the combined likelihood over $ k $ genes becomes $$ L=\\prod_{i=1}^{k}L_{i} $$ where $ _a, _S $, and $ $ can potentially vary over the genes, while the divergence time, $ $, is shared by all. Hence, for $ M $ genes, there are $ 3M + 1 $ unknown parameters. As noted, this basic model can be expanded by considering more realistic fitness models. For example, Nielsen et al. (2005a) allowed three fitness classes for replacement sites: neutral, deleterious, and beneficial (advantageous). While fitness is assumed to be the same within each class, this is a significant improvement over the original Sawyer-Hartl model. The resulting likelihood now has four parameters for selection (as opposed to one, $ $). These are $ p_b $, $ p_0 $, and $ p_d $, the frequencies of beneficial, neutral, and deleterious mutations (where $ p_b = 1 - p_0 - p_d $), and $ _b $ and $ _d $, the scaled selection coefficients for the beneficial and deleterious alleles (which are assumed to be the same over all genes). Nielsen et al. applied their method to a set of 50 human genes with prior evidence for possible positive selection. The resulting ML estimates were $ p_d = 0.748 $, $ p_0 = 0.172 $, and $ p_b = 0.080 $ as the fraction of deleterious, neutral, and advantageous mutations, and $ _d = -34.96 $ and $ _b = 267.11 $ as the scaled strengths of selection of deleterious and advantageous mutations. Note that even in this case where genes were ascertained as likely to be under positive selection, most mutations were still deleterious. A similar analysis of two Drosophila melanogaster data sets by Schneider et al. (2011) found that $ 1.5\\% $ of all replacement mutations were adaptive (i.e., $ p_b 0.015 $), but with a much smaller scaled strength of selection, $ _b 10 $."
+      "content": "The robustness of PRF estimates to violations of model assumptions has been examined by several authors. While the model assumes additive selection, estimates of $ \\gamma $ are relatively insensitive to dominance (Williamson et al. 2004). Wakeley (2003) examined the effects of population structure (assuming an island model; Chapter 2). While estimates of the divergence time, $ \\tau $, are significantly affected, estimates of $ \\gamma $ are only weakly affected and tend to be conservative (closer to neutrality). Desai and Plotkin (2008) noted that the infinite-sites assumption (that mutations never reoccur at the same site) breaks down under high scaled mutation rates ($ \\theta > 0.05 $). In such cases, recurring mutations at the same site can result in genes under weak negative selection giving a signal of strong positive selection. This may be especially problematic for viral populations with high mutation rates and large population sizes."
     },
     {
-      "type": "derivation",
-      "content": "While the PRF model does not directly estimate the fraction of adaptive replacements ($ $), this can be obtained from the estimates of $ $ and the fraction, $ p_b $, of advantageous mutations as follows. The expected rate of effectively neutral substitutions at replacement sites is $ p_0 $ (the neutral mutation rate), whereas the expected number of favorable mutations arising in each generation is $ 2N p_b $, where $ p_b $ is the favorable mutation rate. For large $ $, each favorable mutation has a fixation probability of $ 2sN_e/N $ (Chapter 7), for an expected per-generation substitution rate of favorable alleles of [[SEE_FORMULA:10.16a]]"
+      "type": "proposition",
+      "content": "One critical difference between PRF and MK analyses is the contribution of information from silent sites (e.g., $ P_s $, $ D_s $), a point stressed by Li et al. (2008). Estimates of selection under an MK analysis are in the form of estimates of $ \\alpha $, which are critically dependent upon $ P_s $ and $ D_s $ (e.g., Equations 10.8a and 10.9a), in addition to $ D_a $ and $ P_a $. Conversely, under the PRF model, positive selection is estimated only through $ \\gamma $. An examination of Equations 10.12c and 10.12d shows that estimates of $ \\gamma $ depend only on $ D_a $ and $ P_a $, and that information from silent sites ($ P_s $ and $ D_s $) does not enter into them. As a consequence, the control for demographic effects on $ P_a $ provided by $ P_s $ does not enter, and over- or under-inflated estimates of $ P_a $ from population structure can significantly bias estimates of $ \\gamma $. Further, Equation 10.14a (from which the PRF equations follow) is an equilibrium model, which assumes that the population size has been stable for sufficient time to reach the mutation-selection-drift equilibrium. Chapter 9 was littered with the bodies of tests that critically depend on this same assumption."
     },
     {
-      "type": "derivation",
-      "content": "The fraction of adaptive substitutions is the rate of adaptive substitutions divided by the total rate of substitutions (adaptive plus neutral), [[SEE_FORMULA:10.16b]]"
-    },
-    {
-      "type": "derivation",
-      "content": "Substituting Equation 10.16a yields [[SEE_FORMULA:10.16c]]"
-    },
-    {
-      "type": "derivation",
-      "content": "Equation 10.16c relates the selection estimates $ p_b $ and $ $ from a PRF model with the selection estimate $ $ from an MK approach. Inspection shows that small $ p_b $ (or more precisely a small value of $ p_b/p_0 $) does not mean that $ $ is small, as $ > 0.5 $ when $ 2 > p_0/p_b $. One final result emerges from Equation 10.16a. Because $ p_b $ is the rate of beneficial mutation, which (in keeping with our notation from Chapter 8) we denote by $ _b $, Equation 10.16a becomes [[SEE_FORMULA:10.16d]] which immediately suggests the Bachtrog estimator (2008), [[SEE_FORMULA:10.16e]]"
+      "type": "proposition",
+      "content": "In contrast, because MK estimates involve the ratio of $ P_a / P_s $, recent demographic effects influencing polymorphism levels are accounted for, and there is no assumption about the population being at an equilibrium value for the current amount of genetic variation (see the discussion following Equation 10.5d). Thus, while both MK and PRF approaches face bias from differences in population size between the divergence and polymorphism phases, PRF approaches have additional bias introduced by any nonequilibrium patterns in the polymorphism data. As noted by Li et al. (2008), tests of selection using PRF theory (i.e., $ \\gamma $ significantly greater than zero) are closer to an HKA than an MK test, as the former compares the P/D ratio over different genes and lacks the internal control of comparing polymorphism levels from two different classes within the same gene."
     },
     {
       "type": "discussion",
-      "content": "Example 10.13. What is the estimate of $ $ for the subset of human genes considered by Nielsen et al. (2005a) that was previously discussed (immediately proceeding Equation 10.16a)? Here $ p_b = 0.08 $, $ p_0 = 0.172 $, and $ _b = 267.11 $. While only 8 $$ \\alpha=\\frac{2\\cdot267.11\\cdot0.08}{(2\\cdot267.11\\cdot0.08)+0.172}=0.996 $$"
-    },
-    {
-      "type": "discussion",
-      "content": "The reason for this high value is that the estimated advantageous mutation rate (0.08μ) is just slightly below half of the estimated neutral rate (0.172μ), while the fixation probabilities for advantageous mutations are over 500 times greater. If we lumped the neutral and deleterious mutations rates together and assumed these were all effectively neutral (i.e., replacing 0.172 by 1 - p_b = 0.920), our estimate of α would still be very high (0.980). It is also important to recall that Nielsen et al. focused on a highly biased set of genes, which were chosen to be enriched for positive selection. It is thus likely that the p_b, γ, and α estimates based on this set of loci are larger than those for typical human genes."
-    },
-    {
-      "type": "discussion",
-      "content": "Now consider the Schneider et al. (2011) values for Drosophila melanogaster ($p_b 0.015$, $ _b 10$). If we assume that all of the remaining mutations are neutral ($p_0 = 1 - p_b = 0.985$), Equation 10.16c yields $$ \\alpha=\\frac{2\\gamma}{2\\gamma+\\left(p_{0}/p_{b}\\right)}=\\frac{20}{20+0.985/0.015}=0.23 $$"
+      "content": "Finally, while we have framed the PRF approach in terms of simple DPRS count data, it can be modified to directly estimate $ \\gamma $ using the site-frequency spectrum from a single population (Hartl et al. 1994; Bustamante et al. 2001; Williamson et al. 2004; Huerta-Sanchez et al. 2008). DPRS data are very granular, collapsing all of the polymorphism and divergence information into just four data points. In contrast, the site-frequency spectrum is a very rich source of additional information on the structure of the polymorphism data (Chapters 2 and 9). Using the PRF model to estimate $ \\gamma $ directly from the frequency spectrum is done in a fashion analogous to estimating sweep parameters using the frequency spectrum discussed in Chapter 9. In particular, Equation 10.14a is substituted into Equation 9.16a to form the (composite) likelihood, from which an MLE for $ \\gamma $ can be obtained by standard approaches (LW Appendix 4). While elegant, this approach is not generally recommended due to the very delicate dependence of the frequency spectrum on demographic structure, which is not accounted for by the current models. Likewise, Equation 10.14a assumes additive fitnesses, whereas even small amounts of dominance can alter the site-frequency spectrum (Williamson et al. 2004)."
     }
   ]
 }

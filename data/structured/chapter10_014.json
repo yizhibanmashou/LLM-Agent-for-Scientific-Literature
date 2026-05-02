@@ -2,9 +2,9 @@
   "id": "chapter10_014",
   "metadata": {
     "chapter": "chapter10",
-    "section": "The McDonald-Kreitman Test: Caveats",
+    "section": "Fluctuating Selection Coefficients and MK Tests",
     "subsections": [
-      "Dominance in Fitness and the MK Test"
+      "Fluctuating Selection Coefficients and MK Tests"
     ],
     "source_file": "tmp\\paddle_output\\chapter10_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
@@ -14,7 +14,7 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "One might be concerned that dominance alters the ratio of polymorphism to divergence at replacement sites, as both the frequency spectrum and the probability of fixation for a selected site are influenced by dominance (Chapter 7). While Weinreich and Rand (2000) and Williamson et al. (2004) showed that most types of dominance have little impact on this ratio, an important exception concerns weak-to-moderate overdominance. Williamson et al. showed that overdominance can increase the substitution rate at replacement sites relative to that predicted from the amount of polymorphism, giving a signal of positive directional selection in an MK test (a neutrality index less than one). The reason for this behavior follows from Robertson's (1962) classic result examined in Chapter 7, wherein overdominance can increase, rather than retard, the rate of fixation when the equilibrium allele-frequency values are extreme (a minor equilibrium allele-frequency of 0.2 or less; see Figure 7.4). The idea is that selection rapidly moves allele frequencies to these equilibrium values, at which point drift can cause alleles to become fixed if selection is relatively weak."
+      "content": "While we have been assuming that the selection coefficient, s, on a new mutation remains constant over its sojourn in the population, this is likely not the case. The impact of fluctuating selection on MK tests was examined by Huerta-Sanchez et al. (2008) and Gossmann et al. (2014), both of which assumed selection coefficients randomly sampled over time. from a distribution with a mean value of zero. Huerta-Sanchez et al. found that fluctuating values of s result in an increase in the probability of fixation (relative to a neutral allele) and a decrease in the amount of polymorphism. This can generate false positives for positive selection in an MK test. Gossmann et al., however, noted that the results are more subtle. Because selection coefficients are randomly sampled over time, some alleles will, by chance, end up with a net positive value of s over their entire sojourn, and such mutations contribute disproportionately to levels of polymorphism and divergence. They concluded that MK signals under fluctuating selection are therefore genuine, as fixed mutations are those that, by chance, end up with a net positive s value over their entire history on their way to fixation. Further, they found that the real impact of fluctuating selection is that MK methods tend to underestimate the fraction of adaptive sites, as those alleles with E[s] > 0 during their sojourn to fixation tend to be undercounted."
     }
   ]
 }

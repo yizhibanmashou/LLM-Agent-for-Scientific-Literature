@@ -2,76 +2,71 @@
   "id": "chapter26_024",
   "metadata": {
     "chapter": "chapter26",
-    "section": "Chapter 26: Optimizing the Asymptotic Selection Response",
+    "section": "Chapter 26: Results for the Infinitesimal Model",
     "subsections": [
-      "Optimizing the Asymptotic Selection Response"
+      "Expected Asymptotic Response Under More General Conditions"
     ],
     "source_file": "tmp\\paddle_output\\chapter26_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [
-      "26.37",
-      "26.38",
-      "26.40"
+      "26.32",
+      "26.33a",
+      "26.33b",
+      "26.33c",
+      "26.34a",
+      "26.34b",
+      "26.34c",
+      "26.35a",
+      "26.35b",
+      "26.36a",
+      "26.36b"
     ],
-    "table_references": [
-      "inline_1"
-    ],
-    "table_reference_keys": [
-      "chapter26:inline_1"
-    ]
+    "table_references": []
   },
   "blocks": [
     {
-      "type": "discussion",
-      "content": "Because the asymptotic response is a function of $ N_{e}\\bar{\\iota} $ response is maximized by selection strategies that maximize this product. As was the case for maximizing long-term response (the total response using only the initial variation), there is a tradeoff in that the optimal short-term response (maximizing $ \\bar{\\iota} $ ) is in conflict with the optimal asymptotic response (because increasing $ \\bar{\\iota} $ decreases $ N_{e} $ ). If our choice is simply the fraction of individuals to save, the previous discussion on the optimal selection intensity for long-term response also applies to considerations of the asymptotic response."
+      "type": "derivation",
+      "content": "The infinitesimal model assumes that allele-frequency changes are due entirely to drift. Clearly, selection can also change allele frequencies, and in this case other methods of analysis are required. One approach (Hill 1982a, 1982b) is to consider the expected contribution resulting from the eventual fixation by drift and selection of some of the new mutations that arise in each generation. Provided mutation and selection remain constant over time, at equilibrium the rate of response equals this expected per-generation contribution. Assuming M adults are measured, the frequency of a new mutant allele, $ A^* $, is $ 1/(2M) $. To allow for dominance, assume that the genotypic values of $ AA^* $ and $ A^*A^* $ are, respectively, incremented by $ \\alpha(1+k) $ and $ 2\\alpha $ relative to the value of AA. As before, we assume that the joint distribution of $ \\alpha $ and $ k $ is independent of the genotypic value of the parental allele. Let $ f(\\alpha, k) $ denote this joint probability density function and let $ \\mu = \\sum \\mu_i $ be the total gametic mutation rate for the trait of interest. The expected contribution to the total response from a new mutant appearing as a single copy becomes $ 2\\alpha \\cdot u(1/[2M], \\alpha, k) $, the change in genotypic value if the new allele is fixed times its probability of fixation (the latter can be obtained by Equation 7.18a, using the fitnesses given by Equation 25.4). Because $ 2M\\mu $ new mutants appear each generation, the asymptotic rate of response is [[SEE_FORMULA:26.32]]"
     },
     {
       "type": "discussion",
-      "content": "However, the breeder or experimentalist can use other design options beyond simply tuning the selection intensity. We have generally been assuming individual (or mass) selection, which is based solely on an individual's phenotype. There are, however, numerous other selection schemes, such as those incorporating information on the phenotypes of relatives (e.g., family-index and BLUP selection; Chapters 21 and 13, respectively). Schemes incorporating such information can improve the accuracy of an individual's breeding value estimate, and hence improve the accuracy of short-term response. This can be seen by recalling (Equation 13.11c) that the single-generation response, R, for any particular selection scheme is given by $ R / (\\bar{\\iota}_{x}\\sigma_{A})=\\rho(x,A) $ , where selection occurs on some index, x, and $ \\rho(x,A) $ is the accuracy of the index (the correlation between an individual's index, x, and breeding values, A). Holding $ \\bar{\\iota} $ constant, the single-generation response increases with the accuracy, $ \\rho(x,A) $ , of the selection method. While different schemes can improve the short-term response over mass selection, what is their effect on asymptotic response? Once again, the answer is that schemes improving the short-term response usually do so at the expense of the asymptotic response."
+      "content": "Note that the expected asymptotic rate depends critically on the exact shape of the distribution of mutational effects (a point echoed in Chapter 28). Fortunately, some fairly general results emerge by using simple approximations for the probability of fixation (similar to Equations 7.19a and 7.19b; see Hill 1982a, 1982b for details)."
     },
     {
       "type": "derivation",
-      "content": "Optimal asymptotic response occurs by maximizing the fixation probabilities of favorable QTLs, which amounts to maximizing $ N_ e s $, where s is the selection coefficient on the QTL. For an additive trait, Hill (1985) and Caballero et al. (1996) generalized Equation 25.4 to show that [[SEE_FORMULA:26.37]]"
+      "content": "Consider first the case where all new mutants are additive $ (k = 0) $. Hill (1982b) found that, provided major alleles are not common among new mutants, [[SEE_FORMULA:26.33a]] where [[SEE_FORMULA:26.33b]] is the average squared increment of favorable alleles (i.e., those with $ \\alpha > 0 $). If the distribution of mutational increments, $ f(\\alpha) $, is symmetric about zero, then $ E^{+}[\\alpha^2] = E[\\alpha^2]/2 $, as $ \\int_0^\\infty f(\\alpha) \\, d\\alpha = 1/2 $, and the asymptotic response reduces to Equation 26.29. When major alleles are common among new mutants, correction terms involving $ E^{+}[\\alpha^3] $ appear; see Hill (1982b) for details. With divergent selection (the divergence between an up- and down-selected line; Chapter 25), effects due to asymmetry in $ f(\\alpha) $ cancel, and the asymptotic rate of divergence between high and low lines is simply twice the rate (for single-direction selection) predicted from the infinitesimal model, namely, [[SEE_FORMULA:26.33c]] independent of the shape of $ f(\\alpha) $. The effect of linkage on asymptotic response was examined by Keightley and Hill (1983, 1987), who found it to generally be small, with the relative effects of linkage increasing with $ \\sigma_{m}^{2} $ and $ N_{e} $."
     },
     {
       "type": "discussion",
-      "content": "Note that $ (x, A) = h $ for individual selection (the index is simply the trait value, x = z), recovering Equation 25.4. Fixation probabilities under different selection schemes with the same selection intensities are thus functions of the product $ N_e s $, which is proportional to $ N_e (x, A) $. The tradeoff is that increasing $ (x, A) $ typically decreases $ N_e $ by increasing the among-family variance in trait value (and hence in fitness). Thus, as was the case in our previous discussion on the optimal selection intensity, the optimal selection scheme for short-term response may differ from the optimal scheme for long-term response."
+      "content": "Hill and Keightley (1988) allowed for the possibility that new mutations are also influenced by natural selection. If both the trait and fitness effects of mutations are small, the distribution of $ \\alpha $ is symmetric, and natural selection effects are also symmetric in $ \\alpha $ (e.g., the change in fitness is a function only of $ |\\alpha| $, there is no change in the asymptotic rate of response. If these assumptions are violated, the asymptotic rate can be reduced."
     },
     {
       "type": "derivation",
-      "content": "The accuracy, $ $, depends on the genetic variance, and hence can change over time as these variances change. As shown in Chapters 24 and 25, predicting long-term changes in variances can be extremely difficult. Once again, the analysis is greatly simplified by assuming the infinitesimal model. Under this model, the additive genetic variance eventually converges to a value of $ _ A ^ 2 =2N_ e _ m ^ 2 $. The effect of different selection schemes on the equilibrium additive variance (and $ $) is then entirely determined by the effective population size that each scheme generates. In comparing two different selection schemes (i and j) with the same selection intensity, Wei et al. (1996) showed that the ratio of asymptotic responses becomes [[SEE_FORMULA:26.38]] where a tilde denotes an equilibrium value and $ (i) $ denotes the accuracy (at the equilibrium variances) of selection scheme i. The careful reader will note that the effect of $ N_e $ is twofold—there is a direct effect (the square root of the $ N_e $ ratio) and also an indirect effect through the ratio of the $ $ (which is a function of $ _A $, and hence of $ N_e $)."
+      "content": "To allow for dominance, we continue to assume the incremental mutation model. From LW Equation 4.12a, the additive variance contributed by a rare allele is $$ 2p(1-p)\\alpha^{2}[1+k(1-2p)]^{2}\\simeq2p\\alpha^{2}(1+k)^{2} $$ yielding a contribution to $ \\sigma_{A}^{2} $ from a single new mutation, where $ p_{0}=1/(2M) $, of approximately $$ \\alpha^{2}(1+k)^{2}/M $$ Because the expected number of new mutations per locus in any given generation is $ 2M\\mu $, the expected additive variance contributed in each generation by new mutations at a given locus is $$ 2M\\mu E[\\alpha^{2}(1+k)^{2}/M]=2\\mu E[\\alpha^{2}(1+k)^{2}] $$ where the expectation is taken over the joint distribution of $ \\alpha $ and k values in new mutants. Summing over all loci, the expected new additive variance contributed each generation (in the absence of linkage disequilibrium) is [[SEE_FORMULA:26.34a]] as obtained by Hill (1982b). The last equality assumes the distribution of mutational values and rates to be the same at each locus. When all mutations are additive (k = 0) and symmetric (E[] = 0), this reduces to our previous definition of $ \\sigma_m^2 $. More generally, with complete additivity, but removing the assumption that E[] = 0, we have [[SEE_FORMULA:26.34b]] while with complete dominance $ (k=1) $, [[SEE_FORMULA:26.34c]]"
     },
     {
       "type": "discussion",
-      "content": "Example 26.6. Consider the asymptotic response to mass (m) versus within-family (w) selection. Under within-family (full-sib) selection, $ N_ e(w) 2N $, as the among-family variance is zero (Equation 3.4). In contrast, $ N_ e(m) < N $, with the difference between $ N_ e(m) $ and N increasing with the selection intensity and heritability (Equation 26.8), implying that $$ \\sqrt{\\frac{N_{e(w)}}{N_{e(m)}}}\\geq\\sqrt{2} $$ (29.39a)"
-    },
-    {
-      "type": "discussion",
-      "content": "The accuracy for mass selection is given by $$ \\rho(z,A)=\\frac{\\sigma(z,A)}{\\sigma_{A}\\sigma_{z}}=\\frac{\\sigma_{A}^{2}}{\\sigma_{A}\\sigma_{z}}=\\frac{\\sigma_{A}^{2}}{\\sqrt{\\sigma_{A}^{2}\\left(\\sigma_{A}^{2}+\\sigma_{E}^{2}\\right)}} $$ (29.39b) yielding an asymptotic accuracy as $$ \\widetilde{\\rho}(m)=\\frac{\\widetilde{\\sigma}_{A}^{2}}{\\sqrt{\\widetilde{\\sigma}_{A}^{2}(\\widetilde{\\sigma}_{A}^{2}+\\sigma_{E}^{2})}}=\\frac{2N_{e(m)}\\sigma_{m}^{2}}{\\sqrt{2N_{e(m)}\\sigma_{m}^{2}(2N_{e(m)}\\sigma_{m}^{2}+\\sigma_{E}^{2})}} $$ (29.39c) as obtained by Wei et al. (1996)."
-    },
-    {
-      "type": "proposition",
-      "content": "Turning to within-family selection, let $ _ f $ denote the family mean. Selection decisions are based on the value of $ z - _ f $. Recalling our treatment of within-family selection from Chapter 21, the resulting accuracy for within-family (full-sib) selection becomes $$ \\rho(w)=\\rho(z-\\overline{z}_{f},A)\\simeq\\frac{\\sigma(z-\\overline{z}_{f},A)}{\\sqrt{\\sigma^{2}(A)\\sigma^{2}(z-\\overline{z}_{f})}}\\simeq\\frac{\\sigma_{A}^{2}/2}{\\sqrt{\\sigma_{A}^{2}(\\sigma_{G w}^{2}+\\sigma_{E_{s}}^{2})}} $$ (29.39d) where the last step ignores the effect of the number of sibs (n) in each family by assuming that n is large (see Chapter 21 for expressions for when n is small). The within-family genetic variance, $ _ Gw ^ 2 $, equals $ _ A ^ 2 /2 $ for a full-sib family with only additive effects, while the within-family environmental variance, $ _ E_ s ^ 2 $, equals $ _ E ^ 2 $ under the assumption of no common-family effects (Chapter 21). We make these simplifying assumptions here, but more general expressions easily follow. At equilibrium $$ \\widetilde{\\rho}(w)=\\frac{\\widetilde{\\sigma}_{A}^{2}/2}{\\sqrt{\\widetilde{\\sigma}_{A}^{2}(\\widetilde{\\sigma}_{A}^{2}/2+\\sigma_{E}^{2})}}=\\frac{N_{e(w)}\\sigma_{m}^{2}}{\\sqrt{2N_{e(w)}\\sigma_{m}^{2}(N_{e(w)}\\sigma_{m}^{2}+\\sigma_{E}^{2})}} $$ (29.39e)"
-    },
-    {
-      "type": "discussion",
-      "content": "(Wei et al. 1996). Applying Equation 26.39a along with Equations 26.39c and 26.39e yields $$ \\frac{\\rho_{(w,\\infty)}}{\\rho_{(m,\\infty)}}\\geq\\frac{1}{\\sqrt{2}} $$ $$ \\frac{\\widetilde{R}_{w}}{\\widetilde{R}_{m}}=\\left[\\sqrt{\\frac{N_{e(w)}}{N_{e(m)}}}\\right]\\left[\\frac{\\widetilde{\\rho}_{(w)}}{\\widetilde{\\rho}_{(m)}}\\right]\\geq\\sqrt{2}\\frac{1}{\\sqrt{2}}=1 $$"
-    },
-    {
-      "type": "discussion",
-      "content": "and hence $ \\tilde{R}_{w}\\geq\\tilde{R}_{m} $ . That is, for the same selection intensity, the asymptotic response is greater under within-family selection than under mass selection."
+      "content": "For the same $ \\alpha $ and $ \\mu $ values, the mutational variance with complete dominance is four times larger than that for complete additivity (as the genotypic value of heterozygotes is doubled, which increases the variance by $ 2^2 = 4 $)."
     },
     {
       "type": "derivation",
-      "content": "The effects of different selection schemes on the effective population size can be seen by considering the general weighted index of within- and among-family information, where z is an individual's phenotypic value, $ \\overline{z}_{f} $ is the mean of its family, and $ \\overline{z} $ is the grand mean. A number of selection schemes can be represented (either exactly or to a good approximation) by this index (Chapter 21). For example, $ \\lambda=1 $ corresponds to individual selection (as $ I=z-\\overline{z} $ ), while $ \\lambda=0 $ corresponds to strict within-family selection $ (I=z-\\overline{z}_{f}) $ The accuracy of selection using this index with an appropriately chosen value of $ \\lambda $ is greater than the accuracy of individual selection $ (\\rho(I,A)>\\rho(z,A); $ Equation 21.53b), and hence selection using the optimal index gives a greater short-term response than mass selection. To a first approximation, BLUP selection corresponds to this optimal index. Because the effective population size is reduced by inflating the among-family variance, the larger the value of $ \\lambda $ in [[SEE_FORMULA:26.40]], the greater is the reduction in $ N_{e} $ . Larger values of $ \\lambda $ place more weight on family information, resulting in more individuals from the best families being coselected. The reduction in $ N_{e} $ is greatest when heritability is small, as in these cases the index places the most weight on the among-family component. Yet, however, it is exactly this setting under which index and BLUP selection have the greatest short-term advantage over individual selection. Conversely, when care is taken to equalize the amount of inbreeding across methods, individual selection can produce a larger single-generation response than index selection or BLUP (Quinton et al. 1992; Andersson et al. 1998)."
+      "content": "For the case of complete dominance, Hill (1982b) found that the asymptotic rate of response is approximately [[SEE_FORMULA:26.35a]] where $ E^{+} $ [α²] is defined by Equation 26.33b. With a symmetric distribution of mutational effects, Equation 26.35a reduces to [[SEE_FORMULA:26.35b]] where $ \\sigma_m^2 $ is given by Equation 26.34c. For the same values of $ \\sigma_m^2 $, the response when all mutants are completely dominant is only half the expected response when alleles are additive (compare Equations 26.29 and 26.35b). However, for fixed values of $ \\mu $ and $ E\\left[\\alpha^2\\right] $, $ \\sigma_m^2 $ is larger with complete dominance (compare Equations 26.34b and 26.34c), and the rate of response under dominance is twice as large as that expected for complete additivity."
+    },
+    {
+      "type": "derivation",
+      "content": "If alleles are completely recessive, allelic effects are small, and the distribution of mutational effects is symmetric, the asymptotic response is approximately [[SEE_FORMULA:26.36a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "(Hill 1982b). For recessives with large effects (cf. Equation 7.19b) [[SEE_FORMULA:26.36b]]"
     },
     {
       "type": "discussion",
-      "content": "Can one balance this tradeoff between increased accuracy for short-term response using information from relatives versus inflation of the among-family variance (and the resulting reduction in the long-term response via reduction in $ N_{e} $ ) that these schemes produce? Several authors have proposed schemes for reducing the among-family variance following selection. Toro and colleagues (Toro and Nieto 1984; Toro et al. 1988; Toro and Pérez-Enciso 1990) suggested that selected individuals be mated in ways that minimize the coancestry between them. A slightly different strategy, compensatory mating, was suggested by Grundy et al. (1994). Here, individuals from families that are overrepresented following selection are mated to individuals from underrepresented families. This has the effect of reducing the cumulative effect of selection $ ( Q_{\\tau} $ in Equation 26.6c) by reducing the variance in family contribution. Grundy et al. also suggested a more subtle approach. They noted that by using slightly biased selection parameters in the index (for example, using upwardly biased estimates of $ h^{2} $ when computing the optimal $ \\lambda $ ), the slight reduction in the accuracy of the adjusted index from its optimal value is more than offset by a much smaller decrease in $ N_{e} $ . They suggested that this approach, combined with compensatory mating, provides a simple way for ameliorating the reduction in $ N_{e} $ . Verrier et al. (1993) also suggested that schemes placing slightly less emphasis on family information can, in small populations, give greater long-term response than BLUP selection. We examine the optimal control for inbreeding under BLUP in detail in Volume 3."
+      "content": "Thus, the limiting response when all new mutations are recessive is not predictable from $ \\sigma_m^2 $, even if mutational effects are symmetrically distributed. With recessive major alleles, the selection response scales as $ \\sqrt{N_e} \\bar{\\imath} $, and hence it increases much more slowly with $ N_e \\bar{\\imath} $ than with complete dominance or additivity."
     },
     {
       "type": "discussion",
-      "content": "This tradeoff between optimal short-term versus optimal asymptotic response has economic consequences for breeders. While breeders are ultimately better off in the long run (in terms of total response) using selection schemes that are initially less accurate, competing breeders using the initially more accurate schemes will achieve a larger short-term response. Breeders must thus decide between staying in business over the short term versus experiencing a larger payoff (in terms of a greater response) over the long run."
+      "content": "When loci are linked, the asymptotic response is reduced, but the effect is small unless linkage is tight, as might occur with a few small chromosomes (Keightley and Hill 1983). As mentioned previously, reduction in response also occurs if loci influencing the trait are linked to loci under natural selection."
     }
   ]
 }

@@ -2,23 +2,43 @@
   "id": "chapter9_031",
   "metadata": {
     "chapter": "chapter9",
-    "section": "Ascertainment Issues",
+    "section": "Chapter 9: Tests of Sweeps Using Bottleneck Models",
     "subsections": [
-      "Ascertainment Issues"
+      "Tests of Sweeps Using Genomic Positional Information: CLRT-GOF"
     ],
     "source_file": "tmp\\paddle_output\\chapter9_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
-    "formula_references": [],
+    "formula_references": [
+      "9.19a",
+      "9.19b",
+      "9.20"
+    ],
     "table_references": []
   },
   "blocks": [
     {
-      "type": "discussion",
-      "content": "Because many of these likelihood models exploiting genomic positional information are computationally demanding, they are typically employed following a general scan of a genome for some signature of selection, such as regions of depressed variation, or showing unusual site-frequency spectra (such as those with a negative Tajima's D or positive Fay and Wu's H values, which are discussed in the next section). Choosing the region or regions in which to perform the likelihood tests based on the appearance of these special features creates a strong ascertainment bias that dramatically shifts the null distribution. (Note that this is different from SNP ascertainment bias arising from the nonrandom choice of SNPs at the start of the analysis.) The coalescent process can be noisy, and regions with unusual underlying genealogies (such as strong compression of the nodes) can occur by chance even under the equilibrium neutral model. This is especially true when a large number of sites are sampled, presenting more draws from the same underlying process, some of which will be realizations that are extreme values."
+      "type": "derivation",
+      "content": "Chen et al. (2010) introduced a test that is similar in spirit to the CLRT but uses the genomic positional pattern of allele-frequency differences between two populations (a reference and a candidate), as opposed to heterozygosity data from a single population. Their cross-population composite-likelihood ratio test, or XP-CLR, is constructed as follows. They assumed a biallelic marker, such as a SNP, and scored the frequency of an allele in the reference and candidate populations, with selection assumed to have occurred in the latter (but not the former). First, they modeled the neutral divergence in allele frequency between two isolated populations that originally shared a common ancestor. To simplify matters, they used a Brownian motion (or Wiener process) approximation for drift (Appendix 1), using a normal for the expected distribution of allele frequencies. This approximation assumes that alleles are segregating and hence frequencies are in the $ (0, 1) $ range. For pure drift, the expected change, $ m(x) $, in an allele at frequency x is zero, while the expected variance of the change is $ v(x) = x(1 - x)/(2N_e) $. If we build the Wiener process by using Equation A1.31a, the expected frequency, x, of an allele at generation t, given that it started at a frequency of $ p_0 $, is approximately normally distributed, with [[SEE_FORMULA:9.19a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "More generally, we can write the variance as $ \\beta p_0(1 - p_0) $, where the $ \\beta $ term accounts for the population history (allowing for variation in population size, etc.), so that if $ p_r $ is the allele frequency in some reference population, then under a pure drift model, the distribution of frequencies in the candidate population should follow [[SEE_FORMULA:9.19b]]"
     },
     {
       "type": "discussion",
-      "content": "Thornton and Jensen (2007) outlined an approach to adjust for both ascertainment and nonequilibrium population structure when simulating the neutral null distribution. First, genome-scan data are used to estimate the parameters for an appropriate demographic model (such as the time and duration of a bottleneck). Next, these are used in neutral coalescent simulations. Normally, this would be the null distribution, but we need to also model the ascertainment process itself as well. For example, suppose the lowermost 2"
+      "content": "The last condition follows because this approximation only works well for $ \\sigma^2 $ small. Due to the shared population history, all neutral genes should have (roughly) the same $ \\beta $ value, which one can estimate directly from the data. If $ k $ out of $ n $ sampled chromosomes in the control population contain the allele, the likelihood (for $ \\beta $) for this site is given by using Equation 9.16a, but with $ \\phi(x) $ now replaced by the normal density function, with parameters given by Equation 9.19b. Chen et al. (2010) introduced an additional refinement. Instead of simply multiplying all individual likelihoods together, they formed their composite likelihood by multiplying the weighted product of the likelihoods, downweighting SNPs that are in LD in the reference population."
+    },
+    {
+      "type": "derivation",
+      "content": "Now consider the effect of a sweep in the candidate population. Chen et al.'s argument follows the same logic leading to the shift in the frequency spectrum under a sweep (Equation 8.13), but now the focus is the shift in the distribution of the allele frequency in the candidate population. Suppose a single mutation immediately under selection arises that is linked to the SNP being followed. If the SNP allele frequency is $x$, then with a probability of $x$, the new favorable allele occurs on this background, and the resulting sweep changes the SNP allele frequency to $f_{s} + x [1 - f_{s}]$ (Equation 8.1e). Conversely, with a probability of $1 - x$, its frequency decreases to $x (1 - f_{s})$, where $f_{s}$ is again given by Equation 9.16b. Using the same logic and changes-of-variables employed in Example 8.4, Chen et al. showed that the distribution of $x$ in the candidate population shifts to a mixture of two normals, the first representing SNP alleles not initially associated with the new favorable mutation, and hence driven toward a frequency of 0, and the second, where they were associated with the mutation and driven toward a frequency of 1, yielding [[SEE_FORMULA:9.20]] where $ I_{[a,b]} $ denotes an indicator function that is 1 when x is in the interval $ (a,b) $ and zero otherwise. This distribution now replaces $ \\phi(x) $ in Equation 9.16a to give the likelihood under selection for this site. The formal test consists of the ratio of the maximum of the composite likelihood under the sweep model (Equation 9.20) to the maximum of the composite likelihood under the neutral model (Equation 9.19b)."
+    },
+    {
+      "type": "discussion",
+      "content": "What makes Chen et al.'s method compelling is that the empirical null distributions of their test statistic over a wide range of demographic models were essentially identical. Further, their approach had greater power than the CLRT in their simulation studies and showed robustness to variation in recombination rates. Peng et al. (2011) presented an interesting application of this model, locating candidate genes for the adaptation of humans to high altitudes by contrasting a Himalayan Tibetan population (as the candidate) with Han"
+    },
+    {
+      "type": "discussion",
+      "content": "Chinese from Beijing (as the reference). Finally, an alternative (nonparametric) test using between-population divergence and chromosomal positional information was suggested by Oleksyk et al. (2008)."
     }
   ]
 }

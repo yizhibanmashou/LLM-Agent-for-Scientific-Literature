@@ -2,43 +2,47 @@
   "id": "chapter22_014",
   "metadata": {
     "chapter": "chapter22",
-    "section": "Chapter 22: Individual Selection: Maternal Effects",
+    "section": "Chapter 22: Individual Selection: Direct vs. Social Response",
     "subsections": [
-      "Individual Selection: Maternal Effects"
+      "Individual Selection: Direct vs. Social Response"
     ],
     "source_file": "tmp\\paddle_output\\chapter22_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [
-      "22.16a",
-      "22.16b",
-      "22.16c",
-      "22.16d",
-      "22.17a",
-      "22.17b",
-      "22.17c"
+      "22.15a",
+      "22.15b",
+      "22.15c"
     ],
     "table_references": []
   },
   "blocks": [
     {
       "type": "derivation",
-      "content": "An important special case, and indeed the forerunners of more general models of associative effects, are models of direct and maternal effects (Dickerson 1947; Willham 1963, 1972; Cheverud 1984a). Here, the trait value of an individual is a function of its direct effect, $ P_ d $, and a maternal performance trait, $ P_ m $, contributed by its mother, meaning that if j is the mother of i, then [[SEE_FORMULA:22.16a]]"
+      "content": "Recalling Equation 22.1e, the response in the trait has two components: that from direct effects, $ R_d = \\Delta \\mu_{A_d} $, and that from social effects, $ R_s = \\Delta \\mu_{A_s} $. The relative contribution of each to the total response easily follows by considering the covariance of an individual's phenotype value, z, with either its direct, $ A_d $, or social, $ A_s $, breeding values. Specifically, [[SEE_FORMULA:22.15a]]"
     },
     {
       "type": "derivation",
-      "content": "In the absence of inbreeding, $r = 1/2$ for this group (mother-offspring) with $n = 2$. From Equation 22.12c, the covariance between phenotype and total breeding value ($A_T = A_d + A_m$, with $A_s = A_m$) is [[SEE_FORMULA:22.16b]] while Equation 22.13a yields a phenotypic variance of [[SEE_FORMULA:22.16c]] making the resulting response to selection [[SEE_FORMULA:22.16d]]"
-    },
-    {
-      "type": "derivation",
-      "content": "The total response can also be expressed in terms of the direct and maternal-effect response. From Equation 22.15, [[SEE_FORMULA:22.17a]] and [[SEE_FORMULA:22.17b]] with the response, R, in the trait mean being [[SEE_FORMULA:22.17c]]"
+      "content": "Here [[SEE_FORMULA:22.15b]] while [[SEE_FORMULA:22.15c]]"
     },
     {
       "type": "discussion",
-      "content": "Substitution of Equations 22.17a and 22.17b into Equation 22.17c recovers Equation 22.16d. As reviewed by Cheverud (1984a), most estimates of the direct-maternal covariance are negative. This raises the possibility of a reversed response due to a greater reduction in the maternal environment than improvement in the direct effect. It also allows for the trait to improve (via its direct value) at the expense of a declining maternal value."
+      "content": "Equation 22.15b shows that the group must contain relatives $ (r \\neq 0) $ in order for the covariance between direct and social values to impact the response in the direct value. Likewise, under individual selection, response in the social value only occurs if the direct and social values are correlated within individuals $ \\sigma(A_d, A_s) \\neq 0 $ or if group members are related $ (r \\neq 0) $, in which case the social value of the focal individual is correlated with the social values of those within its group."
     },
     {
       "type": "discussion",
-      "content": "The careful reader might recall from Chapter 15 that Falconer’s trait-based model of a single maternal effect results in more complicated dynamics (such as time lags). Why do these not appear in this analysis? As noted by Bijma (2011), variance-component models essentially focus on the permanent component of response, ignoring transient contributions that can appear in a trait-based analysis. He showed that Equation 22.16d and Falconer’s model both give the same value for the permanent response."
+      "content": "Example 22.6. Consider the response in a family of half-sibs from Example 22.5, where the expected total response was 15.39 $ \\bar{i} $. What were the contributions from the direct and social responses? For the values used in that example, $$ \\begin{aligned}&\\sigma(A_{d},z)=\\sigma^{2}(A_{d})+r(n-1)\\sigma(A_{d},A_{s})=500+[0.25\\cdot5\\cdot(-39.5)]=450.63\\\\ &\\sigma(A_{s},z)=\\sigma(A_{d},A_{s})+r(n-1)\\sigma^{2}(A_{s})=-39.5+[0.24\\cdot5\\cdot50]=23.0\\\\ \\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Recalling from Example 22.5 that $ \\sigma_z^2 = 1350.6 $ for half-sibs, Equations 22.15a and 22.15b return the two components of response as $$ R_{d}=\\frac{450.63}{\\sqrt{1350.6}}\\bar{\\imath}=12.26\\bar{\\imath}\\quad and\\quad R_{s}=\\frac{23}{\\sqrt{1350.6}}\\bar{\\imath}=0.63\\bar{\\imath} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Hence, 80% (12.26/15.39) of the total response was due to response in direct effects, while 20% was from the response in social effects (5.0.63/15.39). Under individual selection with half-sib families, both the mean direct and mean social values improved. By contrast, if group members are unrelated, then (Example 22.5) $ \\sigma_z^2 = 1150 $, while $$ \\sigma(A_{d},z)=\\sigma^{2}(A_{d})=500\\quad and\\quad\\sigma(A_{s},z)=\\sigma(A_{d},A_{s})=-39.5 $$ resulting in responses of $$ R_{d}=\\frac{500}{\\sqrt{1150}}\\bar{\\imath}=14.74\\bar{\\imath}\\quad and\\quad R_{s}=\\frac{-39.5}{\\sqrt{1150}}\\bar{\\imath}=-1.165\\bar{\\imath} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "In this case, while the total response was positive, the large direct response (14.74) was partly offset by a decrease in the mean social environment $ ([n-1]R_s = 5 \\cdot [-1.165] = -5.83) $, yielding a total response of $ (14.74 - 5.83) \\bar{i} = 8.91 \\bar{i} $. The lack of relatedness implies no direct selection involving $ \\sigma^2(A_s) $, and hence the social breeding values only change through their correlation with the direct values, which in this example was negative."
     }
   ]
 }

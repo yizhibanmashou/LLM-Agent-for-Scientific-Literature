@@ -2,19 +2,37 @@
   "id": "chapter30_039",
   "metadata": {
     "chapter": "chapter30",
-    "section": "LEVELS OF SELECTION",
+    "section": "Chapter 30: Elasticity Path Diagrams",
     "subsections": [
-      "LEVELS OF SELECTION"
+      "Elasticity Path Diagrams"
     ],
     "source_file": "tmp\\paddle_output\\chapter30_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
-    "formula_references": [],
+    "formula_references": [
+      "30.34"
+    ],
     "table_references": []
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Finally, while our focus (thus far) has been on predicting fitness given the phenotype of an individual, it is also possible that selection acts at levels above the individual, e.g., through group-level effects (Chapter 22). For example, Breden and Wade (1989) found that increasing larval group size in the imported willow leaf beetle (Plagiodera versicolora) increases individual survivorship, with each additional group member increasing fitness by $ 7\\% $. Here, we briefly examine the analysis of selection at multiple levels. While one can use Price's equation to decompose the selection differential of a trait into within-group and among-group components, as we will show, this can be misleading. Akin to the fact that selection differentials are unreliable indicators of the targets of selection when traits are correlated, this is also the case when the traits have selective impacts at both the individual and group levels. As above, the amount of direct selection on a trait at a specific level of selection can be determined by using the appropriate multiple regression."
+      "content": "As we have seen, even very complex life histories can be represented as graphs (Figures 29.12 and 30.14). The impact of small demographic changes in the resulting transition matrix (or projection matrix) associated with this graph is measured by the elasticities of the elements in this matrix with respect to their impact on the population growth rate, $ \\lambda $ (Chapter 29; Caswell 1989, 2001). If an element in the projection matrix has an elasticity of $ e $, then a proportional change of $ f $ in that element results in a proportional change of $ f \\cdot e $ in $ \\lambda $ (Equation 29.4b). Changes in elements with larger elasticities have a proportionally greater impact on $ \\lambda $. For example, recall that Sæther and Bakke (2000) found average elasticity values in birds of 0.6 and 0.25 for viability and fecundity, respectively, which showed that changes in viability result in a much greater proportional change in the growth rate."
+    },
+    {
+      "type": "discussion",
+      "content": "Conner (1996) suggested that path analysis can be used to connect traits, their impact on fitness components, and the impact of those fitness components on the population growth rate, $ \\lambda $ (namely, how changing the mean of a trait alters the mean population growth rate). In a traditional path-analysis setting, such an analysis would return correlations between these various elements (e.g., Example 30.8; Figure 30.14), and while these correlations have a straightforward biological interpretation, they are disconnected from our standard metric of selection gradients and population growth. In a classic (but often underappreciated) paper, van Tienderen (2000) showed that using elasticities in place of path coefficients (an elasticity path analysis, or elastogram) connects trait selection, fitness components, and the population growth rate. Equation 29.33f describes the elasticity of a trait on $ \\lambda $ as the sum over all"
+    },
+    {
+      "type": "derivation",
+      "content": "[h] fitness components of the product of its mean-standardized gradient $ \\left(\\beta_{\\mu,i}\\right) $ for fitness component, $ W_i $, times the elasticity, $ e_i = \\partial \\ln(\\lambda) / \\partial \\ln(W_i) $, of that component on $ \\lambda $, [[SEE_FORMULA:30.34]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Example 30.11 and Figure 30.16 show the power of this approach, and a detailed example is given by Coulson et al. (2003)."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 30.11. Matsumura et al. (2012) simulated a model examining the impact of traits on the success of spawning migrations of salmon. Two traits of interest were the annual juvenile growth rate and the date of river entry for migrating individuals. Three survival measures (newborn, juvenile, and migration) as well as fecundity were taken as the fitness components. The impact of a trait on each of these components was measured by mean-standardized selection gradients, which correspond to elasticities of these components with respect to the trait (Equation 29.33e). Likewise, a demographic analysis using a population projection matrix (Chapter 29) evaluated the elasticities of these fitness components with respect to the population growth rate $ \\lambda $ (see their paper for details). Figure 30.16 presents the resulting elastogram. Consider the impact of entry date on $ \\lambda $. This trait impacts a single fitness component (migration survival) with an elasticity (mean-standardized gradient, $ \\beta_{\\mu} $) of 0.91, and migration survival has an elasticity ($ e_{i} $) of 0.25 on $ \\lambda $, yielding (from Equation 30.34) an elasticity on $ \\lambda $ as a function of this trait of 0.91 - 0.25 = 0.23. Hence, a 10% increase in mean entry date yields a 2.3% increase in the population growth rate. The second trait, juvenile growth rate, has significant effects on three fitness components. Its elasticity on $ \\lambda $ through newborn survival is -0.71 - 0.25 = -0.18; through juvenile survival is -0.71 - 0.75 = -0.53, and through fecundity is 2.87 - 0.50 = 1.44; for a total elasticity (through all fitness components) of -0.18 - 0.53 + 1.44 = 0.725. Thus, a 10% increase in mean juvenile growth rate results in a 7.3% increase in $ \\lambda $, mainly through its impact on fecundity (a 14% increase) and despite decreases of 1.8% and 5.3% in newborn and juvenile survival, respectively."
     }
   ]
 }

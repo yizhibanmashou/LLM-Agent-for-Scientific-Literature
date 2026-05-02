@@ -9,57 +9,56 @@
     "source_file": "tmp\\paddle_output\\chapter15_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [
-      "15.25",
-      "15.26",
-      "15.27a",
-      "15.27b",
-      "15.28a",
-      "15.28b",
-      "15.29a",
-      "15.29b"
+      "15.21",
+      "15.22a",
+      "15.22b",
+      "15.22c",
+      "15.23a",
+      "15.23b",
+      "15.24"
     ],
     "table_references": []
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "[h]"
+      "content": "One of the simplest models of maternal effects (motivated by the inheritance of litter size in mice) is that of Falconer (1965): the value of the focal trait in the mother determines M (reviewed in LW Chapter 23). Falconer reasoned that offspring from large litters receive less maternal resources per individual than those in smaller litters, and that this can have carryover effects when they become mothers themselves."
     },
     {
       "type": "derivation",
-      "content": "[h] which, using Equation 15.23b, simplifies to [[SEE_FORMULA:15.25]]"
+      "content": "Assume that the maternal contribution is a linear function of the maternal phenotype, $ z_{mo} $ (the size of her litter), so that $ M = mz_{mo} $ and, upon substitution of this result into Equation 15.20a, the phenotypic decomposition becomes [[SEE_FORMULA:15.21]]"
     },
     {
       "type": "discussion",
-      "content": "This result can be interpreted as follows: the first two terms are the change in character value resulting from selection in generation $ t $ due to genetic $ (h^2 / [2 - m]) $ and maternal $ (m) $ contributions. The final term, which can be expressed as $ m $, represents the decay in the maternal contribution from the previous generation."
-    },
-    {
-      "type": "derivation",
-      "content": "Assuming that an equilibrium for maternal effects has been reached such that Equation 15.23a holds and then starting with an unselected base population, the response to a single generation of selection is [[SEE_FORMULA:15.26]]"
-    },
-    {
-      "type": "derivation",
-      "content": "An interesting implication of Equation 15.26 is that if $m < 0$, there is some possibility of a reversed response, with $ _z$ being opposite in sign from $S$. If $S_ fa = S_ mo = S$, a reversed response is expected if [[SEE_FORMULA:15.27a]]"
-    },
-    {
-      "type": "derivation",
-      "content": "If selection is only occurring on females, this condition is [[SEE_FORMULA:15.27b]]"
+      "content": "Conceivably, $M$ could be a nonlinear function of $z_{moi}$, but linearity is assumed for tractability. Equation 15.21 is called the dilation model, because the effect of the maternal phenotype becomes diluted over successive generations (for $|m| < 1$). The parameter $m$ can be regarded as the partial regression coefficient (i.e., holding the offspring's genotypic value, $G$, constant) of offspring phenotype on maternal phenotype and can be estimated as the difference between slopes of the maternal- and paternal-offspring regressions (LW Equation 23.13)."
     },
     {
       "type": "discussion",
-      "content": "An example of an apparent maternally induced reversed response was seen by Falconer (1960b, 1965) in his selection experiments on litter size in mice. This character shows a negative maternal effect, with $ m $ and $ h^2 $ estimated to be $ -0.13 $ and $ 0.11 $, respectively. Because selection for litter size occurs only in females, Equation 15.27b implies that a reversed response in the first generation is expected (as $ 1 - -0.05 > m = -0.13 $). As Figure 15.3 shows, a reversed response was indeed observed."
+      "content": "Negative estimates of m have been reported: values of -0.15 for litter size in mice (Falconer 1965); of -0.58 and -0.40 for age of maturity in two replicate lines of the springtail insect, Orchesella cincta (Janssen et al. 1988); of -0.25 for clutch size in the collared flycatcher, Ficedula albicollis (Schluter and Gustafsson 1993); and of -0.29 for juvenile growth rate in the red squirrel Tamiasciurus hudsonicus (McAdam and Boutin 2003)."
+    },
+    {
+      "type": "derivation",
+      "content": "If we further assume that the joint distribution of phenotypes and breeding values in parents and offspring is multivariate normal and there is an absence of epistasis, the expected phenotypic value of an offspring whose mother has a phenotypic value of $ z_{mo} $ is [[SEE_FORMULA:15.22a]] where $ A_{mo} $ and $ A_{fa} $ are the maternal and paternal breeding values. Averaging over the selected parents, the mean in generation t becomes [[SEE_FORMULA:15.22b]] where $ A_{fa}^{*}(t) $ and $ A_{mo}^{*}(t) $ are the mean breeding values of the selected parents and $ \\mu_{mo}^{*}(t) $ is the mean phenotypic value of selected mothers in generation t. The first term is the expected breeding value in the offspring, $ \\mu_{A}(t) $, and the second term is the additional maternal contribution."
     },
     {
       "type": "discussion",
-      "content": "An observed reversed response can be misleading because the permanent response is expected to have the same sign as S, while the initial observed response also includes a transient component that (in this case) is of the opposite sign and of a larger magnitude than the permanent response component. It may take several generations for this transient component to decay to the point that the actual genetic changes are revealed (Figure 15.3). For a single generation of selection, the expected genetic change is $ 2 S h^{2} /[ ( 2-m ) ( 1-m) ] $ as shown by Equation 15.33 (below)."
+      "content": "To proceed in using this model to predict response, we first use the regression of breeding value on phenotype $$ A=\\mu_{A}+b_{A|z}\\left(z-\\mu_{z}\\right)+e $$"
     },
     {
       "type": "derivation",
-      "content": "The possibility of a reversed selection response hints at some of the complicated dynamics that can appear when maternal effects are present. To examine these dynamics in more detail, consider the dilution model with constant directional selection occurring equally on both sexes, i.e., $ S_ fa (t) = S_ mo (t) = S $ for $ t 1 $. Iteration of Equation 15.25 yields [[SEE_FORMULA:15.28a]] which (for $ |m|<1 $) converges to [[SEE_FORMULA:15.28b]]"
+      "content": "In particular, we can rewrite $ A_{mo}^{*}(t) = E_{s}[A_{mo}] $, the expected breeding values in selected mothers, as [[SEE_FORMULA:15.22c]] where $ E_s[\\cdot] $ denotes the expected value over the selected parents and $ S_{mo} $ denotes the selection differential on the trait in mothers in generation $ t $. A similar expression for $ A_a^*(t) $ includes the selection differential, $ S_{fa} $, on fathers. In the absence of maternal effects, $ b_{A|z} = h^2 $. However, the dilution model generates an equilibrium covariance between $ M $ and $ A $, specifically $ \\sigma_{A,M} = m \\sigma_A^2 / (2 - m) $, which in turn alters the covariance between $ z $ and $ A $ (Falconer 1965; Kirkpatrick and Lande 1989; see LW Equation 23.12a). The resulting regression slope (at equilibrium) is [[SEE_FORMULA:15.23a]]"
     },
     {
       "type": "derivation",
-      "content": "Hence, after a sufficient number of generations, the per-generation change is constant. If $ |m| $ is near zero, the per-generation response rapidly converges to this asymptotic value, while if $ |m| $ is near one, the rate of convergence is considerably slower. Summing over the single-generation changes (Equation 15.28a) and recalling Equation 15.5b, the cumulative response to t generations of selection is [[SEE_FORMULA:15.29a]] which converges (for $ |m|<1 $) to [[SEE_FORMULA:15.29b]]"
+      "content": "The expected breeding value in the offspring is the average of the breeding values of the selected parents, which (from Equations 15.22c and 15.23a) yields [[SEE_FORMULA:15.23b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Substituting this result for the average of the breeding values in Equation 15.22b and using $ \\mu_{mo}^{*}(t) = \\mu_{z}(t) + S_{mo}(t) $ yields [[SEE_FORMULA:15.24]]"
+    },
+    {
+      "type": "discussion",
+      "content": "The change in population mean over one generation, $ \\Delta\\mu_{z}(t) $, is thus $$ \\begin{align*}\\Delta\\mu_{z}(t)=\\mu_{z}(t+1)-\\mu_{z}(t)=&\\Bigg[\\mu_{A}(t)+\\frac{h^{2}}{2-m}\\bigg(S_{mo}(t)+S_{fa}(t)\\bigg)+m\\bigg(\\mu_{z}(t)+S_{mo}(t)\\bigg)\\Bigg]\\\\-\\Bigg[\\mu_{A}(t-1)+\\frac{h^{2}}{2-m}\\bigg(S_{mo}(t-1)+S_{fa}(t-1)\\bigg)+m\\bigg(\\mu_{z}(t-1)+S_{mo}(t-1)\\bigg)\\Bigg]\\end{align*} $$"
     }
   ]
 }

@@ -23,7 +23,7 @@
   "blocks": [
     {
       "type": "derivation",
-      "content": "Given the need to account for the structure in a selfing population, Cockerham (1983) and Cockerham and Martzinger (1985), built on concepts from Horner (1952) and Gates et al. (1957) and generalized the covariance given by Equation 23.23 to $ \\sigma_{G}(T,\\tau,t) $ , the covariance between a relative in generation T and another relative in generation $ \\tau\\leq T $ , when the last common relative of both is from generation $ t\\leq \\tau $ (Figure 23.2A). This covariance was given by Equation 11.15, namely, where $ t \\leq \\tau \\leq T $ . Notice that [[SEE_FORMULA:23.32]] reduces to Equation 23.23 when $ \\tau=t $ (parents are the selection unit), as $ \\sigma_{G}(T,t,t)=\\sigma_{G}(T,t) $ . The epistatic terms are often ignored, and Equation 23.32 does not account for nonadditive epistatic terms and assumes linkage equilibrium. For cross-generational covariances indexed by two or more relatives, such as $ \\sigma_{G}(T,t) $ and $ \\sigma_{G}(T,\\tau,t) $ , we use the convention that the rightmost index (t in this case) references the oldest (earliest-generation) individual, while the leftmost (T in this case) references the youngest (latest-generation). Thus, as one proceeds right-to-left in the index, more recent relatives are being considered; see Figure 23.2. Again, to use these covariances in predicting the selection response, we must make the strong assumption that selection does not significantly modify this covariance from the unselected version (Equation 23.32). The covariance between a parent in generation t and an offspring in generation T follows by noting that here $ t=\\tau $ and Equation 23.32 reduces to Equation 23.23."
+      "content": "Given the need to account for the structure in a selfing population, Cockerham (1983) and Cockerham and Martzinger (1985), built on concepts from Horner (1952) and Gates et al. (1957) and generalized the covariance given by Equation 23.23 to $ \\sigma_G(T, \\tau, t) $, the covariance between a relative in generation $ T $ and another relative in generation $ \\tau \\leq T $, when the last common relative of both is from generation $ t \\leq \\tau $ (Figure 23.2A). This covariance was given by Equation 11.15, namely, [[SEE_FORMULA:23.32]] where $ t \\leq \\tau \\leq T $. Notice that Equation 23.32 reduces to Equation 23.23 when $ \\tau = t $ (parents are the selection unit), as $ \\sigma_G(T, t, t) = \\sigma_G(T, t) $. The epistatic terms are often ignored, and Equation 23.32 does not account for nonadditive epistatic terms and assumes linkage equilibrium. For cross-generational covariances indexed by two or more relatives, such as $ \\sigma_G(T, t) $ and $ \\sigma_G(T, \\tau, t) $, we use the convention that the rightmost index (t in this case) references the oldest (earliest-generation) individual, while the leftmost (T in this case) references the youngest (latest-generation). Thus, as one proceeds right-to-left in the index, more recent relatives are being considered; see Figure 23.2. Again, to use these covariances in predicting the selection response, we must make the strong assumption that selection does not significantly modify this covariance from the unselected version (Equation 23.32). The covariance between a parent in generation t and an offspring in generation T follows by noting that here $ t = \\tau $ and Equation 23.32 reduces to Equation 23.23."
     },
     {
       "type": "derivation",
@@ -31,7 +31,7 @@
     },
     {
       "type": "derivation",
-      "content": "The permanent selection response is given by the covariance between a completely inbred $ F_ $ line ($ f_ = 1 $) and a relative (for example, from the selection unit) in generation $ $ who last both shared a relative in generation t (as would occur if remnant seed from t was used to form the new lines). Here, Equation 23.32 reduces to [[SEE_FORMULA:23.34a]]"
+      "content": "The permanent selection response is given by the covariance between a completely inbred $ F_{\\infty} $ line ($ f_{\\infty} = 1 $) and a relative (for example, from the selection unit) in generation $ \\tau $ who last both shared a relative in generation t (as would occur if remnant seed from t was used to form the new lines). Here, Equation 23.32 reduces to [[SEE_FORMULA:23.34a]]"
     },
     {
       "type": "derivation",
@@ -47,7 +47,7 @@
     },
     {
       "type": "derivation",
-      "content": "We also require the genetic variance in generation T among the subset of lines that descend from a single individual in generation t. Here, $ = T $ and the variance becomes [[SEE_FORMULA:23.36a]]"
+      "content": "We also require the genetic variance in generation T among the subset of lines that descend from a single individual in generation t. Here, $ \\tau = T $ and the variance becomes [[SEE_FORMULA:23.36a]]"
     },
     {
       "type": "derivation",
@@ -55,7 +55,7 @@
     },
     {
       "type": "discussion",
-      "content": "Example 23.7. Suppose we wish to know the among-family genetic variance for $ S_{i,j} $ families, namely, the bulk collection of $ S_j $ families from a single individual in generation i? From Equation 23.36a, $ \\sigma_G^2(S_{i,j}) = \\sigma_G(j, j, i) $. Substitution of $ f_t = 1 - 2^ -t $ and simplifying yields $$ \\begin{aligned}\\sigma_{G}^{2}(S_{i,j})&=(2-2^{i})\\sigma_{A}^{2}+2^{-(2j-i)}\\sigma_{D}^{2}+(2-2^{-i}-2^{-j})\\sigma_{ADI}^{2}\\\\&+\\left(1+2^{-(2j+1-i)}-2^{-j}-2^{-(i+1)}\\right)\\sigma_{DI}^{2}+2^{-(2j-i)}\\left(1-2^{-i}\\right)\\iota^{*}\\end{aligned} $$"
+      "content": "Example 23.7. Suppose we wish to know the among-family genetic variance for $ S_{i,j} $ families, namely, the bulk collection of $ S_j $ families from a single individual in generation i? From Equation 23.36a, $ \\sigma_G^2(S_{i,j}) = \\sigma_G(j, j, i) $. Substitution of $ f_t = 1 - 2^{-t} $ and simplifying yields $$ \\begin{aligned}\\sigma_{G}^{2}(S_{i,j})&=(2-2^{i})\\sigma_{A}^{2}+2^{-(2j-i)}\\sigma_{D}^{2}+(2-2^{-i}-2^{-j})\\sigma_{ADI}^{2}\\\\&+\\left(1+2^{-(2j+1-i)}-2^{-j}-2^{-(i+1)}\\right)\\sigma_{DI}^{2}+2^{-(2j-i)}\\left(1-2^{-i}\\right)\\iota^{*}\\end{aligned} $$"
     },
     {
       "type": "discussion",

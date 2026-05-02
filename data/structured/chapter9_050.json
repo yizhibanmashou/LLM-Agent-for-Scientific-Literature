@@ -2,64 +2,35 @@
   "id": "chapter9_050",
   "metadata": {
     "chapter": "chapter9",
-    "section": "Chapter 9: Recombination and Infinite-alleles-based Tests",
+    "section": "Chapter 9: Other Infinite-alleles Tests: Conditioning on S",
     "subsections": [
-      "Contrasting Allele-frequency vs. Intra-allelic Variation Estimates of Haplotype Age"
+      "Garud et al.'s $ H_{12} $ and $ H_{2} $ Tests"
     ],
     "source_file": "tmp\\paddle_output\\chapter9_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [
-      "9.40",
-      "9.41a",
-      "9.41b"
+      "9.35a",
+      "9.35b",
+      "9.35c"
     ],
-    "table_references": [
-      "9.3"
-    ],
-    "table_reference_keys": [
-      "chapter9:9.3"
-    ]
+    "table_references": []
   },
   "blocks": [
     {
-      "type": "discussion",
-      "content": "Long-haplotype Tests Using Within-population Data: rEHH, LDD, iHS, n $ S_{L} $ , SDS, and DIND The currently most popular class of allele-age-based tests are those that search for alleles that are at moderate to high frequency and with long haplotypes. Under the neutral model, a common allele is an old allele and hence has experienced many generations of recombination. Long haplotypes for strictly neutral alleles are only expected when either the allele is very young or when the recombination rate is greatly suppressed."
-    },
-    {
-      "type": "definition",
-      "content": "Recall our previous discussion on the definition of an allele, namely a core SNP or set of very tightly linked SNPs that define alternate classes. For alleles defined by a single biallelic SNP, this generates two classes (sequences carrying the alternative SNP alleles). The haplotype structure within each allelic class is examined by looking at shared variants."
+      "type": "derivation",
+      "content": "A number of tests are built around haplotype homozygosity (HH), the probability that two randomly chosen haplotypes are identical. This is given by the complement of the Depaulis-Veuille H (haplotype heterozygosity) statistic (Equation 9.34a), [[SEE_FORMULA:9.35a]] where $ p_i $ is the frequency of the $ i $th haplotype in the sample. To adjust for sampling, some variants of this statistic replace $ p_i^2 $ with $ [p_i + (1/k)]^2 $, where $ k $ is the number of haplotypes (e.g., Kemper et al. 2014). As mentioned in Chapter 8, Garud et al. (2015) showed that a simple modification of this statistic results in a test that can detect both hard and soft sweeps. Their $ H_{12} $ test statistic combines the two largest haplotype classes into a single one, [[SEE_FORMULA:9.35b]]"
     },
     {
       "type": "discussion",
-      "content": "as one moves away from the core. The standard metric for the length of an allele is based on its haplotype homozygosity (HH), the probability that two randomly chosen chromosomes containing the same SNP variant (or core set of SNPs) are identical (homozygous) for all markers within a specified region. Sabeti et al. (2002) defined extended haplotype homozygosity (EHH) as the length of a region around the core allele (SNP) where HH has a value of 5% or greater, namely, the length around the core where there is a 5% or greater chance that any two random haplotypes of that allele are identical at all markers (Figure 9.6)."
+      "content": "The logic is that a soft sweep results in not one, but several, dominant haplotypes. If the sweep is not too soft, then the first two haplotypes, both presumably harboring the favored allele, will together comprise most of the haplotype variation. In the case of a hard sweep, the second-most frequent haplotype will be sufficiently rare that $ H_{12} \\simeq H_{1} $. The authors applied this approach to Drosophila, looking at windows with a fixed number of SNPs and adjusting for the local recombination rate and then used coalescent simulations to generate values under the null of neutrality."
     },
     {
       "type": "derivation",
-      "content": "While alleles with excessive values of EHH are produced by partial sweeps, simply scanning for sites with large EHH values will not serve as a sufficient indicator of selection, as a localized decrease in the recombination rate inflates the EHH value. The formal use of EHH as a selection-detecting statistic thus requires an internal control. Sabeti et al. (2002) proposed considering the relative extended haplotype homozygosity (rEHH) of a particular allele (SNP variant), defined as the ratio of the EHH value for that allele divided by the average EHH value for all other core alleles at the focal locus. For allele i, this is given by [[SEE_FORMULA:9.40]] where $ ave(EHH_j) $ denotes the average EHH values for all SNPs at the allelic-defining site. For the biallelic case (an allele defined by a single SNP, as opposed to a collection of tightly linked SNPs), $ rEHH $ is simply the ratio of the EHH values for the two alleles. By contrasting different alleles at the same site, most concerns about local variation in the recombination rates are ameliorated. However, if there are haplotype-specific recombination rates (e.g., the insertion of a mobile element reducing local recombination rates; Macpherson et al. 2008), then this test may be compromised. One consequence of comparing different alleles at a site is that as one allele approaches fixation, the power of the test disappears, as there are too few individuals in the comparison class to produce a meaningful statistic. As a result, the $ rEHH $ test has a rather narrow time window for the detection of a sweep: a rough rule is"
+      "content": "Garud et al. considered a second modified HH statistic, namely, the homozygosity with the largest class removed [[SEE_FORMULA:9.35c]]"
     },
     {
       "type": "discussion",
-      "content": "[h]"
-    },
-    {
-      "type": "discussion",
-      "content": "that the frequency of the favored allele must be 0.7 or less. Within such a time window, this test is among the most powerful for detecting selection. Nonetheless, a large rEHH value is not sufficient for suggesting selection, as some rare alleles (potentially being very young, and hence with reduced time for recombination) are expected to have large rEHH values. To detect selection, Sabeti et al. (2002) plotted the rEHH value versus frequency for each allele and looked for outliers (Figure 9.7). Coalescent simulations were then performed under different neutral models (with different demographic assumptions) to assess significance. Wang et al.'s (2006) linkage disequilibrium decay (LDD) test is a modification of EHH that does not require phasing."
-    },
-    {
-      "type": "derivation",
-      "content": "Variant tests based on the length of shared haplotypes have been proposed by a number of researchers (e.g., Toomajian et al. 2003, 2006; Hanchard et al. 2006; Wang et al. 2006); see [[SEE_TABLE:9.3]]. Perhaps the most powerful modification is from Voight et al. (2006), who extracted more LD information than simply the size of the EHH and corrected for differences in the local recombination rate and the target-allele frequency. One potential advantage of this approach is that while the EHH test has high power when the correct SNP is chosen to define alleles for the haplotype-length comparisons, its power falls off dramatically if the choice is off by even one polymorphic site (Zeng et al. 2007a). Voight et al.'s more comprehensive statistic may avoid this problem. Their approach used polarized data, with p denoting the frequency of the derived (D) SNP and 1-p denoting the frequency of the ancestral (A) SNP. To extract more information, they computed an integrated EHH score (iHS), the area under the curve drawn by connecting the adjacent values for the SNPs within the EHH (Figure 9.6). They defined the (unstandardized) integrated EHH score (iHS $ _ us $) as the log of the ratio of the iHS score for the ancestral allele to that for the derived allele. [[SEE_FORMULA:9.41a]]"
-    },
-    {
-      "type": "derivation",
-      "content": "A negative score occurs when the $ iHS $ value for the derived allele exceeds that of the ancestral allele, whereas the converse occurs when the ancestral allele has the larger $ iHS $ score. One can either keep the sign or use the absolute $ iHS $ score, $ |iHS| $. Voight et al. standardized the (signed) $ iHS_ us $ score by defining the statistic [[SEE_FORMULA:9.41b]]"
-    },
-    {
-      "type": "discussion",
-      "content": "The expectation $ ( E_{p} ) $ and standard deviation $ ( \\mathrm{S D}_{p} ) $ are subscripted by p to highlight that these statistics are computed over all $ i H S_{u s} $ values in the genome for SNPs whose derived allele frequency is p. Standardizing the score with respect to p automatically incorporates any relationship between the $ i H S_{u s} $ score and the allele frequency (and hence the age for a neutral allele). The authors noted that this approach seems fairly robust to demographic departures from the equilibrium neutral model, especially at extreme values of the standardized score. Despite this, Voight et al. correctly did not assign significance values to individual iHS values, but rather used large (absolute) scores as a screening method for potential sites under selection."
-    },
-    {
-      "type": "discussion",
-      "content": "Ferrer-Admetlla et al. (2014) proposed a statistic that is very similar in form to iHS but counts length variation differently. Their number of segregating sites by length $ (n S_{L}) $ statistic replaces the average area under the iHS curve by the average number of consecutive segregating sites shared by two randomly sampled chromosomes around a specific SNP variant. This average statistic for the ancestral and derived alleles replaces $ iHS_{A} $ and $ iHS_{D} $ (respectively) in Equation 9.41b. Ferrer-Admetlla et al. noted that this simple change in the metric results in a test that is significantly more robust to recombination and slightly more robust to nonequilibrium departures than the iHS statistic. When applied in a human genome scan, the method did not yield the large enrichment of significant scores in regions of low recombination typically seen when other (more recombination-sensitive) tests are used (e.g., O'Reilly et al. 2008). Further, their simulations found that $ n S_{L} $ has reasonable power to detect ongoing sweeps, even those from standing variation."
+      "content": "Under a hard sweep with its single dominant haplotype, $ H_{2} $ should be considerably smaller than $ H_{1} $, while under a soft sweep the drop-off in value from $ H_{1} $ to $ H_{2} $ should be much less dramatic. Based on this observation, the ratio $ H_{2}/H_{1} $ forms the basis of a test as to whether a detected sweep is hard or soft, with moderate values suggesting soft sweeps and very small values suggesting hard sweeps (Garud et al. 2015; Garud and Rosenberg 2015)."
     }
   ]
 }

@@ -4,33 +4,32 @@
     "chapter": "chapter12",
     "section": "Chapter 12: Hunt's Approach for Comparing Different Models",
     "subsections": [
-      "Hunt's Approach for Comparing Different Models"
+      "$ P_{ST} $: Approximating $ Q_{ST} $ with Phenotypic Data"
     ],
     "source_file": "tmp\\paddle_output\\chapter12_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
-    "formula_references": [],
+    "formula_references": [
+      "12.27a",
+      "12.27b"
+    ],
     "table_references": []
   },
   "blocks": [
     {
-      "type": "discussion",
-      "content": "This trick allowed them to generate a random value for $ \\sigma_{GB}^{2} $ , given values of $ \\sigma_{GW}^{2} $ and $ F_{ST} $ Their scheme to generate the ith sample of $ Q_{ST}^{n} $ was as follows: 1) Draw a bootstrap sample of the n markers by sampling with replacement. Compute the mean $ F_{ST} $ value for this (the ith) sample, $ \\overline{F}_{ST,i}. $ 2) Draw a sample value of $ \\sigma_{GW,i}^{2} $ as follows:"
+      "type": "derivation",
+      "content": "Because of the requirement for assays in a common-garden arena, true joint studies of $ Q_{ST} $ and $ F_{ST} $ are not common. Pujol et al. (2008) noted that roughly half of the wild population studies they reviewed were not based on estimated additive variances. Instead, a phenotypic-based proxy for $ Q_{ST} $ was used, where within- and/or among-population phenotypic variances replace the more challenging estimates of additive variation. The former can easily be obtained via a standard ANOVA (e.g., Holand et al. 2011), while the latter require a series of parent-offspring or sib rearings in a common environment. A modification of this purely phenotypic approach is to use [[SEE_FORMULA:12.27a]] where c reflects the fact that only part of an observed phenotypic difference in means may be genetic (Merilä 1997; Leinonen et al. 2006; Sæther et al. 2007; Brommer 2011). Substitution into Equation 12.26 yields the $ P_{ST} $ statistic of Leinonen et al. (2006), [[SEE_FORMULA:12.27b]]"
     },
     {
       "type": "discussion",
-      "content": "2) Draw a sample value of $ \\sigma_{GW,i}^{2} $ as follows: a) If $ \\sigma_{GW}^{2} $ is computed by a standard ANOVA, recall that $ (MS/df)\\sim\\chi_{df}^{2} $ , where MS is the observed mean sum of squares and df its degrees of freedom (LW Chapter 18). Generate $ X_{i} $ , a draw from a $ \\chi_{df}^{2} $ and take the sample i value for MS as $ MS/df\\cdot X_{i} $ , using this value to compute the variance estimates (O'Hara and Merilä 2005; Whitlock and Guillaume 2009). When $ \\sigma_{GW}^{2} $ is estimated as a function of several different sums of squares, compute each in the fashion above, and then use these realizations to compute $ \\sigma_{GW,i}^{2} $ b) If $ \\sigma_{GW}^{2} $ is estimated by Bayesian methods, then $ \\sigma_{GW,i}^{2} $ is a sample drawn from the resulting posterior (i.e., Rogell et al. 2012)."
+      "content": "When $ c = h^2 $, this reduces to Equation 12.26a, with phenotypic variances replacing their genetic counterparts. Holand et al. (2011) suggested doing a sensitivity analysis by varying the value of $ c $ (for a fixed $ h^2 $ value), and using simulations to find critical upper and lower $ c $ values for which $ Q_{ST} $ is significantly above and significantly below $ F_{ST} $. While enticing because of their simplicity and relative ease of application (only phenotypic data are required), strong caution is advised when replacing $ Q_{ST} $ by a phenotypic surrogate (Pujol et al. 2008; Brommer 2011). At a minimum, such estimates should always be denoted as $ P_{ST} $ whenever any variance component is based on a purely phenotypic measure. Although the biology or ecology of a species might be such that only $ P_{ST} $ estimates are possible, in such cases the investigator needs to seriously consider if such a resulting study can give truly worthwhile results."
     },
     {
       "type": "discussion",
-      "content": "4) Use the sample values of $ \\overline{F}_{ST,i} $ and $ \\sigma_{GW,i}^{2} $ with Equation 12.29 to generate a draw of the among-group variance, $ \\sigma_{GB,i}^{2}=2\\overline{F}_{ST,i}\\sigma_{GW,i}^{2}/(1-\\overline{F}_{ST,i}). $"
+      "content": "Even when genetic data (information from crosses) are used, bias can still be introduced into $ Q_{ST} $ estimates. Ideally, additive variances should be estimated from the covariance among paternal half-sibs. When covariance among full sibs is used, additive variance estimates can be inflated by the presence of dominance or maternal effects. Likewise, if among-group differences are not measured in a common garden, shared environmental effects can inflate this estimate. Conversely, a common garden may obscure any evolved plastic response that is part of the adaptive response to specific environments. See Whitlock (2008) for further discussion of such sources of bias."
     },
     {
       "type": "discussion",
-      "content": "4) Take $ Q_ ST,i ^ n = _ GB,i ^ 2 / (_ GB,i ^ 2 + 2 _ GW,i ^ 2) $."
-    },
-    {
-      "type": "discussion",
-      "content": "5) Repeat steps (1) through (4) until a sufficient number of draws (say m) have been computed to generate a sufficiently dense empirical distribution under the null. Figure 12.9 was com- puted using the m values $ \\left( Q_{ST}-Q_{ST}^{n} \\right) $ obtained by subtracting the estimated $ Q_{ST} $ from each sample drawn from the underlying null distribution $ Q_{ST}^{n}. $"
+      "content": "A slightly optimistic note was struck by Pujol et al. (2008), who noted that the onerous requirement of a common garden may be circumvented through the use of BLUP-based genetic-group mixed models (e.g., Westell et al. 1988; Quaas 1988), which allow for the estimation of both within- and among-group additive variance (a variant of this approach was used by Roberge et al. 2007). BLUP uses the genetic relationships among all measured individuals to separate genetic from environmental contributions (Chapters 19 and 20). This requires good estimates of these genetic relationships, which (in the absence of pedigree data) requires a rather dense set of markers (a very large number of SNPs) for the accuracy needed, given the expected rather distant connections among groups."
     }
   ]
 }

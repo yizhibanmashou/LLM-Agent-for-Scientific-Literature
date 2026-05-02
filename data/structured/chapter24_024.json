@@ -2,79 +2,79 @@
   "id": "chapter24_024",
   "metadata": {
     "chapter": "chapter24",
-    "section": "Chapter 24: Short-term Response Ignoring Linkage Disequilibrium",
+    "section": "Chapter 24: Describing the Genotypic Distribution: Moments",
     "subsections": [
-      "Short-term Response Ignoring Linkage Disequilibrium"
+      "Application: Departure from Normality Under Truncation Selection"
     ],
     "source_file": "tmp\\paddle_output\\chapter24_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [
-      "24.25a",
-      "24.25b",
-      "24.25c",
-      "24.25d",
-      "24.26a",
-      "24.26b",
-      "24.26c",
-      "24.27",
-      "24.28a",
-      "24.28b",
-      "24.28c"
+      "24.22a",
+      "24.22b",
+      "24.23a",
+      "24.23b",
+      "24.24a",
+      "24.24b",
+      "24.24c"
     ],
     "table_references": []
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "With this machinery in hand, we are now ready to examine the response to selection under non-Gaussian genotypic distributions. We first consider the situation in which a small to modest number of loci underlie the character, wherein most of the changes in the higher-order moments are due to changes in allele frequencies, rather than through generation of gametic-phase disequilibrium. Our treatment follows that of Barton and Turelli (1987)."
-    },
-    {
-      "type": "discussion",
-      "content": "If we are willing to assume additivity across loci and gametic-phase equilibrium, genetic changes in the character will be completely described by the dynamics of allele-frequency changes at each locus. The complete dynamics for a locus with k alleles are described by the k-1 allele-frequency change equations. Alternatively, we could fully describe the dynamics by using equations based on any set of k-1 independent new variables that can be expressed as functions of allele frequencies (this is the standard multivariate transformation problem of vector calculus and requires that the determinant of the Jacobian transformation matrix be nonzero). One such set of new variables involves the first k-1 moments of the allelic distribution. This is the motivation behind Barton and Turelli's (1987) approach, which focuses on allelic moments, rather than allelic frequencies."
-    },
-    {
-      "type": "discussion",
-      "content": "If we ignore gametic-phase disequilibrium, then for $n$ loci with $k$ alleles each, we can completely describe the dynamics by using the first $n(k-1)$ moments of the genotypic distribution. This same approach can be used when linkage is considered, but in this case the number of equations increases dramatically (scaling as the number of distinct gametic types). While the process of using a new set of variables is exact, it is also just as challenging to solve as the original allele-frequency change equations. The hope, however, is that by considering the first few moments, we can gain considerable insight into the actual dynamics and a better feel for the conditions under which certain approximations work and those under which they break down."
+      "content": "One application of the preceding machinery is to compute the distribution of breeding values following a single generation of truncation selection, assuming that the initial joint distribution of phenotypic and breeding values is multivariate normal. This was examined by Bulmer (1980) and Zeng (1987), and Turelli and Barton (1994) presented a very elegant (and elaborate) analysis for multiple generations. As before, we consider only additive models, so the distribution of genotypic values is also the distribution of breeding values."
     },
     {
       "type": "derivation",
-      "content": "To briefly sketch the approach used by Barton and Turelli, recall Wright’s formula for frequency changes with multiple alleles (Equation 5.11a) [[SEE_FORMULA:24.25a]] where $ G_ ii = p_i(1 - p_i)/2 $ and $ G_ ij = -p_i p_j/2 $ (for $ i j $). The assumption of linkage equilibrium is needed here, as Wright's formula fails when single-locus fitnesses are background-dependent, which can occur even with constant genotypic fitnesses when linkage disequilibrium is present (see Example 5.7 for details). Now consider a function, $ f(p_1, p_2,, p_ k-1) $, that depends on the allele frequencies at this locus, such as a particular moment of the allelic distribution. The change in $ f $ due to changes in allele frequencies can be approximated by a second-order Taylor series to yield [[SEE_FORMULA:24.25b]] where this expression ignores higher-order terms of $ p_ i $. Substituting for $ p_ i $ via Equation 24.25a yields (to first order) [[SEE_FORMULA:24.25c]]"
+      "content": "First, we assume that there is initial (i.e., existing before selection) normality in phenotypic values, $ z \\sim N(\\mu, \\sigma_z^2) $, and compute the cumulants for the resulting distribution of phenotypic values after truncation selection. As before (Chapters 14 and 16), truncation selection saves the uppermost fraction, p, of the population, giving a selection intensity of $$ \\bar{\\imath}=\\frac{\\varphi(z_{p})}{p} $$ where $ \\varphi(z_p) $ is the value of a unit-normal density function evaluated at $ z_p $, and $ z_p $ satisfies $ \\Pr(U > z_p) = p $, with $ U $ denoting a unit-normal random variable (Equation 14.2b). From Chapters 14 and 16, we already have the first two cumulants following selection as $$ K_{1,z}^{*}=\\mu^{*}=\\mu+\\overline{\\imath}\\sigma_{z}\\quad and\\quad K_{2,z}^{*}=\\sigma_{z}^{2}*=[1-\\overline{\\imath}(\\overline{\\imath}-z_{p})]\\sigma_{z}^{2} $$ while the next two cumulants are (from Bulmer 1980) [[SEE_FORMULA:24.22a]] [[SEE_FORMULA:24.22b]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Next, we translate these within-generation changes in the phenotypic distribution into the within-generation change in the distribution of breeding values and then examine how this breeding-value distribution changes (under random mating) during transmission to the next generation. Both steps rely critically on assumptions of normality. If the distribution of breeding and phenotypic values is bivariate normal before selection (as might occur in the initial round of selection, but not necessarily in subsequent rounds), then the regression of breeding values on phenotypic values is linear. $$ A=\\mu_{z}+h^{2}(z-\\mu_{z})+\\epsilon $$"
     },
     {
       "type": "derivation",
-      "content": "Recall from the chain rule of differentiation that $$ \\frac{\\partial\\ln\\overline{w}}{\\partial p_{j}}=\\frac{\\partial\\ln\\overline{w}}{\\partial f}\\frac{\\partial f}{\\partial p_{j}} $$ which, upon substitution in Equation 24.52c, yields [[SEE_FORMULA:24.25d]]"
-    },
-    {
-      "type": "discussion",
-      "content": "This is a weak-selection approximation, as it assumes that terms of second order, $ (p_i p_j) $, and higher can be ignored (if drift is considered, these second-order terms must be included even if selection is weak; see Turelli 1988)."
+      "content": "Rao et al. (1968) showed that a single generation of truncation selection does not alter this regression, which leads to our standard results (Chapter 16) for the mean and variance of the breeding values following selection [[SEE_FORMULA:24.23a]] and [[SEE_FORMULA:24.23b]]"
     },
     {
       "type": "derivation",
-      "content": "Using this expression yields a set of equations in which changes in a certain moment depend on higher-order moments. After considerable algebra (for details, see Barton and Turelli 1987), the changes in genotypic moments (under the assumptions of complete additivity and gametic-phase equilibrium) can be expressed in matrix form as [[SEE_FORMULA:24.26a]] where [[SEE_FORMULA:24.26b]] are, respectively, the vectors of changes in the genotypic moments ($ _ _G $) and the vector of partial derivatives of log mean fitness with respect to each moment ($ $), and a matrix of genotypic moments, [[SEE_FORMULA:24.26c]]"
-    },
-    {
-      "type": "discussion",
-      "content": "The summation symbol used Equation 24.26c indicates that each element on M is twice the sum of a (locus-specific) quantity over all loci. The additional elements of M that are not displayed correspond to selection on the fourth and higher moments $ ( M_{ij} $ for i and/or $ j\\geq 4) $ . The expressions for these terms are more complicated than may be suggested by the simple dots in the matrix due to the nonadditive nature of higher moments. Expressions based on $ \\partial\\ln\\overline{w} /\\partial K_{i,z} $ (the partial derivative of fitness with respect to the ith cumulant of the phenotypic distribution) have a simpler form due to the additive nature of cumulants (Bürger 1991a, 1993; Turelli and Barton 1994), but retain the undesirable feature that the response of the ith cumulant depends on cumulants of higher order."
-    },
-    {
-      "type": "discussion",
-      "content": "In order to close the set of equations given by 24.26a–24.26c, we must impose restrictions on the number of columns in M, which requires assuming that selection mainly occurs on the first few moments. Likewise, the number of rows of M must also be restricted, which implies additional assumptions on the genetic moments. Examples 24.9 and 24.11 discuss the two most common assumptions to accomplish these goals, namely the Gaussian and rare-alleles models."
+      "content": "Bulmer (1980) showed that when the joint distribution of breeding values and phenotypes is multivariate normal before selection, all higher cumulants follow a very simple relationship [[SEE_FORMULA:24.24a]]"
     },
     {
       "type": "derivation",
-      "content": "In cases where the first three phenotypic moments account for the majority of selection, the expected single-generation change in mean becomes [[SEE_FORMULA:24.27]] where $ _4 = (_4, G - 3 _A^4)/ _A^4 $ is the scaled coefficient of kurtosis (Frank and Slaktin 1990 obtained the same result, for the special case of stabilizing selection using the Price equation; Chapter 6). If the distribution of $ G $ is Gaussian, then $ _ 3,z = _4 = 0 $, and we recover the selection gradient version of the breeder's equation (Equation 13.27a). Under more general distributions, predicting changes in even the simplest genotypic moment, the mean, requires a detailed knowledge of both higher-order allelic moments ($ _ k,i $) and the nature of selection on these higher-order moments ($ / _ k,z $). In order to proceed further, we have to make additional assumptions about the distribution of allelic effects at individual loci."
-    },
-    {
-      "type": "discussion",
-      "content": "If the phenotypes are approximately normally distributed (but allelic effects at individual loci are not necessarily Gaussian), the mean and variance terms of the selection gradient vector generally will dominate. Recalling Equations 24.12 and 24.18, Equation 24.26a re duces to $$ \\begin{bmatrix}\\Delta\\mu_{1,G}\\\\ \\Delta\\mu_{2,G}\\\\ \\Delta\\mu_{3,G}\\\\ \\vdots\\end{bmatrix}=\\begin{bmatrix}\\sigma_{A}^{2}&M_{3}\\\\ M_{3}&M_{4}\\\\ M_{4}&2\\sum_{i}(\\mu_{5,i}-4\\mu_{3,i}\\mu_{2,i})\\\\ \\vdots&\\vdots\\end{bmatrix}\\begin{bmatrix}\\frac{S}{\\sigma_{z}^{2}}\\\\ \\frac{\\delta(\\sigma_{z}^{2})+S^{2}}{2\\sigma_{z}^{4}}\\end{bmatrix} $$"
+      "content": "Assuming unlinked loci, the cumulants for the distribution of breeding values in the next generation become [[SEE_FORMULA:24.24b]]"
     },
     {
       "type": "derivation",
-      "content": "If we consider only the first three genotypic moments, then [[SEE_FORMULA:24.28a]] [[SEE_FORMULA:24.28b]] [[SEE_FORMULA:24.28c]] where $ M_3 $ and $ M_4 $ are as defined by Equations 24.18c and 24.18d. As is discussed in Chapters 29 and 30, when selection acts only on the mean ($ / _ k,z = 0 $ for $ k 2 $), $ (_z^2) = -S^2 $, meaning that the first term in each of these three equations accounts for the effect of selection to change the mean and the second term accounts for the effect of selection acting directly on the variance (selection is based, in part, on an individual's squared deviation from the mean, $ [z -]^2 $). We previously obtained Equation 24.28a by an alternative approach (Equation 5.27b). When the genotypic distribution is skewed ($ M_3 0 $), the single-generation change in the mean also depends on the nature of selection on the variance (O'Donald 1968, 1972; Bulmer 1980; Gillespie 1984a; Barton and Turelli 1987; Mitchell-Olds and Shaw 1987). Further, even if skew is initially absent, Equation 24.28c shows that if the kurtosis of the genotypic distribution differs from that expected for a Gaussian ($ M_4 0 $), selection that is strictly on the mean generates skew. Thus, even ignoring the effects of gametic-phase disequilibrium, selection on the mean generates skew when the genotypic distribution displays kurtosis."
+      "content": "Hence, the cumulants for the distribution of breeding values at the start of the next generation are related to the cumulants of the postselection phenotypic distribution by [[SEE_FORMULA:24.24c]]"
+    },
+    {
+      "type": "proposition",
+      "content": "Notice from Equation 24.22 that after a single generation of selection, $ K_{3,A} $ and $ K_{4,A} $ will be nonzero, and hence the distribution of breeding values will no longer be normal. At this point, the assumption of bivariate normality no longer holds, and there is no longer a simple relationship between $ K_{i,A}^{*} $ and $ K_{i,z}^{*} $. Thus, we cannot simply iterate this procedure over more than one generation of selection. See Turelli and Barton (1994) for a detailed analysis over multiple generations."
     },
     {
       "type": "discussion",
-      "content": "Whether allele-frequency change at the individual loci or gametic-phase disequilibrium among loci is more important for producing departures from normality depends on whether there are alleles of modest to large effects. When alleles of major effect are present, locus-specific selection coefficients (e.g., Equation 5.21) can be sufficiently large that significant allele-frequency change can quickly occur, which has a far great effect on departures from normality than does selection-generated disequilibrium (Turelli and Barton 1990). Conversely, when all alleles have small effects (and hence selection is extremely weak on any single locus), then over modest time scales, departure from normality is largely due to selection generating third- (and higher-) order disequilibrium. Thus, when the number of loci is small, the error created by using Equation 24.26a (which assumes gametic-phase equilibrium) should be small. As the number of (equivalent) loci increases, within-locus effects make a smaller and smaller contribution, with departures from normality caused by disequilibrium eventually dominating any small departures caused by allele frequency change."
+      "content": "Example 24.8. Suppose truncation selection occurs on a normally distributed trait with an initial mean of $ \\mu_z = 0 $ and variance of $ \\sigma_z^2 = 100 $. Individuals whose phenotypes are in the upper 5% of the distribution are saved, so that $ \\bar{i} = 2.063 $ and $ z_p = 1.645 $ (Example 14.1). To demonstrate an extreme case, assume that $ h^2 = 1 $, so that all variance is additive genetic. Applying Equation 24.22a, the resulting third-order cumulant in the phenotypic distribution following selection is $$ \\begin{aligned}K_{3,z}^{*}&=[\\left(\\bar{\\iota}-z_{p}\\right)(2\\bar{\\iota}-z_{p})-1]\\bar{\\iota}\\sigma_{z}^{3}\\\\&=\\left[(2.063-1.645)(2\\cdot2.063-1.645)-1\\right]\\cdot2.063\\cdot100^{3/2}\\\\&=76.45\\\\ \\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Applying Equation 24.24c translates this into the third cumulant in the genotypic distribution in the next generation, yielding $$ K_{3,A}(t+1)=2\\left(\\frac{h^{2}}{2}\\right)^{3}K_{3,z}^{*}(t)=2\\left(\\frac{1}{2}\\right)^{3}76.45=19.11 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Using the machinery from Chapter 16, for $p = 0.2$, Equation 16.11a yields $\\kappa = 0.862$ (i.e., selected individuals have only a fraction, [1 - 0.862] = 0.138, of the variance of the preselection population), and Equation 16.12d returns $d(1) = (-\\kappa/2)100 = -43.1$. Hence, the phenotypic variance in the first generation is $ \\sigma_{z}^{2} = \\sigma_{A}^{2}(1) = 100 + d(1) = 56.9 $. Thus, the scaled skew becomes $$ \\gamma_{3}=\\frac{K_{3}}{\\sigma_{A}^{3}}=\\frac{19.11}{56.9^{3/2}}=0.045 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "A similar calculation using Equations 24.22b and 24.24c yields $ K_4 = 59.7 $ and $ \\gamma_4 = K_4/56.9^2 = 0.018 $. Applying Equation 24.21a, the resulting (fourth-order) Gram-Charlier series approximation for the distribution, $ \\phi(A) $, of breeding values in generation 1 is $$ \\begin{align*}\\phi(A^{\\prime})&\\simeq\\varphi(A^{\\prime})\\left[1+\\frac{0.045}{6}H_{3}(A^{\\prime})+\\frac{0.018}{24}H_{4}(A^{\\prime})\\right]\\\\&=\\varphi(A^{\\prime})\\left[1+0.0075H_{3}(A^{\\prime})+0.00075H_{4}(A^{\\prime})\\right]\\end{align*} $$ where $ \\varphi(x) $ is the normal distribution, the functions $ H_i(x) $ are defined by Equation 24.21b, and $ A' = A/\\sigma_A $ is the standardized breeding value (which, initially, has a mean of zero). For example, consider $ A' = 2 $, a value two standard deviations away from the mean. Applying Equation 24.21b, $ H_3(2) = 2 $ and $ H_4(2) = -5 $, yielding the correction factor for the unit normal density function as $$ 1+0.0075H_{3}(2)+0.00075H_{4}(2)=1.01125 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The key point is that the resulting distribution is only very weakly perturbed away from a Gaussian (assuming that $ h^2 = 1 $ is the most extreme case). For a more typically heritability, say $ h^2 = 0.3 $, similar calculations yield $ \\gamma_3 = 0.0039 $ and $ \\gamma_4 = 0.0007 $, and $$ \\phi(A)\\simeq\\varphi(A)\\left[1+0.00065H_{3}(A^{\\prime})+0.00003H_{4}(A^{\\prime})\\right] $$ yielding an even smaller departure from normality (an adjustment factor of 1.00115 for $ A' = 2 $)."
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, under the infinitesimal model, the generation of linkage disequilibrium by truncation selection has very little impact on driving the distribution of breeding values away from a Gaussian. While the disequilibrium introduced by truncation selection can indeed drive a distribution of breeding values away from a strict Gaussian, the error in assuming this remains Gaussian is generally small. This point was initially made by Bulmer (1980). The much more extensive analysis by Turelli and Barton (1994) showed that, even in the presence of strong truncation or disruptive selection, the Bulmer equation (Equation 16.7b) can be used with little error. Turelli and Barton's analysis assumed a sufficiently large number of loci so that changes in both the genic variance and locus-specific cumulants of order three or higher can be ignored."
     }
   ]
 }

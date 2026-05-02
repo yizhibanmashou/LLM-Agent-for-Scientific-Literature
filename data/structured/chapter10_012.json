@@ -9,55 +9,32 @@
     "source_file": "tmp\\paddle_output\\chapter10_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [],
-    "table_references": [
-      "inline_6",
-      "inline_7"
-    ],
-    "table_reference_keys": [
-      "chapter10:inline_6",
-      "chapter10:inline_7"
-    ]
+    "table_references": []
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "One of the initial criticisms of the McDonald-Kreitman test was that estimates of the number of segregating sites are rather sensitive to sampling, especially when the sample size is small (Graur and Li 1991; Whittam and Nei 1991). McDonald and Kreitman (1991b) countered that this problem is not serious, as these effects would equally influence estimates of the number of polymorphic silent and replacement sites. While largely correct, this is not always true, however, as there are generally two- to three-fold more potential replacement sites than silent sites, giving the former a slightly smaller sampling error. However, this difference in variances has more to do with power, and is unlikely to lead to false positives."
+      "content": "Example 10.10. The effect of slightly deleterious alleles on the expected value of the neutrality index was examined by Welch et al. (2008). Assume that the scaled selection coefficient values, $ \\gamma = 4N_e s $, of new mutations are drawn from a reflected gamma distribution (Equation A2.25a) over the range of $ -\\infty < \\gamma < 0 $, with a shape parameter of $ \\beta > 0 $ (the coefficient of variation for $ \\gamma $ is given by $ 1/\\sqrt{\\beta} $, with $ \\beta = 1 $ corresponding to the exponential distribution). Under these conditions, Welch showed that the expected value of the neutrality index is $$ NI\\simeq1+\\beta K $$ where K > 0 is a function of the sample size (n)."
     },
     {
       "type": "discussion",
-      "content": "One potentially significant advantage of the MK test is that it does not assume constant population size or that mutation-drift equilibrium has been reached, and hence is rather robust against many of the demographic concerns that plague other tests. Balancing this advantage are two subtle (but serious) problems, both relating to how the distribution of fitness values for new alleles impacts the observed data (polymorphisms and substitutions)."
+      "content": "Welch further cautioned that even the usual interpretation of $ NI < 1 $ as positive selection is not generally true. Assume we have the same model as above, with new mutations only being deleterious, but now suppose that the population size has changed over time. In particular, suppose that the population had a constant size, $ N_e $, for some fraction, $ q $, of the total divergence time, after which it increased by a factor of $ \\delta > 1 $ to $ \\delta N_e > N_e $. In this case, the expected value of the neutrality index becomes $$ NI\\simeq\\frac{1+\\beta K}{1+q(\\delta^{\\beta}-1)} $$"
     },
     {
       "type": "discussion",
-      "content": "First, the MK framework assumes that deleterious mutations are strongly deleterious and make essentially no contribution to either the number of segregating or fixed sites. In fact, however, weakly deleterious mutations (i.e., $ - 1 0 < 4 N_{e} s < - 1 $ ) can contribute to segregating polymorphisms (especially because the MK test uses the number of polymorphic sites, not their frequencies), but they are highly unlikely to become fixed (Figure 7.1). Such mutations are overrepresented in polymorphic sites relative to fixed sites, which reduces the power of the MK test to detect an excess of replacement substitutions (and hence a signature of positive selection). We assume that the impact from any overrepresentation of selected polymorphisms at silent sites (our neutral proxy) is small, as these are either neutral or under very weak purifying selection. Conversely, overrepresentation is potentially a significant problem at polymorphic replacement sites. One proposed correction for this problem is to drop \"rare\" polymorphisms, but this is a rather subjective endeavor. Dropping singletons (Templeton 1996) as in Example 10.5 provides one simple correction, while other authors (e.g., Fay et al. 2002; Smith and Eyre-Walker 2002; Gojobori et al. 2007) have suggested including only \"common\" polymorphisms in the analysis, such as those with minor-allele frequencies above 0.10. We return to this issue shortly."
+      "content": "Welch noted that if the population expansion is recent or substantial (q is near one and/or $ \\delta $ is large), NI can easily be less than one, giving a false signature of positive selection."
     },
     {
       "type": "discussion",
-      "content": "[h]"
+      "content": "Finally, silent sites may be a rather poor proxy for neutral sites, especially in species with large effective population sizes. Chapter 8 reviewed codon usage bias, wherein some synonymous codons are preferentially used over others. Selection is thought to be weak on such sites, but it can still have an impact (Hartl et al. 1994; Akashi 1995). For example, DuMont et al. (2004) found that “preferred” synonymous codons are substituted significantly faster than unpreferred synonymous changes at the Notch locus in D. simulans, while D. melanogaster (with a smaller $ N_e $) has a significantly higher substitution rate for unpreferred changes. The consensus on codon bias is that the strength of selection is very weak ($ s < 10^{-5} $), making synonymous changes effectively neutral in small populations but subject to selection pressures in populations where $ 4N_e $s is sufficiently large."
     },
     {
       "type": "discussion",
-      "content": "The second concern is even more problematic. At the heart of the MK test is Equation 10.5a. Under the neutral hypothesis, the ratio of polymorphic sites and the ratio of substitutions both estimate the same quantity, f (scaled by the sample-size correction factor $ n_{a}/n_{s} $ ), the ratio of effectively neutral mutation rates for the two categories. Recalling (Chapter 7) that any mutation for which $ 4 N_{e}|s| \\ll 1 $ behaves as if it were effectively neutral, the caveat is that the effectively neutral mutation rate, f $ \\mu $ , changes with $ N_{e} $ . It is important to stress that the total mutation rate, $ \\mu $ , remains unchanged, but the fraction, f, of these mutations that are effectively neutral can decline with increasing $ N_{e} $ , resulting in a decline in $ f\\mu $ . Figure 10.1 shows that estimates of f do indeed decrease as the effective population size, $ N_{e} $ , increases, as the amount of constraint, 1-f, increases with $ N_{e} $ . For the same distribution of selection coefficients, one can raise (or lower) f (and hence the effectively neutral substitution rate) by decreasing (or increasing) the effective population size. If the effective population size is significantly different during the divergence phase (when substitutions were fixed) than in the current phase (which generates the observed number of polymorphisms), then these two phases could have different fractions of mutations that are effectively neutral. Because the ratios $ D_{a}/D_{s} $ and $ P_{a}/P_{s} $ estimate the f values for these two different phases, they can have different expected values."
+      "content": "The nature of selection on third-base positions is further complicated by the observation that weak selection for preferred codons is not the only constraint on synonymous sites. Lawrie et al. (2013) estimated that roughly 20% of synonymous sites in Drosophila melanogaster are under very strong functional constraints (with an estimated $ -4N_{e}s $ on the order of $ 10^{3} $ based on the distribution of rare alleles in the site-frequency spectrum). It is striking that they found that this strong constraint was independent of codon bias, being driven by some feature other than selection on preferred codons."
     },
     {
       "type": "discussion",
-      "content": "McDonald and Kreitman (1991a) were aware that an increase in the effective population size could create a situation where slightly deleterious mutations that were fixed during divergence under a smaller population size do not even contribute to within-species polymorphisms. Such an increase in $ N_e $ following the bulk of divergence time would result in an inflated value of $ D_a $ and a deflated value of $ P_a $, resulting in an inflated $ D_a/P_a $ ratio, and hence a false signal of positive selection. Eyre-Walker (2002) showed that even a modest increase in $ N_e $ can generate such false signals, and that the problem is exacerbated by culling rare polymorphisms, which (as discussed above) is common practice. In the words of Hughes (2007), this feature implies that the MK test “cannot distinguish between positive Darwinian selection and any factor that causes purifying selection to become relaxed or to become less efficient.” Phrased in terms of the neutrality index (Equation 10.6a), an NI value > 1 can be generated by either segregating deleterious alleles or by a relaxation in the functional constraints during the polymorphism phase. The latter could occur in response to a change in the environment (Example 10.9) or a change in $ N_e $. Conversely, a value of"
-    },
-    {
-      "type": "discussion",
-      "content": "NI<1 (which is normally taken as support for adaptive evolution) could similarly be generated by a relaxation of functional constraint during the divergence phase, so that more mutations (relative to those currently segregating in the population) were effectively neutral, and hence fixed. This effect can also occur between populations of the same species. For example, Lohmueller et al. (2008) observed a higher fraction of segregating deleterious mutations in human populations from Europe than from Africa, which they attributed to the bottleneck in the founding European population (and hence a reduction in $ N_{e} $ ) during the migration out of Africa."
-    },
-    {
-      "type": "discussion",
-      "content": "Example 10.9. An example of some of the potential difficulties in interpreting the results of a McDonald-Kreitman test was seen in a study of the human melanocortin 1 receptor (MC1R), a key regulatory gene in pigmentation (Harding et al. 2000). In comparing the canonical MC1R haplotype in humans with a sequence from chimpanzees, these authors found 10 replacement and 6 silent substitutions. An African population sample revealed no replacement and 4 silent polymorphisms, giving the MK table as"
-    },
-    {
-      "type": "discussion",
-      "content": "[h] |c|c| Cell 1 & Cell 2 \\\\ Cell 3 & Cell 4 \\\\"
-    },
-    {
-      "type": "discussion",
-      "content": "Fisher's exact test gives a p value of 0.087, close to significance. Taken at face value, one might assume that these data imply that the majority of the replacement substitutions between human and chimp were selectively driven. However, the authors also had data from populations in Europe and East Asia, which showed 10 replacement and 3 silent polymorphisms, resulting in a new MK table: with a corresponding p value of 0.453. The authors suggested that the correct interpretation of these data is as very stringent purifying selection due to increased functional constraints in African populations (due to selection for protection against high levels of UV exposure), with a release of constraints in Europe and East Asia. Asians in Papua New Guinea and India (populations living in high-UV environments) also showed very strong functional constraints (few replacement polymorphisms), consistent with a model of selection for UV protection."
+      "content": "In some settings, selection on the neutral proxy sites may actually provide some robustness to MK tests. As mentioned, false positives under an MK test can be generated by an increase in the effective population size. Eyre-Walker (2002) showed that selection on the neutral proxy sites (synonymous codons) restricts the conditions under which a false positive signal can arise via a change in $ N_{e} $. Presumably this occurs because changes in $ N_{e} $ influence both the replacement and the neutral proxy sites, thus creating somewhat of an internal control."
     }
   ]
 }

@@ -4,11 +4,16 @@
     "chapter": "chapter21",
     "section": "Chapter 21: Within-family Selection:",
     "subsections": [
-      "Within-family Selection:"
+      "Variance of the Selection Unit, $ \\sigma_{x}^{2} $"
     ],
     "source_file": "tmp\\paddle_output\\chapter21_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [
+      "21.9b",
+      "21.9c",
+      "21.10a",
+      "21.10b",
+      "21.11b",
       "21.12a",
       "21.12b"
     ],
@@ -22,31 +27,43 @@
   "blocks": [
     {
       "type": "derivation",
-      "content": "Finally, under a nested-sib design (the North Carolina Design I of Comstock and Robinson 1948), one sex (typically a male or a pollen plant) is mated to each of $ n_f $ (unrelated) females (or seed parents), each of which produces $ n_s $ sibs, for a total of $ n = n_f n_s $ sibs per male. The expression in [[SEE_TABLE:21.4]] for the among-family variance under the nested-sib design follows, with similar logic as in Example 21.3, and with [[SEE_FORMULA:21.12a]] where $ _ G(f|m) ^ 2 $, the genetic variances of females nested within males, is [[SEE_FORMULA:21.12b]]"
+      "content": "LW Chapter 7). The phenotypic covariance between sibs can be expressed as $ t\\sigma_{z}^{2} = \\sigma_{b}^{2} = \\sigma_{GF}^{2} + \\sigma_{E_{c}}^{2} $ (Example 21.3), implying that [[SEE_FORMULA:21.9b]] where, akin to our use of $ r_{n} $ (Equation 21.6b), [[SEE_FORMULA:21.9c]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Likewise, the within-family variance (about the observed mean) is [[SEE_FORMULA:21.10a]] which is usually written as [[SEE_FORMULA:21.10b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "[[TABLE:21.4]] gives these family variances in terms of genetic and environmental variance components, which follow upon expressing the within- and among-family genetic variances in terms of additive and dominance variance components. Recalling from ANOVA theory that the among-group variance equals the within-group covariance (LW Chapter 18), the among-family component, $ \\sigma_{GF}^{2} $, equals the genetic covariances between sibs. If, for now, we ignore epistasis, (21.11a) Because the total genetic variance ($ \\sigma_{G}^{2} $) equals the among-family genetic variance plus the within-family variance, [[SEE_FORMULA:21.11b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Finally, under a nested-sib design (the North Carolina Design I of Comstock and Robinson 1948), one sex (typically a male or a pollen plant) is mated to each of $ n_f $ (unrelated) females (or seed parents), each of which produces $ n_s $ sibs, for a total of $ n = n_f n_s $ sibs per male. The expression in [[SEE_TABLE:21.4]] for the among-family variance under the nested-sib design follows, with similar logic as in Example 21.3, and with [[SEE_FORMULA:21.12a]] where $ \\sigma_{G(f|m)}^{2} $, the genetic variances of females nested within males, is [[SEE_FORMULA:21.12b]]"
     },
     {
       "type": "discussion",
-      "content": "When epistasis is present, Equation 21.26a (below) provides the appropriate additional genetic variance terms in $ \\sigma_{G(f|m)}^{2} $ . The among-family variance under a nested design is bounded below by the half-sib variance $ (n_{f}=n $ and $ n_{s}=1) $ and above by the full-sib variance $ (n_{f}=1 $ and $ n_{s}=n) $ ."
+      "content": "When epistasis is present, Equation 21.26a (below) provides the appropriate additional genetic variance terms in $ \\sigma_{G(f|m)}^{2} $. The among-family variance under a nested design is bounded below by the half-sib variance ($ n_{f} = n $ and $ n_{s} = 1 $) and above by the full-sib variance ($ n_{f} = 1 $ and $ n_{s} = n $)."
     },
     {
       "type": "discussion",
-      "content": "Example 21.3. To obtain the within- and among-family variances for families with n sibs, decompose the phenotypic value of the jth individual from family i as $$ z_{ij}=G_{ij}+E_{ij}=\\mu+GF_{i}+Gw_{ij}+Ec_{i}+Es_{ij} $$ where the genotypic value, $ G_ ij = + GF_i + Gw_ ij $, has both a family genotypic effect, $ GF_i $ (the expected genotypic value of a random sib from that family), and a deviation, $ Gw_ ij $, the departure of jth individual's genotypic value from its family average. The environmental value is similarly decomposed, with $ E_ ij = Ec_i + Es_ ij $, an environmental effect, $ Ec_i $, common to family i, and a special environmental effect, $ Es_ ij $, unique to the jth individual from this family. Because $ GF_i + Ec_i = b_i $ are the effects common to a family, the among-family variance becomes $$ \\sigma_{b}^{2}=t\\sigma_{z}^{2}=\\sigma_{G F}^{2}+\\sigma_{E c}^{2} $$"
+      "content": "Example 21.3. To obtain the within- and among-family variances for families with n sibs, decompose the phenotypic value of the jth individual from family i as $$ z_{ij}=G_{ij}+E_{ij}=\\mu+GF_{i}+Gw_{ij}+Ec_{i}+Es_{ij} $$ where the genotypic value, $ G_{ij} = \\mu + GF_i + Gw_{ij} $, has both a family genotypic effect, $ GF_i $ (the expected genotypic value of a random sib from that family), and a deviation, $ Gw_{ij} $, the departure of jth individual's genotypic value from its family average. The environmental value is similarly decomposed, with $ E_{ij} = Ec_i + Es_{ij} $, an environmental effect, $ Ec_i $, common to family i, and a special environmental effect, $ Es_{ij} $, unique to the jth individual from this family. Because $ GF_i + Ec_i = b_i $ are the effects common to a family, the among-family variance becomes $$ \\sigma_{b}^{2}=t\\sigma_{z}^{2}=\\sigma_{G F}^{2}+\\sigma_{E c}^{2} $$"
     },
     {
       "type": "discussion",
-      "content": "The equality $ \\sigma_{b}^{2}=t\\sigma_{z}^{2} $ follows from the ANOVA identity that the among-group variance equals the covariance among group members (LW Chapter 18)."
+      "content": "The equality $ \\sigma_b^2 = t\\sigma_z^2 $ follows from the ANOVA identity that the among-group variance equals the covariance among group members (LW Chapter 18)."
     },
     {
       "type": "discussion",
-      "content": "Similarly, $ Gw_ ij + Es_ ij = w_ ij $ are the within-family effects, yielding a within-family variance (around the expected family mean) of $$ \\sigma_{w}^{2}=(1-t)\\sigma_{z}^{2}=\\sigma_{G w}^{2}+\\sigma_{E s}^{2} $$"
+      "content": "Similarly, $ Gw_{ij} + Es_{ij} = w_{ij} $ are the within-family effects, yielding a within-family variance (around the expected family mean) of $$ \\sigma_{w}^{2}=(1-t)\\sigma_{z}^{2}=\\sigma_{G w}^{2}+\\sigma_{E s}^{2} $$"
     },
     {
       "type": "discussion",
-      "content": "The equality $ \\sigma_{w}^{2}=(1-t)\\sigma_{z}^{2} $ again follows from ANOVA theory, as the total variance equals the among-group variances plus the within-group variances, $ \\sigma_{z}^{2}=\\sigma_{b}^{2}+\\sigma_{w}^{2}=t\\sigma_{z}^{2}+\\sigma_{w}^{2}. $"
+      "content": "The equality $ \\sigma_{w}^{2} = (1 - t) \\sigma_{z}^{2} $ again follows from ANOVA theory, as the total variance equals the among-group variances plus the within-group variances, $ \\sigma_{z}^{2} = \\sigma_{b}^{2} + \\sigma_{w}^{2} = t \\sigma_{z}^{2} + \\sigma_{w}^{2} $."
     },
     {
       "type": "discussion",
-      "content": "Using these results, we can decompose the observed mean of a family of size n as $$ \\begin{aligned}\\overline{z}_{i}=\\frac{1}{n}\\sum_{j=1}^{n}z_{ij}&=\\frac{1}{n}\\sum_{j=1}^{n}\\left(\\mu+GF_{i}+Gw_{ij}+Ec_{i}+Es_{ij}\\right)\\\\&=\\mu+GF_{i}+Ec_{i}+\\sum_{j=1}^{n}\\frac{\\left(Gw_{ij}+Es_{ij}\\right)}{n}\\end{aligned} $$ Because they are deviations from the mean, $ Es_ ij $ and $ Gw_ ij $ are uncorrelated with each other, yielding $$ \\begin{aligned}\\sigma^{2}\\big(\\overline{z}_{i}\\big)&=\\big(\\sigma_{GF}^{2}+\\sigma_{Ec}^{2}\\big)+\\frac{1}{n^{2}}\\sum_{j=1}^{n}\\big(\\sigma_{Gw}^{2}+\\sigma_{Es}^{2}\\big)=\\sigma_{b}^{2}+\\frac{n\\sigma_{w}^{2}}{n^{2}}\\\\&=\\left(t+\\frac{1-t}{n}\\right)\\sigma_{z}^{2}=t_{n}\\sigma_{z}^{2}\\end{aligned} $$ which recovers Equation 21.9b."
+      "content": "Using these results, we can decompose the observed mean of a family of size n as $$ \\begin{aligned}\\overline{z}_{i}=\\frac{1}{n}\\sum_{j=1}^{n}z_{ij}&=\\frac{1}{n}\\sum_{j=1}^{n}\\left(\\mu+GF_{i}+Gw_{ij}+Ec_{i}+Es_{ij}\\right)\\\\&=\\mu+GF_{i}+Ec_{i}+\\sum_{j=1}^{n}\\frac{\\left(Gw_{ij}+Es_{ij}\\right)}{n}\\end{aligned} $$ Because they are deviations from the mean, $ Es_{ij} $ and $ Gw_{ij} $ are uncorrelated with each other, yielding $$ \\begin{aligned}\\sigma^{2}\\big(\\overline{z}_{i}\\big)&=\\big(\\sigma_{GF}^{2}+\\sigma_{Ec}^{2}\\big)+\\frac{1}{n^{2}}\\sum_{j=1}^{n}\\big(\\sigma_{Gw}^{2}+\\sigma_{Es}^{2}\\big)=\\sigma_{b}^{2}+\\frac{n\\sigma_{w}^{2}}{n^{2}}\\\\&=\\left(t+\\frac{1-t}{n}\\right)\\sigma_{z}^{2}=t_{n}\\sigma_{z}^{2}\\end{aligned} $$ which recovers Equation 21.9b."
     },
     {
       "type": "discussion",
@@ -54,7 +71,7 @@
     },
     {
       "type": "discussion",
-      "content": "To refine this further, first note (Equation 21.9b) that $ ^2(_i) = t_n _z^2 $, and that the covariance term simplifies to $$ \\sigma(z_{ij},\\overline{z}_{i})=\\frac{1}{n}\\left[\\sigma(z_{ij},z_{ij})+\\sum_{k\\neq j}^{n}\\sigma(z_{ij},z_{ik})\\right]=\\frac{\\sigma_{z}^{2}}{n}+\\frac{n-1}{n}t\\sigma_{z}^{2}=t_{n}\\sigma_{z}^{2} $$ as $ (z_ ij, z_ ik) = t _ z ^ 2 $ (for $ j k $). Thus, the variance of within-family deviations reduces to $$ \\sigma^{2}(z_{ij}-\\overline{z}_{i})=\\sigma_{z}^{2}+t_{n}\\sigma_{z}^{2}-2t_{n}\\sigma_{z}^{2}=\\left(1-t_{n}\\right)\\sigma_{z}^{2} $$ which recovers Equation 21.10b."
+      "content": "To refine this further, first note (Equation 21.9b) that $ \\sigma^2(\\overline{z}_i) = t_n \\sigma_z^2 $, and that the covariance term simplifies to $$ \\sigma(z_{ij},\\overline{z}_{i})=\\frac{1}{n}\\left[\\sigma(z_{ij},z_{ij})+\\sum_{k\\neq j}^{n}\\sigma(z_{ij},z_{ik})\\right]=\\frac{\\sigma_{z}^{2}}{n}+\\frac{n-1}{n}t\\sigma_{z}^{2}=t_{n}\\sigma_{z}^{2} $$ as $ \\sigma(z_{ij}, z_{ik}) = t\\sigma_{z}^{2} $ (for $ j \\neq k $). Thus, the variance of within-family deviations reduces to $$ \\sigma^{2}(z_{ij}-\\overline{z}_{i})=\\sigma_{z}^{2}+t_{n}\\sigma_{z}^{2}-2t_{n}\\sigma_{z}^{2}=\\left(1-t_{n}\\right)\\sigma_{z}^{2} $$ which recovers Equation 21.10b."
     }
   ]
 }

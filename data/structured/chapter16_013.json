@@ -32,23 +32,23 @@
     },
     {
       "type": "discussion",
-      "content": "Here, the optimal value is $ z=\\theta $ , and the strength of selection is given by the width, $ \\omega^{2} $ , of the fitness function, which corresponds to the variance term in a normal distribution. When $ \\omega^{2} $ is large (corresponding to a large variance in the fitness function), selection is weak, as the fitness function falls off slowly around the optimal value, $ \\theta $ . Conversely, a small value of $ \\omega^{2} $ corresponds to a small variance in the fitness function and strong selection, with fitness quickly declining away from $ \\theta $ . Formally, it is useful to compare $ \\omega^{2} $ to the phenotypic variance, with $ \\omega^{2}\\gg\\sigma_{z}^{2} $ corresponding to weak selection and $ \\omega^{2}\\ll\\sigma_{z}^{2} $ corresponding to strong selection."
+      "content": "Here, the optimal value is $ z = \\theta $, and the strength of selection is given by the width, $ \\omega^2 $, of the fitness function, which corresponds to the variance term in a normal distribution. When $ \\omega^2 $ is large (corresponding to a large variance in the fitness function), selection is weak, as the fitness function falls off slowly around the optimal value, $ \\theta $. Conversely, a small value of $ \\omega^2 $ corresponds to a small variance in the fitness function and strong selection, with fitness quickly declining away from $ \\theta $. Formally, it is useful to compare $ \\omega^2 $ to the phenotypic variance, with $ \\omega^2 \\gg \\sigma_z^2 $ corresponding to weak selection and $ \\omega^2 \\ll \\sigma_z^2 $ corresponding to strong selection."
     },
     {
       "type": "derivation",
-      "content": "If phenotypes are normally distributed before selection, with a mean of $ $ and variance of $ \\sigma_{z}^{2} $, then after selection, phenotypes remain normally distributed, with a new mean and variance [[SEE_FORMULA:16.18a]]"
+      "content": "If phenotypes are normally distributed before selection, with a mean of $ \\mu $ and variance of $ \\sigma_{z}^{2} $, then after selection, phenotypes remain normally distributed, with a new mean and variance [[SEE_FORMULA:16.18a]]"
     },
     {
       "type": "derivation",
-      "content": "Writing the change in variance as $ \\sigma_{z}^{2} = (1 - \\kappa) \\sigma_{z}^{2} $, Equation 16.18a shows that $ \\kappa = \\sigma_{z}^{2} / (\\sigma_{z}^{2} + \\omega^{2}) $ is no longer a constant, but rather a function of the changing variance, $ \\sigma_{z}^{2} $. Thus, previous results assuming a constant, $ $, no longer apply. However, under normalizing selection, the distribution of genotypes remains normal after selection, and hence parent-offspring regressions remain linear throughout. Thus, we can apply the breeder's equation to predict changes in the mean and Equation 16.7a to predict changes in the variance (under the infinitesimal model). Here, [[SEE_FORMULA:16.18b]]"
+      "content": "Writing the change in variance as $ \\sigma_{z}^{2} = (1 - \\kappa) \\sigma_{z}^{2} $, Equation 16.18a shows that $ \\kappa = \\sigma_{z}^{2} / (\\sigma_{z}^{2} + \\omega^{2}) $ is no longer a constant, but rather a function of the changing variance, $ \\sigma_{z}^{2} $. Thus, previous results assuming a constant, $ \\kappa $, no longer apply. However, under normalizing selection, the distribution of genotypes remains normal after selection, and hence parent-offspring regressions remain linear throughout. Thus, we can apply the breeder's equation to predict changes in the mean and Equation 16.7a to predict changes in the variance (under the infinitesimal model). Here, [[SEE_FORMULA:16.18b]]"
     },
     {
       "type": "derivation",
-      "content": "Note that both directional and stabilizing selection can occur simultaneously with normalizing selection, as when $ $, the mean changes under selection. Substituting Equation 16.18b into the breeder's equation yields [[SEE_FORMULA:16.19]]"
+      "content": "Note that both directional and stabilizing selection can occur simultaneously with normalizing selection, as when $ \\mu \\neq \\theta $, the mean changes under selection. Substituting Equation 16.18b into the breeder's equation yields [[SEE_FORMULA:16.19]]"
     },
     {
       "type": "derivation",
-      "content": "This shows that the mean converges to $ $, as the sign of $ R $ is given by the sign of $ - (t) $, which is positive when $ (t) $ is below $ $ and negative when above it. However, Equation 16.18a shows that the change in variance is independent of the current mean value, $ $. From Equation 16.7a, the change in the disequilibrium contribution is given by [[SEE_FORMULA:16.20a]] implying that the equilibrium value, $ $, satisfies [[SEE_FORMULA:16.20b]]"
+      "content": "This shows that the mean converges to $ \\theta $, as the sign of $ R $ is given by the sign of $ \\theta - \\mu(t) $, which is positive when $ \\mu(t) $ is below $ \\theta $ and negative when above it. However, Equation 16.18a shows that the change in variance is independent of the current mean value, $ \\mu $. From Equation 16.7a, the change in the disequilibrium contribution is given by [[SEE_FORMULA:16.20a]] implying that the equilibrium value, $ \\tilde{d} $, satisfies [[SEE_FORMULA:16.20b]]"
     },
     {
       "type": "derivation",
@@ -60,15 +60,11 @@
     },
     {
       "type": "discussion",
-      "content": "Equation 16.20d gives $ \\widetilde{d}=-6.46 $ , and hence $ \\widetilde{h}^{2}=(50-6.46)/(100-6.46)=0.47 $ . Most of the reduction in heritability occurs in the first few generations, as iteration of Equation 16.20a yields"
+      "content": "Equation 16.20d gives $ \\tilde{d} = -6.46 $, and hence $ \\tilde{h}^2 = (50 - 6.46)/(100 - 6.46) = 0.47 $. Most of the reduction in heritability occurs in the first few generations, as iteration of Equation 16.20a yields"
     },
     {
       "type": "discussion",
-      "content": "[h] |c|c| Cell 1 & Cell 2 \\\\ Cell 3 & Cell 4 \\\\"
-    },
-    {
-      "type": "discussion",
-      "content": "Thus, under the infinitesimal model, the distribution reaches an equilibrium, with the phenotypes (before selection) normally distributed with a mean of $ \\theta $ and variance of $ \\widetilde{\\sigma}_{z}^{2}= 1 0 0-6. 4 6=9 3. 5 4. $"
+      "content": "Thus, under the infinitesimal model, the distribution reaches an equilibrium, with the phenotypes (before selection) normally distributed with a mean of $ \\theta $ and variance of $ \\widetilde{\\sigma}_{z}^{2} = 100 - 6.46 = 93.54 $."
     }
   ]
 }

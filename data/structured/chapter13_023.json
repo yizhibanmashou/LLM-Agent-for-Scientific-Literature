@@ -2,42 +2,60 @@
   "id": "chapter13_023",
   "metadata": {
     "chapter": "chapter13",
-    "section": "LIMITATIONS OF THE BREEDER'S EQUATION",
+    "section": "Chapter 13: Selection Gradients and Mean Population Fitness",
     "subsections": [
-      "LIMITATIONS OF THE BREEDER'S EQUATION"
+      "Selection Gradients and Mean Population Fitness"
     ],
     "source_file": "tmp\\paddle_output\\chapter13_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
-    "formula_references": [],
+    "formula_references": [
+      "13.27a",
+      "13.27b",
+      "13.27c",
+      "13.28a",
+      "13.28b",
+      "13.28c",
+      "13.29"
+    ],
     "table_references": [
-      "13.1",
-      "13.2"
+      "13.1"
     ],
     "table_reference_keys": [
-      "chapter13:13.1",
-      "chapter13:13.2"
+      "chapter13:13.1"
     ]
   },
   "blocks": [
     {
-      "type": "discussion",
-      "content": "As we have seen, the basic breeder's equation has many alternative expressions and extensions (summarized in [[SEE_TABLE:13.1]]). All are based on Equation 13.1, which assumes a linear midparent-offspring regression with slope $ h^{2} $ . This single-generation prediction is a good approximation over multiple generations provided that selection does not result in a significant change in the base-population heritability, a region we call short-term response. Chapter 16 shows that even a single generation of selection will change $ h^{2} $ through the generation of linkage disequilibrium, but because this is straightforward to correct for when"
+      "type": "derivation",
+      "content": "Under appropriate conditions, the selection gradient, $ \\beta $, demonstrates how a within-generation change in the vector of trait means maps into a change in the mean fitness of a population. If $ W(z) $ denotes the expected fitness of an individual with a character value of z, then when phenotypes are normally distributed and fitness is frequency-independent (individual fitnesses are not a function of the means of the characters), the directional selection gradient satisfies $ \\beta = \\partial \\ln \\overline{W} / \\partial \\mu $ (Lande 1976; Example A6.3 gives the full multivariate derivation). Hence we can express the breeder's equation as [[SEE_FORMULA:13.27a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "The multivariate version of this partial derivative is the gradient of mean fitness with respect to the vector of character means, which is the vector of partials of the log of mean fitness with respect to each trait mean under consideration [[SEE_FORMULA:13.27b]] with $ \\beta_i = \\partial \\ln \\overline{W} / \\partial \\mu_i $ (the change in log mean fitness from a change in the mean of trait $ i $). The resulting gradient version of the Lande equation becomes [[SEE_FORMULA:13.27c]]"
     },
     {
       "type": "discussion",
-      "content": "[[TABLE:13.2]]). One particularly important allele-frequency change is infinitesimal, we treat this as a special case of short-term response (details in Chapter 16). The more serious problem is that eventually allele-frequency change significantly alters the genetic variance (long-term response), and these variances changes cannot be predicted without extensive (and essentially unavailable) knowledge about the distribution of allelic effects and their frequencies (Chapters 25 and 26)."
+      "content": "The vector $ \\beta $ represents the direction for the joint change in the means that maximizes the local increase in mean fitness. In contrast, the actual response involves the product (or projection) of this vector with the genetic covariance matrix G. The resulting response vector is generally not parallel to $ \\beta $, as the genetic covariance structure causes the character means to change in a direction that does not necessarily result in the optimal change in population fitness. We examine the implications of genetic constraints imposed by the structure of G in detail in Volume 3."
     },
     {
-      "type": "proposition",
-      "content": "However, even over the short-term response time frame, there are a number of complications that compromise the basic breeder's equation ([[SEE_TABLE:13.2]]). One particularly important tant (and usually unstated) assumption is that we start from an unselected base population. If the base population itself has been under selection, decay of transient response components from previous selection compromises the predicted single-generation response (Chapter 15). In the Price equation setting (Equation 6.12), this occurs because the mean of the population changes in the absence of selection, as the population regains Hardy-Weinberg proportions and linkage equilibrium following a perturbation from past selection."
+      "type": "derivation",
+      "content": "We can connect the somewhat abstract notion of variance in fitness with a measurable quantity, the amount of selection, $ \\beta $, on a vector, z, of traits, as follows. Walsh and Blows (2009) showed that the additive variance in relative fitness w accounted for by selection on z is [[SEE_FORMULA:13.28a]] where the notation $ \\sigma_A(x, y) $ denotes the covariance between the breeding values of $ x $ and $ y $. Recalling Robertson's secondary theorem (1968 version; Equation 6.24a), $ \\sigma_A(\\mathbf{z}, w) = \\mathbf{R} = \\mathbf{G}\\beta $ (assuming the conditions for the multivariate breeder's equation hold), yielding [[SEE_FORMULA:13.28b]]"
     },
     {
-      "type": "proposition",
-      "content": "Another troublesome feature of the breeder's equation is the assumption that all of the selection on the character of interest is accounted for. This is especially problematic as selection on any character correlated with the one of interest can introduce significant bias to the expected selection response. This problem is examined in Chapter 20, but generally there is no easy solution, or even any indication of a problem before an experiment or field study begins. Thus, even in the best of situations (linearity and no selection-induced changes in allele and gamete frequencies), there are still pitfalls in predicting even a single generation of response from the slope of the parent-offspring regression. The situation gets worse if the parent-offspring regression is nonlinear, as the single-generation change in the mean can then depend on higher-order moments of the genotypic distribution, and hence is not predictable from simple variance components. See Equations 5.23c and 5.27b for population-genetic expressions, Equations 6.12, 6.39, 6.40 for expressions based on the Price equation, and Chapter 24 for a detailed discussion."
+      "type": "derivation",
+      "content": "The additive variance in fitness that remains unaccounted for after the effects of z are removed becomes [[SEE_FORMULA:13.28c]]"
     },
     {
       "type": "discussion",
-      "content": "[[SEE_TABLE:13.2]] summarizes some of these factors compromising the breeder's equation, giving the chapters in which these complications are examined in detail. Provided one can assume linearity of the regressions of relatives, we can account for many of these concerns, as when the regression of an individual on all of its direct relatives selected in previous generations (back to the original unselected base population) remains linear, the selection response is entirely determined by the covariances between a current individual and these previous relatives (Chapter 15). As mentioned at the start of the chapter, even if we have corrected for all of the potential complications listed in [[SEE_TABLE:13.2]], the breeder's equation (using the base population $ h^ 2 $) is expected to become an increasingly poor predictor as selection proceeds. If there are segregating alleles of large effect, even a single generation of selection can significantly change the underlying variance components, which in turn changes the regression coefficients. Further, selection can introduce nonlinearities into an initially linear regression by perturbing the starting distribution of breeding values away from normality, although these departures are usually small (Chapter 24). In the absence of major genes, allele-frequency changes over the first few generations of selection are expected to be rather small, but genotype frequencies can change dramatically due to selection generating gametic-phase disequilibrium (Chapters 16 and 24). Directional selection generates negative disequilibrium, decreasing heritabilities and hence reducing the selection response, and this reduction can be significant if heritability is high. Likewise, selection on the variance itself (through disruptive or stabilizing selection) also creates disequilibrium effects on the expressed genetic variance. Chapter 16 examines the effect of such short-term changes in disequilibrium on the additive genetic variation. An additional complication occurs when there is genetic variance for the amount of environmental variability that a genotype displays, and this is discussed in Chapter 17. As selection continues over several generations, even if all loci have very small effects, allele frequencies themselves start to appreciably change (Chapters 25 and 26). Drift and mutation also become increasingly important, and these complications are examined in Chapters 26–28."
+      "content": "In theory, if one had an estimate of $ \\sigma_A^2(w) $ in hand (Chapter 20), the significance of a set, z, of traits can be determined. If these account for most of the variation, there is little need to consider additional traits. If these account for only a small fraction, important traits are missing."
+    },
+    {
+      "type": "discussion",
+      "content": "[[TABLE:13.1]]). All are based on Equation 13.1, which assumes a linear midparent-offspring regression with slope $ h^{2} $. This single-generation prediction is a good approximation over multiple generations provided that selection does not result in a significant change in the base-population heritability, a region we call short-term response. Chapter 16 shows that even a single generation of selection will change $ h^{2} $ through the generation of linkage disequilibrium, but because this is straightforward to correct for when"
+    },
+    {
+      "type": "derivation",
+      "content": "Finally, we can use the multivariate breeder's equation to make a connection with the classical interpretation of Fisher's fundamental theorem (Chapter 6). If the fitness determined by the vector of traits, z, can be expressed as a linear regression (Equation 13.25b), then the expected change in fitness from selection response on these traits is [[SEE_FORMULA:13.29]] From Equation 13.28b, this is just the additive variance in fitness associated with these traits. Thus, we recover Fisher's theorem that the change in mean fitness equals the additive variance in relative fitness (Equation 6.17c)."
     }
   ]
 }

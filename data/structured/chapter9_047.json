@@ -2,59 +2,44 @@
   "id": "chapter9_047",
   "metadata": {
     "chapter": "chapter9",
-    "section": "Chapter 9: Recombination and Infinite-alleles-based Tests",
+    "section": "Chapter 9: The Ewens-Watterson Test",
     "subsections": [
-      "Recombination and Infinite-alleles-based Tests"
+      "The Ewens-Watterson Test"
     ],
     "source_file": "tmp\\paddle_output\\chapter9_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [
-      "9.36a",
-      "9.36b",
-      "9.37"
+      "9.30a",
+      "9.30b",
+      "9.31a",
+      "9.31b"
     ],
     "table_references": []
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "What is the effect of recombination on these various infinite-alleles-based tests? Recall that recombination had a uniform effect on the interpretation of site-frequency spectrum tests, making all SFS tests conservative, and hence underpowered. This is not the case for haplotype-based tests. Recombination creates new alleles, which inflates the number of haplotypes, the diversity of haplotypes, and the number of rare haplotypes, while decreasing the frequencies of the most common haplotypes. Thus, depending on the test, recombination can either make a test conservative, with p values being too large, or anticonservative, with p values being too small (Depaulis et al. 2001; Rozas et al. 2001; Wall and Hudson 2001; Depaulis et al. 2005; Ramos-Onsins et al. 2007; Zeng et al. 2007a). Tests for a low number of haplotypes, low haplotype diversity, and excessive high frequency of the most common haplotype are all conservative under recombination. Tests for excess rare haplotypes, excess haplotype diversity, and excess haplotype number all have their p values reduced. by recombination (making these tests anticonservative). Finally (as mentioned above), the Ewens-Watterson test (Equation 9.30b) is relatively robust to recombination, as conditioning on the number of alleles, k, partly accounts for recombination."
-    },
-    {
-      "type": "discussion",
-      "content": "Incorporating recombination into coalescent simulations significantly improves the power for conservative tests and creates more accurate p values for anticonservative tests. However, using incorrect recombination values can significantly bias a test. Under the coalescent framework, recombination is measured by $ 4 N_{e} c $ , the population-scaled rate (Chapter 4), with c as the recombination frequency for the size of haplotypes being considered. Depaulis et al. (2005) offered the following suggestion. First, estimate Hudson's minimal number of recombinants, $ R_{M} $ , in the sample from the four-gamete test (Chapter 4), and then choose $ 4 N_{e} c $ in the coalescent simulations as the value that gives 5% (or less) of the samples showing $ R_{M} $ or more recombinations."
+      "content": "The first formal tests of selection in the molecular era were based on haplotypes (i.e., number of alleles), and their development proceeds as follows. Assuming that the region of analysis is sufficiently small such that no recombinants are expected in the sample, the simplest approach is to treat each distinct haplotype as a distinct allele. Following the notation from Chapter 2, let k be the number of alleles (distinct halotypes) in a sample of size n sequences, and $ n_i $ be the number of alleles in the sample present in exactly i copies. For example, if one allele is present as five copies, three alleles are each present as two copies, and four alleles are present as singletons, then $ k = 8 $, and the allele-frequency spectrum becomes $ n_5 = 1, n_2 = 3, n_1 = 4 $ (with all other $ n_i = 0 $), and $ n = \\sum i \\cdot n_i = 15 $. Equation 2.33b gives $ \\Pr(n_1, n_2, \\cdots, n_k \\mid n, k) $, namely, the expected frequency spectrum under neutrality given n and $ k $. Ewens (1972) and Watterson (1977, 1978) proposed comparing the fit of the observed allele-frequency spectrum to the conditional distribution given the observed number of alleles, $ k $."
     },
     {
       "type": "derivation",
-      "content": "Pairwise Disequilibrium Tests: Kelly's $ Z_ nS $ and Kim and Nielsen's $ _ max $ Positive selection can produce two very different patterns of disequilibrium around a site. For soft and partial sweeps, there is an excess of LD throughout a region, while for completed hard sweeps, LD is found on either side of the selected region, but not through it (Chapter 8). To test for these patterns, two different averages of pairwise disequilibrium within a region have been proposed. Both start with Hill and Robertson's (1968) scaled measure of the disequilibrium, which is expressed as a correlation coefficient [[SEE_FORMULA:9.36a]] where $ D_ ij $ is the disequilibrium between sites i and j, and $ p_i $ and $ q_i $ are the frequencies of leading alleles at the two sites. For a general measure of the average amount of LD throughout a region with S segregating sites, Kelly (1997) proposed using the average over all of the pairwise squared correlations [[SEE_FORMULA:9.36b]]"
-    },
-    {
-      "type": "discussion",
-      "content": "This is often computed over windows of various sizes, so that (for example) $ Z_{n5} $ and $ Z_{n8} $ denote values for windows with five and eight segregating sites, respectively. Kelly showed that values of $ Z_{nS} $ are largely determined by the final coalescent time in the sample (the time for the last two lineages to coalesce into the ancestral lineage for the entire sample). The longer this time, the larger the value of $ Z_{nS} $ . This statistic is smallest under a star genealogy, as most of the coalescence events will have occurred at roughly the same time (i.e., the nodes of the genealogical tree are extremely compressed)."
-    },
-    {
-      "type": "discussion",
-      "content": "Thus, a small value of $ Z_{nS} $ is consistent with a hard sweep or an extreme bottleneck. In such cases, there is usually a reduced amount of site polymorphism, which in turn reduces the power of $ Z_{nS} $ . Conversely, with a partial or soft sweep, $ Z_{nS} $ increases. Critical values of $ Z_{nS} $ are determined by coalescent simulations that are conditional on S (as discussed above). When recombination is ignored, the one-sided test of excessive $ Z_{nS} $ values is conservative (as recombination lowers $ Z_{nS} $ ), while the test of reduced $ Z_{nS} $ values is anticonservative. Pennings and Hermisson (2006b) suggested that LD-based tests, such as $ Z_{nS} $ , may have the most power to detect a very recent soft sweep."
-    },
-    {
-      "type": "discussion",
-      "content": "Kim and Nielsen (2004) proposed a different measure of pairwise disequilibrium designed for the expected pattern of LD following a hard sweep (Figure 8.6). Here, there is LD on either side, but not across the site (this LD signal dissipates rather quickly, roughly on the order $ \\sim 0. 1 N_{e} $ generations immediately following a sweep; Przeworski 2002; Jensen et al. 2007). Based on this disjoint LD pattern, Kim and Nielsen proposed a test statistic, $ \\omega $ comparing LD within, versus across, the left and right sides of a sliding window. Suppose there are $ \\ell $ sites $ (1,\\dots,\\ell) $ on the left $ (L) $ side of the putative selected region and $ S-\\ell $ (sites"
+      "content": "Ewens suggested using the following summary statistic of the frequency spectrum, [[SEE_FORMULA:9.30a]]"
     },
     {
       "type": "derivation",
-      "content": "$ + 1,, S $ on the right $ (R) $. Define [[SEE_FORMULA:9.37]] where the combinatorial term, $ C_ S, $, is a function of the number of sites contrasted over the three comparisons (within $ L $, within $ R $, and between $ L $ and $ R $). Under the distinct signal of LD from a completed hard sweep, one expects a large value for the numerator (strong LD within either side) and small denominator value (little LD across sides) around a sweep, giving a large value of $ $. Because $ r^2 $ is sensitive to small allele frequencies, polymorphic sites showing singletons are best ignored when computing $ $. Kim and Nielsen's test statistic $ _ max $ (which gives rise to the name of their test) is the maximum value of Equation 9.37, a function of both window size and window position, with critical values determined via a coalescent simulation. Pavlidis et al. (2010) offered improvements that allow this test to be scaled up to scan an entire genome efficiently, which are implemented in their OmegaPlus package (Alachiotis et al. 2012)."
+      "content": "His motivation for this statistic was its use as a general measure of dispersion (information) in the data. Watterson (1977, 1978) showed that the sample homozygosity [[SEE_FORMULA:9.30b]] was a better choice for improved power to detect departures under weak overdominance (the selection model du jour of the time). Comparing the statistic given by Equation 9.30b with its value under the equilibrium neutral model is known as the Ewens-Watterson test (also the Watterson test or homozygosity test). Watterson proposed to assess significance by taking a large number of draws from Equation 2.33b (using the observed number, k, of alleles in the sample) to generate a null distribution of h values to compare against its value in the original sample. The same approach can also be used for the Ewens statistic (Equation 9.30a)."
+    },
+    {
+      "type": "derivation",
+      "content": "Advances in computational speed led Slatkin (1994, 1996) to propose an exact Watterson test, wherein one computes all possible $h$ values over the set for a given value of $n$, as opposed to randomly sampling some number of draws from Equation 2.33b. This same approach is the basis for Fisher's exact test for contingency tables, and hence the name. The resulting value $P_{h}$ is computed as [[SEE_FORMULA:9.31a]] namely, the sum over all configurations $ n^* = (n_1, \\cdots, n_k) $, constrained by $ \\sum i n_i = n $ (Equation 2.32), that give a value of $ h $ (Equation 9.30a) that is the same, or smaller than, the observed sample value of $ h $."
+    },
+    {
+      "type": "derivation",
+      "content": "Slatkin also suggested a second exact test, wherein one computes the probability over all possible configurations directly, as opposed to using the less informative summary statistic $ h $, with [[SEE_FORMULA:9.31b]] where the vector, $n$, is the observed allele-frequency spectrum. The difference between $P_e$ and $P_h$ is that the sum is over a different set of $n^*$. In Equation 9.31a, the sum is over those $n^*$ that give smaller $h$ values than observed in the sample, while in Equation 9.31b the sum is over those $n^*$ values that give a smaller probability of a particular configuration than in the original sample. Slatkin found that the resulting $p$ values for both tests are very similar for small $n$, but can be rather different for large $n$."
     },
     {
       "type": "discussion",
-      "content": "Jensen et al. (2007) found that this approach had promise for a very vexing situation: detecting sweeps that start in nonequilibrium populations (i.e., those having experienced a recent change in population size). Indeed, Crisci et al. (2013) found that OmegaPlus outperformed SFS-based (SweepFinder, SweepD) and long-haplotype (iHS; see below) tests under both equilibrium and nonequilibrium settings in detecting an ongoing sweep."
-    },
-    {
-      "type": "discussion",
-      "content": "Jensen et al. found that population structure does not cause the distinctive hard-sweep LD pattern detected by $ $, but that a very strong bottleneck (1"
-    },
-    {
-      "type": "discussion",
-      "content": "To summarize these two LD-based test statistics, $ Z_{nS} $ has the power to detect partial sweeps and recently completed soft sweeps, but poor power to detect recently completed hard sweeps. Conversely, $ \\omega_{max} $ has good power to detect a recently completed hard sweep and also has robustness against many demographic concerns, although a severe bottleneck can also generate modest genome-wide $ \\omega_{max} $ scores. While most LD/haplotype tests have more power during a sweep, these two statistics have power only during a very short time window $ (\\sim0.1 N_{e} $ generations) immediately following a successful sweep. A final concern is that even rare amounts of gene conversion involving the selected site can significantly distort any disequilibrium-based signature (Andolfatto and Nordborg 1998; Jones and Wakeley 2008)."
+      "content": "Zeng et al. (2007a) found that the Ewens-Watterson (EW) test was among the most powerful for detecting selection during the sweep phase, but Zhai et al. (2009) found that its power quickly falls off near fixation. Because the classic infinite-alleles model assumes the sequence has no recombination (at least in the sample), a reasonable concern is how robust the EW test is to recombination. Zeng et al. found that it is remarkably so, in part because the number of distinct alleles, k, contains information on local recombination rates, so that conditioning on k partly accommodates the impact from recombination."
     }
   ]
 }

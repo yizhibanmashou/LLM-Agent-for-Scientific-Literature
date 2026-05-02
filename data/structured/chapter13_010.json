@@ -8,53 +8,62 @@
     ],
     "source_file": "tmp\\paddle_output\\chapter13_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
-    "formula_references": [],
-    "table_references": []
+    "formula_references": [
+      "13.10a",
+      "13.10b",
+      "13.11a",
+      "13.11b",
+      "13.11c",
+      "13.11d",
+      "13.11e"
+    ],
+    "table_references": [
+      "inline_2"
+    ],
+    "table_reference_keys": [
+      "chapter13:inline_2"
+    ]
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "To obtain this, first note that the covariance between the parent and its offspring is $ _ A ^ 2 /2 $ $$ \\sigma(\\overline{z}_{o},A)=\\frac{1}{n}\\sum_{i=1}^{n}\\sigma\\left(z_{i},A\\right)=\\frac{1}{n}n\\sigma(z_{i},A)=\\sigma_{A}^{2}/2 $$"
+      "content": "Suppose our goal is increased milk production. The top females are easy to score, but with no selection on males (who do not display the trait), Equation 13.5 gives the selection response as $ h^{2}(S/2) $. Selection on males is made possible, however, by choosing brothers of the top-scoring females as the sires for the next generation, as breeding values are correlated between relatives. Predicting selection response in this case depends upon the genetic covariance between the phenotypic value $ (z_{x}) $ of individual x and the phenotypic value $ (z_{o}) $ in a relative $ (o) $ of x. Here, $ z_{x} $ is milk-yield in female x, whose relative, R (her brother), is then used as a parent for the next generation and whose resulting offspring are denoted by o (Figure 13.2)."
+    },
+    {
+      "type": "derivation",
+      "content": "Figure 13.2 shows the most general setting, where selection is based on one trait (the selected trait), while our interest is the resulting response in another, genetically correlated, trait (the response trait). Let $ z_{x} $ and $ y_{o} $ denote, respectively, the value of the selected trait (z) in a measured individual x (upon which selection decisions are based), and the value of the response trait (y) in the offspring, o. Assuming that the regression of $ y_{o} $ on $ z_{x} $ is linear (i.e., the same assumption as for the breeder's equation), standard regression theory (LW Chapter 3) yields [[SEE_FORMULA:13.10a]] where $ \\mu_{y} $ and $ \\mu_{x} $ are the preselection means of the selected and response traits, respectively. Taking expectations over the selected parents gives the expected change in y from selection on x as [[SEE_FORMULA:13.10b]] where $ \\mu^* $ denotes the within-generation change in the mean following selection (but before reproduction), $ \\mu^{**} $ denotes the offspring mean, and $ \\bar{z} $ is the selection intensity used when choosing parents. The latter is a function of the fraction, p, of measured individuals chosen to have a relative as a parent of the next generation. For example, if brothers from only the top 5% of females are used, then $ p = 0.05 $, yielding $ \\bar{z} \\simeq 2.06 $ (Example 14.1)."
+    },
+    {
+      "type": "derivation",
+      "content": "The selection-intensity version of Equation 13.10b can alternatively be expressed as [[SEE_FORMULA:13.11a]] where $ \\rho(z_x, y_o) $ is the correlation between $ z_x $ and $ y_o $. This correlation is referred to as the accuracy in predicting the value of the response trait measured in $ o(y_o) $ from the selected trait measured in $ x(z_x) $. One immediately sees that by improving the accuracy of our selection scheme, we improve the response. Expressing Equation 13.11a in terms of the relative response, the change in $ y $ in phenotypic standard deviations, gives the expected change in the response trait when using the selected trait measure in a relative as [[SEE_FORMULA:13.11b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "A more powerful way of viewing Equation 13.11a is in terms of the breeding values, $ A_{y} $, for the trait of interest. Under the assumption (used throughout this chapter) that the expected mean of the offspring equals the average breeding values of its parents (Chapter 6 examined this assumption in detail), the mean of the response trait in the offspring is simply the mean breeding value of this trait in the parents. Hence, $ R_{y} = R_{A_{y}} $, namely, the difference between the mean breeding value for the response trait in the selected parents versus that for the overall population. By taking the response trait to be the breeding value, $ A_{y} $, of the trait of interest, Equation 13.11a becomes [[SEE_FORMULA:13.11c]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Hence, the breeder’s equation can be considered as a special case of the more general expression [[SEE_FORMULA:13.11d]]"
+    },
+    {
+      "type": "derivation",
+      "content": "An accuracy of special interest that arises during individual selection is the correlation between an individual's phenotype (z) and breeding value (A), where [[SEE_FORMULA:13.11e]]"
     },
     {
       "type": "discussion",
-      "content": "The expression for $ ^2(_o) $ requires a bit more bookkeeping, as sips are correlated. Assuming half-sibs and that there are no shared environmental effects, $ (z_i, z_j) = _A^2/4 $ (for $ i j $), yielding $$ \\begin{align*}\\sigma^{2}(\\overline{z}_{o})&=\\sigma\\left(\\frac{1}{n}\\sum_{i=1}^{n}z_{i},\\frac{1}{n}\\sum_{j=1}^{n}z_{j}\\right)=\\frac{1}{n^{2}}n\\sigma(z_{i},z_{i})+\\frac{n(n-1)}{n^{2}}\\sigma(z_{i},z_{j})\\\\&=\\frac{\\sigma_{z}^{2}}{n}+\\left(1-\\frac{1}{n}\\right)\\frac{\\sigma_{A}^{2}}{4}=\\frac{\\sigma_{z}^{2}}{4n}\\left[4+(n-1)h^{2}\\right]\\end{align*} $$"
+      "content": "This accuracy corresponds to individual selection (x is the parent, x = R; and the selected and response traits are the same, y = z). When substituted into Equation 13.11c, this recovers Equation 13.6b. As illustrated in Example 13.4, this is a key result, as whether some proposed selection scheme is more efficient than individual selection depends on the correlation between the breeding value of a chosen parent and the selection variable used for that scheme (e.g., $ z_{x} $ could be $ x' $ family mean of the response trait). If this correlation exceeds h, then from Equation 13.11c (because $ \\bar{i} $ and $ \\sigma^{2}[A] $ are the same), the response is larger. Equations 13.11a through 13.11c form the foundation for most of Chapter 21, which deals with various selection schemes using family information (e.g., family means and within-family deviations)."
     },
     {
       "type": "discussion",
-      "content": "Combining these results yields $$ \\rho(\\overline{z}_{o},A)=\\frac{\\sigma_{A}^{2}/2}{\\sigma_{A}\\sigma_{z}\\sqrt{\\frac{4+(n-1)h^{2}}{4n}}}=\\frac{\\sigma_{A}}{\\sigma_{z}}\\sqrt{\\frac{4n/4}{4+(n-1)h^{2}}}=\\sqrt{\\frac{h^{2}n}{4+(n-1)h^{2}}}=\\sqrt{\\frac{n}{n+\\gamma}} $$ where $ = (4 - h^2)/h^2 $. For large $ n $, note that the accuracy approaches one. Substituting this result into Equation 13.11c, the response to selection becomes $$ R=\\bar{\\imath}\\rho(\\overline{z}_{o},A)\\sigma_{A}=\\bar{\\imath}\\sigma_{A}\\sqrt{\\frac{n}{n+\\gamma}}=\\bar{\\imath}\\sigma_{A}\\sqrt{\\frac{h^{2}n}{4+h^{2}(n-1)}} $$"
+      "content": "The greatest selection response occurs if we take the selection variable $ (z_x) $ with the largest correlation with the breeding value for the response trait (assuming $ \\bar{i} $ and $ \\sigma_A $ are the same over all comparisons). This idea forms the foundation of index selection, whereby individuals are chosen based on some index, $ z_x = \\sum a_i z_i $, a linear combination of trait values in the relatives and/or correlated traits in the focal individual (Volume 3)."
+    },
+    {
+      "type": "proposition",
+      "content": "Example 13.3. Consider selection on clones or other pure lines, where parents pass on their entire genome to their offspring. The phenotypic value $ (z_0) $ of an offspring from a parent with a genotypic value $ G_p $ can be written as $ z_0 = G_p + E_o $, so that the parent-offspring covariance (in the absence of any genotype $ \\times $ environment covariance and/or interactions) equals $$ \\sigma(z_{o},z_{p})=\\sigma(G_{p}+E_{o},G_{p}+E_{p})=\\sigma(G_{p},G_{p})=\\sigma(G,G) $$ namely, the total genetic variance, $ \\sigma_G^2 $. The resulting parent-offspring regression has a slope $ b_{op} = \\sigma_G^2 / \\sigma_z^2 = H^2 $, the broad-sense heritability (LW Chapter 20), yielding $$ R=H^{2}S $$ Because $ H^2 \\geq h^2 $ (as $ \\sigma_G^2 \\geq \\sigma_A^2 $), the single-generation response to selection is at least as large for clones as for a sexual population with the same variance components. However, when selection continues for several generations, using clones is expected to be far less effective, as selection among clones very rapidly removes any genetic variation from the population without any mechanism (other than mutation) to regenerate it. Likewise, the assumption of a normal distribution of genotypic values quickly breaks down as only a few genotypes remain. By contrast, with selection among sexually reproducing individuals, segregation and recombination will generate an almost endless supply of new variation if a large number of segregating loci underlie the trait. Special issues with regard to the selection and development of pure lines are examined in Volume 3."
     },
     {
       "type": "discussion",
-      "content": "Recalling Equation 13.6b, the ratio of response for progeny testing $ (R_ pt) $ to mass selection $ (R_ ms) $ becomes $$ \\begin{aligned}\\frac{R_{pt}}{R_{ms}}&=\\frac{\\bar{i}_{pt}\\rho(\\overline{z}_{o},A)\\sigma_{A}}{\\bar{i}_{ms}\\rho(z,A)\\sigma_{A}}=\\left(\\frac{\\bar{i}_{pt}}{\\bar{i}_{ms}}\\right)\\frac{1}{h}\\sqrt{\\frac{h^{2}n}{4+h^{2}(n-1)}}\\\\&=\\left(\\frac{\\bar{i}_{pt}}{\\bar{i}_{ms}}\\right)\\sqrt{\\frac{n}{4+h^{2}(n-1)}}\\end{aligned} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "The selection intensity under progeny testing is likely to be lower, as it is easier (and cheaper) to score a phenotype than to progeny test. When the intensities are equal, the ratio of responses approaches 1/h for large n. Assuming $ _ pt = _ ms $, progeny testing gives a larger response when $ (_ o, A) > (z, A) $, or when $$ \\sqrt{\\frac{n}{4+h^{2}(n-1)}}>1\\quad or\\quad n>\\frac{4-h^{2}}{1-h^{2}} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "In particular, n > 4, 5, and 7 is required for $ h^2 = 0.1 $, 0.25, and 0.5, respectively, for progeny testing to give a larger response. Hence, when the heritability of a trait is high, more offspring must be scored for the accuracy of progeny selection to exceed that of mass selection. A high heritability implies that an individual's phenotype is a good predictor of its breeding value, which requires increasingly more observations of an indirect measure (offspring values) to obtain higher accuracy than the simple direct measure of the individual phenotype."
-    },
-    {
-      "type": "discussion",
-      "content": "Example 13.5. Suppose a character of interest is extremely hard to measure in live individuals. For example, one cannot directly select on individuals that have to be killed to measure a trait such as meat quality. Similarly, consider traits expressed in only one sex, such as milk production. How can we select on males if they do not express the trait themselves? One solution to both of these problems is sib selection (Chapter 21), or using sibs of exceptional individuals as the parents for the next generation (e.g., choosing males based on the milk production of their sisters)."
-    },
-    {
-      "type": "discussion",
-      "content": "Under sib selection, the selection unit $ (x) $ is the trait value in sib $ s_1 $, with the correlation between its phenotypic value $ (z_ s_1) $ and the breeding value $ (A_ s_2) $ of sib $ s_2 $ being (LW [[SEE_TABLE:7.3]]) $$ \\sigma(z_{s_{1}},A_{s_{2}})=\\left\\{\\begin{array}{ll}\\sigma_{A}^{2}/2&for full sibs\\\\\\sigma_{A}^{2}/4&for half-sibs\\end{array}\\quad yielding\\quad\\rho(z_{s_{1}},A_{s_{2}})=\\left\\{\\begin{array}{ll}h/2&for full sibs\\\\h/4&for half-sibs\\end{array}\\right.\\right. $$"
-    },
-    {
-      "type": "discussion",
-      "content": "For example, when $ s_ 1 $ and $ s_ 2 $ denote full sibs $$ \\rho(z_{s_{1}},A_{s_{2}})=\\frac{\\sigma(z_{s_{1}},A_{s_{2}})}{\\sigma(z_{s_{1}})\\cdot\\sigma(A_{s_{2}})}=\\frac{\\sigma_{A}^{2}/2}{\\sigma_{z}\\sigma_{A}}=\\frac{\\sigma_{A}}{2\\sigma_{z}}=\\frac{h}{2} $$ with the correlation between half-sibs obtained similarly. Applying Equation 13.11c, the resulting response to selection (assuming equal selection intensity on both sexes) based on the performance of a sib is $$ R=\\left\\{\\begin{aligned}&\\bar{\\imath}\\left(h/2\\right)\\sigma_{A}\\quad for full sibs\\\\&\\bar{\\imath}\\left(h/4\\right)\\sigma_{A}\\quad for half-sibs\\end{aligned}\\right. $$ where the selection intensity, $ $, is a function of the fraction of measured sibs chosen in order to have a relative as a parent of the next generation. For example, if only 5"
-    },
-    {
-      "type": "discussion",
-      "content": "One can also have a mixture of direct and sib selection, as can occur when selection is based on milk production. Here, there is direct selection on females (based on their trait value) and sib selection on males (based on the trait value of a sister). Summing the separate responses from selection on females and males, the expected response becomes $$ R=\\left(1/2\\right)\\bar{\\imath}h\\sigma_{A}+\\left(1/2\\right)\\bar{\\imath}\\left(h/2\\right)\\sigma_{A}=\\left(3/4\\right)\\bar{\\imath}h\\sigma_{A} $$ where the first term is the response from using superior females (Equation 13.11a with selection on only one sex, giving $ /2 $), and the second term is the response using a brother of a superior sister (full sib selection, or this term divided by two for half-sib selection). Here, we have assumed the same intensity, $ $, in both sexes, while with different amounts of selection $$ R=\\left(1/2\\right)\\bar{\\imath}_{d}h\\sigma_{A}+\\left(1/2\\right)\\bar{\\imath}_{s}\\left(h/2\\right)\\sigma_{A}=\\left[\\left(2\\bar{\\imath}_{d}+\\bar{\\imath}_{s}\\right)/4\\right]h\\sigma_{A} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "While one could develop additional extensions (for example, by using progeny testing for males), in practice, information from all relatives is handled using BLUP selection, a robust and general approach for predicting response under very diverse schemes of selection that will be introduced shortly."
+      "content": "Example 13.4. Progeny testing uses the mean of an individual's offspring (here, all are assumed to be half-sibs) to predict its breeding value. In order to predict the selection response using this scheme, we first need the correlation between the mean $ (\\overline{z}_{o}) $ of n half-sib offspring and the breeding value (A) of the common parent. This is given by $$ \\rho(\\overline{z}_{o},A)=\\frac{\\sigma(\\overline{z}_{o},A)}{\\sigma_{A}\\cdot\\sigma(\\overline{z}_{o})} $$"
     }
   ]
 }

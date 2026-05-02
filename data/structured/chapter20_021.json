@@ -19,15 +19,15 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "Similarly, we can consider the correlation in allelic copy number between $x$ and $y$. Let $T_{x,\\ell}$ denote the number of copies of allele 1 (from SNP $ $) that $x$ carries, where $T_{x,\\ell}=0,1$, or 2. Hence, $E[T_]=2p_ $, yielding a contribution to the covariance in $T_ $ between two relatives of $$ \\left(T_{x,\\ell}-2p_{\\ell}\\right)\\left(T_{y,\\ell}-2p_{\\ell}\\right) $$"
+      "content": "Similarly, we can consider the correlation in allelic copy number between $x$ and $y$. Let $T_{x,\\ell}$ denote the number of copies of allele 1 (from SNP $\\ell$) that $x$ carries, where $T_{x,\\ell}=0,1$, or 2. Hence, $E[T_{\\ell}]=2p_{\\ell}$, yielding a contribution to the covariance in $T_{\\ell}$ between two relatives of $$ \\left(T_{x,\\ell}-2p_{\\ell}\\right)\\left(T_{y,\\ell}-2p_{\\ell}\\right) $$"
     },
     {
       "type": "derivation",
-      "content": "The variance in $ T_ $ is $ \\sigma^2(T_\\ell) = E[T_\\ell^2] - (E[T_\\ell])^2 $, which under, Hardy-Weinberg, becomes $$ \\left[0^{2}\\cdot(1-p_{\\ell})^{2}+1^{2}\\cdot2\\cdot p_{\\ell}(1-p_{\\ell})+2^{2}\\cdot p_{\\ell}^{2}\\right]-(2p_{\\ell})^{2}=2p_{\\ell}(1-p_{\\ell}) $$ yielding a correlation in T between x and y at SNP $ $ of [[SEE_FORMULA:20.23j]]"
+      "content": "The variance in $ T_\\ell $ is $ \\sigma^2(T_\\ell) = E[T_\\ell^2] - (E[T_\\ell])^2 $, which under, Hardy-Weinberg, becomes $$ \\left[0^{2}\\cdot(1-p_{\\ell})^{2}+1^{2}\\cdot2\\cdot p_{\\ell}(1-p_{\\ell})+2^{2}\\cdot p_{\\ell}^{2}\\right]-(2p_{\\ell})^{2}=2p_{\\ell}(1-p_{\\ell}) $$ yielding a correlation in T between x and y at SNP $ \\ell $ of [[SEE_FORMULA:20.23j]]"
     },
     {
       "type": "discussion",
-      "content": "To relate $ \\text{corr}(T_{x,\\ell}, T_{y,\\ell}) $ with $ \\theta_{xy} $, we write $ T_ x, = b_ x, + b'_ x, $, where $ b $ and $ b' $ represent the two SNP alleles in $ x $, to yield that $$ \\sigma(T_{x,\\ell},T_{y,\\ell})=\\sigma(b_{x,\\ell}+b_{x,\\ell}^{\\prime},b_{y,\\ell}+b_{y,\\ell}^{\\prime})=4\\sigma(b_{x,\\ell},b_{y,\\ell}) $$"
+      "content": "To relate $ \\text{corr}(T_{x,\\ell}, T_{y,\\ell}) $ with $ \\theta_{xy} $, we write $ T_{x,\\ell} = b_{x,\\ell} + b'_{x,\\ell} $, where $ b $ and $ b' $ represent the two SNP alleles in $ x $, to yield that $$ \\sigma(T_{x,\\ell},T_{y,\\ell})=\\sigma(b_{x,\\ell}+b_{x,\\ell}^{\\prime},b_{y,\\ell}+b_{y,\\ell}^{\\prime})=4\\sigma(b_{x,\\ell},b_{y,\\ell}) $$"
     },
     {
       "type": "derivation",
@@ -39,7 +39,7 @@
     },
     {
       "type": "derivation",
-      "content": "Yang et al (2010) showed that a slight modification is required when considering the coancestry of x with itself, [[SEE_FORMULA:20.23m]] where the term following the one is the estimate of inbreeding. Note that this term could be negative, implying that the individual shows less homozygosity than expected (Ackerman et al. 2017). Two technical comments are in order concerning these estimators. First, formally speaking, the correlations are between deviations of allelic counts with their expected values under the assumed base population, for example, $ \\text{corr}(b_{x,\\ell} - p_{\\ell}, b_{y,\\ell} - p_{\\ell}) $ and $ \\text{corr}(T_{x,\\ell} - 2p_{\\ell}, T_{y,\\ell} - 2p_{\\ell}) $, as $ p_ $ may differ from the average allele frequency, $ _ $, in the sample. Second, Yang et al. (2010) showed that Equations 20.231 and 20.23m are slightly biased due to sampling error and suggested a regression-based correction (Yang et al. 2011a)."
+      "content": "Yang et al (2010) showed that a slight modification is required when considering the coancestry of x with itself, [[SEE_FORMULA:20.23m]] where the term following the one is the estimate of inbreeding. Note that this term could be negative, implying that the individual shows less homozygosity than expected (Ackerman et al. 2017). Two technical comments are in order concerning these estimators. First, formally speaking, the correlations are between deviations of allelic counts with their expected values under the assumed base population, for example, $ \\text{corr}(b_{x,\\ell} - p_{\\ell}, b_{y,\\ell} - p_{\\ell}) $ and $ \\text{corr}(T_{x,\\ell} - 2p_{\\ell}, T_{y,\\ell} - 2p_{\\ell}) $, as $ p_{\\ell} $ may differ from the average allele frequency, $ \\widehat{p}_{\\ell} $, in the sample. Second, Yang et al. (2010) showed that Equations 20.231 and 20.23m are slightly biased due to sampling error and suggested a regression-based correction (Yang et al. 2011a)."
     },
     {
       "type": "discussion",

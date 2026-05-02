@@ -2,9 +2,9 @@
   "id": "chapter26_007",
   "metadata": {
     "chapter": "chapter26",
-    "section": "DRIFT AND LONG-TERM SELECTION RESPONSE",
+    "section": "Chapter 26: THE EFFECT OF SELECTION ON EFFECTIVE POPULATION SIZE",
     "subsections": [
-      "DRIFT AND LONG-TERM SELECTION RESPONSE"
+      "The Expected Reduction in $ N_{e} $ from Directional Selection"
     ],
     "source_file": "tmp\\paddle_output\\chapter26_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
@@ -14,7 +14,23 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "Recall that in our distinction between long-term and asymptotic response, the former is attributable to the existing variation at the start of selection, while the latter is the expected eventual rate of response due to the input of new mutation. When the effective population size is small, essentially all of the observed response is due to the initial variation, with the population reaching an apparent limit until the appearance of new mutations allows for further response. In larger populations, these two components of response become more difficult to separate, and no limit may be observed when in fact all of the initial variation has been exhausted. Much of the initial theory of long-term response ignored mutation, and we examine this drift-only version first, as it provides a good description of how a population exhausts its initial variation."
+      "content": "Robertson assumed a limiting value of $Q = 2$, but Equation 26.9b shows that this is an overestimate, which results in an underestimation of $N_e$. Substitution of Equation 26.9b into Equation 26.6c recovers Equation 3.29b (with the latter expressed in terms of $L = 1 - G$, where $L = \\kappa h^2$ is the fractional loss of additive variance)."
+    },
+    {
+      "type": "discussion",
+      "content": "The general prediction that effective population size decreases in selected populations has been examined in a number of Drosophila experiments, where inbreeding is estimated directly from parental pedigrees. This prediction has generally been confirmed, with a reasonable fit to Robertson's theory (McBride and Robertson 1963; Jones 1969a, 1969b; López-Fanjul 1989). As expected from Equation 26.8, $ N_e $ is lowest in lines showing the greatest response to selection, as these lines have the highest realized heritabilities. Gallego and López-Fanjul (1983) tested a second prediction using selection on sternopleural bristles: because the reduction in $ N_e $ occurs from among-family selection (inflating the among-family variance, $ \\sigma_k^2 $), no reduction in $ N_e $ is expected under within-family (full-sib) selection (Chapter 21). In accordance with theory, no reduction was observed. As reviewed in Chapter 25, reproductive fitness often declines during long-term selection experiments. This can result in a further increase in the variance in fitness among individuals, which in turn further increases the variance in offspring number (as the latter is a measure of fitness). This increased variance can significantly decrease the effective population size below that predicted by Equation 26.8, which incorporates only the variance effects associated with artificial selection. Yoo (1980c) found that differences in fertility were more important in reducing effective population size than the effects of artificial selection during a long-term selection experiment for increased Drosophila bristle number."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 26.2. Consider directional truncation selection on a normally distributed character in which the uppermost 20% of the population (p = 0.2) is saved. From Example 16.3, this yields a selection intensity of $ \\bar{\\tau} = 1.40 $ and a reduction in variance of $ \\kappa = 0.781 $. If we assume initial (before selection) values of $ h_0^2 = 0.5 $ and $ \\sigma_z^2(0) = 100 $, Example 16.2 yields (under the infinitesimal model) equilibrium values of $ \\widehat{d} = -12.54 $ and $ \\widehat{h}^2 = 0.428 $. Hence $$ G=1-\\kappa\\widehat{h}^{2}=1-0.781\\cdot0.428=0.665 $$ Because we are assuming no dominance or common-family effects, the initial value of $ t_{FS} $ in the base population is $ h_{0}^{2}/2 = 0.25 $, while its equilibrium value becomes $$ \\widehat{t}_{FS}=\\frac{h_{0}^{2}/2+\\widehat{d}/\\sigma_{z(0)}^{2}}{1+\\widehat{d}/\\sigma_{z(0)}^{2}}=\\frac{(0.5/2)-(12.54/100)}{1-(12.54/100)}=0.142 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Hence, $ \\sigma_w^2 = \\bar{i}^2 \\cdot \\widehat{t}_{FS} = 1.4^2 \\cdot 0.142 = 0.279 $. Assuming $ \\rho = -1/(N - 1) \\simeq 0 $, Equation 26.9b yields $$ \\widetilde{Q}_{*}=\\frac{2}{2-G}=\\frac{2}{2-0.665}=1.498 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Equation 26.6c yields an equilibrium effective population size of $$ N_{e}=\\frac{N}{1+\\widetilde{Q}_{*}^{2}\\sigma_{w}^{2}}=\\frac{N}{1+1.498^{2}\\cdot0.279}=0.615N $$"
     }
   ]
 }

@@ -27,11 +27,11 @@
     },
     {
       "type": "discussion",
-      "content": "Burrows (1972) developed a finite-sample approximation for the expected selection intensity for any reasonably well-behaved continuous distribution. Using the standardized variable $ y = (z - \\mu) / \\sigma $ simplifies matters considerably. Letting $ (y) $ be the probability density"
+      "content": "Burrows (1972) developed a finite-sample approximation for the expected selection intensity for any reasonably well-behaved continuous distribution. Using the standardized variable $ y = (z - \\mu) / \\sigma $ simplifies matters considerably. Letting $ \\phi(y) $ be the probability density"
     },
     {
       "type": "derivation",
-      "content": "[h] function of the phenotypic distribution, and $ y_p $ be the truncation point (i.e., $ (y y_p) = p $), Burrows's approximation is [[SEE_FORMULA:14.4a]] where $$ \\begin{align*}\\mu_{y_p}=E\\left[y\\left|y\\geq y_p\\right.\\right]=\\frac{1}{p}\\int_{y_p}^\\infty x\\varphi(x) dx\\end{align*} $$ is the truncated mean (which can be obtained by numerical integration), and $ (y_p) $ is the height of the density function at the truncation point. Because the second term of Equation 14.4a is positive, if $ M $ is finite, the expected truncated mean overestimates the expected standardized selection differential. For a unit normal distribution, $ \\mu_{y_p} = \\varphi(y_p)/p = \\bar{\\nu} $, yielding [[SEE_FORMULA:14.4b]] where $ $ is given by Equation 14.3a, using $ p = N/M $. Lindgren and Nilsson (1985) found this approximation to be quite accurate for $ N 5 $. Bulmer (1980) suggested an alternative approximation under normality, using Equation 14.3a with $ p $ replaced by [[SEE_FORMULA:14.4c]]"
+      "content": "[h] function of the phenotypic distribution, and $ y_p $ be the truncation point (i.e., $ \\Pr(y \\geq y_p) = p $), Burrows's approximation is [[SEE_FORMULA:14.4a]] where $$ \\begin{align*}\\mu_{y_p}=E\\left[y\\left|y\\geq y_p\\right.\\right]=\\frac{1}{p}\\int_{y_p}^\\infty x\\varphi(x) dx\\end{align*} $$ is the truncated mean (which can be obtained by numerical integration), and $ \\phi(y_p) $ is the height of the density function at the truncation point. Because the second term of Equation 14.4a is positive, if $ M $ is finite, the expected truncated mean overestimates the expected standardized selection differential. For a unit normal distribution, $ \\mu_{y_p} = \\varphi(y_p)/p = \\bar{\\nu} $, yielding [[SEE_FORMULA:14.4b]] where $ \\bar{\\tau} $ is given by Equation 14.3a, using $ p = N/M $. Lindgren and Nilsson (1985) found this approximation to be quite accurate for $ N \\geq 5 $. Bulmer (1980) suggested an alternative approximation under normality, using Equation 14.3a with $ p $ replaced by [[SEE_FORMULA:14.4c]]"
     },
     {
       "type": "discussion",
@@ -39,19 +39,19 @@
     },
     {
       "type": "discussion",
-      "content": "Burrows (1975) provided expressions for the variance of $ \\bar{i}_{(N,M)} $"
+      "content": "Burrows (1975) provided expressions for the variance of $ \\bar{\\nu}_{(N,M)} $."
     },
     {
       "type": "derivation",
-      "content": "A final correction for finite population size was noted by Rawlings (1976) and Hill (1976, 1977b). If families are sampled, such that n individuals are chosen per family, then the selection intensity is further reduced because there are positive correlations between family members. This effectively lowers the sample size below n—in the extreme case where all individuals are clones with little environmental variance, all have essentially the same value, and hence $ n 1 $. If a total of M individuals is sampled, with n individuals per family, then Burrows's correction (Equation 14.4b) is modified to become [[SEE_FORMULA:14.5]] where $ $ is the intraclass correlation of family members. This important result for certain types of family selection is revisited in more detail in Chapter 21."
+      "content": "A final correction for finite population size was noted by Rawlings (1976) and Hill (1976, 1977b). If families are sampled, such that n individuals are chosen per family, then the selection intensity is further reduced because there are positive correlations between family members. This effectively lowers the sample size below n—in the extreme case where all individuals are clones with little environmental variance, all have essentially the same value, and hence $ n \\sim 1 $. If a total of M individuals is sampled, with n individuals per family, then Burrows's correction (Equation 14.4b) is modified to become [[SEE_FORMULA:14.5]] where $ \\tau $ is the intraclass correlation of family members. This important result for certain types of family selection is revisited in more detail in Chapter 21."
     },
     {
       "type": "discussion",
-      "content": "Example 14.2. Consider the expected selection intensity on males when the upper 5 normal, this is $ $1.87 (Harter 1961), and hence $ E[_ (1,20)] 1.87 $. There is considerable spread about this expected value, as the standard deviation of this order statistic is 0.525 (Sarhan and Greenberg 1962). How well do the approximations of $ E[_ (1,20)] $ perform? Burrows's approximation (Equation 14.4b) yields $$ E\\left[\\bar{\\imath}_{(1,20)}\\right]\\simeq2.06-\\frac{(20-1)}{2\\left(20+1\\right)2.06}=2.06-0.22=1.84 $$"
+      "content": "Example 14.2. Consider the expected selection intensity on males when the upper 5% are used to form the next generation and phenotypes are normally distributed. If the sampled number is large, $ \\bar{\\imath} \\simeq 2.06 $ (Example 14.1). Suppose, however, that just 20 males are scored (phenotyped), with only the largest allowed to reproduce, in order to yield p = 0.05. The expected value for this individual is the expected value of the largest order statistic for a sample of size 20. For the unit normal, this is $ \\simeq $1.87 (Harter 1961), and hence $ E[\\bar{\\nu}_{(1,20)}] \\simeq 1.87 $. There is considerable spread about this expected value, as the standard deviation of this order statistic is 0.525 (Sarhan and Greenberg 1962). How well do the approximations of $ E[\\bar{\\nu}_{(1,20)}] $ perform? Burrows's approximation (Equation 14.4b) yields $$ E\\left[\\bar{\\imath}_{(1,20)}\\right]\\simeq2.06-\\frac{(20-1)}{2\\left(20+1\\right)2.06}=2.06-0.22=1.84 $$"
     },
     {
       "type": "discussion",
-      "content": "Bulmer's approximation (Equation 14.4c) uses $$ \\widetilde{p}=\\frac{1+1/2}{20+1/40}\\simeq0.075 $$ which returns $ x_ [1-0.075] 1.44 $. Because $ (1.44) = 0.1415 $, $ E[\\bar{\\imath}_{(1,20)}] \\simeq 0.1415/0.075 \\simeq 1.89 $."
+      "content": "Bulmer's approximation (Equation 14.4c) uses $$ \\widetilde{p}=\\frac{1+1/2}{20+1/40}\\simeq0.075 $$ which returns $ x_{[1-0.075]} \\simeq 1.44 $. Because $ \\varphi(1.44) = 0.1415 $, $ E[\\bar{\\imath}_{(1,20)}] \\simeq 0.1415/0.075 \\simeq 1.89 $."
     }
   ]
 }

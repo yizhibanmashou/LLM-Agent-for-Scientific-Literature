@@ -2,31 +2,42 @@
   "id": "chapter9_038",
   "metadata": {
     "chapter": "chapter9",
-    "section": "Chapter 9: Zeng et al.'s E Test",
+    "section": "Chapter 9: Achaz's Y and Y* Tests",
     "subsections": [
-      "Zeng et al.'s E Test"
+      "Fu and Li's $ D^{*} $ and $ F^{*} $ Tests"
     ],
     "source_file": "tmp\\paddle_output\\chapter9_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [
-      "9.28a",
-      "9.28b",
-      "9.28c"
+      "9.20a",
+      "9.26b",
+      "9.26c",
+      "9.26d",
+      "9.26e",
+      "9.26f"
     ],
     "table_references": []
   },
   "blocks": [
     {
-      "type": "derivation",
-      "content": "A variant of the H test was proposed by Zeng et al. (2006), who noted that the most powerful contrasts between regions of the unfolded frequency spectrum following selection should involve high- versus low-frequency sites. However, most contrasts involve a comparison with $ _ II $, which is a measure of intermediate-frequency alleles. To rectify this, Zeng et al. introduced the estimator, $ _L $, based on a weight, $ c_i = i $, that places more emphasis on high-frequency sites than $ _S $ (but not as much as $ _H $). For these weights, Equation 9.23b implies $ h(n) = n - 1 $, and hence Equation 9.23c yields [[SEE_FORMULA:9.28a]]"
+      "type": "discussion",
+      "content": "Fu and Li (1993b) introduced tests based on other contrasts among the infinite-sites $\\theta$ estimators given by Equation 9.21a. Both proposed tests use the number of singleton sites, with variants using either folded ($\\eta_{1}$ sites with a single copy of the minor allele) or unfolded ($\\zeta_{1}$ sites with a single copy of the derived allele) singletons. Using these statistics gives estimates of $\\theta$ based on the rare-alleles region of the SFS, which are then contrasted with estimates based on either $S$ or II. Using folded data, this gives rise, respectively, to their $D^{*}$ and $F^{*}$ tests. Their exact counterparts for unfolded data (using $\\zeta_{1}$ in place of $\\eta_{1}$) are, respectively, their $D$ and $F$ tests, which are not discussed further. Given the widespread use of Tajima's $D$, when we simply reference a “$D$ test,” this always refers to Tajima’s test."
     },
     {
       "type": "derivation",
-      "content": "Zeng et al.'s E test contrasts the high- and low-frequency regions of the frequency spectrum, [[SEE_FORMULA:9.28b]] where [[SEE_FORMULA:9.28c]]"
+      "content": "Fu and Li's $D^{*}$ test compares the segregating sites $(S)$ versus the folded-singleton $(\\eta_{1})$ estimators of $\\theta$ [[SEE_FORMULA:9.20a]] [[SEE_FORMULA:9.26b]] [[SEE_FORMULA:9.26c]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Their $F^{*}$ test compares the average pairwise divergence (II) with the folded-singletons ($\\eta_{1}$) estimators [[SEE_FORMULA:9.26d]]"
+    },
+    {
+      "type": "derivation",
+      "content": "[h] [[SEE_FORMULA:9.26e]] [[SEE_FORMULA:9.26f]]"
     },
     {
       "type": "discussion",
-      "content": "Again the variance is approximated by replacing $ \\theta $ and $ \\theta^{2} $ with their estimates from Equation 9.21b. A negative E indicates an excess of low- versus high-frequency sites relative to expectations of the equilibrium neutral model. This occurs immediately after a sweep, as the excess of high-frequency alleles is quickly lost by drift (due to their fixation), while at the same time mutation is generating an excess of low-frequency sites, which have yet to drift up to their neutral equilibrium values. The unique feature of E is its ability to yield a signal after a sweep, which can persist up to $ 2 N_{e} $ generations (and hence much longer than H)."
+      "content": "These expressions are from Simonsen et al. (1995), with Equation 9.26e correcting the original Fu and Li paper. Critical values (assuming no recombination in the region) were tabulated by Fu and Li (1993b). While these tests are fairly widely used, Simonsen et al. (1995) found that they are not as powerful as Tajima's test for detecting a selective sweep or demographic features (bottlenecks or population subdivision)."
     }
   ]
 }

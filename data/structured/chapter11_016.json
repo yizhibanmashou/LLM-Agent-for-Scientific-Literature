@@ -2,46 +2,61 @@
   "id": "chapter11_016",
   "metadata": {
     "chapter": "chapter11",
-    "section": "Empirical Observations",
+    "section": "Chapter 11: DRIFT-MUTATION EQUILIBRIUM",
     "subsections": [
-      "Empirical Observations"
+      "DRIFT-MUTATION EQUILIBRIUM"
     ],
     "source_file": "tmp\\paddle_output\\chapter11_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [
-      "11.7",
-      "11.8"
+    "formula_references": [
+      "11.20a",
+      "11.20b",
+      "11.20c",
+      "11.21a",
+      "11.21b"
     ],
-    "table_reference_keys": [
-      "chapter11:11.7",
-      "chapter11:11.8"
-    ]
+    "table_references": []
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Unfortunately, data on the parameters $ \\sigma_{DI}^{2},\\sigma_{ADI}, $ and $ \\iota^{*} $ are scant, although some progress has been made with annual plants. Starting from a random-mating base population of maize, Cornelius (1988) produced a series of selfed and full-sib mated lines, all of which were assayed in a common-garden experiment. The parameter estimates given in [[SEE_TABLE:11.8]] best describe the overall set of observed covariances. Except for yield, all of the characters exhibit significant additive genetic variance, and four of the six traits exhibit significant squared inbreeding effects, $ \\iota^{*} $ . However, nearly all of the estimates for $ \\sigma_{D}^{2},\\sigma_{DI}^{2} $ , and $ \\sigma_{ADI} $ are nonsignificant. In part, this is clearly a power issue, as the significant inbreeding depression implies the presence of dominance."
+      "content": "The models introduced in the previous sections predict that finite populations eventually lose all of their genetic variation, at which point the genotypic means of isolated populations will have attained a maximum level of divergence. These results arose because we assumed there was an absence of significant evolutionary forces countering the loss of variance caused by random genetic drift. In reality, however, there is one such force that cannot be prevented—the continual input of new variation by polygenic mutation. When this is accounted for, we can expect neutral quantitative traits to approach an equilibrium level of within-population variance as a balance is struck between the opposing forces of drift and mutation. The means of such characters should also continue to diverge as isolated populations become fixed for unique mutations, a subject that will be dealt with in detail in Chapter 12. We also explore the within-population drift-mutation variance in more detail in Chapter 28, as part of a larger discussion on what forces account for the observed levels of quantitative-genetic variation."
+    },
+    {
+      "type": "derivation",
+      "content": "Consider a character with a purely additive genetic basis in a population with a constant effective size. In each generation, a fraction $ 1/(2N_e) $ of the genetic variation is lost by drift, while new variation in the amount $ \\sigma_m^2 $ is introduced by mutation. In mechanistic terms, $ \\sigma_m^2 $ is defined as $ 2 \\sum_{i=1}^n \\mu_i E(a_i^2) $, where $ \\mu_i $ denotes the per-locus mutation rate for gene $ i $, $ n $ denotes the number of loci contributing to the trait, and $ E(a_i^2) $ is the average squared heterozygous effect of a new mutation on the phenotypic value (LW Chapter 12). This leads to the simple recursion equation, [[SEE_FORMULA:11.20a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "(Clayton and Robertson 1955), which has the approximate solution [[SEE_FORMULA:11.20b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Thus, the equilibrium (obtained as $ t \\to \\infty $) genetic variance for a neutral quantitative trait with an additive genetic basis is simply [[SEE_FORMULA:11.20c]]"
     },
     {
       "type": "discussion",
-      "content": "The few other attempts to estimate quadratic components involving inbreeding have yielded mixed results. For example, starting with 300 inbred lines of the monkeyflower (Mimulus guttatus), Kelly and Arathi (2003) crossed triplets of lines to create outbred full-sib and half-sib families, allowing a joint analysis of $ _A^2 $, $ _D^2 $, $ _ DI ^2 $, and $ _ ADI ^2 $ for six floral traits. Although each character exhibited significant inbreeding depression, and $ _D^2 $ was significant for two traits and $ _ DI ^2 $ was significant for six traits, $ _ ADI ^2 $ was significant in only one case. In a study of another flowering plant, Nemophila menziesii, >1000 plants with $ f $ up to 0.75 were"
+      "content": "(Lande 1976; Chakraborty and Nei 1982; Lynch and Hill 1986). Starting from a completely homozygous base population, the times to 50% and 95% of the equilibrium variance are approximately $ 1.4N_e $ and $ 6.0N_e $ generations, respectively (Lynch and Hill 1986). Note that this time to converge to the equilibrium is independent of the mutational variance, $ \\sigma_m^2 $. Because $ \\sigma_A^2(0) $ will typically be greater than zero, small isolated populations can be expected to reach the equilibrium quite rapidly. On the other hand, if a population is suddenly reduced to an unusually small $ N_e $, such that $ \\sigma_A^2(0) \\gg 2N_e\\sigma_m^2 $, for the several generations immediately following the bottleneck, $ \\sigma_A^2(t) \\simeq \\sigma_A^2(0)e^{-t/2N_e} $, justifying the use of Equation 11.2 for the short term."
+    },
+    {
+      "type": "derivation",
+      "content": "If we let $ h_m^2 = \\sigma_m^2 / \\sigma_E^2 $, where $ \\sigma_E^2 $ is the environmental variance of the trait, be the mutational heritability and again assuming additivity of genetic effects, the expected equilibrium heritability for a neutral character under the model given by Equation 11.20b is [[SEE_FORMULA:11.21a]]"
     },
     {
       "type": "discussion",
-      "content": "[[TABLE:11.8]] best describe the overall set of observed covariances. Except for yield, all of the characters exhibit significant additive genetic variance, and four of the six traits exhibit significant squared inbreeding effects, $ ^ * $. However, nearly all of the estimates for $ _ DI ^ 2 $, $ _ ADI ^ 2 $ are nonsignificant. In part, this is clearly a power issue, as the significant inbreeding depression implies the presence of dominance. evaluated in a common garden for two morphological and two floral traits (Shaw et al. 1998). A REML analysis revealed significant inbreeding depression for all traits, but $ _ DI ^ 2 $ was significant only for the floral traits, and $ _ ADI $ was uniformly nonsignificant."
+      "content": "Almost all estimates of $ h_m^2 $ are in the range of 0.01 to 0.0001 with a median value near 0.001 (LW Chapter 12). Thus, populations with $ N_e \\simeq 100 $ are expected to have small to moderate levels of heritability for neutral characters, but nearly all of the phenotypic variation for neutral characters is expected to have a genetic basis if $ N_e > 10^4 $ (Figure 11.7)."
     },
     {
       "type": "discussion",
-      "content": "Approaches based entirely on pedigree data (as opposed to defined crossed populations) have been much less successful. Hoeschele and Vollema (1993) obtained inconsistent estimates of the inbreeding quadratic terms for milk and fat yield in Holsteins, using leastsquares on subsets of the data. Shaw and Woolliams (1999) used REML to study a pedigree of 2000 sheep with variable inbreeding up to a high of f=0.6, but found no evidence for significant $ \\sigma_{DI}^{2} $ or $ \\sigma_{ADI} $ for body weight or fleece quality, despite the presence of significant inbreeding depression for both. The application of REML to humans by Abney et al. (2000) found no significant inbreeding quadratic components for a cholesterol measure (HDL) in a population of Hutterites, but this may have been a consequence of lack of power. [[SEE_TABLE:11.7]] makes the key point that the effective numbers of individuals in these relationship classes needed to estimate $ \\sigma_{DI}^{2},\\sigma_{ADI}, $ and $ \\iota^{*} $ are expected to be small in most pedigrees, even those that are rather inbred. By contrast, a controlled crossing design can generate large numbers of the appropriate sets of relatives."
+      "content": "[h]"
     },
     {
       "type": "discussion",
-      "content": "Kelly (1999c) suggested a selection-based approach to estimate the ratio of $ \\sigma_{ADI} / \\sigma_{A}^{2} $ as a test for rare recessives. His motivation can be seen in the figure for Example 11.1, where $ \\sigma_{ADI} / \\sigma_{A}^{2} > 1 $ for a rare recessive (allele frequency, p, is small), while for intermediate allele frequencies, this ratio is close to zero, or even negative. Kelly's idea (examined more fully in Chapter 28) is to compare the change in mean, $ \\Delta M $ , and the change in the inbreeding depression coefficient, $ \\Delta B $ , following selection, as he noted that $ \\Delta B / \\Delta M $ tracks $ \\sigma_{ADI} / \\sigma_{A}^{2} $ Significant, and negative, estimates of this ratio were seen following artificial selection experiments on flower size in Mimulis guttatus (Kelly and Willis 2001), and in female fecundity in Drosophila melanogaster (Charlesworth et al. 2007), suggesting significant, and negative, estimates of $ \\sigma_{ADI} $ , as well as the presence of recessive alleles at intermediate frequencies in these traits."
+      "content": "[h]"
     },
     {
-      "type": "discussion",
-      "content": "Although these limited surveys do not rule out important contributions from quadratic inbreeding components in some cases, combined with the observations on the dynamics of genetic variance described above, they do raise questions about the general necessity of incorporating such complexities into expressions for genetic variances and covariances. Again, this is not to deny an important role for dominance and epistasis in the expression of complex traits, for which the evidence is substantial (Wolf et al. 1980; Lynch and Walsh 1998). However, despite arguments to the contrary (Templeton 1980; Nelsen et al. 2013), there is little compelling evidence that we need to abandon the existing theoretical framework for quantitative-trait evolution, even in the presence of substantial physiological epistasis. Although substantial progress has been made in incorporating the complexities of nonadditive gene action into the theory of quantitative traits in finite populations, the limited empirical evidence to date implies a second-order nature of such effects."
+      "type": "derivation",
+      "content": "It is informative to note the similarity of Equation 11.21a with the expected heterozygosity for sites in drift-mutation equilibrium [[SEE_FORMULA:11.21b]] where $ \\mu_0 $ is the per nucleotide mutation rate (derived in Chapter 2). A comparison of these two expressions shows that because $ \\mu_0 $ is on the order of $ 10^{-9} $ to $ 10^{-8} $ (Chapter 4) while $ h_m^2 \\simeq 10^{-3} $, substantial heritability can exist for quantitative traits in populations with low or undetectable levels of molecular heterozygosity."
     }
   ]
 }

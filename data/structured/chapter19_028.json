@@ -4,52 +4,37 @@
     "chapter": "chapter19",
     "section": "Chapter 19: Bayesian Analysis of the Animal Model",
     "subsections": [
-      "Application: Estimating Selection Response in Pig Litter-size Components"
+      "1. Set initial values for a, $ \\beta $, $ \\sigma_{A}^{2} $, and $ \\sigma_{e}^{2} $."
     ],
     "source_file": "tmp\\paddle_output\\chapter19_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [],
-    "table_references": [
-      "19.1",
-      "inline_2"
-    ],
-    "table_reference_keys": [
-      "chapter19:19.1",
-      "chapter19:inline_2"
-    ]
+    "table_references": []
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Blasco et al. (1998) used the method of Sorensen et al. (1994) to estimate the response to selection on ovulation rate and prenatal survival in French Large White pigs. Three lines were followed, with single lines selected separately on each trait (ovulation rate and survival) and a control line. The relevant selection and control lines were jointly analyzed to estimate the selection response. Ovulation rate was examined using the standard animal model. $$ \\mathbf{y}\\left|\\boldsymbol{\\beta},\\mathbf{a},\\sigma_{e}^{2}\\sim\\mathrm{MVN}(\\mathbf{X}\\boldsymbol{\\beta}+\\mathbf{Z}\\mathbf{a},\\mathbf{I}\\sigma_{e}^{2})\\right.\\quad\\mathrm{a n d}\\quad\\mathbf{a}\\left|\\mathbf{A},\\sigma_{A}^{2}\\sim\\mathrm{MVN}(\\mathbf{0},\\mathbf{A}\\sigma_{A}^{2})\\right. $$"
+      "content": "2. Using the current values of a, $ \\beta $, $ \\sigma_{A}^{2} $, and $ \\sigma_{e}^{2} $ and the conditional distributions (see Sorensen et al. 1994 for exact expressions): (i) Update the fixed effects by sequentially drawing (for $ j = 1, \\cdots, q $) from the conditionals (which are univariate normals) $$ \\beta_{j,i}\\sim p(\\beta_{j}\\mid\\beta_{1,i},\\cdot,\\beta_{j-1,i},\\beta_{j+1,i-1},\\cdot,\\beta_{q,i-1},\\mathbf{a}_{i-1},\\sigma_{A,i-1}^{2},\\sigma_{e,i-1}^{2}) $$ where $ \\beta_{j,i} $ is the value of $ \\beta_j $ during the $ i $th iteration of the sample. The current values of these parameters define the mean and variance for a normal, from which a random value is drawn. For factor $ j $, we take the values for a and the variances from the last iteration $ (i-1) $, the values of $ \\beta_1 $ to $ \\beta_{j-1} $ from the current iteration $ (i) $, and the values of $ \\beta_{j+1} $ to $ \\beta_q $ from the last iteration $ (i-1) $. These values are inserted to give the parameters (here, the conditional mean and variance) for the univariate normal that corresponds to the conditional distribution for $ \\beta_j $ and a random variable is drawn from this distribution to yield $ \\beta_{j,i} $."
     },
     {
       "type": "discussion",
-      "content": "Prenatal survival (as a function of the mother) was examined using the repeatability model, where c is the permanent environmental effect of a mother over multiple litters $$ \\mathbf{y}\\left|\\beta,\\mathbf{a},\\mathbf{c},\\sigma_{e}^{2}\\right.\\sim\\mathrm{M V N}(\\mathbf{X}\\beta+\\mathbf{Z}\\mathbf{a}+\\mathbf{W}\\mathbf{c},\\mathbf{I}\\sigma_{e}^{2}) $$ $$ \\mathbf{a}\\mid\\mathbf{A},\\sigma_{A}^{2}\\sim\\mathrm{M V N}(\\mathbf{0},\\mathbf{A}\\sigma_{A}^{2})\\quad\\mathrm{a n d}\\quad\\mathbf{c}\\mid\\sigma_{c}^{2}\\sim\\mathrm{M V N}(\\mathbf{0},\\mathbf{I}\\sigma_{c}^{2}) $$"
+      "content": "(ii) Update the breeding values by sequentially drawing (for $ i = 1, \\cdots, p $) from the conditionals (again univariate normals), where the vector, $ \\beta $, of fixed effects is taken as the updated version $$ a_{j,i}\\sim p(a_{j}\\mid\\beta_{i},a_{1,i},\\cdots,a_{j-1,i},a_{j+1,i-1},\\cdots,a_{p,i-1},\\sigma_{A,i-1}^{2},\\sigma_{e,i-1}^{2}) $$"
     },
     {
       "type": "discussion",
-      "content": "Among the fixed effects in $ \\beta $ are terms for the parity of the mother (first litter, second litter, and so on). The marginal posterior distribution for breeding values (and hence, recalling Equation 19.8b, for the response via $ \\mathbf{K}^{T}\\mathbf{a} $ ) was obtained by using the Gibbs-sampler approach of Sorensen et al. (1994) outlined previously. For each trait, two independent chains"
+      "content": "(iii) Update the additive variance by drawing from the conditional (a scaled inverse- $ \\chi^{2} $ distribution) $$ \\sigma_{A,i}^{2}\\sim p(\\sigma_{A}^{2}\\mid\\boldsymbol{\\beta}_{i},\\mathbf{a}_{i},\\sigma_{e,i-1}^{2}) $$"
     },
     {
       "type": "discussion",
-      "content": "[h]"
+      "content": "(iv) Update the error variance by drawing from the conditional (again, a scaled inverse- $ \\chi^{2} $ distribution) $$ \\sigma_{e,i}^{2}\\sim p(\\sigma_{e}^{2}\\mid\\boldsymbol{\\beta}_{i},\\mathbf{a}_{i},\\sigma_{A,i}^{2}) $$"
     },
     {
       "type": "discussion",
-      "content": "of length 100,000 were computed, with the first 10,000 samples discarded (to remove burn-in effects) and sampling at every 30 iterations thereafter, which generated a trimmed sampler of length 3000. The authors obtained these burn-in and resampling values after several initial runs, using the diagnostics suggested by Raftery and Lewis (1992a) for level of precision and Geyer (1992) for autocorrelation between samples. A uniform prior was taken for the fixed effects, while different priors were used for the variances (discussed below)."
+      "content": "3. Using the updated values, repeat (2) until k samples have been obtained, from which m are extracted (following the burn-in and trimming) for the Gibbs-sampler chain."
     },
     {
       "type": "discussion",
-      "content": "We will consider the results for ovulation rate at puberty first. Figure 19.3 shows the three priors assumed for the additive variance in this trait. The phenotypic variance of this trait is 6.25, which sets an upper limit on $ \\sigma_{A}^{2} $ . Prior 1 is a uniform distribution that weights all values in the parameter space equally. Priors 2 and 3 (which are scaled inverse- $ \\chi^{2} $"
-    },
-    {
-      "type": "discussion",
-      "content": "[[TABLE:19.1]] shows the estimated cumulative response after each of the four generations of selection, in comparison with the least-squares (differences between generation means) and mixed-model (REML/BLUP) estimates. Note that the three different priors give very consistent estimates of response, implying that the data contained sufficient information to overpower most of the signal coming from the assumed prior. The Bayesian and MM analyses yielded very similar results, while LS analysis yields a substantially different estimates of response. distributions) reflect additional information. Published heritabilities for this trait in pigs and rabbits range from 0.1 to 0.6, and prior 2 assumes a broad distribution around the approximate median value ($ _A^2 = 0.4 6.25 = 2.5 $). A study specifically in French Large Whites gave an estimate of $ h^2 = 0.11 0.02 $, and the tight distribution around this value is reflected in prior 3. Blasco et al. obtained Monte Carlo estimates of the (base population) heritability under these three priors of $ h^2 = 0.39 0.07 $, $ 0.39 0.06 $, and $ 0.32 0.06 $. [[SEE_TABLE:19.1]] shows the estimated cumulative response after each of the four generations of selection, in comparison with the least-squares (differences between generation means) and mixed-model (REML/BLUP) estimates. Note that the three different priors give very consistent estimates of response, implying that the data contained sufficient information to overpower most of the signal coming from the assumed prior. The Bayesian and MM analyses yielded very similar results, while LS analysis yields a substantially different estimates of response."
-    },
-    {
-      "type": "discussion",
-      "content": "While the results for ovulation rate were consistent across the three priors and with the MM analysis, those for prenatal survival were more problematic ([[SEE_TABLE:19.1]]). Figure 19.4 shows the assumed different priors. In this case, as with ovulation rate, prior 1 is uninformative, weighting all potential additive variances equally. Prior 2 (as with prior 2 for ovulation rate) assumed a broad distribution around the mean heritability ($ h^2 0.2 $) of this trait in a number of studies, while prior 3 used the estimate of $ h^2 = 0.03 0.03 $ found using French Large Whites. The three priors returned Monte Carlo estimates of heritability (and its standard deviation) of $ h^2 = 0.12 0.06 $, $ 0.16 0.04 $, and $ 0.11 0.04 $. Likewise, these priors give Monte Carlo estimates of the repeatability (r) of $ 0.23 0.05 $, $ 0.23 0.04 $, and $ 0.19 0.04 $. As [[SEE_TABLE:19.1]] shows, the standard deviations for the Monte Carlo estimates of mean response were very large, but the three priors and the MM analysis gave consistent results, while the LS results were quite different. Clearly, the information on prenatal survival in the experiment was modest, as the posterior is significantly influenced by the prior. Additional early examples of Bayesian analysis of selection experiments involved lean growth in pigs (Rodriguez et al. 1996) and body weight in chickens (Su et al. 1997)."
+      "content": "This Bayesian analysis makes most of the standard animal-model assumptions, in particular that the infinitesimal model and multivariate normality, hold (as with an MM analysis, a Bayesian approach is potentially biased by selection-induced changes in allele frequencies). A Bayesian analysis has all the advantages of an MM analysis (over an LS analysis) and, in addition, the posterior marginals correctly give the distribution of any parameter of interest, independent of the values assumed for other parameters. Any uncertainty introduced by estimating these additional parameters is fully captured by the marginal posteriors. The Bayesian approach yields the correct distribution (assuming that the model assumptions hold and the prior is reasonable) for the estimated selection response, independent of the additive genetic variance. By contrast, an MM analysis is highly dependent on the assumed (or estimated) additive variance, and the standard error of a REML/BLUP estimate for the response (Equation 19.8c) does not account for the additional uncertainty introduced by using a REML estimate of $ \\sigma_A^2 $. One standard package for Bayesian analysis is Winbugs, and Damgaard (2007) outlined how to apply this software to animal models."
     }
   ]
 }

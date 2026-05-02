@@ -2,49 +2,86 @@
   "id": "chapter9_035",
   "metadata": {
     "chapter": "chapter9",
-    "section": "Chapter 9: Tajima's D Test",
+    "section": "Chapter 9: Summary Statistics Based on Infinite-sites Models",
     "subsections": [
-      "Tajima's D Test"
+      "Summary Statistics Based on Infinite-sites Models"
     ],
     "source_file": "tmp\\paddle_output\\chapter9_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [
-      "9.24a",
-      "9.24b",
-      "9.24c",
-      "9.25a",
-      "9.25b"
+      "9.21a",
+      "9.21b",
+      "9.21c",
+      "9.22a",
+      "9.22b",
+      "9.23a",
+      "9.23b",
+      "9.23c",
+      "9.23d"
     ],
-    "table_references": []
+    "table_references": [
+      "9.1"
+    ],
+    "table_reference_keys": [
+      "chapter9:9.1"
+    ]
   },
   "blocks": [
     {
+      "type": "discussion",
+      "content": "As introduced in Chapter 4, a variety of summary statistics can be used to estimate $ \\theta = 4N\\epsilon\\mu $ under the infinite-sites model. For a sample of $ L $ sites (generally nucleotides), suppose that there are $ S $ segregating sites, with $ \\eta_1 $ and $ \\zeta_1 $ sites harboring (folded and unfolded, respectively) singletons, and $ \\Pi $ denoting the average number of pairwise differences between two random sequences. If our goal is to estimate $ \\theta $ on a per-nucleotide basis, so that $ \\mu $ is the per-nucleotide mutation rate, then (as in Chapter 4), we would"
+    },
+    {
+      "type": "discussion",
+      "content": "[[TABLE:9.1]] summarizes the various site-frequency test statistics discussed here, all of which have the form consider the fraction of segregating sites as S/L; the nucleotide diversity as $ \\pi = \\Pi/L $; and the fraction of sites that are singletons as $ S_1/L $. When searching for genomic regions under selection, our goal shifts to $ \\theta_L = 4N_e\\mu_L $, the corresponding value for the region, where $ \\mu_L = L\\mu $ is the total mutation rate over the L sites. Because the focus in this section is on specific regions, in an effort to keep the notation simple, we suppress the subscript and use $ \\theta $ and $ \\mu $ to denote the region-side values ($ \\theta_L $, $ \\mu_L $)."
+    },
+    {
       "type": "derivation",
-      "content": "The first proposed, and most widely used, site-frequency spectrum test is Tajima's D (1989), which contrasts $ $ estimates based on the number of segregating sites (S) and average pairwise difference (II), [[SEE_FORMULA:9.24a]] where [[SEE_FORMULA:9.24b]] [[SEE_FORMULA:9.24c]] with $ a_ n $ and $ b_ n $ as above (Equations 4.3b and 4.4b). Being based on S and $ $, this test does not require unfolded data. Tajima's motivation was that $ _ S $ and $ _ $ measure different features of the frequency spectrum. The number of segregating sites, S (and thus $ _ S $), counts polymorphic sites independent of their frequencies, making it more sensitive to changes in the frequencies of rare alleles (as small changes can cause sites segregating rare alleles to either enter or drop out of the sample). Conversely, the average pairwise difference, $ $ (and thus $ _ $), is a frequency-weighted measure and more sensitive to changes in intermediate-frequency alleles. A negative value of D indicates that there are too many low-frequency sites, while a positive value of D indicates that there are too many intermediate-frequency sites. Expressed another way, D is a test for whether the amount of heterozygosity per site is consistent with the number of polymorphic sites expected under the equilibrium neutral model. Under selective sweeps (and population expansion), heterozygosity should be significantly less than is predicted from the number of polymorphisms. As with all site-frequency spectrum tests, the distribution of D critically depends on adherence to the neutral equilibrium assumptions."
+      "content": "While S and II have the same values for polarized and unpolarized data, the number of singletons can be slightly different. All of these summary statistics yield estimates of $ \\theta $ for a region of interest, with [[SEE_FORMULA:9.21a]] where $ a_n = \\sum_{j=1}^{n-1} 1/j $ (Equation 4.3b). These four expressions correspond (respectively) to: the Watterson estimator (Equation 4.3a, which is also commonly denoted by $ \\theta_W $); Tajima's estimator (Equation 4.1); our previous singleton estimator, $ \\widehat{\\theta}_1 $, using unfolded data (Equation 4.6a); and the corresponding singleton estimator, $ \\widehat{\\theta}_1^* $, using folded data. The sampling variances for these estimates are given by Equations 4.4a ($ \\hat{\\theta}_S $), 4.2 ($ \\hat{\\theta}_{II} $), and 4.6b ($ \\hat{\\theta}_1 $). These expressions for the variance are functions of both $ \\theta $ and $ \\theta^2 $, and are typically (e.g., Tajima 1989) computed by replacing [[SEE_FORMULA:9.21b]] where $ b_n = \\sum_{j=1}^{n-1} 1/j^2 $ (Equation 4.4b)."
     },
     {
       "type": "derivation",
-      "content": "Tajima obtained upper $ (D_ max) $ and lower $ (D_ min) $ bounds on $ D $, so that $$ (D-D_{min})/(D_{max}-D_{min}) $$ lies in the range $ (0, 1) $. Under the equilibrium neutral assumption, Tajima showed that D is well approximated on this modified scale by a Beta distribution (Equation A2.38a), with distribution parameters [[SEE_FORMULA:9.25a]]"
+      "content": "The idea behind site-frequency tests of neutrality is to compare two different estimates of $ \\theta $ based on information from different regions of the site-frequency spectrum. When the infinite-sites model holds and the population is at mutation-drift equilibrium, these estimates should be within the sampling error of each other, while they can be significantly different when the neutral equilibrium model does not hold. [[SEE_TABLE:9.1]] summarizes the various site-frequency test statistics discussed here, all of which have the form [[SEE_FORMULA:9.21c]]"
+    },
+    {
+      "type": "discussion",
+      "content": "When applying any of these tests, care must be taken to avoid SNP ascertainment bias. If the process by which SNPs are chosen is biased by their frequency (SNP discovery panels are generally biased in favor of intermediate-frequency sites), this results in a biased estimate of the frequency spectrum, potentially compromising the tests. Likewise, when tests are based on the unfolded SFS, errors introduced by incorrect polarity assignment (incorrectly assigning a derived allele ancestral status, and vice versa) can be very serious (Baudry and Depaulis 2003; Hernandez et al. 2007). Finally, sequencing errors result in an increase in singletons, which can bias tests away from neutrality (Achaz 2008; Johnson and Slatkin 2008), although maximum-likelihood approaches exist that deal with sequencing errors when estimating SNP frequencies (Lynch 2009a; Maruki and Lynch 2013)."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 9.10. Suppose we sample ten alleles from a population and observe a total of 12 segregating sites (S = 12), an average of four differences between alleles (II = 4), and three segregating sites that have only a single copy of the minor allele ($ \\eta_1 = 3 $). What are the estimates of $ \\theta $ based on these three summary statistics? Using Equations 9.21a yields $$ \\widehat{\\theta}_{S}=\\frac{S}{a_{10}},\\mathrm{w i t h}a_{10}=\\sum_{i=1}^{9}\\frac{1}{i}=2.83\\mathrm{y i e l d i n g}\\widehat{\\theta}_{S}=\\frac{12}{2.83}=4.24 $$ $$ \\widehat{\\theta}_{\\Pi}=\\Pi=4\\qquad\\widehat{\\theta}_{1^{*}}=\\frac{n}{n-1}\\eta_{1}=\\frac{10}{9}\\cdot3=3.33 $$"
     },
     {
       "type": "derivation",
-      "content": "Innan and Stephan (2000) and Živković and Wiehe (2008) showed that the distribution of $D$ in a population of changing size is significantly different from this equilibrium neutral result. Because the minimal value of $D$ varies with the number of segregating sites, $S$, Schaeffer (2002) proposed a standardized $D' = D/D_ min $ to adjust for this, allowing for more fair comparisons of $D$ across loci. The minimum value of $ $ given $S$ was obtained by Tajima (1989) as [[SEE_FORMULA:9.25b]]"
+      "content": "Example 9.11. As we now illustrate, all of the tests summarized in [[SEE_TABLE:9.1]] follow from a general family of estimators of $ \\theta $ based on the discrete Watterson distribution (Equation 2.35). For a sample of n sequences with L sites, the expected number of segregating sites with i copies of the derived (unfolded, $ \\zeta_i $) or of the minor (folded, $ \\eta_i $) allele are [[SEE_FORMULA:9.22a]] where $ \\theta = 4N_{e}\\mu $ is the scaled mutation rate for the entire region."
+    },
+    {
+      "type": "derivation",
+      "content": "Hence, a method-of-moments estimator for $ \\theta $ using only the number in the $ i $th class from either SFS is simply [[SEE_FORMULA:9.22b]]"
     },
     {
       "type": "discussion",
-      "content": "$ D_{min} $ is computed from Equation 9.24a, with $ \\Pi_{min} $ replacing $ \\widehat{\\theta}_{\\Pi}. $"
+      "content": "Nawa and Tajima (2008) suggested that a plot of $ \\theta_i $ versus $ i $ can be helpful for visualizing departures from the neutral SFS, although values for large $ i $ may be more problematic as the variance of $ \\widehat{\\theta}_i $ dramatically increases with $ i $."
+    },
+    {
+      "type": "derivation",
+      "content": "Following Zeng et al. (2006), consider any summary statistic, g, of the unfolded site-frequency spectrum of the form [[SEE_FORMULA:9.23a]] From Equation 9.22a [[SEE_FORMULA:9.23b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Thus, a family of estimators for $\\theta$ based on an arbitrary vector $(c_{1},\\cdots,c_{n-1})$ of weights is given by [[SEE_FORMULA:9.23c]] where $ h(n) $ is a function of the sample size n and the chosen weights $ c_{i} $, and g is the observed value of the statistic."
     },
     {
       "type": "discussion",
-      "content": "Example 9.12. Two interesting applications of the D test were offered by Tajima (1989). First, he considered Aquadro and Greenberg's (1983) data for 900 base pairs in the mitochondrial DNA of seven humans. They observed 45 segregating sites and an average number of nucleotide differences between all pairs of 15.38. Hence, $$ a_{7}=\\sum_{i=1}^{6}\\frac{1}{i}=2.45,\\qquad b_{7}=\\sum_{i=1}^{6}\\frac{1}{i^{2}}=1.49 $$ $$ \\widehat{\\theta}_{S}=\\frac{S}{a_{n}}=\\frac{45}{2.45}=18.38,\\qquad\\widehat{\\theta}_{\\Pi}=\\Pi=15.38 $$ $$ \\beta_{D}=\\frac{1}{2.45^{2}+1.49}\\left(\\frac{2(7^{2}+7+3)}{9\\cdot7(7-1)}-\\frac{7+2}{7\\cdot2.45}+\\frac{1.49}{2.45^{2}}\\right)=0.00475 $$ $$ \\alpha_{D}=\\frac{1}{2.45}\\left(\\frac{7+1}{3(7-1)}-\\frac{1}{2.45}\\right)-0.00475=0.01005 $$ $$ D=\\frac{\\widehat{\\theta}_{\\Pi}-\\widehat{\\theta}_{S}}{\\sqrt{\\alpha_{D}S+\\beta_{D}S^{2}}}=\\frac{15.38-18.38}{\\sqrt{0.01005\\cdot45+0.00475\\cdot45^{2}}}=-0.945 $$"
+      "content": "The choice of weights allows one to tailor statistics to use different parts of the frequency spectrum when estimating $ \\theta $. Taking $ c_i = 1 $ yields $ g = S $ and $ h(n) = a_n $, recovering the Watterson estimator, $ \\widehat{\\theta}_S = S/a_n $. Taking $ c_i = i(n - i) $ $$ h(n)=\\sum_{i=1}^{n-1}i(n-i)/i=n(n-1)/2 $$ yielding $$ \\widehat{\\theta}=\\sum_{i=1}^{n-1}\\frac{2i(n-i)}{n(n-1)} $$ which is simply the average pairwise difference, II. As with S, II is symmetric with respect to i and n - i, so that both folded and unfolded data return the same estimate. Taking $ c_1 = 1 $, $ c_i > 1 = 0 $ yields $ g = \\zeta_1 $ (the number of derived singletons) and $ h(n) = 1 $, recovering the $ \\widehat{\\theta}_1 $ estimator."
+    },
+    {
+      "type": "derivation",
+      "content": "Similarly, for a folded frequency spectrum, [[SEE_FORMULA:9.23d]]"
     },
     {
       "type": "discussion",
-      "content": "Table 2 of Tajima (1989) gives the 95"
-    },
-    {
-      "type": "discussion",
-      "content": "Tajima also applied his test to the data of Miyashita and Langley (1988), who examined 64 samples of a 45-kb region of the white locus in D. melanogaster. Taking large insertions and deletions as the polymorphic sites, they found S = 15 and $ = 0.94 $, which yields a value of D = -2.0709. Given that the 95"
+      "content": "Consider the estimator using only folded singletons, $ \\eta_1 $. Here, $ c_1 = 1 $, $ c_i = 0 $ for $ i > 1 $, and hence $ f(n) = n/(n-1) $, giving $ \\eta_1(n-1)/n $ as an estimator of $ \\theta $, which recovers $ \\widehat{\\theta}_{1^*} $. Achaz (2009) provided general expressions for the variance of any estimator of the form given by Equations 9.23c or 9.23d, providing all of the machinery to develop general tests in the form of Equation 9.21c using any feature of interest in the SFS."
     }
   ]
 }

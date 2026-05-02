@@ -4,46 +4,60 @@
     "chapter": "chapter17",
     "section": "Chapter 17: The Additive Model",
     "subsections": [
-      "The Additive Model"
+      "The Heritability of the Environmental Variance, $ h_{v}^{2} $"
     ],
     "source_file": "tmp\\paddle_output\\chapter17_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [
-      "17.6a",
-      "17.6b",
-      "17.6c"
+      "17.5a",
+      "17.5b",
+      "17.5c"
     ],
     "table_references": [
-      "17.1"
+      "17.1",
+      "17.2"
     ],
     "table_reference_keys": [
-      "chapter17:17.1"
+      "chapter17:17.1",
+      "chapter17:17.2"
     ]
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Translating the Response in $ A_ v $ Into Response in $ _ E ^ 2 $ A number of authors have modeled the selection response of the phenotypic variance (from either direct or indirect selection on the variance) when there are heritable differences in environmental sensitivity (Gavrilets and Hastings 1994c; Wagner et al. 1997; SanCristobal-Gaudy et al. 1998, 2001; Sorensen and Waagepetersen 2003; Hill and Zhang 2004; Ros et al. 2004; Mulder et al. 2007, 2008). A critical step in modeling this selection response is treating the phenotypic value and residual variance as two separate (and potentially correlated) traits, both with heritable (i.e., additive-genetic) variation. While some models (Gavrilets and Hastings 1994c; Wagner et al. 1997; Hill and Zhang 2004) are based on strict population-genetic analysis (following the change in individual allele frequencies), most are based on schemes that assign breeding values to the heritable component of $ _ E ^ 2 $ ([[SEE_TABLE:17.1]]). Under the infinitesimal model, the expected breeding value in the offspring (for either $ A_ m $ or $ A_ v $) is simply the mean breeding values of its parents (Chapter 13). Using the expressions given in [[SEE_TABLE:17.1]] allows us to map changes in $ _ A_ v $, the mean breeding value for environmental sensitivity, onto changes in $ _ E ^ 2 $."
+      "content": "Estimates of $ \\sigma^{2}(A_{v}) $ under any of the models for $ \\sigma_{E}^{2} $ reviewed in [[SEE_TABLE:17.1]] are obtained using fairly complicated likelihood functions on data from sets of relatives; see SanCristobal-Gaudy et al. (1998, 2001), Sorensen and Waagepetersen (2003), Ros et al. (2004), or any of the other references in [[SEE_TABLE:17.2]] for details. [[SEE_TABLE:17.2]] presents these estimates scaled as heritabilities and evolvabilities (Equation 13.22b) to facilitate comparison over traits, which raises the issue how the heritability of the environmental variance is defined."
+    },
+    {
+      "type": "definition",
+      "content": "Mulder et al. (2007) suggested that one definition is as the slope of the regression of the breeding value, $ A_{v} $, of an individual on some appropriate function of the phenotype value, z. Under the additive-model framework (Equation 17.4a), they show that the appropriate transformation is the square, $ z^{2} $, of phenotypic value. To see this, recall from Equation 17.4a that under this model $$ z=\\mu+A_{m}+E=\\mu+A_{m}+U\\sqrt{A_{v}+\\sigma_{e}^{2}} $$"
     },
     {
       "type": "derivation",
-      "content": "The simplest case is the additive model (Equation 17.4b). Suppose we let the selection response, $ R_ A_v $, denote the change in the mean breeding value (for the environmental variance) of the selected parents from the mean breeding value of the entire population. The resulting change in $ _E^2 $ becomes [[SEE_FORMULA:17.6a]]"
+      "content": "If we assume that $ A_m $ and $ A_v $ are uncorrelated and recall for a unit normal random variable, $ U $, that $ \\mathrm{E}(U^2) = 1 $ (as $ U^2 $ is a $ \\chi_1^2 $ random variable, which has a mean of 1; LW Equation A5.15b), then [[SEE_FORMULA:17.5a]] From regression theory (LW Chapter 3), the slope of the regression of $ A_{v} $ on $ z^{2} $ is simply this covariance divided by the variance of the predictor variable [[SEE_FORMULA:17.5b]]"
     },
     {
       "type": "derivation",
-      "content": "The response is a bit more complex under the multiplicative and exponential models, as the mean population value, $ _ E ^ 2 $, for the environmental variance is a nonlinear function of both the mean and the variance of $ A_ v $ ([[SEE_TABLE:17.1]]). For the multiplicative model $$ \\sigma_{E}^{2}=\\left[\\mu_{A_{v}}^{2}+\\sigma^{2}(A_{v})\\right]\\sigma_{e}^{2} $$ Because the mean breeding value in generation $ t+1 $ can be expressed as the previous mean plus the response, $ _ A_v (t+1) = _ A_v (t) + R_ A_v (t) $, if we assume that there is no change in the additive variance of environmental sensitivities following selection ($ ^2(A_v) = 0 $), we have [[SEE_FORMULA:17.6b]]"
+      "content": "If $z$ is normally distributed, then $\\sigma^{2}(z^{2}) = 2\\sigma_{z}^{4} + 3\\sigma^{2}(A_{v})$ (see Mulder et al. 2007 for details), yielding a heritability of [[SEE_FORMULA:17.5c]]"
     },
     {
       "type": "discussion",
-      "content": "Change in $ \\sigma^{2} ( A_{v} ) $ due to selection-generated linkage disequilibrium can be similarly accounted for by using Equation 16.8b."
-    },
-    {
-      "type": "derivation",
-      "content": "Under the exponential model and again assuming that there is no change in $ _ A_ v ^ 2 $, Equation 17.3d implies that [[SEE_FORMULA:17.6c]]"
+      "content": "Hence, estimates of $ h_v^2 $ are obtained by substituting an estimate of $ \\sigma^2(A_v) $—which can be estimated within a likelihood framework (see the previously mentioned references)—along with the value of $ \\sigma_z^4 $, into Equation 17.5c."
     },
     {
       "type": "discussion",
-      "content": "These expressions translate a response, $ R_{A_{v}} $ , in the mean breeding value for the environmental variance into the expected change in $ \\sigma_{E}^{2} $ for the different transmission models reviewed in [[SEE_TABLE:17.1]]. We now consider two different settings by which such a response can occur: as a consequence of direct selection on phenotypic value, z, and as the result of direct selection on $ \\sigma_{E}^{2} $ itself. A third possibility—a correlated response in $ A_{v} $ (i.e., in the environmental variance of the trait) due to direct selection on $ A_{m} $ (i.e., the value z of the trait itself) when $ \\rho(A_{v}, A_{m})\\neq0 $ is examined in Volume 3."
+      "content": "[[TABLE:17.2]] reviews estimated $ h_v^2 $ values from a number of studies. Note from this table that values of $ h_v^2 $ are low (typically less than 0.05), while the evolvabilities, i.e., $ \\sigma(A_v)/\\sigma_E^2 $, the coefficient of variation of the environmental variance (Equation 13.22b), are large. Although the selection response may be slow (given the low heritability), there is much variation to exploit, as a high evolvability implies that significant proportional change in the trait value can be achieved (Chapter 13). Recall from Equation 13.22b that the expected response, scaled in terms of the mean value, can be expressed as where we have used the average values for $ h_v^2 $ and $ CV_{A_v} $ from [[SEE_TABLE:17.2]]. Recalling that $ \\bar{\\tau} \\simeq 2 $ when we save the upper 5% of the population (Example 14.1), the expected scaled response per generation is 0.16 in this setting, implying that slightly more than six generations are required to double the mean value of the variance under this strength of selection."
+    },
+    {
+      "type": "discussion",
+      "content": "The table also shows that some caution is in order when using these likelihood-based estimates, which can be very model-specific. In particular, the fragility of these estimates can be seen by comparing the estimated additive-genetic correlation, $ \\rho(A_m, A_v) $, in the litter-size studies (Yang et al. 2011). Data are often transformed before an analysis for any number of reasons (LW Chapter 11), and one of the more flexible approaches is the Box-Cox"
+    },
+    {
+      "type": "discussion",
+      "content": "[[TABLE:17.2]]. Recalling that $ \\bar{\\tau} \\simeq 2 $ when we save the upper 5% of the population (Example 14.1), the expected scaled response per generation is 0.16 in this setting, implying that slightly more than six generations are required to double the mean value of the variance under this strength of selection. transformation (LW Equation 11.4), which includes the standard log transform as a special case. For pigs, using untransformed data resulted in $ \\rho(A_m, A_v) = -0.64 $, which changed to 0.70 when a Box-Cox transformation was first applied to the data. For rabbits, $ \\rho(A_m, A_v) $ changes from -0.73 to 0.28. Likewise, estimates of the heritabilities and evolvabilities were also lower when the likelihood model included a Box-Cox transformation."
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, our discussion thus far has focused on narrow-sense heritabilities. Broad-sense heritability estimates, $ H_v^2 $, for the genetic variance of $ \\sigma_E^2 $, based on among-line variation in $ \\sigma_E^2 $, are often an order of magnitude higher than the narrow-sense values shown in [[SEE_TABLE:17.2]]. For example, Morgante et al (2015) observed $ H_v^2 $ values for $ \\sigma_E^2 $ of 0.75, 0.54, and 0.36 for three behavioral and physiological traits in Drosophila, which were of comparable magnitude with the broad-sense estimates for the traits themselves (values of 0.37, 0.56, and 0.58, respectively). This apparent difference between the broad- and narrow-sense estimates for the genetic variance of $ \\sigma_E^2 $ may reflect something deep, such as a significant amount (indeed, the majority) of genetic variance for $ \\sigma_E^2 $ being nonadditive (and hence the numerator of $ H_v^2 $, the total genetic variance, being much larger than the numerator of $ h_v^2 $, the additive genetic variance). Or it may simply reflect the fact that direct estimates for $ H_v^2 $ by comparing variances over inbred lines may be much more powerful than the more complex likelihood-based methods used in the estimation of variance components of $ \\sigma_E^2 $ in outbred populations."
     }
   ]
 }

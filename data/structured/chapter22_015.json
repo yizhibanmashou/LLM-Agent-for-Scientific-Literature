@@ -2,65 +2,43 @@
   "id": "chapter22_015",
   "metadata": {
     "chapter": "chapter22",
-    "section": "Chapter 22: Group Selection: Theory",
+    "section": "Chapter 22: Individual Selection: Maternal Effects",
     "subsections": [
-      "Group Selection: Theory"
+      "Individual Selection: Maternal Effects"
     ],
     "source_file": "tmp\\paddle_output\\chapter22_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [
-      "22.18",
-      "22.19a",
-      "22.19b",
-      "22.19c",
-      "22.19d",
-      "22.20",
-      "22.21a",
-      "22.21b",
-      "22.22"
+      "22.16a",
+      "22.16b",
+      "22.16c",
+      "22.16d",
+      "22.17a",
+      "22.17b",
+      "22.17c"
     ],
     "table_references": []
   },
   "blocks": [
     {
-      "type": "discussion",
-      "content": "Under individual selection with unrelated group members, there is no contribution from $ \\sigma^{2}(A_{s}) $ to the response, and changes in $ A_{s} $ only enter as a correlated response to changes in $ A_{d} $ which can be in an unfavorable direction when $ \\sigma(A_{d},A_{s})<0 $ . As we will see, $ \\sigma^{2}(A_{s}) $ enters into the response under group selection even when there are no relatives in the group. The reason is that the group phenotype is a function of the distribution of $ A_{s} $ values."
+      "type": "derivation",
+      "content": "An important special case, and indeed the forerunners of more general models of associative effects, are models of direct and maternal effects (Dickerson 1947; Willham 1963, 1972; Cheverud 1984a). Here, the trait value of an individual is a function of its direct effect, $ P_{d} $, and a maternal performance trait, $ P_{m} $, contributed by its mother, meaning that if j is the mother of i, then [[SEE_FORMULA:22.16a]]"
     },
     {
       "type": "derivation",
-      "content": "Under strict group selection, selection is based on the group mean, $ $, or equivalently the total value of the group, $ n = z $, and we will usually work with the latter. To obtain the covariance between the total value of a group and the total breeding value of one of its members, first note that [[SEE_FORMULA:22.18]] where the residual values, $ e_ i $, sweep up a variety of environmental terms, and are given by Equation 22.1c. The residuals are assumed to be uncorrelated with any breeding values, but of course residuals can be (and usually are) correlated within a group (e.g., Equation"
+      "content": "In the absence of inbreeding, $r = 1/2$ for this group (mother-offspring) with $n = 2$. From Equation 22.12c, the covariance between phenotype and total breeding value ($A_T = A_d + A_m$, with $A_s = A_m$) is [[SEE_FORMULA:22.16b]] while Equation 22.13a yields a phenotypic variance of [[SEE_FORMULA:22.16c]] making the resulting response to selection [[SEE_FORMULA:22.16d]]"
     },
     {
       "type": "derivation",
-      "content": "22.23a). If $ r_ ij $ is the relationship between individuals i and j, the covariance between the group total and the total breeding value of a group member, i, is [[SEE_FORMULA:22.19a]]"
-    },
-    {
-      "type": "derivation",
-      "content": "If the group members are unrelated, then [[SEE_FORMULA:22.19b]] which implies that $ (A_ T,) = ^ 2 (A_ T)/n $. Hence, group selection acts on the total breeding value of an individual, rather than on only part of $ A_ T $, as was the case with individual selection (e.g., Equation 22.12e). The contribution of associative effects to the total breeding value does not influence the phenotype of the focal individual, but does influence the phenotypes of other group members, and hence, $ $. Group selection directly targets these effects. If all members have the same degree of relationship (r), then [[SEE_FORMULA:22.19c]]"
-    },
-    {
-      "type": "derivation",
-      "content": "Selection can act on associative effects even when none of the individuals in the group are related, but its efficiency is amplified when using relatives (compare Equations 22.19b and 22.19c). From Equation 22.19c, the covariance of the total breeding value, $ A_T $, of a group member with its group mean, $ $, is [[SEE_FORMULA:22.19d]]"
-    },
-    {
-      "type": "derivation",
-      "content": "Turning to the phenotypic variance of the group total, $ n $, a little bit of algebra is required. From Equation 22.18, we can decompose this group variance into additive-genetic and environmental components [[SEE_FORMULA:22.20]]"
-    },
-    {
-      "type": "derivation",
-      "content": "Tackling the genetic component first yields [[SEE_FORMULA:22.21a]]"
-    },
-    {
-      "type": "derivation",
-      "content": "When all group members have the same degree of relationship, r, this reduces to [[SEE_FORMULA:22.21b]]"
+      "content": "The total response can also be expressed in terms of the direct and maternal-effect response. From Equation 22.15, [[SEE_FORMULA:22.17a]] and [[SEE_FORMULA:22.17b]] with the response, R, in the trait mean being [[SEE_FORMULA:22.17c]]"
     },
     {
       "type": "discussion",
-      "content": "Turning our attention to the residual terms, recall (Equation 22.1c) that the residual is a function of both direct and social environmental effects, $$ e_{i}=E_{d_{i}}+\\sum_{k\\neq i}E_{s_{k}} $$"
+      "content": "Substitution of Equations 22.17a and 22.17b into Equation 22.17c recovers Equation 22.16d. As reviewed by Cheverud (1984a), most estimates of the direct-maternal covariance are negative. This raises the possibility of a reversed response due to a greater reduction in the maternal environment than improvement in the direct effect. It also allows for the trait to improve (via its direct value) at the expense of a declining maternal value."
     },
     {
-      "type": "derivation",
-      "content": "Clearly, individuals within the same group are correlated because they share the $ E_s $ values from the other group members. Recalling that $ (E_ d_i, E_ s_k) = 0 $ for $ i k $, the residual variance becomes [[SEE_FORMULA:22.22]]"
+      "type": "discussion",
+      "content": "The careful reader might recall from Chapter 15 that Falconer’s trait-based model of a single maternal effect results in more complicated dynamics (such as time lags). Why do these not appear in this analysis? As noted by Bijma (2011), variance-component models essentially focus on the permanent component of response, ignoring transient contributions that can appear in a trait-based analysis. He showed that Equation 22.16d and Falconer’s model both give the same value for the permanent response."
     }
   ]
 }

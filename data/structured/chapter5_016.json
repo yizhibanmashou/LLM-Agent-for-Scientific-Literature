@@ -52,15 +52,19 @@
     },
     {
       "type": "derivation",
-      "content": "For a compact way to write Equation 5.10, recall that $(/ p_i)(1/)= ()/ p_i$, which yields [[SEE_FORMULA:5.11a]] where [[SEE_FORMULA:5.11b]]"
+      "content": "For a compact way to write Equation 5.10, recall that $(\\partial \\overline{W}/\\partial p_i)(1/\\overline{W})=\\partial \\ln(\\overline{W})/\\partial p_i$, which yields [[SEE_FORMULA:5.11a]] where [[SEE_FORMULA:5.11b]]"
     },
     {
       "type": "derivation",
-      "content": "Equation 5.11a can be written in matrix form as [[SEE_FORMULA:5.12a]] where $ p $ is the vector of all allele-frequency changes, [[SEE_FORMULA:5.12b]] is the gradient vector of all first partial derivatives, and the elements of the $ n n $ genetic variance-covariance matrix G are given by Equation 5.11b."
+      "content": "Equation 5.11a can be written in matrix form as [[SEE_FORMULA:5.12a]] where $ \\Delta p $ is the vector of all allele-frequency changes, [[SEE_FORMULA:5.12b]] is the gradient vector of all first partial derivatives, and the elements of the $ n \\times n $ genetic variance-covariance matrix G are given by Equation 5.11b."
     },
     {
       "type": "discussion",
-      "content": "Recall from vector calculus (Appendix 6) that the greatest local change in the value of $ f(\\mathbf{x}) $ occurs by moving in the direction given by $ \\nabla f $ . Thus, $ \\nabla \\overline{W} $ (and hence $ \\nabla \\ln [\\overline{W} ] $ ) is the direction of allele-frequency change that maximizes the local change in mean fitness. However, the actual vector of change in allele frequencies is rotated away from $ \\nabla \\ln (\\overline{W}) $ by the matrix G. The genetic matrix G thus constrains the rate of selection response, a prelude to the theme of genetic constraints that arises in multivariate trait selection (Chapter 13)."
+      "content": "Recall from vector calculus (Appendix 6) that the greatest local change in the value of $ f(\\mathbf{x}) $ occurs by moving in the direction given by $ \\nabla f $. Thus, $ \\nabla \\overline{W} $ (and hence $ \\nabla \\ln[W] $) is the direction of allele-frequency change that maximizes the local change in mean fitness. However, the actual vector of change in allele frequencies is rotated away from $ \\nabla \\ln(W) $ by the matrix G. The genetic matrix G thus constrains the rate of selection response, a prelude to the theme of genetic constraints that arises in multivariate trait selection (Chapter 13)."
+    },
+    {
+      "type": "discussion",
+      "content": "It can be shown that Equation 5.12a implies $ dW/dt \\geq 0 $ (see Example A6.7), but unlike the diallelic case, the sign of $ \\Delta p_i $ need not equal the sign of $ \\partial \\ln \\overline{W}/\\partial p_i $. Alleles with the largest values of $ p_i(1 - p_i) \\mid \\partial \\ln \\overline{W}/\\partial p_i $ dominate the change in mean population fitness and hence dominate the allele-frequency dynamics. As these initially dominating alleles approach their equilibrium frequencies under selection (values where $ |\\partial \\ln \\overline{W}/\\partial p_i| \\simeq 0 $), other alleles begin to dominate the dynamics of $ \\overline{W} $, with their frequencies changing in a way that continues to increase mean population fitness."
     }
   ]
 }

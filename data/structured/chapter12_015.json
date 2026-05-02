@@ -2,23 +2,32 @@
   "id": "chapter12_015",
   "metadata": {
     "chapter": "chapter12",
-    "section": "Divergence in Morphological Traits",
+    "section": "Chapter 12: Ornstein-Uhlenbeck Models",
     "subsections": [
-      "Divergence in Morphological Traits"
+      "Ornstein-Uhlenbeck Models"
     ],
     "source_file": "tmp\\paddle_output\\chapter12_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
-    "formula_references": [],
+    "formula_references": [
+      "12.22a",
+      "12.22b",
+      "12.22c",
+      "12.22d"
+    ],
     "table_references": []
   },
   "blocks": [
     {
-      "type": "proposition",
-      "content": "Numerous attempts have been made to apply the above procedures, or variants of them, to data from the fossil record to test the hypothesis that levels of morphological divergence over geological time scales have been driven by directional selection. In the first such study, Lande (1976) showed that changes in tooth-size dimensions over a 42 million year period in early horse evolution are consistent with the hypothesis of random genetic drift if the heritabilities of the traits had been near 0.5 and the long-term effective population size was smaller than 60,000 or so individuals. Given the generally high levels of heritability observed for mammalian morphological traits (Lynch and Walsh 1998), an assumption of $ h^{2}=0.5 $ is not unreasonable, and the argument that the long-term $ N_{e} $ in such lineages could be smaller than the critical value of $ N_{e}^{*}=60,000 $ is also plausible (Chapter 4). Analyses of tooth morphometrics in two additional lineages of extinct mammals (condylarths and oreodonts) suggested critical effective sizes of 80,000 to 120,000, below which the observed changes would be compatible with a neutral hypothesis (Lande 1976). Thus, only if the effective sizes of these ancient mammalian taxa were actually in excess of $ 10^{5} $ , a matter that remains unclear, would the observed changes require some mechanism of directional selection."
+      "type": "discussion",
+      "content": "As developed in Appendix 1, the Ornstein-Uhlenbeck (OU) process provides a model of Brownian motion drift coupled with a restoring force back to some optimal value ($ \\theta $), as might be expected with drift and stabilizing selection. This process has been used to model the divergence of traits over a phylogeny (Felsenstein 1988, 2004, 2008; Garland et al. 1993; Martins 1994; Hansen and Martins 1996; Hansen 1997; Martins and Hansen 1997; Butler and King 2004; Beaulieu et al. 2012), including gene-expression data (Bedford and Hartl 2009; Kalinka et al. 2010; Brawand et al. 2011; Rohlfs et al. 2014)."
+    },
+    {
+      "type": "derivation",
+      "content": "Under the OU model, the expected change in the mean value of a process at a value of $ x $ is $ a(\\theta - x) $ with $ a > 0 $, so that if $ x < \\theta $, it increases, while it decreases for $ x > \\theta $. The parameter $ a $, which measures the strength of the restoring force, is a measure of the strength of stabilizing selection. Under the standard model of Gaussian stabilizing selection (Example 5.6; Equation 16.17), where $ \\omega^2 $ measures the strength of selection (smaller $ \\omega^2 $ implies stronger selection), Example A1.13 shows that [[SEE_FORMULA:12.22a]] As with Brownian motion, the value of the process at time t is normally distributed (Equation A1.33b), but now with mean and variance [[SEE_FORMULA:12.22b]] [[SEE_FORMULA:12.22c]] where $ b = \\sigma_A^2 / N_e $ under the constant-variance model. For large $ t $, the mean value approaches the optimal value $ (\\theta) $, while the divergence variance approaches an asymptotic value of [[SEE_FORMULA:12.22d]]"
     },
     {
       "type": "discussion",
-      "content": "Several other studies of this nature have been applied to aspects of mammalian skull evolution. For example, by setting the upper and lower limits to mutational heritability, $ \\sigma_{m}^{2} / \\sigma_{e}^{2} $ at $ 10^{-2} $ and $ 10^{-4} $ , Lynch (1990) found that the rates of evolution of cranial morphology in a wide array of placental mammalian lineages are one to two orders of magnitude below the minimum neutral rate, and Lemos et al. (2001) observed a similar pattern in marsupials. The only exception to this general trend concerns the races of modern man, which appear to have diverged at a rate slightly above the minimum neutral expectation (Lynch 1990; Ackermann and Cheverud 2004; Roseman 2004). Although they leave many questions unanswered, these kinds of results put in perspective previous arguments that rates of morphological evolution are exceptionally high in mammals, and especially so in the great apes (e.g., Cherry et al. 1982; Wyles et al. 1983; Van Valen 1985). Clearly, the predominant mode of evolution in mammalian skeletal morphology has been one of stabilizing selection, not of strong diversifying selection. Similarly, Spicer (1993) found widespread evidence of stabilizing selection in a variety of morphological traits in Drosophila, but some caution is in order here as the tests were based on critical mutation variances (Equation 12.21b). As mentioned, this approach likely generates many spurious calls of too little divergence (because $ h_{m}^{2} $ estimates are likely inflated by inclusion of deleterious mutations), hence biasing tests toward inferring stabilizing selection."
+      "content": "Initially, the among-population divergence increases linearly with divergence time t under both the pure drift (e.g., Equation 12.10) and OU models. However, unlike pure drift (which retains its linear divergence over all time), the between-lineage variance under an OU eventually asymptotes at a fixed level of divergence after sufficient time. Thus, while initially both models have very similar behavior, they become increasingly distinct as time progresses. It should be noted that divergence approaching an asymptotic variance can also occur under the purely neutral house-of-cards (Equation 12.11) and regression (Equation 12.12) mutational models, mimicking a process under stabilizing selection."
     }
   ]
 }

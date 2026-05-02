@@ -2,19 +2,58 @@
   "id": "chapter13_015",
   "metadata": {
     "chapter": "chapter13",
-    "section": "Maximizing the Economic Rate of Response",
+    "section": "Chapter 13: Maximizing Response Under the Breeder's Equation",
     "subsections": [
-      "Maximizing the Economic Rate of Response"
+      "Maximizing Response Under the Breeder's Equation"
     ],
     "source_file": "tmp\\paddle_output\\chapter13_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
-    "formula_references": [],
+    "formula_references": [
+      "13.21a",
+      "13.21b"
+    ],
     "table_references": []
   },
   "blocks": [
     {
+      "type": "derivation",
+      "content": "We can combine both the selection accuracy (Equations 13.11c) and generation-interval (Equation 13.20) versions of the breeder's equation to give a more general expression, with the expected rate of response being [[SEE_FORMULA:13.21a]] where x is the measure used to choose the parents to form the next generation. Even more generally, if the accuracies vary over sex [[SEE_FORMULA:13.21b]]"
+    },
+    {
       "type": "discussion",
-      "content": "Example 13.8 hints at another important feature of the selection response, economics. Notice that by scoring more than 12 offspring, we can obtain a larger expected rate of response using progeny testing (assuming equal selection intensities). Why not simply score 30 progeny, giving a 122"
+      "content": "Beyond importing new genetic material, there is not much a breeder can do to increase $ \\sigma_{A}^{2} $, which leaves three selection features that the breeder has some control over (Dickerson and Hazel 1944; Kinghorn et al. 2000): (i) selection intensity, $ \\bar{\\nu} $"
+    },
+    {
+      "type": "discussion",
+      "content": "(ii) generation interval, L"
+    },
+    {
+      "type": "discussion",
+      "content": "(iii) selection accuracy, $ \\rho $"
+    },
+    {
+      "type": "discussion",
+      "content": "The response rate increases with $ \\rho $ and $ \\bar{\\imath} $, and it decreases with increasing values of L. We have already discussed tradeoffs between L and $ \\bar{\\imath} $, and there are similar tradeoffs between L and $ \\rho $. Clearly, the longer we wait to allow a parent to reproduce, the more accurately we can predict its breeding value, as information from other relatives and from progeny testing accumulates over time. However, these increases in $ \\rho $ also result in increases in L. An optimal selection program must balance all of these competing interests."
+    },
+    {
+      "type": "discussion",
+      "content": "Equation 13.21 highlights the importance to animal breeding of advances in reproductive technologies such as artificial insemination (AI) and multiple ovulation embryo transfer (MOET) schemes (e.g., Woolliams 1989). The more offspring a parent can produce, the stronger is the selection intensity that can be applied while still keeping a fixed number of animals in a population. AI has resulted in the potential for far greater sire selection intensities (but as a side effect, far more inbreeding) than would be possible under natural insemination. Likewise, MOET schemes that increase the number of offspring from females allow for increases in the selection intensity on dams as well as decreases in the generation interval."
+    },
+    {
+      "type": "discussion",
+      "content": "Equation 13.21a is also highly relevant to genomic selection (wherein high-density marker information is used to predict the values of offspring; Volume 3). The gain from genomic selection is generally not the result of an increased accuracy, $ \\rho $, when using marker information, but rather from much quicker and earlier scoring of phenotypes, which lowers L and increases $ \\bar{i} $."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 13.8. As an example of the tradeoff between accuracy and generation intervals, consider a trait with $ h^2 = 0.25 $ and selection only on sires (fathers). One scheme is to simply select on the sire's phenotype, which results in a sire generation interval of (say) 1.5 years. Alternatively, one might perform progeny testing to improve the accuracy of the selected sires, which results in an increase of the sire generation interval to (say) 2.5 years. Suppose that in both cases, the dam (mother) interval is constant at 1.5 years. Because the additive-genetic variation is the same in both schemes, the ratio of response under mass selection to response under progeny testing becomes $$ \\frac{r_{y}(sire\\ phenotype)}{r_{y}(progeny\\ mean)}=\\left(\\frac{\\overline{i}_{sp}}{\\overline{i}_{pt}}\\right)\\frac{\\rho(A,sire\\ phenotype)/(L_{s}+L_{d})}{\\rho(A,progeny\\ mean)/(L_{s}+L_{d})} $$ where $ \\bar{\\imath}_{sp} $ and $ \\bar{\\imath}_{pt} $ are the selection intensities under individual selection (sire phenotype) and progeny testing, which can differ due to costs in scoring. From Equation 13.11e, $ \\rho(A,\\text{sire phenotype}) = h = \\sqrt{0.25} = 0.5 $, while the generation interval becomes $ L_s + L_d = 1.5 + 1.5 = 3 $. With progeny testing, Example 13.4 yields $$ \\rho(A,progeny mean)=\\sqrt{\\frac{n}{n+\\gamma}}=\\sqrt{\\frac{n}{n+15}} $$ as $ \\gamma = (4 - h^{2})/h^{2} = 15 $, with a total generation interval of $ L_{s} + L_{d} = 2.5 + 1.5 = 4 $."
+    },
+    {
+      "type": "discussion",
+      "content": "Rearrangement of this expression yields $$ \\frac{r_{y}(sire phenotype)}{r_{y}(progeny mean)}\\left(\\frac{\\overline{\\imath}_{pt}}{\\overline{\\imath}_{sp}}\\right)=\\frac{0.5/3}{(1/4)\\sqrt{\\frac{n}{n+15}}}=\\frac{2}{3}\\cdot\\sqrt{\\frac{n+15}{n}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "For $n = 2$ progeny tested per sire, this ratio is 1.95, resulting in a much larger rate of response under sire-only selection. For $n = 12$, the ratio is exactly one, while for a very large number of offspring tested per sire, the ratio approaches 2/3, or a 1.5-fold increase in the rate of response under progeny testing, despite the increase in the sire generation interval. Thus, taking into account the ratio of selection intensities, mass selection always gives a higher per-year rate of response (for the values of the other parameters assumed in this example) when $\\bar{\\gamma}_{pt}/\\bar{\\gamma}_{sp} < 3/2$. By contrast, from Example 13.4, when $n > 4$, progeny testing yielded a larger response (for $h^2 = 0.25$), but that example did not discount for the effect of the longer sire generation intervals required for progeny testing."
     }
   ]
 }

@@ -2,9 +2,9 @@
   "id": "chapter30_030",
   "metadata": {
     "chapter": "chapter30",
-    "section": "Where Is All the Stabilizing Selection?",
+    "section": "Quadratic Selection: Strong or Weak?",
     "subsections": [
-      "Where Is All the Stabilizing Selection?"
+      "Quadratic Selection: Strong or Weak?"
     ],
     "source_file": "tmp\\paddle_output\\chapter30_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
@@ -14,11 +14,27 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "Perhaps the most striking observation from the meta-analysis of $ \\gamma $ values is the lack of a clear trend toward negative values (except for body size), as would be expected if stabilizing selection were widespread. This is highly troubling given the historic view of most ecologists and evolutionary biologists that stabilizing selection is widespread and important over evolutionary time (Charlesworth et al. 1982; Maynard Smith 1983; Estes and Arnold 2007; Hunt et al. 2007a). One explanation is that $ \\gamma $ does not capture the correct geometry in multimodal fitness surfaces. The second is the observation from the Haller-Hendry (2013) simulations of low power to detect stabilizing selection."
+      "content": "Discussions of whether the observed amount of quadratic selection is strong or weak are highly problematic. If estimates of $ \\beta_{sd} $ are underpowered (and thus significant estimates are likely overvalued; i.e., the Beavis effect), the same is certainly true for quadratic estimates."
     },
     {
       "type": "discussion",
-      "content": "Haller and Hendry offered several other explanations for this \"missing\" stabilizing selection. The first is that selection may have already done its job in that the existing phenotypic variation is small relative to the width of the fitness peaks (Chapter 28). In their words, \"selection 'erases its traces' once populations have adapted to a fitness peak.\" The second is the suggestion from Chapter 28 that strong stabilizing selection is likely to be confined to a few dimensions in the multivariate trait space (i.e., a few indices of trait values). This results in only a weak signal in any single component trait and low power of detection. Their final suggestion is that squashed stabilizing selection may be common, which again lowers power. Here competition results in disruptive selection among individuals whose trait values are near an adaptive peak, which flattens out (squashes) the fitness surface around the peak, making detection more difficult. An example of this phenomenon is the work of Morno-Rueda (2009) on selection on shell morphology in Spanish land snails (Iberus gualtieranus). Predation from black rats (Rattus rattus) results in distinctive markings on the shell, and using only such shells showed disruptive selection on shell height. Conversely, when shells lacking these markings were used in the analysis, stabilizing selection was seen. When all shells are considered as a single group, no significant quadratic term is observed."
+      "content": "[h]"
+    },
+    {
+      "type": "discussion",
+      "content": "[h]"
+    },
+    {
+      "type": "discussion",
+      "content": "Indeed, simulations by Haller and Hendry (2013) found that there is generally low power for detecting stabilizing selection due to small sample sizes. Simulations for traits under weak stabilizing selection typically resulted in a distribution of $ \\gamma $ values similar to that seen in Figure 30.5, namely, largely symmetric about the origin (reflecting low power, and hence a roughly random distribution of estimates around zero). An important feature of the Haller-Hendry simulations was that they used a “virtual ecologist” approach, wherein simulated data from the quantitative-genetics model is combined with an observer model (i.e., a model for how the data would be ascertained in real-world settings, such as having living individuals that are not recaptured counted as dead). This mimics how real data would be “virtually” observed (Zurell et al. 2009), and hence more correctly reflects the actual power of collected data."
+    },
+    {
+      "type": "discussion",
+      "content": "Balancing concerns about inflated estimates due to low power (Beavis effects), there are two reasons why reported estimates of quadratic gradients may be undervalued. As mentioned earlier, many published reports have made errors in obtaining $ \\gamma_{ii} $ values from the output of standard regression packages, resulting in only half their true value being reported (Stinchcombe et al. 2008). Second, Blows and Brooks (2003) noted that $ |\\gamma_{ii}| $ likely significantly underestimates the strength of quadratic selection when multiple traits are considered (see Example 30.6). An analysis based on the eigenvalues ($ \\lambda $) of the $ \\gamma $ matrix is much more informative as to the strength of quadratic selection in nature."
+    },
+    {
+      "type": "discussion",
+      "content": "The much more problematic issue is whether $ \\gamma $ is even a reasonable measure for non-linear fitness surfaces. As Figure 29.10 illustrated, a value of $ \\gamma $ can be entirely misleading when the fitness surface departs from a quadratic. As the above theory on canonical forms illustrates, a quadratic surface in k dimensions (traits) still has (at most) only a single extremum (Equation 30.21a). In this case, fitting a multimodal fitness surface with a quadratic will return a very misleading value of $ \\gamma $. Indeed, even with stabilizing Gaussian selection, if the mean is sufficiently above the optimum, the best quadratic fit will result in $ \\gamma > 0 $, which falsely implies the presence of potentially disruptive selection (Figure 29.10)."
     }
   ]
 }

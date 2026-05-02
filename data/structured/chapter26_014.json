@@ -2,61 +2,62 @@
   "id": "chapter26_014",
   "metadata": {
     "chapter": "chapter26",
-    "section": "Chapter 26: OPTIMAL SELECTION INTENSITIES FOR MAXIMIZING LONG-TERM RESPONSE",
+    "section": "Chapter 26: THE EFFECTS OF LINKAGE ON THE SELECTION LIMIT",
     "subsections": [
-      "OPTIMAL SELECTION INTENSITIES FOR MAXIMIZING LONG-TERM RESPONSE"
+      "THE EFFECTS OF LINKAGE ON THE SELECTION LIMIT"
     ],
     "source_file": "tmp\\paddle_output\\chapter26_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [
-      "26.22",
-      "26.23"
+      "26.18",
+      "26.19",
+      "26.20a",
+      "26.20b",
+      "26.20c",
+      "26.20d"
     ],
-    "table_references": [
-      "26.3",
-      "26.4"
-    ],
-    "table_reference_keys": [
-      "chapter26:26.3",
-      "chapter26:26.4"
-    ]
+    "table_references": []
   },
   "blocks": [
     {
+      "type": "discussion",
+      "content": "When QTLs are linked, we expect some reduction in the limit because selection on linked loci reduces the fixation probabilities of beneficial alleles (Hill and Robertson 1966; Birky and Walsh 1988; Barton 1995a). Simulation studies (Fraser 1957; Gill 1965a, 1965b, 1965c; Latter 1965a, 1966a, 1966b; Qureshi and Kempthorne 1968; Qureshi 1968; Qureshi et al. 1968) show that linkage has only a small effect unless loci are very close ($ c \\leq 0.05 $). As mentioned in Chapter 7, most of these studies inflated the importance of linkage by assuming that all loci have equal effects. Simulation studies by McClosky and Tanksley (2013) found only modest reductions ($ \\simeq 10% $) in short-term (less than 20 generations) response for populations with normal versus fully unconstrained levels of recombination."
+    },
+    {
+      "type": "discussion",
+      "content": "An approximate analytic treatment of linkage was offered by Robertson (1970a, 1977a), and later by Hospital and Chevalet (1993, 1996) and Zhang and Hill (2005a), who relied on certain normality assumptions. In the absence of recombination, selection acts on an entire chromosome, and Robertson framed his results in terms of the response contributed by a single chromosome. Robertson considered three different limiting expected responses, $ L_{i} $, corresponding to different amounts of recombination: $ L_{f} $, the chromosomal limit with free recombination between all loci; $ L_{0} $, the limit under complete linkage; and $ L_{\\ell} $, the limit when the map length of the chromosome is $ \\ell $ (implying, for $ n $ loci, a recombination rate between the adjacent loci of approximately $ \\ell/n $)."
+    },
+    {
       "type": "derivation",
-      "content": "When a fixed number, $M$, of individuals is scored, there is a tradeoff between the intensity of selection ($ $) and the amount of drift ($N_e$). If $N$ individuals are allowed to reproduce (implying $p = N/M$ is the fraction saved), decreasing $N$ (and hence $p$) increases $ $ but also decreases $N_e$. Recalling Equation 26.15b, Robertson’s selection limit can be expressed as [[SEE_FORMULA:26.22]] showing that the ultimate response (from the initial variation) depends on the product of $ N_e $ and $ $. While decreasing p results in a larger short-term response due to increased $ $, it also results in a decreased long-term response by decreasing $ N_e $. Hence, the product $ N_e $ decreases for sufficiently large or small values of p, suggesting that some intermediate value of p is optimal (see Equation 26.23). [[SEE_TABLE:26.3]] and Figure 26.5B both illustrate this tradeoff. For example, while the single-generation response using p = 0.50 is less than half that for p = 0.10, it yields a selection limit over twice as large (200 vs. 90)."
+      "content": "The completely additive model is assumed with loci starting in gametic-phase equilibrium. Let $ \\sigma_A^* $, be the initial additive genetic variance contributed by the focal chromosome and define $ (h^*)^2 = \\sigma_A^* / \\sigma_z^2 $ as the initial fraction of phenotypic variance attributable to this chromosome. The expected contribution from this chromosome following a single generation of selection is $ S\\sigma_A^* / \\sigma_z^2 = \\bar{i}h^* \\sigma_{A^*} $. When $ N_e \\bar{i}h^* $ is small, the expected limit for a chromosome with freely recombining loci is $ 2N_e $ times the initial response, yielding $ L_f \\simeq 2N_e \\bar{i}h^* \\sigma_{A^*} $ (Equation 26.15b, considering the response from a single chromosome). Assuming weak selection, Robertson (1970a) found that the ratio of the free-recombination limit to the complete-linkage limit (i.e., the best initial chromosome) is approximately [[SEE_FORMULA:26.18]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Hence, for weak selection, complete linkage has only a trivial effect when the chromosome contains a large number of QTLs."
     },
     {
       "type": "derivation",
-      "content": "Supporting an earlier conjecture of Dempster (1955b), Robertson (1960a) found (for additive loci and normally distributed phenotypes) that the intensity of selection that yields the largest total response is $p = 0.5$, as $N_e $ is maximized for fixed $M$ when half the population is saved. This can be seen directly for truncation selection on a normally distributed character. Recall from Equation 14.3a that $ = (x_ [1-p]) / p$ (ignoring the correction for finite population size), where $x_p$ satisfies $ (U < x_ [p]) = p$, and with $U$ denoting a unit normal random variable and $ (x)$ denotes the unit normal density function. Because the number saved is $N = M p$, we have (following Hospital and Chevalet 1993) [[SEE_FORMULA:26.23]] Because the term in brackets is independent of $p$, response (as a function of $p$) is maximized at the maximum value of $ (x_ [1-p])$, which occurs at $x = 0$, or a $p$ value of 0.5. As Figure 26.5A illustrates, the selection limit as a function of p becomes extremely flat-topped as M increases, so even fairly large deviations from p = 0.50 yield essentially the same limit. If we relax the assumption of normality, Cockerham and Burrows (1980) found that the optimal proportion for truncation selection is still near 0.50, unless the phenotypic distribution is extremely skewed. Hill and Robertson (1966), Robertson (1970a), and Hospital and Chevalet (1993) found that the optimal proportion increases to above p = 0.50 when linkage is important (recall from Chapter 24 that linkage disequilibrium generates skew in the genotypic distribution, causing it to depart from a normal)."
+      "content": "When selection is strong ($ N_e \\bar{i} h^* \\gg 1 $), the results are more complicated. Robertson assumed that there are $ n $ underlying loci, each with a frequency of $ p $ of the favored allele, which increases the character by $ 2a $ (the difference between the homozygotes). Under these assumptions, the additive variance contributed by this chromosome is $ \\sigma_A^* = 2na^2p(1 - p) $. If selection is sufficiently strong, under free recombination all favored alleles will be fixed, and the total response becomes $ L_f = 2na(1 - p) $. Noting that $ a = \\sigma_A^* / \\sqrt{2np(1 - p)} $, this can also be restated as [[SEE_FORMULA:26.19]]"
+    },
+    {
+      "type": "derivation",
+      "content": "On the other hand, with complete linkage the limit approaches twice the value of the best of the initial 2N chromosomes sampled (as this chromosome is ultimately fixed). The expected value for the best chromosome is given by the expected value of the largest order statistic (see Example 6 in LW Chapter 9). For a unit normal, this is expressed in terms of standard deviations (here $ \\sigma_{A*} $) above the mean, so that if $ x_{2N} $ is the standardized largest order statistic in a sample of 2N chromosomes, the limit is given by [[SEE_FORMULA:26.20a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Robertson (1970a) showed, for $10 < N < 40$, that $x_{2N} \\sqrt{2} \\simeq 3$, so that $L_{0}/\\sigma_{A}^{2} \\simeq 3$. Hence, for these values of $N$, [[SEE_FORMULA:26.20b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "The factor of 3 increases to 3.8 when N = 80 and to 4.6 when N = 500. For larger values of N, if we use the asymptotic approximation for the largest order statistic given by Kendall and Stuart (1977), the factor of 3 is replaced by [[SEE_FORMULA:26.20c]]"
     },
     {
       "type": "discussion",
-      "content": "[h]"
+      "content": "Note that the increase in the selection limit is only weakly dependent on $N$, as the largest order statistic scales as $\\sqrt{\\ln(2N)$. For example, for $N=10^{9}$, $x_{2N}\\sqrt{2}\\simeq9.4$."
     },
     {
-      "type": "discussion",
-      "content": "[h]"
-    },
-    {
-      "type": "discussion",
-      "content": "[[TABLE:26.4]] illustrates this effect using the same parameters as [[SEE_TABLE:26.3]]. Without incorporating this further reduction in $N_e$, the ratio of expected limits when $p = 0.50$ versus $p = 0.10$ is 200/90 = 2.2. When the reduction in $N_e$ due to selection is accounted for, this ratio increases to 161/47 = 3.4."
-    },
-    {
-      "type": "discussion",
-      "content": "Robertson's prediction of the optimal selection intensity for long-term response is experimentally supported. Madalena and Robertson (1975) selected for decreased sternopleural bristle number in Drosophila. When the best 5 of 25 were chosen, the limit was 18.0 bristles, less extreme than the limit of 17.1 when the best 10 of 25 were chosen. Similar results were seen for increased abdominal bristle number in Drosophila (Jones et al. 1968), increased egg-laying in Tribolium castaneum (Ruano et al. 1975), and increased postweaning weight in mice (Hanrahan et al. 1973)."
-    },
-    {
-      "type": "discussion",
-      "content": "Using $N = pM$ as the effective population size is often a severe overestimate (Chapter 3), especially because, as Equations 26.6b–26.6d show, $N_e/N$ decreases as selection intensity increases. Hence, increasing selection intensity increases drift by both reducing $N = pM$ and by further reducing the ratio of $N_e$ to $N$. [[SEE_TABLE:26.4]] illustrates this effect using the same parameters as [[SEE_TABLE:26.3]]. Without incorporating this further reduction in $N_e$, the ratio of expected limits when $p = 0.50$ versus $p = 0.10$ is 200/90 = 2.2. When the reduction in $N_e$ due to selection is accounted for, this ratio increases to 161/47 = 3.4."
-    },
-    {
-      "type": "discussion",
-      "content": "More generally, Robertson (1970b) obtained the optimal selection intensity when the goal is to maximize the total response (from the initial base population variation) at generation $ t $. Robertson’s derivation follows using Equation 26.15a. As Figure 26.5B shows, the optimal proportion is a function of $ t/M $. Robertson assumed that the infinitesimal model held and that there were equal contributions from each sex. Jódar and López-Fanjul (1977) extended these results to unequal sex ratios, and found that the maximum response occurs when the number of individuals scored and the proportions that are selected are the same in each sex. This follows because effective population size is reduced as the sex ratio deviates from 1:1 (Equation 3.12), which increases the effects of drift. Hospital and Chevalet (1993) examined the effects of linkage and found that the amount by which the optimal value of p exceeds the predicted value (Figure 26.5B) increases with population size. In small populations, the value predicted from drift (for any particular t/M value) is close to the optimal value, while Robertson's value seriously underestimates the optimal p value in larger populations when linkage is present."
-    },
-    {
-      "type": "discussion",
-      "content": "Ruano et al. (1975) and Frankham (1977) tested Robertson's predictions for the optimal response at a particular generation with selection experiments for egg-laying in Tribolium and for abdominal bristle number in Drosophila, respectively. The theory holds up well for $ t/M 0.2 $, but both authors found discrepancies between the observed and predicted rank order of lines subjected to different selection intensities when $ t/M > 0.2 $. One explanation of these discrepancies could be the presence of major alleles, resulting in additive variance declining more rapidly than expected under the infinitesimal model. This results in the optimal proportions being larger than those predicted from Figure 26.5B. Frankham (1977) also suggested that not correcting for the additional decrease in $ N_e $ with increased selection intensity (e.g., [[SEE_TABLE:26.4]]) results in incorrect values of $ N_e $, and hence incorrect optimal proportions. García-Dorado and López-Fanjul (1985) examined the consequences of unequal sex ratios using sternopleural bristle number in Drosophila. Equal sex ratios gave the highest response, and good agreement with the optimal values predicted by Jódar and López-Fanjul was seen when there were unequal sex ratios."
+      "type": "derivation",
+      "content": "Robertson suggested that as the number of loci, $n$, increases, the limit under free recombination approaches a value independent of $n$ and $p$, namely, the infinitesimal limit, $L_f = 2N_e\\bar{\\imath}h^* \\sigma_{A^*}$. Thus, with strong selection and a large number of loci, Equation 26.20a implies that [[SEE_FORMULA:26.20d]]"
     }
   ]
 }

@@ -2,36 +2,68 @@
   "id": "chapter11_007",
   "metadata": {
     "chapter": "chapter11",
-    "section": "Chapter 11: Impact of Drift Under Nonadditive Variance",
+    "section": "Chapter 11: The Effects of Epistasis",
     "subsections": [
-      "Impact of Drift Under Nonadditive Variance"
+      "The Effects of Epistasis"
     ],
     "source_file": "tmp\\paddle_output\\chapter11_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
-    "formula_references": [],
+    "formula_references": [
+      "11.7a",
+      "11.7b",
+      "11.7c"
+    ],
     "table_references": [
-      "11.3"
+      "11.1",
+      "11.3",
+      "11.4"
     ],
     "table_reference_keys": [
-      "chapter11:11.3"
+      "chapter11:11.1",
+      "chapter11:11.3",
+      "chapter11:11.4"
     ]
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "The probability that the two individuals are not inbred but share identical genotypes by descent is $ 2(\\Delta-\\delta) $ (the 2 accounts for paternal-paternal and maternal-maternal versus cross paternal-maternal sources of identity by descent), so the covariance by this route becomes $ 2(\\Delta-\\delta)\\sigma_{D}^{2} $ . Third, the probability that three alleles in two members of a population are identical by descent is equal to $ \\gamma $ , and there are two ways in which this can arise, so the covariance between additive and dominance effects is $ 2\\gamma\\sigma_{ADI} $ . Finally, the covariance resulting from shared inbreeding depression is $ (\\Delta-f^{2})\\iota^{*} $ because $ \\Delta $ is the probability that two members of the same population are jointly inbred at the same locus, while the average fraction of individuals that are inbred over all populations is f per locus, and $ \\iota^{*} $ is the sum of squared per-locus inbreeding depressions. Similarly, the covariance due to joint inbreeding depression at different loci is equal to $ (\\widetilde{\\Delta}-f^{2})(\\iota^{2}-\\iota^{*}) $ , with the latter term being the sum of cross-products of per-locus inbreeding depressions."
+      "content": "The fundamental point in the preceding section is that because dominance is a function of a two-allele interaction, the variance in dominance effects can be altered in unexpected ways when inbreeding alters the average background on which an allele appears. This same issue applies to epistatic effects, although on a potentially larger scale because the"
     },
     {
       "type": "discussion",
-      "content": "Upon summing all six of these contributions, we obtain the genetic variance among populations given in the second row from the bottom of [[SEE_TABLE:11.3]]. The within-population genetic variance is then obtained by subtracting the among-population component from the total genetic variance. Results such as these provide a mechanistic explanation for the changes in components of genetic variance that can be induced by small population size. For example, it can be seen from the second line of [[SEE_TABLE:11.3]] that inbreeding always converts some initial dominance genetic variance into additive genetic variance. This does not necessarily imply that there will be a net increase in additive genetic variance in a bottlenecked population, as the total dynamics depend critically on the relative magnitudes and temporal dynamics of all five of the quadratic components involving dominance in the base population (Figure 11.2). However, it does imply that Equation 11.2 cannot be strictly correct in the presence of dominance. While the contribution to the additive genetic variance from the base population, $ _ A ^ 2 $, declines in each generation, Figure 11.2 shows that all other contributions first increase before eventually decreasing to zero. Thus, whether a population bottleneck will induce an increase in additive genetic variance depends critically on the magnitude of $ _ A ^ 2 $ relative to the other quadratic components in the base population."
+      "content": "[h]"
     },
     {
       "type": "discussion",
-      "content": "Note that the two-locus identity coefficients $ (f,,) $ appear only in association with quadratic terms involving pairs of loci, in this case $ (^2 - ^*) $. Two-locus identity by descent is of relevance in finite populations because the gametic-phase disequilibrium that inevitably develops by chance causes identity disequilibrium between loci (Weir and Cockerham 1968)—individuals that are inbred at one locus are likely to be so at other loci, causing a transient inflation of the genetic variance through the production of extreme phenotypes."
+      "content": "[h] additive × additive epistatic variance ($ \\sigma_{AA}^2 $) is a function of $ n^2 $ terms, while all of the other quadratic components in [[SEE_TABLE:11.1]] (except $ \\iota^2 - \\iota^* $, which seems to be of little significance) are functions of only $ n $ terms. If we assume unlinked loci, the coefficient of the $ \\sigma_{AA}^2 $"
     },
     {
-      "type": "proposition",
-      "content": "Although it may not be immediately apparent, the coefficients in the final two (bottom) columns in [[SEE_TABLE:11.3]] are equivalent to measures of identity disequilibrium (Cockerham 1984a). For example, $ -f^2 $ is the deviation of the double identity-by-descent within gametes in the same population from that based on the assumption of independence between loci. This difference is simply the logical extension of the notion of disequilibrium, where we defined $ D_ AB = p_ AB - p_ APB $, with $ $ being the analog of $ p_ AB $ (the frequency of the AB gamete) and $ f $ being the analog of $ p_A $ and $ p_B $. Although $ $ depends upon the average linkage relationships between all relevant pairs of loci (Weir and Cockerham 1968, 1969), in most cases, if most pairs of loci are on different chromosomes, or if the population is randomly mated and expanded following the bottleneck, $ $ will be approximately equal to $ f^2 $. Under such conditions, $ (-f^2) $, as well as the other coefficients of $ (^2- ^*) $ in [[SEE_TABLE:11.3]], will be very close to zero, removing at least this one term from the variance expressions (Figure 11.2)."
+      "type": "discussion",
+      "content": "[[TABLE:11.4]], for example, the $ A_{1} $ allele is present in genetic backgrounds that lead to five distinct genotypic values in a randomly mating population. If, however, the $ B_{2} $ allele becomes fixed, then an $ A_{1} $ allele can only be in two backgrounds ($ A_{1}A_{1}B_{2}B_{2} $ and $ A_{1}A_{2}B_{2}B_{2} $). In this case, the epistatic interactions are still present, but they are transmitted reliably as additive effects (the difference between adjacent pairs of A-locus genotypes being a constant, $ a - i $). contribution to the additive genetic variance rises to nearly 1.0 in a little over $ N_e $ generations, i.e., the equivalent of all of the base-population $ \\sigma_{AA}^2 $ is added to the (otherwise declining) additive genetic variance at this point (Figure 11.2)."
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, the potential exists for substantial additive × additive epistatic variance in the base population to spawn a prolonged increase in the additive genetic variance following a reduction in population size, or at least to slow the erosion relative to the expectation given by Equation 11.2. The matter is of considerable interest because whereas inflations in the additive genetic variance induced by dominance effects are accompanied by the maladaptive effects of inbreeding depression (i.e., a deleterious change in the mean phenotype), those caused by a conversion of epistatic additive effects have no side effects on the mean (unless there is linkage disequilibrium, in which case the Griffing effect, discussed in Chapter 15, can be important), and simply increase the range of variation upon which natural selection can act."
+    },
+    {
+      "type": "discussion",
+      "content": "To see how this might happen, consider the following. From the standpoint of any locus, variation in epistatic interactions with genes at other loci amounts to a reduction in the efficiency with which allelic effects are transmitted from generation to generation—segregation and recombination ensure that interlocus interactions in parents are not transmitted faithfully through gametes. However, as genetic drift moves alleles toward fixation at one or both loci or as identity disequilibria increase, this variation in the genetic environment is reduced. In [[SEE_TABLE:11.4]], for example, the $ A_{1} $ allele is present in genetic backgrounds that lead to five distinct genotypic values in a randomly mating population. If, however, the $ B_{2} $ allele becomes fixed, then an $ A_{1} $ allele can only be in two backgrounds ($ A_{1}A_{1}B_{2}B_{2} $ and $ A_{1}A_{2}B_{2}B_{2} $). In this case, the epistatic interactions are still present, but they are transmitted reliably as additive effects (the difference between adjacent pairs of A-locus genotypes being a constant, $ a - i $)."
+    },
+    {
+      "type": "derivation",
+      "content": "Some simple insight into the role of additive × additive epistatic variance in the dynamics of genetic variance of finite populations can be achieved if one is willing to assume that the loci involved are unlinked (c = 0.5), meaning that identity disequilibria are of negligible significance. Returning to [[SEE_TABLE:11.3]], it can be seen that the coefficient for the contribution of base-population additive × additive variance to future additive genetic variance is $ (4f - \\tilde{f} - 2\\tilde{\\gamma} - \\tilde{\\Delta}) $, which reduces to $ 4f(1 - f) $ under the assumption that all of the two-locus identities $ \\simeq f^2 $. If we ignore any contributions from dominance, the expression for the dynamics of the additive genetic variance then simplifies to [[SEE_FORMULA:11.7a]] and the expression for the additive $ \\times $ additive variance simplifies to [[SEE_FORMULA:11.7b]] assuming the absence of any higher-order epistatic variance (Cockerham and Tachida 1988; Goodnight 1988; López-Fanjul et al. 1999). Equation 11.7a shows that the conversion of additive × additive to additive genetic variance, which scales as $ (1 - f_t) \\cdot f_t $, is maximized at $ f_t = 0.5 $. Because $ f_t \\simeq 1 - \\exp(-t/2N_e) $, this translates to $ t \\simeq 1.4N_e $ generations in accordance with Figure 11.2."
+    },
+    {
+      "type": "derivation",
+      "content": "Based on results from Barton and Turelli (2004), van Buskirk and Willi (2006) proposed to approximate the additive variance (with epistasis and dominance) under inbreeding by [[SEE_FORMULA:11.7c]]"
+    },
+    {
+      "type": "discussion",
+      "content": "This is simply Equation 11.7a with a dominance term $ \\sigma_D^2 $ added. While this expression appears in the literature (e.g., Taft and Roff 2012), comparison with the exact result (given from the A row in [[SEE_TABLE:11.3]]) shows that Equation 11.7c ignores other quadratic components involving dominance ($ \\sigma_{ADI} $ and $ \\sigma_{DI}^2 $) and the contributions from other identity coefficients besides $ f $, and thus may be a poor approximation in some settings."
+    },
+    {
+      "type": "discussion",
+      "content": "Limited attention has been given to the role of two-locus epistasis involving dominance effects in finite populations (Weir and Cockerham 1977; Cheverud and Routman 1996; López-Fanjul et al. 1999; Barton and Turelli 2004), and no general formulation exists for the dynamics of genetic variance resulting from higher-order epistatic interactions. We can anticipate that the necessary algebra for such a solution would be extremely tedious, as it would involve descent measures involving three and more loci, and as will be discussed below, the existing data do not support the need for such a theory. For heuristic purposes, however, we will consider the approximate case for higher-order epistasis involving only additive effects, again assuming freely recombining loci and ignoring identity disequilibrium. As a simple entrée into this matter, recall that in the absence of dominance, the expected covariance between the relatives $x$ and $y$ is $\\sigma_G(x,y) = 2\\theta_{xy}\\sigma_A^2 + (2\\theta_{xy})^2\\sigma_AA^2 + \\cdots + (2\\theta_{xy})^n\\sigma_A^2$, where $\\theta_{xy}$ is the coefficient of coancestry (LW Chapter 7), and $\\sigma_A^2$ refers to epistatic variance involving the additive effects of $n$ loci. The total genetic variance (summed over the within- and among-population components) is equivalent to the covariance of individuals with themselves, which is obtained by letting $\\theta_{xy} = (1 + f)/2$ (LW Chapter 7), whereas the variance among isolated subpopulations is equivalent to the covariance of random members from the same subpopulation, which is obtained by letting $\\theta_{xy} = f$. Thus, for any $n$-locus epistatic interaction, the contribution to the total genetic variance is $(1 + f)^n\\sigma_A^2$, to the among-population component of variance is $(2f)^n\\sigma_A^2$, and to the within-population component is the difference, $[(1 + f)^n - (2f)^n]\\sigma_A^2$. This implies that the base-population additive and additive $\\times$ additive genetic variances contribute $(1 - f)\\sigma_A^2$ and $(1 + 2f - 3f^2)\\sigma_AA^2$, respectively, to the within-population genetic variance, a result that can also be obtained directly from Equations 11.7a and 11.7b. The contribution from additive $\\times$ additive epistatic variance is $(1 + 3f + 3f^2 - 7f^3)\\sigma_AA^2$, etc."
     }
   ]
 }

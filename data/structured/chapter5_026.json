@@ -39,7 +39,7 @@
     },
     {
       "type": "discussion",
-      "content": "Another class of models (Kimura 1965a; Lande 1975) allows for $ n 1 $ loci by assuming there is a normal distribution of allelic effects at each locus underlying the character (effectively assuming an infinite number of alleles per locus). These two models (infinite number of loci versus infinite number of alleles at $ n $ loci) represent extreme approximations to the view that a moderate number of loci, each with a moderate number of alleles, underlie many quantitative characters. Chapter 24 explores these and other models in greater detail."
+      "content": "Another class of models (Kimura 1965a; Lande 1975) allows for $ n \\geq 1 $ loci by assuming there is a normal distribution of allelic effects at each locus underlying the character (effectively assuming an infinite number of alleles per locus). These two models (infinite number of loci versus infinite number of alleles at $ n $ loci) represent extreme approximations to the view that a moderate number of loci, each with a moderate number of alleles, underlie many quantitative characters. Chapter 24 explores these and other models in greater detail."
     },
     {
       "type": "discussion",
@@ -47,19 +47,19 @@
     },
     {
       "type": "derivation",
-      "content": "The contribution of this locus to the change in mean phenotype after a generation of selection and random mating is [[SEE_FORMULA:5.24a]]"
-    },
-    {
-      "type": "derivation",
-      "content": "The $ G_ ij p_i p_j $ term is the mean contribution before selection, which is zero, and hence vanishes. The careful reader will note that we made an approximation by using the decomposition of $ G_ ij $ instead of decomposition of $ G'_ ij $ in the very first sum, as we used the approximation $$ G_{i j}^{\\prime}\\simeq\\alpha_{i}+\\alpha_{j}+\\delta_{i j} $$ for $$ G_{i j}^{\\prime}=\\alpha_{i}^{\\prime}+\\alpha_{j}^{\\prime}+\\delta_{i j}^{\\prime} $$ Because $ _i $ and $ _ ij $ are functions of the allele frequencies, they change as $ p_i $ changes, but we have assumed that these deviations are much smaller than the change in $ p_i $ itself (so that $ _i' _i $ and $ _ ij ' _ ij $). To simplify Equation 5.24a further, recall (LW Chapter 4) that the additive and dominance effects are defined such that [[SEE_FORMULA:5.24b]]"
+      "content": "The contribution of this locus to the change in mean phenotype after a generation of selection and random mating is [[SEE_FORMULA:5.24a]] The $ \\sum G_{ij}p_i p_j $ term is the mean contribution before selection, which is zero, and hence vanishes. The careful reader will note that we made an approximation by using the decomposition of $ G_{ij} $ instead of decomposition of $ G'_{ij} $ in the very first sum, as we used the approximation $$ G_{i j}^{\\prime}\\simeq\\alpha_{i}+\\alpha_{j}+\\delta_{i j} $$ for $$ G_{i j}^{\\prime}=\\alpha_{i}^{\\prime}+\\alpha_{j}^{\\prime}+\\delta_{i j}^{\\prime} $$ Because $ \\alpha_i $ and $ \\delta_{ij} $ are functions of the allele frequencies, they change as $ p_i $ changes, but we have assumed that these deviations are much smaller than the change in $ p_i $ itself (so that $ \\alpha_i' \\simeq \\alpha_i $ and $ \\delta_{ij}' \\simeq \\delta_{ij} $). To simplify Equation 5.24a further, recall (LW Chapter 4) that the additive and dominance effects are defined such that [[SEE_FORMULA:5.24b]]"
     },
     {
       "type": "discussion",
-      "content": "Separating the first term of Equation 5.24a into two parts based on $ s_ i $ and $ s_ j $ and applying Equation 5.24b yields $$ \\begin{aligned}&\\sum_{i,j}\\left(\\alpha_{i}+\\alpha_{j}+\\delta_{ij}\\right)p_{i}p_{j}s_{i}+\\sum_{i,j}\\left(\\alpha_{i}+\\alpha_{j}+\\delta_{ij}\\right)p_{i}p_{j}s_{j}\\\\&=2\\sum_{j}s_{j}p_{j}\\left(\\alpha_{j}\\sum_{i}p_{i}+\\sum_{i}\\left(\\alpha_{i}+\\delta_{ij}\\right)p_{i}\\right)\\\\&=2\\sum_{j}s_{j}p_{j}\\left(\\alpha_{j}\\cdot1+0+0\\right)=2\\sum_{j}\\alpha_{j}s_{j}p_{j}\\\\ \\end{aligned} $$"
+      "content": "Separating the first term of Equation 5.24a into two parts based on $ s_{i} $ and $ s_{j} $ and applying Equation 5.24b yields $$ \\begin{aligned}&\\sum_{i,j}\\left(\\alpha_{i}+\\alpha_{j}+\\delta_{ij}\\right)p_{i}p_{j}s_{i}+\\sum_{i,j}\\left(\\alpha_{i}+\\alpha_{j}+\\delta_{ij}\\right)p_{i}p_{j}s_{j}\\\\&=2\\sum_{j}s_{j}p_{j}\\left(\\alpha_{j}\\sum_{i}p_{i}+\\sum_{i}\\left(\\alpha_{i}+\\delta_{ij}\\right)p_{i}\\right)\\\\&=2\\sum_{j}s_{j}p_{j}\\left(\\alpha_{j}\\cdot1+0+0\\right)=2\\sum_{j}\\alpha_{j}s_{j}p_{j}\\\\ \\end{aligned} $$"
     },
     {
       "type": "derivation",
       "content": "Likewise, a little more algebra (Nagylaki 1989b, 1991) simplifies the second sum in Equation 5.24a to yield a final expression for the expected contribution to response from locus k as [[SEE_FORMULA:5.24c]] recovering Equation 5.22."
+    },
+    {
+      "type": "discussion",
+      "content": "Note, however, that while the first term of Equation 5.24c recovers the breeder’s equation, the second term $$ B_{k}=\\sum_{i,j}\\delta_{ij}p_{i}s_{i}p_{j}s_{j} $$ is a measure of departure from the breeder’s equation at the focal locus (k). Nagylaki (1991) showed that the total departure over all loci $ B = \\sum_k B_k $ is bounded by $$ \\left|B\\right|\\leq\\left(\\sum_{k=1}^{n}\\sigma_{D(k)}(z)\\right)\\cdot\\frac{\\sigma_{A}^{2}(w)}{2} $$ where $ \\sigma_{D(k)}(z) $ is the square root of the dominance genetic variance in the character contributed by locus k, and $ \\sigma_{A}^{2}(w) $ is the additive variance in relative fitness. If all n loci underlying the character are identical (the exchangeable model), this bound reduces to $$ \\left|B\\right|\\leq\\frac{\\sigma_{D}(z)\\cdot\\sigma_{A}^{2}(w)}{2\\sqrt{n}} $$ where $ \\sigma_{D}^{2}(z) = n\\sigma_{D(k)}^{2}(z) $ is the total dominance genetic variance for the trait. Hence, assuming there is no epistatic genetic variance, even if dominance is present, as the number of loci increases, any departure from the breeder's equation will become increasingly small."
     }
   ]
 }

@@ -157,5 +157,3 @@ Copy-Item .env.example .env
 - `GLMOCR_INPUT_DIR` / `GLMOCR_OUTPUT_DIR`：覆盖 GLM OCR 输入输出目录。
 - `PAPER2LATEX_PADDLE_API_URL`、`PAPER2LATEX_PADDLE_API_TOKEN`、`PAPER2LATEX_PADDLE_PIPELINE`：Paddle 服务配置。
 - `KE_LLM_*`：结构化流程中可选的 LLM 审核配置。
-
-

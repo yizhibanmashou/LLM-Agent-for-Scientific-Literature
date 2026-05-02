@@ -2,19 +2,82 @@
   "id": "chapter25_010",
   "metadata": {
     "chapter": "chapter25",
-    "section": "MAJOR GENES VERSUS POLYGENIC RESPONSE: DATA",
+    "section": "Chapter 25: MAJOR GENES VERSUS POLYGENIC RESPONSE: THEORY",
     "subsections": [
-      "MAJOR GENES VERSUS POLYGENIC RESPONSE: DATA"
+      "Lande's Model: Response With a Major Gene in an Infinitesimal Background"
     ],
     "source_file": "tmp\\paddle_output\\chapter25_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
-    "formula_references": [],
-    "table_references": []
+    "formula_references": [
+      "25.8e",
+      "25.9a",
+      "25.9b",
+      "25.9c",
+      "25.9d"
+    ],
+    "table_references": [
+      "25.2"
+    ],
+    "table_reference_keys": [
+      "chapter25:25.2"
+    ]
   },
   "blocks": [
     {
+      "type": "derivation",
+      "content": "[h] From [[SEE_TABLE:25.2]], the new mean becomes [[SEE_FORMULA:25.8e]]"
+    },
+    {
       "type": "discussion",
-      "content": "A long-running debate in evolutionary biology, dating back to the rediscovery of Mendel, is whether the majority of adaptations are due to a few alleles with large effects or to the accumulation of small changes over a large number of loci. Before the modern evolutionary synthesis, geneticists (the Mendelians) felt that macromutations drove evolution, while supporters of Darwin (the Biometricians) felt that evolution was driven by selection acting on numerous factors of small effect. These differing views (and more importantly, their vocal supporters and opponents) delayed the merging of modern genetics with Darwin's theory of evolution. Fisher's (1918) paper, founding quantitative genetics, was a watershed event in helping to fuse these two schools (see Provine 1971 for a historical overview of the Mendelian-Biometrician debate). This same debate, in slightly different forms, resurfaced in the 1940s with Goldschmidt's (1940) idea of hopeful monsters (single mutations with a large effect driving major evolutionary changes) and also in the late 1970s to early 1980s with the debate surrounding punctuated equilibrium (the causes of long periods of evolutionary stasis, punctuated by rapid change, in the fossil record; see Eldredge and Gould 1972; Charlesworth et al. 1982)."
+      "content": "Note that while changes in $ p $ influence changes in $ \\mu $, and vice-versa, Lande assumed that the infinitesimal variance, $ \\sigma^2 $, and heritability, $ h^2 $, remain unchanged over time (ignoring the Bulmer effect). By using the machinery from Chapter 16, we could modify these expressions to allow for the changes caused by selection generating gametic-phase disequilibrium."
+    },
+    {
+      "type": "discussion",
+      "content": "Lande provides extensive analysis of his model in several settings, two of which we will consider. The first is the evolution toward a new optimum. Suppose the optimal phenotype suddenly shifts (for example, due to a major environmental change). In such cases, if the frequency of the major allele is sufficiently rare relative to the strength of selection on the trait (and also relative to the strength of pleiotropic selection against the major allele), it will be lost and the response will be entirely polygenic. As Figure 25.6 illustrates, the dynamics can be complex in this case. The key to understanding this frequency-dependent behavior is to recall the dynamics of an underdominant locus (Figure 5.1). Here, there is an unstable internal equilibrium, with the allele becoming fixed provided it starts above this value, and otherwise being lost."
+    },
+    {
+      "type": "discussion",
+      "content": "Two additional remarks concerning Lande's examples displayed in Figure 25.6 are in order. First, because B is strictly deleterious before the shift in optimum, its initial frequency is expected to be low. For example, for an additive allele with mutation rate $ \\nu $, $ p \\simeq 2\\nu/s $ (Equation 7.6b). While most of the trajectories in Figure 25.6A show fixations, almost all populations would be expected to start with the frequency of B below the 0.025 initial allele-frequency threshold for fixation (the initial frequency is below this value when $ 2\\nu/0.02 < 0.025 $, or when $ \\nu < 0.00025 $). Second, this is a deterministic analysis, which has implications for Figure 25.6B. Notice that the trajectory for an allele starting at frequency 0.8 approaches one before eventually declining to zero. As polygenic response moves the trait mean toward the optimum, the deleterious pleiotropic effects of this allele become greater than its favorable effect on the trait, resulting in the major allele becoming selected against, and eventually removed. In a finite population, selection may initially drive the major-allele frequency sufficiently close to one for drift to fix B before polygenic response negates its favorable effect on the trait. In such cases, a major gene response will be seen."
+    },
+    {
+      "type": "derivation",
+      "content": "Lande's analysis of directional selection used an exponential model of trait fitness, $ w(z) \\propto \\exp(\\beta z) $, which reduces to a simple linear fitness function, $ w(z) \\simeq 1 + \\beta z $, for weak selection ($ |\\beta z| \\ll 1 $). Lande showed that under exponential fitnesses, his model is nicely behaved, with the polygenic mean evolving at a constant rate [[SEE_FORMULA:25.9a]] while the relationships between the major-locus genotypic fitnesses remain constant, with [[SEE_FORMULA:25.9b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "The resulting relative fitnesses of the three major locus genotypes become [[SEE_FORMULA:25.9c]] Because these are constants, the machinery of Chapter 5 quickly informs us as to the fate of the major gene. Selection maintains both alleles as a stable polymorphism when $ W_{Bb} > W_{BB} $, $ W_{bb} $. There is an unstable internal equilibrium when $ W_{Bb} < W_{BB} $, $ W_{bb} $, with B being lost if sufficiently rare (frequency below the equilibrium value), and otherwise being fixed. Finally, if $ W_{bb} < W_{Bb} \\leq W_{BB} $ or $ W_{bb} \\leq W_{Bb} < W_{BB} $, then the major allele is fixed (under our assumption, in this chapter, of no drift)."
+    },
+    {
+      "type": "derivation",
+      "content": "The simple fate of the major allele is not a complete analysis of the full dynamics of this system, as even if the allele is fixed, its contribution could be far outstripped by the polygenic response. Lande examined this possibility by letting $ \\alpha $ represent the difference between the two major-locus homozygotes and assuming that B is initially rare. He then compared the expected amount of time for a B allele (starting at frequency $ p_0 \\ll 0.5 $) to increase to the point where the response from the locus is half its potential response, $ \\alpha/2 $. This is accomplished by using Equation 25.1e to find the critical frequency, and then applying the appropriate version of Equation 5.3 to obtain the required time for this amount of allele-frequency change. If the polygenic response over this amount of time exceeds $ \\alpha/2 $, the response is primarily polygenic, even if B is fixed. For weak exponential selection (Equation 25.9c), the resulting initial frequencies above which the major gene exceeds the polygenic response are approximately [[SEE_FORMULA:25.9d]] where, before, $ \\beta $ is the strength of directional selection on the trait."
+    },
+    {
+      "type": "proposition",
+      "content": "Much of this discussion is framed by the assumption that genes that have a large effect on a trait generally have deleterious effects in natural populations. However, as Orr and Coyne (1992) pointed out, if genes with a small effect on the character also have similarly small (and negative) effects on fitness, their advantage over a major locus largely (or completely) disappears. However, if the potential pool of alleles of small effects is large, it will become enriched by natural selection for those alleles with nearly neutral pleiotropic fitness effects."
+    },
+    {
+      "type": "discussion",
+      "content": "Gomulkiewicz et al. (2010) reached a somewhat different conclusion from Lande's suggestion that major genes generally require very strong selection on a trait in order to account for the majority of response. They focused on the time required for a population that has invaded a harsh new environment (equivalent to a major environmental shift) to evolve persistence. This is a different scenario from that envisioned by Lande, who focused on the genetic composition once an adaptation had occurred (the equilibrium value following a shift). One of the major points from Gomulkiewicz can be seen in Figure 25.6B. Here, a major allele can substantially increase in frequency, but at some point it is overtaken by polygenic response, and ultimately lost. Gomulkiewicz noted that such a situation may be critical for a population to evolve persistence in a harsh new environment. Even though the major gene is eventually lost, the population runs a risk of extinction if this allele is not initially present. Thus, by shifting the focus toward the dynamics during adaptation, rather than on the equilibrium values, a potentially different view of the relative importance of major and minor genes arises. Important roles of major genes may therefore be overlooked if one only focuses on the alleles that are ultimately fixed."
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, while the importance of deleterious pleiotropic fitness effects has been framed as a constraining force for major alleles, Otto (2004) showed that the presence of pleiotropy may impact small-effect alleles as well, which returns us to the point made earlier by Orr and Coyne (1992)."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 25.5. Lande's method of analysis can be used with other fitness functions. For example, suppose the trait of interest is subjected to truncation selection, with only individuals above the threshold value, T, being allowed to reproduce. In this case $$ W(z)=\\left\\{\\begin{aligned}1&\\quad for z\\geq T\\\\ 0&\\quad for z<T\\end{aligned}\\right. $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The marginal fitnesses become $$ \\overline{W}_{i}=\\int_{T}^{\\infty}\\varphi(z,\\mu+\\alpha_{i},\\sigma^{2})d z=\\Pr\\left[U>\\left(T^{*}-\\frac{\\alpha_{i}}{\\sigma}\\right)\\right] $$ where $ T^* = (T - \\mu)/\\sigma $ is the current (standardized) truncation value given $ \\mu $, and U is a unit normal random variable. We usually analyze truncation selection in terms of the fraction, q, of individuals that are allowed to reproduce, rather than the threshold value, T, especially because T changes as the population mean increases. In our case, these are connected by $$ \\begin{aligned}\\overline{W}=q=(1-p)^{2}\\Pr(U>T^{*})+2p(1-p)(1-s_{1})\\Pr\\left[U>\\left(T^{*}-\\frac{\\alpha_{1}}{\\sigma}\\right)\\right]\\\\+p^{2}(1-s_{2})\\Pr\\left[U>\\left(T^{*}-\\frac{\\alpha_{2}}{\\sigma}\\right)\\right]\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "This expression for mean fitness is simply the probability of being above the threshold given a particular major-locus genotype, weighted by the frequencies of these genotypes. For a particular q value and the current $ \\mu $ and p values, one can numerically solve the these equation for $ T^{*} $. Likewise, from LW Equation 2.14, the mean of genotype i following selection becomes $$ \\mu_{s_{i}}=\\mu_{i}+\\sigma\\frac{\\varphi(T,\\mu+\\alpha_{i},\\sigma^{2})}{\\Pr[U>(T^{*}-\\alpha_{i}/\\sigma)]} $$ implying a directional selection differential of $$ S_{i}=\\mu_{s_{i}}-\\mu_{i}=\\sigma\\frac{\\varphi(T,\\mu+\\alpha_{i},\\sigma^{2})}{\\Pr[U>(T^{*}-\\alpha_{i}/\\sigma)]} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "To proceed with the analysis of the model dynamics, for a given $ (p, \\mu) $ vector, we first find $ T^* $ to obtain the specified strength of truncation selection, $ q $, and then compute the $ \\overline{W}_i $ for Equation 25.6 and $ S_i $ for Equation 25.8d to update the $ p $ and $ \\mu $ values. Example 25.10 uses these results to obtain the equilibrium frequency of a major gene that is lethal as a homozygote, but improves the trait as a heterozygote."
     }
   ]
 }

@@ -27,7 +27,7 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "When two or more loci underlie the character of interest, Equations 5.15a and 5.15b become problematic because the conditional densities $ p_{ij}(z) $ and $ p_{i}(z) $ are likely to change in each generation as selection changes the genotype frequencies at other loci. Ideally, we would like to have an approximation that uses only the unconditional phenotypic distribution $ p(z) $ and some simple property of the locus being considered. Fortunately, in many situations, the average excess $ \\alpha_{i} $ of the trait (LW Chapter 4) provides such a connection for loci of small effect. It will prove slightly easier to work with relative fitnesses, so we will use $ w(z)=W(z) / \\overline{W} $ , the expected relative fitness of an individual with phenotypic value z throughout."
+      "content": "When two or more loci underlie the character of interest, Equations 5.15a and 5.15b become problematic because the conditional densities $ p_{i,j}(z) $ and $ p_{i}(z) $ are likely to change in each generation as selection changes the genotype frequencies at other loci. Ideally, we would like to have an approximation that uses only the unconditional phenotypic distribution $ p(z) $ and some simple property of the locus being considered. Fortunately, in many situations, the average excess $ \\alpha_{i} $ of the trait (LW Chapter 4) provides such a connection for loci of small effect. It will prove slightly easier to work with relative fitnesses, so we will use $ w(z) = W(z)/\\bar{W} $, the expected relative fitness of an individual with phenotypic value z, throughout."
     },
     {
       "type": "derivation",
@@ -51,19 +51,15 @@
     },
     {
       "type": "derivation",
-      "content": "For certain phenotypic distributions and fitness functions, these integrals can be evaluated exactly (Latter 1965a; Lynch 1984). However, even in these cases, the resulting $ w_i $ values are still only approximations because Equation 5.16a itself is only approximate. When the integral cannot be evaluated, a Taylor series expansion provides a useful approximation, often without having to completely specify the phenotypic distribution and/or fitness function. If the average excess $ _i $ for the trait value is small, [[SEE_FORMULA:5.18a]] [[SEE_FORMULA:5.18b]]"
-    },
-    {
-      "type": "derivation",
-      "content": "Substituting into Equations 5.17a and 5.17b and recalling that $ w(z)p(z)\\,dz = 1 $ yields the average excess in relative fitness (Equation 5.8b) as [[SEE_FORMULA:5.19a]] and [[SEE_FORMULA:5.19b]]"
+      "content": "For certain phenotypic distributions and fitness functions, these integrals can be evaluated exactly (Latter 1965a; Lynch 1984). However, even in these cases, the resulting $ w_i $ values are still only approximations because Equation 5.16a itself is only approximate. When the integral cannot be evaluated, a Taylor series expansion provides a useful approximation, often without having to completely specify the phenotypic distribution and/or fitness function. If the average excess $ \\alpha_i $ for the trait value is small, [[SEE_FORMULA:5.18a]] [[SEE_FORMULA:5.18b]] Substituting into Equations 5.17a and 5.17b and recalling that $ \\int w(z)p(z)\\,dz = 1 $ yields the average excess in relative fitness (Equation 5.8b) as [[SEE_FORMULA:5.19a]] and [[SEE_FORMULA:5.19b]]"
     },
     {
       "type": "discussion",
-      "content": "Equation 5.19a is applicable if the phenotypes are distributed continuously. For meristic (i.e., discrete) traits, Equation 5.19b applies provided $ w(z) $ is differentiable (the integral is replaced by a weighted sum over the discrete trait values). Note that Equations 5.19a and 5.19b connect population genetics (the average excess $ s_{i} $ in fitness) with quantitative genetics （ $ w(z) $ and the average excess $ \\alpha_{i} $ in the trait value)."
+      "content": "Equation 5.19a is applicable if the phenotypes are distributed continuously. For meristic (i.e., discrete) traits, Equation 5.19b applies provided $ w(z) $ is differentiable (the integral is replaced by a weighted sum over the discrete trait values). Note that Equations 5.19a and 5.19b connect population genetics (the average excess $ s_i $ in fitness) with quantitative genetics ($ w(z) $ and the average excess $ \\alpha_i $ in the trait value)."
     },
     {
       "type": "derivation",
-      "content": "The integrals in Equations 5.19a and 5.19b represent the change in fitness associated with linear deviations of a character value from its mean (i.e., directional selection). To see this, consider the case in which phenotypic values are normally distributed, with a mean of $ $ and a variance of $ _ z ^ 2 $ at the population level, [[SEE_FORMULA:5.20a]] which upon differentiation results in [[SEE_FORMULA:5.20b]]"
+      "content": "The integrals in Equations 5.19a and 5.19b represent the change in fitness associated with linear deviations of a character value from its mean (i.e., directional selection). To see this, consider the case in which phenotypic values are normally distributed, with a mean of $ \\mu $ and a variance of $ \\sigma_{z}^{2} $ at the population level, [[SEE_FORMULA:5.20a]] which upon differentiation results in [[SEE_FORMULA:5.20b]]"
     },
     {
       "type": "derivation",
@@ -71,7 +67,7 @@
     },
     {
       "type": "derivation",
-      "content": "The first integral is the mean $ \\mu^{*} $ after selection because $ w(z)p(z) $ is the density of z following selection, while the second integral is one because $ \\overline{w}=1 $ . Noting that the directional selection differential (the within-generation change in the mean from selection; Chapter 13) is $ S=\\mu^{*}-\\mu $ , we have where $ \\bar{i}=S / \\sigma_{z} $ is the standardized selection differential (or selection intensity; Chapter 13). Hence, to first order, the selection on an individual allele of small effect is approximately equal to its standardized average excess in the trait value $ (\\alpha_{i} / \\sigma_{z}) $ multiplied by the selection intensity on the trait. As noted by Kimura and Crow (1978) and Milkman (1978), this approximation ([[SEE_FORMULA:5.21]]) is a well-known result for certain fitness functions, e.g., truncation selection (Haldane 1930; Griffing 1960a), and is a good approximation for arbitrary fitness functions when z is normally distributed."
+      "content": "The first integral is the mean $ \\mu^* $ after selection because $ w(z)p(z) $ is the density of z following selection, while the second integral is one because $ \\overline{w} = 1 $. Noting that the directional selection differential (the within-generation change in the mean from selection; Chapter 13) is $ S = \\mu^* - \\mu $, we have [[SEE_FORMULA:5.21]] where $ \\bar{\\imath} = S/\\sigma_z $ is the standardized selection differential (or selection intensity; Chapter 13). Hence, to first order, the selection on an individual allele of small effect is approximately equal to its standardized average excess in the trait value $ (\\alpha_i/\\sigma_z) $ multiplied by the selection intensity on the trait. As noted by Kimura and Crow (1978) and Milkman (1978), this approximation (Equation 5.21) is a well-known result for certain fitness functions, e.g., truncation selection (Haldane 1930; Griffing 1960a), and is a good approximation for arbitrary fitness functions when z is normally distributed."
     },
     {
       "type": "discussion",

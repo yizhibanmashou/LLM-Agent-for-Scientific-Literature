@@ -2,86 +2,27 @@
   "id": "chapter9_034",
   "metadata": {
     "chapter": "chapter9",
-    "section": "Chapter 9: Summary Statistics Based on Infinite-sites Models",
+    "section": "TESTS BASED ON SITE-FREQUENCY SPECTRUM STATISTICS",
     "subsections": [
-      "Summary Statistics Based on Infinite-sites Models"
+      "TESTS BASED ON SITE-FREQUENCY SPECTRUM STATISTICS"
     ],
     "source_file": "tmp\\paddle_output\\chapter9_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
-    "formula_references": [
-      "9.21a",
-      "9.21b",
-      "9.21c",
-      "9.22a",
-      "9.22b",
-      "9.23a",
-      "9.23b",
-      "9.23c",
-      "9.23d"
-    ],
-    "table_references": [
-      "9.1"
-    ],
-    "table_reference_keys": [
-      "chapter9:9.1"
-    ]
+    "formula_references": [],
+    "table_references": []
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "As introduced in Chapter 4, a variety of summary statistics can be used to estimate $ \\theta= 4 N_{e}\\mu $ under the infinite-sites model. For a sample of L sites (generally nucleotides), suppose that there are S segregating sites, with $ \\eta_{1} $ and $ \\zeta_{1} $ sites harboring (folded and unfolded, respectively) singletons, and $ \\Pi $ denoting the average number of pairwise differences between two random sequences. If our goal is to estimate $ \\theta $ on a per-nucleotide basis, so that $ \\mu $ is the per-nucleotide mutation rate, then (as in Chapter 4), we would"
+      "content": "Under the infinite-sites model, a sequence is treated as a series of $L$ sites, with each new mutation assumed to occur at a new site (Chapter 4). At mutation-drift equilibrium, most features of this model, including the site-frequency spectrum (SFS), are fully specified by the population-size-scaled mutation rate, $\\theta = 4N_e\\mu$. Depending on the nature of the data, an observed frequency spectrum is viewed as either folded or unfolded (Chapter 2). An unfolded spectrum considers the frequency of the derived allele (Equation 2.35a), and such data are said to be polarized (typically using an outgroup to distinguish between ancestral and derived, or mutant, alleles). The folded spectrum (Equation 2.35b) uses the minor-allele frequency, ignoring whether the rarer allele is ancestral or derived. To distinguish between these different spectra, we use the notation that $\\zeta_i$ denotes the number of sites that contain exactly $i$ derived alleles ($1 \\leq i \\leq n-1$), yielding the observed unfolded SFS as the vector $(\\zeta_1, \\cdots, \\zeta_{n-1})$. Similarly, $\\eta_i$ denotes the number of sites with exactly $i$ copies of the minor allele ($1 \\leq i \\leq [n/2]$), with $(\\eta_1, \\cdots, \\eta_{[n/2]})$ being the observed folded SFS, where $$ [n/2]=\\left\\{\\begin{array}{l}n/2for n even\\ $ n-1)/2for n odd\\end{array}\\right. $$"
     },
     {
       "type": "discussion",
-      "content": "[[TABLE:9.1]] summarizes the various site-frequency test statistics discussed here, all of which have the form consider the fraction of segregating sites as S/L; the nucleotide diversity as $ = /L $; and the fraction of sites that are singletons as $ S_1/L $. When searching for genomic regions under selection, our goal shifts to $ _L = 4N_e _L $, the corresponding value for the region, where $ _L = L $ is the total mutation rate over the L sites. Because the focus in this section is on specific regions, in an effort to keep the notation simple, we suppress the subscript and use $ $ and $ $ to denote the region-side values ($ _L $, $ _L $)."
-    },
-    {
-      "type": "derivation",
-      "content": "While S and II have the same values for polarized and unpolarized data, the number of singletons can be slightly different. All of these summary statistics yield estimates of $ $ for a region of interest, with [[SEE_FORMULA:9.21a]] where $ a_n = _ j=1 ^ n-1 1/j $ (Equation 4.3b). These four expressions correspond (respectively) to: the Watterson estimator (Equation 4.3a, which is also commonly denoted by $ _W $); Tajima's estimator (Equation 4.1); our previous singleton estimator, $ _1 $, using unfolded data (Equation 4.6a); and the corresponding singleton estimator, $ _1^* $, using folded data. The sampling variances for these estimates are given by Equations 4.4a ($ _S $), 4.2 ($ _ II $), and 4.6b ($ _1 $). These expressions for the variance are functions of both $ $ and $ ^2 $, and are typically (e.g., Tajima 1989) computed by replacing [[SEE_FORMULA:9.21b]] where $ b_n = _ j=1 ^ n-1 1/j^2 $ (Equation 4.4b)."
-    },
-    {
-      "type": "derivation",
-      "content": "The idea behind site-frequency tests of neutrality is to compare two different estimates of $ $ based on information from different regions of the site-frequency spectrum. When the infinite-sites model holds and the population is at mutation-drift equilibrium, these estimates should be within the sampling error of each other, while they can be significantly different when the neutral equilibrium model does not hold. [[SEE_TABLE:9.1]] summarizes the various site-frequency test statistics discussed here, all of which have the form [[SEE_FORMULA:9.21c]]"
+      "content": "The $ \\eta_{i} $ and $ \\zeta_{i} $ are simply related by $$ \\eta_{i}=\\zeta_{i}+\\zeta_{n-i}\\quad for\\quad1\\leq i\\leq[n/2] $$"
     },
     {
       "type": "discussion",
-      "content": "When applying any of these tests, care must be taken to avoid SNP ascertainment bias. If the process by which SNPs are chosen is biased by their frequency (SNP discovery panels are generally biased in favor of intermediate-frequency sites), this results in a biased estimate of the frequency spectrum, potentially compromising the tests. Likewise, when tests are based on the unfolded SFS, errors introduced by incorrect polarity assignment (incorrectly assigning a derived allele ancestral status, and vice versa) can be very serious (Baudry and Depaulis 2003; Hernandez et al. 2007). Finally, sequencing errors result in an increase in singletons, which can bias tests away from neutrality (Achaz 2008; Johnson and Slatkin 2008), although maximum-likelihood approaches exist that deal with sequencing errors when estimating SNP frequencies (Lynch 2009a; Maruki and Lynch 2013)."
-    },
-    {
-      "type": "discussion",
-      "content": "Example 9.10. Suppose we sample ten alleles from a population and observe a total of 12 segregating sites (S = 12), an average of four differences between alleles (II = 4), and three segregating sites that have only a single copy of the minor allele ($ _1 = 3 $). What are the estimates of $ $ based on these three summary statistics? Using Equations 9.21a yields $$ \\widehat{\\theta}_{S}=\\frac{S}{a_{10}},\\mathrm{w i t h}a_{10}=\\sum_{i=1}^{9}\\frac{1}{i}=2.83\\mathrm{y i e l d i n g}\\widehat{\\theta}_{S}=\\frac{12}{2.83}=4.24 $$ $$ \\widehat{\\theta}_{\\Pi}=\\Pi=4\\qquad\\widehat{\\theta}_{1^{*}}=\\frac{n}{n-1}\\eta_{1}=\\frac{10}{9}\\cdot3=3.33 $$"
-    },
-    {
-      "type": "derivation",
-      "content": "Example 9.11. As we now illustrate, all of the tests summarized in [[SEE_TABLE:9.1]] follow from a general family of estimators of $ $ based on the discrete Watterson distribution (Equation 2.35). For a sample of n sequences with L sites, the expected number of segregating sites with i copies of the derived (unfolded, $ _i $) or of the minor (folded, $ _i $) allele are [[SEE_FORMULA:9.22a]] where $ = 4N_ e $ is the scaled mutation rate for the entire region."
-    },
-    {
-      "type": "derivation",
-      "content": "Hence, a method-of-moments estimator for $ $ using only the number in the $ i $th class from either SFS is simply [[SEE_FORMULA:9.22b]]"
-    },
-    {
-      "type": "discussion",
-      "content": "Nawa and Tajima (2008) suggested that a plot of $ \\widehat{\\theta}_{i} $ versus i can be helpful for visualizing departures from the neutral SFS, although values for large i may be more problematic as the variance of $ \\widehat{\\theta}_{i} $ dramatically increases with i."
-    },
-    {
-      "type": "derivation",
-      "content": "Following Zeng et al. (2006), consider any summary statistic, g, of the unfolded site-frequency spectrum of the form [[SEE_FORMULA:9.23a]] From Equation 9.22a [[SEE_FORMULA:9.23b]]"
-    },
-    {
-      "type": "derivation",
-      "content": "Thus, a family of estimators for $ $ based on an arbitrary vector $(c_ 1,,c_ n-1)$ of weights is given by [[SEE_FORMULA:9.23c]] where $ h(n) $ is a function of the sample size n and the chosen weights $ c_ i $, and g is the observed value of the statistic."
-    },
-    {
-      "type": "discussion",
-      "content": "The choice of weights allows one to tailor statistics to use different parts of the frequency spectrum when estimating $ $. Taking $ c_i = 1 $ yields $ g = S $ and $ h(n) = a_n $, recovering the Watterson estimator, $ _S = S/a_n $. Taking $ c_i = i(n - i) $ $$ h(n)=\\sum_{i=1}^{n-1}i(n-i)/i=n(n-1)/2 $$ yielding $$ \\widehat{\\theta}=\\sum_{i=1}^{n-1}\\frac{2i(n-i)}{n(n-1)} $$ which is simply the average pairwise difference, II. As with S, II is symmetric with respect to i and n - i, so that both folded and unfolded data return the same estimate. Taking $ c_1 = 1 $, $ c_i > 1 = 0 $ yields $ g = _1 $ (the number of derived singletons) and $ h(n) = 1 $, recovering the $ _1 $ estimator."
-    },
-    {
-      "type": "derivation",
-      "content": "Similarly, for a folded frequency spectrum, [[SEE_FORMULA:9.23d]]"
-    },
-    {
-      "type": "discussion",
-      "content": "Consider the estimator using only folded singletons, $ \\eta_{1} $ . Here, $ c_{1}=1 $ $ c_{i}=0 $ for $ i > 1 $ , and hence $ f(n)=n / (n-1) $ , giving $ \\eta_{1}(n-1) / n $ as an estimator of $ \\theta $ , which recovers $ \\widehat{\\theta}_{1^{*}} $ . Achaz (2009) provided general expressions for the variance of any estimator of the form given by Equations 9.23c or 9.23d, providing all of the machinery to develop general tests in the form of Equation 9.21c using any feature of interest in the SFS."
+      "content": "For example, both $ \\zeta_1 $ and $ \\eta_1 $ denote the number of sites that are singletons, with $ \\zeta_1 $ being the number of sites with a single copy of the derived allele and $ \\eta_1 $ being the number of sites with a single copy of the minor allele. The latter could be due to either a single copy of the derived allele or a single copy of the ancestral allele, with $ \\eta_1 = \\zeta_1 + \\zeta_{n-1} $. As detailed in Chapter 8, both a hard sweep and long-term balancing selection are expected to perturb a starting site-frequency spectrum into some new distribution. A hard sweep increases the frequency of sites with rare derived alleles and also sites with high-frequency derived alleles (Figure 8.5). In a folded frequency spectrum, these jointly appear as an increase in the frequency of sites with rare alleles. Conversely, long-term balancing selection is expected to increase the number of sites with intermediate-frequency alleles, albeit over a region that becomes ever-narrower over time (Chapter 8). While they are widely used, a problem with all site-frequency spectrum tests is that nonequilibrium conditions (e.g., during recovery following a bottleneck) or spatial population structure cause the frequency spectrum of neutral alleles to depart from the benchmark Watterson distribution. Thus, a significant amount of the following discussion deals with these concerns."
     }
   ]
 }

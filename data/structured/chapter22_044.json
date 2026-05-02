@@ -9,66 +9,59 @@
     "source_file": "tmp\\paddle_output\\chapter22_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [
-      "22.62b",
-      "22.62c",
-      "22.62d",
-      "22.62e",
-      "22.62f",
-      "22.63a",
-      "22.63b",
-      "22.63c",
-      "22.63d",
-      "22.64a",
-      "22.64b",
-      "22.65a",
-      "22.65b"
+      "22.28a",
+      "22.59a",
+      "22.59b",
+      "22.59c",
+      "22.60a",
+      "22.60b",
+      "22.61a",
+      "22.61b",
+      "22.62a",
+      "22.62b"
     ],
     "table_references": []
   },
   "blocks": [
     {
-      "type": "derivation",
-      "content": "Individual selection occurs when $ _ w| = _ w| z = $, as Equation 22.62a reduces to $ w_i = a + z_i + e_i $. Again assuming that $ e_i $ is uncorrelated with $ A_i $, Price's theorem gives the response as $ _A = (w_i, A_i) $, which from Equation 22.62a becomes [[SEE_FORMULA:22.62b]]"
-    },
-    {
-      "type": "derivation",
-      "content": "The first covariance term is given by [[SEE_FORMULA:22.62c]] where $ r_ n = r + (1 - r)/n $ (Equation 21.6b). This is just the among-group genetic variance (Chapter 21). Likewise, [[SEE_FORMULA:22.62d]] which is the within-group genetic variance (Chapter 21). Substitution of Equations 22.62c and 22.62d into Equation 22.62b gives the expected response to multilevel selection as [[SEE_FORMULA:22.62e]] As noted by Wade (1980) and Cheverud (1985), total response is the sum of the among-group response, $ r_n _A^2 _ w $, plus the within-group response, $ (1 - r_n) _A^2 _ w | z $. Relatedness enters into multilevel selection models because $ r $ influences the relative amounts of within-versus among-group variance. Increasing $ r $ increases the among-group variation, $ r_n _A^2 $, while decreasing the within-group variation, $ (1 - r_n) _A^2 $. With increasing relatedness, more of the response comes from among-group (as opposed to within-group) selection. In the absence of relatives within the group $ (r = 0 $, so that $ r_n = 1/n $), Equation 22.62e becomes [[SEE_FORMULA:22.62f]]"
-    },
-    {
-      "type": "derivation",
-      "content": "Example 22.17 shows that the term in the parentheses reduces to $ _ w_d|z $, and hence in the absence of relatives the response reduces to Equation 22.61b, namely the breeder's equation. Relatedness of group members is thus required for the response under the multilevel fitness model (Equation 22.62a) to depart from the breeder's equation. As mentioned, although these models have no associative effects when trait values are considered, their fitness functions (Equation 22.59a and 22.62a) generate direct and associative effects in fitness. It will prove useful (especially when contrasting the above results with models that do allow traits to have associative effects) to consider the direct and associative components of fitness as they relate to the breeding value, $ A_i $, of the focal individual. Write the index $ I_i $ as $$ I_{i}=z_{i}+g\\sum_{j\\neq i}^{n}z_{j}=A_{i}+g\\sum_{j\\neq i}^{n}A_{j}+e_{i}^{*} $$ where we have swept all of the terms not involving breeding values into the residual, $ e_ i ^ * $. Substitution into Equation 22.60b gives the fitness of i in terms of the breeding values $ A_ i $ and $ A_ j $ as [[SEE_FORMULA:22.63a]] where we have used $ _i^* $ as the residual in the fitness regression to distinguish it from the residual ($ e_i^* $) in our expression for the index $ I_i $. We have now reverted to the $ A_d $ notation for the breeding values (of direct effects), as we will shortly expand this result to allow for breeding values of associative effects ($ A_s $). The right side of Equation 22.63a decomposes the fitness into direct and associative components, with [[SEE_FORMULA:22.63b]]"
-    },
-    {
-      "type": "derivation",
-      "content": "The direct component $ (w_ d,i) $ is the contribution from genes in the focal individual i toward its fitness, while the associative component $ (w_ s,j) $ is the contribution from genes in j toward i's fitness. From Price's equation, we have the response as the sum of direct and associative contributions, where [[SEE_FORMULA:22.63c]] which is the breeder’s equation, while any additional contribution from i due to genes in j is given by [[SEE_FORMULA:22.63d]]"
+      "type": "discussion",
+      "content": "Most models of kin and group selection assume that the trait of interest is not influenced by associative effects, so that we can decompose the phenotypic value of individual i as $$ z_{i}=A_{i}+E_{i} $$ where $ A_{i} $ denotes i's breeding value (we use A rather than $ A_{d} $ to stress that this model assumes no associative effects, so that no $ A_{s} $ terms appear). While no associative effects influence the phenotypic value of the trait of interest, we do assume that the fitness of an individual is influenced by the phenotypes of its neighbors. This results in fitness showing both direct and associative effects. This distinction between models where the trait does not show associative effects while fitnesses do, versus models where both the trait and fitness show associative effects is subtle, but rather important, as the resulting model behavior is quite different (Bijma and Wade 2008)."
     },
     {
       "type": "discussion",
-      "content": "Thus, two factors are required for genes in j to influence the response based on selecting i. First, multilevel selection $ (g\\neq0) $ is required in order for there to be an effect of genes in j on the fitness of i $ (g\\beta_{w_{d}|z}A_{d,j}) $ . Second, the genes in i and j must be correlated $ (r>0) $ Only when both $ g\\neq0 $ and $ r\\neq0 $ is there an additional increment in the selection response from the genes in $ j $ and only in this case do we see departures from the breeder's equation. Summing over all $ n-1 $ of i 's interacting neighbors recovers Equation 22.61a."
+      "content": "In particular, Bijma and Wade show that when traits lack associative effects, the response under either kin or group selection deviates from the breeder's equation only when both relatedness and multilevel selection occur. A slightly more general development of their result proceeds as follows."
     },
     {
       "type": "derivation",
-      "content": "Example 22.17. Following Bijma and Wade, we can formally show the connections between the fitness models given by Equation 22.59a (kin selection) and Equation 22.62a (multilevel selection). Expanding $ $ and $ z_i $ to express them in terms of $ z_i $ and $ _ j i z_j $, we have that [[SEE_FORMULA:22.64a]]"
+      "content": "First, consider a classical kin selection model, where the fitness of individual i is a function of its phenotypic value plus contributions that depend on the phenotypic values (for the same trait) of the n - 1 individuals with which it interacts. Generalizing Equation 22.55b, we can express i's fitness as the multiple regression [[SEE_FORMULA:22.59a]] where $ \\beta_{w_d|z} $ is the direct effect on fitness and $ \\beta_{w_s|z} $ the indirect (or social) effect on i's fitness given the phenotypes of its conspecifics. Assuming the residual ($ \\epsilon_i $) is uncorrelated with i's breeding value ($ A_i $) for the trait under selection, Equation 22.56a generalizes to give the selection response in the trait mean as [[SEE_FORMULA:22.59b]] As mentioned previously, we can think of $ \\beta_{w_d|z} = c $ as the cost and $ \\beta_{w_s|z} = b $ as the benefit, so that for altruistic traits $ \\beta_{w_d|z} < 0 $ and $ \\beta_{w_s|z} > 0 $. For the infinitesimal model under random mating, $$ \\sigma(z_{i},A_{i})=\\sigma(A_{i},A_{i})=\\sigma_{A}^{2}\\quad and\\quad\\sigma(z_{j},A_{i})=\\sigma(A_{j},A_{i})=r_{ij}\\sigma_{A}^{2} $$"
     },
     {
       "type": "derivation",
-      "content": "Matching terms with Equation 22.59a, the regression slopes for fitness in these two model are related as follows: [[SEE_FORMULA:22.64b]]"
+      "content": "If we assume that all interacting pairs have the same relationship (so that $ r_{ij} = r $), Equation 22.59b reduces to [[SEE_FORMULA:22.59c]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Hence, the trait increases when $ \\beta_{w_d|z} + r(n - 1)\\beta_{w_s|z} > 0 $ (Hamilton's rule)."
     },
     {
       "type": "derivation",
-      "content": "Similarly, we can show that [[SEE_FORMULA:22.65a]] implying [[SEE_FORMULA:22.65b]]"
+      "content": "The multilevel selection connection that appears in kin selection models is seen by defining [[SEE_FORMULA:22.60a]]"
     },
     {
-      "type": "discussion",
-      "content": "Thus, in the absence of trait associative effects ($ ^2(A_s) = 0 $, and hence $ _ w_s|z = 0 $), $ _ w| z $ and $ _ w| $ are equivalent and simply differ by shifting focus over individual versus group values. Finally, we can rearrange the left identity in Equation 22.64b to $$ \\frac{1}{n}\\beta_{w|\\overline{z}}+\\left(\\frac{n-1}{n}\\right)\\beta_{w|\\Delta z}=\\beta_{w_{d}|z} $$"
+      "type": "derivation",
+      "content": "Using this definition, we can rewrite Equation 22.59a as [[SEE_FORMULA:22.60b]] where [[SEE_FORMULA:22.28a]]is the index given by Equation 22.28a. Individual selection corresponds to $ g = 0 $, as $ I_i = z_i $. Likewise, $ g = 1 $ corresponds to group selection, as $$ I_{i}=\\sum_{j=1}^{n}z_{j}=n\\overline{z} $$ so that fitness is entirely a function of group mean. As above, g need not be restricted to between zero and one. For example, negative values of g correspond to selection based on deviation within a group (see Example 22.9)."
     },
     {
-      "type": "discussion",
-      "content": "Using Equation 22.65b to substitute for $ _ w| $ and $ _ w| z $ yields $$ \\frac{\\beta_{w_{d}|z}+(n-1)\\beta_{w_{s}|z}}{n}+\\left(\\frac{n-1}{n}\\right)\\left(\\beta_{w_{d}|z}-\\beta_{w_{s}|z}\\right)=\\beta_{w_{d}|z} $$ showing that the response to multilevel selection when group members are unrelated $ (r = 0) $ reduces to the breeder's equation, $$ \\Delta\\mu_{A}=\\sigma_{A}^{2}\\left(\\frac{1}{n}\\beta_{w|\\overline{z}}+\\left(\\frac{n-1}{n}\\right)\\beta_{w|\\Delta z}\\right)=\\sigma_{A}^{2}\\beta_{w_{d}|z}=h^{2}S $$"
+      "type": "derivation",
+      "content": "Expressed in terms of g, the expected response under kin selection (Equation 22.59c) becomes [[SEE_FORMULA:22.61a]]"
     },
     {
-      "type": "discussion",
-      "content": "Hence, relatedness is required for the response under multilevel selection to deviate from the breeder's equation (Bijma and Wade 2008)."
+      "type": "derivation",
+      "content": "This equation makes Bijma and Wade's main point: The response is a function of the product of relatedness $ (r) $ and levels-of-selection $ (g) $. If either is zero, Equation 22.61a reduces to [[SEE_FORMULA:22.61b]] where we have used the Robertson-Price identity (Equation 6.10), $ \\sigma(w_d, z_i) = S $. Hence, for the selection response to differ from the standard breeder's equation requires both relatedness ($ r > 0 $) and multilevel selection ($ g \\neq 0 $). While the relatedness is obvious in kin-selection formulations, the levels-of-selection component historically has been a bit less transparent, being \"hidden\" in the costs and benefits, $ \\beta_{w_d | z} $ and $ \\beta_{w_d | z} $ (Bijma and Wade 2008). Now consider the response under multilevel selection. Here, fitness is a function of both individual and group value, usually expressed as the components of fitness due to within-group deviation ($ \\Delta z_i = z_i - \\overline{z} $) and to the group mean ($ \\overline{z} = \\sum z_i/n $). As above, the fitness of $ i $ can be expressed as the regression [[SEE_FORMULA:22.62a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Individual selection occurs when $ \\beta_{w|\\overline{z}} = \\beta_{w|\\Delta z} = \\beta $, as Equation 22.62a reduces to $ w_i = a + \\beta z_i + e_i $. Again assuming that $ e_i $ is uncorrelated with $ A_i $, Price's theorem gives the response as $ \\Delta\\mu_A = \\sigma(w_i, A_i) $, which from Equation 22.62a becomes [[SEE_FORMULA:22.62b]]"
     }
   ]
 }

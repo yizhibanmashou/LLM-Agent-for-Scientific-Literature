@@ -23,7 +23,7 @@
     },
     {
       "type": "discussion",
-      "content": "What happens when we move beyond two loci? Ironically, the situation may start to become simpler again. Bürger and Gimelfarb (1999) simulated stabilizing selection under the generalized Wright model and found, for randomly generated parameter sets (linkage, allelic effects, and strength of selection) that roughly 17 As one adds more loci (while keeping the range of phenotypic values constant), the effects of selection on any individual locus will be reduced and the behavior of many models will become much simpler. For example, Hastings and Hom (1989, 1990) showed that, under weak selection, the number of polymorphic loci that can be maintained by stabilizing selection is bounded above by the number of independent traits under selection. Thus, with sufficiently weak selection, stabilizing selection on k independent traits can maintain variation at no more than k loci, implying that if only one trait is under stabilizing selection under these conditions, at most only one underlying locus will be polymorphic. As Example 5.6 showed, it can easily be the case that no loci remain polymorphic (in the absence of new mutation). We examine these issues in more detail in Chapter 28."
+      "content": "What happens when we move beyond two loci? Ironically, the situation may start to become simpler again. Bürger and Gimelfarb (1999) simulated stabilizing selection under the generalized Wright model and found, for randomly generated parameter sets (linkage, allelic effects, and strength of selection) that roughly 17% of two-locus systems maintained alleles at both loci at equilibrium. However, as they considered three-, four-, and five-locus systems, this probability (of two or more loci being polymorphic at equilibrium) fell dramatically, to < 0.5% in the five-locus models. As one adds more loci (while keeping the range of phenotypic values constant), the effects of selection on any individual locus will be reduced and the behavior of many models will become much simpler. For example, Hastings and Hom (1989, 1990) showed that, under weak selection, the number of polymorphic loci that can be maintained by stabilizing selection is bounded above by the number of independent traits under selection. Thus, with sufficiently weak selection, stabilizing selection on k independent traits can maintain variation at no more than k loci, implying that if only one trait is under stabilizing selection under these conditions, at most only one underlying locus will be polymorphic. As Example 5.6 showed, it can easily be the case that no loci remain polymorphic (in the absence of new mutation). We examine these issues in more detail in Chapter 28."
     },
     {
       "type": "proposition",
@@ -39,7 +39,7 @@
     },
     {
       "type": "discussion",
-      "content": "While Wright's original analysis (and that of several other authors) assumed that allelic effects are identical $ (a_1 = a_2) $, the generalized version allows for $ a_1 a_2 $. The resulting trait values become $$ \\begin{array}{cccc}a a&A a&A A\\\\ b b&-(a_{1}+a_{2})&-a_{2}&a_{1}-a_{2}\\\\ B b&-a_{1}&0&a_{1}\\\\ B B&a_{2}-a_{1}&a_{2}&a_{1}+a_{2}\\\\\\end{array} $$"
+      "content": "While Wright's original analysis (and that of several other authors) assumed that allelic effects are identical $ (a_1 = a_2) $, the generalized version allows for $ a_1 \\geq a_2 $. The resulting trait values become $$ \\begin{array}{cccc}a a&A a&A A\\\\ b b&-(a_{1}+a_{2})&-a_{2}&a_{1}-a_{2}\\\\ B b&-a_{1}&0&a_{1}\\\\ B B&a_{2}-a_{1}&a_{2}&a_{1}+a_{2}\\\\\\end{array} $$"
     },
     {
       "type": "discussion",
@@ -51,7 +51,7 @@
     },
     {
       "type": "definition",
-      "content": "Depending on parameter values, this model can have up to 11 equilibria, 7 of which are potentially stable (but not simultaneously so). There are always four trivial corner equilibria corresponding to each of the four gametes being fixed. The equilibria corresponding to either AB or ab being fixed are always unstable, but the other two corner equilibria, corresponding to Ab or aB being fixed, are potentially stable (as they yield more intermediate phenotypic values). There may also be two edge equilibria, corresponding to fixation at one locus and segregation at the other. For either of these edge equilibria to be admissible (the equilibrium $ x_i $ values lying on the simplex), $ a_1 $ must exceed $ 2a_2 $ (given our ordering of $ a_1 a_2 $), and hence the designation of A as the major locus. By definition, disequilibrium is zero at both the corner and edge equilibria."
+      "content": "Depending on parameter values, this model can have up to 11 equilibria, 7 of which are potentially stable (but not simultaneously so). There are always four trivial corner equilibria corresponding to each of the four gametes being fixed. The equilibria corresponding to either AB or ab being fixed are always unstable, but the other two corner equilibria, corresponding to Ab or aB being fixed, are potentially stable (as they yield more intermediate phenotypic values). There may also be two edge equilibria, corresponding to fixation at one locus and segregation at the other. For either of these edge equilibria to be admissible (the equilibrium $ x_i $ values lying on the simplex), $ a_1 $ must exceed $ 2a_2 $ (given our ordering of $ a_1 \\geq a_2 $), and hence the designation of A as the major locus. By definition, disequilibrium is zero at both the corner and edge equilibria."
     },
     {
       "type": "discussion",
@@ -59,7 +59,7 @@
     },
     {
       "type": "discussion",
-      "content": "For this model there are four mutually exclusive regions of the parameter space that correspond to different stable equilibria (Figure 5.4). In region 0, only the two corner equilibria (with either Ab or aB fixed) are stable. Note that if the two loci have equal effects $ (a_2/a_1 = 1 $, as Wright originally assumed), these are the only stable equilibria, and stabilizing selection leads to the removal of variation from both loci. In Region 1, the two edge equilibria (with the major locus being polymorphic and B fixed for either bb or BB), are the only stable equilibria. Note that this requires both rather uneven effects $ (a_1 2a_2) $ and recombination sufficiently large relative to selection. Finally, there are two regions where the internal equilibrium is stable. The very narrow Region 2b corresponds to the two stable unsymmetric internal equilibria, which requires a very specific relationship between selection and recombination. Region 2a corresponds to uneven allelic effects and recombination that is weak relative to selection, where a symmetric equilibrium exists."
+      "content": "For this model there are four mutually exclusive regions of the parameter space that correspond to different stable equilibria (Figure 5.4). In region 0, only the two corner equilibria (with either Ab or aB fixed) are stable. Note that if the two loci have equal effects $ (a_2/a_1 = 1 $, as Wright originally assumed), these are the only stable equilibria, and stabilizing selection leads to the removal of variation from both loci. In Region 1, the two edge equilibria (with the major locus being polymorphic and B fixed for either bb or BB), are the only stable equilibria. Note that this requires both rather uneven effects $ (a_1 \\geq 2a_2) $ and recombination sufficiently large relative to selection. Finally, there are two regions where the internal equilibrium is stable. The very narrow Region 2b corresponds to the two stable unsymmetric internal equilibria, which requires a very specific relationship between selection and recombination. Region 2a corresponds to uneven allelic effects and recombination that is weak relative to selection, where a symmetric equilibrium exists."
     },
     {
       "type": "discussion",
@@ -67,7 +67,7 @@
     },
     {
       "type": "discussion",
-      "content": "that, with strong selection, the mean trait value at equilibrium does not necessarily coincide with the optimum fitness value, so in general $ \\widehat{\\mu}_{z}\\neq0 $ . Hence, at equilibrium, there can be the appearance of apparent directional selection."
+      "content": "[h] that, with strong selection, the mean trait value at equilibrium does not necessarily coincide with the optimum fitness value, so in general $ \\hat{\\mu}_z \\neq 0 $. Hence, at equilibrium, there can be the appearance of apparent directional selection."
     },
     {
       "type": "discussion",

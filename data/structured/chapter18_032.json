@@ -16,25 +16,27 @@
       "18.42b",
       "18.43a",
       "18.43b",
-      "18.44"
+      "18.44",
+      "18.45a",
+      "18.45b",
+      "18.45c",
+      "18.45d"
     ],
     "table_references": [
-      "inline_4",
       "inline_5"
     ],
     "table_reference_keys": [
-      "chapter18:inline_4",
       "chapter18:inline_5"
     ]
   },
   "blocks": [
     {
       "type": "derivation",
-      "content": "The deterministic assumption of a constant rate of allele-frequency change in the Hammond-Gardner model requires large population sizes. Because a typical selection experiment often involves small populations, genetic drift can also be important and thus needs to be taken into account. Smith (1979a, 1979b, 1983) was the first to incorporate drift and inbreeding depression in a GMA, while the most general treatment is from Melchinger and Flachenecker (2006). The latter authors' key idea was to separate allele frequency at cycle $ k $ into deterministic and drift components. $$ p(k)=p(0)+k\\Delta p+\\delta p_{k} $$ where the $ p $ represents the expected large-population change (i.e., the Hammond-Gardner model), while $ p_k $ accounts for the additional change due to drift. Recall from Chapter 2 that under drift $ E[p_k] = 0 $, so that $ E\\left[(\\delta p_k)^2\\right] = \\sigma^2(\\delta p_k) $. Under pure drift, Equation 2.14a yields an allele-frequency variance after $ k $ generations of [[SEE_FORMULA:18.41a]] where $ f_k k/(2N_e) $ is the amount of inbreeding in cycle $ k $. Melchinger and Flachenecker suggested that, with selection, Equation 18.41a can be approximated by using the average frequency over the $ k $ cycles [[SEE_FORMULA:18.41b]]"
+      "content": "The deterministic assumption of a constant rate of allele-frequency change in the Hammond-Gardner model requires large population sizes. Because a typical selection experiment often involves small populations, genetic drift can also be important and thus needs to be taken into account. Smith (1979a, 1979b, 1983) was the first to incorporate drift and inbreeding depression in a GMA, while the most general treatment is from Melchinger and Flachenecker (2006). The latter authors' key idea was to separate allele frequency at cycle $ k $ into deterministic and drift components. $$ p(k)=p(0)+k\\Delta p+\\delta p_{k} $$ where the $ \\Delta p $ represents the expected large-population change (i.e., the Hammond-Gardner model), while $ \\delta p_k $ accounts for the additional change due to drift. Recall from Chapter 2 that under drift $ E[\\delta p_k] = 0 $, so that $ E\\left[(\\delta p_k)^2\\right] = \\sigma^2(\\delta p_k) $. Under pure drift, Equation 2.14a yields an allele-frequency variance after $ k $ generations of [[SEE_FORMULA:18.41a]] where $ f_k \\simeq k/(2N_e) $ is the amount of inbreeding in cycle $ k $. Melchinger and Flachenecker suggested that, with selection, Equation 18.41a can be approximated by using the average frequency over the $ k $ cycles [[SEE_FORMULA:18.41b]]"
     },
     {
       "type": "derivation",
-      "content": "Using the deterministic approximation $ p(k) = p(0) + k p $, this reduces to [[SEE_FORMULA:18.41c]]"
+      "content": "Using the deterministic approximation $ p(k) = p(0) + k\\Delta p $, this reduces to [[SEE_FORMULA:18.41c]]"
     },
     {
       "type": "derivation",
@@ -42,7 +44,7 @@
     },
     {
       "type": "derivation",
-      "content": "Assuming $ f_k = k f $ (typically, with $ f = 1/[2N_e] $), this simplifies to [[SEE_FORMULA:18.42b]]"
+      "content": "Assuming $ f_k = k \\Delta f $ (typically, with $ \\Delta f = 1/[2N_e] $), this simplifies to [[SEE_FORMULA:18.42b]]"
     },
     {
       "type": "derivation",
@@ -50,23 +52,35 @@
     },
     {
       "type": "discussion",
-      "content": "Equations 18.42 and 18.43 define the Melchinger-Flachenecker model. The presence of drift $ (f_k > 0) $ modifies the contributions from the three dominance terms, resulting in a reduction in mean (relative to the HG model) when both $ D_0 $ and $ D $ are positive (as $ D_q $ is $ 0 $ when directional dominance is present). Smith (1979a, 1983) equated this reduction to inbreeding depression, which arises from drift causing some favorable alleles to decrease in frequency. On average, drift is equally likely to increase or decrease the change in frequency of an allele over its deterministic value, $ p $. Thus, under drift, some alleles have a greater-than-deterministic increase in frequency, but this is countered by (on average) others having a less-than-expected increase. For additive genes, the expected value of these changes exactly cancel (as $ E[p_k] = 0 $). However, with dominance, this variance in allele-frequency change around $ p $ does not cancel out, as the mean is a quadratic function of $ d $."
+      "content": "Equations 18.42 and 18.43 define the Melchinger-Flachenecker model. The presence of drift $ (f_k > 0) $ modifies the contributions from the three dominance terms, resulting in a reduction in mean (relative to the HG model) when both $ D_0 $ and $ D $ are positive (as $ D_q $ is $ \\leq 0 $ when directional dominance is present). Smith (1979a, 1983) equated this reduction to inbreeding depression, which arises from drift causing some favorable alleles to decrease in frequency. On average, drift is equally likely to increase or decrease the change in frequency of an allele over its deterministic value, $ \\Delta p $. Thus, under drift, some alleles have a greater-than-deterministic increase in frequency, but this is countered by (on average) others having a less-than-expected increase. For additive genes, the expected value of these changes exactly cancel (as $ E[\\delta p_k] = 0 $). However, with dominance, this variance in allele-frequency change around $ \\Delta p $ does not cancel out, as the mean is a quadratic function of $ d $."
     },
     {
       "type": "derivation",
-      "content": "While Melchinger and Flachenecker’s analysis is exact, the approximate results of the work by Smith (1979a, 1983) had a significant influence on the GMA literature, so a few comments on his approximations are in order. Smith’s (1979a) model was [[SEE_FORMULA:18.44]] namely, it added a term, $ kI $, to the Hammond-Gardner model expression for $ C_k(s) $ (Equation 18.38b) to account for inbreeding, with $ I = (D_0 + D) $. Note by comparison to the exact result (Equation 18.42b) that this is only correct when $ D_0 D $, and $ D_q $ is negligible (as Smith assumed). Further, Smith neglected to include $ I $ in his expressions for the line-cross means, instead using the HG expression for $ C_{k \\times j}(s) $, Equation 13.38d. Equation 18.43b shows this to be incorrect. Smith (1979a) ignored the $ D_q $ term, as he felt that $ p $ was expected to be small, and hence its square was likely to be negligible (or in any case, potentially difficult to estimate with precision)."
+      "content": "While Melchinger and Flachenecker’s analysis is exact, the approximate results of the work by Smith (1979a, 1983) had a significant influence on the GMA literature, so a few comments on his approximations are in order. Smith’s (1979a) model was [[SEE_FORMULA:18.44]] namely, it added a term, $ kI $, to the Hammond-Gardner model expression for $ C_k(s) $ (Equation 18.38b) to account for inbreeding, with $ I = (D_0 + D) $. Note by comparison to the exact result (Equation 18.42b) that this is only correct when $ D_0 \\gg D $, and $ D_q $ is negligible (as Smith assumed). Further, Smith neglected to include $ I $ in his expressions for the line-cross means, instead using the HG expression for $ C_{k \\times j}(s) $, Equation 13.38d. Equation 18.43b shows this to be incorrect. Smith (1979a) ignored the $ D_q $ term, as he felt that $ \\Delta p $ was expected to be small, and hence its square was likely to be negligible (or in any case, potentially difficult to estimate with precision)."
     },
     {
       "type": "discussion",
-      "content": "In a later paper, Smith (1983) instead ignored the inbreeding correction, $ I $, and suggested that for experiments with very small effective population size, $ E (p)^2 $, and thus $ D_q $ was a surrogate measure for drift, as most of its value was due to the drift variance. Equations 18.42b and 18.43 show that both of these ideas, while correct in spirit, are approximations of the more general solution (Equation 18.42b). However, they can often yield a fairly good approximation. For example, Flachenecker et al. (2006) found that both the Smith (1983) and Melchinger-Flachenecker models gave rather similar parameter estimates. The critical insight offered by Smith's analysis was that by adjusting for the effects of drift, one could estimate the potential response if a larger population size was used, as the following two examples illustrate."
+      "content": "In a later paper, Smith (1983) instead ignored the inbreeding correction, $ I $, and suggested that for experiments with very small effective population size, $ E\\left[\\left(\\delta p_k\\right)^2\\right] \\gg \\left(\\Delta p\\right)^2 $, and thus $ D_q $ was a surrogate measure for drift, as most of its value was due to the drift variance. Equations 18.42b and 18.43 show that both of these ideas, while correct in spirit, are approximations of the more general solution (Equation 18.42b). However, they can often yield a fairly good approximation. For example, Flachenecker et al. (2006) found that both the Smith (1983) and Melchinger-Flachenecker models gave rather similar parameter estimates. The critical insight offered by Smith's analysis was that by adjusting for the effects of drift, one could estimate the potential response if a larger population size was used, as the following two examples illustrate."
     },
     {
       "type": "discussion",
-      "content": "Example 18.11. Helms et al. (1989) obtained an estimate of $ _q = -0.024 $ (which was significant at the 1"
+      "content": "Example 18.11. Helms et al. (1989) obtained an estimate of $ \\widehat{D}_q = -0.024 $ (which was significant at the 1% level) in an analysis of a maize line selected for yield. Assuming small effective population size, how much was the population mean at cycle ten reduced due to drift-generated inbreeding depression? Recalling from Equation 18.38a that the contribution from $ D_q $ in cycle $ k $ is $ D_q \\cdot k^2 = -0.024 \\cdot 10^2 = -2.4 $, then the observed mean (provided the assumptions of the Smith [1983] model hold) is expected to be reduced by 2.4 units (relative to a randomly mating population) by the effects of drift generating inbreeding depression."
+    },
+    {
+      "type": "derivation",
+      "content": "Finally, a rough calculation suggests the conditions under which $ \\sigma^2(\\delta p) \\gg (\\Delta p)^2 $, i.e., when the variance in allele-frequency change from drift exceeds the square of the deterministic change from selection. Equation 5.2b shows that $ \\Delta p \\simeq sp(1 - p) $ for a very weakly selected additive locus, while Equation 5.21 yields $ s \\simeq \\bar{\\imath} a / \\sigma_z $, where $ \\bar{\\imath} $ is the selection intensity on the trait, yielding $ \\Delta p_i \\simeq (\\bar{\\imath} a_i / \\sigma_z) p_i (1 - p_i) $. Recalling that $ \\sigma^2(A_i) = 2a_i^2 p_i (1 - p_i) $ is the additive genetic variance associated with locus $ i $ $$ \\begin{align*}(\\Delta p_{i})^{2}&\\simeq(\\bar{\\imath}a_{i}/\\sigma_{z})^{2}p_{i}^{2}(1-p_{i})^{2}=\\bar{\\imath}^{2}p_{i}(1-p_{i})\\left(\\frac{a_{i}^{2}p_{i}(1-p_{i})}{\\sigma_{z}^{2}}\\right)\\\\&=\\bar{\\imath}^{2}p_{i}(1-p_{i})\\left(\\frac{\\sigma^{2}(A_{i})/2}{\\sigma_{z}^{2}}\\right)=\\frac{\\bar{\\imath}^{2}p_{i}(1-p_{i})}{2}h_{i}^{2}\\end{align*} $$ where $ h_{i}^{2} $ is the heritability due to locus i. Assuming that n loci underlying the trait contribute roughly the same to the overall heritability, $ h^{2} $, then [[SEE_FORMULA:18.45a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Drift dominates the expected quadratic change when $ \\sigma^{2}(\\delta p) \\gg (\\Delta p)^{2} $, or $$ \\frac{p(1-p)}{2N_{e}}\\gg\\frac{p(1-p)}{2}\\frac{\\bar{\\tau}^{2}h^{2}}{n} $$ which reduces to [[SEE_FORMULA:18.45b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "For example, for a trait with $ h^2 = 0.25 $ under truncation selection to save the largest 5% $ (\\bar{i} = 2.06; $ Example 14.1 $) $, $ \\bar{i}^2 h^2 \\simeq 1 $, so drift dominates the quadratic term when the number of loci is much greater than the effective population size (assuming loci have roughly equal effects). Expressed in another way, the fractional contribution to the expected square in allele-frequency change from drift is [[SEE_FORMULA:18.45c]] or [[SEE_FORMULA:18.45d]]"
     },
     {
       "type": "discussion",
-      "content": "[h] |c|c| Cell 1 & Cell 2 \\\\ Cell 3 & Cell 4 \\\\"
+      "content": "For $ h^2 = 0.25 $, $ \\bar{i} = 2.06 $, $ n = 100 $, and $ N_e = 25 $, Equation 18.45c returns a value of 0.79, while the approximation given by Equation 18.45d yields 0.74. Hence, in this setting almost 80% of the expected squared allele-frequency change is due to drift."
     }
   ]
 }

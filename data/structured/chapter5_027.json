@@ -4,7 +4,7 @@
     "chapter": "chapter5",
     "section": "Chapter 5: Monogenic Traits",
     "subsections": [
-      "A Population-genetic Derivation of the Breeder's Equation"
+      "Correct Quadratic Terms for $ s_{i} $"
     ],
     "source_file": "tmp\\paddle_output\\chapter5_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
@@ -25,19 +25,15 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "Note, however, that while the first term of Equation 5.24c recovers the breeder’s equation, the second term $$ B_{k}=\\sum_{i,j}\\delta_{ij}p_{i}s_{i}p_{j}s_{j} $$ is a measure of departure from the breeder’s equation at the focal locus (k). Nagylaki (1991) showed that the total departure over all loci $ B = _k B_k $ is bounded by $$ \\left|B\\right|\\leq\\left(\\sum_{k=1}^{n}\\sigma_{D(k)}(z)\\right)\\cdot\\frac{\\sigma_{A}^{2}(w)}{2} $$ where $ _ D(k) (z) $ is the square root of the dominance genetic variance in the character contributed by locus k, and $ _ A ^ 2 (w) $ is the additive variance in relative fitness. If all n loci underlying the character are identical (the exchangeable model), this bound reduces to $$ \\left|B\\right|\\leq\\frac{\\sigma_{D}(z)\\cdot\\sigma_{A}^{2}(w)}{2\\sqrt{n}} $$ where $ _ D ^ 2 (z) = n _ D(k) ^ 2 (z) $ is the total dominance genetic variance for the trait. Hence, assuming there is no epistatic genetic variance, even if dominance is present, as the number of loci increases, any departure from the breeder's equation will become increasingly small."
-    },
-    {
-      "type": "discussion",
-      "content": "Correct Quadratic Terms for $ s_ i $ As mentioned earlier, the approximations given by Equations 5.16a and 5.16b are correct only to linear order, whereas quadratic (second-order) terms are required to properly account for selection acting directly on the trait variance. One source of error is that the conditional distribution of phenotypes for individuals carrying a particular allele has a lower variance than the unconditional phenotypic distribution. Partial knowledge of the genotype reduces the uncertainty in genotypic value, with the phenotypic variance of individuals with a fixed genotype at the kth locus being $ ^2 - _k^2 $, where $ _k^2 $ is the contribution of the kth locus to the total phenotypic variance (Bulmer 1971a; Lynch 1984; Nagylaki 1984; Walsh 1990). In the absence of epistasis, gametic-phase disequilibrium, and genotype-environment interaction/correlation, $$ \\sigma_{k}^{2}=\\sum_{i,j}^{n_{k}}a_{ij}^{2}p_{i}p_{j} $$ where $ a_ ij = G_ ij - _G $ is the deviation of the genotypic value from the genotypic mean and $ n_k $ is the number of alleles at locus $ k $ (Nagylaki 1984; Walsh 1990)."
+      "content": "As mentioned earlier, the approximations given by Equations 5.16a and 5.16b are correct only to linear order, whereas quadratic (second-order) terms are required to properly account for selection acting directly on the trait variance. One source of error is that the conditional distribution of phenotypes for individuals carrying a particular allele has a lower variance than the unconditional phenotypic distribution. Partial knowledge of the genotype reduces the uncertainty in genotypic value, with the phenotypic variance of individuals with a fixed genotype at the kth locus being $ \\sigma^2 - \\sigma_k^2 $, where $ \\sigma_k^2 $ is the contribution of the kth locus to the total phenotypic variance (Bulmer 1971a; Lynch 1984; Nagylaki 1984; Walsh 1990). In the absence of epistasis, gametic-phase disequilibrium, and genotype-environment interaction/correlation, $$ \\sigma_{k}^{2}=\\sum_{i,j}^{n_{k}}a_{ij}^{2}p_{i}p_{j} $$ where $ a_{ij} = G_{ij} - \\mu_G $ is the deviation of the genotypic value from the genotypic mean and $ n_k $ is the number of alleles at locus $ k $ (Nagylaki 1984; Walsh 1990)."
     },
     {
       "type": "derivation",
-      "content": "Using an expansion that accounts for this reduction in variance, Hastings (1990a) showed that $ s_ i $ is approximated to quadratic order by [[SEE_FORMULA:5.25a]] [[SEE_FORMULA:5.25b]] where"
+      "content": "Using an expansion that accounts for this reduction in variance, Hastings (1990a) showed that $ s_{i} $ is approximated to quadratic order by [[SEE_FORMULA:5.25a]] [[SEE_FORMULA:5.25b]] where"
     },
     {
       "type": "derivation",
-      "content": "Note that $ I_ 1 $ is simply the integral in Equation 5.19a and measures the effects of selection on the mean. For a normally distributed trait, substituting Equation 5.20b into the expression for $ I_ 1 $ yields [[SEE_FORMULA:5.25c]]"
+      "content": "Note that $ I_{1} $ is simply the integral in Equation 5.19a and measures the effects of selection on the mean. For a normally distributed trait, substituting Equation 5.20b into the expression for $ I_{1} $ yields [[SEE_FORMULA:5.25c]]"
     },
     {
       "type": "discussion",
@@ -45,15 +41,11 @@
     },
     {
       "type": "derivation",
-      "content": "The $ I_ 2 $ term measures the effect of selection on the variance. To see this, again suppose that the phenotypes are normally distributed. Differentiating Equation 5.20b a second time yields [[SEE_FORMULA:5.26a]] and a bit of algebra (Example 5.13) yields [[SEE_FORMULA:5.26b]] where $ (_ z ^ 2) $ is the within-generation change in phenotypic variance due to selection (Chapters 16 and 24). While we use $ $ for both dominance and within-generation change, the distinction between $ _ ij $ (the dominance associated with $ ij $), and $ (_ z ^ 2) $, the within-generation change in $ _ z ^ 2 $ should be obvious from context. The reason for using $ (_ z ^ 2) $ is that it will be important in subsequent chapters to distinguish between a within-generation change $ (_ z ^ 2) $ and a between-generation change $ (_ z ^ 2) $."
+      "content": "The $ I_{2} $ term measures the effect of selection on the variance. To see this, again suppose that the phenotypes are normally distributed. Differentiating Equation 5.20b a second time yields [[SEE_FORMULA:5.26a]] and a bit of algebra (Example 5.13) yields [[SEE_FORMULA:5.26b]] where $ \\delta(\\sigma_{z}^{2}) $ is the within-generation change in phenotypic variance due to selection (Chapters 16 and 24). While we use $ \\delta $ for both dominance and within-generation change, the distinction between $ \\delta_{ij} $ (the dominance associated with $ ij $), and $ \\delta(\\sigma_{z}^{2}) $, the within-generation change in $ \\sigma_{z}^{2} $ should be obvious from context. The reason for using $ \\delta(\\sigma_{z}^{2}) $ is that it will be important in subsequent chapters to distinguish between a within-generation change $ \\delta(\\sigma_{z}^{2}) $ and a between-generation change $ \\Delta(\\sigma_{z}^{2}) $."
     },
     {
       "type": "derivation",
-      "content": "If phenotypes are normally distributed, $ -I_1 = S/ _z^2 $ (Equation 5.25c), yielding [[SEE_FORMULA:5.27a]]"
-    },
-    {
-      "type": "derivation",
-      "content": "When alleles are completely additive, $ a_{ij}=\\alpha_{i}+\\alpha_{j} $ and the term in brackets reduces to $ \\alpha_{i}^{2}-\\sum_{j}\\alpha_{j}^{2}p_{j} $ . Substituting this improved value of $ s_{i} $ into Equation 5.22 and summing over all loci gives the response to selection (under a completely additive model) as where the subscript k on the $ \\alpha_{i} $ and $ p_{i} $ terms reminds the reader that these can vary over loci. As shown by Equation 29.16a, selection acting on the mean still results in a change in the variance, with $ \\delta(\\sigma_{z}^{2})=-S^{2} $ . In this case, the second term of [[SEE_FORMULA:5.27b]] is zero and we recover the breeder's equation. More generally, however, if selection is also acting directly on the trait variance (such as, but not limited to, stabilizing or disruptive selection), $ \\delta(\\sigma_{z}^{2}) $ departs from $ -S^{2} $ (Chapter 29). Because the double sum in Equation 5.27b is the skewness in the genotypic distribution, if skew is present, changes due to selection on the variance also change the mean (Figure 29.7). Equation 5.27b raises several issues that will be examined in detail in Chapter 24. In particular, even if the distribution of phenotypes is normal, the response still depends on rather fine details (such as the third moment of allelic effects at each locus) of the distribution of genotypic values."
+      "content": "If phenotypes are normally distributed, $ -I_1 = S/\\sigma_z^2 $ (Equation 5.25c), yielding [[SEE_FORMULA:5.27a]] When alleles are completely additive, $ a_{ij} = \\alpha_i + \\alpha_j $ and the term in brackets reduces to $ \\alpha_i^2 - \\sum_j \\alpha_j^2 p_j $. Substituting this improved value of $ s_i $ into Equation 5.22 and summing over all loci gives the response to selection (under a completely additive model) as [[SEE_FORMULA:5.27b]] where the subscript k on the $ \\alpha_{i} $ and $ p_{i} $ terms reminds the reader that these can vary over loci. As shown by Equation 29.16a, selection acting on the mean still results in a change in the variance, with $ \\delta(\\sigma_z^2) = -S^2 $. In this case, the second term of Equation 5.27b is zero and we recover the breeder's equation. More generally, however, if selection is also acting directly on the trait variance (such as, but not limited to, stabilizing or disruptive selection), $ \\delta(\\sigma_z^2) $ departs from $ -S^2 $ (Chapter 29). Because the double sum in Equation 5.27b is the skewness in the genotypic distribution, if skew is present, changes due to selection on the variance also change the mean (Figure 29.7). Equation 5.27b raises several issues that will be examined in detail in Chapter 24. In particular, even if the distribution of phenotypes is normal, the response still depends on rather fine details (such as the third moment of allelic effects at each locus) of the distribution of genotypic values."
     },
     {
       "type": "derivation",
@@ -61,15 +53,11 @@
     },
     {
       "type": "derivation",
-      "content": "Next, we use a standard trick by noting that [[SEE_FORMULA:5.28b]] [[SEE_FORMULA:5.28c]] with Equation 5.28a becoming"
+      "content": "Next, we use a standard trick by noting that [[SEE_FORMULA:5.28b]] [[SEE_FORMULA:5.28c]] with Equation 5.28a becoming Noting that $\\int w(z)p(z) = \\overline{w} = 1$ and that $\\int f(z)w(z)p(z) = E_s[f(z)]$, namely, the expected value of $f(z)$ in the selected individuals (as $w(z)p(z)$ is the distribution of $z$ following selection), Equation 5.28c reduces to $$ \\begin{aligned}I_{2}&=\\frac{1}{\\sigma_{z}^{4}}\\Biggl(-\\sigma_{z}^{2}+E_{s}[(z-\\mu^{*})^{2}]+2(\\mu^{*}-\\mu)E_{s}(z-\\mu^{*})+(\\mu^{*}-\\mu)^{2}\\Biggr)\\\\&=\\frac{1}{\\sigma_{z}^{4}}\\Biggl(-\\sigma_{z}^{2}+\\sigma_{z^{*}}^{2}+0+S^{2}\\Biggr)\\end{aligned} $$"
     },
     {
       "type": "discussion",
-      "content": "Noting that $ w(z)p(z) = = 1$ and that $ f(z)w(z)p(z) = E_s[f(z)]$, namely, the expected value of $f(z)$ in the selected individuals (as $w(z)p(z)$ is the distribution of $z$ following selection), Equation 5.28c reduces to $$ \\begin{aligned}I_{2}&=\\frac{1}{\\sigma_{z}^{4}}\\Biggl(-\\sigma_{z}^{2}+E_{s}[(z-\\mu^{*})^{2}]+2(\\mu^{*}-\\mu)E_{s}(z-\\mu^{*})+(\\mu^{*}-\\mu)^{2}\\Biggr)\\\\&=\\frac{1}{\\sigma_{z}^{4}}\\Biggl(-\\sigma_{z}^{2}+\\sigma_{z^{*}}^{2}+0+S^{2}\\Biggr)\\end{aligned} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Here $ \\sigma_{z^{*}}^{2} $ denotes the variance after selection, so that $ -\\sigma_{z}^{2}+\\sigma_{z^{*}}^{2}=\\delta(\\sigma_{z}^{2}) $ , and we recover Equation 5.26b."
+      "content": "Here $ \\sigma_{z^*}^2 $ denotes the variance after selection, so that $ -\\sigma_z^2 + \\sigma_z^* = \\delta(\\sigma_z^2) $, and we recover Equation 5.26b."
     }
   ]
 }
