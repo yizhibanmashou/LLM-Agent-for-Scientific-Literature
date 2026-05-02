@@ -22,7 +22,7 @@
     },
     {
       "type": "discussion",
-      "content": "Suppose we take as our candidate-generating distribution a uniform over $ (0, 100) $. Clearly, there is probability mass above 100 for the scaled inverse- $ ^2 $, but we assume this is sufficiently small that we can ignore it. Now let's run the algorithm. Take $ _0 = 1 $ as our starting value, and suppose the uniform returns a candidate value of $ ^* = 39.82 $. Computing"
+      "content": "Suppose we take as our candidate-generating distribution a uniform over (0,100). Clearly, there is probability mass above 100 for the scaled inverse $ \\chi^{2} $ , but we assume this is sufficiently small that we can ignore it. Now let's run the algorithm. Take $ \\theta_{0}=1 $ as our starting value, and suppose the uniform returns a candidate value of $ \\theta^{*} $ = 39.82. Computing"
     },
     {
       "type": "discussion",
@@ -30,11 +30,11 @@
     },
     {
       "type": "discussion",
-      "content": "Since $ < 1 $, the candidate value, $ ^* $, is accepted with a probability of 0.0007: we randomly draw $ U $ from a uniform $ (0,1) $ distribution and accept $ ^* $ if $ U = 0.0007 $. If $ U > $, the candidate value is rejected, and we draw another candidate value from the proposal distribution and continue as above. A sample run resulting from first 500 values of $ $ is plotted in Figure A3.1A. Notice that there are long flat periods (corresponding to all candidate values, $ ^* $, being rejected). Such a chain is said to be poorly mixing (showing long periods between jumps) and is numerically inefficient for sampling the entire probability space defined by the target distribution. Conversely, balancing the poor mixing is the fact that when jumps occur, they tend to be large, thus exploring the extreme values of this distribution."
+      "content": "Since $ \\alpha<1 $ , the candidate value, $ \\theta^{*} $ , is accepted with a probability of 0.0007: we randomly draw U from a uniform (0,1) distribution and accept $ \\theta^{*} $ if U $ \\leq\\alpha=0.0007 $ . If U $ >\\alpha $ the candidate value is rejected, and we draw another candidate value from the proposal distribution and continue as above. A sample run resulting from first 500 values of $ \\theta $ is plotted in Figure A3.1A. Notice that there are long flat periods (corresponding to all candidate values, $ \\theta^{*} $ , being rejected). Such a chain is said to be poorly mixing (showing long periods between jumps) and is numerically inefficient for sampling the entire probability space defined by the target distribution. Conversely, balancing the poor mixing is the fact that when jumps occur, they tend to be large, thus exploring the extreme values of this distribution."
     },
     {
       "type": "discussion",
-      "content": "In contrast, suppose our proposal distribution is a $ _1^2 $. As this distribution is not symmetric, we must employ Metropolis-Hastings (see Example A3.5 for the details). A resulting Metropolis-Hastings sampling run is shown in Figure A3.1B. Note that the time series looks like white noise, and the chain is said to be well mixing. However, note that most jumps are small (< 5), with fewer extreme values sampled than under the uniform proposal distribution."
+      "content": "In contrast, suppose our proposal distribution is a $ \\chi_{1}^{2} $ . As this distribution is not symmetric, we must employ Metropolis-Hastings (see Example A3.5 for the details). A resulting Metropolis-Hastings sampling run is shown in Figure A3.1B. Note that the time series looks like white noise, and the chain is said to be well mixing. However, note that most jumps are small (< 5), with fewer extreme values sampled than under the uniform proposal distribution."
     },
     {
       "type": "discussion",

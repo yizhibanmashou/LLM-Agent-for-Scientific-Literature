@@ -16,15 +16,29 @@ paper2latex -> tmp/paddle_output -> knowledge_engineering -> data/structured -> 
   结构化处理入口
 - `runtime.py`
   运行时支持、LLM 审核和公共数据模型
-- `review_app/`
-  structured 审核工作台，用来检查、对照和改进结构化结果；它不是本轮要删除的教学前端
+- `structured_repair.py`
+  GLM OCR 辅助的结构化修复候选生成和人工审核流程
+- `latex_overlay_repair.py`
+  全库 inline LaTeX overlay 修复流程，只替换正文或表格里的公式片段
 - `tmp/knowledge_engineering/`
-  本模块相关缓存、诊断文件和局部中间产物
+  本模块相关缓存、诊断文件和局部中间产物；正式运行时建议统一写入根目录 `tmp/`
 
 ## 最常用的运行方式
 
 ```bash
 conda run -n py310 python -m knowledge_engineering.process -i tmp/paddle_output/chapter6_full/main.tex -o data/structured --chapter-name chapter6 --artifacts-dir tmp/knowledge_engineering
+```
+
+全书 fresh structured 生成示例：
+
+```bash
+python -m knowledge_engineering.process -i tmp/paddle_output -o tmp/inline_latex_overlay_fresh_structured --artifacts-dir tmp/inline_latex_overlay_artifacts --skip-llm-cleaning --llm-phase 0
+```
+
+inline LaTeX overlay dry-run 示例：
+
+```bash
+python -m knowledge_engineering.latex_overlay_repair --structured-dir data/structured --source-dir tmp/inline_latex_overlay_fresh_structured --out tmp/structured_repair/full_inline_latex_overlay_dryrun
 ```
 
 ## 当前优化重点
@@ -38,6 +52,8 @@ conda run -n py310 python -m knowledge_engineering.process -i tmp/paddle_output/
 5. 源页、chunk、公式、表格之间的可追溯关系
 
 质量审计脚本会把问题清单写入 `tmp/structured_review/`。这些问题是修复 backlog，不是 memory 入库排除清单。
+
+inline LaTeX 修复的当前规则更严格：不使用 GLM OCR 整段覆盖正文，只从 fresh structured 中取更可靠的 `$...$` 公式片段，且保持正文、占位符、表格行列结构不变。exact overlay 可以自动应用；中低置信项进入 review 或仅报告。
 
 ## 职责边界
 

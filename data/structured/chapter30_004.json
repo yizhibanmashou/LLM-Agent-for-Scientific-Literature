@@ -21,23 +21,23 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "As was discussed briefly in Chapters 13 and 20, $ $, removes the effects of phenotypic correlations (among the set of traits being considered) because it is a vector of partial regression"
+      "content": "As was discussed briefly in Chapters 13 and 20, $ \\beta $ , removes the effects of phenotypic correlations (among the set of traits being considered) because it is a vector of partial regression"
     },
     {
       "type": "derivation",
-      "content": "[h] coefficients. From multiple regression theory (LW Chapter 8), the vector of partial regression coefficients for predicting the value of w, given a vector of observations z, is $ ^ -1 (,w) $, where $ $ is the covariance matrix of z and $ (,w) $ is the vector of covariances between the elements of z and fitness, with an ith element of $ (z_i,w) $. Because $ = (,w) $, it immediately follows that [[SEE_FORMULA:30.2a]] is the vector of partial regression coefficients for the linear regression of relative fitness, w, on phenotypic value, z, namely, [[SEE_FORMULA:30.2b]]"
+      "content": "[h] coefficients. From multiple regression theory (LW Chapter 8), the vector of partial regression coefficients for predicting the value of w, given a vector of observations z, is $ \\mathbf{P}^{-1}\\sigma(\\mathbf{z},w) $, where $ $ is the covariance matrix of z and $ (,w) $ is the vector of covariances between the elements of z and fitness, with an ith element of $ (z_i,w) $. Because $ = (,w) $, it immediately follows that [[SEE_FORMULA:30.2a]] is the vector of partial regression coefficients for the linear regression of relative fitness, w, on phenotypic value, z, namely, [[SEE_FORMULA:30.2b]]"
     },
     {
       "type": "discussion",
-      "content": "Recalling the fact (LW Chapters 3 and 8) that the regression must pass through the means of both w and z (1 and $ $, respectively), allows us to remove the intercept constant, a, in the regression. We could equivalently write Equation 30.2b as $ w() = a + ^ T + e $, where $ a = 1 - ^ T $."
+      "content": "Recalling the fact (LW Chapters 3 and 8) that the regression must pass through the means of both w and z (1 and $ \\mu $ , respectively), allows us to remove the intercept constant, a, in the regression. We could equivalently write Equation 30.2b as $ w(\\mathbf{z})=a+\\beta^{T}\\mathbf{z}+e $ , where $ a=1-\\beta^{T}\\mu. $"
     },
     {
       "type": "derivation",
-      "content": "The partial regression coefficient, $ _j $, represents the change in $ w $ from a one-unit increase in $ z_j $ while holding all the other characters constant. It is important to note, however, that $ $ accounts for the effects of phenotypic correlations only among the measured set of characters that comprise the elements of $ z $. Among the members of this set, a character under no directional selection has a value of $ _j = 0 $. Because S = Pβ, we have [[SEE_FORMULA:30.3]] which illustrates that the directional selection differential for trait $i$ confounds direct selection on that character ($ _i$) with indirect contributions due to selection on phenotypically correlated characters ($ _j P_ ij 0$). These contributions are given, respectively, by the first and second terms in Equation 30.3."
+      "content": "The partial regression coefficient, $ \\beta_j $, represents the change in $ w $ from a one-unit increase in $ z_j $ while holding all the other characters constant. It is important to note, however, that $ $ accounts for the effects of phenotypic correlations only among the measured set of characters that comprise the elements of $ z $. Among the members of this set, a character under no directional selection has a value of $ \\beta_j = 0 $. Because S = Pβ, we have [[SEE_FORMULA:30.3]] which illustrates that the directional selection differential for trait $i$ confounds direct selection on that character ($\\beta_i$) with indirect contributions due to selection on phenotypically correlated characters ($\\beta_j P_{ij} \\neq 0$). These contributions are given, respectively, by the first and second terms in Equation 30.3."
     },
     {
       "type": "derivation",
-      "content": "Operationally, fitness regressions are usually computed using standardized variables, [[SEE_FORMULA:30.4a]] with $ z_ sd,i $ having a mean of zero and unit variance (this is often denoted by $ z_i' $ in the literature). As mentioned in Chapter 29, one could also mean-standardize $ (z_i/ _i) $, but when the term standardized variable is used in the evolutionary and ecological literature, it usually implies Equation 30.4a. The selection differential of the standardized variable is simply the selection intensity $ $ (Equation 13.6a), as $$ S_{sd,i}=\\sigma(z_{sd,i},w)=\\sigma(z_{i}/\\sigma_{i},w)=\\frac{\\sigma(z_{i},w)}{\\sigma_{i}}=\\frac{S_{i}}{\\sigma_{i}}=\\bar{\\imath}_{i} $$"
+      "content": "Operationally, fitness regressions are usually computed using standardized variables, [[SEE_FORMULA:30.4a]] with $ z_{sd,i} $ having a mean of zero and unit variance (this is often denoted by $ z_i' $ in the literature). As mentioned in Chapter 29, one could also mean-standardize $ (z_i/\\mu_i) $, but when the term standardized variable is used in the evolutionary and ecological literature, it usually implies Equation 30.4a. The selection differential of the standardized variable is simply the selection intensity $ $ (Equation 13.6a), as $$ S_{sd,i}=\\sigma(z_{sd,i},w)=\\sigma(z_{i}/\\sigma_{i},w)=\\frac{\\sigma(z_{i},w)}{\\sigma_{i}}=\\frac{S_{i}}{\\sigma_{i}}=\\bar{\\imath}_{i} $$"
     },
     {
       "type": "derivation",
@@ -45,11 +45,11 @@
     },
     {
       "type": "discussion",
-      "content": "Equations 30.4b and 30.4c imply that the phenotypic covariance matrix $ (P_ sd) $ for the standardized variables is simply the matrix of all pairwise correlations. Following our notation from Chapter 29, we denote selection gradients using variance-standardized variables by $ _ sd,i $, although they are often denoted by $ _i' $ in the literature. When expressed with standardized variables, Equation 30.2b becomes $$ \\boldsymbol{w}(\\mathbf{z}_{s d})=1+\\boldsymbol{\\beta}_{s d}^{T}\\mathbf{z}_{s d}+e,\\quad\\mathrm{w h e r e}\\quad\\boldsymbol{\\beta}_{s d}=\\mathbf{P}_{s d}^{-1}\\mathbf{S}_{s d} $$"
+      "content": "Equations 30.4b and 30.4c imply that the phenotypic covariance matrix $ (P_{sd}) $ for the standardized variables is simply the matrix of all pairwise correlations. Following our notation from Chapter 29, we denote selection gradients using variance-standardized variables by $ \\beta_{sd,i} $, although they are often denoted by $ \\beta_i' $ in the literature. When expressed with standardized variables, Equation 30.2b becomes $$ \\boldsymbol{w}(\\mathbf{z}_{s d})=1+\\boldsymbol{\\beta}_{s d}^{T}\\mathbf{z}_{s d}+e,\\quad\\mathrm{w h e r e}\\quad\\boldsymbol{\\beta}_{s d}=\\mathbf{P}_{s d}^{-1}\\mathbf{S}_{s d} $$"
     },
     {
       "type": "discussion",
-      "content": "Here $ _ sd,i $ is the expected change in relative fitness given a change of one standard deviation in trait $ z_i $ when all of the other measured trait values (i.e., the elements of $ $) are held constant."
+      "content": "Here $ \\beta_{sd,i} $ is the expected change in relative fitness given a change of one standard deviation in trait $ z_{i} $ when all of the other measured trait values (i.e., the elements of z) are held constant."
     },
     {
       "type": "discussion",
@@ -57,7 +57,7 @@
     },
     {
       "type": "discussion",
-      "content": "Morrissey (2014b) noted that $ E[\\| \\|] \\| \\| $, as the values of $ _i $ are measured with error, and such error carries over into the norm. Suppose $ k $ independent traits are measured, where $ _i N(, ^2) $, so that each $ _i $ is independent and identically distributed, with sampling error $ ^2 $. In this case, $ E[\\| \\|] = > \\| \\| = $. Given that the standard error of an estimate of $ $ is often of the same order as the estimate itself (Morrissey 2014b), the total strength of selection can be considerably overestimated by $ \\| \\| $."
+      "content": "Morrissey (2014b) noted that $ E[\\| \\widehat{\\beta}\\| ]\\geq\\| \\beta\\| $ , as the values of $ \\beta_{i} $ are measured with error, and such error carries over into the norm. Suppose k independent traits are measured, where $ \\widehat{\\beta}_{i}\\sim N(\\beta,\\sigma^{2}) $ , so that each $ \\beta_{i} $ is independent and identically distributed, with sampling error $ \\sigma^{2} $ . In this case, $ E[\\| \\widehat{\\beta}\\| ]=\\sqrt{k(\\beta+\\sigma^{2})}>\\| \\beta\\|=\\sqrt{k\\beta} $ . Given that the standard error of an estimate of $ \\beta $ is often of the same order as the estimate itself (Morrissey 2014b), the total strength of selection can be considerably overestimated by $ \\| \\widehat{\\beta}\\|. $"
     },
     {
       "type": "discussion",
@@ -69,7 +69,7 @@
     },
     {
       "type": "discussion",
-      "content": "The selection differentials for scutellum and wing length were both significantly different from zero, while the only significant gradients were for thorax and wing length. Hence, while the within-generation change in thorax length was negative (but not significantly different from zero), in reality there was strong direct selection to increase thorax length. An increase of one standard deviation in thorax length increases relative fitness by $ _ sd = 0.53 $ (i.e., 53"
+      "content": "The selection differentials for scutellum and wing length were both significantly different from zero, while the only significant gradients were for thorax and wing length. Hence, while the within-generation change in thorax length was negative (but not significantly different from zero), in reality there was strong direct selection to increase thorax length. An increase of one standard deviation in thorax length increases relative fitness by $ \\beta_{sd}=0.53 $ (i.e., 53%) , while an increase of one standard deviation in wing length reduces fitness by 72%."
     }
   ]
 }

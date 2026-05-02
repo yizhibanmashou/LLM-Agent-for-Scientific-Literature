@@ -22,11 +22,11 @@
     },
     {
       "type": "discussion",
-      "content": "The Type-I error rate, $ $, of a random test, and the PER for a significant test, which are often assumed to be the same, are actually very different. In addition to $ $, the PER also depends on the power, $ $, of a test and the fraction, $ _ 0 $, of tests that are truly null (as these latter parameters influence the probability that a test is declared to be significant). Manly et al. (2004) noted that the PER is acceptably low only if the fraction of alternative hypotheses $ (1 - _ 0) $ is well above $ $."
+      "content": "The Type-I error rate, $ \\alpha $ , of a random test, and the PER for a significant test, which are often assumed to be the same, are actually very different. In addition to $ \\alpha $ , the PER also depends on the power, $ \\beta $ , of a test and the fraction, $ \\pi_{0} $ , of tests that are truly null (as these latter parameters influence the probability that a test is declared to be significant). Manly et al. (2004) noted that the PER is acceptably low only if the fraction of alternative hypotheses $ (1-\\pi_{0}) $ is well above $ \\alpha $ ."
     },
     {
       "type": "discussion",
-      "content": "Thinking in terms of the PER allows us to consider multiple comparisons in a continuum from Bonferroni-type corrections to using FDR to control the PER. If $ _1 = 1 - _0 $ is very small, most tests will truly be from the null hypothesis, and we can control the overall false-positive rate with a Bonferroni-type correction. However, if some fraction of the hypotheses is expected to be false (i.e., $ 1 - _0 $ is at least of modest value), then using FDR corrections makes more sense for controlling the PER."
+      "content": "Thinking in terms of the PER allows us to consider multiple comparisons in a continuum from Bonferroni-type corrections to using FDR to control the PER. If $ \\pi_{1}=1-\\pi_{0} $ is very small, most tests will truly be from the null hypothesis, and we can control the overall falsepositive rate with a Bonferroni-type correction. However, if some fraction of the hypotheses is expected to be false (i.e., $ 1-\\pi_{0} $ is at least of modest value), then using FDR corrections makes more sense for controlling the PER."
     },
     {
       "type": "discussion",
@@ -54,7 +54,7 @@
     },
     {
       "type": "discussion",
-      "content": "The PER is thus rather sensitive to $ _0 $, the fraction of all tests that are truly from the null hypothesis. If $ _0 $ is essentially 1, a PER of $ $ is obtained using the Bonferroni correction, $ = /n $. However, if $ _0 $ departs even slightly from one (i.e., more than a few of the alternative hypotheses are correct), then the per-test level of $ $ to achieve a desired PER rate is considerably larger (i.e., less stringent) than that given by the Bonferroni correction, namely, $ () > /n $. For example, for a 0.04 experiment-wide error rate, $ = 0.04/5000 = 8 10^ -6 $, which is roughly 625 times smaller than the value of $ = 0.005 $ required for a 4"
+      "content": "The PER is thus rather sensitive to $ \\pi_{0} $ , the fraction of all tests that are truly from the null hypothesis. If $ \\pi_{0} $ is essentially 1, a PER of $ \\delta $ is obtained using the Bonferroni correction, $ \\alpha=\\delta/n $ . However, if $ \\pi_{0} $ departs even slightly from one (i.e., more than a few of the alternative hypotheses are correct), then the per-test level of $ \\alpha $ to achieve a desired PER rate is considerably larger (i.e., less stringent) than that given by the Bonferroni correction, namely, $ \\alpha(\\delta)>\\delta/n $ For example, for a 0.04 experiment-wide error rate, $ \\alpha=0.04/5000=8\\cdot10^{-6} $ , which is roughly 625 times smaller than the value of $ \\alpha=0.005 $ required for a 4% FDR, highlighting the greatly increased power under the FDR framework. This increased power arises because the FDR approach acknowledges that some fraction of the tests are not from the null. A Technical Aside: Different Definitions of False-discovery Rate"
     }
   ]
 }

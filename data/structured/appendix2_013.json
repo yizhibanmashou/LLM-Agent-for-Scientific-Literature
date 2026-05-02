@@ -19,15 +19,15 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "As a starting point, assume that the variance, $ ^2 $, is known, while the mean, $ $, is unknown. For a Bayesian analysis, it remains to specify the prior for $ $, $ p() $. Suppose we assume a Gaussian prior, $ (_0, _0^2) $, with $$ p(\\mu)=\\frac{1}{\\sqrt{2\\pi\\sigma_{0}^{2}}}\\exp\\left(-\\frac{(\\mu-\\mu_{0})^{2}}{2\\sigma_{0}^{2}}\\right) $$"
+      "content": "As a starting point, assume that the variance, $ \\sigma^2 $, is known, while the mean, $ $, is unknown. For a Bayesian analysis, it remains to specify the prior for $ $, $ p() $. Suppose we assume a Gaussian prior, $ \\mu \\sim \\mathrm{N}(\\mu_0, \\sigma_0^2) $, with $$ p(\\mu)=\\frac{1}{\\sqrt{2\\pi\\sigma_{0}^{2}}}\\exp\\left(-\\frac{(\\mu-\\mu_{0})^{2}}{2\\sigma_{0}^{2}}\\right) $$"
     },
     {
       "type": "discussion",
-      "content": "The mean and variance of the prior, $ _0 $ and $ _0^2 $, are referred to as hyperparameters. Here, $ _0 $ specifies a prior location for the parameter (the unknown mean, $ $), while $ _0^2 $ specifies our uncertainty in this prior location—the larger $ _0^2 $, the greater is our uncertainty. In the limit as $ _0^2 $, $ p() $ approaches a flat (and in this case, improper) prior."
+      "content": "The mean and variance of the prior, $ \\mu_{0} $ and $ \\sigma_{0}^{2} $ , are referred to as hyperparameters. Here, $ \\mu_{0} $ specifies a prior location for the parameter (the unknown mean, $ \\mu $ ), while $ \\sigma_{0}^{2} $ specifies our uncertainty in this prior location—the larger $ \\sigma_{0}^{2} $ , the greater is our uncertainty. In the limit as $ \\sigma_{0}^{2}\\rightarrow\\infty $ , $ p(\\mu) $ approaches a flat (and in this case, improper) prior."
     },
     {
       "type": "discussion",
-      "content": "A useful device when calculating the posterior distribution is to ignore terms that are constants with respect to the unknown parameters. Suppose x denotes the data and $ _1 $ is a vector of known model parameters, while $ _2 $ is a vector of unknown parameters. If we can write the posterior as $$ p(\\boldsymbol{\\Theta}_{2}\\mid\\mathbf{x},\\boldsymbol{\\Theta}_{1})=f(\\mathbf{x},\\boldsymbol{\\Theta}_{1})\\cdot g(\\mathbf{x},\\boldsymbol{\\Theta}_{1},\\boldsymbol{\\Theta}_{2}) $$ then $$ p(\\boldsymbol{\\Theta}_{2}\\mid\\mathbf{x},\\boldsymbol{\\Theta}_{1})\\propto g(\\mathbf{x},\\boldsymbol{\\Theta}_{1},\\boldsymbol{\\Theta}_{2}) $$ which follows since $ f(, _ 1) $ is constant with respect to $ _ 2 $. With the prior given by Equation A2.19, we can express the resulting posterior distribution as $$ \\begin{aligned}p(\\mu\\mid\\mathbf{x})&\\propto\\ell(\\mu\\mid\\mathbf{x})\\cdot p(\\mu)\\\\&\\propto\\exp\\left[-\\frac{(\\mu-\\mu_{0})^{2}}{2\\sigma_{0}^{2}}-\\frac{1}{2\\sigma^{2}}\\left(\\sum_{i=1}^{n}x_{i}^{2}-2\\mu n\\overline{x}+n\\mu^{2}\\right)\\right]\\end{aligned} $$"
+      "content": "A useful device when calculating the posterior distribution is to ignore terms that are constants with respect to the unknown parameters. Suppose x denotes the data and $ \\Theta_1 $ is a vector of known model parameters, while $ \\Theta_2 $ is a vector of unknown parameters. If we can write the posterior as $$ p(\\boldsymbol{\\Theta}_{2}\\mid\\mathbf{x},\\boldsymbol{\\Theta}_{1})=f(\\mathbf{x},\\boldsymbol{\\Theta}_{1})\\cdot g(\\mathbf{x},\\boldsymbol{\\Theta}_{1},\\boldsymbol{\\Theta}_{2}) $$ then $$ p(\\boldsymbol{\\Theta}_{2}\\mid\\mathbf{x},\\boldsymbol{\\Theta}_{1})\\propto g(\\mathbf{x},\\boldsymbol{\\Theta}_{1},\\boldsymbol{\\Theta}_{2}) $$ which follows since $ f(\\mathbf{x}, \\boldsymbol{\\Theta}_{1}) $ is constant with respect to $ \\boldsymbol{\\Theta}_{2} $. With the prior given by Equation A2.19, we can express the resulting posterior distribution as $$ \\begin{aligned}p(\\mu\\mid\\mathbf{x})&\\propto\\ell(\\mu\\mid\\mathbf{x})\\cdot p(\\mu)\\\\&\\propto\\exp\\left[-\\frac{(\\mu-\\mu_{0})^{2}}{2\\sigma_{0}^{2}}-\\frac{1}{2\\sigma^{2}}\\left(\\sum_{i=1}^{n}x_{i}^{2}-2\\mu n\\overline{x}+n\\mu^{2}\\right)\\right]\\end{aligned} $$"
     },
     {
       "type": "discussion",
@@ -43,7 +43,7 @@
     },
     {
       "type": "discussion",
-      "content": "Recalling Equation A2.20b, we can ignore the second term in the exponential (as it does not involve $ $), and the resulting posterior for $ $ (given the observed data x) becomes $$ p(\\mu\\mid\\mathbf{x})\\propto\\exp\\left[-\\frac{(\\mu-\\mu_{*})^{2}}{2\\sigma_{*}^{2}}\\right] $$ demonstrating that the posterior density function for $ $ is a normal with a mean of $ _ * $ and a variance of $ _ * ^ 2 $, namely, $$ \\mu\\mid(\\mathbf{x},\\sigma^{2})\\sim\\mathrm{N}\\left(\\mu_{*},\\sigma_{*}^{2}\\right) $$"
+      "content": "Recalling Equation A2.20b, we can ignore the second term in the exponential (as it does not involve $ $), and the resulting posterior for $ $ (given the observed data x) becomes $$ p(\\mu\\mid\\mathbf{x})\\propto\\exp\\left[-\\frac{(\\mu-\\mu_{*})^{2}}{2\\sigma_{*}^{2}}\\right] $$ demonstrating that the posterior density function for $ $ is a normal with a mean of $ _ * $ and a variance of $ \\sigma_{*}^{2} $, namely, $$ \\mu\\mid(\\mathbf{x},\\sigma^{2})\\sim\\mathrm{N}\\left(\\mu_{*},\\sigma_{*}^{2}\\right) $$"
     },
     {
       "type": "discussion",
@@ -51,11 +51,11 @@
     },
     {
       "type": "discussion",
-      "content": "We are now in a position to inquire about the relative importance of the prior versus the data. Under the assumed prior, the mean (and in this case, the mode as well) of the posterior distribution is $$ \\mu_{*}=\\mu_{0}\\frac{\\sigma_{*}^{2}}{\\sigma_{0}^{2}}+\\overline{x}\\frac{\\sigma_{*}^{2}}{\\sigma^{2}/n} $$ With a very diffuse prior on $ $ (i.e., $ _0^2 ^2 $), $ _* ^2/n $ and $ _* $. Also note from Equation A2.22b that as we collect enough data (i.e., achieve a sufficiently large value of $ n $), $ _* ^2/n $ and again $ _* $, implying that primarily the data, rather than the prior, will influence the posterior when the value of $ n $ is sufficiently large."
+      "content": "We are now in a position to inquire about the relative importance of the prior versus the data. Under the assumed prior, the mean (and in this case, the mode as well) of the posterior distribution is $$ \\mu_{*}=\\mu_{0}\\frac{\\sigma_{*}^{2}}{\\sigma_{0}^{2}}+\\overline{x}\\frac{\\sigma_{*}^{2}}{\\sigma^{2}/n} $$ With a very diffuse prior on $ $ (i.e., $ \\sigma_0^2 \\gg \\sigma^2 $), $ \\sigma_*\\to \\sigma^2/n $ and $ _* $. Also note from Equation A2.22b that as we collect enough data (i.e., achieve a sufficiently large value of $ n $), $ \\sigma_*\\to \\sigma^2/n $ and again $ _* $, implying that primarily the data, rather than the prior, will influence the posterior when the value of $ n $ is sufficiently large."
     },
     {
       "type": "discussion",
-      "content": "Gamma, $ ^ 2 $, Inverse-gamma, and $ ^ -2 $ Distributions Before examining the Gaussian likelihood with unknown variance, a brief aside is needed to develop the inverse chi-square distribution, denoted by $ ^ -2 $. We do this via the gamma and inverse-gamma distributions, as both $ ^ 2 $ and $ ^ -2 $ are special cases of these distributions."
+      "content": "Before examining the Gaussian likelihood with unknown variance, a brief aside is needed to develop the inverse chi-square distribution, denoted by $ \\chi^{-2} $ . We do this via the gamma and inverse-gamma distributions, as both $ \\chi^{2} $ and $ \\chi^{-2} $ are special cases of these distributions."
     }
   ]
 }

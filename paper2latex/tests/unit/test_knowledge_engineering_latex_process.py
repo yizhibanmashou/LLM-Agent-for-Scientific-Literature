@@ -1,8 +1,10 @@
 import unittest
 from pathlib import Path
+from uuid import uuid4
 
 from knowledge_engineering.runtime import (
     CompositeChunk,
+    build_composite_chunks,
     FormulaLibrary,
     SemanticBlock,
     TableEntry,
@@ -382,6 +384,26 @@ class TestKnowledgeEngineeringLatexProcess(unittest.TestCase):
             ],
         )
 
+    def test_build_composite_chunks_keeps_subsection_boundaries_strict(self):
+        blocks = [
+            SemanticBlock(
+                type="discussion",
+                subsection="CHAPTER 1: FIRST SECTION",
+                content="First block content stays with the first subsection.",
+            ),
+            SemanticBlock(
+                type="discussion",
+                subsection="CHAPTER 1: SECOND SECTION",
+                content="Second block content starts a new chunk at the subsection boundary.",
+            ),
+        ]
+
+        chunks = build_composite_chunks(blocks)
+
+        self.assertEqual(len(chunks), 2)
+        self.assertEqual(chunks[0].subsections, ["CHAPTER 1: FIRST SECTION"])
+        self.assertEqual(chunks[1].subsections, ["CHAPTER 1: SECOND SECTION"])
+
     def test_split_tex_book_extracts_toc_and_chapters_one_to_nine(self):
         filler = "\n".join(f"body line {index}" for index in range(60))
         sample = (
@@ -552,12 +574,8 @@ class TestKnowledgeEngineeringLatexProcess(unittest.TestCase):
             "2. NEUTRAL EVOLUTION IN ONE- AND TWO-LOCUS SYSTEMS 25\n"
         )
 
-        output_dir = Path.cwd() / "tmp" / "paper2latex_tests" / "unit_toc_outputs"
-        if output_dir.exists():
-            for child in output_dir.glob("*"):
-                child.unlink()
-        else:
-            output_dir.mkdir(parents=True, exist_ok=True)
+        output_dir = Path.cwd() / "tmp" / "paper2latex_tests" / f"unit_toc_outputs_{uuid4().hex}"
+        output_dir.mkdir(parents=True, exist_ok=True)
 
         count = build_toc_outputs_from_text(
             toc_text=toc_text,

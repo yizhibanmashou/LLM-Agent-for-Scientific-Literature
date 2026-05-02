@@ -28,7 +28,7 @@ STRUCTURED_PLACEHOLDER_RE = re.compile(
     r"\[\[(?P<kind>SEE_TABLE|TABLE|SEE_FORMULA|FORMULA):(?P<label>[^\]]+)\]\]"
 )
 TABLE_TEXT_RE_TEMPLATE = r"\bTable\s+{label}\b"
-FORMULA_TEXT_RE_TEMPLATE = r"\b(?:Equation|Eq\.)\s*\(?{label}\)?\b|\({label}\)"
+FORMULA_TEXT_RE_TEMPLATE = r"\b(?:Equations?|Eq\.?)\s*\(?{label}\)?\b|\({label}\)"
 FLOAT_PLACEHOLDER_RE = re.compile(r"\[(?:h|t|b|p)\]", re.IGNORECASE)
 DUMMY_TABLE_RE = re.compile(
     r"\|?\s*c\s*\|\s*c\s*\|?\s*Cell\s+1\s*&\s*Cell\s+2\s*\\\\\s*"
@@ -63,6 +63,22 @@ REPAIRABLE_ISSUES = {
     "missing_table_reference",
     "formula_reference_missing",
     "table_reference_missing",
+}
+
+SHORT_MATCH_RELAXED_ISSUES = {
+    "empty_inline_math",
+    "leading_underscore_math",
+    "leading_caret_math",
+    "missing_left_operand_math",
+    "separated_subscript_math",
+    "separated_superscript_math",
+    "spaced_script_math",
+    "bare_underscore_math",
+    "likely_missing_operator",
+    "empty_expectation",
+    "formula_reference_missing",
+    "table_reference_missing",
+    "unbalanced_inline_math",
 }
 
 LLM_REVIEW_DECISIONS = {"accept", "review", "reject"}
@@ -488,6 +504,92 @@ def render_placeholder_as_text(match: re.Match[str]) -> str:
     return f"Equation {label}"
 
 
+def _normalize_context_fragment(fragment: str) -> str:
+    return re.sub(r"\s+", " ", str(fragment or "")).strip()
+
+
+def _context_fragments(fragment: str, *, from_end: bool) -> list[str]:
+    normalized = _normalize_context_fragment(fragment)
+    if not normalized:
+        return []
+
+    tokens = normalized.split()
+    fragments: list[str] = []
+    for size in (12, 8, 6, 4, 3, 2, 1):
+        size = min(size, len(tokens))
+        if size <= 0:
+            continue
+        candidate = " ".join(tokens[-size:] if from_end else tokens[:size])
+        if candidate and candidate not in fragments:
+            fragments.append(candidate)
+    return fragments
+
+
+def _fragment_pattern(fragment: str) -> str:
+    parts = [re.escape(part) for part in _normalize_context_fragment(fragment).split(" ") if part]
+    return r"\s+".join(parts)
+
+
+def _splice_placeholder(text: str, start: int, end: int, placeholder: str) -> str:
+    prefix = text[:start].rstrip()
+    suffix = text[end:].lstrip()
+    if prefix and suffix:
+        return f"{prefix} {placeholder} {suffix}"
+    if prefix:
+        return f"{prefix} {placeholder}"
+    if suffix:
+        return f"{placeholder} {suffix}"
+    return placeholder
+
+
+def _replace_placeholder_by_context(old_content: str, repaired: str, placeholder: str, kind: str) -> str:
+    placeholder_index = (old_content or "").find(placeholder)
+    if placeholder_index < 0:
+        return repaired
+
+    is_table_placeholder = "TABLE" in kind
+    prefix_fragments = _context_fragments(old_content[:placeholder_index], from_end=True)
+    suffix_fragments = _context_fragments(old_content[placeholder_index + len(placeholder) :], from_end=False)
+    if not prefix_fragments:
+        return repaired
+
+    for prefix_fragment in prefix_fragments:
+        prefix_pattern = _fragment_pattern(prefix_fragment)
+        prefix_matches = list(re.finditer(prefix_pattern, repaired, flags=re.IGNORECASE))
+        if not prefix_matches:
+            continue
+
+        for prefix_match in reversed(prefix_matches):
+            insertion_start = prefix_match.end()
+            if not suffix_fragments:
+                return _splice_placeholder(repaired, insertion_start, insertion_start, placeholder)
+
+            suffix_found = False
+            for suffix_fragment in suffix_fragments:
+                suffix_pattern = _fragment_pattern(suffix_fragment)
+                suffix_match = re.search(suffix_pattern, repaired[insertion_start:], flags=re.IGNORECASE)
+                if not suffix_match:
+                    continue
+                suffix_found = True
+
+                insertion_end = insertion_start + suffix_match.start()
+                between = repaired[insertion_start:insertion_end].strip()
+                if not between:
+                    return _splice_placeholder(repaired, insertion_start, insertion_end, placeholder)
+
+                if is_table_placeholder:
+                    between_hint = re.search(r"\btable\b", between, flags=re.IGNORECASE)
+                else:
+                    between_hint = re.search(r"[\\$^_=]|\b(?:equation|table|formula)\b", between, flags=re.IGNORECASE)
+                if len(between) <= 220 or between_hint:
+                    return _splice_placeholder(repaired, insertion_start, insertion_end, placeholder)
+
+            if not suffix_found:
+                return _splice_placeholder(repaired, insertion_start, insertion_start, placeholder)
+
+    return repaired
+
+
 def normalize_for_matching(text: str) -> str:
     value = html.unescape(str(text or ""))
     value = STRUCTURED_PLACEHOLDER_RE.sub(render_placeholder_as_text, value)
@@ -783,7 +885,7 @@ def find_best_glm_span(
 def replace_label_text_once(text: str, label: str, replacement: str, kind: str) -> str:
     escaped_label = re.escape(label)
     if "TABLE" in kind:
-        pattern = TABLE_TEXT_RE_TEMPLATE.format(label=escaped_label)
+        pattern = rf"{TABLE_TEXT_RE_TEMPLATE.format(label=escaped_label)}|\bTables?\s*\(?{escaped_label}\)?\b|\({escaped_label}\)"
     else:
         pattern = FORMULA_TEXT_RE_TEMPLATE.format(label=escaped_label)
     return re.sub(pattern, replacement, text, count=1, flags=re.IGNORECASE)
@@ -798,6 +900,10 @@ def transfer_structural_placeholders(old_content: str, new_content: str) -> str:
         if placeholder in repaired:
             continue
         repaired_next = replace_label_text_once(repaired, label, placeholder, kind)
+        if placeholder not in repaired_next:
+            repaired_next = _replace_placeholder_by_context(old_content, repaired_next, placeholder, kind)
+        if placeholder not in repaired_next:
+            repaired_next = f"{repaired_next.rstrip()} {placeholder}".strip()
         repaired = repaired_next
     return repaired
 
@@ -925,14 +1031,22 @@ def build_candidate_for_block(
             old_content=old_content,
             reason=f"no GLM OCR paragraphs found for {chapter}",
         )
-    if len(tokenize_for_matching(old_content)) < 4:
+    token_count = len(tokenize_for_matching(old_content))
+    relaxed_short_match = bool(set(issue_codes) & SHORT_MATCH_RELAXED_ISSUES) or bool(placeholder_counter(old_content))
+    min_tokens = 2 if relaxed_short_match else 4
+    if token_count < min_tokens:
         return make_rejected_item(
             unit_id=unit_id,
             block_index=block_index,
             issue_codes=issue_codes,
             old_content=old_content,
-            reason="not enough source tokens to match safely",
+            reason=f"not enough source tokens to match safely ({token_count} < {min_tokens})",
         )
+    effective_review_threshold = review_threshold
+    if relaxed_short_match:
+        effective_review_threshold = max(0.0, review_threshold - 0.04)
+        if placeholder_counter(old_content):
+            effective_review_threshold = min(effective_review_threshold, 0.50)
 
     span, match_score, score_parts = find_best_glm_span(old_content, spans, expected_order=expected_order)
     if span is None:
@@ -950,7 +1064,7 @@ def build_candidate_for_block(
         new_content=new_content,
         issue_codes=issue_codes,
         match_score=match_score,
-        review_threshold=review_threshold,
+        review_threshold=effective_review_threshold,
     )
     confidence = confidence_for_candidate(old_content, new_content, issue_codes, match_score) if valid else 0.0
 
@@ -958,14 +1072,14 @@ def build_candidate_for_block(
         action = "auto_apply"
         status = "accepted"
         reasons = [f"matched GLM span with confidence {confidence:.2f}"]
-    elif valid and confidence >= review_threshold:
+    elif valid and confidence >= effective_review_threshold:
         action = "review"
         status = "needs_review"
         reasons = [f"matched GLM span with confidence {confidence:.2f}"]
     else:
         action = "no_apply"
         status = "rejected"
-        reasons = validation_reasons or [f"confidence {confidence:.2f} below review threshold {review_threshold:.2f}"]
+        reasons = validation_reasons or [f"confidence {confidence:.2f} below review threshold {effective_review_threshold:.2f}"]
 
     return {
         "unit_id": unit_id,
@@ -985,6 +1099,8 @@ def build_candidate_for_block(
 
 
 def should_verify_with_llm(item: dict[str, Any], scope: str = "review") -> bool:
+    if isinstance(item.get("llm_verifier"), dict):
+        return False
     if item.get("status") not in {"needs_review", "accepted"}:
         return False
     if scope == "review":
@@ -1142,6 +1258,8 @@ def verify_candidates_with_llm_batch(items: list[dict[str, Any]], client: Any) -
 
 
 def should_triage_with_llm(item: dict[str, Any], scope: str = "rejected") -> bool:
+    if isinstance(item.get("llm_triage"), dict):
+        return False
     if item.get("status") != "rejected" or item.get("action") != "no_apply":
         return False
     return scope in {"rejected", "review_rejected", "all"}
@@ -1720,7 +1838,7 @@ def maybe_create_llm_client(enabled: bool) -> Any:
 def build_arg_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Repair structured OCR chunks using GLM OCR reference text.")
     parser.add_argument("--structured-dir", default="data/structured", help="Structured JSON directory.")
-    parser.add_argument("--glmocr-dir", default="tmp/glmocr_output", help="GLM OCR output directory.")
+    parser.add_argument("--glmocr-dir", default="data/glmocr_output", help="GLM OCR output directory.")
     parser.add_argument(
         "--audit-dir",
         default="tmp/structured_review/current_2026_04_24",

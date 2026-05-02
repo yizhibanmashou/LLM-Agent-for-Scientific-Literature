@@ -32,15 +32,15 @@
     },
     {
       "type": "derivation",
-      "content": "Turning to the details of Kelly’s approach, define cohort i as the collection of individuals that have undergone i generations of selfing since their last outcrossing. Let $ _i(t) $ denote the frequency of cohort i in generation t, where $ _i(t) = (1 -) ^i $ in the absence of selection. If we assume that selection acts before reproduction, the transition probabilities between cohorts are as follows: with probability $ 1 - $, an individual outcrosses, so [[SEE_FORMULA:23.60a]]"
+      "content": "Turning to the details of Kelly’s approach, define cohort i as the collection of individuals that have undergone i generations of selfing since their last outcrossing. Let $ \\pi_i(t) $ denote the frequency of cohort i in generation t, where $ \\pi_i(t) = (1 - \\eta)\\eta^i $ in the absence of selection. If we assume that selection acts before reproduction, the transition probabilities between cohorts are as follows: with probability $ 1 - $, an individual outcrosses, so [[SEE_FORMULA:23.60a]]"
     },
     {
       "type": "derivation",
-      "content": "For an individual to enter cohort $ i+1 $, it must have been a member of cohort i in the previous generation and it must self. Further, Kelly allows for selection against cohorts (for example, highly inbred individuals may have lower fitness). If $ W(t) $ and $ W_i(t) $ denote the average fitness of a random individual from the population and from cohort i (respectively) in generation t, then the fraction of the population that is in cohort i after selection (but before reproduction) is $ _i(t) W_i(t)/W(t) $. Putting all these together, the fraction of the population in cohort $ i+1 $ in the next generation is [[SEE_FORMULA:23.60b]]"
+      "content": "For an individual to enter cohort $ i+1 $, it must have been a member of cohort i in the previous generation and it must self. Further, Kelly allows for selection against cohorts (for example, highly inbred individuals may have lower fitness). If $ W(t) $ and $ W_i(t) $ denote the average fitness of a random individual from the population and from cohort i (respectively) in generation t, then the fraction of the population that is in cohort i after selection (but before reproduction) is $ \\pi_i(t) W_i(t)/W(t) $. Putting all these together, the fraction of the population in cohort $ i+1 $ in the next generation is [[SEE_FORMULA:23.60b]]"
     },
     {
       "type": "discussion",
-      "content": "In the absence of selection, namely, $ W_i(t) = W(t) $ for all $ i $, Equation 23.60b generates a geometric distribution, with $ _i(t) = (1 -) ^i $."
+      "content": "In the absence of selection, namely, $ W_{i}(t)=W(t) $ for all i, Equation 23.60b generates a geometric distribution, with $ \\pi_{i}(t)=(1-\\eta)\\eta^{i}. $"
     },
     {
       "type": "derivation",
@@ -48,15 +48,15 @@
     },
     {
       "type": "derivation",
-      "content": "Denote the allele frequency-weighted sum of average effects by A (the average breeding value) and the weighted sum of homozygous dominance deviations by B, so that [[SEE_FORMULA:23.62]] where $ _ kj $ is the average effect for allele j from locus k, $ p_ kj $ is the allele frequency, and $ _ kjj $ represents the dominance deviations for homozygotes (where $ _ kj $ and $ _ kjj $ are the values for a base population in Hardy-Weinberg equilibrium with the same allele frequencies, $ p_ kj $). If $ A(t) $ and $ B(t) $ denote the average values of A and B at generation t, then the mean population phenotype is [[SEE_FORMULA:23.63a]]"
+      "content": "Denote the allele frequency-weighted sum of average effects by A (the average breeding value) and the weighted sum of homozygous dominance deviations by B, so that [[SEE_FORMULA:23.62]] where $ \\alpha_{kj} $ is the average effect for allele j from locus k, $ p_{kj} $ is the allele frequency, and $ \\delta_{kjj} $ represents the dominance deviations for homozygotes (where $ \\alpha_{kj} $ and $ \\delta_{kjj} $ are the values for a base population in Hardy-Weinberg equilibrium with the same allele frequencies, $ p_{kj} $). If $ A(t) $ and $ B(t) $ denote the average values of A and B at generation t, then the mean population phenotype is [[SEE_FORMULA:23.63a]]"
     },
     {
       "type": "derivation",
-      "content": "This is simply a restatement of Equation 23.1c, as $ A(t) $ is the response in the absence of inbreeding and $ f(t)B(t) $ is the amount of inbreeding depression (Equation 23.1b). If we let $ A_ i (t) $ and $ B_ i (t) $ denote the average value of A and B in cohort i in generation t, it follows that [[SEE_FORMULA:23.63b]]"
+      "content": "This is simply a restatement of Equation 23.1c, as $ A(t) $ is the response in the absence of inbreeding and $ f(t)B(t) $ is the amount of inbreeding depression (Equation 23.1b). If we let $ A_{i}(t) $ and $ B_{i}(t) $ denote the average value of A and B in cohort i in generation t, it follows that [[SEE_FORMULA:23.63b]]"
     },
     {
       "type": "derivation",
-      "content": "Kelly assumed that within each cohort, the parent-offspring regressions are linear, which means that the value, $ A' $, of A following selection in cohort i is [[SEE_FORMULA:23.64a]] where $ _ Az,i $ is the covariance between A and z (the breeding value and phenotype, respectively) prior to selection at an inbreeding level of $ f_i $. Because the mean additive value of selfed offspring (now in cohort $ i+1 $) equals that of their parent (from cohort i), [[SEE_FORMULA:23.64b]]"
+      "content": "Kelly assumed that within each cohort, the parent-offspring regressions are linear, which means that the value, $ A' $, of A following selection in cohort i is [[SEE_FORMULA:23.64a]] where $ \\sigma_{Az,i} $ is the covariance between A and z (the breeding value and phenotype, respectively) prior to selection at an inbreeding level of $ f_i $. Because the mean additive value of selfed offspring (now in cohort $ i+1 $) equals that of their parent (from cohort i), [[SEE_FORMULA:23.64b]]"
     },
     {
       "type": "derivation",

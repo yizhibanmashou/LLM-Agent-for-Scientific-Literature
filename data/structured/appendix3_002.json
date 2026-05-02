@@ -18,7 +18,7 @@
     },
     {
       "type": "discussion",
-      "content": "If we can decompose $ h(x) $ into the product of a function, $ f(x) $, and a probability density function, $ p(x) $, defined over the interval $ (a, b) $, then $$ \\int_{a}^{b}h(x)dx=\\int_{a}^{b}f(x)p(x)dx=E_{p(x)}[f(x)] $$ which means that the integral can be expressed as the expectation of $f(x)$ over the density $p(x)$. After sampling a large number of random variables, $(x_ 1,,x_ n)$, from the density $p(x)$, we have that $$ \\int_{a}^{b}h(x)dx=E_{p(x)}[f(x)]\\simeq\\frac{1}{n}\\sum_{i=1}^{n}f(x_{i}) $$"
+      "content": "If we can decompose $ h(x) $ into the product of a function, $ f(x) $, and a probability density function, $ p(x) $, defined over the interval $ (a, b) $, then $$ \\int_{a}^{b}h(x)dx=\\int_{a}^{b}f(x)p(x)dx=E_{p(x)}[f(x)] $$ which means that the integral can be expressed as the expectation of $f(x)$ over the density $p(x)$. After sampling a large number of random variables, $(x_{1},\\cdots,x_{n})$, from the density $p(x)$, we have that $$ \\int_{a}^{b}h(x)dx=E_{p(x)}[f(x)]\\simeq\\frac{1}{n}\\sum_{i=1}^{n}f(x_{i}) $$"
     },
     {
       "type": "discussion",
@@ -42,7 +42,7 @@
     },
     {
       "type": "discussion",
-      "content": "The expression in the sum is not nearly as imposing as it appears. Both of the determinants, $ | _1| $ and $ | _2| $, are fixed constants, and they only need to be computed once. Likewise, $ _1^ -1 $ and $ _2^ -1 $ need only be inverted once and then can be stored. Monte Carlo integration proceeds by generating a set of random vectors, $ (_1,, _n) $, from a MVN $ (, _1) $."
+      "content": "The expression in the sum is not nearly as imposing as it appears. Both of the determinants, $ | \\mathbf{G}_{1} | $ and $ | \\mathbf{G}_{2} | $ are fixed constants, and they only need to be computed once. Likewise, $ \\mathbf{G}_{1}^{-1} $ and $ \\mathbf{G}_{2}^{-1} $ need only be inverted once and then can be stored. Monte Carlo integration proceeds by generating a set of random vectors, $ \\left( \\mathbf{x}_{1},\\cdots,\\mathbf{x}_{n}\\right) $ , from a MVN $ \\sim $ $ \\left( \\mathbf{0},\\mathbf{G}_{1}\\right) $"
     },
     {
       "type": "discussion",

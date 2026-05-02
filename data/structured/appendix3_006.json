@@ -18,7 +18,7 @@
     },
     {
       "type": "discussion",
-      "content": "Suppose our goal is to draw samples from some distribution, $ p() = f()/K $, where the normalizing constant, K, may be very difficult to compute. Note that Bayesian posteriors are of this form (Equation A2.4b). The Metropolis algorithm (Metropolis and Ulam 1949; Metropolis et al. 1953), which generates a sequence of draws from this distribution, is as follows: 1. Start with any initial value, $ _ 0 $, satisfying $ f(_ 0) > 0 $. 2. Using the current value of $ $, sample a candidate point, $ ^ * $, from some jumping distribution, $q(_1, _2) = (_1 _2)$, which is the probability of returning a value of $ _2$ given a previous value of $ _1$. This distribution is also referred to as the proposal distribution or candidate-generating distribution. The only restriction on the jump density in the Metropolis algorithm is that it is symmetric, with $q(_1, _2) = q(_2, _1)$."
+      "content": "Suppose our goal is to draw samples from some distribution, $ p(\\theta)=f(\\theta)/K $ , where the normalizing constant, K, may be very difficult to compute. Note that Bayesian posteriors are of this form (Equation A2.4b). The Metropolis algorithm (Metropolis and Ulam 1949; Metropolis et al. 1953), which generates a sequence of draws from this distribution, is as follows: 1. Start with any initial value, $ \\theta_{0} $ , satisfying $ f\\left( \\theta_{0} \\right) > 0. $ 2. Using the current value of $ \\theta $ , sample a candidate point, $ \\theta^{*} $ , from some jumping distribution, $ q(\\theta_{1},\\theta_{2})=\\operatorname* {P r}(\\theta_{1}\\rightarrow \\theta_{2}) $ , which is the probability of returning a value of $ \\theta_{2} $ given a previous value of $ \\theta_{1} $ . This distribution is also referred to as the proposal distribution or candidate-generating distribution. The only restriction on the jump density in the Metropolis algorithm is that it is symmetric, with $ q(\\theta_{1},\\theta_{2})=q(\\theta_{2},\\theta_{1}) $"
     },
     {
       "type": "discussion",
@@ -30,7 +30,7 @@
     },
     {
       "type": "discussion",
-      "content": "4. If the jump increases the density ($ > 1 $), accept the candidate point (set $ _t = ^* $) and return to step 2. If the jump decreases the density ($ < 1 $), then with a probability of $ $ we accept the candidate point, else we reject it and return to step 2. Note that $ $ is a ratio of two likelihoods, so the probability of accepting a move is the ratio of the candidate to current likelihoods."
+      "content": "4. If the jump increases the density $ (\\alpha>1) $ , accept the candidate point (set $ \\theta_{t}=\\theta^{*} $ ）and return to step 2. If the jump decreases the density $ (\\alpha<1) $ ）then with a probability of $ \\alpha $ we accept the candidate point, else we reject it and return to step 2. Note that $ \\alpha $ is a ratio of two likelihoods, so the probability of accepting a move is the ratio of the candidate to current likelihoods."
     },
     {
       "type": "discussion",

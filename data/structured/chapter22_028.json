@@ -24,7 +24,7 @@
     },
     {
       "type": "discussion",
-      "content": "Provided $ > 0 $, an equivalent approach is simply to fit a random group effect (Bergsema et al. 2008; Ellen et al. 2008). Example 22.14 works through an example. This approach is computationally less demanding than jointly estimating $ ^2(e) $ and $ $ in an R matrix. However, if the covariance, $ (E_d, E_s) $, between environmental direct and social effects is sufficiently negative, $ $ can be negative (Equation 22.23b) and the simple random group-effects model fails, as the group variance $ ^2(g_p) $ must be positive. As Equation 22.23b suggests, as group size increases, the contribution from $ ^2(E_s) $ eventually dominates $ $, making it positive. Thus, for a design with large group size, fitting a random group effect will often suffice."
+      "content": "Provided $ \\rho>0 $ an equivalent approach is simply to fit a random group effect (Bergsma et al. 2008; Ellen et al. 2008). Example 22.14 works through an example. This approach is computationally less demanding than jointly estimating $ \\sigma^{2}(e) $ and $ \\rho $ in an R matrix. However, if the covariance, $ \\sigma(E_{d},E_{s}) $ , between environmental direct and social effects is sufficiently negative, $ \\rho $ can be negative (Equation 22.23b) and the simple random group effects model fails, as the group variance $ \\sigma^{2}(g_{p}) $ must be positive. As Equation 22.23b suggests, as group size increases, the contribution from $ \\sigma^{2}(E_{s}) $ eventually dominates $ \\rho $ making it positive. Thus, for a design with large group size, fitting a random group effect will often suffice."
     },
     {
       "type": "discussion",
@@ -36,7 +36,7 @@
     },
     {
       "type": "discussion",
-      "content": "We use $ ^2 $ to remind the reader that (under this model), this is the ratio of two variances, and hence is always nonnegative. Comparison with Example 22.13 shows that adding a random effect for group corresponds to the more fully specified covariance residual model (Equation 22.41), with $ = ^2 $. When $ > 0 $, both models are identical. However, if the within-group environmental correlations are negative ($ < 0 $), then the simple group random-effects model fails."
+      "content": "We use $ \\alpha^{2} $ to remind the reader that (under this model), this is the ratio of two variances, and hence is always nonnegative. Comparison with Example 22.13 shows that adding a random effect for group corresponds to the more fully specified covariance residual model (Equation 22.41), with $ \\rho=\\alpha^{2} $ . When $ \\rho>0 $ , both models are identical. However, if the within-group environmental correlations are negative $ (\\rho<0) $ , then the simple group random-effects model fails."
     },
     {
       "type": "discussion",
@@ -52,7 +52,7 @@
     },
     {
       "type": "discussion",
-      "content": "Note that if $ _g = _c $, the group and family effects are fully confounded and cannot be separated (this point will be discussed in more detail shortly). This addition of a common family effect is easily incorporated into any of the above models."
+      "content": "Note that if $ Z_{g}=Z_{c} $ , the group and family effects are fully confounded and cannot be separated (this point will be discussed in more detail shortly). This addition of a common family effect is easily incorporated into any of the above models."
     }
   ]
 }

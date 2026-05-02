@@ -26,11 +26,11 @@
   "blocks": [
     {
       "type": "derivation",
-      "content": "Once again, either Equations 21.1a or 21.4a can be used to predict the single-generation response to selection. Taking x = I returns [[SEE_FORMULA:21.51]] where $ (I,y| _ 1) $ is the covariance between the index value, $ I $, of a parent and the phenotype of its offspring, $ y $. The variances and covariances required for Equation 21.51 are obtained as follows. Using the covariances summarized in [[SEE_TABLE:21.3]], [[SEE_FORMULA:21.52a]]"
+      "content": "Once again, either Equations 21.1a or 21.4a can be used to predict the single-generation response to selection. Taking x = I returns [[SEE_FORMULA:21.51]] where $ \\sigma(I,y|\\mathcal{R}_{1}) $ is the covariance between the index value, $ I $, of a parent and the phenotype of its offspring, $ y $. The variances and covariances required for Equation 21.51 are obtained as follows. Using the covariances summarized in [[SEE_TABLE:21.3]], [[SEE_FORMULA:21.52a]]"
     },
     {
       "type": "derivation",
-      "content": "Likewise, if we recall that $ ^ 2 (x+y)= _ x ^ 2 + _ y ^ 2 +2 _ x,y $, the variances summarized in [[SEE_TABLE:21.4]] yield [[SEE_FORMULA:21.52b]]"
+      "content": "Likewise, if we recall that $ \\sigma^{2}(x+y)=\\sigma_{x}^{2}+\\sigma_{y}^{2}+2\\sigma_{x,y} $, the variances summarized in [[SEE_TABLE:21.4]] yield [[SEE_FORMULA:21.52b]]"
     },
     {
       "type": "derivation",
@@ -38,11 +38,11 @@
     },
     {
       "type": "derivation",
-      "content": "Finally, because parents only pass along half their breeding value to an offspring (Chapters 6 and 16), it follows that $ (I, y _1) = (I, A)/2 $, namely, half the covariance between the parent's index and breeding values. Hence, from Equations 21.52a and 21.52b, the correlation between an individual's index score (I) and breeding value (A) is [[SEE_FORMULA:21.53b]]"
+      "content": "Finally, because parents only pass along half their breeding value to an offspring (Chapters 6 and 16), it follows that $ \\sigma(I, y \\mid \\mathcal{R}_1) = \\sigma(I, A)/2 $, namely, half the covariance between the parent's index and breeding values. Hence, from Equations 21.52a and 21.52b, the correlation between an individual's index score (I) and breeding value (A) is [[SEE_FORMULA:21.53b]]"
     },
     {
       "type": "derivation",
-      "content": "Given that $ (z, A) = h $ (Equation 13.11e), the term in the brackets represents the accuracy of the index relative to mass selection. Substituting Equation 21.53a into Equation 21.51 (and recalling that $ _z h^2 = h _A $) yields an expected response of [[SEE_FORMULA:21.53c]] where $ _I = (_ I_m + _ I_f)/2 = (S_ I_m + S_ s_ I_f)/(2 _I) $ is the average selection intensity on both sexes. Observe from Equation 21.53c that if we create a new index with weights of $ ab_1 $ and $ ab_2 $, that the constant $ a $ cancels, and (as noted above) yields the same response."
+      "content": "Given that $ (z, A) = h $ (Equation 13.11e), the term in the brackets represents the accuracy of the index relative to mass selection. Substituting Equation 21.53a into Equation 21.51 (and recalling that $ \\sigma_z h^2 = h \\sigma_A $) yields an expected response of [[SEE_FORMULA:21.53c]] where $ \\bar{\\imath}_I = (\\bar{\\imath}_{I_m} + \\bar{\\imath}_{I_f})/2 = (S_{I_m} + S_{s_{I_f}})/(2\\sigma_I) $ is the average selection intensity on both sexes. Observe from Equation 21.53c that if we create a new index with weights of $ ab_1 $ and $ ab_2 $, that the constant $ a $ cancels, and (as noted above) yields the same response."
     },
     {
       "type": "discussion",
@@ -50,7 +50,7 @@
     },
     {
       "type": "discussion",
-      "content": "This is not as efficient as strict among-family selection (where $ R_b = 2.15 $; see Example 21.4). Likewise, the response under individual (i.e., mass) selection is $ R_m = _m _A h = 2.36 $. Because individual selection is a special case of the general index, we can always choose the index weights to give at least as large an expected response as individual selection. For example, placing twice the weight on family means relative to within-family deviations ($ b_1 = 1 $, $ b_2 = 2 $), returns an expected response of $ R = 2.59 $, which is 110"
+      "content": "This is not as efficient as strict among-family selection (where $ R_{b}=2.15 $; see Example 21.4). Likewise, the response under individual (i.e., mass) selection is $ R_{m}=\\bar{\\iota}_{m}\\sigma_{A}h=2.36. $ Because individual selection is a special case of the general index, we can always choose the index weights to give at least as large an expected response as individual selection. For example, placing twice the weight on family means relative to within-family deviations $ ( b_{1}= 1, b_{2}=2) $ , returns an expected response of R=2.59, which is 110% of the expected response under individual selection."
     }
   ]
 }

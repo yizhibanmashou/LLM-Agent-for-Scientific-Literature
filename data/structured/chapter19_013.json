@@ -22,7 +22,7 @@
     },
     {
       "type": "derivation",
-      "content": "In a least-squares analysis, any underlying environmental trend is assumed to be removed by contrasting selected and control populations (or contrasting populations selected in opposite directions). The rationale is that the $ k^ th $ individual from population j in generation t can be described as [[SEE_FORMULA:19.9]] where $ b_ j,t $ is the environmental trend in population j. If the common environmental value is the same in both the selected and the control populations ($ b_ s,t = b_ c,t $), then the difference in phenotypic means in generation t between these populations is [[SEE_FORMULA:19.10]] Because the residuals, e, have an expected value of zero, this contrast provides an unbiased estimate of $ _ s,t $ provided there is no significant drift in the mean breeding value of the control population (meaning that $ _ c,t 0 $). However, if genotype-environment interactions are present, the environmental values can differ between populations, in which case Equation 19.10 has an additional term, $ (b_ s,t - b_ c,t) $. Hence, even when a control population is used, a least-squares analysis can still give biased results if there is significant drift in the mean of the control population ($ | _ c,t | 0 $) or significant $ G E $."
+      "content": "In a least-squares analysis, any underlying environmental trend is assumed to be removed by contrasting selected and control populations (or contrasting populations selected in opposite directions). The rationale is that the $ k^{th} $ individual from population j in generation t can be described as [[SEE_FORMULA:19.9]] where $ b_{j,t} $ is the environmental trend in population j. If the common environmental value is the same in both the selected and the control populations ($ b_{s,t} = b_{c,t} $), then the difference in phenotypic means in generation t between these populations is [[SEE_FORMULA:19.10]] Because the residuals, e, have an expected value of zero, this contrast provides an unbiased estimate of $ \\overline{a}_{s,t} $ provided there is no significant drift in the mean breeding value of the control population (meaning that $ \\overline{a}_{c,t} \\simeq 0 $). However, if genotype-environment interactions are present, the environmental values can differ between populations, in which case Equation 19.10 has an additional term, $ (b_{s,t} - b_{c,t}) $. Hence, even when a control population is used, a least-squares analysis can still give biased results if there is significant drift in the mean of the control population ($ |\\overline{a}_{c,t}| \\gg 0 $) or significant $ G E $."
     },
     {
       "type": "discussion",
@@ -34,7 +34,7 @@
     },
     {
       "type": "derivation",
-      "content": "Common-environment effects are incorporated into the basic animal model by simply adding a fixed effect, $ b_ t $, for the common environmental effect in generation t [[SEE_FORMULA:19.11]]"
+      "content": "Common-environment effects are incorporated into the basic animal model by simply adding a fixed effect, $ b_{t} $, for the common environmental effect in generation t [[SEE_FORMULA:19.11]]"
     },
     {
       "type": "discussion",
@@ -46,7 +46,7 @@
     },
     {
       "type": "proposition",
-      "content": "An alternative approach is to treat the $ b_i $ as random (as opposed to fixed) effects, drawn independently (i.e., uncorrelated across generations) from a normal distribution with a mean of zero and an unknown variance, $ _b^2 $. The assumption of no environmental correlation between adjacent generations can be questionable (at best), and treating the $ b_i $ as fixed, rather than random, removes these concerns (although at a cost of absorbing more degrees of freedom than with a random-effects analysis)."
+      "content": "An alternative approach is to treat the $ b_{i} $ as random (as opposed to fixed) effects, drawn independently (i.e., uncorrelated across generations) from a normal distribution with a mean of zero and an unknown variance, $ \\sigma_{b}^{2} $ . The assumption of no environmental correlation between adjacent generations can be questionable (at best), and treating the $ b_{i} $ as fixed, rather than random, removes these concerns (although at a cost of absorbing more degrees of freedom than with a random-effects analysis)."
     },
     {
       "type": "discussion",
@@ -54,15 +54,15 @@
     },
     {
       "type": "discussion",
-      "content": "In matrix form, $ = + + $, where the vector, $ $, contains the fixed effects for sex $ (v) $, dam age $ (d) $, and rearing rank $ (r) $, in addition to the effects for years $ (b) $. Both the selected and control lines were subjected to separate BLUP analyses using this model, and three different estimates of selection response were considered: (i) $ _ s,t - _ c,t $, the estimated phenotypic means following adjustment for the fixed effects $ (v, d, r) $, obtained by $ _ x,t = _ x,t + _ x,t $, where $ x = c $ or $ s $, corresponding to the control and selection lines, respectively. This is an unbiased estimate of the response if there is no drift in the control population $ (_ c,t 0) $ and no $ G E $, so that $ b_ c,t = b_ s,t $."
+      "content": "In matrix form, $ \\mathbf{y}=\\mathbf{X}\\beta+\\mathbf{Z}\\mathbf{a}+\\mathbf{e} $ , where the vector, $ \\beta $ , contains the fixed effects for sex (v), dam age (d), and rearing rank (r), in addition to the effects for years (b). Both the selected and control lines were subjected to separate BLUP analyses using this model, and three different estimates of selection response were considered: (i) $ \\widehat{\\bar{y}}_{s,t}-\\widehat{\\bar{y}}_{c,t} $ the estimated phenotypic means following adjustment for the fixed effects (v, d, and r), obtained by $ \\widehat{\\bar{y}}_{x,t}=\\widehat{\\bar{a}}_{x,t}+\\widehat{b}_{x,t} $ , where x = c or s, corresponding to the control and selection lines, respectively. This is an unbiased estimate of the response if there is no drift in the control population $ (\\overline{{a}}_{c,t}\\simeq0) $ and no $ G\\times E $ , so that $ b_{c,t}=b_{s,t}. $"
     },
     {
       "type": "discussion",
-      "content": "(ii) $ _ s,t - _ c,t $, the (fixed-effects-adjusted) phenotypic mean of the selected population minus the common environmental effect, as estimated from the control population."
+      "content": "(ii) $ \\widehat{\\bar{y}}_{s,t}-\\widehat{b}_{c,t} $ the (fixed-effects-adjusted) phenotypic mean of the selected population minus the common environmental effect, as estimated from the control population."
     },
     {
       "type": "discussion",
-      "content": "(iii) $ _ s,t $, the BLUP estimate of the mean breeding value in the selected population."
+      "content": "(iii) $ \\widehat{\\overline{a}}_{s,t} $ the BLUP estimate of the mean breeding value in the selected population."
     },
     {
       "type": "discussion",
@@ -70,7 +70,7 @@
     },
     {
       "type": "discussion",
-      "content": "The potential biases in a least-squares analysis of these data based on the contrast between the control and selected phenotypic means are seen in the two lower graphs in Figure 19.2. The lower left graph plots the difference in the estimated common environmental effects between selected and control populations ($ _ ct - _ st $). Ignoring the inherent variance in estimating the $ $, the average difference (via a paired t test) is not significantly different from zero. The right-hand graph plots the predicted mean breeding value of the control population, which is assumed to be zero under the least-squares analysis. As can be seen, there is a slight, but positive, trend in the mean. When the selected mean is adjusted by subtracting from the control mean, the net result is that the LS analysis slightly underestimates the true response, $ _ s,t $. Thus, there is no evidence of error being introduced by $ G E $ differences between the control and selected lines, but error is introduced if the mean breeding value of the control population departs significantly from zero."
+      "content": "The potential biases in a least-squares analysis of these data based on the contrast between the control and selected phenotypic means are seen in the two lower graphs in Figure 19.2. The lower left graph plots the difference in the estimated common environmental effects between selected and control populations $ (\\widehat{b}_{ct}-\\widehat{b}_{st}) $ . Ignoring the inherent variance in estimating the $ \\widehat{b} $ , the average difference (via a paired t test) is not significantly different from zero. The right-hand graph plots the predicted mean breeding value of the control population, which is assumed to be zero under the least-squares analysis. As can be seen, there is a slight, but positive, trend in the mean. When the selected mean is adjusted by subtracting from the control mean, the net result is that the LS analysis slightly underestimates the true response, $ \\overline{a}_{s,t} $ . Thus, there is no evidence of error being introduced by $ G\\times E $ differences between the control and selected lines, but error is introduced if the mean breeding value of the control population departs significantly from zero."
     }
   ]
 }

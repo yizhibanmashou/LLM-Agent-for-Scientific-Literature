@@ -33,15 +33,15 @@
     },
     {
       "type": "derivation",
-      "content": "Recalling that the among-group variance equals the within-group covariance (LW Chapter 18), the among-family genetic variance, $ _ GF ^ 2 $, with arbitrary epistasis immediately follows from the genetic covariance between sibs (LW [[SEE_TABLE:7.2]]), [[SEE_FORMULA:21.26a]]"
+      "content": "Recalling that the among-group variance equals the within-group covariance (LW Chapter 18), the among-family genetic variance, $ \\sigma_{GF}^{2} $, with arbitrary epistasis immediately follows from the genetic covariance between sibs (LW [[SEE_TABLE:7.2]]), [[SEE_FORMULA:21.26a]]"
     },
     {
       "type": "derivation",
-      "content": "Likewise, the within-family genetic variance, $ _ Gw ^ 2 = _ G ^ 2 - _ GF ^ 2 $, becomes [[SEE_FORMULA:21.26b]]"
+      "content": "Likewise, the within-family genetic variance, $ \\sigma_{Gw}^{2} = \\sigma_{G}^{2} - \\sigma_{GF}^{2} $, becomes [[SEE_FORMULA:21.26b]]"
     },
     {
       "type": "discussion",
-      "content": "The among- and within-family variances, $ ^2(_i) $ and $ ^2(z_ ij - _i) $, immediately follow if we substitute Equations 21.26a and 21.26b into Equations 21.9a and 21.10a, respectively."
+      "content": "The among- and within-family variances, $ \\sigma^{2} \\left( \\bar{z}_{i} \\right) $ and $ \\sigma^{2} \\left( z_{ij}-\\bar{z}_{i} \\right) $ , immediately follow if we substitute Equations 21.26a and 21.26b into Equations 21.9a and 21.10a, respectively."
     },
     {
       "type": "discussion",
@@ -49,11 +49,11 @@
     },
     {
       "type": "derivation",
-      "content": "The previous expression assumed that $ _ xy = 0 $, meaning that terms involving dominance are not included. Using the values of $ _ xy $ from [[SEE_TABLE:21.2]], the parent-offspring covariance is [[SEE_FORMULA:21.27a]]"
+      "content": "The previous expression assumed that $ \\Delta_{xy} = 0 $, meaning that terms involving dominance are not included. Using the values of $ \\Theta_{xy} $ from [[SEE_TABLE:21.2]], the parent-offspring covariance is [[SEE_FORMULA:21.27a]]"
     },
     {
       "type": "discussion",
-      "content": "[[TABLE:21.2]] shows that $ _ xy = 1/16 $ and $ 1/8 $ when $ x $ is a half- or full-sib, respectively, of $ $. Expressed in terms of Wright's coefficient of relationship, $ r $, (21.27b)"
+      "content": "[[TABLE:21.2]] shows that $ \\Theta_{xy}=1/16 $ and 1/8 when x is a half- or full-sib, respectively, of $ \\mathcal{R}. $ Expressed in terms of Wright's coefficient of relationship, r,"
     },
     {
       "type": "derivation",
@@ -65,7 +65,7 @@
     },
     {
       "type": "discussion",
-      "content": "For sib-selection, $ (_1, y _1) $ is directly provided by Equation 21.27b, and Equations 21.29a and 21.29b apply if terms of order $ 1/n $ are ignored. For among-family selection using parental selection or $ S_1 $ seed, the covariance is the same as that for full-sibs under sib selection, namely, Equation 21.29b (as all three have the same value of $ _ xy $)."
+      "content": "For sib-selection, $ \\sigma(\\bar{z}_{1}, y|\\mathcal{R}_{1}) $ is directly provided by Equation 21.27b, and Equations 21.29a and 21.29b apply if terms of order 1/n are ignored. For among-family selection using parental selection or $ S_{1} $ seed, the covariance is the same as that for full-sibs under sib selection, namely, Equation 21.29b (as all three have the same value of $ \\Theta_{xy} $ )."
     },
     {
       "type": "derivation",
@@ -73,7 +73,7 @@
     },
     {
       "type": "discussion",
-      "content": "Equations 21.29 and 21.31 show that additive epistasis contributes to the short-term response. However, as with individual selection, this contribution is transient and decays over time as recombination breaks up linkage groups of favorable alleles (Chapter 15). For u-locus additive epistasis ($ _ Au ^2 $), the per-generation decay rate for unlinked loci is $ [1 - (1/2)^ u-1] $, or one minus the probability that a parental gamete containing specific alleles at u unlinked loci will be passed onto an offspring. The probability that such a gamete remains unchanged after $ $ generations is $ 2^ - (u-1) $, which rapidly converges to zero. Thus, if $ R_ Au $ is the contribution due to u-locus additive epistasis, after $ $ generations, the contribution from a single generation of selection becomes $ 2^ - (u-1) R_ Au $."
+      "content": "Equations 21.29 and 21.31 show that additive epistasis contributes to the short-term response. However, as with individual selection, this contribution is transient and decays over time as recombination breaks up linkage groups of favorable alleles (Chapter 15). For u-locus additive epistasis $ \\sigma_{A^{u}}^{2} $ , the per-generation decay rate for unlinked loci is $ [1-(1/2)^{u-1}] $ , or one minus the probability that a parental gamete containing specific alleles at u unlinked loci will be passed onto an offspring. The probability that such a gamete remains unchanged after $ \\tau $ generations is $ 2^{-\\tau(u-1)} $ , which rapidly converges to zero. Thus, if $ R_{A^{u}} $ is the contribution due to u-locus additive epistasis, after $ \\tau $ generations, the contribution from a single generation of selection becomes $ 2^{-\\tau(u-1)}R_{A^{u}}. $"
     }
   ]
 }

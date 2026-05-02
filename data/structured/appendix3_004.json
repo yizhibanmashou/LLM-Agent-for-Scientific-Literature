@@ -30,7 +30,7 @@
     },
     {
       "type": "discussion",
-      "content": "We can more compactly write the CK equations in matrix form, as follows: first we define the probability transition matrix, P, as the matrix whose $ ij $th element is $ P(i,j) $, the probability of moving from state $ i $ to state $ j $, $ P(i j) $. This implies that the rows of P sum to one, as when considering the $ ith $ row, $ _j P(i,j) = _j P(i j) = 1 $. In matrix form, the Chapman-Kolomogrov equation becomes $$ \\boldsymbol{\\pi}(t+1)=\\boldsymbol{\\pi}(t)\\mathbf{P} $$"
+      "content": "We can more compactly write the CK equations in matrix form, as follows: first we define the probability transition matrix, P, as the matrix whose $ ij $th element is $ P(i,j) $, the probability of moving from state $ i $ to state $ j $, $ P(i j) $. This implies that the rows of P sum to one, as when considering the $ ith $ row, $ \\sum_j P(i,j) = \\sum_j P(i \\rightarrow j) = 1 $. In matrix form, the Chapman-Kolomogrov equation becomes $$ \\boldsymbol{\\pi}(t+1)=\\boldsymbol{\\pi}(t)\\mathbf{P} $$"
     },
     {
       "type": "discussion",
@@ -42,15 +42,15 @@
     },
     {
       "type": "discussion",
-      "content": "Next we define the n-step transition probability, $ p_ ij ^ (n) $, as the probability that the process is in state j, given that it started in state i some n steps ago, namely, $$ p_{ij}^{(n)}=\\Pr(X_{t+n}=s_{j}\\mid X_{t}=s_{i}) $$"
+      "content": "Next we define the n-step transition probability, $ p_{ij}^{(n)} $, as the probability that the process is in state j, given that it started in state i some n steps ago, namely, $$ p_{ij}^{(n)}=\\Pr(X_{t+n}=s_{j}\\mid X_{t}=s_{i}) $$"
     },
     {
       "type": "discussion",
-      "content": "It immediately follows that $ p_ ij ^ (n) $ is simply the $ ij $th element of $ P^n $, the $ n $th power of the single-step transition matrix. The classic example of a Markov chain in genetics is the Wright-Fisher model of drift (Equations 2.1 and 2.2; Example 2.1)."
+      "content": "It immediately follows that $ p_{ij}^{(n)} $ is simply the ijth element of $ \\mathbf{P}^{n} $ , the nth power of the single-step transition matrix. The classic example of a Markov chain in genetics is the Wright-Fisher model of drift (Equations 2.1 and 2.2; Example 2.1)."
     },
     {
       "type": "discussion",
-      "content": "Finally, a Markov chain is said to be irreducible if there exists a positive integer, $ n_ ij $, such that $ p_ ij ^ (n_ ij) > 0 $ for all $ ij $. That is, all states communicate with each other, in that the process can always move from any one state to any other state (although this may require multiple steps). Likewise, a chain is said to be aperiodic when the number of steps required to move between two states (say x and y) is not always some multiple of a specific integer. Put another way, the chain is not forced into cycles of fixed length between certain states."
+      "content": "Finally, a Markov chain is said to be irreducible if there exists a positive integer, $ n_{ij} $ such that $ p_{ij}^{(n_{ij})}>0 $ for all ij. That is, all states communicate with each other, in that the process can always move from any one state to any other state (although this may require multiple steps). Likewise, a chain is said to be aperiodic when the number of steps required to move between two states (say x and y) is not always some multiple of a specific integer. Put another way, the chain is not forced into cycles of fixed length between certain states."
     }
   ]
 }

@@ -24,7 +24,7 @@
   "blocks": [
     {
       "type": "proposition",
-      "content": "A more rigorous treatment of how selection changes the within-gamete covariances, Cij, requires consideration of the (pairwise) between-gamete covariance, $ C_ i,j $, as well as higher-order covariance terms that measure the amount of gametic-phase disequilibrium between groups of more than two loci. Here, we introduce some of the notation needed for non-normal distributions of genotypic and phenotypic values, returning to the consequences of relaxing the normality assumption in the next section."
+      "content": "A more rigorous treatment of how selection changes the within-gamete covariances, $ C_{ij} $ requires consideration of the (pairwise) between-gamete covariance, $ C_{i,j} $ , as well as higherorder covariance terms that measure the amount of gametic-phase disequilibrium between groups of more than two loci. Here, we introduce some of the notation needed for nonnormal distributions of genotypic and phenotypic values, returning to the consequences of relaxing the normality assumption in the next section."
     },
     {
       "type": "derivation",
@@ -44,7 +44,7 @@
     },
     {
       "type": "discussion",
-      "content": "Note that we recover Equation 24.7c only if $ C_ ij (t) = C_ i,j (t) $, meaning that selection changes the within-gamete and between-gamete covariances by the same amount. Turelli and Barton (1990) showed that this occurs if there is either global gametic-phase equilibrium before selection (all groups of loci are in gametic-phase equilibrium) or the distribution of allelic effects over loci is multivariate normal (see Equations 24.13a and 24.13b). Thus, Equation 24.7c follows under Gaussian COA assumptions. However, selection can drive a distribution away from normality, in which case Equation 24.7c may no longer hold."
+      "content": "Note that we recover Equation 24.7c only if $ \\delta C_{ij}(t)=\\delta C_{i,j}(t) $ , meaning that selection changes the within-gamete and between-gamete covariances by the same amount. Turelli and Barton (1990) showed that this occurs if there is either global gametic-phase equilibrium before selection (all groups of loci are in gametic-phase equilibrium) or the distribution of allelic effects over loci is multivariate normal (see Equations 24.13a and 24.13b). Thus, Equation 24.7c follows under Gaussian COA assumptions. However, selection can drive a distribution away from normality, in which case Equation 24.7c may no longer hold."
     },
     {
       "type": "derivation",
@@ -52,11 +52,11 @@
     },
     {
       "type": "discussion",
-      "content": "(Lande 1976; Lande and Arnold 1983). As will be shown in Chapters 29 and 30, when selection acts only on the mean (such that $ / _ k,z = 0 $ for $ k 2 $), the within-generation change in the phenotype variance will be $ (_z^2) = -S^2 $. Hence, $ (_z^2) + S^2 $ is the change in variance over that expected due to selection simply on the mean."
+      "content": "(Lande 1976; Lande and Arnold 1983). As will be shown in Chapters 29 and 30, when selection acts only on the mean (such that $ \\partial\\ln\\overline{w} / \\partial\\mu_{k,z}=0 $ for $ k\\geq 2 $), the within-generation change in the phenotype variance will be $ \\delta(\\sigma_{z}^{2})=-S^{2} $ . Hence, $ \\delta(\\sigma_{z}^{2})+S^{2} $ is the change in variance over that expected due to selection simply on the mean."
     },
     {
       "type": "derivation",
-      "content": "Using these extended selection gradients, and ignoring selection acting on the skew and higher moments (i.e., $ / _ k,z = 0 $ for $ k 3 $), Turelli and Barton (1990) found that [[SEE_FORMULA:24.13a]] where $ C_ ijh $ refers to the third-order covariance between the effects of alleles at loci i, j, and h. If $ X_i $ is the additive value of a randomly chosen allele at locus i, and $ _i = E(X_i) $ is the average value for this locus, then $ C_ ijh = E[(X_i - _i)(X_j - _j)(X_h - _h)] $. Higher-order covariances are similarly defined. The covariances in Equation 24.13a measure the amount of third-order $ (C_ ijh) $ and fourth-order $ (C_ ijhl) $ gametic-phase disequilibrium (the departures from random assortment for triplets and quadruplets of loci). If selection on the third (skew) or higher-order moments is significant, then Equations 24.13a and 24.13b need to include covariance terms of order five and higher."
+      "content": "Using these extended selection gradients, and ignoring selection acting on the skew and higher moments (i.e., $ \\partial\\ln\\overline{w}/\\partial\\mu_{k,z}=0 $ for $ k\\geq 3 $ ), Turelli and Barton (1990) found that where $ C_{ijh} $ refers to the third-order covariance between the effects of alleles at loci i, j, and h. If $ X_{i} $ is the additive value of a randomly chosen allele at locus i, and $ \\mu_{i}=E(X_{i}) $ is the average value for this locus, then $ C_{ijh}=E[(X_{i}-\\mu_{i})(X_{j}-\\mu_{j})(X_{h}-\\mu_{h})]. $ Higher-order covariances are similarly defined. The covariances in [[SEE_FORMULA:24.13a]] measure the amount of third-order $ (C_{ijh}) $ and fourth-order $ (C_{ijhl}) $ gametic-phase disequilibrium (the departures from random assortment for triplets and quadruplets of loci). If selection on the third (skew) or higher-order moments is significant, then Equations 24.13a and 24.13b need to include covariance terms of order five and higher."
     },
     {
       "type": "derivation",
@@ -64,7 +64,7 @@
     },
     {
       "type": "discussion",
-      "content": "When $ S^2 | (_z^2)| $ (selection is mainly on the variance), we recover Bulmer’s approximation (Equation 24.7b) when the number of loci, $ n $, is large."
+      "content": "When $ S^{2}\\ll|\\delta(\\sigma_{z}^{2})| $ (selection is mainly on the variance), we recover Bulmer's approximation (Equation 24.7b) when the number of loci, n, is large."
     }
   ]
 }

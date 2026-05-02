@@ -18,7 +18,7 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "Felsenstein (1992) pointed out that neither of these approaches is likely to provide the most efficient estimates of $ $ (i.e., to yield estimates with minimum sampling variance), as they do not utilize all of the information in the sample of sequences. In particular, both approaches ignore the genealogical relationships of sequences (i.e., the coalescent structure of the sample), although under neutrality, the expected contribution to variation from each genealogical branch can be expressed in terms of $ $ (Equation 2.33b)."
+      "content": "Felsenstein (1992) pointed out that neither of these approaches is likely to provide the most efficient estimates of $ \\theta $ (i.e., to yield estimates with minimum sampling variance), as they do not utilize all of the information in the sample of sequences. In particular, both approaches ignore the genealogical relationships of sequences (i.e., the coalescent structure of the sample), although under neutrality, the expected contribution to variation from each genealogical branch can be expressed in terms of $ \\theta $ (Equation 2.33b)."
     },
     {
       "type": "derivation",
@@ -26,11 +26,11 @@
     },
     {
       "type": "discussion",
-      "content": "A comparison of this expression and Equations 4.2 and 4.4 illustrates that there is substantial room for improvement in the estimation of $ $ over the traditional heterozygosity and segregating-sites methods, provided the number of sequences exceeds five or so, and assuming a reasonably accurate gene genealogy can be obtained (Figure 4.1)."
+      "content": "A comparison of this expression and Equations 4.2 and 4.4 illustrates that there is substantial room for improvement in the estimation of $ \\theta $ over the traditional heterozygosity and segregating-sites methods, provided the number of sequences exceeds five or so, and assuming a reasonably accurate gene genealogy can be obtained (Figure 4.1)."
     },
     {
       "type": "discussion",
-      "content": "Gene genealogies cannot be constructed without error. However, by using information on the expected coalescence times of samples of neutral sequences, Fu (1994a, 1994b) developed several generalized least-squares estimators that account for the sampling variances and covariances of mutations on different branch segments. Several of these estimators, which utilize the concepts of the site-frequency spectrum (Fu 1995; Li and Fu 1999; see Chapter 2), asymptotically perform in a near-optimal manner as the sample size increases, again provided the sites are neutral and the population is in drift-mutation equilibrium. As one or both of the latter two assumptions (neutrality and equilibrium) are likely to be violated to unknown degrees in many natural settings, having an estimator with minimum sensitivity to both problems would be highly useful. In fact, just such an approach can be extrapolated from Watterson's estimator (Equation 4.3). The basis for this strategy follows from the property for neutral alleles that in an equilibrium population, the number $ S_j $ of derived single-nucleotide variants found j times in a sample of size n has the expected value $ L /j $ (Watterson 1975; Fu 1995). Because the total number of segregating sites, $ S $, has an expected value of $ L a_n $, it follows that Watterson's estimator is equivalent to an average of estimates of $ $, each weighted by the inverse of the number of observations."
+      "content": "Gene genealogies cannot be constructed without error. However, by using information on the expected coalescence times of samples of neutral sequences, Fu (1994a, 1994b) developed several generalized least-squares estimators that account for the sampling variances and covariances of mutations on different branch segments. Several of these estimators, which utilize the concepts of the site-frequency spectrum (Fu 1995; Li and Fu 1999; see Chapter 2), asymptotically perform in a near-optimal manner as the sample size increases, again provided the sites are neutral and the population is in drift-mutation equilibrium. As one or both of the latter two assumptions (neutrality and equilibrium) are likely to be violated to unknown degrees in many natural settings, having an estimator with minimum sensitivity to both problems would be highly useful. In fact, just such an approach can be extrapolated from Watterson's estimator (Equation 4.3). The basis for this strategy follows from the property for neutral alleles that in an equilibrium population, the number $ S_{j} $ of derived single-nucleotide variants found j times in a sample of size n has the expected value $ L\\theta /j $ (Watterson 1975; Fu 1995). Because the total number of segregating sites, S, has an expected value of $ L\\theta a_{n} $ , it follows that Watterson's estimator is equivalent to an average of estimates of $ \\theta $ , each weighted by the inverse of the number of observations."
     },
     {
       "type": "derivation",
@@ -38,7 +38,7 @@
     },
     {
       "type": "discussion",
-      "content": "Considering just the sampling variance of the estimators of $ $ to this point, as $ n $, those for $ _W $ and $ _ ML $ are $ /(15.4L) $, whereas that for $ _ $ is $ /(3L) $, and that for $ _1 $ is $ /L $. Thus, although the singleton-based estimator is likely to have the smallest amount of bias associated with selection, a focus on only a fraction of the segregating sites results in higher sampling variance."
+      "content": "Considering just the sampling variance of the estimators of $ \\theta $ to this point, as $ n\\to\\infty $ those for $ \\widehat{\\theta}_{W} $ and $ \\widehat{\\theta}_{ML} $ are $ \\theta /(15.4L) $ , whereas that for $ \\widehat{\\theta}_{\\pi} $ is $ \\theta /(3L) $ , and that for $ \\widehat{\\theta}_{1} $ is $ \\theta /L $ . Thus, although the singleton-based estimator is likely to have the smallest amount of bias associated with selection, a focus on only a fraction of the segregating sites results in higher sampling variance."
     }
   ]
 }

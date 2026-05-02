@@ -27,7 +27,7 @@
     },
     {
       "type": "derivation",
-      "content": "One approach to estimating $ $ from whole-genome sequencing relies on data from just a single individual (Lynch 2008a). This maximum-likelihood method estimates the correlation $ $ of “zygosity” (heterozygosity and homozygosity) of pairs of sites separated by specific distances (L) across the genome to obtain disequilibrium measures that are nearly unbiased with minimal sampling variance. Spatial patterns of heterozygosity arise because recombination causes variation in coalescence times among chromosomal regions. In effect, this leads to clustering of heterozygous sites in long stretches of DNA that by chance have experienced little recombination and have long coalescence times. For any distance L (in nucleotides) between sites, $ L $ is defined as the deviation of the frequency of pairs of nucleotide sites with mixed zygosities from the random expectation [[SEE_FORMULA:4.12]] with $ H_ 1d $ denoting the fraction of pairs of sites at distance L containing one heterozygote and one homozygote, and $ 2 (1-) $ being the expected fraction of such mixed pairs under a random distribution given an average level of heterozygosity $ $."
+      "content": "One approach to estimating $ $ from whole-genome sequencing relies on data from just a single individual (Lynch 2008a). This maximum-likelihood method estimates the correlation $ $ of “zygosity” (heterozygosity and homozygosity) of pairs of sites separated by specific distances (L) across the genome to obtain disequilibrium measures that are nearly unbiased with minimal sampling variance. Spatial patterns of heterozygosity arise because recombination causes variation in coalescence times among chromosomal regions. In effect, this leads to clustering of heterozygous sites in long stretches of DNA that by chance have experienced little recombination and have long coalescence times. For any distance L (in nucleotides) between sites, $ L $ is defined as the deviation of the frequency of pairs of nucleotide sites with mixed zygosities from the random expectation [[SEE_FORMULA:4.12]] with $ H_{1d} $ denoting the fraction of pairs of sites at distance L containing one heterozygote and one homozygote, and $ 2 (1-) $ being the expected fraction of such mixed pairs under a random distribution given an average level of heterozygosity $ $."
     },
     {
       "type": "derivation",
@@ -35,11 +35,11 @@
     },
     {
       "type": "discussion",
-      "content": "(Lynch et al. 2014), where $ _L = 4N_e c_L $ is the scaled population recombination rate for sites separated by distance $ L $ (and having recombination rate $ c_L $). Note that as $ _L 0 $, $ E(_L) (1 + 2)/(1 + 7) $, which is closely approximated by $ $ when $ 1 $ (which, as noted above, is generally the case). As $ _L $, $ E(_L) (1 +)/ _L / _L $. Thus, given an estimate of $ $, with estimates of average $ _L $ for neutral sites separated by $ L = 1, 2, 3, $ sites, each based on thousands to millions of pairs of sites, the decline in $ _L $ with $ L $ can be used to infer the distance dependence of $ _L $."
+      "content": "(Lynch et al. 2014), where $ \\rho_{L}=4 N_{e} c_{L} $ is the scaled population recombination rate for sites separated by distance $ L $ (and having recombination rate $ c_{L} $ ). Note that as $ \\rho_{L}\\rightarrow 0 $ $ E(\\Delta_{L})\\rightarrow \\theta(1+2\\theta)/(1+7\\theta) $ , which is closely approximated by $ \\theta $ when $ \\theta\\ll 1 $ (which, as noted above, is generally the case). As $ \\rho_{L}\\rightarrow\\infty $ $ E(\\Delta_{L})\\rightarrow \\theta(1+\\theta)/\\rho_{L}\\simeq \\theta/\\rho_{L} $ . Thus, given an estimate of $ \\theta $ , with estimates of average $ \\Delta_{L} $ for neutral sites separated by $ L=1,2,3,\\dots $ sites, each based on thousands to millions of pairs of sites, the decline in $ \\Delta_{L} $ with $ L $ can be used to infer the distance dependence of $ \\rho_{L} $ ."
     },
     {
       "type": "derivation",
-      "content": "Another potentially powerful method for estimating $ $ with population-genomic data takes advantage of the standardized linkage disequilibrium ($ r^2 $) introduced in Chapter 2. For neutral sites in drift-mutation equilibrium, Equation 2.29a gives a full expression for $ r_L^2 $ in terms of $ $ and $ _L $. However, provided $ 1 $ (which is always the case) and $ _L $ (which, as shown below, is generally the case for physically distant sites), Equation 2.29a simplifies to [[SEE_FORMULA:4.14]]"
+      "content": "Another potentially powerful method for estimating $ $ with population-genomic data takes advantage of the standardized linkage disequilibrium ($ r^2 $) introduced in Chapter 2. For neutral sites in drift-mutation equilibrium, Equation 2.29a gives a full expression for $ r_L^2 $ in terms of $ $ and $ \\rho_L $. However, provided $ 1 $ (which is always the case) and $ _L $ (which, as shown below, is generally the case for physically distant sites), Equation 2.29a simplifies to [[SEE_FORMULA:4.14]]"
     },
     {
       "type": "derivation",
@@ -47,7 +47,7 @@
     },
     {
       "type": "discussion",
-      "content": "A significant problem, often unappreciated, is that estimates of $ r_ L ^ 2 $ can be substantially biased if sample sizes are small or allele frequencies are extreme (Song and Song 2007)."
+      "content": "A significant problem, often unappreciated, is that estimates of $ r_{L}^{2} $ can be substantially biased if sample sizes are small or allele frequencies are extreme (Song and Song 2007)."
     },
     {
       "type": "discussion",
@@ -63,7 +63,7 @@
     },
     {
       "type": "discussion",
-      "content": "These results show that the simple division of an estimate of $ _L $ by $ L $ to obtain an estimate of the per-site parameter $ = 4N_e c_0 $, a common practice, may yield rather different answers depending on the distance between sites; at large distances $ $ specifically measures the population crossover rate between sites."
+      "content": "These results show that the simple division of an estimate of $ \\rho_{L} $ by L to obtain an estimate of the per-site parameter $ \\rho=4 N_{e} c_{0} $ , a common practice, may yield rather different answers depending on the distance between sites; at large distances $ \\rho $ specifically measures the population crossover rate between sites."
     }
   ]
 }

@@ -28,11 +28,11 @@
     },
     {
       "type": "discussion",
-      "content": "The $ 61 61 $ Q matrix is specified by Equation 10.18. The $ _j $ are the equilibrium frequencies of codon $ j $ (often calculated from the nucleotide frequencies at the three codon positions), while $ $ and $ $ are estimated parameters intended to account for biases in codon changes. Potential differences in transition versus transversion rates are accounted for by $ $. One takes the currently observed codons over the phylogeny, and then runs the model backward in time by considering all possible ancestral codons at each of the internal nodes (ancestors) in the tree. The model thus corrects for multiple hits. The key parameter of interest is $ $, the strength of selection on replacement substitutions. In the early models using"
+      "content": "The $ 6 1 \\times6 1 $ Q matrix is specified by Equation 10.18. The $ \\pi_{j} $ are the equilibrium frequencies of codon j (often calculated from the nucleotide frequencies at the three codon positions), while $ \\kappa $ and $ \\omega $ are estimated parameters intended to account for biases in codon changes. Potential differences in transition versus transversion rates are accounted for by $ \\kappa $ . One takes the currently observed codons over the phylogeny, and then runs the model backward in time by considering all possible ancestral codons at each of the internal nodes (ancestors) in the tree. The model thus corrects for multiple hits. The key parameter of interest is $ \\omega $ , the strength of selection on replacement substitutions. In the early models using"
     },
     {
       "type": "discussion",
-      "content": "[h] this approach, $ $ was a fixed constant over all genes, but later models allowed $ $ to vary over sites (nicely paralleling the development of extensions of the Poisson random field model to allow $ $ to vary over genes/alleles), a point upon which we will expand shortly. Figure 10.4 shows the basic structure of these various state changes for a particular codon. The mutational structure in Equation 10.18 (where mutation rates are functions of $ $ and $ _j $) is known in the molecular evolution literature as the Hasegawa-Kishino-Yano, or HKY, model (Hasegawa et al. 1985)."
+      "content": "this approach, $ \\omega $ was a fixed constant over all genes, but later models allowed $ \\omega $ to vary over sites (nicely paralleling the development of extensions of the Poisson random field model to allow $ \\gamma $ to vary over genes/alleles), a point upon which we will expand shortly. Figure 10.4 shows the basic structure of these various state changes for a particular codon. The mutational structure in Equation 10.18 (where mutation rates are functions of $ \\kappa $ and $ \\pi_{j} $ ) is known in the molecular evolution literature as the Hasegawa-Kishino-Yano, or HKY, model (Hasegawa et al. 1985)."
     },
     {
       "type": "derivation",
@@ -44,7 +44,7 @@
     },
     {
       "type": "derivation",
-      "content": "The matrix exponential, $ (t) $, is computed by diagonalizing the Q matrix by writing $ = U ^ T $, where A is a diagonal matrix, whose ith diagonal element is the eigenvalue $ _ i $ of Q (Equation A5.10a), and U is a matrix of the eigenvectors of Q (Equation A5.10c). With this transformation, Equation 10.19 now becomes $$ \\exp(\\mathbf{Q}t)=\\mathbf{U}\\exp(t\\boldsymbol{\\Lambda})\\mathbf{U}^{T} $$ where [[SEE_FORMULA:10.21]]"
+      "content": "The matrix exponential, $ (t) $, is computed by diagonalizing the Q matrix by writing $ \\mathbf{Q} = U\\Lambda\\mathbf{U}^{T} $, where A is a diagonal matrix, whose ith diagonal element is the eigenvalue $ \\lambda_{i} $ of Q (Equation A5.10a), and U is a matrix of the eigenvectors of Q (Equation A5.10c). With this transformation, Equation 10.19 now becomes $$ \\exp(\\mathbf{Q}t)=\\mathbf{U}\\exp(t\\boldsymbol{\\Lambda})\\mathbf{U}^{T} $$ where [[SEE_FORMULA:10.21]]"
     },
     {
       "type": "discussion",

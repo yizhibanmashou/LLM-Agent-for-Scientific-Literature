@@ -10,7 +10,7 @@ from pathlib import Path
 from typing import Any
 
 APP_DIR = Path(__file__).resolve().parent
-ROOT_DIR = APP_DIR.parents[1]
+ROOT_DIR = APP_DIR.parent
 CONFIG_PATH = APP_DIR / "source_config.json"
 OUTPUT_DIR = APP_DIR / "data" / "generated"
 TMP_DIR = APP_DIR / "tmp"
@@ -1760,6 +1760,7 @@ def build_review_dataset(config: dict[str, Any], ocr_coverage: dict[str, set[str
     review_config = config.get("review", {}) if isinstance(config.get("review"), dict) else {}
     structured_dir = resolve_repo_path(str(review_config.get("structured_dir", "data/structured")))
     pdf_dir = resolve_repo_path(str(review_config.get("pdf_dir", "data/背景资料")))
+    preferred_default_chapter = str(review_config.get("default_chapter") or "").strip().lower()
     ocr_coverage = ocr_coverage or {}
 
     toc_index = build_toc_locator_index()
@@ -1835,6 +1836,17 @@ def build_review_dataset(config: dict[str, Any], ocr_coverage: dict[str, set[str
         )
         data[chapter_id] = chapter_rows
 
+    chapter_id_set = {chapter["id"] for chapter in chapters}
+    default_chapter = (
+        preferred_default_chapter
+        if preferred_default_chapter in chapter_id_set
+        else "chapter5"
+        if "chapter5" in chapter_id_set
+        else chapters[0]["id"]
+        if chapters
+        else None
+    )
+
     return {
         "generated_at": datetime.now().isoformat(timespec="seconds"),
         "views": [
@@ -1843,7 +1855,7 @@ def build_review_dataset(config: dict[str, Any], ocr_coverage: dict[str, set[str
             {"id": "chunks", "label": "Chunk（中英）"},
         ],
         "chapters": chapters,
-        "default_chapter": "chapter5" if any(chapter["id"] == "chapter5" for chapter in chapters) else (chapters[0]["id"] if chapters else None),
+        "default_chapter": default_chapter,
         "data": data,
         "locator_version": 2,
     }

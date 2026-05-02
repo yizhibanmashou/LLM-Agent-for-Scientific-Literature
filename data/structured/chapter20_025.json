@@ -20,7 +20,7 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "Many of the initial applications of animal models in natural populations used individual PBVs in tests of selection on breeding, versus environmental, values (Equations 20.18 and 20.20), for example, fitting the Rausher-Simms regression using PBVs, $ w = 1 + _A + _E + $. However, Postma (2006) noted that there are significant problems with using an estimated value, $ $, in place of the true breeding value, $ A $ (to conform with the literature, we use an italicized $ A $ for the true breeding value, $ $ for the PBV, and a bold roman $ A $ for the relationship matrix). His central point was that when the pedigree adds little additional information, the PBV for an individual is almost entirely determined by its phenotype. The resulting"
+      "content": "Many of the initial applications of animal models in natural populations used individual PBVs in tests of selection on breeding, versus environmental, values (Equations 20.18 and 20.20), for example, fitting the Rausher-Simms regression using PBVs, $ w=1+\\beta_{A}\\widehat{a}+\\beta_{E}\\widehat{e}+\\epsilon $ However, Postma (2006) noted that there are significant problems with using an estimated value, $ \\widehat{a} $ , in place of the true breeding value, A (to conform with the literature, we use an italicized A for the true breeding value, $ \\widehat{a} $ for the PBV, and a bold roman A for the relationship matrix). His central point was that when the pedigree adds little additional information, the PBV for an individual is almost entirely determined by its phenotype. The resulting"
     },
     {
       "type": "discussion",
@@ -28,7 +28,7 @@
     },
     {
       "type": "discussion",
-      "content": "To quantify these concerns, we first need to consider several related measures of the uncertainty of predicted breeding values. Their accuracy, $ $, is the correlation between the predicted, $ $, and actual, A, breeding values (Chapter 13), while the reliability, $ ^2 $, is the fraction of variation in A accounted for by the PBVs. When using only the phenotype of an individual to obtain its PBV, $ = h $ (Chapter 13). The difference, $ ^2 - h^2 $, between the reliability of a particular PBV and the heritability is a measure of how much additional information is provided from relatives (i.e., from the pedigree). Expressing a PBV as its expected value (the true breeding value) plus an uncorrelated residual, $ = A + $, then $ ^2(- A) = ^2() $ is the prediction-error variance (PEV; Chapter 19). When the PBVs are small, the PBVs will be very close to the true breeding values."
+      "content": "To quantify these concerns, we first need to consider several related measures of the uncertainty of predicted breeding values. Their accuracy, $ \\rho $ , is the correlation between the predicted, $ \\widehat{a} $ , and actual, A, breeding values (Chapter 13), while the reliability, $ \\rho^{2} $ , is the fraction of variation in A accounted for by the PBVs. When using only the phenotype of an individual to obtain its PBV, $ \\rho=h $ (Chapter 13). The difference, $ \\rho^{2}-h^{2} $ , between the reliability of a particular PBV and the heritability is a measure of how much additional information is provided from relatives (i.e., from the pedigree). Expressing a PBV as its expected value (the true breeding value) plus an uncorrelated residual, $ \\widehat{a}=A+\\epsilon $ , then $ \\sigma^{2}(\\widehat{a}-A)=\\sigma^{2}(\\epsilon) $ is the prediction-error variance (PEV; Chapter 19). When the PEVs are small, the PBVs will be very close to the true breeding values."
     },
     {
       "type": "derivation",
@@ -40,7 +40,7 @@
     },
     {
       "type": "discussion",
-      "content": "Hence, Because $ ^2 1 $, it immediately follows that $ ^2() ^2(A) $."
+      "content": "Hence, Because $ \\rho^2 \\leq 1 $, it immediately follows that $ \\sigma^2(\\widehat{a}) \\leq \\sigma^2(A) $."
     },
     {
       "type": "derivation",
@@ -56,7 +56,7 @@
     },
     {
       "type": "discussion",
-      "content": "● True breeding value ($ ^ 2 =1 $)"
+      "content": "● True breeding value ($ \\rho^{2}=1 $)"
     }
   ]
 }

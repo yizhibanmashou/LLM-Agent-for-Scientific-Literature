@@ -21,11 +21,11 @@
     },
     {
       "type": "derivation",
-      "content": "The (unconditional) mean and variance for this model follow from $ E[] = / $, and $ () = (+) = _A^2 ^T + _e^2 $. Wang et al. (1993, 1994a, 1994b), Sorensen et al. (1994), and Jensen et al. (1994) developed Gibbs samplers for this model and its extensions. As before, the conditional distribution of the data, given the vectors of fixed effects, $ $, breeding values, a, and the environmental variance, $ _e^2 $, is multivariate normal [[SEE_FORMULA:19.33a]]"
+      "content": "The (unconditional) mean and variance for this model follow from $ E[] = / $, and $ \\operatorname{Var}(\\mathbf{y}) = \\operatorname{Var}(\\mathbf{Z} \\mathbf{a} + \\mathbf{e}) = \\sigma_A^2 \\mathbf{Z} \\mathbf{A} \\mathbf{Z}^T + \\sigma_e^2 \\mathbf{I} $. Wang et al. (1993, 1994a, 1994b), Sorensen et al. (1994), and Jensen et al. (1994) developed Gibbs samplers for this model and its extensions. As before, the conditional distribution of the data, given the vectors of fixed effects, $ $, breeding values, a, and the environmental variance, $ \\sigma_e^2 $, is multivariate normal [[SEE_FORMULA:19.33a]]"
     },
     {
       "type": "derivation",
-      "content": "The infinitesimal model is assumed, with the distribution of breeding values, given the relationship matrix, A, and additive genetic variance, $ _ A ^ 2 $, being multivariate normal [[SEE_FORMULA:19.33b]]"
+      "content": "The infinitesimal model is assumed, with the distribution of breeding values, given the relationship matrix, A, and additive genetic variance, $ \\sigma_{A}^{2} $, being multivariate normal [[SEE_FORMULA:19.33b]]"
     },
     {
       "type": "discussion",
@@ -49,7 +49,7 @@
     },
     {
       "type": "discussion",
-      "content": "This Bayesian analysis makes most of the standard animal-model assumptions, in particular that the infinitesimal model and multivariate normality, hold (as with an MM analysis, a Bayesian approach is potentially biased by selection-induced changes in allele frequencies). A Bayesian analysis has all the advantages of an MM analysis (over an LS analysis) and, in addition, the posterior marginals correctly give the distribution of any parameter of interest, independent of the values assumed for other parameters. Any uncertainty introduced by estimating these additional parameters is fully captured by the marginal posteriors. The Bayesian approach yields the correct distribution (assuming that the model assumptions hold and the prior is reasonable) for the estimated selection response, independent of the additive genetic variance. By contrast, an MM analysis is highly dependent on the assumed (or estimated) additive variance, and the standard error of a REML/BLUP estimate for the response (Equation 19.8c) does not account for the additional uncertainty introduced by using a REML estimate of $ _A^2 $. One standard package for Bayesian analysis is Winbugs, and Damgaard (2007) outlined how to apply this software to animal models."
+      "content": "This Bayesian analysis makes most of the standard animal-model assumptions, in particular that the infinitesimal model and multivariate normality, hold (as with an MM analysis, a Bayesian approach is potentially biased by selection-induced changes in allele frequencies). A Bayesian analysis has all the advantages of an MM analysis (over an LS analysis) and, in addition, the posterior marginals correctly give the distribution of any parameter of interest, independent of the values assumed for other parameters. Any uncertainty introduced by estimating these additional parameters is fully captured by the marginal posteriors. The Bayesian approach yields the correct distribution (assuming that the model assumptions hold and the prior is reasonable) for the estimated selection response, independent of the additive genetic variance. By contrast, an MM analysis is highly dependent on the assumed (or estimated) additive variance, and the standard error of a REML/BLUP estimate for the response (Equation 19.8c) does not account for the additional uncertainty introduced by using a REML estimate of $ \\sigma_{A}^{2} $ . One standard package for Bayesian analysis is Winbugs, and Damgaard (2007) outlined how to apply this software to animal models."
     }
   ]
 }

@@ -14,7 +14,7 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "When different tests share correlated data, it introduces dependency between the $p$ values for these tests. How do we account for this? One approach (Cheverud 2001; Li and Ji 2005; Nyholt 2005) is to use the nature of the dependency structure of the data to estimate an effective number of independent tests, $n_ e $. This value is then substituted for $n$ in the above methods; e.g., Equation A4.3b becomes $ = 1 - (1 -)^ 1/n_ e $. A classic application of this approach is correcting for correlations among tests of marker-trait associations over a set of linked markers in either a QTL mapping experiment or a GWAS (LW Chapters 15 and 16)."
+      "content": "When different tests share correlated data, it introduces dependency between the p values for these tests. How do we account for this? One approach (Cheverud 2001; Li and Ji 2005; Nyholt 2005) is to use the nature of the dependency structure of the data to estimate an effective number of independent tests, $ n_{e} $ . This value is then substituted for n in the above methods; e.g., Equation A4.3b becomes $ \\alpha=1-(1-\\pi)^{1 / n_{e}} $ . A classic application of this approach is correcting for correlations among tests of marker-trait associations over a set of linked markers in either a QTL mapping experiment or a GWAS (LW Chapters 15 and 16)."
     },
     {
       "type": "discussion",
@@ -22,7 +22,7 @@
     },
     {
       "type": "discussion",
-      "content": "When all of the underlying variables that generate C are uncorrelated, then $ _1 = = _n = 1 $, while when all of the observations are completely correlated, then $ _1 = n $ and $ _2 = = _n = 0 $. These two cases represent the extremes of $ n $ independent tests (the former) and one independent test (the latter). As with principal components (Appendix 5), the spread of the eigenvalues tells us about dependency. One metric of this is the variance in the eigenvalues, $ ^2() $. If all of the eigenvalues are equal, then $ ^2() = 0 $, while if one eigenvalue is nonzero, then $ ^2() = n $."
+      "content": "When all of the underlying variables that generate C are uncorrelated, then $ \\lambda_{1}=\\cdots=\\lambda_{n}=1 $ , while when all of the observations are completely correlated, then $ \\lambda_{1}=n $ and $ \\lambda_{2}=\\cdots=\\lambda_{n}=0 $ . These two cases represent the extremes of n independent tests (the former) and one independent test (the latter). As with principal components (Appendix 5), the spread of the eigenvalues tells us about dependency. One metric of this is the variance in the eigenvalues, $ \\sigma^{2}(\\lambda) $ . If all of the eigenvalues are equal, then $ \\sigma^{2}(\\lambda)=0 $ , while if one eigenvalue is nonzero, then $ \\sigma^{2}(\\lambda)=n. $"
     },
     {
       "type": "discussion",
@@ -30,7 +30,7 @@
     },
     {
       "type": "discussion",
-      "content": "This returns $ n_e = n $ when $ ^2() = 0 $ and $ n_e = 1 $ when $ ^2() = n $, which matches the expected results from the eigenvalue analysis for these extreme cases."
+      "content": "This returns $ n_{e}=n $ when $ \\sigma^{2}(\\lambda)=0 $ and $ n_{e}=1 $ when $ \\sigma^{2}(\\lambda)=n $ , which matches the expected results from the eigenvalue analysis for these extreme cases."
     },
     {
       "type": "discussion",

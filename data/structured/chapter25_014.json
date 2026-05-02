@@ -50,7 +50,7 @@
     },
     {
       "type": "discussion",
-      "content": "A second, more subtle issue, which also arose in Chapter 18, is the nature of the residual variance structure. One standard approach for curve-fitting is ordinary least-squares (OLS), which involves finding the parameter values for Equation 25.10b that minimize the sum of squared residuals, $ e_i^2 = ^T $, where the $ i $th residual, $ e_i = R_c(t_i) - _c(t_i) $, is the difference between the $ i $th observed and predicted values for a given candidate regression model. OLS regression assumes homoscedasticity, with $ ^2(e_i) = _e^2 $ for all $ i $, and that residuals are uncorrelated, $ (e_i, e_j) = 0 $ for $ i j $. As with short-term response, the presence of drift compromises both of these assumptions. As was done in Chapter 18 to accommodate this concern, curves should be fitted using generalized least-squares, where parameters are chosen to minimize the quadratic product $ ^T ^ -1 $, where $ $ is the variance-covariance matrix for the residuals (Equation 18.15c)."
+      "content": "A second, more subtle issue, which also arose in Chapter 18, is the nature of the residual variance structure. One standard approach for curve-fitting is ordinary least-squares (OLS), which involves finding the parameter values for Equation 25.10b that minimize the sum of squared residuals, $ \\sum e_{i}^{2}=\\mathbf{e}^{T}\\mathbf{e} $ , where the ith residual, $ e_{i}=R_{c}(t_{i})-\\widehat{R}_{c}(t_{i}) $ , is the difference between the ith observed and predicted values for a given candidate regression model. OLS regression assumes homoscedasticity, with $ \\sigma^{2}(e_{i})=\\sigma_{e}^{2} $ for all i, and that residuals are uncorrelated, $ \\sigma(e_{i},e_{j})=0 $ for $ i\\neq j $ . As with short-term response, the presence of drift compromises both of these assumptions. As was done in Chapter 18 to accommodate this concern, curves should be fitted using generalized least-squares, where parameters are chosen to minimize the quadratic product $ \\mathbf{e}^{T}\\mathbf{V}^{-1}\\mathbf{e} $ , where V is the variance-covariance matrix for the residuals (Equation 18.15c)."
     },
     {
       "type": "derivation",
@@ -58,7 +58,7 @@
     },
     {
       "type": "discussion",
-      "content": "Here, the cumulative response approaches a limiting value of a, with a half-life of $ t_ 0.5 = b $."
+      "content": "Here, the cumulative response approaches a limiting value of a, with a half-life of $ t_{0.5}=b. $"
     },
     {
       "type": "discussion",

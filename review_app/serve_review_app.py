@@ -7,13 +7,26 @@ from datetime import datetime, timezone
 from http import HTTPStatus
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
-from urllib.parse import urlparse
+from urllib.parse import unquote, urlparse
 
 APP_DIR = Path(__file__).resolve().parent
-REPO_ROOT = APP_DIR.parents[1]
+REPO_ROOT = APP_DIR.parent
 REVIEW_RECORDS_PATH = APP_DIR / "data" / "local" / "review_records.json"
-API_PATH = "/knowledge_engineering/review_app/api/review-records"
+APP_PATH = "/review_app"
+LEGACY_APP_PATH = "/knowledge_engineering/review_app"
+API_PATHS = {
+    f"{APP_PATH}/api/review-records",
+    f"{LEGACY_APP_PATH}/api/review-records",
+}
 ALLOWED_STATUS = {"pending", "pass", "fail"}
+
+
+def is_relative_to(child: Path, parent: Path) -> bool:
+    try:
+        child.relative_to(parent)
+    except ValueError:
+        return False
+    return True
 
 
 def now_iso() -> str:
@@ -112,16 +125,57 @@ class ShowingHandler(SimpleHTTPRequestHandler):
         self.send_header("Cache-Control", "no-store")
         super().end_headers()
 
+    def translate_path(self, path: str) -> str:
+        request_path = unquote(urlparse(path).path)
+        if request_path == APP_PATH or request_path == f"{APP_PATH}/":
+            return str(APP_DIR / "index.html")
+        if request_path.startswith(f"{APP_PATH}/"):
+            candidate = (APP_DIR / request_path.removeprefix(f"{APP_PATH}/")).resolve()
+            if is_relative_to(candidate, APP_DIR.resolve()):
+                return str(candidate)
+            return str(APP_DIR / "__missing__")
+        return super().translate_path(path)
+
+    def _redirect_legacy_app_path(self, request_path: str) -> bool:
+        if request_path == LEGACY_APP_PATH or request_path.startswith(f"{LEGACY_APP_PATH}/"):
+            suffix = request_path.removeprefix(LEGACY_APP_PATH)
+            target = f"{APP_PATH}{suffix}"
+            if not target.endswith("/") and not Path(target).suffix:
+                target = f"{target}/"
+            self.send_response(HTTPStatus.MOVED_PERMANENTLY)
+            self.send_header("Location", target)
+            self.end_headers()
+            return True
+        return False
+
+    def _send_json_head(self, payload: dict, status: HTTPStatus = HTTPStatus.OK) -> None:
+        body = json.dumps(payload, ensure_ascii=False, indent=2).encode("utf-8")
+        self.send_response(status)
+        self.send_header("Content-Type", "application/json; charset=utf-8")
+        self.send_header("Content-Length", str(len(body)))
+        self.end_headers()
+
+    def do_HEAD(self) -> None:
+        request_path = urlparse(self.path).path
+        if request_path in API_PATHS:
+            self._send_json_head(load_payload())
+            return
+        if self._redirect_legacy_app_path(request_path):
+            return
+        super().do_HEAD()
+
     def do_GET(self) -> None:
         request_path = urlparse(self.path).path
-        if request_path == API_PATH:
+        if request_path in API_PATHS:
             self._send_json(load_payload())
+            return
+        if self._redirect_legacy_app_path(request_path):
             return
         super().do_GET()
 
     def do_POST(self) -> None:
         request_path = urlparse(self.path).path
-        if request_path != API_PATH:
+        if request_path not in API_PATHS:
             self.send_error(HTTPStatus.NOT_FOUND, "Unsupported endpoint")
             return
 
@@ -157,7 +211,8 @@ def main(argv: list[str] | None = None) -> None:
 
     save_payload(load_payload())
     server = ThreadingHTTPServer((args.host, args.port), ShowingHandler)
-    print(f"Serving KE review app at http://{args.host}:{args.port}/knowledge_engineering/review_app/")
+    print(f"Serving KE review app at http://{args.host}:{args.port}{APP_PATH}/")
+    print(f"Legacy alias: http://{args.host}:{args.port}{LEGACY_APP_PATH}/")
     print(f"Review records file: {REVIEW_RECORDS_PATH}")
 
     try:

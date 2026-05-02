@@ -33,7 +33,7 @@
     },
     {
       "type": "discussion",
-      "content": "To formally motivate the concept of the FDR, suppose a total of $n$ hypotheses are tested, $S$ of which are judged significant (i.e., the $p$ value for the test is $ $ some threshold value, $ $). If we had complete knowledge, we would know that $n_ 0 $ of the hypotheses have the null true and $n_ 1 =n-n_ 0 $ have the alternative true, and we might find that $F$ of the true nulls were called significant, while $T$ of the alternative true were called significant, yielding the following table"
+      "content": "To formally motivate the concept of the FDR, suppose a total of n hypotheses are tested, S of which are judged significant (i.e., the p value for the test is $ \\leq $ some threshold value, $ \\tau $ ). If we had complete knowledge, we would know that $ n_{0} $ of the hypotheses have the null true and $ n_{1}=n-n_{0} $ have the alternative true, and we might find that F of the true nulls were called significant, while T of the alternative trues were called significant, yielding the following table"
     },
     {
       "type": "discussion",
@@ -41,7 +41,7 @@
     },
     {
       "type": "discussion",
-      "content": "For this experiment, the false-discovery rate is the fraction of tests called significant that are actually true nulls, $ FDR = F/S $. (The term $ $ follows in that a significant result can be considered as a discovery for future work.) As a point of contrast, the normal Type-I error (which we can also call the $ $), which is the fraction of true nulls that are called significant, is $ F/n_0 $. Note the critical distinction between these two error rates. While the numerator of each is $ F $, the denominators are considerably different—the total number, $ S $, of tests called significant (for FDR), versus the number, $ n_0 $, of hypotheses that are truly null (FPR). As the threshold value ($ $) for significance is changed, so too is the fraction $ F/S $. To obtain a FDR of $ $ over our experiment, $ $ is adjusted to find its largest value such that some expectation of $ F/S $ is bounded above by $ $. Finally, Gadbury et al. (2004) defined the expected discovery rate (EDR) as $ T/n_1 $ (the fraction of all true discoveries declared to be significant), which is the analog of statistical power in this setting."
+      "content": "For this experiment, the false-discovery rate is the fraction of tests called significant that are actually true nulls, FDR = F/S. (The term discovery follows in that a significant result can be considered as a discovery for future work.) As a point of contrast, the normal Type-I error (which we can also call the false-positive rate [FPR]), which is the fraction of true nulls that are called significant, is $ F/n_{0} $ . Note the critical distinction between these two error rates. While the numerator of each is F, the denominators are considerably different—the total number, S, of tests called significant (for FDR), versus the number, $ n_{0} $ , of hypotheses that are truly null (FPR). As the threshold value $ (\\tau) $ for significance is changed, so too is the fraction $ F/S $ . To obtain a FDR of $ \\delta $ over our experiment, $ \\tau $ is adjusted to find its largest value such that some expectation of F/S is bounded above by $ \\delta $ . Finally, Gadbury et al. (2004) defined the expected discovery rate (EDR) as $ T/n_{1} $ (the fraction of all true discoveries declared to be significant), which is the analog of statistical power in this setting."
     },
     {
       "type": "discussion",

@@ -23,7 +23,7 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "Long-haplotype Tests Using Within-population Data: rEHH, LDD, iHS, $ nS_ L $, SDS, and DIND The currently most popular class of allele-age-based tests are those that search for alleles that are at moderate to high frequency and with long haplotypes. Under the neutral model, a common allele is an old allele and hence has experienced many generations of recombination. Long haplotypes for strictly neutral alleles are only expected when either the allele is very young or when the recombination rate is greatly suppressed."
+      "content": "Long-haplotype Tests Using Within-population Data: rEHH, LDD, iHS, n $ S_{L} $ , SDS, and DIND The currently most popular class of allele-age-based tests are those that search for alleles that are at moderate to high frequency and with long haplotypes. Under the neutral model, a common allele is an old allele and hence has experienced many generations of recombination. Long haplotypes for strictly neutral alleles are only expected when either the allele is very young or when the recombination rate is greatly suppressed."
     },
     {
       "type": "definition",
@@ -31,7 +31,7 @@
     },
     {
       "type": "discussion",
-      "content": "[h] as one moves away from the core. The standard metric for the length of an allele is based on its haplotype homozygosity (HH), the probability that two randomly chosen chromosomes containing the same SNP variant (or core set of SNPs) are identical (homozygous) for all markers within a specified region. Sabeti et al. (2002) defined extended haplotype homozygosity (EHH) as the length of a region around the core allele (SNP) where HH has a value of 5"
+      "content": "as one moves away from the core. The standard metric for the length of an allele is based on its haplotype homozygosity (HH), the probability that two randomly chosen chromosomes containing the same SNP variant (or core set of SNPs) are identical (homozygous) for all markers within a specified region. Sabeti et al. (2002) defined extended haplotype homozygosity (EHH) as the length of a region around the core allele (SNP) where HH has a value of 5% or greater, namely, the length around the core where there is a 5% or greater chance that any two random haplotypes of that allele are identical at all markers (Figure 9.6)."
     },
     {
       "type": "derivation",
@@ -43,7 +43,7 @@
     },
     {
       "type": "discussion",
-      "content": "[h] that the frequency of the favored allele must be 0.7 or less. Within such a time window, this test is among the most powerful for detecting selection. Nonetheless, a large rEHH value is not sufficient for suggesting selection, as some rare alleles (potentially being very young, and hence with reduced time for recombination) are expected to have large rEHH values. To detect selection, Sabeti et al. (2002) plotted the rEHH value versus frequency for each allele and looked for outliers (Figure 9.7). Coalescent simulations were then performed under different neutral models (with different demographic assumptions) to assess significance. Wang et al.'s (2006) linkage disequilibrium decay (LDD) test is a modification of EHH that does not require phasing."
+      "content": "that the frequency of the favored allele must be 0.7 or less. Within such a time window, this test is among the most powerful for detecting selection. Nonetheless, a large rEHH value is not sufficient for suggesting selection, as some rare alleles (potentially being very young, and hence with reduced time for recombination) are expected to have large rEHH values. To detect selection, Sabeti et al. (2002) plotted the rEHH value versus frequency for each allele and looked for outliers (Figure 9.7). Coalescent simulations were then performed under different neutral models (with different demographic assumptions) to assess significance. Wang et al.'s (2006) linkage disequilibrium decay (LDD) test is a modification of EHH that does not require phasing."
     },
     {
       "type": "derivation",
@@ -55,11 +55,11 @@
     },
     {
       "type": "discussion",
-      "content": "The expectation $ (E_p) $ and standard deviation $ (SD_p) $ are subscripted by $ p $ to highlight that these statistics are computed over all $ iHS_ us $ values in the genome for SNPs whose derived allele frequency is $ p $. Standardizing the score with respect to $ p $ automatically incorporates any relationship between the $ iHS_ us $ score and the allele frequency (and hence the age for a neutral allele). The authors noted that this approach seems fairly robust to demographic departures from the equilibrium neutral model, especially at extreme values of the standardized score. Despite this, Voight et al. correctly did not assign significance values to individual $ iHS $ values, but rather used large (absolute) scores as a screening method for potential sites under selection."
+      "content": "The expectation $ ( E_{p} ) $ and standard deviation $ ( \\mathrm{S D}_{p} ) $ are subscripted by p to highlight that these statistics are computed over all $ i H S_{u s} $ values in the genome for SNPs whose derived allele frequency is p. Standardizing the score with respect to p automatically incorporates any relationship between the $ i H S_{u s} $ score and the allele frequency (and hence the age for a neutral allele). The authors noted that this approach seems fairly robust to demographic departures from the equilibrium neutral model, especially at extreme values of the standardized score. Despite this, Voight et al. correctly did not assign significance values to individual iHS values, but rather used large (absolute) scores as a screening method for potential sites under selection."
     },
     {
       "type": "discussion",
-      "content": "Ferrer-Admetlla et al. (2014) proposed a statistic that is very similar in form to $ iHS $ but counts length variation differently. Their number of segregating sites by length ($ n_ SL $) statistic replaces the average area under the $ iHS $ curve by the average number of consecutive segregating sites shared by two randomly sampled chromosomes around a specific SNP variant. This average statistic for the ancestral and derived alleles replaces $ iHS_ A $ and $ iHS_ D $ (respectively) in Equation 9.41b. Ferrer-Admetlla et al. noted that this simple change in the metric results in a test that is significantly more robust to recombination and slightly more robust to nonequilibrium departures than the $ iHS $ statistic. When applied in a human genome scan, the method did not yield the large enrichment of significant scores in regions of low recombination typically seen when other (more recombination-sensitive) tests are used (e.g., O'Reilly et al. 2008). Further, their simulations found that $ n_ SL $ has reasonable power to detect ongoing sweeps, even those from standing variation."
+      "content": "Ferrer-Admetlla et al. (2014) proposed a statistic that is very similar in form to iHS but counts length variation differently. Their number of segregating sites by length $ (n S_{L}) $ statistic replaces the average area under the iHS curve by the average number of consecutive segregating sites shared by two randomly sampled chromosomes around a specific SNP variant. This average statistic for the ancestral and derived alleles replaces $ iHS_{A} $ and $ iHS_{D} $ (respectively) in Equation 9.41b. Ferrer-Admetlla et al. noted that this simple change in the metric results in a test that is significantly more robust to recombination and slightly more robust to nonequilibrium departures than the iHS statistic. When applied in a human genome scan, the method did not yield the large enrichment of significant scores in regions of low recombination typically seen when other (more recombination-sensitive) tests are used (e.g., O'Reilly et al. 2008). Further, their simulations found that $ n S_{L} $ has reasonable power to detect ongoing sweeps, even those from standing variation."
     }
   ]
 }

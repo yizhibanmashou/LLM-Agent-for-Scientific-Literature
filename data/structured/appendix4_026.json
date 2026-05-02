@@ -38,7 +38,7 @@
     },
     {
       "type": "discussion",
-      "content": "Often the values of $ M_ ij $ are simply zero-one indicator variables (e.g., 0 for male, 1 for female), but they can be more general regression slopes as well. For example, $ M_ 1j $ could be the age of individuals within study j, with a significantly nonzero value of $ b_1 $ in Equation A4.32 indicating that the treatment mean varies with age. Again Equation A4.32 is simply a GLS regression, and one can test for moderator-variable effects ($ b_j 0 $) in the standard regression fashion."
+      "content": "Often the values of $ M_{ij} $ are simply zero-one indicator variables (e.g., 0 for male, 1 for female), but they can be more general regression slopes as well. For example, $ M_{1j} $ could be the age of individuals within study j, with a significantly nonzero value of $ b_{1} $ in Equation A4.32 indicating that the treatment mean varies with age. Again Equation A4.32 is simply a GLS regression, and one can test for moderator-variable effects $ (b_{j}\\neq0) $ in the standard regression fashion."
     },
     {
       "type": "proposition",
@@ -46,7 +46,7 @@
     },
     {
       "type": "discussion",
-      "content": "This difference in weighting schemes under fixed effects (Equation A4.30b) versus random effects (Equation A4.33b) can have profound implications (a nice review was presented by Borenstein et al. 2010b). In particular, the presence of $ _u^2 $ makes the random-effect weights more equal over studies, especially when $ _u^2 $ is of the same order as an average value of $ s_i^2 $. Under a fixed-effects setting, larger studies (i.e., those with smaller values of $ s_i^2 $) are given more weight than smaller studies. In a random-effects setting, this difference in weights is reduced such that larger studies lose influence and smaller studies gain influence. In the extreme when $ _u^2 $ is large relative to all of the $ s_i^2 $ values, all studies are given roughly equal weight, independent of their sample size."
+      "content": "This difference in weighting schemes under fixed effects (Equation A4.30b) versus random effects (Equation A4.33b) can have profound implications (a nice review was presented by Borenstein et al. 2010b). In particular, the presence of $ \\widehat{\\sigma}_{u}^{2} $ makes the random-effect weights more equal over studies, especially when $ \\widehat{\\sigma}_{u}^{2} $ is of the same order as an average value of $ s_{i}^{2}. $ Under a fixed-effects setting, larger studies (i.e., those with smaller values of $ s_{i}^{2} $) are given more weight than smaller studies. In a random-effects setting, this difference in weights is reduced such that larger studies lose influence and smaller studies gain influence. In the extreme when $ \\sigma_{u}^{2} $ is large relative to all of the $ s_{i}^{2} $ values, all studies are given roughly equal weight, independent of their sample size."
     },
     {
       "type": "discussion",
@@ -54,7 +54,7 @@
     },
     {
       "type": "proposition",
-      "content": "Given the lower power of a random-effects model, one might be tempted to start with a fixed-effects analysis and only considered random-effects when the fixed-effects model generates a significant Q value (Equation A4.31). Borenstein et al. (2010b) strongly caution against this approach. First, if the number of studies is small to moderate, Q can have poor power, so a failure to reject homogeneity among studies could simply be due to low power, and not an absence of among-study variation. Second, although there are costs (lower power) with a random-effects model, this arises because such models make a less stringent assumption: they allow the effect size to vary over studies. This is generally closer to reality, as the assumption of a constant $ $ value over all studies is unlikely to be correct."
+      "content": "Given the lower power of a random-effects model, one might be tempted to start with a fixed-effects analysis and only considered random-effects when the fixed-effects model generates a significant $ Q $ value (Equation A4.31). Borenstein et al. (2010b) strongly caution against this approach. First, if the number of studies is small to moderate, $ Q $ can have poor power, so a failure to reject homogeneity among studies could simply be due to low power, and not an absence of among-study variation. Second, although there are costs (lower power) with a random-effects model, this arises because such models make a less stringent assumption: they allow the effect size to vary over studies. This is generally closer to reality, as the assumption of a constant $ \\theta $ value over all studies is unlikely to be correct."
     },
     {
       "type": "discussion",
@@ -62,7 +62,7 @@
     },
     {
       "type": "discussion",
-      "content": "While typically it is assumed that $ = $ (i.e., effects are uncorrelated and homoscedastic), we can easily incorporate $ $ matrices that account for phylogenetic relationships (i.e., correlations) when comparisons are made between species (Hadfield and Nakagawa 2010; Nakagawa and Santos 2012). In such settings, one could use either a Brownian-motion model (Equation A1.31) for the elements of $ $ (divergence under drift) or an Ornstein-Uhlenbeck model (Equation A1.33) (divergence under drift and stabilizing selection). The bottom line is that our previous discussions on the great flexibility of mixed models (Chapters 19 and 20; LW Chapters 26 and 27) also hold when we conduct a meta-analysis using a mixed-model framework."
+      "content": "While typically it is assumed that C = I (i.e., effects are uncorrelated and homoscedastic), we can easily incorporate C matrices that account for phylogenetic relationships (i.e., correlations) when comparisons are made between species (Hadfield and Nakagawa 2010; Nakagawa and Santos 2012). In such settings, one could use either a Brownian-motion model (Equation A1.31) for the elements of C (divergence under drift) or an Ornstein-Uhlenbeck model (Equation A1.33) (divergence under drift and stabilizing selection). The bottom line is that our previous discussions on the great flexibility of mixed models (Chapters 19 and 20; LW Chapters 26 and 27) also hold when we conduct a meta-analysis using a mixed-model framework."
     }
   ]
 }

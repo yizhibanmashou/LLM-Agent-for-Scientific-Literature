@@ -21,15 +21,15 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "Within-family selection chooses individuals based on their relative performance within families. Under family-deviations (FD) selection, individuals with the largest family deviations are chosen, independent of which family they come from. In contrast, strict within-family (WF) selection chooses the largest individuals from each family, independent of how much they actually deviate from their family means. Suppose that in family one the deviations for three measured sibs are 4, 3, and -7, while the deviations in family two are 1, 0, and -1. If we select the upper one-third, then under WF selection, the top individual from each family is chosen, while under FD selection, two individuals from family one and none from family two are chosen. The result of this rather subtle distinction is that FD selection is influenced by the observed mean, $ _ i $, while WF selection is not. Family deviations and strict within-family selection have been confused in the literature, and the correct expression for WF selection was provided by Dempfle (1975, 1990) and Hill et al. (1996). Because WF selection ensures an equal representation of families, while FD selection does not, WF selection has a larger effective population size (Equation 3.4), and hence an expected larger long-term response (Chapter 26)."
+      "content": "Within-family selection chooses individuals based on their relative performance within families. Under family-deviations (FD) selection, individuals with the largest family deviations are chosen, independent of which family they come from. In contrast, strict within-family (WF) selection chooses the largest individuals from each family, independent of how much they actually deviate from their family means. Suppose that in family one the deviations for three measured sibs are 4,3, and -7, while the deviations in family two are 1,0, and -1. If we select the upper one-third, then under WF selection, the top individual from each family is chosen, while under FD selection, two individuals from family one and none from family two are chosen. The result of this rather subtle distinction is that FD selection is influenced by the observed mean, $ \\bar{z}_{i} $ , while WF selection is not. Family deviations and strict within-family selection have been confused in the literature, and the correct expression for WF selection was provided by Dempfle (1975, 1990) and Hill et al. (1996). Because WF selection ensures an equal representation of families, while FD selection does not, WF selection has a larger effective population size (Equation 3.4), and hence an expected larger long-term response (Chapter 26)."
     },
     {
       "type": "derivation",
-      "content": "Under family-deviations (FD) selection, the selection unit is the value of an individual's within-family deviation, $ z_ ij - _i $. Using the results from Tables 21.3 and 21.4, Equation 21.1a yields an expected response of [[SEE_FORMULA:21.19]] with the last equality following from $ _ A ^ 2 / _ z = _ A h $."
+      "content": "Under family-deviations (FD) selection, the selection unit is the value of an individual's within-family deviation, $ z_{ij} - \\overline{z}_i $. Using the results from Tables 21.3 and 21.4, Equation 21.1a yields an expected response of [[SEE_FORMULA:21.19]] with the last equality following from $ \\sigma_{A}^{2}/\\sigma_{z}=\\sigma_{A}h $."
     },
     {
       "type": "derivation",
-      "content": "Under strict within-family (WF) selection, individuals are chosen entirely on their rank within each family, resulting in the observed mean, $ _ i $, being replaced by the true (and unobserved) mean, $ _ i $ (Dempfle 1975, 1990; Hill et al. 1996). The response becomes [[SEE_FORMULA:21.20]]"
+      "content": "Under strict within-family (WF) selection, individuals are chosen entirely on their rank within each family, resulting in the observed mean, $ \\overline{z}_{i} $, being replaced by the true (and unobserved) mean, $ \\mu_{i} $ (Dempfle 1975, 1990; Hill et al. 1996). The response becomes [[SEE_FORMULA:21.20]]"
     },
     {
       "type": "derivation",
@@ -37,15 +37,15 @@
     },
     {
       "type": "derivation",
-      "content": "Thus, when the number of measured sibs in each family is modest to large (meaning that the selection intensities are essentially equal, $ _ FD _ WF $; see Example 24.1), the difference between the expected responses under WF versus FD selection is very small. For large values of n, Equation 21.20 yields a resulting response for strict within-family (WF) selection using half- and full-sib families of [[SEE_FORMULA:21.22a]]"
+      "content": "Thus, when the number of measured sibs in each family is modest to large (meaning that the selection intensities are essentially equal, $ \\bar{\\nu}_{FD} \\simeq \\bar{\\nu}_{WF} $; see Example 24.1), the difference between the expected responses under WF versus FD selection is very small. For large values of n, Equation 21.20 yields a resulting response for strict within-family (WF) selection using half- and full-sib families of [[SEE_FORMULA:21.22a]]"
     },
     {
       "type": "derivation",
-      "content": "When expressed in terms of variance components, [[SEE_FORMULA:21.22b]] With their smaller amounts of among-family genetic variance, there is more usable within-family variance among half-sibs, namely, a within-family additive variance of $ (3/4) _ A ^ 2 $. Only half of this variance is passed from parent to offspring, giving the $ (3/8) _ A ^ 2 $ term in Equations 21.22a and 21.22b. For full-sibs, the within-family additive variance is $ (1/2) _ A ^ 2 $, again only half of which is passed onto offspring, which results in the $ _ A ^ 2 /4 $ term in these equations."
+      "content": "When expressed in terms of variance components, [[SEE_FORMULA:21.22b]] With their smaller amounts of among-family genetic variance, there is more usable within-family variance among half-sibs, namely, a within-family additive variance of $ (3/4)\\sigma_{A}^{2} $. Only half of this variance is passed from parent to offspring, giving the $ (3/8)\\sigma_{A}^{2} $ term in Equations 21.22a and 21.22b. For full-sibs, the within-family additive variance is $ (1/2)\\sigma_{A}^{2} $, again only half of which is passed onto offspring, which results in the $ \\sigma_{A}^{2}/4 $ term in these equations."
     },
     {
       "type": "derivation",
-      "content": "The within-family heritability, $ h_ w ^ 2 $, is the same under both FD and WF within-family selection because $$ \\frac{1-r_{n}}{1-t_{n}}=\\frac{(1-1/n)(1-r)}{(1-1/n)(1-t)}=\\frac{(1-r)}{(1-t)} $$ yielding [[SEE_FORMULA:21.23]]"
+      "content": "The within-family heritability, $ h_{w}^{2} $, is the same under both FD and WF within-family selection because $$ \\frac{1-r_{n}}{1-t_{n}}=\\frac{(1-1/n)(1-r)}{(1-1/n)(1-t)}=\\frac{(1-r)}{(1-t)} $$ yielding [[SEE_FORMULA:21.23]]"
     },
     {
       "type": "discussion",

@@ -18,7 +18,7 @@
     },
     {
       "type": "discussion",
-      "content": "[h] et al. (1999). ABC is also referred to as likelihood-free computation in the literature (as the likelihood is obtained by simulation, rather than by direct calculation). Reviews of ABC were presented by Marjoram et al. (2003), Beaumont (2010), and Sisson and Fan (2011)."
+      "content": "et al. (1999). ABC is also referred to as likelihood-free computation in the literature (as the likelihood is obtained by simulation, rather than by direct calculation). Reviews of ABC were presented by Marjoram et al. (2003), Beaumont (2010), and Sisson and Fan (2011)."
     },
     {
       "type": "discussion",
@@ -30,7 +30,7 @@
     },
     {
       "type": "discussion",
-      "content": "More generally, one would draw a candidate vector, $ $, of model parameters from the prior, and then use these in a simulation to generate a dataset, D, which is then compared against the actual dataset, $ D^ * $. For our opening example, one would draw values of bottleneck width, time of the bottleneck, and scaled mutation rate from a joint prior. These values are then used to simulate a dataset, D, of polymorphism information for this simulated sample. If $ D = D^ * $, then we accept this value of $ $ into the posterior and draw again. If not, we reject it and draw again. This generates a value in the MCMC sample without ever having to compute a likelihood."
+      "content": "More generally, one would draw a candidate vector, $ \\Theta $ , of model parameters from the prior, and then use these in a simulation to generate a dataset, D, which is then compared against the actual dataset, $ D^{*} $ . For our opening example, one would draw values of bottleneck width, time of the bottleneck, and scaled mutation rate from a joint prior. These values are then used to simulate a dataset, D, of polymorphism information for this simulated sample. If $ D=D^{*} $ , then we accept this value of $ \\Theta $ into the posterior and draw again. If not, we reject it and draw again. This generates a value in the MCMC sample without ever having to compute a likelihood."
     },
     {
       "type": "discussion",
@@ -38,11 +38,11 @@
     },
     {
       "type": "discussion",
-      "content": "Example A3.9. Recall from Chapter 8 that an issue of much evolutionary interest concerns both the rate of selective sweeps and the average strength of selection for the swept allele. We can quantify the rate of sweeps by estimating the per-nucleotide adaptive evolution rate, $ $, and quantify their strength by estimating the average selective advantage, s, of a swept allele. As discussed in Chapter 8, most standard estimates based on polymorphism and divergence data usually confound these two parameters. Jensen et al. (2008) developed an ABC approach to obtain separate estimates of $ $ and s. Their idea was to jointly consider the means and variances of several summary statistics measuring various sweep features from sequence polymorphism data. The features they included were nucleotide diversity, $ $, and number of segregating sites, S, for polymorphism levels; $ _H $ for departures in the site-frequency spectrum (Equations 9.27); and $ Z_ n,S $ for the local structure of LD (Equation 9.36b)."
+      "content": "Example A3.9. Recall from Chapter 8 that an issue of much evolutionary interest concerns both the rate of selective sweeps and the average strength of selection for the swept allele. We can quantify the rate of sweeps by estimating the per-nucleotide adaptive evolution rate, $ \\lambda $ and quantify their strength by estimating the average selective advantage, s, of a swept allele. As discussed in Chapter 8, most standard estimates based on polymorphism and divergence data usually confound these two parameters. Jensen et al. (2008) developed an ABC approach to obtain separate estimates of $ \\lambda $ and s. Their idea was to jointly consider the means and variances of several summary statistics measuring various sweep features from sequence polymorphism data. The features they included were nucleotide diversity, $ \\pi $ , and number of segregating sites, S, for polymorphism levels; $ \\theta_{H} $ for departures in the site-frequency spectrum (Equations 9.27); and $ Z_{nS} $ for the local structure of LD (Equation 9.36b)."
     },
     {
       "type": "discussion",
-      "content": "Their ABC approach proceeds as follows: First, values of $ $ and s are drawn from some joint prior, and then are used to generate a simulation of the sweep. The summary statistics of interest are then computed on this simulated data, and if they are sufficiently close to their observed values, the joint $ $ and s values are kept; otherwise, they are rejected and new values are drawn. This procedure is repeated to obtain (at least) several thousand accepted values to generate a joint empirical posterior distribution of $ $ and s values that is consistent with the observed data."
+      "content": "Their ABC approach proceeds as follows: First, values of $ \\lambda $ and s are drawn from some joint prior, and then are used to generate a simulation of the sweep. The summary statistics of interest are then computed on this simulated data, and if they are sufficiently close to their observed values, the joint $ \\lambda $ and s values are kept; otherwise, they are rejected and new values are drawn. This procedure is repeated to obtain (at least) several thousand accepted values to generate a joint empirical posterior distribution of $ \\lambda $ and s values that is consistent with the observed data."
     }
   ]
 }

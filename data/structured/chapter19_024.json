@@ -22,7 +22,7 @@
     },
     {
       "type": "derivation",
-      "content": "The foundation of Bayesian statistics is $ $ $ $ (Appendix 2), which provides the relationship between $ (x y) $ and $ (y x) $, namely, the flipped conditional probabilities. The continuous, vector-valued version of this theorem is [[SEE_FORMULA:19.29a]] where $ ^ T = (^ (1), ^ (2),, ^ (k)) $ is a vector of $ k $ random variables. Here $ p() $ is our prior belief (prior for short) about the distribution of the unknown values, $ $, while $ p(|) $ is simply a standard likelihood function for the probability density of the observed vector of data, $ $, given that the unknown parameters have a specified value of $ $ (LW Appendix 4). The product of these two variables, normalized by $ p() $ to form a proper probability distribution (i.e., that integrates to 1), is our posterior belief (the posterior), $ p() $, for the distribution of the unknown parameters, given both the data, y, and the prior information, $ p() $. Because $ p() $, the probability of the data vector $ $, is a constant independent of $ $, it is typically ignored, and the posterior is often simply written as [[SEE_FORMULA:19.29b]]"
+      "content": "The foundation of Bayesian statistics is $ $ $ $ (Appendix 2), which provides the relationship between $ (x y) $ and $ (y x) $, namely, the flipped conditional probabilities. The continuous, vector-valued version of this theorem is [[SEE_FORMULA:19.29a]] where $ \\boldsymbol{\\Theta}^{T} = (\\theta^{(1)}, \\theta^{(2)}, \\cdots, \\theta^{(k)}) $ is a vector of $ k $ random variables. Here $ p() $ is our prior belief (prior for short) about the distribution of the unknown values, $ $, while $ p(|) $ is simply a standard likelihood function for the probability density of the observed vector of data, $ $, given that the unknown parameters have a specified value of $ $ (LW Appendix 4). The product of these two variables, normalized by $ p() $ to form a proper probability distribution (i.e., that integrates to 1), is our posterior belief (the posterior), $ p() $, for the distribution of the unknown parameters, given both the data, y, and the prior information, $ p() $. Because $ p() $, the probability of the data vector $ $, is a constant independent of $ $, it is typically ignored, and the posterior is often simply written as [[SEE_FORMULA:19.29b]]"
     },
     {
       "type": "discussion",
@@ -30,7 +30,7 @@
     },
     {
       "type": "derivation",
-      "content": "Often, only a subset of the unknown variables is of concern, with the rest being regarded as nuisance variables (or nuisance parameters) that we wish to remove (or at least ignore). To see how this can be accomplished, partition the vector of unknown parameters as $ ^T = (_1^T, _ nu ^T) $, where $ _ nu $ is the column vector of nuisance variables. Integrating the full posterior over $ _ nu $ yields the marginal posterior distribution for the variables of interest, $ _1 $, as [[SEE_FORMULA:19.30]]"
+      "content": "Often, only a subset of the unknown variables is of concern, with the rest being regarded as nuisance variables (or nuisance parameters) that we wish to remove (or at least ignore). To see how this can be accomplished, partition the vector of unknown parameters as $ \\boldsymbol{\\Theta}^T = (\\boldsymbol{\\Theta}_1^T, \\boldsymbol{\\Theta}_{nu}^T) $, where $ \\boldsymbol{\\Theta}_{nu} $ is the column vector of nuisance variables. Integrating the full posterior over $ \\boldsymbol{\\Theta}_{nu} $ yields the marginal posterior distribution for the variables of interest, $ \\boldsymbol{\\Theta}_1 $, as [[SEE_FORMULA:19.30]]"
     },
     {
       "type": "discussion",
@@ -46,15 +46,15 @@
     },
     {
       "type": "discussion",
-      "content": "Suppose we assume a Gaussian prior for the location of the mean, $ (_0, _0^2) $, so that $$ p(\\mu)=\\frac{1}{\\sqrt{2\\pi\\sigma_{0}^{2}}}\\exp\\left(-\\frac{(\\mu-\\mu_{0})^{2}}{2\\sigma_{0}^{2}}\\right) $$"
+      "content": "Suppose we assume a Gaussian prior for the location of the mean, $ \\mu \\sim \\mathrm{N}(\\mu_0, \\sigma_0^2) $, so that $$ p(\\mu)=\\frac{1}{\\sqrt{2\\pi\\sigma_{0}^{2}}}\\exp\\left(-\\frac{(\\mu-\\mu_{0})^{2}}{2\\sigma_{0}^{2}}\\right) $$"
     },
     {
       "type": "discussion",
-      "content": "While $ $ is treated as a fixed (but unknown) value in a standard (frequentist) analysis, it is treated as a random variable in a Bayesian analysis. There are no fixed effects in a Bayesian analysis, as everything is treated as a random variable."
+      "content": "While $ \\mu $ is treated as a fixed (but unknown) value in a standard (frequentist) analysis, it is treated as a random variable in a Bayesian analysis. There are no fixed effects in a Bayesian analysis, as everything is treated as a random variable."
     },
     {
       "type": "discussion",
-      "content": "The mean, $ _0$, and variance, $ _0^2$, are referred to as the prior hyperparameters, where $ _0$ specifies a prior location for the mean and $ _0^2$ specifies the uncertainty in this prior location. The larger is this variance, the greater is our uncertainty. In the limit (as $ _0^2 $), this corresponds to $p() = c$, a constant, which is a uniform or flat prior, where all values of $ $ between some upper and lower value are assumed to be equally likely. (Keynes 1921 called this the principle of indifference—all possible outcomes are equally probable.) A little algebra (Appendix 2) yields $$ p(\\mu\\mid\\mathbf{y})\\propto p(\\mathbf{y}\\mid\\mu)p(\\mu)\\propto\\exp\\left\\{-(\\mu-\\mu_{*})^{2}/[2\\sigma_{*}^{2}]\\right\\} $$ where the expressions for $ _* $ and $ _* $ are given in Appendix 2 (Equation A2.22b). Thus, the posterior density function for $ $ is a normal with a mean of $ _* $ and variance of $ _* $, which can be formally expressed as $$ \\mu\\mid\\left(\\mathbf{y},\\sigma^{2},\\mu_{0},\\sigma_{0}^{2}\\right)\\sim\\mathrm{N}\\left(\\mu_{*},\\sigma_{*}^{2}\\right) $$"
+      "content": "The mean, $\\mu_0$, and variance, $\\sigma_0^2$, are referred to as the prior hyperparameters, where $\\mu_0$ specifies a prior location for the mean and $\\sigma_0^2$ specifies the uncertainty in this prior location. The larger is this variance, the greater is our uncertainty. In the limit (as $\\sigma_0^2 \\to \\infty$), this corresponds to $p() = c$, a constant, which is a uniform or flat prior, where all values of $ $ between some upper and lower value are assumed to be equally likely. (Keynes 1921 called this the principle of indifference—all possible outcomes are equally probable.) A little algebra (Appendix 2) yields $$ p(\\mu\\mid\\mathbf{y})\\propto p(\\mathbf{y}\\mid\\mu)p(\\mu)\\propto\\exp\\left\\{-(\\mu-\\mu_{*})^{2}/[2\\sigma_{*}^{2}]\\right\\} $$ where the expressions for $ _* $ and $ _* $ are given in Appendix 2 (Equation A2.22b). Thus, the posterior density function for $ $ is a normal with a mean of $ _* $ and variance of $ _* $, which can be formally expressed as $$ \\mu\\mid\\left(\\mathbf{y},\\sigma^{2},\\mu_{0},\\sigma_{0}^{2}\\right)\\sim\\mathrm{N}\\left(\\mu_{*},\\sigma_{*}^{2}\\right) $$"
     }
   ]
 }

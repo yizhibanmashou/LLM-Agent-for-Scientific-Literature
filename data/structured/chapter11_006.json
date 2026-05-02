@@ -30,11 +30,11 @@
     },
     {
       "type": "discussion",
-      "content": "Here, $ _ D ^ 2 $, $ _ DI ^ 2 $, etc. are the base-population values of these components under random mating."
+      "content": "Here, $ \\sigma_{D}^{2},\\sigma_{DI}^{2} $ , etc. are the base-population values of these components under random mating."
     },
     {
       "type": "derivation",
-      "content": "To gain a more intuitive feel for the source of the expressions in [[SEE_TABLE:11.3]], we first consider the total genetic variance in a collection of lines, each inbred to level f, while ignoring epistasis until the following section. Subscripting loci with k and the two alleles at a locus as i and j, the genotypic value, G (expressed as a deviation from the mean), of an individual can be written as [[SEE_FORMULA:11.5]] where $ _ kij $ is equal to one if the two alleles at a locus are identical by descent and equal to zero otherwise."
+      "content": "To gain a more intuitive feel for the source of the expressions in [[SEE_TABLE:11.3]], we first consider the total genetic variance in a collection of lines, each inbred to level f, while ignoring epistasis until the following section. Subscripting loci with k and the two alleles at a locus as i and j, the genotypic value, G (expressed as a deviation from the mean), of an individual can be written as [[SEE_FORMULA:11.5]] where $ \\phi_{kij} $ is equal to one if the two alleles at a locus are identical by descent and equal to zero otherwise."
     },
     {
       "type": "discussion",
@@ -46,7 +46,7 @@
     },
     {
       "type": "discussion",
-      "content": "The final term in Equation 11.6a summarizes the consequences of joint inbreeding at pairs of loci, with $ $ being the probability that two loci in the same individual are inbred (Figure 11.1) and $ ^2 - ^* = 2 _ k<m ^n _ k _m $ being the sum of cross-products of the locus-specific inbreeding depressions. In obtaining Equation 11.6a, note that all other products across loci have expectations equal to zero because $ E[_ ki] $ is always equal to zero and $ E[_ kij] = 0 $ at non-inbred loci (LW Chapter 4)."
+      "content": "The final term in Equation 11.6a summarizes the consequences of joint inbreeding at pairs of loci, with $ \\tilde{f} $ being the probability that two loci in the same individual are inbred (Figure 11.1) and $ \\iota^{2}-\\iota^{*} = 2\\sum_{k<m}^{n}\\iota_{k}\\iota_{m} $ being the sum of cross-products of the locus-specific inbreeding depressions. In obtaining Equation 11.6a, note that all other products across loci have expectations equal to zero because $ E[\\alpha_{ki}]$ is always equal to zero and $ E[\\delta_{kij}]=0 $ at non-inbred loci (LW Chapter 4)."
     },
     {
       "type": "derivation",
@@ -62,7 +62,7 @@
     },
     {
       "type": "discussion",
-      "content": "First, in the context of the entire collection of populations, $f$ is equivalent to the probability that single alleles in the same population are identical by descent (the average coefficient of coancestry), so the additive genetic covariance for members of the same population is equal to $2f _A^2$ (LW Chapter 7). Second, two individuals within a population may also share both genes at a locus, in which case they will exhibit dominance genetic covariance, the magnitude of which will depend on whether the locus is inbred or not. From Figure 11.1, we see that the probability that both individuals are inbred and share the same genotype by descent is equal to the identity measure $ $, so the genetic covariance by this route is $ _ D1 ^2$."
+      "content": "First, in the context of the entire collection of populations, f is equivalent to the probability that single alleles in the same population are identical by descent (the average coefficient of coancestry), so the additive genetic covariance for members of the same population is equal to $ 2 f \\sigma_{A}^{2} $ (LW Chapter 7). Second, two individuals within a population may also share both genes at a locus, in which case they will exhibit dominance genetic covariance, the magnitude of which will depend on whether the locus is inbred or not. From Figure 11.1, we see that the probability that both individuals are inbred and share the same genotype by descent is equal to the identity measure $ \\delta $ , so the genetic covariance by this route is $ \\delta\\sigma_{DI}^{2}. $"
     }
   ]
 }

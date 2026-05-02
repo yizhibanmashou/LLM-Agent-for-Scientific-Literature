@@ -20,19 +20,19 @@
   "blocks": [
     {
       "type": "derivation",
-      "content": "Given a threshold cutoff, $T$, the expected mean of the selected adults is given by the conditional mean, $E[z z T]$. Generally, it is assumed that phenotypes are normally distributed, [h] and we use this assumption throughout (unless stated otherwise). With an initial mean of $ $ and variance of $ ^2 $, and $ p = (z T) $ being the fraction saved, this conditional mean is given by LW Equation 2.14, which yields the expected selection differential as [[SEE_FORMULA:14.1]] where $ (x)=(2)^ -1/2 (-x^ 2 /2) $ is the unit normal density function evaluated at x."
+      "content": "Given a threshold cutoff, $T$, the expected mean of the selected adults is given by the conditional mean, $E[z z T]$. Generally, it is assumed that phenotypes are normally distributed, [h] and we use this assumption throughout (unless stated otherwise). With an initial mean of $ $ and variance of $ \\sigma^2 $, and $ p = (z T) $ being the fraction saved, this conditional mean is given by LW Equation 2.14, which yields the expected selection differential as [[SEE_FORMULA:14.1]] where $ \\varphi(x)=(2\\pi)^{-1/2}\\exp(-x^{2}/2) $ is the unit normal density function evaluated at x."
     },
     {
       "type": "derivation",
-      "content": "Usually the fraction saved $p$ (rather than $T$) is preset by the investigator. Given $p$, to apply Equation 14.1, we must first find the threshold value $T_p$ satisfying $ (z T_p) = p$. Notice that $T$ in Equation 14.1 enters only as $(T -)/ $, which transforms $T_p$ to a scale with a mean of zero and unit variance. Hence, $$ \\begin{align*}\\Pr(z\\geq T_p)=\\Pr\\left(\\frac{z-\\mu}{\\sigma}>\\frac{T_p-\\mu}{\\sigma}\\right)=\\Pr\\left(U>\\frac{T_p-\\mu}{\\sigma}\\right)=p\\end{align*} $$ where $ U (0,1) $ denotes a unit normal random variable. Define $ x_ [p] $, the probit transformation of $ p $ (LW Chapter 11), as satisfying [[SEE_FORMULA:14.2a]] so that [[SEE_FORMULA:14.2b]]"
+      "content": "Usually the fraction saved $p$ (rather than $T$) is preset by the investigator. Given $p$, to apply Equation 14.1, we must first find the threshold value $T_p$ satisfying $ (z T_p) = p$. Notice that $T$ in Equation 14.1 enters only as $(T - \\mu)/\\sigma$, which transforms $T_p$ to a scale with a mean of zero and unit variance. Hence, $$ \\begin{align*}\\Pr(z\\geq T_p)=\\Pr\\left(\\frac{z-\\mu}{\\sigma}>\\frac{T_p-\\mu}{\\sigma}\\right)=\\Pr\\left(U>\\frac{T_p-\\mu}{\\sigma}\\right)=p\\end{align*} $$ where $ U (0,1) $ denotes a unit normal random variable. Define $ x_ [p] $, the probit transformation of $ p $ (LW Chapter 11), as satisfying [[SEE_FORMULA:14.2a]] so that [[SEE_FORMULA:14.2b]]"
     },
     {
       "type": "derivation",
-      "content": "It immediately follows that $ x_ [1-p] = (T_p -)/ $, and Equation 14.1 yields the expected selection intensity as [[SEE_FORMULA:14.3a]]"
+      "content": "It immediately follows that $ x_{[1-p]} = (T_p - \\mu)/\\sigma $, and Equation 14.1 yields the expected selection intensity as [[SEE_FORMULA:14.3a]]"
     },
     {
       "type": "derivation",
-      "content": "Note that $ $ is entirely a function of p provided z is normal. Equation 14.3a can be approximated by [[SEE_FORMULA:14.3b]] a result due to Smith (1969). Simmonds (1977) found that this approximation is generally quite good for $ 0.004 p 0.75 $ and offered alternative approximations for $ p $ values outside this range, as did Saxton (1988). Montaldo (1997) gives an approximation for the standardized truncation value $ z = (T -)/ $ in terms of $ $. Finally, when one selects for the lowest fraction $ p $ of the population, Equation 14.3a still holds, provided we take its negative value."
+      "content": "Note that $ $ is entirely a function of p provided z is normal. Equation 14.3a can be approximated by [[SEE_FORMULA:14.3b]] a result due to Smith (1969). Simmonds (1977) found that this approximation is generally quite good for $ 0.004 p 0.75 $ and offered alternative approximations for $ p $ values outside this range, as did Saxton (1988). Montaldo (1997) gives an approximation for the standardized truncation value $ z = (T - \\mu)/\\sigma $ in terms of $ $. Finally, when one selects for the lowest fraction $ p $ of the population, Equation 14.3a still holds, provided we take its negative value."
     },
     {
       "type": "discussion",
