@@ -1,0 +1,44 @@
+{
+  "id": "chapter15_005",
+  "metadata": {
+    "chapter": "chapter15",
+    "section": "Chapter 15: Additive Epistasis",
+    "subsections": [
+      "Additive Epistasis"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter15_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "15.6b",
+      "15.7",
+      "15.8"
+    ],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "derivation",
+      "content": "The expected time, $ t_{1/2} $, for half the total epistatic response to accumulate, $ R_{AA}(t_{1/2}) = \\widetilde{R}_{AA}/2 $, is obtained by noting from Equations 15.4b and 15.6a that this occurs when $ 1 - (1 - c)^{t_{1/2}} = 1/2 $, or [[SEE_FORMULA:15.6b]]"
+    },
+    {
+      "type": "discussion",
+      "content": "For small value of c, this is approximately $ \\simeq 0.68/c $. As linkage becomes tighter, the total cumulative epistatic response increases, as does the time for half of this total response to occur (Figure 15.1)."
+    },
+    {
+      "type": "derivation",
+      "content": "Once selection stops, the epistatic contribution decays to zero. With $ t $ generations of selection followed by $ \\tau $ generations of random mating, the cumulative response under the infinitesimal model is [[SEE_FORMULA:15.7]] which (for large $ \\tau $) converges to $ R = t h^2 S $, the value predicted from the breeder's equation. The half-life for decay of the epistatic response, $ R_{AA} $, is also given by Equation 15.6b."
+    },
+    {
+      "type": "discussion",
+      "content": "The presence of epistasis can result in a curvilinear selection response if $ \\sigma_{AA}^{2}/\\sigma_{z}^{2} $ is sufficiently large. However, as Figure 15.1 shows, any such curvilinearity is usually difficult to distinguish from a linear response, especially given the very noisy nature of selection response data (Chapter 18). Unless there is tight linkage, most of the nonlinearity occurs in the first few generations (Equation 15.6b). With a constant selection differential, the additional increment to response from epistasis decreases in each generation as $ R_{AA} $ approaches its limiting value, $ \\bar{R}_{AA} $, at which point the per-generation response is simply $ h^{2}S $ and linear over future generations."
+    },
+    {
+      "type": "discussion",
+      "content": "Under the infinitesimal model, once selection is relaxed, the total response decays back to that predicted from the breeder's equation. It is interestingly that this situation mimics the effects of natural selection countering artificial selection, which also result in a decay of the cumulative response once artificial selection stops. Thus, in order to predict the permanent response correctly, we must know $ h^2 $. If only the parent-offspring slope is estimated, this may overestimate the final amount of response due to the inclusion of $ \\sigma_{AA}^2 $ and higher-order (additive) epistatic variances, although the bias is generally likely to be small, as the values of the higher-order variances are expected to be small relative to $ \\sigma_A^2 $."
+    },
+    {
+      "type": "derivation",
+      "content": "Griffing’s analysis is restricted to two loci, and hence limited to only pairwise (additive × additive) epistasis. In contrast, Equation 15.1 gives the single-generation response for arbitrary levels of additive epistasis, provided the biparental offspring regression is linear. These higher-order contributions also rapidly decay under random mating. Again assuming the infinitesimal model (and unlinked loci), Bulmer (1980) found that the response due to a single generation of selection (Equation 15.1) decays after one generation of random mating to [[SEE_FORMULA:15.8]] which again rapidly converges to $ R = h^2 S $ after several generations of random mating. For $ n $-locus additive epistasis (e.g., $ \\sigma_{A\\cdots A}^2 $, where there are $ n $ $ A $'s), the per-generation decay rate for unlinked loci is $ (1/2)^{n-1} $, which is the probability that a parental gamete containing specific alleles at $ n $ unlinked loci is passed on intact to an offspring. The probability that such a gamete will remain unchanged after $ t $ generations is $ 2^{-t(n-1)} $, which rapidly converges to zero. Example 15.2 (below) uses the method of ancestral regressions to more fully examine the response under $ n $-locus additive epistasis. A final caveat is that these results apply to infinite populations. As shown in Chapter 11, in finite populations, some of the additive epistatic contribution can be permanent due to some of $ \\sigma_{AA}^2 $ being transformed into simple additive variation by drift."
+    }
+  ]
+}

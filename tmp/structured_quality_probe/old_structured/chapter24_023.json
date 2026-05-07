@@ -1,0 +1,86 @@
+{
+  "id": "chapter24_023",
+  "metadata": {
+    "chapter": "chapter24",
+    "section": "Chapter 24: Describing the Genotypic Distribution: Moments",
+    "subsections": [
+      "Application: Departure from Normality Under Truncation Selection"
+    ],
+    "source_file": "data\\paddle_output\\chapter24_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "24.22a",
+      "24.22b",
+      "24.23a",
+      "24.23b",
+      "24.24a",
+      "24.24b",
+      "24.24c"
+    ],
+    "table_references": [],
+    "structured_repair": {
+      "version": "source_inline_math_v1",
+      "actions": {
+        "replace_from_source": 6
+      }
+    }
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "One application of the preceding machinery is to compute the distribution of breeding values following a single generation of truncation selection, assuming that the initial joint distribution of phenotypic and breeding values is multivariate normal. This was examined by Bulmer (1980) and Zeng (1987), and Turelli and Barton (1994) presented a very elegant (and elaborate) analysis for multiple generations. As before, we consider only additive models, so the distribution of genotypic values is also the distribution of breeding values."
+    },
+    {
+      "type": "derivation",
+      "content": "First, we assume that there is initial (i.e., existing before selection) normality in phenotypic values, $ z \\sim N(\\mu, \\sigma_z^2) $, and compute the cumulants for the resulting distribution of phenotypic values after truncation selection. As before (Chapters 14 and 16), truncation selection saves the uppermost fraction, p, of the population, giving a selection intensity of $$ \\bar{\\imath}=\\frac{\\varphi(z_{p})}{p} $$ where $ \\varphi(z_p) $ is the value of a unit-normal density function evaluated at $ z_p $, and $ z_p $ satisfies $ \\Pr(U > z_p) = p $, with $ U $ denoting a unit-normal random variable (Equation 14.2b). From Chapters 14 and 16, we already have the first two cumulants following selection as $$ K_{1,z}^{*}=\\mu^{*}=\\mu+\\overline{\\imath}\\sigma_{z}\\quad and\\quad K_{2,z}^{*}=\\sigma_{z}^{2}*=[1-\\overline{\\imath}(\\overline{\\imath}-z_{p})]\\sigma_{z}^{2} $$ while the next two cumulants are (from Bulmer 1980) [[SEE_FORMULA:24.22a]] [[SEE_FORMULA:24.22b]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Next, we translate these within-generation changes in the phenotypic distribution into the within-generation change in the distribution of breeding values and then examine how this breeding-value distribution changes (under random mating) during transmission to the next generation. Both steps rely critically on assumptions of normality. If the distribution of breeding and phenotypic values is bivariate normal before selection (as might occur in the initial round of selection, but not necessarily in subsequent rounds), then the regression of breeding values on phenotypic values is linear. $$ A=\\mu_{z}+h^{2}(z-\\mu_{z})+\\epsilon $$"
+    },
+    {
+      "type": "derivation",
+      "content": "Rao et al. (1968) showed that a single generation of truncation selection does not alter this regression, which leads to our standard results (Chapter 16) for the mean and variance of the breeding values following selection [[SEE_FORMULA:24.23a]] and [[SEE_FORMULA:24.23b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Bulmer (1980) showed that when the joint distribution of breeding values and phenotypes is multivariate normal before selection, all higher cumulants follow a very simple relationship [[SEE_FORMULA:24.24a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Assuming unlinked loci, the cumulants for the distribution of breeding values in the next generation become [[SEE_FORMULA:24.24b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Hence, the cumulants for the distribution of breeding values at the start of the next generation are related to the cumulants of the postselection phenotypic distribution by [[SEE_FORMULA:24.24c]]"
+    },
+    {
+      "type": "proposition",
+      "content": "Notice from Equation 24.22 that after a single generation of selection, $ K_{3,A} $ and $ K_{4,A} $ will be nonzero, and hence the distribution of breeding values will no longer be normal. At this point, the assumption of bivariate normality no longer holds, and there is no longer a simple relationship between $ K_{i,A}^{*} $ and $ K_{i,z}^{*} $. Thus, we cannot simply iterate this procedure over more than one generation of selection. See Turelli and Barton (1994) for a detailed analysis over multiple generations."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 24.8. Suppose truncation selection occurs on a normally distributed trait with an initial mean of $ \\mu_z = 0 $ and variance of $ \\sigma_z^2 = 100 $. Individuals whose phenotypes are in the upper 5 $$ \\begin{aligned}K_{3,z}^{*}&=[\\left(\\bar{\\iota}-z_{p}\\right)(2\\bar{\\iota}-z_{p})-1]\\bar{\\iota}\\sigma_{z}^{3}\\\\&=\\left[(2.063-1.645)(2\\cdot2.063-1.645)-1\\right]\\cdot2.063\\cdot100^{3/2}\\\\&=76.45\\\\ \\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Applying Equation 24.24c translates this into the third cumulant in the genotypic distribution in the next generation, yielding $$ K_{3,A}(t+1)=2\\left(\\frac{h^{2}}{2}\\right)^{3}K_{3,z}^{*}(t)=2\\left(\\frac{1}{2}\\right)^{3}76.45=19.11 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Using the machinery from Chapter 16, for $p = 0.2$, Equation 16.11a yields $\\kappa = 0.862$ (i.e., selected individuals have only a fraction, [1 - 0.862] = 0.138, of the variance of the preselection population), and Equation 16.12d returns $d(1) = (-\\kappa/2)100 = -43.1$. Hence, the phenotypic variance in the first generation is $ \\sigma_{z}^{2} = \\sigma_{A}^{2}(1) = 100 + d(1) = 56.9 $. Thus, the scaled skew becomes $$ \\gamma_{3}=\\frac{K_{3}}{\\sigma_{A}^{3}}=\\frac{19.11}{56.9^{3/2}}=0.045 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "A similar calculation using Equations 24.22b and 24.24c yields $ K_4 = 59.7 $ and $ \\gamma_4 = K_4/56.9^2 = 0.018 $. Applying Equation 24.21a, the resulting (fourth-order) Gram-Charlier series approximation for the distribution, $ \\phi(A) $, of breeding values in generation 1 is $$ \\begin{align*}\\phi(A^{\\prime})&\\simeq\\varphi(A^{\\prime})\\left[1+\\frac{0.045}{6}H_{3}(A^{\\prime})+\\frac{0.018}{24}H_{4}(A^{\\prime})\\right]\\\\&=\\varphi(A^{\\prime})\\left[1+0.0075H_{3}(A^{\\prime})+0.00075H_{4}(A^{\\prime})\\right]\\end{align*} $$ where $ \\varphi(x) $ is the normal distribution, the functions $ H_i(x) $ are defined by Equation 24.21b, and $ A' = A/\\sigma_A $ is the standardized breeding value (which, initially, has a mean of zero). For example, consider $ A' = 2 $, a value two standard deviations away from the mean. Applying Equation 24.21b, $ H_3(2) = 2 $ and $ H_4(2) = -5 $, yielding the correction factor for the unit normal density function as $$ 1+0.0075H_{3}(2)+0.00075H_{4}(2)=1.01125 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The key point is that the resulting distribution is only very weakly perturbed away from a Gaussian (assuming that $ h^2 = 1 $ is the most extreme case). For a more typically heritability, say $ h^2 = 0.3 $, similar calculations yield $ \\gamma_3 = 0.0039 $ and $ \\gamma_4 = 0.0007 $, and $$ \\phi(A)\\simeq\\varphi(A)\\left[1+0.00065H_{3}(A^{\\prime})+0.00003H_{4}(A^{\\prime})\\right] $$ yielding an even smaller departure from normality (an adjustment factor of 1.00115 for $ A' = 2 $)."
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, under the infinitesimal model, the generation of linkage disequilibrium by truncation selection has very little impact on driving the distribution of breeding values away from a Gaussian. While the disequilibrium introduced by truncation selection can indeed drive a distribution of breeding values away from a strict Gaussian, the error in assuming this remains Gaussian is generally small. This point was initially made by Bulmer (1980). The much more extensive analysis by Turelli and Barton (1994) showed that, even in the presence of strong truncation or disruptive selection, the Bulmer equation (Equation 16.7b) can be used with little error. Turelli and Barton's analysis assumed a sufficiently large number of loci so that changes in both the genic variance and locus-specific cumulants of order three or higher can be ignored."
+    }
+  ]
+}

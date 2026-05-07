@@ -1,0 +1,50 @@
+{
+  "id": "chapter8_015",
+  "metadata": {
+    "chapter": "chapter8",
+    "section": "Chapter 8: The Site-Frequency Spectrum",
+    "subsections": [
+      "The Site-Frequency Spectrum"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter8_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "8.13"
+    ],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "derivation",
+      "content": "Recall the concept of a frequency spectrum (Chapter 2), the expected distribution of the frequencies of different alleles or sites in a sample. In particular, the site-frequency spectrum (SFS), $ \\phi(x) $, gives the expected frequency of sites having a frequency of x for the derived (most recent) allele, and our focus is on how a sweep changes the SFS for linked, neutral alleles. Under the equilibrium neutral model, the SFS is given by the Watterson distribution of $ \\phi(x) = \\theta/x $ (with $ \\theta = 4N_e\\mu $ referring to the expected per-nucleotide heterozygosity value; Equation 2.34a), with most sites having very low derived-allele frequencies. As shown in Figure 8.5, a sweep transforms the (unfolded) SFS of derived alleles from the L-shaped Watterson distribution to a more U-shaped one (Fay and Wu 2000; Kim and Stephan 2002), with excesses of both low- and high-frequency sites. When considered as a folded frequency spectrum (the spectrum over 0 to 0.5 based on the minor-allele frequency; Chapter 2), these excesses result in an increase in the fraction of sites with rare minor allele frequencies. Przeworski (2002) showed that both of these excesses are present immediately following a sweep, but that the excess of sites with high-frequency derived alleles rapidly dissipates (within $ 0.2N_e $ generations) as they become fixed. The excess of sites with rare alleles persists a bit longer (roughly $ 0.5N_e $ generations), as it is bolstered by new mutations following the sweep. As detailed in Example 8.4, Fay and Wu (2000) found that a sweep transforms a presweep Watterson distribution, $ \\phi(x) $, into a new post-sweep SFS, $ \\phi^{*}(y) $, which is a function of the critical parameter, $ f_s $, for the impact of a sweep (Equation 8.1d), with [[SEE_FORMULA:8.13]]"
+    },
+    {
+      "type": "discussion",
+      "content": "These expressions show how a sweep distorts the frequency spectrum toward both higher and lower frequencies of derived alleles. Linked neutral alleles are swept toward fixation (inflating the high-frequency range) if they are on the original haplotype of the new favorable mutation (i.e., in coupling with the favorable allele). If $x$ is the frequency of the derived neutral marker allele, then $x$ is the probability it is coupled with the favorable allele and changed to a new (post-sweep) frequency of $y = f_s + x(1 - f_s)$ (Equation 8.1e). Otherwise, when not on the favorable haplotype (in repulsion), which occurs with probability $1 - x$, the linked neutral allele is swept toward loss (a new frequency of $y = x[1 - f_s]$)."
+    },
+    {
+      "type": "discussion",
+      "content": "If two concurrent sweeps are influencing the same region, the resulting site-frequency spectrum is rather different from the pattern for a single hard sweep. Simulations by Chevin et al. (2008) found an excess of intermediate-frequency alleles in such cases, mimicking the signature of balancing selection. However, concurrent sweeps also generate both an excess of high-frequency derived alleles and a deficiency of low-frequency alleles. The combination of these three features seems unique to concurrent sweeps."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 8.4. The derivation of Equation 8.13 follows in large part from Equation 8.1e, the expected change in marker allele frequency following a sweep for a given value of $ f_s $. Let $ x $ denote the frequency of a linked neutral derived allele before the start of selection and $ y $ its frequency immediately following the sweep. We assume a pre-sweep Watterson SFS, $ \\phi(x) = \\theta / x $ (Equation 2.34a). Given a single favorable mutation occurring at random on one of the existing chromosomes, then if $ x $ is the frequency of a linked neutral allele, with a probability of $ x $, then the allele is in coupling phase with the new mutation; otherwise (with a probability of $ 1 - x $), it is in repulsion phase."
+    },
+    {
+      "type": "discussion",
+      "content": "First consider a neutral derived allele (at a frequency of $x$ before the sweep) that is in repulsion with the favorable allele. From Equation 8.1e, the post-sweep frequency is $y = x(1 - f_s)$, for which the range is obtained as follows. For derived alleles that are initially near fixation ($x \\simeq 1$, $y = (1 - f_s)$, while rare alleles are driven toward zero. Because our focus is on segregating alleles, the lower limit becomes $1/(2N)$, giving the post-sweep frequency range for neutral markers in repulsion with the favorable allele as $1/(2N) \\leq y \\leq 1 - f_s$. The resulting SFS for derived neutral alleles in repulsion is given by $$ \\begin{align*}\\phi^*(y)dy=(1-x)\\phi(x)dx=(1-x)\\frac{\\theta}{x}dx\\end{align*} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The first step follows because $ (1 - x) $ is the probability that a neutral allele (initially at a frequency of $ x $) is in repulsion with the favorable allele, and the second step follows from Equation 2.34a. Recalling (for alleles in repulsion) that $ y = x(1 - f_s) $, we have both $ x = y/(1 - f_s) $ and $ dx = dy/(1 - f_s) $. Substituting for $ x $ and $ dx $ in this expression yields $$ (1-x)\\frac{\\theta}{x}dx=\\left(1-\\frac{y}{1-f_{s}}\\right)\\frac{\\theta(1-f_{s})}{y}\\frac{dy}{1-f_{s}} $$ which, after multiplication, yields the repulsion piece of the post-selection SFS as $$ \\phi^{*}(y)d y=\\theta\\left(\\frac{1}{y}-\\frac{1}{1-f_{s}}\\right)d y\\quad\\mathrm{f o r}\\quad1/(2N)\\leq y\\leq1-f_{s} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Conversely, with a probability of $x$, the derived allele is in coupling phase and is swept to a frequency of $y = f_{s} + x(1 - f_{s})$. For $x \\simeq 0$, $y \\simeq f_{s} + 0(1 - f_{s}) = f_{s}$, while the upper limit follows from our restriction to segregating sites, yielding $ f_s \\leq y \\leq 1 - 1/(2N) $. Following the same logic as before yields $$ \\phi^{*}(y)d y=x\\phi(x)d x=x\\frac{\\theta}{x}d x=\\theta d x $$ As before, the first step follows because $x$ is the probability that a neutral allele (initially at a frequency of $x$) is in coupling with the favorable allele. With an allele in coupling, $y = f_s + x(1 - f_s)$, yielding $x = (y - f_s)/(1 - f_s)$ and $dx = dy/(1 - f_s)$. Substituting for $dx$ into the previous expression yields the coupling piece of the post-sweep SFS as $$ \\phi^{*}(y)d y=\\frac{\\theta}{1-f_{s}}d y\\quad\\mathrm{f o r}\\quad f_{s}\\leq y\\leq1-1/(2N) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Putting these two pieces together recovers Equation 8.13."
+    }
+  ]
+}

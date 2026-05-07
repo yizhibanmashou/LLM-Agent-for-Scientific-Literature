@@ -1,0 +1,55 @@
+{
+  "id": "chapter20_021",
+  "metadata": {
+    "chapter": "chapter20",
+    "section": "Chapter 20: Obtaining the Relationship Matrix: Marker Data",
+    "subsections": [
+      "Obtaining the Relationship Matrix: Marker Data"
+    ],
+    "source_file": "data\\paddle_output\\chapter20_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "20.23j",
+      "20.23k",
+      "20.23m",
+      "20.231"
+    ],
+    "table_references": [],
+    "structured_repair": {
+      "version": "source_inline_math_v1",
+      "actions": {
+        "replace_from_source": 4
+      }
+    }
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Similarly, we can consider the correlation in allelic copy number between $x$ and $y$. Let $T_{x,\\ell}$ denote the number of copies of allele 1 (from SNP $\\ell$) that $x$ carries, where $T_{x,\\ell}=0,1$, or 2. Hence, $E[T_{\\ell}]=2p_{\\ell}$, yielding a contribution to the covariance in $T_{\\ell}$ between two relatives of $$ \\left(T_{x,\\ell}-2p_{\\ell}\\right)\\left(T_{y,\\ell}-2p_{\\ell}\\right) $$"
+    },
+    {
+      "type": "derivation",
+      "content": "The variance in $ T_\\ell $ is $ \\sigma^2(T_\\ell) = E[T_\\ell^2] - (E[T_\\ell])^2 $, which under, Hardy-Weinberg, becomes $$ \\left[0^{2}\\cdot(1-p_{\\ell})^{2}+1^{2}\\cdot2\\cdot p_{\\ell}(1-p_{\\ell})+2^{2}\\cdot p_{\\ell}^{2}\\right]-(2p_{\\ell})^{2}=2p_{\\ell}(1-p_{\\ell}) $$ yielding a correlation in T between x and y at SNP $ \\ell $ of [[SEE_FORMULA:20.23j]]"
+    },
+    {
+      "type": "discussion",
+      "content": "To relate $ \\text{corr}(T_{x,\\ell}, T_{y,\\ell}) $ with $ \\theta_{xy} $, we write $ T_{x,\\ell} = b_{x,\\ell} + b'_{x,\\ell} $, where $ b $ and $ b' $ represent the two SNP alleles in $ x $, to yield that $$ \\sigma(T_{x,\\ell},T_{y,\\ell})=\\sigma(b_{x,\\ell}+b_{x,\\ell}^{\\prime},b_{y,\\ell}+b_{y,\\ell}^{\\prime})=4\\sigma(b_{x,\\ell},b_{y,\\ell}) $$"
+    },
+    {
+      "type": "derivation",
+      "content": "Substituting this result into Equation 20.23j and recalling Equation 20.23i yields [[SEE_FORMULA:20.23k]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Summing over uncorrelated SNPs returns [[SEE_FORMULA:20.231]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Yang et al (2010) showed that a slight modification is required when considering the coancestry of x with itself, [[SEE_FORMULA:20.23m]] where the term following the one is the estimate of inbreeding. Note that this term could be negative, implying that the individual shows less homozygosity than expected (Ackerman et al. 2017). Two technical comments are in order concerning these estimators. First, formally speaking, the correlations are between deviations of allelic counts with their expected values under the assumed base population, for example, $ \\text{corr}(b_{x,\\ell} - p_{\\ell}, b_{y,\\ell} - p_{\\ell}) $ and $ \\text{corr}(T_{x,\\ell} - 2p_{\\ell}, T_{y,\\ell} - 2p_{\\ell}) $, as $ p_{\\ell} $ may differ from the average allele frequency, $ \\widehat{p}_{\\ell} $, in the sample. Second, Yang et al. (2010) showed that Equations 20.231 and 20.23m are slightly biased due to sampling error and suggested a regression-based correction (Yang et al. 2011a)."
+    },
+    {
+      "type": "discussion",
+      "content": "There are a number of subtleties in connecting AIS/IBS with IBD, largely dealing with how one defines a base population, whose descendants have alleles that are IBD. As detailed in Powell et al. (2010), IBD estimators that adjust AIS data for marker-allele frequencies assume a particular base population (set by the assumed allele frequencies, $ p_t $) as the point of reference for IBD estimates. Using the currently observed allele frequencies sets the current population as the base. Powell et al. noted that the objective of most IBD estimators is to predict the AIS status at unobserved loci. In our case, these unobserved loci are the QTL underlying the traits of interest. If these causative alleles have a different allele-frequency spectrum than the marker alleles being used to estimate IBD (for example, the trait has been under selection, with most sites having rare alleles), this introduces some error. IBD estimates from pedigree data (which estimates IBD independent of the underlying genetic structure) are robust to this effect."
+    }
+  ]
+}

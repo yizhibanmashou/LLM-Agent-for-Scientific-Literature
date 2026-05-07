@@ -1,0 +1,49 @@
+{
+  "id": "chapter8_011",
+  "metadata": {
+    "chapter": "chapter8",
+    "section": "Chapter 8: Allele-frequency Change",
+    "subsections": [
+      "Reduction in Genetic Diversity Around a Sweep"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter8_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "8.8c",
+      "8.8d",
+      "8.8e",
+      "8.9"
+    ],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "derivation",
+      "content": "Following from our previous discussion, for a sweep starting from a single mutation, we can improve on Equation 8.8b by replacing $ p(0) = 1/2N $ by $ 1/(4N_e s) $, yielding [[SEE_FORMULA:8.8c]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Stephan et al. (1992) and Barton (1998) presented more accurate (and complex) expressions for the reduction in heterozygosity in a finite population."
+    },
+    {
+      "type": "derivation",
+      "content": "An alternative way to obtain Equation 8.8b is to consider the fraction, $ f_s $, of the initial associations that persist when $ A $ is fixed (Equation 8.1c), as with a probability of $ f_s^2 $, neutral alleles at our site for two randomly drawn chromosomes (under a catastrophic sweep) are identical-by-descent and hence (in the absence of mutation) homozygous. With a probability of $ 1 - f_s^2 $, two randomly drawn alleles are not identical-by-descent (from the sweep), displaying the pre-sweep heterozygosity value. Hence, from Equation 8.3b, which assumes additive selection, [[SEE_FORMULA:8.8d]]"
+    },
+    {
+      "type": "derivation",
+      "content": "When dominance is present (implying a heterozygote fitness of $ 1+2hs $ instead of $ 1+s $), Equation 8.8b holds, with 2hs replacing s (for h > 0). For a complete recessive (h = 0, with fitnesses of $ 1:1:1+2s $), Ewing et al. (2011) showed that [[SEE_FORMULA:8.8e]] As expected, a recessive sweep produces a much weaker signal, reflecting the greater chance for recombination given the much longer time to fixation ($ \\sim\\sqrt{N_e/s} $ generations; Ewing et al. 2011). It is important to stress that Equations 8.8d and 8.8e both refer to the reduction in heterozygosity immediately following a sweep. This is the maximal signature, as mutation will gradually rebuild neutral variation, an effect we will examine shortly."
+    },
+    {
+      "type": "derivation",
+      "content": "Finally, we can examine the accuracy of Kaplan and Hudson's approximation (Equation 8.6a), which states that a sweep influences all sites with $ c/s \\leq 0.01 $, using Equation 8.8b to find the reduction in heterozygosity for sites at this critical value. Assuming there is a single copy of the selected allele at the start of selection, $ p(0) = 1/(2N) $, the simple approximation given by Equation 8.8b (with $ c/s = 0.01 $) yields [[SEE_FORMULA:8.9]]"
+    },
+    {
+      "type": "discussion",
+      "content": "The dependence on $N$ is very weak. For example, for $N = 10^4$, Equation 8.9 gives an 80% reduction ($H_h/H_0 = 0.20$), while for $N = 10^9$, it corresponds to a 57% reduction. A more refined analysis can be performed using the drift-corrected expression Equation 8.8c, with $4N_e s$ replacing $2N$."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 8.3. Assume a recombination rate of 1 cM/Mb ($ c_0 = 0.00001 $ per kb), and consider the expected reduction in heterozygosity at a site 10 kb away from a sweep ($ c = 10 \\cdot 0.00001 = 0.0001 $). For an allele with additive fitness effects, with $ s = 0.01 $ and $ N_e = 10^6 $, Equation 8.8b yields $ H_h / H_0 \\simeq 0.19 $, so that (ignoring any new mutation) only 19% of the initial heterozygosity is present immediately following a sweep. For a dominant allele, we replace $ s = 0.01 $ by $ 2s = 0.02 $ in Equation 8.8b, giving $ H_h / H_0 \\simeq 0.10 $. Finally, when the favored allele is recessive, $$ \\eta=c\\sqrt{4N_{e}/s}=0.0001\\sqrt{4\\cdot10^{6}/0.01}=2 $$ and Equation 8.8c yields $ H_h/H_0 \\simeq 0.67 $. Using the same parameters, the values for $ H_h/H_0 $ at different distances away from the selected site are as follows: The sweep from a dominant allele has the largest effect (roughly twice the reduction at small distances compared to additive selection), while the effect of a recessive allele is fairly weak except at very short distances from the site. For these three modes of gene action and s = 0.01, a 50% reduction ($ H_h/H_0 = 0.5 $) in heterozygosity occurs over a distance of 5 kb on either side of a selected recessive allele, the distance is 31 kb when additive, and the distance is 66 kb when dominant, giving the size of the sweep regions as 10, 62, and 132 kb, respectively."
+    }
+  ]
+}

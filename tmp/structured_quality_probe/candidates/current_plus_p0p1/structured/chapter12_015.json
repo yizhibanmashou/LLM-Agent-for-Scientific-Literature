@@ -1,0 +1,33 @@
+{
+  "id": "chapter12_015",
+  "metadata": {
+    "chapter": "chapter12",
+    "section": "Chapter 12: Ornstein-Uhlenbeck Models",
+    "subsections": [
+      "Ornstein-Uhlenbeck Models"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter12_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "12.22a",
+      "12.22b",
+      "12.22c",
+      "12.22d"
+    ],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "As developed in Appendix 1, the Ornstein-Uhlenbeck (OU) process provides a model of Brownian motion drift coupled with a restoring force back to some optimal value ($ \\theta $), as might be expected with drift and stabilizing selection. This process has been used to model the divergence of traits over a phylogeny (Felsenstein 1988, 2004, 2008; Garland et al. 1993; Martins 1994; Hansen and Martins 1996; Hansen 1997; Martins and Hansen 1997; Butler and King 2004; Beaulieu et al. 2012), including gene-expression data (Bedford and Hartl 2009; Kalinka et al. 2010; Brawand et al. 2011; Rohlfs et al. 2014)."
+    },
+    {
+      "type": "derivation",
+      "content": "Under the OU model, the expected change in the mean value of a process at a value of $ x $ is $ a(\\theta - x) $ with $ a > 0 $, so that if $ x < \\theta $, it increases, while it decreases for $ x > \\theta $. The parameter $ a $, which measures the strength of the restoring force, is a measure of the strength of stabilizing selection. Under the standard model of Gaussian stabilizing selection (Example 5.6; Equation 16.17), where $ \\omega^2 $ measures the strength of selection (smaller $ \\omega^2 $ implies stronger selection), Example A1.13 shows that [[SEE_FORMULA:12.22a]] As with Brownian motion, the value of the process at time t is normally distributed (Equation A1.33b), but now with mean and variance [[SEE_FORMULA:12.22b]] [[SEE_FORMULA:12.22c]] where $ b = \\sigma_A^2 / N_e $ under the constant-variance model. For large $ t $, the mean value approaches the optimal value $ (\\theta) $, while the divergence variance approaches an asymptotic value of [[SEE_FORMULA:12.22d]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Initially, the among-population divergence increases linearly with divergence time t under both the pure drift (e.g., Equation 12.10) and OU models. However, unlike pure drift (which retains its linear divergence over all time), the between-lineage variance under an OU eventually asymptotes at a fixed level of divergence after sufficient time. Thus, while initially both models have very similar behavior, they become increasingly distinct as time progresses. It should be noted that divergence approaching an asymptotic variance can also occur under the purely neutral house-of-cards (Equation 12.11) and regression (Equation 12.12) mutational models, mimicking a process under stabilizing selection."
+    }
+  ]
+}

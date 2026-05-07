@@ -1,0 +1,93 @@
+{
+  "id": "chapter26_009",
+  "metadata": {
+    "chapter": "chapter26",
+    "section": "Chapter 26: Robertson's Theory of Selection Limits",
+    "subsections": [
+      "Robertson's Theory of Selection Limits"
+    ],
+    "source_file": "data\\paddle_output\\chapter26_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "26.14a",
+      "26.14b",
+      "26.15a",
+      "26.15b",
+      "26.15c",
+      "26.15d",
+      "26.16a",
+      "26.16b",
+      "26.17"
+    ],
+    "table_references": [
+      "26.1"
+    ],
+    "table_reference_keys": [
+      "chapter26:26.1"
+    ],
+    "structured_repair": {
+      "version": "source_inline_math_v1",
+      "actions": {
+        "replace_from_source": 10
+      }
+    }
+  },
+  "blocks": [
+    {
+      "type": "derivation",
+      "content": "Equations 26.10–26.13 are fairly general, assuming only Hardy-Weinberg, no epistasis, and that single-locus results can be added across loci. To proceed further, we need explicit expressions for $ u_i(p_0) $ to describe the limit, and for both $ E(p_t) $ and $ E[p_t(1-p_t)] $ to describe the dynamics. The most complete description, by Robertson (1960a), is for additive alleles, where $ E[\\Delta_i(t)] = 2a[E(p_t) - p_0] $. Recalling Equation 7.28a yields $$ E(p_{t})\\simeq p_{0}+2N_{e}\\left(1-e^{-t/2N_{e}}\\right)s p_{0}(1-p_{0}) $$ as an approximate expression for the expected allele frequency, under the assumption that the allele has a small effect (i.e., is nearly neutral). For notational ease, we will drop the expectation notation, but the reader should keep in mind that we are examining the expected response. Recalling from Equation 25.4 that $s = a\\bar{\\nu}/\\sigma_z = aS/\\sigma_z^2$ (as $\\bar{\\nu} = S/\\sigma_z$), substitution into Equation 7.28a yields an expected response from locus $i$ after $t$ generations of selection of [[SEE_FORMULA:26.14a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "This can be simplified further by noting that $ 2a^2p_0(1 - p_0) $ is the initial additive variance contributed by the locus. Because we assumed no epistasis and no linkage disequilibrium, summing over all loci gives the cumulative response at generation $ t $ as [[SEE_FORMULA:26.14b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Note that $ S \\sigma_A^2(0) / \\sigma_z^2 = S h^2(0) = R(1) $ is the expected response in the first generation, provided that the conditions for the breeder's equation hold. Equation 26.14b implies that [[SEE_FORMULA:26.15a]] returning an expected limiting total response of [[SEE_FORMULA:26.15b]] Because $ R(1)/\\sigma_z = h^2 S/\\sigma_z = h^2 \\bar{\\tau} $, the expected limiting response in terms of phenotypic standard deviations is [[SEE_FORMULA:26.15c]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Note that Equation 26.15a motivates the use of exponential regressions in Chapter 25 to estimate selection limits (Equation 25.10). The careful reader will note that we assumed that the phenotypic variance remains relatively constant over time, as would occur if $ h^2 $ were small (and hence a decrease in the heritability will have little impact on $ \\sigma_z^2 $). Provided this assumption holds, the total expected response is simply $ 2N_e $ times the initial response, as first suggested by Dempster (1955b) and formally derived by Robertson (1960a). An alternative derivation of Equation 26.15a is as follows. Assuming the main force for allele-frequency change is drift, Equation 11.2 yields [[SEE_FORMULA:26.15d]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Writing the response in generation $ t $ as $ h^2(t)S = \\sigma_A^2(t) \\bar{\\nu}/\\sigma_z $, summing over generations and applying Equation 7.28b recovers Equation 26.15a."
+    },
+    {
+      "type": "discussion",
+      "content": "Equation 26.15b is an upper limit for the total response, which may seem somewhat counterintuitive because it was derived by assuming weak selection. The key to understanding this upper bound is that (everything else being equal) the initial response $ R(1) $ when selection dominates is much larger than when drift dominates, so $ 2N_e $ (the time for drift to remove a significant amount of genetic variation) times the initial response overestimates the total response when selection dominates. To see this point, consider the maximal contribution, $ \\Delta_i^{max} = 2a(1 - p_0) $, from a locus (which occurs when the favored allele is fixed) relative to the predicted contribution, $ \\Delta_i(\\infty) $. From Equation 26.14a, it follows that"
+    },
+    {
+      "type": "derivation",
+      "content": "$ \\Delta_i(\\infty) = 2N_e\\,2a^2p_0(1 - p_0)S/\\sigma_z^2 $. Substituting $ S/\\sigma_z^2 = \\bar{\\imath}/\\sigma_z $ yields the ratio of maximum to expected contribution as [[SEE_FORMULA:26.16a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Thus, $ 2N_e R(1) $ overestimates the ultimate limit $ (\\Delta_i(\\infty) > \\Delta_i^{max}) $ when [[SEE_FORMULA:26.16b]] implying that $ 2N_{e}R(1) $ overestimates the ultimate limit when this inequality is satisfied."
+    },
+    {
+      "type": "discussion",
+      "content": "Recalling Equation 26.3b, the probability of fixation is greater than 86"
+    },
+    {
+      "type": "derivation",
+      "content": "Another quantity of interest is the expected half-life of response, $ t_{0.5} $, the time required to obtain half the final response. Recalling Equation 26.14a, and solving $ 1 - e^{-t_{0.5}/2N_e} = 1/2 $, yields an expected half-life of [[SEE_FORMULA:26.17]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Again, this is an upper limit, with the half-life decreasing as the product $ N_{e}\\bar{i} $ increases. An observed half-life considerably below that predicted by Equation 26.17 suggests that a large portion of the response is due to the fixation of favorable alleles by selection, as selection (when it dominates) changes allele frequencies much faster than drift."
+    },
+    {
+      "type": "discussion",
+      "content": "Equations 26.14–26.17 rely on a number of assumptions besides additivity: no opposing natural selection, no linkage effects, two alleles per locus, and weak selection (on loci). Several authors have examined the robustness of these results. Hill and Rasbash (1986) found, for diallelic loci, that the distribution of allelic effects is relatively unimportant, but differences in allele frequencies can be critical. In particular, increasing the effective population size has much more of an effect on the selection limit when favored alleles are rare. This is expected, as the dynamics of common alleles at selected loci are largely governed by selection rather than drift (Equation 26.3b). Increasing population size lowers the critical allele-frequency threshold for selection to dominate, eventually capturing even rare alleles (Zhang and Hill 2005a). Latter and Novitski (1969) and Zeng and Cockerham (1990) examined the effects of multiple alleles, and found that the results for the expected limit (Equation 26.15b) and the half-life (Equation 26.17) are reasonable when selection is weak. As $ N_{e}\\bar{i} $ increases, $ R(\\infty)/R(1) $ becomes highly dependent on the number and frequencies of alleles at each locus (Chapter 25). In general, this ratio increases with the number of alleles, and decreases with increasing $ N_{e}\\bar{i} $, all the while remaining bounded by a factor of $ 2N_{e} $. Likewise, $ t_{0.5} $ decreases as $ N_{e}\\bar{i} $ increases, but it is rather insensitive to the number of alleles. With dominance, analytic results for the limit and half-life ($R[\\infty]$ and $t_{0.5}$) are more complicated. Strictly recessive alleles have received the most study. In this case, the selection limit can considerably exceed $2N_{e}$ times the initial response when the character is controlled by a large number of rare recessives (Robertson 1960a). Additive genetic variance increases, often considerably, as these recessives increase in frequency, so this result should not be surprising (Chapter 25). With weak selection, the half-life from recessives varies from approximately $N_{e}$ when $p\\simeq1$ to approximately $2N_{e}$ when $p\\simeq0$ (Robertson 1960a). Again, as $N_{e}$ increases, half-life decreases. Even with strictly additive loci, a temporary increase in the genetic variance (even in the face of genetic drift) can occur if there are a number of rare, but favored, alleles (Chapter 25). As these alleles increase in frequency, the additive variance also increases. If genetic drift strictly governs the dynamics of the additive variance, these rare alleles have only a small chance of increasing and do not significantly (on average) inflate the variance. However, if selection is of even modest importance to the dynamics"
+    },
+    {
+      "type": "discussion",
+      "content": "[[TABLE:26.1]] gives various results from experiments with mice. These discrepancies between observation and theory are not unexpected. Robertson's theory assumes that the limit is reached as genetic variance is exhausted by fixation at all loci. As noted in Chapter 25, selection limits can occur despite significant additive genetic variance, often because natural and artificial selection are in conflict. Further, the selection limit of $ 2N_eR(1) $, and the half-life of $ 1.4N_e $, are expected upper limits that assume that drift largely dominates. An additional complication is that the effective population size is overestimated by taking $ N_e $ as the number of parents (Chapter 3). For example, variation in male mating success in Drosophila can decrease the effective population size to less than half the actual number of male parents (Crow and Morton 1955). Further, most experiments have not corrected for the expected reduction in $ N_e $ from the effects of artificial selection (Equation 26.6c). at any particular locus, as Chapter 25 highlights, the single-generation response is a very poor predictor of the long-term response."
+    },
+    {
+      "type": "discussion",
+      "content": "James (1962), Verghese (1974), Nicholas and Robertson (1980), and Zeng and Hill (1986) extended Robertson's theory for various models of natural selection opposing artificial selection. Not surprisingly, the selection limit is reduced by the presence of opposing natural selection. In the absence of mutation, none of these models retain genetic variability, as drift eventually fixes all loci, even those displaying overdominance in fitness."
+    }
+  ]
+}

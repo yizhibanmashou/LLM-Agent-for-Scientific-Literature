@@ -1,0 +1,70 @@
+{
+  "id": "chapter10_010",
+  "metadata": {
+    "chapter": "chapter10",
+    "section": "Chapter 10: The McDonald-Kreitman (MK) Test: Basics",
+    "subsections": [
+      "The McDonald-Kreitman (MK) Test: Basics"
+    ],
+    "source_file": "data\\paddle_output\\chapter10_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "10.6a",
+      "10.6b"
+    ],
+    "table_references": [
+      "inline_4"
+    ],
+    "table_reference_keys": [
+      "chapter10:inline_4"
+    ],
+    "structured_repair": {
+      "version": "source_inline_math_v1",
+      "actions": {
+        "replace_from_source": 4
+      }
+    }
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Here there were three comparisons (entire, exon 1, and exons 2 and 3), suggesting a critical value of $ p = q/3 $ to give an experiment-wide value of q that none of the tests are false-positives. However, these three comparisons use overlapping data (e.g., the category “entire” contains all three exons). For the sake of discussion, assume that there are only n = 2 independent tests in this example. In that case, a significance threshold of $ p = 0.01/2 = 0.005 $ is required for each test to give a false-positive rate of 1"
+    },
+    {
+      "type": "discussion",
+      "content": "While initially presented as a contrast between silent and replacement sites within a single gene, the basic logic of the MK test is not limited to this specific type of comparison. Other types of sites can be contrasted (e.g., noncoding versus silent), and one can easily construct tests involving more than two categories with a simple extension of the contingency table logic underlying MK tests (e.g., Hudson 1993; Templeton 1996; Podlaha et al. 2005; Egea et al. 2008; Chen et al. 2009). Further, as Example 10.5 highlights, one often performs separate MK tests in different regions of the same gene. The general issue of how to detect selection heterogeneity based on a scan of a region is examined by McDonald (1996, 1998) and Goss and Lewontin (1996)."
+    },
+    {
+      "type": "derivation",
+      "content": "A McDonald-Kreitman test will be significant when $ P_a/D_a $ is significantly different from $ P_s/D_s $ (Equation 10.5d). Because it is assumed that the silent-site ratio is unchanged by selection, a significant MK test can occur either through an excess of replacement polymorphisms ($ P_a $ too large relative to $ D_a $ and $ P_s/D_s $) or through an excess of replacement substitutions ($ D_a $ too large relative to $ P_a $ and $ P_s/D_s $). The neutrality index of Rand and Kann (1996), [[SEE_FORMULA:10.6a]] indicates which of these two scenarios occurs. Note that NI is simply the odds ratio for the MK contingency table (Jewell 1986). A value greater than one indicates more polymorphic replacement sites than expected, while a value less than one indicates an excess of replacement substitutions. Values less than one suggest that some of the substitutions are adaptive, while values greater than one are suggestive of weakly deleterious segregating alleles."
+    },
+    {
+      "type": "derivation",
+      "content": "Note that NI is not defined if either $ P_{s} $ or $ D_{a} $ are zero, and it is biased if either is small (Stoletzki and Eyre-Walker 2011). Hence, its use is problematic when the gene being considered shows little divergence. When the observed cell numbers in any MK table are small (less than 5), a number of corrections are possible, which basically start by adding an extra count to $ D_{a} $ and $ P_{s} $ (Haldane 1956; Jewel 1986). Stoletzki and Eyre-Walker (2011) noted that these corrections are still biased, and they proposed a direction of selection (DoS) statistic, [[SEE_FORMULA:10.6b]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Positive values indicate an excess of replacement substitutions (suggesting adaptive evo- lution), while negative values imply an excess of replacement polymorphisms (suggesting that slightly deleterious alleles are segregating)."
+    },
+    {
+      "type": "discussion",
+      "content": "While the DoS statistic is appropriate when comparing divergence to polymorphism features of genes as a function of some other variable (such as recombination rate or GC content), other approaches have been used when the aim is to return a single summary statistic for the entire genome. A simple average of the NI values over all sampled genes is biased, as genes for which NI is not defined ( $ P_{s} $ or $ D_{a} $ are zero) are excluded, and those genes with small values for either $ P_{s} $ or $ D_{a} $ return biased estimates. Example 10.8 illustrates one commonly used approach to avoid these issues, namely, summing over all sites to create a grand MK table for the entire collection of sampled genes."
+    },
+    {
+      "type": "discussion",
+      "content": "|c|c| Cell 1 & Cell 2 \\\\ Cell 3 & Cell 4 \\\\"
+    },
+    {
+      "type": "discussion",
+      "content": "Given the small sample size (n = 12 chromosomes), polymorphism data are reported both as the total number of segregating sites (all sites) and the total number of segregating sites minus the singletons. The logic for removing singletons is the concern that slightly deleterious alleles can contribute to segregating sites (although they will be rare) but are unlikely to become fixed, and if retained in the analysis, will result in the polymorphism ratio overpredicting the number of fixed sites. Using the silent class as the neutral reference, McDonald-Krietman tests were performed against each of the four remaining categories (replacement, noncoding, 5' UTR, and 3' UTR), and computed separately using either all polymorphisms or only polymorphisms that were not singletons. The exclusion of singletons (“Minus singletons” column above) decreases the p values (increasing significance) in all cases. Even after correcting for multiple tests, all of the comparisons based on polymorphisms minus singletons were highly significant."
+    },
+    {
+      "type": "discussion",
+      "content": "Andolfatto also observed that the average nucleotide diversity, $ \\pi $, was higher for silent sites than for any of the other categories displayed above. This suggests that there are stronger constraints on the sampled noncoding regions than on silent sites, and hence stronger purifying selection on these noncoding sites. Conversely, these test values all show excessive substitutions relative to the amount of within-population variation, suggesting that many of the differences were likely fixed by positive selection. Both of these results (stronger purifying selection on polymorphisms and stronger positive selection for substitutions) for noncoding DNA relative to silent sites were very surprising, and they suggested that part of what is called noncoding DNA may have some functional role (the same appears to be at least partly true for humans: ENCODE Project Consortium 2012). A similar study using polymorphism data from D. simulans (with D. melanogaster as the outgroup), which has a larger effective population size than D. melanogaster, found an even stronger signature of purifying selection against D. simulans noncoding polymorphisms (Haddrill et al. 2008)."
+    },
+    {
+      "type": "discussion",
+      "content": "One concern when dealing with noncoding DNA is obtaining the correct alignment to ensure that homologous sites are being compared. This can be problematic for even moderately divergent species, as insertions and deletions run rampant, making correct alignment nearly impossible. Care must then be taken, as one may discard much of the noncoding sequence because of alignment issues, which could enrich the sequences remaining in the analysis with those sites under stronger functional constraints (which are more conserved and thus more easily aligned). Conversely, with coding regions, strong historical selection to keep the sequence in frame usually results in few insertions and deletions."
+    }
+  ]
+}

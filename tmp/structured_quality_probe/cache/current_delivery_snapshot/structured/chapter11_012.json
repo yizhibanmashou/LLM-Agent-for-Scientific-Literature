@@ -1,0 +1,68 @@
+{
+  "id": "chapter11_012",
+  "metadata": {
+    "chapter": "chapter11",
+    "section": "Chapter 11: COVARIANCE BETWEEN INBRED RELATIVES",
+    "subsections": [
+      "COVARIANCE BETWEEN INBRED RELATIVES"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter11_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "11.13",
+      "11.14"
+    ],
+    "table_references": [
+      "11.1",
+      "11.5",
+      "inline_2"
+    ],
+    "table_reference_keys": [
+      "chapter11:11.1",
+      "chapter11:11.5",
+      "chapter11:inline_2"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "In the preceding sections, we assumed there was a parallel series of small populations, each being propagated across generations as progeny derived from randomly mating populations of size $ N_{e} $. Even in the simplest case of no epistasis, we found that the dynamics of the genetic variance within populations is a potentially complex function of six quadratic parameters of gene effects in the base population ([[SEE_TABLE:11.1]]). What remains to be considered is how these contributions can be estimated in a practical sense. Not surprisingly, the key strategy is the usual one in quantitative genetics—the resemblance between relatives (LW Chapter 7)."
+    },
+    {
+      "type": "discussion",
+      "content": "When individuals are inbred with respect to the base population, the expressions for the genetic covariance between relatives become functions of all of the parameters outlined in [[SEE_TABLE:11.1]], not just the usual $ \\sigma_A^2 $ and $ \\sigma_D^2 $. On the other hand, with inbreeding there are also many more potential types of relationships than in the conventional case, as the latter are supplemented by inbred relatives. One can imagine, for example, a multigenerational series of individuals resulting from continuous selfing, full-sib mating, or both. Given phenotypic information on these additional types of relatives, it should be possible to estimate several different factors contributing to phenotypic covariance (as many as the number of observed relationships). The little experience we have gained in this area, however, indicates that the statistical difficulties in achieving accurate estimates are still quite formidable, even in the absence of epistasis, which we will assume in the following."
+    },
+    {
+      "type": "discussion",
+      "content": "Three new issues arise in considering the sources of phenotypic resemblance between inbred relatives. First, inbreeding causes a statistical dependence between alleles within individuals (generating an excess of homozygotes), and this creates a covariance between the additive effects, $ \\alpha_{i} $, in one relative and the dominance effects, $ \\delta_{ii} $ in the other, as represented by $ \\sigma(\\alpha_{i}, \\delta_{ii}) = \\sigma_{ADI} $ ([[SEE_TABLE:11.1]]). Second, if two individuals have identical genotypes by descent, their dominance covariance will differ depending on whether they are inbred or outbred (because inbred individuals cannot be heterozygous), and this will generally vary from locus to locus. Third, with dominance, the mean phenotype of inbred individuals will generally differ from that of non-inbred individuals, and this can inflate the covariance between certain types of relatives by breaking the population up into classes of inbred vs. non-inbred individuals."
+    },
+    {
+      "type": "discussion",
+      "content": "The one- and two-locus identity measures (Figure 11.1) used to examine the within- and among-genetic variances in a random-mating population undergoing drift are insufficient to describe all of the potential relationships among two diploids when generalized inbreeding is occurring. To do so, we need the nine condensed coefficients of identity, $ \\Delta_i $, between two individuals (Figure 11.5). Introduced in LW Chapter 7, these coefficients sum to one and have a natural connection to the quadratic components in [[SEE_TABLE:11.1]]. As shown in the figure, three situations ($ \\Delta_4 $, $ \\Delta_6 $, and $ \\Delta_9 $) correspond to comparisons between unrelated individuals (although one or both may be inbred), and hence do not contribute to the genetic covariance between relatives."
+    },
+    {
+      "type": "derivation",
+      "content": "Harris (1964) and Gillois (1965) first derived an expression for the covariance between inbred relatives, assuming gametic-phase equilibrium and an absence of epistasis, and Cockerham (1984a) extended their analyses to allow for gametic-phase disequilibrium, showing that the genetic covariance between individuals x and y is [[SEE_FORMULA:11.13]] where $ \\tilde{\\Delta}_{xy} $ indicates our previous two-locus identity measure (Figure 11.1), applied to individuals x and y (as opposed to randomly drawn gametes)."
+    },
+    {
+      "type": "derivation",
+      "content": "To see how the $ \\Delta_i $ enter into the covariance expressions, consider the coefficient of coancestry $ \\Theta_{xy} $, the probability that two genes, one drawn from $ x $ and the other from $ y $ are identical by descent. In terms of the condensed coefficients of identity, [[SEE_FORMULA:11.14]]"
+    },
+    {
+      "type": "discussion",
+      "content": "(LW Chapter 7), where each condensed coefficient of identity is weighted by the conditional probability that a gene that is randomly drawn from x is identical by descent with a gene that is randomly drawn from y. There are four different ways to randomly choose an allele from"
+    },
+    {
+      "type": "discussion",
+      "content": "[[TABLE:11.5]] summarizes the expected genetic covariance contributed by the various relationships. each of two diploids. In each case, with a probability of $ \\Theta_{xy} $ the two chosen alleles are IBD, in which case their contribution to the genetic covariance is $ \\sigma_A^2/2 $. Hence, the contribution to the additive variance resulting from shared additive effects is $ 4\\Theta_{xy}\\sigma_A^2/2 = 2\\Theta_{xy}\\sigma_A^2 $."
+    },
+    {
+      "type": "discussion",
+      "content": "Similarly, $ \\Delta_{7xy} $ and $ \\Delta_{1xy} $ account for the probabilities that the two individuals share identical genotypes by descent, in the absence or presence of inbreeding, respectively, so the dominance genetic covariance is $ (\\Delta_{7xy}\\sigma_{D}^{2}+\\Delta_{1xy}\\sigma_{D}^{2}) $. The term $ (2\\Delta_{1xy}+\\Delta_{3xy}+\\Delta_{5xy}) $ is a measure of the expected number of ways in which three alleles in the two individuals are identical by descent, and when multiplied by $ \\sigma_{ADI} $, it yields the expected covariance between individuals resulting from the covariance between additive and homozygous dominance effects. Finally, $ (\\Delta_{2xy}-f_{x}f_{y}) $ is the probability that the two individuals are inbred at the same locus in excess of that expected for random members of the population $ (f_{x}f_{y}) $, whereas $ (\\widetilde{\\Delta}_{xy}-f_{x}f_{y}) $ is the excess joint inbreeding at one locus in x and another in y. These latter two coefficients are multiplied, respectively, by the quadratic terms describing inbreeding depression at the same and at different loci. [[SEE_TABLE:11.5]] summarizes the expected genetic covariance contributed by the various relationships."
+    },
+    {
+      "type": "discussion",
+      "content": "One conclusion that can be drawn immediately from Equation 11.13 is that with inbreeding, dominance can contribute to the covariance between many types of inbred relatives. All of the quadratic components in this equation are necessarily positive except $ \\sigma_{ADI} $, which can be positive or negative (Example 11.1). Thus, while it is likely that inbreeding will inflate the covariance between relatives, this cannot be stated with certainty."
+    }
+  ]
+}

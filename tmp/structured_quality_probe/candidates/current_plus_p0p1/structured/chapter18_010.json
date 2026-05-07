@@ -1,0 +1,40 @@
+{
+  "id": "chapter18_010",
+  "metadata": {
+    "chapter": "chapter18",
+    "section": "Empirical Versus Predicted Standard Errors",
+    "subsections": [
+      "Empirical Versus Predicted Standard Errors"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter18_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "While the standard error in response can be directly estimated from the among-line variance over a series of replicate lines subjected to identical selection, this approach is generally not cost-effective given the large standard error on such estimates (Chapter 12). As a result, the standard errors reported for most experiments use the pure-drift approximation discussed previously. How closely do the empirical (observed) standard errors match those predicted by the drift approximation? Unfortunately, very few experiments have addressed this issue, and those few that do often use OLS-generated standard errors (which are too small) to compare the fit with the observed among-line variance."
+    },
+    {
+      "type": "discussion",
+      "content": "Perhaps the most extensive study is that of Falconer (1973), who performed two-way selection for 6-week weight in mice (Figure 18.3). Six replicate sets of lines were used. Each set consisted of a line selected for larger size, a line selected for smaller size, and an unselected control, for a total of 18 lines in the entire experiment. Realized heritabilities were estimated (by OLS regression) using the three different contrasts available within each replicate set: large versus control (High), small versus control (Low), and large versus small (Divergent)."
+    },
+    {
+      "type": "discussion",
+      "content": "In addition to these three estimates of $ \\hbar_{r}^{2} $ for each of the six replicates, Falconer also considered two combined estimates, based on all of the lines. First, a regression-based Pooled estimate was obtained by using the average of the six means for a given contrast (High, Low, or Divergence) as the data points in a regression. For example, the Pooled High estimate was obtained by regressing the cumulative difference between the mean of all high lines and the mean of all control lines on generations. Second, Falconer also considered a simple Mean estimate for the High, Low, and Divergent comparisons, which was computed as the average of the realized heritability estimates for each comparison over all six replications."
+    },
+    {
+      "type": "discussion",
+      "content": "The standard error for the Mean estimate measures the variation seen over the replicates. This is the empirical estimate of the standard error used to compare against the theoretical predictions. The average realized heritability estimates under each of the three different contrasts were very similar: 0.395, 0.331, and 0.369 for High, Low, and Divergent lines (respectively). The three Pooled estimates give very similar estimates. As expected (because OLS estimated standard errors are expected to be downwardly biased), the standard errors for the Mean estimates (based on variation between the replicate lines) were 1.6, 3.3, and 2.3 times larger than the estimated standard error computed using OLS regression of the pooled data."
+    },
+    {
+      "type": "discussion",
+      "content": "A second experiment (López-Fanjul and Domínguez 1982; summarized by López-Fanjul 1982) followed 20 replicate Drosophila lines selected for sternopleural bristle number. They found that the empirical standard errors were less than OLS-estimated SEs, which in turn were less than GLS-estimated SEs. This is contrary to the expectation that the OLS-estimated SEs are smaller than the true variances, while the empirical and GLS-estimated SEs are expected to be roughly equal. The authors suggested that this may be at least partly due to a scale effect (LW Chapter 11), as the phenotypic variance greatly decreased during selection."
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, (Bohn et al. (1983) examined the variance in response to selection on pupal weight in Trioblium castaneum, examining three replicates from each of six different base populations. The authors found a poor fit when using Hill's (1971) variance formula, which attempts to correct for the effects of selection. Interestingly, a strong correlation was observed between departures in the predicted variance and departures from normality in the base population. The variance among replicate lines drawn from base populations with increasing (absolute) amounts of kurtosis showed larger departures from the predicted value."
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": "appendix4_003",
+  "metadata": {
+    "chapter": "appendix4",
+    "section": "Stouffer's Z Score",
+    "subsections": [
+      "Stouffer's Z Score"
+    ],
+    "source_file": "tmp\\paddle_output\\appendix4_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "An alternative to Fisher’s approach for combining p values was offered by Stouffer et al. (1949), who transformed the individual p values into Z scores. The sum of k independent unit normals is itself normal, with a mean of zero and a variance of k. These results lead to Stouffer’s Z score method: assign a score of $ Z_i $ for test i by solving $ (U > Z_i) = p_i $. Let $ Z_s $ denote the sum over the transformed p values of k tests, scaled by $ k^ -1/2 $ to give it a variance of one, with $$ Z_{s}=\\frac{\\sum_{i=1}^{k}Z_{i}}{\\sqrt{k}} $$ Because $ Z_s N(0,1) $, the overall p value is obtained as $$ p=\\Pr(U>Z_{s}) $$ As noted by Whitlock (2005), this test was first proposed in a footnote in Stouffer et al.'s sociological study of army life, making it one of the more obscure origins of a statistical method."
+    },
+    {
+      "type": "discussion",
+      "content": "Example A4.2. Reconsider the data from Example A4.1. The $ Z_i $ values are easily obtained using $ R $, as the command $ (1-) $ returns $ Z $ satisfying $ (U Z) = 1 - p $, or (equivalently) $ (U > Z) = p $. For example, $ Z_1 $ is calculated by $ (1-0.1) $, or 1.281. Similarly computing the other $ Z_ i $ values yields $$ \\sum_{i=1}^{5}Z_{i}=6.754,\\qquad hence\\qquad Z_{s}=\\frac{6.754}{\\sqrt{5}}=3.020 $$ Because $ (U > 3.020) = 0.00126 $, as in Example A4.1, the combined p value is highly significant."
+    },
+    {
+      "type": "discussion",
+      "content": "Besides providing symmetric values for large and small $p$ values (i.e., $p$ and $1-p$), a second advantage of the Z-score approach is that one can individually weight $p$ values from different tests (Mosteller and Bush 1954; Liptak 1958), as the weighted sum of unit normals is itself a unit normal (while the weighted sum of $ ^2$ variables—the analog for Fisher's test—is considerably more complex). The resulting weighted version becomes $$ Z_{w}=\\frac{\\sum_{i=1}^{k}w_{i}Z_{i}}{\\sqrt{\\sum_{i=1}^{k}w_{i}^{2}}} $$ where $ Z_w N(0,1) $. As expected, $ Z_w $ (Equation A4.2c) reduces to $ Z_s $ (Equation A4.2a) when all the weights are equal. One can either weight by the degrees of freedom or by the reciprocal of the standard error of the estimate. Whitlock (2005) showed that the weighted Z-score method is superior to either $ X^2 $ or $ Z_s $ when sample size varies over the data. $ Z_w $ has higher power and also a higher correlation between its predicted p value and the actual p value obtained if one was able to merge all the samples. As noted by Whitlock, many studies in evolutionary biology examine whether a hypothesis consistently holds over a collection of species. In such cases, the number of species is the number of replicates, and weighting p values for individual species is inappropriate. As detailed at the end of this Appendix, combining p values is one of the least powerful meta-analysis approaches, as it leaves much of the information from a collection of studies underutilized. A formal meta-analysis requires that studies report standard errors for their estimates. Unfortunately, many studies do not, and simply report p values instead, and in this setting the proceeding methods are the only type of meta-analysis available."
+    }
+  ]
+}

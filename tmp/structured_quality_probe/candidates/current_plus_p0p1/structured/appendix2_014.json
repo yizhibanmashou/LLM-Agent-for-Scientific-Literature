@@ -1,0 +1,48 @@
+{
+  "id": "appendix2_014",
+  "metadata": {
+    "chapter": "appendix2",
+    "section": "POSTERIOR DISTRIBUTIONS UNDER NORMALITY ASSUMPTIONS",
+    "subsections": [
+      "Gaussian Likelihood With Known Variance and Unknown Mean"
+    ],
+    "source_file": "tmp\\paddle_output\\appendix2_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "To motivate the gamma distribution, first consider the simple exponential waiting-time distribution, where $ $ is the rate (the probability of a success in some small time unit, $ _ t $, is given by $ _ t $), then the probability density function (pdf) for the exponential is $$ p(x\\mid\\beta)=\\beta e^{-\\beta x}\\quad for\\quad0\\leq x<\\infty,\\quad\\beta>0 $$ Because the expected waiting time until a success is $ = 1/ $, this can be reparameterized in terms of the scale (waiting time) parameter as $$ p(x\\mid\\beta)=\\lambda^{-1}e^{-x/\\lambda} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The sum of $ k $ exponentials with the same rate (or scale) parameter is called an Erlang distribution, and it was initially developed for certain problems in telephone queuing theory. Expressed in terms of the rate parameter, the resulting pdf becomes $$ p(x\\mid k,\\beta)=\\frac{\\beta^{k}}{(k-1)!}\\;x^{k-1}\\;e^{-\\beta x}\\quad\\mathrm{f o r}\\quad0\\leq x<\\infty $$ where the integer k is called the shape parameter, with k = 1 recovering the exponential."
+    },
+    {
+      "type": "discussion",
+      "content": "The gamma distribution follows by allowing the shape parameter to be any positive number, $ $, with $ x (,) $ having its pdf defined by its shape ($ $) and rate ($ $) values, $$ \\begin{align*}p(x\\mid\\alpha,\\beta)=\\frac{\\beta^\\alpha}{\\Gamma(\\alpha)}x^{\\alpha-1}e^{-\\beta x}\\quad{\\rm for}\\alpha,\\beta,x>0\\end{align*} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Note that the factorial in the Erlang is replaced by the gamma function, $ (x) $, which is defined below (Equation A2.26a). Figure A2.2 shows how changes in these two parameters influence the shape of the distribution. Note that, as a function of x, $$ p(x\\mid\\alpha,\\beta)\\propto x^{\\alpha-1}e^{-\\beta x} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "When expressed in terms of the scale ($ = 1/ $) parameter, the pdf becomes $$ p(x\\mid\\alpha,\\lambda)=\\frac{\\lambda^{-\\alpha}}{\\Gamma(\\alpha)}x^{\\alpha-1}e^{-x/\\lambda} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "[h] |c|c| Cell 1 & Cell 2 \\\\ Cell 3 & Cell 4 \\\\ which yields $$ p(x\\mid\\alpha,\\lambda)\\propto x^{\\alpha-1}e^{-x/\\lambda} $$ Because both the rate and scale versions of the gamma distribution are widely used, take care to know which version your software package is using (for example, the default in R uses the scale parameter version). We can parameterize a gamma in terms of its mean and variance by noting that $$ \\mu_{x}=\\frac{\\alpha}{\\beta}=\\alpha\\lambda\\qquad and\\qquad\\sigma_{x}^{2}=\\frac{\\alpha}{\\beta^{2}}=\\alpha\\lambda^{2} $$ so that $$ \\alpha=\\frac{\\mu_{x}^{2}}{\\sigma_{x}^{2}}\\qquad and\\qquad\\beta=\\frac{\\mu_{x}}{\\sigma_{x}^{2}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "$ () $, the gamma function evaluated at $ $ (which normalizes the gamma distribution), is defined by $$ \\Gamma(\\alpha)=\\int_{0}^{\\infty}y^{\\alpha-1}e^{-y}d y\\qquadfor\\alpha>0 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "This is the generalization of the factorial function from the integers to any positive number. If $n$ is an integer, then $ (n) = (n - 1)!$ Using integration by parts, one can show that $ $ satisfies the following identities $$ \\Gamma(\\alpha+1)=\\alpha\\Gamma(\\alpha),\\quad\\Gamma(1)=1,\\quad and\\quad\\Gamma(1/2)=\\sqrt{\\pi} $$"
+    }
+  ]
+}

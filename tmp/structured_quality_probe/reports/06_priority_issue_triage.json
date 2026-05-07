@@ -1,0 +1,1478 @@
+{
+  "priority_order": {
+    "P0": [
+      "table_reference_missing"
+    ],
+    "P1": [
+      "h_only_block",
+      "tex_command_leak",
+      "unbalanced_inline_math",
+      "broken_placeholder",
+      "ghost_block"
+    ],
+    "P2": [
+      "very_short_block",
+      "derivation_placeholder_only_text",
+      "placeholder_in_discussion",
+      "suspicious_truncation"
+    ]
+  },
+  "issue_groups": [
+    {
+      "priority": "P0",
+      "issue_type": "table_reference_missing",
+      "count": 18,
+      "severity_counts": {
+        "fatal": 18
+      },
+      "top_chapters": [
+        [
+          "chapter21",
+          6
+        ],
+        [
+          "chapter18",
+          4
+        ],
+        [
+          "chapter8",
+          2
+        ],
+        [
+          "chapter9",
+          2
+        ],
+        [
+          "chapter10",
+          1
+        ],
+        [
+          "chapter13",
+          1
+        ],
+        [
+          "chapter15",
+          1
+        ],
+        [
+          "chapter20",
+          1
+        ]
+      ],
+      "samples": [
+        {
+          "severity": "fatal",
+          "issue_type": "table_reference_missing",
+          "chapter": "chapter8",
+          "file": "data/structured/chapter8_006.json",
+          "block_index": 0,
+          "block_type": "discussion",
+          "sample": "We start our discussion of the population-genetic theory of sweeps by first considering hard sweeps and their effects on linked neutral loci. Parts of this discussion are rather technical, but the main theoretical results are summarized in [[SEE_TABLE:8.1]], with the expected signatures from a hard sweep summarized in [[SEE_TABLE:8.2]]. Throughout, we assume that there is strong selection on the favorable allele ($ 4N_{e}s \\gg 1 $, where, unless otherwise specified, s is the heterozygote fitness advantage). We also assume that no new mutations (either at neutral sites or for the favorable allele) occur during the sweep. This negligible mutation approximation, which reflects a rapid sweep through the population of a new favorable allele and hence reduced time for new mutations to arise, is relaxed later in this chapter.",
+          "sample_snippet": "We start our discussion of the population-genetic theory of sweeps by first considering hard sweeps and their effects on linked neutral loci. Parts of this discussion are rather technical, but the main theoretical results are summarized in [[SEE_TABLE:8.1]], with the expected signatures from a ha...",
+          "details": {
+            "missing_ref": "8.1"
+          },
+          "rank": 1
+        },
+        {
+          "severity": "fatal",
+          "issue_type": "table_reference_missing",
+          "chapter": "chapter8",
+          "file": "data/structured/chapter8_020.json",
+          "block_index": 0,
+          "block_type": "discussion",
+          "sample": "The key summary parameter for the potential impact of a sweep is the fraction of original haplotypes that stay intact following a sweep, $ f_s = \\Delta_q / \\delta_q(0) $ (Equation 8.1d). If $ f_s \\simeq 1 $, the sweep will have a major impact on the structure of variation at linked neutral sites, while if $ f_s \\simeq 0 $, it will have essentially no impact. [[SEE_TABLE:8.1]] summarizes expressions for $ f_s $ and also for the population-genetic impacts of a sweep on a linked neutral site. [[SEE_TABLE:8.2]] summarizes more subtle signatures of a sweep beyond the simple reduction in variation. As detailed in the next chapter, all of the observations listed in [[SEE_TABLE:8.2]], either singularly or in combination, have been used as the basis of tests of ongoing or recent selection. It is important to stress that the results in these two tables are restricted to hard sweeps, wherein the favorable allele is only present in (at most) a few copies at the start of selection. As shown below, many of these signals are either muted or washed out entirely under soft sweeps.",
+          "sample_snippet": "The key summary parameter for the potential impact of a sweep is the fraction of original haplotypes that stay intact following a sweep, $ f_s = \\Delta_q / \\delta_q(0) $ (Equation 8.1d). If $ f_s \\simeq 1 $, the sweep will have a major impact on the structure of variation at linked neutral sites,...",
+          "details": {
+            "missing_ref": "8.1"
+          },
+          "rank": 2
+        },
+        {
+          "severity": "fatal",
+          "issue_type": "table_reference_missing",
+          "chapter": "chapter9",
+          "file": "data/structured/chapter9_029.json",
+          "block_index": 1,
+          "block_type": "derivation",
+          "sample": "The basic structure of their test (and several extensions) is as follows. Suppose $m$ linked segregating sites from a local chromosomal region of interest are scored in a sample of $n$ chromosomes. Using an outgroup, we can polarize any segregating alleles, determining which are derived. The resulting data are the number, $k_i$, of copies of the derived alleles at a segregating site, $i$, where $1 \\leq k_i \\leq n - 1$. Building on Equation 2.36c, the probability of observing $k_i$ given the sample size $n$ and the vector $\\Theta$ of model parameters is simply [[SEE_FORMULA:9.16a]] where $ \\phi_i(x | \\boldsymbol{\\Theta}) $ is the frequency spectrum for site $ i $ under the model (specified by the distribution parameter vector, $ \\boldsymbol{\\Theta} $) of interest. Equation 9.16a is also the likelihood for $ \\boldsymbol{\\Theta} $ given the data, $ L(\\boldsymbol{\\Theta} | k_i, n) $. Under the equilibrium neutral model, the Watterson distribution (Equation 2.34a) is used for $ \\phi_i $, where the vector of distribution parameters, $ \\boldsymbol{\\Theta} $, is just a scalar, as $ \\boldsymbol{\\Theta} = (\\theta_i) = (4N_e \\mu_i) $, the scaled mutation rate for site $ i $. If one starts with a Watterson distribution and then has a sweep at a linked site, $ \\phi_i $ is now given by Equation 8.13, with parameters $ \\boldsymbol{\\Theta} = (\\theta_i, f_{s,i}) $, where $ f_{s,i} $ measures the strength of the sweep at site $ i $. From [[SEE_TABLE:8.1]] [[SEE_FORMULA:9.16b]] with $ \\lambda = (1/2hs) \\ln(4N_e s) $, and $ c_i $ representing the recombination fraction between site $ i $ and the site of the sweep. Usually one assumes that $ \\theta_i = \\theta $ is the same for all sites, in which case, under the null model, all sites follow the same Watterson distribution (with no expected position-specific genomic pattern). Because Equation 9.16a gives a proper likelihood for each site, one might imagine that the total likelihood $ L(\\boldsymbol{\\Theta} \\mid \\mathbf{k}, n) $, given the vector $ \\mathbf{k} $ of the $ k_i $ values for each site, is simply the product of the site-specific likelihoods over all $ m $ sites [[SEE_FORMULA:9.16c]] with the MLE for $\\Theta$ being the value that maximizes $L(\\Theta|\\mathbf{k},n)$. However, this product is not a proper likelihood, as adjacent sites are correlated (due to shared history). The product of the site likelihoods (Equation 9.16c) is thus a composite likelihood (also called a quasi-maximum likelihood or pseudo-likelihood), which is an approximation of the total likelihood. Wiuf (2006) showed that the composite and true likelihoods are usually consistent for many population-genetic problems. Kim and Stephan (2002) contrasted the maximum value of this composite likelihood under the Watterson distribution (using Equation 2.34a for $\\phi$) with the maximum obtained under a sweep model (using Equation 8.13 for $\\phi$). Because $f_s$ changes with distance $c_i$ from any particular site (Equation 9.16b), the location giving the maximum value of $f_s$ corresponds with the estimated position of the selected site. Kim and Stephan compared the ratio of the two composite likelihoods, $L_{sweep}/L_{neutral}$, corresponding to [[SEE_FORMULA:9.16d]] and called this approach the CLR test (or CLRT), for composite-likelihood ratio test. Because this is not a strict likelihood ratio, large-sample approximations (LW Appendix 4) for its distribution are not valid, and the critical values must be obtained by simulation. Boitard et al. (2009; also see Kern and Haussler 2010) proposed the use of hidden Markov models to account for the correlations among markers that are ignored under a composite-likelihood framework. Li and Stephan (2005, 2006) developed a true maximum-likelihood method that uses only a subset of the frequency spectrum (the compact frequency spectrum, recording the number of singletons, doubletons, and sites greater than two) to estimate the position of the sweep.",
+          "sample_snippet": "The basic structure of their test (and several extensions) is as follows. Suppose $m$ linked segregating sites from a local chromosomal region of interest are scored in a sample of $n$ chromosomes. Using an outgroup, we can polarize any segregating alleles, determining which are derived. The resu...",
+          "details": {
+            "missing_ref": "8.1"
+          },
+          "rank": 3
+        },
+        {
+          "severity": "fatal",
+          "issue_type": "table_reference_missing",
+          "chapter": "chapter9",
+          "file": "data/structured/chapter9_060.json",
+          "block_index": 0,
+          "block_type": "discussion",
+          "sample": "Early searches in humans looked for molecular signals at candidate genes either believed, or very strongly suspected, to be under selection in particular environments. Examples include disease-resistance genes such as Duffy (FY) and G6PD, dietary genes such as lactase (LCT), and climate-related genes such as MC1R (influencing skin color). Ronald and Akey (2005) and Harris and Meyer (2006) reviewed these and other candidate genes, and found strong signals (such as skewed site-frequency spectra, long haplotypes, and/or excessive $ F_{ST} $), adding support to the belief that they have experienced recent selection. Signals of recent hard sweeps should persist for no more than $ 2N_{e} $ generations ([[SEE_TABLE:8.1]]), or roughly covering no longer than the past 250,000 years (assuming 25 years per generation and $ N_{e} \\sim 5,000 $).",
+          "sample_snippet": "Early searches in humans looked for molecular signals at candidate genes either believed, or very strongly suspected, to be under selection in particular environments. Examples include disease-resistance genes such as Duffy (FY) and G6PD, dietary genes such as lactase (LCT), and climate-related g...",
+          "details": {
+            "missing_ref": "8.1"
+          },
+          "rank": 4
+        },
+        {
+          "severity": "fatal",
+          "issue_type": "table_reference_missing",
+          "chapter": "chapter10",
+          "file": "data/structured/chapter10_033.json",
+          "block_index": 0,
+          "block_type": "discussion",
+          "sample": "As summarized in [[SEE_TABLE:10.2]], a number of different parameters of adaptive evolution have been introduced in this chapter (as well as in Chapter 8), along with various machinery for estimating them. We have examined the connections between some of these parameters (e.g., Equations 10.16a–10.16e). However, we have yet to develop a connection between the two key parameters: the scaled strength of selection, $ \\gamma = 2N_e s $, at a site (Poisson random field models) and the ratio of substitution rates, $ \\omega = K_a / K_s $ (codon models).",
+          "sample_snippet": "As summarized in [[SEE_TABLE:10.2]], a number of different parameters of adaptive evolution have been introduced in this chapter (as well as in Chapter 8), along with various machinery for estimating them. We have examined the connections between some of these parameters (e.g., Equations 10.16a–1...",
+          "details": {
+            "missing_ref": "10.2"
+          },
+          "rank": 5
+        },
+        {
+          "severity": "fatal",
+          "issue_type": "table_reference_missing",
+          "chapter": "chapter13",
+          "file": "data/structured/chapter13_011.json",
+          "block_index": 7,
+          "block_type": "discussion",
+          "sample": "Under sib selection, the selection unit $ (x) $ is the trait value in sib $ s_1 $, with the correlation between its phenotypic value $ (z_{s_1}) $ and the breeding value $ (A_{s_2}) $ of sib $ s_2 $ being (LW [[SEE_TABLE:7.3]]) $$ \\sigma(z_{s_{1}},A_{s_{2}})=\\left\\{\\begin{array}{ll}\\sigma_{A}^{2}/2&for full sibs\\\\\\sigma_{A}^{2}/4&for half-sibs\\end{array}\\quad yielding\\quad\\rho(z_{s_{1}},A_{s_{2}})=\\left\\{\\begin{array}{ll}h/2&for full sibs\\\\h/4&for half-sibs\\end{array}\\right.\\right. $$",
+          "sample_snippet": "Under sib selection, the selection unit $ (x) $ is the trait value in sib $ s_1 $, with the correlation between its phenotypic value $ (z_{s_1}) $ and the breeding value $ (A_{s_2}) $ of sib $ s_2 $ being (LW [[SEE_TABLE:7.3]]) $$ \\sigma(z_{s_{1}},A_{s_{2}})=\\left\\{\\begin{array}{ll}\\sigma_{A}^{2}...",
+          "details": {
+            "missing_ref": "7.3"
+          },
+          "rank": 6
+        },
+        {
+          "severity": "fatal",
+          "issue_type": "table_reference_missing",
+          "chapter": "chapter15",
+          "file": "data/structured/chapter15_006.json",
+          "block_index": 0,
+          "block_type": "discussion",
+          "sample": "Polyploidy, which is very common in plants and occurs in some animals (e.g., salmonid fishes), can introduce complications in predicting selection response (Gallais 2003). In particular, the dynamics of selection response for autotetraploids with dominance is very similar to the dynamics of diploids with epistasis. From LW Equation 7.22 and LW [[SEE_TABLE:7.5]], the tetraploid parent-offspring covariance when dominance (but no epistasis) is present is $$ \\sigma(z_{p},z_{o})=\\frac{\\sigma_{A}^{2}}{2}+\\frac{\\sigma_{D}^{2}}{6} $$",
+          "sample_snippet": "Polyploidy, which is very common in plants and occurs in some animals (e.g., salmonid fishes), can introduce complications in predicting selection response (Gallais 2003). In particular, the dynamics of selection response for autotetraploids with dominance is very similar to the dynamics of diplo...",
+          "details": {
+            "missing_ref": "7.5"
+          },
+          "rank": 7
+        },
+        {
+          "severity": "fatal",
+          "issue_type": "table_reference_missing",
+          "chapter": "chapter18",
+          "file": "data/structured/chapter18_023.json",
+          "block_index": 4,
+          "block_type": "discussion",
+          "sample": "Divergent selection without a control line. $$ f_{t}=f_{u,t}+f_{d,t},\\qquad A=\\frac{1}{N_{u}}+\\frac{1}{N_{d}},\\qquad B_{t}=\\frac{1}{M_{u,t}}+\\frac{1}{M_{d,t}}\\quad for t\\geq0 $$ where the (design-specific) coefficients, A and $ B_t $, are given in [[SEE_TABLE:18.7]]. If the number of reproducing individuals varies over time, then the tA term is replaced by the sum over time of the components in A, for example by $ \\sum_{i=1}^t (1/N_i) $, or related expressions. Finally, recall (Equation 18.3) that for unidirectional selection without a control, the variance in response has an additional term, $ \\sigma_b^2 $, accounting for the between-generation environmental variation.",
+          "sample_snippet": "Divergent selection without a control line. $$ f_{t}=f_{u,t}+f_{d,t},\\qquad A=\\frac{1}{N_{u}}+\\frac{1}{N_{d}},\\qquad B_{t}=\\frac{1}{M_{u,t}}+\\frac{1}{M_{d,t}}\\quad for t\\geq0 $$ where the (design-specific) coefficients, A and $ B_t $, are given in [[SEE_TABLE:18.7]]. If the number of reproducing ...",
+          "details": {
+            "missing_ref": "18.7"
+          },
+          "rank": 8
+        },
+        {
+          "severity": "fatal",
+          "issue_type": "table_reference_missing",
+          "chapter": "chapter18",
+          "file": "data/structured/chapter18_024.json",
+          "block_index": 0,
+          "block_type": "derivation",
+          "sample": "When does using a control population in a undirectional selection experiment reduce the variance in response? Equation 18.30a, along with the coefficients from [[SEE_TABLE:18.7]], gives the expected variance with and without the use of a control. Assuming $ M = M_s = M_c $ and $ N = N_s = N_c $, this equation yields [[SEE_FORMULA:18.31a]]",
+          "sample_snippet": "When does using a control population in a undirectional selection experiment reduce the variance in response? Equation 18.30a, along with the coefficients from [[SEE_TABLE:18.7]], gives the expected variance with and without the use of a control. Assuming $ M = M_s = M_c $ and $ N = N_s = N_c $, ...",
+          "details": {
+            "missing_ref": "18.7"
+          },
+          "rank": 9
+        },
+        {
+          "severity": "fatal",
+          "issue_type": "table_reference_missing",
+          "chapter": "chapter18",
+          "file": "data/structured/chapter18_025.json",
+          "block_index": 0,
+          "block_type": "derivation",
+          "sample": "As Equation 18.31b illustrates, it is not entirely obvious which design is optimal. What in general can we say? The coefficient of variation (CV) of the selection response [[SEE_FORMULA:18.33]] is especially useful in comparing efficiencies of different designs, as it is independent of $ \\sigma_{z}^{2} $. Further, it provides an appropriate measure of comparative efficiencies when the expected response differs between designs. [[SEE_TABLE:18.8]] gives expressions for the CV under some simplifying assumptions. The coefficient of variation is a function of $ tN $, the total number of adults selected during the course of the experiment, provided drift variance dominates the error variance. A short experiment with many selected adults per generation thus gives the same expected CV as a longer experiment with fewer adults per generation (provided the total numbers, $ tN $, are the same). However, if the error variance is nontrivial relative to the drift variance (as would be expected if $ h^{2} $ is small), increasing the duration of the experiment results in some improvement in precision (Hill 1980). As an example of using the CV of response, consider unidirectional selection without a control population versus divergent selection. Which is more efficient if the same total number of adults are selected (e.g., $ N $ under unidirectional selection and $ N_d = N_u = N/2 $ under divergent selection)? If there is no between-generation environmental variance, then both designs are equally efficient, while divergent selection is more efficient if $ \\sigma_b^2 > 0 $.",
+          "sample_snippet": "As Equation 18.31b illustrates, it is not entirely obvious which design is optimal. What in general can we say? The coefficient of variation (CV) of the selection response [[SEE_FORMULA:18.33]] is especially useful in comparing efficiencies of different designs, as it is independent of $ \\sigma_{...",
+          "details": {
+            "missing_ref": "18.8"
+          },
+          "rank": 10
+        }
+      ]
+    },
+    {
+      "priority": "P1",
+      "issue_type": "h_only_block",
+      "count": 242,
+      "severity_counts": {
+        "error": 242
+      },
+      "top_chapters": [
+        [
+          "chapter25",
+          22
+        ],
+        [
+          "chapter29",
+          21
+        ],
+        [
+          "chapter30",
+          20
+        ],
+        [
+          "chapter12",
+          18
+        ],
+        [
+          "chapter21",
+          15
+        ],
+        [
+          "chapter18",
+          11
+        ],
+        [
+          "chapter20",
+          11
+        ],
+        [
+          "appendix4",
+          10
+        ]
+      ],
+      "samples": [
+        {
+          "severity": "error",
+          "issue_type": "h_only_block",
+          "chapter": "chapter1",
+          "file": "data/structured/chapter1_001.json",
+          "block_index": 5,
+          "block_type": "discussion",
+          "sample": "[h]",
+          "sample_snippet": "[h]",
+          "details": {
+            "matched": "[h]"
+          },
+          "rank": 19
+        },
+        {
+          "severity": "error",
+          "issue_type": "h_only_block",
+          "chapter": "chapter2",
+          "file": "data/structured/chapter2_005.json",
+          "block_index": 4,
+          "block_type": "discussion",
+          "sample": "[h]",
+          "sample_snippet": "[h]",
+          "details": {
+            "matched": "[h]"
+          },
+          "rank": 20
+        },
+        {
+          "severity": "error",
+          "issue_type": "h_only_block",
+          "chapter": "chapter2",
+          "file": "data/structured/chapter2_005.json",
+          "block_index": 5,
+          "block_type": "discussion",
+          "sample": "[h]",
+          "sample_snippet": "[h]",
+          "details": {
+            "matched": "[h]"
+          },
+          "rank": 21
+        },
+        {
+          "severity": "error",
+          "issue_type": "h_only_block",
+          "chapter": "chapter2",
+          "file": "data/structured/chapter2_007.json",
+          "block_index": 3,
+          "block_type": "discussion",
+          "sample": "[h]",
+          "sample_snippet": "[h]",
+          "details": {
+            "matched": "[h]"
+          },
+          "rank": 22
+        },
+        {
+          "severity": "error",
+          "issue_type": "h_only_block",
+          "chapter": "chapter2",
+          "file": "data/structured/chapter2_007.json",
+          "block_index": 6,
+          "block_type": "discussion",
+          "sample": "[h]",
+          "sample_snippet": "[h]",
+          "details": {
+            "matched": "[h]"
+          },
+          "rank": 23
+        },
+        {
+          "severity": "error",
+          "issue_type": "h_only_block",
+          "chapter": "chapter2",
+          "file": "data/structured/chapter2_008.json",
+          "block_index": 7,
+          "block_type": "discussion",
+          "sample": "[h]",
+          "sample_snippet": "[h]",
+          "details": {
+            "matched": "[h]"
+          },
+          "rank": 24
+        },
+        {
+          "severity": "error",
+          "issue_type": "h_only_block",
+          "chapter": "chapter2",
+          "file": "data/structured/chapter2_018.json",
+          "block_index": 1,
+          "block_type": "discussion",
+          "sample": "[h]",
+          "sample_snippet": "[h]",
+          "details": {
+            "matched": "[h]"
+          },
+          "rank": 25
+        },
+        {
+          "severity": "error",
+          "issue_type": "h_only_block",
+          "chapter": "chapter4",
+          "file": "data/structured/chapter4_015.json",
+          "block_index": 3,
+          "block_type": "discussion",
+          "sample": "[h]",
+          "sample_snippet": "[h]",
+          "details": {
+            "matched": "[h]"
+          },
+          "rank": 26
+        },
+        {
+          "severity": "error",
+          "issue_type": "h_only_block",
+          "chapter": "chapter4",
+          "file": "data/structured/chapter4_015.json",
+          "block_index": 4,
+          "block_type": "discussion",
+          "sample": "[h]",
+          "sample_snippet": "[h]",
+          "details": {
+            "matched": "[h]"
+          },
+          "rank": 27
+        },
+        {
+          "severity": "error",
+          "issue_type": "h_only_block",
+          "chapter": "chapter5",
+          "file": "data/structured/chapter5_003.json",
+          "block_index": 4,
+          "block_type": "discussion",
+          "sample": "[h]",
+          "sample_snippet": "[h]",
+          "details": {
+            "matched": "[h]"
+          },
+          "rank": 28
+        }
+      ]
+    },
+    {
+      "priority": "P1",
+      "issue_type": "tex_command_leak",
+      "count": 200,
+      "severity_counts": {
+        "error": 200
+      },
+      "top_chapters": [
+        [
+          "appendix5",
+          28
+        ],
+        [
+          "chapter22",
+          21
+        ],
+        [
+          "appendix1",
+          15
+        ],
+        [
+          "chapter30",
+          13
+        ],
+        [
+          "appendix2",
+          13
+        ],
+        [
+          "appendix6",
+          12
+        ],
+        [
+          "chapter21",
+          10
+        ],
+        [
+          "chapter18",
+          9
+        ]
+      ],
+      "samples": [
+        {
+          "severity": "error",
+          "issue_type": "tex_command_leak",
+          "chapter": "chapter1",
+          "file": "data/structured/chapter1_002.json",
+          "block_index": 2,
+          "block_type": "discussion",
+          "sample": "The first population-genetics paper, which predated the rediscovery of Mendel (and hence was published well before any considerations of the actual dynamics of genes), was concerned with a quantitative-genetics question. Fleeming Jenkin, Regius Professor of Engineering at the University of Edinburgh, was asked to write a review of Darwin's Origin of Species. Jenkin was a polyglot, and, among other things, invented the cable car and was an actor and an artist. Jenkin (1867) pointed out that, under blending inheritance, half of any variation is removed in each generation. Thus, any change achieved via natural selection would quickly be diluted away by the assumed nature of inheritance (also see Bulmer 2004). Phrased in terms of modern statistics, and recalling that the variance of a product of a constant (a) times a random variable (x) is $ \\sigma^2(ax) = a^2 \\sigma^2(x) $, his argument was that $$ \\begin{align*}\\sigma^2(z_o)=\\sigma^2\\left({z_f+z_m\\over2}\\right)={\\sigma^2(z_f)\\over2^2}+{\\sigma^2(z_m)\\over2^2}={\\sigma^2(z)\\over2}\\end{align*} $$ where $ z_f $ and $ z_m $ are the (assumed to be uncorrelated) paternal and maternal trait values, $ z_o $ is the offspring value, and we assume that the trait variance is the same in both sexes, so that $ \\sigma^2(z_f) = \\sigma^2(z_m) = \\sigma^2(z) $. Mendelian genetics provides the solution to this quandary of reduced variation following reproduction, as the segregation variance (variation generated by the transmission of alternative alleles in the gametes of heterozygous parents) completely restores the genetic variance in each generation (Chapter 16).",
+          "sample_snippet": "The first population-genetics paper, which predated the rediscovery of Mendel (and hence was published well before any considerations of the actual dynamics of genes), was concerned with a quantitative-genetics question. Fleeming Jenkin, Regius Professor of Engineering at the University of Edinbu...",
+          "details": {
+            "commands": [
+              "begin",
+              "end"
+            ]
+          },
+          "rank": 261
+        },
+        {
+          "severity": "error",
+          "issue_type": "tex_command_leak",
+          "chapter": "chapter2",
+          "file": "data/structured/chapter2_002.json",
+          "block_index": 7,
+          "block_type": "discussion",
+          "sample": "Example 2.1. Consider an initially heterozygous individual Bb in a self-fertilizing line maintained by single-progeny descent. With N = 1, the only three possible allele-frequency states in the population are zero, one, or two B alleles. Denoting the initial state of the population by $ \\mathbf{x}(0) = [0, 1, 0] $, the probability that the population is in states 0, 1, or 2 at some future generation t is given by Equation 2.2b with $$ \\mathbf{P}=\\begin{pmatrix}{{{1}}}&{{{0}}}&{{{0}}} \\\\{{{0.25}}}&{{{0.50}}}&{{{0.25}}} \\\\{{{0}}}&{{{0}}}&{{{1}}}\\end{pmatrix} $$",
+          "sample_snippet": "Example 2.1. Consider an initially heterozygous individual Bb in a self-fertilizing line maintained by single-progeny descent. With N = 1, the only three possible allele-frequency states in the population are zero, one, or two B alleles. Denoting the initial state of the population by $ \\mathbf{x...",
+          "details": {
+            "commands": [
+              "begin",
+              "end"
+            ]
+          },
+          "rank": 262
+        },
+        {
+          "severity": "error",
+          "issue_type": "tex_command_leak",
+          "chapter": "chapter2",
+          "file": "data/structured/chapter2_002.json",
+          "block_index": 9,
+          "block_type": "discussion",
+          "sample": "The probability of being in any particular allele-frequency category in generation t, which follows from Equation 2.2b, is a function of $ \\mathbf{P}^{t} $, so for example, $$ \\mathbf{P}^{2}=\\begin{pmatrix}{{{1}}}&{{{0}}}&{{{0}}} \\\\{{{0.375}}}&{{{0.250}}}&{{{0.375}}} \\\\{{{0}}}&{{{0}}}&{{{1}}}\\end{pmatrix},\\quad\\mathbf{P}^{5}=\\begin{pmatrix}{{{1}}}&{{{0}}}&{{{0}}} \\\\{{{0.48438}}}&{{{0.03125}}}&{{{0.48438}}} \\\\{{{0}}}&{{{0}}}&{{{1}}}\\end{pmatrix} $$",
+          "sample_snippet": "The probability of being in any particular allele-frequency category in generation t, which follows from Equation 2.2b, is a function of $ \\mathbf{P}^{t} $, so for example, $$ \\mathbf{P}^{2}=\\begin{pmatrix}{{{1}}}&{{{0}}}&{{{0}}} \\\\{{{0.375}}}&{{{0.250}}}&{{{0.375}}} \\\\{{{0}}}&{{{0}}}&{{{1}}}\\end...",
+          "details": {
+            "commands": [
+              "begin",
+              "end"
+            ]
+          },
+          "rank": 263
+        },
+        {
+          "severity": "error",
+          "issue_type": "tex_command_leak",
+          "chapter": "chapter2",
+          "file": "data/structured/chapter2_004.json",
+          "block_index": 2,
+          "block_type": "discussion",
+          "sample": "Example 2.2. Ewens (2004) used the following line of reasoning to derive the expected time to absorption of a neutral allele under the Wright-Fisher model. Letting $ \\delta p $ denote the change in allele frequency in one unit of time, the mean time to absorption for an allele with frequency p may be rewritten as $$ \\bar{t}_{a}(p)=E[\\bar{t}_{a}(p+\\delta p)]+1 $$ where $E$ denotes an expected value. In words, this expression states that the mean absorption time starting at frequency $p$ is equal to the mean absorption time one time unit later when the allele frequency is $p + \\delta p$, plus one. Approximating $\\bar{t}_a(p + \\delta p)$ by the first three terms in its Taylor series (see LW Equation A1.2) and then taking expectations (only the $\\delta p$ are random terms; the rest are fixed constants), gives $$ \\begin{align*}E[\\bar{t}_{a}(p+\\delta p)]&\\simeq E\\left[\\bar{t}_{a}(p)+\\delta p\\frac{\\partial\\bar{t}_{a}(p)}{\\partial p}+\\frac{(\\delta p)^{2}}{2}\\frac{\\partial^{2}\\bar{t}_{a}(p)}{\\partial p^{2}}\\right]\\\\&=\\bar{t}_{a}(p)+E[\\delta p]\\frac{\\partial\\bar{t}_{a}(p)}{\\partial p}+\\frac{E[(\\delta p)^{2}]}{2}\\frac{\\partial^{2}\\bar{t}_{a}(p)}{\\partial p^{2}}\\end{align*} $$",
+          "sample_snippet": "Example 2.2. Ewens (2004) used the following line of reasoning to derive the expected time to absorption of a neutral allele under the Wright-Fisher model. Letting $ \\delta p $ denote the change in allele frequency in one unit of time, the mean time to absorption for an allele with frequency p ma...",
+          "details": {
+            "commands": [
+              "begin",
+              "end"
+            ]
+          },
+          "rank": 264
+        },
+        {
+          "severity": "error",
+          "issue_type": "tex_command_leak",
+          "chapter": "chapter2",
+          "file": "data/structured/chapter2_008.json",
+          "block_index": 8,
+          "block_type": "proposition",
+          "sample": "Example 2.5. The preceding expressions can be used to derive the evolutionary (or drift) variance of heterozygosity at a locus under the assumption of Hardy-Weinberg equilibrium, provided there are only two alleles segregating at the locus. Letting $ H_t = 2p_t(1 - p_t) $ denote the heterozygosity at generation $ t $, the expected variance of heterozygosity is $$ \\begin{aligned}\\sigma^{2}(H_{t})&=E\\{[2p_{t}(1-p_{t})]^{2}\\}-\\{E[2p_{t}(1-p_{t})]\\}^{2}\\\\&=E(4p_{t}^{2})-E(8p_{t}^{3})+E(4p_{t}^{4})-[E(2p_{t}-p_{t}^{2})]^{2}\\end{aligned} $$",
+          "sample_snippet": "Example 2.5. The preceding expressions can be used to derive the evolutionary (or drift) variance of heterozygosity at a locus under the assumption of Hardy-Weinberg equilibrium, provided there are only two alleles segregating at the locus. Letting $ H_t = 2p_t(1 - p_t) $ denote the heterozygosit...",
+          "details": {
+            "commands": [
+              "begin",
+              "end"
+            ]
+          },
+          "rank": 265
+        },
+        {
+          "severity": "error",
+          "issue_type": "tex_command_leak",
+          "chapter": "chapter2",
+          "file": "data/structured/chapter2_009.json",
+          "block_index": 9,
+          "block_type": "discussion",
+          "sample": "Example 2.6. One common setting generating linkage disequilibrium involves a new allele arising as a single copy on a particular background. Let A denote the derived allele and assume it arose on a B background at a second locus. Initially, all copies of A are associated with B (there are no Ab gametes). Because the sum of the AB and aB gamete frequencies is just the frequency q of B, the resulting $ 2 \\times 2 $ gametic contingency table is $$ \\begin{array}{ccc}{{{A}}}&{{{a}}} \\\\{{{B}}}&{{{p}}}&{{{q-p}}} \\\\{{{b}}}&{{{0}}}&{{{1-q}}} \\\\\\end{array} $$ and the resulting initial values for D and $ r^{2} $ become $$ D_{\\mathrm{AB}}=p_{AB}p_{ab}-p_{aB}p_{Ab}=p(1-q)-0\\cdot(q-p)=p(1-q) $$ $$ r^{2}=\\frac{D^{2}}{p(1-p)q(1-q)}=\\frac{[p(1-q)]^{2}}{p(1-p)q(1-q)}=\\frac{p(1-q)}{(1-p)q} $$",
+          "sample_snippet": "Example 2.6. One common setting generating linkage disequilibrium involves a new allele arising as a single copy on a particular background. Let A denote the derived allele and assume it arose on a B background at a second locus. Initially, all copies of A are associated with B (there are no Ab g...",
+          "details": {
+            "commands": [
+              "begin",
+              "end"
+            ]
+          },
+          "rank": 266
+        },
+        {
+          "severity": "error",
+          "issue_type": "tex_command_leak",
+          "chapter": "chapter2",
+          "file": "data/structured/chapter2_009.json",
+          "block_index": 10,
+          "block_type": "discussion",
+          "sample": "For this example, $ r^2 = 1 $ only when $ p = q $ (Sved 1971), or when there are no $ aB $ gametes ($ A $ and $ B $ always co-occur), in which case the $ 2 \\times 2 $ gamete contingency table becomes $$ \\begin{array}{cccc}{{{A}}}&{{{a}}} \\\\{{{B}}}&{{{p}}}&{{{0}}} \\\\{{{b}}}&{{{0}}}&{{{1-p}}} \\\\\\end{array},\\qquad or equivalently \\quad\\begin{array}{cccc}{{{\\mathrm{A}}}}&{{{\\mathrm{a}}}} \\\\{{{\\mathrm{B}}}}&{{{q}}}&{{{0}}} \\\\{{{\\mathrm{b}}}}&{{{0}}}&{{{1-q}}} \\\\\\end{array} $$",
+          "sample_snippet": "For this example, $ r^2 = 1 $ only when $ p = q $ (Sved 1971), or when there are no $ aB $ gametes ($ A $ and $ B $ always co-occur), in which case the $ 2 \\times 2 $ gamete contingency table becomes $$ \\begin{array}{cccc}{{{A}}}&{{{a}}} \\\\{{{B}}}&{{{p}}}&{{{0}}} \\\\{{{b}}}&{{{0}}}&{{{1-p}}} \\\\\\en...",
+          "details": {
+            "commands": [
+              "begin",
+              "end"
+            ]
+          },
+          "rank": 267
+        },
+        {
+          "severity": "error",
+          "issue_type": "tex_command_leak",
+          "chapter": "chapter5",
+          "file": "data/structured/chapter5_009.json",
+          "block_index": 4,
+          "block_type": "discussion",
+          "sample": "Letting $ p = \\text{freq}(A) $, Wright's formula can be used to find $ \\Delta p $ and the equilibrium allele frequencies. Here mean fitness is given by $$ \\begin{aligned}\\overline{W}&=p^{2}(1-t)+2p(1-p)(1)+(1-p)^{2}(1-s)\\\\&=1-tp^{2}-s(1-p)^{2}\\end{aligned} $$",
+          "sample_snippet": "Letting $ p = \\text{freq}(A) $, Wright's formula can be used to find $ \\Delta p $ and the equilibrium allele frequencies. Here mean fitness is given by $$ \\begin{aligned}\\overline{W}&=p^{2}(1-t)+2p(1-p)(1)+(1-p)^{2}(1-s)\\\\&=1-tp^{2}-s(1-p)^{2}\\end{aligned} $$",
+          "details": {
+            "commands": [
+              "begin",
+              "end"
+            ]
+          },
+          "rank": 268
+        },
+        {
+          "severity": "error",
+          "issue_type": "tex_command_leak",
+          "chapter": "chapter5",
+          "file": "data/structured/chapter5_013.json",
+          "block_index": 4,
+          "block_type": "discussion",
+          "sample": "[h] As in [[SEE_TABLE:5.1]], for a biallelic locus, this follows from weighting the (random-mating) frequency of a genotype before selection by its fitness, with $$ \\begin{align*}\\overline{W}=\\sum\\limits_{i=1}^n\\sum\\limits_{j=1}^n p_i p_j W_{ij}\\end{align*} $$",
+          "sample_snippet": "[h] As in [[SEE_TABLE:5.1]], for a biallelic locus, this follows from weighting the (random-mating) frequency of a genotype before selection by its fitness, with $$ \\begin{align*}\\overline{W}=\\sum\\limits_{i=1}^n\\sum\\limits_{j=1}^n p_i p_j W_{ij}\\end{align*} $$",
+          "details": {
+            "commands": [
+              "begin",
+              "end"
+            ]
+          },
+          "rank": 269
+        },
+        {
+          "severity": "error",
+          "issue_type": "tex_command_leak",
+          "chapter": "chapter5",
+          "file": "data/structured/chapter5_019.json",
+          "block_index": 0,
+          "block_type": "discussion",
+          "sample": "Denote the frequencies of the four different gametes by $ x_{i} $, where $$ \\begin{aligned}&freq(g_{1})=freq(AB)=x_{1}\\quad&freq(g_{2})=freq(Ab)=x_{2}\\\\&freq(g_{3})=freq(aB)=x_{3}\\quad&freq(g_{4})=freq(ab)=x_{4}\\end{aligned} $$",
+          "sample_snippet": "Denote the frequencies of the four different gametes by $ x_{i} $, where $$ \\begin{aligned}&freq(g_{1})=freq(AB)=x_{1}\\quad&freq(g_{2})=freq(Ab)=x_{2}\\\\&freq(g_{3})=freq(aB)=x_{3}\\quad&freq(g_{4})=freq(ab)=x_{4}\\end{aligned} $$",
+          "details": {
+            "commands": [
+              "begin",
+              "end"
+            ]
+          },
+          "rank": 270
+        }
+      ]
+    },
+    {
+      "priority": "P1",
+      "issue_type": "ghost_block",
+      "count": 7,
+      "severity_counts": {
+        "error": 7
+      },
+      "top_chapters": [
+        [
+          "chapter8",
+          2
+        ],
+        [
+          "appendix1",
+          2
+        ],
+        [
+          "chapter20",
+          1
+        ],
+        [
+          "chapter26",
+          1
+        ],
+        [
+          "appendix5",
+          1
+        ]
+      ],
+      "samples": [
+        {
+          "severity": "error",
+          "issue_type": "ghost_block",
+          "chapter": "chapter8",
+          "file": "data/structured/chapter8_003.json",
+          "block_index": 1,
+          "block_type": "discussion",
+          "sample": "..",
+          "sample_snippet": "..",
+          "details": {
+            "reason": "symbol_only_or_page_like"
+          },
+          "rank": 461
+        },
+        {
+          "severity": "error",
+          "issue_type": "ghost_block",
+          "chapter": "chapter8",
+          "file": "data/structured/chapter8_003.json",
+          "block_index": 2,
+          "block_type": "discussion",
+          "sample": "©",
+          "sample_snippet": "©",
+          "details": {
+            "reason": "symbol_only_or_page_like"
+          },
+          "rank": 462
+        },
+        {
+          "severity": "error",
+          "issue_type": "ghost_block",
+          "chapter": "chapter20",
+          "file": "data/structured/chapter20_001.json",
+          "block_index": 5,
+          "block_type": "discussion",
+          "sample": "..",
+          "sample_snippet": "..",
+          "details": {
+            "reason": "symbol_only_or_page_like"
+          },
+          "rank": 463
+        },
+        {
+          "severity": "error",
+          "issue_type": "ghost_block",
+          "chapter": "chapter26",
+          "file": "data/structured/chapter26_001.json",
+          "block_index": 6,
+          "block_type": "discussion",
+          "sample": "..",
+          "sample_snippet": "..",
+          "details": {
+            "reason": "symbol_only_or_page_like"
+          },
+          "rank": 464
+        },
+        {
+          "severity": "error",
+          "issue_type": "ghost_block",
+          "chapter": "appendix1",
+          "file": "data/structured/appendix1_003.json",
+          "block_index": 2,
+          "block_type": "discussion",
+          "sample": "..",
+          "sample_snippet": "..",
+          "details": {
+            "reason": "symbol_only_or_page_like"
+          },
+          "rank": 465
+        },
+        {
+          "severity": "error",
+          "issue_type": "ghost_block",
+          "chapter": "appendix1",
+          "file": "data/structured/appendix1_003.json",
+          "block_index": 3,
+          "block_type": "discussion",
+          "sample": "©",
+          "sample_snippet": "©",
+          "details": {
+            "reason": "symbol_only_or_page_like"
+          },
+          "rank": 466
+        },
+        {
+          "severity": "error",
+          "issue_type": "ghost_block",
+          "chapter": "appendix5",
+          "file": "data/structured/appendix5_003.json",
+          "block_index": 4,
+          "block_type": "discussion",
+          "sample": "..",
+          "sample_snippet": "..",
+          "details": {
+            "reason": "symbol_only_or_page_like"
+          },
+          "rank": 467
+        }
+      ]
+    },
+    {
+      "priority": "P1",
+      "issue_type": "unbalanced_inline_math",
+      "count": 5,
+      "severity_counts": {
+        "error": 5
+      },
+      "top_chapters": [
+        [
+          "chapter9",
+          1
+        ],
+        [
+          "chapter12",
+          1
+        ],
+        [
+          "chapter21",
+          1
+        ],
+        [
+          "chapter22",
+          1
+        ],
+        [
+          "chapter24",
+          1
+        ]
+      ],
+      "samples": [
+        {
+          "severity": "error",
+          "issue_type": "unbalanced_inline_math",
+          "chapter": "chapter9",
+          "file": "data/structured/chapter9_034.json",
+          "block_index": 0,
+          "block_type": "discussion",
+          "sample": "Under the infinite-sites model, a sequence is treated as a series of $L$ sites, with each new mutation assumed to occur at a new site (Chapter 4). At mutation-drift equilibrium, most features of this model, including the site-frequency spectrum (SFS), are fully specified by the population-size-scaled mutation rate, $\\theta = 4N_e\\mu$. Depending on the nature of the data, an observed frequency spectrum is viewed as either folded or unfolded (Chapter 2). An unfolded spectrum considers the frequency of the derived allele (Equation 2.35a), and such data are said to be polarized (typically using an outgroup to distinguish between ancestral and derived, or mutant, alleles). The folded spectrum (Equation 2.35b) uses the minor-allele frequency, ignoring whether the rarer allele is ancestral or derived. To distinguish between these different spectra, we use the notation that $\\zeta_i$ denotes the number of sites that contain exactly $i$ derived alleles ($1 \\leq i \\leq n-1$), yielding the observed unfolded SFS as the vector $(\\zeta_1, \\cdots, \\zeta_{n-1})$. Similarly, $\\eta_i$ denotes the number of sites with exactly $i$ copies of the minor allele ($1 \\leq i \\leq [n/2]$), with $(\\eta_1, \\cdots, \\eta_{[n/2]})$ being the observed folded SFS, where $$ [n/2]=\\left\\{\\begin{array}{l}n/2for n even\\ $ n-1)/2for n odd\\end{array}\\right. $$",
+          "sample_snippet": "Under the infinite-sites model, a sequence is treated as a series of $L$ sites, with each new mutation assumed to occur at a new site (Chapter 4). At mutation-drift equilibrium, most features of this model, including the site-frequency spectrum (SFS), are fully specified by the population-size-sc...",
+          "details": {
+            "dollar_count": 25
+          },
+          "rank": 474
+        },
+        {
+          "severity": "error",
+          "issue_type": "unbalanced_inline_math",
+          "chapter": "chapter12",
+          "file": "data/structured/chapter12_029.json",
+          "block_index": 0,
+          "block_type": "discussion",
+          "sample": "Assume that n detected QTL differences (alternative fixed alleles at n loci) are found via a standard QTL mapping experiment involving a cross between two lines (LW Chapter 15). Under neutrality, there should be no systematic directionality as to whether a line is fixed for increasing (plus) alleles over decreasing (minus) alleles at any particular QTL. This simple idea forms the basis of sign tests, but it requires modifications to account for the actual biology. For example, when the line means differ, the high (larger trait value) line is expected to contain more plus alleles (assuming equal effects; with a distribution of allelic effects, this need not be the case, as is discussed below). Orr noted that by choosing the larger line, we have introduced an ascertainment bias, as this line is expected to contain an excess of plus alleles. To proceed, we need some appropriate conditioning on this fact to obtain an unbiased statistic representing the value that constitutes an excess of plus alleles. The simplest approach is Orr's equal-effects model, where all n QTLs have close to equal effects. Here, the large line must contain at least $ [n/2] $ high (plus) QTLs, where $$ [n/2]=\\left\\{\\begin{array}{ll}(n/2)+1&for n even\\ $ n+1)/2&for n odd\\end{array}\\right. $$",
+          "sample_snippet": "Assume that n detected QTL differences (alternative fixed alleles at n loci) are found via a standard QTL mapping experiment involving a cross between two lines (LW Chapter 15). Under neutrality, there should be no systematic directionality as to whether a line is fixed for increasing (plus) alle...",
+          "details": {
+            "dollar_count": 7
+          },
+          "rank": 475
+        },
+        {
+          "severity": "error",
+          "issue_type": "unbalanced_inline_math",
+          "chapter": "chapter21",
+          "file": "data/structured/chapter21_015.json",
+          "block_index": 7,
+          "block_type": "discussion",
+          "sample": "$ (n_{f} $ females per male, $ n_{s} $ offspring per female, $ n = n_{f}n_{s} $ offspring per male $ $$ \\sigma^{2}\\big(\\overline{z}_{H S(F S)}\\big)=\\frac{\\sigma_{A}^{2}}{4}\\left(1+\\frac{1}{n_{f}}+\\frac{2}{n}\\right)+\\frac{\\sigma_{D}^{2}}{4n_{f}}\\left(1+\\frac{3}{n_{s}}\\right)+\\frac{\\sigma_{E_{s}}^{2}}{n}+\\frac{\\sigma_{E_{c}(F S)}^{2}}{n_{f}}+\\sigma_{E_{c}(H S)}^{2} $$",
+          "sample_snippet": "$ (n_{f} $ females per male, $ n_{s} $ offspring per female, $ n = n_{f}n_{s} $ offspring per male $ $$ \\sigma^{2}\\big(\\overline{z}_{H S(F S)}\\big)=\\frac{\\sigma_{A}^{2}}{4}\\left(1+\\frac{1}{n_{f}}+\\frac{2}{n}\\right)+\\frac{\\sigma_{D}^{2}}{4n_{f}}\\left(1+\\frac{3}{n_{s}}\\right)+\\frac{\\sigma_{E_{s}}^{...",
+          "details": {
+            "dollar_count": 11
+          },
+          "rank": 476
+        },
+        {
+          "severity": "error",
+          "issue_type": "unbalanced_inline_math",
+          "chapter": "chapter22",
+          "file": "data/structured/chapter22_023.json",
+          "block_index": 7,
+          "block_type": "discussion",
+          "sample": "Example 22.9. As an application of the previous theory, consider a trait where $ \\sigma(A_d, A_s) = 0 $, and there are no correlations between environmental values within the group ($ \\rho = 0 $) and no relatives in the group ($ r = 0 $). Equation 22.5d gives $ \\sigma^2(z) = \\sigma^2(A_d) + (n-1)\\sigma^2(A_s) + \\sigma^2(e) $, while (with $ \\sigma(A_d, A_s) = r = \\rho = 0 $), Equation 22.31c reduces to $ \\sigma(z_i, z_j) = (n-2)\\sigma^2(A_s) $. Hence, from Equation 22.36b, $$ \\mathbf{P}=\\begin{pmatrix}\\sigma^{2}(z)&(n-1)(n-2)\\sigma^{2}(A_{s})\\ $ n-1)(n-2)\\sigma^{2}(A_{s})&(n-1)\\left[\\sigma^{2}(z)+(n-2)^{2}\\sigma^{2}(A_{s})\\right]\\end{pmatrix} $$",
+          "sample_snippet": "Example 22.9. As an application of the previous theory, consider a trait where $ \\sigma(A_d, A_s) = 0 $, and there are no correlations between environmental values within the group ($ \\rho = 0 $) and no relatives in the group ($ r = 0 $). Equation 22.5d gives $ \\sigma^2(z) = \\sigma^2(A_d) + (n-1)...",
+          "details": {
+            "dollar_count": 17
+          },
+          "rank": 477
+        },
+        {
+          "severity": "error",
+          "issue_type": "unbalanced_inline_math",
+          "chapter": "chapter24",
+          "file": "data/structured/chapter24_023.json",
+          "block_index": 6,
+          "block_type": "discussion",
+          "sample": "Equation 24.21a shows how the higher-order cumulants $ (K_{3} $ and above $ quantify departures from normality. If all of these are zero, the distribution is Gaussian.",
+          "sample_snippet": "Equation 24.21a shows how the higher-order cumulants $ (K_{3} $ and above $ quantify departures from normality. If all of these are zero, the distribution is Gaussian.",
+          "details": {
+            "dollar_count": 3
+          },
+          "rank": 478
+        }
+      ]
+    },
+    {
+      "priority": "P2",
+      "issue_type": "very_short_block",
+      "count": 253,
+      "severity_counts": {
+        "warning": 253
+      },
+      "top_chapters": [
+        [
+          "chapter25",
+          22
+        ],
+        [
+          "chapter29",
+          21
+        ],
+        [
+          "chapter30",
+          20
+        ],
+        [
+          "chapter12",
+          18
+        ],
+        [
+          "chapter21",
+          15
+        ],
+        [
+          "chapter18",
+          12
+        ],
+        [
+          "chapter20",
+          12
+        ],
+        [
+          "chapter8",
+          11
+        ]
+      ],
+      "samples": [
+        {
+          "severity": "warning",
+          "issue_type": "very_short_block",
+          "chapter": "chapter1",
+          "file": "data/structured/chapter1_001.json",
+          "block_index": 5,
+          "block_type": "discussion",
+          "sample": "[h]",
+          "sample_snippet": "[h]",
+          "details": {
+            "length": 3
+          },
+          "rank": 479
+        },
+        {
+          "severity": "warning",
+          "issue_type": "very_short_block",
+          "chapter": "chapter2",
+          "file": "data/structured/chapter2_005.json",
+          "block_index": 4,
+          "block_type": "discussion",
+          "sample": "[h]",
+          "sample_snippet": "[h]",
+          "details": {
+            "length": 3
+          },
+          "rank": 480
+        },
+        {
+          "severity": "warning",
+          "issue_type": "very_short_block",
+          "chapter": "chapter2",
+          "file": "data/structured/chapter2_005.json",
+          "block_index": 5,
+          "block_type": "discussion",
+          "sample": "[h]",
+          "sample_snippet": "[h]",
+          "details": {
+            "length": 3
+          },
+          "rank": 481
+        },
+        {
+          "severity": "warning",
+          "issue_type": "very_short_block",
+          "chapter": "chapter2",
+          "file": "data/structured/chapter2_007.json",
+          "block_index": 3,
+          "block_type": "discussion",
+          "sample": "[h]",
+          "sample_snippet": "[h]",
+          "details": {
+            "length": 3
+          },
+          "rank": 482
+        },
+        {
+          "severity": "warning",
+          "issue_type": "very_short_block",
+          "chapter": "chapter2",
+          "file": "data/structured/chapter2_007.json",
+          "block_index": 6,
+          "block_type": "discussion",
+          "sample": "[h]",
+          "sample_snippet": "[h]",
+          "details": {
+            "length": 3
+          },
+          "rank": 483
+        },
+        {
+          "severity": "warning",
+          "issue_type": "very_short_block",
+          "chapter": "chapter2",
+          "file": "data/structured/chapter2_008.json",
+          "block_index": 7,
+          "block_type": "discussion",
+          "sample": "[h]",
+          "sample_snippet": "[h]",
+          "details": {
+            "length": 3
+          },
+          "rank": 484
+        },
+        {
+          "severity": "warning",
+          "issue_type": "very_short_block",
+          "chapter": "chapter2",
+          "file": "data/structured/chapter2_018.json",
+          "block_index": 1,
+          "block_type": "discussion",
+          "sample": "[h]",
+          "sample_snippet": "[h]",
+          "details": {
+            "length": 3
+          },
+          "rank": 485
+        },
+        {
+          "severity": "warning",
+          "issue_type": "very_short_block",
+          "chapter": "chapter4",
+          "file": "data/structured/chapter4_015.json",
+          "block_index": 3,
+          "block_type": "discussion",
+          "sample": "[h]",
+          "sample_snippet": "[h]",
+          "details": {
+            "length": 3
+          },
+          "rank": 486
+        },
+        {
+          "severity": "warning",
+          "issue_type": "very_short_block",
+          "chapter": "chapter4",
+          "file": "data/structured/chapter4_015.json",
+          "block_index": 4,
+          "block_type": "discussion",
+          "sample": "[h]",
+          "sample_snippet": "[h]",
+          "details": {
+            "length": 3
+          },
+          "rank": 487
+        },
+        {
+          "severity": "warning",
+          "issue_type": "very_short_block",
+          "chapter": "chapter5",
+          "file": "data/structured/chapter5_003.json",
+          "block_index": 4,
+          "block_type": "discussion",
+          "sample": "[h]",
+          "sample_snippet": "[h]",
+          "details": {
+            "length": 3
+          },
+          "rank": 488
+        }
+      ]
+    },
+    {
+      "priority": "P2",
+      "issue_type": "derivation_placeholder_only_text",
+      "count": 12,
+      "severity_counts": {
+        "warning": 12
+      },
+      "top_chapters": [
+        [
+          "chapter5",
+          2
+        ],
+        [
+          "chapter6",
+          2
+        ],
+        [
+          "chapter22",
+          2
+        ],
+        [
+          "chapter9",
+          1
+        ],
+        [
+          "chapter11",
+          1
+        ],
+        [
+          "chapter15",
+          1
+        ],
+        [
+          "chapter19",
+          1
+        ],
+        [
+          "chapter28",
+          1
+        ]
+      ],
+      "samples": [
+        {
+          "severity": "warning",
+          "issue_type": "derivation_placeholder_only_text",
+          "chapter": "chapter5",
+          "file": "data/structured/chapter5_016.json",
+          "block_index": 1,
+          "block_type": "derivation",
+          "sample": "Hence, [[SEE_FORMULA:5.9b]]",
+          "sample_snippet": "Hence, [[SEE_FORMULA:5.9b]]",
+          "details": {
+            "cleaned_preview": "Hence,"
+          },
+          "rank": 732
+        },
+        {
+          "severity": "warning",
+          "issue_type": "derivation_placeholder_only_text",
+          "chapter": "chapter5",
+          "file": "data/structured/chapter5_016.json",
+          "block_index": 3,
+          "block_type": "derivation",
+          "sample": "Hence, [[SEE_FORMULA:5.9d]]",
+          "sample_snippet": "Hence, [[SEE_FORMULA:5.9d]]",
+          "details": {
+            "cleaned_preview": "Hence,"
+          },
+          "rank": 733
+        },
+        {
+          "severity": "warning",
+          "issue_type": "derivation_placeholder_only_text",
+          "chapter": "chapter6",
+          "file": "data/structured/chapter6_007.json",
+          "block_index": 4,
+          "block_type": "derivation",
+          "sample": "Hence, [[SEE_FORMULA:6.13b]]",
+          "sample_snippet": "Hence, [[SEE_FORMULA:6.13b]]",
+          "details": {
+            "cleaned_preview": "Hence,"
+          },
+          "rank": 734
+        },
+        {
+          "severity": "warning",
+          "issue_type": "derivation_placeholder_only_text",
+          "chapter": "chapter6",
+          "file": "data/structured/chapter6_023.json",
+          "block_index": 4,
+          "block_type": "derivation",
+          "sample": "Thus [[SEE_FORMULA:6.35]]",
+          "sample_snippet": "Thus [[SEE_FORMULA:6.35]]",
+          "details": {
+            "cleaned_preview": "Thus"
+          },
+          "rank": 735
+        },
+        {
+          "severity": "warning",
+          "issue_type": "derivation_placeholder_only_text",
+          "chapter": "chapter9",
+          "file": "data/structured/chapter9_038.json",
+          "block_index": 3,
+          "block_type": "derivation",
+          "sample": "[h] [[SEE_FORMULA:9.26e]] [[SEE_FORMULA:9.26f]]",
+          "sample_snippet": "[h] [[SEE_FORMULA:9.26e]] [[SEE_FORMULA:9.26f]]",
+          "details": {
+            "cleaned_preview": "[h]"
+          },
+          "rank": 736
+        },
+        {
+          "severity": "warning",
+          "issue_type": "derivation_placeholder_only_text",
+          "chapter": "chapter11",
+          "file": "data/structured/chapter11_013.json",
+          "block_index": 7,
+          "block_type": "derivation",
+          "sample": "[h] [[SEE_FORMULA:11.16]]",
+          "sample_snippet": "[h] [[SEE_FORMULA:11.16]]",
+          "details": {
+            "cleaned_preview": "[h]"
+          },
+          "rank": 737
+        },
+        {
+          "severity": "warning",
+          "issue_type": "derivation_placeholder_only_text",
+          "chapter": "chapter15",
+          "file": "data/structured/chapter15_007.json",
+          "block_index": 9,
+          "block_type": "derivation",
+          "sample": "Recalling Equation 15.5b, [[SEE_FORMULA:15.13b]]",
+          "sample_snippet": "Recalling Equation 15.5b, [[SEE_FORMULA:15.13b]]",
+          "details": {
+            "cleaned_preview": "Recalling Equation 15.5b,"
+          },
+          "rank": 738
+        },
+        {
+          "severity": "warning",
+          "issue_type": "derivation_placeholder_only_text",
+          "chapter": "chapter19",
+          "file": "data/structured/chapter19_005.json",
+          "block_index": 7,
+          "block_type": "derivation",
+          "sample": "Note that [[SEE_FORMULA:19.5d]]",
+          "sample_snippet": "Note that [[SEE_FORMULA:19.5d]]",
+          "details": {
+            "cleaned_preview": "Note that"
+          },
+          "rank": 739
+        },
+        {
+          "severity": "warning",
+          "issue_type": "derivation_placeholder_only_text",
+          "chapter": "chapter22",
+          "file": "data/structured/chapter22_012.json",
+          "block_index": 3,
+          "block_type": "derivation",
+          "sample": "Hence, [[SEE_FORMULA:22.12a]]",
+          "sample_snippet": "Hence, [[SEE_FORMULA:22.12a]]",
+          "details": {
+            "cleaned_preview": "Hence,"
+          },
+          "rank": 740
+        },
+        {
+          "severity": "warning",
+          "issue_type": "derivation_placeholder_only_text",
+          "chapter": "chapter22",
+          "file": "data/structured/chapter22_014.json",
+          "block_index": 1,
+          "block_type": "derivation",
+          "sample": "Here [[SEE_FORMULA:22.15b]] while [[SEE_FORMULA:22.15c]]",
+          "sample_snippet": "Here [[SEE_FORMULA:22.15b]] while [[SEE_FORMULA:22.15c]]",
+          "details": {
+            "cleaned_preview": "Here while"
+          },
+          "rank": 741
+        }
+      ]
+    },
+    {
+      "priority": "P2",
+      "issue_type": "placeholder_in_discussion",
+      "count": 9,
+      "severity_counts": {
+        "warning": 9
+      },
+      "top_chapters": [
+        [
+          "chapter23",
+          3
+        ],
+        [
+          "chapter9",
+          2
+        ],
+        [
+          "chapter21",
+          2
+        ],
+        [
+          "chapter8",
+          1
+        ],
+        [
+          "chapter17",
+          1
+        ]
+      ],
+      "samples": [
+        {
+          "severity": "warning",
+          "issue_type": "placeholder_in_discussion",
+          "chapter": "chapter8",
+          "file": "data/structured/chapter8_020.json",
+          "block_index": 0,
+          "block_type": "discussion",
+          "sample": "The key summary parameter for the potential impact of a sweep is the fraction of original haplotypes that stay intact following a sweep, $ f_s = \\Delta_q / \\delta_q(0) $ (Equation 8.1d). If $ f_s \\simeq 1 $, the sweep will have a major impact on the structure of variation at linked neutral sites, while if $ f_s \\simeq 0 $, it will have essentially no impact. [[SEE_TABLE:8.1]] summarizes expressions for $ f_s $ and also for the population-genetic impacts of a sweep on a linked neutral site. [[SEE_TABLE:8.2]] summarizes more subtle signatures of a sweep beyond the simple reduction in variation. As detailed in the next chapter, all of the observations listed in [[SEE_TABLE:8.2]], either singularly or in combination, have been used as the basis of tests of ongoing or recent selection. It is important to stress that the results in these two tables are restricted to hard sweeps, wherein the favorable allele is only present in (at most) a few copies at the start of selection. As shown below, many of these signals are either muted or washed out entirely under soft sweeps.",
+          "sample_snippet": "The key summary parameter for the potential impact of a sweep is the fraction of original haplotypes that stay intact following a sweep, $ f_s = \\Delta_q / \\delta_q(0) $ (Equation 8.1d). If $ f_s \\simeq 1 $, the sweep will have a major impact on the structure of variation at linked neutral sites,...",
+          "details": {
+            "placeholder_count": 3
+          },
+          "rank": 744
+        },
+        {
+          "severity": "warning",
+          "issue_type": "placeholder_in_discussion",
+          "chapter": "chapter9",
+          "file": "data/structured/chapter9_059.json",
+          "block_index": 1,
+          "block_type": "discussion",
+          "sample": "[[TABLE:9.4]]), and Carlson et al. (2005), who used outliers in Tajima's D ([[SEE_TABLE:9.1]]). As shown in [[SEE_TABLE:9.4]], of the 455 sites detected by Voight, 125 (27%) were also seen by Wang. Conversely, of the 176 sites with outliers in D, only 6% (11) of these were also detected by Voight, while 27% (47) were detected by Wang.",
+          "sample_snippet": "[[TABLE:9.4]]), and Carlson et al. (2005), who used outliers in Tajima's D ([[SEE_TABLE:9.1]]). As shown in [[SEE_TABLE:9.4]], of the 455 sites detected by Voight, 125 (27%) were also seen by Wang. Conversely, of the 176 sites with outliers in D, only 6% (11) of these were also detected by Voight...",
+          "details": {
+            "placeholder_count": 3
+          },
+          "rank": 745
+        },
+        {
+          "severity": "warning",
+          "issue_type": "placeholder_in_discussion",
+          "chapter": "chapter9",
+          "file": "data/structured/chapter9_060.json",
+          "block_index": 1,
+          "block_type": "discussion",
+          "sample": "Starting with the advent of dense-SNP maps and continuing as whole-genome sequencing became economically feasible, candidate-gene studies were replaced by genomic scans, searching the genome without any preconception of what sites might be under selection. Biswas and Akey (2006) reviewed six early scans that used different statistics to infer positive selection. In total, roughly 2300 genes were found with signals of selection in at least one of these studies, but the overlap between studies was quite small. For example, consider the overlap between the findings of Wang et al. (2006) and Voight et al. (2006), who used long-range haplotype tests (LDD and iHS, respectively; [[SEE_TABLE:9.3]]), and Carlson et al. (2005), who used outliers in Tajima's D ([[SEE_TABLE:9.1]]). As shown in [[SEE_TABLE:9.4]], of the 455 sites detected by Voight, 125 (27%) were also seen by Wang. Conversely, of the 176 sites with outliers in D, only 6% (11) of these were also detected by Voight, while 27% (47) were detected by Wang.",
+          "sample_snippet": "Starting with the advent of dense-SNP maps and continuing as whole-genome sequencing became economically feasible, candidate-gene studies were replaced by genomic scans, searching the genome without any preconception of what sites might be under selection. Biswas and Akey (2006) reviewed six earl...",
+          "details": {
+            "placeholder_count": 3
+          },
+          "rank": 746
+        },
+        {
+          "severity": "warning",
+          "issue_type": "placeholder_in_discussion",
+          "chapter": "chapter17",
+          "file": "data/structured/chapter17_009.json",
+          "block_index": 0,
+          "block_type": "discussion",
+          "sample": "Estimates of $ \\sigma^{2}(A_{v}) $ under any of the models for $ \\sigma_{E}^{2} $ reviewed in [[SEE_TABLE:17.1]] are obtained using fairly complicated likelihood functions on data from sets of relatives; see SanCristobal-Gaudy et al. (1998, 2001), Sorensen and Waagepetersen (2003), Ros et al. (2004), or any of the other references in [[SEE_TABLE:17.2]] for details. [[SEE_TABLE:17.2]] presents these estimates scaled as heritabilities and evolvabilities (Equation 13.22b) to facilitate comparison over traits, which raises the issue how the heritability of the environmental variance is defined.",
+          "sample_snippet": "Estimates of $ \\sigma^{2}(A_{v}) $ under any of the models for $ \\sigma_{E}^{2} $ reviewed in [[SEE_TABLE:17.1]] are obtained using fairly complicated likelihood functions on data from sets of relatives; see SanCristobal-Gaudy et al. (1998, 2001), Sorensen and Waagepetersen (2003), Ros et al. (20...",
+          "details": {
+            "placeholder_count": 3
+          },
+          "rank": 747
+        },
+        {
+          "severity": "warning",
+          "issue_type": "placeholder_in_discussion",
+          "chapter": "chapter21",
+          "file": "data/structured/chapter21_011.json",
+          "block_index": 11,
+          "block_type": "discussion",
+          "sample": "[[TABLE:21.2]] involve four different relationships (Figure 21.2): (i) $ x_1 = \\mathcal{R}_1 $ (a measured sib is a parent of $ y $), (ii) $ x_1 $ and $ \\mathcal{R}_1 $ are sibs, (iii) $ \\mathcal{R}_1 = P_1 $ (the parent of $ x_1 $), and (iv) $ \\mathcal{R}_1 $ is the selfed-progeny of the parent of $ x_1 $. The path diagrams for computing $ \\Theta_{x_1y} $ for these four relationships are given in Figure 21.3, and [[SEE_TABLE:21.2]] summarizes the resulting genetic covariances. The parents, $ P_i $, are assumed to be non-inbred (i.e., $ \\Theta_{P_i P_i} = 1/2 $). If they are inbred, then $ \\Theta_{P_i P_i} = (1 + f_i)/2 $, where $ i $ is the inbreeding coefficient on that parent, and the expressions in [[SEE_TABLE:21.2]] are multiplied by this additional factor (for each inbred parent).",
+          "sample_snippet": "[[TABLE:21.2]] involve four different relationships (Figure 21.2): (i) $ x_1 = \\mathcal{R}_1 $ (a measured sib is a parent of $ y $), (ii) $ x_1 $ and $ \\mathcal{R}_1 $ are sibs, (iii) $ \\mathcal{R}_1 = P_1 $ (the parent of $ x_1 $), and (iv) $ \\mathcal{R}_1 $ is the selfed-progeny of the parent ...",
+          "details": {
+            "placeholder_count": 3
+          },
+          "rank": 748
+        },
+        {
+          "severity": "warning",
+          "issue_type": "placeholder_in_discussion",
+          "chapter": "chapter21",
+          "file": "data/structured/chapter21_012.json",
+          "block_index": 2,
+          "block_type": "discussion",
+          "sample": "This follows because the first covariance, $ \\sigma(z_{ij}, y) $, is for parent and offspring $ (\\sigma_A^2/2) $, while the second covariance, $ \\sigma(z_{ik}, y) $, follows using the appropriate value of $ 2\\Theta $ from [[SEE_TABLE:21.2]] (1/8 for half-sibs and 1/4 for full-sibs). Using the results from [[SEE_TABLE:21.2]], expressions for the sib selection, parental selection (progeny testing), and $ S_1 $ seed designs follow in similar fashion. These are summarized in [[SEE_TABLE:21.3]].",
+          "sample_snippet": "This follows because the first covariance, $ \\sigma(z_{ij}, y) $, is for parent and offspring $ (\\sigma_A^2/2) $, while the second covariance, $ \\sigma(z_{ik}, y) $, follows using the appropriate value of $ 2\\Theta $ from [[SEE_TABLE:21.2]] (1/8 for half-sibs and 1/4 for full-sibs). Using the res...",
+          "details": {
+            "placeholder_count": 3
+          },
+          "rank": 749
+        },
+        {
+          "severity": "warning",
+          "issue_type": "placeholder_in_discussion",
+          "chapter": "chapter23",
+          "file": "data/structured/chapter23_009.json",
+          "block_index": 4,
+          "block_type": "discussion",
+          "sample": "Substitution of these results into Equation 21.1 yields the response to a single cycle of selection under various schemes, which are summarized in [[SEE_TABLE:23.1]]. As a comparison of [[SEE_TABLE:23.1]] with its random-mating counterpart ([[SEE_TABLE:21.5]]) shows, for half-sibs, that the selection response when using inbred parents $ (f > 0) $ is greater than when using outbred",
+          "sample_snippet": "Substitution of these results into Equation 21.1 yields the response to a single cycle of selection under various schemes, which are summarized in [[SEE_TABLE:23.1]]. As a comparison of [[SEE_TABLE:23.1]] with its random-mating counterpart ([[SEE_TABLE:21.5]]) shows, for half-sibs, that the selec...",
+          "details": {
+            "placeholder_count": 3
+          },
+          "rank": 750
+        },
+        {
+          "severity": "warning",
+          "issue_type": "placeholder_in_discussion",
+          "chapter": "chapter23",
+          "file": "data/structured/chapter23_009.json",
+          "block_index": 5,
+          "block_type": "discussion",
+          "sample": "[[TABLE:23.1]]. As a comparison of [[SEE_TABLE:23.1]] with its random-mating counterpart ([[SEE_TABLE:21.5]]) shows, for half-sibs, that the selection response when using inbred parents $ (f > 0) $ is greater than when using outbred parents ($f=0$). This is also true for full-sibs when $\\sigma_D^2$ is small. However, random mating can yield a larger response if $\\sigma_D^2$ is sufficiently large.",
+          "sample_snippet": "[[TABLE:23.1]]. As a comparison of [[SEE_TABLE:23.1]] with its random-mating counterpart ([[SEE_TABLE:21.5]]) shows, for half-sibs, that the selection response when using inbred parents $ (f > 0) $ is greater than when using outbred parents ($f=0$). This is also true for full-sibs when $\\sigma_D^...",
+          "details": {
+            "placeholder_count": 3
+          },
+          "rank": 751
+        },
+        {
+          "severity": "warning",
+          "issue_type": "placeholder_in_discussion",
+          "chapter": "chapter23",
+          "file": "data/structured/chapter23_009.json",
+          "block_index": 6,
+          "block_type": "discussion",
+          "sample": "[[TABLE:23.1]]. As a comparison of [[SEE_TABLE:23.1]] with its random-mating counterpart ([[SEE_TABLE:21.5]]) shows, for half-sibs, that the selection response when using inbred parents $ (f > 0) $ is greater than when using outbred",
+          "sample_snippet": "[[TABLE:23.1]]. As a comparison of [[SEE_TABLE:23.1]] with its random-mating counterpart ([[SEE_TABLE:21.5]]) shows, for half-sibs, that the selection response when using inbred parents $ (f > 0) $ is greater than when using outbred",
+          "details": {
+            "placeholder_count": 3
+          },
+          "rank": 752
+        }
+      ]
+    },
+    {
+      "priority": "P2",
+      "issue_type": "suspicious_truncation",
+      "count": 6,
+      "severity_counts": {
+        "error": 6
+      },
+      "top_chapters": [
+        [
+          "chapter21",
+          2
+        ],
+        [
+          "chapter4",
+          1
+        ],
+        [
+          "chapter10",
+          1
+        ],
+        [
+          "chapter24",
+          1
+        ],
+        [
+          "chapter30",
+          1
+        ]
+      ],
+      "samples": [
+        {
+          "severity": "error",
+          "issue_type": "suspicious_truncation",
+          "chapter": "chapter4",
+          "file": "data/structured/chapter4_011.json",
+          "block_index": 2,
+          "block_type": "discussion",
+          "sample": "It is notable that even though prokaryotes do not engage in meiosis, estimates of c/u for such species are generally of the same order of magnitude as those for eukaryotes (Lynch",
+          "sample_snippet": "It is notable that even though prokaryotes do not engage in meiosis, estimates of c/u for such species are generally of the same order of magnitude as those for eukaryotes (Lynch",
+          "details": {
+            "reason": "unclosed_delimiter_or_quote"
+          },
+          "rank": 468
+        },
+        {
+          "severity": "error",
+          "issue_type": "suspicious_truncation",
+          "chapter": "chapter10",
+          "file": "data/structured/chapter10_030.json",
+          "block_index": 7,
+          "block_type": "discussion",
+          "sample": "A variety of likelihood models based on Equation 10.19 are typically tested (much in the same way that one tests subsets of complex segregation analysis models; see LW Chapter",
+          "sample_snippet": "A variety of likelihood models based on Equation 10.19 are typically tested (much in the same way that one tests subsets of complex segregation analysis models; see LW Chapter",
+          "details": {
+            "reason": "unclosed_delimiter_or_quote"
+          },
+          "rank": 469
+        },
+        {
+          "severity": "error",
+          "issue_type": "suspicious_truncation",
+          "chapter": "chapter21",
+          "file": "data/structured/chapter21_004.json",
+          "block_index": 0,
+          "block_type": "discussion",
+          "sample": "While animal breeders typically employ only a few standard sib-based designs (Turner and",
+          "sample_snippet": "While animal breeders typically employ only a few standard sib-based designs (Turner and",
+          "details": {
+            "reason": "unclosed_delimiter_or_quote"
+          },
+          "rank": 470
+        },
+        {
+          "severity": "error",
+          "issue_type": "suspicious_truncation",
+          "chapter": "chapter21",
+          "file": "data/structured/chapter21_015.json",
+          "block_index": 3,
+          "block_type": "discussion",
+          "sample": "In the animal-breeding literature, this equation is often more compactly written in terms of t, the phenotypic correlation between sibs (the intraclass correlation coefficient; see",
+          "sample_snippet": "In the animal-breeding literature, this equation is often more compactly written in terms of t, the phenotypic correlation between sibs (the intraclass correlation coefficient; see",
+          "details": {
+            "reason": "unclosed_delimiter_or_quote"
+          },
+          "rank": 471
+        },
+        {
+          "severity": "error",
+          "issue_type": "suspicious_truncation",
+          "chapter": "chapter24",
+          "file": "data/structured/chapter24_023.json",
+          "block_index": 6,
+          "block_type": "discussion",
+          "sample": "Equation 24.21a shows how the higher-order cumulants $ (K_{3} $ and above $ quantify departures from normality. If all of these are zero, the distribution is Gaussian.",
+          "sample_snippet": "Equation 24.21a shows how the higher-order cumulants $ (K_{3} $ and above $ quantify departures from normality. If all of these are zero, the distribution is Gaussian.",
+          "details": {
+            "reason": "unclosed_delimiter_or_quote"
+          },
+          "rank": 472
+        },
+        {
+          "severity": "error",
+          "issue_type": "suspicious_truncation",
+          "chapter": "chapter30",
+          "file": "data/structured/chapter30_027.json",
+          "block_index": 3,
+          "block_type": "discussion",
+          "sample": "The impact of publication bias, which is also called the \"file-drawer effect\" (Rosenthal",
+          "sample_snippet": "The impact of publication bias, which is also called the \"file-drawer effect\" (Rosenthal",
+          "details": {
+            "reason": "unclosed_delimiter_or_quote"
+          },
+          "rank": 473
+        }
+      ]
+    }
+  ]
+}

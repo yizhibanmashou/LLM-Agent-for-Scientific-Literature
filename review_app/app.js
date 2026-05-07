@@ -6,6 +6,7 @@ const DATA_FILES = {
 };
 
 const REVIEW_RECORDS_ENDPOINT = "./api/review-records";
+const ISSUE_TAXONOMY_ENDPOINT = "./api/issue-taxonomy";
 const STATUS_LABELS = {
   pending: "待确认",
   pass: "通过",
@@ -20,6 +21,43 @@ const STATUS_PRIORITY = {
   pending: 0,
   fail: 1,
   pass: 2,
+};
+const ISSUE_SEVERITY_LABELS = {
+  info: "信息",
+  warning: "警告",
+  error: "错误",
+  fatal: "致命",
+};
+const ISSUE_SCOPE_OPTIONS = [
+  ["text", "正文"],
+  ["inline_math", "inline 公式"],
+  ["display_math", "display 公式"],
+  ["formula_reference", "公式引用"],
+  ["table_reference", "表格引用"],
+  ["table", "表格"],
+  ["chunk", "chunk 切分"],
+  ["structure", "结构噪声"],
+];
+const FALLBACK_ISSUE_TAXONOMY = {
+  version: 1,
+  categories: [
+    { issue_code: "inline_math_damage", label: "inline 公式损坏", scope: "inline_math", severity: "error", status: "manual_only" },
+    { issue_code: "display_formula_damage", label: "display 公式损坏", scope: "display_math", severity: "error", status: "manual_only" },
+    { issue_code: "formula_reference_error", label: "公式引用错误", scope: "formula_reference", severity: "fatal", status: "manual_only" },
+    { issue_code: "formula_mention_not_linked", label: "公式提及未回链", scope: "formula_reference", severity: "warning", status: "manual_only" },
+    { issue_code: "table_reference_error", label: "表格引用错误", scope: "table_reference", severity: "fatal", status: "manual_only" },
+    { issue_code: "table_row_group_misattribution", label: "表格行归属错误", scope: "table", severity: "error", status: "manual_only" },
+    { issue_code: "table_cell_alignment_error", label: "表格单元格错位", scope: "table", severity: "error", status: "manual_only" },
+    { issue_code: "table_reference_target_error", label: "表格引用目标错误", scope: "table_reference", severity: "error", status: "manual_only" },
+    { issue_code: "table_structure_error", label: "表格结构问题", scope: "table", severity: "error", status: "manual_only" },
+    { issue_code: "duplicate_or_leaked_block", label: "重复/泄漏块", scope: "structure", severity: "warning", status: "manual_only" },
+    { issue_code: "chunk_split_error", label: "chunk 切分问题", scope: "chunk", severity: "warning", status: "manual_only" },
+    { issue_code: "chunk_boundary_error", label: "chunk 边界错误", scope: "chunk", severity: "warning", status: "manual_only" },
+    { issue_code: "ocr_garbled_text", label: "OCR 乱码", scope: "text", severity: "warning", status: "manual_only" },
+    { issue_code: "ghost_or_float_block", label: "ghost/[h] 噪声块", scope: "structure", severity: "error", status: "manual_only" },
+    { issue_code: "truncated_text", label: "文本截断", scope: "text", severity: "error", status: "manual_only" },
+    { issue_code: "placeholder_leak", label: "占位符/表格浮动残留", scope: "structure", severity: "error", status: "manual_only" },
+  ],
 };
 const CHUNK_HIGHLIGHT_META = [
   { semantic: "discussion", kind: "chunk_discussion", label: "Discussion" },
@@ -72,6 +110,7 @@ const DATA = {
 };
 
 let REVIEW_RECORDS = {};
+let ISSUE_TAXONOMY = FALLBACK_ISSUE_TAXONOMY;
 let SYNC_NOTICE = "未连接本地记录文件，当前先使用浏览器会话。";
 let PDF_STAGE_RESIZE_OBSERVER = null;
 let PDF_STAGE_RESIZE_TIMER = null;
@@ -99,6 +138,7 @@ async function initialize() {
   DATA.reviewLocators = reviewLocators || { chapters: {} };
   STATE.chapterId = review.default_chapter || review.chapters?.[0]?.id || null;
 
+  await hydrateIssueTaxonomy();
   await hydrateReviewRecords();
   await configurePdfJs();
   bindGlobalControls();
@@ -434,8 +474,66 @@ function currentItemsRaw() {
   return DATA.review?.data?.[STATE.chapterId]?.[STATE.viewId] || [];
 }
 
+function currentSourceVersion() {
+  const raw = DATA.review?.structured_source_version || DATA.review?.source_version || "current_data";
+  const cleaned = String(raw || "current_data")
+    .trim()
+    .replace(/[^\w.-]+/g, "_")
+    .replace(/^_+|_+$/g, "");
+  return cleaned || "current_data";
+}
+
 function recordKeyForItem(item) {
-  return item?.item_key || `${itemChapterId(item)}::${STATE.viewId}::${item?.id || ""}`;
+  const baseKey = item?.item_key || `${itemChapterId(item)}::${STATE.viewId}::${item?.id || ""}`;
+  const prefix = currentSourceVersion();
+  return String(baseKey).startsWith(`${prefix}::`) ? String(baseKey) : `${prefix}::${baseKey}`;
+}
+
+function recordForItem(item) {
+  return REVIEW_RECORDS[recordKeyForItem(item)] || null;
+}
+
+function normalizeIssuePayload(rawIssue) {
+  if (!rawIssue || typeof rawIssue !== "object") {
+    return null;
+  }
+  const issueCode = String(rawIssue.issue_code || "").trim();
+  const badSpan = String(rawIssue.bad_span || "").trim();
+  const expected = String(rawIssue.expected || "").trim();
+  const context = String(rawIssue.context || "").trim();
+  const targetId = String(rawIssue.target_id || "").trim();
+  const evidence = String(rawIssue.evidence || "").trim();
+  const note = String(rawIssue.note || "").trim();
+  if (!issueCode && !badSpan && !expected && !context && !targetId && !evidence && !note) {
+    return null;
+  }
+  const severity = ["info", "warning", "error", "fatal"].includes(String(rawIssue.severity || "").toLowerCase())
+    ? String(rawIssue.severity).toLowerCase()
+    : "warning";
+  return {
+    id: String(rawIssue.id || cryptoRandomId()).trim() || cryptoRandomId(),
+    issue_code: issueCode || "uncategorized",
+    issue_label: String(rawIssue.issue_label || "").trim(),
+    scope: String(rawIssue.scope || "").trim(),
+    severity,
+    bad_span: badSpan,
+    expected,
+    context,
+    target_id: targetId,
+    evidence,
+    note,
+    created_at: typeof rawIssue.created_at === "string" ? rawIssue.created_at : new Date().toISOString(),
+    item_snapshot: rawIssue.item_snapshot && typeof rawIssue.item_snapshot === "object" ? rawIssue.item_snapshot : {},
+  };
+}
+
+function slugIssueCode(value) {
+  const text = String(value || "")
+    .trim()
+    .toLowerCase()
+    .replace(/[^\w]+/g, "_")
+    .replace(/^_+|_+$/g, "");
+  return text || `issue_${cryptoRandomId().slice(0, 8)}`;
 }
 
 function normalizeRecordPayload(payload) {
@@ -466,9 +564,94 @@ function normalizeRecordPayload(payload) {
           })
           .filter(Boolean)
       : [];
-    records[String(key)] = { status, status_updated_at: statusUpdatedAt, notes };
+    const issues = Array.isArray(value.issues) ? value.issues.map(normalizeIssuePayload).filter(Boolean) : [];
+    records[String(key)] = { status, status_updated_at: statusUpdatedAt, notes, issues };
   });
   return records;
+}
+
+function normalizeCategory(rawCategory) {
+  if (!rawCategory || typeof rawCategory !== "object") {
+    return null;
+  }
+  const issueCode = slugIssueCode(rawCategory.issue_code || rawCategory.label || "");
+  if (!issueCode) {
+    return null;
+  }
+  const status = ["manual_only", "candidate", "active"].includes(String(rawCategory.status || "").toLowerCase())
+    ? String(rawCategory.status).toLowerCase()
+    : "manual_only";
+  const severity = ["info", "warning", "error", "fatal"].includes(String(rawCategory.severity || "").toLowerCase())
+    ? String(rawCategory.severity).toLowerCase()
+    : "warning";
+  const detector = rawCategory.detector && typeof rawCategory.detector === "object" ? rawCategory.detector : {};
+  const patterns = Array.isArray(detector.patterns) ? detector.patterns.map((pattern) => String(pattern)).filter(Boolean) : [];
+  return {
+    issue_code: issueCode,
+    label: String(rawCategory.label || issueCode).trim(),
+    scope: String(rawCategory.scope || "text").trim(),
+    description: String(rawCategory.description || "").trim(),
+    severity,
+    status,
+    aliases: Array.isArray(rawCategory.aliases) ? rawCategory.aliases.map((alias) => String(alias).trim()).filter(Boolean) : [],
+    examples: Array.isArray(rawCategory.examples) ? rawCategory.examples : [],
+    detector: {
+      mode: String(detector.mode || "regex").trim() || "regex",
+      patterns,
+    },
+  };
+}
+
+function normalizeTaxonomyPayload(payload) {
+  const source = payload && typeof payload === "object" ? payload : FALLBACK_ISSUE_TAXONOMY;
+  const seen = new Set();
+  const categories = (Array.isArray(source.categories) ? source.categories : FALLBACK_ISSUE_TAXONOMY.categories)
+    .map(normalizeCategory)
+    .filter((category) => {
+      if (!category || seen.has(category.issue_code)) {
+        return false;
+      }
+      seen.add(category.issue_code);
+      return true;
+    });
+  return {
+    version: Number(source.version || 1),
+    updated_at: typeof source.updated_at === "string" ? source.updated_at : new Date().toISOString(),
+    categories: categories.length ? categories : FALLBACK_ISSUE_TAXONOMY.categories,
+  };
+}
+
+async function hydrateIssueTaxonomy() {
+  try {
+    const response = await fetch(ISSUE_TAXONOMY_ENDPOINT, { cache: "no-store" });
+    if (response.ok) {
+      ISSUE_TAXONOMY = normalizeTaxonomyPayload(await response.json());
+      return;
+    }
+  } catch (error) {
+    console.warn("failed to load issue taxonomy", error);
+  }
+  ISSUE_TAXONOMY = normalizeTaxonomyPayload(FALLBACK_ISSUE_TAXONOMY);
+}
+
+async function persistIssueTaxonomy() {
+  try {
+    const payload = {
+      ...ISSUE_TAXONOMY,
+      updated_at: new Date().toISOString(),
+    };
+    const response = await fetch(ISSUE_TAXONOMY_ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`);
+    }
+    ISSUE_TAXONOMY = normalizeTaxonomyPayload(await response.json());
+  } catch (error) {
+    console.warn("failed to persist issue taxonomy", error);
+  }
 }
 
 async function hydrateReviewRecords() {
@@ -517,7 +700,14 @@ function ensureRecord(item) {
       status: "pending",
       status_updated_at: new Date().toISOString(),
       notes: [],
+      issues: [],
     };
+  }
+  if (!Array.isArray(REVIEW_RECORDS[key].issues)) {
+    REVIEW_RECORDS[key].issues = [];
+  }
+  if (!Array.isArray(REVIEW_RECORDS[key].notes)) {
+    REVIEW_RECORDS[key].notes = [];
   }
   return REVIEW_RECORDS[key];
 }
@@ -610,14 +800,26 @@ function renderReview() {
 function renderReviewStats(rows) {
   const root = document.getElementById("reviewStats");
   const counts = { pending: 0, pass: 0, fail: 0 };
+  const issueCounts = {};
+  let issueTotal = 0;
   rows.forEach((item) => {
     counts[statusOfItem(item)] += 1;
+    const record = recordForItem(item);
+    const issues = Array.isArray(record?.issues) ? record.issues : [];
+    issueTotal += issues.length;
+    issues.forEach((issue) => {
+      const code = issue.issue_code || "uncategorized";
+      issueCounts[code] = (issueCounts[code] || 0) + 1;
+    });
   });
+  const topIssue = Object.entries(issueCounts).sort((left, right) => right[1] - left[1])[0];
   root.innerHTML = [
     metricCard("总条目", String(rows.length), "当前章节 + 当前视图"),
     metricCard("待确认", String(counts.pending), "优先处理"),
     metricCard("不通过", String(counts.fail), "需要修订"),
     metricCard("通过", String(counts.pass), "审核完成"),
+    metricCard("问题记录", String(issueTotal), "结构化 issue"),
+    metricCard("高频分类", topIssue ? `${topIssue[0]} · ${topIssue[1]}` : "-", "当前列表"),
   ].join("");
 }
 
@@ -687,6 +889,100 @@ async function advanceSelectionAfterReview(currentItemId, preferredNextItemId) {
   await locateSelectedItemInPdf(true);
 }
 
+function taxonomyCategories() {
+  return Array.isArray(ISSUE_TAXONOMY?.categories) ? ISSUE_TAXONOMY.categories : [];
+}
+
+function categoryByCode(issueCode) {
+  return taxonomyCategories().find((category) => category.issue_code === issueCode) || null;
+}
+
+function issueRecordSnapshotForItem(item) {
+  return {
+    chapter: itemChapterId(item),
+    view: STATE.viewId,
+    item_id: item?.id || "",
+    item_key: item?.item_key || recordKeyForItem(item),
+    source_version: currentSourceVersion(),
+  };
+}
+
+function selectedTextForReviewDetail(root) {
+  const selection = window.getSelection?.();
+  if (!selection || selection.rangeCount === 0) {
+    return "";
+  }
+  const range = selection.getRangeAt(0);
+  if (!root.contains(range.commonAncestorContainer)) {
+    return "";
+  }
+  return String(selection.toString() || "").trim();
+}
+
+function issueHistoryHtml(record) {
+  const issues = Array.isArray(record?.issues) ? [...record.issues] : [];
+  issues.sort((left, right) => String(right.created_at).localeCompare(String(left.created_at)));
+  return issues
+    .map(
+      (issue) => `<article class="issue-card">
+        <div class="note-time">${escapeHtml(formatTime(issue.created_at))}</div>
+        <div class="issue-title">
+          <strong>${escapeHtml(issue.issue_label || issue.issue_code || "uncategorized")}</strong>
+          <span class="status-chip ${issue.severity === "fatal" || issue.severity === "error" ? "status-fail" : "status-pending"}">${escapeHtml(
+            ISSUE_SEVERITY_LABELS[issue.severity] || issue.severity || "警告"
+          )}</span>
+        </div>
+        <div class="small-text">${escapeHtml(`${issue.issue_code || "uncategorized"} · ${issue.scope || "-"} · ${issue.bad_span || "-"}`)}</div>
+        ${
+          issue.item_snapshot && typeof issue.item_snapshot === "object"
+            ? `<div class="small-text">来源：${escapeHtml(
+                [
+                  issue.item_snapshot.source_version || "-",
+                  issue.item_snapshot.chapter || "-",
+                  issue.item_snapshot.view || "-",
+                  issue.item_snapshot.item_id || "-",
+                ].join(" · ")
+              )}</div>`
+            : ""
+        }
+        ${issue.target_id ? `<div class="issue-target">目标/归属：${escapeHtml(issue.target_id)}</div>` : ""}
+        ${issue.expected ? `<div class="issue-expected">期望：${escapeHtml(issue.expected)}</div>` : ""}
+        ${issue.context ? `<div class="issue-context">${escapeHtml(issue.context)}</div>` : ""}
+        ${issue.evidence ? `<div class="issue-evidence">证据：${escapeHtml(issue.evidence)}</div>` : ""}
+        ${issue.note ? `<div class="issue-note">${escapeHtml(issue.note)}</div>` : ""}
+      </article>`
+    )
+    .join("");
+}
+
+function issueCategoryOptionsHtml(selectedCode = "") {
+  const categories = taxonomyCategories();
+  const options = categories
+    .map((category) => {
+      const label = `${category.label || category.issue_code} · ${category.scope || "text"} · ${category.status || "manual_only"}`;
+      const isSelected = category.issue_code === selectedCode;
+      return `<option value="${escapeHtml(category.issue_code)}"${isSelected ? " selected" : ""} data-scope="${escapeHtml(
+        category.scope || "text"
+      )}" data-label="${escapeHtml(category.label || category.issue_code)}" data-severity="${escapeHtml(
+        category.severity || "warning"
+      )}">${escapeHtml(label)}</option>`;
+    })
+    .join("");
+  return `<option value="">请选择分类</option>${options}<option value="__new__">新建分类…</option>`;
+}
+
+function issueScopeOptionsHtml(selectedScope = "") {
+  return ISSUE_SCOPE_OPTIONS.map(
+    ([value, label]) => `<option value="${escapeHtml(value)}"${value === selectedScope ? " selected" : ""}>${escapeHtml(label)}</option>`
+  ).join("");
+}
+
+function issueSeverityOptionsHtml(selectedSeverity = "warning") {
+  return Object.entries(ISSUE_SEVERITY_LABELS)
+    .map(([value, label]) => `<option value="${escapeHtml(value)}"${value === selectedSeverity ? " selected" : ""}>${escapeHtml(label)}</option>`)
+    .join("");
+}
+
 function renderReviewDetail(item) {
   const root = document.getElementById("reviewDetail");
   if (!item) {
@@ -705,6 +1001,7 @@ function renderReviewDetail(item) {
       </article>`
     )
     .join("");
+  const selectedCategoryCode = "";
 
   root.innerHTML = `
     <div class="card-header">
@@ -725,10 +1022,67 @@ function renderReviewDetail(item) {
         )
         .join("")}
     </div>
-    <div class="note-form">
-      <label for="noteInput">审核备注（每次保存都会追加到历史）</label>
-      <textarea id="noteInput" rows="2" placeholder="记录你发现的问题、修订建议、待确认点…"></textarea>
-      <button type="button" id="saveNoteBtn">保存备注</button>
+    <div class="issue-form">
+      <div class="issue-form-title">
+        <strong>审核记录</strong>
+        <span class="small-text">通过项可只点“通过”；不通过或待确认项建议补全下列表单。</span>
+      </div>
+      <div class="issue-form-grid">
+        <label>
+          问题分类
+          <select id="issueCategorySelect">${issueCategoryOptionsHtml(selectedCategoryCode)}</select>
+        </label>
+        <div id="newCategoryPanel" class="new-category-fields is-hidden">
+          <label>
+            新建分类代码
+            <input id="issueNewCode" type="text" placeholder="例如 table_row_group_misattribution" />
+          </label>
+          <label>
+            新建分类名称
+            <input id="issueNewLabel" type="text" placeholder="例如 表格行归属错误" />
+          </label>
+        </div>
+        <label>
+          问题范围
+          <select id="issueScopeSelect">${issueScopeOptionsHtml(categoryByCode(selectedCategoryCode)?.scope || "text")}</select>
+        </label>
+        <label>
+          严重级别
+          <select id="issueSeveritySelect">${issueSeverityOptionsHtml(categoryByCode(selectedCategoryCode)?.severity || "warning")}</select>
+        </label>
+        <label>
+          错误片段
+          <textarea id="issueBadSpan" rows="2" placeholder="选中文字后可一键填入"></textarea>
+        </label>
+        <label>
+          正确结果
+          <textarea id="issueExpected" rows="2" placeholder="应该是什么；可写正确公式、正确表格归属、正确 chunk 边界"></textarea>
+        </label>
+        <label>
+          上下文
+          <textarea id="issueContext" rows="2" placeholder="建议保留前后各一句，或表格相邻行/列"></textarea>
+        </label>
+        <label>
+          目标/归属
+          <input id="issueTargetId" type="text" placeholder="例如 formula 6.8 / table 6.1 / chapter6_004 后应回链" />
+        </label>
+        <label>
+          证据
+          <textarea id="issueEvidence" rows="2" placeholder="原文页码、Paddle/GLM 差异、表格行列位置、判断依据"></textarea>
+        </label>
+        <label>
+          审核说明/备注
+          <textarea id="issueNote" rows="2" placeholder="一句话说明问题和修复建议；无分类时会作为普通备注保存"></textarea>
+        </label>
+      </div>
+      <div class="issue-form-actions">
+        <button type="button" id="captureSelectionBtn">捕获选中文本</button>
+        <button type="button" id="saveIssueBtn">保存审核记录</button>
+      </div>
+      <div class="small-text">保存后会同步到本地 <code>review_records.json</code>。分类为空但备注非空时，只追加普通备注；选择分类后会写入结构化 issue。</div>
+    </div>
+    <div class="issue-history">
+      ${issueHistoryHtml(record) || '<div class="placeholder">暂无结构化问题记录。</div>'}
     </div>
     <div class="note-history">
       ${noteHistory || '<div class="placeholder">暂无备注历史。</div>'}
@@ -748,22 +1102,142 @@ function renderReviewDetail(item) {
     });
   });
 
-  const saveNoteButton = root.querySelector("#saveNoteBtn");
-  if (saveNoteButton) {
-    saveNoteButton.addEventListener("click", async () => {
-      const textarea = root.querySelector("#noteInput");
-      const text = String(textarea?.value || "").trim();
-      if (!text) {
+  const issueCategorySelect = root.querySelector("#issueCategorySelect");
+  const issueNewCode = root.querySelector("#issueNewCode");
+  const issueNewLabel = root.querySelector("#issueNewLabel");
+  const newCategoryPanel = root.querySelector("#newCategoryPanel");
+  const issueScopeSelect = root.querySelector("#issueScopeSelect");
+  const issueSeveritySelect = root.querySelector("#issueSeveritySelect");
+  const issueBadSpan = root.querySelector("#issueBadSpan");
+  const issueExpected = root.querySelector("#issueExpected");
+  const issueContext = root.querySelector("#issueContext");
+  const issueTargetId = root.querySelector("#issueTargetId");
+  const issueEvidence = root.querySelector("#issueEvidence");
+  const issueNote = root.querySelector("#issueNote");
+  const captureSelectionBtn = root.querySelector("#captureSelectionBtn");
+  const saveIssueBtn = root.querySelector("#saveIssueBtn");
+
+  const toggleNewCategoryPanel = () => {
+    if (newCategoryPanel) {
+      newCategoryPanel.classList.toggle("is-hidden", issueCategorySelect?.value !== "__new__");
+    }
+  };
+
+  const syncCategoryDefaults = () => {
+    const category = categoryByCode(issueCategorySelect?.value || "");
+    if (category) {
+      issueScopeSelect.value = category.scope || "text";
+      issueSeveritySelect.value = category.severity || "warning";
+    }
+  };
+  syncCategoryDefaults();
+  toggleNewCategoryPanel();
+
+  if (issueCategorySelect) {
+    issueCategorySelect.addEventListener("change", () => {
+      if (issueCategorySelect.value === "__new__") {
+        issueNewCode.value = "";
+        issueNewLabel.value = "";
+        issueScopeSelect.value = "text";
+        issueSeveritySelect.value = "warning";
+        toggleNewCategoryPanel();
         return;
       }
+      toggleNewCategoryPanel();
+      syncCategoryDefaults();
+    });
+  }
+
+  if (captureSelectionBtn && issueBadSpan) {
+    captureSelectionBtn.addEventListener("click", () => {
+      const text = selectedTextForReviewDetail(root);
+      if (text) {
+        issueBadSpan.value = text;
+      }
+    });
+  }
+
+  if (saveIssueBtn) {
+    saveIssueBtn.addEventListener("click", async () => {
+      const selectedCode = String(issueCategorySelect?.value || "").trim();
+      const selectedCategory = selectedCode && selectedCode !== "__new__" ? categoryByCode(selectedCode) : null;
+      const rawCustomCode = String(issueNewCode?.value || issueNewLabel?.value || "").trim();
+      const badSpan = String(issueBadSpan?.value || "").trim();
+      const expected = String(issueExpected?.value || "").trim();
+      const context = String(issueContext?.value || "").trim();
+      const targetId = String(issueTargetId?.value || "").trim();
+      const evidence = String(issueEvidence?.value || "").trim();
+      const note = String(issueNote?.value || "").trim();
+      const hasIssueDetail = Boolean(selectedCategory || rawCustomCode || badSpan || expected || context || targetId || evidence);
       const target = ensureRecord(item);
-      target.notes.push({
+
+      if (!hasIssueDetail) {
+        if (note) {
+          target.notes.push({
+            id: cryptoRandomId(),
+            text: note,
+            created_at: new Date().toISOString(),
+          });
+          await persistReviewRecords();
+          renderReview();
+        }
+        return;
+      }
+
+      if (!selectedCategory && !rawCustomCode) {
+        issueCategorySelect?.focus();
+        return;
+      }
+
+      const issueCode = selectedCategory ? selectedCategory.issue_code : slugIssueCode(rawCustomCode);
+      if (!issueCode) {
+        return;
+      }
+      const issueLabel = selectedCategory?.label || String(issueNewLabel?.value || issueCode).trim();
+      const scope = String(issueScopeSelect?.value || selectedCategory?.scope || "text").trim();
+      const severity = String(issueSeveritySelect?.value || selectedCategory?.severity || "warning").trim();
+      target.issues.push({
         id: cryptoRandomId(),
-        text,
+        issue_code: issueCode,
+        issue_label: issueLabel,
+        scope,
+        severity,
+        bad_span: badSpan,
+        expected,
+        context,
+        target_id: targetId,
+        evidence,
+        note,
         created_at: new Date().toISOString(),
+        item_snapshot: issueRecordSnapshotForItem(item),
       });
-      textarea.value = "";
       await persistReviewRecords();
+
+      if (!selectedCategory) {
+        const existing = categoryByCode(issueCode);
+        if (!existing) {
+          ISSUE_TAXONOMY.categories.push({
+            issue_code: issueCode,
+            label: issueLabel,
+            scope,
+            description: note || "",
+            severity,
+            status: "manual_only",
+            examples: badSpan ? [{ bad_span: badSpan, expected, context, target_id: targetId, evidence }] : [],
+            detector: { mode: "regex", patterns: [] },
+          });
+          await persistIssueTaxonomy();
+        }
+      } else {
+        const existing = categoryByCode(issueCode);
+        if (existing) {
+          existing.examples = Array.isArray(existing.examples) ? existing.examples : [];
+          if (badSpan) {
+            existing.examples.push({ bad_span: badSpan, expected, context, target_id: targetId, evidence });
+          }
+          await persistIssueTaxonomy();
+        }
+      }
       renderReview();
     });
   }

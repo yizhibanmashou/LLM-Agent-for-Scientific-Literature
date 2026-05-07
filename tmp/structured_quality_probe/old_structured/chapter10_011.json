@@ -1,0 +1,53 @@
+{
+  "id": "chapter10_011",
+  "metadata": {
+    "chapter": "chapter10",
+    "section": "Chapter 10: The McDonald-Kreitman (MK) Test: Basics",
+    "subsections": [
+      "The McDonald-Kreitman (MK) Test: Basics"
+    ],
+    "source_file": "data\\paddle_output\\chapter10_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "10.6c"
+    ],
+    "table_references": [
+      "inline_5"
+    ],
+    "table_reference_keys": [
+      "chapter10:inline_5"
+    ],
+    "structured_repair": {
+      "version": "source_inline_math_v1",
+      "actions": {
+        "replace_from_source": 3
+      }
+    }
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Example 10.7. Consider Le Corre et al.'s data on the FRI gene (Example 10.5). For exon 1, the neutrality index is $$ NI=\\frac{P_{a}/D_{a}}{P_{s}/D_{s}}=\\frac{16/38}{2/30}=6.42 $$ showing that the significant result is due to an excess of segregating replacement sites. Conversely, for exons 2 and 3 $$ NI=\\frac{5/30}{5/29}=0.97 $$ suggesting a good fit to the neutral model, with neither an excess of polymorphic site nor of fixed replacement sites."
+    },
+    {
+      "type": "discussion",
+      "content": "Our interpretation of the signal in exon 1 was as a sign of ongoing selection of alleles for earlier flowering (Example 10.5). However, the NI value is also consistent with an excess of slightly deleterious alleles in this region, thus inflating the levels of replacement polymorphisms. The lack of such a signal in exons 2 and 3 argues against this, but it remains a formal possibility that slightly weaker selection in exon 1 (relative to exons 2 and 3), coupled with a genomewide reduction in $ N_{e} $, could account for the excess polymorphism in exon 1. However, evidence for a recent population expansion argues against this."
+    },
+    {
+      "type": "discussion",
+      "content": "This discussion raises the more general question of how often we can safely use the MK test to detect signatures of ongoing positive selection. For example, what is the impact of an ongoing hard sweep? This would greatly reduce the number of all segregating sites (both silent and replacement), and hence give the MK test little, if any, power. Generally speaking, the safest interpretation of excess replacement polymorphisms is that they are slightly deleterious. Example 10.6 shows that additional information is required to make a case that these segregating sites are beneficial. Further, such an excess is expected only in rare settings, such as a multiple-origins soft sweep, in the case of FRI likely fueled by a large mutational target size (simple deactivation of a function) to produce the putatively favored phenotype (early flowering)."
+    },
+    {
+      "type": "discussion",
+      "content": "|c|c| Cell 1 & Cell 2 \\\\ Cell 3 & Cell 4 \\\\ As in Example 10.6, this analysis differs from a standard MK test, as the values for a large number of loci are aggregated into a single table. The resulting p value, $ <10^{-16} $, was highly significant, meaning that the neutral model is rejected."
+    },
+    {
+      "type": "discussion",
+      "content": "What is the source of the discrepancy? Equation 10.6a gives the neutrality index as $$ NI=\\frac{P_{a}/D_{a}}{P_{s}/D_{s}}=\\frac{14,311/20,467}{15,750/34,099}=1.514 $$ showing that the lack-of-fit to the neutral model is driven by an excess of replacement polymorphisms (SNPs). The authors suggest that these polymorphisms are mainly deleterious, a view echoed by Hughes et al. (2003). Consistent with this conclusion, in an analysis of ~47,500 replacement SNPs in a sample of 35 humans, Boyko et al. (2008) used the site-frequency spectrum to estimate that 27–29 the power of MK tests. Indeed, Charlesworth and Eyre-Walker (2008) noted that because of excessive replacement polymorphisms, MK tests in humans are very underpowered."
+    },
+    {
+      "type": "derivation",
+      "content": "While commonly used, the approach in Examples 10.6 and 10.8 of summing the MK tables for single genes to create a single grand MK table for the entire genome is potentially problematic because of the Yule-Simpson effect (Yule 1903; Simpson 1951), also known as Simpson's paradox (Blyth 1972). This is a well-known statistical phenomena wherein the results of individual $ 2 \\times 2 $ contingency tables suggest a trend in one direction, whereas their amalgamated table suggests a trend in the opposite direction (reviewed by Good and Mittal 1987). More generally, the (unweighted) average of the odds ratios over individual tables is different from the odds ratio in the amalgamated table. This discrepancy commonly arises when there are large disparities in the sample sizes over individual tables. For MK data, this is expected when there are large between-gene differences in the number of replacement substitutions ( $ D_{a} $). To avoid this issue, Stoletzki and Eyre-Walker (2011) suggested using a weighted approach proposed by Tarone (1981) and Greenland (1982) for combining the odds ratio over general $ 2 \\times 2 $ contingency tables, [[SEE_FORMULA:10.6c]] where i denotes the ith gene. This index is defined for all genes that show any silent-site variation (either $ P_s $ or $ D_s $ is nonzero), and also weights each gene by its total silent-site sample variation ( $ P_s + D_s $)."
+    }
+  ]
+}

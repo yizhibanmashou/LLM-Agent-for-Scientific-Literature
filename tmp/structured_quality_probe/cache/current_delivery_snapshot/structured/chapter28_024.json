@@ -1,0 +1,72 @@
+{
+  "id": "chapter28_024",
+  "metadata": {
+    "chapter": "chapter28",
+    "section": "Chapter 28: Effects of Linkage and Mating Systems",
+    "subsections": [
+      "Summary: Implications of Gaussian Versus HCA Approximations"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter28_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "28.25a",
+      "28.25b",
+      "28.25c",
+      "28.25d",
+      "28.25e",
+      "28.26a",
+      "28.26b",
+      "28.26c",
+      "28.26d",
+      "28.26e",
+      "28.26f",
+      "28.26g",
+      "28.26h",
+      "28.27a",
+      "28.27b"
+    ],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Thus, if many alleles are segregating, the differences between the frequencies of adjacent allele are small, we can approximate the rightmost term in Equation 28.24c by the second derivation of $p_j$ with respect to $t$, and Equation 28.24c becomes Kimura's Gaussian approximation (28.22c). Conversely, if selection is strong relative to mutation, there are typically only three alleles (one that is favored and the two single-step mutations), where $p_0$ is large and $p_{-1} = p_1$ are small. This is Turelli's triallelic model (Equation 28.13a), yielding $p_{-1} = p_1 = V_s\\mu/a^2$ (Equation 28.13b), for a variance of $\\sigma^2(x) = 2V_s\\mu$, thus recovering the HCA results."
+    },
+    {
+      "type": "derivation",
+      "content": "Example 28.7. A potential deficiency in Kimura’s (1965a) mutation-selection balance model is that it is a one-locus haploid analysis extrapolated to n diploid loci by assuming no linkage effects. Lande (1975) attempted to remedy this by considering a model for a single trait with n underlying, potentially linked, loci under Gaussian stabilizing selection. (This paper is often cited as Lande 1976, as although his paper appeared in late 1975, the listed journal publication date was 1976.) In order to fully account for linkage effects, Lande followed the change over time in the covariances between the allelic effects at loci i and j in the maternal gamete and between those at $ i' $ and $ j' $ in the paternal gamete. We use the notation from Equation 16.1b, with $ C_{ij} = \\sigma \\left(x^{(i)}, x^{(j)} \\right) $ denoting the covariance between the effects of alleles at loci i and j. Random mating ensures that in each generation zygotes start with zero covariances between alleles residing on different gametes (i.e., $ C_{ij'} = C_{i'j} = 0 $). However, because of linkage disequilibrium, the corresponding covariances $ C_{ij} $ and $ C_{i'j'} $ for loci on the same gamete are nonzero. Further, we expect selection to generate covariances between loci from different gametes, so [[SEE_FORMULA:28.25a]] where $ C_{s} $ denotes a covariance following selection. Assuming the incremental model, the change from mutation is [[SEE_FORMULA:28.25b]] meaning that mutation changes the variances but not the covariances. Finally, let $ r_{ij} $ denote the recombination fraction between loci. Combining the joint actions of selection, recombination, and mutation (operating in that order) yields [[SEE_FORMULA:28.25c]]"
+    },
+    {
+      "type": "derivation",
+      "content": "The last term accounts for mutation, while the first two account for recombination as follows. With probability $ 1 - r_{ij} $, loci i and j do not recombine, passing their covariance after selection, $ C_{ij}(t)_s $, to their gametes, while with probability $ r_{ij} $ recombination does occur, with the covariance between $i$ and $j$ in a gamete equaling the between-gamete covariance following selection, $B_{ij}(t)$. (A notational aside is that, as in Chapter 24, we depart from using $c_{ij}$ and instead use $r_{ij}$ for recombination rates to avoid confusion with the $C_{ij}$ terms.) Because the Cij(t) determine the additive variance at generation t, let [[SEE_FORMULA:28.25d]] denote the genetic variation that is due to locus i (the factor of two arises because $ C_{ij} $ is a covariance of single allelic effects, with both alleles contributing to the genetic variance; see Equation 16.1a). Recalling Equation 16.1a, the total additive variance at time t is [[SEE_FORMULA:28.25e]]"
+    },
+    {
+      "type": "proposition",
+      "content": "In order to proceed, we need to compute the covariance, $ C_s $, among alleles on the same gamete, and the covariance, $ B $, among alleles on different gametes, after selection. Following Lande, we do so by considering the $ n \\times n $ matrices $ \\mathbf{C}_s(t) $, $ \\mathbf{B}(t) $, and $ \\mathbf{C}(t) $ for the $ C_{ij}(t)_s $, $ B_{ij}(t) $ and $ C_{ij}(t) $ elements. Lande's key assumption is that the joint distribution of allelic affects for the $ n $ loci in a gamete is multivariate normal (MVN) before selection. Under Gaussian stabilizing selection, it remains normal after selection. However, Equation 28.25c shows that the distribution of allelic effects following recombination is the weighted sum of two normals (with differing variances), which is not normal (Felsenstein 1977; Fleming 1979; Nagylaki 1984; Turelli 1984; Bürger 1986). Hence, the assumption of multivariate normality is an approximation, a point that Lande himself stressed. The same issue holds with mutation, where even if the mutational increments are Gaussian, Equation 28.25c again becomes a weighted sum of Gaussians, and hence is not strictly normal."
+    },
+    {
+      "type": "derivation",
+      "content": "Under a MVN, the joint distribution of the vectors x and $ x' $ of maternal and paternal allelic effects in a newly formed zygote are also MVN, with covariance matrix [[SEE_FORMULA:28.26a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "The matrix 0 of zeros on the off-diagonals corresponds to independent union of gametes (random mating), with the nonzero diagonal matrices, $ \\mathbf{C}(t) $, corresponding to the variances and LD structure (covariances) within each gamete. After Gaussian stabilizing selection, this covariance matrix becomes [[SEE_FORMULA:28.26b]] and the task is to compute the elements of $ \\mathbf{K}(t) $. Under Gaussian stabilizing selection (with an optimal value of zero), the fitness of individuals with genotypic value $ g = \\sum(x_i + x_i') $ is [[SEE_FORMULA:28.26c]] where 1 is an $ n \\times n $ matrix of ones (i.e., $ 1_{ij} = 1 $)."
+    },
+    {
+      "type": "derivation",
+      "content": "The distribution of allelic effects after selection is proportional to the product of the maternal and paternal allelic-effect density functions (the independence of these follows because we assumed random mating) times their resulting fitness, yielding [[SEE_FORMULA:28.26d]] Because all three terms contain exponentials of quadratic products, the resulting exponential term is the sum of the quadratic products. The quadratic product in W is given by Equation 28.26c, while the two quadratic products associated with the MVN density functions are of the form $ [\\mathbf{x} - \\boldsymbol{\\mu}] \\mathbf{C}^{-1} [\\mathbf{x} - \\boldsymbol{\\mu}]^T $ (LW Equation 8.24). Because the remaining terms are constants with respect to $ \\mathbf{x} $ and $ \\mathbf{x}' $, the product given by Equation 28.26d is proportional to $ \\exp(-F/2) $, where $ F $ equals the sum of the quadratic products [[SEE_FORMULA:28.26e]] Because the resulting distribution of allelic effects after selection is also MVN with co-variance matrix K, it has an associated quadratic product of [[SEE_FORMULA:28.26f]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Our task is to find the value of K such that Equation 28.26f recovers Equation 27.26e. Matching terms yields [[SEE_FORMULA:28.26g]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Lande noted that because $ KK^{-1} = I $, Equations 28.26b and 28.26e imply [[SEE_FORMULA:28.26h]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Solving this system of equations gives [[SEE_FORMULA:28.27a]] [[SEE_FORMULA:28.27b]]"
+    }
+  ]
+}

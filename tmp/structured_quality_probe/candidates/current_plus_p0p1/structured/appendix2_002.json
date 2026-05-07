@@ -1,0 +1,20 @@
+{
+  "id": "appendix2_002",
+  "metadata": {
+    "chapter": "appendix2",
+    "section": "WHY ARE BAYESIAN METHODS BECOMING MORE POPULAR?",
+    "subsections": [
+      "WHY ARE BAYESIAN METHODS BECOMING MORE POPULAR?"
+    ],
+    "source_file": "tmp\\paddle_output\\appendix2_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "In addition to providing a more formal framework for dealing with parameter uncertainty, two specific features have fueled the rapid growth of Bayesian approaches in genetics and genomics. First, under a Bayesian analysis, all parameters are random effects as opposed to fixed effects (Chapter 19). This has profound implications for degrees of freedom. Consider a gene expression study with 30,000 features (genes of interest), whose mRNA levels are contrasted over a set of 100 normal liver cells versus 100 cancerous ones. If we treat the differential expression level of any particular gene as a fixed effect (an unknown constant to be estimated) we will very quickly use all of the degrees of freedom, given the small sample size. Conversely, if these levels are treated as random effects, with the expression difference associated with a particular gene being a random variable drawn from some underlying (and unknown) distribution, then the only degrees of freedom lost will be those used to estimate the associated parameters for this underlying distribution. Further, prediction of the random realization that corresponds to a particular gene borrows information over all the genes. Thus, a Bayesian analysis can handle high-dimensional experiments in which the number of parameters, p, greatly exceeds the number of observations, n, in a framework that fully manages the uncertainty over all these estimates. Second, Bayesian methods are computationally feasible, as approaches such as MCMC (Appendix 3) allow high-dimensional datasets to be analyzed in a computationally efficient manner. In settings with a large number of nuisance parameters or a high-dimensional dataset, a Bayesian approach not only has considerable appeal, it may be the only approach that is even feasible."
+    }
+  ]
+}

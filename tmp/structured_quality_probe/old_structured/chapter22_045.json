@@ -1,0 +1,68 @@
+{
+  "id": "chapter22_045",
+  "metadata": {
+    "chapter": "chapter22",
+    "section": "Chapter 22: Much Ado About Nothing?",
+    "subsections": [
+      "Group and Kin Selection in the Associative-effects Framework"
+    ],
+    "source_file": "data\\paddle_output\\chapter22_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "22.66",
+      "22.67a",
+      "22.67b",
+      "22.67c",
+      "22.67d"
+    ],
+    "table_references": [],
+    "structured_repair": {
+      "version": "source_inline_math_v1",
+      "actions": {
+        "replace_from_source": 1
+      }
+    }
+  },
+  "blocks": [
+    {
+      "type": "proposition",
+      "content": "The class of models just considered assumes that trait values are not influenced by associative effects (i.e., no $ A_{s,j} $ terms appear in expression for $ z_i $), but does allow for fitnesses to be influenced by the trait values of group members (Equations 22.59a and 22.62a). Under this assumption, the response to social selection only deviates from the breeder's equation when the product $ g_r $ is nonzero. When associative effects are present in the trait ( $ \\sigma^2(A_s) > 0 $), both the trait value and fitness of the focal individual may be functions of the genotypes in the group. In this case, kin and group selection (r and g) play symmetric roles, and when either is nonzero, response can deviate from the breeder's equation. Indeed, even when $ r = g = 0 $, response can still deviate from the breeder's equation (e.g., Equation 22.11a). Hence, the addition of trait associative effects introduces a profound change in the behavior of the selection-response model. We first formally present the expected response to selection and then explore the source of this rather different behavior in the presence of trait associative effects by considering the contributions to response from direct and associative fitnesses."
+    },
+    {
+      "type": "derivation",
+      "content": "When associative effects are present ( $ A_{s} $ terms appear), from Equation 22.1b the index I becomes [[SEE_FORMULA:22.66]]"
+    },
+    {
+      "type": "derivation",
+      "content": "When associative effects are present, Equation 22.1e shows that the expected response is the change in the mean of total breeding value, $ A_T = A_d + (n - 1)A_s $, where $ A_d $ and $ A_s $ are the direct and social breeding values. Recalling Equation 22.60b ( $ w_i = \\beta_{w_d|z}I_i + \\epsilon_i $), applying the Price Equation, assuming that $ \\sigma(\\epsilon_i, A_{T_i}) = 0 $ and no transmission bias, we obtain [[SEE_FORMULA:22.67a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Substituting the expression for $ \\sigma(A_{T_i}, I_i) $ given by Equation 22.29d into Equation 22.67a yields [[SEE_FORMULA:22.67b]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Equivalently, we could have used a breeder’s equation framework (Equation 22.28d) by recalling that for $ w_i = \\beta_{w_d|z} I_i + \\epsilon_i $ (Equation 22.60b), the regression slope can be expressed as $$ \\beta_{w_{d}|z}=\\frac{\\sigma(w,I)}{\\sigma^{2}(I)}=\\frac{S_{I}}{\\sigma(I)}\\frac{1}{\\sigma(I)}=\\frac{\\bar{\\imath}_{I}}{\\sigma(I)} $$ recovering Equation 22.28d."
+    },
+    {
+      "type": "discussion",
+      "content": "Note the completely symmetric roles of relatedness (r) and levels-of-selection (g) in Equation 22.67b. The term in the second set of square brackets can be negative, resulting in R and $ \\beta $ potentially having opposite signs (and hence a maladaptive response). Increasing either relatedness, r, or the amount of weight, g, on the other individuals within the group results in increased weight on the $ \\sigma^{2}(A_{T}) $ term, which is always nonnegative, increasing the chance of congruence between the signs of R and $ \\beta $. Finally, there is a synergistic effect between r and g in groups of size greater than two, in that the product $ (n - 2)gr $ weights $ \\sigma^{2}(A_{T}) $. Bijma and Wade note that this occurs because n - 2 is the number of group members that two individuals have in common."
+    },
+    {
+      "type": "discussion",
+      "content": "Let's now examine Equation 22.67b for a couple of special cases. First (as expected) in the absence of heritable social effects ( $ \\sigma^{2}(A_{s})=0 $), then $ \\sigma^{2}(A_{T})=\\sigma^{2}(A_{d}) $ and $ \\sigma(A_{d},A_{s})=0 $, with Equation 22.67b reducing to $$ R=\\beta_{w_{d}|z}\\sigma^{2}(A_{d})\\left[1+(n-1)g r\\right] $$ which recovers Equation 22.61a, showing that (in this case) both relatedness and multilevel selection are required for the response to deviate from the breeder’s equation."
+    },
+    {
+      "type": "derivation",
+      "content": "Now suppose that heritable social effects are present, but interacting group members are unrelated. Here r = 0 and Equation 22.67b reduces to [[SEE_FORMULA:22.67c]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Hence, when associative effects on the phenotype occur ( $ \\sigma^2(A_s) > 0 $), relatedness is not required for traits with social effects to show a deviation in response from that predicted from the breeder's equation. Likewise, if $ g = 0 $ and $ r > 0 $, we see from Equation 22.67b that Equation 22.67c applies, provided that $ g $ is now replaced by $ r $. Hence, when relatedness among group members is present ( $ r \\neq 0 $), multilevel selection is not needed ( $ g = 0 $) for deviation from the breeder's equation."
+    },
+    {
+      "type": "derivation",
+      "content": "Finally, in the absence of both kin and group selection $ (g = r = 0) $, Equation 22.67b reduces to [[SEE_FORMULA:22.67d]] where the first term in the last equality is the standard breeder's equation (in Lande equation form; Equation 13.8c). Hence, the presence of associative effects, by themselves, are sufficient to produce deviations from the breeder's equation even in the absence of kin or group selection, provided the direct and social breeding values are correlated. This point was highlighted earlier in the chapter."
+    }
+  ]
+}

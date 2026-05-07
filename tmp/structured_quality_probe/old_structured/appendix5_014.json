@@ -1,0 +1,42 @@
+{
+  "id": "appendix5_014",
+  "metadata": {
+    "chapter": "appendix5",
+    "section": "Implications for the Multivariate Normal Distribution",
+    "subsections": [
+      "Implications for the Multivariate Normal Distribution"
+    ],
+    "source_file": "data\\paddle_output\\appendix5_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "structured_repair": {
+      "version": "source_inline_math_v1",
+      "actions": {
+        "replace_from_source": 5
+      }
+    }
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Recall the probability density function for the multivariate normal distribution (LW Chapter 8) $$ \\begin{align*}\\phi(\\mathbf{x})=(2\\pi)^{-n/2}\\left|\\mathbf{V}_{\\mathbf{x}}\\right|^{-1/2}\\exp\\left[-{1\\over2}(\\mathbf{x}-\\boldsymbol{\\mu})^{T}\\mathbf{V}_{\\mathbf{x}}^{-1}\\left(\\mathbf{x}-\\boldsymbol{\\mu}\\right)\\right]\\end{align*} $$ Because only the quadratic product in the exponential varies with x, surfaces of equal probability for MVN distributed vectors satisfy $$ \\left(\\mathbf{x}-\\boldsymbol{\\mu}\\right)^{T}\\mathbf{V}_{\\mathbf{X}}^{-1}\\left(\\mathbf{x}-\\boldsymbol{\\mu}\\right)=c^{2} $$ From the discussion following Equation A5.17c, these surfaces are $n$-dimensional ellipsoids centered at $\\mu$ whose axes of symmetry are given by the principal components (the eigenvectors) of the covariance matrix, $\\mathbf{V}_{\\mathbf{x}}$. The length of the ellipsoid along the $i$th axis is $c\\sqrt{\\lambda_{i}}$ where $\\lambda_{i}$ is the eigenvalue associated with the eigenvector $\\mathbf{e}_{i}$ (Figure A5.6)."
+    },
+    {
+      "type": "discussion",
+      "content": "Equation A5.18b motivates the Mahalanobis distance $$ D=\\sqrt{\\left(\\mathbf{x}-\\boldsymbol{\\mu}\\right)^{T}\\mathbf{V}_{\\mathbf{X}}^{-1}\\left(\\mathbf{x}-\\boldsymbol{\\mu}\\right)} $$ which measures the distance of a point from its mean $ \\mu $, correcting for its covariance structure, $ V_X $ (Mahalanobis 1938). As we detail shortly, $ D $ provides one metric for tests of multivariate normality."
+    },
+    {
+      "type": "discussion",
+      "content": "Applying the canonical transformation (Equation A5.15a), we can change coordinate systems by a rigid rotation to remove any correlations between the variables in x. If $ x \\sim \\text{MVN}(\\mu, \\mathbf{V}_x) $, then for $ y = \\mathbf{U}^T(\\mathbf{x} - \\boldsymbol{\\mu}) $, it follows that $$ \\mathbf{y}\\sim MVN(\\mathbf{0},\\boldsymbol{\\Lambda}) $$ where A and U are the matrices defined by Equations A5.10b and A5.10bc for the diagonalization of $ V_x $. In particular, $$ y_{i}=\\mathbf{e}_{i}^{T}(\\mathbf{x}-\\boldsymbol{\\mu})\\qquad\\mathrm{w h e r e}\\quad y_{i}\\sim\\mathrm{N}(0,\\lambda_{i}) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Note from Equation A5.20a that because the $ y_{i} $ are uncorrelated, they are also independent as the joint probability density is the product of n individual univariate normal densities. We can further transform the original vector by taking $$ z_{i}=\\frac{\\mathbf{e}_{i}^{T}(\\mathbf{x}-\\boldsymbol{\\mu})}{\\sqrt{\\lambda_{i}}}\\qquad\\mathrm{g i v i n g}\\qquad z_{i}\\sim\\mathrm{N}(0,1) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Applying the transformation $$ \\mathbf{z}=A^{-1/2}\\mathbf{U}^{T}(\\mathbf{x}-\\boldsymbol{\\mu}) $$ results in $ \\mathbf{z} \\sim \\text{MVN}(\\mathbf{0}, \\mathbf{I}) $, namely that the $ n $ elements of the vector $ \\mathbf{y} $ are each independent unit normal random variables."
+    }
+  ]
+}

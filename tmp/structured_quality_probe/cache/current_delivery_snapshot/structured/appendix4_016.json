@@ -1,0 +1,61 @@
+{
+  "id": "appendix4_016",
+  "metadata": {
+    "chapter": "appendix4",
+    "section": "FDR: THE FALSE-DISCOVERY RATE",
+    "subsections": [
+      "Morton's Posterior Error Rate (PER) and the FDR"
+    ],
+    "source_file": "tmp\\paddle_output\\appendix4_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [
+      "inline_3"
+    ],
+    "table_reference_keys": [
+      "appendix4:inline_3"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Morton's Posterior Error Rate (PER) and the FDR Table A4.1 reminds the reader of the various test parameters that arise when multiple comparisons are considered. We now show how these are related. First, the relationship between $ \\alpha, \\pi $ and F is as follows. Suppose we have set the false-positive rate (i.e., the Type-I error rate) for an individual test at $ \\alpha $ . Such a p-value threshold only guarantees that the expected number of false positives is bounded above by $ E[F]\\leq\\alpha\\cdot n $ . For n independent tests, a $ \\pi $ -level experiment-wide false-positive error (setting $ \\alpha=\\pi/n $ ; namely, the Bonferroni correction) implies that $ \\operatorname* {Pr}(F\\geq 1)\\leq\\pi $ , i.e., the probability of at least one false positive is no greater than $ \\pi $ . To show how $ \\alpha, \\beta, \\pi_{0} $ , and $ \\delta $ are related, we first need to introduce the concept of the posterior error rate. Fernando et al. (2004) and Manly et al. (2004) both noted that FDR measures are closely"
+    },
+    {
+      "type": "discussion",
+      "content": "Fernando et al. (2004) and Manly et al. (2004) both noted that FDR measures are closely"
+    },
+    {
+      "type": "discussion",
+      "content": "[h] |c|c| Cell 1 & Cell 2 \\\\ Cell 3 & Cell 4 \\\\ related to Morton’s (1955) posterior error rate (PER), originally introduced in the context of linkage analysis in humans (this is also referred to as the false positive report probability [FPRP]; Wacholder et al. 2004). Morton’s PER is simply the probability that a single significant test is a false positive, $$ PER=Pr(F=1\\mid S=n=1) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The connection between the FDR and the PER is that if we set the FDR to $ \\delta $ , then the PER for a randomly drawn significant test is also $ \\delta $ ."
+    },
+    {
+      "type": "discussion",
+      "content": "Framing tests in terms of the PER highlights the screening paradox: “Type-I error control may not lead to a suitably low PER” (Manly et al. 2004). For example, we might choose $ = 0.05 $, but the PER may be far higher, which means that a test that is declared to be significant may have a much larger probability than 5 $$ PER=Pr(F=1\\mid S=n=1)=\\frac{Pr(false positive\\mid null true)\\cdot Pr(null)}{Pr(S=n=1)} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Consider the numerator of Equation A4.13 first. Let $ _0 = n_0/n $ be the fraction of all hypotheses that are truly null. The probability that a null is declared significant is simply the Type-I error, $ $, hence $$ \\Pr(false positive\\mid null true)\\cdot\\Pr(null)=\\alpha\\cdot\\pi_{0} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Turning to the denominator of Equation A4.13, what is the probability that a single (randomly chosen) test will be declared significant, $ (S = n = 1) $? This event can occur because we choose to test a hypothesis that is truly null $ (_0) $ and have a Type-I error $ () $, or because we choose to test a hypothesis that is truly false $ (- _0) $ and avoid a Type-II error. For the latter, the power is simply $ T/n_1 $, the fraction of all tests under the alternative that is declared to be significant. If we write the power as $ 1 - $ ($ $ is the Type-II error), the resulting probability that a single (randomly drawn) test is significant is $$ \\Pr(S=n=1)=\\alpha\\pi_{0}+(1-\\beta)(1-\\pi_{0}) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Substituting Equations A4.14a and A4.14b into Equation A4.13 yields $$ PER=\\frac{\\alpha\\cdot\\pi_{0}}{\\alpha\\cdot\\pi_{0}+\\left(1-\\beta\\right)\\cdot\\left(1-\\pi_{0}\\right)}=\\left(1+\\frac{\\left(1-\\beta\\right)\\cdot\\left(1-\\pi_{0}\\right)}{\\alpha\\cdot\\pi_{0}}\\right)^{-1} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "[h]"
+    },
+    {
+      "type": "discussion",
+      "content": "Figure A4.5 plots Equation A4.15a for various values of $ \\pi_{0} $ and $ \\beta. $"
+    }
+  ]
+}

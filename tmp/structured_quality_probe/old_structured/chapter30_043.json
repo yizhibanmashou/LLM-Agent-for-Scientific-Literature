@@ -1,0 +1,67 @@
+{
+  "id": "chapter30_043",
+  "metadata": {
+    "chapter": "chapter30",
+    "section": "Chapter 30: Group Selection Is Likely Density-Dependent",
+    "subsections": [
+      "Selection Differentials Can Be Misleading in Levels of Selection"
+    ],
+    "source_file": "data\\paddle_output\\chapter30_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "30.36",
+      "30.37a",
+      "30.37b"
+    ],
+    "table_references": [
+      "30.2"
+    ],
+    "table_reference_keys": [
+      "chapter30:30.2"
+    ],
+    "structured_repair": {
+      "version": "source_inline_math_v1",
+      "actions": {
+        "replace_from_source": 3
+      }
+    }
+  },
+  "blocks": [
+    {
+      "type": "derivation",
+      "content": "Price (1972a) and Wade (1985) showed how to decompose the selection differential into individual and group components. They did so by using the Robertson-Price identity (Equation 6.10), which states that the within-generation change in a trait can be written as its covariance with relative fitness, $ S = \\sigma(w, z) $. This also holds more generally for levels of selection. Suppose we let $ w_{ij} $ and $ z_{ij} $ denote, respectively, the fitness and phenotype of the jth individual in group i. Using the definition of the covariance, Price showed that the total selection differential can be decomposed as [[SEE_FORMULA:30.36]]"
+    },
+    {
+      "type": "discussion",
+      "content": "The first term is the covariance between individual phenotype and fitness within a group, and we take its average over all groups to obtain the within-group covariance between individual value and fitness. The second term is the covariance between the mean trait value, $ \\overline{z}_{i} $, and the mean fitness, $ \\overline{w}_{i} $, of the group. Equation 30.36 decomposes the selection differential into components from individual effects within groups and components from group effects."
+    },
+    {
+      "type": "definition",
+      "content": "Motivated by Equation 30.36, Price suggested that group selection implies a nonzero covariance between the mean trait value and mean fitness of groups, namely, $ \\sigma(\\overline{z}_i, \\overline{w}_i) \\neq 0 $. Under this definition, group selection cannot occur if there are no among-group differences in mean fitness. While this sounds reasonable, as we will see shortly, there are indeed situations where each group has the same mean fitness but there is still selection on the group means. Hence, group selection can occur even when the covariance between mean trait value and mean fitness is zero. Likewise, even when there is selection only on individual phenotypes, if group means differ, then (as we will show shortly) one can easily get a nonzero value for $ \\sigma(\\overline{z}_i, \\overline{w}_i) $."
+    },
+    {
+      "type": "definition",
+      "content": "Hence, this covariance definition (a nonzero group selection differential) for group selection is misleading, as one can have a group selection differential of zero when group selection is occurring, and a nonzero group selection differential when it is not. The root cause of this is a familiar problem: selection on phenotypically correlated traits can modify the selection differential of a focal trait, in the extreme showing an indirect response (nonzero S) when there is no direct selection on the trait. This also applies when considering selection differentials on group means. Indeed, by analogy to using a multiple regression to control for correlated traits, this was the motivation of Heisler and Damuth (1987; also Goodnight et al. 1992) for using contextual analysis. The partial regression coefficients in a contextual analysis control for any indirect effects of other correlated traits included within the analysis."
+    },
+    {
+      "type": "derivation",
+      "content": "One consequence of indirect effects generating nonzero covariances (and hence nonzero selection differentials) is that an analysis restricted to one level of selection can be misleading. For example, suppose an investigator assumes that group selection might be important, and therefore only includes group means in the analysis. For a single trait, the investigator might consider the slope of a simple (i.e., univariate) regression of mean fitness on group trait mean, [[SEE_FORMULA:30.37a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "If we recall (LW Chapter 3) that the slope of a univariate regression is the covariance divided by variance of the predictor variable, the slope becomes [[SEE_FORMULA:30.37b]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Hence, a nonzero covariance implies a nonzero slope, and an investigator using this simple univariate regression would conclude that group selection is occurring on this trait. In reality, as we will see shortly, strict individual selection can generate a group-level covariance, and hence (in this case), a spurious assignment of a group-level effect to selection. By using a multiple regression that includes both individual and group mean values, a contextual analysis corrects for this concern (provided selection is limited to only these two levels)."
+    },
+    {
+      "type": "discussion",
+      "content": "[[TABLE:30.2]], hard, soft, and strict group selection can all be modeled as special cases of a contextual analysis regression. For simplicity, we focus on a single trait, and the resulting regression has the form"
+    },
+    {
+      "type": "discussion",
+      "content": "The use of selection differentials correctly determined the presence of positive directional selection on both individual height and stem number. However, the analysis also suggested that there were no among-patch effects (no selection on patch means), when in fact contextual analysis shows that these effects are highly significant for both traits (Example 30.12)."
+    }
+  ]
+}

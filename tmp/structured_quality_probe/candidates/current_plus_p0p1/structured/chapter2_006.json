@@ -1,0 +1,34 @@
+{
+  "id": "chapter2_006",
+  "metadata": {
+    "chapter": "chapter2",
+    "section": "Chapter 2: ALLELE-FREQUENCY DIVERGENCE AMONG POPULATIONS",
+    "subsections": [
+      "ALLELE-FREQUENCY DIVERGENCE AMONG POPULATIONS"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter2_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "2.14a"
+    ],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "A natural consequence of allele-frequency drift within populations is the divergence of isolated replicate populations. Suppose a monoecious base population with allele frequency $ p_{0} $ is suddenly split into several completely isolated subpopulations, each of size N, with random mating within each subpopulation and no selection, migration, or mutation. The variance in allele frequency among subpopulations in generation t is $$ \\sigma_{p}^{2}(t)=E(p_{t}^{2})-E^{2}(p_{t}) $$"
+    },
+    {
+      "type": "derivation",
+      "content": "Adding and subtracting $ E(p_{t}) $, $$ \\begin{aligned}\\sigma_{p}^{2}(t)&=[E(p_{t})-E^{2}(p_{t})]+[E(p_{t}^{2})-E(p_{t})]\\\\&=E(p_{t})[1-E(p_{t})]-E[p_{t}(1-p_{t})]\\end{aligned} $$ Because there are no systematic forces causing the allele frequency to increase or decrease, $ E(p_t) = p_0 $, so the first quantity on the right is $ p_0(1 - p_0) $. The quantity $ E[p_t(1 - p_t)] $ is half the expected heterozygosity in a population in generation t, which was already defined in Equation 2.5. Thus [[SEE_FORMULA:2.14a]] which is well approximated by $$ \\sigma_{p}^{2}(t)\\simeq p_{0}(1-p_{0})(1-e^{-t/2N}) $$ for $N > 10$. This shows that the among-population variance asymptotically approaches $p_0(1 - p_0)$, which is half the heterozygosity in the base population—over time, the allelic variance within populations (half of the quantity in Equation 2.6a) is transformed into among-population variance, with the total of the two remaining constant. An alternative way to envision this asymptotic result is to note that at fixation the allele frequency has a value of 1.0 with probability $p_0$, and otherwise is zero, giving $E(p_0) = 1 \\cdot p_0$ and $E(p_0^2) = 1^2 \\cdot p_0 = p_0$. Hence, the among-population variance when all alleles are fixed is just $E(p_0^2) - [E(p_0)]^2 = p_0(1 - p_0)$."
+    },
+    {
+      "type": "discussion",
+      "content": "Although Equations 2.14a and 2.14b deal with the expected allele-frequency variance, they do not describe the actual form of the distribution of population allele frequencies. However, all of this information is contained in the formulations presented previously on the probability distribution of allele frequencies within populations. For example, the transition-matrix approach (Equations 2.2a and 2.2b) and the diffusion approximation (Equation 2.8) yield the expected temporal dynamics of the distribution of allele frequencies in different replicate populations, all starting from an identical frequency, $ p_{0} $ (Figure 2.4)."
+    },
+    {
+      "type": "discussion",
+      "content": "Summing up the calculations to this point, five significant conclusions can be gleaned with respect to neutral alleles. First, with increasing time, the total probability mass for the allele-frequency distribution at a locus declines because only segregating alleles are considered, i.e., the proportions of populations that have experienced gene fixation or loss are ignored. Second, regardless of the starting condition, the distribution becomes flatter with increasing time, such that the frequency of a sufficiently old segregating allele is equally likely anywhere over the $ (0,1) $ interval. Third, high-frequency alleles are generally expected to be old. Fourth, the distributions in Figure 2.4 can be interpreted in two different ways: as the probability distribution of allele frequencies over a very large number of replicate populations over time, all starting at an identical state, or as the expected distribution of allele frequencies for the subset of loci with identical starting frequencies within a single population. Finally, the expected allele-frequency distribution is a function of t/N generations, as can be seen from the exponential terms in Equation 2.8. As should be clear by now, this scaling of the temporal dynamics of random genetic drift to the reciprocal of population size is a natural consequence of the fact that the variance of allele-frequency change is inversely proportional to N."
+    }
+  ]
+}

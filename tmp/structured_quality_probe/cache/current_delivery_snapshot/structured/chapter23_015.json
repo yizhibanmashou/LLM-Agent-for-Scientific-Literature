@@ -1,0 +1,58 @@
+{
+  "id": "chapter23_015",
+  "metadata": {
+    "chapter": "chapter23",
+    "section": "Chapter 23: Cycles of Inbreeding and Outcrossing",
+    "subsections": [
+      "Cycles of Inbreeding and Outcrossing"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter23_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "23.19a",
+      "23.19b",
+      "23.20a",
+      "23.20b",
+      "23.20c"
+    ],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "derivation",
+      "content": "Dickerson (1973) and Dickerson and Lindhé (1977) have suggested that, in some cases, the response to selection under a scheme of random mating alternating every other generation with full-sib mating enhances short-term response. Their logic is that a generation (or two) of inbreeding increases the among-group variance, and this increase can be exploited by selection. However, given the extra generation(s) used for inbreeding (instead of selection), the conditions for such a cyclic inbreeding-selection system to give a larger response than mass selection are rather stringent. Dickerson and Lindhé showed that the ratio of response under cyclic inbreeding $ (R_I) $ to response under mass selection $ (R_m) $ is approximately [[SEE_FORMULA:23.19a]] where $g$ is the generation time per cycle (typically $g_m = 1$, $g_I = 2$) and $r_f$ is the genetic correlation among the inbred line members. For example, if one crosses full-sibs and then crosses and selects on inbred families in alternate years, $f = 0.25$, $r_f = 0.6$, and $g_I/g_m = 1/2$, which implies that [[SEE_FORMULA:23.19b]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Under equal selection intensities ($ \\bar{\\imath}_m = \\bar{\\imath}_I $), Equation 23.19b implies that $ h^2 < 0.1875 $ for cyclic inbreeding to exceed mass selection (Dickerson and Lindhé 1977). Further, Equation 23.19a assumes that there is no significant impact from inbreeding depression."
+    },
+    {
+      "type": "discussion",
+      "content": "Given these stringent conditions, it is not surprising that experimental support for the advantage of cyclic inbreeding is lacking. Dion and Minvielle (1985) used 15 generations of cyclic full-sib versus random mating to select for increased pupal weight in Tribolium castaneum, and found no differences in the response or realized heritabilities relative to random mating. Similar results were observed in Japanese quail (Example 23.3). While López-Fanjul and Villaverde (1989) observed that one generation of full-sib mating resulted in a fourfold increase in the realized heritability of egg to pupal viability in Drosophila melanogaster, this was more than offset by the reduction in the mean from inbreeding depression."
+    },
+    {
+      "type": "derivation",
+      "content": "Another cyclic scheme, $ S_1 $ mass selection, was proposed by Dhillon (1991a). Here, individuals are crossed and the resulting offspring are selfed. The $ S_1 $ are then evaluated by individual selection, with the superior individuals outcrossed to start the cycle again. To evaluate the expected selection response under such a scheme, we need to compute the covariance between an $ S_1 $ and its outbred offspring, which is obtained as follows. With probability of 1, an $ S_1 $ individual passes on a single allele to its outbred offspring, so $ \\Delta_3 + \\Delta_8 = 1 $. With probability 1/2, the $ S_1 $ individual has both alleles IBD at a locus (due to the generation of selfing), giving $ \\Delta_3 = \\Delta_8 = 1/2 $. More generally, if $ k $ generations of selfing are used before random mating, then (using the same logic as in Example 23.2) $ \\Delta_3 = f_k = 1 - 2^{-k} $, $ \\Delta_8 = 1 - f_k = 2^{-k} $, and $ 2\\theta = \\Delta_3 + \\Delta_8/2 = (1/2)(2 - 2^{-k}) $, returning the $ S_k $-parent and offspring covariance as [[SEE_FORMULA:23.20a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Assuming selection on both parents, the response per generation is then [[SEE_FORMULA:23.20b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "The factor of $ 1/(k+1) $ arises because there are $ k $ generations of selfing for each single generation of selection. The genetic variance, $ \\sigma_g^2(S_k) $, among $ S_k $ individuals is given (below) by Equation 23.23, and $ \\sigma_e^2(S_k) $ is the error variance for single $ S_k $ individuals, which is expected to be considerably larger than the error variance for families, as no replication is involved. For strict additivity, the ratio of per-generation response under $ S_k $ mass selection relative to standard mass selection is [[SEE_FORMULA:23.20c]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Note that $ R_{S_k} < R_m $ for all values of $ k $ (assuming the error variances are roughly equal)."
+    },
+    {
+      "type": "discussion",
+      "content": "Dhillon assumed that a greenhouse could be used for the $ S_1 $, giving one cycle (i.e., two generations) per field generation. In this case, there is no generational cost for inbreeding, and the ratio in the parentheses of Equation 23.20c becomes $ (2 - 2^{-1}) = 3/2 $. However, a major biological limitation in the assumptions behind Equation 23.20c is that the selected traits must be expressed before reproduction. For traits expressed during or after reproduction, only a single sex will be selected upon (as presumably the $ S_1 $ is outcrossed to random individuals). In such cases, the response ratio (in this greenhouse setting) is reduced to $ (1/2)(3/2) = 3/4 $ of mass selection."
+    },
+    {
+      "type": "discussion",
+      "content": "[h]"
+    }
+  ]
+}

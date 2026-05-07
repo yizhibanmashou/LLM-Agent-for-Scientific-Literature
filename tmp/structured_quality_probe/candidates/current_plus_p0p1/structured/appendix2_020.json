@@ -1,0 +1,36 @@
+{
+  "id": "appendix2_020",
+  "metadata": {
+    "chapter": "appendix2",
+    "section": "Wishart and Inverse-Wishart Distributions",
+    "subsections": [
+      "Wishart and Inverse-Wishart Distributions"
+    ],
+    "source_file": "tmp\\paddle_output\\appendix2_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "The Wishart distribution can be thought of as the multivariate extension of the $ ^2 $ distribution. Suppose $ _1,, _n $ are independent and identically distributed vectors, with $ _i _k(,) $. Using these $ n $ draws, and assuming that the mean is known to be zero, the resulting random $ (k k) $ sample covariance matrix, $ $, is given by $$ \\mathbf{W}=\\sum_{i=1}^{n}\\mathbf{x}_{i}\\mathbf{x}_{i}^{T}\\sim W_{n}(\\mathbf{V}) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "This sum is defined as a Wishart distribution with n degrees of freedom and a (matrix) parameter V. Recalling that the sum of n squared unit normals follows a $ \\chi_{n}^{2} $ distribution, the Wishart is the extension to the multivariate normal. Indeed, for k=1 with $ \\mathbf{V}=(1) $ , the Wishart is simply a $ \\chi_{n}^{2} $ distribution, as $ \\sum x_{i}^{2}\\sim\\chi_{n}^{2} $ , because $ x_{i}\\sim N(0,1) $ ."
+    },
+    {
+      "type": "discussion",
+      "content": "The Wishart is the sampling distribution for covariance matrices (just like the $ ^ 2 $ is associated with the distribution of a sample variance for data drawn from a normal; Chapter 11). The pdf of the Wishart distribution is $$ p(\\mathbf{W}\\mid\\mathbf{V})=2^{-n k/2}\\pi^{-k(k-1)/k}\\mid\\mathbf{V}\\mid^{-n/2}\\mid\\mathbf{W}\\mid^{(n+k+1)/2}\\frac{\\exp\\left(-\\frac{1}{2}\\mathbf{t}\\mathbf{r}\\left[\\mathbf{V}^{-1}\\mathbf{W}\\right]\\right)}{\\prod_{i=1}^{k}\\Gamma\\left(\\frac{n+1-i}{2}\\right)} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Recall that the trace (tr) of a matrix is just the sum of its diagonal elements, $ \\operatorname{tr} (\\mathbf{A})=\\sum A_{ii} $ (Appendix 5). Odell and Feiveson (1966) presenteds an algorithm for generating random draws from the Wishart."
+    },
+    {
+      "type": "discussion",
+      "content": "If $ _n() $, then $ ^ -1 _n^ -1 (^ -1) $, where $ ^ -1 $ denotes the inverse-Wishart distribution. The density function for an inverse-Wishart distributed random matrix, $ $, is $$ p(\\mathbf{W}|\\mathbf{V})=2^{-n k/2}\\pi^{-k(k-1)/k}|\\mathbf{V}|^{n/2}|\\mathbf{W}|^{-(n+k+1)/2}\\frac{\\exp\\left(-\\frac{1}{2}\\mathbf{t}\\mathbf{r}\\left[\\mathbf{V}\\mathbf{W}^{-1}\\right]\\right)}{\\prod_{i=1}^{k}\\Gamma\\left(\\frac{n+1-i}{2}\\right)} $$ which is the distribution of the inverse of the sample covariance matrix."
+    }
+  ]
+}

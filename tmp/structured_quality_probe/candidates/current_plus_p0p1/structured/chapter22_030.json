@@ -1,0 +1,39 @@
+{
+  "id": "chapter22_030",
+  "metadata": {
+    "chapter": "chapter22",
+    "section": "Chapter 22: BLUP ESTIMATION OF DIRECT AND ASSOCIATIVE EFFECTS",
+    "subsections": [
+      "Details: Ignoring Additive Social Values Introduces Bias"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter22_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "22.42",
+      "22.43"
+    ],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "derivation",
+      "content": "Before models directly accounting for social effects were developed, it was not unusual to add a fixed or random group effect to the standard animal model to account for common environments due to individuals being raised in the same pen, cage, or group. For example, if group effects are random, the corresponding animal model becomes [[SEE_FORMULA:22.42]] where we (initially) assume $ \\sigma(\\mathbf{g}_p) = \\sigma^2(g_p)\\mathbf{I} $. In this model, a would be the estimated vector of (direct) breeding values. As detailed above, $ \\mathbf{g}_p $ can often account for any shared environmental social values (i.e., $ E_s $). However, if heritable associative effects are present, simply adding a group effect is insufficient, as it results in overestimation of $ \\sigma^2(g_p) $ and often an overestimation of the (direct) additive variance (Example 22.12). Hence, an analysis that simply includes a group effect (but no $ \\mathbf{a}_s $ vector) results in biased estimates of the direct breeding values when heritable associative effects are present."
+    },
+    {
+      "type": "discussion",
+      "content": "Van Vleck and Cassady (2005) showed how the presence of additive associative effects inflates the estimate of group variance. Consider two members in the same group (with a common group effect, $ g_{p} $), $$ z_{1}=A_{d_{1}}+A_{s_{2}}+\\sum_{k=3}^{n}A_{s_{k}}+g_{p}+e_{1} $$ $$ z_{2}=A_{d_{2}}+A_{s_{1}}+\\sum_{k=3}^{n}A_{s_{k}}+g_{p}+e_{2} $$"
+    },
+    {
+      "type": "derivation",
+      "content": "Using the standard ANOVA identity that the covariance within a group equals the variance among groups (LW Chapter 18), for unrelated individuals, $ \\sigma^{2}(g_{p}) $, is estimated from the within-group covariance, which reduces to [[SEE_FORMULA:22.43]]"
+    },
+    {
+      "type": "discussion",
+      "content": "If the residuals are uncorrelated, the bias in the within-group covariance-based estimate of $ \\sigma^2(g_p) $ is $ 2\\sigma(A_d, A_s) + (n - 2)\\sigma^2(A_s) $, which can be considerable. Hence, when additive (i.e., heritable) associative effects are present, the simple model given by Equation 22.42 is inappropriate. This model, however, can be useful in a preliminary analysis. Van Vleck and Cassady suggested that obtaining a large estimated group variance when using Equation"
+    },
+    {
+      "type": "discussion",
+      "content": "22.42 indicates that a more detailed model including additive associative effects should be fit to the data. Hence, one approach is to do a quick fit to Equation 22.42. If the group variance is sufficiently small, it is unlikely that additive associative effects are present. However, this approach is not always foolproof. Inspection of Equation 22.43 shows that a sufficiently negative covariance between direct and social breeding values may result in a small estimated group variance."
+    }
+  ]
+}

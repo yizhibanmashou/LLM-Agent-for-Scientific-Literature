@@ -1,0 +1,36 @@
+{
+  "id": "appendix1_005",
+  "metadata": {
+    "chapter": "appendix1",
+    "section": "The Kolmogorov Forward Equation",
+    "subsections": [
+      "Example A1.2. From Equation A1.6, the KFE for the diffusion for pure drift, $ m(x) = 0 $,"
+    ],
+    "source_file": "tmp\\paddle_output\\appendix1_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "$$ \\frac{\\partial\\varphi(x,t,p)}{\\partial t}=\\frac{1}{2}\\frac{\\partial^{2}v(x)\\varphi(x,t,p)}{\\partial x^{2}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Figure 2.4 plots solutions of this partial differential equation for several time points. As mentioned in Chapter 2, Kimura (1955b) obtained the solution for this particular KFE as $$ \\varphi(x,t,p)=\\sum_{i=1}^{\\infty}p(1-p)i(i+1)(2i+1)g_{i}(p)g_{i}(x)e^{-\\lambda_{i}t} $$ where $$ \\lambda_{i}=\\frac{i(i+1)}{4N_{e}}\\quad and\\quad g_{i}(x)=F(1-i,i+2,2,x) $$ and where F is the hypergeometric function (Equation 15.1.1 in Abramowitz and Stegun 1972). In the notation of Equation A1.7, the eigenfunction associated with the i eigenvalue is $$ f_{i}(x,p)=p(1-p)i(i+1)(2i+1)F(1-i,i+2,2,p)F(1-i,i+2,2,x) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Although this solution is obtained using standard tools for the solution of partial differential equations (e.g., Farlow 1982), as one might expect given the form of the solution, this is not a trivial procedure."
+    },
+    {
+      "type": "discussion",
+      "content": "While simple inspection of the above closed form solution provides only a small amount of insight into the process, it is clear that $ (x, t, p) 0 $ as $ t $ (because all $ e^{-\\lambda_t} \\to 0 $ as $ t $). Thus, for large values of time, there is a vanishingly small probability mass in the open interval $ 0 < x < 1 $. This occurs because drift results in an allele eventually either being fixed $ (x = 1) $ or being lost $ (x = 0) $. Other forces, such as mutation, are required for nonzero probability mass to remain in the interior space $ (0 < x < 1) $. For large spans of time, the solution is dominated by the first few eigenvalues. If we focus on just the eigenfunctions associated with the two leading eigenvalues, $ \\lambda_1 $ and $ \\lambda_2 $, the result is $$ \\varphi(x,t,p)\\simeq6p(1-p)e^{-t/(2N_{e})}+30p(1-2p)(1-2x)e^{-3t/(2N_{e})} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Notice that the eigenfunction for the dominant eigenvalue $ (1/2N_e) $ is independent of $ x $, so for large values of $ t $, the probability density is a constant independent of $ x $ (i.e., a uniform over $ 0 < x < 1 $), which decays to zero at a rate of $ e^ -t/(2N_e) $ (see Figure 2.4)."
+    }
+  ]
+}

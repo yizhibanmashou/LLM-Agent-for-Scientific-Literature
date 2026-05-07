@@ -1,0 +1,36 @@
+{
+  "id": "chapter13_004",
+  "metadata": {
+    "chapter": "chapter13",
+    "section": "The Importance of Linearity",
+    "subsections": [
+      "Response is the Change in Mean Breeding Value"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter13_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Under the infinitesimal model and a linear parent-offspring regression, a key concept is that the response equals the mean breeding value of the selected parents. Recall that (non-inbred, sexually reproducing) parents pass along only a fraction of their total genotypic value, namely, their breeding value, A, to their offspring. Under the infinitesimal model, the expected offspring value is simply the average breeding values of its parents (LW Chapter 4)."
+    },
+    {
+      "type": "discussion",
+      "content": "Trait improvement by artificial selection is achieved by choosing parents with the most favorable breeding values. The problem is that we cannot completely predict the breeding value of an individual from its phenotype alone (unless $ h^2 = 1 $). Because the phenotype of an individual is an imperfect indicator of its breeding value, the offspring of phenotypically exceptional parents are generally not themselves as exceptional. From standard regression theory (LW Chapter 3), the predicted breeding value, $ \\widehat{A} $, for an individual with a phenotypic value of $ z $ (given no other information) is $$ \\begin{align*}\\widehat{A}-\\mu_A={\\sigma(A,z)\\over\\sigma_z^2}(z-\\mu_z)\\quad{\\rm or}\\qquad\\widehat{A}=h^2(z-\\mu_z)\\end{align*} $$ where $\\mu_z$ and $\\mu_A$ are the mean phenotype and breeding value, respectively, and $\\sigma(A, z)$ is the covariance between the breeding value and the phenotype. This expression follows because the regression $y = a + bx$ can be expressed as $y - \\mu_y = b(x - \\mu_x)$, where $b = \\sigma(x, y)/\\sigma_x^2$."
+    },
+    {
+      "type": "discussion",
+      "content": "For the regression of $A$ on $z$, the means are $\\mu_A = 0$ and $\\mu_z$, respectively, while the slope is $\\sigma(z, A)/\\sigma_z^2 = \\sigma_A^2/\\sigma_z^2 = h^2$, which follows because $$ \\sigma(z,A)=\\sigma(G+E,A)=\\sigma(A+D+E,A)=\\sigma(A,A)=\\sigma_{A}^{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The expected breeding value for a set of selected parents thus becomes $$ E_{s}[\\widehat{A}]=E_{s}[h^{2}(z-\\mu_{z})]=h^{2}E_{s}[z-\\mu_{z}]=h^{2}S $$"
+    },
+    {
+      "type": "proposition",
+      "content": "The change in the mean value of their offspring (relative to the base population) is simply the mean breeding value of the selected parents, because (by definition) $ \\mu_A = 0 $ in the base population. Thus, the response equals $ h^2 S $, and we recover the breeder's equation. A key assumption is $ E_s[h^2] = h^2 $, namely, that the regression using the selected parents is the same as (or extremely close to) the regression in the absence of selection, an assumption discussed at length in Chapter 6."
+    }
+  ]
+}

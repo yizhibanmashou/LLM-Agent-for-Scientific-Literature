@@ -1,0 +1,62 @@
+{
+  "id": "chapter15_013",
+  "metadata": {
+    "chapter": "chapter15",
+    "section": "Chapter 15: Separate Direct and Maternal Traits",
+    "subsections": [
+      "Separate Direct and Maternal Traits"
+    ],
+    "source_file": "data\\paddle_output\\chapter15_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "15.35a",
+      "15.35b",
+      "15.36a",
+      "15.36b",
+      "15.36c",
+      "15.37b",
+      "15.38a",
+      "15.38b",
+      "15.38c",
+      "15.38d",
+      "15.38e"
+    ],
+    "table_references": [],
+    "structured_repair": {
+      "version": "source_inline_math_v1",
+      "actions": {
+        "replace_from_source": 7
+      }
+    }
+  },
+  "blocks": [
+    {
+      "type": "derivation",
+      "content": "In contrast to Falconer’s simple model of maternal effects, where the direct trait has a dual role as the maternal trait, a more general model allows us to separate the direct and maternal traits, e.g., weight in an offspring and milk production in its mother. In this case, Equation 15.21 becomes [[SEE_FORMULA:15.35a]] where $z$ is the value of the focal (direct) trait in an offspring (e.g., its weight), and $z_{m,mo}$ is the value of the maternal trait in its mother (e.g., her milk production, which influences offspring weight). Clearly, this expression generalizes to a vector, $\\mathbf{z}_d$, of direct traits that depends on a vector, $\\mathbf{z}_m$, of maternal traits, as modeled by Kirkpatrick and Lande (1989, 1992) and Lande and Kirkpatrick (1990). We examine their full multivariate treatment in detail Volume 3. Here, we briefly comment on the bivariate case (a single direct trait, $z = z_d$, and a single, and distinct, maternal trait, $z_m$). Note that the selection response in $z$ depends on two components, a direct response, $R_d$, due to changes in $G_d$ and a response, $R_m$, due to changes in the maternal trait (which influences the phenotype of the direct trait), hence [[SEE_FORMULA:15.35b]] where the generation index value of $ (t-1) $ in the maternal response occurs because its contribution to the change in z for the population in generation t depends on the values in their mothers (which are themselves from generation $ t-1 $). Additionally, there can be a component of response due to the effects of previous selection. Putting all these together, the joint dynamics obtained by Kirkpatrick and Lande (1989, 1992) are [[SEE_FORMULA:15.36a]] [[SEE_FORMULA:15.36b]] [[SEE_FORMULA:15.36c]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Here, $ \\beta_z $ and $ \\beta_m $ are the selection gradients on the direct and maternal traits, respectively, and $ G_{xy} = \\sigma(A_x, A_y) $ and $ P_{xy} = \\sigma(z_x, z_y) $ are, respectively, the additive-genetic and phenotypic covariances between traits $ x $ and $ y $. Note that the expression given for Equation 15.36c is based on the corrected version of Kirkpatrick and Lande (1992). As with the simple Falconer model, there are time lags in the response, $ R_z $, on the focal trait due to dependency of the response on selection in the previous, as well as the current, generation (Equation 15.36c). By contrast, no such lags are seen for the maternal response, $ R_m $."
+    },
+    {
+      "type": "discussion",
+      "content": "A few other features of this model are worth noting. In the absence of additive-genetic variance for the direct trait $ (G_{dd} = G_{md} = 0) $, there may still be a permanent response in the direct trait due to response in the maternal trait, which is the $ mR_m(t-1) $ term in Equation 15.36c. Likewise, in the absence of selection on the maternal effect $ (\\beta_m = 0) $, Equation 15.36b shows that the maternal trait value, $ z_m $, can still evolve when the direct and maternal trait are genetically correlated $ (G_{md} \\neq 0) $. As reviewed by Wilson and Réale (2006), this covariance is often both significant and negative, so selection to increase the direct trait value can result in a declining maternal value (Cheverud 1984a). Chapter 22 greatly expands on this idea of an evolving environmental background (the overall social effects, and not just the maternal value) that influences the phenotype of a focal individual."
+    },
+    {
+      "type": "derivation",
+      "content": "Example 15.4. Assume that there are constant selection differentials following the start of selection, so that (after the first generation) terms involving $ \\Delta\\beta $ (changes in $ \\beta $) are zero. Equations 15.36b and 15.36c then simplify to [[SEE_FORMULA:15.37b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "One central question in these (and more general) models concerns which trait (or traits) in the mother determine the value of the maternal effect in her offspring. Falconer made the simplification that the value, $ z_{mo} $, of the direct trait in a mother is scaled (by m) to give the maternal effect in her offspring ( $ M = m_{z_{mo}} $). The classical bivariate counterpart to this one-trait model is to assume a general measure $ z_{m} $ of maternal performance, where $ M = z_{m,mo} $, namely its value in the mother (Dickerson 1947; Willham 1963, 1972; Cheverud 1984a; Riska et al. 1985; Kirkpatrick and Lande 1989). Under this model, the trait—or, more likely, some composite index of traits—comprising $ z_{m} $ is not specified (and hence not directly scored in mothers), although BLUP allows us to estimate its variance components (e.g., $ G_{mm} $ and $ G_{md} $), given an appropriate pedigree design (Chapter 22). Under this model, m = 1 (as $ M = z_{m,mo} $), which simplifies Equations 15.37a and 15.37b. If we assume that there is no direct selection on the maternal performance trait, $ \\beta_{m} = 0 $, the response equations further simplify to [[SEE_FORMULA:15.38a]] [[SEE_FORMULA:15.38b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "The assumption of selection only on the direct trait implies that $ \\beta_{z}=S_{z}/\\sigma_{z}^{2} $, yielding [[SEE_FORMULA:15.38c]] as $ h_d^2 = G_{dd}/\\sigma_z^2 $. This is the Dickerson-Willham model of the selection response in the presence of heritable maternal effects (Chapter 22), which can also be expressed in terms of a total heritability [[SEE_FORMULA:15.38d]] yielding the response as [[SEE_FORMULA:15.38e]]"
+    },
+    {
+      "type": "discussion",
+      "content": "If $ G_{md} > 0 $, then $ h_{T}^{2} > h_{d}^{2} $, and the direct heritability underestimates the total response (e.g., McAdam et al. 2002). Conversely, if $ G_{md} $ is sufficiently negative, then $ h_{d}^{2} > h_{T}^{2} $, and the direct heritability overestimates the response (e.g., Wilson et al. 2005a). Bijma (2011) more fully detailed the connections between the Dickerson-Willham and Falconer models (also see Chapter 22)."
+    }
+  ]
+}

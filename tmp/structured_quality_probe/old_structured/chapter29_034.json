@@ -1,0 +1,77 @@
+{
+  "id": "chapter29_034",
+  "metadata": {
+    "chapter": "chapter29",
+    "section": "Chapter 29: Mean-standardized Gradients and Fitness Elasticities",
+    "subsections": [
+      "Mean-standardized Gradients and Fitness Elasticities"
+    ],
+    "source_file": "data\\paddle_output\\chapter29_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "29.33a",
+      "29.33b",
+      "29.33c",
+      "29.33d",
+      "29.33e",
+      "29.33f"
+    ],
+    "table_references": [],
+    "structured_repair": {
+      "version": "source_inline_math_v1",
+      "actions": {
+        "replace_from_source": 1
+      }
+    }
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Most traits of interest are scaled in the units of their measurement, which could be linear (lengths), areal (leaf surface), volumetric (mass), and even ordinal (traits such as shades of color). The evaluation of different traits across such a range of scales requires some sort of standardization to return a dimensionless quantity for comparison. Typically this is done by dividing a trait by its standard deviation (variance-standardization), or, less frequently, dividing it by its mean (mean-standardization). For example, Chapters 6 and 13 compared mean- and variance-standardization for the additive genetic variance and the selection response. As shown in Chapter 6, determining which standardization to use is not a trivial issue, as traits that are closely related to fitness have lower heritabilities (variance-standardized values) but higher coefficients of additive variance (mean-standardized values) relative to traits that are more distantly related to fitness."
+    },
+    {
+      "type": "definition",
+      "content": "This debate on the appropriate standardization also extends to selection gradients. Following Lande and Arnold (1983), much of the literature has reported variance-standardized gradients, $ \\beta_{sd} = \\sigma_z \\beta $ (also denoted as $ \\beta_\\sigma $). There are, however, potential concerns with variance-standardization (Chapters 6 and 13). The genetic variance (which influences the total variance) is itself a product of past selection, implying that a trait with a history of strong selection (and hence a smaller value of $ \\sigma_z^2 $, due to selection reducing the level of genetic variation) may be perceived as being under stronger current selection than the same trait in a population with a history of weaker past selection (and hence a larger value of $ \\sigma_z^2 $). Further, the nature of the trait (whether ordinal, dichotomous, or continuous) can result in dramatic differences in variance. Finally, variance-standardization does not naturally lead to an unambiguous definition of the relative strength of selection. While $ \\beta_{sd} $ is the expected change in relative fitness induced by one standard-deviation change in $ z $, whether this is strong or weak depends, in part, on whether the standing variance is large or small."
+    },
+    {
+      "type": "derivation",
+      "content": "An alternative is mean-standardization, [[SEE_FORMULA:29.33a]] an approach used as early as Johnson et al. (1955), and championed by Morgan and Schoen (1997), van Tienderen (2000), Hereford et al. (2004), and Matsumura et al. (2012) as superior to variance-standardization. The motivation for this scaling is that if $ \\beta $ represents the change in w from a unit change in z, then $ \\mu\\beta $ represents the change in w for a change in z by an amount $ \\mu $."
+    },
+    {
+      "type": "derivation",
+      "content": "The relationship between the mean- and variance-standardizations is simply [[SEE_FORMULA:29.33b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Mean-standardization offers three potential benefits, one obvious, the other two more subtle. First, it does not depend on the trait variance, and hence removes the influence that past selection (in shaping the current variance) has on the measure of current selection strength. Second, it provides a natural scale for the strength of selection, as $ \\beta_{\\mu} = \\frac{1}{W} \\cdot w $ between trait fitness itself (z = W). To see this, first note that the relationship $ (W = \\overline{W} \\cdot w) $ between absolute (W) and relative (w) fitness implies, for z = W, that [[SEE_FORMULA:29.33c]] giving $ \\beta_{\\mu} = \\mu\\beta = \\overline{W}/\\overline{W} = 1 $. Mean-standardized gradients are also used to obtain the proportional selection response for a trait, with [[SEE_FORMULA:29.33d]] where $ I_A = (\\sigma_A^2/\\mu_z^2) $ is Hansen's (Hansen et al. 2003, 2011) metric of evolvability (the square of Houle's 1992 original definition); see Chapter 6."
+    },
+    {
+      "type": "derivation",
+      "content": "A final advantage of mean-standardized gradients is that they measure the elasticity of fitness with respect to a trait, namely the proportional increase in fitness given a proportional increase in the trait (Morgan and Schoen 1997; van Tienderen 2000). Under the assumption that z is Gaussian distributed, Equation 29.20a implies that [[SEE_FORMULA:29.33e]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Comparison with Equation 29.4c shows that $ \\beta_u $ is the elasticity of fitness (or more generally, of a fitness component) with respect to the trait. For example, if $ \\beta_\\mu = 0.3 $, increasing a trait value by $ \\mu $ increases fitness by 30"
+    },
+    {
+      "type": "derivation",
+      "content": "This interpretation of $ \\beta_{\\mu} $ as an elasticity provides a natural connection between demography (the population growth rate, $ \\lambda $) and evolution (the rate of change in a trait, $ R $). Because elasticities are both additive and also satisfy the chain rule of differentiation, the elasticity of a trait on the population growth rate ( $ \\lambda $) can be computed as a function of the elasticity ( $ e_i $) of the ith (out of $ k $) fitness component ( $ W_i $) of growth rate and the elasticity ( $ \\beta_{\\mu,i} $) of the trait on the ith fitness component, yielding [[SEE_FORMULA:29.33f]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Equation 29.33f, when paired with an appropriate path diagram connecting the trait to fitness components and also connecting those fitness components to $ \\lambda $, forms the basis of elasticity path analysis, which offers a very flexible approach for treating components of fitness (Chapter 30)."
+    },
+    {
+      "type": "discussion",
+      "content": "An example suggested by Hereford et al. (2004) illustrates this connection. In their meta-analysis, Hereford et al. found medians of the mean-standardized gradients, $ \\beta_{\\mu} $, over their sample of traits on viability and fecundity of 0.57 and 0.23, respectively. Likewise, using an avian dataset, Sæther and Bakke (2000) found average elasticities of viability and fecundity of $ e = \\partial \\ln(\\lambda) / \\partial \\ln(W_i) = 0.6 $ and 0.25, respectively, on population growth. These values showed that a proportional change in viability had a far larger $ (0.6 / 0.25 = 2.4 $-fold) impact on the growth rate, $ \\lambda $, than did the same proportional change in fecundity."
+    },
+    {
+      "type": "discussion",
+      "content": "Combining the median $ \\beta_{\\mu} $ values for traits reported by Hereford et al. (2004) with the average elasticity values reported by Sæther and Bakke (2000), the elasticity of a trait on $ \\lambda $ via viability selection is $ 0.6 \\cdot 0.57 = 0.34 $, while the elasticity through fecundity is $ 0.25 \\cdot 0.23 = 0.06 $, for a total elasticity of $ 0.34 + 0.06 = 0.40 $, with the vast majority (86%) via its impact on viability."
+    },
+    {
+      "type": "discussion",
+      "content": "Despite their appeal, there are restrictions and caveats concerning mean-standardized gradients. First, they are only defined for traits where the origin on their measurement scale is not arbitrary. While many traits have a biologically motivated zero value (e.g., height, weight), this restriction excludes many interesting traits, such as seasonal timing (the origin of the calendar is arbitrary) and composite traits (e.g., principal components) (Kingsolver and Pfenning 2007). Second, there are delicate issues in the use of mean-standardization with dichotomous traits, such as the resistance fraction (f) and its complement, the susceptible fraction (1 - f). Because either fraction can be used as a measure of the strength of selection, they should both return the same standardized gradients, but the mean-standardized gradients for resistance and susceptibility are different unless $ f = 1/2 $ (Stinchcombe 2005). Finally, Kingsolver and Pfenning (2007) noted that traits with large $ \\beta_\\mu $ values tend to have small coefficients of variation, a trend not expected if $ \\beta_\\mu $ is a fair standardization."
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": "chapter28_018",
+  "metadata": {
+    "chapter": "chapter28",
+    "section": "Chapter 28: Kimura-Lande-Fleming Continuum-of-alleles Models",
+    "subsections": [
+      "Gaussian Versus House-of-Cards Approximations for Continuum-of-alleles Models"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter28_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "An extension of Turelli's triallelic model provides further insight. Slatkin (1987a) assumed an unlimited number of alleles with a stepwise mutation model, with an allele mutating to a new effect with increment of $ \\alpha $ or $ -\\alpha $ (relative to its current value), with a mutation rate of $ \\mu/2 $ for each step (a scheme also used by Narain and Chakraborty 1987), namely, $$ \\cdots\\quad-2\\alpha\\quad\\xrightarrow[\\mu/2]{\\mu/2}\\quad-\\alpha\\quad\\xrightarrow[\\mu/2]{\\mu/2}\\quad0\\quad\\xleftarrow[\\mu/2]{\\mu/2}\\quad\\alpha\\quad\\xleftarrow[\\mu/2]{\\mu/2}\\quad2\\alpha\\quad\\cdots $$ As shown in Example 28.6, if selection is weak relative to mutation (such that many allelic states are present), this model reduces to Kimura's Gaussian result, while if selection is strong relative to mutation (meaning that a single major allele, whose value equals the phenotypic optimum, and two very minor alleles, each one step away, are present), this reduces to the HCA result (Turelli's triallelic model). Analyses of models assuming five alleles per locus further make this point (Turelli 1984; Slatkin 1987a). Example 28.8 presents Waxman's (2004) exact solution for the continuum-of-alleles model under a specific distribution of mutational effects, which recovers the HCA results for low mutation rates and the Gaussian for high rates, and shows the structure of the transition between these two domains."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 28.3. An interesting biological application of the house-of-cards versus Gaussian models is the work of Hodgins-Davis et al. (2015). These authors examined variation in gene expression in roughly 3500 yeast (S. cerevisiae) genes, 930 C. elegans genes, and 563 genes from D. melanogaster. As discussed in Chapter 11, gene expression is thought to be under weak stabilizing selection. Hodgins-Davis et al. obtained estimates of $ \\sigma_m^2 $ for expression data ($ \\simeq 10^{-5} $ to $ 10^{-4} $] $ \\sigma_E^2 $, which tend to be much smaller than estimates for other traits), along with estimates of the number of genes (using both eQTL studies and extrapolation from single-gene knock-out experiments). Coupling these values with estimates of $ \\mu $, they estimated the variance of mutational effects, $ \\sigma_\\alpha^2 = \\sigma_m^2 / (2n\\mu) $. Next, given an estimate of $ \\sigma_A^2 $, they estimated the potential strength of stabilizing selection from the standing variation in expression at each gene as either $$ \\begin{align*}V_s^G=\\frac{\\sigma_A^4}{2n\\sigma_m^2}\\quad{\\rm or}\\quad V_s^{HC}=\\frac{\\sigma_A^2}{4n\\mu}\\end{align*} $$ which are obtained by rearranging either the Gaussian (Equation 28.14a) or HCA (Equation 28.18a) expressions. With estimates of $ \\sigma_{\\alpha}^2 $ and $ V_s $ (the latter is based on the Bayesian model-averaged values of $ V_s^G $ and $ V_s^{HC} $) for each expression trait in hand, Hodgins-Davis et al. examined what fraction of traits fell within the HCA versus Gaussian domains. Recalling that $ \\sigma_{\\alpha}^2 > 20\\mu V_s $ is Turelli's bound for the HCA to hold, the authors plotted $ 20\\mu V_s $ versus $ \\sigma_{\\alpha}^2 $ for each expression trait. As shown in the following figure (after Hodgins-Davis et al. 2015), their finding was that the house-of-cards domain is satisfied by nearly all of the genes examined, with only a very few exhibiting any likelihood of being in the Gaussian domain."
+    },
+    {
+      "type": "discussion",
+      "content": "[h] melanogaster genes appear to evolve under the HCA framework (falling below the line $ \\sigma_{\\alpha}^2 = 20\\mu V_s $), as do expression levels at essentially all of the 930 measured C. elegans genes."
+    }
+  ]
+}

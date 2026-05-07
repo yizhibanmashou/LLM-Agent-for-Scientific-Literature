@@ -1,0 +1,64 @@
+{
+  "id": "chapter24_023",
+  "metadata": {
+    "chapter": "chapter24",
+    "section": "Chapter 24: Describing the Genotypic Distribution: Moments",
+    "subsections": [
+      "Describing the Genotypic Distribution: Cumulants and Gram-Charlier Series"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter24_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "24.20",
+      "24.21a",
+      "24.21b"
+    ],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "While most readers are familiar with moments, an alternate approach to describing the shape of a distribution, and in particular its departures from a Gaussian, is to examine its cumulants. These quantities, which arise from the moment-generation function of a probability distribution, offer some advantages over moments, as we will discuss shortly. The first uses of cumulants in examining selection response appears in O'Donald (1972) and Bulmer (1980). Sophisticated (and highly technical) treatments were developed by Bürger (1991a, 1993) and Turelli and Barton (1994). Our aim here is both to give the fearless reader sufficient background to this literature and to show the connection between results derived using moments and those derived using cumulants."
+    },
+    {
+      "type": "discussion",
+      "content": "Cumulants (the nth of which we denote by $ K_n $) arise naturally in series approximations of probability distributions, and they can be related to the central moments ($ \\mu_n $). For example, the first five central moments can be expressed as functions of the cumulants as follows: $$ \\mu_{1}=K_{1},\\quad\\mu_{2}=K_{2},\\quad\\mu_{3}=K_{3},\\quad\\mu_{4}=K_{4}+3K_{2}^{2},\\quad\\mu_{5}=K_{5}+10K_{2}K_{3} $$"
+    },
+    {
+      "type": "derivation",
+      "content": "(Kendall and Stuart 1977). Hence, the first three cumulants are equal to the mean, variance, and skew, respectively, while the fourth and fifth cumulants are [[SEE_FORMULA:24.20]]"
+    },
+    {
+      "type": "discussion",
+      "content": "The major advantage of cumulants over moments is that they are additive, so that the nth cumulant of a sum of random variables is simply the sum of the cumulants for each, namely, $ K_n(x+y) = K_n(x) + K_n(y) $. This linearity property does not hold for higher-order moments, which are highly nonlinear functions of the moments of the component distributions. For a normal distribution, cumulants of order three and higher are zero, so nonzero values for these higher-order cumulants provide a convenient measure of departures from normality."
+    },
+    {
+      "type": "discussion",
+      "content": "The major disadvantage of using cumulants in place of moments arises when dealing with recombination (Turelli and Barton 1994; Bürger 2000). In such cases, one works with cumulants to compute within-generation changes, converts these to moments for recombination, and then converts the recombinant products back into cumulants."
+    },
+    {
+      "type": "derivation",
+      "content": "Finally, cumulants appear in series approximations of arbitrary probability distributions. Consider a standardized random variable, $ y = (z - \\mu)/\\sigma $, which has mean zero and variance one. If the true density function for $ y $ is $ \\phi(y) $, we can approximate it as a unit-normal density function, $ \\varphi(y) $, plus correction terms. In particular (Johnson and Kotz 1970a; Kendall and Stuart 1977), the Gram-Charlier series approximation (here shown to order five) is given by [[SEE_FORMULA:24.21a]] where $ H_{k}(y) $ denotes the Chebyshev-Hermite polynomial of order k, with [[SEE_FORMULA:24.21b]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Equation 24.21a shows how the higher-order cumulants $ (K_{3} $ and above $ quantify departures from normality. If all of these are zero, the distribution is Gaussian."
+    },
+    {
+      "type": "discussion",
+      "content": "Bulmer (1980), Zeng (1987), and Turelli and Barton (1994) used Gram-Charlier series to examine departures from normality under selection. Further properties of cumulants and Gram-Charlier (and other) series approximations are discussed in Johnson and Kotz (1970a) and Kendall and Stuart (1977). One potentially troublesome issue with Equation 24.21a is that the term in the square brackets can be negative for some y values (and hence not a proper probability distribution) if too low an order of approximation is used."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 24.6. Cumulants can be used to easily compute the fourth and fifth central moments of the phenotypic distribution. Here, $ z = G + E $, so (Equation 24.20) the fourth moment is $$ \\begin{aligned}\\mu_{4,z}&=K_{4,z}+3K_{2,z}^{2}\\\\&=\\left[K_{4,G}+K_{4,E}\\right]+3\\left(K_{2,G}+K_{2,E}\\right)^{2}\\\\&=\\left[\\left(\\mu_{4,G}-3\\mu_{2,G}^{2}\\right)+\\left(\\mu_{4,E}-3\\mu_{2,E}^{2}\\right)\\right]+3\\left(\\mu_{2,G}+\\mu_{2,E}\\right)^{2}\\\\&=\\mu_{4,G}+\\mu_{4,E}+6\\sigma_{G}^{2}\\sigma_{E}^{2}\\\\ \\end{aligned} $$ where the second and third steps, respectively, follow from the additivity property of cumulants $ (K_{n,z}=K_{n,G}+K_{n,E}) $ and from Equation 24.20, while the final step recovers Equation 24.15. Likewise $$ \\begin{aligned}\\mu_{5,z}&=K_{5,z}+10K_{2,z}K_{3,z}\\\\&=(\\boldsymbol{K}_{5,G}+\\boldsymbol{K}_{5,E})+10(\\boldsymbol{K}_{2,G}+\\boldsymbol{K}_{2,E})(\\boldsymbol{K}_{3,G}+\\boldsymbol{K}_{3,E})\\\\&=(\\mu_{5,G}-10\\mu_{2,G}\\mu_{3,G})+(\\mu_{5,E}-10\\mu_{2,E}\\mu_{3,E})\\\\&\\quad+10(\\mu_{2,G}+\\mu_{2,E})(\\mu_{3,G}+\\mu_{3,E})\\\\&=\\mu_{5,G}+\\mu_{5,E}+10(\\mu_{2,G}\\mu_{3,E}+\\mu_{2,E}\\mu_{3,G})\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "These nonlinear expressions for the higher-order moments of a sum of variables are in sharp contrast to the expressions for cumulants, in which $ K_{n,z} = K_{n,G} + K_{n,E} $."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 24.7. To see the advantage of working with cumulants, consider the fourth cumulant of the genotypic distribution. Equation 24.19d presented a rather complex expression for the fourth moment, but we can use cumulants to easily obtain this result. If the underlying genes are additive across loci (no epistasis), the nth cumulant of the genotypic distribution is the sum of the appropriate cumulants for each of the underlying loci. Following Turelli and Barton (1994) $$ K_{4,G}=\\sum_{i,j,k,\\ell=1}^{n}K_{i j k\\ell}=\\sum_{i=1}^{n}K_{i i i i}+\\sum_{i=1}^{n}\\sum_{j,k,\\ell\\neq i}^{n}K_{i j k\\ell} $$ the sum over $ K_{iii} $ represents the within-locus contributions to the fourth cumulant, while the sums over the other indices are the contributions to $ K_4 $ from fourth-order disequilibria between loci. We recover Equation 24.19d by noting that $ \\mu_{4,G} = K_{4,G} + 3\\sigma_A^4 $ and substituting $$ M_{4}=\\sum_{i=1}^{n}K_{iiii}\\quad and\\quad K_{ijk\\ell}=C_{ijk\\ell}-C_{ij}C_{k\\ell}-C_{ik}C_{j\\ell}-C_{i\\ell}C_{jk} $$"
+    }
+  ]
+}

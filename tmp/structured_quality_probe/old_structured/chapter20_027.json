@@ -1,0 +1,68 @@
+{
+  "id": "chapter20_027",
+  "metadata": {
+    "chapter": "chapter20",
+    "section": "Chapter 20: APPLYING MIXED MODELS TO NATURAL POPULATIONS: BASICS",
+    "subsections": [
+      "Consistency Tests: Accuracy, Reliability, and Caveats when Using PBVs"
+    ],
+    "source_file": "data\\paddle_output\\chapter20_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "20.26a",
+      "20.26b",
+      "20.27a",
+      "20.27b",
+      "20.27c",
+      "20.27d",
+      "20.27e",
+      "20.28a",
+      "20.28b",
+      "20.29a",
+      "20.29b",
+      "20.29c",
+      "20.29d"
+    ],
+    "table_references": [],
+    "structured_repair": {
+      "version": "source_inline_math_v1",
+      "actions": {
+        "replace_from_source": 4
+      }
+    }
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "A caveat with this approach is that $ (, w) $ is a biased estimate of $ (A, w) $ in a univariate animal model because the breeding values are estimated separately from fitnesses (Hadfield 2008). When the components are estimated separately, $ (, w) $ is unbiased only when Equation 20.16b is satisfied (i.e., exactly one of the Robertson consistency conditions is tested). Fortunately, a solution to both these of problems is achieved by jointly modeling the trait and fitness in a bivariate animal model, and then using REML-estimated variance components for consistency tests, as detailed in the following section."
+    },
+    {
+      "type": "derivation",
+      "content": "# Bivariate Animal Models: REML Estimates of $ \\sigma(A_{z}, A_{w}), S_{A} $, and $ S_{z} $ LW Chapter 26 introduced the multivariate animal model, in which a set of potentially correlated traits is measured in a pedigree of individuals. For trait j, a standard animal model is fit, [[SEE_FORMULA:20.26a]] where $ X_j $ and $ Z_j $ are, respectively, the design and incidence matrices (Chapter 19; LW Chapter 26) associated with trait $ j $, $ a_j $ is the vector of breeding values for trait $ j $, and the covariance model for the random effects associated with $ j $ is [[SEE_FORMULA:20.26b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Consider the bivariate case, where $ y_1 = z $ is the vector of phenotypes for the trait of interest and $ y_2 = w $ is the vector of corresponding relative fitnesses, so $ (z_i, w_i) $ are the values of the focal trait and relative fitness for individual $ i $. The resulting bivariate mixed model becomes [[SEE_FORMULA:20.27a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Note that the structure of this model allows the trait and fitness to have different fixed effects. The model can logically be extended to include more complex designs, such as maternal effects or repeated measures (e.g., Morrissey et al. 2012). The resulting covariance structure for the stacked vector of breeding values is [[SEE_FORMULA:20.27b]] where $ \\otimes $ denotes the Kronecker (or direct) product (LW Chapter 26) and [[SEE_FORMULA:20.27c]] is the matrix of genetic covariances of interest. Similarly, the covariance structure for the stacked vectors of residuals is [[SEE_FORMULA:20.27d]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Finally, we need to specify any covariances between a and e. By construction $ \\sigma(A_{z}, e_{z}) = \\sigma(A_{w}, e_{w}) = 0 $, while the standard assumption is $ \\sigma(A_{z}, e_{w}) = \\sigma(A_{w}, e_{z}) = 0 $, yielding an assumed covariance structure of [[SEE_FORMULA:20.27e]]"
+    },
+    {
+      "type": "derivation",
+      "content": "The resulting six variance components for G (Equation 20.27c) and E (Equation 20.27d) are estimated by REML, and these components are our main interest. For example, $ (A_z, A_w) $ is the expected selection response under the 1968 version of Robertson's theorem (Equation 6.24a). From the assumption that $ (A_z, e_w) = (A_w, e_z) = 0 $, [[SEE_FORMULA:20.28a]] is a direct estimate of the selection differential on the phenotypic value $ (z) $ of the focal trait, while [[SEE_FORMULA:20.28b]] is an estimate of the selection differential on the breeding value $ (A_z) $ of the focal trait. By using these variance components directly, we avoid the pitfalls associated with working with individual PBVs, and Postma's (Equation 20.18) and Morrissey's (Equation 20.21c) consistency conditions are easily computed from these variance components. Ideally, this is done within a Bayesian setting, so that the posterior distribution reflects all of the model uncertainty (from pedigree estimation on down). For example, draws from the MCMC sampler for such an analysis (Appendix 3) can be used to compute the posterior distribution of (say) $ S_A - h^2 S_z $, and thus test whether there is sufficient support to include (consistent with $ S_A = h^2 S_z $) or exclude (consistent with $ S_A h^2 S_z $) a zero value for the difference, $ S_A - h^2 S_z $."
+    },
+    {
+      "type": "derivation",
+      "content": "Removing the assumption that $ \\sigma(A_{z}, e_{w}) = \\sigma(A_{w}, e_{z}) = 0 $, the covariance structure given by Equation 20.27e is replaced by [[SEE_FORMULA:20.29a]] where [[SEE_FORMULA:20.29b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "These two additional variance components allow us to use the more general consistency condition given by Equation 20.21b. Likewise, to apply Postma's test (Equation 20.18), the phenotypic and breeding-value selection differentials now become [[SEE_FORMULA:20.29c]] and [[SEE_FORMULA:20.29d]]"
+    }
+  ]
+}

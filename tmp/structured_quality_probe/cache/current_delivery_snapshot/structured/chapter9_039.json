@@ -1,0 +1,36 @@
+{
+  "id": "chapter9_039",
+  "metadata": {
+    "chapter": "chapter9",
+    "section": "Chapter 9: Fay and Wu's H Test",
+    "subsections": [
+      "Fay and Wu's H Test"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter9_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "9.27a",
+      "9.27b",
+      "9.27c"
+    ],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "derivation",
+      "content": "The first test to use the full power of the unfolded frequency spectrum was proposed by Fay and Wu (2000), who noted that a hard sweep results in an excess of sites with high-frequency derived alleles (Figure 8.5). Although the signature is rather fleeting (Figure 9.4), this excess forms the basis for their $ H $ test. Their idea is to disproportionately weight sites containing derived alleles at high frequencies, and they chose to do so using the weights $ c_i = i^2 $. From Equation 9.23b, these weights imply $ h(n) = n(n - 1)/2 $, and Equation 9.23c yields [[SEE_FORMULA:9.27a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "The H test is the scaled difference between Fay and Wu's estimator for $ \\theta $ and that based on average pairwise differences, [[SEE_FORMULA:9.27b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Zeng et al. (2006) obtain the sampling variance as [[SEE_FORMULA:9.27c]] As above, Equation 9.21b is used for $ \\theta $ and $ \\theta^{2} $ when computing Equation 9.27c. Because II is a measure of the intermediate-frequency sites, H is a contrast between high- and intermediate-frequency variation, with a negative H indicating an excess of sites with a high frequency of derived alleles. Jointly negative (and significant) values of D and H are consistent with a selective sweep, indicating both an excess of rare alleles and an excess of high-frequency derived alleles. One caution when applying the H test is its extreme sensitivity to polarity errors (Baudry and Depaulis 2003)."
+    },
+    {
+      "type": "discussion",
+      "content": "Przeworski (2002) showed that both the D and H tests have moderate power immediately after a sweep but the power of the H test rapidly dissipates (within $ \\sim0.2N_e $ generations) as the high-frequency alleles become fixed (Figure 9.4). The D test retains power a bit longer ($ \\sim0.5N_e $ generations), as it is sensitive to the generation of rare alleles by new mutations immediately after the sweep. As a result of using different signatures in the SFS, one can easily encounter situations where, following a sweep, one test is highly significant while the other is not. Even for a strong hard sweep, neither D nor H may be significantly negative, depending on the time since the sweep was completed (Figure 9.4)."
+    }
+  ]
+}

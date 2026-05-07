@@ -1,0 +1,64 @@
+{
+  "id": "chapter30_009",
+  "metadata": {
+    "chapter": "chapter30",
+    "section": "Chapter 30: MULTIDIMENSIONAL QUADRATIC FITNESS REGRESSIONS",
+    "subsections": [
+      "MULTIDIMENSIONAL QUADRATIC FITNESS REGRESSIONS"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter30_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "30.7a",
+      "30.10"
+    ],
+    "table_references": [
+      "30.1"
+    ],
+    "table_reference_keys": [
+      "chapter30:30.1"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "As noted for univariate cases, approximating the individual fitness function by a quadratic can give a very distorted view of the true fitness surface (Figure 29.10). We expect this distortion to be even greater in a multivariate setting. With this caveat in mind, quadratic fitness surfaces are still quite useful. One advantage is that a quadratic is the simplest surface allowing for curvature. Further, when phenotypes are normally distributed, the coefficients"
+    },
+    {
+      "type": "discussion",
+      "content": "[[TABLE:30.1]]. Excellent overviews were also provided by Brodie et al. (1995) and Arnold et al. (2001)."
+    },
+    {
+      "type": "derivation",
+      "content": "Differentials measure the covariance between relative fitness and phenotype $$ S_{i}=\\sigma\\left[w,z_{i}\\right] $$ [[SEE_FORMULA:30.7a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "The opportunity for selection bounds the differential $$ \\frac{\\left|S_{i}\\right|}{\\sigma(z_{i})}\\leq\\sqrt{I} $$ [[SEE_FORMULA:30.10]]for any distribution of z $$ if\\mathbf{z}\\sim MVN $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Differentials confound direct and indirect selection $$ \\begin{array}{r l r l}&{\\mathbf{S}=\\boldsymbol{\\mu}^{*}-\\boldsymbol{\\mu}=\\mathbf{P}\\boldsymbol{\\beta}}&&{\\quad\\mathbf{C}=\\mathbf{P}^{*}-\\mathbf{P}+\\mathbf{S}\\mathbf{S}^{T}=\\mathbf{P}\\boldsymbol{\\gamma}\\mathbf{P}}\\\\ &{S_{i}=\\sum_{j=1}^{n}\\beta_{j}P_{i j}}&&{\\quad C_{i j}=\\sum_{k=1}^{n}\\sum_{\\ell=1}^{n}\\gamma_{k\\ell}P_{i k}P_{\\ell j}}\\end{array} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Gradients measure the amount of direct selection $$ \\beta=\\mathbf{P}^{-1}\\mathbf{S} $$ $$ \\gamma=\\mathbf{P}^{-1}\\mathbf{C}\\mathbf{P}^{-1} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Gradients describe the slope and curvature of the log mean fitness landscape, provided $ z \\sim MVN $ and fitnesses are frequency-independent $$ \\beta_{i}=\\frac{\\partial\\ln\\overline{W}(\\pmb{\\mu})}{\\partial\\mu_{i}} $$ $$ \\gamma_{ij}=\\frac{\\partial^{2}\\ln\\overline{W}(\\boldsymbol{\\mu})}{\\partial\\mu_{i}\\partial\\mu_{j}}+\\beta_{i}\\beta_{j} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Gradients describe the average slope and average curvature of the individual fitness surface, provided $ z \\sim MVN $ $$ \\beta_{i}=\\int\\frac{\\partial w(\\mathbf{z})}{\\partial z_{i}}\\varphi(\\mathbf{z})\\mathrm{d}\\mathbf{z}\\quad\\gamma_{i j}=\\int\\frac{\\partial^{2}w(\\mathbf{z})}{\\partial z_{i}\\partial z_{j}}\\varphi(\\mathbf{z})\\mathrm{d}\\mathbf{z} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Gradients appear as coefficients in fitness regressions $$ w(\\mathbf{z})=1+\\sum\\beta_{j}\\left(z_{j}-\\mu_{j}\\right)\\qquad w(\\mathbf{z})=a+\\sum b_{j}\\left(z_{j}-\\mu_{j}\\right)+\\frac{1}{2}\\sum_{j,k}\\gamma_{j k}\\left(z_{j}-\\mu_{j}\\right)(z_{k}-\\mu_{k}) $$ $$ w(\\mathbf{z})=1+\\beta^{T}(\\mathbf{z}-\\boldsymbol{\\mu})\\quad w(\\mathbf{z})=a+\\mathbf{b}^{T}(\\mathbf{z}-\\boldsymbol{\\mu})+\\frac{1}{2}(\\mathbf{z}-\\boldsymbol{\\mu})^{T}\\boldsymbol{\\gamma}(\\mathbf{z}-\\boldsymbol{\\mu}) $$ $$ w(\\mathbf{z})=1+\\beta_{s d}^{T}\\mathbf{z}_{s d} $$ $$ w(\\mathbf{z})=a+\\mathbf{b}_{s d}^{T}\\mathbf{z}_{s d}+\\frac{1}{2}\\mathbf{z}_{s d}^{T}\\boldsymbol{\\gamma}_{s d}\\mathbf{z}_{s d} $$ $$ \\begin{array}{r l}{\\beta=s l o p e\\mathrm{~o f~t h e~b e s t~l i n e a r~f i t~}}&{{}\\gamma=t h e\\mathrm{~q u a d r a t i c~c o e f f i c i e n t~o f~t h e~b e s t~}}\\\\ {}&{{}\\mathrm{q u a d r a t i c~f i t.~}\\mathbf{b}=\\beta\\mathrm{~w h e n~}\\mathbf{z}\\sim\\mathrm{M V N}}\\\\ \\end{array} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Gradients appear as coefficients in evolutionary equations when $ (z, g) \\sim MVN $ $$ \\Delta\\mu=\\mathbf{G}\\beta $$ $$ \\mathbf{G}^{*}-\\mathbf{G}=\\mathbf{G}\\left(\\gamma-\\beta\\beta^{T}\\right)\\mathbf{G} $$ in the quadratic regression also appear as the coefficients of equations for predicting evolutionary change ([[SEE_TABLE:30.1]]). We will briefly review some statistical issues of fitting such regressions before examining the geometry of multivariate quadratic regressions."
+    }
+  ]
+}

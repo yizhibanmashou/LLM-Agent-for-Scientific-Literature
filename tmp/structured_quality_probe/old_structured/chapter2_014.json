@@ -1,0 +1,76 @@
+{
+  "id": "chapter2_014",
+  "metadata": {
+    "chapter": "chapter2",
+    "section": "Chapter 2: THE GENEALOGICAL STRUCTURE OF A POPULATION",
+    "subsections": [
+      "THE GENEALOGICAL STRUCTURE OF A POPULATION"
+    ],
+    "source_file": "data\\paddle_output\\chapter2_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "2.37",
+      "2.38",
+      "2.39",
+      "2.40",
+      "2.41"
+    ],
+    "table_references": [],
+    "structured_repair": {
+      "version": "source_inline_math_v1",
+      "actions": {
+        "replace_from_source": 4
+      }
+    }
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "The preceding analyses showed that a number of summary statistics, such as average levels of heterozygosity and linkage disequilibrium, are defined by the processes of drift, mutation, and recombination in predictable ways, at least for neutral sites. Provided we retain our focus on neutral regions of the genome, it is possible to go quite a bit further, even to the extent of predicting the expected genealogical relationships among different sequences sampled within populations. The basic theory, first laid out by Kingman (1982a 1982b) and now called coalescent theory, provides an elegant and powerful approach for solving problems in population genetics and molecular evolution. Kingman (2000) reviewed the historical origins of this approach, and detailed overviews can be found in Hudson (1990), Donnelly and Tavaré (1995), Fu and Li (1999), Nordborg (2001), Stephens (2001), Rosenberg and Nordborg (2002), Hein et al. (2005), and Wakeley (2006). Because all of the genes within a population are direct products of past gametic sampling, they are all ultimately related in a genealogical sense. Thus, if one were to sample two alleles in a current population and then follow them back in time, both copies would eventually be traced to a single copy in an ancestral individual, at which point the two alleles are said to have coalesced. A key principle is that the form of the expected gene genealogy for neutral genes, in particular the expected coalescence time, is completely independent of the mutational process."
+    },
+    {
+      "type": "derivation",
+      "content": "Consider a random sample of $n$ alleles drawn from a current population, assumed to obey all the properties of the idealized Wright-Fisher model, and with no recombination within alleles. Focusing initially on just two of the sampled alleles, we first evaluate the probability that both members of the pair are direct copies of a single allele in the preceding generation. Assuming that each individual produces a large number of gametes, because there are $2N$ gene copies in the population in each generation, this probability is simply $1/(2N)$, whereas $\\lambda_1 = 1 - (1/2N)$ is the probability that coalescence occurred at some earlier generation. Conditional on coalescence not having occurred in generation one, the probability of coalescence one further generation in the past is again equal to $1/(2N)$, yielding $\\lambda_1(1/2N)$ as the unconditional probability of coalescence two generations back. This simple rule can be generalized to give the probability of coalescence exactly $t$ generations in the past, [[SEE_FORMULA:2.37]] which defines a geometric distribution, with the sum of $ P_c(t) $ over the interval $ t = 1 $ to $ \\infty $ being equal to one. One simple related point is that the probability that the most recent common ancestor (MRCA) between two sampled alleles occurred within the last $ t $ generations is $ 1 - \\lambda_1^t \\simeq 1 - e^{-t/2N} $, namely one minus the probability of no common ancestor over the first $ t $ generations into the past."
+    },
+    {
+      "type": "derivation",
+      "content": "The mean coalescence time for two randomly sampled genes is simply [[SEE_FORMULA:2.38]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, the expected number of generations required for any two random alleles to trace back"
+    },
+    {
+      "type": "discussion",
+      "content": "to an ancestral copy is simply equal to twice the population size (more precisely, twice the effective population size, as will be defined in Chapter 3)."
+    },
+    {
+      "type": "derivation",
+      "content": "The logic used to derive this result is easily extended to the entire sample of $n$ gene copies. There are $p_n = n(n - 1)/2$ possible pairs of $n$ copies, each of which will or will not coalesce in the preceding generation with respective probabilities $1/(2N)$ and $[1 - (1/2N)]$. If the sample size is much smaller than the population size, the probability of coalescence for any pair in the sample in the preceding generation is simply the product $p_n/(2N)$. Thus, the probability distribution for the coalescence time of one pair within a set of $n$ sequences is [[SEE_FORMULA:2.39]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Namely, a geometric random variable with success parameter $ (p_n/2N) $. The mean time to coalescence of the first pair is then $ 2N/p_n $ generations (as opposed to 2N generations with a single pair). Because at this point two copies have coalesced into one, the sample size has been reduced by one, and the mean time to coalescence of the next pair is found by resetting $ p_n $ to $ p_{n-1} = (n-1)(n-2)/2 $. This procedure can be followed recursively down to the final pair $ (p_n=1) $, which again has an expected coalescence time of 2N generations (Figure 2.10). The implication of these results is that the expected time for merging n random lineages into n-1 lineages, [[SEE_FORMULA:2.40]] increases with decreasing sample size."
+    },
+    {
+      "type": "derivation",
+      "content": "The total expected genealogical depth of a sample, obtained by summing the expectations of each coalescence event, is [[SEE_FORMULA:2.41]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, under neutrality, the expected time to the most recent common ancestor of all alleles residing at a locus is $ 4N $ generations. This is equivalent to the mean time to fixation of a neutral mutation, as can be verified by substituting $ p_0 = 1/(2N) $ into Equation 2.11b."
+    },
+    {
+      "type": "discussion",
+      "content": "Notably, the expected distance between the final two nodes in a neutral coalescent tree, 2N, is at least half the coalescence time for the entire sample. Unfortunately, this fundamental issue is commonly ignored by those who invoke deep splits in a gene genealogy as evidence of an adaptive event."
+    },
+    {
+      "type": "discussion",
+      "content": "It is important to note that all of the results in this section were derived without regard to any underlying genetic features of the sampled alleles. However, having determined the expected genealogical features of neutral gene sequences, it is straightforward to incorporate genetic issues, as mutations will arise randomly along the branches of the genealogy in numbers proportional to time. For example, given the average 2N generations separating two randomly sampled alleles, the average number of mutations separating such genes is $ 2 2N u = 4Nu $, the two arising because each copy is 2N generations removed from the common ancestor. The actual number of mutations for any realization follows a Poisson distribution, so for this example, the probability that no mutations have arise is $ e^ -4Nu $."
+    },
+    {
+      "type": "discussion",
+      "content": "One of the primary uses of the coalescent derives from its ability to efficiently generate sample distributions of quantities of interest (e.g., the expected pattern of molecular variation among neutral alleles), which provides a formal basis for statistical tests of various evolutionary models (Hudson 2002), including those involving selection (Chapter 9). Although all of the preceding results simply refer to the expected coalescent times, each individual coalescence time has considerable evolutionary variance, being equal to the square of its expected value (a feature of geometric distributions). As will be discussed in Chapter 9, a number of useful results have been obtained on the sampling distributions of coalescents, but it is also straightforward to obtain such information by using computer simulations to construct random genealogies. For each simulated sample, one starts with n distinct lineages, picks two at random, and generates a value for $ t_n $ by randomly drawing from an exponential distribution with mean value given by Equation 2.40. After these two samples are joined in the coalescent tree, the remaining sample of $ n - 1 $ distinct lineages is treated in the same way to generate a value of $ t_{n-1} $, and so on, until the last two remaining lineages coalesce to yield $ t_2 $. For each branch of the resultant tree, the number of mutations is then drawn using a Poisson distribution with an expectation equal to the product of the mutation rate and the length of the branch (in generations), e.g., the two branches emanating from the first node have independent numbers of mutations with expectation $ u_n $. By repeating such coalescent simulations several thousands of times, a distribution of interallelic variation under mutation and drift can then be acquired for any mutational model of interest, with the resultant data providing a null model for various tests of selection based on the pattern of variation in an actual sample (Chapter 9)."
+    }
+  ]
+}

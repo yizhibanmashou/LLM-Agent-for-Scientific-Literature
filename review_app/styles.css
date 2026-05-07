@@ -106,7 +106,7 @@ pre {
 .segmented button,
 .pdf-toolbar button,
 .status-actions button,
-.note-form button,
+.issue-form button,
 .item-pill,
 select,
 input {
@@ -277,7 +277,7 @@ textarea {
 
 .pdf-toolbar button,
 .status-actions button,
-.note-form button {
+.issue-form button {
   border: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.9);
   border-radius: 10px;
@@ -825,10 +825,62 @@ textarea {
   color: rgba(18, 63, 138, 0.82);
 }
 
-.note-form {
+.issue-form {
   display: grid;
+  gap: 8px;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(19, 63, 121, 0.12);
+}
+
+.issue-form-title {
+  display: grid;
+  gap: 2px;
+}
+
+.issue-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.issue-form-grid label {
+  display: grid;
+  gap: 4px;
+}
+
+.issue-form-grid textarea,
+.issue-form-grid input,
+.issue-form-grid select {
+  width: 100%;
+}
+
+.new-category-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  grid-column: 1 / -1;
+}
+
+.new-category-fields.is-hidden {
+  display: none;
+}
+
+.issue-form-actions {
+  display: flex;
+  flex-wrap: wrap;
   gap: 6px;
-  margin-top: 6px;
+}
+
+.issue-form-actions button {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  padding: 5px 8px;
+  font-weight: 700;
+  font-size: 0.82rem;
+  color: var(--ink);
+  cursor: pointer;
 }
 
 .note-history {
@@ -844,6 +896,41 @@ textarea {
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.84);
   padding: 6px;
+}
+
+.issue-history {
+  display: grid;
+  gap: 6px;
+  margin-top: 6px;
+  max-height: 220px;
+  overflow: auto;
+}
+
+.issue-card {
+  border: 1px solid rgba(198, 52, 52, 0.18);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.86);
+  padding: 6px;
+  display: grid;
+  gap: 4px;
+}
+
+.issue-title {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.issue-expected,
+.issue-context,
+.issue-target,
+.issue-evidence,
+.issue-note {
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  line-height: 1.4;
+  overflow-wrap: anywhere;
 }
 
 .note-time {
@@ -964,5 +1051,9 @@ textarea {
 
   .pdf-stage {
     min-height: 380px;
+  }
+
+  .issue-form-grid {
+    grid-template-columns: 1fr;
   }
 }

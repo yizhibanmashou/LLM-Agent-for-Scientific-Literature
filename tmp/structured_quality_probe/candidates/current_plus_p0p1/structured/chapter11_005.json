@@ -1,0 +1,50 @@
+{
+  "id": "chapter11_005",
+  "metadata": {
+    "chapter": "chapter11",
+    "section": "Chapter 11: One- and Two-locus Identity Coefficients",
+    "subsections": [
+      "One- and Two-locus Identity Coefficients"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter11_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "11.3a",
+      "11.3b",
+      "11.3c",
+      "11.3d",
+      "11.4a",
+      "11.4b"
+    ],
+    "table_references": [
+      "11.1",
+      "11.3"
+    ],
+    "table_reference_keys": [
+      "chapter11:11.1",
+      "chapter11:11.3"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "The contributions of the factors in [[SEE_TABLE:11.1]] to the traditional components of genetic variance ($ \\sigma_{A}^{2} $, $ \\sigma_{D}^{2} $, and $ \\sigma_{AA}^{2} $) in a finite population depend upon several one- and two-locus identity coefficients. As shown in Figure 11.1, these give the probabilities that randomly drawn combinations (from the population) of two, three, or four alleles at a given locus are identical by descent (both IBD and ibd are used in the literature; LW Chapter 7), with extensions to the two-locus case for randomly drawn combinations of two, three, or four two-locus gametes. Of the one-locus coefficients, f is the familiar inbreeding coefficient, i.e., the probability that two alleles are identical by descent at a particular locus (Chapter 2). The probabilities that the members of random groups of three and four alleles are all identical by descent are denoted by $ \\gamma $ and $ \\delta $ (the latter is not to be confused with the dominance effects, which are subscripted in [[SEE_TABLE:11.1]])."
+    },
+    {
+      "type": "discussion",
+      "content": "The coefficient $ \\Delta $ also involves four gametes (Figure 11.1), and is the probability of IBD within two pairs of gametes (including the possibility that all four genes are IBD). Under the random union of gametes, this corresponds to the probability that two (diploid) individuals have genotypes that are IBD. With a probability of $ \\delta $, both individuals are inbred, and thus all four alleles are IBD, with the resulting genotypes being homozygotes. The more interesting scenario, which occurs with a probability of $ \\Delta - \\delta $, is that where the two genotypes are IBD but the alleles within each individual are not (i.e., neither individual is inbred). Hence, the shared genotypes could be either heterozygotes or homozygotes. For example, suppose both of diploid genotypes are AA and that the maternal copy of A in both individuals is IBD, as is the paternal copy of A, but the maternal and paternal copies are not IBD. This generates two homozygotes that are not inbred (the two copies of A within each individual are not IBD), yet both genotypes are IBD to each other. Similarly, if both genotypes are Aa, neither individual is inbred, but if the A is IBD in both individuals, and so too are the a alleles, then the genotypes are IBD, but not inbred."
+    },
+    {
+      "type": "derivation",
+      "content": "For randomly mating monoecious populations under the classical Wright-Fisher model, the transition equations for these coefficients are functions of $ N_{e} $ and t, with [[SEE_FORMULA:11.3a]] [[SEE_FORMULA:11.3b]] [[SEE_FORMULA:11.3c]] [[SEE_FORMULA:11.3d]] where $ \\lambda_{j}=1-(j/2N_{e}) $ for $ j=1,2,3 $ (Cockerham and Weir 1983)."
+    },
+    {
+      "type": "derivation",
+      "content": "The three two-locus coefficients (denoted by tildes in Figure 11.1) refer to joint identities by descent at two loci. First, $ \\widetilde{f} $ refers to pairs of alleles on two gametes and is the joint probability of IBD at locus 1 and IBD at locus 2. Under neutrality, random mating, and linkage equilibrium, $ \\widetilde{f} $ cannot be less than the product of the separate identity probabilities for each locus, $ f^2 $. Second, $ \\widetilde{\\gamma} $ refers to the situation in which each member of a pair of genes in one gamete is identical by descent with a gene in a separate gamete (IBD at locus 1 for gametes one and two, IBD at locus 2 for gametes two and three). Finally, $ \\widetilde{\\Delta} $ is the joint identity by descent of genes (two at each locus) in two pairs of different gametes (IBD at locus 1 for gametes one and two, IBD at locus 2 for gametes three and four). The transition equations for these double identity-by-descent measures, which were derived by Weir and Cockerham (1969) for ideal monoecious populations, depend upon $ N_e $, $ t $, and the linkage parameter $ \\rho = 1 - 2c $ (where $ c \\leq 0.5 $ is the recombination frequency between loci). Letting $ \\widetilde{f}_t = \\widetilde{f}_t^* + 2f_t - 1 $, $ \\widetilde{\\gamma}_t = \\widetilde{\\gamma}_t^* + 2f_t - 1 $, and $ \\widetilde{\\Delta}_t = \\widetilde{\\Delta}_t^* + 2f_t - 1 $, the coefficients are obtained by use of Equation 11.3a and the following matrix expression, [[SEE_FORMULA:11.4a]] starting with $ \\widetilde{f}_{0}^{*}=\\widetilde{\\gamma}_{0}^{*}=\\widetilde{\\Delta}_{0}^{*}=1 $, where [[SEE_FORMULA:11.4b]]"
+    },
+    {
+      "type": "discussion",
+      "content": "[[TABLE:11.3]]) and the temporal dynamics of the identity coefficients (Equations 11.3 and 11.4), we are now in a position to explore the impact of finite population size on the components of variance for a quantitative trait with a nonadditive genetic basis. The expected dynamics are determined by summing the products of the seven quadratic terms listed across the top of [[SEE_TABLE:11.3]] with their associated tabulated identity coefficients in the table. For example, the expected within-population dominance variance is"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "id": "chapter16_002",
+  "metadata": {
+    "chapter": "chapter16",
+    "section": "Chapter 16: CHANGES IN VARIANCE DUE TO GAMETIC-PHASE DISEQUILIBRIUM",
+    "subsections": [
+      "CHANGES IN VARIANCE DUE TO GAMETIC-PHASE DISEQUILIBRIUM"
+    ],
+    "source_file": "data\\paddle_output\\chapter16_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "16.1a",
+      "16.2",
+      "16.3"
+    ],
+    "table_references": [],
+    "structured_repair": {
+      "version": "source_inline_math_v1",
+      "actions": {
+        "replace_from_source": 1
+      }
+    }
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "In the absence of epistasis, gametic-phase disequilibrium does not change the population mean (Chapter 15). However, as first pointed out by Lush (1945), it affects the response to selection by introducing correlations between alleles at different loci (even if unlinked), thus altering the additive genetic variance, even in the absence of any allele-frequency change."
+    },
+    {
+      "type": "derivation",
+      "content": "To see this, let $ a_1^{(k)} $ and $ a_2^{(k)} $ be the average effects of the two alleles at locus $ k $ from a random individual, where the subscripts 1 and 2 denote the maternally and paternally derived alleles, respectively. Assuming (for now) random mating, there is no covariance between alleles of maternal and paternal origin, so that $ \\sigma(a_1^{(k)}, a_2^{(j)}) = 0 $ for all $ k $ and $ j $. However, when gametic-phase disequilibrium is present, there can be covariances between alleles at different loci from the same parent, so that $ \\sigma(a_1^{(k)}, a_2^{(j)}) $ and $ \\sigma(a_2^{(k)}, a_2^{(j)}) $ can be nonzero. That is, there can be correlations between alleles in any particular gamete. Because $ \\sigma_A^2 $ is the variance of the sum of average effects over all loci. [[SEE_FORMULA:16.1a]] where $n$ is the number of loci and $C_{jk}$ is the covariance between allelic effects at loci $j$ and $k$ (when contributed by the same parent, and hence on the same gamete). This decomposes the additive variance as [[SEE_FORMULA:16.2]] where $ \\sigma_a^2 = 2 \\sum C_{kk} $ is the additive variance in the absence of gametic-phase disequilibrium, while the disequilibrium contribution $ d = 4 \\sum_{j < k} C_{kj} $ is the covariance between allelic effects at different loci (in terms of the notation used in LW Equation 7.14, $ d = \\sigma_{A,A} $)."
+    },
+    {
+      "type": "discussion",
+      "content": "The component of the additive genetic variance that is unaltered by changes in gametic-phase disequilibrium, $ \\sigma_a^2 $, is often referred to as the additive genetic variance (or simply the genic variance) to distinguish it from the additive genetic variance, $ \\sigma_A^2 $. In the absence of disequilibrium, the genic and genetic variances are equivalent. Negative disequilibrium ( $ d < 0 $) implies the presence of hidden additive variance ( $ \\sigma_A^2 < \\sigma_A^2 $), with $ \\sigma_A^2 $ increasing toward $ \\sigma_a^2 $ as the disequilibrium decays. If $ d > 0 $, the additive variance is inflated relative to a random-mating population ( $ \\sigma_A^2 > \\sigma_A^2 $), with $ \\sigma_A^2 $ decreasing toward $ \\sigma_A^2 $ as disequilibrium decays. Because $ n(n - 1) $ terms contribute to $ d $, whereas $ n $ terms contribute to $ \\sigma_a^2 $, gametic-phase disequilibrium can generate large changes in the additive genetic variance even when changes in the individual covariances, $ C_{jk} $, are all very small (Chapter 24)."
+    },
+    {
+      "type": "discussion",
+      "content": "The allelic effects, $ a^{(k)} $ (and hence the genic variance, $ \\sigma_a^2 $), are altered as allele frequencies change, resulting in a permanent change in $ \\sigma_A^2 $. Changes in $ \\sigma_a^2 $ due to selection strongly depend on the initial distribution of allelic effects and frequencies (Chapters 5 and 24–26), both of which are extremely difficult to estimate. Changes in $ d $, however, are generally less sensitive to the initial distribution of allelic effects (Sorensen and Hill 1982). Any changes in $ \\sigma_A^2 $ due to changes in $ d $ are transient—in the absence of selection, recombination removes disequilibrium and the additive genetic variance, $ \\sigma_A^2 $, returns to the additive genic variance, $ \\sigma_a^2 $, as $ d $ decays to zero."
+    },
+    {
+      "type": "derivation",
+      "content": "Thus, under our (short-term response) assumption that allele frequencies remain effectively constant, changes in $ \\sigma_A^2 $ are due entirely to changes in $ d $, as the $ C_{kk} $ terms in Equation 16.1b (corresponding to $ \\sigma_a^2 $) are only altered by allele-frequency change. Hence, the additive genetic variance in generation $ t $ is calculated by $ \\sigma_A^2(t) = \\sigma_a^2 + d(t) $, yielding a change in variance of $ \\Delta \\sigma_A^2(t) = \\Delta d(t) $. Under random mating in the absence of selection, the disequilibrium between pairs of unlinked loci is halved in each generation (LW Equation 5.12), thus halving the covariance between allelic effects [[SEE_FORMULA:16.3]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Countering this process, selection tends to generate gametic-phase disequilibrium. For example, directional selection to change the mean usually reduces the variance of a character, thus generating negative values of d anew in each generation (Felsenstein 1965)."
+    },
+    {
+      "type": "discussion",
+      "content": "As shown in Figure 16.1, stabilizing selection reduces the phenotypic variance and, in the process, creates negative values of d (as we will shortly demonstrate), while disruptive selection increases the phenotypic variance, generating positive d. Stabilizing and disruptive selection are occasionally referred to as centripetal selection and centrifugal selection, respectively (Simpson 1944). Figure 16.2 shows how directional and stabilizing selection generate negative covariances (and hence negative values of d) between loci under selection, while disruptive selection generates positive covariances (and hence positive values of d)."
+    },
+    {
+      "type": "discussion",
+      "content": "More generally, for values of $z$ that are normally distributed, selection reduces the phenotypic variance when $\\partial^2 \\ln w(z) / \\partial z^2 < 0$ for all $z$ (Shnol and Kondrashov 1993), generating negative values of $d$. If this partial differential is > 0 for all values of $z$, selection increases the variance, generating positive values of $d$. One function that does not change the variance (when $z \\sim$ normal) is the exponential fitness function, $w(z) = \\exp(-az)$, as $$ \\begin{align*}\\frac{\\partial^2\\ln w(z)}{\\partial z^2}=-\\frac{\\partial^2az}{\\partial z^2}=0\\end{align*} $$ for all z, and hence the variance following selection neither increases or decreases (Charlesworth 1990)."
+    },
+    {
+      "type": "discussion",
+      "content": "Assuming the validity of the infinitesimal model, Bulmer (1971b, 1974a, 1976a, 1980) solved the question of how these within-generation changes in the variance translate into between-generation changes (response in the variance). Chapter 24 moves beyond the infinitesimal model by considering the impact of linkage with a finite number of loci and finite population size. Estimation of the nature and amount of selection acting on the mean and the variance of a character is examined in Chapters 29 and 30."
+    }
+  ]
+}

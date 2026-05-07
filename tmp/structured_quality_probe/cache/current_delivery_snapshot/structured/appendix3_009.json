@@ -1,0 +1,32 @@
+{
+  "id": "appendix3_009",
+  "metadata": {
+    "chapter": "appendix3",
+    "section": "Burning-in the Sampler",
+    "subsections": [
+      "Burning-in the Sampler"
+    ],
+    "source_file": "tmp\\paddle_output\\appendix3_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "A key issue in the successful implementation of Metropolis-Hastings, or any other MCMC sampler, is the number of steps (iterations) until the chain approaches stationarity (the length of the burn-in period), as initial values are somewhat dependent upon the starting position. Typically the first 1,000 to 50,000 (or more) values of the chain are discarded, and then various convergence tests (see below) are used to assess whether stationarity has indeed been reached."
+    },
+    {
+      "type": "discussion",
+      "content": "A poor choice of either a proposal distribution or a starting value can greatly increase the required burn-in time, and an area of current research is whether an optimal starting point and proposal distribution can be found. One suggestion is to initiate the chain as close to the center of the distribution as possible, for example, taking a value close to the distribution's mode (such as using an approximate MLE as the starting value). Geyer (2011), however, offered the simple advice that \"any point you don't mind having in a sample is a good starting point.\""
+    },
+    {
+      "type": "discussion",
+      "content": "A chain is said to be poorly mixing if it stays in small regions of the parameter space for long periods of time, as opposed to a well-mixing chain, which seems to happily explore the entire space (albeit perhaps by very small steps, requiring very many draws to fully survey the entire space). A poorly mixing chain can arise because the target distribution is multimodal and our choice of starting values (or the chance steps that were initially taken) traps us near one of the modes (such multimodal posteriors can arise if we have a strong prior that is in conflict with the observed data). Two approaches have been suggested for situations where the target distribution may have multiple peaks. The most straightforward is to use widely dispersed initial values to start several different chains (Gelman and Rubin 1992). A less obvious approach, which we will discuss shortly, is to use simulated annealing on a single chain."
+    },
+    {
+      "type": "discussion",
+      "content": "Even after an apparently successful burn-in, the real fear for the MCMC practitioner is that the chain is simply showing pseudo-convergence. It appears to have reached an equilibrium, when in fact it is simply exploring (albeit perhaps rather fully) some subset of the entire distribution. If the transition time between different parts of the full distribution is long relative to the sample size, the MCMC user will happily observe convergence and believe that the simulation is a fair representation of the true posterior. The unfortunate feature is that for any MCMC, the skeptic, or a hardened reviewer, can claim (with some justification) that convergence has not been demonstrated. The problem is akin to large-sample results in statistics (such as the large-sample features of ML; LW Appendix 4): the theory says that for a sufficiently large sample, certain desirable properties hold, but usually says rather little about how “large” is large. For a complex posterior, the required chain size might be far, far larger than an investigator envisions. The only real solution is to run the chain for as long as possible. In such a setting, Geyer (2011) argued, a burn-in is not required, and noted that “Burn-in is mostly harmless, which is perhaps why the practice persists. But everyone should understand that it is unnecessary, and those who do not use it are not thereby making an error.”"
+    }
+  ]
+}

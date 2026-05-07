@@ -1,0 +1,79 @@
+{
+  "id": "chapter23_022",
+  "metadata": {
+    "chapter": "chapter23",
+    "section": "Chapter 23: FAMILY SELECTION UNDER PURE SELFING",
+    "subsections": [
+      "The Covariance Between Relatives in a Structured Selfing Population"
+    ],
+    "source_file": "data\\paddle_output\\chapter23_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "23.37a",
+      "23.37b",
+      "23.37c",
+      "23.38"
+    ],
+    "table_references": [],
+    "structured_repair": {
+      "version": "source_inline_math_v1",
+      "actions": {
+        "replace_from_source": 9
+      }
+    }
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Again, under the common setting of a pure-line cross, these simplify as $ \\iota^* = \\sigma_D^2 $ and $ \\sigma_{DI}^2 = \\sigma_{ADI} = 0 $."
+    },
+    {
+      "type": "derivation",
+      "content": "Finally, it will prove useful to decompose the total genetic covariance, $ \\sigma_G(T,t) $, into within- and among-family covariances, $ \\sigma_{Gw}(T,t) $ and $ \\sigma_{Gb}(T,t) $, respectively, where [[SEE_FORMULA:23.37a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "The among-family covariance in generation t is the covariance between sibs from a parent in generation t - 1 [[SEE_FORMULA:23.37b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "The within-family genetic covariance follows as [[SEE_FORMULA:23.37c]]"
+    },
+    {
+      "type": "discussion",
+      "content": "For more general families, $ t - 1 $ is replaced by $ t - j $ when the last common ancestor to the family occurred $ j $ generations before the collection of families was scored. Note that the within- and among-family genetic variances in generation $ t $ are given by $ \\sigma_{Gw}(t, t) $ and $ \\sigma_{Gb}(t, t) $, respectively. Recalling Equation 23.8b, this implies a phenotypic variance for the among-family means of $ \\sigma_{\\overline{z}}(t, t) = \\sigma_{Gb}(t, t) + \\sigma_{e}^2 $."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 23.8. Consider the within- and among-family genetic variances for an $ S_{j-1,j} $ family (the offspring from a single $ S_{j-1} $ individual). Here $ T = \\tau = j $ and $ t = j - 1 $, and from Equation 23.37b, the among-family genetic variance is $$ \\sigma_{Gb}(j,j)=\\sigma_{G}(j,j,j-1) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "For a pure-line cross, Equation 23.33 (ignoring epistasis) returns $$ \\sigma_{Gb}(j,j)=\\sigma_{G}(j,j,j-1)=\\left(2-\\frac{1}{2^{j-1}}\\right)\\left(\\sigma_{A}^{2}+\\frac{\\sigma_{D}^{2}}{2^{j+1}}\\right) $$ while from Equation 23.37a, the within-family variance becomes $$ \\sigma_{G w}(j,j)=\\sigma_{G}(j,j,j)-\\sigma_{G}(j,j,j-1) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "For a pure-line cross, the genetic variation (ignoring epistasis) in the population is $$ \\sigma_{G}(j,j,j)=\\left(2-\\frac{1}{2^{j}}\\right)\\left(\\sigma_{A}^{2}+\\frac{\\sigma_{D}^{2}}{2^{j}}\\right) $$ giving the within-family variance as $$ \\sigma_{G w}(S_{j})=\\sigma_{G}(j,j,j)-\\sigma_{G}(j,j,j-1)=\\left(\\frac{1}{2^{j}}\\right)\\sigma_{A}^{2}+\\left(\\frac{3-2^{j+1}}{4^{j}}\\right)\\sigma_{D}^{2} $$ As Figure 23.2B illustrates, we can consider ever-deeper hierarchical levels of population structure with selfing. Suppose we are interested in the response in generation T due to selection among parents in generation t chosen on the basis of their relatives in generation $ \\tau $, but that we are considering only the response among the subpopulation that descended from a common ancestor in generation k. For example, among all the descendants from a particular $ S_3 $ individual, what is the response to selection on their $ S_4 $ offspring if we base selection on the $ S_6 $ family means? Here T is the generation of interest for the response ( $ T = \\infty $ for the permanent response), $ k = 3 $, $ t = 4 $, and $ \\tau = 6 $."
+    },
+    {
+      "type": "derivation",
+      "content": "Defining $ \\sigma_{G}(T,\\tau,t,k) $ as the covariance between T and $ \\tau $, and given that they shared an ancestor in generation t from subpopulation k, Wright and Cockerham (1986b), following Gates (1954), showed that [[SEE_FORMULA:23.38]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Hence, Equation 23.32 can be used to compute these covariances."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 23.9. As an example of the difference between $ \\sigma_G(T, \\tau, t, k) $ and $ \\sigma_G(T, \\tau, t) $, consider the following situation. Suppose we randomly choose $ F_2S $ from a pure-line cross and self a large collection of them, generating a total of 1000 lines. While there are a number of options for advancing these lines, two extremes are to advance single lines from each of the original $ F_2S $ or to advance 1000 lines from a single $ F_2 $. Lacking any other information on the lines, it is obvious that keeping all of the original lines is likely the better strategy (indeed, this was proposed by Compton 1968), but just how much better is it? For both situations, consider the contribution to response in a completely inbred individual ( $ T = \\infty $) from an individual in generation $ t $ chosen by the evaluation of relatives in generation $ \\tau \\geq t $. Because we assumed a pure-line cross, $ \\sigma_{ADI} = \\sigma_{DI}^2 = 0 $, and Equation 23.34 yields, for the first strategy, $$ \\sigma_{G}(\\infty,\\tau,t)=\\left(1-\\frac{1}{2^{t+1}}\\right)2\\sigma_{A}^{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "If selection is delayed until at least the fifth generation of selfing, this is essentially $ 2\\sigma_A^2 $. Conversely, the covariance for the second strategy (advancing all the lines from a single $ F_2 $) is given by $ \\sigma_G(\\infty, \\tau, t, 0) $, as all individuals trace back to a single individual in generation 0 (the $ F_2 $). Here Equation 23.38 yields $$ \\begin{aligned}\\sigma_{G}(\\infty,\\tau,t,0)&=\\sigma_{G}(\\infty,\\tau,t)-\\sigma_{G}(\\infty,\\tau,0)\\\\&=\\left(1-\\frac{1}{2^{t+1}}\\right)2\\sigma_{A}^{2}-\\left(1-\\frac{1}{2}\\right)2\\sigma_{A}^{2}=\\left(1-\\frac{1}{2^{t+1}}\\right)\\sigma_{A}^{2}\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "This is one half of the covariance when the entire collection of lines is used. This makes sense, as under the infinitesimal model, in an outbred population (such as the collection of $ F_{2}s $), half the additive variance is between individuals and half is generated by segregation within individuals (Chapter 16). The first covariance, $ \\sigma_{G}(\\infty, \\tau, t) $, considers both the variance within a particular line and also the variance among the initial line founders, while the second, $ \\sigma_{G}(\\infty, \\tau, 0) $, focuses solely on the variance within a particular line."
+    }
+  ]
+}

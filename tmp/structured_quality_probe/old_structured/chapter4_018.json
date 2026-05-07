@@ -1,0 +1,68 @@
+{
+  "id": "chapter4_018",
+  "metadata": {
+    "chapter": "chapter4",
+    "section": "Chapter 4: Short-term Enrichment",
+    "subsections": [
+      "Short-term Enrichment"
+    ],
+    "source_file": "data\\paddle_output\\chapter4_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "4.21",
+      "4.22a",
+      "4.22b",
+      "4.22c",
+      "4.22d"
+    ],
+    "table_references": [],
+    "structured_repair": {
+      "version": "source_inline_math_v1",
+      "actions": {
+        "replace_from_source": 1
+      }
+    }
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "The preceding approach employs a strategy of augmenting the pool of observable mutations by passing lines through a large number of generations. The advantage of such a protocol is that mutations are equally enriched throughout the genome, minimizing the chances that the mutational profile will be biased by making observations at any particular target locus. However, with genome-wide mutation-accumulation analysis, an enormous number of sites (typically many tens of millions) need to be searched to obtain just a few dozen mutations."
+    },
+    {
+      "type": "discussion",
+      "content": "An alternative approach, which is widely applied to microbial cultures, focuses on reporter constructs (specific marker loci at which at least a subset of mutations causes obvious phenotypic changes). Here, the emphasis is on the efficient screening of a very large pool of cells in a relatively short period of time for a small subset of mutations, e.g., exponentially growing an initially nonmutant stock to a population size in excess of the reciprocal of the mutation rate (so there will be more than one mutational event in the culture), and then isolating the subset of cells that have acquired a mutation at a locus that is nonessential in the background environment but permits subsequent growth on a selective medium (Luria and Delbrück 1943). From estimates of the total number of mutant and nonmutant cells in the culture, it is then possible to determine the mutation rate per cell division."
+    },
+    {
+      "type": "discussion",
+      "content": "For the marker approach to yield reliable estimates of u, a good deal of knowledge must exist on the molecular features of the target locus. Because mutant cells reproduce during culture expansion, the relationship between the number of mutant cells observed in a population and the actual number of mutational events that produced them is generally not one-to-one. Thus, the first challenge is to convert the observed number of mutant cells to the number of mutations leading to them (m). In addition, because not all mutations produce an observed phenotype, the second challenge is to determine the fraction of mutations that are detectable at the target locus (d). The true number of mutations is estimated by m/d. Finally, in order to determine the mutation rate per nucleotide site, one must know the mutational target size (n, in base pairs)."
+    },
+    {
+      "type": "derivation",
+      "content": "Several methods exist for estimating the number of unique mutational events from the observed numbers of mutant and nonmutant cells in short-term experiments, with broad overviews provided by Rosche and Foster (2000) and Angerer (2001a, 2001b). Suppose a large series of replicate cultures is developed, and one then simply scores the fraction of cultures at the end point that are completely free of mutations $ (p_{0}) $. Assuming that the number of mutational events per culture is Poisson distributed with expectation m, the expected frequency of mutation-free cultures is then simply [[SEE_FORMULA:4.21]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Rearrangement leads to the estimator $ \\widehat{m} = -\\ln(p_0) $, which ignores the sampling bias resulting from the error in estimating $ p_0 $. This approach works well when m is on the order of 0.5 to 2.5, but with more extreme values, $ p_0 $ will be close enough to 0.0 or 1.0 that meaningful estimates are not possible unless the number of cultures is enormous. A second disadvantage of this approach is its failure to use most of the information in the set of cultures, as the distribution of mutant numbers among replicate cultures is completely ignored. Full use of such information can be incorporated into a maximum-likelihood framework (e.g., Lea and Coulson 1949; Sarkar et al. 1992)."
+    },
+    {
+      "type": "derivation",
+      "content": "Example 4.3. The mutation rate in an exponentially growing culture can be estimated by considering the expected temporal dynamics of the frequency of mutant cells in the population. Letting $ f_{0} $ be the initial frequency of mutations, r be the rate of exponential growth of the numbers of cells in the culture (assumed to be identical for cells that are mutant and nonmutant). at the marker locus), and $ u_{o} $ be the rate of mutation to an observable phenotype per cell division, the expected frequency after t time units is [[SEE_FORMULA:4.22a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "This follows from the fact that $ e^{-u_ort} $ is the probability that a descendant of a nonmutant cell has not acquired a detectable mutation after rt cell divisions. Note that if one starts with a mutation-free culture ( $ f_0 = 0 $) and the cumulative probability of mutation ( $ \\simeq u_ort $) is $ \\ll 1 $, the expected fraction of mutant cells will increase in an essentially linear fashion at a rate of $ u_ort $. Because of the stochastic nature of mutations, results from single cultures are not reliable with this approach. Thus, motivated by the original design of Luria and Delbrück (1943), most studies of microbial mutation grow a moderate number of initially (putatively) mutation-free cultures up to an arbitrarily large population size and then survey the frequency of mutants at the end point of each culture. Rearrangement of the preceding expression yields the relevant point estimator of the mutation rate to observable phenotypes, [[SEE_FORMULA:4.22b]] Because $ N_t = N_0 e^{rt} $ under exponential growth, where $ N_0 $ and $ N_t $ are the total numbers of cells in the culture at times 0 and t, so long as the observed mutant frequencies are < 0.1, so that $ \\ln(1 - f) \\simeq -f $, Equation 4.22b further simplifies to [[SEE_FORMULA:4.22c]] which is simply the rate of accumulation of observable mutations per cell division."
+    },
+    {
+      "type": "derivation",
+      "content": "Drake (1991) argued that this essentially deterministic view of the rate of increase of mutants is unlikely to hold very well until a culture has reached a large enough size to harbor at least some mutations, which is expected to take several generations. Taking the view that a reasonable benchmark is the point at which a culture is expected to contain a single mutant, which implies $ u_o N = 1 $, $ f_0 = u_o $ and $ N_0 = 1/u_o $ can be used as an arbitrary starting point, which, after substitution into Equation 4.22c, leads to [[SEE_FORMULA:4.22d]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Given just the total number of cells, $ N_t $, and the frequency of mutants at the end point, $ f_t $, this expression can be solved recursively to obtain the estimate $ \\widehat{u}_o $. When data are available from multiple cultures, $ f_t $ is generally taken to be the median frequency of mutants, as the mean can be strongly biased if the sample includes any “jackpot” cultures that happened to have acquired a mutation during an early cell division."
+    },
+    {
+      "type": "discussion",
+      "content": "Conversion of the rate of origin of observable mutations, $ u_{o} $, to an estimate of the mutation rate at the nucleotide level requires that the fraction of detectable mutations at the marker locus (d) be known. Many mutations have no phenotypic effects, e.g., because they arise at silent sites or at amino-acid replacement sites that have no substantive effect on the causal locus. To determine the fraction of undetectable mutations, a large number of independent mutant cells can be sequenced to ascertain the molecular basis of the changes at the target locus and the degree to which these are concentrated at particular sites. Generally, because the mutation rate per nucleotide site is quite low, no more than a single change is found within any particular sequenced gene, so there is little ambiguity as to the identity of causal mutations."
+    }
+  ]
+}

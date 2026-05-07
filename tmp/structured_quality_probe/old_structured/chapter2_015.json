@@ -1,0 +1,64 @@
+{
+  "id": "chapter2_015",
+  "metadata": {
+    "chapter": "chapter2",
+    "section": "Chapter 2: MUTATION-MIGRATION-DRIFT EQUILIBRIUM",
+    "subsections": [
+      "MUTATION-MIGRATION-DRIFT EQUILIBRIUM"
+    ],
+    "source_file": "data\\paddle_output\\chapter2_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "2.42",
+      "2.43",
+      "2.44",
+      "2.45a"
+    ],
+    "table_references": [],
+    "structured_repair": {
+      "version": "source_inline_math_v1",
+      "actions": {
+        "replace_from_source": 6,
+        "remove_placeholder_block": 1
+      }
+    }
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Populations are often structured in space, with distinct demes connected by migration to form a metapopulation. The joint forces of mutation, migration, and drift structure the genetic variation both within and among demes, and if kept constant eventually lead to equilibrium values. The equilibrium neutral results serve as the framework for tests of abnormally high or low amounts of among-population variation (Chapter 9), corresponding respectively to diversifying and stabilizing selection."
+    },
+    {
+      "type": "derivation",
+      "content": "# Quantifying Population Structure: $ F_{ST} $ The classic measure of population structure, $ F_{ST} $, was defined by Wright (1943, 1951) as the correlation (identical by descent status) between alleles in different individuals from the same subpopulation. $ F_{ST} $ is a measure of the amount of inbreeding introduced by the population structure, relative to what would be expected in one large panmictic population. Effectively, $ F_{ST} $ measures the fraction of total genetic variance due to differences between subpopulations (indeed, S stands for subpopulation and T for total population). This directly follows from the standard ANOVA (analysis of variance) identity that the among-group component of variance equals the within-group covariance (LW Chapter 18), with the latter equal to the correlation among group members times the total variance. In particular, consider the distribution of the allele frequencies for a biallelic locus (with alleles B and b) over a set of populations. If $ p_0 $ denotes the average frequency of B over this set, the allelic variance for the total metapopulation is just $ p_0(1 - p_0) $. $ F_{ST} $ is then defined as the fraction of the total variance attributable to the variance in the frequency of allele B among demes, $ \\sigma^2(p) $, [[SEE_FORMULA:2.42]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Wright was somewhat ambiguous in his use of $ F_{ST} $, and some confusion has surrounded various interpretations of its true meaning. These issues were nicely cleaned up by Balding (2003)."
+    },
+    {
+      "type": "derivation",
+      "content": "Recalling Equation 2.14, which gives the expected variance in the allele frequency between two populations separated from a common ancestor t generations in the past (ignoring mutation and assuming no migration among groups), we have that [[SEE_FORMULA:2.43]]"
+    },
+    {
+      "type": "proposition",
+      "content": "Under this model, $ F_{ST} $ eventually increases to one, as in the absence of mutation, drift eventually removes all variation within groups, with the different demes becoming randomly fixed for alternative alleles. With recurrent mutation and gene flow among demes, however, neither the within-nor the among-population variation is ever expected to reach absolute zero, and $ F_{ST} $ will be in the $ (0,1) $ interval, with its magnitude depending on the relative impact of the three contributing forces (mutation, migration, and drift). A variety of methods, including extensions to multiple alleles, have been developed for estimating $ F_{ST} $ from samples of alleles from multiple subpopulations under the assumption of the infinite-alleles model (Nei and Chesser 1983; Weir and Cockerham 1984; Weir and Hill 2002; Balding 2003), and others allow for highly mutable alleles with a significant chance of back mutation (Slatkin 1995a; Goodman 1997)."
+    },
+    {
+      "type": "derivation",
+      "content": "A result of great conceptual utility is that $ F_{ST} $ values are closely related to the average coalescence times of alleles within subpopulations, $ \\bar{t}_{0} $, and of alleles drawn randomly from the entire metapopulation, $ \\bar{t} $, [[SEE_FORMULA:2.44]]"
+    },
+    {
+      "type": "discussion",
+      "content": "(Slaktin 1991). If $ \\bar{t}_{0} $ is very close to $ \\bar{t} $, there is little among-group differentiation, as pairs of alleles within groups have essentially the same amount of time to diverge mutationally as those among groups. Because the coalescent structure of a population simply represents a genealogical sampling process and is independent of the mutations that incidentally arise, Equation 2.44 shows that the equilibrium level of population subdivision is also independent of the mutation process."
+    },
+    {
+      "type": "discussion",
+      "content": "# Mutation-migration-drift Equilibrium Values of $ F_{ST} $ When migration rates are sufficiently high that essentially all demes exchange at least one individual per generation, the physical structure of the metapopulation has no consequences for population subdivision at the genetic level, i.e., $ F_{ST} \\simeq 0 $. When the forces of mutation, migration, and drift operate simultaneously at moderate levels, some intermediate equilibrium level of among-population differentiation is reached such that the loss of new variants within demes by drift is balanced by the spread of novel variants across demes by mutation. As one might expect, the resultant equilibrium $ F_{ST} $ value is a function of the population size within each deme and the pattern of migration over demes, so there are essentially endless numbers of possible patterns of spatial structure and migration. To make some general points, we will consider two commonly envisioned situations (Figure 2.11)."
+    },
+    {
+      "type": "derivation",
+      "content": "The simplest structure is Wright's (1951) island model, wherein the population consists of $d$ demes, each containing $N$ breeding individuals. Each generation, each deme contributes a fraction $m$ of its genes to a migrant pool, yielding an expected migration rate from any deme to any other of $m/(d-1)$. A remarkable feature of this model is that the equilibrium amount of genetic variation expected within demes is independent of the level of population subdivision (assuming $m > 0$), a feature known as the geographic invariance principle (Maruyama 1971; Nagylaki 1982). Provided there is some potential migratory route between all demes, regardless of the level of migration, the mean coalescence time between random pairs of genes within demes is [[SEE_FORMULA:2.45a]] generations, i.e., twice the sum of the demic population sizes (Li 1976; Strobeck 1987; Hey 1991; Nagylaki 2000). Under this model, the independence of the within-deme variation of the migration rate arises because a lower rate of migration encourages a higher rate of allelic divergence, resulting in a balance between these two opposing factors (frequency and impact of immigrant alleles)."
+    }
+  ]
+}

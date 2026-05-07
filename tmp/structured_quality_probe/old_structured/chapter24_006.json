@@ -1,0 +1,46 @@
+{
+  "id": "chapter24_006",
+  "metadata": {
+    "chapter": "chapter24",
+    "section": "Accounting for Dominance",
+    "subsections": [
+      "Accounting for Dominance"
+    ],
+    "source_file": "data\\paddle_output\\chapter24_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "structured_repair": {
+      "version": "source_inline_math_v1",
+      "actions": {
+        "replace_from_source": 5
+      }
+    }
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "While our previous focus has been exclusively on alleles with additive effects, dominance is not excluded under an infinitesimal model. The incorporation of dominance, however, requires very delicate conditions for the scaling of allelic effects, so as to bound both the dominance variance and any inbreeding depression. To see this, suppose we have n biallelic loci with no epistasis (the total genotypic value is simply the sum of the individual locus genotypic values), and let the genotypic values at locus i be 0 : $ a_i + \\delta_i : 2a_i $, where the frequency of the increasing allele is $ p_i $. The resulting dominance variance becomes $$ \\sigma_{D}^{2}=\\sum_{i=1}^{n}\\left[2p_{i}(1-p_{i})\\delta_{i}\\right]^{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "For n exchangeable loci, this simplifies to $$ \\sigma_{D}^{2}=4n p^{2}(1-p)^{2}\\delta^{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "For $ \\sigma_D^2 $ to remain bounded as $ n \\to \\infty $, $ \\delta $ must scale as $ n^{-1/2} $, just as we found for $ a $. Thus, if both $ a $ and $ \\delta $ scale as $ 1/\\sqrt{n} $, the additive and dominance variances remain bounded as the number of locus goes to infinity."
+    },
+    {
+      "type": "discussion",
+      "content": "Now consider the behavior of inbreeding depression, the difference between the mean trait value, $ \\mu_{f} $, when population-level inbreeding is f versus that under random mating, $ \\mu_{0} $ (LW Chapter 10). Again, assuming that there is no epistasis, from LW Equation 10.3, the inbreeding depression is given by $$ \\mu_{f}-\\mu_{0}=-2f\\sum_{i=1}^{n}p_{i}(1-p_{i})\\delta_{i} $$"
+    },
+    {
+      "type": "proposition",
+      "content": "Assuming n loci of equal effect gives $$ \\mu_{f}-\\mu_{0}=-2n f p(1-p)\\delta $$ Because $\\delta$ scales as $n^{-1/2}$ under the infinitesimal genetics assumption, the amount of inbreeding depression scales as $n \\cdot n^{-1/2} = n^{1/2}$ and hence goes to infinity with increasing values of $n$. Conversely, if we scale $\\delta$ as order $1/n$, we have bounded inbreeding depression, but the dominance variance is now of order $n/n^{2} = 1/n$ and hence is zero in the infinitesimal limit."
+    },
+    {
+      "type": "proposition",
+      "content": "Thus, under the exchangeable infinitesimal model, one cannot have both bounded dominance variance and inbreeding depression, a point first made by Robertson and Hill (1983). Of course, a limitation of this argument is our assumption of equal effects over all loci, with all of the $ \\delta $ having the same sign. If we assume that $ E[\\delta] = 0 $, namely, that there is no directional dominance, then we can have bounded dominance variance but no inbreeding depression. To have both dominance variance and inbreeding depression in the infinitesimal limit requires a great deal of delicacy, in that individual allelic effects have to be scaled so that $ 0 < n E[\\delta] < \\infty $ as $ n \\to \\infty $ (there must be finite directional dominance). Related to this point, Wellmann and Bennewitz (2011) showed that the ratio of the squared inbreeding depression to the dominance variance sets a lower bound on the number of underlying loci."
+    }
+  ]
+}

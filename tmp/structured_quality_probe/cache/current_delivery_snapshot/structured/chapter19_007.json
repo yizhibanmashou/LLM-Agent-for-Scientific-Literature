@@ -1,0 +1,28 @@
+{
+  "id": "chapter19_007",
+  "metadata": {
+    "chapter": "chapter19",
+    "section": "Chapter 19: REML Estimation of Unknown Variance Components",
+    "subsections": [
+      "REML Often Returns Variance Estimates Unbiased by Selection"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter19_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "As with BLUPs and BLUEs (which assume the presence of known variances), REML variance estimates are often unbiased by selection. As we will show, under the infinitesimal model, the relationship matrix, A, fully accounts for any change in $ \\sigma_A^2 $ from disequilibrium, inbreeding, and drift. As a result, if the base population consists of unselected and noninbred individuals in linkage equilibrium and phenotypic data are available for all selected and unselected individuals, then under the infinitesimal model, REML yields essentially unbiased estimates of the additive genetic variance in the base population (Henderson 1949; Henderson et al. 1959; Curnow 1961; Thompson 1973; Rothschild et al. 1979; Sorensen and Kennedy 1984b; Gianola and Fernando 1986; Gianola et al. 1988; Juga and Thompson 1989; Gianola et al. 1989; Im et al. 1989; Fernando and Gianola 1990; Piepho and Möhring 2006). Simulations by van der Werf and de Boer (1990) showed that if the model includes the pedigree information for all individuals but is missing records (trait values) for some, then REML does not necessarily yield unbiased estimates of $ \\sigma_A^2 $, and in this case bias increases with heritability (Jeyaruban and Gibson 1996)."
+    },
+    {
+      "type": "discussion",
+      "content": "When the base population consists of previously selected individuals, REML no longer provides protection from biased estimates of the additive genetic variance in the population prior to selection, even if the entire pedigree of individuals back to the base population is included (van der Werf 1990; van der Werf and de Boer 1990; van der Werf and Thompson 1992). This arises because of disequilibrium, $ d(0) \\neq 0 $, in the base population (recall from"
+    },
+    {
+      "type": "discussion",
+      "content": "Equation 16.2 that $d$ is the difference between the additive genetic and genic variances). While Equation 16.7a allows us to predict the dynamics of $d(t)$, it requires the value of $d(t-1)$, so without knowledge of the actual value of the base population, $d(0)$, the relationship matrix cannot fully account for the dynamics of $d$. Finally, if selection acts on a suite of unmeasured characters whose breeding values are correlated with characters included in the model, REML can generate biased estimates of the variances and covariances of the measured characters (Schaeffer and Song 1978)."
+    }
+  ]
+}

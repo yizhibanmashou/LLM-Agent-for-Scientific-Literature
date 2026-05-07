@@ -1,0 +1,45 @@
+{
+  "id": "chapter12_030",
+  "metadata": {
+    "chapter": "chapter12",
+    "section": "Applications of QTL Sign Tests",
+    "subsections": [
+      "Applications of QTL Sign Tests"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter12_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [
+      "12.3"
+    ],
+    "table_reference_keys": [
+      "chapter12:12.3"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Using QTLST-EE, Rieseberg et al. (2002) performed a meta-analysis of over 2600 QTL effects from 572 traits in 86 studies. Their summary statistic was the QTL ratio: the fraction of antagonistic QTLs for the comparison of interest ([[SEE_TABLE:12.3]]). Roughly half of the studies involve wild × domesticated crosses, where strong directional selection is suspected for domestication traits. Upon restricting analysis to those examples with six or more QTLs per trait (Orr's condition for such tests to have any power), 35 of the 54 qualifying traits (65%) believed to be involved in domestication showed significant departures from neutrality (i.e., too few antagonistic QTLs). By contrast, only 14 of 84 nondomestication traits (15.6%) in crosses involving domesticated species showed significant departures. Treating this latter class of traits as a control demonstrates that QTLST-EE behaved in the direction predicted for these crosses (revealing signatures for domestication traits and a lack of signatures for nondomestication traits)."
+    },
+    {
+      "type": "discussion",
+      "content": "Given that most studies in this survey involved just four or five QTLs per trait, the restriction of QTLST-EE to traits with six or more QTLs discards much potential information. To utilize these additional data, Rieseberg et al. amalgamated traits into a series of categories to accrue a sufficient number of QTLs for the QTLST-EE test to be applicable. As shown in [[SEE_TABLE:12.3]], two different analyses were performed on these amalgamated data. First, the table simply reports the unadjusted QTL ratio (the fraction of antagonistic QTLs) for each category. Given that the same study can appear in multiple categories, the unadjusted QTL ratio is potentially influenced by these other categories. The second analysis in [[SEE_TABLE:12.3]] (LS means) uses a linear model to estimate the impact from each category on the fraction of antagonistic QTLs, once the effects of other categories have been removed. This latter analysis more accurately reflects the category contribution. As shown in the table, all (unadjusted) categories showed significant departures from neutrality, while only two of the adjusted categories (the LS means) did. Rieseberg et al. noted that interspecific crosses had a smaller fraction of antagonistic QTLs than did within-species (intraspecific) crosses (LS mean ratios of 0.137 versus 0.250), which they interpreted as a stronger role for directional selection in generating among-species differences. They also noted that life-history traits (LS ratio 0.139) were (by this criterion) more strongly selected than morphological traits (LS 0.266). While all of these differences are suggestive, it needs to be stressed that none are significant. Further, this pattern of more strongly selected life-history traits is at odds with meta-analyses based on the strength of selection as directly measured in the field (Figure 30.10). Rieseberg noted that the widespread departures from neutrality over all traits could result from an ascertainment bias due to investigators focusing on divergent traits in their crosses."
+    },
+    {
+      "type": "discussion",
+      "content": "Ironically, a contrary example to Rieseberg's pattern of life-history and physiological traits tending to have fewer antagonistic QTLs than morphological traits comes from Rieseberg's own group (Lexer et al. 2005). A cross of two wild sunflowers (Helianthus annuus and H. petiolaris) revealed QTL ratios for life-history, physiological, and morphological traits of 0.345, 0.388, and 0.287, respectively. However, the reduction in the fraction of antagonistic QTLs for morphological traits appears to be due entirely to flower morphology (QTL ratio of 0.214; significant under QTLST), with the other measured morphological features (root/shoot and leaf traits) having (nonsignificant) QTL ratios (0.333 and 0.322, respectively) similar to those for life-history and physiological traits."
+    },
+    {
+      "type": "discussion",
+      "content": "A second QTL meta-analysis worth mentioning is that of Louthan and Kay (2011), who focused on traits that were expected to be under biotic rather than abiotic selection. While larger QTL effects were more common for biotically selected traits, the fraction of antagonistic QTLs did not differ between the two groups. Both trait groups showed significant departures from neutrality using QTLST-EE."
+    },
+    {
+      "type": "discussion",
+      "content": "We conclude by briefly highlighting the utility of two applications of sign tests to specific biological problems (as compared to the broad generalizations explored above). Albertson et al. (2003) examined traits in the massive species radiation occurring among cichlid fishes in the East African rift lakes. One striking feature of this radiation is extensive convergent evolution across lakes in feeding morphology, suggesting parallel directional selection. The authors used QTLST (with effect sizes drawn from a gamma distribution) to examine the genetic basis of feeding morphology through crossing two wild species from Lake Malawi. Because most individual traits had less than six QTLs, they grouped the traits, finding that only 4 of the 46 QTLs were antagonistic for jaw and teeth features. The highly significant p value supports directional selection on these feeding traits. Muir et al. (2014) examined QTLs in tomatoes (Lycopersicon) to explore leaf-related traits in wild species thought to be associated with adaptation to precipitation. They found no significant departure from neutrality for two leaf and two trichome (leaf hair) traits, but a significant departure from neutrality for two stomatal traits. They computed p values using both QTLST and QTLST-EE, and they found (in agreement with Anderson and Slatkin 2003) that QTLST was more conservative, yielding p values about twice as large as those obtained from QTLST-EE."
+    },
+    {
+      "type": "discussion",
+      "content": "While QTL data usually involves fixed differences that are revealed by crossing two divergent lines, genome-wide association studies (GWAS) provide information on currently segregating alleles within a target population (or set of populations). As such, GWAS data potentially offer inroads into the vexing problem of detecting a polygenic sweep (Chapter 8). In this setting, allele-frequency shifts at the underling loci are expected to be small, and hence missed by most standard tests that look for single-locus signatures of selection (Chapter 9). The power of trait-augmented marker tests is that one chooses a set of markers given a trait, and then pools information across all of these markers, potentially generating a much stronger signal than could be found by considering any single marker in isolation."
+    }
+  ]
+}

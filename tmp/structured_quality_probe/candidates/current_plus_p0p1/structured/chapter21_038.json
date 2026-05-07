@@ -1,0 +1,50 @@
+{
+  "id": "chapter21_038",
+  "metadata": {
+    "chapter": "chapter21",
+    "section": "Chapter 21: Lush's Optimal Index",
+    "subsections": [
+      "Lush's Optimal Index"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter21_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "21.54",
+      "21.55",
+      "21.56a",
+      "21.56b",
+      "21.56c"
+    ],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "derivation",
+      "content": "As the previous example shows, by making the appropriate choice of index weights, we can always obtain a response at least as large as that expected under mass selection. Note from Equation 21.51 that $ \\sigma_{A} $ and $ \\bar{\\imath}_{I} $ remain constant under different index weights, implying that the maximal response occurs if we choose the weights that maximize the correlation, $ \\rho(I, y) $, between the index and offspring value (Equation 21.5 shows that this is equivalent to maximizing the correlation, $ \\rho(I, A) $), between the index and breeding values of an individual. Lush (1947) showed that the resulting optimal index weights are [[SEE_FORMULA:21.54]]"
+    },
+    {
+      "type": "discussion",
+      "content": "The formal derivation (which follows from a Smith-Hazel index; Example A6.8) is given in our general treatment of index selection in Volume 3. We refer to the family index using these weights as the Lush index. Note that the weight $ (b_1) $ on family deviations is independent of the family size $ (n) $, while the weight on the family mean $ (b_2) $ depends on $ n $, approaching $ r/t $ for large families. Figure 21.7 plots the ratio of among- to within-family weights $ (b_2/b_1) $ for the Lush index as a function of $ t $ and $ n $. For small between-sib correlations $ (t) $, more weight is placed on family mean, while more weight is placed on within-family deviation when the sib correlation is large."
+    },
+    {
+      "type": "derivation",
+      "content": "We can rearrange the Lush index as $ I_L = z_{ij} + B_L \\overline{z}_i $, where substituting Equation 21.54 into Equation 21.50c returns [[SEE_FORMULA:21.55]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Using the optimal weights, Equation 21.53c simplifies to yield the response under Lush's index as [[SEE_FORMULA:21.56a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "The resulting increase in response over that expected under individual selection ($ R_{m} = \\bar{i}\\sigma_{A}h $; Equation 13.6b) is thus [[SEE_FORMULA:21.56b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Figure 21.8 plots Equation 21.56b as a function of t and n for half- and full-sibs. Because the quantity in the square root exceeds one, the expected response under Lush's index exceeds the response under individual selection, except at $r = t$ (i.e., $t = 0.25$ for half-sibs, $t = 0.5$ for full-sibs), in which case the expected responses are equal. For large values of $n$, Equation 21.56b converges to [[SEE_FORMULA:21.56c]] which can take on large values for t near zero or one, as seen by the roughly U-shaped plots in Figure 21.8."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 21.12. Recalling (Example 21.4) that t = 0.265 and r = 0.5 for full-sibs in Clayton et al.'s (1957) bristle experiments, the resulting Lush weight on family deviations becomes $$ b_{1}=\\frac{1-r}{1-t}=\\frac{1-0.5}{1-0.265}=0.680 $$"
+    }
+  ]
+}

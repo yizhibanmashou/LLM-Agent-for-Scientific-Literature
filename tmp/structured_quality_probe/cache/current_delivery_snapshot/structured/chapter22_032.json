@@ -1,0 +1,24 @@
+{
+  "id": "chapter22_032",
+  "metadata": {
+    "chapter": "chapter22",
+    "section": "Chapter 22: Details: Identifiability of Variance Components",
+    "subsections": [
+      "Appropriate Designs for Estimating Direct and Associative Effects"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter22_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "While most of the statistical power for detecting associative effects arises from the number of groups, not numbers of individuals (Bijma 2010c), the relationship structure within groups is also critical. In contrast to selection response, where there is a benefit from having all group members from the same family (and hence an increased r value), in a design to estimate direct and associative values and variance components, groups should be composed of at least two different families. If there is no within-group variation in relationships, direct and associative effects cannot be separated. Groups can also consist of unrelated individuals, but Bijma (2010c) showed that, in general, using groups with two (or more) different families offers more power than using unrelated individuals (also see Ødegård and Olesen 2011)."
+    },
+    {
+      "type": "discussion",
+      "content": "Using the appropriate mixed model is also critical. Initially, one might think that associative effects could be accommodated by simply adding a random effect for group to an otherwise standard animal model. As previously shown (Equation 22.43), however, this approach typically overestimates the direct effects, as well as inflating the group variance (which is a measure of the environmental social effects), when heritable associative effects are present, namely, $ \\sigma^2(A_s) > 0 $. Conversely, ignoring any environmental associative effects also introduces bias. For example, a model fitting just $ a_d $ and $ a_s $ using the simple error structure $ \\mathbf{e} \\sim (0, \\sigma^2(e) \\cdot \\mathbf{I}) $ also introduces bias by ignoring the correlation among environmental associative effects within a group. As mentioned above, the correct residual covariance structure can be accounted for by incorporating a random group effect into the model (which assumes a positive correlation between social environmental effects within a group), or by using a model with $ e \\sim (0, \\sigma^2(e) \\cdot \\mathbf{R}) $ where the elements of $ \\mathbf{R} $ are given by 22.41, which allows for the within-group environmental correlations, $ \\rho $, to be negative."
+    }
+  ]
+}

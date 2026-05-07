@@ -1,0 +1,43 @@
+{
+  "id": "chapter5_004",
+  "metadata": {
+    "chapter": "chapter5",
+    "section": "Chapter 5: Expected Time for Allele-frequency Change",
+    "subsections": [
+      "Expected Time for Allele-frequency Change"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter5_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "5.3a",
+      "5.3b",
+      "5.3c",
+      "5.3d",
+      "5.3e",
+      "5.3f"
+    ],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "derivation",
+      "content": "A key issue in selection theory is the expected time required for a given amount of allele-frequency change. Assuming that $s$ and $sh$ are small (i.e., there is weak selection, so that $\\overline{W} \\simeq 1$), we can ignore $\\overline{W}$ in Equation 5.1.c as a first-order approximation (see Example 5.1). Equation 5.1c then shows that the change in allele frequency $p$ under weak selection is approximated by the differential equation [[SEE_FORMULA:5.3a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "For additive selection $ (h = 0) $, this has a simple solution of [[SEE_FORMULA:5.3b]] where $ p_t $ is the frequency of allele $ A $ at time $ t $. Often of greater interest is $ t_{p_t,p_0} $, the expected time required to move from initial frequency of $ p_0 $ to target value of $ p_t $. From Equation 5.3a, this is given by the integral [[SEE_FORMULA:5.3c]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Crow and Kimura (1970) presented explicit results for several important cases. If fitnesses are additive $ (h = 0) $ [[SEE_FORMULA:5.3d]] whereas if A is recessive $ (h = -1) $ [[SEE_FORMULA:5.3e]] and finally, if A is dominant $ (h = 1) $ [[SEE_FORMULA:5.3f]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Example 5.2. Consider the time for a favored allele to move from a frequency of 0.1 to a frequency of 0.5. For an additive allele, Equation 5.3d yields $$ t\\simeq s^{-1}\\ln\\left(\\frac{0.5\\left(1-0.1\\right)}{0.1\\left(1-0.5\\right)}\\right)=\\frac{2.2}{s}\\;generations $$"
+    },
+    {
+      "type": "discussion",
+      "content": "On the other hand, from Equations 5.3e and 5.3f, $ t \\simeq 1.5/s $ generations when $ A $ is dominant, and $ t \\simeq 5.1/s $ generations when $ A $ is recessive. The faster rate of response for a rare dominant allele occurs because $ A $ is fully exposed in heterozygotes ($ W_{Aa} > W_{aa} $), while its fitness effects are completely hidden in heterozygotes when recessive ($ W_{AA} > W_{Aa} = W_{aa} $). Conversely, this same feature slows down the rate of response of a dominant when $ A $ is common, as only rare aa homozygotes will be selected against."
+    }
+  ]
+}

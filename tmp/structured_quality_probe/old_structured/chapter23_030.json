@@ -1,0 +1,58 @@
+{
+  "id": "chapter23_030",
+  "metadata": {
+    "chapter": "chapter23",
+    "section": "Chapter 23: An Approximate Treatment Using Covariances",
+    "subsections": [
+      "A More Careful Treatment: Kelly's Structured Linear Model"
+    ],
+    "source_file": "data\\paddle_output\\chapter23_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "23.65a",
+      "23.65b",
+      "23.65c",
+      "23.66",
+      "23.67a",
+      "23.67b",
+      "23.67c",
+      "23.67d",
+      "23.67e",
+      "23.68a",
+      "23.68b"
+    ],
+    "table_references": [],
+    "structured_repair": {
+      "version": "source_inline_math_v1",
+      "actions": {
+        "replace_from_source": 1
+      }
+    }
+  },
+  "blocks": [
+    {
+      "type": "derivation",
+      "content": "Under linkage equilibrium, Kelly showed that these covariance functions are given by [[SEE_FORMULA:23.65a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Similar expressions exist for $ B_i(t) $, with $ B $ replacing $ A $ in Equations 23.64a–23.64c (under linkage equilibrium), and with the cohort-i covariance between $ B $ and $ z $ given by [[SEE_FORMULA:23.65b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Finally, again under linkage equilibrium, the phenotypic variance in cohort i is given by [[SEE_FORMULA:23.65c]] where $ \\sigma_G^2(i,i) $, the genetic variance after $ i $ generations of selfing, is shown by Equation 23.23. Iteration of these equations calculates the evolution of the $ A_i(t) $ and $ B_i(t) $ values, from which the population mean in generation $ t $ can be obtained from Equations 23.63b and 23.63c. As mentioned throughout this chapter, selection-induced gametic-phase disequilibrium (LD) can have a dramatic effect on the covariances (even for unlinked loci), and indeed this was observed in Kelly's above-mentioned simulations. To accommodate this concern, Kelly suggested an iterative approach (along the lines of our results for random mating from Chapter 16 and of Hayashi and Ukai's (1994) results for pure selfing; Equation 23.30) for computing all the required covariances when disequilibrium is present. As in Chapter 16, let [[SEE_FORMULA:23.66]] denote the reduction in the phenotypic variance (in this case, in cohort i) caused by selection, where $ \\sigma_{z^{*},i}^{2}(t) $ is the phenotypic variance (in inbreeding cohort i) after selection. Under the infinitesimal-model assumptions, Kelly showed that the recursion equations for the variances and covariances in the inbred cohorts ( $ i \\geq 1 $) become [[SEE_FORMULA:23.67a]] [[SEE_FORMULA:23.67b]] [[SEE_FORMULA:23.67c]] where [[SEE_FORMULA:23.67d]] 864 [[SEE_FORMULA:23.67e]]"
+    },
+    {
+      "type": "discussion",
+      "content": "For Equations 23.67a–23.67c, the first term is the variance (covariance) before selection, the second term is the reduction from selection, and the final term is the contribution from segregation (these are the extensions of Equation 16.8b to selfing). These generalize the previous results of Hayashi and Ukai (1994; Equation 23.30). If we note that B = 0 when only additive gene action is present, then recalling Equation 16.11a recovers Equation 23.30."
+    },
+    {
+      "type": "derivation",
+      "content": "The recursion equations for the outbred cohort are more involved, as parents are inbred to differing degrees. Letting $ f'(t) $ denote the average value of inbreeding among selected parents, then [[SEE_FORMULA:23.68a]] [[SEE_FORMULA:23.68b]] $$ \\sigma_{B,o}^{2}(t+1)=\\frac{1}{2}\\sigma_{B^{\\prime}}^{2}(t)+\\frac{1}{4}[1-f^{\\prime}(t)]\\sigma_{D I}^{2} $$ (25.08c)"
+    },
+    {
+      "type": "discussion",
+      "content": "Variances and covariances denoted by a prime are the population averages in the selected parents, and $ f' $ denotes the average inbreeding over all selected parents. Unfortunately, these cannot be simply expressed as base-population genetic components; see Kelly (1999a) for expressions."
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "id": "chapter13_013",
+  "metadata": {
+    "chapter": "chapter13",
+    "section": "Chapter 13: Reducing Environmental Noise: Repeated-Measures Selection",
+    "subsections": [
+      "Reducing Environmental Noise: Repeated-Measures Selection"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter13_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "13.16a",
+      "13.16b",
+      "13.16c",
+      "13.17a",
+      "13.17b",
+      "13.17c",
+      "13.18a",
+      "13.18b",
+      "13.19a",
+      "13.19b"
+    ],
+    "table_references": [
+      "inline_4"
+    ],
+    "table_reference_keys": [
+      "chapter13:inline_4"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "The repeated-measures design is a second example of increasing accuracy (and response) by providing some control over environmental noise. Here the character of interest is measured n different times on each individual, and selection occurs on $ \\overline{z}_{i} $, the mean value for individual i. For example, if we are considering the number of days to ripening, a better approach is to use a collection of fruit, rather than a single one, to assign a value to an individual tree. Repeated-measures selection is a common design in behavioral experiments, wherein a single measure (such as wheel-running speed) may vary greatly within an individual over time."
+    },
+    {
+      "type": "derivation",
+      "content": "Our analysis depends on the repeatability (LW Chapter 6) of the trait. The character value for the jth measure of individual i is decomposed as [[SEE_FORMULA:13.16a]] where $ G_i $ and $ E_i $ are the genotypic and (permanent) environmental values common to all measures of $ i $, and $ e_{ij} $ is the special environmental value restricted to the $ j $th measure of $ i $, with the repeatability, $ r $, being defined as [[SEE_FORMULA:13.16b]] yielding [[SEE_FORMULA:13.16c]]"
+    },
+    {
+      "type": "derivation",
+      "content": "To obtain the accuracy in using $ \\overline{z}_{i} $ to predict $ A_{i} $, we need both the covariance between $ \\overline{z}_{i} $ and $ A_{i} $, and the variance of $ \\overline{z}_{i} $. The former is simply [[SEE_FORMULA:13.17a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "To obtain the variance of $ \\overline{z}_{i} $, starting with [[SEE_FORMULA:13.17b]] [[SEE_FORMULA:13.17c]] it immediately follows from Equation 13.16c that"
+    },
+    {
+      "type": "derivation",
+      "content": "The resulting accuracy in using $ \\overline{z}_{i} $ to predict $ A_{i} $ becomes [[SEE_FORMULA:13.18a]] giving the response as [[SEE_FORMULA:13.18b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "The ratio of accuracies under repeated-measures versus (single-measure) mass selection becomes [[SEE_FORMULA:13.19a]] which approaches $ 1/\\sqrt{r} $ for large values of $ n $. Hence, when repeatability is low ($ \\sigma_e^2 \\gg \\sigma_G^2 + \\sigma_E^2 $), repeated-measures selection can result in a considerable improvement in response."
+    },
+    {
+      "type": "derivation",
+      "content": "This comparison assumes the same selection intensity under single- versus repeated-measures selection, but one might imagine that they could differ. For example, if one has the time and resources to only score 500 individuals, and (for breeding reasons) must keep (at least) 50 parents, then the fraction to be saved can be as small as 50/500 = 10% under single-measure selection. However, with five replicate measures per individual, we can only score 100 individuals, if we are to save a fraction no smaller than 50/100 = 50%. Applying Equation 14.4c, these translate into selection intensities of $ \\bar{\\imath}_{\\overline{z}_{i}} = 0.79 $ for repeated-measures selection and $ \\bar{\\imath}_{z_{i}} = 1.75 $ for single-measures selection, respectively. Such differences in the potential selection intensity are easily incorporated into comparisons of different selection strategies, with the comparison now being [[SEE_FORMULA:13.19b]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, we note that our analysis of repeated-measures selection assumes that the additive-genetic correlation across individual measurements is 1.0, which is expected for many traits. However, if measures are sufficiently separated in time that age effects are important, or if they represent significantly distinct events (such as litter size at different parities, i.e., distinct litters), these correlations can be less than one. In other words, the traits measured at different ages may not be the same genetically. In such cases, one should treat these measurements as a set of correlated traits and use index-selection theory (Volume 3). With measurements at arbitrary time points that may differ over individuals, the method of random regression (Volume 3) is used. where j indexes the individuals. Suppose the uppermost 25% (top 5 of the 20) are chosen for selection. Based on single measures, individuals 2, 5, 10, 17, and 20 would be chosen, while based on five measures, individuals 1, 2, 5, 9, and 17 would be selected. Using the single (initial) measurement, the overall mean is 50.05, while the mean of selected individuals is 61.28, yielding an S of 11.23."
+    },
+    {
+      "type": "discussion",
+      "content": "If we use repeated-measures selection, the overall mean of the five-sample averages for each individual is 49.74, while the mean of selected individuals is 55.14, resulting in an $S$ of 5.39. The smaller value of $S$ under repeated measures under the same selection intensity, $\\bar{\\tau}$, is a simple consequence of the reduced variance associated with using the mean (repeated measures) versus a single observation. To see this, note from Equation 13.6a that $S_{\\bar{z}}/S_z = (\\bar{\\iota}\\sigma_{\\bar{z}})/(\\bar{\\iota}\\sigma_z) < 1$, as $\\sigma_{\\bar{z}} < \\sigma_z$ (Equation 13.17c). From the breeder's equation, the expected response based on single measures is $$ R=h^{2}S=0.1\\cdot11.23=1.12 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "To express the response given by Equation 13.18b (the repeated-measures expression) in terms of $S$, note that here $\\rho = \\sigma_A^2 / (\\sigma_A \\sigma_z) = \\sigma_A / \\sigma_z$, and hence $R = \\bar{\\nu} \\rho \\sigma_A = \\bar{\\nu} \\sigma_A^2 / \\sigma_z = (\\bar{\\nu} \\sigma_z) \\sigma_A^2 / \\sigma_z = S \\sigma_A^2 / \\sigma_z$, which, using Equation 13.17c, yields $$ R=h^{2}\\left(\\frac{n}{1+(n-1)r}\\right)S=0.1\\cdot2.78\\cdot5.39=1.50 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, the reduction in $S$ under repeated measures (5.39 versus 11.23) is more than made up for by increased accuracy, yielding a larger expected response relative to mass selection (i.e., selection based on single measures). From Equation 13.19a, the expected ratio of the accuracies (and hence responses, assuming the same selection intensities) of the five-measure to single-measure schemes is 1.67, which approaches $1/\\sqrt{r} \\simeq 2.24$ for large values of $n$. The value of the response ratio for our simulated data (1.50/1.12 = 1.34) deviated from the expected value due to the small number (20) of randomly sampled individuals."
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "appendix4_002",
+  "metadata": {
+    "chapter": "appendix4",
+    "section": "COMBINING p VALUES OVER INDEPENDENT TESTS",
+    "subsections": [
+      "COMBINING p VALUES OVER INDEPENDENT TESTS"
+    ],
+    "source_file": "data\\paddle_output\\appendix4_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "structured_repair": {
+      "version": "source_inline_math_v1",
+      "actions": {
+        "replace_from_source": 1
+      }
+    }
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Hypotheses of interest are often tested in multiple studies, and an important issue (the statistical field of meta-analysis—the analysis of analyses) is how best to combine the results from a set of such studies into a single global statement. The most obvious approach is simply to pool all of the data and perform a single test, but for a variety of reasons this is often not feasible. For example, different tests of the same hypothesis may involve different methodologies or very different settings. Further, published papers may not report the full dataset, but rather may just present a few summary statistics. In such settings, one straightforward approach is to consider the list of p values for the collection of experiments that all purport to test the same hypothesis and try to obtain a single global p value for this entire set. As in normal hypothesis testing, care must be taken in distinguishing between one- and two-tailed hypotheses. For example, we could get a significant p value for a new treatment over a series of tests because it is significantly worse, and we would draw an incorrect conclusion if we used combined p values for a two-tailed test when a one-tailed test (the treatment results in an improvement) is more appropriate."
+    },
+    {
+      "type": "discussion",
+      "content": "This simple question of how best to combine p values from a set of experiments is potentially fraught with peril for several reasons. First, there is the issue of whether the different tests all really test the same hypothesis. The investigator must take care to assure that this is correct before proceeding. Second, there is concern about the so-called file-drawer effect, wherein nonsignificant results remain in the file drawer (i.e., are not published), leading to published results being biased toward smaller p values. One general trend seems to be a publication bias in studies with small sample sizes (where nonsignificant results are often not reported), but a reduction in this bias for larger samples (Easterbrook et al. 1991; Dickersin et al. 1992). The presumptive reason for this sample-size effect in publication bias is that small studies often lack power, so a nonsignificant result does not necessarily provide strong evidence that the null hypothesis is correct. Conversely, due to the higher power of larger studies, authors may feel more comfortable in publishing negative results. We examine several approaches that attempt to quantify the amount of any such publication bias in a meta-analysis at the end of this Appendix."
+    },
+    {
+      "type": "discussion",
+      "content": "# Fisher's $ \\chi^{2} $ Method Fisher (1932b) was among the first to offer a simple approach for combining $p$ values (along with Tippett 1931), based on the important concept that the distribution of realized $p$ values under the null follows a uniform distribution over $(0,1)$. Further, if $p \\sim \\text{Uniform}(0,1)$, then $-2 \\ln(p) \\sim \\chi_{2}^{2}$ (Pearson 1938). Hence, under the null, twice the negative natural log of a $p$ value follows a chi-square distribution with two degrees of freedom. If we have $k$ independent tests, then the sum of their log-transformed $p$ values is the sum of $k$ chi-square variables. Such a sum is itself chi-square, with the degrees of freedom given by the sum of the degrees of freedom for the individual chi-squares (LW Appendix 5). These observations formed the motivation for Fisher's combined probability test: for $k$ independent tests, where $ p_{i} $ denotes the p value for test i, the sum $$ X^{2}=-2\\sum_{i=1}^{k}\\ln(p_{i}) $$ approximately follows a $ \\chi_{2k}^{2} $ distribution."
+    },
+    {
+      "type": "discussion",
+      "content": "Example A4.1. Suppose five different groups collected data to test the same hypothesis, and these groups (perhaps using different methods of analysis) report p values of 0.10, 0.06, 0.15, 0.08, and 0.07. Notice that while none of these individual tests are significant, the trend is clearly that all are “close” to being significant ( $ \\bar{p} = 0.09 $). Fisher’s statistic returns a value of $$ X^{2}=-2\\sum_{i=1}^{k}\\ln(p_{i})=24.3921\\qquad with\\qquad\\Pr(\\chi_{10}^{2}\\geq24.39)=0.0066 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Hence, when taken together, these five tests show a highly significant p value."
+    },
+    {
+      "type": "discussion",
+      "content": "Rice (1990b; also see Whitlock 2005) noted that a problem with Fisher's method is that smaller p values are differentially weighted compared to complementary larger p values (e.g., p versus 1 - p). Equation A4.1a can be rearranged to yield $$ X^{2}=-2k\\ln(\\overline{p}_{G}) $$ where $ \\overline{p}_G $ is the geometric mean of the individual $ p $ values, which differentially weights smaller values. Under Fisher’s method, an observed $ p $ value of (say) 0.001 receives more weight than a complementary value of 0.999, which is as extreme (with $ -\\ln $ weights of 6.9 vs. 0.001). However, under the Z-score transformation—which is obtained by solving $ \\Pr(U > Z) = p $, where $ U \\sim \\mathrm{N}(0,1) $—the two complementary $ p $ values are of equal magnitude (Z scores of $ -3.09 $ and $ 3.09 $). This motivates the Z-score method, which we now consider."
+    }
+  ]
+}

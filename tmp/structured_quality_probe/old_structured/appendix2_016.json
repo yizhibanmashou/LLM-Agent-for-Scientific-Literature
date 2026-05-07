@@ -1,0 +1,46 @@
+{
+  "id": "appendix2_016",
+  "metadata": {
+    "chapter": "appendix2",
+    "section": "Student's t Distribution",
+    "subsections": [
+      "Student's t Distribution"
+    ],
+    "source_file": "data\\paddle_output\\appendix2_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "structured_repair": {
+      "version": "source_inline_math_v1",
+      "actions": {
+        "replace_from_source": 5
+      }
+    }
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "The final distribution needed for a Bayesian analysis of a Gaussian likelihood is the $t$ (or Student's $t$) distribution. Suppose that $x_i \\sim N(\\mu, \\sigma^2)$, so for $n$ independent draws, $\\overline{x} \\sim N(\\mu, \\sigma^2/n)$. This implies that $(\\overline{x} - \\mu)/\\sqrt{\\sigma^2/n} \\sim U$, where $U \\sim N(0,1)$ denotes a unit normal. Likewise, the sample variance, $\\text{Var}(x)$, follows a scaled chi-square distribution, with $\\text{Var}(x) \\sim (n-1)\\sigma^2\\chi_{n-1}^2$ (LW Equation A5.14c). When the estimated variance, $\\text{Var}(x)$, is used in place of the true variance, $\\sigma^2$, the quantity $(\\overline{x} - \\mu)/\\sqrt{\\text{Var}(x)/n}$ follows a $t$ distribution with $n - 1$ degrees of freedom, giving rise to the very familiar $t$-test. Notice that $$ t_{n-1}=\\left(\\frac{\\overline{x}-\\mu}{\\sigma/\\sqrt{n}}\\right)\\left(\\frac{1}{\\sqrt{\\mathrm{Var}(x)/\\sigma^{2}}}\\right)=\\frac{U}{\\sqrt{\\chi_{n-1}^{2}/(n-1)}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, a $ t_{\\nu} $ random variable follows the distribution of a unit normal divided by the square root of a chi-square with $ \\nu $ degrees of freedom, $$ t_{\\nu}=\\frac{U}{\\sqrt{\\chi_{\\nu}^{2}/\\nu}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Note that $ E(\\chi_{\\nu}^{2}) = \\nu $, so $ E(\\chi_{\\nu}^{2}/\\nu) = 1 $. Relative to a normal, a t distribution is more peaked and has heavier tails, and this kurtosis becomes more pronounced as $ \\nu $ decreases. Indeed, the tails fall off sufficiently slowly that a t random variable with two degrees of freedom has an infinite variance, while a t with four (or fewer) degrees of freedom has an infinite fourth moment. The coefficient of kurtosis (LW Equation 2.12a) for a t with $ \\nu > 4 $ degrees of freedom is $ k_{4} = 6/(\\nu - 4) $, which approaches the value (zero) for a normal random variable for large values of $ \\nu $. For $ \\nu > 30 $, the t essentially becomes a unit normal distribution. As with a unit normal, one can also add scale and location to a standard $ t_{\\nu} $-distributed random variable, thus generating a three-parameter family of distributions, $$ t_{\\nu}(\\mu,\\sigma)=\\mu+\\sigma\\cdot t_{\\nu} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The resulting mean and variance this distribution are $$ E[t_{\\nu}(\\mu,\\sigma)]=\\mu\\quad and\\quad\\sigma^{2}[t_{\\nu}(\\mu,\\sigma)]=\\sigma^{2}\\frac{\\nu}{\\nu-2}\\quad for\\nu>2 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Hence, the choice of $ \\mu $ and $ \\sigma $ control, respectively, the location and scale (uncertainty about the location), while $ \\nu $ controls the kurtosis, with heavy tails for values of $ \\nu $ that are small and little kurtosis for $ \\nu > 20 $. The resulting probability density function thus becomes $$ p(x\\mid\\nu,\\mu,\\sigma)=\\frac{\\Gamma([\\nu+1]/2)}{\\Gamma(\\nu/2)\\sigma\\sqrt{\\pi\\nu}}\\left[1+\\frac{1}{\\nu}\\left(\\frac{x-\\mu}{\\sigma}\\right)^{2}\\right]^{-(\\nu+1)/2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The role of the $t$ distribution in Bayesian statistics is twofold. First, it is often used as a more robust prior, as its heavier tails may better account for outliers. Using a $t$ distribution with low degrees of freedom (often $\\nu = 5$) offers a prior that is similar to a normal but allows for more frequent extreme values. The second scenario is that the marginal posterior for $\\mu$ of a Gaussian likelihood with a normal prior on the mean and an inverse chi-square prior on the variance is a $t$ distribution. This arises after the joint posterior is integrated over all possible $\\sigma^{2}$ values (i.e., over an inverse chi-square)."
+    }
+  ]
+}

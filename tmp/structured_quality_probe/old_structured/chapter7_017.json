@@ -1,0 +1,59 @@
+{
+  "id": "chapter7_017",
+  "metadata": {
+    "chapter": "chapter7",
+    "section": "Chapter 7: Stochastic Tunneling",
+    "subsections": [
+      "Stochastic Tunneling"
+    ],
+    "source_file": "data\\paddle_output\\chapter7_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "7.45",
+      "7.46",
+      "7.47",
+      "7.48"
+    ],
+    "table_references": [],
+    "structured_repair": {
+      "version": "source_inline_math_v1",
+      "actions": {
+        "replace_from_source": 1
+      }
+    }
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "How do adaptations depending on the joint presence of more than one mutation become established? One possibility is simply that double mutations, while extremely rare, will still arise, with one eventually being carried to fixation by selection. If, however, the mutation rate at a nucleotide site is $ 10^{-9} $ (Chapter 4), a population size in excess of $ 10^{18} $ is required to routinely see such double mutations, making this route unlikely for all but enormous populations. On the other hand, in very small populations, the path toward adaptation must involve successive fixations via drift, which is also likely to be a very long process. In contrast, moderately large populations offer a dual problem in that the fixation of key intermediate mutations can be problematic if they are neutral (owing to the very long time to drift to fixation) and highly unlikely if they are deleterious."
+    },
+    {
+      "type": "discussion",
+      "content": "Starting with Gillespie (1984b), it became clear that another pathway, often referred to as stochastic tunneling (Komarova et al. 2003; Iwasa et al. 2004), offers a route for the establishment of complex adaptations in large populations even when the intermediate states are deleterious. Under this scenario, secondary mutations arise within the small pool of segregating deleterious first-step mutations, resulting in fixation of the double mutant without either single mutation becoming common, and hence without a bottleneck in mean population fitness."
+    },
+    {
+      "type": "discussion",
+      "content": "The power of stochastic tunneling is that it allows selection to explore (and exploit) the fitness surface more broadly than is possible by single-step mutations, and there is a growing, technical body of work on the subject (Carter and Wagner 2002; Komarova et al. 2003; Iwasa et al. 2004; Weinreich and Chao 2005; Gokhale et al. 2009; Weissman et al. 2009, 2010; Lynch 2010; Lynch and Abegg 2010). Drawing from this literature, our goal is to provide approximate answers to three basic questions regarding complex adaptations. First, what is the critical population size below which sequential fixation dominates tunneling as a mechanism for adaptation? Second, what is the expected rate of establishment of pairs of mutations? Third, how does recombination influence these processes?"
+    },
+    {
+      "type": "discussion",
+      "content": "To put the first question in context, we note that there must be a critical population size, $ N^ * $, below which adaptations are essentially only acquired via sequential fixations, owing to the extreme rarity of occasions in which multiple mutations simultaneously segregate at key sites. Below this threshold value, selection is restricted to exploring the fitness landscape by single mutational steps from the currently fixed genotype. While a single chance fixation can place a population one step closer to a distant adaptive peak, it can also move it even further away. Conversely, for population sizes exceeding $ N^ * $, stochastic tunneling allows selection to explore the consequences of genotypes that are two (and in that are large populations, even more) mutational steps away from the currently most common state. This argument suggests that adaptation in small populations will typically occur by simple, single-step hill climbing, occasionally supplemented by fortuitous drift across a sufficiently shallow adaptive valley (with a reduction in fitness incurred during such a phase). In contrast, large populations should experience episodes in which adaptive events involve the simultaneous fixation of two (or more) mutations, without any intervening period of fitness loss at the population level."
+    },
+    {
+      "type": "derivation",
+      "content": "A simple statement on the critical population size, $N^{*}$, can be made for the situation in which first-step mutations are neutral (Walsh 1995; Lynch and Abegg 2010). Consider a complex adaptation requiring two mutations, with the two sites completely linked, and suppose that an $A$ mutation that is destined to fix has arisen. How likely is it that a $B$ mutation will arise within a member of this lineage on its way to fixation? Because the first-step mutation is neutral, on average, the second mutation will have a window of $4N_e$ generations (the mean fixation time for a neutral mutation) within which it can arise on an $A$ background. During this period, the average frequency of $A$ will be 0.5, so the expected number of $A$-bearing alleles acquiring the second-site mutation will be $4N_e \\cdot (2N\\mu) \\cdot (1/2) = 4N_eN\\mu$, where $\\mu$ is the site-specific mutation rate. Hence, when $N_e \\simeq N$, there is essentially no chance of a two-mutation haplotype even arising during the fixation of a one-step mutation if the population size is much smaller than $1/(2\\sqrt{\\mu})$. Obviously, if the first-step lineage is destined to become lost, even fewer copies of the double mutation will be produced. Now suppose that the double mutation has a selective advantage, $s$, so that the fixation probability of the $AB$ haplotype is $\\simeq 2s$. Again assuming $N_e \\simeq N$, the adaptation will almost certainly arise by stochastic tunneling rather than by sequential fixation if the population size exceeds [[SEE_FORMULA:7.45]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Note that this is not a terribly stringent condition, as with $ \\mu = 10^{-9} $ and $ s = 0.01 $, $ N^* \\simeq 112,000 $. The critical population size will be larger by a factor of $ 1/\\sqrt{x} $ if $ N_e = xN $ (recall from Chapter 3 that $ x $ is usually $ \\ll 1 $). When the intermediate step is strongly deleterious (with an effect of $ s_d $), then provided $ 4N_e s_d \\gg 1 $, first-step mutations will almost be never fixed, with tunneling dominating over sequential fixation."
+    },
+    {
+      "type": "derivation",
+      "content": "We now turn to the matter of rates of establishment, focusing again on the situation in which two loci are fixed for alleles A and B, respectively, and inquiring as to the time to reach an alternative state of fixation at both loci, with respective alleles a and b. We will assume equivalent mutation rates of $ \\mu $ from A to a and B to b. The simplest selection scenario in this case, which was first explored by Kimura (1985), assumes that the gametes Ab and aB have equivalent fitnesses of 1 - s and the gametes AB and ab have equivalent fitnesses of 1.0. In this case, although transitions between pure population states of AB and ab may occur, nothing is gained in terms of fitness. Within the sequential fixation domain, the degree of linkage can be ignored (as only one locus is polymorphic at a time), and the mean time to establish the novel ab type from AB (or vice versa) is the sum of the waiting times for the two mutational steps, [[SEE_FORMULA:7.46]] where $ u_{fd} $ and $ u_{fb} $ are, respectively, the probabilities of fixation of deleterious (first-step) and beneficial (second-step) alleles (obtained by applying the selection coefficients -s and s to Equation 7.10a). Transitions to states Ab or aB (from the higher-fitness states ab or AB) occur at a rate of $ (4N\\mu)(u_{fd}) $, which is the product of the population mutation rate and twice the rate of first-step fixation (because there are two ways to produce first-step mutations); and then, conditional on the first change, the second change occurs at a rate of $ 2N\\mu u_{fb} $. Because the probability of fixation of a deleterious allele is $ e^{-4N_{e}s} $ that of a beneficial allele (above), the establishment time in this case is expected to be primarily determined by the time required for the fixation of first-step alleles, so that the rate of establishment (the reciprocal of the time to establishment) [[SEE_FORMULA:7.47]]"
+    },
+    {
+      "type": "derivation",
+      "content": "If, on the other hand, selection against the intermediate haplotypes is much stronger than drift so that fixation of the intermediate state is unlikely (the stochastic-tunneling domain), the most likely scenario for a transition from the AB type to ab type is a population that is initially residing in a state of selection-mutation balance at both loci. If we assume complete linkage, and a selection coefficient of -s associated with the a and b alleles when not appearing alone, the Ab and aB gametes, each with initial frequency $ \\tilde{p} = \\mu/s \\ll 1 $ (from Equation 7.6d), would then serve as staging grounds for mutations to the ab type. Mutant ab gametes arise at a rate of $ \\mu $ from each of the $ 4N\\mu/s $ intermediate types (2N times the frequency of each heterozygote, $ \\simeq 2\\tilde{p} $), and fix in an essentially neutral fashion with a probability of $ 1/(2N) $ (as most resident gametes are of the type AB, with equivalent fitness to ab as noted above). Thus, the rate of establishment of the ab type by stochastic tunneling to an equivalent fitness state is [[SEE_FORMULA:7.48]]"
+    }
+  ]
+}

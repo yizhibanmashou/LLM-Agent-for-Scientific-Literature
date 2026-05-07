@@ -1,0 +1,42 @@
+{
+  "id": "chapter10_025",
+  "metadata": {
+    "chapter": "chapter10",
+    "section": "Chapter 10: Basic Structure of the Model",
+    "subsections": [
+      "Basic Structure of the Model"
+    ],
+    "source_file": "data\\paddle_output\\chapter10_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "structured_repair": {
+      "version": "source_inline_math_v1",
+      "actions": {
+        "replace_from_source": 4
+      }
+    }
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "If we assume that 50"
+    },
+    {
+      "type": "proposition",
+      "content": "The robustness of PRF estimates to violations of model assumptions has been examined by several authors. While the model assumes additive selection, estimates of $ \\gamma $ are relatively insensitive to dominance (Williamson et al. 2004). Wakeley (2003) examined the effects of population structure (assuming an island model; Chapter 2). While estimates of the divergence time, $ \\tau $, are significantly affected, estimates of $ \\gamma $ are only weakly affected and tend to be conservative (closer to neutrality). Desai and Plotkin (2008) noted that the infinite-sites assumption (that mutations never reoccur at the same site) breaks down under high scaled mutation rates ( $ \\theta > 0.05 $). In such cases, recurring mutations at the same site can result in genes under weak negative selection giving a signal of strong positive selection. This may be especially problematic for viral populations with high mutation rates and large population sizes."
+    },
+    {
+      "type": "proposition",
+      "content": "One critical difference between PRF and MK analyses is the contribution of information from silent sites (e.g., $ P_s $, $ D_s $), a point stressed by Li et al. (2008). Estimates of selection under an MK analysis are in the form of estimates of $ \\alpha $, which are critically dependent upon $ P_s $ and $ D_s $ (e.g., Equations 10.8a and 10.9a), in addition to $ D_a $ and $ P_a $. Conversely, under the PRF model, positive selection is estimated only through $ \\gamma $. An examination of Equations 10.12c and 10.12d shows that estimates of $ \\gamma $ depend only on $ D_a $ and $ P_a $, and that information from silent sites ( $ P_s $ and $ D_s $) does not enter into them. As a consequence, the control for demographic effects on $ P_a $ provided by $ P_s $ does not enter, and over- or under-inflated estimates of $ P_a $ from population structure can significantly bias estimates of $ \\gamma $. Further, Equation 10.14a (from which the PRF equations follow) is an equilibrium model, which assumes that the population size has been stable for sufficient time to reach the mutation-selection-drift equilibrium. Chapter 9 was littered with the bodies of tests that critically depend on this same assumption."
+    },
+    {
+      "type": "proposition",
+      "content": "In contrast, because MK estimates involve the ratio of $ P_a / P_s $, recent demographic effects influencing polymorphism levels are accounted for, and there is no assumption about the population being at an equilibrium value for the current amount of genetic variation (see the discussion following Equation 10.5d). Thus, while both MK and PRF approaches face bias from differences in population size between the divergence and polymorphism phases, PRF approaches have additional bias introduced by any nonequilibrium patterns in the polymorphism data. As noted by Li et al. (2008), tests of selection using PRF theory (i.e., $ \\gamma $ significantly greater than zero) are closer to an HKA than an MK test, as the former compares the P/D ratio over different genes and lacks the internal control of comparing polymorphism levels from two different classes within the same gene."
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, while we have framed the PRF approach in terms of simple DPRS count data, it can be modified to directly estimate $ \\gamma $ using the site-frequency spectrum from a single population (Hartl et al. 1994; Bustamante et al. 2001; Williamson et al. 2004; Huerta-Sanchez et al. 2008). DPRS data are very granular, collapsing all of the polymorphism and divergence information into just four data points. In contrast, the site-frequency spectrum is a very rich source of additional information on the structure of the polymorphism data (Chapters 2 and 9). Using the PRF model to estimate $ \\gamma $ directly from the frequency spectrum is done in a fashion analogous to estimating sweep parameters using the frequency spectrum discussed in Chapter 9. In particular, Equation 10.14a is substituted into Equation 9.16a to form the (composite) likelihood, from which an MLE for $ \\gamma $ can be obtained by standard approaches (LW Appendix 4). While elegant, this approach is not generally recommended due to the very delicate dependence of the frequency spectrum on demographic structure, which is not accounted for by the current models. Likewise, Equation 10.14a assumes additive fitnesses, whereas even small amounts of dominance can alter the site-frequency spectrum (Williamson et al. 2004)."
+    }
+  ]
+}

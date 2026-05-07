@@ -1,0 +1,77 @@
+{
+  "id": "chapter28_026",
+  "metadata": {
+    "chapter": "chapter28",
+    "section": "Chapter 28: Impact on Equilibrium Variances",
+    "subsections": [
+      "Impact on Equilibrium Variances"
+    ],
+    "source_file": "data\\paddle_output\\chapter28_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "28.30a",
+      "28.30b",
+      "28.30c",
+      "28.30d",
+      "28.31",
+      "28.32a",
+      "28.32b",
+      "28.32c",
+      "28.33a",
+      "28.33b"
+    ],
+    "table_references": [],
+    "structured_repair": {
+      "version": "source_inline_math_v1",
+      "actions": {
+        "replace_from_source": 1
+      }
+    }
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Because mutation-drift models yield too large a genetic variance, and mutation-selection models yield too small a variance, perhaps a mutation-selection model with drift might be just right. Alas, this is not the case. The incorporation of drift into mutation-selection balance models starts with Latter (1970) and Bulmer (1972). As might be expected, if the strength of selection is sufficiently weak ( $ V_{s} $ is sufficiently large), the equilibrium variance approaches the pure-drift result (Equation 11.20c), while if the effects of drift are small ( $ N_{e} $ sufficiently large), it approaches its deterministic value (e.g., Equation 28.18a under HCA)."
+    },
+    {
+      "type": "derivation",
+      "content": "Ignoring linkage disequilibrium (as above, by simply summing the single-locus results) and assuming Gaussian selection and the incremental mutational model with $ \\alpha \\sim N(0, \\sigma_{\\alpha}^{2}) $, Bürger et al. (1989) obtained their stochastic house-of-cards (SHC) approximation [[SEE_FORMULA:28.30a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Bürger (1988a), Keightley and Hill (1988), Barton (1989), and Houle (1989) all obtained similar expressions using different approaches. As with the deterministic HCA model, linkage has little effect on this result, leading to only a slight overestimate (Bürger 1988a; Bürger et al. 1989; Bürger and Lande 1994). Equation 28.30a interpolates between the pure-selection HCA result (Equation 28.18a), denoted $ \\widetilde{\\sigma}_{A}^{2}(HC) $, and the pure-drift (neutral) result (Equation 11.20), denoted $ \\widetilde{\\sigma}_{A}^{2}(N) $. Following Bürger et al. (1989), a little algebra shows that [[SEE_FORMULA:28.30b]] which is simply half the harmonic mean of the pure selection and pure drift results. Analysis of Equation 28.30a gives the selection- and drift-dominated domains as [[SEE_FORMULA:28.30c]]"
+    },
+    {
+      "type": "derivation",
+      "content": "An alternative way to recover these domains is to recall that selection overpowers drift at a single locus when $ |4N_e s| \\gg 1 $, while drift dominates when $ |4N_e s| \\ll 1 $ (Chapter 7). Using Equation 28.4c, the expected selection coefficient for a new mutation (effect $ \\alpha_i $ under HOC) is [[SEE_FORMULA:28.30d]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Hence, $ |4N_e s| \\gg 1 $ implies $ 2N_e \\sigma_{\\alpha_i}^2 \\gg V_s $, while $ |4N_e s| \\ll 1 $ implies $ 2N_e \\sigma_{\\alpha_i}^2 \\ll V_s $, thus recovering the selection- and drift-dominated domains given in Equation 28.30c."
+    },
+    {
+      "type": "derivation",
+      "content": "An important caveat is that finite-population expressions for $ \\widetilde{\\sigma}_{A}^{2} $ are expected values. Simulations show considerable spread around this expected value (Keightley and Hill 1988; Bürger 1989; Bürger et al. 1989; Bürger and Lande 1994). Barton (1989) found that the variation in the realizations is approximately [[SEE_FORMULA:28.31]]"
+    },
+    {
+      "type": "discussion",
+      "content": "This reduces (to leading order) to Equation 11.25 as $ V_s $ (i.e., as the strength of selection approaches zero)."
+    },
+    {
+      "type": "derivation",
+      "content": "The Gaussian counterpart to the stochastic HCA can be obtained using the same logic leading to Equations 28.14d and 28.14e. Again, we start with Equation 24.2a, which assumes a Gaussian distribution of allelic effects. Adding a term $ \\sigma_m^2 $ for new mutation and ignoring disequilibrium ( $ d = 0 $, $ \\sigma_a^2 = \\sigma_A^2 $), then at equilibrium [[SEE_FORMULA:28.32a]] where again we used the result that $ \\kappa h^2 = \\sigma_A^2 / V_s $ (note that our use of $ \\kappa $ here and in Equations 28.14d and 28.14e follows from its use in Equation 16.10a to measure the reduction in variance following selection, and is distinct from $ \\kappa_4 $, which is used above to denote a scaled measure of kurtosis; Equation 28.18c). This yields the quadratic equation [[SEE_FORMULA:28.32b]] whose solution is the stochastic Gaussian result [[SEE_FORMULA:28.32c]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Latter (1970), Keightley and Hill (1988), Houle (1989), Lynch and Lande (1993), and Santago (1998) all independently obtained slightly different versions of this expression. For sufficiently weak drift (large $ N_e $), Equation 28.32c approaches Kimura's Gaussian result (Equation 28.14a). For sufficiently weak selection (large $ V_s $), the $ \\widetilde{\\sigma}_A^4 $ term in Equation 28.32b can be ignored, which recovers the pure drift result (Equation 11.20c). Bürger (2000) found that the stochastic version of Fleming's Gaussian approximation (Equation 28.15) is also of the form of Equation 28.32c, with the $ 2n\\sigma_m^2 V_s $ term (the square of Kimura's result; Equation 28.14a) replaced by the square of Fleming's result (Equation 28.15)."
+    },
+    {
+      "type": "derivation",
+      "content": "Using the stochastic version of the House-of-Gauss (HG) approximation (Example 28.8) of Hermisson and Wagner (2004) provides a unified treatment of the above results. Recall that the HG approximation recovers the HCA when the mutation rate is sufficiently low and the Gaussian when the mutation rate is sufficiently high. Adding a drift term, $ -\\tilde{\\sigma}^{2}(a)/N_{e} $, to the right-hand side of the deterministic version (Equation 28.29d) of the HG approximation yields [[SEE_FORMULA:28.33a]] where $ \\widetilde{\\sigma}^{2}(a) $ is the haploid, single-locus variance. Under linkage equilibrium, for $ n $ equivalent loci, $ \\widetilde{\\sigma}^{2}(A) = 2n\\widetilde{\\sigma}^{2}(a) $. Using this result and solving Equation 28.33a, results in Hermisson and Wagner's stochastic House-of-Gauss expression [[SEE_FORMULA:28.33b]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, a more subtle effect of drift is that it can impact the domain of applicability of the Gaussian approximation. Houle (1989) noted that higher mutation rates than those necessary for the deterministic Gaussian approximation are required to compensate for the loss of alleles from drift, further restricting its domain of applicability."
+    }
+  ]
+}

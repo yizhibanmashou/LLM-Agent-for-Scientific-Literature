@@ -1,0 +1,51 @@
+{
+  "id": "chapter28_035",
+  "metadata": {
+    "chapter": "chapter28",
+    "section": "Chapter 28: The Hill-Keightley Pleiotropic Side-effects Model",
+    "subsections": [
+      "The Hill-Keightley Pleiotropic Side-effects Model"
+    ],
+    "source_file": "data\\paddle_output\\chapter28_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "structured_repair": {
+      "version": "source_inline_math_v1",
+      "actions": {
+        "replace_from_source": 7,
+        "remove_placeholder_block": 3
+      }
+    }
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Given that the additive variance contributed by an additive allele with effect $ \\alpha $ at frequency $ x $ is $ 2\\alpha^2x(1 - x) $, the variance contributed by the flux of new alleles ( $ 2N\\mu $ per generation) becomes $$ \\begin{aligned}&2N\\mu\\int_{1/(2N)}^{1-1/(2N)}\\int_{s,\\alpha}2\\alpha^{2}x(1-x)\\cdot\\phi(x|N,N_{e},s)\\cdot\\varphi(s,\\alpha)ds d\\alpha dx\\\\ &=4N_{e}\\mu\\int_{1/(2N)}^{1-1/(2N)}\\int_{s,\\alpha}\\frac{\\alpha^{2}(1-\\exp[-4N_{e}s(1-x)])}{1-\\exp(-4N_{e}s)}\\varphi(s,\\alpha)ds d\\alpha dx\\\\ \\end{aligned} $$ where $ \\varphi(s, \\alpha) $ is the joint distribution of s and $ \\alpha $ in new mutations (Keightley and Hill 1990; Zhang and Hill 2002; Eyre-Walker 2010). Caballero and Keightley (1994) and Zhang et al. (2004) present a more general version allowing for dominance in both the trait and fitness."
+    },
+    {
+      "type": "discussion",
+      "content": "An interesting analysis using this approach was provided by Eyre-Walker (2010). For analytic tractability, he assumed that the trait effect, $ \\alpha $, of a mutation was related to its (deleterious) selection coefficient, s, by $$ \\alpha=\\delta(4N_{e}s)^{\\tau}(1+\\epsilon) $$ where $\\delta$ and $\\epsilon$ are random variables, with $\\delta$ either +1 or -1 with equal probability and $\\epsilon \\sim N(0, \\sigma_{\\epsilon}^2)$. Note that as $\\sigma_{\\epsilon} \\to 0$, $|\\alpha|$ and $s$ are perfectly associated, while they become uncorrelated as $\\sigma_{\\epsilon} \\to \\infty$. The parameter $\\tau$ measures how $|\\alpha|$ increases with the strength of selection, for example, linearly when $\\tau = 1$."
+    },
+    {
+      "type": "discussion",
+      "content": "By assuming that the distribution of $s$ was $\\gamma$, Eyre-Walker was able to obtain an analytic expression for the additive variance (in terms of the Hurwitz Zeta function, see his paper for details). Of particular interest was the fraction of the equilibrium additive-genetic variance contributed by alleles at frequency $x$, which turned out to be independent of $\\sigma_e^2$. Figure 28.5 plots this fraction for various assumed values of $\\tau$ for strong $(4N_e\\bar{s}=3000)$ and weak $(4N_e\\bar{s}=30)$ average selection against new mutations. When $\\tau=0$, trait alleles are neutral, and the majority of the genetic variance is due to intermediate to high frequency (derived) alleles. Conversely, as $\\tau$ increases, the majority of variation is due to alleles of large effect at very low frequency. For example, for $4N_e\\bar{s}=3000$ and $\\tau=1$, 96"
+    },
+    {
+      "type": "discussion",
+      "content": "The variance to allele-frequency relationship for purely neutral alleles is in sharp contrast to this observation that rare alleles account for most of the variation under the pleiotropic selection model. Because alleles are assumed neutral, there is no correlation between the effect of a new mutation, $ \\alpha $, on a trait and its allele frequency. When expressed in terms of the minor-allele frequency (MAF), x, the folded Watterson distribution (Equation 2.34b) for neutral alleles at equilibrium is $$ \\phi(x)=\\frac{\\theta}{x(1-x)}\\quad for\\quad\\frac{1}{2N}\\leq x\\leq\\frac{1}{2}\\quad where\\quad\\theta=4N_{e}\\mu $$ Because the additive variance is given by $ \\sigma_A^2(x) = 2\\alpha^2x(1 - x) $, we have $ \\phi(x) \\cdot \\sigma_A^2(x) = 2\\alpha^2/\\theta $ for all values of $ x $. As shown in Figure 28.6, this implies a uniform distribution, over $ [0,1/2] $, for the fraction of equilibrium variation contributed by a given allele-frequency class, with a fraction $ 2x $ of the total additive variance due to alleles with $ \\text{MAF} \\leq x $ (Visscher et al. 2012b; Robinson et al. 2014). For example, in this neutral setting, 80"
+    },
+    {
+      "type": "discussion",
+      "content": "Example 28.14. An interesting example of apparent stabilizing selection was given by McGuigan and Blows (2009). Recall from Chapter 13 (e.g., Equation 13.26a) that the genetic variance-covariance matrix, G, associated with a vector, z, of trait values is critical to understanding multivariate evolution (discussed in great detail in Volume 3). The first principal component (the leading eigenvector) of this matrix, $ g_1 $, represents the linear combination that accounts for the most genetic variation in this set of traits. In particular, the index $ g_1^T z = \\sum g_{1,i} z_i $ (where $ g_{1,i} $ is the ith element of the leading eigenvector) has the largest genetic variance of any index of z (Appendix 5)."
+    },
+    {
+      "type": "discussion",
+      "content": "McGuigan and Blows classified male Drosophila burnanda into those that were successful in a mate-choice experiment (high fitness) and those that were not (low fitness). Previous work from the Blows lab demonstrated that females favor males with a particular combination of cuticular hydrocarbons (CHC), which we can write as an index score, $ I = \\mathbf{b}^T \\mathbf{z} $, where $ \\mathbf{b} $ is the vector of weights and $ \\mathbf{z} $ is the vector of CHC scores. This score has been under strong directional selection, and hence it is not surprising that there is very little genetic variation in this index (i.e., little variation along the direction of the CHC multivariate-trait space given by the vector $ \\mathbf{b} $ of weights). McGuigan and Blows compared the mating success of individuals based on a different CHC index, $ H = \\mathbf{g}_1^T \\mathbf{z} $, namely, the index with the maximum genetic variance for CHC traits. Low-fitness males (poor mating success) tended to have extreme (high or low) $ H $ scores, while high-fitness males tended to have intermediate $ H $ values. Hence, a plot of mating success versus $ H $ shows an intermediate optimum, namely apparent stabilizing selection on $ H $. However, there is no direct selection on $ H $ (indeed, it is almost orthogonal to the index, $ I $ under selection by female choice), so the appearance of stabilizing selection likely arises from pleiotropic stabilizing selection on other fitness components that also influence CHC scores."
+    },
+    {
+      "type": "discussion",
+      "content": "Sztepanacz and Rundle (2012) also observed this pattern in mate-choice experiments in the sister species D. serrata. Because $ g_{1} $ represents the direction of the most genetic variation, McGuigan et al. (2011) stated that it “is expected to capture a greater portion of the accumulated pleiotropic mutation in a set of traits, including mutations with pleiotropic effects on fitness. Consequently, strong stabilizing selection should be generated on $ g_{1} $, providing the opportunity to investigate the genetic basis of fitness using this simple summary statistic.”"
+    }
+  ]
+}

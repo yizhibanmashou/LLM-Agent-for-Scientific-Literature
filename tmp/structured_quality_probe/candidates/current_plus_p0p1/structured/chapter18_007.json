@@ -1,0 +1,44 @@
+{
+  "id": "chapter18_007",
+  "metadata": {
+    "chapter": "chapter18",
+    "section": "Chapter 18: Weighted Least-squares Estimates of Realized Heritability",
+    "subsections": [
+      "Weighted Least-squares Estimates of Realized Heritability"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter18_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "18.15a",
+      "18.15b",
+      "18.15c"
+    ],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "derivation",
+      "content": "Ordinary least-squares regression assumes that the residuals are homoscedastic and uncorrelated, yielding a covariance matrix for the vector of residuals, e, as $ \\operatorname{Var}(e) = \\sigma_e^2 \\cdot \\mathbf{I} $ (LW Chapter 8). Genetic drift causes the residual covariance structure of the regression given by Equation 18.13 to depart significantly from this simple form. In particular, the residual variance increases with time (Equation 18.8) and residuals from different generations within a given line are correlated (Equation 18.9). Thus, $ \\operatorname{Var}(e) $ is not simply $ \\sigma_e^2 \\cdot \\mathbf{I} $, and generalized least-squares (GLS) must be used to account for the overall covariance structure. From LW Equation 8.34, the GLS estimator of the regression slope is given by [[SEE_FORMULA:18.15a]] where V is the variance-covariance matrix associated with selection response, with elements [[SEE_FORMULA:18.15b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "The elements of V can be obtained from the pure-drift approximation, with the variances, $ V_{ii} $, given by Equation 18.8 and the covariances, $ V_{ij} $, by Equation 18.9, yielding [[SEE_FORMULA:18.15c]] where $ 2f_i \\simeq i/N_e $ (Equation 18.5). If differences in environmental values across generations are not accommodated for by the design, then $ V_{ii} $ has an additional term, $ \\sigma_b^2 $, reflecting random changes in the environment that influence the mean trait value (as discussed below, the use of control lines can often remove this term). Even though OLS assumes an incorrect residual structure, it still provides an unbiased estimate of $ b_C $. However, OLS significantly underestimates the standard error of $ b_C $, and it is for this reason that GLS estimators should be used whenever possible (Hill 1971, 1972c, 1972d, 1974b, 1977a, 1980, 1986)."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 18.3. Computing the GLS regression using the data from Example 18.2 requires the variance-covariance matrix, $ \\mathbf{V} $, of the residuals, which is obtained using the pure-drift approximation. From Example 18.2, $ M = 100 $ and $ N = 20 $, while the estimated phenotypic variance is $ \\text{Var}(z) = 3.293 $ (Mackay, personal communication). Assuming $ N_e = N $, Equation 18.5 yields $ f_i \\simeq i/20 $. Further assuming that both initial sampling and among-generation environmental effects can be ignored (i.e., $ M_0 \\gg 1 $ and $ \\sigma_b^2 \\simeq 0 $), Equation 18.8 gives the variance associated with the response in generation $ i $ as $$ V_{ii}=2f_{i}h^{2}\\sigma_{z}^{2}+\\sigma_{z}^{2}/M_{i}=\\left(\\frac{i}{20}\\right)h^{2}\\cdot3.293+\\frac{3.293}{100}=0.1647\\cdot(i\\cdot h^{2}+0.2) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Similarly, Equations 18.9 and 18.5 give the covariance between generations as $$ V_{ij}=\\left(\\frac{i}{N}\\right)h^{2}\\sigma_{z}^{2}=i\\cdot h^{2}\\cdot0.1647\\qquadfor i<j $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The resulting covariance matrix becomes $$ \\mathbf{V}=0.1647\\cdot\\begin{pmatrix}h^{2}+0.2&h^{2}&h^{2}&h^{2}&h^{2}\\\\h^{2}&2h^{2}+0.2&2h^{2}&2h^{2}&2h^{2}\\\\h^{2}&2h^{2}&3h^{2}+0.2&3h^{2}&3h^{2}\\\\h^{2}&2h^{2}&3h^{2}&4h^{2}+0.2&4h^{2}\\\\h^{2}&2h^{2}&3h^{2}&4h^{2}&5h^{2}+0.2\\end{pmatrix} $$ Because $ \\mathbf{V} $ is a function of the unknown heritability, estimation is an iterative process. Starting with some initial estimate of $ h^2 $, each new $ h_r^2 $ estimate is used to update $ \\mathbf{V} $ in subsequent iterations until convergence occurs. Using the ratio estimator $ h^2 = 0.21 $ (Equation 8.2) as the starting value, Equation 18.15 gives a first estimate as $$ \\widehat{b}_{C}(GLS)^{(1)}=(\\mathbf{S}^{T}\\mathbf{V}^{-1}\\mathbf{S})^{-1}\\mathbf{S}^{T}\\mathbf{V}^{-1}\\mathbf{R}=0.2222 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Substituting this new estimate of $ h^2 $ into $ \\mathbf{V} $ gives, upon a second iteration, $ \\widehat{b}_C(GLS)^{(2)} = 0.2221 $, which remains unchanged in subsequent iterations."
+    }
+  ]
+}

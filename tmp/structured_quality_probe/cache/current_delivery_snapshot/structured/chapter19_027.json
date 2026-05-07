@@ -1,0 +1,35 @@
+{
+  "id": "chapter19_027",
+  "metadata": {
+    "chapter": "chapter19",
+    "section": "Chapter 19: Bayesian Analysis of the Animal Model",
+    "subsections": [
+      "Bayesian Analysis of the Animal Model"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter19_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "19.33a",
+      "19.33b"
+    ],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "The use of Bayesian approaches for the analysis of selection experiments was first suggested by Sorensen and Johansson (1992). Starting with the standard animal model $$ \\mathbf{y}=\\mathbf{X}\\boldsymbol{\\beta}+\\mathbf{Z}\\mathbf{a}+\\mathbf{e},\\quad where\\quad\\mathbf{y}\\sim MVN(\\mathbf{X}\\boldsymbol{\\beta},\\sigma_{A}^{2}\\mathbf{Z}\\mathbf{A}\\mathbf{Z}^{T}+\\sigma_{e}^{2}\\mathbf{I}) $$"
+    },
+    {
+      "type": "derivation",
+      "content": "The (unconditional) mean and variance for this model follow from $ E[\\mathbf{y}] = \\mathbf{X} / \\beta $, and $ \\operatorname{Var}(\\mathbf{y}) = \\operatorname{Var}(\\mathbf{Z} \\mathbf{a} + \\mathbf{e}) = \\sigma_A^2 \\mathbf{Z} \\mathbf{A} \\mathbf{Z}^T + \\sigma_e^2 \\mathbf{I} $. Wang et al. (1993, 1994a, 1994b), Sorensen et al. (1994), and Jensen et al. (1994) developed Gibbs samplers for this model and its extensions. As before, the conditional distribution of the data, given the vectors of fixed effects, $ \\beta $, breeding values, a, and the environmental variance, $ \\sigma_e^2 $, is multivariate normal [[SEE_FORMULA:19.33a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "The infinitesimal model is assumed, with the distribution of breeding values, given the relationship matrix, A, and additive genetic variance, $ \\sigma_{A}^{2} $, being multivariate normal [[SEE_FORMULA:19.33b]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Sorensen et al. (1994) assumed a uniform prior for $ \\beta $, a normal prior for a, and both uniform and inverse- $ \\chi^2 $ priors for the variances. For example, the joint prior for a and $ \\sigma_A^2 $ is the product of $ p(\\mathbf{a} \\mid \\sigma_A^2, \\mathbf{A}) \\cdot p(\\sigma_A^2) $, where the first distribution is a multivariate normal (Equation 19.33b) and the second is either a uniform or an inverse- $ \\chi^2 $ (Appendix 2). These distributions are chosen because they are conjugate priors (Appendix 2) for the multivariate normal, resulting in analytical expressions for the $ p + q + 2 $ univariate conditional distributions for each factor in the model ($ p $ breeding values, $ a_k $, $ q $ fixed effects, $ \\beta_j $, and the variances, $ \\sigma_A^2 $ and $ \\sigma_e^2 $). Using these univariate conditionals, a Gibbs sampler can be constructed. The outline for the sampler is as follows:"
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "id": "chapter2_004",
+  "metadata": {
+    "chapter": "chapter2",
+    "section": "Chapter 2: PROBABILITIES AND TIMES TO FIXATION OR LOSS",
+    "subsections": [
+      "PROBABILITIES AND TIMES TO FIXATION OR LOSS"
+    ],
+    "source_file": "data\\paddle_output\\chapter2_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "2.9a",
+      "2.9b",
+      "2.10",
+      "2.11a",
+      "2.11b",
+      "2.11c",
+      "2.11d"
+    ],
+    "table_references": [],
+    "structured_repair": {
+      "version": "source_inline_math_v1",
+      "actions": {
+        "replace_from_source": 5
+      }
+    }
+  },
+  "blocks": [
+    {
+      "type": "derivation",
+      "content": "Because Equation 2.8 denotes the probability density of allele frequency p given that the population is still polymorphic, [[SEE_FORMULA:2.9a]] is the probability that both alleles are still present in generation t. The probability that an allele with initial frequency $ p_{0} $ has been fixed by generation t is [[SEE_FORMULA:2.9b]] whereas the probability of loss of the allele, $ p_l(p_0, t) $, is given by Equation 2.9b with $ (1 - p_0) $ exchanged for $ p_0 $ (Kimura 1955b). Summing up, [[SEE_FORMULA:2.10]] As can be seen from the negative exponential terms in the previous expressions, as $ t \\to \\infty $, $ \\Omega(p_0, t) \\to 0 $, $ p_f(p_0, t) \\to p_0 $, and $ p_i(p_0, t) \\to (1 - p_0) $. Thus, under neutrality, the probability that a particular allele will become fixed is simply equal to its initial frequency, $ p_0 $. It follows that, in averaging over a very large number of replicate populations, the expected allele frequency will remain constant at $ p_0 $, with a fraction $ p_0 $ of all replicates ultimately reaching allele frequency 1, and the remaining fraction $ 1 - p_0 $ having allele frequency 0."
+    },
+    {
+      "type": "discussion",
+      "content": "An issue of special interest is the mean time until an allele is absorbed into either state $ p = 0 $ or $ p = 1 $. Using diffusion approximations (Appendix 1), Kimura and Ohta (1969a) obtained expressions for both quantities, and Kimura (1970) presented a description of the entire probability distributions for absorption times. The following example uses a somewhat simpler approach to arrive at results identical to those of Kimura and Ohta (1969a), and provides yet another illustration of how the effects of random genetic drift scale with population size."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 2.2. Ewens (2004) used the following line of reasoning to derive the expected time to absorption of a neutral allele under the Wright-Fisher model. Letting $ \\delta p $ denote the change in allele frequency in one unit of time, the mean time to absorption for an allele with frequency p may be rewritten as $$ \\bar{t}_{a}(p)=E[\\bar{t}_{a}(p+\\delta p)]+1 $$ where $E$ denotes an expected value. In words, this expression states that the mean absorption time starting at frequency $p$ is equal to the mean absorption time one time unit later when the allele frequency is $p + \\delta p$, plus one. Approximating $\\bar{t}_a(p + \\delta p)$ by the first three terms in its Taylor series (see LW Equation A1.2) and then taking expectations (only the $\\delta p$ are random terms; the rest are fixed constants), gives $$ \\begin{align*}E[\\bar{t}_{a}(p+\\delta p)]&\\simeq E\\left[\\bar{t}_{a}(p)+\\delta p\\frac{\\partial\\bar{t}_{a}(p)}{\\partial p}+\\frac{(\\delta p)^{2}}{2}\\frac{\\partial^{2}\\bar{t}_{a}(p)}{\\partial p^{2}}\\right]\\\\&=\\bar{t}_{a}(p)+E[\\delta p]\\frac{\\partial\\bar{t}_{a}(p)}{\\partial p}+\\frac{E[(\\delta p)^{2}]}{2}\\frac{\\partial^{2}\\bar{t}_{a}(p)}{\\partial p^{2}}\\end{align*} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Hence, we have $$ \\bar{t}_{a}(p)\\simeq\\bar{t}_{a}(p)+E[\\delta p]\\frac{\\partial\\bar{t}_{a}(p)}{\\partial p}+\\frac{E[(\\delta p)^{2}]}{2}\\frac{\\partial^{2}\\bar{t}_{a}(p)}{\\partial p^{2}}+1 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Under neutrality, the expected change in allele frequency is $ E(p) = 0 $, and as derived previously, the expected variance in allele-frequency change is $ E[(p)^2] = p(1 - p)/(2N) $. Substituting into our approximation and rearranging gives $$ \\overline{t}_{a}(p)-\\overline{t}_{a}(p)-1\\simeq\\frac{p(1-p)}{2\\cdot2N}\\frac{\\partial^{2}\\overline{t}_{a}(p)}{\\partial p^{2}} $$ which implies the differential equation $$ \\frac{\\partial^{2}\\bar{t}_{a}(p)}{\\partial p^{2}}\\simeq-\\frac{4N}{p(1-p)} $$"
+    },
+    {
+      "type": "derivation",
+      "content": "Performing the double integration with respect to p leads to the solution [[SEE_FORMULA:2.11a]] which is the mean time until an allele with initial frequency $ p_{0} $ is either lost or fixed in a population."
+    },
+    {
+      "type": "discussion",
+      "content": "A similar approach can be used to estimate the mean time to fixation for the subset of alleles that specifically become fixed, $ \\bar{t}_f(p_0) $. The essential modification here is that in estimating $ \\bar{t}_f(p_0) $, $ E(\\delta p) $ is no longer equal to zero, because in order for an allele to become fixed, at least one copy must be produced in each generation. That is, in the case of conditional fixation, of the $ 2N $ genes drawn in each generation, one is definitely a $ B $ allele, whereas the remaining $ 2N - 1 $ genes can be viewed as random, leading to $ E(\\delta p) = \\{(1/2N) + [1 - (1/2N)]p\\} - p = (1 - p)/(2N) $. Similarly, because the states of only $ 2N - 1 $ genes are random, $ E[(\\delta p)^2] = \\{(1 \\cdot 0) + [(2N - 1)p(1 - p)]\\} / (2N)^2 $. Unless $ N $ is very small, the approximation $ E[(\\delta p)^2] = p(1 - p)/(2N) $ still holds quite well, and following the procedures utilized previously, we then have $$ \\left(\\frac{2}{p}\\right)\\frac{\\partial\\bar{t}_{f}(p)}{\\partial p}+\\frac{\\partial^{2}\\bar{t}_{f}(p)}{\\partial p^{2}}\\simeq-\\frac{4N}{p(1-p)} $$"
+    },
+    {
+      "type": "derivation",
+      "content": "The solution of this second-order differential equation requires several steps, which we omit, the final result being [[SEE_FORMULA:2.11b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "The mean time to loss of an allele conditional upon loss is identical to the previous expression, but with $ (1 - p_0) $ interchanged with $ p_0 $, [[SEE_FORMULA:2.11c]]"
+    },
+    {
+      "type": "discussion",
+      "content": "These expressions show that the conditional time to fixation asymptotically approaches 4N generations for rare alleles, with the more general fate of such alleles being loss from the population in $ 4N $ generations (Figure 2.2)."
+    },
+    {
+      "type": "derivation",
+      "content": "Finally, because the probability of ultimate fixation of a neutral allele is equal to its initial frequency $ (p_{0}) $ and the probability of ultimate loss is $ (1 - p_{0}) $, it follows that [[SEE_FORMULA:2.11d]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Example A1.8 (in Appendix 1) uses diffusion theory to obtain results identical to those just presented."
+    }
+  ]
+}

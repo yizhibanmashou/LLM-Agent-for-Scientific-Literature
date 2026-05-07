@@ -1,0 +1,26 @@
+{
+  "id": "chapter19_011",
+  "metadata": {
+    "chapter": "chapter19",
+    "section": "Fixed Effects Alter Heritabilities",
+    "subsections": [
+      "Fixed Effects Alter Heritabilities"
+    ],
+    "source_file": "data\\paddle_output\\chapter19_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "structured_repair": {
+      "version": "source_inline_math_v1",
+      "actions": {
+        "replace_from_source": 1
+      }
+    }
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Variance components in a mixed model are estimated after any variation introduced by fixed effects is removed, and this has an impact on the estimated heritability. Under the mixed-model framework, $ h^2 = \\sigma_A^2 / (\\sigma_A^2 + \\sigma_e^2) $, where $ \\sigma_e^2 $ is the residual variance. Here, the denominator is the fixed-effects-adjusted phenotypic variance (the sum of the variance components). This is potentially different from the more standard $ h^2 = \\sigma_A^2 / \\sigma_e^2 $, which is a function of the (total) phenotypic variance, $ \\sigma_z^2 $. In the absence of fixed effects that differ over individuals (such as sex- or age-specific means), $ \\sigma_z^2 = \\sigma_A^2 + \\sigma_e^2 $, meaning that the total and fixed-effects-adjusted phenotypic variances are equivalent, as are the two definitions of $ h^2 $. However, if such class-specific differences exist and are explicitly modeled in the analysis, then the variation they contribute to the overall phenotype is removed, and the resulting residual variance reduced, so $ \\sigma_z^2 > \\sigma_A^2 + \\sigma_e^2 $. For example, if a trait mean varies over the sexes, the variance of the trait in the entire population is greater than the variance of the trait within each sex. Consequently, for a model with sex added as a fixed effect, this source of variation is removed, resulting in a smaller residual variance and a larger heritability. As a result, mixed-model heritability estimates should be larger than estimates that ignore fixed effects. A related issue is that mixed models using the same data but assuming different fixed effects can differ significantly in their estimated residual variances, $ \\sigma_{e}^{2} $, and thus, their resulting heritabilities (Wilson 2008). The implication is that comparison of heritabilities for different traits or populations estimated under a mixed-model framework can be somewhat problematic due to differences in the incorporated fixed effects."
+    }
+  ]
+}

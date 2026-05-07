@@ -1,0 +1,73 @@
+{
+  "id": "chapter24_025",
+  "metadata": {
+    "chapter": "chapter24",
+    "section": "Chapter 24: Gaussian Versus Rare-alleles Approximations",
+    "subsections": [
+      "Gaussian Versus Rare-alleles Approximations"
+    ],
+    "source_file": "data\\paddle_output\\chapter24_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "24.29a",
+      "24.29b",
+      "24.30a",
+      "24.30b",
+      "24.30c",
+      "24.30d",
+      "24.30e",
+      "24.31a",
+      "24.31b",
+      "24.31c"
+    ],
+    "table_references": [],
+    "structured_repair": {
+      "version": "source_inline_math_v1",
+      "actions": {
+        "replace_from_source": 2
+      }
+    }
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "In order to have Equation 24.26a form a closed set of equations, additional assumptions are needed, both on the nature of selection (columns of M) and on the underlying genetics (rows of M). If phenotypes are (and remain) normally distributed, then one needs to only consider selection on the mean and variance, as these define all other moments. More generally, if selection is sufficiently weak, then any selection function can be well approximated by a quadratic Taylor series, which again only involves the first two moments."
+    },
+    {
+      "type": "discussion",
+      "content": "Two different assumptions about the genotypic distribution have been used to reduce Equation 24.26a to the first three moments. The first is to assume that distributions start (and remain) Gaussian (Example 24.9). The second is the rare-alleles model, which assumes loci are very near fixation (Example 24.11). This model is very closely related to an important approximation (Turelli's 1984 house-of-cards) which appears in Chapter 28 and which assumes that the effect of a new mutation is large relative to the amount of standing variation at a locus, which is equivalent to assuming that selection is much stronger than mutation."
+    },
+    {
+      "type": "derivation",
+      "content": "Example 24.9. If we assume that the Gaussian approximation holds, the distribution of allelic effects at each locus will be normal. In this case, all odd central moments at each locus are zero ( $ \\mu_{2k+1} = 0 $) and all even moments are related to the second moment by $ \\mu_{2k} = \\mu_2^k (2k)! / (2^k k!) $ (Kendall and Stewart 1977). For example, $ \\mu_4 = 3\\mu_2^2 $, implying that $ \\mu_4 - \\mu_2^2 = 2\\mu_2^2 $. Assuming that most of selection is on the mean and variance, we can neglect the third- and higher-order selection gradients. In this case, M (Equation 24.26c) reduces to a $ 2 \\times 2 $ matrix [[SEE_FORMULA:24.29a]] where [[SEE_FORMULA:24.29b]] is equivalent to Chevalet's (1994) effective number of loci (Equation 24.3); see Example 24.10. The expected response in the genotypic mean and variance then becomes [[SEE_FORMULA:24.30a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "If the phenotypic distribution is exactly normal, all moments can be expressed in terms of the mean and variance, only gradients measuring selection on the mean and variance will appear, and these equations will be exact. Recalling Equations 24.12a and 24.12b yields [[SEE_FORMULA:24.30b]] and [[SEE_FORMULA:24.30c]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, the expected change in the mean follows the breeder's equation and short-term changes in variance (from allele-frequency change) are expected to be small when the value of $ n_{e} $ is modest to large. We remind the reader that this analysis ignores the effects of gametic-phase disequilibrium. Because the locus-specific variances, $ \\mu_{2,i} $, change as allele frequencies change, predicting changes in variance over several generations, even under these simplifying assumptions, still requires a detailed knowledge about the distribution of allelic effects at individual loci. Thus, while short-term changes in the mean can be predicted without detailed knowledge of the underlying genetics (only $ \\sigma_{A}^{2} $ is required), changes in variance cannot (unless an estimate of $ \\sum \\mu_{2,i} $ or $ n_{e} $ can be obtained). Further, as allele frequencies change, so does $ n_{e} $, and Example 24.4 showed just how unpredictable such changes can be."
+    },
+    {
+      "type": "derivation",
+      "content": "Finally, let's attempt to connect these results for the change in the genic variance, $ \\Delta\\sigma_A^2 = \\Delta\\sigma_a^2 $ (as we ignore any disequilibrium), with those obtained under the continuum-of-alleles (COA) approximation (Equation 24.2a). If the within-generation change in the phenotypic variance is $ \\delta(\\sigma_{z}^{2}) = -\\kappa\\sigma_{z}^{2} $, then the Gaussian COA approximation for the change in genic variance (Equation 24.2a, ignoring drift by taking $ N_{e} = \\infty $) becomes [[SEE_FORMULA:24.30d]]"
+    },
+    {
+      "type": "derivation",
+      "content": "By contrast, because $ \\kappa h^4\\sigma_z^2 = \\kappa h^2\\sigma_A^2 $, Equation 24.30c yields an allelic-moment approximation of [[SEE_FORMULA:24.30e]]"
+    },
+    {
+      "type": "proposition",
+      "content": "Thus, the allelic-moment approximation has a positive term lacking in the COA approximation, and hence predicts a smaller change in $ \\sigma_a^2 $ when $ \\kappa > 0 $ (i.e., when selection reduces the phenotypic variance; Chapter 16). Nick Barton (pers. comm., 2014) suggested that this discrepancy between approximations arises because the selection-gradient approach relies on a weak selection assumption, so terms of order $ S^2 $ are not accurately predicted."
+    },
+    {
+      "type": "derivation",
+      "content": "Example 24.10. Here we show that $ n_{e} $, as defined in the previous example, is equivalent to Chevalet's (1994) $ n_{e} $ (Equation 24.3). This simply clears up a technical detail, and it can be skipped by the casual reader. Specifically, we need to show that $$ n_{e}=\\frac{n}{1+c_{v}^{2}}=\\frac{\\sigma_{A}^{4}}{4\\sum_{i}\\mu_{2,i}^{2}} $$ where $ c_v $ is the coefficient of variation in the genic variance contributed by each locus. Because $ \\mu_{2,i} $ is the variance of allelic effects at locus $ i $, the genic variance contributed by locus $ i $ is $ 2\\mu_{2,i} $ (as there are two alleles per locus). If we recall that the coefficient of variation is defined as the standard deviation divided by the mean [[SEE_FORMULA:24.31a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Recalling that $ \\sigma^2(x) = E[x^2] - E[x]^2 $, we have [[SEE_FORMULA:24.31b]] which rearranges to [[SEE_FORMULA:24.31c]]"
+    }
+  ]
+}

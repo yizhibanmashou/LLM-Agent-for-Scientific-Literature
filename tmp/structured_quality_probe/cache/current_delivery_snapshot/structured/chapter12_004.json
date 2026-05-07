@@ -1,0 +1,77 @@
+{
+  "id": "chapter12_004",
+  "metadata": {
+    "chapter": "chapter12",
+    "section": "Chapter 12: Sample Variance Confidence Intervals",
+    "subsections": [
+      "Sample Variance Confidence Intervals"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter12_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "12.5a",
+      "12.5b",
+      "12.6a",
+      "12.6b",
+      "12.6c",
+      "12.7a",
+      "12.7b",
+      "12.7c"
+    ],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "derivation",
+      "content": "Given the critical role played by the sample variance in empirical tests of the additive-drift model, we digress here to briefly consider a few statistical issues (construction of confidence intervals and power) related to estimating a variance from a sample, which are used throughout the rest of the chapter. This section may be skipped by both the statistically sophisticated and the casual reader. Let $ z_i $ be the trait value in individual $ i $, with population mean $ \\mu $ and variance $ \\sigma^2 $. Provided that individual observations used to estimate a sample variance are uncorrelated and normally distributed with $ z_i \\sim N(\\mu, \\sigma^2) $, then (LW Equation A5.14c) for a sample of size $ n $, for the sample estimator $ \\text{Var} = \\sum(z_i - \\overline{z})^2 / (n - 1) $, we have that [[SEE_FORMULA:12.5a]] namely, that the variance estimator, Var, is distributed as a scaled chi-square random variable with $n-1$ degrees of freedom. As a result, confidence intervals for the true variance, $\\sigma^2$, based on the observed sample variance, Var, follow from critical values for a $\\chi^2$ distribution. Letting $X_{p,n}$ satisfy $\\Pr(\\chi_n^2 \\leq X_{p,n}) = p$, then [[SEE_FORMULA:12.5b]] From Equation 12.5a, substituting $ (n-1)\\mathrm{Var}/\\sigma^{2} $ for $ \\chi_{n-1}^{2} $, we have [[SEE_FORMULA:12.6a]] [[SEE_FORMULA:12.6b]] yielding [[SEE_FORMULA:12.6c]]"
+    },
+    {
+      "type": "discussion",
+      "content": "This motivates a $ (1-\\alpha)100% $ confidence interval for the true variance, $ \\sigma^{2} $, given the observed sample variance, Var. As shown in Figure 12.1, confidence intervals for $ \\sigma^{2} $ are asymmetrical about the estimated value, Var. and tend to be quite large, even for modest sample sizes."
+    },
+    {
+      "type": "derivation",
+      "content": "A second important issue is power: how likely are we to declare the variance to be statistically distinct from some hypothesized null value, $ \\sigma_0^2 $? Intuitively, power increases with both the sample size (n) and the difference between the true and null values. To formally develop this relationship, note from Equation 12.6a that the upper and lower critical values for a $ 100(1 - \\alpha)% $ confidence interval on the value of Var when the true variance is $ \\sigma_0^2 $ are [[SEE_FORMULA:12.7a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "If Var falls outside this interval, we declare that the true variance is statistically different (at level $ \\alpha $) from the assumed value, $ \\sigma_0^2 $. If $ \\beta $ denotes the probability that a sample value of Var falls within this internal, namely the probability of a type-II error (failing to declare a test significant when the null is false, i.e., when the true variance is $ \\sigma_1^2 $), then the power is $ 1 - \\beta $. We can obtain $ \\beta $ by noting that the true distribution is given by $ [(n - 1)/\\sigma_1^2] $ Var $ \\sim \\chi_{n-1}^2 $. Multiplying all terms of Equation 12.7a by $ (n - 1)/\\sigma_1^2 $ gives the probability $ \\beta $ of a sample variance failing to be declared significant as [[SEE_FORMULA:12.7b]]"
+    },
+    {
+      "type": "discussion",
+      "content": "[h]"
+    },
+    {
+      "type": "derivation",
+      "content": "The complement of this event (namely, either less than the lower critical value or greater than the upper critical value) is the power, [[SEE_FORMULA:12.7c]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Example 12.1. Consider a sample variance estimated from $ n = 10 $ observations. Because $ \\Pr(\\chi_9^2 \\leq 2.700) = 0.025 $ and $ \\Pr(\\chi_9^2 \\leq 19.023) = 0.975 $, Equation 12.6c gives the 95% confidence interval $ (\\alpha = 0.05) $ for the true variance $ \\sigma^2 $ as between $ (9/19.023) $Var and $ (9/2.7) $Var, or 0.473-Var to 3.333-Var, implying an uncertainty in $ \\sigma^2 $ spanning almost a full order of magnitude."
+    },
+    {
+      "type": "discussion",
+      "content": "What observed values of the sample variance are unlikely given an assumed true variance of $ \\sigma_0^2 $? From Equation 12.7a, the upper and lower critical values (for a two-sided test with $ \\alpha = 0.05 $) are $ (2.700/9)\\sigma_0^2 = 0.3 \\cdot \\sigma_0^2 $ and $ (19.023/9)\\sigma_0^2 = 2.11 \\cdot \\sigma_0^2 $."
+    },
+    {
+      "type": "discussion",
+      "content": "[h]"
+    },
+    {
+      "type": "discussion",
+      "content": "[h]"
+    },
+    {
+      "type": "discussion",
+      "content": "[h]"
+    },
+    {
+      "type": "discussion",
+      "content": "[h]"
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, what is the power of this design to declare the null model (the true variance is $ \\sigma_0^2 $) false when the correct variance is $ \\sigma_1^2 = 2\\sigma_0^2 $? Taking $ \\alpha = 0.05 $, Equation 12.7b (with $ \\sigma_0^2 / \\sigma_1^2 = 1/2 $) gives the power as $$ \\Pr\\left(\\chi_{9}^{2}\\leq\\frac{2.700}{2}\\right)+\\Pr\\left(\\chi_{9}^{2}\\geq\\frac{19.023}{2}\\right)=0.39 $$ and hence a type II error rate of 61% when the true variance is twice the assumed variance. A similar calculation assuming $ \\sigma_1^2 = \\sigma_0^2 / 2 $ gives a power of 0.20, or a type II error rate of 80%. Useful R commands are (i) $ \\text{pchisq}(x, n) $, which returns $ \\text{Pr}(\\chi_n^2 \\leq x) $, and hence 1-pchisq(x, n), which returns $ \\text{Pr}(\\chi_n^2 \\geq x) $; and (ii) $ \\text{qchisq}(p, n) $, which returns $ X_{p,n} $."
+    }
+  ]
+}

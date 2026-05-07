@@ -1,0 +1,62 @@
+{
+  "id": "chapter20_025",
+  "metadata": {
+    "chapter": "chapter20",
+    "section": "Chapter 20: APPLYING MIXED MODELS TO NATURAL POPULATIONS: BASICS",
+    "subsections": [
+      "Consistency Tests: Accuracy, Reliability, and Caveats when Using PBVs"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter20_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "20.24a",
+      "20.24b",
+      "20.24c",
+      "20.24d",
+      "20.24e"
+    ],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Many of the initial applications of animal models in natural populations used individual PBVs in tests of selection on breeding, versus environmental, values (Equations 20.18 and 20.20), for example, fitting the Rausher-Simms regression using PBVs, $ w = 1 + \\beta_A \\widehat{a} + \\beta_E \\widehat{e} + \\epsilon $. However, Postma (2006) noted that there are significant problems with using an estimated value, $ \\widehat{a} $, in place of the true breeding value, $ A $ (to conform with the literature, we use an italicized $ A $ for the true breeding value, $ \\widehat{a} $ for the PBV, and a bold roman $ A $ for the relationship matrix). His central point was that when the pedigree adds little additional information, the PBV for an individual is almost entirely determined by its phenotype. The resulting"
+    },
+    {
+      "type": "discussion",
+      "content": "PBVs are biased by environmental values influencing the phenotypes of individuals, which confounds their ability to separate A from E. Further, as shown by Hadfield (2008, Hadfield et al. 2010), PBVs are correlated with each other, and this correlation structure must be taken into account for proper inference."
+    },
+    {
+      "type": "discussion",
+      "content": "To quantify these concerns, we first need to consider several related measures of the uncertainty of predicted breeding values. Their accuracy, $ \\rho $, is the correlation between the predicted, $ \\widehat{a} $, and actual, A, breeding values (Chapter 13), while the reliability, $ \\rho^2 $, is the fraction of variation in A accounted for by the PBVs. When using only the phenotype of an individual to obtain its PBV, $ \\rho = h $ (Chapter 13). The difference, $ \\rho^2 - h^2 $, between the reliability of a particular PBV and the heritability is a measure of how much additional information is provided from relatives (i.e., from the pedigree). Expressing a PBV as its expected value (the true breeding value) plus an uncorrelated residual, $ \\widehat{a} = A + \\epsilon $, then $ \\sigma^2(\\widehat{a} - A) = \\sigma^2(\\epsilon) $ is the prediction-error variance (PEV; Chapter 19). When the PBVs are small, the PBVs will be very close to the true breeding values."
+    },
+    {
+      "type": "derivation",
+      "content": "These measures of uncertainty ($ \\rho $ and PEV) in the PBVs are connected as follows. By construction, $ A $ and the residual $ \\epsilon $ are uncorrelated, implying $ \\sigma(\\widehat{a}, A) = \\sigma(\\widehat{a}, \\widehat{a} + \\epsilon) = \\sigma^2(\\widehat{a}) $. This allows us to express the PEV as [[SEE_FORMULA:20.24a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Second, the definition of a correlation yields the accuracy as [[SEE_FORMULA:20.24b]] [[SEE_FORMULA:20.24c]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Hence, Because $ \\rho^2 \\leq 1 $, it immediately follows that $ \\sigma^2(\\widehat{a}) \\leq \\sigma^2(A) $."
+    },
+    {
+      "type": "derivation",
+      "content": "We have already seen a hint of this result, in that individual PBVs are shrunk back toward their expected values, A, reducing their variance relative to the variance of their true values (Figure 20.4). These results imply that the correlation between the PBV and the phenotypic value of the trait, z, is greater than the correlation between A and z, as $ \\sigma(\\widehat{a}, z) = \\sigma(A - \\epsilon, z) = \\sigma(A, z) $, hence [[SEE_FORMULA:20.24d]] where we use corr to denote a correlation, as $ \\rho $ here is restricted to a very specific correlation, namely, that between $ \\hat{a} $ and $ A $ (the accuracy). Equations 20.24a and 20.24c show the connection between $ \\rho $ and the PEV, with [[SEE_FORMULA:20.24e]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, for $ z = A + E $, Postma (2006) showed that the prediction-error variance equals the covariance between the PBV and the environmental (or more generally, residual) deviation, E, so that we can also write"
+    },
+    {
+      "type": "discussion",
+      "content": "[h]"
+    },
+    {
+      "type": "discussion",
+      "content": "● True breeding value ($ \\rho^{2}=1 $)"
+    }
+  ]
+}

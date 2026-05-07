@@ -1,0 +1,40 @@
+{
+  "id": "chapter1_004",
+  "metadata": {
+    "chapter": "chapter1",
+    "section": "Introduction",
+    "subsections": [
+      "The Common Thread Between Breeding and Evolution in Natural Populations"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter1_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "The connection between trait change through artificial selection in domesticated organisms and trait evolution in natural populations was one of the pillars of evidence offered by Darwin in support of his theory of evolution by natural selection. It is thus not surprising that the subfields of breed improvement (which is simply applied evolution) and evolutionary biology have historically had considerable interactions (Hill and Kirkpatrick 2010; Hill 2014; Gianola and Rosa 2015). Both fields are concerned with predicting an expected change in a trait (or vector of traits) given a specific pattern of selection. Evolutionary biologists face the additional, and daunting, challenge of trying to estimate the nature and target (or targets) of selection (i.e., assigning fitnesses to specific trait combinations; Chapters 20, 29, and 30). We consider this last topic separately, after first examining the common connections between the work of breeders and evolutionary biologists."
+    },
+    {
+      "type": "discussion",
+      "content": "The introduction of the full power of quantitative genetics into breeding is in large part due to Jay Lush, and his extremely influential book, Animal Breeding Plans (Lush 1937). In particular, he proposed the classical breeder's equation, $ R = h^{2}S $, for predicting the response to a single generation of selection. Lush was heavily influenced by Sewall Wright, as in 1931 he commuted weekly from Iowa State to the University of Chicago to attend Wright's statistical genetics course. He was also influenced by R. A. Fisher, who lectured at Iowa State during the summers of 1931 through 1936. The extension from the univariate breeder's equation to the response to selection on multiple traits, in the form of selection on a weighted index of trait values, was influenced by both Lush and Fisher. Smith (1936), who acknowledges Fisher's help, and Lush's colleague Hazel (1945) both examined the expected selection response and optimal weights of such an index of trait values. Lush (1947) applied the Smith-Hazel results to obtain the optimal weighting of within- and among-family information for artificial selection programs. Smith and Hazel's work also introduced the very powerful concept of genetic correlations."
+    },
+    {
+      "type": "discussion",
+      "content": "The breeder’s equation is the cornerstone for much of the predicted response to selection in natural populations, and its multivariate extension, which is due to Lande (1976), builds heavily on the ideas of Smith and Hazel, as well as Pearson (1903). Hence, ideas that were initially developed for evolution (Wright’s interests) were translated into animal breeding by Lush, and then subsequently found their way back into the evolutionary literature for modeling the expected response in natural populations (Chapter 20; Slaktin 1970; Roughgarden 1972; Lande 1976)."
+    },
+    {
+      "type": "proposition",
+      "content": "An alternative to the breeder’s equation for predicting selection response was proposed by Alan Robertson (1966a) in a very opaque paper on the culling process in cattle. He proposed that the selection response in a trait could be expressed as the covariance between the breeding value of that trait and relative fitness, $ R = \\sigma(A_z, w) $. As this expression was based on an extension of Fisher’s fundamental theorem of natural selection (which states that the rate of response in fitness is simply the additive variance in fitness; Chapter 6), it is often called the secondary theorem (Orr 2009 suggested that Robertson’s theorem is actually more fundamental, and that Fisher’s theorem follows as a special case). Price (1970) independently suggested a completely general covariance-based expression for the response to any system of selection (Equation 6.8). While both the Robertson and Price results are widely used in evolutionary biology (Chapters 20 and 22; Frank 1995), they have only recently made their way back into breeding, most notably in the analysis of associative effects (Chapter 23; Bijma et al. 2007a)."
+    },
+    {
+      "type": "proposition",
+      "content": "Until very recently, most selective breeding in outbred populations was based on best linear unbiased predictor (BLUP) selection (Chapters 18 and 20), an approach introduced by Charles Henderson (1975). In keeping with the focus on breeding values seen in Robertson's secondary theorem, Henderson noted that one can significantly improve the estimate of individual breeding value by considering all of the known relatives in a sample. This is accomplished using linear mixed models (Chapters 19 and 20; LW Chapters 26 and 27) to return BLUPs of individual breeding values. The individuals with the highest BLUPs are then chosen as the parents for the next generation, with the expected selection response simply being the average breeding values of the selected parents. As this same approach yields a restricted maximum likelihood estimator (or REML estimate) of the additive-genetic variance, evolutionary biologists realized that mixed models could be used to estimate trait heritabilities in natural populations using a set of known relatives (Shaw 1987; Cheverud and Dittus 1992; Kruuk 2004). As detailed in Chapter 20, there was some initial overreach in the early 2000s in an attempt by evolutionary biologists to use BLUPs to assess direct targets of selection, but the BLUP framework still remains a powerful tool for evolutionary analysis."
+    },
+    {
+      "type": "discussion",
+      "content": "The most recent chapter in the development of breeding methods is the use of dense marker information. Initially motivated by the apparent ubiquity of QTLs of major effects, breeders flirted with marker-assisted selection (MAS) schemes, wherein a few well-chosen markers were used to augment phenotypic information when selecting individuals (Lande and Thompson 1990). However, in response to a renewed appreciation for the infinitesimal model, molecular-based breeding has moved to genomic selection (Meuwissen et al. 2001), wherein mixed models are used to assign weights to tens of thousands of SNP-tagged segments that span the genome. The simplest variant of this approach recovers BLUP selection (Chapters 13 and 19), but now with the A matrix of all pairwise relationships between individuals in the sample being replaced by a marker-based estimate of the fraction of shared markers (G-BLUP, for genomic-BLUP). With the increasing availability of dense SNP markers (and now whole-genome sequences) for even nonmodel organisms, marker-based estimations of relationships are now widely used for REML estimates of additive variances, and also (to a lesser extent) for association mapping, in natural populations (Chapter 20)."
+    }
+  ]
+}

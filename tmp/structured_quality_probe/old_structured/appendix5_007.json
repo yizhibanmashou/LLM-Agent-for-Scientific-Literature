@@ -1,0 +1,84 @@
+{
+  "id": "appendix5_007",
+  "metadata": {
+    "chapter": "appendix5",
+    "section": "Eigenvalues and Eigenvectors",
+    "subsections": [
+      "Eigenvalues and Eigenvectors"
+    ],
+    "source_file": "data\\paddle_output\\appendix5_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "structured_repair": {
+      "version": "source_inline_math_v1",
+      "actions": {
+        "replace_from_source": 9
+      }
+    },
+    "residual_manual_repair": {
+      "version": "2026_04_22_residual_review_v1",
+      "actions": {
+        "replace_block": 1
+      }
+    }
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "The eigenvalues, and their associated eigenvectors, of a square matrix describe its transformational geometry. Eigenvalues describe how the original coordinate axes are scaled in the new coordinate system that is described by the eigenvectors (i.e., how the original axes are rotated)."
+    },
+    {
+      "type": "discussion",
+      "content": "To more formally introduce eigenvalues and eigenvectors, suppose, for a square matrix A, that the vector y satisfies the matrix equation $$ \\mathbf{A}\\mathbf{y}=\\lambda\\mathbf{y} $$ for some scalar value, λ. Geometrically, this means that the new vector resulting from transformation of y by A points in the same direction as y (or is exactly reflected about the origin if λ < 0). For such vectors, the only action of the matrix transformation is to scale them by some amount, λ. These vectors thus represent the inherent axes associated with the transformation given by A, and the set of all such vectors, along with their corresponding scalar multipliers, completely describes the geometry of this transformation. Vectors that satisfy Equation A5.6 are referred to as eigenvectors, and their associated scaling factors are eigenvalues, and together they jointly describe the eigenstructure (the intrinsic geometry) of the square matrix, A. If y is an eigenvector, then ay is also an eigenvector, as $ (ay) = a() = (ay) $. Note, however, that the associated eigenvalue, λ, remains unchanged. Hence, we typically scale eigenvectors to be of unit length to yield unit or normalized eigenvectors. In particular, if $ y_i $ is any eigenvector associated with the ith eigenvalue, then the associated normalized eigenvector is $ e_i = y_i / \\|y_i\\| $."
+    },
+    {
+      "type": "discussion",
+      "content": "The eigenvalues of an $n$-dimensional square matrix, $\\mathbf{A}$, are solutions of Equation A5.6, which can be written as $(\\mathbf{A} - \\lambda \\mathbf{I}) \\mathbf{y} = 0$. This implies that the determinant of $(\\mathbf{A} - \\lambda \\mathbf{I})$ must equal zero, which gives rise to the characteristic equation, $|\\mathbf{A} - \\lambda \\mathbf{I}| = 0$, whose solution yields the eigenvalues of $\\mathbf{A}$. This equation can be also be expressed using the Laplace expansion, $$ \\left|\\mathbf{A}-\\lambda\\mathbf{I}\\right|=(-\\lambda)^{n}+S_{1}(-\\lambda)^{n-1}+\\cdots+S_{n-1}(-\\lambda)^{1}+S_{n}=0 $$ where $ |A| $ denotes the determinant of A and $ S_i $ is the sum of all principal minors (minors including diagonal elements of the original matrix) of order i (minors, which are subsets of the full matrix, were defined in LW Chapter 8). Finding the eigenvalues thus requires solving a polynomial equation of order n, implying that there are exactly n eigenvalues (some of which may be identical, i.e., repeated). In practice, for n > 2 this is accomplished numerically, and most statistical analysis packages offer routines to accomplish this task."
+    },
+    {
+      "type": "discussion",
+      "content": "Two of these principal minors are easily obtained and provide information on the nature of the eigenvalues. The only principal minor having the same order of the matrix is the full matrix itself, which means that $ S_n = |\\mathbf{A}| $, the determinant of $ \\mathbf{A} $. $ S_1 $ is also related to an important matrix quantity, the trace. This is denoted by $ \\mathrm{tr}(\\mathbf{A}) $, and is the sum of the diagonal elements of the matrix, namely, $$ \\mathbf{tr}(\\mathbf{A})=\\sum_{i=1}^{n}A_{ii} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Observe that $ S_1 = \\text{tr}(\\mathbf{A}) $, as the only principal minors of order one are the diagonal elements themselves, the sum of which equals the trace. Both the trace and determinant can be expressed as functions of the eigenvalues, with $$ \\mathbf{tr}(\\mathbf{A})=\\sum_{i=1}^{n}\\lambda_{i}\\qquad and\\qquad|\\mathbf{A}|=\\prod_{i=1}^{n}\\lambda_{i} $$ Hence $ \\mathbf{A} $ is singular ( $ |A|=0 $) if, and only if, at least one eigenvalue is zero. As we will see, if $ \\mathbf{A} $ is a covariance matrix, then its trace (the sum of its eigenvalues) measures its total amount of variation, as the eigenvalues of a covariance matrix are nonnegative ( $ \\lambda_i \\geq 0 $)."
+    },
+    {
+      "type": "discussion",
+      "content": "Let $\\mathbf{e}_i$ be the (unit-length) eigenvector associated with eigenvalue $\\lambda_i$. If the eigenvectors of $\\mathbf{A}$ can be chosen to be mutually orthogonal, namely, $\\mathbf{e}_i^T \\mathbf{e}_j = 0$ for $i \\neq j$, then we can express $\\mathbf{A}$ as $$ \\mathbf{A}=\\lambda_{1}\\mathbf{e}_{1}\\mathbf{e}_{1}^{T}+\\lambda_{2}\\mathbf{e}_{2}\\mathbf{e}_{2}^{T}+\\cdots+\\lambda_{n}\\mathbf{e}_{n}\\mathbf{e}_{n}^{T} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "This is called the spectral decomposition of A, and it is derived below in Equation A5.10d. Because $ \\|\\mathbf{e}_i\\| = 1 $, Equation A5.3b gives the projection of $ \\mathbf{x} $ on $ \\mathbf{e}_i $ as $ (\\mathbf{x}^T \\mathbf{e}_i) \\mathbf{e}_i $. Note that $ \\mathbf{e}_i(\\mathbf{e}_i^T \\mathbf{x}) = (\\mathbf{e}_i^T \\mathbf{x}) \\mathbf{e}_i = (\\mathbf{x}^T \\mathbf{e}_i) \\mathbf{e}_i $, as $ \\mathbf{e}_i^T \\mathbf{x} $ is a scalar, which implies that $ \\mathbf{e}_i^T \\mathbf{x} = (\\mathbf{e}_i^T \\mathbf{x})^T = \\mathbf{x}^T \\mathbf{e}_i $. Hence, from Equation A5.3b, we have $$ \\begin{aligned}\\mathbf{A}\\mathbf{x}&=\\lambda_{1}\\mathbf{e}_{1}\\mathbf{e}_{1}^{T}\\mathbf{x}+\\lambda_{2}\\mathbf{e}_{2}\\mathbf{e}_{2}^{T}\\mathbf{x}+\\cdots+\\lambda_{n}\\mathbf{e}_{n}\\mathbf{e}_{n}^{T}\\mathbf{x}\\\\&=\\lambda_{1}\\left(\\mathbf{e}_{1}^{T}\\mathbf{x}\\right)\\mathbf{e}_{1}+\\lambda_{2}\\left(\\mathbf{e}_{2}^{T}\\mathbf{x}\\right)\\mathbf{e}_{2}+\\cdots+\\lambda_{n}\\left(\\mathbf{e}_{n}^{T}\\mathbf{x}\\right)\\mathbf{e}_{n}\\\\&=\\lambda_{1}Proj(\\mathbf{x}on\\mathbf{e}_{1})+\\lambda_{2}Proj(\\mathbf{x}on\\mathbf{e}_{2})+\\cdots+\\lambda_{n}Proj(\\mathbf{x}on\\mathbf{e}_{n})\\\\ \\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "If we again apply Equation A5.3b, we can express this decomposition as $$ \\mathbf{A}\\mathbf{x}=||\\mathbf{x}||\\sum_{i=}^{n}\\left[\\lambda_{i}\\cdot\\cos(\\theta|\\mathbf{x},\\mathbf{e}_{i})\\right]\\mathbf{e}_{i} $$ where $ \\theta|\\mathbf{x}, \\mathbf{e}_i $ denotes the angle between the vectors $ \\mathbf{x} $ and $ \\mathbf{e}_i $. Thus, one can view a matrix as a series of vectors that form the projection space (the eigenvectors), so when a vector is multiplied by this matrix, the resulting vector is the weighted (by the eigenvalues) sum of projections over all of the vectors (the $ \\mathbf{e}_i $) that span the space defined by the matrix."
+    },
+    {
+      "type": "discussion",
+      "content": "Example A5.2. Determine the eigenstructure of the genetic covariance matrix G shown in Example A5.1. Writing the characteristic equation, and recalling the expression for the determinant of a $ 2 2 $ matrix (LW Equation 8.12a), yields $$ \\begin{aligned}\\left|\\mathbf{G}-\\lambda\\mathbf{I}\\right|&=\\left|\\begin{pmatrix}4-\\lambda&-2\\\\ -2&2-\\lambda\\end{pmatrix}\\right|\\\\&=(4-\\lambda)(2-\\lambda)-(-2)^{2}=\\lambda^{2}-6\\lambda+4=0\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Alternatively, if we use the Laplace expansion (Equation A5.7), and note that $ () = 4 + 2 = 6 $ and $ | | = 4 2 - (-2)^2 = 4 $, we will also recover the characteristic equation, which has solutions $$ \\lambda_{1}=3+\\sqrt{5}\\simeq5.236\\qquad\\lambda_{2}=3-\\sqrt{5}\\simeq0.764 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The associated unit eigenvectors (which as easily obtained, along with the eigenvectors, by using the R command eigen) are $$ \\mathbf{e}_{1}\\simeq\\begin{pmatrix}-0.851\\\\ 0.526\\end{pmatrix}\\qquad\\mathbf{e}_{2}\\simeq\\begin{pmatrix}0.526\\\\ 0.851\\end{pmatrix} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "These are orthogonal as $ \\mathbf{e}_{1}^{T}\\mathbf{e}_{2}=0 $."
+    },
+    {
+      "type": "discussion",
+      "content": "The eigenstructure of G shows why the vector of responses, $ \\mathbf{R} $, is rotated away from the direction of the vector that corresponds to the direction of selection, $ \\beta $. From Example A5.1, $ ||\\boldsymbol{\\beta}|| = \\sqrt{10} $, while $ \\mathbf{e}_1^T \\boldsymbol{\\beta} \\simeq 0.727 $ and $ \\mathbf{e}_2^T \\boldsymbol{\\beta} \\simeq 3.079 $. Because $ ||\\mathbf{e}_1|| = ||\\mathbf{e}_2|| = 1 $, Equation A5.2a simplifies to $$ \\cos(\\theta|\\mathbf{e}_{1},\\boldsymbol{\\beta})\\simeq\\frac{0.727}{\\sqrt{10}}\\simeq0.230\\qquad and\\qquad\\cos(\\theta|\\mathbf{e}_{2},\\boldsymbol{\\beta})\\simeq\\frac{3.079}{\\sqrt{10}}\\simeq0.974 $$ giving the angle between $\\mathbf{e}_1$ and $\\boldsymbol{\\beta}$ as $\\theta(\\mathbf{e}_1, \\boldsymbol{\\beta}) \\simeq 76.7^\\circ$, while $\\theta(\\mathbf{e}_2, \\boldsymbol{\\beta}) \\simeq 13.2^\\circ$. Applying Equation A5.3b, the corresponding scaled projections of $\\boldsymbol{\\beta}$ on these eigenvectors are $$ \\begin{aligned}\\lambda_{1}Proj(\\boldsymbol{\\beta}on\\mathbf{e}_{1})&=\\lambda_{1}\\cos(\\theta|\\mathbf{e}_{1},\\boldsymbol{\\beta})||\\boldsymbol{\\beta}||\\mathbf{e}_{1}=\\left(5.236\\cdot0.230\\cdot\\sqrt{10}\\right)\\mathbf{e}_{1}\\\\&=3.803\\left(\\begin{array}{c}-0.851\\\\0.526\\end{array}\\right)=\\left(\\begin{array}{c}-3.236\\\\2\\end{array}\\right)\\end{aligned} $$ $$ \\begin{aligned}\\lambda_{2}\\mathrm{Proj}(\\boldsymbol{\\beta}\\mathrm{on}\\mathbf{e}_{2})&=\\lambda_{2}\\cos(\\theta|\\mathbf{e}_{2},\\boldsymbol{\\beta})||\\boldsymbol{\\beta}||\\mathbf{e}_{2}=\\left(0.764\\cdot0.974\\cdot\\sqrt{10}\\right)\\mathbf{e}_{2}\\\\&=2.353\\begin{pmatrix}0.526\\\\ 0.851\\end{pmatrix}=\\begin{pmatrix}1.236\\\\ 2\\end{pmatrix}\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "From Equation A5.9b, we can express the response, R, as the sum of the projections of $ \\beta $ onto the eigenvalues of G, returning $$ \\begin{aligned}\\mathbf{R}=\\mathbf{G}\\boldsymbol{\\beta}&=\\lambda_{1}Proj(\\boldsymbol{\\beta}on\\mathbf{e}_{1})+\\lambda_{2}Proj(\\boldsymbol{\\beta}on\\mathbf{e}_{2})\\\\&=\\begin{pmatrix}-3.236\\\\ 2\\end{pmatrix}+\\begin{pmatrix}1.236\\\\ 2\\end{pmatrix}=\\begin{pmatrix}-2\\\\ 4\\end{pmatrix}\\end{aligned} $$ As Figure A5.3 shows, the eigenstructure of G explains the unusual behavior of the selection response seen in Figure A5.2. The eigenvector associated with the leading eigenvalue, $ \\lambda_1 $, accounts for most of the variation inherent in G (87%, as $ \\lambda_1 / (\\lambda_1 + \\lambda_2) = 0.87 $), and this eigenvector corresponds to a strong negative correlation between the additive-genetic values of $ z_1 $ and $ z_2 $. Hence, even though $ \\beta $ points in very much the same direction as $ e_2 $, because $ \\lambda_1 \\gg \\lambda_2 $, the projection of $ \\beta $ on $ e_1 $ yields a vector of greater length than the projection of $ \\beta $ on $ e_2 $ (3.803 versus 2.353), and it is this $ e_1 $ projection vector that results in the decrease in $ \\mu_{z_1} $."
+    }
+  ]
+}

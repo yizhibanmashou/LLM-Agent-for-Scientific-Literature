@@ -1,0 +1,61 @@
+{
+  "id": "chapter28_009",
+  "metadata": {
+    "chapter": "chapter28",
+    "section": "Chapter 28: Stabilizing Selection on Multiple Traits",
+    "subsections": [
+      "Stabilizing Selection on Multiple Traits"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter28_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "28.5a",
+      "28.5b",
+      "28.5c",
+      "28.6"
+    ],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "proposition",
+      "content": "The assumption that a gene only influences a single trait is biologically rather unrealistic, as it ignores the likely situation that the amount of standing variation at a given locus reflects the action of selection acting on multiple traits. One model of such pleiotropic fitness effects assumes that a locus influences n independent traits, each under stabilizing selection. Hastings and Hom (1989) showed that when selection on individual loci is weak relative to recombination, at most k loci are polymorphic when k independent traits are under selection. Hence, under weak selection, the addition of pleiotropic stabilizing selection on a nonfocal trait does little to increase the amount of standing variation at a focal trait."
+    },
+    {
+      "type": "discussion",
+      "content": "In effect of strong selection was examined by Gimefarb (1986a, 1992, 1996a) and Hastings and Hom (1990). Gimelfarb (1986a) constructed a model with independent selection on two phenotypically uncorrelated traits (1 and 2, with phenotypic values of $ z_1 $ and $ z_2 $), which were determined by two additive loci with alleles A/a and B/b, whose joint allelic effects on the traits are $ A: (z_1 = z_2 = 0) $, $ a: (z_1 = z_2 = 1) $, $ B: (z_1 = 0, z_2 = 1) $, and $ b: (z_1 = 1, z_2 = 0) $, respectively. Fitness is assumed to be a function of the phenotypic values of each trait, and $ W(z_1, z_2) = [1 - s_1(z_1 - \\theta_1)][1 - s_2(z_2 - \\theta_2)] $. Under this model there is pleiotropy (as the A locus influences both traits), and although Gimelfarb showed that, at equilibrium, both loci are polymorphic, the traits are phenotypically and genetically uncorrelated, and selection occurs independently on each. The result, in the words of Gimelfarb, is that “even if the investigator will be lucky enough to come across character 2, he is almost certain to discard it as having no biological connection with the character 1.” The worrisome implications of this model foreshadow additional complications from pleiotropy, which are discussed below. While multiple-trait stabilizing selection can maintain variation at a number of loci, with selection strong relative to recombination, there is significant negative disequilibrium and often little additive variance in each trait (Gimelfarb 1992)."
+    },
+    {
+      "type": "discussion",
+      "content": "Barton (1990) raised several additional points on the limitations of multiple-trait stabilizing selection. First, simple genetic load arguments (the decrease in mean population fitness relative to the fittest possible genotype) place upper limits on the number of independently selected traits. Assume $k$ traits, each under Gaussian selection with a common value of $V_s = \\omega^2 + \\sigma_E^2$. For populations at equilibrium ($\\mu = \\theta$), Equations 28.3e and 28.3f imply that genetic variation reduces the mean population fitness by $\\sqrt{V_s/(V_s + \\sigma_A^2)}$ for each trait. For $V_s \\gg \\sigma_A^2$ (weak selection), a Taylor-series argument shows that $$ \\sqrt{\\frac{V_{s}}{V_{s}+\\sigma_{A}^{2}}}=\\sqrt{\\frac{1}{1+\\sigma_{A}^{2}/V_{s}}}\\simeq1-\\sigma_{A}^{2}/(2V_{s})\\simeq\\exp\\left[-\\frac{\\sigma_{A}^{2}}{2V_{s}}\\right] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Assuming multiplicative fitnesses across the $k$ independently selected traits, this yields a load of $\\simeq \\exp(-k \\sigma_A^2 / [2V_s])$. For $V_s = 20\\sigma_A^2$, the mean fitness is around 8% of the highest fitness with $k = 100$ traits. For weaker selection, $V_s = 100\\sigma_A^2$, this same load occurs for $k = 500$, while for stronger selection ($V_s = 5\\sigma_A^2$) it occurs for $k = 25$. Thus, one quickly approaches an upper limit on the number of traits before the fitness load becomes unbearable. As discussed in Chapter 7, such load arguments can be delicate because departures from the assumed multiplicative fitness model can either lessen the load (synergistic epistasis) or enhance it (diminishing-returns epistasis). However, the point remains that selection itself places a limit on the number of independent traits with segregating variance. There are also limits on the number of alleles at a given locus, again constraining the ability to evolve in an unlimited number of directions in phenotypic space (at least k alleles are required for a locus to evolve in independent directions at k traits)."
+    },
+    {
+      "type": "discussion",
+      "content": "Barton (1990) suggests there may be a modest number of phenotypic dimensions experiencing significant real stabilizing selection, which results in apparent stabilizing selection on any trait phenotypically correlated to one, or more, of these dimensions (Example 28.1). Further, we have shown that stabilizing selection per se, be it on a single or multiple traits, is unlikely to account for significant additive variance. Coupling these points suggests that stabilizing selection, by itself, is unlikely to explain more than a trivial amount of the genetic variance for a trait that appears to be under stabilizing selection, and that additional factors (such as mutation and pleiotropy) are critical. As succinctly stated by Barton “heritable variation in any one trait is maintained as a side effect of polymorphisms which have nothing to do with selection on that trait,” an idea more fully explored throughout this chapter."
+    },
+    {
+      "type": "derivation",
+      "content": "Example 28.1. As illustrated in Chapter 20, traits may show signs of directional selection (a covariance between trait value and fitness) without being the actual target of selection. The same is true for stabilizing selection, which appears as a negative covariance between the squared trait value and fitness (Chapters 29 and 30). Wagner (1996a) emphasized this point by considering two genetically uncorrelated traits, 1 and 2, that are phenotypically correlated through some shared environmental effect. Trait 1 is neutral (its trait value, $ z_1 $, has no effect on fitness), while trait 2 is under Gaussian stabilizing selection with a strength parameter of $ \\omega_2^2 $. Wagner showed that if $ \\rho_z $ is the phenotypic correlation between the two traits, the expected fitness of phenotype $ z_1 $ is [[SEE_FORMULA:28.5a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Matching terms with Equation 28.3b shows that trait 1 experiences apparent stabilizing (Gaussian) selection around an apparent optimum of 0 and with a strength of [[SEE_FORMULA:28.5b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Note that $ \\omega_1^2 \\to \\infty $ (no selection) as $ |\\rho_z| \\to 0 $. Scaling both traits to have an environmental variance of one, then $ \\sigma_{z_i}^2 = \\sigma_{G_i}^2 + 1 $, where $ \\sigma_{G_i}^2 $ is the (environmentally scaled) genetic variance of trait i. Using this scaling, Wagner rearranged Equation 28.5d to find a lower bound of [[SEE_FORMULA:28.5c]]"
+    },
+    {
+      "type": "discussion",
+      "content": "This sets an upper limit on the strength of apparent stabilizing selection (as smaller $ \\omega_1^2 $ values imply stronger selection), with $ \\omega_1^2 $ increasing (selection becoming weaker) as the fraction of genetic variance in trait 1 increases. This is not surprising, as the apparent selection arises through the environmental component, which is decreased by increasing the genetic contribution."
+    },
+    {
+      "type": "derivation",
+      "content": "What is surprising, however, is that the joint fitness for the genotypic values for both traits, $ (A_{1}, A_{2}) $, is [[SEE_FORMULA:28.6]] showing that there is no selection on the genotypic values of trait 1, which therefore evolves neutrally. Hence, the equilibrium heritability in trait 1 is entirely independent of the strength of the apparent selection on trait 1 (i.e., $ \\omega_1^2 $ does not appear in this expression)."
+    }
+  ]
+}

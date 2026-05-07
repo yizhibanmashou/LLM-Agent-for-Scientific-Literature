@@ -1,0 +1,69 @@
+{
+  "id": "chapter27_010",
+  "metadata": {
+    "chapter": "chapter27",
+    "section": "Chapter 27: Extreme-Value Theory (EVT)",
+    "subsections": [
+      "Structure of Adaptive Walks Under the SSWM Model"
+    ],
+    "source_file": "data\\paddle_output\\chapter27_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "27.8a",
+      "27.8b",
+      "27.9a",
+      "27.9b",
+      "27.9c",
+      "27.9d"
+    ],
+    "table_references": [],
+    "structured_repair": {
+      "version": "source_inline_math_v1",
+      "actions": {
+        "replace_from_source": 3
+      }
+    }
+  },
+  "blocks": [
+    {
+      "type": "derivation",
+      "content": "Given that the limiting EVT distribution is largely independent of the details of the underlying distribution generating it, several interesting results follow when the distribution of fitnesses for new mutations falls into the Gumbel domain. First, let $ s_{j} $ denote the fitness advantage of a new allele relative to the current one. Gillespie (1984b) showed that under strong selection and weak mutation (SSWM), the probability of allele j being the next one to be fixed during the walk is [[SEE_FORMULA:27.8a]] where there are $ k $ alleles that are more fit than the current one (the set of potential alleles is typically taken as the set of all possible mutations that are one step away from the current allele). Hence, the chance that a mutation is fixed is proportional to its fitness advantage, but the most fit allele is by no means guaranteed of being the next allele fixed. Mutation rates do not appear in Equation 27.8a, as it makes the assumption that mutational change to any of the 3L adjacent sequences is equally likely (Equation 7.38 recovered a similar result for a somewhat different problem)."
+    },
+    {
+      "type": "derivation",
+      "content": "Gillespie (1983) also showed that the mean number of substitutions during a walk is small, with the mean number of steps until the most favorable allele is fixed, given the walk starts with the kth fittest, being [[SEE_FORMULA:27.8b]]"
+    },
+    {
+      "type": "discussion",
+      "content": "The simplification given in Equation 27.8b of Gillespie’s original result is due to Orr (2002). Because Equation 27.8b scales as $ (k) $, the mean number of steps (substitutions) typically ranges between two and five (Gillespie 1994). This sequential series of fixations until the best"
+    },
+    {
+      "type": "discussion",
+      "content": "allele is fixed yields a burst of substitutions followed by stasis (unless there is a significant change in the environment, and thus in the fitness function). The result is an overdispersed molecular clock (a higher variance than expected from the Poisson distribution for substitutions that is generated under drift). Remember that extreme-value theory walks focus on the substitution patterns in a single gene or tightly linked genetic region. Hence, many such walks may simultaneously be ongoing within a (recombining) genome. We return to the important issue of context-specific fitness (i.e., epistasis), and how it alters the walk, shortly."
+    },
+    {
+      "type": "derivation",
+      "content": "Orr (2002) used Gillespie’s SSWM process as an adaptive-walk model, making use of a key result from EVT on the spacing between extreme values. Let $ \\Delta_i = W_i - W_{i+1} $ denote the spacing between the fitness values for alleles of fitness ranks $ i $ and $ i+1 $ (Figure 27.5). When the fitness extreme-value distribution is in the Gumbel domain, then $ E[\\Delta_j] = E[\\Delta_1]/j $ (Gumbel 1958; Weissman 1978), meaning that there is a regular pattern in the spacing that only depends on the fitness rank, $ j $, of a given allele and on the expected spacing, $ E[\\Delta_1] $, for the most fit allele. (Recall that Equation 27.4c showed that a similar scaling of spacing, $ C/j $, occurs between steps in an FGM walk.) This result leads to a dramatic simplification of Equation 27.8a. If the current allele has a fitness rank of $ i $, the selection coefficient on a higher-ranked $ (j < i; i.e. $, more fit) allele is [[SEE_FORMULA:27.9a]] where $ C_i = E[\\Delta_1]/W_i $. If we substitute $ s_j = C_i/j $ into Equation 27.8a and note that the common $ C_i $ term in the numerator and denominator terms cancels, gives the transition probability (starting with an allele with a fitness rank of $ i $) that the next allele to be fixed has a rank of $ j < i $, as [[SEE_FORMULA:27.9b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Using this expression, if the current sequence is the ith-fittest local allele, the mean fitness rank of the next fixed allele is [[SEE_FORMULA:27.9c]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Using Equation 27.9b, the corresponding variance in the fitness rank of this next fixed allele was obtained by Rokyta et al. (2006) [[SEE_FORMULA:27.9d]]"
+    },
+    {
+      "type": "discussion",
+      "content": "For example, if the wild-type is the 10th-fittest (its rank is ten), Equation 27.9c calculates the expected rank following one substitution as three (the third-fittest), rather than the most fit (an allele of rank 1), as naively might be expected. From Equation 27.9d, the standard error on this expected rank is 2.5. Thus, while large jumps in fitness rank occur during the walk, these are typically not to the most fit allele. Orr (2002) noted that the adaptive process over this walk is the average of perfect adaptation (the best mutation, i = 1, is fixed in the first substitution; this is called gradient adaptation in the physics and computer science literature) and random adaptation (a randomly chosen fitter allele is fixed, for an average rank of i/2), as $ (1 + i/2)/2 = (i + 2)/4 $, recovering Equation 27.9c."
+    },
+    {
+      "type": "discussion",
+      "content": "Unlike Fisher's model, Orr (2002) found that jumps under the SWMM model are few, and substantial, with over 30"
+    },
+    {
+      "type": "discussion",
+      "content": "We have already discussed how the abstract nature of Fisher's model is perhaps its greatest strength, as it frees one from the tyranny of the idiosyncratic details for any particular trait. A similar feature occurs in sequence space through the use of EVT, to again obtain fairly general statements for an unknown distribution of the fitness effects of new alleles at a particular locus. What are some of the potential weaknesses of the sequence-space walk model? We can classify these as weaknesses as assumptions about mutation and assumptions about selection. An obvious issue concerning mutation is bias, in that the models assume that all (single-step) mutations are equally likely. However, the focus of these models is on how selection shapes the outcome under assumptions of equal mutation."
+    }
+  ]
+}

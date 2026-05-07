@@ -1,0 +1,63 @@
+{
+  "id": "chapter5_013",
+  "metadata": {
+    "chapter": "chapter5",
+    "section": "Chapter 5: Marginal Fitnesses and Average Excesses",
+    "subsections": [
+      "Marginal Fitnesses and Average Excesses"
+    ],
+    "source_file": "data\\paddle_output\\chapter5_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "5.7a",
+      "5.7b",
+      "5.7c",
+      "5.7d",
+      "5.8a",
+      "5.8b"
+    ],
+    "table_references": [
+      "5.1"
+    ],
+    "table_reference_keys": [
+      "chapter5:5.1"
+    ],
+    "structured_repair": {
+      "version": "source_inline_math_v1",
+      "actions": {
+        "replace_from_source": 5,
+        "remove_placeholder_block": 3
+      }
+    }
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "For a locus with n alleles under viability selection and random mating, the frequencies of the $ A_i A_j $ heterozygotes and $ A_i A_i $ homozygotes after selection are $ 2 p_i p_j W_{ij} / \\overline{W} $ and $ p_i^2 W_{ii} / \\overline{W} $."
+    },
+    {
+      "type": "discussion",
+      "content": "[[TABLE:5.1]]. As in Table 5.1, for a biallelic locus, this follows from weighting the (random-mating) frequency of a genotype before selection by its fitness, with $$ \\begin{align*}\\overline{W}=\\sum\\limits_{i=1}^n\\sum\\limits_{j=1}^n p_i p_j W_{ij}\\end{align*} $$"
+    },
+    {
+      "type": "derivation",
+      "content": "The frequency of allele $ A_i $ in survivors is the postselection frequency of the $ A_i A_i $ homozygote plus half the postselection frequencies of all $ A_i A_j $ heterozygotes, a sum that simplifies to [[SEE_FORMULA:5.7a]] [[SEE_FORMULA:5.7b]] where is the marginal fitness of allele $ A_{i} $, i.e., the expected fitness of an individual carrying one copy of $ A_{i} $ and a second randomly chosen allele. Further, $$ \\overline{W}=\\sum_{i=1}^{n}p_{i}W_{i} $$ so one can also express mean fitness as the average of the marginal fitnesses."
+    },
+    {
+      "type": "derivation",
+      "content": "Note that, unlike genotypic fitness $ (W_{ij}) $, the marginal fitness $ W_i $ is a function of the allele frequencies and hence is expected to change over time. The concept of marginal fitness can be understood as follows: under random mating, if one allele is known to be $ A_i $, then with probability $ p_j $, the other will be $ A_j $ and the resulting fitness will be $ W_{ij} $. Summing over all possible alleles recovers Equation 5.7b. If $ W_i > \\overline{W} $ (individuals carrying $ A_i $ have a higher fitness than a random individual), then $ A_i $ will increase in frequency. If $ W_i < \\overline{W} $, $ A_i $ will decrease in frequency. Finally, if $ W_i = \\overline{W} $, the frequency of $ A_i $ will be unchanged. From Equation 5.7a, the expected allele-frequency change is [[SEE_FORMULA:5.7c]] which implies that at a polymorphic equilibrium (e.g., $ \\hat{p}_i \\neq 0, 1 $), [[SEE_FORMULA:5.7d]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, at an equilibrium, all segregating alleles have the same marginal fitness."
+    },
+    {
+      "type": "derivation",
+      "content": "Marginal fitnesses provide a direct connection between single-locus and quantitative-genetic theory. Recalling that the average excess of allele $ A_i $ is the difference between the mean of individuals carrying a copy of $ A_i $ and the population mean (LW Equation 4.16), we immediately see that $ (W_i - \\overline{W}) $ is the average excess in absolute fitness of allele $ A_i $, implying that [[SEE_FORMULA:5.8a]] is the average excess in relative fitness. Like $ W_{i} $, $ s_{i} $ is a function of allele frequencies, and thus changes as these change. Equation 5.7c can therefore be expressed as [[SEE_FORMULA:5.8b]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, at equilibrium, the average excess in fitness of each allele equals zero. As there is then no variation in the average excesses, it immediately follows that the additive genetic variance in fitness is also zero at the equilibrium allele frequencies, as a nonzero additive genetic variance requires variation in the average excesses (see LW Equation 4.23a)."
+    }
+  ]
+}

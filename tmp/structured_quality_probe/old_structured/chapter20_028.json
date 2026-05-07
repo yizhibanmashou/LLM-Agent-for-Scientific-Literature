@@ -1,0 +1,24 @@
+{
+  "id": "chapter20_028",
+  "metadata": {
+    "chapter": "chapter20",
+    "section": "Next-generation Analysis: Generalized Mixed Models",
+    "subsections": [
+      "Next-generation Analysis: Generalized Mixed Models"
+    ],
+    "source_file": "data\\paddle_output\\chapter20_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "This bivariate analysis of a trait and fitness makes two critical assumptions that are starting to be relaxed by using the more sophisticated analyses that are possible within a Bayesian framework. The first is that the standard mixed model assumes normally distributed random variables. Such is clearly not the case with fitness, in which random variables are often expected to be zero-inflated, with a point mass at zero fitness (which can be substantial). One way to handle such data is to use a zero-inflated Poisson distribution (a Poisson with an additional point mass at zero; Chapters 14 and 29). As discussed in Chapter 29, zero-inflated models are one attempt to deal with overdispersion. If count data follow a Poisson, then the mean and variance should be equal. Overdispersion occurs when the variance exceeds the mean, which can occur if there are an excess of zeros. Overdispersion can also occur if there are an excessive of other values, and Chapter 29 examines models that allow for both zero inflation and any additional overdispersion that is present after accounting for any excess of zeros. When fitness does not follow a normal distribution, the standard general linear model is replaced by generalized linear models (Chapters 14 and 29), which extend to generalized mixed models (Bolker et al. 2009; de Villemereuil et al. 2016) when the distribution of random effects is nonnormal."
+    },
+    {
+      "type": "discussion",
+      "content": "The basic strategy in applying a generalized linear model was seen in our discussion of threshold models in Chapter 14. Here, on some underlying (latent) scale, an individual's breeding and environmental values determine its liability value, which is then translated into a realization of the trait value. For the threshold-trait model, if the liability exceeds a critical value, a particular trait value is seen. More generally, the liability value on this latent scale can be the parameter for some distribution from which a realization is drawn. In a fitness setting, suppose that an individual's liability value is 1.5; then the number of offspring it has is (say) a random draw from a Poisson with a mean of 1.5. As with a standard mixed model, we can borrow information on (liability) breeding values from the relatives of a focal individual to estimate the additive variance on this latent scale (see Example 20.7). As detailed in Chapter 29, while a zero-inflated Poisson may be an improvement over assuming normality, in reality fitness is expected to have a more complex distribution. The Aster model approach detailed in Chapter 29 allows for a more realistic fitness distribution to be constructed by assuming a set of appropriate distributions over each fitness episode (e.g., Bernoulli for survival data, zero-inflated and/or overdispersed discrete distributions for number of mates, etc.). Bayesian approaches (using MCMC samplers) can deal with these more complex and realistic distributions."
+    }
+  ]
+}

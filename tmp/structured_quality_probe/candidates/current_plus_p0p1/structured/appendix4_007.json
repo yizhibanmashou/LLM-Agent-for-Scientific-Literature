@@ -1,0 +1,40 @@
+{
+  "id": "appendix4_007",
+  "metadata": {
+    "chapter": "appendix4",
+    "section": "Holm's Method",
+    "subsections": [
+      "Holm's Method"
+    ],
+    "source_file": "tmp\\paddle_output\\appendix4_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "The simplest of these sequential adjustments is Holm's method (Holm 1979). The first step is to order the $p$ values for the $n$ hypotheses being tested from smallest to largest, $p(1) p(2) p(n)$, and let $H(i)$ be the hypothesis associated with $p(i)$. One proceeds with Holm's method as follows: (i) If $ p(1) > /n $, accept all $ n $ null hypotheses (i.e., none are declared significant)."
+    },
+    {
+      "type": "discussion",
+      "content": "(ii) If $ p(1) /n $, reject $ H(1) $ [i.e., $ H(1) $ is declared significant], and consider $ H(2) $."
+    },
+    {
+      "type": "discussion",
+      "content": "(iii) If $ p(2) > /(n - 1) $, accept $ H(i) $ (for $ i 2 $)."
+    },
+    {
+      "type": "discussion",
+      "content": "(iv) If $ p(2) /(n-1) $, reject $ H(2) $ and move onto $ H(3) $."
+    },
+    {
+      "type": "discussion",
+      "content": "(v) Proceed with rejecting hypotheses until reaching the first i such that $ p(i) > /(n - i + 1) $."
+    },
+    {
+      "type": "discussion",
+      "content": "We can also apply Holm's method using Equation A4.3a—namely, $ \\alpha=1-(1-\\pi)^{1 / n} $ , the Dunn- $ \\hat{S} i d a k $ correction—in place of $ \\alpha=\\pi / n. $"
+    }
+  ]
+}

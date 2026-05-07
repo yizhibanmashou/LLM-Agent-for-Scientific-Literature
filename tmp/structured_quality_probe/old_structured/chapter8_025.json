@@ -1,0 +1,46 @@
+{
+  "id": "chapter8_025",
+  "metadata": {
+    "chapter": "chapter8",
+    "section": "Chapter 8: Sweeps Using Standing Variation",
+    "subsections": [
+      "How Likely is a Sweep Using Standing Variation?"
+    ],
+    "source_file": "data\\paddle_output\\chapter8_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "structured_repair": {
+      "version": "source_inline_math_v1",
+      "actions": {
+        "replace_from_source": 4
+      }
+    }
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Peter et al. (2012) developed an approximate Bayesian computation (or ABC)-based approach (Appendix 3) that combines several tests of selection in an attempt to distinguish between sweeps from de novo mutation versus those from standing variation (also see Ormond et al. 2015). Their key idea is that allelic trajectories under either setting are identical once selection starts, but that a preexisting allele starts at some frequency > 1/(2N), while a de novo mutation is initially absent. The fit of several summary statistics of selection (Chapter 9) is then compared with various models assuming drift (i.e., no selection) at some point in the history of that allele. However, simulation studies showed that their test has little power unless selection is strong ( $ 4N_{e,s} > 100 $ under additivity). When their test was applied to seven of the strongest known sweeps in humans, two were found to be most likely from standing variation, three fit the hard-sweep model, and two were equivocal. While interesting, this small sample does not provide much insight into the relative frequency of the different types of sweeps, as these loci were generally detected using methods based on strong-sweep signals, creating an ascertainment bias in favor of hard sweeps."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 8.8. One measure of how rate-limiting mutation can be is the expected time at which there is a 50 $$ 0.5=1-\\exp(-T_{0.5}h\\alpha_{b}\\theta_{b})=1-\\exp(-0.13\\cdot T_{0.5}) $$ which rearranges to $ T_{0.5} = -\\ln(0.5)/0.13 \\simeq 5.33 $, or $ 5.33(2N_e) = 10.66N_e = 106,600 $ generations. Further, once such a mutation that is destined to be fixed arises, it still takes (on average) an additional $ 2\\ln(4N_e s)/s \\sim 1060 $ generations to become fixed (Equation 8.4d)."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 8.9. As a sample calculation of how often sweeps occur from existing versus new mutations, suppose $ N_e = 10^6 $ and there is a genome average per-site mutation rate of $ \\mu = 2.5 \\cdot 10^{-9} $, yielding $ \\theta = 4N_e\\mu = 0.01 $. For a beneficial mutation that can only occur by a change to a specific nucleotide at a specific site, one third of mutations at that site are beneficial, yielding $ \\theta_b = (1/3)\\theta = 0.0033 $. For an allele with additive fitness effects ( $ h = 1/2 $) with $ s = 10^{-4} $, we have $ \\alpha_b = 4N_e s = 4 \\cdot 10^6 \\cdot 10^{-4} = 400 $. If this mutation was neutral before being favored, $ \\alpha_d = 0 $, and from Equation 8.17b, $ R = 2h\\alpha_b = 400 $, yielding $$ \\Pr_{sv}\\approx1-\\exp\\left(-\\theta_{b}\\ln[1+R]\\right) $$ $$ =1-\\exp\\left(-0.0033\\ln[1+400]\\right)=0.013 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Hence, there is only a 1.3"
+    },
+    {
+      "type": "discussion",
+      "content": "Now suppose that we examine this population at $ T = 0.5 $, namely, at $ N_e $ generations. From Equation 8.18c, the probability that at least one mutation that is destined to become fixed will arise by this time is $$ \\begin{aligned}\\Pr_{new}(T)&=1-\\exp\\left(-Th\\alpha_{b}\\theta_{b}\\right)\\\\&=1-\\exp\\left(-0.5\\cdot\\left(1/2\\right)\\cdot400\\cdot0.0033\\right)=0.281\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, provided we see a sweep at this locus by $ N_{e} $ generations, then from Equation 8.20, the probability that it was due to an existing allele present at the time of the environmental shift is $$ \\Pr_{ex}(0.5)=\\frac{\\Pr_{sv}}{\\Pr_{sv}+(1-\\Pr_{sv})\\Pr_{new}(T)}=\\frac{0.013}{0.013+(1-0.013)\\cdot0.281}=0.05 $$"
+    }
+  ]
+}

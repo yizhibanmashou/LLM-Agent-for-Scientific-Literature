@@ -1,0 +1,64 @@
+{
+  "id": "chapter22_028",
+  "metadata": {
+    "chapter": "chapter22",
+    "section": "Chapter 22: BLUP ESTIMATION OF DIRECT AND ASSOCIATIVE EFFECTS",
+    "subsections": [
+      "Details: Environmental Group Effects and the Covariance Structure of e"
+    ],
+    "source_file": "data\\paddle_output\\chapter22_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "22.41"
+    ],
+    "table_references": [],
+    "structured_repair": {
+      "version": "source_inline_math_v1",
+      "actions": {
+        "replace_from_source": 1
+      }
+    }
+  },
+  "blocks": [
+    {
+      "type": "derivation",
+      "content": "Our simplifying assumption (Equation 22.28c), that the residuals, $ e_i $, are homoscedastic and uncorrelated (meaning that $ \\sigma(\\mathbf{e}) = \\sigma^2(\\mathbf{e})\\mathbf{I} $), is generally incorrect. As Equation 22.23a shows, individuals within the same group are correlated because they share the $ E_s $ values from the other group members, and not correctly accounting for these shared environmental values results in an overestimation of the variance of the social breeding values (Van Vleck and Cassady 2005; Bijma et al. 2007b; Bergsma et al. 2008; Chen et al. 2009). Equation 22.23a returns the correct covariance matrix for the residuals as [[SEE_FORMULA:22.41]] where $ \\sigma^{2}(e) $ and $ \\rho $ are given by Equation 22.23b."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 22.13. For the design used in Example 22.10 with group members clustered, so that $ \\mathbf{z} = (z_1, z_2, z_5, z_6, z_3, z_4, z_7, z_8)^T $, the corresponding covariance matrix for the residuals becomes $$ \\boldsymbol{\\sigma}(\\mathbf{e})=\\boldsymbol{\\sigma}^{2}(e)\\mathbf{R}=\\boldsymbol{\\sigma}^{2}(e)\\cdot\\begin{pmatrix}{{{1}}}&{{{\\rho}}}&{{{\\rho}}}&{{{\\rho}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\\\{{{\\rho}}}&{{{1}}}&{{{\\rho}}}&{{{\\rho}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\\\{{{\\rho}}}&{{{\\rho}}}&{{{1}}}&{{{\\rho}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\\\{{{\\rho}}}&{{{\\rho}}}&{{{\\rho}}}&{{{1}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\\\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{1}}}&{{{\\rho}}}&{{{\\rho}}}&{{{\\rho}}} \\\\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{\\rho}}}&{{{1}}}&{{{\\rho}}}&{{{\\rho}}} \\\\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{\\rho}}}&{{{\\rho}}}&{{{1}}}&{{{\\rho}}} \\\\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{\\rho}}}&{{{\\rho}}}&{{{\\rho}}}&{{{1}}}&{{{1}}} \\\\\\end{pmatrix} $$ With the same number of individuals in all groups, the only two estimable parameters in the environmental covariance matrix are $ \\rho $ and $ \\sigma^2(e) $. With groups of variable size (either by design or simply through the loss of data), the residual variances and covariances change with $ n $ (Equation 22.23b). In this case, the residual covariance matrix would be specified in terms of the three environmental variance/covariance terms, $ \\sigma^2(E_d), \\sigma^2(E_s) $, and $ \\sigma(E_d, E_s) $."
+    },
+    {
+      "type": "discussion",
+      "content": "Provided $ \\rho > 0 $, an equivalent approach is simply to fit a random group effect (Bergsema et al. 2008; Ellen et al. 2008). Example 22.14 works through an example. This approach is computationally less demanding than jointly estimating $ \\sigma^2(e) $ and $ \\rho $ in an R matrix. However, if the covariance, $ \\sigma(E_d, E_s) $, between environmental direct and social effects is sufficiently negative, $ \\rho $ can be negative (Equation 22.23b) and the simple random group-effects model fails, as the group variance $ \\sigma^2(g_p) $ must be positive. As Equation 22.23b suggests, as group size increases, the contribution from $ \\sigma^2(E_s) $ eventually dominates $ \\rho $, making it positive. Thus, for a design with large group size, fitting a random group effect will often suffice."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 22.14. Suppose that instead of fully specifying the matrix $ \\mathbf{R} $ (Equation 22.41), we instead simply fit a random group effect. Here, all individuals in group i share the common random effect $ g_i $, where we assume $ g_i \\sim N[0, \\sigma^2(g_p)] $. The resulting mixed model becomes $$ \\mathbf{z}=\\mathbf{X}\\boldsymbol{\\beta}+\\mathbf{Z}_{d}\\mathbf{a}_{d}+\\mathbf{Z}_{s}\\mathbf{a}_{s}+\\mathbf{Z}_{g}\\mathbf{g}_{p}+\\mathbf{e} $$ where, for $k$ groups, $\\mathbf{g}_p^T = (g_1, g_2, \\cdots, g_k)$ is the vector of random group effects. The incidence matrix $\\mathbf{Z}_g$ has $k$ columns, the $i$th of which (corresponding to membership in group $i$) has a one for each individual in group $i$ and a zero elsewhere. For example, for the design in Example 22.13, $$ \\mathbf{g}=\\begin{pmatrix}{{{g_{1}}}} \\\\{{{g_{2}}}}\\end{pmatrix}\\quad and\\quad\\mathbf{Z}_{g}=\\begin{pmatrix}{{{1}}}&{{{0}}} \\\\{{{1}}}&{{{0}}} \\\\{{{1}}}&{{{0}}} \\\\{{{0}}}&{{{1}}} \\\\{{{0}}}&{{{1}}} \\\\{{{0}}}&{{{1}}}\\end{pmatrix} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "If we assume a simple covariance for the residuals, so that $ \\sigma(\\mathbf{e}) = \\sigma^2(\\epsilon)\\mathbf{I} $, the resulting contribution to the covariance matrix of $ \\mathbf{z} $ from the group and residual terms becomes $ \\sigma^2(g_p)\\mathbf{Z}_g\\mathbf{Z}_g^T + \\sigma^2(\\epsilon)\\mathbf{I} $, or $$ \\sigma^{2}(g_{p})\\begin{pmatrix}{{{1}}}&{{{1}}}&{{{1}}}&{{{1}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\\\{{{1}}}&{{{1}}}&{{{1}}}&{{{1}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\\\{{{1}}}&{{{1}}}&{{{1}}}&{{{1}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\\\{{{1}}}&{{{1}}}&{{{1}}}&{{{1}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\\\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{1}}}&{{{1}}}&{{{1}}}&{{{1}}} \\\\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{1}}}&{{{1}}}&{{{1}}}&{{{1}}} \\\\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{1}}}&{{{1}}}&{{{1}}}&{{{1}}}\\end{pmatrix}+\\sigma^{2}(\\epsilon)\\mathbf{I}=\\sigma^{2}(e)\\begin{pmatrix}{{{1}}}&{{{\\alpha^{2}}}}&{{{\\alpha^{2}}}}&{{{\\alpha^{2}}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\\\{{{\\alpha^{2}}}}&{{{1}}}&{{{\\alpha^{2}}}}&{{{\\alpha^{2}}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\\\{{{\\alpha^{2}}}}&{{{\\alpha^{2}}}}&{{{1}}}&{{{\\alpha^{2}}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\\\{{{\\alpha^{2}}}}&{{{\\alpha^{2}}}}&{{{\\alpha^{2}}}}&{{{1}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\\\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{1}}}&{{{\\alpha^{2}}}}&{{{\\alpha^{2}}}}&{{{\\alpha^{2}}}} \\\\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{\\alpha^{2}}}}&{{{1}}}&{{{\\alpha^{2}}}}&{{{\\alpha^{2}}}} \\\\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{\\alpha^{2}}}}&{{{\\alpha^{2}}}}&{{{1}}}&{{{\\alpha^{2}}}} \\\\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{\\alpha^{2}}}}&{{{\\alpha^{2}}}}&{{{\\alpha^{2}}}}&{{{1}}}\\end{pmatrix} $$ $$ \\sigma^{2}(e)=\\sigma^{2}(\\epsilon)+\\sigma^{2}(g_{p})\\quad and\\quad\\alpha^{2}=\\frac{\\sigma^{2}(g_{p})}{\\sigma^{2}(\\epsilon)+\\sigma^{2}(g_{p})} $$ where"
+    },
+    {
+      "type": "discussion",
+      "content": "We use $ \\alpha^2 $ to remind the reader that (under this model), this is the ratio of two variances, and hence is always nonnegative. Comparison with Example 22.13 shows that adding a random effect for group corresponds to the more fully specified covariance residual model (Equation 22.41), with $ \\rho = \\alpha^2 $. When $ \\rho > 0 $, both models are identical. However, if the within-group environmental correlations are negative ( $ \\rho < 0 $), then the simple group random-effects model fails."
+    },
+    {
+      "type": "discussion",
+      "content": "Further, note that we can write the covariance matrix of group plus residual effects under this model as $$ \\sigma^{2}(e)\\cdot\\left(\\mathbf{I}+\\alpha^{2}\\left[\\mathbf{Z}_{g}\\mathbf{Z}_{g}^{T}-\\mathbf{I}\\right]\\right) $$ showing that the matrix $ \\mathbf{R} $ in Equation 22.41 (provided $ \\rho > 0 $) is given by $$ \\mathbf{R}=\\mathbf{I}+\\alpha^{2}\\left[\\mathbf{Z}_{g}\\mathbf{Z}_{g}^{T}-\\mathbf{I}\\right] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, a standard approach when families are in the analysis is to include a common-family effect, c, that is due to shared maternal effects and dominance (if full sibs are present). This is simply done by adding an additional vector of random effects, c, for the family effects. Using this approach, the model starting this example now becomes $$ \\mathbf{z}=\\mathbf{X}\\boldsymbol{\\beta}+\\mathbf{Z}_{d}\\mathbf{a}_{d}+\\mathbf{Z}_{s}\\mathbf{a}_{s}+\\mathbf{Z}_{g}\\mathbf{g}_{p}+\\mathbf{Z}_{c}\\mathbf{c}+\\mathbf{e} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "For example, suppose individuals 1, 2, 5, and 6 (in the ordering used in this example) are from one family, while the others are from a second then $$ \\mathbf{c}=\\begin{pmatrix}{{{c_{1}}}} \\\\{{{c_{2}}}}\\end{pmatrix}\\qquad and\\qquad\\mathbf{Z}_{c}=\\begin{pmatrix}{{{1}}}&{{{0}}} \\\\{{{1}}}&{{{0}}} \\\\{{{0}}}&{{{1}}} \\\\{{{0}}}&{{{1}}} \\\\{{{1}}}&{{{0}}} \\\\{{{1}}}&{{{0}}} \\\\{{{0}}}&{{{1}}} \\\\{{{0}}}&{{{1}}}\\end{pmatrix} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Note that if $ \\mathbf{Z}_g = \\mathbf{Z}_c $, the group and family effects are fully confounded and cannot be separated (this point will be discussed in more detail shortly). This addition of a common family effect is easily incorporated into any of the above models."
+    }
+  ]
+}

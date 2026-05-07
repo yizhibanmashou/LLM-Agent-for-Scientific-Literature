@@ -1,0 +1,80 @@
+{
+  "id": "chapter11_006",
+  "metadata": {
+    "chapter": "chapter11",
+    "section": "Chapter 11: Impact of Drift Under Nonadditive Variance",
+    "subsections": [
+      "Impact of Drift Under Nonadditive Variance"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter11_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "11.5",
+      "11.6a",
+      "11.6b",
+      "11.6c"
+    ],
+    "table_references": [
+      "11.1",
+      "11.3"
+    ],
+    "table_reference_keys": [
+      "chapter11:11.1",
+      "chapter11:11.3"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "With definitions in hand for the quadratic expressions in the base population ([[SEE_TABLE:11.1]]) and the temporal dynamics of the identity coefficients (Equations 11.3 and 11.4), we are now in a position to explore the impact of finite population size on the components of variance for a quantitative trait with a nonadditive genetic basis. The expected dynamics are determined by summing the products of the seven quadratic terms listed across the top of [[SEE_TABLE:11.3]] with their associated tabulated identity coefficients in the table. For example, the expected within-population dominance variance is $$ [1-3f+2(\\Delta+\\gamma-\\delta)]\\sigma_{D}^{2}+(f+\\delta-2\\gamma)\\sigma_{D I}^{2}+(f+\\Delta-2\\gamma)\\iota^{*}+(\\widetilde{f}-2\\widetilde{\\gamma}+\\widetilde{\\Delta})(\\iota^{2}-\\iota^{*}) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Here, $ \\sigma_{D}^{2} $, $ \\sigma_{DI}^{2} $, etc. are the base-population values of these components under random mating."
+    },
+    {
+      "type": "derivation",
+      "content": "To gain a more intuitive feel for the source of the expressions in [[SEE_TABLE:11.3]], we first consider the total genetic variance in a collection of lines, each inbred to level f, while ignoring epistasis until the following section. Subscripting loci with k and the two alleles at a locus as i and j, the genotypic value, G (expressed as a deviation from the mean), of an individual can be written as [[SEE_FORMULA:11.5]] where $ \\phi_{kij} $ is equal to one if the two alleles at a locus are identical by descent and equal to zero otherwise."
+    },
+    {
+      "type": "derivation",
+      "content": "To compute the mean genotypic value, $ \\mu_G = E[G] $, note that the expected value of $ \\phi_{kij} $ is $ f $ and that we can write the expected value of $ G $ as two components: if not inbred $ (\\phi_{kij} = 0) $, then $ E[\\alpha_{ki} + \\alpha_{kj} + \\delta_{kij}] = 0 $, as these are deviations from the mean, leaving $$ E[G]=E\\left[\\sum_{k=1}^{n}\\phi_{k i j}(2\\alpha_{k i}+\\delta_{k i i})\\right]=f\\left[\\sum_{k=1}^{n}\\sum_{i=1}^{n_{k}}p_{k i}(2\\alpha_{k i}+\\delta_{k i i})\\right] $$ If inbred, the two alleles at locus k are identical, giving the frequency of genotype $ A_{ki}A_{ki} $ as $ fp_{k,i} $, yielding the last equality. Because $ \\sum_{i}\\alpha_{ki}p_{ki}=0 $ (by construction), we are left with $$ E[G]=\\mu_{G}=f\\sum_{k=1}^{n}\\sum_{i=1}^{n_{k}}\\delta_{kii}p_{ki}=f\\cdot\\iota $$ the last step following from the definition of $ \\iota $ ([[SEE_TABLE:11.1]]). Under complete inbreeding, $ \\mu_G = \\iota $, the change in the mean from inbreeding depression (as $ \\mu_G = 0 $ under random mating). In addition, [[SEE_FORMULA:11.6a]]"
+    },
+    {
+      "type": "discussion",
+      "content": "The final term in Equation 11.6a summarizes the consequences of joint inbreeding at pairs of loci, with $ \\tilde{f} $ being the probability that two loci in the same individual are inbred (Figure 11.1) and $ \\iota^2 - \\iota^* = 2 \\sum_{k<m}^n \\iota_{k}\\iota_m $ being the sum of cross-products of the locus-specific inbreeding depressions. In obtaining Equation 11.6a, note that all other products across loci have expectations equal to zero because $ E[\\alpha_{ki}] $ is always equal to zero and $ E[\\delta_{kij}] = 0 $ at non-inbred loci (LW Chapter 4)."
+    },
+    {
+      "type": "derivation",
+      "content": "Recalling that the genetic variance is defined to be $ \\sigma_{G}^{2} = E[G^{2}] - \\mu_{G}^{2} $, we obtain [[SEE_FORMULA:11.6b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Further simplification is achieved by adding and subtracting $ f(1 - f)\\iota^* $ on the right side of this expression, which, after using the expressions in [[SEE_TABLE:11.1]], leads to [[SEE_FORMULA:11.6c]] in agreement with the final row in [[SEE_TABLE:11.3]]."
+    },
+    {
+      "type": "discussion",
+      "content": "Although the preceding results apply to the genetic variance summed within and among a set of hypothetical isolated subpopulations, an expression for the average within-population variance can be obtained by removing the among-population component. The simplest route to this result is to recall the general rule that the variance among groups is equivalent to the covariance between individuals within groups (e.g., LW Chapter 18). Using this principle, the contribution of each quadratic component in [[SEE_TABLE:11.1]] to the among-population variance can be obtained in the following way."
+    },
+    {
+      "type": "discussion",
+      "content": "First, in the context of the entire collection of populations, $f$ is equivalent to the probability that single alleles in the same population are identical by descent (the average coefficient of coancestry), so the additive genetic covariance for members of the same population is equal to $2f\\sigma_A^2$ (LW Chapter 7). Second, two individuals within a population may also share both genes at a locus, in which case they will exhibit dominance genetic covariance, the magnitude of which will depend on whether the locus is inbred or not. From Figure 11.1, we see that the probability that both individuals are inbred and share the same genotype by descent is equal to the identity measure $\\delta$, so the genetic covariance by this route is $\\delta\\sigma_{D1}^2$."
+    },
+    {
+      "type": "discussion",
+      "content": "The probability that the two individuals are not inbred but share identical genotypes by descent is $ 2(\\Delta - \\delta) $ (the 2 accounts for paternal-paternal and maternal-maternal versus cross-paternal-maternal sources of identity by descent), so the covariance by this route becomes $ 2(\\Delta - \\delta)\\sigma_D^2 $. Third, the probability that three alleles in two members of a population are identical by descent is equal to $ \\gamma $, and there are two ways in which this can arise, so the covariance between additive and dominance effects is $ 2\\gamma\\sigma_{ADI} $. Finally, the covariance resulting from shared inbreeding depression is $ (\\Delta - f^2)\\iota^* $ because $ \\Delta $ is the probability that two members of the same population are jointly inbred at the same locus, while the average fraction of individuals that are inbred over all populations is $ f $ per locus, and $ \\iota^* $ is the sum of squared per-locus inbreeding depressions. Similarly, the covariance due to joint inbreeding depression at different loci is equal to $ (\\widetilde{\\Delta} - f^2)(\\iota^2 - \\iota^*) $, with the latter term being the sum of cross-products of per-locus inbreeding depressions."
+    },
+    {
+      "type": "discussion",
+      "content": "Upon summing all six of these contributions, we obtain the genetic variance among populations given in the second row from the bottom of [[SEE_TABLE:11.3]]. The within-population genetic variance is then obtained by subtracting the among-population component from the total genetic variance. Results such as these provide a mechanistic explanation for the changes in components of genetic variance that can be induced by small population size. For example, it can be seen from the second line of [[SEE_TABLE:11.3]] that inbreeding always converts some initial dominance genetic variance into additive genetic variance. This does not necessarily imply that there will be a net increase in additive genetic variance in a bottlenecked population, as the total dynamics depend critically on the relative magnitudes and temporal dynamics of all five of the quadratic components involving dominance in the base population (Figure 11.2). However, it does imply that Equation 11.2 cannot be strictly correct in the presence of dominance. While the contribution to the additive genetic variance from the base population, $ \\sigma_{A}^{2} $, declines in each generation, Figure 11.2 shows that all other contributions first increase before eventually decreasing to zero. Thus, whether a population bottleneck will induce an increase in additive genetic variance depends critically on the magnitude of $ \\sigma_{A}^{2} $ relative to the other quadratic components in the base population."
+    },
+    {
+      "type": "discussion",
+      "content": "Note that the two-locus identity coefficients $ (f, \\tilde{\\gamma}, \\text{and } \\Delta) $ appear only in association with quadratic terms involving pairs of loci, in this case $ (\\iota^2 - \\iota^*) $. Two-locus identity by descent is of relevance in finite populations because the gametic-phase disequilibrium that inevitably develops by chance causes identity disequilibrium between loci (Weir and Cockerham 1968)—individuals that are inbred at one locus are likely to be so at other loci, causing a transient inflation of the genetic variance through the production of extreme phenotypes."
+    },
+    {
+      "type": "proposition",
+      "content": "Although it may not be immediately apparent, the coefficients in the final two (bottom) columns in [[SEE_TABLE:11.3]] are equivalent to measures of identity disequilibrium (Cockerham 1984a). For example, $ \\widetilde{f}-f^2 $ is the deviation of the double identity-by-descent within gametes in the same population from that based on the assumption of independence between loci. This difference is simply the logical extension of the notion of disequilibrium, where we defined $ D_{AB} = p_{AB} - p_{APB} $, with $ \\widetilde{f} $ being the analog of $ p_{AB} $ (the frequency of the AB gamete) and $ f $ being the analog of $ p_A $ and $ p_B $. Although $ \\widetilde{f} $ depends upon the average linkage relationships between all relevant pairs of loci (Weir and Cockerham 1968, 1969), in most cases, if most pairs of loci are on different chromosomes, or if the population is randomly mated and expanded following the bottleneck, $ \\widetilde{f} $ will be approximately equal to $ f^2 $. Under such conditions, $ (\\widetilde{f}-f^2) $, as well as the other coefficients of $ (\\iota^2-\\iota^*) $ in [[SEE_TABLE:11.3]], will be very close to zero, removing at least this one term from the variance expressions (Figure 11.2)."
+    }
+  ]
+}

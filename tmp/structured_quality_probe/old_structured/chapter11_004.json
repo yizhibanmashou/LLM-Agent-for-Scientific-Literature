@@ -1,0 +1,64 @@
+{
+  "id": "chapter11_004",
+  "metadata": {
+    "chapter": "chapter11",
+    "section": "Quadratic Components for Inbred Populations",
+    "subsections": [
+      "Quadratic Components for Inbred Populations"
+    ],
+    "source_file": "data\\paddle_output\\chapter11_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [
+      "11.1",
+      "11.2"
+    ],
+    "table_reference_keys": [
+      "chapter11:11.1",
+      "chapter11:11.2"
+    ],
+    "structured_repair": {
+      "version": "source_inline_math_v1",
+      "actions": {
+        "normalize_inline_math_artifact": 1,
+        "strip_placeholder_token": 1
+      }
+    },
+    "residual_manual_repair": {
+      "version": "2026_04_22_residual_review_v1",
+      "actions": {
+        "replace_block": 1
+      }
+    }
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "[[TABLE:11.1]]. When dominance is present, the covariance between relatives (and hence the trait variance) under inbreeding is no longer fully described by just $ \\sigma_A^2 $ and $ \\sigma_D^2 $. Rather, additional quadratic components of covariance are required, as outlined in Table 11.1. For the case of dominance and additive × additive variance, these include the familiar parameters $ \\sigma_A^2 $, $ \\sigma_D^2 $, and $ \\sigma_{AA}^2 $ (i.e., the additive, dominance, and additive × additive components of genetic variance; LW Chapter 5); the inbreeding depression, $ \\iota $, here defined to be the difference between the mean phenotypes of outbred and completely inbred individuals (by construction, $ E[G] = 0 $ for an outbred population, where $ G $ denotes the genotypic value, measured as a deviation from the overall mean); the sum, $ \\iota^* $, of squared locus-specific inbreeding depressions; the variance of dominance effects among inbred individuals, $ \\sigma_{DI}^2 $; and the covariance of additive and dominance effects in inbred individuals, $ \\sigma_{ADI} $. Simplification is possible under certain circumstances. Most notably, with only two alleles per locus, $ \\iota^* = \\sigma_D^2 $, and if all alleles have a frequency of 0.5, as in a cross between two pure (i.e., fully inbred) lines, then $ \\sigma_{DI}^2 = \\sigma_{ADI} = 0 $."
+    },
+    {
+      "type": "discussion",
+      "content": "[[TABLE:11.2]]. As shown in Table 11.2, numerous alternative notations for these quadratic components appear in the literature, with almost every new paper seeming to invent its own terminology, which is often a hybrid of several previous papers. Additionally, there are also reparameterizations of these components, such as the Q model of Cornelius and Van Sanford (1988). As Example 11.1 shows, the dominance-related quadratic components are easily computed if one knows the genotypic frequencies in the (randomly mating) base population. Because these components depend on $ \\alpha $ and $ \\delta $, which themselves depend on allele frequencies, their behavior under a change in allele frequency can be complex."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 11.1. Consider a population with a single locus with genotypic values of $ A_1A_1 = 0 $, $ A_1A_2 = 1.67 $, and $ A_2A_2 = 2 $. What are the quadratic components when $ p = (A_1) = 0.8 $? Using standard expressions (LW Chapter 4), the random-mating parameters are"
+    },
+    {
+      "type": "discussion",
+      "content": "[[TABLE:11.1]]. [[TABLE:11.1]]. The contributions of the factors in Table 11.1 to the traditional components of genetic variance ( $ \\sigma_{A}^{2} $, $ \\sigma_{D}^{2} $, and $ \\sigma_{AA}^{2} $) in a finite population depend upon several one- and two-locus identity coefficients. As shown in Figure 11.1, these give the probabilities that randomly drawn combinations (from the population) of two, three, or four alleles at a given locus are identical by descent (both IBD and ibd are used in the literature; LW Chapter 7), with extensions to the two-locus case for randomly drawn combinations of two, three, or four two-locus gametes. Of the one-locus coefficients, f is the familiar inbreeding coefficient, i.e., the probability that two alleles are identical by descent at a particular locus (Chapter 2). The probabilities that the members of random groups of three and four alleles are all identical by descent are denoted by $ \\gamma $ and $ \\delta $ (the latter is not to be confused with the dominance effects, which are subscripted in Table 11.1)."
+    },
+    {
+      "type": "discussion",
+      "content": "Note that the mean value of $ G = 2E[] + E[] = 0 $ under random mating, as $$ (2\\alpha_{1}+\\delta_{11})p^{2}+(\\alpha_{1}+\\alpha_{2}+\\delta_{12})2p(1-p)+(2\\alpha_{2}+\\delta_{22})(1-p)^{2}=0 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The mean value ( $ \\iota $) of $ G $ under complete inbreeding (which is the inbreeding depression change in the mean as $ E[G] = 0 $ under random mating), follows upon recalling that a fraction, $ p_1 $, are $ A_1A_1 $ and a fraction, $ p_2 $, are $ A_2A_2 $ and that $ p_1\\alpha_1 + p_2\\alpha_2 = 0 $, yielding $$ \\begin{aligned}\\iota&=p_{1}(2\\alpha_{1}+\\delta_{11})+p_{2}(2\\alpha_{2}+\\delta_{22})\\\\&=p_{1}\\delta_{11}+p_{2}\\delta_{22}=0.8\\cdot(-0.0536)+0.2\\cdot(-0.8576)=-0.2144\\end{aligned} $$ Because there are only two alleles, $ \\iota^* = \\sigma_D^2 $ (Cockerham and Matzinger 1985), and this is confirmed as $$ \\iota^{*}=(p_{1}\\delta_{11}+p_{2}\\delta_{22})^{2}=(-0.2144)^{2}=0.045967=\\sigma_{D}^{2} $$ As for the other two quadratic components,"
+    },
+    {
+      "type": "discussion",
+      "content": "These quadratic components for other allele frequencies are graphed below."
+    }
+  ]
+}

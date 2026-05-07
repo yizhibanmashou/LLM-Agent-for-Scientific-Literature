@@ -1,0 +1,55 @@
+{
+  "id": "chapter27_011",
+  "metadata": {
+    "chapter": "chapter27",
+    "section": "Chapter 27: Extreme-Value Theory (EVT)",
+    "subsections": [
+      "Structure of Adaptive Walks Under the SSWM Model"
+    ],
+    "source_file": "data\\paddle_output\\chapter27_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [
+      "27.1"
+    ],
+    "table_reference_keys": [
+      "chapter27:27.1"
+    ],
+    "structured_repair": {
+      "version": "source_inline_math_v1",
+      "actions": {
+        "replace_from_source": 1
+      }
+    }
+  },
+  "blocks": [
+    {
+      "type": "proposition",
+      "content": "The first and foremost weakness with respect to assumptions about selection is that the fitness distribution may not be in the Gumbel domain, a point which will be discussed further below. Second, strong selection (the SS in SSWM) assumes that no slightly deleterious mutations can be fixed, while the weak-mutation assumption (the WM in SSWM) considers only two segregating alleles (the original and the mutation) at any point in time. Under these conditions, advantageous mutations that must be accessed through the fixation of a deleterious intermediate cannot be reached. A selectively accessible sequence is one that can be reached through a series of single-step substitutions, each of which is adaptive. This is not needed because the case when sign epistasis is present (epistasis that results in a change in the sign of fitness, meaning that an allele is deleterious in one background and favored in another). Here, one can have a mutation landscape with a series of fitness peaks that are inaccessible from one another through single mutations (Weinreich et al. 2005). As examined in Chapter 7, such peaks can potentially be reached (even under strong selection) when the weak mutation assumption is violated, such as in very large populations. This can occur via stochastic tunneling, wherein the second (advantageous) mutation can arise in the small fraction of segregating, initially deleterious, mutations. Finally, the weak mutation assumption ignores the important concern of clonal interference in asexual species."
+    },
+    {
+      "type": "proposition",
+      "content": "The strong selection assumption also implies that no neutral (or even effectively neutral) alleles are fixed, but this is not a serious issue for the question being addressed by the model, namely the expected change in fitness from fixation of progressively more fit alleles (although it may be an important issue in terms of which adaptive peaks are accessible). For positively selected alleles, as selection coefficients become progressively smaller (but still positive), the drift barrier (Chapter 7) will be reached, and numerous substitutions of small (and effectively neutral) effect can occur. EVT theory ignores these as they all have essentially the same fitness (and hence are lumped into the same fitness class). small number of steps during a walk and the prediction of rapidly diminishing fitness returns from new beneficial mutations (provided the initial genotype is itself reasonably fit). Holder and Bull (2001) examined the pattern of fitness increases (measured by doubling time) during adaptive walks for growth at high temperature in the bacteriophages $ X174 $ and G4. The response seen for $ X174 $ fit the pattern expected from MLM theory: the first mutation accounted for roughly 75"
+    },
+    {
+      "type": "discussion",
+      "content": "Adaptive walks in the fungus Aspergillus nidulans were studied by Schoustra et al. (2009) and Gifford et al. (2011). The observed number of steps in the walk was short (a mean of $ \\sim $2), with diminishing fitness returns for fixed sites. By placing the original genotype in different environments with very different starting fitnesses, Gifford et al. were able to show that the length of the walk (which was still $ \\sim $2 steps) was insensitive to the starting fitness."
+    },
+    {
+      "type": "proposition",
+      "content": "Perhaps the most direct test of Orr's model was performed by Rokyta et al. (2005), who examined 20 single-step adaptations (for rapid replication under standard culture conditions) in the single-strand DNA bacteriophage ID11 (a relative of φX174). Genome sequencing showed that these 20 single-step events were comprised of nine different mutations. Based entirely on the fitness ranks of these mutations (with the wildtype having rank 10 and the most fit mutation having rank 1), Equation 27.9b gives a probability of 0.28 that the fitness-rank 1 mutation is fixed first. Hence, we expect that this will occur ~6 (20 · 0.28 = 5.6) times in 20 random trails. However, it was only fixed once. Rokyta et al. used a multinomial distribution (Equation A2.37a) to assess whether where was a significant lack-of-fit between the observed probabilities for a mutation with fitness rank k being fixed first and the expected probability of this event under Equation 27.9b. The fit was poor (p = 0.10), but not significantly different from the null (which could simply reflect low power). The authors noted that the rank-1 mutation required a transversion mutation (these occur at lower rates than transition mutations, thus violating the equal-mutation assumption of Equation 27.8a). A much better fit (p = 0.67) was seen after correcting Equation 27.8a to allow for known differences in mutation rates."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 27.4. The examination of adaptive walks in sequence space between naturally occurring alternative sequences, and the possibility of local peaks that are not accessible through a series of single-step adaptive mutations, began with Malcolm et al. (1990). Game bird species (Galliformes) display one of two protein sequences for lysozymes, either Thr at position 40, Ile at position 55, and Ser at position 91 (the ancestral TIS sequence) or Ser 40, Val 55, Thr 91 (the derived SVT sequence). Malcolm et al. generated synthetic proteins representing all possible single-replacement pathways between these two states (e.g., TIS→SIS→SIT→SVT, TIS→TVS→SVS→SVT, and so on) and examined their thermostability (as a proxy for functional fitness). In all possible single-step pathways between TIS and SVT, an intermediate showed thermostability that was significantly outside the narrow range seen in either TIS or SVT, suggesting that these intermediate steps were deleterious."
+    },
+    {
+      "type": "discussion",
+      "content": "A more direct study was performed by Weinreich et al. (2006), who examined penicillin resistance associated with the E. coli $ \\beta $-lactamase gene. Five point mutations (four nonsense and one 5' noncoding) separate the resistant allele (TM*) from its wild-type ancestor (TMw). By constructing the appropriate strains, Weinreich et al. examined the fitnesses of each intermediate sequence in all possible 5! = 120 single-step walks between TMw and TM*. They found that 102 of the possible 120 trajectories (85%) were selectively inaccessible, involving transition through an intermediate of lower fitness, via sign epistasis."
+    },
+    {
+      "type": "discussion",
+      "content": "[[TABLE:27.1]], a number of experiments with microbes have attempted to test the Gillespie-Orr prediction of an exponential distribution of fitness effects for all beneficial mutations. There are two important caveats when considering these results. First, the Gillespie-Orr prediction applies to the distribution of all newly beneficial mutations, not the distribution of those beneficial mutations that are fixed (although as mentioned above, the fixed distribution can itself be exponential in certain cases, a point that will be addressed shortly)."
+    }
+  ]
+}

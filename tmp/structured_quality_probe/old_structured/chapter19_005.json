@@ -1,0 +1,89 @@
+{
+  "id": "chapter19_005",
+  "metadata": {
+    "chapter": "chapter19",
+    "section": "Chapter 19: BASICS OF MIXED-MODEL ANALYSIS",
+    "subsections": [
+      "BASICS OF MIXED-MODEL ANALYSIS"
+    ],
+    "source_file": "data\\paddle_output\\chapter19_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "19.3b",
+      "19.3c",
+      "19.3d",
+      "19.3e",
+      "19.3f",
+      "19.3g",
+      "19.4",
+      "19.5a",
+      "19.5b",
+      "19.5c",
+      "19.5d",
+      "19.5e",
+      "19.5f"
+    ],
+    "table_references": [],
+    "structured_repair": {
+      "version": "source_inline_math_v1",
+      "actions": {
+        "replace_from_source": 1,
+        "normalize_inline_math_artifact": 1
+      }
+    }
+  },
+  "blocks": [
+    {
+      "type": "derivation",
+      "content": "If we again assume that V is exactly known, the best linear unbiased predictor (BLUP) of the vector of random effects is given by [[SEE_FORMULA:19.3b]]"
+    },
+    {
+      "type": "discussion",
+      "content": "The BLUPs for breeding values are often called PBVs or EBVs, for predicted or estimated breeding values. Equation 19.3b is the regression of a on $ (y - \\mathbf{X}\\beta) $, the vector of observations, y, adjusted for their expected mean values, $ \\mathbf{X}\\beta $. Recall that for the univariate regression predicting a from y, the scaling of $ (y - \\hat{y}) $ is given by the regression slope, $ \\sigma(a, y)/\\sigma^2(y) $. In Equation 19.3b, this scaling is of the form of the covariance matrix, $ \\sigma(\\mathbf{a}, \\mathbf{y}) = \\sigma(\\mathbf{a}, \\mathbf{Z}\\mathbf{a}) $."
+    },
+    {
+      "type": "derivation",
+      "content": "$ \\sigma_A^2 \\mathbf{A} \\mathbf{Z}^T $ times the inverse of $ \\mathbf{V} = \\sigma(\\mathbf{y}, \\mathbf{y}) $. Even if the number of random effects exceeds the number of actual observations (i.e., $ p > n $), Equation 19.3b still provides unique estimates of each (provided $ \\mathbf{V}^{-1} $ exists). This occurs because the $ p \\times p $ covariance structure (A) of the vector, $ \\mathbf{a} $, is incorporated in the model. As with the BLUEs, BLUPs are simply functions of $ h^2 $ as $ \\sigma_A^2 = h^2 \\sigma_z^2 $, while $ \\mathbf{V}^{-1} $ scales as $ 1/\\sigma_z^2 $. An alternative expression, due to Kennedy and Trus (1993), is [[SEE_FORMULA:19.3c]] where $ \\lambda = \\sigma_{e}^{2} / \\sigma_{A}^{2} = (1 - h^{2}) / h^{2} $, and [[SEE_FORMULA:19.3d]] is the absorption matrix for the fixed effects, and the design matrix, X, assigns the fixed effects associated with any particular observation (Equation 19.1). As an aside [[SEE_FORMULA:19.3e]] is referred to as the hat matrix (Hoaglin and Welsch 1978), because for an OLS estimate [[SEE_FORMULA:19.3f]] and H maps the observed y values onto those predicted, $ \\hat{y} $, by the fixed effects. Hence [[SEE_FORMULA:19.3g]]"
+    },
+    {
+      "type": "derivation",
+      "content": "In practice, Equations 19.3a–19.3c are often not used, as they require the inversion of the potentially very large $ (n \\times n) $ matrix, V. As an alternative, $ \\widehat{\\beta} $ and $ \\widehat{a} $ can be obtained without computing an inverse by numerically solving (e.g., by applying Gaussian elimination to) Henderson's mixed-model equations, (derived in Example A6.5) [[SEE_FORMULA:19.4]]"
+    },
+    {
+      "type": "discussion",
+      "content": "The careful reader might wonder why we worried so much about avoiding computing the inverse of V, given that the mixed-model equations contain A, which at first blush looks just as complicated to invert as V. In fact, however, A turns out to be very easy to invert, as a slight modification of the recursive approach used to compute A from a pedigree can be used to directly compute $ A^{-1} $ (Henderson 1976; Quaas 1976)."
+    },
+    {
+      "type": "derivation",
+      "content": "The sampling variance-covariance matrices for $ \\hat{a} $ and $ \\beta $ also follow from the mixed-model equations. First we partition the inverse of the $ (p+q) \\times (p+q) $ matrix in Equation 19.4 as [[SEE_FORMULA:19.5a]] where $C_{11}$, $C_{12}$, and $C_{22}$ are, respectively, $q \\times q$, $q \\times p$, and $p \\times p$ submatrices. Henderson (1975) showed that the $q \\times q$ covariance matrix for the BLUE vector of fixed effects, $\\beta$, is given by [[SEE_FORMULA:19.5b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "The variance of the predicted breeding values, $ \\hat{a} $, is a bit more subtle, as our real interest is not $ \\text{Var}(\\hat{a}) $, but rather the prediction error variances (PEVs), $ \\text{Var}(\\hat{a} - \\mathbf{a}) $. These are the variances and covariances among the vector of prediction errors ( $ \\hat{a} - \\mathbf{a} $), and they are given by the $ p \\times p $ matrix [[SEE_FORMULA:19.5c]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Note that [[SEE_FORMULA:19.5d]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Following Equation 19.3c, Kennedy and Trus (1993) showed that we can also express Equation 19.5c as [[SEE_FORMULA:19.5e]]"
+    },
+    {
+      "type": "discussion",
+      "content": "The prediction error variances for individual EBVs are not of serious interest in this chapter, as we measure selection response by taking the average of the EBVs over all individuals within each generation. However, individual EBVs can be important when we try to disentangle selection in natural populations, and we will revisit PEVs in Chapter 20."
+    },
+    {
+      "type": "derivation",
+      "content": "Finally, the covariances between estimated fixed effects and prediction errors are [[SEE_FORMULA:19.5f]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Equations 19.5b–19.5f assume that both $ \\sigma_e^2 $ and $ \\lambda = \\sigma_e^2 / \\sigma_A^2 $ are known without error. When BLUP estimates are obtained using estimated values (e.g., $ \\hat{\\sigma}_e^2 $), this additional source of error further inflates the sampling variances. Bayesian methods (discussed below) accommodate this additional uncertainty."
+    },
+    {
+      "type": "discussion",
+      "content": "One concern is that the BLUPs and BLUEs obtained using these procedures may be biased by selection. However, Henderson (1975) showed that, provided variances are known, the estimates will be unbiased by selection when two conditions hold. First, selection decisions must be based on linear combinations of data (such as truncation selection based on individual phenotypes or a linear index based on the phenotypes of an individual and its relatives). Second, that the model must use estimates of fixed effects that are unbiased when selection is absent. These conditions hold under many reasonable forms of artificial selection."
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "id": "chapter24_016",
+  "metadata": {
+    "chapter": "chapter24",
+    "section": "Chapter 24: Infinite-alleles and Continuum-of-alleles Models",
+    "subsections": [
+      "How Robust Is the Gaussian Continuum-of-alleles Model?"
+    ],
+    "source_file": "data\\paddle_output\\chapter24_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "24.6"
+    ],
+    "table_references": [
+      "28.2"
+    ],
+    "structured_repair": {
+      "version": "source_inline_math_v1",
+      "actions": {
+        "replace_from_source": 2,
+        "sync_reference_metadata": 1
+      }
+    }
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "As will be fully discussed in Chapter 28, a key determinant of which continuum-of-alleles model is appropriate is the relative strength of selection and mutation at a locus ([[SEE_TABLE:28.2]]). The Gaussian model is appropriate when the per-locus mutation rate is far greater than the average strength of selection on a locus (in a large population). In such settings, a given locus is likely to be segregating a large number of alleles, and any new allele adds little to the standing variation. Conversely, other approximations (such as the rare-allele or the house-of-cards models) are more appropriate when selection is much stronger than mutation (i.e., $ s $), in which case any given locus will have one dominant allele and a few very rare alleles. Our discussion here assumes that mutation is much stronger than selection."
+    },
+    {
+      "type": "proposition",
+      "content": "Under this assumption, if the trait is determined by a modest to large number of loci, all of roughly equal effect and with alleles at intermediate frequencies, then Gaussian COA models can perform reasonably well, at least over intermediate time scales (Chevalet 1988, 1994). They generally tend to overestimate the cumulative response as generations increase, so that while the decrease in $ \\sigma_{a}^{2} $ from selection is partially captured (an improvement over the infinitesimal model), after sufficient time, the COA approximation breaks down."
+    },
+    {
+      "type": "proposition",
+      "content": "What are the possible causes for the breakdown of the approximation? A subtle feature of the Gaussian assumption for each locus is the key. The COA approximation generally works well at the start of selection, provided the distributions of genotypic values at each locus are initially close to normal. However, as allele-frequency changes drive the individual locus distributions further from normality, the COA approximation breaks down, as loci with alleles at extreme frequencies (near zero or one) can show large departures from normality. A recurrent theme of this chapter is a focus on the skewness and kurtosis of distributions, as these provide very convenient measures of the departure from a normal. Skewness measures departures from symmetry, while kurtosis measures whether the tails of the distribution decline more or less rapidly than under a normal. Both of these statistics (with kurtosis appropriately defined) are zero under a normal, and hence they provide a simple quantification of the departure of a distribution from normality (LW Chapter 2)."
+    },
+    {
+      "type": "derivation",
+      "content": "What can we say about the skewness and kurtosis for an n-locus biallelic model? Assume n exchangeable loci, each with frequency p of the favorable allele. Zeng (1987) showed that the scaled (to unit variance) coefficients of skewness, $ k_{3} $, and kurtosis, $ k_{4} $, for the resulting distribution of genotypic values are [[SEE_FORMULA:24.6]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Note that skewness is zero and kurtosis is minimized at intermediate allele frequencies $ (p = 1/2) $. As allele frequencies become more extreme, so do the skew and kurtosis."
+    },
+    {
+      "type": "discussion",
+      "content": "Rare alleles of large effect are especially problematic. Not only do these generate skewness and kurtosis, but as their frequencies increase, so does the genic variance (Figure 24.3). Lande (1983) and Zhang and Hill (2005a) both noted that natural selection tends to generate a correlation between allelic effect size and frequency, so that alleles of large effect may tend to be rare in natural populations due to pleiotropic deleterious fitness effects. If these rare alleles are captured when a population is sampled to form a laboratory stock for artificial selection, an increase in additive variance is expected during selection. However, if the founding population is under strong drift for a few generations (as with a founding bottleneck), rare alleles can be lost and the COA approximation may be a good predictor of short-term response. This theme of initially rare favorable alleles, and hence an early accelerated response to selection, will be revisited in Chapter 28, as it is central to certain predictions about response in a population under mutation-selection balance."
+    }
+  ]
+}

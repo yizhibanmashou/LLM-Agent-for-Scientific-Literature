@@ -1,0 +1,63 @@
+{
+  "id": "chapter27_003",
+  "metadata": {
+    "chapter": "chapter27",
+    "section": "Chapter 27: Fisher-Kimura-Orr Adaptive Walks",
+    "subsections": [
+      "Fisher-Kimura-Orr Adaptive Walks"
+    ],
+    "source_file": "data\\paddle_output\\chapter27_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "27.2a",
+      "27.2b",
+      "27.2c"
+    ],
+    "table_references": [],
+    "structured_repair": {
+      "version": "source_inline_math_v1",
+      "actions": {
+        "replace_from_source": 3,
+        "remove_placeholder_block": 1
+      }
+    }
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "A subtle feature, first noted by Kimura (1983), makes Fisher's smaller-is-better result misleading. An examination of Equation 27.1b and Figure 27.1B suggests that the majority of beneficial mutations are those with very small effects—those mutations whose length, $r$, satisfies $x 1$, namely, $r 2d/ $. While this is indeed correct (under Fisher's model), Kimura noted that such small-effect mutations also have very small selective advantages, and therefore (while beneficial) are unlikely to be fixed by natural selection. Recall from Chapter 7 that the fixation probability of a favorable allele is $ 2s$, so that the magnitude of $s$, not only its sign, is important in determining which factors become fixed."
+    },
+    {
+      "type": "discussion",
+      "content": "Under Fisher’s model, and conditioning on a mutation being beneficial, the expected value of $s$ is linearly proportional to $x$, as the distance from $\\theta$ is an indicator of fitness (Kimura 1983; Orr 1998b). This can be more compactly written as $E[s] \\propto x$. Thus, the probability that a mutation will be fixed is a function of both its selective advantage and its chance of being beneficial, $(2s) \\cdot p_b \\propto (2x) \\cdot [1 - \\Phi(x)]$. We call this the probability of adaptation. As shown in Figure 27.2, the outcome is a dramatic shift in our interpretation of Fisher’s result: adaptation favors mutations of intermediate effect. A comparison of the difference between Figures 27.1B and 27.2 highlights a critical distinction important throughout this chapter, namely, the difference between the distribution of effects (be they trait values or fitness) over all new beneficial mutations versus the distribution of effects restricted to fixed beneficial mutations."
+    },
+    {
+      "type": "discussion",
+      "content": "There is an irony here in that although Fisher was a pan-selectionist, his initial analysis suggested that alleles of very small effect (i.e., nearly neutral) were more important for adaptation (i.e., comprise the majority of beneficial mutations). Conversely, Kimura, the founder of the neutral theory, showed that Fisher's model (when more carefully considered) argues for a role of stronger selection than envisioned by Fisher (i.e., fixing alleles of intermediate, rather than small, effect)."
+    },
+    {
+      "type": "discussion",
+      "content": "It is important to note that Figure 27.2 does not reflect the distribution of the x values for fixed mutations (i.e., the scaled lengths of fixed mutations). Rather, it describes the filter of natural selection, giving the chance that a mutation with effect x is fixed. The distribution of the x-scaled r values for fixed mutations depends on the product of the distribution of new mutational input (the distribution of r values among new alleles) and the chance that each is fixed (Figure 27.2)."
+    },
+    {
+      "type": "discussion",
+      "content": "To decouple the separate issues of the impact of selection (given a specific effect size) and the distribution of mutational effect sizes, both Kimura and Orr initially assumed a uniform distribution of effect sizes. This focuses on the role of the filter of selection. The key finding, of a roughly exponential distribution of fixed trait effects, holds under rather general distributions of the effects of new mutations. For example, an exponential distribution of r, when compounded with an exponential distribution of fixed effects for a given value of r, returns an exponential. Orr's (1998b) simulations showed that the result of a roughly exponential distribution of the effect sizes of successful (i.e., fixed) mutations was remarkably robust to the assumed distribution of mutational effect sizes."
+    },
+    {
+      "type": "derivation",
+      "content": "To examine the impact of selection on the pattern of successive fixations, we first consider the scaled length $ (x_1) $ of the initial successful (fixed) mutation at the start of a walk. The scaling from $ r $ into $ x $ accounts for both the initial distance from the optimum $ (d_0 = || - ||) $ and dimensionality $ (n) $ of the process (Equation 27.1a). Assuming a uniform distribution for the $ r $ values of new mutations, Kimura found that the expected value for $ x_1 = r_1 /[2d_0] $ of this first successful mutation is $ E[x_1] 1.06 $. Hence, [[SEE_FORMULA:27.2a]] where $ E[r_1] $ is the expected value of $ r $ for the first-fixed mutation. For example, for $ n = 10 $, $ E[r_1] = 0.67d_0 $, while $ E[r_1] = 0.3d_0 $ for $ n = 50 $. Orr (1998b, 1999, 2000) noted that Kimura's result is simply the first step of the adaptive walk starting at distance $ d_0 $ from the optimum. Following this first fixation, the walk starts anew from distance $ d_1 < d_0 $ (Figure 27.3)."
+    },
+    {
+      "type": "discussion",
+      "content": "It is important to note that $ E[r_1] $ is the expected total length of the vector of mutational increments (the distance between $ z $ and its value, $ z' = z + m $, after the mutation, with $ r = ||m|| $). Our real interest is not this length, but rather in how much of this displacement is toward $ \\theta $, meaning that the new phenotype is actually closer (and more adaptive) than $ z $, i.e., $ ||z' - \\theta|| < ||z - \\theta|| $. A large value of $ r_1 $, by itself, does not imply a large jump closer to $ \\theta $. Hence, to continue our analysis of the walk, we first need to compute the expected distance moved toward the optimum (i.e., the new distance, $ d_1 = ||z' - \\theta|| $, from $ \\theta $; Figure 27.3) after this first step of the walk (the first fixation event)."
+    },
+    {
+      "type": "derivation",
+      "content": "How much closer does fixing a mutation move us toward the optimum? The first fixed mutation almost never points exactly in the direction of the optimum, so that the actual amount of adaptation (distance moved toward $ \\theta $) is less, and likely much less, than the length of the jump (Figure 27.3). Thus, instead of $ E[x_1] $, we need to consider the length, $ E[x_p,1] $, of the expected projection (Appendix 5) in the direction of the optimum. For large n, Orr (1998b) found that this projection is approximately [[SEE_FORMULA:27.2b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Scaling the phenotypes such that the initial distance from the optimum is one ($ || - || = d_0 = 1 $), from Equation 27.1a the starting distance on the $ x $ scale is $ /2 $. Hence, following the first jump (the first fixation of a beneficial mutation), the population (on average) moves to a distance (in the $ x $ value scale) of $$ \\begin{align*}\\sqrt{n}/2-E[x_{p,1}]=\\sqrt{n}/2-E[x_1]/\\sqrt{n}\\end{align*} $$ which implies that the new distance to the optimum (on the x scale) following the first jump is a fraction, [[SEE_FORMULA:27.2c]] of the initial starting distance."
+    }
+  ]
+}

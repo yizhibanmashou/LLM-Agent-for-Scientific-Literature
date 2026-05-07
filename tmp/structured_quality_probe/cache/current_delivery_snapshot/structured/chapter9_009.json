@@ -1,0 +1,86 @@
+{
+  "id": "chapter9_009",
+  "metadata": {
+    "chapter": "chapter9",
+    "section": "Chapter 9: ALLELE-FREQUENCY CHANGE IN A SINGLE POPULATION",
+    "subsections": [
+      "Allele-frequency Change Over Two Sample Points: The Waples Adjusted Test"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter9_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "9.1a",
+      "9.1b",
+      "9.2a",
+      "9.2b",
+      "9.2c",
+      "9.2d",
+      "9.3",
+      "9.4"
+    ],
+    "table_references": [
+      "inline_1"
+    ],
+    "table_reference_keys": [
+      "chapter9:inline_1"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Chapter 4 considered the estimation of $ N_{e} $ from allele-frequency change, a setting where one typically averages over a number of loci to reduce the evolutionary sampling variance. Here our task is the complementary problem. Given some estimate of $ N_{e} $, is the observed change in allele frequency at a candidate locus excessive? If so, this presumably reflects directional selection acting at, or close to, this region. In theory, one could also test for too little divergence (reflecting balancing selection), although this is rarely done, given the high sampling variance (and hence low power), unless sample sizes are extremely large."
+    },
+    {
+      "type": "derivation",
+      "content": "In the early literature, a number of workers tested for excessive divergence by simply querying whether allele frequencies in two samples were significantly different. As noted by Gibson et al. (1979) and Waples (1989b), this is inappropriate, as it does not account for the evolutionary drift variance in allele frequencies $$ \\sigma^{2}(p_{t})=p_{0}(1-p_{0})\\left[1-\\left(1-\\frac{1}{2N_{e}}\\right)^{t}\\right]\\simeq p_{0}(1-p_{0})\\frac{t}{2N_{e}}\\quad\\mathrm{f o r}t\\ll N_{e} $$ where $ p_{0} $ is the initial allele frequency (Equation 2.14a). Consider a population sampled at two time points (0 and t), with sample sizes of $ n_{0} $ and $ n_{t} $, respectively. The estimated divergence is [[SEE_FORMULA:9.1a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "This divergence has an expected value of zero (as $ E[\\widehat{p}_{t}] = p_{0} $), with a variance of [[SEE_FORMULA:9.1b]] where $ \\widehat{p}_{i}=p_{i}+e_{i} $, the true value plus an error due to finite sampling. Because these are draws from a binomial distribution, the sampling variance of the initial frequency is [[SEE_FORMULA:9.2a]] while the final allele frequency is influenced by both the drift and sampling variances (Waples 1989a, 1989b) [[SEE_FORMULA:9.2b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "If sampling is done (without replacement) before reproduction, then $ \\sigma(\\widehat{p}_{t},\\widehat{p}_{0})=0 $, and substitution of Equations 9.2a and 9.2b into Equation 9.1b yields [[SEE_FORMULA:9.2c]]"
+    },
+    {
+      "type": "derivation",
+      "content": "If sampling is done either after reproduction or with replacement, this generates a covariance between the sample estimators $ \\widehat{p}_t $ and $ \\widehat{p}_0 $; see Nei and Tajima (1981b) and especially Waples (1989a, 1989b) for details. Assuming this is not the case, so that $ \\sigma(\\widehat{p}_0, \\widehat{p}_t) = 0 $, Equation 9.2c yields the correct variance for the null hypothesis of random genetic drift, giving the test statistic as [[SEE_FORMULA:9.2d]] which is approximately $ \\chi_{1}^{2} $-distributed. This is the Waples adjusted test (Waples 1989b)."
+    },
+    {
+      "type": "derivation",
+      "content": "The application of this test requires an accurate estimate of $ p_0 $ to compute the sample variance (Equation 9.2c). While the sample estimate, $ \\widehat{p}_0 $, can be used, this can be improved upon by noting that the expected allele frequency change is zero, meaning that $ \\widehat{p}_t $ also contributes information about $ p_0 $. A simple average of the two frequencies is not appropriate, as $ \\widehat{p}_0 $ has a smaller drift variance and the two estimates may differ in informational value due to differences in sample size, $ n_i $. Given these concerns, Schaffer et al. (1977) and Waples (1989b) proposed a generalized (i.e., weighted) least-squares (GLS) estimator (LW Chapter 8) for $ p_0 $. Let $ \\mathbf{p} = (\\widehat{p}_0, \\widehat{p}_t)^T $ denote the two sample estimates and denote its sampling variance-covariance matrix by [[SEE_FORMULA:9.3]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Finally, let $ \\mathbf{1} = (1, 1)^T $ be a vector of ones. The underlying statistical model is $ p_i = p_0 + e_i $, which can be written in general linear model form as $ \\mathbf{p} = p_0 \\mathbf{X} + \\mathbf{e} $, where $ \\mathbf{V} $ is the covariance matrix for the vector, $ \\mathbf{e} $, of residuals and $ \\mathbf{X} = 1 $. Recalling LW Equation 8.34 for GLS regression, the resulting estimate of $ p_0 $ is given by $ \\left(\\mathbf{X}^T \\mathbf{V}^{-1} \\mathbf{X} \\right)^{-1} \\mathbf{X}^T \\mathbf{V}^{-1} \\mathbf{p} $, which reduces to [[SEE_FORMULA:9.4]] because both quadratic products are scalars."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 9.1. One of the classic papers in evolutionary biology is Fisher and Ford's (1947) study of the medionigra gene in the scarlet tiger moth Panaxia dominula, a colorful day-flying species with one generation per year. A single diallelic locus has a major effect on the forewing pattern. Individuals that are homozygous for the dominula allele have multiple forewing spots, while individuals that are homozygous for the medionigra allele have a darkly suffused forewing with, typically, two small spots (the bimacula phenotype). Heterozygotes show an intermediate pattern, which is called the medionigra phenotype. In 1938, Ford began studying a small colony of this species in Cothill Fen, just southwest of Oxford, England. Starting in 1941, capture-recapture data were used to estimate the census population size, with the smallest estimated size between 1941 and 1947 being 1000. In 1939 (t = 0) the frequency of the medionigra allele was estimated (from a sample size of $ n_0 = 223 $ as $ \\widehat{p}_0 = 0.092 $, while by 1947 (t = 8), its sample frequency had decreased to $ \\widehat{p}_8 = 0.037 $ ($ n_8 = 1341 $). Taking $ N_e = 1000 $ (this being the smallest estimated census value over any of the generations, and hence most favorable to supporting drift), do these data show evidence of a departure from drift? For simplicity, assume sampling without replacement, so that $ \\sigma\\left(\\widehat{p}_{0},\\widehat{p}_{t}\\right)=0 $, with the variances are given by Equations 9.2a and 9.2b. The resulting covariance matrix, V, becomes $$ \\frac{\\mathbf{V}}{p_{0}(1-p_{0})}=\\begin{pmatrix}{{{\\frac{1}{2\\cdot223}}}}&{{{0}}} \\\\{{{0}}}&{{{\\frac{1}{2\\cdot1341}+\\frac{8}{2000}\\left[1-\\frac{1}{2\\cdot1341}\\right]}}}\\end{pmatrix}=\\begin{pmatrix}{{{0.0022}}}&{{{0}}} \\\\{{{0}}}&{{{0.0044}}}\\end{pmatrix} $$ Because $ V^{-1} $ appears in both the numerator and the denominator of Equation 9.4, the unknown constant, $ p_{0}(1 - p_{0}) $, cancels out, allowing us to simply use the above right-hand matrix for $ V $, yielding $$ GLS\\left(p_{0}\\right)=\\frac{\\mathbf{1}^{T}\\mathbf{V}^{-1}\\mathbf{p}}{\\mathbf{1}^{T}\\mathbf{V}^{-1}\\mathbf{1}}=\\frac{49.496}{674.762}=0.0734 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Equation 9.2c yields the sampling variance for the difference in allele frequencies as $$ \\begin{aligned}\\sigma^{2}\\left(\\widehat{\\delta}_{t}\\right)&\\simeq p_{0}(1-p_{0})\\left[\\frac{1}{2n_{0}}+\\frac{1}{2n_{t}}+\\frac{t}{2N_{e}}\\left(1-\\frac{1}{2n_{t}}\\right)\\right]\\\\ &=0.0734\\cdot0.9266\\left[\\frac{1}{446}+\\frac{1}{2682}+\\frac{8}{2000}\\left(1-\\frac{1}{2682}\\right)\\right]=0.0004495\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The resulting Waples test statistic for fit to pure drift becomes $$ \\frac{(0.037-0.092)^{2}}{0.0004495}=6.729 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The probability that a $\\chi_{1}^{2}$ random variable is this big or larger is 0.0095, implying strong rejection of neutrality. By using different values of $N_{e}$ in the above calculation, we can find the largest effective population size that would still allow drift to account for these data. For $N_{e}=500$, the test statistic becomes 4.19 (a $p$ value of 0.040), while for $N_{e}=250$, the statistic is 2.39 (a $p$ value of 0.12). Hence, any effective population size slightly smaller than 500 would be compatible with a hypothesis of the observed allele-frequency change being driven by drift."
+    },
+    {
+      "type": "discussion",
+      "content": "Except for a gap between 1979 and 1987, the Cothill Fen population has been surveyed yearly since 1939; see Jones (1989) and Cook and Jones (1996) for reviews (Jones provides a handy table of all data through 1988). O'Hara (2005) used a hierarchical Bayesian analysis to examine a 60-year time series of these data. He assigned genotypes fitness drawn from a lognormal prior, allowing them to vary yearly. While selection was found to significantly contribute to the change in allele frequency, most of the variance was attributable to drift. Cook and Jones (1996) and Mathieson and McVean (2013) estimated a selection coefficient against the medionigra allele of around 10% (assuming additivity in fitness), while Mathieson and McVean noted that a recessive model of selection provided a better fit, but required much stronger selection (essentially a lethal). A more recent analysis by Foll et al. (2015) found that both the weakly selected codominant and strongly selective recessive models are supported when $ N_{e} $ is fixed at 500. However, when $ N_{e} $ is jointly estimated from the data, there is stronger support for the lethal recessive model. While this is one of the best temporal data sets available, and selection appears to be strongly acting on a single gene, all of this uncertainty highlights the difficulty of dealing with natural populations."
+    },
+    {
+      "type": "discussion",
+      "content": "While one might think that tests based solely on allele-frequency change are among the most convincing, this is not the case. As Example 9.1 shows, rejection of the neutral model can easily result from an overestimation of the true effective population size. Fisher and Ford took their results as evidence against Sewall Wright's notion of the importance of genetic drift. In his reply, Wright (1948a) noted that values of $ N_e $ simply based on census numbers can easily be contested by the widespread observation that the effective population size is generally (and often dramatically) lower than the observed number of individuals in the population (Chapter 3). In addition, tests of allele-frequency change suffer from low power. If selection is modest relative to $ 1/N_e $ or 1/n (with n being the sample size), the sample variance can obscure any selection signal. Waples (1989b) examined some of these design issues."
+    },
+    {
+      "type": "discussion",
+      "content": "Although we have presented this test for a single locus with just two alleles, its extension to multiple alleles is straightforward (e.g., Waples 1989b; Goldringer and Bataillon 2004). A more subtle issue is the fit of a $ \\chi^{2} $ distribution to the test statistic given by Equation 9.2d, which can be poor when alleles are rare, the number of alleles is large, or the number of generations is large (Goldringer and Bataillon 2004). While more sophisticated modifications (e.g., Sandoval-Castellanos 2010) can avoid some of these issues, the use of simulations that incorporate as much of the specific biology of the species as is known (e.g., Mueller et al. 1985) to model the change in the neutral alleles under drift is strongly preferred over parametric tests."
+    }
+  ]
+}

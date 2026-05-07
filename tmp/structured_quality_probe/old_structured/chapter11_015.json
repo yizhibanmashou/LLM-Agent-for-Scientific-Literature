@@ -1,0 +1,42 @@
+{
+  "id": "chapter11_015",
+  "metadata": {
+    "chapter": "chapter11",
+    "section": "Chapter 11: REML Estimates",
+    "subsections": [
+      "REML Estimates"
+    ],
+    "source_file": "data\\paddle_output\\chapter11_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "11.19a",
+      "11.19b"
+    ],
+    "table_references": [
+      "11.7"
+    ],
+    "table_reference_keys": [
+      "chapter11:11.7"
+    ],
+    "structured_repair": {
+      "version": "source_inline_math_v1",
+      "actions": {
+        "replace_from_source": 3
+      }
+    }
+  },
+  "blocks": [
+    {
+      "type": "derivation",
+      "content": "[[TABLE:11.7]]. As with all approaches to variance-component estimation, comparisons among appropriate sets of relatives (to provide the correct independent contrasts) can be used to estimate $ \\sigma_{ADI} $, $ \\sigma_{DI}^{2} $, and $ \\iota^{*} $. One can use specific crossing designs to ensure that modest to large numbers of the correct types of relatives are included. More generally, one can potentially use pedigree data, provided there is sufficient inbreeding. Both of these settings can be handled under the very flexible mixed-model framework offered by REML variance estimation (Chapters 19, 20, and 22; LW Chapter 27). The basic idea is that the covariance matrix, V, for the vector, y, of observations (sets of relatives, where $ V_{ij} = \\sigma[y_i, y_j] $) can be decomposed into the sum of the products of appropriate relationship matrices times their associated quadratic components. From Equation 11.13, and ignoring epistasis, [[SEE_FORMULA:11.19a]] where $ \\mathbf{A}_{ij} = 2\\Theta_{ij} $ is the (additive) relationship matrix (Chapters 19, 20, and 22; LW Chapters 26 and 27), $ \\mathbf{D}_{ij} = \\Delta_{7ij} $ is the dominance relationship matrix, $ \\mathbf{V}_e $ is the residual covariance structure (often assumed to be $ \\mathbf{V}_e = \\mathbf{I} $, implying independent and homoscedastic residuals), and the elements of the other three relationship matrices are given by [[SEE_FORMULA:11.19b]] as obtained by Smith and Mäiki-Tanila (1990), de Boer and Hoeschele (1993), Shaw and Woolliams (1999), and Abney et al. (2000). This approach is computationally demanding, |c|c| Cell 1 & Cell 2 \\\\ Cell 3 & Cell 4 \\\\ as the standard iterative approach used to obtain the REML estimates must invert the V matrix following each update of its component variances (LW Chapter 27)."
+    },
+    {
+      "type": "discussion",
+      "content": "Two historical approaches have been used to obtain the simplest relationship matrix, A, given a pedigree. Wright (1921a) used path analysis (counting all paths connecting two individuals within a pedigree), while Emik and Terrill (1949) and Crudent (1949) introduced the tabular method, a quicker approach that starts with the founding relatives and tabulates the relationships forward in each generation. Extensions of both approaches have been proposed to calculate the more general relationships, $ \\Delta_{i} $, needed for the matrices in Equation 11.19: path analysis approaches were proposed by Jacquard (1966) and Nadot and Vaysseix (1973), and tabular methods by Smith and Mäiki-Tanila (1990). Issues with pedigree-free (i.e., marker based) estimates of the $ \\Delta_{i} $ are examined by García-Cortés et al. (2014) and Ackerman et al. (2017)."
+    },
+    {
+      "type": "discussion",
+      "content": "[[TABLE:11.7]]. The central issue of whether a pedigree/designed cross is able to uniquely estimate each quadratic component is the concept of identifiability (Rothenberg 1971; Jiang 1996), discussed in Chapter 22. This is the random-effects counterpart of the concept of estimability for fixed effects (LW Chapter 26). Basically, variance components can be uniquely estimated, provided the relationship matrices are sufficiently independent of each other. For example, from Equation 11.16, the among-(selfed)-line variation for t > 5 is essentially $ 2\\sigma_{A}^{2} + 2\\sigma_{ADI} + \\sigma_{DI}^{2} $, so that these three components are fully confounded and not separable if the data consist of only the between-line variance for a series of lines with (say) 5, 10, and 15 generations of selfing. Power is another issue. If a relationship matrix is sparse (contains mostly zeros), then even a large dataset may not have much power, as the numbers in the required identity classes may be quite small (Table 11.7)."
+    }
+  ]
+}

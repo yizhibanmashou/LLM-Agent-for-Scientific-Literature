@@ -1,0 +1,57 @@
+{
+  "id": "appendix4_015",
+  "metadata": {
+    "chapter": "appendix4",
+    "section": "FDR: THE FALSE-DISCOVERY RATE",
+    "subsections": [
+      "FDR: THE FALSE-DISCOVERY RATE"
+    ],
+    "source_file": "data\\paddle_output\\appendix4_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [
+      "inline_2",
+      "inline_4"
+    ],
+    "table_reference_keys": [
+      "appendix4:inline_2",
+      "appendix4:inline_4"
+    ],
+    "structured_repair": {
+      "version": "source_inline_math_v1",
+      "actions": {
+        "replace_from_source": 4
+      }
+    }
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "As mentioned, Bonferroni corrections (and their extensions) are appropriate when we expect that only a very few of the many null hypotheses are false. An alternate setting is that in which some substantial fraction of the null hypotheses is expected to be false. In such cases, even sequential Bonferroni corrections are likely to be too stringent, resulting in too many false negatives (Type-II errors; i.e., a failure to reject a false hypothesis). A different approach is required in these settings, most notably the false-discovery rate (FDR), introduced by Benjamini and Hochberg (1995)."
+    },
+    {
+      "type": "discussion",
+      "content": "The FDR is the fraction of false positives among all the tests that are declared to be significant. The motivation for using the FDR is that we may be conducting a very large number of tests, with those that are declared to be significant being subjected to further study. An example would be a search for differential expression over a huge set of genes. The goal of the initial analysis is to distill a large number of candidates down to a reduced set (for further analysis) that is highly enriched for true positives."
+    },
+    {
+      "type": "discussion",
+      "content": "In such cases, we are more concerned with making sure all possible true alternatives are included in this reduced set, and we are willing to accept some false positives to ac- complish this goal. However, we also don't want to be completely swamped with false positives. The goal is a statistical procedure that results in a significant enrichment of true positives (differentially expressed genes in our example), while controlling the fraction of false positives within this enriched set by specifying a value, $ \\delta $, for the FDR. Choosing an FDR of 5"
+    },
+    {
+      "type": "discussion",
+      "content": "To formally motivate the concept of the FDR, suppose a total of $n$ hypotheses are tested, $S$ of which are judged significant (i.e., the $p$ value for the test is $\\leq$ some threshold value, $\\tau$). If we had complete knowledge, we would know that $n_{0}$ of the hypotheses have the null true and $n_{1}=n-n_{0}$ have the alternative true, and we might find that $F$ of the true nulls were called significant, while $T$ of the alternative true were called significant, yielding the following table"
+    },
+    {
+      "type": "discussion",
+      "content": "|c|c| Cell 1 & Cell 2 \\\\ Cell 3 & Cell 4 \\\\"
+    },
+    {
+      "type": "discussion",
+      "content": "For this experiment, the false-discovery rate is the fraction of tests called significant that are actually true nulls, $ FDR = F/S $. (The term $ \\text{discovery} $ follows in that a significant result can be considered as a discovery for future work.) As a point of contrast, the normal Type-I error (which we can also call the $ \\text{false-positive rate [FPR]} $), which is the fraction of true nulls that are called significant, is $ F/n_0 $. Note the critical distinction between these two error rates. While the numerator of each is $ F $, the denominators are considerably different—the total number, $ S $, of tests called significant (for FDR), versus the number, $ n_0 $, of hypotheses that are truly null (FPR). As the threshold value ( $ \\tau $) for significance is changed, so too is the fraction $ F/S $. To obtain a FDR of $ \\delta $ over our experiment, $ \\tau $ is adjusted to find its largest value such that some expectation of $ F/S $ is bounded above by $ \\delta $. Finally, Gadbury et al. (2004) defined the expected discovery rate (EDR) as $ T/n_1 $ (the fraction of all true discoveries declared to be significant), which is the analog of statistical power in this setting."
+    },
+    {
+      "type": "discussion",
+      "content": "Another way to see the distinction between the false-positive rate and the false-discovery rate is to consider them as probability statements for a single test involving hypothesis i. For the FDR, we condition on the test as being significant, $$ \\mathrm{FDR}=\\mathrm{Pr}(i is truly null\\mid i is deemed significant)=\\delta $$ whereas for the false-positive rate, we condition on the hypothesis being null $$ \\mathrm{FPR}=\\mathrm{Pr}(i is deemed significant\\mid i is truly null)=\\alpha $$"
+    }
+  ]
+}

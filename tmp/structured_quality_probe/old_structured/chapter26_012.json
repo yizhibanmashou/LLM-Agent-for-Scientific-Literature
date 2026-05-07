@@ -1,0 +1,69 @@
+{
+  "id": "chapter26_012",
+  "metadata": {
+    "chapter": "chapter26",
+    "section": "Chapter 26: THE EFFECTS OF LINKAGE ON THE SELECTION LIMIT",
+    "subsections": [
+      "THE EFFECTS OF LINKAGE ON THE SELECTION LIMIT"
+    ],
+    "source_file": "data\\paddle_output\\chapter26_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "26.18",
+      "26.19",
+      "26.20a",
+      "26.20b",
+      "26.20c",
+      "26.20d"
+    ],
+    "table_references": [],
+    "structured_repair": {
+      "version": "source_inline_math_v1",
+      "actions": {
+        "replace_from_source": 7
+      }
+    }
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "When QTLs are linked, we expect some reduction in the limit because selection on linked loci reduces the fixation probabilities of beneficial alleles (Hill and Robertson 1966; Birky and Walsh 1988; Barton 1995a). Simulation studies (Fraser 1957; Gill 1965a, 1965b, 1965c; Latter 1965a, 1966a, 1966b; Qureshi and Kempthorne 1968; Qureshi 1968; Qureshi et al. 1968) show that linkage has only a small effect unless loci are very close ($ c 0.05 $). As mentioned in Chapter 7, most of these studies inflated the importance of linkage by assuming that all loci have equal effects. Simulation studies by McClosky and Tanksley (2013) found only modest reductions ($ 10\\% $) in short-term (less than 20 generations) response for populations with normal versus fully unconstrained levels of recombination."
+    },
+    {
+      "type": "discussion",
+      "content": "An approximate analytic treatment of linkage was offered by Robertson (1970a, 1977a), and later by Hospital and Chevalet (1993, 1996) and Zhang and Hill (2005a), who relied on certain normality assumptions. In the absence of recombination, selection acts on an entire chromosome, and Robertson framed his results in terms of the response contributed by a single chromosome. Robertson considered three different limiting expected responses, $ L_{i} $, corresponding to different amounts of recombination: $ L_{f} $, the chromosomal limit with free recombination between all loci; $ L_{0} $, the limit under complete linkage; and $ L_{\\ell} $, the limit when the map length of the chromosome is $ \\ell $ (implying, for $ n $ loci, a recombination rate between the adjacent loci of approximately $ \\ell/n $)."
+    },
+    {
+      "type": "derivation",
+      "content": "The completely additive model is assumed with loci starting in gametic-phase equilibrium. Let $ \\sigma_A^* $, be the initial additive genetic variance contributed by the focal chromosome and define $ (h^*)^2 = \\sigma_A^* / \\sigma_z^2 $ as the initial fraction of phenotypic variance attributable to this chromosome. The expected contribution from this chromosome following a single generation of selection is $ S\\sigma_A^* / \\sigma_z^2 = \\bar{i}h^* \\sigma_{A^*} $. When $ N_e \\bar{i}h^* $ is small, the expected limit for a chromosome with freely recombining loci is $ 2N_e $ times the initial response, yielding $ L_f \\simeq 2N_e \\bar{i}h^* \\sigma_{A^*} $ (Equation 26.15b, considering the response from a single chromosome). Assuming weak selection, Robertson (1970a) found that the ratio of the free-recombination limit to the complete-linkage limit (i.e., the best initial chromosome) is approximately [[SEE_FORMULA:26.18]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Hence, for weak selection, complete linkage has only a trivial effect when the chromosome contains a large number of QTLs."
+    },
+    {
+      "type": "derivation",
+      "content": "When selection is strong ( $ N_e \\bar{i} h^* \\gg 1 $), the results are more complicated. Robertson assumed that there are $ n $ underlying loci, each with a frequency of $ p $ of the favored allele, which increases the character by $ 2a $ (the difference between the homozygotes). Under these assumptions, the additive variance contributed by this chromosome is $ \\sigma_A^* = 2na^2p(1 - p) $. If selection is sufficiently strong, under free recombination all favored alleles will be fixed, and the total response becomes $ L_f = 2na(1 - p) $. Noting that $ a = \\sigma_A^* / \\sqrt{2np(1 - p)} $, this can also be restated as [[SEE_FORMULA:26.19]]"
+    },
+    {
+      "type": "derivation",
+      "content": "On the other hand, with complete linkage the limit approaches twice the value of the best of the initial 2N chromosomes sampled (as this chromosome is ultimately fixed). The expected value for the best chromosome is given by the expected value of the largest order statistic (see Example 6 in LW Chapter 9). For a unit normal, this is expressed in terms of standard deviations (here $ \\sigma_{A*} $) above the mean, so that if $ x_{2N} $ is the standardized largest order statistic in a sample of 2N chromosomes, the limit is given by [[SEE_FORMULA:26.20a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Robertson (1970a) showed, for $10 < N < 40$, that $x_{2N} \\sqrt{2} \\simeq 3$, so that $L_{0}/\\sigma_{A}^{2} \\simeq 3$. Hence, for these values of $N$, [[SEE_FORMULA:26.20b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "The factor of 3 increases to 3.8 when N = 80 and to 4.6 when N = 500. For larger values of N, if we use the asymptotic approximation for the largest order statistic given by Kendall and Stuart (1977), the factor of 3 is replaced by [[SEE_FORMULA:26.20c]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Note that the increase in the selection limit is only weakly dependent on $N$, as the largest order statistic scales as $\\sqrt{\\ln(2N)$. For example, for $N=10^{9}$, $x_{2N}\\sqrt{2}\\simeq9.4$."
+    },
+    {
+      "type": "derivation",
+      "content": "Robertson suggested that as the number of loci, $n$, increases, the limit under free recombination approaches a value independent of $n$ and $p$, namely, the infinitesimal limit, $L_f = 2N_e\\bar{\\imath}h^* \\sigma_{A^*}$. Thus, with strong selection and a large number of loci, Equation 26.20a implies that [[SEE_FORMULA:26.20d]]"
+    }
+  ]
+}

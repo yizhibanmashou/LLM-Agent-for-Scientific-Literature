@@ -1,0 +1,45 @@
+{
+  "id": "chapter12_018",
+  "metadata": {
+    "chapter": "chapter12",
+    "section": "Chapter 12: TIME SERIES DIVERGENCE TESTS",
+    "subsections": [
+      "Tests for Departures From Symmetric Random Walks"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter12_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "12.23a",
+      "12.23b",
+      "12.24a",
+      "12.24b"
+    ],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "A number of tests of departure from a symmetric random walk have been proposed. All assume uncorrelated changes over time increments and an equal chance of positive and negative increments (with the mean incremental change equaling zero). Raup (1977) and Raup and Crick (1981) proposed using the Wald–Wolfowitz runs test (under the null hypothesis of an equal number of positive and negative changes). Here the test statistic, $ R_{n} $, for the number of runs (changes in the direction of the walk) in a sample of size n is approximately normally distributed with mean $ n/2 + 1 $ and variance n/4. A sequence showing excessive runs of the same sign is consistent with directional selection, while a sequence with an excessive number of sign reversals is consistent with stabilizing selection (as might be expected for a population mean fluctuating around an optimum). Similarly, one could simply test the number of positive increments against the value expected from a binomial with success parameter 1/2 and sample size n. Both the runs and binomial tests do not use any information on the size of any jump, but rather simply test against a null of equally likely up versus down change over any given time point."
+    },
+    {
+      "type": "derivation",
+      "content": "A more sophisticated approach was taken by Bookstein (1987, 1988), who used results from the theory on the maximal excursion of a symmetric random walk. The sequence of measured phenotypes is scaled so that the initial mean is zero, with $ x_i $ denoting the mean of the $ i $th sample. The standard error for the expected divergence over the entire sequence ($ n $ steps) of a symmetric random walk is $ \\sigma\\sqrt{n} $, where $ \\sigma^2 $ is the variance in change per increment. Assuming roughly equal time intervals between samples, this standard error can be estimated as [[SEE_FORMULA:12.23a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Further, define $ S_k $ as the sum of the first $ k $ increments (the displacement of the mean from its original value after $ k $ steps). Bookstein obtained a large- $ n $ expression for the distribution of the largest scaled excursion, [[SEE_FORMULA:12.23b]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Namely, the largest absolute value of the walk $ (max_k \\mid S_k \\mid) $ over any of the sampled times, expressed in terms of the expected standard error of the walk value at the final sample time $ (\\sigma \\sqrt{n}) $. For $ \\gamma > 1 $, critical values (the upper $ p $ in the tail of the null distribution) are very closely given by the corresponding $ p/4 $ critical values for a unit normal. For example, the upper 5% tail corresponds to $ \\gamma = 2.25 $, consistent with the value of 2.24 for a normal with $ p/4 = 0.0125 $. The upper 1% and 0.1% upper tail probabilities correspond to $ \\gamma $ values of 2.8 and 3.5, respectively. Series with values exceeding these critical values are said to be improbably directional, consistent with directional selection (or an environmental trend). Conversely, a series that does not vary enough is said to be improbably constrained, consistent with some sort of stabilizing selection or other cause of stasis. The lower 5%, 1%, and 0.1% values correspond to $ \\gamma $ values of 0.62, 0.49, and 0.41, respectively. Failure to reject the null of a random walk still allows for considerable selection, either due to a lack or power or randomness in the direction of selection over time. Multivariate random-walk tests are discussed by Bookstein (2013)."
+    },
+    {
+      "type": "derivation",
+      "content": "Another widely used test for departures against the null of a symmetric random walk (closely related to Bookstein's approach), called scaled range analysis, is based on Hurst exponents (Hurst 1951). The idea behind this approach is that the absolute difference of a symmetric random walk $ |x_t - x_0| $ scales as $ \\sigma \\sqrt{t} $ (which can be estimated from Equation 12.23a). Defining the standardized range, $ R(\\tau) $, for a time interval $ (\\tau) $ as [[SEE_FORMULA:12.24a]] one then regresses $ R(\\tau) $ on ever-increasing values of $ \\tau $, fitting the log-log regression [[SEE_FORMULA:12.24b]] where the slope (H) is the Hurst exponent (i.e., $ R \\propto \\tau^{H} $). Under a symmetric random walk with uncorrelated increments, absolute trait divergence is expected to scale with the square root of time, giving H = 0.5. As increments become more positively correlated, H increases to 1.0 (directional persistence), consistent with directional selection. As adjacent increments become increasingly negatively correlated, H decreases to zero (anti-persistence), consistent with stabilizing selection or some other form of stasis. Roopnarine (2001) discussed permutation tests for the significance of $ H \\neq 0.5 $. Gingerich's (1993) LRI (log rate versus log interval) method is a version of this test, where the slope (G) of his LRI regression is simply G = H - 1 (Roopnarine et al. 1999)."
+    },
+    {
+      "type": "discussion",
+      "content": "While straightforward and widely applied in the early literature, these methods typically have low power, meaning that the null hypothesis of a symmetric random walk is hard to reject (Roopnarine et al. 1999; Roopnarine 2001; Sheets and Mitchell 2001). This is especially the case with stratophenetic series, with their usual incompleteness and sporadic coverage due to the vagaries of the fossilization process. Further, as noted by Sheets and Mitchell (2001), there is an asymmetry of detection in that stabilizing selection is easier to detect than directional selection. They showed that the Hurst exponent (and, by extension, the LRI method) has the highest power to detect stabilizing selection, followed by Bookstein's approach, and then the runs test. Conversely, for detecting directional selection, the runs test is often the most powerful, followed by the Hurst exponent, and then Bookstein's approach."
+    }
+  ]
+}

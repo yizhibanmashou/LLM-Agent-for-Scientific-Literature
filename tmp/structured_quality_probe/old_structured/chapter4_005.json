@@ -1,0 +1,50 @@
+{
+  "id": "chapter4_005",
+  "metadata": {
+    "chapter": "chapter4",
+    "section": "Chapter 4: Alternative Approaches",
+    "subsections": [
+      "Alternative Approaches"
+    ],
+    "source_file": "data\\paddle_output\\chapter4_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "4.5",
+      "4.6a",
+      "4.6b"
+    ],
+    "table_references": [],
+    "structured_repair": {
+      "version": "source_inline_math_v1",
+      "actions": {
+        "replace_from_source": 6
+      }
+    }
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Felsenstein (1992) pointed out that neither of these approaches is likely to provide the most efficient estimates of $ \\theta $ (i.e., to yield estimates with minimum sampling variance), as they do not utilize all of the information in the sample of sequences. In particular, both approaches ignore the genealogical relationships of sequences (i.e., the coalescent structure of the sample), although under neutrality, the expected contribution to variation from each genealogical branch can be expressed in terms of $ \\theta $ (Equation 2.33b)."
+    },
+    {
+      "type": "derivation",
+      "content": "To evaluate how much improvement might be achieved by exploiting such information, Fu and Li (1993a) derived a maximum-likelihood estimator of $ \\theta $ for the extreme situation in which one knows with certainty the genealogical relationships of the sequences and the numbers of mutations and generations on each branch of the genealogy. The expected sampling variance of this estimator is [[SEE_FORMULA:4.5]]"
+    },
+    {
+      "type": "discussion",
+      "content": "A comparison of this expression and Equations 4.2 and 4.4 illustrates that there is substantial room for improvement in the estimation of $ \\theta $ over the traditional heterozygosity and segregating-sites methods, provided the number of sequences exceeds five or so, and assuming a reasonably accurate gene genealogy can be obtained (Figure 4.1)."
+    },
+    {
+      "type": "discussion",
+      "content": "Gene genealogies cannot be constructed without error. However, by using information on the expected coalescence times of samples of neutral sequences, Fu (1994a, 1994b) developed several generalized least-squares estimators that account for the sampling variances and covariances of mutations on different branch segments. Several of these estimators, which utilize the concepts of the site-frequency spectrum (Fu 1995; Li and Fu 1999; see Chapter 2), asymptotically perform in a near-optimal manner as the sample size increases, again provided the sites are neutral and the population is in drift-mutation equilibrium. As one or both of the latter two assumptions (neutrality and equilibrium) are likely to be violated to unknown degrees in many natural settings, having an estimator with minimum sensitivity to both problems would be highly useful. In fact, just such an approach can be extrapolated from Watterson's estimator (Equation 4.3). The basis for this strategy follows from the property for neutral alleles that in an equilibrium population, the number $ S_j $ of derived single-nucleotide variants found j times in a sample of size n has the expected value $ L\\theta/j $ (Watterson 1975; Fu 1995). Because the total number of segregating sites, $ S $, has an expected value of $ L\\theta a_n $, it follows that Watterson's estimator is equivalent to an average of estimates of $ \\theta $, each weighted by the inverse of the number of observations."
+    },
+    {
+      "type": "derivation",
+      "content": "The simplest estimate of $ \\theta $, based only on singletons $ (j = 1) $, is then [[SEE_FORMULA:4.6a]] which is also equivalent to the number of mutations (per site) on the external branches of a gene genealogy (Fu and Li 1993b). Such an estimator is attractive for two reasons. First, the singletons in a sample are a function of the very recent past, especially when the overall sample size is large, and hence are not expected to be influenced by distant periods of population-size change. Second, because the dynamics of rare alleles are primarily governed by the drift process, singleton frequencies are expected to most closely reflect the pattern expected under neutrality even when such mutations are nonneutral (Messer 2009). The sampling variance of the singleton-based estimator is [[SEE_FORMULA:4.6b]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Considering just the sampling variance of the estimators of $ \\theta $ to this point, as $ n \\to \\infty $, those for $ \\widehat{\\theta}_W $ and $ \\widehat{\\theta}_{ML} $ are $ \\theta/(15.4L) $, whereas that for $ \\widehat{\\theta}_\\pi $ is $ \\theta/(3L) $, and that for $ \\widehat{\\theta}_1 $ is $ \\theta/L $. Thus, although the singleton-based estimator is likely to have the smallest amount of bias associated with selection, a focus on only a fraction of the segregating sites results in higher sampling variance."
+    }
+  ]
+}

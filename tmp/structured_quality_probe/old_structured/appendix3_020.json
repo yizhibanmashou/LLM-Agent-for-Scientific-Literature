@@ -1,0 +1,46 @@
+{
+  "id": "appendix3_020",
+  "metadata": {
+    "chapter": "appendix3",
+    "section": "THE GIBBS SAMPLER",
+    "subsections": [
+      "Using the Gibbs Sampler to Approximate Marginal Distributions"
+    ],
+    "source_file": "data\\paddle_output\\appendix3_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "structured_repair": {
+      "version": "source_inline_math_v1",
+      "actions": {
+        "replace_from_source": 1
+      }
+    }
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Any feature of interest for the marginals can be computed from the m realizations of the Gibbs sequence. If $ \\theta_1, \\cdots, \\theta_m $ is an appropriately burned-in set of realizations from a Gibbs sampler, the expectation of any function, $ f $, of the random variable $ \\theta $ is approximated by $$ E[f(\\theta)]_{m}=\\frac{1}{m}\\sum_{i=1}^{m}f(\\theta_{i}) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "This is the Monte-Carlo (MC) estimate of $ f(x) $, as $ E[f()]_m E[f()] $ as $ m $. Likewise, the MC estimate for any function of $ n $ variables $ (^ (1),, ^ (n)) $ is calculated by $$ E[f(\\theta^{(1)},\\cdots,\\theta^{(n)})]_{m}=\\frac{1}{m}\\sum_{i=1}^{m}f(\\theta_{i}^{(1)},\\cdots,\\theta_{i}^{(n)}) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Example A3.7. Although the sequence of length 3 that was computed in Example A3.6 is too short (and too dependent on the starting value) to be a proper Gibbs sequence, for illustrative purposes we can use it to compute Monte-Carlo estimates. The MC estimates of the means of x and y are $$ \\overline{x}_{3}=\\frac{5+3+7}{3}=5,\\quad\\overline{y}_{3}=\\frac{0.5+0.33+0.56}{3}=0.46 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "We use the subscript 3 throughout to remind the reader of the sample size of this particular Gibbs sampler. Similarly, $ (^2)_3 = 27.67, (^2)_3 = 0.22 $, and $ ()_3 = 2.47 $, returning the MC estimates of the variances of $ x $ and $ y $ as $$ \\mathrm{Var}(x)_{3}=(\\overline{x^{2}})_{3}-(\\overline{x}_{3})^{2}=2.67,\\qquad\\mathrm{Var}(y)_{3}=(\\overline{y^{2}})_{3}-(\\overline{y}_{3})^{2}=0.25 $$ and their covariance as $$ \\mathrm{Cov}(x,y)_{3}=(\\overline{xy})_{3}-\\overline{x}_{3}\\cdot\\overline{y}_{3}=2.47-5\\cdot0.46=0.16 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "While computing the MC estimate for any moment using the sampler is straightforward, computing the actual shape of the marginal density is slightly more involved. While one might use the empirical histogram of the Gibbs sequence as a rough approximation of the marginal distribution of x, this turns out to be inefficient, especially for obtaining the tails of the distribution. A better approach is to use the average of the conditional densities $ p(x y = y_i) $, as the function form of the conditional density contains more information about the shape of the entire distribution than the sequence of individual realizations, $ x_i $ (Gelfand and Smith 1990; Liu et al. 1991). Because $$ p(x)=\\int p(x\\mid y)p(y)dy=E_{y}\\left[p(x\\mid y)\\right] $$ one can approximate the marginal density using $$ \\widehat{p}_{m}(x)=\\frac{1}{m}\\sum_{i=1}^{m}p(x\\mid y=y_{i}) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Example A3.8. Returning to the Gibbs sequence generated in Example A3.6, recall that the distribution of x given y is binomial, with $ x y (n, y) $. If we apply Equation A3.27b, the estimate (based on this sequence) of the marginal distribution of x is the weighted sum of three binomials with success parameters of 0.5, 0.33, and 0.56, yielding $$ p_{3}(x)=\\frac{10!}{x!(10-x)!}\\left[\\frac{0.5^{x}(1-0.5)^{10-x}+0.33^{x}(1-0.33)^{10-x}+0.56^{x}(1-0.56)^{10-x}}{3}\\right] $$ As Figure A3.3 shows, the resulting distribution (filled bars), although a weighted sum of binomials, departs substantially from the binomial based on the average (here 0.46) of the success parameter (open bars)."
+    }
+  ]
+}

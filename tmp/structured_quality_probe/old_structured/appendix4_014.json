@@ -1,0 +1,67 @@
+{
+  "id": "appendix4_014",
+  "metadata": {
+    "chapter": "appendix4",
+    "section": "Schweder-Spjøtvoll plots",
+    "subsections": [
+      "Schweder-Spjøtvoll plots"
+    ],
+    "source_file": "data\\paddle_output\\appendix4_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "structured_repair": {
+      "version": "source_inline_math_v1",
+      "actions": {
+        "remove_placeholder_block": 2,
+        "replace_from_source": 10
+      }
+    }
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Example A4.6. According to the data in Figure A4.3, what is $ n_0 $? Consider the bins centered around $ p = 0.5 $. Based on the central three bins (0.4, 0.5, and 0.6), a total of $ 60 + 46 + 48 = 154 $ tests have $ p $ values in this interval. From Equation A4.8b, $ 154 = n_0 \\cdot 0.3 \\cdot r_0 = 154/0.3 = 513 $, and hence a fraction, $ \\pi_0 = n_0/n = 513/644 = 0.80 $, of the tests are true nulls. Using the bins from 0.3 to 0.8 yields $ n_0 = 322/0.6 = 537 $, or $ \\pi_0 = 537/644 = 0.83 $. Hence, it appears that around 80"
+    },
+    {
+      "type": "discussion",
+      "content": "Storey and Tibshirani (2003) considered the number of $p$ values exceeding some tunable parameter value, $\\lambda$ (taking $a = \\lambda$ and $b = 1$ in Equation A4.8b), on the logic that for larger values of $\\lambda$, most of these draws are from the uniform corresponding to draws from the null. Let $\\widehat{\\pi}_0(\\lambda)$ denote the estimated fraction of truly null hypotheses based on using a tuning value of $ \\lambda $, then $$ \\widehat{\\pi}_{0}(\\lambda)=\\frac{Number of p(i)values>\\lambda}{n(1-\\lambda)} $$ and $$ \\widehat{n}_{0}(\\lambda)=n\\cdot\\widehat{\\pi}_{0}(\\lambda)=\\frac{Number of p(i)values>\\lambda}{1-\\lambda} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "By focusing on the interval $(\\lambda, 1)$, the Storey-Tibshirani estimator is potentially biased when there are an excess of $p$ values near one. This can happen for a variety of reasons, such as inappropriate assumptions for the test statistic (e.g., the use of one-sided tests when two-sided tests are more appropriate). Both Equation A4.8c and the Storey-Tibshirani estimator (Equation A4.9b) rely on tuning parameters $(a, b$, and $\\lambda$, respectively) which define the region of the distribution of $p$ values assumed to be drawn from a uniform (i.e., almost all $p$ values in this interval are assumed to be generated under the null). Nettleton et al. (2006) reviewed these and other approaches for estimating $n_{0}$ from sampling parts of a presumed uniform and elaborated on their strengths and weaknesses."
+    },
+    {
+      "type": "discussion",
+      "content": "One significant concern is that correlated tests can result in either an under- or over-dispersion of p values under the global null hypothesis, resulting in significant departure from a uniform distribution (Efron 2007; Hu et al. 2011; Leek and Storey 2011). This in turn compromises estimates of $ n_{0} $."
+    },
+    {
+      "type": "discussion",
+      "content": "# Estimating $ n_{0} $: Mixture Models Allison et al. (2002) suggested that $ \\pi_0 $ can be estimated by treating the distribution of $ p $ values as a mixture, a fraction $ \\pi_0 $ of which comes from a uniform (and hence a uniform distribution function, $ \\phi_u $), while the remainder $ (1 - \\pi_0) $ are from the distribution, $ \\phi_A(p) $, of $ p $ values when the alternative hypothesis is true (Figure A4.4). While the general form of $ \\phi_A(p) $ is unknown, a very flexible distribution to model it is by using the beta distribution (Appendix 2; Figure A2.3) $$ \\phi_{A}(p)=\\frac{\\Gamma(a+b)}{\\Gamma(a)\\Gamma(b)}p^{a-1}(1-p)^{b-1} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Under the alternative hypothesis, we expect an increase in p values near zero, which occurs when a < 1. Likewise, the beta distribution can easily accommodate an increase in p values near one (b < 1). When a = b = 1, this simply reduces to a uniform."
+    },
+    {
+      "type": "discussion",
+      "content": "Allison et al. (2002) suggested fitting the actual shape by using the data to obtain ML estimates of a and b, as well as our desired parameter, the fraction of true nulls, $ \\pi_{0} $. The resulting likelihood function for a single p value becomes $$ \\ell(p)=(1-\\pi_{0})\\phi_{A}(p)+\\pi_{0}\\phi_{u}(p)=(1-\\pi_{0})\\frac{\\Gamma(a+b)}{\\Gamma(a)\\Gamma(b)}p^{a-1}(1-p)^{b-1}+\\pi_{0} $$ with the resulting total likelihood over the n sampled p values (from independent tests) calculated by $$ \\ell(\\mathbf{p})=\\prod_{i=1}^{n}\\ell(p_{i}) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Standard ML methods (LW Appendix 2) are used to solve for a, b, and $ \\pi_{0} $."
+    },
+    {
+      "type": "discussion",
+      "content": "While hypothesis testing under a maximum likelihood framework is typically performed using the likelihood ratio (LR) test (LW Appendix 2), this is not appropriate for tests of the number of components in a mixture, as the LR does not approach a limiting $ \\chi^{2} $ distribution, because $ \\pi_{0} $ is being tested against a boundary value, in this case a value of one (McLachlan 1987). While a modified LR test for mixtures can be constructed that behaves better (Chen et al. 2001), Allison et al. used a bootstrap approach (McLachlan 1987; Schork 1992). Here, one first uses the original distribution of p values to compute an LR test statistic for the null of a uniform versus the alternative of a mixture. One then generates parametric"
+    },
+    {
+      "type": "discussion",
+      "content": "bootstrap samples by drawing $n$ values of $p$ from the null distribution (here a uniform) and then using this simulated dataset to compute an LR test statistic for a mixture. This is done several thousand times to generate an approximate distribution of the LR statistic under the null, which is used to assess significance. For example, if only 0.25"
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, while a beta (or weighted sum of betas) can be used as the functional form for $ \\phi_{A} $, another approach is to use a nonparametric estimator for this unknown density function. This can be done using a kernel density estimator, whereby the form of an unknown density is estimated by using the observed number of counts within a series of bins spanning the distribution in conjunction with an appropriate smoothing function. This approach was used by Robin et al. (2007) and Guedj et al. (2009)."
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "id": "chapter26_002",
+  "metadata": {
+    "chapter": "chapter26",
+    "section": "Chapter 26: THE POPULATION GENETICS OF SELECTION AND DRIFT",
+    "subsections": [
+      "THE POPULATION GENETICS OF SELECTION AND DRIFT"
+    ],
+    "source_file": "data\\paddle_output\\chapter26_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "26.1",
+      "26.2a",
+      "26.2b",
+      "26.2c"
+    ],
+    "table_references": [],
+    "structured_repair": {
+      "version": "source_inline_math_v1",
+      "actions": {
+        "replace_from_source": 1,
+        "remove_placeholder_block": 1
+      }
+    }
+  },
+  "blocks": [
+    {
+      "type": "derivation",
+      "content": "In Chapter 7 we examined the interaction of selection and drift at a single locus, and we briefly review a few of the key results here. If the population size is finite, a favorable allele may become lost, and hence our interest is in u, the probability that an allele is fixed. In an infinite population, u = 1 for an allele favored by selection (provided it is not overdominant). In a finite population, u < 1, and its particular value depends on (among other things) its initial frequency, $ p_0 $, and the effective population size, $ N_e $. Let $ u(p_0) $ denote the probability that an allele starting at an initial frequency of $ p_0 $ becomes fixed. Recall from Chapter 2 that the fixation probability of a neutral allele depends only on its initial frequency, with [[SEE_FORMULA:26.1]]"
+    },
+    {
+      "type": "derivation",
+      "content": "This independence from population size is not the case for an allele under selection. For additive selection (with fitnesses of 0: s: 2s) [[SEE_FORMULA:26.2a]] [[SEE_FORMULA:26.2b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Equation 26.2a, from Kimura (1957), is derived using diffusion theory in Appendix 1, and values of $ u(p_0) $ are plotted in Figure 26.1. Equation 26.2b, which is from Robertson (1960a), uses the approximations $ e^ -x 1 - x + x^2/2 $ and $ (1 - x)^ -1 1 + x $ (both for $ |x| 1 $) to simplify Kimura's result under weak selection. Equation 26.2b shows that [[SEE_FORMULA:26.2c]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Comparing this result to Equation 26.1 shows that an allele whose selection coefficient satisfies $ 2N_e | s| 1 $ behaves as if it were neutral over all allele frequencies, and it is called effectively neutral to reflect this fact. Equations 7.18–7.20 present corresponding expressions for the probability of fixation when dominance is present."
+    },
+    {
+      "type": "discussion",
+      "content": "Even when an allele is strongly selected ( $ 4N_{e}s \\gg 1 $), drift is important when its frequency is near zero or one. Taylor-expanding the numerator of Equation 26.2a yields $$ 1-e^{-4N_{e}sp_{0}}\\simeq1-\\left(1-4N_{e}sp_{0}\\right)=4N_{e}sp_{0},\\quad or\\quad2s\\frac{N_{e}}{N}\\quad for\\quad p_{0}=\\frac{1}{2N} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Hence, the probability of fixation starting with a single copy, $ p_0 = 1/(2N) $, of an advantageous allele is approximately $ 2s $ ($ N_e/N $) when $ 4N_e s 1 $, implying that a favorable allele introduced as a single copy is usually lost by drift. Conversely, the fixation of a favored allele becomes almost certain as its frequency becomes sufficiently large. Equation 26.2a shows that if $ p_0 1/(2N_e s) $, the probability of fixation exceeds 0.86, while if $ p_0 1/(N_e s) $, the probability of fixation exceeds 0.98. Thus, if a favorable allele initially increases by drift, it can reach a threshold frequency above which deterministic selection dominates, which rapidly increases its frequency toward 1.0. As it approaches a frequency of 1.0, drift will again dominate, fixing the allele much more rapidly than expected under deterministic selection (Example 8.1)."
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, recall the Cohan effect (Example 7.4), which states that uniform selection can result in greater between-replicate divergence than drift. This occurs because the between-line divergence is maximized when the fixation probability of an allele is 0.5. Given that the fixation probability under neutrality is $ p_0 $, selection results in greater divergence than it does under neutrality when $ u(p_0)[1 - u(p_0)] > p_0[1 - p_0] $. Figure 7.3 shows that the conditions for this to occur are not very restrictive under additive selection. As is discussed below, the Cohan effect has implications when crossing and then reselecting replicate lines."
+    }
+  ]
+}

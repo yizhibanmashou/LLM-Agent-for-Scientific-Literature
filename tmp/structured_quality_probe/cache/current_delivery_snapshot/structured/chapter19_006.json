@@ -1,0 +1,43 @@
+{
+  "id": "chapter19_006",
+  "metadata": {
+    "chapter": "chapter19",
+    "section": "Chapter 19: REML Estimation of Unknown Variance Components",
+    "subsections": [
+      "REML Estimation of Unknown Variance Components"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter19_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "19.6a",
+      "19.6b"
+    ],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "The variance components ($ \\sigma_A^2 $ and $ \\sigma_e^2 $), or, at a minimum, the heritability $ h^2 = \\sigma_A^2 / (\\sigma_A^2 + \\sigma_e^2) $, must be specified to obtain $ \\beta $ and $ \\hat{a} $. Although these variances are generally unknown, they can be estimated, for example, by using restricted maximum likelihood (REML). REML is closely related to BLUP, with (roughly speaking) REML estimates obtained from iterating and updating BLUP estimates until there is suitable convergence (LW Chapter 27). REML maximizes that part of the likelihood function that is unaffected by fixed effects (Patterson and Thompson 1971). Harville (1977) coined the term restricted ML, but Thompson (2008) noted that REML maximizes a residual likelihood, and hence preferred the term residual maximum likelihood. One advantage of REML estimates (over those obtained by other estimation procedures) is that they are unbiased by the estimates of fixed effects (Patterson and Thompson 1971). For further details, we refer the reader to the extensive discussion of REML variance estimation in LW Chapter 27, and to Hofer (1998), Thompson and Mäntysaari (2004), Thompson et al. (2005), Misztal (2008), Thompson (2008), and Gianola and Rosa (2015) for a review of more recent developments, including computational issues."
+    },
+    {
+      "type": "proposition",
+      "content": "For much of this chapter, we assume that BLUP variance components are first obtained by REML (although we relax this assumption when discussing Bayesian mixed-model analysis). This two-stage approach of BLUP using estimated variance components (in place of their true values) is called empirical BLUP or REML/BLUP (Sorensen and Kennedy 1986; Kennedy and Sorensen 1988; Harville 1990). Kackar and Harville (1981) and Gianola et al."
+    },
+    {
+      "type": "discussion",
+      "content": "(1986, 1988) showed that using REML estimation does not result in biased values for BLUPs, but that the resulting predictors may not be “best” (there may be other linear predictors with smaller mean-squared errors)."
+    },
+    {
+      "type": "derivation",
+      "content": "The matrix of sample variances and covariances for the REML variance component estimates can be approximated by using the best quadratic fit of the restricted likelihood surface, centered at the REML estimates (Smith and Graser 1986; Graser et al. 1987). If $ \\sigma $ is a vector of $ m $ estimated variance components ($ \\sigma_A^2 $ and $ \\sigma_e^2 $ in the models thus far considered), we compute the restricted likelihood, $ L(\\sigma) $, for a grid of values close to the REML solution and then fit the best quadratic surface to the data, using [[SEE_FORMULA:19.6a]] With $v$ variance components, $b_0$ and $b_1$ are $v \\times 1$ vectors, and $\\mathbf{Q}$ is an $v \\times v$ symmetric matrix of quadratic regression terms (in Chapter 30 we discuss the fitting of such quadratic surfaces in the context of fitness surface estimation). The approximate covariance matrix for the vector of REMLs, $\\widehat{\\sigma}$, is calculated by [[SEE_FORMULA:19.6b]]"
+    },
+    {
+      "type": "discussion",
+      "content": "The rationale for this approach is that, for large samples, the inverse of the matrix of second-order partial derivatives of the likelihood surface (evaluated at the maximum likelihood estimate, MLE) approaches the covariance matrix of these estimates (LW Appendix 4). Equation 19.6a is a (second-order) multidimensional Taylor series (Equation A6.7b), with 2Q corresponding to the matrix of second-order partial derivatives (the Hessian matrix) of the likelihood function. Alternatively, Meyer (2008) suggested that the use of the likelihood profile function can often return more appropriate estimated confidence intervals than those based on these large-sample variances (see her paper for details)."
+    },
+    {
+      "type": "discussion",
+      "content": "Although Equation 19.6b returns a large-sample approximation for the uncertainty in REML variance estimates, this cannot be easily translated into how much additional uncertainty is introduced into BLUP estimates by using REML estimates of variance components in place of their true values. These concerns can be addressed in a Bayesian framework (see below), as Bayesian approaches are exact for any sample size (rather than large-sample approximations). Further, they fully incorporate any uncertainty in the variance estimates into the uncertainty in the BLUP estimates."
+    }
+  ]
+}

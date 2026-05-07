@@ -1,0 +1,77 @@
+{
+  "id": "appendix1_017",
+  "metadata": {
+    "chapter": "appendix1",
+    "section": "Brownian-motion Models",
+    "subsections": [
+      "Brownian-motion Models"
+    ],
+    "source_file": "data\\paddle_output\\appendix1_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [
+      "9.1"
+    ],
+    "structured_repair": {
+      "version": "source_inline_math_v1",
+      "actions": {
+        "replace_from_source": 9,
+        "sync_reference_metadata": 1
+      }
+    }
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "For Brownian motion (also called the Wiener process), the diffusion over the interval $ -\\infty < x < \\infty $ is defined as $$ m(x)=a\\quad and\\quad v(x)=b $$ where b > 0. The general solution under Brownian motion starting at $ x_{0} $ is that $$ x_{t}\\sim\\mathrm{N}(x_{0}+at,bt) $$ namely, the distribution of $ x_t $ is normal, with a mean of $ x_0 + at $ and a variance of $ \\sigma_t^2 = bt $. There is no equilibrium solution, as the process converges to a normal distribution with infinite variance (and, if $ a \\neq 0 $, an infinite mean)."
+    },
+    {
+      "type": "discussion",
+      "content": "Example A1.10. Lande (1976) used the Brownian-motion model to approximate the change in the phenotypic mean of a neutral character with constant additive-genetic variance. In this case there is no directional force to change the mean, so $a = 0$. If we assume that the character has a strictly additive-genetic basis, the per-generation sampling variance in the mean is $\\sigma_A^2 / N_e$ (Chapter 12), which is used for $b$ in Equation A1.31a. Hence, at generation $t$, the distribution of phenotypic means is approximately normal, with expected an mean of $\\mu_0$ (the initial mean) and a variance of $\\sigma_t^2 = t \\sigma_A^2 / N_e$."
+    },
+    {
+      "type": "discussion",
+      "content": "One measure of how quickly phenotypic means drift is the minimum number of generations required for the mean of a random population to have at least a 50 $$ \\Pr(|x_{t}-\\mu_{0}|\\geq K\\sigma_{z})=\\Pr\\left[\\frac{|x_{t}-\\mu_{0}|}{\\sigma_{t}}\\geq\\frac{K\\sigma_{z}}{\\sigma_{t}}\\right]=\\Pr\\left[|U|\\geq\\frac{K\\sigma_{z}}{\\sigma_{t}}\\right]=0.5 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "For a unit normal $U$, $\\Pr(|U| \\geq 0.675) = 0.5$, which yields $K\\sigma_z/\\sigma_t = K\\sigma_z/(\\sigma_A\\sqrt{t/N_e}) = 0.675$. Rearranging and substituting $h^2 = \\sigma_A^2/\\sigma_z^2$ yields $$ t=\\frac{K^{2}N_{e}}{h^{2}0.675^{2}}\\simeq2N_{e}\\frac{K^{2}}{h^{2}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, for $ N_e = 10 $, a neutral character with a constant heritability of $ h^2 = 0.5 $ requires $ 2 10 9/0.5 = 360 $ generations until half the populations have phenotypic means of more than three standard deviations ($ K = 3 $) from their initial value. For $ N_e = 10^5 $, this time becomes 3.6 million generations."
+    },
+    {
+      "type": "discussion",
+      "content": "The above analysis considers a single population over time (such as in a fossil sequence). Another situation of general interest involves an initial population that splits into two distinct, isolated populations. Here, the divergence between the two means is the sum of the two individual variances, meaning that if the initial difference is 0, then the distribution of the difference in mean after t generations is $$ d_{t}\\sim\\mathrm{N}\\left[0,t\\cdot\\left(\\frac{\\sigma_{A_{1}}^{2}}{N_{e,1}}+\\frac{\\sigma_{A_{2}}^{2}}{N_{e,2}}\\right)\\right] $$ where $ \\sigma_{Ai}^{2} $ and $ N_{e,i} $ are, respectively, the additive genetic variance and effective population size for population i."
+    },
+    {
+      "type": "proposition",
+      "content": "Example A1.11. The careful reader may recall that drift also changes $ \\sigma_A^2 $, with the assumption of a constant $ \\sigma_A^2 $ being reasonable only for $ t < N_e $ or when the population is at a mutation-drift equilibrium (Chapter 11). In Example A1.10, we fixed the genetic variance but allowed $ N_e $ to vary. However, if an ideal population (Chapter 2) has been at its current size for a sufficiently long time, the genetic variance for a neutral trait will be at its mutation-drift equilibrium value of $ 2N_e\\sigma_m^2 $, where $ \\sigma_m^2 $ is the mutational variance (Equation 11.20c). The distribution of means now has an expected variance of $$ \\sigma_{t}^{2}=2t N_{e}\\sigma_{m}^{2}/N_{e}=2t\\sigma_{m}^{2} $$ From our previous example, Equation A1.31c calculates the expected number of generations until 50 $$ t=\\frac{K^{2}\\sigma_{z}^{2}}{2\\cdot0.675^{2}\\cdot\\sigma_{m}^{2}}=1.1\\frac{K^{2}\\sigma_{z}^{2}}{\\sigma_{m}^{2}}\\simeq\\frac{K^{2}\\sigma_{z}^{2}}{\\sigma_{m}^{2}} $$ Because $ \\sigma_{z}^{2}=\\sigma_{A}^{2}+\\sigma_{E}^{2}=2N_{e}\\sigma_{m}^{2}+\\sigma_{E}^{2} $,"
+    },
+    {
+      "type": "discussion",
+      "content": "According to LW [[SEE_TABLE:9.1]], $ h_m^2 $ has an approximate average value of 0.006. Taking this value, and repeating the calculations from Example A1.10 (e.g., $ N_e = 10 $ and $ K = 3 $) yields $ t = 9 (20 + 1/0.006) = 1680 $ generations. The reason for the huge increase in time (1680 vs. 360) relative to the fixed variance example above is because the equilibrium additive variance is much smaller due to the small population size, and thus has an equilibrium heritability of $$ h^{2}=\\frac{2N_{e}\\sigma_{m}^{2}}{2N_{e}\\sigma_{m}^{2}+\\sigma_{E}^{2}}=\\frac{2N_{e}\\sigma_{m}^{2}/\\sigma_{E}^{2}}{2N_{e}\\sigma_{m}^{2}/\\sigma_{E}^{2}+1}=\\frac{2N_{e}h_{m}^{2}}{2N_{e}h_{m}^{2}+1}=\\frac{0.12}{0.12+1}=0.11 $$ or roughly 1/5 of the value used in Example A1.10. When $ N_e = 10^5 $, the time is 1.8 million generations, half the value obtained in Example A1.10, as now the equilibrium heritability is essentially one (1200/1201), which is twice the value that was assumed in Example A1.10."
+    },
+    {
+      "type": "discussion",
+      "content": "Example A1.12. The Brownian motion model easily extends to multiple traits. Suppose we let x denote a vector of traits, assume an infinitesimal mean change vector of zero, and denote the infinitesimal covariance matrix by $ \\mathbf{V} $ (the multivariate versions of $ m(x) $ and $ v(x) $, respectively). If the process starts at value $ x_0 $, then $$ \\mathbf{x}_{t}\\sim\\mathrm{MVN}(\\mathbf{x}_{0},t\\mathbf{V}) $$ where MVN denotes the multivariate normal. Lande (1979a) examined the change in a vector of trait means under drift and mutation. The per-generation sampling variance in the multivariate mean vector is $ \\mathbf{V} = \\mathbf{G}/N_e $, the additive-genetic covariance matrix, $ \\mathbf{G} $ (Chapter 13), divided by the effective population size. If $ \\mathbf{u}_0 $ is the starting vector of means, then $$ \\mathbf{u}_{t}\\sim\\mathbf{M V N}[\\mathbf{u}_{0},(t/N_{e})\\mathbf{G}] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "A key feature of Equation A1.32b is that we expect the most divergence in population means to occur along the principal components of G (the eigenvectors corresponding to the leading eigenvalues; Appendix 5), as these are the axes with the most variance, and hence the most spread in the realizations of $ \\mathbf{u}_t $. Thus, if drift dominates, the divergence between two populations is largely in the direction of the first few principal components of G (a topic we return to in Volume 3)."
+    },
+    {
+      "type": "discussion",
+      "content": "Lande (1979a) assumed that over long periods of time, the genetic covariance matrix would approach its mutation-drift equilibrium value. Suppose we let U denote the matrix of mutational variances and covariances, which means that $ U_{ii} $ corresponds to the mutational (additive-genetic) variation in trait i generated in each generation ( $ \\sigma_m^2 $ in the univariate case), and $ U_{ij} $ is the mutational additive-genetic covariance between traits i and j (i.e., pleiotropy). For an effective population size of $ N_e $, drift decays the current additive-genetic variance by an amount of $ 1/(2N_e) $ in each generation, but this is countered by new mutation, yielding an expected change in the average covariance matrix of $$ \\Delta\\mathbf{G}=\\mathbf{G}/(2N_{e})+\\mathbf{U} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "At equilibrium, $ \\Delta\\widehat{G}=0 $, or $$ \\hat{\\mathbf{G}}=2N_{e}\\mathbf{U} $$ As expected, this reduces to the single-trait result of $ 2N_e\\sigma_m^2 $ (Equation 11.20c) when $ \\mathbf{U} = (\\sigma_m^2) $. Hence, the sampling variance of the mean becomes $ \\widehat{\\mathbf{G}}/N_e = 2\\mathbf{U} $, which reduces Equation A1.32b to $$ \\mathbf{u}_{t}\\sim\\mathrm{M V N}(\\mathbf{u}_{0},2t\\mathbf{U}) $$"
+    },
+    {
+      "type": "proposition",
+      "content": "The neutral divergence between two populations now follows the leading eigenvectors of U, rather than those of the initial G matrix. This interesting finding requires the strong assumption that the population has been in mutation-drift equilibrium during the bulk of the divergence."
+    }
+  ]
+}

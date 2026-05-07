@@ -1,0 +1,67 @@
+{
+  "id": "chapter26_006",
+  "metadata": {
+    "chapter": "chapter26",
+    "section": "Chapter 26: THE EFFECT OF SELECTION ON EFFECTIVE POPULATION SIZE",
+    "subsections": [
+      "The Expected Reduction in $ N_{e} $ from Directional Selection"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter26_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "26.5",
+      "26.6a",
+      "26.6b",
+      "26.6c",
+      "26.6d",
+      "26.7a",
+      "26.7b",
+      "26.8",
+      "26.9a",
+      "26.9b"
+    ],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "derivation",
+      "content": "Before proceeding, we will briefly review some results from Chapter 3. In the following discussion, N refers to the number of parents, pM. One of the assumptions of an ideal population (where the actual size, N, equals the effective size, $ N_e $) is that all parents have an equal chance of contributing offspring. Equation 3.4 shows that variance, $ \\sigma_k^2 $, in the number of offspring contributed by an individual reduces $ N_e $, as $ N_e = (N - 1/2)/(\\sigma_k^2/4 + 1/2) $. If the number of offspring per parent follows a Poisson distribution, then $ \\sigma_k^2 = 2 $ and $ N_e = N - 1/2 \\simeq N $. However, if some parents contribute a disproportionate number of offspring, then $ \\sigma_k^2 > 2 $ and $ N_e < N $. The more disproportionate the contribution, the larger is the offspring variance and the smaller is $ N_e $. As in Chapter 3, we use $ \\sigma_k^2 $ to denote variation in offspring number for entirely nonheritable reasons. Here, the children of a parent contributing an excessive number of offspring are themselves no more likely to contribute an excessive number. But with selection on a heritable trait, this will no longer be true. A selected parent is likely to have offspring with favorable trait values that then disproportionately contribute to the next generation. Following Chapter 3, we separate these two sources of variance in offspring number, letting $ \\sigma_k^2 $ refer to the variation in an unselected population and $ \\sigma_w^2 $ to the additional among-family genetic variance in relative fitness (due to differential contribution from families with more favorable trait values). Because each family is assumed (on average) to contribute two offspring (in a population maintained at a stable size), the additional variance from selection is $ 2^2 \\sigma_w^2 $, yielding an effective population size after a generation of selection of [[SEE_FORMULA:26.5]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Assuming $ \\sigma_{k}^{2}=2 $ gives [[SEE_FORMULA:26.6a]] a result from Robertson (1961). For truncation selection, Robertson (1961) and Milkman (1978) showed that $ \\sigma_w^2 \\simeq \\bar{\\imath}^2 t_{FS} $, where $ t_{FS} = \\text{Cov}(FS)/\\sigma_z^2 $ is the intraclass correlation of full sibs (LW Equation 17.3). Thus, the reduction in effective population size after a single generation of selection on unlinked loci becomes [[SEE_FORMULA:26.6b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "There are two complications to consider when moving from this simple result for a single generation to the reduction in $ N_e $ over multiple generations of selection. First, as selection proceeds, genetic variances change, which in turn changes $ t_{FS} $. The second complication, which was briefly noted in Chapter 3, is that continued selection has a cumulative effect. Robertson (1961) approximated this effect by noting that only half of the association between a neutral locus and unlinked loci under selection persists in each generation, yielding the among-family variance after $ \\tau $ generations of selection as $$ (1+1/2+1/4+\\cdots+1/2^{\\tau})^{2}\\sigma_{w}^{2}=Q_{\\tau}^{2}\\sigma_{w}^{2} $$ where $ Q_{\\tau} $ is the cumulative effect of $ \\tau $ generations of selection. Equation 26.6a thus becomes [[SEE_FORMULA:26.6c]]"
+    },
+    {
+      "type": "discussion",
+      "content": "$ Q_{\\tau} $ approaches a limiting value of $ Q = 2 $, which yields Equation 3.29c, Robertson's long-term effective population size of $ N/(1+4\\sigma_{w}^2) $. As noted in Chapter 3, this result is approximate for several reason, most importantly because selection also reduces genetic variation, resulting in less than half of the value from the previous generation being passed along."
+    },
+    {
+      "type": "derivation",
+      "content": "A more complete treatment was given by Santiago and Caballero (1995), who obtained a general expression for $ N_{e} $ under selection that allows for nonrandom mating. Assuming random mating, their expression for $ N_{e} $ after $ \\tau $ generations of selection is [[SEE_FORMULA:26.6d]] where $ \\gamma = -1/(N - 1) $ is a measure of the departure from Hardy-Weinberg due to finite population size (we generally assume that $ \\gamma \\simeq 0 $), and $ Q_{\\star\\star} $ (given below; see Equation 26.9a) is a generalization of Robertson's $ Q_{\\tau} $. For a single generation of selection, $ Q_{\\star1} = 1 $, implying that $ \\sigma_w^2 $ is the effect of selection in the current generation, while $ (Q_{\\star\\tau} - 1)\\sigma_w^2 $ is the cumulative effect of selection in previous generations. As will be shown, $ Q_{\\star\\tau} $ is a function of the selection intensity and heritability. Assuming that $ N $ is large (so $ \\alpha \\simeq 0 $) and a Poisson distribution of offspring in the absence of selection ($ \\sigma_k^2 = 2 $), Equation 26.6d reduces to Equation 26.6c, but with $ Q_{\\star\\tau} $ replacing $ Q_\\tau $. We are still, however, left with two complications—obtaining the value of $ t_{FS} $, and finding $ Q_{\\star\\tau} $—which we address in turn."
+    },
+    {
+      "type": "derivation",
+      "content": "Under the infinitesimal model, all of the selection-induced change in genetic variance is due to gametic-phase disequilibrium (Chapters 16 and 24). In Chapter 16 we showed that $ \\sigma_A^2 = \\sigma_a^2 + d $, where $ \\sigma_a^2 $ (the additive genetic variance) is the additive genetic variance in the absence of disequilibrium and $ d $ is the disequilibrium contribution. Under the infinitesimal model, the within- and among-family contributions to the additive genetic variance differ, as (for unlinked loci) the within-family contribution ($ \\sigma_a^2/2 $) is not influenced by disequilibrium, while the among-family variance ($ \\sigma_a^2/2 + d $) is (Chapter 16). Assuming the absence of both dominance and shared sib environmental effects, the intraclass correlation becomes [[SEE_FORMULA:26.7a]] where $ h_0^2 $ and $ \\sigma_z(0) = \\sigma_a^2 + \\sigma_E^2 $ are, respectively, the heritability and phenotypic variance in the unselected base population ($ d = 0 $). Increasing either $ \\bar{i}^2 $ or $ h^2 $ increases $ \\sigma_w^2 = \\bar{i}^2 t_{FS} $, which in turn decreases $ N_e $. Dominance variance does not change under the infinitesimal model (Chapter 16), so when it, or a common-family effect, occur, both appear as constants in the numerator and denominator of Equation 26.7a."
+    },
+    {
+      "type": "derivation",
+      "content": "We now have all of the results needed to compute an improved expression for the single-generation reduction in $ N_e $. Expressing the fraction of phenotypic variance in the selected parents as $ \\sigma_z^2/\\sigma_z^2 = (1 - \\kappa) $, Equation 16.7a yields $ d(1)/\\sigma_z^2 = -\\kappa h_0^4/2 $ (Equation 16.11a gives $ \\kappa $ as a function of $ \\bar{\\imath} $). Substituting this value for $ d(1)/\\sigma_z^2 $ into Equation 26.7a, [[SEE_FORMULA:26.7b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Recalling that $ Q_{*1} = 1 $, Equation 26.6d (assuming $ \\gamma = 0 $, $ \\sigma_k^2 = 2 $) yields a reduction in $ N_e $ from a single generation of selection of [[SEE_FORMULA:26.8]]"
+    },
+    {
+      "type": "discussion",
+      "content": "This result was first obtained by Robertson (1961), who did not include the $ (1-\\kappa h_0^4/2) $ term, which was subsequently added by Wray and Thompson (1990)."
+    },
+    {
+      "type": "derivation",
+      "content": "Turning to $ Q_{*\\tau} $, the cumulative effect of past selection, Santiago and Caballero (1995) showed that [[SEE_FORMULA:26.9a]] where $G$ is the fraction of genetic variance remaining after selection and $\\rho$ is the correlation between the selective values of mates ($\\rho = -1/[N - 1]$ under random mating). If ($1 - \\kappa$) is the fraction of phenotypic variance after selection, then $G = 1 - \\kappa h^2$ is the fraction of additive variance (Chapter 16). As with $t_{FS}$, $G$ (and hence $Q_{*\\tau}$) depends on a parameter ($h^2$) that changes under selection. However, recall from Chapter 16 that, under the infinitesimal model, $h^2$ quickly reaches its equilibrium value under directional selection (in roughly two or three generations). Thus, we typically use $G = 1 - \\kappa \\widehat{h}^2$, a function of the equilibrium heritability under the effects of selection and disequilibrium alone. In the limit ($\\tau \\to \\infty$), the sum in Equation 26.9a converges to [[SEE_FORMULA:26.9b]]"
+    }
+  ]
+}

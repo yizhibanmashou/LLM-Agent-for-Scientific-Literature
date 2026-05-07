@@ -1,0 +1,241 @@
+{
+  "version": 1,
+  "updated_at": "2026-05-07T01:13:54.013665+00:00",
+  "categories": [
+    {
+      "issue_code": "inline_math_damage",
+      "label": "inline 公式损坏",
+      "scope": "inline_math",
+      "description": "inline LaTeX 中出现上下标断裂、符号缺失、空公式或数学片段损坏。",
+      "severity": "error",
+      "status": "manual_only",
+      "examples": [],
+      "detector": {
+        "mode": "regex",
+        "patterns": [
+          "\\$[^$\\n]*\\s[_^]\\s+[A-Za-z0-9\\\\]",
+          "\\$\\s*\\$"
+        ]
+      }
+    },
+    {
+      "issue_code": "display_formula_damage",
+      "label": "display 公式损坏",
+      "scope": "display_math",
+      "description": "独立公式、公式编号或公式环境存在缺失、断裂、错位。",
+      "severity": "error",
+      "status": "manual_only",
+      "examples": [],
+      "detector": {
+        "mode": "regex",
+        "patterns": []
+      }
+    },
+    {
+      "issue_code": "formula_reference_error",
+      "label": "公式引用错误",
+      "scope": "formula_reference",
+      "description": "chunk 中公式占位符缺失、错指、断裂或与公式库不一致。",
+      "severity": "fatal",
+      "status": "manual_only",
+      "examples": [],
+      "detector": {
+        "mode": "regex",
+        "patterns": []
+      }
+    },
+    {
+      "issue_code": "formula_mention_not_linked",
+      "label": "公式提及未回链",
+      "scope": "formula_reference",
+      "description": "正文提到 Equation/Figure/Table 编号，但没有映射成可追踪的结构化引用。",
+      "severity": "warning",
+      "status": "manual_only",
+      "examples": [],
+      "detector": {
+        "mode": "regex",
+        "patterns": []
+      }
+    },
+    {
+      "issue_code": "table_reference_error",
+      "label": "表格引用错误",
+      "scope": "table_reference",
+      "description": "chunk 中表格占位符缺失、错指、断裂或与表格库不一致。",
+      "severity": "fatal",
+      "status": "manual_only",
+      "examples": [],
+      "detector": {
+        "mode": "regex",
+        "patterns": []
+      }
+    },
+    {
+      "issue_code": "table_row_group_misattribution",
+      "label": "表格行归属错误",
+      "scope": "table",
+      "description": "表格中的行、公式或说明文字被归到错误的上级条目、版本或组别。",
+      "severity": "error",
+      "status": "manual_only",
+      "aliases": [
+        "issue_c141804b"
+      ],
+      "examples": [],
+      "detector": {
+        "mode": "regex",
+        "patterns": []
+      }
+    },
+    {
+      "issue_code": "table_cell_alignment_error",
+      "label": "表格单元格错位",
+      "scope": "table",
+      "description": "表格单元格、行列或数学表达式对齐错误，导致含义错配。",
+      "severity": "error",
+      "status": "manual_only",
+      "examples": [],
+      "detector": {
+        "mode": "regex",
+        "patterns": []
+      }
+    },
+    {
+      "issue_code": "table_reference_target_error",
+      "label": "表格引用目标错误",
+      "scope": "table_reference",
+      "description": "正文中的表格引用存在但指向错误表格、错误章节或错误位置。",
+      "severity": "error",
+      "status": "manual_only",
+      "examples": [],
+      "detector": {
+        "mode": "regex",
+        "patterns": []
+      }
+    },
+    {
+      "issue_code": "table_structure_error",
+      "label": "表格结构问题",
+      "scope": "table",
+      "description": "表格标题、行列、单元格内容或 HTML 结构不正确。",
+      "severity": "error",
+      "status": "manual_only",
+      "examples": [],
+      "detector": {
+        "mode": "regex",
+        "patterns": []
+      }
+    },
+    {
+      "issue_code": "duplicate_or_leaked_block",
+      "label": "重复/泄漏块",
+      "scope": "structure",
+      "description": "正文中出现重复内容、跨块泄漏、残留浮动参数或非正文结构片段。",
+      "severity": "warning",
+      "status": "manual_only",
+      "examples": [],
+      "detector": {
+        "mode": "regex",
+        "patterns": []
+      }
+    },
+    {
+      "issue_code": "chunk_split_error",
+      "label": "chunk 切分问题",
+      "scope": "chunk",
+      "description": "block/chunk 切分过短、跨段、上下文断裂或类型不合理。",
+      "severity": "warning",
+      "status": "manual_only",
+      "examples": [],
+      "detector": {
+        "mode": "regex",
+        "patterns": []
+      }
+    },
+    {
+      "issue_code": "chunk_boundary_error",
+      "label": "chunk 边界错误",
+      "scope": "chunk",
+      "description": "chunk 边界过早、过晚或跨越不应合并的语义单元。",
+      "severity": "warning",
+      "status": "manual_only",
+      "examples": [],
+      "detector": {
+        "mode": "regex",
+        "patterns": []
+      }
+    },
+    {
+      "issue_code": "ocr_garbled_text",
+      "label": "OCR 乱码",
+      "scope": "text",
+      "description": "文本存在乱码、异常字符、不可读片段或明显 OCR 误识别。",
+      "severity": "warning",
+      "status": "manual_only",
+      "examples": [],
+      "detector": {
+        "mode": "regex",
+        "patterns": [
+          "�|Ã|Â|ï¿½"
+        ]
+      }
+    },
+    {
+      "issue_code": "ghost_or_float_block",
+      "label": "ghost/[h] 噪声块",
+      "scope": "structure",
+      "description": "正文中残留 [h]、页码、孤立符号、版权符号等无语义块。",
+      "severity": "error",
+      "status": "manual_only",
+      "examples": [],
+      "detector": {
+        "mode": "regex",
+        "patterns": [
+          "^\\s*\\[h\\]\\s*$",
+          "^\\s*(?:\\.{1,3}|©|page\\s*\\d+|\\d{1,4})\\s*$"
+        ]
+      }
+    },
+    {
+      "issue_code": "truncated_text",
+      "label": "文本截断",
+      "scope": "text",
+      "description": "句子、括号、引号或引用明显未闭合，疑似被截断。",
+      "severity": "error",
+      "status": "manual_only",
+      "examples": [],
+      "detector": {
+        "mode": "regex",
+        "patterns": []
+      }
+    },
+    {
+      "issue_code": "placeholder_leak",
+      "label": "占位符/表格浮动残留",
+      "scope": "structure",
+      "description": "正文中残留 LaTeX 浮动参数、dummy table、未完成 placeholder 等结构噪声。",
+      "severity": "error",
+      "status": "manual_only",
+      "examples": [],
+      "detector": {
+        "mode": "regex",
+        "patterns": [
+          "\\[(?:h|t|b|p)\\]",
+          "Cell\\s+1\\s*&\\s*Cell\\s+2"
+        ]
+      }
+    },
+    {
+      "issue_code": "issue_c141804b",
+      "label": "表格错位不对应",
+      "scope": "table",
+      "description": "早期临时分类，保留用于兼容已审核记录；后续建议改用 table_row_group_misattribution 或 table_cell_alignment_error。",
+      "severity": "error",
+      "status": "manual_only",
+      "examples": [],
+      "detector": {
+        "mode": "regex",
+        "patterns": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "id": "chapter16_004",
+  "metadata": {
+    "chapter": "chapter16",
+    "section": "Chapter 16: CHANGES IN VARIANCE UNDER THE INFINITESIMAL MODEL",
+    "subsections": [
+      "Within- and Among-Family Variance Under the Infinitesimal Model"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter16_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "16.8a",
+      "16.8b"
+    ],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "derivation",
+      "content": "An alternative, instructive approach to the phenotypic regression argument leading to Equation 16.7a is to consider the regression of offspring breeding value ($ A_{o} $) on the breeding values of its parents ($ A_{f}, A_{m} $). Under the infinitesimal model, the joint distribution of parental and offspring breeding values before selection is multivariate normal (Bulmer 1971b), and Example 7 in Chapter 8 of LW shows that the distribution of breeding values in the offspring of parents with breeding values of $ A_{f} $ and $ A_{m} $ is given by the regression [[SEE_FORMULA:16.8a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "The residual e is the contribution due to segregation, which is normally distributed with a mean of zero and variance of $ \\sigma_{a}^{2}/2 $, half the current genic variance (Bulmer 1971b; Felsenstein 1981; Tallis 1987), see Example 16.2. Because $e$ is the residual of a regression, it is uncorrelated with both $A_f$ and $A_m$ (LW Chapters 3 and 8). Computing variances and assuming random mating (so that $A_f$ and $A_m$ are uncorrelated), [[SEE_FORMULA:16.8b]] where $ \\sigma_{A^*}^2(t) $ is the variance of the breeding values of the selected parents (with assortative mating, Equation 16.8b has an additional term, $ \\sigma(A_m^*, A_f^*)/2 $; see Equation 16.21b). Equation 16.8b shows that additive variance can be decomposed into an among-family component (half the additive genetic variance, $ \\sigma_{A^*}^2(t)/2 $), that measures the differences between the mean breeding values of families, and a within-family component (half the additive genetic variance, $ \\sigma_a^2/2 $) due to segregation that measures the variation within families. Equations 16.8a and 16.8b imply that under the infinitesimal model (and in an infinite population), the within-family additive variance remains constant. The change in the additive-genetic variance is thus entirely due to changes in the variance of the mean values of different families. Positive disequilibrium ($ d > 0 $) increases the among-family component while negative disequilibrium ($ d < 0 $) decreases it (Reeve 1953). For example, under directional selection, selected parents (being chosen for exceptional trait values) are more similar to each other than are two random individuals from the unselected base population."
+    },
+    {
+      "type": "discussion",
+      "content": "The within-family variance, $ \\sigma_a^2/2 $, deserves additional comment. This is often called the Mendelian sampling variance or the segregation variance. Notice that this variance (under the infinitesimal model) is not affected by selection, as we assume there is only negligible change in allele frequencies. As we will see shortly, however, it can be decreased by drift or inbreeding. Likewise, with a finite (but large) number of loci, $ \\sigma_a^2 $ can indeed be affected by selection, but the change per generation is typically very small (Chapter 24). An especially important implication of this constant within-family segregation variance is that it tends to largely restore a normal distribution of breeding values following selection. As Equation 16.8a demonstrates, the distribution of breeding values in the offspring is the sum of two components: the breeding values of the selected parents plus the contribution due to segregation. Even if the distribution of breeding values in the selected parents departs significantly from normality, segregation tends to reduce this departure for a Gaussian. Interestingly, Smith and Hammond (1987) found that the short-term deviation from normality is largest when selection is moderate, with deviations becoming smaller as selection increases. This can be seen from Equation 16.8a by writing $ A_o = A_{mp} + e $, where $ A_{mp} $ is the midparental breeding value and e is the contribution due to segregation (offspring receiving alternative alleles from heterozygous loci). As selection intensity increases, the variation due to $ A_{mp} $ decreases (as the selected individuals fall into an ever-decreasing range of phenotypes), and the majority the variation of $ A_o $ is accounted for by the normally distributed random variable, e, thus decreasing any departure from normality induced by the distribution of $ A_{mp} $."
+    },
+    {
+      "type": "discussion",
+      "content": "The derivation of Equations 16.7a, 16.7b, and 16.8a assumes that breeding values remain normally distributed. If selection changes the distribution of breeding values sufficiently away from normality, the parent-offspring regression may cease to be linear and homoscedastic. Consequences of departures from linearity were briefly discussed in Chapter 13 and are explored more fully in Chapter 24. The heteroscedasticity of the residuals implies that $ \\sigma_{e}^{2} $ in Equation 16.8a may depend on the actual parental values chosen, which greatly complicates matters. In all discussions that follow, we assume that these departures from normality can be ignored. Chapter 24 works at relaxing these assumptions."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 16.2. To show why the residual variance in Equation 16.8a depends on the genic variance, $ \\sigma_{a}^{2} $, we assume the presence of random mating and unlinked loci, and that allele- frequency changes from selection can be ignored. Focusing on a single locus, suppose a parent has a genotype of $ A_i A_j $, with allelic effects of $ a_i $ and $ a_j $, where i and j index random alleles. The expected contribution from this locus to the breeding value of its offspring is $ (a_i + a_j)/2 $, as each allele is transmitted with a probability of 0.5. The resulting deviation between the actual contribution and expected contribution when $ A_i $ is transmitted is $ a_i - (a_i + a_j)/2 = (a_i - a_j)/2 $. Likewise, this deviation is $ (a_j - a_i)/2 $ when $ A_j $ is transmitted. Hence, the offspring variance in the contribution to its breeding value for this particular locus is simply the average of the squares of these two deviations, or $$ \\frac{1}{2}\\left[\\frac{(a_{j}-a_{i})^{2}}{4}+\\frac{(a_{i}-a_{i})^{2}}{4}\\right]=\\frac{(a_{j}-a_{i})^{2}}{4} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Expanding the quadratic product and taking the expected value yields $$ E\\left[\\frac{(a_{j}-a_{i})^{2}}{4}\\right]=\\frac{E[a_{j}^{2}]}{4}+\\frac{E[a_{i}^{2}]}{4}-\\frac{E[a_{i}\\cdot a_{j}]}{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Under random mating, the alleles at a locus are independent, and the last term is simply $ E[a] = E[a] = 0 $, which yields a contribution to the segregation variance from a single locus in a single parent of $ E[a^2]/2 $. Summing over both parents gives the variance in the breeding value from this locus in their offspring as $ E[a^2] $, which is half the random-mating, linkage-equilibrium additive variance at this locus, $ \\sigma_a^2 = 2E[a^2] $ (Equation 16.1b). Further, because of independent assortment, the contributions from each unlinked loci from a parent are uncorrelated, and summing over all loci yields a residual variance of $ \\sigma_a^2/2 $."
+    },
+    {
+      "type": "discussion",
+      "content": "Conversely, if a parent is inbred (with f being the probability that both alleles at a randomly chosen locus are identical by descent, IBD), then the alleles $ A_{i} $ and $ A_{j} $ are no longer independent. With a probability of f they are IBD, and hence the same allele; otherwise they are independent alleles, yielding $$ E[a_{i}\\cdot a_{j}]=fE[a^{2}]+(1-f)E[a]\\cdot E[a]=fE[a^{2}] $$ and now $$ E\\left[\\frac{(a_{j}-a_{i})^{2}}{4}\\right]=\\frac{E[a^{2}]}{4}+\\frac{E[a^{2}]}{4}-f\\frac{E[a^{2}]}{2}=(1-f)\\frac{E[a^{2}]}{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Summing over all loci results in a segregation variance of $ \\sigma_a^2(1 - \\overline{f})/2 $, where $ \\overline{f} $ is the average of the inbreeding levels of the two parents."
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "id": "chapter29_009",
+  "metadata": {
+    "chapter": "chapter29",
+    "section": "Chapter 29: VARIANCE IN INDIVIDUAL FITNESS",
+    "subsections": [
+      "VARIANCE IN INDIVIDUAL FITNESS"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter29_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "29.5a",
+      "29.5b",
+      "29.6a",
+      "29.6b",
+      "29.6c"
+    ],
+    "table_references": [
+      "inline_2"
+    ],
+    "table_reference_keys": [
+      "chapter29:inline_2"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "How do we compare the amount of selection acting on different populations? At first glance, one might consider using the variance-standardized selection differential (the selection intensity), $ \\bar{\\imath} = S/\\sigma $, to compare the relative strengths of individual selection between populations (Chapter 13). The limitation with $ \\bar{\\imath} $ as a measure of overall selection on populations is that it is character specific. Hence, $ \\bar{\\imath} $ may be appropriate when comparing the strength of selection on a particular character (one could also use mean-standardization, $ S/\\mu $, instead; Chapters 13 and 30), but it is inappropriate for comparing the overall strength of selection in a population. This is because two populations may have the same $ \\bar{\\imath} $ value for a given character, but if that character is tightly correlated with fitness in one population and only weakly correlated in the other, selection will be much stronger in the latter population."
+    },
+    {
+      "type": "discussion",
+      "content": "Another issue with using $ \\bar{\\tau} $ is that considerable selection can occur without changing the mean (e.g., stabilizing selection). Haldane (1954) and Van Valen (1965) proposed measures of the intensity of selection, which is suitable for stabilizing selection. Both contrast the mean fitness, $ \\overline{W} $, with $ W_o $, the fitness of the optimal phenotype (usually estimated as the value of the mode of a stabilizing selection function, e.g., $ \\theta $ in Equation 28.3). Haldane suggested $$ I_{H}=\\ln(W_{o})-\\ln(\\overline{W}) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "[h]"
+    },
+    {
+      "type": "discussion",
+      "content": "[h] while Van Valen proposed $$ \\begin{align*}I_{VV}={W_o-\\overline{W}\\over W_o}=1-\\exp(-I_H)\\end{align*} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "For small values, note that $ I_{VV} \\simeq I_H $ (as $ e^{-x} \\simeq 1 - x $ for small $ x $). These measures, however, also have limitations as comparative measures of the strength of selection. First, the value of $ W_o $ when selection is strictly directional is unclear, and second, like $ \\bar{\\imath} $, these metrics are also trait-specific."
+    },
+    {
+      "type": "derivation",
+      "content": "A much cleaner measure (which requires no assumptions about which traits are under selection or on the nature of that selection) is I, the opportunity for selection, which is defined as the variance in relative fitness [[SEE_FORMULA:29.5a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "This measure was introduced by Crow (1958; reviewed in 1989), who referred to it as the index of total selection, and was independently developed by O'Donald (1970). I is estimated by [[SEE_FORMULA:29.5b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Crow noted that if fitness is perfectly heritable ($ h_W^2 = 1 $), then $ I = \\Delta \\overline{w} $, namely, the expected selection response in relative fitness. This follows from the Robertson-Price identity (Equation 6.10), $ S = \\sigma(z, w) $. When $ z = W $, then (applying the breeder's equation with $ h_W^2 = 1 $) we have $$ \\begin{align*}R_W=h_WS_W=S_W=\\sigma(W,w)=\\overline{W}\\sigma(W/\\overline{W},w)=\\overline{W}\\sigma_w^2\\end{align*} $$ implying that $ R_W / \\overline{W} = \\Delta \\overline{w} = \\sigma_w^2 = I $. Following Arnold and Wade (1984a, 1984b), I is called the opportunity for selection, as any variation in individual fitness represents an opportunity for a within-generation change in a trait. The opportunity for selection provides an upper bound on $ \\bar{\\nu} $. This follows by using: (i) the definition of a correlation, $ \\rho $, (ii) the Price-Robertson identity, $ S = \\sigma(z, w) $, and (iii) the fact that $ |\\rho| \\leq 1 $, to yield [[SEE_FORMULA:29.6a]] implying that [[SEE_FORMULA:29.6b]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, the most that the mean of any trait can be shifted within a generation is $ \\sqrt{I} $ phenotypic standard deviations."
+    },
+    {
+      "type": "derivation",
+      "content": "The usefulness of I as a bound of $ \\bar{i} $ depends on the correlation between relative fitness and the character being considered. From Equation 29.6a, [[SEE_FORMULA:29.6c]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Figure 29.2 shows scatterplots of relative fitness versus two characters $ (z_{1} $ and $ z_{2}) $ measured in the same set of individuals. The marginal distributions of fitness are identical for both characters (because the same set of individuals, and hence the same set of fitnesses, were measured for each trait), and thus both have the same opportunity for selection. The association between relative fitness and $ z_{1} $ is fairly strong, while there is no relationship between relative fitness and $ z_{2} $, which means that $ z_{1} $ realizes much of the opportunity for change, while $ z_{2} $ realizes none of it."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 29.5. To estimate I for the bullfrog data used in Example 29.2, we first compute lifetime relative fitnesses, $ w = w_1 \\cdot w_2 $, which yields values of 1.162, 1.020, 0, 0.652, and 2.160 for the five chosen males. Hence, $$ \\overline{w^{2}}=\\left(1/5\\right)\\left[1.162^{2}+1.020^{2}+0^{2}+0.652^{2}+2.160^{2}\\right]=1.496 $$ giving $$ \\widehat{I}=\\frac{5}{4}(1.496-1)=0.62 $$ From Equation 29.6b, the most that selection can change the mean of any character within a generation is $ \\sqrt{I} \\simeq 0.79 $ standard deviations. The observed change in male body size (in standard deviations) from Example 29.2 is $ (138.9 - 140)/\\sqrt{59.5} = -0.143 $, which is less than one-fifth of the maximum absolute change of 0.79. Because the eyespot frequencies in the laboratory sample presumably represent the frequencies before selection, these are the ones we use, which yields $$ \\overline{w^{2}}=\\frac{1}{237}\\left[\\left(1.1930^{2}\\cdot124\\right)+\\left(0.8336^{2}\\cdot67\\right)+\\left(0.7844^{2}\\cdot34\\right)+\\left(0.6541^{2}\\cdot10\\right)\\right]\\simeq1.0475 $$ and hence $$ \\widehat{I}=\\frac{237}{236}\\left(1.0475-1^{2}\\right)\\simeq0.0477 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "This is an underestimate of I, as to properly estimate I the distribution of individual fitnesses, rather than mean fitness for each phenotypic class (class fitnesses), is required. The Dowdeswell data only allow us to estimate the between-group variance in fitness (the variance in average fitness for the different eyespot classes) and neglects the additional within-group variance (the variance in fitness among individuals with the same number of eyespots)."
+    }
+  ]
+}

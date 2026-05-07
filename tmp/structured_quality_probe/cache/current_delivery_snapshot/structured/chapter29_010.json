@@ -1,0 +1,36 @@
+{
+  "id": "chapter29_010",
+  "metadata": {
+    "chapter": "chapter29",
+    "section": "Chapter 29: Partitioning I Across Episodes of Selection",
+    "subsections": [
+      "Partitioning I Across Episodes of Selection"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter29_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "29.7a",
+      "29.7b",
+      "29.8"
+    ],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "derivation",
+      "content": "The total opportunity for selection can be partitioned into opportunities associated with each episode. Such a partitioning allows for comparisons of the relative strength of selection across episodes, as well as bounding the change in means and variances due to selection during any particular episode. Denote the opportunity of selection associated with the jth episode by $ I_{j} $. By analogy with the definition of I, Arnold and Wade (1984a) suggested that the appropriate definition is the variance in the relative fitnesses of the jth fitness component. [[SEE_FORMULA:29.7a]] which is estimated by [[SEE_FORMULA:29.7b]] where $ p_{j}(r) $ is the fitness-weighted frequency of individual r after j episodes of selection (Equation 29.2a). Arnold and Wade showed that the partition for I over k episodes of selection is given by [[SEE_FORMULA:29.8]] where the remainder term, R, represents a complex sum of covariances between fitness components (see Arnold and Wade 1984a for details). Webster et al. (1995) examined partitions of I involving both multiplicative and additive components of fitness. The latter can arise when fitness is influenced through two (or more) distinct paths, for example, mating success through both bonded-pair and extra-pair matings (see Whittingham and Dunn 2005 and Webster et al. 2007 for applications of the Webster approach)."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 29.7. Compute the estimates of $ I_1 $ and $ I_2 $ using the data from Example 29.2. Using the relative fitnesses given in the table with $ p_0(r) = 1/5 $ yields $$ \\overline{w_{1}^{2}}=\\frac{1}{5}\\left(0.714^{2}+0.714^{2}+0^{2}+1.429^{2}+2.143^{2}\\right)\\simeq1.531 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Likewise, $$ \\begin{aligned}\\overline{w_{2}^{2}}=\\sum_{r=1}^{5}w_{2}^{2}(r)p_{1}(r)=\\left(1.628^{2}\\cdot0.143\\right)+0+\\left(1.429^{2}\\cdot0.143\\right)\\\\+\\left(0.456^{2}\\cdot0.286\\right)+\\left(1.008^{2}\\cdot0.429\\right)\\simeq1.165\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Hence, $$ \\widehat{I}_{1}=\\frac{5}{4}\\left(1.531-1\\right)\\simeq0.664\\quad and\\quad\\widehat{I}_{2}=\\frac{5}{4}\\left(1.165-1\\right)\\simeq0.206 $$ Because $ \\widehat{I} = 0.62 $ (Example 29.5), $ \\widehat{I}_1 + \\widehat{I}_2 = 0.87 \\neq \\widehat{I} $. From Equation 29.8, $$ \\widehat{R}=0.62-0.87=-0.25 $$ which reflects the strong negative covariance within individuals between the first and second fitness components (in this dataset, individuals with high $ w_{1} $ tend to have a low $ w_{2} $, and vice versa)."
+    }
+  ]
+}

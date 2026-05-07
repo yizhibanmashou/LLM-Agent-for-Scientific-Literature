@@ -1,0 +1,74 @@
+{
+  "id": "chapter28_030",
+  "metadata": {
+    "chapter": "chapter28",
+    "section": "Chapter 28: HCA Results",
+    "subsections": [
+      "HCA Results"
+    ],
+    "source_file": "data\\paddle_output\\chapter28_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "28.40",
+      "28.41a",
+      "28.41b",
+      "28.42",
+      "28.43a",
+      "28.43b",
+      "28.43c"
+    ],
+    "table_references": [],
+    "structured_repair": {
+      "version": "source_inline_math_v1",
+      "actions": {
+        "replace_from_source": 8
+      }
+    }
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "An encouraging feature of the single-trait house-of-cards analysis was its relative robustness to the underlying genetic model. Provided that Equation 28.17 (or its diallelic counterpart; Equation 28.11e) hold, the equilibrium additive-genetic variance (Equation 28.18a) is independent of many of the underlying genetic details, such as the number of alleles per locus. Unfortunately, this robustness vanishes when pleiotropy is introduced (Turelli 1985, 1986). Even more troubling, and unlike the Gaussian result just obtained (Equation 28.38a), selection acting on pleiotropically connected but uncorrelated traits influences the additive variance of a focal trait under the HCA (Turelli 1985, 1986, 1988; Wagner 1989; Slaktin and Frank 1990)."
+    },
+    {
+      "type": "derivation",
+      "content": "Turelli (1985) examined the simplest case of the HCA for a pleiotropic continuum-of-alleles model: two traits that are mutationally and selectively uncorrelated, $ (V_{m})_{12}=0 $ and $ \\rho_{s}=0 $ (defined by Equation 28.39b). He found that the bivariate condition for the HCA approximation to be reasonable was more lenient than in the univariate condition. For two (uncorrelated) traits, the condition for locus i becomes [[SEE_FORMULA:28.40]] which (unlike the Gaussian approximation) can be satisfied even when one of the loci does not itself satisfy the univariate HCA condition (Equation 28.17). Under the bivariate HCA, the equilibrium additive variance in trait 1 becomes [[SEE_FORMULA:28.41a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Even if trait 1 is mutationally and selectively uncorrelated to trait 2, it is still impacted by selection on the latter when $ \\sigma_{\\alpha_{2,i}}^{2} > 0 $, namely, locus i experiences pleiotropic mutations influencing trait 2. Recalling Equation 28.30d, we see that $ \\beta_{i}^{2} $ is the ratio of the average selection coefficients for the two traits associated with a mutation at locus i (Turelli 1985), as [[SEE_FORMULA:28.41b]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Under the HCA setting (wherein selection dominates mutation), both traits are near their optimum ( $ \\overline{z} \\simeq \\theta $), meaning that a change in any direction is likely deleterious. Thus, any new mutations influencing trait 1 will also change trait 2, further lowering fitness. The stronger selection is on trait 2, the greater the additional reduction in fitness for a mutation that also affects trait 1. When most of the selection on new mutations at locus i is on trait 1 ( $ \\beta_i \\ll 1 $), Equation 28.41a is close to the single-trait HCA value (Equation 28.18a). Conversely, when there is much stronger selection on trait 2 ( $ \\beta_i \\gg 1 $), the amount of variation maintained for trait 1 is considerably below its single-trait HCA prediction. If a large number of traits are under multivariate Gaussian selection, one can easily construct a single synthetic trait (a linear combination of the remaining traits) to reduce this to a two-trait (focal plus synthetic) model (Example 28.10). Hence, for most traits we expect selection on the “other” trait to be larger, and likely considerably so, resulting in an overprediction of trait 1’s genetic variance using the univariate HCA result (Equation 28.18a)."
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, because the HCA assumes that selection at a locus is much stronger than mutation, a consequence of this additional selection on the nonfocal trait is to make the HCA approximation more plausible. Thus, pleiotropy expands the domain of applicability of the HCA while shrinking that of the Gaussian approximation (Equation 28.38b)."
+    },
+    {
+      "type": "derivation",
+      "content": "In addition to generating a dependency on hidden traits, pleiotropy has another, equally insidious, feature. Under single-trait HCA conditions, the equilibrium variance does not depend on the genetic details beyond the total mutation rate (with diallelic, trialellelic, and continuum-of-alleles models all giving the same results). However, Turelli (1985) found that a five-allele model (the bivariate extension of his univariate trialellelic model, now following five alleles, $ A_{0,0} $ and $ A_{i,j} $ for $ i,j=\\pm1 $, where allele $ A_{ij} $ has effects of $ i\\cdot a_{1} $ and $ j\\cdot a_{2} $ on traits 1 and 2, respectively) yielded [[SEE_FORMULA:28.42]] which is a different result from the continuum-of-alleles model (Equation 28.41a). Thus, additional genetic details (such as the number of alleles) seem to matter under pleiotropy."
+    },
+    {
+      "type": "discussion",
+      "content": "In the univariate case, the qualitative difference in the additive variance under continuum-of-alleles (Kimura-Lande-Fleming) versus diallelic (Latter-Bulmer) models was due to the relative strengths of mutation and selection, not the number of alleles. Wagner (1989) suggested that something similar is behind the difference between Equations 28.41a and 28.42, with the amount of pleiotropic constraints among the effects of new mutations, rather than the number of alleles, accounting for the difference in equilibrium values. Turelli's five-allele model is highly constrained due to the limited number of alleles, while this is not the case for the continuum-of-alleles result. Wagner considered a model of constraints wherein the effect on trait $j$ from a mutation of effect $\\alpha_{i}$ at an underlying generator locus $i$ is $b_{ij} \\alpha_{i}$ (where the $b_{ij}$ are constants). This structure implies that all of the mutational effects from a given locus are completely correlated, with the two-trait version recovering Turelli's five-allele result. Wagner suggested that differences in the amount of constraint on the pleiotropic nature of new mutations accounts for the difference between Equations 28.41a (little constraint) and 28.42 (significant constraint). Zhang and Hill (2003) showed this to be the case, recovering the Turelli five-allele result from a two-trait, continuum-of-alleles model when the correlation between the pleiotropic effects of new mutations is high."
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, as in the univariate case, the radical differences in behavior between the Gaussian and HCA approximations in the presence of pleiotropy are the result of differences in the strength of selection relative to mutation, not the underlying mutational model. Slatkin and Frank (1990) verified this by considering a nine-allele model, whose mutational structure is given by the following lattice of trait values. The center allele (0,0) is at the bivariate optimum, and this allele is allowed to have a nonpleiotropic mutation for either trait, e.g., $ (-a,0) $, $ (a,0) $, $ (0,-a) $, or $ (0,a) $; or to jointly mutate for both traits in four possible directions, $ (-a,-a) $, $ (-a,a) $, $ (a,-a) $, $ (a,a) $. This model offers a bit more granularity than Turelli's five-allele model. Slatkin and Frank found that, depending on the relative strengths of selection and mutation, this model can generate either the Gaussian behavior (weak to no impact from selection on uncorrelated traits) or the HCA behavior (strong impact from uncorrelated selection)."
+    },
+    {
+      "type": "derivation",
+      "content": "Example 28.10. Under the fitness function given by Equation 28.36a, Turelli (1985) and Zhang and Hill (2003) showed that if the population is at (or very close to) its optimal value $ (\\theta = 0) $, then the initial selection coefficient against a new mutation at locus i with effects vector $ \\alpha^T = (\\alpha_{1,i}, \\alpha_{2,i}, \\cdots, \\alpha_{k,i}) $ is approximately given by the quadratic product [[SEE_FORMULA:28.43a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "This is the multivariate equivalent of Equation 28.4c. When $ V_s $ is diagonal (uncorrelated selection; Example 28.9), this reduces to [[SEE_FORMULA:28.43b]] namely, the sum of the average selection coefficients of a new mutation associated with each of the k traits. More generally, expanding the quadratic product given by Equation 28.43a yields $$ s_{i}\\simeq\\sum_{j=1}^{k}\\sum_{\\ell=1}^{k}\\alpha_{j,i}\\cdot V_{j,\\ell}\\cdot\\alpha_{\\ell,i} $$ where $ V_{j,\\ell} $ is the $ j\\ell $th element of $ V_{s}^{-1} $. Taking expectations yields [[SEE_FORMULA:28.43c]]"
+    },
+    {
+      "type": "proposition",
+      "content": "Zhang and Hill (2003) noted that if all $n$ traits impact locus $i$ with roughly similar selection coefficients ($E[s_{j,i}] \\simeq s_i$), then from the central limit theorem, the distribution of the $s_i$ approaches a normal. Further, the coefficient of variation of this distribution goes to zero at an approximate rate of $\\sqrt{(3\\kappa_{4,s} - 1)/n}$, where $\\kappa_{4,s} = E[(s_i - \\bar{s}_i)^4] / \\{3(\\sigma^2(s_i)^2\\} \\text{ is the scaled kurotsis of } s_i$. Thus, for a sufficiently large number of independent traits under selection, $s_i$ is approximately a constant plus a small amount of normally distributed error."
+    }
+  ]
+}

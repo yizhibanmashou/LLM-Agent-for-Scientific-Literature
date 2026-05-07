@@ -1,0 +1,45 @@
+{
+  "id": "chapter10_033",
+  "metadata": {
+    "chapter": "chapter10",
+    "section": "Chapter 10: CONNECTING THE PARAMETERS OF ADAPTIVE EVOLUTION",
+    "subsections": [
+      "CONNECTING THE PARAMETERS OF ADAPTIVE EVOLUTION"
+    ],
+    "source_file": "data\\paddle_output\\chapter10_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "10.25a",
+      "10.25b",
+      "10.25c",
+      "10.25d"
+    ],
+    "table_references": [
+      "10.2"
+    ],
+    "structured_repair": {
+      "version": "source_inline_math_v1",
+      "actions": {
+        "replace_from_source": 1
+      }
+    }
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "[[TABLE:10.2]]. As summarized in Table 10.2, a number of different parameters of adaptive evolution have been introduced in this chapter (as well as in Chapter 8), along with various machinery for estimating them. We have examined the connections between some of these parameters (e.g., Equations 10.16a–10.16e). However, we have yet to develop a connection between the two key parameters: the scaled strength of selection, $ \\gamma = 2N_e s $, at a site (Poisson random field models) and the ratio of substitution rates, $ \\omega = K_a / K_s $ (codon models)."
+    },
+    {
+      "type": "discussion",
+      "content": "We can connect these parameters as follows. Assume that silent sites are taken as the neutral benchmark, so that (as a first approximation) their per-site mutation rate, $ \\mu_{s} $ is also"
+    },
+    {
+      "type": "derivation",
+      "content": "$ \\alpha $ The fraction of substitutions that are adaptive $ \\gamma $ The scaled strength of selection, $ 2N_{e,s} $ $ \\mu $ The total per-site mutation rate $ \\mu_{s} $ The effectively neutral per-site mutation rate at silent sites (usually assume $ \\mu_{s} \\simeq \\mu $) $ \\mu_{b} $ The adaptive (beneficial) mutation rate $ p_{b} $ The fraction of new mutations at a site that are advantageous, $ \\mu_{b} = p_{b}\\mu $ $ \\lambda $ The rate of adaptive fixations, $ \\lambda = 2\\gamma\\mu_{b} $ $ f = p_{0} $ The fraction of neutral mutations $ 1 - f $ The amount of constraint on a site (relative to some standard, typically silent sites) $ \\omega $ The ratio of the replacement- to silent-site substitution rates $ \\omega = f + 2\\gamma p_{b} = \\frac{2\\gamma p_{b}}{\\alpha} $ (Equations 10.25a and 10.25c) $ \\gamma = \\frac{\\omega - f}{2p_{b}} = \\frac{\\omega - p_{0}}{2p_{b}} $ (Equation 10.25b) $ \\alpha = \\frac{\\lambda}{\\lambda + \\mu p_{0}} = \\frac{2\\gamma}{2\\gamma + p_{0}/p_{b}} = \\frac{2\\gamma p_{b}}{\\omega} $ (Equations 10.16b, 10.16c, and 10.25c) the actual mutation rate, $ \\mu $. Two types of mutations contribute to the rate of replacement substitutions: a fraction $ f $ (notationally interchangeable with $ p_0 $, as $ f = p_0 $) that is effectively neutral and a much smaller (perhaps zero) fraction $ p_b $ that are favored. Effectively neutral substitutions accrue at a rate of $ f\\mu_s $, while (Equation 8.24a) beneficial substitutions accrue at rate $ \\lambda = (2N\\mu_b)(2sN_e/N) = 2(2N_e)s\\mu_b = 2\\gamma p_b\\mu_s $. Hence [[SEE_FORMULA:10.25a]] so that very strong, or frequent, selection $ (\\gamma p_b > 1) $ is required for $ \\omega > 1 $. Similarly, we can rearrange this equation to solve for $ \\gamma $, [[SEE_FORMULA:10.25b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "If $f = 0.5$ and $p_b = 0.01$, so that half of the mutations are effectively neutral and 1 [[SEE_FORMULA:10.25c]] which can alternately be expressed as [[SEE_FORMULA:10.25d]]"
+    }
+  ]
+}

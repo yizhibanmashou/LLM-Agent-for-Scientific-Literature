@@ -1,0 +1,41 @@
+{
+  "id": "chapter28_042",
+  "metadata": {
+    "chapter": "chapter28",
+    "section": "Chapter 28: HOW WELL DO THE MODELS FIT THE DATA?",
+    "subsections": [
+      "Strength of Selection: Persistence Times of New Mutants"
+    ],
+    "source_file": "data\\paddle_output\\chapter28_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "28.53a",
+      "28.53b"
+    ],
+    "table_references": [],
+    "structured_repair": {
+      "version": "source_inline_math_v1",
+      "actions": {
+        "replace_from_source": 4
+      }
+    }
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "One measure of the strength of selection on the breeding value of a trait is offered by the ratio of the additive-genetic to mutational variances, $ \\widetilde{\\sigma}_{A}^{2}/\\sigma_{m}^{2} $. As the equilibrium is reached when the variation introduced by mutation, $ \\sigma_{m}^{2} $, is balanced by its removal, this ratio is a measure of the strength of selection against new mutations (whatever the cause, be it direct selection on the trait and/or pleiotropic fitness effects). This ratio also corresponds to the average number of individuals affected by a mutation before its removal (Li and Nei 1972), which Crow (1979, 1993) called the persistence time (as 1/s is the time scale for selective removal). The weaker selection, the slower the removal and the longer the persistence time of a new mutation."
+    },
+    {
+      "type": "derivation",
+      "content": "More formally, we can use this ratio to assign approximate selection coefficients. Under the deleterious pleiotropy model, Equation 28.45b gives this ratio as $ \\tilde{\\sigma}_A^2/\\sigma_m^2 = 1/s $ when mutations have a fixed selective value. When s varies, it is replaced by their harmonic mean (Equation 28.51). Conversely, if the trait is under direct stabilizing selection, we can use the stochastic house of cards value for $ \\tilde{\\sigma}_A^2 $ (Equation 28.30a) to rewrite the persistence time in terms of s as [[SEE_FORMULA:28.53a]] with the last step, $ \\sigma_{\\alpha}^{2}/(2V_{s}) = s $, following from Equation 28.30d. Hence [[SEE_FORMULA:28.53b]]"
+    },
+    {
+      "type": "proposition",
+      "content": "Thus, under both pleiotropy and direct selection, it is often the case that $ \\widetilde{\\sigma}_{A}^{2}/\\sigma_{m}^{2} \\simeq 1/s $. Akin to the use Robertson's secondary theorem of natural selection (Chapter 6 and 20) to examine the nature of selection acting directly on the breeding value of a trait, the persistence time measures the amount of selection (either directly or through pleiotropic effects) acting on the loci that underlie our focal trait."
+    },
+    {
+      "type": "discussion",
+      "content": "Large values of this ratio (>1000) are more consistent with drift, smaller values with deleterious mutation-selection balance, be it pleiotropy or direct selection (Barton 1990). In a survey of 1 different organisms, Houle et al. (1996) found an average value of $ \\widetilde{\\sigma}_{A}^{2}/\\sigma_{m}^{2}\\simeq50 $ for life history traits and $ \\simeq100 $ for morphological traits, supporting some version of deleterious mutation-selection balance, with stronger selection (shorter persistence times) on life-history than on morphological traits. Houle et al. noted that these estimates raise a dilemma, in that if most of the genetic variation is associated with deleterious pleiotropic effects, it may have little bearing on adaptive evolution, which may largely be due to rare mutations with only weak pleiotropic side effects."
+    }
+  ]
+}

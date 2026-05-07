@@ -1,0 +1,77 @@
+{
+  "id": "chapter20_008",
+  "metadata": {
+    "chapter": "chapter20",
+    "section": "Chapter 20: MODIFYING THE BREEDER'S EQUATION FOR NATURAL POPULATIONS",
+    "subsections": [
+      "Complications in the Absence of Environmental Change"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter20_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "20.10a",
+      "20.10b",
+      "20.11a",
+      "20.11b",
+      "20.12a",
+      "20.12b",
+      "20.13a",
+      "20.13b",
+      "20.14",
+      "20.15a",
+      "20.15b",
+      "20.15c"
+    ],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "derivation",
+      "content": "If there are no genotype-environment correlations $ [\\sigma(E,A)=0] $, then [[SEE_FORMULA:20.10a]] and [[SEE_FORMULA:20.10b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "It is worth noting the connection between the expression for $S$ from Equation 20.10a (based on following a single focal trait) and Equation 20.1a, where the selection differential on a focal trait is expressed in terms of direct selection on that trait ($\\beta_1$) plus indirect selection from a correlated trait under selection ($\\beta_2 \\neq 0$). If we equating the two equations, we obtain [[SEE_FORMULA:20.11a]] where trait 2 (with a value of $ z_2 $) is the unmeasured correlated trait and trait 1 (with a value of $ z_1 = z $) is the focal trait. In the notation of Equation 20.1a, $ \\sigma^2(z_1)\\beta_1 = \\sigma_z^2\\beta_z $, giving [[SEE_FORMULA:20.11b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Writing $ z_{1}=A+E $, we have [[SEE_FORMULA:20.12a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "If we match the terms in Equations 20.11b and 20.12a, [[SEE_FORMULA:20.12b]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Under the formulation for $S$ given by Equation 20.9a, selection on any phenotypically correlated traits appears as a nonzero value of $\\beta_A$ (if the phenotypic correlations are, at least in part, due to correlated breeding values) and/or $\\beta_E$ (if the correlations are due, at least in part, to shared environmental values). Turning to the response, Equation 20.9b is much more general than the single correlated-trait expression given by Equation 20.1b, as $\\beta_A$ and $\\beta_E$ encompass all of the effects of any genetically and/or phenotypically correlated traits."
+    },
+    {
+      "type": "derivation",
+      "content": "Further insight into the generalized response when no genotype-environment correlations are present follows if we first rearrange Equation 20.10a to isolate $ \\sigma_z^2 \\beta_z $ and then multiply both sides of Equation 20.10a by $ h^2 $, which yields [[SEE_FORMULA:20.13a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Substituting this expression for $ \\sigma_{A}^{2}\\beta_{z} $ into Equation 20.10b yields [[SEE_FORMULA:20.13b]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Any extra (positive) selection on additive genetic values, $ \\beta_A > 0 $ (due to selection on genetically correlated traits), inflates the selection response over the value predicted by the breeder's equation, while extra (positive) selection on environmental values ($ \\beta_E > 0 $) decreases the response. The response is similarly decreased when $ \\beta_A < 0 $."
+    },
+    {
+      "type": "derivation",
+      "content": "Finally, following this same approach, Equations 20.9a and 20.9b yield a more general response (when $ \\sigma(E, A) \\neq 0 $) of [[SEE_FORMULA:20.14]]"
+    },
+    {
+      "type": "derivation",
+      "content": "These expressions can be further simplified if selection acts only on the phenotype of the character being considered. In this case, $ \\beta_A = \\beta_E = 0 $, and Equation 20.9a reduces to $ S = \\sigma_z^2 \\beta_z $, implying that $ \\beta_z = S / \\sigma_z^2 $. Substituting these values into Equation 20.9b gives the response as [[SEE_FORMULA:20.15a]] which (as expected) reduces to the breeder's equation when there is no genotype-environment correlation. As discussed in Chapter 15, unless the correlation between E and A is perfect, the component of response from $ \\sigma(E, A) $ is transient, decaying to zero once selection stops."
+    },
+    {
+      "type": "derivation",
+      "content": "Finally, these expressions provide insight into a key difference between artificial and natural selection. Under artificial selection, it is generally assumed that individual fitness is entirely based on the phenotype of the character of interest, specifically those phenotypes chosen by the breeder. In this case, the partial regression coefficients of fitness on genotype and environmental values are zero, as the phenotype entirely determines fitness. In natural populations, however, we do not have this luxury, and another possibility is that there is no natural selection on the character of interest (i.e., its phenotype, by itself, has no effect on fitness, meaning that $ \\beta_z = 0 $), but rather that selection occurs on characters correlated with the one we are following. If these traits under selection are only connected to the focal trait through its breeding value (i.e., there is no environmental correlation between characters), then $ \\beta_A \\neq 0 $ while $ \\beta_z = \\beta_E = 0 $. In this case, using Equation 20.9a to express $ \\beta_A $ in terms of S returns the response as [[SEE_FORMULA:20.15b]] which reduces to R = S in the absence of a genotype-environment correlation for the focal trait. The reason for this strong response is that (in this extreme setting) all of the selection is on the breeding value of the trait. With selection on phenotypes (the breeder's equation), only a fraction $ (h^{2}) $ translates into selection on breeding values."
+    },
+    {
+      "type": "derivation",
+      "content": "A final possibility is that the only correlation between features influencing fitness and our focal character is through shared environmental effects, giving $ \\beta_E \\neq 0 $, while $ \\beta_A = \\beta_z = 0 $. In this case, using Equation 20.9b, the response becomes [[SEE_FORMULA:20.15c]] which equals zero unless a genotype-environment correlation exists. Again, in the absence of a perfect correlation between E and A, this response is transient (Chapter 15)."
+    }
+  ]
+}

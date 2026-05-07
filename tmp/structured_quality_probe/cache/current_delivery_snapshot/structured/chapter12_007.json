@@ -1,0 +1,46 @@
+{
+  "id": "chapter12_007",
+  "metadata": {
+    "chapter": "chapter12",
+    "section": "Chapter 12: Estimating the Among-group Variance",
+    "subsections": [
+      "Lande's Constant Variance Test, $ F_{CV} $"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter12_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "12.9a",
+      "12.9b",
+      "12.9c",
+      "12.9d",
+      "12.9e"
+    ],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "derivation",
+      "content": "Is an observed divergence over a modest amount of time significantly different than that expected by drift? For the case in which one has only a single estimate of the among-population divergence, Lande (1977b) suggested the statistic [[SEE_FORMULA:12.9a]] as a test for neutrality, where $ V_A(0) $ is an estimate of the base-population additive variance, and $ t $ is the number of generations of divergence among the replications. This is the $ \\text{constant} $ $ \\text{variance} $ version of $ \\text{Lande's} $ test, as it assumes that the additive variance remains unchanged over the time period being followed (Turelli et al. 1988). As noted by $ \\text{Lande} $, under approximate assumptions, his test statistic $ F_{CV} $ follows an $ F $ distribution (LW Appendix 5), which can be shown as follows. If we assume the trait is normally distributed, then so is the sample mean $ \\overline{z}_i \\sim N[\\mu(0), \\sigma_B^2(t)] $, where we have assumed that terms associated with the sampling variance of the mean are small enough to be ignored (i.e., $ \\sigma_B^2 \\gg \\sigma_z^2/n $). With $ L $ independent lines drawn from a common population at the same time (i.e., a star phylogeny), Equation 12.5a yields [[SEE_FORMULA:12.9b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "If we ignore the (usually) small founder effect, Equation 12.1b returns [[SEE_FORMULA:12.9c]] and hence [[SEE_FORMULA:12.9d]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Assuming that $ \\mathrm{Var}_{A}(0) $ is a good estimate of $ \\sigma_{A}^{2}(0) $, substitution of Equation 12.9d into Equation 12.9a yields [[SEE_FORMULA:12.9e]]"
+    },
+    {
+      "type": "definition",
+      "content": "The last step follows from the definition of an $F$ distribution (LW Appendix 5). Hence, Lande's $F_{CV}$ statistic follows an $F$ distribution with $L - 1$ numerator and infinite denominator degrees of freedom. More generally, because $\\sigma_A^2(0)$ is estimated by $\\operatorname{Var}_A(0)$, the denominator degrees of freedom are those associated with this estimate (e.g., $F_{CV} \\sim F_{L-1,df}$, where $df$ is the degrees of freedom associated with the estimate of $\\sigma_A^2[0]$). As noted in the previous section, Lande's original test statistic can be improved by using Equation 12.8e to estimate $V_B(t)$."
+    },
+    {
+      "type": "discussion",
+      "content": "A couple of approximations were required to reach Equation 12.9e. One check of their validity is that if the distribution of some summary statistic $ x $ is given by a scaled- $ \\chi^2 $, with $ x \\sim \\sigma^2 \\chi_n^2 / n $, then the variance of $ x $ should equal $ 2\\sigma^2 / n $ (as $ \\sigma^2(\\chi_n^2) = 2n $; LW Equation A5.15b). Hence, the numerator of Equation 12.9a should have a variance approximately equal to $ 2[2ft\\sigma_A^2(0)]^2 / (L - 1) $. Ignoring the added contribution from sampling error, note that this last result matches Equation 12.3 when $ N_{fo} $ is large and $ \\sigma_f^2(t) $ is small. Thus, Lande's approach should be restricted to lines with at least moderate effective population size. Moreover, as we will see below, all of the preceding formulae for $ \\sigma_B^2 $ become questionable for $ t > N_e $ because they ignore the contribution from new mutations. Hence, Lande's $ F_{CV} $ test is best thought of as one for short-term divergence, such as would be seen in a laboratory experiment or, at most, a modest amount of time in a set of natural populations. $$ F_{CV,1}=\\frac{6.62}{150\\cdot0.88/1000}=50.15,\\quad and\\quad F_{CV,2}=\\frac{4.37}{150\\cdot0.77/1000}=37.84 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Given that $ \\Pr(F_{4,\\infty} > 4.6) = 0.001 $, both values are highly significant. Thus, the hypothesis that the observed line divergence is solely attributable to random genetic drift can be rejected confidently. More likely, the different thermal conditions resulted in selection for different wing lengths."
+    }
+  ]
+}

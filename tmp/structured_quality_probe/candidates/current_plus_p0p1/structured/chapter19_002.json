@@ -1,0 +1,36 @@
+{
+  "id": "chapter19_002",
+  "metadata": {
+    "chapter": "chapter19",
+    "section": "MIXED-MODEL VERSUS LEAST-SQUARES ANALYSIS",
+    "subsections": [
+      "MIXED-MODEL VERSUS LEAST-SQUARES ANALYSIS"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter19_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Figure 19.1 illustrates the result of a mixed-model analysis of selection response. Note that instead of measuring response from the observed phenotypic means (the LS approach), response is measured from the estimated mean breeding values obtained from BLUP. Further, instead of estimating a realized heritability, a mixed-model (REML) analysis estimates the"
+    },
+    {
+      "type": "discussion",
+      "content": "[h] additive genetic variance in the base population."
+    },
+    {
+      "type": "discussion",
+      "content": "Mixed-models readily allow records to be adjusted for any number of fixed effects (differences between the expected value of individuals from different categories). For example, one might correct for trait differences between sexes, trait differences between individuals from different litter sizes, age effects, known environmental factors, etc. Such adjustments result in a more accurate prediction of an individual's genetic value, and thus a more accurate estimate of the population's genetic response. Further, a properly formatted MM analysis can separate phenotypic changes into genetic and environmental components without using a control population. In contrast, an LS analysis cannot separate genetic from environmental trends when only a single line is considered. Under a mixed model, such a separation is possible because the covariance structure associated with the pedigree of all individuals in the experiment allows information to be borrowed from relatives across generations."
+    },
+    {
+      "type": "discussion",
+      "content": "Another advantage of a mixed-model analysis is its enormous flexibility in handling almost any selection design. For example, an MM analysis easily allows for overlapping generations (when a parent contributes offspring over several different years of selection), while analysis of response in overlapping generations under LS can be difficult to formulate correctly. Further, as detailed below, a properly designed MM analysis can also account for assortative mating, drift, and selection-induced gametic-phase disequilibrium (provided we can assume that the infinitesimal model holds)."
+    },
+    {
+      "type": "proposition",
+      "content": "Nonetheless, despite its power, an MM analysis has tradeoffs relative to a simpler LS analysis. First, an MM analysis requires far greater record keeping (e.g., following all individuals and their relatives) and is more computationally demanding. Second, an MM analysis can be rather model-sensitive. In particular, assumption of the infinitesimal model is critical. If selection-induced changes in allele frequencies are significant during the course of the experiment, the assumptions of an MM analysis will be violated. Finally, MM analysis critically depends on the covariance structure of the random effects. If this is incorrectly specified, an MM analysis can lead to highly biased results."
+    }
+  ]
+}

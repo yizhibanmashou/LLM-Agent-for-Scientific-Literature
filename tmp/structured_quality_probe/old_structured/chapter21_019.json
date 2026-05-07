@@ -1,0 +1,85 @@
+{
+  "id": "chapter21_019",
+  "metadata": {
+    "chapter": "chapter21",
+    "section": "Chapter 21: Among-family Selection:",
+    "subsections": [
+      "Among-family Selection:"
+    ],
+    "source_file": "data\\paddle_output\\chapter21_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "21.14a",
+      "21.14b",
+      "21.15a",
+      "21.15b",
+      "21.15c",
+      "21.16a",
+      "21.16b"
+    ],
+    "table_references": [
+      "21.1",
+      "21.5"
+    ],
+    "table_reference_keys": [
+      "chapter21:21.1",
+      "chapter21:21.5"
+    ],
+    "structured_repair": {
+      "version": "source_inline_math_v1",
+      "actions": {
+        "normalize_inline_math_artifact": 1,
+        "strip_placeholder_token": 1,
+        "replace_from_source": 1
+      }
+    },
+    "residual_manual_repair": {
+      "version": "2026_04_22_residual_review_v1",
+      "actions": {
+        "replace_block": 3
+      }
+    }
+  },
+  "blocks": [
+    {
+      "type": "derivation",
+      "content": "Here the selection unit is $ \\overline{z} $, the mean of a half-, full-, or nested-sib family. The type of sib family, together with the relatives used to produce the next generation, specifies the particular among-family design ([[SEE_TABLE:21.1]]). Tables 21.3 and 21.4 and Equation 21.13a yields the selection response, $ R_{b} $, to a single cycle of among-family selection as [[SEE_FORMULA:21.14a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "The left equality holds when the sib families are not nested and the families are not replicated, while the rightmost expression is completely general (using $ \\sigma^2(\\overline{z}) $ in place of $ t_n\\sigma_z^2 $). The selection unit-offspring covariance is $ \\gamma\\sigma_A^2/2 $, where [[SEE_FORMULA:21.14b]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Recall that these different values arise because $ r $ is the genetic correlation among sibs (1/4 and 1/2, respectively, for half- and full-sibs), and that parental and $ S_1 $ selection correspond to the case where $ r = 1/2 $. Under strict sib selection, no measured individual is a parent of the next generation and hence all the correlations between an individual in the selection unit and a parent of the next generation are the same (namely, $ r\\sigma_A^2 $). Under family selection, one of the $ n $ measured individual sibs is also the parent of the next generation, and hence has a genetic covariance of $ \\sigma_A^2/2 $, while the other $ n - 1 $ individuals are sibs of this parent, each with a genetic covariance of $ r\\sigma_A^2/2 $ with the offspring (a covariance of $ r\\sigma_A^2 $ between sibs times 1/2 for that between parent and offspring)."
+    },
+    {
+      "type": "discussion",
+      "content": "The variance of the selection unit, $ \\sigma^2(\\overline{z}) = t_n\\sigma_z^2 $, depends only on the types of sibs that are measured and is independent of the types of relatives used to form the next generation. The theory of expected response to among-family selection traces back to Lush's classic 1947 paper, and Equation 21.14a is a generalization of his results. [[SEE_TABLE:21.5]] expresses the response in terms of variance components."
+    },
+    {
+      "type": "derivation",
+      "content": "Several variants of Equation 21.14a appear in the literature. Noting that $ \\sigma_{A}h = \\sigma_{z}h^{2} $, the response can be expressed as [[SEE_FORMULA:21.15a]] where $ \\bar{\\imath} = (\\bar{\\imath}_{x_f} + \\bar{\\imath}_{x_m})/2 $. Similarly, the response can be expressed in terms of the among-"
+    },
+    {
+      "type": "derivation",
+      "content": "[[TABLE:21.5]] expresses the response in terms of variance components. family heritability, with [[SEE_FORMULA:21.15b]] and with $ S = (S_f + S_m) / 2 $ being the average selection differential on the parents."
+    },
+    {
+      "type": "derivation",
+      "content": "Turning now to particular among-family designs, we start with family selection. Here, measured sibs (either all or a random subset) from the chosen families form the parents for the next generation. To reduce the effects of inbreeding, crosses between sibs from the same family are typically avoided (Chapter 23 examines the response when sibs are crossed, resulting in offspring that are inbred). With family selection, Equation 21.14a becomes [[SEE_FORMULA:21.15c]] as first obtained by Lush (1947). While full-sibs have twice as much usable among-family additive variance relative to half-sibs ( $ \\sigma_A^2/2 $ vs. $ \\sigma_A^2/4 $), this advantage is reduced somewhat because half-sibs have a smaller among-family phenotypic variance, with $ t_{HS}/t_{FS} \\leq 1 $. This inequality follows by recalling that $ \\sigma^2(\\overline{z}) = t\\sigma_z^2 $ and noting that $ (t_{FS} - t_{HS})\\sigma_z^2 = \\sigma^2(\\overline{z}_{FS}) - \\sigma^2(\\overline{z}_{HS}) $, where [[SEE_FORMULA:21.16a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Given that full-sibs share a common mother (and hence potentially share maternal effects), we expect $ \\sigma_{Ec(FS)}^2 \\geq \\sigma_{Ec(HS)}^2 $ and, hence $ \\sigma^2(\\overline{z}_{FS}) > \\sigma^2(\\overline{z}_{HS}) $. Assuming the same selection intensity, Equation 21.15c yields the ratio of response for full- to half-sib family selection as [[SEE_FORMULA:21.16b]] with the last equality following from Equation 21.16a."
+    },
+    {
+      "type": "discussion",
+      "content": "If the character can only be measured after reproduction, females (or seed parents) from the chosen families have already been fertilized, and hence selection has occurred on only one sex $ (S_{m} = \\bar{\\imath}_{x_{m}} = 0) $. Planting these seeds (or, in animals, examining the offspring from fertilized females) and evaluating the resulting families allows for half-sib selection (under random pollination). Full-sib selection can also be accomplished, but each cycle takes an additional generation. Here seeds from open-pollinated selected females are grown and controlled crosses are made between the offspring from different seed parents to create full-sib families for the next cycle of selection."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 21.4. Clayton et al. (1957) examined family selection on abdominal bristle number in Drosophila melanogaster (LW Figure 14.1). Their estimated intraclass correlations for half- and full-sibs were 0.121 and 0.265, respectively, while the estimated additive variance and heritability were 5.59 and 0.52, respectively. Hence, $$ t_{HS}=0.121,\\quad t_{FS}=0.265,\\quad and\\quad\\sigma_{A}h=\\sqrt{5.59\\cdot0.52}=1.70 $$"
+    }
+  ]
+}

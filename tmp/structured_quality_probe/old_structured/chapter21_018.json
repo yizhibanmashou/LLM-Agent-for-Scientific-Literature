@@ -1,0 +1,53 @@
+{
+  "id": "chapter21_018",
+  "metadata": {
+    "chapter": "chapter21",
+    "section": "Chapter 21: Overview of Among- and Within-family Response",
+    "subsections": [
+      "Overview of Among- and Within-family Response"
+    ],
+    "source_file": "data\\paddle_output\\chapter21_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "21.13a",
+      "21.13b"
+    ],
+    "table_references": [],
+    "structured_repair": {
+      "version": "source_inline_math_v1",
+      "actions": {
+        "replace_from_source": 2
+      }
+    }
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "The selection response for a particular family-based scheme depends on how the additive-genetic (breeding value) and total (phenotypic) variances are partitioned within and among families. When the number, n, of sibs per family is large (meaning that the observed mean will be very close to the true mean), these variances are partitioned as"
+    },
+    {
+      "type": "discussion",
+      "content": "Breeding values $$ \\begin{array}{ccc} \\text{Within-family} & \\text{Among-family} \\\\ \\hline (1-r)\\sigma_{A}^{2} & r\\sigma_{A}^{2} \\\\ (1-t)\\sigma_{z}^{2} & t\\sigma_{z}^{2} \\end{array} $$"
+    },
+    {
+      "type": "derivation",
+      "content": "Phenotypic values where t and r are, respectively, the phenotypic and additive-genetic correlations between sibs (r = 1/4 for noninbred half-sibs and 1/2 for noninbred full-sibs). When the number of measured sibs within each family is small, $ t_n = t + (1 - t)/n $ replaces t, and $ r_n $ (similarly defined) replaces r. Because the response to selection depends on the ratio of the available additive-genetic variance to the phenotypic variance, the response, $ R_b $, to among-family selection is of the form [[SEE_FORMULA:21.13a]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Equation 21.13a is the exact expression for family selection and is due to Lush (1947). Expressions for the predicted selection response under other among-family designs (e.g., sib, parental, or $ S_{1} $ seed selection) are very similar (see below)."
+    },
+    {
+      "type": "derivation",
+      "content": "Similarly, the response to within-family selection is a function of the within-family additive-genetic and phenotypic variances, leading us to expect that the response will be in the form of [[SEE_FORMULA:21.13b]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Indeed, this is the exact expression for selection on family deviations (FD), while the response under strict within-family (WF) selection is given by replacing $ r_{n} $ and $ t_{n} $ with r and t."
+    },
+    {
+      "type": "discussion",
+      "content": "Equations 21.13a and 21.13b are the standard response equations that appear in much of the elementary animal-breeding literature, as the use of r and t allows these results to be presented in a very compact fashion. When the design is more complicated, such as when it involves the replication of families over environments or the use of nested-sib families, expressions are given in terms of variance components, as shown below."
+    }
+  ]
+}

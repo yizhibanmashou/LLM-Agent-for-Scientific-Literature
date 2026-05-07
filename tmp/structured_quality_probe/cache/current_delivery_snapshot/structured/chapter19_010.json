@@ -1,0 +1,65 @@
+{
+  "id": "chapter19_010",
+  "metadata": {
+    "chapter": "chapter19",
+    "section": "Chapter 19: The Basic Animal Model",
+    "subsections": [
+      "Response Is Measured by Change in Mean Breeding Values"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter19_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "19.8a",
+      "19.8b",
+      "19.8c"
+    ],
+    "table_references": [
+      "inline_1"
+    ],
+    "table_reference_keys": [
+      "chapter19:inline_1"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "derivation",
+      "content": "Under a mixed-model analysis, response is measured by the change in the mean breeding value of a selected population over time. The estimated mean breeding value in generation $ k $ (or, alternatively, at time point $ k $) is simply obtained by calculating the average of individual breeding-value estimates for that generation. [[SEE_FORMULA:19.8a]] Because the predicted mean breeding value in generation 0 (the unselected base population) is zero by construction ($ \\bar{a}_{0}=0 $), the total (cumulative) response at generation k is $ \\bar{a}_{k}-\\bar{a}_{0}=\\bar{a}_{k} $. In matrix notation, the vector, $ \\bar{a} $, of mean breeding values is estimated by [[SEE_FORMULA:19.8b]] where elements in the $k$th row of $\\mathbf{K}$ are $1/n_k$ when the column corresponds to an individual from generation $k$ and otherwise are zero (see Example 19.1). Thus, for $t$ generations of data (corresponding to $t-1$ generations of selection, as the analysis includes the unselected base population, generation 0), $\\mathbf{K}$ is an $n \\times t$ matrix that satisfies $\\mathbf{K}^T \\mathbf{1}_n = \\mathbf{1}_t$ (a $t \\times 1$ vector of ones). From Equation 19.5a, and recalling that $ \\mathbf{Var}(\\mathbf{B}\\mathbf{x}) = \\mathbf{B}\\mathbf{Var}(\\mathbf{x})\\mathbf{B}^{T} $ (LW Equation 8.21b), the sampling covariance matrix for the vector of estimated genotypic means becomes [[SEE_FORMULA:19.8c]] where the $ n \\times n $ matrix, $ C_{22} $, is the solution to Equation 19.7d (under the simple animal model), or more generally, Equation 19.5a. Again, these expressions assume that the residual variance is known without error, and using an estimate for $ \\sigma_e^2 $ adds an additional uncertainty by increasing the sample variance."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 19.1. As an example of how one performs a mixed-model analysis of a selection experiment, consider the following, very simple, situation. From a base population of unrelated and noninbred individuals, four (indexed by 1–4) are measured and have trait values of 3, 6, 5, and 2, respectively. The two largest individuals are mated, and their resulting offspring (individuals 5–8) have values of 4, 5, 6, and 5. Now suppose that we have either a REML-based estimate of the heritability (which is not advisable here given the very small sample size) or have previous knowledge of its value. Our goal is to estimate the size of the genetic response. Assuming the only fixed effect is the mean, the resulting animal model is $ \\mathbf{y} = 1\\beta + \\mathbf{a} + \\mathbf{e} $, where $$ \\mathbf{y}=\\begin{pmatrix}y_{1}\\\\ y_{2}\\\\ y_{3}\\\\ y_{4}\\\\ y_{5}\\\\ y_{6}\\\\ y_{7}\\\\ y_{8}\\end{pmatrix}=\\begin{pmatrix}3\\\\ 6\\\\ 5\\\\ 2\\\\ 4\\\\ 5\\\\ 6\\\\ 5\\end{pmatrix},\\quad\\mathbf{a}=\\begin{pmatrix}a_{1}\\\\ a_{2}\\\\ a_{3}\\\\ a_{4}\\\\ a_{5}\\\\ a_{6}\\\\ a_{7}\\\\ a_{8}\\end{pmatrix},\\quad\\boldsymbol{\\beta}=(\\boldsymbol{\\mu}),\\quad\\mathbf{X}=\\mathbf{1}=\\begin{pmatrix}1\\\\ 1\\\\ 1\\\\ 1\\\\ 1\\\\ 1\\\\ 1\\end{pmatrix} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "What is the relationship matrix, A? Because individuals 2 and 3 are the parents and all offspring are full sibs, all related individuals have values of $ A_{ij} = 1/2 $, as $ 2\\theta_{ij} = 1/2 $ for both parent-offspring pairs and full sibs. The resulting numerator relationship matrix becomes $$ \\mathbf{A}=\\begin{pmatrix}{{{1}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\\\{{{0}}}&{{{1}}}&{{{0}}}&{{{0}}}&{{{1/2}}}&{{{1/2}}}&{{{1/2}}}&{{{1/2}}} \\\\{{{0}}}&{{{0}}}&{{{1}}}&{{{0}}}&{{{1/2}}}&{{{1/2}}}&{{{1/2}}}&{{{1/2}}} \\\\{{{0}}}&{{{0}}}&{{{0}}}&{{{1}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\\\{{{0}}}&{{{1/2}}}&{{{1/2}}}&{{{0}}}&{{{1}}}&{{{1/2}}}&{{{1/2}}}&{{{1/2}}} \\\\{{{0}}}&{{{1/2}}}&{{{1/2}}}&{{{0}}}&{{{1/2}}}&{{{1}}}&{{{1/2}}}&{{{1/2}}} \\\\{{{0}}}&{{{1/2}}}&{{{1/2}}}&{{{0}}}&{{{1/2}}}&{{{1/2}}}&{{{1}}}&{{{1/2}}} \\\\{{{0}}}&{{{1/2}}}&{{{1/2}}}&{{{0}}}&{{{1/2}}}&{{{1/2}}}&{{{1/2}}}&{{{1}}}\\end{pmatrix} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "For example, individuals 2 and 5 are parent and offspring, so $ A_{5,2} = A_{2,5} = 1/2 $, as the parent-offspring covariance $ \\sigma_A^2/2 $. Similarly, individuals 7 and 8 are full-sibs, so $ A_{7,8} = A_{8,7} = 1/2 $. Note that the relationship matrix for the founders (base population members) is given by the $ 4 \\times 4 $ identity submatrix in the upper left of A. This identity matrix implies that noninbred individuals (diagonal elements are one) and unrelated individuals (off-diagonal elements are zero) formed the base population."
+    },
+    {
+      "type": "proposition",
+      "content": "Turning to the covariance matrix of the residuals, we make the standard assumption that $ \\mathbf{Var}\\left(\\mathbf{e}\\right) = \\sigma_c^2 \\mathbf{I} $, or in other words, that all residuals are uncorrelated with common variance, $ \\sigma_c^2 $. However, if there is dominance, the residuals among full-sibs will be inflated by $ \\sigma_D^2 / 4 $. Likewise, if there are common-family effects (e.g., maternal effects or other shared environmental effects), the residuals are inflated by $ \\sigma_c^2 $, where $ c $ is the common-family effect. For now we will ignore these possible complications, which are easily accommodated by adding additional vectors of random effects to the model (see below)."
+    },
+    {
+      "type": "discussion",
+      "content": "Suppose (from REML or prior knowledge) that the heritability of the trait is $ h^{2} = 0.3 $. Applying Equation 19.3a yields $$ \\hat{\\boldsymbol{\\mu}}=\\left(\\mathbf{1}^{T}\\mathbf{V}^{-1}\\mathbf{1}\\right)^{-1}\\mathbf{1}^{T}\\mathbf{V}^{-1}\\mathbf{y}=4.22 $$ where we have computed V using Equation 19.2b as scaled to remove the phenotypic variance $ \\sigma_{z}^{2} $, for example, $ V = 0.3 \\, \\text{A} + 0.7 \\, \\text{I} $ (note that $ \\sigma_{z}^{2} $ cancels in the above expression, as it appears in both V and $ V^{-1} $). Substituting into Equation 19.3b yields the $ 8 \\times 1 $ vector, $ \\widehat{\\mathbf{a}} $, of BLUPs for the individual genetic values, and the resulting $ 2 \\times 1 $ vector, $ \\mathbf{K}^T \\widehat{\\mathbf{a}} $, of genetic means $$ \\widehat{\\mathbf{a}}=\\begin{pmatrix}{{{-0.366}}} \\\\{{{0.666}}} \\\\{{{0.366}}} \\\\{{{-0.666}}} \\\\{{{0.386}}} \\\\{{{0.562}}} \\\\{{{0.739}}} \\\\{{{0.562}}}\\end{pmatrix}\\quad\\mathbf{K}=\\frac{1}{4}\\begin{pmatrix}{{{1}}}&{{{0}}} \\\\{{{1}}}&{{{0}}} \\\\{{{1}}}&{{{0}}} \\\\{{{0}}}&{{{1}}} \\\\{{{0}}}&{{{1}}} \\\\{{{0}}}&{{{1}}} \\\\{{{0}}}&{{{1}}}\\end{pmatrix}\\quad\\mathbf{K}^{T}\\widehat{\\mathbf{a}}=\\begin{pmatrix}{{{0}}} \\\\{{{0.562}}}\\end{pmatrix}\\quad\\mathbf{K}^{T}\\mathbf{1}_{8}=\\begin{pmatrix}{{{1}}} \\\\{{{1}}}\\end{pmatrix} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The estimated gain increases with the assumed $ h^2 $ until it reaches a maximum of $ \\simeq1.098 $ for $ h^2 = 0.86 $, after which it decreases as the assumed $ h^2 $ increases. A Bayesian analysis removes this dependency of the estimated response on $ h^2 $ by computing a weighted average of response over all possible $ h^2 $ values (weighted by their posterior values), yielding a marginal posterior distribution for the response that fully accounts for any uncertainty introduced from estimating the heritability."
+    },
+    {
+      "type": "discussion",
+      "content": "Turning to a more standard analysis, the selection differential is the mean of the selected parents minus the mean of all parents, $ S = 5.5 - 4 = 1.5 $. Likewise, the selection response is the mean of the offspring minus the mean in the previous generation, $ 5 - 4 = 1 $, which yields a realized heritability of $ R/S = 1.0/1.5 = 0.67 $. Using this value for $ h^2 $ in the MM analysis returns a genetic gain of 1.000. As is apparent from the above example, a mixed-model analysis of a selection experiment has a very different character than an LS analysis. In the latter, one estimates the realized heritability from a suitable regression of phenotypic means on selection differentials. Under a REML/BLUP analysis, however, one first estimates the heritability in the base population (using REML), and then uses (empirical) BLUP to estimate breeding values for all individuals. The genetic response in a given generation is given by the mean of the elements in the estimated vector, a, of breeding values in that generation, allowing for the separation of genetic from environmental response, even in the absence of a control population. Thompson and Atkins (1994) noted a fundamental difference between the two approaches in separating genetic from environmental change: an LS analysis typically uses between-population information (e.g., contrasts of the means of selection vs. control, or up-vs. down-selected lines), while a REML/BLUP analysis uses within-population information (the connections between relatives across generations contained within A)."
+    },
+    {
+      "type": "discussion",
+      "content": "Under an MM analysis, the estimate of heritability should be based on REML estimates of the base population variance components, $ \\widehat{h}^2 = \\widehat{\\sigma}_A^2 / (\\widehat{\\sigma}_A^2 + \\widehat{\\sigma}_e^2) $. One must avoid the temptation to estimate realized heritabilities using estimated mean breeding values. For example, Blair and Pollak (1984) regressed the BLUP mean breeding values on cumulative selection differentials to obtain a realized heritability estimate. The problem with this approach is that these mean estimates depend on the assumed, rather than the actual, heritability (Thompson 1986; Sorensen and Johannsson 1992; Ollivier 1999). In contrast, under a Bayesian analysis, the marginal posterior estimate of mean breeding value in any particular generation averages over all possible $ h^2 $ values and is independent of the heritability (Example 19.10)."
+    },
+    {
+      "type": "discussion",
+      "content": "Hence, a regression of Bayesian-derived mean breeding values on generations can return an unbiased estimate of realized heritability."
+    }
+  ]
+}

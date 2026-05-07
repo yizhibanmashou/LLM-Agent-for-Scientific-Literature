@@ -1,0 +1,62 @@
+{
+  "id": "chapter14_005",
+  "metadata": {
+    "chapter": "chapter14",
+    "section": "Chapter 14: The Threshold/Liability Model",
+    "subsections": [
+      "The Threshold/Liability Model"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter14_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "14.6",
+      "14.7",
+      "14.8a",
+      "14.8b",
+      "14.9"
+    ],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "proposition",
+      "content": "One application of truncation-selection theory is in the response to selection of binary traits, which are characterized simply by presence or absence (such as normal or diseased). The basic trait model to this point assumed a continuous character, which initially seems at odds with a binary trait. However, as discussed in LW Chapters 11 and 25, discrete characters can often be modeled by mapping an underlying (unobserved, or latent) continuous character, the liability, z, onto the observed discrete character states, y = 0 or y = 1 (Figure 14.4). The assumption is that the breeder's equation holds on the liability scale, and our goal is to predict how changes on this scale map onto changes in the frequency of a binary trait. The simplest assumption is a threshold model, wherein the character is present if liability exceeds some threshold value $ T \\left(z \\geq T \\right) $, and otherwise is absent $ (z < T) $. Roff (1996) reviewed a number of examples of such threshold-determined morphological traits in animals. Our analysis is restricted to a single threshold, but extension to multiple thresholds is straightforward (Lande 1978; Korsgaard et al. 2002)."
+    },
+    {
+      "type": "derivation",
+      "content": "To predict the selection response, let $\\mu_t$ be the mean liability and $q_t$ be the frequency of individuals displaying the character in generation $t$, i.e., $q_t = \\Pr(y_t = 1)$. If liability is well enough, behaved to satisfy the assumptions of the breeder's equation, then $\\mu_{t+1} = \\mu_t + h^2 S_t$. As shown in Figure 14.4, three tasks must be performed to predict the selection response: (i) estimate the mean liability, $\\mu_t$, from the observed frequency, $q_t$, of the trait; (ii) estimate $S$ on the liability scale, given the change in the frequency of the binary trait following selection; and (iii) translate $\\mu_{t+1}$ into $q_{t+1}$. We assume liability to be normally distributed on some appropriate scale, in which case we can also choose a scale that sets the threshold value at $T = 0$ and assigns $z$ a variance of 1.0. Because $z - \\mu_t$ is a unit normal, $\\Pr(z \\geq 0) = \\Pr(z - \\mu_t \\geq -\\mu_t) = \\Pr(U \\geq -\\mu_t) = q_t$, and by analogy with Equation 14.2b, where $\\Pr(U \\geq x_{[1-p]}) = p$, we have [[SEE_FORMULA:14.6]] where $ x_{[p]} $ is the probit transformation of $ p $ (Equation 14.2a), as suggested by Wright (1934). For example, if 5% of the population displays the trait, $ \\Pr(U \\leq 1.65) = 0.95 $, implying $ x_{[0.95]} = 1.65 $, and yielding the mean on the underlying liability scale as $ \\mu = -x_{[0.95]} = -1.65 $. When the mean liability is at this value, only 5% of the population has a value exceeding the threshold $ (T = 0) $, and hence displays the trait."
+    },
+    {
+      "type": "derivation",
+      "content": "The response to selection, as measured by the new frequency, $ q_{t+1} $, of the trait in the next generation, is given by [[SEE_FORMULA:14.7]]"
+    },
+    {
+      "type": "discussion",
+      "content": "[h]"
+    },
+    {
+      "type": "derivation",
+      "content": "It remains to obtain $S_t = \\mu_t^* - \\mu_t$, where $\\mu_t^*$ is the mean liability value in the selected parents in generation $t$. While the selected population may consist entirely of adults displaying the trait, more individuals than this may be required to keep the population at a constant size, especially if $q_t$ is small (i.e., the trait is rare). In this case, the selected adults consist of two groups of individuals: those displaying the trait (hence having $z \\geq 0$) and those not displaying it ($z < 0$). Letting $p_t$ be the fraction of selected adults displaying the character, [[SEE_FORMULA:14.8a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Applying LW Equation 2.14, and noting that the unit normal density function satisfies $ \\varphi(x) = \\varphi(-x) $, yields [[SEE_FORMULA:14.8b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "[h] where $ \\varphi(x) $ is the unit normal density function evaluated at x. Substituting into Equation 14.8a yields [[SEE_FORMULA:14.9]] As expected, if $ p_t > q_t $, then $ S_t > 0 $. Maximal selection occurs if only individuals displaying the trait are saved $ (p_t = 1) $, in which case Equation 14.9 reduces to $ S_t = \\varphi(-x_{[1-q_t]}) / q_t $."
+    },
+    {
+      "type": "proposition",
+      "content": "Why did we not simply estimate $ \\mu_t^* $ using $ x_{[1-q_t^*]} $, i.e., using tne frequency, $ q^* $, of the trait in the selected parents? The reason is that the distribution of z values in selected parents is a weighted average of two truncated normal density functions (Equation 14.8a), and this distribution is not normal (see Figure 14.4). However, we assume that normality is restored in the liability distribution at the start of the next generation due to segregation plus the addition of the environmental value. We examine the validity of this assumption in Chapter 24. Finally, a diligent reader might be concerned that this lack of normality violates the breeder's equation, and hence our assumption that $ \\mu_{t+1} = \\mu_t + h^2 S $. However, this expression is a weighted form of truncation selection on a normally distributed trait, with a fraction $ 1 - p $ with $ z < T $, and a fraction $ p $ with $ z \\geq T $, with the change in breeding value given by the weighted average of these two pools."
+    },
+    {
+      "type": "discussion",
+      "content": "One important feature about selection on threshold traits is that the response to selection is not necessarily symmetric—a selected 5% increase in the trait may not yield the same response as a selected 5% decrease. The reason for this is that the mapping between phenotypes and their underlying liability is highly nonlinear. Even though the parent-offspring regression on the liability scale is assumed to be linear (and hence liability response is symmetric), the parent-offspring regression on the phenotypic level is not linear, resulting in an asymmetric response. ample 14.4 and especially LW Chapter 25 discuss how $ h^{2} $ can be estimated on this scale). What is the expected response to selection if the initial frequency of individuals displaying the character is 5% and selection is practiced by choosing only adults displaying the character? Only six generations are required to increase the frequency of the trait to 50% ($ \\mu = 0 $). Note that even though all selected parents exhibit the trait, the selection differential rapidly declines in a nonlinear fashion (Figure 14.5)."
+    },
+    {
+      "type": "discussion",
+      "content": "The values plotted in Figure 14.5 were obtained as follows. As was calculated earlier, $ q_0 = 0.05 $, which implies $ \\mu_0 = -1.645 $ (the mean liability is 1.65 standard deviations below the threshold). Only individuals displaying the trait are allowed to reproduce, yielding (from Equation 14.9) the resulting selection differential on the liability scale: $$ S_{0}=\\varphi(-1.645)/0.05\\simeq0.106/0.05\\simeq2.062 $$"
+    }
+  ]
+}

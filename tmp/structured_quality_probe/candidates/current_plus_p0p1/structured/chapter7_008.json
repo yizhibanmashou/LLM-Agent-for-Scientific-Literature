@@ -1,0 +1,56 @@
+{
+  "id": "chapter7_008",
+  "metadata": {
+    "chapter": "chapter7",
+    "section": "Chapter 7: Fixation of Overdominant and Underdominant Alleles",
+    "subsections": [
+      "Fixation of Overdominant and Underdominant Alleles"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter7_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "7.22",
+      "7.23",
+      "7.24"
+    ],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "A case of special interest is the effect of drift on a locus experiencing selective overdominance, where the heterozygote has higher fitness than either homozygote. Whereas such balancing selection permanently maintains both alleles in an infinite population (Example 5.4), drift will ultimately fix one allele in a finite population provided that the homozygote has a nonzero fitness. Although it might seem that balancing selection will always magnify the longevity of a polymorphism, contrary to intuitive expectations, selection sometimes increases the rate of fixation at an overdominant locus in a finite population (Robertson 1962; Ewens and Thomson 1970; Chen et al. 2008)."
+    },
+    {
+      "type": "discussion",
+      "content": "If the equilibrium frequency expected in an infinite population is extreme (roughly $ \\widetilde{p} < 0.2 $ or $ \\widetilde{p} > 0.8 $), a polymorphism starting at $ \\widetilde{p} $ in a finite population will usually be lost more rapidly under balancing selection than under drift alone, thereby accelerating the removal of heterozygosity. Such behavior arises because selection keeps allele frequencies fairly close to their equilibrium values. If such values are near 0.0 or 1.0, the minor allele will be impeded from drifting to more protective states of moderate frequencies, thereby increasing the likelihood of loss by drift."
+    },
+    {
+      "type": "discussion",
+      "content": "Nei and Roychoudhury (1973) evaluated this issue further with newly arisen overdominant alleles with an initial frequency of $ 1/(2N) $. In this case, the mutant allele is initially confined to the heterozygous state, so its early fate is largely independent of its own homozygous effect, but highly dependent on the magnitude of its heterozygous advantage over the ancestral homozygote. Fixation probabilities can only be obtained by numerical analysis in this case, but the results depend only on two parameters, $ N_e(s_1 + s_2) $ and the infinite-population equilibrium frequency, $ \\tilde{p} = s_2/(s_1 + s_2) $, where $ s_1 $ and $ s_2 $ are, respectively, the selection coefficients against the homozygotes associated with the mutant and resident alleles. If $ \\tilde{p} $ for the derived allele under consideration is much less than 0.5, the fixation probability is less than the neutral expectation, for the reasons already noted. However, if $ \\tilde{p} > 0.5 $ (meaning that the fitness of the ancestral homozygote is lower than that of the mutant homozygote), the fixation probability will always be greater than the neutral expectation, even though fixation results in the loss of the optimal (heterozygous) genotype. Moreover, in this case, the fixation probability of the mutant allele is only slightly smaller than that predicted by Equation 7.10a when $ s_2 $ is used as a selection coefficient (Nei and Roychoudhury 1973). If $ 2N_e(s_1 + s_2) \\ll 1 $, selection will be uniformly overpowered by drift, and the system will behave in an effectively neutral fashion."
+    },
+    {
+      "type": "discussion",
+      "content": "The fixation times for newly arisen overdominant mutations parallel the patterns of loss of variation that Robertson (1962) first noted (Nei and Roychoudhury 1973). When the equilibrium frequency is outside of the range of (0.2, 0.8), the mean fixation time will be lower than the neutral expectation of $ 4N_e $ generations, whereas for $ 0.2 < \\tilde{p} < 0.8 $, the time is elevated, with more extreme behaviors seen at high values of $ N_e(s_1 + s_2) $ (Figure 7.4). Particularly intriguing is the fact that the fixation time of an overdominant mutation will be symmetrical around $ \\tilde{p} = 0.5 $, i.e., for a given strength of selection $ N_e(s_1 + s_2) $, the time to fixation is the same at equilibrium frequencies $ \\tilde{p} $ and $ 1 - \\tilde{p} $. This is consistent with the situation for mutants with additive effects that was already noted, and indicates that when an overdominant"
+    },
+    {
+      "type": "discussion",
+      "content": "[h] mutant allele is associated with the least fit homozygous type, for the rare occasions in which fixation occurs, it does so just as rapidly, on average, as when it is associated with the most fit homozygote (in which case it also fixes more frequently). Further considerations for the situation in which populations are subdivided were given in Nishino and Tajima (2004)."
+    },
+    {
+      "type": "discussion",
+      "content": "Important situations also exist in which a new mutation will be underdominant with respect to the ancestral allele, i.e., will have reduced fitness when in the heterozygous state, but equal or higher fitness as a homozygote. In an infinite population, such an allele will always be driven from the population if its marginal fitness at low frequency is less than that of the ancestral allele (Chapter 5). In a finite population, however, there is some chance that the mutant allele might drift to a high frequency, transiently taking the population through a reduction in mean fitness (during the period in which heterozygotes are common), but possibly eventually becoming fixed."
+    },
+    {
+      "type": "discussion",
+      "content": "Such a scenario has generated considerable interest in the area of speciation biology, as the fixation of an underdominant mutation in a subpopulation will lead to a situation in which hybrids between subpopulations have reduced fitness. In principle, such a condition can constitute the first stage in the development of reproductive isolation."
+    },
+    {
+      "type": "derivation",
+      "content": "For the situation in which the two homozygotes have equal fitness and heterozygotes experience a reduction in fitness of s, Lande (1979b) found that if $ sN_e/N \\ll 1 $ (a condition likely to be met based on empirical information on $ N_{e}/N $; Chapters 3 and 4), then [[SEE_FORMULA:7.22]] where the error function [[SEE_FORMULA:7.23]] is the cumulative frequency of a unit normal (Abramowitz and Stegun 1972). If the efficiency of selection is sufficiently low ($ N_e s \\ll 2 $), then $ u_f(1/2N) \\simeq 1/(2N) $, as expected for an effectively neutral allele. However, if the efficiency of selection is high ($ N_e s > 2 $), so that $ \\text{erf}(\\sqrt{N_e s}) \\simeq 1 $, then [[SEE_FORMULA:7.24]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Of special interest in the study of speciation are chromosomal rearrangements that cause problems during meiosis in chromosomal heterozygotes, with values of $s$ as large as 0.5 being quite plausible (Lande 1979b, 1984b). With $N_{e}s = 2$, 5, and 10, Equation 7.24 predicts fixation rates that are, respectively, 0.22, 0.017, and 0.00016 times the neutral expectation. Such results imply that if heterozygote fitness is greatly reduced, transitions to alternative allelic states (with equivalent homozygous fitness) will only be possible if $N_{e}$ is extremely small. However, when such fixations do occur, they proceed much more rapidly than the neutral expectation of $4N_{e}$ generations (Lande 1979b)."
+    }
+  ]
+}

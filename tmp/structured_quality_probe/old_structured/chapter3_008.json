@@ -1,0 +1,80 @@
+{
+  "id": "chapter3_008",
+  "metadata": {
+    "chapter": "chapter3",
+    "section": "Chapter 3: SPECIAL SYSTEMS OF MATING",
+    "subsections": [
+      "SPECIAL SYSTEMS OF MATING"
+    ],
+    "source_file": "data\\paddle_output\\chapter3_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "3.22",
+      "3.23a",
+      "3.23b",
+      "3.24",
+      "3.25"
+    ],
+    "table_references": [],
+    "structured_repair": {
+      "version": "source_inline_math_v1",
+      "actions": {
+        "replace_from_source": 5
+      }
+    }
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "It is important to bear in mind that, when applied to matters of genetic variation, the equations for $ N_e $ given above are appropriate for predicting the expected loss of heterozygosity resulting from inbreeding at the population level. When variation in pedigree structure exists among individuals, as will almost always be the case in nature, the actual degree of inbreeding will generally vary among loci within individuals as well as among individuals within the population. Given a cumulative level of inbreeding (loss of heterozygosity) at a locus equal to f, identity by descent will be binomially distributed among individuals with mean f and variance $ \\sigma_f^2 = f(1 - f) $. With completely linked loci, this is also the total variance in f, as there will be no variation in f among loci. However, for unlinked loci, the realized inbreeding at each locus need not be the same. Weir et al. (1980) found that the coefficient of variation of $ (1 - f) $ among individuals is approximately $ (3N_e)^{-1/2} $ for randomly mating monocious populations, $ (6N_e)^{-1/2} $ for randomly mating but monogamous, dioecious populations, and $ (12N_e)^{-1/2} $ for monoccy with selfing excluded and for dioecy with random mating. These asymptotic values are reached in only a few generations. Thus, provided the population size and number of constituent loci are moderately large, the variation in inbreeding is negligible for most practical purposes (see also Franklin 1977; Cockerham and Weir 1983)."
+    },
+    {
+      "type": "derivation",
+      "content": "In contrast to the usual situation, one can also envision (and implement) systems of mating involving fixed relationships such that all members of the population have exactly the same average inbreeding coefficient over all loci (Wright 1921b). Consider first the most extreme form of inbreeding—obligate self-fertilization, a mode of reproduction in some plants and hermaphroditic animals. Because under this scheme of mating all individuals are reproductively isolated, a collection of such lines is equivalent to a series of populations, each consisting of a single individual, and after t generations of selfing, the expected fraction of heterozygotes at any locus is reduced to [[SEE_FORMULA:3.22]]"
+    },
+    {
+      "type": "discussion",
+      "content": "where $ H_{0} $ denotes the initial level of variation. After t = 3 generations, only 12.5"
+    },
+    {
+      "type": "derivation",
+      "content": "The next most intense system of inbreeding involves continuous brother-sister mating. Starting with unrelated parents, it takes a generation of full-sib mating before alleles identical by descent can appear in the same individual. Written in terms of the inbreeding coefficient, such that $ H_t = (1 - f_t)H_0 $, the exact recursion equation under full-sib mating is [[SEE_FORMULA:3.23a]] and in one of the first applications of matrices in population genetics, Haldane (1937a) provided the approximation [[SEE_FORMULA:3.23b]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, starting from a non-inbred base population, 12 generations of full-sib mating will result in a loss of 90"
+    },
+    {
+      "type": "derivation",
+      "content": "Moving on, with a constant population size of four breeding adults, the minimum relationship between individuals is that of double first-cousins (Figure 3.2, left). Starting with four unrelated individuals, it then takes three generations for alleles that are identical by descent (IBD) to appear in the same individual, and thereafter [[SEE_FORMULA:3.24]]"
+    },
+    {
+      "type": "discussion",
+      "content": "(Wright 1921b). The number of generations required for the loss of 90"
+    },
+    {
+      "type": "discussion",
+      "content": "These types of results are of special interest to managers of small, captive populations of endangered species and/or breeding stocks viewed as genetic resources for the future. Here we consider just one of the many practical questions that arise in these areas. Given a limited number of founders and an upper ceiling on the number of individuals that can be maintained, what is the optimal breeding scheme for minimizing the erosion of genetic variation? Wright (1921b) suggested that the best way to minimize the loss of heterozygosity from a small population would be to restrict matings to pairs of individuals with the"
+    },
+    {
+      "type": "discussion",
+      "content": "least degree of relatedness. Such a breeding scheme, known as maximum avoidance of inbreeding (MAI), is exemplified by all three of the special mating systems just noted—in each case, matings occur between the most distantly related individuals within each line. An added advantage of MAI is that for a population size of $ N = 2^m $, $ m $ generations will pass before any inbreeding occurs at all. For example, with $ N = 64 $, $ m + 1 = 7 $ generations would pass before two copies of a founding gene could appear in the same individual under a maximum avoidance scheme. Once the inbreeding begins, the proportion of heterozygosity lost each generation is very nearly constant, approaching an asymptotic value of $ 1/(4N - m - 1) $ (Robertson 1964), which, with $ N = 4 $ and $ m = 2 $ under double first-cousin mating, equals 0.08, giving the fraction retained as $ 1 - 0.08 = 0.92 $, recovering Equation 3.24."
+    },
+    {
+      "type": "derivation",
+      "content": "Note that when $N$ is large, $m \\ll N$ and the asymptotic rate of loss of heterozygosity is $\\simeq 1/(4N)$ per generation under MAI. Comparing this expression with Equation 2.4c, it can be seen that this mating scheme has the same effect as doubling the size of a random-mating population. This result is not strictly a consequence of the avoidance of inbreeding but, again, is the outcome of all families producing equal numbers of offspring. In fact, even under a random-mating scheme, if family sizes are equilibrated, provided $N \\geq 4$, the erosion of heterozygosity is [[SEE_FORMULA:3.25]] where $t$ is the number of generations after the onset of inbreeding (Wright 1951). This can be seen by returning to many of the formulae in the earlier sections of this chapter and setting $\\sigma_k^2 = 0$. Under the idealized scheme of random mating discussed earlier, variances in allele frequencies arise from variance in the number of progeny left by each individual and from segregational variance resulting from the sampling of alleles within individuals. For randomly mating populations of even moderate size, about half of the total sampling variance of allele frequency arises from each source, so that equilibration of family size reduces the total sampling variance by 50"
+    },
+    {
+      "type": "discussion",
+      "content": "The central point of the preceding discussion is that, for a fixed census size, three factors can potentially be manipulated to reduce the rate of inbreeding: avoidance of matings among relatives; equilibration of family sizes; and a sex ratio as close to one as possible. In some domesticated animals, the latter is a problem because females have only one or two offspring per year. In such cases, Gowe et al. (1959) suggested that when the sex ratio of contributing parents is r females to each male, the loss of genetic variance will be minimized if every male contributes exactly one son and r daughters, and every female leaves one daughter and also contributes a son with probability 1/r. Wang (1997) improved on this scheme with the constraint that a female contributing a son does not contribute a daughter and another female from the same male family instead contributes two daughters."
+    },
+    {
+      "type": "discussion",
+      "content": "Kimura and Crow (1963a) noted that Wright's intuition that MAI minimizes the long-term loss of genetic variation is actually not quite correct, pointing out that a circular mating (CM) scheme (Figure 3.2) ultimately leads to a lower rate of loss of heterozygosity. Under this breeding design, females and males are arranged such that each of them is mated to two \"neighbors,\" with the last individual in the linear array being mated with the first, thereby completing the circle. Nevertheless, although circular mating ultimately reduces the rate of loss of heterozygosity relative to MAI, it is inferior in the early generations of mating, and even with small N, it may take more than 100 generations before its superiority is realized. Thus, because most of the initial genetic variation in a population will generally have been lost by this time, the practical advantages of circular mating are actually quite negligible."
+    },
+    {
+      "type": "discussion",
+      "content": "The major limitation of both the MAI and CM schemes is that they only impede the loss of genetic variation—ignoring new mutations, any randomly mating finite population will ultimately become homozygous at every locus. However, Robertson (1964) obtained the more general (and counterintuitive) result that the rate of loss of overall genetic variation from a population actually declines as the relatedness between mates increases. In the extreme, genetic diversity can be preserved indefinitely by subdividing a population into several isolated lines. Although the individual lines are all expected to become homozygous eventually, different lines will become fixed for different sets of genes, with the overall level of preservation of genetic diversity being defined by the number of inbred lines. In effect, complete inbreeding gives rise to a condition equivalent to each family having preserved the equivalent of one gamete from the base population. For example, for a locus with initial allele frequency $ p_{0} $, assuming a large number of families, the allele frequency in the total collection of lines would remain close to $ p_{0} $, so that subsequent random mating of the lines would render the heterozygosity close to its original state, $ 2p_{0}(1 - p_{0}) $. It must be emphasized, however, that these arguments assume that intense inbreeding in small lines has no consequences that might endanger the line's survival. In reality, however, very small lines are likely to die out occasionally just by accident, and extreme inbreeding also often has serious deleterious effects on fitness (LW Chapter 10). The gradual replacement of extinct lines by members of surviving lines will lead to further loss of variation."
+    }
+  ]
+}

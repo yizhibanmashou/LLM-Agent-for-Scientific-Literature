@@ -1,0 +1,61 @@
+{
+  "id": "chapter29_006",
+  "metadata": {
+    "chapter": "chapter29",
+    "section": "Chapter 29: Assigning Fitness Components",
+    "subsections": [
+      "Concurrent Selective Episodes, Reproductive Timing, and Individual Fitness, $ \\lambda_{ind} $"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter29_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "29.3a",
+      "29.3b",
+      "29.3c",
+      "29.3d"
+    ],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "The partitioning of selection into discrete episodes is, of course, an abstraction of the real world. Often this partitioning is simply done for the convenience of a researcher who wishes to measure individual fitness by considering just one or two episodes, potentially looking for tradeoffs between them. Selection episodes (e.g., viability and reproduction) often occur concurrently, rather than sequentially. For example, in the turtle data of Brodie and Janzen (1996), one has only information about viability (in the laboratory), and how to weight this information to account for the translation of viability into the timing of reproductive success raised issues in assigning fitness values. While methods to partition concurrent episodes of selection into their components have been proposed (e.g., Hamon 2005), the more general problem is assigning an appropriate measure of fitness that accounts for reproductive timing."
+    },
+    {
+      "type": "discussion",
+      "content": "We have been stressing the use of lifetime reproductive success (LRS), but this is a rate-insensitive measure, which counts only the total number of offspring and not the actual timing of when offspring are produced. If reproduction occurs in a discrete window and the generations do not overlap, LRS provides a good measure of fitness. However, when generations do overlap, the actual timing of reproductive events can be more important than the total number of offspring, as earlier-produced offspring have a head start on contributing their own offspring to the population (Lande 1982). Consider three individuals, all of which produce 40 offspring during their lifespan, and hence each has the same fitness when measured by LRS. However, suppose individual 1 has 10 offspring each at ages 2, 3, 4, and 5; individual 2 has 20 offspring at both ages 4 and 5; and individual 3 has 20 offspring at ages 2 and 3. Clearly, individual 3 has a higher rate of offspring production than individuals 1 or 2 on an absolute time basis, even though it has the same LRS as the other two individuals. How do we account for this?"
+    },
+    {
+      "type": "derivation",
+      "content": "One solution is based on age-projection (or Leslie) matrices (Leslie 1945, 1948; Caswell 1989, 2001), an approach first proposed by Lenski and Service (1982). McGraw and Caswell (1996) forcefully argued for this approach as a measure of individual fitness in age-structured populations. The growth rate of an age-structured population can be determined from $ \\ell_x $, the probability of surviving from age (or class/stage) $ x $ to $ x + 1 $, and $ b_x $, the birth rate (fecundity) in class $ x $ (the $ \\ell_x $ and $ b_x $ are collectively referred to as the vital rates). This information is expressed in a $ k \\times k $ matrix, where $ k $ is the upper age limit on reproduction. The first row of the Leslie matrix contains the fecundities, while the below-diagonal line consists of the survival values, $ \\ell_x $. [[SEE_FORMULA:29.3a]]"
+    },
+    {
+      "type": "discussion",
+      "content": "If $ \\mathbf{n}(t) $ is a vector of the number of individuals in each age/stage class at time $ t $, then $ \\mathbf{n}(t+1) = \\mathbf{L}\\mathbf{n}(t) $. The asymptotic growth rate, $ \\lambda $, for this population is the largest eigenvalue of $ \\mathbf{L} $, while its associated eigenvector is the stable age distribution. The Leslie matrix is just one type of life-history projection matrix. More generally, the life history of a species may be more accurately defined by stages, rather than ages. For example, a perennial plant could spend many years in a rosette stage before flowering. Life-history graphs are a more general approach for categorizing such stage-structured organisms. In an age-structured model, individuals increase in age at each step, but in a stage-structured model, an individual can remain in the same stage on the next step (e.g., stays as a rosette), generating a loop in the graph (an arrow that circles back to itself), and hence a nonzero diagonal element, $ L_{ii} $, representing the chance of remaining in stage $ i $ in the next step (Caswell 1989, 2001)."
+    },
+    {
+      "type": "derivation",
+      "content": "Now consider a particular individual that last reproduced at age $ m $. The resulting Leslie matrix for this individual is [[SEE_FORMULA:29.3b]] where $ f_x = b_x / 2 $ is half the number of offspring that the individual produced at age $ x $ (using half accounts for both males and females contributing to the population, to avoid double-counting of the offspring). Note that $ LRS = 2 \\sum_j^k f_j $. The individual-specific matrix, $ L_{ind} $, is very similar to a population growth matrix ($ L $), but in $ L_{ind} $, the fecundities are those that were observed for the focal individual (as opposed to population averages for each age class). In addition, because this individual survives to (at least) age $ m $, we replace the $ \\ell_x $ elements in $ L $ (the average survival per age class) by ones, indicating the actual survival of the focal individual. The “growth” rate, $ \\lambda_{ind} $, for this individual is given by the largest eigenvalue of $ L_{ind} $, which can be obtained by solving the modified Euler-Lokta equation [[SEE_FORMULA:29.3c]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Note from this equation that $ \\lambda_{ind} $ can be thought of as an age-discounted LRS, a rate-sensitive measure of fitness, as opposed to the rate-insensitive measure given by LRS."
+    },
+    {
+      "type": "derivation",
+      "content": "McGraw and Caswell (1996) noted two sources of bias in using $ \\lambda_{ind} $. First, for any given phenotypic class, the particular realization of the matrix of vital rates ($ L_{ind} $) for an individual in that class (i.e., the expected survival, $ \\ell_x(z) $, and fecundity, $ b_x(z) $, values for phenotype z) is a biased estimator of the matrix for that class. The reason is that random death prevents a proper estimation of the values of $ b_x $, especially at later ages. The second source of bias, which was also a concern for Lenski and Service (1982), was that the average of the leading eigenvalue for each realization of $ L_{ind} $ does not generally equal the leading eigenvalue for the average matrix (i.e., the average of the values of $ \\lambda_{ind} $ does not equal the population growth rate, $ \\lambda $). Despite these issues, McGraw and Caswell (1996) still favored the use of $ \\lambda_{ind} $, while Lenski and Service (1982) developed a resampled measure (based on $ L_{ind} $) with less bias. Alternatively, if the mean population growth rate ($ \\lambda $) is known, then an unbiased estimator for the relative fitness for individual j is [[SEE_FORMULA:29.3d]] where $ f_{i}(j) $ denotes half of $ j' $s fecundity at age i (Lenski and Service 1982)."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 29.4. In the case of overlapping generations, the timing of when reproduction occurs can be at least as important as the lifetime reproductive success (LRS). Consider the three hypothetical individuals mentioned previously, each with an LRS of 40 but with differences in the timing of reproduction. Recalling that the values of $ f_i $ in Equation 29.3b represent half the number of offspring, the Leslie matrices for these three individuals become $$ \\mathbf{L}_{1}=\\begin{pmatrix}{{{0}}}&{{{5}}}&{{{5}}}&{{{5}}}&{{{5}}} \\\\{{{1}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\\\{{{0}}}&{{{1}}}&{{{0}}}&{{{0}}}&{{{0}}} \\\\{{{0}}}&{{{0}}}&{{{1}}}&{{{0}}}&{{{0}}} \\\\{{{0}}}&{{{0}}}&{{{0}}}&{{{1}}}&{{{0}}}\\end{pmatrix},\\qquad\\mathbf{L}_{2}=\\begin{pmatrix}{{{0}}}&{{{0}}}&{{{0}}}&{{{10}}}&{{{10}}} \\\\{{{1}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\\\{{{0}}}&{{{1}}}&{{{0}}}&{{{0}}}&{{{0}}} \\\\{{{0}}}&{{{0}}}&{{{1}}}&{{{0}}}&{{{0}}} \\\\{{{0}}}&{{{0}}}&{{{0}}}&{{{1}}}&{{{0}}}\\end{pmatrix},\\qquad\\mathbf{L}_{3}=\\begin{pmatrix}{{{0}}}&{{{10}}}&{{{10}}} \\\\{{{1}}}&{{{0}}}&{{{0}}} \\\\{{{0}}}&{{{1}}}&{{{0}}}\\end{pmatrix} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The leading eigenvalues for these three matrices are $ \\lambda_1 = 2.77 $, $ \\lambda_2 = 1.97 $, and $ \\lambda_3 = 3.58 $. Under this metric, individuals 1 and 2 are, respectively, 77% and 55% as fit as individual 3."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 29.4 shows that individuals with the same LRS can have very different $ \\lambda_{ind} $ values. Indeed, the rankings of individuals based on LRS versus $ \\lambda_{ind} $ can be rather nonconcordant. Hence, it should not be surprising that Brommer et al. (2002) noted several cases where inferences on selection were altered when $ \\lambda_{ind} $ was used in place of LRS. An especially telling example in shown in Figure 29.1, which plots these two measures of fitness for female Ural owls (Strix uralensis). As the figure shows, there is a diminishing return in $ \\lambda_{ind} $ with increasing values of LRS. This occurs because reproductive contributions later in life are increasingly down-weighted by $ \\lambda_{ind} $ (Equation 29.3c)."
+    }
+  ]
+}

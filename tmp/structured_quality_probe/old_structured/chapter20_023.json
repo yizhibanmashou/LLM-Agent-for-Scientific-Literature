@@ -1,0 +1,33 @@
+{
+  "id": "chapter20_023",
+  "metadata": {
+    "chapter": "chapter20",
+    "section": "Model Selection",
+    "subsections": [
+      "Model Selection"
+    ],
+    "source_file": "data\\paddle_output\\chapter20_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [
+      "20.2"
+    ],
+    "table_reference_keys": [
+      "chapter20:20.2"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "A final concern when using wild pedigrees is the delicate issue of model selection—determining which additional random effects among a set of candidates should be incorporated (e.g., whether a common family effect should be added to the model). Typically one incorporates additional random effects when their associated variance component is significant or when the model fit is improved by some criterion (e.g., the likelihood ratio test or model selection statistics such as AIC or BIC; see Example 12.5). One interesting consequence of a Bayesian analysis is that unless a variance prior has some point mass at zero, the resulting posterior confidence interval will always exclude zero, resulting in all variance components (for which the MCMC converges) being significant in the sense of a value of zero being excluded. In such settings, goodness-of-fit measures such as BIC should be the criteria used for model selection."
+    },
+    {
+      "type": "discussion",
+      "content": "The incorporation of additional random effects into a model may significantly change the interpretation of a key feature (such as the additive variance). The problem faced by an investigator is determining when to include such additional random effects, given that the power to declare a variance component significant is likely small. Further, it is not uncommon for some variance components in natural populations to be almost fully confounded (e.g., Kruuk and Hadfield 2007; Ovaskainen et al. 2008). Given the expected low power for a mixed model using a pedigree sampled from a wild population, the sensibilities of the investigator come into play. If the a priori feeling is that the biology of the trait dictates the inclusion of a specific random effect (such as a maternal effect), this is best left in the model. Its inclusion will not result in bias estimates of the breeding values, but it may result in a"
+    },
+    {
+      "type": "discussion",
+      "content": "[[TABLE:20.2]]). reduction of power. At a minimum, one strategy is to present analyses under a series of models (even if the resulting variance components may not be significant) if they result in substantially different interpretations of key results."
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "id": "chapter14_010",
+  "metadata": {
+    "chapter": "chapter14",
+    "section": "Chapter 14: Direct Selection on the Threshold, T",
+    "subsections": [
+      "BLUP Selection With Binary Data: Generalized Linear Mixed Models"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter14_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "14.13a",
+      "14.13b",
+      "14.13c",
+      "14.14a",
+      "14.14b",
+      "14.14c",
+      "14.15a",
+      "14.15b"
+    ],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "derivation",
+      "content": "Animal breeders routinely use the general linear mixed model to obtain BLUP estimates of breeding values for normally distributed traits, where the expected value of the phenotype, $ y_{i} $, of individual i can be written as [[SEE_FORMULA:14.13a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Here $ A_i $ is an individual's breeding value and the $ \\beta_k $ are fixed effects (such as adjustments for age and sex, whose values in individual $ i $ are given by the $ x_{k,i} $). A particular realization (i.e., a scored phenotype) from this individual can be written as [[SEE_FORMULA:14.13b]] where the residual, $ e_{i} $, is normally distributed with a mean of zero, implying that $ y_{i} $ is also normally distributed. Putting these together, an observation from individual i can be written as [[SEE_FORMULA:14.13c]] As described in Chapters 13, 19, 20, and LW Chapters 26 and 27, in addition to its observed phenotype, $ y_{i} $, additional information to estimate $ A_{i} $ is borrowed from the y values of relatives through the relationship matrix A. In a selection scheme, those individuals with the largest estimated A values are then chosen to form the next generation."
+    },
+    {
+      "type": "discussion",
+      "content": "This same strategy can be extended to cases where the mean $ \\mu_i $ is not a simple linear function of $ A_i $ and where the residual error is not normally distributed. In particular, the phenotype, $ y_i $, of a binary trait takes on a value of either 0 or 1. The expected value of $ y_i $ is just the probability of displaying the trait, i.e., the trait is Bernoulli-distributed (a binomial with a single draw), so that $ y_i $ is either 0 or 1 given this mean $ \\mu_i $ (its success parameter in the Bernoulli). Equation 14.13a is generally not applicable in this setting as $ \\mu_i $ is constrained (being a probability) to the 0 to 1 range, while no such constraints occur on Equation 14.13a. A second issue is that the residual error structure is not normal."
+    },
+    {
+      "type": "discussion",
+      "content": "The solution to both satisfying this constraint and using the correct residual distribution relies on the use of generalized (as opposed to general) linear mixed models. These extend Equation 14.13c to cases where the expected value of y conditioned on the variables of interest is not a linear function of breeding value, and the residuals about this expected value are not necessarily normal (Bolker et al. 2009; de Villemereuil et al. 2016). The basic structure of a generalized linear model can be thought of as an extension of the liability model to more general functions."
+    },
+    {
+      "type": "derivation",
+      "content": "Let the liability value $ (z_{i}) $ for individual i be some linear function of the breeding value, $ A_{i} $, an environmental value, $ E_{i} $, plus (potentially) fixed effects, [[SEE_FORMULA:14.14a]] which is mapped onto a mean trait value, y, by a monotonic function, g. Specifically, the conditional expectation of y given z is [[SEE_FORMULA:14.14b]] where [[SEE_FORMULA:14.14c]]"
+    },
+    {
+      "type": "discussion",
+      "content": "The inverse $ g^{-1} $ is called the link function, as it transforms the conditional expectation into a linear model. The function g imposes the desired constraint on the mean of y, mapping some unconstrained value, z, into the desired constraint space (such as 0 to 1)."
+    },
+    {
+      "type": "derivation",
+      "content": "For binary data, Equation 14.14b becomes $ E[y|z]=g(z)=p(z) $, where $ p(z)=\\Pr(y=1|z) $, the success parameter, with y following a Bernoulli distribution. Thus, we desire some function that maps the underlying liability, z, onto a value, $ p(z) $, constrained to the space $ [0,1] $. As we have seen, one candidate function is the simple logistic function, $ \\ell(z) $ (Equation 14.10a). The corresponding link function (Equation 14.14c), which is the inverse of the logistic function, is given by the logit function, defined as [[SEE_FORMULA:14.15a]] namely, the log of the odds ratio (probability of the trait being present divided by probability that the trait is absent). If $ \\ell(z) = p $, then $ \\logit(p) = z $, so that a logit-transformed p value recovers the liability value, [[SEE_FORMULA:14.15b]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Under this framework, BLUP selection for individuals with the highest breeding values for a binary trait proceeds by taking the 0/1 binary data from a set of individuals (along with other fixed, and possibly random, effects of interest) and using either maximum likelihood or Bayesian approaches to estimate the breeding values on the liability scale given by Equation"
+    },
+    {
+      "type": "discussion",
+      "content": "14.15b (Foulley et al. 1983; Foulley 1992; Vazques et al. 2009). This approach can be extended to $ k \\geq 2 $ thresholds in the mapping of liability into k character states (Korsgaard et al. 2002)."
+    }
+  ]
+}

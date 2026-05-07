@@ -1,0 +1,70 @@
+{
+  "id": "chapter18_031",
+  "metadata": {
+    "chapter": "chapter18",
+    "section": "Chapter 18: The Hammond-Gardner Model",
+    "subsections": [
+      "The Hammond-Gardner Model"
+    ],
+    "source_file": "data\\paddle_output\\chapter18_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "structured_repair": {
+      "version": "source_inline_math_v1",
+      "actions": {
+        "replace_from_source": 4
+      }
+    }
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Solving for the vector of parameter estimates yields $$ \\begin{aligned}\\left(\\begin{array}{c}\\widehat{m}\\\\\\widehat{A}\\\\\\widehat{D}_{0}\\\\\\widehat{D}\\\\\\end{array}\\right)=\\left(\\mathbf{X}^{T}\\mathbf{X}\\right)^{-1}\\mathbf{X}^{T}\\mathbf{y}=\\left(\\begin{array}{c}4.266\\\\1.072\\\\57.402\\\\0.523\\\\\\end{array}\\right)\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Based on this subset of data, we note that there is considerable initial dominance ($ D_0 = 57.402 $) influencing the initial value of the trait. Of the per-generation change of $ A + D = 1.595 $ per generation, roughly two-thirds are from $ A $ (1.072), and one-third is from $ D $ (0.5223). Standard errors for these estimates follow using standard OLS machinery (LW Chapter 9)."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 18.10. Here we derive the line and cross means when dominance is present. Because the focus is on the contribution from a specific locus, for ease of presentation we suppress the subscript (on a, d, and p) denoting the locus being followed. Assuming no epistasis, the mean is derived by summing the contributions over all loci. To allow for dominance, the genotypic values at our target locus become 0: a + d: 2a. With p being the frequency of the favorable allele, the mean contribution from this locus is $$ 0\\cdot(1-p^{2})+(a+d)\\cdot2p(1-p)+(2a)\\cdot p^{2}=2ap+2dp(1-p) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Notice that the contribution from $a$ is a linear function of the allele frequency (and hence a linear function of allele frequency change), while the contribution from $d$ has both linear ($p$) and quadratic ($p^2$) components. The contribution from this locus to the line mean in cycle $k$ follows by replacing $p$ with $p(k) p + k p$ in Equation 18.36b to yield $$ \\begin{aligned}C_{k}&=\\mu+2ap(k)+2dp(k)[1-p(k)]\\\\&=\\mu+2a[p+k\\Delta p]+2d[p+k\\Delta p][1-(p-k\\Delta p)]\\\\&=\\left(\\mu+2ap\\right)+k\\cdot2a\\Delta p+2dp(1-p)+k\\cdot2d\\Delta p\\cdot(1-2p)-k^{2}\\cdot2d\\left(\\Delta p\\right)^{2}\\\\&=m+k\\cdot A+D_{0}+k\\cdot D+k^{2}\\cdot D_{q}\\\\ \\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Now suppose that this line is selfed. Homozygotes replicate themselves, while segregation of genotypes occurs when heterozygotes are selfed, with half of the offspring being $ a + d $ heterozygotes, one-quarter of the offspring being 2a homozygotes, and the final one-quarter being 0-valued homozygotes. The resulting mean value following a generation of selfing is the sum of these contributions, $$ p^{2}\\left[2a\\right]+2p(1-p)\\left[(1/4)(2a)+(1/2)(a+d)+(1/4)\\cdot0\\right]+(1-p^{2})\\cdot0=2ap+dp(1-p) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Note that all terms involving d are exactly half of their random-mating values, yielding $$ C_{k}(s)=m+k\\cdot A+\\frac{1}{2}\\left(D_{0}+k\\cdot D+k^{2}\\cdot D_{q}\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Now consider the mean of the cross of lines from cycles k and j. As above, the chance of a 0-valued homozygote is $ [1-p(k)][1-p(j)] $, whereas it is $ p(k)[1-p(j)]+p(j)[1-p(k)] $ for an $ a+d $ heterozygote, and $ p(k)p(j) $ for a 2a homozygote, yielding a resulting mean of $$ \\begin{aligned}C_{k\\times j}&=\\mu+(a+d)\\cdot\\left(p(k)\\left[1-p(j)\\right]+p(j)\\left[1-p(k)\\right]\\right)+2a\\cdot p(k)p(j)\\\\&=\\mu+a\\Biggl(p(k)+p(j)\\Biggr)+d\\cdot\\Biggl(p(k)+p(j)-2p(k)p(j)\\Biggr)\\\\=\\left(\\mu+2ap\\right)&+(k+j)a\\Delta p+d\\Biggl(2p(1-p)+(k+j)\\cdot\\Delta p(1-2p)-k j\\cdot2\\left(\\Delta p\\right)^{2}\\Biggr)\\\\&=m+\\frac{k+j}{2}\\cdot A+D_{0}+\\frac{k+j}{2}\\cdot D+k j\\cdot D_{q}\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "If we self these individuals to form an $ F_{2} $, by the same argument used above for selfing a line, each of the dominance terms is reduced by one-half, recovering Equation 18.38d."
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, when we form an $ F_{2} $ by randomly mating the $ F_{1} $ progeny from a line cross, the new allele frequency is $$ \\frac{p(k)+p(j)}{2}\\simeq p+\\frac{k+j}{2}\\Delta p $$ yielding a mean of $$ \\begin{align*}C_{k\\times j}(rm)&=\\mu+2a\\left(p+\\frac{k+j}{2}\\Delta p\\right)+2d\\left(p+\\frac{k+j}{2}\\Delta p\\right)\\left(1-p-\\frac{k+j}{2}\\Delta p\\right)\\\\=(\\mu+2ap)+\\frac{k+j}{2}2a\\Delta p+2dp(1-p)+\\frac{k+j}{2}2d\\Delta p(1-2p)-\\left(\\frac{k+j}{2}\\right)^{2}2d(\\Delta p)^{2}\\\\&=m+\\frac{k+j}{2}\\cdot A+D_{0}+\\frac{k+j}{2}\\cdot D+\\left(\\frac{k+j}{2}\\right)^{2}\\cdot D_{q}\\end{align*} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Recalling Equation 18.38c, we can express this as $$ C_{k\\times j}(r m)=C_{k\\times j}-k j\\cdot D_{q}+\\left(\\frac{k+j}{2}\\right)^{2}\\cdot D_{q}=C_{k\\times j}+\\frac{(k-j)^{2}}{4}\\cdot D_{q} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The additional term is due to the decay in heterosis following random mating, as the heterosis in the $ F_{1} $ cross between lines from cycles j and k is $$ \\begin{aligned}H&=\\sum(p_{i}(k)-p_{i}(j))^{2}d_{i}=\\sum(p+k\\Delta p-p-j\\Delta p)^{2}d_{i}\\\\&=(k-j)^{2}\\sum(\\Delta p)^{2}d_{i}=-(k-j)^{2}D_{q}/2\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Recall (LW Chapter 9) that the amount, H, of heterosis from the $ F_{1} $ is reduced to $ H/2 $ in the (random-mating generated) $ F_{2} $. Hence $$ C_{k\\times j}(rm)-C_{k\\times j}=-\\frac{H}{2}=(k-j)^{2}\\frac{D_{q}}{4} $$ as found above."
+    }
+  ]
+}

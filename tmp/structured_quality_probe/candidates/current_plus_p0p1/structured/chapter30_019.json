@@ -1,0 +1,28 @@
+{
+  "id": "chapter30_019",
+  "metadata": {
+    "chapter": "chapter30",
+    "section": "MULTIVARIATE SEMIPARAMETRIC FITNESS SURFACE ESTIMATION",
+    "subsections": [
+      "MULTIVARIATE SEMIPARAMETRIC FITNESS SURFACE ESTIMATION"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter30_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "proposition",
+      "content": "As discussed in Chapter 29, using the best-fitting univariate quadratic can result in a very misleading picture when there are multiple peaks or sharp thresholds (such as truncation selection) in the individual fitness surface. This also holds in multivariate space, and hence regressions predicting fitness given a vector z of traits that are nonparametric (free of any assumed functional form) certainly have some advantages. Because some assumption about the residual structure is typically needed to fit such regressions, they are formally called semiparametric, but we will still refer to them as nonparametric owing to the minimal number of assumptions they involve concerning about the functional form of $ w(z) $."
+    },
+    {
+      "type": "discussion",
+      "content": "Despite the advantage of having a minimal number of assumptions, these estimators also have significant disadvantages. We have already seen the difficulty in visualizing the multivariate fitness surface when only a simple quadratic function is assumed, but in this case the eigenvalues of $\\gamma$ provide significant help in interpretation. However, with general nonparametric methods, there is no corresponding metric for the fitness surface geometry, and thus one must resort to actual visualization of the fitness surface. This requires an examination of successive pairwise cross-sections of the fitness surface (projections onto two of the axes of the fitness function), generating a series of 3-D surfaces (one fitness axis and two trait axes; see Figure 30.4). Further, because these methods typically first construct new axes (linear combinations of the traits; e.g., $x_1 = a_1^T z$, $x_2 = a_2^T z$), and then use them to construct the"
+    },
+    {
+      "type": "discussion",
+      "content": "[h] fitness surface, they display the pattern of selection on a series of composite traits, and not the actual traits themselves. This can make interpretation of the nature of selection on specific traits or combinations of traits problematic at best. Finally, the results from a nonparametric regression do not immediately provide coefficients to predict the response to selection, while (under normality assumptions) these follow automatically with a quadratic regression. Given these complementary strengths and weaknesses, researchers should use both quadratic and nonparametric regressions in the analysis of their selection data."
+    }
+  ]
+}

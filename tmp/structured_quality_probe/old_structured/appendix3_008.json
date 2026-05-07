@@ -1,0 +1,36 @@
+{
+  "id": "appendix3_008",
+  "metadata": {
+    "chapter": "appendix3",
+    "section": "THE METROPOLIS-HASTINGS ALGORITHM",
+    "subsections": [
+      "THE METROPOLIS-HASTINGS ALGORITHM"
+    ],
+    "source_file": "data\\paddle_output\\appendix3_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "proposition",
+      "content": "Under our assumption that $ q(x, y) p(x) = q(y, x) p(y) $, this reduces to $ P(x y) p(x) = P(y x) p(y) $, showing that (for this case), the"
+    },
+    {
+      "type": "discussion",
+      "content": "2. $ q(x, y) p(x) > q(y, x) p(y) $, in which case $$ \\alpha(x,y)=\\frac{p(y)q(y,x)}{p(x)q(x,y)}\\quad and\\quad\\alpha(y,x)=1 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Hence, $$ \\begin{aligned}P(x\\rightarrow y)p(x)&=q(x,y)\\alpha(x,y)p(x)\\\\&=q(x,y)\\frac{p(y)q(y,x)}{p(x)q(x,y)}p(x)\\\\&=q(y,x)p(y)=q(y,x)\\alpha(y,x)p(y)\\\\&=P(y\\rightarrow x)p(y)\\\\ \\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "3. $ q(x, y) p(x) < q(y, x) p(y) $. Here $$ \\alpha(x,y)=1\\quad and\\quad\\alpha(y,x)=\\frac{q(x,y)p(x)}{q(y,x)p(y)} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Following the same logic just used yields $$ \\begin{aligned}P(y\\rightarrow x)p(y)&=q(y,x)\\alpha(y,x)p(y)\\\\&=q(y,x)\\left(\\frac{q(x,y)p(x)}{q(y,x)p(y)}\\right)p(y)\\\\&=q(x,y)p(x)=q(x,y)\\alpha(x,y)p(x)\\\\&=P(x\\rightarrow y)p(x)\\\\ \\end{aligned} $$ which concludes the proof."
+    }
+  ]
+}

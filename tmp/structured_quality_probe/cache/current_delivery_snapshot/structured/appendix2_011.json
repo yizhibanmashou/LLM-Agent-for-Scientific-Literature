@@ -1,0 +1,52 @@
+{
+  "id": "appendix2_011",
+  "metadata": {
+    "chapter": "appendix2",
+    "section": "The Jeffreys Prior",
+    "subsections": [
+      "The Jeffreys Prior"
+    ],
+    "source_file": "tmp\\paddle_output\\appendix2_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Jeffreys (1961) proposed a general prior based on the Fisher information information, I, of the likelihood. Recall (LW Appendix 4) that $$ I(\\theta\\mid\\mathbf{x})=-E\\left[\\frac{\\partial^{2}\\ln\\ell(\\theta\\mid\\mathbf{x})}{\\partial\\theta^{2}}\\right] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The Jeffreys prior is as follows: $$ p(\\theta)\\propto\\sqrt{I(\\theta\\mid\\mathbf{x})} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "A full discussion, with derivation, can be found in Lee (2012)."
+    },
+    {
+      "type": "discussion",
+      "content": "When there are $ k $ parameters, I is the $ k k $ Fisher information matrix of the expected second partials, where the elements of I are calculated by $$ \\mathbf{I}(\\boldsymbol{\\Theta}|\\mathbf{x})_{i j}=-E_{x}\\left[\\frac{\\partial^{2}\\ln\\ell(\\boldsymbol{\\Theta}|\\mathbf{x})}{\\partial\\theta_{i}\\partial\\theta_{j}}\\right] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "In this case, the Jeffreys prior becomes $$ p(\\boldsymbol{\\Theta})\\propto\\sqrt{\\det[\\mathbf{I}(\\boldsymbol{\\theta}\\mid\\mathbf{x})]} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Example A2.4. Consider the likelihood of x successes in n independent draws from a binomial with a success parameter of $ $, $$ \\ell(\\theta\\mid\\mathbf{x})=C\\theta^{x}(1-\\theta)^{n-x} $$ where the constant C does not involve $ $. Taking logs gives $$ L(\\theta\\mid\\mathbf{x})=\\ln\\left[\\ell(\\theta\\mid\\mathbf{x})\\right]=\\ln C+x\\ln\\theta+(n-x)\\ln(1-\\theta) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Thus $$ \\frac{\\partial L(\\theta\\mid\\mathbf{x})}{\\partial\\theta}=\\frac{x}{\\theta}-\\frac{n-x}{1-\\theta} $$ and likewise $$ \\frac{\\partial^{2}L(\\theta\\mid\\mathbf{x})}{\\partial\\theta^{2}}=-\\frac{x}{\\theta^{2}}-(-1)\\cdot(-1)\\frac{n-x}{(1-\\theta)^{2}}=-\\left(\\frac{x}{\\theta^{2}}+\\frac{n-x}{(1-\\theta)^{2}}\\right) $$ Because $ E[x] = n $, then $$ -E\\left[\\frac{\\partial^{2}\\ln\\ell(\\theta\\mid\\mathbf{x})}{\\partial\\theta^{2}}\\right]=\\frac{n\\theta}{\\theta^{2}}+\\frac{n(1-\\theta)}{(1-\\theta)^{2}}=n\\theta^{-1}(1-\\theta)^{-1} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The resulting Jeffreys prior for this likelihood becomes $$ p(\\theta)\\propto\\sqrt{\\theta^{-1}(1-\\theta)^{-1}}\\propto\\theta^{-1/2}(1-\\theta)^{-1/2} $$ which is a U-shaped beta distribution with parameters $ = = 1/2 $ (Equation A2.38a). This prior puts more weight on extreme values relative to assuming a uniform over $ (0,1) $, see Figure A2.3."
+    },
+    {
+      "type": "discussion",
+      "content": "Example A2.5. Suppose our data consists of $n$ independent draws from a normal distribution with an unknown mean and variance, $ $ and $\\sigma^{2}$. In LW Appendix 4, we showed that the information matrix in this case is $$ \\mathbf{I}=n\\begin{pmatrix}{{{\\frac{1}{\\sigma^{2}}}}}&{{{0}}} \\\\{{{0}}}&{{{\\frac{1}{2\\sigma^{4}}}}}\\end{pmatrix} $$ Because the determinant of a diagonal matrix is the product of the diagonal elements, $ () ^ -6 $, giving the Jeffreys prior for $ $ and $ \\sigma^{2} $ as $$ p(\\boldsymbol{\\Theta})\\propto\\sqrt{\\sigma^{-6}}=\\sigma^{-3} $$ Because the joint prior does not involve $ $, this implies a flat prior for $ $ (i.e., $ p[] = c $). Note here that the prior distributions of $ $ and $ \\sigma^2 $ are independent, as $$ p(\\mu,\\theta)=c\\cdot\\sigma^{-3}=p(\\mu)\\cdot p(\\sigma^{2}) $$"
+    }
+  ]
+}

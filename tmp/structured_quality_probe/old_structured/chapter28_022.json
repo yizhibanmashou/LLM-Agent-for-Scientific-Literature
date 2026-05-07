@@ -1,0 +1,75 @@
+{
+  "id": "chapter28_022",
+  "metadata": {
+    "chapter": "chapter28",
+    "section": "Chapter 28: Effects of Linkage and Mating Systems",
+    "subsections": [
+      "Summary: Implications of Gaussian Versus HCA Approximations"
+    ],
+    "source_file": "data\\paddle_output\\chapter28_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "28.21a",
+      "28.21b",
+      "28.21c",
+      "28.22a",
+      "28.22b",
+      "28.22c",
+      "28.22d"
+    ],
+    "table_references": [
+      "28.2"
+    ],
+    "table_reference_keys": [
+      "chapter28:28.2"
+    ],
+    "structured_repair": {
+      "version": "source_inline_math_v1",
+      "actions": {
+        "replace_from_source": 5
+      }
+    }
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "[[SEE_TABLE:28.2]] summarizes the major features of the Gaussian and House-of-cards approximations and their differences in behavior (some of which are developed in later sections). While the reader might infer that the conditions for the Gaussian approximation to hold are unusual, Charlesworth (1993) and Bürger (2000) made the important point that this approximation might be highly relevant in asexual species or species with a large fraction of the genome in regions of low recombination or for species that undergo cyclical parthenogenesis (Lynch and Gabriel 1983). In these cases, the mutational size of what corresponds to a locus is much larger (equivalent to the entire genome), resulting in a higher mutation rate. We conclude this section with the derivations of many of the results given above, which can be skipped by the casual reader. A number of these results were also obtained by Zhang and Hill (2010), using the framework of the Price equation (Chapter 6), which offers the reader an independent set of derivations."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 28.4. Before proceeding with the derivation of Kimura’s (1965a) result, recall the important distinction between an allele effect, $a$, and a mutational effect, $\\alpha$. Under the incremental model, the allelic effect following a new mutation is $a' = a + \\alpha$. Our interest is in the variance of allelic effects, $\\sigma^2(a)$, as this is half of the additive variance contributed by a locus (for a diploid and assuming additivity). As we will see, in many models, $\\sigma^2(a)$ is a function of the variance in the mutational effects, $\\sigma_\\alpha^2$. In what follows, because $a$ and $\\alpha$ are very similar in appearance, we use $x$ for the allelic effect in much of the deviation, before returning to express $\\sigma^2(x)$ as $\\sigma^2(a)$ in the discussion. Finally, while our focus is for a particular locus, we suppress the subscript throughout much of the derivation to keep the notation simpler."
+    },
+    {
+      "type": "derivation",
+      "content": "Kimura (1965a) considered a haploid continuum-of-alleles model, following the distribution, $ p(x) $, of allelic effects at a locus with no linkage disequilibrium. He assumed a continuous-time model in Hardy-Weinberg equilibrium and under quadratic stabilizing selection (Equation 28.3a). Our treatment follows Bulmer (1989), who obtained the same result under Gaussian stabilizing selection (with the population mean set at $ \\theta $). In this setting, Bulmer showed that the expected infinitesimal change in the distribution of allelic effects from selection is [[SEE_FORMULA:28.21a]] where $ \\sigma^{2}(x)=\\sigma^{2}(a) $ is the variance in allelic effects at the focal locus."
+    },
+    {
+      "type": "derivation",
+      "content": "Under the incremental mutational model, $ \\mu f(\\alpha) $ is the probability that an allele mutates from value x to value $ x + \\alpha $, where $ E(\\alpha) = 0 $ and $ E(\\alpha^2) = \\sigma_\\alpha^2 $. The resulting rate of change from mutation becomes [[SEE_FORMULA:28.21b]]"
+    },
+    {
+      "type": "discussion",
+      "content": "The first term is the loss of alleles with an effect size of x due to mutation, and the second is the gain of such alleles from new mutation. The latter is expressed as the cumulative probability that alleles with some other effect mutate to an effect size of x."
+    },
+    {
+      "type": "derivation",
+      "content": "Formally, if the life cycle is selection followed by mutation, then $ p(x) $ in the Equation 28.21b is replaced by $ p'(x) $, the postselection value. However, for weak selection and mutation, we can simply sum Equations 28.21a and 28.21b to yield the integro-differential equation for the distribution of allelic effects at time t. The equilibrium distribution is reached when [[SEE_FORMULA:28.21c]] or which Bulmer (1989) called the fundamental equation of the continuum-of-alleles model. Most early workers assumed that such an equilibrium distribution exists and that it is unique, but this was not formally shown until the publications of Bürger (1986, 1988a, 1988b, 1988c, 1991b; Bürger and Bomze 1996). Notice that the solution to Equation 28.21c depends strongly on the choice of $ f() $, the assumed probability density function for new mutational effects."
+    },
+    {
+      "type": "proposition",
+      "content": "The assumption of a Gaussian distribution of allelic effects breaks down in Equation 28.21b. Even assuming that a Gaussian allelic-effects distribution exists following selection and also that there is a Gaussian distribution of mutational effects, Equation 28.21b is a weighted sum of two Gaussians, with different variances, and hence is clearly not Gaussian. However, under certain conditions it can be close to normally distributed."
+    },
+    {
+      "type": "derivation",
+      "content": "Different approximations have been used to proceed from Equation 28.21c to an explicit solution. Kimura assumed that mutational effects, $ \\alpha $, are sufficiently small to approximate $ p(x - \\alpha) $ by a second-order Taylor series [[SEE_FORMULA:28.22a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "This approximation requires that $ \\sigma_\\alpha^2 \\ll \\sigma^2(x) = \\sigma^2(a) $, namely, that the effect of a new mutation is much smaller than the current variance in allelic effects. Substituting this approximation into the integral in Equation 28.21c yields [[SEE_FORMULA:28.22b]] where we have used $ \\int \\alpha f(\\alpha) d\\alpha = E[\\alpha] = 0 $. Using the approximation given by Equation 28.22a, the equilibrium solution of $ p(x) $ satisfies the differential equation [[SEE_FORMULA:28.22c]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Kimura (1965a) showed that this equation is satisfied when $ p(x) $ follows a normal distribution, with the parameters [[SEE_FORMULA:28.22d]]"
+    }
+  ]
+}

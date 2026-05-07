@@ -1,0 +1,28 @@
+{
+  "id": "chapter10_026",
+  "metadata": {
+    "chapter": "chapter10",
+    "section": "INSIGHT Analysis of Human Transcription Factors",
+    "subsections": [
+      "INSIGHT Analysis of Human Transcription Factors"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter10_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "As mentioned above, the use of conserved noncoding sequences as a proxy for all regulatory sequences likely represents a rather biased set, and global inferences on regulatory selection from this collection may be distorted. A different (albeit also potentially biased) group of noncoding DNAs are transcription factor binding sites. Through the use of ChIP-seq (chromatin immunoperception and sequencing) technology, nucleotide-level resolution can be achieved in delimiting binding sites, which while short, are abundant throughout the genome. Hence, issues of alignment are somewhat avoided by having a direct functional assay."
+    },
+    {
+      "type": "discussion",
+      "content": "To analyze such data, Gronau et al. (2013; Arbiza et al. 2013) proposed a method that falls between the MK and PRF approaches, in that it contrasts polymorphism and divergence data between a target and control sequence, but also uses (in a coarse granular fashion) information on allele frequencies. Their approach (INSIGHT: Inference of Natural Selection from Interspersed Genomically coHerent elemenTs) is essentially a likelihood model, where the target sites are the very short sequences used by transcription factors, which were contrasted over humans and chimp. As a control sequence, they examined a 20K flanking block around each target sequence, which was then trimmed to consider only sites regarded as neutral. This left a contrast of around 10 bases for a typical binding site and around 7000 bases for the neutral control region for each comparison. The logic of INSIGHT was that only three types of events are presented in the divergence and polymorphism data. Strongly deleterious mutations never appear as either polymorphisms or as substitutions. Neutral mutations can contribute to both polymorphisms and divergence, while strongly selected mutations only contribute as substitutions (of derived alleles). Finally, weakly deleterious mutations appear as polymorphisms with low-frequency derived alleles, but such derived alleles are never fixed. Sites were binned as substitutions or either low or high-frequency derived-allele polymorphisms. A probability model was then fit using maximum likelihood to estimate the fraction $ \\alpha $ of adaptive substitutions (among other parameters)."
+    },
+    {
+      "type": "discussion",
+      "content": "Using this approach, Arbiza et al. (2013) estimated a value of $ \\alpha = 0.05 $ for transcription-factor binding sites. As an internal control, they also ran the same analysis on second-base positions in codons, which returned an $ \\alpha $ value of essentially zero. When applied to a filtered set of roughly 15,000 proteins, their method estimated $ \\alpha \\simeq 0.2 $ over all coding-region substitutions. Given that their analysis examined roughly 5% of all transcription factors, Arbiza et al. extrapolated that adaptive substitutions were equally likely to occur in binding sites as in protein-coding genes. When coupled with the fact that binding sites represent a fraction of all regulatory DNA (assuming that most conserved sequences are regulatory in some sense), this suggests that adaptive substitutions are far more likely to arise in regulatory, as opposed to structural, sites. Obviously, these are only preliminary analyses, but they make an intriguing case for the importance of regulatory substitutions."
+    }
+  ]
+}

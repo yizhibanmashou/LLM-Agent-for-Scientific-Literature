@@ -1,0 +1,55 @@
+{
+  "id": "chapter17_009",
+  "metadata": {
+    "chapter": "chapter17",
+    "section": "Chapter 17: The Additive Model",
+    "subsections": [
+      "The Additive Model"
+    ],
+    "source_file": "data\\paddle_output\\chapter17_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "17.6a",
+      "17.6b",
+      "17.6c"
+    ],
+    "table_references": [
+      "17.1"
+    ],
+    "table_reference_keys": [
+      "chapter17:17.1"
+    ],
+    "structured_repair": {
+      "version": "source_inline_math_v1",
+      "actions": {
+        "replace_from_source": 6
+      }
+    }
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "[[TABLE:17.1]]. [[TABLE:17.1]]. # Translating the Response in $ A_{v} $ Into Response in $ \\sigma_{E}^{2} $ A number of authors have modeled the selection response of the phenotypic variance (from either direct or indirect selection on the variance) when there are heritable differences in environmental sensitivity (Gavrilets and Hastings 1994c; Wagner et al. 1997; SanCristobal-Gaudy et al. 1998, 2001; Sorensen and Waagepetersen 2003; Hill and Zhang 2004; Ros et al. 2004; Mulder et al. 2007, 2008). A critical step in modeling this selection response is treating the phenotypic value and residual variance as two separate (and potentially correlated) traits, both with heritable (i.e., additive-genetic) variation. While some models (Gavrilets and Hastings 1994c; Wagner et al. 1997; Hill and Zhang 2004) are based on strict population-genetic analysis (following the change in individual allele frequencies), most are based on schemes that assign breeding values to the heritable component of $ \\sigma_{E}^{2} $ (Table 17.1). Under the infinitesimal model, the expected breeding value in the offspring (for either $ A_{m} $ or $ A_{v} $) is simply the mean breeding values of its parents (Chapter 13). Using the expressions given in Table 17.1 allows us to map changes in $ \\mu_{A_{v}} $, the mean breeding value for environmental sensitivity, onto changes in $ \\sigma_{E}^{2} $."
+    },
+    {
+      "type": "derivation",
+      "content": "The simplest case is the additive model (Equation 17.4b). Suppose we let the selection response, $ R_{A_v} $, denote the change in the mean breeding value (for the environmental variance) of the selected parents from the mean breeding value of the entire population. The resulting change in $ \\sigma_E^2 $ becomes [[SEE_FORMULA:17.6a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "[[TABLE:17.1]]. The response is a bit more complex under the multiplicative and exponential models, as the mean population value, $ \\sigma_{E}^{2} $, for the environmental variance is a nonlinear function of both the mean and the variance of $ A_{v} $ (Table 17.1). For the multiplicative model $$ \\sigma_{E}^{2}=\\left[\\mu_{A_{v}}^{2}+\\sigma^{2}(A_{v})\\right]\\sigma_{e}^{2} $$ Because the mean breeding value in generation $ t+1 $ can be expressed as the previous mean plus the response, $ \\mu_{A_v}(t+1) = \\mu_{A_v}(t) + R_{A_v}(t) $, if we assume that there is no change in the additive variance of environmental sensitivities following selection ( $ \\Delta\\sigma^2(A_v) = 0 $), we have [[SEE_FORMULA:17.6b]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Change in $ \\sigma^{2}(A_{v}) $ due to selection-generated linkage disequilibrium can be similarly accounted for by using Equation 16.8b."
+    },
+    {
+      "type": "derivation",
+      "content": "Under the exponential model and again assuming that there is no change in $ \\sigma_{A_{v}}^{2} $, Equation 17.3d implies that [[SEE_FORMULA:17.6c]]"
+    },
+    {
+      "type": "discussion",
+      "content": "[[TABLE:17.1]]. These expressions translate a response, $ R_{A_v} $, in the mean breeding value for the environmental variance into the expected change in $ \\sigma_E^2 $ for the different transmission models reviewed in Table 17.1. We now consider two different settings by which such a response can occur: as a consequence of direct selection on phenotypic value, $ z $, and as the result of direct selection on $ \\sigma_E^2 $ itself. A third possibility—a correlated response in $ A_v $ (i.e., in the environmental variance of the trait) due to direct selection on $ A_m $ (i.e., the value $ z $ of the trait itself) when $ \\rho(A_v, A_m) \\neq 0 $—is examined in Volume 3."
+    }
+  ]
+}

@@ -37,6 +37,17 @@ def load_json(path: Path) -> dict[str, Any]:
     return data if isinstance(data, dict) else {}
 
 
+def structured_source_version(structured_dir: Path) -> str:
+    normalized = structured_dir.resolve().as_posix().lower()
+    if normalized.endswith("/tmp/structured_quality_probe/candidates/current_plus_p0p1/structured"):
+        return "candidate_current_plus_p0p1"
+    if normalized.endswith("/data/structured"):
+        return "current_data"
+    if normalized.endswith("/tmp/structured_quality_probe/old_structured"):
+        return "early_paper2latex"
+    return re.sub(r"[^a-z0-9]+", "_", structured_dir.name.lower()).strip("_") or "unknown"
+
+
 def write_json(path: Path, payload: dict[str, Any]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
@@ -1849,6 +1860,8 @@ def build_review_dataset(config: dict[str, Any], ocr_coverage: dict[str, set[str
 
     return {
         "generated_at": datetime.now().isoformat(timespec="seconds"),
+        "structured_dir": str(structured_dir.relative_to(ROOT_DIR)).replace("\\", "/") if structured_dir.exists() else str(structured_dir),
+        "structured_source_version": structured_source_version(structured_dir),
         "views": [
             {"id": "formulas", "label": "公式库"},
             {"id": "tables", "label": "表格库"},

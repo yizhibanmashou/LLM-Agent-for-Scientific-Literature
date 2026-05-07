@@ -1,0 +1,63 @@
+{
+  "id": "chapter22_012",
+  "metadata": {
+    "chapter": "chapter22",
+    "section": "Chapter 22: Individual Selection: Theory",
+    "subsections": [
+      "Individual Selection: Theory"
+    ],
+    "source_file": "tmp\\paddle_output\\chapter22_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "22.12a",
+      "22.12b",
+      "22.12d",
+      "22.12e",
+      "22.13a",
+      "22.13b"
+    ],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Consider individual selection in a group of size n, whose members are potentially related. Recalling Equation 22.4a, the correlation between phenotype and total breeding value is $$ \\sigma(z_{i},A_{T_{i}})=\\sigma^{2}(A_{d})+(n-1)\\sigma(A_{d},A_{s})+\\sum_{j\\neq i}\\sigma\\left[A_{s_{j}},A_{d_{i}}+(n-1)A_{s_{i}}\\right] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Let $ r_{ij} $ denotes the relationship between individuals i and j. When individuals within the group are related, then $$ \\sigma(A_{s_{j}},A_{s_{i}})=r_{ij}\\sigma^{2}(A_{s}) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Likewise if $ A_{d} $ and $ A_{s} $ are correlated, then for relatives we also have $$ \\sigma(A_{d_{j}},A_{s_{i}})=r_{ij}\\sigma(A_{d},A_{s}) $$"
+    },
+    {
+      "type": "derivation",
+      "content": "Hence, [[SEE_FORMULA:22.12a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "When all of the group members have the same relatedness $ (r_{ij} = r) $, the sum becomes $ (n - 1)r $, returning the result of Bijma et al. (2007a), [[SEE_FORMULA:22.12b]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Equation 22.12c shows the impact of having relatives within the group, which is to shift some of the variance in social effects, $ \\sigma^2(A_s) $, into the covariance, $ \\sigma(z, A_T) $, between individual phenotype and total breeding value. The use of relatives in the group thus allows individual selection to access some of this otherwise untapped variance. This occurs because the breeding values for social effects of group members (which impacts the phenotypic value of the focal individual) are now correlated with an individual's own breeding value for social effects (where the latter has no direct impact on its phenotype)."
+    },
+    {
+      "type": "derivation",
+      "content": "A useful alternative expression is to partition $ \\sigma(z, A_T) $ into the contribution expected in unrelated groups (Equation 22.4b) plus the additional contribution due to individuals in the group being related, which yields [[SEE_FORMULA:22.12d]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Alternatively, this can be expressed as [[SEE_FORMULA:22.12e]] showing that the more closely related group members are, the more weight individual selection puts on $ A_T $. In the extreme, when groups are composed of clones, then $ \\sigma(z, A_T) = $"
+    },
+    {
+      "type": "discussion",
+      "content": "$ \\sigma^{2}(A_{T}) $. Plant breeding often selects among groups comprised of genetically identical individuals (i.e., inbred lines and clonally propagated lines), with such settings exploiting all of the heritable variation in both direct and associative effects without requiring any special design."
+    },
+    {
+      "type": "derivation",
+      "content": "Similarly, when all members in the group have the same relatedness, r, the phenotypic variance becomes $$ \\sigma^{2}(z)=\\sigma^{2}(A_{d})+\\sigma^{2}(E_{d})+(n-1)\\left[\\sigma^{2}(A_{s})+\\sigma^{2}(E_{s})\\right] $$ [[SEE_FORMULA:22.13a]] [[SEE_FORMULA:22.13b]] where the phenotypic variance when all group members are unrelated, $ \\sigma^{2}(z \\mid r = 0) $, is given by Equation 22.5c."
+    }
+  ]
+}

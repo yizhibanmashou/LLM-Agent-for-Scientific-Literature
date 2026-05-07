@@ -1,0 +1,38 @@
+{
+  "id": "appendix4_019",
+  "metadata": {
+    "chapter": "appendix4",
+    "section": "The Benjamini-Hochberg FDR Estimator",
+    "subsections": [
+      "The Benjamini-Hochberg FDR Estimator"
+    ],
+    "source_file": "data\\paddle_output\\appendix4_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "structured_repair": {
+      "version": "source_inline_math_v1",
+      "actions": {
+        "replace_from_source": 4
+      }
+    }
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "The original estimator for the FDR was introduced by Benjamini and Hochberg (1995). Suppose we declare a test to be significant if its $p$ value is at or below some threshold value, $\\tau = p(k)$, in which case $k$ of the hypotheses will be declared significant (as $p[k]$ is the $k$th smallest $p$ value), and $S = k$. Likewise, if all $n$ of the hypotheses are null, then the expected value of $F$ (the number of false positives) is just $n p(k)$. The resulting fraction of all rejected hypotheses that are false discoveries becomes $F/S = n p(k)/k$. Hence, the false-discovery rate, $\\delta_k$, for hypothesis $k$ is bounded by $$ \\frac{np(k)}{k}\\leq\\delta_{k} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "In particular, if we wish to obtain an FDR of $ \\delta $ for the entire experiment, then we reject (i.e., declare as significant) all hypotheses that satisfy $$ p(k)\\leq\\delta\\frac{k}{n} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "This simple (heuristic) derivation shows why the original Benjamini-Hochberg estimate of the FDR is conservative, as in those settings in which one applies the FDR criteria, the expectation is that some fraction of the hypotheses are not null, and so $ n_0 < n $. The correct estimator of the expected number of rejected null hypotheses is $ n_0 p(k) $, which leads to a more generalized estimate of the FDR, where $ \\widehat{n}_0 $ (e.g., Equations A4.8–A4.10) replaces n. In this case, Equation A4.16a becomes $$ \\widehat{\\delta}_{k}=\\frac{\\widehat{n}_{0}p(k)}{k} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "|c|c| Cell 1 & Cell 2 \\\\ Cell 3 & Cell 4 \\\\"
+    }
+  ]
+}

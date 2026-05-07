@@ -1,0 +1,36 @@
+{
+  "id": "appendix3_016",
+  "metadata": {
+    "chapter": "appendix3",
+    "section": "More Formal Approaches",
+    "subsections": [
+      "More Formal Approaches"
+    ],
+    "source_file": "tmp\\paddle_output\\appendix3_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": []
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Gelman and Rubin's (1992) proposal was to first generate m separate chains at initial locations that are widely dispersed in the parameter space, with each returning a burned-in and thinned (such that autocorrelations between estimates are near zero) sequence of length n. Their approach is essentially an ANOVA, contrasting the estimated among-chain variance with its within-chain value. For the univariate case, let $$ B=\\frac{n}{m-1}\\sum_{i=1}^{m}(\\overline{\\theta}_{i}.-\\overline{\\theta}_{..})^{2} $$ be the among-chain variance, where $ \\bar{\\theta}_i $. is the mean parameter value for chain $ i $, and $ \\bar{\\theta}_i $ is the grand mean over all chains. Likewise, for the within-chain variance, we define $$ W=\\frac{1}{m}\\left(\\frac{1}{n-1}\\sum_{i=1}^{m}\\sum_{j=1}^{n}(\\overline{\\theta}_{ij}-\\overline{\\theta}_{i.})^{2}\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "A combined estimate of the variance is $$ \\widehat{\\sigma^{2}}=\\frac{n-1}{n}W+\\frac{1}{n}B $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Gelman and Rubin defined the potential scale reduction factor (PSRF) as $$ R=\\frac{\\widehat{\\sigma^{2}}}{W}=1+\\frac{1}{n}\\left(\\frac{B}{W}-1\\right) $$ with values of R near one being consistent with convergence. A plot of R over time should converge to a value near one, if the chains are converging. Because most MCMCs involve many variables, one could either look at the univariate R trace for each or use the multivariate version suggested by Brooks and Gelman (1998), $$ R=\\frac{n-1}{n}+\\left(1+\\frac{1}{m}\\right)\\lambda_{1} $$ where $ \\lambda_1 $ is the leading eigenvalue of the matrix product $ W^ -1 B/n $, and where W and B are the sample within- and among-covariance matrices for the parameters. Again, a value near 1 is consistent with convergence."
+    },
+    {
+      "type": "discussion",
+      "content": "The Geweke test (Geweke 1992) splits the sample (after removing a burn-in period) into two parts. If the chain is at stationarity, the means of the two samples should be equal. A modified z-test can be used to compare the two subsamples, and the resulting test statistic is often referred to as a Geweke z-score. A value larger than 2 indicates that the mean of the series is still drifting and a longer burn-in is required before monitoring the chain (to extract a sampler) can begin."
+    },
+    {
+      "type": "discussion",
+      "content": "A more informative approach is the Raftery-Lewis test (Raftery and Lewis 1992a). Here, one specifies a particular quantile, q, of the distribution of interest (typically testing both q = 2.5% and 97.5% , to give a 95% confidence interval), an accuracy, $ \\epsilon $ , of the quantile, and a power, 1- $ \\beta $ , for achieving this accuracy on the specified quantile. With these three parameter values set, the Raftery-Lewis test breaks the chain into a binary (1,0) sequence, in which an element in the sequence takes on a value of 1 if $ \\theta_{t}\\leq q $ , otherwise it takes on a value of zero. This generates a two-state Markov chain, and the Raftery-Lewis test uses the sequence to estimate the transition probabilities between states. With these probabilities in hand, one can then estimate the number of additional burn-ins (if any) required to approach stationarity, the thinning ratio (how many points should be discarded for each sampled point), and the total chain length required to achieve the preset level of accuracy."
+    }
+  ]
+}

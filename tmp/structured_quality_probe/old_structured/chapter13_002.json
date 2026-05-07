@@ -1,0 +1,32 @@
+{
+  "id": "chapter13_002",
+  "metadata": {
+    "chapter": "chapter13",
+    "section": "Chapter 13: Introduction",
+    "subsections": [
+      "The Breeder's Equation: A General Approximation for Response"
+    ],
+    "source_file": "data\\paddle_output\\chapter13_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "13.1"
+    ],
+    "table_references": [],
+    "structured_repair": {
+      "version": "source_inline_math_v1",
+      "actions": {
+        "replace_from_source": 2
+      }
+    }
+  },
+  "blocks": [
+    {
+      "type": "derivation",
+      "content": "Previous chapters developed explicit expressions for a single generation of response in the mean of a trait, based on either specific population-genetic models (Equations 5.23c and 5.27b) or completely general covariance-based expressions using Price's theorem (Equations 6.12, 6.39, and 6.40). These results show that either a large number of underlying loci of small effect and/or a linear parent-offspring regression generally will recover the simple breeder's equation [[SEE_FORMULA:13.1]] plus correction terms that are often small. This approximation is perhaps the most well-known expression in quantitative genetics, and its myriad of extensions form the backbone of the quantitative-genetic theory of short-term response. Although the actual origin of the breeder's equation is somewhat unclear, elements of it (in multivariate form) appear in the early writings of Pearson (1903), and it was popularized by Lush (1937). Indeed, Ollivier (2008) made the quite reasonable suggestion that it be called the Lush equation. Its simplicity is compelling, as it relates the change in mean across a generation (the response, R) to the product of the within-generation change (the selection differential, S) and a measure of how the character value is passed across generations (the heritability, $ h^{2} $). As discussed in Chapter 6, a necessary (but not sufficient) condition to recover the breeder's equation is a linear parent-offspring regression, with the phenotypic value, $ z_{o} $, of an offspring whose parents have the mean phenotypic value, $ z_{mp} $, given by $$ z_{o}=\\mu+b_{o|m p}(z_{m p}-\\mu)+e $$ where $ b_{o|mp} $ is the slope of the midparent-offspring regression, which in this chapter is usually assumed to be equivalent to the narrow-sense heritability, $ h^2 $ (but is generalized later). If we take the average over all selected parents, then $ E_s[z_{mp} - \\mu] = S $, while the difference between the expected value of the offspring from such parents and the overall mean is the selection response, $ R $, which yields"
+    },
+    {
+      "type": "discussion",
+      "content": "Recall (Equation 6.12) that two other technical restrictions are also required to formally obtain $ R = b_{o|mp} S $. First, it is assumed that the residuals of the linear parent-offspring and fitness-phenotype regressions are uncorrelated with each other. Second, it is assumed that the mean does not change in the absence of selection. As will be discussed below, cases do exist in which the mean and/or variance can change under random mating as disequilibrium induced by prior selection decays (Chapters 15 and 16). In our treatment we either assume that these potential complications introduce only very small errors, or we explicitly model their effects (e.g., Chapters 15, 20, 22, and 23)."
+    }
+  ]
+}
