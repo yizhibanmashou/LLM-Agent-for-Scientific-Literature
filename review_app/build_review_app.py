@@ -41,6 +41,8 @@ def structured_source_version(structured_dir: Path) -> str:
     normalized = structured_dir.resolve().as_posix().lower()
     if normalized.endswith("/tmp/structured_quality_probe/candidates/current_plus_p0p1/structured"):
         return "candidate_current_plus_p0p1"
+    if normalized.endswith("/tmp/structured_quality_probe/cache/fusion_smoke_claude_check/structured"):
+        return "fusion_smoke_claude_check"
     if normalized.endswith("/data/structured"):
         return "current_data"
     if normalized.endswith("/tmp/structured_quality_probe/old_structured"):
@@ -1980,6 +1982,11 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--pdf-dir", default="", help="Override review.pdf_dir (repo-relative or absolute).")
     parser.add_argument("--docs-path", default="", help="Override flow.docs_path (repo-relative or absolute).")
     parser.add_argument(
+        "--chapters",
+        default="",
+        help="Restrict generated review_dataset.json to comma-separated chapter ids, e.g. chapter5,chapter13.",
+    )
+    parser.add_argument(
         "--locator-chapters",
         default="",
         help="Refresh only tmp locator artifacts for comma-separated chapters, reusing generated review_dataset.json.",
@@ -2025,12 +2032,15 @@ def filter_review_dataset(review_dataset: dict[str, Any], chapter_ids: set[str])
         if isinstance(chapter, dict) and str(chapter.get("id") or "").strip().lower() in chapter_ids
     ]
     data_source = review_dataset.get("data", {}) if isinstance(review_dataset.get("data"), dict) else {}
-    data = {chapter_id: data_source.get(chapter_id, {}) for chapter_id in chapter_ids if chapter_id in data_source}
+    ordered_chapter_ids = [str(chapter.get("id") or "").strip().lower() for chapter in chapters]
+    data = {chapter_id: data_source.get(chapter_id, {}) for chapter_id in ordered_chapter_ids if chapter_id in data_source}
     return {
         **review_dataset,
         "chapters": chapters,
         "data": data,
         "default_chapter": chapters[0]["id"] if chapters else "",
+        "chapter_filter": ordered_chapter_ids,
+        "prepared_scope": "targeted_chapters" if chapter_ids else "all_chapters",
     }
 
 
@@ -2188,13 +2198,19 @@ def main(argv: list[str] | None = None) -> None:
 
     formula_ocr_index, ocr_coverage = build_formula_ocr_index(config)
     review_dataset = build_review_dataset(config, ocr_coverage=ocr_coverage)
+    target_chapters = parse_chapter_filter(args.chapters)
+    if target_chapters:
+        review_dataset = filter_review_dataset(review_dataset, target_chapters)
+        if not review_dataset.get("chapters"):
+            raise SystemExit(f"No selected chapters found in structured data: {', '.join(sorted(target_chapters, key=chapter_sort_key))}")
     flow_graph = build_flow_graph(config)
     review_locator_index = (
         load_json(REVIEW_LOCATOR_INDEX_PATH)
         if args.skip_locator and REVIEW_LOCATOR_INDEX_PATH.exists()
         else build_review_locator_index(review_dataset, formula_ocr_index)
     )
-    chunk_line_index = build_chunk_line_index(CHUNK_LINE_POC_CHAPTERS)
+    chunk_line_chapters = (target_chapters or CHUNK_LINE_POC_CHAPTERS) & CHUNK_LINE_POC_CHAPTERS
+    chunk_line_index = build_chunk_line_index(chunk_line_chapters)
 
     write_json(REVIEW_DATASET_PATH, review_dataset)
     write_json(FLOW_GRAPH_PATH, flow_graph)

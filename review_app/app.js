@@ -411,10 +411,14 @@ function renderHero() {
   Object.values(REVIEW_RECORDS).forEach((record) => {
     statuses[record.status] = (statuses[record.status] || 0) + 1;
   });
+  const sourceVersion = currentSourceVersion();
+  const chapterFilter = Array.isArray(DATA.review?.chapter_filter) ? DATA.review.chapter_filter : chapters.map((chapter) => chapter.id);
+  const chapterText = chapterFilter.length <= 7 ? chapterFilter.join(", ") : `${chapterFilter.slice(0, 7).join(", ")}…`;
 
   const heroMeta = document.getElementById("heroMeta");
   heroMeta.innerHTML = [
-    metricCard("章节数", String(chapters.length), "TOC 锚点 + 文本定位"),
+    metricCard("源版本", sourceVersion, DATA.review?.structured_dir || "structured"),
+    metricCard("章节数", String(chapters.length), chapterText || "未过滤"),
     metricCard("待确认", String(statuses.pending || 0), "优先处理"),
     metricCard("不通过", String(statuses.fail || 0), "需复核"),
     metricCard("通过", String(statuses.pass || 0), "已确认"),
@@ -481,6 +485,53 @@ function currentSourceVersion() {
     .replace(/[^\w.-]+/g, "_")
     .replace(/^_+|_+$/g, "");
   return cleaned || "current_data";
+}
+
+function compactText(value, limit = 90) {
+  const text = String(value || "")
+    .replace(/\s+/g, " ")
+    .trim();
+  if (!text || text.length <= limit) {
+    return text;
+  }
+  return `${text.slice(0, Math.max(0, limit - 1)).trim()}…`;
+}
+
+function formatGuideNumber(value, digits = 2) {
+  const number = Number(value);
+  return Number.isFinite(number) ? number.toFixed(digits) : "";
+}
+
+function sourcePageHintText(item) {
+  const locator = item?.locator || {};
+  const hints = [];
+  if (locator.toc_page_hint) {
+    hints.push(`小节锚点 P${locator.toc_page_hint}`);
+  }
+  if (locator.toc_chapter_page) {
+    hints.push(`章节起始 P${locator.toc_chapter_page}`);
+  }
+  if (item?.source_page) {
+    hints.push(`source_page ${item.source_page}`);
+  }
+  return hints.join(" · ") || "无页码锚点";
+}
+
+function sourceTermsText(item, limit = 5) {
+  const locatorTerms = Array.isArray(item?.locator?.terms) ? item.locator.terms : [];
+  const searchKeys = Array.isArray(item?.search_keys) ? item.search_keys : [];
+  const terms = [...locatorTerms, ...searchKeys]
+    .map((term) => compactText(term, 42))
+    .filter(Boolean);
+  return Array.from(new Set(terms)).slice(0, limit).join(" · ");
+}
+
+function itemSourceGuideBrief(item) {
+  const locator = item?.locator || {};
+  const sourceUnit = locator.source_unit_id || item?.source_unit_id || "-";
+  const subsection = compactText(locator.subsection || item?.subtitle || "", 58);
+  const pageHint = sourcePageHintText(item);
+  return `${pageHint} · ${sourceUnit}${subsection ? ` · ${subsection}` : ""}`;
 }
 
 function recordKeyForItem(item) {
@@ -832,11 +883,13 @@ function renderItemList(allItems) {
   root.innerHTML = allItems
     .map((item) => {
       const status = statusOfItem(item);
+      const sourceGuide = itemSourceGuideBrief(item);
       return `<button type="button" class="item-pill ${item.id === STATE.selectedItemId ? "is-active" : ""}" data-item-id="${escapeHtml(
         item.id
       )}">
         <div class="item-pill-title">${escapeHtml(item.id)}</div>
-        <div class="small-text">${escapeHtml(item.subtitle || item.title || "-")}</div>
+        <div class="small-text">${escapeHtml(compactText(item.subtitle || item.title || "-", 78))}</div>
+        <div class="item-pill-meta">${escapeHtml(sourceGuide)}</div>
         <span class="status-chip ${STATUS_CLASS[status]}">${escapeHtml(STATUS_LABELS[status])}</span>
       </button>`;
     })
@@ -983,6 +1036,39 @@ function issueSeverityOptionsHtml(selectedSeverity = "warning") {
     .join("");
 }
 
+function guideRowHtml(label, value) {
+  const displayValue = compactText(value, 160) || "-";
+  return `<div class="source-guide-row">
+    <span>${escapeHtml(label)}</span>
+    <strong class="chunk-math-text">${escapeHtml(displayValue)}</strong>
+  </div>`;
+}
+
+function renderSourceGuide(item) {
+  const locator = item?.locator || {};
+  const sourceTerms = sourceTermsText(item, 6) || "-";
+  const matchScore = formatGuideNumber(locator.toc_match_score, 3);
+  const tocMatch = locator.toc_match_title
+    ? `${locator.toc_match_title}${matchScore ? ` · score ${matchScore}` : ""}`
+    : matchScore
+      ? `score ${matchScore}`
+      : "-";
+  const rows = [
+    ["源版本", currentSourceVersion()],
+    ["章节/视图", `${chapterMetaById(itemChapterId(item))?.label || itemChapterId(item)} · ${viewLabel(STATE.viewId)}`],
+    ["原文页码指引", sourcePageHintText(item)],
+    ["小节锚点", locator.subsection || item.subtitle || "-"],
+    ["TOC 匹配", tocMatch],
+    ["source.unit_id", locator.source_unit_id || item.source_unit_id || "-"],
+    ["定位关键词", sourceTerms],
+    ["record key", recordKeyForItem(item)],
+  ];
+  return `<section class="source-guide">
+    <div class="source-guide-title">原文指引</div>
+    <div class="source-guide-grid">${rows.map(([label, value]) => guideRowHtml(label, value)).join("")}</div>
+  </section>`;
+}
+
 function renderReviewDetail(item) {
   const root = document.getElementById("reviewDetail");
   if (!item) {
@@ -1011,6 +1097,7 @@ function renderReviewDetail(item) {
       </div>
       <span class="status-chip ${STATUS_CLASS[record.status]}">${escapeHtml(STATUS_LABELS[record.status])}</span>
     </div>
+    ${renderSourceGuide(item)}
     ${detailHtml}
     <div class="status-actions">
       ${["pending", "pass", "fail"]
@@ -2141,10 +2228,15 @@ function renderCandidatePages() {
 
   root.innerHTML = STATE.candidatePages
     .map(
-      (candidate, index) =>
-        `<button type="button" class="candidate-btn ${candidate.page === STATE.pdfPage ? "is-active" : ""}" data-candidate-index="${index}">
-          P${candidate.page} · ${candidate.score.toFixed(1)} · ${escapeHtml(candidate.source || "text")}
+      (candidate, index) => {
+        const matched = Array.isArray(candidate.matched) ? candidate.matched.slice(0, 3).join(" / ") : "";
+        const matchedLabel = matched ? ` · ${compactText(matched, 34)}` : "";
+        return `<button type="button" class="candidate-btn ${candidate.page === STATE.pdfPage ? "is-active" : ""}" data-candidate-index="${index}" title="${escapeHtml(
+          matched ? `matched: ${matched}` : ""
+        )}">
+          P${candidate.page} · ${candidate.score.toFixed(1)} · ${escapeHtml(candidate.source || "text")}${escapeHtml(matchedLabel)}
         </button>`
+      }
     )
     .join("");
 

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-05-07T01:13:54.013665+00:00",
+  "updated_at": "2026-05-07T08:22:41.268797+00:00",
   "categories": [
     {
       "issue_code": "inline_math_damage",
@@ -9,6 +9,7 @@
       "description": "inline LaTeX 中出现上下标断裂、符号缺失、空公式或数学片段损坏。",
       "severity": "error",
       "status": "manual_only",
+      "aliases": [],
       "examples": [],
       "detector": {
         "mode": "regex",
@@ -25,7 +26,23 @@
       "description": "独立公式、公式编号或公式环境存在缺失、断裂、错位。",
       "severity": "error",
       "status": "manual_only",
-      "examples": [],
+      "aliases": [],
+      "examples": [
+        {
+          "bad_span": "公式分母错误",
+          "expected": "分母W上面只有一个横杠",
+          "context": "",
+          "target_id": "",
+          "evidence": ""
+        },
+        {
+          "bad_span": "​\n \\qquadand",
+          "expected": "​\nand",
+          "context": "​\n \\qquadand",
+          "target_id": "5.6c",
+          "evidence": ""
+        }
+      ],
       "detector": {
         "mode": "regex",
         "patterns": []
@@ -38,6 +55,7 @@
       "description": "chunk 中公式占位符缺失、错指、断裂或与公式库不一致。",
       "severity": "fatal",
       "status": "manual_only",
+      "aliases": [],
       "examples": [],
       "detector": {
         "mode": "regex",
@@ -51,6 +69,7 @@
       "description": "正文提到 Equation/Figure/Table 编号，但没有映射成可追踪的结构化引用。",
       "severity": "warning",
       "status": "manual_only",
+      "aliases": [],
       "examples": [],
       "detector": {
         "mode": "regex",
@@ -64,6 +83,7 @@
       "description": "chunk 中表格占位符缺失、错指、断裂或与表格库不一致。",
       "severity": "fatal",
       "status": "manual_only",
+      "aliases": [],
       "examples": [],
       "detector": {
         "mode": "regex",
@@ -93,6 +113,7 @@
       "description": "表格单元格、行列或数学表达式对齐错误，导致含义错配。",
       "severity": "error",
       "status": "manual_only",
+      "aliases": [],
       "examples": [],
       "detector": {
         "mode": "regex",
@@ -106,6 +127,7 @@
       "description": "正文中的表格引用存在但指向错误表格、错误章节或错误位置。",
       "severity": "error",
       "status": "manual_only",
+      "aliases": [],
       "examples": [],
       "detector": {
         "mode": "regex",
@@ -119,6 +141,7 @@
       "description": "表格标题、行列、单元格内容或 HTML 结构不正确。",
       "severity": "error",
       "status": "manual_only",
+      "aliases": [],
       "examples": [],
       "detector": {
         "mode": "regex",
@@ -132,6 +155,7 @@
       "description": "正文中出现重复内容、跨块泄漏、残留浮动参数或非正文结构片段。",
       "severity": "warning",
       "status": "manual_only",
+      "aliases": [],
       "examples": [],
       "detector": {
         "mode": "regex",
@@ -145,6 +169,7 @@
       "description": "block/chunk 切分过短、跨段、上下文断裂或类型不合理。",
       "severity": "warning",
       "status": "manual_only",
+      "aliases": [],
       "examples": [],
       "detector": {
         "mode": "regex",
@@ -158,6 +183,7 @@
       "description": "chunk 边界过早、过晚或跨越不应合并的语义单元。",
       "severity": "warning",
       "status": "manual_only",
+      "aliases": [],
       "examples": [],
       "detector": {
         "mode": "regex",
@@ -171,6 +197,7 @@
       "description": "文本存在乱码、异常字符、不可读片段或明显 OCR 误识别。",
       "severity": "warning",
       "status": "manual_only",
+      "aliases": [],
       "examples": [],
       "detector": {
         "mode": "regex",
@@ -186,7 +213,23 @@
       "description": "正文中残留 [h]、页码、孤立符号、版权符号等无语义块。",
       "severity": "error",
       "status": "manual_only",
-      "examples": [],
+      "aliases": [],
+      "examples": [
+        {
+          "bad_span": "[h] As in [[SEE_TABLE:5.1]], for a biallelic locus, this follows from weighting the (random-mating) frequency of a genotype before selection by its fitness, with",
+          "expected": "As in [[SEE_TABLE:5.1]], for a biallelic locus, this follows from weighting the (random-mating) frequency of a genotype before selection by its fitness, with",
+          "context": "",
+          "target_id": "",
+          "evidence": ""
+        },
+        {
+          "bad_span": "[h] With a linear system of \nn\n−\n1\nn−1 equations and \nn\n−\n1\nn−1 unknowns, there will be either zero, one, or infinitely many solutions. An example of the latter is that when all the \nW\ni\nj\n=\n1\nW \nij\n​\n =1, any set of allele frequencies is stable, as this is just the neutral condition.",
+          "expected": "With a linear system of \nn\n−\n1\nn−1 equations and \nn\n−\n1\nn−1 unknowns, there will be either zero, one, or infinitely many solutions. An example of the latter is that when all the \nW\ni\nj\n=\n1\nW \nij\n​\n =1, any set of allele frequencies is stable, as this is just the neutral condition.",
+          "context": "",
+          "target_id": "",
+          "evidence": ""
+        }
+      ],
       "detector": {
         "mode": "regex",
         "patterns": [
@@ -202,6 +245,7 @@
       "description": "句子、括号、引号或引用明显未闭合，疑似被截断。",
       "severity": "error",
       "status": "manual_only",
+      "aliases": [],
       "examples": [],
       "detector": {
         "mode": "regex",
@@ -215,6 +259,7 @@
       "description": "正文中残留 LaTeX 浮动参数、dummy table、未完成 placeholder 等结构噪声。",
       "severity": "error",
       "status": "manual_only",
+      "aliases": [],
       "examples": [],
       "detector": {
         "mode": "regex",
@@ -231,6 +276,7 @@
       "description": "早期临时分类，保留用于兼容已审核记录；后续建议改用 table_row_group_misattribution 或 table_cell_alignment_error。",
       "severity": "error",
       "status": "manual_only",
+      "aliases": [],
       "examples": [],
       "detector": {
         "mode": "regex",

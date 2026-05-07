@@ -627,6 +627,15 @@ textarea {
   font-size: 0.86rem;
 }
 
+.item-pill-meta {
+  color: var(--ink-soft);
+  font-size: 0.72rem;
+  line-height: 1.25;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .status-chip {
   display: inline-flex;
   align-items: center;
@@ -673,6 +682,48 @@ textarea {
 .stack-list {
   display: grid;
   gap: 5px;
+}
+
+.source-guide {
+  border: 1px solid rgba(27, 78, 163, 0.16);
+  border-radius: 12px;
+  background: rgba(248, 251, 255, 0.88);
+  padding: 8px;
+  margin-bottom: 8px;
+}
+
+.source-guide-title {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.source-guide-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 5px 8px;
+}
+
+.source-guide-row {
+  min-width: 0;
+  display: grid;
+  gap: 2px;
+}
+
+.source-guide-row span {
+  color: var(--ink-soft);
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+.source-guide-row strong {
+  min-width: 0;
+  color: var(--ink);
+  font-size: 0.76rem;
+  font-weight: 700;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
 }
 
 .block-list {
@@ -1054,6 +1105,10 @@ textarea {
   }
 
   .issue-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .source-guide-grid {
     grid-template-columns: 1fr;
   }
 }

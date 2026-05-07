@@ -3362,6 +3362,43 @@ def main() -> None:
         default=int((os.getenv("KE_LLM_MAX_REFS_PER_BLOCK") or "4").strip() or "4"),
         help="Hard guardrail: max formula refs adopted per block",
     )
+    parser.add_argument(
+        "--structured-fusion",
+        action="store_true",
+        help="Run generic post-generation structured fusion before finishing the output.",
+    )
+    parser.add_argument(
+        "--glmocr-dir",
+        default=(os.getenv("KE_GLMOCR_DIR") or ""),
+        help="Optional GLM OCR directory used by --structured-fusion as guarded prose evidence.",
+    )
+    parser.add_argument(
+        "--reference-structured-dir",
+        default=(os.getenv("KE_REFERENCE_STRUCTURED_DIR") or ""),
+        help="Optional earlier structured directory used by --structured-fusion for evidence-backed table recovery.",
+    )
+    parser.add_argument(
+        "--fusion-auto-threshold",
+        type=float,
+        default=float((os.getenv("KE_FUSION_AUTO_THRESHOLD") or "0.90").strip() or "0.90"),
+        help="Minimum confidence for automatic GLM prose repairs in structured fusion.",
+    )
+    parser.add_argument(
+        "--fusion-review-threshold",
+        type=float,
+        default=float((os.getenv("KE_FUSION_REVIEW_THRESHOLD") or "0.75").strip() or "0.75"),
+        help="Minimum confidence for review-queue GLM prose repairs in structured fusion.",
+    )
+    parser.add_argument(
+        "--fusion-enable-glm-prose-repair",
+        action="store_true",
+        help="Allow structured fusion to auto-apply high-confidence GLM OCR prose replacements.",
+    )
+    parser.add_argument(
+        "--replace-weaker-tables",
+        action="store_true",
+        help="Allow structured fusion to replace existing weaker table entries with reference versions.",
+    )
     args = parser.parse_args()
 
     os.makedirs(args.output, exist_ok=True)
@@ -3596,6 +3633,35 @@ def main() -> None:
         f"updated_this_run: {len(all_tables)})"
     )
 
+    fusion_summary = None
+    if args.structured_fusion:
+        from knowledge_engineering.structured_fusion import apply_structured_fusion
+
+        print("\n[FUSION] Running generic structured fusion...")
+        fusion_summary = apply_structured_fusion(
+            structured_dir=args.output,
+            glmocr_dir=args.glmocr_dir or None,
+            reference_structured_dir=args.reference_structured_dir or None,
+            artifacts_dir=args.artifacts_dir,
+            auto_threshold=float(args.fusion_auto_threshold),
+            review_threshold=float(args.fusion_review_threshold),
+            enable_glm_prose_repair=bool(args.fusion_enable_glm_prose_repair),
+            replace_weaker_tables=bool(args.replace_weaker_tables),
+        )
+        block_stats = fusion_summary.get("block_stats", {})
+        table_fusion_stats = fusion_summary.get("table_stats", {})
+        ref_stats = fusion_summary.get("reference_stats", {})
+        print(
+            "  structured fusion: "
+            f"removed_blocks={block_stats.get('blocks_removed', 0)}, "
+            f"glm_repairs={block_stats.get('glm_repair_applied', 0)}, "
+            f"tables_recovered={table_fusion_stats.get('table_entries_recovered_from_reference', 0)}, "
+            f"table_refs_backfilled={ref_stats.get('table_references_backfilled', 0)}, "
+            f"manual_queue={fusion_summary.get('manual_queue_count', 0)}"
+        )
+        if fusion_summary.get("artifact_dir"):
+            print(f"  structured fusion artifacts: {fusion_summary['artifact_dir']}")
+
     llm_eval_dir = _ensure_dir(os.path.join(os.path.abspath(args.artifacts_dir), "llm_eval"))
     chapter_eval_files = sorted(
         file_name
@@ -3635,6 +3701,8 @@ def main() -> None:
     }
     if client is not None and hasattr(client, "get_metrics"):
         run_summary["llm_metrics_final"] = client.get_metrics()
+    if fusion_summary is not None:
+        run_summary["structured_fusion"] = fusion_summary
     run_summary_path = os.path.join(llm_eval_dir, "run_summary.json")
     _write_json(run_summary_path, run_summary)
     print(f"[LLM] Eval summary: {run_summary_path}")
