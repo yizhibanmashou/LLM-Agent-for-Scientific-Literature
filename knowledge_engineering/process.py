@@ -61,6 +61,7 @@ from knowledge_engineering.runtime import (
 NOISE_PATTERNS = [
     r"^\d{1,4}$",
     r"^[ivxlcdmIVXLCDM]{1,6}$",
+    r"^\[(?:h|t|b|p)\]$",
     r"(?:ISBN|DOI|Copyright|All rights reserved)",
     r"^\d{4}\s*$",
     r"^\\$",
@@ -82,6 +83,7 @@ PLOT_REGRESSION_PATTERN = re.compile(
 )
 SHORT_NUMERIC_NOISE_PATTERN = re.compile(r"^[0-9xXyYrR=().,:;+\-/*\s]{5,}$")
 NUMBERED_SECTION_PATTERN = re.compile(r"^(?:\d+|[IVXLC]+)\.\s+[A-Z]")
+ORDERED_LIST_ITEM_PATTERN = re.compile(r"^\d{1,2}[.)]\s+\S.*[.!?]\s*$")
 SAME_LINE_FORMULA_PATTERN = re.compile(
     r"^(?P<formula>.+?)\s*(?P<label>\((?:\d+\.\d+(?:\.\d+)?[a-zA-Z]?)\))$"
 )
@@ -261,8 +263,9 @@ TABLE_LABEL_PATTERN = re.compile(r"^Table\s+(?P<label>\d+\.\d+[A-Za-z]?)\b", re.
 TABLE_REFERENCE_PATTERN = re.compile(r"\bTable\s+(\d+\.\d+[A-Za-z]?)\b")
 FORMULA_PLACEHOLDER_PATTERN = re.compile(r"^见公式\((?P<label>\d+\.\d+(?:\.\d+)?[A-Za-z]?)\)$")
 FORMULA_REFERENCE_PATTERN = re.compile(r"见公式\((?P<label>\d+\.\d+(?:\.\d+)?[A-Za-z]?)\)")
-TABLE_PLACEHOLDER_PATTERN = re.compile(r"\[\[TABLE:(?P<label>\d+\.\d+[A-Za-z]?)\]\]")
-TABLE_REFERENCE_PLACEHOLDER_PATTERN = re.compile(r"\[\[SEE_TABLE:(?P<label>\d+\.\d+[A-Za-z]?)\]\]")
+TABLE_REF_ID_PATTERN = r"(?:\d+\.\d+[A-Za-z]?|inline_\d+)"
+TABLE_PLACEHOLDER_PATTERN = re.compile(rf"\[\[TABLE:(?P<label>{TABLE_REF_ID_PATTERN})\]\]", re.IGNORECASE)
+TABLE_REFERENCE_PLACEHOLDER_PATTERN = re.compile(rf"\[\[SEE_TABLE:(?P<label>{TABLE_REF_ID_PATTERN})\]\]", re.IGNORECASE)
 HTML_TABLE_ROW_PATTERN = re.compile(r"<tr[^>]*>(?P<body>.*?)</tr>", re.IGNORECASE | re.DOTALL)
 HTML_TABLE_CELL_PATTERN = re.compile(r"<t[dh][^>]*>(?P<body>.*?)</t[dh]>", re.IGNORECASE | re.DOTALL)
 
@@ -312,10 +315,13 @@ def _is_structural_heading_line(line: str) -> bool:
     stripped = line.strip()
     if not stripped:
         return False
+    numbered_section = bool(NUMBERED_SECTION_PATTERN.match(stripped))
+    if numbered_section and ORDERED_LIST_ITEM_PATTERN.match(stripped):
+        numbered_section = False
     return (
         stripped.startswith("#")
         or _is_major_heading_line(stripped)
-        or bool(NUMBERED_SECTION_PATTERN.match(stripped))
+        or numbered_section
     )
 
 
@@ -1316,6 +1322,8 @@ def _table_entry_sort_key(entry: TableEntry) -> tuple[int, int, int, int, str]:
 
 
 def _table_entry_quality_score(entry: TableEntry) -> float:
+    if str(entry.table_type or "").lower() == "missing":
+        return -1000.0
     row_count = len(entry.rows or [])
     cell_count = sum(len(row) for row in (entry.rows or []))
     content_size = sum(len(str(cell)) for row in (entry.rows or []) for cell in row)
@@ -1349,6 +1357,57 @@ def _merge_table_entries_by_quality(entries: Iterable[TableEntry]) -> list[Table
         if _table_entry_quality_score(entry) > _table_entry_quality_score(existing):
             merged[table_id] = entry
     return sorted(merged.values(), key=_table_entry_sort_key)
+
+
+def _create_missing_table_body_stubs(
+    text: str,
+    chapter_name: str,
+    existing_table_ids: set[str],
+) -> list[TableEntry]:
+    """Create explicit review stubs for referenced local tables with no raw body."""
+    chapter_number = _chapter_number_from_name(chapter_name)
+    if chapter_number is None:
+        return []
+
+    local_prefix = f"{chapter_number}."
+    candidate_ids: set[str] = set()
+    physical_ids: set[str] = set()
+
+    for match in TABLE_PLACEHOLDER_PATTERN.finditer(text or ""):
+        table_id = match.group("label")
+        if table_id.startswith(local_prefix):
+            candidate_ids.add(table_id)
+            physical_ids.add(table_id)
+    for match in TABLE_REFERENCE_PLACEHOLDER_PATTERN.finditer(text or ""):
+        table_id = match.group("label")
+        if table_id.startswith(local_prefix):
+            candidate_ids.add(table_id)
+    for match in TABLE_REFERENCE_PATTERN.finditer(text or ""):
+        table_id = match.group(1)
+        if table_id.startswith(local_prefix):
+            candidate_ids.add(table_id)
+
+    stubs: list[TableEntry] = []
+    for table_id in sorted(candidate_ids - set(existing_table_ids), key=_table_sort_key):
+        stubs.append(
+            TableEntry(
+                id=table_id,
+                label_format=f"Table {table_id}",
+                title=f"Table {table_id} (body not recovered from raw layout)",
+                table_type="missing",
+                html="",
+                rows=[],
+                source={
+                    "chapter": chapter_name,
+                    "extraction_channel": "missing_table_body_stub",
+                    "needs_review": True,
+                    "has_physical_placeholder": table_id in physical_ids,
+                    "reason": "referenced_or_positioned_but_no_raw_table_body",
+                },
+                description="Placeholder entry to keep table references resolvable while raw table-body recovery is pending.",
+            )
+        )
+    return stubs
 
 
 PADDLE_RAW_FILE_NAMES = (
@@ -1604,6 +1663,7 @@ def _extract_tables_from_paddle_raw(tex_path: str, chapter_name: str) -> list[Ta
             block
             for block in page_blocks
             if block["label"] in {"figure_title", "text", "paragraph_title"}
+            and _classify_figure_table_line(block["content"]) == "caption"
         ]
 
         for table_block in table_blocks:
@@ -1618,13 +1678,13 @@ def _extract_tables_from_paddle_raw(tex_path: str, chapter_name: str) -> list[Ta
             fallback_caption = None
             fallback_distance = 9999.0
             for caption in caption_blocks:
-                label_match = TABLE_REFERENCE_PATTERN.search(caption["content"])
+                label_match = TABLE_LABEL_PATTERN.match(caption["content"])
                 distance = _bbox_distance(table_block.get("bbox"), caption.get("bbox"))
                 if label_match:
                     if distance < best_caption_distance:
                         best_caption = caption
                         best_caption_distance = distance
-                        best_label = label_match.group(1)
+                        best_label = label_match.group("label")
                 if distance < fallback_distance:
                     fallback_caption = caption
                     fallback_distance = distance
@@ -1654,7 +1714,13 @@ def _extract_tables_from_paddle_raw(tex_path: str, chapter_name: str) -> list[Ta
                     table_type=table_type,
                     html=table_html,
                     rows=rows,
-                    source={"chapter": chapter_name, "page": page_index},
+                    source={
+                        "chapter": chapter_name,
+                        "page": page_index,
+                        "bbox": table_block.get("bbox"),
+                        "caption_bbox": (best_caption or {}).get("bbox") if isinstance(best_caption, dict) else None,
+                        "extraction_channel": "paddle_raw_layout",
+                    },
                 )
             )
 
@@ -1720,7 +1786,21 @@ def _extract_rows_from_table_block(block_text: str) -> list[list[str]]:
     return rows
 
 
-def _extract_table_envs_and_replace(text: str, chapter_name: str) -> tuple[str, list[TableEntry]]:
+def _is_dummy_latex_table_block(block_text: str, caption_text: str = "") -> bool:
+    normalized = re.sub(r"\s+", " ", block_text or "").strip().lower()
+    if "cell 1" in normalized and "cell 2" in normalized:
+        return True
+    if (caption_text or "").strip().lower() == "table placeholder":
+        return True
+    return False
+
+
+def _extract_table_envs_and_replace(
+    text: str,
+    chapter_name: str,
+    *,
+    create_table_entries: bool = False,
+) -> tuple[str, list[TableEntry]]:
     chapter_number = _chapter_number_from_name(chapter_name)
     label_occurrences: list[dict] = []
     for match in TABLE_REFERENCE_PATTERN.finditer(text or ""):
@@ -1764,6 +1844,7 @@ def _extract_table_envs_and_replace(text: str, chapter_name: str) -> tuple[str, 
 
         caption_match = CAPTION_COMMAND_PATTERN.search(block_text)
         caption_text = caption_match.group("text").strip() if caption_match else ""
+        is_dummy_table = _is_dummy_latex_table_block(block_text, caption_text)
         if caption_text.lower() == "table placeholder":
             caption_text = ""
 
@@ -1772,22 +1853,23 @@ def _extract_table_envs_and_replace(text: str, chapter_name: str) -> tuple[str, 
             title_text = f"Table {table_id} {title_text}".strip()
         title_without_label = re.sub(r"^.*?\bTable\s+\d+\.\d+[A-Za-z]?\s*", "", title_text).strip()
 
-        rows = _extract_rows_from_table_block(block_text)
-        if not rows:
-            rows = [[title_without_label or f"Table {table_id}"]]
-        tables.append(
-            TableEntry(
-                id=table_id,
-                label_format=f"Table {table_id}",
-                title=title_text,
-                table_type="numbered",
-                html=_render_simple_table_html(rows),
-                rows=rows,
-                source={"chapter": chapter_name},
+        if create_table_entries and not is_dummy_table:
+            rows = _extract_rows_from_table_block(block_text)
+            if not rows:
+                rows = [[title_without_label or f"Table {table_id}"]]
+            tables.append(
+                TableEntry(
+                    id=table_id,
+                    label_format=f"Table {table_id}",
+                    title=title_text,
+                    table_type="numbered",
+                    html=_render_simple_table_html(rows),
+                    rows=rows,
+                    source={"chapter": chapter_name, "extraction_channel": "latex_table_env"},
+                )
             )
-        )
         placeholder = f"[[TABLE:{table_id}]]"
-        replacements.append((start, end, f"{placeholder} {title_without_label}".strip()))
+        replacements.append((start, end, placeholder))
 
     rewritten = text or ""
     for start, end, replacement in sorted(replacements, key=lambda item: item[0], reverse=True):
@@ -1795,7 +1877,14 @@ def _extract_table_envs_and_replace(text: str, chapter_name: str) -> tuple[str, 
     return rewritten, tables
 
 
-def _extract_ocr_table_lines_and_replace(text: str, chapter_name: str) -> tuple[str, list[TableEntry]]:
+def _extract_ocr_table_lines_and_replace(
+    text: str,
+    chapter_name: str,
+    *,
+    known_table_ids: set[str] | None = None,
+    create_table_entries: bool = False,
+) -> tuple[str, list[TableEntry]]:
+    known_table_ids = known_table_ids or set()
     lines = text.splitlines()
     rewritten: list[str] = []
     tables: list[TableEntry] = []
@@ -1834,23 +1923,25 @@ def _extract_ocr_table_lines_and_replace(text: str, chapter_name: str) -> tuple[
 
         title_text = " ".join(title_lines)
         if body_lines:
-            rows = [[line] for line in body_lines]
-            tables.append(
-                TableEntry(
-                    id=table_id,
-                    label_format=f"Table {table_id}",
-                    title=title_text,
-                    table_type="numbered",
-                    html=_render_simple_table_html(rows),
-                    rows=rows,
-                    source={"chapter": chapter_name},
+            if create_table_entries:
+                rows = [[line] for line in body_lines]
+                tables.append(
+                    TableEntry(
+                        id=table_id,
+                        label_format=f"Table {table_id}",
+                        title=title_text,
+                        table_type="numbered",
+                        html=_render_simple_table_html(rows),
+                        rows=rows,
+                        source={"chapter": chapter_name, "extraction_channel": "ocr_text_lines"},
+                    )
                 )
-            )
-            title_without_label = re.sub(r"^Table\s+\d+\.\d+[A-Za-z]?\s*", "", title_text).strip()
-            placeholder = f"[[TABLE:{table_id}]]"
-            rewritten.append(f"{placeholder} {title_without_label}".strip())
-            index = cursor
-            continue
+            if create_table_entries or table_id in known_table_ids:
+                title_without_label = re.sub(r"^Table\s+\d+\.\d+[A-Za-z]?\s*", "", title_text).strip()
+                placeholder = f"[[TABLE:{table_id}]]"
+                rewritten.append(f"{placeholder} {title_without_label}".strip())
+                index = cursor
+                continue
 
         rewritten.append(lines[index])
         index += 1
@@ -1858,10 +1949,22 @@ def _extract_ocr_table_lines_and_replace(text: str, chapter_name: str) -> tuple[
     return "\n".join(rewritten), tables
 
 
-def extract_tables_and_replace(text: str, chapter_name: str) -> tuple[str, list[TableEntry]]:
-    """Extract numbered tables from both LaTeX table env and OCR lines."""
+def extract_tables_and_replace(
+    text: str,
+    chapter_name: str,
+    *,
+    known_table_ids: set[str] | None = None,
+    create_text_table_entries: bool = False,
+) -> tuple[str, list[TableEntry]]:
+    """Place table-location markers and rewrite prose mentions to table references."""
+    known_table_ids = known_table_ids or set()
     env_replaced_text, env_tables = _extract_table_envs_and_replace(text, chapter_name)
-    replaced_text, ocr_tables = _extract_ocr_table_lines_and_replace(env_replaced_text, chapter_name)
+    replaced_text, ocr_tables = _extract_ocr_table_lines_and_replace(
+        env_replaced_text,
+        chapter_name,
+        known_table_ids=known_table_ids,
+        create_table_entries=create_text_table_entries,
+    )
 
     table_map: dict[str, TableEntry] = {}
     for entry in env_tables + ocr_tables:
@@ -1875,7 +1978,7 @@ def extract_tables_and_replace(text: str, chapter_name: str) -> tuple[str, list[
             table_map[entry.id] = entry
 
     tables = list(table_map.values())
-    valid_table_ids = {entry.id for entry in tables}
+    valid_table_ids = {entry.id for entry in tables} | set(known_table_ids)
 
     def replace_table_reference(match: re.Match[str]) -> str:
         table_id = match.group(1)
@@ -2022,6 +2125,46 @@ def _canonicalize_chunk_subsections(chunks: List, source_title: str | None = Non
                 canonical_by_key[current_key] = cleaned
                 seen.append(current_key)
             block.subsection = canonical_by_key[current_key]
+
+
+def _normalize_block_heading_metadata(block: Any) -> None:
+    subsection = _normalize_heading_display(getattr(block, "subsection", "") or "")
+    level_1 = _normalize_heading_display(getattr(block, "section_level_1", "") or "")
+    level_2 = _normalize_heading_display(getattr(block, "section_level_2", "") or "")
+    display = _normalize_heading_display(getattr(block, "display_heading", "") or subsection)
+
+    if not level_1:
+        level_1 = level_2 or display or subsection
+    if level_2 and level_2 == level_1:
+        level_2 = ""
+    if not display:
+        display = level_2 or level_1 or subsection
+    if not subsection:
+        subsection = display
+
+    block.subsection = subsection
+    block.section_level_1 = level_1 or None
+    block.section_level_2 = level_2 or None
+    block.display_heading = display or subsection or level_2 or level_1 or None
+    path = [item for item in [block.section_level_1, block.section_level_2] if item]
+    block.heading_path = path or ([block.display_heading] if block.display_heading else [])
+
+
+def _sync_canonicalized_heading_metadata(chunks: List) -> None:
+    for chunk in chunks:
+        for block in chunk.blocks:
+            display = _normalize_heading_display(block.subsection)
+            if not display:
+                continue
+            if getattr(block, "section_level_2", None):
+                block.section_level_2 = display
+            else:
+                block.section_level_1 = display
+            block.display_heading = display
+            block.heading_path = [
+                item for item in [getattr(block, "section_level_1", None), getattr(block, "section_level_2", None)]
+                if item
+            ]
 
 
 def _cleanup_formula_reference_artifacts(text: str) -> str:
@@ -2265,9 +2408,11 @@ def refine_chunks_for_output(chunks: List, source_title: str | None = None) -> t
     for chunk in chunks:
         for block in chunk.blocks:
             block.subsection = _normalize_heading_display(block.subsection)
+            _normalize_block_heading_metadata(block)
             block.content = _cleanup_block_content(block.content, source_title=source_title)
 
     _canonicalize_chunk_subsections(chunks, source_title=source_title)
+    _sync_canonicalized_heading_metadata(chunks)
     refined_chunks = _trim_leading_front_matter_chunks(chunks, source_title=source_title)
     sections = _infer_chunk_sections(refined_chunks)
     return refined_chunks, sections
@@ -2999,6 +3144,10 @@ def save_structured_units(
             table_references=sorted_table_refs,
             source_title=source_title,
             table_reference_keys=sorted_table_ref_keys,
+            section_level_1=chunk.section_level_1,
+            section_level_2=chunk.section_level_2,
+            heading_path=chunk.heading_path,
+            display_heading=chunk.display_heading,
         )
 
         output_path = os.path.join(output_dir, f"{unit.id}.json")
@@ -3027,9 +3176,13 @@ def find_latex_inputs(input_path: str) -> List[str]:
     for path in root.glob("chapter*_full/main.tex"):
         chapter_match = re.search(r"chapter(\d+)_full", str(path).replace("\\", "/"), re.IGNORECASE)
         chapter_idx = int(chapter_match.group(1)) if chapter_match else 9999
-        chapter_candidates.append((chapter_idx, str(path)))
+        chapter_candidates.append((0, chapter_idx, str(path)))
+    for path in root.glob("appendix*_full/main.tex"):
+        appendix_match = re.search(r"appendix(\d+)_full", str(path).replace("\\", "/"), re.IGNORECASE)
+        appendix_idx = int(appendix_match.group(1)) if appendix_match else 9999
+        chapter_candidates.append((1, appendix_idx, str(path)))
     if chapter_candidates:
-        return [path for _, path in sorted(chapter_candidates, key=lambda item: item[0])]
+        return [path for _, _, path in sorted(chapter_candidates, key=lambda item: (item[0], item[1]))]
 
     nested_main = sorted(root.rglob("main.tex"))
     return [str(path) for path in nested_main]
@@ -3048,6 +3201,14 @@ def derive_chapter_name(tex_path: str) -> str:
         )
         if chapter_match:
             return f"chapter{chapter_match.group('num')}"
+
+        appendix_match = re.match(
+            r"^appendix[_-]?(?P<num>\d+)(?:_full)?$",
+            candidate,
+            re.IGNORECASE,
+        )
+        if appendix_match:
+            return f"appendix{appendix_match.group('num')}"
 
         numeric_full_match = re.match(r"^(?P<num>\d+)_full$", candidate, re.IGNORECASE)
         if numeric_full_match:
@@ -3076,13 +3237,22 @@ def process_text_chapter(
     llm_policy = llm_policy or {}
 
     wrapped_text = wrap_numbered_formula_lines(raw_text)
+    initial_table_ids = {entry.id for entry in (initial_table_entries or []) if entry.id}
     table_ready_text, extracted_table_entries = extract_tables_and_replace(
         wrapped_text,
         chapter_name=chapter_name,
+        known_table_ids=initial_table_ids,
     )
     table_entries = _merge_table_entries_by_quality(
         [*(initial_table_entries or []), *extracted_table_entries]
     )
+    missing_table_stubs = _create_missing_table_body_stubs(
+        table_ready_text,
+        chapter_name=chapter_name,
+        existing_table_ids={entry.id for entry in table_entries if entry.id},
+    )
+    if missing_table_stubs:
+        table_entries = _merge_table_entries_by_quality([*table_entries, *missing_table_stubs])
     plain_text = filter_noise_lines(table_ready_text)
     pseudo_pages = [clean_text(page) for page in split_text_for_cleaning(plain_text)]
     pseudo_pages = [page for page in pseudo_pages if page.strip()]
@@ -3117,6 +3287,8 @@ def process_text_chapter(
     print(f"  Cleaned length: {len(full_text)} chars")
     if table_entries:
         print(f"  Tables extracted: {len(table_entries)}")
+        if missing_table_stubs:
+            print(f"  Table body stubs pending raw recovery: {len(missing_table_stubs)}")
 
     semantic_blocks, classification_stats = extract_semantic_blocks(
         full_text,
@@ -3399,6 +3571,16 @@ def main() -> None:
         action="store_true",
         help="Allow structured fusion to replace existing weaker table entries with reference versions.",
     )
+    parser.add_argument(
+        "--disable-ocr-table-evidence",
+        action="store_true",
+        help="Skip Paddle/GLM OCR table evidence binding audit during structured fusion.",
+    )
+    parser.add_argument(
+        "--enable-ocr-table-repair",
+        action="store_true",
+        help="Allow structured fusion to apply two-channel high-confidence OCR table replacements.",
+    )
     args = parser.parse_args()
 
     os.makedirs(args.output, exist_ok=True)
@@ -3641,21 +3823,26 @@ def main() -> None:
         fusion_summary = apply_structured_fusion(
             structured_dir=args.output,
             glmocr_dir=args.glmocr_dir or None,
+            paddle_output_dir=args.input or None,
             reference_structured_dir=args.reference_structured_dir or None,
             artifacts_dir=args.artifacts_dir,
             auto_threshold=float(args.fusion_auto_threshold),
             review_threshold=float(args.fusion_review_threshold),
             enable_glm_prose_repair=bool(args.fusion_enable_glm_prose_repair),
             replace_weaker_tables=bool(args.replace_weaker_tables),
+            enable_ocr_table_evidence=not bool(args.disable_ocr_table_evidence),
+            enable_ocr_table_repair=bool(args.enable_ocr_table_repair),
         )
         block_stats = fusion_summary.get("block_stats", {})
         table_fusion_stats = fusion_summary.get("table_stats", {})
+        table_binding_stats = fusion_summary.get("table_binding_stats", {})
         ref_stats = fusion_summary.get("reference_stats", {})
         print(
             "  structured fusion: "
             f"removed_blocks={block_stats.get('blocks_removed', 0)}, "
             f"glm_repairs={block_stats.get('glm_repair_applied', 0)}, "
             f"tables_recovered={table_fusion_stats.get('table_entries_recovered_from_reference', 0)}, "
+            f"table_binding_mismatch={table_binding_stats.get('table_binding_mismatch', 0)}, "
             f"table_refs_backfilled={ref_stats.get('table_references_backfilled', 0)}, "
             f"manual_queue={fusion_summary.get('manual_queue_count', 0)}"
         )

@@ -33,6 +33,19 @@ from knowledge_engineering.runtime import (
     TableEntry,
     TableLibrary,
 )
+from knowledge_engineering.ocr_evidence import (
+    OCREvidence,
+    OCREvidenceIndex,
+    build_ocr_evidence_index,
+    evidence_to_dict,
+    score_table_entry_against_evidence,
+    score_table_evidence_pair,
+    table_body_text,
+    table_entry_caption_label,
+    table_entry_from_evidence,
+    table_entry_has_own_caption,
+    table_entry_hash,
+)
 from knowledge_engineering.structured_repair import (
     AUTO_THRESHOLD,
     MAX_WINDOW_PARAGRAPHS,
@@ -50,7 +63,8 @@ FORMULA_PLACEHOLDER_RE = re.compile(
     r"\[\[(?:SEE_FORMULA|FORMULA):(?P<label>\d+\.\d+(?:\.\d+)?[A-Za-z]?)\]\]"
 )
 TABLE_PLACEHOLDER_RE = re.compile(
-    r"\[\[(?:SEE_TABLE|TABLE):(?P<label>\d+\.\d+[A-Za-z]?)\]\]"
+    r"\[\[(?:SEE_TABLE|TABLE):(?P<label>(?:\d+\.\d+[A-Za-z]?|inline_\d+))\]\]",
+    re.IGNORECASE,
 )
 TABLE_TEXT_RE = re.compile(r"\bTable\s+(?P<label>\d+\.\d+[A-Za-z]?)\b", re.IGNORECASE)
 BROKEN_PLACEHOLDER_RE = re.compile(
@@ -66,6 +80,7 @@ TEX_COMMAND_RE = re.compile(r"\\[A-Za-z@]+(?:\*?)")
 NOISE_SYMBOLS_RE = re.compile(r"^[\s.\-_,;:|/\\*+=~^'\"`()[\]{}<>]+$")
 PAGE_NUMBER_RE = re.compile(r"^\s*(?:page\s*)?\d{1,4}\s*$", re.IGNORECASE)
 H_ONLY_RE = re.compile(r"^\s*\[\s*h\s*\]\s*$", re.IGNORECASE)
+OCR_RESIDUAL_MARKER_RE = re.compile(r"(^|\s)\[(?:h|t|b|p)\](?=\s|$)", re.IGNORECASE)
 LEADING_FLOAT_MARKER_RE = re.compile(r"^\s*\[(?P<marker>[htbp])\]\s+(?P<rest>.+)$", re.IGNORECASE)
 STRUCTURED_REF_RE = re.compile(r"\[\[(?:SEE_FORMULA|FORMULA|SEE_TABLE|TABLE):[^\]]+\]\]")
 NON_ENGLISH_NOISE_CHARS = "锕鈭鈮蟽渭伪尾纬未胃蟺蠅路脳�"
@@ -76,6 +91,12 @@ NESTED_ACCENT_COMMANDS = ("overline", "underline", "bar", "hat", "tilde", "vec")
 DETERMINISTIC_DROP_ISSUES = {"empty_content", "h_only_block", "ghost_block"}
 REPAIR_ATTEMPT_ISSUES = set(REPAIRABLE_ISSUES)
 REFERENCE_ONLY_ISSUES = {"formula_reference_missing", "table_reference_missing"}
+
+TABLE_EVIDENCE_MIN_BODY_CHARS = 24
+TABLE_EVIDENCE_STRONG_QUALITY = 0.74
+TABLE_STRUCTURED_CONFLICT_SCORE = 0.62
+TABLE_CHANNEL_AGREEMENT_SCORE = 0.72
+TABLE_CHANNEL_CONFLICT_SCORE = 0.50
 
 
 @dataclass
@@ -305,6 +326,96 @@ def _is_ghost_block(text: str) -> bool:
     return False
 
 
+def _has_ocr_residual_marker(text: str) -> bool:
+    return bool(OCR_RESIDUAL_MARKER_RE.search(str(text or "")))
+
+
+def _strip_structured_refs_math_and_residue(text: str) -> str:
+    value = STRUCTURED_REF_RE.sub(" ", str(text or ""))
+    value = _strip_math_segments(value)
+    value = OCR_RESIDUAL_MARKER_RE.sub(" ", value)
+    return collapse_ws(value)
+
+
+def _is_residual_only_text(text: str) -> bool:
+    stripped = str(text or "").strip()
+    if not stripped:
+        return True
+    if H_ONLY_RE.fullmatch(stripped):
+        return True
+    compact = re.sub(r"\s+", "", stripped)
+    return bool(compact and re.fullmatch(r"[\[\]().,;:|/\\{}<>_\-]+", compact))
+
+
+def _has_natural_language(text: str) -> bool:
+    return bool(re.search(r"[A-Za-z][A-Za-z'-]*", str(text or "")))
+
+
+def _is_short_heading_like(text: str) -> bool:
+    stripped = str(text or "").strip()
+    if not stripped or STRUCTURED_REF_RE.search(stripped) or "$" in stripped:
+        return False
+    if re.search(r"[.;:!?()[\]{}]", stripped):
+        return False
+    words = re.findall(r"[A-Za-z][A-Za-z'-]*", stripped)
+    if not (1 <= len(words) <= 6):
+        return False
+    plain = re.sub(r"[-\s]+", " ", stripped).strip()
+    if plain != " ".join(words):
+        return False
+    return all(word[:1].isupper() or word.isupper() for word in words if len(word) > 2)
+
+
+def _orphan_reference_fragment_code(text: str) -> str:
+    stripped = collapse_ws(text)
+    if not stripped:
+        return ""
+    matches = list(STRUCTURED_REF_RE.finditer(stripped))
+    if not matches:
+        return ""
+
+    first = matches[0]
+    marker = first.group(0).upper()
+    prefix = stripped[: first.start()].strip()
+    tail = stripped[first.end() :].strip()
+    is_table_marker = "TABLE:" in marker
+    is_attach_marker = marker.startswith("[[TABLE:") or marker.startswith("[[FORMULA:")
+    is_table_body_anchor = marker.startswith("[[TABLE:")
+    continuation_start = re.match(r"^[A-Za-z]+", tail)
+    continuation_raw_word = continuation_start.group(0) if continuation_start else ""
+    continuation_word = continuation_raw_word.lower()
+    allowed_reference_verbs = {"summarizes", "summarises", "shows", "gives", "lists", "presents", "reports", "contains", "provides", "illustrates"}
+    tail_starts_as_fragment = bool(re.match(r"^[).,;:]+", tail)) or (
+        bool(continuation_word)
+        and continuation_word
+        not in allowed_reference_verbs
+        and (continuation_raw_word[:1].islower() or continuation_word in {"and", "or", "but"})
+    )
+    if (
+        is_table_body_anchor
+        and not prefix
+        and tail
+        and not re.match(r"^[).,;:]+", tail)
+        and _has_natural_language(tail)
+    ):
+        return ""
+
+    if prefix and _is_residual_only_text(prefix) and not _has_ocr_residual_marker(prefix):
+        return "orphan_table_fragment" if is_table_marker else "orphan_reference_fragment"
+    if is_attach_marker and tail_starts_as_fragment:
+        return "orphan_table_fragment" if is_table_marker else "orphan_reference_fragment"
+
+    residual_tail = STRUCTURED_REF_RE.sub(" ", stripped)
+    residual_tail = OCR_RESIDUAL_MARKER_RE.sub(" ", residual_tail)
+    if re.search(r"[).,;:]", residual_tail) and _is_residual_only_text(residual_tail):
+        return (
+            "orphan_table_fragment"
+            if any("TABLE:" in match.group(0).upper() for match in matches)
+            else "orphan_reference_fragment"
+        )
+    return ""
+
+
 def _strip_leading_float_marker(text: str) -> tuple[str, str]:
     value = str(text or "")
     match = LEADING_FLOAT_MARKER_RE.match(value)
@@ -359,6 +470,23 @@ def _extract_table_refs_from_content(content: str) -> list[str]:
     return sort_table_refs(labels)
 
 
+def _is_external_table_reference(content: str, label: str) -> bool:
+    value = str(content or "")
+    table_id = re.escape(str(label or "").strip())
+    if not table_id:
+        return False
+    placeholder = rf"\[\[\s*(?:SEE_)?TABLE\s*:\s*{table_id}\s*\]\]"
+    table_text = rf"\bTables?\s+{table_id}\b"
+    target = rf"(?:{placeholder}|{table_text})"
+    patterns = [
+        rf"\bLW\s+(?:{target})",
+        rf"\bLynch\s+and\s+Walsh\s+(?:{target})",
+        rf"\b(?:Vol\.?|Volume)\s+[A-Za-z0-9IVXLCivxlc.-]+\s+(?:{target})",
+        rf"\b(?:previous|companion|external)\s+(?:volume|book|chapter)\b[^.\n]{{0,80}}(?:{target})",
+    ]
+    return any(re.search(pattern, value, flags=re.IGNORECASE) for pattern in patterns)
+
+
 def audit_block_content(
     *,
     content: str,
@@ -386,8 +514,13 @@ def audit_block_content(
         add("error", "h_only_block", "Floating-position marker leaked as a block.")
     elif _is_ghost_block(stripped):
         add("error", "ghost_block", "Block contains only page/symbol noise.", stripped)
+    if _has_ocr_residual_marker(stripped):
+        add("error", "ocr_residual_marker", "OCR/layout float marker residue leaked into block content.", "[h]")
     if BROKEN_PLACEHOLDER_RE.search(stripped):
         add("error", "broken_placeholder", "Structured placeholder appears incomplete.")
+    orphan_code = _orphan_reference_fragment_code(stripped)
+    if orphan_code:
+        add("error", orphan_code, "Structured reference appears as an orphaned split fragment.")
     if _has_unclosed_short_tail(stripped):
         add("error", "suspicious_truncation", "Short block appears to end inside punctuation.")
 
@@ -395,7 +528,7 @@ def audit_block_content(
     if TEX_COMMAND_RE.search(prose_without_math):
         add("error", "tex_command_leak", "LaTeX command remains outside math spans.")
 
-    if len(stripped) < 20 and stripped:
+    if len(stripped) < 20 and stripped and not _is_short_heading_like(stripped) and not orphan_code:
         add("warning", "very_short_block", "Block is very short.")
     if re.search(r"\s{4,}", value) or "\n\n\n" in value:
         add("warning", "excessive_whitespace", "Block contains excessive whitespace.")
@@ -411,19 +544,27 @@ def audit_block_content(
             add("fatal", "formula_reference_missing", f"Formula reference is not in formula_library: {label}", label)
     for label in table_refs:
         if label not in known_table_ids:
+            if _is_external_table_reference(stripped, label):
+                add("info", "external_reference", f"External table reference is outside local table_library: {label}", label)
+                continue
             # table/formula 同号归一：同号公式存在且同号表不存在，说明是公式引用被误写成 table
             if label.lower() in known_formula_ids:
                 continue
             add("fatal", "table_reference_missing", f"Table reference is not in table_library: {label}", label)
 
-    placeholders = len(formula_refs) + len(table_refs)
-    if block_type == "discussion" and placeholders >= 3:
-        add("warning", "placeholder_in_discussion", "Discussion block has many structured placeholders.")
     if block_type == "derivation":
         if len(formula_refs) > 8:
             add("warning", "derivation_reference_overload", "Derivation references unusually many formulas.")
-        readable = STRUCTURED_REF_RE.sub(" ", stripped)
-        if len(normalize_match_text(readable).split()) < 3 and formula_refs:
+        duplicated_formula_refs = sorted(ref for ref, count in Counter(formula_refs).items() if count >= 3)
+        if duplicated_formula_refs:
+            add(
+                "warning",
+                "derivation_repeated_formula_reference",
+                "Derivation repeats the same formula reference unusually many times.",
+                ", ".join(duplicated_formula_refs),
+            )
+        readable = _strip_structured_refs_math_and_residue(stripped)
+        if formula_refs and (_is_residual_only_text(readable) or not _has_natural_language(readable)):
             add("warning", "derivation_placeholder_only_text", "Derivation has little readable text beyond formula refs.")
 
     return issues
@@ -614,6 +755,8 @@ def _copy_table_entry(entry: TableEntry) -> TableEntry:
         rows=[list(row) for row in (entry.rows or [])],
         source=dict(entry.source or {}),
         description=entry.description,
+        raw_body=getattr(entry, "raw_body", None),
+        markdown_body=getattr(entry, "markdown_body", None),
     )
 
 
@@ -706,6 +849,187 @@ def _chapter_from_table_id(table_id: str) -> str:
     return ""
 
 
+def _table_evidence_quality(evidence: OCREvidence) -> float:
+    caption_match = 1.0 if re.search(rf"\bTable\s+{re.escape(evidence.object_id)}\b", evidence.caption_text, re.IGNORECASE) else 0.0
+    row_score = min(1.0, len(evidence.rows) / 3.0)
+    body_token_count = len(normalize_match_text(evidence.body_text).split())
+    body_score = min(1.0, body_token_count / 12.0)
+    html_score = 1.0 if "<table" in str(evidence.body_html or "").lower() else 0.0
+    return round(0.42 * caption_match + 0.28 * row_score + 0.22 * body_score + 0.08 * html_score, 4)
+
+
+def _best_evidence_by_channel(evidences: Iterable[OCREvidence]) -> dict[str, OCREvidence]:
+    best: dict[str, OCREvidence] = {}
+    for evidence in evidences:
+        current = best.get(evidence.source_channel)
+        if current is None or _table_evidence_quality(evidence) > _table_evidence_quality(current):
+            best[evidence.source_channel] = evidence
+    return best
+
+
+def _table_replacement_candidate_payload(
+    *,
+    entry: TableEntry,
+    evidence: OCREvidence,
+    score: dict[str, Any],
+    agreed_with: OCREvidence | None = None,
+) -> dict[str, Any]:
+    replacement = table_entry_from_evidence(evidence)
+    return {
+        "table_id": str(entry.id or "").strip(),
+        "candidate_entry": replacement.to_dict(),
+        "source_evidence": evidence_to_dict(evidence),
+        "agreed_evidence": evidence_to_dict(agreed_with) if agreed_with else None,
+        "structured_entry_hash": table_entry_hash(entry),
+        "candidate_entry_hash": table_entry_hash(replacement),
+        "structured_score": score,
+    }
+
+
+def _audit_ocr_table_bindings(
+    *,
+    table_library: TableLibrary,
+    ocr_evidence_index: OCREvidenceIndex,
+    auto_apply_replacements: bool,
+) -> tuple[TableLibrary, Counter[str], list[dict[str, Any]], list[dict[str, Any]]]:
+    stats: Counter[str] = Counter()
+    events: list[dict[str, Any]] = []
+    manual_queue: list[dict[str, Any]] = []
+    updated_tables = list(table_library.tables)
+
+    for index, entry in enumerate(list(updated_tables)):
+        table_id = str(entry.id or "").strip()
+        if not _is_numbered_table_id(table_id):
+            continue
+
+        issue_codes: list[str] = []
+        caption_label = table_entry_caption_label(entry)
+        if caption_label and caption_label != table_id:
+            issue_codes.append("table_binding_mismatch")
+        elif str(entry.title or "").strip() and not table_entry_has_own_caption(entry):
+            issue_codes.append("table_binding_mismatch")
+
+        chapter = _chapter_from_table_id(table_id)
+        evidences = ocr_evidence_index.tables(table_id=table_id, chapter=chapter)
+        if not evidences and not chapter:
+            evidences = ocr_evidence_index.tables(table_id=table_id)
+
+        scored_evidences: list[tuple[OCREvidence, float, dict[str, Any]]] = []
+        for evidence in evidences:
+            if len(table_body_text(evidence.body_html, evidence.rows)) < TABLE_EVIDENCE_MIN_BODY_CHARS:
+                continue
+            quality = _table_evidence_quality(evidence)
+            score = score_table_entry_against_evidence(entry, evidence)
+            scored_evidences.append((evidence, quality, score))
+
+        scored_evidences.sort(key=lambda item: (item[1], item[2]["overall"]), reverse=True)
+        best_structured_score = scored_evidences[0][2] if scored_evidences else {}
+        if scored_evidences and float(best_structured_score.get("overall", 1.0)) < TABLE_STRUCTURED_CONFLICT_SCORE:
+            issue_codes.append("cross_channel_table_conflict")
+            if "table_binding_mismatch" not in issue_codes:
+                issue_codes.append("table_binding_mismatch")
+
+        by_channel = _best_evidence_by_channel(evidence for evidence, quality, _score in scored_evidences if quality >= TABLE_EVIDENCE_STRONG_QUALITY)
+        channel_agreement: dict[str, Any] | None = None
+        agreed_pair: tuple[OCREvidence, OCREvidence] | None = None
+        if "paddle" in by_channel and "glm" in by_channel:
+            channel_agreement = score_table_evidence_pair(by_channel["paddle"], by_channel["glm"])
+            if float(channel_agreement.get("overall", 0.0)) >= TABLE_CHANNEL_AGREEMENT_SCORE:
+                agreed_pair = (by_channel["paddle"], by_channel["glm"])
+            elif float(channel_agreement.get("overall", 1.0)) < TABLE_CHANNEL_CONFLICT_SCORE:
+                issue_codes.append("cross_channel_table_conflict")
+
+        replacement_payload: dict[str, Any] | None = None
+        replacement_action = ""
+        if issue_codes and scored_evidences:
+            primary_evidence = scored_evidences[0][0]
+            agreed_with = None
+            if agreed_pair:
+                primary_evidence = max(agreed_pair, key=_table_evidence_quality)
+                agreed_with = agreed_pair[0] if primary_evidence is agreed_pair[1] else agreed_pair[1]
+                replacement_action = "auto_replace"
+            elif scored_evidences[0][1] >= TABLE_EVIDENCE_STRONG_QUALITY:
+                replacement_action = "manual_review"
+
+            if replacement_action:
+                replacement_payload = _table_replacement_candidate_payload(
+                    entry=entry,
+                    evidence=primary_evidence,
+                    agreed_with=agreed_with,
+                    score=score_table_entry_against_evidence(entry, primary_evidence),
+                )
+
+        if not issue_codes:
+            continue
+
+        issue_codes = sorted(set(issue_codes))
+        severity = "fatal" if "table_binding_mismatch" in issue_codes else "error"
+        event = {
+            "severity": severity,
+            "issue_codes": issue_codes,
+            "table_id": table_id,
+            "chapter": chapter,
+            "action": replacement_action or "manual_review",
+            "caption_label": caption_label,
+            "structured_title": str(entry.title or ""),
+            "structured_entry_hash": table_entry_hash(entry),
+            "structured_body_text": table_body_text(entry)[:600],
+            "best_structured_score": best_structured_score,
+            "channel_agreement": channel_agreement,
+            "evidence_candidates": [
+                {
+                    "quality": quality,
+                    "structured_score": score,
+                    "evidence": evidence_to_dict(evidence),
+                }
+                for evidence, quality, score in scored_evidences[:4]
+            ],
+            "replacement_candidate": replacement_payload,
+        }
+
+        if replacement_action == "auto_replace" and replacement_payload and auto_apply_replacements:
+            replacement = TableEntry(**replacement_payload["candidate_entry"])
+            source = dict(replacement.source or {})
+            source["fusion_repair"] = "ocr_table_evidence_binding"
+            source["source_channels"] = sorted({candidate["evidence"]["source_channel"] for candidate in event["evidence_candidates"]})
+            source["matching"] = {
+                "best_structured_score": best_structured_score,
+                "channel_agreement": channel_agreement,
+            }
+            source["original_entry_hash"] = table_entry_hash(entry)
+            replacement.source = source
+            updated_tables[index] = replacement
+            event["action"] = "auto_replace_applied"
+            stats["table_binding_replacements_applied"] += 1
+        else:
+            manual_queue.append(
+                {
+                    "scope": "table_binding",
+                    "table_id": table_id,
+                    "action": event["action"],
+                    "issue_codes": issue_codes,
+                    "severity": severity,
+                    "replacement_candidate": replacement_payload,
+                }
+            )
+
+        for issue_code in issue_codes:
+            stats[issue_code] += 1
+        if replacement_payload:
+            stats["table_replacement_candidates"] += 1
+        events.append(event)
+
+    table_library.tables = sorted(
+        updated_tables,
+        key=lambda entry: (
+            chapter_sort_key((entry.source or {}).get("chapter", "")),
+            table_sort_key(entry.id),
+            str(entry.id or "").lower(),
+        ),
+    )
+    return table_library, stats, events, manual_queue
+
+
 def _refresh_unit_references(
     *,
     records: list[UnitRecord],
@@ -722,6 +1046,7 @@ def _refresh_unit_references(
         formula_refs = list(old_formula_refs)
         table_refs = list(old_table_refs)
         table_ref_keys = list(record.unit.table_reference_keys)
+        external_table_refs: set[str] = set()
 
         for block in record.unit.blocks:
             for label in _extract_formula_refs_from_content(block.content):
@@ -729,6 +1054,10 @@ def _refresh_unit_references(
                     formula_refs.append(label)
                     stats["formula_references_backfilled"] += 1
             for label in _extract_table_refs_from_content(block.content):
+                if label not in known_table_ids and _is_external_table_reference(block.content, label):
+                    external_table_refs.add(label)
+                    stats["external_table_references_skipped"] += 1
+                    continue
                 # table/formula 同号归一：同号公式存在且同号表不存在，转为 formula reference
                 if label not in known_table_ids and label.lower() in known_formula_ids:
                     if label not in formula_refs:
@@ -743,6 +1072,18 @@ def _refresh_unit_references(
                     if key not in table_ref_keys:
                         table_ref_keys.append(key)
                         stats["table_reference_keys_backfilled"] += 1
+
+        if external_table_refs:
+            kept_table_refs = [label for label in table_refs if label not in external_table_refs or label in known_table_ids]
+            removed_count = len(table_refs) - len(kept_table_refs)
+            if removed_count:
+                stats["external_table_references_removed_from_local_metadata"] += removed_count
+                table_refs = kept_table_refs
+            table_ref_keys = [
+                key
+                for key in table_ref_keys
+                if not any(key.endswith(f":{label}") for label in external_table_refs)
+            ]
 
         record.unit.formula_references = sort_formula_refs(formula_refs)
         record.unit.table_references = sort_table_refs(table_refs)
@@ -760,6 +1101,7 @@ def apply_structured_fusion(
     structured_dir: str | Path,
     output_dir: str | Path | None = None,
     glmocr_dir: str | Path | None = None,
+    paddle_output_dir: str | Path | None = None,
     reference_structured_dir: str | Path | None = None,
     artifacts_dir: str | Path | None = None,
     auto_threshold: float = AUTO_THRESHOLD,
@@ -768,6 +1110,8 @@ def apply_structured_fusion(
     include_review: bool = False,
     replace_weaker_tables: bool = False,
     enable_glm_prose_repair: bool = False,
+    enable_ocr_table_evidence: bool = True,
+    enable_ocr_table_repair: bool = False,
     dry_run: bool = False,
 ) -> dict[str, Any]:
     source_root = Path(structured_dir)
@@ -821,6 +1165,24 @@ def apply_structured_fusion(
         reference_structured_dir=Path(reference_structured_dir) if reference_structured_dir else None,
         replace_weaker_tables=replace_weaker_tables,
     )
+
+    ocr_evidence_index = OCREvidenceIndex()
+    table_binding_stats: Counter[str] = Counter()
+    table_binding_events: list[dict[str, Any]] = []
+    table_binding_manual_queue: list[dict[str, Any]] = []
+    if enable_ocr_table_evidence:
+        ocr_evidence_index = build_ocr_evidence_index(
+            paddle_output_dir=Path(paddle_output_dir) if paddle_output_dir else None,
+            glmocr_dir=Path(glmocr_dir) if glmocr_dir else None,
+            chapters=_record_chapters(records),
+        )
+        table_library, table_binding_stats, table_binding_events, table_binding_manual_queue = _audit_ocr_table_bindings(
+            table_library=table_library,
+            ocr_evidence_index=ocr_evidence_index,
+            auto_apply_replacements=enable_ocr_table_repair and not dry_run,
+        )
+        manual_queue.extend(table_binding_manual_queue)
+
     ref_stats = _refresh_unit_references(
         records=records,
         formula_library=formula_library,
@@ -838,11 +1200,14 @@ def apply_structured_fusion(
         "structured_dir": str(source_root),
         "output_dir": str(target_root),
         "glmocr_dir": str(glmocr_dir) if glmocr_dir else "",
+        "paddle_output_dir": str(paddle_output_dir) if paddle_output_dir else "",
         "reference_structured_dir": str(reference_structured_dir) if reference_structured_dir else "",
         "dry_run": bool(dry_run),
         "include_review": bool(include_review),
         "replace_weaker_tables": bool(replace_weaker_tables),
         "enable_glm_prose_repair": bool(enable_glm_prose_repair),
+        "enable_ocr_table_evidence": bool(enable_ocr_table_evidence),
+        "enable_ocr_table_repair": bool(enable_ocr_table_repair),
         "auto_threshold": auto_threshold,
         "review_threshold": review_threshold,
         "max_window_paragraphs": max_window_paragraphs,
@@ -850,6 +1215,7 @@ def apply_structured_fusion(
         "blocks_after_fusion": total_blocks,
         "block_stats": dict(sorted(block_stats.items())),
         "table_stats": dict(sorted(table_stats.items())),
+        "table_binding_stats": dict(sorted(table_binding_stats.items())),
         "formula_stats": dict(sorted(formula_stats.items())),
         "reference_stats": dict(sorted(ref_stats.items())),
         "issue_counts": dict(sorted(issue_counts.items())),
@@ -857,6 +1223,8 @@ def apply_structured_fusion(
         "repair_item_count": len(repair_items),
         "formula_event_count": len(formula_events),
         "table_event_count": len(table_events),
+        "table_binding_event_count": len(table_binding_events),
+        "ocr_evidence_count": len(ocr_evidence_index.evidences),
         "table_library_entries": len(table_library.tables),
         "formula_library_entries": len(formula_library.formulas),
     }
@@ -869,6 +1237,8 @@ def apply_structured_fusion(
         write_jsonl(out_dir / "structured_fusion_formula_events.jsonl", formula_events)
         write_jsonl(out_dir / "structured_fusion_manual_queue.jsonl", manual_queue)
         write_jsonl(out_dir / "structured_fusion_table_events.jsonl", table_events)
+        write_jsonl(out_dir / "structured_fusion_table_binding_events.jsonl", table_binding_events)
+        write_json(out_dir / "structured_fusion_ocr_evidence_index.json", ocr_evidence_index.to_dict())
         summary["artifact_dir"] = str(out_dir)
 
     return summary
@@ -879,6 +1249,7 @@ def build_arg_parser() -> argparse.ArgumentParser:
     parser.add_argument("--structured-dir", default="data/structured")
     parser.add_argument("--out", default="", help="Write a fused copy here. Empty means in-place.")
     parser.add_argument("--glmocr-dir", default="", help="Optional GLM OCR reference directory.")
+    parser.add_argument("--paddle-output-dir", default="", help="Optional Paddle raw output directory for table/formula evidence.")
     parser.add_argument("--reference-structured-dir", default="", help="Optional earlier structured directory for table recovery.")
     parser.add_argument("--artifacts-dir", default="tmp/knowledge_engineering")
     parser.add_argument("--auto-threshold", type=float, default=AUTO_THRESHOLD)
@@ -887,6 +1258,8 @@ def build_arg_parser() -> argparse.ArgumentParser:
     parser.add_argument("--include-review", action="store_true", help="Also apply review-threshold GLM repairs.")
     parser.add_argument("--replace-weaker-tables", action="store_true", help="Allow reference tables to replace existing weaker table entries.")
     parser.add_argument("--enable-glm-prose-repair", action="store_true", help="Allow high-confidence GLM OCR prose replacements.")
+    parser.add_argument("--disable-ocr-table-evidence", action="store_true", help="Skip Paddle/GLM OCR evidence indexing for table binding audit.")
+    parser.add_argument("--enable-ocr-table-repair", action="store_true", help="Apply two-channel high-confidence OCR table replacement candidates.")
     parser.add_argument("--dry-run", action="store_true", help="Build reports without writing structured output.")
     return parser
 
@@ -898,6 +1271,7 @@ def main(argv: list[str] | None = None) -> None:
         structured_dir=args.structured_dir,
         output_dir=args.out or None,
         glmocr_dir=args.glmocr_dir or None,
+        paddle_output_dir=args.paddle_output_dir or None,
         reference_structured_dir=args.reference_structured_dir or None,
         artifacts_dir=args.artifacts_dir,
         auto_threshold=args.auto_threshold,
@@ -906,6 +1280,8 @@ def main(argv: list[str] | None = None) -> None:
         include_review=bool(args.include_review),
         replace_weaker_tables=bool(args.replace_weaker_tables),
         enable_glm_prose_repair=bool(args.enable_glm_prose_repair),
+        enable_ocr_table_evidence=not bool(args.disable_ocr_table_evidence),
+        enable_ocr_table_repair=bool(args.enable_ocr_table_repair),
         dry_run=bool(args.dry_run),
     )
     print(
@@ -913,7 +1289,8 @@ def main(argv: list[str] | None = None) -> None:
         f"units={summary['units_scanned']} "
         f"blocks={summary['blocks_after_fusion']} "
         f"removed={summary['block_stats'].get('blocks_removed', 0)} "
-        f"tables_recovered={summary['table_stats'].get('table_entries_recovered_from_reference', 0)}"
+        f"tables_recovered={summary['table_stats'].get('table_entries_recovered_from_reference', 0)} "
+        f"table_binding_events={summary.get('table_binding_event_count', 0)}"
     )
     if summary.get("artifact_dir"):
         print(f"[structured-fusion] artifacts: {summary['artifact_dir']}")

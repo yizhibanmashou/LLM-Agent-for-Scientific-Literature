@@ -497,6 +497,10 @@ class KnowledgeUnit:
     table_references: List[str] = field(default_factory=list)
     source_title: str | None = None
     table_reference_keys: List[str] = field(default_factory=list)
+    section_level_1: str | None = None
+    section_level_2: str | None = None
+    heading_path: List[str] = field(default_factory=list)
+    display_heading: str | None = None
 
     def to_dict(self) -> dict:
         metadata = {
@@ -508,6 +512,16 @@ class KnowledgeUnit:
             "formula_references": self.formula_references,
             "table_references": self.table_references,
         }
+        if self.section_level_1 is not None:
+            metadata["section_level_1"] = self.section_level_1
+        if self.section_level_2 is not None:
+            metadata["section_level_2"] = self.section_level_2
+        elif self.section_level_1 is not None:
+            metadata["section_level_2"] = None
+        if self.heading_path:
+            metadata["heading_path"] = self.heading_path
+        if self.display_heading is not None:
+            metadata["display_heading"] = self.display_heading
         if self.table_reference_keys:
             metadata["table_reference_keys"] = self.table_reference_keys
         return {
@@ -531,9 +545,11 @@ class TableEntry:
     rows: list[list[str]] = field(default_factory=list)
     source: dict = field(default_factory=dict)
     description: str | None = None
+    raw_body: str | None = None
+    markdown_body: str | None = None
 
     def to_dict(self) -> dict:
-        return {
+        payload = {
             "id": self.id,
             "label_format": self.label_format,
             "title": self.title,
@@ -543,6 +559,11 @@ class TableEntry:
             "source": self.source,
             "description": self.description,
         }
+        if self.raw_body is not None:
+            payload["raw_body"] = self.raw_body
+        if self.markdown_body is not None:
+            payload["markdown_body"] = self.markdown_body
+        return payload
 
 
 @dataclass
@@ -569,6 +590,8 @@ class TableLibrary:
                 rows=item.get("rows", []),
                 source=item.get("source", {}),
                 description=item.get("description"),
+                raw_body=item.get("raw_body"),
+                markdown_body=item.get("markdown_body"),
             )
             for item in data.get("tables", [])
             if item.get("id")
@@ -909,6 +932,10 @@ class SemanticBlock:
     content: str
     subsection: str
     formula_references: List[str] = field(default_factory=list)
+    section_level_1: str | None = None
+    section_level_2: str | None = None
+    heading_path: List[str] = field(default_factory=list)
+    display_heading: str | None = None
 
     @property
     def word_count(self) -> int:
@@ -923,10 +950,50 @@ class CompositeChunk:
     def subsections(self) -> List[str]:
         seen: List[str] = []
         for block in self.blocks:
-            subsection = (block.subsection or "").strip()
+            subsection = (block.display_heading or block.subsection or "").strip()
             if subsection and subsection not in seen:
                 seen.append(subsection)
         return seen
+
+    @property
+    def section_level_1(self) -> str | None:
+        for block in self.blocks:
+            value = (block.section_level_1 or "").strip()
+            if value:
+                return value
+        return None
+
+    @property
+    def section_level_2(self) -> str | None:
+        for block in self.blocks:
+            value = (block.section_level_2 or "").strip()
+            if value:
+                return value
+        return None
+
+    @property
+    def heading_path(self) -> List[str]:
+        seen: List[str] = []
+        for block in self.blocks:
+            candidates = block.heading_path or [
+                item for item in [block.section_level_1, block.section_level_2] if item
+            ]
+            for item in candidates:
+                heading = (item or "").strip()
+                if heading and heading not in seen:
+                    seen.append(heading)
+        if seen:
+            return seen
+        return self.subsections
+
+    @property
+    def display_heading(self) -> str:
+        for block in self.blocks:
+            value = (block.display_heading or block.subsection or "").strip()
+            if value:
+                return value
+        path = self.heading_path
+        return path[-1] if path else "Introduction"
 
     @property
     def word_count(self) -> int:
@@ -961,6 +1028,13 @@ def _normalize_heading(line: str) -> str:
     return re.sub(r"^#+\s*", "", line).strip()
 
 
+ORDERED_LIST_ITEM_PATTERN = re.compile(r"^\d{1,2}[.)]\s+\S.*[.!?]\s*$")
+
+
+def _looks_like_ordered_list_item(line: str) -> bool:
+    return bool(ORDERED_LIST_ITEM_PATTERN.match(_normalize_heading(line)))
+
+
 def _is_major_heading(line: str) -> bool:
     normalized = _normalize_heading(line)
     if not normalized:
@@ -969,28 +1043,82 @@ def _is_major_heading(line: str) -> bool:
     return len(normalized) > 8 and normalized.isupper() and "$" not in normalized and alpha_ratio > 0.65
 
 
+def _markdown_heading_level(line: str) -> tuple[int | None, str]:
+    match = re.match(r"^(?P<marks>#{1,6})\s*(?P<title>.+?)\s*$", line or "")
+    if not match:
+        return None, _normalize_heading(line)
+    return len(match.group("marks")), _normalize_heading(match.group("title"))
+
+
+def _semantic_heading_level(title: str, markdown_level: int | None, current_level_1: str) -> int:
+    normalized = _normalize_heading(title)
+    if not normalized:
+        return 2
+    if _looks_like_ordered_list_item(normalized):
+        return 2
+    if markdown_level is not None and markdown_level >= 2:
+        return 2
+    if _is_major_heading(normalized):
+        return 1
+    if not current_level_1 or current_level_1 == "Introduction":
+        return 1
+    return 2
+
+
 def _split_sections(text: str) -> List[dict]:
     sections = []
+    current_level_1 = "Introduction"
+    current_level_2: str | None = None
     current_heading = "Introduction"
     current_lines: List[str] = []
 
     def flush() -> None:
         content = "\n".join(current_lines).strip()
         if content:
-            sections.append({"subsection": current_heading, "content": content})
+            level_1 = (current_level_1 or current_heading or "Introduction").strip()
+            level_2 = (current_level_2 or "").strip() or None
+            heading_path = [level_1]
+            if level_2 and level_2 != level_1:
+                heading_path.append(level_2)
+            display_heading = level_2 or level_1
+            sections.append(
+                {
+                    "subsection": display_heading,
+                    "content": content,
+                    "section_level_1": level_1,
+                    "section_level_2": level_2,
+                    "heading_path": heading_path,
+                    "display_heading": display_heading,
+                }
+            )
 
     for raw_line in (text or "").splitlines():
         stripped = raw_line.strip()
         if stripped.startswith("--- Page"):
             continue
         if stripped.startswith("#"):
+            markdown_level, title = _markdown_heading_level(stripped)
+            title = title or current_heading
+            if _looks_like_ordered_list_item(title):
+                current_lines.append(title)
+                continue
             flush()
-            current_heading = _normalize_heading(stripped) or current_heading
+            semantic_level = _semantic_heading_level(title, markdown_level, current_level_1)
+            if semantic_level == 1:
+                current_level_1 = title
+                current_level_2 = None
+            else:
+                if not current_level_1:
+                    current_level_1 = "Introduction"
+                current_level_2 = title
+            current_heading = current_level_2 or current_level_1 or title
             current_lines = []
             continue
         if _is_major_heading(stripped):
             flush()
-            current_heading = _normalize_heading(stripped)
+            current_level_1 = _normalize_heading(stripped)
+            current_level_2 = None
+            current_heading = current_level_1
             current_lines = []
             continue
         current_lines.append(raw_line)
@@ -1127,6 +1255,10 @@ def extract_semantic_blocks(
                     content=content,
                     subsection=section["subsection"],
                     formula_references=refs,
+                    section_level_1=section.get("section_level_1"),
+                    section_level_2=section.get("section_level_2"),
+                    heading_path=list(section.get("heading_path") or []),
+                    display_heading=section.get("display_heading") or section["subsection"],
                 )
             )
 
@@ -1145,7 +1277,7 @@ def build_composite_chunks(blocks: List[SemanticBlock]) -> List[CompositeChunk]:
     max_blocks = 10
     chunks: List[CompositeChunk] = []
     current: List[SemanticBlock] = []
-    current_subsection = blocks[0].subsection
+    current_heading_key = tuple(blocks[0].heading_path or [blocks[0].subsection])
 
     def flush() -> None:
         nonlocal current
@@ -1154,11 +1286,12 @@ def build_composite_chunks(blocks: List[SemanticBlock]) -> List[CompositeChunk]:
             current = []
 
     for block in blocks:
-        if current and block.subsection != current_subsection:
+        block_heading_key = tuple(block.heading_path or [block.subsection])
+        if current and block_heading_key != current_heading_key:
             flush()
-            current_subsection = block.subsection
+            current_heading_key = block_heading_key
         elif not current:
-            current_subsection = block.subsection
+            current_heading_key = block_heading_key
 
         current.append(block)
         word_count = sum(item.word_count for item in current)

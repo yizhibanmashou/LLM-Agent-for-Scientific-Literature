@@ -45,10 +45,12 @@ CHAPTER_ID_RE = re.compile(r"^(?P<chapter>(?:chapter|appendix)\d+)_?(?P<ordinal>
 
 REPAIRABLE_ISSUES = {
     "placeholder_leak",
+    "ocr_residual_marker",
     "broken_hyphen_word",
     "unbalanced_inline_math",
     "tex_command_leak",
     "truncated_parenthetical_tail",
+    "suspicious_truncation",
     "empty_inline_math",
     "leading_underscore_math",
     "leading_caret_math",
@@ -79,6 +81,7 @@ SHORT_MATCH_RELAXED_ISSUES = {
     "formula_reference_missing",
     "table_reference_missing",
     "unbalanced_inline_math",
+    "suspicious_truncation",
 }
 
 LLM_REVIEW_DECISIONS = {"accept", "review", "reject"}
@@ -686,6 +689,8 @@ def simple_audit_block(content: str) -> list[dict[str, Any]]:
             }
         )
 
+    if FLOAT_PLACEHOLDER_RE.search(value):
+        add("ocr_residual_marker", "Floating-position marker leaked into block content.")
     if FLOAT_PLACEHOLDER_RE.search(value) or DUMMY_TABLE_RE.search(value):
         add("placeholder_leak", "Floating/table placeholder leaked into block content.")
     if re.search(r"\b[A-Za-z]{3,}-\s+[a-z]{2,}\b", value):
@@ -937,7 +942,7 @@ def validate_candidate(
     missing_placeholders = old_placeholders - new_placeholders
     if missing_placeholders:
         reasons.append("candidate drops structured placeholders: " + ", ".join(sorted(missing_placeholders)))
-    if "placeholder_leak" in issue_codes and FLOAT_PLACEHOLDER_RE.search(new):
+    if ("placeholder_leak" in issue_codes or "ocr_residual_marker" in issue_codes) and FLOAT_PLACEHOLDER_RE.search(new):
         reasons.append("candidate still contains floating placeholder residue")
     if match_score < review_threshold:
         reasons.append(f"match_score {match_score:.2f} below review threshold {review_threshold:.2f}")
@@ -960,7 +965,10 @@ def confidence_for_candidate(
     confidence = match_score
     old_issues = candidate_quality_issues(old_content)
     new_issues = candidate_quality_issues(new_content)
-    if "placeholder_leak" in issue_codes and "placeholder_leak" not in new_issues:
+    if (
+        ("placeholder_leak" in issue_codes and "placeholder_leak" not in new_issues)
+        or ("ocr_residual_marker" in issue_codes and "ocr_residual_marker" not in new_issues)
+    ):
         confidence += 0.055
     if old_issues and len(new_issues) < len(old_issues):
         confidence += min(0.08, 0.02 * (len(old_issues) - len(new_issues)))
