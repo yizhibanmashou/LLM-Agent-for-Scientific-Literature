@@ -2,7 +2,7 @@
   "id": "chapter19_019",
   "metadata": {
     "chapter": "chapter19",
-    "section": "Chapter 19: Models with Additional Random Effects",
+    "section": "Analysis of Short-term Selection Experiments: 2. Mixed-model and Bayesian Approaches: Introduction",
     "subsections": [
       "Models with Additional Random Effects"
     ],
@@ -15,7 +15,14 @@
       "19.21a",
       "19.21b"
     ],
-    "table_references": []
+    "table_references": [],
+    "section_level_1": "Analysis of Short-term Selection Experiments: 2. Mixed-model and Bayesian Approaches: Introduction",
+    "section_level_2": "Models with Additional Random Effects",
+    "heading_path": [
+      "Analysis of Short-term Selection Experiments: 2. Mixed-model and Bayesian Approaches: Introduction",
+      "Models with Additional Random Effects"
+    ],
+    "display_heading": "Models with Additional Random Effects"
   },
   "blocks": [
     {
@@ -39,20 +46,8 @@
       "content": "Additional vectors of random effects can be incorporated in a similar manner; see LW Chapters 26 and 27 for details. The mixed-model equations again form the basis for iterative REML estimates of the unknown variance components ($ \\sigma_A^2 $, $ \\sigma_u^2 $, and $ \\sigma_c^2 $), as discussed in detail in LW Chapter 27."
     },
     {
-      "type": "discussion",
-      "content": "Example 19.6. Often the same trait is measured multiple times in the same individual, for example, the sizes of different litters from a single female. When multiple records are present for at least some individuals, a repeatability model is appropriate (Chapter 13; LW Chapter 26). Repeated measures from the same individual have three components: a breeding value, $ a_k $, and a common (permanent) environmental value, $ p_k $, which are the same in each measurement of individual $ k $, and the residual environmental value, $ e $, which varies between measurements, yielding the $ i $th measurement of the $ k $th individual as $ a_k + p_k + e_{ki} $. The repeatability of the trait is $ r = (\\sigma_A^2 + \\sigma_p^2)/\\sigma_z^2 $, making the variance of the residuals $ \\sigma_z^2 = (1 - r)\\sigma_z^2 $ and the variance of permanent environmental effects as $ \\sigma_p^2 = (r - h^2)\\sigma_z^2 $, where $ \\sigma_z^2 $ is the trait variance after accounting for fixed effects. We remind the reader that permanent “environmental” effects can also include nonadditive genetic components, as these are not passed along to offspring under random mating."
-    },
-    {
-      "type": "discussion",
-      "content": "The repeatability model was used by Estany et al. (1989) to examine the selection response for litter size in rabbits. Their model assumed that there are two groups of fixed effects: the year-season (environmental) effects, $ b_t $ which had 22 levels over the course of this experiment (with $ b_0 $ set to zero), and the reproductive state, $ l_i $, of the doe (three levels; because only two of these factors are estimable, $ l_1 $ was assigned a value of zero). Their model had three random effects: $ a_k $ and $ p_k $, for the additive genetic and permanent environmental effect of the $ k $th doe, respectively, and the residual $ e $, resulting in an overall model of $$ y_{t k\\ell i}=\\mu+l_{i}+b_{t}+a_{k}+p_{k}+e_{t k\\ell i} $$ where $ y_{tkl\\ell i} $ denotes the size of the $ \\ell $th litter of doe k in reproductive state i in season-year t. In matrix form, the mixed model becomes $$ \\mathbf{y}=\\mathbf{X}\\boldsymbol{\\beta}+\\mathbf{Z}\\mathbf{a}+\\mathbf{Z}\\mathbf{p}+\\mathbf{e} $$ where a and p are $ n \\times 1 $ vectors corresponding to the n does, $ \\mathbf{Var}(\\mathbf{a}) = \\sigma_A^2 \\mathbf{A} $, $ \\mathbf{Var}(\\mathbf{p}) = \\sigma_p^2 \\mathbf{I} $, and $ \\mathbf{Var}(\\mathbf{e}) = \\sigma_e^2 \\mathbf{I} $. X and Z are incidence matrices, and the vector of fixed effects is $$ \\boldsymbol{\\beta}=\\begin{pmatrix}\\mu\\\\ l_{2}\\\\ l_{3}\\\\ b_{1}\\\\ \\vdots\\\\ b_{22}\\end{pmatrix} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "The mixed-model equations are given by Equation 19.21a, with $$ \\lambda_{A}=\\frac{\\sigma_{e}^{2}}{\\sigma_{A}^{2}}=\\frac{1-r}{h^{2}}\\quad and\\quad\\lambda_{u}=\\frac{\\sigma_{e}^{2}}{\\sigma_{p}^{2}}=\\frac{1-r}{r-h^{2}} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "The careful reader might notice that the two vectors of random effects, the breeding values, a, and permanent environment effects, p, enter the model as Za and Zp, respectively. Why, then, do we simply not combine these as, for example, Zu where $ \\mathbf{u} = \\mathbf{a} + \\mathbf{p} $? The reason we do not do this (and indeed, the reason we can estimate a and p separately) is that a and p have different covariance structures, $ \\sigma_A^2 $ A versus $ \\sigma_p^2 $ I. While estimates of a borrow information from relatives (correlated observations provide information to supplement a direct observation), estimates of p depend only on the focal individual (as we assume these are uncorrelated between individuals)."
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:19.6]]"
     }
   ]
 }

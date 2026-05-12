@@ -2,7 +2,7 @@
   "id": "chapter8_024",
   "metadata": {
     "chapter": "chapter8",
-    "section": "Chapter 8: Sweeps Using Standing Variation",
+    "section": "Hitchhiking and Selective Sweeps: Introduction",
     "subsections": [
       "How Likely is a Sweep Using Standing Variation?"
     ],
@@ -17,7 +17,14 @@
       "8.19",
       "8.20"
     ],
-    "table_references": []
+    "table_references": [],
+    "section_level_1": "Hitchhiking and Selective Sweeps: Introduction",
+    "section_level_2": "How Likely is a Sweep Using Standing Variation?",
+    "heading_path": [
+      "Hitchhiking and Selective Sweeps: Introduction",
+      "How Likely is a Sweep Using Standing Variation?"
+    ],
+    "display_heading": "How Likely is a Sweep Using Standing Variation?"
   },
   "blocks": [
     {
@@ -42,11 +49,7 @@
     },
     {
       "type": "derivation",
-      "content": "Hence, the probability that at least one favorable mutation that is destined to become fixed will appear by generation T is just one minus the probability that none have appeared, which, from the Poisson distribution, is [[SEE_FORMULA:8.18c]]"
-    },
-    {
-      "type": "discussion",
-      "content": "as obtained by Hermisson and Pennings (2005). When $ \\alpha_{b}\\theta_{b} $ is small, the waiting time for a mutation that is destined to become fixed is quite long. In such cases, mutation is the rate-limiting step for adaptation, unless there is standing variation to exploit."
+      "content": "Hence, the probability that at least one favorable mutation that is destined to become fixed will appear by generation T is just one minus the probability that none have appeared, which, from the Poisson distribution, is [[SEE_FORMULA:8.18c]] as obtained by Hermisson and Pennings (2005). When $ \\alpha_{b}\\theta_{b} $ is small, the waiting time for a mutation that is destined to become fixed is quite long. In such cases, mutation is the rate-limiting step for adaptation, unless there is standing variation to exploit."
     },
     {
       "type": "derivation",
@@ -59,6 +62,10 @@
     {
       "type": "discussion",
       "content": "This follows because $ \\Pr_{sv} $ is the probability that, in the absence of any new mutation, a variant segregating at the start of the new selection regime will be fixed, while the probability that the fixation will occur via a new mutation (arising by time $ T $) is $ (1 - \\Pr_{sv}) \\Pr_{new}(T) $. The denominator is the sum of the probabilities of these two different events, and hence the probability of a sweep occurring by time $ T $. For a sufficiently large $ T $, $ \\Pr_{new}(T) = 1 $ (the probability of a new successful mutation approaches one), and Equation 8.20 reduces to $ \\Pr_{sv} $ (Equation 8.17b). This sets the lower limit on the probability that the favorable mutant fixed by the sweep was preexisting in the population before the start of selection. For shorter amounts of time, there is a reduced chance that the fixed beneficial allele arose after the start of selection, and hence a higher probability that a sweep resulted from standing variation. Figure 8.7 plots Equation 8.20 at $ 0.1N_{e} $ generations ($ T = 0.05 $) after an environmental shift. When both $ \\theta_{b} $ and $ \\alpha_{b} $ are high, most sweeps are from existing variation, even when the allele was deleterious before the shift. When $ \\theta_{b} $ is small, most sweeps are from new mutations unless both $ \\alpha_{b} $ and $ \\alpha_{d} $ are small. The reason is that while adaptation from standing variation is unlikely with a small $ \\alpha_{b} $, it is more likely when the standing-allele frequency is not too small (which requires that $ \\alpha_{d} $ be small) before the start of selection. Berg and Coop (2015) developed a number of additional results for standing sweeps (assuming a single founding mutation)."
+    },
+    {
+      "type": "discussion",
+      "content": "Peter et al. (2012) developed an approximate Bayesian computation (or ABC)-based approach (Appendix 3) that combines several tests of selection in an attempt to distinguish between sweeps from de novo mutation versus those from standing variation (also see Ormond et al. 2015). Their key idea is that allelic trajectories under either setting are identical once selection starts, but that a preexisting allele starts at some frequency > 1/(2N), while a de novo mutation is initially absent. The fit of several summary statistics of selection (Chapter 9) is then compared with various models assuming drift (i.e., no selection) at some point in the history of that allele. However, simulation studies showed that their test has little power unless selection is strong ($ 4N_{e,s} > 100 $ under additivity). When their test was applied to seven of the strongest known sweeps in humans, two were found to be most likely from standing variation, three fit the hard-sweep model, and two were equivocal. While interesting, this small sample does not provide much insight into the relative frequency of the different types of sweeps, as these loci were generally detected using methods based on strong-sweep signals, creating an ascertainment bias in favor of hard sweeps."
     }
   ]
 }

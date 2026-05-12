@@ -2,26 +2,28 @@
   "id": "chapter27_004",
   "metadata": {
     "chapter": "chapter27",
-    "section": "Chapter 27: Fisher-Kimura-Orr Adaptive Walks",
+    "section": "Long-term Response: Introduction",
     "subsections": [
       "Fisher-Kimura-Orr Adaptive Walks"
     ],
     "source_file": "tmp\\paddle_output\\chapter27_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [
-      "27.3",
       "27.4a",
       "27.4b",
       "27.4c",
       "27.5"
     ],
-    "table_references": []
+    "table_references": [],
+    "section_level_1": "Long-term Response: Introduction",
+    "section_level_2": "Fisher-Kimura-Orr Adaptive Walks",
+    "heading_path": [
+      "Long-term Response: Introduction",
+      "Fisher-Kimura-Orr Adaptive Walks"
+    ],
+    "display_heading": "Fisher-Kimura-Orr Adaptive Walks"
   },
   "blocks": [
-    {
-      "type": "derivation",
-      "content": "Orr's key insight was that the size distribution of the second jump (i.e., the distribution of $ x_2 $) is the same as that of the first jump, but with the distance to the optimum reduced an amount given by Equation 27.2c. Likewise, following the second jump, the distance to the optimum (as a fraction of the original distance) is the square of the value calculated by Equation 27.2c, and so forth, which generates a self-similar process for each step of the walk toward the optimum, for which $ E[d_i] = (1 - 2E[x_1]/n)^r d_0 $. It is this self-similar feature that generates the exponential distribution of effect sizes among fixed mutations. Orr (1998b) obtained the distribution for the Fisher-scaled effect size ($ x = r \\sqrt{n}/2 $, taking $ d = d_0 = 1 $) of the new mutation (Equation 27.1a) during step $ k $ of the walk as [[SEE_FORMULA:27.3]] where $C$ is a normalization constant. This expression is for a uniform distribution of mutation effects (the $r$ values). More generally, the $C c_k^2$ terms in Equation 27.3 are replaced by $C \\phi(c_k x) c_k^2 x$, where $\\phi$ is the assumed distribution of mutational effects (Orr 1998b)."
-    },
     {
       "type": "discussion",
       "content": "Assuming a uniform distribution of mutation effects (the $r$ values), Orr showed that Equation 27.3 implies that the distribution of the $x_i = r_i \\sqrt{n}/2$ is approximately exponential with parameter $ \\lambda \\simeq 2.9 $ (i.e., with a mean value of $ 1/\\lambda \\sim 0.34 $). Simulation studies by Orr (1998b, 1999) showed that this result is very robust to different assumptions about the distribution of mutational inputs, especially when large-effect mutations are not common."
@@ -55,20 +57,8 @@
       "content": "A second assumption of the Fisher-Kimura-Orr adaptive walk model is weak mutation, with only a single beneficial mutation segregating at any one time. With multiple segregating mutations, Hill-Robertson effects (Chapters 3, 7, and 8) reduce the effectiveness of selection, the most extreme example being clonal interference in asexuals (Gerrish and Lenski 1998; Rozen et al. 2002). When considering the fixation of mutations in clonal (asexual) populations, a new beneficial mutation must first avoid stochastic loss when rare. While such surviving cosegregating beneficial mutations (which we denote as competing) may be fixed in a sexual population, in an asexual population they are fully linked to genomes that may experience additional beneficial mutations before the initial mutation becomes fixed. When $ N_{\\mu} \\ll 1 $, the presence of multiple segregating beneficial mutations is unlikely (where $ \\mu $ is now the genomewide beneficial mutation rate). However, when $ N_{\\mu} \\gg 1 $, clonal interference can occur, wherein the most fit genomes compete with each other and only one is ultimately fixed (Gerrish and Lenski 1998; Elena and Lenski 2003; Barrick and Lenski 2013; Levy et al. 2015). As noted by Barrett et al. (2006a), the winning genome often accrues several beneficial mutations on its way to fixation (outcompeting genomes with potentially more favorable initial mutations that did not accumulate additional beneficial mutations), which can result in an investigator overestimating the fitness effects under the assumption of a single beneficial mutation driving the fixation."
     },
     {
-      "type": "discussion",
-      "content": "Example 27.1. Annual wild rice (Oryza nivara) is a photoperiod-insensitive selfer adapted to seasonally dry habits. It is thought to have evolved from a progenitor with properties of its sister species, Oryza rufipogon, a photoperiod-sensitive, perennial outcrosser found in deep-water swamps. As a potential model system for adaptation to new conditions, Grillo et al. (2009) crossed these two species and mapped QTLs for flowering time, mating system, and life-history traits. The resulting distribution of the values of QTL effects for these traits was roughly exponential, as predicted from Orr's adaptive walk. If directional selection was an important factor in the divergence of these two species, one would expect to find an excess of the detected QTL alleles in nivara in the direction of the adaptive phenotypes (the QTL sign test; Chapter 12). Indeed, for flowering time and duration, all six of the nivara QTL alleles act in the direction of reduced photoperiod sensitivity and longer flowering. Likewise, all seven of the QTLs for mating system traits in nivara acted in the direction of increased selfing."
-    },
-    {
-      "type": "discussion",
-      "content": "One prediction from the Fisher-Kimura-Orr model is that fixations of large-effect mutations are more likely when the current population is far from its adaptive peak. Rogers et al."
-    },
-    {
-      "type": "discussion",
-      "content": "(2012) compared threespine stickleback fish (Gasterosteus aculeatus) from two different lake types. This species has a marine origin, but it colonized freshwater lakes at the end of the last ice age. Based on the presence of a sculpin predator, one lake type (sculpin-present) was judged as being closer to the ancestral marine optimum than a second type (sculpin-absent). A higher frequency of large-effect QTLs for morphology (related to general predator defense) was observed in the sculpin-absent lake type, consistent with the fixation of larger-effect mutations when the optimum is further away."
-    },
-    {
-      "type": "proposition",
-      "content": "A corollary to this prediction is that larger fixed-effect sizes are expected at loci underlying traits that experience continual and sudden shifts in their fitness surfaces. Louthan and Kay (2011) suggested that this often happens in traits under biotic selection. They investigated this hypothesis with a meta-analysis of 1950 QTLs (1721 controlled traits presumed to be under abiotic selection, and the rest under biotic selection) from 10 plant families (but mainly Brassicaceae). They found larger QTL effect sizes for traits under presumed biotic, as opposed to abiotic, selection."
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:27.1]]"
     }
   ]
 }

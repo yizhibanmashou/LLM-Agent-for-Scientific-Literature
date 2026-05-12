@@ -2,7 +2,7 @@
   "id": "chapter13_013",
   "metadata": {
     "chapter": "chapter13",
-    "section": "Chapter 13: Reducing Environmental Noise: Repeated-Measures Selection",
+    "section": "Short-term Changes in the Mean: 1. The Breeder's Equation: Introduction",
     "subsections": [
       "Reducing Environmental Noise: Repeated-Measures Selection"
     ],
@@ -23,6 +23,13 @@
     "table_references": [
       "inline_4"
     ],
+    "section_level_1": "Short-term Changes in the Mean: 1. The Breeder's Equation: Introduction",
+    "section_level_2": "Reducing Environmental Noise: Repeated-Measures Selection",
+    "heading_path": [
+      "Short-term Changes in the Mean: 1. The Breeder's Equation: Introduction",
+      "Reducing Environmental Noise: Repeated-Measures Selection"
+    ],
+    "display_heading": "Reducing Environmental Noise: Repeated-Measures Selection",
     "table_reference_keys": [
       "chapter13:inline_4"
     ]
@@ -58,19 +65,11 @@
     },
     {
       "type": "discussion",
-      "content": "Finally, we note that our analysis of repeated-measures selection assumes that the additive-genetic correlation across individual measurements is 1.0, which is expected for many traits. However, if measures are sufficiently separated in time that age effects are important, or if they represent significantly distinct events (such as litter size at different parities, i.e., distinct litters), these correlations can be less than one. In other words, the traits measured at different ages may not be the same genetically. In such cases, one should treat these measurements as a set of correlated traits and use index-selection theory (Volume 3). With measurements at arbitrary time points that may differ over individuals, the method of random regression (Volume 3) is used. where j indexes the individuals. Suppose the uppermost 25% (top 5 of the 20) are chosen for selection. Based on single measures, individuals 2, 5, 10, 17, and 20 would be chosen, while based on five measures, individuals 1, 2, 5, 9, and 17 would be selected. Using the single (initial) measurement, the overall mean is 50.05, while the mean of selected individuals is 61.28, yielding an S of 11.23."
+      "content": "Finally, we note that our analysis of repeated-measures selection assumes that the additive-genetic correlation across individual measurements is 1.0, which is expected for many traits. However, if measures are sufficiently separated in time that age effects are important, or if they represent significantly distinct events (such as litter size at different parities, i.e., distinct litters), these correlations can be less than one. In other words, the traits measured at different ages may not be the same genetically. In such cases, one should treat these measurements as a set of correlated traits and use index-selection theory (Volume 3). With measurements at arbitrary time points that may differ over individuals, the method of random regression (Volume 3) is used."
     },
     {
-      "type": "discussion",
-      "content": "If we use repeated-measures selection, the overall mean of the five-sample averages for each individual is 49.74, while the mean of selected individuals is 55.14, resulting in an $S$ of 5.39. The smaller value of $S$ under repeated measures under the same selection intensity, $\\bar{\\tau}$, is a simple consequence of the reduced variance associated with using the mean (repeated measures) versus a single observation. To see this, note from Equation 13.6a that $S_{\\bar{z}}/S_z = (\\bar{\\iota}\\sigma_{\\bar{z}})/(\\bar{\\iota}\\sigma_z) < 1$, as $\\sigma_{\\bar{z}} < \\sigma_z$ (Equation 13.17c). From the breeder's equation, the expected response based on single measures is $$ R=h^{2}S=0.1\\cdot11.23=1.12 $$"
-    },
-    {
-      "type": "discussion",
-      "content": "To express the response given by Equation 13.18b (the repeated-measures expression) in terms of $S$, note that here $\\rho = \\sigma_A^2 / (\\sigma_A \\sigma_z) = \\sigma_A / \\sigma_z$, and hence $R = \\bar{\\nu} \\rho \\sigma_A = \\bar{\\nu} \\sigma_A^2 / \\sigma_z = (\\bar{\\nu} \\sigma_z) \\sigma_A^2 / \\sigma_z = S \\sigma_A^2 / \\sigma_z$, which, using Equation 13.17c, yields $$ R=h^{2}\\left(\\frac{n}{1+(n-1)r}\\right)S=0.1\\cdot2.78\\cdot5.39=1.50 $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Thus, the reduction in $S$ under repeated measures (5.39 versus 11.23) is more than made up for by increased accuracy, yielding a larger expected response relative to mass selection (i.e., selection based on single measures). From Equation 13.19a, the expected ratio of the accuracies (and hence responses, assuming the same selection intensities) of the five-measure to single-measure schemes is 1.67, which approaches $1/\\sqrt{r} \\simeq 2.24$ for large values of $n$. The value of the response ratio for our simulated data (1.50/1.12 = 1.34) deviated from the expected value due to the small number (20) of randomly sampled individuals."
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:13.6]]"
     }
   ]
 }

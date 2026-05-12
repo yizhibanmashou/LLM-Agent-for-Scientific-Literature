@@ -2,35 +2,42 @@
   "id": "appendix1_014",
   "metadata": {
     "chapter": "appendix1",
-    "section": "Time to Fixation",
+    "section": "Appendix: Introduction",
     "subsections": [
-      "Time to Fixation"
+      "Expectations of More General Functions"
     ],
     "source_file": "tmp\\paddle_output\\appendix1_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [],
-    "table_references": []
+    "table_references": [],
+    "section_level_1": "Appendix: Introduction",
+    "section_level_2": "Expectations of More General Functions",
+    "heading_path": [
+      "Appendix: Introduction",
+      "Expectations of More General Functions"
+    ],
+    "display_heading": "Expectations of More General Functions"
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Similarly, the conditional fixation times are obtained using Equations A1.23a and A1.23b, with $$ h_{0}(x,p)=\\frac{1-x}{1-p}h(x,p)=\\left\\{\\begin{aligned}&4N_{e}&&for0<x<p\\\\ &4N_{e}\\frac{p(1-x)}{x(1-p)}&&for p<x<1\\end{aligned}\\right. $$ for those paths leading to loss, and $$ h_{1}(x,p)=\\frac{x}{p}h(x,p)=\\left\\{\\begin{aligned}&4N_{e}\\frac{x(1-p)}{p(1-x)}&for0<x<p\\\\ &4N_{e}&for p<x<1\\end{aligned}\\right. $$ for those paths leading to fixation. The integration of Equation A1.22b then yields an expected conditional time to loss of $$ \\begin{aligned}\\bar{t}_{L}(p)&=\\int_{0}^{1}h_{0}(x,p)dx=4N_{e}\\int_{0}^{p}dx+4N_{e}\\frac{p}{1-p}\\int_{p}^{1}\\frac{1-x}{x}dx\\\\&=-4N_{e}\\left(\\frac{p}{1-p}\\right)\\ln(p)\\end{aligned} $$ and an expected conditional time to fixation of $$ \\begin{aligned}\\bar{t}_{F}(p)&=\\int_{0}^{1}h_{1}(x,p)dx=4N_{e}\\frac{1-p}{p}\\int_{0}^{p}\\frac{x}{1-x}dx+4N_{e}\\int_{p}^{1}dx\\\\&=-4N_{e}\\left(\\frac{1-p}{p}\\right)\\ln(1-p)\\end{aligned} $$"
+      "content": "The expressions for sojourn times are relatively simple examples of computing expected values along a sample path of the diffusion process, and more complex functions can be evaluated in a similar manner. Let $ x_t $, which resides in the open interval $ (0,1) $, denote the values of our random variable along a particular sample path, and suppose that we wish to compute the integral (over all time) of some function $ f $ of $ x_t $ $$ I_{f}(p)=\\int_{0}^{\\infty}f(x_{t})dt $$"
     },
     {
       "type": "discussion",
-      "content": "These results were first obtained by Kimura and Ohta (1969a, 1969b). As a check of consistency, we can apply Equation A1.24, $$ \\begin{aligned}\\bar{t}&=u(p)\\bar{t}_{F}(p)+\\left[1-u(p)\\right]\\bar{t}_{L}(p)\\\\&=-4N_{e}\\left[p\\left(\\frac{1-p}{p}\\ln(1-p)\\right)+(1-p)\\left(\\frac{p}{1-p}\\ln(p)\\right)\\right]\\\\&=-4N_{e}\\left[(1-p)\\ln(1-p)+p\\ln(p)\\right]\\\\ \\end{aligned} $$ which (as expected) recovers our expression (Equation A1.25) for the unconditional time t."
+      "content": "Note that $ x_{t} $ is the realization at a particular time point, and hence the distribution of $ x_{t} $ (and thus ultimately $ I_{f} $) is a function of p, the starting value of our process. Because $ x_{t} $ is a random variable, the integral $ I_{f}(p) $ is also a random variable. Its expected value is given by $$ E[I_{f}(p)]=\\int_{0}^{\\infty}\\int_{0}^{1}f(x)\\varphi(x,t,p)dt dx $$"
     },
     {
       "type": "discussion",
-      "content": "For the special case of a neutral allele introduced as a single copy, $ p = 1/(2N) $, which results in the approximations $$ (1-p)/p\\simeq1/p=2N,\\quad p/(1-p)\\simeq p=1/(2N) $$ and $$ \\ln(1-p)\\simeq-p=-1/(2N),\\quad\\ln(p)=-\\ln(1/p)=-\\ln(2N) $$"
+      "content": "Fortunately, we do not have to solve for $ \\varphi(x,t,p) $, as (recalling Equation A1.22a) the general solution is obtained by using the Green's function, as described by Equation A1.22c, with $$ E[I_{f}(p)]=\\int_{0}^{1}f(x)h(x,p)dx $$"
     },
     {
       "type": "discussion",
-      "content": "If we use these approximations, Equation A1.25 reduces to $$ \\begin{aligned}\\bar{t}&=-4N_{e}[\\left(1-p\\right)\\ln(1-p)+p\\ln(p)]\\\\&\\simeq-4N_{e}\\left[-1/(2N)-\\ln(2N)/(2N)\\right]\\simeq\\frac{2N_{e}}{N}\\ln(2N)\\end{aligned} $$"
+      "content": "This makes sense, as $ h(x,p)dx $ is the expected amount of time that the process (starting at p) spends in the neighborhood of x before it is eventually lost or fixed. Thus, integration over all possible neighborhoods gives the expected value of the function over all sample paths."
     },
     {
-      "type": "discussion",
-      "content": "Similarly, Equations A1.27 and A1.28 become $$ \\bar{t}_{L}=-4N_{e}\\left(\\frac{p}{1-p}\\right)\\ln(p)\\simeq\\frac{2N_{e}}{N}\\ln(2N) $$ and $$ \\bar{t}_{F}=-4N_{e}\\left(\\frac{1-p}{p}\\right)\\ln(1-p)\\simeq-4N_{e}(2N)\\left(-\\frac{1}{2N}\\right)=4N_{e} $$"
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:A1.9]]"
     }
   ]
 }

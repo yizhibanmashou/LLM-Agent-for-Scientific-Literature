@@ -2,7 +2,7 @@
   "id": "chapter9_053",
   "metadata": {
     "chapter": "chapter9",
-    "section": "Chapter 9: Recombination and Infinite-alleles-based Tests",
+    "section": "Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction",
     "subsections": [
       "Contrasting Allele-frequency vs. Intra-allelic Variation Estimates of Haplotype Age"
     ],
@@ -14,7 +14,14 @@
       "9.38c",
       "9.38d"
     ],
-    "table_references": []
+    "table_references": [],
+    "section_level_1": "Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction",
+    "section_level_2": "Contrasting Allele-frequency vs. Intra-allelic Variation Estimates of Haplotype Age",
+    "heading_path": [
+      "Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction",
+      "Contrasting Allele-frequency vs. Intra-allelic Variation Estimates of Haplotype Age"
+    ],
+    "display_heading": "Contrasting Allele-frequency vs. Intra-allelic Variation Estimates of Haplotype Age"
   },
   "blocks": [
     {
@@ -46,16 +53,8 @@
       "content": "This equation can be used to approximate confidence intervals when n is large. When n or x are small, it serves as a starting value for numerically solving Equation 9.38c (for example, one can plot Equation 9.38a as a function of $ \\tau $ around the value give by Equation 9.38d to visually search where it equals x). The weakness of this estimator is that it is extremely sensitive to demography (Slaktin 2000; Slaktin and Rannala 2000)."
     },
     {
-      "type": "discussion",
-      "content": "Example 9.14. Recall Example 2.3, where we showed (following Stephens et al. 1998) that the estimated age of the HIV-resistant CCR5- $ \\delta $32 mutation (roughly 5100 generations from Equation 2.12) was incompatible with an independent estimate of its age based on intra-allelic variation (roughly 28 generations). Is this conclusion changed if Equation 9.38b and 9.38d are used instead of Equation 2.12 to estimate age from frequency? In Example 2.3, we used $ p = 0.10 $ and $ N_e = 5000 $. Taking $ n = 4000 $ as the approximate sample size of Europeans used to estimate the allele frequency, Equation 9.38b gives the MLE as $$ \\mathrm{MLE}(t)=-2N_{e}\\left(\\ln(1-p)+\\frac{2}{n}\\right)=-10,000\\left(\\ln(0.9)+\\frac{2}{4000}\\right)=1048\\{\\text{generations}\\} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "One reason for this discrepancy relative to the estimate of 5100 generations from Equation 2.12 is that the latter uses the mean, while Equation 9.38b uses the mode, of the allelic-age distribution. The long tail of the age distribution significantly skews the mean to much higher values, due to rare events associated with very large ages."
-    },
-    {
-      "type": "discussion",
-      "content": "While the MLE-based estimator is much smaller than that given by Equation 2.12, does its 95% confidence interval still exclude the variation-based estimate of ~30 generations? Values of $ \\tau_{0.025} $ and $ \\tau_{0.975} $ are obtained by solving Equation 9.38c. Using the approximation offered by Equation 9.38d yields starting values (in units of $ 2N_{e} $ generations) of 0.055 and 1.61. Plotting Equation 9.38c around these values gives the exact answers, $ \\tau_{0.025} = 0.067 $ and $ \\tau_{0.975} = 1.61 $, which translates into 670 to 16,100 generations ($ 2N_{e}\\tau_{0.025} $ and $ 2N_{e}\\tau_{0.975} $, respectively). Despite this very wide range, the lower value still greatly exceeds 28 generations, meaning that the frequency of this allele is not consistent with an equilibrium neutral model."
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:9.14]]"
     }
   ]
 }

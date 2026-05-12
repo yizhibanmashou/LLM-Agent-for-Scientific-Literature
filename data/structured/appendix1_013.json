@@ -2,55 +2,42 @@
   "id": "appendix1_013",
   "metadata": {
     "chapter": "appendix1",
-    "section": "Time to Fixation",
+    "section": "Appendix: Introduction",
     "subsections": [
       "Time to Fixation"
     ],
     "source_file": "tmp\\paddle_output\\appendix1_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [],
-    "table_references": []
+    "table_references": [],
+    "section_level_1": "Appendix: Introduction",
+    "section_level_2": "Time to Fixation",
+    "heading_path": [
+      "Appendix: Introduction",
+      "Time to Fixation"
+    ],
+    "display_heading": "Time to Fixation"
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "The time for a process to reach a specified value (or values) is called the sojourn time. While we are often interested in the sojourn time to an absorbing boundary (the fixation time), the more general problem of the time to first reach a specific value within the interval over which the diffusion is defined is also tractable. Letting $ _ a,b $ denote the expected time that a diffusion spends in the interval $ (a,b) $ given it starts at frequency p, then $$ \\bar{t}_{a,b}=\\int_{0}^{\\infty}\\Pr\\left(a\\leq x_{t}\\leq b\\right)dt=\\int_{0}^{\\infty}\\int_{a}^{b}\\varphi(x,t,p)dx dt $$"
+      "content": "Similarly, the conditional fixation times are obtained using Equations A1.23a and A1.23b, with $$ h_{0}(x,p)=\\frac{1-x}{1-p}h(x,p)=\\left\\{\\begin{aligned}&4N_{e}&&for0<x<p\\\\ &4N_{e}\\frac{p(1-x)}{x(1-p)}&&for p<x<1\\end{aligned}\\right. $$ for those paths leading to loss, and $$ h_{1}(x,p)=\\frac{x}{p}h(x,p)=\\left\\{\\begin{aligned}&4N_{e}\\frac{x(1-p)}{p(1-x)}&for0<x<p\\\\ &4N_{e}&for p<x<1\\end{aligned}\\right. $$ for those paths leading to fixation. The integration of Equation A1.22b then yields an expected conditional time to loss of $$ \\begin{aligned}\\bar{t}_{L}(p)&=\\int_{0}^{1}h_{0}(x,p)dx=4N_{e}\\int_{0}^{p}dx+4N_{e}\\frac{p}{1-p}\\int_{p}^{1}\\frac{1-x}{x}dx\\\\&=-4N_{e}\\left(\\frac{p}{1-p}\\right)\\ln(p)\\end{aligned} $$ and an expected conditional time to fixation of $$ \\begin{aligned}\\bar{t}_{F}(p)&=\\int_{0}^{1}h_{1}(x,p)dx=4N_{e}\\frac{1-p}{p}\\int_{0}^{p}\\frac{x}{1-x}dx+4N_{e}\\int_{p}^{1}dx\\\\&=-4N_{e}\\left(\\frac{1-p}{p}\\right)\\ln(1-p)\\end{aligned} $$"
     },
     {
       "type": "discussion",
-      "content": "If a stationary distribution exists, this time is infinite and hence not really of much biological interest. However, if one or both boundaries are absorbing (and accessible), then $ (p) $, the total time the diffusion spends in the interior, is obtained from Equation A1.21 by letting a and b be the lower and upper limits, respectively, of the diffusion (typically, a = 0, b = 1)."
+      "content": "These results were first obtained by Kimura and Ohta (1969a, 1969b). As a check of consistency, we can apply Equation A1.24, $$ \\begin{aligned}\\bar{t}&=u(p)\\bar{t}_{F}(p)+\\left[1-u(p)\\right]\\bar{t}_{L}(p)\\\\&=-4N_{e}\\left[p\\left(\\frac{1-p}{p}\\ln(1-p)\\right)+(1-p)\\left(\\frac{p}{1-p}\\ln(p)\\right)\\right]\\\\&=-4N_{e}\\left[(1-p)\\ln(1-p)+p\\ln(p)\\right]\\\\ \\end{aligned} $$ which (as expected) recovers our expression (Equation A1.25) for the unconditional time t."
     },
     {
       "type": "discussion",
-      "content": "A very useful approach for solving Equation A1.21, and more general problems, is to consider $ h(x,p) $, the expected amount of time that the process (starting at p) spends in the neighborhood of x before it is eventually absorbed. Formally, this is given by $$ h(x,p)=\\int_{0}^{\\infty}\\varphi(x,t,p)dt $$"
+      "content": "For the special case of a neutral allele introduced as a single copy, $ p = 1/(2N) $, which results in the approximations $$ (1-p)/p\\simeq1/p=2N,\\quad p/(1-p)\\simeq p=1/(2N) $$ and $$ \\ln(1-p)\\simeq-p=-1/(2N),\\quad\\ln(p)=-\\ln(1/p)=-\\ln(2N) $$"
     },
     {
       "type": "discussion",
-      "content": "Thus, Equation A1.21 can be expressed as $$ \\begin{align*}\\bar t_{a,b}=\\int_a^b h(x,p)dx\\end{align*} $$"
+      "content": "If we use these approximations, Equation A1.25 reduces to $$ \\begin{aligned}\\bar{t}&=-4N_{e}[\\left(1-p\\right)\\ln(1-p)+p\\ln(p)]\\\\&\\simeq-4N_{e}\\left[-1/(2N)-\\ln(2N)/(2N)\\right]\\simeq\\frac{2N_{e}}{N}\\ln(2N)\\end{aligned} $$"
     },
     {
       "type": "discussion",
-      "content": "$ h(x,p) $ is called a Green's function, and it will prove very useful in solving a variety of problems. The general solution for $ h(x,p) $, obtained by Maruyama (1977), is $$ h(x,p)=\\left\\{\\begin{aligned}&\\frac{2[1-u(p)]}{v(x)G(x)}\\int_{a}^{x}G(y)dy&\\text{for}a<x<p\\\\ &\\frac{2u(p)}{v(x)G(x)}\\int_{x}^{b}G(y)dy&\\text{for}p<x<b\\end{aligned}\\right. $$ where the fixation probability, $ u(p) $, is provided by Equation A1.17a."
-    },
-    {
-      "type": "discussion",
-      "content": "One can also obtain modified Green’s functions for conditional processes, such as processes leading only to loss or processes leading only to fixation. For example, $ _ F $, the expected time to fix allele A (in those populations where it is fixed) is given by replacing $ h(x,p) $ in Equation A1.22b by $$ h_{1}(x,p)=h(x,p)\\frac{u(x)}{u(p)} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "This follows from standard conditional probability arguments (see Ewens 1979, 2004), with $ u(x)/u(p) $ correcting for the fact that we are only considering those sample paths over which the allele of interest (A) is fixed. This occurs with probability $ u(p) $, and hence $ u(x)/u(p) $ is the conditional density. Similarly, $ _ L $, the expected time to lose allele A, is obtained by replacing $ h(x,p) $ in Equation A1.22b by $$ h_{0}(x,p)=h(x,p)\\frac{1-u(x)}{1-u(p)} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Finally, we note that $, _ F $, and $ _ L $ are related by $$ \\bar{t}(p)=u(p)\\bar{t}_{F}(p)+[1-u(p)]\\bar{t}_{L}(p) $$ That is, the expected time to loss or fixation is equal to the expected time to fixation multiplied by the probability of fixation plus the expected time to loss multiplied by the probability of loss."
-    },
-    {
-      "type": "discussion",
-      "content": "Example A1.8. Compute the conditional and unconditional expected time to loss or fixation for a neutral allele. Under neutrality, $ u(x) = x $, $ v(x) = x(1 - x)/(2N_e) $, and $ G(x) = 1 $. Hence, $ _0^x G(y) dy = x $, $ _x^1 G(y) dy = 1 - x $, and Equation A1.22c simplifies considerably to $$ h(x,p)=\\left\\{\\begin{aligned}&4N_{e}(1-p)/(1-x)&\\text{for}0<x<p\\\\ &4N_{e}p/x&\\text{for}p<x<1\\end{aligned}\\right. $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Thus, the expected amount of time that a neutral allele (with an initial frequency of p) remains polymorphic is $$ \\begin{aligned}\\bar{t}(p)&=\\int_{0}^{1}h(x,p)dx\\\\&=4N_{e}(1-p)\\int_{0}^{p}\\frac{dx}{1-x}+4N_{e}p\\int_{p}^{1}\\frac{dx}{x}\\\\&=-4N_{e}[(1-p)\\ln(1-p)+p\\ln(p)]\\end{aligned} $$"
+      "content": "Similarly, Equations A1.27 and A1.28 become $$ \\bar{t}_{L}=-4N_{e}\\left(\\frac{p}{1-p}\\right)\\ln(p)\\simeq\\frac{2N_{e}}{N}\\ln(2N) $$ and $$ \\bar{t}_{F}=-4N_{e}\\left(\\frac{1-p}{p}\\right)\\ln(1-p)\\simeq-4N_{e}(2N)\\left(-\\frac{1}{2N}\\right)=4N_{e} $$"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-05-07T08:22:41.268797+00:00",
+  "updated_at": "2026-05-08T09:01:26.563575+00:00",
   "categories": [
     {
       "issue_code": "inline_math_damage",
@@ -87,6 +87,65 @@
       "examples": [],
       "detector": {
         "mode": "regex",
+        "patterns": []
+      }
+    },
+    {
+      "issue_code": "table_binding_mismatch",
+      "label": "表格绑定错配",
+      "scope": "table",
+      "description": "表 ID 存在，但 caption、表体、页序或上下文证据指向了另一个表格对象。",
+      "severity": "fatal",
+      "status": "manual_only",
+      "aliases": [],
+      "examples": [],
+      "detector": {
+        "mode": "evidence",
+        "patterns": []
+      }
+    },
+    {
+      "issue_code": "cross_channel_table_conflict",
+      "label": "跨通道表格冲突",
+      "scope": "table",
+      "description": "structured、Paddle raw layout、GLM OCR 对同一编号表格的 caption 或表体证据不一致。",
+      "severity": "error",
+      "status": "manual_only",
+      "aliases": [],
+      "examples": [],
+      "detector": {
+        "mode": "evidence",
+        "patterns": []
+      }
+    },
+    {
+      "issue_code": "external_reference",
+      "label": "外部卷引用",
+      "scope": "table_reference",
+      "description": "正文显式引用 LW、Volume 或外部章节中的 Table/Equation/Figure，不应按本地缺失对象处理。",
+      "severity": "info",
+      "status": "manual_only",
+      "aliases": [],
+      "examples": [],
+      "detector": {
+        "mode": "regex",
+        "patterns": [
+          "\\bLW\\s+(?:\\[\\[SEE_TABLE:[^\\]]+\\]\\]|Table\\s+\\d+\\.\\d+)",
+          "\\b(?:Vol\\.?|Volume)\\s+[A-Za-z0-9IVXLCivxlc.-]+\\s+(?:\\[\\[SEE_TABLE:[^\\]]+\\]\\]|Table\\s+\\d+\\.\\d+)"
+        ]
+      }
+    },
+    {
+      "issue_code": "evidence_repair_candidate",
+      "label": "证据修复候选",
+      "scope": "text",
+      "description": "Paddle structured 块存在截断或数学边界损伤，GLM OCR 或原始 layout 提供了可复核的修复候选。",
+      "severity": "warning",
+      "status": "manual_only",
+      "aliases": [],
+      "examples": [],
+      "detector": {
+        "mode": "evidence",
         "patterns": []
       }
     },
@@ -181,6 +240,20 @@
       "label": "chunk 边界错误",
       "scope": "chunk",
       "description": "chunk 边界过早、过晚或跨越不应合并的语义单元。",
+      "severity": "warning",
+      "status": "manual_only",
+      "aliases": [],
+      "examples": [],
+      "detector": {
+        "mode": "regex",
+        "patterns": []
+      }
+    },
+    {
+      "issue_code": "example_boundary_error",
+      "label": "example 边界错误",
+      "scope": "example",
+      "description": "example span、正文占位符或 example_library 归属对象不正确。",
       "severity": "warning",
       "status": "manual_only",
       "aliases": [],

@@ -2,7 +2,7 @@
   "id": "chapter11_007",
   "metadata": {
     "chapter": "chapter11",
-    "section": "Chapter 11: The Effects of Epistasis",
+    "section": "Changes in Genetic Variation Induced by Drift: Introduction",
     "subsections": [
       "The Effects of Epistasis"
     ],
@@ -11,31 +11,44 @@
     "formula_references": [
       "11.7a",
       "11.7b",
-      "11.7c"
+      "11.7c",
+      "11.8",
+      "11.9a",
+      "11.9b",
+      "11.9c"
     ],
     "table_references": [
       "11.1",
       "11.3",
-      "11.4"
+      "11.4",
+      "inline_2"
     ],
+    "section_level_1": "Changes in Genetic Variation Induced by Drift: Introduction",
+    "section_level_2": "The Effects of Epistasis",
+    "heading_path": [
+      "Changes in Genetic Variation Induced by Drift: Introduction",
+      "The Effects of Epistasis"
+    ],
+    "display_heading": "The Effects of Epistasis",
     "table_reference_keys": [
       "chapter11:11.1",
       "chapter11:11.3",
-      "chapter11:11.4"
+      "chapter11:11.4",
+      "chapter11:inline_2"
     ]
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "The fundamental point in the preceding section is that because dominance is a function of a two-allele interaction, the variance in dominance effects can be altered in unexpected ways when inbreeding alters the average background on which an allele appears. This same issue applies to epistatic effects, although on a potentially larger scale because the"
+      "content": "The fundamental point in the preceding section is that because dominance is a function of a two-allele interaction, the variance in dominance effects can be altered in unexpected ways when inbreeding alters the average background on which an allele appears. This same issue applies to epistatic effects, although on a potentially larger scale because the additive × additive epistatic variance ($ \\sigma_{AA}^2 $) is a function of $ n^2 $ terms, while all of the other quadratic components in [[SEE_TABLE:11.1]] (except $ \\iota^2 - \\iota^* $, which seems to be of little significance) are functions of only $ n $ terms. If we assume unlinked loci, the coefficient of the $ \\sigma_{AA}^2 $"
+    },
+    {
+      "type": "table",
+      "content": "[[TABLE:11.4]]"
     },
     {
       "type": "discussion",
-      "content": "additive × additive epistatic variance ($ \\sigma_{AA}^2 $) is a function of $ n^2 $ terms, while all of the other quadratic components in [[SEE_TABLE:11.1]] (except $ \\iota^2 - \\iota^* $, which seems to be of little significance) are functions of only $ n $ terms. If we assume unlinked loci, the coefficient of the $ \\sigma_{AA}^2 $"
-    },
-    {
-      "type": "discussion",
-      "content": "[[TABLE:11.4]], for example, the $ A_{1} $ allele is present in genetic backgrounds that lead to five distinct genotypic values in a randomly mating population. If, however, the $ B_{2} $ allele becomes fixed, then an $ A_{1} $ allele can only be in two backgrounds ($ A_{1}A_{1}B_{2}B_{2} $ and $ A_{1}A_{2}B_{2}B_{2} $). In this case, the epistatic interactions are still present, but they are transmitted reliably as additive effects (the difference between adjacent pairs of A-locus genotypes being a constant, $ a - i $). contribution to the additive genetic variance rises to nearly 1.0 in a little over $ N_e $ generations, i.e., the equivalent of all of the base-population $ \\sigma_{AA}^2 $ is added to the (otherwise declining) additive genetic variance at this point (Figure 11.2)."
+      "content": "contribution to the additive genetic variance rises to nearly 1.0 in a little over $ N_e $ generations, i.e., the equivalent of all of the base-population $ \\sigma_{AA}^2 $ is added to the (otherwise declining) additive genetic variance at this point (Figure 11.2)."
     },
     {
       "type": "discussion",
@@ -60,6 +73,14 @@
     {
       "type": "discussion",
       "content": "Limited attention has been given to the role of two-locus epistasis involving dominance effects in finite populations (Weir and Cockerham 1977; Cheverud and Routman 1996; López-Fanjul et al. 1999; Barton and Turelli 2004), and no general formulation exists for the dynamics of genetic variance resulting from higher-order epistatic interactions. We can anticipate that the necessary algebra for such a solution would be extremely tedious, as it would involve descent measures involving three and more loci, and as will be discussed below, the existing data do not support the need for such a theory. For heuristic purposes, however, we will consider the approximate case for higher-order epistasis involving only additive effects, again assuming freely recombining loci and ignoring identity disequilibrium. As a simple entrée into this matter, recall that in the absence of dominance, the expected covariance between the relatives $x$ and $y$ is $\\sigma_G(x,y) = 2\\theta_{xy}\\sigma_A^2 + (2\\theta_{xy})^2\\sigma_AA^2 + \\cdots + (2\\theta_{xy})^n\\sigma_A^2$, where $\\theta_{xy}$ is the coefficient of coancestry (LW Chapter 7), and $\\sigma_A^2$ refers to epistatic variance involving the additive effects of $n$ loci. The total genetic variance (summed over the within- and among-population components) is equivalent to the covariance of individuals with themselves, which is obtained by letting $\\theta_{xy} = (1 + f)/2$ (LW Chapter 7), whereas the variance among isolated subpopulations is equivalent to the covariance of random members from the same subpopulation, which is obtained by letting $\\theta_{xy} = f$. Thus, for any $n$-locus epistatic interaction, the contribution to the total genetic variance is $(1 + f)^n\\sigma_A^2$, to the among-population component of variance is $(2f)^n\\sigma_A^2$, and to the within-population component is the difference, $[(1 + f)^n - (2f)^n]\\sigma_A^2$. This implies that the base-population additive and additive $\\times$ additive genetic variances contribute $(1 - f)\\sigma_A^2$ and $(1 + 2f - 3f^2)\\sigma_AA^2$, respectively, to the within-population genetic variance, a result that can also be obtained directly from Equations 11.7a and 11.7b. The contribution from additive $\\times$ additive epistatic variance is $(1 + 3f + 3f^2 - 7f^3)\\sigma_AA^2$, etc."
+    },
+    {
+      "type": "discussion",
+      "content": "Each of these terms (except those involving $ \\sigma_A^2 $) reaches a maximum at an intermediate level of inbreeding and then declines to zero as $ f \\to 1 $. For additive epistatic effects involving $ n = 2, 3 $, and 4 loci, the peak contributions to the within-population genetic variance occur when $ f $ is approximately 0.33, 0.55, and 0.66, respectively. For randomly mating populations, these maxima occur at $ 0.8N_e $, $ 1.6N_e $, and $ 2.2N_e $ generations, with the peak contributions to the total within-population genetic variance being equal to $ 1.33\\sigma_A^2 $, $ 2.39\\sigma_A^2 $, and $ 4.56\\sigma_AA^2 $, respectively. Thus, even if levels of higher-order epistatic genetic variance are relatively low in a base population, they may have a significant influence on the within-population variance under inbreeding, with the full impact not being revealed for many generations. One potential consequence of this, as noted by Naciri-Graven and Goudet (2003), is that as the number of loci increases, epistasis becomes more important than dominance. However, López-Fanjul et al. (2002) reached the opposite conclusion for two loci, namely, that dominance is more important than epistasis, thus showing that intricacies of the genetic architecture impact our predictions."
+    },
+    {
+      "type": "derivation",
+      "content": "Under the model of only additive epistasis, the components of within-population genetic variance are described by the following general expression, [[SEE_FORMULA:11.8]] where x denotes the highest level of epistasis involving additive effects influencing the trait (Barton and Turelli 2004; Hill et al. 2006). When x = 2, this expression recovers Equations 11.7a and 11.7b, and with x as high as 3, we obtain [[SEE_FORMULA:11.9a]] [[SEE_FORMULA:11.9b]] [[SEE_FORMULA:11.9c]] with the dots denoting potential contributions from higher-order effects."
     }
   ]
 }

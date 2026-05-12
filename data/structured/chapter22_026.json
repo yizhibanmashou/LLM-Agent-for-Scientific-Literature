@@ -2,7 +2,7 @@
   "id": "chapter22_026",
   "metadata": {
     "chapter": "chapter22",
-    "section": "Chapter 22: BLUP ESTIMATION OF DIRECT AND ASSOCIATIVE EFFECTS",
+    "section": "Associative Effects: Competition, Social Interactions, Group and Kin Selection: Introduction",
     "subsections": [
       "Mixed-Model Estimation of Direct and Associative Effects"
     ],
@@ -16,7 +16,14 @@
       "22.39b",
       "22.39c"
     ],
-    "table_references": []
+    "table_references": [],
+    "section_level_1": "Associative Effects: Competition, Social Interactions, Group and Kin Selection: Introduction",
+    "section_level_2": "Mixed-Model Estimation of Direct and Associative Effects",
+    "heading_path": [
+      "Associative Effects: Competition, Social Interactions, Group and Kin Selection: Introduction",
+      "Mixed-Model Estimation of Direct and Associative Effects"
+    ],
+    "display_heading": "Mixed-Model Estimation of Direct and Associative Effects"
   },
   "blocks": [
     {
@@ -40,24 +47,8 @@
       "content": "This is often written more compactly using the Kronecker or direct product notation as $ \\mathbf{G} \\otimes \\mathbf{A} $, where [[SEE_FORMULA:22.39b]] Because the residuals are assumed to be uncorrelated with the other random effects, the full covariance structure for this model is [[SEE_FORMULA:22.39c]]"
     },
     {
-      "type": "discussion",
-      "content": "Example 22.10. To introduce how a mixed-model with direct and social effects is constructed, consider the following toy example where eight individuals are measured. Individuals 1 through 4 are (noninbred) half-sibs, as are 5 through 8, but they are unrelated to the first family. The relationship matrix A becomes $$ \\mathbf{A}=\\begin{pmatrix}{{{1}}}&{{{0.25}}}&{{{0.25}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\\\{{{0.25}}}&{{{1}}}&{{{0.25}}}&{{{0.25}}}&{{{0}}}&{{{0}}}&{{{0}}} \\\\{{{0.25}}}&{{{0.25}}}&{{{1}}}&{{{0.25}}}&{{{0}}}&{{{0}}}&{{{0}}} \\\\{{{0.25}}}&{{{0.25}}}&{{{0.25}}}&{{{1}}}&{{{0}}}&{{{0}}}&{{{0}}} \\\\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{1}}}&{{{0.25}}}&{{{0.25}}}&{{{0.25}}} \\\\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0.25}}}&{{{1}}}&{{{0.25}}}&{{{0.25}}} \\\\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0.25}}}&{{{0.25}}}&{{{1}}}&{{{0.25}}} \\\\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0.25}}}&{{{0.25}}}&{{{0.25}}}&{{{1}}} \\\\\\end{pmatrix} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "These eight individuals are placed into two groups of size four. Group 1 contains individuals 1, 2, 5, and 6; while group 2 contains 3, 4, 7, and 8. For simplicity, the only assumed fixed effect is the mean, $ \\mu $. The resulting matrices for the mixed-model equations become $$ \\mathbf{z}=\\begin{pmatrix}{{{z_{1}}}} \\\\{{{z_{2}}}} \\\\{{{z_{3}}}} \\\\{{{z_{4}}}} \\\\{{{z_{5}}}} \\\\{{{z_{6}}}} \\\\{{{z_{7}}}} \\\\{{{z_{8}}}}\\end{pmatrix}\\quad\\mathbf{X}=\\begin{pmatrix}{{{1}}} \\\\{{{1}}} \\\\{{{1}}} \\\\{{{1}}} \\\\{{{1}}} \\\\{{{1}}} \\\\{{{1}}}\\end{pmatrix}\\quad\\mathbf{a}_{d}=\\begin{pmatrix}{{{A_{d,1}}}} \\\\{{{A_{d,2}}}} \\\\{{{A_{d,3}}}} \\\\{{{A_{d,4}}}} \\\\{{{A_{d,5}}}} \\\\{{{A_{d,6}}}} \\\\{{{A_{d,7}}}} \\\\{{{A_{d,8}}}}\\end{pmatrix}\\quad\\mathbf{Z}_{d}=\\begin{pmatrix}{{{1}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\\\{{{0}}}&{{{1}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\\\{{{0}}}&{{{0}}}&{{{1}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\\\{{{0}}}&{{{0}}}&{{{0}}}&{{{1}}}&{{{0}}}&{{{0}}}&{{{0}}} \\\\{{{0}}}&{{{0}}}&{{{0}}}&{{{1}}}&{{{0}}}&{{{0}}}&{{{0}}} \\\\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{1}}}&{{{0}}}&{{{0}}} \\\\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{1}}}&{{{0}}} \\\\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{1}}}&{{{0}}} \\\\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{1}}}\\end{pmatrix}=\\mathbf{I}_{8} $$ where $ \\beta = (\\mu) $."
-    },
-    {
-      "type": "discussion",
-      "content": "Turning now to the incidence matrix for social effects, $ Z_{s} $, note that its ith row has a 1 for each member in i's group, and a 0 otherwise. For example, individual 1 is influenced by the social breeding values of individuals 2, 5, and 6, which are assigned values of one in the first row of $ Z_{s} $, while all other elements in row one are zero. Likewise, individual 3 is influenced by the social breeding values of its group (individuals 4, 7 and 8), and so forth. Filling in the rest of the matrix yields $$ \\mathbf{Z}_{s}=\\begin{pmatrix}{{{0}}}&{{{1}}}&{{{0}}}&{{{0}}}&{{{1}}}&{{{1}}}&{{{0}}}&{{{0}}} \\\\{{{1}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{1}}}&{{{1}}}&{{{0}}}&{{{0}}} \\\\{{{0}}}&{{{0}}}&{{{0}}}&{{{1}}}&{{{0}}}&{{{0}}}&{{{1}}}&{{{1}}} \\\\{{{0}}}&{{{0}}}&{{{1}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{1}}}&{{{1}}} \\\\{{{1}}}&{{{1}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{1}}}&{{{0}}}&{{{0}}} \\\\{{{1}}}&{{{1}}}&{{{0}}}&{{{0}}}&{{{1}}}&{{{0}}}&{{{0}}}&{{{0}}} \\\\{{{0}}}&{{{0}}}&{{{1}}}&{{{1}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{1}}} \\\\{{{0}}}&{{{0}}}&{{{1}}}&{{{1}}}&{{{0}}}&{{{0}}}&{{{1}}}&{{{0}}}\\end{pmatrix}\\qquad\\mathbf{a}_{s}=\\begin{pmatrix}{{{A_{s,1}}}} \\\\{{{A_{s,2}}}} \\\\{{{A_{s,3}}}} \\\\{{{A_{s,4}}}} \\\\{{{A_{s,5}}}} \\\\{{{A_{s,6}}}} \\\\{{{A_{s,7}}}} \\\\{{{A_{s,8}}}}\\end{pmatrix} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "The group effects are made more apparent (but $ \\mathbf{A} $ is made more confusing) by reordering the individuals as $ \\mathbf{z}^T = (z_1, z_2, z_5, z_6, z_3, z_4, z_7, z_8) $, so that group members are clustered together. This gives $$ \\mathbf{Z}_{s}=\\begin{pmatrix}{{{0}}}&{{{1}}}&{{{1}}}&{{{1}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\\\{{{1}}}&{{{0}}}&{{{1}}}&{{{1}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\\\{{{1}}}&{{{1}}}&{{{0}}}&{{{1}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\\\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{1}}}&{{{1}}}&{{{1}}} \\\\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{1}}}&{{{0}}}&{{{1}}}&{{{1}}} \\\\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{1}}}&{{{1}}}&{{{0}}}&{{{1}}} \\\\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{1}}}&{{{1}}}&{{{1}}}&{{{0}}}\\end{pmatrix},\\qquad\\mathbf{A}=0.25\\cdot\\begin{pmatrix}{{{4}}}&{{{1}}}&{{{0}}}&{{{0}}}&{{{1}}}&{{{1}}}&{{{0}}}&{{{0}}} \\\\{{{1}}}&{{{4}}}&{{{0}}}&{{{0}}}&{{{1}}}&{{{1}}}&{{{0}}}&{{{0}}} \\\\{{{0}}}&{{{0}}}&{{{4}}}&{{{1}}}&{{{0}}}&{{{0}}}&{{{1}}}&{{{1}}} \\\\{{{0}}}&{{{0}}}&{{{1}}}&{{{4}}}&{{{0}}}&{{{0}}}&{{{1}}}&{{{1}}} \\\\{{{1}}}&{{{1}}}&{{{0}}}&{{{0}}}&{{{4}}}&{{{1}}}&{{{0}}}&{{{0}}} \\\\{{{1}}}&{{{1}}}&{{{0}}}&{{{0}}}&{{{1}}}&{{{4}}}&{{{0}}}&{{{0}}} \\\\{{{0}}}&{{{0}}}&{{{1}}}&{{{1}}}&{{{0}}}&{{{0}}}&{{{4}}}&{{{1}}} \\\\{{{0}}}&{{{0}}}&{{{1}}}&{{{1}}}&{{{0}}}&{{{0}}}&{{{1}}}&{{{4}}}\\end{pmatrix} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Groups of different sizes are easily incorporated through the use of $ Z_{s} $."
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:22.10]]"
     }
   ]
 }

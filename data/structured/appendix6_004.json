@@ -2,32 +2,23 @@
   "id": "appendix6_004",
   "metadata": {
     "chapter": "appendix6",
-    "section": "DERIVATIVES OF VECTORS AND VECTOR-VALUED FUNCTIONS",
+    "section": "Appendix: Introduction",
     "subsections": [
       "DERIVATIVES OF VECTORS AND VECTOR-VALUED FUNCTIONS"
     ],
     "source_file": "tmp\\paddle_output\\appendix6_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [],
-    "table_references": []
+    "table_references": [],
+    "section_level_1": "Appendix: Introduction",
+    "section_level_2": "DERIVATIVES OF VECTORS AND VECTOR-VALUED FUNCTIONS",
+    "heading_path": [
+      "Appendix: Introduction",
+      "DERIVATIVES OF VECTORS AND VECTOR-VALUED FUNCTIONS"
+    ],
+    "display_heading": "DERIVATIVES OF VECTORS AND VECTOR-VALUED FUNCTIONS"
   },
   "blocks": [
-    {
-      "type": "discussion",
-      "content": "More generally, if $ \\mathbf{X}^{T}\\mathbf{X} $ is singular, we can still solve this equation by using a generalized inverse $ \\left( \\mathbf{X}^{T}\\mathbf{X}\\right)^{-} $ ; see LW Appendix 3."
-    },
-    {
-      "type": "discussion",
-      "content": "Example A6.5. Here we present one derivation of Henderson's mixed-model equations (Equation 19.4). Consider the mixed model $ = + + $, where $ (0,) $, $ (0,) $, and $ $ and $ $ are independent (Equation 19.1). If we recall the probability density function for a multivariate normal (Example A6.2), we have that $$ p(\\mathbf{e})\\propto|\\mathbf{R}|^{-1/2}\\cdot\\exp\\left[-\\frac{1}{2}\\mathbf{e}^{T}\\mathbf{R}^{-1}\\mathbf{e}\\right]\\quad and\\quad p(\\mathbf{u})\\propto|\\mathbf{G}|^{-1/2}\\cdot\\exp\\left[-\\frac{1}{2}\\mathbf{u}^{T}\\mathbf{G}^{-1}\\mathbf{u}\\right] $$"
-    },
-    {
-      "type": "discussion",
-      "content": "We can further note that the conditional distribution of y given u is"
-    },
-    {
-      "type": "discussion",
-      "content": "Hence, $$ \\left(\\mathbf{y}-\\mathbf{X}\\boldsymbol{\\beta}-\\mathbf{Z}\\mathbf{u}\\right)\\left|\\mathbf{u}=\\mathbf{e}\\sim\\mathrm{M V N}(0,\\mathbf{R})\\right. $$ $$ p(\\mathbf{y},\\mathbf{u})=p(\\mathbf{y}|\\mathbf{u})\\cdot p(\\mathbf{u})=p(\\mathbf{e})\\cdot p(\\mathbf{u}) $$ with the last step following because e and u are independent. From Equation A6.4a, $$ p(\\mathbf{y},\\mathbf{u})\\propto $$ $$ \\left|\\mathbf{R}\\right|^{-1/2}\\left|\\mathbf{G}\\right|^{-1/2}\\cdot\\exp\\left[-\\frac{1}{2}\\left(\\mathbf{y}-\\mathbf{X}\\boldsymbol{\\beta}-\\mathbf{Z}\\mathbf{u}\\right)^{T}\\mathbf{R}^{-1}\\left(\\mathbf{y}-\\mathbf{X}\\boldsymbol{\\beta}-\\mathbf{Z}\\mathbf{u}\\right)-\\frac{1}{2}\\mathbf{u}^{T}\\mathbf{G}^{-1}\\mathbf{u}\\right] $$"
-    },
     {
       "type": "discussion",
       "content": "Now consider the log of the density, $$ \\ell=\\ln\\left[p(\\mathbf{y},\\mathbf{u})\\right]\\propto $$ $$ \\left(-\\frac{1}{2}\\right)\\left[\\ln(|\\mathbf{R}|)+\\ln(|\\mathbf{G}|)+(\\mathbf{y}-\\mathbf{X}\\boldsymbol{\\beta}-\\mathbf{Z}\\mathbf{u})^{T}\\mathbf{R}^{-1}(\\mathbf{y}-\\mathbf{X}\\boldsymbol{\\beta}-\\mathbf{Z}\\mathbf{u})+\\mathbf{u}^{T}\\mathbf{G}^{-1}\\mathbf{u}\\right] $$"
@@ -38,11 +29,11 @@
     },
     {
       "type": "discussion",
-      "content": "Using Equations A6.1c through A6.1e to take the derivatives of $ $ with respect to $ $ and u yields $$ \\left(\\begin{array}{c}\\frac{\\partial\\ell}{\\partial\\boldsymbol{\\beta}}\\\\ \\frac{\\partial\\ell}{\\partial\\mathbf{u}}\\end{array}\\right)=\\left(\\begin{array}{c}\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{y}-\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{X}\\boldsymbol{\\beta}-\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{Z}\\mathbf{u}\\\\ \\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{y}-\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{X}\\boldsymbol{\\beta}-\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{Z}\\mathbf{u}+\\mathbf{G}^{-1}\\mathbf{u}\\end{array}\\right) $$"
+      "content": "Using Equations A6.1c through A6.1e to take the derivatives of $ \\ell $ with respect to $ \\beta $ and u yields $$ \\left(\\begin{array}{c}\\frac{\\partial\\ell}{\\partial\\boldsymbol{\\beta}}\\\\ \\frac{\\partial\\ell}{\\partial\\mathbf{u}}\\end{array}\\right)=\\left(\\begin{array}{c}\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{y}-\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{X}\\boldsymbol{\\beta}-\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{Z}\\mathbf{u}\\\\ \\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{y}-\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{X}\\boldsymbol{\\beta}-\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{Z}\\mathbf{u}+\\mathbf{G}^{-1}\\mathbf{u}\\end{array}\\right) $$"
     },
     {
       "type": "discussion",
-      "content": "Denoting the value for $ $ and u that return a zero vector for Equation A6.4e as $ $ and $ $ yields the following set of matrix equations $$ \\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{y}\\\\\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{y}\\end{pmatrix}=\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{X}\\widehat{\\boldsymbol{\\beta}}+\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{Z}\\widehat{\\mathbf{u}}\\\\\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{X}\\widehat{\\boldsymbol{\\beta}}+\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{Z}\\widehat{\\mathbf{u}}+\\mathbf{G}^{-1}\\widehat{\\mathbf{u}}\\end{pmatrix} $$ which immediately yields Henderson’s mixed-model equations, $$ \\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{y}\\\\\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{y}\\end{pmatrix}=\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{X}&\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{Z}\\\\\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{X}&\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{Z}+\\mathbf{G}^{-1}\\end{pmatrix}\\begin{pmatrix}\\widehat{\\boldsymbol{\\beta}}\\\\\\widehat{\\mathbf{u}}\\end{pmatrix} $$"
+      "content": "Denoting the value for $ \\beta $ and u that return a zero vector for Equation A6.4e as $ \\widehat{\\beta} $ and $ \\widehat{u} $ yields the following set of matrix equations $$ \\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{y}\\\\\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{y}\\end{pmatrix}=\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{X}\\widehat{\\boldsymbol{\\beta}}+\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{Z}\\widehat{\\mathbf{u}}\\\\\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{X}\\widehat{\\boldsymbol{\\beta}}+\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{Z}\\widehat{\\mathbf{u}}+\\mathbf{G}^{-1}\\widehat{\\mathbf{u}}\\end{pmatrix} $$ which immediately yields Henderson’s mixed-model equations, $$ \\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{y}\\\\\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{y}\\end{pmatrix}=\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{X}&\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{Z}\\\\\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{X}&\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{Z}+\\mathbf{G}^{-1}\\end{pmatrix}\\begin{pmatrix}\\widehat{\\boldsymbol{\\beta}}\\\\\\widehat{\\mathbf{u}}\\end{pmatrix} $$"
     },
     {
       "type": "discussion",

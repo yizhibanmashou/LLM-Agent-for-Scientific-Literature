@@ -2,38 +2,71 @@
   "id": "chapter15_010",
   "metadata": {
     "chapter": "chapter15",
-    "section": "Chapter 15: Decomposing Maternal Effects",
+    "section": "Short-term Changes in the Mean: 3. Permanent Versus Transient Response: Introduction",
     "subsections": [
-      "Decomposing Maternal Effects"
+      "Selection Response Under Falconer's Dilution Model"
     ],
     "source_file": "tmp\\paddle_output\\chapter15_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [
-      "15.20a",
-      "15.20b"
+      "15.21",
+      "15.22a",
+      "15.22b",
+      "15.22c",
+      "15.23a",
+      "15.23b",
+      "15.24",
+      "15.25"
     ],
-    "table_references": []
+    "table_references": [],
+    "section_level_1": "Short-term Changes in the Mean: 3. Permanent Versus Transient Response: Introduction",
+    "section_level_2": "Selection Response Under Falconer's Dilution Model",
+    "heading_path": [
+      "Short-term Changes in the Mean: 3. Permanent Versus Transient Response: Introduction",
+      "Selection Response Under Falconer's Dilution Model"
+    ],
+    "display_heading": "Selection Response Under Falconer's Dilution Model"
   },
   "blocks": [
     {
-      "type": "derivation",
-      "content": "Assuming a maternal effect, the environmental value, E, for the focal trait in an individual can be decomposed as $ E = M + e $, comprised of a maternal performance component, M, contributed by the mother plus an environmental deviation, e, resulting in a trait value of [[SEE_FORMULA:15.20a]]"
-    },
-    {
       "type": "discussion",
-      "content": "The genotypic value, G, of the offspring is often referred to as the direct (or intrinsic) effect on the trait, reflecting the inherent genetics of the individual. If M is entirely environmental in basis, the results of the previous section (on correlated environmental values) apply, and any contribution from maternal effects is transient. However, there is often a genetic component to M, with the result that selection can change the population means of both the direct and the maternal values (Dickerson 1947; Willham 1963, 1972; Cheverud 1984a; Riska et al. 1985; Kirkpatrick and Lande 1989). In this case, $ M = G_m + E_m $, where $ G_m $ is the contribution to the offspring value resulting from the mother's genotypic value for the maternal performance character, while $ E_m $ is the contribution resulting from the environmental value of the maternal performance character (reviewed in LW Chapter 23). Thus, although M is treated as an environmental effect from the offspring's standpoint, it can have both a genetic and an environmental basis in the mother."
+      "content": "One of the simplest models of maternal effects (motivated by the inheritance of litter size in mice) is that of Falconer (1965): the value of the focal trait in the mother determines M (reviewed in LW Chapter 23). Falconer reasoned that offspring from large litters receive less maternal resources per individual than those in smaller litters, and that this can have carryover effects when they become mothers themselves."
     },
     {
       "type": "derivation",
-      "content": "Letting $ G_{d} $ denote the genotypic value of the direct effect (previously G), the phenotypic value of an individual can be written in terms of direct and maternal contributions [[SEE_FORMULA:15.20b]]"
+      "content": "Assume that the maternal contribution is a linear function of the maternal phenotype, $ z_{mo} $ (the size of her litter), so that $ M = mz_{mo} $ and, upon substitution of this result into Equation 15.20a, the phenotypic decomposition becomes [[SEE_FORMULA:15.21]]"
     },
     {
       "type": "discussion",
-      "content": "This significantly complicates the selection response, as if the correlation between $ G_d $ and $ G_m $ is negative, selection to increase a trait might result in an improved direct value ($ \\Delta \\mu_{G_d} > 0 $) but a decreased maternal value ($ \\Delta \\mu_{G_m} < 0 $). In the extreme, this can result in a reversed selection response, with the decline in maternal environment overwhelming any improvement in direct effects. Because trait value, $ z $, is a function of two potentially correlated genetic components, $ G_d $ and $ G_m $, this is formally a multiple-trait problem and can be attacked with the machinery of multivariate selection (Cheverud 1984a; Kirkpatrick and Lande 1989, 1992; Lande and Kirkpatrick 1990). However, we first consider the simplest case, where $ M $ is a function of the value of the focal trait in the mother, which collapses the model to a single-trait problem, but with much more complicated dynamics than suggested by the simple breeder's equation. We then very briefly discuss a two-trait model, while Volume 3 examines maternal effects in the full multivariate framework."
+      "content": "Conceivably, $M$ could be a nonlinear function of $z_{moi}$, but linearity is assumed for tractability. Equation 15.21 is called the dilation model, because the effect of the maternal phenotype becomes diluted over successive generations (for $|m| < 1$). The parameter $m$ can be regarded as the partial regression coefficient (i.e., holding the offspring's genotypic value, $G$, constant) of offspring phenotype on maternal phenotype and can be estimated as the difference between slopes of the maternal- and paternal-offspring regressions (LW Equation 23.13)."
     },
     {
       "type": "discussion",
-      "content": "An important point to note is that maternal-effects models are a special case of associative effects (or social, or indirect genetic effects) models, where the phenotype of an individual within a group is a function of both its direct value plus the associative values from members of its group. Here the group is an offspring and its mother. Both kin and group selection, which are special cases of this more general formulation, are examined in detail in Chapter 22."
+      "content": "Negative estimates of m have been reported: values of -0.15 for litter size in mice (Falconer 1965); of -0.58 and -0.40 for age of maturity in two replicate lines of the springtail insect, Orchesella cincta (Janssen et al. 1988); of -0.25 for clutch size in the collared flycatcher, Ficedula albicollis (Schluter and Gustafsson 1993); and of -0.29 for juvenile growth rate in the red squirrel Tamiasciurus hudsonicus (McAdam and Boutin 2003)."
+    },
+    {
+      "type": "derivation",
+      "content": "If we further assume that the joint distribution of phenotypes and breeding values in parents and offspring is multivariate normal and there is an absence of epistasis, the expected phenotypic value of an offspring whose mother has a phenotypic value of $ z_{mo} $ is [[SEE_FORMULA:15.22a]] where $ A_{mo} $ and $ A_{fa} $ are the maternal and paternal breeding values. Averaging over the selected parents, the mean in generation t becomes [[SEE_FORMULA:15.22b]] where $ A_{fa}^{*}(t) $ and $ A_{mo}^{*}(t) $ are the mean breeding values of the selected parents and $ \\mu_{mo}^{*}(t) $ is the mean phenotypic value of selected mothers in generation t. The first term is the expected breeding value in the offspring, $ \\mu_{A}(t) $, and the second term is the additional maternal contribution."
+    },
+    {
+      "type": "discussion",
+      "content": "To proceed in using this model to predict response, we first use the regression of breeding value on phenotype $$ A=\\mu_{A}+b_{A|z}\\left(z-\\mu_{z}\\right)+e $$"
+    },
+    {
+      "type": "derivation",
+      "content": "In particular, we can rewrite $ A_{mo}^{*}(t) = E_{s}[A_{mo}] $, the expected breeding values in selected mothers, as [[SEE_FORMULA:15.22c]] where $ E_s[\\cdot] $ denotes the expected value over the selected parents and $ S_{mo} $ denotes the selection differential on the trait in mothers in generation $ t $. A similar expression for $ A_a^*(t) $ includes the selection differential, $ S_{fa} $, on fathers. In the absence of maternal effects, $ b_{A|z} = h^2 $. However, the dilution model generates an equilibrium covariance between $ M $ and $ A $, specifically $ \\sigma_{A,M} = m \\sigma_A^2 / (2 - m) $, which in turn alters the covariance between $ z $ and $ A $ (Falconer 1965; Kirkpatrick and Lande 1989; see LW Equation 23.12a). The resulting regression slope (at equilibrium) is [[SEE_FORMULA:15.23a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "The expected breeding value in the offspring is the average of the breeding values of the selected parents, which (from Equations 15.22c and 15.23a) yields [[SEE_FORMULA:15.23b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Substituting this result for the average of the breeding values in Equation 15.22b and using $ \\mu_{mo}^{*}(t) = \\mu_{z}(t) + S_{mo}(t) $ yields [[SEE_FORMULA:15.24]]"
+    },
+    {
+      "type": "derivation",
+      "content": "The change in population mean over one generation, $ \\Delta\\mu_{z}(t) $, is thus $$ \\begin{align*}\\Delta\\mu_{z}(t)=\\mu_{z}(t+1)-\\mu_{z}(t)=&\\Bigg[\\mu_{A}(t)+\\frac{h^{2}}{2-m}\\bigg(S_{mo}(t)+S_{fa}(t)\\bigg)+m\\bigg(\\mu_{z}(t)+S_{mo}(t)\\bigg)\\Bigg]\\\\-\\Bigg[\\mu_{A}(t-1)+\\frac{h^{2}}{2-m}\\bigg(S_{mo}(t-1)+S_{fa}(t-1)\\bigg)+m\\bigg(\\mu_{z}(t-1)+S_{mo}(t-1)\\bigg)\\Bigg]\\end{align*} $$ which, using Equation 15.23b, simplifies to [[SEE_FORMULA:15.25]] This result can be interpreted as follows: the first two terms are the change in character value resulting from selection in generation $ t $ due to genetic $ (h^2 / [2 - m]) $ and maternal $ (m) $ contributions. The final term, which can be expressed as $ m \\left[\\mu_z(t) - \\mu_z^*(t-1) \\right] $, represents the decay in the maternal contribution from the previous generation."
     }
   ]
 }

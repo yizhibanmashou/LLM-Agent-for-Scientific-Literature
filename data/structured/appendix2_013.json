@@ -2,28 +2,30 @@
   "id": "appendix2_013",
   "metadata": {
     "chapter": "appendix2",
-    "section": "POSTERIOR DISTRIBUTIONS UNDER NORMALITY ASSUMPTIONS",
+    "section": "Appendix: Introduction",
     "subsections": [
       "Gaussian Likelihood With Known Variance and Unknown Mean"
     ],
     "source_file": "tmp\\paddle_output\\appendix2_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [],
-    "table_references": [
-      "inline_3"
+    "table_references": [],
+    "section_level_1": "Appendix: Introduction",
+    "section_level_2": "Gaussian Likelihood With Known Variance and Unknown Mean",
+    "heading_path": [
+      "Appendix: Introduction",
+      "Gaussian Likelihood With Known Variance and Unknown Mean"
     ],
-    "table_reference_keys": [
-      "appendix2:inline_3"
-    ]
+    "display_heading": "Gaussian Likelihood With Known Variance and Unknown Mean"
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "As a starting point, assume that the variance, $ \\sigma^2 $, is known, while the mean, $ $, is unknown. For a Bayesian analysis, it remains to specify the prior for $ $, $ p() $. Suppose we assume a Gaussian prior, $ \\mu \\sim \\mathrm{N}(\\mu_0, \\sigma_0^2) $, with $$ p(\\mu)=\\frac{1}{\\sqrt{2\\pi\\sigma_{0}^{2}}}\\exp\\left(-\\frac{(\\mu-\\mu_{0})^{2}}{2\\sigma_{0}^{2}}\\right) $$"
+      "content": "As a starting point, assume that the variance, $ \\sigma^2 $, is known, while the mean, $ \\mu $, is unknown. For a Bayesian analysis, it remains to specify the prior for $ \\mu $, $ p(\\mu) $. Suppose we assume a Gaussian prior, $ \\mu \\sim \\mathrm{N}(\\mu_0, \\sigma_0^2) $, with $$ p(\\mu)=\\frac{1}{\\sqrt{2\\pi\\sigma_{0}^{2}}}\\exp\\left(-\\frac{(\\mu-\\mu_{0})^{2}}{2\\sigma_{0}^{2}}\\right) $$"
     },
     {
       "type": "discussion",
-      "content": "The mean and variance of the prior, $ \\mu_{0} $ and $ \\sigma_{0}^{2} $ , are referred to as hyperparameters. Here, $ \\mu_{0} $ specifies a prior location for the parameter (the unknown mean, $ \\mu $ ), while $ \\sigma_{0}^{2} $ specifies our uncertainty in this prior location—the larger $ \\sigma_{0}^{2} $ , the greater is our uncertainty. In the limit as $ \\sigma_{0}^{2}\\rightarrow\\infty $ , $ p(\\mu) $ approaches a flat (and in this case, improper) prior."
+      "content": "The mean and variance of the prior, $ \\mu_0 $ and $ \\sigma_0^2 $, are referred to as hyperparameters. Here, $ \\mu_0 $ specifies a prior location for the parameter (the unknown mean, $ \\mu $), while $ \\sigma_0^2 $ specifies our uncertainty in this prior location—the larger $ \\sigma_0^2 $, the greater is our uncertainty. In the limit as $ \\sigma_0^2 \\to \\infty $, $ p(\\mu) $ approaches a flat (and in this case, improper) prior."
     },
     {
       "type": "discussion",
@@ -31,11 +33,11 @@
     },
     {
       "type": "discussion",
-      "content": "We can factor out additional terms not involving $ $ to obtain $$ p(\\mu\\mid\\mathbf{x})\\propto\\exp\\left(-\\frac{\\mu^{2}}{2\\sigma_{0}^{2}}+\\frac{\\mu\\mu_{0}}{\\sigma_{0}^{2}}+\\frac{\\mu n\\overline{x}}{\\sigma^{2}}-\\frac{n\\mu^{2}}{2\\sigma^{2}}\\right) $$"
+      "content": "We can factor out additional terms not involving $ \\mu $ to obtain $$ p(\\mu\\mid\\mathbf{x})\\propto\\exp\\left(-\\frac{\\mu^{2}}{2\\sigma_{0}^{2}}+\\frac{\\mu\\mu_{0}}{\\sigma_{0}^{2}}+\\frac{\\mu n\\overline{x}}{\\sigma^{2}}-\\frac{n\\mu^{2}}{2\\sigma^{2}}\\right) $$"
     },
     {
       "type": "discussion",
-      "content": "Factoring in terms of $ $, the term in the exponential becomes $$ -\\frac{\\mu^{2}}{2}\\left(\\frac{1}{\\sigma_{0}^{2}}+\\frac{n}{\\sigma^{2}}\\right)+\\mu\\left(\\frac{\\mu_{0}}{\\sigma_{0}^{2}}+\\frac{n\\overline{x}}{\\sigma^{2}}\\right)=-\\frac{\\mu^{2}}{\\sigma_{*}^{2}}+\\frac{2\\mu\\mu_{*}}{2\\sigma_{*}^{2}} $$ where $$ \\sigma_{*}^{2}=\\left(\\frac{1}{\\sigma_{0}^{2}}+\\frac{n}{\\sigma^{2}}\\right)^{-1}\\quad and\\quad\\mu_{*}=\\sigma_{*}^{2}\\left(\\frac{\\mu_{0}}{\\sigma_{0}^{2}}+\\frac{n\\overline{x}}{\\sigma^{2}}\\right) $$"
+      "content": "Factoring in terms of $ \\mu $, the term in the exponential becomes $$ -\\frac{\\mu^{2}}{2}\\left(\\frac{1}{\\sigma_{0}^{2}}+\\frac{n}{\\sigma^{2}}\\right)+\\mu\\left(\\frac{\\mu_{0}}{\\sigma_{0}^{2}}+\\frac{n\\overline{x}}{\\sigma^{2}}\\right)=-\\frac{\\mu^{2}}{\\sigma_{*}^{2}}+\\frac{2\\mu\\mu_{*}}{2\\sigma_{*}^{2}} $$ where $$ \\sigma_{*}^{2}=\\left(\\frac{1}{\\sigma_{0}^{2}}+\\frac{n}{\\sigma^{2}}\\right)^{-1}\\quad and\\quad\\mu_{*}=\\sigma_{*}^{2}\\left(\\frac{\\mu_{0}}{\\sigma_{0}^{2}}+\\frac{n\\overline{x}}{\\sigma^{2}}\\right) $$"
     },
     {
       "type": "discussion",
@@ -43,7 +45,7 @@
     },
     {
       "type": "discussion",
-      "content": "Recalling Equation A2.20b, we can ignore the second term in the exponential (as it does not involve $ $), and the resulting posterior for $ $ (given the observed data x) becomes $$ p(\\mu\\mid\\mathbf{x})\\propto\\exp\\left[-\\frac{(\\mu-\\mu_{*})^{2}}{2\\sigma_{*}^{2}}\\right] $$ demonstrating that the posterior density function for $ $ is a normal with a mean of $ _ * $ and a variance of $ \\sigma_{*}^{2} $, namely, $$ \\mu\\mid(\\mathbf{x},\\sigma^{2})\\sim\\mathrm{N}\\left(\\mu_{*},\\sigma_{*}^{2}\\right) $$"
+      "content": "Recalling Equation A2.20b, we can ignore the second term in the exponential (as it does not involve $ \\mu $), and the resulting posterior for $ \\mu $ (given the observed data x) becomes $$ p(\\mu\\mid\\mathbf{x})\\propto\\exp\\left[-\\frac{(\\mu-\\mu_{*})^{2}}{2\\sigma_{*}^{2}}\\right] $$ demonstrating that the posterior density function for $ \\mu $ is a normal with a mean of $ \\mu_{*} $ and a variance of $ \\sigma_{*}^{2} $, namely, $$ \\mu\\mid(\\mathbf{x},\\sigma^{2})\\sim\\mathrm{N}\\left(\\mu_{*},\\sigma_{*}^{2}\\right) $$"
     },
     {
       "type": "discussion",
@@ -51,11 +53,7 @@
     },
     {
       "type": "discussion",
-      "content": "We are now in a position to inquire about the relative importance of the prior versus the data. Under the assumed prior, the mean (and in this case, the mode as well) of the posterior distribution is $$ \\mu_{*}=\\mu_{0}\\frac{\\sigma_{*}^{2}}{\\sigma_{0}^{2}}+\\overline{x}\\frac{\\sigma_{*}^{2}}{\\sigma^{2}/n} $$ With a very diffuse prior on $ $ (i.e., $ \\sigma_0^2 \\gg \\sigma^2 $), $ \\sigma_*\\to \\sigma^2/n $ and $ _* $. Also note from Equation A2.22b that as we collect enough data (i.e., achieve a sufficiently large value of $ n $), $ \\sigma_*\\to \\sigma^2/n $ and again $ _* $, implying that primarily the data, rather than the prior, will influence the posterior when the value of $ n $ is sufficiently large."
-    },
-    {
-      "type": "discussion",
-      "content": "Before examining the Gaussian likelihood with unknown variance, a brief aside is needed to develop the inverse chi-square distribution, denoted by $ \\chi^{-2} $ . We do this via the gamma and inverse-gamma distributions, as both $ \\chi^{2} $ and $ \\chi^{-2} $ are special cases of these distributions."
+      "content": "We are now in a position to inquire about the relative importance of the prior versus the data. Under the assumed prior, the mean (and in this case, the mode as well) of the posterior distribution is $$ \\mu_{*}=\\mu_{0}\\frac{\\sigma_{*}^{2}}{\\sigma_{0}^{2}}+\\overline{x}\\frac{\\sigma_{*}^{2}}{\\sigma^{2}/n} $$ With a very diffuse prior on $ \\mu $ (i.e., $ \\sigma_0^2 \\gg \\sigma^2 $), $ \\sigma_*\\to \\sigma^2/n $ and $ \\mu_*\\to \\overline{x} $. Also note from Equation A2.22b that as we collect enough data (i.e., achieve a sufficiently large value of $ n $), $ \\sigma_*\\to \\sigma^2/n $ and again $ \\mu_*\\to \\overline{x} $, implying that primarily the data, rather than the prior, will influence the posterior when the value of $ n $ is sufficiently large."
     }
   ]
 }

@@ -2,7 +2,7 @@
   "id": "chapter27_010",
   "metadata": {
     "chapter": "chapter27",
-    "section": "Chapter 27: Extreme-Value Theory (EVT)",
+    "section": "Long-term Response: Introduction",
     "subsections": [
       "Structure of Adaptive Walks Under the SSWM Model"
     ],
@@ -16,7 +16,14 @@
       "27.9c",
       "27.9d"
     ],
-    "table_references": []
+    "table_references": [],
+    "section_level_1": "Long-term Response: Introduction",
+    "section_level_2": "Structure of Adaptive Walks Under the SSWM Model",
+    "heading_path": [
+      "Long-term Response: Introduction",
+      "Structure of Adaptive Walks Under the SSWM Model"
+    ],
+    "display_heading": "Structure of Adaptive Walks Under the SSWM Model"
   },
   "blocks": [
     {
@@ -29,11 +36,7 @@
     },
     {
       "type": "discussion",
-      "content": "The simplification given in Equation 27.8b of Gillespie’s original result is due to Orr (2002). Because Equation 27.8b scales as $ \\sim\\ln(k) $, the mean number of steps (substitutions) typically ranges between two and five (Gillespie 1994). This sequential series of fixations until the best"
-    },
-    {
-      "type": "discussion",
-      "content": "allele is fixed yields a burst of substitutions followed by stasis (unless there is a significant change in the environment, and thus in the fitness function). The result is an overdispersed molecular clock (a higher variance than expected from the Poisson distribution for substitutions that is generated under drift). Remember that extreme-value theory walks focus on the substitution patterns in a single gene or tightly linked genetic region. Hence, many such walks may simultaneously be ongoing within a (recombining) genome. We return to the important issue of context-specific fitness (i.e., epistasis), and how it alters the walk, shortly."
+      "content": "The simplification given in Equation 27.8b of Gillespie’s original result is due to Orr (2002). Because Equation 27.8b scales as $ \\sim\\ln(k) $, the mean number of steps (substitutions) typically ranges between two and five (Gillespie 1994). This sequential series of fixations until the best allele is fixed yields a burst of substitutions followed by stasis (unless there is a significant change in the environment, and thus in the fitness function). The result is an overdispersed molecular clock (a higher variance than expected from the Poisson distribution for substitutions that is generated under drift). Remember that extreme-value theory walks focus on the substitution patterns in a single gene or tightly linked genetic region. Hence, many such walks may simultaneously be ongoing within a (recombining) genome. We return to the important issue of context-specific fitness (i.e., epistasis), and how it alters the walk, shortly."
     },
     {
       "type": "derivation",
@@ -58,6 +61,10 @@
     {
       "type": "discussion",
       "content": "We have already discussed how the abstract nature of Fisher's model is perhaps its greatest strength, as it frees one from the tyranny of the idiosyncratic details for any particular trait. A similar feature occurs in sequence space through the use of EVT, to again obtain fairly general statements for an unknown distribution of the fitness effects of new alleles at a particular locus. What are some of the potential weaknesses of the sequence-space walk model? We can classify these as weaknesses as assumptions about mutation and assumptions about selection. An obvious issue concerning mutation is bias, in that the models assume that all (single-step) mutations are equally likely. However, the focus of these models is on how selection shapes the outcome under assumptions of equal mutation."
+    },
+    {
+      "type": "proposition",
+      "content": "The first and foremost weakness with respect to assumptions about selection is that the fitness distribution may not be in the Gumbel domain, a point which will be discussed further below. Second, strong selection (the SS in SSWM) assumes that no slightly deleterious mutations can be fixed, while the weak-mutation assumption (the WM in SSWM) considers only two segregating alleles (the original and the mutation) at any point in time. Under these conditions, advantageous mutations that must be accessed through the fixation of a deleterious intermediate cannot be reached. A selectively accessible sequence is one that can be reached through a series of single-step substitutions, each of which is adaptive. This is not needed because the case when sign epistasis is present (epistasis that results in a change in the sign of fitness, meaning that an allele is deleterious in one background and favored in another). Here, one can have a mutation landscape with a series of fitness peaks that are inaccessible from one another through single mutations (Weinreich et al. 2005). As examined in Chapter 7, such peaks can potentially be reached (even under strong selection) when the weak mutation assumption is violated, such as in very large populations. This can occur via stochastic tunneling, wherein the second (advantageous) mutation can arise in the small fraction of segregating, initially deleterious, mutations. Finally, the weak mutation assumption ignores the important concern of clonal interference in asexual species."
     }
   ]
 }

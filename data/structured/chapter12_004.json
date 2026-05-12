@@ -2,7 +2,7 @@
   "id": "chapter12_004",
   "metadata": {
     "chapter": "chapter12",
-    "section": "Chapter 12: Sample Variance Confidence Intervals",
+    "section": "The Neutral Divergence of Quantitative Traits: Introduction",
     "subsections": [
       "Sample Variance Confidence Intervals"
     ],
@@ -18,7 +18,14 @@
       "12.7b",
       "12.7c"
     ],
-    "table_references": []
+    "table_references": [],
+    "section_level_1": "The Neutral Divergence of Quantitative Traits: Introduction",
+    "section_level_2": "Sample Variance Confidence Intervals",
+    "heading_path": [
+      "The Neutral Divergence of Quantitative Traits: Introduction",
+      "Sample Variance Confidence Intervals"
+    ],
+    "display_heading": "Sample Variance Confidence Intervals"
   },
   "blocks": [
     {
@@ -42,16 +49,8 @@
       "content": "The complement of this event (namely, either less than the lower critical value or greater than the upper critical value) is the power, [[SEE_FORMULA:12.7c]]"
     },
     {
-      "type": "discussion",
-      "content": "Example 12.1. Consider a sample variance estimated from $ n = 10 $ observations. Because $ \\Pr(\\chi_9^2 \\leq 2.700) = 0.025 $ and $ \\Pr(\\chi_9^2 \\leq 19.023) = 0.975 $, Equation 12.6c gives the 95% confidence interval $ (\\alpha = 0.05) $ for the true variance $ \\sigma^2 $ as between $ (9/19.023) $Var and $ (9/2.7) $Var, or 0.473-Var to 3.333-Var, implying an uncertainty in $ \\sigma^2 $ spanning almost a full order of magnitude."
-    },
-    {
-      "type": "discussion",
-      "content": "What observed values of the sample variance are unlikely given an assumed true variance of $ \\sigma_0^2 $? From Equation 12.7a, the upper and lower critical values (for a two-sided test with $ \\alpha = 0.05 $) are $ (2.700/9)\\sigma_0^2 = 0.3 \\cdot \\sigma_0^2 $ and $ (19.023/9)\\sigma_0^2 = 2.11 \\cdot \\sigma_0^2 $."
-    },
-    {
-      "type": "discussion",
-      "content": "Finally, what is the power of this design to declare the null model (the true variance is $ \\sigma_0^2 $) false when the correct variance is $ \\sigma_1^2 = 2\\sigma_0^2 $? Taking $ \\alpha = 0.05 $, Equation 12.7b (with $ \\sigma_0^2 / \\sigma_1^2 = 1/2 $) gives the power as $$ \\Pr\\left(\\chi_{9}^{2}\\leq\\frac{2.700}{2}\\right)+\\Pr\\left(\\chi_{9}^{2}\\geq\\frac{19.023}{2}\\right)=0.39 $$ and hence a type II error rate of 61% when the true variance is twice the assumed variance. A similar calculation assuming $ \\sigma_1^2 = \\sigma_0^2 / 2 $ gives a power of 0.20, or a type II error rate of 80%. Useful R commands are (i) $ \\text{pchisq}(x, n) $, which returns $ \\text{Pr}(\\chi_n^2 \\leq x) $, and hence 1-pchisq(x, n), which returns $ \\text{Pr}(\\chi_n^2 \\geq x) $; and (ii) $ \\text{qchisq}(p, n) $, which returns $ X_{p,n} $."
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:12.1]]"
     }
   ]
 }

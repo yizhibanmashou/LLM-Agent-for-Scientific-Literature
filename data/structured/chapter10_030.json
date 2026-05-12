@@ -2,7 +2,7 @@
   "id": "chapter10_030",
   "metadata": {
     "chapter": "chapter10",
-    "section": "Chapter 10: Maximum-likelihood-based Codon Tests",
+    "section": "Using Molecular Data to Detect Selection: Signatures from Multiple Historical Events: Introduction",
     "subsections": [
       "Maximum-likelihood-based Codon Tests"
     ],
@@ -13,9 +13,17 @@
       "10.19",
       "10.20",
       "10.21",
-      "10.22a"
+      "10.22a",
+      "10.22b"
     ],
-    "table_references": []
+    "table_references": [],
+    "section_level_1": "Using Molecular Data to Detect Selection: Signatures from Multiple Historical Events: Introduction",
+    "section_level_2": "Maximum-likelihood-based Codon Tests",
+    "heading_path": [
+      "Using Molecular Data to Detect Selection: Signatures from Multiple Historical Events: Introduction",
+      "Maximum-likelihood-based Codon Tests"
+    ],
+    "display_heading": "Maximum-likelihood-based Codon Tests"
   },
   "blocks": [
     {
@@ -28,11 +36,7 @@
     },
     {
       "type": "discussion",
-      "content": "The $ 61 \\times 61 $ Q matrix is specified by Equation 10.18. The $ \\pi_j $ are the equilibrium frequencies of codon $ j $ (often calculated from the nucleotide frequencies at the three codon positions), while $ \\kappa $ and $ \\omega $ are estimated parameters intended to account for biases in codon changes. Potential differences in transition versus transversion rates are accounted for by $ \\kappa $. One takes the currently observed codons over the phylogeny, and then runs the model backward in time by considering all possible ancestral codons at each of the internal nodes (ancestors) in the tree. The model thus corrects for multiple hits. The key parameter of interest is $ \\omega $, the strength of selection on replacement substitutions. In the early models using"
-    },
-    {
-      "type": "discussion",
-      "content": "this approach, $ \\omega $ was a fixed constant over all genes, but later models allowed $ \\omega $ to vary over sites (nicely paralleling the development of extensions of the Poisson random field model to allow $ \\gamma $ to vary over genes/alleles), a point upon which we will expand shortly. Figure 10.4 shows the basic structure of these various state changes for a particular codon. The mutational structure in Equation 10.18 (where mutation rates are functions of $ \\kappa $ and $ \\pi_j $) is known in the molecular evolution literature as the Hasegawa-Kishino-Yano, or HKY, model (Hasegawa et al. 1985)."
+      "content": "The $ 61 \\times 61 $ Q matrix is specified by Equation 10.18. The $ \\pi_j $ are the equilibrium frequencies of codon $ j $ (often calculated from the nucleotide frequencies at the three codon positions), while $ \\kappa $ and $ \\omega $ are estimated parameters intended to account for biases in codon changes. Potential differences in transition versus transversion rates are accounted for by $ \\kappa $. One takes the currently observed codons over the phylogeny, and then runs the model backward in time by considering all possible ancestral codons at each of the internal nodes (ancestors) in the tree. The model thus corrects for multiple hits. The key parameter of interest is $ \\omega $, the strength of selection on replacement substitutions. In the early models using this approach, $ \\omega $ was a fixed constant over all genes, but later models allowed $ \\omega $ to vary over sites (nicely paralleling the development of extensions of the Poisson random field model to allow $ \\gamma $ to vary over genes/alleles), a point upon which we will expand shortly. Figure 10.4 shows the basic structure of these various state changes for a particular codon. The mutational structure in Equation 10.18 (where mutation rates are functions of $ \\kappa $ and $ \\pi_j $) is known in the molecular evolution literature as the Hasegawa-Kishino-Yano, or HKY, model (Hasegawa et al. 1985)."
     },
     {
       "type": "derivation",
@@ -57,6 +61,10 @@
     {
       "type": "derivation",
       "content": "The base model (Equation 10.18) assumes that all codons within a given gene have the same ω value, which is not only unreasonable but also destroys most of the power of this approach, as it returns an estimate of ω based on a gene-wide average. Given that ω < 1 for most codons, the signal from the majority of codons then masks the signal from any small fraction of codons where indeed ω > 1 (e.g., Example 10.2). Nielsen and Yang (1998) and Yang et al. (2000) extended the base model by assuming a mixture-model (LW Chapter 13), with the codons in a sequence being drawn from one of several selection categories, each with different ω values. For codons from selection category k, Equation 10.18 becomes [[SEE_FORMULA:10.22a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "The simplest version of biological interest has three selection classes, with codons either being neutral (with probability $ p_0 $), deleterious (with probability $ p_d $), or advantageous (with probability $ p_b = 1 - p_n - p_d $). Within each class there is a fixed selective value, with [[SEE_FORMULA:10.22b]]"
     }
   ]
 }

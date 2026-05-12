@@ -2,16 +2,13 @@
   "id": "chapter7_006",
   "metadata": {
     "chapter": "chapter7",
-    "section": "Chapter 7: Probability of Fixation Under Additive Selection",
+    "section": "Interaction of Selection, Mutation, and Drift: Introduction",
     "subsections": [
       "Probability of Fixation Under Additive Selection"
     ],
     "source_file": "tmp\\paddle_output\\chapter7_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [
-      "7.13b",
-      "7.13c",
-      "7.13d",
       "7.14a",
       "7.14b",
       "7.15",
@@ -21,13 +18,16 @@
       "7.17c",
       "7.17d"
     ],
-    "table_references": []
+    "table_references": [],
+    "section_level_1": "Interaction of Selection, Mutation, and Drift: Introduction",
+    "section_level_2": "Probability of Fixation Under Additive Selection",
+    "heading_path": [
+      "Interaction of Selection, Mutation, and Drift: Introduction",
+      "Probability of Fixation Under Additive Selection"
+    ],
+    "display_heading": "Probability of Fixation Under Additive Selection"
   },
   "blocks": [
-    {
-      "type": "derivation",
-      "content": "It is also sometimes useful to know the expected residence times of mutations that eventually become lost, $ \\Phi_{l}(x) $. From Equation 8.70 in Kimura (1983), the unconditional mean residence time for mutations (regardless of being fixed or lost) is [[SEE_FORMULA:7.13b]] and using the fact that [[SEE_FORMULA:7.13c]] yields the residual times conditional upon eventual loss [[SEE_FORMULA:7.13d]]"
-    },
     {
       "type": "discussion",
       "content": "Again, we see that the residence times conditional upon loss are essentially the same for positive and negative selection coefficients of the same absolute magnitude (Figure 7.2). This is not true for the unconditional residence times, $ \\Phi(x) $, which are functions of $ \\Phi_f(x) $ and $ \\Phi_l(x) $ weighted by the probabilities of fixation and loss (Equation 7.13c)."
@@ -53,16 +53,8 @@
       "content": "The mean frequency prior to absorption is simply $ \\overline{n}/(2N) $ divided by the average absorption time."
     },
     {
-      "type": "discussion",
-      "content": "Example 7.4. Although it is generally thought that selection will increase the determinism of a system, this is not necessarily the case. Cohan (1984b) showed that, starting with identical allele frequencies, the probability of divergence between replicate populations can increase relative to the situation under pure drift if the initial frequency of the advantageous allele is sufficiently small. We refer to this phenomenon as the Cohan effect. This point can easily be seen as follows. Supposing two replicate populations are segregating alleles A and a at a locus, with the frequency of A being p = 0.25, then under pure drift, the probability that one replicate will become fixed for A and the other for a is 2 - 0.25 - (1 - 0.25) = 0.375. Now suppose that A is favored by selection, with $ N_{\\ell,s} = 0.5 $. Again assuming $ p_0 = 0.25 $, Equation 7.10a gives the fixation probability of A as 0.46, implying that the probability of fixing alternative alleles is 2 - 0.46 - 0.54 = 0.496. Thus, in this case, divergence is substantially increased by the interaction between selection and drift."
-    },
-    {
-      "type": "discussion",
-      "content": "In general, the probability of fixing alternative alleles in two replicates is $ 2u_f(p) $ $ [1 - u_f(p)] $, which is maximized when $ u_f(p) = 1/2 $. Thus, the probability of divergence is increased by selection if $ u_f(p) $ under selection is closer to 1/2 than $ u_f(p) = p $ under drift; and because $ u_f(p) > p $ for a selectively favored allele, a minimum requirement for increased divergence under pan-selection is that the starting frequency of the advantageous allele be < 1/2. Figure 7.3 shows that under additive selection, the conditions for the probability of divergence under drift plus selection to exceed that under drift alone are not very restrictive."
-    },
-    {
-      "type": "discussion",
-      "content": "The Cohan effect has a number of practical implications. For example, an elevated level of population subdivision for a quantitative trait relative to the neutral expectation is often taken to imply that there are divergent selective regimes across subpopulations (Chapter 12). However, here we see that under identical directional selection pressures, populations that initiate with low-frequency, advantageous alleles can exhibit levels of divergence that are conventionally interpreted as being associated with diversifying selection. Whether allele frequencies, selection coefficients, and drift intensities commonly have the right mixes for uniform selection to enhance the magnitude of phenotypic divergence remains to be seen, but a wide range of conditions appears to yield divergence levels that would be difficult to discriminate from the neutral expectation (Lynch 1986)."
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:7.4]]"
     }
   ]
 }

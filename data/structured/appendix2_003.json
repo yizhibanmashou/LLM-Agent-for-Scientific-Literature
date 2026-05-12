@@ -2,7 +2,7 @@
   "id": "appendix2_003",
   "metadata": {
     "chapter": "appendix2",
-    "section": "BAYES' THEOREM",
+    "section": "Appendix: Introduction",
     "subsections": [
       "BAYES' THEOREM"
     ],
@@ -12,6 +12,13 @@
     "table_references": [
       "inline_1"
     ],
+    "section_level_1": "Appendix: Introduction",
+    "section_level_2": "BAYES' THEOREM",
+    "heading_path": [
+      "Appendix: Introduction",
+      "BAYES' THEOREM"
+    ],
+    "display_heading": "BAYES' THEOREM",
     "table_reference_keys": [
       "appendix2:inline_1"
     ]
@@ -19,7 +26,7 @@
   "blocks": [
     {
       "type": "proposition",
-      "content": "The foundation of Bayesian statistics is Bayes' theorem. Suppose we observe a random variable, x, and wish to make inferences about another random variable, $ $, in the case where $ $ is drawn from some distribution, $ () $. From the definition of conditional probability $$ \\mathrm{Pr}(\\theta\\mid x)=\\frac{\\mathrm{Pr}(x,\\theta)}{\\mathrm{Pr}(x)} $$ where (for now) x and $ $ are discrete random variables. Again from the definition of conditional probability, we can express the joint probability by conditioning on $ $ to give $$ \\Pr(x,\\theta)=\\Pr(x\\mid\\theta)\\Pr(\\theta) $$"
+      "content": "The foundation of Bayesian statistics is Bayes' theorem. Suppose we observe a random variable, x, and wish to make inferences about another random variable, $ \\theta $, in the case where $ \\theta $ is drawn from some distribution, $ \\operatorname{Pr}(\\theta) $. From the definition of conditional probability $$ \\mathrm{Pr}(\\theta\\mid x)=\\frac{\\mathrm{Pr}(x,\\theta)}{\\mathrm{Pr}(x)} $$ where (for now) x and $ \\theta $ are discrete random variables. Again from the definition of conditional probability, we can express the joint probability by conditioning on $ \\theta $ to give $$ \\Pr(x,\\theta)=\\Pr(x\\mid\\theta)\\Pr(\\theta) $$"
     },
     {
       "type": "proposition",
@@ -27,15 +34,15 @@
     },
     {
       "type": "proposition",
-      "content": "Bayes' theorem flips the conditioning variable, allowing us to move from $ (x) $ to $ (x) $. With $ k $ possible values of $ $ ($ \\theta_1 $ through $ \\theta_k $), the discrete version of Bayes' theorem becomes $$ \\Pr(\\theta_{j}\\mid x)=\\frac{\\Pr(x\\mid\\theta_{j})\\Pr(\\theta_{j})}{\\Pr(x)}=\\frac{\\Pr(x\\mid\\theta_{j})\\Pr(\\theta_{j})}{\\displaystyle\\sum_{i=1}^{k}\\Pr(\\theta_{i})\\Pr(x\\mid\\theta_{i})}\\quad for\\quad1\\leq j\\leq k $$"
+      "content": "Bayes' theorem flips the conditioning variable, allowing us to move from $ \\Pr(x \\mid \\theta) $ to $ \\Pr(\\theta \\mid x) $. With $ k $ possible values of $ \\theta $ ($ \\theta_1 $ through $ \\theta_k $), the discrete version of Bayes' theorem becomes $$ \\Pr(\\theta_{j}\\mid x)=\\frac{\\Pr(x\\mid\\theta_{j})\\Pr(\\theta_{j})}{\\Pr(x)}=\\frac{\\Pr(x\\mid\\theta_{j})\\Pr(\\theta_{j})}{\\displaystyle\\sum_{i=1}^{k}\\Pr(\\theta_{i})\\Pr(x\\mid\\theta_{i})}\\quad for\\quad1\\leq j\\leq k $$"
     },
     {
       "type": "discussion",
-      "content": "In Bayesian statistics, x represents an observable variable (the data), while $ \\theta $ represents a parameter describing the distribution of x. In this setting, $ \\operatorname* {P r} (\\theta) $ is the prior distribution of possible parameter values, while $ \\operatorname* {P r} (\\theta \\mid x) $ is the subsequent posterior distribution of $ \\theta $ given the observed data x and the prior. In classical statistics, the unknown parameters are treated as fixed and the data are considered random, whereas under a Bayesian analysis, the data are considered fixed and the unknown parameters that generated the data are considered random."
+      "content": "In Bayesian statistics, x represents an observable variable (the data), while $ \\theta $ represents a parameter describing the distribution of x. In this setting, $ \\Pr(\\theta) $ is the prior distribution of possible parameter values, while $ \\Pr(\\theta \\mid x) $ is the subsequent posterior distribution of $ \\theta $ given the observed data x and the prior. In classical statistics, the unknown parameters are treated as fixed and the data are considered random, whereas under a Bayesian analysis, the data are considered fixed and the unknown parameters that generated the data are considered random."
     },
     {
       "type": "proposition",
-      "content": "All of the above statements also hold for continuous random variables, for which the probability density function, p, replaces the discrete probability value, Pr. In particular, the continuous multivariate version of Bayes' theorem is $$ p(\\boldsymbol{\\Theta}\\mid\\mathbf{x})=\\frac{p(\\mathbf{x}\\mid\\boldsymbol{\\Theta})p(\\boldsymbol{\\Theta})}{p(\\mathbf{x})}=\\frac{p(\\mathbf{x}\\mid\\boldsymbol{\\Theta})p(\\boldsymbol{\\Theta})}{\\int p(\\mathbf{x},\\boldsymbol{\\Theta})d\\boldsymbol{\\Theta}} $$ where $ \\boldsymbol{\\Theta} = (\\theta_1, \\theta_2, \\cdots, \\theta_n) $ is a vector of $ n $ (potentially) continuous variables. As with the univariate case, $ p() $ is the assumed prior distribution of the unknown parameters, while $ p() $ is the posterior distribution given the prior, $ p() $, and the data, $ $."
+      "content": "All of the above statements also hold for continuous random variables, for which the probability density function, p, replaces the discrete probability value, Pr. In particular, the continuous multivariate version of Bayes' theorem is $$ p(\\boldsymbol{\\Theta}\\mid\\mathbf{x})=\\frac{p(\\mathbf{x}\\mid\\boldsymbol{\\Theta})p(\\boldsymbol{\\Theta})}{p(\\mathbf{x})}=\\frac{p(\\mathbf{x}\\mid\\boldsymbol{\\Theta})p(\\boldsymbol{\\Theta})}{\\int p(\\mathbf{x},\\boldsymbol{\\Theta})d\\boldsymbol{\\Theta}} $$ where $ \\boldsymbol{\\Theta} = (\\theta_1, \\theta_2, \\cdots, \\theta_n) $ is a vector of $ n $ (potentially) continuous variables. As with the univariate case, $ p(\\boldsymbol{\\Theta}) $ is the assumed prior distribution of the unknown parameters, while $ p(\\boldsymbol{\\Theta} \\mid \\mathbf{x}) $ is the posterior distribution given the prior, $ p(\\boldsymbol{\\Theta}) $, and the data, $ \\mathbf{x} $."
     },
     {
       "type": "proposition",
@@ -46,32 +53,12 @@
       "content": "Saunderson, a blind mathematician and optician who, at age 29, became Lucasian Professor of Mathematics at Cambridge (the position held earlier by Issac Newton). This is an example of Stigler's Law of Eponymy (Stigler 1980), wherein no discovery or invention is named after its first discoverer (an eponym). As is fitting, Stigler's law is self-consistent, as this phenomenon was previously mentioned by Merton (1965)."
     },
     {
-      "type": "discussion",
-      "content": "Example A2.1. Consider a recessive color locus in cattle in which the genotypes BB and Bb are black, while bb is red. Two black-coated parents are crossed, and produce some red offspring, which implies that both parents must be Bb. A black-coated son of theirs is crossed to n red dams (bb), and all of his offspring are black. What is the posterior probability that he is BB?"
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:A2.1]]"
     },
     {
-      "type": "proposition",
-      "content": "To solve this problem using Bayes' theorem, we first define the indicator random variable $$ \\theta=\\left\\{\\begin{aligned}0&\\quad son is Bb\\\\ 1&\\quad son is BB\\end{aligned}\\right. $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Given that both parents are Bb, the expected priors for their offspring are 1/4 for BB and 1/2 for Bb, resulting in a 3/4 prior for a black-coated offspring. Further, from conditional probability (Equation A2.1a), the prior that a black offspring is BB is $$ \\Pr(BB\\mid\\mathrm{Black})=\\frac{\\Pr(BB,\\mathrm{Black})}{\\Pr(\\mathrm{Black})}=\\frac{\\Pr(BB)}{\\Pr(\\mathrm{Black})}=\\frac{1/4}{3/4}=1/3 $$ where we used the fact that all BB are black, so that $ (BB,) = (BB) $. Hence, the prior becomes $$ \\Pr(\\theta)=\\left\\{\\begin{aligned}&0&is&2/3\\\\ &1&is&1/3\\end{aligned}\\right. $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Further $$ \\Pr(all n offspring are black\\mid sire is BB)=1 $$ $$ \\Pr(all n offspring are black\\mid sire is Bb)=(1/2)^{n} $$ and $$ \\begin{aligned}Pr(all n black)&=Pr(all black\\mid BB)^{*}Pr(BB)+Pr(all black\\mid Bb)^{*}Pr(Bb)\\\\&=1\\cdot1/3+(1/2)^{n}\\cdot(2/3)\\end{aligned} $$"
-    },
-    {
-      "type": "proposition",
-      "content": "If we combine the above values, Bayes' theorem yields $$ \\Pr(\\theta=1\\mid n black offspring)=\\frac{\\Pr(n\\mid\\theta=1)Pr(\\theta=1)}{\\Pr(n)}=\\frac{1\\cdot(1/3)}{1\\cdot(1/3)+(1/2)^{n}\\cdot(2/3)} $$ which returns values of 0.5, 0.67, 0.8, 0.89, 0.94, and 0.998 for n = 1, 2, 3, 4, 5, and 10, respectively."
-    },
-    {
-      "type": "proposition",
-      "content": "Example A2.2. Suppose a major gene (with alleles Q and q) underlies a character of interest. The distribution of phenotypic values for each major-locus genotype follows a normal distribution with a variance of 1 and means of 2.1, 3.5, and 1.3 for QQ, Qq, and qq, respectively. Suppose the frequencies of these genotypes for a random individual drawn from the population are 0.3, 0.2, and 0.5 (for QQ, Qq, and qq, respectively). If an individual from this population has a phenotypic value of 3, then what is the probability of it being QQ? Qq? qq? Let $ (x, 1) = (2)^ -1/2 e^ -(x-)^2 / 2 $ denote the density function for a normal distribution with a mean of $ $ and variance of 1. To apply Bayes' theorem, note that the values for the priors and the conditionals are as follows: [h] |c|c| Cell 1 & Cell 2 \\\\ Cell 3 & Cell 4 \\\\ Because $ p(3) = \\sum_{G} \\operatorname{Pr}(G) \\cdot p(3|G) = 0.195 $, Bayes' theorem gives the posterior probabilities for the genotypes given the observed value of 3 as: $$ \\Pr(QQ\\mid x=3)=0.078/0.195=0.400 $$ $$ \\Pr(Qq\\mid x=3)=0.070/0.195=0.359 $$ $$ \\Pr(qq\\mid x=3)=0.047/0.195=0.241 $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Thus, there is a 40 percent chance that this individual has a genotype of QQ, a 36 percent chance it is Qq, and a 24 percent chance it is qq."
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:A2.2]]"
     }
   ]
 }

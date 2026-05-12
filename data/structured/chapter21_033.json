@@ -2,7 +2,7 @@
   "id": "chapter21_033",
   "metadata": {
     "chapter": "chapter21",
-    "section": "Chapter 21: Among-family Variance Under Replication",
+    "section": "21: Family-Based Selection",
     "subsections": [
       "Among-family Variance Under Replication"
     ],
@@ -17,7 +17,14 @@
       "21.43a",
       "21.43b"
     ],
-    "table_references": []
+    "table_references": [],
+    "section_level_1": "21: Family-Based Selection",
+    "section_level_2": "Among-family Variance Under Replication",
+    "heading_path": [
+      "21: Family-Based Selection",
+      "Among-family Variance Under Replication"
+    ],
+    "display_heading": "Among-family Variance Under Replication"
   },
   "blocks": [
     {
@@ -42,7 +49,7 @@
     },
     {
       "type": "discussion",
-      "content": "The above expressions for $\\sigma^2(\\epsilon)$ show the importance of replication and provide some guidance as to how one should allocate resources. For a fixed number of sibs per family $(N)$, how should one choose $n_e$, $n_p$, and $n_s$ to minimize $\\sigma^2(\\overline{z})$? If $N$ is fixed, then the relative weightings on the within-family genetic variance and individual-specific environmental variance are fixed. When the genotype $\\times$ environment interaction variance $(\\sigma_GF \\times E)$ is large, its effect on the selection response can be reduced by replicating families across more environments (increasing $n_e$). More generally, when viewing environments as locations-years (Equation 21.42b), the total number of environments is $n_e = n_t n_y$, and preliminary estimates of the variation components $(\\sigma_GF \\times L', \\sigma_GF \\times Y}$, and $\\sigma_GF \\times L \\times Y$) can suggest the appropriate allocation over locations versus years for a fixed value of $n_e$. When the amongst-plot variance $(\\sigma_E_p^2)$ is large, its effect is reduced by increasing $n_p$ or $n_e$. With preliminary estimates of the variance components in hand, one can numerically search for the optimal values of $n_e$, $n_p$, and $n_s$ that give the smallest $\\sigma^2(\\overline{z})$ for a fixed value of $N = n_e n_p n_s$. Using replication can result in a considerable improvement over mass selection. For example, using variance components estimated for maize lines grown in several locations in India, Sanghi (1983) estimated that full-sib selection with replication would be three to sixfold times more efficient than mass selection."
+      "content": "The above expressions for $\\sigma^2(\\epsilon)$ show the importance of replication and provide some guidance as to how one should allocate resources. For a fixed number of sibs per family $(N)$, how should one choose $n_e$, $n_p$, and $n_s$ to minimize $\\sigma^2(\\overline{z})$? If $N$ is fixed, then the relative weightings on the within-family genetic variance and individual-specific environmental variance are fixed. When the genotype $\\times$ environment interaction variance $(\\sigma_GF \\times E)$ is large, its effect on the selection response can be reduced by replicating families across more environments (increasing $n_e$). More generally, when viewing environments as locations-years (Equation 21.42b), the total number of environments is $n_e = n_t n_y$, and preliminary estimates of the variation components $(\\sigma_GF \\times L', \\sigma_GF \\times Y}$, and $\\sigma_GF \\times L \\times Y$) can suggest the appropriate allocation over locations versus years for a fixed value of $n_e$. When the amongst-plot variance $(\\sigma_{E_p}^2)$ is large, its effect is reduced by increasing $n_p$ or $n_e$. With preliminary estimates of the variance components in hand, one can numerically search for the optimal values of $n_e$, $n_p$, and $n_s$ that give the smallest $\\sigma^2(\\overline{z})$ for a fixed value of $N = n_e n_p n_s$. Using replication can result in a considerable improvement over mass selection. For example, using variance components estimated for maize lines grown in several locations in India, Sanghi (1983) estimated that full-sib selection with replication would be three to sixfold times more efficient than mass selection."
     },
     {
       "type": "discussion",
@@ -61,16 +68,8 @@
       "content": "An example of family selection with replication was provided by selection for increased grain yield in maize by the International Maize and Wheat Improvement Center (CIMMYT), summarized by Pandey et al. (1986, 1987) and Crossa and Gardner (1989). The goal of the CIMMYT selection schemes was to develop varieties of maize that yield well over a wide range of environments. Starting in 1974, 250 full-sib families, along with six local checks (control lines to allow for standardized comparisons), were evaluated at six lowland tropical locations (with two replications per location) in the northern and southern hemispheres. A total of 28 countries were used during the course of five cycles of selection. Selection (initially) was strictly among families with the international field trials conducted on full-sib families, while the recombination unit consisted of $ S_{1} $ seed from the superior families. The selection scheme was later modified to allow for within-family selection as well. Roughly 50% of the families were selected based on the international trials, about 20% of which were subsequently rejected given their poor performance in disease- and insect-resistance trials in separate nurseries. The average gain in yield per cycle was around 2%."
     },
     {
-      "type": "discussion",
-      "content": "Example 21.9. Eberhart et al. (1966) estimated genetic variance components for seven characters in two open-pollinated maize varieties. Using individuals grown in two locations in North Carolina, they obtained the following estimates for yield in the variety Jarvis: $$ \\sigma_{A}^{2}=120,\\quad\\sigma_{A\\times L}^{2}=114,\\quad\\sigma_{D}^{2}=270,\\quad\\sigma_{D\\times L}^{2}=98,\\quad\\sigma_{E_{s}}^{2}=508 $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Estimates of epistatic variances were not significantly different from zero. Consider the expected response under a design with 25 half-sib families, each with a total of 50 offspring scored over five environments ($ n_e = 5 $). The top five families were selected, using $ S_1 $ seed to form the next generation (allowing for selection on both sexes). Recalling Equation 21.14a (with $ \\gamma = 1/2 $ for $ S_1 $ seed; Equation 21.14b), the expected response will be $$ R=\\frac{2\\bar{\\nu}_{(5,25)}\\left(\\sigma_{A}^{2}/4\\right)}{\\sigma\\left(\\overline{z}\\right)}=\\frac{2\\cdot1.345\\cdot30}{\\sigma\\left(\\overline{z}\\right)}=\\frac{80.7}{\\sigma\\left(\\overline{z}\\right)} $$ using Equation 14.4b to obtain $ \\bar{\\nu}_{(5,25)} $. If we use the above variance estimates, then $ \\sigma_{GF \\times E}^2 = \\sigma_{A \\times L}^2 / 4 = 28.5 $, while Equation 21.26a and 21.26b yield, respectively, $ \\sigma_{GF}^2 = \\sigma_A^2 / 4 = 30 $ and $ \\sigma_{Gw}^2 = (3 / 4) \\sigma_A^2 + \\sigma_D^2 = 360 $. If the families being scored are strict half-sibs (meaning that all offspring from a pollen parent each have a different seed parent, $ n_f = N = 50 $), then Equation 21.42a returns $$ \\begin{aligned}\\sigma^{2}(\\overline{z}_{HS})&=\\sigma_{GF}^{2}+\\frac{\\sigma_{Gw}^{2}+\\sigma_{E_{s}}^{2}}{N}+\\frac{\\sigma_{GF\\times L}^{2}}{n_{e}}\\\\&=30+\\frac{360+508}{50}+\\frac{28.5}{5}=53.06\\end{aligned} $$ and the expected response becomes 80.7/ $ \\sqrt{53.06} $=11.08."
-    },
-    {
-      "type": "discussion",
-      "content": "Now suppose that the sibs are from a nested design with each male pollinating five seed parents, and with each cross producing 10 offspring ($ n_f = 5 $, $ N = 50 $). Using the above variance components, Equation 21.43b yields $$ \\begin{aligned}\\sigma^{2}(\\overline{z})&=\\frac{\\sigma_{A}^{2}}{4}+\\frac{\\sigma_{A}^{2}+\\sigma_{D}^{2}}{4n_{f}}+\\frac{\\sigma_{A\\times L}^{2}}{4n_{e}}+\\frac{\\sigma_{A\\times L}^{2}+\\sigma_{D\\times L}^{2}}{4n_{f}n_{e}}+\\frac{(1/2)\\sigma_{A}^{2}+(3/4)\\sigma_{D}^{2}+\\sigma_{E_{s}}^{2}}{N}\\\\&=\\frac{120}{4}+\\frac{120+270}{20}+\\frac{114}{20}+\\frac{114+98}{100}+\\frac{(1/2)120+(3/4)270+508}{50}\\\\&=72.73\\end{aligned} $$ resulting in an expected response of $ 80.7/\\sqrt{72.73} = 9.47 $. Hence, the strict half-sib design has a smaller among-family variance, and thus a 117% larger expected response than expected under a nested design."
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:21.9]]"
     }
   ]
 }

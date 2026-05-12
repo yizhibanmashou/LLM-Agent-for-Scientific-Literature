@@ -2,23 +2,30 @@
   "id": "appendix2_004",
   "metadata": {
     "chapter": "appendix2",
-    "section": "FROM LIKELIHOOD TO BAYESIAN ANALYSIS",
+    "section": "Appendix: Introduction",
     "subsections": [
       "FROM LIKELIHOOD TO BAYESIAN ANALYSIS"
     ],
     "source_file": "tmp\\paddle_output\\appendix2_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [],
-    "table_references": []
+    "table_references": [],
+    "section_level_1": "Appendix: Introduction",
+    "section_level_2": "FROM LIKELIHOOD TO BAYESIAN ANALYSIS",
+    "heading_path": [
+      "Appendix: Introduction",
+      "FROM LIKELIHOOD TO BAYESIAN ANALYSIS"
+    ],
+    "display_heading": "FROM LIKELIHOOD TO BAYESIAN ANALYSIS"
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "The method of maximum likelihood (LW Appendix 4) and Bayesian analysis are closely related. Suppose $ \\ell (\\Theta|\\mathbf{x}) $ is the assumed likelihood function. Under ML estimation, we would compute the mode of the likelihood function (the maximal value of $ \\ell $ , as a function of $ \\Theta $ given the data $ \\mathbf{x} $ ), and use the local curvature around the mode to construct confidence intervals. Hypothesis testing follows using likelihood-ratio (LR) statistics. The strengths of ML estimation rely on its large-sample properties, namely, that when the sample size is sufficiently large, we can assume both normality of the estimators and that most LR tests follow $ \\chi^{2} $ distributions. These features, nice as they are, may not hold for small samples. Conversely, a Bayesian analysis is exact for any sample size, given a specified prior."
+      "content": "The method of maximum likelihood (LW Appendix 4) and Bayesian analysis are closely related. Suppose $ \\ell(\\boldsymbol{\\varTheta}|\\mathbf{x}) $ is the assumed likelihood function. Under ML estimation, we would compute the mode of the likelihood function (the maximal value of $ \\ell $, as a function of $ \\boldsymbol{\\varTheta} $ given the data $ \\mathbf{x} $), and use the local curvature around the mode to construct confidence intervals. Hypothesis testing follows using likelihood-ratio (LR) statistics. The strengths of ML estimation rely on its large-sample properties, namely, that when the sample size is sufficiently large, we can assume both normality of the estimators and that most LR tests follow $ \\chi^{2} $ distributions. These features, nice as they are, may not hold for small samples. Conversely, a Bayesian analysis is exact for any sample size, given a specified prior."
     },
     {
       "type": "proposition",
-      "content": "To transition from a likelihood to a Bayesian analysis, we start with some prior distribution, $ p() $, that captures our initial knowledge (or best guess) about the possible values of the unknown parameters. From Bayes' theorem, the data (likelihood) is combined with the prior to produce a posterior distribution, $$ p(\\boldsymbol{\\Theta}\\mid\\mathbf{x})=\\frac{1}{p(\\mathbf{x})}\\cdot p(\\mathbf{x}\\mid\\boldsymbol{\\Theta})\\cdot p(\\boldsymbol{\\Theta}) $$ $$ =(normalizing constant)\\cdot p(\\mathbf{x}\\mid\\boldsymbol{\\Theta})\\cdot p(\\boldsymbol{\\Theta}) $$ $$ =constant\\cdot likelihood\\cdot prior $$ as $ p(|) = (|) $ is simply the likelihood function (LW Appendix 4) and $ 1/p() $ is a constant (with respect to $ $). Consequently, the posterior distribution is often written as $$ p(\\boldsymbol{\\Theta}\\mid\\mathbf{x})\\propto\\ell(\\boldsymbol{\\Theta}\\mid\\mathbf{x})~p(\\boldsymbol{\\Theta}) $$ where the symbol $ $ means “proportional to” (equal up to a constant). Note that the constant $ p() $ normalizes $ p() p() $ to one, and hence can be obtained by integration $$ p(\\mathbf{x})=\\int_{\\boldsymbol{\\varTheta}}p(\\mathbf{x}\\mid\\boldsymbol{\\varTheta})\\cdot p(\\boldsymbol{\\varTheta})d\\boldsymbol{\\varTheta} $$"
+      "content": "To transition from a likelihood to a Bayesian analysis, we start with some prior distribution, $ p(\\boldsymbol{\\Theta}) $, that captures our initial knowledge (or best guess) about the possible values of the unknown parameters. From Bayes' theorem, the data (likelihood) is combined with the prior to produce a posterior distribution, $$ p(\\boldsymbol{\\Theta}\\mid\\mathbf{x})=\\frac{1}{p(\\mathbf{x})}\\cdot p(\\mathbf{x}\\mid\\boldsymbol{\\Theta})\\cdot p(\\boldsymbol{\\Theta}) $$ $$ =(normalizing constant)\\cdot p(\\mathbf{x}\\mid\\boldsymbol{\\Theta})\\cdot p(\\boldsymbol{\\Theta}) $$ $$ =constant\\cdot likelihood\\cdot prior $$ as $ p(\\mathbf{x}|\\boldsymbol{\\Theta}) = \\ell(\\boldsymbol{\\Theta}|\\mathbf{x}) $ is simply the likelihood function (LW Appendix 4) and $ 1/p(\\mathbf{x}) $ is a constant (with respect to $ \\boldsymbol{\\Theta} $). Consequently, the posterior distribution is often written as $$ p(\\boldsymbol{\\Theta}\\mid\\mathbf{x})\\propto\\ell(\\boldsymbol{\\Theta}\\mid\\mathbf{x})~p(\\boldsymbol{\\Theta}) $$ where the symbol $ \\propto $ means “proportional to” (equal up to a constant). Note that the constant $ p(\\mathbf{x}) $ normalizes $ p(\\mathbf{x} \\mid \\boldsymbol{\\Theta}) \\cdot p(\\boldsymbol{\\Theta}) $ to one, and hence can be obtained by integration $$ p(\\mathbf{x})=\\int_{\\boldsymbol{\\varTheta}}p(\\mathbf{x}\\mid\\boldsymbol{\\varTheta})\\cdot p(\\boldsymbol{\\varTheta})d\\boldsymbol{\\varTheta} $$"
     },
     {
       "type": "discussion",

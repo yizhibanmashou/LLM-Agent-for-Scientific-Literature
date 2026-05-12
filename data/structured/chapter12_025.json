@@ -2,43 +2,59 @@
   "id": "chapter12_025",
   "metadata": {
     "chapter": "chapter12",
-    "section": "Chapter 12: Empirical Data",
+    "section": "The Neutral Divergence of Quantitative Traits: Introduction",
     "subsections": [
-      "Empirical Data"
+      "Closing Comments: $ Q_{ST}, F_{STQ} $, and Linkage Disequilibrium"
     ],
     "source_file": "tmp\\paddle_output\\chapter12_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
-    "formula_references": [],
-    "table_references": []
+    "formula_references": [
+      "12.30a",
+      "12.30b",
+      "12.30c"
+    ],
+    "table_references": [
+      "12.2"
+    ],
+    "section_level_1": "The Neutral Divergence of Quantitative Traits: Introduction",
+    "section_level_2": "Closing Comments: $ Q_{ST}, F_{STQ} $, and Linkage Disequilibrium",
+    "heading_path": [
+      "The Neutral Divergence of Quantitative Traits: Introduction",
+      "Closing Comments: $ Q_{ST}, F_{STQ} $, and Linkage Disequilibrium"
+    ],
+    "display_heading": "Closing Comments: $ Q_{ST}, F_{STQ} $, and Linkage Disequilibrium",
+    "table_reference_keys": [
+      "chapter12:12.2"
+    ]
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Results from the large number of $ Q_{ST} $ vs. $ F_{ST} $ comparisons from natural populations were summarized by Merilä and Crnokrak (2001), McKay and Latta (2002), and Leinonen et al. (2008, 2013). Values of $ Q_{ST} $ and $ F_{ST} $ are positively correlated, with r = 0.24 (Leinonen et al. 2013). Thus, there is a modest tendency for the structure of quantitative-trait variation to parallel the population structure for neutral alleles. The striking finding is that $ Q_{ST} > F_{ST} $ for $ \\sim 70% $ of all traits, which, taken at face value, suggested that diversifying selection was very widespread (Figure 12.10). Conversely, values of $ Q_{ST} < F_{ST} $ are rare, despite the bias in this direction for neutral traits under a variety of conditions (discussed above), suggesting that persistent stabilizing or uniform selection is far less common."
+      "content": "Tests comparing $ F_{ST} $ values at candidate loci against the distribution of $ F_{ST} $ values at putatively neutral markers were discussed at length in Chapter 9. Comparisons of $ Q_{ST} $ to $ F_{ST} $ are a step removed, in that, ideally, we would like to contrast the $ F_{STQ} $ value (the average $ F_{ST} $ value for loci underlying our focal trait) against the genome-wide $ F_{ST} $ neutral standard. Given the near impossibility of locating all such causative loci, we have instead been using $ Q_{ST} $, as with an additive trait, this should track the $ F_{STQ} $ values at the underlying causative loci. However, as is detailed in Chapters 16 and 24, allele-frequency changes are not the only route through which genetic variances (and hence the components of $ Q_{ST} $) can change. Selection-generated gametic-phase disequilibrium (LD)—even among unlinked loci—can have a dramatic effect, even in situations where little allele-frequency change occurs. This impact of LD on $ Q_{ST} $ was stressed first by Latta (1998, 2005), and later by Le Corre and Kremer (2003, 2012; Kremer and Le Corre 2012). Because $ Q_{ST} $ is based on variance components, it can be influenced by linkage disequilibrium, which generates covariances between alleles at different loci, either inflating or deflating the resulting variances. When this happens, the values of $ Q_{ST} $ and $ F_{STQ} $ can become decoupled, and (as we will see) $ Q_{ST} $ can have more power to detect selection than $ F_{STQ} $ (even presuming we could locate all the underlying loci)."
     },
     {
       "type": "discussion",
-      "content": "One potential explanation for this trend of $ Q_{ST} > F_{ST} $ was offered by Miller et al. (2008). They found that the variance of $ Q_{ST} $ is significantly larger than that for $ F_{ST} $ and noted a strong positive correlation in the data between $ Q_{ST} $ and the difference $ (Q_{ST} - F_{ST}) $. Hence, populations with larger $ Q_{ST} $ values tend to also have greater departures from $ F_{ST} $. In particular, they noted that if more variable traits are overrepresented in the sampling process, this generates outliers of $ Q_{ST} $, given the latter's larger variance, which in turn generates excessive $ (Q_{ST} - F_{ST}) $ values, even under neutrality. Whitlock (2008) further stressed this concern: It will always be possible to choose a set of traits that have higher than average $ Q_{ST} $ values. Traits chosen in this way cannot reliably be used to infer the extent of spatially heterogeneous selection. Examination of the traits chosen for many $ Q_{ST} $ studies makes one wonder whether traits are in fact always chosen with previous knowledge of the likely results."
+      "content": "Thus, while a significant departure of $ Q_{ST} $ from the background value of $ F_{ST} $ is usually taken as indicating a shift in the $ F_{STQ} $ values at the underlying trait loci, this is only strictly correct when linkage disequilibrium is absent. Even in cases where selection induces little allele-frequency change (and hence little shift in $ F_{STQ} $ relative to the background $ F_{ST} $), selection-induced disequilibrium (i.e., shifts in gamete, as opposed to allele, frequencies) can still generate a significant $ Q_{ST} $ signal. In particular, under the infinitesimal model, there is essentially no shift in the allele frequencies at underlying loci ($ F_{STQ} \\simeq F_{ST} $), but there can be a substantial change in the genetic variances due to selection-induced LD (Chapters 16 and 24), and hence a perturbation of $ Q_{ST} $ away from $ F_{STQ} $. In such a setting, a direct comparison of $ F_{STQ} $ to the genome-wide $ F_{ST} $ standard would not reveal any evidence of selection, but a comparison of $ Q_{ST} $ (with its LD-shifted variance components) against $ F_{ST} $ might. Hence, under polygenic sweep conditions (Chapter 8), an appropriately performed $ Q_{ST} $ test might detect selection signatures missed by allele-frequency based tests."
+    },
+    {
+      "type": "derivation",
+      "content": "To expand on this point, we need to consider how the within- and among-population LD (Ohta 1982) impact $ Q_{ST} $. Letting the subscript x denote either within- or among-population values (x = w and x = a, respectively), we can express the variances comprising $ Q_{ST} $ as [[SEE_FORMULA:12.30a]] where $ \\sigma_{x,0}^{2} $ is the linkage equilibrium value, $ d_{x} $ is the disequilibrium contribution generated by covariance among alleles at different loci (Equations 16.1 and 16.2), and $ \\phi_{x} $ is the ratio of the disequilibrium contribution to the linkage-equilibrium (i.e., genic) variance (note that $ \\phi_{x} $ is negative when $ d_{x} $ is negative). As discussed in Chapter 16, stabilizing or directional selection within a population generates negative d, so we often expect negative within-population LD (negative values of $ d_{w} $ and $ \\phi_{w} $)."
+    },
+    {
+      "type": "derivation",
+      "content": "Turning to the among-population LD, Latta (1998) noted that if each population is under stabilizing selection for a different optimum value ($ \\theta $), then for an additive trait where the population means have reached their optimal values, [[SEE_FORMULA:12.30b]] where $\\sigma_{\\theta}^2$ is the variance in the optimum value over populations, and $\\sigma_A^2$ is the expected additive genetic variation if the populations were to be randomly mated to form a single, panmictic, population (in linkage equilibrium). With nearly uniform selection (the variance in $\\theta$ values over demes is small) and reduced migration (so that $F_{STQ}$ is large), Equation 12.30b gives a negative covariance $(d_a, \\phi_a < 0)$ between trait-increasing alleles at different loci across demes, reducing the among-group variance $\\sigma_{GB}^2$ below its linkage-equilibrium value. Conversely, if diversifying selection is strong ($\\sigma_{\\theta}^2$ is large) and gene flow is high ($F_{STQ}$ is small), a positive covariance is expected $(d_a, \\phi_a > 0)$, and $\\sigma_{GB}^2$ is inflated relative to its value in the absence of LD. Thus, $Q_{ST}$ often magnifies the effect of selection over what is expected from changes in $F_{STQ}$ alone, with significant changes in $Q_{ST}$ (relative to $F_{ST}$) possible even when little differentiation has occurred at the underlying QTLs ($F_{STQ} \\simeq F_{ST}$)."
+    },
+    {
+      "type": "derivation",
+      "content": "For a completely additive trait, Le Corre and Kremer (2003) quantified the influence of LD on $ Q_{ST} $ by noting that the relationship between $ Q_{ST} $ (based on variance components) and $ F_{STQ} $ (based on the underlying loci) is given by [[SEE_FORMULA:12.30c]] where $ \\phi_x $ is given by Equation 12.30a. Note that $ Q_{ST} $ equals $ F_{STQ} $ only when the among-and within-population LD values are equal ($ \\phi_a = \\phi_w $). Using Equation 12.30c, Kremer and Le Corre (2012) showed that $ Q_{ST} > F_{STQ} $ when $ \\phi_a > \\phi_w $. Given that stabilizing selection within populations generates negative values of $ \\phi_w $, while diversifying selection (variation in the optimum over populations) generates positive values of $ \\phi_a $ (Equation 12.30b), this combination amplifies the signal in $ Q_{ST} $ over that generated from $ F_{STQ} $. As $ Q_{ST} > F_{ST} $ is the signal for divergent selection ([[SEE_TABLE:12.2]]), while our last result implies that $ Q_{ST} > F_{STQ} > F_{ST} $, the impact of LD is to magnify the impact of divergent selection over that expected from allele-frequency change alone ($ F_{STQ} $). Again, the salient point is that even if the difference between $ F_{STQ} $ and $ F_{ST} $ is small, the difference between $ Q_{ST} $ and $ F_{ST} $ can still be large."
     },
     {
       "type": "discussion",
-      "content": "A second source of bias in comparisons of $ Q_{ST} $ and $ F_{ST} $ was noted by Edelaar and Björklund (2011) and Edelaar et al. (2011). Markers with high mutation rates underestimate $ F_{ST} $, and the most widely used markers in early $ Q_{ST}/F_{ST} $ studies, microsatellites, have high mutation rates. As shown in Figure 12.11, there is a strong positive relationship between the polymorphism level of a marker (with highly polymorphic markers having higher mutation rates) and the excess values of $ Q_{ST} $ over $ F_{ST} $. Note that most of this trend is driven by studies employing microsatellites, with allozyme studies showing an excess of $ Q_{ST} $ largely independent of their polymorphism level."
+      "content": "Hence, while $ Q_{ST} $-based tests are fraught with complications, if properly performed (which is no small feat), they may actually be more powerful than a scan for $ F_{ST} $ outliers at known candidate genes for the trait of interest (Chapter 9). While $ F_{ST} $-based scans are trait independent, knowledge of the potential target trait or traits allows $ Q_{ST} $, and thus further information from LD, to be exploited. We return to this point below when considering certain trait-augmented marker-based tests."
     },
     {
-      "type": "discussion",
-      "content": "Thus, the striking trend of $ Q_{ST} > F_{ST} $ is certainly inflated by ascertainment bias, and somewhat inflated by the use of highly polymorphic markers (which is a more recent trend), making it difficult to make any general statement about how commonly diversifying selection structures quantitative traits in subdivided populations. As noted by Whitlock (2008), “While useful, $ Q_{ST} $ is a crude measure of the genetic differentiation of a trait caused by local adaptation.”"
-    },
-    {
-      "type": "discussion",
-      "content": "One check of theory is to compare $ Q_{ST} $ and $ F_{ST} $ values between control and artificially selected groups. Morgan et al. (2005) examined the results of a 14-generation replicated selection experiment for increased wheel-running activity in mice. A base population was split into a control and a selected group, each with four replicate lines. The average selection intensity per generation was close to one ($ \\bar{i} \\simeq 1 $: Chapter 14), and significant response was seen in both the target trait, and (as a correlated response) in body mass. Theory predicts that $ Q_{ST} $ contrasting the control versus selected group should exceed $ F_{ST} $, and this was observed for both the directly selected (wheel running) and correlated (body mass) traits. $ Q_{ST} $ and $ F_{ST} $ should be similar among the replicate lines of the selected group, and this was indeed seen among the wheel-running treatments, where $ Q_{ST} $ was actually below $ F_{ST} $ for body mass, but not significantly so."
-    },
-    {
-      "type": "discussion",
-      "content": "Support for $ Q_{ST} $ as a method for detecting selection was also offered by Rhoné et al."
-    },
-    {
-      "type": "discussion",
-      "content": "(2010). They examined the response to 12 generations of natural selection on flowering times in a synthetic population of wheat grown in three locations in France (which experienced rather different environmental conditions). For generation 2 remnant seed assessed in a common garden, $ Q_{ST} $ and $ F_{ST} $ were not significantly different. However, individuals from generations 7 and 12 had $ Q_{ST} $ significantly larger than $ F_{ST} $. Finally, agreement with theory was mixed in Porcher et al. (2004, 2006), who examined eight generations of selection in a series of structured Arabidopsis populations (migration was artificially controlled over a set of demes). Larger $ Q_{ST} $ values were seen under imposed heterogeneous selection among the experimental demes, consistent with theory, but $ F_{ST} $ increased as well."
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:12.7]]"
     }
   ]
 }

@@ -2,7 +2,7 @@
   "id": "chapter9_028",
   "metadata": {
     "chapter": "chapter9",
-    "section": "Chapter 9: Tests of Sweeps Using Bottleneck Models",
+    "section": "Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction",
     "subsections": [
       "Tests of Sweeps Using Bottleneck Models"
     ],
@@ -12,7 +12,14 @@
       "9.15a",
       "9.15b"
     ],
-    "table_references": []
+    "table_references": [],
+    "section_level_1": "Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction",
+    "section_level_2": "Tests of Sweeps Using Bottleneck Models",
+    "heading_path": [
+      "Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction",
+      "Tests of Sweeps Using Bottleneck Models"
+    ],
+    "display_heading": "Tests of Sweeps Using Bottleneck Models"
   },
   "blocks": [
     {
@@ -24,12 +31,8 @@
       "content": "The bottleneck approach was first considered by Galtier et al. (2000). They assumed the existence of a population in mutation-drift equilibrium at some ancestral time, where $ \\theta_i = 4N_e\\mu_i $ measures variation at the ith locus (Chapter 2). At some time, $ T $, in the past (scaled in terms of $ 2N_e $ generations), a bottleneck occurred, and after some passage of time in the bottleneck, the population quickly expanded back to its previous size. The authors made the clever observation that while a bottleneck is a reduction in population size, the net result is that the number of distinct lineages going into a bottleneck is far greater than the number that escape it. Motivated by this observation, they introduced a measure of bottleneck strength, $ B $, which is the expected amount of time required to lose the same number of lineages as in a model of constant population size. They then assumed for some time, 0, until $ T $, a standard neutral coalescent process is occurring, with mutations and coalescent events (Chapter 2). From time $ T < t < T + B $, only coalescences are allowed (mutation is effectively turned off), reducing the number of surviving lineages. Finally, from time $ t > T + B $, mutation is turned back on again. Given a population sample of segregating sites over $ k $ loci, the method of Griffiths and Tavare (1994a, 1994b) can be used to obtain maximum likelihood estimates of $ T $, $ B $, and $ \\theta_i $ for $ 1 \\leq i \\leq k $. Galtier et al. then constructed a model where the bottleneck is potentially different for each locus, in which case $ T $ and $ B $ are now locus specific, and one estimates $ T_i $, $ B_i $, and $ \\theta_i $ for $ 1 \\leq i \\leq k $. A standard likelihood ratio test (LW Appendix 4) determines if the second model provides a better fit."
     },
     {
-      "type": "derivation",
-      "content": "The authors then fit a second model that assumed two classes of loci: a fraction, $ (1 - q) $, experiencing a bottleneck of strength $ b_{1} $ and a fraction, q, experiencing a much stronger bottleneck of strength, $ b_{2} < b_{1} $, giving the resulting likelihood for locus i as [[SEE_FORMULA:9.15a]] where $ L(b_j | S_i) $ is the likelihood function for $ b_j $ ($ j = 1, 2 $), given the number, $ S_i $, of segregating sites in maize at locus i. Assuming loci are independent, the full likelihood is the product over all loci. This is a mixture model (LW Chapter 13), with parameters of $ q, b_1 $, and $ b_2 $, and again, the model can be searched by simulation to locate the ML estimates (MLEs). The resulting MLEs using all 774 genes were $ \\widehat{b}_1 = 2.45 $, $ \\widehat{b}_2 = 0.15 $, and $ \\widehat{q} = 0.02 $. However, many of the loci had low variation even in teosinte and offered little information on $ b $. Using a set of 275 genes with high variation (10 or more segregating sites in teosinte) returned MLEs of $ \\widehat{b}_1 = 2.45 $, $ \\widehat{b}_2 = 0.01 $, and $ \\widehat{q} = 0.036 $. This sample of $ \\sim4% $ of maize genes potentially experienced a much greater bottleneck (smaller $ b $) than the rest of the genome, and hence this set contains strong candidates for sites influenced by a sweep. With these estimates in hand, one can use Bayes' theorem (Equation A2.2) to obtain the posterior probability of a locus being in this selected (stronger bottleneck) class, and hence localize genes that potentially were under past selection. Recall that Bayes' theorem allows one to \"flip\" the conditional, as we can easily compute $ \\Pr(S_i \\mid b_j) $—indeed, this is just the likelihood, $ L(b_j \\mid S_i) $—but we are much more interested in $ \\Pr(b_j \\mid S_i) $. Bayes' theorem connects these as [[SEE_FORMULA:9.15b]]"
-    },
-    {
-      "type": "discussion",
-      "content": "This gives a posterior probability for a particular locus (i) being in the strong bottleneck class $ (b_{2}) $, given that it has $ S_{i} $ segregating sites in maize. This same approach for posterior prediction reappears in Example 10.15 in the context of predicting which sites in a protein have been under positive selection."
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:9.7]]"
     }
   ]
 }

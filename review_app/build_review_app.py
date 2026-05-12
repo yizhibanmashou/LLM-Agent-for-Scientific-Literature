@@ -28,7 +28,9 @@ CHUNK_FILE_PATTERN = re.compile(r"^(chapter\d+|appendix\d+)_(\d{3})\.json$", fla
 FORMULA_ID_PATTERN = re.compile(r"^(\d+)\.(\d+)([a-z]?)$", flags=re.IGNORECASE)
 CHUNK_SEMANTIC_TYPES = ("discussion", "derivation", "proposition", "definition")
 CHUNK_LAYOUT_LABELS = {"text", "paragraph_title", "doc_title", "figure_title"}
-CHUNK_LINE_POC_CHAPTERS = {"chapter6"}
+REVIEW_LOCATOR_VERSION = 3
+EXAMPLE_LIBRARY_FILE = "example_library.json"
+TEX_TITLE_CACHE: dict[str, str] = {}
 
 
 def load_json(path: Path) -> dict[str, Any]:
@@ -313,7 +315,7 @@ def make_candidate(
     }
 
 
-def dedupe_candidates(candidates: list[dict[str, Any]], max_items: int = 3) -> list[dict[str, Any]]:
+def dedupe_candidates(candidates: list[dict[str, Any]], max_items: int = 5) -> list[dict[str, Any]]:
     chosen: dict[int, dict[str, Any]] = {}
     for candidate in candidates:
         if not isinstance(candidate, dict):
@@ -327,7 +329,14 @@ def dedupe_candidates(candidates: list[dict[str, Any]], max_items: int = 3) -> l
         existing = chosen.get(page)
         if not existing or float(score) > float(existing.get("score", 0.0)):
             chosen[page] = candidate
-    return sorted(chosen.values(), key=lambda row: (-float(row.get("score", 0.0)), int(row.get("page", 0))))[:max_items]
+    return sorted(
+        chosen.values(),
+        key=lambda row: (
+            -float(row.get("score", 0.0)),
+            -len(row.get("boxes") or []),
+            int(row.get("page", 0)),
+        ),
+    )[:max_items]
 
 
 def chapter_raw_layout_path(chapter_id: str) -> Path:
@@ -536,9 +545,9 @@ def find_table_candidates_from_layout(item: dict[str, Any], chapter_layout: dict
             continue
 
         boxes: list[dict[str, Any]] = [{"kind": str(anchor.get("label") or "text"), **anchor["bbox"]}]
+        nearest_table = None
+        nearest_distance = 999.0
         if str(anchor.get("label") or "") != "table":
-            nearest_table = None
-            nearest_distance = 999.0
             for block in blocks:
                 if str(block.get("label") or "") != "table":
                     continue
@@ -546,8 +555,8 @@ def find_table_candidates_from_layout(item: dict[str, Any], chapter_layout: dict
                 if distance < nearest_distance:
                     nearest_table = block
                     nearest_distance = distance
-            if nearest_table and nearest_distance <= 0.42:
-                boxes.append({"kind": "table", **nearest_table["bbox"]})
+        if nearest_table and nearest_distance <= 0.42:
+            boxes.append({"kind": "table", **nearest_table["bbox"]})
 
         candidate_score = 0.42 + min(0.55, anchor_score / 150.0)
         collected.append(make_candidate(page=page, score=candidate_score, source="layout_table", boxes=boxes, matched=anchor_matched))
@@ -1180,7 +1189,7 @@ def normalize_formula_index_candidates(raw_candidates: list[dict[str, Any]]) -> 
 def build_review_locator_index(review_dataset: dict[str, Any], formula_ocr_index: dict[str, Any]) -> dict[str, Any]:
     payload: dict[str, Any] = {
         "generated_at": datetime.now().isoformat(timespec="seconds"),
-        "version": 2,
+        "version": REVIEW_LOCATOR_VERSION,
         "chapters": {},
     }
 
@@ -1196,7 +1205,7 @@ def build_review_locator_index(review_dataset: dict[str, Any], formula_ocr_index
         chapter_layout_cache[chapter_id] = chapter_layout
         chapter_chunk_pool_cache[chapter_id] = build_chunk_layout_pool(
             chapter_layout,
-            enable_sentence_lines=chapter_id in CHUNK_LINE_POC_CHAPTERS,
+            enable_sentence_lines=True,
         )
 
     for chapter in review_dataset.get("chapters", []):
@@ -1216,12 +1225,14 @@ def build_review_locator_index(review_dataset: dict[str, Any], formula_ocr_index
             "formulas": {},
             "tables": {},
             "chunks": {},
+            "examples": {},
         }
 
         chapter_rows = review_dataset.get("data", {}).get(chapter_id, {})
         formula_rows = chapter_rows.get("formulas", []) if isinstance(chapter_rows.get("formulas"), list) else []
         table_rows = chapter_rows.get("tables", []) if isinstance(chapter_rows.get("tables"), list) else []
         chunk_rows = chapter_rows.get("chunks", []) if isinstance(chapter_rows.get("chunks"), list) else []
+        example_rows = chapter_rows.get("examples", []) if isinstance(chapter_rows.get("examples"), list) else []
 
         ocr_formula_map = (
             formula_ocr_index.get("chapters", {}).get(chapter_id, {}).get("formulas", {})
@@ -1264,10 +1275,33 @@ def build_review_locator_index(review_dataset: dict[str, Any], formula_ocr_index
                 item,
                 chapter_layout,
                 chunk_pool=chapter_chunk_pool,
-                enable_sentence_lines=chapter_id in CHUNK_LINE_POC_CHAPTERS,
+                enable_sentence_lines=True,
             )
             if chunk_candidates:
                 chapter_payload["chunks"][item_id] = {"candidates": chunk_candidates}
+
+        for item in example_rows:
+            if not isinstance(item, dict):
+                continue
+            item_id = str(item.get("id") or "").strip().lower()
+            if not item_id:
+                continue
+            locator_item = dict(item)
+            locator_item["blocks"] = [
+                {
+                    "type": "discussion",
+                    "text": str(item.get("content_plain") or item.get("content_markdown") or item.get("excerpt") or ""),
+                    "text_zh": "",
+                }
+            ]
+            example_candidates = find_chunk_candidates_from_layout(
+                locator_item,
+                chapter_layout,
+                chunk_pool=chapter_chunk_pool,
+                enable_sentence_lines=True,
+            )
+            if example_candidates:
+                chapter_payload["examples"][item_id] = {"candidates": example_candidates}
 
         payload["chapters"][chapter_id] = chapter_payload
 
@@ -1609,6 +1643,51 @@ def strip_latex(latex: str) -> str:
     return re.sub(r"\s+", " ", text).strip()
 
 
+def extract_tex_title(source_file: str) -> str:
+    source = str(source_file or "").strip()
+    if not source:
+        return ""
+    if source not in TEX_TITLE_CACHE:
+        path = Path(source)
+        if not path.is_absolute():
+            path = ROOT_DIR / path
+        title = ""
+        if path.exists():
+            try:
+                text = path.read_text(encoding="utf-8")
+            except OSError:
+                text = ""
+            match = re.search(r"\\title\s*\{(?P<title>[^{}]+)\}", text)
+            if match:
+                title = normalize_space(match.group("title"))
+        TEX_TITLE_CACHE[source] = title
+    return TEX_TITLE_CACHE[source]
+
+
+def normalize_heading_compare(value: str) -> str:
+    return re.sub(r"[^0-9a-z]+", " ", str(value or "").lower()).strip()
+
+
+def heading_contains_title(display: str, title: str) -> bool:
+    title_norm = normalize_heading_compare(title)
+    return bool(title_norm and title_norm in normalize_heading_compare(display))
+
+
+def looks_like_chapter_subtitle(value: str) -> bool:
+    return bool(re.match(r"^\d+\.\s+\S", str(value or "").strip()))
+
+
+def display_heading_with_tex_title(metadata: dict[str, Any], section: str, subsection_path: str) -> str:
+    heading_path = metadata.get("heading_path") if isinstance(metadata.get("heading_path"), list) else []
+    display = " / ".join(str(item).strip() for item in heading_path if str(item).strip())
+    display = display or subsection_path or section
+    title = extract_tex_title(str(metadata.get("source_file") or ""))
+    first = str(heading_path[0]).strip() if heading_path else display
+    if title and display and not heading_contains_title(display, title) and looks_like_chapter_subtitle(first):
+        return f"{title}{' ' if title.endswith(':') else ' / '}{display}"
+    return display
+
+
 def normalize_chunk_item(payload: dict[str, Any], chapter_id: str, file_name: str, toc_index: dict[str, dict[str, Any]]) -> dict[str, Any]:
     metadata = payload.get("metadata", {}) if isinstance(payload.get("metadata"), dict) else {}
     blocks = payload.get("blocks", []) if isinstance(payload.get("blocks"), list) else []
@@ -1616,6 +1695,7 @@ def normalize_chunk_item(payload: dict[str, Any], chapter_id: str, file_name: st
     section = str(metadata.get("section", "")).strip()
     subsections = metadata.get("subsections", []) if isinstance(metadata.get("subsections"), list) else []
     subsection_path = " / ".join(str(item).strip() for item in subsections if str(item).strip())
+    display_heading = display_heading_with_tex_title(metadata, section, subsection_path)
     block_rows: list[dict[str, str]] = []
     for raw_block in blocks[:48]:
         if not isinstance(raw_block, dict):
@@ -1641,8 +1721,7 @@ def normalize_chunk_item(payload: dict[str, Any], chapter_id: str, file_name: st
     search_keys = build_search_keys(
         [
             chunk_id,
-            section,
-            subsection_path,
+            display_heading,
             preview_text,
             " ".join(str(ref) for ref in formula_refs[:8]),
             " ".join(str(ref) for ref in table_refs[:8]),
@@ -1653,8 +1732,8 @@ def normalize_chunk_item(payload: dict[str, Any], chapter_id: str, file_name: st
         "id": chunk_id,
         "chapter": chapter_id,
         "item_key": f"{chapter_id}::chunks::{chunk_id}",
-        "title": section or chunk_id,
-        "subtitle": subsection_path or "No subsection",
+        "title": display_heading or section or chunk_id,
+        "subtitle": subsection_path or section or "No subsection",
         "excerpt": preview_text,
         "source_unit_id": source_unit_id,
         "source_file": str(metadata.get("source_file") or ""),
@@ -1663,7 +1742,7 @@ def normalize_chunk_item(payload: dict[str, Any], chapter_id: str, file_name: st
         "block_count": len(blocks),
         "blocks": block_rows,
         "search_keys": search_keys,
-        "locator": build_locator(chapter_id, subsection_path or section, source_unit_id, search_keys, toc_index),
+        "locator": build_locator(chapter_id, display_heading or subsection_path or section, source_unit_id, search_keys, toc_index),
     }
 
 
@@ -1751,6 +1830,73 @@ def normalize_table_item(raw_item: dict[str, Any], toc_index: dict[str, dict[str
     }
 
 
+def normalize_example_item(raw_item: dict[str, Any], toc_index: dict[str, dict[str, Any]]) -> dict[str, Any]:
+    chapter_id = str(raw_item.get("chapter") or "").strip().lower()
+    example_id = str(raw_item.get("example_id") or "").strip()
+    example_ref = str(raw_item.get("example_ref") or example_id).strip()
+    source_file = str(raw_item.get("source_file") or "").strip()
+    source_unit_id = Path(source_file).stem if source_file else ""
+    title = str(raw_item.get("title") or "").strip()
+    label = str(raw_item.get("label") or "").strip()
+    content_markdown = str(raw_item.get("content_markdown") or "").strip()
+    content_plain = str(raw_item.get("content_plain") or "").strip()
+    excerpt = trim_text(content_plain or content_markdown, 340)
+    start_block_index = int(raw_item.get("start_block_index") or 0)
+    end_block_index = int(raw_item.get("end_block_index") or start_block_index)
+    metadata = raw_item.get("metadata", {}) if isinstance(raw_item.get("metadata"), dict) else {}
+    needs_review = bool(metadata.get("needs_review"))
+    formula_refs = [str(ref) for ref in (raw_item.get("formula_refs") or []) if str(ref).strip()]
+    table_refs = [str(ref) for ref in (raw_item.get("table_refs") or []) if str(ref).strip()]
+    figure_refs = [str(ref) for ref in (raw_item.get("figure_refs") or []) if str(ref).strip()]
+    search_keys = build_search_keys(
+        [
+            example_ref,
+            example_id,
+            label,
+            title,
+            source_file,
+            f"{start_block_index}-{end_block_index}",
+            excerpt,
+            " ".join(formula_refs[:8]),
+            " ".join(table_refs[:8]),
+            " ".join(figure_refs[:8]),
+        ]
+    )
+    subtitle = f"{source_file} · blocks {start_block_index}-{end_block_index}" if source_file else f"blocks {start_block_index}-{end_block_index}"
+    blocks = [
+        {
+            "type": "example",
+            "text": content_markdown or content_plain or label or example_ref,
+            "text_zh": "",
+        }
+    ]
+    return {
+        "id": example_ref,
+        "example_id": example_id,
+        "example_ref": example_ref,
+        "chapter": chapter_id,
+        "item_key": f"{chapter_id}::examples::{example_ref}",
+        "title": title or label or example_ref,
+        "subtitle": subtitle,
+        "excerpt": excerpt,
+        "source_unit_id": source_unit_id,
+        "source_file": source_file,
+        "source_example_id": example_id,
+        "start_block_index": start_block_index,
+        "end_block_index": end_block_index,
+        "block_count": max(1, end_block_index - start_block_index + 1),
+        "needs_review": needs_review,
+        "formula_references": formula_refs,
+        "table_references": table_refs,
+        "figure_references": figure_refs,
+        "content_markdown": content_markdown,
+        "content_plain": content_plain,
+        "blocks": blocks,
+        "search_keys": search_keys,
+        "locator": build_locator(chapter_id, subtitle, source_unit_id, search_keys, toc_index),
+    }
+
+
 def parse_risk_rows(text: str) -> list[dict[str, str]]:
     rows: list[dict[str, str]] = []
     match = re.search(r"##\s*5\.\s*风险点(.*)$", text, flags=re.DOTALL)
@@ -1781,10 +1927,24 @@ def build_review_dataset(config: dict[str, Any], ocr_coverage: dict[str, set[str
     chapter_chunks: dict[str, list[dict[str, Any]]] = defaultdict(list)
     chapter_formulas: dict[str, list[dict[str, Any]]] = defaultdict(list)
     chapter_tables: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    chapter_examples: dict[str, list[dict[str, Any]]] = defaultdict(list)
 
     for path in sorted(structured_dir.glob("*.json")):
         match = CHUNK_FILE_PATTERN.fullmatch(path.name)
         if not match:
+            if path.name != EXAMPLE_LIBRARY_FILE:
+                continue
+            example_payload = load_json(path)
+            examples = example_payload.get("examples", []) if isinstance(example_payload.get("examples"), list) else []
+            for raw_item in examples:
+                if not isinstance(raw_item, dict):
+                    continue
+                normalized = normalize_example_item(raw_item, toc_index)
+                chapter_id = normalized["chapter"]
+                if not CHAPTER_ID_PATTERN.fullmatch(chapter_id):
+                    continue
+                chapter_ids.add(chapter_id)
+                chapter_examples[chapter_id].append(normalized)
             continue
         chapter_id = match.group(1).lower()
         chapter_ids.add(chapter_id)
@@ -1824,6 +1984,7 @@ def build_review_dataset(config: dict[str, Any], ocr_coverage: dict[str, set[str
         chapter_chunks[chapter_id].sort(key=lambda row: row["id"])
         chapter_formulas[chapter_id].sort(key=lambda row: formula_sort_key(row["id"]))
         chapter_tables[chapter_id].sort(key=lambda row: formula_sort_key(row["id"]))
+        chapter_examples[chapter_id].sort(key=lambda row: (int(row.get("start_block_index") or 0), str(row.get("id") or "")))
 
     chapters: list[dict[str, Any]] = []
     data: dict[str, dict[str, list[dict[str, Any]]]] = {}
@@ -1834,6 +1995,7 @@ def build_review_dataset(config: dict[str, Any], ocr_coverage: dict[str, set[str
             "chunks": chapter_chunks.get(chapter_id, []),
             "formulas": chapter_formulas.get(chapter_id, []),
             "tables": chapter_tables.get(chapter_id, []),
+            "examples": chapter_examples.get(chapter_id, []),
         }
         counts = {view_id: len(rows) for view_id, rows in chapter_rows.items()}
         chapters.append(
@@ -1868,11 +2030,12 @@ def build_review_dataset(config: dict[str, Any], ocr_coverage: dict[str, set[str
             {"id": "formulas", "label": "公式库"},
             {"id": "tables", "label": "表格库"},
             {"id": "chunks", "label": "Chunk（中英）"},
+            {"id": "examples", "label": "Example 库"},
         ],
         "chapters": chapters,
         "default_chapter": default_chapter,
         "data": data,
-        "locator_version": 2,
+        "locator_version": REVIEW_LOCATOR_VERSION,
     }
 
 
@@ -1971,6 +2134,24 @@ def build_flow_graph(config: dict[str, Any]) -> dict[str, Any]:
                     "detail": "输出可下游消费的 chunk JSON 列表。",
                 },
             ],
+            "examples": [
+                {
+                    "title": "Example Detection",
+                    "detail": "从 structured block 中识别 Example 编号与正文 span。",
+                },
+                {
+                    "title": "Example Library Output",
+                    "detail": "生成全书统一 example_library，并保留 source_file 与原 block span。",
+                },
+                {
+                    "title": "Placeholder Folding",
+                    "detail": "将正文 example span 折叠为独立 [[SEE_EXAMPLE:x]] block，减少 chunk 冗余。",
+                },
+                {
+                    "title": "Review App Object",
+                    "detail": "把 example 作为独立审核对象加入 review_dataset。",
+                },
+            ],
         },
         "risks": parse_risk_rows(docs_text),
     }
@@ -2055,6 +2236,18 @@ def formula_ocr_coverage_from_index(formula_ocr_index: dict[str, Any]) -> dict[s
     return coverage
 
 
+def locator_line_chapters(review_dataset: dict[str, Any], target_chapters: set[str] | None = None) -> set[str]:
+    """Return chapters that should receive sentence/line-level PDF locator artifacts."""
+    if target_chapters:
+        return set(target_chapters)
+    chapters = review_dataset.get("chapters", []) if isinstance(review_dataset.get("chapters"), list) else []
+    return {
+        str(chapter.get("id") or "").strip().lower()
+        for chapter in chapters
+        if isinstance(chapter, dict) and CHAPTER_ID_PATTERN.fullmatch(str(chapter.get("id") or "").strip().lower())
+    }
+
+
 def refresh_library_rows_for_chapters(
     review_dataset: dict[str, Any],
     config: dict[str, Any],
@@ -2095,6 +2288,18 @@ def refresh_library_rows_for_chapters(
             if chapter_id in chapter_ids:
                 table_rows[chapter_id].append(normalized)
 
+    example_rows: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    example_library_path = structured_dir / EXAMPLE_LIBRARY_FILE
+    if example_library_path.exists():
+        example_payload = load_json(example_library_path)
+        for raw_item in example_payload.get("examples", []) if isinstance(example_payload.get("examples"), list) else []:
+            if not isinstance(raw_item, dict):
+                continue
+            normalized = normalize_example_item(raw_item, toc_index)
+            chapter_id = normalized.get("chapter")
+            if chapter_id in chapter_ids:
+                example_rows[chapter_id].append(normalized)
+
     for chapter_id in chapter_ids:
         chapter_data = data.setdefault(chapter_id, {})
         if not isinstance(chapter_data, dict):
@@ -2104,6 +2309,11 @@ def refresh_library_rows_for_chapters(
             chapter_data["formulas"] = sorted(formula_rows[chapter_id], key=lambda row: formula_sort_key(row["id"]))
         if chapter_id in table_rows:
             chapter_data["tables"] = sorted(table_rows[chapter_id], key=lambda row: formula_sort_key(row["id"]))
+        if chapter_id in example_rows:
+            chapter_data["examples"] = sorted(
+                example_rows[chapter_id],
+                key=lambda row: (int(row.get("start_block_index") or 0), str(row.get("id") or "")),
+            )
 
     return review_dataset
 
@@ -2126,15 +2336,15 @@ def refresh_locator_artifacts_for_chapters(config: dict[str, Any], chapter_ids: 
     locator_index = (
         load_json(REVIEW_LOCATOR_INDEX_PATH)
         if REVIEW_LOCATOR_INDEX_PATH.exists()
-        else {"generated_at": "", "version": 2, "chapters": {}}
+        else {"generated_at": "", "version": REVIEW_LOCATOR_VERSION, "chapters": {}}
     )
     locator_chapters = locator_index.setdefault("chapters", {})
     for chapter_id, chapter_payload in partial_locator_index.get("chapters", {}).items():
         locator_chapters[chapter_id] = chapter_payload
     locator_index["generated_at"] = datetime.now().isoformat(timespec="seconds")
-    locator_index["version"] = 2
+    locator_index["version"] = REVIEW_LOCATOR_VERSION
 
-    partial_chunk_line_index = build_chunk_line_index(chapter_ids & CHUNK_LINE_POC_CHAPTERS)
+    partial_chunk_line_index = build_chunk_line_index(chapter_ids)
     chunk_line_index = (
         load_json(CHUNK_LINE_INDEX_PATH)
         if CHUNK_LINE_INDEX_PATH.exists()
@@ -2162,6 +2372,7 @@ def refresh_locator_artifacts_for_chapters(config: dict[str, Any], chapter_ids: 
                     "formulas": len((chapter_payload.get("formulas") or {}).keys()),
                     "tables": len((chapter_payload.get("tables") or {}).keys()),
                     "chunks": len((chapter_payload.get("chunks") or {}).keys()),
+                    "examples": len((chapter_payload.get("examples") or {}).keys()),
                 }
                 for chapter_id, chapter_payload in (partial_locator_index.get("chapters") or {}).items()
                 if isinstance(chapter_payload, dict)
@@ -2209,7 +2420,7 @@ def main(argv: list[str] | None = None) -> None:
         if args.skip_locator and REVIEW_LOCATOR_INDEX_PATH.exists()
         else build_review_locator_index(review_dataset, formula_ocr_index)
     )
-    chunk_line_chapters = (target_chapters or CHUNK_LINE_POC_CHAPTERS) & CHUNK_LINE_POC_CHAPTERS
+    chunk_line_chapters = locator_line_chapters(review_dataset, target_chapters or None)
     chunk_line_index = build_chunk_line_index(chunk_line_chapters)
 
     write_json(REVIEW_DATASET_PATH, review_dataset)
@@ -2242,6 +2453,7 @@ def main(argv: list[str] | None = None) -> None:
                     "formulas": len((chapter_payload.get("formulas") or {}).keys()),
                     "tables": len((chapter_payload.get("tables") or {}).keys()),
                     "chunks": len((chapter_payload.get("chunks") or {}).keys()),
+                    "examples": len((chapter_payload.get("examples") or {}).keys()),
                 }
                 for chapter_id, chapter_payload in (review_locator_index.get("chapters") or {}).items()
                 if isinstance(chapter_payload, dict)

@@ -2,14 +2,21 @@
   "id": "chapter20_019",
   "metadata": {
     "chapter": "chapter20",
-    "section": "Chapter 20: Obtaining the Relationship Matrix: Marker Data",
+    "section": "Selection Response in Natural Populations: Introduction",
     "subsections": [
       "Obtaining the Relationship Matrix: Marker Data"
     ],
     "source_file": "tmp\\paddle_output\\chapter20_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [],
-    "table_references": []
+    "table_references": [],
+    "section_level_1": "Selection Response in Natural Populations: Introduction",
+    "section_level_2": "Obtaining the Relationship Matrix: Marker Data",
+    "heading_path": [
+      "Selection Response in Natural Populations: Introduction",
+      "Obtaining the Relationship Matrix: Marker Data"
+    ],
+    "display_heading": "Obtaining the Relationship Matrix: Marker Data"
   },
   "blocks": [
     {
@@ -37,12 +44,8 @@
       "content": "Given the potential of very dense marker information to more accurately infer relationships, it has been suggested that most wild populations will soon have the potential to permit an animal-model style analysis, with A directly estimated from marker information alone (Moore and Kukuk 2002; Gienapp et al. 2017). Does this mean that, in the near future, animal-model analyses will be practical for many, or even most, natural populations? The answer is likely no, as even if A is estimated with complete accuracy, any analysis is still limited by the variance among relationships in the sample (Visscher and Goddard 2015). If the sample lacks sufficient diversity in links between relatives (low variance in relatedness), it will contain little information for an animal-model analysis (Thomas and Hill 2000; Thomas et al. 2002; Csilléry et al. 2006). For example, if one randomly samples a very large population over multiple generations, there is a reasonable expectation that very few, if any, relatives will be found. Although a very large sample might suggest significant power, if the true relationship matrix for the population sample is of the form $ \\mathbf{A} = \\sigma^2(\\mathbf{A})(\\mathbf{I} + \\epsilon\\mathbf{B}) $, where $ \\mathbf{B} $ is a matrix of off-diagonal elements (indicating sets of relatives in the sample) and $ \\epsilon \\ll 1 $ (meaning that any off-diagonal elements are very small), then practically speaking, the sample consists of unrelated individuals (A is essentially a diagonal matrix). With little information from relatives, the power of a mixed-model analysis vanishes, as most breeding values are estimated solely from an individual's own phenotype. Balancing this pessimistic view are two studies on free-living fish that spend part of their time in the open ocean, which found sampled individuals to be enriched for close relatives (Thériault et al. 2007; DiBattista et al. 2009)."
     },
     {
-      "type": "discussion",
-      "content": "Example 20.6. We now possess the ability—either through dense SNP chips or by whole-genome sequencing—to score thousands to millions of SNPs, which offers a very simple approach for obtaining the relationship matrix, A. Given their very low mutation rates, two SNP alleles that are alike in state (AIS), or, equivalently, show identity by state (IBS), can be viewed as also being identical by descent (IBD) with respect to some ancient base population (Speed and Balding 2015), allowing us to compute the coefficient of coancestry, $ \\theta_{ij} $ (LW Chapter 7), directly from the SNP data, and hence the entry $ A_{ij} = 2\\theta_{ij} $ in the relationship matrix."
-    },
-    {
-      "type": "discussion",
-      "content": "The use of dense marker data highlights the important distinction between pedigree kinship and realized kinship (Wang et al. 2017). The value of $ \\theta $ calculated using a known pedigree (e.g., LW Chapter 7) is the expected value of the kinship, given the relationship between two individuals. However, with the exception of clones and parent-offspring pairs (which always shared exactly one allele IBD), all other relationships have some variation in the fraction of alleles shared about their expected kinship value due to Mendelian sampling (Risch and Lange 1979; Suarez et al. 1979; Stam 1980; Guo 1996; Visscher et al. 2006; VanRaden 2007, 2008; Hill and Weir 2011). Consider outbred full sibs. At any given locus, the probability that a pair shares 0, 1, or 2 IBD alleles is 1/4, 1/2, and 1/4, respectively. In a pedigree approach, all pairwise $ A_{ij} $ values among full sibs would be the same (1/2), which is the expectation of $ \\theta $ for noninbred full sibs (LW Chapter 7). This is the pedigree kinship. However, there is variation in the actual fraction of shared IBD alleles, so that (for example) sibs 1 and 2 may have a realized value of $ \\theta_{12} = 0.55 $, while 1 and 3 have a realized value of $ \\theta_{13} = 0.42 $. Dense SNP data capture this variation in relatedness, giving more accurate weights when using information from relatives (replacing expected values by their actual realizations). This is the basis of the genomic selection method known as G-BLUP (genomic-BLUP), wherein a marker-estimated (genomic relationship) matrix is used in place of a pedigree relationship matrix for A to improve the BLUP estimates (e.g., VanRaden 2007, 2008; Hayes et al. 2009; Volume 3 examines this method in detail)."
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:20.6]]"
     }
   ]
 }

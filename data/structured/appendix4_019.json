@@ -2,31 +2,38 @@
   "id": "appendix4_019",
   "metadata": {
     "chapter": "appendix4",
-    "section": "The Benjamini-Hochberg FDR Estimator",
+    "section": "Appendix: Introduction",
     "subsections": [
-      "The Benjamini-Hochberg FDR Estimator"
+      "Morton's Posterior Error Rate (PER) and the FDR"
     ],
     "source_file": "tmp\\paddle_output\\appendix4_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [],
-    "table_references": []
+    "table_references": [],
+    "section_level_1": "Appendix: Introduction",
+    "section_level_2": "Morton's Posterior Error Rate (PER) and the FDR",
+    "heading_path": [
+      "Appendix: Introduction",
+      "Morton's Posterior Error Rate (PER) and the FDR"
+    ],
+    "display_heading": "Morton's Posterior Error Rate (PER) and the FDR"
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "The original estimator for the FDR was introduced by Benjamini and Hochberg (1995). Suppose we declare a test to be significant if its $p$ value is at or below some threshold value, $ = p(k)$, in which case $k$ of the hypotheses will be declared significant (as $p[k]$ is the $k$th smallest $p$ value), and $S = k$. Likewise, if all $n$ of the hypotheses are null, then the expected value of $F$ (the number of false positives) is just $n p(k)$. The resulting fraction of all rejected hypotheses that are false discoveries becomes $F/S = n p(k)/k$. Hence, the false-discovery rate, $ _k$, for hypothesis $k$ is bounded by $$ \\frac{np(k)}{k}\\leq\\delta_{k} $$"
+      "content": "The Type-I error rate, $ \\alpha $, of a random test, and the PER for a significant test, which are often assumed to be the same, are actually very different. In addition to $ \\alpha $, the PER also depends on the power, $ \\beta $, of a test and the fraction, $ \\pi_{0} $, of tests that are truly null (as these latter parameters influence the probability that a test is declared to be significant). Manly et al. (2004) noted that the PER is acceptably low only if the fraction of alternative hypotheses $ (1 - \\pi_{0}) $ is well above $ \\alpha $."
     },
     {
       "type": "discussion",
-      "content": "In particular, if we wish to obtain an FDR of $ $ for the entire experiment, then we reject (i.e., declare as significant) all hypotheses that satisfy $$ p(k)\\leq\\delta\\frac{k}{n} $$"
+      "content": "Thinking in terms of the PER allows us to consider multiple comparisons in a continuum from Bonferroni-type corrections to using FDR to control the PER. If $ \\pi_1 = 1 - \\pi_0 $ is very small, most tests will truly be from the null hypothesis, and we can control the overall false-positive rate with a Bonferroni-type correction. However, if some fraction of the hypotheses is expected to be false (i.e., $ 1 - \\pi_0 $ is at least of modest value), then using FDR corrections makes more sense for controlling the PER."
     },
     {
-      "type": "discussion",
-      "content": "This simple (heuristic) derivation shows why the original Benjamini-Hochberg estimate of the FDR is conservative, as in those settings in which one applies the FDR criteria, the expectation is that some fraction of the hypotheses are not null, and so $ n_0 < n $. The correct estimator of the expected number of rejected null hypotheses is $ n_0 p(k) $, which leads to a more generalized estimate of the FDR, where $ _0 $ (e.g., Equations A4.8–A4.10) replaces n. In this case, Equation A4.16a becomes $$ \\widehat{\\delta}_{k}=\\frac{\\widehat{n}_{0}p(k)}{k} $$"
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:A4.7]]"
     },
     {
-      "type": "discussion",
-      "content": "|c|c| Cell 1 & Cell 2 \\\\ Cell 3 & Cell 4 \\\\"
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:A4.8]]"
     }
   ]
 }

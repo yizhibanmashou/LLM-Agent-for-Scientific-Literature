@@ -2,14 +2,21 @@
   "id": "appendix2_010",
   "metadata": {
     "chapter": "appendix2",
-    "section": "Diffuse Priors",
+    "section": "Appendix: Introduction",
     "subsections": [
       "Diffuse Priors"
     ],
     "source_file": "tmp\\paddle_output\\appendix2_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [],
-    "table_references": []
+    "table_references": [],
+    "section_level_1": "Appendix: Introduction",
+    "section_level_2": "Diffuse Priors",
+    "heading_path": [
+      "Appendix: Introduction",
+      "Diffuse Priors"
+    ],
+    "display_heading": "Diffuse Priors"
   },
   "blocks": [
     {
@@ -18,19 +25,15 @@
     },
     {
       "type": "discussion",
-      "content": "This conveys that we have no a priori reason to favor any particular parameter value over another. With a flat prior, the posterior is just a constant C times the likelihood $$ p(\\theta\\mid\\mathbf{x})=C\\ell(\\theta\\mid\\mathbf{x}) $$"
+      "content": "This conveys that we have no a priori reason to favor any particular parameter value over another. With a flat prior, the posterior is just a constant C times the likelihood $$ p(\\theta\\mid\\mathbf{x})=C\\ell(\\theta\\mid\\mathbf{x}) $$ and we typically write that $ p(\\theta|\\mathbf{x}) \\propto \\ell(\\theta|\\mathbf{x}) $. In many cases, classical expressions from frequentist statistics are obtained by Bayesian analysis through assuming a flat prior."
     },
     {
       "type": "discussion",
-      "content": "and we typically write that $ p (\\theta \\mid \\mathbf{x})\\propto \\ell (\\theta \\mid \\mathbf{x}) $ . In many cases, classical expressions from frequentist statistics are obtained by Bayesian analysis through assuming a flat prior."
-    },
-    {
-      "type": "discussion",
-      "content": "If the variable (i.e., parameter) of interest ranges over $ (0,\\infty) $ or $ (-\\infty,+\\infty) $ , then, strictly speaking, a flat prior does not exist as, if the constant takes on any nonzero value, the integral does not exist. In such cases a flat prior (i.e., assuming $ p[\\theta |\\mathbf{x}] \\propto \\ell[\\theta |\\mathbf{x}] $ ) is referred to as an improper prior, and care must be taken to ensure that the product of the prior and the likelihood results in a proper posterior (i.e., $ \\ell[\\theta |\\mathbf{x}] $ has a finite integral over the parameter range). This is by no means certain."
+      "content": "If the variable (i.e., parameter) of interest ranges over $ (0, \\infty) $ or $ (-\\infty, +\\infty) $, then, strictly speaking, a flat prior does not exist as, if the constant takes on any nonzero value, the integral does not exist. In such cases a flat prior (i.e., assuming $ p[\\theta \\mid \\mathbf{x}] \\propto \\ell[\\theta \\mid \\mathbf{x}] $) is referred to as an improper prior, and care must be taken to ensure that the product of the prior and the likelihood results in a proper posterior (i.e., $ \\ell[\\theta \\mid \\mathbf{x}] $ has a finite integral over the parameter range). This is by no means certain."
     },
     {
       "type": "proposition",
-      "content": "Another complication involved in using a uniform prior arises when the question of interest resides on a different scale than that used for the prior. A variable uniform on one scale may be far from uniform on a transformed scale. Figure A2.1 shows two examples based on the assumption that there was a flat prior on the variance. A uniform prior on the variance does not result in a uniform prior on the standard deviation (e.g., Van Dongen 2006). Likewise, if one assumes that the additive and residual variances have flat priors, this does not imply a flat prior for $ h^{2} $ , but rather a prior that is sharply peaked at 1/2. When assuming a flat prior, care must be taken that it is truly uninformative on the appropriate scale of biological interest. Otherwise, the choice of what superficially appears as an unbiased prior may instead create a bias that the signal in the data must overcome."
+      "content": "Another complication involved in using a uniform prior arises when the question of interest resides on a different scale than that used for the prior. A variable uniform on one scale may be far from uniform on a transformed scale. Figure A2.1 shows two examples based on the assumption that there was a flat prior on the variance. A uniform prior on the variance does not result in a uniform prior on the standard deviation (e.g., Van Dongen 2006). Likewise, if one assumes that the additive and residual variances have flat priors, this does not imply a flat prior for $ h^{2} $, but rather a prior that is sharply peaked at 1/2. When assuming a flat prior, care must be taken that it is truly uninformative on the appropriate scale of biological interest. Otherwise, the choice of what superficially appears as an unbiased prior may instead create a bias that the signal in the data must overcome."
     }
   ]
 }

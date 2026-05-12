@@ -2,7 +2,7 @@
   "id": "chapter23_012",
   "metadata": {
     "chapter": "chapter23",
-    "section": "Chapter 23: Progeny Testing Using Inbred Offspring",
+    "section": "Selection Under Inbreeding: Introduction",
     "subsections": [
       "$ S_{1}, S_{2}, \\text{and } S_{i,j} $ Family Selection"
     ],
@@ -17,11 +17,20 @@
     ],
     "table_references": [
       "23.1",
-      "23.3"
+      "23.3",
+      "inline_2"
     ],
+    "section_level_1": "Selection Under Inbreeding: Introduction",
+    "section_level_2": "$ S_{1}, S_{2}, \\text{and } S_{i,j} $ Family Selection",
+    "heading_path": [
+      "Selection Under Inbreeding: Introduction",
+      "$ S_{1}, S_{2}, \\text{and } S_{i,j} $ Family Selection"
+    ],
+    "display_heading": "$ S_{1}, S_{2}, \\text{and } S_{i,j} $ Family Selection",
     "table_reference_keys": [
       "chapter23:23.1",
-      "chapter23:23.3"
+      "chapter23:23.3",
+      "chapter23:inline_2"
     ]
   },
   "blocks": [
@@ -38,8 +47,8 @@
       "content": "The response to “classic” $ S_{2} $ family selection $ (i = 1, j = 2) $ is $$ (3/2)\\sigma_{A}^{2}+(5/4)\\sigma_{A D I} $$ [[SEE_FORMULA:23.17b]] while the response to bulk S₂ family selection (i = 0, j = 2) is [[SEE_FORMULA:23.17c]]"
     },
     {
-      "type": "proposition",
-      "content": "[[TABLE:23.3]] presents the response per cycle after accounting for all these factors under the assumption of no dominance (i.e., $ \\sigma_{ADI} = 0 $)."
+      "type": "table",
+      "content": "[[TABLE:23.3]]"
     },
     {
       "type": "derivation",
@@ -55,7 +64,7 @@
     },
     {
       "type": "proposition",
-      "content": "[[TABLE:23.3]] shows that $ S_1 $ and $ S_{1,2} $ selection are superior to the other approaches that were listed (under the assumption of no dominance and roughly equal family variances among the different approaches). While we have not included comparisons with methods using inbred parents, these are easily obtained by multiplying the scaled response per generation by $ 1 + f $ (see [[SEE_TABLE:23.1]]). While $ S_{1,2} $ selection yields a larger response per cycle ($ R^* = 3/4 $), this is countered by increased cycle time ($ g = 3 $). Note that $ S_2 $ bulk-family selection ($ S_{0,2} $) is not as efficient as $ S_1 $ or $ S_{1,2} $. For other types of $ S_{i,j} $ selection, the tradeoff between an increase in additive variance, scaling as $ 2(1 - 2^{-(i+1)})\\sigma_A^2 $, versus the increase in cycle time ($ g $ increasing with $ i $) is such that the scaled response per generation, $ R/(\\sigma_A^2\\bar{i}) $, is under 1/2 for $ i > 2 $ and hence not as efficient as either $ S_1 $ or $ S_{1,2} $ selection. recombination occurs only every other generation (as opposed to every generation under mass and ear-to-row selection)."
+      "content": "shows that $ S_1 $ and $ S_{1,2} $ selection are superior to the other approaches that were listed (under the assumption of no dominance and roughly equal family variances among the different approaches). While we have not included comparisons with methods using inbred parents, these are easily obtained by multiplying the scaled response per generation by $ 1 + f $ (see [[SEE_TABLE:23.1]]). While $ S_{1,2} $ selection yields a larger response per cycle ($ R^* = 3/4 $), this is countered by increased cycle time ($ g = 3 $). Note that $ S_2 $ bulk-family selection ($ S_{0,2} $) is not as efficient as $ S_1 $ or $ S_{1,2} $. For other types of $ S_{i,j} $ selection, the tradeoff between an increase in additive variance, scaling as $ 2(1 - 2^{-(i+1)})\\sigma_A^2 $, versus the increase in cycle time ($ g $ increasing with $ i $) is such that the scaled response per generation, $ R/(\\sigma_A^2\\bar{i}) $, is under 1/2 for $ i > 2 $ and hence not as efficient as either $ S_1 $ or $ S_{1,2} $ selection. recombination occurs only every other generation (as opposed to every generation under mass and ear-to-row selection)."
     },
     {
       "type": "discussion",
@@ -64,6 +73,10 @@
     {
       "type": "proposition",
       "content": "The results in [[SEE_TABLE:23.3]] rely on two assumptions: no dominance and equal among-family variance. Both among-family genetic differences over the different schemes, as well as G × E and other replication-dependent error terms in σ²(z), can cause this latter assumption to be incorrect (e.g., Equations 21.42a and 21.42b). One can easily imagine situations where the difference in error variance more than compensates for the difference in the selection unit-offspring covariances. For example, half-sib selection may generate far more family members for testing than an S₁, thus greatly reducing the error variance (by increasing n in Equation 23.8c). Likewise, σ_ADI can be negative, thus reducing the expected advantage of S₁ and S₁.₂ selection. Indeed, Jan-orn et al. (1976) estimated that σ_ADI/σ_A² was around −0.5 for many traits in sorghum, suggesting that σ_ADI can be both negative and substantial."
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:23.2]]"
     }
   ]
 }

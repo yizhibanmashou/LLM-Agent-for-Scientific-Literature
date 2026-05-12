@@ -1,0 +1,2835 @@
+"""Formal example-library post-processing pipeline for structured outputs.
+
+This module promotes the previously trial-only example placeholder workflow into
+the knowledge-engineering pipeline while keeping the extraction rules unchanged.
+"""
+
+from __future__ import annotations
+
+from collections import Counter, defaultdict
+from pathlib import Path
+import re
+import time
+from typing import Any
+
+from knowledge_engineering.core.common import (
+    read_json,
+    sort_table_ref_keys,
+    sort_table_refs,
+    table_reference_key,
+    utc_now_iso,
+    write_json,
+)
+from knowledge_engineering.processors.example_extraction import (
+    PROJECT_ROOT,
+    ExampleCandidate,
+    EXAMPLE_HEAD_RE,
+    EXAMPLE_PLACEHOLDER_RE,
+    PADDLE_EXAMPLE_LABELS,
+    build_structured_context,
+    chapter_sort_key,
+    collapse_ws,
+    existing_library_row_to_candidate,
+    extract_external_refs,
+    extract_examples_for_structured_dir,
+    extract_figure_refs,
+    extract_formula_refs,
+    extract_table_refs,
+    is_example_heading_match,
+    load_unit_files,
+    looks_truncated,
+    natural_key,
+    normalize_heading_prefix,
+    normalize_match_text,
+    ordered_paddle_records,
+    recover_examples_from_paddle_raw,
+    raw_example_start_match,
+    sha256_file,
+    source_table_refs,
+    strip_html,
+    strip_structured_refs,
+    looks_like_post_example_body,
+    clean_ref_id,
+)
+
+
+TOKEN_RE = re.compile(r"[0-9A-Za-z]+")
+TABLE_PLACEHOLDER_RE = re.compile(r"\[\[(?:SEE_)?TABLE\s*:\s*([^\]\n\r]+?)\s*\]\]", re.IGNORECASE)
+INLINE_TABLE_ID_RE = re.compile(r"^inline_\d+$", re.IGNORECASE)
+EXAMPLE_TITLE_PREFIX_RE = re.compile(r"^\s*Example\s+(?P<example_id>(?:A\d+|\d+)\.\d+[a-z]?)", re.IGNORECASE)
+
+
+def _token_spans(text: str) -> list[tuple[str, int, int]]:
+    return [(match.group(0).lower(), match.start(), match.end()) for match in TOKEN_RE.finditer(str(text or ""))]
+
+
+def _find_subsequence(haystack: list[str], needle: list[str]) -> int | None:
+    if not needle or len(needle) > len(haystack):
+        return None
+    last_start = len(haystack) - len(needle)
+    for index in range(last_start + 1):
+        if haystack[index : index + len(needle)] == needle:
+            return index
+    return None
+
+
+def _int_metadata(item: ExampleCandidate, key: str, default: int | None = None) -> int | None:
+    metadata = item.metadata if isinstance(item.metadata, dict) else {}
+    value = metadata.get(key)
+    if value is None:
+        return default
+    try:
+        return int(value)
+    except (TypeError, ValueError):
+        return default
+
+
+def _candidate_start_point(item: ExampleCandidate) -> tuple[int, int]:
+    return item.start_block_index, _int_metadata(item, "replacement_start_char", 0) or 0
+
+
+def _candidate_end_point(item: ExampleCandidate) -> tuple[int, int]:
+    end_char = _int_metadata(item, "replacement_end_char")
+    if end_char is None:
+        return item.end_block_index + 1, 0
+    return item.end_block_index, end_char
+
+
+def _intervals_overlap(left: tuple[tuple[int, int], tuple[int, int]], right: tuple[tuple[int, int], tuple[int, int]]) -> bool:
+    left_start, left_end = left
+    right_start, right_end = right
+    return left_start < right_end and right_start < left_end
+
+
+def _replacement_interval(item: ExampleCandidate) -> tuple[tuple[int, int], tuple[int, int]]:
+    return _candidate_start_point(item), _candidate_end_point(item)
+
+
+def candidate_key(item: ExampleCandidate) -> str:
+    return f"{item.source_file}#{item.start_block_index}-{item.end_block_index}#{item.example_id}"
+
+
+def make_example_ref(item: ExampleCandidate, id_counts: Counter[str]) -> str:
+    if id_counts[item.example_id] == 1:
+        return item.example_id
+    source_stem = Path(item.source_file).stem
+    return f"{item.example_id}@{source_stem}_{item.start_block_index}"
+
+
+def example_to_library_row(
+    item: ExampleCandidate,
+    *,
+    example_ref: str,
+    replacement_status: str,
+    replacement_reason: str,
+) -> dict[str, Any]:
+    row = item.to_dict()
+    row["example_ref"] = example_ref
+    row["placeholder"] = f"[[SEE_EXAMPLE:{example_ref}]]"
+    row["replacement"] = {
+        "status": replacement_status,
+        "reason": replacement_reason,
+        "source_block_span": [item.start_block_index, item.end_block_index],
+    }
+    return row
+
+
+def select_non_overlapping_examples(examples: list[ExampleCandidate]) -> tuple[set[str], dict[str, str]]:
+    selected_keys: set[str] = set()
+    reasons: dict[str, str] = {}
+    by_file: dict[str, list[ExampleCandidate]] = defaultdict(list)
+    for item in examples:
+        by_file[item.source_file].append(item)
+
+    for file_examples in by_file.values():
+        selected_intervals: list[tuple[tuple[int, int], tuple[int, int]]] = []
+        for item in sorted(
+            file_examples,
+            key=lambda ex: (
+                ex.start_block_index,
+                _int_metadata(ex, "replacement_start_char", 0) or 0,
+                ex.end_block_index,
+                natural_key(ex.example_id),
+            ),
+        ):
+            key = candidate_key(item)
+            interval = _replacement_interval(item)
+            if any(_intervals_overlap(interval, selected) and interval != selected for selected in selected_intervals):
+                reasons[key] = "overlaps_selected_example_span"
+                continue
+            selected_keys.add(key)
+            if interval not in selected_intervals:
+                selected_intervals.append(interval)
+            reasons[key] = "selected"
+    return selected_keys, reasons
+
+
+def replace_examples_in_file(
+    path: Path,
+    examples: list[ExampleCandidate],
+    example_refs: dict[str, str],
+    *,
+    dry_run: bool = False,
+) -> dict[str, Any]:
+    data = read_json(path)
+    blocks = data.get("blocks") if isinstance(data, dict) else None
+    if not isinstance(blocks, list):
+        return {"file": path.name, "before_blocks": 0, "after_blocks": 0, "replaced": 0, "removed_blocks": 0}
+
+    intervals: list[tuple[int, int, int, int, ExampleCandidate]] = []
+    for item in examples:
+        insert_only = bool(item.metadata.get("insert_placeholder_only")) if isinstance(item.metadata, dict) else False
+        if insert_only:
+            if item.start_block_index < 0 or item.start_block_index > len(blocks):
+                continue
+            start_block = item.start_block_index
+            end_block = start_block
+            if start_block < len(blocks) and isinstance(blocks[start_block], dict):
+                content = blocks[start_block].get("content")
+                start_length = len(content) if isinstance(content, str) else 0
+            else:
+                start_length = 0
+            end_length = start_length
+        else:
+            if item.start_block_index < 0 or item.end_block_index < item.start_block_index or item.end_block_index >= len(blocks):
+                continue
+            start_block = item.start_block_index
+            end_block = item.end_block_index
+            start_content = blocks[start_block].get("content") if isinstance(blocks[start_block], dict) else ""
+            end_content = blocks[end_block].get("content") if isinstance(blocks[end_block], dict) else ""
+            start_length = len(start_content) if isinstance(start_content, str) else 0
+            end_length = len(end_content) if isinstance(end_content, str) else 0
+        start_char = _int_metadata(item, "replacement_start_char", 0) or 0
+        end_char = _int_metadata(item, "replacement_end_char", end_length)
+        if end_char is None:
+            end_char = end_length
+        start_char = max(0, min(start_char, start_length))
+        end_char = max(0, min(end_char, end_length))
+        if insert_only:
+            end_char = start_char
+        if start_block == end_block and end_char <= start_char and not insert_only:
+            continue
+        intervals.append((start_block, start_char, end_block, end_char, item))
+
+    intervals.sort(key=lambda entry: (entry[0], entry[1], entry[2], entry[3], natural_key(entry[4].example_id)))
+    new_blocks: list[Any] = []
+    remapped_indexes: dict[str, int] = {}
+    cursor_block = 0
+    cursor_char = 0
+
+    def append_content_slice(block_index: int, start_char: int, end_char: int) -> None:
+        block = blocks[block_index]
+        if not isinstance(block, dict):
+            if start_char == 0:
+                new_blocks.append(block)
+            return
+        content = block.get("content")
+        if not isinstance(content, str):
+            if start_char == 0:
+                new_blocks.append(block)
+            return
+        sliced = content[start_char:end_char].strip()
+        if not sliced:
+            return
+        new_block = dict(block)
+        new_block["content"] = sliced
+        new_blocks.append(new_block)
+
+    def append_gap_until(target_block: int, target_char: int) -> None:
+        nonlocal cursor_block, cursor_char
+        while cursor_block < target_block and cursor_block < len(blocks):
+            block = blocks[cursor_block]
+            content = block.get("content") if isinstance(block, dict) else ""
+            end_char = len(content) if isinstance(content, str) else 0
+            if cursor_char == 0 and not isinstance(content, str):
+                new_blocks.append(block)
+            elif cursor_char == 0:
+                if isinstance(content, str):
+                    append_content_slice(cursor_block, cursor_char, end_char)
+            else:
+                append_content_slice(cursor_block, cursor_char, end_char)
+            cursor_block += 1
+            cursor_char = 0
+        if cursor_block == target_block and cursor_block < len(blocks):
+            append_content_slice(cursor_block, cursor_char, target_char)
+
+    interval_groups: list[tuple[int, int, int, int, list[ExampleCandidate]]] = []
+    for start_block, start_char, end_block, end_char, item in intervals:
+        if interval_groups and interval_groups[-1][:4] == (start_block, start_char, end_block, end_char):
+            interval_groups[-1][4].append(item)
+        else:
+            interval_groups.append((start_block, start_char, end_block, end_char, [item]))
+
+    for start_block, start_char, end_block, end_char, items in interval_groups:
+        if (start_block, start_char) < (cursor_block, cursor_char):
+            continue
+        append_gap_until(start_block, start_char)
+        for item in sorted(items, key=lambda candidate: natural_key(candidate.example_id)):
+            ref = example_refs[candidate_key(item)]
+            remapped_indexes[candidate_key(item)] = len(new_blocks)
+            new_blocks.append({"type": "example", "content": f"[[SEE_EXAMPLE:{ref}]]"})
+        cursor_block = end_block
+        cursor_char = end_char
+
+    append_gap_until(len(blocks), 0)
+
+    if not dry_run:
+        data["blocks"] = new_blocks
+        write_json(path, data)
+    return {
+        "file": path.name,
+        "before_blocks": len(blocks),
+        "after_blocks": len(new_blocks),
+        "replaced": len(remapped_indexes),
+        "removed_blocks": len(blocks) - len(new_blocks),
+        "remapped_indexes": remapped_indexes,
+    }
+
+
+def count_blocks(structured_dir: Path) -> int:
+    total = 0
+    for path in load_unit_files(structured_dir):
+        data = read_json(path)
+        blocks = data.get("blocks") if isinstance(data, dict) else None
+        if isinstance(blocks, list):
+            total += len(blocks)
+    return total
+
+
+def write_example_library(output_structured: Path, rows: list[dict[str, Any]], *, dry_run: bool = False) -> None:
+    if dry_run:
+        return
+    write_json(
+        output_structured / "example_library.json",
+        {
+            "schema": "example_library.v1",
+            "example_count": len(rows),
+            "examples": rows,
+        },
+    )
+
+
+def _table_reference_key(chapter: str, table_id: str) -> str:
+    return table_reference_key(chapter, table_id)
+
+
+def _source_unit_id(source_file: str) -> str:
+    return Path(str(source_file or "")).stem
+
+
+def _unit_subsection(data: dict[str, Any]) -> str:
+    metadata = data.get("metadata") if isinstance(data.get("metadata"), dict) else {}
+    for key in ("display_heading", "section_level_2", "section_level_1", "section"):
+        value = str(metadata.get(key) or "").strip()
+        if value:
+            return value
+    subsections = metadata.get("subsections") if isinstance(metadata.get("subsections"), list) else []
+    for item in subsections:
+        value = str(item or "").strip()
+        if value:
+            return value
+    return ""
+
+
+def _unit_contains_table_ref(data: dict[str, Any], table_id: str) -> bool:
+    wanted = str(table_id or "").strip().lower()
+    blocks = data.get("blocks") if isinstance(data.get("blocks"), list) else []
+    for block in blocks:
+        if not isinstance(block, dict):
+            continue
+        content = str(block.get("content") or "")
+        for match in TABLE_PLACEHOLDER_RE.finditer(content):
+            if match.group(1).strip().lower() == wanted:
+                return True
+    return False
+
+
+def _update_unit_table_metadata(
+    structured_dir: Path,
+    unit_id: str,
+    chapter: str,
+    table_id: str,
+    *,
+    add: bool,
+    dry_run: bool,
+) -> bool:
+    if not unit_id:
+        return False
+    path = structured_dir / f"{unit_id}.json"
+    if not path.exists():
+        return False
+    data = read_json(path)
+    if not isinstance(data, dict):
+        return False
+    metadata = data.get("metadata")
+    if not isinstance(metadata, dict):
+        metadata = {}
+        data["metadata"] = metadata
+
+    table_ref = str(table_id or "").strip()
+    key = _table_reference_key(chapter, table_ref)
+    refs = [
+        str(item).strip()
+        for item in (metadata.get("table_references") or [])
+        if str(item).strip()
+    ]
+    keys = [
+        str(item).strip()
+        for item in (metadata.get("table_reference_keys") or [])
+        if str(item).strip()
+    ]
+    before_refs = list(refs)
+    before_keys = list(keys)
+
+    if add:
+        if table_ref and table_ref not in refs:
+            refs.append(table_ref)
+        if key and key not in keys:
+            keys.append(key)
+    else:
+        refs = [item for item in refs if item != table_ref]
+        keys = [item for item in keys if item != key]
+
+    refs = sort_table_refs(refs)
+    keys = sort_table_ref_keys(keys)
+    if refs == before_refs and keys == before_keys:
+        return False
+
+    metadata["table_references"] = refs
+    if keys:
+        metadata["table_reference_keys"] = keys
+    else:
+        metadata.pop("table_reference_keys", None)
+    if not dry_run:
+        write_json(path, data)
+    return True
+
+
+def _table_example_overlap_score(entry: dict[str, Any], row: dict[str, Any]) -> float:
+    token_source: list[str] = [str(entry.get("title") or "")]
+    rows = entry.get("rows") if isinstance(entry.get("rows"), list) else []
+    for table_row in rows[:4]:
+        if isinstance(table_row, list):
+            token_source.extend(str(cell) for cell in table_row[:5])
+    tokens = [
+        token
+        for token in normalize_match_text(" ".join(token_source)).split()
+        if len(token) >= 3 and token not in {"table", "inline", "example"}
+    ]
+    if not tokens:
+        return 0.0
+    example_text = normalize_match_text(
+        f"{row.get('title') or ''} {row.get('content_markdown') or row.get('content_plain') or ''}"
+    )
+    hits = sum(1 for token in tokens if token in example_text)
+    return hits / max(1, len(tokens))
+
+
+def _rebind_inline_table_sources_from_examples(
+    structured_dir: Path,
+    rows: list[dict[str, Any]],
+    *,
+    dry_run: bool,
+) -> dict[str, int]:
+    stats = {
+        "example_rows_scanned": 0,
+        "inline_table_refs_seen": 0,
+        "table_sources_rebound": 0,
+        "unit_metadata_added": 0,
+        "unit_metadata_removed": 0,
+    }
+    table_library_path = structured_dir / "table_library.json"
+    if not table_library_path.exists():
+        return stats
+    payload = read_json(table_library_path)
+    tables = payload.get("tables") if isinstance(payload, dict) else None
+    if not isinstance(tables, list):
+        return stats
+
+    changed_library = False
+    processed: set[tuple[str, str, str]] = set()
+    for row in rows:
+        if not isinstance(row, dict):
+            continue
+        stats["example_rows_scanned"] += 1
+        chapter = str(row.get("chapter") or "").strip().lower()
+        source_file = str(row.get("source_file") or "").strip()
+        source_unit = _source_unit_id(source_file)
+        if not chapter or not source_unit:
+            continue
+        table_refs = [
+            str(item).strip()
+            for item in (row.get("table_refs") or [])
+            if INLINE_TABLE_ID_RE.fullmatch(str(item).strip())
+        ]
+        for table_id in table_refs:
+            stats["inline_table_refs_seen"] += 1
+            key = (chapter, table_id, source_unit)
+            if key in processed:
+                continue
+            processed.add(key)
+            candidates: list[dict[str, Any]] = []
+            for entry in tables:
+                if not isinstance(entry, dict):
+                    continue
+                source = entry.get("source") if isinstance(entry.get("source"), dict) else {}
+                if str(entry.get("id") or "").strip().lower() != table_id.lower():
+                    continue
+                if str(entry.get("table_type") or "").strip().lower() != "inline":
+                    continue
+                if str(source.get("chapter") or "").strip().lower() != chapter:
+                    continue
+                candidates.append(entry)
+            if not candidates:
+                continue
+            scored = sorted(
+                ((_table_example_overlap_score(entry, row), entry) for entry in candidates),
+                key=lambda item: item[0],
+                reverse=True,
+            )
+            score, entry = scored[0]
+            if len(candidates) > 1 and score < 0.10:
+                continue
+
+            source = entry.get("source") if isinstance(entry.get("source"), dict) else {}
+            old_unit = str(source.get("unit_id") or "").strip()
+            if old_unit == source_unit:
+                continue
+            source_page = _safe_block_index((source if isinstance(source, dict) else {}).get("page"))
+            row_evidence = row.get("evidence") if isinstance(row.get("evidence"), dict) else {}
+            row_page = _safe_block_index(row_evidence.get("source_page") or row_evidence.get("raw_source_page"))
+            if source_page is not None and row_page is not None and abs(source_page - row_page) > 2:
+                continue
+            new_unit_path = structured_dir / source_file
+            new_unit_data = read_json(new_unit_path) if new_unit_path.exists() else {}
+            source["unit_id"] = source_unit
+            source["chapter"] = chapter
+            subsection = _unit_subsection(new_unit_data) if isinstance(new_unit_data, dict) else ""
+            if subsection:
+                source["subsection"] = subsection
+            source["source_rebound_by"] = "example_pipeline_inline_table_source"
+            entry["source"] = source
+            changed_library = True
+            stats["table_sources_rebound"] += 1
+
+            if _update_unit_table_metadata(
+                structured_dir,
+                source_unit,
+                chapter,
+                table_id,
+                add=True,
+                dry_run=dry_run,
+            ):
+                stats["unit_metadata_added"] += 1
+
+            if old_unit and old_unit != source_unit:
+                old_path = structured_dir / f"{old_unit}.json"
+                old_data = read_json(old_path) if old_path.exists() else {}
+                if isinstance(old_data, dict) and not _unit_contains_table_ref(old_data, table_id):
+                    if _update_unit_table_metadata(
+                        structured_dir,
+                        old_unit,
+                        chapter,
+                        table_id,
+                        add=False,
+                        dry_run=dry_run,
+                    ):
+                        stats["unit_metadata_removed"] += 1
+
+    if changed_library and not dry_run:
+        write_json(table_library_path, payload)
+    return stats
+
+
+def _library_hashes(structured_dir: Path) -> dict[str, str | None]:
+    hashes: dict[str, str | None] = {}
+    for file_name in ("formula_library.json", "table_library.json"):
+        path = structured_dir / file_name
+        hashes[file_name] = sha256_file(path) if path.exists() else None
+    return hashes
+
+
+def _write_artifacts(artifacts_dir: Path | None, summary: dict[str, Any], library_rows: list[dict[str, Any]]) -> None:
+    if artifacts_dir is None:
+        return
+    artifacts_dir.mkdir(parents=True, exist_ok=True)
+    write_json(artifacts_dir / "example_pipeline_summary.json", summary)
+    write_json(artifacts_dir / "example_library_items.json", library_rows)
+
+
+def _example_identity(row: dict[str, Any]) -> tuple[str, str]:
+    chapter = str(row.get("chapter") or "").strip().lower()
+    ref = str(row.get("example_ref") or row.get("example_id") or "").strip()
+    return chapter, ref
+
+
+def _candidate_identity(item: ExampleCandidate, example_ref: str | None = None) -> tuple[str, str]:
+    return item.chapter, str(example_ref or item.example_id).strip()
+
+
+def _example_number_parts(example_id: str) -> tuple[str, int] | None:
+    value = str(example_id or "").strip()
+    parts = value.rsplit(".", 1)
+    if len(parts) != 2:
+        return None
+    prefix, suffix = parts
+    digits = ""
+    for char in suffix:
+        if char.isdigit():
+            digits += char
+        else:
+            break
+    if not prefix or not digits:
+        return None
+    return prefix.lower(), int(digits)
+
+
+def _load_existing_example_library_rows(structured_dir: Path) -> list[dict[str, Any]]:
+    path = structured_dir / "example_library.json"
+    if not path.exists():
+        return []
+    payload = read_json(path)
+    rows = payload.get("examples") if isinstance(payload, dict) else None
+    if not isinstance(rows, list):
+        return []
+    return [row for row in rows if isinstance(row, dict)]
+
+
+def _row_starts_with_true_example_heading(row: dict[str, Any]) -> bool:
+    content = str(row.get("content_markdown") or "")
+    match = EXAMPLE_HEAD_RE.search(content)
+    if not match:
+        return False
+    if match.start() != 0:
+        return False
+    if not is_example_heading_match(content, match):
+        return False
+    return clean_example_id(match.group("example_id")) == clean_example_id(row.get("example_id"))
+
+
+def clean_example_id(value: Any) -> str:
+    return str(value or "").strip()
+
+
+def _infer_restored_block_type(row: dict[str, Any], fallback: str = "discussion") -> str:
+    content = str(row.get("content_markdown") or "")
+    formula_refs = row.get("formula_refs") if isinstance(row.get("formula_refs"), list) else []
+    if formula_refs or "$$" in content or "\\begin{" in content:
+        return "derivation"
+    return fallback
+
+
+def _restore_false_example_rows(
+    structured_dir: Path,
+    rows: list[dict[str, Any]],
+    *,
+    dry_run: bool,
+) -> dict[str, int]:
+    stats = {"rows_scanned": len(rows), "false_heading_rows": 0, "source_blocks_restored": 0}
+    for row in rows:
+        if _row_starts_with_true_example_heading(row):
+            continue
+        source_file = str(row.get("source_file") or "").strip()
+        placeholder = str(row.get("placeholder") or "")
+        if not source_file or not placeholder:
+            continue
+        path = structured_dir / source_file
+        if not path.exists():
+            continue
+        data = read_json(path)
+        blocks = data.get("blocks") if isinstance(data, dict) else None
+        block_index = _safe_block_index(row.get("start_block_index"))
+        if not isinstance(blocks, list) or block_index is None or block_index >= len(blocks):
+            continue
+        block = blocks[block_index]
+        if not isinstance(block, dict):
+            continue
+        if str(block.get("content") or "") != placeholder:
+            continue
+
+        stats["false_heading_rows"] += 1
+        fallback_type = str(block.get("type") or "discussion")
+        if fallback_type == "example":
+            fallback_type = "discussion"
+        block["type"] = _infer_restored_block_type(row, fallback_type)
+        block["content"] = str(row.get("content_markdown") or "").strip()
+        replacement = row.get("replacement") if isinstance(row.get("replacement"), dict) else {}
+        row["replacement"] = {
+            **replacement,
+            "status": "restored",
+            "reason": "inline_example_reference_not_heading",
+        }
+        evidence = row.get("evidence") if isinstance(row.get("evidence"), dict) else {}
+        row["evidence"] = {
+            **evidence,
+            "existing_library_repair": "false_example_heading_restored_to_source_block",
+        }
+        stats["source_blocks_restored"] += 1
+        if not dry_run:
+            write_json(path, data)
+    return stats
+
+
+def _existing_sequence_gap_targets(rows: list[dict[str, Any]]) -> set[tuple[str, str]]:
+    numbers_by_group: dict[tuple[str, str, str], set[int]] = defaultdict(set)
+    for row in rows:
+        if not isinstance(row, dict):
+            continue
+        replacement = row.get("replacement") if isinstance(row.get("replacement"), dict) else {}
+        if replacement.get("status") == "restored":
+            continue
+        chapter = str(row.get("chapter") or "").strip().lower()
+        example_id = str(row.get("example_id") or "").strip()
+        parts = _example_number_parts(example_id)
+        if not chapter or parts is None:
+            continue
+        prefix, number = parts
+        source_prefix = re.sub(r"\d+$", "", Path(str(row.get("source_file") or "").strip()).stem)
+        numbers_by_group[(chapter, source_prefix, prefix)].add(number)
+
+    targets: set[tuple[str, str]] = set()
+    for (chapter, _, prefix), numbers in numbers_by_group.items():
+        if len(numbers) < 2:
+            continue
+        first = min(numbers)
+        last = max(numbers)
+        lower_bound = 1 if first <= 2 else first
+        for number in range(lower_bound, last + 1):
+            if number not in numbers:
+                targets.add((chapter, f"{prefix}.{number}"))
+    return targets
+
+
+def _sequence_gap_targets_from_rows(rows: list[dict[str, Any]]) -> set[tuple[str, str]]:
+    numbers_by_group: dict[tuple[str, str], set[int]] = defaultdict(set)
+    for row in rows:
+        if not isinstance(row, dict):
+            continue
+        replacement = row.get("replacement") if isinstance(row.get("replacement"), dict) else {}
+        if replacement.get("status") == "restored":
+            continue
+        chapter = str(row.get("chapter") or "").strip().lower()
+        example_id = str(row.get("example_id") or "").strip()
+        parts = _example_number_parts(example_id)
+        if not chapter or parts is None:
+            continue
+        prefix, number = parts
+        numbers_by_group[(chapter, prefix)].add(number)
+
+    targets: set[tuple[str, str]] = set()
+    for (chapter, prefix), numbers in numbers_by_group.items():
+        if len(numbers) < 2:
+            continue
+        first = min(numbers)
+        last = max(numbers)
+        lower_bound = 1 if first <= 2 else first
+        for number in range(lower_bound, last + 1):
+            if number not in numbers:
+                targets.add((chapter, f"{prefix}.{number}"))
+    return targets
+
+
+def _raw_example_ids_by_chapter(project_root: Path, chapters: set[str]) -> dict[str, set[str]]:
+    raw_ids: dict[str, set[str]] = defaultdict(set)
+    for chapter in sorted(chapters, key=chapter_sort_key):
+        for record in ordered_paddle_records(project_root, chapter):
+            if record.label not in PADDLE_EXAMPLE_LABELS:
+                continue
+            match = raw_example_start_match(record.content)
+            if not match:
+                continue
+            example_id = clean_ref_id(match.group("example_id"))
+            if example_id:
+                raw_ids[chapter].add(example_id)
+    return raw_ids
+
+
+def _missing_raw_sequence_targets(
+    *,
+    project_root: Path,
+    rows: list[dict[str, Any]],
+) -> set[tuple[str, str]]:
+    row_targets = _sequence_gap_targets_from_rows(rows)
+    if not row_targets:
+        return set()
+    chapters = {chapter for chapter, _ in row_targets}
+    raw_ids_by_chapter = _raw_example_ids_by_chapter(project_root, chapters)
+    return {
+        (chapter, example_id)
+        for chapter, example_id in row_targets
+        if example_id in raw_ids_by_chapter.get(chapter, set())
+    }
+
+
+def _token_anchor_position(
+    raw_text: str,
+    content: str,
+    *,
+    min_anchor_tokens: int = 8,
+) -> tuple[int, str, int] | None:
+    raw_tokens = normalize_match_text(raw_text).split()
+    content_norm = normalize_match_text(content)
+    if len(raw_tokens) < min_anchor_tokens or not content_norm:
+        return None
+    for raw_offset in range(0, len(raw_tokens) - min_anchor_tokens + 1):
+        anchor = " ".join(raw_tokens[raw_offset : raw_offset + min_anchor_tokens])
+        norm_pos = content_norm.find(anchor)
+        if norm_pos < 0:
+            continue
+        return raw_offset, anchor, norm_pos
+    return None
+
+
+def _content_char_for_anchor(content: str, anchor: str) -> int | None:
+    anchor_tokens = anchor.split()
+    if not anchor_tokens:
+        return None
+    content_tokens = _token_spans(content)
+    content_values = [token for token, _, _ in content_tokens]
+    index = _find_subsequence(content_values, anchor_tokens)
+    if index is None:
+        return None
+    return content_tokens[index][1]
+
+
+def _expand_split_start_to_adjacent_placeholder(content: str, split_char: int) -> int:
+    candidate_start = split_char
+    for match in TABLE_PLACEHOLDER_RE.finditer(content[:split_char]):
+        between = content[match.end() : split_char]
+        if between.strip():
+            continue
+        candidate_start = match.start()
+    return candidate_start
+
+
+def _join_content_parts(parts: list[str]) -> str:
+    return "\n\n".join(part.strip() for part in parts if part and part.strip()).strip()
+
+
+def _make_row_from_candidate(item: ExampleCandidate, *, example_ref: str) -> dict[str, Any]:
+    _refresh_candidate_metadata(item)
+    return example_to_library_row(
+        item,
+        example_ref=example_ref,
+        replacement_status="replaced",
+        replacement_reason="placeholder_block_written",
+    )
+
+
+def _split_missing_examples_from_existing_library(
+    *,
+    structured_dir: Path,
+    project_root: Path,
+    rows: list[dict[str, Any]],
+    dry_run: bool,
+) -> dict[str, Any]:
+    targets = _existing_sequence_gap_targets(rows)
+    stats: dict[str, Any] = {
+        "targeted": len(targets),
+        "raw_recovered": 0,
+        "split_from_existing_rows": 0,
+        "unmatched": 0,
+        "updated_source_blocks": 0,
+        "missing_ids": sorted([example_id for _, example_id in targets], key=natural_key),
+    }
+    if not targets:
+        return stats
+
+    context = build_structured_context(structured_dir)
+    existing_ids_by_chapter: dict[str, set[str]] = defaultdict(set)
+    for row in rows:
+        if not isinstance(row, dict):
+            continue
+        replacement = row.get("replacement") if isinstance(row.get("replacement"), dict) else {}
+        if replacement.get("status") == "restored":
+            continue
+        chapter = str(row.get("chapter") or "").strip().lower()
+        example_id = str(row.get("example_id") or "").strip()
+        if chapter and example_id:
+            existing_ids_by_chapter[chapter].add(example_id)
+
+    by_chapter: dict[str, set[str]] = defaultdict(set)
+    for chapter, example_id in targets:
+        by_chapter[chapter].add(example_id)
+
+    rows_to_append: list[dict[str, Any]] = []
+    placeholder_updates: dict[str, list[str]] = defaultdict(list)
+    for chapter, chapter_targets in sorted(by_chapter.items(), key=lambda item: chapter_sort_key(item[0])):
+        raw_items = recover_examples_from_paddle_raw(
+            project_root=project_root,
+            chapter=chapter,
+            context=context,
+            existing_ids=set(existing_ids_by_chapter.get(chapter, set())),
+            target_ids=chapter_targets,
+            skip_structured_matches=False,
+        )
+        stats["raw_recovered"] += len(raw_items)
+        for raw_item in raw_items:
+            matched: tuple[dict[str, Any], int, str] | None = None
+            _raw_table_refs_before_align = list(raw_item.table_refs)
+            _raw_content_before_align = raw_item.content_markdown
+            aligned_without_owner = _align_raw_candidate_to_structured_content(raw_item, structured_dir)
+            aligned_without_owner = _normalize_sequence_gap_alignment(
+                raw_item,
+                aligned_without_owner,
+                context=context,
+                structured_dir=structured_dir,
+            )
+            # Fix 5: preserve table placeholders from raw layout when alignment drops them
+            if aligned_without_owner is not None and _raw_table_refs_before_align and not aligned_without_owner.table_refs:
+                aligned_without_owner.table_refs = _raw_table_refs_before_align
+                aligned_without_owner.content_markdown = _raw_content_before_align
+                aligned_without_owner.metadata["has_table"] = True
+            for row in rows:
+                if str(row.get("chapter") or "").strip().lower() != chapter:
+                    continue
+                replacement = row.get("replacement") if isinstance(row.get("replacement"), dict) else {}
+                if replacement.get("status") == "restored":
+                    continue
+                content = str(row.get("content_markdown") or "")
+                anchor = _token_anchor_position(raw_item.content_plain, content)
+                if anchor is None:
+                    continue
+                _, anchor_text, _ = anchor
+                split_char = _content_char_for_anchor(content, anchor_text)
+                if split_char is None:
+                    continue
+                matched = (row, split_char, anchor_text)
+                break
+
+            if matched is None:
+                if aligned_without_owner is None:
+                    stats["unmatched"] += 1
+                    continue
+                raw_item = aligned_without_owner
+                raw_item.metadata = {
+                    **raw_item.metadata,
+                    "existing_library_sequence_gap_aligned_without_owner": True,
+                }
+                raw_item.evidence = {
+                    **raw_item.evidence,
+                    "detection_method": "sequence_gap_raw_layout_aligned_to_structured_block",
+                }
+                _refresh_candidate_metadata(raw_item)
+                example_ref = raw_item.example_id
+                if any(str(row.get("example_ref") or "") == example_ref for row in [*rows, *rows_to_append]):
+                    source_stem = Path(raw_item.source_file).stem
+                    example_ref = f"{raw_item.example_id}@{source_stem}_{raw_item.start_block_index}"
+                rows_to_append.append(_make_row_from_candidate(raw_item, example_ref=example_ref))
+                placeholder_updates[raw_item.source_file].append(f"[[SEE_EXAMPLE:{example_ref}]]")
+                stats["split_from_existing_rows"] += 1
+                continue
+
+            owner_row, split_char, anchor_text = matched
+            owner_content = str(owner_row.get("content_markdown") or "")
+            prefix = owner_content[:split_char].strip()
+            split_char = _expand_split_start_to_adjacent_placeholder(owner_content, split_char)
+            prefix = owner_content[:split_char].strip()
+            if not prefix:
+                stats["unmatched"] += 1
+                continue
+
+            aligned_item = _align_raw_candidate_to_structured_content(raw_item, structured_dir)
+            aligned_item = _normalize_sequence_gap_alignment(
+                raw_item,
+                aligned_item,
+                context=context,
+                structured_dir=structured_dir,
+            )
+            if aligned_item is not None:
+                # Fix 5: preserve table placeholders from raw layout when alignment drops them
+                if raw_item.table_refs and not aligned_item.table_refs:
+                    aligned_item.table_refs = raw_item.table_refs
+                    aligned_item.content_markdown = raw_item.content_markdown
+                    aligned_item.metadata["has_table"] = True
+                raw_item = aligned_item
+            else:
+                raw_item.source_file = str(owner_row.get("source_file") or raw_item.source_file)
+                raw_item.start_block_index = int(owner_row.get("start_block_index") or 0)
+                raw_item.end_block_index = int(owner_row.get("end_block_index") or raw_item.start_block_index)
+            raw_item.metadata = {
+                **raw_item.metadata,
+                "existing_library_split_from": owner_row.get("example_ref") or owner_row.get("example_id"),
+                "existing_library_split_anchor": anchor_text,
+            }
+            raw_item.evidence = {
+                **raw_item.evidence,
+                "detection_method": "sequence_gap_raw_layout_existing_library_split",
+                "split_from_example_ref": owner_row.get("example_ref") or owner_row.get("example_id"),
+            }
+            _refresh_candidate_metadata(raw_item)
+
+            owner_row["content_markdown"] = prefix
+            owner_row["content_plain"] = collapse_ws(strip_structured_refs(strip_html(prefix)))
+            owner_row["formula_refs"] = extract_formula_refs(prefix)
+            owner_row["table_refs"] = extract_table_refs(prefix)
+            owner_row["figure_refs"] = extract_figure_refs(prefix)
+            owner_row["external_refs"] = extract_external_refs(prefix)
+            owner_metadata = owner_row.get("metadata") if isinstance(owner_row.get("metadata"), dict) else {}
+            owner_row["metadata"] = {
+                **owner_metadata,
+                "has_formula": bool(owner_row["formula_refs"]),
+                "has_table": bool(owner_row["table_refs"]),
+                "has_figure": bool(owner_row["figure_refs"]),
+                "word_count": len(owner_row["content_plain"].split()) if owner_row["content_plain"] else 0,
+                "needs_review": looks_truncated(prefix),
+            }
+            owner_evidence = owner_row.get("evidence") if isinstance(owner_row.get("evidence"), dict) else {}
+            owner_row["evidence"] = {
+                **owner_evidence,
+                "existing_library_repair": "clipped_before_sequence_gap_example",
+                "clipped_before_example_id": raw_item.example_id,
+            }
+
+            example_ref = raw_item.example_id
+            if any(str(row.get("example_ref") or "") == example_ref for row in [*rows, *rows_to_append]):
+                source_stem = Path(raw_item.source_file).stem
+                example_ref = f"{raw_item.example_id}@{source_stem}_{raw_item.start_block_index}"
+            rows_to_append.append(_make_row_from_candidate(raw_item, example_ref=example_ref))
+            if aligned_item is None:
+                placeholder_updates[raw_item.source_file].append(str(owner_row.get("placeholder") or ""))
+                placeholder_updates[raw_item.source_file].append(f"[[SEE_EXAMPLE:{example_ref}]]")
+            else:
+                placeholder_updates[raw_item.source_file].append(f"[[SEE_EXAMPLE:{example_ref}]]")
+            stats["split_from_existing_rows"] += 1
+
+    if rows_to_append:
+        rows.extend(rows_to_append)
+        rows.sort(
+            key=lambda row: (
+                chapter_sort_key(str(row.get("chapter") or "")),
+                natural_key(str(row.get("source_file") or "")),
+                _safe_block_index(row.get("start_block_index")) or 0,
+                natural_key(str(row.get("example_ref") or row.get("example_id") or "")),
+            )
+        )
+
+    for source_file, placeholders in placeholder_updates.items():
+        path = structured_dir / source_file
+        if not path.exists():
+            continue
+        data = read_json(path)
+        blocks = data.get("blocks") if isinstance(data, dict) else None
+        if not isinstance(blocks, list):
+            continue
+        seen: list[str] = []
+        for placeholder in placeholders:
+            if placeholder and placeholder not in seen:
+                seen.append(placeholder)
+        if not seen:
+            continue
+        target_index = None
+        for index, block in enumerate(blocks):
+            if not isinstance(block, dict):
+                continue
+            if str(block.get("content") or "") in seen:
+                target_index = index
+                break
+        if target_index is None and len(seen) == 1:
+            placeholder = seen[0]
+            for row in rows_to_append:
+                if str(row.get("placeholder") or "") != placeholder:
+                    continue
+                block_index = _safe_block_index(row.get("start_block_index"))
+                if block_index is None:
+                    continue
+                metadata = row.get("metadata") if isinstance(row.get("metadata"), dict) else {}
+                if metadata.get("insert_placeholder_only"):
+                    if 0 < block_index <= len(blocks):
+                        previous_block = blocks[block_index - 1]
+                        previous_content = str(previous_block.get("content") or "") if isinstance(previous_block, dict) else ""
+                        previous_type = str(previous_block.get("type") or "") if isinstance(previous_block, dict) else ""
+                        if previous_type == "example" and EXAMPLE_PLACEHOLDER_RE.search(previous_content):
+                            if placeholder not in previous_content:
+                                previous_block["content"] = f"{previous_content.rstrip()} {placeholder}".strip()
+                                stats["updated_source_blocks"] += 1
+                            target_index = block_index - 1
+                    if target_index is None and block_index <= len(blocks):
+                        blocks[block_index:block_index] = [{"type": "example", "content": placeholder}]
+                        stats["updated_source_blocks"] += 1
+                        target_index = block_index
+                        for _row in rows:
+                            if str(_row.get("placeholder") or "") == placeholder:
+                                continue
+                            if str(_row.get("source_file") or "") != source_file:
+                                continue
+                            _s = _safe_block_index(_row.get("start_block_index"))
+                            _e = _safe_block_index(_row.get("end_block_index"))
+                            if _s is not None and _s >= block_index:
+                                _row["start_block_index"] = _s + 1
+                            if _e is not None and _e >= block_index:
+                                _row["end_block_index"] = _e + 1
+                            _repl = _row.get("replacement") if isinstance(_row.get("replacement"), dict) else {}
+                            _span = _repl.get("source_block_span")
+                            if isinstance(_span, list) and len(_span) == 2:
+                                _repl["source_block_span"] = [
+                                    _span[0] + 1 if _span[0] >= block_index else _span[0],
+                                    _span[1] + 1 if _span[1] >= block_index else _span[1],
+                                ]
+                                _row["replacement"] = _repl
+                    if target_index is not None:
+                        break
+                    continue
+                if block_index >= len(blocks):
+                    continue
+                block = blocks[block_index]
+                if not isinstance(block, dict):
+                    continue
+                content = str(block.get("content") or "")
+                start_char = _safe_block_index(metadata.get("replacement_start_char"))
+                end_char = _safe_block_index(metadata.get("replacement_end_char"))
+                if start_char is None or end_char is None or end_char <= start_char:
+                    continue
+                prefix = content[:start_char].strip()
+                suffix = content[end_char:].strip()
+                replacement_blocks = []
+                if prefix:
+                    replacement_blocks.append({**block, "content": prefix})
+                example_index = block_index + len(replacement_blocks)
+                replacement_blocks.append({"type": "example", "content": placeholder})
+                if suffix:
+                    replacement_blocks.append({**block, "content": suffix})
+                blocks[block_index : block_index + 1] = replacement_blocks
+                stats["updated_source_blocks"] += 1
+                target_index = example_index
+                # Fix 1: shift existing rows whose indexes are after the insertion point
+                _delta = len(replacement_blocks) - 1
+                if _delta != 0:
+                    for _row in rows:
+                        if str(_row.get("source_file") or "") != source_file:
+                            continue
+                        _s = _safe_block_index(_row.get("start_block_index"))
+                        _e = _safe_block_index(_row.get("end_block_index"))
+                        if _s is not None and _s > block_index:
+                            _row["start_block_index"] = _s + _delta
+                        if _e is not None and _e > block_index:
+                            _row["end_block_index"] = _e + _delta
+                        _repl = _row.get("replacement") if isinstance(_row.get("replacement"), dict) else {}
+                        _span = _repl.get("source_block_span")
+                        if isinstance(_span, list) and len(_span) == 2:
+                            _repl["source_block_span"] = [
+                                _span[0] + _delta if _span[0] > block_index else _span[0],
+                                _span[1] + _delta if _span[1] > block_index else _span[1],
+                            ]
+                            _row["replacement"] = _repl
+                break
+            if target_index is not None:
+                for row in rows_to_append:
+                    if str(row.get("placeholder") or "") not in seen:
+                        continue
+                    row["start_block_index"] = target_index
+                    row["end_block_index"] = target_index
+                    replacement = row.get("replacement") if isinstance(row.get("replacement"), dict) else {}
+                    row["replacement"] = {
+                        **replacement,
+                        "source_block_span": [target_index, target_index],
+                    }
+                if not dry_run:
+                    write_json(path, data)
+                continue
+        if target_index is None:
+            continue
+        # Fix 2: split joined placeholders into individual blocks
+        new_example_blocks = [{"type": "example", "content": ph} for ph in seen]
+        blocks[target_index : target_index + 1] = new_example_blocks
+        stats["updated_source_blocks"] += 1
+        # Fix 1 (cont): shift existing rows whose indexes are after the insertion point
+        _delta = len(new_example_blocks) - 1
+        if _delta != 0:
+            for _row in rows:
+                if str(_row.get("source_file") or "") != source_file:
+                    continue
+                _s = _safe_block_index(_row.get("start_block_index"))
+                _e = _safe_block_index(_row.get("end_block_index"))
+                if _s is not None and _s > target_index:
+                    _row["start_block_index"] = _s + _delta
+                if _e is not None and _e > target_index:
+                    _row["end_block_index"] = _e + _delta
+                _repl = _row.get("replacement") if isinstance(_row.get("replacement"), dict) else {}
+                _span = _repl.get("source_block_span")
+                if isinstance(_span, list) and len(_span) == 2:
+                    _repl["source_block_span"] = [
+                        _span[0] + _delta if _span[0] > target_index else _span[0],
+                        _span[1] + _delta if _span[1] > target_index else _span[1],
+                    ]
+                    _row["replacement"] = _repl
+        # Update rows_to_append to point to their individual blocks
+        for row in rows_to_append:
+            ph = str(row.get("placeholder") or "")
+            if ph not in seen:
+                continue
+            ph_index = target_index + seen.index(ph)
+            row["start_block_index"] = ph_index
+            row["end_block_index"] = ph_index
+            replacement = row.get("replacement") if isinstance(row.get("replacement"), dict) else {}
+            row["replacement"] = {
+                **replacement,
+                "source_block_span": [ph_index, ph_index],
+            }
+        if not dry_run:
+            write_json(path, data)
+    return stats
+
+
+def _status_counts_for_rows(rows: list[dict[str, Any]]) -> Counter[str]:
+    statuses = []
+    for row in rows:
+        replacement = row.get("replacement") if isinstance(row.get("replacement"), dict) else {}
+        statuses.append(str(replacement.get("status") or "unknown"))
+    return Counter(statuses)
+
+
+def _row_quality_score(row: dict[str, Any]) -> tuple[int, int, int, int]:
+    metadata = row.get("metadata") if isinstance(row.get("metadata"), dict) else {}
+    content = str(row.get("content_markdown") or row.get("content_plain") or "")
+    table_refs = row.get("table_refs") if isinstance(row.get("table_refs"), list) else extract_table_refs(content)
+    formula_refs = row.get("formula_refs") if isinstance(row.get("formula_refs"), list) else extract_formula_refs(content)
+    plain = collapse_ws(strip_structured_refs(strip_html(content)))
+    return (
+        0 if metadata.get("needs_review") else 1,
+        int(bool(table_refs)) * 2 + int(bool(formula_refs)),
+        len(plain.split()),
+        len(content),
+    )
+
+
+def _candidate_quality_score(item: ExampleCandidate) -> tuple[int, int, int, int]:
+    _refresh_candidate_metadata(item)
+    return (
+        0 if item.metadata.get("needs_review") else 1,
+        int(bool(item.table_refs)) * 2 + int(bool(item.formula_refs)),
+        len(item.content_plain.split()) if item.content_plain else 0,
+        len(item.content_markdown),
+    )
+
+
+def _replace_row_from_candidate(
+    row: dict[str, Any],
+    item: ExampleCandidate,
+    *,
+    reason: str,
+    evidence_patch: dict[str, Any] | None = None,
+) -> None:
+    _refresh_candidate_metadata(item)
+    preserved = {
+        key: row.get(key)
+        for key in ("example_ref", "placeholder", "replacement")
+        if key in row
+    }
+    row.clear()
+    row.update(item.to_dict())
+    row.update(preserved)
+    row.setdefault("example_ref", item.example_id)
+    row.setdefault("placeholder", f"[[SEE_EXAMPLE:{row['example_ref']}]]")
+    replacement = row.get("replacement") if isinstance(row.get("replacement"), dict) else {}
+    row["replacement"] = {
+        **replacement,
+        "status": replacement.get("status") or "replaced",
+        "reason": replacement.get("reason") or "placeholder_block_written",
+    }
+    evidence = row.get("evidence") if isinstance(row.get("evidence"), dict) else {}
+    row["evidence"] = {**evidence, "existing_library_repair": reason, **(evidence_patch or {})}
+
+
+def _has_current_example_callback_tail(example_id: str, content: str) -> bool:
+    example_id = str(example_id or "").strip()
+    if not example_id:
+        return False
+    for sentence in re.split(r"(?<=[.!?])\s+", str(content or "")):
+        if looks_like_post_example_body({"label": "text", "content": sentence}, example_id):
+            return True
+    return False
+
+
+def _content_mentions_numbered_table(content: str) -> bool:
+    return bool(
+        re.search(
+            r"\bTable\s+(?:A\d+|\d+)\.\d+[A-Za-z]?\b",
+            str(content or ""),
+            flags=re.IGNORECASE,
+        )
+    )
+
+
+def _raw_candidate_boundary_evidence(raw_item: ExampleCandidate, row: dict[str, Any]) -> dict[str, Any]:
+    before_content = str(row.get("content_markdown") or "")
+    before_plain = collapse_ws(strip_structured_refs(strip_html(before_content)))
+    raw_plain = collapse_ws(strip_structured_refs(strip_html(raw_item.content_markdown)))
+    before_words = len(before_plain.split())
+    raw_words = len(raw_plain.split())
+    evidence: dict[str, Any] = {
+        "before_word_count": before_words,
+        "raw_word_count": raw_words,
+        "evidence_codes": [],
+    }
+    if before_words <= 0 or raw_words <= 0:
+        return evidence
+    if raw_words + 16 >= before_words:
+        return evidence
+    before_tables = {str(ref) for ref in (row.get("table_refs") or [])}
+    raw_tables = set(raw_item.table_refs)
+    removed_tables = sorted(before_tables - raw_tables)
+    if removed_tables:
+        evidence["removed_table_refs"] = removed_tables
+    if before_tables - raw_tables and _content_mentions_numbered_table(before_content):
+        evidence["evidence_codes"].append("clips_numbered_table_from_example_body")
+    if raw_words >= 60 and before_words >= int(raw_words * 1.8):
+        raw_head = normalize_match_text(" ".join(raw_plain.split()[:16]))
+        before_head = normalize_match_text(" ".join(before_plain.split()[:24]))
+        if raw_head and raw_head in before_head and re.search(r"[.!?]\s*$", raw_item.content_markdown.strip()):
+            evidence["evidence_codes"].append("strong_shorter_raw_span_same_head_sentence_end")
+    if raw_words < max(20, int(before_words * 0.88)):
+        raw_tail = normalize_match_text(" ".join(raw_plain.split()[-12:]))
+        before_norm = normalize_match_text(before_plain)
+        tail_pos = before_norm.find(raw_tail) if raw_tail else -1
+        if tail_pos >= 0:
+            trailing = before_norm[tail_pos + len(raw_tail) :].strip()
+            evidence["trailing_after_raw_tail"] = " ".join(trailing.split()[:36])
+            if re.match(
+                r"^(?:the|this|these|those|as|when|while|if|because|can|where|using|larger|smaller|a|an)\b",
+                trailing,
+                flags=re.IGNORECASE,
+            ):
+                evidence["evidence_codes"].append("trailing_body_paragraph_after_raw_tail")
+            if re.match(r"^table\s+(?:a\d+|\d+)\.\d+\b", trailing, flags=re.IGNORECASE):
+                evidence["evidence_codes"].append("trailing_numbered_table_after_raw_tail")
+    evidence["evidence_codes"] = sorted(set(evidence["evidence_codes"]))
+    return evidence
+
+
+def _raw_candidate_is_boundary_improvement(raw_item: ExampleCandidate, row: dict[str, Any]) -> bool:
+    return bool(_raw_candidate_boundary_evidence(raw_item, row).get("evidence_codes"))
+
+
+def _raw_example_pages(project_root: Path, chapters: set[str]) -> dict[tuple[str, str], int]:
+    out: dict[tuple[str, str], int] = {}
+    for chapter in sorted(chapters, key=chapter_sort_key):
+        for record in ordered_paddle_records(project_root, chapter):
+            match = raw_example_start_match(record.content)
+            if not match:
+                continue
+            example_id = clean_example_id(match.group("example_id"))
+            if example_id and (chapter, example_id) not in out:
+                out[(chapter, example_id)] = record.page_index + 1
+    return out
+
+
+def _append_placeholder_to_unit(
+    structured_dir: Path,
+    source_file: str,
+    placeholder: str,
+    *,
+    dry_run: bool,
+) -> int | None:
+    path = structured_dir / source_file
+    if not path.exists():
+        return None
+    data = read_json(path)
+    blocks = data.get("blocks") if isinstance(data, dict) else None
+    if not isinstance(blocks, list):
+        return None
+    if any(isinstance(block, dict) and str(block.get("content") or "") == placeholder for block in blocks):
+        return None
+    new_index = len(blocks)
+    blocks.append({"type": "example", "content": placeholder})
+    if not dry_run:
+        write_json(path, data)
+    return new_index
+
+
+def _remove_placeholder_from_unit(
+    structured_dir: Path,
+    source_file: str,
+    placeholder: str,
+    *,
+    dry_run: bool,
+) -> bool:
+    path = structured_dir / source_file
+    if not path.exists():
+        return False
+    data = read_json(path)
+    blocks = data.get("blocks") if isinstance(data, dict) else None
+    if not isinstance(blocks, list):
+        return False
+    changed = False
+    new_blocks: list[Any] = []
+    for block in blocks:
+        if not isinstance(block, dict):
+            new_blocks.append(block)
+            continue
+        content = str(block.get("content") or "")
+        if content == placeholder:
+            changed = True
+            continue
+        if placeholder in content:
+            updated = collapse_ws(content.replace(placeholder, " "))
+            if updated:
+                new_block = dict(block)
+                new_block["content"] = updated
+                new_blocks.append(new_block)
+            changed = True
+            continue
+        new_blocks.append(block)
+    if not changed:
+        return False
+    data["blocks"] = new_blocks
+    if not dry_run:
+        write_json(path, data)
+    return True
+
+
+def _relocate_out_of_order_existing_examples(
+    *,
+    structured_dir: Path,
+    project_root: Path,
+    rows: list[dict[str, Any]],
+    dry_run: bool,
+) -> dict[str, int]:
+    stats = {"rows_scanned": 0, "rows_relocated": 0, "placeholders_moved": 0}
+    chapters = {str(row.get("chapter") or "").strip().lower() for row in rows if isinstance(row, dict)}
+    chapters = {chapter for chapter in chapters if chapter}
+    raw_pages = _raw_example_pages(project_root, chapters)
+    by_chapter: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for row in rows:
+        if not isinstance(row, dict):
+            continue
+        chapter = str(row.get("chapter") or "").strip().lower()
+        if chapter:
+            by_chapter[chapter].append(row)
+
+    context = build_structured_context(structured_dir)
+    for chapter, chapter_rows in by_chapter.items():
+        ordered_rows = sorted(
+            chapter_rows,
+            key=lambda row: natural_key(str(row.get("example_id") or row.get("example_ref") or "")),
+        )
+        for prev_row, row, next_row in zip(ordered_rows, ordered_rows[1:], ordered_rows[2:]):
+            stats["rows_scanned"] += 1
+            example_id = str(row.get("example_id") or row.get("example_ref") or "").strip()
+            prev_page = raw_pages.get((chapter, str(prev_row.get("example_id") or "").strip()))
+            page = raw_pages.get((chapter, example_id))
+            next_page = raw_pages.get((chapter, str(next_row.get("example_id") or "").strip()))
+            if page is None or prev_page is None or next_page is None:
+                continue
+            if not (prev_page <= page <= next_page):
+                continue
+            if page > prev_page + 1 or next_page < page + 3:
+                continue
+            prev_file = str(prev_row.get("source_file") or "")
+            current_file = str(row.get("source_file") or "")
+            next_file = str(next_row.get("source_file") or "")
+            if not prev_file or not current_file:
+                continue
+            if current_file == prev_file:
+                continue
+            if current_file != next_file:
+                continue
+            placeholder = str(row.get("placeholder") or f"[[SEE_EXAMPLE:{row.get('example_ref') or example_id}]]")
+            if not placeholder:
+                continue
+            next_placeholder = str(next_row.get("placeholder") or "")
+            current_path = structured_dir / current_file
+            if not current_path.exists():
+                continue
+            current_data = read_json(current_path)
+            current_blocks = current_data.get("blocks") if isinstance(current_data, dict) else None
+            if not isinstance(current_blocks, list) or not any(
+                isinstance(block, dict)
+                and placeholder in str(block.get("content") or "")
+                and next_placeholder
+                and next_placeholder in str(block.get("content") or "")
+                for block in current_blocks
+            ):
+                continue
+            if _remove_placeholder_from_unit(structured_dir, current_file, placeholder, dry_run=dry_run):
+                stats["placeholders_moved"] += 1
+            new_index = _append_placeholder_to_unit(structured_dir, prev_file, placeholder, dry_run=dry_run)
+            if new_index is not None:
+                stats["placeholders_moved"] += 1
+            row["source_file"] = prev_file
+            row["start_block_index"] = new_index
+            row["end_block_index"] = new_index
+            replacement = row.get("replacement") if isinstance(row.get("replacement"), dict) else {}
+            row["replacement"] = {**replacement, "source_block_span": [new_index, new_index]}
+            evidence = row.get("evidence") if isinstance(row.get("evidence"), dict) else {}
+            row["evidence"] = {
+                **evidence,
+                "existing_library_repair": "raw_order_placeholder_relocated",
+                "raw_source_page": page,
+                "relocated_from_source_file": current_file,
+            }
+            stats["rows_relocated"] += 1
+    if stats["rows_relocated"] and not dry_run:
+        write_example_library(structured_dir, rows)
+    return stats
+
+
+def _refresh_existing_rows_from_raw_layout(
+    *,
+    structured_dir: Path,
+    project_root: Path,
+    rows: list[dict[str, Any]],
+    dry_run: bool,
+) -> dict[str, int]:
+    stats = {
+        "chapters_scanned": 0,
+        "raw_candidates": 0,
+        "rows_replaced": 0,
+        "rows_improved_with_tables": 0,
+        "rows_boundary_clipped": 0,
+        "replacement_reason_counts": {},
+        "boundary_evidence_counts": {},
+        "review_queue_count": 0,
+    }
+    replacement_reason_counts: Counter[str] = Counter()
+    boundary_evidence_counts: Counter[str] = Counter()
+    review_queue: list[dict[str, Any]] = []
+    by_chapter: dict[str, set[str]] = defaultdict(set)
+    rows_by_identity: dict[tuple[str, str], dict[str, Any]] = {}
+    for row in rows:
+        chapter = str(row.get("chapter") or "").strip().lower()
+        example_id = str(row.get("example_id") or "").strip()
+        if not chapter or not example_id:
+            continue
+        by_chapter[chapter].add(example_id)
+        rows_by_identity[(chapter, example_id)] = row
+
+    context = build_structured_context(structured_dir)
+    for chapter, example_ids in sorted(by_chapter.items(), key=lambda item: chapter_sort_key(item[0])):
+        stats["chapters_scanned"] += 1
+        raw_items = recover_examples_from_paddle_raw(
+            project_root=project_root,
+            chapter=chapter,
+            context=context,
+            existing_ids=set(),
+            target_ids=example_ids,
+            skip_structured_matches=False,
+        )
+        stats["raw_candidates"] += len(raw_items)
+        for raw_item in raw_items:
+            row = rows_by_identity.get((chapter, raw_item.example_id))
+            if row is None:
+                continue
+            before_content = str(row.get("content_markdown") or "")
+            before_plain = collapse_ws(strip_structured_refs(strip_html(before_content)))
+            before_tables = {str(ref) for ref in (row.get("table_refs") or [])}
+            raw_tables = set(raw_item.table_refs)
+            boundary_evidence = _raw_candidate_boundary_evidence(raw_item, row)
+            should_replace = False
+            reason = "raw_layout_existing_library_refresh"
+            evidence_patch: dict[str, Any] = {}
+            if raw_tables - before_tables:
+                should_replace = True
+                stats["rows_improved_with_tables"] += 1
+                reason = "raw_layout_table_placeholders_added"
+                evidence_patch = {
+                    "raw_layout_refresh": {
+                        "evidence_codes": ["adds_missing_table_placeholders"],
+                        "before_word_count": len(before_plain.split()),
+                        "raw_word_count": len(raw_item.content_plain.split()),
+                        "added_table_refs": sorted(raw_tables - before_tables),
+                    }
+                }
+            elif (
+                len(raw_item.content_plain.split()) + 12 < len(before_plain.split())
+                and _has_current_example_callback_tail(raw_item.example_id, before_content)
+            ):
+                should_replace = True
+                stats["rows_boundary_clipped"] += 1
+                reason = "raw_layout_boundary_clipped"
+                evidence_patch = {
+                    "raw_layout_refresh": {
+                        "evidence_codes": ["clips_current_example_callback_tail"],
+                        "before_word_count": len(before_plain.split()),
+                        "raw_word_count": len(raw_item.content_plain.split()),
+                    }
+                }
+            elif boundary_evidence.get("evidence_codes"):
+                should_replace = True
+                stats["rows_boundary_clipped"] += 1
+                reason = "raw_layout_shorter_boundary_refresh"
+                evidence_patch = {"raw_layout_refresh": boundary_evidence}
+            elif _candidate_quality_score(raw_item) > _row_quality_score(row):
+                should_replace = True
+                evidence_patch = {
+                    "raw_layout_refresh": {
+                        "evidence_codes": ["quality_score_improved"],
+                        "before_word_count": len(before_plain.split()),
+                        "raw_word_count": len(raw_item.content_plain.split()),
+                        "before_quality_score": list(_row_quality_score(row)),
+                        "raw_quality_score": list(_candidate_quality_score(raw_item)),
+                        "added_table_refs": sorted(raw_tables - before_tables),
+                        "added_formula_refs": sorted(set(raw_item.formula_refs) - {str(ref) for ref in (row.get("formula_refs") or [])}),
+                    }
+                }
+            elif len(raw_item.content_plain.split()) + 16 < len(before_plain.split()):
+                review_queue.append(
+                    {
+                        "chapter": chapter,
+                        "example_id": raw_item.example_id,
+                        "source_file": raw_item.source_file,
+                        "before_word_count": len(before_plain.split()),
+                        "raw_word_count": len(raw_item.content_plain.split()),
+                        "reason": "raw_layout_shorter_without_strong_boundary_evidence",
+                    }
+                )
+
+            if not should_replace:
+                continue
+            replacement_reason_counts[reason] += 1
+            refresh_evidence = evidence_patch.get("raw_layout_refresh") if isinstance(evidence_patch, dict) else None
+            if isinstance(refresh_evidence, dict):
+                for code in refresh_evidence.get("evidence_codes") or []:
+                    boundary_evidence_counts[str(code)] += 1
+            _replace_row_from_candidate(row, raw_item, reason=reason, evidence_patch=evidence_patch)
+            stats["rows_replaced"] += 1
+
+    if stats["rows_replaced"] and not dry_run:
+        write_example_library(structured_dir, rows)
+    stats["replacement_reason_counts"] = dict(sorted(replacement_reason_counts.items()))
+    stats["boundary_evidence_counts"] = dict(sorted(boundary_evidence_counts.items()))
+    stats["review_queue_count"] = len(review_queue)
+    if review_queue:
+        stats["review_queue_sample"] = review_queue[:50]
+    return stats
+
+
+def _validate_example_library_indexes(
+    structured_dir: Path,
+    rows: list[dict[str, Any]],
+    *,
+    dry_run: bool,
+) -> dict[str, int]:
+    """Verify that each library row's block index actually points to its placeholder.
+
+    Corrects stale indexes by scanning blocks for the correct placeholder content.
+    Rows whose placeholder cannot be found at all are marked stale.
+    """
+    stats: dict[str, int] = {"scanned": 0, "correct": 0, "corrected": 0, "stale": 0}
+    by_file: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for row in rows:
+        if not isinstance(row, dict):
+            continue
+        replacement = row.get("replacement") if isinstance(row.get("replacement"), dict) else {}
+        if replacement.get("status") == "restored":
+            continue
+        source_file = str(row.get("source_file") or "")
+        if source_file:
+            by_file[source_file].append(row)
+
+    changed_any = False
+    for source_file, file_rows in by_file.items():
+        path = structured_dir / source_file
+        if not path.exists():
+            for row in file_rows:
+                stats["stale"] += 1
+            continue
+        data = read_json(path)
+        blocks = data.get("blocks") if isinstance(data, dict) else []
+        if not isinstance(blocks, list):
+            for row in file_rows:
+                stats["stale"] += 1
+            continue
+
+        # Build placeholder -> block_index map
+        placeholder_to_index: dict[str, int] = {}
+        for idx, block in enumerate(blocks):
+            if not isinstance(block, dict):
+                continue
+            content = str(block.get("content") or "")
+            if block.get("type") == "example" and "[[SEE_EXAMPLE:" in content:
+                for ph_match in re.finditer(r'\[\[SEE_EXAMPLE:[^\]]+\]\]', content):
+                    placeholder_to_index[ph_match.group(0)] = idx
+
+        for row in file_rows:
+            stats["scanned"] += 1
+            placeholder = str(row.get("placeholder") or "")
+            start_idx = _safe_block_index(row.get("start_block_index"))
+
+            # Check current index is valid
+            if (
+                start_idx is not None
+                and start_idx < len(blocks)
+                and isinstance(blocks[start_idx], dict)
+                and placeholder in str(blocks[start_idx].get("content") or "")
+            ):
+                stats["correct"] += 1
+                continue
+
+            # Search for correct index
+            correct_idx = placeholder_to_index.get(placeholder)
+            if correct_idx is not None:
+                row["start_block_index"] = correct_idx
+                row["end_block_index"] = correct_idx
+                repl = row.get("replacement") if isinstance(row.get("replacement"), dict) else {}
+                repl["source_block_span"] = [correct_idx, correct_idx]
+                row["replacement"] = repl
+                stats["corrected"] += 1
+                changed_any = True
+            else:
+                stats["stale"] += 1
+
+    if changed_any and not dry_run:
+        write_example_library(structured_dir, rows)
+    return stats
+
+
+def _repair_existing_example_library(
+    *,
+    structured_dir: Path,
+    project_root: Path,
+    rows: list[dict[str, Any]],
+    dry_run: bool,
+) -> dict[str, Any]:
+    false_heading_stats = _restore_false_example_rows(structured_dir, rows, dry_run=dry_run)
+    raw_refresh_stats = _refresh_existing_rows_from_raw_layout(
+        structured_dir=structured_dir,
+        project_root=project_root,
+        rows=rows,
+        dry_run=dry_run,
+    )
+    relocate_stats = _relocate_out_of_order_existing_examples(
+        structured_dir=structured_dir,
+        project_root=project_root,
+        rows=rows,
+        dry_run=dry_run,
+    )
+    split_stats = _split_missing_examples_from_existing_library(
+        structured_dir=structured_dir,
+        project_root=project_root,
+        rows=rows,
+        dry_run=dry_run,
+    )
+    # Fix 3: validate that library row indexes actually point to their placeholders
+    validation_stats = _validate_example_library_indexes(structured_dir, rows, dry_run=dry_run)
+    changed = (
+        false_heading_stats["source_blocks_restored"] > 0
+        or raw_refresh_stats["rows_replaced"] > 0
+        or relocate_stats["rows_relocated"] > 0
+        or split_stats["split_from_existing_rows"] > 0
+        or split_stats["updated_source_blocks"] > 0
+        or validation_stats["corrected"] > 0
+    )
+    if changed and not dry_run:
+        write_example_library(structured_dir, rows)
+    return {
+        "changed": changed,
+        "false_heading": false_heading_stats,
+        "raw_layout_refresh": raw_refresh_stats,
+        "raw_order_relocation": relocate_stats,
+        "sequence_gap_split": split_stats,
+        "index_validation": validation_stats,
+    }
+
+
+def _first_anchor(text: str, token_count: int = 10) -> str:
+    tokens = normalize_match_text(text).split()
+    if len(tokens) < token_count:
+        return ""
+    return " ".join(tokens[:token_count])
+
+
+def _find_reference_span(row: dict[str, Any], structured_dir: Path) -> tuple[str, int, int] | None:
+    chapter = str(row.get("chapter") or "").strip().lower()
+    content_markdown = str(row.get("content_markdown") or "")
+    anchor = _first_anchor(content_markdown)
+    if not chapter or not anchor:
+        return None
+
+    context = build_structured_context(structured_dir)
+    for path, data in context.units_by_chapter.get(chapter, []):
+        blocks = data.get("blocks") if isinstance(data.get("blocks"), list) else []
+        for block_index, block in enumerate(blocks):
+            if not isinstance(block, dict):
+                continue
+            if anchor in normalize_match_text(str(block.get("content") or "")):
+                return path.name, block_index, block_index
+    return None
+
+
+def _reference_rows_to_candidates(
+    *,
+    reference_structured_dir: Path | None,
+    structured_dir: Path,
+    reference_rows: list[dict[str, Any]],
+    existing_identities: set[tuple[str, str]],
+    allowed_example_ids: set[tuple[str, str]],
+) -> tuple[list[tuple[ExampleCandidate, str]], dict[str, int]]:
+    if reference_structured_dir is None:
+        return [], {"reference_rows": 0, "seeded": 0, "already_present": 0, "not_sequence_gap": 0, "unmatched": 0}
+
+    stats = {
+        "reference_rows": len(reference_rows),
+        "seeded": 0,
+        "already_present": 0,
+        "not_sequence_gap": 0,
+        "unmatched": 0,
+    }
+    seeded: list[tuple[ExampleCandidate, str]] = []
+    for row in reference_rows:
+        chapter, example_ref = _example_identity(row)
+        example_id = str(row.get("example_id") or "").strip()
+        if not chapter or not example_ref:
+            stats["unmatched"] += 1
+            continue
+        if (chapter, example_ref) in existing_identities:
+            stats["already_present"] += 1
+            continue
+        if (chapter, example_id) not in allowed_example_ids:
+            stats["not_sequence_gap"] += 1
+            continue
+        candidate = existing_library_row_to_candidate(row)
+        if candidate is None:
+            stats["unmatched"] += 1
+            continue
+        span = _find_reference_span(row, structured_dir)
+        if span is None:
+            stats["unmatched"] += 1
+            continue
+        source_file, start_block_index, end_block_index = span
+        candidate.source_file = source_file
+        candidate.start_block_index = start_block_index
+        candidate.end_block_index = end_block_index
+        candidate.evidence = {
+            **candidate.evidence,
+            "source": "reference_example_library+structured_blocks",
+            "detection_method": "reference_example_library_seed",
+            "reference_structured_dir": str(reference_structured_dir),
+        }
+        candidate.metadata = {
+            **candidate.metadata,
+            "reference_seed": True,
+        }
+        seeded.append((candidate, example_ref))
+        existing_identities.add((chapter, example_ref))
+        stats["seeded"] += 1
+    return seeded, stats
+
+
+def _reference_sequence_gap_targets(
+    automatic_rows: list[dict[str, Any]],
+    reference_rows: list[dict[str, Any]],
+) -> set[tuple[str, str]]:
+    numbers_by_group: dict[tuple[str, str], set[int]] = defaultdict(set)
+    automatic_example_ids: set[tuple[str, str]] = set()
+    for row in automatic_rows:
+        chapter = str(row.get("chapter") or "").strip().lower()
+        example_id = str(row.get("example_id") or "").strip()
+        parts = _example_number_parts(example_id)
+        if not chapter or parts is None:
+            continue
+        prefix, number = parts
+        numbers_by_group[(chapter, prefix)].add(number)
+        automatic_example_ids.add((chapter, example_id))
+
+    targets: set[tuple[str, str]] = set()
+    for row in reference_rows:
+        chapter = str(row.get("chapter") or "").strip().lower()
+        example_id = str(row.get("example_id") or "").strip()
+        parts = _example_number_parts(example_id)
+        if not chapter or parts is None or (chapter, example_id) in automatic_example_ids:
+            continue
+        prefix, number = parts
+        observed = numbers_by_group.get((chapter, prefix))
+        if not observed or len(observed) < 2:
+            continue
+        first = min(observed)
+        last = max(observed)
+        lower_bound = 1 if first <= 2 else first
+        if lower_bound <= number <= last:
+            targets.add((chapter, example_id))
+    return targets
+
+
+def _sequence_gap_targets_from_candidates(
+    candidates: list[ExampleCandidate],
+) -> dict[str, set[str]]:
+    numbers_by_group: dict[tuple[str, str], set[int]] = defaultdict(set)
+    for item in candidates:
+        parts = _example_number_parts(item.example_id)
+        if parts is None:
+            continue
+        prefix, number = parts
+        numbers_by_group[(item.chapter, prefix)].add(number)
+
+    targets: dict[str, set[str]] = defaultdict(set)
+    for (chapter, prefix), numbers in numbers_by_group.items():
+        if len(numbers) < 2:
+            continue
+        first = min(numbers)
+        last = max(numbers)
+        lower_bound = 1 if first <= 2 else first
+        for number in range(lower_bound, last + 1):
+            if number not in numbers:
+                targets[chapter].add(f"{prefix}.{number}")
+    return targets
+
+
+def _sequence_gap_target_set_from_candidates(candidates: list[ExampleCandidate]) -> set[tuple[str, str]]:
+    targets_by_chapter = _sequence_gap_targets_from_candidates(candidates)
+    return {
+        (chapter, example_id)
+        for chapter, example_ids in targets_by_chapter.items()
+        for example_id in example_ids
+    }
+
+
+def _copy_candidate(item: ExampleCandidate) -> ExampleCandidate:
+    return ExampleCandidate(
+        example_id=item.example_id,
+        chapter=item.chapter,
+        label=item.label,
+        title=item.title,
+        source_file=item.source_file,
+        start_block_index=item.start_block_index,
+        end_block_index=item.end_block_index,
+        block_ids=list(item.block_ids),
+        content_markdown=item.content_markdown,
+        content_plain=item.content_plain,
+        formula_refs=list(item.formula_refs),
+        table_refs=list(item.table_refs),
+        figure_refs=list(item.figure_refs),
+        external_refs=list(item.external_refs),
+        evidence=dict(item.evidence),
+        metadata=dict(item.metadata),
+        _order_key=item._order_key,
+    )
+
+
+def _placeholder_position_for_example(
+    *,
+    context: Any,
+    chapter: str,
+    example_id: str,
+) -> tuple[str, int, int] | None:
+    parts = _example_number_parts(example_id)
+    if parts is None:
+        return None
+    _, number = parts
+    ordered: list[tuple[int, str, int]] = []
+    for ref, file_name, block_index in context.placeholder_order.get(chapter, []):
+        ref_parts = _example_number_parts(ref)
+        if ref_parts is None or ref_parts[0] != parts[0]:
+            continue
+        ordered.append((ref_parts[1], file_name, block_index))
+    if not ordered:
+        return None
+    ordered.sort(key=lambda item: (item[0], natural_key(item[1]), item[2]))
+
+    before = [item for item in ordered if item[0] < number]
+    after = [item for item in ordered if item[0] > number]
+    if before:
+        _, file_name, block_index = before[-1]
+        return file_name, block_index + 1, 0
+    if after:
+        _, file_name, block_index = after[0]
+        return file_name, block_index, 0
+    return None
+
+
+def _candidate_as_insert_placeholder(
+    item: ExampleCandidate,
+    context: Any,
+) -> ExampleCandidate | None:
+    position = _placeholder_position_for_example(
+        context=context,
+        chapter=item.chapter,
+        example_id=item.example_id,
+    )
+    if position is None:
+        return None
+    source_file, insert_block, _ = position
+    inserted = _copy_candidate(item)
+    inserted.source_file = source_file
+    inserted.start_block_index = insert_block
+    inserted.end_block_index = insert_block
+    inserted.metadata = {
+        **inserted.metadata,
+        "insert_placeholder_only": True,
+        "replacement_start_char": 0,
+        "replacement_end_char": 0,
+    }
+    inserted.evidence = {
+        **inserted.evidence,
+        "detection_method": "sequence_gap_raw_layout_insert_placeholder",
+    }
+    inserted._order_key = (
+        chapter_sort_key(inserted.chapter),
+        natural_key(inserted.source_file),
+        inserted.start_block_index,
+        0,
+        natural_key(inserted.example_id),
+    )
+    return inserted
+
+
+def _candidate_sequence_position_for_example(
+    *,
+    item: ExampleCandidate,
+    candidates: list[ExampleCandidate],
+) -> tuple[str, int, int] | None:
+    parts = _example_number_parts(item.example_id)
+    if parts is None:
+        return None
+    prefix, number = parts
+    ordered: list[tuple[int, str, int, int]] = []
+    for candidate in candidates:
+        if candidate.chapter != item.chapter:
+            continue
+        candidate_parts = _example_number_parts(candidate.example_id)
+        if candidate_parts is None or candidate_parts[0] != prefix:
+            continue
+        candidate_number = candidate_parts[1]
+        start_char = _int_metadata(candidate, "replacement_start_char", 0) or 0
+        ordered.append((candidate_number, candidate.source_file, candidate.start_block_index, start_char))
+    if not ordered:
+        return None
+    ordered.sort(key=lambda entry: (entry[0], natural_key(entry[1]), entry[2], entry[3]))
+
+    before = [entry for entry in ordered if entry[0] < number]
+    after = [entry for entry in ordered if entry[0] > number]
+    if after:
+        _, file_name, block_index, start_char = after[0]
+        return file_name, block_index, start_char
+    if before:
+        _, file_name, block_index, _ = before[-1]
+        return file_name, block_index + 1, 0
+    return None
+
+
+def _candidate_as_sequence_insert_placeholder(
+    item: ExampleCandidate,
+    candidates: list[ExampleCandidate],
+) -> ExampleCandidate | None:
+    position = _candidate_sequence_position_for_example(item=item, candidates=candidates)
+    if position is None:
+        return None
+    source_file, insert_block, insert_char = position
+    inserted = _copy_candidate(item)
+    inserted.source_file = source_file
+    inserted.start_block_index = insert_block
+    inserted.end_block_index = insert_block
+    inserted.metadata = {
+        **inserted.metadata,
+        "insert_placeholder_only": True,
+        "replacement_start_char": insert_char,
+        "replacement_end_char": insert_char,
+        "sequence_gap_neighbor_insert": True,
+    }
+    inserted.evidence = {
+        **inserted.evidence,
+        "detection_method": "sequence_gap_raw_layout_neighbor_insert_placeholder",
+    }
+    inserted._order_key = (
+        chapter_sort_key(inserted.chapter),
+        natural_key(inserted.source_file),
+        inserted.start_block_index,
+        insert_char,
+        natural_key(inserted.example_id),
+    )
+    return inserted
+
+
+def _aligned_to_different_example_block(item: ExampleCandidate, aligned: ExampleCandidate, structured_dir: Path) -> bool:
+    path = structured_dir / aligned.source_file
+    if not path.exists():
+        return False
+    try:
+        data = read_json(path)
+    except Exception:
+        return False
+    blocks = data.get("blocks") if isinstance(data, dict) else []
+    if not isinstance(blocks, list):
+        return False
+    block_index = aligned.start_block_index
+    if block_index < 0 or block_index >= len(blocks):
+        return False
+    block = blocks[block_index]
+    if not isinstance(block, dict):
+        return False
+    content = str(block.get("content") or "")
+    title_match = EXAMPLE_TITLE_PREFIX_RE.search(content)
+    if title_match and clean_ref_id(title_match.group("example_id")).lower() != item.example_id.lower():
+        return True
+    if EXAMPLE_PLACEHOLDER_RE.search(content) and f"[[SEE_EXAMPLE:{item.example_id}]]" not in content:
+        return True
+    return False
+
+
+def _normalize_sequence_gap_alignment(
+    raw_item: ExampleCandidate,
+    aligned: ExampleCandidate | None,
+    *,
+    context: Any,
+    structured_dir: Path,
+    candidates: list[ExampleCandidate] | None = None,
+) -> ExampleCandidate | None:
+    if aligned is not None and not _aligned_to_different_example_block(raw_item, aligned, structured_dir):
+        return aligned
+    inserted = _candidate_as_insert_placeholder(raw_item, context)
+    if inserted is None and candidates is not None:
+        inserted = _candidate_as_sequence_insert_placeholder(raw_item, candidates)
+    if inserted is not None:
+        inserted.evidence = {
+            **inserted.evidence,
+            "alignment_rejected": "different_example_block",
+        }
+    return inserted
+
+
+def _refresh_candidate_metadata(item: ExampleCandidate) -> None:
+    item.content_markdown = normalize_heading_prefix(item.content_markdown)
+    content_plain = collapse_ws(strip_structured_refs(strip_html(item.content_markdown)))
+    item.content_plain = content_plain
+    item.title = collapse_ws(
+        re.sub(
+            r"^\s*Example\s+(?:A\d+|\d+)\.\d+[a-z]?\.\s*",
+            "",
+            item.content_markdown,
+            count=1,
+            flags=re.IGNORECASE,
+        )
+    )[:160].strip()
+    item.formula_refs = extract_formula_refs(item.content_markdown)
+    item.table_refs = extract_table_refs(item.content_markdown)
+    item.figure_refs = extract_figure_refs(item.content_markdown)
+    item.external_refs = extract_external_refs(item.content_markdown)
+    item.metadata = {
+        **item.metadata,
+        "has_formula": bool(item.formula_refs),
+        "has_table": bool(item.table_refs),
+        "has_figure": bool(item.figure_refs),
+        "word_count": len(content_plain.split()) if content_plain else 0,
+        "needs_review": looks_truncated(item.content_markdown),
+    }
+
+
+def _rebind_candidate_table_refs_to_source(item: ExampleCandidate, structured_dir: Path) -> None:
+    if not item.table_refs:
+        return
+    source_refs = source_table_refs(item.chapter, item.source_file, build_structured_context(structured_dir))
+    if not source_refs:
+        return
+    replacements: dict[str, str] = {}
+    source_iter = iter(source_refs)
+    for table_ref in item.table_refs:
+        if table_ref in source_refs:
+            continue
+        if not str(table_ref).lower().startswith("inline_"):
+            continue
+        replacement = next(source_iter, None)
+        if replacement is None:
+            break
+        replacements[table_ref] = replacement
+    if not replacements:
+        return
+    for old, new in replacements.items():
+        item.content_markdown = item.content_markdown.replace(f"[[TABLE:{old}]]", f"[[TABLE:{new}]]")
+    item.evidence = {
+        **item.evidence,
+        "table_ref_rebinding": replacements,
+    }
+    _refresh_candidate_metadata(item)
+
+
+def _apply_reference_table_refs(item: ExampleCandidate, row: dict[str, Any] | None) -> None:
+    if not isinstance(row, dict):
+        return
+    reference_refs = row.get("table_refs") if isinstance(row.get("table_refs"), list) else []
+    reference_refs = [str(ref).strip() for ref in reference_refs if str(ref).strip()]
+    if not reference_refs:
+        return
+    current_refs = item.table_refs
+    if current_refs == reference_refs:
+        return
+
+    replacements = iter(reference_refs)
+
+    def repl(match: re.Match[str]) -> str:
+        replacement = next(replacements, None)
+        if replacement is None:
+            return match.group(0)
+        return f"[[TABLE:{replacement}]]"
+
+    updated = TABLE_PLACEHOLDER_RE.sub(repl, item.content_markdown, count=len(reference_refs))
+    if updated == item.content_markdown:
+        return
+    item.content_markdown = updated
+    item.evidence = {
+        **item.evidence,
+        "reference_table_refs": reference_refs,
+    }
+    _refresh_candidate_metadata(item)
+
+
+def _block_anchor_in_raw(
+    block_content: str,
+    raw_tokens: list[str],
+    *,
+    min_anchor_tokens: int = 6,
+) -> bool:
+    block_tokens = [token for token, _, _ in _token_spans(block_content)]
+    if len(block_tokens) < min_anchor_tokens:
+        return False
+    max_anchor_tokens = min(16, len(block_tokens))
+    for anchor_size in range(max_anchor_tokens, min_anchor_tokens - 1, -1):
+        for offset in range(0, min(8, len(block_tokens) - anchor_size + 1)):
+            anchor = block_tokens[offset : offset + anchor_size]
+            if _find_subsequence(raw_tokens, anchor) is not None:
+                return True
+    return False
+
+
+def _extend_aligned_span_forward(
+    *,
+    path: Path,
+    block_index: int,
+    raw_tokens: list[str],
+    context: Any | None = None,
+) -> tuple[int, int, int]:
+    del context
+    data = read_json(path)
+    blocks = data.get("blocks") if isinstance(data, dict) else []
+    if not isinstance(blocks, list):
+        return block_index, 0, 0
+
+    end_block_index = block_index
+    replacement_end_char = len(str(blocks[block_index].get("content") or "")) if block_index < len(blocks) and isinstance(blocks[block_index], dict) else 0
+    extended_blocks = 0
+    skipped_table_blocks = 0
+    cursor = block_index + 1
+    while cursor < len(blocks):
+        block = blocks[cursor]
+        if not isinstance(block, dict):
+            break
+        block_type = str(block.get("type") or "").strip().lower()
+        content = str(block.get("content") or "")
+        if block_type == "table":
+            skipped_table_blocks += 1
+            break
+        if block_type == "example" or EXAMPLE_PLACEHOLDER_RE.search(content):
+            break
+        if EXAMPLE_TITLE_PREFIX_RE.search(content):
+            break
+        if not _block_anchor_in_raw(content, raw_tokens):
+            break
+        end_block_index = cursor
+        replacement_end_char = len(content)
+        extended_blocks += 1
+        cursor += 1
+    return end_block_index, replacement_end_char, extended_blocks
+
+
+def _align_raw_candidate_to_structured_content(
+    item: ExampleCandidate,
+    structured_dir: Path,
+    *,
+    min_anchor_tokens: int = 8,
+) -> ExampleCandidate | None:
+    raw_tokens = _token_spans(item.content_plain)
+    if len(raw_tokens) < min_anchor_tokens:
+        return None
+    raw_token_values = [token for token, _, _ in raw_tokens]
+    search_start_offset = 0
+    expected_id_tokens = [token.lower() for token in re.findall(r"[0-9A-Za-z]+", item.example_id)]
+    if (
+        len(raw_token_values) > len(expected_id_tokens) + 1
+        and raw_token_values[0] == "example"
+        and raw_token_values[1 : 1 + len(expected_id_tokens)] == expected_id_tokens
+    ):
+        search_start_offset = 1 + len(expected_id_tokens)
+    else:
+        start_match = raw_example_start_match(item.content_markdown)
+        if start_match and clean_ref_id(start_match.group("example_id")).lower() == item.example_id.lower():
+            heading_end = start_match.end()
+            while heading_end < len(item.content_markdown) and item.content_markdown[heading_end].isspace():
+                heading_end += 1
+            for token_index, (_, start, _) in enumerate(raw_tokens):
+                if start >= heading_end:
+                    search_start_offset = token_index
+                    break
+    context = build_structured_context(structured_dir)
+    best_match: tuple[Path, int, str, int, int, int] | None = None
+    for path, block_index, content in context.block_locations.get(item.chapter, []):
+        content_tokens = _token_spans(content)
+        content_values = [token for token, _, _ in content_tokens]
+        for raw_offset in range(search_start_offset, len(raw_tokens) - min_anchor_tokens + 1):
+            anchor_tokens = raw_token_values[raw_offset : raw_offset + min_anchor_tokens]
+            content_offset = _find_subsequence(content_values, anchor_tokens)
+            if content_offset is None:
+                continue
+            raw_start_token = raw_offset
+            content_start_token = content_offset
+            while (
+                raw_start_token > 0
+                and content_start_token > 0
+                and raw_token_values[raw_start_token - 1] == content_values[content_start_token - 1]
+            ):
+                raw_start_token -= 1
+                content_start_token -= 1
+            start_char = content_tokens[content_start_token][1]
+            if start_char > 0:
+                while start_char < len(content) and content[start_char].isspace():
+                    start_char += 1
+            score = (natural_key(path.name), block_index, start_char, raw_offset)
+            if best_match is None or score < (natural_key(best_match[0].name), best_match[1], best_match[3], best_match[4]):
+                best_match = (path, block_index, content, start_char, raw_offset, content_offset)
+            break
+    if best_match is None:
+        return None
+
+    path, block_index, content, start_char, raw_offset, content_offset = best_match
+    if raw_offset > 0 and start_char > 0:
+        sentence_start = max(
+            content.rfind(". ", 0, start_char),
+            content.rfind("? ", 0, start_char),
+            content.rfind("! ", 0, start_char),
+        )
+        if sentence_start >= 0:
+            candidate_start = sentence_start + 2
+            gap = content[candidate_start:start_char]
+            if gap and len(gap) <= 3 and not gap.strip():
+                start_char = candidate_start
+    end_block_index, replacement_end_char, extended_blocks = _extend_aligned_span_forward(
+        path=path,
+        block_index=block_index,
+        raw_tokens=raw_token_values,
+    )
+    aligned = _copy_candidate(item)
+    aligned.source_file = path.name
+    aligned.start_block_index = block_index
+    aligned.end_block_index = end_block_index
+    aligned.metadata = {
+        **aligned.metadata,
+        "replacement_start_char": start_char,
+        "replacement_end_char": replacement_end_char,
+        "sequence_gap_recovery": True,
+    }
+    if extended_blocks:
+        aligned.metadata["sequence_gap_extended_blocks"] = extended_blocks
+    aligned.evidence = {
+        **aligned.evidence,
+        "detection_method": "sequence_gap_raw_layout_recovery",
+        "structured_anchor_offset": content_offset,
+        "raw_anchor_offset": raw_offset,
+    }
+    aligned._order_key = (
+        chapter_sort_key(aligned.chapter),
+        natural_key(aligned.source_file),
+        aligned.start_block_index,
+        start_char,
+        natural_key(aligned.example_id),
+    )
+    return aligned
+
+
+def _clip_candidate_at_next_example(
+    item: ExampleCandidate,
+    next_item: ExampleCandidate,
+) -> None:
+    if item.source_file != next_item.source_file:
+        return
+    item_end = _candidate_end_point(item)
+    next_start = _candidate_start_point(next_item)
+    if item.start_block_index > next_item.start_block_index or item_end <= next_start:
+        return
+    item.end_block_index = next_item.start_block_index
+    end_char = _int_metadata(next_item, "replacement_start_char")
+    if end_char is not None:
+        item.metadata["replacement_end_char"] = end_char
+    elif "replacement_end_char" in item.metadata:
+        item.metadata.pop("replacement_end_char", None)
+    item.evidence = {
+        **item.evidence,
+        "sequence_gap_boundary_clipped_before": next_item.example_id,
+    }
+
+
+def _apply_sequence_gap_boundaries(examples_with_refs: list[tuple[ExampleCandidate, str | None]]) -> None:
+    by_chapter_prefix: dict[tuple[str, str], list[ExampleCandidate]] = defaultdict(list)
+    for item, _ in examples_with_refs:
+        parts = _example_number_parts(item.example_id)
+        if parts is None:
+            continue
+        prefix, _ = parts
+        by_chapter_prefix[(item.chapter, prefix)].append(item)
+
+    for items in by_chapter_prefix.values():
+        ordered = sorted(
+            items,
+            key=lambda item: (
+                _example_number_parts(item.example_id)[1] if _example_number_parts(item.example_id) else 999999,
+                natural_key(item.source_file),
+                item.start_block_index,
+            ),
+        )
+        for left, right in zip(ordered, ordered[1:]):
+            _clip_candidate_at_next_example(left, right)
+
+
+def _recover_sequence_gap_examples(
+    *,
+    structured_dir: Path,
+    project_root: Path,
+    examples_with_refs: list[tuple[ExampleCandidate, str | None]],
+    allowed_example_ids: set[tuple[str, str]],
+    reference_rows_by_id: dict[tuple[str, str], dict[str, Any]],
+) -> tuple[list[tuple[ExampleCandidate, str | None]], dict[str, Any]]:
+    if not allowed_example_ids:
+        return [], {
+            "targeted": 0,
+            "raw_recovered": 0,
+            "aligned": 0,
+            "unaligned": 0,
+        }
+
+    existing_by_chapter: dict[str, set[str]] = defaultdict(set)
+    base_candidates = [item for item, _ in examples_with_refs]
+    for item in base_candidates:
+        existing_by_chapter[item.chapter].add(item.example_id)
+    targets_by_chapter: dict[str, set[str]] = defaultdict(set)
+    for chapter, example_id in allowed_example_ids:
+        targets_by_chapter[chapter].add(example_id)
+
+    recovered: list[tuple[ExampleCandidate, str | None]] = []
+    stats = {
+        "targeted": 0,
+        "raw_recovered": 0,
+        "aligned": 0,
+        "unaligned": 0,
+    }
+    context = build_structured_context(structured_dir)
+    for chapter, target_ids in sorted(targets_by_chapter.items(), key=lambda item: chapter_sort_key(item[0])):
+        missing_targets = {target for target in target_ids if target not in existing_by_chapter.get(chapter, set())}
+        if not missing_targets:
+            continue
+        stats["targeted"] += len(missing_targets)
+        raw_items = recover_examples_from_paddle_raw(
+            project_root=project_root,
+            chapter=chapter,
+            context=context,
+            existing_ids=set(existing_by_chapter.get(chapter, set())),
+            target_ids=missing_targets,
+            skip_structured_matches=False,
+        )
+        stats["raw_recovered"] += len(raw_items)
+        for raw_item in raw_items:
+            aligned = _align_raw_candidate_to_structured_content(raw_item, structured_dir)
+            aligned = _normalize_sequence_gap_alignment(
+                raw_item,
+                aligned,
+                context=context,
+                structured_dir=structured_dir,
+                candidates=base_candidates + [item for item, _ in recovered],
+            )
+            if aligned is None:
+                stats["unaligned"] += 1
+                continue
+            raw_table_refs = list(raw_item.table_refs)
+            raw_content = raw_item.content_markdown
+            if raw_table_refs and not aligned.table_refs:
+                aligned.table_refs = raw_table_refs
+                aligned.content_markdown = raw_content
+                aligned.metadata["has_table"] = True
+            _apply_reference_table_refs(aligned, reference_rows_by_id.get((chapter, aligned.example_id)))
+            _rebind_candidate_table_refs_to_source(aligned, structured_dir)
+            recovered.append((aligned, None))
+            existing_by_chapter[chapter].add(aligned.example_id)
+            stats["aligned"] += 1
+
+    if recovered:
+        examples_with_refs.extend(recovered)
+        examples_with_refs.sort(
+            key=lambda item: (
+                chapter_sort_key(item[0].chapter),
+                natural_key(item[0].source_file),
+                item[0].start_block_index,
+                _int_metadata(item[0], "replacement_start_char", 0) or 0,
+                natural_key(str(item[1] or item[0].example_id)),
+            )
+        )
+        _apply_sequence_gap_boundaries(examples_with_refs)
+        for item, _ in examples_with_refs:
+            _refresh_candidate_metadata(item)
+    return recovered, stats
+
+
+def _build_rows_and_replacements(
+    examples_with_refs: list[tuple[ExampleCandidate, str | None]],
+) -> tuple[list[dict[str, Any]], dict[str, list[ExampleCandidate]], dict[str, str]]:
+    id_counts = Counter(item.example_id for item, _ in examples_with_refs)
+    selected_keys, selection_reasons = select_non_overlapping_examples([item for item, _ in examples_with_refs])
+    example_refs: dict[str, str] = {}
+    for item, explicit_ref in examples_with_refs:
+        key = candidate_key(item)
+        example_refs[key] = str(explicit_ref or make_example_ref(item, id_counts))
+
+    library_rows: list[dict[str, Any]] = []
+    replace_by_file: dict[str, list[ExampleCandidate]] = defaultdict(list)
+    for item, _ in examples_with_refs:
+        key = candidate_key(item)
+        selected = key in selected_keys
+        status = "replaced" if selected else "skipped"
+        reason = "placeholder_block_written" if selected else selection_reasons.get(key, "not_selected")
+        library_rows.append(
+            example_to_library_row(
+                item,
+                example_ref=example_refs[key],
+                replacement_status=status,
+                replacement_reason=reason,
+            )
+        )
+        if selected:
+            replace_by_file[item.source_file].append(item)
+
+    return library_rows, replace_by_file, example_refs
+
+
+def _refresh_rows_after_replacement(
+    rows: list[dict[str, Any]],
+    replacement_stats: list[dict[str, Any]],
+) -> None:
+    remapped: dict[tuple[str, str], int] = {}
+    for stat in replacement_stats:
+        file_name = str(stat.get("file") or "")
+        mapping = stat.get("remapped_indexes") if isinstance(stat.get("remapped_indexes"), dict) else {}
+        for key, index in mapping.items():
+            try:
+                remapped[(file_name, str(key))] = int(index)
+            except (TypeError, ValueError):
+                continue
+
+    if not remapped:
+        return
+
+    for row in rows:
+        source_file = str(row.get("source_file") or "")
+        key = f"{source_file}#{row.get('start_block_index')}-{row.get('end_block_index')}#{row.get('example_id')}"
+        new_index = remapped.get((source_file, key))
+        if new_index is None:
+            continue
+        row["start_block_index"] = new_index
+        row["end_block_index"] = new_index
+        replacement = row.get("replacement") if isinstance(row.get("replacement"), dict) else {}
+        replacement["source_block_span"] = [new_index, new_index]
+        row["replacement"] = replacement
+
+
+def _safe_block_index(value: Any) -> int | None:
+    try:
+        index = int(value)
+    except (TypeError, ValueError):
+        return None
+    return index if index >= 0 else None
+
+
+def _existing_placeholder_stats(structured_dir: Path, rows: list[dict[str, Any]]) -> dict[str, int]:
+    by_file: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for row in rows:
+        source_file = str(row.get("source_file") or "")
+        if source_file:
+            by_file[source_file].append(row)
+
+    expected = 0
+    present = 0
+    missing = 0
+    invalid_source = 0
+    for source_file, file_rows in by_file.items():
+        path = structured_dir / source_file
+        if not path.exists():
+            invalid_source += len(file_rows)
+            continue
+        try:
+            data = read_json(path)
+        except Exception:
+            invalid_source += len(file_rows)
+            continue
+        blocks = data.get("blocks") if isinstance(data, dict) else None
+        if not isinstance(blocks, list):
+            invalid_source += len(file_rows)
+            continue
+
+        for row in file_rows:
+            replacement = row.get("replacement") if isinstance(row.get("replacement"), dict) else {}
+            if replacement.get("status") not in {None, "", "replaced"}:
+                continue
+            placeholder = str(row.get("placeholder") or "")
+            if not placeholder:
+                example_ref = str(row.get("example_ref") or row.get("example_id") or "")
+                placeholder = f"[[SEE_EXAMPLE:{example_ref}]]" if example_ref else ""
+            block_index = _safe_block_index(row.get("start_block_index"))
+            if not placeholder or block_index is None:
+                invalid_source += 1
+                continue
+            expected += 1
+            if block_index >= len(blocks):
+                missing += 1
+                continue
+            block = blocks[block_index]
+            content = str(block.get("content") or "") if isinstance(block, dict) else ""
+            block_type = str(block.get("type") or "") if isinstance(block, dict) else ""
+            if block_type == "example" and placeholder in content:
+                present += 1
+            else:
+                missing += 1
+
+    return {
+        "expected_placeholder_rows": expected,
+        "placeholder_blocks_present": present,
+        "placeholder_blocks_missing": missing,
+        "placeholder_rows_with_invalid_source": invalid_source,
+    }
+
+
+def _summarize_existing_example_library(
+    *,
+    structured_path: Path,
+    project_root: Path,
+    artifact_path: Path | None,
+    rows: list[dict[str, Any]],
+    before_hashes: dict[str, str | None],
+    before_blocks: int,
+    started: float,
+    dry_run: bool,
+) -> dict[str, Any]:
+    repair_stats = _repair_existing_example_library(
+        structured_dir=structured_path,
+        project_root=project_root,
+        rows=rows,
+        dry_run=dry_run,
+    )
+    # Fix 4: if rows have stale indexes (placeholder blocks missing), signal fallback to re-extraction
+    stale_count = repair_stats.get("index_validation", {}).get("stale", 0)
+    total = len(rows)
+    table_source_rebind_stats = _rebind_inline_table_sources_from_examples(
+        structured_path,
+        rows,
+        dry_run=dry_run,
+    )
+    status_counts = _status_counts_for_rows(rows)
+    placeholder_stats = _existing_placeholder_stats(structured_path, rows)
+    split_stats = repair_stats.get("sequence_gap_split", {}) if isinstance(repair_stats.get("sequence_gap_split"), dict) else {}
+    row_sequence_targets = _missing_raw_sequence_targets(project_root=project_root, rows=rows)
+    current_row_ids = {
+        (
+            str(row.get("chapter") or "").strip().lower(),
+            str(row.get("example_id") or "").strip(),
+        )
+        for row in rows
+        if isinstance(row, dict)
+        and str(row.get("chapter") or "").strip()
+        and str(row.get("example_id") or "").strip()
+        and (row.get("replacement") if isinstance(row.get("replacement"), dict) else {}).get("status") != "restored"
+    }
+    unresolved_split_targets = {
+        (chapter, example_id)
+        for chapter, example_id in row_sequence_targets
+        if (chapter, example_id) not in current_row_ids
+    }
+    fallback_reasons: list[str] = []
+    if placeholder_stats.get("placeholder_blocks_missing", 0) > 0:
+        fallback_reasons.append("placeholder_blocks_missing")
+    if unresolved_split_targets:
+        fallback_reasons.append("raw_sequence_gap_missing_rows")
+    if fallback_reasons:
+        return {
+            "_fallback_to_reextract": True,
+            "fallback_reasons": fallback_reasons,
+            "stale_count": stale_count,
+            "placeholder_stats": placeholder_stats,
+            "sequence_gap_split": split_stats,
+            "raw_sequence_gap_missing_ids": sorted(
+                [example_id for _, example_id in unresolved_split_targets],
+                key=natural_key,
+            ),
+            "total": total,
+        }
+    after_blocks = count_blocks(structured_path) if not dry_run else before_blocks
+    after_hashes = _library_hashes(structured_path)
+    summary = {
+        "schema": "example_pipeline_summary.v1",
+        "timestamp_utc": utc_now_iso(),
+        "structured_dir": str(structured_path),
+        "artifacts_dir": str(artifact_path) if artifact_path else None,
+        "dry_run": dry_run,
+        "existing_example_library_used": True,
+        "example_library_preserved": True,
+        "total_examples": len(rows),
+        "replacement_status_counts": dict(sorted(status_counts.items())),
+        "replaced_examples": status_counts.get("replaced", 0),
+        "skipped_examples": len(rows) - status_counts.get("replaced", 0),
+        "per_file_counts": [["example_library.json:existing_preserved", len(rows)]],
+        "replacement_stats": [],
+        "existing_library_repair_stats": repair_stats,
+        "table_source_rebind_stats": table_source_rebind_stats,
+        "blocks_before": before_blocks,
+        "blocks_after": after_blocks,
+        "blocks_removed_by_example_fold": before_blocks - after_blocks,
+        "existing_placeholder_stats": placeholder_stats,
+        "library_hashes_before": before_hashes,
+        "library_hashes_after": after_hashes,
+        "formula_library_changed": before_hashes.get("formula_library.json") != after_hashes.get("formula_library.json"),
+        "table_library_changed": before_hashes.get("table_library.json") != after_hashes.get("table_library.json"),
+        "elapsed_seconds": round(time.perf_counter() - started, 3),
+    }
+    _write_artifacts(artifact_path, summary, rows)
+    return summary
+
+
+def apply_example_pipeline(
+    structured_dir: str | Path,
+    *,
+    project_root: str | Path = PROJECT_ROOT,
+    reference_structured_dir: str | Path | None = None,
+    artifacts_dir: str | Path | None = None,
+    dry_run: bool = False,
+) -> dict[str, Any]:
+    """Extract examples, fold selected spans, and write ``example_library.json``.
+
+    The function mutates ``structured_dir`` unit files and
+    ``example_library.json`` unless ``dry_run`` is true. Formula libraries are
+    read only. Table libraries are normally read only, except for conservative
+    source-unit rebinding of inline tables that are explicitly owned by folded
+    examples.
+    """
+
+    started = time.perf_counter()
+    structured_path = Path(structured_dir).resolve()
+    reference_path = Path(reference_structured_dir).resolve() if reference_structured_dir else None
+    artifact_path = Path(artifacts_dir).resolve() if artifacts_dir else None
+    before_hashes = _library_hashes(structured_path)
+    before_blocks = count_blocks(structured_path)
+
+    existing_rows = _load_existing_example_library_rows(structured_path)
+    if existing_rows:
+        result = _summarize_existing_example_library(
+            structured_path=structured_path,
+            project_root=Path(project_root).resolve(),
+            artifact_path=artifact_path,
+            rows=existing_rows,
+            before_hashes=before_hashes,
+            before_blocks=before_blocks,
+            started=started,
+            dry_run=dry_run,
+        )
+        # Fix 4: if repair found too many stale rows, delete library and re-extract
+        if isinstance(result, dict) and result.get("_fallback_to_reextract"):
+            lib_path = structured_path / "example_library.json"
+            if lib_path.exists() and not dry_run:
+                lib_path.unlink()
+            # fall through to extraction path below
+        else:
+            return result
+
+    all_examples, per_file_counts, _ = extract_examples_for_structured_dir(
+        structured_path,
+        project_root=Path(project_root).resolve(),
+    )
+    examples_with_refs: list[tuple[ExampleCandidate, str | None]] = [(item, None) for item in all_examples]
+
+    automatic_rows, _, _ = _build_rows_and_replacements(examples_with_refs)
+    existing_identities = {_example_identity(row) for row in automatic_rows}
+    reference_rows = _load_existing_example_library_rows(reference_path) if reference_path else []
+    allowed_reference_ids = _reference_sequence_gap_targets(automatic_rows, reference_rows)
+    candidate_gap_ids = _sequence_gap_target_set_from_candidates([item for item, _ in examples_with_refs])
+    if candidate_gap_ids:
+        candidate_chapters = {chapter for chapter, _ in candidate_gap_ids}
+        raw_ids_by_chapter = _raw_example_ids_by_chapter(Path(project_root).resolve(), candidate_chapters)
+        allowed_reference_ids.update(
+            {
+                (chapter, example_id)
+                for chapter, example_id in candidate_gap_ids
+                if example_id in raw_ids_by_chapter.get(chapter, set())
+            }
+        )
+    reference_rows_by_id = {
+        (str(row.get("chapter") or "").strip().lower(), str(row.get("example_id") or "").strip()): row
+        for row in reference_rows
+        if isinstance(row, dict)
+    }
+
+    sequence_gap_recovered, sequence_gap_stats = _recover_sequence_gap_examples(
+        structured_dir=structured_path,
+        project_root=Path(project_root).resolve(),
+        examples_with_refs=examples_with_refs,
+        allowed_example_ids=allowed_reference_ids,
+        reference_rows_by_id=reference_rows_by_id,
+    )
+    if sequence_gap_recovered:
+        per_file_counts.append(("sequence_gap_raw_layout_recovered", len(sequence_gap_recovered)))
+
+    automatic_rows, _, _ = _build_rows_and_replacements(examples_with_refs)
+    existing_identities = {_example_identity(row) for row in automatic_rows}
+    reference_seeded, reference_seed_stats = _reference_rows_to_candidates(
+        reference_structured_dir=reference_path,
+        structured_dir=structured_path,
+        reference_rows=reference_rows,
+        existing_identities=existing_identities,
+        allowed_example_ids=allowed_reference_ids,
+    )
+    if reference_seeded:
+        per_file_counts.append(("example_library.json:reference_seeded", len(reference_seeded)))
+        examples_with_refs.extend(reference_seeded)
+        examples_with_refs.sort(
+            key=lambda item: (
+                natural_key(item[0].source_file),
+                item[0].start_block_index,
+                natural_key(str(item[1] or item[0].example_id)),
+            )
+        )
+
+    library_rows, replace_by_file, example_refs = _build_rows_and_replacements(examples_with_refs)
+
+    replacement_stats: list[dict[str, Any]] = []
+    for file_name, examples in sorted(replace_by_file.items(), key=lambda item: natural_key(item[0])):
+        replacement_stats.append(
+            replace_examples_in_file(
+                structured_path / file_name,
+                examples,
+                example_refs,
+                dry_run=dry_run,
+            )
+        )
+    _refresh_rows_after_replacement(library_rows, replacement_stats)
+
+    write_example_library(structured_path, library_rows, dry_run=dry_run)
+    table_source_rebind_stats = _rebind_inline_table_sources_from_examples(
+        structured_path,
+        library_rows,
+        dry_run=dry_run,
+    )
+
+    after_blocks = count_blocks(structured_path) if not dry_run else before_blocks - sum(
+        item["removed_blocks"] for item in replacement_stats
+    )
+    after_hashes = _library_hashes(structured_path)
+    status_counts = Counter(row["replacement"]["status"] for row in library_rows)
+    summary = {
+        "schema": "example_pipeline_summary.v1",
+        "timestamp_utc": utc_now_iso(),
+        "structured_dir": str(structured_path),
+        "artifacts_dir": str(artifact_path) if artifact_path else None,
+        "dry_run": dry_run,
+        "existing_example_library_used": False,
+        "example_library_preserved": False,
+        "reference_structured_dir": str(reference_path) if reference_path else None,
+        "reference_seed_stats": reference_seed_stats,
+        "sequence_gap_recovery_stats": sequence_gap_stats,
+        "total_examples": len(library_rows),
+        "replacement_status_counts": dict(sorted(status_counts.items())),
+        "replaced_examples": status_counts.get("replaced", 0),
+        "skipped_examples": len(library_rows) - status_counts.get("replaced", 0),
+        "per_file_counts": per_file_counts,
+        "replacement_stats": replacement_stats,
+        "table_source_rebind_stats": table_source_rebind_stats,
+        "blocks_before": before_blocks,
+        "blocks_after": after_blocks,
+        "blocks_removed_by_example_fold": before_blocks - after_blocks,
+        "library_hashes_before": before_hashes,
+        "library_hashes_after": after_hashes,
+        "formula_library_changed": before_hashes.get("formula_library.json") != after_hashes.get("formula_library.json"),
+        "table_library_changed": before_hashes.get("table_library.json") != after_hashes.get("table_library.json"),
+        "elapsed_seconds": round(time.perf_counter() - started, 3),
+    }
+    _write_artifacts(artifact_path, summary, library_rows)
+    return summary

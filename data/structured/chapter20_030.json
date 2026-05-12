@@ -2,14 +2,21 @@
   "id": "chapter20_030",
   "metadata": {
     "chapter": "chapter20",
-    "section": "Detecting Genetic Trends",
+    "section": "Selection Response in Natural Populations: Introduction",
     "subsections": [
       "Detecting Genetic Trends"
     ],
     "source_file": "tmp\\paddle_output\\chapter20_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [],
-    "table_references": []
+    "table_references": [],
+    "section_level_1": "Selection Response in Natural Populations: Introduction",
+    "section_level_2": "Detecting Genetic Trends",
+    "heading_path": [
+      "Selection Response in Natural Populations: Introduction",
+      "Detecting Genetic Trends"
+    ],
+    "display_heading": "Detecting Genetic Trends"
   },
   "blocks": [
     {
@@ -37,8 +44,8 @@
       "content": "A final issue is that if one has individuals throughout the pedigree with missing parents, these are treated as de facto founders and their BVs come from a common distribution of those older individuals at the top of the pedigree that really are biologically founders. This effect will generally dampen any inferred trend in breeding values (M. Morrissey, pers. comm.)"
     },
     {
-      "type": "proposition",
-      "content": "Example 20.7. Milot et al. (2011) examined the evolution of age at first reproduction (AFR) of human settlers in the isolated island of ile aux Coudres in Québec. This island was populated by thirty families between 1720 and 1772. Because of careful church records, it has a very detailed chronicle of births, marriages, and deaths, which allowed the authors to construct a bivariate animal model for AFR and lifetime reproductive success (LRS). The latter is a proxy for total fitness and was defined in this study as the total number of a woman's offspring reaching age 15. The authors assumed a normal distribution for AFR but a latent Poisson model for LRS. Under this model (discussed in Chapter 14), the breeding value for AFR was defined on an underlying latent scale, with the distribution of LRS for an individual with a liability score of $ y = \\mu + A + e $ following a Poisson distribution with a mean of $ e^y $. MCMC methods were used in a Bayesian analysis of this bivariate model, which found significant heritability in both AFR and LRS (the latter as measured on the latent scale). Further, these two traits showed a significant negative genetic correlation (posterior mode of -0.81, 95% credible interval of -0.97 to -0.48). Thus, Robertson's theorem (Equation 6.24a) suggests direct selection to reduce the age of first reproduction, which declined from $ \\sim $26 to $ \\sim $22 years over a 140-year period. The regression of predicted breeding value over time (measured as eight 20-year cohorts) is given in Figure 20.8, with the diamonds representing the average of 1,000 MCMC samples from the marginal posterior ($ \\pm $ their standard errors). As also shown in Figure 20.8, the authors tested whether this trend could be due to drift, using the approach suggested by Hadfield et al. (2010) discussed above. Given the posterior distribution of the additive variance for AFR, RBVs were generated over the known pedigree, and the regression of the RBVs over time was compared to that for PBVs for each run of the sampler. The proportion of times during which the absolute regression slope of the RBVs exceeded the slope based on PBVs was taken as the posterior probability that the response is due to drift, and was found to be less than 0.01. The average slope for RBVs is given by the solid line in Figure 20.8."
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:20.7]]"
     }
   ]
 }

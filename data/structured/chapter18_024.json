@@ -2,50 +2,37 @@
   "id": "chapter18_024",
   "metadata": {
     "chapter": "chapter18",
-    "section": "Chapter 18: Control Populations and Variance in Response",
+    "section": "Analysis of Short-term Selection Experiments: 1. Least-squares Approaches",
     "subsections": [
-      "Control Populations and Variance in Response"
+      "OPTIMAL EXPERIMENTAL DESIGNS"
     ],
     "source_file": "tmp\\paddle_output\\chapter18_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [
-      "18.31a",
-      "18.31b",
-      "18.32a",
-      "18.32b",
-      "18.32c"
+      "18.33"
     ],
     "table_references": [
-      "18.7"
+      "18.8"
     ],
+    "section_level_1": "Analysis of Short-term Selection Experiments: 1. Least-squares Approaches",
+    "section_level_2": "OPTIMAL EXPERIMENTAL DESIGNS",
+    "heading_path": [
+      "Analysis of Short-term Selection Experiments: 1. Least-squares Approaches",
+      "OPTIMAL EXPERIMENTAL DESIGNS"
+    ],
+    "display_heading": "OPTIMAL EXPERIMENTAL DESIGNS",
     "table_reference_keys": [
-      "chapter18:18.7"
+      "chapter18:18.8"
     ]
   },
   "blocks": [
     {
       "type": "derivation",
-      "content": "When does using a control population in a undirectional selection experiment reduce the variance in response? Equation 18.30a, along with the coefficients from [[SEE_TABLE:18.7]], gives the expected variance with and without the use of a control. Assuming $ M = M_s = M_c $ and $ N = N_s = N_c $, this equation yields [[SEE_FORMULA:18.31a]]"
+      "content": "As Equation 18.31b illustrates, it is not entirely obvious which design is optimal. What in general can we say? The coefficient of variation (CV) of the selection response [[SEE_FORMULA:18.33]] is especially useful in comparing efficiencies of different designs, as it is independent of $ \\sigma_{z}^{2} $. Further, it provides an appropriate measure of comparative efficiencies when the expected response differs between designs. [[SEE_TABLE:18.8]] gives expressions for the CV under some simplifying assumptions. The coefficient of variation is a function of $ tN $, the total number of adults selected during the course of the experiment, provided drift variance dominates the error variance. A short experiment with many selected adults per generation thus gives the same expected CV as a longer experiment with fewer adults per generation (provided the total numbers, $ tN $, are the same). However, if the error variance is nontrivial relative to the drift variance (as would be expected if $ h^{2} $ is small), increasing the duration of the experiment results in some improvement in precision (Hill 1980). As an example of using the CV of response, consider unidirectional selection without a control population versus divergent selection. Which is more efficient if the same total number of adults are selected (e.g., $ N $ under unidirectional selection and $ N_d = N_u = N/2 $ under divergent selection)? If there is no between-generation environmental variance, then both designs are equally efficient, while divergent selection is more efficient if $ \\sigma_b^2 > 0 $."
     },
     {
-      "type": "derivation",
-      "content": "Assuming the between-line drift variance dominates (terms involving M can be ignored), the condition for the variance in response with a control to be larger than the response without one is approximately [[SEE_FORMULA:18.31b]]"
-    },
-    {
-      "type": "discussion",
-      "content": "Hence, regardless of the value of $ \\sigma_{b}^{2} $, if sufficient generations are used, the optimal design (in terms of giving the smallest expected variance in response) is not to use a control. However, this approach runs the risk that an undetected directional environmental trend will"
-    },
-    {
-      "type": "derivation",
-      "content": "Selection in a single direction with a control line. [[SEE_FORMULA:18.32a]]"
-    },
-    {
-      "type": "derivation",
-      "content": "Selection in a single direction without a control line. [[SEE_FORMULA:18.32b]]"
-    },
-    {
-      "type": "derivation",
-      "content": "Divergent selection without a control line. [[SEE_FORMULA:18.32c]] compromise the estimated heritability. Thus, the cost from to an increase in SE when using a control seems very worth enduring in many cases, given the more general benefits of having one or more control lines."
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:18.7]]"
     }
   ]
 }

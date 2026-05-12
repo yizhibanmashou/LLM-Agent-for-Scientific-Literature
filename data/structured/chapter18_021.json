@@ -2,51 +2,37 @@
   "id": "chapter18_021",
   "metadata": {
     "chapter": "chapter18",
-    "section": "Chapter 18: Basic Theory of Control Populations",
+    "section": "Analysis of Short-term Selection Experiments: 1. Least-squares Approaches",
     "subsections": [
-      "Basic Theory of Control Populations"
+      "Divergent Selection Designs"
     ],
     "source_file": "tmp\\paddle_output\\chapter18_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [
-      "18.23a",
-      "18.23b",
-      "18.24a",
-      "18.24b",
-      "18.25b",
-      "18.25c",
-      "18.25d"
+      "18.26a",
+      "18.26b",
+      "18.27a",
+      "18.27b",
+      "18.27c",
+      "18.27d"
     ],
-    "table_references": []
+    "table_references": [],
+    "section_level_1": "Analysis of Short-term Selection Experiments: 1. Least-squares Approaches",
+    "section_level_2": "Divergent Selection Designs",
+    "heading_path": [
+      "Analysis of Short-term Selection Experiments: 1. Least-squares Approaches",
+      "Divergent Selection Designs"
+    ],
+    "display_heading": "Divergent Selection Designs"
   },
   "blocks": [
     {
       "type": "derivation",
-      "content": "Assuming no genotype × environment interaction, the true mean of a line in generation t can be decomposed as $ \\mu + g_t + b_t $, where $ \\mu $ is the base population mean, $ g_t $ is the change in mean breeding value due to selection and drift, and $ b_t $ is the change in mean due to environmental change. Under this model, observed means, $ \\overline{z} $, for a selected (s) and control (c) population reared in a common environment can be decomposed as [[SEE_FORMULA:18.23a]] [[SEE_FORMULA:18.23b]] where $ e_t $ is the error in estimating the mean breeding value $ (\\mu + g_t) $ from the observed mean, corrected for the change in the environment $ (\\overline{z}_t - b_t) $, and has an expected value of 0."
+      "content": "A related approach is the divergent (or bidirectional) selection design, wherein one compares lines that were selected in opposite directions. Again assuming there are no significant genotype × environment interactions between lines, the basic statistical model for this design is [[SEE_FORMULA:18.26a]] [[SEE_FORMULA:18.26b]] where the subscripts u and d refer to the upwardly and downwardly selected lines, respectively. Using this design (and assuming that $ b_{u,t}=b_{d,t} $), the responses and differentials are estimated by [[SEE_FORMULA:18.27a]] [[SEE_FORMULA:18.27b]] [[SEE_FORMULA:18.27c]]"
     },
     {
       "type": "derivation",
-      "content": "Assuming that the breeder's equation holds, the expected total (i.e., cumulative) response at generation t is $ E[R_C(t)] = E[g_{s,t}] = h^2 S_C(t) $. Under drift alone, there is no expected directional change in the mean breeding value of the control population, $ E[g_{c,t}] = 0 $. If we assume that there are no genotype × environment interactions (i.e., $ b_{s,t} = b_{c,t} $), the contrast between the selected and control populations has an expected value of [[SEE_FORMULA:18.24a]]"
-    },
-    {
-      "type": "discussion",
-      "content": "If the control population is small, $ g_{c,t} $ can drift significantly away from zero, resulting in an overestimation (or underestimation) of the true selection response. If the goal is simply to remove an environmental trend, control populations should be kept as large as possible so that $ g_{c,t} $ is close to zero. However, as previously mentioned, control populations are also used in an attempt to correct for any effects of inbreeding depression. In such cases, the size of the control population is usually on par with that for the selected population, meaning that significant drift has likely occurred. In this setting, the use of a control population may introduce additional uncertainty in the estimate of the response (which may be more than compensated for by the control accounting for inbreeding depression and environmental trends)."
-    },
-    {
-      "type": "derivation",
-      "content": "If genotype $ \\times $ environmental interactions are present, then [[SEE_FORMULA:18.24b]] resulting in $ \\overline{z}_{s,t} - \\overline{z}_{c,t} $ being a potentially biased estimator of $ h^{2}S_{C}(t) $. In principle, if the environmental trends are positively correlated between populations, then the use of a control will still improve the estimate of the genetic trend. If they are negatively correlated, however, the use of a control can lead to a less accurate estimate than simply using a selected population without a control. As discussed in Chapter 19, mixed-model analyses may be able to provide some insights (as they estimate the $ b_{x,t} $), but they require extensive information (full pedigrees) and that the model assumptions hold."
-    },
-    {
-      "type": "derivation",
-      "content": "If a control population is used, the (per-generation, $ R_{t} $, and cumulative, $ R_{C}[t] $) responses and differentials are estimated by [[SEE_FORMULA:18.23a]] [[SEE_FORMULA:18.25b]] [[SEE_FORMULA:18.25c]] [[SEE_FORMULA:18.25d]] where $ \\overline{z}^{*} $ denotes the mean of the selected individuals. If selection differs between the sexes $$ S_{t}=\\frac{S_{t}(m)+S_{t}(f)}{2} $$ where $ S_{t}(m) $ and $ S_{t}(f) $ are, respectively, the observed selection differentials on males and females."
-    },
-    {
-      "type": "discussion",
-      "content": "Muir (1986a, 1986b) has suggested that an analysis of covariance approach (along the lines of LW Equation 10.12) be used when extensive G × E is expected. In its simplest form, Muir's idea is to adjust the mean of the selected population in generation i by using the deviation of $ \\overline{z}_{c,i} $ from its grand mean over the course of the experiment, $ \\overline{z}_{c,\\cdot} $, namely $$ \\overline{{z}}_{s,i}^{\\prime}=\\overline{{z}}_{s,i}-\\beta\\big(\\overline{{z}}_{c,i}-\\overline{{z}}_{c,.}\\big) $$"
-    },
-    {
-      "type": "discussion",
-      "content": "If there is no genotype × environment interaction (so that the environmental effect at time i has the same influence on both the selected and control lines), then $ \\beta = 1 $ and we recover our previous results. However, if there is $ G \\times E $, such that the environmental deviation influences the control differently from the selected population, then this expression provides a less biased correction than simply subtracting off the mean of the control. Note that this covariate approach at least partly corrects for the most extreme case, namely that in which the environmental effect results in different signs in the control and selective populations ($ \\beta < 0 $)."
+      "content": "Again, the expected response (using Equations 18.27a and 18.27c for the response and selection differentials) is simply $ R = h^{2}S $. More generally, if $ S_{x,i} $ denotes the selection differential in line x at generation i, the total (cumulative) expected divergence between lines is [[SEE_FORMULA:18.27d]]"
     }
   ]
 }

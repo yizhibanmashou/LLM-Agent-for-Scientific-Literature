@@ -2,30 +2,44 @@
   "id": "chapter18_022",
   "metadata": {
     "chapter": "chapter18",
-    "section": "Chapter 18: Divergent Selection Designs",
+    "section": "Analysis of Short-term Selection Experiments: 1. Least-squares Approaches",
     "subsections": [
-      "Divergent Selection Designs"
+      "Variance in Response"
     ],
     "source_file": "tmp\\paddle_output\\chapter18_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [
-      "18.26a",
-      "18.26b",
-      "18.27a",
-      "18.27b",
-      "18.27c",
-      "18.27d"
+      "18.28",
+      "18.29",
+      "18.30a",
+      "18.30b"
     ],
-    "table_references": []
+    "table_references": [
+      "18.7"
+    ],
+    "section_level_1": "Analysis of Short-term Selection Experiments: 1. Least-squares Approaches",
+    "section_level_2": "Variance in Response",
+    "heading_path": [
+      "Analysis of Short-term Selection Experiments: 1. Least-squares Approaches",
+      "Variance in Response"
+    ],
+    "display_heading": "Variance in Response",
+    "table_reference_keys": [
+      "chapter18:18.7"
+    ]
   },
   "blocks": [
     {
       "type": "derivation",
-      "content": "A related approach is the divergent (or bidirectional) selection design, wherein one compares lines that were selected in opposite directions. Again assuming there are no significant genotype × environment interactions between lines, the basic statistical model for this design is [[SEE_FORMULA:18.26a]] [[SEE_FORMULA:18.26b]] where the subscripts u and d refer to the upwardly and downwardly selected lines, respectively. Using this design (and assuming that $ b_{u,t}=b_{d,t} $), the responses and differentials are estimated by [[SEE_FORMULA:18.27a]] [[SEE_FORMULA:18.27b]] [[SEE_FORMULA:18.27c]]"
+      "content": "Recall the pure-drift approximation for the variance (Equation 18.8) and the within-line covariance across generations (Equation 18.9) for the design of a single selected line. Here we present corresponding expressions for the selection plus control and divergence selection designs (assuming there are no genotype × environmental interactions between lines). For unidirectional selection plus a control population [[SEE_FORMULA:18.28]]"
     },
     {
       "type": "derivation",
-      "content": "Again, the expected response (using Equations 18.27a and 18.27c for the response and selection differentials) is simply $ R = h^{2}S $. More generally, if $ S_{x,i} $ denotes the selection differential in line x at generation i, the total (cumulative) expected divergence between lines is [[SEE_FORMULA:18.27d]]"
+      "content": "Similarly, for divergent selection [[SEE_FORMULA:18.29]] Because each term in Equations 18.28 and 18.29 is independent, applying Equations 18.4 and 18.5 yields a pure-drift approximation for the variance in response in generation t of [[SEE_FORMULA:18.30a]] and the covariance between generations within the same line [[SEE_FORMULA:18.30b]]"
+    },
+    {
+      "type": "table",
+      "content": "[[TABLE:18.7]]"
     }
   ]
 }

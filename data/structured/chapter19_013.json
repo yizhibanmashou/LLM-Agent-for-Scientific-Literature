@@ -2,7 +2,7 @@
   "id": "chapter19_013",
   "metadata": {
     "chapter": "chapter19",
-    "section": "Chapter 19: Separating Genetic and Environmental Trends",
+    "section": "Analysis of Short-term Selection Experiments: 2. Mixed-model and Bayesian Approaches: Introduction",
     "subsections": [
       "Separating Genetic and Environmental Trends"
     ],
@@ -13,7 +13,14 @@
       "19.10",
       "19.11"
     ],
-    "table_references": []
+    "table_references": [],
+    "section_level_1": "Analysis of Short-term Selection Experiments: 2. Mixed-model and Bayesian Approaches: Introduction",
+    "section_level_2": "Separating Genetic and Environmental Trends",
+    "heading_path": [
+      "Analysis of Short-term Selection Experiments: 2. Mixed-model and Bayesian Approaches: Introduction",
+      "Separating Genetic and Environmental Trends"
+    ],
+    "display_heading": "Separating Genetic and Environmental Trends"
   },
   "blocks": [
     {
@@ -49,28 +56,8 @@
       "content": "An alternative approach is to treat the $ b_i $ as random (as opposed to fixed) effects, drawn independently (i.e., uncorrelated across generations) from a normal distribution with a mean of zero and an unknown variance, $ \\sigma_b^2 $. The assumption of no environmental correlation between adjacent generations can be questionable (at best), and treating the $ b_i $ as fixed, rather than random, removes these concerns (although at a cost of absorbing more degrees of freedom than with a random-effects analysis)."
     },
     {
-      "type": "discussion",
-      "content": "Example 19.3. To examine the potential bias from $ G \\times E $ and drift in the control population, Blair and Pollak (1984) examined a seven-generation selection experiment on 14-month greasy fleece weight in sheep. The model they assumed was that the mth individual in generation t, with fixed sex effect (male/female), $ v_i $, fixed age of dam effect (mature/immature), $ d_j $, rearing rank effect (single/twin), $ r_k $, and year effect, $ b_t $, had a phenotypic value of $$ y_{i j k t m}=v_{i}+d_{j}+r_{k}+b_{t}+a_{t m}+e_{t m} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "In matrix form, $ \\mathbf{y} = \\mathbf{X} \\boldsymbol{\\beta} + \\mathbf{Z} \\mathbf{a} + \\mathbf{e} $, where the vector, $ \\boldsymbol{\\beta} $, contains the fixed effects for sex $ (v) $, dam age $ (d) $, and rearing rank $ (r) $, in addition to the effects for years $ (b) $. Both the selected and control lines were subjected to separate BLUP analyses using this model, and three different estimates of selection response were considered: (i) $ \\widehat{y}_{s,t} - \\widehat{y}_{c,t} $, the estimated phenotypic means following adjustment for the fixed effects $ (v, d, \\text{and } r) $, obtained by $ \\widehat{y}_{x,t} = \\widehat{a}_{x,t} + \\widehat{b}_{x,t} $, where $ x = c $ or $ s $, corresponding to the control and selection lines, respectively. This is an unbiased estimate of the response if there is no drift in the control population $ (\\overline{a}_{c,t} \\simeq 0) $ and no $ G \\times E $, so that $ b_{c,t} = b_{s,t} $."
-    },
-    {
-      "type": "discussion",
-      "content": "(ii) $ \\widehat{y}_{s,t} - \\widehat{b}_{c,t} $, the (fixed-effects-adjusted) phenotypic mean of the selected population minus the common environmental effect, as estimated from the control population."
-    },
-    {
-      "type": "discussion",
-      "content": "(iii) $ \\widehat{\\overline{a}}_{s,t} $, the BLUP estimate of the mean breeding value in the selected population."
-    },
-    {
-      "type": "discussion",
-      "content": "Estimate (i) mimics the estimate used in a least-squares analysis, and Blair and Pollak showed that it is independent of the assumed heritability. Estimates (ii) and (iii) are highly dependent on the assumed (or estimated) heritabilities in the control and selected populations. As Figure 9.2 reveals, all three estimates show a positive genetic trend (following a reversed response over the first few generations). As expected, the estimated response using only the predicted mean breeding value is smoother than the other two estimates."
-    },
-    {
-      "type": "discussion",
-      "content": "The potential biases in a least-squares analysis of these data based on the contrast between the control and selected phenotypic means are seen in the two lower graphs in Figure 19.2. The lower left graph plots the difference in the estimated common environmental effects between selected and control populations ($ \\widehat{b}_{ct} - \\widehat{b}_{st} $). Ignoring the inherent variance in estimating the $ \\widehat{b} $, the average difference (via a paired t test) is not significantly different from zero. The right-hand graph plots the predicted mean breeding value of the control population, which is assumed to be zero under the least-squares analysis. As can be seen, there is a slight, but positive, trend in the mean. When the selected mean is adjusted by subtracting from the control mean, the net result is that the LS analysis slightly underestimates the true response, $ \\overline{a}_{s,t} $. Thus, there is no evidence of error being introduced by $ G \\times E $ differences between the control and selected lines, but error is introduced if the mean breeding value of the control population departs significantly from zero."
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:19.3]]"
     }
   ]
 }

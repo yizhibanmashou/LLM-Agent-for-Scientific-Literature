@@ -2,58 +2,67 @@
   "id": "chapter14_008",
   "metadata": {
     "chapter": "chapter14",
-    "section": "Chapter 14: Direct Selection on the Threshold, T",
+    "section": "Short-term Changes in the Mean: 2. Truncation and Threshold Selection",
     "subsections": [
-      "The Logistic Regression Model for Binary Traits"
+      "BLUP Selection With Binary Data: Generalized Linear Mixed Models"
     ],
     "source_file": "tmp\\paddle_output\\chapter14_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [
-      "14.10a",
-      "14.10b",
-      "14.11a",
-      "14.11b",
-      "14.11c",
-      "14.12"
+      "14.13a",
+      "14.13b",
+      "14.13c",
+      "14.14a",
+      "14.14b",
+      "14.14c",
+      "14.15a",
+      "14.15b"
     ],
-    "table_references": []
+    "table_references": [],
+    "section_level_1": "Short-term Changes in the Mean: 2. Truncation and Threshold Selection",
+    "section_level_2": "BLUP Selection With Binary Data: Generalized Linear Mixed Models",
+    "heading_path": [
+      "Short-term Changes in the Mean: 2. Truncation and Threshold Selection",
+      "BLUP Selection With Binary Data: Generalized Linear Mixed Models"
+    ],
+    "display_heading": "BLUP Selection With Binary Data: Generalized Linear Mixed Models"
   },
   "blocks": [
     {
       "type": "derivation",
-      "content": "The threshold approach offers one model for mapping an underlying continuous liability, z, into a discrete character space, y (which is either zero or one, corresponding to trait absence or presence). This is a deterministic model, with all individuals with $ z \\geq T $ displaying the trait $ (y = 1) $, while all those with $ z < T $ do not display it $ (y = 0) $. A potentially more realistic model is that trait presence is stochastic, with the underlying liability, z, mapping onto a probability of displaying the trait, e.g., $ p(z) = \\text{Prob}(y = 1 \\mid z) $. Under the threshold model, this probability is 1.0 for $ z \\geq T $, and 0 otherwise. From a biological standpoint, one imagines that $ p(z) $ is a monotonically increasing function of z, approaching 0 for low values and 1 for high values. One reasonable candidate that satisfies these requirements is the logistic function, [[SEE_FORMULA:14.10a]] with $ \\ell(z) \\simeq 0 $ for $ z \\ll -1, \\simeq 1 $ for $ z \\gg 1 $, and $ \\ell(0) = 1/2 $. A more general version is [[SEE_FORMULA:14.10b]] which has a value of 0.5 at $ z = m $ and a scaling factor, $ \\alpha $, that sets the abruptness of the transition from low to high probability. The larger the value of $ \\alpha $, the more abrupt is the transition, approaching the threshold model for sufficiently large values (Figure 14.6). Equation 14.10b is often called a logistic regression."
-    },
-    {
-      "type": "discussion",
-      "content": "Biologically speaking, the logistic regression and threshold models may be viewed as essentially identical. To see this, recall that the threshold model very easily extends to the"
-    },
-    {
-      "type": "discussion",
-      "content": "case where T varies over individuals. In such cases, if the liability value of an individual is z, the trait will only be displayed if $ T \\leq z $. Now consider the logistic regression model where $ p(z) $ denotes the probability that an individual with a liability value of z displays the trait. One source of this stochasticity could simply be population variation in T, so that $ p(z) $ can be viewed as the cumulative distribution function (cdf; LW Chapter 2) for the threshold value T, e.g., $ p(z) = \\Pr(T \\leq z) $. In this case, a fraction, $ p(z) $, of individuals with a liability of z are above the threshold, and hence display the trait."
+      "content": "Animal breeders routinely use the general linear mixed model to obtain BLUP estimates of breeding values for normally distributed traits, where the expected value of the phenotype, $ y_{i} $, of individual i can be written as [[SEE_FORMULA:14.13a]]"
     },
     {
       "type": "derivation",
-      "content": "If the logistic gives the cdf of random threshold values, then the logistic distribution, $ \\phi(x, \\alpha, m) $, gives the actual distribution of T. From the definition of a cumulative distribution function, [[SEE_FORMULA:14.11a]]"
+      "content": "Here $ A_i $ is an individual's breeding value and the $ \\beta_k $ are fixed effects (such as adjustments for age and sex, whose values in individual $ i $ are given by the $ x_{k,i} $). A particular realization (i.e., a scored phenotype) from this individual can be written as [[SEE_FORMULA:14.13b]] where the residual, $ e_{i} $, is normally distributed with a mean of zero, implying that $ y_{i} $ is also normally distributed. Putting these together, an observation from individual i can be written as [[SEE_FORMULA:14.13c]] As described in Chapters 13, 19, 20, and LW Chapters 26 and 27, in addition to its observed phenotype, $ y_{i} $, additional information to estimate $ A_{i} $ is borrowed from the y values of relatives through the relationship matrix A. In a selection scheme, those individuals with the largest estimated A values are then chosen to form the next generation."
+    },
+    {
+      "type": "discussion",
+      "content": "This same strategy can be extended to cases where the mean $ \\mu_i $ is not a simple linear function of $ A_i $ and where the residual error is not normally distributed. In particular, the phenotype, $ y_i $, of a binary trait takes on a value of either 0 or 1. The expected value of $ y_i $ is just the probability of displaying the trait, i.e., the trait is Bernoulli-distributed (a binomial with a single draw), so that $ y_i $ is either 0 or 1 given this mean $ \\mu_i $ (its success parameter in the Bernoulli). Equation 14.13a is generally not applicable in this setting as $ \\mu_i $ is constrained (being a probability) to the 0 to 1 range, while no such constraints occur on Equation 14.13a. A second issue is that the residual error structure is not normal."
+    },
+    {
+      "type": "discussion",
+      "content": "The solution to both satisfying this constraint and using the correct residual distribution relies on the use of generalized (as opposed to general) linear mixed models. These extend Equation 14.13c to cases where the expected value of y conditioned on the variables of interest is not a linear function of breeding value, and the residuals about this expected value are not necessarily normal (Bolker et al. 2009; de Villemereuil et al. 2016). The basic structure of a generalized linear model can be thought of as an extension of the liability model to more general functions."
     },
     {
       "type": "derivation",
-      "content": "Taking derivatives of both sides yields [[SEE_FORMULA:14.11b]]"
+      "content": "Let the liability value $ (z_{i}) $ for individual i be some linear function of the breeding value, $ A_{i} $, an environmental value, $ E_{i} $, plus (potentially) fixed effects, [[SEE_FORMULA:14.14a]] which is mapped onto a mean trait value, y, by a monotonic function, g. Specifically, the conditional expectation of y given z is [[SEE_FORMULA:14.14b]] where [[SEE_FORMULA:14.14c]]"
+    },
+    {
+      "type": "discussion",
+      "content": "The inverse $ g^{-1} $ is called the link function, as it transforms the conditional expectation into a linear model. The function g imposes the desired constraint on the mean of y, mapping some unconstrained value, z, into the desired constraint space (such as 0 to 1)."
     },
     {
       "type": "derivation",
-      "content": "Johnson and Kotz (1970b) gave the first three moments of this distribution as [[SEE_FORMULA:14.11c]] As shown in Figure 14.7, the normal and logistic distributions have very similar cumulative distribution functions. Indeed, for a unit normal random variable, U, [[SEE_FORMULA:14.12]]"
+      "content": "For binary data, Equation 14.14b becomes $ E[y|z]=g(z)=p(z) $, where $ p(z)=\\Pr(y=1|z) $, the success parameter, with y following a Bernoulli distribution. Thus, we desire some function that maps the underlying liability, z, onto a value, $ p(z) $, constrained to the space $ [0,1] $. As we have seen, one candidate function is the simple logistic function, $ \\ell(z) $ (Equation 14.10a). The corresponding link function (Equation 14.14c), which is the inverse of the logistic function, is given by the logit function, defined as [[SEE_FORMULA:14.15a]] namely, the log of the odds ratio (probability of the trait being present divided by probability that the trait is absent). If $ \\ell(z) = p $, then $ \\logit(p) = z $, so that a logit-transformed p value recovers the liability value, [[SEE_FORMULA:14.15b]]"
     },
     {
       "type": "discussion",
-      "content": "which is the logistic distribution with a variance of 1 (see Equation 14.11c)."
+      "content": "Under this framework, BLUP selection for individuals with the highest breeding values for a binary trait proceeds by taking the 0/1 binary data from a set of individuals (along with other fixed, and possibly random, effects of interest) and using either maximum likelihood or Bayesian approaches to estimate the breeding values on the liability scale given by Equation"
     },
     {
       "type": "discussion",
-      "content": "An interesting biological interpretation of the scale parameter, $ \\alpha $ (that sets the abruptness of the transition of the logistic regression), is as a measure of the strength of developmental canalization. When $ \\alpha $ is small, small changes in the liability usually map into small changes in the probability of the trait being displayed ($ \\alpha = 1 $ in Figure 14.6). When $ \\alpha $ is large, one sees robustness when the liability is away from the mean, m, as small changes in the liability have very little impact on the probability of the trait being displayed. However, when near m, small liability changes can result in dramatically different probabilities of displaying the trait. Chevin and Lande (2013) essentially used this idea to explore the conditions under which a relatively continuous norm of reaction changes into a very discrete step-function (i.e., the conditions leading to the evolution of a large $ \\alpha $ value)."
-    },
-    {
-      "type": "discussion",
-      "content": "Thus, we have two approaches for mapping liability values into binary traits: the strict threshold approach (a deterministic mapping of liability onto the discrete trait) and the logistic regression approach (a stochastic mapping translating a liability value into a probability of observing the trait). Given the very close connection between the threshold and logistic regression models, for most purposes using the simple threshold model is a reasonable approach, even if the underlying mapping is stochastic, and as illustrated above, it can easily be used to predict selection response. One setting where the logistic regression is more appropriate is in the actual analysis of the behavior of the threshold when one either knows the liability value or has at least a strong proxy (such as size)."
+      "content": "14.15b (Foulley et al. 1983; Foulley 1992; Vazques et al. 2009). This approach can be extended to $ k \\geq 2 $ thresholds in the mapping of liability into k character states (Korsgaard et al. 2002)."
     }
   ]
 }

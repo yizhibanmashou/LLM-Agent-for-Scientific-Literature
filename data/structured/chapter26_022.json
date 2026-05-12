@@ -2,65 +2,47 @@
   "id": "chapter26_022",
   "metadata": {
     "chapter": "chapter26",
-    "section": "Chapter 26: Results for the Infinitesimal Model",
+    "section": "Long-term Response: Introduction",
     "subsections": [
       "Results for the Infinitesimal Model"
     ],
     "source_file": "tmp\\paddle_output\\chapter26_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [
-      "26.27",
-      "26.28a",
-      "26.28b",
-      "26.29",
-      "26.30a",
-      "26.30b",
-      "26.30c",
-      "26.31a",
-      "26.31b"
+      "26.31c"
     ],
-    "table_references": []
+    "table_references": [
+      "12.1",
+      "26.1"
+    ],
+    "section_level_1": "Long-term Response: Introduction",
+    "section_level_2": "Results for the Infinitesimal Model",
+    "heading_path": [
+      "Long-term Response: Introduction",
+      "Results for the Infinitesimal Model"
+    ],
+    "display_heading": "Results for the Infinitesimal Model",
+    "table_reference_keys": [
+      "chapter12:12.1",
+      "chapter26:26.1"
+    ]
   },
   "blocks": [
     {
       "type": "derivation",
-      "content": "We start by assuming complete additivity and ignore any effects of gametic-phase disequilibrium. From Equation 11.20b, the expected additive genetic variance at generation t is [[SEE_FORMULA:26.27]]"
-    },
-    {
-      "type": "derivation",
-      "content": "Setting $ \\sigma_{A}^{2}(0)=0 $ gives the additive variance contributed entirely from mutation as [[SEE_FORMULA:26.28a]]"
-    },
-    {
-      "type": "derivation",
-      "content": "Hence, the rate of response at generation t from mutational input is [[SEE_FORMULA:26.28b]] where we have made the usual assumption that the phenotypic variance, $ \\sigma_z^2 $, does not significantly change over time and that any disequilibrium is ignored. For $ t \\gg 2N_e $, the per-generation response approaches an asymptotic limit of [[SEE_FORMULA:26.29]]"
-    },
-    {
-      "type": "proposition",
-      "content": "Assuming $ \\sigma_A^2(0) = 0 $, Equation 26.28b shows that half this rate is achieved by $ t \\simeq 1.4N_e $, independent of the value of $ \\sigma_m^2 $ (Hill 1982a, 1982b). There are several ways to intuit the value of this asymptotic limit. From Robertson’s theory, we expect the final response to be $ 2N_e $ times the initial response $ R(1) $, which, for new mutants arising in any particular generation, is $ R(1) = \\bar{\\tau} \\sigma_m^2 / \\sigma_z $. Alternatively, recall (Equation 11.20c) that the equilibrium additive variance (assuming pure drift) is $ 2N_e \\sigma_m^2 $, which (upon recalling Equation 13.6b) recovers Equation 26.29. The assumption of the infinitesimal model implies vanishingly small selection coefficients at each underlying locus, which makes them effectively neutral."
-    },
-    {
-      "type": "derivation",
-      "content": "Summing Equation 26.28b over generations (using the approximation given by Equation 7.28b) yields a cumulative response due to new mutation of [[SEE_FORMULA:26.30a]] as found by Hill (1982a, 1990) and Weber and Diggins (1990). An approximation for genes of sufficiently large effect ($ |a| \\gg \\sigma_z/N\\bar{i} $) is to consider them as being essentially fixed instantaneously, in which case only the first term in the large parentheses in Equation 256.30a need be included, and the response approaches [[SEE_FORMULA:26.30b]] as suggested by Hill (1982a). Note by comparison with Equation 26.29 that the instantaneous fixation assumption is equivalent to assuming that the asymptotic rate of response applies from generation 1."
-    },
-    {
-      "type": "derivation",
-      "content": "Combining the mutational response with the response due to genetic variation that was originally in the base population (Equation 26.15a) yields an expected cumulative response of [[SEE_FORMULA:26.30c]]"
+      "content": "The average value of the mutational heritability, $ h_m^2 = \\sigma_m^2 / \\sigma_E^2 $, is approximately 0.005 (LW Table 12.1). With this value, $ t^* $ is only rather weakly dependent on $ N_e $ (Figure 26.8). If $ \\Psi \\ll 1 $, meaning that the expected additive variance at the mutation-drift equilibrium exceeds the initial additive variance ($ \\sigma_A^2(0) \\ll 2N_e \\sigma_m^2 $), the approximation $ \\ln(1 + x) \\simeq x $ for small values of $ |x| $ yields [[SEE_FORMULA:26.31c]]"
     },
     {
       "type": "discussion",
-      "content": "The $ t\\sigma_m^2 $ term, which represents the asymptotic response, eventually dominates for sufficiently large $ t $. The product term in the braces represents the transient effect of the initial additive variance, and it is zero if the population starts at the mutation-drift equilibrium (i.e., $ \\sigma_A^2(0) = 2N_e\\sigma_m^2 $)."
+      "content": "Using $ h_m^2 = 0.005 $ yields $ t^* \\simeq 200h^2/(1 - h^2) $. For $ h^2 $ values of 0.05, 0.10, and 0.25, respectively, this translates into 11, 22, and 67 generations until the per-generation response from mutational input exceeds that due to initial variation. For $ h_m^2 = 0.001 $, these values increase approximately five-fold to 52, 111, and 250 generations. Comparing these approximate results (from Equation 26.31c) with their exact values (Equation 26.31a) shows that Equation 26.31c tends to overestimate the true value of $ t^* $ when $ N_e $ is small (see Figure 26.8)."
     },
     {
       "type": "discussion",
-      "content": "Of considerable interest is the expected number of generations until the selection response from mutational input exceeds that contributed by the initial variation. Let $ t^{*} $ be the generation when the per-generation response from both sources is equal. At this value, the initial additive variance remaining equals the new additive variance cumulatively generated, or $$ \\sigma_{A}^{2}(0)\\exp(-t^{*}/2N_{e})=2N_{e}\\sigma_{m}^{2}\\left[1-\\exp(-t^{*}/2N_{e})\\right] $$"
+      "content": "Recalling the discussion following Equation 26.27, it is important to stress that our expression for the half-life of selection response (from the initial genetic variation) assumes that drift dominates and tends to yield overestimates when selection is moderate to strong. Likewise, we expect that the infinitesimal model underestimates the changes in allele frequencies of new mutations under moderate to strong selection. Thus, Equation 26.31a is best considered as an upper bound for the number of generations after which mutation is expected to dominate."
     },
     {
-      "type": "derivation",
-      "content": "This equation has the solution [[SEE_FORMULA:26.31a]]"
-    },
-    {
-      "type": "derivation",
-      "content": "Denoting the initial heritability by $ h^{2} $ and recalling that $ \\sigma_{E}^{2} = (1 - h^{2})\\sigma_{z}^{2} $ yields $$ \\frac{\\sigma_{A}^{2}(0)}{\\sigma_{m}^{2}}=\\frac{h^{2}\\sigma_{z}^{2}}{\\sigma_{m}^{2}}=\\frac{h^{2}}{\\sigma_{m}^{2}/\\sigma_{z}^{2}}=\\frac{h^{2}}{(1-h^{2})\\sigma_{m}^{2}/\\sigma_{E}^{2}}=\\frac{h^{2}}{(1-h^{2})h_{m}^{2}} $$ showing that [[SEE_FORMULA:26.31b]]"
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:26.5]]"
     }
   ]
 }

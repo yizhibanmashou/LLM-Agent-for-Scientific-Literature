@@ -2,51 +2,34 @@
   "id": "chapter23_030",
   "metadata": {
     "chapter": "chapter23",
-    "section": "Chapter 23: An Approximate Treatment Using Covariances",
+    "section": "Selection Under Inbreeding: Introduction",
     "subsections": [
-      "A More Careful Treatment: Kelly's Structured Linear Model"
+      "CONCLUSIONS: AN INCOMPLETE THEORY FOR SHORT-TERM RESPONSE"
     ],
     "source_file": "tmp\\paddle_output\\chapter23_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
-    "formula_references": [
-      "23.65a",
-      "23.65b",
-      "23.65c",
-      "23.66",
-      "23.67a",
-      "23.67b",
-      "23.67c",
-      "23.67d",
-      "23.67e",
-      "23.68a",
-      "23.68b"
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Selection Under Inbreeding: Introduction",
+    "section_level_2": "CONCLUSIONS: AN INCOMPLETE THEORY FOR SHORT-TERM RESPONSE",
+    "heading_path": [
+      "Selection Under Inbreeding: Introduction",
+      "CONCLUSIONS: AN INCOMPLETE THEORY FOR SHORT-TERM RESPONSE"
     ],
-    "table_references": []
+    "display_heading": "CONCLUSIONS: AN INCOMPLETE THEORY FOR SHORT-TERM RESPONSE"
   },
   "blocks": [
     {
-      "type": "derivation",
-      "content": "Under linkage equilibrium, Kelly showed that these covariance functions are given by [[SEE_FORMULA:23.65a]]"
+      "type": "proposition",
+      "content": "For all of the detailed formulae presented in this chapter, it must be stressed that predicting even the short-term selection response under inbreeding is based on a very incomplete theory. Most of the covariance expressions assume linear parent-offspring regressions and make the strong assumption that selection does not significantly change covariances from their neutral expectations under the mating system. While this may not be an unreasonable assumption in regard to allele-frequency change when many genes of small effect underlie a trait, it ignores the important impact of gametic-phase disequilibrium (LD), which can be dramatic (i.e., a 27% reduction after one generation was seen in Example 23.6). One effect of inbreeding is suppressing the impact of recombination, as the frequency of heterozygotes (which facilitate the breakdown of gametic phase disequilibrium via recombination) quickly becomes very small under inbreeding before vanishing entirely. Thus, gametic-phase disequilibrium is significantly more impactful than under random mating, where its effects are not trivial (Chapter 16)."
     },
     {
-      "type": "derivation",
-      "content": "Similar expressions exist for $ B_i(t) $, with $ B $ replacing $ A $ in Equations 23.64a–23.64c (under linkage equilibrium), and with the cohort-i covariance between $ B $ and $ z $ given by [[SEE_FORMULA:23.65b]]"
-    },
-    {
-      "type": "derivation",
-      "content": "Finally, again under linkage equilibrium, the phenotypic variance in cohort i is given by [[SEE_FORMULA:23.65c]] where $ \\sigma_G^2(i,i) $, the genetic variance after $ i $ generations of selfing, is shown by Equation 23.23. Iteration of these equations calculates the evolution of the $ A_i(t) $ and $ B_i(t) $ values, from which the population mean in generation $ t $ can be obtained from Equations 23.63b and 23.63c. As mentioned throughout this chapter, selection-induced gametic-phase disequilibrium (LD) can have a dramatic effect on the covariances (even for unlinked loci), and indeed this was observed in Kelly's above-mentioned simulations. To accommodate this concern, Kelly suggested an iterative approach (along the lines of our results for random mating from Chapter 16 and of Hayashi and Ukai's (1994) results for pure selfing; Equation 23.30) for computing all the required covariances when disequilibrium is present. As in Chapter 16, let [[SEE_FORMULA:23.66]] denote the reduction in the phenotypic variance (in this case, in cohort i) caused by selection, where $ \\sigma_{z^{*},i}^{2}(t) $ is the phenotypic variance (in inbreeding cohort i) after selection. Under the infinitesimal-model assumptions, Kelly showed that the recursion equations for the variances and covariances in the inbred cohorts ($ i \\geq 1 $) become [[SEE_FORMULA:23.67a]] [[SEE_FORMULA:23.67b]] [[SEE_FORMULA:23.67c]] where [[SEE_FORMULA:23.67d]] [[SEE_FORMULA:23.67e]]"
+      "type": "proposition",
+      "content": "Further, a practical concern is that, even if the above expressions are reasonable approximations despite these concerns, the inbreeding variance-components $ (t^{*}, \\sigma_{D1}^{2}, \\sigma_{AD1}) $ are challenging, at best, to estimate. However, Chapter 11 shows that in those few cases where attempts have been made to estimate these, they are often very small, suggesting that standard additive and dominance terms dominate the covariances in many settings. If correct, this substantially reduces the complexity of predicting short-term selection response. Conversely, the impact from inbreeding depression, especially when starting from largely outbred populations, is typically not trivial (LW Chapter 10). Fortunately, it is straightforward to both estimate its impact and include its effect in standard models of short-term response (Equation 23.2b). It needs to be stressed, however, that the assumption that there is only a small amount of allele-frequency change is critical here, as the composite parameter B (Equations 23.1a, 23.1b, and 23.62) for the impact of inbreeding depression is a function of allele frequencies."
     },
     {
       "type": "discussion",
-      "content": "For Equations 23.67a–23.67c, the first term is the variance (covariance) before selection, the second term is the reduction from selection, and the final term is the contribution from segregation (these are the extensions of Equation 16.8b to selfing). These generalize the previous results of Hayashi and Ukai (1994; Equation 23.30). If we note that B = 0 when only additive gene action is present, then recalling Equation 16.11a recovers Equation 23.30."
-    },
-    {
-      "type": "derivation",
-      "content": "The recursion equations for the outbred cohort are more involved, as parents are inbred to differing degrees. Letting $ f'(t) $ denote the average value of inbreeding among selected parents, then [[SEE_FORMULA:23.68a]] [[SEE_FORMULA:23.68b]] $$ \\sigma_{B,o}^{2}(t+1)=\\frac{1}{2}\\sigma_{B^{\\prime}}^{2}(t)+\\frac{1}{4}[1-f^{\\prime}(t)]\\sigma_{D I}^{2} $$ (25.08c)"
-    },
-    {
-      "type": "discussion",
-      "content": "Variances and covariances denoted by a prime are the population averages in the selected parents, and $ f' $ denotes the average inbreeding over all selected parents. Unfortunately, these cannot be simply expressed as base-population genetic components; see Kelly (1999a) for expressions."
+      "content": "The robust results from all of this theory are that: (i) inbreeding can facilitate among-family selection while hampering within-family selection, (ii) when dominance is present, gains from early generations of inbreeding may significantly erode by the time inbreeding is complete, and (iii) inbreeding depression can have a significant impact on selection response in outbred species (depressing both the apparent response and the overall fitness of the population). From an applied standpoint, progeny testing and family selection can be improved with the judicious use of either inbred offspring or parents, but the cost in terms of additional time and resources can more than offset any gain."
     }
   ]
 }

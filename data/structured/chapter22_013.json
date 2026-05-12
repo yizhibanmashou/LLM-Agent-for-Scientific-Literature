@@ -2,7 +2,7 @@
   "id": "chapter22_013",
   "metadata": {
     "chapter": "chapter22",
-    "section": "Chapter 22: Individual Selection: Theory",
+    "section": "Associative Effects: Competition, Social Interactions, Group and Kin Selection: Introduction",
     "subsections": [
       "Individual Selection: Theory"
     ],
@@ -11,7 +11,14 @@
     "formula_references": [
       "22.14"
     ],
-    "table_references": []
+    "table_references": [],
+    "section_level_1": "Associative Effects: Competition, Social Interactions, Group and Kin Selection: Introduction",
+    "section_level_2": "Individual Selection: Theory",
+    "heading_path": [
+      "Associative Effects: Competition, Social Interactions, Group and Kin Selection: Introduction",
+      "Individual Selection: Theory"
+    ],
+    "display_heading": "Individual Selection: Theory"
   },
   "blocks": [
     {
@@ -23,36 +30,12 @@
       "content": "The second expression follows from the standard identity that $ S = \\sigma_z \\bar{i} $ (Equation 13.6a). Substituting Equation 22.12c, with $ n = 2 $ and $ r = 0 $, into Equation 22.13 recovers Griffing's result (Equation 22.11a)."
     },
     {
-      "type": "discussion",
-      "content": "Example 22.4. Muir (2005) estimated variance components for six-week body weight in Japanese quail (Coturnix coturnix japonica) housed in groups of $n = 16$ per cage. REML estimates of the genetic variances were $\\sigma^2(A_d) = 33.7$ and $\\sigma^2(A_s) = 2.87$, while $\\sigma(A_d, A_s) = -5.5$. Under these values, the predicted response to individual selection in a group of 16 unrelated individuals is $$ R=\\frac{\\bar{\\imath}}{\\sigma_{z}}\\left[\\sigma^{2}(A_{d})+(n-1)\\sigma(A_{d},A_{s})\\right]=\\frac{\\bar{\\imath}}{\\sigma_{z}}\\left[33.7+15\\cdot(-5.5)\\right]=-48.8\\frac{\\bar{\\imath}}{\\sigma_{z}} $$"
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:22.4]]"
     },
     {
-      "type": "discussion",
-      "content": "The strong negative covariance between direct and social (competitive) effects results in an expected reversed selection response if individual selection is used, as the positive gain from the improvement of direct effects (33.7) is swamped by the negative effects from the correlated response in social values (-82.5)."
-    },
-    {
-      "type": "discussion",
-      "content": "The presence of relatives within the group results in some fraction of $ \\sigma^{2}(A_{s}) $ being incorporated into the response under individual selection. Suppose the group of 16 consists of two half-sib families. In this case, the average relationship is 0.125, and from Equation 22.12d, the resulting covariance between phenotype and total breeding values becomes $$ \\begin{aligned}\\sigma(z,A_{T})&=\\sigma(z,A_{T}\\mid r=0)+(n-1)r\\left[\\sigma\\left(A_{s},A_{d}\\right)+(n-1)\\sigma^{2}\\left(A_{s}\\right)\\right]\\\\&=-48.4+15\\cdot0.125\\left(-5.5+15\\cdot2.87\\right)=21.6\\end{aligned} $$ and from Equation 22.14. $$ R=\\frac{\\overline{\\imath}}{\\sigma_{z}}\\sigma(z,A_{T})=21.6\\frac{\\overline{\\imath}}{\\sigma_{z}} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Hence, simply using groups of relatives (as opposed to groups of unrelated individuals) allows individual selection to give an expected positive response."
-    },
-    {
-      "type": "discussion",
-      "content": "Example 22.5. Consider a trait with $ \\sigma^2(A_d) = 500 $, $ \\sigma^2(A_s) = 50 $, $ \\rho(A_d, A_s) = -0.25 $, and $ \\sigma^2(E_d) = 400 $. For ease of presentation, we assume that there are no social environmental effects ($ E_s = 0 $) and that $ E_d $ is uncorrelated across family members (i.e., no common family environment and no dominance). Consider a group size of $ n = 6 $. Given a selection intensity of $ \\bar{i} $, what response is expected under individual selection when group members are unrelated? Here $ \\sigma(A_d, A_s) = -0.25 \\sqrt{500 \\cdot 50} = -39.5 $. Substituting into Equation 22.4b gives the covariance as $$ \\sigma(z,A_{T})=\\sigma^{2}(A_{d})+(n-1)\\sigma(A_{d},A_{s})=500-(5\\cdot39.5)=302.5 $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Likewise, from Equation 22.5c, the phenotypic variance is $$ \\begin{aligned}\\sigma^{2}(z)&=\\sigma^{2}(A_{d})+\\sigma^{2}(E_{d})+(n-1)\\left[\\sigma^{2}(A_{s})+\\sigma^{2}(E_{s})\\right]\\\\&=500+400+5\\cdot50=1150\\end{aligned} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Applying Equation 22.14, the resulting response becomes $$ R=\\frac{\\sigma(z,A_{T})}{\\sigma_{z}}\\bar{\\imath}=\\frac{302.5}{\\sqrt{1150}}\\bar{\\imath}=8.92\\bar{\\imath} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Now suppose that group members are half-sibs $ (r = 0.25) $. What is the expected response? Applying Equation 22.12d yields $$ \\begin{aligned}\\sigma(z,A_{T})&=\\sigma(z,A_{T}\\mid r=0)+(n-1)r\\left[\\sigma\\left(A_{s},A_{d}\\right)+(n-1)\\sigma^{2}\\left(A_{s}\\right)\\right]\\\\&=302.5+5\\cdot0.25(-39.5+5\\cdot50)=565.5\\end{aligned} $$ while Equation 22.13b yields a phenotypic variance of $$ \\begin{aligned}\\sigma^{2}(z)&=\\sigma^{2}(z\\mid r=0)+(n-1)r\\left[\\sigma(A_{s},A_{d})+(n-2)\\sigma^{2}(A_{d})\\right]\\\\&=1150+\\left[5\\cdot0.25(-39.5+4\\cdot50)\\right]=1350.6\\end{aligned} $$ resulting in a response of $ R = 15.39\\,\\bar{\\tau} $. Likewise, if the group consists of full sibs ($ r = 0.5 $), the resulting covariance, variance, and response are, respectively, 828.5, 1551.2, and 21.04\\,. Thus, the response to selection increases with the relatedness of group members, with a 1.7- and 2.4-fold increase when using groups of half- and full-sibs (respectively) relative to groups of unrelated individuals."
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:22.5]]"
     }
   ]
 }

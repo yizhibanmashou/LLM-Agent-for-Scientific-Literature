@@ -2,53 +2,34 @@
   "id": "chapter23_015",
   "metadata": {
     "chapter": "chapter23",
-    "section": "Chapter 23: Cycles of Inbreeding and Outcrossing",
+    "section": "Selection Under Inbreeding: Introduction",
     "subsections": [
-      "Cycles of Inbreeding and Outcrossing"
+      "INDIVIDUAL SELECTION UNDER PURE SELFING"
     ],
     "source_file": "tmp\\paddle_output\\chapter23_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
-    "formula_references": [
-      "23.19a",
-      "23.19b",
-      "23.20a",
-      "23.20b",
-      "23.20c"
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Selection Under Inbreeding: Introduction",
+    "section_level_2": "INDIVIDUAL SELECTION UNDER PURE SELFING",
+    "heading_path": [
+      "Selection Under Inbreeding: Introduction",
+      "INDIVIDUAL SELECTION UNDER PURE SELFING"
     ],
-    "table_references": []
+    "display_heading": "INDIVIDUAL SELECTION UNDER PURE SELFING"
   },
   "blocks": [
     {
-      "type": "derivation",
-      "content": "Dickerson (1973) and Dickerson and Lindhé (1977) have suggested that, in some cases, the response to selection under a scheme of random mating alternating every other generation with full-sib mating enhances short-term response. Their logic is that a generation (or two) of inbreeding increases the among-group variance, and this increase can be exploited by selection. However, given the extra generation(s) used for inbreeding (instead of selection), the conditions for such a cyclic inbreeding-selection system to give a larger response than mass selection are rather stringent. Dickerson and Lindhé showed that the ratio of response under cyclic inbreeding $ (R_I) $ to response under mass selection $ (R_m) $ is approximately [[SEE_FORMULA:23.19a]] where $g$ is the generation time per cycle (typically $g_m = 1$, $g_I = 2$) and $r_f$ is the genetic correlation among the inbred line members. For example, if one crosses full-sibs and then crosses and selects on inbred families in alternate years, $f = 0.25$, $r_f = 0.6$, and $g_I/g_m = 1/2$, which implies that [[SEE_FORMULA:23.19b]]"
+      "type": "discussion",
+      "content": "Under pure selfing, one starts with a collection of individuals and continually selfs each to form a series of inbred lines. Let $S_k$ denote such a line after $k$ generations of selfing, with the $S_0$ being the collection of outbred individuals that are initially selfed to start the lines, and the $S_\\infty$ the collection of the completely inbred lines. A variety of options exist for generating the initial collection of lines. The simplest is to use a random sample of individuals from an outbred population. Another common situation is the pure-line cross, wherein one crosses two completely inbred (pure) lines, and continually selfs starting with the $F_1$. In this case, the initial cross produces a number of $F_1$ individuals, and even though these are selfed to create a series of $F_2$ lines, the first generation of selfing is formally defined as the $F_3$. The reason is that all of the $F_1$s are genetically identical, being heterozygous at every locus at which the two lines differ. Such a population consisting of only heterozygotes is not in Hardy-Weinberg equilibrium, but the $F_2$ population is (for diploid autosomal loci). Thus, the $F_2$ defines the base population, and this is the population from which variance components are extracted. The $F_2$ also sets the initial value for counting generations of selfing, so that $S_0 = F_2$, $S_1 = F_3$, and so on. If the loci are unlinked, then linkage disequilibrium (which is maximal in the $F_1$) is zero in the $F_2$. The instant achievement of linkage equilibrium in the $F_2$ from a pure-line cross arises because all $F_1$ individuals are genetically identical and heterozygous at all segregating loci, which is not the situation for crosses of three (or more) lines. If the loci are linked, it may take several rounds of random mating to mitigate the effects of the"
     },
     {
       "type": "discussion",
-      "content": "Under equal selection intensities ($ \\bar{\\imath}_m = \\bar{\\imath}_I $), Equation 23.19b implies that $ h^2 < 0.1875 $ for cyclic inbreeding to exceed mass selection (Dickerson and Lindhé 1977). Further, Equation 23.19a assumes that there is no significant impact from inbreeding depression."
+      "content": "$ F_1 $ disequilibrium between tightly linked loci. Finally, recall that $ \\sigma_{ADI} = \\sigma_{DI}^2 = 0 $ in this line-cross setting (Chapter 11)."
     },
     {
       "type": "discussion",
-      "content": "Given these stringent conditions, it is not surprising that experimental support for the advantage of cyclic inbreeding is lacking. Dion and Minvielle (1985) used 15 generations of cyclic full-sib versus random mating to select for increased pupal weight in Tribolium castaneum, and found no differences in the response or realized heritabilities relative to random mating. Similar results were observed in Japanese quail (Example 23.3). While López-Fanjul and Villaverde (1989) observed that one generation of full-sib mating resulted in a fourfold increase in the realized heritability of egg to pupal viability in Drosophila melanogaster, this was more than offset by the reduction in the mean from inbreeding depression."
-    },
-    {
-      "type": "derivation",
-      "content": "Another cyclic scheme, $ S_1 $ mass selection, was proposed by Dhillon (1991a). Here, individuals are crossed and the resulting offspring are selfed. The $ S_1 $ are then evaluated by individual selection, with the superior individuals outcrossed to start the cycle again. To evaluate the expected selection response under such a scheme, we need to compute the covariance between an $ S_1 $ and its outbred offspring, which is obtained as follows. With probability of 1, an $ S_1 $ individual passes on a single allele to its outbred offspring, so $ \\Delta_3 + \\Delta_8 = 1 $. With probability 1/2, the $ S_1 $ individual has both alleles IBD at a locus (due to the generation of selfing), giving $ \\Delta_3 = \\Delta_8 = 1/2 $. More generally, if $ k $ generations of selfing are used before random mating, then (using the same logic as in Example 23.2) $ \\Delta_3 = f_k = 1 - 2^{-k} $, $ \\Delta_8 = 1 - f_k = 2^{-k} $, and $ 2\\theta = \\Delta_3 + \\Delta_8/2 = (1/2)(2 - 2^{-k}) $, returning the $ S_k $-parent and offspring covariance as [[SEE_FORMULA:23.20a]]"
-    },
-    {
-      "type": "derivation",
-      "content": "Assuming selection on both parents, the response per generation is then [[SEE_FORMULA:23.20b]]"
-    },
-    {
-      "type": "derivation",
-      "content": "The factor of $ 1/(k+1) $ arises because there are $ k $ generations of selfing for each single generation of selection. The genetic variance, $ \\sigma_g^2(S_k) $, among $ S_k $ individuals is given (below) by Equation 23.23, and $ \\sigma_e^2(S_k) $ is the error variance for single $ S_k $ individuals, which is expected to be considerably larger than the error variance for families, as no replication is involved. For strict additivity, the ratio of per-generation response under $ S_k $ mass selection relative to standard mass selection is [[SEE_FORMULA:23.20c]]"
-    },
-    {
-      "type": "discussion",
-      "content": "Note that $ R_{S_k} < R_m $ for all values of $ k $ (assuming the error variances are roughly equal)."
-    },
-    {
-      "type": "discussion",
-      "content": "Dhillon assumed that a greenhouse could be used for the $ S_1 $, giving one cycle (i.e., two generations) per field generation. In this case, there is no generational cost for inbreeding, and the ratio in the parentheses of Equation 23.20c becomes $ (2 - 2^{-1}) = 3/2 $. However, a major biological limitation in the assumptions behind Equation 23.20c is that the selected traits must be expressed before reproduction. For traits expressed during or after reproduction, only a single sex will be selected upon (as presumably the $ S_1 $ is outcrossed to random individuals). In such cases, the response ratio (in this greenhouse setting) is reduced to $ (1/2)(3/2) = 3/4 $ of mass selection."
+      "content": "Several other line-cross designs can form the foundational population from which individuals are drawn for selfing. If one intermates a collection of lines, the first generation will not be in Hardy-Weinberg equilibrium unless the allele frequencies are the same in each line. However (for diploid autosomal loci), Hardy-Weinberg will be reached with an additional generation of random mating (sex-linked loci and polyploids take several additional generations; see LW Chapter 4). Linkage disequilibrium is also created in such a cross, due to differences in the gamete frequencies across lines. Unlike the case for crossing two pure lines, the $ F_2 $ from a multiple-line cross will not necessarily be in linkage equilibrium, even for unlinked loci. In this case, the disequilibrium decays as $ (1/2)^t $, where $ t $ is the number of generations of random mating that the starting $ F_1 $ population experiences. For linked loci, the disequilibrium decays as $ (1 - c)^t $, where $ c $ is the recombination frequency. Other common types of line crosses are three-way hybrids, $ (L_1 \\times L_2) \\times L_3 $ (the $ F_1 $ from an $ L_1 \\times L_2 $ crossed to $ L_3 $), and double-crosses (or four-way hybrids) $ (L_1 \\times L_2) \\times (L_3 \\times L_4) $, which commonly arose in maize breeding. Again, it is often advisable to take such crosses through at least one additional round of random mating to achieve Hardy-Weinberg (meaning that our expressions for response are valid) and approach linkage equilibrium before starting inbreeding."
     }
   ]
 }

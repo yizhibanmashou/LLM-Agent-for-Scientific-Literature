@@ -2,47 +2,42 @@
   "id": "appendix5_011",
   "metadata": {
     "chapter": "appendix5",
-    "section": "PROPERTIES OF SYMMETRIC MATRICES",
+    "section": "Appendix: Introduction",
     "subsections": [
-      "Correlations Can Be Removed by a Matrix Transformation"
+      "CANONICAL AXES OF QUADRATIC FORMS"
     ],
     "source_file": "tmp\\paddle_output\\appendix5_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [],
-    "table_references": []
+    "table_references": [],
+    "section_level_1": "Appendix: Introduction",
+    "section_level_2": "CANONICAL AXES OF QUADRATIC FORMS",
+    "heading_path": [
+      "Appendix: Introduction",
+      "CANONICAL AXES OF QUADRATIC FORMS"
+    ],
+    "display_heading": "CANONICAL AXES OF QUADRATIC FORMS"
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "A powerful use of diagonalization is that it allows one to extract a set of $n$ uncorrelated variables for any $n n$ nonsingular covariance matrix, $ _ $. Consider the transformation $$ \\mathbf{y}=\\mathbf{U}^{T}\\mathbf{x} $$ where $ \\mathbf{U} = (\\mathbf{e}_1, \\mathbf{e}_2, \\cdots, \\mathbf{e}_n) $ contains the normalized eigenvectors of $ \\mathbf{V}_x $. Because $ $ is an orthonormal matrix, this transformation is a rigid rotation of the axes of the original $ (x_1,, x_n) $ coordinate system to a new system given by $ (e_1,, e_n) $. Applying LW Equation 8.21b and Equation A5.12, respectively, the covariance matrix for $ $ is $$ \\mathbf{V_{y}}=\\mathbf{U}^{T}\\mathbf{V_{x}}\\mathbf{U}=\\boldsymbol{\\Lambda} $$ where A is a diagonal matrix whose elements are the eigenvalues of $ V_{x} $, $$ \\sigma(y_{i},y_{j})=\\left\\{\\begin{aligned}&\\lambda_{i}&if i=j\\\\ &0&if i\\neq j\\end{aligned}\\right. $$"
+      "content": "The transformation $ \\mathbf{y} = \\mathbf{U}^T \\mathbf{x} $ given by Equation A5.15a applies to any symmetric matrix, and is referred to as its canonical transformation. This simplifies the interpretation of the quadratic form $ \\mathbf{x}^T \\mathbf{A} \\mathbf{x} $, as rotation of the original axes to align them with the eigenvectors of $ \\mathbf{A} $ removes all cross-product terms ($ x_i x_j $ for $ i \\neq j $) on this new coordinate system. Recall (Equation A5.5b) that $ \\mathbf{U} $ is a unitary matrix and hence $ \\mathbf{U}^T = \\mathbf{U}^{-1} $. Thus, $$ \\mathbf{U}\\mathbf{y}=\\mathbf{U}\\mathbf{U}^{T}\\mathbf{x}=\\mathbf{x} $$"
     },
     {
       "type": "discussion",
-      "content": "The rigid rotation introduced by U creates a set of n uncorrelated variables, the ith of which is $$ y_{i}=\\mathbf{e}_{i}^{T}\\mathbf{x} $$ Because the $ e_i $ are of unit length, from Equation A5.3b we have that $ y_i = e_i^T x $ is the length of the projection of $ x $ onto the $ i $th eigenvector of $ V_x $, which implies that the axes of the new coordinate system are given by the orthogonal set of eigenvectors of $ V_x $."
+      "content": "Applying Equations A5.15a and A5.12 transforms a quadratic form to one in which the square matrix is diagonal, which greatly simplifies the resulting quadratic product, as $$ \\begin{aligned}\\mathbf{x}^{T}\\mathbf{A}\\mathbf{x}&=(\\mathbf{U}\\mathbf{y})^{T}\\mathbf{A}\\mathbf{U}\\mathbf{y}=\\mathbf{y}^{T}(\\mathbf{U}^{T}\\mathbf{A}\\mathbf{U})\\mathbf{y}\\\\&=\\mathbf{y}^{T}\\mathbf{A}\\mathbf{y}\\\\&=\\sum_{i=1}^{n}\\lambda_{i}y_{i}^{2},\\quad with\\quad y_{i}=\\mathbf{e}_{i}^{T}\\mathbf{x}\\end{aligned} $$ where $ \\lambda_i $ and $ e_i $ are the eigenvalues and associated (normalized, i.e., $ \\|\\mathbf{e}_i\\| = 1 $) eigenvectors of A. The new axes defined by the $ e_i $ vectors are the canonical (or principal) axes of A. Because $ y_i^2 \\geq 0 $, Equation A5.17a immediately shows the connection between the signs of the eigenvalues of a matrix and whether that matrix is positive definite, negative definite, or indefinite."
     },
     {
       "type": "discussion",
-      "content": "Defining the matrix B as $$ \\mathbf{B}=\\mathbf{U}\\boldsymbol{A}^{-1/2} $$ the vector $ = ^T $ has a covariance matrix of $ _ = $, which means that this transformation creates a set of uncorrelated variables, each with unit variance. To see this, note that $$ \\begin{aligned}\\mathbf{V}_{\\mathbf{y}}=\\mathbf{B}^{T}\\mathbf{V}_{\\mathbf{x}}\\mathbf{B}&=\\left(\\mathbf{U}\\boldsymbol{\\Lambda}^{-1/2}\\right)^{T}\\left(\\mathbf{U}\\boldsymbol{\\Lambda}\\mathbf{U}^{T}\\right)\\left(\\mathbf{U}\\boldsymbol{\\Lambda}^{-1/2}\\right)\\\\&=\\boldsymbol{\\Lambda}^{-1/2}\\left(\\mathbf{U}^{T}\\mathbf{U}\\right)\\boldsymbol{\\Lambda}\\left(\\mathbf{U}^{T}\\mathbf{U}\\right)\\boldsymbol{\\Lambda}^{-1/2}\\\\&=\\boldsymbol{\\Lambda}^{-1/2}\\boldsymbol{\\Lambda}\\boldsymbol{\\Lambda}^{-1/2}=\\mathbf{I}\\\\ \\end{aligned} $$"
+      "content": "If all eigenvalues are positive (all $ \\lambda_i > 0 $), then any quadratic form is always positive (unless all the $ y_i $ are zero) and hence A is positive definite. If one or more of the eigenvalues are zero, while the rest are positive, then A is said to be positive semidefinite, implying that quadratic products are either zero (corresponding to $ \\lambda_i = 0 $) or positive. If all eigenvalues are negative (all $ \\lambda_i < 0 $), then A is negative definite as any quadratic form is always negative, while A is said to be negative semidefinite if the eigenvalues are either zero or negative. If A has both positive and negative eigenvalues it is said to be indefinite, as quadratic products can be either positive or negative."
     },
     {
       "type": "discussion",
-      "content": "An alternative to Equation A5.15d is the Cholesky decomposition, $ A = C^T C $, of a square, symmetric matrix $ A $, where $ C $ is an lower triangular matrix (all elements above the diagonal are zero). If $ C $ is the Cholesky decomposition for $ V_X $, then $ y = C^ -1 x $ also returns a covariance matrix of $ I $."
+      "content": "Equations of the form $$ \\begin{align*}\\mathbf{x}^T\\mathbf{A}\\mathbf{x}=\\sum\\limits_{i=1}^n\\sum\\limits_{j=1}^n A_{ij}x_i x_j=c^2\\end{align*} $$ arise fairly frequently in quantitative genetics. For example, they describe surfaces of constant variance (Figure A5.5) or constant fitnesses in quadratic fitness regressions (Chapter 30). Solutions to Equation A5.17b describe quadratic surfaces—for two dimensions, these are the familiar conic sections (ellipses, parabolas, or hyperbolas). Equation A5.17a greatly simplifies the interpretation of these surfaces by removing all cross product terms, yielding $$ \\begin{align*}\\mathbf{x}^T\\mathbf{A}\\mathbf{x}=\\sum\\limits_{i=1}^n\\lambda_i y_i^2=c^2\\end{align*} $$ Because $ (y_i)^2 $ and $ (-y_i)^2 $ have the same value, the canonical axes of A are also the axes of symmetry for the quadratic surface generated by quadratic forms involving A. When all eigenvalues of A are positive (as occurs with nonsingular covariance and other positive-definite matrices), Equation A5.17c describes an ellipsoid whose axes of symmetry are given by the eigenvectors of A. The distance from the origin to the surface along the $ e_i $ axis is $ \\lambda_i y_i^2 = c^2 $ or $ y_i = c \\lambda_i^{-1/2} $, as can been seen by setting all the $ y_k $ equal to zero except for $ y_i $, which yields $$ \\begin{align*}\\mathbf{x}^T\\mathbf{A}\\mathbf{x}=\\lambda_i y_i^2=c^2.\\end{align*} $$"
     },
     {
       "type": "discussion",
-      "content": "Example A5.4. If we apply the change of variables suggested by Equation A5.15a to the vector, z, of characters with associated G matrix used in Example A5.1 and using the eigenvalues and vectors obtained in Example A5.2 yields $$ \\begin{aligned}\\mathbf{y}=\\mathbf{U}^{T}\\mathbf{z}&=\\begin{pmatrix}\\mathbf{e}_{1}^{T}\\\\\\mathbf{e}_{2}^{T}\\end{pmatrix}\\begin{pmatrix}z_{1}\\\\z_{2}\\end{pmatrix}\\\\&=\\begin{pmatrix}-0.851&0.526\\\\0.526&0.851\\end{pmatrix}\\begin{pmatrix}z_{1}\\\\z_{2}\\end{pmatrix}\\\\&=\\begin{pmatrix}-0.851z_{1}+0.526z_{2}\\\\0.526z_{1}+0.851z_{2}\\end{pmatrix}\\end{aligned} $$ From Equation A5.15b, $ _ = $ as given in Example A5.3, showing that $ y_1 $ and $ y_2 $ are uncorrelated with $ \\sigma^2(y_1) = \\lambda_1 = 5.241 $ and $ \\sigma^2(y_2) = \\lambda_2 = 0.765 $. Hence, by considering the new coordinate system with $$ y_{1}=\\mathbf{e}_{1}^{T}\\mathbf{z}=-0.851z_{1}+0.526z_{2}\\quad and\\quad y_{2}=\\mathbf{e}_{2}^{T}\\mathbf{z}=0.526z_{1}+0.851z_{2} $$ we can transform the original coordinate system into a new system on which there are no additive-genetic correlations between these new characters. Figure A5.4 shows that this transformation is simply a rigid rotation of the axes."
-    },
-    {
-      "type": "discussion",
-      "content": "Likewise, from Equation A5.15d, the transformation that yields uncorrelated variables with unit variance is $$ \\begin{aligned}\\mathbf{y}=\\boldsymbol{\\Lambda}^{-1/2}\\mathbf{U}^{T}\\mathbf{z}&=\\begin{pmatrix}{{{1/\\sqrt{\\lambda_{1}}}}}&{{{0}}} \\\\{{{0}}}&{{{1/\\sqrt{\\lambda_{2}}}}}\\end{pmatrix}\\begin{pmatrix}{{{\\mathbf{e}_{1}^{T}}}} \\\\{{{\\mathbf{e}_{2}^{T}}}}\\end{pmatrix}\\begin{pmatrix}{{{z_{1}}}} \\\\{{{z_{2}}}}\\end{pmatrix}\\\\&=\\begin{pmatrix}{{{1/\\sqrt{5.236}}}}&{{{0}}} \\\\{{{0}}}&{{{1/\\sqrt{0.764}}}}\\end{pmatrix}\\begin{pmatrix}{{{-0.851}}}&{{{0.526}}} \\\\{{{0.526}}}&{{{0.851}}}\\end{pmatrix}\\begin{pmatrix}{{{z_{1}}}} \\\\{{{z_{2}}}}\\end{pmatrix}\\\\&=\\begin{pmatrix}{{{-0.372}}}&{{{0.230}}} \\\\{{{0.602}}}&{{{0.974}}}\\end{pmatrix}\\begin{pmatrix}{{{z_{1}}}} \\\\{{{z_{2}}}}\\end{pmatrix}\\end{aligned} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Hence, the transformed variables $ y_1 = -0.372z_1 + 0.230z_2 $ and $ y_2 = 0.602z_1 + 0.974z_2 $ are uncorrelated, and each has unit variance."
-    },
-    {
-      "type": "discussion",
-      "content": "An alternative set of uncorrelated random variables follows from the Cholesky decomposition, which can be compute in R using the cho1 command. (As an aside, cho1 returns the upper-triangular version of the decomposition, which is simply the transpose of the lower-triangular version). The resulting decomposition is $$ \\mathbf{G}=\\begin{pmatrix}{{{4}}}&{{{-2}}} \\\\{{{-2}}}&{{{2}}}\\end{pmatrix}=\\mathbf{C}\\mathbf{C}^{T}=\\begin{pmatrix}{{{2}}}&{{{0}}} \\\\{{{-1}}}&{{{1}}}\\end{pmatrix}\\begin{pmatrix}{{{2}}}&{{{-1}}} \\\\{{{0}}}&{{{1}}}\\end{pmatrix} $$ $$ \\mathbf{y}=\\mathbf{C}^{-1}\\mathbf{z}=\\begin{pmatrix}{{{0.5}}}&{{{0}}} \\\\{{{0.5}}}&{{{1}}}\\end{pmatrix}\\begin{pmatrix}{{{z_{1}}}} \\\\{{{z_{2}}}}\\end{pmatrix} $$ yielding $$ y_{1}=z_{1}/2\\quad and\\quad z_{2}=z_{1}/2+z_{2} $$ or as a new set of uncorrelated variables, each with unit variance. One nice feature about using a Cholesky decomposition is that we can always isolate a given variable of interest (simply by putting first in the vector). Because C is lower-triangular, it always returns the first new uncorrelated variable as a scalar times the first original variable (rather than some linear combination of all the variables, as was the case for the first decomposition in this example)."
+      "content": "Consider a new variable (y) that is a weighted combination $ y = ax_1 + bx_2 = b^T x $ of the original vector (x) of random variables, where $ \\mathbf{b}^T = (a, b) $. Its resulting variance is $$ \\sigma^{2}(y)=a^{2}\\sigma^{2}(x_{1})+2ab\\sigma(x_{1},x_{2})+b^{2}\\sigma^{2}(x_{2})=b^{T}V_{X}b $$ As shown in Figure A5.5, the collection of $a$, $b$ values that result in the same variance ($c^2$) is the ellipse given by $c^2 = b^2$ $V_X$ b. Variables with a large amount of variance require smaller weights to achieve the constant value ($c^2$) than do variables with lower variances. Thus, on a constant-variance surface, minor axes correspond to directions with the most variance, while major axes correspond to the directions with the least variability. This is in contrast to surfaces of equal probability (Figure A5.6), where major axes correspond to directions with the most variance. The reason for this reversal of roles is that constant-variance surfaces are functions of $\\lambda_{i}^{-1/2}$, whereas constant-probability surfaces are functions of $\\lambda_{i}^{1/2}$."
     }
   ]
 }

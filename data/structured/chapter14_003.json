@@ -2,7 +2,7 @@
   "id": "chapter14_003",
   "metadata": {
     "chapter": "chapter14",
-    "section": "Chapter 14: TRUNCATION SELECTION",
+    "section": "Short-term Changes in the Mean: 2. Truncation and Threshold Selection",
     "subsections": [
       "Selection Intensities and Differentials Under Truncation Selection"
     ],
@@ -15,12 +15,19 @@
       "14.3a",
       "14.3b"
     ],
-    "table_references": []
+    "table_references": [],
+    "section_level_1": "Short-term Changes in the Mean: 2. Truncation and Threshold Selection",
+    "section_level_2": "Selection Intensities and Differentials Under Truncation Selection",
+    "heading_path": [
+      "Short-term Changes in the Mean: 2. Truncation and Threshold Selection",
+      "Selection Intensities and Differentials Under Truncation Selection"
+    ],
+    "display_heading": "Selection Intensities and Differentials Under Truncation Selection"
   },
   "blocks": [
     {
       "type": "derivation",
-      "content": "Given a threshold cutoff, $T$, the expected mean of the selected adults is given by the conditional mean, $E[z \\mid z \\geq T]$. Generally, it is assumed that phenotypes are normally distributed, [h] and we use this assumption throughout (unless stated otherwise). With an initial mean of $ \\mu $ and variance of $ \\sigma^2 $, and $ p = \\Pr(z \\geq T) $ being the fraction saved, this conditional mean is given by LW Equation 2.14, which yields the expected selection differential as [[SEE_FORMULA:14.1]] where $ \\varphi(x)=(2\\pi)^{-1/2}\\exp(-x^{2}/2) $ is the unit normal density function evaluated at x."
+      "content": "Given a threshold cutoff, $T$, the expected mean of the selected adults is given by the conditional mean, $E[z \\mid z \\geq T]$. Generally, it is assumed that phenotypes are normally distributed, and we use this assumption throughout (unless stated otherwise). With an initial mean of $ \\mu $ and variance of $ \\sigma^2 $, and $ p = \\Pr(z \\geq T) $ being the fraction saved, this conditional mean is given by LW Equation 2.14, which yields the expected selection differential as [[SEE_FORMULA:14.1]] where $ \\varphi(x)=(2\\pi)^{-1/2}\\exp(-x^{2}/2) $ is the unit normal density function evaluated at x."
     },
     {
       "type": "derivation",
@@ -35,16 +42,8 @@
       "content": "Note that $ \\bar{\\tau} $ is entirely a function of p provided z is normal. Equation 14.3a can be approximated by [[SEE_FORMULA:14.3b]] a result due to Smith (1969). Simmonds (1977) found that this approximation is generally quite good for $ 0.004 \\leq p \\leq 0.75 $ and offered alternative approximations for $ p $ values outside this range, as did Saxton (1988). Montaldo (1997) gives an approximation for the standardized truncation value $ z = (T - \\mu)/\\sigma $ in terms of $ \\bar{r} $. Finally, when one selects for the lowest fraction $ p $ of the population, Equation 14.3a still holds, provided we take its negative value."
     },
     {
-      "type": "discussion",
-      "content": "Example 14.1. Consider selection on a normally distributed trait for which the upper 5% of the population is saved (p = 0.05). Here $ x_{[1-0.05]} = x_{[0.95]} $ is obtained by the R command gnorm(0.95), which returns 1.645, as Pr[U > 1.645] = 0.05. The R command dnorm(x) returns the value of $ \\varphi(x) $, with dnorm(1.645) returning a value of 0.103. Hence, $$ \\bar{\\imath}=\\frac{\\varphi(1.645)}{0.05}=\\frac{0.103}{0.05}\\simeq2.06 $$"
-    },
-    {
-      "type": "discussion",
-      "content": "More compactly, the R command for any value of p is dnorm(qnorm(1-p))/p. In contrast, Smith's approximation calculates the selection intensity as $$ \\bar{\\imath}\\simeq0.8+0.41\\ln\\left(\\frac{1}{0.05}-1\\right)\\simeq2.01 $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Finally, if we selected for the lowermost 5%, $ \\bar{\\imath} = -2.06 $."
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:14.1]]"
     }
   ]
 }

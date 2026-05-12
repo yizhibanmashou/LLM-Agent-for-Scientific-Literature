@@ -2,47 +2,79 @@
   "id": "appendix2_014",
   "metadata": {
     "chapter": "appendix2",
-    "section": "POSTERIOR DISTRIBUTIONS UNDER NORMALITY ASSUMPTIONS",
+    "section": "Appendix: Introduction",
     "subsections": [
-      "Gaussian Likelihood With Known Variance and Unknown Mean"
+      "Gamma, $ \\chi^{2} $, Inverse-gamma, and $ \\chi^{-2} $ Distributions"
     ],
     "source_file": "tmp\\paddle_output\\appendix2_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [],
-    "table_references": []
+    "table_references": [
+      "inline_2"
+    ],
+    "section_level_1": "Appendix: Introduction",
+    "section_level_2": "Gamma, $ \\chi^{2} $, Inverse-gamma, and $ \\chi^{-2} $ Distributions",
+    "heading_path": [
+      "Appendix: Introduction",
+      "Gamma, $ \\chi^{2} $, Inverse-gamma, and $ \\chi^{-2} $ Distributions"
+    ],
+    "display_heading": "Gamma, $ \\chi^{2} $, Inverse-gamma, and $ \\chi^{-2} $ Distributions",
+    "table_reference_keys": [
+      "appendix2:inline_2"
+    ]
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "To motivate the gamma distribution, first consider the simple exponential waiting-time distribution, where $ $ is the rate (the probability of a success in some small time unit, $ _ t $, is given by $ _ t $), then the probability density function (pdf) for the exponential is $$ p(x\\mid\\beta)=\\beta e^{-\\beta x}\\quad for\\quad0\\leq x<\\infty,\\quad\\beta>0 $$ Because the expected waiting time until a success is $ = 1/ $, this can be reparameterized in terms of the scale (waiting time) parameter as $$ p(x\\mid\\beta)=\\lambda^{-1}e^{-x/\\lambda} $$"
+      "content": "Before examining the Gaussian likelihood with unknown variance, a brief aside is needed to develop the inverse chi-square distribution, denoted by $ \\chi^{-2} $. We do this via the gamma and inverse-gamma distributions, as both $ \\chi^{2} $ and $ \\chi^{-2} $ are special cases of these distributions."
     },
     {
       "type": "discussion",
-      "content": "The sum of $ k $ exponentials with the same rate (or scale) parameter is called an Erlang distribution, and it was initially developed for certain problems in telephone queuing theory. Expressed in terms of the rate parameter, the resulting pdf becomes $$ p(x\\mid k,\\beta)=\\frac{\\beta^{k}}{(k-1)!}\\;x^{k-1}\\;e^{-\\beta x}\\quad\\mathrm{f o r}\\quad0\\leq x<\\infty $$ where the integer k is called the shape parameter, with k = 1 recovering the exponential."
+      "content": "To motivate the gamma distribution, first consider the simple exponential waiting-time distribution, where $ \\beta $ is the rate (the probability of a success in some small time unit, $ \\delta_{t} $, is given by $ \\beta \\delta_{t} $), then the probability density function (pdf) for the exponential is $$ p(x\\mid\\beta)=\\beta e^{-\\beta x}\\quad for\\quad0\\leq x<\\infty,\\quad\\beta>0 $$ Because the expected waiting time until a success is $ \\lambda = 1/\\beta $, this can be reparameterized in terms of the scale (waiting time) parameter as $$ p(x\\mid\\beta)=\\lambda^{-1}e^{-x/\\lambda} $$"
     },
     {
       "type": "discussion",
-      "content": "The gamma distribution follows by allowing the shape parameter to be any positive number, $ $, with $ x (,) $ having its pdf defined by its shape ($ $) and rate ($ $) values, $$ \\begin{align*}p(x\\mid\\alpha,\\beta)=\\frac{\\beta^\\alpha}{\\Gamma(\\alpha)}x^{\\alpha-1}e^{-\\beta x}\\quad{\\rm for}\\alpha,\\beta,x>0\\end{align*} $$"
+      "content": "The sum of $ k $ exponentials with the same rate (or scale) parameter is called an Erlang distribution, and it was initially developed for certain problems in telephone queuing theory. Expressed in terms of the rate parameter, the resulting pdf becomes $$ p(x\\mid k,\\beta)=\\frac{\\beta^{k}}{(k-1)!}\\; x^{k-1}\\; e^{-\\beta x}\\quad\\mathrm{f o r}\\quad0\\leq x<\\infty $$ where the integer k is called the shape parameter, with k = 1 recovering the exponential."
     },
     {
       "type": "discussion",
-      "content": "Note that the factorial in the Erlang is replaced by the gamma function, $ (x) $, which is defined below (Equation A2.26a). Figure A2.2 shows how changes in these two parameters influence the shape of the distribution. Note that, as a function of x, $$ p(x\\mid\\alpha,\\beta)\\propto x^{\\alpha-1}e^{-\\beta x} $$"
+      "content": "The gamma distribution follows by allowing the shape parameter to be any positive number, $ \\alpha $, with $ x \\sim \\Gamma(\\alpha, \\beta) $ having its pdf defined by its shape ($ \\alpha $) and rate ($ \\beta $) values, $$ \\begin{align*}p(x\\mid\\alpha,\\beta)=\\frac{\\beta^\\alpha}{\\Gamma(\\alpha)}x^{\\alpha-1}e^{-\\beta x}\\quad{\\rm for}\\alpha,\\beta,x>0\\end{align*} $$"
     },
     {
       "type": "discussion",
-      "content": "When expressed in terms of the scale ($ = 1/ $) parameter, the pdf becomes $$ p(x\\mid\\alpha,\\lambda)=\\frac{\\lambda^{-\\alpha}}{\\Gamma(\\alpha)}x^{\\alpha-1}e^{-x/\\lambda} $$"
+      "content": "Note that the factorial in the Erlang is replaced by the gamma function, $ \\Gamma(x) $, which is defined below (Equation A2.26a). Figure A2.2 shows how changes in these two parameters influence the shape of the distribution. Note that, as a function of x, $$ p(x\\mid\\alpha,\\beta)\\propto x^{\\alpha-1}e^{-\\beta x} $$"
     },
     {
       "type": "discussion",
-      "content": "|c|c| Cell 1 & Cell 2 \\\\ Cell 3 & Cell 4 \\\\ which yields $$ p(x\\mid\\alpha,\\lambda)\\propto x^{\\alpha-1}e^{-x/\\lambda} $$ Because both the rate and scale versions of the gamma distribution are widely used, take care to know which version your software package is using (for example, the default in R uses the scale parameter version). We can parameterize a gamma in terms of its mean and variance by noting that $$ \\mu_{x}=\\frac{\\alpha}{\\beta}=\\alpha\\lambda\\qquad and\\qquad\\sigma_{x}^{2}=\\frac{\\alpha}{\\beta^{2}}=\\alpha\\lambda^{2} $$ so that $$ \\alpha=\\frac{\\mu_{x}^{2}}{\\sigma_{x}^{2}}\\qquad and\\qquad\\beta=\\frac{\\mu_{x}}{\\sigma_{x}^{2}} $$"
+      "content": "When expressed in terms of the scale ($ \\lambda = 1/\\beta $) parameter, the pdf becomes $$ p(x\\mid\\alpha,\\lambda)=\\frac{\\lambda^{-\\alpha}}{\\Gamma(\\alpha)}x^{\\alpha-1}e^{-x/\\lambda} $$ which yields $$ p(x\\mid\\alpha,\\lambda)\\propto x^{\\alpha-1}e^{-x/\\lambda} $$ Because both the rate and scale versions of the gamma distribution are widely used, take care to know which version your software package is using (for example, the default in R uses the scale parameter version). We can parameterize a gamma in terms of its mean and variance by noting that $$ \\mu_{x}=\\frac{\\alpha}{\\beta}=\\alpha\\lambda\\qquad and\\qquad\\sigma_{x}^{2}=\\frac{\\alpha}{\\beta^{2}}=\\alpha\\lambda^{2} $$ so that $$ \\alpha=\\frac{\\mu_{x}^{2}}{\\sigma_{x}^{2}}\\qquad and\\qquad\\beta=\\frac{\\mu_{x}}{\\sigma_{x}^{2}} $$"
     },
     {
       "type": "discussion",
-      "content": "$ () $, the gamma function evaluated at $ $ (which normalizes the gamma distribution), is defined by $$ \\Gamma(\\alpha)=\\int_{0}^{\\infty}y^{\\alpha-1}e^{-y}d y\\qquadfor\\alpha>0 $$"
+      "content": "$ \\Gamma(\\alpha) $, the gamma function evaluated at $ \\alpha $ (which normalizes the gamma distribution), is defined by $$ \\Gamma(\\alpha)=\\int_{0}^{\\infty}y^{\\alpha-1}e^{-y}d y\\qquad for\\alpha>0 $$"
     },
     {
       "type": "discussion",
-      "content": "This is the generalization of the factorial function from the integers to any positive number. If $n$ is an integer, then $ (n) = (n - 1)!$ Using integration by parts, one can show that $ $ satisfies the following identities $$ \\Gamma(\\alpha+1)=\\alpha\\Gamma(\\alpha),\\quad\\Gamma(1)=1,\\quad and\\quad\\Gamma(1/2)=\\sqrt{\\pi} $$"
+      "content": "This is the generalization of the factorial function from the integers to any positive number. If $n$ is an integer, then $\\Gamma(n) = (n - 1)!$ Using integration by parts, one can show that $\\Gamma$ satisfies the following identities $$ \\Gamma(\\alpha+1)=\\alpha\\Gamma(\\alpha),\\quad\\Gamma(1)=1,\\quad and\\quad\\Gamma(1/2)=\\sqrt{\\pi} $$ The chi-square ($ \\chi^2 $) distribution is a special case of the gamma, as a $ \\chi^2 $ random variable with $ n $ degrees of freedom follows a gamma distribution with parameters $ \\alpha = n/2 $ and $ \\beta = 1/2 $ ($ \\lambda = 2 $), namely, $ \\chi_n^2 \\sim \\Gamma(\\frac{n}{2}, 1/2) $, giving the density function as $$ p(x\\mid n)=\\frac{2^{-n/2}}{\\Gamma(n/2)}x^{n/2-1}e^{-x/2} $$ Hence for $ x \\sim \\chi_{n}^{2} $, $$ p(x)\\propto x^{n/2-1}e^{-x/2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The inverse-gamma distribution will prove useful as a conjugate prior for Gaussian likelihoods with unknown variance. It is defined by the distribution of the random variable $ y = x^{-1} $, where $ x \\sim \\text{Gamma}(\\alpha, \\beta) $. The resulting density function is $$ p(x\\mid\\alpha,\\beta)=\\frac{\\beta^{\\alpha}}{\\Gamma(\\alpha)}x^{-(\\alpha+1)}e^{-\\beta/x}\\quad for\\alpha,\\beta,x>0 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The mean and variance for this distribution are only defined (i.e., finite) if $ \\alpha $ is sufficiently large, with $$ \\mu_{x}=\\frac{\\beta}{\\alpha-1}\\quad for\\alpha>1\\quad and\\quad\\sigma_{x}^{2}=\\frac{\\beta^{2}}{(\\alpha-1)^{2}(\\alpha-2)}\\quad for\\alpha>2 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Note for the inverse gamma that $$ p(x\\mid\\alpha,\\beta)\\propto x^{-(\\alpha+1)}e^{-\\beta/x} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "If $ y \\sim \\chi_n^2 $, then $ x = 1/y $ follows an inverse chi-square distribution, which is denoted by $ x \\sim \\chi_n^{-2} $. This is a special case of the inverse gamma, with (as for a normal $ \\chi^2 $) $ \\alpha = n/2 $, $ \\beta = 1/2 $. For $ n > 4 $ (i.e., $ \\alpha > 2 $), the resulting density function is $$ p(x\\mid n)=\\frac{2^{-n/2}}{\\Gamma(n/2)}x^{-(n/2+1)}e^{-1/(2x)} $$ with a mean and variance of $$ \\mu_{x}=\\frac{1}{n-2}\\qquad and\\qquad\\sigma_{x}^{2}=\\frac{2}{(n-2)^{2}(n-4)} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The scaled inverse chi-square distribution is more typically used in a Bayesian analysis, where the rate parameter, $ \\beta $ (which equals 1/2 under a chi-square), is replaced by $ \\beta = \\sigma_{0}^{2}/2 $, making the resulting pdf $$ p(x\\mid n)\\propto x^{-(n/2+1)}e^{-\\sigma_{0}^{2}/(2x)} $$ where the $ 1/(2x) $ term in the exponential is replaced by a $ \\sigma_0^2/(2x) $ term. The scaled inverse chi-square distribution thus involves two parameters $ (\\sigma_0^2 $ and $ n) $, and is denoted by $ \\chi_{(n,\\sigma_0^2)}^{-2} $ or $ \\mathrm{SI}-\\chi^2(n,\\sigma_0^2) $. Note that if $$ x\\sim\\chi_{(n,\\sigma_{0}^{2})}^{-2},\\qquad\\mathrm{t h e n}\\qquad\\sigma_{0}^{2}x\\sim\\chi_{n}^{-2} $$ which shows that $ \\sigma_{0}^{2} $ is a scaling factor on a standard $ (\\beta = 1/2) $ inverse chi-square."
     }
   ]
 }

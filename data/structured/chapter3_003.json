@@ -2,7 +2,7 @@
   "id": "chapter3_003",
   "metadata": {
     "chapter": "chapter3",
-    "section": "Chapter 3: GENERAL CONSIDERATIONS",
+    "section": "The Genetic Effective Size of a Population: Introduction",
     "subsections": [
       "MONOECY"
     ],
@@ -17,7 +17,14 @@
       "3.7",
       "3.8"
     ],
-    "table_references": []
+    "table_references": [],
+    "section_level_1": "The Genetic Effective Size of a Population: Introduction",
+    "section_level_2": "MONOECY",
+    "heading_path": [
+      "The Genetic Effective Size of a Population: Introduction",
+      "MONOECY"
+    ],
+    "display_heading": "MONOECY"
   },
   "blocks": [
     {
@@ -65,16 +72,12 @@
       "content": "A second potential complication is that in most hermaphroditic species, there is a distinction between male and female gametes (anisogamy), so that even with selfing, only a fraction of potential gamete pairs are capable of spawning a successful zygote. When mating is random but selfing is prohibited, the effective population size is the same under isogamy and anisogamy, and Equation 3.6 still applies (Crow and Denniston 1988). However, with selfing permitted, [[SEE_FORMULA:3.8]] where $ \\sigma_{o,p} $ is the covariance of the numbers of successful male $ (p,\\mathrm{pollen}) $ and female $ (o,\\mathrm{ovule}) $ gametes per parent (Crow and Denniston 1988). If $ \\sigma_{o,p} $ is positive, as might be expected in a spatially heterogeneous environment where some individuals acquire more resources than others, the effective population size will be less than the observed size. However, if $ \\sigma_{o,p} $ is negative, as might be expected when there is a trade-off between male and female function, $ N_{e} $ can exceed $ N_{t-1} $. This results because a negative covariance in male and female gamete production reduces the variance in family size."
     },
     {
-      "type": "discussion",
-      "content": "Example 3.1. Hedgecock (1994) suggested that marine organisms with high fecundities and broadcast spawning may have effective population sizes that are orders of magnitude smaller than the absolute number of potential breeders. This situation can arise if vagaries in oceanographic conditions are such that only a small fraction of adults produce gametes at points in time and space that allow recruitment to the next generation. Suppose the total adult population size is $ N_p $, whereas only $ N_p $ individuals contribute equally to the breeding pool. Such a situation is sustainable if reproductive adults can individually produce an average of $ 2N/N_p $ gametes (and many marine species are capable of producing many tens of thousands of gametes). Given such a situation, $ N_p $ individuals have expected family sizes of $ 2N/N_p $, whereas $ (N - N_p) $ have zero expected reproductive success, which results in an expected family-size variance among all $ N $ individuals of $ 4[(N/N_p) - 1] $ (Hedrick 2005). Using the logic outlined in the paragraph below Equation 3.4, the additional variance in reproductive success among spawning individuals resulting from random gamete sampling is equal to $$ \\left\\{\\left(\\frac{N_{p}}{N}\\right)\\cdot2N\\cdot\\left(\\frac{1}{N_{b}}\\right)\\left[1-\\left(\\frac{1}{N_{b}}\\right)\\right]\\right\\}+\\left\\{\\left[1-\\left(\\frac{N_{b}}{N}\\right)\\right]\\cdot2N\\cdot0\\right\\}=2\\left[1-\\left(\\frac{1}{N_{b}}\\right)\\right] $$"
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:3.1]]"
     },
     {
-      "type": "discussion",
-      "content": "Summing these two sources of family-size variance gives $ \\sigma_k^2 = [(4N - 2)/N_p] - 2 $, and substituting into Equation 3.4, we obtain $ N_e = N_p $. Thus, provided a species has a high enough gamete production to generate N surviving progeny from a small number of adults, the effective population size can be only a tiny fraction of N."
-    },
-    {
-      "type": "proposition",
-      "content": "Example 3.2. Heywood (1986) estimated that $ \\sigma_k / \\mu_k^2 $ for seed production is on the order of 1 to 4 in a number of annual plants (including self-compatible species). Unfortunately, the value of $ \\sigma_k^2 $ for total gamete production requires additional information on successful pollen production, which is extremely difficult to acquire due to problems in ascertaining paternity. For heuristic purposes, however, let us assume a stable monoecious population. This necessarily implies mean seed and pollen production are both equal to one, and $ \\mu_k = \\mu_o + \\mu_p = 2 $, as each parent must produce two successful gametes (on average, one male and one female). We will also assume a three-fold higher standard deviation for successful pollen relative to seed production, so that $ \\sigma_p = 3\\sigma_o $, and a perfect correlation between ovule and pollen production. Because the correlation between the number of female and male gametes produced per individual is defined to be $ \\sigma_{o,p} / (\\sigma_{o,p_0}) $, the latter assumption implies $ 1 = \\sigma_{o,p} / [\\sigma_{o,p} \\cdot 3\\sigma_{o}] $. Assuming random mating, and substituting $ \\sigma_{o,p} = 3\\sigma_o^2 $ into Equation 3.8, we obtain $ N_c = N / [(12\\sigma_o^2 / \\mu_k^2) + 1] $. Thus, for $ \\sigma_o^2 / \\mu_k^2 $ in the range of 1 to 4, $ N_c $ is between 2% and 8% of the census number (N)."
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:3.2]]"
     }
   ]
 }

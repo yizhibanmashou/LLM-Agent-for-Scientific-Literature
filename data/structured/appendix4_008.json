@@ -2,43 +2,46 @@
   "id": "appendix4_008",
   "metadata": {
     "chapter": "appendix4",
-    "section": "Simes-Hochberg Method",
+    "section": "Appendix: Introduction",
     "subsections": [
-      "Simes-Hochberg Method"
+      "Holm's Method"
     ],
     "source_file": "tmp\\paddle_output\\appendix4_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [],
-    "table_references": []
+    "table_references": [],
+    "section_level_1": "Appendix: Introduction",
+    "section_level_2": "Holm's Method",
+    "heading_path": [
+      "Appendix: Introduction",
+      "Holm's Method"
+    ],
+    "display_heading": "Holm's Method"
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "With Holm's method, we stop once we fail to reject a hypothesis. An improvement on this approach is the Simes-Hochberg correction (Simes 1986; Hochberg 1988), which effectively starts backward, working with the largest p values first."
+      "content": "The simplest of these sequential adjustments is Holm's method (Holm 1979). The first step is to order the $p$ values for the $n$ hypotheses being tested from smallest to largest, $p(1) \\leq p(2) \\leq \\cdots \\leq p(n)$, and let $H(i)$ be the hypothesis associated with $p(i)$. One proceeds with Holm's method as follows: (i) If $ p(1) > \\pi/n $, accept all $ n $ null hypotheses (i.e., none are declared significant)."
     },
     {
       "type": "discussion",
-      "content": "(i) If $ p(n) $, then all hypothesis are rejected."
+      "content": "(ii) If $ p(1) \\leq \\pi/n $, reject $ H(1) $ [i.e., $ H(1) $ is declared significant], and consider $ H(2) $."
     },
     {
       "type": "discussion",
-      "content": "(ii) If not, $ H(n) $ cannot be rejected, and we next examine $ H(n-1) $."
+      "content": "(iii) If $ p(2) > \\pi/(n - 1) $, accept $ H(i) $ (for $ i \\geq 2 $)."
     },
     {
       "type": "discussion",
-      "content": "(iii) If $ p(n-1) /2 $, then all $ H(i) $ for $ i n-1 $ are rejected."
+      "content": "(iv) If $ p(2) \\leq \\pi/(n-1) $, reject $ H(2) $ and move onto $ H(3) $."
     },
     {
       "type": "discussion",
-      "content": "(iv) If not, $ H(n-1) $ cannot be rejected, and we compare $ p(n-2) $ with $ /3 $."
+      "content": "(v) Proceed with rejecting hypotheses until reaching the first i such that $ p(i) > \\pi/(n - i + 1) $."
     },
     {
       "type": "discussion",
-      "content": "(v) In general, if $ p(n - i) /(n - i + 1) $, then all $ H(i) $ for $ i n - i $ are rejected."
-    },
-    {
-      "type": "discussion",
-      "content": "While the Simes-Hochberg approach is more powerful than that of Holm's (see Example A4.4), it is only strictly applicable when the group of tests being jointly considered are independent, whereas Holm's approach does not have this restriction. Hence, the general strategy is to use Holm's method if one is concerned about potential dependencies between tests, and the Simes-Hochberg's method if the tests are independent."
+      "content": "We can also apply Holm’s method using Equation A4.3a—namely, $ \\alpha = 1 - (1 - \\pi)^{1/n} $, the Dunn-Šidák correction—in place of $ \\alpha = \\pi/n $."
     }
   ]
 }

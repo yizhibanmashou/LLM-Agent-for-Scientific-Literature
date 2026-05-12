@@ -2,7 +2,7 @@
   "id": "chapter7_008",
   "metadata": {
     "chapter": "chapter7",
-    "section": "Chapter 7: Fixation of Overdominant and Underdominant Alleles",
+    "section": "Interaction of Selection, Mutation, and Drift: Introduction",
     "subsections": [
       "Fixation of Overdominant and Underdominant Alleles"
     ],
@@ -11,9 +11,18 @@
     "formula_references": [
       "7.22",
       "7.23",
-      "7.24"
+      "7.24",
+      "7.25",
+      "7.26"
     ],
-    "table_references": []
+    "table_references": [],
+    "section_level_1": "Interaction of Selection, Mutation, and Drift: Introduction",
+    "section_level_2": "Fixation of Overdominant and Underdominant Alleles",
+    "heading_path": [
+      "Interaction of Selection, Mutation, and Drift: Introduction",
+      "Fixation of Overdominant and Underdominant Alleles"
+    ],
+    "display_heading": "Fixation of Overdominant and Underdominant Alleles"
   },
   "blocks": [
     {
@@ -30,11 +39,7 @@
     },
     {
       "type": "discussion",
-      "content": "The fixation times for newly arisen overdominant mutations parallel the patterns of loss of variation that Robertson (1962) first noted (Nei and Roychoudhury 1973). When the equilibrium frequency is outside of the range of (0.2, 0.8), the mean fixation time will be lower than the neutral expectation of $ 4N_e $ generations, whereas for $ 0.2 < \\tilde{p} < 0.8 $, the time is elevated, with more extreme behaviors seen at high values of $ N_e(s_1 + s_2) $ (Figure 7.4). Particularly intriguing is the fact that the fixation time of an overdominant mutation will be symmetrical around $ \\tilde{p} = 0.5 $, i.e., for a given strength of selection $ N_e(s_1 + s_2) $, the time to fixation is the same at equilibrium frequencies $ \\tilde{p} $ and $ 1 - \\tilde{p} $. This is consistent with the situation for mutants with additive effects that was already noted, and indicates that when an overdominant"
-    },
-    {
-      "type": "discussion",
-      "content": "mutant allele is associated with the least fit homozygous type, for the rare occasions in which fixation occurs, it does so just as rapidly, on average, as when it is associated with the most fit homozygote (in which case it also fixes more frequently). Further considerations for the situation in which populations are subdivided were given in Nishino and Tajima (2004)."
+      "content": "The fixation times for newly arisen overdominant mutations parallel the patterns of loss of variation that Robertson (1962) first noted (Nei and Roychoudhury 1973). When the equilibrium frequency is outside of the range of (0.2, 0.8), the mean fixation time will be lower than the neutral expectation of $ 4N_e $ generations, whereas for $ 0.2 < \\tilde{p} < 0.8 $, the time is elevated, with more extreme behaviors seen at high values of $ N_e(s_1 + s_2) $ (Figure 7.4). Particularly intriguing is the fact that the fixation time of an overdominant mutation will be symmetrical around $ \\tilde{p} = 0.5 $, i.e., for a given strength of selection $ N_e(s_1 + s_2) $, the time to fixation is the same at equilibrium frequencies $ \\tilde{p} $ and $ 1 - \\tilde{p} $. This is consistent with the situation for mutants with additive effects that was already noted, and indicates that when an overdominant mutant allele is associated with the least fit homozygous type, for the rare occasions in which fixation occurs, it does so just as rapidly, on average, as when it is associated with the most fit homozygote (in which case it also fixes more frequently). Further considerations for the situation in which populations are subdivided were given in Nishino and Tajima (2004)."
     },
     {
       "type": "discussion",
@@ -51,6 +56,22 @@
     {
       "type": "discussion",
       "content": "Of special interest in the study of speciation are chromosomal rearrangements that cause problems during meiosis in chromosomal heterozygotes, with values of $s$ as large as 0.5 being quite plausible (Lande 1979b, 1984b). With $N_{e}s = 2$, 5, and 10, Equation 7.24 predicts fixation rates that are, respectively, 0.22, 0.017, and 0.00016 times the neutral expectation. Such results imply that if heterozygote fitness is greatly reduced, transitions to alternative allelic states (with equivalent homozygous fitness) will only be possible if $N_{e}$ is extremely small. However, when such fixations do occur, they proceed much more rapidly than the neutral expectation of $4N_{e}$ generations (Lande 1979b)."
+    },
+    {
+      "type": "derivation",
+      "content": "Walsh (1982) generalized these results to the situation in which the fitness in the novel homozygote is elevated to $ 1+t $, such that after passage through a fitness bottleneck, fixation of the underdominant allele leads to an increase in mean population fitness. Letting $ \\theta = N_e s $, and $ \\omega = 1 + (t/2s) $ [[SEE_FORMULA:7.25]]"
+    },
+    {
+      "type": "discussion",
+      "content": "For $ t < 2s $, the fixation probability is close to that predicted by Equation 7.22, whereas for very large values of $ t $, $ u_f(1/2N) $ can moderately exceed the neutral fixation probability provided $ N_e $s is not so strong that the allele is incapable of drifting to a high enough frequency to be favored by selection (Figure 7.5)."
+    },
+    {
+      "type": "derivation",
+      "content": "The latter case is of special interest, as one can identify a critical effective population size $ (N_e^*) $ above which the efficiency of selection is so strong that there is essentially no possibility of the population passing through the fitness bottleneck imposed by heterozygotes. With heterozygotes having a fitness reduction of s, derived homozygotes having an advantage of t, and p being the frequency of the mutant allele, the mean population fitness is $ \\overline{W} = 1 - 2p(1 - p)s + p^2t $, which reaches a minimum at $ \\widehat{p} = s/(t + 2s) = 0.5\\omega $, so that $ p < \\widehat{p} $ implies net selection against, and $ p > \\widehat{p} $ net selection in favor of, the mutant allele. Thus, the key issue is whether the mutant allele can drift from an initial frequency of $ 1/(2N) $ to $ \\widehat{p} $, at which point selection can pull it to fixation. When p is small, the frequency of mutant homozygotes is negligible, and the new allele effectively behaves like a deleterious mutation being removed from the population at rate s, and it can be shown that there is essentially no chance of the allele drifting to $ \\widehat{p} $ if [[SEE_FORMULA:7.26]]"
+    },
+    {
+      "type": "discussion",
+      "content": "(Lynch 2012a). For example, with a mutant allele with a disadvantage of s = 0.01 in the heterozygous state but an advantage of t = 0.01 in the homozygous state, an effective population size above 300 imposes a very strong barrier to its establishment. Lande (1979b, 1985) showed that such selective valleys are much more likely to be vaulted in subdivided populations, where local extinction and recolonization permit individual demes to make transitions to an alternative genotypic state and then export such a fixed change to a newly opened habitat."
     }
   ]
 }

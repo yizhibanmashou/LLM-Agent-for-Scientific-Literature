@@ -2,7 +2,7 @@
   "id": "chapter14_005",
   "metadata": {
     "chapter": "chapter14",
-    "section": "Chapter 14: The Threshold/Liability Model",
+    "section": "Short-term Changes in the Mean: 2. Truncation and Threshold Selection",
     "subsections": [
       "The Threshold/Liability Model"
     ],
@@ -15,7 +15,19 @@
       "14.8b",
       "14.9"
     ],
-    "table_references": []
+    "table_references": [
+      "inline_1"
+    ],
+    "section_level_1": "Short-term Changes in the Mean: 2. Truncation and Threshold Selection",
+    "section_level_2": "The Threshold/Liability Model",
+    "heading_path": [
+      "Short-term Changes in the Mean: 2. Truncation and Threshold Selection",
+      "The Threshold/Liability Model"
+    ],
+    "display_heading": "The Threshold/Liability Model",
+    "table_reference_keys": [
+      "chapter14:inline_1"
+    ]
   },
   "blocks": [
     {
@@ -36,11 +48,7 @@
     },
     {
       "type": "derivation",
-      "content": "Applying LW Equation 2.14, and noting that the unit normal density function satisfies $ \\varphi(x) = \\varphi(-x) $, yields [[SEE_FORMULA:14.8b]]"
-    },
-    {
-      "type": "derivation",
-      "content": "where $ \\varphi(x) $ is the unit normal density function evaluated at x. Substituting into Equation 14.8a yields [[SEE_FORMULA:14.9]] As expected, if $ p_t > q_t $, then $ S_t > 0 $. Maximal selection occurs if only individuals displaying the trait are saved $ (p_t = 1) $, in which case Equation 14.9 reduces to $ S_t = \\varphi(-x_{[1-q_t]}) / q_t $."
+      "content": "Applying LW Equation 2.14, and noting that the unit normal density function satisfies $ \\varphi(x) = \\varphi(-x) $, yields [[SEE_FORMULA:14.8b]] where $ \\varphi(x) $ is the unit normal density function evaluated at x. Substituting into Equation 14.8a yields [[SEE_FORMULA:14.9]] As expected, if $ p_t > q_t $, then $ S_t > 0 $. Maximal selection occurs if only individuals displaying the trait are saved $ (p_t = 1) $, in which case Equation 14.9 reduces to $ S_t = \\varphi(-x_{[1-q_t]}) / q_t $."
     },
     {
       "type": "proposition",
@@ -48,11 +56,15 @@
     },
     {
       "type": "discussion",
-      "content": "One important feature about selection on threshold traits is that the response to selection is not necessarily symmetric—a selected 5% increase in the trait may not yield the same response as a selected 5% decrease. The reason for this is that the mapping between phenotypes and their underlying liability is highly nonlinear. Even though the parent-offspring regression on the liability scale is assumed to be linear (and hence liability response is symmetric), the parent-offspring regression on the phenotypic level is not linear, resulting in an asymmetric response. ample 14.4 and especially LW Chapter 25 discuss how $ h^{2} $ can be estimated on this scale). What is the expected response to selection if the initial frequency of individuals displaying the character is 5% and selection is practiced by choosing only adults displaying the character? Only six generations are required to increase the frequency of the trait to 50% ($ \\mu = 0 $). Note that even though all selected parents exhibit the trait, the selection differential rapidly declines in a nonlinear fashion (Figure 14.5)."
+      "content": "One important feature about selection on threshold traits is that the response to selection is not necessarily symmetric—a selected 5% increase in the trait may not yield the same response as a selected 5% decrease. The reason for this is that the mapping between phenotypes and their underlying liability is highly nonlinear. Even though the parent-offspring regression on the liability scale is assumed to be linear (and hence liability response is symmetric), the parent-offspring regression on the phenotypic level is not linear, resulting in an asymmetric response. ample"
     },
     {
-      "type": "discussion",
-      "content": "The values plotted in Figure 14.5 were obtained as follows. As was calculated earlier, $ q_0 = 0.05 $, which implies $ \\mu_0 = -1.645 $ (the mean liability is 1.65 standard deviations below the threshold). Only individuals displaying the trait are allowed to reproduce, yielding (from Equation 14.9) the resulting selection differential on the liability scale: $$ S_{0}=\\varphi(-1.645)/0.05\\simeq0.106/0.05\\simeq2.062 $$"
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:14.3]]"
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:14.4]]"
     }
   ]
 }

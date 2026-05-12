@@ -2,7 +2,7 @@
   "id": "chapter27_002",
   "metadata": {
     "chapter": "chapter27",
-    "section": "Chapter 27: FISHER'S MODEL: THE ADAPTIVE GEOMETRY OF NEW MUTATIONS",
+    "section": "Long-term Response: Introduction",
     "subsections": [
       "FISHER'S MODEL: THE ADAPTIVE GEOMETRY OF NEW MUTATIONS"
     ],
@@ -12,16 +12,19 @@
       "27.1a",
       "27.1b"
     ],
-    "table_references": []
+    "table_references": [],
+    "section_level_1": "Long-term Response: Introduction",
+    "section_level_2": "FISHER'S MODEL: THE ADAPTIVE GEOMETRY OF NEW MUTATIONS",
+    "heading_path": [
+      "Long-term Response: Introduction",
+      "FISHER'S MODEL: THE ADAPTIVE GEOMETRY OF NEW MUTATIONS"
+    ],
+    "display_heading": "FISHER'S MODEL: THE ADAPTIVE GEOMETRY OF NEW MUTATIONS"
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Fisher (1930) offered a highly simplified, yet elegant and powerful, geometric argument suggesting that the probability that a new mutation increases fitness is a simple function of the size of the mutational effect relative to the distance of the original phenotype from the optimal trait value. Fisher believed that his model, while idealized, captured the “statistical requirements of the situation” of adaptation: one complex thing (the organism) must fit into another complex thing (the environment). Although Fisher envisioned that adaptation requires a highly multivariate phenotype meshing with a highly multivariate fitness function, Figure 27.1A shows the basic structure of his model in two dimensions. Stabilizing selection is assumed, with the current phenotypic value at a distance d from a fitness optimum, $ \\theta $. The two traits have been scaled and rotated to be independent, with equal selection intensity on both (this can be accomplished using a transformation along the lines suggested by Equation A5.16). As depicted in Figure 27.1A, we assume stabilizing selection acting on two independent traits. Let the vector z, at distance d from the optimal value, $ \\theta $, represent the current multivariate phenotype associated with a particular genotype. The phenotypic change by a new mutation is given by a vector of length r (the effect size of the mutation) extended from the current value (z) in some random direction (i.e., the incremental model). Any mutation whose distance to $ \\theta $ is less than d has increased fitness (and is said to be beneficial or adaptive), while a mutation whose distance from $ \\theta $ is greater than d has lower fitness. Drawing a circle of radius d around $ \\theta $ (a contour of equal fitnesses corresponding to that of the original phenotype), the probability that the new mutation is advantageous will be"
-    },
-    {
-      "type": "discussion",
-      "content": "simply the probability that the mutation lies within this contour (i.e., is closer to θ)."
+      "content": "Fisher (1930) offered a highly simplified, yet elegant and powerful, geometric argument suggesting that the probability that a new mutation increases fitness is a simple function of the size of the mutational effect relative to the distance of the original phenotype from the optimal trait value. Fisher believed that his model, while idealized, captured the “statistical requirements of the situation” of adaptation: one complex thing (the organism) must fit into another complex thing (the environment). Although Fisher envisioned that adaptation requires a highly multivariate phenotype meshing with a highly multivariate fitness function, Figure 27.1A shows the basic structure of his model in two dimensions. Stabilizing selection is assumed, with the current phenotypic value at a distance d from a fitness optimum, $ \\theta $. The two traits have been scaled and rotated to be independent, with equal selection intensity on both (this can be accomplished using a transformation along the lines suggested by Equation A5.16). As depicted in Figure 27.1A, we assume stabilizing selection acting on two independent traits. Let the vector z, at distance d from the optimal value, $ \\theta $, represent the current multivariate phenotype associated with a particular genotype. The phenotypic change by a new mutation is given by a vector of length r (the effect size of the mutation) extended from the current value (z) in some random direction (i.e., the incremental model). Any mutation whose distance to $ \\theta $ is less than d has increased fitness (and is said to be beneficial or adaptive), while a mutation whose distance from $ \\theta $ is greater than d has lower fitness. Drawing a circle of radius d around $ \\theta $ (a contour of equal fitnesses corresponding to that of the original phenotype), the probability that the new mutation is advantageous will be simply the probability that the mutation lies within this contour (i.e., is closer to θ)."
     },
     {
       "type": "derivation",
@@ -44,12 +47,8 @@
       "content": "For the class of mutations that all have the same effect size, the fitness distribution is obtained by first computing the distribution of displacements toward the optimal value. Orr (198b) showed that this is approximately normal for large n, with a negative mean (on average, a random mutation moves the phenotype away from the optimum). Translating displacements into fitnesses under the assumption of Gaussian stabilizing selection, the resulting distribution of fitness effects of random mutations (again, all of the same size, r) is also approximately normal, with a mean less than the current fitness of the starting genotype. Martin and Lenormand (2006) and Tenaillon (2014) provided a more exact analysis, which yields a fitness distribution in the form of a modified gamma distribution (Appendix 2). Hence, most new mutations move a trait further away from its optimum, thereby lowering fitness. Only those mutations in the right tail of this displacement distribution (those with positive values, namely, those whose phenotypes following mutation are closer to $ \\theta $) are advantageous. This important result foreshadows a rather different model of adaptation based on extreme-value theory (i.e., based on draws from the extreme right-hand tail of a fitness distribution), which will be examined in the second half of this chapter."
     },
     {
-      "type": "discussion",
-      "content": "One might be concerned by the highly simplistic nature of Fisher's model: n independent traits with equal selection and mutation on each. However, these assumptions can be relaxed by replacing Fisher's assumed hyperspheres for fitness contours and mutational"
-    },
-    {
       "type": "proposition",
-      "content": "effects (under the isotropic assumption of equal and uncorrelated effects) with hyperellipsoids, which allows for among-trait correlations and unequal traits effects in both fitness and mutation (e.g., Waxman and Welch 2005; Martin and Lenormand 2006, 2008; Waxman 2006, 2007). This anisotropic assumption of unequal and/or correlated pleiotropic mutational effects can be modeled by using a mutational covariance matrix, M, and unequal and/or correlated stabilizing selection (Chapter 30) can be accommodated with a semipositive-definite matrix, S (e.g., a matrix with no negative eigenvalues; Appendix 5). The resulting effective number of dimensions for x is given by $ n/(1 + c_v^2) $, where $ c_v $ is the coefficient of variation of the eigenvalues of the matrix product of MS."
+      "content": "One might be concerned by the highly simplistic nature of Fisher's model: n independent traits with equal selection and mutation on each. However, these assumptions can be relaxed by replacing Fisher's assumed hyperspheres for fitness contours and mutational effects (under the isotropic assumption of equal and uncorrelated effects) with hyperellipsoids, which allows for among-trait correlations and unequal traits effects in both fitness and mutation (e.g., Waxman and Welch 2005; Martin and Lenormand 2006, 2008; Waxman 2006, 2007). This anisotropic assumption of unequal and/or correlated pleiotropic mutational effects can be modeled by using a mutational covariance matrix, M, and unequal and/or correlated stabilizing selection (Chapter 30) can be accommodated with a semipositive-definite matrix, S (e.g., a matrix with no negative eigenvalues; Appendix 5). The resulting effective number of dimensions for x is given by $ n/(1 + c_v^2) $, where $ c_v $ is the coefficient of variation of the eigenvalues of the matrix product of MS."
     },
     {
       "type": "discussion",

@@ -1,29 +1,40 @@
 # Data
 
-`data/` 存放项目的数据资产，而不是主要代码。
+`data/` stores the project’s formal data assets, not source code.
 
-整个项目里最关键的数据边界就在这里。
+This is the boundary that downstream systems should read from.
 
-## 一级目录
+## Top-Level Directories
 
 - `背景资料/`
-  原始教材 PDF、参考资料、人工收集素材
+  Original PDF教材、参考资料、人工收集素材
 - `structured/`
-  结构化知识产物，包括章节 JSON、公式库、表格库
+  Structured knowledge outputs, including chapter JSON files, formula library, table library, and optionally `example_library.json`
+- `textbook/`
+  Readable Markdown exported from `structured/`, saved as `chapterX_textbook.md`
 - `knowledge_graph/`
-  后续图谱或实体关系数据的落点，目前不是主处理入口
+  Future graph or entity-relation outputs; not the main processing entry yet
 
-## 推荐理解顺序
+## Recommended Reading Order
 
-1. 先看 `背景资料/`，理解原始输入
-2. 再看 `tmp/paddle_output/`，理解 PDF 到 LaTeX 之后的中间结果
-3. 最后看 `structured/`，这是后续 graph / retrieval / memory / agent 的直接输入
+1. `背景资料/` to understand the raw input
+2. `tmp/paddle_output/` to inspect the LaTeX-stage intermediate result
+3. `structured/` as the direct input for graph / retrieval / memory / agent layers
+4. `textbook/` as the readable rendered form for review and downstream display
 
-## 当前最重要的数据判断
+## Current Data Boundary
 
-`data/structured/` 是整个项目的知识底座。
+`data/structured/` is the knowledge base. `data/textbook/` is the readable derivative.
 
-后续这些能力都应以它为统一输入：
+Current baseline counts:
+
+- structured unit JSON files: 987
+- formula library entries: 2248
+- table library entries: 164
+- example library entries: 322
+- textbook Markdown files: 36
+
+All downstream systems should treat these as the canonical inputs:
 
 - knowledge graph
 - retrieval
@@ -31,12 +42,27 @@
 - agent
 - teaching system
 
-`data/structured/` 的维护重点不是“看起来像正文”，而是结构稳定：chunk、block、公式引用、表格引用和 source 信息都要可追溯。
+`data/textbook/` is rebuilt from the repo-root exporter:
 
-## 维护原则
+```powershell
+python -m textbook_exporter --structured-dir data/structured --out-dir data/textbook
+```
 
-1. 原始资料尽量不手工改写
-2. 新生成的中间产物允许覆盖重建，并统一优先写入 `tmp/`
-3. 结构化产物必须保证字段稳定、来源可追溯
-4. 临时缓存、调试输出、运行垃圾不要放进 `data/`，统一放到 `tmp/`
-5. 修复 inline LaTeX 时只改公式片段，不整段替换正文或表格结构
+Chapter-scoped export:
+
+```powershell
+python -m textbook_exporter --structured-dir data/structured --out-dir data/textbook --chapters chapter25
+```
+
+The maintenance goal for `data/structured/` is structural stability, not prose polish:
+chunk order, block order, formula references, table references, and source metadata must stay traceable.
+
+## Maintenance Rules
+
+1. Do not hand-edit raw source material unless absolutely necessary.
+2. Temporary or experimental outputs belong in `tmp/`.
+3. Structured outputs must keep stable fields and traceable provenance.
+4. `textbook/` should always be regenerated from `structured/`.
+5. Debug caches, trial outputs, and run junk do not belong in `data/`.
+6. Inline LaTeX repairs should only touch formula spans, not whole paragraphs or table structure.
+7. High-confidence repairs backed by PDF rendering, Paddle raw layout, or direct source evidence may be applied to `structured/`; exploratory candidates should stay in `tmp/`.

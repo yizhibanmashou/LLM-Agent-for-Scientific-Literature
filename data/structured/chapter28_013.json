@@ -2,7 +2,7 @@
   "id": "chapter28_013",
   "metadata": {
     "chapter": "chapter28",
-    "section": "Chapter 28: NEUTRAL TRAITS WITH PLEIOTROPIC OVERDOMINANCE",
+    "section": "Maintenance of Quantitative Genetic Variation: Introduction",
     "subsections": [
       "NEUTRAL TRAITS WITH PLEIOTROPIC OVERDOMINANCE"
     ],
@@ -13,7 +13,14 @@
       "28.10a",
       "28.10b"
     ],
-    "table_references": []
+    "table_references": [],
+    "section_level_1": "Maintenance of Quantitative Genetic Variation: Introduction",
+    "section_level_2": "NEUTRAL TRAITS WITH PLEIOTROPIC OVERDOMINANCE",
+    "heading_path": [
+      "Maintenance of Quantitative Genetic Variation: Introduction",
+      "NEUTRAL TRAITS WITH PLEIOTROPIC OVERDOMINANCE"
+    ],
+    "display_heading": "NEUTRAL TRAITS WITH PLEIOTROPIC OVERDOMINANCE"
   },
   "blocks": [
     {
@@ -33,24 +40,8 @@
       "content": "The expectation is taken over all segregating overdominant loci influencing the trait. If homozygotes have rather similar fitnesses $ (s_i \\simeq t_i) $, the equilibrium allele frequencies are intermediate $ (\\tilde{p} \\simeq 1/2) $, resulting in $ \\tilde{\\sigma}_A^2 \\simeq (n/2)E[a_i^2] $. If alternative homozygotes have very different fitnesses, the equilibrium frequencies will be close to zero or one, which results in drift quickly fixing one of the alleles (Figure 7.4). Consequently, under balancing selection models, segregating alleles are expected to be maintained at moderate frequencies."
     },
     {
-      "type": "discussion",
-      "content": "Example 28.2. While pleiotropic overdominance models can maintain significant amounts of variation (Equation 28.9), they have limitations as a general explanation for quantitative-trait variation. The first problem is the scarcity of examples of actual overdominant selection in the wild (Lewontin 1974). However, one could argue that overdominance is widespread but overlooked, as very weak selection against both homozygotes still results in overdominance but would be difficult to detect in natural populations. Barton (1990) noted a second limitation: the genetic load under a multilocus overdominance model constrains the expected response to artificial selection. We sketch this argument here."
-    },
-    {
-      "type": "derivation",
-      "content": "Our starting point is Barton’s (and Robertson’s 1956) demonstration that the overdominance model with fitnesses of $ 1 - t_i: 1: 1 - s_i $ (and phenotypic effects of $ -a: 0: a $) generates a strength of apparent stabilizing selection on the neutral focal trait of [[SEE_FORMULA:28.10a]] where $ \\sigma_A^2 $ is the focal-trait additive variance, $ \\bar{\\ell} $ is the average of the locus-specific segregation loads (the reduction in fitness from the optimal value) where [[SEE_FORMULA:28.10b]] and $1-\\ell_i$ is the equilibrium mean fitness at locus $i$. Equation 28.10a implies that $\\ell=0.05$ for a trait to have a typically assumed value of $V_s=20\\sigma_A^2$. Assuming $n$ independent overdominant loci and multiplicative fitnesses, the expected mean population fitness becomes $$ \\prod_{i=1}^{n}(1-\\ell_{i})\\simeq\\exp(-\\overline{\\ell}n) $$"
-    },
-    {
-      "type": "discussion",
-      "content": "For $ \\ell = 0.05 $, around 20 such loci will result in the mean population fitness being about a third of its maximum possible value, so the number of such loci has to be modest for the load to remain reasonable. If loci have weaker effects $ (\\ell < 0.05) $, more polymorphisms can be maintained, but Equation 28.10a shows that the associated strength of apparent stabilizing selection on the neutral trait will be correspondingly weaker ($ V_s $ is larger)."
-    },
-    {
-      "type": "discussion",
-      "content": "Now consider the selection response (in the mean) when the focal trait is subjected to artificial directional selection that is strong enough to overpower any natural selection from overdominance. Assuming that the starting equilibrium allele frequencies (from overdominance) are $ \\widetilde{p}_i \\simeq 1/2 $ (i.e., $ s_i \\simeq t_i $), Equation 25.2a predicts that the fixation of all favorable alleles will result in an increase in the mean (measured in terms of standard deviations of the initial additive variance) of $ \\sqrt{2n} $ (this corrects the value given by Barton 1990). Hence, an observed response of $ R $ standard deviations requires $ R^2 / 2 $ such overdominant loci. Coupling this with the above load calculations suggests that for a population to show $ 5\\sigma_A $ of response in a short-term selection experiment (a fairly typically result; Chapter 18), a lower bound of $ 5^2 / 2 = 13 $ overdominant loci is required. Given a typical value of observed strength of (in this case, apparent) stabilizing selection of $ \\simeq 20\\sigma_A^2 $, $ n = 13 $ implies that the mean population fitness needs to be $ (1 - 0.05)^{13} $, or roughly 50%, of the optimal fitness, to support such a response. For 10 standard deviations of response, the required reduction in fitness in the base population to support the required 50 overdominant loci is over 90% of the fitness of the optimal genotype."
-    },
-    {
-      "type": "discussion",
-      "content": "Several factors can modify these results. First, as mentioned in Chapter 7, load can be diminished (and more loci can be maintained) under synergistic epistasis (as opposed to multiplicative fitnesses). Second, Equation 25.2a gives a lower bound on the required number of loci. The actual number of loci is much larger when their frequencies depart from 1/2 (homozygotes have unequal fitnesses), increasing the load. Finally, when homozygote fitnesses are rather unequal, the two alleles are maintained at more extreme frequencies (i.e., closer to 0 or 1), and thus potentially lost to drift in the small populations that characterize selection experiments (Chapter 26), resulting in an undercount of the number of overdominant loci."
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:28.2]]"
     }
   ]
 }

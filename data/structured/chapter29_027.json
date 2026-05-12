@@ -2,7 +2,7 @@
   "id": "chapter29_027",
   "metadata": {
     "chapter": "chapter29",
-    "section": "Chapter 29: Quadratic Selection",
+    "section": "Individual Fitness and the Measurement of Univariate Selection: Introduction",
     "subsections": [
       "Standard Errors for Estimates of Differentials and Gradients"
     ],
@@ -13,7 +13,14 @@
       "29.24b",
       "29.24c"
     ],
-    "table_references": []
+    "table_references": [],
+    "section_level_1": "Individual Fitness and the Measurement of Univariate Selection: Introduction",
+    "section_level_2": "Standard Errors for Estimates of Differentials and Gradients",
+    "heading_path": [
+      "Individual Fitness and the Measurement of Univariate Selection: Introduction",
+      "Standard Errors for Estimates of Differentials and Gradients"
+    ],
+    "display_heading": "Standard Errors for Estimates of Differentials and Gradients"
   },
   "blocks": [
     {
@@ -33,16 +40,8 @@
       "content": "If the scaled skewness, $ \\kappa_3 $ (LW Equation 2.8), and kurtosis, $ \\kappa_4 $ (LW Equation 2.12a), are small, this normal approximation is still appropriate."
     },
     {
-      "type": "discussion",
-      "content": "Example 29.10. Boag and Grant (1981) observed intense natural selection in Darwin's medium ground finch (Geospiza fortis) during a severe drought on Daphne Major Island in the Galápagos. The estimated mean and variance of body weight in 642 adults before the drought were, respectively, 15.79 and 2.37, while the estimated mean and variance of 85 surviving adults after the drought were 16.85 and 2.43. Thus, $ \\widehat{S}=16.85-15.79=1.06 $ and Equation 29.24a returns the standard deviation of this estimate as $$ \\mathrm{SE}\\left(\\widehat{S}\\right)\\simeq\\sqrt{\\frac{2.37}{642}+\\frac{2.43}{85}}\\simeq\\sqrt{0.0323}\\simeq0.180 $$ implying that the directional selection differential on body size was significantly positive."
-    },
-    {
-      "type": "discussion",
-      "content": "There appears to be very little selection on the variance when the uncorrected change in variance, $ \\operatorname{Var}(z^*) - \\operatorname{Var}(z) = 2.43 - 2.37 = 0.06 $, is used. However, using the quadratic selection differential to correct for the reduction in the variance from directional selection gives $ \\widehat{C} = 0.06 + 1.06^2 = 1.14 $, consistent with selection to increase the variance (convex selection, whereby selection favors extreme individuals). From Equation 29.24c, assuming body size is normally distributed before and after the drought, $$ \\mathrm{SE}\\left(\\widehat{C}\\right)\\simeq\\sqrt{4\\cdot(1.06)^{2}\\cdot0.0323+2\\left[\\frac{(2.37)^{2}}{642}+\\frac{(2.43)^{2}}{85}\\right]}\\simeq0.549 $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Thus, $ \\widehat{C} $ is 2.08 standard errors above 0, suggesting that it is (at least) close to being significant."
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:29.10]]"
     }
   ]
 }

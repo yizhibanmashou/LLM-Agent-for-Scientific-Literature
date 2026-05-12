@@ -2,23 +2,30 @@
   "id": "appendix1_007",
   "metadata": {
     "chapter": "appendix1",
-    "section": "Derivation of the Kolmogorov Forward Equation",
+    "section": "Appendix: Introduction",
     "subsections": [
       "Derivation of the Kolmogorov Forward Equation"
     ],
     "source_file": "tmp\\paddle_output\\appendix1_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [],
-    "table_references": []
+    "table_references": [],
+    "section_level_1": "Appendix: Introduction",
+    "section_level_2": "Derivation of the Kolmogorov Forward Equation",
+    "heading_path": [
+      "Appendix: Introduction",
+      "Derivation of the Kolmogorov Forward Equation"
+    ],
+    "display_heading": "Derivation of the Kolmogorov Forward Equation"
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "For completeness, we present a derivation of Equation A1.6, using the diffusion-approximation assumptions (Equations A1.1a–A1.1c). This section is a bit technical and can be skipped if readers desire. Consider the change from the probability distribution, $ (x, t, p) $, at time $ t $ to a new distribution, $ \\varphi(x, t + \\delta_t, p) $, after some very small time interval, $ \\delta_t $. To arrive at $ x $ at time $ t + \\delta_t $, the frequency must have previously been at some value, $ x - \\delta_x $, and then moved by an amount, $ \\delta_x $, over the interval $ \\delta_t $. Let $ \\phi(\\delta_x, x, \\delta_t) $ be the probability of jumping by an amount, $ \\delta_x $, over the time $ \\delta_t $ given the starting point, $ x $. In our case, because we are assuming that there is a move from $ x - \\delta_x $ to $ x $, we consider $ \\phi(\\delta_x, x - \\delta_x, \\delta_t) $. Integrating over all possible jump values yields the Chapman-Kolmogorov equation $$ \\varphi(x,t+\\delta_{t},p)=\\int\\varphi(x-\\delta_{x},t,p)\\phi(\\delta_{x},x-\\delta_{x},\\delta_{t})d\\delta_{x} $$"
+      "content": "For completeness, we present a derivation of Equation A1.6, using the diffusion-approximation assumptions (Equations A1.1a–A1.1c). This section is a bit technical and can be skipped if readers desire. Consider the change from the probability distribution, $ \\varphi(x, t, p) $, at time $ t $ to a new distribution, $ \\varphi(x, t + \\delta_t, p) $, after some very small time interval, $ \\delta_t $. To arrive at $ x $ at time $ t + \\delta_t $, the frequency must have previously been at some value, $ x - \\delta_x $, and then moved by an amount, $ \\delta_x $, over the interval $ \\delta_t $. Let $ \\phi(\\delta_x, x, \\delta_t) $ be the probability of jumping by an amount, $ \\delta_x $, over the time $ \\delta_t $ given the starting point, $ x $. In our case, because we are assuming that there is a move from $ x - \\delta_x $ to $ x $, we consider $ \\phi(\\delta_x, x - \\delta_x, \\delta_t) $. Integrating over all possible jump values yields the Chapman-Kolmogorov equation $$ \\varphi(x,t+\\delta_{t},p)=\\int\\varphi(x-\\delta_{x},t,p)\\phi(\\delta_{x},x-\\delta_{x},\\delta_{t})d\\delta_{x} $$"
     },
     {
       "type": "discussion",
-      "content": "To simplify notation in the following derivation, we write $ (x,t,p) $ as $ (x,t) $, although the dependence on the initial value p should be kept in mind."
+      "content": "To simplify notation in the following derivation, we write $ \\varphi(x,t,p) $ as $ \\varphi(x,t) $, although the dependence on the initial value p should be kept in mind."
     },
     {
       "type": "discussion",
@@ -42,7 +49,7 @@
     },
     {
       "type": "discussion",
-      "content": "Subtracting $ (x,t) $ from both sides, dividing both by $ \\delta_{t} $, and taking the limit at $ \\delta_{t}\\to0 $ gives the left-hand size as $$ \\lim_{\\delta_{t}\\to0}\\frac{\\varphi(x,t+\\delta_{t})-\\varphi(x,t)}{\\delta_{t}}=\\frac{\\partial\\varphi(x,t)}{\\partial t} $$"
+      "content": "Subtracting $ \\varphi(x,t) $ from both sides, dividing both by $ \\delta_{t} $, and taking the limit at $ \\delta_{t}\\to0 $ gives the left-hand size as $$ \\lim_{\\delta_{t}\\to0}\\frac{\\varphi(x,t+\\delta_{t})-\\varphi(x,t)}{\\delta_{t}}=\\frac{\\partial\\varphi(x,t)}{\\partial t} $$"
     },
     {
       "type": "discussion",
@@ -50,7 +57,7 @@
     },
     {
       "type": "discussion",
-      "content": "Together, these simplifications imply $$ \\frac{\\partial\\varphi(x,t)}{\\partial t}=-\\frac{\\partial[m(x)\\varphi(x,t)]}{\\partial x}+\\frac{\\partial^{2}[v(x)\\varphi(x,t)]}{2\\partial x^{2}} $$ which recovers the Kolmogorov forward equation (Equation A1.6), provided we again recall that $ (x,t) $ is really $ (x,t,p) $."
+      "content": "Together, these simplifications imply $$ \\frac{\\partial\\varphi(x,t)}{\\partial t}=-\\frac{\\partial[m(x)\\varphi(x,t)]}{\\partial x}+\\frac{\\partial^{2}[v(x)\\varphi(x,t)]}{2\\partial x^{2}} $$ which recovers the Kolmogorov forward equation (Equation A1.6), provided we again recall that $ \\varphi(x,t) $ is really $ \\varphi(x,t,p) $."
     }
   ]
 }

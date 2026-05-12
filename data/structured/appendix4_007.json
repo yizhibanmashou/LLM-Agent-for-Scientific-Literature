@@ -2,39 +2,26 @@
   "id": "appendix4_007",
   "metadata": {
     "chapter": "appendix4",
-    "section": "Holm's Method",
+    "section": "Appendix: Introduction",
     "subsections": [
-      "Holm's Method"
+      "Sequential Bonferroni Corrections"
     ],
     "source_file": "tmp\\paddle_output\\appendix4_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [],
-    "table_references": []
+    "table_references": [],
+    "section_level_1": "Appendix: Introduction",
+    "section_level_2": "Sequential Bonferroni Corrections",
+    "heading_path": [
+      "Appendix: Introduction",
+      "Sequential Bonferroni Corrections"
+    ],
+    "display_heading": "Sequential Bonferroni Corrections"
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "The simplest of these sequential adjustments is Holm's method (Holm 1979). The first step is to order the $p$ values for the $n$ hypotheses being tested from smallest to largest, $p(1) p(2) p(n)$, and let $H(i)$ be the hypothesis associated with $p(i)$. One proceeds with Holm's method as follows: (i) If $ p(1) > /n $, accept all $ n $ null hypotheses (i.e., none are declared significant)."
-    },
-    {
-      "type": "discussion",
-      "content": "(ii) If $ p(1) /n $, reject $ H(1) $ [i.e., $ H(1) $ is declared significant], and consider $ H(2) $."
-    },
-    {
-      "type": "discussion",
-      "content": "(iii) If $ p(2) > /(n - 1) $, accept $ H(i) $ (for $ i 2 $)."
-    },
-    {
-      "type": "discussion",
-      "content": "(iv) If $ p(2) /(n-1) $, reject $ H(2) $ and move onto $ H(3) $."
-    },
-    {
-      "type": "discussion",
-      "content": "(v) Proceed with rejecting hypotheses until reaching the first i such that $ p(i) > /(n - i + 1) $."
-    },
-    {
-      "type": "discussion",
-      "content": "We can also apply Holm's method using Equation A4.3a—namely, $ \\alpha=1-(1-\\pi)^{1 / n} $ , the Dunn- $ \\hat{S} i d a k $ correction—in place of $ \\alpha=\\pi / n. $"
+      "content": "Under a strict Bonferroni correction, only those tests whose associated $p$ values are $\\leq \\pi/n$ are rejected (declared significant); all others are accepted (or more formally, fail to be rejected). This results in a considerable reduction in power if two or more of the hypotheses are actually false. When we reject a hypothesis, one fewer test remains, and the multiple comparison correction should reflect this, resulting in sequential Bonferroni corrections. Sequential approaches have increased power compared to standard Bonferroni corrections, as illustrated below in Example A4.4. Shaffer (1995) reviewed these and other approaches. The basic structure is that one has a collection of multiple tests, with $H(i)$ denoting the null hypothesis for test $i$—for example, the test that marker $i$ has a nonzero effect, in which case $H(i)$ is the null hypothesis of no effect. In this case, rejecting $H(i)$ suggests evidence for a nonzero effect for marker $i$."
     }
   ]
 }

@@ -2,43 +2,42 @@
   "id": "appendix5_013",
   "metadata": {
     "chapter": "appendix5",
-    "section": "CANONICAL AXES OF QUADRATIC FORMS",
+    "section": "Appendix: Introduction",
     "subsections": [
-      "CANONICAL AXES OF QUADRATIC FORMS"
+      "Principal Components of the Variance-Covariance Matrix"
     ],
     "source_file": "tmp\\paddle_output\\appendix5_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [],
-    "table_references": []
+    "table_references": [],
+    "section_level_1": "Appendix: Introduction",
+    "section_level_2": "Principal Components of the Variance-Covariance Matrix",
+    "heading_path": [
+      "Appendix: Introduction",
+      "Principal Components of the Variance-Covariance Matrix"
+    ],
+    "display_heading": "Principal Components of the Variance-Covariance Matrix"
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "The transformation $ = ^T $ given by Equation A5.15a applies to any symmetric matrix, and is referred to as its canonical transformation. This simplifies the interpretation of the quadratic form $ ^T $, as rotation of the original axes to align them with the eigenvectors of $ $ removes all cross-product terms ($ x_i x_j $ for $ i j $) on this new coordinate system. Recall (Equation A5.5b) that $ $ is a unitary matrix and hence $ \\mathbf{U}^T = \\mathbf{U}^{-1} $. Thus, $$ \\mathbf{U}\\mathbf{y}=\\mathbf{U}\\mathbf{U}^{T}\\mathbf{x}=\\mathbf{x} $$"
+      "content": "We are often interested in how the variance of a random vector can be decomposed into independent components. For example, even though we may be measuring n variables, only one or two of these may account for the majority of the variation. If this is the case, we may wish to exclude those variables contributing very little variation from further analysis. More generally, if random variables are correlated, then certain linear combinations of the elements of x may account for most of the variance. The procedure of principal component analysis (PCA) extracts these combinations by decomposing the variance of x into the contributions from a series of orthogonal vectors, the first of which explains the most variation possible for any single vector, the second the next possible amount, and so on until we account for the entire variance of x."
     },
     {
       "type": "discussion",
-      "content": "Applying Equations A5.15a and A5.12 transforms a quadratic form to one in which the square matrix is diagonal, which greatly simplifies the resulting quadratic product, as $$ \\begin{aligned}\\mathbf{x}^{T}\\mathbf{A}\\mathbf{x}&=(\\mathbf{U}\\mathbf{y})^{T}\\mathbf{A}\\mathbf{U}\\mathbf{y}=\\mathbf{y}^{T}(\\mathbf{U}^{T}\\mathbf{A}\\mathbf{U})\\mathbf{y}\\\\&=\\mathbf{y}^{T}\\mathbf{A}\\mathbf{y}\\\\&=\\sum_{i=1}^{n}\\lambda_{i}y_{i}^{2},\\quad with\\quad y_{i}=\\mathbf{e}_{i}^{T}\\mathbf{x}\\end{aligned} $$ where $ \\lambda_i $ and $ e_i $ are the eigenvalues and associated (normalized, i.e., $ \\|\\mathbf{e}_i\\| = 1 $) eigenvectors of A. The new axes defined by the $ e_i $ vectors are the canonical (or principal)"
+      "content": "Consider Figure A5.5. Because the set of points comprising the ellipse represents the set of linear combinations (i.e., the set of weights) of the random variables of z that yield equal variance, a little thought shows that the closer a point on this curve is to the origin, the more variance there is in that direction. The points closest to the origin are those that lie along the axis defined by e₁, while those furthest away lie along the axis defined by e₂. Here e₁ and e₂ are the principal components of G, with the first principal component accounting for most of the variation of G. In particular, the ratio of additive variances for the characters y₁ = e₁ᴬᴬ and y₂ = e₂ᴬᴬʴ = e₂ᴬᴬʴ/σ²(y₂) = σ²(e₁ᴬᴬʴ/σ²(e₂ᴬᴬʴ) = e₁ᴬᴬʴ/e₂ᴬᴬʴ/e₂ = λ₁/λ₂ ≈ 5.241/0.765 ≈ 6.85, so that a character in the direction of e₁ has almost seven times as much additive variance as a character lying in the direction of e₂."
     },
     {
       "type": "discussion",
-      "content": "axes of A. Because $ y_{i}^{2}\\geq 0 $ , Equation A5.17a immediately shows the connection between the signs of the eigenvalues of a matrix and whether that matrix is positive definite, negative definite, or indefinite."
+      "content": "In general, suppose we have an $n$-dimensional covariance matrix, $\\mathbf{V}_{\\mathbf{x}}$. If we order the eigenvalues of $\\mathbf{V}_{\\mathbf{x}}$ as $\\lambda_{1} \\geq \\lambda_{2} \\geq \\cdots \\geq \\lambda_{n}$, then Equation A5.13b gives the maximum variance for any linear combination of the elements of $\\mathbf{x}$ ($y = \\mathbf{c}_{1}^{T} \\mathbf{x}$, subject to the constraint that $|\\mathbf{c}_{1}| = 1$), as $$ \\max\\sigma^{2}(y)=\\max_{||\\mathbf{c}_{1}||=1}\\sigma^{2}(\\mathbf{c}_{1}^{T}\\mathbf{x})=\\mathbf{c}_{1}^{T}\\mathbf{V}_{\\mathbf{x}}\\mathbf{c}_{1}=\\lambda_{1} $$ which occurs when $ \\mathbf{c}_1 = \\mathbf{e}_1 $ (the normalized eigenvector associated with the leading eigenvalue $ \\lambda_1 $). This vector is the first principal component (often abbreviated as $ \\mathbf{PC1} $), and accounts for the fraction $ \\lambda_1/\\text{tr}(\\mathbf{V}_\\mathbf{x}) $ of the total variation in $ \\mathbf{x} $. We can partition the remaining variance in $ \\mathbf{x} $ after the removal of PC1 in a similar fashion. For example, the vector $ \\mathbf{c}_2 $, that is orthogonal to PC1 ($ \\mathbf{c}_2^T \\mathbf{c}_1 = 0 $) and maximizes the remaining variance can be shown to be $ \\mathbf{e}_2 $, which accounts for a fraction $ \\lambda_2/\\text{tr}(\\mathbf{V}_\\mathbf{x}) $ of the total variation in $ \\mathbf{x} $ (e.g., Morrison 1976; Johnson and Wichern 1988). By proceeding in this fashion, we can see that the $ i $th PC is given by $ \\mathbf{e}_i $, and that the amount of variation it accounts for is $$ \\lambda_{i}\\bigg/\\sum_{k=1}^{n}\\lambda_{k}=\\frac{\\lambda_{i}}{\\mathrm{tr}(\\mathbf{V_{x}})} $$ Hence $ \\sum \\lambda_i = \\text{tr}(\\mathbf{V}_\\mathbf{x}) $ is the total variance of the vector $ \\mathbf{x} $, while $ \\lambda_i/\\text{tr}(\\mathbf{V}_\\mathbf{x}) $ is the fraction of that total variance explained by the linear combination $ \\mathbf{e}_i^T \\mathbf{x} $."
     },
     {
-      "type": "discussion",
-      "content": "If all eigenvalues are positive (all $ \\lambda_{i} > 0 $), then any quadratic form is always positive (unless all the $ y_{i} $ are zero) and hence A is positive definite. If one or more of the eigenvalues are zero, while the rest are positive, then A is said to be positive semidefinite, implying that quadratic products are either zero (corresponding to $ \\lambda_{i}=0 $) or positive. If all eigenvalues are negative (all $ \\lambda_{i}<0 $), then A is negative definite as any quadratic form is always negative, while A is said to be negative semidefinite if the eigenvalues are either zero or negative. If A has both positive and negative eigenvalues it is said to be indefinite, as quadratic products can be either positive or negative."
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:A5.6]]"
     },
     {
-      "type": "discussion",
-      "content": "Equations of the form $$ \\begin{align*}\\mathbf{x}^T\\mathbf{A}\\mathbf{x}=\\sum\\limits_{i=1}^n\\sum\\limits_{j=1}^n A_{ij}x_i x_j=c^2\\end{align*} $$ arise fairly frequently in quantitative genetics. For example, they describe surfaces of constant variance (Figure A5.5) or constant fitnesses in quadratic fitness regressions (Chapter 30). Solutions to Equation A5.17b describe quadratic surfaces—for two dimensions, these are the familiar conic sections (ellipses, parabolas, or hyperbolas). Equation A5.17a greatly simplifies the interpretation of these surfaces by removing all cross product terms, yielding $$ \\begin{align*}\\mathbf{x}^T\\mathbf{A}\\mathbf{x}=\\sum\\limits_{i=1}^n\\lambda_i y_i^2=c^2\\end{align*} $$ Because $ (y_i)^2 $ and $ (-y_i)^2 $ have the same value, the canonical axes of A are also the axes of symmetry for the quadratic surface generated by quadratic forms involving A. When all eigenvalues of A are positive (as occurs with nonsingular covariance and other positive-definite matrices), Equation A5.17c describes an ellipsoid whose axes of symmetry are given by the eigenvectors of A. The distance from the origin to the surface along the $ e_i $ axis is $ \\lambda_i y_i^2 = c^2 $ or $ y_i = c \\lambda_i^{-1/2} $, as can been seen by setting all the $ y_k $ equal to zero except for $ y_i $, which yields"
-    },
-    {
-      "type": "discussion",
-      "content": "$$ \\begin{align*}\\mathbf{x}^T\\mathbf{A}\\mathbf{x}=\\lambda_i y_i^2=c^2.\\end{align*} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Consider a new variable (y) that is a weighted combination $ y = ax_1 + bx_2 = b^T x $ of the original vector (x) of random variables, where $ \\mathbf{b}^T = (a, b) $. Its resulting variance is $$ \\sigma^{2}(y)=a^{2}\\sigma^{2}(x_{1})+2ab\\sigma(x_{1},x_{2})+b^{2}\\sigma^{2}(x_{2})=b^{T}V_{X}b $$ As shown in Figure A5.5, the collection of $a$, $b$ values that result in the same variance ($c^2$) is the ellipse given by $c^2 = b^2$ $V_X$ b. Variables with a large amount of variance require smaller weights to achieve the constant value ($c^2$) than do variables with lower variances. Thus, on a constant-variance surface, minor axes correspond to directions with the most variance, while major axes correspond to the directions with the least variability. This is in contrast to surfaces of equal probability (Figure A5.6), where major axes correspond to directions with the most variance. The reason for this reversal of roles is that constant-variance surfaces are functions of $\\lambda_{i}^{-1/2}$, whereas constant-probability surfaces are functions of $\\lambda_{i}^{1/2}$."
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:A5.7]]"
     }
   ]
 }

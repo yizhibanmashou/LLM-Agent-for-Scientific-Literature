@@ -2,29 +2,42 @@
   "id": "chapter18_026",
   "metadata": {
     "chapter": "chapter18",
-    "section": "Chapter 18: Nicholas' Criterion",
+    "section": "Analysis of Short-term Selection Experiments: 1. Least-squares Approaches",
     "subsections": [
-      "Nicholas' Criterion"
+      "Replicate Lines"
     ],
     "source_file": "tmp\\paddle_output\\chapter18_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [
-      "18.34"
+      "18.35a",
+      "18.35b"
     ],
-    "table_references": []
+    "table_references": [
+      "18.8"
+    ],
+    "section_level_1": "Analysis of Short-term Selection Experiments: 1. Least-squares Approaches",
+    "section_level_2": "Replicate Lines",
+    "heading_path": [
+      "Analysis of Short-term Selection Experiments: 1. Least-squares Approaches",
+      "Replicate Lines"
+    ],
+    "display_heading": "Replicate Lines",
+    "table_reference_keys": [
+      "chapter18:18.8"
+    ]
   },
   "blocks": [
     {
       "type": "derivation",
-      "content": "An alternative criterion for choosing $ Nt $ was suggested by Nicholas (1980). Often the investigator is interested in ensuring that at least a certain response will occur with a preset probability. To a reasonable approximation, the expected mean value in any given replicate selection line after $ t $ generations of selection is normally distributed, with a mean of $ E[R_C(t)] $ and a variance of $ \\sigma^2[R_C(t)] $. Consider the probability that the observed response is at least $ \\beta $ of the expected response [[SEE_FORMULA:18.34]] where $U$ is a unit normal random variable. Note that the probability that the observed response exceeds the expected response ($\\beta = 1$) is one half, as $\\Pr[U > 0] = 1/2$."
+      "content": "There is no loss of efficiency when replicate lines are used (Hill 1980). To see this, let $ \\overline{z}_{i,t} $ for $ 1 \\leq i \\leq r $ be the sample mean for replicate population $ i $ at time $ t $. The overall mean is [[SEE_FORMULA:18.35a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "If we take the variances and assume each line is independent [[SEE_FORMULA:18.35b]]"
     },
     {
       "type": "discussion",
-      "content": "Example 18.8. Again suppose that $ \\bar{\\imath} = 2.06 $, $ h^2 = 0.25 $, and the design is unidirectional selection without a control population. What value of $ Nt $ is required in order to obtain a 95% probability that the observed response is at least 90% of its expected response? Here, $ \\beta = 0.9 $ and $ \\Pr[U > -1.65] = 0.95 $. Hence, $$ \\frac{\\beta-1}{CV\\left[R_{C}(t)\\right]}=\\frac{-0.1}{CV\\left[R_{C}(t)\\right]}=-1.65 $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Rearranging yields $$ CV\\left[R_{C}(t)\\right]=\\frac{1}{0.5\\times2.06}\\sqrt{\\frac{1}{Nt}}=\\frac{0.1}{1.65} $$ implying that $ Nt \\simeq 257 $. As in Example 18.7, the required total number of measured individuals is 1/p times this value, yielding $ Mt = 257/0.05 \\simeq 5140 $."
+      "content": "If the number sampled and number used as parents within a replicate are $ M^* = M/r $ and $ N^* = N/r $, respectively, then it is easily seen from [[SEE_TABLE:18.8]] that the variance of a replicate line is simply r times the variance of a population with N and M. Hence, variance in the sample mean from r replicate lines with $ N^* $ and $ M^* $ is the same as the variance with a single line with N and M, provided that the number of individuals within each replicate line is sufficiently large to avoid significant inbreeding. Richardson et al. (1968), Irgang et al. (1985), and Muir (1986a, 1986b) developed regression approaches that correct for between-generation environmental changes when replicate lines are used."
     }
   ]
 }

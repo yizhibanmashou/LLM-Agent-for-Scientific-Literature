@@ -2,7 +2,7 @@
   "id": "chapter9_014",
   "metadata": {
     "chapter": "chapter9",
-    "section": "Chapter 9: DIVERGENCE BETWEEN POPULATIONS: TWO-POPULATION COMPARISONS",
+    "section": "Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction",
     "subsections": [
       "DIVERGENCE BETWEEN POPULATIONS: TWO-POPULATION COMPARISONS"
     ],
@@ -11,7 +11,14 @@
     "formula_references": [
       "9.8"
     ],
-    "table_references": []
+    "table_references": [],
+    "section_level_1": "Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction",
+    "section_level_2": "DIVERGENCE BETWEEN POPULATIONS: TWO-POPULATION COMPARISONS",
+    "heading_path": [
+      "Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction",
+      "DIVERGENCE BETWEEN POPULATIONS: TWO-POPULATION COMPARISONS"
+    ],
+    "display_heading": "DIVERGENCE BETWEEN POPULATIONS: TWO-POPULATION COMPARISONS"
   },
   "blocks": [
     {
@@ -24,15 +31,11 @@
     },
     {
       "type": "discussion",
-      "content": "Finally, a very simple statistic that often appears in comparisons of selected versus control populations is Grossman et al.'s (2010) $ \\Delta DAF $ statistic. This metric is a natural out-growth of the type of comparisons shown in Figure 9.1, which focuses on the difference in the derived allele frequency (DAF) between a control and a selected population. For a candidate SNP, let $ \\overline{D}_{NS} $ denote the frequency of the derived allele in a nonselected control population (or its average frequency if multiple control populations are used) and its frequency, $ D_{S} $, in the putatively selected population, with $ \\Delta DAF = D_{S} - \\overline{D}_{NS} $. This statistic ranges between plus one and minus one, and standard outlier approaches are used to highlight SNPs with excessive values. common ancestral stock. Whole-genome scans of both populations were performed using 7032 sliding windows of ten adjacent SNPs to measure average allele-frequency change between the corresponding windows for both populations (the difference at each SNP, averaged over all ten sites). Simulations were used to assess significance (extreme departures in average allele-frequency in homologous windows between the two populations) relative to the values expected under drift alone. The authors had to model two issues: linkage and breed formation (time in some initial early domesticated population, and then subsequent time in separate bottlenecks representing the formation of the two specialized breeds)."
+      "content": "Finally, a very simple statistic that often appears in comparisons of selected versus control populations is Grossman et al.'s (2010) $ \\Delta DAF $ statistic. This metric is a natural out-growth of the type of comparisons shown in Figure 9.1, which focuses on the difference in the derived allele frequency (DAF) between a control and a selected population. For a candidate SNP, let $ \\overline{D}_{NS} $ denote the frequency of the derived allele in a nonselected control population (or its average frequency if multiple control populations are used) and its frequency, $ D_{S} $, in the putatively selected population, with $ \\Delta DAF = D_{S} - \\overline{D}_{NS} $. This statistic ranges between plus one and minus one, and standard outlier approaches are used to highlight SNPs with excessive values."
     },
     {
-      "type": "proposition",
-      "content": "The authors simulated roughly 300 SNPs per chromosome (to account for LD in addition to allele-frequency change), while the population structure during breed formation was modeled as follows. The authors simulated 900 generations of drift and mutation in a base population of $ N_e = 1000 $ to generate a common domesticated stock population. Specialized breed formation from this common stock was then simulated by sampling from this stock population to form two subpopulations of size $ N_e = 125 $, each of which was simulated for an additional 100 generations (these values represented the best assumption regarding these parameters during domestication and breed formation). The observed genome-wide $ F_{ST} $ between the Holstein and Angus populations was 0.08, and only simulations whose genome-wide $ F_{ST} $ values matched this value were kept as the null."
-    },
-    {
-      "type": "discussion",
-      "content": "Taking those windows in the data set that were in the upper 0.1% of excessive divergence (positive or negative) relative to the simulated data resulted in 15 significant regions (windows). Focusing on windows with the uppermost 0.5% of divergence (relative to simulations) yielded 84 candidate regions. To assess what fraction of these extreme windows might be false positives, the authors computed the false-discovery rate (FDR), the fraction of those tests declared to be significant that are likely to be false positives (Appendix 4). FDR provides a measure of how enriched a set of results declared to be significant is for true positives. At a 0.1% level of significance, one expects 7032 · 0.001 = 7.03 tests to be significant by chance alone, while for 0.5%, this increases to 35 false positives among the 7032 tests for each window. The FDRs are 7/15 = 47% for tests of 0.1%, and 35/84 = 42% for tests at the 0.05% significance level. Hence, the expectation is that slightly over half (53% and 58%, respectively) of the windows initially flagged as significant are true positives."
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:9.3]]"
     }
   ]
 }

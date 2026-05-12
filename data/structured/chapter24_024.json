@@ -2,7 +2,7 @@
   "id": "chapter24_024",
   "metadata": {
     "chapter": "chapter24",
-    "section": "Chapter 24: Describing the Genotypic Distribution: Moments",
+    "section": "The Infinitesimal Model and Its Extensions: Introduction",
     "subsections": [
       "Application: Departure from Normality Under Truncation Selection"
     ],
@@ -17,7 +17,14 @@
       "24.24b",
       "24.24c"
     ],
-    "table_references": []
+    "table_references": [],
+    "section_level_1": "The Infinitesimal Model and Its Extensions: Introduction",
+    "section_level_2": "Application: Departure from Normality Under Truncation Selection",
+    "heading_path": [
+      "The Infinitesimal Model and Its Extensions: Introduction",
+      "Application: Departure from Normality Under Truncation Selection"
+    ],
+    "display_heading": "Application: Departure from Normality Under Truncation Selection"
   },
   "blocks": [
     {
@@ -53,28 +60,8 @@
       "content": "Notice from Equation 24.22 that after a single generation of selection, $ K_{3,A} $ and $ K_{4,A} $ will be nonzero, and hence the distribution of breeding values will no longer be normal. At this point, the assumption of bivariate normality no longer holds, and there is no longer a simple relationship between $ K_{i,A}^{*} $ and $ K_{i,z}^{*} $. Thus, we cannot simply iterate this procedure over more than one generation of selection. See Turelli and Barton (1994) for a detailed analysis over multiple generations."
     },
     {
-      "type": "discussion",
-      "content": "Example 24.8. Suppose truncation selection occurs on a normally distributed trait with an initial mean of $ \\mu_z = 0 $ and variance of $ \\sigma_z^2 = 100 $. Individuals whose phenotypes are in the upper 5% of the distribution are saved, so that $ \\bar{i} = 2.063 $ and $ z_p = 1.645 $ (Example 14.1). To demonstrate an extreme case, assume that $ h^2 = 1 $, so that all variance is additive genetic. Applying Equation 24.22a, the resulting third-order cumulant in the phenotypic distribution following selection is $$ \\begin{aligned}K_{3,z}^{*}&=[\\left(\\bar{\\iota}-z_{p}\\right)(2\\bar{\\iota}-z_{p})-1]\\bar{\\iota}\\sigma_{z}^{3}\\\\&=\\left[(2.063-1.645)(2\\cdot2.063-1.645)-1\\right]\\cdot2.063\\cdot100^{3/2}\\\\&=76.45\\\\ \\end{aligned} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Applying Equation 24.24c translates this into the third cumulant in the genotypic distribution in the next generation, yielding $$ K_{3,A}(t+1)=2\\left(\\frac{h^{2}}{2}\\right)^{3}K_{3,z}^{*}(t)=2\\left(\\frac{1}{2}\\right)^{3}76.45=19.11 $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Using the machinery from Chapter 16, for $p = 0.2$, Equation 16.11a yields $\\kappa = 0.862$ (i.e., selected individuals have only a fraction, [1 - 0.862] = 0.138, of the variance of the preselection population), and Equation 16.12d returns $d(1) = (-\\kappa/2)100 = -43.1$. Hence, the phenotypic variance in the first generation is $ \\sigma_{z}^{2} = \\sigma_{A}^{2}(1) = 100 + d(1) = 56.9 $. Thus, the scaled skew becomes $$ \\gamma_{3}=\\frac{K_{3}}{\\sigma_{A}^{3}}=\\frac{19.11}{56.9^{3/2}}=0.045 $$"
-    },
-    {
-      "type": "discussion",
-      "content": "A similar calculation using Equations 24.22b and 24.24c yields $ K_4 = 59.7 $ and $ \\gamma_4 = K_4/56.9^2 = 0.018 $. Applying Equation 24.21a, the resulting (fourth-order) Gram-Charlier series approximation for the distribution, $ \\phi(A) $, of breeding values in generation 1 is $$ \\begin{align*}\\phi(A^{\\prime})&\\simeq\\varphi(A^{\\prime})\\left[1+\\frac{0.045}{6}H_{3}(A^{\\prime})+\\frac{0.018}{24}H_{4}(A^{\\prime})\\right]\\\\&=\\varphi(A^{\\prime})\\left[1+0.0075H_{3}(A^{\\prime})+0.00075H_{4}(A^{\\prime})\\right]\\end{align*} $$ where $ \\varphi(x) $ is the normal distribution, the functions $ H_i(x) $ are defined by Equation 24.21b, and $ A' = A/\\sigma_A $ is the standardized breeding value (which, initially, has a mean of zero). For example, consider $ A' = 2 $, a value two standard deviations away from the mean. Applying Equation 24.21b, $ H_3(2) = 2 $ and $ H_4(2) = -5 $, yielding the correction factor for the unit normal density function as $$ 1+0.0075H_{3}(2)+0.00075H_{4}(2)=1.01125 $$"
-    },
-    {
-      "type": "discussion",
-      "content": "The key point is that the resulting distribution is only very weakly perturbed away from a Gaussian (assuming that $ h^2 = 1 $ is the most extreme case). For a more typically heritability, say $ h^2 = 0.3 $, similar calculations yield $ \\gamma_3 = 0.0039 $ and $ \\gamma_4 = 0.0007 $, and $$ \\phi(A)\\simeq\\varphi(A)\\left[1+0.00065H_{3}(A^{\\prime})+0.00003H_{4}(A^{\\prime})\\right] $$ yielding an even smaller departure from normality (an adjustment factor of 1.00115 for $ A' = 2 $)."
-    },
-    {
-      "type": "discussion",
-      "content": "Thus, under the infinitesimal model, the generation of linkage disequilibrium by truncation selection has very little impact on driving the distribution of breeding values away from a Gaussian. While the disequilibrium introduced by truncation selection can indeed drive a distribution of breeding values away from a strict Gaussian, the error in assuming this remains Gaussian is generally small. This point was initially made by Bulmer (1980). The much more extensive analysis by Turelli and Barton (1994) showed that, even in the presence of strong truncation or disruptive selection, the Bulmer equation (Equation 16.7b) can be used with little error. Turelli and Barton's analysis assumed a sufficiently large number of loci so that changes in both the genic variance and locus-specific cumulants of order three or higher can be ignored."
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:24.8]]"
     }
   ]
 }

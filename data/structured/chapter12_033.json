@@ -2,43 +2,26 @@
   "id": "chapter12_033",
   "metadata": {
     "chapter": "chapter12",
-    "section": "Chapter 12: Tests Based on tSDS Scores",
+    "section": "The Neutral Divergence of Quantitative Traits: Introduction",
     "subsections": [
-      "The Berg and Coop $ Q_{x} $ Test"
+      "DIVERGENCE IN GENE EXPRESSION"
     ],
     "source_file": "tmp\\paddle_output\\chapter12_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
-    "formula_references": [
-      "12.33a",
-      "12.33b",
-      "12.33h"
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "The Neutral Divergence of Quantitative Traits: Introduction",
+    "section_level_2": "DIVERGENCE IN GENE EXPRESSION",
+    "heading_path": [
+      "The Neutral Divergence of Quantitative Traits: Introduction",
+      "DIVERGENCE IN GENE EXPRESSION"
     ],
-    "table_references": []
+    "display_heading": "DIVERGENCE IN GENE EXPRESSION"
   },
   "blocks": [
     {
-      "type": "derivation",
-      "content": "The final approach leveraging GWAS-estimated marker effects for a target trait is due to Berg and Coop (2014), building on previous work by them (Coop et al. 2010; Günther and Coop 2013) as well as by Ovaskainen et al. (2011). Let $ \\mathbf{p}_i^T = (p_{i,1}, p_{i,2}, \\cdots, p_{i,m}) $ denote the vector of allele frequencies for the $ i $th marker over $ m $ subpopulations, where $ p_{i,j} $ denotes the allele frequency in population $ j $. Example 9.5 showed that the expected distribution of $ \\mathbf{p}_i $ under neutrality is approximately given by [[SEE_FORMULA:12.33a]] where $ \\Omega $ is a (marker-estimated) matrix of expected covariances in allele frequencies over the subpopulations and $ p_{i,0} $ is the allele frequency in the ancestral population. As detailed in Chapter 9, this formed the basis of Coop's Bayenv test for excessive divergence at a specific locus. Berg and Coop (2014) extended this result to a trait-based test as follows. Suppose n GWAS hits are discovered for the focal trait, where the trait-increasing allele for the $ i $th marker changes the trait by a value of $ g_i $, with $ p_{i,j} $ denoting the frequency of this allele in population j. The GWAS-predicted mean genetic value for the trait in population j thus becomes [[SEE_FORMULA:12.33b]]"
-    },
-    {
       "type": "discussion",
-      "content": "Letting $ \\mathbf{a}^{T}=(a_{1},a_{2},\\cdots,a_{m}) $ be the vector of mean trait genetic values over the m populations, then combining Equations 12.33b and 12.33a gives the expected distribution of trait means under drift as $$ \\mathbf{a}\\sim\\mathrm{M V N}_{m}\\left[\\mu\\mathbf{1},2V_{A}\\boldsymbol{\\Omega}\\right] $$ (13.33c) where $$ \\mu=\\frac{2}{m}\\sum_{i=1}^{n}g_{i}p_{i,0}\\qquad and\\qquad V_{A}=2\\sum_{i=1}^{n}g_{i}^{2}p_{i,0}(1-p_{i,0}) $$ (13.33d) represent the expected genetic value and additive variance in the ancestral population."
-    },
-    {
-      "type": "discussion",
-      "content": "To proceed, Berg and Coop expressed all of the $ a_j $ values as deviations from the grand mean, yielding $ a_j^* = a_j - \\bar{a} $. This uses one degree of freedom, and returns the vector $ (\\mathbf{a}^*)^T = (a_1^*, a_2^*, \\cdots, a_{m-1}^*) $, where one population is dropped. As Berg and Coop note, information from the dropped population is fully retained by the vector $ a^* $, so that the choice of which population to drop has no impact on the resulting analysis. The resulting vector is now distributed as $$ (\\mathbf{a}^{*})^{T}\\sim\\mathrm{M V N}_{m-1}\\left[\\mathbf{0},2V_{A}\\boldsymbol{\\varOmega}\\right] $$ (13.33e) As discussed in Appendix 5, a standard trick with a vector of correlated variables is to use a transformation to return a vector of uncorrelated variables of unit variance. Berg and Coop did this by using the Cholskey decomposition (Appendix 5) of $ \\Omega = CC^{T} $, using the transformation $$ \\mathbf{x}=\\frac{1}{\\sqrt{2V_{A}}}\\mathbf{C}^{-1}\\mathbf{a}^{*} $$ (13.33f) which returns $$ \\mathbf{x}\\sim\\mathrm{MVN}_{m-1}(\\mathbf{0},\\mathbf{I}) $$ (13.33g)"
-    },
-    {
-      "type": "derivation",
-      "content": "This is the basis for the Berg-Coop $ Q_{x} $ test, whose statistic is given by [[SEE_FORMULA:12.33h]]"
-    },
-    {
-      "type": "discussion",
-      "content": "Under neutrality, $ Q_x \\sim \\chi^2_{m-1} $, as $ \\mathbf{x}^T \\mathbf{x} $ is the sum of $ (m-1) $ squared unit-normal random variables. Note by comparing this result to Equation 9.13c, that the $ Q_x $ test is very similar in form to the Günther-Coop (2013) $ \\mathbf{X}^T \\mathbf{X} $ test for selection on a single site, but with estimated trait genetic values replacing allele frequencies."
-    },
-    {
-      "type": "discussion",
-      "content": "Robinson et al. (2015) applied this test to height and BMI based on ~9400 individuals from 14 European countries, finding evidence that selection favored increased height and reduced BMI. Mathieson et al. (2015) also applied this test to Europeans, but used ancient DNA from 230 individuals (who lived between 6400 to 300BC), and reported evidence for two independent episodes of selection for height."
+      "content": "The power of quantitative genetics is that its machinery can be applied to any character of interest, including omics traits (e.g., amounts of specific transcripts, proteins, and metabolites). Application of quantitative-genetic machinery to such omics traits has been coined genetical genomics by Jansen and Nap (2001), and it traces back to Damerval et al. (1994), who mapped QTLs controlling the spot volume of anonymous maize proteins detected by two-dimensional gel electrophoresis (LW Figure 15.10)."
     }
   ]
 }

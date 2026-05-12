@@ -2,64 +2,60 @@
   "id": "chapter26_015",
   "metadata": {
     "chapter": "chapter26",
-    "section": "Chapter 26: THE EFFECTS OF LINKAGE ON THE SELECTION LIMIT",
+    "section": "Long-term Response: Introduction",
     "subsections": [
-      "THE EFFECTS OF LINKAGE ON THE SELECTION LIMIT"
+      "OPTIMAL SELECTION INTENSITIES FOR MAXIMIZING LONG-TERM RESPONSE"
     ],
     "source_file": "tmp\\paddle_output\\chapter26_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [
-      "26.20e",
-      "26.21a",
-      "26.21b"
+      "26.22",
+      "26.23"
     ],
     "table_references": [
-      "26.3"
+      "26.3",
+      "26.4"
     ],
+    "section_level_1": "Long-term Response: Introduction",
+    "section_level_2": "OPTIMAL SELECTION INTENSITIES FOR MAXIMIZING LONG-TERM RESPONSE",
+    "heading_path": [
+      "Long-term Response: Introduction",
+      "OPTIMAL SELECTION INTENSITIES FOR MAXIMIZING LONG-TERM RESPONSE"
+    ],
+    "display_heading": "OPTIMAL SELECTION INTENSITIES FOR MAXIMIZING LONG-TERM RESPONSE",
     "table_reference_keys": [
-      "chapter26:26.3"
+      "chapter26:26.3",
+      "chapter26:26.4"
     ]
   },
   "blocks": [
     {
       "type": "derivation",
-      "content": "Robertson also observed that for $ N_e \\bar{\\imath} h^* > 5 $, the half-life with no recombination is [[SEE_FORMULA:26.20e]] generations, and that differences in response (relative to free recombination) only become apparent after this number of generations has passed."
+      "content": "When a fixed number, $M$, of individuals is scored, there is a tradeoff between the intensity of selection ($\\bar{t}$) and the amount of drift ($N_e$). If $N$ individuals are allowed to reproduce (implying $p = N/M$ is the fraction saved), decreasing $N$ (and hence $p$) increases $\\bar{t}$ but also decreases $N_e$. Recalling Equation 26.15b, Robertson’s selection limit can be expressed as [[SEE_FORMULA:26.22]] showing that the ultimate response (from the initial variation) depends on the product of $ N_e $ and $ \\bar{\\nu} $. While decreasing p results in a larger short-term response due to increased $ \\bar{\\nu} $, it also results in a decreased long-term response by decreasing $ N_e $. Hence, the product $ N_e $ decreases for sufficiently large or small values of p, suggesting that some intermediate value of p is optimal (see Equation 26.23). [[SEE_TABLE:26.3]] and Figure 26.5B both illustrate this tradeoff. For example, while the single-generation response using p = 0.50 is less than half that for p = 0.10, it yields a selection limit over twice as large (200 vs. 90)."
     },
     {
       "type": "derivation",
-      "content": "Allowing for some recombination (at a rate of $ \\sim\\ell/n $ between loci), Robertson found that the limit for a chromosome of length $ \\ell $ is [[SEE_FORMULA:26.21a]]"
+      "content": "Supporting an earlier conjecture of Dempster (1955b), Robertson (1960a) found (for additive loci and normally distributed phenotypes) that the intensity of selection that yields the largest total response is $p = 0.5$, as $N_e \\bar{i}$ is maximized for fixed $M$ when half the population is saved. This can be seen directly for truncation selection on a normally distributed character. Recall from Equation 14.3a that $\\bar{i} = \\varphi(x_{[1-p]}) / p$ (ignoring the correction for finite population size), where $x_p$ satisfies $\\Pr(U < x_{[p]}) = p$, and with $U$ denoting a unit normal random variable and $\\varphi(x)$ denotes the unit normal density function. Because the number saved is $N = M p$, we have (following Hospital and Chevalet 1993) [[SEE_FORMULA:26.23]] Because the term in brackets is independent of $p$, response (as a function of $p$) is maximized at the maximum value of $\\varphi(x_{[1-p]})$, which occurs at $x = 0$, or a $p$ value of 0.5. As Figure 26.5A illustrates, the selection limit as a function of p becomes extremely flat-topped as M increases, so even fairly large deviations from p = 0.50 yield essentially the same limit. If we relax the assumption of normality, Cockerham and Burrows (1980) found that the optimal proportion for truncation selection is still near 0.50, unless the phenotypic distribution is extremely skewed. Hill and Robertson (1966), Robertson (1970a), and Hospital and Chevalet (1993) found that the optimal proportion increases to above p = 0.50 when linkage is important (recall from Chapter 24 that linkage disequilibrium generates skew in the genotypic distribution, causing it to depart from a normal)."
     },
     {
-      "type": "derivation",
-      "content": "To a poorer approximation, over the entire range of $ N_{e} \\ell $ [[SEE_FORMULA:26.21b]] where $ K = L_f / L_0 $. Thus $ L_\\ell / L_0 $ approaches $ L_f / L_0 $ as $ N_e \\ell $ increases. Provided $ L_f \\gg L_0 $, then $ L_\\ell $ is a halfway between $ L_f $ and $ L_0 $ when $ N_e \\ell / 3 = K = L_f / L_0 $. Assuming moderate to large values of $ N_e $, this result (together with Equation 26.20d) implies that if the amount of recombination satisfies $ \\ell > 2\\imath h^* $, then the selection response will be at least half that expected for free recombination. These expressions are approximate and assume that all loci have equal effects. Variation between loci in allelic effects reduces the effect of linkage (Hill and Robertson 1966; Robertson 1970a)."
-    },
-    {
-      "type": "discussion",
-      "content": "Experimental results generally confirm that the suppression of recombination has only a modest effect on the selection limit (Example 26.4). This is somewhat at odds with the increase in recombination rates seen during some artificial selection experiments (Example 26.1), although, as mentioned, this view may be tempered if there is significant ascertainment bias in the reporting of increased recombination following selection."
+      "type": "table",
+      "content": "[[TABLE:26.4]]"
     },
     {
       "type": "discussion",
-      "content": "Robertson’s result largely focused on the ultimate selection limit, while Hospital and Chevalet (1993, 1996) considered the dynamics of the approach to this limit. In particular, Hospital and Chevalet (1996) explicitly considered the effects of gametic-phase disequilibrium (also see Zhang and Hill 2005a). Initially, selection generates negative gametic-phase disequilibrium, which reduces the initial expressed additive-genetic variance and decreases the response. The tighter is the linkage, the more pronounced is this effect (Chapters 16 and 24). Surprisingly, Hospital and Chevalet (and also Zhang and Hill) showed that linkage can often result in an increase in the additive variation in later generations of selection. This seemingly counterintuitive result arises because selection increases the frequency of the gametes carrying the most favored alleles. Because any tightly linked alleles decreasing the trait are also dragged along, this reduces the ultimate selection limit (a phenomenon called linkage drag). On the other hand, rare recombination events among such gametes can result in the creation of new, even more favorable gametes, and generating a transient increase in the additive variance as these sweep through the population. Thus, the negative gametic-phase disequilibrium that suppresses the early response stores some genetic variation that can become released (via recombination) in later generations. This effect is most pronounced in larger populations, as in small populations, haplotypes can become fixed before such recombination events occur."
+      "content": "Robertson's prediction of the optimal selection intensity for long-term response is experimentally supported. Madalena and Robertson (1975) selected for decreased sternopleural bristle number in Drosophila. When the best 5 of 25 were chosen, the limit was 18.0 bristles, less extreme than the limit of 17.1 when the best 10 of 25 were chosen. Similar results were seen for increased abdominal bristle number in Drosophila (Jones et al. 1968), increased egg-laying in Tribolium castaneum (Ruano et al. 1975), and increased postweaning weight in mice (Hanrahan et al. 1973)."
     },
     {
       "type": "discussion",
-      "content": "Example 26.4. By using the inversions Curly and Moiré, McPhee and Robertson (1970) were able to select for sternopleural bristles in Drosophila under conditions of suppressed recombination on chromosomes II and III. From previous work, $ h^2 = 0.4 $, with these chromosomes accounting for 1/3 and 1/2 (respectively) of the genetic variation in bristle number (and with the X chromosome accounting for the remaining 1/6). In lines that were suppressed for recombination on both chromosomes, the selection limit (on a transformed scale) was $ 0.166 \\pm 0.014 $ in up-selected lines and $ -0.134 \\pm 0.009 $ in down-selected lines, reductions of $ 28 \\pm 8% $ and $ 22 \\pm 7% $ relative to the limit obtained when normal recombination was allowed. For these studies, $ N_e \\simeq 10 $ and $ \\bar{\\tau} \\simeq 1 $, while $ h_{II}^* $ = $ \\sqrt{0.4/3} \\simeq 0.37 $ and $ h_{II}^* $ = $ \\sqrt{0.4/2} \\simeq 0.45 $. Thus, selection is strong on both chromosomes as $ N_e \\bar{\\tau} h_{II}^* $ $ \\simeq 3.7 $ and $ N_e \\bar{\\tau} h_{II}^* $ $ \\simeq 4.5 $."
+      "content": "Using $N = pM$ as the effective population size is often a severe overestimate (Chapter 3), especially because, as Equations 26.6b–26.6d show, $N_e/N$ decreases as selection intensity increases. Hence, increasing selection intensity increases drift by both reducing $N = pM$ and by further reducing the ratio of $N_e$ to $N$. [[SEE_TABLE:26.4]] illustrates this effect using the same parameters as [[SEE_TABLE:26.3]]. Without incorporating this further reduction in $N_e$, the ratio of expected limits when $p = 0.50$ versus $p = 0.10$ is 200/90 = 2.2. When the reduction in $N_e$ due to selection is accounted for, this ratio increases to 161/47 = 3.4."
     },
     {
       "type": "discussion",
-      "content": "Under these conditions, Robertson’s theory predicts that the limiting contribution from each (recombination-suppressed) chromosome will be approximately $ 3\\sigma_A^* $ (as $ x_{2N} \\sqrt{2} \\sim 3 $; Equation 26.20a). Given $ \\sigma_z = 0.059 $ and $ \\sigma_A^* = 0.059 \\cdot h^* $, the expected contributions to the selection limit from chromosomes II and III become $ 3 \\cdot 0.059 \\cdot 0.37 \\simeq 0.065 $ and $ 3 \\cdot 0.059 \\cdot 0.45 \\simeq 0.080 $, respectively, for a total absolute contribution of 0.145, consistent with the observed limits. Robertson’s theory (Equation 26.20e) further predicts that the half-life in recombinationally suppressed lines is roughly $ 2 / (\\bar{i} h^*) $ generations, or $ 2 / 0.37 \\simeq 5.4 $ and $ 2 / 0.45 \\simeq 4.4 $ for chromosomes II and III, respectively, consistent with the observed half-life of 5 generations."
+      "content": "More generally, Robertson (1970b) obtained the optimal selection intensity when the goal is to maximize the total response (from the initial base population variation) at generation $ t $. Robertson’s derivation follows using Equation 26.15a. As Figure 26.5B shows, the optimal proportion is a function of $ t/M $. Robertson assumed that the infinitesimal model held and that there were equal contributions from each sex. Jódar and López-Fanjul (1977) extended these results to unequal sex ratios, and found that the maximum response occurs when the number of individuals scored and the proportions that are selected are the same in each sex. This follows because effective population size is reduced as the sex ratio deviates from 1:1 (Equation 3.12), which increases the effects of drift. Hospital and Chevalet (1993) examined the effects of linkage and found that the amount by which the optimal value of p exceeds the predicted value (Figure 26.5B) increases with population size. In small populations, the value predicted from drift (for any particular t/M value) is close to the optimal value, while Robertson's value seriously underestimates the optimal p value in larger populations when linkage is present."
     },
     {
       "type": "discussion",
-      "content": "Other Drosophila experiments examined the consequences of suppressed recombination on selection response. Both Markow (1975) and Thompson (1977) used stocks with inversions while selecting for increased or decreased phototactic behavior. While Markow observed that recombination suppression reduced the selection limit, Thompson observed no differences. Markow did not use replicate lines, so the statistical significance of her results is unclear. However, she observed that the most recombinationally suppressed lines had the most reduced response, consistent with theory. In Thompson's experiments, $ N_e \\approx 50 $, $ \\bar{\\imath} \\simeq 1 $, and $ h^* \\simeq 0.1 $ (for both autosomes), yielding an expected (linkage) half-life of $ 2/(\\bar{\\imath}h^*) = 20 $ generations (López-Fanjul 1989), as opposed to the value of $ 1.4 \\cdot 50 = 70 $ in the absence of linkage (Equation 26.17). Thompson's experiments were stopped at generation 21, so it is not surprising that he found no difference in response, as the reduction in total response from linkage is not readily apparent until well after the expected linkage half-life (Equation 26.20)."
-    },
-    {
-      "type": "discussion",
-      "content": "Bourguet et al. (2003) commented that a potential flaw in these Drosophila experiments is that balancer chromosomes were used to suppress recombination, which may have different levels of variation than their homologs in the base population. Using a more careful approach to suppress recombination, they observed no difference between normal and recombinationally suppressed lines in the response after 38 generations of selection for geotaxis. However, they noted that their experiment, like most others, suffered from low power."
-    },
-    {
-      "type": "discussion",
-      "content": "[[TABLE:26.3]] and Figure 26.5B both illustrate this tradeoff. For example, while the single-generation response using p = 0.50 is less than half that for p = 0.10, it yields a selection limit over twice as large (200 vs. 90)."
+      "content": "Ruano et al. (1975) and Frankham (1977) tested Robertson's predictions for the optimal response at a particular generation with selection experiments for egg-laying in Tribolium and for abdominal bristle number in Drosophila, respectively. The theory holds up well for $ t/M \\leq 0.2 $, but both authors found discrepancies between the observed and predicted rank order of lines subjected to different selection intensities when $ t/M > 0.2 $. One explanation of these discrepancies could be the presence of major alleles, resulting in additive variance declining more rapidly than expected under the infinitesimal model. This results in the optimal proportions being larger than those predicted from Figure 26.5B. Frankham (1977) also suggested that not correcting for the additional decrease in $ N_e $ with increased selection intensity (e.g., [[SEE_TABLE:26.4]]) results in incorrect values of $ N_e $, and hence incorrect optimal proportions. García-Dorado and López-Fanjul (1985) examined the consequences of unequal sex ratios using sternopleural bristle number in Drosophila. Equal sex ratios gave the highest response, and good agreement with the optimal values predicted by Jódar and López-Fanjul was seen when there were unequal sex ratios."
     }
   ]
 }

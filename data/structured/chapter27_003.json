@@ -2,7 +2,7 @@
   "id": "chapter27_003",
   "metadata": {
     "chapter": "chapter27",
-    "section": "Chapter 27: Fisher-Kimura-Orr Adaptive Walks",
+    "section": "Long-term Response: Introduction",
     "subsections": [
       "Fisher-Kimura-Orr Adaptive Walks"
     ],
@@ -11,9 +11,17 @@
     "formula_references": [
       "27.2a",
       "27.2b",
-      "27.2c"
+      "27.2c",
+      "27.3"
     ],
-    "table_references": []
+    "table_references": [],
+    "section_level_1": "Long-term Response: Introduction",
+    "section_level_2": "Fisher-Kimura-Orr Adaptive Walks",
+    "heading_path": [
+      "Long-term Response: Introduction",
+      "Fisher-Kimura-Orr Adaptive Walks"
+    ],
+    "display_heading": "Fisher-Kimura-Orr Adaptive Walks"
   },
   "blocks": [
     {
@@ -51,6 +59,10 @@
     {
       "type": "derivation",
       "content": "Scaling the phenotypes such that the initial distance from the optimum is one ($ ||\\mathbf{z}-\\boldsymbol{\\theta}|| = d_0 = 1 $), from Equation 27.1a the starting distance on the $ x $ scale is $ \\sqrt{n}/2 $. Hence, following the first jump (the first fixation of a beneficial mutation), the population (on average) moves to a distance (in the $ x $ value scale) of $$ \\begin{align*}\\sqrt{n}/2-E[x_{p,1}]=\\sqrt{n}/2-E[x_1]/\\sqrt{n}\\end{align*} $$ which implies that the new distance to the optimum (on the x scale) following the first jump is a fraction, [[SEE_FORMULA:27.2c]] of the initial starting distance."
+    },
+    {
+      "type": "derivation",
+      "content": "Orr's key insight was that the size distribution of the second jump (i.e., the distribution of $ x_2 $) is the same as that of the first jump, but with the distance to the optimum reduced an amount given by Equation 27.2c. Likewise, following the second jump, the distance to the optimum (as a fraction of the original distance) is the square of the value calculated by Equation 27.2c, and so forth, which generates a self-similar process for each step of the walk toward the optimum, for which $ E[d_i] = (1 - 2E[x_1]/n)^r d_0 $. It is this self-similar feature that generates the exponential distribution of effect sizes among fixed mutations. Orr (1998b) obtained the distribution for the Fisher-scaled effect size ($ x = r \\sqrt{n}/2 $, taking $ d = d_0 = 1 $) of the new mutation (Equation 27.1a) during step $ k $ of the walk as [[SEE_FORMULA:27.3]] where $C$ is a normalization constant. This expression is for a uniform distribution of mutation effects (the $r$ values). More generally, the $C c_k^2$ terms in Equation 27.3 are replaced by $C \\phi(c_k x) c_k^2 x$, where $\\phi$ is the assumed distribution of mutational effects (Orr 1998b)."
     }
   ]
 }

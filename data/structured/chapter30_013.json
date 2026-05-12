@@ -2,7 +2,7 @@
   "id": "chapter30_013",
   "metadata": {
     "chapter": "chapter30",
-    "section": "Chapter 30: Geometric Aspects",
+    "section": "Measuring Multivariate Selection: Introduction",
     "subsections": [
       "A Brief Digression: Orthonormal and Diagonalized Matrices"
     ],
@@ -15,7 +15,14 @@
       "30.24b",
       "30.25"
     ],
-    "table_references": []
+    "table_references": [],
+    "section_level_1": "Measuring Multivariate Selection: Introduction",
+    "section_level_2": "A Brief Digression: Orthonormal and Diagonalized Matrices",
+    "heading_path": [
+      "Measuring Multivariate Selection: Introduction",
+      "A Brief Digression: Orthonormal and Diagonalized Matrices"
+    ],
+    "display_heading": "A Brief Digression: Orthonormal and Diagonalized Matrices"
   },
   "blocks": [
     {
@@ -43,8 +50,12 @@
       "content": "The effect of using such a transformation is that (on this new scale) we remove all cross-product terms in a quadratic product (i.e., the $ z_i z_j $ terms for $ i \\neq j $ in Equation 30.19 are absent). Put another way, on this new scale, there is no correlational selection, as $ \\gamma_{ij} = 0 $ for $ i \\neq j $. A few very useful results immediately follow from Equation 30.25. For $ \\mathbf{A}^{1/2} $ and $ \\mathbf{A}^{-1} $, the $ \\mathbf{U} $ matrix is unchanged, while the diagonal elements in the associated $ \\mathbf{A} $ matrix are given by the square root or inverse, respectively. Thus, $ \\mathbf{A} $, $ \\mathbf{A}^{1/2} $, and $ \\mathbf{A}^{-1} $ (provided the latter exists; i.e., no there are zero eigenvalues) all have the same eigenvectors and their eigenvalues are related as $ \\lambda_i $, $ \\lambda_i^{1/2} $, and $ \\lambda_i^{-1} $, respectively."
     },
     {
-      "type": "proposition",
-      "content": "Example 30.4. Consider selection acting on two characters, $ z_1 $ and $ z_2 $. Suppose we find that $ \\gamma_{11} = -2 $ and $ \\gamma_{22} = -1 $, suggesting that the individual fitness surface has negative curvature in both $ z_1 $ and $ z_2 $. At first glance the picture this evokes is stabilizing selection on both $ z_1 $ and $ z_2 $, with the stabilizing selection surface perhaps rotated due to selection for correlations between $ z_1 $ and $ z_2 $. The first caveat, as mentioned in Chapter 29, is that negative curvature (concavity), by itself, does not imply a local maximum. Even if $ \\gamma $ is negative definite (all $ \\lambda_i < 0 $; Appendix 5), the location, $ z_0 $, of the maximum in the quadratic surface may be outside of the observed range of population values and hence not currently applicable to the population being studied. A much more subtle point is that, as Figure 30.3 shows, the nature of the fitness surface is very much dependent on the amount of selection for correlations between $ z_1 $ and $ z_2 $. Figure 30.3 considers the surfaces associated with the same values for $ \\gamma_{11} $ and $ \\gamma_{22} $, but three different values of $ \\gamma_{12} $ under the assumption that b = 0. Note that although in all three cases, $ \\gamma_{12} > 0 $ (i.e., selection favors increased correlations between the phenotypic values of $ z_1 $ and $ z_2 $), the fitness surfaces are qualitatively very different. When $ \\gamma_{12} = 0.25 $, the individual fitness surface indeed shows stabilizing selection in both characters. For $ \\gamma_{12} = \\sqrt{2} \\simeq 1.42 $, the fitness surface has a ridge in one direction, with stabilizing selection in the other. When $ \\gamma_{12} = 4 $, the fitness surface is a saddle, with convex selection along one axis and concave selection along the other. An especially troubling point is that if the standard error of $ \\gamma_{12} $ is sufficiently large, we will not be able to distinguish between these very different types of selection even if we could show that $ \\gamma_{11}, \\gamma_{22} < 0 $, and $ \\gamma_{12} > 0 $."
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:30.3]]"
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:30.4]]"
     }
   ]
 }

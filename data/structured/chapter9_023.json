@@ -2,7 +2,7 @@
   "id": "chapter9_023",
   "metadata": {
     "chapter": "chapter9",
-    "section": "Chapter 9: Joost's Spatial Analysis Method (SAM)",
+    "section": "Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction",
     "subsections": [
       "Accounting for Population Structure: Coop's Bayenv and Frichot's LFMM"
     ],
@@ -14,7 +14,14 @@
       "9.13b",
       "9.13c"
     ],
-    "table_references": []
+    "table_references": [],
+    "section_level_1": "Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction",
+    "section_level_2": "Accounting for Population Structure: Coop's Bayenv and Frichot's LFMM",
+    "heading_path": [
+      "Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction",
+      "Accounting for Population Structure: Coop's Bayenv and Frichot's LFMM"
+    ],
+    "display_heading": "Accounting for Population Structure: Coop's Bayenv and Frichot's LFMM"
   },
   "blocks": [
     {
@@ -34,28 +41,12 @@
       "content": "We close this section to noting that EAA is an extremely active research area, with new methods appearing frequently. Recent reviews of some of the evolving issues are given by Rellstab et al. (2015), François et al. (2016), and Hoban et al. (2016)."
     },
     {
-      "type": "proposition",
-      "content": "Example 9.5. Here we sketch out the basic structure of four extensions (FLK, Bayenv, LFMM, and PCAdapt) of LK and allele-environment correlation tests that attempt to account for among-deme correlations in allele frequencies. The details are fairly technical, but the basic idea is very similar to that for the Fisher-Ford test (Example 9.2). There, under the assumption of drift, a vector, y, of allele-frequency changes is turned into a test statistic that is in the form of a quadratic product (Equation 9.6c), $ \\mathbf{y}^{T}\\mathbf{V}^{-1}\\mathbf{y} $, where V is the covariance for these expected changes under drift alone. This is simply the generalization of a test based on the squared difference between two allele frequencies to a vector of allele frequencies. If y is multivariate normal, this test statistic follows a $ \\chi^{2} $ distribution and excessive values indicate a departure from the pure-drift model. This basic idea, and structure, also follows here. The extensions follow from an adjustment of the vector of changes to account for environmental influences on allele frequencies and more generalized covariance matrices, given the population structure."
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:9.4]]"
     },
     {
-      "type": "derivation",
-      "content": "The $ \\tilde{F}_{ST} $ extension (FLK) of Bonhomme et al. (2010) uses a set of neutral loci together with an outgroup to construct a kinship matrix, $ \\mathcal{F} $, of populations, based on branch lengths of the estimated phylogenetic tree among the sampled populations. The assumption is that some pattern of evolution (described by $ \\mathcal{F} $) unfolds from an ancestral population with an allele frequency of $ p_0 $, but with no further migration between subpopulations. For $ n $ populations, the FLK test statistic is given by [[SEE_FORMULA:9.12]] where p is a vector of the allele frequencies for one particular locus over the n sampled demes and 1 is a column vector of n ones. Bonhomme et al. showed that $ T_{FLK} $ follows a $ \\chi^2 $ distribution under the null model of no selection, provided allele frequencies are not too extreme, with outliers deemed to be candidates for loci under selection. Note that $ \\widehat{p}_0 $ is of the same form as the GLS estimators for the initial frequency (Equations 9.4 and 9.6a), and that $ T_{FLK} $ has the same general form as the test statistic for the Fisher-Ford test for excessive allele-frequency change (Equation 9.6c)."
-    },
-    {
-      "type": "derivation",
-      "content": "The Bayenv test for allele-frequency and environmental correlation (Coop et al. 2010; Eckert et al. 2010; Günther and Coop 2013) starts with a clever latent-variable approach (from Nicholson et al. 2002) to model the allele frequencies, which allows us to work with an (approximately) multivariate-normal vector. The motivation for this approach is the constraint that allele frequencies be confined to the interval $ [0,1] $, while the multivariate normal can generate values outside this region. To avoid this issue, assume there is some underlying latent (unseen) variable, $ \\theta $, that is normally distributed and maps into the deme allele frequency p as follows [[SEE_FORMULA:9.13a]]"
-    },
-    {
-      "type": "proposition",
-      "content": "This truncated normal transformation allows for nonzero probabilities that $p$ is at zero or one, corresponding to loss or fixation of the allele, respectively. This transformation allows us to work with a normally distributed random variable, $\\theta$, which is mapped into allelic loss ($\\theta < 0$) or fixation ($\\theta > 1$) if it is too extreme, and otherwise maps into the frequency of a segregating allele. As with most $F_{ST}$-based methods, the assumption here is that there is very little probability mass at zero or one (i.e., there is modest divergence at most loci), so $p$ is essentially $\\theta$."
-    },
-    {
-      "type": "derivation",
-      "content": "Following Nicholson et al. (2002), Coop et al. (2010) assumed that the vector, $ \\Theta $, of $ \\theta $ values for the $ n $ sampled populations is multivariate normal (approximating drift by Brownian motion; Appendix 1), with some ancestral frequency ($ p_0 $) and correlation structure given by $ \\Omega $, so that [[SEE_FORMULA:9.13b]] where $\\Omega$ is the empirical estimate of the covariance matrix of the underlying $\\theta$ (and hence of the allele frequencies), based on a set of presumed neutral markers (for details see Coop et al. 2010 and Gautier 2015). This is their base model. Note that standardizing the observed vector of frequencies, $\\mathbf{p}$, by centering it around the mean and adjusting for the covariance structure yields a $\\chi_{n-1}^{2}$ random variable (as the quadratic product is the sum of squared unit normals). This recovers the $T_{FLK}$ test statistic, but with $\\Omega$ and $\\Theta$ in place of $\\mathcal{F}$ and $\\mathbf{p}$. Operationally, if all elements of $\\mathbf{p}$ fall within the range $(0, 1)$, then $\\mathbf{p}$ replaces $\\Theta$, yielding the test statistic as [[SEE_FORMULA:9.13c]] which is identical in form to Equation 9.12, except that the covariance matrix $ \\Omega $ replaces $ \\mathcal{F} $. Günther and Coop (2013) denoted this test statistic for extreme divergence at a specific locus by $ \\mathbf{X}^{\\mathrm{T}}\\mathbf{X} $, which some authors refer to as the XtX statistic."
-    },
-    {
-      "type": "discussion",
-      "content": "Some comment on Ω versus ℛ is in order. Ω is the empirical estimate of the allelic-covariance matrix, while ℛ is based on the estimated branching pattern of deme formation (assuming there is no between-deme migration). Hence, Ω is expected to perform better in situations where the correlations induced by population structure are poorly approximated by a phylogenetic tree, as can be the case with migration between demes (Günther and Coop 2013). Further, because Ω also contains the within-deme variance, it should be slightly more robust to within-deme inbreeding relative to ℛ, which only considers the covariances between demes. Finally, it should be stressed that the χ² distribution only formally arises when Ω is known without error. When Ω is replaced by some estimate, ℛ, of its true value, this distribution no longer holds."
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:9.5]]"
     }
   ]
 }

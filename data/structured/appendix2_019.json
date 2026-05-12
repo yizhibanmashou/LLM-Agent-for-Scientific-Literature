@@ -2,31 +2,43 @@
   "id": "appendix2_019",
   "metadata": {
     "chapter": "appendix2",
-    "section": "The Beta and Dirichlet Distributions",
+    "section": "Appendix: Introduction",
     "subsections": [
       "The Beta and Dirichlet Distributions"
     ],
     "source_file": "tmp\\paddle_output\\appendix2_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [],
-    "table_references": []
+    "table_references": [
+      "inline_3"
+    ],
+    "section_level_1": "Appendix: Introduction",
+    "section_level_2": "The Beta and Dirichlet Distributions",
+    "heading_path": [
+      "Appendix: Introduction",
+      "The Beta and Dirichlet Distributions"
+    ],
+    "display_heading": "The Beta and Dirichlet Distributions",
+    "table_reference_keys": [
+      "appendix2:inline_3"
+    ]
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "With a binomial, each trial (observation) has two possible outcomes and the likelihood is a function of the sample size (number of trials), $ n $, and a single success probability, $ p $ (as the two outcomes on any given trial have probabilities of $ p $ and $ 1 - p $). The generalization of this model is the multinomial distribution, where now each trial has $ k $ possible outcomes, and which requires $ k - 1 $ success probabilities to describe the likelihood. In particular, for a total of $ n $ observations, the probability that $ n_1 $ are in category 1, $ n_2 $ in category 2, $ $, and $ n_k $ in category $ k $ is $$ p(n_{1},\\cdots n_{k})=\\frac{n!}{n_{1}!n_{2}!\\cdots n_{k}!}\\ p_{1}^{n_{1}}\\cdots p_{k}^{n_{k}}\\quad where\\quad\\sum_{i}n_{i}=n\\quad and\\quad\\sum_{i}p_{i}=1 $$"
+      "content": "With a binomial, each trial (observation) has two possible outcomes and the likelihood is a function of the sample size (number of trials), $ n $, and a single success probability, $ p $ (as the two outcomes on any given trial have probabilities of $ p $ and $ 1 - p $). The generalization of this model is the multinomial distribution, where now each trial has $ k $ possible outcomes, and which requires $ k - 1 $ success probabilities to describe the likelihood. In particular, for a total of $ n $ observations, the probability that $ n_1 $ are in category 1, $ n_2 $ in category 2, $ \\cdots $, and $ n_k $ in category $ k $ is $$ p(n_{1},\\cdots n_{k})=\\frac{n!}{n_{1}!n_{2}!\\cdots n_{k}!}\\ p_{1}^{n_{1}}\\cdots p_{k}^{n_{k}}\\quad where\\quad\\sum_{i}n_{i}=n\\quad and\\quad\\sum_{i}p_{i}=1 $$"
     },
     {
       "type": "discussion",
-      "content": "The conjugate prior for the multinomial likelihood is the Dirichlet distribution. If we let $ = (x_1, x_2,, x_k) $ denote the $ k $ success probabilities, when pdf for $ (_1,, _k) $ is $$ \\begin{align*}p(x_1,\\cdots x_k\\mid\\alpha_1,\\cdots,\\alpha_k)=\\frac{\\Gamma(\\alpha_0)}{\\Gamma(\\alpha_1)\\cdots\\Gamma(\\alpha_k)}x_1^{\\alpha_1-1}\\cdots x_k^{\\alpha_k-1}\\end{align*} $$ where $$ \\alpha_{0}=\\sum_{i=1}^{k}\\alpha_{i}\\quad with\\quad\\alpha_{i}>0,\\quad and\\quad\\sum_{i=1}^{k}x_{i}=1\\quad with\\quad0\\leq x_{i}\\leq1 $$"
+      "content": "The conjugate prior for the multinomial likelihood is the Dirichlet distribution. If we let $ \\mathbf{x} = (x_1, x_2, \\cdots, x_k) $ denote the $ k $ success probabilities, when pdf for $ \\mathbf{x} \\sim \\text{Dirichlet}(\\alpha_1, \\cdots, \\alpha_k) $ is $$ \\begin{align*}p(x_1,\\cdots x_k\\mid\\alpha_1,\\cdots,\\alpha_k)=\\frac{\\Gamma(\\alpha_0)}{\\Gamma(\\alpha_1)\\cdots\\Gamma(\\alpha_k)}x_1^{\\alpha_1-1}\\cdots x_k^{\\alpha_k-1}\\end{align*} $$ where $$ \\alpha_{0}=\\sum_{i=1}^{k}\\alpha_{i}\\quad with\\quad\\alpha_{i}>0,\\quad and\\quad\\sum_{i=1}^{k}x_{i}=1\\quad with\\quad0\\leq x_{i}\\leq1 $$"
     },
     {
       "type": "discussion",
-      "content": "At first glance, this looks like the multinomial density function (with $ _i - 1 = n_i $). The difference is that the multinomial is calculated over a set of discrete random variables ($ n_i $), thus returning the expected probabilities for any vector of discrete numbers of counts (successes) in each category. Conversely, the Dirichlet treats an equivalent of the vector of outcomes (generalized to non-integers) as fixed and returns the continuous distribution for all possible configurations of the success parameters given this data, which means that the data ($ _i $) is fixed, and the success parameters ($ x_i $) are random. A few key moments of this distribution are $$ \\begin{align*}\\mu_{x_i}={\\alpha_i\\over\\alpha_0},\\quad\\sigma^2(x_i)={\\alpha_i(\\alpha_0-\\alpha_i)\\over\\alpha_0^2(\\alpha_0+1)},\\quad{\\rm and}\\quad\\sigma(x_i,x_j)=-{\\alpha_i\\alpha_j\\over\\alpha_0^2(\\alpha_0+1)}\\end{align*} $$"
+      "content": "At first glance, this looks like the multinomial density function (with $ \\alpha_i - 1 = n_i $). The difference is that the multinomial is calculated over a set of discrete random variables ($ n_i $), thus returning the expected probabilities for any vector of discrete numbers of counts (successes) in each category. Conversely, the Dirichlet treats an equivalent of the vector of outcomes (generalized to non-integers) as fixed and returns the continuous distribution for all possible configurations of the success parameters given this data, which means that the data ($ \\alpha_i $) is fixed, and the success parameters ($ x_i $) are random. A few key moments of this distribution are $$ \\begin{align*}\\mu_{x_i}={\\alpha_i\\over\\alpha_0},\\quad\\sigma^2(x_i)={\\alpha_i(\\alpha_0-\\alpha_i)\\over\\alpha_0^2(\\alpha_0+1)},\\quad{\\rm and}\\quad\\sigma(x_i,x_j)=-{\\alpha_i\\alpha_j\\over\\alpha_0^2(\\alpha_0+1)}\\end{align*} $$"
     },
     {
       "type": "discussion",
-      "content": "An important special case of the Dirichlet (for k = 2 classes) is the beta distribution, whose pdf is given by $$ \\begin{align*}p(x)=\\frac{\\Gamma(\\alpha+\\beta)}{\\Gamma(\\alpha)\\Gamma(\\beta)}\\;x^{\\alpha-1}(1-x)^{\\beta-1}\\quad{\\rm for}\\quad0\\le x\\le1,\\quad\\alpha,\\;\\beta>0\\end{align*} $$ which has a mean and a variance of $$ \\begin{align*}\\mu=\\frac{\\alpha}{\\alpha+\\beta}\\qquad{\\rm and}\\qquad\\sigma^2=\\frac{\\alpha\\beta}{(\\alpha+\\beta)^2(\\alpha+\\beta-1)}\\end{align*} $$ As Figure A2.3 illustrates, the beta distribution is extremely flexible, and can be flat, unimodal, U-, or L-shaped, depending on the choice of $ $ and $ $."
+      "content": "An important special case of the Dirichlet (for k = 2 classes) is the beta distribution, whose pdf is given by $$ \\begin{align*}p(x)=\\frac{\\Gamma(\\alpha+\\beta)}{\\Gamma(\\alpha)\\Gamma(\\beta)}\\; x^{\\alpha-1}(1-x)^{\\beta-1}\\quad{\\rm for}\\quad0\\le x\\le1,\\quad\\alpha,\\;\\beta>0\\end{align*} $$ which has a mean and a variance of $$ \\begin{align*}\\mu=\\frac{\\alpha}{\\alpha+\\beta}\\qquad{\\rm and}\\qquad\\sigma^2=\\frac{\\alpha\\beta}{(\\alpha+\\beta)^2(\\alpha+\\beta-1)}\\end{align*} $$ As Figure A2.3 illustrates, the beta distribution is extremely flexible, and can be flat, unimodal, U-, or L-shaped, depending on the choice of $ \\alpha $ and $ \\beta $."
     }
   ]
 }

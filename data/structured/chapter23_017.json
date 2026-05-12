@@ -2,86 +2,46 @@
   "id": "chapter23_017",
   "metadata": {
     "chapter": "chapter23",
-    "section": "Chapter 23: Response Under Pure Selfing",
+    "section": "Selection Under Inbreeding: Introduction",
     "subsections": [
-      "Response Under Pure Selfing"
+      "Response When Inbreeding Pure-line Crosses"
     ],
     "source_file": "tmp\\paddle_output\\chapter23_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [
-      "23.21",
-      "23.22",
-      "23.23",
-      "23.24",
-      "23.25",
-      "23.26",
-      "23.27"
+      "23.28",
+      "23.29"
     ],
     "table_references": [
-      "11.1",
-      "inline_1"
+      "inline_4"
     ],
+    "section_level_1": "Selection Under Inbreeding: Introduction",
+    "section_level_2": "Response When Inbreeding Pure-line Crosses",
+    "heading_path": [
+      "Selection Under Inbreeding: Introduction",
+      "Response When Inbreeding Pure-line Crosses"
+    ],
+    "display_heading": "Response When Inbreeding Pure-line Crosses",
     "table_reference_keys": [
-      "chapter23:11.1",
-      "chapter23:inline_1"
+      "chapter23:inline_4"
     ]
   },
   "blocks": [
     {
-      "type": "discussion",
-      "content": "Suppose we commence selfing from a collection of individuals that are in Hardy-Weinberg and linkage equilibrium. After all lines have become completely inbred, there is no response to selection within a line as there is no within-line genetic variation (in the absence of mutation). However, the response among lines involves the entire genotypic variance, as selection is among clones."
+      "type": "derivation",
+      "content": "Considerable simplification occurs when two pure lines are crossed. In the resulting $ F_1 $, each locus will have only two segregating alleles (one from each line; both at frequency 1/2), and as a result, $ \\iota^* = \\sigma_D^2 $ and $ \\sigma_DI^2 = \\sigma_{ADI} = 0 $ (Chapter 11). Equation 23.23 then becomes [[SEE_FORMULA:23.28]]"
     },
     {
       "type": "derivation",
-      "content": "We first consider one extreme, inbreeding each line entirely to fixation and then selecting among the lines. At this point, a parent and its (selfed) offspring are genetically identical, and the resulting parent-offspring covariance equals the total genetic variance in the population (i.e., the variation over all sets of inbred lines). Inbreeding alters the total genetic variation from its random-mating value of $ \\sigma_A^2 + \\sigma_D^2 $ to a new value of $ \\widetilde{\\sigma}_G^2 $ over the entire collection of pure lines. The resulting parent-offspring covariance among fully inbred lines is [[SEE_FORMULA:23.21]]"
-    },
-    {
-      "type": "derivation",
-      "content": "When $ k $th-order additive epistasis is present, $ 2^k \\sigma_{A^k}^2 $ is added in Equation 23.21 (e.g., $ 4\\sigma_{AA}^2 $, $ 8\\sigma_{AA}^2 $, etc.). Assuming linearity of the parent-offspring regression, the response to a generation of selection among these inbred lines produces an expected response of [[SEE_FORMULA:23.22]]"
-    },
-    {
-      "type": "discussion",
-      "content": "Even if selection is moderate, a single generation is likely to significantly alter the distribution of remaining genotypes (and hence change the genetic variance), and thus the validity of Equation 23.22 over more than a few generations is, at best, questionable. There are a number of subtleties when attempting to select the best pure line from a collection, which are examined in Volume 3."
-    },
-    {
-      "type": "derivation",
-      "content": "Instead of waiting for inbreeding to be complete, suppose instead that we select among individuals while inbreeding is still ongoing (i.e., $f < 1$). This entails choosing individuals and then following their selfed offspring. The response in generation $T$ from selection in generation $t < T$ is then a function of the cross-generational covariance, $\\sigma_{G}(T, t)$. For strict selfing, Equation 11.16c yields the covariance between a relative from generation $T$ and its ancestor in generation $t < T$ as [[SEE_FORMULA:23.23]] where $ f_t = 1 - \\left(\\frac{1}{2}\\right)^t $ is the amount of inbreeding in generation $ t $. The phenotypic variance in generation $ t $ is $ \\sigma^2(z_t) = \\sigma_G(t, t) + \\sigma_e^2 $, where $ \\sigma_G(t, t) = \\sigma_G^2(t) $ is obtained from Equation 23.23 by setting $ T = t $. Equation 23.21 follows if we note that $ f_\\infty = 1 $. Recall (Chapter 17; LW Chapter 6) that the environmental variance, $ \\sigma_e^2 $, may increase with inbreeding, and thus we may need to account for this factor as well. Cockerham and Matzinger (1985) extend Equation 23.23 to include additive by additive epistasis (but still assuming gametic-phase equilibrium). If additive epistasis up to order $ k $ is present, extra terms are added to the covariance provided by Equation 23.23, namely, $$ (1+f_{t})^{2}\\sigma_{A A}^{2}+\\cdots+(1+f_{t})^{k}\\sigma_{A^{k}}^{2} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "When all possible types of pairwise epistasis (e.g., $ A \\times A, A \\times D, D \\times D $) occur, 12 variance components are required to describe $ \\sigma_G(T, t) $ under selfing (Wright 1987, 1988), but we will ignore this level of complication."
-    },
-    {
-      "type": "derivation",
-      "content": "Substitution of Equation 23.23 into Equation 23.4 gives the response to selection while the line is being inbred. For complete additivity, $ \\sigma_G(T,t) = (1 + f_t)\\sigma_A^2 = (2 - 2^{-t})\\sigma_A^2 $, yielding a response of [[SEE_FORMULA:23.24]] as obtained by Brim and Cockerham (1961) and, under much more general conditions, by Pederson (1969a). If dominance is present, the selection response under selfing has both a transient and a permanent component (Chapter 15). When selection is relaxed (short of complete inbreeding), the mean potentially changes as the transient component decays. The expected total change in the mean after n generations, the first T of which were under selection (generations 0 to T - 1), is thus given by [[SEE_FORMULA:23.25]]"
-    },
-    {
-      "type": "derivation",
-      "content": "The permanent response to T generations of selection, $ \\widetilde{R}(T) $, is given by [[SEE_FORMULA:23.26]] Because $ f_{\\infty} = 1 $, Equation 23.23 calculates the covariance between an individual in generation t and a completely inbred $ (\\mathrm{F}_{\\infty}) $ line descended from it as [[SEE_FORMULA:23.27]] which is essentially $ \\tilde{\\sigma}_G^2 $ (Equation 23.21) for $ t > 5 $. Thus, additive variance contributes to the permanent response, while $ \\tilde{\\sigma}_D^2 $ and $ \\iota^* $ contribute to the transient, but not the permanent, response. Dominance does, however, make a contribution to the permanent response, through $ \\tilde{\\sigma}_D^2 $ and $ \\sigma_{ADJ} $. To see why, consider the case when inbreeding is complete. Here the only genotypes are of the form $ A_i A_i $ and have a genotypic decomposition of $ 2\\alpha_i + \\delta_{ii} $. The frequency of such genotypes (in the collection of completely inbred lines) is $ \\simeq p_i $, assuming that there is no change in the population allele frequencies (i.e., our assumption of weak selection on the underlying loci). Recalling the definitions of $ \\sigma_DI^2 $ and $ \\sigma_{ADJ} $ ([[SEE_TABLE:11.1]]), the resulting genetic variance among lines is $$ \\widetilde{\\sigma}_{G}^{2}=\\sigma^{2}(2\\alpha_{i}+\\delta_{ii})=4\\sigma^{2}(\\alpha_{i})+2\\cdot2\\sigma(\\alpha_{i},\\delta_{ii})+\\sigma^{2}(\\delta_{ii})=2\\sigma_{A}^{2}+2\\sigma_{ADI}+\\sigma_{DI}^{2} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "The contribution from standard dominance variance, $ \\sigma_D^2 = \\sigma^2(\\delta_{ij}) $, decays as $ \\mathbf{A}_i\\mathbf{A}_j $ heterozygotes are lost due to inbreeding, leaving only the contribution from homozygotes, $ \\sigma_{DI}^2 = \\sigma^2(\\delta_{ii}) $."
-    },
-    {
-      "type": "discussion",
-      "content": "Example 23.4. As an example of what fraction of the response from various generations of selection is ultimately passed on to the completely inbred line, assume the genotypic values and frequencies from Example 11.1, which computed the components required to predict the selection response under inbreeding as $$ \\sigma_{A}^{2}=0.629,\\quad\\sigma_{D}^{2}=\\iota^{*}=0.046,\\quad\\sigma_{D I}^{2}=0.103,\\quad\\sigma_{A D I}=-0.361 $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Assume $ \\sigma_e^2 = 1 $ (which corresponds to narrow- and broad-sense heritabilities of $ h^2 = 0.38 $ and $ H^2 = 0.41 $, respectively). If we substitute these values into Equation 23.23, and recall that $ \\sigma_e^2(t) = \\sigma_G^2(t, t) + \\sigma_e^2 $, we get the response in various generations (t) of inbreeding. The fifth column in the table below shows the expected single-generation response (the response in $ t + 1 $ from selection in t) and the fourth column shows the eventual contribution ($ T = \\infty $), while the final column shows the percentage of the response from that particular generation that is translated into the final response."
-    },
-    {
-      "type": "discussion",
-      "content": "For example, if selection is among individuals that have experienced three generations of inbreeding (t = 3), then 97.4% of the response seen in generation 4 is seen among the fully inbred lines. This calculation essentially assumes that this is only a single generation of selection, as multiple generations of selection (especially among largely inbred lines) will quickly remove most of the existing among-line variation. Note that the largest reduction between the initial and permanent responses occurs in the first generation of selection, where selected individuals are selfed for the first time. As selfing progresses, the genotypic values between ancestors and descendants become increasingly more similar, and hence they retain almost all of their initial response. While more dramatic changes are expected under different combinations of $ \\sigma_{ADI} $, $ \\sigma_{DI}^2 $, and $ \\iota^* $, inbreeding will largely be complete after the first six generations, and the offspring will be almost genetically identical to their parents."
-    },
-    {
-      "type": "discussion",
-      "content": "This example highlights the dilemma faced by plant breeders. Selection decisions based on early cycles of the inbreeding (early-generations selection) may be poor predictors of the ultimate inbred product (especially when dominance is present), but carrying out additional generations of inbreeding (to increase the genetic covariance between the tested and fully inbred genotypes) takes additional time. For the values assumed here, only 80% of the first-generation $ (t = 0) $ response is retained in fully inbred lines, which increases to almost 95% for the third-generation $ (t = 2) $ response. The use of doubled-haploids, which can make a plant fully inbred in a single generation, can have significant advantages in an inbred line breeding program (Gallais 1989; Volume 3)."
+      "content": "If we start selection on the $ F_{2} $ population and denote this generation as generation 0, Equation 23.25 simplifies (Pederson 1969a) to [[SEE_FORMULA:23.29]]"
     },
     {
       "type": "proposition",
-      "content": "It is important to again stress that these results for the expected selection response are based on infinitesimal-model approximations. The covariances between relatives under inbreeding that drive these equations are based on the assumption (as was the case for the breeder's equation) that selection does not significantly change the variance components (the values of $ \\sigma_{A'}^2 \\sigma_D^2 $, $ \\sigma_{ADI} $, etc. remain largely unchanged). Clearly, selection with a small number of loci can substantially change allele frequencies, thus violating the assumptions leading to Equations 23.24 through 23.27. Likewise, with a small number of lines and/or strong selection, these results will also be biased. Another, more subtle, violation of this basic model will occur if some lines are disproportionately chosen over others (as one might expect might happen). In such cases, the covariances that are now appropriate are not those for the population as a whole, but rather those for individuals within particular sublines. The unstated assumption of Equation 23.23 is that when individuals are being compared for selection, their most recent ancestors are those that are drawn from the base population. If their most recent ancestor is more current, however, the covariances will be incorrect and the estimated response biased. Finally, as developed shortly, selection-generated gametic-phase disequilibrium can significantly reduce response."
+      "content": "However, Equation 23.29 carries the unstated assumption that the environmental variance, $ \\sigma_e^2 $, is unchanged over levels of inbreeding, which may not be correct (Chapter 17). More generally, $ \\sigma_e^2 $ can be replaced by $ \\sigma_e^2(t) $ to accommodate this concern. Note that any initial contribution to the selection response from dominance will quickly decay (as $ 2^{-n} $)."
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:23.5]]"
     }
   ]
 }

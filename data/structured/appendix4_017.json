@@ -2,59 +2,51 @@
   "id": "appendix4_017",
   "metadata": {
     "chapter": "appendix4",
-    "section": "FDR: THE FALSE-DISCOVERY RATE",
+    "section": "Appendix: Introduction",
     "subsections": [
-      "Morton's Posterior Error Rate (PER) and the FDR"
+      "FDR: THE FALSE-DISCOVERY RATE"
     ],
     "source_file": "tmp\\paddle_output\\appendix4_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [],
-    "table_references": []
+    "table_references": [
+      "inline_2"
+    ],
+    "section_level_1": "Appendix: Introduction",
+    "section_level_2": "FDR: THE FALSE-DISCOVERY RATE",
+    "heading_path": [
+      "Appendix: Introduction",
+      "FDR: THE FALSE-DISCOVERY RATE"
+    ],
+    "display_heading": "FDR: THE FALSE-DISCOVERY RATE",
+    "table_reference_keys": [
+      "appendix4:inline_2"
+    ]
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Sham and Purcell (2014) noted that one can rearrange Equation A4.15a to find the $ $ value to obtain a desired PER value of $ $, with $$ \\begin{align*}\\alpha=\\left({\\gamma\\over1-\\gamma}\\right)\\left({1-\\pi_0\\over\\pi_0}\\right)(1-\\beta)\\end{align*} $$"
+      "content": "As mentioned, Bonferroni corrections (and their extensions) are appropriate when we expect that only a very few of the many null hypotheses are false. An alternate setting is that in which some substantial fraction of the null hypotheses is expected to be false. In such cases, even sequential Bonferroni corrections are likely to be too stringent, resulting in too many false negatives (Type-II errors; i.e., a failure to reject a false hypothesis). A different approach is required in these settings, most notably the false-discovery rate (FDR), introduced by Benjamini and Hochberg (1995)."
     },
     {
       "type": "discussion",
-      "content": "In particular, if there is complete power ($ = 0 $) and only one of the $ n $ tested hypotheses departs from the null ($ _0 = n/[n + 1] $), Equation A4.15c reduces to $$ \\begin{align*}\\alpha=\\left({\\gamma\\over1-\\gamma}\\right)\\left({1\\over n}\\right)\\simeq{\\gamma\\over n}\\end{align*} $$ which recovers the Bonferroni correction (Equation A4.4)."
+      "content": "The FDR is the fraction of false positives among all the tests that are declared to be significant. The motivation for using the FDR is that we may be conducting a very large number of tests, with those that are declared to be significant being subjected to further study. An example would be a search for differential expression over a huge set of genes. The goal of the initial analysis is to distill a large number of candidates down to a reduced set (for further analysis) that is highly enriched for true positives."
     },
     {
       "type": "discussion",
-      "content": "The Type-I error rate, $ \\alpha $ , of a random test, and the PER for a significant test, which are often assumed to be the same, are actually very different. In addition to $ \\alpha $ , the PER also depends on the power, $ \\beta $ , of a test and the fraction, $ \\pi_{0} $ , of tests that are truly null (as these latter parameters influence the probability that a test is declared to be significant). Manly et al. (2004) noted that the PER is acceptably low only if the fraction of alternative hypotheses $ (1-\\pi_{0}) $ is well above $ \\alpha $ ."
+      "content": "In such cases, we are more concerned with making sure all possible true alternatives are included in this reduced set, and we are willing to accept some false positives to ac- complish this goal. However, we also don't want to be completely swamped with false positives. The goal is a statistical procedure that results in a significant enrichment of true positives (differentially expressed genes in our example), while controlling the fraction of false positives within this enriched set by specifying a value, $ \\delta $, for the FDR. Choosing an FDR of 5% means that (on average) 5% of the genes that we declare to be significant are actually false positives. The flip side is that 95% of those genes (tests) that are declared to be significant do indeed have differential expression. Hence, screening genes with an FDR of 5% results in a significant enrichment of genes that are truly differentially expressed."
     },
     {
       "type": "discussion",
-      "content": "Thinking in terms of the PER allows us to consider multiple comparisons in a continuum from Bonferroni-type corrections to using FDR to control the PER. If $ \\pi_{1}=1-\\pi_{0} $ is very small, most tests will truly be from the null hypothesis, and we can control the overall falsepositive rate with a Bonferroni-type correction. However, if some fraction of the hypotheses is expected to be false (i.e., $ 1-\\pi_{0} $ is at least of modest value), then using FDR corrections makes more sense for controlling the PER."
+      "content": "To formally motivate the concept of the FDR, suppose a total of $n$ hypotheses are tested, $S$ of which are judged significant (i.e., the $p$ value for the test is $\\leq$ some threshold value, $\\tau$). If we had complete knowledge, we would know that $n_{0}$ of the hypotheses have the null true and $n_{1}=n-n_{0}$ have the alternative true, and we might find that $F$ of the true nulls were called significant, while $T$ of the alternative true were called significant, yielding the following table"
     },
     {
       "type": "discussion",
-      "content": "Example A4.7. In Morton's original application, because there are 23 pairs of human chromosomes, he argued that two randomly chosen genes had a $ 1/23 0.05 $ prior probability of linkage, namely, $ 1 - _0 = 0.05 $, and thus $ _0 = 0.95 $. Assuming a Type-I error rate of $ = 0.05 $ and 80 $$ \\frac{0.05\\cdot0.95}{0.05\\cdot0.95+0.80\\cdot0.05}=0.54 $$"
+      "content": "For this experiment, the false-discovery rate is the fraction of tests called significant that are actually true nulls, $ FDR = F/S $. (The term $ \\text{discovery} $ follows in that a significant result can be considered as a discovery for future work.) As a point of contrast, the normal Type-I error (which we can also call the $ \\text{false-positive rate [FPR]} $), which is the fraction of true nulls that are called significant, is $ F/n_0 $. Note the critical distinction between these two error rates. While the numerator of each is $ F $, the denominators are considerably different—the total number, $ S $, of tests called significant (for FDR), versus the number, $ n_0 $, of hypotheses that are truly null (FPR). As the threshold value ($ \\tau $) for significance is changed, so too is the fraction $ F/S $. To obtain a FDR of $ \\delta $ over our experiment, $ \\tau $ is adjusted to find its largest value such that some expectation of $ F/S $ is bounded above by $ \\delta $. Finally, Gadbury et al. (2004) defined the expected discovery rate (EDR) as $ T/n_1 $ (the fraction of all true discoveries declared to be significant), which is the analog of statistical power in this setting."
     },
     {
       "type": "discussion",
-      "content": "Hence, with a Type-I error control of $ = 0.05 $, a random test showing a significant result ($ p 0.05 $) has a 54"
-    },
-    {
-      "type": "discussion",
-      "content": "What value for $ $ is needed under the above parameters to given a PER of 0.05? Solving for $ $ in the expression $$ \\frac{\\alpha\\cdot0.95}{\\alpha\\cdot0.95+0.80\\cdot0.05}=0.05 $$ yields $ = 0.0022 $, and hence, setting this as the Type-I error gives a PER of 5"
-    },
-    {
-      "type": "discussion",
-      "content": "Example A4.8. Suppose we set $ = 0.005 $ for each test, and assume that the resulting power is essentially 1 (i.e., $ 0 $). Consider 5000 tests under two different settings. First, suppose that the alternative is very rare, with $ n_1 = 1 $ ($ _0 = 0.9998 $). Under this setting, we expect $ 4999 0.005 = 24.995 $ false positives and one true positive ($ 1 = 1 $), yielding an expected PER of $$ PER=\\frac{24.995}{24.995+1}=0.961 $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Thus, a randomly chosen significant test has a 96.1"
-    },
-    {
-      "type": "discussion",
-      "content": "Now suppose that the alternative is not especially rare, for example $ n_1 = 500 $ ($ _0 = 0.9 $). The expected number of false positives is $ 4500 0.005 = 22.5 $, while the expected number of true positives is 500, yielding a PER of $$ PER=\\frac{22.5}{522.5}=0.043 $$"
-    },
-    {
-      "type": "discussion",
-      "content": "The PER is thus rather sensitive to $ \\pi_{0} $ , the fraction of all tests that are truly from the null hypothesis. If $ \\pi_{0} $ is essentially 1, a PER of $ \\delta $ is obtained using the Bonferroni correction, $ \\alpha=\\delta/n $ . However, if $ \\pi_{0} $ departs even slightly from one (i.e., more than a few of the alternative hypotheses are correct), then the per-test level of $ \\alpha $ to achieve a desired PER rate is considerably larger (i.e., less stringent) than that given by the Bonferroni correction, namely, $ \\alpha(\\delta)>\\delta/n $ For example, for a 0.04 experiment-wide error rate, $ \\alpha=0.04/5000=8\\cdot10^{-6} $ , which is roughly 625 times smaller than the value of $ \\alpha=0.005 $ required for a 4% FDR, highlighting the greatly increased power under the FDR framework. This increased power arises because the FDR approach acknowledges that some fraction of the tests are not from the null. A Technical Aside: Different Definitions of False-discovery Rate"
+      "content": "Another way to see the distinction between the false-positive rate and the false-discovery rate is to consider them as probability statements for a single test involving hypothesis i. For the FDR, we condition on the test as being significant, $$ \\mathrm{FDR}=\\mathrm{Pr}(i is truly null\\mid i is deemed significant)=\\delta $$ whereas for the false-positive rate, we condition on the hypothesis being null $$ \\mathrm{FPR}=\\mathrm{Pr}(i is deemed significant\\mid i is truly null)=\\alpha $$"
     }
   ]
 }

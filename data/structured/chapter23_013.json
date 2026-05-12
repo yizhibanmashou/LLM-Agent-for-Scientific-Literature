@@ -2,40 +2,30 @@
   "id": "chapter23_013",
   "metadata": {
     "chapter": "chapter23",
-    "section": "Chapter 23: Progeny Testing Using Inbred Offspring",
+    "section": "Selection Under Inbreeding: Introduction",
     "subsections": [
-      "$ S_{1}, S_{2}, \\text{and } S_{i,j} $ Family Selection"
+      "Other Inbreeding-based Family-selection Schemes"
     ],
     "source_file": "tmp\\paddle_output\\chapter23_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [],
-    "table_references": [
-      "23.3"
+    "table_references": [],
+    "section_level_1": "Selection Under Inbreeding: Introduction",
+    "section_level_2": "Other Inbreeding-based Family-selection Schemes",
+    "heading_path": [
+      "Selection Under Inbreeding: Introduction",
+      "Other Inbreeding-based Family-selection Schemes"
     ],
-    "table_reference_keys": [
-      "chapter23:23.3"
-    ]
+    "display_heading": "Other Inbreeding-based Family-selection Schemes"
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Example 23.2. To compute the probabilities of the IBD states $ \\Delta_3 $, $ \\Delta_8 $, and $ \\Delta_9 $ required to predict the response under $ S_{ij} $ family selection, first recall the various relatives involved: [h]"
+      "content": "Other family-selection schemes involving inbreeding have been proposed, such as the selfed half-sib (SHS) and selfed full-sib family (SFS) methods of Burton and Carver (1993). Here, progeny from either a half- or full-sib family are selfed, and these selfed individuals are then used as the family mean for selection decisions. The advantage of this approach is a large increase in the amount of seed (and hence the ability to more fully replicate a family, reducing the error variance)—in other words, if there are M initial sibs, each of which is selfed to obtain N selfed offspring, there are MN offspring per family. Burton and Carver suggested that this approach can be at least as efficient as $ S_1 $ family selection, largely due to the decreased sampling variance in the selection unit, $ \\sigma^2(\\overline{z}) $, compared to $ S_1 $ families."
     },
     {
       "type": "discussion",
-      "content": "P is the parent that has undergone i generations of selfing, and it generates both a remnant seed, R (that will be grown and crossed with an unrelated individual, R', to form the offspring, y), and a collection of Sj families that will be scored. As in Chapter 21, x denotes a measured sib from the family that is used for selection decisions."
-    },
-    {
-      "type": "proposition",
-      "content": "Consider a random locus. If the alleles at this locus are IBD in P (which occurs with a probability of $ f_i $), then the only IBD state between x and y is $ \\Delta_3 $, as both alleles in x are IBD and this allele is also passed onto R, and hence to y. Otherwise (with a probability of $ 1 - f_i $), a locus in P is not IBD, and we denote P's two alleles as A and a (these designations are only for the purpose of following IBD alleles, and in fact, the two alleles could be identical in state). There are then three possible genotypes for x, AA Aa, and aa, while y can receive either A or a from R (and an unrelated allele from R'). The IBD states for these different combinations are as follows: [[TABLE:23.3]] rely on two assumptions: no dominance and equal among-family variance. Both among-family genetic differences over the different schemes, as well as G × E and other replication-dependent error terms in σ²(z), can cause this latter assumption to be incorrect (e.g., Equations 21.42a and 21.42b). One can easily imagine situations where the difference in error variance more than compensates for the difference in the selection unit-offspring covariances. For example, half-sib selection may generate far more family members for testing than an S₁, thus greatly reducing the error variance (by increasing n in Equation 23.8c). Likewise, σ_ADI can be negative, thus reducing the expected advantage of S₁ and S₁.₂ selection. Indeed, Jan-orn et al. (1976) estimated that σ_ADI/σ_A² was around −0.5 for many traits in sorghum, suggesting that σ_ADI can be both negative and substantial."
-    },
-    {
-      "type": "discussion",
-      "content": "Hence, $ \\Delta_8 $ equals the probability that a locus in $ P $ is not IBD, $ (1 - f_i) $, times the probability that the locus is still not IBD by generation $ j $ (state $ \\mathbf{A}\\mathbf{a} $). Because the probability that a locus is not converted to an IBD state is $ 1/2 $ for each generation of selfing, $$ \\Delta_{8}=\\left(1-f_{i}\\right)2^{-\\left(j-i\\right)} $$ recovering Equation 23.13b."
-    },
-    {
-      "type": "discussion",
-      "content": "If the two alleles in P are not IBD (probability $ 1 - f_i $), $ \\Delta_3 $ can still arise as twice the probability that x is the genotype AA and y receives allele A. The factor of two arises because of symmetry, as the case of aa and a have equal probability. Turning to the transmission for R, if the focal locus in P is not IBD, then after one generation of selfing, 1/2 of the time R is IBD, and in half of these cases it will be AA. Otherwise, R's alleles are not IBD, in which case 1/2 are A, giving the chance of transmitting A to its selfed offspring as $ (1/2)(1/2) + (1/2)(1/2) = 1/2 $. Hence, the probability that y gets A from R is 1/2, while the probability x is AA (given that R was not IBD in generation i) is $ (1 - 2^{-(j-i)})(1/2) $, which is the probability of the locus becoming IBD (i.e., not staying as non-IBD) times $ (1/2) $ for randomly fixing allele A. Hence, $$ \\begin{aligned}\\Delta_{3}&=f_{i}+2\\left[(1-f_{i})(1/2)(1-2^{-(j-i)})\\right](1/2)\\\\&=f_{i}+(1-f_{i})(1/2)(1-2^{-(j-i)})\\end{aligned} $$ recovering Equation 23.13a."
+      "content": "Another variant is joint half-sib, $ S_1 $ family selection, which was proposed by Goulas and Lonnquist (1976) for maize. On prolific (multieared) plants, the lower ear is selfed, while the upper ear is outcrossed. Both the HS (upper ear) and $ S_1 $ (lower ear) progenies are jointly evaluated and the best families are chosen, with the remnant HS seed from the best families used as the parents for the next generation. Dhillon (1991b) proposed the alternate recurrent selection of $ S_1 $ and half-sib families, involving alternate cycles of $ S_1 $ selection and either ear-to-row or half-sib selection. The idea here is to take advantage of breeding situations that involve a trial field season and a winter nursery (and hence an extra generation per year) for creating and recombining new families. Under the right settings, this approach can exceed the per-year response of $ S_1 $ selection."
     }
   ]
 }

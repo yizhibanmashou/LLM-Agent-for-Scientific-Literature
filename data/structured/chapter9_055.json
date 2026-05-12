@@ -2,7 +2,7 @@
   "id": "chapter9_055",
   "metadata": {
     "chapter": "chapter9",
-    "section": "Chapter 9: Recombination and Infinite-alleles-based Tests",
+    "section": "Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction",
     "subsections": [
       "Long-haplotype Tests Using Within-population Data: rEHH, LDD, iHS, $ nS_{L} $, SDS, and DIND"
     ],
@@ -17,6 +17,13 @@
     "table_references": [
       "9.3"
     ],
+    "section_level_1": "Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction",
+    "section_level_2": "Long-haplotype Tests Using Within-population Data: rEHH, LDD, iHS, $ nS_{L} $, SDS, and DIND",
+    "heading_path": [
+      "Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction",
+      "Long-haplotype Tests Using Within-population Data: rEHH, LDD, iHS, $ nS_{L} $, SDS, and DIND"
+    ],
+    "display_heading": "Long-haplotype Tests Using Within-population Data: rEHH, LDD, iHS, $ nS_{L} $, SDS, and DIND",
     "table_reference_keys": [
       "chapter9:9.3"
     ]
@@ -28,19 +35,11 @@
     },
     {
       "type": "definition",
-      "content": "Recall our previous discussion on the definition of an allele, namely a core SNP or set of very tightly linked SNPs that define alternate classes. For alleles defined by a single biallelic SNP, this generates two classes (sequences carrying the alternative SNP alleles). The haplotype structure within each allelic class is examined by looking at shared variants."
-    },
-    {
-      "type": "discussion",
-      "content": "as one moves away from the core. The standard metric for the length of an allele is based on its haplotype homozygosity (HH), the probability that two randomly chosen chromosomes containing the same SNP variant (or core set of SNPs) are identical (homozygous) for all markers within a specified region. Sabeti et al. (2002) defined extended haplotype homozygosity (EHH) as the length of a region around the core allele (SNP) where HH has a value of 5% or greater, namely, the length around the core where there is a 5% or greater chance that any two random haplotypes of that allele are identical at all markers (Figure 9.6)."
+      "content": "Recall our previous discussion on the definition of an allele, namely a core SNP or set of very tightly linked SNPs that define alternate classes. For alleles defined by a single biallelic SNP, this generates two classes (sequences carrying the alternative SNP alleles). The haplotype structure within each allelic class is examined by looking at shared variants. as one moves away from the core. The standard metric for the length of an allele is based on its haplotype homozygosity (HH), the probability that two randomly chosen chromosomes containing the same SNP variant (or core set of SNPs) are identical (homozygous) for all markers within a specified region. Sabeti et al. (2002) defined extended haplotype homozygosity (EHH) as the length of a region around the core allele (SNP) where HH has a value of 5% or greater, namely, the length around the core where there is a 5% or greater chance that any two random haplotypes of that allele are identical at all markers (Figure 9.6)."
     },
     {
       "type": "derivation",
-      "content": "While alleles with excessive values of EHH are produced by partial sweeps, simply scanning for sites with large EHH values will not serve as a sufficient indicator of selection, as a localized decrease in the recombination rate inflates the EHH value. The formal use of EHH as a selection-detecting statistic thus requires an internal control. Sabeti et al. (2002) proposed considering the relative extended haplotype homozygosity (rEHH) of a particular allele (SNP variant), defined as the ratio of the EHH value for that allele divided by the average EHH value for all other core alleles at the focal locus. For allele i, this is given by [[SEE_FORMULA:9.40]] where $ ave(EHH_j) $ denotes the average EHH values for all SNPs at the allelic-defining site. For the biallelic case (an allele defined by a single SNP, as opposed to a collection of tightly linked SNPs), $ rEHH $ is simply the ratio of the EHH values for the two alleles. By contrasting different alleles at the same site, most concerns about local variation in the recombination rates are ameliorated. However, if there are haplotype-specific recombination rates (e.g., the insertion of a mobile element reducing local recombination rates; Macpherson et al. 2008), then this test may be compromised. One consequence of comparing different alleles at a site is that as one allele approaches fixation, the power of the test disappears, as there are too few individuals in the comparison class to produce a meaningful statistic. As a result, the $ rEHH $ test has a rather narrow time window for the detection of a sweep: a rough rule is"
-    },
-    {
-      "type": "discussion",
-      "content": "that the frequency of the favored allele must be 0.7 or less. Within such a time window, this test is among the most powerful for detecting selection. Nonetheless, a large rEHH value is not sufficient for suggesting selection, as some rare alleles (potentially being very young, and hence with reduced time for recombination) are expected to have large rEHH values. To detect selection, Sabeti et al. (2002) plotted the rEHH value versus frequency for each allele and looked for outliers (Figure 9.7). Coalescent simulations were then performed under different neutral models (with different demographic assumptions) to assess significance. Wang et al.'s (2006) linkage disequilibrium decay (LDD) test is a modification of EHH that does not require phasing."
+      "content": "While alleles with excessive values of EHH are produced by partial sweeps, simply scanning for sites with large EHH values will not serve as a sufficient indicator of selection, as a localized decrease in the recombination rate inflates the EHH value. The formal use of EHH as a selection-detecting statistic thus requires an internal control. Sabeti et al. (2002) proposed considering the relative extended haplotype homozygosity (rEHH) of a particular allele (SNP variant), defined as the ratio of the EHH value for that allele divided by the average EHH value for all other core alleles at the focal locus. For allele i, this is given by [[SEE_FORMULA:9.40]] where $ ave(EHH_j) $ denotes the average EHH values for all SNPs at the allelic-defining site. For the biallelic case (an allele defined by a single SNP, as opposed to a collection of tightly linked SNPs), $ rEHH $ is simply the ratio of the EHH values for the two alleles. By contrasting different alleles at the same site, most concerns about local variation in the recombination rates are ameliorated. However, if there are haplotype-specific recombination rates (e.g., the insertion of a mobile element reducing local recombination rates; Macpherson et al. 2008), then this test may be compromised. One consequence of comparing different alleles at a site is that as one allele approaches fixation, the power of the test disappears, as there are too few individuals in the comparison class to produce a meaningful statistic. As a result, the $ rEHH $ test has a rather narrow time window for the detection of a sweep: a rough rule is that the frequency of the favored allele must be 0.7 or less. Within such a time window, this test is among the most powerful for detecting selection. Nonetheless, a large rEHH value is not sufficient for suggesting selection, as some rare alleles (potentially being very young, and hence with reduced time for recombination) are expected to have large rEHH values. To detect selection, Sabeti et al. (2002) plotted the rEHH value versus frequency for each allele and looked for outliers (Figure 9.7). Coalescent simulations were then performed under different neutral models (with different demographic assumptions) to assess significance. Wang et al.'s (2006) linkage disequilibrium decay (LDD) test is a modification of EHH that does not require phasing."
     },
     {
       "type": "derivation",

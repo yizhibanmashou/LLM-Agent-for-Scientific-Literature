@@ -2,38 +2,52 @@
   "id": "chapter7_009",
   "metadata": {
     "chapter": "chapter7",
-    "section": "Chapter 7: Fixation of Overdominant and Underdominant Alleles",
+    "section": "Interaction of Selection, Mutation, and Drift: Introduction",
     "subsections": [
-      "Fixation of Overdominant and Underdominant Alleles"
+      "Expected Allele Frequency in a Particular Generation"
     ],
     "source_file": "tmp\\paddle_output\\chapter7_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [
-      "7.25",
-      "7.26"
+      "7.27",
+      "7.28a",
+      "7.28b",
+      "7.29",
+      "7.30"
     ],
-    "table_references": []
+    "table_references": [],
+    "section_level_1": "Interaction of Selection, Mutation, and Drift: Introduction",
+    "section_level_2": "Expected Allele Frequency in a Particular Generation",
+    "heading_path": [
+      "Interaction of Selection, Mutation, and Drift: Introduction",
+      "Expected Allele Frequency in a Particular Generation"
+    ],
+    "display_heading": "Expected Allele Frequency in a Particular Generation"
   },
   "blocks": [
     {
-      "type": "derivation",
-      "content": "Walsh (1982) generalized these results to the situation in which the fitness in the novel homozygote is elevated to $ 1+t $, such that after passage through a fitness bottleneck, fixation of the underdominant allele leads to an increase in mean population fitness. Letting $ \\theta = N_e s $, and $ \\omega = 1 + (t/2s) $ [[SEE_FORMULA:7.25]]"
-    },
-    {
       "type": "discussion",
-      "content": "For $ t < 2s $, the fixation probability is close to that predicted by Equation 7.22, whereas for very large values of $ t $, $ u_f(1/2N) $ can moderately exceed the neutral fixation probability provided $ N_e $s is not so strong that the allele is incapable of drifting to a high enough frequency to be favored by selection (Figure 7.5)."
+      "content": "A number of applications, including attempts to predict the response to selection, arise for which it is useful to know the expected allele frequency at time $ t $, $ E(\\rho_t) $. While exact results can be obtained from probability transition matrices (Hill 1969a; Carr and Nassar 1970) and good approximations can be derived from diffusion theory (Appendix 1; Maruyama 1977; Ewens 2004) and other approaches (Curnow and Baker 1968, 1969; Pike 1969), these methods tend to be numerically intensive. Fortunately, simple approximations have been developed for dealing with weak selection."
     },
     {
       "type": "derivation",
-      "content": "The latter case is of special interest, as one can identify a critical effective population size $ (N_e^*) $ above which the efficiency of selection is so strong that there is essentially no possibility of the population passing through the fitness bottleneck imposed by heterozygotes. With heterozygotes having a fitness reduction of s, derived homozygotes having an advantage of t, and p being the frequency of the mutant allele, the mean population fitness is $ \\overline{W} = 1 - 2p(1 - p)s + p^2t $, which reaches a minimum at $ \\widehat{p} = s/(t + 2s) = 0.5\\omega $, so that $ p < \\widehat{p} $ implies net selection against, and $ p > \\widehat{p} $ net selection in favor of, the mutant allele. Thus, the key issue is whether the mutant allele can drift from an initial frequency of $ 1/(2N) $ to $ \\widehat{p} $, at which point selection can pull it to fixation. When p is small, the frequency of mutant homozygotes is negligible, and the new allele effectively behaves like a deleterious mutation being removed from the population at rate s, and it can be shown that there is essentially no chance of the allele drifting to $ \\widehat{p} $ if [[SEE_FORMULA:7.26]]"
+      "content": "In a finite population, drift can reduce the selection response by progressively diminishing the expected heterozygosity in each succeeding generation. Consider a locus with additive selection, with the genotypes aa, Aa, and AA having fitnesses of 1, 1 + s, and 1 + 2s, respectively. If there is weak selection, such that changes in allele frequencies associated with selection are relatively minor compared to those induced by drift, we can use Equation 5.1b to show that the expected per-generation frequency change for an allele in the jth generation of additive selection can be described as [[SEE_FORMULA:7.27]] where $ p_{0} $ is the initial allele frequency. The last approximation follows directly from the expression for the expected heterozygosity for a neutral locus in a finite population after j generations with a starting allele frequency of $ p_{0} $ (Equation 2.5). Summing over generations reveals that the expected frequency after t generations of selection and drift is [[SEE_FORMULA:7.28a]] where the last step follows from the useful approximation for large values of $ N_{e} $ [[SEE_FORMULA:7.28b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "More generally, if the genotypes aa, Aa, and AA have fitnesses of 1, 1 + hs, and 1 + 2s, respectively, then for small values of $ N_e|s| $ and $ N_e|sh| $, the expected frequency of A is [[SEE_FORMULA:7.29]]"
     },
     {
       "type": "discussion",
-      "content": "(Lynch 2012a). For example, with a mutant allele with a disadvantage of s = 0.01 in the heterozygous state but an advantage of t = 0.01 in the homozygous state, an effective population size above 300 imposes a very strong barrier to its establishment. Lande (1979b, 1985)"
+      "content": "These approximations provide a remarkably simple route to obtaining fixation probabilities under weak selection ($ N_e s \\ll 1 $). Because an allele will ultimately be either fixed ($ p_\\infty = 1 $) or lost ($ p_\\infty = 0 $), the asymptotic mean frequency as $ t \\to \\infty $ is equal to the fixation probability $$ E(p_{\\infty})=\\{1\\cdot u_{f}(p_{0})\\}+\\{0\\cdot[1-u_{f}(p_{0})]\\}=u_{f}(p_{0}) $$"
+    },
+    {
+      "type": "derivation",
+      "content": "Thus, taking the limit of Equation 7.29 as $ t \\to \\infty $ yields a useful expression for the probability of fixation under weak selection and arbitrary dominance [[SEE_FORMULA:7.30]]"
     },
     {
       "type": "discussion",
-      "content": "showed that such selective valleys are much more likely to be vaulted in subdivided populations, where local extinction and recolonization permit individual demes to make transitions to an alternative genotypic state and then export such a fixed change to a newly opened habitat."
+      "content": "For additive fitness effects $ (h = 1) $, this expression is identical to Equation 7.10b. Hill (1969a, 1969b) found this approximation to be reasonable provided $ N_e | s| < 1 $. The more general versions (Equations 7.29 and 7.30) were produced by Silvela (1980)."
     }
   ]
 }

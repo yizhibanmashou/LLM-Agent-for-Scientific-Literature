@@ -3,7 +3,7 @@ import unittest
 from pathlib import Path
 from uuid import uuid4
 
-from knowledge_engineering.latex_overlay_repair import (
+from knowledge_engineering.processors.latex_overlay_repair import (
     apply_overlay_patch,
     build_overlay_patch,
 )

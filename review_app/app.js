@@ -22,6 +22,8 @@ const STATUS_PRIORITY = {
   fail: 1,
   pass: 2,
 };
+
+const MAX_PDF_CANDIDATES = 5;
 const ISSUE_SEVERITY_LABELS = {
   info: "信息",
   warning: "警告",
@@ -35,6 +37,7 @@ const ISSUE_SCOPE_OPTIONS = [
   ["formula_reference", "公式引用"],
   ["table_reference", "表格引用"],
   ["table", "表格"],
+  ["example", "example"],
   ["chunk", "chunk 切分"],
   ["structure", "结构噪声"],
 ];
@@ -53,6 +56,7 @@ const FALLBACK_ISSUE_TAXONOMY = {
     { issue_code: "duplicate_or_leaked_block", label: "重复/泄漏块", scope: "structure", severity: "warning", status: "manual_only" },
     { issue_code: "chunk_split_error", label: "chunk 切分问题", scope: "chunk", severity: "warning", status: "manual_only" },
     { issue_code: "chunk_boundary_error", label: "chunk 边界错误", scope: "chunk", severity: "warning", status: "manual_only" },
+    { issue_code: "example_boundary_error", label: "example 边界错误", scope: "example", severity: "warning", status: "manual_only" },
     { issue_code: "ocr_garbled_text", label: "OCR 乱码", scope: "text", severity: "warning", status: "manual_only" },
     { issue_code: "ghost_or_float_block", label: "ghost/[h] 噪声块", scope: "structure", severity: "error", status: "manual_only" },
     { issue_code: "truncated_text", label: "文本截断", scope: "text", severity: "error", status: "manual_only" },
@@ -65,6 +69,7 @@ const CHUNK_HIGHLIGHT_META = [
   { semantic: "proposition", kind: "chunk_proposition", label: "Proposition" },
   { semantic: "definition", kind: "chunk_definition", label: "Definition" },
 ];
+const SUPPORTED_OPERATOR_MACROS = new Set(["logit"]);
 
 const STATE = {
   section: "review",
@@ -960,18 +965,6 @@ function issueRecordSnapshotForItem(item) {
   };
 }
 
-function selectedTextForReviewDetail(root) {
-  const selection = window.getSelection?.();
-  if (!selection || selection.rangeCount === 0) {
-    return "";
-  }
-  const range = selection.getRangeAt(0);
-  if (!root.contains(range.commonAncestorContainer)) {
-    return "";
-  }
-  return String(selection.toString() || "").trim();
-}
-
 function issueHistoryHtml(record) {
   const issues = Array.isArray(record?.issues) ? [...record.issues] : [];
   issues.sort((left, right) => String(right.created_at).localeCompare(String(left.created_at)));
@@ -1099,16 +1092,6 @@ function renderReviewDetail(item) {
     </div>
     ${renderSourceGuide(item)}
     ${detailHtml}
-    <div class="status-actions">
-      ${["pending", "pass", "fail"]
-        .map(
-          (status) =>
-            `<button type="button" class="${record.status === status ? "is-active" : ""}" data-set-status="${status}">${escapeHtml(
-              STATUS_LABELS[status]
-            )}</button>`
-        )
-        .join("")}
-    </div>
     <div class="issue-form">
       <div class="issue-form-title">
         <strong>审核记录</strong>
@@ -1163,8 +1146,17 @@ function renderReviewDetail(item) {
         </label>
       </div>
       <div class="issue-form-actions">
-        <button type="button" id="captureSelectionBtn">捕获选中文本</button>
         <button type="button" id="saveIssueBtn">保存审核记录</button>
+        <div class="status-actions">
+          ${["pending", "pass", "fail"]
+            .map(
+              (status) =>
+                `<button type="button" class="${record.status === status ? "is-active" : ""}" data-set-status="${status}">${escapeHtml(
+                  STATUS_LABELS[status]
+                )}</button>`
+            )
+            .join("")}
+        </div>
       </div>
       <div class="small-text">保存后会同步到本地 <code>review_records.json</code>。分类为空但备注非空时，只追加普通备注；选择分类后会写入结构化 issue。</div>
     </div>
@@ -1201,7 +1193,6 @@ function renderReviewDetail(item) {
   const issueTargetId = root.querySelector("#issueTargetId");
   const issueEvidence = root.querySelector("#issueEvidence");
   const issueNote = root.querySelector("#issueNote");
-  const captureSelectionBtn = root.querySelector("#captureSelectionBtn");
   const saveIssueBtn = root.querySelector("#saveIssueBtn");
 
   const toggleNewCategoryPanel = () => {
@@ -1232,15 +1223,6 @@ function renderReviewDetail(item) {
       }
       toggleNewCategoryPanel();
       syncCategoryDefaults();
-    });
-  }
-
-  if (captureSelectionBtn && issueBadSpan) {
-    captureSelectionBtn.addEventListener("click", () => {
-      const text = selectedTextForReviewDetail(root);
-      if (text) {
-        issueBadSpan.value = text;
-      }
     });
   }
 
@@ -1382,6 +1364,36 @@ function renderItemPayload(item) {
       </div>
       ${tableHtml}
     `;
+  }
+
+  if (STATE.viewId === "examples") {
+    const blocks = (item.blocks || [])
+      .map(
+        (block) => `<article class="block-item">
+        <div class="small-text">${escapeHtml(block.type || "example")} · EN</div>
+        <div class="chunk-math-text">${escapeHtml(block.text || "")}</div>
+        ${
+          block.text_zh
+            ? `<div class="small-text block-zh-label">中文</div><div class="chunk-math-text">${escapeHtml(block.text_zh)}</div>`
+            : ""
+        }
+      </article>`
+      )
+      .join("");
+    return `
+    <div class="detail-meta">
+      <div class="detail-row"><strong>Example ID:</strong> ${escapeHtml(item.example_id || item.id || "-")}</div>
+      <div class="detail-row"><strong>Example Ref:</strong> ${escapeHtml(item.example_ref || item.id || "-")}</div>
+      <div class="detail-row"><strong>标题 / Title:</strong> ${mathTextHtml(item.title || "-", "inline-math-text")}</div>
+      <div class="detail-row"><strong>摘要 / Excerpt:</strong> ${mathTextHtml(item.excerpt || "-", "inline-math-text")}</div>
+      <div class="detail-row"><strong>来源 / Source:</strong> ${escapeHtml(item.source_file || "-")}</div>
+      <div class="detail-row"><strong>原 block span:</strong> ${escapeHtml(`${item.start_block_index ?? "-"} - ${item.end_block_index ?? "-"}`)}</div>
+      <div class="detail-row"><strong>needs_review:</strong> ${escapeHtml(String(Boolean(item.needs_review)))}</div>
+      <div class="detail-row"><strong>公式引用 / Formula refs:</strong> ${escapeHtml((item.formula_references || []).join(", ") || "无")}</div>
+      <div class="detail-row"><strong>表格引用 / Table refs:</strong> ${escapeHtml((item.table_references || []).join(", ") || "无")}</div>
+    </div>
+    <div class="block-list">${blocks || '<div class="placeholder">无 example 内容。</div>'}</div>
+  `;
   }
 
   const blocks = (item.blocks || [])
@@ -2230,11 +2242,13 @@ function renderCandidatePages() {
     .map(
       (candidate, index) => {
         const matched = Array.isArray(candidate.matched) ? candidate.matched.slice(0, 3).join(" / ") : "";
+        const boxCount = Array.isArray(candidate.boxes) ? candidate.boxes.length : 0;
         const matchedLabel = matched ? ` · ${compactText(matched, 34)}` : "";
+        const boxLabel = boxCount ? ` · ${boxCount}框` : " · 文本";
         return `<button type="button" class="candidate-btn ${candidate.page === STATE.pdfPage ? "is-active" : ""}" data-candidate-index="${index}" title="${escapeHtml(
           matched ? `matched: ${matched}` : ""
         )}">
-          P${candidate.page} · ${candidate.score.toFixed(1)} · ${escapeHtml(candidate.source || "text")}${escapeHtml(matchedLabel)}
+          P${candidate.page} · ${candidate.score.toFixed(1)} · ${escapeHtml(candidate.source || "text")}${escapeHtml(boxLabel)}${escapeHtml(matchedLabel)}
         </button>`
       }
     )
@@ -2265,7 +2279,7 @@ function selectedItem() {
 }
 
 function shouldForceFitCurrentView() {
-  return STATE.viewId === "chunks";
+  return STATE.viewId === "chunks" || STATE.viewId === "examples";
 }
 
 async function locateSelectedItemInPdf(force) {
@@ -2310,7 +2324,7 @@ async function locateSelectedItemInPdf(force) {
   const boxedCandidates = normalizeCandidates([
     ...getReviewLocatorCandidatesForItem(item, targetChapterId, STATE.viewId),
     ...getOcrCandidatesForItem(item, targetChapterId, STATE.viewId),
-  ]).slice(0, 3);
+  ]).slice(0, MAX_PDF_CANDIDATES);
   if (boxedCandidates.length) {
     const best = boxedCandidates[0];
     STATE.pdfPage = best.page;
@@ -2322,7 +2336,8 @@ async function locateSelectedItemInPdf(force) {
     STATE.candidatePages = boxedCandidates;
     STATE.lastLocatedItemKey = itemKey;
     const sourceText = best.source || "locator";
-    updatePdfStatus(`自动定位成功 P${best.page}（${sourceText}，Top${boxedCandidates.length} 可切换）`);
+    const boxCount = Array.isArray(best.boxes) ? best.boxes.length : 0;
+    updatePdfStatus(`自动定位成功 P${best.page}（${sourceText}，${boxCount} 个高亮框，Top${boxedCandidates.length} 可切换）`);
     await renderPdfPage();
     renderCandidatePages();
     return;
@@ -2359,7 +2374,7 @@ async function locateSelectedItemInPdf(force) {
     candidates = normalizeCandidates([...candidates, ...fallback]);
   }
 
-  candidates = candidates.slice(0, 3);
+  candidates = candidates.slice(0, MAX_PDF_CANDIDATES);
   if (!candidates.length) {
     STATE.highlightSpec = null;
     STATE.lastLocatedItemKey = itemKey;
@@ -2381,7 +2396,7 @@ async function locateSelectedItemInPdf(force) {
   STATE.lastLocatedItemKey = itemKey;
 
   const anchorText = item.locator?.toc_page_hint ? `小节锚点 P${item.locator.toc_page_hint}` : "无小节锚点";
-  updatePdfStatus(`已回退文本定位 P${best.page}（${anchorText}，Top3 可切换）`);
+  updatePdfStatus(`已回退文本定位 P${best.page}（${anchorText}，Top${candidates.length} 可切换，无 bbox 高亮）`);
   await renderPdfPage();
   renderCandidatePages();
 }
@@ -2467,7 +2482,7 @@ function renderFlow() {
 function renderMathToken(latex, displayMode) {
   const node = document.createElement(displayMode ? "div" : "span");
   node.className = displayMode ? "table-math table-math-block" : "table-math";
-  const normalizedLatex = String(latex || "").trim();
+  const normalizedLatex = normalizeLatexForKatex(String(latex || "").trim());
   if (!normalizedLatex) {
     node.textContent = "";
     return node;
@@ -2483,6 +2498,14 @@ function renderMathToken(latex, displayMode) {
   node.classList.add("math-fallback");
   node.textContent = displayMode ? `$$${normalizedLatex}$$` : `$${normalizedLatex}$`;
   return node;
+}
+
+function normalizeLatexForKatex(latex) {
+  let value = String(latex || "");
+  SUPPORTED_OPERATOR_MACROS.forEach((macro) => {
+    value = value.replace(new RegExp(`\\\\${macro}\\b`, "g"), `\\operatorname{${macro}}`);
+  });
+  return value;
 }
 
 function renderTableHtml(rawHtml, mathEnabled) {

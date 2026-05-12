@@ -2,43 +2,50 @@
   "id": "appendix4_009",
   "metadata": {
     "chapter": "appendix4",
-    "section": "Hommel's Method",
+    "section": "Appendix: Introduction",
     "subsections": [
-      "Hommel's Method"
+      "Simes-Hochberg Method"
     ],
     "source_file": "tmp\\paddle_output\\appendix4_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [],
-    "table_references": []
+    "table_references": [],
+    "section_level_1": "Appendix: Introduction",
+    "section_level_2": "Simes-Hochberg Method",
+    "heading_path": [
+      "Appendix: Introduction",
+      "Simes-Hochberg Method"
+    ],
+    "display_heading": "Simes-Hochberg Method"
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Hommel's method (1988) is slightly more complicated, but it is more powerful than the Simes-Hochberg correction (Hommel 1989). Under Hommel's method, we reject all hypotheses whose p values are less than or equal to $ /k^ * $, where $$ k^{*}=\\max_{i}\\left(p(n-i+j)>\\pi\\frac{j}{i}\\right)\\quad for all j=1,\\cdots,i $$"
+      "content": "With Holm's method, we stop once we fail to reject a hypothesis. An improvement on this approach is the Simes-Hochberg correction (Simes 1986; Hochberg 1988), which effectively starts backward, working with the largest p values first."
     },
     {
       "type": "discussion",
-      "content": "Example A4.4 shows how all three of these methods are applied."
+      "content": "(i) If $ p(n) \\leq \\pi $, then all hypothesis are rejected."
     },
     {
       "type": "discussion",
-      "content": "|c|c| Cell 1 & Cell 2 \\\\ Cell 3 & Cell 4 \\\\"
+      "content": "(ii) If not, $ H(n) $ cannot be rejected, and we next examine $ H(n-1) $."
     },
     {
       "type": "discussion",
-      "content": "For an experiment-wide level of significance of $ \\pi=0. 0 5 $ , the Bonferroni correction is $ \\alpha= $ 0.05/10=0.005. Hence, using a strict Bonferrioni, we reject hypotheses 1 and 2, and we fail to reject (i.e., we accept) 3 through 10. To apply sequential methods, we use the associated $ \\pi/(\\pi- i+1) $ values for $ \\pi=0. 0 5 $ , which are given above in the table. Under Holm's method, $ p(i)\\leq\\pi/(\\pi- i+1) $ for $ i\\leq 3 $ , and hence we reject H(1) through H(3) and accept the others. Under Simes-Hochberg, we fail to reject H(7) through H(10) [as $ p(i)>\\pi/(\\pi- i+1) $ ], but because $ p(6)=0. 0 0 9\\leq\\pi/(\\pi- i+1)=0. 0 1 0 $ , we reject H(6) through H(1)."
+      "content": "(iii) If $ p(n-1) \\leq \\pi/2 $, then all $ H(i) $ for $ i \\leq n-1 $ are rejected."
     },
     {
       "type": "discussion",
-      "content": "To apply Hommel's method, we reject all hypotheses whose $p$ values are less than or equal to $ /k^ * $, where $$ k^{*}=\\max_{i}\\left(p(n-i+j)>\\pi\\frac{j}{i}\\right)\\quad for all j=1,\\cdots,i $$"
+      "content": "(iv) If not, $ H(n-1) $ cannot be rejected, and we compare $ p(n-2) $ with $ \\pi/3 $."
     },
     {
       "type": "discussion",
-      "content": "Solving $k^ * $ requires an iterative approach, as follows. First, start with $i = 1$. Here, $(i = 1, j = 1)$, $p(10) = 0.5350 > (1/1) = 0.05$. Now let us try $i = 2$, which yields (for $j = 1, 2)$, $p(9) = 0.1055 > (1/2) = 0.025$ and (as above) $p(10) > $. Hommel's condition still holds for $i = 3$, as $p(8) = 0.025 > (1/3) = 0.0167$, $p(9) > (2/3) = 0.033$, and $p(10) > $. However, it fails for $i = 4$, as while it holds for $p(7) = 0.175 > (1/4) = 0.0125$, it fails for $(i = 4, j = 2)$ because $p(8) = 0.025 = (1/2)$. Hence, $k^ * = 3$ (because Hommel's condition holds for $k = 3$ but not for $k = 4$), and we reject all hypotheses whose $p$ values are"
+      "content": "(v) In general, if $ p(n - i) \\leq \\pi/(n - i + 1) $, then all $ H(i) $ for $ i \\leq n - i $ are rejected."
     },
     {
       "type": "discussion",
-      "content": "$ 0.05/3 = 0.0167 $, which means $ H(1) $ through $ H(6) $. Note that a strict Bonferroni rejected the fewest null hypotheses and Simes-Hochberg and Hommel's rejected the most null hypotheses (i.e., declared them to be significant), and all methods controlled the experiment-wide false-positive rate at 0.05."
+      "content": "While the Simes-Hochberg approach is more powerful than that of Holm's (see Example A4.4), it is only strictly applicable when the group of tests being jointly considered are independent, whereas Holm's approach does not have this restriction. Hence, the general strategy is to use Holm's method if one is concerned about potential dependencies between tests, and the Simes-Hochberg's method if the tests are independent."
     }
   ]
 }

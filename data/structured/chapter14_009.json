@@ -2,50 +2,76 @@
   "id": "chapter14_009",
   "metadata": {
     "chapter": "chapter14",
-    "section": "Chapter 14: Direct Selection on the Threshold, T",
+    "section": "Short-term Changes in the Mean: 2. Truncation and Threshold Selection",
     "subsections": [
-      "The Logistic Regression Model for Binary Traits"
+      "RESPONSE IN DISCRETE TRAITS: POISSON-DISTRIBUTED CHARACTERS"
     ],
     "source_file": "tmp\\paddle_output\\chapter14_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [
-      "inline_2",
-      "inline_3"
+    "formula_references": [
+      "14.16",
+      "14.17a",
+      "14.17b",
+      "14.18",
+      "14.19a",
+      "14.19b",
+      "14.20a",
+      "14.20b",
+      "14.21"
     ],
-    "table_reference_keys": [
-      "chapter14:inline_2",
-      "chapter14:inline_3"
-    ]
+    "table_references": [],
+    "section_level_1": "Short-term Changes in the Mean: 2. Truncation and Threshold Selection",
+    "section_level_2": "RESPONSE IN DISCRETE TRAITS: POISSON-DISTRIBUTED CHARACTERS",
+    "heading_path": [
+      "Short-term Changes in the Mean: 2. Truncation and Threshold Selection",
+      "RESPONSE IN DISCRETE TRAITS: POISSON-DISTRIBUTED CHARACTERS"
+    ],
+    "display_heading": "RESPONSE IN DISCRETE TRAITS: POISSON-DISTRIBUTED CHARACTERS"
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "not respond to the first vernalization treatment were allowed to grow a second cycle and were chosen as the parents for the high lines. The response to a single generation of selection can be assessed by comparing the offspring from the low (or high) selected parents against those from an unselected control, as plotted in Figure 14.8."
+      "content": "Discrete characters with a large number of possible states, such as numbers of leaves on a tree, can be treated as a continuous trait. However, what about a discrete trait with a rather compact distribution? A common example is the number of offspring, such as the clutch size of a bird, which might range from 0 to 10 eggs in an observed sample. This discreteness is of special concern when the trait has a significant probability mass at a particular value (especially zero), as often happens with offspring number (corresponding to failure to reproduce)."
+    },
+    {
+      "type": "derivation",
+      "content": "A natural way to model such traits is to use the Poisson distribution, where the probability of observing a trait value of k is given by [[SEE_FORMULA:14.16]] where $ \\lambda = E[y] $ is the expected value of the trait, which is constrained to $ \\lambda > 0 $. Motivated by the previous treatment of binary traits, one might imagine some underlying liability value, $ z $, with additive effects (Equation 14.14a) mapped onto a mean value, $ \\lambda $, constrained to be positive. For example, we can use [[SEE_FORMULA:14.17a]] ensuring that $\\lambda > 0$ for all $z$ and hence is a proper expectation for a Poisson. In the context of generalized linear models, $g(z) = \\exp(z)$, so that the link function $g^{-1}(z)$ is simply $\\ln(z)$, as $g^{-1}[g(z)] = \\ln[\\exp(z)] = z$, yielding [[SEE_FORMULA:14.17b]]"
     },
     {
       "type": "discussion",
-      "content": "The data available to the authors were 0 or 1 (insensitive or sensitive to vernalization) values as a function of size. To estimate the distribution of threshold sizes, they performed a logistic regression on these data, using maximum likelihood (LW Appendix 4) to fit the $ \\alpha $ and mean (m) terms of Equation 14.10b. Data for the high and low lines are plotted in Figure 14.8 along with the ML solution for the logistic regression. Each individual has a 0 or 1 data point (individual ticks), while the circles represent the average value for weight classes with more than ten individuals."
+      "content": "This is called a log-linear model, as the log of the distribution parameter, $ \\lambda $, is a linear function of the variables of interest (in particular, the breeding value)."
     },
     {
       "type": "discussion",
-      "content": "Logistic regressions were estimated for progeny from the low- and high-line parents and for a control line grown contemporaneously with these progeny. The ML estimates of the mean, m (which corresponds to the weight yielding 50% flowering), and value of $ \\alpha $ for these regressions were"
+      "content": "On this log scale, both the breeding and environmental values are assumed to be normal, with a mean of zero and variances of $ \\sigma_{A}^{2} $ and $ \\sigma_{e}^{2} $. As with binary traits, BLUP selection based on this generalized linear model framework can be used to estimate the $ A_{i} $ values (Foulley 1993; Foulley and Im 1993; Korsgaard et al. 2002; Vazques et al. 2009; Morrissey 2015; de Villemereuil et al. 2016). Other models are also possible, such as a zero-inflated Poisson, which has extra probability mass at zero relative to a standard Poisson (e.g., Rodrigues-Motta et al. 2007; see Chapter 29). A trait can also be underdispersed relative to the Poisson (as seems to consistently be the case for bird clutch size; J. Hadfield, pers. comm.), in which case other distributions, such as a zero-truncated Poisson (the nonzero data follow a Poisson distribution) can be used (Chapter 29). A nice discussion of estimation issues under generalized linear models (beyond the binary and log-linear models presented here) is given by de Villemereuil et al. (2016), while Morrissey (2015) presented the theory of selection response under more general settings (which we will examine in Volume 3)."
     },
     {
       "type": "discussion",
-      "content": "Note that the low line not only had a smaller mean size for vernalization (1.85), but also a much larger $ \\alpha $ value (2.58), and therefore a more abrupt transition between insensitivity and sensitivity. Using these estimates, Equation 14.10b yields the expected percent of vernalization sensitivity (flowering) for a given weight. For a 3 gram plant, this is 0.43 in the control line and 0.32 in the high lines, but 0.95 in the low line."
+      "content": "Under the log-linear model, the liability, z, of an individual yields an expected value of $ \\lambda = \\exp(z) $, with a realization (e.g., the number of offspring for an individual with trait value z) drawn from a Poisson to return the observed trait value. For example, if the latent value, $ \\lambda_i $, for individual i has a value of 0.2, then (from Equation 14.16) the probability this individual has a trait of value zero is $ \\exp(-0.2) \\simeq 0.82 $, the probability they have value 1 is $ 0.2 \\cdot \\exp(-0.2) \\simeq 0.16 $, value 2 is $ 0.2^2 \\cdot \\exp((-0.2)/2! \\simeq 0.02 $, and so on."
     },
     {
-      "type": "proposition",
-      "content": "By estimating both the response, $ R $, to selection as well as the within-generation change, $ S $, we can estimate the heritability of this trait by calculating $ R/S $. First, the response to selection (change in m) can be estimated by using the contemporaneously grown control line as a standard. From the previous table, the response in the high line is 5.41 - 3.30 = 2.11, while the response in the low line is 1.85 - 3.30 = -1.45. Turning to estimating $ S $, the selection truncation point for the low line is the largest low parent (2.74 grams, or 25.5% of the left tail of the founding source population), while the smallest flowering high parent was 9.95 grams (corresponding to the upper 12.2% of the founding source population). From Equation 14.3a, these translate into selection intensities of $ \\bar{\\imath} = -1.26 $ and 1.66, respectively. To obtain the selection differentials, $ S $, for each line, recall that $ S = \\bar{\\imath}\\sigma_{p} $. To estimate $ \\sigma_{p} $, the authors note that the 0.25 quartile for a normal distribution is 0.674 $ \\sigma $ from the mean. Although the assumption is that the threshold values follow a logistic distribution, the cumulative probability functions are rather similar for both the normal and the logistic (Figure 14.7). Hence, taking the observed 0.25 quartile (in the founding lines) of 2.68, and its mean of 5.12, suggests $$ \\sigma_{p}=\\frac{5.12-2.68}{0.674}=3.63 $$"
+      "type": "derivation",
+      "content": "The resulting mean trait value in a population under the log-linear model becomes [[SEE_FORMULA:14.18]] where the last step follows because (by construction) A and e are uncorrelated (and thus independent if they are bivariate normal, as is usually assumed), while $ \\mu $ is a constant. To compute these expectations, recall that the expression $ E[e^{tx}] $ is the moment-generating function of the random variable, x (Johnson and Kotz 1970a). For $ x \\sim N(\\mu, \\sigma^{2}) $, [[SEE_FORMULA:14.19a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "In this case, with a mean, $ \\mu $, equal to zero and variance of $ \\sigma^{2} $, setting t = 1 yields [[SEE_FORMULA:14.19b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Substituting into Equation 14.18 shows that the expected mean trait value is a function of both the mean, $ \\mu $, and variance, $ \\sigma_{z}^{2} $, of the underlying liability value, with [[SEE_FORMULA:14.20a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "One might initially expect that if $A$ is the breeding value for liability, then the mean phenotype of an individual would simply be $\\exp(\\mu + A)$. However, Equation 14.20a shows that if we condition on the breeding value being $A$, the conditional mean now becomes $\\mu + A$ and the variance, $\\sigma_A^2$, vanishes, leaving [[SEE_FORMULA:14.20b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Following a single generation of selection, the distribution of liability values has approximately the same variance, but now the mean is shifted to $ \\mu + h^{2}S $ (where S is the selection differential on the liability scale). Applying Equation 14.20a, the response on the phenotypic scale becomes [[SEE_FORMULA:14.21]]"
     },
     {
       "type": "discussion",
-      "content": "The response (change in m), selection intensity, and estimated heritability, $ \\hat{h}^{2} = R/S $, for the high and low lines are"
-    },
-    {
-      "type": "discussion",
-      "content": "Thus, there is heritable variation in threshold size, as there was response to selection for both larger and smaller threshold sizes. Further, the estimated heritability (based on the single-generation response to selection) was around 0.3."
+      "content": "Notice that, as was the case for selection on a binary trait, the response to selection is not symmetric, as $ S = +\\delta $ does not give the same increment of response as $ S = -\\delta $."
     }
   ]
 }

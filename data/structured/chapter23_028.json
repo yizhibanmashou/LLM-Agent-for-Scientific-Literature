@@ -2,52 +2,72 @@
   "id": "chapter23_028",
   "metadata": {
     "chapter": "chapter23",
-    "section": "Chapter 23: An Approximate Treatment Using Covariances",
+    "section": "Selection Under Inbreeding: Introduction",
     "subsections": [
-      "An Approximate Treatment Using Covariances"
+      "A More Careful Treatment: Kelly's Structured Linear Model"
     ],
     "source_file": "tmp\\paddle_output\\chapter23_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [
-      "23.56a",
-      "23.56b",
-      "23.56c",
-      "23.57a",
-      "23.57b",
-      "23.58",
-      "23.59"
+      "23.60a",
+      "23.60b",
+      "23.61",
+      "23.62",
+      "23.63a",
+      "23.63b",
+      "23.64a",
+      "23.64b",
+      "23.64c"
     ],
-    "table_references": [
-      "23.4"
+    "table_references": [],
+    "section_level_1": "Selection Under Inbreeding: Introduction",
+    "section_level_2": "A More Careful Treatment: Kelly's Structured Linear Model",
+    "heading_path": [
+      "Selection Under Inbreeding: Introduction",
+      "A More Careful Treatment: Kelly's Structured Linear Model"
     ],
-    "table_reference_keys": [
-      "chapter23:23.4"
-    ]
+    "display_heading": "A More Careful Treatment: Kelly's Structured Linear Model"
   },
   "blocks": [
     {
-      "type": "derivation",
-      "content": "Partial selfing has been examined by Wright and Cockerham (1985, 1986a) and Wright (1988), who obtained the appropriate cross-generational covariances and predicted response when using the method on ancestral regression. They assumed that the population is at the equilibrium mean inbreeding value and that each individual has the same probability ($ \\eta $) of selfing (i.e., there is no genetic variation in selfing vs. outcrossing rates). Because a parent can either self or outcross (or both, e.g., on different flowers on the same plant), the parent-offspring covariance must take this into account. Further, because of selfing, the covariances for selection before and after reproduction are slightly different. For selection before reproduction (BR), the single-generation response is given by [[SEE_FORMULA:23.56a]]"
-    },
-    {
-      "type": "derivation",
-      "content": "where the genetic covariance for selection before reproduction is [[SEE_FORMULA:23.56b]] where $ \\sigma_{G_0}(P, O) $ is the parent-offspring covariance under outcrossing and $ \\sigma_{GS}(P, O) $ is the parent-offspring covariance under selfing. Because the population is assumed to be at its inbreeding equilibrium, the parent-offspring covariances and total genetic variation ($ \\sigma_G^2 $) are assumed to be constants, independent of $ t $. [[SEE_TABLE:23.4]] shows the coefficients for these covariances, as well as those for $ \\sigma_G^2 $. Note that an additional quadratic component, $ \\iota^2 - \\iota^* $, also appears in the covariance between relatives (which arises because there is a distribution of inbreeding values in the population). As we will see, there is a significant transient component to the immediate response. For selection after reproduction (AR), an outcrossed individual has only one parent under selection (the pollen parent not being under selection), and the covariance in the numerator of Equation 23.56a is replaced by [[SEE_FORMULA:23.56c]]"
-    },
-    {
-      "type": "derivation",
-      "content": "The permanent response to selection is given by replacing the numerator covariance in Equation 23.56a by the appropriate version of $ \\sigma_G(\\infty, t) $. For selection before reproduction, Wright and Cockerham showed that this equals [[SEE_FORMULA:23.57a]]"
-    },
-    {
-      "type": "derivation",
-      "content": "Further, the before- and after-selection covariances are related by [[SEE_FORMULA:23.57b]]"
-    },
-    {
-      "type": "derivation",
-      "content": "While the coefficient on $ \\sigma_A^2 $ is unchanged in $ \\sigma_G(\\infty, t) $ ($ 1 + f $ for any value of $ t $), the limiting contributions ($ T = \\infty $) from all the other quadratic components have rather different coefficients relative to their single-generation values. Thus, the transient component of response is expected to be considerable. Wright and Cockerham found that [[SEE_FORMULA:23.58]] with a similar expression for the covariance for selection after reproduction. The transient component decays rather rapidly, as the rate of decay is no slower than $ 2^{-T} $. Wright and Cockerham also showed that the final change in the mean from a generation of selection can be predicted from the response in the first two generations after selection, with [[SEE_FORMULA:23.59]] where $ \\overline{z}_{i} $ is the mean i generations after a generation of selection. Family selection was also examined by Wright and Cockerham (1986a) and Edwards (2008). With partial-selfing, there are a number of potential families that one can consider for the selection unit: outcrossed half- and full-sibs, selfed individuals, or naturally pollinated individuals (a mixture of selfed and outcrossed progeny). Consult Wright and Cockerham for details on response under these different systems."
+      "type": "discussion",
+      "content": "Kelly (1999a, 1999b; Kelly and Williamson 2000) proposed an alternative approach for examining the selection response with partial selfing. By analogy with a geographically structured population, he suggested that a more careful approach is to consider the population as a set of cohorts, within which all individuals have the same level of inbreeding. Cohort 0 contains all individuals that arose through random mating in the previous generation, cohort 1 contains those individuals that arose from selfing in the previous generation, and cohort i contains those individuals that have undergone i rounds of selfing before they last enjoyed random mating, with $ f_i = 1 - 1/2^i $. Kelly terms this approach a structured linear model (SLM), as within each cohort, it is assumed that the parent-offspring regressions are linear. The response under selfing is then predicted by specifying both the within-cohort variances and covariances and the among-cohort transitions. Besides properly accounting for the structured nature of partly selfing populations, Kelly's treatment also accommodates the effects of linkage disequilibrium (under the infinitesimal-model assumptions)."
     },
     {
       "type": "discussion",
-      "content": "While straightforward (beyond some tedious bookkeeping), there are several potential problems with this covariance approach for accommodating partial selfing, which arise from individuals varying in the amount of selfing. In particular, selected individuals may not be a random sample of the inbreeding classes. If the focal trait shows inbreeding depression, the less-inbred individuals are expected to be chosen by selection more often. This has the effect of creating a nonlinear parent-offspring regression (Figure 23.4). If the nonlinearity is significant, the covariance approach (which makes predictions based on a linear regression) is inappropriate. Even in the absence of inbreeding depression on the focal trait, more-inbred individuals are often expected to be generally less fit. Together with any inbreeding depression on the focal trait, this skews the distribution of selected individuals that have selfed for i generations away from the geometric value $ (1-\\eta)\\eta^{i} $ predicted under no selection (Kelley 1999a)."
+      "content": "Before examining the SLM approach, we discuss several important observations from simulations reported by Kelly (1999a; Kelly and Williamson 2000). If directional dominance is present (which implies that inbreeding depression occurs; LW Chapter 10), then the distribution of the cohorts will not follow the geometric distribution predicted from the strict (i.e., no selection) partial-selfing model. Instead, selection greatly skews this distribution. For example, when advantageous alleles are recessive, inbred individuals will be overrepresented, while when advantageous alleles are dominant, inbreds are underrepresented. In either setting, the Wright-Cockerham covariance approach provides incorrect results, as it assumes that there is a geometric distribution of inbreeding values. The deviation from this distribution caused selection can be quite striking. For example, after 10 generations of selection when beneficial recessives are present, the cohort distribution is strongly bimodal, with peaks at 0 (outbreeding) and 10 (selfing for all 10 generations). A second feature seen in Kelly's simulations was that linkage disequilibrium generated significant changes in the variances and covariances. Changes in the value of f for the population directly impact the usable level of additive variance, and selfing reduces the chance for recombination in heterozygotes to break down nonrandom associations generated by selection. Such selection-induced changes in the covariances from their strict (i.e., no-selection) partial-selfing values also compromises the results from the covariance approach."
+    },
+    {
+      "type": "derivation",
+      "content": "Turning to the details of Kelly’s approach, define cohort i as the collection of individuals that have undergone i generations of selfing since their last outcrossing. Let $ \\pi_i(t) $ denote the frequency of cohort i in generation t, where $ \\pi_i(t) = (1 - \\eta)\\eta^i $ in the absence of selection. If we assume that selection acts before reproduction, the transition probabilities between cohorts are as follows: with probability $ 1 - \\eta $, an individual outcrosses, so [[SEE_FORMULA:23.60a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "For an individual to enter cohort $ i+1 $, it must have been a member of cohort i in the previous generation and it must self. Further, Kelly allows for selection against cohorts (for example, highly inbred individuals may have lower fitness). If $ W(t) $ and $ W_i(t) $ denote the average fitness of a random individual from the population and from cohort i (respectively) in generation t, then the fraction of the population that is in cohort i after selection (but before reproduction) is $ \\pi_i(t) W_i(t)/W(t) $. Putting all these together, the fraction of the population in cohort $ i+1 $ in the next generation is [[SEE_FORMULA:23.60b]]"
+    },
+    {
+      "type": "discussion",
+      "content": "In the absence of selection, namely, $ W_i(t) = W(t) $ for all $ i $, Equation 23.60b generates a geometric distribution, with $ \\pi_i(t) = (1 - \\eta)\\eta^i $."
+    },
+    {
+      "type": "derivation",
+      "content": "Now consider the dynamics of the mean. Because a member of cohort i has an inbreeding level of $ f_i = 1 - 2^{-i} $, the mean value of inbreeding for the population is [[SEE_FORMULA:23.61]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Denote the allele frequency-weighted sum of average effects by A (the average breeding value) and the weighted sum of homozygous dominance deviations by B, so that [[SEE_FORMULA:23.62]] where $ \\alpha_{kj} $ is the average effect for allele j from locus k, $ p_{kj} $ is the allele frequency, and $ \\delta_{kjj} $ represents the dominance deviations for homozygotes (where $ \\alpha_{kj} $ and $ \\delta_{kjj} $ are the values for a base population in Hardy-Weinberg equilibrium with the same allele frequencies, $ p_{kj} $). If $ A(t) $ and $ B(t) $ denote the average values of A and B at generation t, then the mean population phenotype is [[SEE_FORMULA:23.63a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "This is simply a restatement of Equation 23.1c, as $ A(t) $ is the response in the absence of inbreeding and $ f(t)B(t) $ is the amount of inbreeding depression (Equation 23.1b). If we let $ A_{i}(t) $ and $ B_{i}(t) $ denote the average value of A and B in cohort i in generation t, it follows that [[SEE_FORMULA:23.63b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Kelly assumed that within each cohort, the parent-offspring regressions are linear, which means that the value, $ A' $, of A following selection in cohort i is [[SEE_FORMULA:23.64a]] where $ \\sigma_{Az,i} $ is the covariance between A and z (the breeding value and phenotype, respectively) prior to selection at an inbreeding level of $ f_i $. Because the mean additive value of selfed offspring (now in cohort $ i+1 $) equals that of their parent (from cohort i), [[SEE_FORMULA:23.64b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Likewise, the mean additive value of outcrossed offspring equals the average additive values of their parents, [[SEE_FORMULA:23.64c]]"
     }
   ]
 }

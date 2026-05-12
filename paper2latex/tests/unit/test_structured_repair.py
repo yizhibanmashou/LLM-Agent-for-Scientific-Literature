@@ -3,7 +3,7 @@ import unittest
 from pathlib import Path
 from uuid import uuid4
 
-from knowledge_engineering.structured_repair import (
+from knowledge_engineering.processors.structured_repair import (
     apply_repair_patch,
     build_repair_patch,
     load_glm_chapter,

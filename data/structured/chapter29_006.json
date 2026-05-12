@@ -2,7 +2,7 @@
   "id": "chapter29_006",
   "metadata": {
     "chapter": "chapter29",
-    "section": "Chapter 29: Assigning Fitness Components",
+    "section": "Individual Fitness and the Measurement of Univariate Selection: Introduction",
     "subsections": [
       "Concurrent Selective Episodes, Reproductive Timing, and Individual Fitness, $ \\lambda_{ind} $"
     ],
@@ -14,7 +14,14 @@
       "29.3c",
       "29.3d"
     ],
-    "table_references": []
+    "table_references": [],
+    "section_level_1": "Individual Fitness and the Measurement of Univariate Selection: Introduction",
+    "section_level_2": "Concurrent Selective Episodes, Reproductive Timing, and Individual Fitness, $ \\lambda_{ind} $",
+    "heading_path": [
+      "Individual Fitness and the Measurement of Univariate Selection: Introduction",
+      "Concurrent Selective Episodes, Reproductive Timing, and Individual Fitness, $ \\lambda_{ind} $"
+    ],
+    "display_heading": "Concurrent Selective Episodes, Reproductive Timing, and Individual Fitness, $ \\lambda_{ind} $"
   },
   "blocks": [
     {
@@ -46,16 +53,8 @@
       "content": "McGraw and Caswell (1996) noted two sources of bias in using $ \\lambda_{ind} $. First, for any given phenotypic class, the particular realization of the matrix of vital rates ($ L_{ind} $) for an individual in that class (i.e., the expected survival, $ \\ell_x(z) $, and fecundity, $ b_x(z) $, values for phenotype z) is a biased estimator of the matrix for that class. The reason is that random death prevents a proper estimation of the values of $ b_x $, especially at later ages. The second source of bias, which was also a concern for Lenski and Service (1982), was that the average of the leading eigenvalue for each realization of $ L_{ind} $ does not generally equal the leading eigenvalue for the average matrix (i.e., the average of the values of $ \\lambda_{ind} $ does not equal the population growth rate, $ \\lambda $). Despite these issues, McGraw and Caswell (1996) still favored the use of $ \\lambda_{ind} $, while Lenski and Service (1982) developed a resampled measure (based on $ L_{ind} $) with less bias. Alternatively, if the mean population growth rate ($ \\lambda $) is known, then an unbiased estimator for the relative fitness for individual j is [[SEE_FORMULA:29.3d]] where $ f_{i}(j) $ denotes half of $ j' $s fecundity at age i (Lenski and Service 1982)."
     },
     {
-      "type": "discussion",
-      "content": "Example 29.4. In the case of overlapping generations, the timing of when reproduction occurs can be at least as important as the lifetime reproductive success (LRS). Consider the three hypothetical individuals mentioned previously, each with an LRS of 40 but with differences in the timing of reproduction. Recalling that the values of $ f_i $ in Equation 29.3b represent half the number of offspring, the Leslie matrices for these three individuals become $$ \\mathbf{L}_{1}=\\begin{pmatrix}{{{0}}}&{{{5}}}&{{{5}}}&{{{5}}}&{{{5}}} \\\\{{{1}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\\\{{{0}}}&{{{1}}}&{{{0}}}&{{{0}}}&{{{0}}} \\\\{{{0}}}&{{{0}}}&{{{1}}}&{{{0}}}&{{{0}}} \\\\{{{0}}}&{{{0}}}&{{{0}}}&{{{1}}}&{{{0}}}\\end{pmatrix},\\qquad\\mathbf{L}_{2}=\\begin{pmatrix}{{{0}}}&{{{0}}}&{{{0}}}&{{{10}}}&{{{10}}} \\\\{{{1}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\\\{{{0}}}&{{{1}}}&{{{0}}}&{{{0}}}&{{{0}}} \\\\{{{0}}}&{{{0}}}&{{{1}}}&{{{0}}}&{{{0}}} \\\\{{{0}}}&{{{0}}}&{{{0}}}&{{{1}}}&{{{0}}}\\end{pmatrix},\\qquad\\mathbf{L}_{3}=\\begin{pmatrix}{{{0}}}&{{{10}}}&{{{10}}} \\\\{{{1}}}&{{{0}}}&{{{0}}} \\\\{{{0}}}&{{{1}}}&{{{0}}}\\end{pmatrix} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "The leading eigenvalues for these three matrices are $ \\lambda_1 = 2.77 $, $ \\lambda_2 = 1.97 $, and $ \\lambda_3 = 3.58 $. Under this metric, individuals 1 and 2 are, respectively, 77% and 55% as fit as individual 3."
-    },
-    {
-      "type": "discussion",
-      "content": "Example 29.4 shows that individuals with the same LRS can have very different $ \\lambda_{ind} $ values. Indeed, the rankings of individuals based on LRS versus $ \\lambda_{ind} $ can be rather nonconcordant. Hence, it should not be surprising that Brommer et al. (2002) noted several cases where inferences on selection were altered when $ \\lambda_{ind} $ was used in place of LRS. An especially telling example in shown in Figure 29.1, which plots these two measures of fitness for female Ural owls (Strix uralensis). As the figure shows, there is a diminishing return in $ \\lambda_{ind} $ with increasing values of LRS. This occurs because reproductive contributions later in life are increasingly down-weighted by $ \\lambda_{ind} $ (Equation 29.3c)."
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:29.4]]"
     }
   ]
 }

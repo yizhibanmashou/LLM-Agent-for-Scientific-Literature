@@ -3,17 +3,24 @@ from pathlib import Path
 from unittest.mock import patch
 from uuid import uuid4
 
-from knowledge_engineering.runtime import (
+from knowledge_engineering.core.runtime import (
     CompositeChunk,
     build_composite_chunks,
+    extract_semantic_blocks,
     FormulaLibrary,
+    KnowledgeBlock,
+    KnowledgeUnit,
     SemanticBlock,
     TableEntry,
     TableLibrary,
 )
-from knowledge_engineering.process import (
+from knowledge_engineering.pipeline.process import (
+    _create_missing_table_body_stubs,
     _extract_table_envs_and_replace,
+    _extract_tables_from_paddle_raw,
+    _table_reference_key,
     _review_chunks_with_llm,
+    assign_table_sources_to_units,
     build_toc_outputs_from_text,
     derive_chapter_name,
     extract_tables_and_replace,
@@ -44,9 +51,30 @@ class TestKnowledgeEngineeringLatexProcess(unittest.TestCase):
         self.assertNotIn("\\tag", processed)
         self.assertNotIn("\\label", processed)
 
+    def test_strip_latex_markup_uses_document_title_as_parent_heading(self):
+        sample = (
+            "\\title{Short-term Changes in the Mean:}\n"
+            "\\begin{document}\n"
+            "\\maketitle\n"
+            "\\section{2. Truncation and Threshold Selection}\n"
+            "Opening prose.\n\n"
+            "\\section{TRUNCATION SELECTION}\n"
+            "Body prose.\n"
+            "\\end{document}\n"
+        )
+
+        processed = strip_latex_markup(sample)
+
+        self.assertIn("# Short-term Changes in the Mean: 2. Truncation and Threshold Selection", processed)
+        self.assertIn("## TRUNCATION SELECTION", processed)
+
     def test_derive_chapter_name_from_chapter_full_dir(self):
         tex_path = str(Path("data") / "paddle_output" / "chapter6_full" / "main.tex")
         self.assertEqual(derive_chapter_name(tex_path), "chapter6")
+
+    def test_derive_chapter_name_from_appendix_full_dir(self):
+        tex_path = str(Path("data") / "paddle_output" / "appendix2_full" / "main.tex")
+        self.assertEqual(derive_chapter_name(tex_path), "appendix2")
 
     def test_recover_paddle_footer_body_text_restores_body_footer_before_next_anchor(self):
         pages = [
@@ -92,7 +120,7 @@ class TestKnowledgeEngineeringLatexProcess(unittest.TestCase):
             "fitness-weighted mean after selection continues here with enough tokens for anchor matching"
         )
 
-        with patch("knowledge_engineering.process._load_paddle_raw_pages", return_value=pages):
+        with patch("knowledge_engineering.pipeline.process._load_paddle_raw_pages", return_value=pages):
             recovered = recover_paddle_footer_body_text(plain_text, "chapter6_full/main.tex")
 
         self.assertIn("## The Robertson-Price Identity, $ S = \\sigma(w, z) $", recovered)
@@ -142,7 +170,7 @@ class TestKnowledgeEngineeringLatexProcess(unittest.TestCase):
             "relative to the base population."
         )
 
-        with patch("knowledge_engineering.process._load_paddle_raw_pages", return_value=pages):
+        with patch("knowledge_engineering.pipeline.process._load_paddle_raw_pages", return_value=pages):
             recovered = recover_paddle_footer_body_text(plain_text, "chapter25_full/main.tex")
 
         self.assertNotIn("Example 25.9", recovered)
@@ -362,6 +390,177 @@ class TestKnowledgeEngineeringLatexProcess(unittest.TestCase):
         self.assertIn("见公式(2.1)", refined_chunks[1].blocks[0].content)
         self.assertNotIn("(2.1)", refined_chunks[1].blocks[0].content.replace("见公式(2.1)", ""))
 
+    def test_heading_hierarchy_records_l1_l2_and_null_l2(self):
+        text = (
+            "# DETERMINISTIC SINGLE-LOCUS THEORY\n"
+            "The contribution to the selection limit from a single locus depends on genetic parameters.\n\n"
+            "# Expected Contribution From a Single Locus\n"
+            "We start with the expected total contribution from a given diallelic locus.\n"
+        )
+        formula_library = FormulaLibrary()
+
+        blocks, _ = extract_semantic_blocks(text, "chapter25", None, formula_library)
+        chunks = build_composite_chunks(blocks)
+        refined_chunks, _ = refine_chunks_for_output(chunks, source_title=None)
+
+        self.assertEqual(len(refined_chunks), 2)
+        self.assertEqual(refined_chunks[0].section_level_1, "DETERMINISTIC SINGLE-LOCUS THEORY")
+        self.assertIsNone(refined_chunks[0].section_level_2)
+        self.assertEqual(refined_chunks[0].heading_path, ["DETERMINISTIC SINGLE-LOCUS THEORY"])
+        self.assertEqual(refined_chunks[0].display_heading, "DETERMINISTIC SINGLE-LOCUS THEORY")
+
+        self.assertEqual(refined_chunks[1].section_level_1, "DETERMINISTIC SINGLE-LOCUS THEORY")
+        self.assertEqual(refined_chunks[1].section_level_2, "Expected Contribution From a Single Locus")
+        self.assertEqual(
+            refined_chunks[1].heading_path,
+            ["DETERMINISTIC SINGLE-LOCUS THEORY", "Expected Contribution From a Single Locus"],
+        )
+        self.assertEqual(refined_chunks[1].display_heading, "Expected Contribution From a Single Locus")
+
+    def test_long_title_case_l2_updates_inferred_section(self):
+        chunks = [
+            CompositeChunk(
+                blocks=[
+                    SemanticBlock(
+                        type="discussion",
+                        subsection="Lerner's Model of Genetic Homeostasis",
+                        content="Homeostasis discussion.",
+                        formula_references=["formula_25.16"],
+                        section_level_1="CONFLICTS BETWEEN NATURAL AND ARTIFICIAL SELECTION",
+                        section_level_2="Lerner's Model of Genetic Homeostasis",
+                        heading_path=[
+                            "CONFLICTS BETWEEN NATURAL AND ARTIFICIAL SELECTION",
+                            "Lerner's Model of Genetic Homeostasis",
+                        ],
+                        display_heading="Lerner's Model of Genetic Homeostasis",
+                    )
+                ]
+            ),
+            CompositeChunk(
+                blocks=[
+                    SemanticBlock(
+                        type="discussion",
+                        subsection="Artificial Selection Countered by Natural Stabilizing Selection",
+                        content="Stabilizing selection discussion.",
+                        formula_references=["formula_25.17a"],
+                        section_level_1="CONFLICTS BETWEEN NATURAL AND ARTIFICIAL SELECTION",
+                        section_level_2="Artificial Selection Countered by Natural Stabilizing Selection",
+                        heading_path=[
+                            "CONFLICTS BETWEEN NATURAL AND ARTIFICIAL SELECTION",
+                            "Artificial Selection Countered by Natural Stabilizing Selection",
+                        ],
+                        display_heading="Artificial Selection Countered by Natural Stabilizing Selection",
+                    )
+                ]
+            ),
+        ]
+
+        refined_chunks, sections = refine_chunks_for_output(chunks, source_title=None)
+
+        self.assertEqual(
+            sections,
+            [
+                "Chapter 25: Lerner's Model of Genetic Homeostasis",
+                "Chapter 25: Artificial Selection Countered by Natural Stabilizing Selection",
+            ],
+        )
+        self.assertEqual(
+            refined_chunks[1].display_heading,
+            "Artificial Selection Countered by Natural Stabilizing Selection",
+        )
+
+    def test_short_l2_heading_metadata_updates_inferred_section(self):
+        chunks = [
+            CompositeChunk(
+                blocks=[
+                    SemanticBlock(
+                        type="discussion",
+                        subsection="Linkage Effects",
+                        content="Linkage discussion.",
+                        formula_references=["formula_25.11"],
+                        section_level_1="INCREASES IN VARIANCES AND ACCELERATED RESPONSES",
+                        section_level_2="Linkage Effects",
+                        heading_path=[
+                            "INCREASES IN VARIANCES AND ACCELERATED RESPONSES",
+                            "Linkage Effects",
+                        ],
+                        display_heading="Linkage Effects",
+                    )
+                ]
+            ),
+            CompositeChunk(
+                blocks=[
+                    SemanticBlock(
+                        type="proposition",
+                        subsection="Epistasis",
+                        content="Epistasis proposition.",
+                        formula_references=["formula_25.12"],
+                        section_level_1="INCREASES IN VARIANCES AND ACCELERATED RESPONSES",
+                        section_level_2="Epistasis",
+                        heading_path=[
+                            "INCREASES IN VARIANCES AND ACCELERATED RESPONSES",
+                            "Epistasis",
+                        ],
+                        display_heading="Epistasis",
+                    )
+                ]
+            ),
+        ]
+
+        _, sections = refine_chunks_for_output(chunks, source_title=None)
+
+        self.assertEqual(
+            sections,
+            [
+                "Chapter 25: Linkage Effects",
+                "Chapter 25: Epistasis",
+            ],
+        )
+
+    def test_single_l1_heading_metadata_updates_inferred_section(self):
+        chunks = [
+            CompositeChunk(
+                blocks=[
+                    SemanticBlock(
+                        type="derivation",
+                        subsection="WHY ALL THE FOCUS ON $ h^{2} $?",
+                        content="The slope is given by a formula.",
+                        formula_references=["formula_15.1a"],
+                        section_level_1="WHY ALL THE FOCUS ON $ h^{2} $?",
+                        section_level_2=None,
+                        heading_path=["WHY ALL THE FOCUS ON $ h^{2} $?"],
+                        display_heading="WHY ALL THE FOCUS ON $ h^{2} $?",
+                    )
+                ]
+            )
+        ]
+
+        _, sections = refine_chunks_for_output(chunks, source_title=None)
+
+        self.assertEqual(sections, ["Chapter 15: WHY ALL THE FOCUS ON $ h^{2} $?"])
+
+    def test_numbered_sentence_heading_remains_under_current_section(self):
+        text = (
+            "# AN OVERVIEW OF LONG-TERM SELECTION EXPERIMENTS\n"
+            "# General Features of Long-term Selection Experiments\n"
+            "1. Selection routinely results in mean phenotypes far outside the base population.\n\n"
+            "# 3. Reproductive fitness usually declines as selection proceeds.\n"
+            "4. Most laboratory populations approach a selection limit.\n"
+        )
+        formula_library = FormulaLibrary()
+
+        blocks, _ = extract_semantic_blocks(text, "chapter25", None, formula_library)
+        chunks = build_composite_chunks(blocks)
+        refined_chunks, _ = refine_chunks_for_output(chunks, source_title=None)
+
+        self.assertEqual(len(refined_chunks), 1)
+        self.assertEqual(refined_chunks[0].section_level_1, "AN OVERVIEW OF LONG-TERM SELECTION EXPERIMENTS")
+        self.assertEqual(refined_chunks[0].section_level_2, "General Features of Long-term Selection Experiments")
+        self.assertEqual(refined_chunks[0].display_heading, "General Features of Long-term Selection Experiments")
+        content = " ".join(block.content for block in refined_chunks[0].blocks)
+        self.assertIn("3. Reproductive fitness usually declines as selection proceeds.", content)
+        self.assertIn("4. Most laboratory populations approach a selection limit.", content)
+
     def test_refine_chunks_for_output_canonicalizes_similar_subsections(self):
         chunks = [
             CompositeChunk(
@@ -541,7 +740,7 @@ class TestKnowledgeEngineeringLatexProcess(unittest.TestCase):
         self.assertIn("Real chapter two prose.", chapter_segments["chapter2"])
         self.assertNotIn("CHAPTER 10", chapter_segments["chapter9"])
 
-    def test_extract_tables_and_replace_creates_placeholders_and_table_entries(self):
+    def test_extract_tables_and_replace_places_known_raw_table_without_creating_text_entry(self):
         sample = (
             "Discussion before table.\n"
             "Table 5.1 Genotype frequencies after viability selection. Here, p is the frequency of allele A\n"
@@ -554,16 +753,18 @@ class TestKnowledgeEngineeringLatexProcess(unittest.TestCase):
             "As shown in Table 5.1, the number of AA individuals following selection is proportional.\n"
         )
 
-        replaced, tables = extract_tables_and_replace(sample, chapter_name="chapter5")
+        replaced, tables = extract_tables_and_replace(
+            sample,
+            chapter_name="chapter5",
+            known_table_ids={"5.1"},
+        )
 
-        self.assertEqual(len(tables), 1)
-        self.assertEqual(tables[0].id, "5.1")
+        self.assertEqual(tables, [])
         self.assertIn("[[TABLE:5.1]]", replaced)
         self.assertIn("[[SEE_TABLE:5.1]]", replaced)
         self.assertNotIn("Genotype\nAA\nAa", replaced)
-        self.assertGreaterEqual(len(tables[0].rows), 4)
 
-    def test_extract_tables_and_replace_parses_latex_table_environment(self):
+    def test_extract_tables_and_replace_uses_dummy_latex_table_as_location_only(self):
         sample = (
             "We summarize key values in Table 21.6 below.\n"
             "\\begin{table}[h]\n"
@@ -580,15 +781,17 @@ class TestKnowledgeEngineeringLatexProcess(unittest.TestCase):
             "As shown in Table 21.6, the selection intensity differs.\n"
         )
 
-        replaced, tables = extract_tables_and_replace(sample, chapter_name="chapter21")
+        replaced, tables = extract_tables_and_replace(
+            sample,
+            chapter_name="chapter21",
+            known_table_ids={"21.6"},
+        )
 
-        ids = [entry.id for entry in tables]
-        self.assertIn("21.6", ids)
+        self.assertEqual(tables, [])
         self.assertIn("[[TABLE:21.6]]", replaced)
         self.assertIn("[[SEE_TABLE:21.6]]", replaced)
-        table = next(entry for entry in tables if entry.id == "21.6")
-        self.assertGreaterEqual(len(table.rows), 2)
-        self.assertIn("Cell 1", table.html)
+        self.assertNotIn("Cell 1", replaced)
+        self.assertNotIn("Cell 2", replaced)
 
     def test_latex_table_environment_survives_strip_pipeline_with_pre_extract(self):
         sample = (
@@ -607,11 +810,178 @@ class TestKnowledgeEngineeringLatexProcess(unittest.TestCase):
 
         tex_with_placeholder, latex_tables = _extract_table_envs_and_replace(sample, "chapter21")
         stripped = strip_latex_markup(tex_with_placeholder)
-        replaced, post_tables = extract_tables_and_replace(stripped, "chapter21")
+        replaced, post_tables = extract_tables_and_replace(
+            stripped,
+            "chapter21",
+            known_table_ids={"21.6"},
+        )
 
+        self.assertEqual(latex_tables, [])
         self.assertIn("[[TABLE:21.6]]", replaced)
-        self.assertTrue(any(entry.id == "21.6" for entry in latex_tables))
+        self.assertIn("[[SEE_TABLE:21.6]]", replaced)
         self.assertEqual(post_tables, [])
+
+    def test_paddle_raw_table_creates_real_entry_with_bbox_not_dummy_cells(self):
+        caption = "Table 25.1 Total contribution to the selection limit."
+        table_html = (
+            "<table><tr><td>Allele action</td><td>Total contribution</td></tr>"
+            "<tr><td>additive</td><td>2a(1-p0)</td></tr></table>"
+        )
+        pages = [
+            {
+                "prunedResult": {
+                    "parsing_res_list": [
+                        {
+                            "block_label": "figure_title",
+                            "block_content": caption,
+                            "block_bbox": [10, 10, 200, 30],
+                        },
+                        {
+                            "block_label": "table",
+                            "block_content": table_html,
+                            "block_bbox": [10, 35, 220, 120],
+                        },
+                    ]
+                }
+            }
+        ]
+
+        with patch("knowledge_engineering.pipeline.process._load_paddle_raw_pages", return_value=pages):
+            tables = _extract_tables_from_paddle_raw("chapter25_full/main.tex", "chapter25")
+
+        self.assertEqual(len(tables), 1)
+        self.assertEqual(tables[0].id, "25.1")
+        self.assertEqual(tables[0].rows[0], ["Allele action", "Total contribution"])
+        self.assertEqual(tables[0].source["page"], 1)
+        self.assertEqual(tables[0].source["bbox"], [10, 35, 220, 120])
+        self.assertEqual(tables[0].source["extraction_channel"], "paddle_raw_layout")
+        self.assertNotIn("Cell 1", tables[0].html)
+
+    def test_paddle_raw_table_reference_text_does_not_bind_numbered_table_id(self):
+        table_html = "<table><tr><td>n</td><td>R</td></tr><tr><td>5</td><td>31.6</td></tr></table>"
+        pages = [
+            {
+                "prunedResult": {
+                    "parsing_res_list": [
+                        {
+                            "block_label": "text",
+                            "block_content": "From Table 25.1, the selection limit becomes larger as n increases.",
+                            "block_bbox": [10, 10, 220, 35],
+                        },
+                        {
+                            "block_label": "table",
+                            "block_content": table_html,
+                            "block_bbox": [10, 40, 220, 120],
+                        },
+                    ]
+                }
+            }
+        ]
+
+        with patch("knowledge_engineering.pipeline.process._load_paddle_raw_pages", return_value=pages):
+            tables = _extract_tables_from_paddle_raw("chapter25_full/main.tex", "chapter25")
+
+        self.assertEqual(len(tables), 1)
+        self.assertEqual(tables[0].id, "inline_1")
+        self.assertNotEqual(tables[0].id, "25.1")
+
+    def test_paddle_raw_numbered_caption_does_not_cross_example_boundary(self):
+        formula_table = (
+            "<table><tr><td>Selection Scheme</td><td>R/(sigma_A^2 i)</td></tr>"
+            "<tr><td>Half-sibs, remnant seed</td><td>formula</td></tr></table>"
+        )
+        example_table = (
+            "<table><tr><td>Selection</td><td>R/i</td><td>f=1/8</td></tr>"
+            "<tr><td>Half-sib</td><td>1.581</td><td>1.111</td></tr></table>"
+        )
+        pages = [
+            {
+                "prunedResult": {
+                    "parsing_res_list": [
+                        {
+                            "block_label": "figure_title",
+                            "block_content": "Table 23.1 The response to family selection.",
+                            "block_bbox": [10, 10, 220, 40],
+                            "block_order": 1,
+                        },
+                        {
+                            "block_label": "table",
+                            "block_content": formula_table,
+                            "block_bbox": [10, 50, 220, 120],
+                            "block_order": 2,
+                        },
+                        {
+                            "block_label": "figure_title",
+                            "block_content": "Example 23.1. Using the expression summarized in Table 23.1.",
+                            "block_bbox": [10, 150, 220, 180],
+                            "block_order": 3,
+                        },
+                        {
+                            "block_label": "table",
+                            "block_content": example_table,
+                            "block_bbox": [10, 190, 220, 260],
+                            "block_order": 4,
+                        },
+                    ]
+                }
+            }
+        ]
+
+        with patch("knowledge_engineering.pipeline.process._load_paddle_raw_pages", return_value=pages):
+            tables = _extract_tables_from_paddle_raw("chapter23_full/main.tex", "chapter23")
+
+        self.assertEqual([table.id for table in tables], ["23.1", "inline_1"])
+        self.assertEqual(tables[0].rows[0], ["Selection Scheme", "R/(sigma_A^2 i)"])
+        self.assertEqual(tables[1].rows[0], ["Selection", "R/i", "f=1/8"])
+
+    def test_inline_table_placeholder_assigns_table_source_unit(self):
+        unit = KnowledgeUnit(
+            id="chapter25_006",
+            chapter="chapter25",
+            section="Dynamics of Allele-frequency Change",
+            subsections=["Dynamics of Allele-frequency Change"],
+            source_file="chapter25_full/main.tex",
+            blocks=[
+                KnowledgeBlock(
+                    type="discussion",
+                    content="The resulting values become [[TABLE:inline_1]]",
+                )
+            ],
+        )
+        table = TableEntry(
+            id="inline_1",
+            label_format="Inline Table 1",
+            title="The resulting values of these various quantities for 5 to 500 loci become",
+            table_type="inline",
+            html="<table><tr><td>n</td><td>R</td></tr></table>",
+            rows=[["n", "R"], ["5", "31.6"]],
+            source={"chapter": "chapter25", "page": 9},
+        )
+
+        assigned = assign_table_sources_to_units([unit], [table])
+
+        self.assertEqual(assigned[0].source["unit_id"], "chapter25_006")
+        self.assertEqual(assigned[0].source["subsection"], "Dynamics of Allele-frequency Change")
+
+    def test_table_reference_key_scopes_numbered_tables_to_source_chapter(self):
+        self.assertEqual(_table_reference_key("chapter25", "6.1"), "chapter6:6.1")
+        self.assertEqual(_table_reference_key("chapter25", "25.4"), "chapter25:25.4")
+        self.assertEqual(_table_reference_key("chapter25", "inline_2"), "chapter25:inline_2")
+
+    def test_missing_local_table_stub_keeps_reference_resolvable_without_dummy_body(self):
+        text = (
+            "[[TABLE:11.1]]\n"
+            "The components are summarized in Table 11.1, while Table 9.1 is a cross-chapter reference."
+        )
+
+        stubs = _create_missing_table_body_stubs(text, "chapter11", existing_table_ids=set())
+
+        self.assertEqual([entry.id for entry in stubs], ["11.1"])
+        self.assertEqual(stubs[0].table_type, "missing")
+        self.assertEqual(stubs[0].rows, [])
+        self.assertEqual(stubs[0].html, "")
+        self.assertTrue(stubs[0].source["has_physical_placeholder"])
+        self.assertTrue(stubs[0].source["needs_review"])
 
     def test_table_library_merges_globally_and_replaces_only_target_chapter(self):
         output_dir = Path.cwd() / "tmp" / "paper2latex_tests" / "table_lib_outputs"

@@ -2,7 +2,7 @@
   "id": "chapter30_037",
   "metadata": {
     "chapter": "chapter30",
-    "section": "Chapter 30: Regressions Versus Path Analysis",
+    "section": "Measuring Multivariate Selection: Introduction",
     "subsections": [
       "Morrissey's Extended Selection Gradient Vector, $ \\eta $"
     ],
@@ -13,7 +13,14 @@
       "30.33b",
       "30.33c"
     ],
-    "table_references": []
+    "table_references": [],
+    "section_level_1": "Measuring Multivariate Selection: Introduction",
+    "section_level_2": "Morrissey's Extended Selection Gradient Vector, $ \\eta $",
+    "heading_path": [
+      "Measuring Multivariate Selection: Introduction",
+      "Morrissey's Extended Selection Gradient Vector, $ \\eta $"
+    ],
+    "display_heading": "Morrissey's Extended Selection Gradient Vector, $ \\eta $"
   },
   "blocks": [
     {
@@ -41,32 +48,8 @@
       "content": "One very desirable feature of $ \\eta_i $ is that if trait $ i $ has a causal effect (either direct or indirect) on fitness, then $ \\eta_i $ is not changed by the addition (or subtraction) of new traits in the causal chain between $ i $ and $ w $. In terms of our path 2 above ($ z \\to f \\to w $), the value of $ \\eta_z $ equals the value of $ \\beta_z $ in a model where $ f $ is ignored ($ z \\to w $)."
     },
     {
-      "type": "discussion",
-      "content": "Example 30.10. Building on the work of Latta and McCain (2009), Morrissey (2014a) examined the relationship between a number of traits in wild oats (Avena barbata) and fitness, w (measured by number of reproductive spikes), using the following assumed causality structure. The values above the arrows are correlation coefficients, while the numbers 1 through 6 index the traits in the B matrix (as detailed below)."
-    },
-    {
-      "type": "discussion",
-      "content": "The six traits considered were days at germination (dgerm), mass at day 60 (m60), days to first flower (dtf), final total mass (mass), number of reproductive tillers (rpt), and mass of reproductive tillers (mrt). The (variance-standardized) directional selection gradients under Lande-Arnold ($ \\beta_{LA} $, which is a multiple regression of w using all six traits) and under the path model ($ \\beta_{pa} $) are quite different, which shows the impact of the assumed causal structure among the traits and with fitness: $$ \\boldsymbol{\\beta}=\\begin{pmatrix}\\beta_{dgerm}\\\\\\beta_{m60}\\\\\\beta_{dtf}\\\\\\beta_{mass}\\\\\\beta_{rpt}\\\\\\beta_{mrt}\\end{pmatrix},\\quad\\mathrm{where}\\quad\\boldsymbol{\\beta}_{LA}=\\begin{pmatrix}0.009\\\\0.004\\\\-0.040\\\\-0.028\\\\0.142\\\\0.207\\end{pmatrix},\\quad\\boldsymbol{\\beta}_{pa}=\\begin{pmatrix}0\\\\0\\\\0\\\\-0.033\\\\0.157\\\\0.207\\end{pmatrix} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Note that only mass, rpt, and mrt directly impact fitness under the assumed path model."
-    },
-    {
-      "type": "discussion",
-      "content": "The resulting matrix, B, of path coefficients is constructed as follows. The first row corresponds to those traits that are directly influenced by trait 1 (dgerm), which is only trait 2 (m60), as all the other entries are zero. The second row involves those traits that are directly influenced by trait 2, which are only traits 3 and 4, as all the other entries are zero. Continuing in this fashion, and noting that traits 5 and 6 influence no traits in the diagram (we are not considering w), yields $$ \\mathbf{B}=\\begin{pmatrix}{{{0}}}&{{{-0.012}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\\\{{{0}}}&{{{0}}}&{{{-0.200}}}&{{{0.306}}}&{{{0}}}&{{{0}}} \\\\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{-0.580}}}&{{{-0.605}}} \\\\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0.135}}}&{{{0.396}}} \\\\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\\\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}\\end{pmatrix} $$ which in turn yields $$ \\boldsymbol{\\varPhi}=(\\mathbf{I}-\\mathbf{B})^{-1}=\\begin{pmatrix}{{{1}}}&{{{-0.012}}}&{{{0.0240}}}&{{{-0.0037}}}&{{{-0.0018}}}&{{{-0.0029}}} \\\\{{{0}}}&{{{1}}}&{{{-0.2000}}}&{{{0.3060}}}&{{{0.1573}}}&{{{0.2422}}} \\\\{{{0}}}&{{{0}}}&{{{1}}}&{{{0}}}&{{{-0.5800}}}&{{{-0.6050}}} \\\\{{{0}}}&{{{0}}}&{{{0}}}&{{{1}}}&{{{0.1350}}}&{{{0.3960}}} \\\\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{1}}}&{{{0}}} \\\\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{1}}}\\end{pmatrix} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "To see that $ \\mathbf{B} $ recovers the correct values of the $ \\Phi_{ij} $, we compute a few of these elements by hand. The elements in the first row of $ \\Phi $ correspond to the total causal effects from trait 1 (dgerm), which is $ -0.12 $ on trait 2 (m60), and $ -0.012 \\cdot 0.306 = -0.0037 $ for trait 4 ($ 1 \\rightarrow 2 \\rightarrow 4 $). A more complicated case is the casual connection of trait 1 on trait 5, as there are two paths, $ 1 \\rightarrow 2 \\rightarrow 4 \\rightarrow 5 $ and $ 1 \\rightarrow 2 \\rightarrow 3 \\rightarrow 5 $, for a total of $ [-0.012 \\cdot \\0.306 \\cdot 0.135] + [-0.012 \\cdot (-0.200) \\cdot (-0.580)] = -0.0018 $."
-    },
-    {
-      "type": "discussion",
-      "content": "Using $ \\Phi $, the resulting vector of extended gradients becomes $$ \\boldsymbol{\\eta}=\\begin{pmatrix}\\eta_{d g e r m}\\\\\\eta_{m60}\\\\\\eta_{d t f}\\\\\\eta_{m a s s}\\\\\\eta_{r p t}\\\\\\eta_{m r t}\\end{pmatrix}=\\boldsymbol{\\varPhi}\\boldsymbol{\\beta}_{p a t h}=\\boldsymbol{\\varPhi}\\begin{pmatrix}0\\\\0\\\\0\\\\-0.033\\\\0.157\\\\0.207\\end{pmatrix}=\\begin{pmatrix}-0.001\\\\0.065\\\\-0.216\\\\0.070\\\\0.157\\\\0.207\\end{pmatrix} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "The extended gradient (η) gives the total amount of selection on each trait caused by all the paths that are causally connected to that trait. The values for mrt and rpt are the same as their β_pa values, as both of these traits have only a direct effect on fitness. Now consider the difference between β_pa for mass in the path diagram (-0.033) and its η value (0.070). While the direct effect, mass→w, is negative, the total of the casual effects from mass, (mass→w) + (mass→rpt→w) + (mass→mrt→w), is $$ -0.033+(0.135\\cdot0.157)+(0.396\\cdot0.207)=0.070 $$ which is positive and larger in magnitude than the direct negative effect."
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:30.10]]"
     }
   ]
 }

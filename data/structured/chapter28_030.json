@@ -2,7 +2,7 @@
   "id": "chapter28_030",
   "metadata": {
     "chapter": "chapter28",
-    "section": "Chapter 28: HCA Results",
+    "section": "Maintenance of Quantitative Genetic Variation: Introduction",
     "subsections": [
       "HCA Results"
     ],
@@ -17,7 +17,14 @@
       "28.43b",
       "28.43c"
     ],
-    "table_references": []
+    "table_references": [],
+    "section_level_1": "Maintenance of Quantitative Genetic Variation: Introduction",
+    "section_level_2": "HCA Results",
+    "heading_path": [
+      "Maintenance of Quantitative Genetic Variation: Introduction",
+      "HCA Results"
+    ],
+    "display_heading": "HCA Results"
   },
   "blocks": [
     {
@@ -53,16 +60,8 @@
       "content": "Finally, as in the univariate case, the radical differences in behavior between the Gaussian and HCA approximations in the presence of pleiotropy are the result of differences in the strength of selection relative to mutation, not the underlying mutational model. Slatkin and Frank (1990) verified this by considering a nine-allele model, whose mutational structure is given by the following lattice of trait values. The center allele (0,0) is at the bivariate optimum, and this allele is allowed to have a nonpleiotropic mutation for either trait, e.g., $ (-a,0) $, $ (a,0) $, $ (0,-a) $, or $ (0,a) $; or to jointly mutate for both traits in four possible directions, $ (-a,-a) $, $ (-a,a) $, $ (a,-a) $, $ (a,a) $. This model offers a bit more granularity than Turelli's five-allele model. Slatkin and Frank found that, depending on the relative strengths of selection and mutation, this model can generate either the Gaussian behavior (weak to no impact from selection on uncorrelated traits) or the HCA behavior (strong impact from uncorrelated selection)."
     },
     {
-      "type": "derivation",
-      "content": "Example 28.10. Under the fitness function given by Equation 28.36a, Turelli (1985) and Zhang and Hill (2003) showed that if the population is at (or very close to) its optimal value $ (\\theta = 0) $, then the initial selection coefficient against a new mutation at locus i with effects vector $ \\alpha^T = (\\alpha_{1,i}, \\alpha_{2,i}, \\cdots, \\alpha_{k,i}) $ is approximately given by the quadratic product [[SEE_FORMULA:28.43a]]"
-    },
-    {
-      "type": "derivation",
-      "content": "This is the multivariate equivalent of Equation 28.4c. When $ V_s $ is diagonal (uncorrelated selection; Example 28.9), this reduces to [[SEE_FORMULA:28.43b]] namely, the sum of the average selection coefficients of a new mutation associated with each of the k traits. More generally, expanding the quadratic product given by Equation 28.43a yields $$ s_{i}\\simeq\\sum_{j=1}^{k}\\sum_{\\ell=1}^{k}\\alpha_{j,i}\\cdot V_{j,\\ell}\\cdot\\alpha_{\\ell,i} $$ where $ V_{j,\\ell} $ is the $ j\\ell $th element of $ V_{s}^{-1} $. Taking expectations yields [[SEE_FORMULA:28.43c]]"
-    },
-    {
-      "type": "proposition",
-      "content": "Zhang and Hill (2003) noted that if all $n$ traits impact locus $i$ with roughly similar selection coefficients ($E[s_{j,i}] \\simeq s_i$), then from the central limit theorem, the distribution of the $s_i$ approaches a normal. Further, the coefficient of variation of this distribution goes to zero at an approximate rate of $\\sqrt{(3\\kappa_{4,s} - 1)/n}$, where $\\kappa_{4,s} = E[(s_i - \\bar{s}_i)^4] / \\{3(\\sigma^2(s_i)^2\\} \\text{ is the scaled kurotsis of } s_i$. Thus, for a sufficiently large number of independent traits under selection, $s_i$ is approximately a constant plus a small amount of normally distributed error."
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:28.10]]"
     }
   ]
 }

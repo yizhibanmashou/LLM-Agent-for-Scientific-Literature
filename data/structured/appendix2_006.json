@@ -2,27 +2,34 @@
   "id": "appendix2_006",
   "metadata": {
     "chapter": "appendix2",
-    "section": "SUMMARIZING THE POSTERIOR DISTRIBUTION",
+    "section": "Appendix: Introduction",
     "subsections": [
       "SUMMARIZING THE POSTERIOR DISTRIBUTION"
     ],
     "source_file": "tmp\\paddle_output\\appendix2_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [],
-    "table_references": []
+    "table_references": [],
+    "section_level_1": "Appendix: Introduction",
+    "section_level_2": "SUMMARIZING THE POSTERIOR DISTRIBUTION",
+    "heading_path": [
+      "Appendix: Introduction",
+      "SUMMARIZING THE POSTERIOR DISTRIBUTION"
+    ],
+    "display_heading": "SUMMARIZING THE POSTERIOR DISTRIBUTION"
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "How do we extract a Bayesian estimator for some unknown parameter, $ $? If our mindset is to use some sort of point estimator (as is usually done in classical statistics), then there are a number of candidates. We could follow maximum likelihood and use the mode of the posterior distribution (its maximal value) $$ \\widehat{\\theta}=\\max_{\\theta}\\left[p(\\boldsymbol{\\theta}\\mid\\mathbf{x})\\right] $$"
+      "content": "How do we extract a Bayesian estimator for some unknown parameter, $ \\theta $? If our mindset is to use some sort of point estimator (as is usually done in classical statistics), then there are a number of candidates. We could follow maximum likelihood and use the mode of the posterior distribution (its maximal value) $$ \\widehat{\\theta}=\\max_{\\theta}\\left[p(\\boldsymbol{\\theta}\\mid\\mathbf{x})\\right] $$"
     },
     {
       "type": "discussion",
-      "content": "We could take the expected value of $ $ (its mean) given the posterior $$ \\widehat{\\boldsymbol{\\theta}}=\\boldsymbol{E}[\\boldsymbol{\\theta}\\mid\\mathbf{x}]=\\int\\boldsymbol{\\theta}\\boldsymbol{p}(\\boldsymbol{\\theta}\\mid\\mathbf{x})d\\boldsymbol{\\theta} $$"
+      "content": "We could take the expected value of $ \\theta $ (its mean) given the posterior $$ \\widehat{\\boldsymbol{\\theta}}=\\boldsymbol{E}[\\boldsymbol{\\theta}\\mid\\mathbf{x}]=\\int\\boldsymbol{\\theta}\\boldsymbol{p}(\\boldsymbol{\\theta}\\mid\\mathbf{x})d\\boldsymbol{\\theta} $$"
     },
     {
       "type": "discussion",
-      "content": "Another candidate is the median of the posterior, which is more robust than the mean to outliers. Here the estimator satisfies $ (> |) = (< |) = 0.5 $, hence $$ \\int_{\\widehat{\\theta}}^{+\\infty}p(\\theta\\mid\\mathbf{x})d\\theta=\\int_{-\\infty}^{\\widehat{\\theta}}p(\\theta\\mid\\mathbf{x})d\\theta=\\frac{1}{2} $$"
+      "content": "Another candidate is the median of the posterior, which is more robust than the mean to outliers. Here the estimator satisfies $ \\Pr(\\theta > \\widehat{\\theta} | \\mathbf{x}) = \\Pr(\\theta < \\widehat{\\theta} | \\mathbf{x}) = 0.5 $, hence $$ \\int_{\\widehat{\\theta}}^{+\\infty}p(\\theta\\mid\\mathbf{x})d\\theta=\\int_{-\\infty}^{\\widehat{\\theta}}p(\\theta\\mid\\mathbf{x})d\\theta=\\frac{1}{2} $$"
     },
     {
       "type": "discussion",

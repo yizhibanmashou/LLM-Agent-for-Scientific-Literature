@@ -2,7 +2,7 @@
   "id": "chapter5_027",
   "metadata": {
     "chapter": "chapter5",
-    "section": "Chapter 5: Monogenic Traits",
+    "section": "The Population Genetics of Selection: Introduction",
     "subsections": [
       "Correct Quadratic Terms for $ s_{i} $"
     ],
@@ -20,7 +20,14 @@
       "5.28b",
       "5.28c"
     ],
-    "table_references": []
+    "table_references": [],
+    "section_level_1": "The Population Genetics of Selection: Introduction",
+    "section_level_2": "Correct Quadratic Terms for $ s_{i} $",
+    "heading_path": [
+      "The Population Genetics of Selection: Introduction",
+      "Correct Quadratic Terms for $ s_{i} $"
+    ],
+    "display_heading": "Correct Quadratic Terms for $ s_{i} $"
   },
   "blocks": [
     {
@@ -48,16 +55,8 @@
       "content": "If phenotypes are normally distributed, $ -I_1 = S/\\sigma_z^2 $ (Equation 5.25c), yielding [[SEE_FORMULA:5.27a]] When alleles are completely additive, $ a_{ij} = \\alpha_i + \\alpha_j $ and the term in brackets reduces to $ \\alpha_i^2 - \\sum_j \\alpha_j^2 p_j $. Substituting this improved value of $ s_i $ into Equation 5.22 and summing over all loci gives the response to selection (under a completely additive model) as [[SEE_FORMULA:5.27b]] where the subscript k on the $ \\alpha_{i} $ and $ p_{i} $ terms reminds the reader that these can vary over loci. As shown by Equation 29.16a, selection acting on the mean still results in a change in the variance, with $ \\delta(\\sigma_z^2) = -S^2 $. In this case, the second term of Equation 5.27b is zero and we recover the breeder's equation. More generally, however, if selection is also acting directly on the trait variance (such as, but not limited to, stabilizing or disruptive selection), $ \\delta(\\sigma_z^2) $ departs from $ -S^2 $ (Chapter 29). Because the double sum in Equation 5.27b is the skewness in the genotypic distribution, if skew is present, changes due to selection on the variance also change the mean (Figure 29.7). Equation 5.27b raises several issues that will be examined in detail in Chapter 24. In particular, even if the distribution of phenotypes is normal, the response still depends on rather fine details (such as the third moment of allelic effects at each locus) of the distribution of genotypic values."
     },
     {
-      "type": "derivation",
-      "content": "Example 5.13. To obtain Equation 5.26b, we first substitute Equation 5.26a into Equation 5.25b [[SEE_FORMULA:5.28a]]"
-    },
-    {
-      "type": "derivation",
-      "content": "Next, we use a standard trick by noting that [[SEE_FORMULA:5.28b]] [[SEE_FORMULA:5.28c]] with Equation 5.28a becoming Noting that $\\int w(z)p(z) = \\overline{w} = 1$ and that $\\int f(z)w(z)p(z) = E_s[f(z)]$, namely, the expected value of $f(z)$ in the selected individuals (as $w(z)p(z)$ is the distribution of $z$ following selection), Equation 5.28c reduces to $$ \\begin{aligned}I_{2}&=\\frac{1}{\\sigma_{z}^{4}}\\Biggl(-\\sigma_{z}^{2}+E_{s}[(z-\\mu^{*})^{2}]+2(\\mu^{*}-\\mu)E_{s}(z-\\mu^{*})+(\\mu^{*}-\\mu)^{2}\\Biggr)\\\\&=\\frac{1}{\\sigma_{z}^{4}}\\Biggl(-\\sigma_{z}^{2}+\\sigma_{z^{*}}^{2}+0+S^{2}\\Biggr)\\end{aligned} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Here $ \\sigma_{z^*}^2 $ denotes the variance after selection, so that $ -\\sigma_z^2 + \\sigma_z^* = \\delta(\\sigma_z^2) $, and we recover Equation 5.26b."
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:5.13]]"
     }
   ]
 }

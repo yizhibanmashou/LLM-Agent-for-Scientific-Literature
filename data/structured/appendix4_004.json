@@ -2,19 +2,30 @@
   "id": "appendix4_004",
   "metadata": {
     "chapter": "appendix4",
-    "section": "BONFERRONI CORRECTIONS AND THEIR EXTENSIONS",
+    "section": "Appendix: Introduction",
     "subsections": [
-      "BONFERRONI CORRECTIONS AND THEIR EXTENSIONS"
+      "Stouffer's Z Score"
     ],
     "source_file": "tmp\\paddle_output\\appendix4_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [],
-    "table_references": []
+    "table_references": [],
+    "section_level_1": "Appendix: Introduction",
+    "section_level_2": "Stouffer's Z Score",
+    "heading_path": [
+      "Appendix: Introduction",
+      "Stouffer's Z Score"
+    ],
+    "display_heading": "Stouffer's Z Score"
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "We now turn to the complementary problem of determining the significance level, $ \\alpha $ , for individual tests required to control the overall false-positive rate over a collection of n tests. The typical setting is that a single study or experiment has gathered data and a number of different tests, usually on different hypotheses, are performed using these data. Let $ \\pi $ denote our desired experiment-wide false-positive rate—the probability of one (or more) false positives over the entire collection of n tests being no greater than $ \\pi $ . The traditional approach for determining the appropriate $ \\alpha $ , given n and $ \\pi $ , is to use Bonferroni corrections."
+      "content": "An alternative to Fisher’s approach for combining p values was offered by Stouffer et al. (1949), who transformed the individual p values into Z scores. The sum of k independent unit normals is itself normal, with a mean of zero and a variance of k. These results lead to Stouffer’s Z score method: assign a score of $ Z_i $ for test i by solving $ \\Pr(U > Z_i) = p_i $. Let $ Z_s $ denote the sum over the transformed p values of k tests, scaled by $ k^{-1/2} $ to give it a variance of one, with $$ Z_{s}=\\frac{\\sum_{i=1}^{k}Z_{i}}{\\sqrt{k}} $$ Because $ Z_s \\sim N(0,1) $, the overall p value is obtained as $$ p=\\Pr(U>Z_{s}) $$ As noted by Whitlock (2005), this test was first proposed in a footnote in Stouffer et al.'s sociological study of army life, making it one of the more obscure origins of a statistical method."
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:A4.2]]"
     }
   ]
 }

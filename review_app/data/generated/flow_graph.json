@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-07T18:32:06",
+  "generated_at": "2026-05-12T15:09:56",
   "source_doc": "",
   "overview_nodes": [
     {
@@ -86,6 +86,24 @@
       {
         "title": "Chunk JSON Output",
         "detail": "输出可下游消费的 chunk JSON 列表。"
+      }
+    ],
+    "examples": [
+      {
+        "title": "Example Detection",
+        "detail": "从 structured block 中识别 Example 编号与正文 span。"
+      },
+      {
+        "title": "Example Library Output",
+        "detail": "生成全书统一 example_library，并保留 source_file 与原 block span。"
+      },
+      {
+        "title": "Placeholder Folding",
+        "detail": "将正文 example span 折叠为独立 [[SEE_EXAMPLE:x]] block，减少 chunk 冗余。"
+      },
+      {
+        "title": "Review App Object",
+        "detail": "把 example 作为独立审核对象加入 review_dataset。"
       }
     ]
   },

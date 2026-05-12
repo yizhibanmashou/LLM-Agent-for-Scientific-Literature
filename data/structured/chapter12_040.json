@@ -2,40 +2,30 @@
   "id": "chapter12_040",
   "metadata": {
     "chapter": "chapter12",
-    "section": "Chapter 12: DIVERGENCE IN GENE EXPRESSION",
+    "section": "The Neutral Divergence of Quantitative Traits: Introduction",
     "subsections": [
-      "Applications of Sign-based Tests to Expression Data"
+      "Evolution of Expression Levels: Drift, Directional, or Stabilizing Selection?"
     ],
     "source_file": "tmp\\paddle_output\\chapter12_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [],
-    "table_references": [
-      "inline_1"
+    "table_references": [],
+    "section_level_1": "The Neutral Divergence of Quantitative Traits: Introduction",
+    "section_level_2": "Evolution of Expression Levels: Drift, Directional, or Stabilizing Selection?",
+    "heading_path": [
+      "The Neutral Divergence of Quantitative Traits: Introduction",
+      "Evolution of Expression Levels: Drift, Directional, or Stabilizing Selection?"
     ],
-    "table_reference_keys": [
-      "chapter12:inline_1"
-    ]
+    "display_heading": "Evolution of Expression Levels: Drift, Directional, or Stabilizing Selection?"
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "While Orr’s tests were framed in the increasingly dated technology of QTL mapping, their central underlying idea (effects are randomly distributed among lines under neutrality) fits very nicely with genomics-era data. We already mentioned a GWAS application of sign-based tests, and there is an increasing use of sign-based approaches to explore the nature of selection on gene expression. The standard QTL-based tests discussed above are not directly applicable, as most genes have very few detected eQTLs, and thus do not qualify for testing based on Orr’s requirement of at least six QTLs per trait. However, as reviewed by Fraser (2011), two rather different approaches have been used to circumvent this limitation."
+      "content": "The study of gene regulatory evolution is still in a rather embryonic state. Historically, the field has moved from an early era of speculation that regulatory changes may be at least as, if not more, important than structural changes (Britten and Davidson 1969, 1971; King and Wilson 1975), to a broader acceptance of favoring regulatory evolution, at least in some groups or traits (Carroll 2005, 2008; Wray 2007); but see Hoekstra and Coyne (2007) for a counterperspective. As our previous discussion suggests, the initial view provided from transcriptome-wide studies is that stabilizing selection is important, but that some drift in expression level can occur, which is more constrained as phylogenetic distance increases. There is also evidence that directional selection on some cis-acting sites has occurred between closely related species."
     },
     {
       "type": "discussion",
-      "content": "The first approach is simply to shift focus from the expression levels at single genes to the pattern of expression over a set of genes, pooling these to create a setting with more than six eQTLs for the trait. Bullard et al. (2010) used this approach in a cross of two closely related yeast species, Saccharomyces cerevisiae and S. bayanus. One key requirement in the statistical analysis is that each eQTL is independent, as a single eQTL that simultaneously influences k genes should be weighted as one change, not k changes, in the same direction. The use of cis-regulatory alleles ensures independence over a set of loosely linked genes. Bullard et al. accomplished this by only considering alleles showing ASE. An excessive number of up-regulated ASEs over a specific gene set from one species indicates the presence of lineage-specific selection, and a number of pathways were detected showing this feature. Fraser et al. (2011) used a similar approach in a cross of two subspecies of the mouse (Mus musculus). They chose gene sets defined by shared GO (Gene Ontology Consortium) membership, and found over 100 genes with evidence of lineage-specific selection. These studies are important, as (at least for these two crosses) they suggest that adaptation via gene-expression changes may be widespread, highly polygenic, and involves cis-regulatory sites. As noted by Fraser (2011; Fraser et al. 2011), a significant result (an excess in one direction) is not necessarily indicative of directional selection, as regulatory mutations are biased toward down-regulation. A pattern that is seen could simply be a relaxation of purifying selection in one lineage, resulting in a series of neutral, but down-regulated, substitutions, given this inherent mutational bias. In essence, this is the same limitation seen in the McDonald-Kreitman test (Chapter 10). Fraser et al. (2011) noted that a simple solution to this problem is to examine expression levels in an outgroup and assess whether a directional change was due to up-regulation (relative to the outgroup) in one lineage, which is likely due to selection, or down-regulation, which could simply be due to relaxed selection. However, selection for reduced expression in a pathway cannot formally be ruled out in the latter case, nor can overexpression be interpreted with certainty as being adaptive."
-    },
-    {
-      "type": "discussion",
-      "content": "A second modification of a sign-based test for expression data, which was offered by Fraser et al. (2010), applies to genes whose expression levels are influenced by both cis and trans eQTLs. The central premise of sign-based tests is that directionality is random under the null, so that in a cross of lines A × B, if an eQTL from A is a cis up-regulator, this should provide no information as to whether a trans-acting factor from A (acting on the expression level at the same target gene) is an up- or down-regulatory allele. Cis- and trans-acting alleles whose influence is in the same direction (up and up, down and down) are called reinforcing, and those acting in opposite directions are called opposing. With a collection of genes whose expression is influenced by both cis and trans eQTLs, a simple $ 2 \\times 2 $ contingency table can be constructed and tested for departures from randomness. If a significant departure is seen, it is a straightforward process to estimate the amount of excess in a particular class (e.g., Example 10.1). Fraser et al. applied this approach in a cross of two yeast (Saccharomyces cerevisiae) strains that diverged roughly $ 10^7 $ generations ago and found an excess of roughly 242 genes showing reinforcing levels of cis and trans. While this approach suggests significant regulatory evolution over the genome, it does not indicate which specific transcripts are involved. This result is reminiscent of some of the approaches for detecting genome-wide signatures of selection examined in Chapter 10: evidence of a genome-wide pattern is seen, but no particular gene can be singled out with confidence as being a target of the selection process generating the observed pattern."
-    },
-    {
-      "type": "discussion",
-      "content": "Artieri and Fraser (2014) used this statistical machinery to examine the nature of selection on the translational profiles of mRNA, using ribosome profiling—extracting mRNA bound to ribosomes to create a sample of the mRNA pool actually undergoing translation. Using this enriched pool, Artieri and Fraser examined the translation rates of specific transcripts within and between two species of yeast, and found both cis- and trans-acting regulatory divergence. They reported that the majority of translational divergence appears to buffer the amounts of mRNA, consistent with stabilizing selection on expression levels acting at both the transcriptional and translational stages of gene regulation. was highly significant, with trans polymorphisms being slightly more common than cis, but over twice as many cis regions were fixed. Such a pattern could arise from either an excessive number of cis fixations between species, an excessive amount of trans polymorphism within a species, or a combination of both. Analogous to arguments with interpretations of MacDonald"
-    },
-    {
-      "type": "discussion",
-      "content": "Kreitman data discussed in Chapter 10, an excessive amount of polymorphism could arise from a high mutation rate for slightly deleterious alleles. This generates an excess amount of within-species polymorphism that does not transfer to among-species differences (as they are not fixed). Wittkopp et al. (2008), working with Drosophila, also noted an excess of cis regions being fixed over trans regions and suggested that the fixation of some cis mutations by directional selection, coupled with a larger number of slightly deleterious trans alleles, likely underlies this pattern."
+      "content": "Taken together, these results (along with those described above for more general traits) suggest, perhaps not surprisingly, that at both the phenotypic and gene-regulatory levels, evolution is primarily characterized by periods of stabilizing selection, although episodes of directional selection certainly occur. However, it must also be emphasized that the interpretation of conservative rates of evolution is far from clear-cut. In principle, evolutionary divergence rates that are below the expectation of the infinite-alleles model of mutation may be a consequence of the general opposition of selection to all allelic changes associated with the trait. Alternatively, they might reflect a situation in which a fraction of mutations is truly neutral, with the rest having negative pleiotropic effects on fitness (Chapter 28). In that case, an observed level of divergence could actually be entirely based on neutral mutations, but with the appropriate measure of mutational variance being lower (and likely much lower) than the actual value observed in mutation-accumulation experiments (where even highly deleterious mutations can accumulate). In addition, if the house-of-cards is a more appropriate model for mutation effect sizes, then one would expect cumulative levels of divergence to plateau in time rather than to increase indefinitely, not because of direct selective constraints, but rather due to the limited availability of alternative allelic states."
     }
   ]
 }

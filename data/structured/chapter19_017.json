@@ -2,7 +2,7 @@
   "id": "chapter19_017",
   "metadata": {
     "chapter": "chapter19",
-    "section": "Chapter 19: THE RELATIONSHIP MATRIX, A, ACCOUNTS FOR DRIFT AND DISEQUILIBRIUM",
+    "section": "Analysis of Short-term Selection Experiments: 2. Mixed-model and Bayesian Approaches: Introduction",
     "subsections": [
       "THE RELATIONSHIP MATRIX, A, ACCOUNTS FOR DRIFT AND DISEQUILIBRIUM"
     ],
@@ -19,7 +19,14 @@
       "19.18c",
       "19.19"
     ],
-    "table_references": []
+    "table_references": [],
+    "section_level_1": "Analysis of Short-term Selection Experiments: 2. Mixed-model and Bayesian Approaches: Introduction",
+    "section_level_2": "THE RELATIONSHIP MATRIX, A, ACCOUNTS FOR DRIFT AND DISEQUILIBRIUM",
+    "heading_path": [
+      "Analysis of Short-term Selection Experiments: 2. Mixed-model and Bayesian Approaches: Introduction",
+      "THE RELATIONSHIP MATRIX, A, ACCOUNTS FOR DRIFT AND DISEQUILIBRIUM"
+    ],
+    "display_heading": "THE RELATIONSHIP MATRIX, A, ACCOUNTS FOR DRIFT AND DISEQUILIBRIUM"
   },
   "blocks": [
     {
@@ -43,36 +50,8 @@
       "content": "The final key concept is that when we have the complete pedigree of all individuals in the selection experiment, any breeding value can be expressed as a linear function of the base population breeding values and Mendelian sampling terms (Sorensen and Kennedy 1984a; Kennedy et al. 1988). This is an extension of the idea of ancestral regressions discussed in Chapter 15. Example 19.4 shows a critical consequence of this: because the mean breeding value in the base population is zero (by construction), most of the response in a selection experiment comes, not from base individuals with exceptional breeding values, but rather from Mendelian sampling (i.e., segregation) generating new variation."
     },
     {
-      "type": "discussion",
-      "content": "Example 19.4. Suppose individuals 1 through 4 are from the base population (and assumed unrelated), while individuals 5 and 6 are the offspring from 1 and 2, and 3 and 4, respectively. The offspring breeding values can be written as $$ A_{5}=\\frac{1}{2}A_{1}+\\frac{1}{2}A_{2}+s_{5}\\qquad\\mathrm{a n d}\\qquad A_{6}=\\frac{1}{2}A_{3}+\\frac{1}{2}A_{4}+s_{6} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "If individual 7 is the offspring of parents 5 and 6, its breeding value is $$ \\begin{aligned}A_{7}&=\\frac{1}{2}A_{5}+\\frac{1}{2}A_{6}+s_{7}=\\frac{1}{2}\\left(\\frac{1}{2}A_{1}+\\frac{1}{2}A_{2}+s_{5}\\right)+\\frac{1}{2}\\left(\\frac{1}{2}A_{3}+\\frac{1}{2}A_{4}+s_{6}\\right)+s_{7}\\\\&=\\frac{1}{4}\\left(A_{1}+A_{2}+A_{3}+A_{4}\\right)+\\frac{1}{2}\\left(s_{5}+s_{6}\\right)+s_{7}\\end{aligned} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Note that as individuals become increasingly more distant from the base population, the majority of their breeding value is determined by Mendelian sampling, rather than the base population breeding values of their ancestors."
-    },
-    {
-      "type": "derivation",
-      "content": "This linear relationship, highlighted in the last example, between the $ n \\times 1 $ vector, a, of all breeding values and the $ m \\times 1 $ vector, $ a_b $ (breeding values for the m base population founders), and the $ (n - m) \\times 1 $ vector, s (Mendelian segregation values), can be formally expressed as follows. Defining $ \\mathbf{w}^T = (\\mathbf{a}_b^T, \\mathbf{s}^T) $, we can write [[SEE_FORMULA:19.17a]] where the $ n \\times n $ matrix, T, describes the flow of genes from ancestors to relatives. Indexing the elements in a so that ancestors precede their relatives, T is a lower-triangular matrix (all above-diagonal elements are zero) with diagonal values of one. Further, the upper-left $ m \\times m $ submatrix of T, corresponding to the base population (and thus, no known ancestors), has all below-diagonal elements with value zero. For descendants of the base population founders, the off-diagonal element of T associated with (descendant) individuals i, j is [[SEE_FORMULA:19.17b]] where f and m correspond to the index for the father and mother of i. Equations 19.17a and 19.17b formalize the decomposition (highlighted in Example 19.4) of a current breeding value into base population and segregation contributions. From Equation 19.17a [[SEE_FORMULA:19.18a]] Because we assume that the base population consists of unrelated individuals $ (\\mathbf{A}_b = \\mathbf{I}) $ in gametic-phase equilibrium (so that $ \\sigma_A^2 = \\sigma_a^2 $), $ \\mathbf{Var}(\\mathbf{a}_b) = \\sigma_a^2 \\mathbf{I} $, while $ \\mathbf{Var}(\\mathbf{s}) = (\\sigma_a^2 / 2) \\mathbf{F} $. Under multivariate normality, $ a_b $ and $ s $ are independent, and hence uncorrelated, yielding [[SEE_FORMULA:19.18b]] where $ \\Lambda $ is a diagonal matrix with elements of one when both parents are unknown (base population) and $ 0.5(1 - \\overline{f}) $ when both parents are known. If, due to missing data, only a single parent is known, the diagonal element becomes $ (3 - f)/4 $, where f is the inbreeding in the known parent (Kennedy et al. 1988). Putting Equations 19.18a and 19.18b together yields $$ \\mathbf{V a r}(\\mathbf{a})=\\sigma_{A}^{2}\\mathbf{A}=\\mathbf{T}\\mathbf{V a r}(\\mathbf{w})\\mathbf{T}^{T}=\\sigma_{a}^{2}\\mathbf{T}\\boldsymbol{\\Lambda}\\mathbf{T}^{T} $$"
-    },
-    {
-      "type": "derivation",
-      "content": "Assuming $ \\sigma_{A}^{2} = \\sigma_{a}^{2} $ (no disequilibrium in the base population), then [[SEE_FORMULA:19.18c]] as obtained by Henderson (1976) and Thompson (1977). As an aside, this expression, coupled with the simple form for T, is what allowed Henderson (1976) to obtain a very rapid way of computing $ A^{-1} $. The critical feature of Equation 19.18c is that $ \\Lambda $, which describes the Mendelian sampling residuals, is independent of selection and assortative mating (under the infinitesimal model), and also accounts for the reduction in additive variance from genetic drift."
-    },
-    {
-      "type": "proposition",
-      "content": "If the infinitesimal model does not hold, then residual values may vary with parental breeding values, and hence selection can influence the distribution of residuals. Provided that the change in allele frequencies over the course of the experiment is small, this bias may not be too serious (e.g., Maki-Tanila and Kennedy 1986). Another key assumption from the infinitesimal model is that the distribution of residuals does not significantly deviate from normality. Chapter 24 examines this rather technical issue in some detail."
-    },
-    {
-      "type": "derivation",
-      "content": "When the genic variance, $ \\sigma_{a}^{2} $, itself is changing due to selection, knowledge of A is no longer sufficient to account for all changes in $ \\sigma_{A}^{2} $. Beniwal et al. (1992a) suggested that this complication might be (somewhat) accommodated by a modification of the additive-genetic covariance matrix. Consider the simple case of two time blocks with different (unknown) genic variances: the breeding values, $ a_1 $, in the first block have a base genic variance, $ \\sigma_a^2(1) $, while the vector of breeding values, $ a_2 $, from the second block start with a genic variance of $ \\sigma_a^2(2) $. First we decompose the diagonal matrix $ \\Lambda $ into two blocks $$ \\boldsymbol{A}=\\left(\\begin{array}{cc}\\boldsymbol{A}_{1}&\\mathbf{0}\\\\\\mathbf{0}&\\boldsymbol{A}_{2}\\end{array}\\right) $$ where $ A_{i} $ represents block i. The covariance matrix for the breeding values can be written as [[SEE_FORMULA:19.19]]"
-    },
-    {
-      "type": "discussion",
-      "content": "The variances $ \\sigma_a^2(1) $ and $ \\sigma_a^2(2) $ can be estimated separately using REML, and they correspond to the genic variances at the start of each block, which may be reduced by drift within the block. Heath et al. (1995) generalized this approach to allow the genic variance to change in each generation."
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:19.4]]"
     }
   ]
 }

@@ -2,7 +2,7 @@
   "id": "chapter29_025",
   "metadata": {
     "chapter": "chapter29",
-    "section": "Chapter 29: Quadratic Selection",
+    "section": "Individual Fitness and the Measurement of Univariate Selection: Introduction",
     "subsections": [
       "Partitioning Changes in Means and Variances Into Episodes of Selection"
     ],
@@ -18,7 +18,14 @@
       "29.23b",
       "29.23c"
     ],
-    "table_references": []
+    "table_references": [],
+    "section_level_1": "Individual Fitness and the Measurement of Univariate Selection: Introduction",
+    "section_level_2": "Partitioning Changes in Means and Variances Into Episodes of Selection",
+    "heading_path": [
+      "Individual Fitness and the Measurement of Univariate Selection: Introduction",
+      "Partitioning Changes in Means and Variances Into Episodes of Selection"
+    ],
+    "display_heading": "Partitioning Changes in Means and Variances Into Episodes of Selection"
   },
   "blocks": [
     {
@@ -34,24 +41,8 @@
       "content": "How do these individual-episode measures relate to their total measure (i.e., over all episodes)? The partition of the total differentials, $ S_{T} $ and $ C_{T} $, into those components are additive, with [[SEE_FORMULA:29.22d]] and [[SEE_FORMULA:29.22e]]"
     },
     {
-      "type": "discussion",
-      "content": "Example 29.8. For Example 29.2, following male body size over two episodes of selection, we find that $ \\widehat{S}_1 = \\overline{z}_1 - \\overline{z}_0 = -1.14 $, $ \\widehat{S}_2 = \\overline{z}_2 - \\overline{z}_1 = 0.02 $, and $ \\widehat{S}_T = -1.12 $. Likewise, $$ \\widehat{C}_{1}=\\operatorname{Var}[z_{1}]-\\operatorname{Var}[z_{0}]+\\widehat{S}_{1}^{2}=30.5-59.5+\\left(-1.12\\right)^{2}\\simeq-27.7 $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Similar calculations yield $ \\hat{C}_2 \\simeq 13.19 $ and $ \\hat{C}_T \\simeq -14.55 $. Based on this limited dataset, there appears to be directional selection to reduce body size during the first episode. In addition, there appears to be selection to reduce the variance in body size during the first episode (mate choice) countered by selection to increase this variance during the second episode (fertility per mating)."
-    },
-    {
-      "type": "derivation",
-      "content": "Partitioning $ \\beta $ and $ \\gamma $ requires a little more care, as we have to account for changes in the phenotypic variance following each episode. From their definitions, the appropriate gradients for the jth episode of selection are [[SEE_FORMULA:29.23a]]"
-    },
-    {
-      "type": "derivation",
-      "content": "In their original paper, Arnold and Wade (1984a) initially defined gradients for each episode using the baseline variance, $\\sigma_0^2$, throughout. With this definition, gradients are additive across episodes, as their numerators (being covariances) are additive and the denominators are unchanged. This approach is often called the additive partition (or more correctly, the unweighted additive partition), as $\\beta_T = \\sum \\beta_j^0$, where $\\beta_j^0 = S_j / \\sigma_0^2$. Kalisz (1986) and Wade and Kalisz (1989) noted that the correct definition for an episodic gradient depends upon the trait variance at the start of each episode (Equation 29.23a), and the variance is expected to change during each episode. Writing $S_j = \\beta_j \\sigma_{j-1}^2$ gives [[SEE_FORMULA:29.23b]]"
-    },
-    {
-      "type": "derivation",
-      "content": "Equation 29.23b defines the variance-weighted additive partition of gradients, where the total selection gradient is now a weighted sum of the individual gradients associated with each episode. The partition of $ \\gamma $ follows in a similar manner, with [[SEE_FORMULA:29.23c]] where $ \\gamma_j $ is calculated by Equation 29.23a. McGlothlin (2010) presented the multivariate version of Equation 29.23c and also revealed a key feature of Equation 29.23c. Note that $ \\gamma $ can be nonzero even when all of the values of $ \\gamma_j $ are zero. Further, when directional selection is occurring, the sign of $ \\gamma $ can be different from the sign of the average value of $ \\gamma_k $."
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:29.8]]"
     }
   ]
 }

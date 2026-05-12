@@ -2,40 +2,30 @@
   "id": "appendix4_024",
   "metadata": {
     "chapter": "appendix4",
-    "section": "Informal, or Narrative, Meta-analysis",
+    "section": "Appendix: Introduction",
     "subsections": [
-      "Informal, or Narrative, Meta-analysis"
+      "Closing Caveats in Using the FDR"
     ],
     "source_file": "tmp\\paddle_output\\appendix4_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [],
-    "table_references": [
-      "inline_6"
+    "table_references": [],
+    "section_level_1": "Appendix: Introduction",
+    "section_level_2": "Closing Caveats in Using the FDR",
+    "heading_path": [
+      "Appendix: Introduction",
+      "Closing Caveats in Using the FDR"
     ],
-    "table_reference_keys": [
-      "appendix4:inline_6"
-    ]
+    "display_heading": "Closing Caveats in Using the FDR"
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Table A4.3 shows the canonical structure of the data for a meta-analysis: one has a number of studies, either published or unpublished, dealing with a specific question (such as the average strength of natural selection; Chapter 30). Study i reports an estimate, $ T_{i} $ of an effect whose true (and unknown) value is denoted by $ \\theta_{i} $ . Unfortunately, however, many studies report only $ T_{i} $ and perhaps, $ p_{i} $ , although the latter is often simply reported in binary form (whether they are significant at some level or not) rather than as an actual value."
+      "content": "While controlling the FDR is a very powerful approach for many multiple-comparison problems, it is not a panacea. One concern is correlations among tests. As mentioned, in this case the null distribution of p values can significantly depart from a uniform, giving biased estimates of $ \\pi_{0} $ (and thus FDR). Further, recall that FDR control is accomplished by controlling the expected value of the FDR (or some closely related measure, such as the PFP). The variance in the FDR across independent experiments can be considerable, especially when the tests are correlated (Owen 2005; Leek and Storey 2011). One approach for treating these concerns is to use Leek and Storey's (2007, 2008) surrogate variable analysis to account for dependencies among the data before the actual p values for individual tests are obtained."
     },
     {
       "type": "discussion",
-      "content": "In settings where studies simply report $ T_{i} $ (and perhaps $ p_{i} $ ), only an informal, or narrative, MA can be performed. Here, one simply presents the statistics on the collection of $ T_{i} $ values, such as a histogram of effects or some metric on their overall distribution (such as their mean, median, or variance). Often these summary statistics are compared over different"
-    },
-    {
-      "type": "discussion",
-      "content": "values of any moderator variables (cofactors) associated with the data. For example, a comparison of whether the distribution of reported selection gradient $ (\\beta) $ values vary between the sexes or over different episodes of selection."
-    },
-    {
-      "type": "discussion",
-      "content": "If the p values are only reported in a binary fashion (e.g., significant or nonsignificant), a vote-counting (Light and Smith 1971) scheme is used, which details the number of significant differences out of a collection of tests. Again, these results might be contrasted over different moderator variables, such as those over males versus females. If the actual p values are published, then the methods given earlier in this Appendix for combining the (presumably independent) p values can be used. Both the vote-counting and combined p value approaches are examples of the null hypothesis significance testing (NHST) framework, and represent the least powerful form of MA (Hedges and Olkin 1980). Stewart (2010) bemoaned the fact that these approaches have \"a long history that lingers beyond its sellby date.\" Unfortunately, many published studies in quantitative genetics only present $ p_{i} $ values (either actual values or values coded as significant or not significant), thus limiting the meta-analyst to these least-powerful approaches."
-    },
-    {
-      "type": "proposition",
-      "content": "Furthermore, most MAs are not simply concerned about whether an effect is significant, as the usual assumption is that it is indeed. Rather, their motivation is in determining the size of the effect and whether it varies over cofactors of interest (for example, whether selection is stronger in males than females). If we focus only on p values, this information will be lost. When a study also reports standard errors for the test statistics (the $ s_i $ in Table A4.3), then a formal MA can proceed, which allows the meta-analyst to combine estimates of effect sizes, weighted by their precision, over the studies. This exploits the full power of an MA but critically depends on full transparency in reported studies (at a minimum, reporting values of $ s_i^2 $), something that is, surprisingly, often lacking."
+      "content": "A second issue is a bit more subtle. Consider a standard QTL mapping experiment (LW Chapter 15) wherein a controlled cross is made between two lines (which are typically inbred) and one looks for marker-trait associations in the resulting $ F_{2} $ (or other) progeny by scanning for linkage signals across a number of linked markers that span each chromosome. For each marker, the null hypothesis is that there is no linkage to a QTL influencing the trait, while the alternative is that the marker is linked to a QTL. As noted by Chen and Storey (2006), the linkage signal from a QTL influences essentially all the markers on the chromosome arm on which it resides, and so as a group they all satisfy the same hypothesis. Either all are nulls (unlinked to a QTL) or all are failures of the null (linked to a QTL, albeit with differing degrees of a linkage signal). As such, investigators can arbitrarily obtain any FDR level they desire by simply adding or subtracting linked markers, and FDR control is not appropriate for this setting (Chen and Storey 2006). To a much lesser extent, the same issue occurs in genome-wide association studies among sets of extremely tightly linked SNPs. However, because the linkage signal in these cases is the persistence of linkage disequilibrium (LD) over a large number of generations, any common signal is restricted to a set of very tightly linked markers rather than an entire chromosome, and control of the FDR among such clusters is appropriate."
     }
   ]
 }

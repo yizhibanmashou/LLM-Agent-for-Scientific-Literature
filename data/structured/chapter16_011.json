@@ -2,7 +2,7 @@
   "id": "chapter16_011",
   "metadata": {
     "chapter": "chapter16",
-    "section": "Double-Truncation Selection: Theory",
+    "section": "Short-term Changes in the Variance: 1. Changes in the Additive Variance: Introduction",
     "subsections": [
       "Double-Truncation Selection: Theory"
     ],
@@ -10,10 +10,19 @@
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [],
     "table_references": [
-      "16.1"
+      "16.1",
+      "inline_2"
     ],
+    "section_level_1": "Short-term Changes in the Variance: 1. Changes in the Additive Variance: Introduction",
+    "section_level_2": "Double-Truncation Selection: Theory",
+    "heading_path": [
+      "Short-term Changes in the Variance: 1. Changes in the Additive Variance: Introduction",
+      "Double-Truncation Selection: Theory"
+    ],
+    "display_heading": "Double-Truncation Selection: Theory",
     "table_reference_keys": [
-      "chapter16:16.1"
+      "chapter16:16.1",
+      "chapter16:inline_2"
     ]
   },
   "blocks": [
@@ -30,28 +39,8 @@
       "content": "The approach to the equilibrium value, d, also behaves differently under disruptive selection. Under directional and stabilizing selection, the majority of reduction in the additive variance occurs in the first few generations. However, the increase in the variance toward its equilibrium value under disruptive selection requires many more generations, as Example 16.4 illustrates."
     },
     {
-      "type": "discussion",
-      "content": "Example 16.4. Consider a normally distributed character with $ \\sigma_z^2 = 100 $ and $ h^2 = 0.5 $ in a random-mating population. To compare the effects of stabilizing and disruptive selection, suppose that in one replicate, disruptive selection is practiced via double truncation with $ p = 0.5 $ (the upper and lower 25% of the population are saved), while stabilizing selection with $ p = 0.5 $ (the upper and lower 25% are culled) is practiced in the other. To obtain $ \\kappa $ (from [[SEE_TABLE:16.1]]), first note that for stabilizing selection, $ x_{[1/2+p/2]} = x_{[0.75]} = 0.674 $, while for disruptive selection, $ x_{[1-p/2]} = x_{[0.75]} $, with $ \\varphi(0.674) = 0.318 $. Using these values, Equations 16.11b and 16.11c yield $$ \\kappa=\\pm(2\\cdot0.318\\cdot0.674)/0.5=\\pm0.857 $$ where the plus sign is used for stabilizing selection, and the minus sign is used for disruptive selection. Equation 16.12d becomes $$ d(t+1)=\\frac{d(t)}{2}\\mp0.429\\frac{\\left[50+d(t)\\right]^{2}}{100+d(t)} $$ where, because the equation is in terms of $ -\\kappa $, the minus sign in this expression corresponds to stabilizing selection and the plus sign to disruptive selection. Starting selection on a base population with d = 0 and iterating the above equation yields"
-    },
-    {
-      "type": "discussion",
-      "content": "[[TABLE:16.1]]), first note that for stabilizing selection, $ x_{[1/2+p/2]} = x_{[0.75]} = 0.674 $, while for disruptive selection, $ x_{[1-p/2]} = x_{[0.75]} $, with $ \\varphi(0.674) = 0.318 $. Using these values, Equations 16.11b and 16.11c yield"
-    },
-    {
-      "type": "discussion",
-      "content": "Note that with disruptive selection, the absolute change in d is much greater and the time to approach equilibrium considerably longer than with stabilizing selection."
-    },
-    {
-      "type": "discussion",
-      "content": "Now suppose that after the equilibrium value of $d$ has been reached, both of these two populations are then subjected to directional selection. In particular, assume directional truncation selection, with the upper 20 percent of the population being saved. The recursion equation for the disequilibrium contribution is given in Example 16.3, but now the initial disequilibrium values are $d(0) = -13.32$ for the population with a previous history of stabilizing selection and $d(0) = 82.69$ for the population with a previous history of disruptive selection. From Example 16.3, the per-generation response is $R(t) = h^2(t)$ and $z(t)$ is plotted in Figure 16.6 for both populations. The resulting changes in $d$ and the heritability under these two treatments are also plotted in Figure 16.6. If stabilizing or disruptive selection are stopped for $k$ generations before truncation selection, $d(0)$ is replaced by $d(0)/2^k$."
-    },
-    {
-      "type": "discussion",
-      "content": "Initially there is a large difference in $d$ (and hence in $h^{2}$ and in the response) between the replicates, but after three generations, both have essentially the same value, converging to $\\tilde{d} = -12.54$ and hence a per-generation response of $\\tilde{R} = 5.6$, the equilibrium value under directional truncation selection (see Example 16.3). As plotted in Figure 16.6, the replicate that was originally subjected to disruptive selection shows a higher cumulative response, due to larger responses resulting from higher heritabilities in the first few generations. This difference in cumulative response is permanent—it does not decay away once selection stops."
-    },
-    {
-      "type": "discussion",
-      "content": "Hence, we expect that if an unselected base population is divided into three replicates, one first subjected to disruptive selection, another subjected to stabilizing selection, and the third to no selection, and if directional selection is then applied, the largest response should occur in the disruptively selected replicate and the smallest in the replicate that underwent stabilizing selection. This pattern is indeed seen in artificial selection experiments on Drosophila sternopleural bristles (Thoday 1959) and wing length (Tantawy and Tayel 1970)."
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:16.4]]"
     }
   ]
 }

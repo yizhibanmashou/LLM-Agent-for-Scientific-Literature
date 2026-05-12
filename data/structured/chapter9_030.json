@@ -2,7 +2,7 @@
   "id": "chapter9_030",
   "metadata": {
     "chapter": "chapter9",
-    "section": "Chapter 9: Tests of Sweeps Using Bottleneck Models",
+    "section": "Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction",
     "subsections": [
       "Tests of Sweeps Using Genomic Positional Information: “SweepFinder”"
     ],
@@ -13,7 +13,14 @@
       "9.18b",
       "9.18c"
     ],
-    "table_references": []
+    "table_references": [],
+    "section_level_1": "Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction",
+    "section_level_2": "Tests of Sweeps Using Genomic Positional Information: “SweepFinder”",
+    "heading_path": [
+      "Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction",
+      "Tests of Sweeps Using Genomic Positional Information: “SweepFinder”"
+    ],
+    "display_heading": "Tests of Sweeps Using Genomic Positional Information: “SweepFinder”"
   },
   "blocks": [
     {
@@ -26,15 +33,11 @@
     },
     {
       "type": "derivation",
-      "content": "While SweepFinder uses only sites that show variation within the sample, Huber et al. (2016) expanded the original concept by including sites that show fixed differences with an outgroup. This partly accounts for the variation in mutation rates, and their simulations showed that this improves both power and precision. Finally, if one assumes that background selection is a more appropriate null (as suggested in the introduction to this chapter), the presumed neutral sites must be chosen from genomic regions whose ratio of gene density to recombination rate is similar to that of the target region. Huber et al. (2016) discussed how to replace the empirical p (the observed site-frequency for reference, and presumably neutral, loci) with estimates corrected for background selection. the sweep is binomial, with a success probability of $ 1 - f_{s} $, yielding [[SEE_FORMULA:9.18a]] where $ \\lambda = (1/2hs) \\ln(4N_e s) $ measures the strength of selection (Equation 9.16b) and is constant over all linked sites, while $ c $ varies with the distance of our focal marker from the target of selection. There are $ M = \\min(\\ell + 1, n) $ lineages (the $ \\ell $ distinct lineages and the single lineage associated with the sweep). Conditioned on $ \\ell $, we need to compute $ p_{s,i} $, the probability of seeing $ i/n $ derived alleles in our sample. We then average this over $ P_e(\\ell) $ to obtain the likelihood for a site. The probability of finding $ i $ derived alleles in a sample of the $ M $ lineages following the sweep is [[SEE_FORMULA:9.18b]] where the combinatorial term in the sum is from the hypergeometric distribution. Assuming there are $j$ copies of the derived allele in a sample of $n$ initial lineages before the sweep, this term gives the probability that $M$ draws (without replacement) will yield $i$ copies in our sample. Averaging over the probability, $p_{j}$, that $j$ copies of the derived allele (the $j$th element in $\\mathbf{p}$) were in this ancestral sample yields $\\operatorname{Pr}(i|M)$. Given that there are $i$ lineages of the $M$ carrying the derived allele, the probability that the derived allele is in the lineage that did not escape is simply $i/M$."
+      "content": "While SweepFinder uses only sites that show variation within the sample, Huber et al. (2016) expanded the original concept by including sites that show fixed differences with an outgroup. This partly accounts for the variation in mutation rates, and their simulations showed that this improves both power and precision. Finally, if one assumes that background selection is a more appropriate null (as suggested in the introduction to this chapter), the presumed neutral sites must be chosen from genomic regions whose ratio of gene density to recombination rate is similar to that of the target region. Huber et al. (2016) discussed how to replace the empirical p (the observed site-frequency for reference, and presumably neutral, loci) with estimates corrected for background selection."
     },
     {
-      "type": "derivation",
-      "content": "For a derived allele to have $i$ copies at a site following the sweep means that it either was linked to the favorable allele, and hence was present in $(i+\\ell+1-n)$ of the $\\ell+1$ lineages at the start of the sweep, leading to $i$ copies in the sample, or it was not associated with the favorable mutation, so that $i$ copies in the initial $\\ell+1$ lineages results in $i$ copies in the sample. Putting these together gives the likelihood as [[SEE_FORMULA:9.18c]]"
-    },
-    {
-      "type": "discussion",
-      "content": "The first term is the probability that all of the sampled lineages escaped the sweep, simply recovering the background spectrum $ (p_i) $. The values given by Equation 9.18c replace those given by Equation 9.16a to construct the likelihood under a sweep. It is useful to note where parameters appear. The sweep strength $ (\\lambda) $ and location $ (c) $ appear through $ f_s $ in the $ P_e(\\ell) $ term (Equation 9.18a), the number of lineages that escaped the sweep. The empirical background spectrum, $ \\mathbf{p} $, appears in the $ \\mathrm{Pr}(i \\mid M) $ terms (Equation 9.18b) that populate the original sample of lineages at the start of the sweep. Improvements to the original SweepFinder have been suggested, such as the computationally more efficient version SweeD (Pavlidis et al. 2013)."
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:9.9]]"
     }
   ]
 }

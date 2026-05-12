@@ -2,7 +2,7 @@
   "id": "chapter24_023",
   "metadata": {
     "chapter": "chapter24",
-    "section": "Chapter 24: Describing the Genotypic Distribution: Moments",
+    "section": "The Infinitesimal Model and Its Extensions: Introduction",
     "subsections": [
       "Describing the Genotypic Distribution: Cumulants and Gram-Charlier Series"
     ],
@@ -13,7 +13,14 @@
       "24.21a",
       "24.21b"
     ],
-    "table_references": []
+    "table_references": [],
+    "section_level_1": "The Infinitesimal Model and Its Extensions: Introduction",
+    "section_level_2": "Describing the Genotypic Distribution: Cumulants and Gram-Charlier Series",
+    "heading_path": [
+      "The Infinitesimal Model and Its Extensions: Introduction",
+      "Describing the Genotypic Distribution: Cumulants and Gram-Charlier Series"
+    ],
+    "display_heading": "Describing the Genotypic Distribution: Cumulants and Gram-Charlier Series"
   },
   "blocks": [
     {
@@ -49,16 +56,12 @@
       "content": "Bulmer (1980), Zeng (1987), and Turelli and Barton (1994) used Gram-Charlier series to examine departures from normality under selection. Further properties of cumulants and Gram-Charlier (and other) series approximations are discussed in Johnson and Kotz (1970a) and Kendall and Stuart (1977). One potentially troublesome issue with Equation 24.21a is that the term in the square brackets can be negative for some y values (and hence not a proper probability distribution) if too low an order of approximation is used."
     },
     {
-      "type": "discussion",
-      "content": "Example 24.6. Cumulants can be used to easily compute the fourth and fifth central moments of the phenotypic distribution. Here, $ z = G + E $, so (Equation 24.20) the fourth moment is $$ \\begin{aligned}\\mu_{4,z}&=K_{4,z}+3K_{2,z}^{2}\\\\&=\\left[K_{4,G}+K_{4,E}\\right]+3\\left(K_{2,G}+K_{2,E}\\right)^{2}\\\\&=\\left[\\left(\\mu_{4,G}-3\\mu_{2,G}^{2}\\right)+\\left(\\mu_{4,E}-3\\mu_{2,E}^{2}\\right)\\right]+3\\left(\\mu_{2,G}+\\mu_{2,E}\\right)^{2}\\\\&=\\mu_{4,G}+\\mu_{4,E}+6\\sigma_{G}^{2}\\sigma_{E}^{2}\\\\ \\end{aligned} $$ where the second and third steps, respectively, follow from the additivity property of cumulants $ (K_{n,z}=K_{n,G}+K_{n,E}) $ and from Equation 24.20, while the final step recovers Equation 24.15. Likewise $$ \\begin{aligned}\\mu_{5,z}&=K_{5,z}+10K_{2,z}K_{3,z}\\\\&=(\\boldsymbol{K}_{5,G}+\\boldsymbol{K}_{5,E})+10(\\boldsymbol{K}_{2,G}+\\boldsymbol{K}_{2,E})(\\boldsymbol{K}_{3,G}+\\boldsymbol{K}_{3,E})\\\\&=(\\mu_{5,G}-10\\mu_{2,G}\\mu_{3,G})+(\\mu_{5,E}-10\\mu_{2,E}\\mu_{3,E})\\\\&\\quad+10(\\mu_{2,G}+\\mu_{2,E})(\\mu_{3,G}+\\mu_{3,E})\\\\&=\\mu_{5,G}+\\mu_{5,E}+10(\\mu_{2,G}\\mu_{3,E}+\\mu_{2,E}\\mu_{3,G})\\end{aligned} $$"
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:24.6]]"
     },
     {
-      "type": "discussion",
-      "content": "These nonlinear expressions for the higher-order moments of a sum of variables are in sharp contrast to the expressions for cumulants, in which $ K_{n,z} = K_{n,G} + K_{n,E} $."
-    },
-    {
-      "type": "discussion",
-      "content": "Example 24.7. To see the advantage of working with cumulants, consider the fourth cumulant of the genotypic distribution. Equation 24.19d presented a rather complex expression for the fourth moment, but we can use cumulants to easily obtain this result. If the underlying genes are additive across loci (no epistasis), the nth cumulant of the genotypic distribution is the sum of the appropriate cumulants for each of the underlying loci. Following Turelli and Barton (1994) $$ K_{4,G}=\\sum_{i,j,k,\\ell=1}^{n}K_{i j k\\ell}=\\sum_{i=1}^{n}K_{i i i i}+\\sum_{i=1}^{n}\\sum_{j,k,\\ell\\neq i}^{n}K_{i j k\\ell} $$ the sum over $ K_{iii} $ represents the within-locus contributions to the fourth cumulant, while the sums over the other indices are the contributions to $ K_4 $ from fourth-order disequilibria between loci. We recover Equation 24.19d by noting that $ \\mu_{4,G} = K_{4,G} + 3\\sigma_A^4 $ and substituting $$ M_{4}=\\sum_{i=1}^{n}K_{iiii}\\quad and\\quad K_{ijk\\ell}=C_{ijk\\ell}-C_{ij}C_{k\\ell}-C_{ik}C_{j\\ell}-C_{i\\ell}C_{jk} $$"
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:24.7]]"
     }
   ]
 }

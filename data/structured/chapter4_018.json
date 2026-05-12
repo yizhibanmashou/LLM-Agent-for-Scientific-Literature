@@ -2,7 +2,7 @@
   "id": "chapter4_018",
   "metadata": {
     "chapter": "chapter4",
-    "section": "Chapter 4: Short-term Enrichment",
+    "section": "The Nonadaptive Forces of Evolution: Introduction",
     "subsections": [
       "Short-term Enrichment"
     ],
@@ -15,7 +15,14 @@
       "4.22c",
       "4.22d"
     ],
-    "table_references": []
+    "table_references": [],
+    "section_level_1": "The Nonadaptive Forces of Evolution: Introduction",
+    "section_level_2": "Short-term Enrichment",
+    "heading_path": [
+      "The Nonadaptive Forces of Evolution: Introduction",
+      "Short-term Enrichment"
+    ],
+    "display_heading": "Short-term Enrichment"
   },
   "blocks": [
     {
@@ -39,24 +46,8 @@
       "content": "Rearrangement leads to the estimator $ \\widehat{m} = -\\ln(p_0) $, which ignores the sampling bias resulting from the error in estimating $ p_0 $. This approach works well when m is on the order of 0.5 to 2.5, but with more extreme values, $ p_0 $ will be close enough to 0.0 or 1.0 that meaningful estimates are not possible unless the number of cultures is enormous. A second disadvantage of this approach is its failure to use most of the information in the set of cultures, as the distribution of mutant numbers among replicate cultures is completely ignored. Full use of such information can be incorporated into a maximum-likelihood framework (e.g., Lea and Coulson 1949; Sarkar et al. 1992)."
     },
     {
-      "type": "derivation",
-      "content": "Example 4.3. The mutation rate in an exponentially growing culture can be estimated by considering the expected temporal dynamics of the frequency of mutant cells in the population. Letting $ f_{0} $ be the initial frequency of mutations, r be the rate of exponential growth of the numbers of cells in the culture (assumed to be identical for cells that are mutant and nonmutant). at the marker locus), and $ u_{o} $ be the rate of mutation to an observable phenotype per cell division, the expected frequency after t time units is [[SEE_FORMULA:4.22a]]"
-    },
-    {
-      "type": "derivation",
-      "content": "This follows from the fact that $ e^{-u_ort} $ is the probability that a descendant of a nonmutant cell has not acquired a detectable mutation after rt cell divisions. Note that if one starts with a mutation-free culture ($ f_0 = 0 $) and the cumulative probability of mutation ($ \\simeq u_ort $) is $ \\ll 1 $, the expected fraction of mutant cells will increase in an essentially linear fashion at a rate of $ u_ort $. Because of the stochastic nature of mutations, results from single cultures are not reliable with this approach. Thus, motivated by the original design of Luria and Delbrück (1943), most studies of microbial mutation grow a moderate number of initially (putatively) mutation-free cultures up to an arbitrarily large population size and then survey the frequency of mutants at the end point of each culture. Rearrangement of the preceding expression yields the relevant point estimator of the mutation rate to observable phenotypes, [[SEE_FORMULA:4.22b]] Because $ N_t = N_0 e^{rt} $ under exponential growth, where $ N_0 $ and $ N_t $ are the total numbers of cells in the culture at times 0 and t, so long as the observed mutant frequencies are < 0.1, so that $ \\ln(1 - f) \\simeq -f $, Equation 4.22b further simplifies to [[SEE_FORMULA:4.22c]] which is simply the rate of accumulation of observable mutations per cell division."
-    },
-    {
-      "type": "derivation",
-      "content": "Drake (1991) argued that this essentially deterministic view of the rate of increase of mutants is unlikely to hold very well until a culture has reached a large enough size to harbor at least some mutations, which is expected to take several generations. Taking the view that a reasonable benchmark is the point at which a culture is expected to contain a single mutant, which implies $ u_o N = 1 $, $ f_0 = u_o $ and $ N_0 = 1/u_o $ can be used as an arbitrary starting point, which, after substitution into Equation 4.22c, leads to [[SEE_FORMULA:4.22d]]"
-    },
-    {
-      "type": "discussion",
-      "content": "Given just the total number of cells, $ N_t $, and the frequency of mutants at the end point, $ f_t $, this expression can be solved recursively to obtain the estimate $ \\widehat{u}_o $. When data are available from multiple cultures, $ f_t $ is generally taken to be the median frequency of mutants, as the mean can be strongly biased if the sample includes any “jackpot” cultures that happened to have acquired a mutation during an early cell division."
-    },
-    {
-      "type": "discussion",
-      "content": "Conversion of the rate of origin of observable mutations, $ u_{o} $, to an estimate of the mutation rate at the nucleotide level requires that the fraction of detectable mutations at the marker locus (d) be known. Many mutations have no phenotypic effects, e.g., because they arise at silent sites or at amino-acid replacement sites that have no substantive effect on the causal locus. To determine the fraction of undetectable mutations, a large number of independent mutant cells can be sequenced to ascertain the molecular basis of the changes at the target locus and the degree to which these are concentrated at particular sites. Generally, because the mutation rate per nucleotide site is quite low, no more than a single change is found within any particular sequenced gene, so there is little ambiguity as to the identity of causal mutations."
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:4.3]]"
     }
   ]
 }

@@ -2,35 +2,79 @@
   "id": "chapter23_024",
   "metadata": {
     "chapter": "chapter23",
-    "section": "Chapter 23: Within-family Selection Under Selfing",
+    "section": "Selection Under Inbreeding: Introduction",
     "subsections": [
-      "Within-family Selection Under Selfing"
+      "Combined Selection"
     ],
     "source_file": "tmp\\paddle_output\\chapter23_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [
-      "23.42a",
-      "23.42b",
-      "23.42c",
-      "23.42d",
-      "23.43a",
-      "23.43b",
-      "23.43c"
+      "23.44",
+      "23.45",
+      "23.46a",
+      "23.46b",
+      "23.47a",
+      "23.47b",
+      "23.48a",
+      "23.48b",
+      "23.49",
+      "23.50a",
+      "23.50b",
+      "23.50c",
+      "23.51",
+      "23.52",
+      "23.53",
+      "23.54a"
     ],
-    "table_references": []
+    "table_references": [],
+    "section_level_1": "Selection Under Inbreeding: Introduction",
+    "section_level_2": "Combined Selection",
+    "heading_path": [
+      "Selection Under Inbreeding: Introduction",
+      "Combined Selection"
+    ],
+    "display_heading": "Combined Selection"
   },
   "blocks": [
     {
       "type": "derivation",
-      "content": "Our results for selfing thus far have only been concerned with selection among lines. If selection is practiced entirely within a single selfed lineage (e.g., within the progeny of a single selfed individual), genetic variation is quickly removed and the selection response rapidly ceases. Pederson (1969b) obtained the response remaining in generation T from within-family selection in generation t as [[SEE_FORMULA:23.42a]] where $ \\sigma_{E_{w}}^{2} $ is the within-family environmental variance among individuals. If we apply Equation 23.37c, this becomes [[SEE_FORMULA:23.42b]]"
+      "content": "Suppose $ n_2 $ $ F_2 $ individuals are collected and selfed to create $ F_3 $ families of size $ n_3 $ for each of the $ F_2 $ founding lines. In trying to choose the best $ F_3 $ line, we might consider combined selection, basing the choice of which individuals to save on both their individual values ($ z_{ij} $) and the average value of the entire $ F_2 $ family ($ \\overline{z}_{i.} $) from which they derive, with $$ \\overline{z}_{i.}=\\frac{1}{n_{3}}\\sum_{j=1}^{n_{3}}z_{ij} $$ where $ n_{3} $ is the number of measured sibs in the family. By analogy with the family index (Chapter 21), we can select individuals using the index [[SEE_FORMULA:23.44]] As with the standard family index, a large value of b places more weight on the family average, while a small value of b places more weight on the individual value. Individuals chosen of the basis of a superior I value are then selfed to complete fixation in order to generate a fully inbred line. The expected response in generation T of selfing follows from a slight modification to the generalized breeder's equation (Equation 13.10b), and is [[SEE_FORMULA:23.45]] where $ y_T $ is a direct descendant of the individual $ z_{ij} $ in generation $ T $ of selfing. The permanent response is given by considering $ T = \\infty $."
     },
     {
       "type": "derivation",
-      "content": "Recalling Equation 23.34, for a pure-line cross, we have $$ \\sigma_{G}(T,t,t)-\\sigma_{G}(T,t,t-1)= $$ [[SEE_FORMULA:23.42c]] where the sum is over the degree of A-epistasis. Ignoring epistasis, the cumulative response to k generations of selection at generation T > k is [[SEE_FORMULA:23.42d]]"
+      "content": "It will be useful at this point to introduce two variance components that will (somewhat) simplify our results. First define [[SEE_FORMULA:23.46a]] as the variance between crosses (the different $ F_{2}s $) and [[SEE_FORMULA:23.46b]] as the variance in lines within crosses (the variance in deviations from the mean cross effect). For a pure-line cross, these variances are [[SEE_FORMULA:23.47a]] [[SEE_FORMULA:23.47b]] With these variance components in hand, consider the numerator of Equation 23.45. First note that $$ \\sigma(I_{ij},y_{T})=b\\sigma(\\overline{z}_{i.},y_{T})+\\sigma(z_{ij},y_{T}) $$ Because $ y_{T} $ is a direct descendant of line ij, $ \\tau = t = 1 $, hence [[SEE_FORMULA:23.48a]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Likewise, $$ \\sigma(\\overline{z}_{i.},y_{T})=\\frac{1}{n_{3}}\\sum_{k=1}^{n_{3}}\\sigma(z_{ik},y_{T})=\\frac{\\sigma(z_{ij},y_{T})}{n_{3}}+\\left(1-\\frac{1}{n_{3}}\\right)\\sigma(z_{ik},y_{T}) $$"
     },
     {
       "type": "derivation",
-      "content": "(Pederson 1969b). Note that the sum here begins at selfing generation 1, as selection starts within the $ S_1 $ inbred family. Because any within-family genetic variation rapidly decays, after only a few generations the response essentially stops, with the amount of permanent response due to selection in generation $ t $ depending on $ \\sigma_A^2 / 2^t $. Because [[SEE_FORMULA:23.43a]] it follows that the permanent response $ (T \\to \\infty) $ can be bounded by noting [[SEE_FORMULA:23.43b]] Because the leftmost and rightmost power series sum to one, the total permanent response $ R(\\infty \\mid \\infty) $ under continued within-family selection (ignoring new mutation) is [[SEE_FORMULA:23.43c]] showing that the total response is at least twice the response of the first generation ($ \\bar{\\imath}h\\sigma_{A}/2 $)."
+      "content": "The first term is given by Equation 23.48a, while the second is the covariance between a sib, $ z_{ik} $, of individual ij. Here, the common parent between ik and y is the $ F_2 $, meaning that $ t = 0, \\tau = 1 $, and this covariance is $ \\sigma_G(T, 1, 0) $. Putting these together, [[SEE_FORMULA:23.48b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "The numerator covariance in Equation 23.45 thus becomes [[SEE_FORMULA:23.49]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Now turning to the variance of the selection index, [[SEE_FORMULA:23.50a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "First, consider the variance of a random $ F_{3} $ line, [[SEE_FORMULA:23.50b]] where $ \\sigma_{\\epsilon}^{2} $ is the within-line error variance. Next, note that $$ \\sigma^{2}\\left(\\overline{z}_{i.}\\right)=\\frac{n_{3}\\sigma^{2}\\left(z_{i j}\\right)}{n_{3}^{2}}+\\frac{n_{3}\\left(n_{3}-1\\right)\\sigma\\left(z_{i j},z_{i k}\\right)}{n_{3}^{2}}=\\frac{\\sigma^{2}\\left(z_{i j}\\right)}{n_{3}}+\\left(1-\\frac{1}{n_{3}}\\right)\\sigma\\left(z_{i j},z_{i k}\\right) $$"
+    },
+    {
+      "type": "derivation",
+      "content": "The first covariance is given by Equation 23.50b, while the second is the covariance between sibs, $ \\sigma(1,1,0) $, which yields [[SEE_FORMULA:23.50c]] Finally, we can show that $ \\sigma\\left(\\overline{z}_{i.}, z_{ij}\\right) = \\sigma^{2}\\left(\\overline{z}_{i.}\\right) $. Putting all these together gives [[SEE_FORMULA:23.51]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Substitution of Equations 23.49 and 23.51 into 23.45 shows the expected response for arbitrary b and T > 1."
+    },
+    {
+      "type": "derivation",
+      "content": "An obvious question is what value of b maximizes response? Taking the derivative of Equation 23.45 with respect to b and solving for zero returns the optimal value as [[SEE_FORMULA:23.52]] As with family-index selection (Chapter 21), the selection intensity is reduced by the fact that $ F_3 $ lines from the same $ F_2 $ are related and hence correlated, and we must correct for this correlation. Letting $ \\rho $ be the correlation between the index scores from lines in the same cross, if we choose the best $ K $ from $ N = n_2 n_3 $ total lines ($ n_3 $ lines from each of $ n_2 $ $ F_2' $s), then Equation 21.57b returns the adjusted selection intensity as [[SEE_FORMULA:23.53]] where $q = K/N$ is the fraction saved (we use $q$ in place of our normal usage of $p$ to avoid confusion here with $\\rho$) and $\\bar{\\nu}_q$ the infinite-population size selection intensity (Equation 14.3a). To compute the correlation, $\\rho$, between index scores, first note that [[SEE_FORMULA:23.54a]]"
     }
   ]
 }

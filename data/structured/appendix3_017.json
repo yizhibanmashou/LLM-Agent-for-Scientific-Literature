@@ -2,27 +2,38 @@
   "id": "appendix3_017",
   "metadata": {
     "chapter": "appendix3",
-    "section": "More Formal Approaches",
+    "section": "Appendix: Introduction",
     "subsections": [
-      "Practical MCMC: How Many Chains and How Long Should They Run?"
+      "THE GIBBS SAMPLER"
     ],
     "source_file": "tmp\\paddle_output\\appendix3_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [],
-    "table_references": []
+    "table_references": [],
+    "section_level_1": "Appendix: Introduction",
+    "section_level_2": "THE GIBBS SAMPLER",
+    "heading_path": [
+      "Appendix: Introduction",
+      "THE GIBBS SAMPLER"
+    ],
+    "display_heading": "THE GIBBS SAMPLER"
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "One can either use a single long chain (Geyer 1992; Raftery and Lewis 1992b) or multiple chains, with each starting from different initial values (Gelman and Rubin 1992). Note that with parallel processing, using multiple chains may be computationally more efficient (given a fixed amount of analysis time) than a single long chain. One suggested approach (Kass et al. 1998) is to use five parallel chains with widely separated starting values, and to start the jth value for parameter $ \\theta_{i} $ at $ \\mu_{i} + (j-2)\\sigma_{i} $ , where $ \\mu_{i} $ and $ \\sigma_{i}^{2} $ are the prior values for $ \\theta_{i} $ . Alternatively, one could randomly sample j from $ (-2,1,0,1,2) $ for each parameter to generate the vector of starting values."
+      "content": "The Gibbs sampler (introduced in the context of image processing by Geman and Geman 1984), is a special case of Metropolis-Hastings sampling wherein the random value is always accepted (i.e., $ \\alpha = 1 $). The key to the Gibbs sampler is that, at any point in the process, one only considers univariate conditional distributions—the distribution when all but one of the random variables are assigned fixed values. Such conditional distributions are far easier to simulate than complex joint distributions and usually have simple forms (often they are normals, inverse- $ \\chi^{2} $, or other common prior distributions). An important use of conjugate priors (Table A2.2) is that they often result in relatively simple forms for conditional distributions. Thus, one simulates n random variables sequentially from the n univariate conditionals rather than generating a single n-dimensional vector in a single pass using the full joint distribution. Given their great efficiency (every value is accepted), it is often thought that one should strive to generate a Gibbs sampler whenever possible. However, one should consult Geyer (2011) for a different perspective."
     },
     {
       "type": "discussion",
-      "content": "Geyer (1992, 2011), however, forcefully argued that using a single long chain is the best approach. If the chain transition times between different parts of a distribution are long, then a series of shorter chains may entirely miss this problem, even if their starting values are widely dispersed. Theory basically tells us that, provided we run a chain for a long enough time, the results will be accurate. The best way to do so is to run a single, long chain. Convergent tests (still recognizing their problems mentioned previously) can be applied to subsections of a long chain as efficiently as they can be applied across shorter, parallel-running chains."
+      "content": "To introduce the Gibbs sampler, consider a bivariate random variable $ (x, y) $, and suppose we wish to compute one or both of the marginals, $ p(x) $ and $ p(y) $. The idea behind the sampler is that it is far easier to consider a sequence of conditional distributions, $ p(x \\mid y) $ and $ p(y \\mid x) $, than it is to obtain the marginal by integration of the joint density $ p(x, y) $, namely, $ p(x) = \\int p(x, y) \\, dy $. The sampler starts with some initial value, $ y_0 $, for y and obtains $ x_0 $ by generating a random variable from the conditional distribution $ p(x \\mid y = y_0) $. The sampler then uses $ x_0 $ to generate a new value of $ y_1 $, drawing from the conditional distribution based on the value of $ x_0 $, $ p(y \\mid x = x_0) $. The sampler proceeds as follows: $$ x_{i}\\sim p(x\\mid y=y_{i-1}) $$ $$ y_{i}\\sim p(y\\mid x=x_{i}) $$"
     },
     {
-      "type": "discussion",
-      "content": "Given these concerns, what is the answer to the critical question about how long to run a chain? Geyer's dictums (2011) are that (i) “the least one can do is to make an overnight run. What better way for your computer to spend its time?” and (ii) ideally, “one should start a run when the paper is submitted and keep running until the referees’ reports arrive.”"
+      "type": "proposition",
+      "content": "Repeating this process $k$ times generates a Gibbs sequence of length $k$, where a subset of points $(x_j, y_j)$ for $1 \\leq j \\leq m < k$ are taken as our simulated draws from the full joint distribution. One iteration of all the univariate distributions is often called a $\\mathbf{scan}$ of the sampler. To obtain the desired total of $m$ sample values (here each value in the sampler is a vector of realizations of the two random variables), one samples the chain following a sufficient burn-in to remove the effects of the initial starting values, potentially thinning the sequence as well. The Gibbs sequence converges to a stationary (equilibrium) distribution that is independent of the starting values, and by construction this stationary distribution is the target distribution we are trying to simulate (Tierney 1994). As with any MCMC, a guarantee of convergence at some limit is no guarantee that our sample size is sufficiently large to justify the assumption of stationarity for a burned-in (and potentially thinned) sampler."
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:A3.6]]"
     }
   ]
 }

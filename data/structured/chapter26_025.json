@@ -2,23 +2,50 @@
   "id": "chapter26_025",
   "metadata": {
     "chapter": "chapter26",
-    "section": "Additional Models of Mutational Effects",
+    "section": "Long-term Response: Introduction",
     "subsections": [
-      "Additional Models of Mutational Effects"
+      "Optimizing the Asymptotic Selection Response"
     ],
     "source_file": "tmp\\paddle_output\\chapter26_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
-    "formula_references": [],
-    "table_references": []
+    "formula_references": [
+      "26.37",
+      "26.38",
+      "26.40"
+    ],
+    "table_references": [],
+    "section_level_1": "Long-term Response: Introduction",
+    "section_level_2": "Optimizing the Asymptotic Selection Response",
+    "heading_path": [
+      "Long-term Response: Introduction",
+      "Optimizing the Asymptotic Selection Response"
+    ],
+    "display_heading": "Optimizing the Asymptotic Selection Response"
   },
   "blocks": [
     {
-      "type": "proposition",
-      "content": "A critical assumption in any analysis of mutational response is the mutational model. Given a current allelic effect of $a$, what can we say about the value, $a^{*}$, from a mutation in this allele? All of the above results make the incremental-mutation model assumption: $a^{*}=a+\\alpha$, with the increment $\\alpha\\sim(0,\\sigma_{\\alpha}^{2})$. This Brownian motion model (Appendix 1) implies that the additive variance (for neutral alleles) will be unbounded as $N_{e}$ increases (Chapters 11 and 28). As introduced in Chapter 11, the house-of-cards (HOC) is another potential mutation model. Here, each new allelic value is drawn from a constant distribution, independent of the current value of the parental allele, namely the HOC distribution: $ a^* = \\alpha $, with $ \\alpha \\sim (0, \\sigma_\\alpha^2) $. Li and Enfield (1992) examined the long-term response under such a model. Starting with a population with no initial variation, they found that mutation increases the genetic variation up to some maximal value, after which it declines, with the time until this maximum is reached increasing with the number of loci. Li and Enfield only considered response over the first 120 generations, which was less than the smallest $ N_e $ value (150) in any of their simulations. Hence, the nature of any limit, or any asymptotic response, was not determined. The expectation under an HOC model is that an apparent selection limit is approached, although the population can still respond, but at an ever-diminishing rate, as further gains require random draws of ever-greater outliers from the HOC distribution of allelic-effects at a given locus. This view has connections with models of adaptive walks based on extreme-value theory, which are examined in the next chapter. A finite-value version of the HOC model, assuming that there are only $ k $ possible alleles at a locus, was examined by Zeng et al. (1989). As expected, the $ k $-allele model results in an ultimate selection limit, as mutation cannot continue to generate better alleles indefinitely. In Chapter 11 we also introduced the Zeng-Cockerham model (Equation 11.23), $ a^* = \\tau a + \\alpha $, which recovers Brownian motion when $ \\tau = 1 $, and the HOC model when $ \\tau = 0 $. To our knowledge, selection limits under the Zeng-Cockerham model have not been examined."
+      "type": "discussion",
+      "content": "Because the asymptotic response is a function of $ N_e\\bar{i} $, response is maximized by selection strategies that maximize this product. As was the case for maximizing long-term response (the total response using only the initial variation), there is a tradeoff in that the optimal short-term response (maximizing $ \\bar{i} $) is in conflict with the optimal asymptotic response (because increasing $ \\bar{i} $ decreases $ N_e $). If our choice is simply the fraction of individuals to save, the previous discussion on the optimal selection intensity for long-term response also applies to considerations of the asymptotic response."
     },
     {
       "type": "discussion",
-      "content": "A second, very important, consideration is the role of pleiotropic fitness effects. These mutational models predict (for constant value of $ \\mu $) that the equilibrium variance should linearly increase with $ N_e $, at least when $ N_e $ is less than the reciprocal of the mutation rate (Chapter 11). However, even for modest $ N_e $, the predicted equilibrium variances are too large to be comparable with observations (with heritabilities approaching 1.0, while most heritabilities in actual populations are below 0.5). This contradiction between theory and data as $ N_e $ increases is analogous to the limited observed range for molecular heterozygosity, which (assuming $ \\mu $ stays constant) should also approach one for large $ N_e $ (Chapter 2). If new mutations have pleiotropic fitness effects, the amount of usable variation will be overestimated at small $ N_e $ (the setting when $ \\sigma_m^2 $ is measured). As detailed in Chapter 28, whether this results in a limiting value for $ \\widetilde{\\sigma}_A^2 $ as $ N_e \\to \\infty $ depends on very delicate features of the joint distribution of $ (s, \\alpha) $ for values of $ s $ near zero."
+      "content": "However, the breeder or experimentalist can use other design options beyond simply tuning the selection intensity. We have generally been assuming individual (or mass) selection, which is based solely on an individual's phenotype. There are, however, numerous other selection schemes, such as those incorporating information on the phenotypes of relatives (e.g., family-index and BLUP selection; Chapters 21 and 13, respectively). Schemes incorporating such information can improve the accuracy of an individual's breeding value estimate, and hence improve the accuracy of short-term response. This can be seen by recalling (Equation 13.11c) that the single-generation response, R, for any particular selection scheme is given by $ R/(\\bar{x}_{x}\\sigma_{A})=\\rho(x,A) $, where selection occurs on some index, x, and $ \\rho(x,A) $ is the accuracy of the index (the correlation between an individual's index, x, and breeding values, A). Holding $ \\bar{x} $ constant, the single-generation response increases with the accuracy, $ \\rho(x,A) $, of the selection method. While different schemes can improve the short-term response over mass selection, what is their effect on asymptotic response? Once again, the answer is that schemes improving the short-term response usually do so at the expense of the asymptotic response."
+    },
+    {
+      "type": "derivation",
+      "content": "Optimal asymptotic response occurs by maximizing the fixation probabilities of favorable QTLs, which amounts to maximizing $ N_{e}s $, where s is the selection coefficient on the QTL. For an additive trait, Hill (1985) and Caballero et al. (1996) generalized Equation 25.4 to show that [[SEE_FORMULA:26.37]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Note that $ \\rho(x, A) = h $ for individual selection (the index is simply the trait value, x = z), recovering Equation 25.4. Fixation probabilities under different selection schemes with the same selection intensities are thus functions of the product $ N_e s $, which is proportional to $ N_e \\rho(x, A) $. The tradeoff is that increasing $ \\rho(x, A) $ typically decreases $ N_e $ by increasing the among-family variance in trait value (and hence in fitness). Thus, as was the case in our previous discussion on the optimal selection intensity, the optimal selection scheme for short-term response may differ from the optimal scheme for long-term response."
+    },
+    {
+      "type": "derivation",
+      "content": "The accuracy, $ \\rho $, depends on the genetic variance, and hence can change over time as these variances change. As shown in Chapters 24 and 25, predicting long-term changes in variances can be extremely difficult. Once again, the analysis is greatly simplified by assuming the infinitesimal model. Under this model, the additive genetic variance eventually converges to a value of $ \\widetilde{\\sigma}_{A}^{2}=2N_{e}\\sigma_{m}^{2} $. The effect of different selection schemes on the equilibrium additive variance (and $ \\rho $) is then entirely determined by the effective population size that each scheme generates. In comparing two different selection schemes (i and j) with the same selection intensity, Wei et al. (1996) showed that the ratio of asymptotic responses becomes [[SEE_FORMULA:26.38]] where a tilde denotes an equilibrium value and $ \\widetilde{\\rho}(i) $ denotes the accuracy (at the equilibrium variances) of selection scheme i. The careful reader will note that the effect of $ N_e $ is twofold—there is a direct effect (the square root of the $ N_e $ ratio) and also an indirect effect through the ratio of the $ \\widetilde{\\rho} $ (which is a function of $ \\widetilde{\\sigma}_A $, and hence of $ N_e $)."
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:26.6]]"
     }
   ]
 }

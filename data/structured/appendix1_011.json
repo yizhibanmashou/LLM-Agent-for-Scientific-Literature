@@ -2,14 +2,21 @@
   "id": "appendix1_011",
   "metadata": {
     "chapter": "appendix1",
-    "section": "Probability of Fixation",
+    "section": "Appendix: Introduction",
     "subsections": [
       "Probability of Fixation"
     ],
     "source_file": "tmp\\paddle_output\\appendix1_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [],
-    "table_references": []
+    "table_references": [],
+    "section_level_1": "Appendix: Introduction",
+    "section_level_2": "Probability of Fixation",
+    "heading_path": [
+      "Appendix: Introduction",
+      "Probability of Fixation"
+    ],
+    "display_heading": "Probability of Fixation"
   },
   "blocks": [
     {
@@ -21,36 +28,12 @@
       "content": "This has a solution of $$ u(p)=\\frac{\\int_{0}^{p}G(x)dx}{\\int_{0}^{1}G(x)dx} $$ where $ G(x) $ is defined by Equation A1.12 (Kimura 1962). More generally, for any diffusion (regardless of the nature of the boundaries), the probability that the process reaches a value of b before a value of a, given it starts at p (where $ A < a < p < b < B $, with the diffusion defined over $ A < x < B $), is $$ u_{b,a}(p)=\\frac{\\int_{a}^{p}G(x)dx}{\\int_{a}^{b}G(x)dx} $$"
     },
     {
-      "type": "discussion",
-      "content": "Example A1.6. Here we compute the probability of fixation of an allele under drift alone $ (m(x) = 0) $. In this setting $ G(x) = 1 $ (Equation A1.13), so Equation A1.17a reduces to $$ u(p)=\\frac{\\int_{0}^{p}1dx}{\\int_{0}^{1}1dx}=\\frac{p-0}{1-0}=p $$"
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:A1.6]]"
     },
     {
-      "type": "discussion",
-      "content": "In other words, the fixation probability of a neutral allele is simply its starting allele frequency (Chapter 2). This result makes intuitive sense, as there is no expected net change via drift alone, and hence the expected value of the allele frequency over a large number of replicates that have gone to fixation should be p. Likewise, Equation A1.17b shows the probability of reaching frequency b before frequency a (starting at a frequency p that satisfies 0 < a < p < b < 1) as $$ u_{b,a}(p)=\\frac{p-a}{b-a} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Now consider a diallelic locus experiencing additive selection and drift in a diploid population. From Equation A1.4, $$ m(x)=s x(1-x)\\quad and\\quad v(x)=\\frac{x(1-x)}{2N_{e}} $$ which implies $$ G(x)=\\exp\\left[-4N_{e}s\\int_{}^{x}\\frac{y(1-y)}{y(1-y)}d y\\right]=e^{-4N_{e}s x} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Thus, the probability of fixation of an allele with initial frequency p is $$ u(p)=\\frac{\\int_{0}^{p}e^{-4N_{e}s x}d x}{\\int_{0}^{1}e^{-4N_{e}s x}d x}=\\frac{1-e^{-4N_{e}s p}}{1-e^{-4N_{e}s}} $$ as obtained by Kimura (1957, 1962). A case of special interest is an initially rare allele ($p 1$) that is under strong selection ($4N_e s 1$). Here, the term in the denominator is essentially one, and because $1 - e^ -ax = ax + o(x)$, we have $$ u(p)\\simeq4N_{e}sp\\quad for\\quad4N_{e}s\\gg1\\quad and\\quad p\\ll1 $$"
-    },
-    {
-      "type": "discussion",
-      "content": "In particular, for a new mutation, $ p = 1/(2N) $ and the fixation probability becomes $$ u\\left(\\frac{1}{2N}\\right)=4N_{e}s\\frac{1}{2N}=2s\\frac{N_{e}}{N} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "More generally, starting at p, the probability that we will reach b before reaching a is $$ u_{a,b}(p)=\\frac{\\int_{a}^{p}e^{-4N_{e}s x}d x}{\\int_{a}^{b}e^{-4N_{e}s x}d x}=\\frac{e^{-4N_{e}s a}-e^{-4N_{e}s p}}{e^{-4N_{e}s a}-e^{-4N_{e}s b}} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Finally, in allowing for dominance, we assign fitnesses as $ 1:1 + s(1 + h):1 + 2s $. Under weak selection (ignoring terms of $ s^{2} $ and higher), $$ m(x)=s x(1-x)[1+h(1-2x)] $$ which yields $$ \\begin{aligned}G(x)&=\\exp\\left[-4N_{e}s\\int_{}^{x}\\frac{y(1-y)[1+h(1-2y)]}{y(1-y)}dy\\right]\\\\&=\\exp\\{-4N_{e}s x[1+h(1-x)]\\}\\end{aligned} $$ and hence the fixation probability of the beneficial allele is $$ u(p)=\\frac{\\int_{0}^{p}\\exp\\{-4N_{e}s x[1+h(1-x)]\\}d x}{\\int_{0}^{1}\\exp\\{-4N_{e}s x[1+h(1-x)]\\}d x} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Example A1.7. An important special case of Equation A1.19c is a favored, but completely recessive, allele. In this case $ h = -1 $, and Equations A1.19a and A1.19b, respectively, become $$ m(x)=2s x^{2}(1-x)\\quad and\\quad G(x)=\\exp\\left(-4N_{e}s x^{2}\\right) $$ giving Equation A1.19c as $$ u(p)=\\frac{\\int_{0}^{p}e^{-4N_{e}s x^{2}}d x}{\\int_{0}^{1}e^{-4N_{e}s x^{2}}d x} $$"
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:A1.7]]"
     }
   ]
 }

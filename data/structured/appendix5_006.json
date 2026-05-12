@@ -2,31 +2,58 @@
   "id": "appendix5_006",
   "metadata": {
     "chapter": "appendix5",
-    "section": "Orthonormal Matrices: Rigid Rotations",
+    "section": "Appendix: Introduction",
     "subsections": [
-      "Orthonormal Matrices: Rigid Rotations"
+      "Eigenvalues and Eigenvectors"
     ],
     "source_file": "tmp\\paddle_output\\appendix5_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [],
-    "table_references": []
+    "table_references": [],
+    "section_level_1": "Appendix: Introduction",
+    "section_level_2": "Eigenvalues and Eigenvectors",
+    "heading_path": [
+      "Appendix: Introduction",
+      "Eigenvalues and Eigenvectors"
+    ],
+    "display_heading": "Eigenvalues and Eigenvectors"
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "A key building block on our way to the partitioning of a matrix into its rotational and scaling components is the idea of an orthonormal matrix. Writing a square $ n n $ matrix, U, as a row vector whose n elements are $ 1 n $ column vectors, $ \\mathbf{U} = (\\mathbf{u}_1, \\mathbf{u}_2, \\cdots, \\mathbf{u}_n) $, then U is said to be orthonormal if $$ \\begin{align*}\\mathbf{u}_i^T\\mathbf{u}_j=\\begin{cases}1&\\textrm{if}i=j\\\\0&\\textrm{if}i\\neq j\\end{cases}\\end{align*} $$"
+      "content": "The eigenvalues, and their associated eigenvectors, of a square matrix describe its transformational geometry. Eigenvalues describe how the original coordinate axes are scaled in the new coordinate system that is described by the eigenvectors (i.e., how the original axes are rotated)."
     },
     {
       "type": "discussion",
-      "content": "Namely, each column of U is of unit length and is orthogonal to every other column. Matrices with this property are also referred to as unitary and satisfy $$ \\mathbf{U}^{T}\\mathbf{U}=\\mathbf{U}\\mathbf{U}^{T}=\\mathbf{I} $$ As a result, the inverse of a unitary matrix is simply its transpose, $$ \\mathbf{U}^{T}=\\mathbf{U}^{-1} $$"
+      "content": "To more formally introduce eigenvalues and eigenvectors, suppose, for a square matrix A, that the vector y satisfies the matrix equation $$ \\mathbf{A}\\mathbf{y}=\\lambda\\mathbf{y} $$ for some scalar value, λ. Geometrically, this means that the new vector resulting from transformation of y by A points in the same direction as y (or is exactly reflected about the origin if λ < 0). For such vectors, the only action of the matrix transformation is to scale them by some amount, λ. These vectors thus represent the inherent axes associated with the transformation given by A, and the set of all such vectors, along with their corresponding scalar multipliers, completely describes the geometry of this transformation. Vectors that satisfy Equation A5.6 are referred to as eigenvectors, and their associated scaling factors are eigenvalues, and together they jointly describe the eigenstructure (the intrinsic geometry) of the square matrix, A. If y is an eigenvector, then ay is also an eigenvector, as $ \\mathbf{A}(ay) = a(\\mathbf{Ay}) = \\lambda(ay) $. Note, however, that the associated eigenvalue, λ, remains unchanged. Hence, we typically scale eigenvectors to be of unit length to yield unit or normalized eigenvectors. In particular, if $ y_i $ is any eigenvector associated with the ith eigenvalue, then the associated normalized eigenvector is $ e_i = y_i / \\|y_i\\| $."
     },
     {
       "type": "discussion",
-      "content": "The coordinate transformation induced by an orthonormal matrix has a very simple geometric interpretation: it is a rigid rotation of the original coordinate system—axes of the original coordinates are all rotated by the same angle to create the new coordinate system. To see this, first note that orthonormal matrices preserve all inner products. Taking $ y_1 = Ux_1 $ and $ y_2 = Ux_2 $ $$ \\mathbf{y}_{1}^{T}\\mathbf{y}_{2}=\\mathbf{x}_{1}^{T}(\\mathbf{U}^{T}\\mathbf{U})\\mathbf{x}_{2}=\\mathbf{x}_{1}^{T}\\mathbf{x}_{2} $$"
+      "content": "The eigenvalues of an $n$-dimensional square matrix, $\\mathbf{A}$, are solutions of Equation A5.6, which can be written as $(\\mathbf{A} - \\lambda \\mathbf{I}) \\mathbf{y} = 0$. This implies that the determinant of $(\\mathbf{A} - \\lambda \\mathbf{I})$ must equal zero, which gives rise to the characteristic equation, $|\\mathbf{A} - \\lambda \\mathbf{I}| = 0$, whose solution yields the eigenvalues of $\\mathbf{A}$. This equation can be also be expressed using the Laplace expansion, $$ \\left|\\mathbf{A}-\\lambda\\mathbf{I}\\right|=(-\\lambda)^{n}+S_{1}(-\\lambda)^{n-1}+\\cdots+S_{n-1}(-\\lambda)^{1}+S_{n}=0 $$ where $ |A| $ denotes the determinant of A and $ S_i $ is the sum of all principal minors (minors including diagonal elements of the original matrix) of order i (minors, which are subsets of the full matrix, were defined in LW Chapter 8). Finding the eigenvalues thus requires solving a polynomial equation of order n, implying that there are exactly n eigenvalues (some of which may be identical, i.e., repeated). In practice, for n > 2 this is accomplished numerically, and most statistical analysis packages offer routines to accomplish this task."
     },
     {
       "type": "discussion",
-      "content": "Thus, orthonormal matrices do not change (scale) the length of vectors, as $ \\|y_1\\| = y_1^T y_1 = x_1^T x_1 = \\|x_1\\| $. Using these results, note that if $ $ is the angle between the vectors $ x_1 $ and $ x_2 $, then following transformation by an orthonormal matrix $$ \\begin{align*}\\cos(\\theta\\mid\\mathbf{y}_1,\\mathbf{y}_2)=\\frac{\\mathbf{y}_1^T\\mathbf{y}_2}{\\sqrt{\\mid\\mid\\mathbf{y}_1\\mid\\mid\\mid\\mid\\mathbf{y}_2\\mid\\mid}}=\\frac{\\mathbf{x}_1^T\\mathbf{x}_2}{\\sqrt{\\mid\\mid\\mathbf{x}_1\\mid\\mid\\mid\\mid\\mathbf{x}_2\\mid\\mid}}=\\cos(\\theta\\mid\\mathbf{x}_1,\\mathbf{x}_2)\\end{align*} $$ which shows that the angle between the two vectors remains unchanged following their transformation by the same orthonormal matrix."
+      "content": "Two of these principal minors are easily obtained and provide information on the nature of the eigenvalues. The only principal minor having the same order of the matrix is the full matrix itself, which means that $ S_n = |\\mathbf{A}| $, the determinant of $ \\mathbf{A} $. $ S_1 $ is also related to an important matrix quantity, the trace. This is denoted by $ \\mathrm{tr}(\\mathbf{A}) $, and is the sum of the diagonal elements of the matrix, namely, $$ \\mathbf{tr}(\\mathbf{A})=\\sum_{i=1}^{n}A_{ii} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Observe that $ S_1 = \\text{tr}(\\mathbf{A}) $, as the only principal minors of order one are the diagonal elements themselves, the sum of which equals the trace. Both the trace and determinant can be expressed as functions of the eigenvalues, with $$ \\mathbf{tr}(\\mathbf{A})=\\sum_{i=1}^{n}\\lambda_{i}\\qquad and\\qquad|\\mathbf{A}|=\\prod_{i=1}^{n}\\lambda_{i} $$ Hence $ \\mathbf{A} $ is singular ($ |A|=0 $) if, and only if, at least one eigenvalue is zero. As we will see, if $ \\mathbf{A} $ is a covariance matrix, then its trace (the sum of its eigenvalues) measures its total amount of variation, as the eigenvalues of a covariance matrix are nonnegative ($ \\lambda_i \\geq 0 $)."
+    },
+    {
+      "type": "discussion",
+      "content": "Let $\\mathbf{e}_i$ be the (unit-length) eigenvector associated with eigenvalue $\\lambda_i$. If the eigenvectors of $\\mathbf{A}$ can be chosen to be mutually orthogonal, namely, $\\mathbf{e}_i^T \\mathbf{e}_j = 0$ for $i \\neq j$, then we can express $\\mathbf{A}$ as $$ \\mathbf{A}=\\lambda_{1}\\mathbf{e}_{1}\\mathbf{e}_{1}^{T}+\\lambda_{2}\\mathbf{e}_{2}\\mathbf{e}_{2}^{T}+\\cdots+\\lambda_{n}\\mathbf{e}_{n}\\mathbf{e}_{n}^{T} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "This is called the spectral decomposition of A, and it is derived below in Equation A5.10d. Because $ \\|\\mathbf{e}_i\\| = 1 $, Equation A5.3b gives the projection of $ \\mathbf{x} $ on $ \\mathbf{e}_i $ as $ (\\mathbf{x}^T \\mathbf{e}_i) \\mathbf{e}_i $. Note that $ \\mathbf{e}_i(\\mathbf{e}_i^T \\mathbf{x}) = (\\mathbf{e}_i^T \\mathbf{x}) \\mathbf{e}_i = (\\mathbf{x}^T \\mathbf{e}_i) \\mathbf{e}_i $, as $ \\mathbf{e}_i^T \\mathbf{x} $ is a scalar, which implies that $ \\mathbf{e}_i^T \\mathbf{x} = (\\mathbf{e}_i^T \\mathbf{x})^T = \\mathbf{x}^T \\mathbf{e}_i $. Hence, from Equation A5.3b, we have $$ \\begin{aligned}\\mathbf{A}\\mathbf{x}&=\\lambda_{1}\\mathbf{e}_{1}\\mathbf{e}_{1}^{T}\\mathbf{x}+\\lambda_{2}\\mathbf{e}_{2}\\mathbf{e}_{2}^{T}\\mathbf{x}+\\cdots+\\lambda_{n}\\mathbf{e}_{n}\\mathbf{e}_{n}^{T}\\mathbf{x}\\\\&=\\lambda_{1}\\left(\\mathbf{e}_{1}^{T}\\mathbf{x}\\right)\\mathbf{e}_{1}+\\lambda_{2}\\left(\\mathbf{e}_{2}^{T}\\mathbf{x}\\right)\\mathbf{e}_{2}+\\cdots+\\lambda_{n}\\left(\\mathbf{e}_{n}^{T}\\mathbf{x}\\right)\\mathbf{e}_{n}\\\\&=\\lambda_{1}Proj(\\mathbf{x}on\\mathbf{e}_{1})+\\lambda_{2}Proj(\\mathbf{x}on\\mathbf{e}_{2})+\\cdots+\\lambda_{n}Proj(\\mathbf{x}on\\mathbf{e}_{n})\\\\ \\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "If we again apply Equation A5.3b, we can express this decomposition as $$ \\mathbf{A}\\mathbf{x}=||\\mathbf{x}||\\sum_{i=}^{n}\\left[\\lambda_{i}\\cdot\\cos(\\theta|\\mathbf{x},\\mathbf{e}_{i})\\right]\\mathbf{e}_{i} $$ where $ \\theta|\\mathbf{x}, \\mathbf{e}_i $ denotes the angle between the vectors $ \\mathbf{x} $ and $ \\mathbf{e}_i $. Thus, one can view a matrix as a series of vectors that form the projection space (the eigenvectors), so when a vector is multiplied by this matrix, the resulting vector is the weighted (by the eigenvalues) sum of projections over all of the vectors (the $ \\mathbf{e}_i $) that span the space defined by the matrix."
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:A5.2]]"
     }
   ]
 }
