@@ -7,10 +7,11 @@
 ```text
 data/背景资料/*.pdf
   -> paper2latex / Paddle
-  -> tmp/paddle_output/*_full/main.tex
+  -> data/paddle_output/*_full/main.tex
   -> knowledge_engineering.pipeline.process
   -> data/structured/*.json              # 基础结构化产物
   -> structured_fusion                   # 通用后处理（去噪、补表、引用归一）
+  -> figure relink                       # 从原始 PDF 回接图片资产与 caption
   -> textbook_exporter                   # 可读教材 Markdown 导出
   -> review_app                          # 人工质量审核
   -> 下游 graph / retrieval / memory / agent
@@ -26,10 +27,14 @@ data/背景资料/*.pdf
 ```text
 .
 ├── data/
-│   ├── 背景资料/              # 原始 PDF 和参考资料
+│   ├── 背景资料/              # 原始 PDF 和参考资料（本地保留，不进 Git）
+│   ├── paddle_output/          # Paddle / paper2latex 原始输出（本地保留，不进 Git）
+│   ├── glmocr_output/          # GLM OCR 辅助输出（本地保留，不进 Git）
 │   ├── structured/            # 正式结构化知识产物
 │   ├── textbook/              # 从 structured 导出的可读教材 Markdown
-│   └── knowledge_graph/        # 后续图谱数据位置
+│   ├── figures/               # textbook 引用的裁剪图片资产
+│   ├── figure_library.json     # figure 元数据、caption、图片映射
+│   └── knowledge_graph/        # 后续图谱数据位置（导出大文件本地保留）
 ├── textbook_exporter/          # structured -> textbook Markdown 独立导出器
 ├── knowledge_engineering/      # 清洗、切分、修复、落库的核心流程
 ├── review_app/                 # 本地结构化结果审核工作台
@@ -44,9 +49,13 @@ data/背景资料/*.pdf
 
 | 目录 | 职责 | 是否应手工改 |
 | --- | --- | --- |
-| `data/背景资料/` | 原始 PDF/背景资料 | 通常不改 |
+| `data/背景资料/` | 原始 PDF/背景资料；本地保留，不进入 Git | 通常不改 |
+| `data/paddle_output/` | Paddle / paper2latex 原始输出；结构化流程的上游证据 | 重新跑 OCR/转换时更新 |
+| `data/glmocr_output/` | GLM OCR 辅助输出；只作修复参考 | 重新跑 OCR 时更新 |
 | `data/structured/` | 下游系统读取的正式 JSON 产物 | 只通过脚本/修复流程更新 |
 | `data/textbook/` | 从 structured 导出的可读教材 Markdown | 通过 `textbook_exporter` 重建 |
+| `data/figures/` / `data/figure_library.json` | 从原始 PDF 裁出的图片资产与 caption/位置映射 | 通过 figure relink 流程更新 |
+| `data/knowledge_graph/` | 图谱导出本地缓存位置；大 JSON 本地保留，不进入 Git | 重新导出时更新 |
 | `knowledge_engineering/` | 主处理流程、结构化修复、fusion 后处理 | 是核心代码 |
 | `textbook_exporter/` | 将结构化 chunk/公式/表格/example 展开为教材 Markdown | 是核心代码 |
 | `review_app/` | 审核 chunks/formulas/tables 的本地前端和数据生成器 | 可以改 |
@@ -70,16 +79,23 @@ data/背景资料/*.pdf
 
 `data/structured/` 是当前最重要的结果目录：
 
-- `chapter*_*.json` / `appendix*_*.json`：按章节切分后的知识单元（987 个）。
+- `chapter*_*.json` / `appendix*_*.json`：按章节切分后的知识单元（988 个）。
 - `formula_library.json`：全书公式库（2248 条）。
 - `table_library.json`：全书表格库（164 条）。
-- `example_library.json`：全书示例库（322 条），只有在 example pipeline 开启时才会生成。
+- `example_library.json`：全书示例库（323 条），只有在 example pipeline 开启时才会生成。
+- `[[FIGURE:*]]` / `[[SEE_FIGURE:*]]`：图片本体位置与正文交叉引用，占位符由 figure relink 流程维护。
 
 `data/textbook/` 是面向阅读和人工核查的 Markdown 产物：
 
-- `chapterX_textbook.md`：按 chunk 顺序串接正文，并展开公式、表格、example 占位符。
+- `chapterX_textbook.md`：按 chunk 顺序串接正文，并展开公式、表格、example、figure 占位符。
 - `[[TABLE:*]]` 展开表格本体，`[[SEE_TABLE:*]]` 保持短引用文本。
+- `[[FIGURE:*]]` 展开为 `data/figures/` 图片和 caption，`[[SEE_FIGURE:*]]` 保持短引用文本。
 - inline table 使用章节内优先匹配，避免跨章节 `inline_1` / `inline_2` 混淆。
+
+`data/figures/` 与 `data/figure_library.json` 是图片回接后的正式资产：
+
+- `data/figures/fig_*.png`：从原始 PDF 裁剪出的图片本体（228 张），caption 不截进图片。
+- `data/figure_library.json`：图片 id、caption、来源 PDF 页面、bbox、资产路径和绑定置信度。
 
 当前基线状态：structured / textbook 占位符与引用审查为 0 个已知阻断问题；全书导出 36 个 `chapter*_textbook.md` / `appendix*_textbook.md` 文件。
 
@@ -94,17 +110,17 @@ data/背景资料/*.pdf
 
 ### 1. 生成 structured（含 fusion 后处理）
 
-从 `tmp/paddle_output/*_full/main.tex` 生成结构化 JSON 并自动跑 fusion：
+从 `data/paddle_output/*_full/main.tex` 生成结构化 JSON 并自动跑 fusion：
 
 ```powershell
 python -m knowledge_engineering.pipeline.process `
-  -i tmp\paddle_output `
+  -i data\paddle_output `
   -o data\structured `
   --artifacts-dir tmp\knowledge_engineering `
   --skip-llm-cleaning `
   --llm-phase 0 `
   --structured-fusion `
-  --glmocr-dir tmp\glmocr_output `
+  --glmocr-dir data\glmocr_output `
   --reference-structured-dir tmp\structured_quality_probe\old_structured
 ```
 
@@ -112,7 +128,7 @@ python -m knowledge_engineering.pipeline.process `
 
 ```powershell
 python -m knowledge_engineering.pipeline.process `
-  -i tmp\paddle_output\chapter6_full\main.tex `
+  -i data\paddle_output\chapter6_full\main.tex `
   -o data\structured `
   --chapter-name chapter6 `
   --artifacts-dir tmp\knowledge_engineering
@@ -128,8 +144,8 @@ python -m knowledge_engineering.pipeline.process `
 python -m knowledge_engineering.pipeline.structured_fusion `
   --structured-dir data/structured `
   --out tmp/fusion_test/structured `
-  --glmocr-dir tmp/glmocr_output `
-  --paddle-output-dir tmp/paddle_output `
+  --glmocr-dir data/glmocr_output `
+  --paddle-output-dir data/paddle_output `
   --reference-structured-dir tmp/structured_quality_probe/old_structured `
   --artifacts-dir tmp/fusion_test/artifacts
 ```
@@ -175,8 +191,9 @@ http://127.0.0.1:8000/review_app/
 全书当前规模：
 
 - PDF 输入：37 个 PDF，约 1318 页。
-- structured baseline：987 个 unit。
+- structured baseline：988 个 unit。
 - textbook 输出：36 个 Markdown 文件。
+- figure assets：228 张裁剪图片。
 
 在 DeepSeek `deepseek-v4-flash`、`KE_LLM_REVIEW_WORKERS=16`、缓存未命中的条件下，开启 LLM phase 3、structured fusion、GLM prose repair、OCR table repair 和 example pipeline 后，全书 structured 处理预计约 65 分钟，token 用量预计约 8.07M。`textbook_exporter` 相比 LLM review 很快，通常可以视为秒级到分钟内的尾部步骤。
 
@@ -184,18 +201,26 @@ http://127.0.0.1:8000/review_app/
 
 ## tmp 边界
 
-`tmp/` 里有两类内容：
+`tmp/` 只放可复现实验、审计报告、缓存和流程 artifacts，不放必须保留的上游 OCR 输入。
 
-1. **重要输入**：`tmp/paddle_output/`（Paddle LaTeX 源）、`tmp/glmocr_output/`（GLM OCR 输出）。不要删除。
-2. **中间产物**：`tmp/structured_quality_probe/`（审计报告、candidates、old_structured 参考）、`tmp/knowledge_engineering/`（流程 artifacts）。这些目录可重跑，经验沉淀到本地 docs 后可以清理。
+当前需要保留的实验目录：
+
+- `tmp/figure_relink_probe/`：图片回接实验审计、patch preview、textbook preview 和 QA 记录。正式图片资产已进入 `data/figures/` 与 `data/figure_library.json`，但这个目录仍可用于追溯本轮构建过程。
+
+可重跑的临时目录示例：
+
+- `tmp/knowledge_engineering/`
+- `tmp/fusion_test/`
+- `tmp/structured_quality_probe/`
 
 不要把 `tmp/` 当作统一源码目录；真正稳定的代码入口在 `knowledge_engineering/`、`review_app/`、`glmocr/`、`paper2latex/`。
 
-这些条目虽然也在 `tmp/` 下，但属于上游输入或轻量文字记录，上传前建议先保留：
+这些目录在 `data/` 下本地保留并被 Git 忽略，上传前不要误删：
 
-- `tmp/paddle_output`
-- `tmp/glmocr_output`
-- `tmp/structured_quality_probe/*.md`
+- `data/背景资料/`
+- `data/paddle_output/`
+- `data/glmocr_output/`
+- `data/knowledge_graph/knowledge_graph_export.json`
 
 ## 环境配置
 

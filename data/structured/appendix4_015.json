@@ -2,7 +2,7 @@
   "id": "appendix4_015",
   "metadata": {
     "chapter": "appendix4",
-    "section": "Appendix: Introduction",
+    "section": "DETECTING AN EXCESS NUMBER OF SIGNIFICANT TESTS",
     "subsections": [
       "Estimating $ n_{0} $: Subsampling From a Uniform Distribution"
     ],
@@ -10,10 +10,10 @@
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [],
     "table_references": [],
-    "section_level_1": "Appendix: Introduction",
+    "section_level_1": "DETECTING AN EXCESS NUMBER OF SIGNIFICANT TESTS",
     "section_level_2": "Estimating $ n_{0} $: Subsampling From a Uniform Distribution",
     "heading_path": [
-      "Appendix: Introduction",
+      "DETECTING AN EXCESS NUMBER OF SIGNIFICANT TESTS",
       "Estimating $ n_{0} $: Subsampling From a Uniform Distribution"
     ],
     "display_heading": "Estimating $ n_{0} $: Subsampling From a Uniform Distribution"
@@ -46,6 +46,18 @@
     {
       "type": "example",
       "content": "[[SEE_EXAMPLE:A4.6]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Storey and Tibshirani (2003) considered the number of $p$ values exceeding some tunable parameter value, $\\lambda$ (taking $a = \\lambda$ and $b = 1$ in Equation A4.8b), on the logic that for larger values of $\\lambda$, most of these draws are from the uniform corresponding to draws from the null. Let $\\widehat{\\pi}_0(\\lambda)$ denote the estimated fraction of truly null hypotheses based on using a tuning value of $ \\lambda $, then $$ \\widehat{\\pi}_{0}(\\lambda)=\\frac{Number of p(i)values>\\lambda}{n(1-\\lambda)} $$ and $$ \\widehat{n}_{0}(\\lambda)=n\\cdot\\widehat{\\pi}_{0}(\\lambda)=\\frac{Number of p(i)values>\\lambda}{1-\\lambda} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "By focusing on the interval $(\\lambda, 1)$, the Storey-Tibshirani estimator is potentially biased when there are an excess of $p$ values near one. This can happen for a variety of reasons, such as inappropriate assumptions for the test statistic (e.g., the use of one-sided tests when two-sided tests are more appropriate). Both Equation A4.8c and the Storey-Tibshirani estimator (Equation A4.9b) rely on tuning parameters $(a, b$, and $\\lambda$, respectively) which define the region of the distribution of $p$ values assumed to be drawn from a uniform (i.e., almost all $p$ values in this interval are assumed to be generated under the null). Nettleton et al. (2006) reviewed these and other approaches for estimating $n_{0}$ from sampling parts of a presumed uniform and elaborated on their strengths and weaknesses."
+    },
+    {
+      "type": "discussion",
+      "content": "One significant concern is that correlated tests can result in either an under- or over-dispersion of p values under the global null hypothesis, resulting in significant departure from a uniform distribution (Efron 2007; Hu et al. 2011; Leek and Storey 2011). This in turn compromises estimates of $ n_{0} $."
     }
   ]
 }

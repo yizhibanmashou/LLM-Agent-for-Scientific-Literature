@@ -2,7 +2,7 @@
 
 Usage:
     python -m knowledge_engineering.pipeline.process \
-      -i tmp/paddle_output/chapter2_full/main.tex \
+      -i data/paddle_output/chapter2_full/main.tex \
       -o data/structured \
       --title "Evolution and Selection of Quantitative Traits"
 """
@@ -1474,6 +1474,7 @@ PADDLE_PUBLICATION_FOOTER_PATTERN = re.compile(
     r"Bruce Walsh|Michael Lynch|DOI\s+10\.)",
     re.IGNORECASE,
 )
+CHAPTER_TITLE_HEADING_PATTERN = re.compile(r"^(?P<number>\d{1,3})\s*:\s*(?P<title>.+?)\s*$")
 
 
 def _load_paddle_raw_pages(tex_path: str) -> list[dict[str, Any]]:
@@ -1496,6 +1497,86 @@ def _load_paddle_raw_pages(tex_path: str) -> list[dict[str, Any]]:
             return [page for page in pages if isinstance(page, dict)]
 
     return []
+
+
+def _chapter_number_from_name(chapter_name: str) -> int | None:
+    match = re.fullmatch(r"chapter(?P<number>\d+)", str(chapter_name or "").strip(), flags=re.IGNORECASE)
+    return int(match.group("number")) if match else None
+
+
+def _looks_like_chapter_title_heading(
+    heading: str,
+    *,
+    chapter_name: str | None = None,
+    source_title: str | None = None,
+) -> bool:
+    stripped = _normalize_heading_display(heading)
+    if not stripped:
+        return False
+    match = CHAPTER_TITLE_HEADING_PATTERN.fullmatch(stripped)
+    if match:
+        chapter_number = _chapter_number_from_name(chapter_name or "")
+        if chapter_number is not None and int(match.group("number")) == chapter_number:
+            return True
+    title = _normalize_heading_display(source_title or "")
+    return bool(title and stripped.lower() == title.lower())
+
+
+def _strip_numbered_chapter_title_prefix(heading: str, chapter_name: str | None = None) -> str:
+    stripped = _normalize_heading_display(heading)
+    match = CHAPTER_TITLE_HEADING_PATTERN.fullmatch(stripped)
+    if not match:
+        return stripped
+    chapter_number = _chapter_number_from_name(chapter_name or "")
+    if chapter_number is not None and int(match.group("number")) != chapter_number:
+        return stripped
+    return _normalize_heading_display(match.group("title"))
+
+
+def _is_raw_layout_heading_row(row: dict[str, Any]) -> bool:
+    label = str(row.get("block_label") or row.get("label") or "").strip().lower()
+    return label in {"paragraph_title", "title", "doc_title"}
+
+
+def _raw_layout_heading_candidates(tex_path: str, chapter_name: str) -> list[str]:
+    """Return heading-like Paddle rows in visual order, excluding page headers."""
+
+    chapter_number = _chapter_number_from_name(chapter_name)
+    headings: list[str] = []
+    for page_payload in _load_paddle_raw_pages(tex_path):
+        for row in sorted(
+            _paddle_page_rows(page_payload),
+            key=lambda item: (
+                item.get("block_order") is None,
+                item.get("block_order") if item.get("block_order") is not None else 999999,
+                _block_top(item),
+            ),
+        ):
+            if not _is_raw_layout_heading_row(row):
+                continue
+            content = _normalize_heading_display(str(row.get("block_content") or row.get("content") or ""))
+            if not content:
+                continue
+            if chapter_number is not None and re.fullmatch(rf"0*{chapter_number}", content):
+                continue
+            if CHAPTER_HEADER_PATTERN.fullmatch(content) or PAGE_CHAPTER_HEADER_PATTERN.fullmatch(content):
+                continue
+            if is_noise_line(content):
+                continue
+            if content not in headings:
+                headings.append(content)
+    return headings
+
+
+def _chapter_title_from_heading_candidates(raw_headings: list[str], chapter_name: str) -> str:
+    chapter_number = _chapter_number_from_name(chapter_name)
+    if chapter_number is None:
+        return ""
+    for heading in raw_headings:
+        normalized = _normalize_heading_display(heading)
+        if normalized and not _looks_like_level_1_section_heading(normalized):
+            return normalized
+    return ""
 
 
 def _paddle_page_rows(page_payload: dict[str, Any]) -> list[dict[str, Any]]:
@@ -2176,11 +2257,31 @@ def _canonicalize_chunk_subsections(chunks: List, source_title: str | None = Non
             block.subsection = canonical_by_key[current_key]
 
 
-def _normalize_block_heading_metadata(block: Any) -> None:
+def _normalize_block_heading_metadata(
+    block: Any,
+    *,
+    chapter_name: str | None = None,
+    source_title: str | None = None,
+) -> None:
     subsection = _normalize_heading_display(getattr(block, "subsection", "") or "")
     level_1 = _normalize_heading_display(getattr(block, "section_level_1", "") or "")
     level_2 = _normalize_heading_display(getattr(block, "section_level_2", "") or "")
     display = _normalize_heading_display(getattr(block, "display_heading", "") or subsection)
+
+    if _looks_like_chapter_title_heading(level_1, chapter_name=chapter_name, source_title=source_title):
+        level_1 = ""
+    if _looks_like_chapter_title_heading(level_2, chapter_name=chapter_name, source_title=source_title):
+        level_2 = ""
+    if _looks_like_chapter_title_heading(display, chapter_name=chapter_name, source_title=source_title):
+        display = subsection if not _looks_like_chapter_title_heading(
+            subsection,
+            chapter_name=chapter_name,
+            source_title=source_title,
+        ) else ""
+    if _looks_like_chapter_title_heading(subsection, chapter_name=chapter_name, source_title=source_title):
+        subsection = _strip_numbered_chapter_title_prefix(subsection, chapter_name)
+    if _looks_like_chapter_title_heading(display, chapter_name=chapter_name, source_title=source_title):
+        display = _strip_numbered_chapter_title_prefix(display, chapter_name)
 
     if not level_1:
         level_1 = level_2 or display or subsection
@@ -2199,11 +2300,22 @@ def _normalize_block_heading_metadata(block: Any) -> None:
     block.heading_path = path or ([block.display_heading] if block.display_heading else [])
 
 
-def _sync_canonicalized_heading_metadata(chunks: List) -> None:
+def _sync_canonicalized_heading_metadata(
+    chunks: List,
+    *,
+    chapter_name: str | None = None,
+    source_title: str | None = None,
+) -> None:
     for chunk in chunks:
         for block in chunk.blocks:
             display = _normalize_heading_display(block.subsection)
             if not display:
+                continue
+            if _looks_like_chapter_title_heading(display, chapter_name=chapter_name, source_title=source_title):
+                block.section_level_1 = None
+                block.section_level_2 = None
+                block.display_heading = display
+                block.heading_path = [display]
                 continue
             if getattr(block, "section_level_2", None):
                 block.section_level_2 = display
@@ -2214,6 +2326,284 @@ def _sync_canonicalized_heading_metadata(chunks: List) -> None:
                 item for item in [getattr(block, "section_level_1", None), getattr(block, "section_level_2", None)]
                 if item
             ]
+
+
+def _looks_like_placeholder_chapter_intro_heading(heading: str, source_title: str | None = None) -> bool:
+    stripped = _normalize_heading_display(heading)
+    if not stripped:
+        return False
+    if re.fullmatch(r"(?:Chapter\s+)?\d+\s*:\s*Introduction", stripped, flags=re.IGNORECASE):
+        return True
+    title = _normalize_heading_display(source_title or "")
+    if title and stripped.lower() == f"{title}: introduction".lower():
+        return True
+    return False
+
+
+def _chunk_heading_candidate(chunk: Any) -> str:
+    first_subsection = ""
+    for item in getattr(chunk, "subsections", []) or []:
+        normalized = _normalize_heading_display(item)
+        if normalized and not ROMAN_CHAPTER_ONLY_PATTERN.fullmatch(normalized):
+            first_subsection = normalized
+            break
+
+    major_subsections = [
+        _normalize_heading_display(item)
+        for item in getattr(chunk, "subsections", []) or []
+        if _normalize_heading_display(item)
+        and _looks_like_level_1_section_heading(_normalize_heading_display(item))
+        and not ROMAN_CHAPTER_ONLY_PATTERN.fullmatch(_normalize_heading_display(item))
+        and not _looks_like_placeholder_chapter_intro_heading(_normalize_heading_display(item))
+    ]
+    if major_subsections:
+        if first_subsection and len(major_subsections) > 1:
+            return first_subsection
+        return major_subsections[-1]
+
+    display = _normalize_heading_display(getattr(chunk, "display_heading", "") or "")
+    if (
+        display
+        and not ROMAN_CHAPTER_ONLY_PATTERN.fullmatch(display)
+        and not _looks_like_placeholder_chapter_intro_heading(display)
+    ):
+        return display
+    path = [
+        _normalize_heading_display(item)
+        for item in getattr(chunk, "heading_path", []) or []
+        if _normalize_heading_display(item)
+    ]
+    path = [item for item in path if not _looks_like_placeholder_chapter_intro_heading(item)]
+    if path:
+        return path[-1]
+    subsections = [
+        _normalize_heading_display(item)
+        for item in getattr(chunk, "subsections", []) or []
+        if _normalize_heading_display(item)
+    ]
+    subsections = [item for item in subsections if not _looks_like_placeholder_chapter_intro_heading(item)]
+    subsections = [item for item in subsections if not ROMAN_CHAPTER_ONLY_PATTERN.fullmatch(item)]
+    return subsections[-1] if subsections else "Introduction"
+
+
+def _clean_structural_heading(
+    heading: str,
+    *,
+    chapter_name: str | None = None,
+    source_title: str | None = None,
+) -> str:
+    value = _normalize_heading_display(heading)
+    if not value:
+        return ""
+    if _looks_like_placeholder_chapter_intro_heading(value, source_title=source_title):
+        return ""
+    if _looks_like_chapter_title_heading(value, chapter_name=chapter_name, source_title=source_title):
+        return ""
+    if ROMAN_CHAPTER_ONLY_PATTERN.fullmatch(value):
+        return ""
+    return value
+
+
+def _chunk_explicit_heading_levels(
+    chunk: Any,
+    *,
+    chapter_name: str | None = None,
+    source_title: str | None = None,
+) -> tuple[str, str | None]:
+    raw_heading_keys: set[tuple[str, str | None]] = set()
+    for block in getattr(chunk, "blocks", []) or []:
+        block_level_1 = _clean_structural_heading(
+            getattr(block, "section_level_1", None) or "",
+            chapter_name=chapter_name,
+            source_title=source_title,
+        )
+        block_level_2 = _clean_structural_heading(
+            getattr(block, "section_level_2", None) or "",
+            chapter_name=chapter_name,
+            source_title=source_title,
+        )
+        if block_level_2 == block_level_1:
+            block_level_2 = ""
+        raw_heading_keys.add((block_level_1, block_level_2 or None))
+    if len(raw_heading_keys) > 1:
+        return "", None
+
+    level_1 = _clean_structural_heading(
+        getattr(chunk, "section_level_1", None) or "",
+        chapter_name=chapter_name,
+        source_title=source_title,
+    )
+    level_2 = _clean_structural_heading(
+        getattr(chunk, "section_level_2", None) or "",
+        chapter_name=chapter_name,
+        source_title=source_title,
+    )
+    if level_2 == level_1:
+        level_2 = ""
+    return level_1, level_2 or None
+
+
+def _apply_heading_to_chunk(chunk: Any, level_1: str, level_2: str | None) -> None:
+    level_1 = _normalize_heading_display(level_1) or "Introduction"
+    level_2 = _normalize_heading_display(level_2 or "") or None
+    if level_2 == level_1:
+        level_2 = None
+    heading_path = [level_1]
+    if level_2:
+        heading_path.append(level_2)
+    display = level_2 or level_1
+    for block in chunk.blocks:
+        block.section_level_1 = level_1
+        block.section_level_2 = level_2
+        block.heading_path = list(heading_path)
+        block.display_heading = display
+
+
+ORDERED_FEATURE_ITEM_PATTERN = re.compile(r"^\s*(?P<number>\d{1,2})\.\s+\S")
+EXAMPLE_CONTINUATION_OPENING_RE = re.compile(
+    r"^\s*(?:Recall|If|Combining|Solving|Likewise|Figure|Here|Because|Thus|The frequency|Truncation)\b",
+    re.IGNORECASE,
+)
+
+
+def _ordered_feature_item_number(block: Any) -> int | None:
+    content = str(getattr(block, "content", "") or "").strip()
+    match = ORDERED_FEATURE_ITEM_PATTERN.match(content)
+    if match:
+        return int(match.group("number"))
+    if re.search(r"(?:^|[:.!?]\s+)1\.\s+\S", content):
+        return 1
+    return None
+
+
+def _same_chunk_heading(left: Any, right: Any) -> bool:
+    left_path = [_normalize_heading_display(item) for item in getattr(left, "heading_path", []) or []]
+    right_path = [_normalize_heading_display(item) for item in getattr(right, "heading_path", []) or []]
+    if left_path and right_path:
+        return left_path == right_path
+    return (
+        _normalize_heading_display(getattr(left, "display_heading", "") or "")
+        == _normalize_heading_display(getattr(right, "display_heading", "") or "")
+    )
+
+
+def _split_ordered_feature_list_chunks(chunks: List) -> List:
+    repaired: List = []
+    for chunk in chunks:
+        item_positions: list[tuple[int, int]] = []
+        for index, block in enumerate(getattr(chunk, "blocks", []) or []):
+            number = _ordered_feature_item_number(block)
+            if number is not None:
+                item_positions.append((index, number))
+        item_numbers = [number for _, number in item_positions]
+        if (
+            len(item_positions) >= 5
+            and item_numbers[:5] == [1, 2, 3, 4, 5]
+            and item_positions[2][0] > 0
+        ):
+            split_index = item_positions[2][0]
+            repaired.append(type(chunk)(blocks=chunk.blocks[:split_index]))
+            repaired.append(type(chunk)(blocks=chunk.blocks[split_index:]))
+            continue
+        repaired.append(chunk)
+    return repaired
+
+
+def _chunk_ends_with_example_placeholder(chunk: Any) -> bool:
+    blocks = getattr(chunk, "blocks", []) or []
+    if not blocks:
+        return False
+    last = blocks[-1]
+    content = str(getattr(last, "content", "") or "")
+    return str(getattr(last, "type", "") or "").lower() == "example" or "[[SEE_EXAMPLE:" in content
+
+
+def _chunk_starts_with_example_continuation(chunk: Any) -> bool:
+    blocks = getattr(chunk, "blocks", []) or []
+    if not blocks:
+        return False
+    first = blocks[0]
+    if str(getattr(first, "type", "") or "").lower() == "example":
+        return False
+    content = str(getattr(first, "content", "") or "")
+    return bool(EXAMPLE_CONTINUATION_OPENING_RE.match(content))
+
+
+def _merge_example_continuation_chunks(chunks: List) -> List:
+    repaired: List = []
+    index = 0
+    while index < len(chunks):
+        current = chunks[index]
+        if (
+            index + 1 < len(chunks)
+            and _same_chunk_heading(current, chunks[index + 1])
+            and _chunk_ends_with_example_placeholder(current)
+            and _chunk_starts_with_example_continuation(chunks[index + 1])
+        ):
+            repaired.append(type(current)(blocks=current.blocks + chunks[index + 1].blocks))
+            index += 2
+            continue
+        repaired.append(current)
+        index += 1
+    return repaired
+
+
+def _repair_chunk_boundaries_for_output(chunks: List) -> List:
+    repaired = _split_ordered_feature_list_chunks(chunks)
+    repaired = _merge_example_continuation_chunks(repaired)
+    return repaired
+
+
+def _repair_ordered_chunk_heading_hierarchy(
+    chunks: List,
+    source_title: str | None = None,
+    chapter_name: str | None = None,
+) -> None:
+    """Normalize chapter-internal heading hierarchy for generated chunks.
+
+    Paddle output often turns ``\\title{25}`` + ``\\section{Introduction}`` into
+    a sticky ``25: Introduction`` parent.  That value is a chapter/title signal,
+    not a real parent for every later section.  Keep a simple chapter-internal
+    stack: uppercase/major headings reset level 1; title-case headings become
+    level 2 under the current level 1.
+    """
+
+    current_level_1 = ""
+    for chunk in chunks:
+        explicit_level_1, explicit_level_2 = _chunk_explicit_heading_levels(
+            chunk,
+            chapter_name=chapter_name,
+            source_title=source_title,
+        )
+        if explicit_level_1 and explicit_level_2:
+            current_level_1 = explicit_level_1
+            _apply_heading_to_chunk(chunk, explicit_level_1, explicit_level_2)
+            continue
+        if explicit_level_1 and _looks_like_level_1_section_heading(explicit_level_1):
+            current_level_1 = explicit_level_1
+            _apply_heading_to_chunk(chunk, explicit_level_1, None)
+            continue
+
+        candidate = _chunk_heading_candidate(chunk)
+        if _looks_like_placeholder_chapter_intro_heading(candidate, source_title=source_title):
+            candidate = "Introduction"
+
+        if candidate == "Introduction":
+            current_level_1 = "Introduction"
+            _apply_heading_to_chunk(chunk, "Introduction", None)
+            continue
+
+        if _looks_like_level_1_section_heading(candidate):
+            current_level_1 = candidate
+            _apply_heading_to_chunk(chunk, candidate, None)
+            continue
+
+        if not current_level_1 or current_level_1 == "Introduction":
+            current_level_1 = candidate
+            _apply_heading_to_chunk(chunk, candidate, None)
+            continue
+
+        _apply_heading_to_chunk(chunk, current_level_1, candidate)
 
 
 def _cleanup_formula_reference_artifacts(text: str) -> str:
@@ -2261,6 +2651,19 @@ def _looks_like_major_section_heading(heading: str) -> bool:
         or _looks_like_title_case_section_heading(stripped)
         or (len(stripped.split()) <= 6 and stripped[:1].isupper() and len(stripped) >= 10)
     )
+
+
+def _looks_like_level_1_section_heading(heading: str) -> bool:
+    stripped = _normalize_heading_display(heading)
+    if not stripped:
+        return False
+    if NUMBERED_HEADING_PREFIX_PATTERN.match(stripped):
+        return False
+    if ROMAN_CHAPTER_ONLY_PATTERN.fullmatch(stripped):
+        return False
+    if any(hint in stripped.upper() for hint in FRONT_MATTER_HINTS):
+        return False
+    return _is_major_heading_line(stripped)
 
 
 def _usable_metadata_section_heading(heading: str) -> str:
@@ -2318,6 +2721,17 @@ def _explicit_chapter_number_from_subsections(subsections: List[str]) -> int | N
             roman_token = subsection.strip().split()[-1]
             return _roman_to_int(roman_token)
     return None
+
+
+def _explicit_chapter_number_from_chunk(chunk: Any) -> int | None:
+    explicit_number = _explicit_chapter_number_from_subsections(chunk.subsections)
+    if explicit_number is not None:
+        return explicit_number
+    raw_subsections = [
+        _normalize_heading_display(getattr(block, "subsection", "") or "")
+        for block in getattr(chunk, "blocks", []) or []
+    ]
+    return _explicit_chapter_number_from_subsections(raw_subsections)
 
 
 def _looks_like_front_matter_chunk(chunk, source_title: str | None = None) -> bool:
@@ -2414,7 +2828,7 @@ def _infer_chunk_sections(chunks: List) -> List[str]:
         formula_counter = _chunk_formula_chapter_counts(
             [reference for block in chunk.blocks for reference in block.formula_references]
         )
-        explicit_number = _explicit_chapter_number_from_subsections(chunk.subsections)
+        explicit_number = _explicit_chapter_number_from_chunk(chunk)
         if explicit_number is not None:
             explicit_title_numbers[current_section_title] = explicit_number
             formula_counter[explicit_number] += 100
@@ -2495,17 +2909,79 @@ def _infer_chunk_sections(chunks: List) -> List[str]:
     return rendered_sections
 
 
-def refine_chunks_for_output(chunks: List, source_title: str | None = None) -> tuple[List, List[str]]:
+def _find_chunk_index_by_display_heading(chunks: List, heading: str, start_index: int = 0) -> int | None:
+    normalized_heading = _heading_similarity_key(heading)
+    if not normalized_heading:
+        return None
+    for index in range(max(0, start_index), len(chunks)):
+        chunk = chunks[index]
+        candidates = [
+            getattr(chunk, "display_heading", "") or "",
+            getattr(chunk, "section_level_2", "") or "",
+            getattr(chunk, "section_level_1", "") or "",
+            *list(getattr(chunk, "subsections", []) or []),
+        ]
+        if any(_heading_similarity_key(candidate) == normalized_heading for candidate in candidates):
+            return index
+    return None
+
+
+def _repair_heading_hierarchy_from_raw_layout(chunks: List, raw_heading_candidates: list[str]) -> None:
+    if not raw_heading_candidates:
+        return
+
+    current_parent = ""
+    cursor = 0
+    for heading in raw_heading_candidates:
+        normalized = _normalize_heading_display(heading)
+        if not normalized:
+            continue
+        matched_index = _find_chunk_index_by_display_heading(chunks, normalized, cursor)
+        if _looks_like_level_1_section_heading(normalized):
+            current_parent = normalized
+            if matched_index is not None:
+                cursor = matched_index
+            continue
+        if not current_parent:
+            continue
+        if matched_index is None:
+            continue
+        chunk = chunks[matched_index]
+        current_path = [str(item or "").strip() for item in getattr(chunk, "heading_path", []) or [] if str(item or "").strip()]
+        if current_path and current_path[0] == current_parent:
+            cursor = matched_index + 1
+            continue
+        _apply_heading_to_chunk(chunk, current_parent, normalized)
+        cursor = matched_index + 1
+
+
+def refine_chunks_for_output(
+    chunks: List,
+    source_title: str | None = None,
+    chapter_name: str | None = None,
+    raw_heading_candidates: list[str] | None = None,
+) -> tuple[List, List[str]]:
     """Apply output-focused fixes to chunk metadata and content."""
     for chunk in chunks:
         for block in chunk.blocks:
             block.subsection = _normalize_heading_display(block.subsection)
-            _normalize_block_heading_metadata(block)
+            _normalize_block_heading_metadata(
+                block,
+                chapter_name=chapter_name,
+                source_title=source_title,
+            )
             block.content = _cleanup_block_content(block.content, source_title=source_title)
 
     _canonicalize_chunk_subsections(chunks, source_title=source_title)
-    _sync_canonicalized_heading_metadata(chunks)
+    _sync_canonicalized_heading_metadata(chunks, chapter_name=chapter_name, source_title=source_title)
     refined_chunks = _trim_leading_front_matter_chunks(chunks, source_title=source_title)
+    refined_chunks = _repair_chunk_boundaries_for_output(refined_chunks)
+    _repair_ordered_chunk_heading_hierarchy(
+        refined_chunks,
+        source_title=source_title,
+        chapter_name=chapter_name,
+    )
+    _repair_heading_hierarchy_from_raw_layout(refined_chunks, raw_heading_candidates or [])
     sections = _infer_chunk_sections(refined_chunks)
     return refined_chunks, sections
 
@@ -3016,7 +3492,8 @@ def assign_table_sources_to_units(units: List[KnowledgeUnit], tables: list[Table
                 table_id = match.group("label")
                 if table_id not in table_map:
                     continue
-                score = 2.0
+                prefix = content[: match.start()].strip()
+                score = 3.5 if not prefix else 2.0
                 current = best_candidate.get(table_id)
                 if current is None or score > current[0]:
                     best_candidate[table_id] = (score, unit_index, unit.id, subsection)
@@ -3025,7 +3502,7 @@ def assign_table_sources_to_units(units: List[KnowledgeUnit], tables: list[Table
                 table_id = match.group(1)
                 if table_id not in table_map:
                     continue
-                score = 1.5 if re.match(rf"^\s*Table\s+{re.escape(table_id)}\b", content) else 1.0
+                score = 3.5 if re.match(rf"^\s*Table\s+{re.escape(table_id)}\b", content) else 1.0
                 current = best_candidate.get(table_id)
                 if current is None or score > current[0]:
                     best_candidate[table_id] = (score, unit_index, unit.id, subsection)
@@ -3110,6 +3587,10 @@ def _normalize_table_physical_placeholders_to_sources(
                 nonlocal changed
                 table_id = match.group("label")
                 source_unit = source_unit_by_table.get(table_id)
+                if source_unit == unit.id:
+                    prefix = content[: match.start()].strip()
+                    if not prefix:
+                        return f"[[TABLE:{table_id}]]"
                 if not source_unit or source_unit == unit.id:
                     return match.group(0)
                 changed = True
@@ -3129,6 +3610,36 @@ def _normalize_table_physical_placeholders_to_sources(
         unit.blocks = kept_blocks
 
 
+def _promote_table_sources_from_final_anchors(
+    units: List[KnowledgeUnit],
+    tables: list[TableEntry],
+) -> list[TableEntry]:
+    table_by_id = {str(entry.id): entry for entry in tables if str(entry.id or "")}
+    if not table_by_id:
+        return tables
+    for unit in units:
+        subsection = unit.subsections[0] if unit.subsections else ""
+        for block in unit.blocks:
+            content = block.content or ""
+            anchor_match = TABLE_REFERENCE_PLACEHOLDER_PATTERN.match(content) or TABLE_PLACEHOLDER_PATTERN.match(content)
+            if anchor_match is None:
+                text_match = TABLE_REFERENCE_PATTERN.match(content)
+                table_id = text_match.group(1) if text_match else ""
+            else:
+                table_id = anchor_match.group("label")
+            if not table_id or table_id not in table_by_id:
+                continue
+            entry = table_by_id[table_id]
+            entry.source.update(
+                {
+                    "unit_id": unit.id,
+                    "chapter": entry.source.get("chapter"),
+                    "subsection": subsection,
+                }
+            )
+    return list(table_by_id.values())
+
+
 def save_structured_units(
     chunks: List,
     output_dir: str,
@@ -3136,10 +3647,16 @@ def save_structured_units(
     source_file: str,
     source_title: str | None = None,
     chapter_tables: list[TableEntry] | None = None,
+    raw_heading_candidates: list[str] | None = None,
 ) -> List[KnowledgeUnit]:
     """Write composite chunks to structured JSON files."""
     units: List[KnowledgeUnit] = []
-    chunks, inferred_sections = refine_chunks_for_output(chunks, source_title=source_title)
+    chunks, inferred_sections = refine_chunks_for_output(
+        chunks,
+        source_title=source_title,
+        chapter_name=chapter_name,
+        raw_heading_candidates=raw_heading_candidates,
+    )
     known_table_ids = {entry.id for entry in (chapter_tables or [])}
 
     for index, (chunk, inferred_section) in enumerate(zip(chunks, inferred_sections), start=1):
@@ -3195,6 +3712,7 @@ def save_structured_units(
             section_level_2=chunk.section_level_2,
             heading_path=chunk.heading_path,
             display_heading=chunk.display_heading,
+            chapter_title=_chapter_title_from_heading_candidates(raw_heading_candidates or [], chapter_name),
         )
 
         output_path = os.path.join(output_dir, f"{unit.id}.json")
@@ -3221,6 +3739,7 @@ def process_text_chapter(
     source_title: str | None = None,
     skip_llm_cleaning: bool = False,
     initial_table_entries: list[TableEntry] | None = None,
+    raw_heading_candidates: list[str] | None = None,
     llm_policy: dict[str, Any] | None = None,
 ) -> tuple[List[KnowledgeUnit], list[TableEntry]]:
     """Process one split OCR text segment into structured knowledge units and tables."""
@@ -3356,8 +3875,10 @@ def process_text_chapter(
         source_file=source_file,
         source_title=source_title,
         chapter_tables=table_entries,
+        raw_heading_candidates=raw_heading_candidates,
     )
     table_entries = assign_table_sources_to_units(units, table_entries)
+    table_entries = _promote_table_sources_from_final_anchors(units, table_entries)
     _normalize_table_physical_placeholders_to_sources(units, table_entries)
     rewrite_structured_units(units, output_dir)
     backfill_stats = _backfill_table_references_from_sources(units, table_entries, output_dir)
@@ -3411,6 +3932,7 @@ def process_tex_chapter(
         source_title=source_title,
         skip_llm_cleaning=skip_llm_cleaning,
         initial_table_entries=initial_table_entries,
+        raw_heading_candidates=_raw_layout_heading_candidates(tex_path, chapter_name),
         llm_policy=llm_policy,
     )
 
@@ -3424,7 +3946,7 @@ def main() -> None:
     parser.add_argument(
         "--input",
         "-i",
-        default=str(REPO_ROOT / "tmp" / "paddle_output" / "chapter1_full"),
+        default=str(REPO_ROOT / "data" / "paddle_output" / "chapter1_full"),
         help="Input .tex file or directory containing main.tex files",
     )
     parser.add_argument(

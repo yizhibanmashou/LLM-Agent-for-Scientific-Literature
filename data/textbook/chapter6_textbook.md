@@ -1,4 +1,4 @@
-# Chapter 6 Textbook Mapping
+# Chapter 6 · Theorems of Natural Selection: Results of Price, Fisher, and Robertson
 
 ## chapter6_001 · Theorems of Natural Selection: Results of Price, Fisher, and Robertson: Introduction
 
@@ -30,7 +30,7 @@ The thoughtful reader might ask if there is a general, assumption-free statement
 
 ---
 
-## chapter6_003 · Theorems of Natural Selection: Results of Price, Fisher, and Robertson: Introduction / The Life and Times of George Price
+## chapter6_003 · PRICE'S GENERAL THEOREM OF SELECTION / The Life and Times of George Price
 
 **[命题 Proposition]**
 
@@ -42,21 +42,9 @@ Price's Theorem, $
 
 **[示例 Example]**
 
-> **Example 6.2** · ref: `6.2` · source: `chapter6_003.json` · blocks 2–2
+> **Example 6.1** · ref: `6.1` · source: `chapter6_003.json` · blocks 0–0
 >
-> Example 6.2. Consider the change in allele frequency when a single diallelic locus (alleles A and a) determines fitness. Assume random mating among the survivors, with $ p = \text{freq}(A) $, and
-> 
-> > **Inline Table 1** · `inline_1` · page 6 · source: `chapter6_003`
-> > Inline Table 1
-> >
-> > Genotype | Frequency (before selection) | Fitness
-> > --- | --- | ---
-> > AA | $ p^{2} $ | $ W_{AA} $
-> > Aa | $ 2p(1-p) $ | $ W_{Aa} $
-> > aa | $ (1-p)^{2} $ | $ W_{aa} $
-> 
-> 
-> To apply Price’s theorem, we need to specify the categories to be followed, which we take as the alleles A and a. We index these by $i = 1$ and $i = 2$, respectively, and code their associated values as $z_1 = 1$ and $z_2 = 0$, which implies a mean value of $\bar{z} = (1 \cdot p) + (0 \cdot [1 - p]) = p$, so $R_z$ represents the change in $p$. In the absence of mutation, transmission is perfect, as the descendant allele from an A allele is always A, resulting in $\bar{\delta}_i = 0$. Putting these together, Equation 6.6 becomes $$ \Delta p=R_{z}=\sigma(w_{i},z_{i})+E(w_{i}\cdot0)=\sigma(w_{i},z_{i}) $$ Under random mating, the fitness $ W_1 $ of an $ A $ allele is simply its marginal fitness (Equation 5.7b), $ W_1 = pW_{AA} + (1 - p)W_{Aa} $. Similarly, $ W_2 = pW_{Aa} + (1 - p)W_{aa} $ and $ E(W_i) = \overline{W} = pW_1 + (1 - p)W_2 $. Recalling that $ w_i = W_i/\overline{W} $ and the definition of a covariance, we have $$ \Delta p=\sigma(w_{i},z_{i})=\frac{\sigma(W_{i},z_{i})}{\overline{W}}=\frac{1}{\overline{W}}\Biggl(E(W_{i}z_{i})-E(W_{i})E(z_{i})\Biggr) $$ To show that this recovers the standard population-genetic equation for allele-frequency change, note that $$ E(W_{i}z_{i})=\sum_{i=1}^{2}W_{i}z_{i}freq(category i)=\left[W_{1}\cdot1\cdot p\right]+\left[W_{2}\cdot0\cdot(1-p)\right]=p\cdot W_{1} $$ Using this result along with $ E(W_i) = \overline{W} $ and $ E(z_i) = p $ $$ \Delta p=\frac{1}{\overline{W}}\left(p W_{1}-\overline{W}p\right)=p\frac{\left(W_{1}-\overline{W}\right)}{\overline{W}} $$ which recovers Equation 5.7c. The Robertson-Price Identity, $ S = \sigma(w, z) $ When our concern is strictly on the within-generation change in trait value, then $ \Delta\overline{z} = \mu_{z}^{*} - \mu_{z} $, the difference between the fitness-weighted mean after selection (but before reproduction), $ \mu_{z}^{*} $, and the overall mean before selection, $ \mu_{z} $, which is the selection differential S (Chapter 13). Because the within-generation change is not influenced by cross-generation transmission, any terms involving $ \bar{\delta} $ in Equation 6.6 are zero, and we recover the Robertson-Price identity $$ S=\sigma(w,z) $$ (6.10) as first obtained by Robertson (1966a) and Price (1970). We derive this result by another route in Chapter 13, where we use this identity extensively in selection-response theory. The critical insight from Equation 6.10 is that no matter how complex the relationship between phenotype z and fitness w, the within-generation change in the mean only depends on the covariance between these measures.
+> Example 6.1. Let the ancestor (i) be the midparent (the average value of the two parents) with a phenotypic value of $ z_i $ and the descendants be the offspring in the next generation. If the average value of offspring, $ \overline{z}_i $, is exactly the same as the value, $ z_i $, of their ancestral midparent, then $ \delta_i = 0 $ for all $ i $ and, from Equation 6.6, the response is simply $ R = \sigma(w_i, z_i) $. From the Robertson-Price identity (Table 6.1, Equation 6.10), $ \sigma(w_i, z_i) = S $, the selection differential, so that $ R = S $ in this case of perfect transmission. However, the mean value of offspring generally differs from the average value of their parents, in which case the second term in Equation 6.6 is nonzero. The simplest transmission model is a linear midparent-offspring regression, $ z_{ij} = \mu + b(z_i - \mu) + e_{ij} $. Here $ z_{ij} $ is the trait value for the $ j $th offspring from midparent $ i $, giving the mean value of offspring from $ i $ as $ \overline{z}_i = \mu + b(z_i - \mu) + e_i $. The expected deviation then becomes $$ \overline{\delta}_{i}=\overline{z}_{i}-z_{i}=\mu+b(z_{i}-\mu)+e_{i}-z_{i}=(b-1)(z_{i}-\mu)+e_{i} $$ (6.9a) Hence, $$ \begin{aligned}E(w_{i}\overline{\delta}_{i})&=E\{w_{i}\left[(b-1)(z_{i}-\mu)+e_{i}\right]\}\\&=(b-1)[E(w_{i}z_{i})-\mu E(w_{i})]+E(w_{i}e_{i})\end{aligned} $$ Recalling that $ E(w_i) = 1 $ gives $$ E(w_{i}\overline{\delta}_{i})=(b-1)\left[E(w_{i}z_{i})-\mu\right]+E(w_{i}e_{i}) $$ From the definition of a covariance $$ E(w_{i}z_{i})=\sigma(w_{i},z_{i})+E(w_{i})E(z_{i})=S+1\cdot\mu $$ $$ E(w_{i}e_{i})=\sigma(w_{i},e_{i})+E(w_{i})E(e_{i})=\sigma(w_{i},e_{i})+1\cdot0 $$ Putting these results together into Equation 6.6 yields $$ R_{z}=S+E(w_{i}\overline{\delta}_{i})=S+(b-1)(S+\mu-\mu)+\sigma(w_{i},e_{i})=bS+\sigma(w_{i},e_{i}) $$ (6.9b) Provided that the residual, $ e_i $, of the midparent-offspring regression and the fitness, $ w_i $, of the midparent are uncorrelated, $ R = bS $. When these are uncorrelated and the midparent-offspring slope equals the heritability, $ b = h^2 $, we recover the breeder's equation. While at first blush Equation 6.9b appears to be a rather general statement about the accuracy of the breeder's equation, we made a few subtle assumptions (besides the obvious one of linearity) about the parent-offspring relationship, although we will defer discussion of these until later sections of this chapter.
 
 
 **[命题 Proposition]**
@@ -196,42 +184,28 @@ As noted in Table 6.1, and as will be shown shortly (Equation 6.10), the selecti
 
 While a discussion of Price’s theorem often assumes the ancestor to be a parent or midparent and the descendants to be their offspring in the next generation, the theorem holds for any time interval and for any set of ancestors (such as a group of individuals; Chapter 22) that one wishes to consider. In this sense, Price’s theorem is completely general and makes absolutely no assumptions about the mechanism of transmission of trait values from ancestors to their descendants, although it does make the assumption that all descendants have ancestors. This may seem trivial, but it is violated by migration, wherein an individual appears in the next generation from ancestors not considered. Kerr and Godfrey-Smith (2008) generalized the Price equation to accommodate missing ancestors and more general causal connections between ancestors and descendants.
 
+**[示例 Example]**
+
+> **Example 6.2** · ref: `6.2` · source: `chapter6_003.json` · blocks 1–10
+>
+> Example 6.2. Consider the change in allele frequency when a single diallelic locus (alleles A and a) determines fitness. Assume random mating among the survivors, with $ p = \text{freq}(A) $, and
+> 
+> > **Inline Table 1** · `inline_1` · page 6 · source: `chapter6_003`
+> > Inline Table 1
+> >
+> > Genotype | Frequency (before selection) | Fitness
+> > --- | --- | ---
+> > AA | $ p^{2} $ | $ W_{AA} $
+> > Aa | $ 2p(1-p) $ | $ W_{Aa} $
+> > aa | $ (1-p)^{2} $ | $ W_{aa} $
+> 
+> 
+> To apply Price’s theorem, we need to specify the categories to be followed, which we take as the alleles A and a. We index these by $i = 1$ and $i = 2$, respectively, and code their associated values as $z_1 = 1$ and $z_2 = 0$, which implies a mean value of $\bar{z} = (1 \cdot p) + (0 \cdot [1 - p]) = p$, so $R_z$ represents the change in $p$. In the absence of mutation, transmission is perfect, as the descendant allele from an A allele is always A, resulting in $\bar{\delta}_i = 0$. Putting these together, Equation 6.6 becomes $$ \Delta p=R_{z}=\sigma(w_{i},z_{i})+E(w_{i}\cdot0)=\sigma(w_{i},z_{i}) $$ Under random mating, the fitness $ W_1 $ of an $ A $ allele is simply its marginal fitness (Equation 5.7b), $ W_1 = pW_{AA} + (1 - p)W_{Aa} $. Similarly, $ W_2 = pW_{Aa} + (1 - p)W_{aa} $ and $ E(W_i) = \overline{W} = pW_1 + (1 - p)W_2 $. Recalling that $ w_i = W_i/\overline{W} $ and the definition of a covariance, we have $$ \Delta p=\sigma(w_{i},z_{i})=\frac{\sigma(W_{i},z_{i})}{\overline{W}}=\frac{1}{\overline{W}}\Biggl(E(W_{i}z_{i})-E(W_{i})E(z_{i})\Biggr) $$ To show that this recovers the standard population-genetic equation for allele-frequency change, note that $$ E(W_{i}z_{i})=\sum_{i=1}^{2}W_{i}z_{i}freq(category i)=\left[W_{1}\cdot1\cdot p\right]+\left[W_{2}\cdot0\cdot(1-p)\right]=p\cdot W_{1} $$ Using this result along with $ E(W_i) = \overline{W} $ and $ E(z_i) = p $ $$ \Delta p=\frac{1}{\overline{W}}\left(p W_{1}-\overline{W}p\right)=p\frac{\left(W_{1}-\overline{W}\right)}{\overline{W}} $$ which recovers Equation 5.7c.
+
+
 ---
 
 ## chapter6_005 · Theorems of Natural Selection: Results of Price, Fisher, and Robertson: Introduction / The Life and Times of George Price
-
-**[示例 Example]**
-
-> **Example 6.1** · ref: `6.1` · source: `chapter6_005.json` · blocks 0–0
->
-> Example 6.1. Let the ancestor (i) be the midparent (the average value of the two parents) with a phenotypic value of $ z_i $ and the descendants be the offspring in the next generation. If the average value of offspring, $ \overline{z}_i $, is exactly the same as the value, $ z_i $, of their ancestral midparent, then $ \delta_i = 0 $ for all $ i $ and, from Equation 6.6, the response is simply $ R = \sigma(w_i, z_i) $. From the Robertson-Price identity (Table 6.1, Equation 6.10), $ \sigma(w_i, z_i) = S $, the selection differential, so that $ R = S $ in this case of perfect transmission. However, the mean value of offspring generally differs from the average value of their parents, in which case the second term in Equation 6.6 is nonzero. The simplest transmission model is a linear midparent-offspring regression, $ z_{ij} = \mu + b(z_i - \mu) + e_{ij} $. Here $ z_{ij} $ is the trait value for the $ j $th offspring from midparent $ i $, giving the mean value of offspring from $ i $ as $ \overline{z}_i = \mu + b(z_i - \mu) + e_i $. The expected deviation then becomes
-> 
-> > **Formula (6.9a)** · `6.9a` · source: `chapter6_block_026` · The Life and Times of George Price
-> >
-> > $$ \overline{\delta}_{i}=\overline{z}_{i}-z_{i}=\mu+b(z_{i}-\mu)+e_{i}-z_{i}=(b-1)(z_{i}-\mu)+e_{i} $$
-> 
-> 
-> Hence, $$ \begin{aligned}E(w_{i}\overline{\delta}_{i})&=E\{w_{i}\left[(b-1)(z_{i}-\mu)+e_{i}\right]\}\\&=(b-1)[E(w_{i}z_{i})-\mu E(w_{i})]+E(w_{i}e_{i})\end{aligned} $$
-> 
-> Recalling that $ E(w_i) = 1 $ gives $$ E(w_{i}\overline{\delta}_{i})=(b-1)\left[E(w_{i}z_{i})-\mu\right]+E(w_{i}e_{i}) $$ From the definition of a covariance $$ E(w_{i}z_{i})=\sigma(w_{i},z_{i})+E(w_{i})E(z_{i})=S+1\cdot\mu $$ $$ E(w_{i}e_{i})=\sigma(w_{i},e_{i})+E(w_{i})E(e_{i})=\sigma(w_{i},e_{i})+1\cdot0 $$
-> 
-> Putting these results together into Equation 6.6 yields
-> 
-> > **Formula (6.9b)** · `6.9b` · source: `chapter6_block_029` · The Life and Times of George Price
-> >
-> > $$ R_{z}=S+E(w_{i}\overline{\delta}_{i})=S+(b-1)(S+\mu-\mu)+\sigma(w_{i},e_{i})=bS+\sigma(w_{i},e_{i}) $$
-> 
-> 
-> Provided that the residual, $ e_i $, of the midparent-offspring regression and the fitness, $ w_i $, of the midparent are uncorrelated, $ R = bS $. When these are uncorrelated and the midparent-offspring slope equals the heritability, $ b = h^2 $, we recover the breeder's equation. While at first blush Equation 6.9b appears to be a rather general statement about the accuracy of the breeder's equation, we made a few subtle assumptions (besides the obvious one of linearity) about the parent-offspring relationship, although we will defer discussion of these until later sections of this chapter.
-> 
-> To apply Price’s theorem, we need to specify the categories to be followed, which we take as the alleles A and a. We index these by $i = 1$ and $i = 2$, respectively, and code their associated values as $z_1 = 1$ and $z_2 = 0$, which implies a mean value of $\bar{z} = (1 \cdot p) + (0 \cdot [1 - p]) = p$, so $R_z$ represents the change in $p$. In the absence of mutation, transmission is perfect, as the descendant allele from an A allele is always A, resulting in $\bar{\delta}_i = 0$. Putting these together, Equation 6.6 becomes $$ \Delta p=R_{z}=\sigma(w_{i},z_{i})+E(w_{i}\cdot0)=\sigma(w_{i},z_{i}) $$
-> 
-> Under random mating, the fitness $ W_1 $ of an $ A $ allele is simply its marginal fitness (Equation 5.7b), $ W_1 = pW_{AA} + (1 - p)W_{Aa} $. Similarly, $ W_2 = pW_{Aa} + (1 - p)W_{aa} $ and $ E(W_i) = \overline{W} = pW_1 + (1 - p)W_2 $. Recalling that $ w_i = W_i/\overline{W} $ and the definition of a covariance, we have $$ \Delta p=\sigma(w_{i},z_{i})=\frac{\sigma(W_{i},z_{i})}{\overline{W}}=\frac{1}{\overline{W}}\Biggl(E(W_{i}z_{i})-E(W_{i})E(z_{i})\Biggr) $$
-> 
-> To show that this recovers the standard population-genetic equation for allele-frequency change, note that $$ E(W_{i}z_{i})=\sum_{i=1}^{2}W_{i}z_{i}freq(category i)=\left[W_{1}\cdot1\cdot p\right]+\left[W_{2}\cdot0\cdot(1-p)\right]=p\cdot W_{1} $$
-> 
-> Using this result along with $ E(W_i) = \overline{W} $ and $ E(z_i) = p $ $$ \Delta p=\frac{1}{\overline{W}}\left(p W_{1}-\overline{W}p\right)=p\frac{\left(W_{1}-\overline{W}\right)}{\overline{W}} $$ which recovers Equation 5.7c.
-
 
 ---
 
@@ -250,7 +224,7 @@ as first obtained by Robertson (1966a) and Price (1970). We derive this result b
 
 ---
 
-## chapter6_007 · Theorems of Natural Selection: Results of Price, Fisher, and Robertson: Introduction / The Breeder's Equation, $ R = h^{2} S $
+## chapter6_007 · PRICE'S GENERAL THEOREM OF SELECTION / The Breeder's Equation, $ R = h^{2} S $
 
 **[命题 Proposition]**
 
@@ -283,6 +257,15 @@ Now suppose the parent-offspring regression is nonlinear. Assuming the simplest 
 > **Formula (6.13a)** · `6.13a` · source: `chapter6_block_040` · The Breeder's Equation, $ R = h^{2} S $
 >
 > $$ \overline{z}_{i}=a+b z_{i}+c z_{i}^{2}+e_{i} $$
+
+
+**[Figure]**
+
+> **Figure 6.2** · page 15 · source: `chapter6`
+>
+> ![Figure 6.2](../figures/fig_0201.png)
+>
+> Figure 6.2 The behavior of genetic variance components and the heritability for fitness as a function of allele frequency p under the parameters given in Example 6.5. (Left) Note that total genetic variance is maximized at the value  $ (p = 1/2) $, where the additive variance is zero. (Right) Assuming that there is no environmental variance, the heritability is simply the ratio of additive to total genetic variance, which is also zero when total variance is maximized.
 
 
 **[推导 Derivation]**
@@ -358,7 +341,7 @@ There are two sources for response: a change, $ b_j \Delta p_j $, from the chang
 
 **[示例 Example]**
 
-> **Example 6.3** · ref: `6.3` · source: `chapter6_008.json` · blocks 2–2
+> **Example 6.3** · ref: `6.3` · source: `chapter6_008.json` · blocks 2–7
 >
 > Example 6.3. The setting in which the breeder’s equation is expected to be least accurate involves a trait entirely determined by a single dominant locus. This results in both a nonlinear parent-offspring regression and the potential for significant allele-frequency change following even a single generation of selection. Suppose that, at such a locus, genotypes QQ and Qq have a phenotypic value of 1, while qq has a value of 0 (there is no environmental variance), and that qq individuals have a survival rate twice as high as the survival rate of QQ and Qq individuals. We now contrast the exact response from single-locus models (Chapter 5) with that predicted by the breeder’s equation. Starting with the exact population-genetic model, and letting p be the frequency of allele q
 > 
@@ -373,12 +356,21 @@ There are two sources for response: a change, $ b_j \Delta p_j $, from the chang
 > > Frequency (after selection) | $ (1-p)^{2}/\overline{W} $ | $ 2p(1-p)/\overline{W} $ | $ p^{2}(2/\overline{W}) $
 > 
 > 
-> The trait mean before selection is $ \mu(p) = 1 - p^2 $, with a mean fitness of $ \overline{W}(p) = 1 + p^2 $. The new frequency, $ p' $, of allele $ q $ after selection is half the frequency of $ Qq $ plus the frequency of $ qq $ (both after selection) $$ p^{\prime}=\frac{(1/2)2p(1-p)+2p^{2}}{1+p^{2}}=\frac{p(1+p)}{1+p^{2}} $$ (6.16a) yielding an allele-frequency change of $$ \Delta p=p^{\prime}-p=\frac{p(1+p)}{1+p^{2}}-p\frac{1+p^{2}}{1+p^{2}}=\frac{p^{2}(1-p)}{1+p^{2}} $$ which translates into a change in mean phenotype of $$ R_{z}=\mu(p^{\prime})-\mu(p)=p^{2}-(p^{\prime})^{2}=-2p^{3}\left(\frac{1-p(1+p^{2})/2}{(1+p^{2})^{2}}\right) $$ (6.16b) This exact single-generation response in the trait mean is plotted in Figure 6.4. Now consider the response predicted from the breeder’s equation. Applying the standard trait-value parameterization of $ 2a : a(1 + k) : 0 $ to the preceding trait values, we have $ a = 1/2 $ and $ k = 1 $, yielding (LW Chapter 4) the additive and dominance variances of the trait $$ \sigma_{A}^{2}=2p(1-p)a^{2}[1+k(2p-1)]^{2}=2p(1-p)(1/4)(2p)^{2}=2p^{3}(1-p) $$ $$ \sigma_{D}^{2}=[2p(1-p)a k]^{2}=p^{2}(1-p)^{2} $$ Because $ \sigma_{E}^{2} $ is assumed to be zero, the heritability becomes $$ h^{2}=\frac{\sigma_{A}^{2}}{\sigma_{A}^{2}+\sigma_{D}^{2}}=\frac{2p^{3}(1-p)}{2p^{3}(1-p)+p^{2}(1-p)^{2}}=\frac{2p}{1+p} $$ (6.16c) Following selection (but before reproduction), only QQ and Qq survive, each with a trait value of one, yielding the fitness-weighted mean $$ \mu^{*}=1\cdot\frac{1}{\overline{W}}\left(1-p^{2}\right)+0\cdot\frac{2}{\overline{W}}p^{2}=\frac{1-p^{2}}{\overline{W}}=\frac{1-p^{2}}{1+p^{2}} $$ (6.16d) yielding the selectional differential $$ S=\mu^{*}-\mu=\frac{1-p^{2}}{1+p^{2}}-\left(1-p^{2}\right)=-p^{2}\frac{1-p^{2}}{1+p^{2}} $$ (6.16e) Equations 6.16c and 6.16e give the predicted response from the breeder’s equation as $$ R_{z}=h^{2}S=\left(\frac{2p}{1+p}\right)\left(-p^{2}\frac{1-p^{2}}{1+p^{2}}\right)=-\frac{2p^{3}(1-p)}{1+p^{2}} $$ (6.16f) As shown in Figure 6.1, we see that the approximation given by the breeder's equation (Equation 6.16f) generally does well but slightly underestimates the exact response (Equation 6.16b), predicting (in the worst case) only about 90% of the actual response when $ p \simeq 0.4 $. For this simple one-locus model, two factors account for this discrepancy. First, owing to dominance, the parent-offspring regression is not linear. Second, the change in allele frequency in the selected parents results in changes in the parent-offspring covariance, and hence the parent-offspring regression slope.
+> The trait mean before selection is $ \mu(p) = 1 - p^2 $, with a mean fitness of $ \overline{W}(p) = 1 + p^2 $. The new frequency, $ p' $, of allele $ q $ after selection is half the frequency of $ Qq $ plus the frequency of $ qq $ (both after selection) $$ p^{\prime}=\frac{(1/2)2p(1-p)+2p^{2}}{1+p^{2}}=\frac{p(1+p)}{1+p^{2}} $$ (6.16a) yielding an allele-frequency change of $$ \Delta p=p^{\prime}-p=\frac{p(1+p)}{1+p^{2}}-p\frac{1+p^{2}}{1+p^{2}}=\frac{p^{2}(1-p)}{1+p^{2}} $$ which translates into a change in mean phenotype of $$ R_{z}=\mu(p^{\prime})-\mu(p)=p^{2}-(p^{\prime})^{2}=-2p^{3}\left(\frac{1-p(1+p^{2})/2}{(1+p^{2})^{2}}\right) $$ (6.16b) This exact single-generation response in the trait mean is plotted in Figure 6.4. Now consider the response predicted from the breeder’s equation. Applying the standard trait-value parameterization of $ 2a : a(1 + k) : 0 $ to the preceding trait values, we have $ a = 1/2 $ and $ k = 1 $, yielding (LW Chapter 4) the additive and dominance variances of the trait $$ \sigma_{A}^{2}=2p(1-p)a^{2}[1+k(2p-1)]^{2}=2p(1-p)(1/4)(2p)^{2}=2p^{3}(1-p) $$ $$ \sigma_{D}^{2}=[2p(1-p)a k]^{2}=p^{2}(1-p)^{2} $$ Because $ \sigma_{E}^{2} $ is assumed to be zero, the heritability becomes $$ h^{2}=\frac{\sigma_{A}^{2}}{\sigma_{A}^{2}+\sigma_{D}^{2}}=\frac{2p^{3}(1-p)}{2p^{3}(1-p)+p^{2}(1-p)^{2}}=\frac{2p}{1+p} $$ (6.16c) Following selection (but before reproduction), only QQ and Qq survive, each with a trait value of one, yielding the fitness-weighted mean $$ \mu^{*}=1\cdot\frac{1}{\overline{W}}\left(1-p^{2}\right)+0\cdot\frac{2}{\overline{W}}p^{2}=\frac{1-p^{2}}{\overline{W}}=\frac{1-p^{2}}{1+p^{2}} $$ (6.16d) yielding the selectional differential $$ S=\mu^{*}-\mu=\frac{1-p^{2}}{1+p^{2}}-\left(1-p^{2}\right)=-p^{2}\frac{1-p^{2}}{1+p^{2}} $$ (6.16e) Equations 6.16c and 6.16e give the predicted response from the breeder’s equation as $$ R_{z}=h^{2}S=\left(\frac{2p}{1+p}\right)\left(-p^{2}\frac{1-p^{2}}{1+p^{2}}\right)=-\frac{2p^{3}(1-p)}{1+p^{2}} $$ (6.16f) As shown in Figure 6.1, we see that the approximation given by the breeder's equation (Equation 6.16f) generally does well but slightly underestimates the exact response (Equation 6.16b), predicting (in the worst case) only about 90% of the actual response when $ p \simeq 0.4 $. For this simple one-locus model, two factors account for this discrepancy. First, owing to dominance, the parent-offspring regression is not linear. Second, the change in allele frequency in the selected parents results in changes in the parent-offspring covariance, and hence the parent-offspring regression slope. Figure 6.1 Analysis of the model from Example 6.3. (Left) Graph of the exact (using one-locus theory; Equation 6.16b) and predicted (via the breeder's equation; Equation 6.16f) response as a function of allele-frequency p, for a trait under selection determined by a single dominant locus. (Right) The relative accuracies of the breeder's equation as a function of p.
 
 
 ---
 
 ## chapter6_009 · Theorems of Natural Selection: Results of Price, Fisher, and Robertson: Introduction / FISHER'S FUNDAMENTAL THEOREM OF NATURAL SELECTION
+
+**[Figure]**
+
+> **Figure 6.1** · page 10 · source: `chapter6`
+>
+> ![Figure 6.1](../figures/fig_0200.png)
+>
+> Figure 6.1 Analysis of the model from Example 6.3. (Left) Graph of the exact (using one-locus theory; Equation 6.16b) and predicted (via the breeder's equation; Equation 6.16f) response as a function of allele-frequency p, for a trait under selection determined by a single dominant locus. (Right) The relative accuracies of the breeder's equation as a function of p.
+
 
 The rate of increase in fitness of any organism at any time is equal to its genetic variance in fitness at that time. Fisher (1930, p. 35)
 
@@ -388,7 +380,7 @@ This simple statement from Fisher’s (1930) book (which was dictated to his wif
 
 ---
 
-## chapter6_010 · Theorems of Natural Selection: Results of Price, Fisher, and Robertson: Introduction / The Classical Interpretation of Fisher's Fundamental Theorem, $ R_w = \sigma_A^2(w) $
+## chapter6_010 · FISHER'S FUNDAMENTAL THEOREM OF NATURAL SELECTION / The Classical Interpretation of Fisher's Fundamental Theorem, $ R_w = \sigma_A^2(w) $
 
 **[推导 Derivation]**
 
@@ -507,7 +499,7 @@ where the last expression follows because $ \sigma(A_i, \epsilon_i) = 0 $ by con
 
 **[示例 Example]**
 
-> **Example 6.4** · ref: `6.4` · source: `chapter6_010.json` · blocks 9–9
+> **Example 6.4** · ref: `6.4` · source: `chapter6_010.json` · blocks 9–11
 >
 > Example 6.4. The accuracy of the first-order Taylor-series approximation used in Equation 6.18b was examined by Li (1967). Because $ \overline{W} $ is a quadratic polynomial of p, the second-order Taylor series is exact, $$ \Delta\overline{W}=\frac{d\overline{W}}{d p}\Delta p+\frac{1}{2}\frac{d^{2}\overline{W}}{d p^{2}}\left(\Delta p\right)^{2} $$ As shown by Equations 6.18c and 6.18f, the first term recovers Fisher's theorem, while the second term is the error resulting from this approximation.
 > 
@@ -518,7 +510,7 @@ where the last expression follows because $ \sigma(A_i, \epsilon_i) = 0 $ by con
 
 ---
 
-## chapter6_011 · Theorems of Natural Selection: Results of Price, Fisher, and Robertson: Introduction / What Did Fisher Really Mean?
+## chapter6_011 · FISHER'S FUNDAMENTAL THEOREM OF NATURAL SELECTION / What Did Fisher Really Mean?
 
 **[命题 Proposition]**
 
@@ -597,7 +589,7 @@ This corollary makes the general prediction that characters that are strongly ge
 
 **[示例 Example]**
 
-> **Example 6.5** · ref: `6.5` · source: `chapter6_012.json` · blocks 2–2
+> **Example 6.5** · ref: `6.5` · source: `chapter6_012.json` · blocks 2–4
 >
 > Example 6.5. Consider a locus with two alleles $ (A_{1} $ and $ A_{2}) $ and overdominance in fitness, $$ W_{11}=1-s\quad W_{12}=1\quad W_{22}=1-s $$
 > 
@@ -608,7 +600,7 @@ This corollary makes the general prediction that characters that are strongly ge
 
 ---
 
-## chapter6_013 · Theorems of Natural Selection: Results of Price, Fisher, and Robertson: Introduction / Traits Correlated With Fitness Have Lower Heritabilities
+## chapter6_013 · IMPLICATIONS OF FISHER'S THEOREM FOR TRAIT VARIATION / Traits Correlated With Fitness Have Lower Heritabilities
 
 **[命题 Proposition]**
 
@@ -623,6 +615,15 @@ Unfortunately, estimates of lifetime fitness in natural populations and their co
 McCleery et al. (2004) also found a negative relationship between trait heritability and trait-fitness phenotypic correlation in an English population of great tits (Parus major) that was followed for almost 40 years. Similar findings were seen by Teplitsky et al. (2009) in red-billed gulls (Larus novaehollandiae). Conversely, Schwaegerle and Levin (1991) found no significant association between the heritability of a character and its phenotypic correlation to fruit production (chosen as one measure of total fitness) in a wild population of the plant Phlox dummondii (Figure 6.3). While the evidence is mixed, these studies suggest a mild trend for characters that are phenotypically correlated with fitness to have reduced heritabilities relative to other characters. One important caveat is that this association is based on phenotypic, rather than genetic, correlations with fitness.
 
 Under the classical view, if a trait is known to be under selection, one might be tempted to assume it is still far from its genotypic equilibrium value if it shows a modest to large heritability. This is false. As Example 6.6 highlights, a trait that is under selection can still have a high trait additive variance even when the additive genetic variance in fitness is near zero. This can happen if there is a nonlinear transformation of the trait value into fitness, such as occurs with stabilizing selection.
+
+**[Figure]**
+
+> **Figure 6.3** · page 17 · source: `chapter6`
+>
+> ![Figure 6.3](../figures/fig_0202.png)
+>
+> Figure 6.3 Two studies examining the association between a character's heritability and its total fitness, measured by  $ r^{2} $, the squared phenotypic correlation between the character and lifetime fitness. (Left) Gustafsson's (1986) work on the collared flycatcher Ficedula albicollis on the island of Gotland in the Baltic Sea. (Right) Schwaegerle and Levin's (1991) study of Phlox drummondii, with fruit production used as a measure of total fitness.
+
 
 **[推导 Derivation]**
 
@@ -640,22 +641,31 @@ Thus, even when fitness is entirely determined by a single trait, the heritabili
 > **Example 6.6** · ref: `6.6` · source: `chapter6_013.json` · blocks 7–7
 >
 > Example 6.6. Even if Fisher's theorem holds exactly, its implication for character evolution can often be misinterpreted. Suppose that locus A in Example 6.5 completely determines a character under stabilizing selection. Let the genotypes AA, Aa, and aa have discrete phenotypic values of z = -1, 0, and 1, respectively (so that this locus is strictly additive with respect to the trait), and let the fitness function be $ W(z) = 1 - sz^2 $. If we assume no environmental variance, this generates the fitnesses for each genotype assumed in Example 6.5. The additive genetic variance for the trait z is $ 2(1)^2 p(1 - p) $, which is maximized at p = 1/2, precisely the allele frequency at which the additive genetic variance in fitness, $ \sigma_A^2(W) $, equals zero. This difference emphasizes that Fisher's theorem concerns additive genetic variance in fitness, not in the character. In this example, the nonlinear mapping of the phenotypic character value, z, into the trait fitness, W, results in a situation where a character that is correlated with fitness retains additive variance in the trait but not in fitness at its equilibrium value.
-> 
-> > **Table 6.2** · `6.2` · page 18 · source: `chapter6_013`
-> > Table 6.2 Heritabilities and coefficients of additive genetic  $ (CV_{A}) $ and residual  $ (CV_{R}) $ variation for representative traits in Drosophila melanogaster. Both  $ CV_{A} $ and  $ CV_{R} $ values are multiplied by 100. Here n is the number of studies, and the median estimates are reported. (After Houle 1992.)
-> >
-> > Trait | n | $ h^{2} $ | $ CV_{A} $ | $ CV_{R} $
-> > --- | --- | --- | --- | ---
-> > Sternopleural bristles | 21 | 0.44 | 8.39 | 7.97
-> > Wing length | 31 | 0.36 | 1.56 | 2.09
-> > Fecundity | 12 | 0.06 | 11.90 | 39.02
-> > Longevity | 7 | 0.11 | 9.89 | 27.73
-> 
+
+
+**[示例 Example]**
+
+> **Example 6.7** · ref: `6.7` · source: `chapter6_013.json` · blocks 8–8
+>
+> Example 6.7. Mackay (1985b) examined total fitness (measured by competition against a marked balancer stock) of 41 third chromosomes extracted from a natural population of Drosophila melanogaster. Using these chromosomes, lines with an otherwise common background could be made homozygous for a particular extracted third chromosome, and likewise the performance of that chromosome as a heterozygote could also be assayed. If there is significant additive genetic variance in fitness, a correlation between homozygote and heterozygote fitness is expected. Such a correlation was found for viability, suggesting some additive genetic variance in this character. However, when total fitness was examined, no correlation was found, suggesting no significant additive variation in total fitness. Mackay observed strong inbreeding depression, consistent with the total genetic variation in fitness being caused by segregation of rare deleterious recessive alleles (LW Chapter 10). A very similar experiment using segregating third chromosomes within a Drosophila population selected for domestication, Fowler et al. (1997) and Gardner et al. (2005) found high homozygote-heterozygote correlations for total fitness, and thus significant additive variance in fitness.
+
+
+**[Table]**
+
+> **Table 6.2** · `6.2` · page 18 · source: `chapter6_013`
+> Table 6.2 Heritabilities and coefficients of additive genetic $ (CV_{A}) $ and residual $ (CV_{R}) $ variation for representative traits in Drosophila melanogaster. Both $ CV_{A} $ and $ CV_{R} $ values are multiplied by 100. Here n is the number of studies, and the median estimates are reported. (After Houle 1992.)
+>
+> Trait | n | $ h^{2} $ | $ CV_{A} $ | $ CV_{R} $
+> --- | --- | --- | --- | ---
+> Sternopleural bristles | 21 | 0.44 | 8.39 | 7.97
+> Wing length | 31 | 0.36 | 1.56 | 2.09
+> Fecundity | 12 | 0.06 | 11.90 | 39.02
+> Longevity | 7 | 0.11 | 9.89 | 27.73
 
 
 ---
 
-## chapter6_014 · Theorems of Natural Selection: Results of Price, Fisher, and Robertson: Introduction / Traits Correlated With Fitness Have Higher Levels of Both Additive and Residual Variance
+## chapter6_014 · IMPLICATIONS OF FISHER'S THEOREM FOR TRAIT VARIATION / Traits Correlated With Fitness Have Higher Levels of Both Additive and Residual Variance
 
 While a reduced $ h^{2} $ value is often interpreted as resulting from a decrease in the additive variance, it can also result from an increase in the residual variance, and the argument made by Price and Schluter raises the question of whether traits that are more closely associated with fitness have increased residual variances. If this is the case, a simple comparison of heritabilities can be misleading (Houle 1992).
 
@@ -665,13 +675,22 @@ However, in a survey of over 800 estimates for $ CV_A $ from a variety of traits
 
 A study by Kruuk et al. (2000) on Scottish red deer (Cervus elaphus) offers some additional insight. The authors estimated components of additive genetic, maternal, and residual variances from pedigree data for this wild population (on the Isle of Rum in Scotland) for five life-history and three morphological traits in addition to lifetime fitness. As shown in Figure 6.4, they also found heritabilities to be negatively correlated with fitness, whereas the coefficient of additive genetic variance $ CV_{A} $, was positively correlated with fitness in males (but negatively correlated in females). Moreover, $ CV_{A} $ values were higher for life-history traits than for morphological traits, and the coefficient of residual variation $ CV_{R} $ was also positively correlated with fitness. Similar patterns of both $ CV_{A} $ and $ CV_{R} $ being positively correlated with fitness have been seen in the seed beetle Callosobruchus maculatus (Messina 1993), in an Alberta population of bighorn sheep (Coltman et al. 2006), in the perennial herb Ipomopsis aggregata (Campbell 1997), and in natural bird populations (collared flycatchers by Merilä and Sheldon 2000; great tits by McCleery et al. 2004). For these studies, high residual variance, not low $ \sigma_{A}^{2} $, accounts for the observed lower $ h^{2} $ values for traits related to fitness. Conversely, while Teplitsky et al. (2009) also observed lower heritabilities for fitness-related traits in red-billed gulls, both higher residual variance and lower additive variance accounted for their trend.
 
+**[Figure]**
+
+> **Figure 6.4** · page 19 · source: `chapter6`
+>
+> ![Figure 6.4](../figures/fig_0203.png)
+>
+> Figure 6.4 Kruuk et al.'s (2000) study of life-history and morphological traits in the Scottish red deer (Cervus elaphus). Circles denote life-history traits, squares morphological traits. Filled symbols are for males, open for females. (Left) The heritability of a trait is negatively associated with the correlation of that trait with fitness. (Right) The coefficient of additive genetic variation  $ CV_{A} $ (the square root of the additive genetic variance of a trait divided by the trait mean, here multiplied by 100) is positively associated with fitness in males, and negatively associated with fitness in females.
+
+
 What accounts for the higher coefficients of additive variance in traits associated with fitness? The prediction of lower additive variance in fitness-related traits is based on the notion that $ \sigma_{A}^{2} $ is removed by selection. However, the loss of variation is partly countered by new mutational input, leaving some nonzero amount even in the face of strong selection (Chapter 28). If all traits have similar mutational variances, a faster removal of $ \sigma_{A}^{2} $ by selection for the traits that are more closely related to fitness would indeed lead to lower equilibrium levels of additive genetic variance. However, it appears that traits that are more closely associated with fitness actually have higher mutational variances (Houle et al. 1996), most likely due to a larger number of loci influencing fitness (Houle 1992; Houle et al. 1996; Merilä and Sheldon 1999). As with any summary metric, $ CV_A $ should be used with a little caution. Garcia-Gonzalez et al. (2012) found that roughly 45% of the studies they examined used incorrect methods in calculating $ CV_A $ (the most common being use of the sire variance $ \sigma_A^2 / 4 $ in place of $ \sigma_A^2 $, which results in a two-fold lower estimate). A second issue is that coefficients of variation should only be compared among items with the same dimensions (Lande 1977c). CVs for linear measures tend to be less than those for volumetric measures. Hence, something like body mass might intrinsically have a higher $ CV_A $ than some linear morphological trait. These and other issues are discussed by Garcia-Gonzalez et al. (2012), who provide a delta-method approximation (LW Appendix 1) for the standard error of a CV estimate.
 
 A final caveat with these studies is that they examined the correlation between fitness (either total fitness or one of its components) and additive variance of a trait, while Fisher was concerned with the additive genetic variance of fitness itself. Estimates of the additive variance in total fitness in natural populations are very rare, as these require estimates of lifetime fitness (not a trivial task; see Chapter 29), further compounded by the difficulty of having to obtain such estimates over a set of relatives. To date, estimates of the additive variation associated with lifetime reproductive success in natural populations are from vertebrates with extensive known pedigrees. Kruuk et al. (2000) found no evidence for a significant heritability of this trait in red deer. McCleery et al. (2004) found positive, but not significant, estimates in great tits. Merilä and Sheldon (2000) found a significant additive variance for females and a positive (but not significant) variance for males in collared flycatchers. Teplitsky et al. (2009) found positive (but not significant) variance in females and no variance in males for red-billed gulls (Larus novaehollandiae). Blomquist (2010) obtained rather high ($ \sim $0.4) estimates of heritability for lifetime reproductive success in a free-ranging population of rhesus macaques (Macaca mulatta) introduced in 1938 (from India) to a small island in Puerto Rico. Finally, Papaix et al. (2010) obtained a very low estimate (a posterior mean of 0.02) for heritability of adult survival in the wild for a population of blue tits (Cyanistes caeruleus). One issue with all of these studies is the expected low power to detect small amounts of variances, so negative results should be viewed cautiously.
 
 ---
 
-## chapter6_015 · Theorems of Natural Selection: Results of Price, Fisher, and Robertson: Introduction / Nonadditive Genetic Variance for Traits Under Selection
+## chapter6_015 · IMPLICATIONS OF FISHER'S THEOREM FOR TRAIT VARIATION / Nonadditive Genetic Variance for Traits Under Selection
 
 As selection drives the additive variance in fitness toward zero, any remaining genetic variance is expected to be increasingly composed of nonadditive terms. As Example 6.5 highlights, this nonadditive genetic variance can be considerable. Thus, characters that are more closely associated with fitness are expected to have a higher fraction of nonadditive variance and hence a higher residual variance. This trend can be seen in results from chromosome substitution analysis (Example 6.7), which tend to show epistatic interactions for life-history characters but not for morphological characters (also see LW Table 5.1).
 
@@ -687,7 +706,7 @@ In two separate papers, Robertson (1966a, 1968) suggested that the expected resp
 
 ---
 
-## chapter6_016 · Theorems of Natural Selection: Results of Price, Fisher, and Robertson: Introduction / 1968 Version: $ R_{z} = \sigma_{A}(w, z) $
+## chapter6_016 · ROBERTSON'S SECONDARY THEOREM OF NATURAL SELECTION / 1968 Version: $ R_{z} = \sigma_{A}(w, z) $
 
 **[推导 Derivation]**
 
@@ -757,7 +776,7 @@ showing that while the 1966 version is more general, the two versions (Equations
 
 ---
 
-## chapter6_018 · Theorems of Natural Selection: Results of Price, Fisher, and Robertson: Introduction / Accuracy of the Secondary Theorem
+## chapter6_018 · ROBERTSON'S SECONDARY THEOREM OF NATURAL SELECTION / Accuracy of the Secondary Theorem
 
 **[推导 Derivation]**
 
@@ -785,7 +804,7 @@ As with the fundamental theorem, when gametic frequencies approach their equilib
 
 ---
 
-## chapter6_019 · Theorems of Natural Selection: Results of Price, Fisher, and Robertson: Introduction / Connecting Robertson’s Results With Those of Price, Fisher, and Lush
+## chapter6_019 · ROBERTSON'S SECONDARY THEOREM OF NATURAL SELECTION / Connecting Robertson’s Results With Those of Price, Fisher, and Lush
 
 **[命题 Proposition]**
 
@@ -823,7 +842,7 @@ Equation 6.12 shows that when the parent-offspring regression is linear, the exp
 
 ---
 
-## chapter6_021 · Theorems of Natural Selection: Results of Price, Fisher, and Robertson: Introduction / Partial Covariance and the Spurious Response to Selection
+## chapter6_021 · THE BREEDER'S EQUATION FRAMED WITHIN THE PRICE EQUATION / Partial Covariance and the Spurious Response to Selection
 
 **[推导 Derivation]**
 
@@ -853,6 +872,15 @@ The second is the regression of relative fitness $ w_{i} $ of a parent i on its 
 
 
 It is important to stress that we are not assuming that the true relationship between either the mean offspring value $ \overline{z}_{i} $ or paternal fitness $ w_{i} $ and paternal phenotype value $ z_{i} $ is linear, but rather simply considering the best linear regression for these relationships and the resulting residuals.
+
+**[Figure]**
+
+> **Figure 6.5** · page 25 · source: `chapter6`
+>
+> ![Figure 6.5](../figures/fig_0204.png)
+>
+> Figure 6.5 The partial covariance,  $ \sigma(w, \overline{z} \parallel z) $, is the covariance  $ \sigma(e_w, e_{\overline{z}}) $ between the residuals  $ (e_{\overline{z}}) $ of the linear regression of  $ \overline{z}_i $ on  $ z_i $ (the parent-offspring regression; Equation 6.30b) and the residuals  $ (e_w) $ of the linear regression of  $ w_i $ on  $ z_i $ (fitness-phenotype regression; Equation 6.20c). In this example, both of these relationships are nonlinear, resulting in the distribution of residuals for the best fitting linear regression being nonrandomly distributed. A plot of these residuals against each other shows a strong negative covariance, so while  $ \sigma(w, z) $,  $ \sigma(\overline{z}, z) $, and  $ \sigma(w, \overline{z}) $, are all positive,  $ \sigma(w, \overline{z} \parallel z) $ is negative.
+
 
 **[推导 Derivation]**
 
@@ -885,65 +913,14 @@ There are two ways to generate a nonzero $ \sigma(w, \overline{z} \parallel z) $
 
 **[示例 Example]**
 
-> **Example 6.7** · ref: `6.7` · source: `chapter6_021.json` · blocks 8–8
+> **Example 6.8** · ref: `6.8` · source: `chapter6_021.json` · blocks 8–11
 >
-> Example 6.7. Mackay (1985b) examined total fitness (measured by competition against a marked balancer stock) of 41 third chromosomes extracted from a natural population of Drosophila melanogaster. Using these chromosomes, lines with an otherwise common background could be made homozygous for a particular extracted third chromosome, and likewise the performance of that chromosome as a heterozygote could also be assayed. If there is significant additive genetic variance in fitness, a correlation between homozygote and heterozygote fitness is expected. Such a correlation was found for viability, suggesting some additive genetic variance in this character. However, when total fitness was examined, no correlation was found, suggesting no significant additive variation in total fitness. Mackay observed strong inbreeding depression, consistent with the total genetic variation in fitness being caused by segregation of rare deleterious recessive alleles (LW Chapter 10). A very similar experiment using segregating third chromosomes within a Drosophila population selected for domestication, Fowler et al. (1997) and Gardner et al. (2005) found high homozygote-heterozygote correlations for total fitness, and thus significant additive variance in fitness.
-
-
-**[示例 Example]**
-
-> **Example 6.8** · ref: `6.8` · source: `chapter6_021.json` · blocks 9–9
->
-> Example 6.8. One can imagine several measures of the residual dependency between two variables (say x and y) once the effects of a third (z) is removed. One is conditional covariance, $ \sigma(x, y \mid z) $, defined as the covariance conditioned on the value of z:
-> 
-> > **Formula (6.33a)** · `6.33a` · source: `chapter6_block_126` · Partial Covariance and the Spurious Response to Selection
-> >
-> > $$ \sigma(x,y\mid z)=E\Biggl[\biggl(x-E(x\mid z)\biggr)\biggl(y-E(y\mid z)\biggr)\mid z\Biggr] $$
-> 
-> 
-> Heywood’s decomposition uses an alternative measure of dependency, the partial covariance
-> 
-> > **Formula (6.33b)** · `6.33b` · source: `chapter6_block_127` · Partial Covariance and the Spurious Response to Selection
-> >
-> > $$ \sigma(x,y||z)=\sigma(e_{x},e_{y}) $$
-> 
-> 
-> where $ e_x $ and $ e_y $ are the residuals for the linear regression of $ x $ on $ z $ and of $ y $ on $ z $. We use the notation $ \|z $ in place of $ |z $ to distinguish between partial and conditional covariances. If the three variables are multivariate normal, the conditional and partial covariances are equal, but generally they differ (Lawrance 1976; Baba et al. 2006).
-> 
-> The partial covariance can be expressed in terms of the various pairwise covariances between the three variables, as follows. The linear regression of x on z can be written as $$ x=\mu_{x}+\beta_{x|z}z+e_{x}=\mu_{x}+\left(\frac{\sigma(x,z)}{\sigma_{z}^{2}}\right)z+e_{x} $$ implying that
-> 
-> > **Formula (6.33c)** · `6.33c` · source: `chapter6_block_128` · Partial Covariance and the Spurious Response to Selection
-> >
-> > $$ e_{x}=x-\left(\mu_{x}+\beta_{x|z}z\right)=x-\mu_{x}-\left(\frac{\sigma(x,z)}{\sigma_{z}^{2}}\right)z $$
-> 
-> 
-> with a similar expression for $ e_{y} $. Substituting these into Equation 6.33b and ignoring the mean terms (which, as constants, do not factor in the covariance) yields $$ \sigma(x,y||z)=\sigma(e_{x},e_{y})=\sigma\left[x-\left(\frac{\sigma(x,z)}{\sigma_{z}^{2}}\right)z,y-\left(\frac{\sigma(y,z)}{\sigma_{z}^{2}}\right)z\right] $$ which, by expansion, leads to
-> 
-> > **Formula (6.33d)** · `6.33d` · source: `chapter6_block_128` · Partial Covariance and the Spurious Response to Selection
-> >
-> > $$ \begin{aligned}\sigma(x,y||z)&=\sigma(x,y)-\left(\frac{\sigma(x,z)}{\sigma_{z}^{2}}\right)\sigma(y,z)-\left(\frac{\sigma(y,z)}{\sigma_{z}^{2}}\right)\sigma(x,z)+\left(\frac{\sigma(y,z)}{\sigma_{z}^{2}}\right)\left(\frac{\sigma(x,z)}{\sigma_{z}^{2}}\right)\sigma_{z}^{2}\\&=\sigma(x,y)-\frac{\sigma(x,z)\sigma(y,z)}{\sigma_{z}^{2}}\quad\end{aligned} $$
-> 
-> 
-> The last term can be expressed as either $ \beta_{x|z}\sigma(y,z) $ or $ \beta_{y|z}\sigma(x,z) $. Applying Equation 6.33d by taking $ x = w $ and $ y = \overline{z} $ yields
-> 
-> > **Formula (6.33e)** · `6.33e` · source: `chapter6_block_129` · Partial Covariance and the Spurious Response to Selection
-> >
-> > $$ \begin{align*}\sigma(w,\overline{z}||z)=\sigma(w,\overline{z})-\frac{\sigma(\overline{z},z)}{\sigma_{\overline{z}}^2}\sigma(w,z)=\sigma(w,\overline{z})-\beta_{\overline{z}|z}\sigma(w,z)\end{align*} $$
-> 
-> 
-> Rearranging this last expression yields
-> 
-> > **Formula (6.33f)** · `6.33f` · source: `chapter6_block_130` · Partial Covariance and the Spurious Response to Selection
-> >
-> > $$ \begin{aligned}\sigma(w,\overline{z})&=\sigma(w,\overline{z}||z)+\beta_{\overline{z}|z}\sigma(w,z)\\&=\sigma(w,\overline{z}||z)+\beta_{\overline{z}|z}S\end{aligned} $$
-> 
-> 
-> which is used to obtain Equation 6.32.
+> Example 6.8. One can imagine several measures of the residual dependency between two variables (say x and y) once the effects of a third (z) is removed. One is conditional covariance, $ \sigma(x, y \mid z) $, defined as the covariance conditioned on the value of z: $$ \sigma(x,y\mid z)=E\Biggl[\biggl(x-E(x\mid z)\biggr)\biggl(y-E(y\mid z)\biggr)\mid z\Biggr] $$ (6.33a) Heywood’s decomposition uses an alternative measure of dependency, the partial covariance $$ \sigma(x,y||z)=\sigma(e_{x},e_{y}) $$ (6.33b) where $ e_x $ and $ e_y $ are the residuals for the linear regression of $ x $ on $ z $ and of $ y $ on $ z $. We use the notation $ \|z $ in place of $ |z $ to distinguish between partial and conditional covariances. If the three variables are multivariate normal, the conditional and partial covariances are equal, but generally they differ (Lawrance 1976; Baba et al. 2006). The partial covariance can be expressed in terms of the various pairwise covariances between the three variables, as follows. The linear regression of x on z can be written as $$ x=\mu_{x}+\beta_{x|z}z+e_{x}=\mu_{x}+\left(\frac{\sigma(x,z)}{\sigma_{z}^{2}}\right)z+e_{x} $$ implying that $$ e_{x}=x-\left(\mu_{x}+\beta_{x|z}z\right)=x-\mu_{x}-\left(\frac{\sigma(x,z)}{\sigma_{z}^{2}}\right)z $$ (6.33c) with a similar expression for $ e_{y} $. Substituting these into Equation 6.33b and ignoring the mean terms (which, as constants, do not factor in the covariance) yields $$ \sigma(x,y||z)=\sigma(e_{x},e_{y})=\sigma\left[x-\left(\frac{\sigma(x,z)}{\sigma_{z}^{2}}\right)z,y-\left(\frac{\sigma(y,z)}{\sigma_{z}^{2}}\right)z\right] $$ which, by expansion, leads to $$ \begin{aligned}\sigma(x,y||z)&=\sigma(x,y)-\left(\frac{\sigma(x,z)}{\sigma_{z}^{2}}\right)\sigma(y,z)-\left(\frac{\sigma(y,z)}{\sigma_{z}^{2}}\right)\sigma(x,z)+\left(\frac{\sigma(y,z)}{\sigma_{z}^{2}}\right)\left(\frac{\sigma(x,z)}{\sigma_{z}^{2}}\right)\sigma_{z}^{2}\\&=\sigma(x,y)-\frac{\sigma(x,z)\sigma(y,z)}{\sigma_{z}^{2}}\quad(6.33\mathrm{d})\end{aligned} $$ The last term can be expressed as either $ \beta_{x|z}\sigma(y,z) $ or $ \beta_{y|z}\sigma(x,z) $. Applying Equation 6.33d by taking $ x = w $ and $ y = \overline{z} $ yields $$ \begin{align*}\sigma(w,\overline{z}||z)=\sigma(w,\overline{z})-\frac{\sigma(\overline{z},z)}{\sigma_{\overline{z}}^2}\sigma(w,z)=\sigma(w,\overline{z})-\beta_{\overline{z}|z}\sigma(w,z)\end{align*} $$ (6.33e) Rearranging this last expression yields $$ \begin{aligned}\sigma(w,\overline{z})&=\sigma(w,\overline{z}||z)+\beta_{\overline{z}|z}\sigma(w,z)\\&=\sigma(w,\overline{z}||z)+\beta_{\overline{z}|z}S\end{aligned} $$ (6.33f) which is used to obtain Equation 6.32.
 
 
 ---
 
-## chapter6_022 · Theorems of Natural Selection: Results of Price, Fisher, and Robertson: Introduction / Parent-Offspring Regressions Before and After Selection
+## chapter6_022 · THE BREEDER'S EQUATION FRAMED WITHIN THE PRICE EQUATION / Parent-Offspring Regressions Before and After Selection
 
 The second feature leading to Heywood’s decomposition concerns the reference population for the parent-offspring regression. A subtle but important point to stress about Equation 6.32 is that $ \beta_{\Xi|z} $ is the slope of the regression of offspring mean on parental phenotypes following selection. This slope may be different from the regression based upon unselected parents. In particular, when considering a single parent-offspring (as opposed to a midparent-offspring) regression, selection can change the mean of the offspring by changing the distribution of genotypes for the other parent with which the parent mates.
 
@@ -1012,7 +989,7 @@ Finally, while $ \bar{\delta}_{i} $ is often considered to be the change from pa
 
 ---
 
-## chapter6_023 · Theorems of Natural Selection: Results of Price, Fisher, and Robertson: Introduction / Hence
+## chapter6_023 · THE BREEDER'S EQUATION FRAMED WITHIN THE PRICE EQUATION / Hence
 
 **[推导 Derivation]**
 
@@ -1025,7 +1002,7 @@ where $ E(\tilde{z}_i^0 - z_i) $, which Heywood calls the constitutive transmiss
 
 ---
 
-## chapter6_024 · Theorems of Natural Selection: Results of Price, Fisher, and Robertson: Introduction / Heywood's Decomposition of Response
+## chapter6_024 · THE BREEDER'S EQUATION FRAMED WITHIN THE PRICE EQUATION / Heywood's Decomposition of Response
 
 **[推导 Derivation]**
 

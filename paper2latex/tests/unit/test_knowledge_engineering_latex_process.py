@@ -417,6 +417,35 @@ class TestKnowledgeEngineeringLatexProcess(unittest.TestCase):
         )
         self.assertEqual(refined_chunks[1].display_heading, "Expected Contribution From a Single Locus")
 
+    def test_raw_layout_heading_parent_restores_missing_level_1(self):
+        text = (
+            "# 21: Family-Based Selection\n"
+            "Chapter opening prose.\n\n"
+            "# Selection and Recombination Units\n"
+            "Under mass selection, individuals are scored.\n"
+        )
+        formula_library = FormulaLibrary()
+
+        blocks, _ = extract_semantic_blocks(text, "chapter21", None, formula_library)
+        chunks = build_composite_chunks(blocks)
+        refined_chunks, _ = refine_chunks_for_output(
+            chunks,
+            source_title=None,
+            chapter_name="chapter21",
+            raw_heading_candidates=[
+                "Family-Based Selection",
+                "DETAILS OF FAMILY-BASED SELECTION SCHEMES",
+                "Selection and Recombination Units",
+            ],
+        )
+
+        self.assertEqual(refined_chunks[0].heading_path, ["Family-Based Selection"])
+        self.assertEqual(
+            refined_chunks[1].heading_path,
+            ["DETAILS OF FAMILY-BASED SELECTION SCHEMES", "Selection and Recombination Units"],
+        )
+        self.assertEqual(refined_chunks[1].display_heading, "Selection and Recombination Units")
+
     def test_long_title_case_l2_updates_inferred_section(self):
         chunks = [
             CompositeChunk(

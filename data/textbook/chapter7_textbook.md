@@ -1,4 +1,4 @@
-# Chapter 7 Textbook Mapping
+# Chapter 7 · Interaction of Selection, Mutation, and Drift
 
 ## chapter7_001 · Interaction of Selection, Mutation, and Drift: Introduction
 
@@ -114,7 +114,7 @@ Clark (1998) examined a special case of the multiple-allele model in which there
 
 **[示例 Example]**
 
-> **Example 7.1** · ref: `7.1` · source: `chapter7_003.json` · blocks 0–0
+> **Example 7.1** · ref: `7.1` · source: `chapter7_003.json` · blocks 0–5
 >
 > Example 7.1. How much variation can mutation maintain when a mutant allele is lethal (s = 1)? The equilibrium frequency of a dominant lethal allele is $$ \widetilde{p}=\mu $$
 > 
@@ -131,24 +131,16 @@ Clark (1998) examined a special case of the multiple-allele model in which there
 
 **[示例 Example]**
 
-> **Example 7.2** · ref: `7.2` · source: `chapter7_003.json` · blocks 1–1
+> **Example 7.2** · ref: `7.2` · source: `chapter7_003.json` · blocks 6–6
 >
 > Example 7.2. Albinism in humans is caused by a recessive allele, with an estimated frequency of albinos of around 1/20,000 (Cavalli-Sforza and Bodmer 1971). If we assume that albinos are at a moderate selective disadvantage (s = 0.1) and at mutation-selection equilibrium, what is the estimated mutation rate to albino alleles? Assuming genotype frequencies in Hardy-Weinberg equilibrium, so that $ \tilde{p}^2 = 1/20,000 $, from Equation 7.6c, $$ \widetilde{p}^{2}=\frac{1}{20,000}=\left(\sqrt{\frac{\mu}{0.1}}\right)^{2} $$ which implies that $ \mu = 5 \times 10^{-6} $. Conversely, if we were to assume a mutation rate of $ \mu = 10^{-5} $, the strength of selection against albinism would be inferred from $$ \widetilde{p}^{2}=\frac{1}{20,000}=\left(\sqrt{\frac{10^{-5}}{s}}\right)^{2} $$ implying s = 0.2, i.e., a 20% reduction of fitness in albinos.
 
 
 **[示例 Example]**
 
-> **Example 7.3** · ref: `7.3` · source: `chapter7_003.json` · blocks 2–2
+> **Example 7.3** · ref: `7.3` · source: `chapter7_003.json` · blocks 7–11
 >
 > Example 7.3. Our treatment of mutation-selection balance has assumed that there is a single reoccurring allele. For many human diseases, however, a large number of different mutational events can have the same fitness effect, e.g., numerous kinds of mutations can inactivate a gene. In such cases, $ \tilde{p} $ is the equilibrium frequency of the entire set of such deleterious alleles. An important question in human genetics is the diversity (or spectrum) of alleles within this set—is the disease largely dominated by a single allele or is it a diverse collection of rare alleles?
-> 
-> Hartl and Campbell (1982) found that the probability that two random alleles in the disease class are identical by descent is $$ \varphi=\frac{1}{1+4N_{e}\mu(1-\tilde{p})}=\frac{1}{1+\theta(1-\tilde{p})} $$ where $ \theta = 4N_e\mu $, with $ \mu $ being defined here as the total mutation rate to deleterious alleles. This expression is closely connected to the results on mutation-drift balance presented in Chapter 2, where we showed that $ \theta/(1 + \theta) $ is the probability of a heterozygote, and hence $ 1/(1 + \theta) $ is the probability of a homozygote. To obtain the diversity within the set of disease alleles, here we restrict ourselves to the population of normal alleles, $ 2N_e(1 - \bar{p}) $, as these are the source of mutations to new disease alleles. At mutation-selection equilibrium, this flux of new mutations is countered by the selective removal of existing alleles. The reciprocal of $ \varphi $, which asymptotically approaches 1.0 for $ \theta \ll 1 $, provides an estimate of the effective number of alleles.
-> 
-> Reich and Lander (2001) considered the implication of this result for two equilibrium frequencies of a monogenic disease, rare ($ \tilde{\rho} = 0.001 $) and common ($ \tilde{\rho} = 0.2 $). Assuming an ancestral human $ N_e $ of $ 10^4 $ and a total deleterious mutation rate of $ \mu = 3 \times 10^{-6} $ (meaning that $ \theta = 0.12 $), they obtained the effective number of alleles as $ \varphi^{-1} = 1 + 0.12 \cdot (1 - 0.001) = 1.12 $ and $ \varphi^{-1} = 1 + 0.12 \cdot (1 - 0.2) = 1.10 $ for the rare and common disease, respectively. Thus, both diseases have a very simple and similar expected allelic spectrum under the historical effective population size. However, as the human population rapidly expanded to $ 6 \times 10^9 $ individuals, meaning that currently $ \theta = 72,000 $, the expected numbers of alleles at equilibrium now become $ \varphi^{-1} = 1 + 72,000 \cdot (1 - 0.001) \simeq 72,000 $, and $ \varphi^{-1} \simeq 58,000 $ for the rare and common diseases, respectively. These spectra are clearly very complex.
-> 
-> Reich and Lander noted that, owing to the rapidity of human population-size expansion, we are still far from having these much higher equilibrium values, and that the transient dynamics of the two disease classes are significantly different en route to their new equilibrium values. The number of new disease alleles arising each generation is $ 2N\mu(1-\hat{p}) $, the number of normal alleles times the mutation rate. Because the mutation-selection equilibrium frequency is not changed by the increase in population size, the per-generation turnover within the disease allele class must then scale as $ 2N\mu(1-\hat{p})/(2N\hat{p})=\mu(1-\hat{p})/\hat{p} $, which is the fraction of the standing pool of disease alleles that arises on a per-generation basis. With this mutation rate, the turnover amounts to 0.3% per generation for the rare disease and 0.0012% for the common disease.
-> 
-> The fraction of the ancestral disease alleles that remains after $t$ generations following the population expansion is $\exp[-t\mu(1-\tilde{p})/\tilde{p}]$, which implies a half-life of $\ln(2)\tilde{p}/[\mu(1-\tilde{p})]$ generations. Assuming a human generation time of 25 years, the ancestral spectrum half-life is $\sim5{,}000$ years for the rare disease and $\sim1.3\times10^{6}$ for the common disease. Hence, under the expected pattern of demographic change in the human population, a common disease should largely retain the ancestral spectrum (very few alleles), while a rare disease should have an increasingly complex one. Consistent with this prediction, Reich and Lander (2001) found a strong negative correlation between the observed frequency of a monogenic disease and its associated number of alleles.
 
 
 ---
@@ -174,7 +166,7 @@ Consider the situation in which alleles have additive fitness effects, with the 
 
 ---
 
-## chapter7_005 · Interaction of Selection, Mutation, and Drift: Introduction / Probability of Fixation Under Additive Selection
+## chapter7_005 · SELECTION AND DRIFT AT SINGLE LOCI / Probability of Fixation Under Additive Selection
 
 There is no possibility of having a perfectly stable polymorphism when drift and selection interact. Indeed, even in the case of overdominant selection (where there is a stable equilibrium in an infinite population; Chapter 5), one allele will eventually drift to fixation unless both homozygotes are lethal. Under this scenario, all new mutations ultimately become either lost or fixed at the population level, and those that become fixed will themselves be subject to replacement by subsequently arising mutations. Thus, when finite populations are considered, we need to think in terms of fixation probabilities and sojourn times of mutations. Even highly favorable alleles have fixation probabilities of less than 1.0 to a degree that depends on the initial frequency $ p_0 $, the strength of selection, and the effective population size $ N_e $.
 
@@ -225,6 +217,15 @@ A number of other useful approximations for alleles with additive effects on fit
 > $$ H_{T}=\left(\frac{4N_{e}}{N}\right)\left(\frac{S-1+e^{-S}}{S[1-e^{-S}]}\right) $$
 
 
+**[Figure]**
+
+> **Figure 7.1** · page 8 · source: `chapter7`
+>
+> ![Figure 7.1](../figures/fig_0205.png)
+>
+> Figure 7.1 Probability of fixation (solid line) and lifetime contribution to heterozygosity (dashed line) of a new mutant allele with additive effects on fitness as a function of  $ 4N_{e}s $ (using Equations 7.11 and 7.12), both relative to the neutral expectation.
+
+
 Although this measure may seem somewhat abstract, the product of $ H_T $ times the number of new mutations arising in the population per generation, $ 2N_\mu $, is equal to the expected heterozygosity under selection-mutation-drift equilibrium. For neutral mutations ($ S \to 0 $), $ H_T \to 2N_e/N $, implying an expected heterozygosity of $ 4N_e\mu $ (which, assuming $ 4N_e\mu \ll 1 $, is consistent with results in Chapter 2 that were obtained by a different method). For large positive values of $ S $ (strongly beneficial mutations), $ H_T $ approaches a limiting value of $ 4N_e/N $, implying that on a per-mutation basis, such mutations make twice the contribution to the heterozygosity as neutral mutations. Finally, for deleterious mutations with sufficiently strong effects to be eliminated by selection, $ H_T \simeq 2/(N|s|) $. As in the case of the fixation probability, the expected heterozygosity at a locus scaled to the neutral expectation (dividing $ 2N\mu H_T $ by $ 4N_e\mu $) is a simple function of $ S $ (Figure 7.1). Viewed in this way, it can be seen that although both the relative fixation rate and the contribution to heterozygosity increase with S, the former responds much more rapidly. This is because deleterious mutations that essentially never fix in a population nevertheless make transient contributions to the heterozygosity prior to their elimination by selection, whereas positively selected mutations that are driven through the population relatively rapidly contribute to heterozygosity for only a relatively short period of time.
 
 **[推导 Derivation]**
@@ -264,6 +265,15 @@ yields the residual times conditional upon eventual loss
 ---
 
 ## chapter7_006 · Interaction of Selection, Mutation, and Drift: Introduction / Probability of Fixation Under Additive Selection
+
+**[Figure]**
+
+> **Figure 7.2** · page 9 · source: `chapter7`
+>
+> ![Figure 7.2](../figures/fig_0206.png)
+>
+> Figure 7.2 Average number of generations that a new mutation spends within different frequency classes,  $ x = 1/(2N), \cdots, (2N - 1)/(2N) $, conditional on going to fixation (Left) or conditional on being lost (Right), given as a function of the scaled selection parameter  $ S = 4N_e s $ (inset values), obtained using Equations 7.13a and 7.13d, with  $ N = N_e = 1000 $. Note that in each case, the results are identical for beneficial and deleterious mutations with the same absolute values of  $ s $. With  $ N_e \neq N $, the results must be multiplied by  $ N_e/N $.
+
 
 Again, we see that the residence times conditional upon loss are essentially the same for positive and negative selection coefficients of the same absolute magnitude (Figure 7.2). This is not true for the unconditional residence times, $ \Phi(x) $, which are functions of $ \Phi_f(x) $ and $ \Phi_l(x) $ weighted by the probabilities of fixation and loss (Equation 7.13c).
 
@@ -335,7 +345,7 @@ The mean frequency prior to absorption is simply $ \overline{n}/(2N) $ divided b
 
 **[示例 Example]**
 
-> **Example 7.4** · ref: `7.4` · source: `chapter7_006.json` · blocks 6–6
+> **Example 7.4** · ref: `7.4` · source: `chapter7_006.json` · blocks 6–8
 >
 > Example 7.4. Although it is generally thought that selection will increase the determinism of a system, this is not necessarily the case. Cohan (1984b) showed that, starting with identical allele frequencies, the probability of divergence between replicate populations can increase relative to the situation under pure drift if the initial frequency of the advantageous allele is sufficiently small. We refer to this phenomenon as the Cohan effect. This point can easily be seen as follows. Supposing two replicate populations are segregating alleles A and a at a locus, with the frequency of A being p = 0.25, then under pure drift, the probability that one replicate will become fixed for A and the other for a is 2 - 0.25 - (1 - 0.25) = 0.375. Now suppose that A is favored by selection, with $ N_{\ell,s} = 0.5 $. Again assuming $ p_0 = 0.25 $, Equation 7.10a gives the fixation probability of A as 0.46, implying that the probability of fixing alternative alleles is 2 - 0.46 - 0.54 = 0.496. Thus, in this case, divergence is substantially increased by the interaction between selection and drift.
 > 
@@ -346,7 +356,16 @@ The mean frequency prior to absorption is simply $ \overline{n}/(2N) $ divided b
 
 ---
 
-## chapter7_007 · Interaction of Selection, Mutation, and Drift: Introduction / Probability of Fixation Under Arbitrary Selection
+## chapter7_007 · SELECTION AND DRIFT AT SINGLE LOCI / Probability of Fixation Under Arbitrary Selection
+
+**[Figure]**
+
+> **Figure 7.3** · page 11 · source: `chapter7`
+>
+> ![Figure 7.3](../figures/fig_0207.png)
+>
+> Figure 7.3 The influence of drift on the probability of fixation of alternative alleles in a pair of populations starting from an identical state. A diallelic locus under additive selection with fitnesses 1, 1 + s, and 1 + 2s is considered. The slightly darker shaded area on the lower left is the region of  $ p_0 $ (the initial frequency of A) and  $ 4N_e $s space where the probability that isolated populations are eventually fixed for alternative alleles under selection and drift is higher than under drift alone. In this region, parallel selection increases the amount of evolutionary indeterminism relative to drift alone.
+
 
 **[推导 Derivation]**
 
@@ -432,13 +451,22 @@ Otto and Whitlock (1997) provided results for fixation probabilities in populati
 
 ---
 
-## chapter7_008 · Interaction of Selection, Mutation, and Drift: Introduction / Fixation of Overdominant and Underdominant Alleles
+## chapter7_008 · SELECTION AND DRIFT AT SINGLE LOCI / Fixation of Overdominant and Underdominant Alleles
 
 A case of special interest is the effect of drift on a locus experiencing selective overdominance, where the heterozygote has higher fitness than either homozygote. Whereas such balancing selection permanently maintains both alleles in an infinite population (Example 5.4), drift will ultimately fix one allele in a finite population provided that the homozygote has a nonzero fitness. Although it might seem that balancing selection will always magnify the longevity of a polymorphism, contrary to intuitive expectations, selection sometimes increases the rate of fixation at an overdominant locus in a finite population (Robertson 1962; Ewens and Thomson 1970; Chen et al. 2008).
 
 If the equilibrium frequency expected in an infinite population is extreme (roughly $ \widetilde{p} < 0.2 $ or $ \widetilde{p} > 0.8 $), a polymorphism starting at $ \widetilde{p} $ in a finite population will usually be lost more rapidly under balancing selection than under drift alone, thereby accelerating the removal of heterozygosity. Such behavior arises because selection keeps allele frequencies fairly close to their equilibrium values. If such values are near 0.0 or 1.0, the minor allele will be impeded from drifting to more protective states of moderate frequencies, thereby increasing the likelihood of loss by drift.
 
 Nei and Roychoudhury (1973) evaluated this issue further with newly arisen overdominant alleles with an initial frequency of $ 1/(2N) $. In this case, the mutant allele is initially confined to the heterozygous state, so its early fate is largely independent of its own homozygous effect, but highly dependent on the magnitude of its heterozygous advantage over the ancestral homozygote. Fixation probabilities can only be obtained by numerical analysis in this case, but the results depend only on two parameters, $ N_e(s_1 + s_2) $ and the infinite-population equilibrium frequency, $ \tilde{p} = s_2/(s_1 + s_2) $, where $ s_1 $ and $ s_2 $ are, respectively, the selection coefficients against the homozygotes associated with the mutant and resident alleles. If $ \tilde{p} $ for the derived allele under consideration is much less than 0.5, the fixation probability is less than the neutral expectation, for the reasons already noted. However, if $ \tilde{p} > 0.5 $ (meaning that the fitness of the ancestral homozygote is lower than that of the mutant homozygote), the fixation probability will always be greater than the neutral expectation, even though fixation results in the loss of the optimal (heterozygous) genotype. Moreover, in this case, the fixation probability of the mutant allele is only slightly smaller than that predicted by Equation 7.10a when $ s_2 $ is used as a selection coefficient (Nei and Roychoudhury 1973). If $ 2N_e(s_1 + s_2) \ll 1 $, selection will be uniformly overpowered by drift, and the system will behave in an effectively neutral fashion.
+
+**[Figure]**
+
+> **Figure 7.4** · page 14 · source: `chapter7`
+>
+> ![Figure 7.4](../figures/fig_0208.png)
+>
+> Figure 7.4 Ratios for the fixation probabilities and expected times to fixation for a newly arisen overdominant mutation relative to the expectation for a neutral mutation. These are given as a function of the equilibrium frequency expected in a population of infinite size,  $ \tilde{P} = s_{2}/(s_{1} + s_{2}) $, where the fitnesses are  $ 1 - s_{1} $, 1, and  $ 1 - s_{2} $ (with the first value being the fitness for the mutant homozygote). Each curve gives results for a different value of  $ N_{e}(s_{1} + s_{2}) $, a measure of the ratio of the overall power of selection to drift, where  $ N_{e} $ is the effective population size. For any value of  $ N_{e}(s_{1} + s_{2}) $, the probability of fixation increases with the magnitude of selection against the alternative homozygote, as this defines the selective advantage of the novel allele in the heterozygous state. (From Nei and Roychoudhury 1973.)
+
 
 The fixation times for newly arisen overdominant mutations parallel the patterns of loss of variation that Robertson (1962) first noted (Nei and Roychoudhury 1973). When the equilibrium frequency is outside of the range of (0.2, 0.8), the mean fixation time will be lower than the neutral expectation of $ 4N_e $ generations, whereas for $ 0.2 < \tilde{p} < 0.8 $, the time is elevated, with more extreme behaviors seen at high values of $ N_e(s_1 + s_2) $ (Figure 7.4). Particularly intriguing is the fact that the fixation time of an overdominant mutation will be symmetrical around $ \tilde{p} = 0.5 $, i.e., for a given strength of selection $ N_e(s_1 + s_2) $, the time to fixation is the same at equilibrium frequencies $ \tilde{p} $ and $ 1 - \tilde{p} $. This is consistent with the situation for mutants with additive effects that was already noted, and indicates that when an overdominant mutant allele is associated with the least fit homozygous type, for the rare occasions in which fixation occurs, it does so just as rapidly, on average, as when it is associated with the most fit homozygote (in which case it also fixes more frequently). Further considerations for the situation in which populations are subdivided were given in Nishino and Tajima (2004).
 
@@ -495,7 +523,16 @@ The latter case is of special interest, as one can identify a critical effective
 
 ---
 
-## chapter7_009 · Interaction of Selection, Mutation, and Drift: Introduction / Expected Allele Frequency in a Particular Generation
+## chapter7_009 · SELECTION AND DRIFT AT SINGLE LOCI / Expected Allele Frequency in a Particular Generation
+
+**[Figure]**
+
+> **Figure 7.5** · page 16 · source: `chapter7`
+>
+> ![Figure 7.5](../figures/fig_0209.png)
+>
+> Figure 7.5 The probability of fixation of a newly arisen underdominant mutation, relative to the neutral expectation of  $ 1/(2N) $, with a selective disadvantage of s in the heterozygous state and an advantage of t in the derived homozygous state, and  $ \eta = t/(2s) $. (After Walsh 1982.)
+
 
 A number of applications, including attempts to predict the response to selection, arise for which it is useful to know the expected allele frequency at time $ t $, $ E(\rho_t) $. While exact results can be obtained from probability transition matrices (Hill 1969a; Carr and Nassar 1970) and good approximations can be derived from diffusion theory (Appendix 1; Maruyama 1977; Ewens 2004) and other approaches (Curnow and Baker 1968, 1969; Pike 1969), these methods tend to be numerically intensive. Fortunately, simple approximations have been developed for dealing with weak selection.
 
@@ -587,6 +624,15 @@ where $ S = 4N_e s $ (Wright 1931; Li 1987; Bulmer 1991; McVean and Charlesworth
 is the equilibrium proportion of time for which the sites are polymorphic, with $ \bar{t}_a $ and $ \bar{t}_A $ being, respectively, the mean sojourn times of mutations to alleles $ a $ and $ A $. Using Equation 7.32 and the fact that $ \widetilde{P}_a + \widetilde{P}_A + \widetilde{P}_p = 1 $, the solution can be obtained for all three components of this equation. By multiplying the values of Equation 7.31a by $ \widetilde{P}_p $ over the range of $ x = 1/(2N) $ to $ 1 - [1/(2N)] $, we then obtain the spectrum of alternative population states of polymorphism.
 
 Figure 7.6 provides some examples of the form of the stationary distribution for biallelic loci experiencing bidirectional mutation. For neutral mutations, the distribution is highly U- or J-shaped (depending on the magnitude of mutation bias) at low population mutation rates ($ 4N\mu $ and $ 4Nv \ll 1 $), as the population is almost always in a nearly fixed state, with the probability of the alternative fixed states being given by Equation 7.5. The distribution becomes flat with values of $ 4N\mu $ and $ 4Nv $ near 1.0, and then becomes more peaked as $ 4N\mu $ and $ 4Nv $ become progressively larger (with the mean centered on the infinite-population expectation given by Equation 7.5). Selection skews the distribution toward the more favorable allele, but even with an S as large as 10, a moderate frequency of the deleterious allele can be expected (even though fixation of the latter would essentially never occur).
+
+**[Figure]**
+
+> **Figure 7.6** · page 19 · source: `chapter7`
+>
+> ![Figure 7.6](../figures/fig_0210.png)
+>
+> Figure 7.6 Stationary distributions of allele frequencies under the joint forces of mutation, selection, and random genetic drift (Equation 7.31a). An absolute population size of N = 2000 is assumed with  $ N_{e} = N $.
+
 
 **[推导 Derivation]**
 
@@ -741,7 +787,7 @@ There are a number of situations in which fixation probabilities of alleles are 
 
 ---
 
-## chapter7_014 · Interaction of Selection, Mutation, and Drift: Introduction / The Hill-Robertson Effect
+## chapter7_014 · FIXATION ISSUES INVOLVING TWO LOCI / The Hill-Robertson Effect
 
 We first consider the matter of selective interference associated with linked variation involving beneficial alleles. Suppose that the gamete with the highest fitness, AB, is initially absent and can only be generated by recombination in Ab/aB double heterozygotes. If we let $ x_2 $ and $ x_3 $ denote the frequencies of the Ab and aB gametes, and c be the recombination frequency between the two loci, then the probability of AB being generated in the population is related to the product of the expected frequency of Ab/aB heterozygotes and the probability that a random gamete from such individuals is AB, $ (2x_2x_3)(c/2) $. Because $ x_2x_3 \leq 1/4 $ and a population with a stable size must produce 2N successful gametes, the upper bound to the expected number of AB gametes generated in any generation is $ (2N)(c/4) $. Thus, if $ Nc < 2 $, fewer than one AB gametes will be produced in each generation by recombination, so unless there is a strong advantage to AB, one of the intermediate gamete types will most likely become fixed before AB can reach a sufficiently high enough frequency to be deterministically promoted by selection. Such fixation of one of the intermediate types will then leave new mutation as the only mechanism for the generation of AB. For this special case, where the optimal gamete is initially absent, Latter (1966b) developed approximate expressions for the mean time to the first appearance of the AB gamete by recombination and for its subsequent fixation probability.
 
@@ -766,7 +812,7 @@ This realization, that the majority of Hill-Robertson effects have the functiona
 
 ---
 
-## chapter7_015 · Interaction of Selection, Mutation, and Drift: Introduction / Mutations with Contextual Effects
+## chapter7_015 · FIXATION ISSUES INVOLVING TWO LOCI / Mutations with Contextual Effects
 
 To this point, we have generally been assuming that the magnitude of selection operating directly on an allele is independent of the genetic background (other than effects associated with linkage disequilibrium) on which it resides. However, there are numerous situations in which this will not be the case. Most notable is the broad category of compensatory mutations, wherein specific single mutations at either of two loci cause a reduction in fitness, while their joint appearance restores fitness or even elevates it beyond the ancestral state. Such epistatic interactions play a prominent role in Wright's (1931, 1932) shifting balance theory for adaptive evolution, under which an adaptive valley between two fitness peaks is traversed in a local subpopulation, with the locally fixed advantageous genotype then being exported to surrounding demes by migration. Compensatory mutations appear to play a number of important roles in protein-sequence evolution and in the composition of nucleotides in the stems of RNA molecules (Stephan and Kirby 1993; Kondrashov et al. 2002; Kulathinal et al. 2004; Azevedo et al. 2006; Breen et al. 2012).
 
@@ -783,7 +829,7 @@ which is directly proportional to the effective population size, the mutation ra
 
 ---
 
-## chapter7_016 · Interaction of Selection, Mutation, and Drift: Introduction / Stochastic Tunneling
+## chapter7_016 · FIXATION ISSUES INVOLVING TWO LOCI / Stochastic Tunneling
 
 How do adaptations depending on the joint presence of more than one mutation become established? One possibility is simply that double mutations, while extremely rare, will still arise, with one eventually being carried to fixation by selection. If, however, the mutation rate at a nucleotide site is $ 10^{-9} $ (Chapter 4), a population size in excess of $ 10^{18} $ is required to routinely see such double mutations, making this route unlikely for all but enormous populations. On the other hand, in very small populations, the path toward adaptation must involve successive fixations via drift, which is also likely to be a very long process. In contrast, moderately large populations offer a dual problem in that the fixation of key intermediate mutations can be problematic if they are neutral (owing to the very long time to drift to fixation) and highly unlikely if they are deleterious.
 

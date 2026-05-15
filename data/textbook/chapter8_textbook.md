@@ -1,4 +1,4 @@
-# Chapter 8 Textbook Mapping
+# Chapter 8 · Hitchhiking and Selective Sweeps
 
 ## chapter8_001 · Hitchhiking and Selective Sweeps: Introduction
 
@@ -16,23 +16,59 @@ Given that our treatment of the mathematics of sweeps will be rather technical i
 
 ---
 
-## chapter8_003 · Hitchhiking and Selective Sweeps: Introduction / Hitchhiking, Sweeps, and Partial Sweeps
+## chapter8_003 · SWEEPS: A BRIEF OVERVIEW / Hitchhiking, Sweeps, and Partial Sweeps
 
 Although usually attributed to Maynard Smith and Haigh (1974), the term hitchhiking was introduced by Kojima and Schaffer (1967) to describe the increase in frequency of a neutral allele linked to an allele under directional selection. Plant breeders were also aware of this phenomenon, in the context of linkage drag (Brinkman and Frey 1977), wherein an introgressed favorable region may drag with it unfavorable linked genes. The term selective sweep (Berry et al. 1991), which is often treated as synonymous with hitchhiking, originally
 
-referred to the sweeping away of variation around a selected site following the fixation of a favorable allele (Figure 8.1A). This cleansing effect occurs because selection reduces the effective population size at linked regions, shortening the coalescence times for surviving neutral alleles relative to pure drift, and thus reducing the time for new variation to accumulate (Figure 8.3).
+referred to the sweeping away of variation around a selected site following the fixation of a favorable allele (Figure 8.1). This cleansing effect occurs because selection reduces the effective population size at linked regions, shortening the coalescence times for surviving neutral alleles relative to pure drift, and thus reducing the time for new variation to accumulate (Figure 8.3).
 
 A partial sweep refers to the setting in which the favored allele is currently increasing in frequency, as would occur during an ongoing sweep. A partial sweep signal is also generated during balancing selection (Chapter 5), again when an allele is increasing in frequency toward some internal equilibrium value (as opposed to fixation). Indeed, any initially rapid increase in frequency by selection generates some type of transient sweep-related signal (albeit potentially quite small), even if the nature of selection changes before fixation (Coop and Ralph 2012).
 
-Just as a specific signal for an ongoing selection event transitions into a different signal following the conclusion of the sweep, so too does the signal for a site under balancing selection. As shown in Figures 8.1 and 8.2, a region held under long-term balancing selection (meaning that the allele frequencies have been near their equilibrium values for a sufficient time) will show an increase in the amount of variation at linked neutral sites (Strobeck 1983; Hudson and Kaplan 1988; Kaplan et al. 1988). This occurs because selection holds alternate alleles at intermediate frequencies for a much longer time than excepted under drift, resulting in an older common ancestor relative to the neutral expectation (Figure 8.3), and hence more time for variation to accumulate. Over time, however, recombination will constantly shrink the size of the region around the selected site with an elevated coalescence time, continually shrinking this signal of long-term balancing selection (Wiuf et al. 2004; Pavlidis et al. 2012).
+Just as a specific signal for an ongoing selection event transitions into a different signal following the conclusion of the sweep, so too does the signal for a site under balancing selection. As shown in Figure 8.1 and Figure 8.2, a region held under long-term balancing selection (meaning that the allele frequencies have been near their equilibrium values for a sufficient time) will show an increase in the amount of variation at linked neutral sites (Strobeck 1983; Hudson and Kaplan 1988; Kaplan et al. 1988). This occurs because selection holds alternate alleles at intermediate frequencies for a much longer time than excepted under drift, resulting in an older common ancestor relative to the neutral expectation (Figure 8.3), and hence more time for variation to accumulate. Over time, however, recombination will constantly shrink the size of the region around the selected site with an elevated coalescence time, continually shrinking this signal of long-term balancing selection (Wiuf et al. 2004; Pavlidis et al. 2012).
 
 ---
 
-## chapter8_004 · Hitchhiking and Selective Sweeps: Introduction / Selection Alters the Coalescent Structure at Linked Neutral Sites
+## chapter8_004 · SWEEPS: A BRIEF OVERVIEW / Selection Alters the Coalescent Structure at Linked Neutral Sites
+
+**[Figure]**
+
+> **Figure 8.1** · page 2 · source: `chapter8`
+>
+> ![Figure 8.1](../figures/fig_0211.png)
+>
+> Figure 8.1 (A) The signature of positive directional selection (a selective sweep) around a selected site (the solid circle). The background levels of linked neutral variation (measured as the average nucleotide diversity,  $ \pi $, in a sliding window of markers) show a significant decrease around the selected site, reflecting the decreased effective population size (and hence a shorter time to the most recent common ancestor, TMRCA) for regions linked to this site. (B) By contrast, balancing selection generates an increase in nucleotide diversity at linked neutral markers, reflecting a longer TMRCA, and hence more opportunities for mutation to generate variation.
+
 
 The underpinning for many tests of selection using polymorphism data (Chapter 9) is that selection changes the coalescent structure at linked neutral sites. If we view the structure of genealogical relationships among the alleles in a sample as a tree (Figure 8.3), recent positive selection shortens the total branch length (the sum of the lengths of all the branches, representing the coalescent times), thus decreasing the amount of variation. Conversely, long-term balancing selection generates longer times to common ancestors (as alleles are retained in the population longer than expected under drift), thus increasing the amount of variation. This effect is equivalent to a change in the effective population size, with a sweep reducing the effective population size in a linked region (Chapter 2), generating shorter coalescence times, and balancing selection increasing $ N_{e} $ and coalescent times.
 
+**[Figure]**
+
+> **Figure 8.2** · page 3 · source: `chapter8`
+>
+> ![Figure 8.2](../figures/fig_0212.png)
+>
+> Figure 8.2 Examples of selection influencing levels of variation at linked neutral sites. (A) A sliding-window plot of levels of nucleotide diversity,  $ \pi $, around the tb1 gene in maize (corn) and teosinte, a candidate gene for the domestication of teosinte into corn. Relative to teosinte, maize variation is dramatically reduced in the 5' UTR region of tb1, suggesting a sweep linked to this region. (After Wang et al. 1999.) (B) Inflated levels of variation are seen around a site that results in an amino acid change (arrow), generating two allelic classes, fast and slow, at the Adh gene in Drosophila melanogaster. These alternative alleles have long been thought to be under balancing selection, which is consistent with the increased variation observed around this site. However, the nature of selection on this gene is still an open issue, as Begun et al. (1999) showed that the excess variation is within slow haplotypes, not between fast and slow haplotypes as would be expected if these two alleles were under balancing selection. (After Kreitman and Hudson 1991.)
+
+
+**[Figure]**
+
+> **Figure 8.3** · page 4 · source: `chapter8`
+>
+> ![Figure 8.3](../figures/fig_0213.png)
+>
+> Figure 8.3 Example coalescent (or genealogical) structures (Chapter 2) for loci from the same population under pure drift, balancing selection, a selective sweep, and a partial sweep (ongoing selection in which an allele is still increasing in frequency). The tips of the tree at the bottom of the graph represent five sampled alleles, which eventually coalesce into a single lineage as we go back in time (the top of the graph). This final coalescent point represents the most recent common ancestor (MRCA) for the sampled alleles. For balancing selection, the time to the MRCA (TMRCA) is greater than for neutral genes, which in turn is greater than a region undergoing a sweep. The shape (measured by the relative distances between nodes) of the coalescent is also influenced by selection. Individual coalescent times for a sweep are much more compressed (the nodes are closer together) as one moves back in time, while under a neutral drift process, coalescent times increase as we approach the MRCA (Equation 2.40). A partial sweep represents a mixture, with a sweep-like structure in one part of the genealogy (here, the right branch) and a drift-like structure in the other (the left-branch).
+
+
 Equally important, selection at a linked site does more than simply shorten or lengthen the coalescent structure. It alters its shape as well, namely, the expected distances between nodes conditioned on the total length of the tree (Figure 8.3). For a neutral coalescent, trees generated with different value of $ N_{e} $ have the same expected shape when scaled to the same total length (Chapter 2). Under a selective sweep, the nodes of the tree (the coalescent points of the genealogies in the sample) are compressed as one moves back in time. In the extreme, positive directional selection can be approximated by a star (or palmetto) genealogy, with all lineages coalescing at a single point. In contrast, under pure drift, the expected longest branch lengths are those that coalesce the final two lineages into a single ancestral lineage (Equation 2.40, Figure 2.10). While differences in the total length of the coalescent influence the total amount of neutral variation, changes in its shape alter the pattern of variation from that expected from a simple change in $ N_{e} $ (such as generating an excess number of rare alleles). The consequences of this change in tree shape are manifested through changes in the site and allele-frequency spectra (Chapter 2) and in the pattern of linkage disequilibrium, differences that underpin a number of tests of selection (Chapter 9). Unfortunately, recovery from a sharp population bottleneck (a crash in population size) also generates a very similar, although not quite identical, compression of the nodes (Barton 1998).
+
+**[Figure]**
+
+> **Figure 8.4** · page 5 · source: `chapter8`
+>
+> ![Figure 8.4](../figures/fig_0214.png)
+>
+> Figure 8.4 Types of sweeps and their corresponding collection of haplotypes. (A) A hard sweep. A new mutation is immediately favored, resulting in only a single haplotype sweeping to high frequency. (B) A single-origin soft sweep. Here a single mutation is initially neutral or even slightly deleterious. It drifts around the population, appearing in new haplotypes through recombination. At some point, an environmental change places this site under strong selection, which sweeps it to fixation, carrying along a sample of its existing collection of linked haplotypes.
+
 
 The precise coalescent structure generated by positive selection depends on when the process is being captured. The structure for a just-completed sweep is different from that generated during the initial phase of selection when a favorable allele is increasing in frequency (Figure 8.3). This latter setting is called a partial sweep and could represent either an allele ultimately on its way to fixation or an allele increasing to some equilibrium frequency under balancing selection. In either case, the resulting tree during the partial sweep phase can be rather unbalanced, with one branch displaying a sweep-like pattern (compressed nodal distances reflecting those lineages influenced by the selected allele) and the other a more drift-life pattern (those lineages that have yet to be affected). This partial-sweep coalescent structure is transient, and with time it may resolve to a sweep (if fixed by selection) or a balancing-selection structure.
 
@@ -40,11 +76,11 @@ Alternatively, the nature of selection may shift before fixation/equilibrium is 
 
 ---
 
-## chapter8_005 · Hitchhiking and Selective Sweeps: Introduction / Hard vs. Soft Sweeps
+## chapter8_005 · SWEEPS: A BRIEF OVERVIEW / Hard vs. Soft Sweeps
 
 **[命题 Proposition]**
 
-Not all sweeps, even those involving strong selection, are expected to leave a detectable signal. A hard sweep refers to a single favorable new mutation arising and immediately coming under selection (Perlitz and Stephan [1997] also refer to this as a catastrophic sweep). The fixation of this mutation drags the haplotype on which it arose to a high frequency, leaving a strong signal (Figure 8.4A). In contrast, under a soft sweep (Hermisson and Pennings 2005, 2017; Messer and Petrov 2013a) multiple haplotypes initially carry the favorable allele. The realization that there are different types of sweeps resolved one of the earlier criticisms of the Maynard Smith and Haigh model. Their analysis suggested a major impact on the amount of heterozygosity at linked neutral sites (detailed below), while Ohta and Kimura (1975) showed that recurrent hitchhiking had only a minor effect on heterozygosity. The resolution of these apparently contradictory results was that Maynard Smith and Haigh assumed a hard sweep, while Ohta and Kimura made what amounted to an assumption of a soft-sweep.
+Not all sweeps, even those involving strong selection, are expected to leave a detectable signal. A hard sweep refers to a single favorable new mutation arising and immediately coming under selection (Perlitz and Stephan [1997] also refer to this as a catastrophic sweep). The fixation of this mutation drags the haplotype on which it arose to a high frequency, leaving a strong signal (Figure 8.4). In contrast, under a soft sweep (Hermisson and Pennings 2005, 2017; Messer and Petrov 2013a) multiple haplotypes initially carry the favorable allele. The realization that there are different types of sweeps resolved one of the earlier criticisms of the Maynard Smith and Haigh model. Their analysis suggested a major impact on the amount of heterozygosity at linked neutral sites (detailed below), while Ohta and Kimura (1975) showed that recurrent hitchhiking had only a minor effect on heterozygosity. The resolution of these apparently contradictory results was that Maynard Smith and Haigh assumed a hard sweep, while Ohta and Kimura made what amounted to an assumption of a soft-sweep.
 
 Soft sweeps can occur under two scenarios, which have different consequences for the nature and strength of the signal left by the sweep. Under a single-origin soft sweep, the eventually favorable mutation predates the start of selection, being either initially neutral or even slightly deleterious. It drifts around the population, potentially spreading to different haplotype backgrounds via recombination, until eventually a change in the environment results in it being favored. This has the effect of selection acting on a more diverse initial collection of haplotypes, giving off a much weaker signal than under a hard sweep. If $p$ is the frequency of an allele at the start of selection, a soft sweep starts with $2pN$ copies of the favorable allele. Within this collection of haplotypes containing the eventually favored allele, the mean coalescence time for a completely linked site in two random individuals is $t = 2pN_e$, where $N_e$ is the effective population size at the start of selection (Innan and Tajima 1997; Berg and Coop 2015). Thus, there is the potential for substantial variation $(2t\mu = 4pN_e\mu = p\theta$ per site, where $\theta = 4N_e\mu$) at neutral sites among those haplotypes carrying the favorable allele at the start of selection.
 
@@ -60,7 +96,7 @@ We start our discussion of the population-genetic theory of sweeps by first cons
 
 ---
 
-## chapter8_007 · Hitchhiking and Selective Sweeps: Introduction / Allele-frequency Change
+## chapter8_007 · THE BEHAVIOR OF A NEUTRAL LOCUS LINKED TO A SELECTED SITE / Allele-frequency Change
 
 To quantify the impact of a sweep, we need to determine how selection influences the frequency of a neutral allele, m, at a linked locus. The ultimate variable of interest is $ q(t) $, the frequency of m in generation t of the sweep, with $ q(\infty) $ denoting its frequency at the sweep's completion. In the absence of any recombination during the sweep, $ q(\infty) = 1 $, as the initial haplotype bearing the new favorable mutation (and m) is swept to fixation. The degree to which $ q(\infty) $ actually approaches one depends on the relative strengths of recombination, c (between the selected site and the neutral marker), and the strength of selection, s, on the favored site. In Chapter 5 we showed that the time to fixation from selection scales with 1/s, so it is reasonable to expect that $ q(\infty) $ is some function of c/s.
 
@@ -211,16 +247,9 @@ For those who wish a more refined analysis, there is a growing body of very tech
 
 **[示例 Example]**
 
-> **Example 8.1** · ref: `8.1` · source: `chapter8_008.json` · blocks 8–8
+> **Example 8.1** · ref: `8.1` · source: `chapter8_008.json` · blocks 8–9
 >
-> Example 8.1. What is the expected time to fixation for an allele with additive fitness effects under strong selection ($ 4N_{e}s \gg 1 $? In a strictly deterministic analysis, the fixation time is infinite, as the allele frequency gets arbitrarily close to, but never actually reaches, one. However, in a finite population, once the allele frequency is driven sufficiently close to one by selection, it is rapidly fixed by drift. If the scaled strength of selection is large relative to drift ($ 4N_{e}s \gg 1 $), we can approximate the change in $ p(t) $ by a deterministic process, provided $ p $ is not too close to zero or one. Near these boundary values, drift determines the dynamics. Hence, a standard approach is to treat $ p(t) $ as a deterministic process when it is in the range $ \epsilon < p < 1 - \epsilon $, for $ \epsilon \ll 1 $ (Kurtz 1971; Norman 1974; Kaplan et al. 1989; Stephan et al. 1992). Once the allele reaches a frequency of $ 1 - \epsilon $, it is assumed to be quickly fixed by drift, and this additional time is assumed to be small and thus is ignored.
-> 
-> Let $ p(t) $ denote the frequency of the favored allele A at time t. If s is small (but $ 4N_{e}s $ large), the deterministic allele-frequency dynamics are well approximated by Equation 5.3b, which can alternatively be expressed as
-> 
-> > **Formula (8.4a)** · `8.4a` · source: `chapter8_block_038` · Allele-frequency Change
-> >
-> > $$ \frac{p(t)}{1-p(t)}=\frac{p(0)}{1-p(0)}e^{st} $$
-> 
+> Example 8.1. What is the expected time to fixation for an allele with additive fitness effects under strong selection ( $ 4N_{e}s \gg 1 $? In a strictly deterministic analysis, the fixation time is infinite, as the allele frequency gets arbitrarily close to, but never actually reaches, one. However, in a finite population, once the allele frequency is driven sufficiently close to one by selection, it is rapidly fixed by drift. If the scaled strength of selection is large relative to drift ( $ 4N_{e}s \gg 1 $), we can approximate the change in $ p(t) $ by a deterministic process, provided $ p $ is not too close to zero or one. Near these boundary values, drift determines the dynamics. Hence, a standard approach is to treat $ p(t) $ as a deterministic process when it is in the range $ \epsilon < p < 1 - \epsilon $, for $ \epsilon \ll 1 $ (Kurtz 1971; Norman 1974; Kaplan et al. 1989; Stephan et al. 1992). Once the allele reaches a frequency of $ 1 - \epsilon $, it is assumed to be quickly fixed by drift, and this additional time is assumed to be small and thus is ignored. Let $ p(t) $ denote the frequency of the favored allele A at time t. If s is small (but $ 4N_{e}s $ large), the deterministic allele-frequency dynamics are well approximated by Equation 5.3b, which can alternatively be expressed as $$ \frac{p(t)}{1-p(t)}=\frac{p(0)}{1-p(0)}e^{st} $$ (8.4a) The time, $ \tau $, for the frequency of A to change from $ p(0) = \epsilon $ to $ p(\tau) = 1 - \epsilon $ is obtained by substituting these values into Equation 8.4a and rearranging to yield $$ \tau=-2\ln(\epsilon)/s $$ (8.4b) Taking $ \epsilon = 1/(2N) $, the required time starting from a single copy to reach a frequency very close to one $ (1 - 1/[2N]) $ is $$ \tau\simeq-2\ln(1/[2N])/s=2\ln(2N)/s $$ (8.4c) While Equation 8.4c appears often in the literature, it actually overestimates the time to fixation in a finite population (and hence underestimates the strength of the sweep). A slightly better approximation follows if we first recall that only a fraction, $ 2sN_e/N $, of single introductions of A are expected to fix (Chapter 7). Conditioned upon those paths where A is fixed, its frequency must increase at a faster rate than would be predicted from the deterministic analysis. Barton (1995a, 2000; Otto and Barton 1997) showed that, in such cases, the rate of increase in allele frequency is initially inflated (multiplied) by an amount of $ 1/(2sN_e/N) $, as the allele frequency moves more quickly into the region where deterministic dynamics, not drift, dominate. As a result, they showed that a more accurate estimate of the time for an allele to reach a high frequency (essentially becoming fixed), given it started as a single copy, is given by replacing $ \epsilon = 1/(2N) $ by $$ \epsilon=\frac{1}{2N}\frac{N}{2sN_{e}}=\frac{1}{4N_{e}s} $$ which results in $$ \tau=2\ln(4N_{e}s)/s $$ (8.4d) The standard finite-population-size correction for hitchhiking models starting with $ p(0) = 1/(2N) $ is to replace 2N by $ 4N_e s $ (i.e., take $ p[0] = 1/[4N_e s] $) to account for this effect. Finally, the expected time, $ t_{x} $, to reach a frequency of x < 1 appears in the analysis of partial sweeps (Coop and Ralph 2012). Again, starting at an initial frequency of $ \epsilon \simeq 0 $, Equation 8.4a yields $$ \frac{x}{1-x}=\epsilon e^{st_{x}} $$ which, upon rearranging (with $ \epsilon = 1/[4N_{e}s] $), yields $$ t_{x}=\frac{1}{s}\ln\left(\frac{\epsilon^{-1}x}{1-x}\right)=\frac{1}{s}\ln\left(\frac{4N_{e}s x}{1-x}\right) $$ (8.4e)
 
 
 ---
@@ -267,40 +296,14 @@ Finally, the expected time, $ t_{x} $, to reach a frequency of x < 1 appears in 
 
 **[示例 Example]**
 
-> **Example 8.2** · ref: `8.2` · source: `chapter8_009.json` · blocks 5–5
+> **Example 8.2** · ref: `8.2` · source: `chapter8_009.json` · blocks 5–11
 >
-> Example 8.2. To obtain the final change, $ \Delta_q = q(\infty) - q(0) $, in the frequency of a neutral linked allele under a deterministic model of hitchhiking, we follow Barton (2000). Letting $ q'(t) $ and $ p'(t) $ denote the frequencies of alleles $ m $ and $ A $ in generation $ t $ after selection, and recalling Equation 8.1a, we can express the change in $ q $ in generation $ t $ by selection (but before recombination). Letting $ dp(t) = p'(t) - p(t) $, the change in the frequency of $ A $ resulting from selection in generation $ t $, $$ \begin{aligned}dq(t)&=q^{\prime}(t)-q(t)=\{p^{\prime}(t)q_{A}(t)+[1-p^{\prime}(t)]q_{a}(t)\}-\{p(t)q_{A}(t)+[1-p(t)]q_{a}(t)\}\\&=[p(t)+dp(t)]q_{A}(t)+[1-p(t)-dp(t)]q_{a}(t)-\{p(t)q_{A}(t)+[1-p(t)]q_{a}(t)\}\\&=dp(t)\left[q_{A}(t)-q_{a}(t)\right]\\ \end{aligned} $$
-> 
-> Using Equation 8.2a to substitute for $ [q_{A}(t) - q_{a}(t)] $, we have $$ d q(t)=d p(t)\delta_{q}(0)e^{-c t} $$
-> 
-> The final frequency is just the sum of all these single-generation changes, which we approximate by an integral, $$ \Delta_{q}=q(\infty)-q(0)=\sum_{i=0}^{\infty}d q(i)\simeq\int_{0}^{\infty}d q(t)d t=\delta_{q}(0)\int_{0}^{\infty}d p(t)e^{-c t}d t $$
-> 
-> A more accurate result follows if we note that $ dp(t) = \Delta p / \Delta t \simeq dp / dt $, yielding $$ \Delta_{q}=\delta_{q}(0)\int_{0}^{\infty}e^{-c t}\frac{d p}{d t}d t=\delta_{q}(0)\int_{p(0)}^{1}e^{-c t}d p $$ where the final integral follows by a change of variables with $ p(\infty) = 1 $. The trick to evaluating this last integral is to recall Equation 8.4a for the behavior of a selected allele, and note that $ 1 - p(0) \simeq 1 $ (because $ p(0) \ll 1 $), yielding $$ \frac{p(t)}{1-p(t)}=\frac{p(0)}{1-p(0)}e^{s t}\simeq p(0)e^{s t} $$
-> 
-> Rearranging yields $$ p(0)\frac{1-p(t)}{p(t)}=e^{-st} $$
-> 
-> Noting that $ e^{ab} = (e^{a})^{b} $, we can write $$ e^{-c t}=\left(e^{-s t}\right)^{c/s}=\left(p(0)\frac{1-p(t)}{p(t)}\right)^{c/s}=p(0)^{c/s}\left(\frac{1-p(t)}{p(t)}\right)^{c/s} $$ which, upon substitution into the previous integral, yields $$ \Delta_{q}=\delta_{q}(0)\int_{p_{o}}^{1}e^{-c t}d p=\delta_{q}(0)p(0)^{c/s}\int_{p_{o}}^{1}\left(\frac{1-p}{p}\right)^{c/s}d p $$
-> 
-> For $c/s < 0.1$, the integral is close to one, and we recover Equation 8.3a, $\Delta_q = \delta_q(0) p(0)^{c/s}$. Barton (Otto and Barton 1997; Barton 1998) showed that a more accurate result is given by
-> 
-> > **Formula (8.5a)** · `8.5a` · source: `chapter8_block_050` · Allele-frequency Change
-> >
-> > $$ \Delta_{q}\simeq\delta_{q}(0)p(0)^{c/s}\{\Gamma\left[1+(c/s)\right]\}^{2}\Gamma\left[1-(c/s)\right] $$
-> 
-> 
-> where $ \Gamma $ denotes the gamma function (Equation 2.25b). For $ c/s < 0.1 $, this reduces to
-> 
-> > **Formula (8.5b)** · `8.5b` · source: `chapter8_block_050` · Allele-frequency Change
-> >
-> > $$ \Delta_{q}\simeq\delta_{q}(0)\left(1+\frac{c}{s}\left[\ln[p(0)]+0.5772\right]\right) $$
-> 
-> 
-> which offers a slight improvement over Equation 8.3d, but only when $ p(0) $ is not very small.
+> Example 8.2. To obtain the final change, $ \Delta_q = q(\infty) - q(0) $, in the frequency of a neutral linked allele under a deterministic model of hitchhiking, we follow Barton (2000). Letting $ q'(t) $ and $ p'(t) $ denote the frequencies of alleles $ m $ and $ A $ in generation $ t $ after selection, and recalling Equation 8.1a, we can express the change in $ q $ in generation $ t $ by selection (but before recombination). Letting $ dp(t) = p'(t) - p(t) $, the change in the frequency of $ A $ resulting from selection in generation $ t $, $$ \begin{aligned}dq(t)&=q^{\prime}(t)-q(t)=\{p^{\prime}(t)q_{A}(t)+[1-p^{\prime}(t)]q_{a}(t)\}-\{p(t)q_{A}(t)+[1-p(t)]q_{a}(t)\}\\&=[p(t)+dp(t)]q_{A}(t)+[1-p(t)-dp(t)]q_{a}(t)-\{p(t)q_{A}(t)+[1-p(t)]q_{a}(t)\}\\&=dp(t)\left[q_{A}(t)-q_{a}(t)\right]\\ \end{aligned} $$ Using Equation 8.2a to substitute for $ [q_{A}(t) - q_{a}(t)] $, we have $$ d q(t)=d p(t)\delta_{q}(0)e^{-c t} $$ The final frequency is just the sum of all these single-generation changes, which we approximate by an integral, $$ \Delta_{q}=q(\infty)-q(0)=\sum_{i=0}^{\infty}d q(i)\simeq\int_{0}^{\infty}d q(t)d t=\delta_{q}(0)\int_{0}^{\infty}d p(t)e^{-c t}d t $$ A more accurate result follows if we note that $ dp(t) = \Delta p / \Delta t \simeq dp / dt $, yielding $$ \Delta_{q}=\delta_{q}(0)\int_{0}^{\infty}e^{-c t}\frac{d p}{d t}d t=\delta_{q}(0)\int_{p(0)}^{1}e^{-c t}d p $$ where the final integral follows by a change of variables with $ p(\infty) = 1 $. The trick to evaluating this last integral is to recall Equation 8.4a for the behavior of a selected allele, and note that $ 1 - p(0) \simeq 1 $ (because $ p(0) \ll 1 $), yielding $$ \frac{p(t)}{1-p(t)}=\frac{p(0)}{1-p(0)}e^{s t}\simeq p(0)e^{s t} $$ Rearranging yields $$ p(0)\frac{1-p(t)}{p(t)}=e^{-st} $$ Noting that $ e^{ab} = (e^{a})^{b} $, we can write $$ e^{-c t}=\left(e^{-s t}\right)^{c/s}=\left(p(0)\frac{1-p(t)}{p(t)}\right)^{c/s}=p(0)^{c/s}\left(\frac{1-p(t)}{p(t)}\right)^{c/s} $$ which, upon substitution into the previous integral, yields $$ \Delta_{q}=\delta_{q}(0)\int_{p_{o}}^{1}e^{-c t}d p=\delta_{q}(0)p(0)^{c/s}\int_{p_{o}}^{1}\left(\frac{1-p}{p}\right)^{c/s}d p $$ For $c/s < 0.1$, the integral is close to one, and we recover Equation 8.3a, $\Delta_q = \delta_q(0) p(0)^{c/s}$. Barton (Otto and Barton 1997; Barton 1998) showed that a more accurate result is given by $$ \Delta_{q}\simeq\delta_{q}(0)p(0)^{c/s}\{\Gamma\left[1+(c/s)\right]\}^{2}\Gamma\left[1-(c/s)\right] $$ (8.5a) where $ \Gamma $ denotes the gamma function (Equation 2.25b). For $ c/s < 0.1 $, this reduces to $$ \Delta_{q}\simeq\delta_{q}(0)\left(1+\frac{c}{s}\left[\ln[p(0)]+0.5772\right]\right) $$ (8.5b) which offers a slight improvement over Equation 8.3d, but only when $ p(0) $ is not very small.
 
 
 ---
 
-## chapter8_010 · Hitchhiking and Selective Sweeps: Introduction / Reduction in Genetic Diversity Around a Sweep
+## chapter8_010 · THE BEHAVIOR OF A NEUTRAL LOCUS LINKED TO A SELECTED SITE / Reduction in Genetic Diversity Around a Sweep
 
 By fixing any neutral alleles completely linked to the selected site (and usually on a faster time scale than the scale by which mutation can introduce new variation), a sweep removes any initial variation that is present over some region. Two central questions are how large a region is influenced by a recently completed sweep and how strong an effect is seen? To address these questions, we continue to assume that any effect from mutation occurring during the sweep can be ignored (a point that we will address shortly). The first treatment of this topic, and one of the more widely cited results on sweeps, is due to Kaplan et al. (1989). They showed that the expected coalescence time for two alleles at a neutral site that is linked (at recombination fraction c) to the site under selection differs significantly from $ 2N_e $ (the neutral value) when $ c/s < 0.01 $ and the sweep has been recent (fixation less than $ 0.2N_e $ generations ago, so that the effects of new mutations following fixation are negligible). This leads to their often-quoted approximation that neutral sites within $ 0.01\, s/c $ of a selected site will be significantly influenced by a recent sweep.
 
@@ -428,14 +431,24 @@ The dependence on $N$ is very weak. For example, for $N = 10^4$, Equation 8.9 gi
 
 **[示例 Example]**
 
-> **Example 8.3** · ref: `8.3` · source: `chapter8_011.json` · blocks 6–6
+> **Example 8.3** · ref: `8.3` · source: `chapter8_011.json` · blocks 6–7
 >
-> Example 8.3. Assume a recombination rate of 1 cM/Mb ($ c_0 = 0.00001 $ per kb), and consider the expected reduction in heterozygosity at a site 10 kb away from a sweep ($ c = 10 \cdot 0.00001 = 0.0001 $). For an allele with additive fitness effects, with $ s = 0.01 $ and $ N_e = 10^6 $, Equation 8.8b yields $ H_h / H_0 \simeq 0.19 $, so that (ignoring any new mutation) only 19% of the initial heterozygosity is present immediately following a sweep. For a dominant allele, we replace $ s = 0.01 $ by $ 2s = 0.02 $ in Equation 8.8b, giving $ H_h / H_0 \simeq 0.10 $. Finally, when the favored allele is recessive, $$ \eta=c\sqrt{4N_{e}/s}=0.0001\sqrt{4\cdot10^{6}/0.01}=2 $$ and Equation 8.8c yields $ H_h/H_0 \simeq 0.67 $. Using the same parameters, the values for $ H_h/H_0 $ at different distances away from the selected site are as follows: The sweep from a dominant allele has the largest effect (roughly twice the reduction at small distances compared to additive selection), while the effect of a recessive allele is fairly weak except at very short distances from the site. For these three modes of gene action and s = 0.01, a 50% reduction ($ H_h/H_0 = 0.5 $) in heterozygosity occurs over a distance of 5 kb on either side of a selected recessive allele, the distance is 31 kb when additive, and the distance is 66 kb when dominant, giving the size of the sweep regions as 10, 62, and 132 kb, respectively.
+> Example 8.3. Assume a recombination rate of 1 cM/Mb ( $ c_0 = 0.00001 $ per kb), and consider the expected reduction in heterozygosity at a site 10 kb away from a sweep ( $ c = 10 \cdot 0.00001 = 0.0001 $). For an allele with additive fitness effects, with $ s = 0.01 $ and $ N_e = 10^6 $, Equation 8.8b yields $ H_h / H_0 \simeq 0.19 $, so that (ignoring any new mutation) only 19% of the initial heterozygosity is present immediately following a sweep. For a dominant allele, we replace $ s = 0.01 $ by $ 2s = 0.02 $ in Equation 8.8b, giving $ H_h / H_0 \simeq 0.10 $. Finally, when the favored allele is recessive, $$ \eta=c\sqrt{4N_{e}/s}=0.0001\sqrt{4\cdot10^{6}/0.01}=2 $$ and Equation 8.8c yields $ H_h/H_0 \simeq 0.67 $. Using the same parameters, the values for $ H_h/H_0 $ at different distances away from the selected site are as follows:
+> 
+> > **Inline Table 1** · `inline_1` · page 14 · source: `chapter8_011`
+> > Inline Table 1
+> >
+> >  | 1 kb | 5 kb | 10 kb | 25 kb | 50 kb | 100 kb
+> > --- | --- | --- | --- | --- | --- | ---
+> > Dominant | 0.01 | 0.05 | 0.10 | 0.23 | 0.41 | 0.65
+> > Additive | 0.02 | 0.10 | 0.19 | 0.41 | 0.65 | 0.88
+> > Recessive | 0.17 | 0.50 | 0.67 | 0.83 | 0.91 | 0.95
+> 
 
 
 ---
 
-## chapter8_012 · Hitchhiking and Selective Sweeps: Introduction / The Messer-Neher Estimator of s
+## chapter8_012 · THE BEHAVIOR OF A NEUTRAL LOCUS LINKED TO A SELECTED SITE / The Messer-Neher Estimator of s
 
 **[推导 Derivation]**
 
@@ -452,7 +465,7 @@ While this approach works on genomic regions showing little to no recombination 
 
 ---
 
-## chapter8_013 · Hitchhiking and Selective Sweeps: Introduction / Recovery of Variation Following a Sweep
+## chapter8_013 · THE BEHAVIOR OF A NEUTRAL LOCUS LINKED TO A SELECTED SITE / Recovery of Variation Following a Sweep
 
 **[推导 Derivation]**
 
@@ -467,7 +480,7 @@ where $ H_0(4N_e s)^{-2c/s} = H_0 f_s^2 $ is the reduction immediately following
 
 ---
 
-## chapter8_014 · Hitchhiking and Selective Sweeps: Introduction / Effects of Sweeps on the Variance in Microsatellite Copy Number
+## chapter8_014 · THE BEHAVIOR OF A NEUTRAL LOCUS LINKED TO A SELECTED SITE / Effects of Sweeps on the Variance in Microsatellite Copy Number
 
 These results on the behavior of nucleotide diversity (heterozygosity) during and after a sweep apply to SNP data. Because per-nucleotide mutation rates are very low (Chapter 4), the infinite-sites model offers a good approximation for such data, as recurrent neutral mutation during the sweep can largely be ignored because back mutations are unlikely and mutations are rare in general. Both of these assumptions are violated when microsatellite markers (simple tandem repeats [STRs]) are considered. These have high mutation rates (on the order of $ 10^{-2} $ to $ 10^{-4} $), and recurrent mutation can regenerate the same allele (scored as the number of repeats at a site). A further complication is that a commonly used measure of STR variability is not heterozygosity, but rather the variance, V, in repeat number among alleles at the microsatellite marker.
 
@@ -502,7 +515,16 @@ As with Equation 8.11, $ t_{0.5} \simeq 1.4N_e $ generations are required to rec
 
 ---
 
-## chapter8_015 · Hitchhiking and Selective Sweeps: Introduction / The Site-Frequency Spectrum
+## chapter8_015 · THE BEHAVIOR OF A NEUTRAL LOCUS LINKED TO A SELECTED SITE / The Site-Frequency Spectrum
+
+**[Figure]**
+
+> **Figure 8.5** · page 16 · source: `chapter8`
+>
+> ![Figure 8.5](../figures/fig_0215.png)
+>
+> Figure 8.5 The effect of a hard sweep on the unfolded site-frequency spectrum of derived alleles. Under the equilibrium neutral model, this distribution is hyperbolic, an L-shaped curve that is monotonically declining, with most derived alleles being at low frequencies (the Watterson distribution; Equation 2.34a). The effect of a sweep is to shift some derived alleles to very high frequencies while shifting the others to frequencies near zero, resulting in a more U-shaped distribution (Equation 8.13).
+
 
 **[推导 Derivation]**
 
@@ -519,7 +541,7 @@ If two concurrent sweeps are influencing the same region, the resulting site-fre
 
 **[示例 Example]**
 
-> **Example 8.4** · ref: `8.4` · source: `chapter8_015.json` · blocks 3–3
+> **Example 8.4** · ref: `8.4` · source: `chapter8_015.json` · blocks 3–7
 >
 > Example 8.4. The derivation of Equation 8.13 follows in large part from Equation 8.1e, the expected change in marker allele frequency following a sweep for a given value of $ f_s $. Let $ x $ denote the frequency of a linked neutral derived allele before the start of selection and $ y $ its frequency immediately following the sweep. We assume a pre-sweep Watterson SFS, $ \phi(x) = \theta / x $ (Equation 2.34a). Given a single favorable mutation occurring at random on one of the existing chromosomes, then if $ x $ is the frequency of a linked neutral allele, with a probability of $ x $, then the allele is in coupling phase with the new mutation; otherwise (with a probability of $ 1 - x $), it is in repulsion phase.
 > 
@@ -534,11 +556,20 @@ If two concurrent sweeps are influencing the same region, the resulting site-fre
 
 ---
 
-## chapter8_016 · Hitchhiking and Selective Sweeps: Introduction / The Pattern of Linkage Disequilibrium
+## chapter8_016 · THE BEHAVIOR OF A NEUTRAL LOCUS LINKED TO A SELECTED SITE / The Pattern of Linkage Disequilibrium
 
 The pattern of linkage disequilibrium (LD) generated by a sweep has been extensively studied (Thomson 1977; Gillespie 1997; Przeworski 2002; Kim and Nielsen 2004; Stephan et al. 2006; Jensen et al. 2007; McVean 2007; Jones and Wakeley 2008; Pfaffelhuber et al. 2008), and it turns out to be both complicated and surprising. The conventional wisdom was that a selective sweep increases LD across the site of selection (Thomson 1977; Przeworski 2002), with the increase in LD during a sweep providing a signal of selection (Chapter 9). Starting with Kim and Nielsen (2004), however, it has been realized that the spatial and temporal patterns in LD associated with a sweep are far more subtle.
 
 The temporal dynamics of this structure are shown in Figure 8.6, which plots the dynamics of LD for two linked neutral sites separated by c = 0.0002. The midpoint between the sites is set at zero, with the value x representing the position of the selected locus, so that Figure 8.6 displays the expected LD between this pair of neutral sites at different distances from the selected site. For $ |x| > 0.0001 $, both markers are on the same side of the selected site, while for $ |x| < 0.0001 $, the selected site is between the markers. Vertical slices on the curve (the shape of the curve at a set time point) represent the expected LD (measured as D; Equation 2.18) between the two markers as a function of x for a given time point during the sweep. As shown, during the initial phase of the sweep (proceeding from the rear-most slices), strong LD accrues between sites that flank the selected site as the sweep progresses, with LD initially showing a peak at x = 0. As the sweep progresses (i.e., as slices move toward the front), the LD for a pair of markers flanking the selected site ($ |x| < 0.0001 $) approaches zero, while the LD between sites that are both on the same side of the selected site ($ |x| > 0.0001 $) largely remains intact. The plot in Figure 8.6 is based on a deterministic analysis of a three-locus model (one selected and two neutral) by Stephan et al. (2006). As such, it depicts a very smooth and symmetric view of the LD on either site of the selected site, representing the average behavior over a large number of identical sweeps. In reality, however, there is considerable variance in the amount of LD due to finite population size, the stochastic location of rare recombination events, and differences in allele frequencies across markers at the start of the sweep. Simulation studies (e.g., Kim and Nielsen 2004; Schrider et al. 2015) have often found a very asymmetric pattern of LD across a selected site, with a strong signal on one side and little to no signal on the other.
+
+**[Figure]**
+
+> **Figure 8.6** · page 19 · source: `chapter8`
+>
+> ![Figure 8.6](../figures/fig_0216.png)
+>
+> Figure 8.6 The dynamics of linkage disequilibrium (LD) between two neutral markers as a function of their location relative to the selected site. The neutral markers in this figure are separated by c = 0.0002, with x (measured in units of c) representing the location of the selected site. A value of x = 0 implies that the selected site is exactly between the two markers and it is flanked by the markers provided  $ |x| < 0.0001 $, whereas both markers are on the same side of the site when  $ |x| > 0.0001 $ (see the figure panel). The figure plots the LD dynamics (measured by D) for pairs of markers during the time course of a sweep, which starts at generation 0 (the rear slice along the generations axis) and runs until the conclusion of the sweep (the front slice). One sees a strong signal of LD across the site  $ |x| < 0.0001 $ during the early phase of the sweep (the partial sweep stage), with a sharp increase in LD for markers flanking the selected site. As the favorable allele reaches intermediate frequency, the LD flanking the site starts to decay (the region  $ |x| < 0.0001 $), while the LD on either side largely remains intact  $ |x| > 0.0001 $. Upon fixation, the result is very little LD between markers that flank the site (often below that in the starting background), while strong regions of LD exist for pairs of markers on the same side of the selected site. (After Stephan et al. 2006.)
+
 
 Thus, while LD does indeed increase during the early phase of the sweep of a favorable allele to fixation, it actually starts to decrease in the neighborhood of the site once the frequency of the favorable allele reaches roughly 0.5 (Stephen et al. 2006). Upon fixation, the result is a region flanking the selected site that has an LD level lower than the background level at unlinked neutral loci, and hence potentially reduced from its initial starting value. Conversely, for pairs of markers on either side of the selected site, LD significantly increases, so that strong LD can be found on the left and/or right sides of a selected site, but with no association across the site. These results have strong implications for tests of selection (Chapter 9), in that strong LD across the site is expected during a partial sweep (with the selected allele still increasing in frequency). Conversely, for a recently completed sweep, the LD pattern is very different, with LD between neutral sites on the same side of the selected site but little LD across sites. Thus, different LD-based tests are required for these two different situations.
 
@@ -546,7 +577,7 @@ Jones and Wakeley (2008) suggested some caution with these results, as even a ve
 
 ---
 
-## chapter8_017 · Hitchhiking and Selective Sweeps: Introduction / Age of a Sweep
+## chapter8_017 · THE BEHAVIOR OF A NEUTRAL LOCUS LINKED TO A SELECTED SITE / Age of a Sweep
 
 **[推导 Derivation]**
 
@@ -568,7 +599,7 @@ More sophisticated approaches for estimating $ \tau $ are discussed in Chapter 9
 
 ---
 
-## chapter8_018 · Hitchhiking and Selective Sweeps: Introduction / Partial Sweeps
+## chapter8_018 · THE BEHAVIOR OF A NEUTRAL LOCUS LINKED TO A SELECTED SITE / Partial Sweeps
 
 An ongoing selection event (i.e., the favored allele is still increasing in frequency), whether toward fixation or to some internal equilibrium frequency, generates a partial sweep signal. Coop and Ralph (2012) considered an additional scenario, wherein a newly arising allele is rapidly swept up to a frequency of x by selection, after which the environment changes, reducing the strength of selection (perhaps even to the point of making the allele effectively neutral). The key parameter is now $ t_x $, the time to reach this frequency, which, from Equation 8.4e (for additive fitnesses and starting from $ p(0) = 1/[2N] $), is $$ t_{x}=\frac{1}{s}\ln\left(\frac{4N_{e}s x}{1-x}\right) $$
 
@@ -585,13 +616,13 @@ This follows from the probability of sampling a chromosome carrying the advantag
 
 ---
 
-## chapter8_019 · Hitchhiking and Selective Sweeps: Introduction / Impacts of Inbreeding
+## chapter8_019 · THE BEHAVIOR OF A NEUTRAL LOCUS LINKED TO A SELECTED SITE / Impacts of Inbreeding
 
 Three separate consequences of inbreeding enhance the signal of a sweep. First, under inbreeding, the effective population size is smaller, with $ N_e = N/(1 + F) $ (Chapter 3), where $ F = \eta/(2 - \eta) $ for a partially-selfing (with selfing rate $ \eta $) population in equilibrium (Chapter 23). Equation 8.3g shows the impact of a sweep (measured by the critical parameter, $ f_s $) is slightly larger in smaller populations, although the effect only scales as $ \ln(N_e) $. The reason for this slightly greater impact is a faster time to fixation, and hence less opportunity for recombination. This point highlights the other two features of inbreeding that are more impactful on sweeps. First, selection is generally more efficient, especially when the favored allele is recessive or partly recessive. Indeed, the expected time to fixation is reduced at least by a factor of $ (1 + F) $ under inbreeding (Caballero and Hill 1992b, Glémin 2012). Inbreeding is also more democratic in that allele-frequency change trajectories under different amounts of dominance become increasingly similar under increased inbreeding (Hartfield et al 2017). Second, because of the reduction in the frequency of heterozygotes, recombination is correspondingly weaker, with an effective recombination rate of $ c_e \simeq c(1 - F) $ (Nordborg 2000). Together these features imply that the length of the sweep signal under inbreeding should be longer relative to the same selection and recombination parameters under panmixia. This results in easier detection of a sweep, but greater obfuscation in terms of localizing the causative site of the sweep (Hartfield et al 2017).
 
 ---
 
-## chapter8_020 · Hitchhiking and Selective Sweeps: Introduction / Summary: Signatures of a Hard Sweep
+## chapter8_020 · THE BEHAVIOR OF A NEUTRAL LOCUS LINKED TO A SELECTED SITE / Summary: Signatures of a Hard Sweep
 
 The key summary parameter for the potential impact of a sweep is the fraction of original haplotypes that stay intact following a sweep, $ f_s = \Delta_q / \delta_q(0) $ (Equation 8.1d). If $ f_s \simeq 1 $, the sweep will have a major impact on the structure of variation at linked neutral sites, while if $ f_s \simeq 0 $, it will have essentially no impact. Table 8.1 summarizes expressions for $ f_s $ and also for the population-genetic impacts of a sweep on a linked neutral site. Table 8.2 summarizes more subtle signatures of a sweep beyond the simple reduction in variation. As detailed in the next chapter, all of the observations listed in Table 8.2, either singularly or in combination, have been used as the basis of tests of ongoing or recent selection. It is important to stress that the results in these two tables are restricted to hard sweeps, wherein the favorable allele is only present in (at most) a few copies at the start of selection. As shown below, many of these signals are either muted or washed out entirely under soft sweeps.
 
@@ -620,7 +651,7 @@ A powerful way to understand many of the results presented below is to use time-
 
 ---
 
-## chapter8_022 · Hitchhiking and Selective Sweeps: Introduction / Signatures of a Soft Sweep
+## chapter8_022 · SOFT SWEEPS / Signatures of a Soft Sweep
 
 **[推导 Derivation]**
 
@@ -659,7 +690,7 @@ Garud et al. (2015) suggested a further test to distinguish between soft and har
 
 ---
 
-## chapter8_023 · Hitchhiking and Selective Sweeps: Introduction / Sweeps Using Standing Variation
+## chapter8_023 · SOFT SWEEPS / Sweeps Using Standing Variation
 
 The hard-sweep model implies a lag in adaptation, with populations experiencing an environmental change having to wait for favorable mutations to appear in order to respond. In contrast to this situation, artificial selection for most traits in outbred populations generates an immediate response (Chapter 18), showing that a large reservoir of standing (or preexisting) variation typically exists for most traits. Thus, hard sweeps are expected to be more frequent when standing variation is low, such as in small or inbred populations, or for traits with a previous history of strong selection. On the other hand, while much of the initial selection response might occur from standing variation in outbred populations (a standing sweep), new mutations play a critical role in the continued response once this initial variation has been exhausted (Chapters 26 and 27). The molecular signature resulting from a sweep arising from standing variation has been examined by Innan and Kim (2004), Przeworski et al. (2005), and Berg and Coop (2015).
 
@@ -676,16 +707,14 @@ Further insight into the signal from a standing sweep was provided by Przeworski
 
 **[示例 Example]**
 
-> **Example 8.7** · ref: `8.7` · source: `chapter8_023.json` · blocks 4–4
+> **Example 8.7** · ref: `8.7` · source: `chapter8_023.json` · blocks 4–5
 >
 > Example 8.7. The threespine stickleback (Gasterosteus aculeatus) is a species complex of small fish widespread throughout the Northern Hemisphere in both freshwater and marine environments. The marine form is usually armored with a series of over 30 bony plates running the length of the body, while exclusively freshwater forms (which presumably arose from marine populations following the melting of the last glaciers) often lack some, or all, of these plates. Given the isolation of the freshwater lakes, it is likely that the reduced armor phenotype has independently evolved multiple times. What was the mechanism for this?
-> 
-> Colosimo et al. (2005) showed that this parallel evolution occurred by independent fixation of alleles derived from an ancient ($ \sim2 \cdot 10^6 $ years) low-armor haplotype of the Eda locus (a component of the ectodysplasin signaling pathway). Surveying populations from Europe, North America, and Japan, they found that most nuclear genes showed a clear Atlantic-Pacific division. Conversely, at the Eda locus, low-armored populations shared a more recent history than full-armored populations, independent of their geographic origins, presumably reflecting more recent ancestry at the site due to the sharing of an ancient allele. In marine populations, low-armor alleles at Eda are present at low ($ <5% $) frequency. Presumably, these existing alleles were repeatedly selected following the colonization of freshwater lakes from marine founder populations. Barrett and Schluter (2008), Messer and Petrov (2013a), and Jensen (2014) reviewed a number of other examples of adaptation from preexisting mutations.
 
 
 ---
 
-## chapter8_024 · Hitchhiking and Selective Sweeps: Introduction / How Likely is a Sweep Using Standing Variation?
+## chapter8_024 · SOFT SWEEPS / How Likely is a Sweep Using Standing Variation?
 
 **[推导 Derivation]**
 
@@ -728,6 +757,15 @@ as the expected number of mutations that are destined to become fixed arising ea
 is the mean establishment time for a new favorable mutation (Messer and Petrov 2013a).
 
 Before proceeding, it is useful to rescale time from the number of generations $ \tau $ to $ T = \tau / (2N_e) $. Under this scheme, $ \tau = 2N_eT $, with $ T = 1 $ corresponding to $ 2N_e $ generations, which is the natural scale for genetic drift (being the expected coalescence time for two neutral alleles; Chapter 2). The expected total number of beneficial mutations that will have appeared by time $ T $ is then $$ \tau\cdot2h s\theta_{b}=T h(2N_{e}2s)\theta_{b}=T h\alpha_{b}\theta_{b} $$
+
+**[Figure]**
+
+> **Figure 8.7** · page 27 · source: `chapter8`
+>
+> ![Figure 8.7](../figures/fig_0217.png)
+>
+> Figure 8.7 Plots of  $ \Pr_{ex}(0.1) $, the probability of a selected sweep from standing variation, given that a sweep has occurred within  $ 0.1N_e $ generations following a change in the environment (Equation 8.20, with simulated data given by the points). This is a function of the beneficial mutation rate,  $ \theta_b = 4N_e\mu_b $ (separate curves within each graph), and the scaled strength of selection,  $ \alpha_b = 4N_e s $, during the sweep (horizontal axis). (Left) The allele is neutral in the old environment ( $ \alpha_d = 0 $). (Right) The allele is deleterious in the old environment ( $ \alpha_d = 4N_e s_d = 100 $) (After Hermisson and Pennings 2005.)
+
 
 **[推导 Derivation]**
 
@@ -772,25 +810,19 @@ Peter et al. (2012) developed an approximate Bayesian computation (or ABC)-based
 
 > **Example 8.8** · ref: `8.8` · source: `chapter8_025.json` · blocks 0–0
 >
-> Example 8.8. One measure of how rate-limiting mutation can be is the expected time at which there is a 50% chance that a mutation that is destined to be fixed has arisen, which follows from Equation 8.18c. Suppose that adaptation can only occur through mutation at one of five nucleotide sites, in each case generating an allele with an additive effect on fitness ($ h = 1/2 $) and a heterozygote advantage of 1% ($ s = 0.01 $). At each of these five sites, only one third of all new point mutations (assuming equal rates to all four nucleotides) generate the favorable allele, giving the beneficial mutation rate as $ (5/3)\mu $, where $ \mu $ is the per-site rate. In humans, assuming a historical value of $ N_e = 10^4 $ and a per-site mutation rate of $ 10^{-8} $, we have $ h\alpha_b = (1/2)4N_e s = 2 \cdot 10^4 \cdot 0.01 = 200 $, while $ \theta_b = 4N_e \mu_b = 4 \cdot 10^4 \cdot [(5/3) \cdot 10^{-8}] = 0.00067 $, giving $ h\alpha_b\theta_b = 200 \cdot 0.00067 = 0.13 $. Solving Equation 8.18c for the value of $ T $ giving a 50% probability, $$ 0.5=1-\exp(-T_{0.5}h\alpha_{b}\theta_{b})=1-\exp(-0.13\cdot T_{0.5}) $$ which rearranges to $ T_{0.5} = -\ln(0.5)/0.13 \simeq 5.33 $, or $ 5.33(2N_e) = 10.66N_e = 106,600 $ generations. Further, once such a mutation that is destined to be fixed arises, it still takes (on average) an additional $ 2\ln(4N_e s)/s \sim 1060 $ generations to become fixed (Equation 8.4d).
+> Example 8.8. One measure of how rate-limiting mutation can be is the expected time at which there is a 50% chance that a mutation that is destined to be fixed has arisen, which follows from Equation 8.18c. Suppose that adaptation can only occur through mutation at one of five nucleotide sites, in each case generating an allele with an additive effect on fitness ( $ h = 1/2 $) and a heterozygote advantage of 1% ( $ s = 0.01 $). At each of these five sites, only one third of all new point mutations (assuming equal rates to all four nucleotides) generate the favorable allele, giving the beneficial mutation rate as $ (5/3)\mu $, where $ \mu $ is the per-site rate. In humans, assuming a historical value of $ N_e = 10^4 $ and a per-site mutation rate of $ 10^{-8} $, we have $ \hbar\alpha_b = (1/2)4N_e s = 2 \cdot 10^4 \cdot 0.01 = 200 $, while $ \theta_b = 4N_e \mu_b = 4 \cdot 10^4 \cdot [(5/3) \cdot 10^{-8}] = 0.00067 $, giving $ \hbar\alpha_b\theta_b = 200 \cdot 0.00067 = 0.13 $. Solving Equation 8.18c for the value of $ T $ giving a 50% probability, $$ 0.5=1-\exp(-T_{0.5}h\alpha_{b}\theta_{b})=1-\exp(-0.13\cdot T_{0.5}) $$ which rearranges to $ T_{0.5} = -\ln(0.5)/0.13 \simeq 5.33 $, or $ 5.33(2N_e) = 10.66N_e = 106,600 $ generations. Further, once such a mutation that is destined to be fixed arises, it still takes (on average) an additional $ 2\ln(4N_e s)/s \sim 1060 $ generations to become fixed (Equation 8.4d).
 
 
 **[示例 Example]**
 
-> **Example 8.9** · ref: `8.9` · source: `chapter8_025.json` · blocks 1–1
+> **Example 8.9** · ref: `8.9` · source: `chapter8_025.json` · blocks 1–4
 >
-> Example 8.9. As a sample calculation of how often sweeps occur from existing versus new mutations, suppose $ N_e = 10^6 $ and there is a genome average per-site mutation rate of $ \mu = 2.5 \cdot 10^{-9} $, yielding $ \theta = 4N_e\mu = 0.01 $. For a beneficial mutation that can only occur by a change to a specific nucleotide at a specific site, one third of mutations at that site are beneficial, yielding $ \theta_b = (1/3)\theta = 0.0033 $. For an allele with additive fitness effects ($ h = 1/2 $) with $ s = 10^{-4} $, we have $ \alpha_b = 4N_e s = 4 \cdot 10^6 \cdot 10^{-4} = 400 $. If this mutation was neutral before being favored, $ \alpha_d = 0 $, and from Equation 8.17b, $ R = 2h\alpha_b = 400 $, yielding $$ \Pr_{sv}\approx1-\exp\left(-\theta_{b}\ln[1+R]\right) $$ $$ =1-\exp\left(-0.0033\ln[1+400]\right)=0.013 $$
-> 
-> Hence, there is only a 1.3% chance that a sweep will occur at this site in the absence of new mutation.
-> 
-> Now suppose that we examine this population at $ T = 0.5 $, namely, at $ N_e $ generations. From Equation 8.18c, the probability that at least one mutation that is destined to become fixed will arise by this time is $$ \begin{aligned}\Pr_{new}(T)&=1-\exp\left(-Th\alpha_{b}\theta_{b}\right)\\&=1-\exp\left(-0.5\cdot\left(1/2\right)\cdot400\cdot0.0033\right)=0.281\end{aligned} $$
-> 
-> Thus, provided we see a sweep at this locus by $ N_{e} $ generations, then from Equation 8.20, the probability that it was due to an existing allele present at the time of the environmental shift is $$ \Pr_{ex}(0.5)=\frac{\Pr_{sv}}{\Pr_{sv}+(1-\Pr_{sv})\Pr_{new}(T)}=\frac{0.013}{0.013+(1-0.013)\cdot0.281}=0.05 $$
+> Example 8.9. As a sample calculation of how often sweeps occur from existing versus new mutations, suppose $ N_e = 10^6 $ and there is a genome average per-site mutation rate of $ \mu = 2.5 \cdot 10^{-9} $, yielding $ \theta = 4N_e\mu = 0.01 $. For a beneficial mutation that can only occur by a change to a specific nucleotide at a specific site, one third of mutations at that site are beneficial, yielding $ \theta_b = (1/3)\theta = 0.0033 $. For an allele with additive fitness effects ( $ h = 1/2 $) with $ s = 10^{-4} $, we have $ \alpha_b = 4N_e s = 4 \cdot 10^6 \cdot 10^{-4} = 400 $. If this mutation was neutral before being favored, $ \alpha_d = 0 $, and from Equation 8.17b, $ R = 2h\alpha_b = 400 $, yielding $$ \Pr_{sv}\approx1-\exp\left(-\theta_{b}\ln[1+R]\right) $$ $$ =1-\exp\left(-0.0033\ln[1+400]\right)=0.013 $$ Hence, there is only a 1.3% chance that a sweep will occur at this site in the absence of new mutation. Now suppose that we examine this population at $ T = 0.5 $, namely, at $ N_e $ generations. From Equation 8.18c, the probability that at least one mutation that is destined to become fixed will arise by this time is $$ \begin{aligned}\Pr_{new}(T)&=1-\exp\left(-Th\alpha_{b}\theta_{b}\right)\\&=1-\exp\left(-0.5\cdot\left(1/2\right)\cdot400\cdot0.0033\right)=0.281\end{aligned} $$ Thus, provided we see a sweep at this locus by $ N_{e} $ generations, then from Equation 8.20, the probability that it was due to an existing allele present at the time of the environmental shift is $$ \Pr_{ex}(0.5)=\frac{\Pr_{sv}}{\Pr_{sv}+(1-\Pr_{sv})\Pr_{new}(T)}=\frac{0.013}{0.013+(1-0.013)\cdot0.281}=0.05 $$
 
 
 ---
 
-## chapter8_026 · Hitchhiking and Selective Sweeps: Introduction / “Hardening” and “Softening” of a Sweep
+## chapter8_026 · SOFT SWEEPS / “Hardening” and “Softening” of a Sweep
 
 Population sizes are expected to fluctuate over time, and such demographic complexity impacts whether an initially soft sweep (multiple adaptive haplotypes at the start of selection) is perceived as soft or hard (Messer and Petrov 2013a; Wilson et al. 2014; Hermisson and Pennings 2017). The reason, as seems to be the case for the maize $ tb_{1} $ gene (Figure 8.2), is that taking a population through a bottleneck (either just before or during a sweep) may leave only a single adaptive lineage, even when several were present before the bottleneck, thus hardening an initially soft sweep. Such hardening events result in undercounting the frequency of soft sweeps (and hence the frequency of adaptation from standing variation).
 
@@ -802,7 +834,7 @@ Finally, it must be stressed that the distinction between a perceived hard vs. s
 
 ---
 
-## chapter8_027 · Hitchhiking and Selective Sweeps: Introduction / Recurrent Mutation of the Favorable Allele Cannot be Ignored
+## chapter8_027 · SOFT SWEEPS / Recurrent Mutation of the Favorable Allele Cannot be Ignored
 
 In their analysis of the effects of sweeps from standing variation, Innan and Kim (2004), Przeworski et al. (2005), and Berg and Coop (2015) all assumed a single origin for the favorable mutation. Likewise, while the analysis leading to Equation 8.20 does consider recurrent mutation, it simply allows new copies of the favorable allele to arise by mutation once selection starts and keeps track of how long one must wait until a copy that is destined to be fixed arises. It ignores any ongoing mutation either during the fixation of a preexisting copy of the favorable allele or following the introduction of a favorable allele that is destined to undergo fixation. However, even if a sweep starts as a single favorable allele on its way to fixation, additional new copies can arise by mutation (again in random backgrounds) during the sojourn of the original copy, potentially diffusing any pattern from the sweep over a set of multiple haplotypes. How likely is such a scenario?
 
@@ -821,41 +853,21 @@ Orr and Betancourt (2001) also examined this problem, but from the perspective o
 
 Multiple-origin soft sweeps are therefore expected to occur under certain biologically realistic conditions. Pennings and Hermisson highlighted two scenarios where this might be expected: very large effective population sizes and large mutational target sizes. An example of the latter is the case where loss-of-function mutations are favored, as the presence of numerous pathways by which function can be lost significantly increases the value of $ \mu_{b} $.
 
-**[推导 Derivation]**
-
-A relevant question regarding multiple-origin sweeps concerns the number of recurrent favorable mutations expected to appear during the sojourn of the favored allele towards fixation. Recalling Equation 8.4d, the expected time for a single copy (a de novo mutation) of the favorable allele to sweep through a population is $ \tau \approx 2 \ln(4N_e s) / s $. If $ N $ is the population size, then the expected number of new favorable mutations arising in a generation is $ 2N(1 - x)\mu_r $, where $ x $ is the current frequency of the favorable allele. Thus, we can approximate the expected number of new favorable mutations that will arise by noting that the average frequency of a favored additive allele over its sojourn from near zero to near fixation is $ 1/2 $, hence
-
-> **Formula (8.22a)** · `8.22a` · source: `chapter8_block_138` · Recurrent Mutation of the Favorable Allele Cannot be Ignored
->
-> $$ \begin{aligned}E(number of new favorable mutations that arise)&\approx2N(1/2)\mu_{b}\tau=(N/N_{e})(N_{e}\mu_{b})\tau\\&=(N/N_{e})(\theta_{b}/4)\cdot2\ln(4N_{e}s)/s\\&=2N\theta_{b}\ln(\alpha_{b})/\alpha_{b}\end{aligned} $$
-
-
-as obtained by Pennings and Hermisson (2006a). Although this is the total number of recurrent favorable mutations that arise, each has only a probability of $ 2s(N_e/N) $ of increasing (Chapter 7). Hence, the expected number of new mutations that arise and increase in frequency (i.e., are likely to become part of the fixed pool of the favorable allele after the sweep) is approximately $ 2s(N_e/N) $ times the result in Equation 8.22a, yielding
-
-> **Formula (8.22b)** · `8.22b` · source: `chapter8_block_138` · Recurrent Mutation of the Favorable Allele Cannot be Ignored
->
-> $$ E(number of new favorable mutations that increase)\approx\theta_{b}\ln(4N_{e}s) $$
-
-
-Again, this is the number of favorable new mutations that increase in frequency during the sojourn of the initial allele to fixation, so that approximately $ 1 + \theta_b \ln(4N_e s) $ distinct lineages in the population are expected at fixation, placing an upper bound on the expected number of lineages in a sample of any size from such a population.
-
 **[示例 Example]**
 
-> **Example 8.10** · ref: `8.10` · source: `chapter8_027.json` · blocks 7–7
+> **Example 8.10** · ref: `8.10` · source: `chapter8_027.json` · blocks 8–8
 >
 > Example 8.10. Caspase-12 (a cysteinyl asparate proteinase) is involved in the inflammatory and innate immune response to endotoxins (Wang et al. 2006). In humans, most alleles are nulls and nucleotide diversity around this locus is sharply reduced (relative to levels in the chimpanzee), suggesting a selective sweep. Using the current frequency of roughly 0.9 for null alleles, and assuming that the sweep favoring null alleles started shortly before the migration of modern humans out of Africa, the authors estimated $ s \simeq 0.009 $ (using Equation 5.3b). Previous work showed that the fully functional allele attenuates the response to endotoxins (Saleh et al. 2004), increasing the odds of severe sepsis (bacterial infection of the blood). Wang et al. hypothesized that null alleles were favored due to a change in the environment increasing the odds of severe sepsis when this gene is active. Consistent with this hypothesis, two other primate genes related to sepsis are also pseudogenes in humans. Similar findings were reported by Xue et al. (2006).
 
 
 **[示例 Example]**
 
-> **Example 8.11** · ref: `8.11` · source: `chapter8_027.json` · blocks 8–8
+> **Example 8.11** · ref: `8.11` · source: `chapter8_027.json` · blocks 5–6
 >
-> Example 8.11. To get a feel for the expected number of new favorable mutations that arise during a sweep, consider the values used in Example 8.9 ($ N_e = 10^6 $, $ \theta_b = 0.0033 $, $ s = 10^{-4} $, $ \alpha_b = 400 $). From Equation 8.22a (and assuming $ N \simeq N_e $), we expect $$ 2N_{e}\theta_{b}\ln(\alpha_{b})/\alpha_{b}=2\cdot10^{6}\cdot0.0033\ln(400)/400\approx90 $$ new favorable mutations to arise, but the number expected to increase in frequency (and hence contribute to the pool of favorable alleles following the sweep) from Equation 8.22b is just $$ \theta_{b}\ln(4N_{e}s)=0.0033\ln(400)=0.02 $$
-> 
-> Hence, even though a large number of favorable mutations arise, none really contribute to the sweep. This is consistent with the general rule that multiple-origin soft sweeps are unlikely to occur when $ \theta_b < 0.01 $. Suppose we increase $ \theta_b $ to 0.5, while keeping the other parameter values the same. Now roughly 15,000 recurrent favorable mutations will be expected, three of which are expected to increase (and hence result in a soft sweep).
-> 
-> While the reader may feel that the critical parameter for observing a soft sweep ($ \theta_b = 4N_e\mu_b $) is generally expected to be very small, important exceptions can occur. A common view is that the target site for a beneficial mutation is small (a single change at only one or a few sites) and hence the small per-nucleotide mutation rates ($ 10^{-9} $ to $ 10^{-8} $; Chapter 4) suggest that such events are highly unlikely. This may indeed be true when adaptation requires a very specific amino acid substitution to be favorable. However, if a potentially large number of sites are targets, then the total beneficial mutation rate will be much higher. One example of the latter is the inactivation of a gene that has become deleterious due to a shift in the environment (Example 8.10). A second example is a beneficial regulatory change, which potentially could occur through changes at a number of nucleotide sites, or by other events (such as a mobile-element insertion in some rough neighborhood of the gene) that can influence regulation. We have already seen one example of the latter, the Hopscotch insertion underlying the maize domestication allele $ tb1 $. Another example is the famous peppered moth, Biston betularia, whose industrial melanism mutation was generated by a transposable element (van't Hof et al. 2016) that appeared to insert in the cortex gene around 1820, about 30 years before the first melanic form was reported (1848).
+> Example 8.11. To get a feel for the expected number of new favorable mutations that arise during a sweep, consider the values used in Example 8.9 ( $ N_e = 10^6 $, $ \theta_b = 0.0033 $, $ s = 10^{-4} $, $ \alpha_b = 400 $). From Equation 8.22a (and assuming $ N \simeq N_e $), we expect $$ 2N_{e}\theta_{b}\ln(\alpha_{b})/\alpha_{b}=2\cdot10^{6}\cdot0.0033\ln(400)/400\approx90 $$ new favorable mutations to arise, but the number expected to increase in frequency (and hence contribute to the pool of favorable alleles following the sweep) from Equation 8.22b is just $$ \theta_{b}\ln(4N_{e}s)=0.0033\ln(400)=0.02 $$ Hence, even though a large number of favorable mutations arise, none really contribute to the sweep. This is consistent with the general rule that multiple-origin soft sweeps are unlikely to occur when $ \theta_b < 0.01 $. Suppose we increase $ \theta_b $ to 0.5, while keeping the other parameter values the same. Now roughly 15,000 recurrent favorable mutations will be expected, three of which are expected to increase (and hence result in a soft sweep).
 
+
+While the reader may feel that the critical parameter for observing a soft sweep ($ \theta_b = 4N_e\mu_b $) is generally expected to be very small, important exceptions can occur. A common view is that the target site for a beneficial mutation is small (a single change at only one or a few sites) and hence the small per-nucleotide mutation rates ($ 10^{-9} $ to $ 10^{-8} $; Chapter 4) suggest that such events are highly unlikely. This may indeed be true when adaptation requires a very specific amino acid substitution to be favorable. However, if a potentially large number of sites are targets, then the total beneficial mutation rate will be much higher. One example of the latter is the inactivation of a gene that has become deleterious due to a shift in the environment (Example 8.10). A second example is a beneficial regulatory change, which potentially could occur through changes at a number of nucleotide sites, or by other events (such as a mobile-element insertion in some rough neighborhood of the gene) that can influence regulation. We have already seen one example of the latter, the Hopscotch insertion underlying the maize domestication allele $ tb1 $. Another example is the famous peppered moth, Biston betularia, whose industrial melanism mutation was generated by a transposable element (van't Hof et al. 2016) that appeared to insert in the cortex gene around 1820, about 30 years before the first melanic form was reported (1848).
 
 ---
 
@@ -869,15 +881,31 @@ The second component to $ \theta_{b} $ is $ N_{e} $. While long-term values of $
 
 The notion of independent mutants arising during a sweep is a special example of the more general question of how often the same genes are independently used for specific adaptations (reviewed by Arendt and Reznick 2008). Independent recurrent mutations in even distant taxa may be more common than intuition might suggest. Orr (2005c) considered the probability, P, of the occurrence of a parallel change when n different beneficial mutations can each provide an adaptive solution. Using the framework of extreme value theory (Chapter 27), even when these potential solutions have rather different selection coefficients, the probability that two independent taxa use the same solution (beneficial mutation) is just $ P = 2/(n + 1) $. Hence, if the number of paths leading to an adaptation is quite small (e.g., only a few amino acid changes will confer the adaptive change), then provided such an event has occurred in two independent taxa, there is a high probability of a parallel change.
 
+**[示例 Example]**
+
+> **Example 8.12** · ref: `8.12` · source: `chapter8_027.json` · blocks 7–7
+>
+> Example 8.12. Karasov et al. (2010) examined Drosophila melanogaster mutations at the Ace locus, which codes for the neural signaling enzyme acetylcholinesterase, a target for many commonly used insecticides. Single nucleotide changes at four highly conserved sites confer partial insecticide resistance, with combinations of these changes conferring successively greater resistance. Single, double, and triple mutations are all found in natural populations. While one model is that these variants existed at the start of major insecticide use (the 1950s), the authors found that mutations in North America and Australia appear to have arisen de novo following the D. melanogaster migration out of Africa. Given that only 1000 to 1500 fly generations have elapsed since the start of the widespread use of insecticides that target the Ace product, estimates of $ \theta \sim 0.01 $ based on nucleotide diversity (and hence a $ \theta_b $ of one third this value at each of the four sites) are not consistent with the independent origins of single new mutations (Equation 8.21) in this gene over this short time scale, and hence multiple new mutations (changes in two or three additional sites) are expected to be extremely unlikely. However, if the actual effective population size was $ 10^8 $ instead of the standard assumed value of $ 10^6 $ during the past 50 years, then $ \theta_b \sim 1 $ over this time window, and multiple independent origins by mutation are highly likely. The effective population size that matters for these mutations is that during their origin and spread, not that set by any history predating their appearance (Messer and Petrov 2013a).
+
+
 ---
 
-## chapter8_029 · Hitchhiking and Selective Sweeps: Introduction / Impact of Geographic Structure
+## chapter8_029 · SOFT SWEEPS / Impact of Geographic Structure
 
 Our analyses thus far have assumed a panmictic population, but the effects of population structure on sweep signals can be dramatic. One simple consequence is that hard sweeps from independent mutations in different subpopulations generate a soft-sweep signature when the data are combined (Ralph and Coop 2010; Messer and Petrov 2013a). Given the limitless model space for population structure, current models typically assume one of two highly idealistic forms, representing the ends of the continuum of possible population densities and gene flow in space. At the discrete end are simple two- (or multiple) deme models with weak migration (Slatkin and Wiehe 1998; Santiago and Caballero 2005; Kim and Maruki 2011; Messer and Petrov 2013a; Roesti et al. 2014). At the fully continuous end is a single population with uniform density and migration rates, spread out over some two-dimensional space (Ralph and Coop 2010; Novembre and Han 2012; Messer and Petrov 2013a). As with many complex issues in population and quantitative genetics, the hope is that these simple models capture most of the salient features of more complex ones. Whether this is true remains to be seen, and models incorporating sweeps in structured populations remain an important area for future research (Stephan 2010a).
 
-Consider the simple two-deme models first. In ecology, it is of great interest to distinguish between uniform and heterogeneous selection pressures. A hard sweep initially confined to one deme may represent either a local adaptation to the unique environment of that deme (heterogeneous selection), or simply an adaptive mutation with the same advantage in all demes (uniform selection) that has not yet spread out of its founding deme. As shown in Figure 8.8, a plot of $ F_{ST} $ (Chapter 2) around a selected site shows different patterns of divergence for a localized hard sweep (Figure 8.8A) versus a global hard sweep through all demes (Figure 8.8B). In the former, one sees a spike in population divergence around the selected site, as it is a local advantage, and hence the deme or demes in which it is favored have a very strong divergence at that site.
+**[Figure]**
 
-More striking is the hill-valley-hill pattern seen in Figure 8.8B for a global sweep (Bierne 2010; Roesti et al. 2014). For a hard sweep through all of the demes, there is little to no divergence at the selected site, but on either side there is an increase in population divergence, which then declines to the neutral mutation-migration-drift values at more distant sites. This $ F_{ST} $ pattern around the selected site arises because migration brings in the favored allele, which, coupled with recombination with local haplotypes, spreads the adaptive allele to specific backgrounds in each deme (for sites at some moderate recombinantational distance from the selected site). The net result is that marker diversity among subpopulations (measured by $ F_{ST} $) increases for a short distance as one moves away from the site (Figure 8.8B), and also shows an excess of sites with intermediate allele frequencies (mimicking signatures for balancing selection). Bierne (2010) observed such an $ F_{ST} $ signature for a set of mussel (Mytilus edulis) populations. A one-sided scan away from a length polymorphism in the third intron of the $ EF1\alpha $ gene showed a valley-hill pattern, suggesting $ EF1\alpha $ as a candidate for a global sweep. See Bierne (2010) for a detailed discussion on distinguishing local from global sweeps.
+> **Figure 8.8** · page 34 · source: `chapter8`
+>
+> ![Figure 8.8](../figures/fig_0218.png)
+>
+> Figure 8.8 The expected pattern of among-population divergence (measured by  $ F_{ST} $; Chapter 2) around a selected site. (A) A localized hard sweep, with an allele that is favored in only a subset of the demes. (B) A global hard sweep, with the same favorable allele fixed over all demes. In both figures, the expected  $ F_{ST} $ value for markers sufficiently far way from the selected site asymptotes out to the neutral mutation-migration-drift values for the given population structure. (After Bierne 2010.)
+
+
+Consider the simple two-deme models first. In ecology, it is of great interest to distinguish between uniform and heterogeneous selection pressures. A hard sweep initially confined to one deme may represent either a local adaptation to the unique environment of that deme (heterogeneous selection), or simply an adaptive mutation with the same advantage in all demes (uniform selection) that has not yet spread out of its founding deme. As shown in Figure 8.8, a plot of $ F_{ST} $ (Chapter 2) around a selected site shows different patterns of divergence for a localized hard sweep (Figure 8.8) versus a global hard sweep through all demes (Figure 8.8). In the former, one sees a spike in population divergence around the selected site, as it is a local advantage, and hence the deme or demes in which it is favored have a very strong divergence at that site.
+
+More striking is the hill-valley-hill pattern seen in Figure 8.8 for a global sweep (Bierne 2010; Roesti et al. 2014). For a hard sweep through all of the demes, there is little to no divergence at the selected site, but on either side there is an increase in population divergence, which then declines to the neutral mutation-migration-drift values at more distant sites. This $ F_{ST} $ pattern around the selected site arises because migration brings in the favored allele, which, coupled with recombination with local haplotypes, spreads the adaptive allele to specific backgrounds in each deme (for sites at some moderate recombinantational distance from the selected site). The net result is that marker diversity among subpopulations (measured by $ F_{ST} $) increases for a short distance as one moves away from the site (Figure 8.8), and also shows an excess of sites with intermediate allele frequencies (mimicking signatures for balancing selection). Bierne (2010) observed such an $ F_{ST} $ signature for a set of mussel (Mytilus edulis) populations. A one-sided scan away from a length polymorphism in the third intron of the $ EF1\alpha $ gene showed a valley-hill pattern, suggesting $ EF1\alpha $ as a candidate for a global sweep. See Bierne (2010) for a detailed discussion on distinguishing local from global sweeps.
 
 How often does one expect soft sweeps to occur in a structured population under uniform selection, where different favorable alleles arise by mutation in different demes? Again, a simple time-scale argument can be used in the situation where the population structure consists of a set of discrete demes (Messer and Petrov 2013a). Consider a given deme where the favorable mutation is currently absent, but that receives migrants from a deme (of size $N$) where it is fixed. If $m$ is the per-individual migration rate between demes, then $2N_m$ favorable mutations are introduced in each generation, each with a probability $2s(N_e/N)$ of fixation (Chapter 7). This yields an approximate waiting time (in generations) for the appearance of a successful migrant from a fixed deme as $t_m \simeq 1/(4N_e \, ms)$. Conversely, the establishment time, $t_e = 1/(\theta_b \, s)$, yields the average waiting time for the appearance of new (destined to be fixed) favorable mutations in that deme (Equation 8.18b). When $t_e < t_m$, namely $\theta_b > 4N_e \, m$ (i.e., $\mu_b > m$), soft sweeps are expected, with the sweep through the metapopulation being the result of independent favorable mutations arising within different demes, as opposed to one mutation from just a single deme (Messer and Petrov 2013a).
 
@@ -932,29 +960,29 @@ Up to this point, our focus has been on the local impact of a single sweep. Ther
 
 ---
 
-## chapter8_032 · Hitchhiking and Selective Sweeps: Introduction / Association Between Levels of Variation and Localized Recombination Rates
+## chapter8_032 · GENOME-WIDE IMPACT OF REPEATED SELECTION AT LINKED SITES / Association Between Levels of Variation and Localized Recombination Rates
 
 Early studies in D. melanogaster showed that regions with reduced recombination also have reduced genetic variation, which is typically measured by the amount, $ \pi $, of nucleotide diversity at putatively neutral sites (Aguadé et al. 1989; Begun and Aquadro 1991; Berry et al. 1991). The fact that between-species divergence does not appear to be depressed in these regions suggests that a reduction in the mutation rate is not the culprit, and the initial interpretation was that this pattern is generated by recurrent sweeps of favorable mutations, which reduce linked neutral variation. While such positive correlations between levels of recombination and $ \pi $ are widespread, they are by no means universal. Such an association may be restricted to particular regions, such as chromosome arms, or it may be missing entirely in a species. For example, Flowers et al. (2012) and Cutter and Payseur (2013) found a positive correlation between $ \pi $ and the per-base-pair recombination rate in at least some genomic regions in 14 of 20 sampled organisms, showing that while common, this pattern is not universal. Many features, such as the strength and frequency of adaptive sweeps or background selection, likely vary over genomic regions, and could account for the lack of a consistent pattern. In particular, predicted patterns of variation should not be based on recombination rates alone, but rather on the ratio of the mutational target size for fitness effects relative to the recombination rate. For the same level of recombination, a stronger effect is expected in more gene-rich regions (under both background-selection and recurrent-sweep scenarios). As whole-genome sequencing becomes widespread, broader surveys of the relationship between $ \pi $ and c over entire genomes (as opposed to randomly selected regions) should provide further insight into the underlying causes and constraints. In an initial survey of 40 obligately sexual eukaryotes, Corbett-Detig et al. (2015) found that the effects of linked selection are pervasive, with levels of variation positively correlated with local recombination rates. Further, the strength of this association is larger in species with larger census sizes, N (using adult body size and range as surrogate variables for N), as might be expected, given that larger populations allow selection to overpower drift over a wider range of selection coefficients. The authors fit likelihood-based models for background selection (BGS), recurrent sweeps (hitchhiking, HH), and BGS+HH, finding that the BGS model significantly improved the fit in all cases. Evidence for HH (based on a likelihood-model fit with either HH or BGS+HH) was stronger in species judged to have larger census sizes. The authors concluded that BGS was pervasive over all population sizes, suggesting (as did Cutter and Payseur 2013), that BGS, not neutrality, should be the default model for tests of positive selection. However, while BGS was important at all population sizes, Corbett-Detig et al. (2015) found that recurrent sweeps become progressively more important as population size increases. One caveat with their analysis was raised by an earlier study by Romiguier et al. (2013), who found that body size and species range are not very predictive of $ \pi $, and hence may be poor predictors of $ N_{e} $.
 
 **[示例 Example]**
 
-> **Example 8.12** · ref: `8.12` · source: `chapter8_032.json` · blocks 1–1
->
-> Example 8.12. Karasov et al. (2010) examined Drosophila melanogaster mutations at the Ace locus, which codes for the neural signaling enzyme acetylcholinesterase, a target for many commonly used insecticides. Single nucleotide changes at four highly conserved sites confer partial insecticide resistance, with combinations of these changes conferring successively greater resistance. Single, double, and triple mutations are all found in natural populations. While one model is that these variants existed at the start of major insecticide use (the 1950s), the authors found that mutations in North America and Australia appear to have arisen de novo following the D. melanogaster migration out of Africa. Given that only 1000 to 1500 fly generations have elapsed since the start of the widespread use of insecticides that target the Ace product, estimates of $ \theta \sim 0.01 $ based on nucleotide diversity (and hence a $ \theta_b $ of one third this value at each of the four sites) are not consistent with the independent origins of single new mutations (Equation 8.21) in this gene over this short time scale, and hence multiple new mutations (changes in two or three additional sites) are expected to be extremely unlikely. However, if the actual effective population size was $ 10^8 $ instead of the standard assumed value of $ 10^6 $ during the past 50 years, then $ \theta_b \sim 1 $ over this time window, and multiple independent origins by mutation are highly likely. The effective population size that matters for these mutations is that during their origin and spread, not that set by any history predating their appearance (Messer and Petrov 2013a).
-
-
-**[示例 Example]**
-
-> **Example 8.13** · ref: `8.13` · source: `chapter8_032.json` · blocks 2–2
+> **Example 8.13** · ref: `8.13` · source: `chapter8_032.json` · blocks 1–1
 >
 > Example 8.13. Some insight into the relative contributions of gene density versus recombi- nation rates to patterns of variation can be gleaned by comparing species that show different associations between regional gene density and recombination rates. In rice, the highest gene density is found in high recombination regions (the chromosome arms), and Flowers et al. (2010) found that localized levels of variation were negatively correlated with gene density, but either uncorrelated or weakly negatively correlated with recombination rate. They suggested that the negative association of variation with gene density (less variation in more gene-dense regions) is consistent with background selection. Accounting for the observed negative association with recombination (higher variation in regions of low recombination) is more problematic. One possible explanation is Hill-Robertson interference (Chapter 7), as selection during the domestication of rice would be more efficient under higher recombination rates, resulting in stronger sweeps (and hence lower levels of $ \pi $) in regions with elevated recombination.
 > 
 > The genome of the nematode Caenorhabditis elegans is structured in a very different fashion than rice. In C. elegans, high gene density occurs in the low-recombination regions around chromosome centers, lower gene density with higher recombination in chromosome arms, and intermediate gene density with no recombination at chromosome tips. Rockman et al. (2010) examined the genomic distribution of local expression quantitative trait loci (eQTLs) in C. elegans, defined as QTLs influencing the expression of genes close to the mapped eQTL location (within one LOD score; see LW Chapter 14). Simply based on gene density, one might expect an excess of eQTLs in chromosome centers, as more genes are located there. In fact, however, Rockman et al. observed the opposite, with 34% of transcripts in the low-density arms having local eQTLs, but with only 10% of transcripts from the high-density centers having local eQTLs. Rockman et al. suggest that background selection (BGS), which is expected to be higher in the centers (there is a higher ratio of gene density to recombination), could account for this reduction in variation. BGS could also account for the observation that only 20% of the transcripts from chromosome tips have eQTLs. Although there is little recombination, sites in the tips are only linked to deleterious mutations on one side, and hence experience somewhat weaker background selection. A striking feature of this analysis is that the authors were not judging variation by sequence diversity, but rather through a functional screen (measuring the presence or absence of eQTLs). In their words, “the propensity of traits to vary in C. elegans is explained by processes independent of the functions of the individual transcript,” with those processes involving selection at linked sites.
 
 
+**[示例 Example]**
+
+> **Example 8.14** · ref: `8.14` · source: `chapter8_032.json` · blocks 2–2
+>
+> Example 8.14. Using machinery from Chapter 10 on a set of X-linked genes in D. melanogaster, Andolfatto (2007) and Jensen et al. (2008) obtained estimates of λ of 7.5 · 10⁻¹⁰ and 4.2 · 10⁻¹¹ (respectively) for the per-nucleotide adaptation rate (summarized in Table 8.3). Consider a region with a length of 100 kb. Under Andolfatto's estimate, the per-generation rate of adaptive substitutions over a region of this size is 10⁵ · 7.5 · 10⁻¹⁰ = 7.5 · 10⁻⁵ or one sweep in roughly every 13,300 generations. Under Jensen's estimate, a sweep influencing this region occurs roughly every 238,000 generations. Potential reasons for such a vast difference in the estimates will be examined shortly.
+
+
 ---
 
-## chapter8_033 · Hitchhiking and Selective Sweeps: Introduction / Impact of Recurrent Hard Sweeps on Levels of Neutral Variation
+## chapter8_033 · GENOME-WIDE IMPACT OF REPEATED SELECTION AT LINKED SITES / Impact of Recurrent Hard Sweeps on Levels of Neutral Variation
 
 As illustrated in the previous example, levels of recombination often vary widely over the genome. In a region with low recombination (such as telomeric and centromeric regions, very small chromosomes such as the fourth of D. melanogaster, and most of the heterogametic sex chromosome), even weak selection at a distant location can have an impact. In the extreme case where an entire genome has no recombination (such as in some bacteria or organelles), a single advantageous mutation can sweep a single genomic type to fixation. Laboratory populations of bacteria often show the phenomena of periodic selection (Atwood et al. 1951a, 1951b; Kock 1974; Dykhuizen 1990; Guttman and Dykhuizen 1994), wherein genetic diversity builds up slowly over time, only to be rapidly removed before starting to build all over again. Presumably, this is due to the periodic fixation of newly appearing favorable mutations, which generate sweeps that fix single chromosomal lineages. In this setting, the standing level of variation is a function of the frequency of sweeps. If it is sufficiently common, the population never has a chance to reach mutation-drift equilibrium before the next sweep, while if rare, the population may be at the mutation-drift equilibrium for much of the time. Thus, the rate of adaptation at least partly determines the amount of neutral variation, a theme returned to throughout this section.
 
@@ -996,17 +1024,9 @@ Rearranging the linear approximation gives the Stephan regression (Stephan 1995)
 
 Fitting Equation 8.24d, Wiehe and Stephan (1993) obtained an estimate of $ \lambda \gamma \simeq 1.3 \cdot 10^{-8} $, based on 17 loci in medium to high recombination backgrounds in $ D.\ melanogaster $. For a modest recombination rate of 1 cM per megabase ($ c_0 = 0.01/10^6 = 10^{-8} $), applying Equation 8.24b with this value of $ \lambda \gamma $ yields $$ \frac{\pi}{\pi_{0}}\simeq\frac{10^{-8}}{10^{-8}+(1.3\cdot10^{-8}\cdot0.075)}=0.911 $$ or roughly a 9% reduction in background heterozygosity. For smaller recombination rates, say 0.1 cM per megabase ($ c_0 = 10^{-9} $), standing levels of variation are reduced by 49%. In a region of high recombination (2.5 cM/Mb, $ c_0 = 2.5 \cdot 10^{-8} $), the reduction in $ \pi $ is only 3.7%. Hence, in regions of low recombination, recurrent selective sweeps can have a dramatic effect on standing levels of variation. Additional estimates of $ \lambda\gamma $ are summarized in Table 8.3, and further developed in Chapter 10.
 
-**[Table]**
-
-> **Table 8.3** · `8.3` · page 43 · source: `chapter8_033`
-> Table 8.3 Estimates of the per-nucleotide adaptive evolution rate, λ, and its components for several Drosophila species, aspen (Populus tremula), and humans. Depending on the study, the scale of analysis is either chromosomal or genome-wide. Methods for estimating individual components of the product λγ are developed in Chapter 10. Here γ = 2N_e,s is the scaled strength of selection, λ is the rate of adaptive substitutions per base pair, per generation, and s is the average strength of selection of a beneficial mutation. The species listed provided the polymorphism data used in these methods, while an outgroup was used for other estimates of λ (Equation 10.11a).
->
-> <table><tr><td>Organism</td><td>$ \lambda \gamma $</td><td>$ \gamma $</td><td>s</td><td>$ \lambda $</td><td>Reference</td></tr><tr><td rowspan="8">D. melanogaster</td><td>$ 3.9 \cdot 10^{-7} $</td><td>34,400</td><td>$ 2.0 \cdot 10^{-3} $</td><td>$ 6.0 \cdot 10^{-11} $</td><td>Li and Stephan 2006</td></tr><tr><td>$ 5.1 \cdot 10^{-8} $</td><td>74</td><td>$ 2.3 \cdot 10^{-5} $</td><td>$ 7.0 \cdot 10^{-10} $</td><td>Bachtrog 2008</td></tr><tr><td>$ 2.6 \cdot 10^{-8} $</td><td>35</td><td>$ 1.2 \cdot 10^{-5} $</td><td>$ 7.5 \cdot 10^{-10} $</td><td>Andolfatto 2007</td></tr><tr><td>$ 4.0 \cdot 10^{-7} $</td><td>10,000</td><td>$ 2.0 \cdot 10^{-3} $</td><td>$ 4.2 \cdot 10^{-11} $</td><td>Jensen et al. 2008</td></tr><tr><td></td><td></td><td></td><td>$ 1.8 \cdot 10^{-11} $</td><td>Smith &amp; Eyre-Walker 2002</td></tr><tr><td></td><td></td><td></td><td>$ 3.6 \cdot 10^{-11} $</td><td>Andolfatto 2005</td></tr><tr><td>$ 1.3 \cdot 10^{-8} $</td><td></td><td></td><td></td><td>Wiele &amp; Stephan 1993</td></tr><tr><td></td><td>10</td><td></td><td></td><td>Schneider et al. 2011</td></tr><tr><td>D. simulans</td><td>$ 1.1 \cdot 10^{-7} $</td><td>30,000</td><td>$ 1.0 \cdot 10^{-2} $</td><td>$ 3.6 \cdot 10^{-12} $</td><td>Macpherson et al. 2007</td></tr><tr><td>D. miranda</td><td>$ 1.2 \cdot 10^{-6} $</td><td>3100</td><td>$ 2.7 \cdot 10^{-3} $</td><td>$ 4.0 \cdot 10^{-10} $</td><td>Bachtrog 2008</td></tr><tr><td>P. tremula</td><td>$ 1.5 \cdot 10^{-7} $</td><td></td><td></td><td></td><td>Ingvarsson 2010</td></tr><tr><td>Humans</td><td></td><td></td><td></td><td>$ 2.3 \cdot 10^{-12} $</td><td>Example 10.12</td></tr></table>
-
-
 ---
 
-## chapter8_034 · Hitchhiking and Selective Sweeps: Introduction / A Few Large or Many Small Sweeps?
+## chapter8_034 · GENOME-WIDE IMPACT OF REPEATED SELECTION AT LINKED SITES / A Few Large or Many Small Sweeps?
 
 Because reduction in diversity from sweeps is a function of the product $ \lambda\gamma $, the same average reduction in $ \pi $ could be caused by either a few large sweeps (where $ \lambda $ is small and $ \gamma $ large) or many smaller sweeps (where $ \lambda $ is large and $ \gamma $ small), as long as their product is held constant. With rare, strong sweeps, there would be dramatic reduction in variation over a fairly large region, but many regions would see little effect, as no recent sweep would have occurred in their vicinity. Conversely, with many weaker sweeps, most regions would be influenced, but each by a smaller amount. While the expected value of $ \pi $ is the same under both models, the variance in $ \pi $ is expected to be much greater under rare but strong sweeps (Jensen et al. 2008).
 
@@ -1027,6 +1047,24 @@ where $ x = d_a / c $ and $ \beta = \alpha \gamma \kappa / (2t) $, and because $
 
 A technically more demanding approach for gaining insight into the parameters of adaptation is to jointly estimate two of these three parameters ($ \lambda $, $ \gamma $, or $ \lambda\gamma $) using the spatial pattern of genetic variation over a genomic region (Macpherson et al. 2007; Jensen et al. 2008). Figure 8.10 shows the motivation for this idea. Jensen et al. (2008) noted that strong selection should produce a higher variance in $ \pi $ and other measures of genetic variation that are impacted by a sweep (Table 8.2), for example, the number of segregating sites (S), an excess of high-frequency derived alleles, and pairwise linkage disequilibrium (LD). Using simulations, they examined the behavior of the coefficient of variation (CV) for summary statistics for these quantities as a function of the size, L, of the unit of analysis. Over small regions (L of 500 to 1000 bp), there was little difference in the CV between the rare and strong and the frequent and weak sweep models, but as the size of the analysis region increased, so did the CV for strong, but not weak, selection. Based on this observation, Jensen et al. (2008) developed an approximate Bayesian computation (ABC) approach that jointly considers
 
+**[Figure]**
+
+> **Figure 8.9** · page 42 · source: `chapter8`
+>
+> ![Figure 8.9](../figures/fig_0219.png)
+>
+> Figure 8.9 An example of the Andolfatto regression of nucleotide diversity,  $ \pi $, on the per-site amino acid divergence,  $ d_a $, in Drosophila miranda, under the assumption of the same recombination rate (c) among all sampled sites. In this setting, the regression given by Equation 8.25 becomes  $ \pi = \pi_0 / (1 + \beta x) $, where  $ x = d_a $ (the mean number of amino acid substitutions per codon in the region for the estimated  $ \pi $ value) and  $ \beta = \alpha \gamma \kappa / (2tc) $. The solid curve is the least-squares fit of Equation 8.25, which gives estimates of  $ \pi_0 $ and  $ \gamma $ (as  $ \alpha $, c, and t were independently estimated). (After Bachtrog 2008.)
+
+
+**[Figure]**
+
+> **Figure 8.10** · page 42 · source: `chapter8`
+>
+> ![Figure 8.10](../figures/fig_0220.png)
+>
+> Figure 8.10 The pattern of nucleotide diversity over a large region may provide clues about the frequency and strength of past sweeps. Within this hypothetical region, three hard sweeps have occurred. Sweep 1 is a strong, recent sweep; sweep 2 is a strong older sweep; and sweep 3 is a weak, recent sweep. Strong sweeps result in a depression in variation over a significant region (1). As the signal from a past sweep decays, its window of influence stays roughly the same size, but its impact within that window vanishes over time. An old, strong sweep leaves a weak signal of depressed variation over a fairly large region (2), while an old weak sweep leaves a signal similar to (2), but over a much smaller region. (After Macpherson et al. 2007.)
+
+
 **[Table]**
 
 > **Table 8.2** · `8.2` · page None · source: `chapter8_034`
@@ -1041,6 +1079,14 @@ A technically more demanding approach for gaining insight into the parameters of
 > (4b) As the favorable allele approaches fixation, we see an excess in LD on either side of the site, but a depression in LD between markers flanking the site.
 > Signatures of a sweep are very fleeting.
 > (5) Remaining on the order of $ 0. 5 N_{e} $ generations for signature (1), $ 0. 4 N_{e} $ generations for (2), $ 1. 4 N_{e} $ generations for (3), and $ 0. 1 N_{e} $ generations for (4b).
+
+
+**[Table]**
+
+> **Table 8.3** · `8.3` · page 43 · source: `chapter8_034`
+> Table 8.3 Estimates of the per-nucleotide adaptive evolution rate, λ, and its components for several Drosophila species, aspen (Populus tremula), and humans. Depending on the study, the scale of analysis is either chromosomal or genome-wide. Methods for estimating individual components of the product λγ are developed in Chapter 10. Here γ = 2N_e,s is the scaled strength of selection, λ is the rate of adaptive substitutions per base pair, per generation, and s is the average strength of selection of a beneficial mutation. The species listed provided the polymorphism data used in these methods, while an outgroup was used for other estimates of λ (Equation 10.11a).
+>
+> <table><tr><td>Organism</td><td>$ \lambda \gamma $</td><td>$ \gamma $</td><td>s</td><td>$ \lambda $</td><td>Reference</td></tr><tr><td rowspan="8">D. melanogaster</td><td>$ 3.9 \cdot 10^{-7} $</td><td>34,400</td><td>$ 2.0 \cdot 10^{-3} $</td><td>$ 6.0 \cdot 10^{-11} $</td><td>Li and Stephan 2006</td></tr><tr><td>$ 5.1 \cdot 10^{-8} $</td><td>74</td><td>$ 2.3 \cdot 10^{-5} $</td><td>$ 7.0 \cdot 10^{-10} $</td><td>Bachtrog 2008</td></tr><tr><td>$ 2.6 \cdot 10^{-8} $</td><td>35</td><td>$ 1.2 \cdot 10^{-5} $</td><td>$ 7.5 \cdot 10^{-10} $</td><td>Andolfatto 2007</td></tr><tr><td>$ 4.0 \cdot 10^{-7} $</td><td>10,000</td><td>$ 2.0 \cdot 10^{-3} $</td><td>$ 4.2 \cdot 10^{-11} $</td><td>Jensen et al. 2008</td></tr><tr><td></td><td></td><td></td><td>$ 1.8 \cdot 10^{-11} $</td><td>Smith &amp; Eyre-Walker 2002</td></tr><tr><td></td><td></td><td></td><td>$ 3.6 \cdot 10^{-11} $</td><td>Andolfatto 2005</td></tr><tr><td>$ 1.3 \cdot 10^{-8} $</td><td></td><td></td><td></td><td>Wiele &amp; Stephan 1993</td></tr><tr><td></td><td>10</td><td></td><td></td><td>Schneider et al. 2011</td></tr><tr><td>D. simulans</td><td>$ 1.1 \cdot 10^{-7} $</td><td>30,000</td><td>$ 1.0 \cdot 10^{-2} $</td><td>$ 3.6 \cdot 10^{-12} $</td><td>Macpherson et al. 2007</td></tr><tr><td>D. miranda</td><td>$ 1.2 \cdot 10^{-6} $</td><td>3100</td><td>$ 2.7 \cdot 10^{-3} $</td><td>$ 4.0 \cdot 10^{-10} $</td><td>Bachtrog 2008</td></tr><tr><td>P. tremula</td><td>$ 1.5 \cdot 10^{-7} $</td><td></td><td></td><td></td><td>Ingvarsson 2010</td></tr><tr><td>Humans</td><td></td><td></td><td></td><td>$ 2.3 \cdot 10^{-12} $</td><td>Example 10.12</td></tr></table>
 
 
 the means and variances of summary statistics measuring these various sweep features to obtain separate estimates of $ \lambda $ and s (for details see Example A3.9).
@@ -1062,7 +1108,7 @@ where $ \zeta $ is a function of the time for the sweep to reach its target freq
 
 ---
 
-## chapter8_035 · Hitchhiking and Selective Sweeps: Introduction / Selective Interference and the Hill-Robertson Effect
+## chapter8_035 · GENOME-WIDE IMPACT OF REPEATED SELECTION AT LINKED SITES / Selective Interference and the Hill-Robertson Effect
 
 **[命题 Proposition]**
 
@@ -1094,7 +1140,7 @@ This notion of interference among linked selected sites is not restricted to ben
 
 ---
 
-## chapter8_036 · Hitchhiking and Selective Sweeps: Introduction / Background Selection: Reduction in Variation Under Low Recombination or Selfing
+## chapter8_036 · GENOME-WIDE IMPACT OF REPEATED SELECTION AT LINKED SITES / Background Selection: Reduction in Variation Under Low Recombination or Selfing
 
 Charlesworth et al. (1993a) challenged the view that the reduction of variation in regions of low recombination was evidence for periodic selective sweeps (and hence the frequent substitution of adaptive alleles). They noted that the same pattern can be generated by selection against new deleterious mutations. Hence, purifying selection can potentially account for this pattern of reduced variation without the need to invoke adaptive selection. This occurs because the removal of new deleterious mutations also lowers the effective population size, and in a sufficiently long region of low recombination, the number of targets for mutation may be large enough to generate a high total deleterious mutation rate and therefore a significant reduction in variation. They referred to this process as background selection, BGS, which was introduced in Chapter 3. We review (and generalize) some of our results from that chapter here in order to more fully contrast BGS with recurrent sweeps.
 
@@ -1174,35 +1220,14 @@ Finally, as first introduced by McVicker et al. (2009), one can use functional g
 
 **[示例 Example]**
 
-> **Example 8.14** · ref: `8.14` · source: `chapter8_037.json` · blocks 2–2
+> **Example 8.15** · ref: `8.15` · source: `chapter8_037.json` · blocks 2–2
 >
-> Example 8.14. Using machinery from Chapter 10 on a set of X-linked genes in D. melanogaster, Andolfatto (2007) and Jensen et al. (2008) obtained estimates of λ of 7.5 · 10⁻¹⁰ and 4.2 · 10⁻¹¹ (respectively) for the per-nucleotide adaptation rate (summarized in Table 8.3). Consider a region with a length of 100 kb. Under Andolfatto's estimate, the per-generation rate of adaptive substitutions over a region of this size is 10⁵ · 7.5 · 10⁻¹⁰ = 7.5 · 10⁻⁵ or one sweep in roughly every 13,300 generations. Under Jensen's estimate, a sweep influencing this region occurs roughly every 238,000 generations. Potential reasons for such a vast difference in the estimates will be examined shortly.
-
-
-**[示例 Example]**
-
-> **Example 8.15** · ref: `8.15` · source: `chapter8_037.json` · blocks 3–3
->
-> Example 8.15. Consider the impact of background selection on a neutral target site, i, due to k linked conserved sites (and hence, targets for background selection). Building on Hudson and Kaplan (1995), sum the impact over each potential site (assuming multiplicative fitnesses) and allow for a distribution of fitness effects over different classes of sites. The impact of background selection on site i is to reduce $ N_e $ to $ B_i N_e $, where
-> 
-> > **Formula (8.31a)** · `8.31a` · source: `chapter8_block_201` · Background Selection: Reduction in Variation Under Low Recombination or Selfing
-> >
-> > $$ B_{i}=\exp\left(-\sum_{j=1}^{k}\int_{0}^{1}\left[\frac{\mu_{i}}{s(1+c_{ij}/s)^{2}}\right]\phi_{j}(s)ds\right) $$
-> 
-> 
-> The term in the brackets is simply Hudson and Kaplan's (1995) expression for the impact of a deleterious mutation of effect s at distance $ c_{ij} $ from the target site j (an approximation of this leads to Equation 8.29a). The integral is taken over the distribution $ \phi_j(s) $ of fitness effects for site j, and the results are summed for each potential site of background selection. While initially this expression seems unduly complex, it allows us to sum over sites with different effects, such as potential replacement sites and known conserved regions. For example, with v different classes of functional sites,
-> 
-> > **Formula (8.31b)** · `8.31b` · source: `chapter8_block_202` · Background Selection: Reduction in Variation Under Low Recombination or Selfing
-> >
-> > $$ B_{i}=\exp\left(-\sum_{\ell=1}^{v}\sum_{j=1}^{k_{\ell}}\int_{0}^{1}\frac{\mu_{\ell}}{s(1+c_{i j}/s)^{2}}\phi_{\ell}(s)d s\right) $$
-> 
-> 
-> where we assume the same mutation rate, $ \mu_{\ell} $, and distribution of deleterious fitness effects, $ \phi_{\ell} $, for all linked sites in category $ \ell $. With a large amount of genomic data in hand (such as the site-frequency spectrum over a large number of sites), one can start to fit the distribution $ \phi_{\ell}(s) $ of fitness effects within a class using the method of maximum likelihood (Chapter 9). See McVicker et al. (2009) for details.
+> Example 8.15. Consider the impact of background selection on a neutral target site, i, due to k linked conserved sites (and hence, targets for background selection). Building on Hudson and Kaplan (1995), sum the impact over each potential site (assuming multiplicative fitnesses) and allow for a distribution of fitness effects over different classes of sites. The impact of background selection on site i is to reduce $ N_e $ to $ B_i N_e $, where $$ B_{i}=\exp\left(-\sum_{j=1}^{k}\int_{0}^{1}\left[\frac{\mu_{i}}{s(1+c_{ij}/s)^{2}}\right]\phi_{j}(s)ds\right) $$ (8.31a) The term in the brackets is simply Hudson and Kaplan's (1995) expression for the impact of a deleterious mutation of effect s at distance $ c_{ij} $ from the target site j (an approximation of this leads to Equation 8.29a). The integral is taken over the distribution $ \phi_j(s) $ of fitness effects for site j, and the results are summed for each potential site of background selection. While initially this expression seems unduly complex, it allows us to sum over sites with different effects, such as potential replacement sites and known conserved regions. For example, with v different classes of functional sites, $$ B_{i}=\exp\left(-\sum_{\ell=1}^{v}\sum_{j=1}^{k_{\ell}}\int_{0}^{1}\frac{\mu_{\ell}}{s(1+c_{i j}/s)^{2}}\phi_{\ell}(s)d s\right) $$ (8.31b) where we assume the same mutation rate, $ \mu_{\ell} $, and distribution of deleterious fitness effects, $ \phi_{\ell} $, for all linked sites in category $ \ell $. With a large amount of genomic data in hand (such as the site-frequency spectrum over a large number of sites), one can start to fit the distribution $ \phi_{\ell}(s) $ of fitness effects within a class using the method of maximum likelihood (Chapter 9). See McVicker et al. (2009) for details.
 
 
 ---
 
-## chapter8_038 · Hitchhiking and Selective Sweeps: Introduction / Background Selection vs. Recurrent Selective Sweeps
+## chapter8_038 · GENOME-WIDE IMPACT OF REPEATED SELECTION AT LINKED SITES / Background Selection vs. Recurrent Selective Sweeps
 
 While both BGS and recurrent sweeps reduce neutral variation in regions of low recombination, they represent very the different processes of purifying selection versus adaptive change. As such, evolutionary geneticists have spent considerable effort trying to distinguish between the two, but no clear answer has yet emerged (Hudson 1994; Andolfatto 2001; Sella et al. 2009; Charlesworth 2009, 2012; Stephan 2010b). As comparison of Equations 8.24c and 8.29c shows, for regions of moderate to high recombination, both processes predict a relationship of the form $ \pi/\pi_0 \simeq 1 - b/c \simeq e^{-b/c} $, where b is an unknown constant to be estimated. Hence, there is little resolution using the relationship between recombination and heterozygosity in moderate-to high-recombination genes. However, this is not the case for regions of low (but not too low) recombination. Innan and Stephan (2003) noted that in this region the regression of $ \pi $ on c is convex for recurrent sweeps and concave for BGS (compare Equations 8.24b and 8.29a). They applied this approach to a set of low-recombination X-linked genes in D. melanogaster, and found that recurrent sweeps gave a much better fit than BGS. However, when they examined two highly selfing species of tomatoes (Lycopersicon), BGS provided the better fit. In humans, Hellmann et al. (2008) found that recurrent sweeps gave a better fit than BGS but cautioned that this may simply be an artifact of the simplistic nature of the BGS model leading to Equation 8.29a (i.e., assuming no variation in s).
 
@@ -1212,7 +1237,7 @@ Nevertheless, while findings like these are suggestive of recurrent selection as
 
 ---
 
-## chapter8_039 · Hitchhiking and Selective Sweeps: Introduction / Sweeps, Background Selection, and Substitution Rates
+## chapter8_039 · GENOME-WIDE IMPACT OF REPEATED SELECTION AT LINKED SITES / Sweeps, Background Selection, and Substitution Rates
 
 Both recurrent sweeps and background selection are expected to lower the effective population size, $ N_e $, and hence reduce neutral variation at tightly linked sites. Do these processes also influence the rate of divergence at such sites? For strictly neutral alleles $ (s = 0) $, changes in $ N_e $ have no effect on the substitution rate, which is simply equal to the rate of mutation, $ \mu $, to neutral alleles (Chapter 2). However, when alleles have a distribution of fitness effects (so that some values of s may be very small, but not zero), this is no longer true. Accepting the view that many mutations may be slightly deleterious (Ohta 1973, 1992, 2002), the same allele can be effectively neutral $ (4N_e|s| < 1) $ in smaller populations, while being deleterious in larger populations (when $ 4N_e|s| \gg 1 $). In genomic regions where the effect of recurrent sweeps and/or background selection is expected to be strong (such as regions of low recombination), an increase in the divergence rate might be expected, as the fraction of new mutations that are effectively neutral increases. Likewise, in such regions, the rate of adaptive changes may decrease, as weakly favorable mutations are overpowered by the effects of drift, thus reducing their fixation rates. This alteration of the substitution pattern through the fixation of a greater fraction of weakly deleterious alleles and a decrease in the fixation rate of adaptive changes is an example of a Hill-Robertson effect. As highlighted in Example 8.16, the direction of a potential change in the rate of replacement substitutions as recombination decreases is a function of whether there are more weakly positively selected alleles (the rate goes down) or weakly negative selected alleles (the rate goes up). Betancourt and Presgraves (2002) found, in a comparison of ~250 genes between D. melanogaster and D. simulans, that the nonsynonymous divergence rate is reduced in regions of low recombination, consistent with reduced fixation of weakly positive alleles in these regions due to a reduction in $ N_{e} $. However, their gene set contained a large number of male accessory gland proteins (Acps), which are rapidly evolving and hence might have biased their results. When the Acps genes were removed from the analysis, there was no significant relationship between substitution and recombination rates. Among Acps genes, rapid protein evolution was largely confined to regions of high recombination, again consistent with a reduction in $ N_{e} $ retarding the rates of adaptive evolution for these genes.
 
@@ -1224,7 +1249,7 @@ A confounding factor in these human studies was noted by Enard et al. (2014): si
 
 **[示例 Example]**
 
-> **Example 8.16** · ref: `8.16` · source: `chapter8_039.json` · blocks 4–4
+> **Example 8.16** · ref: `8.16` · source: `chapter8_039.json` · blocks 4–5
 >
 > Example 8.16. Modern rice was domesticated from Oryza rufipogon to form the indica (Oryza sativa indica) and japonica (O. sativa japonica) lineages (Huang et al. 2011). Lu et al. (2006) examined the ratio of the replacement- to silent-site substitution rates, $ K_a / K_s $ (Chapter 10), between both subspecies and an outgroup, O. brachyantha. In a comparison of over 15,000 genes, the $ K_a / K_s $ ratio for divergence between indica and japonica was 0.498. Conversely, in a comparison of roughly 5000 genes between japonica and the outgroup, $ K_a / K_s = 0.259 $, a highly significant difference. This increase in $ K_a / K_s $ between the domesticated lineages occurs throughout the genome, with most regions showing elevated values when comparing the two modern cultivars on the outgroup. Regions of lower recombination showed the largest $ K_a / K_s $ values, with a highly significant negative regression of $ K_a / K_s $ on the recombination rate. The authors interpreted these data to imply an increase in the fixation rate of deleterious alleles due to a decrease in $ N_e $ during the domestication of both cultivar lineages. If the increase in $ K_a / K_s $ ratios was due to the accelerated fixation of favorable alleles, this ratio should increase along with the recombination rate, as the effective population size is higher in regions of higher recombination, thus increasing the fixation rate of favorable alleles. Conversely, the fixation rate of (slightly) deleterious alleles should increase with decreasing recombination, as the smaller $ N_e $ in these regions allows more of these alleles to behave as if effectively neutral. The initial founding of lines during the early phases of domestication reduced $ N_e $, a process that the authors suggest was exacerbated by strong selfing, and hence reduction of the effective amount of recombination throughout the genome. This reduced recombination resulted in the influence on larger regions of the genome by selective sweeps associated with the fixation of domestication genes, further reducing $ N_e $.
 > 
@@ -1233,7 +1258,7 @@ A confounding factor in these human studies was noted by Enard et al. (2014): si
 
 ---
 
-## chapter8_040 · Hitchhiking and Selective Sweeps: Introduction / Sweeps, Background Selection, and Codon Usage Bias
+## chapter8_040 · GENOME-WIDE IMPACT OF REPEATED SELECTION AT LINKED SITES / Sweeps, Background Selection, and Codon Usage Bias
 
 One of the most sensitive indicators of localized changes in $ N_e $ is provided by the behavior of sites under very weak selection ($ N_e|s| \sim 1 $). Under this setting, weakly favorable alleles are still selected for, while weakly deleterious alleles are selected against. However, a small decline in $ N_e $ in such settings (be it from recurrent sweeps and/or background selection), or in the effective strength of selection (e.g., from interference among multiple segregating selected alleles) can make a significant fraction of these weakly selected alleles behave in a neutral fashion. Hence, if one has a group of sites within a species where we expect an average of $ N_e|s| \sim 1 $ over the genome, localized reductions in $ N_e $ may leave a signature, as within this region the pattern shifts from weak selection to effective neutrality. One potential set of such markers involves synonymous codons, which in some species (such as certain Drosophila) appear to have a genome-wide average of $ N_e|s| \sim 1 $ (Lynch 2007).
 
@@ -1280,7 +1305,7 @@ One final unexplained aspect of codon bias is the intriguing observation that X-
 
 ---
 
-## chapter8_042 · Hitchhiking and Selective Sweeps: Introduction / A Paradigm Shift Away From the Neutral Theory of Molecular Evolution?
+## chapter8_042 · GENOME-WIDE IMPACT OF REPEATED SELECTION AT LINKED SITES / A Paradigm Shift Away From the Neutral Theory of Molecular Evolution?
 
 As ably summarized by Charlesworth (2010), molecular population genetics has a rich and dynamic history. Its current focus traces back to the neutral theory of molecular evolution, which was born in the late 1960s in response to the higher than expected levels of protein polymorphism found in natural populations (Kimura 1968b; King and Jukes 1969), and gained strength through the 1980s as more molecular data became available (Kimura 1983). Under initial versions of the neutral theory, the vast majority of new mutations were assumed to be either neutral or rather strongly deleterious. As selection is expected to rapidly remove the latter, such mutations contribute little to the levels of polymorphism and even less to divergence (Figure 7.1). Under this view, advantageous mutations can indeed occur, but they are assumed to be extremely rare and rapidly fixed (or lost) when they arise, resulting again in little impact on polymorphisms and (given their rarity) at best a modest impact on divergence. Given these assumptions, it then follows that most fixed differences between populations or species and most segregating variation within a population or species are due to neutral variation.
 

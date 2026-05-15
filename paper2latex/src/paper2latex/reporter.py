@@ -88,7 +88,7 @@ class Reporter:
             lines.pop()
         
         # Write report
-        with open(report_path, "w") as f:
+        with open(report_path, "w", encoding="utf-8") as f:
             f.write("\n".join(lines))
         
         logger.info(f"Generated report: {report_path}")

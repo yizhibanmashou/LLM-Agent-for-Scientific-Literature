@@ -2,7 +2,7 @@
   "id": "chapter21_010",
   "metadata": {
     "chapter": "chapter21",
-    "section": "21: Family-Based Selection",
+    "section": "THEORY OF EXPECTED SINGLE-CYCLE RESPONSE",
     "subsections": [
       "Modifications of the Breeder's Equation for Predicting Family-based Response"
     ],
@@ -20,10 +20,10 @@
       "21.4b"
     ],
     "table_references": [],
-    "section_level_1": "21: Family-Based Selection",
+    "section_level_1": "THEORY OF EXPECTED SINGLE-CYCLE RESPONSE",
     "section_level_2": "Modifications of the Breeder's Equation for Predicting Family-based Response",
     "heading_path": [
-      "21: Family-Based Selection",
+      "THEORY OF EXPECTED SINGLE-CYCLE RESPONSE",
       "Modifications of the Breeder's Equation for Predicting Family-based Response"
     ],
     "display_heading": "Modifications of the Breeder's Equation for Predicting Family-based Response"
@@ -44,6 +44,18 @@
     {
       "type": "example",
       "content": "[[SEE_EXAMPLE:21.2]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Other (equivalent) versions of Equations 21.1a and 21.2a appear in the literature. The selection-intensity version allows for standardized comparisons of different selection schemes. Defining the selection intensity on x by $ \\bar{x} = S_x / \\sigma_x $, Equation 21.1a becomes [[SEE_FORMULA:21.3a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "If the regressions are the same for both parents, [[SEE_FORMULA:21.3b]] where $ \\bar{\\imath}_{x} = (\\bar{\\imath}_{x_{m}} + \\bar{\\imath}_{x_{f}})/2 $ is the average selection intensity. This expression is frequently written in terms of the selection unit-offspring correlation, $ \\rho(x, y) $, [[SEE_FORMULA:21.4a]] where (counting both parents) $ \\rho(x, y) = 2\\rho(x, y \\mid \\mathcal{R}) $. Equation 21.4a follows immediately from Equation 21.3b by recalling that $ \\rho(x, y) = \\sigma(x, y)/(\\sigma_x \\sigma_y) $ and that the trait variance in the offspring, $ y $, is simply the phenotypic variance of the character $ (\\sigma_y^2 = \\sigma_z^2) $. A variant of Equation 21.4a commonly seen in the literature is [[SEE_FORMULA:21.4b]] where $ \\rho(x, A_{\\mathcal{R}}) $, the correlation between the value of the selection unit, x, and the breeding value of a parent, R, of y, is the accuracy of selection (Equation 13.11a). Equation 21.4b holds in the absence of epistasis, while Equations 21.1–21.3 hold for arbitrary epistasis. Recall that the accuracy of individual selection (the correlation between an individual's phenotypic and breeding values) is $ \\rho(z_{\\mathcal{R}}, A_{\\mathcal{R}}) = h $. A particular family-based approach is favored over individual selection if x is a more accurate predictor of the breeding value of R than is R's phenotypic value, that is when $ \\rho(x, A_{\\mathcal{R}}) > h $."
+    },
+    {
+      "type": "discussion",
+      "content": "Equation 21.4b follows by first recalling that the mean value of an offspring is the average of its parental breeding values, $ y = \\mu + (A_{\\mathcal{R}_m}/2) + (A_{\\mathcal{R}_f}/2) + e_y $. Hence, $$ \\sigma(x,y)=\\frac{1}{2}\\sigma(x,A_{\\mathcal{R}_{m}})+\\frac{1}{2}\\sigma(x,A_{\\mathcal{R}_{f}})+\\sigma(x,e_{y}) $$"
     }
   ]
 }

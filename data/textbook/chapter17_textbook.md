@@ -1,4 +1,4 @@
-# Chapter 17 Textbook Mapping
+# Chapter 17 · Short-term Changes in the Variance: 2. Changes in the Environmental Variance
 
 ## chapter17_001 · Short-term Changes in the Variance: 2. Changes in the Environmental Variance: Introduction
 
@@ -28,7 +28,7 @@ Using an appropriate design, the genetic and environmental sensitivities for a p
 
 **[示例 Example]**
 
-> **Example 17.1** · ref: `17.1` · source: `chapter17_003.json` · blocks 2–2
+> **Example 17.1** · ref: `17.1` · source: `chapter17_003.json` · blocks 1–2
 >
 > Example 17.1. Fraser and Schadt (2010) considered mRNA expression levels for thousands of genes over a series of 19 mouse inbred lines. Within each line, roughly 20 individuals were scored at ~160,000 markers. For a given trait (the expression level of a specified gene), the within-line variation was contrasted between the two alternative homozygous genotypes at each marker. Because there is essentially no genetic variation within an inbred line, significant differences in the within-line variance over marker genotypes indicate linkage to a QTL influencing environmental robustness (differences in $ \sigma_{E}^{2} $). Conversely, a significant difference in the dispersion of the mean values of the marker genotypes across inbred lines (increased among-line variance) indicates that the marker is linked to a QTL influencing genetic robustness. Using this approach, these authors found QTLs for both types of robustness. QTLs for environmental robustness were largely trans-acting and sex-specific (different QTLs in the two sexes). In contrast, QTLs for genetic robustness were often cis-acting and were not sex-specific. There was no detected overlap between the two classes of QTLs. In reporting their results, the authors used the convention that an eQTL mapping close to its target site was regarded as cis, while an eQTL mapping further away, or on a different chromosome, was regarded as trans (Chapter 12). One caveat about this study concerns the among-line variance. Given the small number (19) of genotypic backgrounds (inbred lines), we expect that by chance some markers will be nonrandomly distributed with respect to QTLs that influence the line means. This could result in alternative genotypes at these markers showing different patterns of among-line variance, not because of any epistatic interactions, but rather because they were not sufficiently randomized with respect to background QTLs influencing the mean of the target trait.
 
@@ -218,7 +218,7 @@ The additive model has the advantage of being much more tractable, but it has th
 
 **[示例 Example]**
 
-> **Example 17.2** · ref: `17.2` · source: `chapter17_008.json` · blocks 4–4
+> **Example 17.2** · ref: `17.2` · source: `chapter17_008.json` · blocks 4–7
 >
 > Example 17.2. Here we derive the unconditional variances for the models summarized in Table 17.1. Consider the multiplicative model first, where $$ \sigma_{E}^{2}=\mathrm{E}[\gamma^{2}\sigma_{e}^{2}]=\sigma_{e}^{2}\mathrm{E}[\gamma^{2}] $$
 > 
@@ -353,25 +353,9 @@ Similar fitnesses arise under the Gaussian model of weak stabilizing selection (
 
 **[示例 Example]**
 
-> **Example 17.3** · ref: `17.3` · source: `chapter17_012.json` · blocks 2–2
+> **Example 17.3** · ref: `17.3` · source: `chapter17_012.json` · blocks 2–4
 >
-> Example 17.3. The quadratic fitness function (Equation 17.7a) is a model for weak stabilizing selection, as it can generate negative (and hence undefined) fitness values when selection is sufficiently strong. An alternative model of stabilizing selection without this constraint is normalizing selection (Equation 16.17), where $ \theta $ denotes the optimal phenotypic value and $ \omega^2 $ denotes the strength of selection around this optimum. Devaux and Lande (2009) used this fitness function in their study of selection on the flower-timing variance within an individual. They assumed that the additive model for genetic variation in $ \sigma_e^2 $ (Equation 17.4c) holds and that repeated expressions $ z $ of the trait from an individual with breeding values $ A_m $ (for the trait) and $ A_v $ (for $ \sigma_E^2 $) are drawn from a normal, so that $$ p(z\mid A_{m},A_{v})=\frac{1}{\sqrt{2\pi(\sigma_{e}^{2}+A_{v})}}\exp\left[-\frac{(z-A_{m})^{2}}{2(\sigma_{e}^{2}+A_{v})}\right] $$ Integration of $ W(A_m, A_v) = \int W(z) p(z | A_m, A_v) \, dz $ yields
-> 
-> > **Formula (17.8a)** · `17.8a` · source: `chapter17_block_062` · Response From Stabilizing Selection on Phenotypic Value, z
-> >
-> > $$ W(A_{m},A_{v})=\sqrt{\frac{\omega^{2}}{\omega^{2}+\sigma_{e}^{2}+A_{v}}}\exp\left[-\frac{(A_{m}-\theta)^{2}}{2(\omega^{2}+\sigma_{e}^{2}+A_{v})}\right] $$
-> 
-> 
-> When $ A_m \simeq \theta $, the exponential term is near one (as its numerator is near zero), and so fitness is largely driven by the square root term. For weak selection ($ \omega^2 \gg \sigma_e^2 + A_v $) when $ A_m = \theta $, a first-order Taylor series approximation yields
-> 
-> > **Formula (17.8b)** · `17.8b` · source: `chapter17_block_063` · Response From Stabilizing Selection on Phenotypic Value, z
-> >
-> > $$ W(A_{m},A_{v})\simeq1-\frac{\sigma_{e}^{2}+A_{v}}{2\omega^{2}} $$
-> 
-> 
-> As was the case for weak quadratic selection, fitness increases as $ A_{v} $ decreases.
-> 
-> The more interesting case is that where the population is far from the equilibrium, so $ |A_m - \theta| \gg 1 $, and the numerator in the exponential term in Equation 17.8a is large. In this case, fitness can be improved by increasing the value of $ A_v $ (i.e., moving it closer to $ \theta $), which reduces the magnitude of the exponential term. Thus, as also noted by Lande (1980b) and Bull (1987), stabilizing selection can actually favor an increase in $ \sigma_E^2 $ when the population is far from its optimum, as the larger variance increases the chance that some phenotypes will be near $ \theta $. Svardal et al. (2011) similarly found that selection favors increased values of $ \sigma_E^2 $ when there are strong fluctuations in $ \theta $ over time.
+> Example 17.3. The quadratic fitness function (Equation 17.7a) is a model for weak stabilizing selection, as it can generate negative (and hence undefined) fitness values when selection is sufficiently strong. An alternative model of stabilizing selection without this constraint is normalizing selection (Equation 16.17), where $ \theta $ denotes the optimal phenotypic value and $ \omega^2 $ denotes the strength of selection around this optimum. Devaux and Lande (2009) used this fitness function in their study of selection on the flower-timing variance within an individual. They assumed that the additive model for genetic variation in $ \sigma_e^2 $ (Equation 17.4c) holds and that repeated expressions $ z $ of the trait from an individual with breeding values $ A_m $ (for the trait) and $ A_v $ (for $ \sigma_E^2 $) are drawn from a normal, so that $$ p(z\mid A_{m},A_{v})=\frac{1}{\sqrt{2\pi(\sigma_{e}^{2}+A_{v})}}\exp\left[-\frac{(z-A_{m})^{2}}{2(\sigma_{e}^{2}+A_{v})}\right] $$ Integration of $ W(A_m, A_v) = \int W(z) p(z | A_m, A_v) \, dz $ yields $$ W(A_{m},A_{v})=\sqrt{\frac{\omega^{2}}{\omega^{2}+\sigma_{e}^{2}+A_{v}}}\exp\left[-\frac{(A_{m}-\theta)^{2}}{2(\omega^{2}+\sigma_{e}^{2}+A_{v})}\right] $$ (17.8a) When $ A_m \simeq \theta $, the exponential term is near one (as its numerator is near zero), and so fitness is largely driven by the square root term. For weak selection ( $ \omega^2 \gg \sigma_e^2 + A_v $) when $ A_m = \theta $, a first-order Taylor series approximation yields $$ W(A_{m},A_{v})\simeq1-\frac{\sigma_{e}^{2}+A_{v}}{2\omega^{2}} $$ (17.8b) As was the case for weak quadratic selection, fitness increases as $ A_{v} $ decreases. The more interesting case is that where the population is far from the equilibrium, so $ |A_m - \theta| \gg 1 $, and the numerator in the exponential term in Equation 17.8a is large. In this case, fitness can be improved by increasing the value of $ A_v $ (i.e., moving it closer to $ \theta $), which reduces the magnitude of the exponential term. Thus, as also noted by Lande (1980b) and Bull (1987), stabilizing selection can actually favor an increase in $ \sigma_E^2 $ when the population is far from its optimum, as the larger variance increases the chance that some phenotypes will be near $ \theta $. Svardal et al. (2011) similarly found that selection favors increased values of $ \sigma_E^2 $ when there are strong fluctuations in $ \theta $ over time.
 
 
 ---
@@ -418,26 +402,13 @@ Here $\bar{\imath}$ is the selection intensity (Equation 14.3a), and $x_{[1-p]}$
 
 **[推导 Derivation]**
 
-Under the additive model for the environmental variance (Equation 17.4a), Hill and Zhang found that the response in the mean breeding value for the environmental variance is
-
-> **Formula (17.10c)** · `17.10c` · source: `chapter17_block_070` · Response From Directional Selection on z
->
-> $$ R_{A_{v}}=h_{v}^{2}\;\bar{\imath}\; x_{[1-p]}\;\sigma_{z}^{2} $$
-
-
-which is also the response in $ \sigma_E^2 $ (Equation 17.6a). Equation 17.10a assumes that the population distribution of the trait value, $ z $, is approximately normal, which breaks down at extreme trait values when there is heritable variation in $ \sigma_E^2 $ (as $ z $ is now no longer normally distributed, but rather has become a weighted mixture of normals). Hence, for strong selection these results are potentially biased.
+Under
 
 **[示例 Example]**
 
-> **Example 17.4** · ref: `17.4` · source: `chapter17_013.json` · blocks 6–6
+> **Example 17.4** · ref: `17.4` · source: `chapter17_013.json` · blocks 5–5
 >
-> Example 17.4. Consider a trait with $ \sigma_z^2 = 100 $, $ h_m^2 = 0.3 $, and $ h_v^2 = 0.03 $ (the latter a typical value from Table 17.2). Assume that the additive model for the environmental variance (Equation 17.4b) holds. What is the expected response in the mean and $ \sigma_z^2 $ following a single generation of truncation selection with $ p = 0.1 $? Because $ h_m^2\sigma_z = h_v^2\sigma_z^2 = 3 $, Equations 17.10b and 17.10c show that any difference in response is due entirely to differences in the strength of selection ($ \bar{i} $ vs. $ \bar{x}_{1-p} $), not the genetic variances of these traits. Noting that $ \mathrm{Pr}(U > 1.282) = 0.1 $, we have $ x_{[1-0.1]} = 1.282 $ and (recalling Equation 14.3a) $ \bar{i} = \varphi(1.282)/0.1 = 1.755 $, with Equations 17.10b and 17.10c yielding $$ R_{A_{m}}=0.3\cdot1.755\cdot10=5.265\quad and\quad R_{A_{v}}=0.03\cdot1.755\cdot1.282\cdot100=6.750 $$ meaning that a single generation of selection increases the mean by 5.3 and the environmental variance increases by 6.75.
-> 
-> Using these same parameter values, the Bulmer equation (Equation 16.12d) yields the change in the additive genetic variance of the trait, $ \sigma^2(A_m) $, after one generation of selection as $ d = -3.74 $, for (ignoring changes in $ \sigma_E^2 $) a phenotypic variance of 100 - 3.74 = 96.26 and a heritability of $ (30 - 3.74)/(100 - 3.74) = 0.27 $. Accounting for changes in $ \sigma_E^2 $ yields a phenotypic variance after one generation of 100 - 3.74 + 6.75 = 103.1 and heritability of $ (30 - 3.74)/103.1 = 0.25 $. Because the response in the trait mean is given by $ R(t) = h^2(t) \bar{i}\sigma_z(t) $, the decrease in $ h^2 $ (from increased $ \sigma_E^2 $) is somewhat offset by the increase in the phenotypic variance. The response in the trait mean in generation 2 becomes 0.27 $ \cdot $ 1.77 $ \cdot $ $ \sqrt{96.26} = 4.69 $ when ignoring the change in $ \sigma_E^2 $ and 0.25 $ \cdot $ 1.77 $ \cdot $ $ \sqrt{103.1} = 4.49 $ when including it.
-> 
-> Now consider stronger selection, p = 0.01. Here $ x_{[1-p]} = 2.326 $ and $ \bar{\imath} = 2.666 $, yielding $$ R_{A_{m}}=0.3\cdot2.666\cdot10=7.998\quad and\quad R_{A_{v}}=0.03\cdot2.666\cdot2.326\cdot100=18.603 $$
-> 
-> Relative to p = 0.1, this is roughly a 50% increase in the response in the mean, but a 275% increase in the response in the environmental variance. The Bulmer equation yields d = -4.06 for one generation of selection and a resulting heritability (ignoring any changes in $ \sigma_{E}^{2} $) of 0.27. If we include the change in environmental variance, the new phenotypic variance is 100 - 4.06 + 18.60 = 114.54, resulting in a heritability of 25.94/114.54 = 0.23. As above, the actual trait heritability is less than predicted from the Bulmer equation, but the resulting impact on the response in the mean is again partly offset by the increase in the phenotypic variance, with the expected response in generation two of 7.06 (Bulmer) and 6.78 (Bulmer plus changes in $ \sigma_{E}^{2} $).
+> Example 17.4. Consider a trait with $ \sigma_z^2 = 100 $, $ h_m^2 = 0.3 $, and $ h_v^2 = 0.03 $ (the latter a typical value from Table 17.2). Assume that the additive model for the environmental variance (Equation 17.4b) holds. What is the expected response in the mean and $ \sigma_z^2 $ following a single generation of truncation selection with $ p = 0.1 $? Because $ h_m^2 \sigma_z = h_v^2 \sigma_z^2 = 3 $, Equations 17.10b and 17.10c show that any difference in response is due entirely to differences in the strength of selection ( $ \bar{i} $ vs. $ \bar{x}_{1-p} $), not the genetic variances of these traits. Noting that $ \mathrm{Pr}(U > 1.282) = 0.1 $, we have $ x_{[1-0.1]} = 1.282 $ and (recalling Equation 14.3a) $ \bar{i} = \varphi(1.282)/0.1 = 1.755 $, with Equations 17.10b and 17.10c yielding $$ R_{A_{m}}=0.3\cdot1.755\cdot10=5.265\quad and\quad R_{A_{v}}=0.03\cdot1.755\cdot1.282\cdot100=6.750 $$ meaning that a single generation of selection increases the mean by 5.3 and the environmental variance increases by 6.75. Using these same parameter values, the Bulmer equation (Equation 16.12d) yields the change in the additive genetic variance of the trait, $ \sigma^2(A_m) $, after one generation of selection as $ d = -3.74 $, for (ignoring changes in $ \sigma_E^2 $) a phenotypic variance of 100 - 3.74 = 96.26 and a heritability of $ (30 - 3.74)/(100 - 3.74) = 0.27 $. Accounting for changes in $ \sigma_E^2 $ yields a phenotypic variance after one generation of 100 - 3.74 + 6.75 = 103.1 and heritability of $ (30 - 3.74)/103.1 = 0.25 $. Because the response in the trait mean is given by $ R(t) = h^2(t) \bar{i}\sigma_z(t) $, the decrease in $ h^2 $ (from increased $ \sigma_E^2 $) is somewhat offset by the increase in the phenotypic variance. The response in the trait mean in generation 2 becomes 0.27 $ \cdot $ 1.77 $ \cdot $ $ \sqrt{96.26} = 4.69 $ when ignoring the change in $ \sigma_E^2 $ and 0.25 $ \cdot $ 1.77 $ \cdot $ $ \sqrt{103.1} = 4.49 $ when including it. Now consider stronger selection, p = 0.01. Here $ x_{[1-p]} = 2.326 $ and $ \bar{\imath} = 2.666 $, yielding $$ R_{A_{m}}=0.3\cdot2.666\cdot10=7.998\quad and\quad R_{A_{v}}=0.03\cdot2.666\cdot2.326\cdot100=18.603 $$ Relative to p = 0.1, this is roughly a 50% increase in the response in the mean, but a 275% increase in the response in the environmental variance. The Bulmer equation yields d = -4.06 for one generation of selection and a resulting heritability (ignoring any changes in $ \sigma_{E}^{2} $) of 0.27. If we include the change in environmental variance, the new phenotypic variance is 100 - 4.06 + 18.60 = 114.54, resulting in a heritability of 25.94/114.54 = 0.23. As above, the actual trait heritability is less than predicted from the Bulmer equation, but the resulting impact on the response in the mean is again partly offset by the increase in the phenotypic variance, with the expected response in generation two of 7.06 (Bulmer) and 6.78 (Bulmer plus changes in $ \sigma_{E}^{2} $).
 
 
 ---
@@ -453,6 +424,15 @@ A major distinction in these two potential routes for changing $ \sigma_z^2 $ is
 ---
 
 ## chapter17_015 · Short-term Changes in the Variance: 2. Changes in the Environmental Variance: Introduction / Direct Selection on $ \sigma_{E}^{2} $ Using Repeated Records
+
+**[Figure]**
+
+> **Figure 17.1** · page 16 · source: `chapter17`
+>
+> ![Figure 17.1](../figures/fig_0065.png)
+>
+> Figure 17.1 The relative strengths of selection on the mean  $ (i) $ and variance  $ (x_{[1-p]}\,\bar{i}) $ under truncation selection as a function of the fraction, p, saved. The two strengths of selection are equal around  $ p = 0.16 $ (as  $ x_{[1-0.16]} = x_{[0.84]} = 1 $). Note that for p > 0.5, there is (weak) selection to decrease the variance, as the curve for  $ x_{[1-p]}\,\bar{i} $ dips below the horizontal dashed line that indicates a value of zero.
+
 
 While $ \sigma_E^2 $ can change as a consequence of simple selection on the trait value, $ z $, a breeder may wish to target $ \sigma_E^2 $ directly. While simple selection on $ z $ can result in direct selection on $ A_v $, it also targets $ A_m $ (and hence changes the mean). Through the use of an appropriate selection index, one can directly select on $ A_v $ alone (and hence directly target $ \sigma_E^2 $), even with only a single observation per individual. This is possible because $ A_m $ is linearly associated with $ z $, while $ A_v $ is associated with $ z^2 $. If we rescale $ z $ to have a mean of zero, an index of the form $ I_i = az_i + bz_i^2 $ can be constructed to specifically target individuals with high (or low) $ A_v $ values. We examine this index, and the component responses, in Volume 3.
 

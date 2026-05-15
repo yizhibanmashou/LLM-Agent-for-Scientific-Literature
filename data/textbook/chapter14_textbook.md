@@ -1,4 +1,4 @@
-# Chapter 14 Textbook Mapping
+# Chapter 14 · Short-term Changes in the Mean: 2. Truncation and Threshold Selection
 
 ## chapter14_001 · Short-term Changes in the Mean: 2. Truncation and Threshold Selection
 
@@ -20,7 +20,16 @@ In addition to being the commonest form of artificial selection, truncation sele
 
 ---
 
-## chapter14_003 · Short-term Changes in the Mean: 2. Truncation and Threshold Selection / Selection Intensities and Differentials Under Truncation Selection
+## chapter14_003 · TRUNCATION SELECTION / Selection Intensities and Differentials Under Truncation Selection
+
+**[Figure]**
+
+> **Figure 14.1** · page 2 · source: `chapter14`
+>
+> ![Figure 14.1](../figures/fig_0046.png)
+>
+> Figure 14.1 Under truncation selection, the uppermost (or lowermost) fraction, $p$, of a population is selected to reproduce. Alternatively, one could set a threshold level, $T$, in advance. To predict the selection response, given either $p$ or $T$, we need to know the expected mean of the selected tail ($\mu^{*}$), from which we can compute either $S = \mu^{*} - \mu$ or $\bar{i} = S/\sigma$, and then apply the breeder's equation.
+
 
 **[推导 Derivation]**
 
@@ -71,7 +80,7 @@ a result due to Smith (1969). Simmonds (1977) found that this approximation is g
 
 **[示例 Example]**
 
-> **Example 14.1** · ref: `14.1` · source: `chapter14_003.json` · blocks 4–4
+> **Example 14.1** · ref: `14.1` · source: `chapter14_003.json` · blocks 4–6
 >
 > Example 14.1. Consider selection on a normally distributed trait for which the upper 5% of the population is saved (p = 0.05). Here $ x_{[1-0.05]} = x_{[0.95]} $ is obtained by the R command gnorm(0.95), which returns 1.645, as Pr[U > 1.645] = 0.05. The R command dnorm(x) returns the value of $ \varphi(x) $, with dnorm(1.645) returning a value of 0.103. Hence, $$ \bar{\imath}=\frac{\varphi(1.645)}{0.05}=\frac{0.103}{0.05}\simeq2.06 $$
 > 
@@ -82,11 +91,20 @@ a result due to Smith (1969). Simmonds (1977) found that this approximation is g
 
 ---
 
-## chapter14_004 · Short-term Changes in the Mean: 2. Truncation and Threshold Selection / Correcting the Selection Intensity for Finite Sample Sizes
+## chapter14_004 · TRUNCATION SELECTION / Correcting the Selection Intensity for Finite Sample Sizes
 
 If the number of individuals saved is small, Equation 14.1 overestimates the selection differential because of sampling effects (Nordskog and Wyatt 1952; Burrows 1972). To see this, suppose 100 observations are put randomly into ten groups of size 10 and the largest value is selected from each group. These values will be, on average, not as extreme as when selecting the best 10 from the entire 100, as the best observation within a random group of ten can be the 11th largest (or even smaller) for the entire group.
 
 To more formally treat the effects of finite sample size, assume M adults are sampled at random from the population, with the largest N of these being used to form the next generation, yielding $ p = N/M $. The expected selection coefficient is computed from the distribution of order statistics. We rank the M observed phenotypes as $ z_{1,M} \geq z_{2,M} \ldots \geq z_{M,M} $, where $ z_{k,M} $ denotes the kth-order statistic (the kth largest value) when M observations are sampled. The expected selection intensity is given by the expected mean of the N selected parents, which is the average of the first N order statistics. $$ E\left[\overline{\imath}_{(N,M)}\right]=\frac{1}{\sigma}\left(\frac{1}{N}\sum_{k=1}^{N}E\left[z_{k,M}\right]-\mu\right)=\frac{1}{N}\sum_{k=1}^{N}E\left[z_{k,M}^{\prime}\right] $$ where $ z_{k,M}^{i} = (z_{k,M} - \mu)/\sigma $ are the standardized order statistics. While the properties of order statistics have been worked out for many special cases (Harter 1961; Sarhan and Greenberg 1962; Harter 1970a, 1970b; Kendall and Stuart 1977; David 1981), values for any distribution are easily be obtained via simulation. For example, Figure 14.2 plots 10,000 random draws of the largest order statistic in a sample of ten unit normals. Note that the distribution of realized differentials is asymmetric about its mean, implying that the variance alone is not sufficient for computing confidence intervals. Figure 14.3 plots the expected selection intensity for small values of $ N $ (assuming normality), showing that Equation 14.3a overestimates the intensity, although the difference will be small unless $ N $ is small.
+
+**[Figure]**
+
+> **Figure 14.2** · page 4 · source: `chapter14`
+>
+> ![Figure 14.2](../figures/fig_0047.png)
+>
+> Figure 14.2 The distribution of 10,000 random draws of  $ \bar{\imath}_{(1,10)} $, the largest order statistic in a sample of ten unit normal random variables. The mean value is 1.54, as opposed to the expected value of  $ \bar{\imath}=1.75 $ for p=0.1 in an infinite population (Equation 14.3a). Notice that there is a considerable spread about the mean, and that the distribution is not symmetric, but rather is skewed toward higher values.
+
 
 **[推导 Derivation]**
 
@@ -111,6 +129,15 @@ where $ \bar{\tau} $ is given by Equation 14.3a, using $ p = N/M $. Lindgren and
 > $$ \widetilde{p}=\frac{N+1/2}{M+N/(2M)} $$
 
 
+**[Figure]**
+
+> **Figure 14.3** · page 5 · source: `chapter14`
+>
+> ![Figure 14.3](../figures/fig_0048.png)
+>
+> Figure 14.3 The expected selection intensity,  $ E[\bar{i}_{(N,M)}] $, under truncation selection on a normally distributed phenotype, as a function of the total number of individuals measured, M, and the fraction of these saved,  $ p = N/M $. The curve  $ M = \infty $ is given by Equation 14.3a, while the curves for M = 10, 20, 50, and 100 were obtained from the average of the expected values of the N = pM largest unit normal order statistics (Harter 1961). Note that Equation 14.3a is generally a good approximation, even when N is fairly small.
+
+
 Burrows (1975) provided expressions for the variance of $ \bar{\nu}_{(N,M)} $.
 
 **[推导 Derivation]**
@@ -126,7 +153,7 @@ where $ \tau $ is the intraclass correlation of family members. This important r
 
 **[示例 Example]**
 
-> **Example 14.2** · ref: `14.2` · source: `chapter14_004.json` · blocks 5–5
+> **Example 14.2** · ref: `14.2` · source: `chapter14_004.json` · blocks 5–6
 >
 > Example 14.2. Consider the expected selection intensity on males when the upper 5% are used to form the next generation and phenotypes are normally distributed. If the sampled number is large, $ \bar{\imath} \simeq 2.06 $ (Example 14.1). Suppose, however, that just 20 males are scored (phenotyped), with only the largest allowed to reproduce, in order to yield p = 0.05. The expected value for this individual is the expected value of the largest order statistic for a sample of size 20. For the unit normal, this is $ \simeq $1.87 (Harter 1961), and hence $ E[\bar{\nu}_{(1,20)}] \simeq 1.87 $. There is considerable spread about this expected value, as the standard deviation of this order statistic is 0.525 (Sarhan and Greenberg 1962). How well do the approximations of $ E[\bar{\nu}_{(1,20)}] $ perform? Burrows's approximation (Equation 14.4b) yields $$ E\left[\bar{\imath}_{(1,20)}\right]\simeq2.06-\frac{(20-1)}{2\left(20+1\right)2.06}=2.06-0.22=1.84 $$
 > 
@@ -135,7 +162,7 @@ where $ \tau $ is the intraclass correlation of family members. This important r
 
 ---
 
-## chapter14_005 · Short-term Changes in the Mean: 2. Truncation and Threshold Selection / The Threshold/Liability Model
+## chapter14_005 · RESPONSE IN DISCRETE TRAITS: BINARY CHARACTERS / The Threshold/Liability Model
 
 **[命题 Proposition]**
 
@@ -161,6 +188,15 @@ The response to selection, as measured by the new frequency, $ q_{t+1} $, of the
 > $$ \begin{aligned}q_{t+1}&=\Pr(U\geq-\mu_{t+1})\\&=\Pr(U\geq-\mu_{t}-h^{2}S_{t})\\&=\Pr(U\geq x_{[1-q_{t}]}-h^{2}S_{t})\\ \end{aligned} $$
 
 
+**[Figure]**
+
+> **Figure 14.4** · page 7 · source: `chapter14`
+>
+> ![Figure 14.4](../figures/fig_0049.png)
+>
+> Figure 14.4 Selection response for a binary trait when the underlying liability, z, exceeds some threshold value, T. We assume that an appropriate scale can be found such that  $ z \sim N(\mu_t, 1) $, where  $ \mu_t $ is the current mean and  $ T = 0 $. Under this scaling for T, a mean liability of zero ( $ \mu = 0 $) implies that 50% of the population shows the trait, while  $ <50\% $ display the trait when  $ \mu < 0 $ and  $ >50\% $ do when  $ \mu > 0 $. Because z is normally distributed, the probit transform estimates  $ \mu_t $ from the frequency,  $ q_t $, of individuals displaying the character (Equation 14.6). We assume that the breeder's equation holds on the liability scale, so that  $ \mu_{t+1} = \mu_t + S_t h^2 $, where  $ S_t = \mu_t^* - \mu_t $. Using properties of the unit normal allows translation of the mean liability following selection,  $ \mu_{t+1} $, into the new frequency,  $ q_{t+1} $, of the trait (Equation 14.7). Note that after selection, where a fraction,  $ p_t $, of the selected parents display the trait, the mean liability value is now the weighted average of the means of two truncated normal distributions (Equation 14.8a).
+
+
 **[推导 Derivation]**
 
 It remains to obtain $S_t = \mu_t^* - \mu_t$, where $\mu_t^*$ is the mean liability value in the selected parents in generation $t$. While the selected population may consist entirely of adults displaying the trait, more individuals than this may be required to keep the population at a constant size, especially if $q_t$ is small (i.e., the trait is rare). In this case, the selected adults consist of two groups of individuals: those displaying the trait (hence having $z \geq 0$) and those not displaying it ($z < 0$). Letting $p_t$ be the fraction of selected adults displaying the character,
@@ -168,6 +204,15 @@ It remains to obtain $S_t = \mu_t^* - \mu_t$, where $\mu_t^*$ is the mean liabil
 > **Formula (14.8a)** · `14.8a` · source: `chapter14_block_023` · The Threshold/Liability Model
 >
 > $$ \begin{align*}\mu_t^*=(1-p_t)E\left[z|z<0,\mu_t\right]+p_t E\left[z|z\geq0,\mu_t\right]\end{align*} $$
+
+
+**[Figure]**
+
+> **Figure 14.5** · page 8 · source: `chapter14`
+>
+> ![Figure 14.5](../figures/fig_0050.png)
+>
+> Figure 14.5 The response to selection on a threshold trait. Changes in q and S are plotted below, where solid circles denote  $ q_{t} $, and open circles denote  $ S_{t} $. See Example 14.3 for details.
 
 
 **[推导 Derivation]**
@@ -196,25 +241,36 @@ One important feature about selection on threshold traits is that the response t
 
 **[示例 Example]**
 
-> **Example 14.3** · ref: `14.3` · source: `chapter14_005.json` · blocks 7–7
+> **Example 14.3** · ref: `14.3` · source: `chapter14_005.json` · blocks 6–10
 >
 > Example 14.3. Consider a threshold trait whose liability has a heritability of $ h^{2} = 0.25 $ (Example 14.4 and especially LW Chapter 25 discuss how $ h^{2} $ can be estimated on this scale). What is the expected response to selection if the initial frequency of individuals displaying the character is 5% and selection is practiced by choosing only adults displaying the character? Only six generations are required to increase the frequency of the trait to 50% ( $ \mu = 0 $). Note that even though all selected parents exhibit the trait, the selection differential rapidly declines in a nonlinear fashion (Figure 14.5). The values plotted in Figure 14.5 were obtained as follows. As was calculated earlier, $ q_0 = 0.05 $, which implies $ \mu_0 = -1.645 $ (the mean liability is 1.65 standard deviations below the threshold). Only individuals displaying the trait are allowed to reproduce, yielding (from Equation 14.9) the resulting selection differential on the liability scale: $$ S_{0}=\varphi(-1.645)/0.05\simeq0.106/0.05\simeq2.062 $$ Applying the breeder’s equation returns the new mean value of liability: $$ \mu_{1}=\mu_{0}+0.25\cdot S_{0}=-1.645+0.25\cdot2.062=-1.129 $$ Equation 14.7 translates this new mean into the fraction of the population now above the threshold $$ q_{1}=\Pr(U\geq-\mu_{1})=\Pr(U\geq1.129)=0.129 $$ Thus, after one generation of selection, the character frequency is expected to increase from 5% to 12.9%. Further iteration in this fashion recovers the rest of the values in Figure 14.5.
 
 
 **[示例 Example]**
 
-> **Example 14.4** · ref: `14.4` · source: `chapter14_005.json` · blocks 8–8
+> **Example 14.4** · ref: `14.4` · source: `chapter14_005.json` · blocks 11–14
 >
-> Example 14.4. The effectiveness of selection on wing morphs in females of the whitebacked planthopper (Sogatella furcifera) was examined by Matsumura (1996). While this hemipteran is a serious rice pest in Japan, it is unable to overwinter. Rather, each year it migrates from southern China to recolonize Japan. Females exhibit two wing morphs: macropterous females are fully winged, while brachypterous females have reduced wings and cannot fly. Further, increasing nymphal population density increases the frequency of macropterous females (leading to increased dispersal). Using three replicate experiments at each of three densities, Matsumura selected for increased macroptery in one replicate, decreased macroptery in another, and a control (no selection) in the third. For the replicates with a density of one nymph per container, roughly 40–90 adults were scored, and 20 were chosen to form the next generation. The resulting data for the first five generations in the up-selected line was as follows (Matsumura, pers. comm.): Here q is the frequency of macroptery before selection and p is the frequency of macroptery in the selected parents. Translation from q into the mean liability, $ \mu $, follows from Equation 14.6. The response (on the liability scale) to selection on generation 1 is $$ R(1)=\mu_{2}-\mu_{1}=-x_{[1-0.340]}-(-x_{[1-0.224]})=-0.41-(-0.76)=0.35 $$
+> Example 14.4. The effectiveness of selection on wing morphs in females of the whitebacked planthopper (Sogatella furcifera) was examined by Matsumura (1996). While this hemipteran is a serious rice pest in Japan, it is unable to overwinter. Rather, each year it migrates from southern China to recolonize Japan. Females exhibit two wing morphs: macropterous females are fully winged, while brachypterous females have reduced wings and cannot fly. Further, increasing nymphal population density increases the frequency of macropterous females (leading to increased dispersal). Using three replicate experiments at each of three densities, Matsumura selected for increased macroptery in one replicate, decreased macroptery in another, and a control (no selection) in the third. For the replicates with a density of one nymph per container, roughly 40–90 adults were scored, and 20 were chosen to form the next generation. The resulting data for the first five generations in the up-selected line was as follows (Matsumura, pers. comm.):
 > 
-> Likewise, the total response was $$ \mu_{6}-\mu_{1}=0.55-(-0.76)=1.31 $$
+> > **Inline Table 1** · `inline_1` · page 9 · source: `chapter14_005`
+> > Inline Table 1
+> >
+> > Generation | q | $ \mu $ | p | S | R
+> > --- | --- | --- | --- | --- | ---
+> > 1 | 0.224 | -0.76 | 1.00 | 1.34 | 0.35
+> > 2 | 0.340 | -0.41 | 0.80 | 0.75 | 0.54
+> > 3 | 0.551 | 0.13 | 1.00 | 0.72 | 0.33
+> > 4 | 0.675 | 0.45 | 1.00 | 0.53 | -0.07
+> > 5 | 0.651 | 0.39 | 1.00 | 0.57 | 0.16
+> > 6 | 0.708 | 0.55 |  |  | 
 > 
-> Selection differentials were calculated from q and p using Equation 14.9. For example, for generation 2, $$ S_{2}=\frac{\varphi(\mu_{2})}{q_{2}}\frac{p_{2}-q_{2}}{1-q_{2}}=\frac{\varphi(-0.41)}{0.34}\frac{(0.80-0.34)}{1-0.34}=0.75 $$ The total selection differential is $ \sum_{i} S_{i} = 3.91 $. One key summary statistic for any selection experiment is the realized heritability, the ratio of response to selection differential. As detailed in Chapter 18, there are several ways to compute this for a multigeneration selection experiment. One simple estimate is the ratio of the total response to the total differential. $$ \widehat{h^{2}}=\frac{\sum R_{i}}{\sum_{i}S_{i}}=\frac{1.31}{3.91}=0.33 $$ giving an estimated heritability of the underlying liability for macroptery of around 30%.
+> 
+> Here q is the frequency of macroptery before selection and p is the frequency of macroptery in the selected parents. Translation from q into the mean liability, $ \mu $, follows from Equation 14.6. The response (on the liability scale) to selection on generation 1 is $$ R(1)=\mu_{2}-\mu_{1}=-x_{[1-0.340]}-(-x_{[1-0.224]})=-0.41-(-0.76)=0.35 $$ Likewise, the total response was $$ \mu_{6}-\mu_{1}=0.55-(-0.76)=1.31 $$ Selection differentials were calculated from q and p using Equation 14.9. For example, for generation 2, $$ S_{2}=\frac{\varphi(\mu_{2})}{q_{2}}\frac{p_{2}-q_{2}}{1-q_{2}}=\frac{\varphi(-0.41)}{0.34}\frac{(0.80-0.34)}{1-0.34}=0.75 $$ The total selection differential is $ \sum_{i} S_{i} = 3.91 $. One key summary statistic for any selection experiment is the realized heritability, the ratio of response to selection differential. As detailed in Chapter 18, there are several ways to compute this for a multigeneration selection experiment. One simple estimate is the ratio of the total response to the total differential. $$ \widehat{h^{2}}=\frac{\sum R_{i}}{\sum_{i}S_{i}}=\frac{1.31}{3.91}=0.33 $$ giving an estimated heritability of the underlying liability for macroptery of around 30%.
 
 
 ---
 
-## chapter14_006 · Short-term Changes in the Mean: 2. Truncation and Threshold Selection / Direct Selection on the Threshold, T
+## chapter14_006 · RESPONSE IN DISCRETE TRAITS: BINARY CHARACTERS / Direct Selection on the Threshold, T
 
 It is biologically quite reasonable to imagine that there is variation in $ T $ itself (Hazel et al. 1990). Suppose the trait of interest appears when the size of an organism exceeds some critical value, which itself varies over individuals, with certain genotypes and/or environments lowering the value of $ T $, thus allowing individuals with a lower liability score to display the trait. Decomposing both the liability and threshold in terms of genetic and environmental factors gives $ z = g_z + e_z $ and $ T = g_T + e_T $. The trait appears when $ z \geq T $, or $$ g_{z}+e_{z}-\left(g_{T}+e_{T}\right)=\left(g_{z}-g_{T}\right)+\left(e_{z}-e_{T}\right)=g+e\geq0 $$
 
@@ -222,7 +278,7 @@ Thus, even though both the liability and threshold values are variable, we can s
 
 ---
 
-## chapter14_007 · Short-term Changes in the Mean: 2. Truncation and Threshold Selection / The Logistic Regression Model for Binary Traits
+## chapter14_007 · RESPONSE IN DISCRETE TRAITS: BINARY CHARACTERS / The Logistic Regression Model for Binary Traits
 
 **[推导 Derivation]**
 
@@ -242,6 +298,15 @@ with $ \ell(z) \simeq 0 $ for $ z \ll -1, \simeq 1 $ for $ z \gg 1 $, and $ \ell
 
 which has a value of 0.5 at $ z = m $ and a scaling factor, $ \alpha $, that sets the abruptness of the transition from low to high probability. The larger the value of $ \alpha $, the more abrupt is the transition, approaching the threshold model for sufficiently large values (Figure 14.6). Equation 14.10b is often called a logistic regression.
 
+**[Figure]**
+
+> **Figure 14.6** · page 11 · source: `chapter14`
+>
+> ![Figure 14.6](../figures/fig_0051.png)
+>
+> Figure 14.6 A more realistic model of threshold traits is that the liability, z (horizontal axis), determines the probability, p(z), of displaying the trait (vertical axis). One flexible model is to assume that p(z) follows a logistic function (Equation 14.10b) with a scale parameter of  $ \alpha $, plotted here for values of  $ \alpha = 1, 5 $, and 10. For  $ \alpha $ values in excess of 5, the logistic function essentially recovers the discrete threshold model.
+
+
 Biologically speaking, the logistic regression and threshold models may be viewed as essentially identical. To see this, recall that the threshold model very easily extends to the case where T varies over individuals. In such cases, if the liability value of an individual is z, the trait will only be displayed if $ T \leq z $. Now consider the logistic regression model where $ p(z) $ denotes the probability that an individual with a liability value of z displays the trait. One source of this stochasticity could simply be population variation in T, so that $ p(z) $ can be viewed as the cumulative distribution function (cdf; LW Chapter 2) for the threshold value T, e.g., $ p(z) = \Pr(T \leq z) $. In this case, a fraction, $ p(z) $, of individuals with a liability of z are above the threshold, and hence display the trait.
 
 **[推导 Derivation]**
@@ -260,6 +325,15 @@ Taking derivatives of both sides yields
 > **Formula (14.11b)** · `14.11b` · source: `chapter14_block_039` · The Logistic Regression Model for Binary Traits
 >
 > $$ \phi(x,\alpha,m)=\frac{\alpha\exp[-\alpha\left(z-m\right)]}{(1+\exp[-\alpha\left(z-m\right)])^{2}} $$
+
+
+**[Figure]**
+
+> **Figure 14.7** · page 12 · source: `chapter14`
+>
+> ![Figure 14.7](../figures/fig_0052.png)
+>
+> Figure 14.7 A comparison of the unit normal and unit logistic ( $ \mu = 0 $,  $ \sigma^{2} = 1 $) distributions (dashed and solid curves, respectively), with the horizontal axis denoting the value of z. (Left) Probability density functions: the logistic is more peaked, with positive kurtosis. (Right) The cumulative distribution functions are extremely similar.
 
 
 **[推导 Derivation]**
@@ -282,6 +356,15 @@ which is the logistic distribution with a variance of 1 (see Equation 14.11c).
 
 An interesting biological interpretation of the scale parameter, $ \alpha $ (that sets the abruptness of the transition of the logistic regression), is as a measure of the strength of developmental canalization. When $ \alpha $ is small, small changes in the liability usually map into small changes in the probability of the trait being displayed ($ \alpha = 1 $ in Figure 14.6). When $ \alpha $ is large, one sees robustness when the liability is away from the mean, m, as small changes in the liability have very little impact on the probability of the trait being displayed. However, when near m, small liability changes can result in dramatically different probabilities of displaying the trait. Chevin and Lande (2013) essentially used this idea to explore the conditions under which a relatively continuous norm of reaction changes into a very discrete step-function (i.e., the conditions leading to the evolution of a large $ \alpha $ value).
 
+**[Figure]**
+
+> **Figure 14.8** · page 13 · source: `chapter14`
+>
+> ![Figure 14.8](../figures/fig_0053.png)
+>
+> Figure 14.8 The logistic regressions for the relationship between dry weight and flowering in hound's-tongue (Cynoglossum officinale). Data were obtained from Wesselingh and de Jong (1995). Regressions are given for control, high, and low lines, grown contemporaneously. See Example 14.5 for further details.
+
+
 Thus, we have two approaches for mapping liability values into binary traits: the strict threshold approach (a deterministic mapping of liability onto the discrete trait) and the logistic regression approach (a stochastic mapping translating a liability value into a probability of observing the trait). Given the very close connection between the threshold and logistic regression models, for most purposes using the simple threshold model is a reasonable approach, even if the underlying mapping is stochastic, and as illustrated above, it can easily be used to predict selection response. One setting where the logistic regression is more appropriate is in the actual analysis of the behavior of the threshold when one either knows the liability value or has at least a strong proxy (such as size). not respond to the first vernalization treatment were allowed to grow a second cycle and were chosen as the parents for the high lines. The response to a single generation of selection can be assessed by comparing the offspring from the low (or high) selected parents against those from an unselected control, as plotted in Figure 14.8.
 
 The data available to the authors were 0 or 1 (insensitive or sensitive to vernalization) values as a function of size. To estimate the distribution of threshold sizes, they performed a logistic regression on these data, using maximum likelihood (LW Appendix 4) to fit the $ \alpha $ and mean (m) terms of Equation 14.10b. Data for the high and low lines are plotted in Figure 14.8 along with the ML solution for the logistic regression. Each individual has a 0 or 1 data point (individual ticks), while the circles represent the average value for weight classes with more than ten individuals.
@@ -300,7 +383,7 @@ Thus, there is heritable variation in threshold size, as there was response to s
 
 ---
 
-## chapter14_008 · Short-term Changes in the Mean: 2. Truncation and Threshold Selection / BLUP Selection With Binary Data: Generalized Linear Mixed Models
+## chapter14_008 · RESPONSE IN DISCRETE TRAITS: BINARY CHARACTERS / BLUP Selection With Binary Data: Generalized Linear Mixed Models
 
 **[推导 Derivation]**
 

@@ -9,6 +9,7 @@ from __future__ import annotations
 
 from collections import defaultdict
 from dataclasses import dataclass
+from functools import lru_cache
 from pathlib import Path
 from typing import Any
 import hashlib
@@ -16,9 +17,13 @@ import html
 import re
 
 from knowledge_engineering.core.common import read_json
+from knowledge_engineering.processors.ocr_evidence import (
+    _detect_visual_horizontal_rules,
+    _page_size_from_payload_page,
+)
 
 
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 EXAMPLE_HEAD_RE = re.compile(
     r"Example\s+(?P<example_id>(?:A\d+|\d+)\.\d+[a-z]?)(?P<trailing>\.)?",
     re.IGNORECASE,
@@ -26,6 +31,10 @@ EXAMPLE_HEAD_RE = re.compile(
 STRUCTURED_REF_RE = re.compile(r"\[\[(?:SEE_)?(?:FORMULA|TABLE):([^\]\n\r]+?)\s*\]\]", re.IGNORECASE)
 FORMULA_MARKER_RE = re.compile(r"\[\[(?:SEE_)?FORMULA\s*:\s*([^\]\n\r]+?)\s*\]\]", re.IGNORECASE)
 TABLE_MARKER_RE = re.compile(r"\[\[(?:SEE_)?TABLE\s*:\s*([^\]\n\r]+?)\s*\]\]", re.IGNORECASE)
+STANDALONE_NUMBERED_TABLE_RE = re.compile(
+    r"^\s*\[\[TABLE\s*:\s*(?P<label>(?:A\d+|\d+)\.\d+[A-Za-z]?)\s*\]\]\s*$",
+    re.IGNORECASE,
+)
 FIGURE_REF_RE = re.compile(r"\b(?:Figure|Fig\.)\s+([A-Z]?\d+\.\d+[a-z]?)\b", re.IGNORECASE)
 LW_EXTERNAL_RE = re.compile(
     r"\b(?:LW|Lynch and Walsh)\s+(Chapter|Equation|Table|Figure)\s+([A-Z]?\d+(?:\.\d+)?[a-z]?)\b",
@@ -50,13 +59,14 @@ PADDLE_RAW_FILE_NAMES = (
     "paddle_raw_api_response.json",
     "paddle_raw_response.json",
 )
-PADDLE_EXAMPLE_LABELS = {"text", "figure_title", "footer", "paragraph_title", "reference_content"}
+PADDLE_EXAMPLE_LABELS = {"text", "figure_title", "footer", "paragraph_title", "reference_content", "footnote"}
 PADDLE_EXAMPLE_BODY_LABELS = {
     "text",
     "figure_title",
     "footer",
     "paragraph_title",
     "reference_content",
+    "footnote",
     "table",
     "display_formula",
     "formula_number",
@@ -169,6 +179,9 @@ class RawExampleVisualStop:
     page_index: int
     row_index: int
     vertical_gap: float
+    source: str = "paddle_raw_layout_gap"
+    rule_bbox: list[Any] | None = None
+    rule_coverage: float | None = None
 
 
 def natural_key(value: str) -> list[Any]:
@@ -430,6 +443,26 @@ def build_spans(blocks: list[dict[str, Any]]) -> tuple[list[BlockSpan], str]:
     return spans, "".join(parts)
 
 
+def is_standalone_numbered_table_placeholder(text: str) -> bool:
+    return STANDALONE_NUMBERED_TABLE_RE.fullmatch(str(text or "")) is not None
+
+
+def first_standalone_numbered_table_boundary(
+    spans: list[BlockSpan],
+    *,
+    start: int,
+    end: int,
+) -> BlockSpan | None:
+    for span in spans:
+        if span.start <= start:
+            continue
+        if span.start >= end:
+            break
+        if is_standalone_numbered_table_placeholder(span.text):
+            return span
+    return None
+
+
 def find_example_anchors(spans: list[BlockSpan], block_text: str) -> list[dict[str, Any]]:
     anchors: list[dict[str, Any]] = []
     for span in spans:
@@ -463,6 +496,19 @@ def span_blocks(spans: list[BlockSpan], start: int, end: int) -> tuple[int, int]
     if not covered:
         return 0, 0
     return min(covered), max(covered)
+
+
+def span_blocks_until_next_anchor(spans: list[BlockSpan], start: int, end: int) -> tuple[int, int]:
+    """Return source blocks covered by an example's full pre-fold span.
+
+    ``end`` is normally the next example anchor or end of unit.  This is
+    intentionally wider than a visual-stop-clipped replacement interval: the
+    visual stop controls what content is folded into the example, while the
+    source span records the original structured block range associated with the
+    example before folding.
+    """
+
+    return span_blocks(spans, start, end)
 
 
 def sliced_text(block_text: str, start: int, end: int) -> str:
@@ -535,7 +581,14 @@ def extract_examples_for_file(
     stop_indexes: dict[str, int] = defaultdict(int)
     for index, anchor in enumerate(anchors):
         start = anchor["start"]
-        end = anchors[index + 1]["start"] if index + 1 < len(anchors) else len(block_text)
+        semantic_end = anchors[index + 1]["start"] if index + 1 < len(anchors) else len(block_text)
+        table_boundary = first_standalone_numbered_table_boundary(
+            spans,
+            start=start,
+            end=semantic_end,
+        )
+        end = table_boundary.start if table_boundary is not None else semantic_end
+        source_start_block, source_end_block = span_blocks_until_next_anchor(spans, start, end)
         raw_content = sliced_text(block_text, start, end).strip()
         visual_stop = None
         stop_candidates = (visual_stops or {}).get(anchor["example_id"], [])
@@ -571,15 +624,22 @@ def extract_examples_for_file(
             "detection_method": "example_heading_regex",
             "confidence": 0.97 if start == spans[start_block].start else 0.94,
         }
+        if table_boundary is not None:
+            evidence["standalone_numbered_table_boundary_stop"] = True
+            evidence["standalone_numbered_table_boundary_block_index"] = table_boundary.block_index
         if visual_stop_end is not None and visual_stop is not None:
             evidence = {
                 **evidence,
                 "visual_stop_clipped": True,
-                "visual_stop_source": "paddle_raw_layout_gap",
+                "visual_stop_source": visual_stop.source,
                 "visual_stop_page": visual_stop.page_index + 1,
                 "visual_stop_row_index": visual_stop.row_index,
                 "visual_stop_vertical_gap": visual_stop.vertical_gap,
             }
+            if visual_stop.rule_bbox:
+                evidence["visual_stop_rule_bbox"] = visual_stop.rule_bbox
+            if visual_stop.rule_coverage is not None:
+                evidence["visual_stop_rule_coverage"] = visual_stop.rule_coverage
         needs_review = looks_truncated(content_markdown)
         if end == len(block_text) and needs_review is False:
             needs_review = looks_truncated(content_markdown)
@@ -589,7 +649,11 @@ def extract_examples_for_file(
             "has_figure": bool(figure_refs),
             "word_count": len(content_plain.split()) if content_plain else 0,
             "needs_review": needs_review,
+            "source_block_span": [source_start_block, source_end_block],
         }
+        if table_boundary is not None:
+            metadata["standalone_numbered_table_boundary_stop"] = True
+            metadata["standalone_numbered_table_boundary_block_index"] = table_boundary.block_index
         if visual_stop_end is not None:
             metadata["replacement_end_char"] = end - spans[end_block].start
         examples.append(
@@ -617,21 +681,25 @@ def extract_examples_for_file(
 
 
 def load_paddle_raw_pages(project_root: Path, chapter: str) -> list[dict[str, Any]]:
-    raw_dir = project_root / "tmp" / "paddle_output" / f"{chapter}_full" / "intermediate"
-    for file_name in PADDLE_RAW_FILE_NAMES:
-        raw_path = raw_dir / file_name
-        if not raw_path.exists():
-            continue
-        try:
-            payload = read_json(raw_path)
-        except Exception:
-            continue
-        if isinstance(payload, list):
-            return [page for page in payload if isinstance(page, dict)]
-        result = payload.get("result", {}) if isinstance(payload, dict) else {}
-        pages = result.get("layoutParsingResults", []) if isinstance(result, dict) else []
-        if isinstance(pages, list) and pages:
-            return [page for page in pages if isinstance(page, dict)]
+    raw_dirs = [
+        project_root / "data" / "paddle_output" / f"{chapter}_full" / "intermediate",
+        project_root / "tmp" / "paddle_output" / f"{chapter}_full" / "intermediate",
+    ]
+    for raw_dir in raw_dirs:
+        for file_name in PADDLE_RAW_FILE_NAMES:
+            raw_path = raw_dir / file_name
+            if not raw_path.exists():
+                continue
+            try:
+                payload = read_json(raw_path)
+            except Exception:
+                continue
+            if isinstance(payload, list):
+                return [page for page in payload if isinstance(page, dict)]
+            result = payload.get("result", {}) if isinstance(payload, dict) else {}
+            pages = result.get("layoutParsingResults", []) if isinstance(result, dict) else []
+            if isinstance(pages, list) and pages:
+                return [page for page in pages if isinstance(page, dict)]
     return []
 
 
@@ -679,6 +747,158 @@ def ordered_paddle_records(project_root: Path, chapter: str) -> list[RawRecord]:
                 )
             )
     return records
+
+
+def chapter_pdf_path(project_root: Path, chapter: str) -> Path | None:
+    data_dir = project_root / "data"
+    if not data_dir.exists():
+        return None
+    direct_matches = list(data_dir.glob(f"*/{chapter}.pdf"))
+    if direct_matches:
+        return direct_matches[0]
+    for path in data_dir.rglob(f"{chapter}.pdf"):
+        return path
+    return None
+
+
+@lru_cache(maxsize=128)
+def raw_example_pdf_visual_rules(project_root: Path, chapter: str) -> dict[int, list[dict[str, Any]]]:
+    pdf_path = chapter_pdf_path(project_root, chapter)
+    if pdf_path is None:
+        return {}
+    pages = load_paddle_raw_pages(project_root, chapter)
+    rules_by_page: dict[int, list[dict[str, Any]]] = {}
+    for page_index, page in enumerate(pages):
+        width, height = _page_size_from_payload_page(page)
+        rules = _detect_visual_horizontal_rules(
+            pdf_path=pdf_path,
+            page_index=page_index + 1,
+            expected_width=width,
+            expected_height=height,
+        )
+        strong_rules = [
+            rule
+            for rule in rules
+            if float(rule.get("coverage") or 0.0) >= 0.55
+            and float(rule.get("max_row_dark_ratio") or 0.0) >= 0.45
+        ]
+        if strong_rules:
+            rules_by_page[page_index] = strong_rules
+    return rules_by_page
+
+
+def bbox_horizontal_overlap_ratio(left_bbox: list[Any] | None, right_bbox: list[Any] | None) -> float:
+    if not isinstance(left_bbox, list) or len(left_bbox) < 4:
+        return 0.0
+    if not isinstance(right_bbox, list) or len(right_bbox) < 4:
+        return 0.0
+    try:
+        left_x1, _left_y1, left_x2, _left_y2 = (float(item) for item in left_bbox[:4])
+        right_x1, _right_y1, right_x2, _right_y2 = (float(item) for item in right_bbox[:4])
+    except (TypeError, ValueError):
+        return 0.0
+    left_min, left_max = sorted((left_x1, left_x2))
+    right_min, right_max = sorted((right_x1, right_x2))
+    overlap = max(0.0, min(left_max, right_max) - max(left_min, right_min))
+    return overlap / max(min(left_max - left_min, right_max - right_min), 1.0)
+
+
+def looks_like_post_rule_body(record: RawRecord) -> bool:
+    if record.label == "paragraph_title":
+        return True
+    if record.label not in {"text", "reference_content", "figure_title", "header"}:
+        return False
+    return looks_like_new_body_paragraph_allowing_inline_math(record)
+
+
+def pdf_visual_rule_between_records(
+    previous: RawRecord,
+    current: RawRecord,
+    rules_by_page: dict[int, list[dict[str, Any]]],
+) -> dict[str, Any] | None:
+    if previous.page_index != current.page_index:
+        return None
+    previous_bottom = raw_record_bottom(previous)
+    current_top = raw_record_top(current)
+    if previous_bottom is None or current_top is None:
+        return None
+    if current_top <= previous_bottom:
+        return None
+    previous_left = raw_record_left(previous)
+    current_left = raw_record_left(current)
+    margin_reset = (
+        previous_left is not None
+        and current_left is not None
+        and current_left <= previous_left - 20
+        and current.label in {"text", "reference_content", "figure_title"}
+    )
+    if not looks_like_post_rule_body(current) and not margin_reset:
+        return None
+    previous_can_end = text_ends_sentence(previous.content) or previous.label in {
+        "display_formula",
+        "formula_number",
+        "table",
+        "figure_title",
+    }
+    if not previous_can_end:
+        return None
+    for rule in rules_by_page.get(previous.page_index, []):
+        bbox = rule.get("bbox")
+        if not isinstance(bbox, list) or len(bbox) < 4:
+            continue
+        try:
+            center_y = (float(bbox[1]) + float(bbox[3])) / 2.0
+        except (TypeError, ValueError):
+            continue
+        if not (previous_bottom + 4 <= center_y <= current_top - 4):
+            continue
+        if bbox_horizontal_overlap_ratio(bbox, previous.bbox) < 0.40:
+            continue
+        if bbox_horizontal_overlap_ratio(bbox, current.bbox) < 0.40:
+            continue
+        return rule
+    return None
+
+
+def pdf_visual_rule_before_record(
+    current: RawRecord,
+    rules_by_page: dict[int, list[dict[str, Any]]],
+) -> dict[str, Any] | None:
+    """Return a rendered horizontal rule immediately above ``current``.
+
+    Example boxes often continue across pages.  In that layout the visual end
+    rule can be at the top of the continuation page, with only page header/folio
+    rows between the rule and the first post-example paragraph.  The ordinary
+    same-page "between records" check cannot see that boundary, so this helper
+    treats a strong rule above a body paragraph as a stop even when the previous
+    in-example record is on the prior page.
+    """
+
+    current_top = raw_record_top(current)
+    current_left = raw_record_left(current)
+    page_left_body = (
+        current_left is not None
+        and current_left <= 180
+        and current.label in {"text", "reference_content", "figure_title", "header"}
+    )
+    if current_top is None or (not looks_like_post_rule_body(current) and not page_left_body):
+        return None
+    for rule in rules_by_page.get(current.page_index, []):
+        bbox = rule.get("bbox")
+        if not isinstance(bbox, list) or len(bbox) < 4:
+            continue
+        try:
+            center_y = (float(bbox[1]) + float(bbox[3])) / 2.0
+        except (TypeError, ValueError):
+            continue
+        if not (center_y < current_top - 4):
+            continue
+        if current_top - center_y > 90:
+            continue
+        if bbox_horizontal_overlap_ratio(bbox, current.bbox) < 0.40:
+            continue
+        return rule
+    return None
 
 
 def raw_record_bottom(record: RawRecord) -> float | None:
@@ -737,6 +957,23 @@ def looks_like_new_body_paragraph(record: RawRecord) -> bool:
     return False
 
 
+def looks_like_new_body_paragraph_allowing_inline_math(record: RawRecord) -> bool:
+    value = collapse_ws(record.content)
+    if not value or raw_example_start_match(value):
+        return False
+    if re.match(r"^\s*(?:\[\[|\$\$|\\begin\{|\\end\{)", value):
+        return False
+    value = re.sub(r"\$[^$]*\$", " MATH ", value)
+    value = re.sub(r"\[\[[^\]]+\]\]", " REF ", value)
+    if BODY_PARAGRAPH_OPENING_RE.match(value):
+        return True
+    if not re.match(r"^[A-Z][A-Za-z-]+\b", value):
+        return False
+    if re.match(r"^(?:And|As|But|Or|Thus|Hence|This|These|The|Why|Recall|Consider|Suppose|When|While|If)\b", value):
+        return True
+    return False
+
+
 def is_strong_visual_stop(previous: RawRecord, current: RawRecord) -> tuple[bool, float]:
     gap = raw_vertical_gap(previous, current)
     if gap is None or gap < 45:
@@ -749,8 +986,13 @@ def is_strong_visual_stop(previous: RawRecord, current: RawRecord) -> tuple[bool
     return False, gap
 
 
-def raw_example_visual_stops(records: list[RawRecord]) -> dict[str, list[RawExampleVisualStop]]:
+def raw_example_visual_stops(
+    records: list[RawRecord],
+    *,
+    rules_by_page: dict[int, list[dict[str, Any]]] | None = None,
+) -> dict[str, list[RawExampleVisualStop]]:
     stops: dict[str, list[RawExampleVisualStop]] = defaultdict(list)
+    rules_by_page = rules_by_page or {}
     index = 0
     while index < len(records):
         record = records[index]
@@ -772,6 +1014,24 @@ def raw_example_visual_stops(records: list[RawRecord]) -> dict[str, list[RawExam
             if current.label not in PADDLE_EXAMPLE_BODY_LABELS:
                 break
             if current.label in {"paragraph_title"}:
+                break
+            pdf_rule = pdf_visual_rule_between_records(last_content_record, current, rules_by_page)
+            if pdf_rule is None:
+                pdf_rule = pdf_visual_rule_before_record(current, rules_by_page)
+            if pdf_rule is not None:
+                stops[example_id].append(
+                    RawExampleVisualStop(
+                        example_id=example_id,
+                        included_tail=last_content_record.content,
+                        stop_text=current.content,
+                        page_index=current.page_index,
+                        row_index=current.row_index,
+                        vertical_gap=raw_vertical_gap(last_content_record, current) or 0.0,
+                        source="pdf_rendered_horizontal_rule",
+                        rule_bbox=pdf_rule.get("bbox") if isinstance(pdf_rule.get("bbox"), list) else None,
+                        rule_coverage=float(pdf_rule.get("coverage") or 0.0),
+                    )
+                )
                 break
             is_stop, gap = is_strong_visual_stop(last_content_record, current)
             if is_stop:
@@ -829,6 +1089,48 @@ def looks_like_post_example_body(record: RawRecord | dict[str, Any], example_id:
     if back_ref and clean_ref_id(back_ref.group("example_id")).lower() == clean_ref_id(example_id).lower():
         return True
     return bool(AUTHOR_YEAR_PARAGRAPH_RE.match(content))
+
+
+def looks_like_figure_reference_sentence(record: RawRecord) -> bool:
+    if record.label != "text":
+        return False
+    content = collapse_ws(record.content)
+    return bool(
+        re.match(
+            r"^\s*(?:Figure|Fig\.)\s+(?:A\d+|\d+)\.\d+[a-z]?\s+"
+            r"(?:plots|shows|illustrates|summarizes|summarises|gives|provides|reports|contains)\b",
+            content,
+            flags=re.IGNORECASE,
+        )
+    )
+
+
+def looks_like_in_example_figure_caption(record: RawRecord) -> bool:
+    if record.label != "figure_title":
+        return False
+    content = collapse_ws(record.content)
+    if not FIGURE_CAPTION_START_RE.match(content):
+        return False
+    return bool(re.search(r"\b(?:Example|Equation)\s+(?:A\d+|\d+)\.\d+[a-z]?\b", content, flags=re.IGNORECASE))
+
+
+def is_potential_example_continuation(record: RawRecord, parts: list[str]) -> bool:
+    if not parts:
+        return False
+    if record.label in {"display_formula", "formula_number", "table"}:
+        return True
+    if record.label in {"text", "reference_content", "footnote"}:
+        return True
+    if record.label == "figure_title":
+        content = collapse_ws(record.content)
+        previous = parts[-1] if parts else ""
+        if previous.endswith(("-", "‐", "‑", "‒", "–")) and is_lowercase_continuation(content):
+            return True
+        if not FIGURE_CAPTION_START_RE.match(content):
+            return True
+    if looks_like_in_example_figure_caption(record):
+        return True
+    return False
 
 
 def is_lowercase_continuation(text: str) -> bool:
@@ -932,6 +1234,8 @@ def raw_example_stop_for_body(
     record: RawRecord,
     parts: list[str],
     chapter_records: list[RawRecord] | None = None,
+    *,
+    visual_box_active: bool = False,
 ) -> bool:
     if record.label in PADDLE_PAGE_NOISE_LABELS or is_publication_footer(record.content):
         return False
@@ -949,7 +1253,10 @@ def raw_example_stop_for_body(
         flags=re.IGNORECASE,
     ):
         return True
-    if FIGURE_CAPTION_START_RE.match(record.content):
+    if FIGURE_CAPTION_START_RE.match(record.content) and not (
+        looks_like_figure_reference_sentence(record)
+        or (visual_box_active and looks_like_in_example_figure_caption(record))
+    ):
         return True
     if chapter_records is not None and raw_table_has_numbered_caption(record, chapter_records):
         return True
@@ -963,7 +1270,11 @@ def raw_example_stop_for_body(
             current = collapse_ws(record.content)
             if re.match(r"^As\s+Example\s+(?:A\d+|\d+)\.\d+\b", current, flags=re.IGNORECASE):
                 return True
-        if record.label == "text" and not should_continue_raw_example(record, parts):
+        if (
+            record.label == "text"
+            and not visual_box_active
+            and not should_continue_raw_example(record, parts)
+        ):
             previous_text = next((part for part in reversed(parts) if not TABLE_MARKER_RE.fullmatch(part.strip())), previous)
             if text_ends_sentence(previous_text) and looks_like_new_body_paragraph(record):
                 return True
@@ -1056,6 +1367,7 @@ def raw_example_to_candidate(
     source_file: str,
     source_block_index: int,
     source_page: int,
+    visual_stop: RawExampleVisualStop | None = None,
 ) -> ExampleCandidate:
     content_markdown = collapse_ws(" ".join(part for part in raw_parts if part.strip()))
     content_markdown = normalize_heading_prefix(content_markdown)
@@ -1074,6 +1386,40 @@ def raw_example_to_candidate(
     table_refs = extract_table_refs(content_markdown)
     figure_refs = extract_figure_refs(content_markdown)
     external_refs = extract_external_refs(content_markdown)
+    evidence = {
+        "source": "paddle_raw_layout+structured_blocks",
+        "detection_method": "raw_layout_example_recovery",
+        "confidence": 0.93,
+        "source_page": source_page,
+    }
+    metadata = {
+        "has_formula": bool(formula_refs),
+        "has_table": bool(table_refs),
+        "has_figure": bool(figure_refs),
+        "word_count": len(content_plain.split()) if content_plain else 0,
+        "needs_review": looks_truncated(content_markdown),
+    }
+    if visual_stop is not None:
+        evidence = {
+            **evidence,
+            "visual_stop_clipped": True,
+            "visual_stop_source": visual_stop.source,
+            "visual_stop_page": visual_stop.page_index + 1,
+            "visual_stop_row_index": visual_stop.row_index,
+            "visual_stop_vertical_gap": visual_stop.vertical_gap,
+        }
+        if visual_stop.rule_bbox:
+            evidence["visual_stop_rule_bbox"] = visual_stop.rule_bbox
+        if visual_stop.rule_coverage is not None:
+            evidence["visual_stop_rule_coverage"] = visual_stop.rule_coverage
+        metadata["visual_stop_clipped"] = True
+        metadata["visual_stop"] = {
+            "included_tail": visual_stop.included_tail,
+            "stop_text": visual_stop.stop_text,
+            "page_index": visual_stop.page_index,
+            "row_index": visual_stop.row_index,
+            "source": visual_stop.source,
+        }
     return ExampleCandidate(
         example_id=example_id,
         chapter=chapter,
@@ -1089,19 +1435,8 @@ def raw_example_to_candidate(
         table_refs=table_refs,
         figure_refs=figure_refs,
         external_refs=external_refs,
-        evidence={
-            "source": "paddle_raw_layout+structured_blocks",
-            "detection_method": "raw_layout_example_recovery",
-            "confidence": 0.93,
-            "source_page": source_page,
-        },
-        metadata={
-            "has_formula": bool(formula_refs),
-            "has_table": bool(table_refs),
-            "has_figure": bool(figure_refs),
-            "word_count": len(content_plain.split()) if content_plain else 0,
-            "needs_review": looks_truncated(content_markdown),
-        },
+        evidence=evidence,
+        metadata=metadata,
         _order_key=(chapter_sort_key(chapter), natural_key(source_file), source_block_index, natural_key(example_id)),
     )
 
@@ -1232,6 +1567,7 @@ def recover_examples_from_paddle_raw(
     if not records:
         return []
 
+    rules_by_page = raw_example_pdf_visual_rules(project_root, chapter)
     normalized_target_ids = {clean_ref_id(item).lower() for item in target_ids} if target_ids is not None else None
     recovered: list[ExampleCandidate] = []
     index = 0
@@ -1256,13 +1592,50 @@ def recover_examples_from_paddle_raw(
         source_file, source_block_index = next_placeholder_source(chapter, example_id, context)
         parts = [record.content]
         used_table_refs: set[str] = set()
+        visual_stop = None
+        last_content_record = record
+        visual_box_active = bool(
+            pdf_visual_rule_before_record(record, rules_by_page)
+            or any(
+                isinstance(rule.get("bbox"), list)
+                and len(rule.get("bbox")) >= 4
+                and raw_record_top(record) is not None
+                and raw_record_top(record) > float(rule.get("bbox")[3])
+                and raw_record_top(record) - float(rule.get("bbox")[3]) <= 90
+                and bbox_horizontal_overlap_ratio(rule.get("bbox"), record.bbox) >= 0.40
+                for rule in rules_by_page.get(record.page_index, [])
+            )
+        )
         cursor = index + 1
         while cursor < len(records):
             next_record = records[cursor]
             if next_record.label in PADDLE_PAGE_NOISE_LABELS or is_publication_footer(next_record.content):
                 cursor += 1
                 continue
-            if raw_example_stop_for_body(next_record, parts, records):
+            pdf_rule = pdf_visual_rule_between_records(last_content_record, next_record, rules_by_page)
+            if pdf_rule is None:
+                pdf_rule = pdf_visual_rule_before_record(next_record, rules_by_page)
+            if pdf_rule is not None:
+                visual_stop = RawExampleVisualStop(
+                    example_id=example_id,
+                    included_tail=last_content_record.content,
+                    stop_text=next_record.content,
+                    page_index=next_record.page_index,
+                    row_index=next_record.row_index,
+                    vertical_gap=raw_vertical_gap(last_content_record, next_record) or 0.0,
+                    source="pdf_rendered_horizontal_rule",
+                    rule_bbox=pdf_rule.get("bbox") if isinstance(pdf_rule.get("bbox"), list) else None,
+                    rule_coverage=float(pdf_rule.get("coverage") or 0.0),
+                )
+                break
+            if raw_example_stop_for_body(
+                next_record,
+                parts,
+                records,
+                visual_box_active=visual_box_active,
+            ):
+                break
+            if visual_box_active and not is_potential_example_continuation(next_record, parts):
                 break
             append_raw_record_to_example_parts(
                 next_record,
@@ -1273,6 +1646,17 @@ def recover_examples_from_paddle_raw(
                 context=context,
                 used_table_refs=used_table_refs,
             )
+            if next_record.label in {
+                "text",
+                "figure_title",
+                "footer",
+                "reference_content",
+                "footnote",
+                "table",
+                "display_formula",
+                "formula_number",
+            }:
+                last_content_record = next_record
             cursor += 1
 
         raw_text = " ".join(parts)
@@ -1288,6 +1672,7 @@ def recover_examples_from_paddle_raw(
                 source_file=source_file,
                 source_block_index=source_block_index,
                 source_page=record.page_index + 1,
+                visual_stop=visual_stop,
             )
         )
         existing_ids.add(example_id)
@@ -1308,7 +1693,8 @@ def extract_examples_for_structured_dir(
     for chapter, units in sorted(context.units_by_chapter.items(), key=lambda item: chapter_sort_key(item[0])):
         chapter_examples: list[ExampleCandidate] = []
         chapter_records = ordered_paddle_records(project_root, chapter)
-        visual_stops = raw_example_visual_stops(chapter_records) if chapter_records else {}
+        rules_by_page = raw_example_pdf_visual_rules(project_root, chapter) if chapter_records else {}
+        visual_stops = raw_example_visual_stops(chapter_records, rules_by_page=rules_by_page) if chapter_records else {}
         for path, data in units:
             examples = extract_examples_for_file(path, data, visual_stops=visual_stops)
             chapter_examples.extend(examples)

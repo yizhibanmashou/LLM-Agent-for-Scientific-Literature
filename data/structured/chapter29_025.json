@@ -2,7 +2,7 @@
   "id": "chapter29_025",
   "metadata": {
     "chapter": "chapter29",
-    "section": "Individual Fitness and the Measurement of Univariate Selection: Introduction",
+    "section": "DESCRIBING PHENOTYPIC SELECTION: CHANGES IN PHENOTYPIC MOMENTS",
     "subsections": [
       "Partitioning Changes in Means and Variances Into Episodes of Selection"
     ],
@@ -19,10 +19,10 @@
       "29.23c"
     ],
     "table_references": [],
-    "section_level_1": "Individual Fitness and the Measurement of Univariate Selection: Introduction",
+    "section_level_1": "DESCRIBING PHENOTYPIC SELECTION: CHANGES IN PHENOTYPIC MOMENTS",
     "section_level_2": "Partitioning Changes in Means and Variances Into Episodes of Selection",
     "heading_path": [
-      "Individual Fitness and the Measurement of Univariate Selection: Introduction",
+      "DESCRIBING PHENOTYPIC SELECTION: CHANGES IN PHENOTYPIC MOMENTS",
       "Partitioning Changes in Means and Variances Into Episodes of Selection"
     ],
     "display_heading": "Partitioning Changes in Means and Variances Into Episodes of Selection"
@@ -43,6 +43,18 @@
     {
       "type": "example",
       "content": "[[SEE_EXAMPLE:29.8]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Partitioning $ \\beta $ and $ \\gamma $ requires a little more care, as we have to account for changes in the phenotypic variance following each episode. From their definitions, the appropriate gradients for the jth episode of selection are [[SEE_FORMULA:29.23a]]"
+    },
+    {
+      "type": "derivation",
+      "content": "In their original paper, Arnold and Wade (1984a) initially defined gradients for each episode using the baseline variance, $\\sigma_0^2$, throughout. With this definition, gradients are additive across episodes, as their numerators (being covariances) are additive and the denominators are unchanged. This approach is often called the additive partition (or more correctly, the unweighted additive partition), as $\\beta_T = \\sum \\beta_j^0$, where $\\beta_j^0 = S_j / \\sigma_0^2$. Kalisz (1986) and Wade and Kalisz (1989) noted that the correct definition for an episodic gradient depends upon the trait variance at the start of each episode (Equation 29.23a), and the variance is expected to change during each episode. Writing $S_j = \\beta_j \\sigma_{j-1}^2$ gives [[SEE_FORMULA:29.23b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Equation 29.23b defines the variance-weighted additive partition of gradients, where the total selection gradient is now a weighted sum of the individual gradients associated with each episode. The partition of $ \\gamma $ follows in a similar manner, with [[SEE_FORMULA:29.23c]] where $ \\gamma_j $ is calculated by Equation 29.23a. McGlothlin (2010) presented the multivariate version of Equation 29.23c and also revealed a key feature of Equation 29.23c. Note that $ \\gamma $ can be nonzero even when all of the values of $ \\gamma_j $ are zero. Further, when directional selection is occurring, the sign of $ \\gamma $ can be different from the sign of the average value of $ \\gamma_k $."
     }
   ]
 }

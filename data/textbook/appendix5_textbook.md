@@ -1,4 +1,4 @@
-# Appendix 5 Textbook Mapping
+# Appendix 5 · Appendix
 
 ## appendix5_001 · Appendix: Introduction
 
@@ -14,17 +14,26 @@ As there are numerous excellent texts on matrix algebra, we made little effort t
 
 ---
 
-## appendix5_003 · Appendix: Introduction / Comparing Vectors: Lengths and Angles
+## appendix5_003 · THE GEOMETRY OF VECTORS AND MATRICES / Comparing Vectors: Lengths and Angles
 
-As Figure A5.1A shows, a vector, x, can be treated as a geometric object, consisting of an arrow leading from the origin to an n-dimensional point whose coordinates are given by the elements of x. By changing coordinate systems, we change the resulting vector, potentially changing both its direction (rotating the vector) and length (scaling the vector). This geometric interpretation suggests several ways for comparing vectors, such as the angle between two vectors and the projection of one vector onto another.
+As Figure A5.1 shows, a vector, x, can be treated as a geometric object, consisting of an arrow leading from the origin to an n-dimensional point whose coordinates are given by the elements of x. By changing coordinate systems, we change the resulting vector, potentially changing both its direction (rotating the vector) and length (scaling the vector). This geometric interpretation suggests several ways for comparing vectors, such as the angle between two vectors and the projection of one vector onto another.
 
 Consider first the length (or norm) of a vector. The most common measure of length is the Euclidean distance of the vector from the origin, $ \|x\| $, defined as $$ \begin{align*}||\mathbf{x}||=\sqrt{x_1^2+x_2^2+\cdots+x_n^2}=\sqrt{\mathbf{x}^T\mathbf{x}}\end{align*} $$
 
 For any scalar $ a, ||a\mathbf{x}|| = |a|||\mathbf{x}| $. Similarly, the squared Euclidean distance between the vectors x and y is $$ \begin{align*}\vert\vert\mathbf{x}-\mathbf{y}\vert\vert^{2}=\sum\limits_{i=1}^n(x_i-y_i)^{2}=(\mathbf{x}-\mathbf{y})^{T}(\mathbf{x}-\mathbf{y})=(\mathbf{y}-\mathbf{x})^{T}(\mathbf{y}-\mathbf{x})\end{align*} $$
 
-Vectors can differ by length, direction, or both. The angle, $ \theta $, between two vectors (x and y) provides a measure of how much they differ in direction (Figure A5.1C). If the vectors
+Vectors can differ by length, direction, or both. The angle, $ \theta $, between two vectors (x and y) provides a measure of how much they differ in direction (Figure A5.1). If the vectors
 
-.. satisfy $ax = y$, they both point in exactly the same direction ($\theta = 0$; they are codirectional) when $a > 0$. If $a < 0$, they are exactly 180 degrees apart and differ in direction only by a reflection about the origin (Figure A5.1B). At the other extreme, two vectors can be at right angles to each other ($\theta = 90^\circ$ or $270^\circ$), in which case they are said to be orthogonal. Orthogonal vectors of unit length are further said to be orthonormal. For any two $n$-dimensional vectors, $\theta$ satisfies $$ \begin{align*}\cos(\theta)=\frac{\mathbf{x}^T\mathbf{y}}{||\mathbf{x}||~||\mathbf{y}||}=\frac{\mathbf{y}^T\mathbf{x}}{||\mathbf{x}||~||\mathbf{y}||}\end{align*} $$
+**[Figure]**
+
+> **Figure A5.1** · page 2 · source: `appendix5`
+>
+> ![Figure A5.1](../figures/fig_0015.png)
+>
+> Figure A5.1 Some basic geometric concepts of vectors. While we use examples from two dimensions, these concepts easily extend to $n$ dimensions. A: A vector $x$ can be thought of as an arrow from the origin to a point in space whose coordinates are given by the elements of $x$. B: Multiplying a vector by $-1$ results in a reflection about the origin. C: One measure of the difference in direction between two vectors is the angle $(\theta)$ between them. D: Proj($\mathbf{b}$ on $\mathbf{a}$) is the vector resulting from the projection of $\mathbf{b}$ onto a. Note that the resulting projection vector is either in the same direction as $a$ or in the direction of the reflection of $a$, as seen for Proj($\mathbf{c}$ on $\mathbf{a}$).
+
+
+.. satisfy $ax = y$, they both point in exactly the same direction ($\theta = 0$; they are codirectional) when $a > 0$. If $a < 0$, they are exactly 180 degrees apart and differ in direction only by a reflection about the origin (Figure A5.1). At the other extreme, two vectors can be at right angles to each other ($\theta = 90^\circ$ or $270^\circ$), in which case they are said to be orthogonal. Orthogonal vectors of unit length are further said to be orthonormal. For any two $n$-dimensional vectors, $\theta$ satisfies $$ \begin{align*}\cos(\theta)=\frac{\mathbf{x}^T\mathbf{y}}{||\mathbf{x}||~||\mathbf{y}||}=\frac{\mathbf{y}^T\mathbf{x}}{||\mathbf{x}||~||\mathbf{y}||}\end{align*} $$
 
 Hence, $$ \begin{align*}\theta=\cos^{-1}\left({\bf{y}^T\bf{x}\over||\bf{x}||~||\bf{y}||}\right)\end{align*} $$
 
@@ -44,24 +53,29 @@ One way to think about such a decomposition is as the transformation from one se
 
 ---
 
-## appendix5_004 · Appendix: Introduction / Matrices Describe Vector Transformations
+## appendix5_004 · THE GEOMETRY OF VECTORS AND MATRICES / Matrices Describe Vector Transformations
 
 When we multiply a vector, x, by a matrix, A, to create a new vector, y = Ax, A rotates and scales the original vector, x, into the new vector, y. A therefore describes a transformation of the original coordinate system of x into a new coordinate system, y (which has a different dimension from x unless A is square).
 
 **[示例 Example]**
 
-> **Example A5.1** · ref: `A5.1` · source: `appendix5_004.json` · blocks 1–1
+> **Example A5.1** · ref: `A5.1` · source: `appendix5_004.json` · blocks 1–3
 >
-> Example A5.1. Consider the Lande version of the multivariate breeder’s equation, $ \mathbf{R} = \mathbf{G}\beta $ (Equation 13.26a). Here $ \mathbf{R} $ is the change in the vector of phenotypic means resulting from selection, $ \mathbf{G} $ is the covariance matrix of additive-genetic values (breeding values) of the characters, and $ \beta $ is the directional selection gradient (the direction of change in character means that results in the greatest increase in mean population fitness; Chapters 13 and 30). Suppose $$ \mathbf{G}=\begin{pmatrix}4&-2\\ -2&2\end{pmatrix}\quad and\quad\boldsymbol{\beta}=\begin{pmatrix}1\\ 3\end{pmatrix},\quad yielding\quad\mathbf{R}=\mathbf{G}\boldsymbol{\beta}=\begin{pmatrix}-2\\ 4\end{pmatrix} $$
-> 
-> The resulting direction of change in character means is different from that most favored by natural selection. Selection ($ \beta $) favors an increase in trait one ($ z_1 $), but when the genetic covariance structure is taken into account, the resulting change in the mean of $ z_1 $ is negative. If we take the appropriate inner products, we find $ \|\beta\| = \sqrt{10} $, $ \|\mathbf{R}\| = \sqrt{20} $, and $ \beta^T \mathbf{R} = 10 $. Equation A5.2a returns $$ \cos(\theta)=\frac{\beta^{T}\mathbf{R}}{||\mathbf{R}||||\beta||}=\frac{1}{\sqrt{2}} $$
-> 
-> The resulting angle between the selection gradient and response vector is $ \cos^{-1}(1/\sqrt{2}) = 45^\circ $, implying that the constraints introduced by the genetic covariance matrix rotate the response vector considerably away from the direction most favored by natural selection (Figure A5.2).
+> Example A5.1. Consider the Lande version of the multivariate breeder’s equation, $ \mathbf{R} = \mathbf{G}\beta $ (Equation 13.26a). Here $ \mathbf{R} $ is the change in the vector of phenotypic means resulting from selection, $ \mathbf{G} $ is the covariance matrix of additive-genetic values (breeding values) of the characters, and $ \beta $ is the directional selection gradient (the direction of change in character means that results in the greatest increase in mean population fitness; Chapters 13 and 30). Suppose $$ \mathbf{G}=\begin{pmatrix}4&-2\\ -2&2\end{pmatrix}\quad and\quad\boldsymbol{\beta}=\begin{pmatrix}1\\ 3\end{pmatrix},\quad yielding\quad\mathbf{R}=\mathbf{G}\boldsymbol{\beta}=\begin{pmatrix}-2\\ 4\end{pmatrix} $$ The resulting direction of change in character means is different from that most favored by natural selection. Selection ( $ \beta $) favors an increase in trait one ( $ z_1 $), but when the genetic covariance structure is taken into account, the resulting change in the mean of $ z_1 $ is negative. If we take the appropriate inner products, we find $ \|\beta\| = \sqrt{10} $, $ \|\mathbf{R}\| = \sqrt{20} $, and $ \beta^T \mathbf{R} = 10 $. Equation A5.2a returns $$ \cos(\theta)=\frac{\beta^{T}\mathbf{R}}{||\mathbf{R}||||\beta||}=\frac{1}{\sqrt{2}} $$ The resulting angle between the selection gradient and response vector is $ \cos^{-1}(1/\sqrt{2}) = 45^\circ $, implying that the constraints introduced by the genetic covariance matrix rotate the response vector considerably away from the direction most favored by natural selection (Figure A5.2). Figure A5.2 If we use the values of $ \beta $ and G from Example A5.1, observe that G translates the directional selection gradient vector $ (\beta) $ into the response vector $ (R) $ in a counterintuitive fashion. While $ \beta $ shows that fitness is maximized by increasing both traits 1 and 2, the resulting response vector, R, increases trait 2 but decreases trait 1. This behavior results from the strong negative additive-genetic covariance between $ z_1 $ and $ z_2 $, as will become more obvious shortly, when we consider the eigenvectors of G (Figure A5.3). As shown in Example A5.1, the angle between the vectors $ \beta $ and R is 45 degrees.
 
 
 ---
 
-## appendix5_005 · Appendix: Introduction / Orthonormal Matrices: Rigid Rotations
+## appendix5_005 · THE GEOMETRY OF VECTORS AND MATRICES / Orthonormal Matrices: Rigid Rotations
+
+**[Figure]**
+
+> **Figure A5.2** · page 4 · source: `appendix5`
+>
+> ![Figure A5.2](../figures/fig_0016.png)
+>
+> Figure A5.2 If we use the values of  $ \beta $ and G from Example A5.1, observe that G translates the directional selection gradient vector  $ (\beta) $ into the response vector  $ (R) $ in a counterintuitive fashion. While  $ \beta $ shows that fitness is maximized by increasing both traits 1 and 2, the resulting response vector, R, increases trait 2 but decreases trait 1. This behavior results from the strong negative additive-genetic covariance between  $ z_1 $ and  $ z_2 $, as will become more obvious shortly, when we consider the eigenvectors of G (Figure A5.3). As shown in Example A5.1, the angle between the vectors  $ \beta $ and R is 45 degrees.
+
 
 A key building block on our way to the partitioning of a matrix into its rotational and scaling components is the idea of an orthonormal matrix. Writing a square $ n \times n $ matrix, U, as a row vector whose n elements are $ 1 \times n $ column vectors, $ \mathbf{U} = (\mathbf{u}_1, \mathbf{u}_2, \cdots, \mathbf{u}_n) $, then U is said to be orthonormal if $$ \begin{align*}\mathbf{u}_i^T\mathbf{u}_j=\begin{cases}1&\textrm{if}i=j\\0&\textrm{if}i\neq j\end{cases}\end{align*} $$
 
@@ -73,7 +87,7 @@ Thus, orthonormal matrices do not change (scale) the length of vectors, as $ \|y
 
 ---
 
-## appendix5_006 · Appendix: Introduction / Eigenvalues and Eigenvectors
+## appendix5_006 · THE GEOMETRY OF VECTORS AND MATRICES / Eigenvalues and Eigenvectors
 
 The eigenvalues, and their associated eigenvectors, of a square matrix describe its transformational geometry. Eigenvalues describe how the original coordinate axes are scaled in the new coordinate system that is described by the eigenvectors (i.e., how the original axes are rotated).
 
@@ -93,22 +107,23 @@ If we again apply Equation A5.3b, we can express this decomposition as $$ \mathb
 
 **[示例 Example]**
 
-> **Example A5.2** · ref: `A5.2` · source: `appendix5_006.json` · blocks 8–8
+> **Example A5.2** · ref: `A5.2` · source: `appendix5_006.json` · blocks 8–12
 >
-> Example A5.2. Determine the eigenstructure of the genetic covariance matrix G shown in Example A5.1. Writing the characteristic equation, and recalling the expression for the determinant of a $ 2 \times 2 $ matrix (LW Equation 8.12a), yields $$ \begin{aligned}\left|\mathbf{G}-\lambda\mathbf{I}\right|&=\left|\begin{pmatrix}4-\lambda&-2\\ -2&2-\lambda\end{pmatrix}\right|\\&=(4-\lambda)(2-\lambda)-(-2)^{2}=\lambda^{2}-6\lambda+4=0\end{aligned} $$
-> 
-> Alternatively, if we use the Laplace expansion (Equation A5.7), and note that $ \mathrm{tr}(\mathbf{G}) = 4 + 2 = 6 $ and $ |\mathbf{G}| = 4 \cdot 2 - (-2)^2 = 4 $, we will also recover the characteristic equation, which has solutions $$ \lambda_{1}=3+\sqrt{5}\simeq5.236\qquad\lambda_{2}=3-\sqrt{5}\simeq0.764 $$
-> 
-> The associated unit eigenvectors (which as easily obtained, along with the eigenvectors, by using the R command eigen) are $$ \mathbf{e}_{1}\simeq\begin{pmatrix}-0.851\\ 0.526\end{pmatrix}\qquad\mathbf{e}_{2}\simeq\begin{pmatrix}0.526\\ 0.851\end{pmatrix} $$
-> 
-> These are orthogonal as $ \mathbf{e}_{1}^{T}\mathbf{e}_{2}=0 $.
-> 
-> The eigenstructure of G shows why the vector of responses, $ \mathbf{R} $, is rotated away from the direction of the vector that corresponds to the direction of selection, $ \beta $. From Example A5.1, $ ||\boldsymbol{\beta}|| = \sqrt{10} $, while $ \mathbf{e}_1^T \boldsymbol{\beta} \simeq 0.727 $ and $ \mathbf{e}_2^T \boldsymbol{\beta} \simeq 3.079 $. Because $ ||\mathbf{e}_1|| = ||\mathbf{e}_2|| = 1 $, Equation A5.2a simplifies to $$ \cos(\theta|\mathbf{e}_{1},\boldsymbol{\beta})\simeq\frac{0.727}{\sqrt{10}}\simeq0.230\qquad and\qquad\cos(\theta|\mathbf{e}_{2},\boldsymbol{\beta})\simeq\frac{3.079}{\sqrt{10}}\simeq0.974 $$ giving the angle between $\mathbf{e}_1$ and $\boldsymbol{\beta}$ as $\theta(\mathbf{e}_1, \boldsymbol{\beta}) \simeq 76.7^\circ$, while $\theta(\mathbf{e}_2, \boldsymbol{\beta}) \simeq 13.2^\circ$. Applying Equation A5.3b, the corresponding scaled projections of $\boldsymbol{\beta}$ on these eigenvectors are $$ \begin{aligned}\lambda_{1}Proj(\boldsymbol{\beta}on\mathbf{e}_{1})&=\lambda_{1}\cos(\theta|\mathbf{e}_{1},\boldsymbol{\beta})||\boldsymbol{\beta}||\mathbf{e}_{1}=\left(5.236\cdot0.230\cdot\sqrt{10}\right)\mathbf{e}_{1}\\&=3.803\left(\begin{array}{c}-0.851\\0.526\end{array}\right)=\left(\begin{array}{c}-3.236\\2\end{array}\right)\end{aligned} $$ $$ \begin{aligned}\lambda_{2}\mathrm{Proj}(\boldsymbol{\beta}\mathrm{on}\mathbf{e}_{2})&=\lambda_{2}\cos(\theta|\mathbf{e}_{2},\boldsymbol{\beta})||\boldsymbol{\beta}||\mathbf{e}_{2}=\left(0.764\cdot0.974\cdot\sqrt{10}\right)\mathbf{e}_{2}\\&=2.353\begin{pmatrix}0.526\\ 0.851\end{pmatrix}=\begin{pmatrix}1.236\\ 2\end{pmatrix}\end{aligned} $$ From Equation A5.9b, we can express the response, R, as the sum of the projections of $ \beta $ onto the eigenvalues of G, returning $$ \begin{aligned}\mathbf{R}=\mathbf{G}\boldsymbol{\beta}&=\lambda_{1}Proj(\boldsymbol{\beta}on\mathbf{e}_{1})+\lambda_{2}Proj(\boldsymbol{\beta}on\mathbf{e}_{2})\\&=\begin{pmatrix}-3.236\\ 2\end{pmatrix}+\begin{pmatrix}1.236\\ 2\end{pmatrix}=\begin{pmatrix}-2\\ 4\end{pmatrix}\end{aligned} $$ As Figure A5.3 shows, the eigenstructure of G explains the unusual behavior of the selection response seen in Figure A5.2. The eigenvector associated with the leading eigenvalue, $ \lambda_1 $, accounts for most of the variation inherent in G (87%, as $ \lambda_1 / (\lambda_1 + \lambda_2) = 0.87 $), and this eigenvector corresponds to a strong negative correlation between the additive-genetic values of $ z_1 $ and $ z_2 $. Hence, even though $ \beta $ points in very much the same direction as $ e_2 $, because $ \lambda_1 \gg \lambda_2 $, the projection of $ \beta $ on $ e_1 $ yields a vector of greater length than the projection of $ \beta $ on $ e_2 $ (3.803 versus 2.353), and it is this $ e_1 $ projection vector that results in the decrease in $ \mu_{z_1} $.
+> Example A5.2. Determine the eigenstructure of the genetic covariance matrix G shown in Example A5.1. Writing the characteristic equation, and recalling the expression for the determinant of a $ 2 \times 2 $ matrix (LW Equation 8.12a), yields $$ \begin{aligned}\left|\mathbf{G}-\lambda\mathbf{I}\right|&=\left|\begin{pmatrix}4-\lambda&-2\\ -2&2-\lambda\end{pmatrix}\right|\\&=(4-\lambda)(2-\lambda)-(-2)^{2}=\lambda^{2}-6\lambda+4=0\end{aligned} $$ Alternatively, if we use the Laplace expansion (Equation A5.7), and note that $ \mathrm{tr}(\mathbf{G}) = 4 + 2 = 6 $ and $ |\mathbf{G}| = 4 \cdot 2 - (-2)^2 = 4 $, we will also recover the characteristic equation, which has solutions $$ \lambda_{1}=3+\sqrt{5}\simeq5.236\qquad\lambda_{2}=3-\sqrt{5}\simeq0.764 $$ The associated unit eigenvectors (which as easily obtained, along with the eigenvectors, by using the R command eigen) are $$ \mathbf{e}_{1}\simeq\begin{pmatrix}-0.851\\ 0.526\end{pmatrix}\qquad\mathbf{e}_{2}\simeq\begin{pmatrix}0.526\\ 0.851\end{pmatrix} $$ These are orthogonal as $ \mathbf{e}_{1}^{T}\mathbf{e}_{2}=0 $. The eigenstructure of G shows why the vector of responses, $ \mathbf{R} $, is rotated away from the direction of the vector that corresponds to the direction of selection, $ \beta $. From Example A5.1, $ \left|\left|\beta\right|\right| = \sqrt{10} $, while $ \mathbf{e}_1^T \boldsymbol{\beta} \simeq 0.727 $ and $ \mathbf{e}_2^T \boldsymbol{\beta} \simeq 3.079 $. Because $ \left|\left|\mathbf{e}_1\right|\right| = \left|\left|\mathbf{e}_2\right|\right| = 1 $, Equation A5.2a simplifies to $$ \cos(\theta|\mathbf{e}_{1},\boldsymbol{\beta})\simeq\frac{0.727}{\sqrt{10}}\simeq0.230\qquad and\qquad\cos(\theta|\mathbf{e}_{2},\boldsymbol{\beta})\simeq\frac{3.079}{\sqrt{10}}\simeq0.974 $$ giving the angle between $\mathbf{e}_1$ and $\boldsymbol{\beta}$ as $\theta(\mathbf{e}_1, \boldsymbol{\beta}) \simeq 76.7^\circ$, while $\theta(\mathbf{e}_2, \boldsymbol{\beta}) \simeq 13.2^\circ$. Applying Equation A5.3b, the corresponding scaled projections of $\boldsymbol{\beta}$ on these eigenvectors are $$ \begin{aligned}\lambda_{1}Proj(\boldsymbol{\beta}on\mathbf{e}_{1})&=\lambda_{1}\cos(\theta|\mathbf{e}_{1},\boldsymbol{\beta})||\boldsymbol{\beta}||\mathbf{e}_{1}=\left(5.236\cdot0.230\cdot\sqrt{10}\right)\mathbf{e}_{1}\\&=3.803\left(\begin{array}{c}-0.851\\0.526\end{array}\right)=\left(\begin{array}{c}-3.236\\2\end{array}\right)\end{aligned} $$ $$ \begin{aligned}\lambda_{2}\mathrm{Proj}(\boldsymbol{\beta}\mathrm{on}\mathbf{e}_{2})&=\lambda_{2}\cos(\theta|\mathbf{e}_{2},\boldsymbol{\beta})||\boldsymbol{\beta}||\mathbf{e}_{2}=\left(0.764\cdot0.974\cdot\sqrt{10}\right)\mathbf{e}_{2}\\&=2.353\begin{pmatrix}0.526\\ 0.851\end{pmatrix}=\begin{pmatrix}1.236\\ 2\end{pmatrix}\end{aligned} $$ Figure A5.3 Left: The scaled eigenvectors associated with the covariance matrix, G, from Example A5.1, plotted along with the selection gradient, $ \beta $. Note that $ e_1 $ and $ e_2 $ are orthogonal and hence can be thought of as describing a new coordinate system. Because $ \lambda_1 \gg \lambda_2 $, the leading eigenvector, $ e_1 $, largely dominates the transformation. Right: This is shown by taking the projections of $ \beta $ on each of these eigenvectors (shown here on a magnified scale relative to the left figure). Even though $ \beta $ is nearly parallel to $ e_2 $ ( $ \theta | e_1 $, $ \beta = 13.2^\circ $), the projection of $ \beta $ on $ e_1 $ yields a vector of greater length than the projection of $ \beta $ on $ e_2 $ ( $ 3.803 $ versus $ 2.353 $). From Equation A5.9b, the vector of responses to selection, R, is the sum of these two projections. From Equation A5.9b, we can express the response, R, as the sum of the projections of $ \beta $ onto the eigenvalues of G, returning $$ \begin{aligned}\mathbf{R}=\mathbf{G}\boldsymbol{\beta}&=\lambda_{1}Proj(\boldsymbol{\beta}on\mathbf{e}_{1})+\lambda_{2}Proj(\boldsymbol{\beta}on\mathbf{e}_{2})\\&=\begin{pmatrix}-3.236\\ 2\end{pmatrix}+\begin{pmatrix}1.236\\ 2\end{pmatrix}=\begin{pmatrix}-2\\ 4\end{pmatrix}\end{aligned} $$ As Figure A5.3 shows, the eigenstructure of G explains the unusual behavior of the selection response seen in Figure A5.2. The eigenvector associated with the leading eigenvalue, $ \lambda_1 $, accounts for most of the variation inherent in G (87%, as $ \lambda_1 / (\lambda_1 + \lambda_2) = 0.87 $), and this eigenvector corresponds to a strong negative correlation between the additive-genetic values of $ z_1 $ and $ z_2 $. Hence, even though $ \beta $ points in very much the same direction as $ e_2 $, because $ \lambda_1 \gg \lambda_2 $, the projection of $ \beta $ on $ e_1 $ yields a vector of greater length than the projection of $ \beta $ on $ e_2 $ (3.803 versus 2.353), and it is this $ e_1 $ projection vector that results in the decrease in $ \mu_{z_1} $.
 
 
 ---
 
 ## appendix5_007 · Appendix: Introduction / PROPERTIES OF SYMMETRIC MATRICES
+
+**[Figure]**
+
+> **Figure A5.3** · page 7 · source: `appendix5`
+>
+> ![Figure A5.3](../figures/fig_0017.png)
+>
+> Figure A5.3 Left: The scaled eigenvectors associated with the covariance matrix, G, from Example A5.1, plotted along with the selection gradient,  $ \beta $. Note that  $ e_1 $ and  $ e_2 $ are orthogonal and hence can be thought of as describing a new coordinate system. Because  $ \lambda_1 \gg \lambda_2 $, the leading eigenvector,  $ e_1 $, largely dominates the transformation. Right: This is shown by taking the projections of  $ \beta $ on each of these eigenvectors (shown here on a magnified scale relative to the left figure). Even though  $ \beta $ is nearly parallel to  $ e_2 $ ( $ \theta | e_1 $,  $ \beta = 13.2^\circ $), the projection of  $ \beta $ on  $ e_1 $ yields a vector of greater length than the projection of  $ \beta $ on  $ e_2 $ ( $ 3.803 $ versus  $ 2.353 $). From Equation A5.9b, the vector of responses to selection, R, is the sum of these two projections.
+
 
 Many of the matrices encountered in quantitative genetics are symmetric, satisfying $ \mathbf{A} = \mathbf{A}^T $ (and therefore necessarily square). Examples include covariance matrices and the $ \gamma $ matrix of quadratic coefficients in the Pearson-Lande-Arnold fitness regression (Chapter 30). Symmetric matrices have a number of useful properties (proofs of which can be found in Dhrymes 1978; Horn and Johnson 1985; and Wilf 1978): 2. The eigenvalues and eigenvectors of a symmetric matrix are all real.
 
@@ -147,9 +162,18 @@ The maximum and minimum quadratic products occur, respectively, when $ c = e_1 $
 
 ---
 
-## appendix5_009 · Appendix: Introduction / Correlations Can Be Removed by a Matrix Transformation
+## appendix5_009 · PROPERTIES OF SYMMETRIC MATRICES / Correlations Can Be Removed by a Matrix Transformation
 
 A powerful use of diagonalization is that it allows one to extract a set of $n$ uncorrelated variables for any $n \times n$ nonsingular covariance matrix, $\mathbf{V}_{\mathbf{x}}$. Consider the transformation $$ \mathbf{y}=\mathbf{U}^{T}\mathbf{x} $$ where $ \mathbf{U} = (\mathbf{e}_1, \mathbf{e}_2, \cdots, \mathbf{e}_n) $ contains the normalized eigenvectors of $ \mathbf{V}_x $. Because $ \mathbf{U} $ is an orthonormal matrix, this transformation is a rigid rotation of the axes of the original $ (x_1, \cdots, x_n) $ coordinate system to a new system given by $ (e_1, \cdots, e_n) $. Applying LW Equation 8.21b and Equation A5.12, respectively, the covariance matrix for $ \mathbf{y} $ is $$ \mathbf{V_{y}}=\mathbf{U}^{T}\mathbf{V_{x}}\mathbf{U}=\boldsymbol{\Lambda} $$ where A is a diagonal matrix whose elements are the eigenvalues of $ V_{x} $, $$ \sigma(y_{i},y_{j})=\left\{\begin{aligned}&\lambda_{i}&if i=j\\ &0&if i\neq j\end{aligned}\right. $$
+
+**[Figure]**
+
+> **Figure A5.4** · page 10 · source: `appendix5`
+>
+> ![Figure A5.4](../figures/fig_0018.png)
+>
+> Figure A5.4 The transformation (Equation A5.15a) generating a set of independent variables for the covariance matrix G from Example A5.4 results in a rigid rotation of axes of the original traits onto the new, uncorrelated set. Left: The direction of the new axes are given by the eigenvectors  $ e_1 $ and  $ e_2 $. The angle between the new axis,  $ e_1 $, and the original  $ z_1 $ axis is given by the angle between  $ e_1 $ and  $ z_1 = (1, 0)^T $. Here,  $ ||e_1|| = ||z_1|| = 1 $ and  $ e_1^T z_1 = 0.851 $, giving  $ \theta = \cos^{-1}(0.851) \simeq 32^\circ $. As this transformation is a rigid rotation, the angle between  $ e_2 $ and the  $ z_2 = (0, 1)^T $ axis is also also  $ 32^\circ $. Right: On the  $ (y_1, y_2) $ coordinates, the angle between  $ R $ and  $ \beta $ remains unchanged. See Example A5.4 for further details.
+
 
 The rigid rotation introduced by U creates a set of n uncorrelated variables, the ith of which is $$ y_{i}=\mathbf{e}_{i}^{T}\mathbf{x} $$ Because the $ e_i $ are of unit length, from Equation A5.3b we have that $ y_i = e_i^T x $ is the length of the projection of $ x $ onto the $ i $th eigenvector of $ V_x $, which implies that the axes of the new coordinate system are given by the orthogonal set of eigenvectors of $ V_x $.
 
@@ -159,7 +183,7 @@ An alternative to Equation A5.15d is the Cholesky decomposition, $ A = C^T C $, 
 
 **[示例 Example]**
 
-> **Example A5.4** · ref: `A5.4` · source: `appendix5_009.json` · blocks 4–4
+> **Example A5.4** · ref: `A5.4` · source: `appendix5_009.json` · blocks 4–7
 >
 > Example A5.4. If we apply the change of variables suggested by Equation A5.15a to the vector, z, of characters with associated G matrix used in Example A5.1 and using the eigenvalues and vectors obtained in Example A5.2 yields $$ \begin{aligned}\mathbf{y}=\mathbf{U}^{T}\mathbf{z}&=\begin{pmatrix}\mathbf{e}_{1}^{T}\\\mathbf{e}_{2}^{T}\end{pmatrix}\begin{pmatrix}z_{1}\\z_{2}\end{pmatrix}\\&=\begin{pmatrix}-0.851&0.526\\0.526&0.851\end{pmatrix}\begin{pmatrix}z_{1}\\z_{2}\end{pmatrix}\\&=\begin{pmatrix}-0.851z_{1}+0.526z_{2}\\0.526z_{1}+0.851z_{2}\end{pmatrix}\end{aligned} $$ From Equation A5.15b, $ \mathbf{V}_{\mathbf{y}} = \mathbf{A} $ as given in Example A5.3, showing that $ y_1 $ and $ y_2 $ are uncorrelated with $ \sigma^2(y_1) = \lambda_1 = 5.241 $ and $ \sigma^2(y_2) = \lambda_2 = 0.765 $. Hence, by considering the new coordinate system with $$ y_{1}=\mathbf{e}_{1}^{T}\mathbf{z}=-0.851z_{1}+0.526z_{2}\quad and\quad y_{2}=\mathbf{e}_{2}^{T}\mathbf{z}=0.526z_{1}+0.851z_{2} $$ we can transform the original coordinate system into a new system on which there are no additive-genetic correlations between these new characters. Figure A5.4 shows that this transformation is simply a rigid rotation of the axes.
 > 
@@ -172,13 +196,13 @@ An alternative to Equation A5.15d is the Cholesky decomposition, $ A = C^T C $, 
 
 ---
 
-## appendix5_010 · Appendix: Introduction / Simultaneous Diagonalization
+## appendix5_010 · PROPERTIES OF SYMMETRIC MATRICES / Simultaneous Diagonalization
 
 An extension of the notion of diagonalization is the simultaneous diagonalization of two symmetric matrices, P and G, of the same dimension. There exists a matrix T such that $$ \mathbf{T}^{T}\mathbf{P}\mathbf{T}=\mathbf{I}\quad and\quad\mathbf{T}^{T}\mathbf{G}\mathbf{T}=\mathbf{D} $$ where D is a diagonal matrix, whose elements are the eigenvalues of $ \mathbf{P}^{-1}\mathbf{G} $. Hence, the same transformation simultaneously diagonalizes both P and G. If one has a series of traits with both genetic (G) and phenotypic (P) covariances, they can be transformed to a scale where the new traits (based on linear combinations of the original traits) are genetically and phenotypically uncorrelated, where the elements of D correspond to the heritabilities of these new traits.
 
 **[示例 Example]**
 
-> **Example A5.5** · ref: `A5.5` · source: `appendix5_010.json` · blocks 1–1
+> **Example A5.5** · ref: `A5.5` · source: `appendix5_010.json` · blocks 1–4
 >
 > Example A5.5. To find the matrix, T, that simultaneously diagonalizes both P and G, we first use Equation A5.10a to write $$ \mathbf{P}=\mathbf{U}\boldsymbol{\Lambda}\mathbf{U}^{T} $$ where $ A $ is a diagonal matrix and $ \mathbf{U}^T\mathbf{U} = \mathbf{U}\mathbf{U}^T = \mathbf{I} $. Defining $ \mathbf{B} = \mathbf{U}\boldsymbol{\Lambda}^{-1/2} $, Equation A5.15e showed that $ \mathbf{B}^T\mathbf{P}\mathbf{B} = \mathbf{I} $. Next, note for $ \mathbf{M} = \mathbf{B}^T\mathbf{G}\mathbf{B} $, that $ \mathbf{M} = \mathbf{M}^T $ (i.e., $ \mathbf{M} $ is symmetric), as $$ \mathbf{M}^{T}=\left(\mathbf{B}^{T}\mathbf{G}\mathbf{B}\right)^{T}=\mathbf{B}^{T}\mathbf{G}^{T}\mathbf{B}=\mathbf{B}^{T}\mathbf{G}\mathbf{B}=\mathbf{M} $$
 > 
@@ -195,6 +219,15 @@ An extension of the notion of diagonalization is the simultaneous diagonalizatio
 
 The transformation $ \mathbf{y} = \mathbf{U}^T \mathbf{x} $ given by Equation A5.15a applies to any symmetric matrix, and is referred to as its canonical transformation. This simplifies the interpretation of the quadratic form $ \mathbf{x}^T \mathbf{A} \mathbf{x} $, as rotation of the original axes to align them with the eigenvectors of $ \mathbf{A} $ removes all cross-product terms ($ x_i x_j $ for $ i \neq j $) on this new coordinate system. Recall (Equation A5.5b) that $ \mathbf{U} $ is a unitary matrix and hence $ \mathbf{U}^T = \mathbf{U}^{-1} $. Thus, $$ \mathbf{U}\mathbf{y}=\mathbf{U}\mathbf{U}^{T}\mathbf{x}=\mathbf{x} $$
 
+**[Figure]**
+
+> **Figure A5.5** · page 13 · source: `appendix5`
+>
+> ![Figure A5.5](../figures/fig_0019.png)
+>
+> Figure A5.5 The general shape of surfaces of constant variance for the additive-genetic covariance matrix, G, given in Example A5.1. Defining a new composite character  $ y = az_1 + bz_2 $, the rotated ellipse represents the set of weights  $ (a, b) $ that give y the same additive-genetic variance,  $ c^2 $. The major axis of the ellipse is along  $ e_2 $, the eigenvector associated with the smallest eigenvalue of G, where  $ \lambda_2 \simeq 0.765 $, giving  $ 1/\sqrt{\lambda_2} \simeq 1.143 $. The minor axis of the ellipse is along  $ e_1 $, the eigenvector associated with the largest eigenvalue of G, where  $ \lambda_1 \simeq 5.241 $, giving  $ 1/\sqrt{\lambda_1} \simeq 0.437 $.
+
+
 Applying Equations A5.15a and A5.12 transforms a quadratic form to one in which the square matrix is diagonal, which greatly simplifies the resulting quadratic product, as $$ \begin{aligned}\mathbf{x}^{T}\mathbf{A}\mathbf{x}&=(\mathbf{U}\mathbf{y})^{T}\mathbf{A}\mathbf{U}\mathbf{y}=\mathbf{y}^{T}(\mathbf{U}^{T}\mathbf{A}\mathbf{U})\mathbf{y}\\&=\mathbf{y}^{T}\mathbf{A}\mathbf{y}\\&=\sum_{i=1}^{n}\lambda_{i}y_{i}^{2},\quad with\quad y_{i}=\mathbf{e}_{i}^{T}\mathbf{x}\end{aligned} $$ where $ \lambda_i $ and $ e_i $ are the eigenvalues and associated (normalized, i.e., $ \|\mathbf{e}_i\| = 1 $) eigenvectors of A. The new axes defined by the $ e_i $ vectors are the canonical (or principal) axes of A. Because $ y_i^2 \geq 0 $, Equation A5.17a immediately shows the connection between the signs of the eigenvalues of a matrix and whether that matrix is positive definite, negative definite, or indefinite.
 
 If all eigenvalues are positive (all $ \lambda_i > 0 $), then any quadratic form is always positive (unless all the $ y_i $ are zero) and hence A is positive definite. If one or more of the eigenvalues are zero, while the rest are positive, then A is said to be positive semidefinite, implying that quadratic products are either zero (corresponding to $ \lambda_i = 0 $) or positive. If all eigenvalues are negative (all $ \lambda_i < 0 $), then A is negative definite as any quadratic form is always negative, while A is said to be negative semidefinite if the eigenvalues are either zero or negative. If A has both positive and negative eigenvalues it is said to be indefinite, as quadratic products can be either positive or negative.
@@ -205,7 +238,16 @@ Consider a new variable (y) that is a weighted combination $ y = ax_1 + bx_2 = b
 
 ---
 
-## appendix5_012 · Appendix: Introduction / Implications for the Multivariate Normal Distribution
+## appendix5_012 · CANONICAL AXES OF QUADRATIC FORMS / Implications for the Multivariate Normal Distribution
+
+**[Figure]**
+
+> **Figure A5.6** · page 14 · source: `appendix5`
+>
+> ![Figure A5.6](../figures/fig_0020.png)
+>
+> Figure A5.6 Surfaces for a multivariate normal (MVN) distribution. Left: Surfaces of equal probability assuming that the additive-genetic values associated with the characters  $ z_1 $ and  $ z_2 $ in Example A5.1 are  $ \sim \mathrm{MVN}(\mu, \mathbf{G}) $. These surfaces are ellipses centered at  $ \mu $, with the major axis of the ellipse along  $ e_1 $ and the minor axis along  $ e_2 $, whose lengths (for a fixed c) are, respectively,  $ \sqrt{\lambda_1} = 2.289 $ and  $ \sqrt{\lambda_2} = 0.875 $. Right: A plot of the associated probability density. Slicing along either the major or minor axis gives a normal curve. Because the variance in the major axis is greater, the curve is much broader along this axis. The covariance between the breeding values of  $ z_1 $ and  $ z_2 $ rotates the distribution so that the principal axes ( $ e_1 $,  $ e_2 $) do not coincide with the original ( $ z_1 $,  $ z_2 $) axes.
+
 
 Recall the probability density function for the multivariate normal distribution (LW Chapter 8) $$ \begin{align*}\phi(\mathbf{x})=(2\pi)^{-n/2}\left|\mathbf{V}_{\mathbf{x}}\right|^{-1/2}\exp\left[-{1\over2}(\mathbf{x}-\boldsymbol{\mu})^{T}\mathbf{V}_{\mathbf{x}}^{-1}\left(\mathbf{x}-\boldsymbol{\mu}\right)\right]\end{align*} $$ Because only the quadratic product in the exponential varies with x, surfaces of equal probability for MVN distributed vectors satisfy $$ \left(\mathbf{x}-\boldsymbol{\mu}\right)^{T}\mathbf{V}_{\mathbf{X}}^{-1}\left(\mathbf{x}-\boldsymbol{\mu}\right)=c^{2} $$ From the discussion following Equation A5.17c, these surfaces are $n$-dimensional ellipsoids centered at $\mu$ whose axes of symmetry are given by the principal components (the eigenvectors) of the covariance matrix, $\mathbf{V}_{\mathbf{x}}$. The length of the ellipsoid along the $i$th axis is $c\sqrt{\lambda_{i}}$ where $\lambda_{i}$ is the eigenvalue associated with the eigenvector $\mathbf{e}_{i}$ (Figure A5.6).
 
@@ -219,7 +261,7 @@ Applying the transformation $$ \mathbf{z}=A^{-1/2}\mathbf{U}^{T}(\mathbf{x}-\bol
 
 ---
 
-## appendix5_013 · Appendix: Introduction / Principal Components of the Variance-Covariance Matrix
+## appendix5_013 · CANONICAL AXES OF QUADRATIC FORMS / Principal Components of the Variance-Covariance Matrix
 
 We are often interested in how the variance of a random vector can be decomposed into independent components. For example, even though we may be measuring n variables, only one or two of these may account for the majority of the variation. If this is the case, we may wish to exclude those variables contributing very little variation from further analysis. More generally, if random variables are correlated, then certain linear combinations of the elements of x may account for most of the variance. The procedure of principal component analysis (PCA) extracts these combinations by decomposing the variance of x into the contributions from a series of orthogonal vectors, the first of which explains the most variation possible for any single vector, the second the next possible amount, and so on until we account for the entire variance of x.
 
@@ -229,25 +271,21 @@ In general, suppose we have an $n$-dimensional covariance matrix, $\mathbf{V}_{\
 
 **[示例 Example]**
 
-> **Example A5.6** · ref: `A5.6` · source: `appendix5_013.json` · blocks 3–3
+> **Example A5.6** · ref: `A5.6` · source: `appendix5_013.json` · blocks 3–4
 >
 > Example A5.6. Again let us consider the additive-genetic covariance matrix, G, as shown in Examples A5.1 and A5.2. Because $ \lambda_1 \simeq 5.241 $, $ \lambda_2 \simeq 0.765 $, and $ \text{tr}(G) = 4 + 2 = 6 $, the first PC explains $ 5.241/6 \simeq 0.8735 $, or 87% of the variance in G. While the first PC accounts for the majority of variation over the entire space of the variables (x), the amount of variation explained by PC1 for any particular weighted combination, $ y = b^T x $, of the original variables depends on the projection of b onto PC1. For example, if $ b = e_2 $ (the weight vector corresponds to the second eigenvector), then the projection of b onto PC1 has a length of zero, because PC1 is orthogonal to $ e_2 $, and hence PC1 explains none of the variation of this new variable.
-> 
-> Example A5.7 serves as a brief introduction to the important field of morphometrics, which is concerned with quantification and comparison of sizes and shapes of organisms. The reader is referred to Pimentel (1979), Reyment et al. (1984), Elewa (2004), Claude (2008) and especially Bookstein et al. (1985), Rohlf and Bookstein (1990), Reyment (1991), Bookstein (1997), Slice (2005), and Zelditch et al. (2012) for detailed treatments.
 
+
+Example A5.7 serves as a brief introduction to the important field of morphometrics, which is concerned with quantification and comparison of sizes and shapes of organisms. The reader is referred to Pimentel (1979), Reyment et al. (1984), Elewa (2004), Claude (2008) and especially Bookstein et al. (1985), Rohlf and Bookstein (1990), Reyment (1991), Bookstein (1997), Slice (2005), and Zelditch et al. (2012) for detailed treatments.
 
 **[示例 Example]**
 
-> **Example A5.7** · ref: `A5.7` · source: `appendix5_013.json` · blocks 4–4
+> **Example A5.7** · ref: `A5.7` · source: `appendix5_013.json` · blocks 5–8
 >
-> Example A5.7. Jolicoeur and Mosimann (1960) measured three carapace characters in 24 males of the painted turtle (Chrysemys picta marginata). Letting $ z_1 $ be the carapace length, $ z_2 $ be the maximum carapace width, and $ z_3 $ be the carapace height, the resulting sample covariance matrix ($ S_z $, the sample estimate of $ V_z $) for these data was found to be $$ \mathbf{S}_{\mathbf{z}}=\begin{pmatrix}138.77&79.15&37.38\\79.15&50.04&21.65\\37.38&21.65&11.26\end{pmatrix} $$
-> 
-> Hence, $ \mathrm{tr}(\mathbf{S}_{\mathbf{Z}})=138.77+50.04+11.26=200.07 $. Using $ \mathbf{R} $, the eigenvalues of $ \mathbf{S}_{\mathbf{Z}} $ are found to be $$ \lambda_{1}=195.280,\qquad\lambda_{2}=3.687,\qquad\lambda_{3}=1.103 $$ which (as expected) sum to the value of the trace, 200.07. The associated (normalized) eigenvectors are similarly found to be $$ \mathbf{e}_{1}=\begin{pmatrix}0.840\\ 0.492\\ 0.229\end{pmatrix},\qquad\mathbf{e}_{2}=\begin{pmatrix}0.488\\ -0.870\\ 0.079\end{pmatrix},\qquad\mathbf{e}_{3}=\begin{pmatrix}0.213\\ 0.043\\ -0.971\end{pmatrix} $$
-> 
-> PC1 accounts for 97.6% of the variation (195.281/200.07 = 0.976), while PC2 and PC3 account for 1.84% and 0.55%, respectively. Jolicoeur and Mosimann interpret PC1 as measuring overall size, as the new variable $$ y_{1}=\mathbf{e}_{1}^{T}\mathbf{z}=0.840z_{1}+0.492z_{2}+0.229z_{3} $$ corresponds to a simultaneous change in all three variables in the same direction, as is expected as individuals change their overall size. Likewise, PC2 and PC3 are $$ y_{2}=\mathbf{e}_{2}^{T}\mathbf{z}=0.488z_{1}-0.870z_{2}+0.079z_{3} $$ $$ y_{3}=\mathbf{e}_{3}^{T}\mathbf{z}=0.213z_{1}+0.043z_{2}-0.971z_{3} $$ which Jolicoeur and Mosimann interpreted as measures of shape. Because the coefficient on $ z_{3} $ is small relative to the others in PC2, they interpret PC2 as measuring the tradeoff between length ($ z_{1} $) and width ($ z_{2} $). Thus, after removing the variation in size, 1.84% of the remaining variation can be accounted for by differences in the shape measured by length versus width. Likewise, because the PC3 coefficient for $ z_{2} $ is very small, PC3 mainly measures shape differences due to length ($ z_{1} $) versus height ($ z_{3} $).
-> 
-> This example points out some of the advantages, and possible pitfalls, of using principal component analysis for dimensional reduction of the data. Namely, replacing the $n$-component vector $\mathbf{z}$ by an $m < n$ component vector $\mathbf{y}$ composed of linear combinations of the $\mathbf{z}$, i.e., $\mathbf{y}_{m \times 1} = \mathbf{M}_{m \times n} \mathbf{z}_{n \times 1}$, where $\mathbf{M} = (\mathbf{e}_{1}, \cdots, \mathbf{e}_{m})^{T}$, with $y_{i} = \mathbf{e}_{i}^{T} \mathbf{z}$. Essentially all (over 97%) of the variance in the three measured characters is accounted for by variation in overall size, with the remaining variation accounted for by differences in shape. While the temptation is strong to simply consider overall size and ignore all shape information, it might be the case that selection is largely ignoring variation in size and instead focusing on (size-independent) shape differences. In this case, an analysis ignoring shape (as would occur if only the new character generated by PC1 were considered) would be very misleading. A further complication with principal component analysis is that it can often be difficult to give biological interpretations to the new characters resulting from the rotation of the coordinate system.
+> Example A5.7. Jolicoeur and Mosimann (1960) measured three carapace characters in 24 males of the painted turtle (Chrysemys picta marginata). Letting $ z_1 $ be the carapace length, $ z_2 $ be the maximum carapace width, and $ z_3 $ be the carapace height, the resulting sample covariance matrix ( $ S_z $, the sample estimate of $ V_z $) for these data was found to be $$ \mathbf{S}_{\mathbf{z}}=\begin{pmatrix}138.77&79.15&37.38\\79.15&50.04&21.65\\37.38&21.65&11.26\end{pmatrix} $$ Hence, $ \mathrm{tr}(\mathbf{S}_{\mathbf{Z}})=138.77+50.04+11.26=200.07 $. Using $ \mathbf{R} $, the eigenvalues of $ \mathbf{S}_{\mathbf{Z}} $ are found to be $$ \lambda_{1}=195.280,\qquad\lambda_{2}=3.687,\qquad\lambda_{3}=1.103 $$ which (as expected) sum to the value of the trace, 200.07. The associated (normalized) eigenvectors are similarly found to be $$ \mathbf{e}_{1}=\begin{pmatrix}0.840\\ 0.492\\ 0.229\end{pmatrix},\qquad\mathbf{e}_{2}=\begin{pmatrix}0.488\\ -0.870\\ 0.079\end{pmatrix},\qquad\mathbf{e}_{3}=\begin{pmatrix}0.213\\ 0.043\\ -0.971\end{pmatrix} $$ PC1 accounts for 97.6% of the variation (195.281/200.07 = 0.976), while PC2 and PC3 account for 1.84% and 0.55%, respectively. Jolicoeur and Mosimann interpret PC1 as measuring overall size, as the new variable $$ y_{1}=\mathbf{e}_{1}^{T}\mathbf{z}=0.840z_{1}+0.492z_{2}+0.229z_{3} $$ corresponds to a simultaneous change in all three variables in the same direction, as is expected as individuals change their overall size. Likewise, PC2 and PC3 are $$ y_{2}=\mathbf{e}_{2}^{T}\mathbf{z}=0.488z_{1}-0.870z_{2}+0.079z_{3} $$ $$ y_{3}=\mathbf{e}_{3}^{T}\mathbf{z}=0.213z_{1}+0.043z_{2}-0.971z_{3} $$ which Jolicoeur and Mosimann interpreted as measures of shape. Because the coefficient on $ z_{3} $ is small relative to the others in PC2, they interpret PC2 as measuring the tradeoff between length ( $ z_{1} $) and width ( $ z_{2} $). Thus, after removing the variation in size, 1.84% of the remaining variation can be accounted for by differences in the shape measured by length versus width. Likewise, because the PC3 coefficient for $ z_{2} $ is very small, PC3 mainly measures shape differences due to length ( $ z_{1} $) versus height ( $ z_{3} $).
 
+
+This example points out some of the advantages, and possible pitfalls, of using principal component analysis for dimensional reduction of the data. Namely, replacing the $n$-component vector $\mathbf{z}$ by an $m < n$ component vector $\mathbf{y}$ composed of linear combinations of the $\mathbf{z}$, i.e., $\mathbf{y}_{m \times 1} = \mathbf{M}_{m \times n} \mathbf{z}_{n \times 1}$, where $\mathbf{M} = (\mathbf{e}_{1}, \cdots, \mathbf{e}_{m})^{T}$, with $y_{i} = \mathbf{e}_{i}^{T} \mathbf{z}$. Essentially all (over 97%) of the variance in the three measured characters is accounted for by variation in overall size, with the remaining variation accounted for by differences in shape. While the temptation is strong to simply consider overall size and ignore all shape information, it might be the case that selection is largely ignoring variation in size and instead focusing on (size-independent) shape differences. In this case, an analysis ignoring shape (as would occur if only the new character generated by PC1 were considered) would be very misleading. A further complication with principal component analysis is that it can often be difficult to give biological interpretations to the new characters resulting from the rotation of the coordinate system.
 
 ---
 
@@ -257,9 +295,18 @@ Multivariate normality is often assumed in statistical procedures, but it is les
 
 ---
 
-## appendix5_015 · Appendix: Introduction / Graphical Tests: Chi-square Plots
+## appendix5_015 · TESTING FOR MULTIVARIATE NORMALITY / Graphical Tests: Chi-square Plots
 
 A fairly simple graphical test can be developed by extending the notion of the normal probability plot that is used to check univariate normality (LW Chapter 11), where observations were ranked and then plotted against their ranked expected values under normality. Departures from linearity signify departures from normality, and we can apply this same approach to check for multivariate normality. From Equation A5.20d, if $ z \sim \mathrm{MVN}(\mu, V_z) $, then each element of the vector $$ \mathbf{y}=\boldsymbol{A}^{-1/2}\mathbf{U}^{T}(\mathbf{z}-\boldsymbol{\mu}) $$ is an independent unit normal, so that $ \mathbf{y} \sim \text{MVN}(\mathbf{0}, \mathbf{I}) $. Recalling that $ \mathbf{U}^{-1} = \mathbf{U}^T $, we can rearrange this expression to yield $$ (\mathbf{z}-\boldsymbol{\mu})=\mathbf{U}\boldsymbol{\Lambda}^{1/2}\mathbf{y} $$
+
+**[Figure]**
+
+> **Figure A5.7** · page 18 · source: `appendix5`
+>
+> ![Figure A5.7](../figures/fig_0021.png)
+>
+> Figure A5.7 Plots of ranked distance data  $ (d_{(j)}^{2}) $ being the jth smallest distance) versus the expected corresponding  $ \chi^{2} $ value for the data of Jolicoeur and Mosimann from Example A5.8. Left: The untransformed data do not appear to depart significantly from linearity, although they depart slightly from the intercept (0) and slope (1) of the expected regression under multivariate normality. Right: Log-transforming the data gives a slightly better linear fit  $ (r^{2} = 0.983 \text{ versus } r^{2} = 0.952) $, with the best-fitting line passing through the origin as expected if the distance data follow a  $ \chi^{2} $ distribution, and has a slope of essentially one. See Example A5.8 for more details.
+
 
 **[定义 Definition]**
 
@@ -271,7 +318,7 @@ Let $ \chi_n^2(\alpha) $ correspond to the value of a chi-square random variable
 
 **[示例 Example]**
 
-> **Example A5.8** · ref: `A5.8` · source: `appendix5_015.json` · blocks 4–4
+> **Example A5.8** · ref: `A5.8` · source: `appendix5_015.json` · blocks 4–7
 >
 > Example A5.8. Consider again the data of Jolicoeur and Mosimann (1960) on carapace characters in 24 male turtles. Are the characters $ z_1 $ (carapace length) and $ z_2 $ (maximum carapace width) jointly bivariate normally distributed? Here $ n = 2 $ and $ m = 24 $ and $$ \overline{\mathbf{z}}=\left(\begin{array}{l}113.13.\\ 88.29\end{array}\right),\mathbf{S}_{\mathbf{Z}}=\left(\begin{array}{l l}138.77&79.15\\ 79.15&50.04\end{array}\right),\mathbf{S}_{\mathbf{Z}}^{-1}=\left(\begin{array}{c c}0.0737&-0.1165\\ -0.1165&0.2043\end{array}\right) $$ where $ S_{Z} $ is the sample covariance matrix. A partial list of the 24 vectors of observations is $$ \mathbf{z}_{1}=\begin{pmatrix}93\\ 74\end{pmatrix},\quad\cdots,\quad\mathbf{z}_{11}=\begin{pmatrix}113\\ 88\end{pmatrix},\quad\cdots,\quad\mathbf{z}_{24}=\begin{pmatrix}135\\ 106\end{pmatrix} $$
 > 
@@ -284,7 +331,7 @@ Let $ \chi_n^2(\alpha) $ correspond to the value of a chi-square random variable
 
 ---
 
-## appendix5_016 · Appendix: Introduction / Mardia's Test: Multivariate Skewness and Kurtosis
+## appendix5_016 · TESTING FOR MULTIVARIATE NORMALITY / Mardia's Test: Multivariate Skewness and Kurtosis
 
 As was the case for univariate normality, we can test for multivariate normality by examining the sample skewness and kurtosis. Mardia (1970, 1974) proposed multivariate extensions of skewness and kurtosis measures and suggested a large-sample test based on the asymptotic distribution of these statistics. If there are m vectors of observations (with each vector measuring n characters), then the multivariate skewness is estimated by $$ b_{1,n}=\frac{1}{m^{2}}\sum_{i=1}^{m}\sum_{j=1}^{m}\left[\left(\mathbf{z}_{i}-\overline{\mathbf{z}}\right)^{T}\mathbf{S}_{\mathbf{Z}}^{-1}\left(\mathbf{z}_{j}-\overline{\mathbf{z}}\right)\right]^{3} $$ while the multivariate kurtosis is estimated by $$ b_{2,n}=\frac{1}{m}\sum_{i=1}^{m}\left[\left(\mathbf{z}_{i}-\overline{\mathbf{z}}\right)^{T}\mathbf{S}_{\mathbf{Z}}^{-1}\left(\mathbf{z}_{i}-\overline{\mathbf{z}}\right)\right]^{2} $$
 

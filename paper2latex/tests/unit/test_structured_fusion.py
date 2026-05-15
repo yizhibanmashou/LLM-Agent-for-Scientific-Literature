@@ -1004,6 +1004,125 @@ class StructuredFusionTests(unittest.TestCase):
         self.assertEqual(summary["table_stats"].get("table_body_residue_placeholders_rebound"), 1)
         self.assertEqual(summary["table_stats"].get("table_body_residue_blocks_removed"), 3)
 
+    def test_numbered_list_table_body_residue_is_replaced_without_swallowing_following_body(self):
+        root = make_test_workspace("list_table_body_residue")
+        structured_dir = root / "structured"
+        write_json(
+            structured_dir / "chapter10_001.json",
+            {
+                "id": "chapter10_001",
+                "metadata": {"chapter": "chapter10", "formula_references": [], "table_references": ["10.2"]},
+                "blocks": [
+                    {
+                        "type": "derivation",
+                        "content": (
+                            "$ alpha $ The fraction of substitutions that are adaptive "
+                            "$ gamma $ The scaled strength of selection, $ 2Ne s $ "
+                            "$ mu $ The total per-site mutation rate "
+                            "$ p_b $ The fraction of new mutations at a site that are advantageous "
+                            "the actual mutation rate, $ mu $. Two types of mutations contribute to replacement substitutions."
+                        ),
+                    }
+                ],
+            },
+        )
+        write_json(structured_dir / "formula_library.json", {"metadata": {"total_formulas": 0}, "formulas": []})
+        write_json(
+            structured_dir / "table_library.json",
+            {
+                "metadata": {"total_tables": 1, "numbered_tables": 1, "inline_tables": 0},
+                "tables": [
+                    {
+                        "id": "10.2",
+                        "label_format": "Table 10.2",
+                        "title": "Table 10.2 Summary of adaptive parameters.",
+                        "table_type": "list_table",
+                        "html": "<table></table>",
+                        "rows": [
+                            ["$ alpha $ The fraction of substitutions that are adaptive"],
+                            ["$ gamma $ The scaled strength of selection, $ 2 N_e s $"],
+                            ["$ mu $ The total per-site mutation rate"],
+                            ["$ p_b $ The fraction of new mutations at a site that are advantageous"],
+                        ],
+                        "source": {
+                            "chapter": "chapter10",
+                            "unit_id": "chapter10_001",
+                            "following_body": {
+                                "label": "text",
+                                "content": (
+                                    "the actual mutation rate, $ mu $. Two types of mutations "
+                                    "contribute to replacement substitutions."
+                                ),
+                            },
+                        },
+                    }
+                ],
+            },
+        )
+
+        summary = apply_structured_fusion(structured_dir=structured_dir, enable_ocr_table_evidence=False)
+
+        unit = read_json(structured_dir / "chapter10_001.json")
+        self.assertEqual(unit["blocks"][0]["content"], "[[TABLE:10.2]]")
+        self.assertIn("the actual mutation rate", unit["blocks"][1]["content"])
+        table = read_json(structured_dir / "table_library.json")["tables"][0]
+        self.assertEqual(table["source"]["physical_placeholder_inserted_by"], "structured_fusion_list_table_materializer")
+        self.assertEqual(summary["table_stats"].get("list_table_placeholders_inserted"), 1)
+
+    def test_duplicate_physical_table_placeholder_created_by_residue_rebinder_is_removed(self):
+        root = make_test_workspace("table_residue_late_duplicate")
+        structured_dir = root / "structured"
+        write_json(
+            structured_dir / "chapter18_001.json",
+            {
+                "id": "chapter18_001",
+                "metadata": {"chapter": "chapter18", "formula_references": [], "table_references": ["18.7"]},
+                "blocks": [
+                    {"type": "discussion", "content": "Intro."},
+                    {"type": "table", "content": "[[TABLE:18.7]]"},
+                    {"type": "discussion", "content": "Selection in a single direction without a control line $$ A $$"},
+                    {"type": "discussion", "content": "Selection in a single direction with a control line $$ B $$"},
+                    {"type": "discussion", "content": "Divergent selection without a control line $$ C $$"},
+                    {"type": "discussion", "content": "Tail."},
+                ],
+            },
+        )
+        write_json(structured_dir / "formula_library.json", {"metadata": {"total_formulas": 0}, "formulas": []})
+        write_json(
+            structured_dir / "table_library.json",
+            {
+                "metadata": {"total_tables": 1, "numbered_tables": 1, "inline_tables": 0},
+                "tables": [
+                    {
+                        "id": "18.7",
+                        "label_format": "Table 18.7",
+                        "title": "Table 18.7 Coefficients.",
+                        "table_type": "formula_table",
+                        "html": "<table></table>",
+                        "rows": [
+                            ["Selection scheme", "Formula"],
+                            ["Selection in a single direction without a control line", "$$ A $$"],
+                            ["Selection in a single direction with a control line", "$$ B $$"],
+                            ["Divergent selection without a control line", "$$ C $$"],
+                        ],
+                        "source": {"chapter": "chapter18", "unit_id": "chapter18_001", "has_physical_placeholder": True},
+                    }
+                ],
+            },
+        )
+        unit = read_json(structured_dir / "chapter18_001.json")
+        self.assertEqual(
+            len([block for block in unit["blocks"] if block["content"] == "[[TABLE:18.7]]"]),
+            1,
+        )
+
+        summary = apply_structured_fusion(structured_dir=structured_dir, enable_ocr_table_evidence=False)
+
+        unit = read_json(structured_dir / "chapter18_001.json")
+        placeholders = [block for block in unit["blocks"] if block["content"] == "[[TABLE:18.7]]"]
+        self.assertEqual(len(placeholders), 1)
+        self.assertEqual(summary["table_stats"].get("table_body_residue_placeholders_rebound"), 1)
+
     def test_numbered_table_residue_does_not_rebind_across_units(self):
         root = make_test_workspace("numbered_table_residue_cross_unit_guard")
         structured_dir = root / "structured"
@@ -1184,6 +1303,190 @@ class StructuredFusionTests(unittest.TestCase):
         unit = read_json(structured_dir / "chapter26_001.json")
         self.assertNotIn("[[TABLE:26.3]]", json.dumps(unit, ensure_ascii=False))
         self.assertEqual(summary["table_stats"].get("numbered_table_placeholders_deferred_no_unit_evidence"), 1)
+
+    def test_page_top_float_table_uses_preceding_body_not_following_heading(self):
+        root = make_test_workspace("top_float_table_owner")
+        structured_dir = root / "structured"
+        write_json(
+            structured_dir / "chapter27_011.json",
+            {
+                "id": "chapter27_011",
+                "metadata": {
+                    "chapter": "chapter27",
+                    "section": "Structure of Adaptive Walks Under the SSWM Model",
+                    "subsections": [],
+                    "formula_references": [],
+                    "table_references": ["27.1"],
+                },
+                "blocks": [
+                    {
+                        "type": "discussion",
+                        "content": (
+                            "The prior section says experiments with microbes attempted to test "
+                            "the Gillespie-Orr prediction."
+                        ),
+                    }
+                ],
+            },
+        )
+        write_json(
+            structured_dir / "chapter27_012.json",
+            {
+                "id": "chapter27_012",
+                "metadata": {
+                    "chapter": "chapter27",
+                    "section": "The Fitness Distribution of Beneficial Alleles",
+                    "subsections": [],
+                    "formula_references": [],
+                    "table_references": [],
+                },
+                "blocks": [
+                    {
+                        "type": "discussion",
+                        "content": "The Fitness Distribution of Beneficial Alleles",
+                    },
+                    {
+                        "type": "discussion",
+                        "content": "Much of our discussion starts a new section.",
+                    },
+                ],
+            },
+        )
+        write_json(structured_dir / "formula_library.json", {"metadata": {"total_formulas": 0}, "formulas": []})
+        write_json(
+            structured_dir / "table_library.json",
+            {
+                "metadata": {"total_tables": 1, "numbered_tables": 1, "inline_tables": 0},
+                "tables": [
+                    {
+                        "id": "27.1",
+                        "label_format": "Table 27.1",
+                        "title": "Table 27.1 Summary of several bacterial and viral experiments.",
+                        "table_type": "numbered",
+                        "html": "<table><tr><td>Species</td><td>Effects</td></tr><tr><td>Escherichia coli</td><td>Exponential</td></tr></table>",
+                        "rows": [["Species", "Effects"], ["Escherichia coli", "Exponential"]],
+                        "source": {
+                            "chapter": "chapter27",
+                            "unit_id": "chapter27_012",
+                            "page": 18,
+                            "bbox": [144, 503, 916, 871],
+                            "caption_bbox": [133, 209, 905, 484],
+                            "following_body": {
+                                "label": "paragraph_title",
+                                "content": "The Fitness Distribution of Beneficial Alleles",
+                                "bbox": [133, 911, 537, 934],
+                                "index": 4,
+                            },
+                            "preceding_body": {
+                                "label": "text",
+                                "content": (
+                                    "The prior section says experiments with microbes attempted to test "
+                                    "the Gillespie-Orr prediction."
+                                ),
+                                "bbox": [132, 100, 904, 180],
+                                "index": 1,
+                            },
+                            "extraction_channel": "paddle_visual",
+                        },
+                    }
+                ],
+            },
+        )
+
+        apply_structured_fusion(structured_dir=structured_dir, enable_ocr_table_evidence=False)
+
+        unit_011 = read_json(structured_dir / "chapter27_011.json")
+        unit_012 = read_json(structured_dir / "chapter27_012.json")
+        table = read_json(structured_dir / "table_library.json")["tables"][0]
+        self.assertEqual(table["source"]["unit_id"], "chapter27_011")
+        self.assertIn("[[TABLE:27.1]]", json.dumps(unit_011, ensure_ascii=False))
+        self.assertNotIn("[[TABLE:27.1]]", json.dumps(unit_012, ensure_ascii=False))
+
+    def test_page_top_float_table_without_preceding_body_uses_previous_chunk(self):
+        root = make_test_workspace("top_float_table_previous_chunk")
+        structured_dir = root / "structured"
+        write_json(
+            structured_dir / "chapter27_011.json",
+            {
+                "id": "chapter27_011",
+                "metadata": {
+                    "chapter": "chapter27",
+                    "section": "Structure of Adaptive Walks Under the SSWM Model",
+                    "subsections": [],
+                    "formula_references": [],
+                    "table_references": ["27.1"],
+                },
+                "blocks": [
+                    {
+                        "type": "discussion",
+                        "content": "The prior section ends before a page-top floating table.",
+                    }
+                ],
+            },
+        )
+        write_json(
+            structured_dir / "chapter27_012.json",
+            {
+                "id": "chapter27_012",
+                "metadata": {
+                    "chapter": "chapter27",
+                    "section": "The Fitness Distribution of Beneficial Alleles",
+                    "subsections": [],
+                    "formula_references": [],
+                    "table_references": [],
+                },
+                "blocks": [
+                    {
+                        "type": "discussion",
+                        "content": "The Fitness Distribution of Beneficial Alleles",
+                    },
+                    {
+                        "type": "discussion",
+                        "content": "Much of our discussion starts a new section.",
+                    },
+                ],
+            },
+        )
+        write_json(structured_dir / "formula_library.json", {"metadata": {"total_formulas": 0}, "formulas": []})
+        write_json(
+            structured_dir / "table_library.json",
+            {
+                "metadata": {"total_tables": 1, "numbered_tables": 1, "inline_tables": 0},
+                "tables": [
+                    {
+                        "id": "27.1",
+                        "label_format": "Table 27.1",
+                        "title": "Table 27.1 Summary of several bacterial and viral experiments.",
+                        "table_type": "numbered",
+                        "html": "<table><tr><td>Species</td><td>Effects</td></tr><tr><td>Escherichia coli</td><td>Exponential</td></tr></table>",
+                        "rows": [["Species", "Effects"], ["Escherichia coli", "Exponential"]],
+                        "source": {
+                            "chapter": "chapter27",
+                            "unit_id": "chapter27_012",
+                            "page": 18,
+                            "bbox": [144, 503, 916, 871],
+                            "caption_bbox": [133, 209, 905, 484],
+                            "following_body": {
+                                "label": "paragraph_title",
+                                "content": "The Fitness Distribution of Beneficial Alleles",
+                                "bbox": [133, 911, 537, 934],
+                                "index": 4,
+                            },
+                            "extraction_channel": "paddle",
+                        },
+                    }
+                ],
+            },
+        )
+
+        apply_structured_fusion(structured_dir=structured_dir, enable_ocr_table_evidence=False)
+
+        unit_011 = read_json(structured_dir / "chapter27_011.json")
+        unit_012 = read_json(structured_dir / "chapter27_012.json")
+        table = read_json(structured_dir / "table_library.json")["tables"][0]
+        self.assertEqual(table["source"]["unit_id"], "chapter27_011")
+        self.assertIn("[[TABLE:27.1]]", json.dumps(unit_011, ensure_ascii=False))
+        self.assertNotIn("[[TABLE:27.1]]", json.dumps(unit_012, ensure_ascii=False))
 
     def test_source_claimed_placeholder_is_verified_against_unit_blocks(self):
         root = make_test_workspace("claimed_placeholder_missing")

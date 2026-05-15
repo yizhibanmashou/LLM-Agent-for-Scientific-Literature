@@ -36,6 +36,14 @@
       "content": "[[SEE_EXAMPLE:22.11]]"
     },
     {
+      "type": "derivation",
+      "content": "Because we allow for the possibility that the direct and social breeding values are correlated, the standard mixed-model equations for two vectors of random effects (Equation 19.21; LW Equations 26.19b and 26.30) must be slightly modified. They become [[SEE_FORMULA:22.40a]] where the weights $ \\left(\\lambda_{i}\\right) $ are related to elements in the inverse of G, namely, [[SEE_FORMULA:22.40b]] as obtained by Muir (2005) and Van Vleck and Cassady (2005)."
+    },
+    {
+      "type": "discussion",
+      "content": "In order to solve these equations, estimates of the variance components—$\\sigma^{2}(e)$, $\\sigma^{2}(A_{d})$, $\\sigma^{2}(A_{s})$, and $\\sigma(A_{d}, A_{s})$—are required, and within the mixed-model framework, these are obtained by REML (LW Chapter 27). Van Vleck and Cassady (2005) used simulated data to show that, under the appropriate design, REML does indeed provide separable estimates of the genetic variance components. However, two early applications to real data sets, weight gain in pigs within pens by Arango et al. (2005) and weight gain in Hereford cattle in feedlots by Van Vleck et al. (2007), found that the likelihood surface for $\\sigma^{2}(A_{s})$ was very flat, making model fitting challenging. We will examine such issues of identifiability shortly. While mixed-model methodology is very robust (for example, it easily handles missing data and variable group numbers), it can easily fail if the model is not correctly specified or the experimental design is such that random effects are not separable, points that we will address shortly."
+    },
+    {
       "type": "example",
       "content": "[[SEE_EXAMPLE:22.12]]"
     }

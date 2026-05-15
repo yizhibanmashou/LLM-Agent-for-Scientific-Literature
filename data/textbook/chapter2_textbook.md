@@ -1,4 +1,4 @@
-# Chapter 2 Textbook Mapping
+# Chapter 2 · Neutral Evolution in One- and Two-Locus Systems
 
 ## chapter2_001 · Neutral Evolution in One- and Two-Locus Systems: Introduction
 
@@ -59,13 +59,9 @@ It should be noted that the Wright-Fisher model, in which all individuals synchr
 
 **[示例 Example]**
 
-> **Example 2.1** · ref: `2.1` · source: `chapter2_002.json` · blocks 7–7
+> **Example 2.1** · ref: `2.1` · source: `chapter2_002.json` · blocks 7–10
 >
-> Example 2.1. Consider an initially heterozygous individual Bb in a self-fertilizing line maintained by single-progeny descent. With N = 1, the only three possible allele-frequency states in the population are zero, one, or two B alleles. Denoting the initial state of the population by $ \mathbf{x}(0) = [0, 1, 0] $, the probability that the population is in states 0, 1, or 2 at some future generation t is given by Equation 2.2b with $$ \mathbf{P}=\begin{pmatrix}{{{1}}}&{{{0}}}&{{{0}}} \\{{{0.25}}}&{{{0.50}}}&{{{0.25}}} \\{{{0}}}&{{{0}}}&{{{1}}}\end{pmatrix} $$
-> 
-> Although the numerical values for the elements of P can be obtained directly from Equation 2.1, for this simple example they can also be arrived at intuitively. For example, the elements in the first row of P denote the probabilities that the population will be in states j = 0, 1, 2 in generation $ t + 1 $ given that it is in state 0 in generation t. The only nonzero element in this row is $ P_{00} = 1 $. It is nonzero because the i = 0 state is absorbing, i.e., once the population enters this state, it remains there indefinitely.
-> 
-> The probability of being in any particular allele-frequency category in generation t, which follows from Equation 2.2b, is a function of $ \mathbf{P}^{t} $, so for example, $$ \mathbf{P}^{2}=\begin{pmatrix}{{{1}}}&{{{0}}}&{{{0}}} \\{{{0.375}}}&{{{0.250}}}&{{{0.375}}} \\{{{0}}}&{{{0}}}&{{{1}}}\end{pmatrix},\quad\mathbf{P}^{5}=\begin{pmatrix}{{{1}}}&{{{0}}}&{{{0}}} \\{{{0.48438}}}&{{{0.03125}}}&{{{0.48438}}} \\{{{0}}}&{{{0}}}&{{{1}}}\end{pmatrix} $$
+> Example 2.1. Consider an initially heterozygous individual Bb in a self-fertilizing line maintained by single-progeny descent. With N = 1, the only three possible allele-frequency states in the population are zero, one, or two B alleles. Denoting the initial state of the population by $ \mathbf{x}(0) = [0, 1, 0] $, the probability that the population is in states 0, 1, or 2 at some future generation t is given by Equation 2.2b with $$ \mathbf{P}=\begin{pmatrix}{{{1}}}&{{{0}}}&{{{0}}} \\{{{0.25}}}&{{{0.50}}}&{{{0.25}}} \\{{{0}}}&{{{0}}}&{{{1}}}\end{pmatrix} $$ Although the numerical values for the elements of P can be obtained directly from Equation 2.1, for this simple example they can also be arrived at intuitively. For example, the elements in the first row of P denote the probabilities that the population will be in states j = 0, 1, 2 in generation $ t + 1 $ given that it is in state 0 in generation t. The only nonzero element in this row is $ P_{00} = 1 $. It is nonzero because the i = 0 state is absorbing, i.e., once the population enters this state, it remains there indefinitely. The probability of being in any particular allele-frequency category in generation t, which follows from Equation 2.2b, is a function of $ \mathbf{P}^{t} $, so for example, $$ \mathbf{P}^{2}=\begin{pmatrix}{{{1}}}&{{{0}}}&{{{0}}} \\{{{0.375}}}&{{{0.250}}}&{{{0.375}}} \\{{{0}}}&{{{0}}}&{{{1}}}\end{pmatrix},\quad\mathbf{P}^{5}=\begin{pmatrix}{{{1}}}&{{{0}}}&{{{0}}} \\{{{0.48438}}}&{{{0.03125}}}&{{{0.48438}}} \\{{{0}}}&{{{0}}}&{{{1}}}\end{pmatrix} $$ and so on. With the initial vector $ \mathbf{x}(0) = (0, 1, 0) $, only the middle row of $ \mathbf{P}^t $ is relevant, giving the following table for the progression of the elements of $ \mathbf{x}(t) $ over time:
 > 
 > > **Inline Table 1** · `inline_1` · page 6 · source: `chapter2_002`
 > > Inline Table 1
@@ -95,6 +91,15 @@ It should be noted that the Wright-Fisher model, in which all individuals synchr
 ## chapter2_003 · Neutral Evolution in One- and Two-Locus Systems: Introduction / LOSS OF HETEROZYGOSITY BY RANDOM GENETIC DRIFT
 
 The sampling variance of an allele frequency provides one way to succinctly define the stochastic effects of random genetic drift. Consider a large pool of gametes, a fraction p of which carry the B allele, and let 2N gametes be randomly drawn to produce a new generation of N individuals. Defining the expected frequencies of genotypes BB, Bb, and bb in the progeny generation by the Hardy-Weinberg proportions $ p^2 $, $ 2p(1-p) $, and $ (1-p)^2 $, the expected number of B alleles contained in a random offspring is simply $ (2 \cdot p^2) + [1 \cdot 2p(1-p)] + [0 \cdot (1-p)^2] = 2p $. The expected square of the number of B alleles carried per individual is $ (2^2 \cdot p^2) + [1^2 \cdot 2p(1-p)] + [0^2 \cdot (1-p)^2] = 2p(1+p) $. Thus, the variance (the mean squared value minus the square of the mean) of the number of B alleles carried by an individual is $ 2p(1+p) - (2p)^2 = 2p(1-p) $, whereas the variance of the total number of B alleles carried in the offspring generation is N times this, $ 2Np(1-p) $. Because the frequency of allele B is the number of copies divided by 2N, the sampling variance of the frequency (a second-order moment) is $ 2Np(1-p)/(2N)^2 = p(1-p)/(2N) $, which is directly proportional to the heterozygosity (the fraction of Bb individuals in the population) and inversely proportional to the population size. The expression $ p(1-p)/(2N) $ defines the dispersion in allele frequency resulting from a single generation of gamete sampling, conditional on allele frequency p in the parental population.
+
+**[Figure]**
+
+> **Figure 2.1** · page 7 · source: `chapter2`
+>
+> ![Figure 2.1](../figures/fig_0160.png)
+>
+> Figure 2.1 Distinction between alleles that are identical in state (IIS) and identical by descent (IBD). The simple example is a case in which the population consists of just three individuals, so that the total number of gametes transmitted randomly per generation is  $ 2N = 6 $. A polymorphism exists in the time-zero population (black and white alleles), so not all alleles are initially IIS. After one generation of sampling, two pairs of alleles are IBD because the two copies are direct copies of a parental allele.
+
 
 In the absence of any counteracting evolutionary forces, the dispersive effects of genetic drift will continue in each generation, leading to a progressive erosion of population-level heterozygosity until all loci have eventually become fixed for just a single allele. To evaluate the long-term impact of finite population size on the expected heterozygosity of a locus, we make use of the properties of the inbreeding coefficient, $ f_{1} $, which denotes the probability that two alleles at a locus in an individual are identical by descent (IBD) (LW Chapter 7). Because all gene copies at a locus must ultimately trace back to a single, remote common ancestor, it is essential to start with an appropriate reference generation, which we here take to be the current generation, and then simply query forward in time as to the probability that any random pair of genes traces back to a specific copy of one of the 2N genes present at the locus in the reference generation. Under this framework, a pair of genes that are identical in state (IIS; also know as alike in state, AIS) need not be IBD, but barring mutation, genes that are IBD must also be IIS (Figure 2.1).
 
@@ -218,49 +223,18 @@ An issue of special interest is the mean time until an allele is absorbed into e
 
 **[示例 Example]**
 
-> **Example 2.2** · ref: `2.2` · source: `chapter2_004.json` · blocks 2–2
+> **Example 2.2** · ref: `2.2` · source: `chapter2_004.json` · blocks 2–11
 >
-> Example 2.2. Ewens (2004) used the following line of reasoning to derive the expected time to absorption of a neutral allele under the Wright-Fisher model. Letting $ \delta p $ denote the change in allele frequency in one unit of time, the mean time to absorption for an allele with frequency p may be rewritten as $$ \bar{t}_{a}(p)=E[\bar{t}_{a}(p+\delta p)]+1 $$ where $E$ denotes an expected value. In words, this expression states that the mean absorption time starting at frequency $p$ is equal to the mean absorption time one time unit later when the allele frequency is $p + \delta p$, plus one. Approximating $\bar{t}_a(p + \delta p)$ by the first three terms in its Taylor series (see LW Equation A1.2) and then taking expectations (only the $\delta p$ are random terms; the rest are fixed constants), gives $$ \begin{align*}E[\bar{t}_{a}(p+\delta p)]&\simeq E\left[\bar{t}_{a}(p)+\delta p\frac{\partial\bar{t}_{a}(p)}{\partial p}+\frac{(\delta p)^{2}}{2}\frac{\partial^{2}\bar{t}_{a}(p)}{\partial p^{2}}\right]\\&=\bar{t}_{a}(p)+E[\delta p]\frac{\partial\bar{t}_{a}(p)}{\partial p}+\frac{E[(\delta p)^{2}]}{2}\frac{\partial^{2}\bar{t}_{a}(p)}{\partial p^{2}}\end{align*} $$
-> 
-> Hence, we have $$ \bar{t}_{a}(p)\simeq\bar{t}_{a}(p)+E[\delta p]\frac{\partial\bar{t}_{a}(p)}{\partial p}+\frac{E[(\delta p)^{2}]}{2}\frac{\partial^{2}\bar{t}_{a}(p)}{\partial p^{2}}+1 $$
-> 
-> Under neutrality, the expected change in allele frequency is $ E(\delta p) = 0 $, and as derived previously, the expected variance in allele-frequency change is $ E[(\delta p)^2] = p(1 - p)/(2N) $. Substituting into our approximation and rearranging gives $$ \overline{t}_{a}(p)-\overline{t}_{a}(p)-1\simeq\frac{p(1-p)}{2\cdot2N}\frac{\partial^{2}\overline{t}_{a}(p)}{\partial p^{2}} $$ which implies the differential equation $$ \frac{\partial^{2}\bar{t}_{a}(p)}{\partial p^{2}}\simeq-\frac{4N}{p(1-p)} $$
-> 
-> Performing the double integration with respect to p leads to the solution
-> 
-> > **Formula (2.11a)** · `2.11a` · source: `chapter2_block_033` · PROBABILITIES AND TIMES TO FIXATION OR LOSS
-> >
-> > $$ \bar{t}_{a}(p_{0})\simeq-4N[p_{0}\ln(p_{0})+(1-p_{0})\ln(1-p_{0})] $$
-> 
-> 
-> which is the mean time until an allele with initial frequency $ p_{0} $ is either lost or fixed in a population.
-> 
-> A similar approach can be used to estimate the mean time to fixation for the subset of alleles that specifically become fixed, $ \bar{t}_f(p_0) $. The essential modification here is that in estimating $ \bar{t}_f(p_0) $, $ E(\delta p) $ is no longer equal to zero, because in order for an allele to become fixed, at least one copy must be produced in each generation. That is, in the case of conditional fixation, of the $ 2N $ genes drawn in each generation, one is definitely a $ B $ allele, whereas the remaining $ 2N - 1 $ genes can be viewed as random, leading to $ E(\delta p) = \{(1/2N) + [1 - (1/2N)]p\} - p = (1 - p)/(2N) $. Similarly, because the states of only $ 2N - 1 $ genes are random, $ E[(\delta p)^2] = \{(1 \cdot 0) + [(2N - 1)p(1 - p)]\} / (2N)^2 $. Unless $ N $ is very small, the approximation $ E[(\delta p)^2] = p(1 - p)/(2N) $ still holds quite well, and following the procedures utilized previously, we then have $$ \left(\frac{2}{p}\right)\frac{\partial\bar{t}_{f}(p)}{\partial p}+\frac{\partial^{2}\bar{t}_{f}(p)}{\partial p^{2}}\simeq-\frac{4N}{p(1-p)} $$
-> 
-> The solution of this second-order differential equation requires several steps, which we omit, the final result being
-> 
-> > **Formula (2.11b)** · `2.11b` · source: `chapter2_block_035` · PROBABILITIES AND TIMES TO FIXATION OR LOSS
-> >
-> > $$ \overline{t}_{f}(p_{0})\simeq-\frac{4N(1-p_{0})\ln(1-p_{0})}{p_{0}} $$
-> 
-> 
-> The mean time to loss of an allele conditional upon loss is identical to the previous expression, but with $ (1 - p_0) $ interchanged with $ p_0 $,
-> 
-> > **Formula (2.11c)** · `2.11c` · source: `chapter2_block_036` · PROBABILITIES AND TIMES TO FIXATION OR LOSS
-> >
-> > $$ \bar{t}_{l}(p_{0})\simeq-\frac{4N p_{0}\ln(p_{0})}{1-p_{0}} $$
-> 
-> 
-> These expressions show that the conditional time to fixation asymptotically approaches 4N generations for rare alleles, with the more general fate of such alleles being loss from the population in $ \ll 4N $ generations (Figure 2.2).
-> 
-> Finally, because the probability of ultimate fixation of a neutral allele is equal to its initial frequency $ (p_{0}) $ and the probability of ultimate loss is $ (1 - p_{0}) $, it follows that
-> 
-> > **Formula (2.11d)** · `2.11d` · source: `chapter2_block_038` · PROBABILITIES AND TIMES TO FIXATION OR LOSS
-> >
-> > $$ \overline{t}_{a}(p_{0})=p_{0}\overline{t}_{f}(p_{0})+(1-p_{0})\overline{t}_{l}(p_{0}) $$
-> 
-> 
-> Example A1.8 (in Appendix 1) uses diffusion theory to obtain results identical to those just presented.
+> Example 2.2. Ewens (2004) used the following line of reasoning to derive the expected time to absorption of a neutral allele under the Wright-Fisher model. Letting $ \delta p $ denote the change in allele frequency in one unit of time, the mean time to absorption for an allele with frequency p may be rewritten as $$ \bar{t}_{a}(p)=E[\bar{t}_{a}(p+\delta p)]+1 $$ where $E$ denotes an expected value. In words, this expression states that the mean absorption time starting at frequency $p$ is equal to the mean absorption time one time unit later when the allele frequency is $p + \delta p$, plus one. Approximating $\bar{t}_a(p + \delta p)$ by the first three terms in its Taylor series (see LW Equation A1.2) and then taking expectations (only the $\delta p$ are random terms; the rest are fixed constants), gives $$ \begin{align*}E[\bar{t}_{a}(p+\delta p)]&\simeq E\left[\bar{t}_{a}(p)+\delta p\frac{\partial\bar{t}_{a}(p)}{\partial p}+\frac{(\delta p)^{2}}{2}\frac{\partial^{2}\bar{t}_{a}(p)}{\partial p^{2}}\right]\\&=\bar{t}_{a}(p)+E[\delta p]\frac{\partial\bar{t}_{a}(p)}{\partial p}+\frac{E[(\delta p)^{2}]}{2}\frac{\partial^{2}\bar{t}_{a}(p)}{\partial p^{2}}\end{align*} $$ Hence, we have $$ \bar{t}_{a}(p)\simeq\bar{t}_{a}(p)+E[\delta p]\frac{\partial\bar{t}_{a}(p)}{\partial p}+\frac{E[(\delta p)^{2}]}{2}\frac{\partial^{2}\bar{t}_{a}(p)}{\partial p^{2}}+1 $$ Under neutrality, the expected change in allele frequency is $ E(\delta p) = 0 $, and as derived previously, the expected variance in allele-frequency change is $ E[(\delta p)^2] = p(1 - p)/(2N) $. Substituting into our approximation and rearranging gives $$ \overline{t}_{a}(p)-\overline{t}_{a}(p)-1\simeq\frac{p(1-p)}{2\cdot2N}\frac{\partial^{2}\overline{t}_{a}(p)}{\partial p^{2}} $$ which implies the differential equation $$ \frac{\partial^{2}\bar{t}_{a}(p)}{\partial p^{2}}\simeq-\frac{4N}{p(1-p)} $$ Performing the double integration with respect to p leads to the solution $$ \bar{t}_{a}(p_{0})\simeq-4N[p_{0}\ln(p_{0})+(1-p_{0})\ln(1-p_{0})] $$ (2.11a) which is the mean time until an allele with initial frequency $ p_{0} $ is either lost or fixed in a population. A similar approach can be used to estimate the mean time to fixation for the subset of alleles that specifically become fixed, $ \bar{t}_f(p_0) $. The essential modification here is that in estimating $ \bar{t}_f(p_0) $, $ E(\delta p) $ is no longer equal to zero, because in order for an allele to become fixed, at least one copy must be produced in each generation. That is, in the case of conditional fixation, of the $ 2N $ genes drawn in each generation, one is definitely a $ B $ allele, whereas the remaining $ 2N - 1 $ genes can be viewed as random, leading to $ E(\delta p) = \{(1/2N) + [1 - (1/2N)]p\} - p = (1 - p)/(2N) $. Similarly, because the states of only $ 2N - 1 $ genes are random, $ E[(\delta p)^2] = \{(1 \cdot 0) + [(2N - 1)p(1 - p)]\} / (2N)^2 $. Unless $ N $ is very small, the approximation $ E[(\delta p)^2] = p(1 - p)/(2N) $ still holds quite well, and following the procedures utilized previously, we then have $$ \left(\frac{2}{p}\right)\frac{\partial\bar{t}_{f}(p)}{\partial p}+\frac{\partial^{2}\bar{t}_{f}(p)}{\partial p^{2}}\simeq-\frac{4N}{p(1-p)} $$ The solution of this second-order differential equation requires several steps, which we omit, the final result being $$ \overline{t}_{f}(p_{0})\simeq-\frac{4N(1-p_{0})\ln(1-p_{0})}{p_{0}} $$ (2.11b) The mean time to loss of an allele conditional upon loss is identical to the previous expression, but with $ (1 - p_0) $ interchanged with $ p_0 $, $$ \bar{t}_{l}(p_{0})\simeq-\frac{4N p_{0}\ln(p_{0})}{1-p_{0}} $$ (2.11c) These expressions show that the conditional time to fixation asymptotically approaches 4N generations for rare alleles, with the more general fate of such alleles being loss from the population in $ \ll 4N $ generations (Figure 2.2). Finally, because the probability of ultimate fixation of a neutral allele is equal to its initial frequency $ (p_{0}) $ and the probability of ultimate loss is $ (1 - p_{0}) $, it follows that $$ \overline{t}_{a}(p_{0})=p_{0}\overline{t}_{f}(p_{0})+(1-p_{0})\overline{t}_{l}(p_{0}) $$ (2.11d) Example A1.8 (in Appendix 1) uses diffusion theory to obtain results identical to those just presented.
+
+
+**[Figure]**
+
+> **Figure 2.2** · page 12 · source: `chapter2`
+>
+> ![Figure 2.2](../figures/fig_0161.png)
+>
+> Figure 2.2 Mean times to fixation and loss of neutral alleles with starting frequency  $ p_{0} $ (from Equations 2.11b and 2.11c). The times are scaled in units of 4N generations, and thus need to be multiplied by 4N to obtain absolute numbers of generations.
 
 
 ---
@@ -278,6 +252,15 @@ A classic result from standard theory relates the age of a neutral allele to its
 
 assuming a constant population size during the allele's sojourn through the population (Kimura and Ohta 1973). As shown in Figure 2.3, alleles at higher frequency are expected to be older. Most notably, as $ p \rightarrow 1 $, $ E(t) \rightarrow 4N $ generations, which is consistent with the result in the previous example showing that the mean time to fixation of a rare (e.g., new mutant) neutral allele is 4N generations. This result is more than just an esoteric finding, as one class of tests for selection evaluates whether an allele, given its frequency, is too young to be compatible with neutrality (Chapter 9).
 
+**[Figure]**
+
+> **Figure 2.3** · page 12 · source: `chapter2`
+>
+> ![Figure 2.3](../figures/fig_0162.png)
+>
+> Figure 2.3 Expected age of a neutral allele, given its frequency p (Equation 2.12). Time is scaled in units of 4N generations.
+
+
 **[推导 Derivation]**
 
 Equation 2.12 is not, however, the whole story, as a very old allele can sometimes be at low frequency, having transiently drifted up to a high frequency before drifting back toward zero frequency by chance. Thus, we expect the confidence interval for allele-age estimates to be highly asymmetric about the mean. Slatkin and Rannala (2000) provide an approximation for the cumulative probability for the age of an allele, given a frequency of p in a random sample of n alleles,
@@ -291,7 +274,7 @@ One final caveat is in order with respect to Equation 2.12. Unless the sample si
 
 **[示例 Example]**
 
-> **Example 2.3** · ref: `2.3` · source: `chapter2_005.json` · blocks 3–3
+> **Example 2.3** · ref: `2.3` · source: `chapter2_005.json` · blocks 3–5
 >
 > Example 2.3. The mutation CCR5- $ \delta32 $ destroys the human CCR5 receptor, which is used by the HIV virus to enter the cell, leading to significant resistance against HIV infection. This deletion occurs at frequencies up to 14% in Eurasians, but is absent in Africans, Native Americans, and East Asians. Assuming a frequency of p = 0.10 and an effective population size N = 5000 for Caucasians, Stephens et al. (1998) used Equation 2.12 to estimate the age of this allele (under the assumption of neutrality) to be $$ \widehat{t}=-\frac{4\cdot5000\cdot0.1\log(0.1)}{0.9}=5116\{\text{generations}\} $$
 > 
@@ -302,7 +285,7 @@ One final caveat is in order with respect to Equation 2.12. Unless the sample si
 
 **[示例 Example]**
 
-> **Example 2.4** · ref: `2.4` · source: `chapter2_005.json` · blocks 4–4
+> **Example 2.4** · ref: `2.4` · source: `chapter2_005.json` · blocks 6–7
 >
 > Example 2.4. Consider a situation in which a random sample of 500 gametes from a population yields 350 copies of a particular allele A, and hence an estimated p of 0.7. Under the joint assumptions of neutrality and constant population size, what is the 95% confidence interval for the estimated age of this allele? From Equation 2.12, the expected age is $$ \widehat{t}=-\frac{(4N)0.7\ln(0.7)}{1-0.7}=1.45N $$
 > 
@@ -334,13 +317,40 @@ Summing up the calculations to this point, five significant conclusions can be g
 
 ## chapter2_007 · Neutral Evolution in One- and Two-Locus Systems: Introduction / BURI'S EXPERIMENT
 
+**[Figure]**
+
+> **Figure 2.4** · page 15 · source: `chapter2`
+>
+> ![Figure 2.4](../figures/fig_0163.png)
+>
+> Figure 2.4 Expected probability distributions for the frequencies of segregating neutral alleles in replicate, randomly mating populations of size N after t generations of divergence (fixed alleles are ignored). The initial allele frequency in the base population is 0.5 on the left and 0.1 on the right. The abscissa is the population allele frequency, whereas the ordinate is proportional to the probability of occurrence of that frequency. Note that the time scale is in units of N generations, where N is the population size, so that t = N generations implies 100 generations for a population of size 100 and 10,000 generations for a population of size 10,000. (From Kimura 1955b.)
+
+
 Because all populations are finite in size, the theory of random genetic drift is of central significance to all areas of population genetics. It may therefore come as a surprise that highly replicated experiments examining the chance dynamics of allele-frequency change are extremely rare. However, the results of one massive experiment nicely affirm the theoretical expectations outlined above, while making one additional important point. Starting with two homozygous lines of Drosophila melanogaster, one of which was fixed for allele $ bw^{75} $ and the other for allele $ bw $ at the brown locus, Buri (1956) established 212 $ F_{1} $ hybrid populations, with initial frequency 0.5 for both alleles. For the following 19 generations, he randomly mated eight males and eight females within each population and monitored the changes in allele frequencies in each subline. This could be done in the pre-molecular era because the genotype at the brown locus determines eye color: $ bw^{75}bw^{75} = $ bright red-orange, $ bw^{75}bw = \text{deep red-brown} $, and $ bwbw = \text{white} $. (Two separate experiments were performed, one with 107 and the other with 105 populations, but the results are so similar that they have been pooled in the following analysis.)
 
 To evaluate the results in the light of the preceding theory, it is first necessary to demonstrate that the $ bw^{75} $ and $ bw $ alleles are indeed neutral with respect to each other. This can be done as follows (Figure 2.5, top). In the absence of selection, the expected frequency of the $ bw^{75} $ allele averaged over all populations should equal its initial frequency, 0.50, in all generations. Nevertheless, just as the frequency within any population is expected to deviate from 0.5 because of drift, the mean allele frequency in the total aggregate of populations will also vary slightly because the number of populations is finite. The sampling variance of the overall mean frequency is equal to the sum of the expected within- and among-population allele-frequency variances divided by the number of populations, 212. The latter quantity was already defined in Equation 2.14, whereas the former is the expected binomial sampling variance divided by the sample size $ (2N) $, or $ p_0(1 - p_0)[1 - (1/2N)] / (2N) $. Figure 2.5 shows that although the frequency of the $ bw^{75} $ allele averaged over all populations increased to
 
+**[Figure]**
+
+> **Figure 2.5** · page 16 · source: `chapter2`
+>
+> ![Figure 2.5](../figures/fig_0164.png)
+>
+> Figure 2.5 Patterns of change in the frequencies of the  $ bw^{75} $ allele in 212 isolated populations of Drosophila melanogaster, each consisting of eight breeding males and eight females. (Top) The average allele frequency over the entire pool of populations. The dotted and solid lines, respectively, denote upward deviations of two standard errors from the expected value of  $ p_{0} = 1/2 $ under the assumption of effective population sizes of 16 and 10.2 individuals. (Middle) Mean observed heterozygosity compared to the expectations assuming an effective population size of 10.2. The expected heterozygosity is 0.5 in generations 1 and 2 because the base population (generation 0) consisted entirely of heterozygotes, and with separate sexes, an additional generation is required for the unification of alleles that are identical by descent. (Bottom) Among-line variance of allele frequencies compared with their expectations assuming an effective population size of 10.2. (After Buri 1956.)
+
+
 0.525, it generally remained within two standard errors of the expectation under pure drift. The overall pattern of change in mean allele frequency is therefore compatible with the expectations for a neutral locus subject to random genetic drift.
 
 The dynamics of the among-population divergence (Figure 2.6) are qualitatively very similar to the expected pattern illustrated in the left panel of Figure 2.4 (corresponding to $ p_{0} = 0.5 $). As the population allele frequencies diverge, the initial bell-shaped distribution does indeed become flatter, eventually acquiring a U-shape as populations that are fixed for the $ bw^{75} $ or bw alleles accumulate. Had the experiment been extended further in time, the distribution would have eventually consisted of only two classes, populations fixed for $ bw^{75} $ and those fixed for bw, with nearly equal frequencies.
+
+**[Figure]**
+
+> **Figure 2.6** · page 17 · source: `chapter2`
+>
+> ![Figure 2.6](../figures/fig_0165.png)
+>
+> Figure 2.6 Distribution of the number of bw $ ^{75} $ alleles in 212 populations of D. melanogaster each initiated with a frequency of 0.5. Two features are represented in this temporal series: the distribution of frequencies for segregating alleles (1 to 31 copies), the expected form of which is given in Figure 2.4, and the accumulation of fixed alleles (0 or 32 copies). (From Buri 1956).
+
 
 Despite the qualitative agreement with theoretical expectations, the rate of divergence illustrated in Figure 2.6 is somewhat greater than that expected for randomly mating populations of 16 individuals. However, this does not necessarily invalidate the theory outlined previously, as it is possible that not all 16 potential parents reproduced each generation, and/or that the distribution of family sizes deviated from randomness. Either condition would cause the populations to behave genetically as though they were smaller than its actual size (Chapter 3). With the massive amount of data in Buri's experiment, it is possible to obtain an empirical estimate of this effective population size in the following way.
 
@@ -349,6 +359,15 @@ Not including fixed classes, there are 31 possible allele frequencies in Buri's 
 ---
 
 ## chapter2_008 · Neutral Evolution in One- and Two-Locus Systems: Introduction / HIGHER-ORDER ALLELE-FREQUENCY MOMENTS
+
+**[Figure]**
+
+> **Figure 2.7** · page 18 · source: `chapter2`
+>
+> ![Figure 2.7](../figures/fig_0166.png)
+>
+> Figure 2.7 Observed sampling variances of allele frequencies for situations in which the donor population contained 1 to 31 bw $ ^{75} $ genes. The dashed line is the expected pattern,  $ p(1 - p)/2N $, if the actual populations of 8 males and 8 females were randomly mating with equal chances of contributing offspring. The solid line describes the pattern for an average effective population size of 10.2. (From Buri 1956.)
+
 
 In the previous sections, we evaluated the expected values of various population features under neutrality. However, as just noted, in applying such expressions to empirical studies, it is important to keep in mind that the random sampling of allele frequencies across generations will cause the realized behavior of any particular population or group of populations to deviate from the expected pattern. Thus, there is a practical need for expressions for the variance of various population parameters that result from genetic sampling. This in turn requires an understanding of the behavior of higher-order allele-frequency moments. For example, although the expected heterozygosity is a function of $ 2p(1-p) = 2(p-p^2) $, as will be shown later, its variance depends on $ p^3 $ and $ p^4 $.
 
@@ -401,20 +420,20 @@ Using expectations for higher-order $ \delta p^{k} $ terms, expressions for all 
 
 where $ \lambda_{i}=1-(i/2N) $. Modifications for these expressions for populations with separate sexes and 1:1 sex ratios are given by Lynch and Hill (1986).
 
+**[Figure]**
+
+> **Figure 2.8** · page 20 · source: `chapter2`
+>
+> ![Figure 2.8](../figures/fig_0167.png)
+>
+> Figure 2.8 Mean heterozygosity and its standard deviation (SD) among replicate populations as a function of time (scaled in units of 2N generations). The upper curves assume an initial heterozygosity of  $ H_0 = 0.5 $ and the lower curves of  $ H_0 = 0.2 $. A diallelic locus is assumed, and new variation generated by mutation is ignored. Experimental error resulting from sampling of a finite number of individuals is ignored as well, i.e., we consider only the variance of true population-level heterozygosities resulting from gamete sampling. The expected heterozygosities (solid lines) are obtained with Equation 2.5, whereas the standard deviations (dotted lines) follow from Equation 2.17.
+
+
 **[示例 Example]**
 
-> **Example 2.5** · ref: `2.5` · source: `chapter2_008.json` · blocks 7–7
+> **Example 2.5** · ref: `2.5` · source: `chapter2_008.json` · blocks 7–9
 >
-> Example 2.5. The preceding expressions can be used to derive the evolutionary (or drift) variance of heterozygosity at a locus under the assumption of Hardy-Weinberg equilibrium, provided there are only two alleles segregating at the locus. Letting $ H_t = 2p_t(1 - p_t) $ denote the heterozygosity at generation $ t $, the expected variance of heterozygosity is $$ \begin{aligned}\sigma^{2}(H_{t})&=E\{[2p_{t}(1-p_{t})]^{2}\}-\{E[2p_{t}(1-p_{t})]\}^{2}\\&=E(4p_{t}^{2})-E(8p_{t}^{3})+E(4p_{t}^{4})-[E(2p_{t}-p_{t}^{2})]^{2}\end{aligned} $$
-> 
-> A solution is obtained by substituting Equations 2.16a–2.16d for the expectations of allele-frequency moments, with further simplification made possible by using the approximations $ \lambda_1 \simeq e^{-t/2N} $, $ \lambda_2 \simeq e^{-2t/2N} $, and $ \lambda_3 \simeq e^{-3t/2N} $, yielding
-> 
-> > **Formula (2.17)** · `2.17` · source: `chapter2_block_066` · HIGHER-ORDER ALLELE-FREQUENCY MOMENTS
-> >
-> > $$ \begin{align*}\sigma^2(H_t)\simeq H_0\left[{2\over5}e^{-t/2N}+\left(H_0-{2\over5}\right)e^{-3t/N}-H_0e^{-t/N}\right]\end{align*} $$
-> 
-> 
-> This quantity can be viewed as either the variance in heterozygosity that develops at a particular neutral locus among replicate populations starting from the same initial allele frequencies or as the variance in heterozygosity among a pool of loci within the same population with identical initial allele frequencies. As with the expected heterozygosity, the temporal dynamics of the evolutionary variance of heterozygosity scale inversely with the size of the population. Moreover, the variation in heterozygosity resulting from genetic drift can be quite high, with the standard deviation always exceeding the expected heterozygosity once $ t > 2N $ generations (Figure 2.8). With more than two alleles per locus, the preceding expressions would need to be modified to account for the negative drift sampling covariance between different alleles at the locus.
+> Example 2.5. The preceding expressions can be used to derive the evolutionary (or drift) variance of heterozygosity at a locus under the assumption of Hardy-Weinberg equilibrium, provided there are only two alleles segregating at the locus. Letting $ H_t = 2p_t(1 - p_t) $ denote the heterozygosity at generation $ t $, the expected variance of heterozygosity is $$ \begin{aligned}\sigma^{2}(H_{t})&=E\{[2p_{t}(1-p_{t})]^{2}\}-\{E[2p_{t}(1-p_{t})]\}^{2}\\&=E(4p_{t}^{2})-E(8p_{t}^{3})+E(4p_{t}^{4})-[E(2p_{t}-p_{t}^{2})]^{2}\end{aligned} $$ A solution is obtained by substituting Equations 2.16a–2.16d for the expectations of allele-frequency moments, with further simplification made possible by using the approximations $ \lambda_1 \simeq e^{-t/2N} $, $ \lambda_2 \simeq e^{-2t/2N} $, and $ \lambda_3 \simeq e^{-3t/2N} $, yielding $$ \begin{align*}\sigma^2(H_t)\simeq H_0\left[{2\over5}e^{-t/2N}+\left(H_0-{2\over5}\right)e^{-3t/N}-H_0e^{-t/N}\right]\end{align*} $$ (2.17) This quantity can be viewed as either the variance in heterozygosity that develops at a particular neutral locus among replicate populations starting from the same initial allele frequencies or as the variance in heterozygosity among a pool of loci within the same population with identical initial allele frequencies. As with the expected heterozygosity, the temporal dynamics of the evolutionary variance of heterozygosity scale inversely with the size of the population. Moreover, the variation in heterozygosity resulting from genetic drift can be quite high, with the standard deviation always exceeding the expected heterozygosity once $ t > 2N $ generations (Figure 2.8). With more than two alleles per locus, the preceding expressions would need to be modified to account for the negative drift sampling covariance between different alleles at the locus.
 
 
 ---
@@ -482,13 +501,9 @@ This is a natural definition in the sense of a correlation coefficient being gen
 
 **[示例 Example]**
 
-> **Example 2.6** · ref: `2.6` · source: `chapter2_009.json` · blocks 9–9
+> **Example 2.6** · ref: `2.6` · source: `chapter2_009.json` · blocks 9–11
 >
-> Example 2.6. One common setting generating linkage disequilibrium involves a new allele arising as a single copy on a particular background. Let A denote the derived allele and assume it arose on a B background at a second locus. Initially, all copies of A are associated with B (there are no Ab gametes). Because the sum of the AB and aB gamete frequencies is just the frequency q of B, the resulting $ 2 \times 2 $ gametic contingency table is $$ \begin{array}{ccc}{{{A}}}&{{{a}}} \\{{{B}}}&{{{p}}}&{{{q-p}}} \\{{{b}}}&{{{0}}}&{{{1-q}}} \\\end{array} $$ and the resulting initial values for D and $ r^{2} $ become $$ D_{\mathrm{AB}}=p_{AB}p_{ab}-p_{aB}p_{Ab}=p(1-q)-0\cdot(q-p)=p(1-q) $$ $$ r^{2}=\frac{D^{2}}{p(1-p)q(1-q)}=\frac{[p(1-q)]^{2}}{p(1-p)q(1-q)}=\frac{p(1-q)}{(1-p)q} $$
-> 
-> For this example, $ r^2 = 1 $ only when $ p = q $ (Sved 1971), or when there are no $ aB $ gametes ($ A $ and $ B $ always co-occur), in which case the $ 2 \times 2 $ gamete contingency table becomes $$ \begin{array}{cccc}{{{A}}}&{{{a}}} \\{{{B}}}&{{{p}}}&{{{0}}} \\{{{b}}}&{{{0}}}&{{{1-p}}} \\\end{array},\qquad or equivalently \quad\begin{array}{cccc}{{{\mathrm{A}}}}&{{{\mathrm{a}}}} \\{{{\mathrm{B}}}}&{{{q}}}&{{{0}}} \\{{{\mathrm{b}}}}&{{{0}}}&{{{1-q}}} \\\end{array} $$
-> 
-> For a newly arising mutation, $ p = 1/(2N) $, so initially $ D_{AB} = (1 - q)/(2N) $ and $ r^2 \simeq (1 - q)/(2Nq) $.
+> Example 2.6. One common setting generating linkage disequilibrium involves a new allele arising as a single copy on a particular background. Let A denote the derived allele and assume it arose on a B background at a second locus. Initially, all copies of A are associated with B (there are no Ab gametes). Because the sum of the AB and aB gamete frequencies is just the frequency q of B, the resulting $ 2 \times 2 $ gametic contingency table is $$ \begin{array}{ccc}{{{A}}}&{{{a}}} \\{{{B}}}&{{{p}}}&{{{q-p}}} \\{{{b}}}&{{{0}}}&{{{1-q}}} \\\end{array} $$ and the resulting initial values for D and $ r^{2} $ become $$ D_{\mathrm{AB}}=p_{AB}p_{ab}-p_{aB}p_{Ab}=p(1-q)-0\cdot(q-p)=p(1-q) $$ $$ r^{2}=\frac{D^{2}}{p(1-p)q(1-q)}=\frac{[p(1-q)]^{2}}{p(1-p)q(1-q)}=\frac{p(1-q)}{(1-p)q} $$ For this example, $ r^2 = 1 $ only when $ p = q $ (Sved 1971), or when there are no $ aB $ gametes ( $ A $ and $ B $ always co-occur), in which case the $ 2 \times 2 $ gamete contingency table becomes $$ \begin{array}{cccc}{{{A}}}&{{{a}}} \\{{{B}}}&{{{p}}}&{{{0}}} \\{{{b}}}&{{{0}}}&{{{1-p}}} \\\end{array},\qquad or equivalently \quad\begin{array}{cccc}{{{\mathrm{A}}}}&{{{\mathrm{a}}}} \\{{{\mathrm{B}}}}&{{{q}}}&{{{0}}} \\{{{\mathrm{b}}}}&{{{0}}}&{{{1-q}}} \\\end{array} $$ For a newly arising mutation, $ p = 1/(2N) $, so initially $ D_{AB} = (1 - q)/(2N) $ and $ r^2 \simeq (1 - q)/(2Nq) $.
 
 
 ---
@@ -615,7 +630,7 @@ which asymptotically approaches $ 1/\rho $ for large $ \rho $. Additional theore
 
 **[示例 Example]**
 
-> **Example 2.7** · ref: `2.7` · source: `chapter2_010.json` · blocks 7–7
+> **Example 2.7** · ref: `2.7` · source: `chapter2_010.json` · blocks 7–11
 >
 > Example 2.7. A widely cited expression for $ E(r^{2}) $ originates with Sved (1971; Feldman and Sved 1973), which we will refer to as $$ E(r_{IBD}^{2})=\frac{1}{1+4Nc}=\frac{1}{1+\rho} $$
 > 
@@ -636,7 +651,7 @@ Although heterozygosity provides a robust measure of genetic variation, as a sum
 
 ---
 
-## chapter2_012 · Neutral Evolution in One- and Two-Locus Systems: Introduction / The Infinite-alleles Model and the Associated Allele-frequency Spectrum
+## chapter2_012 · THE DETAILED STRUCTURE OF NEUTRAL VARIATION / The Infinite-alleles Model and the Associated Allele-frequency Spectrum
 
 **[命题 Proposition]**
 
@@ -644,20 +659,27 @@ The infinite-alleles model (briefly introduced earlier) was developed prior to t
 
 ---
 
-## chapter2_013 · Neutral Evolution in One- and Two-Locus Systems: Introduction / A A G $ \underline{A} $ C C
+## chapter2_013 · THE DETAILED STRUCTURE OF NEUTRAL VARIATION / The Infinite-alleles Model and the Associated Allele-frequency Spectrum
 
-A A G G C C A A G $ \underline{A} $ C C A A G G C C A A G G C $ \underline{A} $
+**[Figure]**
+
+> **Figure 2.9** · page 27 · source: `chapter2`
+>
+> ![Figure 2.9](../figures/fig_0168.png)
+>
+> Figure 2.9 An example of the difference between the infinite-alleles and infinite-sites models. Five sequences (horizontal rows) scored at six nucleotide sites (vertical columns) are sampled from a population. Three of these five sequences are different and are scored as three alleles (or haplotypes) under an infinite-alleles framework (from top to bottom, sequences 1 and 3; 2 and 4; and 5). Conversely, only two of the six sites are segregating (from left to right, columns 4 and 6), giving two polymorphic sites under an infinite-sites framework.
+
 
 **[推导 Derivation]**
 
 A key parameter for the infinite-alleles model is the per-locus population mutation rate, $ \theta_L = 4NuL $, which we distinguish from the more commonly used per-site measure, $ \theta = 4Nu $, where $ u $ is the mutation rate per site. As noted previously, under neutrality, provided that the population has been at constant size long enough to be in mutation-drift equilibrium, the expected heterozygosity is given by Equation 2.24b, with $ E(H) \approx \theta_L $ for $ \theta_L \ll 1 $. If the expected heterozygosity is small, a sample will often be monomorphic, consisting of only a single allele, or dimorphic, consisting of just two alleles. However, at higher levels of heterozygosity, multiple alleles can be expected, and a natural measure of variation is the number of different alleles in a sample. Insight into this quantity under drift-mutation equilibrium is given the probability of having $ k $ different alleles in a sample of $ n $ genes, which is
 
-> **Formula (2.30a)** · `2.30a` · source: `chapter2_block_095` · A A G $ \underline{A} $ C C
+> **Formula (2.30a)** · `2.30a` · source: `chapter2_block_095` · The Infinite-alleles Model and the Associated Allele-frequency Spectrum
 >
 > $$ \begin{align*}\Pr(k\mid\theta_L,n)=\frac{S_n^k\;\theta_L^k}{S_n(\theta_L)}\end{align*} $$
 
 
-> **Formula (2.30b)** · `2.30b` · source: `chapter2_block_095` · A A G $ \underline{A} $ C C
+> **Formula (2.30b)** · `2.30b` · source: `chapter2_block_095` · The Infinite-alleles Model and the Associated Allele-frequency Spectrum
 >
 > $$ S_{n}(\theta_{L})=\theta_{L}(\theta_{L}+1)(\theta_{L}+2)\cdots(\theta_{L}+n-1) $$
 
@@ -668,7 +690,7 @@ where and $ S_n^k $ is the coefficient on the $ \theta_L^k $ term obtained by ex
 
 Several useful results follow from Equation 2.30a. First, the probability of a monomorphic sample is
 
-> **Formula (2.31a)** · `2.31a` · source: `chapter2_block_096` · A A G $ \underline{A} $ C C
+> **Formula (2.31a)** · `2.31a` · source: `chapter2_block_096` · The Infinite-alleles Model and the Associated Allele-frequency Spectrum
 >
 > $$ \Pr(k=1)=\frac{(n-1)!}{(\theta_{L}+1)(\theta_{L}+2)\cdots(\theta_{L}+n-1)} $$
 
@@ -677,7 +699,7 @@ Several useful results follow from Equation 2.30a. First, the probability of a m
 
 Second, a bit of algebra gives the mean and variance for the number of alleles in a sample as
 
-> **Formula (2.31b)** · `2.31b` · source: `chapter2_block_097` · A A G $ \underline{A} $ C C
+> **Formula (2.31b)** · `2.31b` · source: `chapter2_block_097` · The Infinite-alleles Model and the Associated Allele-frequency Spectrum
 >
 > $$ \begin{align*}E(k)=1+\theta_L\cdot\sum\limits_{j=2}^n\frac{1}{\theta_L+j-1},\qquad\sigma^2(k)=\theta_L\cdot\sum\limits_{j=1}^{n-1}\frac{j}{(\theta_L+j)^2}\end{align*} $$
 
@@ -686,7 +708,7 @@ Second, a bit of algebra gives the mean and variance for the number of alleles i
 
 An even more complete description of the segregating allelic variation is given by the allele-frequency spectrum, which describes the joint probability distribution of the number of alleles in the sample and their frequencies. Given that the numbering of alleles is arbitrary, the convention is to consider the vector $ (n_1, \cdots, n_n) $, where $ n_i $ denotes the number of alleles that have exactly $ i $ copies in the sample. If the sample is monomorphic, then $ n_n = 1 $, whereas if all $ n $ alleles are unique (singletons), $ n_1 = n $. For the example data set in Figure 2.7, one allele appears as a singleton, whereas the other two alleles both appear as two copies, giving $ n_1 = 1 $, $ n_2 = 2 $, and $ n_3 $, $ n_4 $, $ n_5 = 0 $. The constraint on the $ n_i $ is that
 
-> **Formula (2.32)** · `2.32` · source: `chapter2_block_098` · A A G $ \underline{A} $ C C
+> **Formula (2.32)** · `2.32` · source: `chapter2_block_098` · The Infinite-alleles Model and the Associated Allele-frequency Spectrum
 >
 > $$ \sum_{i=1}^{n}i\cdot n_{i}=n $$
 
@@ -695,7 +717,7 @@ An even more complete description of the segregating allelic variation is given 
 
 A very powerful result, due to Ewens (1972) and Karlin and McGregor (1972), is that the joint probability distribution of $ n_{1}, \cdots, n_{n} $ and k is given by the Ewens sampling formula (Ewens 1972)
 
-> **Formula (2.33a)** · `2.33a` · source: `chapter2_block_099` · A A G $ \underline{A} $ C C
+> **Formula (2.33a)** · `2.33a` · source: `chapter2_block_099` · The Infinite-alleles Model and the Associated Allele-frequency Spectrum
 >
 > $$ \Pr(n_{1},n_{2},\cdots,n_{n},k\mid n)=\frac{n!\theta_{L}^{k}}{S_{n}(\theta_{L})\left(1^{n_{1}}2^{n_{2}}\cdots n^{n_{n}}\right)n_{1}!n_{2}!\cdots n_{n}!} $$
 
@@ -704,7 +726,7 @@ A very powerful result, due to Ewens (1972) and Karlin and McGregor (1972), is t
 
 Only nonzero values of $ n_i $ are included. The probability that the sample is monomorphic, Equation 2.31a, directly follows by setting $ k = 1, n_1 = n $. Equations 2.30a and 2.33a show that the conditional distribution of $ n_1, \cdots, n_n $ given $ k $ is
 
-> **Formula (2.33b)** · `2.33b` · source: `chapter2_block_100` · A A G $ \underline{A} $ C C
+> **Formula (2.33b)** · `2.33b` · source: `chapter2_block_100` · The Infinite-alleles Model and the Associated Allele-frequency Spectrum
 >
 > $$ \Pr(n_{1},n_{2},\cdots,n_{n}\mid n,\ k)=\frac{n!}{S_{n}^{k}\left(1^{n_{1}}2^{n_{2}}\cdots n^{n_{n}}\right)n_{1}!n_{2}!\cdots n_{n}!} $$
 
@@ -713,7 +735,7 @@ Note that the righthand side in Equation 2.33a is independent of $ \theta_{L} $.
 
 ---
 
-## chapter2_014 · Neutral Evolution in One- and Two-Locus Systems: Introduction / The Infinite-Sites Model and the Associated Site-frequency Spectrum
+## chapter2_014 · THE DETAILED STRUCTURE OF NEUTRAL VARIATION / The Infinite-Sites Model and the Associated Site-frequency Spectrum
 
 An alternate framework for summarizing molecular variation is embodied in the infinites- sites model, which treats a region as a series of L sites. Each new mutation is again viewed as unique, but now occurring at a novel (not currently segregating) site, and as with the infinite- alleles model, recombination within the region is assumed to be insignificant. Because this model allows only a single mutation per site, a particular variant at a polymorphic site is either ancestral (original) or derived (mutated), and each segregating site is treated as biallelic. With sequence data from one or more outgroups, one can often polarize the nucleotides at any particular site, determining which is derived by assuming the outgroup harbors the ancestral state. In the absence of such information, the minor-allele frequency, the frequency of the rarest nucleotide, is reported for each site. In the following expressions, we will make use of both measures of the population mutation rate noted above, with $ \theta_L = 4NuL = \theta L $.
 
@@ -816,6 +838,15 @@ The mean coalescence time for two randomly sampled genes is simply
 > $$ \bar{t}_{c}(2)=\sum_{t=1}^{\infty}t\cdot P_{c}(t)=2N $$
 
 
+**[Figure]**
+
+> **Figure 2.10** · page 31 · source: `chapter2`
+>
+> ![Figure 2.10](../figures/fig_0169.png)
+>
+> Figure 2.10 Expected coalescence times,  $ \bar{t}_{n} $, for a sample of n = 5 neutral genes taken from an idealized Wright-Fisher population of size N. The number of gene pairs in each consecutive step of the coalescent process is denoted by  $ p_{n} $, and the expected times to coalescence at each step are equal to  $ 2N/p_{n} $ generations. The particular lineages that join during each step are arbitrary. Note that over half of the coalescent time for the total lineage of five samples involves the coalescent event between the final two branches.
+
+
 Thus, the expected number of generations required for any two random alleles to trace back to an ancestral copy is simply equal to twice the population size (more precisely, twice the effective population size, as will be defined in Chapter 3).
 
 **[推导 Derivation]**
@@ -863,7 +894,7 @@ Populations are often structured in space, with distinct demes connected by migr
 
 ---
 
-## chapter2_017 · Neutral Evolution in One- and Two-Locus Systems: Introduction / Quantifying Population Structure: $ F_{ST} $
+## chapter2_017 · MUTATION-MIGRATION-DRIFT EQUILIBRIUM / Quantifying Population Structure: $ F_{ST} $
 
 **[推导 Derivation]**
 
@@ -902,9 +933,18 @@ A result of great conceptual utility is that $ F_{ST} $ values are closely relat
 
 ---
 
-## chapter2_018 · Neutral Evolution in One- and Two-Locus Systems: Introduction / Mutation-migration-drift Equilibrium Values of $ F_{ST} $
+## chapter2_018 · MUTATION-MIGRATION-DRIFT EQUILIBRIUM / Mutation-migration-drift Equilibrium Values of $ F_{ST} $
 
 When migration rates are sufficiently high that essentially all demes exchange at least one individual per generation, the physical structure of the metapopulation has no consequences for population subdivision at the genetic level, i.e., $ F_{ST} \simeq 0 $. When the forces of mutation, migration, and drift operate simultaneously at moderate levels, some intermediate equilibrium level of among-population differentiation is reached such that the loss of new variants within demes by drift is balanced by the spread of novel variants across demes by mutation. As one might expect, the resultant equilibrium $ F_{ST} $ value is a function of the population size within each deme and the pattern of migration over demes, so there are essentially endless numbers of possible patterns of spatial structure and migration. To make some general points, we will consider two commonly envisioned situations (Figure 2.11).
+
+**[Figure]**
+
+> **Figure 2.11** · page 34 · source: `chapter2`
+>
+> ![Figure 2.11](../figures/fig_0170.png)
+>
+> Figure 2.11 (Left) The island model. Most mating occurs within each subpopulation/deme, but some small amount of equally partitioned migration m occurs between them. Hence, a migrant from deme A is equally likely to end up in demes B through D. (Right) A hierarchically-structured population. Here, intragroup migration (between A and B, and between C and D,  $ m_{1} $) occurs at a much higher level than migration between these two groups ( $ m_{2} $).
+
 
 **[推导 Derivation]**
 

@@ -1,4 +1,4 @@
-# Chapter 11 Textbook Mapping
+# Chapter 11 · Changes in Genetic Variation Induced by Drift
 
 ## chapter11_001 · Changes in Genetic Variation Induced by Drift: Introduction
 
@@ -16,7 +16,7 @@ The subject material of this chapter is rather technical in places, as it involv
 
 ---
 
-## chapter11_002 · Changes in Genetic Variation Induced by Drift: Introduction / Complete Additivity
+## chapter11_002 · RESPONSE OF WITHIN-POPULATION GENETIC VARIANCE TO DRIFT / Complete Additivity
 
 **[推导 Derivation]**
 
@@ -40,7 +40,7 @@ Equation 11.2 illustrates the simplest possible behavior that can be expected fo
 
 ---
 
-## chapter11_003 · Changes in Genetic Variation Induced by Drift: Introduction / The Effects of Dominance
+## chapter11_003 · RESPONSE OF WITHIN-POPULATION GENETIC VARIANCE TO DRIFT / The Effects of Dominance
 
 Robertson (1952) extended the preceding theory to loci with dominance and obtained the surprising result that rare recessive alleles can sometimes cause an initial increase in both the additive and dominance components of variance in an inbreeding population. A rare neutral allele will usually be lost from a small population, in which case the variance will decline, but if the frequency of a rare recessive allele stochastically increases, the frequency of the extreme genotype will also increase. For completely recessive alleles, a temporary inflation of the expected within-population variance will occur, provided the initial frequency of the recessive genotype is less than 0.17 (Robertson 1952). Although an inflation of the expected variance can also occur with partial dominance, the critical initial frequency for the recessive allele becomes progressively smaller as additivity is approached. Regardless of the degree of dominance, however, the within-population variance eventually declines to zero as loci move toward fixation, as in the case of pure additivity.
 
@@ -48,25 +48,29 @@ Robertson (1952), and thereafter Willis and Orr (1993), considered only a single
 
 **[Table]**
 
-> **Table 11.1** · `11.1` · page None · source: `chapter11_003`
-> Table 11.1 Factors contributing to the additive, dominance, and additive-by-additive components of genetic variance in finite populations. Here n is the number of loci, $ n_k $ is the number of alleles at the kth locus, $ p_{ki} $ is the frequency of the ith allele at locus k, $ \alpha_{ki} $ is the additive effect of the ith allele at locus k, $ \delta_{kij} $ is the dominance effect at locus k associated with genotype $ ij $, and $ (\alpha\alpha)_{ki,mj} $ is the additive-by-additive effect of alleles i and j from different loci (k and m) (LW Chapters 4 and 5). The inbreeding depression is defined for individual loci ($ \iota_k $ for locus k) as well as for the sum over all loci ($ \iota $). The $ \alpha_{ki} $, $ \delta_{kij} $, and $ (\alpha\alpha)_{ki,mj} $ are defined from the standpoint of a randomly mating base population (LW Chapter 4).
+> **Table 11.1** · `11.1` · page 3 · source: `chapter11_003`
+> Table 11.1 Factors contributing to the additive, dominance, and additive × additive components of genetic variance in finite populations. Here n is the number of loci, $ n_k $ is the number of alleles at the $ k $th locus, $ p_{ki} $ is the frequency of the $ i $th allele at locus $ k $, $ \alpha_{ki} $ is the additive effect of the $ i $th allele at locus $ k $, $ \delta_{kij} $ is the dominance effect at locus $ k $ associated with genotype $ ij $, and $ (\alpha\alpha)_{ki,mj} $ is the additive × additive effect of alleles i and j from different loci ( $ k $ and $ m $) (LW Chapters 4 and 5). The inbreeding depression is defined for individual loci ( $ t_k $ for locus $ k $) as well as for the sum over all loci ( $ \eta $). The $ \alpha_{ki} $, $ \delta_{kij} $, and $ (\alpha\alpha)_{ki,mj} $ are defined from the standpoint of a randomly mating base population (LW Chapter 4).
 >
-> Component | Expression
+> Selection scheme | Formula
 > --- | ---
-> Additive variance | $ \sigma_A^2 = 2\sum_{k=1}^{n}\sum_{i=1}^{n_k}p_{ki}\alpha_{ki}^{2} = 2\sum_{k=1}^{n}E[\alpha_{k\cdot}^{2}] $
-> Dominance variance | $ \sigma_D^2 = \sum_{k=1}^{n}\sum_{i=1}^{n_k}\sum_{j=1}^{n_k}p_{ki}p_{kj}\delta_{kij}^{2} = \sum_{k=1}^{n}E[\delta_{k\cdot\cdot}^{2}] $
-> Epistatic variance | $ \sigma_{AA}^2 = 4\sum_{k,m=1}^{n}\sum_{i=1}^{n_k}\sum_{j=1}^{n_m}p_{ki}p_{mj}(\alpha\alpha)_{ki,mj}^{2} = 4\sum_{k,m=1}^{n}E[(\alpha\alpha)_{k\cdot,m\cdot}^{2}] $
-> Inbreeding depression | $ \iota_k = \sum_{i=1}^{n_k}p_{ki}\delta_{kii}=E[\delta_{kii}],\quad \iota=\sum_{k=1}^{n}\iota_k $
-> Sum of squared locus-specific inbreeding depressions | $ \iota^* = \sum_{k=1}^{n}\iota_k^2 $
-> Variance of dominance effects in inbred individuals | $ \sigma_{DI}^{2}=\sum_{k=1}^{n}\sum_{i=1}^{n_k}(p_{ki}\delta_{kii}^{2}-\iota_k^{2})=\sum_{k=1}^{n}(E[\delta_{kii}^{2}]-\iota_k^{2}) $
-> Covariance of additive and dominance effects in inbred individuals | $ \sigma_{ADI}=2\sum_{k=1}^{n}\sum_{i=1}^{n_k}p_{ki}\alpha_{ki}\delta_{kii}=2\sum_{k=1}^{n}E[\alpha_{ki}\delta_{kii}] $
+> Additive variance | $$ \sigma_{A}^{2}=2\sum_{k=1}^{n}\sum_{i=1}^{n_{k}}p_{ki}\alpha_{ki}^{2}=2\sum_{k=1}^{n}E[\alpha_{k.}^{2}] $$
+> Dominance variance | $$ \sigma_{D}^{2}=\sum_{k=1}^{n}\sum_{i=1}^{n_{k}}\sum_{j=1}^{n_{k}}p_{ki}p_{kj}\delta_{kij}^{2}=\sum_{k=1}^{n}E[\delta_{k\cdot}^{2}]. $$
+> Epistatic variance | $$ \sigma_{A A}^{2}=4\sum_{k,m=1}^{n}\sum_{i=1}^{n_{k}}\sum_{j=1}^{n_{m}}p_{k i}p_{m j}(\alpha\alpha)_{k i,m j}^{2}=4\sum_{k,m=1}^{n}E[(\alpha\alpha)_{k\cdot,m\cdot}^{2}]. $$
+> Inbreeding depression | $$ \iota_{k}=\sum_{i=1}^{n_{k}}p_{ki}\delta_{kii}=E[\delta_{kii}]\qquad\iota=\sum_{k=1}^{n}\iota_{k} $$
+> Sum of squared locus- specific inbreeding depressions | $$ \iota^{*}=\sum_{k=1}^{n}\iota_{k}^{2} $$
+> Variance of dominance effects in inbred individuals | $$ \sigma_{D I}^{2}=\sum_{k=1}^{n}\sum_{i=1}^{n_{k}}\left(p_{k i}\delta_{k i i}^{2}-\iota_{k}^{2}\right)=\sum_{k=1}^{n}\left(E[\delta_{k i i}^{2}]-\iota_{k}^{2}\right) $$
+> Covariance of additive and dominance effects in inbred individuals | $$ \sigma_{ADI}=2\sum_{k=1}^{n}\sum_{i=1}^{n_{k}}p_{ki}\alpha_{ki}\delta_{kii}=2\sum_{k=1}^{n}E[\alpha_{ki}\delta_{kii}] $$
 
 
-variance depend on seven quadratic properties of the base population (Table 11.1), as well as on several expectations for the higher-order moments of allele and gamete frequencies. We first present the general model, and then consider some illuminating results that arise under special conditions.
+Sum of squared locus- $$ \iota^{*}=\sum_{k=1}^{n}\iota_{k}^{2} $$ specific inbreeding depressions
+
+Variance of dominance $$ \sigma_{D I}^{2}=\sum_{k=1}^{n}\sum_{i=1}^{n_{k}}\left(p_{k i}\delta_{k i i}^{2}-\iota_{k}^{2}\right)=\sum_{k=1}^{n}\left(E[\delta_{k i i}^{2}]-\iota_{k}^{2}\right) $$ effects in inbred individuals
+
+Covariance of additive $$ \sigma_{ADI}=2\sum_{k=1}^{n}\sum_{i=1}^{n_{k}}p_{ki}\alpha_{ki}\delta_{kii}=2\sum_{k=1}^{n}E[\alpha_{ki}\delta_{kii}] $$ and dominance effects in inbred individuals variance depend on seven quadratic properties of the base population (Table 11.1), as well as on several expectations for the higher-order moments of allele and gamete frequencies. We first present the general model, and then consider some illuminating results that arise under special conditions.
 
 ---
 
-## chapter11_004 · Changes in Genetic Variation Induced by Drift: Introduction / Quadratic Components for Inbred Populations
+## chapter11_004 · RESPONSE OF WITHIN-POPULATION GENETIC VARIANCE TO DRIFT / Quadratic Components for Inbred Populations
 
 When dominance is present, the covariance between relatives (and hence the trait variance) under inbreeding is no longer fully described by just $ \sigma_A^2 $ and $ \sigma_D^2 $. Rather, additional quadratic components of covariance are required, as outlined in Table 11.1. For the case of dominance and additive × additive variance, these include the familiar parameters $ \sigma_A^2 $, $ \sigma_D^2 $, and $ \sigma_{AA}^2 $ (i.e., the additive, dominance, and additive × additive components of genetic variance; LW Chapter 5); the inbreeding depression, $ \iota $, here defined to be the difference between the mean phenotypes of outbred and completely inbred individuals (by construction, $ E[G] = 0 $ for an outbred population, where $ G $ denotes the genotypic value, measured as a deviation from the overall mean); the sum, $ \iota^* $, of squared locus-specific inbreeding depressions; the variance of dominance effects among inbred individuals, $ \sigma_{DI}^2 $; and the covariance of additive and dominance effects in inbred individuals, $ \sigma_{ADI} $. Simplification is possible under certain circumstances. Most notably, with only two alleles per locus, $ \iota^* = \sigma_D^2 $, and if all alleles have a frequency of 0.5, as in a cross between two pure (i.e., fully inbred) lines, then $ \sigma_{DI}^2 = \sigma_{ADI} = 0 $.
 
@@ -89,7 +93,7 @@ As shown in Table 11.2, numerous alternative notations for these quadratic compo
 
 **[示例 Example]**
 
-> **Example 11.1** · ref: `11.1` · source: `chapter11_004.json` · blocks 3–3
+> **Example 11.1** · ref: `11.1` · source: `chapter11_004.json` · blocks 3–7
 >
 > Example 11.1. Consider a population with a single locus with genotypic values of $ A_1A_1 = 0 $, $ A_1A_2 = 1.67 $, and $ A_2A_2 = 2 $. What are the quadratic components when $ p = \text{freq}(A_1) = 0.8 $? Using standard expressions (LW Chapter 4), the random-mating parameters are
 > 
@@ -101,16 +105,12 @@ As shown in Table 11.2, numerous alternative notations for these quadratic compo
 > > -0.2804 | 1.1216 | -0.0536 | 0.02144 | -0.8576 | 0.628993 | 0.045967
 > 
 > 
-> Note that the mean value of $ G = 2E[\alpha] + E[\delta] = 0 $ under random mating, as $$ (2\alpha_{1}+\delta_{11})p^{2}+(\alpha_{1}+\alpha_{2}+\delta_{12})2p(1-p)+(2\alpha_{2}+\delta_{22})(1-p)^{2}=0 $$
-> 
-> The mean value ($ \iota $) of $ G $ under complete inbreeding (which is the inbreeding depression change in the mean as $ E[G] = 0 $ under random mating), follows upon recalling that a fraction, $ p_1 $, are $ A_1A_1 $ and a fraction, $ p_2 $, are $ A_2A_2 $ and that $ p_1\alpha_1 + p_2\alpha_2 = 0 $, yielding $$ \begin{aligned}\iota&=p_{1}(2\alpha_{1}+\delta_{11})+p_{2}(2\alpha_{2}+\delta_{22})\\&=p_{1}\delta_{11}+p_{2}\delta_{22}=0.8\cdot(-0.0536)+0.2\cdot(-0.8576)=-0.2144\end{aligned} $$ Because there are only two alleles, $ \iota^* = \sigma_D^2 $ (Cockerham and Matzinger 1985), and this is confirmed as $$ \iota^{*}=(p_{1}\delta_{11}+p_{2}\delta_{22})^{2}=(-0.2144)^{2}=0.045967=\sigma_{D}^{2} $$ As for the other two quadratic components, $$ \begin{aligned}\sigma_{DI}^{2}&=p_{1}\delta_{11}^{2}+p_{2}\delta_{22}^{2}-\iota^{*}\\&=0.8\left(-0.0536\right)^{2}+0.2\left(-0.8576\right)^{2}-0.045967=0.103427\\\sigma_{ADI}&=2(p_{1}\alpha_{1}\delta_{11}+p_{2}\alpha_{2}\delta_{22})\\&=2\Big[0.8\left(-0.2804\right)\left(-0.0536\right)+0.2\left(1.1216\right)\left(-0.8576\right)\Big]=-0.360707\end{aligned} $$
-> 
-> These quadratic components for other allele frequencies are graphed below.
+> Note that the mean value of $ G = 2E[\alpha] + E[\delta] = 0 $ under random mating, as $$ (2\alpha_{1}+\delta_{11})p^{2}+(\alpha_{1}+\alpha_{2}+\delta_{12})2p(1-p)+(2\alpha_{2}+\delta_{22})(1-p)^{2}=0 $$ The mean value ( $ \iota $) of $ G $ under complete inbreeding (which is the inbreeding depression change in the mean as $ E[G] = 0 $ under random mating), follows upon recalling that a fraction, $ p_1 $, are $ A_1A_1 $ and a fraction, $ p_2 $, are $ A_2A_2 $ and that $ p_1\alpha_1 + p_2\alpha_2 = 0 $, yielding $$ \begin{aligned}\iota&=p_{1}(2\alpha_{1}+\delta_{11})+p_{2}(2\alpha_{2}+\delta_{22})\\&=p_{1}\delta_{11}+p_{2}\delta_{22}=0.8\cdot(-0.0536)+0.2\cdot(-0.8576)=-0.2144\end{aligned} $$ Because there are only two alleles, $ \iota^* = \sigma_D^2 $ (Cockerham and Matzinger 1985), and this is confirmed as $$ \iota^{*}=\left(p_{1}\delta_{11}+p_{2}\delta_{22}\right)^{2}=\left(-0.2144\right)^{2}=0.045967=\sigma_{D}^{2} $$ As for the other two quadratic components, $$ \begin{aligned}\sigma_{DI}^{2}&=p_{1}\delta_{11}^{2}+p_{2}\delta_{22}^{2}-\iota^{*}\\&=0.8\left(-0.0536\right)^{2}+0.2\left(-0.8576\right)^{2}-0.045967=0.103427\\\sigma_{ADI}&=2(p_{1}\alpha_{1}\delta_{11}+p_{2}\alpha_{2}\delta_{22})\\&=2\Big[0.8\left(-0.2804\right)\left(-0.0536\right)+0.2\left(1.1216\right)\left(-0.8576\right)\Big]=-0.360707\end{aligned} $$ These quadratic components for other allele frequencies are graphed below.
 
 
 ---
 
-## chapter11_005 · Changes in Genetic Variation Induced by Drift: Introduction / One- and Two-locus Identity Coefficients
+## chapter11_005 · RESPONSE OF WITHIN-POPULATION GENETIC VARIANCE TO DRIFT / One- and Two-locus Identity Coefficients
 
 The contributions of the factors in Table 11.1 to the traditional components of genetic variance ($ \sigma_{A}^{2} $, $ \sigma_{D}^{2} $, and $ \sigma_{AA}^{2} $) in a finite population depend upon several one- and two-locus identity coefficients. As shown in Figure 11.1, these give the probabilities that randomly drawn combinations (from the population) of two, three, or four alleles at a given locus are identical by descent (both IBD and ibd are used in the literature; LW Chapter 7), with extensions to the two-locus case for randomly drawn combinations of two, three, or four two-locus gametes. Of the one-locus coefficients, f is the familiar inbreeding coefficient, i.e., the probability that two alleles are identical by descent at a particular locus (Chapter 2). The probabilities that the members of random groups of three and four alleles are all identical by descent are denoted by $ \gamma $ and $ \delta $ (the latter is not to be confused with the dominance effects, which are subscripted in Table 11.1).
 
@@ -141,6 +141,15 @@ For randomly mating monoecious populations under the classical Wright-Fisher mod
 
 
 where $ \lambda_{j}=1-(j/2N_{e}) $ for $ j=1,2,3 $ (Cockerham and Weir 1983).
+
+**[Figure]**
+
+> **Figure 11.1** · page 6 · source: `chapter11`
+>
+> ![Figure 11.1](../figures/fig_0026.png)
+>
+> Figure 11.1 Measures of identity by descent (IBD) for single loci  $ (f, \gamma, \delta, \Delta) $ and pairs of loci  $ (f, \widetilde{\gamma}, \widetilde{\Delta}) $. The large circles denote gametes (alleles when restricted to a single locus), and the open and closed dots within them represent alleles from one (top four relationships) or two (bottom three) loci. Identity by descent is indicated by a horizontal line. For example,  $ \delta $ is the probability that four randomly chosen alleles are all IBD, while  $ \Delta $ is the probability that, in any two pairs of gametes, each pair has an IBD allele (i.e., two diploid genotypes are IBD). As discussed in the text,  $ \Delta $ includes  $ \delta $ as a special case.
+
 
 **[推导 Derivation]**
 
@@ -182,7 +191,7 @@ starting with $ \widetilde{f}_{0}^{*}=\widetilde{\gamma}_{0}^{*}=\widetilde{\Del
 
 ---
 
-## chapter11_006 · Changes in Genetic Variation Induced by Drift: Introduction / Impact of Drift Under Nonadditive Variance
+## chapter11_006 · RESPONSE OF WITHIN-POPULATION GENETIC VARIANCE TO DRIFT / Impact of Drift Under Nonadditive Variance
 
 With definitions in hand for the quadratic expressions in the base population (Table 11.1) and the temporal dynamics of the identity coefficients (Equations 11.3 and 11.4), we are now in a position to explore the impact of finite population size on the components of variance for a quantitative trait with a nonadditive genetic basis. The expected dynamics are determined by summing the products of the seven quadratic terms listed across the top of Table 11.3 with their associated tabulated identity coefficients in the table. For example, the expected within-population dominance variance is $$ [1-3f+2(\Delta+\gamma-\delta)]\sigma_{D}^{2}+(f+\delta-2\gamma)\sigma_{D I}^{2}+(f+\Delta-2\gamma)\iota^{*}+(\widetilde{f}-2\widetilde{\gamma}+\widetilde{\Delta})(\iota^{2}-\iota^{*}) $$
 
@@ -246,7 +255,16 @@ Although it may not be immediately apparent, the coefficients in the final two (
 
 ---
 
-## chapter11_007 · Changes in Genetic Variation Induced by Drift: Introduction / The Effects of Epistasis
+## chapter11_007 · RESPONSE OF WITHIN-POPULATION GENETIC VARIANCE TO DRIFT / The Effects of Epistasis
+
+**[Figure]**
+
+> **Figure 11.2** · page 10 · source: `chapter11`
+>
+> ![Figure 11.2](../figures/fig_0027.png)
+>
+> Figure 11.2 Dynamics of the coefficients for the terms contributing to the additive, dominance, and additive × additive genetic variance within populations for an effective population size of 10 and freely recombining loci (c = 0.5), obtained by use of Equations 11.3 and 11.4, along with Table 11.1. The top panel gives the contributions of each term to the within-population additive variance, while the bottom panel gives the same for the within-population dominance (and  $ A \times A $) variance. The coefficient for the contribution of  $ (\ell^2 - \iota^*) $ to the additive genetic variance is barely visible on the scale in the bottom graph. These results apply approximately to any other population size,  $ N_e $, if the time scale is transformed by multiplying by  $ N_e / 10 $. To obtain the actual dynamics of the variance components, the coefficients need to be multiplied by the base-population properties. For example, the additive genetic variance in generation 50 is approximately  $ 0.08(\sigma_A^2 + \sigma_{ADI}) + 0.04\sigma_{DI}^2 + 0.01(\sigma_D^2 + \iota^*) + 0.28\sigma_{AA}^2 $, while the additive × additive genetic variance is  $ \simeq 0 $, and the dominance genetic variance is  $ \simeq 0.04(\iota^* + \sigma_D^2) $.
+
 
 The fundamental point in the preceding section is that because dominance is a function of a two-allele interaction, the variance in dominance effects can be altered in unexpected ways when inbreeding alters the average background on which an allele appears. This same issue applies to epistatic effects, although on a potentially larger scale because the additive × additive epistatic variance ($ \sigma_{AA}^2 $) is a function of $ n^2 $ terms, while all of the other quadratic components in Table 11.1 (except $ \iota^2 - \iota^* $, which seems to be of little significance) are functions of only $ n $ terms. If we assume unlinked loci, the coefficient of the $ \sigma_{AA}^2 $
 
@@ -343,7 +361,7 @@ Finally, we emphasize that although all of the previous results strictly apply t
 
 ---
 
-## chapter11_009 · Changes in Genetic Variation Induced by Drift: Introduction / Sampling Error
+## chapter11_009 · RESPONSE OF WITHIN-POPULATION GENETIC VARIANCE TO DRIFT / Sampling Error
 
 It cannot be emphasized too strongly that the preceding expressions give only the expected change of the within-population variance for a neutral quantitative character. Due to the stochastic nature of random genetic drift, departures from this expectation will arise in any individual population, so a central concern is the degree to which the average behavior of a small number of populations (e.g., a typical replicated experiment) will represent the expected pattern.
 
@@ -392,11 +410,20 @@ In summary, even in the case of purely additive gene action, obtaining a reliabl
 
 ---
 
-## chapter11_010 · Changes in Genetic Variation Induced by Drift: Introduction / Empirical Data
+## chapter11_010 · RESPONSE OF WITHIN-POPULATION GENETIC VARIANCE TO DRIFT / Empirical Data
 
 **[命题 Proposition]**
 
 The influence of small population size on components of genetic variance is of substantial relevance to several areas of inquiry. For example, an underlying assumption of much of conservation genetics is that the loss of heterozygosity from small populations translates immediately into a loss of variation for adaptive traits. As noted above, however, this need not be the case in the presence of nonadditive gene action. A key additional question is whether increases in the additive genetic variance following a population bottleneck, if they do indeed occur, are accompanied by changes in the mean phenotype that are contrary to the maintenance of high fitness. Nothing is gained from a population bottleneck if the extreme phenotypes that are produced are simply low-fitness individuals resulting from inbreeding depression.
+
+**[Figure]**
+
+> **Figure 11.3** · page 16 · source: `chapter11`
+>
+> ![Figure 11.3](../figures/fig_0028.png)
+>
+> Figure 11.3 Response of the average within-line and among-line phenotypic variance to inbreeding in experimental lines. References and system of mating: top: Horner and Weber (1956), selfing; middle: López-Fanjul and Jódar (1977), full-sib mating, control-corrected; bottom: Bateman and Mather (1951), selfing. Solid and open points denote the within- and among-population components of phenotypic variance.
+
 
 The preceding theory is also of potential relevance to the field of speciation. Substantial uncertainty exists over the importance of population bottlenecks for the speciation process (Mayr 1954; Templeton 1980; Barton and Charlesworth 1984; Carson and Templeton 1984), and much of the debate revolves around verbal arguments regarding additive and epistatic gene action. In Carson's (1968, 1975) founder-flush theory, for example, it is assumed that a period of population expansion following a bottleneck will often result in a conversion of various types of epistatic interactions into additive genetic variance. Similar issues were raised by Templeton (1980) in his hypothesis of speciation via genetic transilience. Although such arguments sometimes appear intuitive on the surface, the preceding theoretical exam ples amply illustrate that intuition can be quite misleading with respect to the dynamics of genetic variance in small populations. The consequences of a population bottleneck are highly sensitive to the nature of gene action and the frequency distribution of alleles, and establishing whether increases in bottleneck-induced variance are common is ultimately an empirical question.
 
@@ -405,6 +432,15 @@ Unfortunately, only a few well-designed empirical studies have addressed the inf
 A study by Cheverud et al. (1999) provided a clear example of the creation of additive genetic variance by a population bottleneck. By crossing two long-established mouse lines, one selected for large body size and the other for small body size, an $ F_2 $ base population with high genetic variance for adult weight was constructed. Thirty-nine replicate inbred lines were then initiated from the $ F_3 $ generation, each maintained as two pairs of males and females through four generations of inbreeding to yield an average $ f = 0.39 $. Two contemporary control strains were maintained by randomly mating 60 pairs of individuals derived from the base (hybrid) population. Using a full-sib analysis, the authors found that the average additive genetic variance for adult weight after inbreeding was about 1.75-fold greater (and significantly so) than expected under the additive model (a fraction, $ 1 - f = 0.61 $, of the additive variation in the base population) and slightly greater than that in the controls. Two lines of evidence suggest that this inflation in $ \sigma_A^2 $ was largely, if not entirely, due to the conversion of additive × additive epistatic variance. First, the absence of any significant change in mean adult weight throughout the period of inbreeding implies that directional dominance is negligible for this trait. Second, previous QTL analysis of this experimental population had revealed pervasive epistatic interactions between loci influencing body size (Routman and Cheverud 1997; Kramer et al. 1998). As a caveat, however, it must be emphasized that this study is quite artificial, in that by constructing a base population with intermediate gene frequencies, the epistatic genetic variance was maximized at the outset. We now consider the few results that have emerged for more naturally derived populations.
 
 Bryant et al. (1986b) put populations of houseflies (Musca domestica) through single-generation bottlenecks of 1, 4, and 16 pairs, and then rapidly expanded them for several generations prior to the measurement of the additive genetic variance (to reduce the variation in the within-line variance caused by gametic-phase disequilibrium). Analyses of several morphological characters suggested an increase in $ \sigma_{A}^{2} $ in the bottlenecked lines relative to a control (Figure 11.4), which the authors surmised to be a consequence of the conversion of epistatic to additive genetic variance. Although this study has become something of a flagship example of bottleneck-induced increases in genetic variance, it also serves to highlight the extreme difficulties that exist in interpreting the dynamics of genetic variance in inbred populations.
+
+**[Figure]**
+
+> **Figure 11.4** · page 18 · source: `chapter11`
+>
+> ![Figure 11.4](../figures/fig_0029.png)
+>
+> Figure 11.4 Additive genetic variances for eight morphometric traits averaged over four replicate lines of bottlenecked housefly ( $ Musca\ domestica $) populations. Horizontal lines (along the bottom axes) connect variances that were not significantly different at the 0.05 level. C denotes a large randomly mating control population, whereas the remaining populations were propagated through single-generation bottlenecks of 1, 4, and 16 pairs. WL denotes wing length; WW, wing width; HW, head width; SL, scutellum length; IE, inner-eye separation; SW, scutellum width; ML, metafemur length; and TS, thoracic-suture length. (From Bryant et al. 1986b.)
+
 
 First, only four replicate populations were maintained at each population density in this study, so there is a substantial chance that the average within-line variance may have increased entirely by chance, even in the absence of nonadditive genetic variance. Second, some characters exhibited a five-fold inflation in the additive genetic variance over the control, and based on the considerations outlined above, this is hard to accept as a real consequence of inbreeding in the essentially non-inbred $ (f \simeq 0.03) $ 16-pair lines (traits IE and SW in Figure 11.4). In contrast, although the evidence that inbreeding created a real increase in additive genetic variance in these lines is not very compelling, it is equally true that there is no evidence of a substantial erosion in additive genetic variance following inbreeding. In subsequent studies involving single-generation bottlenecks of four individuals, Meffert (1995) did not detect any overall change in the additive genetic variance for various aspects of courtship behavior (six replicate populations), and Bryant and Meffert (1996) observed increases in $ \sigma_{A}^{2} $ for two morphological characters but decreases for two others (two replicate populations) thought to have had relatively high levels of additive × additive epistatic variance in the base population.
 
@@ -426,18 +462,33 @@ Might the creation of new additive genetic variance nevertheless compensate for 
 
 **[示例 Example]**
 
-> **Example 11.2** · ref: `11.2` · source: `chapter11_011.json` · blocks 4–4
+> **Example 11.2** · ref: `11.2` · source: `chapter11_011.json` · blocks 4–7
 >
-> Example 11.2. The significance of the problem of the variance of the within-population variance is highlighted by a massive experiment performed by López-Fanjul et al. (1989). Starting from a large random-bred base population of $ D.\ melanogaster $, 304 non-inbred lines were constructed, and another 300 inbred lines were produced by four generations of full-sib mating followed by population expansion for six generations. The components of variance for abdominal bristle number were evaluated for the initial 304 lines $ (f = 0) $ and for the fourth and tenth generations after the bottleneck/expansion treatment (both $ f = 0.5 $) by several techniques including sib analysis. Consistent with the view that this character has a largely additive genetic basis (LW, pp. 171–172), the mean $ (\bar{z}) $ was unaffected by inbreeding (table below). Moreover, averaging over all of the inbred lines, there was an approximately 50% reduction in the additive genetic variance, as predicted by additive theory.
+> Example 11.2. The significance of the problem of the variance of the within-population variance is highlighted by a massive experiment performed by López-Fanjul et al. (1989). Starting from a large random-bred base population of $ D.\ melanogaster $, 304 non-inbred lines were constructed, and another 300 inbred lines were produced by four generations of full-sib mating followed by population expansion for six generations. The components of variance for abdominal bristle number were evaluated for the initial 304 lines $ (f = 0) $ and for the fourth and tenth generations after the bottleneck/expansion treatment (both $ f = 0.5 $) by several techniques including sib analysis. Consistent with the view that this character has a largely additive genetic basis (LW, pp. 171–172), the mean $ (\bar{z}) $ was unaffected by inbreeding (table below). Moreover, averaging over all of the inbred lines, there was an approximately 50% reduction in the additive genetic variance, as predicted by additive theory. The data from this experiment are in excellent accord with the sampling theory for the additive genetic variance presented above. Summing the expected variances contributed by Hardy-Weinberg and gametic-phase disequilibria, $ \sigma_A^4(0)/N_e + \sigma_A^4(0)/N_e $, the expected coefficient of variation for the additive genetic variance in the non-inbred lines (random populations with $ N_e \simeq 8 $ and $ t = 0 $) is $ (2/N_e)^{1/2} = 0.50 $, which is reasonably close to the observed value 0.35 (table below).
 > 
-> The data from this experiment are in excellent accord with the sampling theory for the additive genetic variance presented above. Summing the expected variances contributed by Hardy-Weinberg and gametic-phase disequilibria, $ \sigma_A^4(0)/N_e + \sigma_A^4(0)/N_e $, the expected coefficient of variation for the additive genetic variance in the non-inbred lines (random populations with $ N_e \simeq 8 $ and $ t = 0 $) is $ (2/N_e)^{1/2} = 0.50 $, which is reasonably close to the observed value 0.35 (table below).
+> > **Inline Table 2** · `inline_2` · page 20 · source: `chapter11_011`
+> > Inline Table 2
+> >
+> > Generation | f | $ \bar{z} $ | Var(A) | CV[Var(A)]
+> > --- | --- | --- | --- | ---
+> > 1 | 0.0 | 41.4 | 5.2 | 0.35
+> > 4 | 0.5 | 41.4 | 2.5 | 1.05
+> > 10 | 0.5 | 41.4 | 1.8 | 1.15
 > 
-> In addition, for both of the inbred generations, the observed values of the coefficient of variation for $ \mathrm{Var}(A) $, $ \mathrm{CV}[\mathrm{Var}(A)] $, are close to the theoretical minimum $ \sqrt{8/(3N_e)} = 1.04 $ (using $ N_e = 2.5 $ for full-sib mating). In principle, several generations of random mating would be expected to cause a reduction in $ \mathrm{CV}[\mathrm{Var}(A)] $ through the elimination of
 
 
 ---
 
 ## chapter11_012 · Changes in Genetic Variation Induced by Drift: Introduction / COVARIANCE BETWEEN INBRED RELATIVES
+
+**[Figure]**
+
+> **Figure 11.5** · page 21 · source: `chapter11`
+>
+> ![Figure 11.5](../figures/fig_0030.png)
+>
+> Figure 11.5 The 15 possible states of identity by descent for a locus in individuals x and y; condensed into nine classes. Alleles that are identical by descent are connected by lines, with horizontal lines indicating an inbred individual ( $ \Delta_1 $ through  $ \Delta_6 $). Note that  $ \Delta_4 $,  $ \Delta_6 $, and  $ \Delta_9 $ involve unrelated individuals (there are no lines between any gene of x to any gene of y).
+
 
 In the preceding sections, we assumed there was a parallel series of small populations, each being propagated across generations as progeny derived from randomly mating populations of size $ N_{e} $. Even in the simplest case of no epistasis, we found that the dynamics of the genetic variance within populations is a potentially complex function of six quadratic parameters of gene effects in the base population (Table 11.1). What remains to be considered is how these contributions can be estimated in a practical sense. Not surprisingly, the key strategy is the usual one in quantitative genetics—the resemblance between relatives (LW Chapter 7).
 
@@ -491,74 +542,91 @@ One conclusion that can be drawn immediately from Equation 11.13 is that with in
 
 **[示例 Example]**
 
-> **Example 11.3** · ref: `11.3` · source: `chapter11_013.json` · blocks 0–0
+> **Example 11.3** · ref: `11.3` · source: `chapter11_013.json` · blocks 0–2
 >
 > Example 11.3. Consider the situation in which fathers are mated to their daughters. What is the genetic covariance between the offspring (y) of such matings and their fathers (x)? Assuming the father is not inbred (there is no line connecting the maternal and paternal alleles of x in Figure 11.5), $ \Delta_{1xy} = \Delta_{2xy} = \Delta_{3xy} = f_x = \widetilde{\Delta}_{2xy} = 0 $, so to complete the solution of Equation 11.13, we only require values for the coefficients $ \Theta_{xy} $, $ \Delta_{7xy} $, and $ \Delta_{5xy} $. The inbreeding coefficient of y is the same as the coefficient of concestry between the parents (the father and his daughter), $ f_y = 1/4 $. Moreover, because y inherits only one gene from x directly, if y is inbred, then identity relationship 5 must hold, so $ \Delta_{5xy} = f_y \cdot 1 = 1/4 $. A gene in x can be identical with one in y by direct descent from the father or by indirect descent from the father through his first daughter (the mother of y), so $ \Theta_{xy} = (1/4) + (1/8) = 3/8 $. Finally, given that y has inherited one gene directly from x, the probability that x's other gene has been transmitted through his first daughter is $ 1/4 $. Thus, $ \Delta_7 = 1/4 $. Substituting into Equation 11.13, $$ \sigma_{G}(x,y)=\frac{3}{4}\sigma_{A}^{2}+\frac{1}{4}\sigma_{D}^{2}+\frac{1}{4}\sigma_{ADI} $$
 > 
 > This may be contrasted with $ \sigma_G(x, y) = \sigma_A^2/2 $, the expectation for the parent-offspring covariance under random mating (the mother of y and its father, x, are unrelated).
-> 
-> Some attention has been given to the contribution of additive × additive genetic variance to the resemblance between inbred relatives (Cockerham 1984b; Cockerham and Tachida 1988; Tachida and Cockerham 1989). In this case, Equation 11.13 requires an additional term, $$ \left(\widetilde{f}_{x y}+\widetilde{\gamma}_{\bar{x}y}+\widetilde{\gamma}_{x\bar{y}}+\widetilde{\Delta}_{\bar{x}\bar{y}}\right)\sigma_{A A}^{2} $$
-> 
-> > **Table 11.6** · `11.6` · page 24 · source: `chapter11_013`
-> > Table 11.6 Coefficients for the components of genetic covariance for an equilibrium population undergoing mixed selfing and random mating (in proportions of  $ \beta $ and  $ 1 - \beta $, respectively). The equilibrium variance in the inbreeding coefficient among individuals is  $ \sigma_{f}^{2} = f(1 - f^{2}) / (2 + f) $, with  $ f = \beta / (2 - \beta) $. (From Cockerham and Weir 1984.)
-> >
-> > Relationship | $ \sigma_{A}^{2} $ | $ \sigma_{D}^{2} $ | $ \sigma_{ADI} $ | $ \sigma_{DI}^{2} $ | t* | t^{2}-t*
-> > --- | --- | --- | --- | --- | --- | ---
-> > Parent and outcrossed offspring | $ \frac{1+f}{2} $ | 0 | $ \frac{f}{2} $ | 0 | 0 | 0
-> > Parent and selfed offspring | 1+f | $ \frac{1-f}{2} $ | $ \frac{1+7f}{4} $ | f | $ \frac{f(1-f)}{2} $ | $ \frac{\sigma_{f}^{2}}{2} $
-> > Parent and mixed offspring | $ \frac{1+3f}{2} $ | $ \frac{2f(1-f)}{2(1+f)} $ | $ \frac{f(1+3f)}{1+f} $ | $ \frac{2f^{2}}{1+f} $ | $ \frac{f^{2}(1-f)}{1+f} $ | $ \frac{f\sigma_{f}^{2}}{1+f} $
-> > Selfed sibs | 1+f | $ \frac{1-f}{2} $ | $ \frac{1+3f}{2} $ | $ \frac{1+7f}{8} $ | $ \frac{f(1-f)}{4} $ | $ \frac{\sigma_{f}^{2}}{4} $
-> > Selfed sib and outcrossed sib | $ \frac{1+f}{2} $ | 0 | $ \frac{1+3f}{8} $ | 0 | 0 | 0
-> > Full sibs | $ \frac{1+f}{2} $ | $ \frac{(1+f)^{2}}{4} $ | 0 | 0 | 0 | 0
-> > Half sibs | $ \frac{1+f}{4} $ | 0 | 0 | 0 | 0 | 0
-> 
-> 
-> Here, the double identity measures are analogous to those described in Figure 11.1, with the overbars (on gamete subscripts) denoting that the two gametes contributing to that individual are involved. These coefficients depend upon the previous inbreeding in the population and the amount of recombination that occurs between individuals x and y. The algebraic details may be found in the references given above.
-> 
-> Equation 11.13 provides a practical way to obtain estimates of the quadratic components described in Table 11.1 from estimates of the phenotypic covariances between various types of inbred relatives and solution of the resultant set of equations (the usual method-of-moments approach). An optimal design for such an analysis employs a number of very small populations in order to maximize the temporal change in the identity coefficients and to allow a high degree of replication. For systems of selfing and full-sib mating, there is an added advantage of simplicity in formulating the identity coefficients, as we will now show, while Table 11.6 gives the genetic covariances in populations undergoing mixed selfing and random mating.
-> 
-> If we assume there is negligible linkage, all identity coefficients under obligate self-fertilization can be expressed in terms of the inbreeding coefficient (Cockerham 1983; Wright and Cockerham 1986a; Wright 1988), a point that will be quite useful in Chapter 23, when we examine the response to selection under selfing. For a set of selfed lines derived from a random-mating base population existing in generation 0, the covariance of relatives in generations (of selfing) i and j whose last common ancestor occurred in generation t is
-> 
-> > **Formula (11.15)** · `11.15` · source: `chapter11_block_099` · COVARIANCE BETWEEN INBRED RELATIVES
-> >
-> > $$ \begin{align*}\sigma_{G}(x_{i},y_{j},t)&=(1+f_{t})\sigma_{A}^{2}+\left(\frac{(1-f_{i})(1-f_{j})}{1-f_{t}}\right)(\sigma_{D}^{2}+f_{t} t^{*})+\left(\frac{f_{i}+f_{j}+2f_{t}}{2}\right)\sigma_{ADI}\\&\quad+\left(f_{t}+\frac{(f_{i}-f_{t})(f_{j}-f_{t})}{2(1-f_{t})}\right)\sigma_{DI}^{2}+(1+f_{t})^{2}\sigma_{AA}^{2}.\end{align*} $$
-> 
-> 
-> where $ f_k = 1 - (1/2)^k $. For example, the covariance of a parent in generation $ t $ and a descendant in generation $ j $ is
-> 
-> > **Formula (11.16)** · `11.16` · source: `chapter11_block_099` · COVARIANCE BETWEEN INBRED RELATIVES
-> >
-> > $$ \begin{align*}\sigma_G(x_t,y_j,t)&=(1+f_t)\sigma_A^2+(1-f_j)(\sigma_D^2+f_t\iota^*)+\frac{f_j+3f_t}{2}\sigma_{ADI}\\&\quad+f_t\sigma_{DI}^2+(1+f_t)^2\sigma_{AA}^2\end{align*} $$
-> 
-> 
-> For a parent-offspring analysis, $ j = t + 1 $. Additional terms involving $ \sigma_{AA}^2 $ and $ (\iota^2 - \iota^*) $ are required if there are pairs of linked loci with major effects (Cockerham 1983, 1984b).
-> 
-> Although Equation 11.15 applies to an entire collection of selfed lines, within a single selfed line (from the $ F_1 $ of pure-line cross), there are two equally frequent alleles per polymorphic locus, which leads to $ \sigma_{ADI} = \sigma_{DI}^2 = 0 $ and $ \iota^* = \sigma_D^2 $. The expected covariance between relatives within lines then becomes
-> 
-> > **Formula (11.17)** · `11.17` · source: `chapter11_block_101` · COVARIANCE BETWEEN INBRED RELATIVES
-> >
-> > $$ \begin{align*}\sigma_G(x_i,y_j,t)=(1/2)^t\sigma_A^2+(1/2)^{i+j-t}\sigma_D^2+(1/2)^{2t}\sigma_{AA}^2\end{align*} $$
-> 
-> 
-> (Wright and Cockerham 1986a), which will also prove very useful in Chapter 23 when examining within-line selection. Note that for t > 5, the within- and among-population components of variance are very close to 0 and $ 2\sigma_A^2 + 2\sigma_{ADI} + \sigma_{DI}^2 + 4\sigma_{AA}^2 $, respectively. Wright (1987) extended Equation 11.17 to include additive × dominance and dominance × dominance epistasis, but even in the absence of linkage, 12 terms are necessary to define the genetic covariance in this case.
-> 
-> An example of the utility of the selfing theory is provided by a study with soybeans, a predominantly self-fertilizing species (Horner and Weber 1956). Two inbred varieties were crossed to produce a uniform $ F_{1} $ population, which was then selfed to produce a segregating $ F_{2} $ population. Random $ F_{2} $ plants were then selfed to produce $ F_{3} $ plants, and so on down to the $ F_{7} $. The covariances between many possible types of relatives for the timing of seed maturation were then assessed. Under a simple additive genetic model, Equation 11.15 reduces to $$ \sigma_{G}(x_{i},y_{j},t)=(1+f_{t})\sigma_{A}^{2} $$ which indicates that the genetic covariances of all types of direct descendants from generation $ t $ plants should be independent of $ i $ and $ j $. The observed covariances are in fair accord with these expectations with $ \sigma_A^2 = 10.9 $ (Figure 11.6). Although there is a certain amount of noise in the data, the inclusion of other base-population properties does not significantly improve the fit, and it is likely that some of the scatter in the data is caused by year-to-year differences in growth conditions.
-> 
-> For the special case of full-sib mating, Cornelius and Dudley (1975) provided a general solution (ignoring epistasis and linkage) for the covariance between parents and descendants, full-sibs, and uncle (or aunt) and niece (or nephew). They presented tables of the coefficients needed for Equation 11.13 for the first eight generations of consanguineous mating. Cockerham (1971) derived a transition matrix that allows the computation of all of the coefficients for the covariance between full-sibs,
-> 
-> > **Formula (11.18)** · `11.18` · source: `chapter11_block_104` · COVARIANCE BETWEEN INBRED RELATIVES
-> >
-> > $$ \begin{pmatrix}1-\Delta_{1}\\1-\Delta_{3}\\1-\Delta_{7}\\1-\Delta_{2}\\1-f\\1-\Theta\end{pmatrix}_{t+1}=\begin{pmatrix}1/4&1/2&0&0&0&1/4\\0&1/2&0&0&0&1/2\\0&1/4&1/8&1/8&1/4&1/8\\0&1/2&1/4&0&0&1/4\\0&0&0&0&0&1\\0&0&0&0&1/4&1/2\end{pmatrix}_{t}\begin{pmatrix}1-\Delta_{1}\\1-\Delta_{3}\\1-\Delta_{7}\\1-\Delta_{2}\\1-f\\1-\Theta\end{pmatrix}_{t} $$
-> 
-> 
-> where in this case $ \Delta_{3} = \Delta_{5} $.
-> 
-> In closing, it needs to be emphasized that all of the expressions developed above have been written in terms of the quadratic components for the random-mating base population. Provided that mating remains random in a small population, there is no reason why the simpler and more familiar expressions of LW Chapter 5 cannot be relied upon, provided it is understood that the variance and covariance components apply to the current population. For example, the expected genetic covariance between half-sibs in generation t may be written either as $ \sigma_A^2(t)/4 $ or in terms of base-population properties with Equation 11.13. The advantage of interpreting the covariance between relatives in terms of the base population properties is that it provides a mechanistic explanation for the temporal changes in the usual components of variance, $ \sigma_A^2(t) $ and $ \sigma_D^2(t) $.
 
+
+Some attention has been given to the contribution of additive × additive genetic variance to the resemblance between inbred relatives (Cockerham 1984b; Cockerham and Tachida 1988; Tachida and Cockerham 1989). In this case, Equation 11.13 requires an additional term, $$ \left(\widetilde{f}_{x y}+\widetilde{\gamma}_{\bar{x}y}+\widetilde{\gamma}_{x\bar{y}}+\widetilde{\Delta}_{\bar{x}\bar{y}}\right)\sigma_{A A}^{2} $$
+
+**[Table]**
+
+> **Table 11.6** · `11.6` · page 24 · source: `chapter11_013`
+> Table 11.6 Coefficients for the components of genetic covariance for an equilibrium population undergoing mixed selfing and random mating (in proportions of  $ \beta $ and  $ 1 - \beta $, respectively). The equilibrium variance in the inbreeding coefficient among individuals is  $ \sigma_{f}^{2} = f(1 - f^{2}) / (2 + f) $, with  $ f = \beta / (2 - \beta) $. (From Cockerham and Weir 1984.)
+>
+> Relationship | $ \sigma_{A}^{2} $ | $ \sigma_{D}^{2} $ | $ \sigma_{ADI} $ | $ \sigma_{DI}^{2} $ | t* | t^{2}-t*
+> --- | --- | --- | --- | --- | --- | ---
+> Parent and outcrossed offspring | $ \frac{1+f}{2} $ | 0 | $ \frac{f}{2} $ | 0 | 0 | 0
+> Parent and selfed offspring | 1+f | $ \frac{1-f}{2} $ | $ \frac{1+7f}{4} $ | f | $ \frac{f(1-f)}{2} $ | $ \frac{\sigma_{f}^{2}}{2} $
+> Parent and mixed offspring | $ \frac{1+3f}{2} $ | $ \frac{2f(1-f)}{2(1+f)} $ | $ \frac{f(1+3f)}{1+f} $ | $ \frac{2f^{2}}{1+f} $ | $ \frac{f^{2}(1-f)}{1+f} $ | $ \frac{f\sigma_{f}^{2}}{1+f} $
+> Selfed sibs | 1+f | $ \frac{1-f}{2} $ | $ \frac{1+3f}{2} $ | $ \frac{1+7f}{8} $ | $ \frac{f(1-f)}{4} $ | $ \frac{\sigma_{f}^{2}}{4} $
+> Selfed sib and outcrossed sib | $ \frac{1+f}{2} $ | 0 | $ \frac{1+3f}{8} $ | 0 | 0 | 0
+> Full sibs | $ \frac{1+f}{2} $ | $ \frac{(1+f)^{2}}{4} $ | 0 | 0 | 0 | 0
+> Half sibs | $ \frac{1+f}{4} $ | 0 | 0 | 0 | 0 | 0
+
+
+Here, the double identity measures are analogous to those described in Figure 11.1, with the overbars (on gamete subscripts) denoting that the two gametes contributing to that individual are involved. These coefficients depend upon the previous inbreeding in the population and the amount of recombination that occurs between individuals x and y. The algebraic details may be found in the references given above.
+
+Equation 11.13 provides a practical way to obtain estimates of the quadratic components described in Table 11.1 from estimates of the phenotypic covariances between various types of inbred relatives and solution of the resultant set of equations (the usual method-of-moments approach). An optimal design for such an analysis employs a number of very small populations in order to maximize the temporal change in the identity coefficients and to allow a high degree of replication. For systems of selfing and full-sib mating, there is an added advantage of simplicity in formulating the identity coefficients, as we will now show, while Table 11.6 gives the genetic covariances in populations undergoing mixed selfing and random mating.
+
+**[推导 Derivation]**
+
+If we assume there is negligible linkage, all identity coefficients under obligate self-fertilization can be expressed in terms of the inbreeding coefficient (Cockerham 1983; Wright and Cockerham 1986a; Wright 1988), a point that will be quite useful in Chapter 23, when we examine the response to selection under selfing. For a set of selfed lines derived from a random-mating base population existing in generation 0, the covariance of relatives in generations (of selfing) i and j whose last common ancestor occurred in generation t is
+
+> **Formula (11.15)** · `11.15` · source: `chapter11_block_099` · COVARIANCE BETWEEN INBRED RELATIVES
+>
+> $$ \begin{align*}\sigma_{G}(x_{i},y_{j},t)&=(1+f_{t})\sigma_{A}^{2}+\left(\frac{(1-f_{i})(1-f_{j})}{1-f_{t}}\right)(\sigma_{D}^{2}+f_{t} t^{*})+\left(\frac{f_{i}+f_{j}+2f_{t}}{2}\right)\sigma_{ADI}\\&\quad+\left(f_{t}+\frac{(f_{i}-f_{t})(f_{j}-f_{t})}{2(1-f_{t})}\right)\sigma_{DI}^{2}+(1+f_{t})^{2}\sigma_{AA}^{2}.\end{align*} $$
+
+
+where $ f_k = 1 - (1/2)^k $. For example, the covariance of a parent in generation $ t $ and a descendant in generation $ j $ is
+
+> **Formula (11.16)** · `11.16` · source: `chapter11_block_099` · COVARIANCE BETWEEN INBRED RELATIVES
+>
+> $$ \begin{align*}\sigma_G(x_t,y_j,t)&=(1+f_t)\sigma_A^2+(1-f_j)(\sigma_D^2+f_t\iota^*)+\frac{f_j+3f_t}{2}\sigma_{ADI}\\&\quad+f_t\sigma_{DI}^2+(1+f_t)^2\sigma_{AA}^2\end{align*} $$
+
+
+**[Figure]**
+
+> **Figure 11.6** · page 25 · source: `chapter11`
+>
+> ![Figure 11.6](../figures/fig_0031.png)
+>
+> Figure 11.6 Observed covariances between relatives in a selfing series starting from a highly heterozygous  $ F_2 $ synthetic population (i.e., that formed by all pairwise crosses among a set of lines) of soybeans (t = 0). Here i and j denote the generations of the individuals under consideration, and t is the generation of their last common ancestor. For example, the covariance between individuals in generations 2 and 3 with a last common ancestor at generation 0 is indicated by i = 2, j = 3, t = 0. The lines represent the expectations (for a given value of t) under the assumption of an additive model,  $ (1 + f_t)\sigma_A^2 $ with  $ f_t = 1 - (1/2)^t $ and  $ \sigma_A^2 = 10.9 $. (Data are from Horner and Weber 1956.)
+
+
+For a parent-offspring analysis, $ j = t + 1 $. Additional terms involving $ \sigma_{AA}^2 $ and $ (\iota^2 - \iota^*) $ are required if there are pairs of linked loci with major effects (Cockerham 1983, 1984b).
+
+**[推导 Derivation]**
+
+Although Equation 11.15 applies to an entire collection of selfed lines, within a single selfed line (from the $ F_1 $ of pure-line cross), there are two equally frequent alleles per polymorphic locus, which leads to $ \sigma_{ADI} = \sigma_{DI}^2 = 0 $ and $ \iota^* = \sigma_D^2 $. The expected covariance between relatives within lines then becomes
+
+> **Formula (11.17)** · `11.17` · source: `chapter11_block_101` · COVARIANCE BETWEEN INBRED RELATIVES
+>
+> $$ \begin{align*}\sigma_G(x_i,y_j,t)=(1/2)^t\sigma_A^2+(1/2)^{i+j-t}\sigma_D^2+(1/2)^{2t}\sigma_{AA}^2\end{align*} $$
+
+
+(Wright and Cockerham 1986a), which will also prove very useful in Chapter 23 when examining within-line selection. Note that for t > 5, the within- and among-population components of variance are very close to 0 and $ 2\sigma_A^2 + 2\sigma_{ADI} + \sigma_{DI}^2 + 4\sigma_{AA}^2 $, respectively. Wright (1987) extended Equation 11.17 to include additive × dominance and dominance × dominance epistasis, but even in the absence of linkage, 12 terms are necessary to define the genetic covariance in this case.
+
+An example of the utility of the selfing theory is provided by a study with soybeans, a predominantly self-fertilizing species (Horner and Weber 1956). Two inbred varieties were crossed to produce a uniform $ F_{1} $ population, which was then selfed to produce a segregating $ F_{2} $ population. Random $ F_{2} $ plants were then selfed to produce $ F_{3} $ plants, and so on down to the $ F_{7} $. The covariances between many possible types of relatives for the timing of seed maturation were then assessed. Under a simple additive genetic model, Equation 11.15 reduces to $$ \sigma_{G}(x_{i},y_{j},t)=(1+f_{t})\sigma_{A}^{2} $$ which indicates that the genetic covariances of all types of direct descendants from generation $ t $ plants should be independent of $ i $ and $ j $. The observed covariances are in fair accord with these expectations with $ \sigma_A^2 = 10.9 $ (Figure 11.6). Although there is a certain amount of noise in the data, the inclusion of other base-population properties does not significantly improve the fit, and it is likely that some of the scatter in the data is caused by year-to-year differences in growth conditions.
+
+**[推导 Derivation]**
+
+For the special case of full-sib mating, Cornelius and Dudley (1975) provided a general solution (ignoring epistasis and linkage) for the covariance between parents and descendants, full-sibs, and uncle (or aunt) and niece (or nephew). They presented tables of the coefficients needed for Equation 11.13 for the first eight generations of consanguineous mating. Cockerham (1971) derived a transition matrix that allows the computation of all of the coefficients for the covariance between full-sibs,
+
+> **Formula (11.18)** · `11.18` · source: `chapter11_block_104` · COVARIANCE BETWEEN INBRED RELATIVES
+>
+> $$ \begin{pmatrix}1-\Delta_{1}\\1-\Delta_{3}\\1-\Delta_{7}\\1-\Delta_{2}\\1-f\\1-\Theta\end{pmatrix}_{t+1}=\begin{pmatrix}1/4&1/2&0&0&0&1/4\\0&1/2&0&0&0&1/2\\0&1/4&1/8&1/8&1/4&1/8\\0&1/2&1/4&0&0&1/4\\0&0&0&0&0&1\\0&0&0&0&1/4&1/2\end{pmatrix}_{t}\begin{pmatrix}1-\Delta_{1}\\1-\Delta_{3}\\1-\Delta_{7}\\1-\Delta_{2}\\1-f\\1-\Theta\end{pmatrix}_{t} $$
+
+
+where in this case $ \Delta_{3} = \Delta_{5} $.
+
+In closing, it needs to be emphasized that all of the expressions developed above have been written in terms of the quadratic components for the random-mating base population. Provided that mating remains random in a small population, there is no reason why the simpler and more familiar expressions of LW Chapter 5 cannot be relied upon, provided it is understood that the variance and covariance components apply to the current population. For example, the expected genetic covariance between half-sibs in generation t may be written either as $ \sigma_A^2(t)/4 $ or in terms of base-population properties with Equation 11.13. The advantage of interpreting the covariance between relatives in terms of the base population properties is that it provides a mechanistic explanation for the temporal changes in the usual components of variance, $ \sigma_A^2(t) $ and $ \sigma_D^2(t) $.
 
 ---
 
-## chapter11_014 · Changes in Genetic Variation Induced by Drift: Introduction / REML Estimates
+## chapter11_014 · COVARIANCE BETWEEN INBRED RELATIVES / REML Estimates
 
 **[推导 Derivation]**
 
@@ -598,7 +666,7 @@ The central issue of whether a pedigree/designed cross is able to uniquely estim
 
 ---
 
-## chapter11_015 · Changes in Genetic Variation Induced by Drift: Introduction / Empirical Observations
+## chapter11_015 · COVARIANCE BETWEEN INBRED RELATIVES / Empirical Observations
 
 Unfortunately, data on the parameters $ \sigma_{DI}^{2} $, $ \sigma_{ADI} $, and $ \iota^{*} $ are scant, although some progress has been made with annual plants. Starting from a random-mating base population of maize, Cornelius (1988) produced a series of selfed and full-sib mated lines, all of which were assayed in a common-garden experiment. The parameter estimates given in Table 11.8 best describe the overall set of observed covariances. Except for yield, all of the characters exhibit significant additive genetic variance, and four of the six traits exhibit significant squared inbreeding effects, $ \iota^{*} $. However, nearly all of the estimates for $ \sigma_{DI}^{2} $, $ \sigma_{ADI}^{2} $ are nonsignificant. In part, this is clearly a power issue, as the significant inbreeding depression implies the presence of dominance.
 
@@ -673,6 +741,15 @@ If we let $ h_m^2 = \sigma_m^2 / \sigma_E^2 $, where $ \sigma_E^2 $ is the envir
 
 Almost all estimates of $ h_m^2 $ are in the range of 0.01 to 0.0001 with a median value near 0.001 (LW Chapter 12). Thus, populations with $ N_e \simeq 100 $ are expected to have small to moderate levels of heritability for neutral characters, but nearly all of the phenotypic variation for neutral characters is expected to have a genetic basis if $ N_e > 10^4 $ (Figure 11.7).
 
+**[Figure]**
+
+> **Figure 11.7** · page 30 · source: `chapter11`
+>
+> ![Figure 11.7](../figures/fig_0032.png)
+>
+> Figure 11.7 (Top) Levels of heritability expected for neutral characters with an additive genetic basis under drift-mutation equilibrium, assuming the Lynch-Hill (1986) incremental (i.e., Brownian-motion) model. The three levels of mutational heritability,  $ \sigma_m^2 / \sigma_E^2 $, span the range of observed values. (Bottom) Comparison of the predictions of the Lynch-Hill model (solid line) with that of the Cockerham-Tachida model for three different gametic mutation rates for the trait (dotted and dashed lines), with  $ h_m^2 = 0.001 $ in both cases.
+
+
 **[推导 Derivation]**
 
 It is informative to note the similarity of Equation 11.21a with the expected heterozygosity for sites in drift-mutation equilibrium
@@ -737,7 +814,7 @@ where $U = n\mu$ is the gametic mutation rate for the trait, $L$ is the number o
 
 ---
 
-## chapter11_018 · Changes in Genetic Variation Induced by Drift: Introduction / Subdivided Populations
+## chapter11_018 · DRIFT-MUTATION EQUILIBRIUM / Subdivided Populations
 
 In closing, we emphasize that the results given in the previous section apply to the ideal situation in which individual demes are completely isolated from each other. In nature, however, it is common for a total metapopulation to be fragmented into multiple demes held together in a genealogical sense by restricted gene flow. Borrowing from results presented in Chapter 3, we now explore the quantitative-genetic consequences of population subdivision. Throughout, it will be assumed that there is some possible migratory route, either direct or indirect, between all pairs of demes under consideration. In other words, even if two particular demes are incapable of directly exchanging genes, they are assumed to be connected by a corridor through other subpopulations. In this case, at least for characters with an additive genetic basis following the Lynch-Hill model, the average within-deme genetic variance exhibits some remarkably general behavior, although the results for traits with a nonadditive genetic basis remain to be worked out.
 

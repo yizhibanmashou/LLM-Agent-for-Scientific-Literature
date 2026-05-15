@@ -1,4 +1,4 @@
-# Chapter 12 Textbook Mapping
+# Chapter 12 · The Neutral Divergence of Quantitative Traits
 
 ## chapter12_001 · The Neutral Divergence of Quantitative Traits: Introduction
 
@@ -46,7 +46,7 @@ A few words should also be said about the potential importance of nonadditive ge
 
 ---
 
-## chapter12_003 · The Neutral Divergence of Quantitative Traits: Introduction / Sampling Error
+## chapter12_003 · SHORT-TERM DIVERGENCE / Sampling Error
 
 **[推导 Derivation]**
 
@@ -76,7 +76,16 @@ where $ \lambda_1 = 1 - 1/(2N) $. Lynch (1988a) provided approximate expressions
 
 ---
 
-## chapter12_004 · The Neutral Divergence of Quantitative Traits: Introduction / Sample Variance Confidence Intervals
+## chapter12_004 · SHORT-TERM DIVERGENCE / Sample Variance Confidence Intervals
+
+**[Figure]**
+
+> **Figure 12.1** · page 6 · source: `chapter12`
+>
+> ![Figure 12.1](../figures/fig_0033.png)
+>
+> Figure 12.1 Confidence limits and critical values for $\sigma^2$ estimated from a sample of $n$ observations. Define $X_{p,n}$ as satisfying $\operatorname{Pr}(\chi_n^2 \leq X_{p,n}) = p$. (Top) Upper and low values correspond to $(n - 1)/X_{0.025,n-1}$ and $(n - 1)/X_{0.975,n-1}$, respectively, the coefficients that multiply the estimated sample variance, Var, to yield a 95% confidence interval for $\sigma^2$ (Equation 12.6c). For example, for $n = 10$, the 95% confidence interval for $\sigma^2$ is 0.44. Var to 3.33. Var. (Bottom) Upper and low values correspond to $X_{0.975,n-1}/(n - 1)$ and $X_{0.025,n-1}/(n - 1)$, respectively, the coefficients that multiply the assumed variance, $\sigma_0^2$, to yield upper and lower 2.5% critical values for an observed sample variance (Equation 12.7a). For example, for $n = 10$, 95% of the values of Var are expected to fall within the interval of $0.30 - \sigma_0^2$ to $2.11 \cdot \sigma_0^2$.
+
 
 **[推导 Derivation]**
 
@@ -115,47 +124,25 @@ yielding
 
 This motivates a $ (1-\alpha)100% $ confidence interval for the true variance, $ \sigma^{2} $, given the observed sample variance, Var. As shown in Figure 12.1, confidence intervals for $ \sigma^{2} $ are asymmetrical about the estimated value, Var. and tend to be quite large, even for modest sample sizes.
 
-**[推导 Derivation]**
-
-A second important issue is power: how likely are we to declare the variance to be statistically distinct from some hypothesized null value, $ \sigma_0^2 $? Intuitively, power increases with both the sample size (n) and the difference between the true and null values. To formally develop this relationship, note from Equation 12.6a that the upper and lower critical values for a $ 100(1 - \alpha)% $ confidence interval on the value of Var when the true variance is $ \sigma_0^2 $ are
-
-> **Formula (12.7a)** · `12.7a` · source: `chapter12_block_019` · Sample Variance Confidence Intervals
->
-> $$ \left(\frac{\sigma_{0}^{2}}{n-1}\right)X_{\alpha/2,n-1}\leq\operatorname{Var}\leq\left(\frac{\sigma_{0}^{2}}{n-1}\right)X_{1-\alpha/2,n-1} $$
-
-
-**[推导 Derivation]**
-
-If Var falls outside this interval, we declare that the true variance is statistically different (at level $ \alpha $) from the assumed value, $ \sigma_0^2 $. If $ \beta $ denotes the probability that a sample value of Var falls within this internal, namely the probability of a type-II error (failing to declare a test significant when the null is false, i.e., when the true variance is $ \sigma_1^2 $), then the power is $ 1 - \beta $. We can obtain $ \beta $ by noting that the true distribution is given by $ [(n - 1)/\sigma_1^2] $ Var $ \sim \chi_{n-1}^2 $. Multiplying all terms of Equation 12.7a by $ (n - 1)/\sigma_1^2 $ gives the probability $ \beta $ of a sample variance failing to be declared significant as
-
-> **Formula (12.7b)** · `12.7b` · source: `chapter12_block_020` · Sample Variance Confidence Intervals
->
-> $$ \begin{aligned}\beta&=\Pr\left[\left(\frac{\sigma_{0}^{2}}{n-1}\right)\left(\frac{n-1}{\sigma_{1}^{2}}\right)X_{\alpha/2,n-1}\leq\chi_{n-1}^{2}\leq\left(\frac{\sigma_{0}^{2}}{n-1}\right)\left(\frac{n-1}{\sigma_{1}^{2}}\right)X_{1-\alpha/2,n-1}\right]\\&=\Pr\left[\left(\frac{\sigma_{0}^{2}}{\sigma_{1}^{2}}\right)X_{\alpha/2,n-1}\leq\chi_{n-1}^{2}\leq\left(\frac{\sigma_{0}^{2}}{\sigma_{1}^{2}}\right)X_{1-\alpha/2,n-1}\right]\quad&()\end{aligned} $$
-
-
-**[推导 Derivation]**
-
-The complement of this event (namely, either less than the lower critical value or greater than the upper critical value) is the power,
-
-> **Formula (12.7c)** · `12.7c` · source: `chapter12_block_021` · Sample Variance Confidence Intervals
->
-> $$ 1-\beta=\Pr\left[\chi_{n-1}^{2}\leq\left(\frac{\sigma_{0}^{2}}{\sigma_{1}^{2}}\right)X_{\alpha/2,n-1}\right]+\Pr\left[\chi_{n-1}^{2}\geq\left(\frac{\sigma_{0}^{2}}{\sigma_{1}^{2}}\right)X_{1-\alpha/2,n-1}\right] $$
-
-
 **[示例 Example]**
 
-> **Example 12.1** · ref: `12.1` · source: `chapter12_004.json` · blocks 5–5
+> **Example 12.1** · ref: `12.1` · source: `chapter12_004.json` · blocks 2–4
 >
-> Example 12.1. Consider a sample variance estimated from $ n = 10 $ observations. Because $ \Pr(\chi_9^2 \leq 2.700) = 0.025 $ and $ \Pr(\chi_9^2 \leq 19.023) = 0.975 $, Equation 12.6c gives the 95% confidence interval $ (\alpha = 0.05) $ for the true variance $ \sigma^2 $ as between $ (9/19.023) $Var and $ (9/2.7) $Var, or 0.473-Var to 3.333-Var, implying an uncertainty in $ \sigma^2 $ spanning almost a full order of magnitude.
-> 
-> What observed values of the sample variance are unlikely given an assumed true variance of $ \sigma_0^2 $? From Equation 12.7a, the upper and lower critical values (for a two-sided test with $ \alpha = 0.05 $) are $ (2.700/9)\sigma_0^2 = 0.3 \cdot \sigma_0^2 $ and $ (19.023/9)\sigma_0^2 = 2.11 \cdot \sigma_0^2 $.
-> 
-> Finally, what is the power of this design to declare the null model (the true variance is $ \sigma_0^2 $) false when the correct variance is $ \sigma_1^2 = 2\sigma_0^2 $? Taking $ \alpha = 0.05 $, Equation 12.7b (with $ \sigma_0^2 / \sigma_1^2 = 1/2 $) gives the power as $$ \Pr\left(\chi_{9}^{2}\leq\frac{2.700}{2}\right)+\Pr\left(\chi_{9}^{2}\geq\frac{19.023}{2}\right)=0.39 $$ and hence a type II error rate of 61% when the true variance is twice the assumed variance. A similar calculation assuming $ \sigma_1^2 = \sigma_0^2 / 2 $ gives a power of 0.20, or a type II error rate of 80%. Useful R commands are (i) $ \text{pchisq}(x, n) $, which returns $ \text{Pr}(\chi_n^2 \leq x) $, and hence 1-pchisq(x, n), which returns $ \text{Pr}(\chi_n^2 \geq x) $; and (ii) $ \text{qchisq}(p, n) $, which returns $ X_{p,n} $.
+> Example 12.1. Consider a sample variance estimated from $ n = 10 $ observations. Because $ \Pr(\chi_9^2 \leq 2.700) = 0.025 $ and $ \Pr(\chi_9^2 \leq 19.023) = 0.975 $, Equation 12.6c gives the 95% confidence interval $ (\alpha = 0.05) $ for the true variance $ \sigma^2 $ as between $ (9/19.023) $Var and $ (9/2.7) $Var, or 0.473-Var to 3.333-Var, implying an uncertainty in $ \sigma^2 $ spanning almost a full order of magnitude. What observed values of the sample variance are unlikely given an assumed true variance of $ \sigma_0^2 $? From Equation 12.7a, the upper and lower critical values (for a two-sided test with $ \alpha = 0.05 $) are $ (2.700/9)\sigma_0^2 = 0.3 \cdot \sigma_0^2 $ and $ (19.023/9)\sigma_0^2 = 2.11 \cdot \sigma_0^2 $.
 
 
 ---
 
-## chapter12_005 · The Neutral Divergence of Quantitative Traits: Introduction / Empirical Observations
+## chapter12_005 · SHORT-TERM DIVERGENCE / Empirical Observations
+
+**[Figure]**
+
+> **Figure 12.2** · page 7 · source: `chapter12`
+>
+> ![Figure 12.2](../figures/fig_0034.png)
+>
+> Figure 12.2 Observed and expected levels of the among-population variance for pupal weight in a divergence experiment with the flour beetle Tribolium. Solid lines are the expected divergence ( $ 2\sigma_{A}^{2}(0)f_{t}=920f_{t} $), dotted lines are the least-squares regressions of the observations, and the paired dashed lines give the approximate 95% confidence interval. (Data from Rich et al. 1984.)
+
 
 As an example of the application of the preceding theory, consider the results from a large drift experiment with laboratory cultures of the flour beetle Tribolium castaneum (Rich et al. 1984). The authors followed 12 replicate populations at four population sizes (1:1 sex ratio, random mating) over 20 consecutive generations. In each generation, the mean pupal weight (in $ \mu $g) of each population was obtained from a bulk sample of 100 random individuals.
 
@@ -165,7 +152,7 @@ Eisen and Hanrahan (1974) have argued that the divergence of growth and reproduc
 
 ---
 
-## chapter12_006 · The Neutral Divergence of Quantitative Traits: Introduction / Estimating the Among-group Variance
+## chapter12_006 · SHORT-TERM DIVERGENCE / Estimating the Among-group Variance
 
 **[推导 Derivation]**
 
@@ -210,7 +197,7 @@ using the among- and within-group mean squares $ (MS_{B} $ and $ MS_{W} $, respe
 
 ---
 
-## chapter12_007 · The Neutral Divergence of Quantitative Traits: Introduction / Lande's Constant Variance Test, $ F_{CV} $
+## chapter12_007 · SHORT-TERM DIVERGENCE / Lande's Constant Variance Test, $ F_{CV} $
 
 **[推导 Derivation]**
 
@@ -261,7 +248,7 @@ A couple of approximations were required to reach Equation 12.9e. One check of t
 
 **[示例 Example]**
 
-> **Example 12.2** · ref: `12.2` · source: `chapter12_007.json` · blocks 5–5
+> **Example 12.2** · ref: `12.2` · source: `chapter12_007.json` · blocks 4–5
 >
 > Example 12.2. Lande (1977b) used Equation 12.9a to evaluate the results of a 12-year divergence experiment involving five populations of Drosophila pseudoobscura (Anderson 1973). Two of the populations had been maintained at 25°C, two at 27°C, and one at 16°C. They were then raised in two common environments (16 and 25°C) and measured for wing length. Estimates of the additive genetic variance for these two environments were 0.88 and 0.77, respectively, while the among-population variances were approximately 6.62 and 4.37, respectively. An approximate upper bound for the number of generations of divergence is t = 150, whereas the effective population size probably always exceeded $ N_e = 1000 $. The use of these extreme bounds gives conservative estimates of $ F_{CV} $, making it more difficult to demonstrate diversifying selection on wing length. The resulting values (for the two environments) were $$ F_{CV,1}=\frac{6.62}{150\cdot0.88/1000}=50.15,\quad and\quad F_{CV,2}=\frac{4.37}{150\cdot0.77/1000}=37.84 $$ Given that $ \Pr(F_{4,\infty} > 4.6) = 0.001 $, both values are highly significant. Thus, the hypothesis that the observed line divergence is solely attributable to random genetic drift can be rejected confidently. More likely, the different thermal conditions resulted in selection for different wing lengths.
 
@@ -282,6 +269,15 @@ Again focusing on a character with a purely additive genetic basis, starting wit
 
 
 where $ \sigma_{m}^{2} $ is the per-generation mutational rate of input of genetic variance, as described in Chapter 11. This expression shows that as t becomes large, the expected rate of increase of the among-population variance for a neutral quantitative trait becomes a constant $ 2\sigma_{m}^{2} $ per generation. The same formulation applies to the among-species genetic covariance for a pair of traits, if the mutational rate of production of covariance between the traits is substituted for $ \sigma_{m}^{2} $ (Lande 1979a).
+
+**[Figure]**
+
+> **Figure 12.3** · page 11 · source: `chapter12`
+>
+> ![Figure 12.3](../figures/fig_0035.png)
+>
+> Figure 12.3 The expected fraction of neutral among-population variance attributable to mutations arising subsequent to the isolation event. It is assumed that the base population is in drift-mutation equilibrium,  $ \sigma_A^2(0) = 2N_e\sigma_m^2 $, with the same effective size as the daughter species, so that from Equation 12.1b, the divergence due to base-population variance is  $ 4N_e\sigma_m^2[1 - e^{-t/(2N_e)}] $. To obtain the actual number of generations of divergence for any population size, the horizontal axis is multiplied by  $ N_e $.
+
 
 Thus, under the infinite-alleles model, the asymptotic divergence rate is independent of the population size, just as it is in the neutral theory of molecular evolution (Chapter 7; Kimura 1983). Although the expected number of new mutations entering a population in each generation is $ 2N_{u} $ per locus, the probability of fixation of a new mutation is its initial frequency $ 1/(2N) $, so (at equilibrium), the expected number of mutations that is fixed per locus, per population, per generation is simply the mutation rate, u. With each fixed mutation causing an increase in expected among-population variance of $ \sim E[(2a)^2] $, and n loci contributing, the asymptotic divergence rate is $ nuE[(2a)^2] = 2\sigma_m^2 $.
 
@@ -324,9 +320,18 @@ Finally, we note that the expression for the variance of the among-population va
 
 ---
 
-## chapter12_009 · The Neutral Divergence of Quantitative Traits: Introduction / Effectively Neutral Divergence and the Estimation of Rates of Mutational Variance
+## chapter12_009 · LONG-TERM DIVERGENCE / Effectively Neutral Divergence and the Estimation of Rates of Mutational Variance
 
 As discussed in detail in LW Chapter 12, the theoretical expectations of the neutral model provide the basis for estimating the rates of polygenic mutation. Starting from an inbred base population, experimental lines with known times of divergence can be used to estimate the amount of polygenic mutation necessary to account for the distribution of the resultant mean phenotypes. In one of the earliest applications of this approach, Russell et al. (1963) started with several lines of maize that had been maintained by prolonged self-fertilization. They then performed a dichotomous branching experiment for five generations in which each plant was self-fertilized to produce two new daughter sublines. Seed was saved from each generation, so that at the end of the experiment members of all generations could be assayed simultaneously in a common environment, and then sib analysis was used to estimate the additive genetic variance for the total population in each generation. Assuming the within-population variance to be in drift-mutation equilibrium, this type of population expansion should give rise to an average rate of increase in the total genetic variance of $ 2\sigma_{m}^{2} $ per generation. In accordance with this prediction, the regressions of the genetic variance on time were positive for every character investigated (Figure 12.4). The rate of polygenic mutation for each of the traits is estimated by one-half the slopes of these regressions.
+
+**[Figure]**
+
+> **Figure 12.4** · page 13 · source: `chapter12`
+>
+> ![Figure 12.4](../figures/fig_0036.png)
+>
+> Figure 12.4 The increase in total additive genetic variance (within-plus among-population components) from new mutational variance in an expanding set of lines of corn. See text for details. (After Russell et al. 1963.)
+
 
 Results from many other experiments of this sort were reviewed in LW Chapter 12. Although a number of additional results have emerged since then, most of these are confined to a small number of model systems, and the conclusions reached in our earlier review remain unaltered. Here, we simply give a brief update, providing references only to post-1998 papers. Most estimates are framed in terms of the mutational heritability, $ h_m^2 = \sigma_m^2 / \sigma_e^2 $. Estimates of $ h_m^2 $ for a diversity of morphological, physiological, and life-history traits in D. melanogaster are consistently in the range of 0.001 to 0.005. Mutational heritabilities for body size and life-history traits in nematodes fall in the range of 0.001 to 0.008 (Vassilieva et al. 2000; Baer et al. 2006; Ostrow et al. 2007), and the same is true for life-history traits in the microcrustacean Daphnia pulex (Lynch et al. 1998; Latta et al. 2013) and in the grape phylloxera insect Daktulosphaira vitifoliae (Downie 2003). Thus, essentially all studies with invertebrates imply $ 0.001 < h_{m}^{2} < 0.01 $ for complex traits.
 
@@ -346,7 +351,7 @@ A genomics-focused researcher may (incorrectly) get the impression that despite 
 
 ---
 
-## chapter12_011 · The Neutral Divergence of Quantitative Traits: Introduction / Rate Tests
+## chapter12_011 · TESTING THE NULL HYPOTHESIS OF NEUTRAL PHENOTYPIC DIVERGENCE: RATE-BASED TESTS / Rate Tests
 
 Lande's $ F_{CV} $ (Equation 12.9a) is one example of a rate test, comparing the amount of divergence across a set of lines or populations with the expected among-population variance ($ \sigma_{B}^{2} $). As mentioned, this test is best applied over short time scales ($ t \ll N_{e} $), as in a selection experiment or over a short to modest amount of time in nature.
 
@@ -356,7 +361,7 @@ While these tests are widely used, they have several important caveats. For any 
 
 ---
 
-## chapter12_012 · The Neutral Divergence of Quantitative Traits: Introduction / Lande's Brownian-motion Model of Neutral Trait Evolution
+## chapter12_012 · TESTING THE NULL HYPOTHESIS OF NEUTRAL PHENOTYPIC DIVERGENCE: RATE-BASED TESTS / Lande's Brownian-motion Model of Neutral Trait Evolution
 
 The basic structure of tests for neutral trait divergence have the form of $ \mu_t \sim (\mu_0, \sigma_B^2[t]) $, namely, the mean phenotype at time $ t $ has an expected value equal to the initial mean
 
@@ -438,7 +443,7 @@ Under this setting, $ N_e $ does not appear in $ \sigma_t^2 $ and tests are base
 
 ---
 
-## chapter12_013 · The Neutral Divergence of Quantitative Traits: Introduction / Tests Based on the Brownian-motion Model
+## chapter12_013 · TESTING THE NULL HYPOTHESIS OF NEUTRAL PHENOTYPIC DIVERGENCE: RATE-BASED TESTS / Tests Based on the Brownian-motion Model
 
 **[推导 Derivation]**
 
@@ -454,6 +459,15 @@ where $U$ is a unit normal random variable. Lande’s (1976) original test (dist
 > **Formula (12.18a)** · `12.18a` · source: `chapter12_block_065` · Tests Based on the Brownian-motion Model
 >
 > $$ 1.96=\frac{d}{\sqrt{th^{2}\sigma_{z}^{2}/N_{e}}},\quad implying\quad(1.96)^{2}th^{2}\sigma_{z}^{2}=N_{e}d^{2} $$
+
+
+**[Figure]**
+
+> **Figure 12.5** · page 18 · source: `chapter12`
+>
+> ![Figure 12.5](../figures/fig_0037.png)
+>
+> Figure 12.5 Critical values for an  $ \alpha $-level test of a departure from drift having either too little, or too much, absolute divergence. Too much absolute divergence occurs when the unit-normal scaled test score is either in the lower  $ \alpha/4 $ or upper  $ \alpha/4 $ tail (for a total probability of  $ \alpha/2 $). Too little absolute divergence occurs when the unit-normal scaled test score is too close to zero, namely, a region of probability  $ \alpha/4 $ below zero and a region of probability  $ \alpha/4 $ above zero (for a total probability of  $ \alpha/2 $). Here,  $ z_p $ satisfies  $ \Pr(U \leq z_p) = p $, where  $ U $ is a unit-normal random variable. See the text for further details.
 
 
 **[推导 Derivation]**
@@ -489,20 +503,22 @@ Figure 12.5 illustrates this logic.
 
 **[示例 Example]**
 
-> **Example 12.3** · ref: `12.3` · source: `chapter12_013.json` · blocks 6–6
+> **Example 12.3** · ref: `12.3` · source: `chapter12_013.json` · blocks 6–9
 >
 > Example 12.3. Reyment (1982) observed a change of 1.49σz in the size of a Cretaceous foraminifer over roughly 5 · 10⁵ generations. Taking a typical heritability value of 0.3, Equation 12.18b (i.e., assuming a one-sided test, namely, a test only for excessive divergence) gives the upper bound, Nₑ,ₑ, on population size consistent with this amount of divergence as $$ N_{e,u}=3.84\cdot\frac{t h^{2}}{d_{*}^{2}}=3.84\cdot\frac{5\cdot10^{5}\cdot0.3}{1.49^{2}}\simeq260,000 $$
 > 
 > However, paleontological data suggest that the census population size $ N \gg 10^6 $, implying that drift was unlikely to account for such a rapid divergence (of course, caveats from Chapter 3 apply in that usually $ N_e \ll N $). Assuming $ h^2 $ values of 0.5, 0.7, and 1.0 yields $ N_{e,u} $ values of 433,000, 607,000, and 867,000 respectively, so that only for assumed $ h^2 $ values close to one does the critical $ N_e $ under drift approach the assumed size of $ N_e > 10^6 $.
 > 
 > Using the two-sided test (strict departure from drift, either too little or too much absolute divergence), the value of the 3.84 used above is replaced by 5.02 (Equation 12.19a), resulting in an $ \sim31% $ (5.02/3.84 = 1.307) increase in $ N_{e,u} $ value, with critical values of $ \sim340,000,566,000,794,000 $, and 1,133,000 for $ h^{2} $ values of 0.3, 0.5, 0.7, and 1.0, respectively. Similarly, the lower critical $ N_{e,l} $ (the size below which the lack of divergence is too improbable under drift) is 61 (using Equation 12.19b with $ h^{2} = 0.3 $).
-> 
-> The structure of the tests given by Equations 12.17 through 12.19 depends on $ N_e $ and $ h^2 $. A second approach is to instead base tests on the mutational variance, $ \sigma_m^2 $, alone. The idea is that if $ N_e $ has been roughly constant for a sufficient amount of time, then the additive-genetic variance for a neutral trait approaches its mutation-drift equilibrium value, $ 2N_e\sigma_m^2 $ (Equation 11.20c). Under this condition, Equation 12.16b shows that the among-group variance becomes $ \sigma_B^2 = 2t\sigma_m^2 $, giving the MDE (mutation-drift equilibrium) version of Lande's F test (Equation 12.9a) as
-> 
-> > **Formula (12.20a)** · `12.20a` · source: `chapter12_block_074` · Tests Based on the Brownian-motion Model
-> >
-> > $$ F_{MDE}=\frac{V_{B}(t)}{2t\sigma_{m}^{2}} $$
-> 
+
+
+**[推导 Derivation]**
+
+The structure of the tests given by Equations 12.17 through 12.19 depends on $ N_e $ and $ h^2 $. A second approach is to instead base tests on the mutational variance, $ \sigma_m^2 $, alone. The idea is that if $ N_e $ has been roughly constant for a sufficient amount of time, then the additive-genetic variance for a neutral trait approaches its mutation-drift equilibrium value, $ 2N_e\sigma_m^2 $ (Equation 11.20c). Under this condition, Equation 12.16b shows that the among-group variance becomes $ \sigma_B^2 = 2t\sigma_m^2 $, giving the MDE (mutation-drift equilibrium) version of Lande's F test (Equation 12.9a) as
+
+> **Formula (12.20a)** · `12.20a` · source: `chapter12_block_074` · Tests Based on the Brownian-motion Model
+>
+> $$ F_{MDE}=\frac{V_{B}(t)}{2t\sigma_{m}^{2}} $$
 
 
 ---
@@ -578,7 +594,7 @@ One important caveat for $ \sigma_m^2 $-based tests of stabilizing selection is 
 
 **[示例 Example]**
 
-> **Example 12.4** · ref: `12.4` · source: `chapter12_014.json` · blocks 8–8
+> **Example 12.4** · ref: `12.4` · source: `chapter12_014.json` · blocks 8–10
 >
 > Example 12.4. We now return to Reyment's foraminifer data from Example 12.3. Using the original Lande model (Equation 12.18b), we rejected the hypothesis that drift could have accounted for the divergence. Applying Equation 12.21a, the hypothesis of drift accounting for excessive divergence is not rejected when $$ h_{m}^{2}>0.10\cdot\frac{d_{*}^{2}}{t}=0.10\cdot\frac{1.49^{2}}{5\cdot10^{5}}=4.4\cdot10^{-7} $$
 > 
@@ -589,7 +605,7 @@ One important caveat for $ \sigma_m^2 $-based tests of stabilizing selection is 
 
 ---
 
-## chapter12_015 · The Neutral Divergence of Quantitative Traits: Introduction / Ornstein-Uhlenbeck Models
+## chapter12_015 · TESTING THE NULL HYPOTHESIS OF NEUTRAL PHENOTYPIC DIVERGENCE: RATE-BASED TESTS / Ornstein-Uhlenbeck Models
 
 As developed in Appendix 1, the Ornstein-Uhlenbeck (OU) process provides a model of Brownian motion drift coupled with a restoring force back to some optimal value ($ \theta $), as might be expected with drift and stabilizing selection. This process has been used to model the divergence of traits over a phylogeny (Felsenstein 1988, 2004, 2008; Garland et al. 1993; Martins 1994; Hansen and Martins 1996; Hansen 1997; Martins and Hansen 1997; Butler and King 2004; Beaulieu et al. 2012), including gene-expression data (Bedford and Hartl 2009; Kalinka et al. 2010; Brawand et al. 2011; Rohlfs et al. 2014).
 
@@ -625,7 +641,7 @@ Initially, the among-population divergence increases linearly with divergence ti
 
 ---
 
-## chapter12_016 · The Neutral Divergence of Quantitative Traits: Introduction / Divergence in Morphological Traits
+## chapter12_016 · TESTING THE NULL HYPOTHESIS OF NEUTRAL PHENOTYPIC DIVERGENCE: RATE-BASED TESTS / Divergence in Morphological Traits
 
 **[命题 Proposition]**
 
@@ -645,7 +661,7 @@ There are two important caveats with random-walk models. First, any observed phe
 
 ---
 
-## chapter12_018 · The Neutral Divergence of Quantitative Traits: Introduction / Tests for Departures From Symmetric Random Walks
+## chapter12_018 · TIME SERIES DIVERGENCE TESTS / Tests for Departures From Symmetric Random Walks
 
 A number of tests of departure from a symmetric random walk have been proposed. All assume uncorrelated changes over time increments and an equal chance of positive and negative increments (with the mean incremental change equaling zero). Raup (1977) and Raup and Crick (1981) proposed using the Wald–Wolfowitz runs test (under the null hypothesis of an equal number of positive and negative changes). Here the test statistic, $ R_{n} $, for the number of runs (changes in the direction of the walk) in a sample of size n is approximately normally distributed with mean $ n/2 + 1 $ and variance n/4. A sequence showing excessive runs of the same sign is consistent with directional selection, while a sequence with an excessive number of sign reversals is consistent with stabilizing selection (as might be expected for a population mean fluctuating around an optimum). Similarly, one could simply test the number of positive increments against the value expected from a binomial with success parameter 1/2 and sample size n. Both the runs and binomial tests do not use any information on the size of any jump, but rather simply test against a null of equally likely up versus down change over any given time point.
 
@@ -691,7 +707,7 @@ While straightforward and widely applied in the early literature, these methods 
 
 ---
 
-## chapter12_019 · The Neutral Divergence of Quantitative Traits: Introduction / Hunt's Approach for Comparing Different Models
+## chapter12_019 · TIME SERIES DIVERGENCE TESTS / Hunt's Approach for Comparing Different Models
 
 Hunt (2006, 2007, 2008a, 2008b; Hunt and Carrano 2010) noted that the low power for tests of departures from symmetric random walks creates a "tyranny of the null hypothesis," potentially overinflating the role of drift. He suggested that instead of testing against
 
@@ -709,52 +725,40 @@ Hunt initially considered three basic models: a symmetric random walk (with an i
 
 It should be stressed that the power of this approach is not the initial small set of candidate models, but rather that it serves as a much more general framework for examining an ever-richer set of models. Indeed, Hunt et al. (2015) examined more complex models that allow for the sequence of mean phenotypes to shift between modes (e.g., random vs. stasis) over the time sampled. One could also use the Akaike weights strategy to contrast the simple stasis model used by Hunt with the Ornstein-Uhlenbeck or other competing models of stabilizing selection (Estes and Arnold 2006; Uyeda et al. 2011), as well as considering other models of directional evolution (e.g., Charlesworth 1984b).
 
+**[Figure]**
+
+> **Figure 12.6** · page 26 · source: `chapter12`
+>
+> ![Figure 12.6](../figures/fig_0038.png)
+>
+> Figure 12.6 A De Finetti diagram of the support for the random walk, directional walk, and stasis models. Each point corresponds to the coordinates of the Akaike weights for these three models (which sum to one) for a single stratophenetic series. Points near vertices corresponds to almost 100% support for a particular model, hence the lables at the vertices. Points along an edge of the triangle indicate very little support for the model perpendicular to that edge. Unfilled points indicate strong support (weight for most supported model at least 2.7 times the weight of any other model). (After Hopkins and Lidgard 2012.)
+
+
 Using this approach, Hunt (2007), Hopkins and Lidgard (2012), and Hunt et al. (2015) examined an evergrowing number of stratophenetic series (251, 635, and 709 studies, respectively). The basic conclusions from Hunt et al. (2007), which hold for these larger (and more recent) studies as well, are given in Table 12.1. For each fossil series, the fraction of support for the three models was computed using Akaike weights. In only 13/251 (5.2%) of the sequences was directional selection (a generalized random walk with $ \mu_{\delta} \neq 0 $) the most strongly supported model (had the largest Akaike weight). The random walk model was the most supported overall (49% of the time), while 46% of the fossil series had stasis as the most supported model. Figure 12.6 presents the relative support for all three models from the analysis of Hopkins and Lidgard (2012), presented as a De Finetti diagram (or De Finetti triangle). Values in the middle of the triangle have roughly equal support for all three models (which was rarely seen). Values near the edges of the triangle have very weak support for at least one model, and values near the vertices correspond to very high support for a single model. Note that there is little support along the directional selection axis for any sequence, with most of the support lying along the stasis-random walk axes.
 
 An interesting perspective on the rates of macroevolution was offered by Uyeda et al. (2011), who examined a vast data set of traits followed over time, with time-span ranging from fractions of years to over 350 million years. For periods of a million years or less, rapid evolution was seen to occur, but it is constrained, and does not accumulate over time. This matches the earlier observation by Estes and Arnold (2007) that the expected magnitude of divergence over samples is largely time-independent up to about a million generations. However, as Figure 12.7 illustrates, Uyeda et al. observed an accumulation of cases of rapid divergence starting at $ \sim10^{6} $ year intervals, generating what they called a blunderbuss pattern, as the spread of values resembles the flared muzzle of the seventeenth-century firearm of the same name.
 
 While Estes and Arnold (2007) were able to account for their observed pattern in terms of stabilizing selection with a fluctuating optimum, this model did not fit the data of Uyeda et al. (2011) presented in Figure 12.7. Rather, the best fit was a model of essentially stasis (the Sheets-Mitchell model), coupled with rare random bursts of significant change (with an average waiting time of $ \sim10^{7} $ years). The model allowing for multiple (as opposed to single) bursts fit the data best. While this pattern is striking and reproducible over the several different taxonomic data sets used by the authors, the underlying mechanism is unclear. Uyeda et al. suggested that this pattern might be correlated with the opening of new niches following species turnover (as species life spans are typically in the million-year range).
 
+**[Figure]**
+
+> **Figure 12.7** · page 27 · source: `chapter12`
+>
+> ![Figure 12.7](../figures/fig_0039.png)
+>
+> Figure 12.7. The blunderbuss pattern of divergence observed by Uyeda et al. (2011). Bounded variation is seen over the first  $ 10^6 $ years, after which considerable divergence can occur. Divergence is scored as the log difference between means (at time points a and b, for an interval of  $ b - a $), scaled by the dimension  $ k $ of the data ( $ k = 2 $ for area,  $ k = 3 $ for mass). (After Uyeda et al. 2011.)
+
+
 **[示例 Example]**
 
-> **Example 12.5** · ref: `12.5` · source: `chapter12_019.json` · blocks 8–8
+> **Example 12.5** · ref: `12.5` · source: `chapter12_019.json` · blocks 8–12
 >
-> Example 12.5. Anderson et al. (2000) proposed that a series of candidate models can be compared via their Akaike weights, an approach used by Hunt (2007) to assess the relative fit of a series of candidate models for long-term evolution (Figure 12.6). Suppose one has a series of models that were fit using maximum likelihood. If these models are not nested (so that likelihood-ratio tests for comparing fit are not available; LW Appendix 4), then comparison statistics, such as the Akaike information criterion (AIC; Akaike 1974) can be used to rank them. AIC rewards goodness of fit (higher log-likelihood, L), while penalizing for the number of parameters (k) with smaller AIC values implying a better model. With $ n < 40k $ observations, Anderson et al. suggested that a corrected version of AIC should be used.
-> 
-> > **Formula (12.25a)** · `12.25a` · source: `chapter12_block_106` · Hunt's Approach for Comparing Different Models
-> >
-> > $$ \begin{align*}AIC_c=-2\ln(L)+2k+{2k(k+1)\over n-k-1}\end{align*} $$
-> 
-> 
-> which differs from the standard AIC measure in the addition of the last term. Suppose that one has a set of m candidate models and computes the support for model i relative to the best fitting of all m models,
-> 
-> > **Formula (12.25b)** · `12.25b` · source: `chapter12_block_106` · Hunt's Approach for Comparing Different Models
-> >
-> > $$ \Delta_{i}=A I C_{c,i}-\min(A I C_{c}) $$
-> 
-> 
-> The resulting Akaike weights for each of the candidate models are given by
-> 
-> > **Formula (12.25c)** · `12.25c` · source: `chapter12_block_107` · Hunt's Approach for Comparing Different Models
-> >
-> > $$ \begin{align*}w_i=\frac{e^{-(\Delta_i/2)}}{\sum_{j=1}^m e^{-(\Delta_i/2)}}\end{align*} $$
-> 
-> 
-> By construction, these weights sum to one, with each giving the relative support for model i, given the collection of proposed models.
-> 
-> Note that Equation 12.25c gives each model equal prior weight (for m models, a prior weight of 1/m on each cancels in the denominator and numerator of Equation 12.25c). More generally, if one has prior weights $ \pi_{i} $ for each model,
-> 
-> > **Formula (12.25d)** · `12.25d` · source: `chapter12_block_109` · Hunt's Approach for Comparing Different Models
-> >
-> > $$ w_{i}=\frac{\pi_{i}e^{-(\Delta_{i}/2)}}{\sum_{j=1}^{m}\pi_{j}e^{-(\Delta_{i}/2)}} $$
-> 
-> 
-> For example, one might, a priori, assume that 60% of the traits are under drift, 30% are under stabilizing selection, and the rest are under directional selection. This would yield different Akaike weights than when our prior belief is equal for all three cases.
+> Example 12.5. Anderson et al. (2000) proposed that a series of candidate models can be compared via their Akaike weights, an approach used by Hunt (2007) to assess the relative fit of a series of candidate models for long-term evolution (Figure 12.6). Suppose one has a series of models that were fit using maximum likelihood. If these models are not nested (so that likelihood-ratio tests for comparing fit are not available; LW Appendix 4), then comparison statistics, such as the Akaike information criterion (AIC; Akaike 1974) can be used to rank them. AIC rewards goodness of fit (higher log-likelihood, L), while penalizing for the number of parameters (k) with smaller AIC values implying a better model. With $ n < 40k $ observations, Anderson et al. suggested that a corrected version of AIC should be used. $$ \begin{align*}AIC_c=-2\ln(L)+2k+{2k(k+1)\over n-k-1}\end{align*} $$ (12.25a) which differs from the standard AIC measure in the addition of the last term. Suppose that one has a set of m candidate models and computes the support for model i relative to the best fitting of all m models, $$ \Delta_{i}=A I C_{c,i}-\min(A I C_{c}) $$ (12.25b) The resulting Akaike weights for each of the candidate models are given by $$ \begin{align*}w_i=\frac{e^{-(\Delta_i/2)}}{\sum_{j=1}^m e^{-(\Delta_i/2)}}\end{align*} $$ (12.25c) By construction, these weights sum to one, with each giving the relative support for model i, given the collection of proposed models. Note that Equation 12.25c gives each model equal prior weight (for m models, a prior weight of 1/m on each cancels in the denominator and numerator of Equation 12.25c). More generally, if one has prior weights $ \pi_{i} $ for each model, $$ w_{i}=\frac{\pi_{i}e^{-(\Delta_{i}/2)}}{\sum_{j=1}^{m}\pi_{j}e^{-(\Delta_{i}/2)}} $$ (12.25d) For example, one might, a priori, assume that 60% of the traits are under drift, 30% are under stabilizing selection, and the rest are under directional selection. This would yield different Akaike weights than when our prior belief is equal for all three cases.
 
 
 ---
 
-## chapter12_020 · The Neutral Divergence of Quantitative Traits: Introduction / POPULATION STRUCTURE BASED-TESTS: $ Q_{ST} $ VERSUS $ F_{ST} $
+## chapter12_020 · TIME SERIES DIVERGENCE TESTS / POPULATION STRUCTURE BASED-TESTS: $ Q_{ST} $ VERSUS $ F_{ST} $
 
 **[命题 Proposition]**
 
@@ -764,7 +768,7 @@ The trait-based analog of this test is based on comparing $ Q_{ST} $ to $ F_{ST}
 
 ---
 
-## chapter12_021 · The Neutral Divergence of Quantitative Traits: Introduction / $ Q_{ST} $: Partitioning Additive Variance Over Populations
+## chapter12_021 · TIME SERIES DIVERGENCE TESTS / $ Q_{ST} $: Partitioning Additive Variance Over Populations
 
 **[推导 Derivation]**
 
@@ -812,7 +816,7 @@ A second caveat is that the choice of markers used to estimate $ F_{ST} $ can in
 
 ---
 
-## chapter12_022 · The Neutral Divergence of Quantitative Traits: Introduction / $ P_{ST} $: Approximating $ Q_{ST} $ with Phenotypic Data
+## chapter12_022 · TIME SERIES DIVERGENCE TESTS / $ P_{ST} $: Approximating $ Q_{ST} $ with Phenotypic Data
 
 **[推导 Derivation]**
 
@@ -838,7 +842,7 @@ A slightly optimistic note was struck by Pujol et al. (2008), who noted that the
 
 ---
 
-## chapter12_023 · The Neutral Divergence of Quantitative Traits: Introduction / Testing $ Q_{ST} $ Versus $ F_{ST} $
+## chapter12_023 · TIME SERIES DIVERGENCE TESTS / Testing $ Q_{ST} $ Versus $ F_{ST} $
 
 The construction of rigorous statistical tests for comparing $ Q_{ST} $ with $ F_{ST} $ is problematic on several levels. First, both are ratios of variances, so that estimates obtained by directly substituting variance estimates into Equation 12.26 are biased, as the expectation of a ratio is not the same as a ratio of expectations (LW Equation A1.19a). Second, the sampling distribution of $ Q_{ST} $ is complex, as one must use a crossing design to estimate the variance components. Hence, the correct construction of dispersion intervals (such as standard errors in a frequentist setting or credible intervals in a Bayesian setting) is not trivial. Finally, there is the issue of formally comparing a somewhat noisy estimate ($ F_{ST} $) with a very noisy estimate ($ Q_{ST} $), which were obtained using very different designs. Some of these issues were addressed by O'Hara and Merilä (2005), Whitlock (2008), and Whitlock and Guillaume (2009). As noted by O'Hara and Merilä, one significant problem is simply power. The among-group variance is a function of the number of groups, with at least 20 needed for any substantial power. Unfortunately, the typical group number is around 7 for the studies reviewed by Merilä and Crnokrak (2001).
 
@@ -873,9 +877,27 @@ Insight into power is obtained by asking, under the null, how often the ratio $ 
 > $$ \Pr\left(\frac{Q_{ST}}{\overline{F}_{ST}}>\delta\right)=\Pr\left(\frac{(n_{d}-1)Q_{ST}}{\overline{F}_{ST}}>\delta(n_{d}-1)\right)=\Pr\left(\chi_{n_{d}-1}^{2}>\delta(n_{d}-1)\right) $$
 
 
+**[Figure]**
+
+> **Figure 12.8** · page 32 · source: `chapter12`
+>
+> ![Figure 12.8](../figures/fig_0040.png)
+>
+> Figure 12.8 When  $ \overline{F}_{ST} $ is small, the  $ Q_{ST} $ distribution for a neutral, completely additive trait should approximately follow the Lewontin-Krakauer distribution (Equations 9.10a and 12.28a). In this example, two traits, one with  $ Q_{ST} = 0.09 $, and a second with  $ Q_{ST} = 0.16 $ are both larger than  $ \overline{F}_{ST} = 0.06 $, but only trait 2 is significant. (After Whitlock 2008.)
+
+
 Consider $ n_d = 2 $, as occurs when comparing two populations. How much larger must the true value of $ Q_{ST} $ be than the true value $ F_{ST} $ for this difference to be significant at the $ \alpha = 0.05 $ level? Because tests involving $ Q_{ST} $ are two-sided (either too large or too small being of interest), and $ \Pr(\chi^2 > 5.02) = 0.025 $, Equation 12.28c gives the critical value as $ \delta = 5.02 $. Hence, $ Q_{ST} $ must be in excess of 5 times $ \overline{F}_{ST} $ to be significant at the 5% level. For $ n = 10 $, $ \Pr(\chi_0^2 > 19.03) = 0.025 $, or $ \delta = 19.03/3 = 2.1 $, and hence only a two-fold difference is required for significance. The same logic can be used to obtain the critical value when $ Q_{ST} < F_{ST} $. For example, because $ \Pr(\chi_0^2 < 2.7) = 0.025 $, a value of $ Q_{ST} $ less than one third of $ \overline{F}_{ST} $ (2.7/9 = 0.3) is significant at the 5% level when $ n_d = 10 $.
 
 Figure 12.8 shows the basic structure of tests based on this simple approach: compute $ Q_{ST} $ and compare this value with the distribution of realized values for single-locus $ F_{ST} $, where the mean of this latter distribution as taken is $ \overline{F}_{ST} $, the mean $ F_{ST} $ value over all loci in the sample. This approach assumes that just a single trait is of interest and that $ Q_{ST} $ is measured without error (again, we return to this below). In the typical study setting, however, one has $ k Q_{ST} $ values (one for each of the k traits in the study), but uses the same set of markers (and hence the same $ \overline{F}_{ST} $ value) for all traits. This is now a multiple-comparisons setting (Appendix 4). One approach to accommodate this concern is to use the first k order statistics from the Lewontin-Krakauer distribution (Equation 12.28a), which can be obtained as follows. A large number of samples are generated by randomly drawing $ k \chi^{2} $ random variables and scaling each using Equation 12.28a to generate an empirical distribution of the k order statistics (i.e., the values of the k realizations, ranked from largest—the first order statistic—to smallest; Chapter 14). The largest $ Q_{ST} $ value is assessed by comparing it against critical values for the empirical distribution of the largest value from each of the simulated samples. If this $ Q_{ST} $ value is significant (for example, only 2% of the simulated samples of k draws each have a greater value for their largest order statistic), one can then turn to the second largest $ Q_{ST} $ value and compare it with the simulated distribution of the second largest order statistic, and so on until a $ Q_{ST} $ value is no longer significant relative to its corresponding order statistic.
+
+**[Figure]**
+
+> **Figure 12.9** · page 33 · source: `chapter12`
+>
+> ![Figure 12.9](../figures/fig_0041.png)
+>
+> Figure 12.9 A violin plot for the distribution of the difference  $ \left(\widehat{Q}_{ST} - Q_{ST}^{n}\right) $ for body length in the sea-run brown trout (Salmo trutta), using the resampling scheme suggested by Whitlock and Guillaume (2009), and detailed in Example 12.9. The width of the “violin” indicates the probability mass in that interval, the dot denotes the highest posterior probability, and the error bars the 95% credibility interval. Here this interval is completely above zero, demonstrating that  $ \widehat{Q}_{ST} $ is significantly in excess of its predicted neutral value given  $ \overline{F}_{ST} $. (After Rogell et al. 2012.)
+
 
 **[命题 Proposition]**
 
@@ -883,29 +905,14 @@ The major flaw with using Equation 12.28a is that it ignores the very important 
 
 **[示例 Example]**
 
-> **Example 12.6** · ref: `12.6` · source: `chapter12_023.json` · blocks 8–8
+> **Example 12.6** · ref: `12.6` · source: `chapter12_023.json` · blocks 8–13
 >
-> Example 12.6. To generate draws from the distribution $ Q_{ST}^{n} $ accounting for the sampling of an estimated $ \widehat{Q}_{ST} $ value, Whitlock and Guillaume (2009) started with the clever observation that because $ Q_{ST} = F_{ST} $ for a neutral additive trait, Equation 12.26a can be rearranged to yield
-> 
-> > **Formula (12.29)** · `12.29` · source: `chapter12_block_132` · Testing $ Q_{ST} $ Versus $ F_{ST} $
-> >
-> > $$ \sigma_{GB}^{2}=\frac{2F_{ST}\sigma_{GW}^{2}}{1-F_{ST}} $$
-> 
-> 
-> This trick allowed them to generate a random value for $ \sigma_{GB}^{2} $, given values of $ \sigma_{GW}^{2} $ and $ F_{ST} $. Their scheme to generate the ith sample of $ Q_{ST}^{n} $ was as follows: 1) Draw a bootstrap sample of the n markers by sampling with replacement. Compute the mean $ F_{ST} $ value for this (the ith) sample, $ \overline{F}_{ST,i} $.
-> 
-> 2) Draw a sample value of $ \sigma_{GW,i}^{2} $ as follows: a) If $\sigma_{GW}^2$ is computed by a standard ANOVA, recall that $(MS/df) \sim \chi_{df}^2$, where $MS$ is the observed mean sum of squares and $df$ its degrees of freedom (LW Chapter 18). Generate $X_i$, a draw from a $\chi_{df}^2$ and take the sample $i$ value for $MS$ as $MS/df \cdot X_i$, using this value to compute the variance estimates (O'Hara and Merilä 2005; Whitlock and Guillaume 2009). When $\sigma_{GW}^2$ is estimated as a function of several different sums of squares, compute each in the fashion above, and then use these realizations to compute $\sigma_{GW,i}^2$. b) If $ \sigma_{GW}^{2} $ is estimated by Bayesian methods, then $ \sigma_{GW,i}^{2} $ is a sample drawn from the resulting posterior (i.e., Rogell et al. 2012).
-> 
-> 4) Use the sample values of $ \overline{F}_{ST,i} $ and $ \sigma_{GW,i}^{2} $ with Equation 12.29 to generate a draw of the among-group variance, $ \sigma_{GB,i}^{2} = 2\overline{F}_{ST,i} \sigma_{GW,i}^{2} / (1 - \overline{F}_{ST,i}) $.
-> 
-> 4) Take $ Q_{ST,i}^{n} = \sigma_{GB,i}^{2} / (\sigma_{GB,i}^{2} + 2\sigma_{GW,i}^{2}) $.
-> 
-> 5) Repeat steps (1) through (4) until a sufficient number of draws (say m) have been computed to generate a sufficiently dense empirical distribution under the null. Figure 12.9 was com- puted using the $m$ values $(\widehat{Q}_{ST} - Q_{ST}^n)$ obtained by subtracting the estimated $Q_{ST}$ from each sample drawn from the underlying null distribution $Q_{ST}^n$.
+> Example 12.6. To generate draws from the distribution $ Q_{ST}^{n} $ accounting for the sampling of an estimated $ \widehat{Q}_{ST} $ value, Whitlock and Guillaume (2009) started with the clever observation that because $ Q_{ST} = F_{ST} $ for a neutral additive trait, Equation 12.26a can be rearranged to yield $$ \sigma_{GB}^{2}=\frac{2F_{ST}\sigma_{GW}^{2}}{1-F_{ST}} $$ (12.29) This trick allowed them to generate a random value for $ \sigma_{GB}^{2} $, given values of $ \sigma_{GW}^{2} $ and $ F_{ST} $. Their scheme to generate the ith sample of $ Q_{ST}^{n} $ was as follows: 1) Draw a bootstrap sample of the n markers by sampling with replacement. Compute the mean $ F_{ST} $ value for this (the ith) sample, $ \overline{F}_{ST,i} $. 2) Draw a sample value of $ \sigma_{GW,i}^{2} $ as follows: a) If $\sigma_{GW}^2$ is computed by a standard ANOVA, recall that $(MS/df) \sim \chi_{df}^2$, where $MS$ is the observed mean sum of squares and $df$ its degrees of freedom (LW Chapter 18). Generate $X_i$, a draw from a $\chi_{df}^2$ and take the sample $i$ value for $MS$ as $MS/df \cdot X_i$, using this value to compute the variance estimates (O'Hara and Merilä 2005; Whitlock and Guillaume 2009). When $\sigma_{GW}^2$ is estimated as a function of several different sums of squares, compute each in the fashion above, and then use these realizations to compute $\sigma_{GW,i}^2$. b) If $ \sigma_{GW}^{2} $ is estimated by Bayesian methods, then $ \sigma_{GW,i}^{2} $ is a sample drawn from the resulting posterior (i.e., Rogell et al. 2012). 4) Use the sample values of $ \overline{F}_{ST,i} $ and $ \sigma_{GW,i}^{2} $ with Equation 12.29 to generate a draw of the among-group variance, $ \sigma_{GB,i}^{2} = 2\overline{F}_{ST,i} \sigma_{GW,i}^{2} / (1 - \overline{F}_{ST,i}) $. 4) Take $ Q_{ST,i}^{n} = \sigma_{GB,i}^{2} / (\sigma_{GB,i}^{2} + 2\sigma_{GW,i}^{2}) $. 5) Repeat steps (1) through (4) until a sufficient number of draws (say m) have been computed to generate a sufficiently dense empirical distribution under the null. Figure 12.9 was computed using the $m$ values $(\widehat{Q}_{ST} - Q_{ST}^n)$ obtained by subtracting the estimated $Q_{ST}$ from each sample drawn from the underlying null distribution $Q_{ST}^n$.
 
 
 ---
 
-## chapter12_024 · The Neutral Divergence of Quantitative Traits: Introduction / Empirical Data
+## chapter12_024 · TIME SERIES DIVERGENCE TESTS / Empirical Data
 
 Results from the large number of $ Q_{ST} $ vs. $ F_{ST} $ comparisons from natural populations were summarized by Merilä and Crnokrak (2001), McKay and Latta (2002), and Leinonen et al. (2008, 2013). Values of $ Q_{ST} $ and $ F_{ST} $ are positively correlated, with r = 0.24 (Leinonen et al. 2013). Thus, there is a modest tendency for the structure of quantitative-trait variation to parallel the population structure for neutral alleles. The striking finding is that $ Q_{ST} > F_{ST} $ for $ \sim 70% $ of all traits, which, taken at face value, suggested that diversifying selection was very widespread (Figure 12.10). Conversely, values of $ Q_{ST} < F_{ST} $ are rare, despite the bias in this direction for neutral traits under a variety of conditions (discussed above), suggesting that persistent stabilizing or uniform selection is far less common.
 
@@ -919,11 +926,29 @@ One check of theory is to compare $ Q_{ST} $ and $ F_{ST} $ values between contr
 
 Support for $ Q_{ST} $ as a method for detecting selection was also offered by Rhoné et al.
 
+**[Figure]**
+
+> **Figure 12.10** · page 35 · source: `chapter12`
+>
+> ![Figure 12.10](../figures/fig_0042.png)
+>
+> Figure 12.10 The joint distribution of  $ Q_{ST} $ vs.  $ F_{ST} $ seen in the meta-analysis of Leinonen et al. (2008). The solid line represents the neutral expectation,  $ Q_{ST} = F_{ST} $, while the dashed line is their smoothed nonlinear regression. There is a very strong tendency for  $ Q_{ST} > F_{ST} $. While consistent with widespread diversifying selection, as discussed in the text, such a pattern can also arise from ascertainment bias or the use of highly polymorphic markers (which underestimate  $ F_{ST} $).
+
+
+**[Figure]**
+
+> **Figure 12.11** · page 35 · source: `chapter12`
+>
+> ![Figure 12.11](../figures/fig_0043.png)
+>
+> Figure 12.11 Correlation between the difference  $ (Q_{ST} - F_{ST}) $ and heterozygosity at the marker loci, with each point representing one trait comparison. Filled circles involve microsatellites, and open circles denote allozyme markers. The solid line is the regression slope of  $ (Q_{ST} - F_{ST}) $ on heterozygosity; the dashed line is the same regression, but correcting the previously discussed decline in  $ F_{ST} $ with heterozygosity. (After Edelaar et al. 2011.)
+
+
 (2010). They examined the response to 12 generations of natural selection on flowering times in a synthetic population of wheat grown in three locations in France (which experienced rather different environmental conditions). For generation 2 remnant seed assessed in a common garden, $ Q_{ST} $ and $ F_{ST} $ were not significantly different. However, individuals from generations 7 and 12 had $ Q_{ST} $ significantly larger than $ F_{ST} $. Finally, agreement with theory was mixed in Porcher et al. (2004, 2006), who examined eight generations of selection in a series of structured Arabidopsis populations (migration was artificially controlled over a set of demes). Larger $ Q_{ST} $ values were seen under imposed heterogeneous selection among the experimental demes, consistent with theory, but $ F_{ST} $ increased as well.
 
 ---
 
-## chapter12_025 · The Neutral Divergence of Quantitative Traits: Introduction / Closing Comments: $ Q_{ST}, F_{STQ} $, and Linkage Disequilibrium
+## chapter12_025 · TIME SERIES DIVERGENCE TESTS / Closing Comments: $ Q_{ST}, F_{STQ} $, and Linkage Disequilibrium
 
 Tests comparing $ F_{ST} $ values at candidate loci against the distribution of $ F_{ST} $ values at putatively neutral markers were discussed at length in Chapter 9. Comparisons of $ Q_{ST} $ to $ F_{ST} $ are a step removed, in that, ideally, we would like to contrast the $ F_{STQ} $ value (the average $ F_{ST} $ value for loci underlying our focal trait) against the genome-wide $ F_{ST} $ neutral standard. Given the near impossibility of locating all such causative loci, we have instead been using $ Q_{ST} $, as with an additive trait, this should track the $ F_{STQ} $ values at the underlying causative loci. However, as is detailed in Chapters 16 and 24, allele-frequency changes are not the only route through which genetic variances (and hence the components of $ Q_{ST} $) can change. Selection-generated gametic-phase disequilibrium (LD)—even among unlinked loci—can have a dramatic effect, even in situations where little allele-frequency change occurs. This impact of LD on $ Q_{ST} $ was stressed first by Latta (1998, 2005), and later by Le Corre and Kremer (2003, 2012; Kremer and Le Corre 2012). Because $ Q_{ST} $ is based on variance components, it can be influenced by linkage disequilibrium, which generates covariances between alleles at different loci, either inflating or deflating the resulting variances. When this happens, the values of $ Q_{ST} $ and $ F_{STQ} $ can become decoupled, and (as we will see) $ Q_{ST} $ can have more power to detect selection than $ F_{STQ} $ (even presuming we could locate all the underlying loci).
 
@@ -979,7 +1004,7 @@ Our last class of tests for neutral trait evolution exploit marker information f
 
 ---
 
-## chapter12_027 · The Neutral Divergence of Quantitative Traits: Introduction / Leveraging QTL Studies
+## chapter12_027 · TRAIT-AUGMENTED MARKER-BASED APPROACHES: TESTS USING QTL INFORMATION / Leveraging QTL Studies
 
 In theory, one could take localized QTL regions detected from such a cross (LW Chapters 14–16) as candidate regions for tests of selection using the machinery in Chapters 9 and 10. Here we examine a different class of tests, based not on a signature from a single QTL, but rather on the signature from an entire collection of QTLs for a given trait. We assume that the lines have been fixed (or nearly so) for alternative alleles at the underlying causative QTLs, and the pattern of fixation (i.e., which alleles were fixed in which line) provides information on whether this pattern was neutral.
 
@@ -987,7 +1012,7 @@ The basic idea traces back to three papers, all coincidentally examining crosses
 
 ---
 
-## chapter12_028 · The Neutral Divergence of Quantitative Traits: Introduction / Orr's QTLST and QTLST-EE Sign Tests
+## chapter12_028 · TRAIT-AUGMENTED MARKER-BASED APPROACHES: TESTS USING QTL INFORMATION / Orr's QTLST and QTLST-EE Sign Tests
 
 Assume that n detected QTL differences (alternative fixed alleles at n loci) are found via a standard QTL mapping experiment involving a cross between two lines (LW Chapter 15). Under neutrality, there should be no systematic directionality as to whether a line is fixed for increasing (plus) alleles over decreasing (minus) alleles at any particular QTL. This simple idea forms the basis of sign tests, but it requires modifications to account for the actual biology. For example, when the line means differ, the high (larger trait value) line is expected to contain more plus alleles (assuming equal effects; with a distribution of allelic effects, this need not be the case, as is discussed below). Orr noted that by choosing the larger line, we have introduced an ascertainment bias, as this line is expected to contain an excess of plus alleles. To proceed, we need some appropriate conditioning on this fact to obtain an unbiased statistic representing the value that constitutes an excess of plus alleles. The simplest approach is Orr's equal-effects model, where all n QTLs have close to equal effects. Here, the large line must contain at least $ [n/2] $ high (plus) QTLs, where $$ [n/2]=\left\{\begin{array}{ll}(n/2)+1&for n even\ $ n+1)/2&for n odd\end{array}\right. $$
 
@@ -1013,51 +1038,36 @@ where $ \Phi(x) = \Pr(U \leq x) $ for $ U \sim N(0,1) $.
 
 **[示例 Example]**
 
-> **Example 12.8** · ref: `12.8` · source: `chapter12_028.json` · blocks 3–3
+> **Example 12.8** · ref: `12.8` · source: `chapter12_028.json` · blocks 3–8
 >
-> Example 12.8. True et al. (1997) found that none of the eight detected QTLs for the posterior lobe in the male genitalia in a Drosophila cross were antagonistic, i.e., with effects in the opposite direction of the line value, such as low (minus) alleles in the high line or high (plus) alleles in the low line. Orr suggested that the equal-effects model may be reasonable for this trait. Assuming that this model holds, we have n = 8, $ [n/2] = 5 $, $ n_{high} = 8 $, and Equation 12.31a yields the probability of having all eight detected QTLs from the high line being plus alleles as $$ \sum_{i=8}^{8}\binom{8}{i}\bigg/\sum_{j\geq5}^{8}\binom{8}{j}=\frac{\binom{8}{8}}{\binom{8}{5}+\binom{8}{6}+\binom{8}{7}+\binom{8}{8}}=\frac{1}{56+28+8+1}=0.011 $$ showing that this is a highly significant excess. Orr’s normal approximation (Equation 12.31b) yields $$ p\simeq2\left[1-\Phi\left(\frac{8-5}{\sqrt{8/4}}\right)\right]=2\left[1-\Phi\left(2.1213\right)\right]=0.034 $$
-> 
-> The latter approximation is rather conservative, but not surprising, as this is a large-sample approximation and the number of detected QTLs here is very modest.
-> 
-> Under this strong assumption of equal effects, QTLST-EE is a nonparametric test, making no other assumptions, and not using any information on the actual difference between the high and low lines. Anderson and Slatkin (2003) noted that this test can be highly biased by trait choice (whereby the investigator, often unconsciously, chooses traits showing excessive divergence). While Orr's approach corrects for ascertainment bias within any specific trait comparison, it assumes that the traits were chosen at random. To examine the impact from nonrandom trait sampling (which, as previously discussed, also biases $ Q_{ST} $ tests), Anderson and Slatkin simulated T identical and independently distributed traits, each with 10 QTLs of equal effects, and then chose the most divergent single trait from this set for the subject of a QTLST-EE test. They found that this process of trait ascertainment introduces a significant bias. For n = 10 QTLs, Equation 12.31a gives the probability of 9 or more plus alleles in the high line as 0.0285. However, when the trait was not randomly chosen, but rather the high line from the most divergent trait in a set of 25 traits was used, then over 50% of the time it contained at least 9 high alleles. This lack of robustness with respect to the trait ascertainment scheme means that significant QTLST-EE results must be interpreted with caution.
-> 
-> A second class of tests proposed by Orr avoids this problem, and indeed, simulations show that it is conservative (Anderson and Slatkin 2003; Rice and Townsend 2012). For these tests, let $D$ be the difference between the high and low lines. This may be either the actual observed difference, or the difference based on summing the effects over all detected QTLs. With a distribution of QTL effects in hand, one can then condition on the number of plus alleles, given the observed difference, $D$. This is Orr's QTL sign test (QTLST). The seemingly problematic issue of the distribution of QTL effects can be easily handled via a bootstrap approach in one of two ways. First, one could use the observed distribution of absolute QTL effects ($|a|$), and then fit this using some standard distribution. Orr used the gamma distribution (Equation A2.25a; Figure A2.2) because of its flexibility and the fact that the exponential, a commonly assumed distribution of effect sizes (Chapter 27), is a special case. Note that estimating the distribution parameters that give the best fit is done using a truncated distribution, as QTL effects below a critical absolute size would not be detected. One can then generate the $p$ value for the observed number of plus alleles through parametric bootstrapping. To do so, we generate $n$ draws from this distribution, randomly assign each a sign, and only keep those samples for which the total ($G$) of signed QTL effects equals or exceeds $D$. The resulting distribution of plus alleles in the high line is now conditioned on neutrality (signs drawn at random), the assumed distribution of QTL effects, and the actual divergence $D$, yielding
-> 
-> > **Formula (12.32)** · `12.32` · source: `chapter12_block_160` · Orr's QTLST and QTLST-EE Sign Tests
-> >
-> > $$ p=\Pr(n_{+}\geq n_{high}\mid G\geq D)=\sum_{i\geq n_{high}}^{n}\Pr(n_{+}=i\mid G\geq D) $$
-> 
-> 
-> where $ \Pr(n_{+}=i|G\geq D) $ is simply the fraction of times that exactly $ i $ plus alleles were found in the retained bootstrap samples (i.e., those showing a divergence of at least $ D $). Alternatively, instead of sampling from the fitted distribution, one could use standard bootstrapping and directly sample (with replacement, and with draws randomized with respect to sign) from the observed distribution of QTL effects (e.g., Rice and Townsend 2012).
-> 
-> While the QTLST adjusts for ascertainment bias, it does so the expense of power. As noted by Rice and Townsend (2012), the difference $ (D) $ provides some information on the amount of any previous selection, and by conditioning on its value, we are removing this evidence. Consider the extreme case where a line fixes plus alleles at all ten QTLs, and all have equal effect. In order to obtain the observed value of $ D $, we must condition on only those cases where all ten are fixed, giving this test zero power (Griswold and Whitlock [2003] also noted the low power of this test). Rice and Townsend found that both the power and the false-positive rate increase with the variance of QTL effects.
-> 
-> Orr’s tests have a simple appeal, but (as we have shown) there are a number of caveats
-> 
-> > **Table 12.3** · `12.3` · page 41 · source: `chapter12_028`
-> > Table 12.3 Summary of the analysis of Rieseberg et al. (2002) on the signs of QTLs in traits from wild species, analyzed by trait categories. Within a category, number of antagonistic (opposite sign) and total QTLs are given, along with their QTL ratio (the fraction of antagonistic QTLs). Under the equal-effects assumption, this ratio should be close to 0.5. As indicated by  $ \ast\ast $, all ratios are significant at p < 0.001 (using QTLST-EE, with p values adjusted using a sequential Bonferroni correction; Appendix 4), except for  $ \ast $, which denotes p < 0.01. A clearer comparison of the category effects is offered by the LS means estimate of the QTL ratio, which uses a linear model to estimate the direct effect of a category. For example, 0.139 is the average fraction of antagonistic QTLs for life history traits, after removing effects of taxon type, species comparison, and mating system. For the LS mean column,  $ \dagger $ denotes a mean in excess of two standard deviations from zero. Note that the presence of either a smaller QTL ratio or a smaller LS mean implies a stronger effect (a smaller fraction antagonistic QTLs, and hence greater departure from the neutral expectation of close to 0.5).
-> >
-> > Trait Category | Antagonistic QTLs | Total QTLs | QTL ratio | LS Means
-> > --- | --- | --- | --- | ---
-> > Animals | 73 | 312 | 0.234 $ ^{**} $ | 0.185 $ \pm $ 0.039 $ ^{\dagger} $
-> > Plants | 128 | 439 | 0.292 $ ^{**} $ | 0.202 $ \pm $ 0.025 $ ^{\dagger} $
-> > Interspecific | 47 | 245 | 0.192 $ ^{**} $ | 0.137 $ \pm $ 0.154
-> > Intraspecific | 154 | 506 | 0.304 $ ^{**} $ | 0.250 $ \pm $ 0.243
-> > Outcross | 98 | 425 | 0.231 $ ^{**} $ | 0.170 $ \pm $ 0.174
-> > Self | 103 | 326 | 0.316 $ ^{**} $ | 0.217 $ \pm $ 0.262
-> > Life history | 111 | 540 | 0.206 $ ^{**} $ | 0.139 $ \pm $ 0.175
-> > Morphology | 138 | 508 | 0.272 $ ^{**} $ | 0.266 $ \pm $ 0.255
-> > Physiology | 8 | 40 | 0.200 $ ^{*} $ | 0.176 $ \pm $ 0.125
-> > Phenology | 37 | 124 | 0.298 $ ^{**} $ | 0.236 $ \pm $ 0.219
-> > Total | 201 | 751 | 0.268 | 
-> 
-> 
-> concerning their application. Another restriction is that no significant epistasis is allowed, as both tests sum over single-locus effects. There are additional biological reasons for Orr's tests to be conservative. A trait with a smaller fraction of antagonistic QTLs could imply either stronger past selection or more temporally consistent selection. If the sign of directional selection changes on a trait over evolutionary time, then different bouts of selection may fix alleles of opposite signs, lowering the observed excess. If the trait is under stabilizing selection and at its optimal value, random fixations of small-effect alleles are equally likely to be positive or negative. Likewise, if a trait fixes a major allele that causes it to overshoot an optimal value, subsequent fixations of smaller effects in the corrective direction will also reduce any signature from this test. Despite these concerns, Orr's tests can still be useful, even if one treats them as nothing more than an exploratory device, rather than as a formal test (which was our suggestion for most of the locus-specific tests of selection discussed in Chapters 9 and 10).
+> Example 12.8. True et al. (1997) found that none of the eight detected QTLs for the posterior lobe in the male genitalia in a Drosophila cross were antagonistic, i.e., with effects in the opposite direction of the line value, such as low (minus) alleles in the high line or high (plus) alleles in the low line. Orr suggested that the equal-effects model may be reasonable for this trait. Assuming that this model holds, we have n = 8, $ [n/2] = 5 $, $ n_{high} = 8 $, and Equation 12.31a yields the probability of having all eight detected QTLs from the high line being plus alleles as $$ \sum_{i=8}^{8}\binom{8}{i}\bigg/\sum_{j\geq5}^{8}\binom{8}{j}=\frac{\binom{8}{8}}{\binom{8}{5}+\binom{8}{6}+\binom{8}{7}+\binom{8}{8}}=\frac{1}{56+28+8+1}=0.011 $$ showing that this is a highly significant excess. Orr’s normal approximation (Equation 12.31b) yields $$ p\simeq2\left[1-\Phi\left(\frac{8-5}{\sqrt{8/4}}\right)\right]=2\left[1-\Phi\left(2.1213\right)\right]=0.034 $$ The latter approximation is rather conservative, but not surprising, as this is a large-sample approximation and the number of detected QTLs here is very modest. Under this strong assumption of equal effects, QTLST-EE is a nonparametric test, making no other assumptions, and not using any information on the actual difference between the high and low lines. Anderson and Slatkin (2003) noted that this test can be highly biased by trait choice (whereby the investigator, often unconsciously, chooses traits showing excessive divergence). While Orr's approach corrects for ascertainment bias within any specific trait comparison, it assumes that the traits were chosen at random. To examine the impact from nonrandom trait sampling (which, as previously discussed, also biases $ Q_{ST} $ tests), Anderson and Slatkin simulated T identical and independently distributed traits, each with 10 QTLs of equal effects, and then chose the most divergent single trait from this set for the subject of a QTLST-EE test. They found that this process of trait ascertainment introduces a significant bias. For n = 10 QTLs, Equation 12.31a gives the probability of 9 or more plus alleles in the high line as 0.0285. However, when the trait was not randomly chosen, but rather the high line from the most divergent trait in a set of 25 traits was used, then over 50% of the time it contained at least 9 high alleles. This lack of robustness with respect to the trait ascertainment scheme means that significant QTLST-EE results must be interpreted with caution. A second class of tests proposed by Orr avoids this problem, and indeed, simulations show that it is conservative (Anderson and Slatkin 2003; Rice and Townsend 2012). For these tests, let $D$ be the difference between the high and low lines. This may be either the actual observed difference, or the difference based on summing the effects over all detected QTLs. With a distribution of QTL effects in hand, one can then condition on the number of plus alleles, given the observed difference, $D$. This is Orr's QTL sign test (QTLST). The seemingly problematic issue of the distribution of QTL effects can be easily handled via a bootstrap approach in one of two ways. First, one could use the observed distribution of absolute QTL effects ($|a|$), and then fit this using some standard distribution. Orr used the gamma distribution (Equation A2.25a; Figure A2.2) because of its flexibility and the fact that the exponential, a commonly assumed distribution of effect sizes (Chapter 27), is a special case. Note that estimating the distribution parameters that give the best fit is done using a truncated distribution, as QTL effects below a critical absolute size would not be detected. One can then generate the $p$ value for the observed number of plus alleles through parametric bootstrapping. To do so, we generate $n$ draws from this distribution, randomly assign each a sign, and only keep those samples for which the total ($G$) of signed QTL effects equals or exceeds $D$. The resulting distribution of plus alleles in the high line is now conditioned on neutrality (signs drawn at random), the assumed distribution of QTL effects, and the actual divergence $D$, yielding $$ p=\Pr(n_{+}\geq n_{high}\mid G\geq D)=\sum_{i\geq n_{high}}^{n}\Pr(n_{+}=i\mid G\geq D) $$ (12.32) where $ \Pr(n_{+} = i \mid G \geq D) $ is simply the fraction of times that exactly $ i $ plus alleles were found in the retained bootstrap samples (i.e., those showing a divergence of at least $ D $). Alternatively, instead of sampling from the fitted distribution, one could use standard bootstrapping and directly sample (with replacement, and with draws randomized with respect to sign) from the observed distribution of QTL effects (e.g., Rice and Townsend 2012). While the QTLST adjusts for ascertainment bias, it does so the expense of power. As noted by Rice and Townsend (2012), the difference $ (D) $ provides some information on the amount of any previous selection, and by conditioning on its value, we are removing this evidence. Consider the extreme case where a line fixes plus alleles at all ten QTLs, and all have equal effect. In order to obtain the observed value of $ D $, we must condition on only those cases where all ten are fixed, giving this test zero power (Griswold and Whitlock [2003] also noted the low power of this test). Rice and Townsend found that both the power and the false-positive rate increase with the variance of QTL effects. Orr’s tests have a simple appeal, but (as we have shown) there are a number of caveats
 
+
+**[Table]**
+
+> **Table 12.3** · `12.3` · page 41 · source: `chapter12_028`
+> Table 12.3 Summary of the analysis of Rieseberg et al. (2002) on the signs of QTLs in traits from wild species, analyzed by trait categories. Within a category, number of antagonistic (opposite sign) and total QTLs are given, along with their QTL ratio (the fraction of antagonistic QTLs). Under the equal-effects assumption, this ratio should be close to 0.5. As indicated by  $ \ast\ast $, all ratios are significant at p < 0.001 (using QTLST-EE, with p values adjusted using a sequential Bonferroni correction; Appendix 4), except for  $ \ast $, which denotes p < 0.01. A clearer comparison of the category effects is offered by the LS means estimate of the QTL ratio, which uses a linear model to estimate the direct effect of a category. For example, 0.139 is the average fraction of antagonistic QTLs for life history traits, after removing effects of taxon type, species comparison, and mating system. For the LS mean column,  $ \dagger $ denotes a mean in excess of two standard deviations from zero. Note that the presence of either a smaller QTL ratio or a smaller LS mean implies a stronger effect (a smaller fraction antagonistic QTLs, and hence greater departure from the neutral expectation of close to 0.5).
+>
+> Trait Category | Antagonistic QTLs | Total QTLs | QTL ratio | LS Means
+> --- | --- | --- | --- | ---
+> Animals | 73 | 312 | 0.234 $ ^{**} $ | 0.185 $ \pm $ 0.039 $ ^{\dagger} $
+> Plants | 128 | 439 | 0.292 $ ^{**} $ | 0.202 $ \pm $ 0.025 $ ^{\dagger} $
+> Interspecific | 47 | 245 | 0.192 $ ^{**} $ | 0.137 $ \pm $ 0.154
+> Intraspecific | 154 | 506 | 0.304 $ ^{**} $ | 0.250 $ \pm $ 0.243
+> Outcross | 98 | 425 | 0.231 $ ^{**} $ | 0.170 $ \pm $ 0.174
+> Self | 103 | 326 | 0.316 $ ^{**} $ | 0.217 $ \pm $ 0.262
+> Life history | 111 | 540 | 0.206 $ ^{**} $ | 0.139 $ \pm $ 0.175
+> Morphology | 138 | 508 | 0.272 $ ^{**} $ | 0.266 $ \pm $ 0.255
+> Physiology | 8 | 40 | 0.200 $ ^{*} $ | 0.176 $ \pm $ 0.125
+> Phenology | 37 | 124 | 0.298 $ ^{**} $ | 0.236 $ \pm $ 0.219
+> Total | 201 | 751 | 0.268 | 
+
+
+concerning their application. Another restriction is that no significant epistasis is allowed, as both tests sum over single-locus effects. There are additional biological reasons for Orr's tests to be conservative. A trait with a smaller fraction of antagonistic QTLs could imply either stronger past selection or more temporally consistent selection. If the sign of directional selection changes on a trait over evolutionary time, then different bouts of selection may fix alleles of opposite signs, lowering the observed excess. If the trait is under stabilizing selection and at its optimal value, random fixations of small-effect alleles are equally likely to be positive or negative. Likewise, if a trait fixes a major allele that causes it to overshoot an optimal value, subsequent fixations of smaller effects in the corrective direction will also reduce any signature from this test. Despite these concerns, Orr's tests can still be useful, even if one treats them as nothing more than an exploratory device, rather than as a formal test (which was our suggestion for most of the locus-specific tests of selection discussed in Chapters 9 and 10).
 
 ---
 
-## chapter12_029 · The Neutral Divergence of Quantitative Traits: Introduction / Applications of QTL Sign Tests
+## chapter12_029 · TRAIT-AUGMENTED MARKER-BASED APPROACHES: TESTS USING QTL INFORMATION / Applications of QTL Sign Tests
 
 Using QTLST-EE, Rieseberg et al. (2002) performed a meta-analysis of over 2600 QTL effects from 572 traits in 86 studies. Their summary statistic was the QTL ratio: the fraction of antagonistic QTLs for the comparison of interest (Table 12.3). Roughly half of the studies involve wild × domesticated crosses, where strong directional selection is suspected for domestication traits. Upon restricting analysis to those examples with six or more QTLs per trait (Orr's condition for such tests to have any power), 35 of the 54 qualifying traits (65%) believed to be involved in domestication showed significant departures from neutrality (i.e., too few antagonistic QTLs). By contrast, only 14 of 84 nondomestication traits (15.6%) in crosses involving domesticated species showed significant departures. Treating this latter class of traits as a control demonstrates that QTLST-EE behaved in the direction predicted for these crosses (revealing signatures for domestication traits and a lack of signatures for nondomestication traits).
 
@@ -1073,7 +1083,7 @@ While QTL data usually involves fixed differences that are revealed by crossing 
 
 ---
 
-## chapter12_030 · The Neutral Divergence of Quantitative Traits: Introduction / Approaches Based on Combining Signals
+## chapter12_030 · TRAIT-AUGMENTED MARKER-BASED APPROACHES: TESTS USING GWAS INFORMATION / Approaches Based on Combining Signals
 
 The basic idea of combining signals over a set of GWAS markers has been exploited in several different ways. The initial suggestion was gene set enrichment analysis (GSEA) from genomics (Subramanian et al. 2005), wherein one considers clusters of genes on the basis of membership in some functional group (i.e., the same gene ontology, GO, class). This tactic was used by Daub et al. (2013), who computed the average $ F_{ST} $ value over a set of pathway-connected genes and contrasted this with the average $ F_{ST} $ value over a same-sized set of putatively neutral markers. Using this approach, they found evidence for selection on several human pathways, many connected with pathogen response. They also noted that long-distance LD was detected, which they attributed to epistatic interactions. While this could be correct, a confounding factor is that selection is also expected to generate such long-distance (i.e., between loosely-linked sites) LD with strictly additive genes (Chapters 16 and 24).
 
@@ -1081,7 +1091,7 @@ In the Daub et al. analysis, the “trait” was a specific pathway, while other
 
 ---
 
-## chapter12_031 · The Neutral Divergence of Quantitative Traits: Introduction / Tests Based on tSDS Scores
+## chapter12_031 · TRAIT-AUGMENTED MARKER-BASED APPROACHES: TESTS USING GWAS INFORMATION / Tests Based on tSDS Scores
 
 Recall Field et al.'s (2016) singleton density score, SDS (Equation 9.42), for detecting very recent selection on a given single site. In that paper, they also showed how to extend this approach to search for polygenic selection on a given candidate trait, given a set of associated GWAS marker scores. This requires that both the SDS values and GWAS test statistics (such as a z value under a normality test) for a set of markers were generated using the same population. The SDS score for a given marker is first translated into a tSDS (trait-SDS) score, where the sign of the SDS score is changed so that trait-increasing markers receive positive scores. Their simplest approach was to combine the tSDS scores associated with all the significant GWAS markers for a target trait, using this mean as the test statistic.
 
@@ -1089,7 +1099,7 @@ Field et al. noted that most of the trait variance is usually explained by marke
 
 ---
 
-## chapter12_032 · The Neutral Divergence of Quantitative Traits: Introduction / The Berg and Coop $ Q_{x} $ Test
+## chapter12_032 · TRAIT-AUGMENTED MARKER-BASED APPROACHES: TESTS USING GWAS INFORMATION / The Berg and Coop $ Q_{x} $ Test
 
 **[推导 Derivation]**
 
@@ -1132,7 +1142,7 @@ The power of quantitative genetics is that its machinery can be applied to any c
 
 ---
 
-## chapter12_034 · The Neutral Divergence of Quantitative Traits: Introduction / Level of Gene Expression as a Quantitative Trait
+## chapter12_034 · DIVERGENCE IN GENE EXPRESSION / Level of Gene Expression as a Quantitative Trait
 
 Much of the current work in genetic genomics has focused on the transcriptome, treating the level of expression of a specific gene as a quantitative trait and then attempting to map eQTLs (expression QTLs) or eSNPs (in GWAS studies) that influence this trait. Modern transcriptomic tools (initially using microarray analyses, and more recently, RNA-Seq) allow one to measure the level of expression for essentially the full repertoire of an individual's genes (Schena et al. 1995; Brown and Botstein 1999; Duggan et al. 1999; Wang et al. 2009). The amount of mRNA present (either measured by the intensity of hybridization against probes for a gene or from the amount present in massive sequencing of an RNA pool) is a typical quantitative trait, showing both genetic and environmental sources of variation, and further confounded by measurement error. This transcriptomics approach yields thousands of traits, as expression levels of each gene are separate, although potentially highly correlated, characters.
 
@@ -1146,7 +1156,7 @@ Finally, before proceeding, a subtle, but important, clarification is in order. 
 
 ---
 
-## chapter12_035 · The Neutral Divergence of Quantitative Traits: Introduction / Rate-based Tests for Neutrality in Divergence of Gene Expression
+## chapter12_035 · DIVERGENCE IN GENE EXPRESSION / Rate-based Tests for Neutrality in Divergence of Gene Expression
 
 **[推导 Derivation]**
 
@@ -1184,7 +1194,7 @@ In the case where just two populations (L = 2) are compared by using their squar
 
 **[示例 Example]**
 
-> **Example 12.9** · ref: `12.9` · source: `chapter12_035.json` · blocks 2–2
+> **Example 12.9** · ref: `12.9` · source: `chapter12_035.json` · blocks 2–9
 >
 > Example 12.9. Rifkin et al. (2003) examined variation in gene expression at the start of metamorphosis in six inbred lines of Drosophila: four melanogaster, one simulans, and one yakuba. Of the roughly 12,900 genes whose transcripts were examined, 52% (~6700 genes) showed expression changes in at least one lineage (either between species or within the melanogaster lines). For ~4500 of these genes, the authors could not reject the hypothesis that all six lineage-specific samples came from the same distribution, and these were deemed to be evolutionarily stable and potentially under stabilizing selection. Of the remainder, ~1700 genes showed no significant variation across the sampled melanogaster lines, but a significant difference between melanogaster and one of the other species. These were deemed to be under lineage-specific selection.
 > 
@@ -1193,19 +1203,21 @@ In the case where just two populations (L = 2) are compared by using their squar
 > Transcripts whose ratio of $ d^{2}/V_{A} $ exceeded these values are unusually divergent. Using this criterion (as well as the lower threshold for too little divergence), of these remaining 527 genes, 464 were consistent with drift, while 63 were consistent with excessive divergence between at least one species pair.
 > 
 > One caveat with using half the among-group variance over a set of fully inbred lines as an estimate of $ \sigma_A^2 $ is that, when dominance is present, the among-line genetic variance becomes $ 2\sigma_A^2 + 2\sigma_{ADI} + \sigma_{DI}^2 $ (Equation 11.6a). Depending on the sign in the middle covariance and the magnitude of the last two terms, this can be considerably larger, or smaller, than $ 2\sigma_A^2 $, and hence can bias the results.
-> 
-> While straightforward to apply, a concern with Equation 12.34b is the estimation of $ t $ and $ N_e $. One approach is that, under neutrality, the ratio of the expected divergence $ D_s $ at silent sites divided by their expected polymorphism ($ P_s $) is $ D_s/P_s \simeq t/(2N_e) $ (Equation 10.1b). While this marker-based estimate could be substituted into Equation 12.34b, this is an ad hoc approach, as the sampling error of this estimator of $ t/N_e $ is ignored. The idea of combining silent-site information with the within- and between-population expression variances was also considered by Warnefors and Eyre-Walker (2012), who proposed a MacDonald-Kreitman-type approach (Chapter 10); see their paper for details. Again, these are useful metrics, but not formal statistical tests.
-> 
-> The rate-based test given by Equation 12.34b was scaled to be independent of $ \sigma_m^2 $, at the cost of assuming or estimating an effective population size. Conversely, Equation 12.20d can be used to compare the rate divergence to that of candidate values of $ \sigma_m^2 $ (or $ h_m^2 $), which circumvents the potentially problematic issue of estimating $ N_e $, although (as with Equation 12.34b) one must still estimate $ t $. This was the approach taken by Lemos et al. (2005). Using a diverse series of lineage comparisons (within mice strains, populations of Drosophila, and between species in primates and flies), and assuming $ h_m^2 $ is in the range of $ 10^{-4} $ to $ 10^{-2} $, they found that the majority of gene-expression differences were consistent with stabilizing selection (an average of 85% of all transcripts), with drift comprising the next largest category (an average 11.5%), and directional selection comprising the smallest (an average of $ <4% $).
-> 
-> These approaches either ignore $\sigma_m^2$ or estimate its required value under drift given the observed divergence. A more arduous approach is to directly estimate $\sigma_m^2$ from a mutation-accumulation experiment (LW Chapter 12). This estimate is then used to predict either the within-population variation ($2N_e\sigma_m^2$) or the among-population divergence ($2t\sigma_m^2$) and to assess if these are consistent or too extreme. The general conclusion from such studies is that stabilizing selection plays a prominent role in reducing the amount of variation in gene expression below the neutral expectation—both within and among species, levels of variation are much lower than expected based on the estimated mutational variance. For example, using lines of the nematode C. elegans from a long-term (280 generation) mutation-accumulation experiment, Denver et al. (2005) estimated values of $\sigma_m^2$ for several thousand genes. By comparing levels of variation among a global collection of natural isolates, they found that the gene-specific ratios of the standing level of genetic variance to the estimated $\sigma_m^2$ value were generally no greater than a few hundred. Given that this ratio provides an estimate of $4N_e$ under the assumption of neutrality in a selfing organism (as opposed to $2N_e$ in an outcrosser, as $\sigma_A^2$ is inflated by $2f=2$ with complete inbreeding), these observations provide a firm rejection of the hypothesis that gene-expression levels evolve in a neutral fashion. Rifkin et al. (2005) were able to estimate mutational heritabilities for expression in mutation-accumulation lines of $ D.\ melanogaster $ by factoring out the variance at the level of the individual fly to obtain an estimate of $ \sigma_e^2 $. They found a median of $ h_m^2 \simeq 2.4 \cdot 10^{-5} $ across all genes, and they showed that although interspecific variance in the expression of a gene was correlated with its mutational variance (in qualitative accordance with the neutral theory), the absolute level of divergence was too low to be compatible with neutrality, consistent with the results of Denver et al. (2015).
-> 
-> An especially interesting analysis of expression levels was offered by Hodgins-Davis et al. (2015), who used the machinery developed in Chapter 28 on the expected level of variation under a balance between mutation and stabilizing selection. Using data sets for yeast and Drosophila, they found that the model of mutation-selection balance that best explains the observed pattern of variation is one of large mutational effects and weak stabilizing selection (details are given in Example 28.3).
 
+
+While straightforward to apply, a concern with Equation 12.34b is the estimation of $ t $ and $ N_e $. One approach is that, under neutrality, the ratio of the expected divergence $ D_s $ at silent sites divided by their expected polymorphism ($ P_s $) is $ D_s/P_s \simeq t/(2N_e) $ (Equation 10.1b). While this marker-based estimate could be substituted into Equation 12.34b, this is an ad hoc approach, as the sampling error of this estimator of $ t/N_e $ is ignored. The idea of combining silent-site information with the within- and between-population expression variances was also considered by Warnefors and Eyre-Walker (2012), who proposed a MacDonald-Kreitman-type approach (Chapter 10); see their paper for details. Again, these are useful metrics, but not formal statistical tests.
+
+The rate-based test given by Equation 12.34b was scaled to be independent of $ \sigma_m^2 $, at the cost of assuming or estimating an effective population size. Conversely, Equation 12.20d can be used to compare the rate divergence to that of candidate values of $ \sigma_m^2 $ (or $ h_m^2 $), which circumvents the potentially problematic issue of estimating $ N_e $, although (as with Equation 12.34b) one must still estimate $ t $. This was the approach taken by Lemos et al. (2005). Using a diverse series of lineage comparisons (within mice strains, populations of Drosophila, and between species in primates and flies), and assuming $ h_m^2 $ is in the range of $ 10^{-4} $ to $ 10^{-2} $, they found that the majority of gene-expression differences were consistent with stabilizing selection (an average of 85% of all transcripts), with drift comprising the next largest category (an average 11.5%), and directional selection comprising the smallest (an average of $ <4% $).
+
+**[命题 Proposition]**
+
+These approaches either ignore $\sigma_m^2$ or estimate its required value under drift given the observed divergence. A more arduous approach is to directly estimate $\sigma_m^2$ from a mutation-accumulation experiment (LW Chapter 12). This estimate is then used to predict either the within-population variation ($2N_e\sigma_m^2$) or the among-population divergence ($2t\sigma_m^2$) and to assess if these are consistent or too extreme. The general conclusion from such studies is that stabilizing selection plays a prominent role in reducing the amount of variation in gene expression below the neutral expectation—both within and among species, levels of variation are much lower than expected based on the estimated mutational variance. For example, using lines of the nematode C. elegans from a long-term (280 generation) mutation-accumulation experiment, Denver et al. (2005) estimated values of $\sigma_m^2$ for several thousand genes. By comparing levels of variation among a global collection of natural isolates, they found that the gene-specific ratios of the standing level of genetic variance to the estimated $\sigma_m^2$ value were generally no greater than a few hundred. Given that this ratio provides an estimate of $4N_e$ under the assumption of neutrality in a selfing organism (as opposed to $2N_e$ in an outcrosser, as $\sigma_A^2$ is inflated by $2f=2$ with complete inbreeding), these observations provide a firm rejection of the hypothesis that gene-expression levels evolve in a neutral fashion. Rifkin et al. (2005) were able to estimate mutational heritabilities for expression in mutation-accumulation lines of $ D.\ melanogaster $ by factoring out the variance at the level of the individual fly to obtain an estimate of $ \sigma_e^2 $. They found a median of $ h_m^2 \simeq 2.4 \cdot 10^{-5} $ across all genes, and they showed that although interspecific variance in the expression of a gene was correlated with its mutational variance (in qualitative accordance with the neutral theory), the absolute level of divergence was too low to be compatible with neutrality, consistent with the results of Denver et al. (2015).
+
+An especially interesting analysis of expression levels was offered by Hodgins-Davis et al. (2015), who used the machinery developed in Chapter 28 on the expected level of variation under a balance between mutation and stabilizing selection. Using data sets for yeast and Drosophila, they found that the model of mutation-selection balance that best explains the observed pattern of variation is one of large mutational effects and weak stabilizing selection (details are given in Example 28.3).
 
 ---
 
-## chapter12_036 · The Neutral Divergence of Quantitative Traits: Introduction / Largely Neutral Evolution of Expression Levels in Primates?
+## chapter12_036 · DIVERGENCE IN GENE EXPRESSION / Largely Neutral Evolution of Expression Levels in Primates?
 
 While these results strongly suggest a leading role for stabilizing selection, there has been considerable discussion regarding the evolution of gene expression among the great apes. One key focus has been the expected pattern of divergence under pure drift. However, as with many of the early applications of rate-based tests to expression data, much of the analysis is largely phenotypic in nature, and therefore does not utilize the much stronger comparisons based on estimates of the additive variances of these traits.
 
@@ -1221,7 +1233,7 @@ Conversely, drift was suggested by an analysis by Perry et al. (2012), who used 
 
 ---
 
-## chapter12_037 · The Neutral Divergence of Quantitative Traits: Introduction / Transcriptional $ Q_{ST} $, $ tQ_{ST} $
+## chapter12_037 · DIVERGENCE IN GENE EXPRESSION / Transcriptional $ Q_{ST} $, $ tQ_{ST} $
 
 Gibson and Weir (2005) suggested that comparisons of $ Q_{ST} $ and $ F_{ST} $ can be applied to gene expression data, and proposed the term $ tQ_{ST} $ for such a transcriptome scan. By scoring a very large number of traits at once, the vexing issue of ascertainment bias (wherein researchers are naturally drawn to the most variable traits) that plagues $ Q_{ST} $ tests can be largely avoided. However, other problems with this approach persist. One involves obtaining the estimated genetic variances of within- and among-population components, as opposed to their phenotypic proxies ($ P_{ST} $). The second problem is low power, especially when only two populations are compared. Perhaps because of these concerns, this approach has not been not widely applied to expression data. A $ Q_{ST} $ approach was hinted at by Whitehead and Crawford (2006), but these authors ultimately resorted to rate-based tests for comparing transcripts.
 
@@ -1229,7 +1241,7 @@ A formal application of this approach was performed by Roberge et al. (2007) to 
 
 ---
 
-## chapter12_038 · The Neutral Divergence of Quantitative Traits: Introduction / Cis Versus Trans, Local Versus Distant, and Allele-Specific Expression (ASE)
+## chapter12_038 · DIVERGENCE IN GENE EXPRESSION / Cis Versus Trans, Local Versus Distant, and Allele-Specific Expression (ASE)
 
 Finally, before discussing applications of sign-based tests to gene-expression data, we need to review a few additional features of transcriptional regulation. Historically, the term cis refers to a control element that only acts on a gene residing on the same DNA molecule. Cis-acting control elements are thought to be binding sites for diffusible factors (e.g., transcription factors, small RNAs, etc.), target sequences for gene-processing features (intron splice sites, poly-A sites, etc.), or sites that exert some local control over chromatin structure. By contrast, trans-acting factors are diffusible and exert their influence throughout the genome, presumably by coding for proteins or RNAs that interact with specific cis sites to control regulation. Formally, the terms cis and trans refer to this difference in functional ity. However, the early eQTL mappers co-opted them to refer (respectively) to sites that closely mapped to the gene coding for the target transcript (whose expression is being followed) and those that mapped further away (often on different chromosomes). Rockman and Kruglyak (2006) suggested that the terms local and distant are more appropriate for describing eQTL location. Given that the uncertainty region for a typical QTL spans tens of centimorgans (and hence tens of megabases), what is called a cis eQTL could actually be several genes away and thus could act in trans.
 
@@ -1237,7 +1249,7 @@ There are formal genetic procedures for determining whether a region truly does 
 
 ---
 
-## chapter12_039 · The Neutral Divergence of Quantitative Traits: Introduction / Applications of Sign-based Tests to Expression Data
+## chapter12_039 · DIVERGENCE IN GENE EXPRESSION / Applications of Sign-based Tests to Expression Data
 
 While Orr’s tests were framed in the increasingly dated technology of QTL mapping, their central underlying idea (effects are randomly distributed among lines under neutrality) fits very nicely with genomics-era data. We already mentioned a GWAS application of sign-based tests, and there is an increasing use of sign-based approaches to explore the nature of selection on gene expression. The standard QTL-based tests discussed above are not directly applicable, as most genes have very few detected eQTLs, and thus do not qualify for testing based on Orr’s requirement of at least six QTLs per trait. However, as reviewed by Fraser (2011), two rather different approaches have been used to circumvent this limitation.
 
@@ -1251,7 +1263,7 @@ Kreitman data discussed in Chapter 10, an excessive amount of polymorphism could
 
 ---
 
-## chapter12_040 · The Neutral Divergence of Quantitative Traits: Introduction / Evolution of Expression Levels: Drift, Directional, or Stabilizing Selection?
+## chapter12_040 · DIVERGENCE IN GENE EXPRESSION / Evolution of Expression Levels: Drift, Directional, or Stabilizing Selection?
 
 The study of gene regulatory evolution is still in a rather embryonic state. Historically, the field has moved from an early era of speculation that regulatory changes may be at least as, if not more, important than structural changes (Britten and Davidson 1969, 1971; King and Wilson 1975), to a broader acceptance of favoring regulatory evolution, at least in some groups or traits (Carroll 2005, 2008; Wray 2007); but see Hoekstra and Coyne (2007) for a counterperspective. As our previous discussion suggests, the initial view provided from transcriptome-wide studies is that stabilizing selection is important, but that some drift in expression level can occur, which is more constrained as phylogenetic distance increases. There is also evidence that directional selection on some cis-acting sites has occurred between closely related species.
 

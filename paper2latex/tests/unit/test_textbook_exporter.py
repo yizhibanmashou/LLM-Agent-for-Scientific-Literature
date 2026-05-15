@@ -1,4 +1,5 @@
 import json
+import os
 import unittest
 from pathlib import Path
 from uuid import uuid4
@@ -145,8 +146,248 @@ class TextbookExporterTests(unittest.TestCase):
         self.assertIn("> Correct chapter inline table", output)
         self.assertIn("Population | Value", output)
         self.assertIn("> **Example 25.1** · ref: `25.1`", output)
-        self.assertIn("*[Table inline_2 - see above]*", output)
+        self.assertGreaterEqual(output.count("**Inline Table 2** · `inline_2` · page 6 · source: `chapter25_001`"), 2)
         self.assertNotIn("Wrong chapter table", output)
+
+    def test_renders_chapter_heading_with_metadata_title(self):
+        root = make_test_workspace("chapter_heading_metadata")
+        structured_dir = root / "structured"
+        out_dir = root / "textbook"
+
+        write_json(
+            structured_dir / "chapter22_001.json",
+            {
+                "id": "chapter22_001",
+                "metadata": {
+                    "chapter": "chapter22",
+                    "chapter_title": "Associative Effects: Competition, Social Interactions, Group and Kin Selection",
+                    "section": "Introduction",
+                    "heading_path": ["Introduction"],
+                },
+                "blocks": [{"type": "discussion", "content": "Opening."}],
+            },
+        )
+        write_json(structured_dir / "formula_library.json", {"formulas": []})
+        write_json(structured_dir / "table_library.json", {"tables": []})
+        write_json(structured_dir / "example_library.json", {"examples": []})
+
+        export_textbooks(structured_dir, out_dir, chapters={"chapter22"})
+
+        output = (out_dir / "chapter22_textbook.md").read_text(encoding="utf-8")
+        self.assertTrue(
+            output.startswith(
+                "# Chapter 22 · Associative Effects: Competition, Social Interactions, Group and Kin Selection"
+            )
+        )
+
+    def test_expands_figure_placeholders_from_figure_library(self):
+        root = make_test_workspace("figure_placeholders")
+        structured_dir = root / "structured"
+        out_dir = root / "textbook"
+        figure_root = root / "figure_library_output"
+        figures_dir = figure_root / "figures"
+        figures_dir.mkdir(parents=True)
+        (figures_dir / "fig_0001.png").write_bytes(b"png")
+
+        write_json(
+            structured_dir / "appendix5_001.json",
+            {
+                "id": "appendix5_001",
+                "metadata": {
+                    "chapter": "appendix5",
+                    "section": "Vectors",
+                    "heading_path": ["Vectors"],
+                },
+                "blocks": [
+                    {
+                        "type": "discussion",
+                        "content": "See [[SEE_FIGURE:A5.1]].\n\n[[FIGURE:A5.1]]",
+                    },
+                ],
+            },
+        )
+        write_json(structured_dir / "formula_library.json", {"formulas": []})
+        write_json(structured_dir / "table_library.json", {"tables": []})
+        write_json(structured_dir / "example_library.json", {"examples": []})
+        write_json(
+            figure_root / "figure_library.json",
+            {
+                "figures": {
+                    "A5.1": {
+                        "id": "A5.1",
+                        "chapter": "appendix5",
+                        "asset_path": "figures/fig_0001.png",
+                        "caption": "Figure A5.1 Some basic geometric concepts of vectors.",
+                        "page": 2,
+                    }
+                }
+            },
+        )
+
+        export_textbooks(
+            structured_dir,
+            out_dir,
+            chapters={"appendix5"},
+            figure_library=figure_root / "figure_library.json",
+        )
+
+        output = (out_dir / "appendix5_textbook.md").read_text(encoding="utf-8")
+        self.assertIn("See Figure A5.1.", output)
+        self.assertIn("> **Figure A5.1** · page 2 · source: `appendix5`", output)
+        self.assertIn("![Figure A5.1](", output)
+        self.assertIn("figures/fig_0001.png", output)
+        self.assertIn("> Figure A5.1 Some basic geometric concepts of vectors.", output)
+
+    def test_renders_chapter_heading_from_intro_heading_fallback(self):
+        root = make_test_workspace("chapter_heading_intro_fallback")
+        structured_dir = root / "structured"
+        out_dir = root / "textbook"
+
+        write_json(
+            structured_dir / "chapter27_001.json",
+            {
+                "id": "chapter27_001",
+                "metadata": {
+                    "chapter": "chapter27",
+                    "section": "Long-term Response: Introduction",
+                    "section_level_1": "Long-term Response: Introduction",
+                    "display_heading": "Long-term Response: Introduction",
+                    "heading_path": ["Long-term Response: Introduction"],
+                },
+                "blocks": [{"type": "discussion", "content": "Opening."}],
+            },
+        )
+        write_json(structured_dir / "formula_library.json", {"formulas": []})
+        write_json(structured_dir / "table_library.json", {"tables": []})
+        write_json(structured_dir / "example_library.json", {"examples": []})
+
+        export_textbooks(structured_dir, out_dir, chapters={"chapter27"})
+
+        output = (out_dir / "chapter27_textbook.md").read_text(encoding="utf-8")
+        self.assertTrue(output.startswith("# Chapter 27 · Long-term Response"))
+
+    def test_renders_chapter_heading_from_raw_multiline_doc_title(self):
+        root = make_test_workspace("chapter_heading_raw_doc_title")
+        structured_dir = root / "structured"
+        out_dir = root / "textbook"
+        source_file = root / "paddle_output" / "chapter27_full" / "main.tex"
+        raw_file = source_file.parent / "intermediate" / "paddle_raw_response.json"
+
+        source_file.parent.mkdir(parents=True, exist_ok=True)
+        source_file.write_text("\\title{Long-term Response:}\n", encoding="utf-8")
+        raw_file.parent.mkdir(parents=True, exist_ok=True)
+        raw_file.write_text(
+            json.dumps(
+                [
+                    {
+                        "parsing_res_list": [
+                            {
+                                "block_label": "doc_title",
+                                "block_content": "27",
+                                "block_order": 1,
+                                "block_bbox": [486, 200, 551, 248],
+                            },
+                            {
+                                "block_label": "doc_title",
+                                "block_content": "Long-term Response:",
+                                "block_order": 2,
+                                "block_bbox": [328, 306, 713, 346],
+                            },
+                            {
+                                "block_label": "doc_title",
+                                "block_content": "3. Adaptive Walks",
+                                "block_order": 3,
+                                "block_bbox": [371, 359, 667, 397],
+                            },
+                        ]
+                    }
+                ],
+                ensure_ascii=False,
+            ),
+            encoding="utf-8",
+        )
+
+        write_json(
+            structured_dir / "chapter27_001.json",
+            {
+                "id": "chapter27_001",
+                "metadata": {
+                    "chapter": "chapter27",
+                    "source_file": str(source_file),
+                    "section": "Long-term Response: Introduction",
+                },
+                "blocks": [{"type": "discussion", "content": "Opening."}],
+            },
+        )
+        write_json(structured_dir / "formula_library.json", {"formulas": []})
+        write_json(structured_dir / "table_library.json", {"tables": []})
+        write_json(structured_dir / "example_library.json", {"examples": []})
+
+        export_textbooks(structured_dir, out_dir, chapters={"chapter27"})
+
+        output = (out_dir / "chapter27_textbook.md").read_text(encoding="utf-8")
+        self.assertTrue(output.startswith("# Chapter 27 · Long-term Response: 3. Adaptive Walks"))
+
+    def test_renders_chapter_heading_from_data_paddle_output_when_source_file_is_stale_tmp_path(self):
+        root = make_test_workspace("chapter_heading_stale_tmp_source")
+        structured_dir = root / "structured"
+        out_dir = root / "textbook"
+        source_file = root / "data" / "paddle_output" / "chapter25_full" / "main.tex"
+        raw_file = source_file.parent / "intermediate" / "paddle_raw_response.json"
+
+        source_file.parent.mkdir(parents=True, exist_ok=True)
+        source_file.write_text("\\title{25}\n", encoding="utf-8")
+        raw_file.parent.mkdir(parents=True, exist_ok=True)
+        raw_file.write_text(
+            json.dumps(
+                [
+                    {
+                        "parsing_res_list": [
+                            {
+                                "block_label": "doc_title",
+                                "block_content": "25",
+                                "block_order": 1,
+                                "block_bbox": [486, 200, 551, 248],
+                            },
+                            {
+                                "block_label": "doc_title",
+                                "block_content": "Long-term Response:\n1. Deterministic Aspects",
+                                "block_order": 2,
+                                "block_bbox": [328, 306, 713, 397],
+                            },
+                        ]
+                    }
+                ],
+                ensure_ascii=False,
+            ),
+            encoding="utf-8",
+        )
+
+        write_json(
+            structured_dir / "chapter25_001.json",
+            {
+                "id": "chapter25_001",
+                "metadata": {
+                    "chapter": "chapter25",
+                    "source_file": "tmp\\paddle_output\\chapter25_full\\main.tex",
+                    "section": "Introduction",
+                },
+                "blocks": [{"type": "discussion", "content": "Opening."}],
+            },
+        )
+        write_json(structured_dir / "formula_library.json", {"formulas": []})
+        write_json(structured_dir / "table_library.json", {"tables": []})
+        write_json(structured_dir / "example_library.json", {"examples": []})
+
+        previous_cwd = Path.cwd()
+        try:
+            os.chdir(root)
+            export_textbooks(structured_dir, out_dir, chapters={"chapter25"})
+        finally:
+            os.chdir(previous_cwd)
+
+        output = (out_dir / "chapter25_textbook.md").read_text(encoding="utf-8")
+        self.assertTrue(output.startswith("# Chapter 25 · Long-term Response: 1. Deterministic Aspects"))
 
     def test_exports_katex_safe_operator_macros(self):
         root = make_test_workspace("katex_safe_macros")
@@ -458,6 +699,75 @@ class TextbookExporterTests(unittest.TestCase):
             "## chapter14_001 · Short-term Changes in the Mean: 2. Truncation and Threshold Selection",
             output,
         )
+
+    def test_strips_placeholder_chapter_intro_parent_from_heading_path(self):
+        root = make_test_workspace("placeholder_intro_parent")
+        structured_dir = root / "structured"
+        out_dir = root / "textbook"
+
+        write_json(
+            structured_dir / "chapter25_004.json",
+            {
+                "id": "chapter25_004",
+                "metadata": {
+                    "chapter": "chapter25",
+                    "heading_path": [
+                        "25: Introduction",
+                        "DETERMINISTIC SINGLE-LOCUS THEORY",
+                        "Expected Contribution From a Single Locus",
+                    ],
+                    "display_heading": "Expected Contribution From a Single Locus",
+                },
+                "blocks": [{"type": "discussion", "content": "Body."}],
+            },
+        )
+        write_json(structured_dir / "formula_library.json", {"formulas": []})
+        write_json(structured_dir / "table_library.json", {"tables": []})
+        write_json(structured_dir / "example_library.json", {"examples": []})
+
+        export_textbooks(structured_dir, out_dir, chapters={"chapter25"})
+        output = (out_dir / "chapter25_textbook.md").read_text(encoding="utf-8")
+
+        self.assertIn(
+            "## chapter25_004 · DETERMINISTIC SINGLE-LOCUS THEORY / Expected Contribution From a Single Locus",
+            output,
+        )
+        self.assertNotIn("25: Introduction / DETERMINISTIC", output)
+
+    def test_strips_numbered_chapter_title_parent_from_heading_path(self):
+        root = make_test_workspace("chapter_title_parent")
+        structured_dir = root / "structured"
+        out_dir = root / "textbook"
+
+        write_json(
+            structured_dir / "chapter21_006.json",
+            {
+                "id": "chapter21_006",
+                "metadata": {
+                    "chapter": "chapter21",
+                    "chapter_title": "Family-Based Selection",
+                    "heading_path": [
+                        "21: Family-Based Selection",
+                        "DETAILS OF FAMILY-BASED SELECTION SCHEMES",
+                        "Selection and Recombination Units",
+                    ],
+                    "display_heading": "Selection and Recombination Units",
+                },
+                "blocks": [{"type": "discussion", "content": "Body."}],
+            },
+        )
+        write_json(structured_dir / "formula_library.json", {"formulas": []})
+        write_json(structured_dir / "table_library.json", {"tables": []})
+        write_json(structured_dir / "example_library.json", {"examples": []})
+
+        export_textbooks(structured_dir, out_dir, chapters={"chapter21"})
+        output = (out_dir / "chapter21_textbook.md").read_text(encoding="utf-8")
+
+        self.assertIn(
+            "## chapter21_006 · DETAILS OF FAMILY-BASED SELECTION SCHEMES / Selection and Recombination Units",
+            output,
+        )
+        self.assertNotIn("21: Family-Based Selection / DETAILS", output)
 
 
 if __name__ == "__main__":

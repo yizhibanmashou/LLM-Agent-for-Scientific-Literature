@@ -1,4 +1,4 @@
-# Appendix 4 Textbook Mapping
+# Appendix 4 · Appendix
 
 ## appendix4_001 · Appendix: Introduction
 
@@ -28,18 +28,14 @@ This simple question of how best to combine p values from a set of experiments i
 
 ## appendix4_003 · Appendix: Introduction / Fisher's $ \chi^{2} $ Method
 
-Fisher (1932b) was among the first to offer a simple approach for combining $p$ values (along with Tippett 1931), based on the important concept that the distribution of realized $p$ values under the null follows a uniform distribution over $(0,1)$. Further, if $p \sim \text{Uniform}(0,1)$, then $-2 \ln(p) \sim \chi_{2}^{2}$ (Pearson 1938). Hence, under the null, twice the negative natural log of a $p$ value follows a chi-square distribution with two degrees of freedom. If we have $k$ independent tests, then the sum of their log-transformed $p$ values is the sum of $k$ chi-square variables. Such a sum is itself chi-square, with the degrees of freedom given by the sum of the degrees of freedom for the individual chi-squares (LW Appendix 5). These observations formed the motivation for Fisher's combined probability test: for $k$ independent tests, where $ p_{i} $ denotes the p value for test i, the sum $$ X^{2}=-2\sum_{i=1}^{k}\ln(p_{i}) $$ approximately follows a $ \chi_{2k}^{2} $ distribution.
-
 **[示例 Example]**
 
-> **Example A4.1** · ref: `A4.1` · source: `appendix4_003.json` · blocks 1–1
+> **Example A4.1** · ref: `A4.1` · source: `appendix4_003.json` · blocks 0–0
 >
-> Example A4.1. Suppose five different groups collected data to test the same hypothesis, and these groups (perhaps using different methods of analysis) report p values of 0.10, 0.06, 0.15, 0.08, and 0.07. Notice that while none of these individual tests are significant, the trend is clearly that all are “close” to being significant ($ \bar{p} = 0.09 $). Fisher’s statistic returns a value of $$ X^{2}=-2\sum_{i=1}^{k}\ln(p_{i})=24.3921\qquad with\qquad\Pr(\chi_{10}^{2}\geq24.39)=0.0066 $$
-> 
-> Hence, when taken together, these five tests show a highly significant p value.
-> 
-> Rice (1990b; also see Whitlock 2005) noted that a problem with Fisher's method is that smaller p values are differentially weighted compared to complementary larger p values (e.g., p versus 1 - p). Equation A4.1a can be rearranged to yield $$ X^{2}=-2k\ln(\overline{p}_{G}) $$ where $ \overline{p}_G $ is the geometric mean of the individual $ p $ values, which differentially weights smaller values. Under Fisher’s method, an observed $ p $ value of (say) 0.001 receives more weight than a complementary value of 0.999, which is as extreme (with $ -\ln $ weights of 6.9 vs. 0.001). However, under the Z-score transformation—which is obtained by solving $ \Pr(U > Z) = p $, where $ U \sim \mathrm{N}(0,1) $—the two complementary $ p $ values are of equal magnitude (Z scores of $ -3.09 $ and $ 3.09 $). This motivates the Z-score method, which we now consider.
+> Example A4.1. Suppose five different groups collected data to test the same hypothesis, and these groups (perhaps using different methods of analysis) report p values of 0.10, 0.06, 0.15, 0.08, and 0.07. Notice that while none of these individual tests are significant, the trend is clearly that all are “close” to being significant ( $ \bar{p} = 0.09 $). Fisher’s statistic returns a value of $$ X^{2}=-2\sum_{i=1}^{k}\ln(p_{i})=24.3921\qquad with\qquad\Pr(\chi_{10}^{2}\geq24.39)=0.0066 $$ Hence, when taken together, these five tests show a highly significant p value.
 
+
+Rice (1990b; also see Whitlock 2005) noted that a problem with Fisher's method is that smaller p values are differentially weighted compared to complementary larger p values (e.g., p versus 1 - p). Equation A4.1a can be rearranged to yield $$ X^{2}=-2k\ln(\overline{p}_{G}) $$ where $ \overline{p}_G $ is the geometric mean of the individual $ p $ values, which differentially weights smaller values. Under Fisher’s method, an observed $ p $ value of (say) 0.001 receives more weight than a complementary value of 0.999, which is as extreme (with $ -\ln $ weights of 6.9 vs. 0.001). However, under the Z-score transformation—which is obtained by solving $ \Pr(U > Z) = p $, where $ U \sim \mathrm{N}(0,1) $—the two complementary $ p $ values are of equal magnitude (Z scores of $ -3.09 $ and $ 3.09 $). This motivates the Z-score method, which we now consider.
 
 ---
 
@@ -49,12 +45,12 @@ An alternative to Fisher’s approach for combining p values was offered by Stou
 
 **[示例 Example]**
 
-> **Example A4.2** · ref: `A4.2` · source: `appendix4_004.json` · blocks 1–1
+> **Example A4.2** · ref: `A4.2` · source: `appendix4_004.json` · blocks 1–2
 >
 > Example A4.2. Reconsider the data from Example A4.1. The $ Z_i $ values are easily obtained using $ R $, as the command $ \text{qnorm}(1-\text{p}) $ returns $ Z $ satisfying $ \text{Pr}(U \leq Z) = 1 - p $, or (equivalently) $ \text{Pr}(U > Z) = p $. For example, $ Z_1 $ is calculated by $ \text{qnorm}(1-0.1) $, or 1.281. Similarly computing the other $ Z_{i} $ values yields $$ \sum_{i=1}^{5}Z_{i}=6.754,\qquad hence\qquad Z_{s}=\frac{6.754}{\sqrt{5}}=3.020 $$ Because $ \Pr(U > 3.020) = 0.00126 $, as in Example A4.1, the combined p value is highly significant.
-> 
-> Besides providing symmetric values for large and small $p$ values (i.e., $p$ and $1-p$), a second advantage of the Z-score approach is that one can individually weight $p$ values from different tests (Mosteller and Bush 1954; Liptak 1958), as the weighted sum of unit normals is itself a unit normal (while the weighted sum of $\chi^2$ variables—the analog for Fisher's test—is considerably more complex). The resulting weighted version becomes $$ Z_{w}=\frac{\sum_{i=1}^{k}w_{i}Z_{i}}{\sqrt{\sum_{i=1}^{k}w_{i}^{2}}} $$ where $ Z_w \sim N(0,1) $. As expected, $ Z_w $ (Equation A4.2c) reduces to $ Z_s $ (Equation A4.2a) when all the weights are equal. One can either weight by the degrees of freedom or by the reciprocal of the standard error of the estimate. Whitlock (2005) showed that the weighted Z-score method is superior to either $ X^2 $ or $ Z_s $ when sample size varies over the data. $ Z_w $ has higher power and also a higher correlation between its predicted p value and the actual p value obtained if one was able to merge all the samples. As noted by Whitlock, many studies in evolutionary biology examine whether a hypothesis consistently holds over a collection of species. In such cases, the number of species is the number of replicates, and weighting p values for individual species is inappropriate. As detailed at the end of this Appendix, combining p values is one of the least powerful meta-analysis approaches, as it leaves much of the information from a collection of studies underutilized. A formal meta-analysis requires that studies report standard errors for their estimates. Unfortunately, many studies do not, and simply report p values instead, and in this setting the proceeding methods are the only type of meta-analysis available.
 
+
+Besides providing symmetric values for large and small $p$ values (i.e., $p$ and $1-p$), a second advantage of the Z-score approach is that one can individually weight $p$ values from different tests (Mosteller and Bush 1954; Liptak 1958), as the weighted sum of unit normals is itself a unit normal (while the weighted sum of $\chi^2$ variables—the analog for Fisher's test—is considerably more complex). The resulting weighted version becomes $$ Z_{w}=\frac{\sum_{i=1}^{k}w_{i}Z_{i}}{\sqrt{\sum_{i=1}^{k}w_{i}^{2}}} $$ where $ Z_w \sim N(0,1) $. As expected, $ Z_w $ (Equation A4.2c) reduces to $ Z_s $ (Equation A4.2a) when all the weights are equal. One can either weight by the degrees of freedom or by the reciprocal of the standard error of the estimate. Whitlock (2005) showed that the weighted Z-score method is superior to either $ X^2 $ or $ Z_s $ when sample size varies over the data. $ Z_w $ has higher power and also a higher correlation between its predicted p value and the actual p value obtained if one was able to merge all the samples. As noted by Whitlock, many studies in evolutionary biology examine whether a hypothesis consistently holds over a collection of species. In such cases, the number of species is the number of replicates, and weighting p values for individual species is inappropriate. As detailed at the end of this Appendix, combining p values is one of the least powerful meta-analysis approaches, as it leaves much of the information from a collection of studies underutilized. A formal meta-analysis requires that studies report standard errors for their estimates. Unfortunately, many studies do not, and simply report p values instead, and in this setting the proceeding methods are the only type of meta-analysis available.
 
 ---
 
@@ -64,7 +60,7 @@ We now turn to the complementary problem of determining the significance level, 
 
 ---
 
-## appendix4_006 · Appendix: Introduction / Standard Bonferroni Corrections
+## appendix4_006 · BONFERRONI CORRECTIONS AND THEIR EXTENSIONS / Standard Bonferroni Corrections
 
 The probability of not making any Type-I errors (false positives) over n independent tests, each at level $ \alpha $, is $ (1 - \alpha)^n $. Hence, the probability, $ \pi $, of having at least one false positive over the entire collection is simply one minus this or $$ \pi=1-\left(1-\alpha\right)^{n} $$
 
@@ -76,7 +72,7 @@ Both Equations A4.3b and A4.4 are referred to as Bonferroni corrections. In the 
 
 **[示例 Example]**
 
-> **Example A4.3** · ref: `A4.3` · source: `appendix4_006.json` · blocks 4–4
+> **Example A4.3** · ref: `A4.3` · source: `appendix4_006.json` · blocks 4–5
 >
 > Example A4.3. Suppose we have $n = 100$ independent tests and wish to obtain an overall $\pi$ value of 0.05. What value of $\alpha$ should be used for each individual test to achieve an experiment-wide false-positive rate of 0.05? The Dunn-Sidak correction suggests $$ \alpha=1-(1-0.05)^{1/100}=0.000512 $$ $$ \alpha=0.05/100=0.0005 $$ while the Bonferroni correction is
 > 
@@ -85,13 +81,13 @@ Both Equations A4.3b and A4.4 are referred to as Bonferroni corrections. In the 
 
 ---
 
-## appendix4_007 · Appendix: Introduction / Sequential Bonferroni Corrections
+## appendix4_007 · BONFERRONI CORRECTIONS AND THEIR EXTENSIONS / Sequential Bonferroni Corrections
 
 Under a strict Bonferroni correction, only those tests whose associated $p$ values are $\leq \pi/n$ are rejected (declared significant); all others are accepted (or more formally, fail to be rejected). This results in a considerable reduction in power if two or more of the hypotheses are actually false. When we reject a hypothesis, one fewer test remains, and the multiple comparison correction should reflect this, resulting in sequential Bonferroni corrections. Sequential approaches have increased power compared to standard Bonferroni corrections, as illustrated below in Example A4.4. Shaffer (1995) reviewed these and other approaches. The basic structure is that one has a collection of multiple tests, with $H(i)$ denoting the null hypothesis for test $i$—for example, the test that marker $i$ has a nonzero effect, in which case $H(i)$ is the null hypothesis of no effect. In this case, rejecting $H(i)$ suggests evidence for a nonzero effect for marker $i$.
 
 ---
 
-## appendix4_008 · Appendix: Introduction / Holm's Method
+## appendix4_008 · BONFERRONI CORRECTIONS AND THEIR EXTENSIONS / Holm's Method
 
 The simplest of these sequential adjustments is Holm's method (Holm 1979). The first step is to order the $p$ values for the $n$ hypotheses being tested from smallest to largest, $p(1) \leq p(2) \leq \cdots \leq p(n)$, and let $H(i)$ be the hypothesis associated with $p(i)$. One proceeds with Holm's method as follows: (i) If $ p(1) > \pi/n $, accept all $ n $ null hypotheses (i.e., none are declared significant).
 
@@ -107,7 +103,7 @@ We can also apply Holm’s method using Equation A4.3a—namely, $ \alpha = 1 - 
 
 ---
 
-## appendix4_009 · Appendix: Introduction / Simes-Hochberg Method
+## appendix4_009 · BONFERRONI CORRECTIONS AND THEIR EXTENSIONS / Simes-Hochberg Method
 
 With Holm's method, we stop once we fail to reject a hypothesis. An improvement on this approach is the Simes-Hochberg correction (Simes 1986; Hochberg 1988), which effectively starts backward, working with the largest p values first.
 
@@ -125,15 +121,15 @@ While the Simes-Hochberg approach is more powerful than that of Holm's (see Exam
 
 ---
 
-## appendix4_010 · Appendix: Introduction / Hommel's Method
+## appendix4_010 · BONFERRONI CORRECTIONS AND THEIR EXTENSIONS / Hommel's Method
 
-Hommel's method (1988) is slightly more complicated, but it is more powerful than the Simes-Hochberg correction (Hommel 1989). Under Hommel's method, we reject all hypotheses whose p values are less than or equal to $ \pi/k^{*} $, where $$ k^{*}=\max_{i}\left(p(n-i+j)>\pi\frac{j}{i}\right)\quad for all j=1,\cdots,i $$
+Hommel's method (1988) is slightly more complicated, but it is more powerful than the Simes-Hochberg correction (Hommel 1989). Under
 
 **[示例 Example]**
 
-> **Example A4.4** · ref: `A4.4` · source: `appendix4_010.json` · blocks 1–5
+> **Example A4.4** · ref: `A4.4` · source: `appendix4_010.json` · blocks 1–1
 >
-> Example A4.4. Suppose for $ n=10 $ tests, the (ordered) $ p $ values are as follows:
+> Example A4.4. Suppose for n = 10 tests, the (ordered) p values are as follows:
 > 
 > > **Inline Table 1** · `inline_1` · page 6 · source: `appendix4_010`
 > > Inline Table 1
@@ -144,18 +140,22 @@ Hommel's method (1988) is slightly more complicated, but it is more powerful tha
 > > $ \frac{\pi}{n-i+1} $ | 0.0050 | 0.0056 | 0.0063 | 0.0071 | 0.0083 | 0.0100 | 0.0125 | 0.0167 | 0.0250 | 0.0500
 > 
 > 
-> For an experiment-wide level of significance of $ \pi = 0.05 $, the Bonferroni correction is $ \alpha = 0.05 / 10 = 0.005 $. Hence, using a strict Bonferroni, we reject hypotheses 1 and 2, and we fail to reject (i.e., we accept) 3 through 10. To apply sequential methods, we use the associated $ \pi/(n-i+1) $ values for $ \pi = 0.05 $, which are given above in the table. Under Holm's method, $ p(i) \leq \pi/(n-i+1) $ for $ i \leq 3 $, and hence we reject $ H(1) $ through $ H(3) $ and accept the others. Under Simes-Hochberg, we fail to reject $ H(7) $ through $ H(10) $ [as $ p(i) > \pi/(n-i+1) $], but because $ p(6) = 0.009 \leq \pi/(n-i+1) = 0.010 $, we reject $ H(6) $ through $ H(1) $.
-> 
-> To apply Hommel's method, we reject all hypotheses whose $p$ values are less than or equal to $\pi/k^{*}$, where $$ k^{*}=\max_{i}\left(p(n-i+j)>\pi\frac{j}{i}\right)\quad for all j=1,\cdots,i $$
-> 
-> Solving $k^{*}$ requires an iterative approach, as follows. First, start with $i = 1$. Here, $(i = 1, j = 1)$, $p(10) = 0.5350 > \pi \cdot (1/1) = 0.05$. Now let us try $i = 2$, which yields (for $j = 1, 2)$, $p(9) = 0.1055 > \pi(1/2) = 0.025$ and (as above) $p(10) > \pi$. Hommel's condition still holds for $i = 3$, as $p(8) = 0.025 > \pi \cdot (1/3) = 0.0167$, $p(9) > \pi \cdot (2/3) = 0.033$, and $p(10) > \pi$. However, it fails for $i = 4$, as while it holds for $p(7) = 0.175 > \pi \cdot (1/4) = 0.0125$, it fails for $(i = 4, j = 2)$ because $p(8) = 0.025 = \pi \cdot (1/2)$. Hence, $k^{*} = 3$ (because Hommel's condition holds for $k = 3$ but not for $k = 4$), and we reject all hypotheses whose $p$ values are
-> 
-> $ \leq 0.05/3 = 0.0167 $, which means $ H(1) $ through $ H(6) $. Note that a strict Bonferroni rejected the fewest null hypotheses and Simes-Hochberg and Hommel's rejected the most null hypotheses (i.e., declared them to be significant), and all methods controlled the experiment-wide false-positive rate at 0.05.
+> For an experiment-wide level of significance of $ \pi = 0.05 $, the Bonferroni correction is $ \alpha = 0.05 / 10 = 0.005 $. Hence, using a strict Bonferroni, we reject hypotheses 1 and 2, and we fail to reject (i.e., we accept) 3 through 10. To apply sequential methods, we use the associated $ \pi/(n-i+1) $ values for $ \pi = 0.05 $, which are given above in the table. Under Holm's method, $ p(i) \leq \pi/(n-i+1) $ for $ i \leq 3 $, and hence we reject $ H(1) $ through $ H(3) $ and accept the others. Under Simes-Hochberg, we fail to reject $ H(7) $ through $ H(10) $ [as $ p(i) > \pi/(n-i+1) $], but because $ p(6) = 0.009 \leq \pi/(n-i+1) = 0.010 $, we reject $ H(6) $ through $ H(1) $. To apply Hommel's method, we reject all hypotheses whose $p$ values are less than or equal to $\pi/k^{*}$, where $$ k^{*}=\max_{i}\left(p(n-i+j)>\pi\frac{j}{i}\right)\quad for all j=1,\cdots,i $$ Solving $k^{*}$ requires an iterative approach, as follows. First, start with $i = 1$. Here, $(i = 1, j = 1)$, $p(10) = 0.5350 > \pi \cdot (1/1) = 0.05$. Now let us try $i = 2$, which yields (for $j = 1, 2)$, $p(9) = 0.1055 > \pi(1/2) = 0.025$ and (as above) $p(10) > \pi$. Hommel's condition still holds for $i = 3$, as $p(8) = 0.025 > \pi \cdot (1/3) = 0.0167$, $p(9) > \pi \cdot (2/3) = 0.033$, and $p(10) > \pi$. However, it fails for $i = 4$, as while it holds for $p(7) = 0.175 > \pi \cdot (1/4) = 0.0125$, it fails for $(i = 4, j = 2)$ because $p(8) = 0.025 = \pi \cdot (1/2)$. Hence, $k^{*} = 3$ (because Hommel's condition holds for $k = 3$ but not for $k = 4$), and we reject all hypotheses whose $p$ values are $ \leq 0.05/3 = 0.0167 $, which means $ H(1) $ through $ H(6) $. Note that a strict Bonferroni rejected the fewest null hypotheses and Simes-Hochberg and Hommel's rejected the most null hypotheses (i.e., declared them to be significant), and all methods controlled the experiment-wide false-positive rate at 0.05.
 
+
+Example A4.4 shows how all three of these methods are applied.
+
+For an experiment-wide level of significance of $ \pi = 0.05 $, the Bonferroni correction is $ \alpha = 0.05 / 10 = 0.005 $. Hence, using a strict Bonferroni, we reject hypotheses 1 and 2, and we fail to reject (i.e., we accept) 3 through 10. To apply sequential methods, we use the associated $ \pi/(n-i+1) $ values for $ \pi = 0.05 $, which are given above in the table. Under Holm's method, $ p(i) \leq \pi/(n-i+1) $ for $ i \leq 3 $, and hence we reject $ H(1) $ through $ H(3) $ and accept the others. Under Simes-Hochberg, we fail to reject $ H(7) $ through $ H(10) $ [as $ p(i) > \pi/(n-i+1) $], but because $ p(6) = 0.009 \leq \pi/(n-i+1) = 0.010 $, we reject $ H(6) $ through $ H(1) $.
+
+To apply Hommel's method, we reject all hypotheses whose $p$ values are less than or equal to $\pi/k^{*}$, where $$ k^{*}=\max_{i}\left(p(n-i+j)>\pi\frac{j}{i}\right)\quad for all j=1,\cdots,i $$
+
+Solving $k^{*}$ requires an iterative approach, as follows. First, start with $i = 1$. Here, $(i = 1, j = 1)$, $p(10) = 0.5350 > \pi \cdot (1/1) = 0.05$. Now let us try $i = 2$, which yields (for $j = 1, 2)$, $p(9) = 0.1055 > \pi(1/2) = 0.025$ and (as above) $p(10) > \pi$. Hommel's condition still holds for $i = 3$, as $p(8) = 0.025 > \pi \cdot (1/3) = 0.0167$, $p(9) > \pi \cdot (2/3) = 0.033$, and $p(10) > \pi$. However, it fails for $i = 4$, as while it holds for $p(7) = 0.175 > \pi \cdot (1/4) = 0.0125$, it fails for $(i = 4, j = 2)$ because $p(8) = 0.025 = \pi \cdot (1/2)$. Hence, $k^{*} = 3$ (because Hommel's condition holds for $k = 3$ but not for $k = 4$), and we reject all hypotheses whose $p$ values are
+
+$ \leq 0.05/3 = 0.0167 $, which means $ H(1) $ through $ H(6) $. Note that a strict Bonferroni rejected the fewest null hypotheses and Simes-Hochberg and Hommel's rejected the most null hypotheses (i.e., declared them to be significant), and all methods controlled the experiment-wide false-positive rate at 0.05.
 
 ---
 
-## appendix4_011 · Appendix: Introduction / Cheverud's Method and Other Approach for Dealing with Dependence
+## appendix4_011 · BONFERRONI CORRECTIONS AND THEIR EXTENSIONS / Cheverud's Method and Other Approach for Dealing with Dependence
 
 When different tests share correlated data, it introduces dependency between the $p$ values for these tests. How do we account for this? One approach (Cheverud 2001; Li and Ji 2005; Nyholt 2005) is to use the nature of the dependency structure of the data to estimate an effective number of independent tests, $n_{e}$. This value is then substituted for $n$ in the above methods; e.g., Equation A4.3b becomes $\alpha = 1 - (1 - \pi)^{1/n_{e}}$. A classic application of this approach is correcting for correlations among tests of marker-trait associations over a set of linked markers in either a QTL mapping experiment or a GWAS (LW Chapters 15 and 16).
 
@@ -177,7 +177,7 @@ While Bonferroni corrections (and their sequential counterparts) are widely used
 
 ---
 
-## appendix4_013 · Appendix: Introduction / How Many False Positives?
+## appendix4_013 · DETECTING AN EXCESS NUMBER OF SIGNIFICANT TESTS / How Many False Positives?
 
 Suppose we perform n independent tests, each with a Type-I error rate of $ \alpha $. If all hypotheses are truly null, the number, j, of false positives follows a binomial distribution, with a “success” probability (a false positive) of $ \alpha $, and n trials (the number of tests), yielding $$ \Pr(j\mathsf{f a l s e p o s i t i v e s})=\frac{n!}{(n-j)!j!}(1-\alpha)^{n-j}\alpha^{j} $$
 
@@ -185,20 +185,14 @@ For n large and $ \alpha $ small, this is closely approximated by the Poisson di
 
 **[示例 Example]**
 
-> **Example A4.5** · ref: `A4.5` · source: `appendix4_013.json` · blocks 2–2
+> **Example A4.5** · ref: `A4.5` · source: `appendix4_013.json` · blocks 2–5
 >
-> Example A4.5. Suppose 250 independent tests are performed, each with $ \alpha = 0.025 $ (a 2.5% chance of declaring a result from the null hypothesis to be significant), and 15 tests are declared significant by this criteria. Is this number greater than expected by chance? The expected number of significant tests under the global null hypothesis is $ n\alpha = 250 \cdot 0.025 = 6.25 $. From Equation A4.5, the probability of observing 15 (or more) significant tests is $$ \sum_{j=15}^{250}\Pr(j\ false\ positives)=\sum_{j=15}^{250}\frac{250!}{(250-j)!j!}(1-0.025)^{250-j}0.025^{j} $$
-> 
-> We could either sum this series directly or use the cumulative distribution function for a binomial. In R, the probability that a binomial with parameters n and p has a value of i or less is obtained by using the command pbinom(i,n,p). The probability of 15 or greater is one minus the probability of 14 or less, or 1 - pbinom(14,250,0.025), for which R returns 0.0018. A similar calculation can use the Poisson approximation (Equation A4.7), with 1
-> 
-> Testing for an excessive number of significant tests is a rather crude indicator of the actual number ($n_0$) of the $n$ tests that are true nulls. It is very possible that $n_0 < n$ and yet we would not detect an excess of significant tests by the above method. Likewise, if an excessive number is detected, what really can we say about $n_0$ other than $n_0 < n$? For instance, Example A4.5 shows an excess of 9 significant tests (observed 15, expected 6), but clearly assuming $n_0 = n - 9$ is a bit naive. Finally, the outcome varies with our choice of $\alpha$. One could easily imagine an excess of significant tests using $\alpha = 0.05$, but not when using $\alpha = 0.01$. Ideally, we would like to have an estimate for $n_0$ that is independent of the choice of $\alpha$.
-> 
-> Such estimators readily follow from one of the key ideas in this Appendix, namely that if the null is correct, random draws of p values follow a uniform distribution over $ (0,1) $. A more careful examination of the empirical distribution of p values over our sample of tests, rather than simply how many we declare significant, is the key to obtaining estimates of $ n_{0} $.
+> Example A4.5. Suppose 250 independent tests are performed, each with $ \alpha = 0.025 $ (a 2.5% chance of declaring a result from the null hypothesis to be significant), and 15 tests are declared significant by this criteria. Is this number greater than expected by chance? The expected number of significant tests under the global null hypothesis is $ n\alpha = 250 \cdot 0.025 = 6.25 $. From Equation A4.5, the probability of observing 15 (or more) significant tests is $$ \sum_{j=15}^{250}\Pr(j\ false\ positives)=\sum_{j=15}^{250}\frac{250!}{(250-j)!j!}(1-0.025)^{250-j}0.025^{j} $$ We could either sum this series directly or use the cumulative distribution function for a binomial. In R, the probability that a binomial with parameters n and p has a value of i or less is obtained by using the command pbinom(i,n,p). The probability of 15 or greater is one minus the probability of 14 or less, or 1 - pbinom(14,250,0.025), for which R returns 0.0018. A similar calculation can use the Poisson approximation (Equation A4.7), with 1 ppois (14, 6.25) returning a value of 0.0021. Given that there is only a 0.2% chance of seeing this many significant tests under the global null, we expect that some of these significant tests are true discoveries (those whose associated null hypothesis is incorrect), not false positives. The critical question, of course, is which ones?
 
 
 ---
 
-## appendix4_014 · Appendix: Introduction / Schweder-Spjøtvoll plots
+## appendix4_014 · DETECTING AN EXCESS NUMBER OF SIGNIFICANT TESTS / Schweder-Spjøtvoll plots
 
 A simple graphical approach using the empirical distribution of $p$ values was suggested by Schweder and Spjøtvoll (1982). If one rank-orders the $p$ values from the smallest $p(1)$ to the largest $p(n)$, a plot of $p(i)$ versus $i$ is a straight line under a uniform. Because our interest is usually in detecting an excessive number of small $p$ values (as would be expected if $n_0 < n$), Schweder and Spjøtvoll suggest plotting $1 - p(i)$ values on the horizontal axis, and the ranks of these values (which are the reverse of the ranks of the $p[i]$) on the vertical axis. For example, the first point is $(1 - p[n], 1)$, the second $(1 - p[n-1], 2)$, $\cdots$, and the $n$th $(1 - p[1], n)$. If all of the $p$ values are indeed generated from null hypotheses, then these are drawn from a uniform, and the resulting plot will be a straight line (the solid triangles in Figure A4.1). Conversely, if some of the $p$ values are drawn from hypotheses where the null is false, we expect an excess of small $p$ values, and hence an over-abundance of $1 - p$ values near one (the open circles in Figure A4.1).
 
@@ -206,9 +200,18 @@ In addition to providing a quick visual check as to whether the $p$ values follo
 
 ---
 
-## appendix4_015 · Appendix: Introduction / Estimating $ n_{0} $: Subsampling From a Uniform Distribution
+## appendix4_015 · DETECTING AN EXCESS NUMBER OF SIGNIFICANT TESTS / Estimating $ n_{0} $: Subsampling From a Uniform Distribution
 
-As suggested by the Schweder-Spötvoll plot, the distribution of $p$ values offers insight into the number of truly null hypotheses, $n_{0}$. While this plot offers either a simple visual, or a more formal regression-based, estimator of $n_{0}$, it tends to overestimate the number of nulls. Further, it can be difficult to specify exactly where the upturn in the plotted values begins. A number of other estimators have been suggested, again based on a uniform distribution of $p$ values for those tests under the null. Recall that the histogram from a sufficiently large number of draws from a uniform distribution is flat, as all values are equally likely (Figure A4.2A). However, if the null is false for at least some of the tests, then the distribution of $p$ values is shifted away from uniform, and usually with a skew toward smaller values (Figure A4.2B), but potentially also skewed toward one (for example, if one-tailed tests are used when a two-tailed test is appropriate; Figure A4.2C).
+As suggested by the Schweder-Spötvoll plot, the distribution of $p$ values offers insight into the number of truly null hypotheses, $n_{0}$. While this plot offers either a simple visual, or a more formal regression-based, estimator of $n_{0}$, it tends to overestimate the number of nulls. Further, it can be difficult to specify exactly where the upturn in the plotted values begins. A number of other estimators have been suggested, again based on a uniform distribution of $p$ values for those tests under the null. Recall that the histogram from a sufficiently large number of draws from a uniform distribution is flat, as all values are equally likely (Figure A4.2). However, if the null is false for at least some of the tests, then the distribution of $p$ values is shifted away from uniform, and usually with a skew toward smaller values (Figure A4.2), but potentially also skewed toward one (for example, if one-tailed tests are used when a two-tailed test is appropriate; Figure A4.2).
+
+**[Figure]**
+
+> **Figure A4.1** · page 10 · source: `appendix4`
+>
+> ![Figure A4.1](../figures/fig_0007.png)
+>
+> Figure A4.1 A Schweder-Spjøtvoll plot is one approach for detecting departures from a uniform distribution of p values. The p values are ordered from smallest, p(1), to largest, p(n), and one plot the rank of 1 - p(i) versus its value. These ranks are reversed from the ranks of p(i), as the rank of 1 - p(n), being the smallest value, is 1. Under a uniform, the result is a straight line passing through the origin and the point (1, n). The upper curve (solid triangles), generated by randomly sampling n = 100 values from a uniform (0,1), fits this pattern. The lower curve (open circles), generated by simulating p values for 80 true nulls and 20 tests where the alternative was correct, shows an inflation of p values near zero (1 - p values near one). This results in a strong departure from linearity near one. Ignoring this upturn and extrapolating the linear fit for the values below this inflection point gives an approximate value of 80 for the value of this projected line when 1 - p = 1. This is the estimate of  $ n_0 $.
+
 
 If the collection of tests contains some alternative hypotheses mixed in with true nulls, we expect the distribution to be a mixture, with fraction, $ \pi_0 = n_0/n $, consisting of draws from a uniform and the remaining fraction, $ (1 - n_0/n) $, from some other distribution. Figure A4.3 plots the empirical distribution of $ p $ values from a study by Mosig et al. (2001) on marker-trait associations. While the middle of the distribution appears to be consistent with random sampling around a flat average, there is a large excess of values near zero.
 
@@ -222,20 +225,38 @@ Likewise, an estimate for the fraction $ \pi_{0}=n_{0}/n $ of true nulls is $$ \
 
 **[示例 Example]**
 
-> **Example A4.6** · ref: `A4.6` · source: `appendix4_015.json` · blocks 6–6
+> **Example A4.6** · ref: `A4.6` · source: `appendix4_015.json` · blocks 6–9
 >
 > Example A4.6. According to the data in Figure A4.3, what is $ n_0 $? Consider the bins centered around $ p = 0.5 $. Based on the central three bins (0.4, 0.5, and 0.6), a total of $ 60 + 46 + 48 = 154 $ tests have $ p $ values in this interval. From Equation A4.8b, $ 154 = n_0 \cdot 0.3 \cdot r_0 = 154/0.3 = 513 $, and hence a fraction, $ \pi_0 = n_0/n = 513/644 = 0.80 $, of the tests are true nulls. Using the bins from 0.3 to 0.8 yields $ n_0 = 322/0.6 = 537 $, or $ \pi_0 = 537/644 = 0.83 $. Hence, it appears that around 80% of the tests are consistent with true nulls. Mosig et al. (2001; also see Nettleton et al. 2006) used an iterative approach (also based on bin counts in the $ p $-value histogram) and arrived at an estimate of $ n_0 = 500 $ (78%).
-> 
-> Storey and Tibshirani (2003) considered the number of $p$ values exceeding some tunable parameter value, $\lambda$ (taking $a = \lambda$ and $b = 1$ in Equation A4.8b), on the logic that for larger values of $\lambda$, most of these draws are from the uniform corresponding to draws from the null. Let $\widehat{\pi}_0(\lambda)$ denote the estimated fraction of truly null hypotheses based on using a tuning value of $ \lambda $, then $$ \widehat{\pi}_{0}(\lambda)=\frac{Number of p(i)values>\lambda}{n(1-\lambda)} $$ and $$ \widehat{n}_{0}(\lambda)=n\cdot\widehat{\pi}_{0}(\lambda)=\frac{Number of p(i)values>\lambda}{1-\lambda} $$
-> 
-> By focusing on the interval $(\lambda, 1)$, the Storey-Tibshirani estimator is potentially biased when there are an excess of $p$ values near one. This can happen for a variety of reasons, such as inappropriate assumptions for the test statistic (e.g., the use of one-sided tests when two-sided tests are more appropriate). Both Equation A4.8c and the Storey-Tibshirani estimator (Equation A4.9b) rely on tuning parameters $(a, b$, and $\lambda$, respectively) which define the region of the distribution of $p$ values assumed to be drawn from a uniform (i.e., almost all $p$ values in this interval are assumed to be generated under the null). Nettleton et al. (2006) reviewed these and other approaches for estimating $n_{0}$ from sampling parts of a presumed uniform and elaborated on their strengths and weaknesses.
-> 
-> One significant concern is that correlated tests can result in either an under- or over-dispersion of p values under the global null hypothesis, resulting in significant departure from a uniform distribution (Efron 2007; Hu et al. 2011; Leek and Storey 2011). This in turn compromises estimates of $ n_{0} $.
 
+
+**[Figure]**
+
+> **Figure A4.2** · page 11 · source: `appendix4`
+>
+> ![Figure A4.2](../figures/fig_0008.png)
+>
+> Figure A4.2 Simulated distribution of $p$ values based on 5000 tests for samples of 25 draws from a normal distribution with a mean of $\mu$ and a variance of one. The null hypothesis is $H_0 : \mu \leq 0$. A: The distribution of $p$ values when $\mu = 0$ (the null is correct) is uniform. B: The distribution when $\mu = 0.2$ is skewed toward an excess of values near zero. C: The distribution when $\mu = -0.2$ is skewed toward an excess of values near one.
+
+
+**[Figure]**
+
+> **Figure A4.3** · page 11 · source: `appendix4`
+>
+> ![Figure A4.3](../figures/fig_0009.png)
+>
+> Figure A4.3 An empirical distribution of p values (for n = 644 tests) from Mosig et al. (2001). The number of p values in each of ten bins (of width 0.1) are given above the bars. Note the large excess of values near zero.
+
+
+Storey and Tibshirani (2003) considered the number of $p$ values exceeding some tunable parameter value, $\lambda$ (taking $a = \lambda$ and $b = 1$ in Equation A4.8b), on the logic that for larger values of $\lambda$, most of these draws are from the uniform corresponding to draws from the null. Let $\widehat{\pi}_0(\lambda)$ denote the estimated fraction of truly null hypotheses based on using a tuning value of $ \lambda $, then $$ \widehat{\pi}_{0}(\lambda)=\frac{Number of p(i)values>\lambda}{n(1-\lambda)} $$ and $$ \widehat{n}_{0}(\lambda)=n\cdot\widehat{\pi}_{0}(\lambda)=\frac{Number of p(i)values>\lambda}{1-\lambda} $$
+
+By focusing on the interval $(\lambda, 1)$, the Storey-Tibshirani estimator is potentially biased when there are an excess of $p$ values near one. This can happen for a variety of reasons, such as inappropriate assumptions for the test statistic (e.g., the use of one-sided tests when two-sided tests are more appropriate). Both Equation A4.8c and the Storey-Tibshirani estimator (Equation A4.9b) rely on tuning parameters $(a, b$, and $\lambda$, respectively) which define the region of the distribution of $p$ values assumed to be drawn from a uniform (i.e., almost all $p$ values in this interval are assumed to be generated under the null). Nettleton et al. (2006) reviewed these and other approaches for estimating $n_{0}$ from sampling parts of a presumed uniform and elaborated on their strengths and weaknesses.
+
+One significant concern is that correlated tests can result in either an under- or over-dispersion of p values under the global null hypothesis, resulting in significant departure from a uniform distribution (Efron 2007; Hu et al. 2011; Leek and Storey 2011). This in turn compromises estimates of $ n_{0} $.
 
 ---
 
-## appendix4_016 · Appendix: Introduction / Estimating $ n_{0} $: Mixture Models
+## appendix4_016 · DETECTING AN EXCESS NUMBER OF SIGNIFICANT TESTS / Estimating $ n_{0} $: Mixture Models
 
 Allison et al. (2002) suggested that $ \pi_0 $ can be estimated by treating the distribution of $ p $ values as a mixture, a fraction $ \pi_0 $ of which comes from a uniform (and hence a uniform distribution function, $ \phi_u $), while the remainder $ (1 - \pi_0) $ are from the distribution, $ \phi_A(p) $, of $ p $ values when the alternative hypothesis is true (Figure A4.4). While the general form of $ \phi_A(p) $ is unknown, a very flexible distribution to model it is by using the beta distribution (Appendix 2; Figure A2.3) $$ \phi_{A}(p)=\frac{\Gamma(a+b)}{\Gamma(a)\Gamma(b)}p^{a-1}(1-p)^{b-1} $$
 
@@ -253,6 +274,15 @@ Finally, while a beta (or weighted sum of betas) can be used as the functional f
 
 ## appendix4_017 · Appendix: Introduction / FDR: THE FALSE-DISCOVERY RATE
 
+**[Figure]**
+
+> **Figure A4.4** · page 13 · source: `appendix4`
+>
+> ![Figure A4.4](../figures/fig_0010.png)
+>
+> Figure A4.4 The empirical distribution of $p$ values can be treated as a mixture model of a uniform plus a beta distribution (whose shape parameters, $a$ and $b$, can be estimated via ML), see Equation A4.10b. In this hypothetical example, a weighted mixture of a uniform (horizontal dashed line) and a beta with ($a < 1$, $b = 1$; dashed curve), yields the mixture distribution (solid curve) that fits the empirical distribution of the $p$ values.
+
+
 As mentioned, Bonferroni corrections (and their extensions) are appropriate when we expect that only a very few of the many null hypotheses are false. An alternate setting is that in which some substantial fraction of the null hypotheses is expected to be false. In such cases, even sequential Bonferroni corrections are likely to be too stringent, resulting in too many false negatives (Type-II errors; i.e., a failure to reject a false hypothesis). A different approach is required in these settings, most notably the false-discovery rate (FDR), introduced by Benjamini and Hochberg (1995).
 
 The FDR is the fraction of false positives among all the tests that are declared to be significant. The motivation for using the FDR is that we may be conducting a very large number of tests, with those that are declared to be significant being subjected to further study. An example would be a search for differential expression over a huge set of genes. The goal of the initial analysis is to distill a large number of candidates down to a reduced set (for further analysis) that is highly enriched for true positives.
@@ -267,7 +297,7 @@ Another way to see the distinction between the false-positive rate and the false
 
 ---
 
-## appendix4_018 · Appendix: Introduction / Morton's Posterior Error Rate (PER) and the FDR
+## appendix4_018 · FDR: THE FALSE-DISCOVERY RATE / Morton's Posterior Error Rate (PER) and the FDR
 
 Table A4.1 reminds the reader of the various test parameters that arise when multiple comparisons are considered. We now show how these are related. First, the relationship between $ \alpha $, $ \pi $, and $ F $ is as follows. Suppose we have set the false-positive rate (i.e., the Type-I error rate) for an individual test at $ \alpha $. Such a $ p $-value threshold only guarantees that the expected number of false positives is bounded above by $ E[F] \leq \alpha \cdot n $. For $ n $ independent tests, a $ \pi $-level experiment-wide false-positive error (setting $ \alpha = \pi/n $; namely, the Bonferroni correction) implies that $ \Pr(F \geq 1) \leq \pi $, i.e., the probability of at least one false positive is no greater than $ \pi $. To show how $ \alpha $, $ \beta $, $ \pi_0 $, and $ \delta $ are related, we first need to introduce the concept of the posterior error rate.
 
@@ -285,6 +315,15 @@ Turning to the denominator of Equation A4.13, what is the probability that a sin
 
 Substituting Equations A4.14a and A4.14b into Equation A4.13 yields $$ PER=\frac{\alpha\cdot\pi_{0}}{\alpha\cdot\pi_{0}+\left(1-\beta\right)\cdot\left(1-\pi_{0}\right)}=\left(1+\frac{\left(1-\beta\right)\cdot\left(1-\pi_{0}\right)}{\alpha\cdot\pi_{0}}\right)^{-1} $$
 
+**[Figure]**
+
+> **Figure A4.5** · page 16 · source: `appendix4`
+>
+> ![Figure A4.5](../figures/fig_0011.png)
+>
+> Figure A4.5 Plot of the posterior error rate (Equation A4.15a) for  $ \alpha = 0.05 $, as a function of  $ \pi_0 $ (the fraction of cases where the null hypothesis holds) and  $ \beta $ (the Type-II error, which is one minus the power). The solid curve corresponds to  $ \beta = 0.9 $ (10% power), the short-dashed curve corresponds to  $ \beta = 0.7 $ (30% power), and the long-dashed (lower) curve corresponds to  $ \beta = 0 $ (100% power).
+
+
 Figure A4.5 plots Equation A4.15a for various values of $ \pi_{0} $ and $ \beta $.
 
 Sham and Purcell (2014) noted that one can rearrange Equation A4.15a to find the $ \alpha $ value to obtain a desired PER value of $ \gamma $, with $$ \begin{align*}\alpha=\left({\gamma\over1-\gamma}\right)\left({1-\pi_0\over\pi_0}\right)(1-\beta)\end{align*} $$
@@ -301,31 +340,21 @@ Thinking in terms of the PER allows us to consider multiple comparisons in a con
 
 **[示例 Example]**
 
-> **Example A4.7** · ref: `A4.7` · source: `appendix4_019.json` · blocks 2–2
+> **Example A4.7** · ref: `A4.7` · source: `appendix4_019.json` · blocks 2–4
 >
-> Example A4.7. In Morton's original application, because there are 23 pairs of human chromosomes, he argued that two randomly chosen genes had a $ 1/23 \simeq 0.05 $ prior probability of linkage, namely, $ 1 - \pi_0 = 0.05 $, and thus $ \pi_0 = 0.95 $. Assuming a Type-I error rate of $ \alpha = 0.05 $ and 80% power to detect linkage ($ \beta = 0.20 $), applying Equation A4.15a yields a PER of $$ \frac{0.05\cdot0.95}{0.05\cdot0.95+0.80\cdot0.05}=0.54 $$
-> 
-> Hence, with a Type-I error control of $ \alpha = 0.05 $, a random test showing a significant result ($ p \leq 0.05 $) has a 54% chance of being a false positive. This occurs because most of the hypotheses are expected to be null—for example, if we draw 1000 random pairs of loci, 950 are expected to be unlinked and we expect $ 950 \cdot 0.05 = 47.5 $ of these to show a false positive. Conversely, only 50 are expected to be linked, and we would declare $ 50 \cdot 0.80 = 40 $ of these to be significant, so that $ 47.5 / 87.5 = 0.54 $ of the significant results are due to false positives.
-> 
-> What value for $ \alpha $ is needed under the above parameters to given a PER of 0.05? Solving for $ \alpha $ in the expression $$ \frac{\alpha\cdot0.95}{\alpha\cdot0.95+0.80\cdot0.05}=0.05 $$ yields $ \alpha = 0.0022 $, and hence, setting this as the Type-I error gives a PER of 5%.
+> Example A4.7. In Morton's original application, because there are 23 pairs of human chromosomes, he argued that two randomly chosen genes had a $ 1/23 \simeq 0.05 $ prior probability of linkage, namely, $ 1 - \pi_0 = 0.05 $, and thus $ \pi_0 = 0.95 $. Assuming a Type-I error rate of $ \alpha = 0.05 $ and 80% power to detect linkage ( $ \beta = 0.20 $), applying Equation A4.15a yields a PER of $$ \frac{0.05\cdot0.95}{0.05\cdot0.95+0.80\cdot0.05}=0.54 $$ Hence, with a Type-I error control of $ \alpha = 0.05 $, a random test showing a significant result ( $ p \leq 0.05 $) has a 54% chance of being a false positive. This occurs because most of the hypotheses are expected to be null—for example, if we draw 1000 random pairs of loci, 950 are expected to be unlinked and we expect $ 950 \cdot 0.05 = 47.5 $ of these to show a false positive. Conversely, only 50 are expected to be linked, and we would declare $ 50 \cdot 0.80 = 40 $ of these to be significant, so that $ 47.5 / 87.5 = 0.54 $ of the significant results are due to false positives. What value for $ \alpha $ is needed under the above parameters to given a PER of 0.05? Solving for $ \alpha $ in the expression $$ \frac{\alpha\cdot0.95}{\alpha\cdot0.95+0.80\cdot0.05}=0.05 $$ yields $ \alpha = 0.0022 $, and hence, setting this as the Type-I error gives a PER of 5%.
 
 
 **[示例 Example]**
 
-> **Example A4.8** · ref: `A4.8` · source: `appendix4_019.json` · blocks 3–3
+> **Example A4.8** · ref: `A4.8` · source: `appendix4_019.json` · blocks 5–8
 >
-> Example A4.8. Suppose we set $ \alpha = 0.005 $ for each test, and assume that the resulting power is essentially 1 (i.e., $ \beta \simeq 0 $). Consider 5000 tests under two different settings. First, suppose that the alternative is very rare, with $ n_1 = 1 $ ($ \pi_0 = 0.9998 $). Under this setting, we expect $ 4999 \cdot 0.005 = 24.995 $ false positives and one true positive ($ 1 \cdot [1 - \beta] = 1 $), yielding an expected PER of $$ PER=\frac{24.995}{24.995+1}=0.961 $$
-> 
-> Thus, a randomly chosen significant test has a 96.1% probability of being a false positive.
-> 
-> Now suppose that the alternative is not especially rare, for example $ n_1 = 500 $ ($ \pi_0 = 0.9 $). The expected number of false positives is $ 4500 \cdot 0.005 = 22.5 $, while the expected number of true positives is 500, yielding a PER of $$ PER=\frac{22.5}{522.5}=0.043 $$
-> 
-> The PER is thus rather sensitive to $ \pi_0 $, the fraction of all tests that are truly from the null hypothesis. If $ \pi_0 $ is essentially 1, a PER of $ \delta $ is obtained using the Bonferroni correction, $ \alpha = \delta/n $. However, if $ \pi_0 $ departs even slightly from one (i.e., more than a few of the alternative hypotheses are correct), then the per-test level of $ \alpha $ to achieve a desired PER rate is considerably larger (i.e., less stringent) than that given by the Bonferroni correction, namely, $ \alpha(\delta) > \delta/n $. For example, for a 0.04 experiment-wide error rate, $ \alpha = 0.04/5000 = 8 \cdot 10^{-6} $, which is roughly 625 times smaller than the value of $ \alpha = 0.005 $ required for a 4% FDR, highlighting the greatly increased power under the FDR framework. This increased power arises because the FDR approach acknowledges that some fraction of the tests are not from the null.
+> Example A4.8. Suppose we set $ \alpha = 0.005 $ for each test, and assume that the resulting power is essentially 1 (i.e., $ \beta \simeq 0 $). Consider 5000 tests under two different settings. First, suppose that the alternative is very rare, with $ n_1 = 1 $ ( $ \pi_0 = 0.9998 $). Under this setting, we expect $ 4999 \cdot 0.005 = 24.995 $ false positives and one true positive ( $ 1 \cdot [1 - \beta] = 1 $), yielding an expected PER of $$ PER=\frac{24.995}{24.995+1}=0.961 $$ Thus, a randomly chosen significant test has a 96.1% probability of being a false positive. Now suppose that the alternative is not especially rare, for example $ n_1 = 500 $ ( $ \pi_0 = 0.9 $). The expected number of false positives is $ 4500 \cdot 0.005 = 22.5 $, while the expected number of true positives is 500, yielding a PER of $$ PER=\frac{22.5}{522.5}=0.043 $$ The PER is thus rather sensitive to $ \pi_0 $, the fraction of all tests that are truly from the null hypothesis. If $ \pi_0 $ is essentially 1, a PER of $ \delta $ is obtained using the Bonferroni correction, $ \alpha = \delta/n $. However, if $ \pi_0 $ departs even slightly from one (i.e., more than a few of the alternative hypotheses are correct), then the per-test level of $ \alpha $ to achieve a desired PER rate is considerably larger (i.e., less stringent) than that given by the Bonferroni correction, namely, $ \alpha(\delta) > \delta/n $. For example, for a 0.04 experiment-wide error rate, $ \alpha = 0.04/5000 = 8 \cdot 10^{-6} $, which is roughly 625 times smaller than the value of $ \alpha = 0.005 $ required for a 4% FDR, highlighting the greatly increased power under the FDR framework. This increased power arises because the FDR approach acknowledges that some fraction of the tests are not from the null.
 
 
 ---
 
-## appendix4_020 · Appendix: Introduction / A Technical Aside: Different Definitions of False-discovery Rate
+## appendix4_020 · FDR: THE FALSE-DISCOVERY RATE / A Technical Aside: Different Definitions of False-discovery Rate
 
 While the false-discovery rate for any experiment is simply F/S, there are several subtly different ways to formally define the expectation of this ratio. The original notion of a false-discovery rate is due to Benjamini and Hochberg (1995), with modifications suggested by a number of other workers, most notable Storey (2002) and Fernando et al. (2004); see Table A4.2.
 
@@ -335,35 +364,17 @@ The main distinction between the different false-discovery rates are: (i) the or
 
 ---
 
-## appendix4_021 · Appendix: Introduction / The Benjamini-Hochberg FDR Estimator
+## appendix4_021 · FDR: THE FALSE-DISCOVERY RATE / The Benjamini-Hochberg FDR Estimator
 
 The original estimator for the FDR was introduced by Benjamini and Hochberg (1995). Suppose we declare a test to be significant if its $p$ value is at or below some threshold value, $\tau = p(k)$, in which case $k$ of the hypotheses will be declared significant (as $p[k]$ is the $k$th smallest $p$ value), and $S = k$. Likewise, if all $n$ of the hypotheses are null, then the expected value of $F$ (the number of false positives) is just $n p(k)$. The resulting fraction of all rejected hypotheses that are false discoveries becomes $F/S = n p(k)/k$. Hence, the false-discovery rate, $\delta_k$, for hypothesis $k$ is bounded by $$ \frac{np(k)}{k}\leq\delta_{k} $$
 
 In particular, if we wish to obtain an FDR of $ \delta $ for the entire experiment, then we reject (i.e., declare as significant) all hypotheses that satisfy $$ p(k)\leq\delta\frac{k}{n} $$
 
-**[示例 Example]**
-
-> **Example A4.9** · ref: `A4.9` · source: `appendix4_021.json` · blocks 2–2
->
-> Example A4.9. Consider again the 10 ordered p values from Example A4.4. Computing $ n p(k) / k = 10 p(k) / k $, where k denotes the test with the k-th smallest p value, yields the following table:
-> 
-> > **Inline Table 5** · `inline_5` · page 18 · source: `appendix4_021`
-> > Inline Table 5
-> >
-> > k | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10
-> > --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ---
-> > p(k) | 0.0020 | 0.0045 | 0.0060 | 0.0080 | 0.0085 | 0.0090 | 0.0175 | 0.0250 | 0.1055 | 0.5350
-> > n $ \frac{p(k)}{k} $ | 0.0200 | 0.0225 | 0.0200 | 0.0200 | 0.0170 | 0.0150 | 0.0250 | 0.0313 | 0.1172 | 0.5350
-> 
-> 
-> Thus, if we wish an overall FDR value of $ \delta = 0.05 $, we would reject hypotheses when $ n p(k) / k \leq \delta = 0.05 $, which is satisfied by H(1) through H(8). Notice that this procedure rejects more hypotheses (i.e., returns more discoveries) than any of the sequential Bonferroni methods (Example A4.4).
-
-
 This simple (heuristic) derivation shows why the original Benjamini-Hochberg estimate of the FDR is conservative, as in those settings in which one applies the FDR criteria, the expectation is that some fraction of the hypotheses are not null, and so $ n_0 < n $. The correct estimator of the expected number of rejected null hypotheses is $ n_0 p(k) $, which leads to a more generalized estimate of the FDR, where $ \widehat{n}_0 $ (e.g., Equations A4.8–A4.10) replaces n. In this case, Equation A4.16a becomes $$ \widehat{\delta}_{k}=\frac{\widehat{n}_{0}p(k)}{k} $$
 
 ---
 
-## appendix4_022 · Appendix: Introduction / A (Slightly More) Formal Derivation of the Estimated FDR
+## appendix4_022 · FDR: THE FALSE-DISCOVERY RATE / A (Slightly More) Formal Derivation of the Estimated FDR
 
 Following Storey and Tibshirani (2003), we consider the expected FDR for an experiment where we declare a hypothesis to be significant if its $p$ value is less than or equal to some threshold value, $\tau$. Obviously, as $\tau$ becomes smaller, the FDR is smaller (as significant nulls become increasingly less likely). However, if $\tau$ is set too small, we lose power (e.g., suppose we set $\tau = \pi/n$; namely, the Bonferroni correction). What we would like to do is to find the expected value of the FDR as a function of the chosen threshold parameter, $\tau$, to allow us to optimally tune this parameter to obtain the desired FDR. If we have a large number of tested hypotheses, $$ E[F D R(\tau)]=E\left[\frac{F(\tau)}{S(\tau)}\right]\simeq\frac{E[F(\tau)]}{E[S(\tau)]} $$
 
@@ -379,7 +390,7 @@ Under a mixture-model setting (e.g., Equation A4.10), the false-discovery rate f
 
 ---
 
-## appendix4_023 · Appendix: Introduction / Storey's q Value
+## appendix4_023 · FDR: THE FALSE-DISCOVERY RATE / Storey's q Value
 
 While we can control the FDR for an entire set of experiments, we would also like to have an indication of the FDR for any particular experiment (or test) within this family of tests. Intuitively, tests with smaller p values should also have smaller associated FDR values. To address this, Storey (2002; Storey and Tibshirani 2003) introduced the concept of a q value (as opposed to the p value) for a particular test, where q is the expected FDR rate for tests within the current experiment whose p values are at least as extreme as the test of interest. The estimated q value is a function of the p value for that test and the distribution of the entire set of p values from the family of tests being considered, namely, $$ \widehat{q}\left[p(i)\right]=\min_{\tau\geq p(i)}\widehat{F D R}(\tau) $$
 
@@ -391,7 +402,30 @@ To see why we used $ \min_{\tau \geq p(i)} $ instead of simply setting $ q_i = F
 
 **[示例 Example]**
 
-> **Example A4.10** · ref: `A4.10` · source: `appendix4_023.json` · blocks 3–3
+> **Example A4.9** · ref: `A4.9` · source: `appendix4_023.json` · blocks 3–3
+>
+> Example A4.9. Consider again the 10 ordered $p$ values from Example A4.4. Computing $n$ $p(k)/k = 10$ $p(k)/k$, where $k$ denotes the test with the $k$-th smallest $p$ value, yields the following table:
+> 
+> > **Inline Table 3** · `inline_3` · page 15 · source: `appendix4_018`
+> > Inline Table 3
+> >
+> > Parameter | Definition
+> > --- | ---
+> > $ \alpha $ | Comparison-wide Type-I error (false positive).
+> > $ \beta $ | Type-II error (false negative); $ 1 - \beta = \text{power} $.
+> > $ \pi $ | Family-wide Type-I error; $ \Pr(F > 0) = \pi $.
+> > $ \delta $ | False-discovery rate.
+> > $ \pi_{0} $ | Fraction of all hypotheses that are truly null.
+> > $ p $ | Probability of the test statistic under the null.
+> > $ p(k) $ | $ k $th smallest $ p $ value of the $ n $ tests.
+> 
+> 
+> Thus, if we wish an overall FDR value of $\delta = 0.05$, we would reject hypotheses when $n p(k)/k \leq \delta = 0.05$, which is satisfied by H(1) through H(8). Notice that this procedure rejects more hypotheses (i.e., returns more discoveries) than any of the sequential Bonferroni methods (Example A4.4).
+
+
+**[示例 Example]**
+
+> **Example A4.10** · ref: `A4.10` · source: `appendix4_023.json` · blocks 3–5
 >
 > Example A4.10. As an example of the interplay between the family-wide error rate ($\pi$), and the individual $p$ and $q$ values for a particular test, consider Storey and Tibshirani's (2003) analysis of a microarray dataset comparing BRCA1 and BRCA2 positive breast cancer tumors. A total of 3226 genes were examined. Setting a critical $p$ value of $\alpha = 0.001$ detects 51 significant genes (i.e., those with differential expression between the two types of tumors). If we assume that the hypotheses being tested are independent (which is unlikely as expression can be highly correlated across sets of genes), the probability that there is at least one false positive is $\pi = 1 - (1 - 0.0001)^{3226} = 0.96$, while the expected number of false positives is $0.001 \cdot 3226 = 3.2$, or $6% (3.2 / 51)$ of the declared significant differences. After setting an FDR rate of $\delta = 0.05$, Storey and Tibshirani detected 160 genes that showed significant differences in expression. Of these 160, 8 (5%) are expected to be false positives. Compared to the Bonferroni correction (51 genes, 6% false positives), over three times as many genes were detected, and with a lower FDR rate. Further, Storey and Tibshirani estimated the fraction, $\pi_0$, of nulls (genes with no difference in expression) at 67%, which suggests that 33% (or roughly 1000 of the 3226 genes) are likely to be differentially expressed between the two tumor types.
 > 
@@ -402,7 +436,7 @@ To see why we used $ \min_{\tau \geq p(i)} $ instead of simply setting $ q_i = F
 
 ---
 
-## appendix4_024 · Appendix: Introduction / Closing Caveats in Using the FDR
+## appendix4_024 · FDR: THE FALSE-DISCOVERY RATE / Closing Caveats in Using the FDR
 
 While controlling the FDR is a very powerful approach for many multiple-comparison problems, it is not a panacea. One concern is correlations among tests. As mentioned, in this case the null distribution of p values can significantly depart from a uniform, giving biased estimates of $ \pi_{0} $ (and thus FDR). Further, recall that FDR control is accomplished by controlling the expected value of the FDR (or some closely related measure, such as the PFP). The variance in the FDR across independent experiments can be considerable, especially when the tests are correlated (Owen 2005; Leek and Storey 2011). One approach for treating these concerns is to use Leek and Storey's (2007, 2008) surrogate variable analysis to account for dependencies among the data before the actual p values for individual tests are obtained.
 
@@ -416,7 +450,7 @@ Another class of analysis involving multiple comparisons considers comparison ac
 
 ---
 
-## appendix4_026 · Appendix: Introduction / Informal, or Narrative, Meta-analysis
+## appendix4_026 · FORMAL META-ANALYSIS / Informal, or Narrative, Meta-analysis
 
 Table A4.3 shows the canonical structure of the data for a meta-analysis: one has a number of studies, either published or unpublished, dealing with a specific question (such as the average strength of natural selection; Chapter 30). Study i reports an estimate, $ T_i $, of an effect whose true (and unknown) value is denoted by $ \theta_i $. Unfortunately, however, many studies report only $ T_i $ and perhaps, $ p_i $, although the latter is often simply reported in binary form (whether they are significant at some level or not) rather than as an actual value.
 
@@ -430,7 +464,7 @@ Furthermore, most MAs are not simply concerned about whether an effect is signif
 
 ---
 
-## appendix4_027 · Appendix: Introduction / Standardizing Effect Sizes
+## appendix4_027 · FORMAL META-ANALYSIS / Standardizing Effect Sizes
 
 A formal meta-analysis proceeds by averaging over the standardized effect sizes for each study. As we will detail below, this weights each study by the strength (precision) of the evidence it provides. We will briefly review a few of the common standardizations here, pointing the reader to the general references cited at the start of this section, as well as to Nakagawa and Cuthill (2007), for more details.
 
@@ -454,7 +488,7 @@ Other standardizations exist for other classes of comparisons, such as the log o
 
 ---
 
-## appendix4_028 · Appendix: Introduction / Fixed-effects, Random-effects, and Mixed-model Meta-analysis
+## appendix4_028 · FORMAL META-ANALYSIS / Fixed-effects, Random-effects, and Mixed-model Meta-analysis
 
 Once an appropriate summary statistic, along with its standard error, has been chosen, the next step is to decide if a fixed, random, or mixed meta-analysis should be used. For questions of interest to quantitative geneticists, a mixed-model analysis is likely the most appropriate. This is also the most general model, with the fixed-effects and random-effects models following as special cases. However, it will be useful to first consider the structure of these simpler models.
 
@@ -490,11 +524,20 @@ While typically it is assumed that $ \mathbf{C} = \mathbf{I} $ (i.e., effects ar
 
 ---
 
-## appendix4_029 · Appendix: Introduction / Publication and Other Sources in Bias
+## appendix4_029 · FORMAL META-ANALYSIS / Publication and Other Sources in Bias
 
 The most common concern of a meta-analysis is the issue of publication bias, whereby the chosen sample of studies is nonrandom with respect to all of the actual studies that have been done. Before addressing this, we need to stress that the most serious MA problem is simply poor data reporting (Gurevitch and Hedges 1999). The lack of inclusion of standard errors in many studies relegates their data to the lower status of a narrative MA. Ideally, all of the individual data, and not just summary statistics, should be readily available to the research community.
 
 A second concern is research bias (Gurevitch and Hedges 1999). For example, in searching for signals of selection on traits, investigators are unlikely to choose a random set of characters. Rather, at least some of the traits will be explicitly chosen because an investigator feels that they are likely to be under selection. This introduces nonrandom sampling, and such a collection of estimates is not an unbiased sample of the nature of selection on a random trait. A related issue is study bias, in that human nature is such that investigators will often seek to make their task easier by nonrandomly choosing systems in which it is easier to measure quantities of interest.
+
+**[Figure]**
+
+> **Figure A4.6** · page 27 · source: `appendix4`
+>
+> ![Figure A4.6](../figures/fig_0012.png)
+>
+> Figure A4.6 A funnel plot contrasts the estimated effect size (on the horizontal axis) of a study versus a measure of its precision (such as the sample size or  $ 1/s_{i}^{2} $) on the vertical axis. A: An idealized funnel plot showing symmetry about the grand mean (dotted line). B: A funnel plot showing asymmetry, in this case an excess of larger effect-size estimates in studies with lower precision.
+
 
 These important concerns aside, meta-analysts worry about publication bias, such as the so-called file-drawer effect, whereby studies that do not achieve significance are not published but rather are simply left in the file drawer (Rosenthal 1979; Rosenberg 2005). Likewise, studies showing significant effects are more likely to be published in higher-profile and more widely disseminated journals. Given this concern, a number of heuristic approaches for detecting the potential of publication bias have been proposed (a nice introduction can be found in Møller and Jennions 2001). Perhaps the best way to start any discussion of publication bias, and attempts to adjust for it, is with the comment by Copas and Shi (2000) that “correcting for publication bias is only possible if we are prepared to make unverifiable assumptions.”
 
@@ -502,7 +545,16 @@ Methods for treating publication bias consist either of approaches that attempt 
 
 A number of tests for the potential presence of publication bias are constructed around the notion of a funnel plot (Light and Pillemer 1984). As shown in Figure A4.6, for each study, one plots the estimated effect size on the horizontal axis and some measure of precision, such as $ s_i^{-2} $ or the sample size, on the vertical axis. Under a fixed-effects model, the scatter of points should be broad at the base (reflecting spread about the true mean due to larger standard errors in the estimate), and then narrowing as one moves vertically up in the plot (larger studies). This generates a plot that looks like an inverted funnel, hence the name. Under a fixed-effects model, data high on the vertical axis (i.e., studies with very large sample sizes) should show essentially no spread about the grand mean. Under a random-effects interpretation, even when sampling error is entirely removed (due to very large sample size), there will still be a spread of values around the grand mean, reflecting the random effect of sampling the mean for a particular realization. One will still see a funnel, but it will only narrow down (for large n) to a spread given by $ \sigma_u^2 $, namely, the funnel will taper up to a cylinder whose width is a function of $ \sigma_u^2 $.
 
-Figure A4.6A shows an idealized setting, with estimates that are symmetrically distributed about the grand mean. Figure A4.6B shows a situation in which there is asymmetry in the funnel. In this case, there is an excess of large-effect estimates for studies with less precision (i.e., smaller samples). Publication bias can generate such an asymmetry, as studies whose estimated effects are smaller (and therefore either not significant, or only marginally so) are less likely to be published. However, other sources of bias can also generate such an asymmetry, so that its presence does not automatically guarantee that publication bias has occurred. For example, effect sizes could be correlated with their standard errors, as might occur in settings where the realization of a effect size is expected to be small (say, a selection gradient on what is regarded as a minor trait), and so the study collects a larger sample size in order to try to achieve sufficient power (Gurevitch and Hedges 1999).
+**[Figure]**
+
+> **Figure A4.7** · page 28 · source: `appendix4`
+>
+> ![Figure A4.7](../figures/fig_0013.png)
+>
+> Figure A4.7 Contour-enhanced funnel plots help in the interpretation of asymmetry. Both of the plots show asymmetry, with the open ellipse showing the area of “missing” studies that generates the asymmetry. Such missing values would be added under the trim-and-fill method. The contours (showing regions of statistical significance) show the expected likelihood of study values under the null of no effect. A: The “missing” studies are in a region where they are likely to occur by chance (p > 0.1), suggesting they are absent due to publication bias. B: Here, these studies will all fall into regions unlikely to be seen under the null (p < 0.05), and hence may be missing for reasons other than publication bias. (After Peters et al. 2008.)
+
+
+Figure A4.6 shows an idealized setting, with estimates that are symmetrically distributed about the grand mean. Figure A4.6 shows a situation in which there is asymmetry in the funnel. In this case, there is an excess of large-effect estimates for studies with less precision (i.e., smaller samples). Publication bias can generate such an asymmetry, as studies whose estimated effects are smaller (and therefore either not significant, or only marginally so) are less likely to be published. However, other sources of bias can also generate such an asymmetry, so that its presence does not automatically guarantee that publication bias has occurred. For example, effect sizes could be correlated with their standard errors, as might occur in settings where the realization of a effect size is expected to be small (say, a selection gradient on what is regarded as a minor trait), and so the study collects a larger sample size in order to try to achieve sufficient power (Gurevitch and Hedges 1999).
 
 While funnel asymmetry is essentially an informal visual judgment, the basic idea has been used for more formal tests. The Begg-Mazumdar (1994) rank correlation test looks for associations between the ranks of the standard errors $ (s_{i}) $ and study estimates $ (T_{i}) $. The Egger regression test (Egger et al. 1997) performs the regression $$ y_{i}=a+bs_{i}+e,\quad where\quad y_{i}=(T_{i}-\overline{T}) $$
 
@@ -510,7 +562,7 @@ Under a symmetric funnel plot, the data are distributed symmetrically around zer
 
 While detecting publication bias can be problematic, correcting for it can be even more so. One approach is the trim-and-fill method of Duval and Tweedie (2000a, 2000b). Again, this method is based on funnel-plot asymmetry. In step one, smaller (i.e., lower-precision) studies are excluded in order to achieve a more symmetric plot, while step two replaces these excluded studies with “missing” studies whose values are imputed from the retained studies. Again, factors other than publication bias can result in asymmetric funnel plots, which compromises this approach.
 
-The use of contour funnel plots (Figure A4.7) may provide some additional guidance (Peter et al. 2008). These are funnel plots enhanced by overlaying significance contours, which provides a visual test of whether “missing” studies occur in high- or low-probability regions. The former suggests bias, and the latter suggests simple sampling. Figure A4.7 shows two situations of asymmetry, and the region of the funnel plot with “missing” studies that might be imputed under a trim-and-fill approach. The contour plots show that in Figure A4.7A the missing studies were quite likely to have been seen had there been was no publication bias. However, in Figure A4.7B, the missing values are in regions of high significance (and hence could be absent simply by chance, given their low probability under the null), even with a full ascertainment of all studies.
+The use of contour funnel plots (Figure A4.7) may provide some additional guidance (Peter et al. 2008). These are funnel plots enhanced by overlaying significance contours, which provides a visual test of whether “missing” studies occur in high- or low-probability regions. The former suggests bias, and the latter suggests simple sampling. Figure A4.7 shows two situations of asymmetry, and the region of the funnel plot with “missing” studies that might be imputed under a trim-and-fill approach. The contour plots show that in Figure A4.7 the missing studies were quite likely to have been seen had there been was no publication bias. However, in Figure A4.7, the missing values are in regions of high significance (and hence could be absent simply by chance, given their low probability under the null), even with a full ascertainment of all studies.
 
 A metric for assessing the impact of publication bias is the fail-safe number for an analysis (Rosenthal 1979; Rosenberg 2005). This is simply the number of additional studies (i.e., missed studies with no significance) that would have to be added to the analysis to invalidate (i.e., remove the significance of) the current analysis. The rough rule of thumb is that if this number exceeds $ 5k+10 $, then the study is fairly robust (Rosenthal 1979; Rosenberg 2005). Despite often being reported, there are issues with this metric. The most obvious one is that a meta-analysis is usually concerned with the average effect size (or the variance in true effect sizes), rather than whether an effect is significant. Hence, even if the fail-safe number indicates that the current study is robust, it is simply robust to overall significance and not necessarily to overall effect size. Second, as we stressed above, a random effects meta-analysis is generally the most appropriate (which extends to a mixed model if moderator variables are added). Fail-safe numbers in random-effects setting are much smaller than their fixed-effects counterparts and are much more delicate to obtain. Rosenberg (2005) cited a meta-analysis based on 71 studies where the fixed-effects fail-safe number (based on slightly different methods) ranged from 7500 to 8500, while the fail-safe number under a random-effects model was approximately 9.
 
@@ -518,7 +570,16 @@ The most powerful, and also the most delicate, methods to both detect and adjust
 
 ---
 
-## appendix4_030 · Appendix: Introduction / Bias When Estimating Magnitudes
+## appendix4_030 · FORMAL META-ANALYSIS / Bias When Estimating Magnitudes
+
+**[Figure]**
+
+> **Figure A4.8** · page 30 · source: `appendix4`
+>
+> ![Figure A4.8](../figures/fig_0014.png)
+>
+> Figure A4.8 The consequences of considering the absolute value,  $ |\theta| $, of an effect. Here, the true size effect ( $ \theta $) is normally distributed with a variance of  $ \sigma^2 $, whose distribution is indicated by the solid curves. Of course, we do not observe the true value, but rather an estimate,  $ T $, which has the same mean as  $ \theta $, but an additional sampling error,  $ \sigma_e^2 $, so that while  $ \theta \sim N(\mu, \sigma^2) $,  $ T \sim N(\mu, \sigma^2 + \sigma_e^2) $, which (dashed curves) has a larger total variance. In (A) and (C),  $ \mu = 0 $, while  $ \mu > 0 $ in (B) and (D). The distribution of  $ |\theta| $ is given by folding the distribution about zero, with  $ \Pr(|\theta|) = \Pr(\theta) + \Pr(-\theta) $ for  $ \theta > 0 $, as shown in panels (C) and (D). While the sampling variance ( $ \sigma_e^2 $) does not translate into bias when estimating the mean, as  $ E[T] = E[\theta] $, it introduces bias when the absolute value of  $ \theta $ is of interest, with  $ E[|T|] > E[|\theta|] $ when  $ \sigma_e^2 > 0 $, as shown in (C) and (D). (After Nakagawa and Lagisz 2016.)
+
 
 Finally, consider a random-effects setting, in which the parameter of interest, $\theta_{ii}$ in a given study (i) is drawn from normal distribution with a mean of $\mu$ and a variance of $\sigma_{\mu}^{2}$, so $\theta_{i} \sim N(\mu, \sigma_{\mu}^{2})$. Suppose we assume the observed effect, $T_{i}$, for this study is also normal, but with an additional sampling error, $\sigma_{e}^{2}$, so that $T_{i} \sim N(\mu, \sigma_{u}^{2} + \sigma_{e}^{2})$. This additional variance has no effect on our estimate of the desired mean, $\mu$, as $E[T_{i}] = \mu$. However, in many setting in quantitative genetics (as well as ecology and evolution), our interest may be in the absolute magnitude, $|\theta|$, of the effect, rather than its mean value. An important example of this type of inquiry is the estimation of the average strength of selection, $|\beta|$, on a trait (Chapters 29 and 30). As noted by Hereford et al. (2004) and Morrissey (2016), $E[|T|] > E[\|\theta\|]$ when $\sigma_{e}^{2} > 0$, which will result in an overestimate of the expected absolute value of the effect. In particular, if $\mu = 0$, then (Example A4.11), $$ E[|\theta|]=\sigma_{u}\sqrt{2/\pi},\qquad\mathrm{w h i l e}\qquad E[|T|]=\sqrt{\sigma_{u}^{2}+\sigma_{e}^{2}}\cdot\sqrt{2/\pi} $$ which yields a relative error of $$ \frac{E[|T|]-E[|\theta|]}{E[|\theta|]}=\sqrt{\frac{\sigma_{e}^{2}}{\sigma_{u}^{2}}+1-1} $$ which can be a significant overestimation of the average magnitude of an effect if the error variance is large relative to the effect variance (Figure A4.8). Morrissey (2016) presented several additional examples where the concern of a meta-analysis is in some measure of dispersion about a mean, in which case the error variance associated with using an estimate $ (T_i) $ will result in an upwardly biased estimator. Morrissey showed how the use of appropriate mixed models helps to resolve this concern.
 
@@ -526,7 +587,7 @@ Finally, consider a random-effects setting, in which the parameter of interest, 
 
 > **Example A4.11** · ref: `A4.11` · source: `appendix4_030.json` · blocks 1–1
 >
-> Example A4.11. Hereford et al. (2004) and Morrissey (2016) presented general expressions for $ E[|x|] $ when $ x \sim N(\mu, \sigma^2) $. As shown in Figure A4.8, the distribution of $ |x| $ is given by a folded normal distribution, from which it follows that $$ \begin{align*}E[|x|]=\sigma\sqrt{2\over\pi}\exp\left(-{\mu^2\over2\sigma^2}\right)+|\mu|\cdot\textrm{erf}\left({\mu|\over\sigma\sqrt{2}}\right)\end{align*} $$ where $$ \mathrm{erf}(x)=\frac{2}{\sqrt{\pi}}\int_{0}^{x}\exp(-t^{2})dt $$ is the error function. Taking $ \mu = 0 $, Equation A4.38a reduces to Equation A4.37a. Likewise, when $ \mu \gg \sigma^{2} $, Equation A4.38a reduces to $$ E[|x|]\sim|\mu| $$ which follows because for large values of x, $ e^{-x} \to 0 $ and $ \mathrm{erf}(x) \to 1 $.
+> Example A4.11. Hereford et al. (2004) and Morrissey (2016) presented general expressions for $ E[|x|] $ when $ x \sim N(\mu, \sigma^2) $. As shown in Figure A4.8, the distribution of $ |x| $ is given by a folded normal distribution, from which it follows that $$ \begin{align*}E[|x|]=\sigma\sqrt{2\over\pi}\exp\left(-{\mu^2\over2\sigma^2}\right)+|\mu|\cdot\textrm{erf}\left({\mu|\over\sigma\sqrt{2}}\right)\end{align*} $$ (A4.38a) where $$ \mathrm{erf}(x)=\frac{2}{\sqrt{\pi}}\int_{0}^{x}\exp(-t^{2})dt $$ is the error function. Taking $ \mu = 0 $, Equation A4.38a reduces to Equation A4.37a. Likewise, when $ \mu \gg \sigma^{2} $, Equation A4.38a reduces to $$ E[|x|]\sim|\mu| $$ (A4.38b) which follows because for large values of x, $ e^{-x} \to 0 $ and $ \mathrm{erf}(x) \to 1 $.
 
 
 ---

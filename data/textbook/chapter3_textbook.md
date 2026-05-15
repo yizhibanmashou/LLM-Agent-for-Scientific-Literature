@@ -1,4 +1,4 @@
-# Chapter 3 Textbook Mapping
+# Chapter 3 · The Genetic Effective Size of a Population
 
 ## chapter3_001 · The Genetic Effective Size of a Population: Introduction
 
@@ -33,7 +33,7 @@ Before proceeding, it bears emphasizing that random genetic drift is a result of
 
 ---
 
-## chapter3_003 · The Genetic Effective Size of a Population: Introduction / MONOECY
+## chapter3_003 · GENERAL CONSIDERATIONS / MONOECY
 
 To illustrate the mathematical approach to deriving expressions for $ N_{e} $, we first generalize the concept of a monoecious, self-compatible population to allow for arbitrary gamete production by different individuals. As a reminder, monoecious (a botanical term) individuals are equivalent to hermaphrodites (a zoological term), with both terms referring to the situation in which individuals produce male and female gametes.
 
@@ -110,7 +110,7 @@ where $ \sigma_{o,p} $ is the covariance of the numbers of successful male $ (p,
 
 **[示例 Example]**
 
-> **Example 3.1** · ref: `3.1` · source: `chapter3_003.json` · blocks 11–11
+> **Example 3.1** · ref: `3.1` · source: `chapter3_003.json` · blocks 11–12
 >
 > Example 3.1. Hedgecock (1994) suggested that marine organisms with high fecundities and broadcast spawning may have effective population sizes that are orders of magnitude smaller than the absolute number of potential breeders. This situation can arise if vagaries in oceanographic conditions are such that only a small fraction of adults produce gametes at points in time and space that allow recruitment to the next generation. Suppose the total adult population size is $ N_p $, whereas only $ N_p $ individuals contribute equally to the breeding pool. Such a situation is sustainable if reproductive adults can individually produce an average of $ 2N/N_p $ gametes (and many marine species are capable of producing many tens of thousands of gametes). Given such a situation, $ N_p $ individuals have expected family sizes of $ 2N/N_p $, whereas $ (N - N_p) $ have zero expected reproductive success, which results in an expected family-size variance among all $ N $ individuals of $ 4[(N/N_p) - 1] $ (Hedrick 2005). Using the logic outlined in the paragraph below Equation 3.4, the additional variance in reproductive success among spawning individuals resulting from random gamete sampling is equal to $$ \left\{\left(\frac{N_{p}}{N}\right)\cdot2N\cdot\left(\frac{1}{N_{b}}\right)\left[1-\left(\frac{1}{N_{b}}\right)\right]\right\}+\left\{\left[1-\left(\frac{N_{b}}{N}\right)\right]\cdot2N\cdot0\right\}=2\left[1-\left(\frac{1}{N_{b}}\right)\right] $$
 > 
@@ -119,14 +119,14 @@ where $ \sigma_{o,p} $ is the covariance of the numbers of successful male $ (p,
 
 **[示例 Example]**
 
-> **Example 3.2** · ref: `3.2` · source: `chapter3_003.json` · blocks 12–12
+> **Example 3.2** · ref: `3.2` · source: `chapter3_003.json` · blocks 13–13
 >
 > Example 3.2. Heywood (1986) estimated that $ \sigma_k / \mu_k^2 $ for seed production is on the order of 1 to 4 in a number of annual plants (including self-compatible species). Unfortunately, the value of $ \sigma_k^2 $ for total gamete production requires additional information on successful pollen production, which is extremely difficult to acquire due to problems in ascertaining paternity. For heuristic purposes, however, let us assume a stable monoecious population. This necessarily implies mean seed and pollen production are both equal to one, and $ \mu_k = \mu_o + \mu_p = 2 $, as each parent must produce two successful gametes (on average, one male and one female). We will also assume a three-fold higher standard deviation for successful pollen relative to seed production, so that $ \sigma_p = 3\sigma_o $, and a perfect correlation between ovule and pollen production. Because the correlation between the number of female and male gametes produced per individual is defined to be $ \sigma_{o,p} / (\sigma_{o,p_0}) $, the latter assumption implies $ 1 = \sigma_{o,p} / [\sigma_{o,p} \cdot 3\sigma_{o}] $. Assuming random mating, and substituting $ \sigma_{o,p} = 3\sigma_o^2 $ into Equation 3.8, we obtain $ N_c = N / [(12\sigma_o^2 / \mu_k^2) + 1] $. Thus, for $ \sigma_o^2 / \mu_k^2 $ in the range of 1 to 4, $ N_c $ is between 2% and 8% of the census number (N).
 
 
 ---
 
-## chapter3_004 · The Genetic Effective Size of a Population: Introduction / DIOECY
+## chapter3_004 · GENERAL CONSIDERATIONS / DIOECY
 
 As in the case of monoecy with self-incompatibility, when the sexes are separate, inbreeding always needs to be defined with reference to the grandparent generation, which is the earliest point back to which the two genes of an individual can coalesce. Separate sexes also introduce the possibility of different levels of inbreeding through males and females, as might be expected, for example, in polygynous species in which most females mate with a relatively small segment of the male population.
 
@@ -224,15 +224,17 @@ Substantial simplification of Equation 3.15 can be achieved under some condition
 
 **[示例 Example]**
 
-> **Example 3.3** · ref: `3.3` · source: `chapter3_005.json` · blocks 6–6
+> **Example 3.3** · ref: `3.3` · source: `chapter3_005.json` · blocks 6–10
 >
-> Example 3.3. While complete age-specific survivorship and reproductive schedules are available for the females of many natural populations, male promiscuity often imposes enormous practical difficulties for ascertaining paternity. Thus, the variance in male reproductive success is generally unknown. However, a long-term study on the behavior and demography of the red deer ($ Cervus\ elaphus $) by Clutton-Brock et al. (1982) allows at least a crude estimate of $ N_e $ by use of the Emigh-Pollak equation, as shown in the table below. The study population was roughly constant in density for two decades, and observations on known individuals provide information on the age-specific rates of mortality and reproduction for both sexes. The sex ratio at birth ($ \phi_b $) averaged 0.43 over several years, so $ N_{eb} = 0.98 N_b $.
+> Example 3.3. While complete age-specific survivorship and reproductive schedules are available for the females of many natural populations, male promiscuity often imposes enormous practical difficulties for ascertaining paternity. Thus, the variance in male reproductive success is generally unknown. However, a long-term study on the behavior and demography of the red deer ( $ Cervus\ elaphus $) by Clutton-Brock et al. (1982) allows at least a crude estimate of $ N_e $ by use of the Emigh-Pollak equation, as shown in the table below. The study population was roughly constant in density for two decades, and observations on known individuals provide information on the age-specific rates of mortality and reproduction for both sexes. The sex ratio at birth ( $ \phi_b $) averaged 0.43 over several years, so $ N_{eb} = 0.98 N_b $. The age-specific survival rates, $ \ell_i $, in the following table were extracted directly from Clutton-Brock et al. (1982), while the age-specific reproductive schedules, $ b_i^f $ and $ b_i^m $, were estimated from behavioral and demographic observations of the authors and adjusted downward to maintain a stable population size. The columns marked (1) and (2) are $ \left[\left(1/\ell_{i+1}^s\right) - \left(1/\ell_i^s\right)\right] $ and $ \left(\sum_{j>i+1}^s \ell_j^s b_j^s\right)^2 $, and column (3) is the product of (1) and (2); all of these are deployed in Equation 3.15.
 > 
-> The age-specific survival rates, $ \ell_i $, in the following table were extracted directly from Clutton-Brock et al. (1982), while the age-specific reproductive schedules, $ b_i^f $ and $ b_i^m $, were estimated from behavioral and demographic observations of the authors and adjusted downward to maintain a stable population size. The columns marked (1) and (2) are $ \left[\left(1/\ell_{i+1}^s\right) - \left(1/\ell_i^s\right)\right] $ and $ \left(\sum_{j>i+1}^s \ell_j^s b_j^s\right)^2 $, and column (3) is the product of (1) and (2); all of these are deployed in Equation 3.15.
+> > **Inline Table 1** · `inline_1` · page 9 · source: `chapter3_005`
+> > Inline Table 1
+> >
+> > <table><tr><td>Age</td><td colspan="5">Females</td><td colspan="5">Males</td></tr><tr><td>i</td><td>$ \ell_{i}^{f} $</td><td>$ b_{i}^{f} $</td><td>(1)</td><td>(2)</td><td>(3)</td><td>$ \ell_{i}^{m} $</td><td>$ b_{i}^{m} $</td><td>(1)</td><td>(2)</td><td>(3)</td></tr><tr><td>1</td><td>1.00</td><td>0.00</td><td>0.33</td><td>0.25</td><td>0.08</td><td>1.00</td><td>0.00</td><td>0.45</td><td>5.97</td><td>2.69</td></tr><tr><td>2</td><td>0.75</td><td>0.00</td><td>0.12</td><td>0.25</td><td>0.03</td><td>0.69</td><td>0.00</td><td>0.22</td><td>5.97</td><td>1.31</td></tr><tr><td>3</td><td>0.69</td><td>0.00</td><td>0.02</td><td>0.25</td><td>0.01</td><td>0.60</td><td>0.00</td><td>0.03</td><td>5.97</td><td>0.18</td></tr><tr><td>4</td><td>0.68</td><td>0.18</td><td>0.04</td><td>0.24</td><td>0.01</td><td>0.59</td><td>0.00</td><td>0.03</td><td>5.97</td><td>0.18</td></tr><tr><td>5</td><td>0.66</td><td>0.26</td><td>0.07</td><td>0.22</td><td>0.02</td><td>0.58</td><td>0.00</td><td>0.03</td><td>5.97</td><td>0.18</td></tr><tr><td>6</td><td>0.63</td><td>0.33</td><td>0.05</td><td>0.21</td><td>0.01</td><td>0.57</td><td>0.34</td><td>0.03</td><td>5.92</td><td>0.18</td></tr><tr><td>7</td><td>0.61</td><td>0.34</td><td>0.06</td><td>0.19</td><td>0.01</td><td>0.56</td><td>0.26</td><td>0.03</td><td>5.88</td><td>0.18</td></tr><tr><td>8</td><td>0.59</td><td>0.40</td><td>0.06</td><td>0.17</td><td>0.01</td><td>0.55</td><td>0.60</td><td>0.10</td><td>5.59</td><td>0.56</td></tr><tr><td>9</td><td>0.57</td><td>0.42</td><td>0.03</td><td>0.16</td><td>0.01</td><td>0.52</td><td>0.53</td><td>0.12</td><td>5.30</td><td>0.64</td></tr><tr><td>10</td><td>0.56</td><td>0.34</td><td>0.07</td><td>0.14</td><td>0.01</td><td>0.49</td><td>0.79</td><td>0.40</td><td>3.94</td><td>1.58</td></tr><tr><td>11</td><td>0.54</td><td>0.46</td><td>0.03</td><td>0.13</td><td>0.00</td><td>0.41</td><td>0.53</td><td>0.42</td><td>3.11</td><td>1.31</td></tr><tr><td>12</td><td>0.53</td><td>0.42</td><td>0.20</td><td>0.08</td><td>0.02</td><td>0.35</td><td>0.45</td><td>1.69</td><td>1.00</td><td>1.69</td></tr><tr><td>13</td><td>0.48</td><td>0.45</td><td>0.19</td><td>0.04</td><td>0.01</td><td>0.22</td><td>0.08</td><td>2.60</td><td>0.63</td><td>1.64</td></tr><tr><td>14</td><td>0.44</td><td>0.40</td><td>0.23</td><td>0.01</td><td>0.00</td><td>0.14</td><td>0.20</td><td>3.97</td><td>—</td><td>—</td></tr><tr><td>15</td><td>0.40</td><td>0.25</td><td>0.20</td><td>—</td><td>—</td><td>0.09</td><td>—</td><td>—</td><td>—</td><td>—</td></tr><tr><td>16</td><td>0.37</td><td>0.00</td><td>—</td><td>—</td><td>—</td><td>0.05</td><td>—</td><td>—</td><td>—</td><td>—</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td>0.23</td><td></td><td></td><td></td><td>12.32</td><td></td></tr></table>
 > 
-> The summations in the denominator of Equation 3.15 reflect the variation in lifetime reproductive success of females and males. As outlined in the table, these terms are equal to 0.23 and 12.32, respectively, indicating a great inequity between the reproductive properties of the sexes. This results because male red deer appropriate harems, and older males are much more successful at doing so than young ones. The few males that live to an old age may father up to two dozen offspring in their lifetimes, whereas males that die before the age of five ($ \sim $40% of newborn males) have no reproductive success at all. On the other hand, almost all females reproduce to some degree once they have attained reproductive maturity.
 > 
-> Substituting the sums from the table into Equation 3.15, the effective population size is found to be $ 0.98N_bT/[1+(1-0.43)(0.23)+0.43(12.32)]=0.15N_bT $. Thus, the effective size of this population is $ \sim15% $ of the number of offspring produced by the population per generation. The mean generation time through females and males is 9.47 and 9.18 years, so $ T\simeq9.32 $, and the annual number of offspring produced by the population is $ N_b\simeq270 $. Thus, $ N_e\simeq0.15\times270\times9.32=377 $.
+> The summations in the denominator of Equation 3.15 reflect the variation in lifetime reproductive success of females and males. As outlined in the table, these terms are equal to 0.23 and 12.32, respectively, indicating a great inequity between the reproductive properties of the sexes. This results because male red deer appropriate harems, and older males are much more successful at doing so than young ones. The few males that live to an old age may father up to two dozen offspring in their lifetimes, whereas males that die before the age of five ( $ \sim $40% of newborn males) have no reproductive success at all. On the other hand, almost all females reproduce to some degree once they have attained reproductive maturity. Substituting the sums from the table into Equation 3.15, the effective population size is found to be $ 0.98N_bT/[1+(1-0.43)(0.23)+0.43(12.32)]=0.15N_bT $. Thus, the effective size of this population is $ \sim15\% $ of the number of offspring produced by the population per generation. The mean generation time through females and males is 9.47 and 9.18 years, so $ T\simeq9.32 $, and the annual number of offspring produced by the population is $ N_b\simeq270 $. Thus, $ N_e\simeq0.15\times270\times9.32=377 $.
 
 
 ---
@@ -316,6 +318,15 @@ For the case of species with separate sexes, with $ \beta $ being the fraction o
 
 It is important to bear in mind that, when applied to matters of genetic variation, the equations for $ N_e $ given above are appropriate for predicting the expected loss of heterozygosity resulting from inbreeding at the population level. When variation in pedigree structure exists among individuals, as will almost always be the case in nature, the actual degree of inbreeding will generally vary among loci within individuals as well as among individuals within the population. Given a cumulative level of inbreeding (loss of heterozygosity) at a locus equal to f, identity by descent will be binomially distributed among individuals with mean f and variance $ \sigma_f^2 = f(1 - f) $. With completely linked loci, this is also the total variance in f, as there will be no variation in f among loci. However, for unlinked loci, the realized inbreeding at each locus need not be the same. Weir et al. (1980) found that the coefficient of variation of $ (1 - f) $ among individuals is approximately $ (3N_e)^{-1/2} $ for randomly mating monocious populations, $ (6N_e)^{-1/2} $ for randomly mating but monogamous, dioecious populations, and $ (12N_e)^{-1/2} $ for monoccy with selfing excluded and for dioecy with random mating. These asymptotic values are reached in only a few generations. Thus, provided the population size and number of constituent loci are moderately large, the variation in inbreeding is negligible for most practical purposes (see also Franklin 1977; Cockerham and Weir 1983).
 
+**[Figure]**
+
+> **Figure 3.1** · page 12 · source: `chapter3`
+>
+> ![Figure 3.1](../figures/fig_0189.png)
+>
+> Figure 3.1 Erosion of expected heterozygosity under continuous breeding schemes involving self-fertilization, full-sib mating, and double first-cousin mating.
+
+
 **[推导 Derivation]**
 
 In contrast to the usual situation, one can also envision (and implement) systems of mating involving fixed relationships such that all members of the population have exactly the same average inbreeding coefficient over all loci (Wright 1921b). Consider first the most extreme form of inbreeding—obligate self-fertilization, a mode of reproduction in some plants and hermaphroditic animals. Because under this scheme of mating all individuals are reproductively isolated, a collection of such lines is equivalent to a series of populations, each consisting of a single individual, and after t generations of selfing, the expected fraction of heterozygotes at any locus is reduced to
@@ -355,6 +366,15 @@ Moving on, with a constant population size of four breeding adults, the minimum 
 
 
 (Wright 1921b). The number of generations required for the loss of 90% heterozygosity is now 30 (Figure 3.1).
+
+**[Figure]**
+
+> **Figure 3.2** · page 13 · source: `chapter3`
+>
+> ![Figure 3.2](../figures/fig_0190.png)
+>
+> Figure 3.2 Mating schemes under continuous double first-cousin mating (left) and under circular mating with four individuals (right). Genes that are identical by descent do not appear in the same individual for three and four generations, respectively, under these two schemes. Males and females are denoted by separate symbols (squares and circles), and lines connect parents (above) and offspring (below).
+
 
 These types of results are of special interest to managers of small, captive populations of endangered species and/or breeding stocks viewed as genetic resources for the future. Here we consider just one of the many practical questions that arise in these areas. Given a limited number of founders and an upper ceiling on the number of individuals that can be maintained, what is the optimal breeding scheme for minimizing the erosion of genetic variation? Wright (1921b) suggested that the best way to minimize the loss of heterozygosity from a small population would be to restrict matings to pairs of individuals with the least degree of relatedness. Such a breeding scheme, known as maximum avoidance of inbreeding (MAI), is exemplified by all three of the special mating systems just noted—in each case, matings occur between the most distantly related individuals within each line. An added advantage of MAI is that for a population size of $ N = 2^m $, $ m $ generations will pass before any inbreeding occurs at all. For example, with $ N = 64 $, $ m + 1 = 7 $ generations would pass before two copies of a founding gene could appear in the same individual under a maximum avoidance scheme. Once the inbreeding begins, the proportion of heterozygosity lost each generation is very nearly constant, approaching an asymptotic value of $ 1/(4N - m - 1) $ (Robertson 1964), which, with $ N = 4 $ and $ m = 2 $ under double first-cousin mating, equals 0.08, giving the fraction retained as $ 1 - 0.08 = 0.92 $, recovering Equation 3.24.
 
@@ -433,7 +453,7 @@ Before proceeding, it must be emphasized that because $ N_{e} $ is defined in th
 
 ---
 
-## chapter3_011 · The Genetic Effective Size of a Population: Introduction / Effects From Selection at Unlinked Loci
+## chapter3_011 · SELECTION, RECOMBINATION, AND HITCHHIKING EFFECTS / Effects From Selection at Unlinked Loci
 
 **[推导 Derivation]**
 
@@ -475,7 +495,7 @@ Equations 3.29b and 3.29bc are quite general in the sense that they apply to any
 
 ---
 
-## chapter3_012 · The Genetic Effective Size of a Population: Introduction / Selective Sweeps and Genetic Draft
+## chapter3_012 · SELECTION, RECOMBINATION, AND HITCHHIKING EFFECTS / Selective Sweeps and Genetic Draft
 
 The effects of linked loci on $ N_{e} $ are substantially greater than those from unlinked loci for the simple reason that chromosomesally juxtaposed sites are necessarily mutually influenced by each other's fitness attributes for extended periods. For example, a neutral allele linked to a site under positive selection can hitchhike to high frequencies (and even fixation) if the force of selection is strong relative to the recombination rate between the sites (Maynard Smith and Haigh 1974). One direct consequence of this reduction in $ N_{e} $ is a depressed amount of molecular variation at neutral sites in regions of low recombination, an expectation that is in agreement with many empirical observations (Chapter 8). However, as will be emphasized in the next section, the periodic fixation of favorable alleles is just one potential explanation for this kind of observation, an alternative hypothesis being background selection, the constant purging of new deleterious mutations (Charlesworth 2012).
 
@@ -514,7 +534,7 @@ which will be further discussed in Chapter 8.
 
 ---
 
-## chapter3_013 · The Genetic Effective Size of a Population: Introduction / Background Selection
+## chapter3_013 · SELECTION, RECOMBINATION, AND HITCHHIKING EFFECTS / Background Selection
 
 We now turn to the influence of selection against recurrently appearing deleterious mutations, which cause a still further reduction in $ N_{e} $ as a consequence of induced variation in family size. Contrary to the situation with selective sweeps, which are sporadic and chromosomally restricted in scope, the effects of recurrent deleterious mutations are expected to be persistent across the entire genome for the simple reason that the vast majority of mutations are deleterious (LW Chapter 10). Here we attempt to provide a heuristic understanding of the effects of such background selection by considering separately the effects of unlinked and linked deleterious mutations, relying on a simple model in which interfering loci harbor two alternative allelic types (beneficial and deleterious).
 
@@ -579,7 +599,7 @@ Finally, it is worth noting that some conditions exist under which selection may
 
 > **Example 3.6** · ref: `3.6` · source: `chapter3_013.json` · blocks 9–9
 >
-> Example 3.6. Because natural populations are subject to both positive and negative selective forces, the total influence of selection on $ N_{e} $ must reflect both background selection and selective sweeps. This necessarily raises even more technical issues than were outlined above. Significant progress was made by Kim and Stephan (2000), and here we simply outline the basic result. If background selection operates as an essentially continuous process resulting from the recurrent introduction of deleterious alleles, the depressive effects of both forms of selection, as well as baseline demographic effects, may be treated as largely independent. The reduction in $ N_{e} $ resulting from background selection can then be obtained by use of one of the above expressions, e.g., Equation 3.35b as a first-order approximation for a sexual population (with N already taking into consideration demographic effects).
+> Example 3.6. Because natural populations are subject to both positive and negative selective forces, the total influence of selection on $ N_{e} $ must reflect both background selection and selective sweeps. This necessarily raises even more technical issues than were outlined above. Significant progress was made by Kim and Stephan (2000), and here we simply outline the basic result. If background selection operates as an essentially continuous process resulting from the recurrent introduction of deleterious alleles, the depressive effects of both forms of selection, as well as baseline demographic effects, may be treated as largely independent. The reduction in $ N_{e} $ resulting from background selection can then be obtained by use of one of the above expressions, e.g., Equation 3.35b as a first-order approximation for a sexual population (with N already taking into consideration demographic effects). Consider a large monocouous population of constant breeding size and variance in family size $ \sigma_k^2 = 4 $. Based on demographic considerations alone, from Equation 3.4, $ N_e \simeq 2N/3 $. Letting $ U = 1 $ and $ C = 1 $, Equation 3.35b implies that background deleterious mutations further reduce $ N_e $ to $ (2N/3)e^{-1} \simeq 0.25N $. The effective population size dictated by these demographic and deleterious-mutation processes further defines the background $ N_e' $ within which occasional beneficial mutations arise and sweep to fixation, so that the effective population size resulting from the joint operation of all three effects can be approximated by substituting $ N_e' $ for $ N $ in Equation 3.30b. Supposing a complete sweep occurs every 10,000 generations (so that $ f_s = 1 $ and $ \delta = 0.0001 $), then $ N_e = 0.25N/[1 + (0.50N \cdot 0.0001)] $. With $ N = 10^4 $, $ 10^6 $, and $ 10^8 $, this implies $ N_e/N \simeq 0.17 $, 0.0049, and 0.00005, respectively. In general, the joint operation of background selection and selective sweeps will reduce $ N_{e} $ more than either does alone, although it is, at least in principle, possible for background selection to reduce the influence of selective sweeps in regions of very low recombination by depressing $ N_{e} $, which in turn will reduce the fixation probability of favorable alleles (Chapters 7 and 8). The simultaneous operation of positive selection on multiple loci (which was ignored in the derivation of Equations 3.30a and 3.30b) can also slightly alleviate the overall effects of selection on $ N_{e} $ as simultaneously segregating mutations interfere with each other's fixation, thereby reducing the incidence of complete selective sweeps (Kim and Stephan 2003). These issues are examined in greater detail in Chapter 8.
 
 
 ---

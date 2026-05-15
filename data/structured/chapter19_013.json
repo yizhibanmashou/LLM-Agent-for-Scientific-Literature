@@ -2,7 +2,7 @@
   "id": "chapter19_013",
   "metadata": {
     "chapter": "chapter19",
-    "section": "Analysis of Short-term Selection Experiments: 2. Mixed-model and Bayesian Approaches: Introduction",
+    "section": "ANIMAL-MODEL ANALYSIS OF SELECTION EXPERIMENTS",
     "subsections": [
       "Separating Genetic and Environmental Trends"
     ],
@@ -14,10 +14,10 @@
       "19.11"
     ],
     "table_references": [],
-    "section_level_1": "Analysis of Short-term Selection Experiments: 2. Mixed-model and Bayesian Approaches: Introduction",
+    "section_level_1": "ANIMAL-MODEL ANALYSIS OF SELECTION EXPERIMENTS",
     "section_level_2": "Separating Genetic and Environmental Trends",
     "heading_path": [
-      "Analysis of Short-term Selection Experiments: 2. Mixed-model and Bayesian Approaches: Introduction",
+      "ANIMAL-MODEL ANALYSIS OF SELECTION EXPERIMENTS",
       "Separating Genetic and Environmental Trends"
     ],
     "display_heading": "Separating Genetic and Environmental Trends"
@@ -26,34 +26,6 @@
     {
       "type": "discussion",
       "content": "Observed improvement in a trait over time (such as milk yield) may be due entirely to improvement in the environment (better husbandry and nutrition), entirely from genetic changes (response from selected breeding), or (most likely) a combination of both. Thus, it is critical to partition an observed phenotypic change into genetic and environmental components. For example, Southwood and Kennedy (1991) showed that the improvement in several litter-size-related traits in pigs over a 10-year period in Quebec was entirely due to environmental, rather than genetic, changes. Recent plant examples are given by Laidig et al. (2014, 2017) and Piepho et al. (2014)."
-    },
-    {
-      "type": "derivation",
-      "content": "In a least-squares analysis, any underlying environmental trend is assumed to be removed by contrasting selected and control populations (or contrasting populations selected in opposite directions). The rationale is that the $ k^{th} $ individual from population j in generation t can be described as [[SEE_FORMULA:19.9]] where $ b_{j,t} $ is the environmental trend in population j. If the common environmental value is the same in both the selected and the control populations ($ b_{s,t} = b_{c,t} $), then the difference in phenotypic means in generation t between these populations is [[SEE_FORMULA:19.10]] Because the residuals, e, have an expected value of zero, this contrast provides an unbiased estimate of $ \\overline{a}_{s,t} $ provided there is no significant drift in the mean breeding value of the control population (meaning that $ \\overline{a}_{c,t} \\simeq 0 $). However, if genotype-environment interactions are present, the environmental values can differ between populations, in which case Equation 19.10 has an additional term, $ (b_{s,t} - b_{c,t}) $. Hence, even when a control population is used, a least-squares analysis can still give biased results if there is significant drift in the mean of the control population ($ |\\overline{a}_{c,t}| \\gg 0 $) or significant $ G \\times E $."
-    },
-    {
-      "type": "discussion",
-      "content": "Insight into another way in which the use of a control in an LS analysis can be misleading was offered by Su et al. (1997), who examined response in body weight in chickens starting from a base population with a known previous history of selection on this trait. Because of prior selection, the base population showed a slippage of the mean back to the original (unselected) value. If this population was used as a control, this slippage would be taken as a decay in the environment over time, resulting in an overestimation of the selection response when using an LS analysis. Because of this concern, Su et al. used a mixed model to estimate the genetic response."
-    },
-    {
-      "type": "discussion",
-      "content": "A mixed-model analysis estimates the mean breeding value, rather than the phenotypic mean, of the population, which allows for this separation of the genetic change from any environmental change (Henderson et al. 1959; Blair and Pollak 1984; Sorensen and Kennedy 1984a; Kennedy 1990). Such a separation is possible because A tracks the flow of genes through the population, which allows us to make estimates of breeding values independent of environmental effects by borrowing information from relatives across generations. This is dependent on the model assumptions holding, but when they do, a mixed-model analysis does not require a control population. This being said, Sorensen et al. (2003) showed that the inclusion of a control in an MM analysis generally improves the efficiency of estimates (resulting in smaller standard errors)."
-    },
-    {
-      "type": "derivation",
-      "content": "Common-environment effects are incorporated into the basic animal model by simply adding a fixed effect, $ b_{t} $, for the common environmental effect in generation t [[SEE_FORMULA:19.11]]"
-    },
-    {
-      "type": "discussion",
-      "content": "For $T$ generations, there are $T$ estimable fixed effects ($\\mu$ and all but one $b_t$). Typically, one either constrains the $b_t$ to sum to zero or arbitrarily sets one of the $b_t$ equal to zero. We do the latter with $b_1$, so the vector of fixed effects becomes $$ \\boldsymbol{\\beta}=(\\mu,b_{2},\\cdots,b_{T})^{T} $$ and the corresponding design matrix, X, has zeros or ones in columns 2 though T, corresponding to the generation in which the individual was scored $$ \\mathbf{X}=\\begin{pmatrix}{{{1}}}&{{{0}}}&{{{\\cdots}}}&{{{0}}} \\\\{{{1}}}&{{{0}}}&{{{\\cdots}}}&{{{0}}} \\\\{{{\\vdots}}}&{{{\\vdots}}} \\\\{{{1}}}&{{{1}}}&{{{\\cdots}}}&{{{0}}} \\\\{{{1}}}&{{{1}}}&{{{\\cdots}}}&{{{0}}} \\\\{{{\\vdots}}}&{{{\\vdots}}} \\\\{{{1}}}&{{{0}}}&{{{\\cdots}}}&{{{1}}} \\\\{{{1}}}&{{{0}}}&{{{\\cdots}}}&{{{1}}}\\end{pmatrix} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "To remind the reader how X is obtained, recall that Xβ returns a vector that adjusts each observation for the fixed effects. From the rules of matrix multiplication, the adjustment for observation i is the inner product, $ x_i^T\\beta $, where the row vector $ x_i^T $ corresponds to the ith row of X. Likewise, the jth column of X corresponds to the vector of weights (over all observations) for the jth fixed effect. Here, the first column is all ones, as all observations contain the mean, μ. Entries in column 2 (corresponding to b₂) are zero, unless an observation is from generation 2 (and hence has a mean of μ + b₂), in which case the entry is 1, and so forth. Hence, the first two displayed rows of the above X correspond to observations from generation 1, which have means of μ, the second pair of displayed rows to generation 2 (with means of μ + b₂), and the last pair to generation T (with means of μ + bT)."
-    },
-    {
-      "type": "proposition",
-      "content": "An alternative approach is to treat the $ b_i $ as random (as opposed to fixed) effects, drawn independently (i.e., uncorrelated across generations) from a normal distribution with a mean of zero and an unknown variance, $ \\sigma_b^2 $. The assumption of no environmental correlation between adjacent generations can be questionable (at best), and treating the $ b_i $ as fixed, rather than random, removes these concerns (although at a cost of absorbing more degrees of freedom than with a random-effects analysis)."
     },
     {
       "type": "example",

@@ -2,7 +2,7 @@
   "id": "appendix2_008",
   "metadata": {
     "chapter": "appendix2",
-    "section": "Appendix: Introduction",
+    "section": "SUMMARIZING THE POSTERIOR DISTRIBUTION",
     "subsections": [
       "Bayes Factors and Hypothesis Testing"
     ],
@@ -10,10 +10,10 @@
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [],
     "table_references": [],
-    "section_level_1": "Appendix: Introduction",
+    "section_level_1": "SUMMARIZING THE POSTERIOR DISTRIBUTION",
     "section_level_2": "Bayes Factors and Hypothesis Testing",
     "heading_path": [
-      "Appendix: Introduction",
+      "SUMMARIZING THE POSTERIOR DISTRIBUTION",
       "Bayes Factors and Hypothesis Testing"
     ],
     "display_heading": "Bayes Factors and Hypothesis Testing"
@@ -46,6 +46,18 @@
     {
       "type": "example",
       "content": "[[SEE_EXAMPLE:A2.3]]"
+    },
+    {
+      "type": "discussion",
+      "content": "When the hypotheses are simple (i.e., single values), say $ \\Theta_0 = \\theta_0 $ vs. $ \\Theta_1 = \\theta_1 $, $$ p_{i}\\propto p(\\theta_{i})p(\\mathbf{x}\\mid\\theta_{i})=\\pi_{i}p(\\mathbf{x}\\mid\\theta_{i})\\quad for\\quad i=0,1 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Thus $$ \\frac{p_{0}}{p_{1}}=\\frac{\\pi_{0}p(\\mathbf{x}\\mid\\theta_{0})}{\\pi_{1}p(\\mathbf{x}\\mid\\theta_{1})} $$ and from Equation A2.10a, the Bayes factor (in favor of the null) reduces to $$ B_{0}=\\frac{p(\\mathbf{x}\\mid\\theta_{0})}{p(\\mathbf{x}\\mid\\theta_{1})} $$ which is simply a likelihood ratio (LW Appendix 4)."
+    },
+    {
+      "type": "proposition",
+      "content": "When hypotheses are composite (containing multiple elements), the situation is slightly more complicated. First, note that the prior distribution of $ \\theta $ conditioned on $ H_0 $ or $ H_1 $ is $$ p_{i}(\\theta)=p(\\theta)/\\pi_{i}\\qquad for\\quad i=0,1 $$ as the total probability $ \\theta \\in \\Theta_i = \\pi_i $, so dividing by $ \\pi_i $ normalizes the distribution to integrate to one. Thus, $$ \\begin{aligned}p_{i}&=\\Pr(\\theta\\in\\Theta_{i}\\mid\\mathbf{x})=\\int_{\\theta\\in\\Theta_{i}}p(\\theta\\mid\\mathbf{x})d\\theta\\\\&=\\frac{1}{p(\\mathbf{x})}\\int_{\\theta\\in\\Theta_{i}}p(\\theta)p(\\mathbf{x}\\mid\\theta)d\\theta\\\\&=\\pi_{i}\\int_{\\theta\\in\\Theta_{i}}p(\\mathbf{x}\\mid\\theta)p_{i}(\\theta)d\\theta\\\\ \\end{aligned} $$ where the second step follows from Bayes' theorem, while the final step follows from Equation A2.12. The Bayes factor in favor of the null hypothesis becomes $$ B_{0}=\\left(\\frac{p_{0}}{\\pi_{0}}\\right)\\left(\\frac{\\pi_{1}}{p_{1}}\\right)=\\frac{\\int_{\\theta\\in\\Theta_{0}}p(\\mathbf{x}\\mid\\theta)p_{0}(\\theta)d\\theta}{\\int_{\\theta\\in\\Theta_{1}}p(\\mathbf{x}\\mid\\theta)p_{1}(\\theta)d\\theta} $$ which is a ratio of the weighted likelihoods of $ \\Theta_{0} $ and $ \\Theta_{1} $"
     }
   ]
 }

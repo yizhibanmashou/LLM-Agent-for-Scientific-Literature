@@ -1195,6 +1195,34 @@ def _table_replacement_candidate_payload(
     }
 
 
+def _evidence_order_key(evidence: OCREvidence) -> tuple[int, float, int]:
+    page = evidence.page if evidence.page is not None else 10**9
+    try:
+        order = float(evidence.order)
+    except (TypeError, ValueError):
+        order = 10**9
+    channel_rank = 0 if evidence.source_channel in {"paddle_visual", "paddle"} else 1
+    return int(page), order, channel_rank
+
+
+def _best_physical_table_evidence(evidences: list[OCREvidence]) -> OCREvidence | None:
+    physical = [
+        evidence
+        for evidence in evidences
+        if evidence.page is not None and (evidence.bbox is not None or evidence.source_channel in {"paddle_visual", "paddle"})
+    ]
+    if not physical:
+        return None
+    def score(evidence: OCREvidence) -> tuple[int, int, int, tuple[int, float, int]]:
+        payload = evidence.source_payload if isinstance(evidence.source_payload, dict) else {}
+        has_following = 1 if isinstance(payload.get("following_body"), dict) else 0
+        channel_rank = 2 if evidence.source_channel == "paddle_visual" else 1 if evidence.source_channel == "paddle" else 0
+        has_bbox = 1 if evidence.bbox is not None else 0
+        return has_following, channel_rank, has_bbox, tuple(-part if isinstance(part, int) else -part for part in _evidence_order_key(evidence))
+
+    return max(physical, key=score)
+
+
 def _audit_ocr_table_bindings(
     *,
     table_library: TableLibrary,
@@ -1232,6 +1260,29 @@ def _audit_ocr_table_bindings(
             scored_evidences.append((evidence, quality, score))
 
         scored_evidences.sort(key=lambda item: (item[1], item[2]["overall"]), reverse=True)
+        physical_evidence = _best_physical_table_evidence([evidence for evidence, _quality, _score in scored_evidences])
+        if physical_evidence is not None:
+            source = dict(entry.source or {})
+            old_page = source.get("page")
+            old_order = source.get("table_order")
+            source["page"] = physical_evidence.page
+            source["table_order"] = physical_evidence.order
+            if physical_evidence.bbox is not None:
+                source["bbox"] = physical_evidence.bbox
+            payload = physical_evidence.source_payload if isinstance(physical_evidence.source_payload, dict) else {}
+            if payload.get("caption_bbox") is not None:
+                source["caption_bbox"] = payload.get("caption_bbox")
+            if isinstance(payload.get("preceding_body"), dict):
+                source["preceding_body"] = payload.get("preceding_body")
+            if isinstance(payload.get("following_body"), dict):
+                source["following_body"] = payload.get("following_body")
+            source["physical_evidence_channel"] = physical_evidence.source_channel
+            source["physical_evidence_path"] = physical_evidence.source_path
+            source["physical_evidence_hash"] = physical_evidence.stable_hash()
+            if old_page != source.get("page") or old_order != source.get("table_order"):
+                source["fusion_repair_physical_source"] = "ocr_physical_table_evidence"
+                stats["table_physical_source_rebound"] += 1
+            entry.source = source
         best_structured_score = scored_evidences[0][2] if scored_evidences else {}
         if _is_missing_table_stub(entry) and scored_evidences and scored_evidences[0][1] >= TABLE_EVIDENCE_STRONG_QUALITY:
             primary_evidence = scored_evidences[0][0]
@@ -1501,6 +1552,206 @@ def _find_token_subsequence(values: list[str], needle: list[str]) -> int | None:
     return None
 
 
+def _content_token_spans(content: str) -> list[tuple[str, int, int]]:
+    return [
+        (match.group(0).lower(), match.start(), match.end())
+        for match in re.finditer(r"[0-9A-Za-z]+", content or "")
+    ]
+
+
+def _fuzzy_token_match_end(
+    values: list[str],
+    needle: list[str],
+    *,
+    start: int,
+    min_needle_tokens: int,
+) -> int | None:
+    """Return the exclusive value-token end for a compact token match.
+
+    OCR/LaTeX cleanup sometimes turns a normalized table token sequence like
+    ``2 n e s`` into structured text tokens such as ``2n e s``.  Table-body
+    residue detection should survive those harmless joins without treating a
+    mere prose mention as the table body.
+    """
+
+    if not needle or start >= len(values):
+        return None
+    matched_needle = 0
+    value_index = start
+    while matched_needle < len(needle) and value_index < len(values):
+        value = values[value_index]
+        current = needle[matched_needle]
+        if value == current:
+            matched_needle += 1
+            value_index += 1
+            continue
+
+        compact = ""
+        compact_index = matched_needle
+        while compact_index < len(needle) and len(compact) < len(value):
+            compact += needle[compact_index]
+            compact_index += 1
+            if compact == value:
+                matched_needle = compact_index
+                value_index += 1
+                break
+        else:
+            break
+
+    if matched_needle >= min_needle_tokens:
+        return value_index
+    return None
+
+
+def _find_fuzzy_token_span(
+    values: list[str],
+    needle: list[str],
+    *,
+    start_token: int = 0,
+    min_needle_tokens: int | None = None,
+) -> tuple[int, int] | None:
+    if not needle:
+        return None
+    min_tokens = min_needle_tokens if min_needle_tokens is not None else len(needle)
+    min_tokens = max(1, min(min_tokens, len(needle)))
+    for pos in range(max(0, start_token), len(values)):
+        end = _fuzzy_token_match_end(values, needle, start=pos, min_needle_tokens=min_tokens)
+        if end is not None:
+            return pos, end
+    return None
+
+
+def _record_matching_anchor(
+    *,
+    records: list[UnitRecord],
+    chapter: str,
+    anchor_text: str,
+) -> UnitRecord | None:
+    anchor_tokens = normalize_match_text(anchor_text).split()
+    if len(anchor_tokens) < 3:
+        return None
+    anchor = anchor_tokens[: min(16, len(anchor_tokens))]
+    for record in records:
+        if chapter and record.unit.chapter != chapter:
+            continue
+        heading_texts = [
+            record.unit.section,
+            record.unit.section_level_1 or "",
+            record.unit.section_level_2 or "",
+            record.unit.display_heading or "",
+            *record.unit.subsections,
+            *record.unit.heading_path,
+        ]
+        for heading_text in heading_texts:
+            heading_tokens = normalize_match_text(heading_text).split()
+            if heading_tokens and _find_token_subsequence(heading_tokens, anchor) is not None:
+                return record
+            if len(heading_tokens) >= 3 and _find_token_subsequence(anchor_tokens, heading_tokens[: min(16, len(heading_tokens))]) is not None:
+                return record
+        if len(anchor_tokens) < 6:
+            continue
+        for block in record.unit.blocks:
+            block_tokens = normalize_match_text(block.content).split()
+            if _find_token_subsequence(block_tokens, anchor) is not None:
+                return record
+    return None
+
+
+def _physical_owner_record_for_table(
+    *,
+    records: list[UnitRecord],
+    table_entry: TableEntry,
+) -> tuple[UnitRecord | None, str]:
+    physical_record = _first_record_after_table_evidence(records=records, table_entry=table_entry)
+    if physical_record is not None:
+        return physical_record, "structured_fusion_table_following_body_anchor"
+    source = table_entry.source if isinstance(table_entry.source, dict) else {}
+    if not _table_is_page_top_float(source):
+        return None, ""
+    physical_record = _record_before_table_evidence(records=records, table_entry=table_entry)
+    if physical_record is not None:
+        return physical_record, "structured_fusion_table_preceding_body_anchor"
+    physical_record = _record_before_following_heading(records=records, table_entry=table_entry)
+    if physical_record is not None:
+        return physical_record, "structured_fusion_table_before_following_heading"
+    return None, ""
+
+
+def _table_is_page_top_float(source: dict[str, Any]) -> bool:
+    caption_bbox = source.get("caption_bbox") if isinstance(source.get("caption_bbox"), list) else None
+    table_bbox = source.get("bbox") if isinstance(source.get("bbox"), list) else None
+    try:
+        top = float(caption_bbox[1] if caption_bbox and len(caption_bbox) >= 2 else table_bbox[1])
+    except (TypeError, ValueError, IndexError):
+        return False
+    return top <= 260
+
+
+def _first_record_after_table_evidence(
+    *,
+    records: list[UnitRecord],
+    table_entry: TableEntry,
+) -> UnitRecord | None:
+    source = table_entry.source if isinstance(table_entry.source, dict) else {}
+    if str(table_entry.table_type or "").strip().lower() == "formula_table":
+        return None
+    following_body = source.get("following_body") if isinstance(source.get("following_body"), dict) else None
+    following_label = str((following_body or {}).get("label") or "").strip().lower()
+    if following_label == "paragraph_title" and _table_is_page_top_float(source):
+        return None
+    chapter = str(source.get("chapter") or _chapter_from_table_id(str(table_entry.id or ""))).strip().lower()
+    return _record_matching_anchor(
+        records=records,
+        chapter=chapter,
+        anchor_text=str((following_body or {}).get("content") or ""),
+    )
+
+
+def _record_before_table_evidence(
+    *,
+    records: list[UnitRecord],
+    table_entry: TableEntry,
+) -> UnitRecord | None:
+    source = table_entry.source if isinstance(table_entry.source, dict) else {}
+    preceding_body = source.get("preceding_body") if isinstance(source.get("preceding_body"), dict) else None
+    if not preceding_body:
+        return None
+    chapter = str(source.get("chapter") or _chapter_from_table_id(str(table_entry.id or ""))).strip().lower()
+    return _record_matching_anchor(
+        records=records,
+        chapter=chapter,
+        anchor_text=str(preceding_body.get("content") or ""),
+    )
+
+
+def _record_before_following_heading(
+    *,
+    records: list[UnitRecord],
+    table_entry: TableEntry,
+) -> UnitRecord | None:
+    source = table_entry.source if isinstance(table_entry.source, dict) else {}
+    following_body = source.get("following_body") if isinstance(source.get("following_body"), dict) else None
+    following_label = str((following_body or {}).get("label") or "").strip().lower()
+    if following_label != "paragraph_title" or not _table_is_page_top_float(source):
+        return None
+    chapter = str(source.get("chapter") or _chapter_from_table_id(str(table_entry.id or ""))).strip().lower()
+    following_record = _record_matching_anchor(
+        records=records,
+        chapter=chapter,
+        anchor_text=str((following_body or {}).get("content") or ""),
+    )
+    if following_record is None:
+        return None
+    previous: UnitRecord | None = None
+    for record in records:
+        if chapter and record.unit.chapter != chapter:
+            continue
+        if record is following_record:
+            return previous
+        previous = record
+    return None
+
+
 def _materialize_list_tables_in_units(
     *,
     records: list[UnitRecord],
@@ -1514,6 +1765,17 @@ def _materialize_list_tables_in_units(
             continue
         source = entry.source if isinstance(entry.source, dict) else {}
         unit_id = str(source.get("unit_id") or "").strip()
+        physical_record, owner_reason = _physical_owner_record_for_table(records=records, table_entry=entry)
+        if physical_record is not None:
+            unit_id = physical_record.unit.id
+            source = {
+                **source,
+                "unit_id": physical_record.unit.id,
+                "chapter": physical_record.unit.chapter,
+                "subsection": physical_record.unit.subsections[-1] if physical_record.unit.subsections else source.get("subsection"),
+                "physical_owner_rebound_by": owner_reason,
+            }
+            entry.source = source
         record = records_by_unit.get(unit_id)
         table_id = str(entry.id or "").strip()
         if not record or not table_id:
@@ -1521,36 +1783,76 @@ def _materialize_list_tables_in_units(
         placeholder = f"[[TABLE:{table_id}]]"
         if any(placeholder in block.content for block in record.unit.blocks):
             continue
-        anchor_tokens = normalize_match_text(_table_text_anchor(entry)).split()
-        if not anchor_tokens:
-            continue
         for block_index, block in enumerate(record.unit.blocks):
-            token_spans = [
-                (match.group(0).lower(), match.start(), match.end())
-                for match in re.finditer(r"[0-9A-Za-z]+", block.content)
-            ]
+            token_spans = _content_token_spans(block.content)
             values = [token for token, _, _ in token_spans]
-            start_token = _find_token_subsequence(values, anchor_tokens)
-            if start_token is None:
+            if not values:
                 continue
+            first_row_tokens = normalize_match_text(" ".join(str(cell) for cell in (entry.rows or [[""]])[0])).split()
+            if not first_row_tokens:
+                continue
+            first_span = _find_fuzzy_token_span(
+                values,
+                first_row_tokens,
+                min_needle_tokens=min(6, len(first_row_tokens)),
+            )
+            if first_span is None:
+                continue
+            start_token, first_end_token = first_span
+            end_token = first_end_token - 1
+            cursor = first_end_token
+            matched_rows = 1
+            for row in (entry.rows or [])[1:]:
+                row_tokens = normalize_match_text(" ".join(str(cell) for cell in row)).split()
+                if len(row_tokens) < 3:
+                    continue
+                row_span = _find_fuzzy_token_span(
+                    values,
+                    row_tokens,
+                    start_token=cursor,
+                    min_needle_tokens=min(6, len(row_tokens)),
+                )
+                if row_span is None:
+                    continue
+                matched_rows += 1
+                cursor = row_span[1]
+                end_token = row_span[1] - 1
+            if len(entry.rows or []) >= 3 and matched_rows < 3:
+                continue
+            following_body = source.get("following_body") if isinstance(source.get("following_body"), dict) else None
+            following_tokens = normalize_match_text(str((following_body or {}).get("content") or "")).split()
+            if following_tokens:
+                following_span = _find_fuzzy_token_span(
+                    values,
+                    following_tokens[: min(16, len(following_tokens))],
+                    start_token=end_token + 1,
+                    min_needle_tokens=min(8, len(following_tokens)),
+                )
+                if following_span is not None:
+                    end_token = following_span[0] - 1
             start_char = token_spans[start_token][1]
-            end_token = min(len(token_spans) - 1, start_token + len(anchor_tokens) - 1)
             end_char = token_spans[end_token][2]
             while end_char < len(block.content) and block.content[end_char] in ".;:,":
                 end_char += 1
             prefix = block.content[:start_char].strip()
             suffix = block.content[end_char:].strip()
             new_blocks: list[KnowledgeBlock] = []
-            if prefix:
+            if prefix and normalize_match_text(prefix):
                 new_blocks.append(KnowledgeBlock(type=block.type, content=prefix))
+            placeholder_offset = len(new_blocks)
             new_blocks.append(KnowledgeBlock(type="table", content=placeholder))
-            if suffix:
+            if suffix and normalize_match_text(suffix):
                 new_blocks.append(KnowledgeBlock(type=block.type, content=suffix))
             record.unit.blocks = [
                 *record.unit.blocks[:block_index],
                 *new_blocks,
                 *record.unit.blocks[block_index + 1 :],
             ]
+            source = dict(source)
+            source["has_physical_placeholder"] = True
+            source["physical_placeholder_inserted_by"] = "structured_fusion_list_table_materializer"
+            source["physical_placeholder_block_index"] = block_index + placeholder_offset
+            entry.source = source
             stats["list_table_placeholders_inserted"] += 1
             events.append(
                 {
@@ -1558,6 +1860,7 @@ def _materialize_list_tables_in_units(
                     "unit_id": record.unit.id,
                     "action": "insert_list_table_placeholder",
                     "block_index": block_index,
+                    "matched_rows": matched_rows,
                 }
             )
             break
@@ -1621,6 +1924,17 @@ def _materialize_numbered_tables_in_units(
             continue
         source = entry.source if isinstance(entry.source, dict) else {}
         unit_id = str(source.get("unit_id") or "").strip()
+        physical_record, owner_reason = _physical_owner_record_for_table(records=records, table_entry=entry)
+        if physical_record is not None:
+            unit_id = physical_record.unit.id
+            source = {
+                **source,
+                "unit_id": physical_record.unit.id,
+                "chapter": physical_record.unit.chapter,
+                "subsection": physical_record.unit.subsections[-1] if physical_record.unit.subsections else source.get("subsection"),
+                "physical_owner_rebound_by": owner_reason,
+            }
+            entry.source = source
         record = records_by_unit.get(unit_id)
         table_id = str(entry.id or "").strip()
         if not table_id or not entry.rows:
@@ -1629,7 +1943,16 @@ def _materialize_numbered_tables_in_units(
         existing_location = physical_table_locations.get(table_id)
         if existing_location is not None:
             existing_record, existing_block_index = existing_location
-            if str(source.get("unit_id") or "").strip() != existing_record.unit.id:
+            if physical_record is not None and existing_record.unit.id != physical_record.unit.id:
+                existing_record.unit.blocks = [
+                    block
+                    for block in existing_record.unit.blocks
+                    if not (block.type == "table" and block.content.strip() == placeholder)
+                ]
+                existing_location = None
+                physical_table_locations.pop(table_id, None)
+                stats["numbered_table_wrong_physical_placeholder_removed"] += 1
+            elif str(source.get("unit_id") or "").strip() != existing_record.unit.id:
                 updated_source = dict(source)
                 updated_source["unit_id"] = existing_record.unit.id
                 updated_source["chapter"] = existing_record.unit.chapter
@@ -1649,7 +1972,8 @@ def _materialize_numbered_tables_in_units(
                         "block_index": existing_block_index,
                     }
                 )
-            continue
+            if existing_location is not None:
+                continue
         if not record:
             continue
         if source.get("has_physical_placeholder"):
@@ -1726,6 +2050,51 @@ def _materialize_numbered_tables_in_units(
             )
             inserted = True
             break
+        if not inserted and physical_record is not None:
+            insert_index = 0
+            following_body = source.get("following_body") if isinstance(source.get("following_body"), dict) else None
+            preceding_body = source.get("preceding_body") if isinstance(source.get("preceding_body"), dict) else None
+            if owner_reason == "structured_fusion_table_before_following_heading":
+                insert_index = len(record.unit.blocks)
+            elif owner_reason == "structured_fusion_table_preceding_body_anchor":
+                insert_index = len(record.unit.blocks)
+                preceding_tokens = normalize_match_text(str((preceding_body or {}).get("content") or "")).split()
+                if preceding_tokens:
+                    anchor = preceding_tokens[: min(16, len(preceding_tokens))]
+                    for block_index, block in enumerate(record.unit.blocks):
+                        if _find_token_subsequence(normalize_match_text(block.content).split(), anchor) is not None:
+                            insert_index = block_index + 1
+                            break
+            else:
+                following_tokens = normalize_match_text(str((following_body or {}).get("content") or "")).split()
+                if following_tokens:
+                    anchor = following_tokens[: min(16, len(following_tokens))]
+                    for block_index, block in enumerate(record.unit.blocks):
+                        if _find_token_subsequence(normalize_match_text(block.content).split(), anchor) is not None:
+                            insert_index = block_index
+                            break
+            if owner_reason == "structured_fusion_table_following_body_anchor" and following_body:
+                anchor = following_tokens[: min(16, len(following_tokens))]
+                for block_index, block in enumerate(record.unit.blocks):
+                    if _find_token_subsequence(normalize_match_text(block.content).split(), anchor) is not None:
+                        insert_index = block_index
+                        break
+            record.unit.blocks.insert(insert_index, KnowledgeBlock(type="table", content=placeholder))
+            source = dict(source)
+            source["has_physical_placeholder"] = True
+            source["physical_placeholder_inserted_by"] = "structured_fusion_following_body_anchor"
+            source["physical_placeholder_block_index"] = insert_index
+            entry.source = source
+            stats["numbered_table_placeholders_inserted_by_following_body"] += 1
+            events.append(
+                {
+                    "table_id": table_id,
+                    "unit_id": record.unit.id,
+                    "action": "insert_numbered_table_placeholder_by_following_body",
+                    "block_index": insert_index,
+                }
+            )
+            inserted = True
         if inserted or not extracted_from_raw:
             continue
         if not (has_unit_reference or has_explicit_see_ref):
@@ -2122,6 +2491,11 @@ def apply_structured_fusion(
     )
     table_stats.update(residue_table_stats)
     table_events.extend(residue_table_events)
+    same_unit_duplicate_stats, same_unit_duplicate_events = _remove_duplicate_physical_table_placeholders_within_units(
+        records=records,
+    )
+    table_stats.update(same_unit_duplicate_stats)
+    table_events.extend(same_unit_duplicate_events)
 
     ref_stats = _refresh_unit_references(
         records=records,

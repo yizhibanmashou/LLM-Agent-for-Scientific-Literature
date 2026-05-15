@@ -1,4 +1,4 @@
-# Chapter 24 Textbook Mapping
+# Chapter 24 · The Infinitesimal Model and Its Extensions
 
 ## chapter24_001 · The Infinitesimal Model and Its Extensions: Introduction
 
@@ -28,7 +28,7 @@ We then introduce the Gaussian approximation, one of a broad group of continuum-
 > Gaussian populationsThe distribution of breeding values in a population is Gaussian. | 
 
 
-model, thus serving as a bridge between models assuming effectively an infinite number of loci (each with a small number of possible alleles, typically biallelic) and models assuming a very large (effectively infinite) potential number of alleles at a finite number of loci. We then examine the effects of linkage on the behavior of these models, and conclude by examining the selection response when the distribution of breeding values is no longer Gaussian.
+Table 24.1 model, thus serving as a bridge between models assuming effectively an infinite number of loci (each with a small number of possible alleles, typically biallelic) and models assuming a very large (effectively infinite) potential number of alleles at a finite number of loci. We then examine the effects of linkage on the behavior of these models, and conclude by examining the selection response when the distribution of breeding values is no longer Gaussian.
 
 The goal of this chapter is to start to bridge short-term predictors of response based on macroscopic parameters with predictors of long-term response based on microscopic parameters. After sufficient allele-frequency change accrues, these bridging models break down, thus imposing the need for explicit population-genetic models (Chapter 5), which are examined in Chapters 25–28.
 
@@ -70,7 +70,7 @@ By using mixed-model approaches that allow all SNPs to be incorporated (by shrin
 
 **[示例 Example]**
 
-> **Example 24.1** · ref: `24.1` · source: `chapter24_003.json` · blocks 5–5
+> **Example 24.1** · ref: `24.1` · source: `chapter24_003.json` · blocks 5–7
 >
 > Example 24.1. As an example of one source of “missing heritability,” consider a site at which a new QTL allele, Q, with an additive effect of a, arises on a SNP marker background, with M and m being the two marker alleles. The strongest marker association occurs when Q is completely restricted to the background on which it arose, so we assume this here, with Q only found on M-bearing haplotypes. Moreover, only a fraction, $ \xi $, of M haplotypes will harbor Q, and (as we now demonstrate), this results in hidden heritability. Summarizing these assumptions, we have:
 > 
@@ -96,7 +96,7 @@ Under the classic infinitesimal genetics model introduced by Fisher (1918), a ch
 
 ---
 
-## chapter24_005 · The Infinitesimal Model and Its Extensions: Introduction / Selection Does Not Change Allele Frequencies
+## chapter24_005 · THEORETICAL IMPLICATIONS OF THE INFINITESIMAL GENETICS MODEL / Selection Does Not Change Allele Frequencies
 
 Recall from Chapter 16 that we can express the additive genetic variance, $ \sigma_A^2 $, as the sum of the genic variance, $ \sigma_a^2 $, and the disequilibrium contribution, $ d $, with $ \sigma_A^2 = \sigma_a^2 + d $. This partition decouples the effect of allele-frequency change (changes in $ \sigma_a^2 $) from the effect of changes from linkage disequilibrium ($ d $).
 
@@ -108,7 +108,7 @@ What effect do small amounts of allele-frequency change have on the genic varian
 
 ---
 
-## chapter24_006 · The Infinitesimal Model and Its Extensions: Introduction / Accounting for Dominance
+## chapter24_006 · THEORETICAL IMPLICATIONS OF THE INFINITESIMAL GENETICS MODEL / Accounting for Dominance
 
 While our previous focus has been exclusively on alleles with additive effects, dominance is not excluded under an infinitesimal model. The incorporation of dominance, however, requires very delicate conditions for the scaling of allelic effects, so as to bound both the dominance variance and any inbreeding depression. To see this, suppose we have n biallelic loci with no epistasis (the total genotypic value is simply the sum of the individual locus genotypic values), and let the genotypic values at locus i be 0: $ a_i + \delta_i: 2a_i $, where the frequency of the increasing allele is $ p_i $. The resulting dominance variance becomes $$ \sigma_{D}^{2}=\sum_{i=1}^{n}\left[2p_{i}(1-p_{i})\delta_{i}\right]^{2} $$
 
@@ -128,7 +128,7 @@ Thus, under the exchangeable infinitesimal model, one cannot have both bounded d
 
 ---
 
-## chapter24_007 · The Infinitesimal Model and Its Extensions: Introduction / Disequilibrium
+## chapter24_007 · THEORETICAL IMPLICATIONS OF THE INFINITESIMAL GENETICS MODEL / Disequilibrium
 
 While $ \sigma_a^2 $ remains unchanged by selection under the infinitesimal genetics model, selection-induced changes in $ d $ can significantly alter the additive genetic variance, $ \sigma_A^2 $ (Chapter 16). We can show this using the same scaling agreements we just employed. Changes in the covariances, $ C_{ij} $, of allelic effects between loci $ i $ and $ j $ (for $ i \neq j $) are roughly of order $ n^{-2} $ (Bulmer 1980; Turelli and Barton 1990). Because there are $ \sim n^2 $ terms contributing to $ d $ (Equation 16.1a), the total disequilibrium is of order one ($ n^2 \cdot n^{-2} $), and does not necessarily approach zero as the number of loci becomes infinite. The same reasoning holds for changes in the higher-order moments, which are caused by higher-order associations between groups of loci. For the $ k $th-order moment, there are $ \sim n^k $ terms in the sum, each scaling as $ n^{-k} $ to potentially give a nonzero value in the limit (Turelli and Barton 1990).
 
@@ -140,7 +140,7 @@ The standard (Fisher-Bulmer) infinitesimal model assumes both the infinitesimal 
 
 ---
 
-## chapter24_009 · The Infinitesimal Model and Its Extensions: Introduction / What Generates a Gaussian Distribution Within a Family?
+## chapter24_009 · THEORETICAL IMPLICATIONS OF THE STANDARD INFINITESIMAL MODEL / What Generates a Gaussian Distribution Within a Family?
 
 **[命题 Proposition]**
 
@@ -156,7 +156,7 @@ Under the infinitesimal genetics model and its assumption of no selection-induce
 
 ---
 
-## chapter24_010 · The Infinitesimal Model and Its Extensions: Introduction / Modifications of the Fisher-Bulmer Infinitesimal Model
+## chapter24_010 · THEORETICAL IMPLICATIONS OF THE STANDARD INFINITESIMAL MODEL / Modifications of the Fisher-Bulmer Infinitesimal Model
 
 The rest of this chapter starts to move beyond the standard (Fisher-Bulmer) infinitesimal model. First, by assuming a Gaussian distribution of allelic effects at each locus, we can partly account for changes in allele frequencies, and hence changes in $ \sigma_a^2 $, caused by a finite number of loci and/or genetic drift. This approximation breaks down over time (Chapter 25) and is best regarded as an intermediate-term predictor of response. Next, we allow for linkage. Finally, we examine the selection response when the distribution of genotypic values is no longer normal. None of these approaches fully accounts for allele-frequency change, and they are best considered as predictors for intermediate-term response. The prediction of long-term response requires explicit population-genetic models (Chapters 5, and 25–28).
 
@@ -172,7 +172,7 @@ Is there an intermediate step between the short-term predictions from the breede
 
 ---
 
-## chapter24_012 · The Infinitesimal Model and Its Extensions: Introduction / Infinite-alleles and Continuum-of-alleles Models
+## chapter24_012 · GAUSSIAN CONTINUUM-OF-ALLELES MODELS / Infinite-alleles and Continuum-of-alleles Models
 
 The historical roots of the continuum-of-alleles model trace back to the classic paper of Kimura and Crow (1964), which introduced the infinite-alleles model (Chapter 2). Before its publication, most population-genetic models typically assumed two (or at most a few) alleles per locus. Kimura and Crow, in the first serious treatment of molecular evolution, noted that with an allele being represented by a long DNA sequence, each new mutation likely creates a new sequence, implying an effectively infinite number of possible alleles. Kimura and Crow's original paper simply dealt with how much variation (measured in terms of heterozygosity) could be maintained by the balance between drift and mutation (Chapter 2), and it was not concerned with allelic effects. Crow and Kimura (1964) and Kimura (1965a) quickly applied this notion of a very large number of alleles per locus to quantitative genetics by considering the distribution of allelic effects at each locus. These Gaussian continuum-of-alleles models were further developed by Latter (1970), Lande (1975, 1977a), and Felsenstein (1977) to consider the amount of variation maintained by mutation-selection balance (Chapter 28). Kimura's (1965a) original analysis revealed that if new mutations have small effects relative to the existing variation at the locus, the distribution of effects (in an infinite population) converges to a normal.
 
@@ -180,13 +180,22 @@ The historical roots of the continuum-of-alleles model trace back to the classic
 
 Hence, Gaussian COA models make the assumption that the distribution of additive genetic values at each locus is Gaussian (and jointly multivariate normal over a vector of loci). This assumption is strictly correct only if the number of alleles at each locus is infinite, which further implies that there is an infinite population size. This assumption of a Gaussian distribution of effects at each locus is much more restrictive than the assumption that the distribution of the total genotypic values is normal. The latter follows from the central limit theorem, as the sum of non-normal distributions of single-locus effects converges to a Gaussian, provided that the loci are not overly correlated.
 
+**[Figure]**
+
+> **Figure 24.1** · page 10 · source: `chapter24`
+>
+> ![Figure 24.1](../figures/fig_0106.png)
+>
+> Figure 24.1 The impact of a finite population size, on the genic variance,  $ \sigma_a^2 $ (upper left panel), heritability (upper right panel), disequilibrium  $ d $ (lower left panel), and cumulative selection response (lower right panel). Open circles correspond to  $ N_e = 10 $, and filled circles to the infinitesimal model in the absence of drift ( $ N_e = \infty $). Details in Example 24.2.
+
+
 While Gaussian COA models are a very restrictive subset of all possible models that can lead (at their limit) to the infinitesimal, their advantage is that we can assume a finite number of loci, and hence partly accommodate allele-frequency change. As discussed in Chapter 28, Gaussian COA models assume that mutational input in any generation is much smaller than the standing additive variation at a locus, or equivalently, that mutation is much stronger. than selection (which allows significant amounts of polymorphism to accumulate at a given locus; Chapter 7). One scenario where biology suggests that the Gaussian model might be approached is in asexual species, where the entire genome is essentially transmitted as a single gene, and hence can have a very large number of possible alleles.
 
 Gaussian COA models attempt to bridge short-term predictors (such as the breeder's and Bulmer equations) that rely on estimable qualities ($ \sigma_A^2, h^2 $) with the long-term predictors of response (Chapters 25 and 26) based on population-genetic models containing quantities that are essentially unestimable. COA models attempt, using estimable quantities, to capture the change in variance from changes in both allele frequencies (and hence changes in $ \sigma_a^2 $) and $ \sigma_A^2 $ from selection-generated disequilibrium (changes in $ d $). Gaussian approximations of the Bulmer equation for the change in variance (Equation 16.7b) under a finite number of loci ($ n $) were introduced by Lande (1975) and Felsenstein (1977, 1979), and Keightley and Hill (1987) further allowed for a finite effective population size ($ N_e $). We consider the effects of drift first. The behavior of these models with mutation is discussed extensively in Chapter 28.
 
 ---
 
-## chapter24_013 · The Infinitesimal Model and Its Extensions: Introduction / Drift
+## chapter24_013 · GAUSSIAN CONTINUUM-OF-ALLELES MODELS / Drift
 
 **[推导 Derivation]**
 
@@ -217,16 +226,23 @@ This is simply the standard loss of genetic variation under drift (Chapter 2). W
 
 **[示例 Example]**
 
-> **Example 24.2** · ref: `24.2` · source: `chapter24_013.json` · blocks 3–3
+> **Example 24.2** · ref: `24.2` · source: `chapter24_013.json` · blocks 3–5
 >
 > Example 24.2. To see the effects of drift on the infinitesimal model, reconsider Example 16.2 under finite population size. This example assumed that $ h^2(0) = 0.5 $ and $ \sigma_A^2(0) = 100 $, implying that $ \sigma_A^2(0) = \sigma_A^2 = \sigma_E^2 = 50.00 $ (assuming $ d(0) = 0 $). Truncation selection was applied, with the upper 20% saved (yielding $ p = 0.2 $, $ \kappa = 0.781 $, and $ \bar{\tau} = 1.40 $). Under the infinitesimal model, the genetic variance, $ \sigma_A^2 $, remains unchanged at its original value of 50, while the additive genetic variance decreases to its equilibrium value of $ \tilde{\sigma}_A^2 = 37.46 $, and hence $ \tilde{h}^2 = 37.46 / (37.46 + 50.00) = 0.43 $, yielding an asymptotic value of response of $ \tilde{H} = \tilde{h}^2 \tilde{\sigma}_A^2 = 5.6 $ per generation.
 > 
 > Now consider a finite population size with $ N_e = 10 $, which is close to the effective population sizes of many artificial selection experiments (Chapter 26). Iteration of Equation 24.1 yields the dynamics depicted in Figure 24.1. Drift erodes away the genic variance, decreasing the heritability (and hence response) over time. The population (in the absence of mutation) will eventually run out of variation, reaching a selection limit (Chapters 25 and 26). Note the unusual behavior of the disequilibrium, $ d $, which (following an initial drop) increases toward zero over time. This occurs because the genic variance is declining, which limits the amount of disequilibrium that is possible (Equation 24.4).
 
 
+**[示例 Example]**
+
+> **Example 24.3** · ref: `24.3` · source: `chapter24_013.json` · blocks 4–4
+>
+> Example 24.3. Suppose the number, $n$, of loci underlying a trait is finite. Assume the same model as in Example 24.2, but now let $n = 10$ and $N_e = \infty$ (i.e., reversing the values of $n$ and $N_e$). We will contrast the behavior of this system with that in Example 24.2 ($N_e = 10$, $n = \infty$), and with the standard infinitesimal model ($N_e = n = \infty$). As Figure 24.2 shows, both $h^2$ and the selection response decrease over time with a finite number of loci, and eventually a selection limit is reached when all of the initial variation is lost. However, these decreases are not nearly as dramatic as those in Example 24.2 (see Figure 24.1). Figure 24.2 shows that the cumulative response for a model with $N_e = n = 10$ is only very slightly less than under drift alone ($N_e = 10$).
+
+
 ---
 
-## chapter24_014 · The Infinitesimal Model and Its Extensions: Introduction / Drift and a Finite Number of Loci
+## chapter24_014 · GAUSSIAN CONTINUUM-OF-ALLELES MODELS / Drift and a Finite Number of Loci
 
 **[推导 Derivation]**
 
@@ -270,7 +286,25 @@ Because either directional or stabilizing selection generates negative values of
 
 ---
 
-## chapter24_015 · The Infinitesimal Model and Its Extensions: Introduction / The Effective Number of Loci, $ n_{e} $
+## chapter24_015 · GAUSSIAN CONTINUUM-OF-ALLELES MODELS / The Effective Number of Loci, $ n_{e} $
+
+**[Figure]**
+
+> **Figure 24.2** · page 13 · source: `chapter24`
+>
+> ![Figure 24.2](../figures/fig_0107.png)
+>
+> Figure 24.2 The impact of a finite number, $n$, of loci on heritability and selection response. In both upper panels, the filled circles correspond to the response, with $n = 10$ and $N_e = \infty$, while the open circles correspond to $N_e = 10$ and $n = \infty$. The lower panel displays the cumulative response under four different combinations of $N_e$ and $n$. Note that the values of $N_e = n = \infty$ corresponds to the standard infinitesimal model.
+
+
+**[Figure]**
+
+> **Figure 24.3** · page 13 · source: `chapter24`
+>
+> ![Figure 24.3](../figures/fig_0108.png)
+>
+> Figure 24.3 The change in the genic variance,  $ \sigma_{a}^{2} $ (open circles), and the effective number of loci,  $ n_{e} $ (filled circles; see Equation 24.3), for a model with 5 major and 125 minor loci. See Example 24.4 for details.
+
 
 **[推导 Derivation]**
 
@@ -287,14 +321,7 @@ Note that $ n_e $ changes over time, as allele-frequency changes alter the genic
 
 **[示例 Example]**
 
-> **Example 24.3** · ref: `24.3` · source: `chapter24_015.json` · blocks 2–2
->
-> Example 24.3. Suppose the number, $n$, of loci underlying a trait is finite. Assume the same model as in Example 24.2, but now let $n = 10$ and $N_e = \infty$ (i.e., reversing the values of $n$ and $N_e$). We will contrast the behavior of this system with that in Example 24.2 ($N_e = 10$, $n = \infty$), and with the standard infinitesimal model ($N_e = n = \infty$). As Figure 24.2 shows, both $h^2$ and the selection response decrease over time with a finite number of loci, and eventually a selection limit is reached when all of the initial variation is lost. However, these decreases are not nearly as dramatic as those in Example 24.2 (see Figure 24.1). Figure 24.2 shows that the cumulative response for a model with $N_e = n = 10$ is only very slightly less than under drift alone ($N_e = 10$).
-
-
-**[示例 Example]**
-
-> **Example 24.4** · ref: `24.4` · source: `chapter24_015.json` · blocks 3–3
+> **Example 24.4** · ref: `24.4` · source: `chapter24_015.json` · blocks 2–2
 >
 > Example 24.4. As an illustration of how the effective number of loci, $ n_e $, can change over the course of selection, consider an additive model with both major and minor loci underlying a trait under selection. There are five major loci, each with frequency $ p = 0.25 $ and effect size $ a = 5.16 $, and 125 minor loci, each with $ p = 0.5 $ and $ a = 0.89 $. The resulting initial genic variance is $ \sigma_a^2 = 100 $ (half of which is from the major genes and half from the minor loci), and we assume an initial heritability of $ h^2 = 0.5 $ (by setting $ \sigma_E^2 = 100 $). Finally, assume truncation selection with the uppermost 20% saved (further details for this model are given in Example 25.2). We ignore any effects of disequilibrium, focusing instead on how the genic variance (the open circles in Figure 24.3) and the effective number of loci, $ n_e $ (the filled circles) change over time due to allele-frequency changes. As shown in Figure 24.3, while there are 130 loci in this system, initially the effective number is around 20, due to the large coefficient of variation in the locus-specific genic variances. As selection proceeds, the genic variance initially increases as the major alleles increase their frequencies toward 0.5 (where they have maximal additive variance when dominance is absent; LW Figure 4.8). Such an increase in variance is not predicted by Gaussian COA models (which assume a continuous distribution of allelic effects at each locus, rather than simply two alleles). Notice that the effective number of loci decreases slightly during this increase in variance, as the $ c_{v} $ increases. As alleles at these major loci become fixed, the total genic variance decreases while the effective number of loci increases (to approximately 125, the number of minor loci), reflecting a decrease in the coefficient of variation (as the remaining loci all have very similar variances).
 
@@ -303,7 +330,7 @@ As Example 24.4 illustrates, a selection response can result in an increase in t
 
 ---
 
-## chapter24_016 · The Infinitesimal Model and Its Extensions: Introduction / Dynamics: $ \sigma_{a}^{2} $ and d Change on Different Time Scales
+## chapter24_016 · GAUSSIAN CONTINUUM-OF-ALLELES MODELS / Dynamics: $ \sigma_{a}^{2} $ and d Change on Different Time Scales
 
 **[推导 Derivation]**
 
@@ -338,7 +365,7 @@ Gavrilets and Hastings (1994a, 1995) noted that this difference in time scales f
 
 ---
 
-## chapter24_017 · The Infinitesimal Model and Its Extensions: Introduction / How Robust Is the Gaussian Continuum-of-alleles Model?
+## chapter24_017 · GAUSSIAN CONTINUUM-OF-ALLELES MODELS / How Robust Is the Gaussian Continuum-of-alleles Model?
 
 As will be fully discussed in Chapter 28, a key determinant of which continuum-of-alleles model is appropriate is the relative strength of selection and mutation at a locus (Table 28.2). The Gaussian model is appropriate when the per-locus mutation rate is far greater than the average strength of selection on a locus (in a large population). In such settings, a given locus is likely to be segregating a large number of alleles, and any new allele adds little to the standing variation. Conversely, other approximations (such as the rare-allele or the house-of-cards models) are more appropriate when selection is much stronger than mutation (i.e., $ s \gg \mu $), in which case any given locus will have one dominant allele and a few very rare alleles. Our discussion here assumes that mutation is much stronger than selection.
 
@@ -371,7 +398,7 @@ Both the standard infinitesimal and Gaussian COA models assume unlinked loci. Wh
 
 ---
 
-## chapter24_019 · The Infinitesimal Model and Its Extensions: Introduction / An Approximate Treatment
+## chapter24_019 · THE BULMER EFFECT UNDER LINKAGE / An Approximate Treatment
 
 **[推导 Derivation]**
 
@@ -461,7 +488,7 @@ While the prediction that $d$ increases under disruptive selection as linkage ti
 
 ---
 
-## chapter24_020 · The Infinitesimal Model and Its Extensions: Introduction / A More Careful Treatment
+## chapter24_020 · THE BULMER EFFECT UNDER LINKAGE / A More Careful Treatment
 
 **[命题 Proposition]**
 
@@ -568,7 +595,7 @@ Once this basic machinery has been introduced, we will then consider two types o
 
 ---
 
-## chapter24_022 · The Infinitesimal Model and Its Extensions: Introduction / Describing the Genotypic Distribution: Moments
+## chapter24_022 · RESPONSE UNDER NON-GAUSSIAN DISTRIBUTIONS / Describing the Genotypic Distribution: Moments
 
 **[推导 Derivation]**
 
@@ -671,7 +698,7 @@ The behavior of the between-locus contributions (correlations from disequilibriu
 
 ---
 
-## chapter24_023 · The Infinitesimal Model and Its Extensions: Introduction / Describing the Genotypic Distribution: Cumulants and Gram-Charlier Series
+## chapter24_023 · RESPONSE UNDER NON-GAUSSIAN DISTRIBUTIONS / Describing the Genotypic Distribution: Cumulants and Gram-Charlier Series
 
 While most readers are familiar with moments, an alternate approach to describing the shape of a distribution, and in particular its departures from a Gaussian, is to examine its cumulants. These quantities, which arise from the moment-generation function of a probability distribution, offer some advantages over moments, as we will discuss shortly. The first uses of cumulants in examining selection response appears in O'Donald (1972) and Bulmer (1980). Sophisticated (and highly technical) treatments were developed by Bürger (1991a, 1993) and Turelli and Barton (1994). Our aim here is both to give the fearless reader sufficient background to this literature and to show the connection between results derived using moments and those derived using cumulants.
 
@@ -712,7 +739,7 @@ Bulmer (1980), Zeng (1987), and Turelli and Barton (1994) used Gram-Charlier ser
 
 **[示例 Example]**
 
-> **Example 24.6** · ref: `24.6` · source: `chapter24_023.json` · blocks 8–8
+> **Example 24.6** · ref: `24.6` · source: `chapter24_023.json` · blocks 8–9
 >
 > Example 24.6. Cumulants can be used to easily compute the fourth and fifth central moments of the phenotypic distribution. Here, $ z = G + E $, so (Equation 24.20) the fourth moment is $$ \begin{aligned}\mu_{4,z}&=K_{4,z}+3K_{2,z}^{2}\\&=\left[K_{4,G}+K_{4,E}\right]+3\left(K_{2,G}+K_{2,E}\right)^{2}\\&=\left[\left(\mu_{4,G}-3\mu_{2,G}^{2}\right)+\left(\mu_{4,E}-3\mu_{2,E}^{2}\right)\right]+3\left(\mu_{2,G}+\mu_{2,E}\right)^{2}\\&=\mu_{4,G}+\mu_{4,E}+6\sigma_{G}^{2}\sigma_{E}^{2}\\ \end{aligned} $$ where the second and third steps, respectively, follow from the additivity property of cumulants $ (K_{n,z}=K_{n,G}+K_{n,E}) $ and from Equation 24.20, while the final step recovers Equation 24.15. Likewise $$ \begin{aligned}\mu_{5,z}&=K_{5,z}+10K_{2,z}K_{3,z}\\&=(\boldsymbol{K}_{5,G}+\boldsymbol{K}_{5,E})+10(\boldsymbol{K}_{2,G}+\boldsymbol{K}_{2,E})(\boldsymbol{K}_{3,G}+\boldsymbol{K}_{3,E})\\&=(\mu_{5,G}-10\mu_{2,G}\mu_{3,G})+(\mu_{5,E}-10\mu_{2,E}\mu_{3,E})\\&\quad+10(\mu_{2,G}+\mu_{2,E})(\mu_{3,G}+\mu_{3,E})\\&=\mu_{5,G}+\mu_{5,E}+10(\mu_{2,G}\mu_{3,E}+\mu_{2,E}\mu_{3,G})\end{aligned} $$
 > 
@@ -721,14 +748,14 @@ Bulmer (1980), Zeng (1987), and Turelli and Barton (1994) used Gram-Charlier ser
 
 **[示例 Example]**
 
-> **Example 24.7** · ref: `24.7` · source: `chapter24_023.json` · blocks 9–9
+> **Example 24.7** · ref: `24.7` · source: `chapter24_023.json` · blocks 10–10
 >
 > Example 24.7. To see the advantage of working with cumulants, consider the fourth cumulant of the genotypic distribution. Equation 24.19d presented a rather complex expression for the fourth moment, but we can use cumulants to easily obtain this result. If the underlying genes are additive across loci (no epistasis), the nth cumulant of the genotypic distribution is the sum of the appropriate cumulants for each of the underlying loci. Following Turelli and Barton (1994) $$ K_{4,G}=\sum_{i,j,k,\ell=1}^{n}K_{i j k\ell}=\sum_{i=1}^{n}K_{i i i i}+\sum_{i=1}^{n}\sum_{j,k,\ell\neq i}^{n}K_{i j k\ell} $$ the sum over $ K_{iii} $ represents the within-locus contributions to the fourth cumulant, while the sums over the other indices are the contributions to $ K_4 $ from fourth-order disequilibria between loci. We recover Equation 24.19d by noting that $ \mu_{4,G} = K_{4,G} + 3\sigma_A^4 $ and substituting $$ M_{4}=\sum_{i=1}^{n}K_{iiii}\quad and\quad K_{ijk\ell}=C_{ijk\ell}-C_{ij}C_{k\ell}-C_{ik}C_{j\ell}-C_{i\ell}C_{jk} $$
 
 
 ---
 
-## chapter24_024 · The Infinitesimal Model and Its Extensions: Introduction / Application: Departure from Normality Under Truncation Selection
+## chapter24_024 · RESPONSE UNDER NON-GAUSSIAN DISTRIBUTIONS / Application: Departure from Normality Under Truncation Selection
 
 One application of the preceding machinery is to compute the distribution of breeding values following a single generation of truncation selection, assuming that the initial joint distribution of phenotypic and breeding values is multivariate normal. This was examined by Bulmer (1980) and Zeng (1987), and Turelli and Barton (1994) presented a very elegant (and elaborate) analysis for multiple generations. As before, we consider only additive models, so the distribution of genotypic values is also the distribution of breeding values.
 
@@ -797,7 +824,7 @@ Notice from Equation 24.22 that after a single generation of selection, $ K_{3,A
 
 **[示例 Example]**
 
-> **Example 24.8** · ref: `24.8` · source: `chapter24_024.json` · blocks 8–8
+> **Example 24.8** · ref: `24.8` · source: `chapter24_024.json` · blocks 8–13
 >
 > Example 24.8. Suppose truncation selection occurs on a normally distributed trait with an initial mean of $ \mu_z = 0 $ and variance of $ \sigma_z^2 = 100 $. Individuals whose phenotypes are in the upper 5% of the distribution are saved, so that $ \bar{i} = 2.063 $ and $ z_p = 1.645 $ (Example 14.1). To demonstrate an extreme case, assume that $ h^2 = 1 $, so that all variance is additive genetic. Applying Equation 24.22a, the resulting third-order cumulant in the phenotypic distribution following selection is $$ \begin{aligned}K_{3,z}^{*}&=[\left(\bar{\iota}-z_{p}\right)(2\bar{\iota}-z_{p})-1]\bar{\iota}\sigma_{z}^{3}\\&=\left[(2.063-1.645)(2\cdot2.063-1.645)-1\right]\cdot2.063\cdot100^{3/2}\\&=76.45\\ \end{aligned} $$
 > 
@@ -814,7 +841,7 @@ Notice from Equation 24.22 that after a single generation of selection, $ K_{3,A
 
 ---
 
-## chapter24_025 · The Infinitesimal Model and Its Extensions: Introduction / Short-term Response Ignoring Linkage Disequilibrium
+## chapter24_025 · RESPONSE UNDER NON-GAUSSIAN DISTRIBUTIONS / Short-term Response Ignoring Linkage Disequilibrium
 
 With this machinery in hand, we are now ready to examine the response to selection under non-Gaussian genotypic distributions. We first consider the situation in which a small to modest number of loci underlie the character, wherein most of the changes in the higher-order moments are due to changes in allele frequencies, rather than through generation of gametic-phase disequilibrium. Our treatment follows that of Barton and Turelli (1987).
 
@@ -921,7 +948,7 @@ Whether allele-frequency change at the individual loci or gametic-phase disequil
 
 ---
 
-## chapter24_026 · The Infinitesimal Model and Its Extensions: Introduction / Gaussian Versus Rare-alleles Approximations
+## chapter24_026 · RESPONSE UNDER NON-GAUSSIAN DISTRIBUTIONS / Gaussian Versus Rare-alleles Approximations
 
 In order to have Equation 24.26a form a closed set of equations, additional assumptions are needed, both on the nature of selection (columns of M) and on the underlying genetics (rows of M). If phenotypes are (and remain) normally distributed, then one needs to only consider selection on the mean and variance, as these define all other moments. More generally, if selection is sufficiently weak, then any selection function can be well approximated by a quadratic Taylor series, which again only involves the first two moments.
 
@@ -929,86 +956,16 @@ Two different assumptions about the genotypic distribution have been used to red
 
 **[示例 Example]**
 
-> **Example 24.9** · ref: `24.9` · source: `chapter24_026.json` · blocks 2–2
+> **Example 24.9** · ref: `24.9` · source: `chapter24_026.json` · blocks 2–7
 >
-> Example 24.9. If we assume that the Gaussian approximation holds, the distribution of allelic effects at each locus will be normal. In this case, all odd central moments at each locus are zero ($ \mu_{2k+1} = 0 $) and all even moments are related to the second moment by $ \mu_{2k} = \mu_2^k (2k)! / (2^k k!) $ (Kendall and Stewart 1977). For example, $ \mu_4 = 3\mu_2^2 $, implying that $ \mu_4 - \mu_2^2 = 2\mu_2^2 $. Assuming that most of selection is on the mean and variance, we can neglect the third- and higher-order selection gradients. In this case, M (Equation 24.26c) reduces to a $ 2 \times 2 $ matrix
-> 
-> > **Formula (24.29a)** · `24.29a` · source: `chapter24_block_152` · Gaussian Versus Rare-alleles Approximations
-> >
-> > $$ \mathbf{M}=\begin{pmatrix}{{{2\displaystyle\sum_{i=1}^{n}\mu_{2,i}}}}&{{{0}}} \\{{{0}}}&{{{4\displaystyle\sum_{i=1}^{n}\mu_{2,i}^{2}}}}\end{pmatrix}=\begin{pmatrix}{{{\sigma_{A}^{2}}}}&{{{0}}} \\{{{0}}}&{{{\frac{\sigma_{A}^{4}}{n_{e}}}}}\end{pmatrix} $$
-> 
-> 
-> where
-> 
-> > **Formula (24.29b)** · `24.29b` · source: `chapter24_block_152` · Gaussian Versus Rare-alleles Approximations
-> >
-> > $$ n_{e}=\frac{\sigma_{A}^{4}}{4\sum_{i}\mu_{2,i}^{2}} $$
-> 
-> 
-> is equivalent to Chevalet's (1994) effective number of loci (Equation 24.3); see Example 24.10. The expected response in the genotypic mean and variance then becomes
-> 
-> > **Formula (24.30a)** · `24.30a` · source: `chapter24_block_152` · Gaussian Versus Rare-alleles Approximations
-> >
-> > $$ \left(\begin{array}{c}{{{\Delta\mu}}} \\{{{\Delta\sigma_{A}^{2}}}}\end{array}\right)\simeq\left(\begin{array}{c c}{{{\sigma_{A}^{2}}}}&{{{0}}} \\{{{0}}}&{{{\sigma_{A}^{4}/n_{e}}}}\end{array}\right)\left(\begin{array}{c}{{{\frac{\partial\ln\overline{w}}{\partial\mu_{z}}}}} \\{{{\frac{\partial\ln\overline{w}}{\partial\sigma_{z}^{2}}}}}\end{array}\right)=\left(\begin{array}{c}{{{\sigma_{A}^{2}\frac{\partial\ln\overline{w}}{\partial\mu_{z}}}}} \\{{{\frac{\sigma_{A}^{4}}{n_{e}}\frac{\partial\ln\overline{w}}{\partial\sigma_{z}^{2}}}}}\end{array}\right) $$
-> 
-> 
-> If the phenotypic distribution is exactly normal, all moments can be expressed in terms of the mean and variance, only gradients measuring selection on the mean and variance will appear, and these equations will be exact. Recalling Equations 24.12a and 24.12b yields
-> 
-> > **Formula (24.30b)** · `24.30b` · source: `chapter24_block_153` · Gaussian Versus Rare-alleles Approximations
-> >
-> > $$ \Delta\mu\simeq h^{2}S $$
-> 
-> 
-> and
-> 
-> > **Formula (24.30c)** · `24.30c` · source: `chapter24_block_153` · Gaussian Versus Rare-alleles Approximations
-> >
-> > $$ \Delta\sigma_{A}^{2}\simeq\frac{h^{4}}{2n_{e}}\left(\delta(\sigma_{z}^{2})+S^{2}\right) $$
-> 
-> 
-> Thus, the expected change in the mean follows the breeder's equation and short-term changes in variance (from allele-frequency change) are expected to be small when the value of $ n_{e} $ is modest to large. We remind the reader that this analysis ignores the effects of gametic-phase disequilibrium. Because the locus-specific variances, $ \mu_{2,i} $, change as allele frequencies change, predicting changes in variance over several generations, even under these simplifying assumptions, still requires a detailed knowledge about the distribution of allelic effects at individual loci. Thus, while short-term changes in the mean can be predicted without detailed knowledge of the underlying genetics (only $ \sigma_{A}^{2} $ is required), changes in variance cannot (unless an estimate of $ \sum \mu_{2,i} $ or $ n_{e} $ can be obtained). Further, as allele frequencies change, so does $ n_{e} $, and Example 24.4 showed just how unpredictable such changes can be.
-> 
-> Finally, let's attempt to connect these results for the change in the genic variance, $ \Delta\sigma_A^2 = \Delta\sigma_a^2 $ (as we ignore any disequilibrium), with those obtained under the continuum-of-alleles (COA) approximation (Equation 24.2a). If the within-generation change in the phenotypic variance is $ \delta(\sigma_{z}^{2}) = -\kappa\sigma_{z}^{2} $, then the Gaussian COA approximation for the change in genic variance (Equation 24.2a, ignoring drift by taking $ N_{e} = \infty $) becomes
-> 
-> > **Formula (24.30d)** · `24.30d` · source: `chapter24_block_155` · Gaussian Versus Rare-alleles Approximations
-> >
-> > $$ \Delta\sigma_{a}^{2}=-\frac{\kappa h^{2}\sigma_{A}^{2}}{2n_{e}} $$
-> 
-> 
-> By contrast, because $ \kappa h^4\sigma_z^2 = \kappa h^2\sigma_A^2 $, Equation 24.30c yields an allelic-moment approximation of
-> 
-> > **Formula (24.30e)** · `24.30e` · source: `chapter24_block_156` · Gaussian Versus Rare-alleles Approximations
-> >
-> > $$ \Delta\sigma_{a}^{2}\simeq\frac{h^{4}}{2n_{e}}\left(\delta(\sigma_{z}^{2})+S^{2}\right)=-\frac{\kappa h^{2}\sigma_{A}^{2}}{2n_{e}}+\frac{h^{4}S^{2}}{2n_{e}} $$
-> 
-> 
-> Thus, the allelic-moment approximation has a positive term lacking in the COA approximation, and hence predicts a smaller change in $ \sigma_a^2 $ when $ \kappa > 0 $ (i.e., when selection reduces the phenotypic variance; Chapter 16). Nick Barton (pers. comm., 2014) suggested that this discrepancy between approximations arises because the selection-gradient approach relies on a weak selection assumption, so terms of order $ S^2 $ are not accurately predicted.
+> Example 24.9. If we assume that the Gaussian approximation holds, the distribution of allelic effects at each locus will be normal. In this case, all odd central moments at each locus are zero ( $ \mu_{2k+1} = 0 $) and all even moments are related to the second moment by $ \mu_{2k} = \mu_2^k (2k)! / (2^k k!) $ (Kendall and Stewart 1977). For example, $ \mu_4 = 3\mu_2^2 $, implying that $ \mu_4 - \mu_2^2 = 2\mu_2^2 $. Assuming that most of selection is on the mean and variance, we can neglect the third- and higher-order selection gradients. In this case, M (Equation 24.26c) reduces to a $ 2 \times 2 $ matrix $$ \mathbf{M}=\begin{pmatrix}{{{2\displaystyle\sum_{i=1}^{n}\mu_{2,i}}}}&{{{0}}} \\{{{0}}}&{{{4\displaystyle\sum_{i=1}^{n}\mu_{2,i}^{2}}}}\end{pmatrix}=\begin{pmatrix}{{{\sigma_{A}^{2}}}}&{{{0}}} \\{{{0}}}&{{{\frac{\sigma_{A}^{4}}{n_{e}}}}}\end{pmatrix} $$ (24.29a) where $$ n_{e}=\frac{\sigma_{A}^{4}}{4\sum_{i}\mu_{2,i}^{2}} $$ (24.29b) is equivalent to Chevalet's (1994) effective number of loci (Equation 24.3); see Example 24.10. The expected response in the genotypic mean and variance then becomes $$ \left(\begin{array}{c}{{{\Delta\mu}}} \\{{{\Delta\sigma_{A}^{2}}}}\end{array}\right)\simeq\left(\begin{array}{c c}{{{\sigma_{A}^{2}}}}&{{{0}}} \\{{{0}}}&{{{\sigma_{A}^{4}/n_{e}}}}\end{array}\right)\left(\begin{array}{c}{{{\frac{\partial\ln\overline{w}}{\partial\mu_{z}}}}} \\{{{\frac{\partial\ln\overline{w}}{\partial\sigma_{z}^{2}}}}}\end{array}\right)=\left(\begin{array}{c}{{{\sigma_{A}^{2}\frac{\partial\ln\overline{w}}{\partial\mu_{z}}}}} \\{{{\frac{\sigma_{A}^{4}}{n_{e}}\frac{\partial\ln\overline{w}}{\partial\sigma_{z}^{2}}}}}\end{array}\right) $$ (24.30a) If the phenotypic distribution is exactly normal, all moments can be expressed in terms of the mean and variance, only gradients measuring selection on the mean and variance will appear, and these equations will be exact. Recalling Equations 24.12a and 24.12b yields $$ \Delta\mu\simeq h^{2}S $$ (24.30b) and $$ \Delta\sigma_{A}^{2}\simeq\frac{h^{4}}{2n_{e}}\left(\delta(\sigma_{z}^{2})+S^{2}\right) $$ (24.30c) Thus, the expected change in the mean follows the breeder's equation and short-term changes in variance (from allele-frequency change) are expected to be small when the value of $ n_{e} $ is modest to large. We remind the reader that this analysis ignores the effects of gametic-phase disequilibrium. Because the locus-specific variances, $ \mu_{2,i} $, change as allele frequencies change, predicting changes in variance over several generations, even under these simplifying assumptions, still requires a detailed knowledge about the distribution of allelic effects at individual loci. Thus, while short-term changes in the mean can be predicted without detailed knowledge of the underlying genetics (only $ \sigma_{A}^{2} $ is required), changes in variance cannot (unless an estimate of $ \sum \mu_{2,i} $ or $ n_{e} $ can be obtained). Further, as allele frequencies change, so does $ n_{e} $, and Example 24.4 showed just how unpredictable such changes can be. Finally, let's attempt to connect these results for the change in the genic variance, $ \Delta\sigma_A^2 = \Delta\sigma_a^2 $ (as we ignore any disequilibrium), with those obtained under the continuum-of-alleles (COA) approximation (Equation 24.2a). If the within-generation change in the phenotypic variance is $ \delta(\sigma_z^2) = -\kappa \sigma_z^2 $, then the Gaussian COA approximation for the change in genic variance (Equation 24.2a, ignoring drift by taking $ N_e = \infty $) becomes $$ \Delta\sigma_{a}^{2}=-\frac{\kappa h^{2}\sigma_{A}^{2}}{2n_{e}} $$ (24.30d) By contrast, because $ \kappa h^4\sigma_z^2 = \kappa h^2\sigma_A^2 $, Equation 24.30c yields an allelic-moment approximation of $$ \Delta\sigma_{a}^{2}\simeq\frac{h^{4}}{2n_{e}}\left(\delta(\sigma_{z}^{2})+S^{2}\right)=-\frac{\kappa h^{2}\sigma_{A}^{2}}{2n_{e}}+\frac{h^{4}S^{2}}{2n_{e}} $$ (24.30e) Thus, the allelic-moment approximation has a positive term lacking in the COA approximation, and hence predicts a smaller change in $ \sigma_a^2 $ when $ \kappa > 0 $ (i.e., when selection reduces the phenotypic variance; Chapter 16). Nick Barton (pers. comm., 2014) suggested that this discrepancy between approximations arises because the selection-gradient approach relies on a weak selection assumption, so terms of order $ S^2 $ are not accurately predicted.
 
 
 **[示例 Example]**
 
-> **Example 24.10** · ref: `24.10` · source: `chapter24_026.json` · blocks 3–3
+> **Example 24.10** · ref: `24.10` · source: `chapter24_026.json` · blocks 8–9
 >
-> Example 24.10. Here we show that $ n_{e} $, as defined in the previous example, is equivalent to Chevalet's (1994) $ n_{e} $ (Equation 24.3). This simply clears up a technical detail, and it can be skipped by the casual reader. Specifically, we need to show that $$ n_{e}=\frac{n}{1+c_{v}^{2}}=\frac{\sigma_{A}^{4}}{4\sum_{i}\mu_{2,i}^{2}} $$ where $ c_v $ is the coefficient of variation in the genic variance contributed by each locus. Because $ \mu_{2,i} $ is the variance of allelic effects at locus $ i $, the genic variance contributed by locus $ i $ is $ 2\mu_{2,i} $ (as there are two alleles per locus). If we recall that the coefficient of variation is defined as the standard deviation divided by the mean
-> 
-> > **Formula (24.31a)** · `24.31a` · source: `chapter24_block_158` · Gaussian Versus Rare-alleles Approximations
-> >
-> > $$ 1+c_{v}^{2}=1+\left(\frac{\sigma(2\mu_{2,i})}{E[2\mu_{2,i}]}\right)^{2}=\frac{E[2\mu_{2,i}]^{2}+\sigma^{2}(2\mu_{2,i})}{E[2\mu_{2,i}]^{2}} $$
-> 
-> 
-> Recalling that $ \sigma^2(x) = E[x^2] - E[x]^2 $, we have
-> 
-> > **Formula (24.31b)** · `24.31b` · source: `chapter24_block_159` · Gaussian Versus Rare-alleles Approximations
-> >
-> > $$ \sigma^{2}(2\mu_{2,i})=E\left[(2\mu_{2,i})^{2}\right]-E[2\mu_{2,i}]^{2}=\left[\frac{1}{n}\sum_{i=1}^{n}(2\mu_{2,i})^{2}\right]-E[2\mu_{2,i}]^{2} $$
-> 
-> 
-> which rearranges to
-> 
-> > **Formula (24.31c)** · `24.31c` · source: `chapter24_block_159` · Gaussian Versus Rare-alleles Approximations
-> >
-> > $$ E[2\mu_{2,i}]^{2}+\sigma^{2}(2\mu_{2,i})=\frac{1}{n}\sum_{i=1}^{n}(2\mu_{2,i})^{2} $$
-> 
+> Example 24.10. Here we show that $ n_{e} $, as defined in the previous example, is equivalent to Chevalet's (1994) $ n_{e} $ (Equation 24.3). This simply clears up a technical detail, and it can be skipped by the casual reader. Specifically, we need to show that $$ n_{e}=\frac{n}{1+c_{v}^{2}}=\frac{\sigma_{A}^{4}}{4\sum_{i}\mu_{2,i}^{2}} $$ where $ c_v $ is the coefficient of variation in the genic variance contributed by each locus. Because $ \mu_{2,i} $ is the variance of allelic effects at locus $ i $, the genic variance contributed by locus $ i $ is $ 2\mu_{2,i} $ (as there are two alleles per locus). If we recall that the coefficient of variation is defined as the standard deviation divided by the mean $$ 1+c_{v}^{2}=1+\left(\frac{\sigma(2\mu_{2,i})}{E[2\mu_{2,i}]}\right)^{2}=\frac{E[2\mu_{2,i}]^{2}+\sigma^{2}(2\mu_{2,i})}{E[2\mu_{2,i}]^{2}} $$ (24.31a) Recalling that $ \sigma^2(x) = E[x^2] - E[x]^2 $, we have $$ \sigma^{2}(2\mu_{2,i})=E\left[(2\mu_{2,i})^{2}\right]-E[2\mu_{2,i}]^{2}=\left[\frac{1}{n}\sum_{i=1}^{n}(2\mu_{2,i})^{2}\right]-E[2\mu_{2,i}]^{2} $$ (24.31b) which rearranges to $$ E[2\mu_{2,i}]^{2}+\sigma^{2}(2\mu_{2,i})=\frac{1}{n}\sum_{i=1}^{n}(2\mu_{2,i})^{2} $$ (24.31c) If we sum the genic variances, $ 2\mu_{2,i} = \sigma_{a_i}^2 $, at each locus we get the total additive genic variance, $ \sigma_a^2 $. Because we are ignoring disequilibrium (i.e., assuming that $ d = 0 $), we have the result that $ \sigma_a^2 = \sigma_A^2 $, or that $$ \sigma_{A}^{2}=\sum_{i=1}^{n}2\mu_{2,i}=n E[2\mu_{2,i}],\quad or that\quad E[2\mu_{2,i}]^{2}=\frac{\sigma_{A}^{4}}{n^{2}} $$ (24.31d) First substituting Equation 24.31b into 24.31a and then using Equation 24.31d yields $$ 1+c_{v}^{2}=\frac{E[2\mu_{2,i}]^{2}+\sigma^{2}(2\mu_{2,i})}{E[2\mu_{2,i}]^{2}}=\frac{(1/n)\sum_{i=1}^{n}(2\mu_{2,i})^{2}}{\sigma_{A}^{4}/n^{2}}=\frac{4n\sum_{i=1}^{n}\mu_{2,i}^{2}}{\sigma_{A}^{4}} $$ Thus, $$ n_{e}=\frac{n}{1+c_{v}^{2}}=\frac{n\sigma_{A}^{4}}{4n\sum_{i=1}^{n}\mu_{2,i}^{2}}=\frac{\sigma_{A}^{4}}{4\sum_{i=1}^{n}\mu_{2,i}^{2}} $$ demonstrating the equivalence of $ n_{e} $ as defined by Equation 24.29b with that given by Equation 24.3.
 
 
 ---
@@ -1030,43 +987,14 @@ Thus, $$ n_{e}=\frac{n}{1+c_{v}^{2}}=\frac{n\sigma_{A}^{4}}{4n\sum_{i=1}^{n}\mu_
 
 **[示例 Example]**
 
-> **Example 24.11** · ref: `24.11` · source: `chapter24_027.json` · blocks 3–3
+> **Example 24.11** · ref: `24.11` · source: `chapter24_027.json` · blocks 3–10
 >
-> Example 24.11. An important construct used in the analysis of population-genetic models for the maintenance of quantitative-trait variation (Chapter 28) is the rare-alleles model of Barton and Turelli (1987). This assumes that loci are very near fixation, which occurs when the strength of selection is much greater than the strength of mutation. Here we show that under this assumption, allelic moments are proportional to the rare-allele frequencies, meaning that products of moments can be ignored and higher-order moments can be expressed in terms of lower-order ones.
-> 
-> To see how this approximation arises, consider the simplest case of a biallelic locus $ (i) $, where the common allele has an effect of 0, while the rare allele $ (p_i \simeq 0) $ has an additive effect of $ a_i $. The resulting mean is $ \mu_{1,i} \simeq 2a_i p_i $ and because $ p_i $ is assumed small, quadratic and higher terms in $ p_i $ are ignored in higher moments. For example, the $ (2k) $th moment becomes
-> 
-> > **Formula (24.32a)** · `24.32a` · source: `chapter24_block_164` · Gaussian Versus Rare-alleles Approximations
-> >
-> > $$ \mu_{2k,i}=\left(a_{i}-\mu_{1,i}\right)^{2k}p_{i}+\left(0-\mu_{1,i}\right)^{2k}\left(1-p_{i}\right)\simeq a_{i}^{2k}p_{i} $$
-> 
-> 
-> The last step follows because $ \mu_{1,i}^{k} $ is of order $ p_{i}^{k} $ and is ignored (for $ k \geq 2 $). Thus, higher-order moments are related, $$ \mu_{4,i}\simeq a_{i}^{4}p_{i}=a_{i}^{2}\left(a_{i}^{2}p_{i}\right)=\xi_{i}\mu_{2,i} $$
-> 
-> For now, we set $ \xi_i = a_i^2 $ as this, or a closely related term, appears in the expression for all higher-order moments. Likewise, products of moments are of quadratic- or higher-order in $ p_i $, and thus are ignored. For example, $ \mu_{4,i} - \mu_{2,i}^2 \simeq \mu_{4,i} \approx \xi_i \mu_{2,i} $, as $ \mu_{2,i}^2 $ is of order $ p_i^2 $. Turelli (1984) showed that these moment relationships also hold under his house-of-cards assumption that selection at a locus is much stronger than mutation (and hence most alleles are rare and deleterious), but now with $ \xi_i = \sigma_{\alpha_i}^2 $, the variance in the effects of new mutations at locus $ i $, replacing $ a_i^2 $ (which follows from the fact that $ E[\alpha_i^2] = \sigma_{\alpha_i}^2 + (E[\alpha_i])^2 = \sigma_{\alpha_i}^2 $, as $ E[\alpha_i] = 0 $). Assuming $ n $ equivalent loci (hence, $ \xi = \xi_i $), under the rare-alleles or house-of-cards assumption, the moments matrix, $ \mathbf{M} $, from Equation 24.26c simplifies to
-> 
-> > **Formula (24.32b)** · `24.32b` · source: `chapter24_block_166` · Gaussian Versus Rare-alleles Approximations
-> >
-> > $$ \begin{pmatrix}\Delta\mu\\\Delta\sigma_{A}^{2}\\\Delta\mu_{3,G}\end{pmatrix}\simeq\begin{pmatrix}\sigma_{A}^{2}&M_{3}&\xi\sigma_{A}^{2}\\M_{3}&\xi\sigma_{A}^{2}&\xi M_{3}\\\xi\sigma_{A}^{2}&\xi M_{3}&\xi^{2}\sigma_{A}^{2}\end{pmatrix}\begin{pmatrix}\frac{\partial\ln\overline{w}}{\partial\mu}\\\frac{\partial\ln\overline{w}}{\partial\sigma_{z}^{2}}\\\frac{\partial\ln\overline{w}}{\partial\mu_{3,z}}\end{pmatrix} $$
-> 
-> 
-> Notice that $ \Delta\mu_{3,G} = \xi\Delta\mu_{1,G} $, thus directly coupling changes in the mean and skew. If we assume no initial skew (and no selection on skew), Equation 24.32b further reduces to
-> 
-> > **Formula (24.32c)** · `24.32c` · source: `chapter24_block_167` · Gaussian Versus Rare-alleles Approximations
-> >
-> > $$ \left(\begin{array}{c}{{{\Delta\mu}}} \\{{{\Delta\sigma_{A}^{2}}}}\end{array}\right)\simeq\left(\begin{array}{c c}{{{\sigma_{A}^{2}}}}&{{{0}}} \\{{{0}}}&{{{\xi\sigma_{A}^{2}}}}\end{array}\right)\left(\begin{array}{c}{{{\frac{\partial\ln\overline{w}}{\partial\mu_{z}}}}} \\{{{\frac{\partial\ln\overline{w}}{\partial\sigma_{z}^{2}}}}}\end{array}\right)=\left(\begin{array}{c}{{{\sigma_{A}^{2}\frac{\partial\ln\overline{w}}{\partial\mu_{z}}}}} \\{{{\xi\sigma_{A}^{2}\frac{\partial\ln\overline{w}}{\partial\sigma_{z}^{2}}}}}\end{array}\right) $$
-> 
-> 
-> Comparing these results with Example 24.9 (the Gaussian approximation) shows that the expected change in the mean (in the absence of skew) is identical in both the rare alleles and Gaussian-approximation models. Under the Gaussian, the change in the variance is given by $ \sigma_A^4 / n_e $ times the fitness gradient with respect to the phenotypic variance, while under the rare alleles model, the quantity $ \xi \sigma_A^2 $ is multiplied by the gradient. Under the rare alleles (and house-of-cards) models, the assumption is that the variance at a locus is small relative to the input from new mutation, implying that $ \xi = \sigma_a^2 \gg \sigma_A^2 / n_e $, and thus $ \xi \sigma_A^2 \gg \sigma_A^4 / n_e $, predicting a much larger change in the variance than under the Gaussian. We will return to this important point in Chapter 28.
-> 
-> A second critical difference between the rare-alleles and Gaussian-approximation models can be seen from Equation 24.28a. This shows that selection on the variance only influences the response in the mean when there is skew in the breeding value distribution ($ M_3 \neq 0 $), which does not occur under the Gaussian approximation (although selection-induced third-order LD can create it from an initially Gaussian model). Conversely, the rare-alleles model can easily have skew, thus coupling changes in the mean with selection on the variance.
-> 
-> A final important point is that if the rare-alleles model is a good approximation of reality, then most genetic variation is additive. Even when significant interactions (dominance and epistasis) are present, most genetic variation loads onto the additive component in cases where all but a few of the multilocus genotypes under consideration are rare (Crow 2008; Hill et al. 2008; Maki-Tanila and Hill 2014). One simple way to see this point is to consider a fully dominant, but rare, allele. In this case, the frequency of dominant homozygotes is extremely small, so that the additive effect of the allele is given almost entirely by the genotypic values of the recessive homozygote and the heterozygote, thus loading most of the effects into the additive component. With multilocus genotypes, most combinations of genotypes are so rare that they have little impact on the least-squares regressions that determine additive effects. For example, consider a highly nonlinear relationship between genotypes and trait value. If only a few of the genotypes are common, then most of the regression is determined by just a few points, meaning that a linear regression (and hence additive effects) is likely to account for a significant fraction of the variance.
+> Example 24.11. An important construct used in the analysis of population-genetic models for the maintenance of quantitative-trait variation (Chapter 28) is the rare-alleles model of Barton and Turelli (1987). This assumes that loci are very near fixation, which occurs when the strength of selection is much greater than the strength of mutation. Here we show that under this assumption, allelic moments are proportional to the rare-allele frequencies, meaning that products of moments can be ignored and higher-order moments can be expressed in terms of lower-order ones. To see how this approximation arises, consider the simplest case of a biallelic locus $ (i) $, where the common allele has an effect of 0, while the rare allele $ (p_i \simeq 0) $ has an additive effect of $ a_i $. The resulting mean is $ \mu_{1,i} \simeq 2a_i p_i $ and because $ p_i $ is assumed small, quadratic and higher terms in $ p_i $ are ignored in higher moments. For example, the $ (2k) $th moment becomes $$ \mu_{2k,i}=\left(a_{i}-\mu_{1,i}\right)^{2k}p_{i}+\left(0-\mu_{1,i}\right)^{2k}\left(1-p_{i}\right)\simeq a_{i}^{2k}p_{i} $$ (24.32a) The last step follows because $ \mu_{1,i}^{k} $ is of order $ p_{i}^{k} $ and is ignored (for $ k \geq 2 $). Thus, higher-order moments are related, $$ \mu_{4,i}\simeq a_{i}^{4}p_{i}=a_{i}^{2}\left(a_{i}^{2}p_{i}\right)=\xi_{i}\mu_{2,i} $$ For now, we set $ \xi_i = a_i^2 $ as this, or a closely related term, appears in the expression for all higher-order moments. Likewise, products of moments are of quadratic- or higher-order in $ p_i $, and thus are ignored. For example, $ \mu_{4,i} - \mu_{2,i}^2 \simeq \mu_{4,i} \approx \xi_i \mu_{2,i} $, as $ \mu_{2,i}^2 $ is of order $ p_i^2 $. Turelli (1984) showed that these moment relationships also hold under his house-of-cards assumption that selection at a locus is much stronger than mutation (and hence most alleles are rare and deleterious), but now with $ \xi_i = \sigma_{\alpha_i}^2 $, the variance in the effects of new mutations at locus $ i $, replacing $ a_i^2 $ (which follows from the fact that $ E[\alpha_i^2] = \sigma_{\alpha_i}^2 + (E[\alpha_i])^2 = \sigma_{\alpha_i}^2 $, as $ E[\alpha_i] = 0 $). Assuming $ n $ equivalent loci (hence, $ \xi = \xi_i $), under the rare-alleles or house-of-cards assumption, the moments matrix, $ \mathbf{M} $, from Equation 24.26c simplifies to $$ \begin{pmatrix}\Delta\mu\\\Delta\sigma_{A}^{2}\\\Delta\mu_{3,G}\end{pmatrix}\simeq\begin{pmatrix}\sigma_{A}^{2}&M_{3}&\xi\sigma_{A}^{2}\\M_{3}&\xi\sigma_{A}^{2}&\xi M_{3}\\\xi\sigma_{A}^{2}&\xi M_{3}&\xi^{2}\sigma_{A}^{2}\end{pmatrix}\begin{pmatrix}\frac{\partial\ln\overline{w}}{\partial\mu}\\\frac{\partial\ln\overline{w}}{\partial\sigma_{z}^{2}}\\\frac{\partial\ln\overline{w}}{\partial\mu_{3,z}}\end{pmatrix} $$ (24.32b) Notice that $ \Delta\mu_{3,G} = \xi\Delta\mu_{1,G} $, thus directly coupling changes in the mean and skew. If we assume no initial skew (and no selection on skew), Equation 24.32b further reduces to $$ \left(\begin{array}{c}{{{\Delta\mu}}} \\{{{\Delta\sigma_{A}^{2}}}}\end{array}\right)\simeq\left(\begin{array}{c c}{{{\sigma_{A}^{2}}}}&{{{0}}} \\{{{0}}}&{{{\xi\sigma_{A}^{2}}}}\end{array}\right)\left(\begin{array}{c}{{{\frac{\partial\ln\overline{w}}{\partial\mu_{z}}}}} \\{{{\frac{\partial\ln\overline{w}}{\partial\sigma_{z}^{2}}}}}\end{array}\right)=\left(\begin{array}{c}{{{\sigma_{A}^{2}\frac{\partial\ln\overline{w}}{\partial\mu_{z}}}}} \\{{{\xi\sigma_{A}^{2}\frac{\partial\ln\overline{w}}{\partial\sigma_{z}^{2}}}}}\end{array}\right) $$ (24.32c) Comparing these results with Example 24.9 (the Gaussian approximation) shows that the expected change in the mean (in the absence of skew) is identical in both the rare alleles and Gaussian-approximation models. Under the Gaussian, the change in the variance is given by $ \sigma_A^4 / n_e $ times the fitness gradient with respect to the phenotypic variance, while under the rare alleles model, the quantity $ \xi \sigma_A^2 $ is multiplied by the gradient. Under the rare alleles (and house-of-cards) models, the assumption is that the variance at a locus is small relative to the input from new mutation, implying that $ \xi = \sigma_a^2 \gg \sigma_A^2 / n_e $, and thus $ \xi \sigma_A^2 \gg \sigma_A^4 / n_e $, predicting a much larger change in the variance than under the Gaussian. We will return to this important point in Chapter 28. A second critical difference between the rare-alleles and Gaussian-approximation models can be seen from Equation 24.28a. This shows that selection on the variance only influences the response in the mean when there is skew in the breeding value distribution ( $ M_3 \neq 0 $), which does not occur under the Gaussian approximation (although selection-induced third-order LD can create it from an initially Gaussian model). Conversely, the rare-alleles model can easily have skew, thus coupling changes in the mean with selection on the variance. A final important point is that if the rare-alleles model is a good approximation of reality, then most genetic variation is additive. Even when significant interactions (dominance and epistasis) are present, most genetic variation loads onto the additive component in cases where all but a few of the multilocus genotypes under consideration are rare (Crow 2008; Hill et al. 2008; Maki-Tanila and Hill 2014). One simple way to see this point is to consider a fully dominant, but rare, allele. In this case, the frequency of dominant homozygotes is extremely small, so that the additive effect of the allele is given almost entirely by the genotypic values of the recessive homozygote and the heterozygote, thus loading most of the effects into the additive component. With multilocus genotypes, most combinations of genotypes are so rare that they have little impact on the least-squares regressions that determine additive effects. For example, consider a highly nonlinear relationship between genotypes and trait value. If only a few of the genotypes are common, then most of the regression is determined by just a few points, meaning that a linear regression (and hence additive effects) is likely to account for a significant fraction of the variance.
 
 
 ---
 
-## chapter24_028 · The Infinitesimal Model and Its Extensions: Introduction / Short-term Response Ignoring Allele-frequency Change
+## chapter24_028 · RESPONSE UNDER NON-GAUSSIAN DISTRIBUTIONS / Short-term Response Ignoring Allele-frequency Change
 
 The last section considered one class of approximations for the short-term selection response for non-Gaussian distributions of genotypic values, focusing solely on allele-frequency changes. Here we consider the converse approximation: a large enough number of loci (all of small effect) that allele-frequency change (over the time span of interest) can be ignored, with the change in genotypic moments thus attributable entirely to selection-generated disequilibrium. Our discussion departs from the standard infinitesimal model in that we no longer make any Gaussian assumptions.
 
@@ -1099,18 +1027,18 @@ where $ K_{G,i} $ denotes the ith cumulant of the genotypic distribution. Note t
 
 **[示例 Example]**
 
-> **Example 24.12** · ref: `24.12` · source: `chapter24_028.json` · blocks 4–4
+> **Example 24.12** · ref: `24.12` · source: `chapter24_028.json` · blocks 4–6
 >
 > Example 24.12. As an application of these results, when phenotypes are normally distributed, Equations 24.12a and 24.12b yield $$ L_{1}=\frac{S}{\sigma_{z}^{2}}\quad and\quad L_{2}=\frac{\delta(\sigma_{z}^{2})+S^{2}}{2\sigma_{z}^{4}}\quad with\quad L_{i}=0\quad for i\geq3 $$
 > 
 > If the genotypic values also follow a normal distribution, then $ K_{G,i} = 0 $ for $ i \geq 3 $. In this case, Equation 24.33b reduces to $$ \Delta\mu=\sigma_{A}^{2}\frac{S}{\sigma_{z}^{2}}=h^{2}S $$ which recovers the breeder's equation. If we recall that $ \sigma_A^2 = \sigma_a^2 + d $, using the preceding expressions reduces Equation 24.33c to $$ \begin{aligned}\Delta\sigma_{A}^{2}&=\frac{\sigma_{a}^{2}-\sigma_{A}^{2}}{2}-\frac{(\Delta\mu)^{2}}{2}+\frac{0}{2}L_{1}+\left(\sigma_{A}^{4}+\frac{0}{2}\right)L_{2}\\&\quad+\left(3\sigma_{A}^{2}\cdot0+\frac{0}{2}\right)\cdot0+\left(0^{2}+4\sigma_{A}^{2}\cdot0+\frac{0}{2}\right)\cdot0\\&=\frac{\sigma_{a}^{2}-\sigma_{A}^{2}}{2}-\frac{(h^{2}S)^{2}}{2}+\sigma_{A}^{4}\left(\frac{\delta(\sigma_{z}^{2})+S^{2}}{2\sigma_{z}^{4}}\right)\\&=-\frac{d}{2}+\frac{h^{4}}{2}\delta(\sigma_{z}^{2})\end{aligned} $$ which recovers Bulmer's equation. Notice that there is no change in the genic variance, as we assume there are very large number of loci of small effect.
-> 
-> Turelli and Barton (1994) examined the effects of both strong truncation (directional) selection and strong disruptive selection on Gaussian (infinitesimal and COA) models when the number of loci is large. They found that while strong truncation selection does indeed generate nonzero cumulants of order three and higher (and hence departures from normality), these departures are generally quite small (e.g., Example 24.8). As a result, the breeder's equation with the variance changes predicted from the Bulmer equation (Equation 16.7b) gives quite accurate results for the predicted change in the mean and variance. Hence, the effects of disequilibrium in this case are essentially accounted for by considering only the second-order disequilibrium, which is done in the basic Bulmer model. Barton and Turelli found that the distribution of genotypic values is highly non-normal under strong disruptive selection, with a significant fourth cumulant (kurtosis) being generated by significant fourth-order disequilibrium (generating correlations between groups of four loci). Surprisingly, even in this case the change in variance is still well predicted by the Bulmer equation.
 
+
+Turelli and Barton (1994) examined the effects of both strong truncation (directional) selection and strong disruptive selection on Gaussian (infinitesimal and COA) models when the number of loci is large. They found that while strong truncation selection does indeed generate nonzero cumulants of order three and higher (and hence departures from normality), these departures are generally quite small (e.g., Example 24.8). As a result, the breeder's equation with the variance changes predicted from the Bulmer equation (Equation 16.7b) gives quite accurate results for the predicted change in the mean and variance. Hence, the effects of disequilibrium in this case are essentially accounted for by considering only the second-order disequilibrium, which is done in the basic Bulmer model. Barton and Turelli found that the distribution of genotypic values is highly non-normal under strong disruptive selection, with a significant fourth cumulant (kurtosis) being generated by significant fourth-order disequilibrium (generating correlations between groups of four loci). Surprisingly, even in this case the change in variance is still well predicted by the Bulmer equation.
 
 ---
 
-## chapter24_029 · The Infinitesimal Model and Its Extensions: Introduction / Effects of Linkage
+## chapter24_029 · RESPONSE UNDER NON-GAUSSIAN DISTRIBUTIONS / Effects of Linkage
 
 **[推导 Derivation]**
 

@@ -27,6 +27,12 @@ def build_arg_parser() -> argparse.ArgumentParser:
         default=None,
         help="Optional comma-separated chapter filter, e.g. chapter25,chapter30 or 25,30.",
     )
+    parser.add_argument(
+        "--figure-library",
+        default=None,
+        type=Path,
+        help="Optional figure_library.json used to expand [[FIGURE:*]] placeholders.",
+    )
     return parser
 
 
@@ -38,6 +44,7 @@ def main(argv: list[str] | None = None) -> None:
         structured_dir=args.structured_dir,
         out_dir=args.out_dir,
         chapters=chapters,
+        figure_library=args.figure_library,
     )
     if not results:
         raise SystemExit("No chapter files matched the requested export.")

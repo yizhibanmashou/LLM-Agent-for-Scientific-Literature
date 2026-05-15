@@ -1,4 +1,4 @@
-# Chapter 20 Textbook Mapping
+# Chapter 20 · Selection Response in Natural Populations
 
 ## chapter20_001 · Selection Response in Natural Populations: Introduction
 
@@ -28,7 +28,7 @@ While there are many assumptions underlying the breeder’s equation (Chapter 6;
 
 ---
 
-## chapter20_003 · Selection Response in Natural Populations: Introduction / Direct and Correlated Responses
+## chapter20_003 · EVOLUTION IN NATURAL POPULATIONS: WHAT IS THE TARGET OF SELECTION? / Direct and Correlated Responses
 
 Bias from correlated traits can be removed by using the multivariate breeder's equation, provided all relevant traits are included. This equation expresses the vector, R, of responses (changes in means) as a function of the genetic (breeding value), G, and phenotypic, P, covariance matrices for the traits of interest, and the vector, S, of their selection differentials. From Equations 13.23b and 13.26a, $$ \mathbf{R}=\mathbf{G}\mathbf{P}^{-1}\mathbf{S}=\mathbf{G}\boldsymbol{\beta} $$ where the selection gradient, $ \beta = \mathbf{P}^{-1}\mathbf{S} $, controls for any phenotypic correlations among the measured traits, returning the amount of direct selection acting on each particular character (LW Chapter 8; Chapter 30).
 
@@ -69,37 +69,57 @@ Trait 1 can evolve as a consequence of direct selection (if it has additive vari
 
 **[示例 Example]**
 
-> **Example 20.2** · ref: `20.2` · source: `chapter20_003.json` · blocks 5–5
+> **Example 20.2** · ref: `20.2` · source: `chapter20_003.json` · blocks 5–8
 >
-> Example 20.2. As reviewed in Grant and Grant (1995, 2002; and references therein), one of the best documented cases of natural selection is on body size and bill morphology in Darwin's finches (Geospiza fortis) on the Galápagos island of Daphne Major. Two strong episodes of selection were observed during their long-term study, due to serious droughts in 1976–1977 (when the population crashed from 634 birds down to 95, a 15% survival rate), and in 1984–1986 (556 birds reduced to 180, a 32% survival rate). Six (log-transformed) morphological traits were followed through both episodes, and (after rescaling all traits to have unit variances) the selection differentials, $ S = \bar{t} $ (as traits are scaled to unit variance), and gradients, $ \beta $, for the two episodes were as follows (where $ * $ denotes p < 0.05): Two striking features are apparent. First, the observed (within-generation) change in the mean, $ \bar{\tau} $, was not a good predictor of the actual amount of direct selection, $ \beta $, on a trait, and can even have a different sign (e.g., bill length). Second, the nature of selection changed over the two drought periods. During the 1976–1977 drought, larger individuals were favored, and there was selection on bill shape (increased bill depth, decreased bill width). A change in the dominant food supply during a subsequent drought in 1984–1986 resulted in selection favoring smaller birds. Hence, the two episodes of selection were in opposite directions (at least in terms of body size).
+> Example 20.2. As reviewed in Grant and Grant (1995, 2002; and references therein), one of the best documented cases of natural selection is on body size and bill morphology in Darwin's finches (Geospiza fortis) on the Galápagos island of Daphne Major. Two strong episodes of selection were observed during their long-term study, due to serious droughts in 1976–1977 (when the population crashed from 634 birds down to 95, a 15% survival rate), and in 1984–1986 (556 birds reduced to 180, a 32% survival rate). Six (log-transformed) morphological traits were followed through both episodes, and (after rescaling all traits to have unit variances) the selection differentials, $ S = \bar{t} $ (as traits are scaled to unit variance), and gradients, $ \beta $, for the two episodes were as follows (where $ * $ denotes p < 0.05):
 > 
-> Grant and Grant had an estimate of the genetic variance matrix, G, for these traits in hand, allowing them to substitute these estimated $ \beta $s into the multivariate breeder's equation (13.26a) to examine how well responses were predicted. Response was well predicted in 1976, but overpredicted in three of the six traits in the 1984 episode. They suggested that the main reason for these discrepancies was a change in the biotic environment. Higher population densities for offspring in 1984 retarded growth, resulting in an overprediction of size-related traits. $$ ^{*}p<0.05,\qquad^{**}p<0.01,\qquad^{***}p<0.001 $$
+> > **Inline Table 2** · `inline_2` · page 4 · source: `chapter20_003`
+> > Inline Table 2
+> >
+> > <table><tr><td></td><td colspan="2">1976-1977</td><td colspan="2">1984-1986</td></tr><tr><td>Trait</td><td>$ \bar{x} $</td><td>$ \beta $</td><td>$ \bar{x} $</td><td>$ \beta $</td></tr><tr><td>Weight</td><td>0.74 $ ^{*} $</td><td>0.477 $ ^{*} $</td><td>-0.11</td><td>-0.040</td></tr><tr><td>Wing length</td><td>0.72 $ ^{*} $</td><td>0.436 $ ^{*} $</td><td>-0.08</td><td>-0.015</td></tr><tr><td>Tarsus length</td><td>0.43 $ ^{*} $</td><td>0.005</td><td>-0.09</td><td>-0.047</td></tr><tr><td>Bill length</td><td>0.54 $ ^{*} $</td><td>-0.144</td><td>-0.03</td><td>0.245 $ ^{*} $</td></tr><tr><td>Bill depth</td><td>0.63 $ ^{*} $</td><td>0.528 $ ^{*} $</td><td>-0.16 $ ^{*} $</td><td>-0.135</td></tr><tr><td>Bill width</td><td>0.53 $ ^{*} $</td><td>-0.450 $ ^{*} $</td><td>-0.17 $ ^{*} $</td><td>-0.152</td></tr></table>
+> 
+> 
+> Two striking features are apparent. First, the observed (within-generation) change in the mean, $ \bar{\tau} $, was not a good predictor of the actual amount of direct selection, $ \beta $, on a trait, and can even have a different sign (e.g., bill length). Second, the nature of selection changed over the two drought periods. During the 1976–1977 drought, larger individuals were favored, and there was selection on bill shape (increased bill depth, decreased bill width). A change in the dominant food supply during a subsequent drought in 1984–1986 resulted in selection favoring smaller birds. Hence, the two episodes of selection were in opposite directions (at least in terms of body size). Grant and Grant had an estimate of the genetic variance matrix, G, for these traits in hand, allowing them to substitute these estimated $ \beta $s into the multivariate breeder's equation (13.26a) to examine how well responses were predicted. Response was well predicted in 1976, but overpredicted in three of the six traits in the 1984 episode. They suggested that the main reason for these discrepancies was a change in the biotic environment. Higher population densities for offspring in 1984 retarded growth, resulting in an overprediction of size-related traits.
+> 
+> > **Inline Table 3** · `inline_3` · page 4 · source: `chapter20_003`
+> > Inline Table 3
+> >
+> > <table><tr><td></td><td colspan="2">1976-1977</td><td colspan="2">1984-1986</td></tr><tr><td>Character</td><td>Predicted</td><td>Observed</td><td>Predicted</td><td>Observed</td></tr><tr><td>Weight</td><td>$ 17.39 \pm 0.22 $</td><td>$ 17.52 \pm 0.25 $</td><td>$ 16.82 \pm 0.13 $</td><td>$ 15.48 \pm 0.08^{*} $</td></tr><tr><td>Wing length</td><td>$ 69.98 \pm 0.39 $</td><td>$ 69.65 \pm 0.35 $</td><td>$ 67.93 \pm 0.17 $</td><td>$ 67.21 \pm 0.11^{***} $</td></tr><tr><td>Tarsus length</td><td>$ 19.45 \pm 0.09 $</td><td>$ 19.32 \pm 0.14 $</td><td>$ 19.02 \pm 0.04 $</td><td>$ 19.02 \pm 0.04 $</td></tr><tr><td>Bill length</td><td>$ 11.14 \pm 0.10 $</td><td>$ 11.06 \pm 0.11 $</td><td>$ 10.86 \pm 0.05 $</td><td>$ 10.96 \pm 0.03 $</td></tr><tr><td>Bill depth</td><td>$ 9.83 \pm 0.12 $</td><td>$ 9.94 \pm 0.09 $</td><td>$ 9.51 \pm 0.06 $</td><td>$ 9.32 \pm 0.03^{**} $</td></tr><tr><td>Bill width</td><td>$ 8.96 \pm 0.08 $</td><td>$ 8.97 \pm 0.08 $</td><td>$ 8.77 \pm 0.04 $</td><td>$ 8.70 \pm 0.03 $</td></tr></table>
+> 
 
 
 ---
 
-## chapter20_004 · Selection Response in Natural Populations: Introduction / Environmentally Generated Correlations Between Fitness and Traits
-
-In natural populations, one or more environmental factors can influence both an individual's trait value and its fitness. This generates a correlation between the trait and fitness, and hence (from the Robertson-Price identity; Equation 6.10) a selection differential, $ S = \sigma(z, w) $, on the trait, even if there is no direct selection on the trait itself. Consider the following example, which was suggested by Rausher (1992).
-
-Suppose, for example, that soil nitrate concentration influences both fitness (seed production) and the amount of alkaloids (secondary plant chemicals) in the foliage of a plant. As Figure 20.1 shows, if we were able to partition individuals from a population into high- and low-nitrate environments, within each group we might find no association between alkaloid concentration and fitness. However, if we ignored this partition and simply lumped all individuals into a single group, we would find a positive covariance between alkaloid concentration and fitness. An investigator unaware of this difference in soil nitrates might conclude that there was a fitness effect from the presence of alkaloids (for example, as an insect deterrent), when in fact the correlation between trait and fitness arises solely because both are influenced by a third, and unmeasured, variable. In this setting, the breeder's equation would lead to an erroneous prediction of a selection response in alkaloid levels because it assumes that alkaloids are the causative agent of fitness differences. (As an aside, this particular observation is an example of Simpson's paradox, introduced in Chapter 10, wherein individual association tables give a different picture from their amalgamated table.)
-
-Rausher's example (in the previous paragraph) introduces the concept of selection on a nonheritable feature that also influences the focal trait. While the feature, soil nitrate, is a primary determinant of plant fitness, it is an environmental factor that also influences alkaloid levels. From Equations 20.1a and 20.1b, the selection differential and response are $$ S_{alkaloid level}=\sigma(alkaloid level,soil nitrate)\beta_{soil nitrate}\neq0 $$ $$ R_{alkaloid level}=\sigma(A_{alkaloid level},A_{soil nitrate})\beta_{soil nitrate}=0\cdot\beta_{soil nitrate}=0 $$
-
-While plants with high alkaloid levels (which are heritable) appear to have higher fitness (S > 0), alkaloid levels do not increase in the next generation (R = 0). This is because plants with high environmental values for alkaloids (due to high soil nitrate values) were selected, not plants with high genetic values, and hence there is no selection response. Put another way, there is selection on a component of the environmental value of alkaloid level (that due to soil nitrate value), but not on its breeding value, and hence no response (Chapter 13).
+## chapter20_004 · EVOLUTION IN NATURAL POPULATIONS: WHAT IS THE TARGET OF SELECTION? / Environmentally Generated Correlations Between Fitness and Traits
 
 **[示例 Example]**
 
-> **Example 20.3** · ref: `20.3` · source: `chapter20_004.json` · blocks 4–4
+> **Example 20.3** · ref: `20.3` · source: `chapter20_004.json` · blocks 0–3
 >
-> Example 20.3. Considering the evolution of clutch size $ (z_1) $ in birds (number of eggs laid in a particular episode), Price and Liou (1989) suggested that fitness is largely determined by the nutritional state, $ z_2 $, of a mother, which also influences her own clutch size, $ \sigma(z_1, z_2) \neq 0 $. They assumed that nutritional state is entirely environmental, $ \sigma^2(A_2) = 0 $. Equation 20.1a implies that, even if there is no direct selection on clutch size per se ($ \beta_1 = 0 $), we would still observe a selection differential on clutch size if it is phenotypically correlated with nutritional state and the latter is itself under selection ($ \beta_2 \neq 0 $), as $ S_1 = \beta_2 \sigma(z_1, z_2) \neq 0 $. The resulting selection response in clutch size, $ R_1 $, is $ \beta_2 \sigma(A_1, A_2) = 0 $, because nutritional state is assumed to have no heritable variance, which implies $ \sigma(A_1, A_2) = 0 $. As a result, there is apparent directional selection on clutch size ($ S_1 \neq 0 $), but no response ($ R_1 = 0 $).
-> 
-> The notion of nutritional status, or some other measure of well-being, of an organism is often referred to as condition by ecologists (Le Cren 1951). Although this term is often used fairly loosely, without any formal definition, one common operational measure is the residual from a regression of weight on some measure of body size (i.e., size-adjusted weight). The motivation for this metric is that individuals in good condition will be heavier than expected given their size, while individuals in poor condition will be underweight. Jakob et al. (1996), Green (2001), and Schulte-Hostedde et al. (2005) discussed the merits of this metric. While condition is often treated entirely as a product of the environment, as with any standard quantitative trait, it is reasonable to assume that it may have some genetic component as well (e.g., Gosler and Harper 2000; Merilä et al. 2001a).
+> Example 20.3. Considering the evolution of clutch size $ (z_1) $ in birds (number of eggs laid in a particular episode), Price and Liou (1989) suggested that fitness is largely determined by the nutritional state, $ z_2 $, of a mother, which also influences her own clutch size, $ \sigma(z_1, z_2) \neq 0 $. They assumed that nutritional state is entirely environmental, $ \sigma^2(A_2) = 0 $. Equation 20.1a implies that, even if there is no direct selection on clutch size per se ( $ \beta_1 = 0 $), we would still observe a selection differential on clutch size if it is phenotypically correlated with nutritional state and the latter is itself under selection ( $ \beta_2 \neq 0 $), as $ S_1 = \beta_2 \sigma(z_1, z_2) \neq 0 $. The resulting selection response in clutch size, $ R_1 $, is $ \beta_2 \sigma(A_1, A_2) = 0 $, because nutritional state is assumed to have no heritable variance, which implies $ \sigma(A_1, A_2) = 0 $. As a result, there is apparent directional selection on clutch size ( $ S_1 \neq 0 $), but no response ( $ R_1 = 0 $). The notion of nutritional status, or some other measure of well-being, of an organism is often referred to as condition by ecologists (Le Cren 1951). Although this term is often used fairly loosely, without any formal definition, one common operational measure is the residual from a regression of weight on some measure of body size (i.e., size-adjusted weight). The motivation for this metric is that individuals in good condition will be heavier than expected given their size, while individuals in poor condition will be underweight. Jakob et al. (1996), Green (2001), and Schulte-Hostedde et al. (2005) discussed the merits of this metric. While condition is often treated entirely as a product of the environment, as with any standard quantitative trait, it is reasonable to assume that it may have some genetic component as well (e.g., Gosler and Harper 2000; Merilä et al. 2001a).
 
 
 ---
 
 ## chapter20_005 · Selection Response in Natural Populations: Introduction / THE FISHER-PRICE-KIRKPATRICK-ARNOLD MODEL FOR EVOLUTION OF BREEDING DATE
+
+**[Figure]**
+
+> **Figure 20.1** · page 5 · source: `chapter20`
+>
+> ![Figure 20.1](../figures/fig_0081.png)
+>
+> Figure 20.1 An environmental variable (soil nitrate) influences both fitness and trait value (alkaloid levels), creating a covariance between the trait and fitness (measured by seed production), when in fact the trait value is not a causal determinant of fitness. In low-nitrate soils (open triangles), plants have low fitness and low levels of alkaloids. In high-nitrate soils (filled circles), plants have high fitness and high levels of alkaloids. Within each of the two environments, there is no association between the trait and fitness (dotted regressions). If one ignores the environmental effects and simply lumps all the individuals together, there is a strong association between fitness and the trait value (dashed regression). (Based on Rausher 1992 and Mauricio and Mojonnier 1997.)
+
+
+**[Figure]**
+
+> **Figure 20.2** · page 6 · source: `chapter20`
+>
+> ![Figure 20.2](../figures/fig_0082.png)
+>
+> Figure 20.2 A path diagram (LW Appendix 2) of the components in the Fisher-Price-Kirkpatrick-Arnold model, showing the connections between breeding date, z, nutritional state, n, and fitness, W. The breeding value, A, general environmental value, e, and nutritional state, n, all influence the breeding date, z, which itself influences fitness (path coefficient  $ \beta_{z} $). Further, there is a second path to fitness directly from the nutritional state ( $ \beta_{h} $), which represents the direct contribution to W of n after its indirect contribution through breeding date is removed. We assume that A, e, and n are all uncorrelated, and hence not connected by any paths. (After Price et al. 1988.)
+
 
 The idea of an environmental feature being the target of selection dates back to Darwin and Fisher. Fisher (1958), based on observations by Darwin (1871), suggested that the condition of a bird influences both her clutch size and the date at which she breeds, with healthier females breeding earlier and having larger clutch sizes. Price, Kirkpatrick, and Arnold (1988) used Fisher's idea as an explanation for the apparent lack of selection response for breeding date in many birds in the temperate zone. Birds that reproduce early have higher fitness than those that breed later in the season, and hence S for breeding date is negative (selection to move the breeding date earlier). Further, when examined, the breeding date typically has moderate to high heritability. Because both $ h^{2} $ and S are nonzero, the breeder's equation predicts a response to selection resulting in a decrease in breeding date, but this is not seen.
 
@@ -180,15 +200,24 @@ As these examples show, one of the most serious limitations in applying the bree
 
 ---
 
-## chapter20_007 · Selection Response in Natural Populations: Introduction / Complications in the Absence of Environmental Change
+## chapter20_007 · MODIFYING THE BREEDER'S EQUATION FOR NATURAL POPULATIONS / Complications in the Absence of Environmental Change
+
+**[Figure]**
+
+> **Figure 20.3** · page 8 · source: `chapter20`
+>
+> ![Figure 20.3](../figures/fig_0083.png)
+>
+> Figure 20.3 The pathways by which the components of a character (phenotype, z, additive genetic value, A, common environmental effect, E, and special environmental effect,  $ e_s $) influence fitness, W. A: The breeder's equation assumes that only the phenotype (z) of a character causally influences fitness. This is not an unreasonable starting assumption for artificial selection, wherein the breeder directly chooses individuals on the basis of phenotypes and randomizes environments with respect to phenotypes. B: Other pathways by which the components of a character can influence fitness. Either (or both) of the additive genetic and environmental values can influence fitness independently of their influence on phenotype. For example, an environmental value can both influence the character of interest and independently influence fitness. The influence of other traits that are also under selection, whose breeding values are correlated with our focal trait, appears through A and not through z. Similarly, the effect of shared environmental factors on phenotypic correlations appears through E. Finally, genotypic and environmental values may be correlated ( $ \sigma(A, E) \neq 0 $), which is indicated by the double-headed arrows connecting A and E.
+
 
 How these complications bias the breeder's equation was examined by van Tienderen and de Jong (1994), with similar analysis (under a multivariate breeder's equation framework) by Hadfield (2008). van Tienderen and de Jong assumed complete additivity (no dominance or epistasis), multivariate normality, and linear parent-offspring regressions. As shown in Figure 20.3, they used a path analysis argument (LW Appendix 2) to explore the relationship between the selection response (R) and the selection differential (S) when complications such as selection on correlated characters and genotype-environment correlations exist.
 
 **[命题 Proposition]**
 
-To proceed, we decompose the phenotype, z, as $$ z=A+E+e_{s} $$ where $A$ is the additive genetic value, $E$ is the general environmental effect (for example, the average impact of a particular macrohabitat), and $e_s$ is the special (or residual) environmental effect unique to each individual (LW Chapter 6). By construction, $e_s$ is independent of the other variables (meaning that the total environmental variance is $\sigma_E^2 + \sigma_{e_s}^2$), but $A$ and $E$ may be correlated. Consider Figure 20.3, which shows possible paths of how the environmental value, $E$, the genotypic value, $A$, and the phenotypic value, $z$, can influence fitness. Figure 20.3A shows the breeder's equation assumption that $E$ and $A$ influence fitness only through the phenotypic value, $z$.
+To proceed, we decompose the phenotype, z, as $$ z=A+E+e_{s} $$ where $A$ is the additive genetic value, $E$ is the general environmental effect (for example, the average impact of a particular macrohabitat), and $e_s$ is the special (or residual) environmental effect unique to each individual (LW Chapter 6). By construction, $e_s$ is independent of the other variables (meaning that the total environmental variance is $\sigma_E^2 + \sigma_{e_s}^2$), but $A$ and $E$ may be correlated. Consider Figure 20.3, which shows possible paths of how the environmental value, $E$, the genotypic value, $A$, and the phenotypic value, $z$, can influence fitness. Figure 20.3 shows the breeder's equation assumption that $E$ and $A$ influence fitness only through the phenotypic value, $z$.
 
-Figure 20.3B shows the general situation where E and A can influence fitness independent of (or, in addition to) their effects on z, as can occur if the focal trait is phenotypically and/or genetically correlated with other characters that are under selection. If fitness is entirely determined by the phenotypic value of the focal trait, there should be no expected differences in the fitness of individuals with the same phenotypic value, z, but different underlying genetic (A) or environmental values (E). Suppose two individuals both have z = 100 and $ e_s = 0 $, but individual 1 has A = 80 and E = 20, while individual 2 arrives at this phenotypic value by A = 10 and E = 90. If selection is entirely on the phenotype, both individuals have the same expected fitness, but their expected fitnesses may differ if there is additional selection on A and/or E beyond that based on direct selection on z. For example, if correlated characters are under selection, then individuals with the same z value can have different fitnesses due to correlations between their A and/or E values with the genetic and/or environmental values at other traits that influence fitness.
+Figure 20.3 shows the general situation where E and A can influence fitness independent of (or, in addition to) their effects on z, as can occur if the focal trait is phenotypically and/or genetically correlated with other characters that are under selection. If fitness is entirely determined by the phenotypic value of the focal trait, there should be no expected differences in the fitness of individuals with the same phenotypic value, z, but different underlying genetic (A) or environmental values (E). Suppose two individuals both have z = 100 and $ e_s = 0 $, but individual 1 has A = 80 and E = 20, while individual 2 arrives at this phenotypic value by A = 10 and E = 90. If selection is entirely on the phenotype, both individuals have the same expected fitness, but their expected fitnesses may differ if there is additional selection on A and/or E beyond that based on direct selection on z. For example, if correlated characters are under selection, then individuals with the same z value can have different fitnesses due to correlations between their A and/or E values with the genetic and/or environmental values at other traits that influence fitness.
 
 **[推导 Derivation]**
 
@@ -366,7 +395,7 @@ which equals zero unless a genotype-environment correlation exists. Again, in th
 
 ---
 
-## chapter20_009 · Selection Response in Natural Populations: Introduction / Additional Complications From Environmental Change
+## chapter20_009 · MODIFYING THE BREEDER'S EQUATION FOR NATURAL POPULATIONS / Additional Complications From Environmental Change
 
 The above analysis considered the complications from uncontrolled, but static, environmental effects. A further layer of complexity arises when the environment (more formally, the distribution of possible environments) changes from year to year. First, the target of selection may radically change from one year to the next (e.g., Example 20.2). The significance of such temporal variation in selection remains an unresolved question. Siepielski et al. (2009) claimed that it is rather common and that changes in sign can be expected. Conversely, a reanalysis of the Siepielski et al. dataset by Morrissey and Hadfield (2012) concluded that the strength of directional selection in these studies is actually remarkably consistent after accounting for sampling variation. A related question is whether evolution is largely shaped by relatively rare, but major, events, (e.g., Example 20.2; Marrot et al. 2017), or rather by more gradual, but constant, pressures with less temporal variation.
 
@@ -384,7 +413,7 @@ What is the advantage of a consistency test versus simply comparing the realized
 
 ---
 
-## chapter20_011 · Selection Response in Natural Populations: Introduction / Robertson's Theorem: Response Prediction Without Regard to the Target of Selection
+## chapter20_011 · IS A FOCAL TRAIT THE DIRECT TARGET OF SELECTION? / Robertson's Theorem: Response Prediction Without Regard to the Target of Selection
 
 **[命题 Proposition]**
 
@@ -392,18 +421,28 @@ Recall from Chapter 6 that the breeder’s equation is not the only expression f
 
 **[示例 Example]**
 
-> **Example 20.4** · ref: `20.4` · source: `chapter20_011.json` · blocks 1–1
+> **Example 20.4** · ref: `20.4` · source: `chapter20_011.json` · blocks 1–4
 >
-> Example 20.4. One of the earliest applications of Robertson’s theorem to natural populations examined mean nestling weight and offspring survival in great tits (Parus major) (van Noordwijk 1988). The key idea exploited by van Noordwijk was to consider two different covariances involving an individual’s nestling weight, z. The first, $ \sigma(z, w) $, was with its own survival (standardized by mean survival of the population to obtain a relative fitness, w). From the Robertson-Price identity (Equation 6.10), this is simply the selection differential, S, on nestling weight. With an estimate of $ h^2 $ for nestling weight, the expected responses of $ R = h^2 S $ under the breeder’s equation are given in the table below.
+> Example 20.4. One of the earliest applications of Robertson’s theorem to natural populations examined mean nestling weight and offspring survival in great tits (Parus major) (van Noordwijk 1988). The key idea exploited by van Noordwijk was to consider two different covariances involving an individual’s nestling weight, z. The first, $ \sigma(z, w) $, was with its own survival (standardized by mean survival of the population to obtain a relative fitness, w). From the Robertson-Price identity (Equation 6.10), this is simply the selection differential, S, on nestling weight. With an estimate of $ h^2 $ for nestling weight, the expected responses of $ R = h^2 S $ under the breeder’s equation are given in the table below. In the same study van Noordwijk also considered the covariance of parental nestling weight with the survival of its offspring. In the absence of any shared environmental effects, the covariance between one trait in a parent (nestling weight) and a second trait in its offspring (offspring survival) is through the breeding value of the parental trait. He examined the difference between the mean weight of all parents and the mean weight of parents who had surviving offspring. While not stated as such by van Noordwijk, this selection differential (on the parents) conditioned on the survival of their offspring is an estimator of $ \sigma(A_{z}, w) $, and hence this is the predicted response under Robertson's theorem. The results for 1975 to 1978 are in the final column in the following table.
 > 
-> In the same study van Noordwijk also considered the covariance of parental nestling weight with the survival of its offspring. In the absence of any shared environmental effects, the covariance between one trait in a parent (nestling weight) and a second trait in its offspring (offspring survival) is through the breeding value of the parental trait. He examined the difference between the mean weight of all parents and the mean weight of parents who had surviving offspring. While not stated as such by van Noordwijk, this selection differential (on the parents) conditioned on the survival of their offspring is an estimator of $ \sigma(A_{z}, w) $, and hence this is the predicted response under Robertson's theorem. The results for 1975 to 1978 are in the final column in the following table.
+> > **Inline Table 4** · `inline_4` · page 13 · source: `chapter20_011`
+> > Inline Table 4
+> >
+> > Year | S | $ h^{2} $ | $ R = h^{2}S $ | $ R = \sigma(A_{z}, w) $
+> > --- | --- | --- | --- | ---
+> > 1975 | 0.24 | 0.38 | 0.07 | 0.00
+> > 1976 | 0.68 | 0.47 | 0.32 | 0.03
+> > 1977 | 0.16 | 0.26 | 0.04 | 0.06
+> > 1978 | 0.53 | 0.29 | 0.15 | 0.05
+> > mean | 0.40 | 0.35 | 0.14 | 0.035
+> 
 > 
 > The breeder’s equation significantly overpredicts the selection response relative to Robertson’s theorem, suggesting that factors correlated with nestling weight also influence fitness.
 
 
 ---
 
-## chapter20_012 · Selection Response in Natural Populations: Introduction / Robertson Consistency Tests
+## chapter20_012 · IS A FOCAL TRAIT THE DIRECT TARGET OF SELECTION? / Robertson Consistency Tests
 
 **[命题 Proposition]**
 
@@ -442,7 +481,7 @@ The left-hand side of Equation 20.16b is the slope $ (b_z) $ of the univariate l
 
 ---
 
-## chapter20_013 · Selection Response in Natural Populations: Introduction / Rausher's Consistency Criteria
+## chapter20_013 · IS A FOCAL TRAIT THE DIRECT TARGET OF SELECTION? / Rausher's Consistency Criteria
 
 **[推导 Derivation]**
 
@@ -512,7 +551,7 @@ The realization in the early 2000s that mixed models (Chapter 19; LW Chapters 26
 
 ---
 
-## chapter20_014 · Selection Response in Natural Populations: Introduction / Morrissey et al.'s Consistency Criteria
+## chapter20_014 · IS A FOCAL TRAIT THE DIRECT TARGET OF SELECTION? / Morrissey et al.'s Consistency Criteria
 
 **[推导 Derivation]**
 
@@ -549,12 +588,12 @@ which is the Morrissey consistency condition (Morrissey et al. 2010, 2012).
 
 > **Example 20.5** · ref: `20.5` · source: `chapter20_014.json` · blocks 3–3
 >
-> Example 20.5. As detailed shortly, mixed models can be used to estimate the variance components required for Equation 20.21c. This was done by Morrissey et al. (2012), who used a bivariate animal model (the focal trait plus fitness as the second trait). They examined four morphological traits in Soay sheep (Ovis aries) on the island of St. Kilda. Body size was of special interest, because estimates of $S$ and $h^2$ suggested a positive response using the breeder's equation, yet the sheep were, if anything, getting smaller. By contrast, the expected response under the secondary theorem (1968 version), $R = \sigma(A_x, A_y)$, was slightly negative (but not significantly different from zero). Using estimates of the components of Equation 20.21c showed that the two sides of this consistency condition were significantly different ($p = 0.048$). Thus, the failure of the selection response to match that predicted by the breeder's equation is likely a result of unmeasured factors that do not influence selection on the breeding value, but upwardly bias estimates of the amount of selection on the phenotype.
+> Example 20.5. As detailed shortly, mixed models can be used to estimate the variance components required for Equation 20.21c. This was done by Morrissey et al. (2012), who used a bivariate animal model (the focal trait plus fitness as the second trait). They examined four morphological traits in Soay sheep (Ovis aries) on the island of St. Kilda. Body size was of special interest, because estimates of $S$ and $h^{2}$ suggested a positive response using the breeder's equation, yet the sheep were, if anything, getting smaller. By contrast, the expected response under the secondary theorem (1968 version), $R = \sigma(A_{x}, A_{y})$, was slightly negative (but not significantly different from zero). Using estimates of the components of Equation 20.21c showed that the two sides of this consistency condition were significantly different ($p = 0.048$). Thus, the failure of the selection response to match that predicted by the breeder's equation is likely a result of unmeasured factors that do not influence selection on the breeding value, but upwardly bias estimates of the amount of selection on the phenotype.
 
 
 ---
 
-## chapter20_015 · Selection Response in Natural Populations: Introduction / The Breeder’s Equation Versus the Secondary Theorem
+## chapter20_015 · IS A FOCAL TRAIT THE DIRECT TARGET OF SELECTION? / The Breeder’s Equation Versus the Secondary Theorem
 
 The elegance of the breeder’s equation is that it fully separates ecology (S) from genetics (h²). Queller (1992a) noted that when Equation 20.16b is satisfied, this separation occurs. More formally, Queller’s separation condition is that the partial covariance (Example 6.8) of A and w given z is zero, $ \sigma(A, w \parallel z) = 0 $ (Equation 20.7b; which also implies $ \sigma(E, w \parallel z) = 0 $; see Queller 1992a). This is simply an alternative way of interpreting Equation 20.16b: that the residual values of A and w (following their separate regression on z) are uncorrelated (e.g., Equation 6.31a). Thus, after accounting for the phenotypic value, there is no residual correlation between breeding value and fitness. (As a technical aside, note that when the separation condition holds, Heywood’s spurious response term, Equation 6.31a, is zero.)
 
@@ -592,7 +631,7 @@ Variance components are estimated by REML (Chapter 19; LW Chapter 27), which are
 
 ---
 
-## chapter20_017 · Selection Response in Natural Populations: Introduction / Animal-model Analysis in Natural Populations: Overview
+## chapter20_017 · APPLYING MIXED MODELS TO NATURAL POPULATIONS: BASICS / Animal-model Analysis in Natural Populations: Overview
 
 Given sufficiently large, complete, and accurate pedigrees, animal models can help separate genetic from environmental trends (Chapter 19), and their ability to estimate individual breeding values seemed to offer the possibility of conducting more accurate Robertson consistency tests. Given these features, it is surprising that the application of mixed models to natural populations was rather recent, starting with suggestions by Shaw (1987) and then by Konigsberg and Cheverud (1992) and Cheverud and Dittus (1992), who applied them to free-living primate populations. These papers went somewhat unnoticed, and a second wave of applications to ungulate mammals and nesting birds started in 1999 (Réale et al. 1999), and has been a rapid growth industry ever since (Kruuk 2004; Kruuk and Hadfield 2007; Postma and Charmantier 2007; Kruuk and Hill 2008; Clutton-Brock and Sheldon 2010; Hadfield et al. 2010; Wilson et al. 2010; Postma 2014).
 
@@ -631,7 +670,7 @@ An extension of this general idea is that parents and offspring often share simi
 
 ---
 
-## chapter20_018 · Selection Response in Natural Populations: Introduction / Obtaining the Relationship Matrix: Direct Observation of the Pedigree
+## chapter20_018 · APPLYING MIXED MODELS TO NATURAL POPULATIONS: BASICS / Obtaining the Relationship Matrix: Direct Observation of the Pedigree
 
 The central difficulty in applying the animal model to free-living populations is obtaining the relationship matrix, A, for the measured sample of individuals. One source of information is the social pedigree based on field observations, especially for birds and mammals (which to date comprise the majority of BLUP applications to wild populations). If we observe a mother nursing an offspring, we have fairly high confidence that the offspring is from that mother. Accessing paternity is more difficult, however. Again, field observations may be useful, for example, observations of which male visits the nest or appears to be the dominant male in other social settings.
 
@@ -641,7 +680,7 @@ Pedigree errors can be high even in systems with apparently strong control over 
 
 ---
 
-## chapter20_019 · Selection Response in Natural Populations: Introduction / Obtaining the Relationship Matrix: Marker Data
+## chapter20_019 · APPLYING MIXED MODELS TO NATURAL POPULATIONS: BASICS / Obtaining the Relationship Matrix: Marker Data
 
 A second source of information on relatedness is provided by polymorphic molecular markers. Methods estimating ancestry from marker data can be grouped into two categories: those that are hypothesis-driven (e.g., tests for paternity from a pool of candidate males, or for individuals being half- or full-sibs) and those that make no prior assumptions about relatedness. These two approaches can be restated as a focus on categorical relationships (assigning pairs of individuals into discrete classes such as parent-offspring, or full- or half-sibs) versus continuous measures of relatedness (estimates of the coefficient of coancestry; LW Chapter 7). A number of methods to estimate pairwise relatedness have been proposed (reviewed by Ritland 2000; van de Casteele et al. 2001; Blouin 2003; Garant and Kruuk 2005; Thomas 2005; Csilléry et al. 2006; Oliehoek et al. 2006; Weir et al. 2006; Frentiu et al. 2008; Pemberton 2008; Powell et al. 2010; Sillanpää 2011; Gay et al. 2013; Bérénos et al. 2014; Jensen et al. 2014; Speed and Balding 2015; Conomos et al. 2016; Ackerman et al. 2017; Wang et al. 2017).
 
@@ -657,11 +696,9 @@ Given the potential of very dense marker information to more accurately infer re
 
 **[示例 Example]**
 
-> **Example 20.6** · ref: `20.6` · source: `chapter20_019.json` · blocks 6–6
+> **Example 20.6** · ref: `20.6` · source: `chapter20_019.json` · blocks 6–7
 >
-> Example 20.6. We now possess the ability—either through dense SNP chips or by whole-genome sequencing—to score thousands to millions of SNPs, which offers a very simple approach for obtaining the relationship matrix, A. Given their very low mutation rates, two SNP alleles that are alike in state (AIS), or, equivalently, show identity by state (IBS), can be viewed as also being identical by descent (IBD) with respect to some ancient base population (Speed and Balding 2015), allowing us to compute the coefficient of coancestry, $ \theta_{ij} $ (LW Chapter 7), directly from the SNP data, and hence the entry $ A_{ij} = 2\theta_{ij} $ in the relationship matrix.
-> 
-> The use of dense marker data highlights the important distinction between pedigree kinship and realized kinship (Wang et al. 2017). The value of $ \theta $ calculated using a known pedigree (e.g., LW Chapter 7) is the expected value of the kinship, given the relationship between two individuals. However, with the exception of clones and parent-offspring pairs (which always shared exactly one allele IBD), all other relationships have some variation in the fraction of alleles shared about their expected kinship value due to Mendelian sampling (Risch and Lange 1979; Suarez et al. 1979; Stam 1980; Guo 1996; Visscher et al. 2006; VanRaden 2007, 2008; Hill and Weir 2011). Consider outbred full sibs. At any given locus, the probability that a pair shares 0, 1, or 2 IBD alleles is 1/4, 1/2, and 1/4, respectively. In a pedigree approach, all pairwise $ A_{ij} $ values among full sibs would be the same (1/2), which is the expectation of $ \theta $ for noninbred full sibs (LW Chapter 7). This is the pedigree kinship. However, there is variation in the actual fraction of shared IBD alleles, so that (for example) sibs 1 and 2 may have a realized value of $ \theta_{12} = 0.55 $, while 1 and 3 have a realized value of $ \theta_{13} = 0.42 $. Dense SNP data capture this variation in relatedness, giving more accurate weights when using information from relatives (replacing expected values by their actual realizations). This is the basis of the genomic selection method known as G-BLUP (genomic-BLUP), wherein a marker-estimated (genomic relationship) matrix is used in place of a pedigree relationship matrix for A to improve the BLUP estimates (e.g., VanRaden 2007, 2008; Hayes et al. 2009; Volume 3 examines this method in detail).
+> Example 20.6. We now possess the ability—either through dense SNP chips or by whole-genome sequencing—to score thousands to millions of SNPs, which offers a very simple approach for obtaining the relationship matrix, A. Given their very low mutation rates, two SNP alleles that are alike in state (AIS), or, equivalently, show identity by state (IBS), can be viewed as also being identical by descent (IBD) with respect to some ancient base population (Speed and Balding 2015), allowing us to compute the coefficient of coancestry, $ \theta_{ij} $ (LW Chapter 7), directly from the SNP data, and hence the entry $ A_{ij} = 2\theta_{ij} $ in the relationship matrix. The use of dense marker data highlights the important distinction between pedigree kinship and realized kinship (Wang et al. 2017). The value of $ \theta $ calculated using a known pedigree (e.g., LW Chapter 7) is the expected value of the kinship, given the relationship between two individuals. However, with the exception of clones and parent-offspring pairs (which always shared exactly one allele IBD), all other relationships have some variation in the fraction of alleles shared about their expected kinship value due to Mendelian sampling (Risch and Lange 1979; Suarez et al. 1979; Stam 1980; Guo 1996; Visscher et al. 2006; VanRaden 2007, 2008; Hill and Weir 2011). Consider outbred full sibs. At any given locus, the probability that a pair shares 0, 1, or 2 IBD alleles is 1/4, 1/2, and 1/4, respectively. In a pedigree approach, all pairwise $ A_{ij} $ values among full sibs would be the same (1/2), which is the expectation of $ \theta $ for noninbred full sibs (LW Chapter 7). This is the pedigree kinship. However, there is variation in the actual fraction of shared IBD alleles, so that (for example) sibs 1 and 2 may have a realized value of $ \theta_{12} = 0.55 $, while 1 and 3 have a realized value of $ \theta_{13} = 0.42 $. Dense SNP data capture this variation in relatedness, giving more accurate weights when using information from relatives (replacing expected values by their actual realizations). This is the basis of the genomic selection method known as G-BLUP (genomic-BLUP), wherein a marker-estimated (genomic relationship) matrix is used in place of a pedigree relationship matrix for A to improve the BLUP estimates (e.g., VanRaden 2007, 2008; Hayes et al. 2009; Volume 3 examines this method in detail). There are a large number of proposed methods that translate SNP data into estimates of $ \theta $. The basic approach is as follows. Consider two individuals, x and y. We denote the two alleles in x by a and b (which may be alike in state), and similarly in y by c and d. The molecular similarity at locus $ \ell $ between x and y is defined by $$ S_{xy,\ell}=\frac{I_{ac}+I_{ad}+I_{bc}+I_{bd}}{4} $$ (20.23a) where $ I_{ad} $ is an indicator function that equals one if $ a $ and $ d $ are AIS, and otherwise is zero. For diallelic loci (such as most SNPs), $ S_{xy,\ell} $ takes on values of 0, 1/2, or 1. A value of 1/4 requires at least three distinct alleles, and values of 3/4 do not occur as, if the first three combinations are one, so is the last (Oliehoek al. 2006). Toro et al. (2002) referred to Equation 20.23a as molecular coancestry, as when AIS equals IBD, then $ E[S_{xy,\ell}] = \theta_{xy} $, with the average over all loci giving an estimate of the elements of the relationship matrix $$ \widehat{A}_{x y}=2\widehat{\theta}_{x y}=\frac{2}{L}\sum_{\ell=1}^{L}S_{x y,\ell} $$ (20.23b) While simple, the issue with this estimator is the equating of AIS with IBD. In order to adjust for AIS status, one needs to assign a base (or reference) population and use the expected genotype frequencies in this base population as the correction for AIS. Specifically, suppose we let $ s_\ell $ denote the probability that two randomly drawn alleles in the base population are AIS. Obviously, $ s_\ell $ is (at a minimum) a function of the allele frequencies at $ \ell $. As shown by Lynch (1988c), the expected value for $ S_{xy,\ell} $ is given by $$ E[S_{x y,\ell}]=\theta_{x y}+(1-\theta_{x y})s_{\ell} $$ (20.23c) For a diallelic locus in Hardy-Weinberg, $$ s_{\ell}=p_{\ell}^{2}+\left(1-p_{\ell}\right)^{2}=1-2p_{\ell}(1-p_{\ell}) $$ Rearranging Equation 20.23c suggests a more general estimator $$ \widehat{\theta}_{xy}=\frac{1}{L}\sum_{\ell=1}^{L}\frac{S_{xy,\ell}-s_{\ell}}{1-s_{\ell}} $$ (20.23d) where $L$ is the number of SNPs for which $x$ and $y$ contain no missing data. Negative estimates of $\theta$ can arise when $S_{xy,\ell} < s_\ell$ over a large number of loci, implying that these individuals are less related than expected by chance. Assuming $s_\ell = 0$ eliminates this problem (the assumption behind Equation 20.23b), but also introduces bias (Speed and Balding 2015; Ackerman et al. 2017). Oliehoek al. (2006) obtained an adjusted value for $s_\ell$ to ensure that all the $\widehat{\theta}_{xy}$ are nonnegative, but again this likely introduces some slight bias. Alternatively, one can base a kinship estimator on the total number of shared AIS alleles over L loci (Day-Williams et al. 2011). First, we define $$ S_{xy}=\sum_{\ell=1}^{L}S_{xy,\ell} $$ (20.23e) Summing Equation 20.23c over all loci yields $$ E[S_{xy}]=\sum_{\ell=1}^{L}E[S_{xy,\ell}]=\sum_{\ell=1}^{L}[\theta_{xy}+(1-\theta_{xy})s_\ell]=L\theta_{xy}+(1-\theta_{xy})\sum_{\ell=1}^{L}s_\ell $$ (20.23f) Rearranging yields the Day-Williams estimator $$ \widehat{\theta}_{x y,D W}=\frac{S_{x y}-\sum_{\ell=1}^{L}s_{\ell}}{L-\sum_{\ell=1}^{L}s_{\ell}} $$ (20.23g)
 
 
 ---
@@ -805,7 +842,7 @@ There are a number of subtleties in connecting AIS/IBS with IBD, largely dealing
 
 ---
 
-## chapter20_022 · Selection Response in Natural Populations: Introduction / Consequences of Pedigree Errors
+## chapter20_022 · APPLYING MIXED MODELS TO NATURAL POPULATIONS: BASICS / Consequences of Pedigree Errors
 
 Because the strength of a mixed-model analysis arises from accurately borrowing information from relatives, pedigree errors result in both bias and a loss of power. Generally speaking, there are two types of errors: (i) missing a link (setting relatives to unrelated); and (ii) incorrectly linking unrelated individuals together. In natural populations, there is a strong bias toward maternal connections, in that (depending on the biology of the focal species) many mother-offspring connections will be found and the incorrect assignment of maternity is unlikely (but certainly possible). In contrast, assigning fathers is much more problematic, with many offspring potentially having unassigned fathers, even when their true fathers are in the sample. Missed or incorrect paternal assignments have the effect of making what the model assumes to be unrelated individuals more similar (when the father is in the sample but not assigned to its offspring) and related individuals less similar (an incorrect father is assigned). This generally reduces heritability estimates. More importantly, there are significant implications for the detection of maternal effects. If most pedigree errors are paternal, then offspring will tend to resemble their mothers more than their fathers, resulting in a false signal of maternal effects (Postma and Charmantier 2007). Proper estimation of maternal effects requires a significant number of correct paternal links, as these allow direct and maternal effects to be disentangled (Chapter 22).
 
@@ -819,7 +856,7 @@ In summary, although there appears to be a wealth of tools for using molecular m
 
 ---
 
-## chapter20_023 · Selection Response in Natural Populations: Introduction / Model Selection
+## chapter20_023 · APPLYING MIXED MODELS TO NATURAL POPULATIONS: BASICS / Model Selection
 
 A final concern when using wild pedigrees is the delicate issue of model selection—determining which additional random effects among a set of candidates should be incorporated (e.g., whether a common family effect should be added to the model). Typically one incorporates additional random effects when their associated variance component is significant or when the model fit is improved by some criterion (e.g., the likelihood ratio test or model selection statistics such as AIC or BIC; see Example 12.5). One interesting consequence of a Bayesian analysis is that unless a variance prior has some point mass at zero, the resulting posterior confidence interval will always exclude zero, resulting in all variance components (for which the MCMC converges) being significant in the sense of a value of zero being excluded. In such settings, goodness-of-fit measures such as BIC should be the criteria used for model selection.
 
@@ -850,7 +887,7 @@ Animal models have been used to address two important questions regarding the na
 
 ---
 
-## chapter20_025 · Selection Response in Natural Populations: Introduction / Consistency Tests: Accuracy, Reliability, and Caveats when Using PBVs
+## chapter20_025 · APPLYING MIXED MODELS TO NATURAL POPULATIONS / Consistency Tests: Accuracy, Reliability, and Caveats when Using PBVs
 
 Many of the initial applications of animal models in natural populations used individual PBVs in tests of selection on breeding, versus environmental, values (Equations 20.18 and 20.20), for example, fitting the Rausher-Simms regression using PBVs, $ w = 1 + \beta_A \widehat{a} + \beta_E \widehat{e} + \epsilon $. However, Postma (2006) noted that there are significant problems with using an estimated value, $ \widehat{a} $, in place of the true breeding value, $ A $ (to conform with the literature, we use an italicized $ A $ for the true breeding value, $ \widehat{a} $ for the PBV, and a bold roman $ A $ for the relationship matrix). His central point was that when the pedigree adds little additional information, the PBV for an individual is almost entirely determined by its phenotype. The resulting
 
@@ -918,6 +955,15 @@ Finally, for $ z = A + E $, Postma (2006) showed that the prediction-error varia
 > $$ \sigma^{2}(\epsilon)=\sigma(\widehat{a},E)=\left(1-\rho^{2}\right)\sigma^{2}(A) $$
 
 
+**[Figure]**
+
+> **Figure 20.4** · page 30 · source: `chapter20`
+>
+> ![Figure 20.4](../figures/fig_0084.png)
+>
+> Figure 20.4 Comparison of predicted breeding values (PBVs) as a function of phenotypic value, z, based on different amounts of information from relatives. With only a single observation (i.e., no relatives), PBVs (open circles) show no variation about their predicted value of  $ \hat{a} = h^2(z - \mu) $, and  $ \rho^2 = h^2 $. As more information from relatives accrues,  $ \rho^2 > h^2 $, and the PBVs (gray-filled circles) become less dependent on an individual's phenotype, showing greater spread about the regression. Now, for a given phenotypic value,  $ z $, the residual variance of a PBV around its mean predicted value of  $ h^2(z - \mu) $ is  $ (\rho^2 - h^2)\sigma^2(A) $. When  $ \rho = 1 $ (PBV = true BV, shown in the figure as black circles) this spread around  $ z $ is  $ (1 - h^2)\sigma^2(A) $, which can be substantial when heritability is low, as  $ z $ is a poor predictor of A. (After Postma and Charmantier 2007.)
+
+
 When $ \rho^2 < 1/2 $, the implication is that PBVs resemble individual phenotypes more than they do the true breeding values (Figure 20.4), and hence PBVs are biased by environmental influences on the phenotype. In particular, Equation 20.24f shows that the prediction error is the covariance of an individual's environmental value and its PBV. When $ \rho^2 \sim 1 $, the environmental value has no impact on the estimate, $ \widehat{\rho} $, but when $ \rho^2 $ is modest to small, the PBV is a mixture of the true breeding value, A, plus an error reflecting environmental effects.
 
 Figure 20.4 illustrates this phenomenon in a plot of predicted breeding values versus phenotypic values. When the predicted breeding value is based solely on the phenotypic value, $z$, of a single individual (open circles), there is no variation about its predicted value of $h^{2}(z-\mu)$, as all individuals with the same $z$ value have the same predicted breeding value. In this case, while there is no variance in the PBVs for a given $z$ (as all PBVs are the same), the residual variance between $z$ and the true breeding value can be considerable, namely $\sigma^{2}(\epsilon)=(1-h^{2})\sigma^{2}(A)$. This follows from Equation 20.24e and the fact that $\rho^{2}=h^{2}$ when only $z$ is used to predict A. With a standard heritability of around 0.3, this amounts to 70% of the additive variance remaining unaccounted for by the PBVs. When PBVs are based on information from the phenotypes of relatives (in addition to an individual's phenotype), the reliability $\rho^{2}$ exceeds $h^{2}$, and influenced by this information from relatives, the predicted values start to vary about their mean value of $h^{2}(z-\mu)$ for a given $z$, giving a more accurate picture of the true values. The influence of relatives is to make an individual's predicted breeding value less dependent on its own phenotypic (and hence, environmental) value. The residual variance for the true breeding value for a given phenotypic value, $z$, is $(\rho^{2}-h^{2})\sigma^{2}(A)$, which is maximized at $(1-h^{2})\sigma^{2}(A)$, when the reliability is complete $(\rho=1)$. Postma and Charmantier (2007) noted that $\rho^{2}$ is often around 0.5 for wild pedigrees, so that roughly half of the estimate of a typical PBV is influenced by the environment (Equation 20.24f).
@@ -966,7 +1012,7 @@ A caveat with this approach is that $ \sigma(\widehat{a}, w) $ is a biased estim
 
 ---
 
-## chapter20_027 · Selection Response in Natural Populations: Introduction / Bivariate Animal Models: REML Estimates of $ \sigma(A_{z}, A_{w}), S_{A} $, and $ S_{z} $
+## chapter20_027 · APPLYING MIXED MODELS TO NATURAL POPULATIONS / Bivariate Animal Models: REML Estimates of $ \sigma(A_{z}, A_{w}), S_{A} $, and $ S_{z} $
 
 **[推导 Derivation]**
 
@@ -1077,7 +1123,7 @@ and
 
 ---
 
-## chapter20_028 · Selection Response in Natural Populations: Introduction / Next-generation Analysis: Generalized Mixed Models
+## chapter20_028 · APPLYING MIXED MODELS TO NATURAL POPULATIONS / Next-generation Analysis: Generalized Mixed Models
 
 This bivariate analysis of a trait and fitness makes two critical assumptions that are starting to be relaxed by using the more sophisticated analyses that are possible within a Bayesian framework. The first is that the standard mixed model assumes normally distributed random variables. Such is clearly not the case with fitness, in which random variables are often expected to be zero-inflated, with a point mass at zero fitness (which can be substantial). One way to handle such data is to use a zero-inflated Poisson distribution (a Poisson with an additional point mass at zero; Chapters 14 and 29). As discussed in Chapter 29, zero-inflated models are one attempt to deal with overdispersion. If count data follow a Poisson, then the mean and variance should be equal. Overdispersion occurs when the variance exceeds the mean, which can occur if there are an excess of zeros. Overdispersion can also occur if there are an excessive of other values, and Chapter 29 examines models that allow for both zero inflation and any additional overdispersion that is present after accounting for any excess of zeros. When fitness does not follow a normal distribution, the standard general linear model is replaced by generalized linear models (Chapters 14 and 29), which extend to generalized mixed models (Bolker et al. 2009; de Villemereuil et al. 2016) when the distribution of random effects is nonnormal.
 
@@ -1085,21 +1131,48 @@ The basic strategy in applying a generalized linear model was seen in our discus
 
 ---
 
-## chapter20_029 · Selection Response in Natural Populations: Introduction / Next-generation Analysis: Modeling Missing Data
+## chapter20_029 · APPLYING MIXED MODELS TO NATURAL POPULATIONS / Next-generation Analysis: Modeling Missing Data
 
-By their very nature, fitness data have missing values. Individuals may not be recaptured (even when still alive), the number of mates and offspring may be undercounted, and selection on a trait may occur before we measure it for the first time in a cohort. The nature of the process causing certain data to be absent is critical in determining whether ignoring these missing values yields biased estimates for parameters of interest (Little and Rubin 2002; Hadfield 2008; Nakagawa and Freckleton 2008). Consider a simple case, where egg production, y, is a linear function of body size, x, and where we have body-size measures for all individuals in a sample but some of the egg-production values are missing (Figure 20.5). Following the terminology of Little and Rubin (2002), the missing y values are said to be missing completely at random (MCAR) when the process generating the missing values is entirely independent of either the x or y values (i.e., the missing values are simply a random sample of the population; Figure 20.5B). In such cases, the standard process of simply ignoring data with missing values (i.e., discarding those x observations with missing y) does not bias estimates of the relationship between x and y.
+By their very nature, fitness data have missing values. Individuals may not be recaptured (even when still alive), the number of mates and offspring may be undercounted, and selection on a trait may occur before we measure it for the first time in a cohort. The nature of the process causing certain data to be absent is critical in determining whether ignoring these missing values yields biased estimates for parameters of interest (Little and Rubin 2002; Hadfield 2008; Nakagawa and Freckleton 2008). Consider a simple case, where egg production, y, is a linear function of body size, x, and where we have body-size measures for all individuals in a sample but some of the egg-production values are missing (Figure 20.5). Following the terminology of Little and Rubin (2002), the missing y values are said to be missing completely at random (MCAR) when the process generating the missing values is entirely independent of either the x or y values (i.e., the missing values are simply a random sample of the population; Figure 20.5). In such cases, the standard process of simply ignoring data with missing values (i.e., discarding those x observations with missing y) does not bias estimates of the relationship between x and y.
 
-In contrast, the y values are said to be missing at random (MAR) when the process generating the missing data depends on the observed (x) values, but not on the associated y values. For example, suppose individuals above a certain body size have missing y values. The regression (of y as a function of x) ignoring these missing values recovers the same regression (within sampling error) as the full data set (Figure 20.5C). In other words, we can potentially take the observed data and use them to impute the missing data. Finally, suppose that the missing data are generated by a process that depends instead on y; for example, we do not score individuals whose egg production is outside of a certain range. Removing these data points (here based on truncated y values) results in biased estimates of the regression parameters (Figure 20.5D). Such data are said to be missing not at random (MNAR). MCAR and MAR data are said to be ignorable, in that estimates are not biased by the missing data. Conversely, MNAR data are nonignorable, and one requires a model of the process generating the missing data to obtain unbiased parameter estimates.
+In contrast, the y values are said to be missing at random (MAR) when the process generating the missing data depends on the observed (x) values, but not on the associated y values. For example, suppose individuals above a certain body size have missing y values. The regression (of y as a function of x) ignoring these missing values recovers the same regression (within sampling error) as the full data set (Figure 20.5). In other words, we can potentially take the observed data and use them to impute the missing data. Finally, suppose that the missing data are generated by a process that depends instead on y; for example, we do not score individuals whose egg production is outside of a certain range. Removing these data points (here based on truncated y values) results in biased estimates of the regression parameters (Figure 20.5). Such data are said to be missing not at random (MNAR). MCAR and MAR data are said to be ignorable, in that estimates are not biased by the missing data. Conversely, MNAR data are nonignorable, and one requires a model of the process generating the missing data to obtain unbiased parameter estimates.
+
+**[Figure]**
+
+> **Figure 20.5** · page 35 · source: `chapter20`
+>
+> ![Figure 20.5](../figures/fig_0085.png)
+>
+> Figure 20.5 The different categories of missing data, as illustrated through a simple example where the missing data, y (vertical axes), are a linear function of x (horizontal axes). Regression lines using the observed data (filled circles) are illustrated. A: The uncensored full dataset. In the remaining three panels, roughly 20% of the original data is missing (unfilled circles). B: Here, y values were removed entirely at random. Such data are said to be missing completely at random (MCAR). C: The data are not missing at random, but rather missing as a function of x (the y values for large x values are missing). Note, however, that in this setting (because y is a function of x), our estimate of the relationship between x and y (as in B) is not biased. Such data are said to be missing at random (MAR). In the settings (B) and (C), namely MCAR and MAR data, the missing data are said to be ignorable, as estimates of the regression parameters are not biased by the missing data. D: Here the data are missing as a function of y (culled for extreme values). The resulting estimated regression is seriously biased in both its slope and its intercept. Such data are said to be missing not at random (MNAR), and said to be nonignorable, as estimates of the regression parameters are indeed biased by the missing data.
+
 
 Quantitative-genetic considerations of missing data trace back to Im et al. (1989) in animal breeding and Hadfield (2008) in evolutionary genetics. In particular, Hadfield found that viability selection data are usually MNAR, implying that one must model the censoring process to yield unbiased estimates. He showed that modeling the survival process and using an animal-model framework (wherein information can be borrowed from measured relatives) improves estimation. Papaix et al. (2010) and Steinsland et al. (2014) developed missing-data extensions for capture-recapture analysis and for the invisible fraction (selection before traits are measured; Chapter 29), respectively. The coupling of non-Gaussian distributions for fitness with the modeling of the missing-data process represent an important extension towards more realistic models for the analysis of trait-fitness data from natural populations.
 
 ---
 
-## chapter20_030 · Selection Response in Natural Populations: Introduction / Detecting Genetic Trends
+## chapter20_030 · APPLYING MIXED MODELS TO NATURAL POPULATIONS / Detecting Genetic Trends
+
+**[Figure]**
+
+> **Figure 20.6** · page 36 · source: `chapter20`
+>
+> ![Figure 20.6](../figures/fig_0086.png)
+>
+> Figure 20.6 The anticonservative nature of using mean PBVs regressed on time to detect a genetic trend, with support for a trend given by a significantly nonzero slope for this regression. Here, the trait is body weight in Soay sheep. The peak of the thick smooth curve centered slightly to the right of zero represents the OLS estimate of the slope for the regression of mean BLUP-PBVs on generation number (i.e., time), and the spread of the curve represents the associated sampling error, which is almost entirely to the right of zero. This shows that the OLS slope estimate is significantly positive. Conversely, the histogram gives samples from the posterior distribution of slopes from a Bayesian analysis (details in the text). While this distribution has the same mean as the BLUP-based slope estimates, its variance is significantly greater. Indeed, 28% of the probability mass is less than zero, showing that the Bayesian estimate of the slope (which more fully accounts for the uncertainty and correlations among individual estimates) is not significantly different from zero. (After Hadfield et al. 2010.)
+
 
 The gold standard for detecting a genetic change is to grow two populations in a common-garden experiment, ensuring that any change is genetic, rather than environmental. With the exception of the use of remnant seed (or, for other organisms where we can freeze or otherwise immortalize individuals), making contemporaneous comparisons of the genetic composition of different generations is usually not possible. However, as we saw in Chapter 19, it is often possible to make this comparison statistically through the animal model, provided the population is sufficiently connected across the generations by sampled relatives. Due to their pedigree depth and connectedness, this is reasonable for most breeding programs and artificially selected populations. The reliability of PBVs in such settings is fairly high, as these conditions reduce the environmental influence on PBVs. Further, PBVs are unbiased (provided individuals are randomized over environments), and taking their average for a sample (such as a generation) smooths out some of the environmental noise associated with individual estimates, thus allowing a plot of mean PBVs over time to show a trend (or lack thereof). In theory, this same approach can be applied to natural populations, provided the genotype-environment correlations are largely ignorable.
 
 The more delicate issue is that of inference. As we saw in Chapter 18, both OLS and GLS regressions of the selection response on the selection differential gave unbiased estimates of the realized heritability, but because the residuals are heteroscedastic and correlated, the sampling variances under OLS are too small relative to the correct values under GLS (see Example 18.4). As a result, OLS-based tests are anticonservative; namely, the p values (testing for a potential genetic trend by regressing mean breeding value on time) are heavily biased toward smaller, more significant, values. The same issue arises with the error structure of PBVs (Hadfield et al. 2010), as Figure 20.6 illustrates.
+
+**[Figure]**
+
+> **Figure 20.7** · page 37 · source: `chapter20`
+>
+> ![Figure 20.7](../figures/fig_0087.png)
+>
+> Figure 20.7 Postma and Charmantier's (2007) recommendations for the interpretation of genetic trends.
+
 
 Fortunately, there is a simple solution (Hadfield al. 2010), again within the powerful Bayesian framework that (additionally) accounts for all levels of uncertainty in our analysis. A vector, $ \hat{a} $, from the posterior PBV distribution is drawn from a given iteration of the MCMC sampler (Appendix 3). Then the resulting series of PBVs is used to regress (using OLS) mean PBV on generation number (i.e., time) and the resulting slope is recorded. This sampling process is repeated thousands of times to construct an empirical histogram of the posterior slope distribution, which is then used for inference (see Figure 20.6). The resulting empirical distribution of slopes fully accounts for the correlated structure among the PBVs.
 
@@ -1115,12 +1188,21 @@ A final issue is that if one has individuals throughout the pedigree with missin
 
 > **Example 20.7** · ref: `20.7` · source: `chapter20_030.json` · blocks 6–6
 >
-> Example 20.7. Milot et al. (2011) examined the evolution of age at first reproduction (AFR) of human settlers in the isolated island of ile aux Coudres in Québec. This island was populated by thirty families between 1720 and 1772. Because of careful church records, it has a very detailed chronicle of births, marriages, and deaths, which allowed the authors to construct a bivariate animal model for AFR and lifetime reproductive success (LRS). The latter is a proxy for total fitness and was defined in this study as the total number of a woman's offspring reaching age 15. The authors assumed a normal distribution for AFR but a latent Poisson model for LRS. Under this model (discussed in Chapter 14), the breeding value for AFR was defined on an underlying latent scale, with the distribution of LRS for an individual with a liability score of $ y = \mu + A + e $ following a Poisson distribution with a mean of $ e^y $. MCMC methods were used in a Bayesian analysis of this bivariate model, which found significant heritability in both AFR and LRS (the latter as measured on the latent scale). Further, these two traits showed a significant negative genetic correlation (posterior mode of -0.81, 95% credible interval of -0.97 to -0.48). Thus, Robertson's theorem (Equation 6.24a) suggests direct selection to reduce the age of first reproduction, which declined from $ \sim $26 to $ \sim $22 years over a 140-year period. The regression of predicted breeding value over time (measured as eight 20-year cohorts) is given in Figure 20.8, with the diamonds representing the average of 1,000 MCMC samples from the marginal posterior ($ \pm $ their standard errors). As also shown in Figure 20.8, the authors tested whether this trend could be due to drift, using the approach suggested by Hadfield et al. (2010) discussed above. Given the posterior distribution of the additive variance for AFR, RBVs were generated over the known pedigree, and the regression of the RBVs over time was compared to that for PBVs for each run of the sampler. The proportion of times during which the absolute regression slope of the RBVs exceeded the slope based on PBVs was taken as the posterior probability that the response is due to drift, and was found to be less than 0.01. The average slope for RBVs is given by the solid line in Figure 20.8.
+> Example 20.7. Milot et al. (2011) examined the evolution of age at first reproduction (AFR) of human settlers in the isolated island of ile aux Coudres in Québec. This island was populated by thirty families between 1720 and 1772. Because of careful church records, it has a very detailed chronicle of births, marriages, and deaths, which allowed the authors to construct a bivariate animal model for AFR and lifetime reproductive success (LRS). The latter is a proxy for total fitness and was defined in this study as the total number of a woman's offspring reaching age 15. The authors assumed a normal distribution for AFR but a latent Poisson model for LRS. Under this model (discussed in Chapter 14), the breeding value for AFR was defined on an underlying latent scale, with the distribution of LRS for an individual with a liability score of $ y = \mu + A + e $ following a Poisson distribution with a mean of $ e^y $. MCMC methods were used in a Bayesian analysis of this bivariate model, which found significant heritability in both AFR and LRS (the latter as measured on the latent scale). Further, these two traits showed a significant negative genetic correlation (posterior mode of -0.81, 95% credible interval of -0.97 to -0.48). Thus, Robertson's theorem (Equation 6.24a) suggests direct selection to reduce the age of first reproduction, which declined from $ \sim $26 to $ \sim $22 years over a 140-year period. The regression of predicted breeding value over time (measured as eight 20-year cohorts) is given in Figure 20.8, with the diamonds representing the average of 1,000 MCMC samples from the marginal posterior ( $ \pm $ their standard errors). As also shown in Figure 20.8, the authors tested whether this trend could be due to drift, using the approach suggested by Hadfield et al. (2010) discussed above. Given the posterior distribution of the additive variance for AFR, RBVs were generated over the known pedigree, and the regression of the RBVs over time was compared to that for PBVs for each run of the sampler. The proportion of times during which the absolute regression slope of the RBVs exceeded the slope based on PBVs was taken as the posterior probability that the response is due to drift, and was found to be less than 0.01. The average slope for RBVs is given by the solid line in Figure 20.8. Figure 20.8 An application of Hadfield et al.'s (2010) approach for testing whether a genetic trend is significantly different from that expected under drift alone. Data are for age at first reproduction (AFR) for human settlers on an isolated island in Québec. Diamonds represent the average of 1,000 MCMC samples from the marginal posterior ( $ \pm $ their standard errors) of the mean predicted breeding value for AFR for each of the eight 20-year cohorts. The regression of these mean PBVs on cohort number is given by the dashed line. As a test for drift, a posteriori-sampled value for the additive variance is drawn, and then used to generate random breeding values (RBVs), given the pedigree structure. The average slope for mean RBVs is given by the solid line, showing that the observed PBV trend (dashed line) is more excessive than that expected by drift. This was confirmed by a comparison of the posterior distribution of regression slopes based on observed PBVs and RBVs (Example 20.7).
 
 
 ---
 
 ## chapter20_031 · Selection Response in Natural Populations: Introduction / CAUSES OF APPARENT FAILURES OF RESPONSE IN NATURAL POPULATIONS
+
+**[Figure]**
+
+> **Figure 20.8** · page 39 · source: `chapter20`
+>
+> ![Figure 20.8](../figures/fig_0088.png)
+>
+> Figure 20.8 An application of Hadfield et al.'s (2010) approach for testing whether a genetic trend is significantly different from that expected under drift alone. Data are for age at first reproduction (AFR) for human settlers on an isolated island in Québec. Diamonds represent the average of 1,000 MCMC samples from the marginal posterior ( $ \pm $ their standard errors) of the mean predicted breeding value for AFR for each of the eight 20-year cohorts. The regression of these mean PBVs on cohort number is given by the dashed line. As a test for drift, a posteriori-sampled value for the additive variance is drawn, and then used to generate random breeding values (RBVs), given the pedigree structure. The average slope for mean RBVs is given by the solid line, showing that the observed PBV trend (dashed line) is more excessive than that expected by drift. This was confirmed by a comparison of the posterior distribution of regression slopes based on observed PBVs and RBVs (Example 20.7).
+
 
 Given the above concerns on the suitability of the breeder’s equation in natural populations, what do the data say? A detailed review of well-studied mammal and bird populations by Merilä et al. (2001c) noted a number of cases where: (i) there was a consistent selection differential on a particular trait; (ii) the trait was heritable; and (iii) yet no selection response (or worse, response in the opposite direction) was observed over a lengthy period (many generations) (Table 20.3). While there are several classic examples of natural populations responding either to imposed artificial selection (Example 18.1; Semlitsch and Wilbur 1989), a new environmental challenge (such as a habitat shift, major weather event, or introduction of a novel selective agent, e.g., Example 20.2; Losos et al. 1997; Reznick et al. 1997), or even to the introduction of a new competitor species (Grant and Grant 2006), Merilä et al. (2001c) lamented the apparent lack of response outside of these situations, raising the central question as to the basis for apparent stasis in response in the face of apparent selection.
 
@@ -1150,7 +1232,7 @@ change with the environment, raising the possibility of low heritabilities when 
 
 ---
 
-## chapter20_032 · Selection Response in Natural Populations: Introduction / Cryptic Evolution: Genetic Change Masked by Environmental Change
+## chapter20_032 · CAUSES OF APPARENT FAILURES OF RESPONSE IN NATURAL POPULATIONS / Cryptic Evolution: Genetic Change Masked by Environmental Change
 
 One explanation for stasis is that change in the environment can dilute, and indeed even swamp, any underlying genetic gain. In the extreme, one can have cryptic evolution: significant genetic change that does not show up as phenotypic change because it is countered by environmental change. Levins (1968) and Conover and Schultz (1995) coined the phrase countergradient variation for situations in which the environmental trend is opposite to the direction of selection. Such situations can increase the strength of selection on a trait, as the population struggles to keep pace with the declining environment. In the extreme, a population faces the risk of extinction if the environment is deteriorating at a faster rate than the rate at which compensating trait values can evolve. Obviously, this is an important issue for populations when attempting to track climate change.
 
@@ -1158,11 +1240,20 @@ One explanation for stasis is that change in the environment can dilute, and ind
 
 One striking example of apparent cryptic evolution is the study by Merilä et al. (2001b) on the Gotland population of collared flycatchers. These authors examined body condition (a measure of relative body weight) at fledging. They defined condition as the residual from the regression of body mass on tarsus (leg) length, and found that this trait has substantial heritable genetic variation (estimated $ h^2 = 0.30 $). Further, it appears to be under constant positive selection, with an average selection intensity of 0.23 (i.e., survivors, on average, were 0.23 standard deviations above the mean before selection). Despite the heritable nature of this trait, which was coupled with strong positive selection, mean condition declined over time (Figure 20.9), with the regression of mean condition from 1981 to 1999 showing a significant negative slope (b = -0.036 per year). Merilä et al. found that the covariance between fitness, $ w_i $, and the breeding value of condition, $ A_{z,i} $, was nonzero, meaning that selection for condition indeed occurred directly on the breeding values. Because $ \sigma(A_{z,i}, w) \neq 0 $, Robertson's secondary theorem predicts a nonzero response (Equation 6.25a). Why, then, is there an the apparent lack of response? As shown in Figure 20.9, the regression of predicted breeding values on time has a positive slope (b = 0.0022), with the population showing genetic improvement, despite the mean phenotype declining over time. The environmental component of condition has been declining over time, and at a rate faster than the genetic improvement, resulting in a net phenotypic decline. Merilä et al. (2001b) suggested this is likely attributable to reductions in the caterpillar food supply due to climatic trends.
 
+**[Figure]**
+
+> **Figure 20.9** · page 42 · source: `chapter20`
+>
+> ![Figure 20.9](../figures/fig_0089.png)
+>
+> Figure 20.9 Body condition at fledging for a Gotland population of collared flycatchers between 1980 and 1999. A: Trend for the mean phenotype. B: Trend for the mean breeding value (the average of the individual PBVs in a given year). (After Merilä et al. 2001b.)
+
+
 Apparent stasis can also actually mask a decrease in mean genetic value. Such an example was seen by Timothée et al. (2017), who examined body mass in snow voles (Chiononmys nivalis). While the predicted response (based upon the observed values of S and $ h^{2} $) was for an increase of $ \sim $0.17 grams per year, the actual change over a nine year window was slightly positive, but not significant. A mixed-model analysis showed that mean breeding value had in reality significantly decreased over this period, with the apparent status in body mass the result of phenotypic plasticity. Selection appeared to be largely on rapidly maturity in juveniles, which leads to low potential adult mass.
 
 **[示例 Example]**
 
-> **Example 20.8** · ref: `20.8` · source: `chapter20_032.json` · blocks 3–3
+> **Example 20.8** · ref: `20.8` · source: `chapter20_032.json` · blocks 3–4
 >
 > Example 20.8. A second example of a negative environmental trend was offered by Larsson et al. (1998), who examined body size in the barnacle goose (Branta leucopsis). The natural colonization of the Baltic area of Sweden by this normally Arctic species started with a single breeding pair in 1971, followed by subsequent rapid increase in the population size. The authors studied the two largest Baltic colonies from 1984 to 1996. Head size and tarsus length were measured to extract a structural body-size index, and larger females were found to have larger, and earlier, clutches (with larger eggs, resulting in more and heavier young). Further, juvenile body mass was significantly positively correlated with post-fedging survival. Both size measures were highly heritable, but average body size declined over the 13-year study period (by 0.7 and 0.5 standard deviations for head and tarsus length, respectively). The authors concluded (from a variety of evidence) that the environment had declined due to growth of the colony. For example, the values of birds from the earlier (and smaller) colony were initially around a standard deviation larger than the values of birds from the older (and larger) colony. Thus, the declining environment seems to involve density-dependent effects on individual growth brought on by the overall success of the colony itself.
 
@@ -1173,7 +1264,7 @@ Building on this theme, Hadfield et al. (2011) noted that a number of distinct b
 
 ---
 
-## chapter20_033 · Selection Response in Natural Populations: Introduction / Antler Size in Red Deer: The Focal Trait Is Not the Target of Selection
+## chapter20_033 · CAUSES OF APPARENT FAILURES OF RESPONSE IN NATURAL POPULATIONS / Antler Size in Red Deer: The Focal Trait Is Not the Target of Selection
 
 Free-living red deer (Cervus elaphus) on the Isle of Rum in Scotland are another well-studied natural population with a largely complete pedigree spanning several decades. Males fight to compete for mates, suggesting antler size as a potential trait under selection. Males shed antlers in the early spring, and given that antler shape is very individual-specific, cast antlers found in the field can easily be assigned to a specific stag. Kruuk et al. (2002, 2014) found that males with larger antlers (measured as the mass of the annually shed antlers) had increased lifetime breeding success (total number of offspring), with a selection differential of $ S/\sigma_z = \bar{\tau} = 0.445 \pm 0.094 $. Although body size (measured by leg length) also had an effect on lifetime breeding success, antler size still had a significant effect on fitness even after accounting for body size, with a standardized (scaled to unit variance) selection gradient of $ \beta = 0.44 \pm 0.18 $. Antler size was heritable ($ h^2 = 0.329 \pm 0.12 $), and the breeder's equation would suggest a response of $ R/\sigma_z = h^2 S/\sigma_z = 0.329 \cdot 0.445 = 0.146 $ standard deviations per generation. Given a generation time of roughly 8 years and a standard deviation of 163 grams for antler mass, this suggests an expected change of roughly 2.3 grams per year. However, the average mass of antlers actually declined by 6.7 grams per year over the study period. One apparent reason for the decline was an environmental change due to increased population density over the study period, with antler size decreasing with increasing density.
 
@@ -1181,7 +1272,7 @@ Was this also a case of genetic change being masked by this environmental change
 
 ---
 
-## chapter20_034 · Selection Response in Natural Populations: Introduction / Lower Heritabilities in Environments with Stronger Selection?
+## chapter20_034 · CAUSES OF APPARENT FAILURES OF RESPONSE IN NATURAL POPULATIONS / Lower Heritabilities in Environments with Stronger Selection?
 
 A more subtle implication of environmental change arises when genotype × environment interactions are present. As the environment changes, so can heritabilities, due to either changes in the environmental or in the genetic components of variance (Hoffmann and Parsons 1991, 1997a, 1997b; Hoffmann and Merilä 1999; Merilä and Sheldon 2001; Sgró and Hoffmann 2004; Charmantier and Garant 2005). There are some suggestions of a weak trend in the direction of change in $ h^{2} $. Data from wild vertebrate populations show increased heritabilities for morphological traits in more favorable environments, while traits more closely associated with fitness show no pattern (Merilä and Sheldon 2001; Charmantier and
 
@@ -1191,7 +1282,7 @@ These surveys of wild populations are at odds with older laboratory experiments 
 
 **[示例 Example]**
 
-> **Example 20.9** · ref: `20.9` · source: `chapter20_034.json` · blocks 3–3
+> **Example 20.9** · ref: `20.9` · source: `chapter20_034.json` · blocks 3–4
 >
 > Example 20.9. Charmantier et al. (2004) examined chick tarsus length and body mass at fledging in three French populations of blue tits (Cyanistes caeruleus), two on the island of Corsica, and a third on the mainland. Their study followed ~8000 banded chicks from ~1200 individual broods, representing three different habitats, which the authors were able to rank in quality. They found that poorer habitats showed weak selection to increase tarsus length and strong selection to increase body mass, while in good habitats there was no significant selection on either trait. It is interesting that heritability for body mass increased with habitat quality, with the lowest heritability occurring in the poor habitats that experienced the strongest selection for increased body weight. In such low-quality environments, strong selection would be at least partly countered by lower heritabilities, leading to a weaker response.
 > 
@@ -1200,7 +1291,7 @@ These surveys of wild populations are at odds with older laboratory experiments 
 
 ---
 
-## chapter20_035 · Selection Response in Natural Populations: Introduction / Fitness Tradeoffs and Multivariate Constraints
+## chapter20_035 · CAUSES OF APPARENT FAILURES OF RESPONSE IN NATURAL POPULATIONS / Fitness Tradeoffs and Multivariate Constraints
 
 **[命题 Proposition]**
 

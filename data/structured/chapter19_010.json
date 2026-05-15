@@ -2,7 +2,7 @@
   "id": "chapter19_010",
   "metadata": {
     "chapter": "chapter19",
-    "section": "Analysis of Short-term Selection Experiments: 2. Mixed-model and Bayesian Approaches: Introduction",
+    "section": "ANIMAL-MODEL ANALYSIS OF SELECTION EXPERIMENTS",
     "subsections": [
       "Response Is Measured by Change in Mean Breeding Values"
     ],
@@ -13,14 +13,19 @@
       "19.8b",
       "19.8c"
     ],
-    "table_references": [],
-    "section_level_1": "Analysis of Short-term Selection Experiments: 2. Mixed-model and Bayesian Approaches: Introduction",
+    "table_references": [
+      "inline_1"
+    ],
+    "section_level_1": "ANIMAL-MODEL ANALYSIS OF SELECTION EXPERIMENTS",
     "section_level_2": "Response Is Measured by Change in Mean Breeding Values",
     "heading_path": [
-      "Analysis of Short-term Selection Experiments: 2. Mixed-model and Bayesian Approaches: Introduction",
+      "ANIMAL-MODEL ANALYSIS OF SELECTION EXPERIMENTS",
       "Response Is Measured by Change in Mean Breeding Values"
     ],
-    "display_heading": "Response Is Measured by Change in Mean Breeding Values"
+    "display_heading": "Response Is Measured by Change in Mean Breeding Values",
+    "table_reference_keys": [
+      "chapter19:inline_1"
+    ]
   },
   "blocks": [
     {
@@ -30,18 +35,6 @@
     {
       "type": "example",
       "content": "[[SEE_EXAMPLE:19.1]]"
-    },
-    {
-      "type": "discussion",
-      "content": "As is apparent from the above example, a mixed-model analysis of a selection experiment has a very different character than an LS analysis. In the latter, one estimates the realized heritability from a suitable regression of phenotypic means on selection differentials. Under a REML/BLUP analysis, however, one first estimates the heritability in the base population (using REML), and then uses (empirical) BLUP to estimate breeding values for all individuals. The genetic response in a given generation is given by the mean of the elements in the estimated vector, a, of breeding values in that generation, allowing for the separation of genetic from environmental response, even in the absence of a control population. Thompson and Atkins (1994) noted a fundamental difference between the two approaches in separating genetic from environmental change: an LS analysis typically uses between-population information (e.g., contrasts of the means of selection vs. control, or up-vs. down-selected lines), while a REML/BLUP analysis uses within-population information (the connections between relatives across generations contained within A)."
-    },
-    {
-      "type": "discussion",
-      "content": "Under an MM analysis, the estimate of heritability should be based on REML estimates of the base population variance components, $ \\widehat{h}^2 = \\widehat{\\sigma}_A^2 / (\\widehat{\\sigma}_A^2 + \\widehat{\\sigma}_e^2) $. One must avoid the temptation to estimate realized heritabilities using estimated mean breeding values. For example, Blair and Pollak (1984) regressed the BLUP mean breeding values on cumulative selection differentials to obtain a realized heritability estimate. The problem with this approach is that these mean estimates depend on the assumed, rather than the actual, heritability (Thompson 1986; Sorensen and Johannsson 1992; Ollivier 1999). In contrast, under a Bayesian analysis, the marginal posterior estimate of mean breeding value in any particular generation averages over all possible $ h^2 $ values and is independent of the heritability (Example 19.10)."
-    },
-    {
-      "type": "discussion",
-      "content": "Hence, a regression of Bayesian-derived mean breeding values on generations can return an unbiased estimate of realized heritability."
     }
   ]
 }

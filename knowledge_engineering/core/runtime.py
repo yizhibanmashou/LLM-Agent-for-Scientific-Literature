@@ -516,6 +516,7 @@ class KnowledgeUnit:
     section_level_2: str | None = None
     heading_path: List[str] = field(default_factory=list)
     display_heading: str | None = None
+    chapter_title: str | None = None
 
     def _canonical_heading_metadata(self) -> tuple[str, list[str], str | None, str | None, list[str], str]:
         def clean(value: object) -> str:
@@ -569,6 +570,8 @@ class KnowledgeUnit:
             "formula_references": self.formula_references,
             "table_references": self.table_references,
         }
+        if self.chapter_title:
+            metadata["chapter_title"] = self.chapter_title
         if section_level_1 is not None:
             metadata["section_level_1"] = section_level_1
         if section_level_2 is not None:
@@ -1007,7 +1010,7 @@ class CompositeChunk:
     def subsections(self) -> List[str]:
         seen: List[str] = []
         for block in self.blocks:
-            subsection = (block.display_heading or block.subsection or "").strip()
+            subsection = (block.subsection or block.display_heading or "").strip()
             if subsection and subsection not in seen:
                 seen.append(subsection)
         return seen

@@ -5,6 +5,7 @@ Main conversion pipeline orchestrator.
 import logging
 import os
 import tempfile
+import json
 from pathlib import Path
 from typing import Optional
 import fitz  # PyMuPDF
@@ -64,50 +65,41 @@ class Pipeline:
         try:
             # 1. OCR (PaddleOCR Cloud)
             logger.info("Stage 1: PaddleOCR Cloud")
-            # converter = self.ocr_converter
-            
-            # Using detailed mode to get JSON
             json_response = self.ocr_converter.convert(pdf_path, output_mode="detailed")
-            
-            import json
+
             try:
                 layout_data = json.loads(json_response)
             except json.JSONDecodeError:
                 logger.warning("Failed to parse JSON layout data. Treating content as flat text.")
-                # Fallback: Create a dummy layout with one big text block
                 layout_data = [[{"type": "text", "res": [{"text": json_response}]}]]
-            
+            self._write_paddle_intermediates(output_dir, layout_data)
+
             # 2. Structure Parsing
             logger.info("Stage 2: Structure Parsing")
             from .converters.structure_parser import StructureParser
             parser = StructureParser()
-            # Pass PDF path and output dir for figure extraction
             doc = parser.parse(layout_data, pdf_path=pdf_path, output_dir=output_dir)
-            
+
             # 3. Reference Resolution
             logger.info("Stage 3: Reference Resolution")
             from .processors.reference_resolver import ReferenceResolver
             resolver = ReferenceResolver()
             doc = resolver.resolve(doc)
-            
+
             # 4. LaTeX Generation
             logger.info("Stage 4: LaTeX Generation")
             from .generators.latex_generator import LaTeXGenerator
             generator = LaTeXGenerator(self.config)
             project = generator.generate(doc, output_dir)
-            
-            # 5. Extract additional assets (e.g. crop figures from OCR bbox)
-            # TODO: Integrate FigureExtractor to use bbox from Paddle
-            
-            # 6. Reporting
-            # Populate basic metrics
+
+            # 5. Reporting
             quality_report.sections = len(doc.sections)
             quality_report.bib_entries = len(doc.references)
-            quality_report.citations_in_text = 0 # TODO: Calculate from doc
-            
+            quality_report.citations_in_text = 0
+
             from .reporter import Reporter
             Reporter.generate_report_md(quality_report, output_dir)
-            
+
             return ConversionResult(
                 status="success",
                 artifact={"format": "latex", "path": project.main_tex},
@@ -119,7 +111,6 @@ class Pipeline:
                 quality_report={},
                 trace={}
             )
-            
         except Exception as e:
             logger.error(f"Conversion failed: {e}", exc_info=True)
             return ConversionResult(
@@ -129,6 +120,25 @@ class Pipeline:
                 quality_report={},
                 trace={}
             )
+
+    def _write_paddle_intermediates(self, output_dir: str, layout_data) -> None:
+        """Persist PaddleOCR raw layout evidence beside main.tex."""
+        intermediate_dir = Path(output_dir) / "intermediate"
+        intermediate_dir.mkdir(parents=True, exist_ok=True)
+
+        raw_response_path = intermediate_dir / "paddle_raw_response.json"
+        with raw_response_path.open("w", encoding="utf-8") as file:
+            json.dump(layout_data, file, ensure_ascii=False, indent=2)
+
+        raw_api_response_path = intermediate_dir / "paddle_raw_api_response.json"
+        with raw_api_response_path.open("w", encoding="utf-8") as file:
+            json.dump(layout_data, file, ensure_ascii=False, indent=2)
+
+        raw_tool_response = getattr(self.ocr_converter, "last_raw_response", None)
+        if raw_tool_response is not None:
+            tool_response_path = intermediate_dir / "paddle_mcp_tool_response.json"
+            with tool_response_path.open("w", encoding="utf-8") as file:
+                json.dump(raw_tool_response, file, ensure_ascii=False, indent=2)
 
     def _check_pdf(self, pdf_path: str):
         # Deprecated / minimal check

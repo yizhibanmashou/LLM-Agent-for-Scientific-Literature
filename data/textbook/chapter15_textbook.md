@@ -1,4 +1,4 @@
-# Chapter 15 Textbook Mapping
+# Chapter 15 · Short-term Changes in the Mean: 3. Permanent Versus Transient Response
 
 ## chapter15_001 · Short-term Changes in the Mean: 3. Permanent Versus Transient Response: Introduction
 
@@ -44,7 +44,7 @@ Diploid parents undergoing sexual reproduction pass along single alleles at each
 
 ---
 
-## chapter15_004 · Short-term Changes in the Mean: 3. Permanent Versus Transient Response: Introduction / Additive Epistasis
+## chapter15_004 · GENETIC SOURCES OF TRANSIENT RESPONSE / Additive Epistasis
 
 Pairwise epistasis involves interactions between either single alleles at different loci (additive-by-additive epistasis, $ A \times A $), between entire genotypes at different loci (dominance-by-dominance epistasis, $ D \times D $), or between an allele at one locus and the genotype at a second (additive-by-dominance epistasis, $ A \times D $). Because a randomly mating diploid passes along a single allele at each locus to its offspring, additive ($ A \times A $, $ A \times A \times A $, etc.) interactions between alleles at different loci can be passed from a parent to its offspring. Under random mating in a diploid, any epistatic term involving dominance ($ A \times D $, $ D \times D $, etc.) cannot be passed along, as a parent must contribute both alleles at a given locus to its offspring to transmit a D component.
 
@@ -102,6 +102,15 @@ A related result (used later in the chapter) is that
 > $$ \sum_{i=1}^{n}x^{i}=\frac{1-x^{n+1}}{1-x}-1=\frac{x(1-x^{n})}{1-x} $$
 
 
+**[Figure]**
+
+> **Figure 15.1** · page 4 · source: `chapter15`
+>
+> ![Figure 15.1](../figures/fig_0054.png)
+>
+> Figure 15.1 The permanent and transient response to selection (scaled in units of S) assuming pairwise epistasis in a diploid, with  $ h^2 = 1/4 $ and  $ \sigma_{AA}^2/\sigma_z^2 = 1/2 $. Left: The cumulative response assuming a constant amount of selection for various values of c. Note that even with this large amount of epistasis ( $ \sigma_{AA}^2 $ accounts for half the total variance), it is difficult to distinguish the curvilinear response with epistasis from a linear response. Right: The decay of response following a single generation of selection due to the decay of the contribution from epistasis. Provided c > 0, the cumulative response eventually decays to  $ h^2S = S/4 $, the expectation under no epistasis.
+
+
 **[推导 Derivation]**
 
 If loci are completely linked $ (c = 0) $, $ R_{AA}(t) = t S \sigma_{AA}^{2}/(2\sigma_{z}^{2}) $, but provided $ c > 0 $, the total epistatic contribution approaches a limiting value of
@@ -152,7 +161,7 @@ which again rapidly converges to $ R = h^2 S $ after several generations of rand
 
 ---
 
-## chapter15_005 · Short-term Changes in the Mean: 3. Permanent Versus Transient Response: Introduction / Dominance in Autotetraploids
+## chapter15_005 · GENETIC SOURCES OF TRANSIENT RESPONSE / Dominance in Autotetraploids
 
 Polyploidy, which is very common in plants and occurs in some animals (e.g., salmonid fishes), can introduce complications in predicting selection response (Gallais 2003). In particular, the dynamics of selection response for autotetraploids with dominance is very similar to the dynamics of diploids with epistasis. From LW Equation 7.22 and LW Table 7.5, the tetraploid parent-offspring covariance when dominance (but no epistasis) is present is $$ \sigma(z_{p},z_{o})=\frac{\sigma_{A}^{2}}{2}+\frac{\sigma_{D}^{2}}{6} $$
 
@@ -260,7 +269,7 @@ The behavior of the regression coefficients over time informs us about the perma
 
 **[示例 Example]**
 
-> **Example 15.1** · ref: `15.1` · source: `chapter15_006.json` · blocks 5–5
+> **Example 15.1** · ref: `15.1` · source: `chapter15_006.json` · blocks 5–6
 >
 > Example 15.1. As an application of ancestral regressions, consider the situation that arises with additive-by-additive epistasis. In this case, Cockerham (1984b) found (under the infinitesimal model) that for two linked loci, the cross-generation covariance is $$ \sigma_{G}(\tau+t,\tau)=\frac{\sigma_{A}^{2}(\tau)}{2^{t}}+\frac{\sigma_{A A}^{2}(\tau)}{2}\left(\frac{1-c}{2}\right)^{t} $$ yielding $$ 2^{t}\sigma_{G}(\tau+t,\tau)=\sigma_{A}^{2}(\tau)+(1-c)^{t}\frac{\sigma_{A A}^{2}(\tau)}{2} $$
 > 
@@ -269,34 +278,21 @@ The behavior of the regression coefficients over time informs us about the perma
 
 **[示例 Example]**
 
-> **Example 15.2** · ref: `15.2` · source: `chapter15_006.json` · blocks 6–6
+> **Example 15.2** · ref: `15.2` · source: `chapter15_006.json` · blocks 7–12
 >
-> Example 15.2. Consider the expected response under arbitrary levels of additive epistasis (under the infinitesimal model with unlinked loci). LW Equation 7.12 shows the genetic covariance between relatives x and y as $$ \begin{align*}\sigma_G^2(x,y)&=(2\Theta_{x,y})\sigma^2(A)+(2\Theta_{x,y})^2\sigma^2(AA)+\cdots+(2\Theta_{x,y})^i\sigma^2(A^i)\\&=\sum_{i=1}^n\left(2\Theta_{x,y}\right)^i\sigma^2(A^i)\end{align*} $$ where $ \sigma^{2}(A^{i}) $ denotes the genetic variance due to ith-order additive epistasis. The coefficient of coancestry $ \Theta_{t,t+\tau} $ between a parent in generation t and a direct descendant in generation $ t+\tau $ under random mating is $$ \Theta_{t,t+\tau}=\left(\frac{1}{2}\right)^{\tau+1} $$
+> Example 15.2. Consider the expected response under arbitrary levels of additive epistasis (under the infinitesimal model with unlinked loci). LW Equation 7.12 shows the genetic covariance between relatives x and y as $$ \begin{align*}\sigma_G^2(x,y)&=(2\Theta_{x,y})\sigma^2(A)+(2\Theta_{x,y})^2\sigma^2(AA)+\cdots+(2\Theta_{x,y})^i\sigma^2(A^i)\\&=\sum_{i=1}^n\left(2\Theta_{x,y}\right)^i\sigma^2(A^i)\end{align*} $$ where $ \sigma^{2}(A^{i}) $ denotes the genetic variance due to ith-order additive epistasis. The coefficient of coancestry $ \Theta_{t,t+\tau} $ between a parent in generation t and a direct descendant in generation $ t+\tau $ under random mating is $$ \Theta_{t,t+\tau}=\left(\frac{1}{2}\right)^{\tau+1} $$ Using this result, the contribution, $ \sigma_{G,i}(t+\tau,t) $, to the total genetic covariance due to ith-order additive epistasis ( $ A^{i} $) becomes $$ \sigma_{G,i}(t+\tau,t)=\left(2\Theta_{t+\tau,t}\right)^{i}\sigma^{2}(A^{i})=2^{i}\left(\frac{1}{2}\right)^{(\tau+1)i}\sigma^{2}(A^{i})=\left(\frac{1}{2}\right)^{\tau i}\sigma^{2}(A^{i}) $$ and the ancestral regression terms involving $ \sigma^{2}(A^{i}) $ become $$ 2^{\tau}\frac{\sigma_{G,i}(t+\tau,t)}{\sigma^{2}(A^{i})}=2^{\tau}\frac{(1/2)^{\tau i}\sigma^{2}(A^{i})}{\sigma^{2}(A^{i})}=2^{\tau}2^{-\tau i}=\left(\frac{1}{2}\right)^{\tau(i-1)}=\left(\frac{1}{2^{i-1}}\right)^{\tau} $$ With constant selection, S, the contribution to total response from ith-order additive epistasis follows from Equation 15.11b: $$ R_{A^{i}}(t)=S\frac{\sigma^{2}(A^{i})}{\sigma_{z}^{2}}\sum_{\tau=1}^{t}\left(\frac{1}{2^{i-1}}\right)^{\tau} $$ (15.13a) Recalling Equation 15.5b, $$ \sum_{\tau=1}^{t}\left(\frac{1}{2^{i-1}}\right)^{\tau}=\frac{x(1-x^{t})}{1-x},\quad\mathrm{w h e r e}\quad x=(1/2)^{i-1} $$ (15.13b) The limit of this sum (as $ t \to \infty $) is $$ \frac{x}{1-x}=\frac{(1/2)^{i-1}}{1-(1/2)^{i-1}}=\frac{1}{2^{i-1}-1} $$ (15.13c) Because the scaled initial contribution, $ R_{A^{i}}(1)/[S\sigma^{2}(A^{i})/\sigma_{z}^{2}] $, equals $ (1/2)^{i-1} $, the additional total increment to response beyond that seen in the first generation follows from Equations 15.13a and 15.13c: $$ \frac{\bar{R}_{A^{i}}-R_{A^{i}}(1)}{S\sigma^{2}(A^{i})/\sigma_{z}^{2}}=\frac{1}{2^{i-1}-1}-\frac{1}{2^{i-1}}=\frac{1}{(2^{i-1}-1)2^{i-1}} $$ The response in generation one, $ R(1) $, and at the limit, $ \tilde{R} $ (both scaled in units of $ S\sigma^{2}(A^{i})/\sigma_{z}^{2} $), and the fraction of total response occurring in the first generation, $ R(1)/\tilde{R} $, are as follows:
 > 
-> Using this result, the contribution, $ \sigma_{G,i}(t+\tau,t) $, to the total genetic covariance due to ith-order additive epistasis ($ A^{i} $) becomes $$ \sigma_{G,i}(t+\tau,t)=\left(2\Theta_{t+\tau,t}\right)^{i}\sigma^{2}(A^{i})=2^{i}\left(\frac{1}{2}\right)^{(\tau+1)i}\sigma^{2}(A^{i})=\left(\frac{1}{2}\right)^{\tau i}\sigma^{2}(A^{i}) $$ and the ancestral regression terms involving $ \sigma^{2}(A^{i}) $ become $$ 2^{\tau}\frac{\sigma_{G,i}(t+\tau,t)}{\sigma^{2}(A^{i})}=2^{\tau}\frac{(1/2)^{\tau i}\sigma^{2}(A^{i})}{\sigma^{2}(A^{i})}=2^{\tau}2^{-\tau i}=\left(\frac{1}{2}\right)^{\tau(i-1)}=\left(\frac{1}{2^{i-1}}\right)^{\tau} $$ With constant selection, S, the contribution to total response from ith-order additive epistasis follows from Equation 15.11b:
-> 
-> > **Formula (15.13a)** · `15.13a` · source: `chapter15_block_037` · ANCESTRAL REGRESSIONS
+> > **Inline Table 1** · `inline_1` · page 9 · source: `chapter15_006`
+> > Inline Table 1
 > >
-> > $$ R_{A^{i}}(t)=S\frac{\sigma^{2}(A^{i})}{\sigma_{z}^{2}}\sum_{\tau=1}^{t}\left(\frac{1}{2^{i-1}}\right)^{\tau} $$
+> >  | AA | AAA | AAAA | AAAAA
+> > --- | --- | --- | --- | ---
+> > $ R(1)/[S\sigma^{2}(A^{i})/\sigma_{z}^{2}] $ | 0.500 | 0.250 | 0.125 | 0.063
+> > $ \widetilde{R}/[S\sigma^{2}(A^{i})/\sigma_{z}^{2}] $ | 1.000 | 0.333 | 0.143 | 0.067
+> > $ R(1)/\widetilde{R} $ | 0.500 | 0.750 | 0.875 | 0.938
 > 
 > 
-> Recalling Equation 15.5b,
-> 
-> > **Formula (15.13b)** · `15.13b` · source: `chapter15_block_038` · ANCESTRAL REGRESSIONS
-> >
-> > $$ \sum_{\tau=1}^{t}\left(\frac{1}{2^{i-1}}\right)^{\tau}=\frac{x(1-x^{t})}{1-x},\quad\mathrm{w h e r e}\quad x=(1/2)^{i-1} $$
-> 
-> 
-> The limit of this sum (as $ t \to \infty $) is
-> 
-> > **Formula (15.13c)** · `15.13c` · source: `chapter15_block_039` · ANCESTRAL REGRESSIONS
-> >
-> > $$ \frac{x}{1-x}=\frac{(1/2)^{i-1}}{1-(1/2)^{i-1}}=\frac{1}{2^{i-1}-1} $$
-> 
-> 
-> Because the scaled initial contribution, $ R_{A^{i}}(1)/[S\sigma^{2}(A^{i})/\sigma_{z}^{2}] $, equals $ (1/2)^{i-1} $, the additional total increment to response beyond that seen in the first generation follows from Equations 15.13a and 15.13c: $$ \frac{\bar{R}_{A^{i}}-R_{A^{i}}(1)}{S\sigma^{2}(A^{i})/\sigma_{z}^{2}}=\frac{1}{2^{i-1}-1}-\frac{1}{2^{i-1}}=\frac{1}{(2^{i-1}-1)2^{i-1}} $$
-> 
-> The response in generation one, $ R(1) $, and at the limit, $ \tilde{R} $ (both scaled in units of $ S\sigma^{2}(A^{i})/\sigma_{z}^{2} $), and the fraction of total response occurring in the first generation, $ R(1)/\tilde{R} $, are as follows: As shown in the second line of this table, the limiting contribution, $ R $, is small for higher-order additive epistasis among unlinked loci. For example, for four-way additive epistasis, the total response is $ \sim14% $ (0.143/1.000) of the expected response under two-way additive epistasis when the two variance components are equal, $ \sigma^2(AA) = \sigma^2(AAAA) $. Further, as the final line in the table shows, $ \sim88% $ of the total response from four-way additive epistasis occurs in the first generation of selection.
+> As shown in the second line of this table, the limiting contribution, $ R $, is small for higher-order additive epistasis among unlinked loci. For example, for four-way additive epistasis, the total response is $ \sim14\% $ (0.143/1.000) of the expected response under two-way additive epistasis when the two variance components are equal, $ \sigma^2(AA) = \sigma^2(AAAA) $. Further, as the final line in the table shows, $ \sim88\% $ of the total response from four-way additive epistasis occurs in the first generation of selection.
 
 
 ---
@@ -308,6 +304,15 @@ Imagine a situation where a bird is large by chance, enabling it to defend a lar
 This model serves as a useful introduction to some of the dynamics that can occur for certain models of maternal effects (examined in the next section). It also serves as a model for selection response under epigenetics, wherein a nongenetic modification is passed through generations (e.g., factors bound to the DNA that alter the expression level of a gene). While much excitement is made by some on the role of such epigenetic inheritance in evolution, as we will see, its impact is transient if there is even the smallest amount of imperfection in transmission.
 
 To simplify matters further, assume that this regression coefficient is independent of the sexes of the parent and offspring, although this condition can easily be relaxed. Here the expected contribution from a father to his offspring is $ e_{fa} = bE_{fa} = b(z_{fa} - \mu) $, where $ E_{fa} $ is the father's total environmental value. Further assuming that the parents and the offspring have the same phenotypic variance, then $ b = \rho/2 $, where $ \rho $ is the slope of the midparent-offspring regression. In principle, b can be negative under some environmental conditions, e.g., if parents and offspring compete for a limited common resource, and larger parents gather a disproportionate share of resources, resulting in smaller offspring.
+
+**[Figure]**
+
+> **Figure 15.2** · page 11 · source: `chapter15`
+>
+> ![Figure 15.2](../figures/fig_0055.png)
+>
+> Figure 15.2 The response when resemblance between relatives is due entirely to correlation between environmental values in parents and offspring. Selection with a constant value of S starts at t = 0 and continues until generation 10 (indicated by the arrow), at which point selection is stopped. Note the interesting dynamics that occur if environmental values are negatively correlated, wherein the response to selection is reversed with respect to the selection differential. In this case, selection for increased character value results in a decreased mean value, with the total response in this example eventually converging to  $ -S/3 $ (for  $ \rho = -0.5 $). Once selection is relaxed (denoted by the arrows), there is an initial positive response (generation 11), which then quickly decays to zero.
+
 
 **[推导 Derivation]**
 
@@ -434,7 +439,7 @@ Paternal effects are also possible, especially in situations where the father pl
 
 ---
 
-## chapter15_009 · Short-term Changes in the Mean: 3. Permanent Versus Transient Response: Introduction / Decomposing Maternal Effects
+## chapter15_009 · SELECTION IN THE PRESENCE OF HERITABLE MATERNAL EFFECTS / Decomposing Maternal Effects
 
 **[推导 Derivation]**
 
@@ -462,7 +467,7 @@ An important point to note is that maternal-effects models are a special case of
 
 ---
 
-## chapter15_010 · Short-term Changes in the Mean: 3. Permanent Versus Transient Response: Introduction / Selection Response Under Falconer's Dilution Model
+## chapter15_010 · SELECTION IN THE PRESENCE OF HERITABLE MATERNAL EFFECTS / Selection Response Under Falconer's Dilution Model
 
 One of the simplest models of maternal effects (motivated by the inheritance of litter size in mice) is that of Falconer (1965): the value of the focal trait in the mother determines M (reviewed in LW Chapter 23). Falconer reasoned that offspring from large litters receive less maternal resources per individual than those in smaller litters, and that this can have carryover effects when they become mothers themselves.
 
@@ -531,6 +536,15 @@ Substituting this result for the average of the breeding values in Equation 15.2
 > **Formula (15.24)** · `15.24` · source: `chapter15_block_070` · Selection Response Under Falconer's Dilution Model
 >
 > $$ \mu_{z}(t+1)=\mu_{A}(t)+\frac{h^{2}}{2-m}\Biggl(S_{m o}(t)+S_{f a}(t)\Biggr)+m\Biggl(\mu_{z}(t)+S_{m o}(t)\Biggr) $$
+
+
+**[Figure]**
+
+> **Figure 15.3** · page 16 · source: `chapter15`
+>
+> ![Figure 15.3](../figures/fig_0056.png)
+>
+> Figure 15.3 Top: Falconer's experiments on selection response for litter size in mice. The dashed line is the response to selection for smaller litters, the thick line is the response to selection for larger litters, and the dotted line is the control. Note the reversed response in the first generation in both the up- and down-selected lines. (After Falconer 1960b.) Bottom: The predicted change in population mean following a single generation of selection on females with  $ S_{mo} > 0 $ (using Falconer's estimated values of  $ h^2 = 0.11 $ and  $ m = -0.13 $). There is a reversed response in the first generation, even though the net genetic change is to increase the character. By generation 3, the net nongenetic change in phenotypic mean has largely decayed away, revealing the net genetic change of  $ S_{mo} h^2 / [(1 - m)(2 - m)] = 0.044 \cdot S_{mo} $ (Equation 15.33).
 
 
 **[推导 Derivation]**
@@ -634,6 +648,15 @@ which, as $ \tau \rightarrow \infty $, converges to
 > $$ \begin{align*}R^*=S{m\left(1-m^t\right)\over1-m}\left[{2h^2\over(1-m)(2-m)}-1\right]\end{align*} $$
 
 
+**[Figure]**
+
+> **Figure 15.4** · page 18 · source: `chapter15`
+>
+> ![Figure 15.4](../figures/fig_0057.png)
+>
+> Figure 15.4 Examples of the predicted selection response with maternal effects under Falconer's dilution model. Selection starts at generation 0, with  $ S_{fa} = S_{mo} = S $ until generation 10 (arrows), at which point selection stops. We assume that  $ h^2 = 0.35 $ throughout, with the different curves corresponding to different maternal effect coefficients, m. Top: Positive maternal effects (m > 0). For this value of  $ h^2 $, Equation 15.34a gives the critical m value (below which some erosion of response occurs upon cessation of selection) as 0.52, meaning that the selection response continues (for a few generations) after selection is relaxed for m = 0.75, while response decays for m = 0.5 and 0.25. Bottom: Negative maternal effects (m < 0). The dynamics here are considerably more interesting, with additional response following the cessation of selection for all values of m < 0.
+
+
 **[推导 Derivation]**
 
 Summing Equations 15.29a and 15.32, the permanent response to t generations of selection is
@@ -665,7 +688,7 @@ In summary, the presence of maternal effects introduces several complications ev
 
 ---
 
-## chapter15_012 · Short-term Changes in the Mean: 3. Permanent Versus Transient Response: Introduction / Separate Direct and Maternal Traits
+## chapter15_012 · SELECTION IN THE PRESENCE OF HERITABLE MATERNAL EFFECTS / Separate Direct and Maternal Traits
 
 **[推导 Derivation]**
 
@@ -706,54 +729,14 @@ A few other features of this model are worth noting. In the absence of additive-
 
 **[示例 Example]**
 
-> **Example 15.4** · ref: `15.4` · source: `chapter15_012.json` · blocks 3–3
+> **Example 15.4** · ref: `15.4` · source: `chapter15_012.json` · blocks 3–6
 >
-> Example 15.4. Assume that there are constant selection differentials following the start of selection, so that (after the first generation) terms involving $ \Delta\beta $ (changes in $ \beta $) are zero. Equations 15.36b and 15.36c then simplify to
-> 
-> > **Formula (15.37b)** · `15.37b` · source: `chapter15_block_086` · Separate Direct and Maternal Traits
-> >
-> > $$ \begin{aligned}R_{m}(t)&=\left(G_{md}+\frac{m}{2}G_{mm}\right)\beta_{z}+G_{mm}\beta_{m}&(\text{ⅰ }\\R_{z}(t)&=\left(G_{dd}+\frac{m}{2}G_{md}\right)\beta_{z}+G_{md}\beta_{m}+mR_{m}(t-1)\\&=\left(G_{dd}+\frac{m}{2}G_{md}\right)\beta_{z}+G_{md}\beta_{m}+m\left[\left(G_{md}+\frac{m}{2}G_{mm}\right)\beta_{z}+G_{mm}\beta_{m}\right]\\&=\left(G_{dd}+\frac{3m}{2}G_{md}+\frac{m^{2}}{2}G_{mm}\right)\beta_{z}+\left(G_{md}+mG_{mm}\right)\beta_{m}&(1^{\prime}\text{ⅰ })\end{aligned} $$
-> 
-> 
-> One central question in these (and more general) models concerns which trait (or traits) in the mother determine the value of the maternal effect in her offspring. Falconer made the simplification that the value, $ z_{mo} $, of the direct trait in a mother is scaled (by m) to give the maternal effect in her offspring ($ M = m_{z_{mo}} $). The classical bivariate counterpart to this one-trait model is to assume a general measure $ z_{m} $ of maternal performance, where $ M = z_{m,mo} $, namely its value in the mother (Dickerson 1947; Willham 1963, 1972; Cheverud 1984a; Riska et al. 1985; Kirkpatrick and Lande 1989). Under this model, the trait—or, more likely, some composite index of traits—comprising $ z_{m} $ is not specified (and hence not directly scored in mothers), although BLUP allows us to estimate its variance components (e.g., $ G_{mm} $ and $ G_{md} $), given an appropriate pedigree design (Chapter 22). Under this model, m = 1 (as $ M = z_{m,mo} $), which simplifies Equations 15.37a and 15.37b. If we assume that there is no direct selection on the maternal performance trait, $ \beta_{m} = 0 $, the response equations further simplify to
-> 
-> > **Formula (15.38a)** · `15.38a` · source: `chapter15_block_087` · Separate Direct and Maternal Traits
-> >
-> > $$ R_{m}=\left(G_{md}+\frac{1}{2}G_{mm}\right)\beta_{z} $$
-> 
-> 
-> > **Formula (15.38b)** · `15.38b` · source: `chapter15_block_087` · Separate Direct and Maternal Traits
-> >
-> > $$ R_{z}=\left(G_{d d}+\frac{3}{2}G_{m d}+\frac{1}{2}G_{m m}\right)\beta_{z} $$
-> 
-> 
-> The assumption of selection only on the direct trait implies that $ \beta_{z}=S_{z}/\sigma_{z}^{2} $, yielding
-> 
-> > **Formula (15.38c)** · `15.38c` · source: `chapter15_block_088` · Separate Direct and Maternal Traits
-> >
-> > $$ R_{z}=\left(h_{d}^{2}+\frac{3}{2}\frac{G_{m d}}{\sigma_{z}^{2}}+\frac{G_{m m}}{2\sigma_{z}^{2}}\right)S_{z} $$
-> 
-> 
-> as $ h_d^2 = G_{dd}/\sigma_z^2 $. This is the Dickerson-Willham model of the selection response in the presence of heritable maternal effects (Chapter 22), which can also be expressed in terms of a total heritability
-> 
-> > **Formula (15.38d)** · `15.38d` · source: `chapter15_block_088` · Separate Direct and Maternal Traits
-> >
-> > $$ h_{T}^{2}=\frac{G_{d d}+1.5G_{m d}+0.5G_{m}}{\sigma_{z}^{2}}=\frac{\sigma^{2}(A_{d})+1.5\sigma(A_{d},A_{m})+0.5\sigma^{2}(A_{m})}{\sigma_{z}^{2}} $$
-> 
-> 
-> yielding the response as
-> 
-> > **Formula (15.38e)** · `15.38e` · source: `chapter15_block_088` · Separate Direct and Maternal Traits
-> >
-> > $$ R_{z}=h_{T}^{2}S_{z} $$
-> 
-> 
-> If $ G_{md} > 0 $, then $ h_{T}^{2} > h_{d}^{2} $, and the direct heritability underestimates the total response (e.g., McAdam et al. 2002). Conversely, if $ G_{md} $ is sufficiently negative, then $ h_{d}^{2} > h_{T}^{2} $, and the direct heritability overestimates the response (e.g., Wilson et al. 2005a). Bijma (2011) more fully detailed the connections between the Dickerson-Willham and Falconer models (also see Chapter 22).
+> Example 15.4. Assume that there are constant selection differentials following the start of selection, so that (after the first generation) terms involving $ \Delta\beta $ (changes in $ \beta $) are zero. Equations 15.36b and 15.36c then simplify to $$ \begin{aligned}R_{m}(t)&=\left(G_{md}+\frac{m}{2}G_{mm}\right)\beta_{z}+G_{mm}\beta_{m}&(15.5)\\ R_{z}(t)&=\left(G_{dd}+\frac{m}{2}G_{md}\right)\beta_{z}+G_{md}\beta_{m}+mR_{m}(t-1)\\ &=\left(G_{dd}+\frac{m}{2}G_{md}\right)\beta_{z}+G_{md}\beta_{m}+m\left[\left(G_{md}+\frac{m}{2}G_{mm}\right)\beta_{z}+G_{mm}\beta_{m}\right]\\ &=\left(G_{dd}+\frac{3m}{2}G_{md}+\frac{m^{2}}{2}G_{mm}\right)\beta_{z}+\left(G_{md}+mG_{mm}\right)\beta_{m}&(15.5)\\ \end{aligned} $$ (15.37a) (15.37b) One central question in these (and more general) models concerns which trait (or traits) in the mother determine the value of the maternal effect in her offspring. Falconer made the simplification that the value, $ z_{mo} $, of the direct trait in a mother is scaled (by m) to give the maternal effect in her offspring ( $ M = m_{z_{mo}} $). The classical bivariate counterpart to this one-trait model is to assume a general measure $ z_{m} $ of maternal performance, where $ M = z_{m,mo} $, namely its value in the mother (Dickerson 1947; Willham 1963, 1972; Cheverud 1984a; Riska et al. 1985; Kirkpatrick and Lande 1989). Under this model, the trait—or, more likely, some composite index of traits—comprising $ z_{m} $ is not specified (and hence not directly scored in mothers), although BLUP allows us to estimate its variance components (e.g., $ G_{mm} $ and $ G_{md} $), given an appropriate pedigree design (Chapter 22). Under this model, m = 1 (as M = $ z_{m,mo} $), which simplifies Equations 15.37a and 15.37b. If we assume that there is no direct selection on the maternal performance trait, $ \beta_{m} = 0 $, the response equations further simplify to $$ R_{m}=\left(G_{md}+\frac{1}{2}G_{mm}\right)\beta_{z} $$ (15.38a) $$ R_{z}=\left(G_{d d}+\frac{3}{2}G_{m d}+\frac{1}{2}G_{m m}\right)\beta_{z} $$ (15.38b) The assumption of selection only on the direct trait implies that $ \beta_{z}=S_{z}/\sigma_{z}^{2} $, yielding $$ R_{z}=\left(h_{d}^{2}+\frac{3}{2}\frac{G_{m d}}{\sigma_{z}^{2}}+\frac{G_{m m}}{2\sigma_{z}^{2}}\right)S_{z} $$ (15.38c) as $ h_d^2 = G_{dd}/\sigma_z^2 $. This is the Dickerson-Willham model of the selection response in the presence of heritable maternal effects (Chapter 22), which can also be expressed in terms of a total heritability $$ h_{T}^{2}=\frac{G_{d d}+1.5G_{m d}+0.5G_{m}}{\sigma_{z}^{2}}=\frac{\sigma^{2}(A_{d})+1.5\sigma(A_{d},A_{m})+0.5\sigma^{2}(A_{m})}{\sigma_{z}^{2}} $$ (15.38d) yielding the response as $$ R_{z}=h_{T}^{2}S_{z} $$ (15.38e) If $ G_{md} > 0 $, then $ h_T^2 > h_d^2 $, and the direct heritability underestimates the total response (e.g., McAdam et al. 2002). Conversely, if $ G_{md} $ is sufficiently negative, then $ h_d^2 > h_T^2 $, and the direct heritability overestimates the response (e.g., Wilson et al. 2005a). Bijma (2011) more fully detailed the connections between the Dickerson-Willham and Falconer models (also see Chapter 22).
 
 
 ---
 
-## chapter15_013 · Short-term Changes in the Mean: 3. Permanent Versus Transient Response: Introduction / Maternal Selection vs. Maternal Inheritance
+## chapter15_013 · SELECTION IN THE PRESENCE OF HERITABLE MATERNAL EFFECTS / Maternal Selection vs. Maternal Inheritance
 
 Finally, we note that, in addition to influencing offspring phenotypes, parents can potentially influence offspring fitness, which would then be a function of both the offspring's phenotype and that of its parents. Indeed, such a parental effect on fitness is simply a special case where the trait experiencing the maternal effect is fitness itself. Kirkpatrick and Lande (1989) called this process maternal selection, as opposed maternal inheritance (what we have been calling maternal effects, wherein the trait value is influenced by the mother). Hence, the latter is a maternal influence on the value of a specific trait (other than fitness itself), while the former is a maternal influence directly on fitness. One can have maternal selection (the mother's phenotype directly influences offspring fitness) without maternal inheritance (the mother's phenotype influences offspring trait value), and vice versa, or a trait could jointly experience both maternal selection and maternal inheritance (see Figure 15.5). A further complication is that the maternal trait that influences offspring fitness may itself be under selection in the mother. As detailed in Volume 3, accounting for all of these different interactions leads to more complex expressions for the inheritance of these traits than presented by Equations 15.36a–15.36c.
 
@@ -764,6 +747,15 @@ To see how the presence of maternal selection changes the selection-response equ
 > **Formula (15.39a)** · `15.39a` · source: `chapter15_block_091` · Maternal Selection vs. Maternal Inheritance
 >
 > $$ w_{i}=1+\left(\beta_{z}\cdot z_{i}\right)+\left(\beta_{m s}\cdot z_{m o_{i}}\right)+e_{i} $$
+
+
+**[Figure]**
+
+> **Figure 15.5** · page 22 · source: `chapter15`
+>
+> ![Figure 15.5](../figures/fig_0058.png)
+>
+> Figure 15.5 Some of the complications for predicting selection response that arise when maternal selection or maternal inheritance occur. The figure displays the simplest bivariate model, where the direct and maternal effects are separate traits. Here  $ z_d $ and  $ z_m $ denote the direct trait and maternal trait values, respectively, in the focal offspring, whose fitness is  $ w $. Similarly,  $ z_{m,mo} $ denotes the value of the maternal trait in the offspring's mother. For ease of presentation, paths involving potential genetic correlations (e.g.,  $ z_m \leftrightarrow z_d $;  $ z_{m,mo} \rightarrow z_m $) are not shown. Maternal inheritance ( $ m \neq 0 $) occurs when the value of  $ z_{m,mo} $ influences the value of  $ z_d $ in her offspring. In the figure, this is indicated by the path whose coefficient is given by  $ m $, as we assume the maternal inheritance model given by Equation 15.35a. If  $ \beta_z $ denotes the direct selection gradient on the focal trait, under maternal inheritance, the mother's maternal trait value indirectly influences the fitness of her offspring through the path  $ z_{m,mo} \rightarrow z_d \rightarrow w $, or an effect of  $ m\beta_z $. Maternal selection ( $ \beta_{ms} \neq 0 $) occurs when there is a direct path from the mother's trait value to the fitness of her offspring (the single-step path  $ z_{m,mo} \rightarrow w $, whose coefficient is  $ \beta_{ms} $). The figure also allows for the possibility that there is direct selection on the value of the maternal trait itself (the gradient  $ \beta_m $, shown in the figure operating on the offspring), if, e.g., there is a direct fitness cost for high maternal performance,  $ \beta_m < 0 $. Equations 15.35 through 15.37 give the dynamics for the case when  $ m \neq 0 $ and  $ \beta_{ms} = 0 $, while Equation 15.40 gives the relative fitness when  $ m = 0 $ and  $ \beta_{ms} \neq 0 $.
 
 
 **[推导 Derivation]**

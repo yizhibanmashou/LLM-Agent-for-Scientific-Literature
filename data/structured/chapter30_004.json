@@ -2,7 +2,7 @@
   "id": "chapter30_004",
   "metadata": {
     "chapter": "chapter30",
-    "section": "Measuring Multivariate Selection: Introduction",
+    "section": "SELECTION ON MULTIVARIATE PHENOTYPES: DIFFERENTIALS AND GRADIENTS",
     "subsections": [
       "The Directional Selection Gradient Vector, $ \\beta $"
     ],
@@ -17,10 +17,10 @@
       "30.4c"
     ],
     "table_references": [],
-    "section_level_1": "Measuring Multivariate Selection: Introduction",
+    "section_level_1": "SELECTION ON MULTIVARIATE PHENOTYPES: DIFFERENTIALS AND GRADIENTS",
     "section_level_2": "The Directional Selection Gradient Vector, $ \\beta $",
     "heading_path": [
-      "Measuring Multivariate Selection: Introduction",
+      "SELECTION ON MULTIVARIATE PHENOTYPES: DIFFERENTIALS AND GRADIENTS",
       "The Directional Selection Gradient Vector, $ \\beta $"
     ],
     "display_heading": "The Directional Selection Gradient Vector, $ \\beta $"
@@ -45,26 +45,6 @@
     {
       "type": "derivation",
       "content": "The standardization given by Equation 30.4 can be expressed in matrix form as [[SEE_FORMULA:30.4b]] where D is the diagonal matrix [[SEE_FORMULA:30.4c]]"
-    },
-    {
-      "type": "discussion",
-      "content": "Equations 30.4b and 30.4c imply that the phenotypic covariance matrix $ (P_{sd}) $ for the standardized variables is simply the matrix of all pairwise correlations. Following our notation from Chapter 29, we denote selection gradients using variance-standardized variables by $ \\beta_{sd,i} $, although they are often denoted by $ \\beta_i' $ in the literature. When expressed with standardized variables, Equation 30.2b becomes $$ \\boldsymbol{w}(\\mathbf{z}_{s d})=1+\\boldsymbol{\\beta}_{s d}^{T}\\mathbf{z}_{s d}+e,\\quad\\mathrm{w h e r e}\\quad\\boldsymbol{\\beta}_{s d}=\\mathbf{P}_{s d}^{-1}\\mathbf{S}_{s d} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Here $ \\beta_{sd,i} $ is the expected change in relative fitness given a change of one standard deviation in trait $ z_i $ when all of the other measured trait values (i.e., the elements of $ \\mathbf{z} $) are held constant."
-    },
-    {
-      "type": "discussion",
-      "content": "The total strength of directional selection on the set of measured characters is a quantity of interest, and is given by the norm of $ \\beta $, where (Equation A5.1a) $$ ||\\beta||=\\sqrt{\\beta^{T}\\beta}=\\sqrt{\\sum\\beta_{i}^{2}} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Morrissey (2014b) noted that $ E[\\|\\beta\\|] \\geq \\|\\beta\\| $, as the values of $ \\beta_i $ are measured with error, and such error carries over into the norm. Suppose $ k $ independent traits are measured, where $ \\widehat{\\beta}_i \\sim N(\\beta, \\sigma^2) $, so that each $ \\beta_i $ is independent and identically distributed, with sampling error $ \\sigma^2 $. In this case, $ E[\\|\\widehat{\\beta}\\|] = \\sqrt{k(\\beta + \\sigma^2)} > \\|\\beta\\| = \\sqrt{k\\beta} $. Given that the standard error of an estimate of $ \\beta $ is often of the same order as the estimate itself (Morrissey 2014b), the total strength of selection can be considerably overestimated by $ \\|\\beta\\| $."
-    },
-    {
-      "type": "discussion",
-      "content": "We also remark in passing that the Henshaw-Zemel (2017) distributional selection differential (a nonparametric measure of the total shift in a distribution following selection; Equation 29.15a) can be generalized into a multivariate version that also partitions trait selection into direct and indirect effects; see their paper for details."
     },
     {
       "type": "example",

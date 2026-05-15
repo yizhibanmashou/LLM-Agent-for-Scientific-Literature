@@ -377,11 +377,23 @@ def _is_formula_table_label_block(block: dict[str, Any]) -> bool:
         return False
     if TABLE_LABEL_RE.search(content) or FORMULA_NUMBER_RE.fullmatch(content):
         return False
-    if len(content) > 240 or re.match(r"^[a-z]", content):
+    if len(content) > 240:
+        return False
+    visible_prefix = re.sub(r"^\s*\$[^$]+\$\s*", "", content).strip()
+    if re.match(
+        r"^(?:Using|Considering|Likewise|The|This|These|Those|Thus|Hence|Where|When|If|For|In|As)\b",
+        visible_prefix,
+    ):
+        return False
+    if re.match(r"^[a-z]", content):
         return False
     if re.search(r"\.\s+[A-Z]", content):
         return False
-    return bool(FORMULA_TABLE_LABEL_TEXT_RE.match(_normalize_formula_table_label(content)))
+    if FORMULA_TABLE_LABEL_TEXT_RE.match(_normalize_formula_table_label(content)):
+        return True
+    if len(content) <= 180 and re.match(r"^\s*(?:\$[^$]+\$\s+)?[A-Za-z0-9][^.!?]+(?:\([^)]{1,80}\))?$", content):
+        return True
+    return False
 
 
 def _is_formula_table_label_continuation_block(block: dict[str, Any]) -> bool:
@@ -401,6 +413,55 @@ def _is_formula_table_label_continuation_block(block: dict[str, Any]) -> bool:
     ) and bool(re.search(r"[$\\_{}=]|\bn\s*=", content))
 
 
+def _is_formula_table_split_label_tail(block: dict[str, Any]) -> bool:
+    if str(block.get("label") or "").strip().lower() != "text":
+        return False
+    content = _normalize_formula_table_label(str(block.get("content") or ""))
+    if not content or len(content) > 90:
+        return False
+    if TABLE_LABEL_RE.search(content) or FORMULA_NUMBER_RE.fullmatch(content):
+        return False
+    if re.search(r"[$\\_{}=]|\.\s+[A-Z]", content):
+        return False
+    return bool(re.match(r"^[a-z]", content))
+
+
+def _block_left(block: dict[str, Any]) -> float | None:
+    bbox = block.get("bbox")
+    if not isinstance(bbox, (list, tuple)) or len(bbox) < 1:
+        return None
+    try:
+        return float(bbox[0])
+    except (TypeError, ValueError):
+        return None
+
+
+def _block_top(block: dict[str, Any]) -> float | None:
+    bbox = block.get("bbox")
+    if not isinstance(bbox, (list, tuple)) or len(bbox) < 2:
+        return None
+    try:
+        return float(bbox[1])
+    except (TypeError, ValueError):
+        return None
+
+
+def _split_label_tail_matches_layout(
+    *,
+    tail_block: dict[str, Any],
+    label_blocks: list[dict[str, Any]],
+    formula_block: dict[str, Any] | None,
+) -> bool:
+    tail_left = _block_left(tail_block)
+    if tail_left is None:
+        return True
+    label_lefts = [left for block in label_blocks if (left := _block_left(block)) is not None]
+    formula_left = _block_left(formula_block or {})
+    if label_lefts and tail_left <= max(label_lefts) + 80:
+        return True
+    return formula_left is not None and tail_left < formula_left - 40
+
+
 def _formula_id_supports_table(table_id: str, formula_id: str) -> bool:
     table_match = re.match(r"^(?P<chapter>\d+)\.(?P<table>\d+)", str(table_id or ""))
     formula_match = re.match(r"^(?P<chapter>\d+)\.(?P<formula>\d+)(?P<suffix>[A-Za-z]?)$", str(formula_id or ""))
@@ -416,6 +477,7 @@ def _formula_table_stop(
     block: dict[str, Any],
     table_id: str,
     collected_rows: list[list[str]],
+    visual_bottom: float | None = None,
 ) -> bool:
     label = str(block.get("label") or "").strip().lower()
     content = clean_ocr_text(str(block.get("content") or ""))
@@ -434,6 +496,9 @@ def _formula_table_stop(
             return True
         if len(content) >= 120 and re.search(r"\.\s+[A-Z]", content):
             return True
+    top = _block_top(block)
+    if visual_bottom is not None and top is not None and top > visual_bottom + 8 and collected_rows:
+        return True
     return False
 
 
@@ -442,6 +507,7 @@ def _collect_formula_table_rows(
     page_blocks: list[dict[str, Any]],
     caption: dict[str, Any],
     table_id: str,
+    visual_bottom: float | None = None,
 ) -> tuple[list[list[str]], list[dict[str, Any]]]:
     try:
         caption_index = int(caption.get("index") or 0)
@@ -453,9 +519,10 @@ def _collect_formula_table_rows(
     pending_label = ""
     pending_formula = ""
     pending_formula_block: dict[str, Any] | None = None
+    pending_label_blocks: list[dict[str, Any]] = []
 
     def flush(formula_id: str = "") -> None:
-        nonlocal pending_label, pending_formula, pending_formula_block
+        nonlocal pending_label, pending_formula, pending_formula_block, pending_label_blocks
         if pending_label and pending_formula:
             formula_cell = (
                 f"[[SEE_FORMULA:{formula_id}]]"
@@ -468,6 +535,7 @@ def _collect_formula_table_rows(
         pending_label = ""
         pending_formula = ""
         pending_formula_block = None
+        pending_label_blocks = []
 
     for block in page_blocks:
         try:
@@ -476,20 +544,48 @@ def _collect_formula_table_rows(
             block_index = 0
         if block_index <= caption_index:
             continue
-        if _formula_table_stop(block=block, table_id=table_id, collected_rows=rows):
-            break
         label = str(block.get("label") or "").strip().lower()
         content = clean_ocr_text(str(block.get("content") or ""))
         if not content:
+            continue
+        if label == "paragraph_title" and content.rstrip().endswith(":"):
+            top = _block_top(block)
+            if visual_bottom is None or top is None or top <= visual_bottom + 8:
+                flush()
+                rows.append([content, ""])
+                source_blocks.append(block)
+                continue
+        is_split_label_tail = (
+            pending_label
+            and pending_formula
+            and _is_formula_table_split_label_tail(block)
+            and _split_label_tail_matches_layout(
+                tail_block=block,
+                label_blocks=pending_label_blocks,
+                formula_block=pending_formula_block,
+            )
+        )
+        if not is_split_label_tail and _formula_table_stop(
+            block=block,
+            table_id=table_id,
+            collected_rows=rows,
+            visual_bottom=visual_bottom,
+        ):
+            break
+        if is_split_label_tail:
+            pending_label = collapse_ws(f"{pending_label} {_normalize_formula_table_label(content)}")
+            source_blocks.append(block)
+            continue
+        if pending_label and not pending_formula and _is_formula_table_label_continuation_block(block):
+            pending_label = collapse_ws(f"{pending_label} {_normalize_formula_table_label(content)}")
+            pending_label_blocks.append(block)
+            source_blocks.append(block)
             continue
         if _is_formula_table_label_block(block):
             if pending_label and pending_formula:
                 flush()
             pending_label = _normalize_formula_table_label(content)
-            source_blocks.append(block)
-            continue
-        if pending_label and not pending_formula and _is_formula_table_label_continuation_block(block):
-            pending_label = collapse_ws(f"{pending_label} {_normalize_formula_table_label(content)}")
+            pending_label_blocks = [block]
             source_blocks.append(block)
             continue
         if label in TABLE_CONTINUATION_FORMULA_LABELS and pending_label:
@@ -513,6 +609,7 @@ def _extract_formula_table_evidences_from_page(
     *,
     page_blocks: list[dict[str, Any]],
     captions: list[dict[str, Any]],
+    visual_rules: list[dict[str, Any]] | None = None,
     chapter: str,
     source_channel: str,
     source_path: Path,
@@ -524,10 +621,27 @@ def _extract_formula_table_evidences_from_page(
         table_id = str(caption.get("object_id") or "").strip()
         if not table_id or table_id in occupied_table_ids:
             continue
+        caption_top = _block_top(caption)
+        visual_bottom = None
+        if caption_top is not None:
+            rule_tops: list[float] = []
+            for rule in visual_rules or []:
+                bbox = rule.get("bbox")
+                if not isinstance(bbox, (list, tuple)) or len(bbox) < 2:
+                    continue
+                try:
+                    top = float(bbox[1])
+                except (TypeError, ValueError):
+                    continue
+                if top > caption_top + 12:
+                    rule_tops.append(top)
+            if rule_tops:
+                visual_bottom = min(rule_tops)
         rows, source_blocks = _collect_formula_table_rows(
             page_blocks=page_blocks,
             caption=caption,
             table_id=table_id,
+            visual_bottom=visual_bottom,
         )
         if len(rows) < 2:
             continue
@@ -538,6 +652,14 @@ def _extract_formula_table_evidences_from_page(
         raw_body = "\n\n".join(
             [str(caption.get("content") or ""), *[str(block.get("content") or "") for block in source_blocks]]
         ).strip()
+        following_start = max(
+            [int(block.get("index") or 0) for block in source_blocks]
+            or [int(caption.get("index") or 0)]
+        )
+        following_body = _first_following_body_text(
+            page_blocks=page_blocks,
+            start_index=following_start,
+        )
         evidences.append(
             OCREvidence(
                 object_type="table",
@@ -556,6 +678,8 @@ def _extract_formula_table_evidences_from_page(
                     "table_special_type": "formula_table",
                     "formula_table_recovered_from_caption_following_blocks": True,
                     "formula_table_row_count": len(rows),
+                    "visual_bottom_rule_y": visual_bottom,
+                    "following_body": following_body,
                     "raw_body": raw_body,
                     "markdown_body": markdown_body,
                 },
@@ -709,6 +833,11 @@ def _load_json_payload(path: Path) -> Any:
 def _caption_label(caption_text: str) -> str:
     match = TABLE_LABEL_RE.search(caption_text or "")
     return str(match.group("label") or "").strip() if match else ""
+
+
+def _caption_crosses_another_table_label(caption_text: str, table_id: str) -> bool:
+    labels = [str(match.group("label") or "").strip() for match in TABLE_LABEL_RE.finditer(caption_text or "")]
+    return any(label and label != table_id for label in labels)
 
 
 def _caption_candidates(page_blocks: list[dict[str, Any]]) -> list[dict[str, Any]]:
@@ -957,6 +1086,14 @@ def _extract_table_evidences_from_payload(
                 table_html=table_html,
                 rows=rows,
             )
+            following_body = _first_following_body_text(
+                page_blocks=page_blocks,
+                start_index=int(table_block.get("index") or 0),
+            )
+            preceding_body = _last_preceding_body_text(
+                page_blocks=page_blocks,
+                end_index=int((caption or table_block).get("index") or 0),
+            )
             row_tuple = tuple(tuple(str(cell) for cell in row) for row in rows)
             evidences.append(
                 OCREvidence(
@@ -973,8 +1110,11 @@ def _extract_table_evidences_from_payload(
                     bbox=table_block.get("bbox"),
                     rows=row_tuple,
                     source_payload={
+                        "caption_bbox": (caption or {}).get("bbox"),
                         "caption_order": (caption or {}).get("order"),
                         "table_order": table_block.get("order"),
+                        "preceding_body": preceding_body,
+                        "following_body": following_body,
                         **expansion_payload,
                     },
                 )
@@ -982,7 +1122,8 @@ def _extract_table_evidences_from_payload(
         evidences.extend(
             _extract_formula_table_evidences_from_page(
                 page_blocks=page_blocks,
-                captions=captions,
+                captions=[caption for caption in captions if str(caption.get("object_id") or "").strip() not in occupied_table_ids],
+                visual_rules=None,
                 chapter=chapter,
                 source_channel=source_channel,
                 source_path=source_path,
@@ -1170,6 +1311,73 @@ def _visual_table_quality(rows: list[list[str]], caption_text: str, visual_rules
     }
 
 
+def _has_physical_table_rule_support(visual_rules: list[dict[str, Any]]) -> bool:
+    relations = {
+        str(rule.get("relation") or "").strip()
+        for rule in visual_rules
+        if isinstance(rule, dict)
+    }
+    return bool(relations & {"top_edge", "bottom_edge", "inside_table"})
+
+
+def _first_following_body_text(
+    *,
+    page_blocks: list[dict[str, Any]],
+    start_index: int,
+) -> dict[str, Any] | None:
+    for block in page_blocks:
+        try:
+            block_index = int(block.get("index") or 0)
+        except (TypeError, ValueError):
+            continue
+        if block_index <= start_index:
+            continue
+        label = str(block.get("label") or "").strip().lower()
+        if label in {"header", "number", "page_number", "footer"}:
+            continue
+        content = clean_ocr_text(str(block.get("content") or ""))
+        if not content:
+            continue
+        if label in {"text", "paragraph_title", "figure_title"} and not TABLE_LABEL_RE.match(content):
+            return {
+                "label": label,
+                "content": content,
+                "bbox": block.get("bbox"),
+                "order": block.get("order"),
+                "index": block_index,
+            }
+    return None
+
+
+def _last_preceding_body_text(
+    *,
+    page_blocks: list[dict[str, Any]],
+    end_index: int,
+) -> dict[str, Any] | None:
+    for block in reversed(page_blocks):
+        try:
+            block_index = int(block.get("index") or 0)
+        except (TypeError, ValueError):
+            continue
+        if block_index >= end_index:
+            continue
+        label = str(block.get("label") or "").strip().lower()
+        if label in {"header", "number", "page_number", "footer"}:
+            continue
+        content = clean_ocr_text(str(block.get("content") or ""))
+        if not content:
+            continue
+        if label in {"text", "paragraph_title", "figure_title"} and not TABLE_LABEL_RE.match(content):
+            return {
+                "label": label,
+                "content": content,
+                "bbox": block.get("bbox"),
+                "order": block.get("order"),
+                "index": block_index,
+            }
+    return None
+
+
 def _extract_visual_table_evidences_from_payload(
     *,
     payload: Any,
@@ -1189,8 +1397,12 @@ def _extract_visual_table_evidences_from_payload(
             expected_height=height,
         )
         if not rules:
-            continue
-
+            rules = _detect_visual_horizontal_rules(
+                pdf_path=pdf_path,
+                page_index=page_index + 1,
+                expected_width=width,
+                expected_height=height,
+            )
         page_blocks: list[dict[str, Any]] = []
         raw_blocks = []
         if isinstance(raw_page, list):
@@ -1248,6 +1460,16 @@ def _extract_visual_table_evidences_from_payload(
             quality = _visual_table_quality(rows, caption_text, visual_rules)
             if not quality["has_body_rows"]:
                 continue
+            if not _has_physical_table_rule_support(visual_rules):
+                continue
+            following_body = _first_following_body_text(
+                page_blocks=page_blocks,
+                start_index=int(table_block.get("index") or 0),
+            )
+            preceding_body = _last_preceding_body_text(
+                page_blocks=page_blocks,
+                end_index=int((caption_block or table_block).get("index") or 0),
+            )
             row_tuple = tuple(tuple(str(cell) for cell in row) for row in rows)
             evidences.append(
                 OCREvidence(
@@ -1269,11 +1491,30 @@ def _extract_visual_table_evidences_from_payload(
                         "caption_bbox": (caption_block or {}).get("bbox"),
                         "caption_order": (caption_block or {}).get("order"),
                         "table_order": table_block.get("order"),
+                        "preceding_body": preceding_body,
+                        "following_body": following_body,
                         "visual_rules": visual_rules,
                         "visual_quality": quality,
                     },
                 )
             )
+        occupied_table_ids = {
+            evidence.object_id
+            for evidence in evidences
+            if evidence.chapter == chapter and evidence.page == page_index
+        }
+        evidences.extend(
+            _extract_formula_table_evidences_from_page(
+                page_blocks=page_blocks,
+                captions=_caption_candidates(raw_blocks),
+                visual_rules=rules,
+                chapter=chapter,
+                source_channel="paddle_visual",
+                source_path=source_path,
+                page_index=page_index,
+                occupied_table_ids=occupied_table_ids,
+            )
+        )
     return evidences
 
 
@@ -1379,14 +1620,16 @@ def extract_table_evidences_from_markdown(
 
     evidences: list[OCREvidence] = []
     pattern = re.compile(
-        r"(?P<caption>Table\s+\d+\.\d+(?:\.\d+)?[A-Za-z]?[\s\S]{0,900}?)"
+        r"^\s*(?P<caption>Table\s+\d+\.\d+(?:\.\d+)?[A-Za-z]?[\s\S]{0,900}?)"
         r"(?P<table><table\b[\s\S]*?</table>)",
-        re.IGNORECASE,
+        re.IGNORECASE | re.MULTILINE,
     )
     for order, match in enumerate(pattern.finditer(text)):
         caption = clean_ocr_text(match.group("caption"))
         table_id = _caption_label(caption)
         if not table_id:
+            continue
+        if _caption_crosses_another_table_label(caption, table_id):
             continue
         table_html = match.group("table")
         rows = rows_from_html_table(table_html)
@@ -1541,7 +1784,7 @@ def _discover_paddle_raw_paths(root: Path, chapters: set[str] | None = None) -> 
         chapter = _chapter_from_path(Path(parent_name))
         if chapters and chapter not in chapters:
             continue
-        if chapter not in paths or path.name == "paddle_raw_api_response.json":
+        if chapter not in paths or path.name == "paddle_raw_response.json":
             paths[chapter] = path
     return paths
 
@@ -1558,6 +1801,18 @@ def _discover_glm_paths(root: Path, chapters: set[str] | None = None) -> dict[tu
     return paths
 
 
+def _chapter_pdf_path(pdf_dir: Path | None, chapter: str) -> Path | None:
+    chapter = str(chapter or "").strip().lower()
+    if not chapter or pdf_dir is None:
+        return None
+    direct = pdf_dir / f"{chapter}.pdf"
+    if direct.exists():
+        return direct
+    for path in pdf_dir.rglob(f"{chapter}.pdf"):
+        return path
+    return None
+
+
 def build_ocr_evidence_index(
     *,
     pdf_dir: str | Path | None = None,
@@ -1572,7 +1827,7 @@ def build_ocr_evidence_index(
         for chapter, path in sorted(_discover_paddle_raw_paths(Path(paddle_output_dir), chapter_set).items()):
             evidences.extend(extract_evidences_from_json(path, chapter=chapter, source_channel="paddle"))
             pdf_root = Path(pdf_dir) if pdf_dir else None
-            pdf_path = pdf_root / f"{chapter}.pdf" if pdf_root else None
+            pdf_path = _chapter_pdf_path(pdf_root, chapter)
             if pdf_path is not None and pdf_path.exists():
                 try:
                     payload = _load_json_payload(path)
@@ -1688,6 +1943,12 @@ def table_entry_from_evidence(evidence: OCREvidence) -> TableEntry:
             and evidence.source_payload.get("table_body_expanded_from_following_blocks")
         ),
     }
+    if isinstance(evidence.source_payload, dict):
+        for key in ("caption_bbox", "table_order", "caption_order", "preceding_body", "following_body", "visual_bottom_rule_y"):
+            if evidence.source_payload.get(key) is not None:
+                source[key] = evidence.source_payload.get(key)
+    if evidence.bbox is not None:
+        source["bbox"] = evidence.bbox
     if table_type == "formula_table":
         source["table_special_type"] = "formula_table"
     elif table_type == "list_table":

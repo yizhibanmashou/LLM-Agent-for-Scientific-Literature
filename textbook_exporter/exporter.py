@@ -11,7 +11,7 @@ from typing import Any, Iterable
 CHUNK_FILE_RE = re.compile(r"^((?:chapter|appendix)\d+)_(\d+)\.json$", re.IGNORECASE)
 NUMBERED_REF_RE = re.compile(r"^(\d+)\.\d+")
 PLACEHOLDER_RE = re.compile(
-    r"\[\[(?P<tag>SEE_FORMULA|SEE_TABLE|SEE_EXAMPLE|TABLE|FORMULA|EXAMPLE):(?P<id>[^\]]+)\]\]",
+    r"\[\[(?P<tag>SEE_FORMULA|SEE_TABLE|SEE_EXAMPLE|SEE_FIGURE|TABLE|FORMULA|EXAMPLE|FIGURE):(?P<id>[^\]]+)\]\]",
     re.IGNORECASE,
 )
 SEE_TABLE_RE = re.compile(r"\[\[SEE_TABLE:(?P<id>[^\]]+)\]\]", re.IGNORECASE)
@@ -45,6 +45,7 @@ def export_textbooks(
     structured_dir: str | Path,
     out_dir: str | Path,
     chapters: Iterable[str] | None = None,
+    figure_library: str | Path | None = None,
 ) -> list[TextbookExportResult]:
     structured_path = Path(structured_dir)
     output_path = Path(out_dir)
@@ -64,7 +65,7 @@ def export_textbooks(
             continue
         grouped[chapter].append(path)
 
-    renderer = TextbookRenderer(structured_path)
+    renderer = TextbookRenderer(structured_path, figure_library=Path(figure_library) if figure_library else None)
     output_path.mkdir(parents=True, exist_ok=True)
 
     results: list[TextbookExportResult] = []
@@ -81,9 +82,12 @@ def export_textbooks(
 
 
 class TextbookRenderer:
-    def __init__(self, structured_dir: Path):
+    def __init__(self, structured_dir: Path, figure_library: Path | None = None):
         self.structured_dir = structured_dir
+        self.figure_library_path = figure_library
+        self.figure_library_root = figure_library.parent if figure_library else structured_dir
         self.formula_map = self._load_formula_map()
+        self.figure_map = self._load_figure_map()
         self.tables_by_id, self.tables_by_chapter_id = self._load_table_maps()
         (
             self.examples_by_ref,
@@ -94,8 +98,9 @@ class TextbookRenderer:
 
     def render_chapter(self, chapter: str, chunks: list[dict[str, Any]]) -> str:
         chapter_label = render_chapter_label(chapter)
+        chapter_title = self.chapter_title_for_render(chapter, chunks)
         lines = [
-            f"# {chapter_label} Textbook Mapping",
+            f"# {render_chapter_heading(chapter_label, chapter_title)}",
             "",
         ]
 
@@ -120,6 +125,8 @@ class TextbookRenderer:
                     content=content,
                     expanded_assets=expanded_assets,
                     current_chapter=chapter,
+                    current_chunk_id=chunk_id,
+                    force_expand_tables=block_type == "table",
                 )
 
                 if block_type != "discussion":
@@ -141,28 +148,75 @@ class TextbookRenderer:
             self.chapter_titles_by_source_file[source_file] = extract_tex_title(source_file)
         return self.chapter_titles_by_source_file[source_file]
 
+    def chapter_title_for_render(self, chapter: str, chunks: list[dict[str, Any]]) -> str:
+        chapter_label = render_chapter_label(chapter)
+        metadata_items = [
+            chunk.get("metadata") if isinstance(chunk.get("metadata"), dict) else {}
+            for chunk in chunks
+        ]
+
+        candidates: list[str] = []
+        for metadata in metadata_items:
+            candidates.append(str(metadata.get("chapter_title") or ""))
+        for metadata in metadata_items:
+            candidates.append(self.document_title_for_chunk(metadata))
+        if metadata_items:
+            first_metadata = metadata_items[0]
+            candidates.extend(
+                str(first_metadata.get(key) or "")
+                for key in ("section_level_1", "display_heading", "section")
+            )
+
+        for candidate in candidates:
+            title = normalize_chapter_title_for_heading(candidate, chapter_label)
+            if title:
+                return title
+        return ""
+
     def process_content(
         self,
         content: str,
         expanded_assets: set[str],
         current_chapter: str | None,
+        *,
+        current_chunk_id: str | None = None,
+        force_expand_tables: bool = False,
+        inline_table_scope: str | None = None,
     ) -> str:
         content = normalize_latex_for_katex(content)
-        content = SEE_TABLE_RE.sub(
-            lambda match: self.render_table_reference(match.group("id").strip(), current_chapter),
-            content,
-        )
+        def replace_see_table(match: re.Match[str]) -> str:
+            table_id = match.group("id").strip()
+            if (
+                self.table_owned_by_chunk(table_id, current_chapter, current_chunk_id)
+                and not content[: match.start()].strip()
+            ):
+                table_key = self.asset_key("TABLE", table_id, current_chapter)
+                if table_key in expanded_assets:
+                    return self.render_table_reference(table_id, current_chapter)
+                expanded_assets.add(table_key)
+                return self.render_table_block(table_id, current_chapter)
+            return self.render_table_reference(table_id, current_chapter)
+
+        content = SEE_TABLE_RE.sub(replace_see_table, content)
 
         parts: list[str] = []
         last_end = 0
         for match in PLACEHOLDER_RE.finditer(content):
+            tag = match.group("tag").upper()
+            raw_id = match.group("id").strip()
+            if tag == "SEE_FIGURE":
+                continue
             before = content[last_end : match.start()].strip()
             if before:
                 parts.append(before)
 
-            tag = match.group("tag").upper()
-            raw_id = match.group("id").strip()
+            if tag == "TABLE" and self.numbered_table_cross_owner(raw_id, current_chapter, current_chunk_id) and not force_expand_tables:
+                parts.append(self.render_table_reference(raw_id, current_chapter))
+                last_end = match.end()
+                continue
             asset_key = self.asset_key(tag, raw_id, current_chapter)
+            if tag == "TABLE" and inline_table_scope and self.table_is_inline(raw_id, current_chapter):
+                asset_key = f"{asset_key}:{inline_table_scope}"
 
             if asset_key in expanded_assets:
                 parts.append(self.render_repeat_reference(tag, raw_id))
@@ -174,6 +228,8 @@ class TextbookRenderer:
                     parts.append(self.render_table_block(raw_id, current_chapter))
                 elif tag in {"SEE_EXAMPLE", "EXAMPLE"}:
                     parts.append(self.render_example_block(raw_id, expanded_assets, current_chapter))
+                elif tag == "FIGURE":
+                    parts.append(self.render_figure_block(raw_id, current_chapter))
                 else:
                     parts.append(match.group(0))
             last_end = match.end()
@@ -181,7 +237,45 @@ class TextbookRenderer:
         remaining = content[last_end:].strip()
         if remaining:
             parts.append(remaining)
-        return "\n\n".join(parts) if parts else content
+        rendered = "\n\n".join(parts) if parts else content
+        return self.replace_inline_figure_references(rendered)
+
+    def table_is_inline(self, table_id: str, current_chapter: str | None) -> bool:
+        table = self.resolve_table(table_id, current_chapter)
+        if not table:
+            return False
+        table_type = str(table.get("table_type") or "").strip().lower()
+        return table_type == "inline" or clean_ref_id(table.get("id") or table_id).lower().startswith("inline_")
+
+    def table_owned_by_chunk(
+        self,
+        table_id: str,
+        current_chapter: str | None,
+        current_chunk_id: str | None,
+    ) -> bool:
+        if not current_chunk_id:
+            return False
+        table = self.resolve_table(table_id, current_chapter)
+        if not table:
+            return False
+        source = table.get("source") if isinstance(table.get("source"), dict) else {}
+        return str(source.get("unit_id") or "").strip() == str(current_chunk_id).strip()
+
+    def numbered_table_cross_owner(
+        self,
+        table_id: str,
+        current_chapter: str | None,
+        current_chunk_id: str | None,
+    ) -> bool:
+        if not current_chunk_id:
+            return False
+        table = self.resolve_table(table_id, current_chapter)
+        if not table:
+            return False
+        table_type = str(table.get("table_type") or "").strip().lower()
+        if table_type and table_type != "numbered":
+            return False
+        return not self.table_owned_by_chunk(table_id, current_chapter, current_chunk_id)
 
     def render_formula_block(self, formula_id: str) -> str:
         formula = self.formula_map.get(clean_ref_id(formula_id))
@@ -276,6 +370,37 @@ class TextbookRenderer:
             return f"Table {clean_ref_id(table_id)}"
         return str(table.get("label_format") or f"Table {clean_ref_id(table_id)}")
 
+    def render_figure_block(self, figure_id: str, current_chapter: str | None) -> str:
+        figure = self.resolve_figure(figure_id, current_chapter)
+        if not figure:
+            return f"> **[UNRESOLVED FIGURE: {figure_id}]**\n"
+
+        figure_ref = clean_ref_id(figure.get("id") or figure_id)
+        caption = normalize_latex_for_katex(str(figure.get("caption") or f"Figure {figure_ref}"))
+        asset_path = str(figure.get("asset_path") or "").strip()
+        asset_target = self.figure_library_root / asset_path if asset_path else None
+        image_path = str(asset_target).replace("\\", "/") if asset_target else ""
+        page = figure.get("page", "?")
+        chapter = normalize_chapter_id(figure.get("chapter") or current_chapter or "")
+        lines = [
+            f"> **Figure {figure_ref}** · page {page} · source: `{chapter}`",
+        ]
+        if image_path:
+            lines.extend([">", f"> ![Figure {figure_ref}]({image_path})"])
+        lines.extend([">", f"> {caption}", ""])
+        return "\n".join(lines)
+
+    def render_figure_reference(self, figure_id: str) -> str:
+        return f"Figure {clean_ref_id(figure_id)}"
+
+    def replace_inline_figure_references(self, value: str) -> str:
+        return re.sub(
+            r"\[\[SEE_FIGURE:(?P<id>[^\]]+)\]\]",
+            lambda match: self.render_figure_reference(match.group("id").strip()),
+            value,
+            flags=re.IGNORECASE,
+        )
+
     def render_example_block(
         self,
         example_ref: str,
@@ -289,10 +414,20 @@ class TextbookRenderer:
         example_chapter = normalize_chapter_id(example.get("chapter") or current_chapter or "")
         label = str(example.get("label") or f"Example {example_ref}")
         source_file = str(example.get("source_file") or "")
-        start = example.get("start_block_index", "?")
-        end = example.get("end_block_index", "?")
+        replacement = example.get("replacement") if isinstance(example.get("replacement"), dict) else {}
+        source_span = replacement.get("source_block_span") if isinstance(replacement.get("source_block_span"), list) else []
+        if len(source_span) == 2:
+            start, end = source_span
+        else:
+            start = example.get("start_block_index", "?")
+            end = example.get("end_block_index", "?")
         content = str(example.get("content_markdown") or example.get("content_plain") or "[No content]")
-        content = self.process_content(content, expanded_assets, example_chapter)
+        content = self.process_content(
+            content,
+            expanded_assets,
+            example_chapter,
+            inline_table_scope=f"example:{clean_ref_id(example_ref)}",
+        )
 
         lines = [
             f"> **{label}** · ref: `{clean_ref_id(example_ref)}` · source: `{source_file}` · blocks {start}–{end}",
@@ -337,6 +472,15 @@ class TextbookRenderer:
                 return label_match
         return self.examples_by_ref.get(ref)
 
+    def resolve_figure(self, figure_ref: str, current_chapter: str | None) -> dict[str, Any] | None:
+        ref = clean_ref_id(figure_ref)
+        chapter = normalize_chapter_id(current_chapter or chapter_from_numbered_ref(ref) or "")
+        if chapter:
+            match = self.figure_map.get((chapter, ref))
+            if match:
+                return match
+        return self.figure_map.get(("", ref))
+
     def asset_key(self, tag: str, raw_id: str, current_chapter: str | None) -> str:
         ref = clean_ref_id(raw_id)
         if tag == "TABLE":
@@ -350,6 +494,12 @@ class TextbookRenderer:
                 (example or {}).get("chapter") or current_chapter or chapter_from_numbered_ref(ref) or ""
             )
             return f"{chapter}:example:{ref}"
+        if tag in {"SEE_FIGURE", "FIGURE"}:
+            figure = self.resolve_figure(ref, current_chapter)
+            chapter = normalize_chapter_id(
+                (figure or {}).get("chapter") or current_chapter or chapter_from_numbered_ref(ref) or ""
+            )
+            return f"{chapter}:figure:{ref}"
         if tag in {"SEE_FORMULA", "FORMULA"}:
             return f"formula:{ref}"
         return f"{tag.lower()}:{ref}"
@@ -362,6 +512,8 @@ class TextbookRenderer:
             return f"*[Table {ref} - see above]*"
         if tag in {"SEE_EXAMPLE", "EXAMPLE"}:
             return f"*[Example {ref} - see above]*"
+        if tag in {"SEE_FIGURE", "FIGURE"}:
+            return f"*[Figure {ref} - see above]*"
         return f"*[{ref} - see above]*"
 
     def _load_formula_map(self) -> dict[str, dict[str, Any]]:
@@ -372,6 +524,26 @@ class TextbookRenderer:
             for formula in formulas
             if isinstance(formula, dict) and clean_ref_id(formula.get("id"))
         }
+
+    def _load_figure_map(self) -> dict[tuple[str, str], dict[str, Any]]:
+        path = self.figure_library_path or (self.structured_dir / "figure_library.json")
+        library = read_json_if_exists(path, {"figures": {}})
+        figures_payload = library.get("figures") if isinstance(library, dict) else {}
+        if isinstance(figures_payload, dict):
+            figures = [figure for figure in figures_payload.values() if isinstance(figure, dict)]
+        elif isinstance(figures_payload, list):
+            figures = [figure for figure in figures_payload if isinstance(figure, dict)]
+        else:
+            figures = []
+        by_key: dict[tuple[str, str], dict[str, Any]] = {}
+        for figure in figures:
+            figure_id = clean_ref_id(figure.get("id"))
+            if not figure_id:
+                continue
+            chapter = normalize_chapter_id(figure.get("chapter") or chapter_from_numbered_ref(figure_id) or "")
+            by_key.setdefault((chapter, figure_id), figure)
+            by_key.setdefault(("", figure_id), figure)
+        return by_key
 
     def _load_table_maps(
         self,
@@ -472,9 +644,41 @@ def render_chapter_label(chapter: str) -> str:
     return chapter
 
 
+def render_chapter_heading(chapter_label: str, chapter_title: str = "") -> str:
+    title = str(chapter_title or "").strip()
+    if not title:
+        return f"{chapter_label} Textbook Mapping"
+    return f"{chapter_label} · {title}"
+
+
+def normalize_chapter_title_for_heading(value: str, chapter_label: str = "") -> str:
+    title = re.sub(r"\s+", " ", str(value or "")).strip()
+    title = title.strip(" -–—")
+    if not title:
+        return ""
+
+    if chapter_label:
+        title = re.sub(
+            rf"^{re.escape(chapter_label)}\s*[:.\-–—]\s*",
+            "",
+            title,
+            flags=re.IGNORECASE,
+        ).strip()
+    title = re.sub(r"^(?:Chapter|Appendix)\s+\d+\s*[:.\-–—]\s*", "", title, flags=re.IGNORECASE)
+    title = re.sub(r"^\d+\s*:\s*", "", title).strip()
+    title = re.sub(r"\s*:\s*Introduction\s*$", "", title, flags=re.IGNORECASE).strip()
+    title = re.sub(r"\s*/\s*Introduction\s*$", "", title, flags=re.IGNORECASE).strip()
+
+    if title and title.lower() not in {"introduction", "unknown authors"}:
+        return title
+    return ""
+
+
 def display_heading_for_chunk(chunk_id: str, metadata: dict[str, Any], document_title: str = "") -> str:
     heading_path = metadata.get("heading_path") if isinstance(metadata.get("heading_path"), list) else []
-    display = " / ".join(str(part) for part in heading_path if str(part).strip())
+    heading_path = [str(part).strip() for part in heading_path if str(part).strip()]
+    heading_path = strip_placeholder_chapter_heading_path(chunk_id, heading_path, metadata)
+    display = " / ".join(heading_path)
     display = display or str(metadata.get("display_heading") or metadata.get("section") or chunk_id)
     title = str(document_title or "").strip()
     if title and display and not heading_contains_title(display, title):
@@ -489,18 +693,147 @@ def display_heading_for_chunk(chunk_id: str, metadata: dict[str, Any], document_
     return display
 
 
+def strip_placeholder_chapter_heading_path(
+    chunk_id: str,
+    heading_path: list[str],
+    metadata: dict[str, Any] | None = None,
+) -> list[str]:
+    if len(heading_path) < 2:
+        if len(heading_path) == 1 and looks_like_numbered_chapter_title(chunk_id, heading_path[0], metadata):
+            return []
+        return heading_path
+    first = heading_path[0].strip()
+    if not (
+        looks_like_placeholder_chapter_intro(chunk_id, first)
+        or looks_like_numbered_chapter_title(chunk_id, first, metadata)
+    ):
+        return heading_path
+    return heading_path[1:]
+
+
+def looks_like_placeholder_chapter_intro(chunk_id: str, heading: str) -> bool:
+    chapter_match = re.match(r"chapter(\d+)_", str(chunk_id or ""), flags=re.IGNORECASE)
+    if not chapter_match:
+        return False
+    chapter_number = chapter_match.group(1)
+    return bool(
+        re.fullmatch(
+            rf"(?:Chapter\s+)?0*{re.escape(chapter_number)}\s*:\s*Introduction",
+            str(heading or "").strip(),
+            flags=re.IGNORECASE,
+        )
+    )
+
+
+def looks_like_numbered_chapter_title(
+    chunk_id: str,
+    heading: str,
+    metadata: dict[str, Any] | None = None,
+) -> bool:
+    chapter_match = re.match(r"chapter(\d+)_", str(chunk_id or ""), flags=re.IGNORECASE)
+    if not chapter_match:
+        return False
+    value = str(heading or "").strip()
+    match = re.fullmatch(rf"0*{re.escape(chapter_match.group(1))}\s*:\s*(?P<title>.+)", value)
+    if not match:
+        return False
+    chapter_title = str((metadata or {}).get("chapter_title") or "").strip()
+    if not chapter_title:
+        return True
+    return normalize_heading_compare(chapter_title) == normalize_heading_compare(match.group("title"))
+
+
 def extract_tex_title(source_file: str) -> str:
-    path = Path(source_file)
-    if not path.is_absolute():
-        path = Path.cwd() / path
+    path = resolve_source_file_path(source_file)
+    raw_title = extract_raw_doc_title(path)
     if not path.exists():
-        return ""
+        return raw_title
+    tex_title = ""
     try:
         text = path.read_text(encoding="utf-8")
     except OSError:
-        return ""
+        return raw_title
     match = re.search(r"\\title\s*\{(?P<title>[^{}]+)\}", text)
-    return re.sub(r"\s+", " ", match.group("title")).strip() if match else ""
+    if match:
+        tex_title = re.sub(r"\s+", " ", match.group("title")).strip()
+    if raw_title and is_more_specific_title(raw_title, tex_title):
+        return raw_title
+    return tex_title or raw_title
+
+
+def resolve_source_file_path(source_file: str) -> Path:
+    path = Path(source_file)
+    if not path.is_absolute():
+        path = Path.cwd() / path
+    if path.exists():
+        return path
+
+    fallback = resolve_paddle_output_source_path(path)
+    return fallback or path
+
+
+def resolve_paddle_output_source_path(path: Path) -> Path | None:
+    parts = path.parts
+    lowered = [part.lower() for part in parts]
+    if "paddle_output" not in lowered:
+        return None
+    paddle_index = lowered.index("paddle_output")
+    suffix = Path(*parts[paddle_index + 1 :])
+    if not str(suffix):
+        return None
+    candidate = Path.cwd() / "data" / "paddle_output" / suffix
+    if candidate.exists() or (candidate.parent / "intermediate" / "paddle_raw_response.json").exists():
+        return candidate
+    return None
+
+
+def extract_raw_doc_title(source_file: Path) -> str:
+    raw_path = source_file.parent / "intermediate" / "paddle_raw_response.json"
+    if not raw_path.exists():
+        return ""
+    try:
+        payload = json.loads(raw_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return ""
+    if not isinstance(payload, list) or not payload:
+        return ""
+    first_page = payload[0] if isinstance(payload[0], dict) else {}
+    blocks = first_page.get("parsing_res_list")
+    if not isinstance(blocks, list):
+        return ""
+    title_blocks: list[tuple[float, float, str]] = []
+    for block in blocks:
+        if not isinstance(block, dict) or block.get("block_label") != "doc_title":
+            continue
+        content = re.sub(r"\s+", " ", str(block.get("block_content") or "")).strip()
+        if not content or re.fullmatch(r"(?:chapter\s*)?\d+", content, flags=re.IGNORECASE):
+            continue
+        bbox = block.get("block_bbox") if isinstance(block.get("block_bbox"), list) else []
+        y0 = float(bbox[1]) if len(bbox) >= 2 and isinstance(bbox[1], (int, float)) else 0.0
+        order = block.get("block_order")
+        order_value = float(order) if isinstance(order, (int, float)) else y0
+        title_blocks.append((order_value, y0, content))
+    if not title_blocks:
+        return ""
+    parts = [content for _, _, content in sorted(title_blocks)]
+    title = parts[0]
+    for part in parts[1:]:
+        title = f"{title}{' ' if title.endswith(':') else ' / '}{part}"
+    return re.sub(r"\s+", " ", title).strip()
+
+
+def is_more_specific_title(candidate: str, baseline: str) -> bool:
+    candidate_text = str(candidate or "").strip()
+    baseline_text = str(baseline or "").strip()
+    if not candidate_text:
+        return False
+    if not baseline_text:
+        return True
+    candidate_key = normalize_heading_compare(candidate_text)
+    baseline_key = normalize_heading_compare(baseline_text)
+    if not candidate_key or candidate_key == baseline_key:
+        return False
+    return candidate_key.startswith(baseline_key) or len(candidate_key) > len(baseline_key)
 
 
 def heading_contains_title(display: str, title: str) -> bool:

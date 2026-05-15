@@ -1,4 +1,4 @@
-# Chapter 30 Textbook Mapping
+# Chapter 30 · Measuring Multivariate Selection
 
 ## chapter30_001 · Measuring Multivariate Selection: Introduction
 
@@ -18,7 +18,7 @@ Chapter 29 described a variety of measures of univariate selection, with an emph
 
 ---
 
-## chapter30_003 · Measuring Multivariate Selection: Introduction / Changes in the Mean Vector: The Directional Selection Differential Vector, S
+## chapter30_003 · SELECTION ON MULTIVARIATE PHENOTYPES: DIFFERENTIALS AND GRADIENTS / Changes in the Mean Vector: The Directional Selection Differential Vector, S
 
 **[推导 Derivation]**
 
@@ -40,7 +40,16 @@ Both show that selection intensity, $ \bar{\iota}_i = S_i / \sigma_{z_i} $, for 
 
 ---
 
-## chapter30_004 · Measuring Multivariate Selection: Introduction / The Directional Selection Gradient Vector, $ \beta $
+## chapter30_004 · SELECTION ON MULTIVARIATE PHENOTYPES: DIFFERENTIALS AND GRADIENTS / The Directional Selection Gradient Vector, $ \beta $
+
+**[Figure]**
+
+> **Figure 30.1** · page 3 · source: `chapter30`
+>
+> ![Figure 30.1](../figures/fig_0171.png)
+>
+> Figure 30.1 Selection on a character can result in a within-generation change in the mean of other phenotypically correlated characters that are not themselves under direct selection. Suppose we assume that character 1 is under simple truncation selection, so only individuals with values of  $ z_1 > T $ reproduce. There is no direct selection on trait 2. Here  $ \mu $ and  $ \mu^* $ are the population mean vector before and after selection, respectively. Left: When  $ z_1 $ and  $ z_2 $ are uncorrelated,  $ S_2 = 0 $. Center: When  $ z_1 $ and  $ z_2 $ are positively correlated,  $ S_2 > 0 $. Right: When  $ z_1 $ and  $ z_2 $ are negatively correlated,  $ S_2 < 0 $.
+
 
 **[推导 Derivation]**
 
@@ -98,28 +107,16 @@ where D is the diagonal matrix
 > $$ \mathbf{D}=\begin{pmatrix}{{{\sigma_{1}}}}&{{{0}}}&{{{\cdots}}}&{{{0}}} \\{{{0}}}&{{{\sigma_{2}}}}&{{{\cdots}}}&{{{0}}} \\{{{\vdots}}}&{{{\ddots}}}&{{{\vdots}}} \\{{{0}}}&{{{0}}}&{{{\cdots}}}&{{{\sigma_{n}}}}\end{pmatrix} $$
 
 
-Equations 30.4b and 30.4c imply that the phenotypic covariance matrix $ (P_{sd}) $ for the standardized variables is simply the matrix of all pairwise correlations. Following our notation from Chapter 29, we denote selection gradients using variance-standardized variables by $ \beta_{sd,i} $, although they are often denoted by $ \beta_i' $ in the literature. When expressed with standardized variables, Equation 30.2b becomes $$ \boldsymbol{w}(\mathbf{z}_{s d})=1+\boldsymbol{\beta}_{s d}^{T}\mathbf{z}_{s d}+e,\quad\mathrm{w h e r e}\quad\boldsymbol{\beta}_{s d}=\mathbf{P}_{s d}^{-1}\mathbf{S}_{s d} $$
-
-Here $ \beta_{sd,i} $ is the expected change in relative fitness given a change of one standard deviation in trait $ z_i $ when all of the other measured trait values (i.e., the elements of $ \mathbf{z} $) are held constant.
-
-The total strength of directional selection on the set of measured characters is a quantity of interest, and is given by the norm of $ \beta $, where (Equation A5.1a) $$ ||\beta||=\sqrt{\beta^{T}\beta}=\sqrt{\sum\beta_{i}^{2}} $$
-
-Morrissey (2014b) noted that $ E[\|\beta\|] \geq \|\beta\| $, as the values of $ \beta_i $ are measured with error, and such error carries over into the norm. Suppose $ k $ independent traits are measured, where $ \widehat{\beta}_i \sim N(\beta, \sigma^2) $, so that each $ \beta_i $ is independent and identically distributed, with sampling error $ \sigma^2 $. In this case, $ E[\|\widehat{\beta}\|] = \sqrt{k(\beta + \sigma^2)} > \|\beta\| = \sqrt{k\beta} $. Given that the standard error of an estimate of $ \beta $ is often of the same order as the estimate itself (Morrissey 2014b), the total strength of selection can be considerably overestimated by $ \|\beta\| $.
-
-We also remark in passing that the Henshaw-Zemel (2017) distributional selection differential (a nonparametric measure of the total shift in a distribution following selection; Equation 29.15a) can be generalized into a multivariate version that also partitions trait selection into direct and indirect effects; see their paper for details.
-
 **[示例 Example]**
 
-> **Example 30.1** · ref: `30.1` · source: `chapter30_004.json` · blocks 10–10
+> **Example 30.1** · ref: `30.1` · source: `chapter30_004.json` · blocks 5–9
 >
-> Example 30.1. The original application of the Lande-Arnold regression was on a population of one-spotted stink bugs (Euschistus varioliarius), collected along the shore of Lake Michigan after a storm (Lande and Arnold 1983), an insect equivalent of the classic Bumpus (1899) study. Of the 94 individuals collected (legend has it that some were deposited into an open adult beverage container, in a truly selfless act of science), 39 were alive. All individuals were measured for four characters: head (Hd) and thorax (Tx) width and scutellum (Sc) and forewing (Fw) length. The data were then logarithmically transformed to more closely approximate normality, and the resulting log-transformed variables were variance-standardized. Selection differentials were calculated as the difference between the trait means among those bugs that survived and the total sample (dead or alive). Because these selection differentials were scaled in standard deviations, they correspond to selection intensities ($ \bar{i} $; Equation 13.6a). The resulting vector of standardized selection differentials and correlation matrix were $$ \mathbf{S}_{sd}=\begin{pmatrix}\overline{\imath}_{Hd}\\\overline{\imath}_{Tx}\\\overline{\imath}_{Sc}\\\overline{\imath}_{Fw}\end{pmatrix}=\begin{pmatrix}-0.11\\-0.06\\-0.28^{*}\\-0.43^{**}\end{pmatrix}\quad\mathbf{P}_{sd}=\begin{pmatrix}1.00&0.72&0.50&0.60\\0.72&1.00&0.59&0.71\\0.50&0.59&1.00&0.62\\0.60&0.71&0.62&1.00\end{pmatrix} $$ where $ * $ and $ ** $ denote 5% and 1% significance for the elements in $ S_{sd} $. Hence, $$ \boldsymbol{\beta}_{s d}=(\mathbf{P}_{s d})^{-1}\mathbf{S}_{s d}=\begin{pmatrix}1.00&0.72&0.50&0.60\\0.72&1.00&0.59&0.71\\0.50&0.59&1.00&0.62\\0.60&0.71&0.62&1.00\end{pmatrix}^{-1}\begin{pmatrix}-0.11\\-0.06\\-0.28\\-0.43\end{pmatrix}=\begin{pmatrix}0.02\\0.53^{**}\\-0.16\\-0.72^{**}\end{pmatrix} $$
-> 
-> The selection differentials for scutellum and wing length were both significantly different from zero, while the only significant gradients were for thorax and wing length. Hence, while the within-generation change in thorax length was negative (but not significantly different from zero), in reality there was strong direct selection to increase thorax length. An increase of one standard deviation in thorax length increases relative fitness by $ \beta_{sd} = 0.53 $ (i.e., 53%), while an increase of one standard deviation in wing length reduces fitness by 72%.
+> Example 30.1. The original application of the Lande-Arnold regression was on a population of one-spotted stink bugs (Euschistus varioliarius), collected along the shore of Lake Michigan after a storm (Lande and Arnold 1983), an insect equivalent of the classic Bumpus (1899) study. Of the 94 individuals collected (legend has it that some were deposited into an open adult beverage container, in a truly selfless act of science), 39 were alive. All individuals were measured for four characters: head (Hd) and thorax (Tx) width and scutellum (Sc) and forewing (Fw) length. The data were then logarithmically transformed to more closely approximate normality, and the resulting log-transformed variables were variance-standardized. Selection differentials were calculated as the difference between the trait means among those bugs that survived and the total sample (dead or alive). Because these selection differentials were scaled in standard deviations, they correspond to selection intensities ( $ \bar{i} $; Equation 13.6a). The resulting vector of standardized selection differentials and correlation matrix were $$ \mathbf{S}_{sd}=\begin{pmatrix}\overline{\imath}_{Hd}\\\overline{\imath}_{Tx}\\\overline{\imath}_{Sc}\\\overline{\imath}_{Fw}\end{pmatrix}=\begin{pmatrix}-0.11\\-0.06\\-0.28^{*}\\-0.43^{**}\end{pmatrix}\quad\mathbf{P}_{sd}=\begin{pmatrix}1.00&0.72&0.50&0.60\\0.72&1.00&0.59&0.71\\0.50&0.59&1.00&0.62\\0.60&0.71&0.62&1.00\end{pmatrix} $$ where $ * $ and $ ** $ denote 5% and 1% significance for the elements in $ S_{sd} $. Hence, $$ \boldsymbol{\beta}_{s d}=(\mathbf{P}_{s d})^{-1}\mathbf{S}_{s d}=\begin{pmatrix}1.00&0.72&0.50&0.60\\0.72&1.00&0.59&0.71\\0.50&0.59&1.00&0.62\\0.60&0.71&0.62&1.00\end{pmatrix}^{-1}\begin{pmatrix}-0.11\\-0.06\\-0.28\\-0.43\end{pmatrix}=\begin{pmatrix}0.02\\0.53^{**}\\-0.16\\-0.72^{**}\end{pmatrix} $$ The selection differentials for scutellum and wing length were both significantly different from zero, while the only significant gradients were for thorax and wing length. Hence, while the within-generation change in thorax length was negative (but not significantly different from zero), in reality there was strong direct selection to increase thorax length. An increase of one standard deviation in thorax length increases relative fitness by $ \beta_{sd} = 0.53 $ (i.e., 53%), while an increase of one standard deviation in wing length reduces fitness by 72%.
 
 
 ---
 
-## chapter30_005 · Measuring Multivariate Selection: Introduction / Directional Gradients, Fitness Surface Geometry, and Selection Response
+## chapter30_005 · SELECTION ON MULTIVARIATE PHENOTYPES: DIFFERENTIALS AND GRADIENTS / Directional Gradients, Fitness Surface Geometry, and Selection Response
 
 Consider a scalar-valued function, $f(\mathbf{x})$, whose argument is a vector, $\mathbf{x} = (x_1, \cdots, x_n)^T$. Recall from vector calculus (Appendix 6) that the gradient vector, $\nabla_{\mathbf{x}} f(\mathbf{x})$, of $f$ with respect to $\mathbf{x}$ is defined as $$ \nabla_{\mathbf{x}}f(\mathbf{x})=\begin{pmatrix}\partial f/\partial x_{1}\\ \partial f/\partial x_{2}\\ \vdots\\ \partial f/\partial x_{n}\end{pmatrix} $$ namely, the vector of each partial of $f$ with respect to $x_{i}$, for $1 \leq i \leq n$. Further, recall that the gradient vector of a multivariate function points in the direction of change that will give the greatest (local) increase in $f$.
 
@@ -160,7 +157,7 @@ Finally, while our focus has been on the role that $ \beta $ plays in measuring 
 
 ---
 
-## chapter30_006 · Measuring Multivariate Selection: Introduction / Changes in the Covariance Matrix: The Quadratic Selection Differential Matrix, C
+## chapter30_006 · SELECTION ON MULTIVARIATE PHENOTYPES: DIFFERENTIALS AND GRADIENTS / Changes in the Covariance Matrix: The Quadratic Selection Differential Matrix, C
 
 **[推导 Derivation]**
 
@@ -189,63 +186,21 @@ This demonstrates that the $S_i S_j$ term corrects $C_{ij}$ for the change in co
 
 **[示例 Example]**
 
-> **Example 30.2** · ref: `30.2` · source: `chapter30_006.json` · blocks 2–2
+> **Example 30.2** · ref: `30.2` · source: `chapter30_006.json` · blocks 2–5
 >
-> Example 30.2. We wish to show that $ \mathbf{P}^* - \mathbf{P} = \sigma[w(\mathbf{z}), (\mathbf{z} - \boldsymbol{\mu})(\mathbf{z} - \boldsymbol{\mu})^T] - \mathbf{S} \mathbf{S}^T $, which implies Equation 30.7b. From the definition of the variance-covariance matrix,
-> 
-> > **Formula (30.8a)** · `30.8a` · source: `chapter30_block_029` · Changes in the Covariance Matrix: The Quadratic Selection Differential Matrix, C
-> >
-> > $$ \mathbf{P}=E\left[\left(\mathbf{z}-\boldsymbol{\mu}\right)\left(\mathbf{z}-\boldsymbol{\mu}\right)^{T}\right]=\int\left(\mathbf{z}-\boldsymbol{\mu}\right)\left(\mathbf{z}-\boldsymbol{\mu}\right)^{T}p(\mathbf{z})\mathrm{d}\mathbf{z} $$
-> 
-> 
-> > **Formula (30.8b)** · `30.8b` · source: `chapter30_block_029` · Changes in the Covariance Matrix: The Quadratic Selection Differential Matrix, C
-> >
-> > $$ \mathbf{P}^{*}=E\left[\left(\mathbf{z}^{*}-\boldsymbol{\mu}^{*}\right)\left(\mathbf{z}^{*}-\boldsymbol{\mu}^{*}\right)^{T}\right]=\int\left(\mathbf{z}-\boldsymbol{\mu}^{*}\right)\left(\mathbf{z}-\boldsymbol{\mu}^{*}\right)^{T}\boldsymbol{p}^{*}\left(\mathbf{z}\right)\mathrm{d}\mathbf{z} $$
-> 
-> 
-> where $ p^{*}(\mathbf{z}) = w(\mathbf{z}) p(\mathbf{z}) $ is the distribution of $ \mathbf{z} $ after selection (but before reproduction). If we note that $ \mu^* = \mu + \mathbf{S} $, the integrated expression in Equation 30.8b can be written as
-> 
-> > **Formula (30.8c)** · `30.8c` · source: `chapter30_block_029` · Changes in the Covariance Matrix: The Quadratic Selection Differential Matrix, C
-> >
-> > $$ \begin{aligned}(\mathbf{z}-\boldsymbol{\mu}^{*})(\mathbf{z}-\boldsymbol{\mu}^{*})^{T}&=(\mathbf{z}-\boldsymbol{\mu}-\mathbf{S})(\mathbf{z}-\boldsymbol{\mu}-\mathbf{S})^{T}\\&=(\mathbf{z}-\boldsymbol{\mu}-\mathbf{S})([\mathbf{z}-\boldsymbol{\mu}]^{T}-\mathbf{S}^{T})\\&=(\mathbf{z}-\boldsymbol{\mu})(\mathbf{z}-\boldsymbol{\mu})^{T}-(\mathbf{z}-\boldsymbol{\mu})\mathbf{S}^{T}-\mathbf{S}\left(\mathbf{z}-\boldsymbol{\mu}\right)^{T}+\mathbf{S}\mathbf{S}^{T}\end{aligned} $$
-> 
-> 
-> Because $ \int \mathbf{z} \, p^*(\mathbf{z}) \, \mathrm{d}\mathbf{z} = \mu^* $ and $ \int p^*(\mathbf{z}) \, \mathrm{d}\mathbf{z} = 1 $, then $$ \int(\mathbf{z}-\boldsymbol{\mu})\mathbf{S}^{T}\mathbf{\alpha}p^{*}(\mathbf{z})\mathrm{d}\mathbf{z}=\int\left[\mathbf{z}p^{*}(\mathbf{z})\right]\mathbf{S}^{T}\mathrm{d}\mathbf{z}-\boldsymbol{\mu}\mathbf{S}^{T}\int p^{*}(\mathbf{z})\mathrm{d}\mathbf{z}=(\boldsymbol{\mu}^{*}-\boldsymbol{\mu})\mathbf{S}^{T}=\mathbf{S}\mathbf{S}^{T} $$ $$ \[\int\mathbf{S}(\mathbf{z}-\boldsymbol{\mu})^{T}\mathbf{\Phi}\mathbf{\Phi}\mathbf{\Phi}\mathbf{\Phi}\mathbf{\ $$ $$ \int\mathbf{S}\mathbf{S}^{T}\mathbf{\nabla}p^{*}(\mathbf{z})\mathrm{d}\mathbf{z}=\mathbf{S}\mathbf{S}^{T} $$
-> 
-> Substituting these results into Equation 30.8b yields
-> 
-> > **Formula (30.8d)** · `30.8d` · source: `chapter30_block_030` · Changes in the Covariance Matrix: The Quadratic Selection Differential Matrix, C
-> >
-> > $$ \begin{aligned}\mathbf{P}^{*}&=\int\left(\mathbf{z}-\boldsymbol{\mu}\right)\left(\mathbf{z}-\boldsymbol{\mu}\right)^{T}\boldsymbol{w}(\mathbf{z})\boldsymbol{p}(\mathbf{z})\mathrm{d}\mathbf{z}-\mathbf{S}\mathbf{S}^{T}-\mathbf{S}\mathbf{S}^{T}+\mathbf{S}\mathbf{S}^{T}\\&=E\left[\boldsymbol{w}(\mathbf{z})\cdot\left(\mathbf{z}-\boldsymbol{\mu}\right)\left(\mathbf{z}-\boldsymbol{\mu}\right)^{T}\right]-\mathbf{S}\mathbf{S}^{T}\end{aligned} $$
-> 
-> 
-> Because $ E[w(\mathbf{z})] = 1 $, we can write $ \mathbf{P} = E[w(\mathbf{z})] \cdot \mathbf{P} $. Using the definition of $ \mathbf{P} $, $$ \begin{aligned}\mathbf{P}^{*}-\mathbf{P}&=E\left[w(\mathbf{z})\cdot(\mathbf{z}-\boldsymbol{\mu})\left(\mathbf{z}-\boldsymbol{\mu}\right)^{T}\right]-\mathbf{S}\mathbf{S}^{T}-E[w(\mathbf{z})]\cdot E\left[(\mathbf{z}-\boldsymbol{\mu})\left(\mathbf{z}-\boldsymbol{\mu}\right)^{T}\right]\\&=\sigma\left[w(\mathbf{z}),(\mathbf{z}-\boldsymbol{\mu})(\mathbf{z}-\boldsymbol{\mu})^{T}\right]-\mathbf{S}\mathbf{S}^{T}\quad(30.8e\end{aligned} $$ with the last equality following from the definition of a covariance, $ \sigma(x,y) = E(x \cdot y) - E(x)E(y) $. As was the case for S, the fact that $ C_{ij} $ is a covariance immediately allows us to bound its range using the opportunity for selection (Chapter 29). Because $ \sigma^2(x, y) \leq \sigma^2(x) \sigma^2(y) $,
-> 
-> > **Formula (30.9a)** · `30.9a` · source: `chapter30_block_030` · Changes in the Covariance Matrix: The Quadratic Selection Differential Matrix, C
-> >
-> > $$ C_{i j}^{2}\leq\sigma^{2}(w)\sigma^{2}[(z_{i}-\mu_{i})(z_{j}-\mu_{j})]=I\sigma^{2}[(z_{i}-\mu_{i})(z_{j}-\mu_{j})] $$
-> 
-> 
-> When $ z_{i} $ and $ z_{j} $ are bivariate-normal, then (Kendall and Stuart 1983),
-> 
-> > **Formula (30.9b)** · `30.9b` · source: `chapter30_block_031` · Changes in the Covariance Matrix: The Quadratic Selection Differential Matrix, C
-> >
-> > $$ \sigma^{2}[(z_{i}-\mu_{i})(z_{j}-\mu_{j})]=P_{i j}^{2}+P_{i i}P_{j j}=P_{i j}^{2}(1+\rho_{i j}^{-2}) $$
-> 
-> 
-> where $ \rho_{ij} $ is the phenotypic covariance between $ z_{i} $ and $ z_{j} $. Hence, for Gaussian-distributed phenotypes,
-> 
-> > **Formula (30.10)** · `30.10` · source: `chapter30_block_031` · Changes in the Covariance Matrix: The Quadratic Selection Differential Matrix, C
-> >
-> > $$ \left|\frac{C_{ij}}{P_{ij}}\right|\leq\sqrt{I}\sqrt{1+\rho_{ij}^{-2}} $$
-> 
-> 
-> which is a variant of the original bound based on I, as suggested by Arnold (1986). Note that when $ i = j $, $ \rho_{ii} = 1 $, and we recover Equation 29.18c.
+> Example 30.2. We wish to show that $ \mathbf{P}^* - \mathbf{P} = \sigma[w(\mathbf{z}), (\mathbf{z} - \boldsymbol{\mu})(\mathbf{z} - \boldsymbol{\mu})^T] - \mathbf{S} \mathbf{S}^T $, which implies Equation 30.7b. From the definition of the variance-covariance matrix, $$ \mathbf{P}=E\left[\left(\mathbf{z}-\boldsymbol{\mu}\right)\left(\mathbf{z}-\boldsymbol{\mu}\right)^{T}\right]=\int\left(\mathbf{z}-\boldsymbol{\mu}\right)\left(\mathbf{z}-\boldsymbol{\mu}\right)^{T}p(\mathbf{z})\mathrm{d}\mathbf{z} $$ (30.8a) $$ \mathbf{P}^{*}=E\left[\left(\mathbf{z}^{*}-\boldsymbol{\mu}^{*}\right)\left(\mathbf{z}^{*}-\boldsymbol{\mu}^{*}\right)^{T}\right]=\int\left(\mathbf{z}-\boldsymbol{\mu}^{*}\right)\left(\mathbf{z}-\boldsymbol{\mu}^{*}\right)^{T}\boldsymbol{p}^{*}\left(\mathbf{z}\right)\mathrm{d}\mathbf{z} $$ (30.8b) where $ p^{*}(\mathbf{z}) = w(\mathbf{z}) p(\mathbf{z}) $ is the distribution of $ \mathbf{z} $ after selection (but before reproduction). If we note that $ \mu^* = \mu + \mathbf{S} $, the integrated expression in Equation 30.8b can be written as $$ \begin{aligned}(\mathbf{z}-\boldsymbol{\mu}^{*})(\mathbf{z}-\boldsymbol{\mu}^{*})^{T}&=(\mathbf{z}-\boldsymbol{\mu}-\mathbf{S})(\mathbf{z}-\boldsymbol{\mu}-\mathbf{S})^{T}\\&=(\mathbf{z}-\boldsymbol{\mu}-\mathbf{S})([\mathbf{z}-\boldsymbol{\mu}]^{T}-\mathbf{S}^{T})\\&=(\mathbf{z}-\boldsymbol{\mu})(\mathbf{z}-\boldsymbol{\mu})^{T}-(\mathbf{z}-\boldsymbol{\mu})\mathbf{S}^{T}-\mathbf{S}\left(\mathbf{z}-\boldsymbol{\mu}\right)^{T}+\mathbf{S}\mathbf{S}^{T}\end{aligned} $$ (30.8c) Because $ \int \mathbf{z} \, p^*(\mathbf{z}) \, \mathrm{d}\mathbf{z} = \mu^* $ and $ \int p^*(\mathbf{z}) \, \mathrm{d}\mathbf{z} = 1 $, then $$ \int(\mathbf{z}-\boldsymbol{\mu})\mathbf{S}^{T}\mathbf{\alpha}p^{*}(\mathbf{z})\mathrm{d}\mathbf{z}=\int\left[\mathbf{z}p^{*}(\mathbf{z})\right]\mathbf{S}^{T}\mathrm{d}\mathbf{z}-\boldsymbol{\mu}\mathbf{S}^{T}\int p^{*}(\mathbf{z})\mathrm{d}\mathbf{z}=(\boldsymbol{\mu}^{*}-\boldsymbol{\mu})\mathbf{S}^{T}=\mathbf{S}\mathbf{S}^{T} $$ \[\int\mathbf{S}(\mathbf{z}-\boldsymbol{\mu})^{T}\mathbf{\Phi}\mathbf{\Phi}\mathbf{\Phi}\mathbf{\Phi}\mathbf{\ $$ \int\mathbf{S}\mathbf{S}^{T}\mathbf{\nabla}p^{*}(\mathbf{z})\mathrm{d}\mathbf{z}=\mathbf{S}\mathbf{S}^{T} $$ Substituting these results into Equation 30.8b yields $$ \begin{aligned}\mathbf{P}^{*}&=\int\left(\mathbf{z}-\boldsymbol{\mu}\right)\left(\mathbf{z}-\boldsymbol{\mu}\right)^{T}\boldsymbol{w}(\mathbf{z})\boldsymbol{p}(\mathbf{z})\mathrm{d}\mathbf{z}-\mathbf{S}\mathbf{S}^{T}-\mathbf{S}\mathbf{S}^{T}+\mathbf{S}\mathbf{S}^{T}\\&=E\left[\boldsymbol{w}(\mathbf{z})\cdot\left(\mathbf{z}-\boldsymbol{\mu}\right)\left(\mathbf{z}-\boldsymbol{\mu}\right)^{T}\right]-\mathbf{S}\mathbf{S}^{T}\end{aligned} $$ (30.8d) Because $ E[w(\mathbf{z})] = 1 $, we can write $ \mathbf{P} = E[w(\mathbf{z})] \cdot \mathbf{P} $. Using the definition of $ \mathbf{P} $, $$ \begin{aligned}\mathbf{P}^{*}-\mathbf{P}&=E\left[w(\mathbf{z})\cdot(\mathbf{z}-\boldsymbol{\mu})\left(\mathbf{z}-\boldsymbol{\mu}\right)^{T}\right]-\mathbf{S}\mathbf{S}^{T}-E[w(\mathbf{z})]\cdot E\left[(\mathbf{z}-\boldsymbol{\mu})\left(\mathbf{z}-\boldsymbol{\mu}\right)^{T}\right]\\&=\sigma\left[w(\mathbf{z}),(\mathbf{z}-\boldsymbol{\mu})(\mathbf{z}-\boldsymbol{\mu})^{T}\right]-\mathbf{S}\mathbf{S}^{T}\quad(30.8e\end{aligned} $$ with the last equality following from the definition of a covariance, $ \sigma(x,y) = E(x \cdot y) - E(x)E(y) $. As was the case for S, the fact that $ C_{ij} $ is a covariance immediately allows us to bound its range using the opportunity for selection (Chapter 29). Because $ \sigma^2(x, y) \leq \sigma^2(x) \sigma^2(y) $, $$ C_{i j}^{2}\leq\sigma^{2}(w)\sigma^{2}[(z_{i}-\mu_{i})(z_{j}-\mu_{j})]=I\sigma^{2}[(z_{i}-\mu_{i})(z_{j}-\mu_{j})] $$ (30.9a) When $ z_{i} $ and $ z_{j} $ are bivariate-normal, then (Kendall and Stuart 1983), $$ \sigma^{2}[(z_{i}-\mu_{i})(z_{j}-\mu_{j})]=P_{i j}^{2}+P_{i i}P_{j j}=P_{i j}^{2}(1+\rho_{i j}^{-2}) $$ (30.9b) where $ \rho_{ij} $ is the phenotypic covariance between $ z_{i} $ and $ z_{j} $. Hence, for Gaussian-distributed phenotypes, $$ \left|\frac{C_{ij}}{P_{ij}}\right|\leq\sqrt{I}\sqrt{1+\rho_{ij}^{-2}} $$ (30.10) which is a variant of the original bound based on I, as suggested by Arnold (1986). Note that when $ i = j $, $ \rho_{ii} = 1 $, and we recover Equation 29.18c.
+
+
+**[示例 Example]**
+
+> **Example 30.3** · ref: `30.3` · source: `chapter30_006.json` · blocks 3–3
+>
+> Example 30.3. Brodie (1992) examined one-year survivorship in an Oregon population of garter snakes (Thamnophis ordinoides). Over a three-year period, 646 snakes were marked, 101 of which were eventually recaptured. Four morphological and behavioral characters were measured: overall stripedness of the body-color pattern (stripes), sprint speed, distance moved until an antipredator display was performed, and number of reversals of direction during flight from predators (reversals). None of the values of $ \beta_i $ or $ \gamma_{ii} $ were significant. However, there was a significant quadratic association between striping pattern and number of reversals, with $ \gamma_{ij} = -0.268 \pm 0.097 $ (confidence intervals were generated using the delete-one jackknife method of Mitchell-Olds 1989). As shown in Figure 30.2, the best-fitting quadratic regression of individual fitness has a saddle point, which means that concave selection (negative fitness surface curvature) occurs along one direction and convex selection (positive fitness surface curvature) along the other. Brodie suggested a biological explanation for selection favoring a negative correlation between these two characters. When the body pattern is banded, blotched, or spotted, the detection of movement by visual predators is enhanced. In such individuals, frequent reversals can disrupt a visual search. Conversely, the presence of body stripes makes it difficult for predators to judge the speed of the snake, so frequent reversals (and hence additional movement for predators to perceive) would be disadvantageous.
 
 
 ---
 
-## chapter30_007 · Measuring Multivariate Selection: Introduction / The Quadratic Selection Gradient Matrix, $ \gamma $
+## chapter30_007 · SELECTION ON MULTIVARIATE PHENOTYPES: DIFFERENTIALS AND GRADIENTS / The Quadratic Selection Gradient Matrix, $ \gamma $
 
 **[推导 Derivation]**
 
@@ -268,6 +223,15 @@ Using multiple regression theory, Lande and Arnold (1983) showed that when $ z \
 > **Formula (30.12)** · `30.12` · source: `chapter30_block_033` · The Quadratic Selection Gradient Matrix, $ \gamma $
 >
 > $$ \gamma=\mathbf{P}^{-1}\boldsymbol{\sigma}[w,(\mathbf{z}-\boldsymbol{\mu})(\mathbf{z}-\boldsymbol{\mu})^{T}]\mathbf{P}^{-1}=\mathbf{P}^{-1}\mathbf{C}\mathbf{P}^{-1} $$
+
+
+**[Figure]**
+
+> **Figure 30.2** · page 9 · source: `chapter30`
+>
+> ![Figure 30.2](../figures/fig_0172.png)
+>
+> Figure 30.2 The fitness surface (measured as one-year survivorship) for number of reversals  $ (z_1) $ and body stripe index  $ (z_2) $ in the garter snake Thamnophis ordinoides. There is a significant correlational gradient between these two characters, and all other directional and quadratic gradients are nonsignificant. Left: A plot of contours of equal fitness, with peaks represented by + and valleys by −, shows that the best-fitting quadratic fitness surface has a saddle point. Right: Three-dimensional representation of the best-fitting quadratic fitness surface. As will be discussed shortly, the eigenvalues of the  $ \gamma $ matrix can be used to clarify the geometry of the associated quadratic fitness surface. Here, the eigenvalues of  $ \gamma $ are 0.256 and -0.290, indicating roughly equal amounts of convex selection along one canonical axis (given by the index 0.77  $ \cdot $  $ z_1 - 0.64 $  $ \cdot $  $ z_2 $) and concave selection along the other  $ (0.64 \cdot z_1 + 0.77 \cdot z_2) $. (Based on data from Brodie 1992.)
 
 
 **[推导 Derivation]**
@@ -301,7 +265,7 @@ showing that within-generation changes in phenotypic covariance between traits i
 
 ---
 
-## chapter30_008 · Measuring Multivariate Selection: Introduction / Quadratic Gradients, Fitness Surface Geometry, and Selection Response
+## chapter30_008 · SELECTION ON MULTIVARIATE PHENOTYPES: DIFFERENTIALS AND GRADIENTS / Quadratic Gradients, Fitness Surface Geometry, and Selection Response
 
 **[推导 Derivation]**
 
@@ -419,7 +383,7 @@ As noted for univariate cases, approximating the individual fitness function by 
 
 ---
 
-## chapter30_010 · Measuring Multivariate Selection: Introduction / Estimation, Hypothesis Testing, and Confidence Intervals
+## chapter30_010 · MULTIDIMENSIONAL QUADRATIC FITNESS REGRESSIONS / Estimation, Hypothesis Testing, and Confidence Intervals
 
 Even if we can assume that a best-fitting quadratic is a reasonable approximation of the individual fitness surface, we are still faced with a number of statistical issues. For k traits, the full quadratic regression (Equation 30.13) involves $ k(k+3)/2 $ parameters: $ k(k+1)/2 $ from $ \gamma $ ($ k \gamma_{ii} $ and $ k[k-1]/2 $ symmetric $ \gamma_{ij} $ terms) and $ k $ from $ \beta $. With 5, 10, and 25 characters, this corresponds to 20, 65, and 350 parameters, respectively. Hence, the number of observations should be $ n \gg k(k+3)/2 $ (ideally, by at least an order of magnitude) in order to estimate these parameters with any precision. Unless we test for, and confirm, trait multivariate normality (Appendix 5), $ \beta $ must be estimated from the best linear multiple regression, as the vector of linear slopes in a quadratic regression need not equal $ \beta $. Further, while the literature suggests that the estimate for $ \gamma $ is obtained from the best quadratic regression (Equation 30.13), Equation 29.28b showed that this estimate is biased by the presence of skew. Following Equation 29.29e, a strictly quadratic regression (i.e., with no linear terms), $$ w=a+\frac{1}{2}\mathbf{z}_{sd}^{T}\gamma_{sd}\mathbf{z}_{sd}+e $$ is not biased by skew, but is still a biased estimator for $ \gamma $ if the multivariate pattern of kurtosis differs from that for a multivariate normal (Equation 29.29f).
 
@@ -429,7 +393,7 @@ A variety of additional concerns regarding fitness regressions were discussed in
 
 ---
 
-## chapter30_011 · Measuring Multivariate Selection: Introduction / Regression Packages and Coefficients of $ \gamma $
+## chapter30_011 · MULTIDIMENSIONAL QUADRATIC FITNESS REGRESSIONS / Regression Packages and Coefficients of $ \gamma $
 
 The coefficients of the elements of $ \gamma $ have a form that may be different from the output of a quadratic regression package. Suppose we have two variables with a mean of zero. Under a Lande-Arnold regression, the quadratic contribution to fitness, w, is $$ \left(\frac{\gamma_{11}}{2}z_{1}\right)+\left(\frac{\gamma_{22}}{2}z_{2}\right)+\left(\gamma_{12}\cdot z_{1}\cdot z_{2}\right) $$
 
@@ -439,7 +403,7 @@ In such cases, $ \gamma_{ii}/2 = b_{ii} $, or $ \gamma_{ii} = 2b_{ii} $, while $
 
 ---
 
-## chapter30_012 · Measuring Multivariate Selection: Introduction / Geometric Aspects
+## chapter30_012 · MULTIDIMENSIONAL QUADRATIC FITNESS REGRESSIONS / Geometric Aspects
 
 **[推导 Derivation]**
 
@@ -490,11 +454,11 @@ is the unique stationary point of this quadratic surface. Substituting into Equa
 
 as obtained by Phillips and Arnold (1989). Because $ \partial^2 w(\mathbf{z}) / \partial z_i \partial z_j = \gamma_{ij} $, the Hessian of $ w(\mathbf{z}) $ is just $ \gamma $. Thus, $ z_0 $ is a local minimum if $ \gamma $ is positive-definite (all eigenvalues are positive), a local maximum if $ \gamma $ is negative-definite (all eigenvalues are negative), or a saddle point if the eigenvalues differ in sign (see Equation A6.8b).
 
-If $ \gamma $ is singular (i.e., it has at least one zero eigenvalue), then there is no unique stationary point. An example of this is seen in Figure 30.3B, where there is a ridge (rather than a single point) of phenotypic values having the highest fitness value. The consequence of a zero eigenvalue is that the fitness surface has no curvature along the axis that is defined by the associated eigenvector. If $ \gamma $ has $ k $ zero eigenvalues, then the fitness surface has no curvature along $ k $ dimensions. The remaining fitness space showing curvature has a single stationary point, which is given by Equation 30.21a for $ \gamma $ and $ b $ when reduced to the $ n - k $ dimensions showing curvature.
+If $ \gamma $ is singular (i.e., it has at least one zero eigenvalue), then there is no unique stationary point. An example of this is seen in Figure 30.3, where there is a ridge (rather than a single point) of phenotypic values having the highest fitness value. The consequence of a zero eigenvalue is that the fitness surface has no curvature along the axis that is defined by the associated eigenvector. If $ \gamma $ has $ k $ zero eigenvalues, then the fitness surface has no curvature along $ k $ dimensions. The remaining fitness space showing curvature has a single stationary point, which is given by Equation 30.21a for $ \gamma $ and $ b $ when reduced to the $ n - k $ dimensions showing curvature.
 
 ---
 
-## chapter30_013 · Measuring Multivariate Selection: Introduction / A Brief Digression: Orthonormal and Diagonalized Matrices
+## chapter30_013 · MULTIDIMENSIONAL QUADRATIC FITNESS REGRESSIONS / A Brief Digression: Orthonormal and Diagonalized Matrices
 
 We need some additional machinery on the geometry of matrices (from Appendix 5) to further our discussion of the geometry of the quadratic fitness surface. Matrix transformations (multiplying a vector by a matrix) consist of two basic operations: rotations (changes in the direction of the vector) and scalings (changes in its length). A transformation can be partitioned into these two basic operations by using orthonormal matrices. If we write a square matrix as $ \mathbf{U} = (\mathbf{u}_1, \mathbf{u}_2, \cdots, \mathbf{u}_n) $, where each $ \mathbf{u}_i $ is an n-dimensional column vector, $ \mathbf{U} $ is said to be orthonormal if $$ \mathbf{u}_{i}^{T}\mathbf{u}_{j}=\left\{\begin{aligned}1&\quad if i=j\\ 0&\quad if i\neq j\end{aligned}\right. $$
 
@@ -545,21 +509,14 @@ The effect of using such a transformation is that (on this new scale) we remove 
 
 **[示例 Example]**
 
-> **Example 30.3** · ref: `30.3` · source: `chapter30_013.json` · blocks 6–6
->
-> Example 30.3. Brodie (1992) examined one-year survivorship in an Oregon population of garter snakes (Thamnophis ordinoides). Over a three-year period, 646 snakes were marked, 101 of which were eventually recaptured. Four morphological and behavioral characters were measured: overall stripedness of the body-color pattern (stripes), sprint speed, distance moved until an antipredator display was performed, and number of reversals of direction during flight from predators (reversals). None of the values of $ \beta_i $ or $ \gamma_{ii} $ were significant. However, there was a significant quadratic association between striping pattern and number of reversals, with $ \gamma_{ij} = -0.268 \pm 0.097 $ (confidence intervals were generated using the delete-one jackknife method of Mitchell-Olds 1989). As shown in Figure 30.2, the best-fitting quadratic regression of individual fitness has a saddle point, which means that concave selection (negative fitness surface curvature) occurs along one direction and convex selection (positive fitness surface curvature) along the other. Brodie suggested a biological explanation for selection favoring a negative correlation between these two characters. When the body pattern is banded, blotched, or spotted, the detection of movement by visual predators is enhanced. In such individuals, frequent reversals can disrupt a visual search. Conversely, the presence of body stripes makes it difficult for predators to judge the speed of the snake, so frequent reversals (and hence additional movement for predators to perceive) would be disadvantageous.
-
-
-**[示例 Example]**
-
-> **Example 30.4** · ref: `30.4` · source: `chapter30_013.json` · blocks 7–7
+> **Example 30.4** · ref: `30.4` · source: `chapter30_013.json` · blocks 6–6
 >
 > Example 30.4. Consider selection acting on two characters, $ z_1 $ and $ z_2 $. Suppose we find that $ \gamma_{11} = -2 $ and $ \gamma_{22} = -1 $, suggesting that the individual fitness surface has negative curvature in both $ z_1 $ and $ z_2 $. At first glance the picture this evokes is stabilizing selection on both $ z_1 $ and $ z_2 $, with the stabilizing selection surface perhaps rotated due to selection for correlations between $ z_1 $ and $ z_2 $. The first caveat, as mentioned in Chapter 29, is that negative curvature (concavity), by itself, does not imply a local maximum. Even if $ \gamma $ is negative definite (all $ \lambda_i < 0 $; Appendix 5), the location, $ z_0 $, of the maximum in the quadratic surface may be outside of the observed range of population values and hence not currently applicable to the population being studied. A much more subtle point is that, as Figure 30.3 shows, the nature of the fitness surface is very much dependent on the amount of selection for correlations between $ z_1 $ and $ z_2 $. Figure 30.3 considers the surfaces associated with the same values for $ \gamma_{11} $ and $ \gamma_{22} $, but three different values of $ \gamma_{12} $ under the assumption that b = 0. Note that although in all three cases, $ \gamma_{12} > 0 $ (i.e., selection favors increased correlations between the phenotypic values of $ z_1 $ and $ z_2 $), the fitness surfaces are qualitatively very different. When $ \gamma_{12} = 0.25 $, the individual fitness surface indeed shows stabilizing selection in both characters. For $ \gamma_{12} = \sqrt{2} \simeq 1.42 $, the fitness surface has a ridge in one direction, with stabilizing selection in the other. When $ \gamma_{12} = 4 $, the fitness surface is a saddle, with convex selection along one axis and concave selection along the other. An especially troubling point is that if the standard error of $ \gamma_{12} $ is sufficiently large, we will not be able to distinguish between these very different types of selection even if we could show that $ \gamma_{11}, \gamma_{22} < 0 $, and $ \gamma_{12} > 0 $.
 
 
 ---
 
-## chapter30_014 · Measuring Multivariate Selection: Introduction / Canonical Transformation of $ \gamma $
+## chapter30_014 · MULTIDIMENSIONAL QUADRATIC FITNESS REGRESSIONS / Canonical Transformation of $ \gamma $
 
 While the curvature of a quadratic fitness surface is completely determined by $ \gamma $, it is easy to be misled about the actual nature of the fitness surface if one attempts to infer its multivariate structure from a simple inspection of the diagonal elements of $ \gamma $. As Figure 30.3 shows, even for two characters, visualizing the individual fitness surface is not trivial and can easily be extremely misleading. The problem is that the cross-product terms ($ \gamma_{ij} $ for $ i \neq j $) make the quadratic form difficult to interpret geometrically. Removing these terms by a change of variables, so that the axes of new variables coincide with the axes of symmetry of the quadratic form (its canonical axes), greatly facilitates visualization of the fitness surface.
 
@@ -574,22 +531,31 @@ Motivated by this observation, Phillips and Arnold (1989) suggested using two sl
 
 where $ \theta_i = \mathbf{e}_i^T \mathbf{b} $ and $
 
+**[Figure]**
+
+> **Figure 30.3** · page 17 · source: `chapter30`
+>
+> ![Figure 30.3](../figures/fig_0173.png)
+>
+> Figure 30.3 Three quadratic fitness surfaces, in all of which  $ \gamma_{11} = -2 $,  $ \gamma_{22} = -1 $, and b = 0. On the left are fitness contour plots, with peaks represented by + and valleys by -. Axes of symmetry of the surface (the canonical, major, or principal axes of  $ \gamma_i $; Equation 30.24b) are denoted by the thick lines. These axes correspond to the eigenvectors of  $ \gamma $ (with their corresponding eigenvalues,  $ \lambda_1 $ and  $ \lambda_2 $, also shown in the figure). On the right are three-dimensional plots of individual fitness as a function of the phenotypic values of the characters  $ z_1 $ and  $ z_2 $. A:  $ \gamma_{12} = 0.25 $. This corresponds to stabilizing selection on both characters, with fitness falling off more rapidly (as indicated by the shorter distance between contour lines) along the  $ z_1 $ axis than along the  $ z_2 $ axis. B: Here  $ \gamma_{12} = \sqrt{2} \simeq 1.41 $, in which case  $ \gamma $ is singular (as  $ \lambda_2 = 0 $). The resulting fitness surface shows a ridge in one direction ( $ e_2 $, the eigenvector corresponding to  $ \lambda_2 = 0 $) and strong stabilizing selection in the orthogonal direction (given by  $ e_1 $). C: When  $ \gamma_{12} = 4 $, the fitness surface shows a saddle point, and there is concave selection along one of the canonical axes of the fitness surface ( $ e_2 $, corresponding to  $ \lambda_2 = -5.53 $) and convex selection along the other ( $ e_1 $, corresponding to  $ \lambda_1 = 2.53 $).
+
+
 **[示例 Example]**
 
-> **Example 30.5** · ref: `30.5` · source: `chapter30_014.json` · blocks 2–2
+> **Example 30.5** · ref: `30.5` · source: `chapter30_014.json` · blocks 1–4
 >
 > Example 30.5. Consider the first two scenarios depicted in Figures 30.3A and 30.3B. The resulting $ \gamma $ and the component matrices for its diagonalization (which are easily obtained using the eigen function in R) are as follows: $$ \gamma_{1}=\begin{pmatrix}{{{-2}}}&{{{0.25}}} \\{{{0.25}}}&{{{-1}}}\end{pmatrix},\quad\mathbf{U}_{1}=\begin{pmatrix}{{{0.230}}}&{{{0.973}}} \\{{{0.973}}}&{{{-0.230}}}\end{pmatrix},\quad\mathbf{A}_{1}=\begin{pmatrix}{{{-2.06}}}&{{{0}}} \\{{{0}}}&{{{-0.94}}}\end{pmatrix} $$ and $$ \boldsymbol{\gamma}_{2}=\begin{pmatrix}{{{-2}}}&{{{1.41}}} \\{{{1.41}}}&{{{-1}}}\end{pmatrix},\quad\mathbf{U}_{2}=\begin{pmatrix}{{{0.577}}}&{{{0.816}}} \\{{{0.816}}}&{{{-0.577}}}\end{pmatrix},\quad\boldsymbol{\Lambda}_{2}=\begin{pmatrix}{{{0}}}&{{{0}}} \\{{{0}}}&{{{-3.00}}}\end{pmatrix} $$ Because $ \mathbf{U} = (\mathbf{e}_1 \mathbf{~e}_2) $, the transformed variables, $ y_i = \mathbf{e}_i^T \mathbf{z} $, for $ \gamma_1 $ (for Figure 30.3A) are $$ y_{1}=\mathbf{e}_{1}^{T}\mathbf{z}=0.230\cdot z_{1}+0.973\cdot z_{2},\qquad y_{2}=\mathbf{e}_{2}^{T}\mathbf{z}=0.973\cdot z_{1}-0.230\cdot z_{2} $$ where the quadratic term now becomes $$ \frac{1}{2}\left(-2.06y_{1}^{2}-0.94y_{2}^{2}\right)=-1.03y_{1}^{2}-0.47y_{2}^{2} $$ For $\gamma_2$ (Figure 30.3B), there is a zero eigenvalue, corresponding to no curvature. This occurs in the direction of $y_1 = \mathbf{e}_1^T \mathbf{z} = 0.577 \cdot z_1 + 0.816 \cdot z_2$ (where $\mathbf{e}_1$ is the eigenvector associated with the zero eigenvalue), while the curvature in the direction of $y_2 = \mathbf{e}_2^T \mathbf{z} = 0.816 \cdot z_1 - 0.577 \cdot z_2$ is given by $-(3.00/2)y_2^2$.
 
 
 The orientation (the principal, or major, axes) of the quadratic surface is determined by the eigenvectors $ (e_1, \cdots, e_n) $ of $ \gamma $, while the eigenvalues $ (\lambda_1, \cdots, \lambda_n) $ of $ \gamma $ determine the nature and amount of curvature of the surface along each canonical axis. Along the axis defined by $ y_i = e_i^T z $, the individual fitness function has positive curvature (is convex) if $ \lambda_i > 0 $. It has negative curvature (is concave) if $ \lambda_i < 0 $, and no curvature (is a plane) if $ \lambda_i = 0 $. The amount of curvature is indicated by the magnitude of $ \lambda_i $; the larger $ |\lambda_i| $, the more extreme the curvature. An alternative way to envision the canonical transformation is that the original vector, $ \mathbf{z} $, of $ n $ characters is transformed into a vector, $ \mathbf{y} $, of $ n $ independent selection indices (Simms 1990). Directional selection on the index, $ y_i $, is measured by $ \theta_i $, while quadratic selection on $ y_i $ is measured by $ \lambda_i $.
 
-Returning to Figure 30.3, we see that the axes of symmetry of the quadratic surface are the canonical axes of $\gamma$. For $\gamma_{12}=0.25$ (Figure 30.3A), $\lambda_{1}=-2.06$ and $\lambda_{2}=-0.94$, and so the fitness surface is concave along each canonical axis, with more extreme curvature along the $y_{1}$ axis. When $\gamma=\sqrt{2}$ (Figure 30.3B), one eigenvalue is zero while the other is $-3$, so the surface shows no curvature along one axis (it is a plane) but is strongly concave along the other. Finally, when $\gamma_{12}=4$ (Figure 30.3C), the two eigenvalues differ in sign, as they are $-5.53$ and $2.53$. This generates a saddle point, with a surface that is concave along one axis and convex along with other, and here with the concave curvature being more the extreme. From Equation 30.26, we can see that the fitness change along a particular axis ($ e_i $) is $ \theta_i y_i + (\lambda_i / 2) y_i^2 $. If $ |\theta_i| \gg |\lambda_i| > 0 $, the curvature of the fitness surface along this axis is dominated by the effects of linear (as opposed to quadratic) selection for modest values of $ y_i = e_i^T z $. If $ \lambda_i = 0 $, the fitness surface along $ y_i $ has no curvature, so the fitness surface is a ridge along this axis. If $ \theta_i > 0 $, this is a rising ridge (fitness increases as $ y_i $ increases), whereas it is a falling ridge (fitness decreases as $ y_i $ increases) if $ \theta_i < 0 $, and it is flat if $ \theta_i = 0 $. Even if $ \gamma $ is not singular, it may be nearly so, with some of the eigenvalues being very close to zero. In this case, the fitness surface shows little curvature along the axes given by the eigenvectors associated with these nearly zero eigenvalues. Further issues relating to the visualization of multivariate fitness surfaces are discussed in Phillips and Arnold (1989), while Box and Draper (1987) review the statistical foundations of this approach. $$ \gamma_{1}=\begin{pmatrix}{{{-2}}}&{{{0.25}}} \\{{{0.25}}}&{{{-1}}}\end{pmatrix},\quad\mathbf{U}_{1}=\begin{pmatrix}{{{0.230}}}&{{{0.973}}} \\{{{0.973}}}&{{{-0.230}}}\end{pmatrix},\quad\mathbf{A}_{1}=\begin{pmatrix}{{{-2.06}}}&{{{0}}} \\{{{0}}}&{{{-0.94}}}\end{pmatrix} $$ and $$ \boldsymbol{\gamma}_{2}=\begin{pmatrix}{{{-2}}}&{{{1.41}}} \\{{{1.41}}}&{{{-1}}}\end{pmatrix},\quad\mathbf{U}_{2}=\begin{pmatrix}{{{0.577}}}&{{{0.816}}} \\{{{0.816}}}&{{{-0.577}}}\end{pmatrix},\quad\boldsymbol{\Lambda}_{2}=\begin{pmatrix}{{{0}}}&{{{0}}} \\{{{0}}}&{{{-3.00}}}\end{pmatrix} $$ Because $ \mathbf{U} = (\mathbf{e}_1 \mathbf{~e}_2) $, the transformed variables, $ y_i = \mathbf{e}_i^T \mathbf{z} $, for $ \gamma_1 $ (for Figure 30.3A) are $$ y_{1}=\mathbf{e}_{1}^{T}\mathbf{z}=0.230\cdot z_{1}+0.973\cdot z_{2},\qquad y_{2}=\mathbf{e}_{2}^{T}\mathbf{z}=0.973\cdot z_{1}-0.230\cdot z_{2} $$ where the quadratic term now becomes $$ \frac{1}{2}\left(-2.06y_{1}^{2}-0.94y_{2}^{2}\right)=-1.03y_{1}^{2}-0.47y_{2}^{2} $$
+Returning to Figure 30.3, we see that the axes of symmetry of the quadratic surface are the canonical axes of $\gamma$. For $\gamma_{12}=0.25$ (Figure 30.3), $\lambda_{1}=-2.06$ and $\lambda_{2}=-0.94$, and so the fitness surface is concave along each canonical axis, with more extreme curvature along the $y_{1}$ axis. When $\gamma=\sqrt{2}$ (Figure 30.3), one eigenvalue is zero while the other is $-3$, so the surface shows no curvature along one axis (it is a plane) but is strongly concave along the other. Finally, when $\gamma_{12}=4$ (Figure 30.3), the two eigenvalues differ in sign, as they are $-5.53$ and $2.53$. This generates a saddle point, with a surface that is concave along one axis and convex along with other, and here with the concave curvature being more the extreme. From Equation 30.26, we can see that the fitness change along a particular axis ($ e_i $) is $ \theta_i y_i + (\lambda_i / 2) y_i^2 $. If $ |\theta_i| \gg |\lambda_i| > 0 $, the curvature of the fitness surface along this axis is dominated by the effects of linear (as opposed to quadratic) selection for modest values of $ y_i = e_i^T z $. If $ \lambda_i = 0 $, the fitness surface along $ y_i $ has no curvature, so the fitness surface is a ridge along this axis. If $ \theta_i > 0 $, this is a rising ridge (fitness increases as $ y_i $ increases), whereas it is a falling ridge (fitness decreases as $ y_i $ increases) if $ \theta_i < 0 $, and it is flat if $ \theta_i = 0 $. Even if $ \gamma $ is not singular, it may be nearly so, with some of the eigenvalues being very close to zero. In this case, the fitness surface shows little curvature along the axes given by the eigenvectors associated with these nearly zero eigenvalues. Further issues relating to the visualization of multivariate fitness surfaces are discussed in Phillips and Arnold (1989), while Box and Draper (1987) review the statistical foundations of this approach. $$ \gamma_{1}=\begin{pmatrix}{{{-2}}}&{{{0.25}}} \\{{{0.25}}}&{{{-1}}}\end{pmatrix},\quad\mathbf{U}_{1}=\begin{pmatrix}{{{0.230}}}&{{{0.973}}} \\{{{0.973}}}&{{{-0.230}}}\end{pmatrix},\quad\mathbf{A}_{1}=\begin{pmatrix}{{{-2.06}}}&{{{0}}} \\{{{0}}}&{{{-0.94}}}\end{pmatrix} $$ and $$ \boldsymbol{\gamma}_{2}=\begin{pmatrix}{{{-2}}}&{{{1.41}}} \\{{{1.41}}}&{{{-1}}}\end{pmatrix},\quad\mathbf{U}_{2}=\begin{pmatrix}{{{0.577}}}&{{{0.816}}} \\{{{0.816}}}&{{{-0.577}}}\end{pmatrix},\quad\boldsymbol{\Lambda}_{2}=\begin{pmatrix}{{{0}}}&{{{0}}} \\{{{0}}}&{{{-3.00}}}\end{pmatrix} $$ Because $ \mathbf{U} = (\mathbf{e}_1 \mathbf{~e}_2) $, the transformed variables, $ y_i = \mathbf{e}_i^T \mathbf{z} $, for $ \gamma_1 $ (for Figure 30.3) are $$ y_{1}=\mathbf{e}_{1}^{T}\mathbf{z}=0.230\cdot z_{1}+0.973\cdot z_{2},\qquad y_{2}=\mathbf{e}_{2}^{T}\mathbf{z}=0.973\cdot z_{1}-0.230\cdot z_{2} $$ where the quadratic term now becomes $$ \frac{1}{2}\left(-2.06y_{1}^{2}-0.94y_{2}^{2}\right)=-1.03y_{1}^{2}-0.47y_{2}^{2} $$
 
-For $\gamma_2$ (Figure 30.3B), there is a zero eigenvalue, corresponding to no curvature. This occurs in the direction of $y_1 = \mathbf{e}_1^T \mathbf{z} = 0.577 \cdot z_1 + 0.816 \cdot z_2$ (where $\mathbf{e}_1$ is the eigenvector associated with the zero eigenvalue), while the curvature in the direction of $y_2 = \mathbf{e}_2^T \mathbf{z} = 0.816 \cdot z_1 - 0.577 \cdot z_2$ is given by $-(3.00/2)y_2^2$.
+For $\gamma_2$ (Figure 30.3), there is a zero eigenvalue, corresponding to no curvature. This occurs in the direction of $y_1 = \mathbf{e}_1^T \mathbf{z} = 0.577 \cdot z_1 + 0.816 \cdot z_2$ (where $\mathbf{e}_1$ is the eigenvector associated with the zero eigenvalue), while the curvature in the direction of $y_2 = \mathbf{e}_2^T \mathbf{z} = 0.816 \cdot z_1 - 0.577 \cdot z_2$ is given by $-(3.00/2)y_2^2$.
 
 ---
 
-## chapter30_015 · Measuring Multivariate Selection: Introduction / Are Traits Based on Canonical Axes Meaningful?
+## chapter30_015 · MULTIDIMENSIONAL QUADRATIC FITNESS REGRESSIONS / Are Traits Based on Canonical Axes Meaningful?
 
 While there clearly are significant benefits from using the canonical rotation of $ \gamma $ to infer those trait combinations that are under the strongest quadratic selection, this approach has also sparked a lively debate in the literature. Blows (2007a, 2007b) championed it as providing considerable insight into the nature of selection, while Conner (2007) suggested that “these advantages are usually outweighed by the disadvantage that the results are not very biologically interpretable,” a point echoed by Hunt et al. (2007a). Basically, the concern these authors expressed parallels issues about the use of principal components: even though a specific combination of traits may account for most of the variation, their biological interpretation may be convoluted (at best). This argument raises two questions: What are the true targets of selection, and what is a trait?
 
@@ -601,7 +567,7 @@ It is this connection with the axes of natural selection that imposes a very rea
 
 ---
 
-## chapter30_016 · Measuring Multivariate Selection: Introduction / Strength of Selection: $ \gamma_{ii} $ Versus $ \lambda $
+## chapter30_016 · MULTIDIMENSIONAL QUADRATIC FITNESS REGRESSIONS / Strength of Selection: $ \gamma_{ii} $ Versus $ \lambda $
 
 Recall from Equation 30.11a that $(\gamma_{ii}/2)(z_i - \mu_i)^2$ is the contribution toward relative fitness, $w$, from squared deviations of trait $i$ from its mean. It is therefore natural to assume that if $\gamma_{ii} < 0$ (concave selection), this implies at least the potential of stabilizing selection on trait $i$. Figure 30.3 showed that using only the diagonal elements of $\gamma$ can potentially give a very misleading picture of the nature of quadratic selection. However, the eigenvalues ($\lambda$) of $\gamma$ provide a more exact description of the true nature of selection. Blows and Brooks (2003) stressed this point, and noted in an analysis of 19 studies that $|\gamma_{ii}|_{\max} < |\lambda|_{\max}$. Thus, studies that report weak values for quadratic selection are potentially biased if they use $\gamma_{ii}$ values, rather than the full geometry of $\gamma$, as described by its eigenvalues. A further point (mentioned above) is that many published studies report only half the true value for $\lambda_{ii}$ due to incorrect translation of the coefficient of the quadratic regression.
 
@@ -613,16 +579,34 @@ Kruuk and Garant (2007) noted that the Mercer-Mercer theorem (2000) states that 
 
 **[示例 Example]**
 
-> **Example 30.6** · ref: `30.6` · source: `chapter30_016.json` · blocks 3–3
+> **Example 30.6** · ref: `30.6` · source: `chapter30_016.json` · blocks 3–5
 >
-> Example 30.6. Brooks and Endler (2001) examined four color traits in male guppies associated with sexual selection. The estimated $ \gamma $ matrix was $$ \gamma=\begin{pmatrix}0.032&-0.016&-0.028&0.103\\-0.016&0.0001&0.066&-0.131\\-0.028&0.066&-0.022&-0.099\\0.103&-0.131&-0.099&0.060\end{pmatrix} $$
+> Example 30.6. Brooks and Endler (2001) examined four color traits in male guppies associated with sexual selection. The estimated $ \gamma $ matrix was $$ \gamma=\begin{pmatrix}0.032&-0.016&-0.028&0.103\\-0.016&0.0001&0.066&-0.131\\-0.028&0.066&-0.022&-0.099\\0.103&-0.131&-0.099&0.060\end{pmatrix} $$ The diagonal elements suggest evidence for weak convex selection ( $ \gamma_{44} = 0.060 $, $ \gamma_{11} = 0.032 $) and some evidence for very weak concave selection ( $ \gamma_{33} = -0.022 $). However, the eigenvalues of $ \gamma $ are 0.262, 0.012, -0.077, and -0.123. Of these eigenvalues, only the leading one (0.262) is significantly different from zero, with an amount of convex selection over four times that suggested from the largest $ \gamma_{ii} $ value (0.060). The take-home message is that simply relying upon a visual inspection of the diagonal elements of $ \gamma $ can depict a very misleading view of the nature of selection.
+
+
+**[示例 Example]**
+
+> **Example 30.7** · ref: `30.7` · source: `chapter30_016.json` · blocks 4–4
+>
+> Example 30.7. Following up on the study of male color traits in guppies described in Example 30.6, Blows et al. (2003) examined six traits (two morphological and four color) for their role in female attractiveness. Both quadratic and projection-pursuit regressions were used to examine nonlinear selection on these traits. The trait loadings for the first two major axes of the quadratic regression of fitness on trait value (the eigenvectors $ e_1 $ and $ e_2 $, corresponding to the two leading eigenvectors of $ \gamma $) and the first two projection vectors ( $ a_1 $ and $ a_2 $) from projection-pursuit regression were as follows:
 > 
-> The diagonal elements suggest evidence for weak convex selection ($ \gamma_{44} = 0.060 $, $ \gamma_{11} = 0.032 $) and some evidence for very weak concave selection ($ \gamma_{33} = -0.022 $). However, the eigenvalues of $ \gamma $ are 0.262, 0.012, -0.077, and -0.123. Of these eigenvalues, only the leading one (0.262) is significantly different from zero, with an amount of convex selection over four times that suggested from the largest $ \gamma_{ii} $ value (0.060). The take-home message is that simply relying upon a visual inspection of the diagonal elements of $ \gamma $ can depict a very misleading view of the nature of selection.
+> > **Inline Table 1** · `inline_1` · page 24 · source: `chapter30_016`
+> > Inline Table 1
+> >
+> > Trait | e_{1} | e_{2} | a_{1} | a_{2}
+> > --- | --- | --- | --- | ---
+> > Body area | -0.065 | 0.157 | 0.185 | 0.551
+> > Tail area | 0.663 | 0.635 | 0.331 | 0.087
+> > Black area | -0.245 | 0.645 | 0.430 | -0.182
+> > Fuzzy area | 0.372 | -0.173 | 0.101 | -0.286
+> > Iridescent area | 0.436 | -0.134 | 0.569 | -0.757
+> > Orange area | -0.411 | 0.333 | 0.581 | -0.016
+> 
 
 
 ---
 
-## chapter30_017 · Measuring Multivariate Selection: Introduction / Significance and Confidence Regions for a Stationary Point
+## chapter30_017 · MULTIDIMENSIONAL QUADRATIC FITNESS REGRESSIONS / Significance and Confidence Regions for a Stationary Point
 
 Recall from Equation 30.21a that when $ \gamma $ is nonsingular (i.e., it contains no zero eigenvalues), then $ z_0 = -\gamma^{-1}b $ is the unique extremum (stationary point) in the quadratic regression. If $ \gamma $ contains $ k $ zero eigenvalues, there is no curvature along the trait combinations given by the $ k $ associated eigenvectors (the fitness surface is a $ k $-dimensional hyperplane along these directions), while there is curvature (and a unique stationary point) in the remaining fitness space. As mentioned, this stationary value is a maximum if all of the eigenvalues are negative (and hence a test for significance for a maximum is that all of the eigenvalues should be significantly less than zero). Likewise, it is a local minimum if all the eigenvalues are positive (which can also be tested in the same manner). If $ \gamma $ contains both (significant) positive and negative eigenvalues, then $ z_0 $ is a saddle point. Thus, tests for maxima or minima are straightforward. But what about the confidence region (or more correctly, a confidence volume) for the location of the stationary point?
 
@@ -641,7 +625,7 @@ where $F$ is the $(1-\alpha)$ value for an $F$ distribution with $k$ and $n-p$ d
 
 ---
 
-## chapter30_018 · Measuring Multivariate Selection: Introduction / Using Aster Models to Estimate Fitness Surfaces
+## chapter30_018 · MULTIDIMENSIONAL QUADRATIC FITNESS REGRESSIONS / Using Aster Models to Estimate Fitness Surfaces
 
 Most of the approaches presented in this chapter (and in much of Chapter 29) make normality assumptions, which come in two different flavors: first, the assumed multivariate normality (MVN) of the distribution of trait values, z; and second, the assumed MVN for the distribution of residuals in the fitness regression, $ \mathbf{e} = w(\mathbf{z}) - \widehat{w}(\mathbf{z}) $. We address these in turn. As summarized in Table 30.1, when $ z \sim MVN $, a variety of results hold that relate $ \beta $ and $ \gamma $ to measures of the geometries of the individual fitness surface and the mean fitness landscape. Further, as with the univariate case, for $ \beta $ and $ \gamma $ to equal, respectively, the linear and quadratic coefficients in a quadratic fitness regression also requires z to be MVN (lack of skew and the kurtosis of a normal, see Equations 29.28a and 29.28b).
 
@@ -659,11 +643,20 @@ While Aster models accommodate complex residual structures, they are not a panac
 
 As discussed in Chapter 29, using the best-fitting univariate quadratic can result in a very misleading picture when there are multiple peaks or sharp thresholds (such as truncation selection) in the individual fitness surface. This also holds in multivariate space, and hence regressions predicting fitness given a vector z of traits that are nonparametric (free of any assumed functional form) certainly have some advantages. Because some assumption about the residual structure is typically needed to fit such regressions, they are formally called semiparametric, but we will still refer to them as nonparametric owing to the minimal number of assumptions they involve concerning about the functional form of $ w(z) $.
 
+**[Figure]**
+
+> **Figure 30.4** · page 23 · source: `chapter30`
+>
+> ![Figure 30.4](../figures/fig_0174.png)
+>
+> Figure 30.4 Visualization of the fitness surface for male attractiveness to female guppies as a function of color and size traits (for details see Example 30.7). A: The best-fitting quadratic regression. B: A thin-plate spline estimate of the fitness surface, using the axes given from the best quadratic regression  $ (y_i = \mathbf{e}_i^T \mathbf{z}; \text{Equation 30.26}) $. C: The surface generated from projection-pursuit regressions (PPR) using the first two PPR axes  $ (x_i = \mathbf{a}_i^T \mathbf{z}; \text{Equation 30.29}) $. While the thin-plate spline and PPR fitness surfaces look visually similar, it is important to recall that the trait loadings on their axes are different (see Example 30.7). The contour plots show the trait combinations that correspond to the different peaks. (After Blows et al. 2003.)
+
+
 Despite the advantage of having a minimal number of assumptions, these estimators also have significant disadvantages. We have already seen the difficulty in visualizing the multivariate fitness surface when only a simple quadratic function is assumed, but in this case the eigenvalues of $\gamma$ provide significant help in interpretation. However, with general nonparametric methods, there is no corresponding metric for the fitness surface geometry, and thus one must resort to actual visualization of the fitness surface. This requires an examination of successive pairwise cross-sections of the fitness surface (projections onto two of the axes of the fitness function), generating a series of 3-D surfaces (one fitness axis and two trait axes; see Figure 30.4). Further, because these methods typically first construct new axes (linear combinations of the traits; e.g., $x_1 = a_1^T z$, $x_2 = a_2^T z$), and then use them to construct the fitness surface, they display the pattern of selection on a series of composite traits, and not the actual traits themselves. This can make interpretation of the nature of selection on specific traits or combinations of traits problematic at best. Finally, the results from a nonparametric regression do not immediately provide coefficients to predict the response to selection, while (under normality assumptions) these follow automatically with a quadratic regression. Given these complementary strengths and weaknesses, researchers should use both quadratic and nonparametric regressions in the analysis of their selection data.
 
 ---
 
-## chapter30_020 · Measuring Multivariate Selection: Introduction / Projection-pursuit Regression and Thin-plate Splines
+## chapter30_020 · MULTIVARIATE SEMIPARAMETRIC FITNESS SURFACE ESTIMATION / Projection-pursuit Regression and Thin-plate Splines
 
 **[推导 Derivation]**
 
@@ -686,13 +679,13 @@ Another nonparametric approach is thin-plate splines, which are the two dimensio
 
 The importance of allowing for more general fitness functions is highlighted by the work of Martin and Wainwright (2013), who examined fitness surfaces for a nascent adaptive radiation in a Bahamian clade of pupfish in the genus Cyprinodon. Using thin-plate splines, they found a fitness surface with multiple peaks, which corresponded to the morphology of existing populations in this radiation. Fitting the same data with a quadratic regression would have only resulted in a single peak (at most), which would have completely obscured important biological conclusions.
 
-Note that these two sets of projection vectors from the different regressions are rather distinct. If we apply Equation A5.2b, the angle between $ e_1 $ and $ a_1 $ will be $ 88^\circ $, while the angle between $ e_2 $ and $ a_2 $ will be $ 87.5^\circ $. Thus, the major axes of the fitness surface are different (here, they are essentially orthogonal) if one uses a quadratic approximation as opposed to a projection-pursuit regression approximation. As Figure 30.4A shows, the best-fitting quadratic regression using $ e_1 $ and $ e_2 $ (where $ y_1 = e_1^T $ z and $ y_2 = e_2^T $ z are the trait values on this fitness surface for an individual with a trait vector, $ \mathbf{z} $) shows disruptive selection, with fitness rising in all directions from a central minimum. If one uses these axes but then fits the data using thin-plate splines, the result is a rather different-looking fitness function (Figure 30.4B), but one that also shows multiple peaks corresponding to different combinations of the traits that females find attractive. When projection-pursuit regression is used (Figure 30.4C), the fitness surface (in rough appearance) is similar to that for thin-plate splines using the quadratic axes ($ e_1 $, $ e_2 $). However, because the values for the two sets of axes ($ x_1 = a_1^T $ z, $ x_2 = a_2^T $ z versus $ y_1 = e_1^T $ z, $ y_2 = e_2^T $ z) are rather different, this superficial visual appearance must be mapped into trait values (as indicated in Figure 30.4). Again, the result is that the fitness surface has multiple peaks.
+Note that these two sets of projection vectors from the different regressions are rather distinct. If we apply Equation A5.2b, the angle between $ e_1 $ and $ a_1 $ will be $ 88^\circ $, while the angle between $ e_2 $ and $ a_2 $ will be $ 87.5^\circ $. Thus, the major axes of the fitness surface are different (here, they are essentially orthogonal) if one uses a quadratic approximation as opposed to a projection-pursuit regression approximation. As Figure 30.4 shows, the best-fitting quadratic regression using $ e_1 $ and $ e_2 $ (where $ y_1 = e_1^T $ z and $ y_2 = e_2^T $ z are the trait values on this fitness surface for an individual with a trait vector, $ \mathbf{z} $) shows disruptive selection, with fitness rising in all directions from a central minimum. If one uses these axes but then fits the data using thin-plate splines, the result is a rather different-looking fitness function (Figure 30.4), but one that also shows multiple peaks corresponding to different combinations of the traits that females find attractive. When projection-pursuit regression is used (Figure 30.4), the fitness surface (in rough appearance) is similar to that for thin-plate splines using the quadratic axes ($ e_1 $, $ e_2 $). However, because the values for the two sets of axes ($ x_1 = a_1^T $ z, $ x_2 = a_2^T $ z versus $ y_1 = e_1^T $ z, $ y_2 = e_2^T $ z) are rather different, this superficial visual appearance must be mapped into trait values (as indicated in Figure 30.4). Again, the result is that the fitness surface has multiple peaks.
 
 ---
 
-## chapter30_021 · Measuring Multivariate Selection: Introduction / Gradients for General Fitness Surfaces
+## chapter30_021 · MULTIVARIATE SEMIPARAMETRIC FITNESS SURFACE ESTIMATION / Gradients for General Fitness Surfaces
 
-Table 30.1 shows that when z is multivariate-normal, Lande-Arnold gradients describe the average geometry of an individual fitness surface and are the sole measure of selection in response equations (provided breeding values are Gaussian). When z is not multivariate normal, these features do not necessarily hold. We addressed the issue of how univariate generalized gradients are computed in such settings (and what they imply) in Chapter 29, and these same concepts easily extend to multivariate settings. Janzen-Stein gradients (Equations 29.35a and 29.35b) measure the average geometry of the individual fitness surface. Suppose we let $ \mathbf{z}_{i}, \cdots, \mathbf{z}_{n} $ denote the n vectors of phenotypic observations. For trait $ i $, (30.30a) namely, the average value (over the $n$ data vectors, $\mathbf{z}_{1},\cdots,\mathbf{z}_{n}$) of the gradient with respect to the focal trait.
+shows that when z is multivariate-normal, Lande-Arnold gradients describe the average geometry of an individual fitness surface and are the sole measure of selection in response equations (provided breeding values are Gaussian). When z is not multivariate normal, these features do not necessarily hold. We addressed the issue of how univariate generalized gradients are computed in such settings (and what they imply) in Chapter 29, and these same concepts easily extend to multivariate settings. Janzen-Stein gradients (Equations 29.35a and 29.35b) measure the average geometry of the individual fitness surface. Suppose we let $ \mathbf{z}_{i}, \cdots, \mathbf{z}_{n} $ denote the n vectors of phenotypic observations. For trait $ i $, (30.30a) namely, the average value (over the $n$ data vectors, $\mathbf{z}_{1},\cdots,\mathbf{z}_{n}$) of the gradient with respect to the focal trait.
 
 **[推导 Derivation]**
 
@@ -707,7 +700,7 @@ where, as above, there are n data vectors, with $ W(\mathbf{z}_j) $ denoting the
 
 ---
 
-## chapter30_022 · Measuring Multivariate Selection: Introduction / Calsbeek's Tensor Approach for Detecting Variation in Fitness Surfaces
+## chapter30_022 · MULTIVARIATE SEMIPARAMETRIC FITNESS SURFACE ESTIMATION / Calsbeek's Tensor Approach for Detecting Variation in Fitness Surfaces
 
 When dealing with quadratic fitness surfaces, it is straightforward to test whether the regression coefficients vary among estimates from different temporal or spatial samples. How can this be accomplished when the fitness surface is generated by PPR, thin-plate splines, or some other semiparametric regression? Further, how does one best combine fitness surface estimates from a series of locations or times to display both an average fitness surface and also some measure of variability over samples?
 
@@ -717,7 +710,7 @@ Calsbeek’s analysis (for two traits) proceeds by constructing a suitable mesh 
 
 ---
 
-## chapter30_023 · Measuring Multivariate Selection: Introduction / Model Selection
+## chapter30_023 · MULTIVARIATE SEMIPARAMETRIC FITNESS SURFACE ESTIMATION / Model Selection
 
 Given the plethora of choices for modeling fitness surfaces (which traits to include, what method to use, what type of function to fit, etc.), a few comments on the delicate issue of model selection are in order (see Burham and Anderson 2002 for a complete treatment). If one has a candidate set of models, which should be used? If the models are nested (with one being a subset of the other), then standard likelihood-ratio tests can be used choose between them (LW Appendix 4). However, most models are not nested. In such cases, various informal statistics are used to compare models, and we focus on two, the AIC and BIC metrics. For both of these metrics, a smaller value means it is a better model. We stress that while both metrics are fully grounded in theoretical principles (Burham and Anderson 2004), comparing values for two different models is largely ad hoc in that there is no formal test for significance (i.e., no formal criterion for determining when one model is clearly better than the other).
 
@@ -737,7 +730,7 @@ Attempts at measuring selection on quantitative traits in nature trace back to B
 
 ---
 
-## chapter30_025 · Measuring Multivariate Selection: Introduction / Meta-analysis
+## chapter30_025 · THE STRENGTH AND PATTERN OF SELECTION IN NATURAL POPULATIONS / Meta-analysis
 
 As reviewed in Appendix 4, meta-analysis is the field of statistics that deals with the analysis of trends over a large number of experiments (Hunter and Schmidt 2005; Borenstein et al. 2009a; Cooper et al. 2009; Harrison 2011; Koricheva et al. 2013). Informal, or narrative, meta-analyses are by far the most common approach in evolutionary biology. Here, one verbally summarizes the result of a number of studies. This is the type of analysis used by most of the early summaries of strengths of selection in the wild. However, by using the approaches in Appendix 4, one can combine p values over a number of experiments to reach a more global conclusion. While such global p values, and other summary statistics (such as empirical distributions by general trait type, and estimates of mean, or absolute, values), can appear in narrative meta-analyses, a formal meta-analysis is a much more effective way to use the data (Appendix 4).
 
@@ -745,11 +738,29 @@ Unfortunately, conducting a formal meta-analysis requires something that is very
 
 ---
 
-## chapter30_026 · Measuring Multivariate Selection: Introduction / Kingsolver's Analysis
+## chapter30_026 · THE STRENGTH AND PATTERN OF SELECTION IN NATURAL POPULATIONS / Kingsolver's Analysis
+
+**[Figure]**
+
+> **Figure 30.5** · page 28 · source: `chapter30`
+>
+> ![Figure 30.5](../figures/fig_0175.png)
+>
+> Figure 30.5 Summary of estimates of variance–standardized directional and quadratic gradients for natural populations. The data are from Kingsolver et al. (2001). Top: Plot of roughly 1000 estimated directional selection gradients in natural populations, with the median value of  $ |\beta_{sd}| $ being 0.16. The distribution of  $ |\beta_{sd}| $ was not significantly different from an exponential. Bottom: Plot of roughly 470 estimates of  $ \gamma_{sd} $ from natural populations. The median value of  $ |\gamma_{sd}| $ was 0.10.
+
 
 In a series of landmark papers, Kingsolver and colleagues (Hoekstra et al. 2001; Kingsolver et al. 2001) performed an informal meta-analysis on estimates of β and γ from 63 studies of natural populations published between 1984 and 1997. Their resulting frequency distributions of variance-standardized gradients (βsd = σzβ and γsd = σ²zγ) are shown in Figure 30.5. These earlier findings have been updated using much larger datasets, but the basic conclusions from the initial 2001 papers remain the same, with narrative analyses by Geber and Griffen (2003), Kingsolver and Pfenning (2007), Cox and Calsbeek (2009), Siepielski et al. (2009, 2011, 2013), and Kingsolver and Diamond (2011) and more formal (mixed-model) analyses by Kingsolver et al. (2012), Morrissey and Hadfield (2012), and Morrissey (2016).
 
 Kingsolver’s initial analysis noted several trends. First, the distribution of absolute values of the variance-standardized directional selection gradients ($ \beta_{sd} $) closely followed an exponential distribution, with a median (50% value) of 0.16. A $ \beta_{sd} $ of 0.16 implies that a change of one standard deviation in the trait changes relative fitness by 16%. Based on this observation, Kingsolver suggested that most directional selection in nature is fairly weak, although (as a result of the long tail of the exponential), there are a few large estimates (10% of estimates exceeded 0.5). Caution, however, is required with this initial estimate. It is well known that estimates of the expected absolute value, $ |x| $, of a random variable, x, are inflated by sampling error (Equation A4.38a; Hereford et al. 2004; Morrissey 2016). For example, if
+
+**[Figure]**
+
+> **Figure 30.6** · page 29 · source: `chapter30`
+>
+> ![Figure 30.6](../figures/fig_0176.png)
+>
+> Figure 30.6 Distribution of variance-standardized directional selection gradients over different fitness components. Left: The distribution of  $ |\beta_{sd}| $ for both sexual and natural selection in the Kingsolver 2001 dataset. These gradients were measured by mating success and viability, respectively. The median value for viability was 0.153, but 0.250 for mating success. (After Hoekstra et al. 2001.) Right: Updated estimates of selection gradient using a larger dataset, showing the distribution of  $ \beta_{sd} $ for traits influencing survival, mating success, fecundity, and total fitness. The latter three show a broader distribution of effects relative to survival. (After Kingsolver and Diamond 2011.)
+
 
 $x \sim N(0, \sigma_x^2)$, then $E[|x|] = \sigma_x \sqrt{2/\pi}$ (Equation A4.37a), while if $\sigma_e^2$ is the error associated with estimating $x$ using a sample value, $\widehat{x}$, then $E[\|\widehat{x}\|] = \sqrt{\sigma_x^2 + \sigma_e^2} \sqrt{2/\pi} > E[|x|]$. Hence, the average true strength of directional selection, $E[\|\beta\|]$, is less than the estimated strength, $E[|\widehat{\beta}|]$. Indeed, Morrissey (2016) suggested that the initial Kingsolver value was roughly a twofold overestimate.
 
@@ -763,7 +774,7 @@ However, this conclusion that fecundity is under stronger selection than viabili
 
 ---
 
-## chapter30_027 · Measuring Multivariate Selection: Introduction / Directional Selection: Strong or Weak?
+## chapter30_027 · THE STRENGTH AND PATTERN OF SELECTION IN NATURAL POPULATIONS / Directional Selection: Strong or Weak?
 
 Has the case for “weak” selection been made? As pointed out by Conner (2001), even so-called weak selection can be very effective at changing trait means. Consider Kingsolver’s median value of $ \beta_{sd} = 0.16 $ ($ \beta = 0.16 \cdot \sigma_z $). From Equation 13.22a, the single-generation expected change in the mean (in phenotypic standard deviations) is $ h^2 \cdot 0.16 $. With a typical heritability of 0.4, only 16 generations of selection are required to shift the population mean by one standard deviation, and only 80 generations are required to shift it by five standard deviations. Another way to think about the impact of a “weak” selection gradient of $ \beta_{sd} = 0.16 $ was mentioned by Hereford et al. (2004). They noted that even a population of modest size spans over four standard deviations of variation, implying a fitness range of $ 4 \cdot 0.16 = 0.64 $, or a 64% variation in relative fitness among individuals within the population (assuming that the fitness-surface approximation holds over this span of phenotypic values).
 
@@ -780,9 +791,27 @@ Hence, $ \bar{\imath}^{2} $ is replaced by $ \beta_{sd}^{T}s $ (where s is the v
 
 The impact of publication bias, which is also called the "file-drawer effect" (Rosenthal
 
+**[Figure]**
+
+> **Figure 30.7** · page 31 · source: `chapter30`
+>
+> ![Figure 30.7](../figures/fig_0177.png)
+>
+> Figure 30.7 Overestimation of selection gradients due to publication bias. Hersch and Phillips (2004) simulated a model in which five values of  $ \beta_{sd} $ were drawn from a distribution and only included in the final dataset if at least one of them was significant. The model coefficient of determination ( $ R^{2} $) is the total amount of variation in fitness explained by all of the traits (a small value of  $ R^{2} $ implies low power). The dashed line represents the true median value. Note the overestimation of the median  $ \beta_{sd} $ values at small sample sizes and for small  $ R^{2} $ values.
+
+
 1979; Rosenberg 2005), as nonsignificant results are not published and hence simply “left in a file,” was also examined by Hersch and Phillips (2004). They simulated cases where results were only published when one (or more) of the gradients in a study were found to be significant. Although such a model does indeed allow for many nonsignificant values in the database, these are still biased because they were conditioned on at least one of the results being significant. This ascertainment scheme is certainly one reasonable model for quantifying publication bias. For each “publication,” the simulation chose five “traits” by drawing five $ \beta_{sd} $ values at random. If one (or more) of the five tests was significant, all the values were retained, and if not, they all were discarded. As shown in Figure 30.7, this conditional sampling resulted in the median value of $ \beta $ being substantially overestimated when either the sample size or the amount of variation explained by the effects was small (low $ R^{2} $ values), both of which are settings that result in low power. This is essentially another manifestation of the Beavis effect, overestimation when using statistics that are conditional on success (significance).
 
 Knapczyk and Conner (2007) also considered sampling error and publication bias, but they arrived at the very different conclusion that “our understanding of selection is not strongly biased by these commonly invoked sources of error.” To examine publication bias, they binned the datasets examined by Kingsolver based on sample size. If there was no publication bias, the distribution of $ |\beta_{sd}| $ values should have a similar form over different sample sizes (following the exponential observed for the entire set by Kingsolver). They found departures from this pattern for studies with very small sample sizes (less than 40), but did not find departures for studies with larger sample sizes. Indeed, compared to the exponential distribution, they found an excess of weak selection gradients in the larger studies. Thus, they concluded that publication bias, except in the smallest studies, did not upwardly bias estimates of $ |\beta_{sd}| $ in any appreciative way. Appendix 4 presents a number of metrics to assess publication bias.
+
+**[Figure]**
+
+> **Figure 30.8** · page 32 · source: `chapter30`
+>
+> ![Figure 30.8](../figures/fig_0178.png)
+>
+> Figure 30.8 Four estimates of the distribution of selection intensities in nature. Two are direct estimates of selection from studies in nature (Endler 1986; Kingsolver et al. 2001), while the other two were estimated using observed rates of microevolution and then estimating  $ \bar{i} $ using two different assumed heritability values. (After Kinnison and Hendry 2001.)
+
 
 Further complicating matters is the paper by Hereford et al. (2004), who found that using mean-standardized gradients ($ \beta_{\mu} = \mu\beta $; Equation 29.33a) gave very different results. Recall that the mean-standardized gradient is $ \beta_{\mu} = 1 $ when the trait is fitness itself, providing a benchmark for the strength of selection on a trait (Equation 29.33c). Using a subset of the Kingsolver data (38 studies yielding 580 estimates) that included the required information for this standardization (i.e., those that reported the trait means), they found a median $ |\beta_{\mu}| $ of 0.54, or 54% of the strength of selection on fitness. This is indeed strong selection. Even using a correction for the upward bias generated by sampling error (Equation A4.37a), which reduced the median value to 0.31, still left strong selection. The observed strengths of selection were so large that the authors suggested that the selection gradients were likely inflated by focusing on single episodes of selection rather than lifetime fitness. In essence, they suggested that tradeoffs resulted in the actual gradient of lifetime fitness for a trait being significantly less than the gradients based on single episodes of selection. However, as we discuss shortly, there appears to be little evidence for tradeoffs among the traits in the currently analyzed databases (Figure 30.9).
 
@@ -794,7 +823,16 @@ Three other evolutionary questions can be partly addressed through a meta-analys
 
 ---
 
-## chapter30_028 · Measuring Multivariate Selection: Introduction / Total Versus Direct Selection, Tradeoffs, and Temporal Variation
+## chapter30_028 · THE STRENGTH AND PATTERN OF SELECTION IN NATURAL POPULATIONS / Total Versus Direct Selection, Tradeoffs, and Temporal Variation
+
+**[Figure]**
+
+> **Figure 30.9** · page 33 · source: `chapter30`
+>
+> ![Figure 30.9](../figures/fig_0179.png)
+>
+> Figure 30.9 Additional results from the meta-analysis of Kingsolver and Diamond (2011). Left: Lack of evidence for fitness tradeoffs between survival (Surv.), mating (Mat.), and fecundity (Fec.). The scatterplot displays the variance-standardized linear gradients when a trait was measured for two or three of these components. Evidence of widespread tradeoffs would appear as an excessive number of values in the upper left ( $ \beta_{sd,1} < 0 $,  $ \beta_{sd,2} > 0 $) and lower right ( $ \beta_{sd,1} > 0 $,  $ \beta_{sd,2} < 0 $) quadrants. This is not seen. Rather, 57% of the data pairs have the same sign, which magnifies, rather than reduces, the total selective effect. Right: Temporal variation in standardized selection differentials ( $ s = S/\sigma = \bar{s} $) in samples with multiple time points. When sign reversals occur,  $ |mean(s)| < mean(|s|) $. The majority of values fall along the diagonal, indicating that sign reversal is not a common feature in this dataset (although values below the diagonal, and hence reversals, are seen). (After Kingsolver and Diamond 2011.)
+
 
 The amount of total selection on a trait is given by $S$ (and its variance-standardized counterpart, $s = \bar{s}$), which is the sum of the amount of direct ($\beta$, $\beta_{sd}$) and correlated selection (Equation 30.3). When $\beta_{sd}$ is estimated from a multiple-trait regression, a plot of $s$ versus $\beta_{sd}$ can provide insight into the relative importance of direct versus correlated selection. A major caveat concerning this type of analysis is that it is only as good as the characters that are included in the regression. If causally important fitness traits that are correlated with a focal trait are not included, their effect can incorrectly be attributed to direct selection. Using this approach, Kingsolver and Diamond (2011) found that correlated selection had little impact, with $s$ often falling very close to $\beta_{sd}$ in value. An exception is size, where total selection is generally less than direct selection, which suggests negative correlations with other traits under selection. An analysis by Geber and Griffin (2003) of performance traits in plants found a different pattern than was seen by Kingsolver and Diamond. For these traits, they observed that $|\beta_{sd}|$ tended to be smaller than $|s|$, so not only were correlated effects important, but they also tended to be in the same direction as direct effects. Geber and Griffin estimated that ~40% of the amount of directional selection on a trait was the result of correlated effects. Moreover, they found the same pattern ($ |\gamma_{sd}| < |C/\sigma^4| $) for quadratic selection, with correlated effects accounting for an average of ~60% of the total effect.
 
@@ -823,15 +861,24 @@ This follows from Equation 30.21a, and it assumes a normally distributed trait w
 
 ---
 
-## chapter30_029 · Measuring Multivariate Selection: Introduction / Directional Selection on Body Size and Cope's Law
+## chapter30_029 · THE STRENGTH AND PATTERN OF SELECTION IN NATURAL POPULATIONS / Directional Selection on Body Size and Cope's Law
 
 Body size has several outlier features relative to other traits. As shown in Figure 30.10, while the distribution of $ \beta_{sd} $ values for morphological traits was symmetric around zero, the distribution for $ \beta_{sd} $ for body size was highly skewed toward positive values (Kingsolver and Pfenning 2004; Kingsolver and Diamond 2011). Kingsolver and Pfenning suggested that individual selection for larger body size underlies Cope's law (the tendency for the size of species within a lineage to increase over evolutionary time). This suggestion also presents a paradox: if it is true, why are most of the largest animals not present today? Kingsolver and Pfenning (2004, 2007) suggested that this is a consequence of differential extinction, pointing out that during the last widespread extinction of North American mammals, the largest species were the hardest hit. However, as we noted above, Kingsolver and Diamond (2011) also found that direct selection on size is greater than the total selection ($ \beta_{size} > s_{size} $), suggesting the presence of selection against traits that are phenotypically correlated with body size, whose values tend to become more deleterious as body size increases. Further, they found that the distribution of $ \gamma $, while symmetric for most classes of traits, was significantly negative for body size, suggesting that it is often under stabilizing selection. Figure 30.10 shows that another class of characters, phenological traits (season timing events such as breeding), also shows a skewed distribution, toward negative (i.e., earlier) values.
 
 ---
 
-## chapter30_030 · Measuring Multivariate Selection: Introduction / Quadratic Selection: Strong or Weak?
+## chapter30_030 · THE STRENGTH AND PATTERN OF SELECTION IN NATURAL POPULATIONS / Quadratic Selection: Strong or Weak?
 
 Discussions of whether the observed amount of quadratic selection is strong or weak are highly problematic. If estimates of $ \beta_{sd} $ are underpowered (and thus significant estimates are likely overvalued; i.e., the Beavis effect), the same is certainly true for quadratic estimates.
+
+**[Figure]**
+
+> **Figure 30.10** · page 36 · source: `chapter30`
+>
+> ![Figure 30.10](../figures/fig_0180.png)
+>
+> Figure 30.10 Left: Distribution of variance-standardized selection gradients,  $ \beta_{sd} $, for morphological traits and for size. While the distribution for morphological traits is largely symmetric around zero, the distribution of  $ \beta_{sd} $ for body size is skewed toward positive values. (After Kingsolver and Pfenning 2004.) Right: A more recent analysis by Kingsolver and Diamond (2011) showing a positive-skew for size and a negative-skew for phenological traits.
+
 
 Indeed, simulations by Haller and Hendry (2013) found that there is generally low power for detecting stabilizing selection due to small sample sizes. Simulations for traits under weak stabilizing selection typically resulted in a distribution of $ \gamma $ values similar to that seen in Figure 30.5, namely, largely symmetric about the origin (reflecting low power, and hence a roughly random distribution of estimates around zero). An important feature of the Haller-Hendry simulations was that they used a “virtual ecologist” approach, wherein simulated data from the quantitative-genetics model is combined with an observer model (i.e., a model for how the data would be ascertained in real-world settings, such as having living individuals that are not recaptured counted as dead). This mimics how real data would be “virtually” observed (Zurell et al. 2009), and hence more correctly reflects the actual power of collected data.
 
@@ -841,7 +888,7 @@ The much more problematic issue is whether $ \gamma $ is even a reasonable measu
 
 ---
 
-## chapter30_031 · Measuring Multivariate Selection: Introduction / Where Is All the Stabilizing Selection?
+## chapter30_031 · THE STRENGTH AND PATTERN OF SELECTION IN NATURAL POPULATIONS / Where Is All the Stabilizing Selection?
 
 Perhaps the most striking observation from the meta-analysis of $ \gamma $ values is the lack of a clear trend toward negative values (except for body size), as would be expected if stabilizing selection were widespread. This is highly troubling given the historic view of most ecologists and evolutionary biologists that stabilizing selection is widespread and important over evolutionary time (Charlesworth et al. 1982; Maynard Smith 1983; Estes and Arnold 2007; Hunt et al. 2007a). One explanation is that $ \gamma $ does not capture the correct geometry in multimodal fitness surfaces. The second is the observation from the Haller-Hendry (2013) simulations of low power to detect stabilizing selection.
 
@@ -849,7 +896,7 @@ Haller and Hendry offered several other explanations for this “missing” stab
 
 ---
 
-## chapter30_032 · Measuring Multivariate Selection: Introduction / A Plea to Fully Publish
+## chapter30_032 · THE STRENGTH AND PATTERN OF SELECTION IN NATURAL POPULATIONS / A Plea to Fully Publish
 
 In 1899, Herman Bumpus published a modest dataset involving 136 domestic sparrows (Passer domesticus) immobilized by an ice storm. Of these, 72 (21 females, 51 males) survived, while the remaining 64 (28 females, 36 males) perished. Despite the humble beginning, this has become the most widely analyzed study of selection (Harris 1911; Calhoun 1947; Grant 1972; Johnson et al. 1972; O'Donald 1973; Lande and Arnold 1983; Crespi and Bookstein 1988; Crespi 1990; Pugesek and Tomer 1996). In large part, this is because Bumpus published all of his data, allowing investigators to employ their own methods of analysis. In contrast, Kingsolver et al. (2001) lamented that many of the studies included in their meta-analysis did not even report standard errors, much less trait means (which are needed to allow for mean-standardized gradients to be computed), thus limiting their inclusion to only narrative meta-analyses. At a minimum, any published study should report standard errors for all estimates. More generally, studies should make their entire dataset available to the community. Indeed, such fully open access is a requirement for virtually all published molecular studies. As Kingsolver et al. (2012) pleaded "Recycle your hard-won, slightly used, still precious data today!"
 
@@ -857,7 +904,25 @@ In 1899, Herman Bumpus published a modest dataset involving 136 domestic sparrow
 
 ## chapter30_033 · Measuring Multivariate Selection: Introduction / UNMEASURED CHARACTERS AND OTHER BIOLOGICAL CAVEATS
 
-Even if we are willing to assume that the best-fitting quadratic regression is a reasonable approximation of the individual fitness surface, there are still a number of important biological caveats to keep in mind (Chapters 20 and 29). For example, the fitness surface can change in both time and space, often over short spatial or temporal scales (e.g., Kalisz 1986; Stewart and Schoen 1987; Scheiner 1989; Jordan 1991; Garant et al. 2007; Siepielski et al. 2009, 2011, 2013; Bell 2010; but see Morrissey and Hadfield 2012), so one estimate of the fitness surface may be quite different from another for a different time or location (Figures 30.11 and 30.12). Hence, considerable care must be taken before pooling data from different times or sites to improve the precision of estimates. Conversely, fitness data are noisy, and the resulting surfaces have considerable uncertainty, so two, visually rather different-looking, surfaces might be not statistically significantly different. When the data are such that selection gradients can be estimated separately for different times or areas, interactions of space/time × gradient can be tested in a straightforward fashion (e.g., Mitchell-Olds and Bergelson 1990). Further, the evolution of a trait may result in a change in the biotic environment, which in turn may change the nature of selection on that trait (Chapters 20 and 22).
+**[Figure]**
+
+> **Figure 30.11** · page 38 · source: `chapter30`
+>
+> ![Figure 30.11](../figures/fig_0181.png)
+>
+> Figure 30.11 The selection surface can change over time. These two surfaces are the best-fitting quadratic surfaces for relative fitness as a function of stem diameter and internode length for a population of the annual plant  $ Diodia\ teres $ ( $ Rubiaceae $) in North Carolina. Left: Estimate for June 1985 data. Right: Estimate for July 1985 data. (After Jordan 1991.)
+
+
+**[Figure]**
+
+> **Figure 30.12** · page 38 · source: `chapter30`
+>
+> ![Figure 30.12](../figures/fig_0182.png)
+>
+> Figure 30.12 The fitness surface can change over space. The fecundity surface for great tits (Parus major) in two populations in Oxfordshire (U. K.) separated by less than four kilometers. Here, m1 and m3 correspond to the first and third canonical axes (weighted trait combinations) of the fitness surface. (After Garant et al. 2007.)
+
+
+Even if we are willing to assume that the best-fitting quadratic regression is a reasonable approximation of the individual fitness surface, there are still a number of important biological caveats to keep in mind (Chapters 20 and 29). For example, the fitness surface can change in both time and space, often over short spatial or temporal scales (e.g., Kalisz 1986; Stewart and Schoen 1987; Scheiner 1989; Jordan 1991; Garant et al. 2007; Siepielski et al. 2009, 2011, 2013; Bell 2010; but see Morrissey and Hadfield 2012), so one estimate of the fitness surface may be quite different from another for a different time or location (Figure 30.11 and Figure 30.12). Hence, considerable care must be taken before pooling data from different times or sites to improve the precision of estimates. Conversely, fitness data are noisy, and the resulting surfaces have considerable uncertainty, so two, visually rather different-looking, surfaces might be not statistically significantly different. When the data are such that selection gradients can be estimated separately for different times or areas, interactions of space/time × gradient can be tested in a straightforward fashion (e.g., Mitchell-Olds and Bergelson 1990). Further, the evolution of a trait may result in a change in the biotic environment, which in turn may change the nature of selection on that trait (Chapters 20 and 22).
 
 Population structure can also influence fitness surface estimation. If the population being examined has overlapping generations, fitness data must be adjusted to reflect this (Chapter 29). Likewise, if members of the population differ in their amount of inbreeding, measured characters and fitness may show a spurious correlation if both are affected by inbreeding depression, which in turn can inflate the apparent strength of directional and concave selection (Willis 1996). Finally, immigration must be accounted for (e.g., Garant et al. 2005), especially if there are different selection regimes within the area that encompasses the study population (e.g., Figure 30.12).
 
@@ -867,11 +932,20 @@ Despite these concerns, the most severe caveat for the regression approach of es
 
 ## chapter30_034 · Measuring Multivariate Selection: Introduction / PATH ANALYSIS AND FITNESS ESTIMATION
 
+**[Figure]**
+
+> **Figure 30.13** · page 39 · source: `chapter30`
+>
+> ![Figure 30.13](../figures/fig_0183.png)
+>
+> Figure 30.13 Four traits, seed weight (S), plant height (H), leaf area (A), and number of leaves (N), potentially influence fitness, w. Single-headed arrows indicate an assumed causality, while double-headed arrows indicate correlations (unspecified causality). Connections between a trait and fitness are shown as dashed arrows for visual clarity. Throughout, e represents a residual input (the variation not accounted for by the causal connections). A: The assumptions of a standard fitness regression. All four traits, some of which which may be correlated (doubled-headed arrows between trait combinations), potentially impact fitness. B: Seed weight impacts the three other traits, giving a direct impact on fitness ( $ S \rightarrow w $) and indirect effects on fitness through its impact on A, H, N and their subsequent impact on fitness ( $ S \rightarrow X \rightarrow w $). C: Seed weight impacts height directly, but not A or N. Height, in turn, impacts A and N. A key limitation (and also a strength) of a path analysis is that B and C assume paths (causality structures), which can result in rather different interpretations of the patterns of selection, and both (in turn) can depart from the pattern suggested from a standard regression (A). For example, when trait A has a large effect on fitness, the path in B may find that any correlation between S and w is entirely due to the impact of S on A, while the path in C may find that selection is from the impact of H on A.
+
+
 As we saw in Figure 29.12, complex life cycles can be represented as graphs, as can a set of cascading developmental traits (Figure 30.13), the elaborate interplay between fitness components (Figure 30.14), or the connection between traits, fitness components, and population growth rate (Figure 30.16). One way to explore these graphical structures is with path analysis, which requires a path diagram, which is a hypothesis about the structure of causality (LW Appendix 2; Kingsolver and Schemske 1991; Mitchell 1992; Shipley 1997). The strengths of relationships in a path diagram are represented by path coefficients, which are correlations among connected items in the path. As a very simple example, consider the impact that seed weight and plant height have on fitness.
 
 One potential path diagram is seed weight → height → fitness, which states that seed weight only impacts fitness through its effect on plant height. A path analysis of this model first variance-standardizes all of the variables and then performs regressions (or partial regressions), generating correlations among the items in the path. Suppose the resulting coefficients are $$ \begin{aligned}weight\quad\xrightarrow{0.35}\quad height\quad\xrightarrow{0.15}\quad w\end{aligned} $$ implying a correlation of $ \rho = 0.35 $ between seed weight and plant height, and a correlation of 0.15 between height and fitness. As drawn, this diagram implies that seed weight does not have a direct effect on fitness, but it does have an indirect effect through height. Because $ \rho^2 $ is the fraction of variation accounted for by a factor, we see that seed weight explains 13% ($ 0.35^2 = 0.13 $) of the variance in plant height and that plant height accounts for 2% ($ 0.15^2 $) of the variance in fitness. Further, the correlation between any two connected items in a path is the product of their path coefficients, giving a correlation between seed weight and fitness of $ 0.35 \cdot 0.15 = 0.0525 $, showing that seed weight accounts for 0.3% ($ 0.0525^2 $) of the variance in fitness.
 
-Regression and path analysis offer complementary approaches for examining relationships between phenotypes and fitness. The purpose of a regression analysis is to predict fitness given character values, while path analysis provides a description of the biological nature of character covariances and how they interact with fitness. While regressions simply rely on the correlations among traits (Figure 30.13A), path analysis examines the structure of these correlations (Figures 30.13B and 30.13C), building on the biological intuition of the investigator. A number of authors have applied this approach to the analysis of natural selection (e.g., Arnold 1983b; Maddox and Antonovics 1983; Mitchell-Olds 1987; Crespi and Bookstein 1988; Crespi 1990; Jordan 1991; Weis and Kapelinski 1994; Conner 1996; Pugesek and Tomer 1996; Scheiner et al. 2000; van Tienderen 2000; Coulson et al. 2003; Latta and McCain 2009; Matsumura et al. 2012).
+Regression and path analysis offer complementary approaches for examining relationships between phenotypes and fitness. The purpose of a regression analysis is to predict fitness given character values, while path analysis provides a description of the biological nature of character covariances and how they interact with fitness. While regressions simply rely on the correlations among traits (Figure 30.13), path analysis examines the structure of these correlations (Figure 30.13 and 30.13C), building on the biological intuition of the investigator. A number of authors have applied this approach to the analysis of natural selection (e.g., Arnold 1983b; Maddox and Antonovics 1983; Mitchell-Olds 1987; Crespi and Bookstein 1988; Crespi 1990; Jordan 1991; Weis and Kapelinski 1994; Conner 1996; Pugesek and Tomer 1996; Scheiner et al. 2000; van Tienderen 2000; Coulson et al. 2003; Latta and McCain 2009; Matsumura et al. 2012).
 
 The analysis of selection on graphs falls into four categories. First, we have already seen the use of Aster models on life-history graphs to obtain a statistically rigorous distribution of fitness effects (Chapter 29). Second, path analysis can be used to represent a proposed causal structure among life-history components and traits to provide insights that a standard fitness-trait regression can miss. Third, selection could be on one or more latent (unobserved) features that are correlated with observed (and potentially unselected) traits. While the observed traits may show trait-fitness associations, these could all be indirect effects, resulting from the correlation with the latent traits. This setting can also create high collinearity, with many of the measured traits being highly correlated with the latent traits. Path-analysis models can be used in some cases in the analysis of such data. Finally, elasticity path analysis connects selection gradients of a trait on fitness components with the elasticity (Chapter 29) of those components on the population growth rate ($ \lambda $) to provide the elasticity of that trait on $ \lambda $ (van Tienderen 2000). This approach provides a powerful connection between selection and demography. We address these last three topics in order, while Aster model analysis of life-history graphs were introduced in Chapter 29.
 
@@ -879,17 +953,26 @@ While powerful, path-analytic methods are not without significant caveats. First
 
 ---
 
-## chapter30_035 · Measuring Multivariate Selection: Introduction / Regressions Versus Path Analysis
+## chapter30_035 · PATH ANALYSIS AND FITNESS ESTIMATION / Regressions Versus Path Analysis
+
+**[Figure]**
+
+> **Figure 30.14** · page 41 · source: `chapter30`
+>
+> ![Figure 30.14](../figures/fig_0184.png)
+>
+> Figure 30.14 An example of the use of path analysis in describing multivariate selection from Mitchell-Olds and Bergelson (1990), who examined fitness (measured by adult size) for the annual plant Impatiens capensis. Germination date (GD), seed weight (SW), June size (JS), early growth rate (EG), and late growth rate (LG) were the measured characters, and  $ e_{i} $ represents residual variance for trait i. Only significant paths, with their associated path coefficients (i.e., correlations) are shown. (After Mitchell-Olds and Bergelson 1990.)
+
 
 The key distinction between a regression and a path analysis of selection is that regression attempts to statistically account for the covariance between fitness and the measured traits, while a path analysis further attempts to account for the processes generating correlations among the measured traits. Regressions assume that none of the traits are causal to any of the others, while Crespi (1990) noted that “path-analytic reasoning assumes that characters are correlated as a result of biological causes that should be used as information rather than adjusted away.” As an example, suppose traits are ordered in time, such as
 
 ---
 
-## chapter30_036 · Measuring Multivariate Selection: Introduction / germination, $ g \rightarrow $ vegetative growth rate, $ r \rightarrow $ flowering time, f
+## chapter30_036 · PATH ANALYSIS AND FITNESS ESTIMATION / germination, $ g \rightarrow $ vegetative growth rate, $ r \rightarrow $ flowering time, f
 
 **[命题 Proposition]**
 
-A regression analysis simply uses each trait's correlation with fitness without using the ordered structure inherent in the variables, while a path analysis explicitly uses this information. Examples of different casual assumptions for the same set of four traits are given in Figure 30.13. Each diagram displays a different causal structure that was assumed at the start of the analysis. Connections (arrows) that are nonsignificant or have very trivial values are usually left out of the final diagram, with the strength of connections often indicated by the line thickness of the arrows. Double-header arrows indicate correlations, namely, no assumption about the nature of causality between these variables, as would be the case for a standard regression (Figure 30.13A). A key limitation (and also strength) of a path analysis is that these different assumed path diagrams (causality structures) can result in rather different interpretations of the patterns of selection. If it is correct, the path diagram captures unique features missed by a regression (which assumes correlations, rather than attempting to model how they arise). If it is incorrect, a path analysis can introduce potentially serious biases.
+A regression analysis simply uses each trait's correlation with fitness without using the ordered structure inherent in the variables, while a path analysis explicitly uses this information. Examples of different casual assumptions for the same set of four traits are given in Figure 30.13. Each diagram displays a different causal structure that was assumed at the start of the analysis. Connections (arrows) that are nonsignificant or have very trivial values are usually left out of the final diagram, with the strength of connections often indicated by the line thickness of the arrows. Double-header arrows indicate correlations, namely, no assumption about the nature of causality between these variables, as would be the case for a standard regression (Figure 30.13). A key limitation (and also strength) of a path analysis is that these different assumed path diagrams (causality structures) can result in rather different interpretations of the patterns of selection. If it is correct, the path diagram captures unique features missed by a regression (which assumes correlations, rather than attempting to model how they arise). If it is incorrect, a path analysis can introduce potentially serious biases.
 
 **[示例 Example]**
 
@@ -916,27 +999,7 @@ While we have framed multiple-trait selection in the context of a number of trai
 
 **[示例 Example]**
 
-> **Example 30.7** · ref: `30.7` · source: `chapter30_036.json` · blocks 3–3
->
-> Example 30.7. Following up on the study of male color traits in guppies described in Example 30.6, Blows et al. (2003) examined six traits (two morphological and four color) for their role in female attractiveness. Both quadratic and projection-pursuit regressions were used to examine nonlinear selection on these traits. The trait loadings for the first two major axes of the quadratic regression of fitness on trait value (the eigenvectors $ e_1 $ and $ e_2 $, corresponding to the two leading eigenvectors of $ \gamma $) and the first two projection vectors ( $ a_1 $ and $ a_2 $) from projection-pursuit regression were as follows:
-> 
-> > **Inline Table 1** · `inline_1` · page 24 · source: `chapter30_036`
-> > Inline Table 1
-> >
-> > Trait | e_{1} | e_{2} | a_{1} | a_{2}
-> > --- | --- | --- | --- | ---
-> > Body area | -0.065 | 0.157 | 0.185 | 0.551
-> > Tail area | 0.663 | 0.635 | 0.331 | 0.087
-> > Black area | -0.245 | 0.645 | 0.430 | -0.182
-> > Fuzzy area | 0.372 | -0.173 | 0.101 | -0.286
-> > Iridescent area | 0.436 | -0.134 | 0.569 | -0.757
-> > Orange area | -0.411 | 0.333 | 0.581 | -0.016
-> 
-
-
-**[示例 Example]**
-
-> **Example 30.9** · ref: `30.9` · source: `chapter30_036.json` · blocks 4–4
+> **Example 30.9** · ref: `30.9` · source: `chapter30_036.json` · blocks 2–3
 >
 > Example 30.9. Weis and Kapelinski (1994) examined the nature of selective forces acting on gall size of a tephritid fly (Eurosta solidadginis), whose larvae makes a protective gall on goldrenrods. Larvae residing in small galls are susceptible to a parasitoid wasp (Eurytoma gigantea), whose ovipositor can reach the larvae through small, but not large, galls. Countering this, when galls become sufficiently large, they are preyed upon by insectivorous birds (mainly downy woodpeckers, Picoides pubescens). The result is selection pressure on both large and small galls, but through different biotic agents. Two other parasitoids, a second wasp and a beetle, also feed on larvae within galls, but here gall size does not appear to be a factor. However, galls attacked by these two insects appear to be distasteful, and the resulting parasitoids are not eaten by birds. Thus, this is a complex system with different agents and the possibility of frequency-dependent search images, all of which are acting to impart selection on the focal trait, which is gall size.
 > 
@@ -945,7 +1008,7 @@ While we have framed multiple-trait selection in the context of a number of trai
 
 ---
 
-## chapter30_037 · Measuring Multivariate Selection: Introduction / Morrissey's Extended Selection Gradient Vector, $ \eta $
+## chapter30_037 · PATH ANALYSIS AND FITNESS ESTIMATION / Morrissey's Extended Selection Gradient Vector, $ \eta $
 
 Consider the following two path diagrams connecting a focal trait (z), fitness (w), and some unmeasured factor (f): $$ \operatorname{path}1\colon z\leftarrow f\rightarrow w\qquad\qquad\operatorname{path}2\colon z\rightarrow f\rightarrow w $$
 
@@ -984,30 +1047,27 @@ One very desirable feature of $ \eta_i $ is that if trait $ i $ has a causal eff
 
 **[示例 Example]**
 
-> **Example 30.10** · ref: `30.10` · source: `chapter30_037.json` · blocks 6–6
+> **Example 30.10** · ref: `30.10` · source: `chapter30_037.json` · blocks 6–12
 >
-> Example 30.10. Building on the work of Latta and McCain (2009), Morrissey (2014a) examined the relationship between a number of traits in wild oats (Avena barbata) and fitness, w (measured by number of reproductive spikes), using the following assumed causality structure. The values above the arrows are correlation coefficients, while the numbers 1 through 6 index the traits in the B matrix (as detailed below).
-> 
-> The six traits considered were days at germination (dgerm), mass at day 60 (m60), days to first flower (dtf), final total mass (mass), number of reproductive tillers (rpt), and mass of reproductive tillers (mrt). The (variance-standardized) directional selection gradients under Lande-Arnold ($ \beta_{LA} $, which is a multiple regression of w using all six traits) and under the path model ($ \beta_{pa} $) are quite different, which shows the impact of the assumed causal structure among the traits and with fitness: $$ \boldsymbol{\beta}=\begin{pmatrix}\beta_{dgerm}\\\beta_{m60}\\\beta_{dtf}\\\beta_{mass}\\\beta_{rpt}\\\beta_{mrt}\end{pmatrix},\quad\mathrm{where}\quad\boldsymbol{\beta}_{LA}=\begin{pmatrix}0.009\\0.004\\-0.040\\-0.028\\0.142\\0.207\end{pmatrix},\quad\boldsymbol{\beta}_{pa}=\begin{pmatrix}0\\0\\0\\-0.033\\0.157\\0.207\end{pmatrix} $$
-> 
-> Note that only mass, rpt, and mrt directly impact fitness under the assumed path model.
-> 
-> The resulting matrix, B, of path coefficients is constructed as follows. The first row corresponds to those traits that are directly influenced by trait 1 (dgerm), which is only trait 2 (m60), as all the other entries are zero. The second row involves those traits that are directly influenced by trait 2, which are only traits 3 and 4, as all the other entries are zero. Continuing in this fashion, and noting that traits 5 and 6 influence no traits in the diagram (we are not considering w), yields $$ \mathbf{B}=\begin{pmatrix}{{{0}}}&{{{-0.012}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\{{{0}}}&{{{0}}}&{{{-0.200}}}&{{{0.306}}}&{{{0}}}&{{{0}}} \\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{-0.580}}}&{{{-0.605}}} \\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0.135}}}&{{{0.396}}} \\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}\end{pmatrix} $$ which in turn yields $$ \boldsymbol{\varPhi}=(\mathbf{I}-\mathbf{B})^{-1}=\begin{pmatrix}{{{1}}}&{{{-0.012}}}&{{{0.0240}}}&{{{-0.0037}}}&{{{-0.0018}}}&{{{-0.0029}}} \\{{{0}}}&{{{1}}}&{{{-0.2000}}}&{{{0.3060}}}&{{{0.1573}}}&{{{0.2422}}} \\{{{0}}}&{{{0}}}&{{{1}}}&{{{0}}}&{{{-0.5800}}}&{{{-0.6050}}} \\{{{0}}}&{{{0}}}&{{{0}}}&{{{1}}}&{{{0.1350}}}&{{{0.3960}}} \\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{1}}}&{{{0}}} \\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{1}}}\end{pmatrix} $$
-> 
-> To see that $ \mathbf{B} $ recovers the correct values of the $ \Phi_{ij} $, we compute a few of these elements by hand. The elements in the first row of $ \Phi $ correspond to the total causal effects from trait 1 (dgerm), which is $ -0.12 $ on trait 2 (m60), and $ -0.012 \cdot 0.306 = -0.0037 $ for trait 4 ($ 1 \rightarrow 2 \rightarrow 4 $). A more complicated case is the casual connection of trait 1 on trait 5, as there are two paths, $ 1 \rightarrow 2 \rightarrow 4 \rightarrow 5 $ and $ 1 \rightarrow 2 \rightarrow 3 \rightarrow 5 $, for a total of $ [-0.012 \cdot \0.306 \cdot 0.135] + [-0.012 \cdot (-0.200) \cdot (-0.580)] = -0.0018 $.
-> 
-> Using $ \Phi $, the resulting vector of extended gradients becomes $$ \boldsymbol{\eta}=\begin{pmatrix}\eta_{d g e r m}\\\eta_{m60}\\\eta_{d t f}\\\eta_{m a s s}\\\eta_{r p t}\\\eta_{m r t}\end{pmatrix}=\boldsymbol{\varPhi}\boldsymbol{\beta}_{p a t h}=\boldsymbol{\varPhi}\begin{pmatrix}0\\0\\0\\-0.033\\0.157\\0.207\end{pmatrix}=\begin{pmatrix}-0.001\\0.065\\-0.216\\0.070\\0.157\\0.207\end{pmatrix} $$
-> 
-> The extended gradient (η) gives the total amount of selection on each trait caused by all the paths that are causally connected to that trait. The values for mrt and rpt are the same as their β_pa values, as both of these traits have only a direct effect on fitness. Now consider the difference between β_pa for mass in the path diagram (-0.033) and its η value (0.070). While the direct effect, mass→w, is negative, the total of the casual effects from mass, (mass→w) + (mass→rpt→w) + (mass→mrt→w), is $$ -0.033+(0.135\cdot0.157)+(0.396\cdot0.207)=0.070 $$ which is positive and larger in magnitude than the direct negative effect.
+> Example 30.10. Building on the work of Latta and McCain (2009), Morrissey (2014a) examined the relationship between a number of traits in wild oats (Avena barbata) and fitness, w (measured by number of reproductive spikes), using the following assumed causality structure. The values above the arrows are correlation coefficients, while the numbers 1 through 6 index the traits in the B matrix (as detailed below). The six traits considered were days at germination (dgerm), mass at day 60 (m60), days to first flower (dtf), final total mass (mass), number of reproductive tillers (rpt), and mass of reproductive tillers (mrt). The (variance-standardized) directional selection gradients under Lande-Arnold ( $ \beta_{LA} $, which is a multiple regression of w using all six traits) and under the path model ( $ \beta_{pa} $) are quite different, which shows the impact of the assumed causal structure among the traits and with fitness: $$ \boldsymbol{\beta}=\begin{pmatrix}\beta_{dgerm}\\\beta_{m60}\\\beta_{dtf}\\\beta_{mass}\\\beta_{rpt}\\\beta_{mrt}\end{pmatrix},\quad\mathrm{where}\quad\boldsymbol{\beta}_{LA}=\begin{pmatrix}0.009\\0.004\\-0.040\\-0.028\\0.142\\0.207\end{pmatrix},\quad\boldsymbol{\beta}_{pa}=\begin{pmatrix}0\\0\\0\\-0.033\\0.157\\0.207\end{pmatrix} $$ Note that only mass, rpt, and mrt directly impact fitness under the assumed path model. The resulting matrix, B, of path coefficients is constructed as follows. The first row corresponds to those traits that are directly influenced by trait 1 (dgerm), which is only trait 2 (m60), as all the other entries are zero. The second row involves those traits that are directly influenced by trait 2, which are only traits 3 and 4, as all the other entries are zero. Continuing in this fashion, and noting that traits 5 and 6 influence no traits in the diagram (we are not considering w), yields $$ \mathbf{B}=\begin{pmatrix}{{{0}}}&{{{-0.012}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\{{{0}}}&{{{0}}}&{{{-0.200}}}&{{{0.306}}}&{{{0}}}&{{{0}}} \\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{-0.580}}}&{{{-0.605}}} \\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0.135}}}&{{{0.396}}} \\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}\end{pmatrix} $$ which in turn yields $$ \boldsymbol{\varPhi}=(\mathbf{I}-\mathbf{B})^{-1}=\begin{pmatrix}{{{1}}}&{{{-0.012}}}&{{{0.0240}}}&{{{-0.0037}}}&{{{-0.0018}}}&{{{-0.0029}}} \\{{{0}}}&{{{1}}}&{{{-0.2000}}}&{{{0.3060}}}&{{{0.1573}}}&{{{0.2422}}} \\{{{0}}}&{{{0}}}&{{{1}}}&{{{0}}}&{{{-0.5800}}}&{{{-0.6050}}} \\{{{0}}}&{{{0}}}&{{{0}}}&{{{1}}}&{{{0.1350}}}&{{{0.3960}}} \\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{1}}}&{{{0}}} \\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{1}}}\end{pmatrix} $$ To see that $ \mathbf{B} $ recovers the correct values of the $ \Phi_{ij} $, we compute a few of these elements by hand. The elements in the first row of $ \Phi $ correspond to the total causal effects from trait 1 (dgerm), which is $ -0.12 $ on trait 2 (m60), and $ -0.012 \cdot 0.306 = -0.0037 $ for trait 4 ( $ 1 \rightarrow 2 \rightarrow 4 $). A more complicated case is the casual connection of trait 1 on trait 5, as there are two paths, $ 1 \rightarrow 2 \rightarrow 4 \rightarrow 5 $ and $ 1 \rightarrow 2 \rightarrow 3 \rightarrow 5 $, for a total of $ [-0.012 \cdot \0.306 \cdot 0.135] + [-0.012 \cdot (-0.200) \cdot (-0.580)] = -0.0018 $. Using $ \Phi $, the resulting vector of extended gradients becomes $$ \boldsymbol{\eta}=\begin{pmatrix}\eta_{d g e r m}\\\eta_{m60}\\\eta_{d t f}\\\eta_{m a s s}\\\eta_{r p t}\\\eta_{m r t}\end{pmatrix}=\boldsymbol{\varPhi}\boldsymbol{\beta}_{p a t h}=\boldsymbol{\varPhi}\begin{pmatrix}0\\0\\0\\-0.033\\0.157\\0.207\end{pmatrix}=\begin{pmatrix}-0.001\\0.065\\-0.216\\0.070\\0.157\\0.207\end{pmatrix} $$ The extended gradient (η) gives the total amount of selection on each trait caused by all the paths that are causally connected to that trait. The values for mrt and rpt are the same as their β_pa values, as both of these traits have only a direct effect on fitness. Now consider the difference between β_pa for mass in the path diagram (-0.033) and its η value (0.070). While the direct effect, mass→w, is negative, the total of the casual effects from mass, (mass→w) + (mass→rpt→w) + (mass→mrt→w), is $$ -0.033+(0.135\cdot0.157)+(0.396\cdot0.207)=0.070 $$ which is positive and larger in magnitude than the direct negative effect.
 
 
 ---
 
-## chapter30_038 · Measuring Multivariate Selection: Introduction / Selection on Latent Variables
+## chapter30_038 · PATH ANALYSIS AND FITNESS ESTIMATION / Selection on Latent Variables
 
 Another application of path analysis arises when unmeasured traits that are under selection influence measured traits (Maddox and Antonovics 1983; Crespi and Bookstein 1988; Crespi 1990; Pugesek and Tomer 1996). This bane of a regression analysis can, potentially, be partly addressed with path analysis. Further, many of the measured traits may be highly correlated, raising issues of high collinearity (and instability in regression estimates). If this correlation structure is in large part due to one, or a few, underlying latent variables, then by focusing on these underlying variables, this problem may largely disappear.
 
 For example, one common concern is that apparent selection on morphological traits may simply be a reflection of general selection on size (Figure 30.15). To this end, Crespi and Bookstein (1989) and Crespi (1990) suggested first extracting the leading principal component (PC 1) associated with the covariance matrix of the measured traits, which typically returns a generalized measure of size. Crespi and Bookstein then considered the univariate correlation of fitness of each size-adjusted trait, ignoring any further details about their correlation structure once size is removed.
+
+**[Figure]**
+
+> **Figure 30.15** · page 46 · source: `chapter30`
+>
+> ![Figure 30.15](../figures/fig_0185.png)
+>
+> Figure 30.15 Morphological traits  $ T_1 $ and  $ T_2 $ being examined for their effects on fitness,  $ w $. Left: Under a standard Lande-Arnold regression, we allow for direct effects of both traits on fitness ( $ w $) as well as for indirect effects from correlations between these two traits (double-headed arrow). Here,  $ e_w $ represents the additional variance in fitness that is not accounted for by the paths through  $ T_1 $ and  $ T_2 $. Right: Suppose size influences both traits as well as fitness. When we ignore size, it is possible that the correlation between trait value and fitness arises because the trait is serving as a surrogate for size. Because this is a missing trait (size was not included in the analysis), this effect would not be detected by a Lande-Arnold regression. However, by extracting a surrogate measure for size (such as PC 1) from the data, we can include it in the analysis. The path diagram allows for direct paths between size and fitness, and between both traits and fitness, after size effects have been removed ( $ T_1 \rightarrow w $,  $ T_2 \rightarrow w $).
+
 
 **[命题 Proposition]**
 
@@ -1015,9 +1075,18 @@ Care must be taken, however, when the traits show any allometry (growth pattern)
 
 ---
 
-## chapter30_039 · Measuring Multivariate Selection: Introduction / Elasticity Path Diagrams
+## chapter30_039 · PATH ANALYSIS AND FITNESS ESTIMATION / Elasticity Path Diagrams
 
 As we have seen, even very complex life histories can be represented as graphs (Figures 29.12 and 30.14). The impact of small demographic changes in the resulting transition matrix (or projection matrix) associated with this graph is measured by the elasticities of the elements in this matrix with respect to their impact on the population growth rate, $ \lambda $ (Chapter 29; Caswell 1989, 2001). If an element in the projection matrix has an elasticity of $ e $, then a proportional change of $ f $ in that element results in a proportional change of $ f \cdot e $ in $ \lambda $ (Equation 29.4b). Changes in elements with larger elasticities have a proportionally greater impact on $ \lambda $. For example, recall that Sæther and Bakke (2000) found average elasticity values in birds of 0.6 and 0.25 for viability and fecundity, respectively, which showed that changes in viability result in a much greater proportional change in the growth rate.
+
+**[Figure]**
+
+> **Figure 30.16** · page 47 · source: `chapter30`
+>
+> ![Figure 30.16](../figures/fig_0186.png)
+>
+> Figure 30.16 An example of the use of elastograms for problems arising in fishery management, showing an elastogram connecting two traits, annual juvenile growth rate and date of entry of a migrating individual into a river, with four fitness components influencing the population growth rate,  $ \lambda $. The impact of traits on the fitness components is assessed through their mean-standardized selection gradients ( $ \beta_{\mu} $) on each fitness component, while a matrix projection model was constructed to obtain the elasticities ( $ e_{i} $) of these fitness components on  $ \lambda $. Details are presented in Example 30.11. (After Matsumura et al. 2012.)
+
 
 **[推导 Derivation]**
 
@@ -1034,7 +1103,7 @@ Example 30.11 and Figure 30.16 show the power of this approach, and a detailed e
 
 > **Example 30.11** · ref: `30.11` · source: `chapter30_039.json` · blocks 3–3
 >
-> Example 30.11. Matsumura et al. (2012) simulated a model examining the impact of traits on the success of spawning migrations of salmon. Two traits of interest were the annual juvenile growth rate and the date of river entry for migrating individuals. Three survival measures (newborn, juvenile, and migration) as well as fecundity were taken as the fitness components. The impact of a trait on each of these components was measured by mean-standardized selection gradients, which correspond to elasticities of these components with respect to the trait (Equation 29.33e). Likewise, a demographic analysis using a population projection matrix (Chapter 29) evaluated the elasticities of these fitness components with respect to the population growth rate $ \lambda $ (see their paper for details). Figure 30.16 presents the resulting elastogram. Consider the impact of entry date on $ \lambda $. This trait impacts a single fitness component (migration survival) with an elasticity (mean-standardized gradient, $ \beta_{\mu} $) of 0.91, and migration survival has an elasticity ($ e_{i} $) of 0.25 on $ \lambda $, yielding (from Equation 30.34) an elasticity on $ \lambda $ as a function of this trait of 0.91 - 0.25 = 0.23. Hence, a 10% increase in mean entry date yields a 2.3% increase in the population growth rate. The second trait, juvenile growth rate, has significant effects on three fitness components. Its elasticity on $ \lambda $ through newborn survival is -0.71 - 0.25 = -0.18; through juvenile survival is -0.71 - 0.75 = -0.53, and through fecundity is 2.87 - 0.50 = 1.44; for a total elasticity (through all fitness components) of -0.18 - 0.53 + 1.44 = 0.725. Thus, a 10% increase in mean juvenile growth rate results in a 7.3% increase in $ \lambda $, mainly through its impact on fecundity (a 14% increase) and despite decreases of 1.8% and 5.3% in newborn and juvenile survival, respectively.
+> Example 30.11. Matsumura et al. (2012) simulated a model examining the impact of traits on the success of spawning migrations of salmon. Two traits of interest were the annual juvenile growth rate and the date of river entry for migrating individuals. Three survival measures (newborn, juvenile, and migration) as well as fecundity were taken as the fitness components. The impact of a trait on each of these components was measured by mean-standardized selection gradients, which correspond to elasticities of these components with respect to the trait (Equation 29.33e). Likewise, a demographic analysis using a population projection matrix (Chapter 29) evaluated the elasticities of these fitness components with respect to the population growth rate $ \lambda $ (see their paper for details). Figure 30.16 presents the resulting elastogram. Consider the impact of entry date on $ \lambda $. This trait impacts a single fitness component (migration survival) with an elasticity (mean-standardized gradient, $ \beta_{\mu} $) of 0.91, and migration survival has an elasticity ( $ e_{i} $) of 0.25 on $ \lambda $, yielding (from Equation 30.34) an elasticity on $ \lambda $ as a function of this trait of 0.91 - 0.25 = 0.23. Hence, a 10% increase in mean entry date yields a 2.3% increase in the population growth rate. The second trait, juvenile growth rate, has significant effects on three fitness components. Its elasticity on $ \lambda $ through newborn survival is -0.71 - 0.25 = -0.18; through juvenile survival is -0.71 - 0.75 = -0.53, and through fecundity is 2.87 - 0.50 = 1.44; for a total elasticity (through all fitness components) of -0.18 - 0.53 + 1.44 = 0.725. Thus, a 10% increase in mean juvenile growth rate results in a 7.3% increase in $ \lambda $, mainly through its impact on fecundity (a 14% increase) and despite decreases of 1.8% and 5.3% in newborn and juvenile survival, respectively.
 
 
 ---
@@ -1045,44 +1114,20 @@ Finally, while our focus (thus far) has been on predicting fitness given the phe
 
 ---
 
-## chapter30_041 · Measuring Multivariate Selection: Introduction / Contextual Analysis
+## chapter30_041 · LEVELS OF SELECTION / Contextual Analysis
 
 Heisler and Damuth (1987) proposed that any effects of selection acting at some level above that of the individual can be estimated with the method of contextual analysis, which is widely used in the social sciences (e.g., Boyd and Iversen 1979). This regression-based approach amounts to simply adding group-level traits to a Lande-Arnold regression. Traits scored at the level of groups can be aggregate characters (simple functions of the individual phenotypes within a group, such as the group mean), or they can be global or emergent characters that can only be defined at the group level (such as number of group members or group density). As the following example illustrates, incorporating group-level traits into the Lande-Arnold fitness regression is straightforward.
 
 **[示例 Example]**
 
-> **Example 30.12** · ref: `30.12` · source: `chapter30_041.json` · blocks 1–1
+> **Example 30.12** · ref: `30.12` · source: `chapter30_041.json` · blocks 1–8
 >
-> Example 30.12. Aspi et al. (2003) examined the effects of selection on the riparian plant Silene tatarica, a threatened species from Finland in the family Caryophilleaceae. Plants tend to grow in patches and the authors envisioned that plant density within a patch might influence both pollinator visits and herbivory. The individual traits measured were plant height ($ z_{1} $) and number of stems ($ z_{2} $), while two aggregate traits were measured (the means $ \overline{z}_{1} $ and $ \overline{z}_{2} $ of each trait for the patch) along with the group-level trait of plant density, d. The resulting regression model for predicting the relative fitness of individual j in patch i becomes $$ w_{ij}=1+\beta_{1}z_{1,ij}+\beta_{2}z_{2,ij}+\beta_{3}\overline{z}_{1,i}+\beta_{4}\overline{z}_{2,i}+\beta_{5}d_{i}+e_{ij} $$
-> 
-> The regression coefficients $ \beta_1 $ and $ \beta_2 $ correspond to direct selection on individual trait values, while $ \beta_3 $ and $ \beta_4 $ correspond to direct selection on the patch mean of each trait, and $ \beta_5 $ to direct selection on the density within a patch. Aspi et al. variance-standardized all variables, so a one standard deviation change in the variable of interest results in an expected change of $ \beta $ in fitness. For data collected in 1999, the estimated regression coefficients for a sample of 922 individuals were $$ \begin{array}{l}\underline{\text{Height}}\quad Mean height\quad Stem No.\quad Mean stem No.\quad Density\\\beta\quad0.589^{***}\quad0.653^{***}\quad0.187^{**}\quad-0.209^{***}\quad0.631^{***}\end{array} $$
-> 
-> All of the $ \beta $ were significant, with $ * $* denoting p < 0.01 and $ * $* $ * $* denoting p < 0.001. Note that (on a standardized scale) selection on group density is as strong as individual selection. Selection on height at the individual and group levels was in the same direction, which the authors suggested was due to pollinator attraction. However, selection on stems was in opposite directions, with individual selection increasing the number of stems, but patch-level selection decreasing them. The authors suggested that patch-level selection may be due to herbivory by reindeer.
-> 
-> A contextual analysis need not stop at two levels, as this approach easily extends to additional hierarchical levels of population organization, and hence allows for the potential for selection at these higher levels as well. Indeed, in some settings the individual level is ignored, and only higher levels of organization are contrasted. One example of this involves the work of Banschbach and Herbers (1996), who compared selection on nest- versus colony-level traits in a forest ant (Myrmica punctiventris), and found that fertility selection largely operates at the level of the nest, as opposed to the level of multiple-nest colonies.
-> 
-> In many settings, group composition is fairly obvious, due to a patchy distribution of individuals in space. However, in some situations, the appropriate set of individuals to include in a group is unclear. Indeed, for populations where individuals appear to be continuously distributed in space with few obvious breaks, group-level effects may be present when very close individuals are included yet largely disappear as the defined group becomes larger. In theory, one could assign different group sizes and use model-selection approaches to determine the group structure that gives the best fit of the fitness regression. However, care must be taken to distinguish a statistical fit from biological reality. A very reasonable biological definition of a group was offered by Uyenonyama and Feldman (1981), namely, the set of all individuals that influence the fitness of a focal individual.
-> 
-> An alternative to using group means is to model neighbor interactions that influence fitness (e.g., Equation 22.59a). In such cases, the fitness of a focal individual, i, can be written (for a single trait) as
-> 
-> > **Formula (30.35a)** · `30.35a` · source: `chapter30_block_193` · Contextual Analysis
-> >
-> > $$ w_{i}=1+\beta_{1}z_{i}+\beta_{2}\Big(\sum_{i\neq j}z_{j}\Big)+e_{i} $$
-> 
-> 
-> Note that under this model, the group mean (which contains the value of the focal individual) is replaced by the interactions caused by the neighbors of the focal individual (the members in the sum). This model is easily connected to the model using the standard selection on group model by noting that $$ \sum_{i\neq j}z_{j}=n\overline{z}-z_{i} $$ when i interacts with n - 1 neighbors. Hence, we can express Equation 30.35a as
-> 
-> > **Formula (30.35b)** · `30.35b` · source: `chapter30_block_194` · Contextual Analysis
-> >
-> > $$ \begin{aligned}w_{i}&=1+\beta_{1}z_{i}+\beta_{2}\Big(n\overline{z}-z_{i}\Big)+e_{i}\\&=1+\big(\beta_{1}-\beta_{2}\big)z_{i}+\beta_{2}n\overline{z}+e_{i}\end{aligned} $$
-> 
-> 
-> The subtle distinction between the group-mean (Equation 30.35b) and neighborhood-fitness (Equation 30.35a) models is apparent in the case where only the neighbors influence the fitness of an individual. In this case, $ \beta_1 = 0 $, $ \beta_2 \neq 0 $, so that in the neighborhood-fitness model there is no weight on individual value. However, if a group-mean fitness model is fitted to these same data, there will be a nonzero regression slope on individual fitness (a value of $ -\beta_2 $), reflecting the input of an individual's value to its group mean. One could also weight the interactions in Equation 30.30a, for example, by replacing $ z_j $ with $ f_{ij}z_j $, where $ f_{ij} $ is some measure of the amount of interaction between i and j, such as distance between plants or fraction of time observed interacting (Chapter 22).
+> Example 30.12. Aspi et al. (2003) examined the effects of selection on the riparian plant Silene tatarica, a threatened species from Finland in the family Caryophilleaceae. Plants tend to grow in patches and the authors envisioned that plant density within a patch might influence both pollinator visits and herbivory. The individual traits measured were plant height ( $ z_{1} $) and number of stems ( $ z_{2} $), while two aggregate traits were measured (the means $ \overline{z}_{1} $ and $ \overline{z}_{2} $ of each trait for the patch) along with the group-level trait of plant density, d. The resulting regression model for predicting the relative fitness of individual j in patch i becomes $$ w_{ij}=1+\beta_{1}z_{1,ij}+\beta_{2}z_{2,ij}+\beta_{3}\overline{z}_{1,i}+\beta_{4}\overline{z}_{2,i}+\beta_{5}d_{i}+e_{ij} $$ The regression coefficients $ \beta_1 $ and $ \beta_2 $ correspond to direct selection on individual trait values, while $ \beta_3 $ and $ \beta_4 $ correspond to direct selection on the patch mean of each trait, and $ \beta_5 $ to direct selection on the density within a patch. Aspi et al. variance-standardized all variables, so a one standard deviation change in the variable of interest results in an expected change of $ \beta $ in fitness. For data collected in 1999, the estimated regression coefficients for a sample of 922 individuals were $$ \begin{array}{l}\underline{\text{Height}}\quad Mean height\quad Stem No.\quad Mean stem No.\quad Density\\\beta\quad0.589^{***}\quad0.653^{***}\quad0.187^{**}\quad-0.209^{***}\quad0.631^{***}\end{array} $$ All of the $ \beta $ were significant, with $ * $* denoting p < 0.01 and $ * $* $ * $* denoting p < 0.001. Note that (on a standardized scale) selection on group density is as strong as individual selection. Selection on height at the individual and group levels was in the same direction, which the authors suggested was due to pollinator attraction. However, selection on stems was in opposite directions, with individual selection increasing the number of stems, but patch-level selection decreasing them. The authors suggested that patch-level selection may be due to herbivory by reindeer. A contextual analysis need not stop at two levels, as this approach easily extends to additional hierarchical levels of population organization, and hence allows for the potential for selection at these higher levels as well. Indeed, in some settings the individual level is ignored, and only higher levels of organization are contrasted. One example of this involves the work of Banschbach and Herbers (1996), who compared selection on nest- versus colony-level traits in a forest ant (Myrmica punctiventris), and found that fertility selection largely operates at the level of the nest, as opposed to the level of multiple-nest colonies. In many settings, group composition is fairly obvious, due to a patchy distribution of individuals in space. However, in some situations, the appropriate set of individuals to include in a group is unclear. Indeed, for populations where individuals appear to be continuously distributed in space with few obvious breaks, group-level effects may be present when very close individuals are included yet largely disappear as the defined group becomes larger. In theory, one could assign different group sizes and use model-selection approaches to determine the group structure that gives the best fit of the fitness regression. However, care must be taken to distinguish a statistical fit from biological reality. A very reasonable biological definition of a group was offered by Uyenonyama and Feldman (1981), namely, the set of all individuals that influence the fitness of a focal individual. An alternative to using group means is to model neighbor interactions that influence fitness (e.g., Equation 22.59a). In such cases, the fitness of a focal individual, i, can be written (for a single trait) as $$ w_{i}=1+\beta_{1}z_{i}+\beta_{2}\Big(\sum_{i\neq j}z_{j}\Big)+e_{i} $$ (30.35a) Note that under this model, the group mean (which contains the value of the focal individual) is replaced by the interactions caused by the neighbors of the focal individual (the members in the sum). This model is easily connected to the model using the standard selection on group model by noting that $$ \sum_{i\neq j}z_{j}=n\overline{z}-z_{i} $$ when i interacts with n - 1 neighbors. Hence, we can express Equation 30.35a as $$ \begin{aligned}w_{i}&=1+\beta_{1}z_{i}+\beta_{2}\Big(n\overline{z}-z_{i}\Big)+e_{i}\\&=1+\big(\beta_{1}-\beta_{2}\big)z_{i}+\beta_{2}n\overline{z}+e_{i}\end{aligned} $$ (30.35b) The subtle distinction between the group-mean (Equation 30.35b) and neighborhood-fitness (Equation 30.35a) models is apparent in the case where only the neighbors influence the fitness of an individual. In this case, $ \beta_1 = 0 $, $ \beta_2 \neq 0 $, so that in the neighborhood-fitness model there is no weight on individual value. However, if a group-mean fitness model is fitted to these same data, there will be a nonzero regression slope on individual fitness (a value of $ -\beta_2 $), reflecting the input of an individual's value to its group mean. One could also weight the interactions in Equation 30.30a, for example, by replacing $ z_j $ with $ f_{ij}z_j $, where $ f_{ij} $ is some measure of the amount of interaction between i and j, such as distance between plants or fraction of time observed interacting (Chapter 22).
 
 
 ---
 
-## chapter30_042 · Measuring Multivariate Selection: Introduction / Selection Can Be Antagonistic Across Levels
+## chapter30_042 · LEVELS OF SELECTION / Selection Can Be Antagonistic Across Levels
 
 When selection is operating at both the individual and group levels, there is no a priori reason why its direction should be the same at the two levels. When the direction is the same and group-level effects are ignored, the effects of individual selection are overestimated. The more interesting case is that in which individual and group-level selection are antagonistic, working in opposite directions. Example 30.12 illustrates both cases: for height, selection at both levels was in the same direction, while for stem number, selection was in opposite directions at the individual and group levels. Antagonistic selection is commonly seen in the limited number of studies that have estimated multilevel selection components, although this might, in part, be due to a bias in initially choosing traits that are expected to be under differential individual, versus group, selection pressure.
 
@@ -1090,7 +1135,7 @@ One of the first applications of contextual analysis to levels-of-selection was 
 
 ---
 
-## chapter30_043 · Measuring Multivariate Selection: Introduction / Group Selection Is Likely Density-Dependent
+## chapter30_043 · LEVELS OF SELECTION / Group Selection Is Likely Density-Dependent
 
 A number of workers (Goodnight et al. 1992; Donohue 2003, 2004) have suggested that at low density, group selection may be weak (or essentially absent), with individual selection dominating. As group density increases, so does competition, which may increase group effects. An empirical observation from plant ecology, the law of constant final yield (Harper 1977; Weiner and Freckleton 2010), has been offered as support for this view (Goodnight et al. 1992). Plant ecologists have noted that the total yield of a group initially increases with low density, but after a certain critical density is reached, the total biomass of the group remains roughly constant. Even though more plants are now in the group, their individual contribution has decreased. Goodnight et al. suggested that this law results from a balance between group and individual selection. One consequence of potential density-dependence at the group level is that an analysis of individual selection that ignores a group selection component can be mistaken for frequency-dependent selection (Uyenonyama and Feldman 1980, 1981; Damuth and Heisler 1988).
 
@@ -1098,7 +1143,7 @@ Working with the Great Lake sea rocket (Cakile edentual), a plant in the family 
 
 ---
 
-## chapter30_044 · Measuring Multivariate Selection: Introduction / Selection Differentials Can Be Misleading in Levels of Selection
+## chapter30_044 · LEVELS OF SELECTION / Selection Differentials Can Be Misleading in Levels of Selection
 
 **[推导 Derivation]**
 
@@ -1139,19 +1184,11 @@ If we recall (LW Chapter 3) that the slope of a univariate regression is the cov
 
 Hence, a nonzero covariance implies a nonzero slope, and an investigator using this simple univariate regression would conclude that group selection is occurring on this trait. In reality, as we will see shortly, strict individual selection can generate a group-level covariance, and hence (in this case), a spurious assignment of a group-level effect to selection. By using a multiple regression that includes both individual and group mean values, a contextual analysis corrects for this concern (provided selection is limited to only these two levels).
 
-**[Table]**
-
-> **Table 30.2** · `30.2` · page 53 · source: `chapter30_044`
-> Table 30.2 Hard, soft, and strict group selection can all be expressed as special cases of a more general contextual analysis. Model 1 presents the contextual regression coefficients (Equation 30.38a) on individual value  $ (z_{ij}) $ and group mean  $ (\overline{z}_i) $. Model 2 presents the regression coefficients when the contextual analysis is framed in terms of within-group deviations and group means (Equation 30.38b). To contrast these results with those from the covariance criteria for group selection, the table also shows whether the type of selection results in a nonzero within-group  $ (S_w) $ or among-group  $ (S_b) $ selection differential and whether the among-group variance in mean fitness,  $ \sigma^2(\overline{w}_i) $, is nonzero.
->
-> <table><tr><td></td><td colspan="2">Model 1</td><td colspan="2">Model 2</td><td rowspan="2">$ S_{w} \neq 0 $</td><td rowspan="2">$ S_{b} \neq 0 $</td><td rowspan="2">$ \sigma^{2}(\overline{w}_{i}) &gt; 0 $</td></tr><tr><td>Selection</td><td>$ z_{ij} $</td><td>$ \overline{z}_{i} $</td><td>$ (z_{ij} - \overline{z}_{i}) $</td><td>$ \overline{z}_{i} $</td></tr><tr><td>Hard</td><td>$ \beta $</td><td>0</td><td>$ \beta $</td><td>$ \beta $</td><td>Yes</td><td>Yes</td><td>Yes</td></tr><tr><td>Soft</td><td>$ \beta $</td><td>$ -\beta $</td><td>$ \beta $</td><td>0</td><td>Yes</td><td>No</td><td>No</td></tr><tr><td>Strict group</td><td>0</td><td>$ \beta $</td><td>0</td><td>$ \beta $</td><td>Yes</td><td>Yes</td><td>Yes</td></tr></table>
-
-
 The use of selection differentials correctly determined the presence of positive directional selection on both individual height and stem number. However, the analysis also suggested that there were no among-patch effects (no selection on patch means), when in fact contextual analysis shows that these effects are highly significant for both traits (Example 30.12).
 
 ---
 
-## chapter30_045 · Measuring Multivariate Selection: Introduction / Hard, Soft, and Group Selection: A Contextual Analysis Viewpoint
+## chapter30_045 · LEVELS OF SELECTION / Hard, Soft, and Group Selection: A Contextual Analysis Viewpoint
 
 Evolutionary biology has had an unfortunate history of, at times, being constrained by thinking about complex evolutionary processes in terms of simple catch phrases. We have seen examples of this with kin versus group selection, showing in Chapter 22 that these are special cases of the more general problem of selection with interacting individuals. Likewise, in this (and the previous) chapter, we have seen that the widely used terms of stabilizing and disruptive selection are special cases of the more general situation of a quadratic term (curvature) in the individual fitness surface. It should therefore not be surprising that there is some confusion with the exact meaning of group selection in the more general context of multilevel selection (reviewed by Okasha 2004, 2006). In the Price covariance framework, group selection is indicated by a nonzero covariance between the mean fitness and the mean trait value of a group, $ \sigma(\overline{z}_i, \overline{w}_i) \neq 0 $. This line of reasoning implies that across groups there must be variance in mean fitness, $ \sigma^2(\overline{w}_i) \neq 0 $, for group selection to exist. However, as stressed by Goodnight et al. (1992; Goodnight 2013, 2015), these covariance conditions for defining group selection are misleading. One can have group selection in the absence of variance in mean fitness across groups, and likewise, strict individual selection can still generate a covariance between group mean fitness and group mean trait value.
 
@@ -1173,6 +1210,23 @@ We can also rewrite this regression in terms of selection on the within-group de
 > **Formula (30.38b)** · `30.38b` · source: `chapter30_block_212` · Hard, Soft, and Group Selection: A Contextual Analysis Viewpoint
 >
 > $$ w_{ij}=1+\beta_{1}^{*}\left(z_{ij}-\overline{z}_{i}\right)+\beta_{2}^{*}\overline{z}_{i}+e_{ij} $$
+
+
+**[Table]**
+
+> **Table 30.2** · `30.2` · page 53 · source: `chapter30_045`
+> Table 30.2 Hard, soft, and strict group selection can all be expressed as special cases of a more general contextual analysis. Model 1 presents the contextual regression coefficients (Equation 30.38a) on individual value  $ (z_{ij}) $ and group mean  $ (\overline{z}_i) $. Model 2 presents the regression coefficients when the contextual analysis is framed in terms of within-group deviations and group means (Equation 30.38b). To contrast these results with those from the covariance criteria for group selection, the table also shows whether the type of selection results in a nonzero within-group  $ (S_w) $ or among-group  $ (S_b) $ selection differential and whether the among-group variance in mean fitness,  $ \sigma^2(\overline{w}_i) $, is nonzero.
+>
+> <table><tr><td></td><td colspan="2">Model 1</td><td colspan="2">Model 2</td><td rowspan="2">$ S_{w} \neq 0 $</td><td rowspan="2">$ S_{b} \neq 0 $</td><td rowspan="2">$ \sigma^{2}(\overline{w}_{i}) &gt; 0 $</td></tr><tr><td>Selection</td><td>$ z_{ij} $</td><td>$ \overline{z}_{i} $</td><td>$ (z_{ij} - \overline{z}_{i}) $</td><td>$ \overline{z}_{i} $</td></tr><tr><td>Hard</td><td>$ \beta $</td><td>0</td><td>$ \beta $</td><td>$ \beta $</td><td>Yes</td><td>Yes</td><td>Yes</td></tr><tr><td>Soft</td><td>$ \beta $</td><td>$ -\beta $</td><td>$ \beta $</td><td>0</td><td>Yes</td><td>No</td><td>No</td></tr><tr><td>Strict group</td><td>0</td><td>$ \beta $</td><td>0</td><td>$ \beta $</td><td>Yes</td><td>Yes</td><td>Yes</td></tr></table>
+
+
+**[Figure]**
+
+> **Figure 30.17** · page 53 · source: `chapter30`
+>
+> ![Figure 30.17](../figures/fig_0187.png)
+>
+> Figure 30.17 The regression of fitness on trait value within each group (solid line) and between the group means (dotted line). Under strict group selection (left), an individual's phenotypic value within a group has no predictive value on fitness (a within-group regression slope of zero), while the regression of fitness on group means is positive (a nonzero regression of individual fitness on group mean). Under soft selection (center), fitness is entirely determined by the within-group deviation. The result is a significant within-group regression but no among-group regression. Finally, under hard selection (right), fitness is entirely a function of phenotype, so that both the within-group and among-group regressions have the same slope (solid lines embedded with the dotted line with the same slope). (After Goodnight et al. 1992.)
 
 
 **[推导 Derivation]**
@@ -1214,9 +1268,18 @@ while written here as a univariate regression, formally we have $ \beta_1 = 0 $ 
 
 ---
 
-## chapter30_046 · Measuring Multivariate Selection: Introduction / Early Survival: Offspring or Maternal Fitness Component?
+## chapter30_046 · LEVELS OF SELECTION / Early Survival: Offspring or Maternal Fitness Component?
 
 As mentioned in Chapters 15 and 22, a classic example of a levels-of-selection problem is maternal care, wherein features of both the mother and offspring may influence offspring survival. An area of some contention, especially among biologists working with species that display extensive maternal care (i.e., ornithologists and mammalianogists), is whether the fitness associated with early survival should be assigned to the mother (acknowledging her maternal performance) or to the offspring (acknowledging features of their own that enhance survival). As mentioned in Chapter 29, the fitness of a mother is often scored as the number of her offspring remaining after some interval of potential early offspring mortality, rather than simply the total number of offspring that she produced. For birds, the number of hatchlings, fledglings, or recruits (offspring that have mated) are used as the measure of female fitness, rather than the number of eggs. In mammals, the number of weaned offspring or recruits is often used in place of number of births. This notion of fitness crossing generations has proponents (e.g., Clutton-Brock 1988) and opponents (Arnold 1983a; Lande and Arnold 1983; Cheverud 1984b; Thomson and Hadfield 2017), in part because different questions are being asked by the two sides. The implications of assigning fitnesses of offspring to their mothers (i.e., their early survival is part of their mother's fitness), and what potential biases this may induce, were examined by Wolf and Wade (2009; also see Thomson and Hadfield 2017), whose approach we closely follow.
+
+**[Figure]**
+
+> **Figure 30.18** · page 55 · source: `chapter30`
+>
+> ![Figure 30.18](../figures/fig_0188.png)
+>
+> Figure 30.18 Alternate assignment of fitness, $w$, between an offspring and its mother. A: Suppose the true fitness is given by the offspring-fitness model. Here, the early survival of an offspring is a function of its phenotype, $z_{o}$, and the value of a maternal trait, $z_{m(t-1)}$, in its mother. The displayed path diagram is for female offspring, who have a potential extra component of fitness, as there may be a fitness cost when the offspring express the maternal trait, $z_{m(t)}$. This path through $z_{m(t)}$ is absent in males as they are assumed to not display this trait. B: The mixed-fitness model. Early offspring survival is now assigned to the mother (scoring maternal fitness as her number of fledglings or recruits). Under this model, we only follow the maternal trait value in the mother, $z_{m(t-1)}$, as opposed to the offspring-fitness model, where we also must follow the trait in the offspring, $z_{m(t)}$. As a result, there is only a single covariance (doubleheaded arrow) in the mixed-fitness model, connecting $z_{m(t-1)}$ and $z_{o(t)}$. In contrast, the offspring-fitness model (A) has two additional covariances: a cross-generational one between $z_{m(t-1)}$ and $z_{m(t)}$ and a within-generational one between $z_{m(t)}$ and $z_{o(t)}$. In (A), $z_{m(t)}$ is sex-limited and only impacts female offspring, while in both (A) and (B), all offspring have a mother and hence are impacted by $z_{m(t-1)}$ (After Wolf and Wade 2009.)
+
 
 **[推导 Derivation]**
 
@@ -1236,7 +1299,7 @@ where $ b_{o} $ and $ b_{m} $ measure the strengths of selection on offspring va
 
 **[推导 Derivation]**
 
-Figure 30.18A presents the path diagram for this fitness model. If we assume that Equations 30.40a and 30.40b represent the correct fitness model, the selection differential, $ S_{m} $, on the maternal trait value, $ z_{m} $, can be computed from the Robertson-Price identity (Equation 6.10). Because $ w(t) $ depends on whether the offspring is male or female, we let $ \delta_{f} $ be a zero (for male) or one (for female) indicator variable. Equations 30.40a, 30.40b and 6.10 yield
+Figure 30.18 presents the path diagram for this fitness model. If we assume that Equations 30.40a and 30.40b represent the correct fitness model, the selection differential, $ S_{m} $, on the maternal trait value, $ z_{m} $, can be computed from the Robertson-Price identity (Equation 6.10). Because $ w(t) $ depends on whether the offspring is male or female, we let $ \delta_{f} $ be a zero (for male) or one (for female) indicator variable. Equations 30.40a, 30.40b and 6.10 yield
 
 > **Formula (30.40c)** · `30.40c` · source: `chapter30_block_221` · Early Survival: Offspring or Maternal Fitness Component?
 >
@@ -1254,7 +1317,7 @@ This last step assumes that $ \sigma(z_{o(t)}, z_{m(t)}) = \sigma(A_{o(t)} + e_{
 
 **[推导 Derivation]**
 
-Now suppose that an investigator assumes the offspring fitness is assigned to its mother (Figure 30.18B), which Thomson and Hadfield (2017) call the mixed-fitness model. The mother's total fitness can be considered as the sum of two separate episodes: selection on early survival in her offspring, $ w_{o(t)} $, and selection on her maternal trait, $ w_{m(t-1)} $, where
+Now suppose that an investigator assumes the offspring fitness is assigned to its mother (Figure 30.18), which Thomson and Hadfield (2017) call the mixed-fitness model. The mother's total fitness can be considered as the sum of two separate episodes: selection on early survival in her offspring, $ w_{o(t)} $, and selection on her maternal trait, $ w_{m(t-1)} $, where
 
 > **Formula (30.41a)** · `30.41a` · source: `chapter30_block_223` · Early Survival: Offspring or Maternal Fitness Component?
 >

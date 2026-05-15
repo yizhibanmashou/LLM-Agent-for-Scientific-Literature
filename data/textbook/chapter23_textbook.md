@@ -1,4 +1,4 @@
-# Chapter 23 Textbook Mapping
+# Chapter 23 · Selection Under Inbreeding
 
 ## chapter23_001 · Selection Under Inbreeding: Introduction
 
@@ -20,7 +20,7 @@ Conversely, plant breeders (and others dealing with species that mainly self) of
 
 ---
 
-## chapter23_003 · Selection Under Inbreeding: Introduction / Accounting for Inbreeding Depression
+## chapter23_003 · BASIC ISSUES IN SELECTION RESPONSE UNDER INBREEDING / Accounting for Inbreeding Depression
 
 **[命题 Proposition]**
 
@@ -68,7 +68,7 @@ Equations 23.1a and 23.1b show that the importance of our standard assumption of
 
 ---
 
-## chapter23_004 · Selection Under Inbreeding: Introduction / Response Under Small Amounts of Inbreeding
+## chapter23_004 · BASIC ISSUES IN SELECTION RESPONSE UNDER INBREEDING / Response Under Small Amounts of Inbreeding
 
 **[推导 Derivation]**
 
@@ -109,7 +109,7 @@ A key point in species showing inbreeding depression is that even if the target 
 
 ---
 
-## chapter23_005 · Selection Under Inbreeding: Introduction / Using Ancestral Regressions to Predict Response
+## chapter23_005 · BASIC ISSUES IN SELECTION RESPONSE UNDER INBREEDING / Using Ancestral Regressions to Predict Response
 
 **[命题 Proposition]**
 
@@ -163,7 +163,7 @@ Inspection of Equation 23.5a and 23.5b highlights a key feature of response with
 
 ---
 
-## chapter23_006 · Selection Under Inbreeding: Introduction / The Covariance Between Inbred Relatives
+## chapter23_006 · BASIC ISSUES IN SELECTION RESPONSE UNDER INBREEDING / The Covariance Between Inbred Relatives
 
 **[推导 Derivation]**
 
@@ -189,7 +189,7 @@ The nature of the identity-by-descent (IBD) measures, $ \Delta_i $, provides som
 
 ---
 
-## chapter23_007 · Selection Under Inbreeding: Introduction / Limitations
+## chapter23_007 · BASIC ISSUES IN SELECTION RESPONSE UNDER INBREEDING / Limitations
 
 **[命题 Proposition]**
 
@@ -198,6 +198,15 @@ The major limitation with the ancestral regression approach is the assumption th
 ---
 
 ## chapter23_008 · Selection Under Inbreeding: Introduction / FAMILY SELECTION WITH INBREEDING AND RANDOM MATING
+
+**[Figure]**
+
+> **Figure 23.1** · page 7 · source: `chapter23`
+>
+> ![Figure 23.1](../figures/fig_0102.png)
+>
+> Figure 23.1 The  $ \Delta_{i} $ coefficients of relatedness and their impact on the genetic covariance between relatives. Following Figure 11.5, the upper two dots correspond to the two alleles in (diploid) relative x, and the bottom two to those in relative y. A horizontal line indicates inbreeding in that relative (the two alleles are identical by descent, IBD), while a line connecting alleles from different relatives indicates that these alleles are IBD. See Figure 11.5 and Chapter 11 for details.
+
 
 **[推导 Derivation]**
 
@@ -241,7 +250,7 @@ This is mainly for ease of bookkeeping, as Equations 21.41–21.43 illustrated s
 
 ---
 
-## chapter23_009 · Selection Under Inbreeding: Introduction / Family Selection Using Inbred Parents
+## chapter23_009 · FAMILY SELECTION WITH INBREEDING AND RANDOM MATING / Family Selection Using Inbred Parents
 
 **[推导 Derivation]**
 
@@ -300,24 +309,22 @@ Substitution of these results into Equation 21.1 yields the response to a single
 
 parents ($f=0$). This is also true for full-sibs when $\sigma_D^2$ is small. However, random mating can yield a larger response if $\sigma_D^2$ is sufficiently large.
 
-**[示例 Example]**
+**[推导 Derivation]**
 
-> **Example 23.1** · ref: `23.1` · source: `chapter23_009.json` · blocks 7–7
+Finally, our assumption that $ \sigma_e^2 $ is a constant (over both $ f $ and the designs) deserves additional comment. Under the simplest design of $ n $ sibs scored in a single plot in a single environment, then from Equation 23.8c,
+
+> **Formula (23.8c)** · `23.8c` · source: `chapter23_block_036` · FAMILY SELECTION WITH INBREEDING AND RANDOM MATING
 >
-> Example 23.1. To get some feel for the impact of inbreeding, consider the selection response for different types of family selection as $f$ increases. Assume we have a trait with $\sigma_A^2 = 50$ and $\sigma_D^2 = 25$. To simply the discussion, we assume the same value of the residual variance (Equation 23.8c) over all designs, namely, $\sigma_e^2 = 50$. Using the expression summarized in Table 23.1, the response to half-sib, full-sib, and parental selection for various values of parent inbreeding ($f$) are given below as a fraction of the response for $f = 0$ (random mating). The values in the $R/\bar{r}$ column are the expected responses under $f = 0$, while the values in the columns for $f > 0$ represent the ratio of response for that $f$ value relative to the response under random mating. For example, the $R/\bar{r}$ ratio for full-sibs with $f = 1/4$ is 2.774 $\cdot$ 1.181 = 3.276. Fraction of random-mating response
-> 
-> > **Inline Table 1** · `inline_1` · page 10 · source: `chapter23_009`
-> > Inline Table 1
-> >
-> > <table><tr><td>Selection</td><td>R/ $ \bar{r} $</td><td>f = 1/8</td><td>f = 1/4</td><td>f = 1/2</td><td>f = 3/4</td><td>f = 1</td></tr><tr><td colspan="7">Half-sib</td></tr><tr><td>Reminant seed</td><td>1.581</td><td>1.111</td><td>1.220</td><td>1.430</td><td>1.632</td><td>1.826</td></tr><tr><td>Parental</td><td>3.162</td><td>1.111</td><td>1.220</td><td>1.430</td><td>1.632</td><td>1.826</td></tr><tr><td>Full-sib</td><td>2.774</td><td>1.093</td><td>1.181</td><td>1.342</td><td>1.485</td><td>1.612</td></tr></table>
-> 
-> 
-> Finally, our assumption that $ \sigma_e^2 $ is a constant (over both $ f $ and the designs) deserves additional comment. Under the simplest design of $ n $ sibs scored in a single plot in a single environment, then from Equation 23.8c, $$ \sigma_{e}^{2}=\sigma_{E_{c}}^{2}+[\sigma_{G_{w}}^{2}+\sigma_{E_{s}}^{2}]/n $$ Clearly, in the case of paternal half-sibs, $ \sigma_{E_c}^2 $ is expected to be smaller (and can be much smaller) relative to designs with a common mother (and hence, there is the prospect of a much larger common-family effect). Further, different types of families might logically be expected to vary in $n$, for example, one can usually generate more half-sibs than full sibs. For designs with more structure in the replication scheme, we can write $\sigma_e^2 = \sigma_{E_c}^2 + \sigma^2(\epsilon)$, where Equations 21.41c, 21.42a, and 21.42b provide examples of the structure of $\sigma^2(\epsilon)$. Finally, $\sigma_{G_w}^2$ also changes with inbreeding. Our assumption of a constant value of $\sigma_e^2$ is an approximation, assuming that $n$ is relatively large, meaning that changes in $\sigma_{G_w}^2$ with $f$ do not significantly impact $\sigma_e^2$.
+> $$ \sigma_{e}^{2}=\sigma_{E_{c}}^{2}+[\sigma_{G_{w}}^{2}+\sigma_{E_{s}}^{2}]/n $$
 
+
+**[命题 Proposition]**
+
+Clearly, in the case of paternal half-sibs, $ \sigma_{E_c}^2 $ is expected to be smaller (and can be much smaller) relative to designs with a common mother (and hence, there is the prospect of a much larger common-family effect). Further, different types of families might logically be expected to vary in $n$, for example, one can usually generate more half-sibs than full sibs. For designs with more structure in the replication scheme, we can write $\sigma_e^2 = \sigma_{E_c}^2 + \sigma^2(\epsilon)$, where Equations 21.41c, 21.42a, and 21.42b provide examples of the structure of $\sigma^2(\epsilon)$. Finally, $\sigma_{G_w}^2$ also changes with inbreeding. Our assumption of a constant value of $\sigma_e^2$ is an approximation, assuming that $n$ is relatively large, meaning that changes in $\sigma_{G_w}^2$ with $f$ do not significantly impact $\sigma_e^2$.
 
 ---
 
-## chapter23_010 · Selection Under Inbreeding: Introduction / Progeny Testing Using Inbred Offspring
+## chapter23_010 · FAMILY SELECTION WITH INBREEDING AND RANDOM MATING / Progeny Testing Using Inbred Offspring
 
 **[命题 Proposition]**
 
@@ -363,7 +370,7 @@ By comparison, if the dam and sire are unrelated, the above two covariances are 
 
 ---
 
-## chapter23_011 · Selection Under Inbreeding: Introduction / $ S_{1}, S_{2}, \text{and } S_{i,j} $ Family Selection
+## chapter23_011 · FAMILY SELECTION WITH INBREEDING AND RANDOM MATING / $ S_{1}, S_{2}, \text{and } S_{i,j} $ Family Selection
 
 Another scheme for family selection using inbreeding is $ S_1 $ family selection, wherein an (outbred) individual is selfed, and the family mean of the selfed progeny is used for selection decisions (i.e., individuals are chosen based on the mean trait value of their $ S_1 $ family). This scheme takes two generations. In the first generation, the selfed seed must be grown for scoring families. An additional generation is then required for remnant $ S_1 $ seeds from superior families to be grown and outcrossed to form the start of the next cycle of selection. Note that $ S_1 $ family selection is different from $ S_1 $ seed selection (the latter is discussed in Chapter 21). While seed selection also uses remnant $ S_1 $ seeds as the recombination unit, the tested family under $ S_1 $ seed selection consists of outbred half-sibs, rather than the $ S_1 $-sibs used in family selection.
 
@@ -399,7 +406,7 @@ However, it is fairly easily to obtain a variance component-based expression (an
 > **Table 23.2** · `23.2` · page 13 · source: `chapter23_011`
 > Table 23.2 Coefficients for Equation 23.14, the selection unit-offspring covariance under $ S_{i,j} $ family selection. The column under $ \sigma_{A}^{2} $ gives the coefficient for the additive variance (which is a function of only i), while the $ \sigma_{ADI} $ coefficient is also a function of j and is shown in the remaining columns.
 >
-> i | $ \sigma_{A}^{2} $ | $\sigma_{ADI}$, $ j=i+1 $ | $\sigma_{ADI}$, $ j=i+2 $ | $\sigma_{ADI}$, $ j=i+3 $ | $\sigma_{ADI}$, $ j=i+4 $ | $\sigma_{ADI}$, $ j=i+5 $ | $\sigma_{ADI}$, $ j=\infty $
+> i | $\sigma_{A}^{2}$ | $\sigma_{ADI}$, $ j=i+1 $ | $\sigma_{ADI}$, $ j=i+2 $ | $\sigma_{ADI}$, $ j=i+3 $ | $\sigma_{ADI}$, $ j=i+4 $ | $\sigma_{ADI}$, $ j=i+5 $ | $\sigma_{ADI}$, $ j=\infty $
 > --- | --- | --- | --- | --- | --- | --- | ---
 > 0 | 1.00 | 0.50 | 0.75 | 0.88 | 0.94 | 0.97 | 1.00
 > 1 | 1.50 | 1.25 | 1.38 | 1.44 | 1.47 | 1.48 | 1.50
@@ -522,11 +529,24 @@ The results in Table 23.3 rely on two assumptions: no dominance and equal among-
 
 **[示例 Example]**
 
-> **Example 23.2** · ref: `23.2` · source: `chapter23_012.json` · blocks 10–10
+> **Example 23.1** · ref: `23.1` · source: `chapter23_012.json` · blocks 10–10
 >
-> Example 23.2. To compute the probabilities of the IBD states $ \Delta_3 $, $ \Delta_8 $, and $ \Delta_9 $ required to predict the response under $ S_{ij} $ family selection, first recall the various relatives involved: P is the parent that has undergone i generations of selfing, and it generates both a remnant seed, R (that will be grown and crossed with an unrelated individual, R', to form the offspring, y), and a collection of Sj families that will be scored. As in Chapter 21, x denotes a measured sib from the family that is used for selection decisions.
+> Example 23.1. To get some feel for the impact of inbreeding, consider the selection response for different types of family selection as $f$ increases. Assume we have a trait with $\sigma_A^2 = 50$ and $\sigma_D^2 = 25$. To simply the discussion, we assume the same value of the residual variance (Equation 23.8c) over all designs, namely, $\sigma_e^2 = 50$. Using the expression summarized in Table 23.1, the response to half-sib, full-sib, and parental selection for various values of parent inbreeding ($f$) are given below as a fraction of the response for $f = 0$ (random mating). The values in the $R/\bar{r}$ column are the expected responses under $f = 0$, while the values in the columns for $f > 0$ represent the ratio of response for that $f$ value relative to the response under random mating. For example, the $R/\bar{r}$ ratio for full-sibs with $f = 1/4$ is 2.774 $\cdot$ 1.181 = 3.276. Fraction of random-mating response
 > 
-> Consider a random locus. If the alleles at this locus are IBD in P (which occurs with a probability of $ f_i $), then the only IBD state between x and y is $ \Delta_3 $, as both alleles in x are IBD and this allele is also passed onto R, and hence to y. Otherwise (with a probability of $ 1 - f_i $), a locus in P is not IBD, and we denote P's two alleles as A and a (these designations are only for the purpose of following IBD alleles, and in fact, the two alleles could be identical in state). There are then three possible genotypes for x, AA Aa, and aa, while y can receive either A or a from R (and an unrelated allele from R'). The IBD states for these different combinations are as follows:
+> > **Inline Table 1** · `inline_1` · page 10 · source: `chapter23_012`
+> > Inline Table 1
+> >
+> > <table><tr><td>Selection</td><td>R/ $ \bar{r} $</td><td>f = 1/8</td><td>f = 1/4</td><td>f = 1/2</td><td>f = 3/4</td><td>f = 1</td></tr><tr><td colspan="7">Half-sib</td></tr><tr><td>Reminant seed</td><td>1.581</td><td>1.111</td><td>1.220</td><td>1.430</td><td>1.632</td><td>1.826</td></tr><tr><td>Parental</td><td>3.162</td><td>1.111</td><td>1.220</td><td>1.430</td><td>1.632</td><td>1.826</td></tr><tr><td>Full-sib</td><td>2.774</td><td>1.093</td><td>1.181</td><td>1.342</td><td>1.485</td><td>1.612</td></tr></table>
+> 
+> 
+> Finally, our assumption that $ \sigma_e^2 $ is a constant (over both $ f $ and the designs) deserves additional comment. Under the simplest design of $ n $ sibs scored in a single plot in a single environment, then from Equation 23.8c, $$ \sigma_{e}^{2}=\sigma_{E_{c}}^{2}+[\sigma_{G_{w}}^{2}+\sigma_{E_{s}}^{2}]/n $$ Clearly, in the case of paternal half-sibs, $ \sigma_{E_c}^2 $ is expected to be smaller (and can be much smaller) relative to designs with a common mother (and hence, there is the prospect of a much larger common-family effect). Further, different types of families might logically be expected to vary in $n$, for example, one can usually generate more half-sibs than full sibs. For designs with more structure in the replication scheme, we can write $\sigma_e^2 = \sigma_{E_c}^2 + \sigma^2(\epsilon)$, where Equations 21.41c, 21.42a, and 21.42b provide examples of the structure of $\sigma^2(\epsilon)$. Finally, $\sigma_{G_w}^2$ also changes with inbreeding. Our assumption of a constant value of $\sigma_e^2$ is an approximation, assuming that $n$ is relatively large, meaning that changes in $\sigma_{G_w}^2$ with $f$ do not significantly impact $\sigma_e^2$.
+
+
+**[示例 Example]**
+
+> **Example 23.2** · ref: `23.2` · source: `chapter23_012.json` · blocks 10–13
+>
+> Example 23.2. To compute the probabilities of the IBD states $ \Delta_3 $, $ \Delta_8 $, and $ \Delta_9 $ required to predict the response under $ S_{ij} $ family selection, first recall the various relatives involved: P is the parent that has undergone i generations of selfing, and it generates both a remnant seed, R (that will be grown and crossed with an unrelated individual, R', to form the offspring, y), and a collection of Sj families that will be scored. As in Chapter 21, x denotes a measured sib from the family that is used for selection decisions. Consider a random locus. If the alleles at this locus are IBD in P (which occurs with a probability of $ f_i $), then the only IBD state between x and y is $ \Delta_3 $, as both alleles in x are IBD and this allele is also passed onto R, and hence to y. Otherwise (with a probability of $ 1 - f_i $), a locus in P is not IBD, and we denote P's two alleles as A and a (these designations are only for the purpose of following IBD alleles, and in fact, the two alleles could be identical in state). There are then three possible genotypes for x, AA Aa, and aa, while y can receive either A or a from R (and an unrelated allele from R'). The IBD states for these different combinations are as follows: Allele in y from R
 > 
 > > **Inline Table 2** · `inline_2` · page 15 · source: `chapter23_012`
 > > Inline Table 2
@@ -538,14 +558,12 @@ The results in Table 23.3 rely on two assumptions: no dominance and equal among-
 > > aa | $ \Delta_{9} $ | $ \Delta_{3} $
 > 
 > 
-> Hence, $ \Delta_8 $ equals the probability that a locus in $ P $ is not IBD, $ (1 - f_i) $, times the probability that the locus is still not IBD by generation $ j $ (state $ \mathbf{A}\mathbf{a} $). Because the probability that a locus is not converted to an IBD state is $ 1/2 $ for each generation of selfing, $$ \Delta_{8}=\left(1-f_{i}\right)2^{-\left(j-i\right)} $$ recovering Equation 23.13b.
-> 
-> If the two alleles in P are not IBD (probability $ 1 - f_i $), $ \Delta_3 $ can still arise as twice the probability that x is the genotype AA and y receives allele A. The factor of two arises because of symmetry, as the case of aa and a have equal probability. Turning to the transmission for R, if the focal locus in P is not IBD, then after one generation of selfing, 1/2 of the time R is IBD, and in half of these cases it will be AA. Otherwise, R's alleles are not IBD, in which case 1/2 are A, giving the chance of transmitting A to its selfed offspring as $ (1/2)(1/2) + (1/2)(1/2) = 1/2 $. Hence, the probability that y gets A from R is 1/2, while the probability x is AA (given that R was not IBD in generation i) is $ (1 - 2^{-(j-i)})(1/2) $, which is the probability of the locus becoming IBD (i.e., not staying as non-IBD) times $ (1/2) $ for randomly fixing allele A. Hence, $$ \begin{aligned}\Delta_{3}&=f_{i}+2\left[(1-f_{i})(1/2)(1-2^{-(j-i)})\right](1/2)\\&=f_{i}+(1-f_{i})(1/2)(1-2^{-(j-i)})\end{aligned} $$ recovering Equation 23.13a.
+> Hence, $ \Delta_8 $ equals the probability that a locus in $ P $ is not IBD, $ (1 - f_i) $, times the probability that the locus is still not IBD by generation $ j $ (state $ \mathbf{A}\mathbf{a} $). Because the probability that a locus is not converted to an IBD state is $ 1/2 $ for each generation of selfing, $$ \Delta_{8}=\left(1-f_{i}\right)2^{-\left(j-i\right)} $$ recovering Equation 23.13b. If the two alleles in P are not IBD (probability $ 1 - f_i $), $ \Delta_3 $ can still arise as twice the probability that x is the genotype AA and y receives allele A. The factor of two arises because of symmetry, as the case of aa and a have equal probability. Turning to the transmission for R, if the focal locus in P is not IBD, then after one generation of selfing, 1/2 of the time R is IBD, and in half of these cases it will be AA. Otherwise, R's alleles are not IBD, in which case 1/2 are A, giving the chance of transmitting A to its selfed offspring as $ (1/2)(1/2) + (1/2)(1/2) = 1/2 $. Hence, the probability that y gets A from R is 1/2, while the probability x is AA (given that R was not IBD in generation i) is $ (1 - 2^{-(j-i)})(1/2) $, which is the probability of the locus becoming IBD (i.e., not staying as non-IBD) times $ (1/2) $ for randomly fixing allele A. Hence, $$ \begin{aligned}\Delta_{3}&=f_{i}+2\left[(1-f_{i})(1/2)(1-2^{-(j-i)})\right](1/2)\\&=f_{i}+(1-f_{i})(1/2)(1-2^{-(j-i)})\end{aligned} $$ recovering Equation 23.13a.
 
 
 ---
 
-## chapter23_013 · Selection Under Inbreeding: Introduction / Other Inbreeding-based Family-selection Schemes
+## chapter23_013 · FAMILY SELECTION WITH INBREEDING AND RANDOM MATING / Other Inbreeding-based Family-selection Schemes
 
 Other family-selection schemes involving inbreeding have been proposed, such as the selfed half-sib (SHS) and selfed full-sib family (SFS) methods of Burton and Carver (1993). Here, progeny from either a half- or full-sib family are selfed, and these selfed individuals are then used as the family mean for selection decisions. The advantage of this approach is a large increase in the amount of seed (and hence the ability to more fully replicate a family, reducing the error variance)—in other words, if there are M initial sibs, each of which is selfed to obtain N selfed offspring, there are MN offspring per family. Burton and Carver suggested that this approach can be at least as efficient as $ S_1 $ family selection, largely due to the decreased sampling variance in the selection unit, $ \sigma^2(\overline{z}) $, compared to $ S_1 $ families.
 
@@ -553,7 +571,7 @@ Another variant is joint half-sib, $ S_1 $ family selection, which was proposed 
 
 ---
 
-## chapter23_014 · Selection Under Inbreeding: Introduction / Cycles of Inbreeding and Outcrossing
+## chapter23_014 · FAMILY SELECTION WITH INBREEDING AND RANDOM MATING / Cycles of Inbreeding and Outcrossing
 
 **[推导 Derivation]**
 
@@ -618,7 +636,7 @@ Several other line-cross designs can form the foundational population from which
 
 ---
 
-## chapter23_016 · Selection Under Inbreeding: Introduction / Response Under Pure Selfing
+## chapter23_016 · INDIVIDUAL SELECTION UNDER PURE SELFING / Response Under Pure Selfing
 
 Suppose we commence selfing from a collection of individuals that are in Hardy-Weinberg and linkage equilibrium. After all lines have become completely inbred, there is no response to selection within a line as there is no within-line genetic variation (in the absence of mutation). However, the response among lines involves the entire genotypic variance, as selection is among clones.
 
@@ -700,22 +718,34 @@ The contribution from standard dominance variance, $ \sigma_D^2 = \sigma^2(\delt
 
 **[示例 Example]**
 
-> **Example 23.4** · ref: `23.4` · source: `chapter23_016.json` · blocks 10–10
+> **Example 23.4** · ref: `23.4` · source: `chapter23_016.json` · blocks 9–14
 >
-> Example 23.4. As an example of what fraction of the response from various generations of selection is ultimately passed on to the completely inbred line, assume the genotypic values and frequencies from Example 11.1, which computed the components required to predict the selection response under inbreeding as $$ \sigma_{A}^{2}=0.629,\quad\sigma_{D}^{2}=\iota^{*}=0.046,\quad\sigma_{D I}^{2}=0.103,\quad\sigma_{A D I}=-0.361 $$
+> Example 23.4. As an example of what fraction of the response from various generations of selection is ultimately passed on to the completely inbred line, assume the genotypic values and frequencies from Example 11.1, which computed the components required to predict the selection response under inbreeding as $$ \sigma_{A}^{2}=0.629,\quad\sigma_{D}^{2}=\iota^{*}=0.046,\quad\sigma_{D I}^{2}=0.103,\quad\sigma_{A D I}=-0.361 $$ Assume $ \sigma_e^2 = 1 $ (which corresponds to narrow- and broad-sense heritabilities of $ h^2 = 0.38 $ and $ H^2 = 0.41 $, respectively). If we substitute these values into Equation 23.23, and recall that $ \sigma_e^2(t) = \sigma_G^2(t, t) + \sigma_e^2 $, we get the response in various generations (t) of inbreeding. The fifth column in the table below shows the expected single-generation response (the response in $ t + 1 $ from selection in t) and the fourth column shows the eventual contribution ( $ T = \infty $), while the final column shows the percentage of the response from that particular generation that is translated into the final response.
 > 
-> Assume $ \sigma_e^2 = 1 $ (which corresponds to narrow- and broad-sense heritabilities of $ h^2 = 0.38 $ and $ H^2 = 0.41 $, respectively). If we substitute these values into Equation 23.23, and recall that $ \sigma_e^2(t) = \sigma_G^2(t, t) + \sigma_e^2 $, we get the response in various generations (t) of inbreeding. The fifth column in the table below shows the expected single-generation response (the response in $ t + 1 $ from selection in t) and the fourth column shows the eventual contribution ($ T = \infty $), while the final column shows the percentage of the response from that particular generation that is translated into the final response.
+> > **Inline Table 3** · `inline_3` · page 21 · source: `chapter23_016`
+> > Inline Table 3
+> >
+> > t | $ \sigma_{G}(\infty,t) $ | $ \sigma_{G}^{2}(t,t) $ | $ \frac{\sigma_{G}(\infty,t)}{\sigma_{z}^{2}(t)} $ | $ \frac{\sigma_{G}(t+1,t)}{\sigma_{z}^{2}(t)} $ | %
+> > --- | --- | --- | --- | --- | ---
+> > 0 | 0.449 | 0.675 | 0.268 | 0.335 | 79.86
+> > 1 | 0.544 | 0.669 | 0.326 | 0.363 | 89.73
+> > 2 | 0.592 | 0.657 | 0.357 | 0.377 | 94.78
+> > 3 | 0.616 | 0.649 | 0.374 | 0.384 | 97.37
+> > 4 | 0.628 | 0.645 | 0.382 | 0.387 | 98.68
+> > 5 | 0.634 | 0.642 | 0.386 | 0.389 | 99.34
+> > 7 | 0.639 | 0.641 | 0.389 | 0.390 | 99.83
 > 
-> For example, if selection is among individuals that have experienced three generations of inbreeding (t = 3), then 97.4% of the response seen in generation 4 is seen among the fully inbred lines. This calculation essentially assumes that this is only a single generation of selection, as multiple generations of selection (especially among largely inbred lines) will quickly remove most of the existing among-line variation. Note that the largest reduction between the initial and permanent responses occurs in the first generation of selection, where selected individuals are selfed for the first time. As selfing progresses, the genotypic values between ancestors and descendants become increasingly more similar, and hence they retain almost all of their initial response. While more dramatic changes are expected under different combinations of $ \sigma_{ADI} $, $ \sigma_{DI}^2 $, and $ \iota^* $, inbreeding will largely be complete after the first six generations, and the offspring will be almost genetically identical to their parents.
 > 
-> This example highlights the dilemma faced by plant breeders. Selection decisions based on early cycles of the inbreeding (early-generations selection) may be poor predictors of the ultimate inbred product (especially when dominance is present), but carrying out additional generations of inbreeding (to increase the genetic covariance between the tested and fully inbred genotypes) takes additional time. For the values assumed here, only 80% of the first-generation $ (t = 0) $ response is retained in fully inbred lines, which increases to almost 95% for the third-generation $ (t = 2) $ response. The use of doubled-haploids, which can make a plant fully inbred in a single generation, can have significant advantages in an inbred line breeding program (Gallais 1989; Volume 3).
-> 
-> It is important to again stress that these results for the expected selection response are based on infinitesimal-model approximations. The covariances between relatives under inbreeding that drive these equations are based on the assumption (as was the case for the breeder's equation) that selection does not significantly change the variance components (the values of $ \sigma_{A'}^2 \sigma_D^2 $, $ \sigma_{ADI} $, etc. remain largely unchanged). Clearly, selection with a small number of loci can substantially change allele frequencies, thus violating the assumptions leading to Equations 23.24 through 23.27. Likewise, with a small number of lines and/or strong selection, these results will also be biased. Another, more subtle, violation of this basic model will occur if some lines are disproportionately chosen over others (as one might expect might happen). In such cases, the covariances that are now appropriate are not those for the population as a whole, but rather those for individuals within particular sublines. The unstated assumption of Equation 23.23 is that when individuals are being compared for selection, their most recent ancestors are those that are drawn from the base population. If their most recent ancestor is more current, however, the covariances will be incorrect and the estimated response biased. Finally, as developed shortly, selection-generated gametic-phase disequilibrium can significantly reduce response.
+> For example, if selection is among individuals that have experienced three generations of inbreeding (t = 3), then 97.4% of the response seen in generation 4 is seen among the fully inbred lines. This calculation essentially assumes that this is only a single generation of selection, as multiple generations of selection (especially among largely inbred lines) will quickly remove most of the existing among-line variation. Note that the largest reduction between the initial and permanent responses occurs in the first generation of selection, where selected individuals are selfed for the first time. As selfing progresses, the genotypic values between ancestors and descendants become increasingly more similar, and hence they retain almost all of their initial response. While more dramatic changes are expected under different combinations of $ \sigma_{ADI} $, $ \sigma_{DI}^2 $, and $ \iota^* $, inbreeding will largely be complete after the first six generations, and the offspring will be almost genetically identical to their parents. This example highlights the dilemma faced by plant breeders. Selection decisions based on early cycles of the inbreeding (early-generations selection) may be poor predictors of the ultimate inbred product (especially when dominance is present), but carrying out additional generations of inbreeding (to increase the genetic covariance between the tested and fully inbred genotypes) takes additional time. For the values assumed here, only 80% of the first-generation $ (t = 0) $ response is retained in fully inbred lines, which increases to almost 95% for the third-generation $ (t = 2) $ response. The use of doubled-haploids, which can make a plant fully inbred in a single generation, can have significant advantages in an inbred line breeding program (Gallais 1989; Volume 3).
 
+
+**[命题 Proposition]**
+
+It is important to again stress that these results for the expected selection response are based on infinitesimal-model approximations. The covariances between relatives under inbreeding that drive these equations are based on the assumption (as was the case for the breeder's equation) that selection does not significantly change the variance components (the values of $ \sigma_{A'}^2 \sigma_D^2 $, $ \sigma_{ADI} $, etc. remain largely unchanged). Clearly, selection with a small number of loci can substantially change allele frequencies, thus violating the assumptions leading to Equations 23.24 through 23.27. Likewise, with a small number of lines and/or strong selection, these results will also be biased. Another, more subtle, violation of this basic model will occur if some lines are disproportionately chosen over others (as one might expect might happen). In such cases, the covariances that are now appropriate are not those for the population as a whole, but rather those for individuals within particular sublines. The unstated assumption of Equation 23.23 is that when individuals are being compared for selection, their most recent ancestors are those that are drawn from the base population. If their most recent ancestor is more current, however, the covariances will be incorrect and the estimated response biased. Finally, as developed shortly, selection-generated gametic-phase disequilibrium can significantly reduce response.
 
 ---
 
-## chapter23_017 · Selection Under Inbreeding: Introduction / Response When Inbreeding Pure-line Crosses
+## chapter23_017 · INDIVIDUAL SELECTION UNDER PURE SELFING / Response When Inbreeding Pure-line Crosses
 
 **[推导 Derivation]**
 
@@ -770,63 +800,17 @@ However, Equation 23.29 carries the unstated assumption that the environmental v
 
 ---
 
-## chapter23_018 · Selection Under Inbreeding: Introduction / The Bulmer Effect Under Selfing
+## chapter23_018 · INDIVIDUAL SELECTION UNDER PURE SELFING / The Bulmer Effect Under Selfing
 
 Recall from Equation 16.2 that we can decompose the additive-genetic variance as $ \sigma_A^2 = \sigma_A^2 + d $, the sum of the genic variance, $ \sigma_a^2 $, plus the impact, $ d $, from any gametic-phase disequilibrium. In Chapter 16, we showed that directional selection generates $ d < 0 $, decreasing $ \sigma_A^2 $ from its linkage-equilibrium value of $ \sigma_a^2 $ (the Bulmer effect). Under random mating, recombination (for unlinked loci) removes half of the existing $ d $ in each generation, which quickly balances any new $ d $ introduced by selection (Chapter 16). Under inbreeding, the frequency of heterozygotes (where such recombination takes place) quickly declines, significantly enhancing the impact of linkage disequilibrium (LD) by slowing its decay from recombination.
 
 The first attempts to study the impact of LD when inbreeding is present were in small-scale simulation studies by Bliss and Gates (1968) and Stam (1977), who assumed a finite number of loci in a completely additive model (with no dominance or epistasis). As expected, they found that linkage reduces the rate of selection response, while (for fixed $ \sigma_A^2 $) the per-generation response increases as the number of loci decreases. This latter observation is also to be expected, as increasing the number of loci (with $ \sigma_A^2 $ fixed) reduces the allelic effect at any single locus, reducing the amount of selection on that locus (Chapters 24 and 25).
 
-The first analytical investigations on the magnitude of Bulmer effect during selfing were done by Silvela and Diez-Barra (1985) and Cornish (1990a, 1990b). Assume an $ F_2 $ population of lines is continually selfed until it is fully inbred, yielding an $ F_\infty $ collection of lines. In Cornish's model, a single generation of selection occurs in the $ F_2 $, and its effect on the final ($ F_\infty $) lines was examined. Cornish assumed directional truncation selection, whereby the upper fraction $ (p) $ of the population is saved. Recall (Equation 16.11a) that in this setting, the phenotypic variance following selection is reduced by $ \bar{\imath}\left(\bar{\imath}-x_{[1-p]}\right)\sigma_z^2 $, where the selection intensity, $ \bar{\imath} $, is a function of $ p $ (Equation 14.3a) and $ x_{[1-p]} $ satisfies $ \Pr(U > x_{[1-p]}} = p $, where $ U $ is a unit normal. Cornish found that the genetic variance in the offspring of the selected parents is reduced by $ h^2\bar{\imath}\left(\bar{\imath}-x_{[1-p]}\right)\sigma_A^2 $, as only a fraction $ \left(h^2\right) $ of the phenotypic change is passed on to the offspring. In a randomly mating population, the reduction in variance from selection-induced negative LD rapidly approaches an equilibrium value (Equation 16.12e). Upon relaxation of selection under random mating, the variance eventually returns to its preselection value under the infinitesimal model as $ d $ decays to zero (Chapter 16). By contrast, because of the dramatic reduction in the fraction of heterozygotes in a selfing population, part of this reduction in variance from LD is permanent. Thus, while LD in a randomly mating population reduces the rate of response, with selection in a selfing population, it also impacts the final selection limit.
-
-**[推导 Derivation]**
-
-A far more detailed investigation of the Bulmer effect under the infinitesimal model was performed by Hayashi and Ukai (1994) and Kelly (1999a). We examine the results of Hayashi and Ukai here and return to Kelly's more general treatment (under partial selfing) at the end of the chapter. Hayashi and Ukai obtained recursion equations for the changes in variance and covariance for a pure-line cross. They assumed that truncation selection starts in the $ F_{2} $ generation and continues for t generations. If only additive variance is present,
-
-> **Formula (23.30)** · `23.30` · source: `chapter23_block_111` · The Bulmer Effect Under Selfing
->
-> $$ \sigma_{A}^{2}(t+1)=\sigma_{A_{o}}^{2}(t+1)-\sigma_{A_{o}}^{2}(t)+\left[1-\bar{\imath}(\bar{\imath}-x_{[1-p]})\frac{\sigma_{A}^{2}(t)}{\sigma_{A}^{2}(t)+\sigma_{e}^{2}}\right]\sigma_{A}^{2}(t) $$
-
-
-where $ \sigma_{A_o}^2(t) = (2 - 1/2^t) \sigma_A^2(0) $ is the total additive variance in an unselected population of lines following $ t $ generations of selfing (this is akin to the genic variance, $ \sigma_a^2 $, in Equations
-
-16.2 and 16.8b, which remains unchanged by selection under the infinitesimal when under random mating). Hence, $ \sigma_{A_o}^2(t+1) - \sigma_{A_o}^2(t) $ can be regarded as the within-line segregation variance, which (for unlinked loci) is unaffected by selection (Equation 16.8b), but (unlike the random mating case) is strongly influenced by inbreeding, as $$ \sigma_{A_{o}}^{2}(t+1)-\sigma_{A_{o}}^{2}(t)=\left[\left(2-1/2^{t+1}\right)-\left(2-1/2^{t}\right)\right]\sigma_{A}^{2}(0)=\sigma_{A}^{2}(0)/2^{t+1} $$ which shrinks to zero as lines become progressively inbred. This fraction represents the opportunity for recombination in any remaining heterozygotes to reduce selection-induced disequilibrium. The remaining component in the brackets of Equation 23.30 represents the change in the among-line variance (the variance in progeny means), which is reduced by selection, and represents the impact of disequilibrium (akin to the generation of d in Chapter 16). Note that for the first generation of selection, this reduces to $ [1 - h^2\bar{t}(\bar{t} - x_{[1-p]})]\sigma_A^2 $, namely, Cornish's result. Note, however, that Equation 23.30 shows that Cornish's result neglects the partial decay of this disequilibrium due to recombination in any remaining heterozygotes (the $ \sigma_A^2(t + 1) - \sigma_A^2(t) $ term), and thus is an overestimation of $ \sigma_A^2(t) $.
-
-**[推导 Derivation]**
-
-If both additive and dominance effects are present, they will have correlated changes and the recursion equations will be more complex. Some simplifications occur because of the pure-line cross assumption (as $ \sigma_{ADI} = \sigma_{DI}^2 = 0 $ and $ \iota^* = \sigma_D^2 $). By letting $ \sigma_{G_o}(T, t) $ denote the cross-generational covariance under pure selfing (starting with a pure-line cross), Hayashi and Ukai showed (for unlinked loci) that
-
-> **Formula (23.31a)** · `23.31a` · source: `chapter23_block_113` · The Bulmer Effect Under Selfing
->
-> $$ \sigma_{G}(T,t)=\sigma_{G_{o}}(T,t)-\bar{\imath}(\bar{\imath}-x_{[1-p]})\sum_{k=0}^{t-1}\frac{\sigma_{G}(t,k)\sigma_{G}(T,k)}{\sigma_{G}(k,k)+\sigma_{e}^{2}} $$
-
-
-where
-
-> **Formula (23.31b)** · `23.31b` · source: `chapter23_block_113` · The Bulmer Effect Under Selfing
->
-> $$ \sigma_{G_{o}}(T,t)=\left(2-2^{-t}\right)\left(\sigma_{A}^{2}+2^{-T}\sigma_{D}^{2}\right) $$
-
-
-is simply the covariance between relatives in generations t and T in the absence of selection (when $ \sigma_{ADI} = \sigma_{DI}^2 = 0 $ and $ \iota^* = \sigma_D^2 $, Equation 23.23 reduces to Equation 23.31b). Equation 23.31a is solved by iteration, starting with
-
-> **Formula (23.31c)** · `23.31c` · source: `chapter23_block_113` · The Bulmer Effect Under Selfing
->
-> $$ \sigma_{G}(T,0)=\sigma_{G_{o}}(T,0)=\sigma_{A}^{2}+2^{-T}\sigma_{D}^{2} $$
-
-
-As mentioned, part of the relative simplicity of these expressions arises from the assumption of a pure-line cross. Kelly (1999a) considered more general cases, which require iterative expressions for the changes in $ \sigma_{DI}^{2} $ and $ \sigma_{ADI} $ from disequilibrium (see Equations 23.67–23.68).
-
 **[示例 Example]**
 
-> **Example 23.6** · ref: `23.6` · source: `chapter23_018.json` · blocks 6–6
+> **Example 23.6** · ref: `23.6` · source: `chapter23_018.json` · blocks 2–5
 >
-> Example 23.6. As an application of the Hayashi-Ukai variance correction, assume the values used in Example 23.5 ($ \sigma_A^2 = 50 $, $ \sigma_D^2 = 25 $, and $ \sigma_e^2 = 50 $). The fraction saved was $ p = 0.2 $, and hence $ \bar{\imath} = 1.402 $. Likewise, $ x_{[1-p]} = x_{[0.8]} = 0.84 $ (Example 16.3), so $ \bar{\imath}(\bar{\imath} - x_{[1-p]}) = 0.788 $. From Equation 23.31c, the genetic covariance between a selected $ F_2 $ individual (generation $ t = 0 $) and a relative after $ T $ generations of selfing is $$ \sigma_{G}(T,0)=\sigma_{G_{o}}(T,0)=\sigma_{A}^{2}+2^{-T}\sigma_{D}^{2}=50+25/2^{T} $$
-> 
-> Note that this covariance is the same as with pure selfing. The covariance between an individual selected in the next generation (1) and its relative in generation T of selfing does, however, show a reduction, with Equation 23.31a yielding $$ \sigma_{G}(T,1)=\sigma_{G_{o}}(T,1)-\bar{\imath}\left(\bar{\imath}-x_{[1-p]}\right)\frac{\sigma_{G}(1,0)\sigma_{G}(T,0)}{\sigma_{G}(0,0)+\sigma_{e}^{2}} $$ The first term is the pure-selfing covariance, and the second is the reduction due to selection. To obtain the value of the latter, first note that $ \sigma_G(1,0) = 50 + (25/2) = 62.5 $, while $ \sigma_G(0,0) + \sigma_e^2 = 125 $ and (Equation 23.31b) $ \sigma_{G_o}(T,1) = (3/2)\left[50 + (25/2^T)\right] $, yielding $$ \begin{aligned}\sigma_{G}(T,1)&=\left(3/2\right)\left[50+\left(25/2^{T}\right)\right]-0.788\frac{62.5\cdot\left[50+\left(25/2^{T}\right)\right]}{125}\\&=\left[50+\left(25/2^{T}\right)\right]\left(3/2-0.788\frac{62.5}{125}\right)\end{aligned} $$ Because the quantity in the square brackets is proportional to $ \sigma_{G_o}(T,1) $, it follows that $ \sigma_G(T,1)/\sigma_{G_o}(T,1) = 0.737 $ is a constant independent of $ T $, which shows a significant (27%) reduction (over all $ T $) in the predicted response from generation 1 when disequilibrium is ignored. Similarly, applying Equation 23.31c, the genetic variance in generation 1 becomes $$ \begin{aligned}\sigma_{G}(1,1)&=\sigma_{G_{o}}(1,1)-\bar{\imath}(\bar{\imath}-x_{[1-p]})\frac{\sigma_{G}(1,0)\sigma_{G}(1,0)}{\sigma_{G}(0,0)+\sigma_{e}^{2}}\\&=(3/2)\left(50+25/2\right)-0.788\frac{(62.5)^{2}}{125}=69.125\end{aligned} $$
-> 
-> Again, the first quantity is the pure-inbreeding value and the second is the correction for disequilibrium. In this case, the correct genetic variance is only 0.737 of the pure-inbreeding value (which Equation 23.31b gives as 93.75). Because neither the genetic variance nor the covariance for generation 0 are affected by selection ($ \sigma_G(0,0) = \sigma_G_o(0) $, and $ \sigma_G(T,0) = \sigma_G_o(T,0) $), the response to selection in generation 0 is unaffected by disequilibrium (this is also the case for a random mating population; see Chapter 16). The response of $ \sigma_G^2 $ in generation 2, however, is influenced by selection. Because both covariance and the genetic variance are reduced by the same fraction (0.737) relative to strict inbreeding, applying Equation 23.3 with the above covariances shows that the ratio of response at generation T from selection in generation 1, $ R(T,1) $, to its predicted value, ignoring disequilibrium, $ R_0(T,1) $, is $$ \frac{R(T,1)}{R_{0}(T,1)}=\left(\frac{\sigma_{G}(T,1)}{\sigma_{G_{o}}(T,1)}\right)\left(\frac{\sqrt{\sigma_{G_{o}}(1,1)}}{\sqrt{\sigma_{G}(1,1)}}\right)=\frac{0.737}{\sqrt{0.737}}=0.859 $$
-> 
-> The presence of gametic disequilibrium thus reduces the selection response by 14%.
+> Example 23.6. As an application of the Hayashi-Ukai variance correction, assume the values used in Example 23.5 ( $ \sigma_A^2 = 50 $, $ \sigma_D^2 = 25 $, and $ \sigma_e^2 = 50 $). The fraction saved was $ p = 0.2 $, and hence $ \bar{\imath} = 1.402 $. Likewise, $ x_{[1-p]} = x_{[0.8]} = 0.84 $ (Example 16.3), so $ \bar{\imath}(\bar{\imath} - x_{[1-p]}) = 0.788 $. From Equation 23.31c, the genetic covariance between a selected $ F_2 $ individual (generation $ t = 0 $) and a relative after $ T $ generations of selfing is $$ \sigma_{G}(T,0)=\sigma_{G_{o}}(T,0)=\sigma_{A}^{2}+2^{-T}\sigma_{D}^{2}=50+25/2^{T} $$ Note that this covariance is the same as with pure selfing. The covariance between an individual selected in the next generation (1) and its relative in generation T of selfing does, however, show a reduction, with Equation 23.31a yielding $$ \sigma_{G}(T,1)=\sigma_{G_{o}}(T,1)-\bar{\imath}\left(\bar{\imath}-x_{[1-p]}\right)\frac{\sigma_{G}(1,0)\sigma_{G}(T,0)}{\sigma_{G}(0,0)+\sigma_{e}^{2}} $$ The first term is the pure-selfing covariance, and the second is the reduction due to selection. To obtain the value of the latter, first note that $ \sigma_G(1,0) = 50 + (25/2) = 62.5 $, while $ \sigma_G(0,0) + \sigma_e^2 = 125 $ and (Equation 23.31b) $ \sigma_{G_o}(T,1) = (3/2)\left[50 + (25/2^T)\right] $, yielding $$ \begin{aligned}\sigma_{G}(T,1)&=\left(3/2\right)\left[50+\left(25/2^{T}\right)\right]-0.788\frac{62.5\cdot\left[50+\left(25/2^{T}\right)\right]}{125}\\&=\left[50+\left(25/2^{T}\right)\right]\left(3/2-0.788\frac{62.5}{125}\right)\end{aligned} $$ Because the quantity in the square brackets is proportional to $ \sigma_{G_o}(T,1) $, it follows that $ \sigma_G(T,1)/\sigma_{G_o}(T,1) = 0.737 $ is a constant independent of $ T $, which shows a significant (27%) reduction (over all $ T $) in the predicted response from generation 1 when disequilibrium is ignored. Similarly, applying Equation 23.31c, the genetic variance in generation 1 becomes $$ \begin{aligned}\sigma_{G}(1,1)&=\sigma_{G_{o}}(1,1)-\bar{\imath}(\bar{\imath}-x_{[1-p]})\frac{\sigma_{G}(1,0)\sigma_{G}(1,0)}{\sigma_{G}(0,0)+\sigma_{e}^{2}}\\&=(3/2)\left(50+25/2\right)-0.788\frac{(62.5)^{2}}{125}=69.125\end{aligned} $$ Again, the first quantity is the pure-inbreeding value and the second is the correction for disequilibrium. In this case, the correct genetic variance is only 0.737 of the pure-inbreeding value (which Equation 23.31b gives as 93.75). Because neither the genetic variance nor the covariance for generation 0 are affected by selection ( $ \sigma_G(0,0) = \sigma_G_o(0) $, and $ \sigma_G(T,0) = \sigma_G_o(T,0) $), the response to selection in generation 0 is unaffected by disequilibrium (this is also the case for a random mating population; see Chapter 16). The response of $ \sigma_G^2 $ in generation 2, however, is influenced by selection. Because both covariance and the genetic variance are reduced by the same fraction (0.737) relative to strict inbreeding, applying Equation 23.3 with the above covariances shows that the ratio of response at generation T from selection in generation 1, $ R(T,1) $, to its predicted value, ignoring disequilibrium, $ R_0(T,1) $, is $$ \frac{R(T,1)}{R_{0}(T,1)}=\left(\frac{\sigma_{G}(T,1)}{\sigma_{G_{o}}(T,1)}\right)\left(\frac{\sqrt{\sigma_{G_{o}}(1,1)}}{\sqrt{\sigma_{G}(1,1)}}\right)=\frac{0.737}{\sqrt{0.737}}=0.859 $$ The presence of gametic disequilibrium thus reduces the selection response by 14%.
 
 
 ---
@@ -837,11 +821,20 @@ Predicting response to family selection—using the phenotypic means of the self
 
 ---
 
-## chapter23_020 · Selection Under Inbreeding: Introduction / The Covariance Between Relatives in a Structured Selfing Population
+## chapter23_020 · FAMILY SELECTION UNDER PURE SELFING / The Covariance Between Relatives in a Structured Selfing Population
+
+**[Figure]**
+
+> **Figure 23.2** · page 26 · source: `chapter23`
+>
+> ![Figure 23.2](../figures/fig_0103.png)
+>
+> Figure 23.2 The hierarchical structuring of selfed populations. The gray circles denote sibs in the selection unit, the solid circles denote relatives of interest, and  $ k, t, T $, and  $ \tau $ denote the generations of selfing experienced by an individual. The arrows denote lines of descent through selfing and may be longer than one generation. A: Often we select using a parent in generation t of selfing by scoring its (selfed) offspring in generation  $ \tau $, and we need the covariance between  $ \tau $ and some future generation,  $ T $, where the common relative to both is from generation t. B: Another level of hierarchical structuring of selfed populations: When selecting within a substructure of the selfing pedigree, we may be interested in the response using parents in generation t whose offspring are scored in generation  $ \tau $ and for which the response is across those families in the pedigree sharing an earlier common parent in generation  $ k < t $.
+
 
 **[推导 Derivation]**
 
-Given the need to account for the structure in a selfing population, Cockerham (1983) and Cockerham and Martzinger (1985), built on concepts from Horner (1952) and Gates et al. (1957) and generalized the covariance given by Equation 23.23 to $ \sigma_G(T, \tau, t) $, the covariance between a relative in generation $ T $ and another relative in generation $ \tau \leq T $, when the last common relative of both is from generation $ t \leq \tau $ (Figure 23.2A). This covariance was given by Equation 11.15, namely,
+Given the need to account for the structure in a selfing population, Cockerham (1983) and Cockerham and Martzinger (1985), built on concepts from Horner (1952) and Gates et al. (1957) and generalized the covariance given by Equation 23.23 to $ \sigma_G(T, \tau, t) $, the covariance between a relative in generation $ T $ and another relative in generation $ \tau \leq T $, when the last common relative of both is from generation $ t \leq \tau $ (Figure 23.2). This covariance was given by Equation 11.15, namely,
 
 > **Formula (23.32)** · `23.32` · source: `chapter23_block_119` · The Covariance Between Relatives in a Structured Selfing Population
 >
@@ -915,11 +908,9 @@ An example of this would be the genetic variance across the collection of $ F_3 
 
 **[示例 Example]**
 
-> **Example 23.7** · ref: `23.7` · source: `chapter23_020.json` · blocks 8–8
+> **Example 23.7** · ref: `23.7` · source: `chapter23_020.json` · blocks 8–9
 >
-> Example 23.7. Suppose we wish to know the among-family genetic variance for $ S_{i,j} $ families, namely, the bulk collection of $ S_j $ families from a single individual in generation i? From Equation 23.36a, $ \sigma_G^2(S_{i,j}) = \sigma_G(j, j, i) $. Substitution of $ f_t = 1 - 2^{-t} $ and simplifying yields $$ \begin{aligned}\sigma_{G}^{2}(S_{i,j})&=(2-2^{i})\sigma_{A}^{2}+2^{-(2j-i)}\sigma_{D}^{2}+(2-2^{-i}-2^{-j})\sigma_{ADI}^{2}\\&+\left(1+2^{-(2j+1-i)}-2^{-j}-2^{-(i+1)}\right)\sigma_{DI}^{2}+2^{-(2j-i)}\left(1-2^{-i}\right)\iota^{*}\end{aligned} $$
-> 
-> Some particular results of interest are $$ \sigma_{G}(S_{0,1})=\sigma_{A}^{2}+(1/4)\sigma_{D}^{2}+\sigma_{ADI}/2+(1/8)\sigma_{DI}^{2} $$ $$ \begin{aligned}\sigma_{G}(\mathsf{S}_{0,2})&=\sigma_{A}^{2}+(1/16)\sigma_{D}^{2}+(3/4)\sigma_{ADI}+(9/32)\sigma_{DI}^{2}\\\sigma_{G}(\mathsf{S}_{1,2})&=(3/2)\sigma_{A}^{2}+(1/8)\sigma_{D}^{2}+(5/4)\sigma_{ADI}+(9/16)\sigma_{DI}^{2}+(1/16)\iota^{*}\end{aligned} $$
+> Example 23.7. Suppose we wish to know the among-family genetic variance for $ S_{i,j} $ families, namely, the bulk collection of $ S_j $ families from a single individual in generation i? From Equation 23.36a, $ \sigma_G^2(S_{i,j}) = \sigma_G(j, j, i) $. Substitution of $ f_t = 1 - 2^{-t} $ and simplifying yields $$ \begin{aligned}\sigma_{G}^{2}(S_{i,j})&=(2-2^{i})\sigma_{A}^{2}+2^{-(2j-i)}\sigma_{D}^{2}+(2-2^{-i}-2^{-j})\sigma_{ADI}^{2}\\&+\left(1+2^{-(2j+1-i)}-2^{-j}-2^{-(i+1)}\right)\sigma_{DI}^{2}+2^{-(2j-i)}\left(1-2^{-i}\right)\iota^{*}\end{aligned} $$ Some particular results of interest are $$ \sigma_{G}(S_{0,1})=\sigma_{A}^{2}+(1/4)\sigma_{D}^{2}+\sigma_{ADI}/2+(1/8)\sigma_{DI}^{2} $$ $$ \begin{aligned}\sigma_{G}(\mathsf{S}_{0,2})&=\sigma_{A}^{2}+(1/16)\sigma_{D}^{2}+(3/4)\sigma_{ADI}+(9/32)\sigma_{DI}^{2}\\\sigma_{G}(\mathsf{S}_{1,2})&=(3/2)\sigma_{A}^{2}+(1/8)\sigma_{D}^{2}+(5/4)\sigma_{ADI}+(9/16)\sigma_{DI}^{2}+(1/16)\iota^{*}\end{aligned} $$ Again, under the common setting of a pure-line cross, these simplify as $ \iota^* = \sigma_D^2 $ and $ \sigma_{DI}^2 = \sigma_{ADI} = 0 $.
 
 
 ---
@@ -959,38 +950,30 @@ For more general families, $ t - 1 $ is replaced by $ t - j $ when the last comm
 
 **[示例 Example]**
 
-> **Example 23.8** · ref: `23.8` · source: `chapter23_021.json` · blocks 5–5
+> **Example 23.8** · ref: `23.8` · source: `chapter23_021.json` · blocks 5–9
 >
-> Example 23.8. Consider the within- and among-family genetic variances for an $ S_{j-1,j} $ family (the offspring from a single $ S_{j-1} $ individual). Here $ T = \tau = j $ and $ t = j - 1 $, and from Equation 23.37b, the among-family genetic variance is $$ \sigma_{Gb}(j,j)=\sigma_{G}(j,j,j-1) $$
-> 
-> For a pure-line cross, Equation 23.33 (ignoring epistasis) returns $$ \sigma_{Gb}(j,j)=\sigma_{G}(j,j,j-1)=\left(2-\frac{1}{2^{j-1}}\right)\left(\sigma_{A}^{2}+\frac{\sigma_{D}^{2}}{2^{j+1}}\right) $$ while from Equation 23.37a, the within-family variance becomes $$ \sigma_{G w}(j,j)=\sigma_{G}(j,j,j)-\sigma_{G}(j,j,j-1) $$
-> 
-> For a pure-line cross, the genetic variation (ignoring epistasis) in the population is $$ \sigma_{G}(j,j,j)=\left(2-\frac{1}{2^{j}}\right)\left(\sigma_{A}^{2}+\frac{\sigma_{D}^{2}}{2^{j}}\right) $$ giving the within-family variance as $$ \sigma_{G w}(S_{j})=\sigma_{G}(j,j,j)-\sigma_{G}(j,j,j-1)=\left(\frac{1}{2^{j}}\right)\sigma_{A}^{2}+\left(\frac{3-2^{j+1}}{4^{j}}\right)\sigma_{D}^{2} $$ As Figure 23.2B illustrates, we can consider ever-deeper hierarchical levels of population structure with selfing. Suppose we are interested in the response in generation T due to selection among parents in generation t chosen on the basis of their relatives in generation $ \tau $, but that we are considering only the response among the subpopulation that descended from a common ancestor in generation k. For example, among all the descendants from a particular $ S_3 $ individual, what is the response to selection on their $ S_4 $ offspring if we base selection on the $ S_6 $ family means? Here T is the generation of interest for the response ($ T = \infty $ for the permanent response), $ k = 3 $, $ t = 4 $, and $ \tau = 6 $.
-> 
-> Defining $ \sigma_{G}(T,\tau,t,k) $ as the covariance between T and $ \tau $, and given that they shared an ancestor in generation t from subpopulation k, Wright and Cockerham (1986b), following Gates (1954), showed that
-> 
-> > **Formula (23.38)** · `23.38` · source: `chapter23_block_137` · The Covariance Between Relatives in a Structured Selfing Population
-> >
-> > $$ \sigma_{G}(T,\tau,t,k)=\sigma_{G}(T,\tau,t)-\sigma_{G}(T,\tau,k)\quad for t>k $$
-> 
-> 
-> Hence, Equation 23.32 can be used to compute these covariances.
+> Example 23.8. Consider the within- and among-family genetic variances for an $ S_{j-1,j} $ family (the offspring from a single $ S_{j-1} $ individual). Here $ T = \tau = j $ and $ t = j - 1 $, and from Equation 23.37b, the among-family genetic variance is $$ \sigma_{Gb}(j,j)=\sigma_{G}(j,j,j-1) $$ For a pure-line cross, Equation 23.33 (ignoring epistasis) returns $$ \sigma_{Gb}(j,j)=\sigma_{G}(j,j,j-1)=\left(2-\frac{1}{2^{j-1}}\right)\left(\sigma_{A}^{2}+\frac{\sigma_{D}^{2}}{2^{j+1}}\right) $$ while from Equation 23.37a, the within-family variance becomes $$ \sigma_{G w}(j,j)=\sigma_{G}(j,j,j)-\sigma_{G}(j,j,j-1) $$ For a pure-line cross, the genetic variation (ignoring epistasis) in the population is $$ \sigma_{G}(j,j,j)=\left(2-\frac{1}{2^{j}}\right)\left(\sigma_{A}^{2}+\frac{\sigma_{D}^{2}}{2^{j}}\right) $$ giving the within-family variance as $$ \sigma_{G w}(S_{j})=\sigma_{G}(j,j,j)-\sigma_{G}(j,j,j-1)=\left(\frac{1}{2^{j}}\right)\sigma_{A}^{2}+\left(\frac{3-2^{j+1}}{4^{j}}\right)\sigma_{D}^{2} $$ As Figure 23.2B illustrates, we can consider ever-deeper hierarchical levels of population structure with selfing. Suppose we are interested in the response in generation T due to selection among parents in generation t chosen on the basis of their relatives in generation $ \tau $, but that we are considering only the response among the subpopulation that descended from a common ancestor in generation k. For example, among all the descendants from a particular $ S_3 $ individual, what is the response to selection on their $ S_4 $ offspring if we base selection on the $ S_6 $ family means? Here T is the generation of interest for the response ( $ T = \infty $ for the permanent response), $ k = 3 $, $ t = 4 $, and $ \tau = 6 $. Defining $ \sigma_{G}(T,\tau,t,k) $ as the covariance between T and $ \tau $, and given that they shared an ancestor in generation t from subpopulation k, Wright and Cockerham (1986b), following Gates (1954), showed that $$ \sigma_{G}(T,\tau,t,k)=\sigma_{G}(T,\tau,t)-\sigma_{G}(T,\tau,k)\quad for t>k $$ (23.38) Hence, Equation 23.32 can be used to compute these covariances.
 
 
 **[示例 Example]**
 
-> **Example 23.9** · ref: `23.9` · source: `chapter23_021.json` · blocks 6–6
+> **Example 23.9** · ref: `23.9` · source: `chapter23_021.json` · blocks 10–12
 >
-> Example 23.9. As an example of the difference between $ \sigma_G(T, \tau, t, k) $ and $ \sigma_G(T, \tau, t) $, consider the following situation. Suppose we randomly choose $ F_2S $ from a pure-line cross and self a large collection of them, generating a total of 1000 lines. While there are a number of options for advancing these lines, two extremes are to advance single lines from each of the original $ F_2S $ or to advance 1000 lines from a single $ F_2 $. Lacking any other information on the lines, it is obvious that keeping all of the original lines is likely the better strategy (indeed, this was proposed by Compton 1968), but just how much better is it? For both situations, consider the contribution to response in a completely inbred individual ($ T = \infty $) from an individual in generation $ t $ chosen by the evaluation of relatives in generation $ \tau \geq t $. Because we assumed a pure-line cross, $ \sigma_{ADI} = \sigma_{DI}^2 = 0 $, and Equation 23.34 yields, for the first strategy, $$ \sigma_{G}(\infty,\tau,t)=\left(1-\frac{1}{2^{t+1}}\right)2\sigma_{A}^{2} $$
-> 
-> If selection is delayed until at least the fifth generation of selfing, this is essentially $ 2\sigma_A^2 $. Conversely, the covariance for the second strategy (advancing all the lines from a single $ F_2 $) is given by $ \sigma_G(\infty, \tau, t, 0) $, as all individuals trace back to a single individual in generation 0 (the $ F_2 $). Here Equation 23.38 yields $$ \begin{aligned}\sigma_{G}(\infty,\tau,t,0)&=\sigma_{G}(\infty,\tau,t)-\sigma_{G}(\infty,\tau,0)\\&=\left(1-\frac{1}{2^{t+1}}\right)2\sigma_{A}^{2}-\left(1-\frac{1}{2}\right)2\sigma_{A}^{2}=\left(1-\frac{1}{2^{t+1}}\right)\sigma_{A}^{2}\end{aligned} $$
-> 
-> This is one half of the covariance when the entire collection of lines is used. This makes sense, as under the infinitesimal model, in an outbred population (such as the collection of $ F_{2}s $), half the additive variance is between individuals and half is generated by segregation within individuals (Chapter 16). The first covariance, $ \sigma_{G}(\infty, \tau, t) $, considers both the variance within a particular line and also the variance among the initial line founders, while the second, $ \sigma_{G}(\infty, \tau, 0) $, focuses solely on the variance within a particular line.
+> Example 23.9. As an example of the difference between $ \sigma_G(T, \tau, t, k) $ and $ \sigma_G(T, \tau, t) $, consider the following situation. Suppose we randomly choose $ F_2S $ from a pure-line cross and self a large collection of them, generating a total of 1000 lines. While there are a number of options for advancing these lines, two extremes are to advance single lines from each of the original $ F_2S $ or to advance 1000 lines from a single $ F_2 $. Lacking any other information on the lines, it is obvious that keeping all of the original lines is likely the better strategy (indeed, this was proposed by Compton 1968), but just how much better is it? For both situations, consider the contribution to response in a completely inbred individual ( $ T = \infty $) from an individual in generation $ t $ chosen by the evaluation of relatives in generation $ \tau \geq t $. Because we assumed a pure-line cross, $ \sigma_{ADI} = \sigma_{DI}^2 = 0 $, and Equation 23.34 yields, for the first strategy, $$ \sigma_{G}(\infty,\tau,t)=\left(1-\frac{1}{2^{t+1}}\right)2\sigma_{A}^{2} $$ If selection is delayed until at least the fifth generation of selfing, this is essentially $ 2\sigma_A^2 $. Conversely, the covariance for the second strategy (advancing all the lines from a single $ F_2 $) is given by $ \sigma_G(\infty, \tau, t, 0) $, as all individuals trace back to a single individual in generation 0 (the $ F_2 $). Here Equation 23.38 yields $$ \begin{aligned}\sigma_{G}(\infty,\tau,t,0)&=\sigma_{G}(\infty,\tau,t)-\sigma_{G}(\infty,\tau,0)\\&=\left(1-\frac{1}{2^{t+1}}\right)2\sigma_{A}^{2}-\left(1-\frac{1}{2}\right)2\sigma_{A}^{2}=\left(1-\frac{1}{2^{t+1}}\right)\sigma_{A}^{2}\end{aligned} $$ This is one half of the covariance when the entire collection of lines is used. This makes sense, as under the infinitesimal model, in an outbred population (such as the collection of $ F_{2}s $), half the additive variance is between individuals and half is generated by segregation within individuals (Chapter 16). The first covariance, $ \sigma_{G}(\infty, \tau, t) $, considers both the variance within a particular line and also the variance among the initial line founders, while the second, $ \sigma_{G}(\infty, \tau, 0) $, focuses solely on the variance within a particular line.
 
 
 ---
 
-## chapter23_022 · Selection Under Inbreeding: Introduction / Response to Family Selection
+## chapter23_022 · FAMILY SELECTION UNDER PURE SELFING / Response to Family Selection
+
+**[Figure]**
+
+> **Figure 23.3** · page 30 · source: `chapter23`
+>
+> ![Figure 23.3](../figures/fig_0104.png)
+>
+> Figure 23.3 Examples of family selection in selfed lines. Top: The selection unit is the selfed offspring of a parent, and the recombination unit is a (selfed) remnant seed from this parent, so that selection is based on  $ S_{t,t+1} $ families. The covariance of interest is between an individual in the selection unit (generation  $ \tau = t + 1 $) and a descendant of the recombination unit (measured in generation T), which had a common parent in generation t. Bottom: In species with a low seed set, a single plant may not generate sufficient seed for family testing. In this case, additional seed can be generated by a second round of selfing. If selection is based upon such  $ S_{t,t+2} $ families, and we use a remnant (selfed) seed from the parent as the recombination unit, the common parent is two generations removed from the selection unit ( $ \tau = t + 2 $).
+
 
 **[推导 Derivation]**
 
@@ -1043,7 +1026,7 @@ For large values of n, this reduces to Equation 23.40b.
 
 ---
 
-## chapter23_023 · Selection Under Inbreeding: Introduction / Within-family Selection Under Selfing
+## chapter23_023 · FAMILY SELECTION UNDER PURE SELFING / Within-family Selection Under Selfing
 
 **[推导 Derivation]**
 
@@ -1104,7 +1087,7 @@ showing that the total response is at least twice the response of the first gene
 
 ---
 
-## chapter23_024 · Selection Under Inbreeding: Introduction / Combined Selection
+## chapter23_024 · FAMILY SELECTION UNDER PURE SELFING / Combined Selection
 
 **[推导 Derivation]**
 
@@ -1297,7 +1280,16 @@ One of the most widespread natural systems of inbreeding is partial selfing, whe
 
 ---
 
-## chapter23_027 · Selection Under Inbreeding: Introduction / An Approximate Treatment Using Covariances
+## chapter23_027 · RESPONSE UNDER PARTIAL SELFING / An Approximate Treatment Using Covariances
+
+**[Figure]**
+
+> **Figure 23.4** · page 36 · source: `chapter23`
+>
+> ![Figure 23.4](../figures/fig_0105.png)
+>
+> Figure 23.4 When inbreeding depression is present, the parent-offspring regression under partial selfing can be nonlinear. To see this, suppose we have just two groups:  $ f = 0 $ (outcrossed) and  $ f = 1 $ (fully inbred). Within each group, parent-offspring regressions are linear (as indicated by the dashed lines). However, for the population as a whole (i.e., examining individuals without knowledge of which group they belong to), the regression is nonlinear. Here B denotes the inbreeding depression (the change in mean, the open squares, between the outcrossed and fully inbred populations). (After Kelly 1999a.)
+
 
 **[推导 Derivation]**
 
@@ -1362,7 +1354,7 @@ While straightforward (beyond some tedious bookkeeping), there are several poten
 
 ---
 
-## chapter23_028 · Selection Under Inbreeding: Introduction / A More Careful Treatment: Kelly's Structured Linear Model
+## chapter23_028 · RESPONSE UNDER PARTIAL SELFING / A More Careful Treatment: Kelly's Structured Linear Model
 
 Kelly (1999a, 1999b; Kelly and Williamson 2000) proposed an alternative approach for examining the selection response with partial selfing. By analogy with a geographically structured population, he suggested that a more careful approach is to consider the population as a set of cohorts, within which all individuals have the same level of inbreeding. Cohort 0 contains all individuals that arose through random mating in the previous generation, cohort 1 contains those individuals that arose from selfing in the previous generation, and cohort i contains those individuals that have undergone i rounds of selfing before they last enjoyed random mating, with $ f_i = 1 - 1/2^i $. Kelly terms this approach a structured linear model (SLM), as within each cohort, it is assumed that the parent-offspring regressions are linear. The response under selfing is then predicted by specifying both the within-cohort variances and covariances and the among-cohort transitions. Besides properly accounting for the structured nature of partly selfing populations, Kelly's treatment also accommodates the effects of linkage disequilibrium (under the infinitesimal-model assumptions).
 
@@ -1558,7 +1550,7 @@ Morphological, phenological, and behavioral features that influence the selfing 
 
 ---
 
-## chapter23_032 · Selection Under Inbreeding: Introduction / Automatic Selection, Inbreeding Depression, and Reproductive Assurance
+## chapter23_032 · THE EVOLUTION OF SELFING RATES / Automatic Selection, Inbreeding Depression, and Reproductive Assurance
 
 As first noticed by Fisher (1941), the foundational question of mating-system evolution is, "Why are not all hermaphrodites selfers?" This is because of transmission bias, which is often referred to as automatic selection or the cost of outcrossing. Consider a hermaphrodite that selfs. It contributes both eggs and pollen or sperm to its resulting selfed offspring, and it can potentially contribute sperm or pollen to other conspecifics that outcross. Conversely, an outcrossing hermaphrodite contributes an egg that combines with the pollen or sperm of another individual and pollen or sperm that fertilizes the egg of another conspecific. Hence, there is a three to two transmission bias in favor of selfers, generating a 50% selective advantage of an allele that promotes selfing (Fisher 1941; Nagylaki 1976b; Lloyd 1979). As noticed by Nagylaki (1976b), such a selfing gene only spreads if it is also contributes to the pollen or sperm pool for outcrossers (otherwise, the allele never spreads beyond its selfed lineage). The generalization of this latter observation is the notion of pollen discounting, wherein the 50% selection advantage due to increased transmission of the selfing allele becomes discounted if the allele also results in reduced pollen for outcrossing, with any transmission advantage vanishing completely in the limit when no pollen is available for outcrossing.
 
@@ -1590,7 +1582,7 @@ Beyond these simple verbal descriptions of potential sources of individual and g
 
 ---
 
-## chapter23_033 · Selection Under Inbreeding: Introduction / The Lande-Schemske Model: Theory
+## chapter23_033 · THE EVOLUTION OF SELFING RATES / The Lande-Schemske Model: Theory
 
 A watershed paper on the evolution of selfing was published by Lande and Schemske (1985), who made the critical observation (as did Ohta and Cockerham 1974) that the amount of inbreeding depression may itself evolve during selfing. If inbreeding depression is largely caused by the presence of deleterious recessive or partly recessive alleles (as appears to be consistent with much of the data; Charlesworth and Willis 2009; LW Chapter 10), then the increased frequency of homozygotes under inbreeding increases the efficiency of selection for removing such alleles, which in turn can reduce the amount of inbreeding depression. Using the machinery presented in Chapter 7, Lande and Schemske showed that selfing results in lower equilibrium frequencies of recessive or partly recessive deleterious alleles under mutation-selection balance. For example, with 5000 loci, each with a mutation rate to lethal recessives of $ 2 \times 10^{-6} $, the expected fitness reduction in first-generation inbreds relative to outcrossed offspring is 97% based on the equilibrium allele-frequencies under outcrossing. This fitness reduction decreases to 61%, 15%, and 10% when based on the expected equilibrium frequencies for selfing rates of 0.01, 0.05, and 0.10, respectively. Hence, as the selfing rate increases, the fitness cost imposed by inbreeding depression can decrease over time, facilitating the spread of alleles that increase the selfing rate by reducing the fitness differences between outcrossed and selfed offspring.
 
@@ -1602,7 +1594,7 @@ Schoen et al. (1996) argued that selection for selfing from reproduction assuran
 
 ---
 
-## chapter23_034 · Selection Under Inbreeding: Introduction / The Lande-Schemske Model: Data
+## chapter23_034 · THE EVOLUTION OF SELFING RATES / The Lande-Schemske Model: Data
 
 The Lande-Schemske model makes two empirical predictions. First, levels of inbreeding depression should be less in organisms that have an evolutionary history of predominately selfing. This trend is supported by the data. A survey of 54 species of vascular plants from 23 different families examined by Husband and Schemske (1996) found a negative correlation between the amount of inbreeding depression and the selfing rate. The average fitness reduction when comparing offspring produced by selfing with those produced by outcrossing was 23% in predominantly selfing species, while it was 53% for species that predominantly outcross. However, a more detailed survey by Winn et al. (2011) gave a more nuanced view, in that species with intermediate levels of outcrossing displayed as much inbreeding depression as predominantly outcrossing species. Such an outcome was suggested earlier by Lande et al. (1994), who showed that if inbreeding depression is sufficiently strong, no purging will occur until a threshold level of selfing is approached. If the amount of selfing is less than this threshold, little reduction in inbreeding depression is expected.
 
@@ -1616,7 +1608,7 @@ Another force behind relatively stable mixed-mating systems could be selection f
 
 **[示例 Example]**
 
-> **Example 23.10** · ref: `23.10` · source: `chapter23_034.json` · blocks 5–5
+> **Example 23.10** · ref: `23.10` · source: `chapter23_034.json` · blocks 5–6
 >
 > Example 23.10. Two artificial selection experiments when outcrossing opportunities were reduced resulted in fairly rapid evolution of selfing and reduction in inbreeding depression. Bodbyl Roels and Kelly (2011) subjected yellow monkey flower (Mimulus guttatus) lines to either five generations with abundant bumblebees pollinators or five generations with no pollinators. The no-pollinator lines showed reduced seed set over the first few generations, but largely rebounded by generation five. Anther-stigma separation distances decreased in the no-pollinator lines, and this distance was negative correlated with seed set (smaller differences resulting in larger seed set).
 > 
@@ -1625,7 +1617,7 @@ Another force behind relatively stable mixed-mating systems could be selection f
 
 ---
 
-## chapter23_035 · Selection Under Inbreeding: Introduction / Baker's Law and the Demographic Advantages of Selfing
+## chapter23_035 · THE EVOLUTION OF SELFING RATES / Baker's Law and the Demographic Advantages of Selfing
 
 There are some significant ecological and demographic correlates with selfing among the flowering plants. Many annuals are predominately selfing, as are many species associated with frequent colonization events (such as weedy species) and those living in ephemeral habitats. Conversely, long-lived woody species tend to be predominantly outcrossing (Vogler and Kalisz 2001; Barrett et al. 2014). Annuals and species in higher-risk ecological settings periodically run the risk of lack of pollinators or reduced population density in any given year, while these risks are reduced by averaging for species whose individuals have the capacity for reproduction over a number of years. Selfing is also more common in the marginal populations of a species range, again suggestive of some selection to mitigate a lack of outcrossing from either low population density and/or insufficient pollinators. Indeed, in a study involving approximately 200 species from 20 genera spanning 15 plant families, selfers tended to have larger geographic ranges (by about twofold) relative to outcrossing sister taxa (Grossenbacher et al. 2015), which was likely due to the ability of selfers to reproduce in more marginal environments.
 
@@ -1633,7 +1625,7 @@ The above observations are all loose correlates of Baker's Law, so named by Steb
 
 ---
 
-## chapter23_036 · Selection Under Inbreeding: Introduction / Group-level Selection Against Selfing
+## chapter23_036 · THE EVOLUTION OF SELFING RATES / Group-level Selection Against Selfing
 
 The above individual selection pressures (transmission, reproductive assurance, and inbreeding depression) suggest how selfing can evolve, and also what individual-selection forces can enforce outcrossing. However, once a population undergoes a sufficient amount of selfing to reduce its level of inbreeding depression, any transition back towards increased outcrossing is expected to be opposed by individual selection. Hence, much of the historical discussion on the modest frequency of predominantly selfing species is based on the Stebbins (1957) notion of the SEDE (Selfing as an Evolutionary Dead End) hypothesis.
 
@@ -1675,7 +1667,7 @@ Perhaps the more important evolutionary constraint faced by a predominantly self
 
 **[示例 Example]**
 
-> **Example 23.11** · ref: `23.11` · source: `chapter23_036.json` · blocks 10–10
+> **Example 23.11** · ref: `23.11` · source: `chapter23_036.json` · blocks 10–11
 >
 > Example 23.11. Two recent animal-based studies examined the impact of selfing rates on the evolutionary fate of a population. Morran et al. (2009) used a very clever genetic approach in the nematode Caenorhabditis elegans, introducing either the xol-1 or fog-2 mutations into a wild-type line (with an outcrossing rate of roughly 5%). These mutations generate obligately selfing and obligately outcrossing lines, respectively, in otherwise identical genetic backgrounds. The authors applied this system to address two possible costs of selfing: a reduced rate of elimination of new deleterious mutations and a reduced ability to mount an adaptive response in a changing environment. They first artificially inflated the mutation rate (by roughly four-fold) by exposing individuals to the chemical mutagen EMS. The obligately selfing lines showed a significant decline in fitness, while the obligately outcrossing lines did not. Further, the wild-type line was found to be more sensitive to the mutation rate than the wild-type line. type lines showed an increased level of outcrossing after several generations of exposure. These observations are consistent with outcrossing (and hence recombination) facilitating the removal of deleterious mutations, suggesting that their accumulation could be a potential cost of selfing. Next, they subjected the three distinct mating-type lines (now under natural mutation rates) to 50 generations of selection in the presence of a novel bacterial pathogen. The obligately outcrossing and wild-type lines were able to adapt (evolve resistance) while the obligately selfing lines were not. Further, as with the EMS experiment, the outcrossing rate in the wild-type line had increased by the end of the selection experiment.
 > 

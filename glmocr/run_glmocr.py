@@ -22,7 +22,7 @@ if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
 DEFAULT_INPUT_DIR = PROJECT_ROOT / "data" / "背景资料"
-DEFAULT_OUTPUT_DIR = PROJECT_ROOT / "tmp" / "glmocr_output"
+DEFAULT_OUTPUT_DIR = PROJECT_ROOT / "data" / "glmocr_output"
 DEFAULT_ENV_FILE = PROJECT_ROOT / ".env"
 
 SUPPORTED_SUFFIXES = {
@@ -301,7 +301,7 @@ def parse_args() -> argparse.Namespace:
         "--output",
         type=Path,
         default=env_path("GLMOCR_OUTPUT_DIR", DEFAULT_OUTPUT_DIR),
-        help="Output folder. Defaults to ./tmp/glmocr_output or GLMOCR_OUTPUT_DIR.",
+        help="Output folder. Defaults to ./data/glmocr_output or GLMOCR_OUTPUT_DIR.",
     )
     parser.add_argument(
         "--env-file",

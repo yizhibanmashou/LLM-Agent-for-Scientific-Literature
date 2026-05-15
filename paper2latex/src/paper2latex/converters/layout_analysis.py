@@ -8,6 +8,7 @@ import logging
 import asyncio
 import os
 import shutil
+import sys
 from abc import ABC, abstractmethod
 from typing import Optional
 
@@ -49,15 +50,14 @@ class PaddleOCR(LayoutAnalyzer):
             raise ImportError("mcp library not installed. Please install with: pip install mcp")
         
         self.config = config
+        self.last_raw_response = None
         
         # Determine command to run the server
-        uv_path = shutil.which("uvx") or shutil.which("uv")
-        if uv_path:
-            self.command = "uvx"
-            self.args = ["--from", "paddleocr-mcp", "paddleocr_mcp"]
+        if shutil.which("paddleocr_mcp"):
+            self.command = "paddleocr_mcp"
+            self.args = []
         else:
-            # Fallback to python -m
-            self.command = "python"
+            self.command = sys.executable
             self.args = ["-m", "paddleocr_mcp"]
 
         # Environment variables for the server
@@ -73,6 +73,7 @@ class PaddleOCR(LayoutAnalyzer):
             
         if hasattr(config, 'paddle_access_token') and config.paddle_access_token:
             self.env["PADDLEOCR_MCP_AISTUDIO_ACCESS_TOKEN"] = config.paddle_access_token
+        self.env.setdefault("PADDLEOCR_MCP_TIMEOUT", os.getenv("PADDLEOCR_MCP_TIMEOUT", "900"))
             
         logger.info(f"Initialized Paddle OCR Engine for {getattr(config, 'paddle_pipeline', 'Unknown')}")
 
@@ -98,7 +99,7 @@ class PaddleOCR(LayoutAnalyzer):
                 tool_name = "ocr"
                 pipeline = getattr(self.config, 'paddle_pipeline', "PaddleOCR-VL")
                 
-                if pipeline == "PaddleOCR-VL":
+                if pipeline.startswith("PaddleOCR-VL"):
                     tool_name = "paddleocr_vl"
                 elif pipeline == "PP-StructureV3":
                     tool_name = "pp_structurev3"
@@ -118,6 +119,8 @@ class PaddleOCR(LayoutAnalyzer):
                         "return_images": True
                     }
                 )
+
+                self.last_raw_response = self._serialize_tool_result(result)
                 
                 # Parse result
                 final_output = ""
@@ -156,3 +159,20 @@ class PaddleOCR(LayoutAnalyzer):
     def convert(self, pdf_path: str, output_mode: str = "simple") -> str:
         """Synchronous wrapper for conversion."""
         return asyncio.run(self._convert_async(pdf_path, output_mode))
+
+    def _serialize_tool_result(self, result):
+        """Keep a JSON-serializable copy of the MCP tool response for audit."""
+        contents = []
+        for content in getattr(result, "content", []) or []:
+            item = {"type": getattr(content, "type", "")}
+            text = getattr(content, "text", None)
+            if text is not None:
+                item["text"] = text
+            mime_type = getattr(content, "mimeType", None) or getattr(content, "mime_type", None)
+            if mime_type is not None:
+                item["mime_type"] = mime_type
+            data = getattr(content, "data", None)
+            if data is not None:
+                item["data_length"] = len(data) if hasattr(data, "__len__") else None
+            contents.append(item)
+        return {"content": contents}

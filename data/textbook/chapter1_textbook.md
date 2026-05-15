@@ -1,4 +1,4 @@
-# Chapter 1 Textbook Mapping
+# Chapter 1 · Changes in Quantitative Traits Over Time
 
 ## chapter1_001 · Changes in Quantitative Traits Over Time: Introduction
 
@@ -6,7 +6,7 @@ The tendency of modern scientific teaching is to neglect the great books, to lay
 
 **[命题 Proposition]**
 
-Quantitative traits—be they morphological or physiological characters, aspects of behavior, or genome-level features such as the amount of RNA or protein expression for a specific gene—usually show considerable variation within and among populations. A central (perhaps the central) question in evolution is the nature of the underlying forces generating this variation, be it the standing variation within a population or the divergence between species. Fully interwoven into this question is the corollary of how best to achieve targeted changes in organisms exploited for human welfare, namely breed improvement (Figures 1.1 and 1.2). The importance of this applied aspect cannot be overstated. The most important technology developed by humans is agriculture, as all of our other impressive advances rest upon the foundation of a stable and sustainable food system. At present, despite significant improvements in yield (e.g., Evenson and Gollin 2003; Thornton 2010), there is considerable uncertainty about our ability to keep pace with projected global needs (Ray et al. 2012, 2013).
+Quantitative traits—be they morphological or physiological characters, aspects of behavior, or genome-level features such as the amount of RNA or protein expression for a specific gene—usually show considerable variation within and among populations. A central (perhaps the central) question in evolution is the nature of the underlying forces generating this variation, be it the standing variation within a population or the divergence between species. Fully interwoven into this question is the corollary of how best to achieve targeted changes in organisms exploited for human welfare, namely breed improvement (Figure 1.1 and Figure 1.2). The importance of this applied aspect cannot be overstated. The most important technology developed by humans is agriculture, as all of our other impressive advances rest upon the foundation of a stable and sustainable food system. At present, despite significant improvements in yield (e.g., Evenson and Gollin 2003; Thornton 2010), there is considerable uncertainty about our ability to keep pace with projected global needs (Ray et al. 2012, 2013).
 
 It is against this background that we attempt to present a modern, unified theory of quantitative genetics. Such a theory must draw heavily from population genetics, statistical theory, mathematical modeling, genetics, and genomics. It must also be built upon empirical observations from a very wide range of fields. As such, it must consider changes in complex traits in populations of organisms ranging from long-term laboratory studies on viral and bacterial evolution, much shorter-term selection experiments on metazoans, the exhaustive experience of breeders of a wide range of domesticated plants and animals, recent information from human biology, and a growing number of model (and also non-model) species in wild populations. Quantitative-genetics theory also needs to consider the full range of mating systems: inbred and outbred populations of sexual species and the clonal populations of asexual species, and it must also be applicable to haploids, diploids, and polyploids. It should be flexible and extensible, being able to incorporate new sources of information as they become available (e.g., functional-genomics features). Finally, such a theory should be empirically testable, making predictions (such as selection response) based on quantities that we have some hope of estimating.
 
@@ -16,7 +16,25 @@ This introductory chapter starts with a historical overview of considerations of
 
 ---
 
-## chapter1_002 · Changes in Quantitative Traits Over Time: Introduction / The Fusion of Population and Quantitative Genetics
+## chapter1_002 · A BRIEF HISTORY OF THE STUDY OF THE EVOLUTION OF QUANTITATIVE TRAITS / The Fusion of Population and Quantitative Genetics
+
+**[Figure]**
+
+> **Figure 1.1** · page 4 · source: `chapter1`
+>
+> ![Figure 1.1](../figures/fig_0079.png)
+>
+> Figure 1.1 A striking example of the power of artificial selection is seen in lines of broilers, chickens selected for meat production. The figure compares the performance of a representative base line from 1957, an improved line from 1978, and a recent line from 2005, all raised in the same environment. Besides these extremely impressive differences in growth, there are equally important improvements in feed-to-protein conversion efficiency. (After Zuidhof et al. 2014.)
+
+
+**[Figure]**
+
+> **Figure 1.2** · page 5 · source: `chapter1`
+>
+> ![Figure 1.2](../figures/fig_0080.png)
+>
+> Figure 1.2 Yield (measured in tons per hectare) in maize hybrid lines as a function of year of release. Using remnant seed, all lines were grown in the same set of years, with 1992 being highly favorable, 1993 cool and extremely wet, and 2001 hot and dry. Note that the response is parallel over the three different environments (years), suggesting little genotype × environment interaction. Such “common-garden” experiments are the cleanest way to separate an observed gain into genetic versus environmental components (Chapters 19 and 20 present alternative mixed-model approaches that can also accomplish this goal). This separation is critical, as a yield improvement over time could simply reflect improved agronomic practices, rather than genetic gain. In maize, hybrid improvement accounts for between 50 and 70% of the total improvement in yield, with the remainder due to improved farming practices (Duvick 2001). (After Duvick 2005.)
+
 
 Although the histories of population and quantitative genetics are highly intertwined, they have experienced long periods of apparent separation. Their initially separate trajectories trace back to the bitter debate between the biometricians and the Mendelians following the rediscovery of Mendel in the early 1900s (Provine 1971, 2000; Tabery 2004). Motivated by Mendel's work on the inheritance of major genetic factors, the Mendelians believed that evolution was saltational: moving only by major leaps via the appearance of new mutations. The biometricians (supporters of Darwin and the founders of modern statistics) introduced concepts such as regressions and correlations to quantify continuous variation, and they thought that evolution occurred in very small steps by exploiting this variation. This initial schism between inheritance (Mendel) and evolution (Darwin) was largely driven by antagonistic personalities in the different camps (Provine 1971; although see Hogben 1974 for a different perspective), and significantly delayed the modern synthesis—the fusion of Darwin's evolution by natural selection with Mendelian inheritance. Vestiges of this difference between the gene-based focus of the Mendelians and the continuous-trait focus of the biometricians still persist today.
 
@@ -46,7 +64,7 @@ A watershed event in molecular population genetics was Kingman's (1982a, 1982b) 
 
 ---
 
-## chapter1_003 · Changes in Quantitative Traits Over Time: Introduction / The Ongoing Fusion of Molecular and Quantitative Genetics
+## chapter1_003 · A BRIEF HISTORY OF THE STUDY OF THE EVOLUTION OF QUANTITATIVE TRAITS / The Ongoing Fusion of Molecular and Quantitative Genetics
 
 In large part, the interaction between so-called classical genetics and quantitative genetics that played out during the rise of molecular genetics parallels much of the debate between the early Mendelians and biometricians, but with less rancor. During the rise of molecular genetics in the 1950s (nicely reviewed by Judson 1979 and Mukherjee 2016), the notion of a gene grew from a fairly nebulous concept into a rather concrete, well understood, object. This resulted in any statistical description of inheritance from quantitative genetics (variances of traits instead of following genes) becoming far less appealing. Indeed, to many geneticists, quantitative genetics appeared as an anachronism, a crutch that biologists no longer needed. As massive advances were made in the dissection of specific, individual genes with discrete, and highly reproducible, phenotypes, the result was a diminished interest in continuous traits. Indeed, Fisher's notion of an infinitesimal model—a large number of loci, each with very small effects—was anathema to this molecular way of thinking.
 
@@ -64,7 +82,7 @@ A final example highlighting the connectedness between genomics and quantitative
 
 ---
 
-## chapter1_004 · Changes in Quantitative Traits Over Time: Introduction / The Common Thread Between Breeding and Evolution in Natural Populations
+## chapter1_004 · A BRIEF HISTORY OF THE STUDY OF THE EVOLUTION OF QUANTITATIVE TRAITS / The Common Thread Between Breeding and Evolution in Natural Populations
 
 The connection between trait change through artificial selection in domesticated organisms and trait evolution in natural populations was one of the pillars of evidence offered by Darwin in support of his theory of evolution by natural selection. It is thus not surprising that the subfields of breed improvement (which is simply applied evolution) and evolutionary biology have historically had considerable interactions (Hill and Kirkpatrick 2010; Hill 2014; Gianola and Rosa 2015). Both fields are concerned with predicting an expected change in a trait (or vector of traits) given a specific pattern of selection. Evolutionary biologists face the additional, and daunting, challenge of trying to estimate the nature and target (or targets) of selection (i.e., assigning fitnesses to specific trait combinations; Chapters 20, 29, and 30). We consider this last topic separately, after first examining the common connections between the work of breeders and evolutionary biologists.
 
@@ -84,7 +102,7 @@ The most recent chapter in the development of breeding methods is the use of den
 
 ---
 
-## chapter1_005 · Changes in Quantitative Traits Over Time: Introduction / Detecting Selection in Natural Populations
+## chapter1_005 · A BRIEF HISTORY OF THE STUDY OF THE EVOLUTION OF QUANTITATIVE TRAITS / Detecting Selection in Natural Populations
 
 Given the biometrician focus on evolution acting on continuous variation, early attempts to measure natural selection in the wild predated Fisher's (1918) treatment of complex trait genetics. Although this focus on detecting selection on metric traits was entirely concerned with the phenotypic level, it marked the beginning of evolutionary quantitative genetics. Two early such attempts were particularly noteworthy. The first was due to Weldon (1895, 1899), who examined morphological features in adult and juvenile crabs (Carcinus maenas) in Plymouth Sound and in the Bay of Naples, generating data that enticed Karl Pearson (1903) to start a serious consideration of the statistics of selection. The second was the classic study by Herman Bumpus (1899). During a severe ice storm in February 1898, Bumpus collected 136 immobilized house sparrows (Passer domesticus) from several locations around Providence (in the US state of Rhode Island). Of these, only 72 survived. For all 136 individuals, Bumpus recorded sex and male maturity state (adult vs. juvenile) and presented meticulous measurements of their body weight and eight skeletal features. As reviewed in Chapter 30, Bumpus's results continue to be examined today, illustrating the power of carefully collected, and widely disseminated, datasets.
 
@@ -102,7 +120,7 @@ Lewin's maxim that "there is nothing more practical than a good theory" (Lewin 1
 
 ---
 
-## chapter1_007 · Changes in Quantitative Traits Over Time: Introduction / The Completeness of Evolutionary Theory
+## chapter1_007 · THE THEORETICAL FOUNDATIONS OF EVOLUTIONARY BIOLOGY / The Completeness of Evolutionary Theory
 
 Without a theoretical framework, science is simply a fact-establishing enterprise. The emergence of facts from consistent observations is progress, but theory provides a mechanistic explanation of the material basis of facts. A theoretical framework also provides the basis for making predictions in areas where observations have not previously been made, not simply based on statistical extrapolation but rather on arguments from first principles. Mathematical theory is particularly desirable, as it allows the development of logical arguments from well-defined assumptions, whereas verbal theorizing can easily go awry in the analysis of complex systems. Fortunately, evolutionary biology has a well-established framework of principles from which to draw. As noted above, starting with Fisher's seminal 1918 paper, which both founded the field of quantitative genetics and established a number of principles upon which modern statistics relies, the field of population genetics has experienced a rich history. Indeed, the field of theoretical population genetics, which is at least as well-grounded as any other area of quantitative biology (including biophysics), forms the formal foundation for all of evolutionary theory.
 
@@ -138,7 +156,7 @@ Although our specific railing on the EES ideology may be offensive to some or se
 
 ---
 
-## chapter1_009 · Changes in Quantitative Traits Over Time: Introduction / Nonadaptive Hypotheses and our Understanding of Evolution
+## chapter1_009 · THE THEORETICAL FOUNDATIONS OF EVOLUTIONARY BIOLOGY / Nonadaptive Hypotheses and our Understanding of Evolution
 
 Darwin’s and Wallace’s grand views of selection as a natural force for the emergence of adaptive change marked a key moment in the history of biology. So convincing were they, and their popular-science writing disciples such as Dawkins, that most people (including most biologists) view all aspects of biology to be necessary products of natural selection. As it channels the entire field away from a landscape of unbiased study, this dogmatic adherence to the unbounded power of natural selection constitutes one of the most significant problems in evolutionary science. Whereas natural selection is one of the most pervasive forces in the biological world, it is not all-powerful. As is evident throughout the following pages, the genetic paths open to exploitation by selection are strongly influenced by another pervasive force—the noise in the evolutionary process imposed by random genetic drift which is caused by both the fact that there are finite numbers of individuals within populations and the physical linkage of different nucleotide sites on chromosomes. If the power of selection is weak relative to that of drift, as is often the case at the molecular level, evolution will proceed in an effectively neutral manner. Biased mutation pressure can also play a role here if it is sufficiently strong relative to selection, steering evolution in the direction of mutation bias.
 
@@ -219,7 +237,7 @@ We assume that the reader has some basic knowledge of the foundations of the gen
 
 ---
 
-## chapter1_011 · Changes in Quantitative Traits Over Time: Introduction / Evolution at One and Two Loci
+## chapter1_011 · OVERVIEW AND PATHWAYS THROUGH THIS VOLUME / Evolution at One and Two Loci
 
 The next nine chapters develop the population-genetic theory that underpins most analyses of the evolution of quantitative traits, serving as the foundation for the remainder of this volume. Chapter 2 begins this excursion by examining drift and mutation-drift interaction, including important concepts such as the infinite-sites and infinite-alleles models of sequence evolution and the extremely powerful tool of the coalescent for treating drift.
 
@@ -239,7 +257,7 @@ Chapters 8–10 apply the concepts $ aeveiopea $ in these early chapters in the 
 
 ---
 
-## chapter1_012 · Changes in Quantitative Traits Over Time: Introduction / Drift and Quantitative Traits
+## chapter1_012 · OVERVIEW AND PATHWAYS THROUGH THIS VOLUME / Drift and Quantitative Traits
 
 Paralleling our development of population-genetics theory (where we first considered the roles of drift and mutation before examining the impact of selection), before we turn to selection acting on traits, Chapters 11 and 12 examine trait evolution under drift and mutation alone. Chapter 11 examines the impact of drift and mutation on the additive-genetic variance within a population. In order to fully address this issue, it also develops the rather intricate covariances between relatives that arise under general schemes of inbreeding.
 
@@ -247,7 +265,7 @@ Chapter 12 examines the among-population divergence in trait means under drift a
 
 ---
 
-## chapter1_013 · Changes in Quantitative Traits Over Time: Introduction / Short-term Response on a Single Character
+## chapter1_013 · OVERVIEW AND PATHWAYS THROUGH THIS VOLUME / Short-term Response on a Single Character
 
 The remainder of this volume examines the role of selection in changing the distribution of trait values for a quantitative character. We start by considering the short-term changes in a single trait. By short-term, we mean the first few generations, where selection-induced changes in allele frequencies at underlying loci are sufficiently small to be ignored.
 
@@ -271,7 +289,7 @@ Chapter 20 examines the expected selection response in natural populations. Here
 
 ---
 
-## chapter1_014 · Changes in Quantitative Traits Over Time: Introduction / Selection in Structured Populations
+## chapter1_014 · OVERVIEW AND PATHWAYS THROUGH THIS VOLUME / Selection in Structured Populations
 
 Chapters 21–23 conclude our treatment of short-term response on a single trait, considering situations other than mass selection (wherein individuals are selected based on their phenotypic value alone) under random mating. Chapter 21 examines family-based selection schemes, wherein information from families—such as family means over a set of environments or deviations within a given family—are used in selection decisions.
 
@@ -281,7 +299,7 @@ Chapter 23 concludes our discussion of structured populations by considering the
 
 ---
 
-## chapter1_015 · Changes in Quantitative Traits Over Time: Introduction / Population-genetic Models of Trait Response
+## chapter1_015 · OVERVIEW AND PATHWAYS THROUGH THIS VOLUME / Population-genetic Models of Trait Response
 
 Chapters 13–23 consider short-term response, wherein either allele-frequency change is sufficiently small to be ignored, or is modified in very predictable ways, largely independent of the selection scheme (such as the decline in $ \sigma_{A}^{2} $ under drift). Building on the results from Chapters 5 and 7, Chapters 24–28 examine the theory of long-term selection response in the face of significant allele-frequency change. Long-term response is far less predictable than short-term response. Indeed, it is entirely unpredictable from knowledge of just the base population genetic variances alone.
 
@@ -297,7 +315,7 @@ Chapter 28, perhaps the most technical chapter in this volume, examines the exte
 
 ---
 
-## chapter1_016 · Changes in Quantitative Traits Over Time: Introduction / Measuring Selection on Traits
+## chapter1_016 · OVERVIEW AND PATHWAYS THROUGH THIS VOLUME / Measuring Selection on Traits
 
 We conclude with the estimation of individual fitnesses in natural populations and the search for specific traits, or trait-combinations, currently under selection. In many ways, these last two chapters are the complement of Chapters 9 and 10. The tests from these previous chapters are trait-independent and require only sequence information, while the methods in Chapters 29 and 30 require estimates of the fitnesses of individuals (which are far from trivial to obtain), as well as the phenotypic values of candidate traits. The search for traits under selection in natural populations is a major focus of much of evolutionary and ecological genetics.
 
@@ -307,7 +325,7 @@ Chapter 30 extends the univariate analysis of fitness-trait associations to mult
 
 ---
 
-## chapter1_017 · Changes in Quantitative Traits Over Time: Introduction / Appendices
+## chapter1_017 · OVERVIEW AND PATHWAYS THROUGH THIS VOLUME / Appendices
 
 Our six appendices introduce and review important mathematical and statistical tools used throughout this volume. Appendix 1 reviews diffusions, a class of approximations from probability theory widely used in population genetics to handle complex models with random features, notably the interaction of drift and selection.
 
@@ -321,13 +339,13 @@ Appendix 6 concludes with a few brief results on the calculus of matrix and vect
 
 ---
 
-## chapter1_018 · Changes in Quantitative Traits Over Time: Introduction / Volume
+## chapter1_018 · OVERVIEW AND PATHWAYS THROUGH THIS VOLUME / Volume
 
 The advanced reader might have noticed that a number of important topics are not covered in this volume. As mentioned at the start of this chapter, our treatment of selection response on quantitative traits concludes in Volume 3, which covers important topics in applied breeding such as the development and selection of pure lines and selection programs for hybrid breeding. The bulk of Volume 3, however, is multivariate, examining multivariate selection response in detail. We consider both the change in the mean vector and in the G matrix of the additive-genetic variances and covariances for the vector of traits of interest and examine methods for comparing the stability of G over populations. We conclude with a variety of applications of multivariate methods, such as the theory of index selection, BLUP and genomic selection, dealing with genotype × environment interactions, and selection on longitudinal traits (those whose phenotypes change over time, such as a growth curve or milk yield). The latter are often called function-valued traits, and can they be modeled by random-regressions which is an extension of BLUP methodology.
 
 ---
 
-## chapter1_019 · Changes in Quantitative Traits Over Time: Introduction / Notation
+## chapter1_019 · OVERVIEW AND PATHWAYS THROUGH THIS VOLUME / Notation
 
 Finally, we need to briefly comment on the bane of almost every theoretical treatment: notation. One of our greatest challenges in trying to forge a cross-disciplinary synthesis spanning the full breadth of quantitative genetics was dealing with the considerable amount of overlapping notational symbols found in the literature. For example, $ \theta $ is widely used for very different quantities in different subfields of quantitative and population genetics. While we could have created new notation for the various quantities with overlapping symbols, this would have introduced an additional level of complexity. Hence, we have tried (as much as possible) to follow the common usage in the relevant literature for a given field at the expense of some notational overlap. Hopefully, any slight ambiguity introduced by the recycling of some of the notational symbols across different chapters can be distinguished from the context of the presentation.
 

@@ -1,4 +1,4 @@
-# Chapter 22 Textbook Mapping
+# Chapter 22 · Associative Effects: Competition, Social Interactions, Group and Kin Selection
 
 ## chapter22_001 · Associative Effects: Competition, Social Interactions, Group and Kin Selection: Introduction
 
@@ -30,7 +30,7 @@ All organisms interact with their external environment, and a very significant f
 
 ---
 
-## chapter22_003 · Associative Effects: Competition, Social Interactions, Group and Kin Selection: Introduction / Early Models of Competition
+## chapter22_003 · DIRECT VERSUS ASSOCIATIVE EFFECTS / Early Models of Competition
 
 It has long been appreciated by breeders that competition among plants within a plot has a significant impact on important agricultural traits such as yield. While a particular genotype may have high yield when grown in isolation, when grown in a group, its competitive effects on other members within its group could result in a lower plot yield. Yield (and other traits) of a particular plant in a plot is therefore a function of two components. First, an individual's genotype has a direct influence on its ability to garner resources such as light, water, and nutrients. Second, that genotype influences others around it by competing for limiting resources. Other plants in the plot also compete, and these in turn influence the yield of the focal individual. One might expect that plants that are very successful at garnering resources have positive direct effects, but negative associative effects on nearby individuals. Thus, a plot of high-competing genotypes can have a low yield, as the positive direct effects for any particular plant are more than countered by negative associative effects from being surrounded by superior competitors.
 
@@ -45,9 +45,18 @@ A historically important paper on the evolution of competition is that by Sakai 
 
 ---
 
-## chapter22_004 · Associative Effects: Competition, Social Interactions, Group and Kin Selection: Introduction / Direct and Associative Effects
+## chapter22_004 · DIRECT VERSUS ASSOCIATIVE EFFECTS / Direct and Associative Effects
 
-A simple example will introduce Griffing's idea. As shown in Figure 22.1A, consider a group of four individuals. Our focal individual is 1, and its phenotype, $ z_1 $ (for the trait of interest), is determined by its own intrinsic value, $ P_{d,1} $ (the subscript $ d $ indicating the direct effect), plus the associative effects, $ P_{s,2} $, $ P_{s,3} $, and $ P_{s,4} $, contributed by other group members.
+A simple example will introduce Griffing's idea. As shown in Figure 22.1, consider a group of four individuals. Our focal individual is 1, and its phenotype, $ z_1 $ (for the trait of interest), is determined by its own intrinsic value, $ P_{d,1} $ (the subscript $ d $ indicating the direct effect), plus the associative effects, $ P_{s,2} $, $ P_{s,3} $, and $ P_{s,4} $, contributed by other group members.
+
+**[Figure]**
+
+> **Figure 22.1** · page 4 · source: `chapter22`
+>
+> ![Figure 22.1](../figures/fig_0098.png)
+>
+> Figure 22.1 Left: The phenotypic value,  $ z_{1} $, of the focal individual is the sum of its direct phenotypic effect,  $ P_{d,1} $, plus the associative effects,  $ P_{s,2} $,  $ P_{s,3} $,  $ P_{s,4} $, of the three other members in its group. Right: The total breeding value ( $ A_{T,1} $) of individual 1 is its direct breeding value,  $ A_{d,1} $, plus the total contribution of the associative-effect breeding value,  $ A_{s,1} $, to the three members of its group. A key concept is that only part of  $ A_{T} $ (namely  $ A_{d} $) is embedded within its own phenotypic value. The remaining part of  $ A_{T} $, namely its associative component,  $ 3A_{s} $, is only expressed in the phenotypes of other group members.
+
 
 Associative effects are also referred to in the literature as indirect genetic effects (IGEs) (Moore et al. 1997; Wolf et al. 1998; McGlothlin et al. 2010), or social effects (Bijma et al. 2007a, 2007b), and we use the subscript s (indicating social effects) to denote them. In our discussion, we will use the terms associative and social effects interchangeably. Note that the values of $ P_{s,i} $ do not necessarily correspond to the phenotypes for the trait of interest in the other group members, but rather represent the contribution from these members to the phenotype of the focal individual. This contribution from fellow group members is part of the environment experienced by the focal individual.
 
@@ -100,13 +109,13 @@ This equation foreshadows individual versus group selection. Individual selectio
 
 ---
 
-## chapter22_005 · Associative Effects: Competition, Social Interactions, Group and Kin Selection: Introduction / Animal Well-being and the Improvement of the Heritable Social Environment
+## chapter22_005 · DIRECT VERSUS ASSOCIATIVE EFFECTS / Animal Well-being and the Improvement of the Heritable Social Environment
 
 In high-intensity agricultural systems, competition has a strong effect on yield and other traits. Animals in such environments face significant stress, which impacts both their production and their well-being. As reviewed by Muir and Craig (1998), animal well-being is becoming an increasingly important aspect of animal production. Muir suggests that social aspects such as aggression, fighting, and sharing of common resources are all potential targets of selection, and responses in these traits (for less aggression and more sharing) improves both animal welfare and production. Further, for a number of species (such as certain fishes), domestication has proved somewhat problematic due to the tendency for cannibalism (and lesser forms of aggression), when individuals are grown under production conditions. Muir suggested improving welfare by selecting for an improved mean social environment through selection of individuals with favorable $ A_s $ values for the traits of interest. Again, these are aspects of the group environment and can respond favorably to an appropriate selection design, provided there is a heritable component of $ P_s $, namely, $ \sigma^2(A_s) > 0 $.
 
 ---
 
-## chapter22_006 · Associative Effects: Competition, Social Interactions, Group and Kin Selection: Introduction / What Do We Mean by Group?
+## chapter22_006 · DIRECT VERSUS ASSOCIATIVE EFFECTS / What Do We Mean by Group?
 
 **[定义 Definition]**
 
@@ -118,7 +127,16 @@ The second feature about groups is their formation and reproduction, an issue th
 
 ---
 
-## chapter22_007 · Associative Effects: Competition, Social Interactions, Group and Kin Selection: Introduction / Trait- vs. Variance Component-based Models
+## chapter22_007 · DIRECT VERSUS ASSOCIATIVE EFFECTS / Trait- vs. Variance Component-based Models
+
+**[Figure]**
+
+> **Figure 22.2** · page 6 · source: `chapter22`
+>
+> ![Figure 22.2](../figures/fig_0099.png)
+>
+> Figure 22.2 The difference between trait-based and variance-component based models. Here, the phenotypic value,  $ z_{o,1} $, of a trait (which we label 1) in an offspring is a function of maternal phenotype. We suppose that there are three maternal traits (i, j, k) whose phenotypes influence the offspring value. Top: Under a variance-component based approach, we ignore all the maternal trait values and simply estimate a single maternal performance value,  $ P_{m,1} $, that directly influences the trait value in the offspring. The resulting model becomes  $ z_{o,1} = \mu + A_{d,1} + E_{d,1} + P_{m,1} $, where  $ A_{d,1} $ is the trait breeding value in the offspring,  $ E_{d,1} $, its environmental value, and  $ P_{m,1} = A_{s,1} + E_{s,1} $ can be decomposed into the social breeding value on trait 1 plus a residual. Bottom: Under a trait-based model, provided we know all of the maternal traits whose phenotypes influence trait 1 in the offspring, then we directly incorporate these, along with their regression coefficients,  $ \Psi_{1,i} $, showing how these maternal phenotypes translate into offspring trait value. Here,  $ z_{o,1} = \mu + A_{d,1} + E_{d,1} + \Psi_{1,i} z_{m,i} + \Psi_{1,j} z_{m,j} + \Psi_{1,k} z_{m,k} $, where the last three terms together comprise  $ P_{m,1} $. Trait-based models are required if one wishes to consider the joint evolution of traits 1 and i, j, k. Their drawback is that one has to specify to all of the relevant maternal traits. Conversely, under a variance-component method, all of the maternal phenotypes are conveniently collapsed into a single value, whose breeding value can be estimated from an appropriate design (detailed below).
+
 
 **[推导 Derivation]**
 
@@ -137,11 +155,11 @@ Bijma (2014) noted that variance-component approaches are akin to using Robertso
 
 ---
 
-## chapter22_008 · Associative Effects: Competition, Social Interactions, Group and Kin Selection: Introduction / The Total Breeding Value (TBV) and $ T^{2} $
+## chapter22_008 · DIRECT VERSUS ASSOCIATIVE EFFECTS / The Total Breeding Value (TBV) and $ T^{2} $
 
 **[推导 Derivation]**
 
-Given that an individual contains breeding values for both direct and social effects, what is its contribution to the next generation? We can directly see this from Equation 22.1d, where it is shown as the contribution to the population mean from individual 1 from its direct breeding value $ (A_{d_1}) $ plus its contribution to the $ (n-1) $ other individuals in its group through its associative-effects breeding value, $ A_{s_1} $ (Figure 22.1b). Based on this observation, Bijma et al. (2007a) defined the total breeding value (TBV), $ A_T $, of a trait from an individual measured in a group of size $ n $ as the sum of its direct effect plus the total associative effects over all group members, or
+Given that an individual contains breeding values for both direct and social effects, what is its contribution to the next generation? We can directly see this from Equation 22.1d, where it is shown as the contribution to the population mean from individual 1 from its direct breeding value $ (A_{d_1}) $ plus its contribution to the $ (n-1) $ other individuals in its group through its associative-effects breeding value, $ A_{s_1} $ (Figure 22.1). Based on this observation, Bijma et al. (2007a) defined the total breeding value (TBV), $ A_T $, of a trait from an individual measured in a group of size $ n $ as the sum of its direct effect plus the total associative effects over all group members, or
 
 > **Formula (22.3)** · `22.3` · source: `chapter22_block_025` · The Total Breeding Value (TBV) and $ T^{2} $
 >
@@ -152,7 +170,7 @@ Moore et al. (1997) introduced a similar measure for trait-based models. Noting 
 
 **[示例 Example]**
 
-> **Example 22.2** · ref: `22.2` · source: `chapter22_008.json` · blocks 2–2
+> **Example 22.2** · ref: `22.2` · source: `chapter22_008.json` · blocks 1–5
 >
 > Example 22.2. Consider a trait in a group of four (unrelated) individuals, where we assume there are no environmental effects, which means that $ P_d = A_d $ and $ P_s = A_s $. The population mean is 20, and the four group members have the following breeding values for direct, associative, and total effects:
 > 
@@ -300,16 +318,14 @@ The apparent simplicity of this expression is somewhat misleading, as $ \beta_{w
 
 **[示例 Example]**
 
-> **Example 22.3** · ref: `22.3` · source: `chapter22_009.json` · blocks 9–9
+> **Example 22.3** · ref: `22.3` · source: `chapter22_009.json` · blocks 9–10
 >
-> Example 22.3. Consider a trait in a group of 10 unrelated individuals, with $ \sigma^2(P_d) = 10 $, $ \sigma^2(P_s) = 1 $, and both direct and associative effects having modest heritabilities on the scale of the effects themselves ($ h_{d'}^2 = 0.4 $, $ h_{s'}^2 = 0.3 $). To simplify matters, assume $ \sigma(A_d, A_s) = 0 $. Applying Equation 22.5b, the resulting phenotypic variance is $$ \sigma_{z}^{2}=\sigma^{2}(P_{d})+9\cdot\sigma^{2}(P_{s})=10+9\cdot1=19 $$ From Equation 22.4c, the variance in total breeding value becomes $$ \sigma^{2}(A_{T})=\sigma^{2}(A_{d})+9^{2}\cdot\sigma^{2}(A_{s})=h_{d^{\prime}}^{2}\sigma^{2}(P_{d})+\left[9^{2}\cdot h_{s^{\prime}}^{2}\sigma^{2}(P_{s})\right]=4+(81\cdot0.3)=28.3 $$ yielding (from Equation 22.7a) $ T^{2}=28.3/19=1.49 $.
-> 
-> A real-world example of large potential differences in $ h_d^2 $ versus $ T^2 $ involves survival days in chickens (Bijma et al. 2007b). Ignoring associative effects yields a direct heritability of $ h_d^2 = 0.07 $, while a mixed model incorporating associative effects (detailed later in chapter) yielded an estimate of $ T^2 = 0.20 $, a threefold increase. Hence, under the conditions of this study, roughly two-thirds of the heritable variation in the trait arises from interactions between individuals and is thus hidden from standard analyses that ignore them. As discussed below, this component is only fully accessible under individual selection if the group includes relatives.
+> Example 22.3. Consider a trait in a group of 10 unrelated individuals, with $ \sigma^2(P_d) = 10 $, $ \sigma^2(P_s) = 1 $, and both direct and associative effects having modest heritabilities on the scale of the effects themselves ( $ h_{d'}^2 = 0.4 $, $ h_{s'}^2 = 0.3 $). To simplify matters, assume $ \sigma(A_d, A_s) = 0 $. Applying Equation 22.5b, the resulting phenotypic variance is $$ \sigma_{z}^{2}=\sigma^{2}(P_{d})+9\cdot\sigma^{2}(P_{s})=10+9\cdot1=19 $$ From Equation 22.4c, the variance in total breeding value becomes $$ \sigma^{2}(A_{T})=\sigma^{2}(A_{d})+9^{2}\cdot\sigma^{2}(A_{s})=h_{d^{\prime}}^{2}\sigma^{2}(P_{d})+\left[9^{2}\cdot h_{s^{\prime}}^{2}\sigma^{2}(P_{s})\right]=4+(81\cdot0.3)=28.3 $$ yielding (from Equation 22.7a) $ T^{2}=28.3/19=1.49 $. A real-world example of large potential differences in $ h_d^2 $ versus $ T^2 $ involves survival days in chickens (Bijma et al. 2007b). Ignoring associative effects yields a direct heritability of $ h_d^2 = 0.07 $, while a mixed model incorporating associative effects (detailed later in the chapter) yielded an estimate of $ T^2 = 0.20 $, a threefold increase. Hence, under the conditions of this study, roughly two-thirds of the heritable variation in the trait arises from interactions between individuals and is thus hidden from standard analyses that ignore them. As discussed below, this component is only fully accessible under individual selection if the group includes relatives.
 
 
 ---
 
-## chapter22_010 · Associative Effects: Competition, Social Interactions, Group and Kin Selection: Introduction / $ A_{s} $ as a Function of Group Size
+## chapter22_010 · DIRECT VERSUS ASSOCIATIVE EFFECTS / $ A_{s} $ as a Function of Group Size
 
 As the careful reader will have noted, the direct effect, $ A_d $, is independent of group size, while the social effect, $ A_s $, potentially changes with group size. Suppose a genotype has a breeding value for social effects of 10 when measured in groups of size four. Does this change with group size and, if so, how? This is an empirical issue, and one can frame it in a $ G \times E $ setting. The environments here are different group size, and if $ A_s $ shows $ G \times E $, the value of $ A_s $ changes over $ n $.
 
@@ -390,7 +406,7 @@ While group selection always yields a nonnegative response, if the associative e
 
 ---
 
-## chapter22_012 · Associative Effects: Competition, Social Interactions, Group and Kin Selection: Introduction / Individual Selection: Theory
+## chapter22_012 · SELECTION IN THE PRESENCE OF ASSOCIATIVE EFFECTS / Individual Selection: Theory
 
 Consider individual selection in a group of size n, whose members are potentially related. Recalling Equation 22.4a, the correlation between phenotype and total breeding value is $$ \sigma(z_{i},A_{T_{i}})=\sigma^{2}(A_{d})+(n-1)\sigma(A_{d},A_{s})+\sum_{j\neq i}\sigma\left[A_{s_{j}},A_{d_{i}}+(n-1)A_{s_{i}}\right] $$
 
@@ -473,7 +489,7 @@ The second expression follows from the standard identity that $ S = \sigma_z \ba
 
 **[示例 Example]**
 
-> **Example 22.4** · ref: `22.4` · source: `chapter22_013.json` · blocks 2–2
+> **Example 22.4** · ref: `22.4` · source: `chapter22_013.json` · blocks 2–5
 >
 > Example 22.4. Muir (2005) estimated variance components for six-week body weight in Japanese quail (Coturnix coturnix japonica) housed in groups of $n = 16$ per cage. REML estimates of the genetic variances were $\sigma^2(A_d) = 33.7$ and $\sigma^2(A_s) = 2.87$, while $\sigma(A_d, A_s) = -5.5$. Under these values, the predicted response to individual selection in a group of 16 unrelated individuals is $$ R=\frac{\bar{\imath}}{\sigma_{z}}\left[\sigma^{2}(A_{d})+(n-1)\sigma(A_{d},A_{s})\right]=\frac{\bar{\imath}}{\sigma_{z}}\left[33.7+15\cdot(-5.5)\right]=-48.8\frac{\bar{\imath}}{\sigma_{z}} $$
 > 
@@ -486,20 +502,14 @@ The second expression follows from the standard identity that $ S = \sigma_z \ba
 
 **[示例 Example]**
 
-> **Example 22.5** · ref: `22.5` · source: `chapter22_013.json` · blocks 3–3
+> **Example 22.5** · ref: `22.5` · source: `chapter22_013.json` · blocks 6–9
 >
-> Example 22.5. Consider a trait with $ \sigma^2(A_d) = 500 $, $ \sigma^2(A_s) = 50 $, $ \rho(A_d, A_s) = -0.25 $, and $ \sigma^2(E_d) = 400 $. For ease of presentation, we assume that there are no social environmental effects ($ E_s = 0 $) and that $ E_d $ is uncorrelated across family members (i.e., no common family environment and no dominance). Consider a group size of $ n = 6 $. Given a selection intensity of $ \bar{i} $, what response is expected under individual selection when group members are unrelated? Here $ \sigma(A_d, A_s) = -0.25 \sqrt{500 \cdot 50} = -39.5 $. Substituting into Equation 22.4b gives the covariance as $$ \sigma(z,A_{T})=\sigma^{2}(A_{d})+(n-1)\sigma(A_{d},A_{s})=500-(5\cdot39.5)=302.5 $$
-> 
-> Likewise, from Equation 22.5c, the phenotypic variance is $$ \begin{aligned}\sigma^{2}(z)&=\sigma^{2}(A_{d})+\sigma^{2}(E_{d})+(n-1)\left[\sigma^{2}(A_{s})+\sigma^{2}(E_{s})\right]\\&=500+400+5\cdot50=1150\end{aligned} $$
-> 
-> Applying Equation 22.14, the resulting response becomes $$ R=\frac{\sigma(z,A_{T})}{\sigma_{z}}\bar{\imath}=\frac{302.5}{\sqrt{1150}}\bar{\imath}=8.92\bar{\imath} $$
-> 
-> Now suppose that group members are half-sibs $ (r = 0.25) $. What is the expected response? Applying Equation 22.12d yields $$ \begin{aligned}\sigma(z,A_{T})&=\sigma(z,A_{T}\mid r=0)+(n-1)r\left[\sigma\left(A_{s},A_{d}\right)+(n-1)\sigma^{2}\left(A_{s}\right)\right]\\&=302.5+5\cdot0.25(-39.5+5\cdot50)=565.5\end{aligned} $$ while Equation 22.13b yields a phenotypic variance of $$ \begin{aligned}\sigma^{2}(z)&=\sigma^{2}(z\mid r=0)+(n-1)r\left[\sigma(A_{s},A_{d})+(n-2)\sigma^{2}(A_{d})\right]\\&=1150+\left[5\cdot0.25(-39.5+4\cdot50)\right]=1350.6\end{aligned} $$ resulting in a response of $ R = 15.39\,\bar{\tau} $. Likewise, if the group consists of full sibs ($ r = 0.5 $), the resulting covariance, variance, and response are, respectively, 828.5, 1551.2, and 21.04\,. Thus, the response to selection increases with the relatedness of group members, with a 1.7- and 2.4-fold increase when using groups of half- and full-sibs (respectively) relative to groups of unrelated individuals.
+> Example 22.5. Consider a trait with $ \sigma^2(A_d) = 500 $, $ \sigma^2(A_s) = 50 $, $ \rho(A_d, A_s) = -0.25 $, and $ \sigma^2(E_d) = 400 $. For ease of presentation, we assume that there are no social environmental effects ( $ E_s = 0 $) and that $ E_d $ is uncorrelated across family members (i.e., no common family environment and no dominance). Consider a group size of $ n = 6 $. Given a selection intensity of $ \bar{i} $, what response is expected under individual selection when group members are unrelated? Here $ \sigma(A_d, A_s) = -0.25 \sqrt{500 \cdot 50} = -39.5 $. Substituting into Equation 22.4b gives the covariance as $$ \sigma(z,A_{T})=\sigma^{2}(A_{d})+(n-1)\sigma(A_{d},A_{s})=500-(5\cdot39.5)=302.5 $$ Likewise, from Equation 22.5c, the phenotypic variance is $$ \begin{aligned}\sigma^{2}(z)&=\sigma^{2}(A_{d})+\sigma^{2}(E_{d})+(n-1)\left[\sigma^{2}(A_{s})+\sigma^{2}(E_{s})\right]\\&=500+400+5\cdot50=1150\end{aligned} $$ Applying Equation 22.14, the resulting response becomes $$ R=\frac{\sigma(z,A_{T})}{\sigma_{z}}\bar{\imath}=\frac{302.5}{\sqrt{1150}}\bar{\imath}=8.92\bar{\imath} $$ Now suppose that group members are half-sibs $ (r = 0.25) $. What is the expected response? Applying Equation 22.12d yields $$ \begin{aligned}\sigma(z,A_{T})&=\sigma(z,A_{T}\mid r=0)+(n-1)r\left[\sigma\left(A_{s},A_{d}\right)+(n-1)\sigma^{2}\left(A_{s}\right)\right]\\&=302.5+5\cdot0.25(-39.5+5\cdot50)=565.5\end{aligned} $$ while Equation 22.13b yields a phenotypic variance of $$ \begin{aligned}\sigma^{2}(z)&=\sigma^{2}(z\mid r=0)+(n-1)r\left[\sigma(A_{s},A_{d})+(n-2)\sigma^{2}(A_{d})\right]\\&=1150+\left[5\cdot0.25(-39.5+4\cdot50)\right]=1350.6\end{aligned} $$ resulting in a response of $ R = 15.39\,\bar{\tau} $. Likewise, if the group consists of full sibs ( $ r = 0.5 $), the resulting covariance, variance, and response are, respectively, 828.5, 1551.2, and 21.04\,\bar{\tau}. Thus, the response to selection increases with the relatedness of group members, with a 1.7- and 2.4-fold increase when using groups of half- and full-sibs (respectively) relative to groups of unrelated individuals.
 
 
 ---
 
-## chapter22_014 · Associative Effects: Competition, Social Interactions, Group and Kin Selection: Introduction / Individual Selection: Direct vs. Social Response
+## chapter22_014 · SELECTION IN THE PRESENCE OF ASSOCIATIVE EFFECTS / Individual Selection: Direct vs. Social Response
 
 **[推导 Derivation]**
 
@@ -530,20 +540,14 @@ Equation 22.15b shows that the group must contain relatives $ (r \neq 0) $ in or
 
 **[示例 Example]**
 
-> **Example 22.6** · ref: `22.6` · source: `chapter22_014.json` · blocks 3–3
+> **Example 22.6** · ref: `22.6` · source: `chapter22_014.json` · blocks 3–6
 >
-> Example 22.6. Consider the response in a family of half-sibs from Example 22.5, where the expected total response was 15.39 $ \bar{i} $. What were the contributions from the direct and social responses? For the values used in that example, $$ \begin{aligned}&\sigma(A_{d},z)=\sigma^{2}(A_{d})+r(n-1)\sigma(A_{d},A_{s})=500+[0.25\cdot5\cdot(-39.5)]=450.63\\ &\sigma(A_{s},z)=\sigma(A_{d},A_{s})+r(n-1)\sigma^{2}(A_{s})=-39.5+[0.24\cdot5\cdot50]=23.0\\ \end{aligned} $$
-> 
-> Recalling from Example 22.5 that $ \sigma_z^2 = 1350.6 $ for half-sibs, Equations 22.15a and 22.15b return the two components of response as $$ R_{d}=\frac{450.63}{\sqrt{1350.6}}\bar{\imath}=12.26\bar{\imath}\quad and\quad R_{s}=\frac{23}{\sqrt{1350.6}}\bar{\imath}=0.63\bar{\imath} $$
-> 
-> Hence, 80% (12.26/15.39) of the total response was due to response in direct effects, while 20% was from the response in social effects (5.0.63/15.39). Under individual selection with half-sib families, both the mean direct and mean social values improved. By contrast, if group members are unrelated, then (Example 22.5) $ \sigma_z^2 = 1150 $, while $$ \sigma(A_{d},z)=\sigma^{2}(A_{d})=500\quad and\quad\sigma(A_{s},z)=\sigma(A_{d},A_{s})=-39.5 $$ resulting in responses of $$ R_{d}=\frac{500}{\sqrt{1150}}\bar{\imath}=14.74\bar{\imath}\quad and\quad R_{s}=\frac{-39.5}{\sqrt{1150}}\bar{\imath}=-1.165\bar{\imath} $$
-> 
-> In this case, while the total response was positive, the large direct response (14.74) was partly offset by a decrease in the mean social environment $ ([n-1]R_s = 5 \cdot [-1.165] = -5.83) $, yielding a total response of $ (14.74 - 5.83) \bar{i} = 8.91 \bar{i} $. The lack of relatedness implies no direct selection involving $ \sigma^2(A_s) $, and hence the social breeding values only change through their correlation with the direct values, which in this example was negative.
+> Example 22.6. Consider the response in a family of half-sibs from Example 22.5, where the expected total response was 15.39 $ \bar{i} $. What were the contributions from the direct and social responses? For the values used in that example, $$ \begin{aligned}&\sigma(A_{d},z)=\sigma^{2}(A_{d})+r(n-1)\sigma(A_{d},A_{s})=500+[0.25\cdot5\cdot(-39.5)]=450.63\\ &\sigma(A_{s},z)=\sigma(A_{d},A_{s})+r(n-1)\sigma^{2}(A_{s})=-39.5+[0.24\cdot5\cdot50]=23.0\\ \end{aligned} $$ Recalling from Example 22.5 that $ \sigma_{z}^{2} = 1350.6 $ for half-sibs, Equations 22.15a and 22.15b return the two components of response as $$ R_{d}=\frac{450.63}{\sqrt{1350.6}}\bar{\imath}=12.26\bar{\imath}\quad and\quad R_{s}=\frac{23}{\sqrt{1350.6}}\bar{\imath}=0.63\bar{\imath} $$ Hence, 80% (12.26/15.39) of the total response was due to response in direct effects, while 20% was from the response in social effects (5.0.63/15.39). Under individual selection with half-sib families, both the mean direct and mean social values improved. By contrast, if group members are unrelated, then (Example 22.5) $ \sigma_z^2 = 1150 $, while $$ \sigma(A_{d},z)=\sigma^{2}(A_{d})=500\quad and\quad\sigma(A_{s},z)=\sigma(A_{d},A_{s})=-39.5 $$ resulting in responses of $$ R_{d}=\frac{500}{\sqrt{1150}}\bar{\imath}=14.74\bar{\imath}\quad and\quad R_{s}=\frac{-39.5}{\sqrt{1150}}\bar{\imath}=-1.165\bar{\imath} $$ In this case, while the total response was positive, the large direct response (14.74) was partly offset by a decrease in the mean social environment $ ([n-1]R_s = 5 \cdot [-1.165] = -5.83) $, yielding a total response of $ (14.74 - 5.83) \bar{i} = 8.91 \bar{i} $. The lack of relatedness implies no direct selection involving $ \sigma^2(A_s) $, and hence the social breeding values only change through their correlation with the direct values, which in this example was negative.
 
 
 ---
 
-## chapter22_015 · Associative Effects: Competition, Social Interactions, Group and Kin Selection: Introduction / Individual Selection: Maternal Effects
+## chapter22_015 · SELECTION IN THE PRESENCE OF ASSOCIATIVE EFFECTS / Individual Selection: Maternal Effects
 
 **[推导 Derivation]**
 
@@ -606,7 +610,7 @@ The careful reader might recall from Chapter 15 that Falconer’s trait-based mo
 
 ---
 
-## chapter22_016 · Associative Effects: Competition, Social Interactions, Group and Kin Selection: Introduction / Group Selection: Theory
+## chapter22_016 · SELECTION IN THE PRESENCE OF ASSOCIATIVE EFFECTS / Group Selection: Theory
 
 **[推导 Derivation]**
 
@@ -771,20 +775,20 @@ For n = 2 and r = 0, applying Equations 22.19b and 22.25a recovers Griffing's re
 
 **[示例 Example]**
 
-> **Example 22.7** · ref: `22.7` · source: `chapter22_017.json` · blocks 8–8
+> **Example 22.7** · ref: `22.7` · source: `chapter22_017.json` · blocks 8–11
 >
 > Example 22.7. Consider group selection using Muir's quail data from Example 22.4. Here $ \sigma^2(A_d) = 33.7 $, $ \sigma^2(A_s) = 2.87 $, $ \sigma(A_d, A_s) = -5.5 $, and $ n = 16 $. Muir estimated the residual variance as $ \sigma^2(e) = 69.0 $, while his model assumed $ \rho = 0 $, resulting $ \rho_n = 1/n $, and hence $ \sigma^2(e)\rho_n = 69.0/16 = 4.32 $. Applying Equation 22.4e yields a total additive variance of $$ \begin{aligned}\sigma^{2}(A_{T})&=\sigma^{2}(A_{d})+2(n-1)\sigma(A_{d},A_{s})+(n-1)^{2}\sigma^{2}(A_{s})\\&=33.7+\left[30\cdot(-5.5)\right]+\left[30^{2}\cdot2.87\right]=2451.7\end{aligned} $$ while Equation 22.26b yields a response of $$ R=\frac{\sigma^{2}(A_{T})r_{n}}{\sqrt{\sigma^{2}(A_{T})r_{n}+\sigma^{2}(e)\rho_{n}}}\bar{\imath}=\frac{2451.7\cdot r_{n}}{\sqrt{2451.7\cdot r_{n}+4.32}}\bar{\imath} $$
 > 
 > For groups of unrelated individuals, $r = 0$ and $r_n = 1/16 = 0.0625$, respectively, and the response becomes $R = 12.2\bar{r}$. For half- and full-sibs ($r = 0.25$ and $0.5$), $r_n = 0.297$ and $0.531$, respectively, with responses of $26.9\bar{r}$ and $36.0\bar{r}$, twofold and threefold increases relative to that for a group of unrelated individuals.
-> 
-> While Equation 22.26a shows that group selection always results in an expected non-negative response (as $ \sigma^2(A_T) \geq 0 $), it may be less than optimal. If direct effects account for the majority of variance, group selection can be very inefficient relative to individual selection. To see this, consider groups of unrelated individuals and suppose the trait of interest has no associative effects, $ \sigma^2(A_s) = 0 $, so that $ \sigma^2(A_T) = \sigma^2(A_d) $. Under individual (or mass) selection, the response is $ R_m = h\sigma(A_d) \bar{i} $ (Equation 13.6b). Now consider the response, $ R_G $, in the mean of trait $ z $ under group selection, where $ \sigma(\bar{z}, A_T) = (1/n)\sigma^2(A_d) $ and $ \sigma^2(\bar{z}) = \sigma^2/n $, giving the response (from Equation 22.26b) as $$ R_{G}=\frac{\sigma(\overline{z},A_{T})}{\sigma(\overline{z})}\overline{\imath}=\frac{(1/n)\sigma^{2}(A_{d})}{\sigma_{z}/\sqrt{n}}\overline{\imath}=\frac{1}{\sqrt{n}}\frac{\sigma(A_{d})}{\sigma_{z}}\sigma(A_{d})\overline{\imath}=\frac{1}{\sqrt{n}}h\sigma(A_{d})\overline{\imath}=\frac{1}{\sqrt{n}}R_{m} $$
-> 
-> Under these conditions, individual selection is always superior to group selection, with the superiority increasing with group size. For groups of 5, 10, and 25, group selection has only 44.7%, 31.6%, and 20% (respectively) of the expected response of individual selection.
 
+
+While Equation 22.26a shows that group selection always results in an expected non-negative response (as $ \sigma^2(A_T) \geq 0 $), it may be less than optimal. If direct effects account for the majority of variance, group selection can be very inefficient relative to individual selection. To see this, consider groups of unrelated individuals and suppose the trait of interest has no associative effects, $ \sigma^2(A_s) = 0 $, so that $ \sigma^2(A_T) = \sigma^2(A_d) $. Under individual (or mass) selection, the response is $ R_m = h\sigma(A_d) \bar{i} $ (Equation 13.6b). Now consider the response, $ R_G $, in the mean of trait $ z $ under group selection, where $ \sigma(\bar{z}, A_T) = (1/n)\sigma^2(A_d) $ and $ \sigma^2(\bar{z}) = \sigma^2/n $, giving the response (from Equation 22.26b) as $$ R_{G}=\frac{\sigma(\overline{z},A_{T})}{\sigma(\overline{z})}\overline{\imath}=\frac{(1/n)\sigma^{2}(A_{d})}{\sigma_{z}/\sqrt{n}}\overline{\imath}=\frac{1}{\sqrt{n}}\frac{\sigma(A_{d})}{\sigma_{z}}\sigma(A_{d})\overline{\imath}=\frac{1}{\sqrt{n}}h\sigma(A_{d})\overline{\imath}=\frac{1}{\sqrt{n}}R_{m} $$
+
+Under these conditions, individual selection is always superior to group selection, with the superiority increasing with group size. For groups of 5, 10, and 25, group selection has only 44.7%, 31.6%, and 20% (respectively) of the expected response of individual selection.
 
 ---
 
-## chapter22_018 · Associative Effects: Competition, Social Interactions, Group and Kin Selection: Introduction / Group Selection: Direct vs. Social Response
+## chapter22_018 · SELECTION IN THE PRESENCE OF ASSOCIATIVE EFFECTS / Group Selection: Direct vs. Social Response
 
 **[推导 Derivation]**
 
@@ -815,7 +819,7 @@ Increasing the relatedness, $r$, of group members increases the contributions fr
 
 ---
 
-## chapter22_019 · Associative Effects: Competition, Social Interactions, Group and Kin Selection: Introduction / Group Selection: Experimental Evidence
+## chapter22_019 · SELECTION IN THE PRESENCE OF ASSOCIATIVE EFFECTS / Group Selection: Experimental Evidence
 
 How effective is group selection? As reviewed in Chapter 21, the special case of the group being a single family has a fairly robust experimental literature. What is seen in more general settings? Experiments in laboratory settings generally have proved effective in generating a positive response (Goodnight and Stevens 1997; Goodnight 2005). Especially telling are several reports of group selection yielding a positive response when individual selection either failed to do so or generated a negative response.
 
@@ -835,7 +839,7 @@ Given that group selection always results in an expected positive response, whil
 
 ---
 
-## chapter22_021 · Associative Effects: Competition, Social Interactions, Group and Kin Selection: Introduction / Response on a Weighted Index
+## chapter22_021 · INCORPORATING BOTH INDIVIDUAL AND GROUP INFORMATION / Response on a Weighted Index
 
 **[推导 Derivation]**
 
@@ -988,52 +992,25 @@ If we expand and evaluate these covariance terms and collect the common terms, E
 
 Notice, by comparison to Equation 22.4c, that the term appearing when group members are related $ (r \neq 0) $ is the variance of $ A_T $ when the group size is $ (n - 1) $ plus the correction $ (n - 1)\sigma^2(A_s) $. Equations 22.29d and 22.30d are substituted into Equation 22.28d to obtain the response. The interplay of $ \sigma(A_T, I) $ and $ \sigma_I^2 $ (as functions of g and r) determine the accuracy of any particular index (Figure 22.3).
 
+**[Figure]**
+
+> **Figure 22.3** · page 24 · source: `chapter22`
+>
+> ![Figure 22.3](../figures/fig_0100.png)
+>
+> Figure 22.3 Accuracy of the index, I, as a function of the group weight, g, for groups of different types of relatives (the curves corresponding to different values of r). Accuracy was computed using Equation 22.28f, whose components are given by Equations 22.29d, 22.7b, and 22.30d. The variance components used were from Ellen et al. (2008) for survival days for chickens, and are given in Example 22.8, which also works through the calculations. Accuracy increases with r and is maximized at some intermediate strength of group selection, g.
+
+
 **[示例 Example]**
 
-> **Example 22.8** · ref: `22.8` · source: `chapter22_022.json` · blocks 4–4
+> **Example 22.8** · ref: `22.8` · source: `chapter22_022.json` · blocks 4–12
 >
-> Example 22.8. Ellen et al. (2008) estimated the following values for survival days in chickens raised in groups of $n = 4$: $\sigma^2(A_d) = 915$, $\sigma(A_d, A_d) = 62$, $\sigma^2(A_s) = 134$, $\sigma^2(e) = 11$, $500$, and $\rho = 0.08$. Applying Equation 22.4c yields $$ \begin{aligned}\sigma^{2}(A_{T})&=\sigma^{2}(A_{d})+2(n-1)\sigma(A_{d},A_{s})+(n-1)^{2}\sigma^{2}(A_{s})\\&=915+(2\cdot3\cdot62)+\left(3^{2}\cdot134\right)=2493\end{aligned} $$ while $$ \sigma^{2}(A_{d})+(n-1)\sigma(A_{s},A_{d})=915+(3\cdot62)=1101 $$
-> 
-> Substituting these results into Equation 22.29d returns a covariance between I and total breeding value of
-> 
-> > **Formula (22.32a)** · `22.32a` · source: `chapter22_block_135` · Response on a Weighted Index
-> >
-> > $$ \sigma(A_{T},I)=[(g+r+2gr)\cdot2493]+[(1-g)(1-r)\cdot1101] $$
-> 
-> 
-> To obtain the variance in I using Equation 22.30d, we first need expressions for $ \sigma^2(z) $ and $ \sigma(z_i, z_j) $. From Equation 22.5d, the phenotypic variance when the group contains unrelated individuals is $$ \sigma^{2}(z\mid r=0)=\sigma^{2}(A_{d})+(n-1)\sigma^{2}(A_{s})+\sigma^{2}(e)=915+(3\cdot134)+11,500=12,817 $$
-> 
-> Noting that $$ (n-1)\left[2\sigma(A_{s},A_{d})+(n-2)\sigma^{2}(A_{d})\right]=3\cdot\left[(2\cdot62)+(2\cdot915)\right]=5862 $$
-> 
-> Equation 22.13b shows the phenotypic variance for a group with relationship r as
-> 
-> > **Formula (22.32b)** · `22.32b` · source: `chapter22_block_138` · Response on a Weighted Index
-> >
-> > $$ \begin{aligned}\sigma^{2}(z)&=\sigma^{2}(z\mid r=0)+(n-1)r\left[2\sigma(A_{s},A_{d})+(n-2)\sigma^{2}(A_{d})\right]\\&=12,817+(r\cdot5862)\end{aligned} $$
-> 
-> 
-> To obtain $ \sigma(z_{i}, z_{j}) $, we first find that $$ 2\sigma(A_{d},A_{s})+(n-2)\sigma^{2}(A_{s})+\rho\sigma^{2}(e)=(2\cdot62)+(2\cdot134)+(0.08\cdot11,550)=1312 $$ and $$ \begin{aligned}\sigma^{2}(A_{d})&+2(n-2)\sigma(A_{d},A_{s})+\left[(n-1)+(n-2)^{2}\right]\sigma^{2}(A_{s})\\&=915+(2\cdot2\cdot62)+\left[(3+2^{2})\cdot134\right]=2101\end{aligned} $$
-> 
-> Substituting into Equation 22.31c gives the general covariance between group members when all members are related by an amount, r, as
-> 
-> > **Formula (22.32c)** · `22.32c` · source: `chapter22_block_140` · Response on a Weighted Index
-> >
-> > $$ \sigma(z_{i},z_{j})=1312+r\cdot2101 $$
-> 
-> 
-> Finally, substituting Equations 22.32b and 22.32c into Equation 22.30d gives the variance in I as
-> 
-> > **Formula (22.32d)** · `22.32d` · source: `chapter22_block_141` · Response on a Weighted Index
-> >
-> > $$ \begin{aligned}\sigma_{I}^{2}&=\sigma_{z}^{2}\left[1+g^{2}(n-1)\right]+\sigma(z_{i},z_{j})g(n-1)\left[2+g(n-2)\right]\\&=\left[12,817+(r\cdot5862)\right]\left(1+3g^{2}\right)+\left[1312+(r\cdot2101)\right]6g\left(1+g\right)\end{aligned} $$
-> 
-> 
-> Note from Equation 22.32a that the roles of relatedness (r) and amount of group selection (g) are fully interchangeable in the covariance between $I$ and $A_T$. However, Equation 22.32d shows that this is not the case for $\sigma_I^2$, and hence the expected responses when the values of $r$ and $g$ are swapped are not expected to be equal. For example, for $r = 0.5$, $g = 0$, $$ \sigma(I,A_{T})=1797,\quad\sigma_{I}^{2}=15,748,\quad\rho(A_{T},I)=0.287,\quad R=14.32\bar{\nu} $$ where $ \rho(A_T, I) $ is given by Equation 22.28f. For $ r = 0, g = 0.5 $, $$ \sigma(I,A_{T})=1797,\quad\sigma_{I}^{2}=28,334,\quad\rho(A_{T},I)=0.214,\qquad R=10.68 讠 $$ As points of reference, the accuracy and response under individual selection with no relatives in the group $ (g = r = 0) $ are $ \rho(A_T, I) = 0.195 $ and $ R = 9.73\bar{i} $, while for group selection with unrelated individuals within the group $ (g = 1, r = 0) $, the accuracy and response become $ \rho(A_T, I) = 0.193 $ and $ R = 9.63\bar{i} $.
+> Example 22.8. Ellen et al. (2008) estimated the following values for survival days in chickens raised in groups of $n = 4$: $\sigma^2(A_d) = 915$, $\sigma(A_d, A_d) = 62$, $\sigma^2(A_s) = 134$, $\sigma^2(e) = 11$, $500$, and $\rho = 0.08$. Applying Equation 22.4c yields $$ \begin{aligned}\sigma^{2}(A_{T})&=\sigma^{2}(A_{d})+2(n-1)\sigma(A_{d},A_{s})+(n-1)^{2}\sigma^{2}(A_{s})\\&=915+(2\cdot3\cdot62)+\left(3^{2}\cdot134\right)=2493\end{aligned} $$ while $$ \sigma^{2}(A_{d})+(n-1)\sigma(A_{s},A_{d})=915+(3\cdot62)=1101 $$ Substituting these results into Equation 22.29d returns a covariance between I and total breeding value of $$ \sigma(A_{T},I)=[(g+r+2gr)\cdot2493]+[(1-g)(1-r)\cdot1101] $$ (22.32a) To obtain the variance in I using Equation 22.30d, we first need expressions for $ \sigma^2(z) $ and $ \sigma(z_i, z_j) $. From Equation 22.5d, the phenotypic variance when the group contains unrelated individuals is $$ \sigma^{2}(z\mid r=0)=\sigma^{2}(A_{d})+(n-1)\sigma^{2}(A_{s})+\sigma^{2}(e)=915+(3\cdot134)+11,500=12,817 $$ Noting that $$ (n-1)\left[2\sigma(A_{s},A_{d})+(n-2)\sigma^{2}(A_{d})\right]=3\cdot\left[(2\cdot62)+(2\cdot915)\right]=5862 $$ Equation 22.13b shows the phenotypic variance for a group with relationship r as $$ \begin{aligned}\sigma^{2}(z)&=\sigma^{2}(z\mid r=0)+(n-1)r\left[2\sigma(A_{s},A_{d})+(n-2)\sigma^{2}(A_{d})\right]\\&=12,817+(r\cdot5862)\end{aligned} $$ (22.32b) To obtain $ \sigma(z_{i}, z_{j}) $, we first find that $$ 2\sigma(A_{d},A_{s})+(n-2)\sigma^{2}(A_{s})+\rho\sigma^{2}(e)=(2\cdot62)+(2\cdot134)+(0.08\cdot11,550)=1312 $$ and $$ \begin{aligned}\sigma^{2}(A_{d})&+2(n-2)\sigma(A_{d},A_{s})+\left[(n-1)+(n-2)^{2}\right]\sigma^{2}(A_{s})\\&=915+(2\cdot2\cdot62)+\left[(3+2^{2})\cdot134\right]=2101\end{aligned} $$ Substituting into Equation 22.31c gives the general covariance between group members when all members are related by an amount, r, as $$ \sigma(z_{i},z_{j})=1312+r\cdot2101 $$ (22.32c) Finally, substituting Equations 22.32b and 22.32c into Equation 22.30d gives the variance in I as $$ \begin{aligned}\sigma_{I}^{2}&=\sigma_{z}^{2}\left[1+g^{2}(n-1)\right]+\sigma(z_{i},z_{j})g(n-1)\left[2+g(n-2)\right]\\&=\left[12,817+(r\cdot5862)\right]\left(1+3g^{2}\right)+\left[1312+(r\cdot2101)\right]6g\left(1+g\right)\end{aligned} $$ (22.32d) Note from Equation 22.32a that the roles of relatedness (r) and amount of group selection (g) are fully interchangeable in the covariance between $I$ and $A_T$. However, Equation 22.32d shows that this is not the case for $\sigma_I^2$, and hence the expected responses when the values of $r$ and $g$ are swapped are not expected to be equal. For example, for $r = 0.5$, $g = 0$, $$ \sigma(I,A_{T})=1797,\quad\sigma_{I}^{2}=15,748,\quad\rho(A_{T},I)=0.287,\quad R=14.32\bar{\nu} $$ where $ \rho(A_T, I) $ is given by Equation 22.28f. For $ r = 0, g = 0.5 $, $$ \sigma(I,A_{T})=1797,\quad\sigma_{I}^{2}=28,334,\quad\rho(A_{T},I)=0.214,\qquad R=10.68 $$ As points of reference, the accuracy and response under individual selection with no relatives in the group $ (g = r = 0) $ are $ \rho(A_T, I) = 0.195 $ and $ R = 9.73\bar{i} $, while for group selection with unrelated individuals within the group $ (g = 1, r = 0) $, the accuracy and response become $ \rho(A_T, I) = 0.193 $ and $ R = 9.63\bar{i} $.
 
 
 ---
 
-## chapter22_023 · Associative Effects: Competition, Social Interactions, Group and Kin Selection: Introduction / Optimal Response
+## chapter22_023 · INCORPORATING BOTH INDIVIDUAL AND GROUP INFORMATION / Optimal Response
 
 **[推导 Derivation]**
 
@@ -1129,13 +1106,9 @@ Equations 22.37b through 22.37e follow from the approach used throughout this ch
 
 **[示例 Example]**
 
-> **Example 22.9** · ref: `22.9` · source: `chapter22_023.json` · blocks 7–7
+> **Example 22.9** · ref: `22.9` · source: `chapter22_023.json` · blocks 7–9
 >
-> Example 22.9. As an application of the previous theory, consider a trait where $ \sigma(A_d, A_s) = 0 $, and there are no correlations between environmental values within the group ($ \rho = 0 $) and no relatives in the group ($ r = 0 $). Equation 22.5d gives $ \sigma^2(z) = \sigma^2(A_d) + (n-1)\sigma^2(A_s) + \sigma^2(e) $, while (with $ \sigma(A_d, A_s) = r = \rho = 0 $), Equation 22.31c reduces to $ \sigma(z_i, z_j) = (n-2)\sigma^2(A_s) $. Hence, from Equation 22.36b, $$ \mathbf{P}=\begin{pmatrix}\sigma^{2}(z)&(n-1)(n-2)\sigma^{2}(A_{s})\ $ n-1)(n-2)\sigma^{2}(A_{s})&(n-1)\left[\sigma^{2}(z)+(n-2)^{2}\sigma^{2}(A_{s})\right]\end{pmatrix} $$
-> 
-> Likewise, Equations 22.37b through 22.37e imply $$ \mathbf{G}=\begin{pmatrix}{{{\sigma^{2}(A_{d})}}}&{{{0}}} \\{{{0}}}&{{{(n-1)\sigma^{2}(A_{s})}}}\end{pmatrix} $$
-> 
-> What are the optimal weight (g) for a trait with $ \sigma^{2}(A_{d}) = 100, \sigma^{2}(A_{s}) = 9, \sigma^{2}(e) = 100 $, and n = 10? For these values, Equation 22.35a yields $$ \mathbf{b}_{s}=\mathbf{P}^{-1}\mathbf{G}^{T}\mathbf{c}=\begin{pmatrix}{{{281}}}&{{{648}}} \\{{{648}}}&{{{9090}}}\end{pmatrix}^{-1}\begin{pmatrix}{{{100}}}&{{{0}}} \\{{{0}}}&{{{81}}}\end{pmatrix}\begin{pmatrix}{{{1}}} \\{{{9}}}\end{pmatrix}=\begin{pmatrix}{{{0.2046}}} \\{{{0.0656}}}\end{pmatrix} $$
+> Example 22.9. As an application of the previous theory, consider a trait where $ \sigma(A_d, A_s) = 0 $, and there are no correlations between environmental values within the group ( $ \rho = 0 $) and no relatives in the group ( $ r = 0 $). Equation 22.5d gives $ \sigma^2(z) = \sigma^2(A_d) + (n-1)\sigma^2(A_s) + \sigma^2(e) $, while (with $ \sigma(A_d, A_s) = r = \rho = 0 $), Equation 22.31c reduces to $ \sigma(z_i, z_j) = (n-2)\sigma^2(A_s) $. Hence, from Equation 22.36b, $$ \mathbf{P}=\begin{pmatrix}\sigma^{2}(z)&(n-1)(n-2)\sigma^{2}(A_{s})\ $ n-1)(n-2)\sigma^{2}(A_{s})&(n-1)\left[\sigma^{2}(z)+(n-2)^{2}\sigma^{2}(A_{s})\right]\end{pmatrix} $$ Likewise, Equations 22.37b through 22.37e imply $$ \mathbf{G}=\begin{pmatrix}{{{\sigma^{2}(A_{d})}}}&{{{0}}} \\{{{0}}}&{{{(n-1)\sigma^{2}(A_{s})}}}\end{pmatrix} $$ What are the optimal weight (g) for a trait with $ \sigma^{2}(A_{d}) = 100, \sigma^{2}(A_{s}) = 9, \sigma^{2}(e) = 100 $, and n = 10? For these values, Equation 22.35a yields $$ \mathbf{b}_{s}=\mathbf{P}^{-1}\mathbf{G}^{T}\mathbf{c}=\begin{pmatrix}{{{281}}}&{{{648}}} \\{{{648}}}&{{{9090}}}\end{pmatrix}^{-1}\begin{pmatrix}{{{100}}}&{{{0}}} \\{{{0}}}&{{{81}}}\end{pmatrix}\begin{pmatrix}{{{1}}} \\{{{9}}}\end{pmatrix}=\begin{pmatrix}{{{0.2046}}} \\{{{0.0656}}}\end{pmatrix} $$ The resulting index weight on group information is 0.0656/0.2046 = 0.32, giving the index as $$ I_{i}=z_{i}+0.32\cdot\sum_{j\neq i}z_{j} $$ If we increase $ \sigma^{2}(A_{s}) $ to 15, redoing the above calculations for the elements of P and G gives the optimal weights as $$ \mathbf{b}_{s}=\mathbf{P}^{-1}\mathbf{G}^{T}\mathbf{c}=\begin{pmatrix}{{{335}}}&{{{1080}}} \\{{{1080}}}&{{{13,950}}}\end{pmatrix}^{-1}\begin{pmatrix}{{{100}}}&{{{0}}} \\{{{0}}}&{{{136}}}\end{pmatrix}\begin{pmatrix}{{{1}}} \\{{{9}}}\end{pmatrix}=\begin{pmatrix}{{{0.0236}}} \\{{{0.0852}}}\end{pmatrix} $$ yielding a weight on the group sum of 0.0852/0.0236 = 3.6, and an optimal index of $$ I_{i}=z_{i}+3.6\cdot\sum_{j\neq i}z_{j} $$ Hence, on average, the phenotypes of individuals with which a focal individual interacts are given almost four time the weight as the focal individual's own phenotype. Finally, suppose $ \sigma^{2}(A_{s}) = 20 $. In this case $$ \mathbf{b}_{s}=\mathbf{P}^{-1}\mathbf{G}^{T}\mathbf{c}=\begin{pmatrix}{{{380}}}&{{{1440}}} \\{{{1440}}}&{{{18,000}}}\end{pmatrix}^{-1}\begin{pmatrix}{{{100}}}&{{{0}}} \\{{{0}}}&{{{180}}}\end{pmatrix}\begin{pmatrix}{{{1}}} \\{{{9}}}\end{pmatrix}=\begin{pmatrix}{{{-0.1120}}} \\{{{0.0989}}}\end{pmatrix} $$ making the optimal index $$ I_{i}=0.0989\cdot\left(\sum_{j\neq i}z_{j}\right)-0.112\cdot z_{i} $$ Expressing the summation as $ n\ \overline{z}-z_{i} $, this is equivalent to selection on the index $$ I_{i}=0.989\overline{z}-(0.0989+0.112)z_{i}=0.989\overline{z}-0.2109z_{i} $$ We can also rewrite this index as $$ I_{i}=\left(0.989-0.2109\right)\overline{z}-0.2109\left(z_{i}-\overline{z}\right)=0.7781\overline{z}-0.2109\left(z_{i}-\overline{z}\right) $$ which is equivalent to selecting using the index $$ I_{i}=\overline{z}-\frac{0.2109}{0.7781}\left(z_{i}-\overline{z}\right)=\overline{z}-0.2710\left(z_{i}-\overline{z}\right) $$ Hence, the optimal index in this case is the group mean minus a weighted within-group deviation.
 
 
 ---
@@ -1162,7 +1135,7 @@ While Griffing developed many of the basic equations for selection response with
 
 ---
 
-## chapter22_026 · Associative Effects: Competition, Social Interactions, Group and Kin Selection: Introduction / Mixed-Model Estimation of Direct and Associative Effects
+## chapter22_026 · BLUP ESTIMATION OF DIRECT AND ASSOCIATIVE EFFECTS / Mixed-Model Estimation of Direct and Associative Effects
 
 **[推导 Derivation]**
 
@@ -1218,7 +1191,7 @@ Because the residuals are assumed to be uncorrelated with the other random effec
 
 **[示例 Example]**
 
-> **Example 22.10** · ref: `22.10` · source: `chapter22_026.json` · blocks 5–5
+> **Example 22.10** · ref: `22.10` · source: `chapter22_026.json` · blocks 5–9
 >
 > Example 22.10. To introduce how a mixed-model with direct and social effects is constructed, consider the following toy example where eight individuals are measured. Individuals 1 through 4 are (noninbred) half-sibs, as are 5 through 8, but they are unrelated to the first family. The relationship matrix A becomes $$ \mathbf{A}=\begin{pmatrix}{{{1}}}&{{{0.25}}}&{{{0.25}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\{{{0.25}}}&{{{1}}}&{{{0.25}}}&{{{0.25}}}&{{{0}}}&{{{0}}}&{{{0}}} \\{{{0.25}}}&{{{0.25}}}&{{{1}}}&{{{0.25}}}&{{{0}}}&{{{0}}}&{{{0}}} \\{{{0.25}}}&{{{0.25}}}&{{{0.25}}}&{{{1}}}&{{{0}}}&{{{0}}}&{{{0}}} \\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{1}}}&{{{0.25}}}&{{{0.25}}}&{{{0.25}}} \\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0.25}}}&{{{1}}}&{{{0.25}}}&{{{0.25}}} \\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0.25}}}&{{{0.25}}}&{{{1}}}&{{{0.25}}} \\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0.25}}}&{{{0.25}}}&{{{0.25}}}&{{{1}}} \\\end{pmatrix} $$
 > 
@@ -1237,61 +1210,96 @@ Because the residuals are assumed to be uncorrelated with the other random effec
 
 **[示例 Example]**
 
-> **Example 22.11** · ref: `22.11` · source: `chapter22_027.json` · blocks 0–0
+> **Example 22.11** · ref: `22.11` · source: `chapter22_027.json` · blocks 0–2
 >
 > Example 22.11. Assigning an element in $ Z_s $ a value of one for each individual within a group weights all interactions equally. This need not be the case, however. For example, Muir (2005) noted that with plants (or other sessile organisms), the distance between two individuals likely influences their effects. In particular, he suggested that if trees are a distance d apart, a reasonable model for their associative interactions would be $ A_s/d^2 $, where a tree has some intrinsic social breeding value $ (A_s) $ whose effect is diminished by distance. In a case of three trees, where $ d_{ij} $ is the distance between trees i and j, the resulting incidence matrix for social breeding values would be $$ \mathbf{Z}_{s}=\begin{pmatrix}0&1/d_{12}^{2}&1/d_{13}^{2}\\1/d_{21}^{2}&0&1/d_{23}^{2}\\1/d_{31}^{2}&1/d_{32}^{2}&0\end{pmatrix} $$
 > 
-> Cantet and Cappa (2008) suggested similar “intensity of competition” weights for individuals within groups of animals, such as the total contact time between two individuals. Other measures of interactions could be used and easily incorporated into $ \mathbf{Z}_{s} $ (e.g., Wey et al. 2007). Because we allow for the possibility that the direct and social breeding values are correlated, the standard mixed-model equations for two vectors of random effects (Equation 19.21; LW Equations 26.19b and 26.30) must be slightly modified. They become
-> 
-> > **Formula (22.40a)** · `22.40a` · source: `chapter22_block_171` · Mixed-Model Estimation of Direct and Associative Effects
-> >
-> > $$ \begin{pmatrix}\mathbf{X}^{T}\mathbf{X}&\mathbf{X}^{T}\mathbf{Z}_{d}&\mathbf{X}^{T}\mathbf{Z}_{s}\\\mathbf{Z}_{d}\mathbf{X}^{T}&\mathbf{Z}_{d}^{T}\mathbf{Z}_{d}+\lambda_{1}\mathbf{A}^{-1}&\mathbf{Z}_{d}^{T}\mathbf{Z}_{s}+\lambda_{2}\mathbf{A}^{-1}\\\mathbf{Z}_{s}\mathbf{X}^{T}&\mathbf{Z}_{s}^{T}\mathbf{Z}_{d}+\lambda_{2}\mathbf{A}^{-1}&\mathbf{Z}_{s}^{T}\mathbf{Z}_{s}+\lambda_{3}\mathbf{A}^{-1}\end{pmatrix}\begin{pmatrix}\boldsymbol{\beta}\\\mathbf{a}_{d}\\\mathbf{a}_{s}\end{pmatrix}=\begin{pmatrix}\mathbf{X}^{T}\mathbf{X}\\\mathbf{X}^{T}\mathbf{Z}_{d}\\\mathbf{X}^{T}\mathbf{Z}_{s}\end{pmatrix} $$
-> 
-> 
-> where the weights $ \left(\lambda_{i}\right) $ are related to elements in the inverse of G, namely,
-> 
-> > **Formula (22.40b)** · `22.40b` · source: `chapter22_block_171` · Mixed-Model Estimation of Direct and Associative Effects
-> >
-> > $$ \begin{pmatrix}\lambda_{1}&\lambda_{2}\\\lambda_{2}&\lambda_{3}\end{pmatrix}=\sigma^{2}(e)\mathbf{G}^{-1}=\sigma^{2}(e)\begin{pmatrix}\sigma^{2}(A_{d})&\sigma(A_{d},A_{s})\\\sigma(A_{d},A_{s})&\sigma^{2}(A_{s})\end{pmatrix}^{-1} $$
-> 
-> 
-> as obtained by Muir (2005) and Van Vleck and Cassady (2005).
-> 
-> In order to solve these equations, estimates of the variance components—$\sigma^{2}(e)$, $\sigma^{2}(A_{d})$, $\sigma^{2}(A_{s})$, and $\sigma(A_{d}, A_{s})$—are required, and within the mixed-model framework, these are obtained by REML (LW Chapter 27). Van Vleck and Cassady (2005) used simulated data to show that, under the appropriate design, REML does indeed provide separable estimates of the genetic variance components. However, two early applications to real data sets, weight gain in pigs within pens by Arango et al. (2005) and weight gain in Hereford cattle in feedlots by Van Vleck et al. (2007), found that the likelihood surface for $\sigma^{2}(A_{s})$ was very flat, making model fitting challenging. We will examine such issues of identifiability shortly. While mixed-model methodology is very robust (for example, it easily handles missing data and variable group numbers), it can easily fail if the model is not correctly specified or the experimental design is such that random effects are not separable, points that we will address shortly.
+> Cantet and Cappa (2008) suggested similar “intensity of competition” weights for individuals within groups of animals, such as the total contact time between two individuals. Other measures of interactions could be used and easily incorporated into $ \mathbf{Z}_{s} $ (e.g., Wey et al. 2007).
 
+
+**[推导 Derivation]**
+
+Because we allow for the possibility that the direct and social breeding values are correlated, the standard mixed-model equations for two vectors of random effects (Equation 19.21; LW Equations 26.19b and 26.30) must be slightly modified. They become
+
+> **Formula (22.40a)** · `22.40a` · source: `chapter22_block_171` · Mixed-Model Estimation of Direct and Associative Effects
+>
+> $$ \begin{pmatrix}\mathbf{X}^{T}\mathbf{X}&\mathbf{X}^{T}\mathbf{Z}_{d}&\mathbf{X}^{T}\mathbf{Z}_{s}\\\mathbf{Z}_{d}\mathbf{X}^{T}&\mathbf{Z}_{d}^{T}\mathbf{Z}_{d}+\lambda_{1}\mathbf{A}^{-1}&\mathbf{Z}_{d}^{T}\mathbf{Z}_{s}+\lambda_{2}\mathbf{A}^{-1}\\\mathbf{Z}_{s}\mathbf{X}^{T}&\mathbf{Z}_{s}^{T}\mathbf{Z}_{d}+\lambda_{2}\mathbf{A}^{-1}&\mathbf{Z}_{s}^{T}\mathbf{Z}_{s}+\lambda_{3}\mathbf{A}^{-1}\end{pmatrix}\begin{pmatrix}\boldsymbol{\beta}\\\mathbf{a}_{d}\\\mathbf{a}_{s}\end{pmatrix}=\begin{pmatrix}\mathbf{X}^{T}\mathbf{X}\\\mathbf{X}^{T}\mathbf{Z}_{d}\\\mathbf{X}^{T}\mathbf{Z}_{s}\end{pmatrix} $$
+
+
+where the weights $ \left(\lambda_{i}\right) $ are related to elements in the inverse of G, namely,
+
+> **Formula (22.40b)** · `22.40b` · source: `chapter22_block_171` · Mixed-Model Estimation of Direct and Associative Effects
+>
+> $$ \begin{pmatrix}\lambda_{1}&\lambda_{2}\\\lambda_{2}&\lambda_{3}\end{pmatrix}=\sigma^{2}(e)\mathbf{G}^{-1}=\sigma^{2}(e)\begin{pmatrix}\sigma^{2}(A_{d})&\sigma(A_{d},A_{s})\\\sigma(A_{d},A_{s})&\sigma^{2}(A_{s})\end{pmatrix}^{-1} $$
+
+
+as obtained by Muir (2005) and Van Vleck and Cassady (2005).
+
+In order to solve these equations, estimates of the variance components—$\sigma^{2}(e)$, $\sigma^{2}(A_{d})$, $\sigma^{2}(A_{s})$, and $\sigma(A_{d}, A_{s})$—are required, and within the mixed-model framework, these are obtained by REML (LW Chapter 27). Van Vleck and Cassady (2005) used simulated data to show that, under the appropriate design, REML does indeed provide separable estimates of the genetic variance components. However, two early applications to real data sets, weight gain in pigs within pens by Arango et al. (2005) and weight gain in Hereford cattle in feedlots by Van Vleck et al. (2007), found that the likelihood surface for $\sigma^{2}(A_{s})$ was very flat, making model fitting challenging. We will examine such issues of identifiability shortly. While mixed-model methodology is very robust (for example, it easily handles missing data and variable group numbers), it can easily fail if the model is not correctly specified or the experimental design is such that random effects are not separable, points that we will address shortly.
 
 **[示例 Example]**
 
-> **Example 22.12** · ref: `22.12` · source: `chapter22_027.json` · blocks 1–1
+> **Example 22.12** · ref: `22.12` · source: `chapter22_027.json` · blocks 3–13
 >
-> Example 22.12. Using mixed-model methods, Bergsma et al. (2008) examined four traits (growth rate, feed intake, back-fat thickness, and muscle depth) in a sample of over 14,000 pigs with a known pedigree (from roughly 400 sires and 600 dams). The pigs were placed in pens of 6–12 animals and several different mixed models were fitted.
+> Example 22.12. Using mixed-model methods, Bergsma et al. (2008) examined four traits (growth rate, feed intake, back-fat thickness, and muscle depth) in a sample of over 14,000 pigs with a known pedigree (from roughly 400 sires and 600 dams). The pigs were placed in pens of 6–12 animals and several different mixed models were fitted. First, a mixed model allowing for only direct effects plus a separate vector for common litter effects, c (which is fairly standard; Chapters 19 and 20), was fit. Here, the model was $$ \mathbf{z}=\mathbf{X}\boldsymbol{\beta}+\mathbf{Z}_{a}\mathbf{a}+\mathbf{Z}_{c}\mathbf{c}+\mathbf{e} $$ where $$ \mathbf{a}\sim N(\mathbf{0},\sigma^{2}(A)\cdot\mathbf{A}),\quad\mathbf{c}\sim N(\mathbf{0},\sigma^{2}(c)\cdot\mathbf{I}),\quad\mathbf{e}\sim N(\mathbf{0},\sigma^{2}(e)\cdot\mathbf{I}) $$ The resulting estimates of additive variation and heritability for these traits were found to be
 > 
-> First, a mixed model allowing for only direct effects plus a separate vector for common litter effects, c (which is fairly standard; Chapters 19 and 20), was fit. Here, the model was $$ \mathbf{z}=\mathbf{X}\boldsymbol{\beta}+\mathbf{Z}_{a}\mathbf{a}+\mathbf{Z}_{c}\mathbf{c}+\mathbf{e} $$ where $$ \mathbf{a}\sim N(\mathbf{0},\sigma^{2}(A)\cdot\mathbf{A}),\quad\mathbf{c}\sim N(\mathbf{0},\sigma^{2}(c)\cdot\mathbf{I}),\quad\mathbf{e}\sim N(\mathbf{0},\sigma^{2}(e)\cdot\mathbf{I}) $$
+> > **Inline Table 2** · `inline_2` · page 31 · source: `chapter22_027`
+> > Inline Table 2
+> >
+> >  | Growth | Back fat | Muscle | Intake
+> > --- | --- | --- | --- | ---
+> > $ \sigma^{2}(A) $ | 2,583 | 2.83 | 7.94 | 41,275
+> > $ h^{2} $ | 0.37 | 0.36 | 0.25 | 0.41
 > 
-> The resulting estimates of additive variation and heritability for these traits were found to be
 > 
-> Next, a model was fit that also included a random pen (group) effect, $ g_{p} $, common to all members within the same group (but differing across groups). The model now becomes $$ \mathbf{z}=\mathbf{X}\boldsymbol{\beta}+\mathbf{Z}_{a}\mathbf{a}+\mathbf{Z}_{g}\mathbf{g}_{p}+\mathbf{Z}_{c}\mathbf{c}+\mathbf{e},\quad where\quad\mathbf{g}_{p}\sim N(0,\sigma^{2}(g_{p})\cdot\mathbf{I}) $$
+> Next, a model was fit that also included a random pen (group) effect, $ g_{p} $, common to all members within the same group (but differing across groups). The model now becomes $$ \mathbf{z}=\mathbf{X}\boldsymbol{\beta}+\mathbf{Z}_{a}\mathbf{a}+\mathbf{Z}_{g}\mathbf{g}_{p}+\mathbf{Z}_{c}\mathbf{c}+\mathbf{e},\quad where\quad\mathbf{g}_{p}\sim N(0,\sigma^{2}(g_{p})\cdot\mathbf{I}) $$ Use of this model did not change the heritability estimates for back fat and muscle depth, but decreased the estimates for growth and feed intake
 > 
-> Use of this model did not change the heritability estimates for back fat and muscle depth, but decreased the estimates for growth and feed intake
+> > **Inline Table 3** · `inline_3` · page 31 · source: `chapter22_027`
+> > Inline Table 3
+> >
+> >  | Growth | Back fat | Muscle | Intake
+> > --- | --- | --- | --- | ---
+> > $ \sigma^{2}(A) $ | 1,780 | 2.79 | 7.69 | 17,678
+> > $ h^{2} $ | 0.25 | 0.36 | 0.24 | 0.18
+> 
 > 
 > Comparison with the previous table shows that failure to include a group effect (here, assumed to be entirely nonheritable, i.e., all environmental), resulted in some traits (growth and intake) having their heritabilities overestimated. Finally, a model was fit allowing for heritable social effects $$ \mathbf{z}=\mathbf{X}\boldsymbol{\beta}+\mathbf{Z}_{d}\mathbf{a}_{d}+\mathbf{Z}_{s}\mathbf{a}_{s}+\mathbf{Z}_{g}\mathbf{g}_{p}+\mathbf{Z}_{c}\mathbf{c}+\mathbf{e} $$ which returned estimates of
 > 
-> The results in the above example are fairly typical of the published results from the animal-breeding literature. Often the estimates of $ \sigma(A_d, A_s) $ and $ \sigma^2(A_s) $ are quite small relative to $ \sigma^2(A_d) $, but because terms involving social effects are scaled by roughly $ n $ or $ n^2 $ (for the covariance and variance, respectively), their contributions can be considerable. For example, a series of eight (mostly growth) traits in cattle, pigs, and chicken, $ (n-1)\sigma(A_d, A_s) $ was between 5 and 40% of $ \sigma^2(A_d) $, with an average value of 24% (Van Vleck et al. 2007; Chen et al. 2008, 2009; Hsu et al. 2010). As discussed in Chapter 19, one could use a Bayesian analysis of a mixed model instead of BLUP estimates of the random effects and REML estimates of the variance. Recall that a BLUP/REML analysis returns point estimates and associated confidence intervals for variables of interest, while a Bayesian analysis returns the whole posterior distribution of potential values given the data (Chapter 19; Appendices 2 and 3). Arora and Lahiri (1997) showed for mixed models that “empirical BLUP,” namely using REML estimates of variance components to solve the mixed-model equations, generally gives the same average value as a Bayesian analysis, but that the latter returns a smaller mean-squared error and hence offers more precision. Cappa and Cantet (2006, 2008) developed a Gibbs sampler (Appendix 3) for the mixed model with associative effects.
+> > **Inline Table 4** · `inline_4` · page 32 · source: `chapter22_027`
+> > Inline Table 4
+> >
+> >  | Growth | Back fat | Muscle | Intake
+> > --- | --- | --- | --- | ---
+> > $ \sigma^{2}(A_{d}) $ | 1,522 | 2.75 | 6.68 | 16,950
+> > $ h_{d}^{2} $ | 0.21 | 0.35 | 0.21 | 0.17
+> > $ \sigma^{2}(A_{s}) $ | 51 | 0.01 | 0.03 | 596
+> > $ \sigma^{2}(A_{T}) $ | 5,208 | 3.19 | 10.35 | 68,687
+> > $ T^{2} $ | 0.71 | 0.41 | 0.32 | 0.70
 > 
-> One of the strengths of mixed models is their flexibility. The basic model shown by Equation 22.38c, which allows for direct and associative effects, can easily be extended. For example, Bouwmann et al. (2010) included a separate maternal genetic effect, distinct from social effects, while Alemu et al. (2014) modified associative effects to allow kin and nonkin interactions to differ.
+> 
+> While both body-composition traits (back fat and muscle thickness) were largely unaffected by social effects, growth-related traits (growth and intake) were. Failure to incorporate group effects (either shared environmental, $ g_{p} $, or genetic, $ A_{s} $) resulted in an overestimation of the (direct) heritability for growth traits. The exploitable genetic variance (the total breeding value) for the two growth traits was about three times higher than suggested by the individual (direct) breeding values, and $ T^{2} $ was about triple the value of $ h_{d}^{2} $. Hence, significant potential for improvement would remain untapped when using individual selection with groups of unrelated individuals for growth traits. Conversely, the incorporation of some group-selection would have little additional effect on the response of the two body-composition traits, as their $ h_{d}^{2} $ and $ T^{2} $ values are very close.
 
 
 ---
 
-## chapter22_028 · Associative Effects: Competition, Social Interactions, Group and Kin Selection: Introduction / Muir's Experiment: BLUP Selection for Quail Weight
+## chapter22_028 · BLUP ESTIMATION OF DIRECT AND ASSOCIATIVE EFFECTS / Muir's Experiment: BLUP Selection for Quail Weight
 
 In his classic paper, Muir (2005) not only laid out the approach for incorporating social effects into a mixed-model framework, but also directly tested this method by examining the response to selection based entirely on the estimated breeding values (EBVs) obtained from the model. Muir selected on six-week weight in Japanese quail (Coturnix coturnix japonica), which are aggressive and cannibalistic. Groups were formed with 16 birds per cage, with each group consisting of several half-sib families. Banding of the birds allowed the pedigree of individuals to be followed through the 23 hatches of the experiment. As Example 22.4 showed, due to a negative covariance between associative and direct effects, individual selection is expected to produce a reversed response when using a group of unrelated individuals.
 
-Rather than select using individual phenotype or group means, Muir used BLUP selection (Chapters 13 and 19), wherein a mixed model is used to estimate the breeding values, and those individuals with the largest EBVs are chosen. Starting with the same base population, two lines were selected using different BLUP criteria. For both lines, the mixed model allowing for both direct and social effects was fitted, using REML estimates of the variances to obtain BLUPs for the desired breeding values. In the D-BLUP line, individuals with the largest EBVs of $ A_d $ (direct effects) were selected. In the C-BLUP line, those individuals with the largest EBVs of $ A_T $, namely $ EBV(A_d) + (16 - 1)EBV(A_s) $, were selected. Figure 22.4A shows the results through 23 hatches (cycles of selection). Under BLUP-D selection, the mean six-week weight decreased (slightly, but not significantly), while it significantly increased under C-BLUP. Both D-BLUP and C-BLUP increased the mean of direct effects, although the response under D-BLUP was about twice as great. As further shown in Figure 22.4B, the reason for the decrease in mean weight in the D-BLUP line was that the mean associative effect increased under C-BLUP (i.e., became more favorable toward others in the group), but as expected given the negative correlation between $ A_d $ and $ A_s $, it decreased under D-BLUP (became less favorable). Two other improvements were observed in the C-BLUP line. Mortality increased significantly in the D-BLUP line, while it decreased slightly (but not significantly) in the C-BLUP line. conversion was also better in the C-BLUP line, requiring 6.65 grams of feed per gram of gain, versus 7.26 in the D-BLUP line. Clearly, selection based on the mixed-model estimates of total breeding value resulted in significantly better results than lines selected by a more conventional (i.e., D-BLUP) approach.
+**[Figure]**
+
+> **Figure 22.4** · page 33 · source: `chapter22`
+>
+> ![Figure 22.4](../figures/fig_0101.png)
+>
+> Figure 22.4 Selection response for two differentially selected lines of Japanese quail (Muir 2005). Both lines were selected for six-week weight using BLUP. Line D-BLUP selected individuals with the largest estimated direct breeding values, while line C-BLUP selected individuals with the largest estimated total breeding values. A: (Top) Mean response in six-week weight over 23 cycles of selection. The C-BLUP line showed a significant improvement, while the D-BLUP line showed a slight (but not significant) negative trend. (B: (Bottom) The trend in mean social values showed an increase in the C-BLUP lines, and a decrease in D-BLUP lines. Hence, competition increased in lines strictly selected for direct breeding value, while it decreased in lines selected on an index of direct and associative effects.
+
+
+Rather than select using individual phenotype or group means, Muir used BLUP selection (Chapters 13 and 19), wherein a mixed model is used to estimate the breeding values, and those individuals with the largest EBVs are chosen. Starting with the same base population, two lines were selected using different BLUP criteria. For both lines, the mixed model allowing for both direct and social effects was fitted, using REML estimates of the variances to obtain BLUPs for the desired breeding values. In the D-BLUP line, individuals with the largest EBVs of $ A_d $ (direct effects) were selected. In the C-BLUP line, those individuals with the largest EBVs of $ A_T $, namely $ EBV(A_d) + (16 - 1)EBV(A_s) $, were selected. Figure 22.4 shows the results through 23 hatches (cycles of selection). Under BLUP-D selection, the mean six-week weight decreased (slightly, but not significantly), while it significantly increased under C-BLUP. Both D-BLUP and C-BLUP increased the mean of direct effects, although the response under D-BLUP was about twice as great. As further shown in Figure 22.4, the reason for the decrease in mean weight in the D-BLUP line was that the mean associative effect increased under C-BLUP (i.e., became more favorable toward others in the group), but as expected given the negative correlation between $ A_d $ and $ A_s $, it decreased under D-BLUP (became less favorable). Two other improvements were observed in the C-BLUP line. Mortality increased significantly in the D-BLUP line, while it decreased slightly (but not significantly) in the C-BLUP line. conversion was also better in the C-BLUP line, requiring 6.65 grams of feed per gram of gain, versus 7.26 in the D-BLUP line. Clearly, selection based on the mixed-model estimates of total breeding value resulted in significantly better results than lines selected by a more conventional (i.e., D-BLUP) approach.
 
 ---
 
-## chapter22_029 · Associative Effects: Competition, Social Interactions, Group and Kin Selection: Introduction / Details: Environmental Group Effects and the Covariance Structure of e
+## chapter22_029 · BLUP ESTIMATION OF DIRECT AND ASSOCIATIVE EFFECTS / Details: Environmental Group Effects and the Covariance Structure of e
 
 **[推导 Derivation]**
 
@@ -1306,35 +1314,25 @@ where $ \sigma^{2}(e) $ and $ \rho $ are given by Equation 22.23b.
 
 **[示例 Example]**
 
-> **Example 22.13** · ref: `22.13` · source: `chapter22_029.json` · blocks 1–1
+> **Example 22.13** · ref: `22.13` · source: `chapter22_029.json` · blocks 1–2
 >
-> Example 22.13. For the design used in Example 22.10 with group members clustered, so that $ \mathbf{z} = (z_1, z_2, z_5, z_6, z_3, z_4, z_7, z_8)^T $, the corresponding covariance matrix for the residuals becomes $$ \boldsymbol{\sigma}(\mathbf{e})=\boldsymbol{\sigma}^{2}(e)\mathbf{R}=\boldsymbol{\sigma}^{2}(e)\cdot\begin{pmatrix}{{{1}}}&{{{\rho}}}&{{{\rho}}}&{{{\rho}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\{{{\rho}}}&{{{1}}}&{{{\rho}}}&{{{\rho}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\{{{\rho}}}&{{{\rho}}}&{{{1}}}&{{{\rho}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\{{{\rho}}}&{{{\rho}}}&{{{\rho}}}&{{{1}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{1}}}&{{{\rho}}}&{{{\rho}}}&{{{\rho}}} \\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{\rho}}}&{{{1}}}&{{{\rho}}}&{{{\rho}}} \\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{\rho}}}&{{{\rho}}}&{{{1}}}&{{{\rho}}} \\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{\rho}}}&{{{\rho}}}&{{{\rho}}}&{{{1}}}&{{{1}}} \\\end{pmatrix} $$ With the same number of individuals in all groups, the only two estimable parameters in the environmental covariance matrix are $ \rho $ and $ \sigma^2(e) $. With groups of variable size (either by design or simply through the loss of data), the residual variances and covariances change with $ n $ (Equation 22.23b). In this case, the residual covariance matrix would be specified in terms of the three environmental variance/covariance terms, $ \sigma^2(E_d), \sigma^2(E_s) $, and $ \sigma(E_d, E_s) $.
-> 
-> Provided $ \rho > 0 $, an equivalent approach is simply to fit a random group effect (Bergsema et al. 2008; Ellen et al. 2008). Example 22.14 works through an example. This approach is computationally less demanding than jointly estimating $ \sigma^2(e) $ and $ \rho $ in an R matrix. However, if the covariance, $ \sigma(E_d, E_s) $, between environmental direct and social effects is sufficiently negative, $ \rho $ can be negative (Equation 22.23b) and the simple random group-effects model fails, as the group variance $ \sigma^2(g_p) $ must be positive. As Equation 22.23b suggests, as group size increases, the contribution from $ \sigma^2(E_s) $ eventually dominates $ \rho $, making it positive. Thus, for a design with large group size, fitting a random group effect will often suffice.
+> Example 22.13. For the design used in Example 22.10 with group members clustered, so that $ \mathbf{z} = (z_1, z_2, z_5, z_6, z_3, z_4, z_7, z_8)^T $, the corresponding covariance matrix for the residuals becomes $$ \boldsymbol{\sigma}(\mathbf{e})=\boldsymbol{\sigma}^{2}(e)\mathbf{R}=\boldsymbol{\sigma}^{2}(e)\cdot\begin{pmatrix}{{{1}}}&{{{\rho}}}&{{{\rho}}}&{{{\rho}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\{{{\rho}}}&{{{1}}}&{{{\rho}}}&{{{\rho}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\{{{\rho}}}&{{{\rho}}}&{{{1}}}&{{{\rho}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\{{{\rho}}}&{{{\rho}}}&{{{\rho}}}&{{{1}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{1}}}&{{{\rho}}}&{{{\rho}}}&{{{\rho}}} \\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{\rho}}}&{{{1}}}&{{{\rho}}}&{{{\rho}}} \\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{\rho}}}&{{{\rho}}}&{{{1}}}&{{{\rho}}} \\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{\rho}}}&{{{\rho}}}&{{{\rho}}}&{{{1}}}&{{{1}}} \\\end{pmatrix} $$
 
+
+With the same number of individuals in all groups, the only two estimable parameters in the environmental covariance matrix are $ \rho $ and $ \sigma^2(e) $. With groups of variable size (either by design or simply through the loss of data), the residual variances and covariances change with $ n $ (Equation 22.23b). In this case, the residual covariance matrix would be specified in terms of the three environmental variance/covariance terms, $ \sigma^2(E_d), \sigma^2(E_s) $, and $ \sigma(E_d, E_s) $.
+
+Provided $ \rho > 0 $, an equivalent approach is simply to fit a random group effect (Bergsema et al. 2008; Ellen et al. 2008). Example 22.14 works through an example. This approach is computationally less demanding than jointly estimating $ \sigma^2(e) $ and $ \rho $ in an R matrix. However, if the covariance, $ \sigma(E_d, E_s) $, between environmental direct and social effects is sufficiently negative, $ \rho $ can be negative (Equation 22.23b) and the simple random group-effects model fails, as the group variance $ \sigma^2(g_p) $ must be positive. As Equation 22.23b suggests, as group size increases, the contribution from $ \sigma^2(E_s) $ eventually dominates $ \rho $, making it positive. Thus, for a design with large group size, fitting a random group effect will often suffice.
 
 **[示例 Example]**
 
-> **Example 22.14** · ref: `22.14` · source: `chapter22_029.json` · blocks 2–2
+> **Example 22.14** · ref: `22.14` · source: `chapter22_029.json` · blocks 3–9
 >
-> Example 22.14. Suppose that instead of fully specifying the matrix $ \mathbf{R} $ (Equation 22.41), we instead simply fit a random group effect. Here, all individuals in group i share the common random effect $ g_i $, where we assume $ g_i \sim N[0, \sigma^2(g_p)] $. The resulting mixed model becomes $$ \mathbf{z}=\mathbf{X}\boldsymbol{\beta}+\mathbf{Z}_{d}\mathbf{a}_{d}+\mathbf{Z}_{s}\mathbf{a}_{s}+\mathbf{Z}_{g}\mathbf{g}_{p}+\mathbf{e} $$ where, for $k$ groups, $\mathbf{g}_p^T = (g_1, g_2, \cdots, g_k)$ is the vector of random group effects. The incidence matrix $\mathbf{Z}_g$ has $k$ columns, the $i$th of which (corresponding to membership in group $i$) has a one for each individual in group $i$ and a zero elsewhere. For example, for the design in Example 22.13, $$ \mathbf{g}=\begin{pmatrix}{{{g_{1}}}} \\{{{g_{2}}}}\end{pmatrix}\quad and\quad\mathbf{Z}_{g}=\begin{pmatrix}{{{1}}}&{{{0}}} \\{{{1}}}&{{{0}}} \\{{{1}}}&{{{0}}} \\{{{0}}}&{{{1}}} \\{{{0}}}&{{{1}}} \\{{{0}}}&{{{1}}}\end{pmatrix} $$
-> 
-> If we assume a simple covariance for the residuals, so that $ \sigma(\mathbf{e}) = \sigma^2(\epsilon)\mathbf{I} $, the resulting contribution to the covariance matrix of $ \mathbf{z} $ from the group and residual terms becomes $ \sigma^2(g_p)\mathbf{Z}_g\mathbf{Z}_g^T + \sigma^2(\epsilon)\mathbf{I} $, or $$ \sigma^{2}(g_{p})\begin{pmatrix}{{{1}}}&{{{1}}}&{{{1}}}&{{{1}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\{{{1}}}&{{{1}}}&{{{1}}}&{{{1}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\{{{1}}}&{{{1}}}&{{{1}}}&{{{1}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\{{{1}}}&{{{1}}}&{{{1}}}&{{{1}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{1}}}&{{{1}}}&{{{1}}}&{{{1}}} \\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{1}}}&{{{1}}}&{{{1}}}&{{{1}}} \\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{1}}}&{{{1}}}&{{{1}}}&{{{1}}}\end{pmatrix}+\sigma^{2}(\epsilon)\mathbf{I}=\sigma^{2}(e)\begin{pmatrix}{{{1}}}&{{{\alpha^{2}}}}&{{{\alpha^{2}}}}&{{{\alpha^{2}}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\{{{\alpha^{2}}}}&{{{1}}}&{{{\alpha^{2}}}}&{{{\alpha^{2}}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\{{{\alpha^{2}}}}&{{{\alpha^{2}}}}&{{{1}}}&{{{\alpha^{2}}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\{{{\alpha^{2}}}}&{{{\alpha^{2}}}}&{{{\alpha^{2}}}}&{{{1}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{1}}}&{{{\alpha^{2}}}}&{{{\alpha^{2}}}}&{{{\alpha^{2}}}} \\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{\alpha^{2}}}}&{{{1}}}&{{{\alpha^{2}}}}&{{{\alpha^{2}}}} \\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{\alpha^{2}}}}&{{{\alpha^{2}}}}&{{{1}}}&{{{\alpha^{2}}}} \\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{\alpha^{2}}}}&{{{\alpha^{2}}}}&{{{\alpha^{2}}}}&{{{1}}}\end{pmatrix} $$ $$ \sigma^{2}(e)=\sigma^{2}(\epsilon)+\sigma^{2}(g_{p})\quad and\quad\alpha^{2}=\frac{\sigma^{2}(g_{p})}{\sigma^{2}(\epsilon)+\sigma^{2}(g_{p})} $$ where
-> 
-> We use $ \alpha^2 $ to remind the reader that (under this model), this is the ratio of two variances, and hence is always nonnegative. Comparison with Example 22.13 shows that adding a random effect for group corresponds to the more fully specified covariance residual model (Equation 22.41), with $ \rho = \alpha^2 $. When $ \rho > 0 $, both models are identical. However, if the within-group environmental correlations are negative ($ \rho < 0 $), then the simple group random-effects model fails.
-> 
-> Further, note that we can write the covariance matrix of group plus residual effects under this model as $$ \sigma^{2}(e)\cdot\left(\mathbf{I}+\alpha^{2}\left[\mathbf{Z}_{g}\mathbf{Z}_{g}^{T}-\mathbf{I}\right]\right) $$ showing that the matrix $ \mathbf{R} $ in Equation 22.41 (provided $ \rho > 0 $) is given by $$ \mathbf{R}=\mathbf{I}+\alpha^{2}\left[\mathbf{Z}_{g}\mathbf{Z}_{g}^{T}-\mathbf{I}\right] $$
-> 
-> Finally, a standard approach when families are in the analysis is to include a common-family effect, c, that is due to shared maternal effects and dominance (if full sibs are present). This is simply done by adding an additional vector of random effects, c, for the family effects. Using this approach, the model starting this example now becomes $$ \mathbf{z}=\mathbf{X}\boldsymbol{\beta}+\mathbf{Z}_{d}\mathbf{a}_{d}+\mathbf{Z}_{s}\mathbf{a}_{s}+\mathbf{Z}_{g}\mathbf{g}_{p}+\mathbf{Z}_{c}\mathbf{c}+\mathbf{e} $$
-> 
-> For example, suppose individuals 1, 2, 5, and 6 (in the ordering used in this example) are from one family, while the others are from a second then $$ \mathbf{c}=\begin{pmatrix}{{{c_{1}}}} \\{{{c_{2}}}}\end{pmatrix}\qquad and\qquad\mathbf{Z}_{c}=\begin{pmatrix}{{{1}}}&{{{0}}} \\{{{1}}}&{{{0}}} \\{{{0}}}&{{{1}}} \\{{{0}}}&{{{1}}} \\{{{1}}}&{{{0}}} \\{{{1}}}&{{{0}}} \\{{{0}}}&{{{1}}} \\{{{0}}}&{{{1}}}\end{pmatrix} $$
-> 
-> Note that if $ \mathbf{Z}_g = \mathbf{Z}_c $, the group and family effects are fully confounded and cannot be separated (this point will be discussed in more detail shortly). This addition of a common family effect is easily incorporated into any of the above models.
+> Example 22.14. Suppose that instead of fully specifying the matrix $ \mathbf{R} $ (Equation 22.41), we instead simply fit a random group effect. Here, all individuals in group i share the common random effect $ g_i $, where we assume $ g_i \sim N[0, \sigma^2(g_p)] $. The resulting mixed model becomes $$ \mathbf{z}=\mathbf{X}\boldsymbol{\beta}+\mathbf{Z}_{d}\mathbf{a}_{d}+\mathbf{Z}_{s}\mathbf{a}_{s}+\mathbf{Z}_{g}\mathbf{g}_{p}+\mathbf{e} $$ where, for $k$ groups, $\mathbf{g}_p^T = (g_1, g_2, \cdots, g_k)$ is the vector of random group effects. The incidence matrix $\mathbf{Z}_g$ has $k$ columns, the $i$th of which (corresponding to membership in group $i$) has a one for each individual in group $i$ and a zero elsewhere. For example, for the design in Example 22.13, $$ \mathbf{g}=\begin{pmatrix}{{{g_{1}}}} \\{{{g_{2}}}}\end{pmatrix}\quad and\quad\mathbf{Z}_{g}=\begin{pmatrix}{{{1}}}&{{{0}}} \\{{{1}}}&{{{0}}} \\{{{1}}}&{{{0}}} \\{{{0}}}&{{{1}}} \\{{{0}}}&{{{1}}} \\{{{0}}}&{{{1}}}\end{pmatrix} $$ If we assume a simple covariance for the residuals, so that $ \sigma(\mathbf{e}) = \sigma^2(\epsilon)\mathbf{I} $, the resulting contribution to the covariance matrix of $ \mathbf{z} $ from the group and residual terms becomes $ \sigma^2(g_p)\mathbf{Z}_g\mathbf{Z}_g^T + \sigma^2(\epsilon)\mathbf{I} $, or $$ \sigma^{2}(g_{p})\begin{pmatrix}{{{1}}}&{{{1}}}&{{{1}}}&{{{1}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\{{{1}}}&{{{1}}}&{{{1}}}&{{{1}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\{{{1}}}&{{{1}}}&{{{1}}}&{{{1}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\{{{1}}}&{{{1}}}&{{{1}}}&{{{1}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{1}}}&{{{1}}}&{{{1}}}&{{{1}}} \\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{1}}}&{{{1}}}&{{{1}}}&{{{1}}} \\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{1}}}&{{{1}}}&{{{1}}}&{{{1}}}\end{pmatrix}+\sigma^{2}(\epsilon)\mathbf{I}=\sigma^{2}(e)\begin{pmatrix}{{{1}}}&{{{\alpha^{2}}}}&{{{\alpha^{2}}}}&{{{\alpha^{2}}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\{{{\alpha^{2}}}}&{{{1}}}&{{{\alpha^{2}}}}&{{{\alpha^{2}}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\{{{\alpha^{2}}}}&{{{\alpha^{2}}}}&{{{1}}}&{{{\alpha^{2}}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\{{{\alpha^{2}}}}&{{{\alpha^{2}}}}&{{{\alpha^{2}}}}&{{{1}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{1}}}&{{{\alpha^{2}}}}&{{{\alpha^{2}}}}&{{{\alpha^{2}}}} \\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{\alpha^{2}}}}&{{{1}}}&{{{\alpha^{2}}}}&{{{\alpha^{2}}}} \\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{\alpha^{2}}}}&{{{\alpha^{2}}}}&{{{1}}}&{{{\alpha^{2}}}} \\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{\alpha^{2}}}}&{{{\alpha^{2}}}}&{{{\alpha^{2}}}}&{{{1}}}\end{pmatrix} $$ where $$ \sigma^{2}(e)=\sigma^{2}(\epsilon)+\sigma^{2}(g_{p})\quad and\quad\alpha^{2}=\frac{\sigma^{2}(g_{p})}{\sigma^{2}(\epsilon)+\sigma^{2}(g_{p})} $$ We use $ \alpha^2 $ to remind the reader that (under this model), this is the ratio of two variances, and hence is always nonnegative. Comparison with Example 22.13 shows that adding a random effect for group corresponds to the more fully specified covariance residual model (Equation 22.41), with $ \rho = \alpha^2 $. When $ \rho > 0 $, both models are identical. However, if the within-group environmental correlations are negative ( $ \rho < 0 $), then the simple group random-effects model fails. Further, note that we can write the covariance matrix of group plus residual effects under this model as $$ \sigma^{2}(e)\cdot\left(\mathbf{I}+\alpha^{2}\left[\mathbf{Z}_{g}\mathbf{Z}_{g}^{T}-\mathbf{I}\right]\right) $$ showing that the matrix $ \mathbf{R} $ in Equation 22.41 (provided $ \rho > 0 $) is given by $$ \mathbf{R}=\mathbf{I}+\alpha^{2}\left[\mathbf{Z}_{g}\mathbf{Z}_{g}^{T}-\mathbf{I}\right] $$ Finally, a standard approach when families are in the analysis is to include a common-family effect, c, that is due to shared maternal effects and dominance (if full sibs are present). This is simply done by adding an additional vector of random effects, c, for the family effects. Using this approach, the model starting this example now becomes $$ \mathbf{z}=\mathbf{X}\boldsymbol{\beta}+\mathbf{Z}_{d}\mathbf{a}_{d}+\mathbf{Z}_{s}\mathbf{a}_{s}+\mathbf{Z}_{g}\mathbf{g}_{p}+\mathbf{Z}_{c}\mathbf{c}+\mathbf{e} $$ For example, suppose individuals 1, 2, 5, and 6 (in the ordering used in this example) are from one family, while the others are from a second then $$ \mathbf{c}=\begin{pmatrix}{{{c_{1}}}} \\{{{c_{2}}}}\end{pmatrix}\qquad and\qquad\mathbf{Z}_{c}=\begin{pmatrix}{{{1}}}&{{{0}}} \\{{{1}}}&{{{0}}} \\{{{0}}}&{{{1}}} \\{{{0}}}&{{{1}}} \\{{{1}}}&{{{0}}} \\{{{1}}}&{{{0}}} \\{{{0}}}&{{{1}}} \\{{{0}}}&{{{1}}}\end{pmatrix} $$ Note that if $ \mathbf{Z}_g = \mathbf{Z}_c $, the group and family effects are fully confounded and cannot be separated (this point will be discussed in more detail shortly). This addition of a common family effect is easily incorporated into any of the above models.
 
 
 ---
 
-## chapter22_030 · Associative Effects: Competition, Social Interactions, Group and Kin Selection: Introduction / Details: Ignoring Additive Social Values Introduces Bias
+## chapter22_030 · BLUP ESTIMATION OF DIRECT AND ASSOCIATIVE EFFECTS / Details: Ignoring Additive Social Values Introduces Bias
 
 **[推导 Derivation]**
 
@@ -1364,7 +1362,7 @@ If the residuals are uncorrelated, the bias in the within-group covariance-based
 
 ---
 
-## chapter22_031 · Associative Effects: Competition, Social Interactions, Group and Kin Selection: Introduction / Details: Identifiability of Variance Components
+## chapter22_031 · BLUP ESTIMATION OF DIRECT AND ASSOCIATIVE EFFECTS / Details: Identifiability of Variance Components
 
 Due to potential confounding of effects, any particular design might not allow for all variables of interest to be uniquely estimated. For the vector $ \beta $ of fixed effects, the uniqueness of an estimated variable is indicated the concept of estimability (LW Chapter 26). For $ \mathbf{z} \sim (\mathbf{X}\beta, \mathbf{V}) $, the vector of fixed effects is estimable ($ \beta $ has a unique value) if $ (X^T \mathbf{V}^{-1} \mathbf{X})^{-1} $ exists. Otherwise, some of the fixed effects are confounded and cannot be separated by the design (X) being used. A similar concept, identifiability, exists for random effects and is based on whether variance components (often called the dispersal parameters) can be uniquely estimated. If variance components are not identifiable in the design, then BLUPs for their associated vectors of random effects do not exist, and the model will fail.
 
@@ -1420,7 +1418,7 @@ Substituting Equations 22.44a and 22.46b into Equation 22.45b fills out the F ma
 
 ---
 
-## chapter22_032 · Associative Effects: Competition, Social Interactions, Group and Kin Selection: Introduction / Appropriate Designs for Estimating Direct and Associative Effects
+## chapter22_032 · BLUP ESTIMATION OF DIRECT AND ASSOCIATIVE EFFECTS / Appropriate Designs for Estimating Direct and Associative Effects
 
 While most of the statistical power for detecting associative effects arises from the number of groups, not numbers of individuals (Bijma 2010c), the relationship structure within groups is also critical. In contrast to selection response, where there is a benefit from having all group members from the same family (and hence an increased r value), in a design to estimate direct and associative values and variance components, groups should be composed of at least two different families. If there is no within-group variation in relationships, direct and associative effects cannot be separated. Groups can also consist of unrelated individuals, but Bijma (2010c) showed that, in general, using groups with two (or more) different families offers more power than using unrelated individuals (also see Ødegård and Olesen 2011).
 
@@ -1428,7 +1426,7 @@ Using the appropriate mixed model is also critical. Initially, one might think t
 
 ---
 
-## chapter22_033 · Associative Effects: Competition, Social Interactions, Group and Kin Selection: Introduction / Using Kin Groups: A Quick-and-dirty Way Around Associative Effects?
+## chapter22_033 · BLUP ESTIMATION OF DIRECT AND ASSOCIATIVE EFFECTS / Using Kin Groups: A Quick-and-dirty Way Around Associative Effects?
 
 As the proceeding sections demonstrate, performing a Muir (2005)-style BLUP selection on total breeding value $ A_T $ (Figure 22.4) requires an appropriate design and care to ensure that groups contain a mixture of relatives and nonrelatives in order to provide separate estimates of $ A_d $ and $ A_s $. Given this background, it may be counterintuitive that Muir et al. (2013) suggested that a quick-and-dirty way around dealing with associative effects is to ensure that groups are made up entirely of relatives. Their logic follows from Equation 22.12e, which shows that when the average relatedness within a group is r, selection based entirely on individual values still captures a fraction, r, of $ A_T $. They suggested that in settings where individuals naturally interact in groups (such as caged birds), simply assigning relatives to groups provides a path for direct selection on $ A_T $. As our above analysis suggests, such a setting may not allow for separate estimates of $ A_s $ and $ A_d $ (and hence a direct estimate of $ A_T $), but it can provide a much simpler way to ensure at least some selection on $ A_T $.
 
@@ -1442,7 +1440,7 @@ We conclude by examining some of the important implications for evolution when h
 
 ---
 
-## chapter22_035 · Associative Effects: Competition, Social Interactions, Group and Kin Selection: Introduction / Change in Mean Fitness When Associative Effects are Present
+## chapter22_035 · ASSOCIATIVE-EFFECTS, INCLUSIVE FITNESS, AND FISHER'S THEOREM / Change in Mean Fitness When Associative Effects are Present
 
 The most important trait in evolution is fitness, W (Chapters 6 and 29). Clearly, the fitness of any particular genotype is partly a function of the environment in which it finds itself. While we normally treat this environment as static, when conspecifics influence fitness (as is generally expected to be the case), part of this environment may also be evolving in response to selection (namely, conspecifics are constantly improving). In these settings, the use of models with associative effects is appropriate. Here, the individual fitness of a focal individual results from a direct fitness effect from its own genotype plus the associative effects on its fitness from the other genotypes with which it interacts. Competition, a detrimental fitness effect from other individuals, is one such associative effect, where the contribution from conspecifics is to lower fitness (e.g., Wilson et al. 2009, 2011). Conversely, with cooperation or mutualism, associative effects increase the fitness of the focal individual.
 
@@ -1564,46 +1562,14 @@ and
 
 **[示例 Example]**
 
-> **Example 22.16** · ref: `22.16` · source: `chapter22_036.json` · blocks 5–5
+> **Example 22.16** · ref: `22.16` · source: `chapter22_036.json` · blocks 5–8
 >
-> Example 22.16. Haldane (1932a) coined the term altruistic trait to denote a behavior (or trait) that harms an individual, but benefits others. The classic example is an alarm call: others in a group are warned (increasing their fitness), but at some expense to the individual making the call (a direct effect decreasing fitness). Note that the increase in an altruistic trait is an example of a reversed response, as the trait lowers the fitness of the individual that bears it. What are the conditions for such traits to spread? In terms of our fitness model with associative effects (Equation 22.47a), we can rephrase this as the conditions for the mean value of $ A_s $ to increase, which are given by Equation 22.49c. From the definition of altruism, $ \sigma(A_d, A_s) < 0 $, as performing an altruistic act decreases direct fitness while increasing the fitness of those in the group. Equation 22.49c shows that a necessary (but not sufficient) condition for altruism to evolve ($ R_{W,s} > 0 $) under individual selection is that r > 0, namely, that individuals interact in groups of relatives. As pointed out by Bijma and Wade (2008), we can view $ \sigma(A_d, A_s) $ as the cost $ (-c < 0) $ for performing an altruistic act for others in a group. Conversely, the altruistic contribution from others in one's group is $ (n - 1)\sigma^2(A_s) \geq 0 $, which we denote as the $ \text{benefit} $, b. With these definitions, from Equation 22.49c, the condition for altruism to evolve under individual selection is
-> 
-> > **Formula (22.50a)** · `22.50a` · source: `chapter22_block_223` · Change in Mean Fitness When Associative Effects are Present
-> >
-> > $$ -c+rb>0,\quad or\quad r>b/c $$
-> 
-> 
-> This is the classic Hamilton’s rule (Hamilton 1963, 1964a, 1964b), which is discussed shortly. For an altruistic trait to evolve under individual selection, individuals must interact in groups of relatives. If groups consist of unrelated individuals (r = 0), individual selection is not sufficient for altruism, and some component of group selection is required. Note from Equation 22.49c that a more general version of Hamilton’s rule is
-> 
-> > **Formula (22.50b)** · `22.50b` · source: `chapter22_block_224` · Change in Mean Fitness When Associative Effects are Present
-> >
-> > $$ \sigma(A_{d},A_{s})+r(n-1)\sigma^{2}(A_{s})>0 $$
-> 
-> 
-> which shows that the benefit scales with group size, provided $ \sigma^{2}(A_{s}) $ is independent of n. In contrast, under Bijma's dilution model for social effects (Equation 22.10a), the variance in social effects is a function of n, and (applying Equation 22.10c) Hamilton's rule becomes
-> 
-> > **Formula (22.50c)** · `22.50c` · source: `chapter22_block_224` · Change in Mean Fitness When Associative Effects are Present
-> >
-> > $$ \sigma(A_{d},A_{s})+r(n-1)^{1-2d}\sigma^{2}(A_{s,2})>0 $$
-> 
-> 
-> with benefit increasing with group size only when the dilution fraction d < 1/2.
-> 
-> The same logic extends to the evolution of altruism under group selection. From Equation 22.27a, the response in the mean social value to group selection depends on the covariance of $ A_{s} $ and the group total (here, the sum of the fitnesses of all group members). From Equation 22.27c,
-> 
-> > **Formula (22.50d)** · `22.50d` · source: `chapter22_block_225` · Change in Mean Fitness When Associative Effects are Present
-> >
-> > $$ \begin{aligned}\sigma\bigg(A_{s_{i}},\sum_{j=1}^{n}W_{j}\bigg)&=\left[\sigma(A_{d},A_{s})+(n-1)\sigma^{2}(A_{s})\right]\left[1+(n-1)r\right]\\&=(-c+b)\left[1+(n-1)r\right]\end{aligned} $$
-> 
-> 
-> As long as $b > c$ (the benefit exceeds the cost), altruism can evolve under group selection, even in groups of unrelated individuals. When individuals within the group are related ($r > 0$), this covariance is significantly larger, and hence the response to selection for altruism is greater.
-> 
-> Lynch (1987) showed that this simple expression for Hamilton’s rule breaks down under more complex settings, such as multiple relatives with different levels of interactions between them and allowing for ontological changes in behavior, for example, an individual may act as an offspring early in life and as a parent later in life
+> Example 22.16. Haldane (1932a) coined the term altruistic trait to denote a behavior (or trait) that harms an individual, but benefits others. The classic example is an alarm call: others in a group are warned (increasing their fitness), but at some expense to the individual making the call (a direct effect decreasing fitness). Note that the increase in an altruistic trait is an example of a reversed response, as the trait lowers the fitness of the individual that bears it. What are the conditions for such traits to spread? In terms of our fitness model with associative effects (Equation 22.47a), we can rephrase this as the conditions for the mean value of $ A_s $ to increase, which are given by Equation 22.49c. From the definition of altruism, $ \sigma(A_d, A_s) < 0 $, as performing an altruistic act decreases direct fitness while increasing the fitness of those in the group. Equation 22.49c shows that a necessary (but not sufficient) condition for altruism to evolve ( $ R_{W,s} > 0 $) under individual selection is that r > 0, namely, that individuals interact in groups of relatives. As pointed out by Bijma and Wade (2008), we can view $ \sigma(A_d, A_s) $ as the cost $ (-c < 0) $ for performing an altruistic act for others in a group. Conversely, the altruistic contribution from others in one's group is $ (n - 1)\sigma^2(A_s) \geq 0 $, which we denote as the $ \text{benefit} $, b. With these definitions, from Equation 22.49c, the condition for altruism to evolve under individual selection is (22.50a) $$ -c+rb>0,\quad or\quad r>b/c $$ This is the classic Hamilton’s rule (Hamilton 1963, 1964a, 1964b), which is discussed shortly. For an altruistic trait to evolve under individual selection, individuals must interact in groups of relatives. If groups consist of unrelated individuals (r = 0), individual selection is not sufficient for altruism, and some component of group selection is required. Note from Equation 22.49c that a more general version of Hamilton’s rule is $$ \sigma(A_{d},A_{s})+r(n-1)\sigma^{2}(A_{s})>0 $$ (22.50b) which shows that the benefit scales with group size, provided $ \sigma^{2}(A_{s}) $ is independent of n. In contrast, under Bijma's dilution model for social effects (Equation 22.10a), the variance in social effects is a function of n, and (applying Equation 22.10c) Hamilton's rule becomes $$ \sigma(A_{d},A_{s})+r(n-1)^{1-2d}\sigma^{2}(A_{s,2})>0 $$ (22.50c) with benefit increasing with group size only when the dilution fraction d < 1/2. The same logic extends to the evolution of altruism under group selection. From Equation 22.27a, the response in the mean social value to group selection depends on the covariance of $ A_{s} $ and the group total (here, the sum of the fitnesses of all group members). From Equation 22.27c, $$ \begin{aligned}\sigma\bigg(A_{s_{i}},\sum_{j=1}^{n}W_{j}\bigg)&=\left[\sigma(A_{d},A_{s})+(n-1)\sigma^{2}(A_{s})\right]\left[1+(n-1)r\right]\\&=(-c+b)\left[1+(n-1)r\right]\end{aligned} $$ (22.50d) As long as $b > c$ (the benefit exceeds the cost), altruism can evolve under group selection, even in groups of unrelated individuals. When individuals within the group are related ($r > 0$), this covariance is significantly larger, and hence the response to selection for altruism is greater.
 
 
 ---
 
-## chapter22_037 · Associative Effects: Competition, Social Interactions, Group and Kin Selection: Introduction / Inclusive Fitness
+## chapter22_037 · ASSOCIATIVE-EFFECTS, INCLUSIVE FITNESS, AND FISHER'S THEOREM / Inclusive Fitness
 
 As Equation 22.47a illustrates, when heritable interactions are present, the fitness of an individual depends on both its own genes as well as the genes in others. Hamilton (1964a, 1964b) suggested that evolutionary focus should shift from individual fitness to what he called inclusive fitness: that component of fitness influenced only by the alleles carried by the focal individual. Hamilton argued that evolution strives to increase inclusive, as opposed to individual, fitness (also see Michod and Abugov 1980; Grafen 2006; Akçay and Van Cleve 2016).
 
@@ -1692,7 +1658,7 @@ which can be positive or negative, depending on the sign of the covariance. Note
 
 ---
 
-## chapter22_038 · Associative Effects: Competition, Social Interactions, Group and Kin Selection: Introduction / Bijma's Theorem: Inclusive Fitness and Fisher's Fundamental Theorem
+## chapter22_038 · ASSOCIATIVE-EFFECTS, INCLUSIVE FITNESS, AND FISHER'S THEOREM / Bijma's Theorem: Inclusive Fitness and Fisher's Fundamental Theorem
 
 **[命题 Proposition]**
 
@@ -1744,7 +1710,7 @@ Example 22.16 briefly introduced Hamilton’s classic result: the condition for 
 
 ---
 
-## chapter22_040 · Associative Effects: Competition, Social Interactions, Group and Kin Selection: Introduction / How General Is Hamilton's Rule?
+## chapter22_040 · HAMILTON'S RULE / How General Is Hamilton's Rule?
 
 Hamilton’s rule is a bit like the breeder’s equation: it provides a simple expression that conveys the nature of interactions between the key quantities of interest, but it can fail (at least as an exact expression) under a variety of conditions. Given that Hamilton assumed a single additive locus under weak selection in an outbred population, just how general is his result? Assuming weak selection, a number of studies have shown that altruistic traits with a polygenic basis also generally satisfy Hamilton’s rule (e.g., Yokoyama and Felsenstein 1978; Boyd and Richerson 1980; Aoki 1982; Engels 1983). Conversely, Cavalli-Sforza and Feldman (1978) found that it can fail for even a single locus. When fitnesses are no longer additive (i.e., the fitness of the heterozygote is no longer the average of the two homozygotes), then comparing $ r $ to $ c/b $ may not be sufficient to predict spread or loss, as the actual value of $ b $ (in addition to the ratio $ c/b $) can also matter.
 
@@ -1812,7 +1778,7 @@ Under the infinitesimal model assumptions in an noninbred population, the regres
 
 ---
 
-## chapter22_041 · Associative Effects: Competition, Social Interactions, Group and Kin Selection: Introduction / Queller's Generalization of Hamilton's Rule
+## chapter22_041 · HAMILTON'S RULE / Queller's Generalization of Hamilton's Rule
 
 **[推导 Derivation]**
 
@@ -1852,7 +1818,7 @@ where $ \beta_{w_d|A} $ is the cost, $ \beta_{w_s|A} $ the benefit, and $ \beta_
 
 ---
 
-## chapter22_042 · Associative Effects: Competition, Social Interactions, Group and Kin Selection: Introduction / Kin, Group, and Multilevel Selection
+## chapter22_042 · GROUP SELECTION, KIN SELECTION, AND ASSOCIATIVE EFFECTS / Kin, Group, and Multilevel Selection
 
 There is a vast (and often heated) literature in evolutionary genetics and social evolution dealing with kin selection, group selection, and inclusive fitness (selected works include Wynne-Edwards 1962, 1986; Maynard Smith 1964, 1976; Williams 1966; Wade 1978; Wilson 1983; Frank 1998; Lehmann and Keller 2006a; Lehmann et al. 2007; West et al. 2006, 2008; Wilson and Wilson 2007; Bijma and Wade 2008; Nowak et al. 2010; Abbot et al. 2011; Van Veelen et al. 2012; Goodnight 2013, 2015; West and Gardner 2013; Birch 2014; Birch and Okasha 2015; Gardner 2015; Lehtonen 2016). Much of the debate has revolved around the evolutionary mechanism(s) needed to account for traits that reduce the fitness of an individual but increase the fitness of a group. As we have seen, Hamilton's rule gives the condition (a sufficiently high degree of relatedness among the interacting individuals) for such an allele to spread under individual selection. This is a $ \text{kin selection} $ model (Maynard-Smith 1964), whereby interactions among kin (i.e., r > 0) generate an inclusive fitness that can allow an allele, potentially harmful to the individual, but helpful to a group, to spread.
 
@@ -1864,13 +1830,13 @@ In evolutionary biology, the debate over the relative importance of kin vs. grou
 
 ---
 
-## chapter22_043 · Associative Effects: Competition, Social Interactions, Group and Kin Selection: Introduction / Much Ado About Nothing?
+## chapter22_043 · GROUP SELECTION, KIN SELECTION, AND ASSOCIATIVE EFFECTS / Much Ado About Nothing?
 
 The reader who is unfamiliar with the evolutionary literature might be a bit perplexed about this controversy, as when placed in a framework of associative effects, both group- and kin-selection components arise and have symmetric roles (e.g., Equation 22.29d). Indeed, a number of workers have suggested group and kin selection are simply two extremes on the continuum of potential interactions and hence closely related (Wade 1980; Queller 1991; Lehmann et al. 2007). Bijma and Wade (2008) succinctly make the point that the ongoing debate on equivalence of kin and levels-of-selection models is partly caused by the fact that levels-of-selection models tend to hide the relatedness component of response to selection, whereas kin selection models tend to hide the multilevel selection component of response to selection... the response to selection is naturally described by the combination of relatedness and the degree of multilevel selection, rather than by focusing on one or the other of the two factors. As we will see, in the absence of associative effects influencing a trait value $ \sigma^2(A_s) = 0 $, both $ \text{kin}(r \neq 0) $ and multilevel (group weight $ g \neq 0 $, see Equation 22.28a) selection are required for social selection to have a response that differs from the breeder's equation. When associative effects influence trait values, kin and multilevel selection appear as symmetric roles, and even in the absence of these latter two factors (namely, $ r = g = 0 $), the selection response can still differ from the breeder's equation. These results were first clearly stated by Bijma and Wade (2008), and we closely follow their development below.
 
 ---
 
-## chapter22_044 · Associative Effects: Competition, Social Interactions, Group and Kin Selection: Introduction / Group and Kin Selection: Models Without Trait Associative Effects
+## chapter22_044 · GROUP SELECTION, KIN SELECTION, AND ASSOCIATIVE EFFECTS / Group and Kin Selection: Models Without Trait Associative Effects
 
 Most models of kin and group selection assume that the trait of interest is not influenced by associative effects, so that we can decompose the phenotypic value of individual i as $$ z_{i}=A_{i}+E_{i} $$ where $ A_{i} $ denotes i's breeding value (we use A rather than $ A_{d} $ to stress that this model assumes no associative effects, so that no $ A_{s} $ terms appear). While no associative effects influence the phenotypic value of the trait of interest, we do assume that the fitness of an individual is influenced by the phenotypes of its neighbors. This results in fitness showing both direct and associative effects. This distinction between models where the trait does not show associative effects while fitnesses do, versus models where both the trait and fitness show associative effects is subtle, but rather important, as the resulting model behavior is quite different (Bijma and Wade 2008).
 
@@ -2036,46 +2002,14 @@ Thus, two factors are required for genes in j to influence the response based on
 
 **[示例 Example]**
 
-> **Example 22.17** · ref: `22.17` · source: `chapter22_045.json` · blocks 4–4
+> **Example 22.17** · ref: `22.17` · source: `chapter22_045.json` · blocks 4–9
 >
-> Example 22.17. Following Bijma and Wade, we can formally show the connections between the fitness models given by Equation 22.59a (kin selection) and Equation 22.62a (multilevel selection). Expanding $ \overline{z} $ and $ \Delta z_i $ to express them in terms of $ z_i $ and $ \sum_{j \neq i} z_j $, we have that
-> 
-> > **Formula (22.64a)** · `22.64a` · source: `chapter22_block_271` · Group and Kin Selection: Models Without Trait Associative Effects
-> >
-> > $$ \begin{aligned}&\beta_{w|\overline{z}}\overline{z}+\beta_{w|\Delta z}(z_{i}-\overline{z})=\beta_{w|\Delta z}z_{i}+(\beta_{w|\overline{z}}-\beta_{w|\Delta z})\overline{z}\\ &=\beta_{w|\Delta z}z_{i}+\frac{1}{n}\Big(\beta_{w|\overline{z}}-\beta_{w|\Delta z}\Big)\Big(z_{i}+\sum_{j\neq i}z_{j}\Big)\\ &=\frac{1}{n}\Big(\beta_{w|\overline{z}}+[n-1]\beta_{w|\Delta z}\Big)z_{i}+\frac{1}{n}\Big(\beta_{w|\overline{z}}-\beta_{w|\Delta z}\Big)\sum_{j\neq i}z_{j}\\ \end{aligned} $$
-> 
-> 
-> Matching terms with Equation 22.59a, the regression slopes for fitness in these two model are related as follows:
-> 
-> > **Formula (22.64b)** · `22.64b` · source: `chapter22_block_272` · Group and Kin Selection: Models Without Trait Associative Effects
-> >
-> > $$ \beta_{w_{d}|z}=\frac{\beta_{w|\overline{z}}+(n-1)\beta_{w|\Delta z}}{n}\qquad\mathrm{a n d}\qquad\beta_{w_{s}|z}=\frac{\beta_{w|\overline{z}}-\beta_{w|\Delta z}}{n} $$
-> 
-> 
-> Similarly, we can show that
-> 
-> > **Formula (22.65a)** · `22.65a` · source: `chapter22_block_273` · Group and Kin Selection: Models Without Trait Associative Effects
-> >
-> > $$ \beta_{w_{d}|z}z_{i}+\beta_{w_{s}|z}\sum_{j\neq i}^{n}z_{j}=\left(\beta_{w_{d}|z}-\beta_{w_{s}|z}\right)\Delta z_{i}+\left(\beta_{w_{d}|z}+(n-1)\beta_{w_{s}|z}\right)\overline{z} $$
-> 
-> 
-> implying
-> 
-> > **Formula (22.65b)** · `22.65b` · source: `chapter22_block_273` · Group and Kin Selection: Models Without Trait Associative Effects
-> >
-> > $$ \beta_{w|\Delta z}=\beta_{w_{d}|z}-\beta_{w_{s}|z}\quad and\quad\beta_{w|\overline{z}}=\beta_{w_{d}|z}+(n-1)\beta_{w_{s}|z} $$
-> 
-> 
-> Thus, in the absence of trait associative effects ($ \sigma^2(A_s) = 0 $, and hence $ \beta_{w_s|z} = 0 $), $ \beta_{w|\Delta z} $ and $ \beta_{w|\overline{z}} $ are equivalent and simply differ by shifting focus over individual versus group values. Finally, we can rearrange the left identity in Equation 22.64b to $$ \frac{1}{n}\beta_{w|\overline{z}}+\left(\frac{n-1}{n}\right)\beta_{w|\Delta z}=\beta_{w_{d}|z} $$
-> 
-> Using Equation 22.65b to substitute for $ \beta_{w|\overline{z}} $ and $ \beta_{w|\Delta z} $ yields $$ \frac{\beta_{w_{d}|z}+(n-1)\beta_{w_{s}|z}}{n}+\left(\frac{n-1}{n}\right)\left(\beta_{w_{d}|z}-\beta_{w_{s}|z}\right)=\beta_{w_{d}|z} $$ showing that the response to multilevel selection when group members are unrelated $ (r = 0) $ reduces to the breeder's equation, $$ \Delta\mu_{A}=\sigma_{A}^{2}\left(\frac{1}{n}\beta_{w|\overline{z}}+\left(\frac{n-1}{n}\right)\beta_{w|\Delta z}\right)=\sigma_{A}^{2}\beta_{w_{d}|z}=h^{2}S $$
-> 
-> Hence, relatedness is required for the response under multilevel selection to deviate from the breeder's equation (Bijma and Wade 2008).
+> Example 22.17. Following Bijma and Wade, we can formally show the connections between the fitness models given by Equation 22.59a (kin selection) and Equation 22.62a (multilevel selection). Expanding $ \overline{z} $ and $ \Delta z_i $ to express them in terms of $ z_i $ and $ \sum_{j \neq i} z_j $, we have that $$ \begin{aligned}&\beta_{w|\overline{z}}\overline{z}+\beta_{w|\Delta z}(z_{i}-\overline{z})=\beta_{w|\Delta z}z_{i}+(\beta_{w|\overline{z}}-\beta_{w|\Delta z})\overline{z}\\ &=\beta_{w|\Delta z}z_{i}+\frac{1}{n}\Big(\beta_{w|\overline{z}}-\beta_{w|\Delta z}\Big)\Big(z_{i}+\sum_{j\neq i}z_{j}\Big)\\ &=\frac{1}{n}\Big(\beta_{w|\overline{z}}+[n-1]\beta_{w|\Delta z}\Big)z_{i}+\frac{1}{n}\Big(\beta_{w|\overline{z}}-\beta_{w|\Delta z}\Big)\sum_{j\neq i}z_{j}\\ \end{aligned} $$ (22.64a) Matching terms with Equation 22.59a, the regression slopes for fitness in these two model are related as follows: $$ \beta_{w_{d}|z}=\frac{\beta_{w|\overline{z}}+(n-1)\beta_{w|\Delta z}}{n}\qquad\mathrm{a n d}\qquad\beta_{w_{s}|z}=\frac{\beta_{w|\overline{z}}-\beta_{w|\Delta z}}{n} $$ (22.64b) Similarly, we can show that $$ \beta_{w_{d}|z}z_{i}+\beta_{w_{s}|z}\sum_{j\neq i}^{n}z_{j}=\left(\beta_{w_{d}|z}-\beta_{w_{s}|z}\right)\Delta z_{i}+\left(\beta_{w_{d}|z}+(n-1)\beta_{w_{s}|z}\right)\overline{z} $$ (22.65a) implying $$ \beta_{w|\Delta z}=\beta_{w_{d}|z}-\beta_{w_{s}|z}\quad and\quad\beta_{w|\overline{z}}=\beta_{w_{d}|z}+(n-1)\beta_{w_{s}|z} $$ (22.65b) Thus, in the absence of trait associative effects ( $ \sigma^2(A_s) = 0 $, and hence $ \beta_{w_s|z} = 0 $), $ \beta_{w|\Delta z} $ and $ \beta_{w|\overline{z}} $ are equivalent and simply differ by shifting focus over individual versus group values. Finally, we can rearrange the left identity in Equation 22.64b to $$ \frac{1}{n}\beta_{w|\overline{z}}+\left(\frac{n-1}{n}\right)\beta_{w|\Delta z}=\beta_{w_{d}|z} $$ Using Equation 22.65b to substitute for $ \beta_{w|\overline{z}} $ and $ \beta_{w|\Delta z} $ yields $$ \frac{\beta_{w_{d}|z}+(n-1)\beta_{w_{s}|z}}{n}+\left(\frac{n-1}{n}\right)\left(\beta_{w_{d}|z}-\beta_{w_{s}|z}\right)=\beta_{w_{d}|z} $$ showing that the response to multilevel selection when group members are unrelated $ (r = 0) $ reduces to the breeder's equation, $$ \Delta\mu_{A}=\sigma_{A}^{2}\left(\frac{1}{n}\beta_{w|\overline{z}}+\left(\frac{n-1}{n}\right)\beta_{w|\Delta z}\right)=\sigma_{A}^{2}\beta_{w_{d}|z}=h^{2}S $$ Hence, relatedness is required for the response under multilevel selection to deviate from the breeder's equation (Bijma and Wade 2008).
 
 
 ---
 
-## chapter22_046 · Associative Effects: Competition, Social Interactions, Group and Kin Selection: Introduction / Group and Kin Selection in the Associative-effects Framework
+## chapter22_046 · GROUP SELECTION, KIN SELECTION, AND ASSOCIATIVE EFFECTS / Group and Kin Selection in the Associative-effects Framework
 
 **[命题 Proposition]**
 
@@ -2210,7 +2144,7 @@ which shows a departure from the breeder’s equation when direct and social bre
 
 ---
 
-## chapter22_048 · Associative Effects: Competition, Social Interactions, Group and Kin Selection: Introduction / Closing Comments
+## chapter22_048 · GROUP SELECTION, KIN SELECTION, AND ASSOCIATIVE EFFECTS / Closing Comments
 
 In the absence of associative effects influencing the trait value of interest, both relatedness and multilevel selection are required for the expected selection response to deviate from that predicted from the breeder's equation. Hence, when $ \sigma^2(A_s) = 0 $ and $ r $ or $ g $ is zero, the standard breeder's equation holds. When $ \sigma^2(A_s) > 0 $ (the trait value of a group member depends in part on the genotypes of other group members), the selection response typically deviates from the breeder's equation. The only general setting where this is not true is when the direct and social breeding values are uncorrelated and there is no group or kin selection, $ \sigma(A_s, A_d) = g = r = 0 $.
 

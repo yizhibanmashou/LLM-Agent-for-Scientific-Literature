@@ -1,4 +1,4 @@
-# Chapter 9 Textbook Mapping
+# Chapter 9 · Using Molecular Data to Detect Selection: Signatures from Recent Single Events
 
 ## chapter9_001 · Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction
 
@@ -36,7 +36,7 @@ Two other strategies use haplotype information. The first searches for the disti
 
 ---
 
-## chapter9_003 · Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction / Attempts to Account for Departures From the Equilibrium Model
+## chapter9_003 · AN OVERVIEW OF STRATEGIES BASED ON SEGREGATING VARIATION / Attempts to Account for Departures From the Equilibrium Model
 
 Most tests for selection are based on the null hypothesis of the neutral equilibrium (or standard neutral) model (Chapter 2). While rejection of this null can indeed imply a signature of selection, rejection can also occur if a neutral population is not in mutation-drift equilibrium. Cavalli-Sforza (1966) noted that demography and population structure should leave a common signal over all genes within a genome, and this observation has been used in attempts to correct for any genome-wide nonequilibrium features in the data. The simplest approach is the outlier method, whereby values of the test statistic are computed for a large number of genes, with outliers suggesting potential targets of selection. This is an enrichment method, not a formal test. The second approach is to use data from presumably neutral markers unlinked to a region of interest to infer the population history (e.g., bottlenecks, expansions, population structure). These histories can then be used to simulate the coalescent structure (Chapter 2) for neutral alleles under this nonequilibrium model, which in turn can be used to generate the distribution of the test statistic under this more appropriate null. A final approach is to use presumably neutral sites to generate an empirical site-frequency spectrum to use in place of the equilibrium Watterson distribution.
 
@@ -46,13 +46,13 @@ These approaches are based on information from a large number of loci obtained i
 
 ---
 
-## chapter9_004 · Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction / SNP Ascertainment Bias
+## chapter9_004 · AN OVERVIEW OF STRATEGIES BASED ON SEGREGATING VARIATION / SNP Ascertainment Bias
 
 Another (increasingly historical) concern is SNP ascertainment bias, which arises when molecular variation is scored using prechosen SNPs. In a typical SNP discovery setting, one sequences a relative small pool of individuals (the SNP discovery panel) to "discover" SNPs —polymorphic nucleotides whose minor allele is above some critical frequency in the panel. These are then used to score a much larger sample of individuals, thus creating a severe bias in favor of SNPs at intermediate frequencies and against rare SNPs. Likewise, if the SNP discovery panel is from a different population than the screened sample, this also creates bias in that important SNPs in the population of interest can be missed (e.g., Ptak and Przeworski 2002). When the frequencies of SNP minor alleles in the discovery panel are known, corrections for ascertainment can be straightforward (Nielsen et al. 2004). However, SNP discovery is often a more complex process, creating biases that simple methods can reduce, but not remove (Clark et al. 2005). With the ever-increasing availability of whole-genome sequencing, this is rapidly becoming an issue of diminishing concern.
 
 ---
 
-## chapter9_005 · Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction / SNP Polarity Assignment Errors
+## chapter9_005 · AN OVERVIEW OF STRATEGIES BASED ON SEGREGATING VARIATION / SNP Polarity Assignment Errors
 
 **[命题 Proposition]**
 
@@ -60,13 +60,13 @@ A final source of bias can appear in tests requiring the polarity status (i.e., 
 
 ---
 
-## chapter9_006 · Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction / Background Selection as the More Appropriate Null?
+## chapter9_006 · AN OVERVIEW OF STRATEGIES BASED ON SEGREGATING VARIATION / Background Selection as the More Appropriate Null?
 
 Recently, it has suggested that strict neutrality may not be the correct null hypothesis. Cutter and Payseur (2013) and Corbett-Detig et al. (2015) have both stressed that background selection (BGS) is a more appropriate null, given how widespread BGS appears to be (Chapter 8). If BGS is taken as the null, them test comparisons must accommodate differences in gene density per recombination unit, as the impact for BGS is expected to scale with this ratio (Chapter 8). If one is attempting to correct for nonequilibrium features by using a set of putatively neutral markers in a comparison with a possible region under selection, care must be taken to ensure that these markers are from regions with a similar gene-density to recombination value as the region of interest.
 
 ---
 
-## chapter9_007 · Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction / Structure of the Remainder of This Chapter
+## chapter9_007 · AN OVERVIEW OF STRATEGIES BASED ON SEGREGATING VARIATION / Structure of the Remainder of This Chapter
 
 The rest of the chapter is structured into treatments based on our five categories of tests. These categories were largely constructed for convenience of presentation, and some tests draw upon ideas from several different approaches. Given the amount of information in this chapter, we have tried to make the discussion of each category largely autonomous of the others, thus allowing readers to skip directly to the section most appropriate for their needs. We conclude with a brief review of scans for recent positive selection in humans and domesticated organisms.
 
@@ -80,104 +80,24 @@ While excessive allele-frequency change is perhaps the most unambiguous signal o
 
 ---
 
-## chapter9_009 · Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction / Allele-frequency Change Over Two Sample Points: The Waples Adjusted Test
+## chapter9_009 · ALLELE-FREQUENCY CHANGE IN A SINGLE POPULATION / Allele-frequency Change Over Two Sample Points: The Waples Adjusted Test
 
 Chapter 4 considered the estimation of $ N_{e} $ from allele-frequency change, a setting where one typically averages over a number of loci to reduce the evolutionary sampling variance. Here our task is the complementary problem. Given some estimate of $ N_{e} $, is the observed change in allele frequency at a candidate locus excessive? If so, this presumably reflects directional selection acting at, or close to, this region. In theory, one could also test for too little divergence (reflecting balancing selection), although this is rarely done, given the high sampling variance (and hence low power), unless sample sizes are extremely large.
 
-**[推导 Derivation]**
-
-In the early literature, a number of workers tested for excessive divergence by simply querying whether allele frequencies in two samples were significantly different. As noted by Gibson et al. (1979) and Waples (1989b), this is inappropriate, as it does not account for the evolutionary drift variance in allele frequencies $$ \sigma^{2}(p_{t})=p_{0}(1-p_{0})\left[1-\left(1-\frac{1}{2N_{e}}\right)^{t}\right]\simeq p_{0}(1-p_{0})\frac{t}{2N_{e}}\quad\mathrm{f o r}t\ll N_{e} $$ where $ p_{0} $ is the initial allele frequency (Equation 2.14a). Consider a population sampled at two time points (0 and t), with sample sizes of $ n_{0} $ and $ n_{t} $, respectively. The estimated divergence is
-
-> **Formula (9.1a)** · `9.1a` · source: `chapter9_block_023` · Allele-frequency Change Over Two Sample Points: The Waples Adjusted Test
->
-> $$ \widehat{\delta}_{t}=\widehat{p}_{t}-\widehat{p}_{0} $$
-
-
-**[推导 Derivation]**
-
-This divergence has an expected value of zero (as $ E[\widehat{p}_{t}] = p_{0} $), with a variance of
-
-> **Formula (9.1b)** · `9.1b` · source: `chapter9_block_024` · Allele-frequency Change Over Two Sample Points: The Waples Adjusted Test
->
-> $$ \sigma^{2}\left(\widehat{\delta}_{t}\right)=\sigma^{2}\left(\widehat{p}_{t}-\widehat{p}_{0}\right)=\sigma^{2}\left(\widehat{p}_{t}\right)+\sigma^{2}\left(\widehat{p}_{0}\right)-2\sigma\left(\widehat{p}_{t},\widehat{p}_{0}\right) $$
-
-
-where $ \widehat{p}_{i}=p_{i}+e_{i} $, the true value plus an error due to finite sampling. Because these are draws from a binomial distribution, the sampling variance of the initial frequency is
-
-> **Formula (9.2a)** · `9.2a` · source: `chapter9_block_024` · Allele-frequency Change Over Two Sample Points: The Waples Adjusted Test
->
-> $$ \sigma^{2}\left(\widehat{p}_{0}\right)=\frac{p_{0}\left(1-p_{0}\right)}{2n_{0}} $$
-
-
-while the final allele frequency is influenced by both the drift and sampling variances (Waples 1989a, 1989b)
-
-> **Formula (9.2b)** · `9.2b` · source: `chapter9_block_024` · Allele-frequency Change Over Two Sample Points: The Waples Adjusted Test
->
-> $$ \begin{align*}\sigma^{2}\left(\widehat{p}_{t}\right)&=p_{0}(1-p_{0})\left[1-\left(1-\frac{1}{2n_{t}}\right)\left(1-\frac{1}{2N_{e}}\right)^{t}\right]\\&\simeq p_{0}(1-p_{0})\left[\frac{1}{2n_{t}}+\frac{t}{2N_{e}}\left(1-\frac{1}{2n_{t}}\right)\right]\end{align*} $$
-
-
-**[推导 Derivation]**
-
-If sampling is done (without replacement) before reproduction, then $ \sigma(\widehat{p}_{t},\widehat{p}_{0})=0 $, and substitution of Equations 9.2a and 9.2b into Equation 9.1b yields
-
-> **Formula (9.2c)** · `9.2c` · source: `chapter9_block_025` · Allele-frequency Change Over Two Sample Points: The Waples Adjusted Test
->
-> $$ \sigma^{2}\left(\widehat{\delta_{t}}\right)\simeq p_{0}(1-p_{0})\left[\frac{1}{2n_{0}}+\frac{1}{2n_{t}}+\frac{t}{2N_{e}}\left(1-\frac{1}{2n_{t}}\right)\right] $$
-
-
-**[推导 Derivation]**
-
-If sampling is done either after reproduction or with replacement, this generates a covariance between the sample estimators $ \widehat{p}_t $ and $ \widehat{p}_0 $; see Nei and Tajima (1981b) and especially Waples (1989a, 1989b) for details. Assuming this is not the case, so that $ \sigma(\widehat{p}_0, \widehat{p}_t) = 0 $, Equation 9.2c yields the correct variance for the null hypothesis of random genetic drift, giving the test statistic as
-
-> **Formula (9.2d)** · `9.2d` · source: `chapter9_block_026` · Allele-frequency Change Over Two Sample Points: The Waples Adjusted Test
->
-> $$ \frac{\widehat{\delta}_{t}^{2}}{\sigma^{2}\left(\widehat{\delta}_{t}\right)} $$
-
-
-which is approximately $ \chi_{1}^{2} $-distributed. This is the Waples adjusted test (Waples 1989b).
-
-**[推导 Derivation]**
-
-The application of this test requires an accurate estimate of $ p_0 $ to compute the sample variance (Equation 9.2c). While the sample estimate, $ \widehat{p}_0 $, can be used, this can be improved upon by noting that the expected allele frequency change is zero, meaning that $ \widehat{p}_t $ also contributes information about $ p_0 $. A simple average of the two frequencies is not appropriate, as $ \widehat{p}_0 $ has a smaller drift variance and the two estimates may differ in informational value due to differences in sample size, $ n_i $. Given these concerns, Schaffer et al. (1977) and Waples (1989b) proposed a generalized (i.e., weighted) least-squares (GLS) estimator (LW Chapter 8) for $ p_0 $. Let $ \mathbf{p} = (\widehat{p}_0, \widehat{p}_t)^T $ denote the two sample estimates and denote its sampling variance-covariance matrix by
-
-> **Formula (9.3)** · `9.3` · source: `chapter9_block_027` · Allele-frequency Change Over Two Sample Points: The Waples Adjusted Test
->
-> $$ \mathbf{V}=\left(\begin{array}{cc}\sigma^{2}\left(\widehat{p}_{0}\right)&\sigma\left(\widehat{p}_{0},\widehat{p}_{t}\right)\\ \sigma\left(\widehat{p}_{0},\widehat{p}_{t}\right)&\sigma^{2}\left(\widehat{p}_{t}\right)\end{array}\right) $$
-
-
-**[推导 Derivation]**
-
-Finally, let $ \mathbf{1} = (1, 1)^T $ be a vector of ones. The underlying statistical model is $ p_i = p_0 + e_i $, which can be written in general linear model form as $ \mathbf{p} = p_0 \mathbf{X} + \mathbf{e} $, where $ \mathbf{V} $ is the covariance matrix for the vector, $ \mathbf{e} $, of residuals and $ \mathbf{X} = 1 $. Recalling LW Equation 8.34 for GLS regression, the resulting estimate of $ p_0 $ is given by $ \left(\mathbf{X}^T \mathbf{V}^{-1} \mathbf{X} \right)^{-1} \mathbf{X}^T \mathbf{V}^{-1} \mathbf{p} $, which reduces to
-
-> **Formula (9.4)** · `9.4` · source: `chapter9_block_028` · Allele-frequency Change Over Two Sample Points: The Waples Adjusted Test
->
-> $$ GLS\left(p_{0}\right)=\frac{\mathbf{1}^{T}\mathbf{V}^{-1}\mathbf{p}}{\mathbf{1}^{T}\mathbf{V}^{-1}\mathbf{1}} $$
-
-
-because both quadratic products are scalars.
-
 **[示例 Example]**
 
-> **Example 9.1** · ref: `9.1` · source: `chapter9_009.json` · blocks 7–7
+> **Example 9.1** · ref: `9.1` · source: `chapter9_009.json` · blocks 1–6
 >
-> Example 9.1. One of the classic papers in evolutionary biology is Fisher and Ford's (1947) study of the medionigra gene in the scarlet tiger moth Panaxia dominula, a colorful day-flying species with one generation per year. A single diallelic locus has a major effect on the forewing pattern. Individuals that are homozygous for the dominula allele have multiple forewing spots, while individuals that are homozygous for the medionigra allele have a darkly suffused forewing with, typically, two small spots (the bimacula phenotype). Heterozygotes show an intermediate pattern, which is called the medionigra phenotype. In 1938, Ford began studying a small colony of this species in Cothill Fen, just southwest of Oxford, England. Starting in 1941, capture-recapture data were used to estimate the census population size, with the smallest estimated size between 1941 and 1947 being 1000. In 1939 (t = 0) the frequency of the medionigra allele was estimated (from a sample size of $ n_0 = 223 $ as $ \widehat{p}_0 = 0.092 $, while by 1947 (t = 8), its sample frequency had decreased to $ \widehat{p}_8 = 0.037 $ ($ n_8 = 1341 $). Taking $ N_e = 1000 $ (this being the smallest estimated census value over any of the generations, and hence most favorable to supporting drift), do these data show evidence of a departure from drift? For simplicity, assume sampling without replacement, so that $ \sigma\left(\widehat{p}_{0},\widehat{p}_{t}\right)=0 $, with the variances are given by Equations 9.2a and 9.2b. The resulting covariance matrix, V, becomes $$ \frac{\mathbf{V}}{p_{0}(1-p_{0})}=\begin{pmatrix}{{{\frac{1}{2\cdot223}}}}&{{{0}}} \\{{{0}}}&{{{\frac{1}{2\cdot1341}+\frac{8}{2000}\left[1-\frac{1}{2\cdot1341}\right]}}}\end{pmatrix}=\begin{pmatrix}{{{0.0022}}}&{{{0}}} \\{{{0}}}&{{{0.0044}}}\end{pmatrix} $$ Because $ V^{-1} $ appears in both the numerator and the denominator of Equation 9.4, the unknown constant, $ p_{0}(1 - p_{0}) $, cancels out, allowing us to simply use the above right-hand matrix for $ V $, yielding $$ GLS\left(p_{0}\right)=\frac{\mathbf{1}^{T}\mathbf{V}^{-1}\mathbf{p}}{\mathbf{1}^{T}\mathbf{V}^{-1}\mathbf{1}}=\frac{49.496}{674.762}=0.0734 $$
-> 
-> Equation 9.2c yields the sampling variance for the difference in allele frequencies as $$ \begin{aligned}\sigma^{2}\left(\widehat{\delta}_{t}\right)&\simeq p_{0}(1-p_{0})\left[\frac{1}{2n_{0}}+\frac{1}{2n_{t}}+\frac{t}{2N_{e}}\left(1-\frac{1}{2n_{t}}\right)\right]\\ &=0.0734\cdot0.9266\left[\frac{1}{446}+\frac{1}{2682}+\frac{8}{2000}\left(1-\frac{1}{2682}\right)\right]=0.0004495\end{aligned} $$
-> 
-> The resulting Waples test statistic for fit to pure drift becomes $$ \frac{(0.037-0.092)^{2}}{0.0004495}=6.729 $$
-> 
-> The probability that a $\chi_{1}^{2}$ random variable is this big or larger is 0.0095, implying strong rejection of neutrality. By using different values of $N_{e}$ in the above calculation, we can find the largest effective population size that would still allow drift to account for these data. For $N_{e}=500$, the test statistic becomes 4.19 (a $p$ value of 0.040), while for $N_{e}=250$, the statistic is 2.39 (a $p$ value of 0.12). Hence, any effective population size slightly smaller than 500 would be compatible with a hypothesis of the observed allele-frequency change being driven by drift.
-> 
-> Except for a gap between 1979 and 1987, the Cothill Fen population has been surveyed yearly since 1939; see Jones (1989) and Cook and Jones (1996) for reviews (Jones provides a handy table of all data through 1988). O'Hara (2005) used a hierarchical Bayesian analysis to examine a 60-year time series of these data. He assigned genotypes fitness drawn from a lognormal prior, allowing them to vary yearly. While selection was found to significantly contribute to the change in allele frequency, most of the variance was attributable to drift. Cook and Jones (1996) and Mathieson and McVean (2013) estimated a selection coefficient against the medionigra allele of around 10% (assuming additivity in fitness), while Mathieson and McVean noted that a recessive model of selection provided a better fit, but required much stronger selection (essentially a lethal). A more recent analysis by Foll et al. (2015) found that both the weakly selected codominant and strongly selective recessive models are supported when $ N_{e} $ is fixed at 500. However, when $ N_{e} $ is jointly estimated from the data, there is stronger support for the lethal recessive model. While this is one of the best temporal data sets available, and selection appears to be strongly acting on a single gene, all of this uncertainty highlights the difficulty of dealing with natural populations.
-> 
-> While one might think that tests based solely on allele-frequency change are among the most convincing, this is not the case. As Example 9.1 shows, rejection of the neutral model can easily result from an overestimation of the true effective population size. Fisher and Ford took their results as evidence against Sewall Wright's notion of the importance of genetic drift. In his reply, Wright (1948a) noted that values of $ N_e $ simply based on census numbers can easily be contested by the widespread observation that the effective population size is generally (and often dramatically) lower than the observed number of individuals in the population (Chapter 3). In addition, tests of allele-frequency change suffer from low power. If selection is modest relative to $ 1/N_e $ or 1/n (with n being the sample size), the sample variance can obscure any selection signal. Waples (1989b) examined some of these design issues.
-> 
-> Although we have presented this test for a single locus with just two alleles, its extension to multiple alleles is straightforward (e.g., Waples 1989b; Goldringer and Bataillon 2004). A more subtle issue is the fit of a $ \chi^{2} $ distribution to the test statistic given by Equation 9.2d, which can be poor when alleles are rare, the number of alleles is large, or the number of generations is large (Goldringer and Bataillon 2004). While more sophisticated modifications (e.g., Sandoval-Castellanos 2010) can avoid some of these issues, the use of simulations that incorporate as much of the specific biology of the species as is known (e.g., Mueller et al. 1985) to model the change in the neutral alleles under drift is strongly preferred over parametric tests.
+> Example 9.1. One of the classic papers in evolutionary biology is Fisher and Ford's (1947) study of the medionigra gene in the scarlet tiger moth Panaxia dominula, a colorful day-flying species with one generation per year. A single diallelic locus has a major effect on the forewing pattern. Individuals that are homozygous for the dominula allele have multiple forewing spots, while individuals that are homozygous for the medionigra allele have a darkly suffused forewing with, typically, two small spots (the bimacula phenotype). Heterozygotes show an intermediate pattern, which is called the medionigra phenotype. In 1938, Ford began studying a small colony of this species in Cothill Fen, just southwest of Oxford, England. Starting in 1941, capture-recapture data were used to estimate the census population size, with the smallest estimated size between 1941 and 1947 being 1000. In 1939 (t = 0) the frequency of the medionigra allele was estimated (from a sample size of $ n_0 = 223 $ as $ \widehat{p}_0 = 0.092 $, while by 1947 (t = 8), its sample frequency had decreased to $ \widehat{p}_8 = 0.037 $ ( $ n_8 = 1341 $). Taking $ N_e = 1000 $ (this being the smallest estimated census value over any of the generations, and hence most favorable to supporting drift), do these data show evidence of a departure from drift? For simplicity, assume sampling without replacement, so that $ \sigma\left(\widehat{p}_{0},\widehat{p}_{t}\right)=0 $, with the variances are given by Equations 9.2a and 9.2b. The resulting covariance matrix, V, becomes $$ \frac{\mathbf{V}}{p_{0}(1-p_{0})}=\begin{pmatrix}{{{\frac{1}{2\cdot223}}}}&{{{0}}} \\{{{0}}}&{{{\frac{1}{2\cdot1341}+\frac{8}{2000}\left[1-\frac{1}{2\cdot1341}\right]}}}\end{pmatrix}=\begin{pmatrix}{{{0.0022}}}&{{{0}}} \\{{{0}}}&{{{0.0044}}}\end{pmatrix} $$ Because $ V^{-1} $ appears in both the numerator and the denominator of Equation 9.4, the unknown constant, $ p_{0}(1 - p_{0}) $, cancels out, allowing us to simply use the above right-hand matrix for $ V $, yielding $$ GLS\left(p_{0}\right)=\frac{\mathbf{1}^{T}\mathbf{V}^{-1}\mathbf{p}}{\mathbf{1}^{T}\mathbf{V}^{-1}\mathbf{1}}=\frac{49.496}{674.762}=0.0734 $$ Equation 9.2c yields the sampling variance for the difference in allele frequencies as $$ \begin{aligned}\sigma^{2}\left(\widehat{\delta}_{t}\right)&\simeq p_{0}(1-p_{0})\left[\frac{1}{2n_{0}}+\frac{1}{2n_{t}}+\frac{t}{2N_{e}}\left(1-\frac{1}{2n_{t}}\right)\right]\\ &=0.0734\cdot0.9266\left[\frac{1}{446}+\frac{1}{2682}+\frac{8}{2000}\left(1-\frac{1}{2682}\right)\right]=0.0004495\end{aligned} $$ The resulting Waples test statistic for fit to pure drift becomes $$ \frac{(0.037-0.092)^{2}}{0.0004495}=6.729 $$ The probability that a $\chi_{1}^{2}$ random variable is this big or larger is 0.0095, implying strong rejection of neutrality. By using different values of $N_{e}$ in the above calculation, we can find the largest effective population size that would still allow drift to account for these data. For $N_{e}=500$, the test statistic becomes 4.19 (a $p$ value of 0.040), while for $N_{e}=250$, the statistic is 2.39 (a $p$ value of 0.12). Hence, any effective population size slightly smaller than 500 would be compatible with a hypothesis of the observed allele-frequency change being driven by drift. Except for a gap between 1979 and 1987, the Cothill Fen population has been surveyed yearly since 1939; see Jones (1989) and Cook and Jones (1996) for reviews (Jones provides a handy table of all data through 1988). O'Hara (2005) used a hierarchical Bayesian analysis to examine a 60-year time series of these data. He assigned genotypes fitness drawn from a lognormal prior, allowing them to vary yearly. While selection was found to significantly contribute to the change in allele frequency, most of the variance was attributable to drift. Cook and Jones (1996) and Mathieson and McVean (2013) estimated a selection coefficient against the medionigra allele of around 10% (assuming additivity in fitness), while Mathieson and McVean noted that a recessive model of selection provided a better fit, but required much stronger selection (essentially a lethal). A more recent analysis by Foll et al. (2015) found that both the weakly selected codominant and strongly selective recessive models are supported when $ N_{e} $ is fixed at 500. However, when $ N_{e} $ is jointly estimated from the data, there is stronger support for the lethal recessive model. While this is one of the best temporal data sets available, and selection appears to be strongly acting on a single gene, all of this uncertainty highlights the difficulty of dealing with natural populations.
 
+
+While one might think that tests based solely on allele-frequency change are among the most convincing, this is not the case. As Example 9.1 shows, rejection of the neutral model can easily result from an overestimation of the true effective population size. Fisher and Ford took their results as evidence against Sewall Wright's notion of the importance of genetic drift. In his reply, Wright (1948a) noted that values of $ N_e $ simply based on census numbers can easily be contested by the widespread observation that the effective population size is generally (and often dramatically) lower than the observed number of individuals in the population (Chapter 3). In addition, tests of allele-frequency change suffer from low power. If selection is modest relative to $ 1/N_e $ or 1/n (with n being the sample size), the sample variance can obscure any selection signal. Waples (1989b) examined some of these design issues.
+
+Although we have presented this test for a single locus with just two alleles, its extension to multiple alleles is straightforward (e.g., Waples 1989b; Goldringer and Bataillon 2004). A more subtle issue is the fit of a $ \chi^{2} $ distribution to the test statistic given by Equation 9.2d, which can be poor when alleles are rare, the number of alleles is large, or the number of generations is large (Goldringer and Bataillon 2004). While more sophisticated modifications (e.g., Sandoval-Castellanos 2010) can avoid some of these issues, the use of simulations that incorporate as much of the specific biology of the species as is known (e.g., Mueller et al. 1985) to model the change in the neutral alleles under drift is strongly preferred over parametric tests.
 
 ---
 
-## chapter9_010 · Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction / Allele-frequency Change Over a Times Series: The Fisher-Ford Test
+## chapter9_010 · ALLELE-FREQUENCY CHANGE IN A SINGLE POPULATION / Allele-frequency Change Over a Times Series: The Fisher-Ford Test
 
 The test given by Equation 9.2d assumes we have data from just two time points, but often one has time-series data for a number of generations. In such cases, the strong temptation to simply test the two most extreme values should be avoided, as such nonrandom sampling gives a highly biased result. Rather, specific tests have been developed that jointly consider all of the data. Indeed, the original test of Fisher and Ford involved such a temporal sequence of data. While one can use frequencies directly, Fisher and Ford used the arcsin-square-root transform to both stabilize the variance (making it independent of the initial frequencies) and improve the fit to normality, especially at extreme frequencies (note that the arcsin is measured in radians, rather than degrees). Such variance-stabilizing transformations were discussed in LW Chapter 11.
 
@@ -246,22 +166,30 @@ is expected to be approximately $ \chi_{k-1}^{2} $ distributed due to the normal
 
 **[示例 Example]**
 
-> **Example 9.2** · ref: `9.2` · source: `chapter9_010.json` · blocks 7–7
+> **Example 9.2** · ref: `9.2` · source: `chapter9_010.json` · blocks 7–12
 >
-> Example 9.2. We now revisit Fisher and Ford (Example 9.1), and consider a test based on the data from 1939, 1943, and 1947, where $$ \begin{aligned}\mathbf{V}&=\begin{pmatrix}{{{V_{0,0}}}}&{{{V_{0,4}}}}&{{{V_{0,8}}}} \\{{{V_{4,0}}}}&{{{V_{4,4}}}}&{{{V_{4,8}}}} \\{{{V_{8,0}}}}&{{{V_{8,4}}}}&{{{V_{8,8}}}}\end{pmatrix}=\frac{1}{2000}\begin{pmatrix}{{{\frac{2000}{2\cdot223}+0}}}&{{{0}}}&{{{0}}} \\{{{0}}}&{{{\frac{2000}{2\cdot269}+4}}}&{{{4}}} \\{{{0}}}&{{{4}}}&{{{\frac{2000}{2\cdot1341}+8}}}\end{pmatrix}\\ &=\frac{1}{2000}\begin{pmatrix}{{{4.484}}}&{{{0}}}&{{{0}}} \\{{{0}}}&{{{7.717}}}&{{{4}}} \\{{{0}}}&{{{4}}}&{{{8.745}}}\end{pmatrix}\end{aligned} $$
+> Example 9.2. We now revisit Fisher and Ford (Example 9.1), and consider a test based on the data from 1939, 1943, and 1947, where
 > 
-> In addition, $$ \mathbf{y}=\begin{pmatrix}0.616\\ 0.478\\ 0.387\end{pmatrix},\quad\mathbf{1}=\begin{pmatrix}1\\ 1\\ 1\end{pmatrix},\quad\mathbf{y}\text{ielding}\quad\widehat{y}_{0}=\frac{\mathbf{1}^{T}\mathbf{V}^{-1}\mathbf{y}}{\mathbf{1}^{T}\mathbf{V}^{-1}\mathbf{1}}=\frac{418.851}{774.701}=0.541 $$
+> > **Inline Table 1** · `inline_1` · page 10 · source: `chapter9_010`
+> > Inline Table 1
+> >
+> > Year | t | $ \widehat{p} $ | $ y = 2 \sin^{-1} (\sqrt{p}) $ | n
+> > --- | --- | --- | --- | ---
+> > 1939 | 0 | 0.092 | 0.616 | 223
+> > 1943 | 4 | 0.056 | 0.478 | 269
+> > 1947 | 8 | 0.037 | 0.387 | 1341
 > 
-> Using this estimate for $ y_0 $, the vector of deviations from the initial value becomes $ \delta_y = y - 0.541 \cdot 1 $, returning a test statistic value of $ \delta_y^T \mathbf{V}^{-1} \delta_y = 7.964 $, which when compared to a $ \chi_2^2 $ distribution, returns a significance level of 0.0186. For $ N_e = 500 $, Equation 9.6c returns a value of 5.398, for a significance of 0.067, so the hypothesis that drift alone accounts for the observed pattern of change cannot be rejected under this smaller value of $ N_e $.
 > 
-> A number of generalizations, as well as increasingly sophisticated tests building on the basic elements of the Fisher-Ford framework, have been proposed, including extending this methodology to handle data from high-throughput sequencing. A partial list includes Templeton (1974), Schaffer et al. (1977), Gibson et al. (1979), Wilson (1980), Watterson (1982), Waples (1989b), De Koeyer et al. (2001), Goldringer and Bataillon (2004), Bollback et al. (2008), Wisser et al. (2008), Sandoval-Castellanos (2010), Malaspinas et al. (2012), da Fonseca et al. (2013), Mathieson and McVean (2013), Feder et al. (2014), Lacerda and Seoighe (2014), Steinrücken et al. (2014), Foll et al. (2015), Terhorst et al. (2015), Topa et al. (2015), Gompert (2016), and Schraiber et al. (2016).
-> 
-> In addition to its use in studying natural populations, this machinery can be applied to artificial selection experiments to detect regions of interest. In the pre-genomics era, this approach was pioneered by Stuber and Moll (1972) and Stuber et al. (1980), who looked for shifts in the frequencies of isozyme markers in lines of maize selected for yield. Other examples for maize include Labate et al. (1999) and Coque and Gallais (2006) for yield selection, and Wisser et al. (2008) for disease resistance, while De Koeyer et al. (2001) examined yield in oats. In the genomics era, extensions of this machinery have been used in microorganisms, such as the analysis by Foll et al. (2014) on the target (or targets) of selection for influenza A virus exposed to the drug oseltamivir, as well as with data from evolve and resequence experiments (E&R), such as those on Drosophila (Terhorst et al. 2015; Topa et al. 2015).
+> Assuming $ N_{e} = 1000 $, the resulting covariance matrix, $ \mathbf{V} $ (on the transformed scale), becomes $$ \begin{aligned}\mathbf{V}&=\begin{pmatrix}{{{V_{0,0}}}}&{{{V_{0,4}}}}&{{{V_{0,8}}}} \\{{{V_{4,0}}}}&{{{V_{4,4}}}}&{{{V_{4,8}}}} \\{{{V_{8,0}}}}&{{{V_{8,4}}}}&{{{V_{8,8}}}}\end{pmatrix}=\frac{1}{2000}\begin{pmatrix}{{{\frac{2000}{2\cdot223}+0}}}&{{{0}}}&{{{0}}} \\{{{0}}}&{{{\frac{2000}{2\cdot269}+4}}}&{{{4}}} \\{{{0}}}&{{{4}}}&{{{\frac{2000}{2\cdot1341}+8}}}\end{pmatrix}\\ &=\frac{1}{2000}\begin{pmatrix}{{{4.484}}}&{{{0}}}&{{{0}}} \\{{{0}}}&{{{7.717}}}&{{{4}}} \\{{{0}}}&{{{4}}}&{{{8.745}}}\end{pmatrix}\end{aligned} $$ In addition, $$ \mathbf{y}=\begin{pmatrix}0.616\\ 0.478\\ 0.387\end{pmatrix},\quad\mathbf{1}=\begin{pmatrix}1\\ 1\\ 1\end{pmatrix},\quad\mathbf{y}\text{ielding}\quad\widehat{y}_{0}=\frac{\mathbf{1}^{T}\mathbf{V}^{-1}\mathbf{y}}{\mathbf{1}^{T}\mathbf{V}^{-1}\mathbf{1}}=\frac{418.851}{774.701}=0.541 $$ Using this estimate for $ y_0 $, the vector of deviations from the initial value becomes $ \delta_y = y - 0.541 \cdot 1 $, returning a test statistic value of $ \delta_y^T \mathbf{V}^{-1} \delta_y = 7.964 $, which when compared to a $ \chi_2^2 $ distribution, returns a significance level of 0.0186. For $ N_e = 500 $, Equation 9.6c returns a value of 5.398, for a significance of 0.067, so the hypothesis that drift alone accounts for the observed pattern of change cannot be rejected under this smaller value of $ N_e $.
 
+
+A number of generalizations, as well as increasingly sophisticated tests building on the basic elements of the Fisher-Ford framework, have been proposed, including extending this methodology to handle data from high-throughput sequencing. A partial list includes Templeton (1974), Schaffer et al. (1977), Gibson et al. (1979), Wilson (1980), Watterson (1982), Waples (1989b), De Koeyer et al. (2001), Goldringer and Bataillon (2004), Bollback et al. (2008), Wisser et al. (2008), Sandoval-Castellanos (2010), Malaspinas et al. (2012), da Fonseca et al. (2013), Mathieson and McVean (2013), Feder et al. (2014), Lacerda and Seoighe (2014), Steinrücken et al. (2014), Foll et al. (2015), Terhorst et al. (2015), Topa et al. (2015), Gompert (2016), and Schraiber et al. (2016).
+
+In addition to its use in studying natural populations, this machinery can be applied to artificial selection experiments to detect regions of interest. In the pre-genomics era, this approach was pioneered by Stuber and Moll (1972) and Stuber et al. (1980), who looked for shifts in the frequencies of isozyme markers in lines of maize selected for yield. Other examples for maize include Labate et al. (1999) and Coque and Gallais (2006) for yield selection, and Wisser et al. (2008) for disease resistance, while De Koeyer et al. (2001) examined yield in oats. In the genomics era, extensions of this machinery have been used in microorganisms, such as the analysis by Foll et al. (2014) on the target (or targets) of selection for influenza A virus exposed to the drug oseltamivir, as well as with data from evolve and resequence experiments (E&R), such as those on Drosophila (Terhorst et al. 2015; Topa et al. 2015).
 
 ---
 
-## chapter9_011 · Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction / Schaffer's Linear Trend Test
+## chapter9_011 · ALLELE-FREQUENCY CHANGE IN A SINGLE POPULATION / Schaffer's Linear Trend Test
 
 **[推导 Derivation]**
 
@@ -285,7 +213,7 @@ Applying LW Equation 8.35, the standard error on the slope is found to be 0.0086
 
 ---
 
-## chapter9_012 · Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction / Scans and Simulation-based Approaches
+## chapter9_012 · ALLELE-FREQUENCY CHANGE IN A SINGLE POPULATION / Scans and Simulation-based Approaches
 
 As presented, these tests for shifts in allele frequencies are performed one marker at a time, as they herald from the days of testing just one or a few unlinked candidate genes. With a few unlinked markers, Bonferroni corrections (or the slightly more powerful sequential methods; Appendix 4) can be applied to assign overall significance levels. Likewise, FDR approaches can use used to assign false-discovery rates among the set of markers declared to be significant (the fraction of tests declared to be significant that are actually from the null; Appendix 4). However, in the genomic-scan era, with the potential for thousands of linked markers on each chromosome, tests are no longer independent, thus compromising FDR approaches (Chen and Storey 2006). Even if tests are largely independent, their vast number makes Bonferroni-type corrections untenable for a test to have any power (Appendix 4). How then can these tests be extended to the dense marker maps used in genomic scans?
 
@@ -293,7 +221,16 @@ For starters, analyzing markers one at a time is rather inefficient, in that one
 
 ---
 
-## chapter9_013 · Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction / Birthdate Selection Mapping (BDSM)
+## chapter9_013 · ALLELE-FREQUENCY CHANGE IN A SINGLE POPULATION / Birthdate Selection Mapping (BDSM)
+
+**[Figure]**
+
+> **Figure 9.1** · page 12 · source: `chapter9`
+>
+> ![Figure 9.1](../figures/fig_0221.png)
+>
+> Figure 9.1 A scan of Bos taurus chromosome 19, contrasting differences in SNP allele frequencies between specialized dairy (Holstein) and meat (Angus) breeds. Positive values indicate alleles at higher frequencies in Holstein cattle (dairy-specific), and negative values indicate alleles that are more common in Angus cattle (meat-specific). Differences were based on a sliding window of five adjacent markers, using a set of 175 SNPs. The horizontal axis represents chromosomal position, and the vertical axis is the average between-breed difference in SNP allele frequencies over the five-SNP window. The upper and lower dashed lines indicate the 5% threshold levels as assessed via a permutation test (see the text for details). As annotated in the figure, the authors were able to associate these exceptional peaks and valleys with known QTLs for dairy and beef traits. Because QTL intervals tend to be rather vague (averaging around 20 megabases, or roughly 20 cM, for these traits), the significance of these associations with known QTLs, while suggestive, is unclear. (After Prasad et al. 2008.)
+
 
 A very interesting genomic-scanning approach for sites under selection becomes possible when one has extensive pedigree data, such as for cattle (Decker et al. 2012). With extensive pedigrees, one has information on the date of birth (DOB) of most individuals, whose value can be expressed as years since the start of the pedigree. Individuals with a later date of birth (i.e., more recent in the pedigree) have likely experienced more selection than earlier-born individuals (those deeper down in the pedigree). As such, one expects to find a positive relationship between a marker linked to a selected site and DOB. For example, if allele A was initially rare but favored, AA individuals are expected to be more common in animals with higher (i.e., more recent) DOB values. Decker et al. turned this relationship around, realizing that by treating DOB values as a quantitative trait, one could use association mapping (LW Chapter 16), with sites showing an association with DOB (i.e., those that are under- or over-represented later in the pedigree) being candidates for selection. This approach is called birthdate selection mapping (or BDSM), and because association mapping is done in a mixed-model framework (Chapter 19), it accounts for biases introduced by family structure. The authors applied this approach to U. S. Angus cattle born over a 50-year period (roughly 10 generations). A standard random-effects mixed model of association mapping detected 11 loci significantly associated with DOB, while a Bayesian model found that $ \sim $2% of the SNPs were strongly associated with DOB. The former model assumes an infinitesimal structure, while the latter allows for genes of larger effect that are embedded in a sea of smaller-effect genes. While BDSM requires large, deep pedigrees, it is an intriguing and potentially powerful approach.
 
@@ -318,14 +255,21 @@ Finally, a very simple statistic that often appears in comparisons of selected v
 
 **[示例 Example]**
 
-> **Example 9.3** · ref: `9.3` · source: `chapter9_014.json` · blocks 3–3
+> **Example 9.3** · ref: `9.3` · source: `chapter9_014.json` · blocks 2–5
 >
 > Example 9.3. Hayes et al. (2008) contrasted SNP frequencies between Australian populations of Holstein (dairy) and Angus (beef) cattle, specialized breeds developed by selection from a common ancestral stock. Whole-genome scans of both populations were performed using 7032 sliding windows of ten adjacent SNPs to measure average allele-frequency change between the corresponding windows for both populations (the difference at each SNP, averaged over all ten sites). Simulations were used to assess significance (extreme departures in average allele-frequency in homologous windows between the two populations) relative to the values expected under drift alone. The authors had to model two issues: linkage and breed formation (time in some initial early domesticated population, and then subsequent time in separate bottlenecks representing the formation of the two specialized breeds). The authors simulated roughly 300 SNPs per chromosome (to account for LD in addition to allele-frequency change), while the population structure during breed formation was modeled as follows. The authors simulated 900 generations of drift and mutation in a base population of $ N_e = 1000 $ to generate a common domesticated stock population. Specialized breed formation from this common stock was then simulated by sampling from this stock population to form two subpopulations of size $ N_e = 125 $, each of which was simulated for an additional 100 generations (these values represented the best assumption regarding these parameters during domestication and breed formation). The observed genome-wide $ F_{ST} $ between the Holstein and Angus populations was 0.08, and only simulations whose genome-wide $ F_{ST} $ values matched this value were kept as the null. Taking those windows in the data set that were in the upper 0.1% of excessive divergence (positive or negative) relative to the simulated data resulted in 15 significant regions (windows). Focusing on windows with the uppermost 0.5% of divergence (relative to simulations) yielded 84 candidate regions. To assess what fraction of these extreme windows might be false positives, the authors computed the false-discovery rate (FDR), the fraction of those tests declared to be significant that are likely to be false positives (Appendix 4). FDR provides a measure of how enriched a set of results declared to be significant is for true positives. At a 0.1% level of significance, one expects 7032 · 0.001 = 7.03 tests to be significant by chance alone, while for 0.5%, this increases to 35 false positives among the 7032 tests for each window. The FDRs are 7/15 = 47% for tests of 0.1%, and 35/84 = 42% for tests at the 0.05% significance level. Hence, the expectation is that slightly over half (53% and 58%, respectively) of the windows initially flagged as significant are true positives.
 
 
+**[示例 Example]**
+
+> **Example 9.4** · ref: `9.4` · source: `chapter9_014.json` · blocks 4–4
+>
+> Example 9.4. The effectiveness of $ F_{ST} $ to detect selection was examined by Taylor et al. (1995), using a putative target of selection in the tobacco budworm (Heliothis virescens), a noctuid moth and a major cotton pest in the United States. Pyrethroid insecticides have been used in control efforts, and these act on voltage-gated sodium channels in the nervous system. The historical usage patterns of these insecticides, and hence the putative selection pressures on sodium channel genes, differed over the sampled populations examined by the authors. As a result, they predicted that $ F_{ST} $ values at the sodium channel $ H_{py} $ gene should be significantly higher than for background loci, reflecting this differential selection over the sampled subpopulations. Samples of adults from widely spaced locations in the United States revealed an $ F_{ST} $ value of $ 0.041 \pm 0.005 $ at the $ H_{py} $ marker, in contrast to values of $ 0.002 \pm 0.001 $ at 14 other loci, with the latter result indicating fairly weak population structure in this species.
+
+
 ---
 
-## chapter9_015 · Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction / DIVERGENCE BETWEEN POPULATIONS: $ F_{ST} $-BASED TESTS
+## chapter9_015 · DIVERGENCE BETWEEN POPULATIONS: TWO-POPULATION COMPARISONS / DIVERGENCE BETWEEN POPULATIONS: $ F_{ST} $-BASED TESTS
 
 When comparisons involve more than two populations or markers with more than two alleles, a more natural measure of divergence is Wright's $ F_{ST} $ statistic of population structure (Wright 1951). Recall from Chapter 2 that this statistic measures the fraction of total variation over a set of populations that is due to among-population differences in allele frequencies, and is easily extended to multiple alleles and multiple populations. For a biallelic locus, $ F_{ST} = \sigma_B^2(p)/[\overline{p}(1-\overline{p})] $, where $ \sigma_B^2(p) $ is the variance in allele frequency, p, over the populations around its average value, $ \overline{p} $.
 
@@ -337,7 +281,7 @@ Ecological geneticists have coined the term landscape genetics for the study of 
 
 ---
 
-## chapter9_016 · Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction / Outlier Approaches
+## chapter9_016 · DIVERGENCE BETWEEN POPULATIONS: TWO-POPULATION COMPARISONS / Outlier Approaches
 
 The underlying premise for most $ F_{ST} $-based tests of selection was the suggestion by Cavalli-Sforza (1966) that all neutral loci should have the same expected value of $ F_{ST} $, reflecting the genome-wide impact of common demographic and population-structure forces. Thus, one can (in theory) use a large number of marker loci to estimate the baseline $ F_{ST} $ value for the set of populations being compared, and then search for outlier loci. This approach is easily modified to look for specific loci being outliers in specific populations (e.g., Akey et al. 2002; Kayser et al. 2003; Akey et al. 2010). Loci with excessively high values indicate more divergence than expected under drift, and the possibility that the marker is linked to a site that is under differential selection over the demes. Likewise, excessively low values indicate less divergence than expected under drift, and hence the potential for a site that is under balancing selection near the marker. While the historical interpretation of $ F_{ST} $ data follows from these last two statements, results from Chapter 8 on sweeps under uniform selection in structured populations suggest that a more nuanced view is needed. Recall from Figure 8.8 that uniform selection over the entire metapopulation can generate excessive divergence (Figure 8.8A) during a hard sweep of a single allele when it is still restricted to a subset of the demes. Similarly, a soft sweep under uniform selection can also generate excessive divergence. Conversely, a completed hard sweep through the sampled demes generates a reduction in divergence relative to background levels of $ F_{ST} $ (Figure 8.8B).
 
@@ -347,7 +291,7 @@ A final complication is that when the population structure departs from the isla
 
 ---
 
-## chapter9_017 · Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction / Tests Based on $ F_{ST} $-generated Branch-lengths
+## chapter9_017 · DIVERGENCE BETWEEN POPULATIONS: TWO-POPULATION COMPARISONS / Tests Based on $ F_{ST} $-generated Branch-lengths
 
 **[推导 Derivation]**
 
@@ -362,7 +306,7 @@ Hence $ T = -\ln(1 - F_{ST}) \simeq t/2N_e $, and one can recast an excessive $ 
 
 ---
 
-## chapter9_018 · Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction / The Lewontin-Krakauer Test: Basics
+## chapter9_018 · DIVERGENCE BETWEEN POPULATIONS: TWO-POPULATION COMPARISONS / The Lewontin-Krakauer Test: Basics
 
 **[推导 Derivation]**
 
@@ -380,6 +324,15 @@ In other words, scaled individual $ F_{ST} $ values follow a chi-square distribu
 > **Formula (9.10b)** · `9.10b` · source: `chapter9_block_067` · The Lewontin-Krakauer Test: Basics
 >
 > $$ \sigma^{2}\left(F_{ST}\right)\simeq\sigma^{2}\left(\lambda\chi_{n-1}^{2}\right)=2(n-1)\lambda^{2}=2(n-1)\left(\frac{E[F_{ST}]}{n-1}\right)^{2}\simeq2\frac{\overline{F}_{ST}^{2}}{n-1} $$
+
+
+**[Figure]**
+
+> **Figure 9.2** · page 17 · source: `chapter9`
+>
+> ![Figure 9.2](../figures/fig_0222.png)
+>
+> Figure 9.2  $ F_{ST} $-based branch lengths for Tibetan (T), Han (H), and Danish (D) populations. (Left) Lengths based on the average  $ F_{ST} $ values for all sampled markers. (Right) The tree for the EPAS1 gene. While the D and H branches show increased divergence relative to the average  $ F_{ST} $, the divergence along the T lineage is far more dramatic. This is consistent with excessive allelic divergence due to selection for living at high altitude (or perhaps other features, such as allelic surfing). (After Yi et al. 2010.)
 
 
 Baer (1999) empirically showed that the variance of a wide range of fish $ F_{ST} $ values is more accurately given by replacing the 2 in Equation 9.10b by a value between 5 and 7. As mentioned in the previous section, the fractal structure of many fish populations (Fourcade et al. 2013), and hence a significant departure from the assumed island-model underlying Equation 8.10b, likely account for at least part of this inflated variance.
@@ -405,7 +358,7 @@ Whitlock and Lotterhos (2015) recently suggested a potentially simple work-aroun
 
 ---
 
-## chapter9_019 · Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction / Second-generation Lewontin-Krakauer Tests: Model-based Adjustments
+## chapter9_019 · DIVERGENCE BETWEEN POPULATIONS: TWO-POPULATION COMPARISONS / Second-generation Lewontin-Krakauer Tests: Model-based Adjustments
 
 One proposed strategy to resuscitate the Lewontin-Krakauer test was to use knowledge of the population structure as the basis for simulations of the distribution of $ F_{ST} $ under the null hypothesis of no selection. Such an analysis was first performed by Bowock et al. (1991), who had a rough idea of this structure for the five human populations they surveyed. Vigouroux et al. (2002) used coalescent simulations incorporating a founding bottleneck in a screen of 501 maize genes to find those with excessive $ F_{ST} $ values. Similarly, Ross-Ibarra et al. (2008) estimated the parameters of a complex model of the population structure of Arabidopsis lyrata, and then used simulations based on their estimated demography to detect outliers. The concern with any null distribution generated by simulations is robustness to assumptions about the population structure, as even the most careful simulations can be misleading (e.g., Carret et al. 2006; Excoffier et al. 2009a, 2009b). For example, most analyses of robustness to different demographic models fail to consider the effects of spatial expansion, and hence ignore concerns raised by allelic surfing.
 
@@ -426,7 +379,7 @@ The power of these model-based approaches has been examined by a number of autho
 
 ---
 
-## chapter9_020 · Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction / Third-generation Lewontin-Krakauer Tests: Correcting for Population Structure
+## chapter9_020 · DIVERGENCE BETWEEN POPULATIONS: TWO-POPULATION COMPARISONS / Third-generation Lewontin-Krakauer Tests: Correcting for Population Structure
 
 If we refer to the above model-based approaches as second-generation Lewontin-Krakauer (LK) tests, third-generation LK tests attempt to estimate the covariance structure among the neutral alleles without using a formal model, and then use this to detect outliers. Their motivation traces back to Felsenstein's (2002) extension of his method for independent contrasts among taxa in a phylogeny (Felsenstein 1985) to within-population comparisons, and to the mixed-model approach of Yu et al. (2006) to correct for population structure under association mapping. These third-generation approaches were first used in methods
 
@@ -452,13 +405,13 @@ Many factors conspire to reduce the power of such association approaches by decr
 
 ---
 
-## chapter9_022 · Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction / Joost's Spatial Analysis Method (SAM)
+## chapter9_022 · ALLELE-FREQUENCY CORRELATIONS WITH ENVIRONMENTAL VARIABLES / Joost's Spatial Analysis Method (SAM)
 
 The extension of testing for an association between a specified candidate gene and a single environmental factor to a more general genome scan over a set of environmental features starts with Joost et al. (2007). Their spatial analysis method (SAM) computes separate logistic regressions for each allele-environment combination. As discussed in Chapter 14, logistic regressions are commonly used to model how the probability of an event varies with some other variable, in this case predicting allele frequency as function of the environmental value. As with second-generation LK tests, SAM has a critical limitation in assuming that neutral alleles from different populations are uncorrelated. Failing to account for the natural correlation in neutral allele frequencies shaped by shared migrations and/or history will yield incorrect sampling errors. Further, populations in geographic proximity are expected to have both correlated allele frequencies (due to migration) and correlated environmental values, generating many false positives. While Poncet et al. (2010) extended SAM by allowing for small-scale correlations in allele frequencies within spatially proximate demes, their approach does not adjust for larger-scale correlations.
 
 ---
 
-## chapter9_023 · Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction / Accounting for Population Structure: Coop's Bayenv and Frichot's LFMM
+## chapter9_023 · ALLELE-FREQUENCY CORRELATIONS WITH ENVIRONMENTAL VARIABLES / Accounting for Population Structure: Coop's Bayenv and Frichot's LFMM
 
 Coop et al. (2010; Eckert et al. 2010; Günther and Coop 2013; also see Gautier 2015) attacked the problem of adjusting for unknown population structure by using marker data to estimate the expected correlation pattern among neutral alleles for the sampled populations. This is akin to the kinship matrix approach used by Bonhomme et al. (2010) to adjust for correlations among allele-frequency values from different demes. Example 9.5 sketches the basic structure of their $ Bayenv $ approach, which uses Bayes factors (Appendix 2) to gauge the support for an allele-environmental correlation after the effects of population structure have been removed. Formally, however, this is still an outlier method, as it generates an empirical distribution of Bayes factors for each SNP and uses this to assess the strength of association for a given locus. An alternative implementation to adjust for population structure, which is very closely related to Coop's method (as well as to Duforet-Frebourg et al.'s previously mentioned PCAdapt approach), is the latent factor mixed model (LFMM) approach of Frichot et al. (2013), which is also outlined in Example 9.5.
 
@@ -470,52 +423,9 @@ We close this section to noting that EAA is an extremely active research area, w
 
 **[示例 Example]**
 
-> **Example 9.4** · ref: `9.4` · source: `chapter9_023.json` · blocks 4–4
+> **Example 9.5** · ref: `9.5` · source: `chapter9_023.json` · blocks 4–8
 >
-> Example 9.4. The effectiveness of $ F_{ST} $ to detect selection was examined by Taylor et al. (1995), using a putative target of selection in the tobacco budworm (Heliothis virescens), a noctuid moth and a major cotton pest in the United States. Pyrethroid insecticides have been used in control efforts, and these act on voltage-gated sodium channels in the nervous system. The historical usage patterns of these insecticides, and hence the putative selection pressures on sodium channel genes, differed over the sampled populations examined by the authors. As a result, they predicted that $ F_{ST} $ values at the sodium channel $ H_{py} $ gene should be significantly higher than for background loci, reflecting this differential selection over the sampled subpopulations. Samples of adults from widely spaced locations in the United States revealed an $ F_{ST} $ value of $ 0.041 \pm 0.005 $ at the $ H_{py} $ marker, in contrast to values of $ 0.002 \pm 0.001 $ at 14 other loci, with the latter result indicating fairly weak population structure in this species.
-
-
-**[示例 Example]**
-
-> **Example 9.5** · ref: `9.5` · source: `chapter9_023.json` · blocks 5–5
->
-> Example 9.5. Here we sketch out the basic structure of four extensions (FLK, Bayenv, LFMM, and PCAdapt) of LK and allele-environment correlation tests that attempt to account for among-deme correlations in allele frequencies. The details are fairly technical, but the basic idea is very similar to that for the Fisher-Ford test (Example 9.2). There, under the assumption of drift, a vector, y, of allele-frequency changes is turned into a test statistic that is in the form of a quadratic product (Equation 9.6c), $ \mathbf{y}^{T}\mathbf{V}^{-1}\mathbf{y} $, where V is the covariance for these expected changes under drift alone. This is simply the generalization of a test based on the squared difference between two allele frequencies to a vector of allele frequencies. If y is multivariate normal, this test statistic follows a $ \chi^{2} $ distribution and excessive values indicate a departure from the pure-drift model. This basic idea, and structure, also follows here. The extensions follow from an adjustment of the vector of changes to account for environmental influences on allele frequencies and more generalized covariance matrices, given the population structure.
-> 
-> The $ \tilde{F}_{ST} $ extension (FLK) of Bonhomme et al. (2010) uses a set of neutral loci together with an outgroup to construct a kinship matrix, $ \mathcal{F} $, of populations, based on branch lengths of the estimated phylogenetic tree among the sampled populations. The assumption is that some pattern of evolution (described by $ \mathcal{F} $) unfolds from an ancestral population with an allele frequency of $ p_0 $, but with no further migration between subpopulations. For $ n $ populations, the FLK test statistic is given by
-> 
-> > **Formula (9.12)** · `9.12` · source: `chapter9_block_092` · Accounting for Population Structure: Coop's Bayenv and Frichot's LFMM
-> >
-> > $$ T_{F L K}=\frac{(\mathbf{p}-\widehat{p}_{0}\mathbf{1})^{T}\mathcal{F}^{-1}(\mathbf{p}-\widehat{p}_{0}\mathbf{1})}{\widehat{p}_{0}(1-\widehat{p}_{0})},\quad\mathrm{w i t h}\quad\widehat{p}_{0}=\frac{\mathbf{1}^{T}\mathcal{F}^{-1}\mathbf{p}}{\mathbf{1}^{T}\mathcal{F}^{-1}\mathbf{1}} $$
-> 
-> 
-> where p is a vector of the allele frequencies for one particular locus over the n sampled demes and 1 is a column vector of n ones. Bonhomme et al. showed that $ T_{FLK} $ follows a $ \chi^2 $ distribution under the null model of no selection, provided allele frequencies are not too extreme, with outliers deemed to be candidates for loci under selection. Note that $ \widehat{p}_0 $ is of the same form as the GLS estimators for the initial frequency (Equations 9.4 and 9.6a), and that $ T_{FLK} $ has the same general form as the test statistic for the Fisher-Ford test for excessive allele-frequency change (Equation 9.6c).
-> 
-> The Bayenv test for allele-frequency and environmental correlation (Coop et al. 2010; Eckert et al. 2010; Günther and Coop 2013) starts with a clever latent-variable approach (from Nicholson et al. 2002) to model the allele frequencies, which allows us to work with an (approximately) multivariate-normal vector. The motivation for this approach is the constraint that allele frequencies be confined to the interval $ [0,1] $, while the multivariate normal can generate values outside this region. To avoid this issue, assume there is some underlying latent (unseen) variable, $ \theta $, that is normally distributed and maps into the deme allele frequency p as follows
-> 
-> > **Formula (9.13a)** · `9.13a` · source: `chapter9_block_093` · Accounting for Population Structure: Coop's Bayenv and Frichot's LFMM
-> >
-> > $$ p=\left\{\begin{aligned}&0&\text{if}\theta\leq0\\&\theta&\text{for}0<\theta<1\\&1&\text{if}\theta\geq1\end{aligned}\right. $$
-> 
-> 
-> This truncated normal transformation allows for nonzero probabilities that $p$ is at zero or one, corresponding to loss or fixation of the allele, respectively. This transformation allows us to work with a normally distributed random variable, $\theta$, which is mapped into allelic loss ($\theta < 0$) or fixation ($\theta > 1$) if it is too extreme, and otherwise maps into the frequency of a segregating allele. As with most $F_{ST}$-based methods, the assumption here is that there is very little probability mass at zero or one (i.e., there is modest divergence at most loci), so $p$ is essentially $\theta$.
-> 
-> Following Nicholson et al. (2002), Coop et al. (2010) assumed that the vector, $ \Theta $, of $ \theta $ values for the $ n $ sampled populations is multivariate normal (approximating drift by Brownian motion; Appendix 1), with some ancestral frequency ($ p_0 $) and correlation structure given by $ \Omega $, so that
-> 
-> > **Formula (9.13b)** · `9.13b` · source: `chapter9_block_095` · Accounting for Population Structure: Coop's Bayenv and Frichot's LFMM
-> >
-> > $$ \Theta\sim\mathrm{M V N}_{n}\left[p_{0}\mathbf{1},p_{0}(1-p_{0})\boldsymbol{\Omega}\right] $$
-> 
-> 
-> where $\Omega$ is the empirical estimate of the covariance matrix of the underlying $\theta$ (and hence of the allele frequencies), based on a set of presumed neutral markers (for details see Coop et al. 2010 and Gautier 2015). This is their base model. Note that standardizing the observed vector of frequencies, $\mathbf{p}$, by centering it around the mean and adjusting for the covariance structure yields a $\chi_{n-1}^{2}$ random variable (as the quadratic product is the sum of squared unit normals). This recovers the $T_{FLK}$ test statistic, but with $\Omega$ and $\Theta$ in place of $\mathcal{F}$ and $\mathbf{p}$. Operationally, if all elements of $\mathbf{p}$ fall within the range $(0, 1)$, then $\mathbf{p}$ replaces $\Theta$, yielding the test statistic as
-> 
-> > **Formula (9.13c)** · `9.13c` · source: `chapter9_block_095` · Accounting for Population Structure: Coop's Bayenv and Frichot's LFMM
-> >
-> > $$ \frac{(\mathbf{p}-\widehat{p}_{0}\mathbf{1})^{T}\boldsymbol{\Omega}^{-1}(\mathbf{p}-\widehat{p}_{0}\mathbf{1})}{\widehat{p}_{0}(1-\widehat{p}_{0})}\quad where\quad\widehat{p}_{0}=\frac{\mathbf{1}^{T}\boldsymbol{\Omega}^{-1}\mathbf{p}}{\mathbf{1}^{T}\boldsymbol{\Omega}^{-1}\mathbf{1}} $$
-> 
-> 
-> which is identical in form to Equation 9.12, except that the covariance matrix $ \Omega $ replaces $ \mathcal{F} $. Günther and Coop (2013) denoted this test statistic for extreme divergence at a specific locus by $ \mathbf{X}^{\mathrm{T}}\mathbf{X} $, which some authors refer to as the XtX statistic.
-> 
-> Some comment on Ω versus ℛ is in order. Ω is the empirical estimate of the allelic-covariance matrix, while ℛ is based on the estimated branching pattern of deme formation (assuming there is no between-deme migration). Hence, Ω is expected to perform better in situations where the correlations induced by population structure are poorly approximated by a phylogenetic tree, as can be the case with migration between demes (Günther and Coop 2013). Further, because Ω also contains the within-deme variance, it should be slightly more robust to within-deme inbreeding relative to ℛ, which only considers the covariances between demes. Finally, it should be stressed that the χ² distribution only formally arises when Ω is known without error. When Ω is replaced by some estimate, ℛ, of its true value, this distribution no longer holds.
+> Example 9.5. Here we sketch out the basic structure of four extensions (FLK, Bayenv, LFMM, and PCAdapt) of LK and allele-environment correlation tests that attempt to account for among-deme correlations in allele frequencies. The details are fairly technical, but the basic idea is very similar to that for the Fisher-Ford test (Example 9.2). There, under the assumption of drift, a vector, y, of allele-frequency changes is turned into a test statistic that is in the form of a quadratic product (Equation 9.6c), $ \mathbf{y}^{T}\mathbf{V}^{-1}\mathbf{y} $, where V is the covariance for these expected changes under drift alone. This is simply the generalization of a test based on the squared difference between two allele frequencies to a vector of allele frequencies. If y is multivariate normal, this test statistic follows a $ \chi^{2} $ distribution and excessive values indicate a departure from the pure-drift model. This basic idea, and structure, also follows here. The extensions follow from an adjustment of the vector of changes to account for environmental influences on allele frequencies and more generalized covariance matrices, given the population structure. The $ \tilde{F}_{ST} $ extension (FLK) of Bonhomme et al. (2010) uses a set of neutral loci together with an outgroup to construct a kinship matrix, $ \mathcal{F} $, of populations, based on branch lengths of the estimated phylogenetic tree among the sampled populations. The assumption is that some pattern of evolution (described by $ \mathcal{F} $) unfolds from an ancestral population with an allele frequency of $ p_0 $, but with no further migration between subpopulations. For $ n $ populations, the FLK test statistic is given by $$ T_{F L K}=\frac{(\mathbf{p}-\widehat{p}_{0}\mathbf{1})^{T}\mathcal{F}^{-1}(\mathbf{p}-\widehat{p}_{0}\mathbf{1})}{\widehat{p}_{0}(1-\widehat{p}_{0})},\quad\mathrm{w i t h}\quad\widehat{p}_{0}=\frac{\mathbf{1}^{T}\mathcal{F}^{-1}\mathbf{p}}{\mathbf{1}^{T}\mathcal{F}^{-1}\mathbf{1}} $$ (9.12) where p is a vector of the allele frequencies for one particular locus over the n sampled demes and 1 is a column vector of n ones. Bonhomme et al. showed that $ T_{FLK} $ follows a $ \chi^2 $ distribution under the null model of no selection, provided allele frequencies are not too extreme, with outliers deemed to be candidates for loci under selection. Note that $ \widehat{p}_0 $ is of the same form as the GLS estimators for the initial frequency (Equations 9.4 and 9.6a), and that $ T_{FLK} $ has the same general form as the test statistic for the Fisher-Ford test for excessive allele-frequency change (Equation 9.6c). The Bayenv test for allele-frequency and environmental correlation (Coop et al. 2010; Eckert et al. 2010; Günther and Coop 2013) starts with a clever latent-variable approach (from Nicholson et al. 2002) to model the allele frequencies, which allows us to work with an (approximately) multivariate-normal vector. The motivation for this approach is the constraint that allele frequencies be confined to the interval $ [0,1] $, while the multivariate normal can generate values outside this region. To avoid this issue, assume there is some underlying latent (unseen) variable, $ \theta $, that is normally distributed and maps into the deme allele frequency p as follows $$ p=\left\{\begin{aligned}0&\quad if\theta\leq0\\ \theta&\quad for0<\theta<1\\ 1&\quad if\theta\geq1\end{aligned}\right. $$ (9.13a) This truncated normal transformation allows for nonzero probabilities that $p$ is at zero or one, corresponding to loss or fixation of the allele, respectively. This transformation allows us to work with a normally distributed random variable, $\theta$, which is mapped into allelic loss ($\theta < 0$) or fixation ($\theta > 1$) if it is too extreme, and otherwise maps into the frequency of a segregating allele. As with most $F_{ST}$-based methods, the assumption here is that there is very little probability mass at zero or one (i.e., there is modest divergence at most loci), so $p$ is essentially $\theta$. Following Nicholson et al. (2002), Coop et al. (2010) assumed that the vector, $ \Theta $, of $ \theta $ values for the $ n $ sampled populations is multivariate normal (approximating drift by Brownian motion; Appendix 1), with some ancestral frequency ( $ p_0 $) and correlation structure given by $ \Omega $, so that $$ \Theta\sim\mathrm{M V N}_{n}\left[p_{0}\mathbf{1},p_{0}(1-p_{0})\boldsymbol{\Omega}\right] $$ (9.13b) where $\Omega$ is the empirical estimate of the covariance matrix of the underlying $\theta$ (and hence of the allele frequencies), based on a set of presumed neutral markers (for details see Coop et al. 2010 and Gautier 2015). This is their base model. Note that standardizing the observed vector of frequencies, $\mathbf{p}$, by centering it around the mean and adjusting for the covariance structure yields a $\chi_{n-1}^{2}$ random variable (as the quadratic product is the sum of squared unit normals). This recovers the $T_{FLK}$ test statistic, but with $\Omega$ and $\Theta$ in place of $\mathcal{F}$ and $\mathbf{p}$. Operationally, if all elements of $\mathbf{p}$ fall within the range $(0, 1)$, then $\mathbf{p}$ replaces $\Theta$, yielding the test statistic as $$ \frac{(\mathbf{p}-\widehat{p}_{0}\mathbf{1})^{T}\boldsymbol{\Omega}^{-1}(\mathbf{p}-\widehat{p}_{0}\mathbf{1})}{\widehat{p}_{0}(1-\widehat{p}_{0})}\quad where\quad\widehat{p}_{0}=\frac{\mathbf{1}^{T}\boldsymbol{\Omega}^{-1}\mathbf{p}}{\mathbf{1}^{T}\boldsymbol{\Omega}^{-1}\mathbf{1}} $$ (9.13c) which is identical in form to Equation 9.12, except that the covariance matrix $ \Omega $ replaces $ \mathcal{F} $. Günther and Coop (2013) denoted this test statistic for extreme divergence at a specific locus by $ \mathbf{X}^{\mathrm{T}}\mathbf{X} $, which some authors refer to as the XtX statistic. Some comment on Ω versus ℓ is in order. Ω is the empirical estimate of the allelic-covariance matrix, while ℓ is based on the estimated branching pattern of deme formation (assuming there is no between-deme migration). Hence, Ω is expected to perform better in situations where the correlations induced by population structure are poorly approximated by a phylogenetic tree, as can be the case with migration between demes (Günther and Coop 2013). Further, because Ω also contains the within-deme variance, it should be slightly more robust to within-deme inbreeding relative to ℓ, which only considers the covariances between demes. Finally, it should be stressed that the χ² distribution only formally arises when Ω is known without error. When Ω is replaced by some estimate, ℓ, of its true value, this distribution no longer holds. Coop's base model (Equation 9.13c) is extended to account for environmental factors that influence the allele frequencies as follows. Consider a vector, $ \beta $, of potential regression coefficients for the impact of environmental factors on allele frequencies, and a matrix, X, whose values in row i correspond to the environmental parameters measured for the ith population (this is simply a GLS linear model; see LW Chapter 8). The null mean $ p_0 $ for an allele (Equation 9.13c) is augmented by the environmental effect to give $$ \Theta\sim\mathrm{MVN}_{n}\left[p_{0}\mathbf{1}_{n}+\mathbf{X}\boldsymbol{\beta},p_{0}(1-p_{0})\boldsymbol{\Omega}\right] $$ (9.13d) where $ 1_n $ is an $ n $-dimensional vectors of ones. This model assumes that any relationships between allele frequencies and the environmental variables have some linear component. The addition of the vector $ X\beta $ to account for environmental effects is an example of a factorial regression (e.g., Baril et al. 1992), which is discussed at length in Volume 3 in the context of analyzing genotype-by-environment interactions. Coop et al. (2010) couched their model in a Bayesian framework, which involves a different logic for hypothesis testing than the standard likelihood-ratio approach. As reviewed in Appendix 2, hypothesis testing in a Bayesian framework uses Bayes factors, which account for how much the data shift any prior belief in favor of a hypothesis (Equations A2.10a and A2.10b; Example A2.3). Coop et al. cautioned that hypothesis testing with their model (Equation 9.13d) is not as straightforward as simply asking whether the inclusion of a nonzero $ \beta $ (meaning that environmental factors influence at least some allele frequencies) significantly improves the fit (a large Bayes factor in favor of $ \beta \neq 0 $ over the null $ \beta = 0 $), as their model is only an approximation of the population structure. They noticed that the inclusion of environmental variables strongly influenced the distribution of Bayes factors among their set of control (and presumably neutral) loci used to estimate $ \Omega $. As a result, they recommend an outlier approach, in which the Bayes factor for a given locus is compared with the empirical distribution of Bayes factors for control loci that include that environmental variable. This is easiest to handle by using principal components to transform the environment variables to a new and independent set (e.g., Equation A5.15a), and then testing these one at a time. Test-statistic values are computed by adjusting the base-model quadratic product (Equation 9.13c) to account for environmental variables, which shifts the vector of means from $ p_01 $ to $ p_01 + \mathbf{X}\beta $ (Equation 9.13d), yielding $$ \frac{(\mathbf{p}-\widehat{p}_{0}\mathbf{1}-\mathbf{X}\widehat{\beta})^{T}\boldsymbol{\Omega}^{-1}(\mathbf{p}-\widehat{p}_{0}\mathbf{1}-\mathbf{X}\widehat{\beta})}{\widehat{p}_{0}(1-\widehat{p}_{0})} $$ (9.13e) The Bayenv method of Coop et al. is a two-step approach: (i) $ \Omega $ is estimated from a presumed set of neutral markers, and (ii) the model is run with this matrix (or in a Bayesian framework, with draws of this matrix to generate a posterior accounting for the uncertainty in its estimation; Appendix 2). Finally, the LFMM approach of Frichot et al. (2013) is a one-step model, which jointly fits $ \beta $ along with a series of random vectors (latent factors) to account for the population structure. In essence, this model approximates the allelic covariance structure by a matrix of lower rank (the rank given by the number of latent factors included in the model), by using what in essence are the first k principal components of $ \Omega $. These lower-rank approximations are discussed extensively in Volume 3, both in terms of estimating the rank of a multivariate selection covariance matrix, G, and in computing additive main effects and multiplicative interaction (AMMI) models for genotype-by-environment interactions. Frichot et al. claimed slightly better results are obtained with LFMM than with Bayenv as a result of using a one-step approach. As mentioned, however, this could simply be due to a less-than-full rank estimate of the covariance matrix being better behaved, as the imprecise estimation of eigenvectors associated with minor eigenvalues may slightly bias the results. The PCAdapt approach of Duforet-Frebourg et al. (2014) is essentially the same as LFMM, except with $ \beta = 0 $ (i.e., environmental associations are not considered).
 
 
 ---
@@ -554,19 +464,28 @@ The classic signature of a recent hard sweep is a chromosomal region of depresse
 
 ---
 
-## chapter9_026 · Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction / Simple Visual Scans for Changes in Nucleotide and STR Diversity
+## chapter9_026 · CHANGES IN THE CHROMOSOMAL PATTERN OF NEUTRAL VARIATION / Simple Visual Scans for Changes in Nucleotide and STR Diversity
 
 The most basic approach is a simple plot of variation as a function of genomic location, looking for either peaks (long-term balancing selection) or valleys (a recent sweep); see, for example, Figures 8.1 and 8.2. With SNP data, variation is typically scored as average nucleotide diversity, $ \pi $ (Chapter 4), within a sliding window to smooth out the inherent noisiness from individual sites. With simple sequence repeats or microsatellite markers (also known as simple tandem repeats, or STRs, and simple sequence repeats, or SSRs), several different metrics of variation are available, such as copy-number variance, number of alleles, and probability of heterozygosity. With their large number of alleles per marker and high mutation rates, STRs provide a more consistent signal and are usually plotted on a per-marker basis (as opposed to a sliding-window analysis); see Figure 9.3 and Example 9.6. A point of caution is that mutation rates at STRs can be length dependent, with smaller arrays often expected to show less variation.
 
 **[示例 Example]**
 
-> **Example 9.6** · ref: `9.6` · source: `chapter9_026.json` · blocks 1–1
+> **Example 9.6** · ref: `9.6` · source: `chapter9_026.json` · blocks 1–7
 >
 > Example 9.6. Domesticated breeds of dogs are ideal candidates for the detection of regions influenced by selective sweeps (Schlamp et al. 2016). Most breeds are rather recent (~200 generations or less) and often exhibit large phenotypic effects (and hence harbor the potential of strong selection on just a few genes). Simulation studies by Pollinger et al. (2005) found that a few moderately linked, highly polymorphic loci can give a strong sweep signal under realistic conditions for the formation of dog breeds. They tested their idea using a scan of microsatellites around candidate genes in two different breeds. The Large Munsterlander is a recent breed (originating around 1910) and categorized by a black coat color, with the pigment gene TYRP1 being suggested as a candidate for this trait. As Figure 9.3A shows, there is a roughly 50 Mb region of depressed microsatellite variation around TYRP1 relative to the control (neither black or brown) and brown-coated populations. Note that the region under the sweep is rather large, and if indeed TYRP1 was the actual target, this region is asymmetric, showing more reduced variation to the right of TYRP1 than at the locus itself. (Recall from Chapter 8 that such asymmetries around a selected site are not uncommon.) A more striking example is offered by dachshunds (Figure 9.3B), which showed no variation at three microsatellites surrounding the FGFR3 candidate gene that is involved in achondroplasia (limb-shortening).
 > 
 > Both Munsterlanders and dachshunds went through strong bottlenecks during their formation, so sampling noise that was overlaid on the general reduction in variation from the bottleneck may have generated these depressions. To test for this, Pollinger et al. simulated the founding process (akin to what was done in Example 9.3). Assuming the loci are highly polymorphic (STR heterozygosity in excess of 30% prior to the bottleneck), simulations showed a less than 5% chance of finding three adjacent STR loci with no variation under a simple model of a genome-wide population bottleneck during founding (conditioned on the average levels of heterozygosity seen throughout the genome).
 > 
 > These examples in dogs show the power (strong signal with only modestly dense markers) but also the pitfalls (poor localization) when a strong sweep occurs. Because a sweep depresses variation throughout a region, additional sweep-based fine-mapping within this region would be futile. Ironically, localization is easier under a weak sweep than a strong one, as the region of depressed variation is smaller. Because the same traits often appear in independent dog breeds, one potential solution is that if the same gene (or genes) were the targets of selection in each breed there is the potential for improved resolution by searching for overlapping intervals in the detected sweep regions. Chan et al. (2012) used a variant of this approach by comparing the results of seven independent mouse lines selected for increased weight, finding $ \sim $70 parallel selected regions (PSRs), where most of the high-weight selected lines shared alleles rarely found in the controls.
+
+
+**[Figure]**
+
+> **Figure 9.3** · page 26 · source: `chapter9`
+>
+> ![Figure 9.3](../figures/fig_0223.png)
+>
+> Figure 9.3 Using microsatellites in the search for dog domestication genes. (A) Large Munsterlanders have a black coat, suggesting the pigment gene TYRP1 on chromosome 11 may be a possible domestication gene. A plot of variation for this breed (black) relative to both control (neither black or brown) and brown individuals shows depressed variation spanning this gene. (B) Dachshunds are characterized by shortened limbs, suggesting the FGFR3 gene on chromosome 3 as a candidate. Dachshunds have an absence of variation at three microsatellites spanning this gene, while variation is present in controls (normal-limbed breeds). (After Pollinger et al. 2005.)
 
 
 While such plots of the spatial structure of genome variation are visually appealing, they are not formal tests of selection and can indeed be rather misleading. A change in the background level of variation can arise for several reasons besides selection, such as variation in the local mutation rate. This is especially true for STR markers, whose mutation rates are expected to vary considerably, reflecting differences in the composition (size and sequence) of their repeat units. Second, the inherent stochasticity of recombination and drift can generate considerable variation in the coalescent process across a genome, so that even with a sliding window analysis for a set of markers with the same mutation rate, strong peaks and valleys are routinely found in neutral simulations (Kim and Stephan 2002; Jensen at al. 2005).
@@ -579,7 +498,7 @@ Second, in the absence of information from other populations, explicit chromosom
 
 ---
 
-## chapter9_027 · Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction / Tests Based on STR Variation Across Populations
+## chapter9_027 · CHANGES IN THE CHROMOSOMAL PATTERN OF NEUTRAL VARIATION / Tests Based on STR Variation Across Populations
 
 Schlötterer and colleagues (Schlötterer et al. 1997; Harr et al. 2002; Schlötterer et al. 2002; Kauer et al. 2003; Schöfl and Schlötterer 2004) proposed several straightforward tests using k unlinked markers sampled from n populations. While their tests used STR/SSR data, this same approach can be applied to SNP data in nonoverlapping windows. ANOVA is used to obtain site- and population-specific values to correct (respectively) for variation in mutation rates over loci and variation in $ N_{e} $ over populations, and then test if a specific locus-population combination is unusual.
 
@@ -598,7 +517,7 @@ A related approach is the Log RV statistic of Schlötterer (2002). For a single-
 
 ---
 
-## chapter9_028 · Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction / Tests of Sweeps Using Bottleneck Models
+## chapter9_028 · CHANGES IN THE CHROMOSOMAL PATTERN OF NEUTRAL VARIATION / Tests of Sweeps Using Bottleneck Models
 
 In domesticated species, one can imagine a founding bottleneck that reduced variation across all loci relative to the ancestral source population. However, in addition to this common bottleneck, a further reduction will likely be associated with genes selected during domestication (assuming these generate hard sweeps), which can be thought of as an additional bottleneck beyond the genome-wide founding bottleneck. This idea leads to a more formal ML-based test. Data for multiple loci from two (or more) populations are first used to estimate a common bottleneck value for loci in one population (relative to another). One then tests whether the model fit is improved by allowing a subset of these loci to experience an additional bottleneck (as would happen with a sweep following the initial domestication bottleneck). One potential weakness of this approach is background selection (BGS). If there is significant variance over the genome in the ratio of gene density to recombination rate, a model assuming an additional bottleneck may provide an improved fit (even in the absence of sweeps), simply by capturing some of the genomic heterogeneity in loss of variation from BGS.
 
@@ -606,14 +525,14 @@ The bottleneck approach was first considered by Galtier et al. (2000). They assu
 
 **[示例 Example]**
 
-> **Example 9.7** · ref: `9.7` · source: `chapter9_028.json` · blocks 2–2
+> **Example 9.7** · ref: `9.7` · source: `chapter9_028.json` · blocks 2–3
 >
 > Example 9.7. Wright et al. (2005) used a multiple bottleneck model in their search for genes under selection in maize. The authors used SNP data on 774 genes from 14 maize and 16 teosinte inbred lines. Collectively, the sampled maize lines had roughly 60% of the heterozygosity found in teosinte lines, showing a strong bottleneck signal across the entire maize genome (as expected from the initial domestication process). The authors quantified the strength of this bottleneck using the parameter $ b = N_b/d $, the size of the population in the bottleneck divided by its duration. Smaller values of b imply stronger bottlenecks. Using simulations with different values of b, the maximum likelihood given the numbers of segregating sites at a given locus in maize and teosinte occurred at a value of $ \widehat{b} = 2.45 $. The authors then fit a second model that assumed two classes of loci: a fraction, $ (1 - q) $, experiencing a bottleneck of strength $ b_{1} $ and a fraction, q, experiencing a much stronger bottleneck of strength, $ b_{2} < b_{1} $, giving the resulting likelihood for locus i as $$ L(q,b_{1},b_{2}|S_{i})=(1-q)L(b_{1}|S_{i})+q L(b_{2}|S_{i}) $$ (9.15a) where $ L(b_j | S_i) $ is the likelihood function for $ b_j $ ( $ j = 1, 2 $), given the number, $ S_i $, of segregating sites in maize at locus i. Assuming loci are independent, the full likelihood is the product over all loci. This is a mixture model (LW Chapter 13), with parameters of $ q, b_1 $, and $ b_2 $, and again, the model can be searched by simulation to locate the ML estimates (MLEs). The resulting MLEs using all 774 genes were $ \widehat{b}_1 = 2.45 $, $ \widehat{b}_2 = 0.15 $, and $ \widehat{q} = 0.02 $. However, many of the loci had low variation even in teosinte and offered little information on $ b $. Using a set of 275 genes with high variation (10 or more segregating sites in teosinte) returned MLEs of $ \widehat{b}_1 = 2.45 $, $ \widehat{b}_2 = 0.01 $, and $ \widehat{q} = 0.036 $. This sample of $ \sim4\% $ of maize genes potentially experienced a much greater bottleneck (smaller $ b $) than the rest of the genome, and hence this set contains strong candidates for sites influenced by a sweep. With these estimates in hand, one can use Bayes' theorem (Equation A2.2) to obtain the posterior probability of a locus being in this selected (stronger bottleneck) class, and hence localize genes that potentially were under past selection. Recall that Bayes' theorem allows one to "flip" the conditional, as we can easily compute $ \Pr(S_i \mid b_j) $—indeed, this is just the likelihood, $ L(b_j \mid S_i) $—but we are much more interested in $ \Pr(b_j \mid S_i) $. Bayes' theorem connects these as $$ \Pr(b_{2}\mid S_{i})=\frac{q\; L(b_{2}\mid S_{i})}{(1-q)\; L(b_{1}\mid S_{i})+q\; L(b_{2}\mid S_{i})} $$ (9.15b) This gives a posterior probability for a particular locus (i) being in the strong bottleneck class $ (b_{2}) $, given that it has $ S_{i} $ segregating sites in maize. This same approach for posterior prediction reappears in Example 10.15 in the context of predicting which sites in a protein have been under positive selection.
 
 
 ---
 
-## chapter9_029 · Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction / Tests of Sweeps Using Genomic Positional Information: CLRT-GOF
+## chapter9_029 · CHANGES IN THE CHROMOSOMAL PATTERN OF NEUTRAL VARIATION / Tests of Sweeps Using Genomic Positional Information: CLRT-GOF
 
 While bottleneck approaches are elegant, they ignore any information from the expected spatial pattern of variation across a chromosomal region, for example, the functional form of the expected decrease in variation as one moves closer to the site of selection. Further, they require samples from two (or more) populations, which may be impractical. Kim and Stephan (2002) proposed a likelihood-based test using the positional pattern of variation from a single population, which not only detects a sweep, but to also localizes its position and estimates its strength of selection. A similar regression-based approach was suggested by Wiener and Pong-Wong (2011).
 
@@ -649,48 +568,16 @@ with the MLE for $\Theta$ being the value that maximizes $L(\Theta|\mathbf{k},n)
 
 and called this approach the CLR test (or CLRT), for composite-likelihood ratio test. Because this is not a strict likelihood ratio, large-sample approximations (LW Appendix 4) for its distribution are not valid, and the critical values must be obtained by simulation. Boitard et al. (2009; also see Kern and Haussler 2010) proposed the use of hidden Markov models to account for the correlations among markers that are ignored under a composite-likelihood framework. Li and Stephan (2005, 2006) developed a true maximum-likelihood method that uses only a subset of the frequency spectrum (the compact frequency spectrum, recording the number of singletons, doubletons, and sites greater than two) to estimate the position of the sweep.
 
-Jensen et al. (2005) found that the CLR test is not robust to population structure or recent bottlenecks. While neither of these demographic features is expected to generate the same spatial pattern as seen under a sweep, they can generate an excess of sites segregating rare derived alleles, so that some aspects of the frequency spectrum can be similar to a sweep, and this in turn could improve the fit relative to a model assuming the equilibrium Watterson distribution. To distinguish sweeps from false signals generated by demography and population structure, Jensen et al. proposed that any significant CLR result be subjected to an additional goodness-of-fit (GOF) test to see how well it fits a sweep model (Example 9.8). Again, the key is that a sweep is expected to generate a specific spatial pattern of variation, which will be absent under neutrality even if the site-frequency spectrum is shifted because the population is not at equilibrium.
-
-Kim and Nielsen (2004) extended the CLRT to include information on linkage disequilibrium using their $ \omega $ statistic (Equation 9.37), which contrasts measures of LD among all pairs of loci on the same side of a putative sweep with those for pairs of loci on opposite sides of the sweep. While incorporation of this LD information did improve estimation, the gain was rather modest. Finally, Meiklejohn et al (2004) and Vy and Kim (2015) have extended the CLRT for detecting incomplete sweeps. The basic logic is as above, but with only a partial shift in the frequency of the selected allele (as it is still on its sojourn to fixation).
-
 **[示例 Example]**
 
-> **Example 9.8** · ref: `9.8` · source: `chapter9_029.json` · blocks 4–4
+> **Example 9.8** · ref: `9.8` · source: `chapter9_029.json` · blocks 2–3
 >
-> Example 9.8. The GOF test of Jensen et al. (2005) starts by comparing the maximum of the composite-likelihood function under the sweep model (as the null) against the maximum of the likelihood under a more general model, $ L_A $, where the population frequency of the derived allele is unique for each site, but uncorrelated between sites. This latter assumption is the key, as a sweep is expected to generate a specific correlated pattern of variation (runs of extreme frequencies) near the selected site. The likelihood function for site i under the $ L_A $ model—namely, an unknown, but arbitrary, frequency $ p_i $ at site i—follows from the binomial distribution. Given the observation of $ k_i $ copies of the derived allele (out of n sampled)
-> 
-> > **Formula (9.17a)** · `9.17a` · source: `chapter9_block_122` · Tests of Sweeps Using Genomic Positional Information: CLRT-GOF
-> >
-> > $$ L_{A}(p_{i}\mid k_{i})=\binom{n}{k_{i}}p_{i}^{k_{i}}(1-p_{i})^{n-k_{i}} $$
-> 
-> 
-> The resulting maximum-likelihood estimate (MLE) for $ p_i $ is simply $ \widehat{p}_i = k_i / n $ (LW Appendix 4), giving the value of the likelihood function evaluated at the MLE as
-> 
-> > **Formula (9.17b)** · `9.17b` · source: `chapter9_block_123` · Tests of Sweeps Using Genomic Positional Information: CLRT-GOF
-> >
-> > $$ L_{A}(\widehat{p}_{i}\mid k_{i})=\binom{n}{k_{i}}(\widehat{p}_{i})^{k_{i}}(1-\widehat{p}_{i})^{n-k_{i}}=\binom{n}{k_{i}}\left(\frac{k_{i}}{n}\right)^{k_{i}}\left(1-\frac{k_{i}}{n}\right)^{n-k_{i}} $$
-> 
-> 
-> Assuming that the site-specific p values are uncorrelated, the total composite likelihood is the product of Equation 9.17a over all sites. If there are $ n_i $ sites, each with i copies of the derived allele, their contribution to the total likelihood is the $ n_i $th power of Equation 9.17b, with the maximum of the composite likelihood being the product of the individual maximum likelihoods (Equation 9.17b) across all levels of polymorphisms.
-> 
-> > **Formula (9.17c)** · `9.17c` · source: `chapter9_block_124` · Tests of Sweeps Using Genomic Positional Information: CLRT-GOF
-> >
-> > $$ \max\left(CL_{A}\right)=\prod_{i=1}^{n-1}\left[\binom{n}{i}\left(\frac{i}{n}\right)^{i}\left(1-\frac{i}{n}\right)^{n-i}\right]^{n_{i}} $$
-> 
-> 
-> The GOF test is the log of the ratio of the maxima of the two different likelihoods
-> 
-> > **Formula (9.17d)** · `9.17d` · source: `chapter9_block_125` · Tests of Sweeps Using Genomic Positional Information: CLRT-GOF
-> >
-> > $$ \Lambda_{GOF}=\ln\left(\frac{\max\left(CL_{A}\right)}{\max\left(CL_{0}\right)}\right) $$
-> 
-> 
-> where $ \max(CL_0) $ is the value of the sweep composite-likelihood function evaluated at the MLEs for the sweep parameters. Again, because these are not true likelihoods, large-sample distribution theory cannot be used to assess their significance. Instead, Jensen et al. used the MLEs for the sweep parameters to generate a large number of data sets under the null (which is the sweep model under the GOF test), using these to compute $ \max(CL_A) $, and hence a distribution of $ \Lambda_{GOF} $ under the null. Support for a sweep is indicated when: (i) the CLR test gives a significant result, and (ii) the GOF test is not significant. If both the CLR and GOF tests are significant, support for a sweep is questionable, as demographic features are likely the cause of departures from the neutral equilibrium model. Jensen et al. found that this two-step approach was much more robust to population structure and demography issues than the CLR test alone, giving false positives only when very severe bottlenecks occurred. However, the improved control over the false-positive rate comes at the cost of decreased power (Jensen et al. 2006; Boitard et al. 2009).
+> Example 9.8. The GOF test of Jensen et al. (2005) starts by comparing the maximum of the composite-likelihood function under the sweep model (as the null) against the maximum of the likelihood under a more general model, $ L_A $, where the population frequency of the derived allele is unique for each site, but uncorrelated between sites. This latter assumption is the key, as a sweep is expected to generate a specific correlated pattern of variation (runs of extreme frequencies) near the selected site. The likelihood function for site i under the $ L_A $ model—namely, an unknown, but arbitrary, frequency $ p_i $ at site i—follows from the binomial distribution. Given the observation of $ k_i $ copies of the derived allele (out of n sampled) $$ L_{A}(p_{i}\mid k_{i})=\binom{n}{k_{i}}p_{i}^{k_{i}}(1-p_{i})^{n-k_{i}} $$ (9.17a) The resulting maximum-likelihood estimate (MLE) for $ p_i $ is simply $ \widehat{p}_i = k_i / n $ (LW Appendix 4), giving the value of the likelihood function evaluated at the MLE as $$ L_{A}(\widehat{p}_{i}\mid k_{i})=\binom{n}{k_{i}}(\widehat{p}_{i})^{k_{i}}(1-\widehat{p}_{i})^{n-k_{i}}=\binom{n}{k_{i}}\left(\frac{k_{i}}{n}\right)^{k_{i}}\left(1-\frac{k_{i}}{n}\right)^{n-k_{i}} $$ (9.17b) Assuming that the site-specific p values are uncorrelated, the total composite likelihood is the product of Equation 9.17a over all sites. If there are $ n_i $ sites, each with i copies of the derived allele, their contribution to the total likelihood is the $ n_i $th power of Equation 9.17b, with the maximum of the composite likelihood being the product of the individual maximum likelihoods (Equation 9.17b) across all levels of polymorphisms. $$ \max\left(CL_{A}\right)=\prod_{i=1}^{n-1}\left[\binom{n}{i}\left(\frac{i}{n}\right)^{i}\left(1-\frac{i}{n}\right)^{n-i}\right]^{n_{i}} $$ (9.17c) The GOF test is the log of the ratio of the maxima of the two different likelihoods $$ \Lambda_{GOF}=\ln\left(\frac{\max\left(CL_{A}\right)}{\max\left(CL_{0}\right)}\right) $$ (9.17d) where $ \max(CL_0) $ is the value of the sweep composite-likelihood function evaluated at the MLEs for the sweep parameters. Again, because these are not true likelihoods, large-sample distribution theory cannot be used to assess their significance. Instead, Jensen et al. used the MLEs for the sweep parameters to generate a large number of data sets under the null (which is the sweep model under the GOF test), using these to compute $ \max(CL_A) $, and hence a distribution of $ \Lambda_{GOF} $ under the null. Support for a sweep is indicated when: (i) the CLR test gives a significant result, and (ii) the GOF test is not significant. If both the CLR and GOF tests are significant, support for a sweep is questionable, as demographic features are likely the cause of departures from the neutral equilibrium model. Jensen et al. found that this two-step approach was much more robust to population structure and demography issues than the CLR test alone, giving false positives only when very severe bottlenecks occurred. However, the improved control over the false-positive rate comes at the cost of decreased power (Jensen et al. 2006; Boitard et al. 2009).
 
 
 ---
 
-## chapter9_030 · Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction / Tests of Sweeps Using Genomic Positional Information: “SweepFinder”
+## chapter9_030 · CHANGES IN THE CHROMOSOMAL PATTERN OF NEUTRAL VARIATION / Tests of Sweeps Using Genomic Positional Information: “SweepFinder”
 
 Nielsen et al. (2005b) proposed a modification of the CLRT approach, replacing the Watterson distribution by an empirical site-frequency spectrum, $ \mathbf{p} = (\widehat{p}_1, \cdots, \widehat{p}_{n-1}) $, where $ \mathbf{p} $ is estimated by using a reference sample of $ m $ segregating, and presumed neutral, sites. Here $ \widehat{p}_k = n_k / m $ is the fraction of these $ m $ sites that contain exactly $ k $ copies of the derived allele, where $ n_k $ is the number of such sites in the sample. Their idea is that the Watterson distribution assumes an equilibrium neutral population, while using the actual distribution observed in the population of interest (at presumed neutral sites) to a large extent can accommodate any demographically induced departures. The use of an empirical site-frequency spectrum should also at least partly correct for any SNP ascertainment bias. While an elegant approach, the delicate issue is being able to find an appropriate (and large) set of presumed neutral sites. This approach goes by the name SweepFinder, and the resulting likelihood function is derived in Example 9.9. Simulations by Nielsen et al. (2005b) showed that while this approach is more robust than the CLR test, demography can still influence the test statistic. In particular, intermediate bottlenecks (of a size reduced to 5% to 10% of the original $ N_{e} $) seem to be the most problematic in terms of false positives (Williamson et al. 2007; Stephan 2010a), while the test has little power under strong bottlenecks (Poh et al. 2014). Hence, significance values should be obtained by simulating this procedure under a set of assumed demographic models.
 
@@ -702,7 +589,7 @@ While SweepFinder uses only sites that show variation within the sample, Huber e
 
 **[示例 Example]**
 
-> **Example 9.9** · ref: `9.9` · source: `chapter9_030.json` · blocks 3–3
+> **Example 9.9** · ref: `9.9` · source: `chapter9_030.json` · blocks 2–4
 >
 > Example 9.9. While using the same basic logic as the CLRT, namely, constructing a likelihood model where the frequency spectrum is a function of distance from the site, there is a bit more bookkeeping required to obtain the likelihood function for SweepFinder. The task is to translate an empirical site-frequency spectrum, p (at a set of presumably neutral loci), before a sweep into a pattern, $ p_s $, after the sweep. Nielsen et al. (2005b) approached this problem by focusing on a site at distance (recombination frequency) c from the target of selection (with c being estimated by the model), and conditioning on the number of lineages (from the preselection population) that are now present in a sample of size n. Suppose $ \ell $ of these represent lineages that have escaped the sweep (and hence will be reflective of the normal background distribution, p), in which case the remainder, $ n - \ell $, will be lineages that did not escape, and hence will either all contain the derived allele (if it was associated with the initial favorable mutation), or all lack it. From Chapter 8, the probability that any sample sequence escaped a sweep is $ 1 - f_s $, where $ f_s $ is a function of the distance, c, from the selected site (Equation 9.16b). The probability that $ \ell $ out of n sample sequences are lineages that escaped the sweep is binomial, with a success probability of $ 1 - f_{s} $, yielding $$ P_{e}(\ell)=\binom{n}{\ell}(1-f_{s})^{\ell}f_{s}^{n-\ell}=\binom{n}{\ell}\left(1-e^{-c\lambda}\right)^{\ell}\left(e^{-c\lambda}\right)^{n-\ell} $$ (9.18a) where $ \lambda = (1/2hs) \ln(4N_e s) $ measures the strength of selection (Equation 9.16b) and is constant over all linked sites, while $ c $ varies with the distance of our focal marker from the target of selection. There are $ M = \min(\ell + 1, n) $ lineages (the $ \ell $ distinct lineages and the single lineage associated with the sweep). Conditioned on $ \ell $, we need to compute $ p_{s,i} $, the probability of seeing $ i/n $ derived alleles in our sample. We then average this over $ P_e(\ell) $ to obtain the likelihood for a site. The probability of finding $ i $ derived alleles in a sample of the $ M $ lineages following the sweep is $$ \Pr(i\mid M)=\sum_{j=i}^{n-1}p_{j}\frac{\binom{j}{i}\binom{n-j}{M-i}}{\binom{n}{M}},\quad for\quad0\leq i\leq M $$ (9.18b) where the combinatorial term in the sum is from the hypergeometric distribution. Assuming there are $j$ copies of the derived allele in a sample of $n$ initial lineages before the sweep, this term gives the probability that $M$ draws (without replacement) will yield $i$ copies in our sample. Averaging over the probability, $p_{j}$, that $j$ copies of the derived allele (the $j$th element in $\mathbf{p}$) were in this ancestral sample yields $\operatorname{Pr}(i|M)$. Given that there are $i$ lineages of the $M$ carrying the derived allele, the probability that the derived allele is in the lineage that did not escape is simply $i/M$. For a derived allele to have $i$ copies at a site following the sweep means that it either was linked to the favorable allele, and hence was present in $(i+\ell+1-n)$ of the $\ell+1$ lineages at the start of the sweep, leading to $i$ copies in the sample, or it was not associated with the favorable mutation, so that $i$ copies in the initial $\ell+1$ lineages results in $i$ copies in the sample. Putting these together gives the likelihood as $$ \begin{aligned}p_{S,i}=P_{e}(n)p_{i}+\sum_{\ell=0}^{n-1}P_{e}(\ell)\left[\Pr\left(i+1+\ell-n\mid\ell+1\right)\frac{i+1+\ell-n}{\ell+1}\right.\\ \left.+\Pr\left(i\mid\ell+1\right)\frac{\ell+1-i}{\ell+1}\right]\end{aligned} $$ (9.18c) The first term is the probability that all of the sampled lineages escaped the sweep, simply recovering the background spectrum $ (p_i) $. The values given by Equation 9.18c replace those given by Equation 9.16a to construct the likelihood under a sweep. It is useful to note where parameters appear. The sweep strength $ (\lambda) $ and location $ (c) $ appear through $ f_s $ in the $ P_e(\ell) $ term (Equation 9.18a), the number of lineages that escaped the sweep. The empirical background spectrum, $ \mathbf{p} $, appears in the $ \mathrm{Pr}(i \mid M) $ terms (Equation 9.18b) that populate the original sample of lineages at the start of the sweep. Improvements to the original SweepFinder have been suggested, such as the computationally more efficient version SweeD (Pavlidis et al. 2013).
 
@@ -748,7 +635,7 @@ Chinese from Beijing (as the reference). Finally, an alternative (nonparametric)
 
 ---
 
-## chapter9_032 · Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction / Ascertainment Issues
+## chapter9_032 · CHANGES IN THE CHROMOSOMAL PATTERN OF NEUTRAL VARIATION / Ascertainment Issues
 
 Because many of these likelihood models exploiting genomic positional information are computationally demanding, they are typically employed following a general scan of a genome for some signature of selection, such as regions of depressed variation, or showing unusual site-frequency spectra (such as those with a negative Tajima's D or positive Fay and Wu's H values, which are discussed in the next section). Choosing the region or regions in which to perform the likelihood tests based on the appearance of these special features creates a strong ascertainment bias that dramatically shifts the null distribution. (Note that this is different from SNP ascertainment bias arising from the nonrandom choice of SNPs at the start of the analysis.) The coalescent process can be noisy, and regions with unusual underlying genealogies (such as strong compression of the nodes) can occur by chance even under the equilibrium neutral model. This is especially true when a large number of sites are sampled, presenting more draws from the same underlying process, some of which will be realizations that are extreme values.
 
@@ -756,7 +643,7 @@ Thornton and Jensen (2007) outlined an approach to adjust for both ascertainment
 
 ---
 
-## chapter9_033 · Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction / Model Fragility: Demography, Mutation, Recombination, and Gene Conversion
+## chapter9_033 · CHANGES IN THE CHROMOSOMAL PATTERN OF NEUTRAL VARIATION / Model Fragility: Demography, Mutation, Recombination, and Gene Conversion
 
 A concern to always keep in mind when using a sophisticated model is its robustness to errors in the underlying assumptions. Simple approaches often have modest power but considerable robustness, while highly specialized models can be quite powerful when the data fit the assumptions but may be quite fragile when they do not. Given the constant concern about nonequilibrium and structured populations, and hence generation of the appropriate null model, the robustness to demography is critical (Akey et al. 2004).
 
@@ -776,7 +663,7 @@ For example, both $ \zeta_1 $ and $ \eta_1 $ denote the number of sites that are
 
 ---
 
-## chapter9_035 · Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction / Summary Statistics Based on Infinite-sites Models
+## chapter9_035 · TESTS BASED ON SITE-FREQUENCY SPECTRUM STATISTICS / Summary Statistics Based on Infinite-sites Models
 
 As introduced in Chapter 4, a variety of summary statistics can be used to estimate $ \theta = 4N\epsilon\mu $ under the infinite-sites model. For a sample of $ L $ sites (generally nucleotides), suppose that there are $ S $ segregating sites, with $ \eta_1 $ and $ \zeta_1 $ sites harboring (folded and unfolded, respectively) singletons, and $ \Pi $ denoting the average number of pairwise differences between two random sequences. If our goal is to estimate $ \theta $ on a per-nucleotide basis, so that $ \mu $ is the per-nucleotide mutation rate, then (as in Chapter 4), we would
 
@@ -833,12 +720,12 @@ When applying any of these tests, care must be taken to avoid SNP ascertainment 
 
 > **Example 9.10** · ref: `9.10` · source: `chapter9_035.json` · blocks 6–6
 >
-> Example 9.10. Suppose we sample ten alleles from a population and observe a total of 12 segregating sites (S = 12), an average of four differences between alleles (II = 4), and three segregating sites that have only a single copy of the minor allele ($ \eta_1 = 3 $). What are the estimates of $ \theta $ based on these three summary statistics? Using Equations 9.21a yields $$ \widehat{\theta}_{S}=\frac{S}{a_{10}},\mathrm{w i t h}a_{10}=\sum_{i=1}^{9}\frac{1}{i}=2.83\mathrm{y i e l d i n g}\widehat{\theta}_{S}=\frac{12}{2.83}=4.24 $$ $$ \widehat{\theta}_{\Pi}=\Pi=4\qquad\widehat{\theta}_{1^{*}}=\frac{n}{n-1}\eta_{1}=\frac{10}{9}\cdot3=3.33 $$
+> Example 9.10. Suppose we sample ten alleles from a population and observe a total of 12 segregating sites (S = 12), an average of four differences between alleles (II = 4), and three segregating sites that have only a single copy of the minor allele ( $ \eta_1 = 3 $). What are the estimates of $ \theta $ based on these three summary statistics? Using Equations 9.21a yields $$ \widehat{\theta}_{S}=\frac{S}{a_{10}},\mathrm{w i t h}a_{10}=\sum_{i=1}^{9}\frac{1}{i}=2.83\mathrm{y i e l d i n g}\widehat{\theta}_{S}=\frac{12}{2.83}=4.24 $$ $$ \widehat{\theta}_{\Pi}=\Pi=4\qquad\widehat{\theta}_{1^{*}}=\frac{n}{n-1}\eta_{1}=\frac{10}{9}\cdot3=3.33 $$
 
 
 **[示例 Example]**
 
-> **Example 9.11** · ref: `9.11` · source: `chapter9_035.json` · blocks 7–7
+> **Example 9.11** · ref: `9.11` · source: `chapter9_035.json` · blocks 7–14
 >
 > Example 9.11. As we now illustrate, all of the tests summarized in Table 9.1 follow from a general family of estimators of $ \theta $ based on the discrete Watterson distribution (Equation 2.35). For a sample of n sequences with L sites, the expected number of segregating sites with i copies of the derived (unfolded, $ \zeta_i $) or of the minor (folded, $ \eta_i $) allele are
 > 
@@ -895,7 +782,7 @@ When applying any of these tests, care must be taken to avoid SNP ascertainment 
 
 ---
 
-## chapter9_036 · Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction / Tajima's D Test
+## chapter9_036 · TESTS BASED ON SITE-FREQUENCY SPECTRUM STATISTICS / Tajima's D Test
 
 **[推导 Derivation]**
 
@@ -942,7 +829,7 @@ $ D_{min} $ is computed from Equation 9.24a, with $ \Pi_{min} $ replacing $ \wid
 
 **[示例 Example]**
 
-> **Example 9.12** · ref: `9.12` · source: `chapter9_036.json` · blocks 4–4
+> **Example 9.12** · ref: `9.12` · source: `chapter9_036.json` · blocks 4–6
 >
 > Example 9.12. Two interesting applications of the D test were offered by Tajima (1989). First, he considered Aquadro and Greenberg's (1983) data for 900 base pairs in the mitochondrial DNA of seven humans. They observed 45 segregating sites and an average number of nucleotide differences between all pairs of 15.38. Hence, $$ a_{7}=\sum_{i=1}^{6}\frac{1}{i}=2.45,\qquad b_{7}=\sum_{i=1}^{6}\frac{1}{i^{2}}=1.49 $$ $$ \widehat{\theta}_{S}=\frac{S}{a_{n}}=\frac{45}{2.45}=18.38,\qquad\widehat{\theta}_{\Pi}=\Pi=15.38 $$ $$ \beta_{D}=\frac{1}{2.45^{2}+1.49}\left(\frac{2(7^{2}+7+3)}{9\cdot7(7-1)}-\frac{7+2}{7\cdot2.45}+\frac{1.49}{2.45^{2}}\right)=0.00475 $$ $$ \alpha_{D}=\frac{1}{2.45}\left(\frac{7+1}{3(7-1)}-\frac{1}{2.45}\right)-0.00475=0.01005 $$ $$ D=\frac{\widehat{\theta}_{\Pi}-\widehat{\theta}_{S}}{\sqrt{\alpha_{D}S+\beta_{D}S^{2}}}=\frac{15.38-18.38}{\sqrt{0.01005\cdot45+0.00475\cdot45^{2}}}=-0.945 $$
 > 
@@ -953,13 +840,13 @@ $ D_{min} $ is computed from Equation 9.24a, with $ \Pi_{min} $ replacing $ \wid
 
 ---
 
-## chapter9_037 · Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction / Achaz's Y and Y* Tests
+## chapter9_037 · TESTS BASED ON SITE-FREQUENCY SPECTRUM STATISTICS / Achaz's Y and Y* Tests
 
 Achaz (2008) noted that estimates of both $S$ and $\pi$ can be biased by sequencing errors, which introduce an excess of singletons, thus skewing $D$ toward more negative values. His $Y$ and $Y^{*}$ tests modify Tajima's $D$ by computing $\widehat{\theta}_{\Pi}$ and $\widehat{\theta}_{S}$ after removing singletons. With unfolded data, his $Y$ test replaces these estimates by $\widehat{\theta}_{\Pi_{-c_1}}$ and $\widehat{\theta}_{S_{-c_1}}$, while with folded data, his $Y^{*}$ test uses $\widehat{\theta}_{\Pi_{-c_1}}$ and $\widehat{\theta}_{S_{-c_1}}$. Expressions for these estimators and the sampling variances of the tests can be found in his paper. While initially proposed as a method to deal with potential sequencing errors (which can now be accounted for by using ML approaches), these tests are still a useful metric, as a comparison of $Y$ and $Y^{*}$ with $D$ providing information about the impact of singletons.
 
 ---
 
-## chapter9_038 · Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction / Fu and Li's $ D^{*} $ and $ F^{*} $ Tests
+## chapter9_038 · TESTS BASED ON SITE-FREQUENCY SPECTRUM STATISTICS / Fu and Li's $ D^{*} $ and $ F^{*} $ Tests
 
 Fu and Li (1993b) introduced tests based on other contrasts among the infinite-sites $\theta$ estimators given by Equation 9.21a. Both proposed tests use the number of singleton sites, with variants using either folded ($\eta_{1}$ sites with a single copy of the minor allele) or unfolded ($\zeta_{1}$ sites with a single copy of the derived allele) singletons. Using these statistics gives estimates of $\theta$ based on the rare-alleles region of the SFS, which are then contrasted with estimates based on either $S$ or II. Using folded data, this gives rise, respectively, to their $D^{*}$ and $F^{*}$ tests. Their exact counterparts for unfolded data (using $\zeta_{1}$ in place of $\eta_{1}$) are, respectively, their $D$ and $F$ tests, which are not discussed further. Given the widespread use of Tajima's $D$, when we simply reference a “$D$ test,” this always refers to Tajima’s test.
 
@@ -1001,11 +888,20 @@ Their $F^{*}$ test compares the average pairwise divergence (II) with the folded
 > $$ \beta_{F}=\frac{1}{a_{n}^{2}+b_{n}}\left(\frac{2n^{3}+110n^{2}-255n+153}{9n^{2}(n-1)}+\frac{2(n-1)a_{n}}{n^{2}}-\frac{8b_{n}}{n}\right) $$
 
 
+**[Figure]**
+
+> **Figure 9.4** · page 42 · source: `chapter9`
+>
+> ![Figure 9.4](../figures/fig_0224.png)
+>
+> Figure 9.4 The power (P) of the H and D tests to detect signatures of a recent sweep is very fleeting. The power of H (which is based on high-frequency derived alleles) falls off especially rapidly after a sweep (as high-frequency alleles are fixed), essentially having power only within  $ 0.2N_e $ generations following a sweep. D, which is based on an excess of rare alleles, can detect new mutations that enter following the sweep and has power over about  $ 0.5N_e $ generations following a sweep. A value of c/s = 0.01 was used and power (for a sample size of 50) was graphed for two different values of  $ 4N_e $s. For D (the upper two curves in the figure, which are essentially superimposed on each other), the power is essentially identical for these two values of  $ 4N_e $s, while for H (the lower two curves), there is a very slight power increase for  $ 4N_e $s =  $ 10^4 $ when  $ t < 0.1N_e $. (After Przeworski 2002.)
+
+
 These expressions are from Simonsen et al. (1995), with Equation 9.26e correcting the original Fu and Li paper. Critical values (assuming no recombination in the region) were tabulated by Fu and Li (1993b). While these tests are fairly widely used, Simonsen et al. (1995) found that they are not as powerful as Tajima's test for detecting a selective sweep or demographic features (bottlenecks or population subdivision).
 
 ---
 
-## chapter9_039 · Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction / Fay and Wu's H Test
+## chapter9_039 · TESTS BASED ON SITE-FREQUENCY SPECTRUM STATISTICS / Fay and Wu's H Test
 
 **[推导 Derivation]**
 
@@ -1040,7 +936,7 @@ Przeworski (2002) showed that both the D and H tests have moderate power immedia
 
 ---
 
-## chapter9_040 · Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction / Zeng et al.'s E Test
+## chapter9_040 · TESTS BASED ON SITE-FREQUENCY SPECTRUM STATISTICS / Zeng et al.'s E Test
 
 **[推导 Derivation]**
 
@@ -1071,7 +967,16 @@ Again the variance is approximated by replacing $ \theta $ and $ \theta^2 $ with
 
 ---
 
-## chapter9_041 · Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction / Adjusting the Null to Account for Nonequilibrium Populations
+## chapter9_041 · TESTS BASED ON SITE-FREQUENCY SPECTRUM STATISTICS / Adjusting the Null to Account for Nonequilibrium Populations
+
+**[Figure]**
+
+> **Figure 9.5** · page 44 · source: `chapter9`
+>
+> ![Figure 9.5](../figures/fig_0225.png)
+>
+> Figure 9.5 Distribution of Tajima's D for 201 genes in African-American (A) and European-American (B) samples. The empirical distribution is represented by the histogram, the solid line represents the simulated values under the equilibrium neutral model, and the dashed line the simulated distribution under the best-fitting demographic model. For (A), this is exponential growth starting 50,000 years ago, while for (B), this is a bottleneck starting 40,000 years ago. (After Ronald and Akey 2005.)
+
 
 The site-frequency tests summarized in Table 9.1 critically depend on the Watterson distribution as the null model, as do the entire family of $ \theta $ estimators given by Equation 9.23. As such, they are especially susceptible to false positives when samples come from a population not satisfying the underlying assumptions (a panmictic population in mutation-drift equilibrium). Four strategies have been proposed to address this concern. The first three are standard approaches to refine the null to better suit the sampled population: (i) using the empirical distribution of test statistics from a set of genes in the sample (the outlier approach), (ii) using coalescent simulations with marker-based estimates of demographic parameters, and (iii) using the empirical site-frequency spectrum at reference locations as the null. The final strategy, support via a preponderance of evidence, considers the joint signatures from a number of different tests and will be discussed separately. While approaches attempting to account for nonequilibrium populations offer improvements over tests based on the standard (i.e., equilibrium) neutral model, they still do not guarantee that significant signatures represent true regions influenced by positive selection. Because of this, the current operational use for many of these tests (such as Tajima's D) are as convenient summary statistics for features in a region of interest, such as whether there is an excess of rare alleles.
 
@@ -1083,7 +988,7 @@ The final approach is to use the empirical site-frequency spectrum vector, p, fr
 
 ---
 
-## chapter9_042 · Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction / Support via a Preponderance of Evidence
+## chapter9_042 · TESTS BASED ON SITE-FREQUENCY SPECTRUM STATISTICS / Support via a Preponderance of Evidence
 
 A common strategy in the literature to support a claim for selection is to show that a number of different tests are all highly significant. To this aim, a number of authors have proposed compound tests based on the joint distribution of two (or more) summary statistics of selection. Zeng et al (2006) proposed their DH test, which combines signals from Tajima's D and Fay and Wu's H tests. Zeng et al. (2007b) extended this approach with their HEW and DHEW tests, which combine either Fay and Wu's H statistic or Zeng et al.'s DH test (respectively) with the Ewens-Watterson test (introduced shortly as Equation 9.30b). Pavlidis et al. (2010) and Lin et al. (2011) also suggested approaches that combine multiple signals. This approach was taken to the extreme by Grossman et al. (2010, 2013), who combined test statistics based on both population differentiation and haplotype information to construct a likelihood based on the values of multiple test statistics (their composite of multiple signals, or CMS, approach). While composite tests likely do not return proper significance values (due to a lack of independence between tests), they can still have considerable utility. Grossman et al. noted that CMS often yields a substantially narrower region for a selected site, increasing resolution up to 100-fold. Further, given that different tests are optimal over different time scales during a sweep (Table 8.2), a composite test offers the possibility of having power over a larger time span.
 
@@ -1117,7 +1022,7 @@ The strongest preponderance of evidentiary support comes from completely indepen
 
 ---
 
-## chapter9_043 · Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction / Recombination Makes Site-frequency Tests Conservative
+## chapter9_043 · TESTS BASED ON SITE-FREQUENCY SPECTRUM STATISTICS / Recombination Makes Site-frequency Tests Conservative
 
 A final comment on frequency-spectrum tests is that, ignoring demographic concerns, they are likely conservative in many settings. In particular, Wall (1999) noted that site-frequency spectrum tests all assume that there is no recombination within the region of interest. While recombination does not bias the expected values for various statistics, it does reduce their variances (Rozas et al. 1999: Wall 1999), as the observed values represent the average across several genealogies (Depaulis et al. 2003). As a result, when recombination does occur within a region, tests are conservative, with the true p value being smaller than the zero-recombination values tabulated by the original authors of the various tests. As a result of this conservative nature of SFS tests under recombination, they are often significantly underpowered, using more stringent critical values than necessary. Wall found this effect to be significant when the rate of recombination is on the order of the total regional mutation rate, as is often the case (Table 4.1). Coalescent simulations allowing for recombination can significantly improve the power of tests by obtaining more accurate p values. As discussed in Chapter 4, the four-gamete test (Hudson and Kaplan 1985) can be used to detect recombination in the coalescence history of the sample, and the $ R_{M} $ statistic suggested by these authors estimates the minimal number of recombinants in the sample, which can then be incorporated into an appropriate coalescent simulation (e.g., Depaulis et al. 2005).
 
@@ -1129,7 +1034,7 @@ While powerful in some settings, the site-frequency spectrum does not contain al
 
 ---
 
-## chapter9_045 · Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction / Defining and Inferring Haplotypes
+## chapter9_045 · HAPLOTYPE-BASED TESTS / Defining and Inferring Haplotypes
 
 If one considers a sufficiently long stretch of DNA, every sequence is a unique haplotype, so just how are haplotypes defined? The answer depends on both the test being used and the features of LD that are of interest. If we are interested in number and diversity of haplotypes in an infinite-alleles framework, the unit of analysis is a sufficiently small region, ideally with no recombination observed in the sample. The four-gamete test of Hudson and Kaplan (1985) can be used to detect recombination in the sample (Chapter 4), helping to define the size of a region (for example, by setting the size of a sliding window moving through a larger region). Practically, one may be constrained to find regions with sufficient haplotype diversity for analysis given either the marker density or background levels of variation, so that small amounts of recombination within the defined region may appear in the sample. For tests based on the average pairwise disequilibrium among all sites within a region, one actually wants some (but not too much) recombination. Finally, tests based on long haplotypes require a core haplotype (either a single SNP or a set of a few tightly linked SNPs) to define distinct allelic classes, with the disequilibrium patterns within each class (i.e., as one moves away from the core) forming the basis of tests. Again, recombination (outside of the core) is critical to these tests.
 
@@ -1137,7 +1042,7 @@ Determining haplotypes requires phased genotypes, which are not required for ana
 
 ---
 
-## chapter9_046 · Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction / Overview of Haplotype-based Tests
+## chapter9_046 · HAPLOTYPE-BASED TESTS / Overview of Haplotype-based Tests
 
 As reviewed in Table 9.2, a number of haplotype features can be used as the basis for tests of ongoing selection. Strong haplotype structure occurs when there are fewer haplotypes than expected given the number, S, of segregating sites within a region. This underdispersion of haplotypes is a signature of excessive LD within a region. Strong haplotype structure also results in a deficiency in haplotype diversity, H (the probability that two random haplotypes from the sample are different, analogous to II under the infinite-sites model), and an excess of high-frequency haplotypes (roughly analogous to Fay and Wu's H test; Equation 9.27b). Such signatures are created by any process generating a coalescent with long internal branches (relative to the equilibrium neutral model; see Figure 8.3), such as a partial sweep (the favorable allele is not yet fixed), recovery from a moderate bottleneck, balancing selection, or population structure. Conversely, we can have the opposite pattern (overdispersion of haplotypes), with an excess of haplotypes, excess haplotype diversity, and an excess of rare-frequency haplotypes. Such signals are generated by a star-like coalescent genealogy, as would occur near the conclusion of a hard sweep, or the recovery from an extreme population bottleneck. However, in these overdispersed settings, LD summary statistics typically have low power, as S is small (most of the variation is removed), so that while haplotype overdispersion occurs, its signal is often weak.
 
@@ -1159,7 +1064,7 @@ It bears emphasizing that haplotype (and LD) structure can provide signals of se
 
 **[示例 Example]**
 
-> **Example 9.13** · ref: `9.13` · source: `chapter9_046.json` · blocks 5–5
+> **Example 9.13** · ref: `9.13` · source: `chapter9_046.json` · blocks 5–6
 >
 > Example 9.13. Hudson et al. (1994) used a sample of 41 homozygous lines (making haplotypes easy to infer) of Drosophila melanogaster from California and Spain to survey variation at the superoxide dismutase (Sod) gene. For these data, neither Tajima's D or Fu and Li's D* (both defined in Table 9.1) were significant. However, the haplotype data told a very different story. The authors classified the 41 sampled chromosomes into two classes: 19 slow and 22 fast, as judged by a fast/slow polymorphism for isozyme mobility. They found that all 19 slow chromosomes were identical in sequence through a 1410-bp region surrounding the fast/slow site, while the 22 fast chromosomes consisted of 10 different haplotypes within this region. They used coalescence simulations (with no recombination), conditional on the observed number of segregating sites and the sample size, to show that this is a significant decrease in variation of slow haplotypes relative to their frequency. This suggested that the slow allele experienced a recent, and rapid, expansion, as might occur under positive selection.
 > 
@@ -1168,7 +1073,7 @@ It bears emphasizing that haplotype (and LD) structure can provide signals of se
 
 ---
 
-## chapter9_047 · Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction / The Ewens-Watterson Test
+## chapter9_047 · HAPLOTYPE-BASED TESTS / The Ewens-Watterson Test
 
 The first formal tests of selection in the molecular era were based on haplotypes (i.e., number of alleles), and their development proceeds as follows. Assuming that the region of analysis is sufficiently small such that no recombinants are expected in the sample, the simplest approach is to treat each distinct haplotype as a distinct allele. Following the notation from Chapter 2, let k be the number of alleles (distinct halotypes) in a sample of size n sequences, and $ n_i $ be the number of alleles in the sample present in exactly i copies. For example, if one allele is present as five copies, three alleles are each present as two copies, and four alleles are present as singletons, then $ k = 8 $, and the allele-frequency spectrum becomes $ n_5 = 1, n_2 = 3, n_1 = 4 $ (with all other $ n_i = 0 $), and $ n = \sum i \cdot n_i = 15 $. Equation 2.33b gives $ \Pr(n_1, n_2, \cdots, n_k \mid n, k) $, namely, the expected frequency spectrum under neutrality given n and $ k $. Ewens (1972) and Watterson (1977, 1978) proposed comparing the fit of the observed allele-frequency spectrum to the conditional distribution given the observed number of alleles, $ k $.
 
@@ -1218,7 +1123,7 @@ Zeng et al. (2007a) found that the Ewens-Watterson (EW) test was among the most 
 
 ---
 
-## chapter9_048 · Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction / Other Infinite-alleles Tests: Conditioning on $ \hat{\theta} $
+## chapter9_048 · HAPLOTYPE-BASED TESTS / Other Infinite-alleles Tests: Conditioning on $ \hat{\theta} $
 
 **[推导 Derivation]**
 
@@ -1253,7 +1158,7 @@ As with W, this is also a one-sided test. $ F_S $ is negative when there is an e
 
 ---
 
-## chapter9_049 · Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction / Other Infinite-alleles Tests: Conditioning on S
+## chapter9_049 · HAPLOTYPE-BASED TESTS / Other Infinite-alleles Tests: Conditioning on S
 
 While elegant in using exact results from the allele-frequency sampling distributions, these tests for excessive k values do not return exact p values, as using an estimate, $ \hat{\theta} $, in place of the true value, $ \theta $, makes both Equation 2.30a and Equation 2.33a only approximations. Hudson et al. (1994) and Depaulis and Veuille (1998) noted that while $ \theta $ is unknown, the number of segregating sites, S, is directly observed. Hence, one can generate coalescence genealogies (via simulation) and then randomly place the S segregating sites over them (at a rate proportional to the branch lengths within the coalescent), generating a distribution of haplotypes in the final sample. This procedure generates draws under the neutral equilibrium model conditioned on the observed number of segregating sites. In effect, these tests examine the sequence data from both the infinite-alleles and infinite-sites perspectives. While the number of alleles, k, is a sufficient statistic under the infinite-alleles model, S is not. Conditioning on S, the distribution still has a dependency on $ \theta $, although this is often weak (Griffiths 1982; Depaulis et al. 2001, 2005; Markovtsova et al. 2001; Wall and Hudson 2001; Innan et al. 2005).
 
@@ -1294,7 +1199,7 @@ Other approaches based on haplotype number have also been suggested, although mo
 
 ---
 
-## chapter9_050 · Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction / Garud et al.'s $ H_{12} $ and $ H_{2} $ Tests
+## chapter9_050 · HAPLOTYPE-BASED TESTS / Garud et al.'s $ H_{12} $ and $ H_{2} $ Tests
 
 **[推导 Derivation]**
 
@@ -1327,7 +1232,7 @@ Under a hard sweep with its single dominant haplotype, $ H_{2} $ should be consi
 
 ---
 
-## chapter9_051 · Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction / Recombination and Infinite-alleles-based Tests
+## chapter9_051 · HAPLOTYPE-BASED TESTS / Recombination and Infinite-alleles-based Tests
 
 What is the effect of recombination on these various infinite-alleles-based tests? Recall that recombination had a uniform effect on the interpretation of site-frequency spectrum tests, making all SFS tests conservative, and hence underpowered. This is not the case for haplotype-based tests. Recombination creates new alleles, which inflates the number of haplotypes, the diversity of haplotypes, and the number of rare haplotypes, while decreasing the frequencies of the most common haplotypes. Thus, depending on the test, recombination can either make a test conservative, with p values being too large, or anticonservative, with p values being too small (Depaulis et al. 2001; Rozas et al. 2001; Wall and Hudson 2001; Depaulis et al. 2005; Ramos-Onsins et al. 2007; Zeng et al. 2007a). Tests for a low number of haplotypes, low haplotype diversity, and excessive high frequency of the most common haplotype are all conservative under recombination. Tests for excess rare haplotypes, excess haplotype diversity, and excess haplotype number all have their p values reduced. by recombination (making these tests anticonservative). Finally (as mentioned above), the Ewens-Watterson test (Equation 9.30b) is relatively robust to recombination, as conditioning on the number of alleles, k, partly accounts for recombination.
 
@@ -1335,7 +1240,7 @@ Incorporating recombination into coalescent simulations significantly improves t
 
 ---
 
-## chapter9_052 · Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction / Pairwise Disequilibrium Tests: Kelly's $ Z_{nS} $ and Kim and Nielsen's $ \omega_{max} $
+## chapter9_052 · HAPLOTYPE-BASED TESTS / Pairwise Disequilibrium Tests: Kelly's $ Z_{nS} $ and Kim and Nielsen's $ \omega_{max} $
 
 **[推导 Derivation]**
 
@@ -1378,7 +1283,7 @@ To summarize these two LD-based test statistics, $ Z_{nS} $ has the power to det
 
 ---
 
-## chapter9_053 · Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction / Contrasting Allele-frequency vs. Intra-allelic Variation Estimates of Haplotype Age
+## chapter9_053 · HAPLOTYPE-BASED TESTS / Contrasting Allele-frequency vs. Intra-allelic Variation Estimates of Haplotype Age
 
 As discussed above, we define an allele by either a single SNP or a set of SNPs sufficiently close together that no recombination has occurred between them in our sample. Moving outward from this core, we can examine the structure of haplotypes for a given allele in progressively longer regions, which we loosely refer to as the haplotypes for a given allele. The pattern of variation among the haplotypes associated with a single allele provides information on its age.
 
@@ -1424,13 +1329,9 @@ This equation can be used to approximate confidence intervals when n is large. W
 
 **[示例 Example]**
 
-> **Example 9.14** · ref: `9.14` · source: `chapter9_053.json` · blocks 7–7
+> **Example 9.14** · ref: `9.14` · source: `chapter9_053.json` · blocks 7–9
 >
-> Example 9.14. Recall Example 2.3, where we showed (following Stephens et al. 1998) that the estimated age of the HIV-resistant CCR5- $ \delta $32 mutation (roughly 5100 generations from Equation 2.12) was incompatible with an independent estimate of its age based on intra-allelic variation (roughly 28 generations). Is this conclusion changed if Equation 9.38b and 9.38d are used instead of Equation 2.12 to estimate age from frequency? In Example 2.3, we used $ p = 0.10 $ and $ N_e = 5000 $. Taking $ n = 4000 $ as the approximate sample size of Europeans used to estimate the allele frequency, Equation 9.38b gives the MLE as $$ \mathrm{MLE}(t)=-2N_{e}\left(\ln(1-p)+\frac{2}{n}\right)=-10,000\left(\ln(0.9)+\frac{2}{4000}\right)=1048\{\text{generations}\} $$
-> 
-> One reason for this discrepancy relative to the estimate of 5100 generations from Equation 2.12 is that the latter uses the mean, while Equation 9.38b uses the mode, of the allelic-age distribution. The long tail of the age distribution significantly skews the mean to much higher values, due to rare events associated with very large ages.
-> 
-> While the MLE-based estimator is much smaller than that given by Equation 2.12, does its 95% confidence interval still exclude the variation-based estimate of ~30 generations? Values of $ \tau_{0.025} $ and $ \tau_{0.975} $ are obtained by solving Equation 9.38c. Using the approximation offered by Equation 9.38d yields starting values (in units of $ 2N_{e} $ generations) of 0.055 and 1.61. Plotting Equation 9.38c around these values gives the exact answers, $ \tau_{0.025} = 0.067 $ and $ \tau_{0.975} = 1.61 $, which translates into 670 to 16,100 generations ($ 2N_{e}\tau_{0.025} $ and $ 2N_{e}\tau_{0.975} $, respectively). Despite this very wide range, the lower value still greatly exceeds 28 generations, meaning that the frequency of this allele is not consistent with an equilibrium neutral model.
+> Example 9.14. Recall Example 2.3, where we showed (following Stephens et al. 1998) that the estimated age of the HIV-resistant CCR5- $ \delta $32 mutation (roughly 5100 generations from Equation 2.12) was incompatible with an independent estimate of its age based on intra-allelic variation (roughly 28 generations). Is this conclusion changed if Equation 9.38b and 9.38d are used instead of Equation 2.12 to estimate age from frequency? In Example 2.3, we used $ p = 0.10 $ and $ N_e = 5000 $. Taking $ n = 4000 $ as the approximate sample size of Europeans used to estimate the allele frequency, Equation 9.38b gives the MLE as $$ \mathrm{MLE}(t)=-2N_{e}\left(\ln(1-p)+\frac{2}{n}\right)=-10,000\left(\ln(0.9)+\frac{2}{4000}\right)=1048\{\text{generations}\} $$ One reason for this discrepancy relative to the estimate of 5100 generations from Equation 2.12 is that the latter uses the mean, while Equation 9.38b uses the mode, of the allelic-age distribution. The long tail of the age distribution significantly skews the mean to much higher values, due to rare events associated with very large ages. While the MLE-based estimator is much smaller than that given by Equation 2.12, does its 95% confidence interval still exclude the variation-based estimate of ~30 generations? Values of $ \tau_{0.025} $ and $ \tau_{0.975} $ are obtained by solving Equation 9.38c. Using the approximation offered by Equation 9.38d yields starting values (in units of $ 2N_{e} $ generations) of 0.055 and 1.61. Plotting Equation 9.38c around these values gives the exact answers, $ \tau_{0.025} = 0.067 $ and $ \tau_{0.975} = 1.61 $, which translates into 670 to 16,100 generations ( $ 2N_{e}\tau_{0.025} $ and $ 2N_{e}\tau_{0.975} $, respectively). Despite this very wide range, the lower value still greatly exceeds 28 generations, meaning that the frequency of this allele is not consistent with an equilibrium neutral model.
 
 
 ---
@@ -1465,28 +1366,46 @@ A second approach to estimate the age of an allele using intra-allelic diversity
 
 **[示例 Example]**
 
-> **Example 9.15** · ref: `9.15` · source: `chapter9_054.json` · blocks 4–4
+> **Example 9.15** · ref: `9.15` · source: `chapter9_054.json` · blocks 4–8
 >
 > Example 9.15. Meiklejohn et al. (2004) observed three segregating sites ($S = 3$) in a population sample of $n = 26$ sequences from a region spanning the janB locus in Drosophila simulans. They assumed that the total mutation rate for this region was $\mu = 1.73 \times 10^{-5}$ per year. For a mutation arising $t$ years ago, the expected number of mutations on a single sampled allele is $\mu t$. Under the approximation that the coalescence has a star-shaped structure (very little shared coalescence time among sampled alleles, as would be expected in a sweep or partial sweep), each of the $n$ lineages in the sample is essentially independent of the others, giving the expected number of segregating sites in a sample of $n$ alleles as $\lambda = n\mu t$, with the distribution of observed $S$ values within the sample following a Poisson distribution with a parameter of $\lambda$. The resulting MLE for $t$ given these data is simply the value that maximizes the likelihood, given $S = 3$, $$ \Pr(S=3\mid t\mu)=\frac{\lambda^{3}}{3!}\exp(-\lambda)\quad where\quad\lambda=n\mu t=0.0004498t $$
 > 
 > Plotting this expression as a function of $t$ shows that the maximum of this expression (and hence the MLE) occurs at $t = 6667$ years (which is essentially identical to the simpler estimate given by Equation 8.14). The 95% confidence interval follows from the Poisson distribution, by finding those values of $t_{0.025}$ and $t_{0.975}$ such that $\Pr(S \leq 3 \mid t_{0.025} \mu) = 0.025$ and $\Pr(S \leq 3 \mid t_{0.975} \mu) = 0.975$, where (from the Poisson) $$ \Pr(S\leq3\mid\lambda)=\exp(-\lambda)\left(1+\lambda+\frac{\lambda^{2}}{2!}+\frac{\lambda^{3}}{3!}\right) $$
 > 
 > Numerically solving this equation yields $ \Pr(S \leq 3 \mid \lambda = 8.77) = 0.025 $ and $ \Pr(S \leq 3 \mid \lambda = 1.09) = 0.975 $. Because $ \lambda = 8.77 = 26 \cdot (1.73 \times 10^{-5}) \cdot t $, the upper limit of $ t $ becomes $ 8.77 / [26 \cdot (1.73 \times 10^{-5})] \sim 19,500 $ years. Similarly, the lower limit is $ \sim 1400 $ years.
-> 
-> The copy-number variance at an STR also provides an estimator of age. As above, a new mutation arises on a haplotype carrying a specific allele (whose state is defined by repeat copy length) at a linked STR. As that haplotype spreads and ages, variants arise at the STR, generating variance in copy number at the STR for the haplotype carrying the mutation. As noted previously, using copy-number variance to estimate the age is very model dependent, especially given the unknown structure of STR mutation. Assuming a simple stepwise mutation scheme with a mutation rate that is constant over array size, Thomas et al. (1998) noted that the average squared difference between copy number over all sampled haplotypes and the ancestral haplotype has an expectation of $ \mu t $, where $ \mu $ is the microsatellite mutation rate. Much more sophisticated analyses can also be used (e.g., Wilson et al. 2003). Given their high mutation rates, STR variation can allow for more precise estimation of younger alleles than approaches using segregating sites or recombination with very tightly linked sites. The major caveat is that using the wrong mutational model can yield biased estimates (as rates can change with copy number and single mutations may result in copy-number changes greater than one).
-> 
-> Finally, we have seen examples in Chapter 8 where the insertion of a mobile element generated an adaptive mutation (most likely due to regulatory changes). Mobile elements provide a unique age-based test for adaptation, as one can date the insertion (and hence the age of the new mutation it creates). A typical element is several kilobases long, and its age of insertion can be estimated by looking at two features. Some elements generate direct or inverted flanking repeats of known length. While typically just a few bases long, divergence between these short repeat segments can be used to date an insertion. Much more information is provided by the sequence divergence of the inserted element itself, which has a mutational target size of several kb. One approach is to compare the insertion against a consensus sequence for active elements. While not fool-proof (there can be existing divergence in active elements and the insertion event itself might be error-prone, such as in retrotransposons), this does provide an approach to age the insertion. See Blumenstiel et al. (2014) for details.
 
+
+The copy-number variance at an STR also provides an estimator of age. As above, a new mutation arises on a haplotype carrying a specific allele (whose state is defined by repeat copy length) at a linked STR. As that haplotype spreads and ages, variants arise at the STR, generating variance in copy number at the STR for the haplotype carrying the mutation. As noted previously, using copy-number variance to estimate the age is very model dependent, especially given the unknown structure of STR mutation. Assuming a simple stepwise mutation scheme with a mutation rate that is constant over array size, Thomas et al. (1998) noted that the average squared difference between copy number over all sampled haplotypes and the ancestral haplotype has an expectation of $ \mu t $, where $ \mu $ is the microsatellite mutation rate. Much more sophisticated analyses can also be used (e.g., Wilson et al. 2003). Given their high mutation rates, STR variation can allow for more precise estimation of younger alleles than approaches using segregating sites or recombination with very tightly linked sites. The major caveat is that using the wrong mutational model can yield biased estimates (as rates can change with copy number and single mutations may result in copy-number changes greater than one).
+
+Finally, we have seen examples in Chapter 8 where the insertion of a mobile element generated an adaptive mutation (most likely due to regulatory changes). Mobile elements provide a unique age-based test for adaptation, as one can date the insertion (and hence the age of the new mutation it creates). A typical element is several kilobases long, and its age of insertion can be estimated by looking at two features. Some elements generate direct or inverted flanking repeats of known length. While typically just a few bases long, divergence between these short repeat segments can be used to date an insertion. Much more information is provided by the sequence divergence of the inserted element itself, which has a mutational target size of several kb. One approach is to compare the insertion against a consensus sequence for active elements. While not fool-proof (there can be existing divergence in active elements and the insertion event itself might be error-prone, such as in retrotransposons), this does provide an approach to age the insertion. See Blumenstiel et al. (2014) for details.
 
 ---
 
-## chapter9_055 · Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction / Long-haplotype Tests Using Within-population Data: rEHH, LDD, iHS, $ nS_{L} $, SDS, and DIND
+## chapter9_055 · HAPLOTYPE-BASED TESTS / Long-haplotype Tests Using Within-population Data: rEHH, LDD, iHS, $ nS_{L} $, SDS, and DIND
 
 The currently most popular class of allele-age-based tests are those that search for alleles that are at moderate to high frequency and with long haplotypes. Under the neutral model, a common allele is an old allele and hence has experienced many generations of recombination. Long haplotypes for strictly neutral alleles are only expected when either the allele is very young or when the recombination rate is greatly suppressed.
+
+**[Figure]**
+
+> **Figure 9.6** · page 61 · source: `chapter9`
+>
+> ![Figure 9.6](../figures/fig_0226.png)
+>
+> Figure 9.6 Haplotype homozygosity (HH) is defined as the probability that two randomly chosen chromosomes containing the same core SNP variant (used to define allelic classes) are identical (homozygous) at all markers within a defined window. In the figure, HH is computed at a series of SNP markers moving away from the core (allelic-defining) SNP. The open and filled circles correspond to the HH values at a given SNP in the two allelic classes, namely, the probability that random draws of chromosomes from the same allelic class are identical within the region between the core SNP and the marker SNP. The relationship between HH and distance from the core is usually summarized using one of two statistics. (Left) The extended haplotype homozygosity (EHH) for an allelic class is the length of the region around the core where the HH value is  $ \geq $ 5% (above the dashed line). The allele corresponding to the filled circles has a larger EHH value, and thus a longer haplotype. (Right) A potentially more informative measure is given by the integrated EHH score, iHS, the total area under the HH curve over the region spanned by the EHH for that allele. For ease of presentation, only the values corresponding to the allele with the larger EHH value (filled circles) are plotted.
+
 
 **[定义 Definition]**
 
 Recall our previous discussion on the definition of an allele, namely a core SNP or set of very tightly linked SNPs that define alternate classes. For alleles defined by a single biallelic SNP, this generates two classes (sequences carrying the alternative SNP alleles). The haplotype structure within each allelic class is examined by looking at shared variants. as one moves away from the core. The standard metric for the length of an allele is based on its haplotype homozygosity (HH), the probability that two randomly chosen chromosomes containing the same SNP variant (or core set of SNPs) are identical (homozygous) for all markers within a specified region. Sabeti et al. (2002) defined extended haplotype homozygosity (EHH) as the length of a region around the core allele (SNP) where HH has a value of 5% or greater, namely, the length around the core where there is a 5% or greater chance that any two random haplotypes of that allele are identical at all markers (Figure 9.6).
+
+**[Figure]**
+
+> **Figure 9.7** · page 62 · source: `chapter9`
+>
+> ![Figure 9.7](../figures/fig_0227.png)
+>
+> Figure 9.7 As a proof-of-concept of the rEHH method, Sabeti et al. (2002) looked for signatures of selection at two loci, G6PD and the CD40 ligand gene (TNFSF5), that carry segregating alleles that are strongly suspected of increasing resistance to malaria. Standard site-frequency tests (Taijma's D, Fu and Li's D*, and Fay and Wu's H; see Table 9.1) were all nonsignificant. However, recall from Chapter 8 that site-frequency spectrum signals are weak when the favored allele is at a modest frequency. The figure displays rEHH versus allele frequency for the candidate alleles (solid squares) along with values for alleles at other randomly chosen autosomal loci (open circles). The curves (from top to bottom) correspond to the empirical 95th, 75th, and 50th percentiles, respectively, of the cumulative distribution. (After Sabeti et al. 2002.)
+
 
 **[推导 Derivation]**
 
@@ -1536,7 +1455,7 @@ Finally, Barreiro et al. (2009) proposed a hybrid between long-range haplotype t
 
 ---
 
-## chapter9_056 · Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction / Long-haplotype Tests Using Between-population Data: XP-EHH, Rsb, rHH, rMHH, and $ \chi_{MD} $
+## chapter9_056 · HAPLOTYPE-BASED TESTS / Long-haplotype Tests Using Between-population Data: XP-EHH, Rsb, rHH, rMHH, and $ \chi_{MD} $
 
 Tests based on comparing the haplotype lengths of alternative alleles lose all power as a favorable allele approaches fixation. However, if the favored allele is only fixed in a single population, a between-population comparison of haplotype length still has power immediately following fixation. This approach was proposed by both Tang et al. (2007) and Sabeti et al. (2007), and it follows the same logic leading Equation 9.41a and 9.41b. However, instead of contrasting the EHH or iHS score for alternate alleles in the same population, they contrast values for the same allele in different populations. Sabeti et al. referred to this as the cross-population extended haplotype homozygosity (or XP-EHH) test. A similar test (with a few subtle differences) was proposed by Tang et al., who defined the analog of Equation 9.41b as their $ \ln(Rsb) $ statistic.
 
@@ -1544,7 +1463,7 @@ A second cross-population comparison test was suggested by Kimura et al. (2007),
 
 ---
 
-## chapter9_057 · Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction / Tests based on the allele-frequency spectrum AFS(k):
+## chapter9_057 · HAPLOTYPE-BASED TESTS / Tests based on the allele-frequency spectrum AFS(k):
 
 **[Table]**
 
@@ -1562,7 +1481,7 @@ A final cross-population test was proposed by Lange and Pool (2006). Their compa
 
 ---
 
-## chapter9_058 · Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction / Summary: Tests Based on Haplotype/LD Information
+## chapter9_058 · HAPLOTYPE-BASED TESTS / Summary: Tests Based on Haplotype/LD Information
 
 As summarized in Table 9.2, different kinds of sweeps (hard, partial, and soft) leave different haplotype signals. Given the diversity of such signals, it is not surprising that there are a number of haplotype-based tests to detect these different features (Table 9.3). LD-based tests are generally regarded as the most powerful for sweeps that are currently underway. Site-frequency spectrum tests often perform poorly under a partial sweep, as the distortion in the frequency spectrum is often not sufficiently powerful. Signatures from both a recently completed partial sweep, and a currently ongoing hard sweep, include long haplotypes at excessive frequencies, alleles that are at too high a frequency given other estimates of their age, an excess of one or a few haplotypes, and a reduction in haplotype diversity.
 
@@ -1590,7 +1509,7 @@ At present, genome-wide scans for genes under recent, or ongoing, selection have
 
 ---
 
-## chapter9_060 · Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction / Recent and Current Selection in Humans
+## chapter9_060 · SEARCHES FOR SELECTION: HUMANS / Recent and Current Selection in Humans
 
 Early searches in humans looked for molecular signals at candidate genes either believed, or very strongly suspected, to be under selection in particular environments. Examples include disease-resistance genes such as Duffy (FY) and G6PD, dietary genes such as lactase (LCT), and climate-related genes such as MC1R (influencing skin color). Ronald and Akey (2005) and Harris and Meyer (2006) reviewed these and other candidate genes, and found strong signals (such as skewed site-frequency spectra, long haplotypes, and/or excessive $ F_{ST} $), adding support to the belief that they have experienced recent selection. Signals of recent hard sweeps should persist for no more than $ 2N_{e} $ generations (Table 8.1), or roughly covering no longer than the past 250,000 years (assuming 25 years per generation and $ N_{e} \sim 5,000 $).
 
@@ -1604,7 +1523,7 @@ The take-home message is that genomic scans in humans reveal numerous potential 
 
 ---
 
-## chapter9_061 · Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction / Balancing Selection in Humans
+## chapter9_061 · SEARCHES FOR SELECTION: HUMANS / Balancing Selection in Humans
 
 As discussed in Chapter 8, the expected signal from balancing selection significantly changes over time. Initially, as an allele is sweeping from some low frequency up toward its equilibrium value (under either selective overdominance or frequency-dependent selection), a partial sweep signal is expected (i.e., long haplotypes). After equilibrium is reached, the site-frequency spectrum is expected to show an excess of intermediate-frequency alleles. If the equilibrium persists beyond the neutral coalescent time, a region of increased diversity is expected around the site that is under balancing selection (Figures 8.1B and 8.2B). As more time passes, the size of the region showing excessive polymorphism and intermediate-frequency alleles will continue to be shrunk by recombination, leaving an increasingly smaller window as the age of the selective polymorphism increases. As a result, a single site under very long-term balancing selection is likely to leave very little signal (Wiuf et al. 2004; Charlesworth 2006a; Pavlidis et al. 2012). In contrast, a larger, and more persistent, window of excessive diversity occurs when multiple linked loci are under balancing selection, especially if there are epistatic fitness interactions between them, resulting in selection against recombinants (Kelly and Wade 2000; Barton and Navarro 2002).
 
@@ -1630,7 +1549,7 @@ The genetics of domestication is a rapidly growing field, which we only touch on
 
 ---
 
-## chapter9_063 · Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction / The Process of Domestication
+## chapter9_063 · SEARCHES FOR SELECTION: DOMESTICATED ORGANISMS / The Process of Domestication
 
 While domestication is often perceived to be the result of weak, or even unintentional, selection over some period of time, these settings need not be the norm. Some events are very sharp and deliberate, such as the creation of novel populations by intentional species crosses. A classic example is the mule, the sterile offspring of a male donkey and a female horse. Likewise, a number of allopolyploid crops resulted from crosses between two (or more) progenitor species. At the other extreme is the genetic modification of an ancient progenitor into a modern variety, such as the dramatic changes in plant architectural from teosinte to modern maize (LW Figure 5.2). As first noted by Darwin (1868), selection for domestication traits can be due to conscious action (conscious selection, or methodical selection in Darwin's terms) or it can be entirely unconscious. The latter are an indirect consequence of human-induced changes in the environment, where selection can reward certain strategies or traits that favor the domestication of wild species. For example, wolves that were less timid around human refuse piles may have gathered more food, leading to higher fitness while moving them closer to domestication.
 
@@ -1644,25 +1563,23 @@ Gene flow between lineages of independent origin, and between domesticated lines
 
 **[示例 Example]**
 
-> **Example 9.16** · ref: `9.16` · source: `chapter9_063.json` · blocks 4–4
+> **Example 9.16** · ref: `9.16` · source: `chapter9_063.json` · blocks 4–6
 >
 > Example 9.16. A complicating factor in both resolving the origins of any particular domestication event and detecting unambiguous signatures of selection is the introgression of wild genes into domesticated lineages. Such gene flow can be substantial, especially in the early stages of domestication (Larsen et al. 2014). The ABBA-BABA test, which was first introduced to infer the flow of Neandertal genes into modern humans, provides one approach for detecting such introgression (Green et al. 2010; Durand et al. 2011). Unfortunately, this approach is also called the D test, creating potential confusion with Tajima's D (Equation 9.24a), especially when both appear together in the same paper (e.g., da Fonseca et al. 2015). Our strong recommendation is to always retain the label ABBA-BABA test to avoid any such confusion.
-> 
-> Figure 9.8 outlines the basic structure of this test, which requires an outgroup, O. An important assumption is that the outgroup is sufficiently distant that no shared segregating alleles from it are present in the other taxa. Rosenberg (2003) showed that 99.9% of all loci have monophyletic genealogies when compared across lineages separated by more than 5.3N_e generations, which sets a lower bound on the ancestral time required for a proper outgroup to develop. Let 1, 2, and 3 denote three nested taxa, with 1 and 2 sharing a common ancestor with 3 (see Figure 9.8). In the original application by Green et al. (2010), 1 and 2 were African and non-African human populations, 3 was Neandertal, and the chimpanzee was the outgroup, O.
-> 
-> Define a string of length four and with elements A (for the ancestral allele present in O) and B (a derived allele present in taxon 3), with the positions in this sequence corresponding to species 1, 2, 3, and the outgroup. For example, the configuration given by I in Figure 9.8 is denoted ABBA. Suppose that at a given locus, the ancestral population of 1, 2, and 3 was segregating for A and B, and that in taxon 3, the lineage was sorted such that B was fixed. Conditioned on taxon 3 containing the derived allele, when 1 and 2 carry different alleles (one ancestral and the other derived), the direction should be entirely random (as the sorting would be random for neutral alleles), and hence both cases (AB vs. BA in these two species, translating into ABBA vs. BABA for the four-species comparison) should be equally likely. A systematic departure in one direction (i.e., far more ABBA than BABA) implies introgression from 3 into either 2 or 1 (respectively). Green et al. found a significant skew in favor of introgression from Neandertal into non-African humans. Their D statistic is given by
-> 
-> > **Formula (9.43)** · `9.43` · source: `chapter9_block_287` · The Process of Domestication
-> >
-> > $$ D_{ABBA-BABA}=\frac{N_{ABBA}-N_{BABA}}{N_{tot}} $$
-> 
-> 
-> where $ N_x $ is the number of events in class $ x $ and $ N_{tot} = N_{ABBA} + N_{BABA} $ is the total number of the two events. Significance ($ D \neq 0 $) is assessed using a jackknife approach. See Durand et al. (2011) for a detailed discussion and development.
 
 
 ---
 
-## chapter9_064 · Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction / Finding Domestication and Improvement Genes in Crops
+## chapter9_064 · SEARCHES FOR SELECTION: DOMESTICATED ORGANISMS / Finding Domestication and Improvement Genes in Crops
+
+**[Figure]**
+
+> **Figure 9.8** · page 73 · source: `chapter9`
+>
+> ![Figure 9.8](../figures/fig_0228.png)
+>
+> Figure 9.8 The ABBA-BABA test for detecting the introgression or genes from taxon 3 into either taxon 1 or 2; see Example 9.16 for details. Here A and B denote the ancestral and derived alleles, with the ancestral allele present in the outgroup, O. The test compares the distribution of A and B in taxa 1 and 2, conditioned on taxon 3 containing the derived allele, B. If there is simply neutral lineage sorting between the outgroup and the three resulting taxa, then configurations I (ABBA) and II (BABA) should be equally frequent. However, if there has been symmetric introgression of alleles from taxon 3 into one of these populations (but not the other), this pattern will be skewed, with one configuration being in excess of 50%.
+
 
 One standard approach for finding domestication and improvement genes is QTL mapping in a cross between the wild ancestor (provided it still exists) and the domesticated or improved variety. Such a strategy relies on knowing which traits are important. Classic examples of loci detected using this approach include teosinte branched 1 (tb1) and barren stalk 1 (ba1) for plant architecture in maize (Doebley et al. 1995; Gallavotti et al. 2004); teosinte glume architecture 1 (tga1) for naked grains in maize (Wang et al. 2005); fw2.2 for tomato fruit size (Frary et al. 2000); and sh4, qSH1, and OsLG1 for reduced seed shattering in rice (Konishi et al. 2006; Li et al. 2006; Ishii et al. 2013). Given the obvious success of the QTL mapping approach, what role do signatures of selection play in the search for domestication and improvement genes? First, showing that QTL-detected regions were under selection provides independent support for their role in domestication. Second, one can estimate the average strength of selection on a given domestication allele, and hence obtain some indication of the required time to either fix, or substantially increase, its frequency during domestication. Finally, scans for selection are trait-independent searches. While some morphological features may be rather obvious candidates for domestication or improvement traits (and hence characters for QTL or association mapping), more subtle physiological changes may be less obvious. Notably, Hufford et al. (2012) found that the majority of scan-detected regions of selection in maize showed stronger signals than those for QTL regions associated with major morphological differences related to domestication.
 
@@ -1672,7 +1589,7 @@ A second general question concerns the role of regulatory changes in adaptation 
 
 ---
 
-## chapter9_065 · Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction / Domestication and Improvement Genes in Rice
+## chapter9_065 · SEARCHES FOR SELECTION: DOMESTICATED ORGANISMS / Domestication and Improvement Genes in Rice
 
 **[推导 Derivation]**
 
@@ -1709,7 +1626,7 @@ Finally, a cautionary tale in the search for domestication genes is offered by o
 
 ---
 
-## chapter9_067 · Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction / Relative Strengths of Selection on Domestication vs. Improvement Genes
+## chapter9_067 · SEARCHES FOR SELECTION: DOMESTICATED ORGANISMS / Relative Strengths of Selection on Domestication vs. Improvement Genes
 
 An unresolved question concerns the relative strength of selection on domestication versus improvement genes, a contrast first discussed by Olsen et al. (2006). Based on local estimates of recombination rates and the length of depressed variation around the candidate genes, two domestication genes in maize had estimated selection coefficients of s between 0.02 (tga1; Wang et al. 2005) and 0.05 (tb1). However, the improvement gene Y1 has a 600 kb sweep, giving an estimated strength of selection of s = 1.2 (Palaisa et al. 2004), and (as previously discussed) the strength of selection on the rice improvement gene Waxy (correcting for the effective recombination rate) is s = 0.1. This small initial sample suggested that there was stronger selection on improvement genes. Conversely, in the Hufford et al. (2012) survey of the maize genome, regions involved in domestication had an average estimated value of s = 0.015, while regions associated with improvement had an average estimated s = 0.003. One potential reason for the significant decrease in s for improvement genes is that the authors lumped together both tropical and temperate landraces, which could reduce the average estimated strength of selection that would be seen if landraces were differentially selected.
 
@@ -1717,7 +1634,7 @@ If selection is too intense (especially when selfing can occur), considerable li
 
 ---
 
-## chapter9_068 · Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction / Silkmoths and Flies
+## chapter9_068 · SEARCHES FOR SELECTION: DOMESTICATED ORGANISMS / Silkmoths and Flies
 
 When one envisions domesticated animals, pets or farm animals usually come to mind. However, insect populations have been domesticated as well, most notably honey bees and silkmoths. Xia et al. (2009) sequenced the genomes of 29 lines of domesticated silkmoths (Bombyx mori) and of 11 lines from the wild progenitor species (B. mandarina). Their analysis clearly showed that a single domestication event gave rise to B. mori, with only a mild bottleneck (90% of the ancestral diversity is maintained). Using a joint statistic based on reduction in diversity ($ \pi_{mori}/\pi_{mand} $) within a region, coupled with a low Tajima's D score, they identified slightly over 1000 regions of interest, spanning 3% of the genome. This suggested around 350 protein-coding regions as candidates for domestication genes (given the study's focus on structural, as opposed to regulatory, changes). Of these, 159 showed differential expression between mori and its wild relative, 90 of which are expressed in the silk gland, midgut, or testis. Two of the candidate genes in the silk gland were related to counterparts in Drosophila involved in transcriptional regulation of the glue genes (whose product is used to glue pupae to a substrate).
 
@@ -1725,7 +1642,7 @@ The selection pressures during Bombyx domestication were likely both deliberate 
 
 ---
 
-## chapter9_069 · Using Molecular Data to Detect Selection: Signatures from Recent Single Events: Introduction / Constraints on Finding Domestication and Improvement Genes Through Selective Signals
+## chapter9_069 · SEARCHES FOR SELECTION: DOMESTICATED ORGANISMS / Constraints on Finding Domestication and Improvement Genes Through Selective Signals
 
 While numerous putative domestication genes have been located in a variety of species, there are reasons to suspect that many more have been missed. Given that domestication represents a sudden change in the environment, at least a fraction of any initial response likely results from standing variation. Thus, many domestication genes likely experienced soft or polygenic sweeps, potentially giving a very reduced signal (Chapter 8). For example, comparisons of dairy versus beef cattle largely rely on differences in allele frequencies, with few fixed differences (Example 9.3; Figure 9.1). Indeed, one might imagine that there is a bias in the current set of domesticated species, in that ancient farmers used the species that they could most easily exploit. This likely favored species with at least some standing variation for traits of interest, with these surpassing competing species for which farmers had to wait for new mutations to show improvement.
 

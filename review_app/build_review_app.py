@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 from collections import defaultdict
 from datetime import datetime
@@ -21,7 +22,7 @@ REVIEW_LOCATOR_INDEX_PATH = TMP_DIR / "review_locator_index.json"
 CHUNK_LINE_INDEX_PATH = TMP_DIR / "chunk_line_index.json"
 BUILD_TRACE_PATH = TMP_DIR / "review_build_trace.json"
 TOC_TREE_PATH = ROOT_DIR / "data" / "structured" / "1目录_toc_tree.json"
-PADDLE_OUTPUT_DIR = ROOT_DIR / "tmp" / "paddle_output"
+PADDLE_OUTPUT_DIR = Path(os.getenv("REVIEW_PADDLE_OUTPUT_DIR", str(ROOT_DIR / "data" / "paddle_output")))
 
 CHAPTER_ID_PATTERN = re.compile(r"^(chapter\d+|appendix\d+)$", flags=re.IGNORECASE)
 CHUNK_FILE_PATTERN = re.compile(r"^(chapter\d+|appendix\d+)_(\d{3})\.json$", flags=re.IGNORECASE)

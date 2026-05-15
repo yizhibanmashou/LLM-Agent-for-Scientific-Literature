@@ -1,4 +1,4 @@
-# Chapter 16 Textbook Mapping
+# Chapter 16 · Short-term Changes in the Variance: 1. Changes in the Additive Variance
 
 ## chapter16_001 · Short-term Changes in the Variance: 1. Changes in the Additive Variance: Introduction
 
@@ -47,6 +47,15 @@ Thus, under our (short-term response) assumption that allele frequencies remain 
 > $$ d(t+1)=\frac{d(t)}{2} $$
 
 
+**[Figure]**
+
+> **Figure 16.2** · page 3 · source: `chapter16`
+>
+> ![Figure 16.2](../figures/fig_0060.png)
+>
+> Figure 16.2 The generation of covariances (gametic-phase disequilibrium, LD) by the various type of truncation selection. The variables  $ x $ and  $ y $ (e.g., allelic effects at two different loci) are uncorrelated before selection, with their distribution indicated by the open circle. Left: Under directional selection, only those values of  $ x + y $ above some threshold (say, a) are retained. The resulting distribution (the shaded area above the line for  $ x + y = a $) now displays a negative covariance between the remaining  $ x $ and  $ y $ values. Middle: Under stabilizing selection, only those values in the range of  $ -a \leq x + y \leq a $ are retained, also generating a negative covariance. Right: Under disruptive selection, only values of  $ x + y \geq a $ or  $ x + y \leq -a $ are retained, now resulting in a positive covariance between the remaining  $ x $ and  $ y $ values.
+
+
 Countering this process, selection tends to generate gametic-phase disequilibrium. For example, directional selection to change the mean usually reduces the variance of a character, thus generating negative values of d anew in each generation (Felsenstein 1965). As shown in Figure 16.1, stabilizing selection reduces the phenotypic variance and, in the process, creates negative values of d (as we will shortly demonstrate), while disruptive selection increases the phenotypic variance, generating positive d. Stabilizing and disruptive selection are occasionally referred to as centripetal selection and centrifugal selection, respectively (Simpson 1944). Figure 16.2 shows how directional and stabilizing selection generate negative covariances (and hence negative values of d) between loci under selection, while disruptive selection generates positive covariances (and hence positive values of d).
 
 More generally, for values of $z$ that are normally distributed, selection reduces the phenotypic variance when $\partial^2 \ln w(z) / \partial z^2 < 0$ for all $z$ (Shnol and Kondrashov 1993), generating negative values of $d$. If this partial differential is > 0 for all values of $z$, selection increases the variance, generating positive values of $d$. One function that does not change the variance (when $z \sim$ normal) is the exponential fitness function, $w(z) = \exp(-az)$, as $$ \begin{align*}\frac{\partial^2\ln w(z)}{\partial z^2}=-\frac{\partial^2az}{\partial z^2}=0\end{align*} $$ for all z, and hence the variance following selection neither increases or decreases (Charlesworth 1990).
@@ -56,6 +65,15 @@ Assuming the validity of the infinitesimal model, Bulmer (1971b, 1974a, 1976a, 1
 ---
 
 ## chapter16_003 · Short-term Changes in the Variance: 1. Changes in the Additive Variance: Introduction / CHANGES IN VARIANCE UNDER THE INFINITESIMAL MODEL
+
+**[Figure]**
+
+> **Figure 16.1** · page 3 · source: `chapter16`
+>
+> ![Figure 16.1](../figures/fig_0059.png)
+>
+> Figure 16.1 Artificial stabilizing and disruptive selection using double truncation. In both cases, a fraction, p, of the population is allowed to reproduce. Under stabilizing selection, the central p of the distribution is saved, while under disruptive selection, the uppermost and lowermost p/2 are saved.
+
 
 Because allele frequencies remain essentially constant under the assumptions of the infinitesimal model, the additive genic variance, $ \sigma_a^2 $, remains constant and all changes in the additive genetic variance, $ \sigma_A^2 $, are due to changes in $ d $. Assuming the population is initially in gametic-phase equilibrium, so that $ d(0) = 0 $, then $ \sigma_A^2(0) = \sigma_a^2 $, yielding $$ \sigma_{A}^{2}(t)=\sigma_{a}^{2}+d(t)=\sigma_{A}^{2}(0)+d(t) $$
 
@@ -144,16 +162,14 @@ One very important implication for evolution follows from Equation 16.7a, which 
 
 **[示例 Example]**
 
-> **Example 16.1** · ref: `16.1` · source: `chapter16_003.json` · blocks 11–11
+> **Example 16.1** · ref: `16.1` · source: `chapter16_003.json` · blocks 11–12
 >
-> Example 16.1. Data from Rendel (1943) suggest that stabilizing selection occurs on egg weight in ducks. Of 960 eggs followed, 64.5% hatched. The change in mean egg weight (in grams) after selection was negligible, but the variance showed a significant decrease. The variance before selection was 52.7 (using all 960 eggs), and declined to 43.9 after selection (in those eggs that hatched), yielding $ \delta(\sigma_z^2) = -8.8 $. Assuming that the reduction in variance due to gametic-phase disequilibrium is at equilibrium and setting $ \tilde{h}_z^2 $ at 0.60 (the heritability for egg weight in poultry) gives from Equation 16.7c, $$ \widetilde{d}=\widetilde{h}^{4}\widetilde{\delta}(\sigma_{z}^{2})=(0.6)^{2}(-8.8)=-3.2\quad and\quad\widetilde{\sigma}_{A}^{2}=\widetilde{h}^{2}\widetilde{\sigma}_{z}^{2}=0.6\cdot52.7=31.6 $$
-> 
-> Assuming the infinitesimal model holds, if selection stops, the additive variance is expected to eventually increase to $$ \sigma_{A}^{2}=\sigma_{a}^{2}=\widetilde{\sigma}_{A}^{2}-\widetilde{d}=31.6+3.2=34.8 $$ with half of this change occurring in one generation (assuming all underlying loci are unlinked). Similarly, $ \sigma_{z}^{2} = 52.7 + 3.2 = 55.9 $ and $ h^{2} = 34.8/55.9 = 0.62 $. (Example from Bulmer 1971b.)
+> Example 16.1. Data from Rendel (1943) suggest that stabilizing selection occurs on egg weight in ducks. Of 960 eggs followed, 64.5% hatched. The change in mean egg weight (in grams) after selection was negligible, but the variance showed a significant decrease. The variance before selection was 52.7 (using all 960 eggs), and declined to 43.9 after selection (in those eggs that hatched), yielding $ \delta(\sigma_z^2) = -8.8 $. Assuming that the reduction in variance due to gametic-phase disequilibrium is at equilibrium and setting $ \widetilde{h}_z^2 $ at 0.60 (the heritability for egg weight in poultry) gives from Equation 16.7c, $$ \widetilde{d}=\widetilde{h}^{4}\widetilde{\delta}(\sigma_{z}^{2})=(0.6)^{2}(-8.8)=-3.2\quad and\quad\widetilde{\sigma}_{A}^{2}=\widetilde{h}^{2}\widetilde{\sigma}_{z}^{2}=0.6\cdot52.7=31.6 $$ Assuming the infinitesimal model holds, if selection stops, the additive variance is expected to eventually increase to $$ \sigma_{A}^{2}=\sigma_{a}^{2}=\widetilde{\sigma}_{A}^{2}-\widetilde{d}=31.6+3.2=34.8 $$ with half of this change occurring in one generation (assuming all underlying loci are unlinked). Similarly, $ \sigma_{z}^{2} = 52.7 + 3.2 = 55.9 $ and $ h^{2} = 34.8/55.9 = 0.62 $. (Example from Bulmer 1971b.)
 
 
 ---
 
-## chapter16_004 · Short-term Changes in the Variance: 1. Changes in the Additive Variance: Introduction / Within- and Among-Family Variance Under the Infinitesimal Model
+## chapter16_004 · CHANGES IN VARIANCE UNDER THE INFINITESIMAL MODEL / Within- and Among-Family Variance Under the Infinitesimal Model
 
 **[推导 Derivation]**
 
@@ -181,7 +197,7 @@ The derivation of Equations 16.7a, 16.7b, and 16.8a assumes that breeding values
 
 **[示例 Example]**
 
-> **Example 16.2** · ref: `16.2` · source: `chapter16_004.json` · blocks 4–4
+> **Example 16.2** · ref: `16.2` · source: `chapter16_004.json` · blocks 4–8
 >
 > Example 16.2. To show why the residual variance in Equation 16.8a depends on the genic variance, $ \sigma_{a}^{2} $, we assume the presence of random mating and unlinked loci, and that allele- frequency changes from selection can be ignored. Focusing on a single locus, suppose a parent has a genotype of $ A_i A_j $, with allelic effects of $ a_i $ and $ a_j $, where i and j index random alleles. The expected contribution from this locus to the breeding value of its offspring is $ (a_i + a_j)/2 $, as each allele is transmitted with a probability of 0.5. The resulting deviation between the actual contribution and expected contribution when $ A_i $ is transmitted is $ a_i - (a_i + a_j)/2 = (a_i - a_j)/2 $. Likewise, this deviation is $ (a_j - a_i)/2 $ when $ A_j $ is transmitted. Hence, the offspring variance in the contribution to its breeding value for this particular locus is simply the average of the squares of these two deviations, or $$ \frac{1}{2}\left[\frac{(a_{j}-a_{i})^{2}}{4}+\frac{(a_{i}-a_{i})^{2}}{4}\right]=\frac{(a_{j}-a_{i})^{2}}{4} $$
 > 
@@ -196,7 +212,7 @@ The derivation of Equations 16.7a, 16.7b, and 16.8a assumes that breeding values
 
 ---
 
-## chapter16_005 · Short-term Changes in the Variance: 1. Changes in the Additive Variance: Introduction / Accounting for Inbreeding and Drift
+## chapter16_005 · CHANGES IN VARIANCE UNDER THE INFINITESIMAL MODEL / Accounting for Inbreeding and Drift
 
 **[推导 Derivation]**
 
@@ -327,6 +343,15 @@ Because $ \widetilde{\sigma}_{A}^{2}-\sigma_{A}^{2}=\widetilde{d} $, we can writ
 
 yielding an equilibrium heritability of
 
+**[Figure]**
+
+> **Figure 16.3** · page 11 · source: `chapter16`
+>
+> ![Figure 16.3](../figures/fig_0061.png)
+>
+> Figure 16.3 The fractional reduction,  $ \kappa $, of phenotypic variance removed by truncation selection (Figure 16.1) as a function of the fraction,  $ p $, of individuals saved. Following selection, the new variance is  $ (1 - \kappa)\sigma_z^2 $. Top: The lower-most curve (values of  $ \kappa < 0 $) corresponds to disruptive selection (and hence an increase in the variance,  $ \sigma_z^2 > \sigma_z^2 $), while the upper two curves ( $ \kappa > 0 $) correspond to directional (middle curve) and stabilizing selection (upper curve), and hence a decrease in the variance,  $ \sigma_z^2 < \sigma_z^2 $. Bottom: Close-up for directional (lower curve) and stabilizing selection (upper curve).
+
+
 **[推导 Derivation]**
 
 Following Gomez-Raya and Burnside (1990), we can also express the equilibrium heritability as
@@ -340,7 +365,25 @@ Figure 16.4 plots the equilibrium heritability as a function of $ \kappa $ and t
 
 ---
 
-## chapter16_007 · Short-term Changes in the Variance: 1. Changes in the Additive Variance: Introduction / Changes in Correlated Characters
+## chapter16_007 · CHANGES IN VARIANCE UNDER TRUNCATION SELECTION / Changes in Correlated Characters
+
+**[Figure]**
+
+> **Figure 16.4** · page 12 · source: `chapter16`
+>
+> ![Figure 16.4](../figures/fig_0062.png)
+>
+> Figure 16.4 Equilibrium  $ h^2 $ values as a function of  $ \kappa $ and the initial heritability,  $ h^2 $. Note that for  $ \kappa < 0 $, the variance is increased by selection ( $ \sigma_z^2 > \sigma_z^2 $, as occurs with disruptive selection) and the equilibrium  $ h^2 $ is greater than its initial value.
+
+
+**[Figure]**
+
+> **Figure 16.5** · page 12 · source: `chapter16`
+>
+> ![Figure 16.5](../figures/fig_0063.png)
+>
+> Figure 16.5 Equilibrium heritability values under directional (truncation) selection as a function of the fraction, p, saved and the initial heritability,  $ h^{2} $. The three curves correspond to initial heritability values of 0.75, 0.5, and 0.25, with the dashed lines displaying the constant heritability values and the solid line displaying the value at equilibrium.
+
 
 **[推导 Derivation]**
 
@@ -376,7 +419,7 @@ These results will prove useful in Volume 3 when we consider the Bulmer effect f
 
 ---
 
-## chapter16_008 · Short-term Changes in the Variance: 1. Changes in the Additive Variance: Introduction / Directional Truncation Selection: Theory
+## chapter16_008 · CHANGES IN VARIANCE UNDER TRUNCATION SELECTION / Directional Truncation Selection: Theory
 
 **[推导 Derivation]**
 
@@ -409,36 +452,34 @@ as obtained by Gomez-Raya and Burnside (1990). As shown in Figure 16.5, the redu
 
 **[示例 Example]**
 
-> **Example 16.3** · ref: `16.3` · source: `chapter16_008.json` · blocks 2–2
+> **Example 16.3** · ref: `16.3` · source: `chapter16_008.json` · blocks 2–11
 >
-> Example 16.3. Suppose directional truncation selection is performed (equally on both sexes) on a normally distributed character with $ \sigma_z^2 = 100 $, $ h^2 = 0.5 $, and $ p = 0.20 $ (the upper 20% of the population is saved). To examine the impact of LD on the selection response, we first need to compute the fraction, $ \kappa $, of phenotypic variance removed by selection. To apply Equation 16.15b, we need to compute both $ x_{[0.8]} $ and $ \bar{\tau} $. To do so, note that for a unit normal random variable, $ U $, that $ \Pr(U \leq 0.842) = 0.8 $, yielding $ x_{[0.8]} = 0.842 $, and from Equation 14.3a $$ \bar{\imath}=\varphi(x_{[0.8]}/0.2=\varphi(0.842)/p=0.280/0.20=1.400 $$ From Equation 16.15b, the fraction of variance removed by selection is $$ \kappa=\bar{\imath}\left(\bar{\imath}-x_{[0.8]}\right)=1.400\left(1.400-0.842\right)=0.781 $$ With $ \kappa $ in hand, Equation 16.12d becomes $$ d(t+1)=\frac{d(t)}{2}-0.391\frac{\left[50+d(t)\right]^{2}}{100+d(t)} $$
+> Example 16.3. Suppose directional truncation selection is performed (equally on both sexes) on a normally distributed character with $ \sigma_z^2 = 100 $, $ h^2 = 0.5 $, and $ p = 0.20 $ (the upper 20% of the population is saved). To examine the impact of LD on the selection response, we first need to compute the fraction, $ \kappa $, of phenotypic variance removed by selection. To apply Equation 16.15b, we need to compute both $ x_{[0.8]} $ and $ \bar{\tau} $. To do so, note that for a unit normal random variable, $ U $, that $ \Pr(U \leq 0.842) = 0.8 $, yielding $ x_{[0.8]} = 0.842 $, and from Equation 14.3a $$ \bar{\imath}=\varphi(x_{[0.8]}/0.2=\varphi(0.842)/p=0.280/0.20=1.400 $$ From Equation 16.15b, the fraction of variance removed by selection is $$ \kappa=\bar{\imath}\left(\bar{\imath}-x_{[0.8]}\right)=1.400\left(1.400-0.842\right)=0.781 $$ With $ \kappa $ in hand, Equation 16.12d becomes $$ d(t+1)=\frac{d(t)}{2}-0.391\frac{\left[50+d(t)\right]^{2}}{100+d(t)} $$ Starting selection in generation 0 on a base population in gametic-phase equilibrium (and hence $ d(0) = 0 $), iteration of this expression yields
 > 
-> Starting selection in generation 0 on a base population in gametic-phase equilibrium (and hence $ d(0) = 0 $), iteration of this expression yields
-> 
-> For example, in generation 2 $$ h^{2}(2)=\frac{\sigma_{A}^{2}(2)}{\sigma_{z}^{2}(2)}=\frac{\sigma_{A}^{2}(0)+d(2)}{\sigma_{z}^{2}(0)+d(2)}=\frac{50-11.90}{100-11.90}=0.43 $$
-> 
-> Note that essentially all of the decline in additive variance occurs in the first three generations.
-> 
-> An important point to note is that the within-generation reduction in the variance is close to 80% ($ \kappa = 0.781 $), but the resulting decrease in the phenotypic variance (at equilibrium) is 100–12.54 = 87.46, only a 13% decrease. As was found for the response in the mean using the breeder's equation, only a fraction of the within-generation change in the variance is transmitted between generations. As with the change in mean (Chapter 13), this arises because only a fraction of the variation is due to additive-genetic variance. Another contributing factor is the additional variation generated by Mendelian sampling in each generation, which partly mitigates the decrease in variance from selection.
-> 
-> We can also obtain the equilibrium additive variance directly from Equation 16.13a. Here $ \widetilde{\sigma}_{A}^{2} = \sigma_{z}^{2} \gamma = 100 \gamma $, with $$ \gamma=\frac{2\cdot0.5-1+\sqrt{1+4\cdot0.5\cdot(1-0.5)\cdot0.781}}{2(1+0.781)}=0.3746 $$ and hence $ \widetilde{\sigma}_{A}^{2}=37.46 $, as found by iteration. Likewise, Equation 16.13c returns the equilibrium heritability as $$ \tilde{h}^{2}=\frac{\gamma}{1+\gamma-h^{2}}=\frac{0.3746}{1+0.3746-0.5}=0.43 $$
-> 
-> Again, this matches the value found by iteration.
-> 
-> How does this reduction in $ \sigma_A^2 $ influence the per-generation change in mean, $ R(t) $? Because $ \bar{t} $ is unchanged (being entirely a function of the fraction, p, of adults saved), but $ h^2 $ and $ \sigma_z^2 $ change over time, substituting $ \sigma_A(t) = h(t)\sigma_z(t) $ into Equation 13.6b yields the single-generation response in generation t as $$ R(t)=h^{2}(t)\bar{\imath}\sigma_{z}(t)=1.40h^{2}(t)\sqrt{\sigma_{z}^{2}+d(t)}=1.40h^{2}(t)\sqrt{100+d(t)} $$
-> 
-> Thus, the selection response declines from an initial value of $ R = 1.4 \cdot 0.5 \cdot 10 = 7 $ to an asymptotic per-generation value of $ \widetilde{R} = 1.4 \cdot 0.43 \cdot \sqrt{87.46} = 5.6 $. Using the unadjusted breeder's equation to predict change in mean over several generations without accounting for the Bulmer effect would have overestimated the expected response by 25%.
-> 
-> > **Table 16.2** · `16.2` · page 15 · source: `chapter16_008`
-> > Table 16.2 Heritability and additive genetic variance in an experimental population undergoing directional selection on abdominal bristle number in Drosophila melanogaster. The base population is denoted by B. At the third generation of selection (H3), and following four generations of selection plus three generations of no selection (C7, in generation 7),  $ h^2 $ was estimated from the response to divergent selection (Chapter 18) and  $ \sigma_A^2 $ was subsequently estimated by  $ \widehat{h}^2 \sigma_z^2 $. The standard error for  $ \widehat{h}^2 $ in all cases was 0.04. (After Sorensen and Hill 1982.)
+> > **Inline Table 1** · `inline_1` · page 14 · source: `chapter16_008`
+> > Inline Table 1
 > >
-> > <table><tr><td rowspan="2"></td><td colspan="4">$ \hat{h}^{2}(t) $</td><td colspan="3">$ \hat{\sigma}_{A}^{2}(t) $</td></tr><tr><td>B</td><td>H3</td><td>C7</td><td></td><td>B</td><td>H3</td><td>C7</td></tr><tr><td>Replicate 1</td><td>0.42</td><td>0.45</td><td>0.59</td><td></td><td>3.63</td><td>5.83</td><td>7.66</td></tr><tr><td>Replicate 2</td><td>0.38</td><td>0.26</td><td>0.26</td><td></td><td>2.96</td><td>2.28</td><td>2.08</td></tr></table>
+> > Generation | 0 | 1 | 2 | 3 | 4 | 5 | $ \infty $
+> > --- | --- | --- | --- | --- | --- | --- | ---
+> > $ d(t) $ | 0.00 | -9.78 | -11.90 | -12.39 | -12.51 | -12.54 | -12.54
+> > $ \sigma_{A}^{2}(t) $ | 50.00 | 40.22 | 38.10 | 37.61 | 37.49 | 37.46 | 37.46
+> > $ h^{2}(t) $ | 0.50 | 0.45 | 0.43 | 0.43 | 0.43 | 0.43 | 0.43
 > 
+> 
+> For example, in generation 2 $$ h^{2}(2)=\frac{\sigma_{A}^{2}(2)}{\sigma_{z}^{2}(2)}=\frac{\sigma_{A}^{2}(0)+d(2)}{\sigma_{z}^{2}(0)+d(2)}=\frac{50-11.90}{100-11.90}=0.43 $$ Note that essentially all of the decline in additive variance occurs in the first three generations. An important point to note is that the within-generation reduction in the variance is close to 80% ( $ \kappa = 0.781 $), but the resulting decrease in the phenotypic variance (at equilibrium) is 100–12.54 = 87.46, only a 13% decrease. As was found for the response in the mean using the breeder's equation, only a fraction of the within-generation change in the variance is transmitted between generations. As with the change in mean (Chapter 13), this arises because only a fraction of the variation is due to additive-genetic variance. Another contributing factor is the additional variation generated by Mendelian sampling in each generation, which partly mitigates the decrease in variance from selection. We can also obtain the equilibrium additive variance directly from Equation 16.13a. Here $ \widetilde{\sigma}_{A}^{2} = \sigma_{z}^{2} \gamma = 100 \gamma $, with $$ \gamma=\frac{2\cdot0.5-1+\sqrt{1+4\cdot0.5\cdot(1-0.5)\cdot0.781}}{2(1+0.781)}=0.3746 $$ and hence $ \widetilde{\sigma}_{A}^{2}=37.46 $, as found by iteration. Likewise, Equation 16.13c returns the equilibrium heritability as $$ \tilde{h}^{2}=\frac{\gamma}{1+\gamma-h^{2}}=\frac{0.3746}{1+0.3746-0.5}=0.43 $$ Again, this matches the value found by iteration. How does this reduction in $ \sigma_A^2 $ influence the per-generation change in mean, $ R(t) $? Because $ \bar{t} $ is unchanged (being entirely a function of the fraction, p, of adults saved), but $ h^2 $ and $ \sigma_z^2 $ change over time, substituting $ \sigma_A(t) = h(t)\sigma_z(t) $ into Equation 13.6b yields the single-generation response in generation t as $$ R(t)=h^{2}(t)\bar{\imath}\sigma_{z}(t)=1.40h^{2}(t)\sqrt{\sigma_{z}^{2}+d(t)}=1.40h^{2}(t)\sqrt{100+d(t)} $$ Thus, the selection response declines from an initial value of $ R = 1.4 \cdot 0.5 \cdot 10 = 7 $ to an asymptotic per-generation value of $ \widetilde{R} = 1.4 \cdot 0.43 \cdot \sqrt{87.46} = 5.6 $. Using the unadjusted breeder's equation to predict change in mean over several generations without accounting for the Bulmer effect would have overestimated the expected response by 25%.
+
+
+**[Table]**
+
+> **Table 16.2** · `16.2` · page 15 · source: `chapter16_008`
+> Table 16.2 Heritability and additive genetic variance in an experimental population undergoing directional selection on abdominal bristle number in Drosophila melanogaster. The base population is denoted by B. At the third generation of selection (H3), and following four generations of selection plus three generations of no selection (C7, in generation 7), $ h^2 $ was estimated from the response to divergent selection (Chapter 18) and $ \sigma_A^2 $ was subsequently estimated by $ \widehat{h}^2 \sigma_z^2 $. The standard error for $ \widehat{h}^2 $ in all cases was 0.04. (After Sorensen and Hill 1982.)
+>
+> <table><tr><td rowspan="2"></td><td colspan="4">$ \hat{h}^{2}(t) $</td><td colspan="3">$ \hat{\sigma}_{A}^{2}(t) $</td></tr><tr><td>B</td><td>H3</td><td>C7</td><td></td><td>B</td><td>H3</td><td>C7</td></tr><tr><td>Replicate 1</td><td>0.42</td><td>0.45</td><td>0.59</td><td></td><td>3.63</td><td>5.83</td><td>7.66</td></tr><tr><td>Replicate 2</td><td>0.38</td><td>0.26</td><td>0.26</td><td></td><td>2.96</td><td>2.28</td><td>2.08</td></tr></table>
 
 
 ---
 
-## chapter16_009 · Short-term Changes in the Variance: 1. Changes in the Additive Variance: Introduction / Directional Truncation Selection: Experimental Results
+## chapter16_009 · CHANGES IN VARIANCE UNDER TRUNCATION SELECTION / Directional Truncation Selection: Experimental Results
 
 How well do these predictions, which make a number of assumptions (additivity, infinitesimal model, normality), hold up for directional selection? Somewhat surprisingly, not many experiments have directly examined these issues. One reason is that the predicted change in $ h^2 $ under directional selection is usually expected to be small (Figure 16.5) and hence laborious to detect (requiring very large sample sizes, even when $ h^2 $ is large and $ p $ is small). One indirect study is that of Atkins and Thompson (1986), who subjected Blackface sheep to selection for increased bone length. Following 18 years of selection, the realized heritability (the ratio of observed response to selection differential; see Equation 18.10) was estimated to be $ 0.52 \pm 0.02 $. Using the infinitesimal model, they predicted the expected base population heritability to be 0.57, in agreement with the estimated base population heritability of $ 0.56 \pm 0.04 $. Further, the infinitesimal model predicts a 10% decrease in phenotypic variance, and the authors observed a 9% decrease in the upwardly selected line and an 11% decrease in the downwardly selected line.
 
@@ -446,7 +487,7 @@ A more direct study is that of Sorensen and Hill (1982), who subjected two repli
 
 ---
 
-## chapter16_010 · Short-term Changes in the Variance: 1. Changes in the Additive Variance: Introduction / Effects of Epistasis: Does the Griffing Effect Overpower the Bulmer Effect?
+## chapter16_010 · CHANGES IN VARIANCE UNDER TRUNCATION SELECTION / Effects of Epistasis: Does the Griffing Effect Overpower the Bulmer Effect?
 
 As discussed in Chapter 15, Griffing (1960a, 1960b) showed that when additive epistasis is present, gametic-phase disequilibrium increases the response to directional selection, with the change in mean augmented by $ S\sigma_{AA}^{2}/2\sigma_{z}^{2} $. This (transient) increase in the rate of response has been termed the Griffing effect. Thus, in the presence of additive epistasis, disequilibrium is, on one hand, expected to increase the rate of response, while on the other hand it is also expected to decrease the rate of response by decreasing the expressed additive genetic variance (the Bulmer effect). Which change is more important?
 
@@ -456,7 +497,7 @@ Bulmer effect and change in the mean from additive-by-additive genetic variance 
 
 ---
 
-## chapter16_011 · Short-term Changes in the Variance: 1. Changes in the Additive Variance: Introduction / Double-Truncation Selection: Theory
+## chapter16_011 · CHANGES IN VARIANCE UNDER TRUNCATION SELECTION / Double-Truncation Selection: Theory
 
 Table 16.1 and Figure 16.3 show that $ \kappa > 0 $ under stabilizing double-truncation selection, so that selection reduces the within-generation phenotypic variance and generates negative disequilibrium. Conversely, $ \kappa < 0 $ for disruptive selection, with selection increasing the within-generation variance and generating positive disequilibrium. Hence, when the assumptions of the infinitesimal model hold, heritability is expected to decrease under stabilizing selection and increase under disruptive selection (Figure 16.4), although all of this response in the variance is transient. Upon the cessation of selection, the additive genetic variance decays back to its base-population value.
 
@@ -466,24 +507,33 @@ The approach to the equilibrium value, d, also behaves differently under disrupt
 
 **[示例 Example]**
 
-> **Example 16.4** · ref: `16.4` · source: `chapter16_011.json` · blocks 3–3
+> **Example 16.4** · ref: `16.4` · source: `chapter16_011.json` · blocks 3–7
 >
-> Example 16.4. Consider a normally distributed character with $ \sigma_z^2 = 100 $ and $ h^2 = 0.5 $ in a random-mating population. To compare the effects of stabilizing and disruptive selection, suppose that in one replicate, disruptive selection is practiced via double truncation with $ p = 0.5 $ (the upper and lower 25% of the population are saved), while stabilizing selection with $ p = 0.5 $ (the upper and lower 25% are culled) is practiced in the other. To obtain $ \kappa $ (from Table 16.1), first note that for stabilizing selection, $ x_{[1/2+p/2]} = x_{[0.75]} = 0.674 $, while for disruptive selection, $ x_{[1-p/2]} = x_{[0.75]} $, with $ \varphi(0.674) = 0.318 $. Using these values, Equations 16.11b and 16.11c yield $$ \kappa=\pm(2\cdot0.318\cdot0.674)/0.5=\pm0.857 $$ where the plus sign is used for stabilizing selection, and the minus sign is used for disruptive selection. Equation 16.12d becomes $$ d(t+1)=\frac{d(t)}{2}\mp0.429\frac{\left[50+d(t)\right]^{2}}{100+d(t)} $$ where, because the equation is in terms of $ -\kappa $, the minus sign in this expression corresponds to stabilizing selection and the plus sign to disruptive selection. Starting selection on a base population with d = 0 and iterating the above equation yields
+> Example 16.4. Consider a normally distributed character with $ \sigma_z^2 = 100 $ and $ h^2 = 0.5 $ in a random-mating population. To compare the effects of stabilizing and disruptive selection, suppose that in one replicate, disruptive selection is practiced via double truncation with $ p = 0.5 $ (the upper and lower 25% of the population are saved), while stabilizing selection with $ p = 0.5 $ (the upper and lower 25% are culled) is practiced in the other. To obtain $ \kappa $ (from Table 16.1), first note that for stabilizing selection, $ x_{[1/2+p/2]} = x_{[0.75]} = 0.674 $, while for disruptive selection, $ x_{[1-p/2]} = x_{[0.75]} $, with $ \varphi(0.674) = 0.318 $. Using these values, Equations 16.11b and 16.11c yield $$ \kappa=\pm(2\cdot0.318\cdot0.674)/0.5=\pm0.857 $$ where the plus sign is used for stabilizing selection, and the minus sign is used for disruptive selection. Equation 16.12d becomes $$ d(t+1)=\frac{d(t)}{2}\mp0.429\frac{\left[50+d(t)\right]^{2}}{100+d(t)} $$ where, because the equation is in terms of $ -\kappa $, the minus sign in this expression corresponds to stabilizing selection and the plus sign to disruptive selection. Starting selection on a base population with d = 0 and iterating the above equation yields Disruptive selection
 > 
-> Note that with disruptive selection, the absolute change in d is much greater and the time to approach equilibrium considerably longer than with stabilizing selection.
+> > **Inline Table 2** · `inline_2` · page 15 · source: `chapter16_011`
+> > Inline Table 2
+> >
+> > <table><tr><td rowspan="2"></td><td colspan="4">$ \hat{h}^{2}(t) $</td><td colspan="3">$ \hat{\sigma}_{A}^{2}(t) $</td></tr><tr><td>B</td><td>H3</td><td>C7</td><td></td><td>B</td><td>H3</td><td>C7</td></tr><tr><td>Replicate 1</td><td>0.42</td><td>0.45</td><td>0.59</td><td></td><td>3.63</td><td>5.83</td><td>7.66</td></tr><tr><td>Replicate 2</td><td>0.38</td><td>0.26</td><td>0.26</td><td></td><td>2.96</td><td>2.28</td><td>2.08</td></tr></table>
 > 
-> Now suppose that after the equilibrium value of $d$ has been reached, both of these two populations are then subjected to directional selection. In particular, assume directional truncation selection, with the upper 20 percent of the population being saved. The recursion equation for the disequilibrium contribution is given in Example 16.3, but now the initial disequilibrium values are $d(0) = -13.32$ for the population with a previous history of stabilizing selection and $d(0) = 82.69$ for the population with a previous history of disruptive selection. From Example 16.3, the per-generation response is $R(t) = h^2(t)$ and $z(t)$ is plotted in Figure 16.6 for both populations. The resulting changes in $d$ and the heritability under these two treatments are also plotted in Figure 16.6. If stabilizing or disruptive selection are stopped for $k$ generations before truncation selection, $d(0)$ is replaced by $d(0)/2^k$.
 > 
-> Initially there is a large difference in $d$ (and hence in $h^{2}$ and in the response) between the replicates, but after three generations, both have essentially the same value, converging to $\tilde{d} = -12.54$ and hence a per-generation response of $\tilde{R} = 5.6$, the equilibrium value under directional truncation selection (see Example 16.3). As plotted in Figure 16.6, the replicate that was originally subjected to disruptive selection shows a higher cumulative response, due to larger responses resulting from higher heritabilities in the first few generations. This difference in cumulative response is permanent—it does not decay away once selection stops.
-> 
-> Hence, we expect that if an unselected base population is divided into three replicates, one first subjected to disruptive selection, another subjected to stabilizing selection, and the third to no selection, and if directional selection is then applied, the largest response should occur in the disruptively selected replicate and the smallest in the replicate that underwent stabilizing selection. This pattern is indeed seen in artificial selection experiments on Drosophila sternopleural bristles (Thoday 1959) and wing length (Tantawy and Tayel 1970).
+> Note that with disruptive selection, the absolute change in d is much greater and the time to approach equilibrium considerably longer than with stabilizing selection. Now suppose that after the equilibrium value of $d$ has been reached, both of these two populations are then subjected to directional selection. In particular, assume directional truncation selection, with the upper 20 percent of the population being saved. The recursion equation for the disequilibrium contribution is given in Example 16.3, but now the initial disequilibrium values are $d(0) = -13.32$ for the population with a previous history of stabilizing selection and $d(0) = 82.69$ for the population with a previous history of disruptive selection. From Example 16.3, the per-generation response is $R(t) = h^2(t)$ and $z(t)$ is plotted in Figure 16.6 for both populations. The resulting changes in $d$ and the heritability under these two treatments are also plotted in Figure 16.6. If stabilizing or disruptive selection are stopped for $k$ generations before truncation selection, $d(0)$ is replaced by $d(0)/2^k$. Initially there is a large difference in $d$ (and hence in $h^{2}$ and in the response) between the replicates, but after three generations, both have essentially the same value, converging to $\tilde{d} = -12.54$ and hence a per-generation response of $\tilde{R} = 5.6$, the equilibrium value under directional truncation selection (see Example 16.3). As plotted in Figure 16.6, the replicate that was originally subjected to disruptive selection shows a higher cumulative response, due to larger responses resulting from higher heritabilities in the first few generations. This difference in cumulative response is permanent—it does not decay away once selection stops. Hence, we expect that if an unselected base population is divided into three replicates, one first subjected to disruptive selection, another subjected to stabilizing selection, and the third to no selection, and if directional selection is then applied, the largest response should occur in the disruptively selected replicate and the smallest in the replicate that underwent stabilizing selection. This pattern is indeed seen in artificial selection experiments on Drosophila sternopleural bristles (Thoday 1959) and wing length (Tantawy and Tayel 1970).
 
 
 ---
 
-## chapter16_012 · Short-term Changes in the Variance: 1. Changes in the Additive Variance: Introduction / Double Truncation Selection: Experimental Results
+## chapter16_012 · CHANGES IN VARIANCE UNDER TRUNCATION SELECTION / Double Truncation Selection: Experimental Results
 
 Experiments examining the effects of selection on the variance were reviewed by Prout (1962a), Thoday (1972), Soliman (1982), and Hohenboken (1985). One complication with many of these results is that only phenotypic variances are examined, making it problematic to distinguish between changes in genetic and environmental contributions (Chapter 17).
+
+**[Figure]**
+
+> **Figure 16.6** · page 18 · source: `chapter16`
+>
+> ![Figure 16.6](../figures/fig_0064.png)
+>
+> Figure 16.6 The response to the same amount of direction selection for two different starting populations, one initially subjected to stabilizing selection and the other to disruptive selection. See Example 16.4 for details.
+
 
 Nonetheless, as expected under the infinitesimal model, several experiments using stabilizing artificial selection (typically by double truncation) have revealed a reduction in the phenotypic variance that is largely due to reduction in the additive variance. Examples include sternopleural bristle number (Gibson and Bradley 1974), developmental time (Prout 1962a), wing venation (Scharloo 1964; Scharloo et al. 1967), and wing length (Tantawy and Tayel 1970) in Drosophila melangaster, and developmental time in Tribolium castaneum (Soliman 1982). Gibson and Bradley (1974) found that some decrease in the phenotypic variance of bristle number was also due to a decrease in the environmental variance.
 
@@ -571,11 +621,15 @@ which has one admissible solution (again, the constraint being that additive gen
 
 **[示例 Example]**
 
-> **Example 16.5** · ref: `16.5` · source: `chapter16_013.json` · blocks 7–7
+> **Example 16.5** · ref: `16.5` · source: `chapter16_013.json` · blocks 7–10
 >
-> Example 16.5. Suppose that normalizing selection occurs on a normally distributed character with $ \sigma_z^2 = 100 $, $ h^2 = 0.5 $, and $ \omega^2 = 200 $. From Equation 18.20a, with $ \sigma_a^2 = 0.5 \cdot 100 = 50 $, the dynamics of the disequilibrium contribution are given by $$ d(t+1)=\frac{d(t)}{2}-\frac{1}{2}\frac{[50+d(t)]^{2}}{300+d(t)} $$
+> Example 16.5. Suppose that normalizing selection occurs on a normally distributed character with $ \sigma_z^2 = 100 $, $ h^2 = 0.5 $, and $ \omega^2 = 200 $. From Equation 18.20a, with $ \sigma_a^2 = 0.5 \cdot 100 = 50 $, the dynamics of the disequilibrium contribution are given by $$ d(t+1)=\frac{d(t)}{2}-\frac{1}{2}\frac{[50+d(t)]^{2}}{300+d(t)} $$ Equation 16.20d gives $ \tilde{d} = -6.46 $, and hence $ \tilde{h}^2 = (50 - 6.46)/(100 - 6.46) = 0.47 $. Most of the reduction in heritability occurs in the first few generations, as iteration of Equation 16.20a yields
 > 
-> Equation 16.20d gives $ \tilde{d} = -6.46 $, and hence $ \tilde{h}^2 = (50 - 6.46)/(100 - 6.46) = 0.47 $. Most of the reduction in heritability occurs in the first few generations, as iteration of Equation 16.20a yields
+> > **Inline Table 3** · `inline_3` · page 17 · source: `chapter16_013`
+> > Inline Table 3
+> >
+> > <table><tr><td>Generation</td><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>20</td><td>$ \infty $</td></tr><tr><td>$ d(t) $</td><td>0.00</td><td>10.73</td><td>19.65</td><td>27.22</td><td>33.72</td><td>39.34</td><td>74.83</td><td>82.69</td></tr><tr><td>$ \sigma_{A}^{2}(t) $</td><td>50.00</td><td>60.37</td><td>69.65</td><td>77.22</td><td>83.72</td><td>89.34</td><td>124.83</td><td>132.69</td></tr><tr><td>$ h^{2}(t) $</td><td>0.50</td><td>0.55</td><td>0.58</td><td>0.61</td><td>0.63</td><td>0.64</td><td>0.71</td><td>0.73</td></tr><tr><td colspan="9">Stabilizing selection</td></tr><tr><td>Generation</td><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>$ \infty $</td><td></td></tr><tr><td>$ d(t) $</td><td>0.00</td><td>-10.73</td><td>-12.77</td><td>-13.20</td><td>-13.29</td><td>-13.31</td><td>-13.32</td><td></td></tr><tr><td>$ \sigma_{A}^{2}(t) $</td><td>50.00</td><td>39.27</td><td>37.23</td><td>36.80</td><td>36.71</td><td>36.69</td><td>36.68</td><td></td></tr><tr><td>$ h^{2}(t) $</td><td>0.50</td><td>0.44</td><td>0.43</td><td>0.42</td><td>0.42</td><td>0.42</td><td>0.42</td><td></td></tr></table>
+> 
 > 
 > Thus, under the infinitesimal model, the distribution reaches an equilibrium, with the phenotypes (before selection) normally distributed with a mean of $ \theta $ and variance of $ \widetilde{\sigma}_{z}^{2} = 100 - 6.46 = 93.54 $.
 
@@ -588,7 +642,7 @@ Assortative mating changes the additive genetic variance relative to expectation
 
 ---
 
-## chapter16_015 · Short-term Changes in the Variance: 1. Changes in the Additive Variance: Introduction / Results Using the Infinitesimal Model
+## chapter16_015 · SELECTION WITH ASSORTATIVE MATING / Results Using the Infinitesimal Model
 
 **[推导 Derivation]**
 
@@ -643,7 +697,7 @@ Under the infinitesimal model, analyzing the joint effects of assortative mating
 
 ---
 
-## chapter16_016 · Short-term Changes in the Variance: 1. Changes in the Additive Variance: Introduction / Assortative Mating and Enhanced Response
+## chapter16_016 · SELECTION WITH ASSORTATIVE MATING / Assortative Mating and Enhanced Response
 
 Given that positive assortative mating increases the additive genetic variance, Breese (1956) and James and McBride (1958) suggested that the response to selection could be increased by employing assortative mating among the selected parents. However, experimental support for such an increase is mixed. Studies in both Drosophila melanogaster (McBride and Robertson 1963) and Tribolium castaneum (Wilson et al. 1965; Campo and Garcia Gil 1993, 1994) exhibited slight (but not statistically significant) increases in response when parents were assortatively mated. Conversely, Sutherland et al. (1968) and Garcia and Sanchez (1992) found no effect of assortative mating when selecting on body weight in mice and pupal weight in Drosophila.
 
@@ -653,25 +707,28 @@ The effect of coupling assortative mating with truncation selection was examined
 
 **[示例 Example]**
 
-> **Example 16.6** · ref: `16.6` · source: `chapter16_016.json` · blocks 3–3
+> **Example 16.6** · ref: `16.6` · source: `chapter16_016.json` · blocks 3–7
 >
-> Example 16.6. Starting with a base population that is initially in gametic-phase equilibrium with $ h^2 = 0.5 $ and $ \sigma_z^2 = 100 $, individuals are positively assortatively mated (with $ \rho = 0.5 $) for $ k $ generations before being subjected to directional truncation selection, with $ p = 0.20 $. What is the difference in response to one generation of selection in the assortatively mated population relative to a random-mating base population?
+> Example 16.6. Starting with a base population that is initially in gametic-phase equilibrium with $ h^2 = 0.5 $ and $ \sigma_z^2 = 100 $, individuals are positively assortatively mated (with $ \rho = 0.5 $) for $ k $ generations before being subjected to directional truncation selection, with $ p = 0.20 $. What is the difference in response to one generation of selection in the assortatively mated population relative to a random-mating base population? To answer this question, we first need to compute the expected disequilibrium contribution following $k$ generations of assortative mating in the population before selection. Here, $\kappa_f = \kappa_m = 0$ and Equation 16.21d yields $\kappa = -\rho = -0.5$, which is used to iterate Equation 16.22. $$ d(t+1)=\frac{d(t)}{2}+0.25h^{2}(t)\sigma_{A}^{2}(t) $$ (16.23a) where $ d(0) = 0 $, $ h^2(0) = 0.5 $, and $ \sigma_A^2(0) = 50 $. As shown in the table below, assortative mating, by itself, generates $ d > 0 $, reaching an upper limit (for these genetic and mating parameters) of $ \widetilde{d} = 20.71 $. From Example 16.3, the single-generation response using a population with $ d(k) $ is given by $$ \begin{aligned}R(k)=1.4h^{2}(k)\sigma_{z}(k)&=1.4\left(\frac{\sigma_{A}^{2}(0)+d(k)}{\sigma_{z}^{2}(0)+d(k)}\right)\sqrt{\sigma_{z}^{2}(0)+d(k)}\\&=1.4\left(\frac{50+d(k)}{100+d(k)}\right)\sqrt{100+d(k)}\\ \end{aligned} $$ (16.23b) Iterating Equation 16.23a for $ k $ generations and substituting the resulting $ d(k) $ value into Equation 16.23b gives the following values for a single generation of response following $ k $ generations of assortative mating:
 > 
-> To answer this question, we first need to compute the expected disequilibrium contribution following $k$ generations of assortative mating in the population before selection. Here, $\kappa_f = \kappa_m = 0$ and Equation 16.21d yields $\kappa = -\rho = -0.5$, which is used to iterate Equation 16.22.
-> 
-> > **Formula (16.23a)** · `16.23a` · source: `chapter16_block_104` · Assortative Mating and Enhanced Response
+> > **Inline Table 4** · `inline_4` · page 20 · source: `chapter16_016`
+> > Inline Table 4
 > >
-> > $$ d(t+1)=\frac{d(t)}{2}+0.25h^{2}(t)\sigma_{A}^{2}(t) $$
+> > Generation | 0 | 1 | 2 | 3 | 4 | 5 | $ \infty $
+> > --- | --- | --- | --- | --- | --- | --- | ---
+> > $ d_{t} $ | 0 | -4.17 | -5.64 | -6.16 | -6.35 | -6.42 | -6.46
+> > $ \sigma_{A}^{2}(t) $ | 50.00 | 45.83 | 44.37 | 43.84 | 43.65 | 43.58 | 43.54
+> > $ h^{2}(t) $ | 0.50 | 0.48 | 0.47 | 0.47 | 0.47 | 0.47 | 0.47
 > 
 > 
-> where $ d(0) = 0 $, $ h^2(0) = 0.5 $, and $ \sigma_A^2(0) = 50 $. As shown in the table below, assortative mating, by itself, generates $ d > 0 $, reaching an upper limit (for these genetic and mating parameters) of $ \widetilde{d} = 20.71 $. From Example 16.3, the single-generation response using a population with $ d(k) $ is given by
-> 
-> > **Formula (16.23b)** · `16.23b` · source: `chapter16_block_104` · Assortative Mating and Enhanced Response
-> >
-> > $$ \begin{aligned}R(k)=1.4h^{2}(k)\sigma_{z}(k)&=1.4\left(\frac{\sigma_{A}^{2}(0)+d(k)}{\sigma_{z}^{2}(0)+d(k)}\right)\sqrt{\sigma_{z}^{2}(0)+d(k)}\\&=1.4\left(\frac{50+d(k)}{100+d(k)}\right)\sqrt{100+d(k)}\\ \end{aligned} $$
-> 
-> 
-> Iterating Equation 16.23a for k generations and substituting the resulting $ d(k) $ value into Equation 16.23b gives the following values for a single generation of response following k generations of assortative mating:
+> $ R_{rm} = 7.00 $ is the first-generation response under random mating and $ d(0) = 0 $. With $ k = 3 $ generations of assortative mating in the base population, at the start of selection $ d(0) = 13.58 $ and $ h^2 = 0.56 $, giving a response of 8.35. While there can be up to a 29% increase in the rate of response to a single generation of selection when starting from an assortatively mated base population, it is extremely inefficient to assortatively mate a population for several generations before applying selection. For example, with a single generation of assortative mating followed by a single generation of selection, the total response is 7.64. If instead one just selected both generations (from a randomly mated base population), the responses are 7.00 in the first generation and (from Example 16.3) 5.93 in the second, for a total response almost twice as large (12.93/7.64). Further, once selection starts, the initially positive $d$ from assortative mating (which inflates $\sigma_A^2$, and hence $h^2$ and the selection responses) decays very rapidly (Figure 16.6). Only half the previous value of $d$ is passed onto the next generation, where it is supplemented by negative $d$ values generated by selection (Equation 16.7b), which quickly drives $d$ to negative values and greatly reduces $R/R_{rm}$. Assuming $d(0) = 20.71$, after a single generation of selection, $d(1) = -3.55$ and $h^2 = 0.48$, and the selection response in the next generation drops to 6.62 (compared to a response of 5.93 under random mating of the selected parents). In the second generation of selection, $d(2) = -9.25$, with a response of 5.98.
+
+
+**[示例 Example]**
+
+> **Example 16.7** · ref: `16.7` · source: `chapter16_016.json` · blocks 7–10
+>
+> Example 16.7. Consider the same population and selection parameters as in the previous example, but with selection and assortative mating now occurring simultaneously, starting at generation 0. What is the difference in response if random mating occurs in one replicate and assortative mating with $ \rho = 0.5 $ occurs in the other? From Example 16.3, directional truncation selection with $ p = 0.2 $ on both sexes yields $ \kappa_f = \kappa_m = 0.781 $, with the variance reduction from Equation 16.21d becoming $$ \kappa=\kappa_{f}-\rho(1-\kappa_{f})=0.781-0.5(1-0.781)=0.672 $$ and (from Equation 16.22), the change in d in the assortatively mated population becomes $$ d(t+1)=\frac{d(t)}{2}-\frac{0.672}{2}h^{2}(t)\sigma_{A}^{2}(t) $$ Assuming the initial population is in gametic-phase equilibrium $ d(0) = 0 $, iteration yields
 > 
 > > **Inline Table 5** · `inline_5` · page 23 · source: `chapter16_016`
 > > Inline Table 5
@@ -683,26 +740,11 @@ The effect of coupling assortative mating with truncation selection was examined
 > > R(t) | 7.00 | 7.64 | 8.06 | 8.35 | 8.69 | 8.95 | 9.01
 > > R(t)/R_{rm} | 1.00 | 1.09 | 1.15 | 1.19 | 1.24 | 1.28 | 1.29
 > 
-> 
-> $ R_{rm} = 7.00 $ is the first-generation response under random mating and $ d(0) = 0 $. With $ k = 3 $ generations of assortative mating in the base population, at the start of selection $ d(0) = 13.58 $ and $ h^2 = 0.56 $, giving a response of 8.35.
-> 
-> While there can be up to a 29% increase in the rate of response to a single generation of selection when starting from an assortatively mated base population, it is extremely inefficient to assortatively mate a population for several generations before applying selection. For example, with a single generation of assortative mating followed by a single generation of selection, the total response is 7.64. If instead one just selected both generations (from a randomly mated base population), the responses are 7.00 in the first generation and (from Example 16.3) 5.93 in the second, for a total response almost twice as large (12.93/7.64). Further, once selection starts, the initially positive $d$ from assortative mating (which inflates $\sigma_A^2$, and hence $h^2$ and the selection responses) decays very rapidly (Figure 16.6). Only half the previous value of $d$ is passed onto the next generation, where it is supplemented by negative $d$ values generated by selection (Equation 16.7b), which quickly drives $d$ to negative values and greatly reduces $R/R_{rm}$. Assuming $d(0) = 20.71$, after a single generation of selection, $d(1) = -3.55$ and $h^2 = 0.48$, and the selection response in the next generation drops to 6.62 (compared to a response of 5.93 under random mating of the selected parents). In the second generation of selection, $d(2) = -9.25$, with a response of 5.98.
-
-
-**[示例 Example]**
-
-> **Example 16.7** · ref: `16.7` · source: `chapter16_016.json` · blocks 4–4
->
-> Example 16.7. Consider the same population and selection parameters as in the previous example, but with selection and assortative mating now occurring simultaneously, starting at generation 0. What is the difference in response if random mating occurs in one replicate and assortative mating with $ \rho = 0.5 $ occurs in the other? From Example 16.3, directional truncation selection with $ p = 0.2 $ on both sexes yields $ \kappa_f = \kappa_m = 0.781 $, with the variance reduction from Equation 16.21d becoming $$ \kappa=\kappa_{f}-\rho(1-\kappa_{f})=0.781-0.5(1-0.781)=0.672 $$ and (from Equation 16.22), the change in d in the assortatively mated population becomes $$ d(t+1)=\frac{d(t)}{2}-\frac{0.672}{2}h^{2}(t)\sigma_{A}^{2}(t) $$
-> 
-> Assuming the initial population is in gametic-phase equilibrium $ d(0) = 0 $, iteration yields where $ R_{rm}(t) = \bar{i} h_{rm}^2(t) \sqrt{\sigma_z^2 + d_{rm}(t)} $ is the selection response in generation t of random mating, and the values of $ h_{rm}^2(t) $ and $ d_{rm}(t) $ come from Example 16.3.
-> 
-> Note that the response in the first generation (generation 0) is the same in both populations: the response to selection depends on the additive variance of the parents, and in the first generation, both populations have the same variance (as $ d(0) = 0 $ in both). Thereafter, there is at most a 3% increase in the rate of response under assortative mating. Even with perfect positive assortative mating ($ \rho = 1 $), $ \kappa - \rho(1 - \kappa) = 2\kappa - 1 = 0.564 $ gives a maximum value of $ R(t)/R_{rm}(t) \simeq 1.05 $.
 
 
 ---
 
-## chapter16_017 · Short-term Changes in the Variance: 1. Changes in the Additive Variance: Introduction / Disruptive Selection, Assortative Mating, and Reproductive Isolation
+## chapter16_017 · SELECTION WITH ASSORTATIVE MATING / Disruptive Selection, Assortative Mating, and Reproductive Isolation
 
 We would be remiss if we did not mention the historical interest in the connection between disruptive selection and assortative mating as a mechanism for reproductive isolation. In the early 1960s, the general view was that speciation (reproductive isolation between populations) required geographic (or other) isolation, a view strongly championed by Mayr (1963). However, the idea that sympatric speciation (Maynard-Smith 1962a, 1966) could develop without the need for such isolation was bolstered by an experimental observation by Gibson and Thoday (1962). They observed that disruptive selection on sternopleutral bristle number in D. melanogaster seemed to generate two distinct groups (high vs. low flies), which appeared to assortatively mate (individuals with an intermediate phenotype were absent from the population, whereas they would be expected under random mating). Their explanation was that crosses between high and low parents generate less fit offspring (having intermediate values), and that selection generated preferential mating over the short time course of this experiment; i.e., it appeared that only 12 generations of disruptive selection had generated partial reproductive isolation.
 

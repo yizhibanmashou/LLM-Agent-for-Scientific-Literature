@@ -1,4 +1,4 @@
-# Chapter 13 Textbook Mapping
+# Chapter 13 · Short-term Changes in the Mean: 1. The Breeder's Equation
 
 ## chapter13_001 · Short-term Changes in the Mean: 1. The Breeder's Equation: Introduction
 
@@ -12,7 +12,7 @@ There is a huge literature on breeding schemes that exploit specific features of
 
 ---
 
-## chapter13_002 · Short-term Changes in the Mean: 1. The Breeder's Equation: Introduction / The Breeder's Equation: A General Approximation for Response
+## chapter13_002 · SINGLE-GENERATION RESPONSE: THE BREEDER'S EQUATION / The Breeder's Equation: A General Approximation for Response
 
 **[推导 Derivation]**
 
@@ -29,13 +29,22 @@ Recall (Equation 6.12) that two other technical restrictions are also required t
 
 ---
 
-## chapter13_003 · Short-term Changes in the Mean: 1. The Breeder's Equation: Introduction / The Importance of Linearity
+## chapter13_003 · SINGLE-GENERATION RESPONSE: THE BREEDER'S EQUATION / The Importance of Linearity
 
 A variety of factors, such as a major gene with dominance, can result in a nonlinear parent-offspring regression (Chapter 6; LW Chapter 17). In such cases, the mean of the selected parents (and hence the selection differential, S) is not sufficient to predict the offspring mean. As Figure 13.1 shows, two selected parental populations with the same mean, but different variances, can have different expected responses when this regression is nonlinear. Even if phenotypes are normally distributed and the character is completely determined by additive loci (no dominance or epistasis), if the underlying distribution of genotypic values is skewed, selection on the variance (e.g., selection for, or against, extreme phenotypes) also results in a change in the mean (see Equation 5.27b). In this case, S is again not sufficient to describe the expected response to selection. While a sufficient condition for linearity is that the joint distribution of breeding and phenotypic values be bivariate normal (LW Chapter 8), selection generally causes the distribution of genotypic values to depart from normality (Chapters 16 and 24), creating at least slight departures from linear parent-offspring regressions. The selection response under strongly nonnormal distributions can be very complicated, depending on summary statistics of the underlying genetic architecture, which do not easily translate into standard (and measurable) variance components (Chapter 24).
 
 ---
 
-## chapter13_004 · Short-term Changes in the Mean: 1. The Breeder's Equation: Introduction / Response is the Change in Mean Breeding Value
+## chapter13_004 · SINGLE-GENERATION RESPONSE: THE BREEDER'S EQUATION / Response is the Change in Mean Breeding Value
+
+**[Figure]**
+
+> **Figure 13.1** · page 3 · source: `chapter13`
+>
+> ![Figure 13.1](../figures/fig_0044.png)
+>
+> Figure 13.1 The importance of linearity in the parent-offspring regression. If this regression is nonlinear, different subsets of the population with the same mean can have different offspring means. Suppose equal numbers of parents with values  $ z_a $ and  $ z_b $ are chosen. If we denote the expected value of offspring from parents with value  $ z_x $ by  $ E[z \mid z_x] $, the offspring mean in this case is given by  $ (E[z \mid z_a] + E[z \mid z_b]) / 2 $. In contrast, choosing parents all with value  $ (z_a + z_b) / 2 $ gives the same parental mean as in the case of mixed parents, and hence the same  $ S $, but the expected offspring mean is now  $ E[z \mid (z_a + z_b) / 2] $, which, as shown above, can deviate considerably from  $ E[z \mid z_a] + E[z \mid z_b] / 2 $ when nonlinearity is significant.
+
 
 Under the infinitesimal model and a linear parent-offspring regression, a key concept is that the response equals the mean breeding value of the selected parents. Recall that (non-inbred, sexually reproducing) parents pass along only a fraction of their total genotypic value, namely, their breeding value, A, to their offspring. Under the infinitesimal model, the expected offspring value is simply the average breeding values of its parents (LW Chapter 4).
 
@@ -51,7 +60,7 @@ The change in the mean value of their offspring (relative to the base population
 
 ---
 
-## chapter13_005 · Short-term Changes in the Mean: 1. The Breeder's Equation: Introduction / Response Under Sex-Dependent Parent-Offspring Regressions
+## chapter13_005 · SINGLE-GENERATION RESPONSE: THE BREEDER'S EQUATION / Response Under Sex-Dependent Parent-Offspring Regressions
 
 **[推导 Derivation]**
 
@@ -110,7 +119,7 @@ This expected response of a decrease in males and an increase in females is the 
 
 ---
 
-## chapter13_006 · Short-term Changes in the Mean: 1. The Breeder's Equation: Introduction / The Selection Intensity, $ \bar{\nu} $
+## chapter13_006 · SINGLE-GENERATION RESPONSE: THE BREEDER'S EQUATION / The Selection Intensity, $ \bar{\nu} $
 
 While the selection differential (S) is a convenient and simple measure of selection on the mean, it does not tell us the actual strength of selection. Consider selection acting on the same character in two different populations. In one, the largest 5% of measured individuals are allowed to reproduce, while in the second, the largest 25% reproduce. Clearly, selection is more intense in the first population. However, under truncation selection on a normally distributed trait, the selection differentials for these two populations are $ S_1 = 2.06\sigma_1 $ and $ S_2 = 1.27\sigma_2 $, respectively, where $ \sigma_k^2 $ is the phenotypic variance in population k (Equation 14.3a). Thus, if the second population is more variable than the first, it may have the larger selection differential even though it clearly experiences less intense selection.
 
@@ -136,7 +145,7 @@ The various forms of Equation 13.6b will prove to be useful starting points for 
 
 ---
 
-## chapter13_007 · Short-term Changes in the Mean: 1. The Breeder's Equation: Introduction / The Robertson-Price Identity, $ S = \sigma(w, z) $
+## chapter13_007 · SINGLE-GENERATION RESPONSE: THE BREEDER'S EQUATION / The Robertson-Price Identity, $ S = \sigma(w, z) $
 
 **[推导 Derivation]**
 
@@ -195,7 +204,7 @@ which relates the strength of association, $ \beta $, between trait value and fi
 
 ---
 
-## chapter13_008 · Short-term Changes in the Mean: 1. The Breeder's Equation: Introduction / Correcting for Reproductive Differences: Effective Selection Differentials
+## chapter13_008 · SINGLE-GENERATION RESPONSE: THE BREEDER'S EQUATION / Correcting for Reproductive Differences: Effective Selection Differentials
 
 In artificial selection experiments, S is usually estimated as the difference between the mean of the selected adults and the sample mean of the population before selection. However, selection need not stop at this stage. For example, strong artificial selection to increase a character might be countered by natural selection associated with a decrease in the fertility of individuals with extreme trait values. This is the simplest example of a partitioning of episodes of selection (multiple rounds of selection within the same generation), in this case a single episode of viability selection followed by fertility selection, which will be explored more broadly in Chapter 29.
 
@@ -222,11 +231,20 @@ Hence, $ S_e = 4.70 $, yielding an expected response of $ R = 0.3 \cdot 4.70 = 1
 
 ## chapter13_009 · Short-term Changes in the Mean: 1. The Breeder's Equation: Introduction / EXPANDING THE BASIC BREEDER'S EQUATION
 
+**[Figure]**
+
+> **Figure 13.2** · page 9 · source: `chapter13`
+>
+> ![Figure 13.2](../figures/fig_0045.png)
+>
+> Figure 13.2 The general selection problem: The ultimate goal is to predict the selection response in some response trait (whose values are denoted by y), based on the values of a potentially different—but genetically correlated—selected trait (whose values are denoted by z). The values of the selected trait are measured on one set of individuals (indexed by  $ x_i $). For example, the value  $ (z_x) $ of the selected trait in individual x may be an index that weights  $ x' $'s value for the response trait, as well as the values of the response trait in several of  $ x' $'s relatives. In the figure,  $ x_3 $ has the highest value of the selected trait, but instead of using  $ x_3 $ as a parent for the next generation (which would correspond to individual selection), we instead use a relative,  $ \mathcal{R} $, of  $ x_3 $, with o denoting an offspring from  $ \mathcal{R} $. The covariance required for predicting the mean change in the response trait is  $ \sigma(z_x, y_0) $, namely, the covariance between the selection trait value  $ (z_x) $ in individual x and the response trait value  $ (y_0) $ in the offspring of parent  $ \mathcal{R} $. Under our infinitesimal assumption that the expected value of an offspring is the average of the two parental breeding values, this covariance is also  $ \sigma[z_x, A_y(\mathcal{R})/2] $, half the covariance between the phenotypic value of the selection trait in x and the breeding value for the response trait in  $ x' $'s relative,  $ \mathcal{R} $.
+
+
 The basic breeder’s equation predicts the mean breeding value of the set of parents chosen to form the next generation because of their exceptional phenotypic values. However, breeders, experimentalists, and natural selection all may use additional information in determining the fitness of individuals. For example, one may measure traits in one set of individuals and then use this information to predict the mean breeding value for a second set of related individuals that will be the actual parents of the next generation. One such setting is family selection, wherein one measures the values of a number of family members (for example, by growing seed from a family over a number of environments) and, based on their means, selects the exceptional families. Remnant seeds from these families (i.e., seeds whose phenotypes are not scored) are then used to form the next generation. The prediction of the selection response now involves predicting the breeding value of a family member given the mean of other family members. The breeder's equation is easily extended to these more complex settings, as we now demonstrate. The structure of the general selection problem is given by Figure 13.2.
 
 ---
 
-## chapter13_010 · Short-term Changes in the Mean: 1. The Breeder's Equation: Introduction / Accuracy
+## chapter13_010 · EXPANDING THE BASIC BREEDER'S EQUATION / Accuracy
 
 Suppose our goal is increased milk production. The top females are easy to score, but with no selection on males (who do not display the trait), Equation 13.5 gives the selection response as $ h^{2}(S/2) $. Selection on males is made possible, however, by choosing brothers of the top-scoring females as the sires for the next generation, as breeding values are correlated between relatives. Predicting selection response in this case depends upon the genetic covariance between the phenotypic value $ (z_{x}) $ of individual x and the phenotypic value $ (z_{o}) $ in a relative $ (o) $ of x. Here, $ z_{x} $ is milk-yield in female x, whose relative, R (her brother), is then used as a parent for the next generation and whose resulting offspring are denoted by o (Figure 13.2).
 
@@ -306,7 +324,7 @@ The greatest selection response occurs if we take the selection variable $ (z_x)
 
 > **Example 13.4** · ref: `13.4` · source: `chapter13_010.json` · blocks 9–9
 >
-> Example 13.4. Progeny testing uses the mean of an individual's offspring (here, all are assumed to be half-sibs) to predict its breeding value. In order to predict the selection response using this scheme, we first need the correlation between the mean $ (\overline{z}_{o}) $ of n half-sib offspring and the breeding value (A) of the common parent. This is given by $$ \rho(\overline{z}_{o},A)=\frac{\sigma(\overline{z}_{o},A)}{\sigma_{A}\cdot\sigma(\overline{z}_{o})} $$
+> Example 13.4. Progeny testing uses the mean of an individual's offspring (here, all are assumed to be half-sibs) to predict its breeding value. In order to predict the selection response using this scheme, we first need the correlation between the mean $ (\overline{z}_{o}) $ of n half-sib offspring and the breeding value (A) of the common parent. This is given by $$ \rho(\overline{z}_{o},A)=\frac{\sigma(\overline{z}_{o},A)}{\sigma_{A}\cdot\sigma(\overline{z}_{o})} $$ To obtain this, first note that the covariance between the parent and its offspring is $ \sigma_{A}^{2}/2 $ $$ \sigma(\overline{z}_{o},A)=\frac{1}{n}\sum_{i=1}^{n}\sigma\left(z_{i},A\right)=\frac{1}{n}n\sigma(z_{i},A)=\sigma_{A}^{2}/2 $$ The expression for $ \sigma^2(\overline{z}_o) $ requires a bit more bookkeeping, as sips are correlated. Assuming half-sibs and that there are no shared environmental effects, $ \sigma(z_i, z_j) = \sigma_A^2/4 $ (for $ i \neq j $), yielding $$ \begin{align*}\sigma^{2}(\overline{z}_{o})&=\sigma\left(\frac{1}{n}\sum_{i=1}^{n}z_{i},\frac{1}{n}\sum_{j=1}^{n}z_{j}\right)=\frac{1}{n^{2}}n\sigma(z_{i},z_{i})+\frac{n(n-1)}{n^{2}}\sigma(z_{i},z_{j})\\&=\frac{\sigma_{z}^{2}}{n}+\left(1-\frac{1}{n}\right)\frac{\sigma_{A}^{2}}{4}=\frac{\sigma_{z}^{2}}{4n}\left[4+(n-1)h^{2}\right]\end{align*} $$ Combining these results yields $$ \rho(\overline{z}_{o},A)=\frac{\sigma_{A}^{2}/2}{\sigma_{A}\sigma_{z}\sqrt{\frac{4+(n-1)h^{2}}{4n}}}=\frac{\sigma_{A}}{\sigma_{z}}\sqrt{\frac{4n/4}{4+(n-1)h^{2}}}=\sqrt{\frac{h^{2}n}{4+(n-1)h^{2}}}=\sqrt{\frac{n}{n+\gamma}} $$ where $ \gamma = (4 - h^2)/h^2 $. For large $ n $, note that the accuracy approaches one. Substituting this result into Equation 13.11c, the response to selection becomes $$ R=\bar{\imath}\rho(\overline{z}_{o},A)\sigma_{A}=\bar{\imath}\sigma_{A}\sqrt{\frac{n}{n+\gamma}}=\bar{\imath}\sigma_{A}\sqrt{\frac{h^{2}n}{4+h^{2}(n-1)}} $$ Recalling Equation 13.6b, the ratio of response for progeny testing $ (R_{pt}) $ to mass selection $ (R_{ms}) $ becomes $$ \begin{aligned}\frac{R_{pt}}{R_{ms}}&=\frac{\bar{i}_{pt}\rho(\overline{z}_{o},A)\sigma_{A}}{\bar{i}_{ms}\rho(z,A)\sigma_{A}}=\left(\frac{\bar{i}_{pt}}{\bar{i}_{ms}}\right)\frac{1}{h}\sqrt{\frac{h^{2}n}{4+h^{2}(n-1)}}\\&=\left(\frac{\bar{i}_{pt}}{\bar{i}_{ms}}\right)\sqrt{\frac{n}{4+h^{2}(n-1)}}\end{aligned} $$ The selection intensity under progeny testing is likely to be lower, as it is easier (and cheaper) to score a phenotype than to progeny test. When the intensities are equal, the ratio of responses approaches 1/h for large n. Assuming $ \bar{\tau}_{pt} = \bar{\tau}_{ms} $, progeny testing gives a larger response when $ \rho(\overline{z}_{o}, A) > \rho(z, A) $, or when $$ \sqrt{\frac{n}{4+h^{2}(n-1)}}>1\quad or\quad n>\frac{4-h^{2}}{1-h^{2}} $$ In particular, n > 4, 5, and 7 is required for $ h^2 = 0.1 $, 0.25, and 0.5, respectively, for progeny testing to give a larger response. Hence, when the heritability of a trait is high, more offspring must be scored for the accuracy of progeny selection to exceed that of mass selection. A high heritability implies that an individual's phenotype is a good predictor of its breeding value, which requires increasingly more observations of an indirect measure (offspring values) to obtain higher accuracy than the simple direct measure of the individual phenotype.
 
 
 ---
@@ -327,7 +345,7 @@ In particular, n > 4, 5, and 7 is required for $ h^2 = 0.1 $, 0.25, and 0.5, res
 
 **[示例 Example]**
 
-> **Example 13.5** · ref: `13.5` · source: `chapter13_011.json` · blocks 6–6
+> **Example 13.5** · ref: `13.5` · source: `chapter13_011.json` · blocks 6–10
 >
 > Example 13.5. Suppose a character of interest is extremely hard to measure in live individuals. For example, one cannot directly select on individuals that have to be killed to measure a trait such as meat quality. Similarly, consider traits expressed in only one sex, such as milk production. How can we select on males if they do not express the trait themselves? One solution to both of these problems is sib selection (Chapter 21), or using sibs of exceptional individuals as the parents for the next generation (e.g., choosing males based on the milk production of their sisters).
 > 
@@ -342,7 +360,7 @@ In particular, n > 4, 5, and 7 is required for $ h^2 = 0.1 $, 0.25, and 0.5, res
 
 ---
 
-## chapter13_012 · Short-term Changes in the Mean: 1. The Breeder's Equation: Introduction / Reducing Environmental Noise: Stratified Mass Selection
+## chapter13_012 · EXPANDING THE BASIC BREEDER'S EQUATION / Reducing Environmental Noise: Stratified Mass Selection
 
 Accuracy (and hence response) can also be increased by using designs that reduce environmental noise. One approach is Gardner's (1961) method of stratified mass selection: a population is stratified into a number of blocks (potentially representing different microenvironments) and selection occurs within each block. The motivation behind Gardner's method was to improve individual selection for yield in maize. At the time of his paper, selection based solely on the observed yield of individual plants resulted in a very poor response, largely because environmental effects overwhelm genetic differences, resulting in very small $ h^{2} $ values. Simply by selecting for plants within blocks of presumably similar environments, Gardner was able to use mass selection to obtain fairly significant gains (about 4% per year). Stratified mass selection is an important component in Burton's (1974, 1982) method of recurrent restricted phenotypic selection (RRPS) for turf grass breeding.
 
@@ -413,7 +431,7 @@ Thus, within-block selection can significantly improve the selection response wh
 
 ---
 
-## chapter13_013 · Short-term Changes in the Mean: 1. The Breeder's Equation: Introduction / Reducing Environmental Noise: Repeated-Measures Selection
+## chapter13_013 · EXPANDING THE BASIC BREEDER'S EQUATION / Reducing Environmental Noise: Repeated-Measures Selection
 
 The repeated-measures design is a second example of increasing accuracy (and response) by providing some control over environmental noise. Here the character of interest is measured n different times on each individual, and selection occurs on $ \overline{z}_{i} $, the mean value for individual i. For example, if we are considering the number of days to ripening, a better approach is to use a collection of fruit, rather than a single one, to assign a value to an individual tree. Repeated-measures selection is a common design in behavioral experiments, wherein a single measure (such as wheel-running speed) may vary greatly within an individual over time.
 
@@ -505,7 +523,7 @@ Finally, we note that our analysis of repeated-measures selection assumes that t
 
 **[示例 Example]**
 
-> **Example 13.6** · ref: `13.6` · source: `chapter13_013.json` · blocks 8–8
+> **Example 13.6** · ref: `13.6` · source: `chapter13_013.json` · blocks 7–10
 >
 > Example 13.6. As an example of the consequences of basing selection decisions on single versus multiple measurements, consider the following data set, which was simulated by assuming a character with $ h^2 = 0.1 $, $ \sigma_z^2 = 100 $, $ \mu = 50 $, and $ r = 0.2 $. The simulated values for 20 individuals for either a single measurement, $ z(1) $, or the average of five measurements, $ \overline{z}(5) $, are
 > 
@@ -531,7 +549,7 @@ Finally, we note that our analysis of repeated-measures selection assumes that t
 
 ---
 
-## chapter13_014 · Short-term Changes in the Mean: 1. The Breeder's Equation: Introduction / Adjustments for Overlapping Generations
+## chapter13_014 · EXPANDING THE BASIC BREEDER'S EQUATION / Adjustments for Overlapping Generations
 
 Thus far, we have been assuming that we are examining nonoverlapping generations, with all parents reproducing in a discrete single generation. However, domesticated animals, perennial plants, and many species in nature can have offspring over multiple years and for varying life spans. In such cases, generations overlap and the selection response should be considered on an absolute time scale (typically years) rather than a per-generation scale. To express the breeder's equation in terms of a yearly rate of response, we first need to compute the generation intervals, $ L_x $ (the average age of parents when progeny are born), for both sexes.
 
@@ -548,7 +566,7 @@ where $ \bar{i}_{s} $ and $ \bar{i}_{d} $ denote the selection intensities of th
 
 **[示例 Example]**
 
-> **Example 13.7** · ref: `13.7` · source: `chapter13_014.json` · blocks 2–2
+> **Example 13.7** · ref: `13.7` · source: `chapter13_014.json` · blocks 2–3
 >
 > Example 13.7. Compute the sire, $ L_{s} $, and dam, $ L_{d} $, generation intervals for the following age structure:
 > 
@@ -563,7 +581,7 @@ where $ \bar{i}_{s} $ and $ \bar{i}_{d} $ denote the selection intensities of th
 
 ---
 
-## chapter13_015 · Short-term Changes in the Mean: 1. The Breeder's Equation: Introduction / Maximizing Response Under the Breeder's Equation
+## chapter13_015 · EXPANDING THE BASIC BREEDER'S EQUATION / Maximizing Response Under the Breeder's Equation
 
 **[推导 Derivation]**
 
@@ -595,7 +613,7 @@ Equation 13.21a is also highly relevant to genomic selection (wherein high-densi
 
 **[示例 Example]**
 
-> **Example 13.8** · ref: `13.8` · source: `chapter13_015.json` · blocks 7–7
+> **Example 13.8** · ref: `13.8` · source: `chapter13_015.json` · blocks 7–9
 >
 > Example 13.8. As an example of the tradeoff between accuracy and generation intervals, consider a trait with $ h^2 = 0.25 $ and selection only on sires (fathers). One scheme is to simply select on the sire's phenotype, which results in a sire generation interval of (say) 1.5 years. Alternatively, one might perform progeny testing to improve the accuracy of the selected sires, which results in an increase of the sire generation interval to (say) 2.5 years. Suppose that in both cases, the dam (mother) interval is constant at 1.5 years. Because the additive-genetic variation is the same in both schemes, the ratio of response under mass selection to response under progeny testing becomes $$ \frac{r_{y}(sire\ phenotype)}{r_{y}(progeny\ mean)}=\left(\frac{\overline{i}_{sp}}{\overline{i}_{pt}}\right)\frac{\rho(A,sire\ phenotype)/(L_{s}+L_{d})}{\rho(A,progeny\ mean)/(L_{s}+L_{d})} $$ where $ \bar{\imath}_{sp} $ and $ \bar{\imath}_{pt} $ are the selection intensities under individual selection (sire phenotype) and progeny testing, which can differ due to costs in scoring. From Equation 13.11e, $ \rho(A,\text{sire phenotype}) = h = \sqrt{0.25} = 0.5 $, while the generation interval becomes $ L_s + L_d = 1.5 + 1.5 = 3 $. With progeny testing, Example 13.4 yields $$ \rho(A,progeny mean)=\sqrt{\frac{n}{n+\gamma}}=\sqrt{\frac{n}{n+15}} $$ as $ \gamma = (4 - h^{2})/h^{2} = 15 $, with a total generation interval of $ L_{s} + L_{d} = 2.5 + 1.5 = 4 $.
 > 
@@ -606,13 +624,13 @@ Equation 13.21a is also highly relevant to genomic selection (wherein high-densi
 
 ---
 
-## chapter13_016 · Short-term Changes in the Mean: 1. The Breeder's Equation: Introduction / Maximizing the Economic Rate of Response
+## chapter13_016 · EXPANDING THE BASIC BREEDER'S EQUATION / Maximizing the Economic Rate of Response
 
 Example 13.8 hints at another important feature of the selection response, economics. Notice that by scoring more than 12 offspring, we can obtain a larger expected rate of response using progeny testing (assuming equal selection intensities). Why not simply score 30 progeny, giving a 122% rate of response relative to simple mass selection? The economic reality relates to the cost of a raising and scoring a large number of progeny. Much of applied breeding is concerned with the economic rate of response—trying to maximize the rate of response per unit of capital, although this point is often underappreciated, even by some breeders. Along these same lines, much of current selection in animal breeding is for increased efficiency (conversion of resources into desirable traits), and hence greater economic gain per unit of input at the production level. Weller (1994) presented a nice development of how to incorporate economics into breeding.
 
 ---
 
-## chapter13_017 · Short-term Changes in the Mean: 1. The Breeder's Equation: Introduction / Mean- Versus Variance-Standardized Response
+## chapter13_017 · EXPANDING THE BASIC BREEDER'S EQUATION / Mean- Versus Variance-Standardized Response
 
 **[推导 Derivation]**
 
@@ -650,6 +668,33 @@ Much of modern animal breeding (and a growing amount of plant breeding) is based
 
 ## chapter13_019 · Short-term Changes in the Mean: 1. The Breeder's Equation: Introduction / THE MULTIVARIATE BREEDER'S EQUATION
 
+**[Table]**
+
+> **Table 13.1** · `13.1` · page 24 · source: `chapter13_019`
+> Table 13.1 Alternate versions and extensions of the basic breeder's equation. Refer to the specific equation number for discussion and explanation of the symbols.
+>
+> Version | Expression | Equation Number
+> --- | --- | ---
+> Basic breeder's equation | $ R = h^{2}S $ | 13.1
+> Sex-specific response (sex s) | $ R_{s} = b_{s,fa}S_{fa} + b_{s,mo}S_{mo} $ | 13.4
+> Selection intensity | $ R = h^{2}\bar{i}\sigma_{z} = \bar{i}h\sigma_{A} = \sigma_{A}^{2}\bar{i}/\sigma_{z} $ | 13.6b
+> Response (in trait y, selection using x) | $ R_{y} = \frac{\sigma(x,y)}{\sigma_{x}^{2}}S_{x} = \frac{\sigma(x,y)}{\sigma_{x}}\bar{i}_{x} $ | 13.10b
+> Accuracy (in trait y, selection using x) | $ R_{y} = \bar{i}_{x}\sigma_{y}\rho(x,y) $ | 13.11a
+> Accuracy (breeding values) | $ R = \bar{i}_{x}\rho(x,A)\sigma_{A} $ | 13.11c
+> Rate of response (per year) | $ r_{year} = \left(\frac{\bar{i}_{s} + \bar{i}_{d}}{L_{s} + L_{d}}\right)h\sigma_{A} $ | 13.20
+> Rate of response using accuracy | $ r_{year} = \left(\frac{\bar{i}_{s} + \bar{i}_{d}}{L_{s} + L_{d}}\right)\rho(A,x)\sigma_{A} $ | 13.21
+> Variance-standardized response | $ R/\sigma_{z} = h^{2}\bar{i} $ | 13.22a
+> Mean-standardized response | $ R/\mu_{z} = \bar{i}hCV_{A} $ | 13.22b
+> Robertson's secondary theorem |  | 
+> 1966 version | $ R = \sigma(w,A_{z}) $ | 13.7b
+> 1968 version | $ R = \sigma(A_{w},A_{z}) $ | 6.24a
+> Univariate Lande equation | $ R = \sigma_{A}^{2}\beta $ | 13.8c
+>  | $ R = \sigma_{A}^{2}\frac{\partial\ln\overline{W}}{\partial\mu} $ | 13.27a
+> Multivariate breeder's equation | $ R = \mathbf{GP}^{-1}\mathbf{S} $ | 13.23b
+> Multivariate Lande equation | $ R = \mathbf{G}\beta $ | 13.26a
+>  | $ R = \mathbf{G}\frac{\partial\ln\overline{W}}{\partial\mu} $ | 13.27c
+
+
 **[推导 Derivation]**
 
 Expressing the heritability in terms of additive-genetic and phenotypic variances, the breeder’s equation can be written as
@@ -679,7 +724,7 @@ Here, we briefly consider a few features of Equation 13.23b; we examine its full
 
 ---
 
-## chapter13_020 · Short-term Changes in the Mean: 1. The Breeder's Equation: Introduction / Response With Two Traits
+## chapter13_020 · THE MULTIVARIATE BREEDER'S EQUATION / Response With Two Traits
 
 **[推导 Derivation]**
 
@@ -712,7 +757,7 @@ with an analogous expression for $ R_{2} $. The breeder's equation is recovered 
 
 ---
 
-## chapter13_021 · Short-term Changes in the Mean: 1. The Breeder's Equation: Introduction / Accounting for Phenotypic Correlations: The Selection Gradient
+## chapter13_021 · THE MULTIVARIATE BREEDER'S EQUATION / Accounting for Phenotypic Correlations: The Selection Gradient
 
 **[推导 Derivation]**
 
@@ -741,7 +786,7 @@ The within-generation change, $S_i$, in the mean of trait $i$ following selectio
 
 ---
 
-## chapter13_022 · Short-term Changes in the Mean: 1. The Breeder's Equation: Introduction / Accounting for Genetic Correlations: The Lande Equation
+## chapter13_022 · THE MULTIVARIATE BREEDER'S EQUATION / Accounting for Genetic Correlations: The Lande Equation
 
 **[推导 Derivation]**
 
@@ -785,7 +830,7 @@ The Lande equation shows that when the multivariate breeder's equation holds, we
 
 ---
 
-## chapter13_023 · Short-term Changes in the Mean: 1. The Breeder's Equation: Introduction / Selection Gradients and Mean Population Fitness
+## chapter13_023 · THE MULTIVARIATE BREEDER'S EQUATION / Selection Gradients and Mean Population Fitness
 
 **[推导 Derivation]**
 
@@ -840,33 +885,6 @@ The additive variance in fitness that remains unaccounted for after the effects 
 
 
 In theory, if one had an estimate of $ \sigma_A^2(w) $ in hand (Chapter 20), the significance of a set, z, of traits can be determined. If these account for most of the variation, there is little need to consider additional traits. If these account for only a small fraction, important traits are missing.
-
-**[Table]**
-
-> **Table 13.1** · `13.1` · page 24 · source: `chapter13_023`
-> Table 13.1 Alternate versions and extensions of the basic breeder's equation. Refer to the specific equation number for discussion and explanation of the symbols.
->
-> Version | Expression | Equation Number
-> --- | --- | ---
-> Basic breeder's equation | $ R = h^{2}S $ | 13.1
-> Sex-specific response (sex s) | $ R_{s} = b_{s,fa}S_{fa} + b_{s,mo}S_{mo} $ | 13.4
-> Selection intensity | $ R = h^{2}\bar{i}\sigma_{z} = \bar{i}h\sigma_{A} = \sigma_{A}^{2}\bar{i}/\sigma_{z} $ | 13.6b
-> Response (in trait y, selection using x) | $ R_{y} = \frac{\sigma(x,y)}{\sigma_{x}^{2}}S_{x} = \frac{\sigma(x,y)}{\sigma_{x}}\bar{i}_{x} $ | 13.10b
-> Accuracy (in trait y, selection using x) | $ R_{y} = \bar{i}_{x}\sigma_{y}\rho(x,y) $ | 13.11a
-> Accuracy (breeding values) | $ R = \bar{i}_{x}\rho(x,A)\sigma_{A} $ | 13.11c
-> Rate of response (per year) | $ r_{year} = \left(\frac{\bar{i}_{s} + \bar{i}_{d}}{L_{s} + L_{d}}\right)h\sigma_{A} $ | 13.20
-> Rate of response using accuracy | $ r_{year} = \left(\frac{\bar{i}_{s} + \bar{i}_{d}}{L_{s} + L_{d}}\right)\rho(A,x)\sigma_{A} $ | 13.21
-> Variance-standardized response | $ R/\sigma_{z} = h^{2}\bar{i} $ | 13.22a
-> Mean-standardized response | $ R/\mu_{z} = \bar{i}hCV_{A} $ | 13.22b
-> Robertson's secondary theorem |  | 
-> 1966 version | $ R = \sigma(w,A_{z}) $ | 13.7b
-> 1968 version | $ R = \sigma(A_{w},A_{z}) $ | 6.24a
-> Univariate Lande equation | $ R = \sigma_{A}^{2}\beta $ | 13.8c
->  | $ R = \sigma_{A}^{2}\frac{\partial\ln\overline{W}}{\partial\mu} $ | 13.27a
-> Multivariate breeder's equation | $ R = \mathbf{GP}^{-1}\mathbf{S} $ | 13.23b
-> Multivariate Lande equation | $ R = \mathbf{G}\beta $ | 13.26a
->  | $ R = \mathbf{G}\frac{\partial\ln\overline{W}}{\partial\mu} $ | 13.27c
-
 
 **[推导 Derivation]**
 

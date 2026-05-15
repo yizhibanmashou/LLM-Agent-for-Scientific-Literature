@@ -2,7 +2,7 @@
   "id": "chapter22_029",
   "metadata": {
     "chapter": "chapter22",
-    "section": "Associative Effects: Competition, Social Interactions, Group and Kin Selection: Introduction",
+    "section": "BLUP ESTIMATION OF DIRECT AND ASSOCIATIVE EFFECTS",
     "subsections": [
       "Details: Environmental Group Effects and the Covariance Structure of e"
     ],
@@ -12,10 +12,10 @@
       "22.41"
     ],
     "table_references": [],
-    "section_level_1": "Associative Effects: Competition, Social Interactions, Group and Kin Selection: Introduction",
+    "section_level_1": "BLUP ESTIMATION OF DIRECT AND ASSOCIATIVE EFFECTS",
     "section_level_2": "Details: Environmental Group Effects and the Covariance Structure of e",
     "heading_path": [
-      "Associative Effects: Competition, Social Interactions, Group and Kin Selection: Introduction",
+      "BLUP ESTIMATION OF DIRECT AND ASSOCIATIVE EFFECTS",
       "Details: Environmental Group Effects and the Covariance Structure of e"
     ],
     "display_heading": "Details: Environmental Group Effects and the Covariance Structure of e"
@@ -28,6 +28,14 @@
     {
       "type": "example",
       "content": "[[SEE_EXAMPLE:22.13]]"
+    },
+    {
+      "type": "discussion",
+      "content": "With the same number of individuals in all groups, the only two estimable parameters in the environmental covariance matrix are $ \\rho $ and $ \\sigma^2(e) $. With groups of variable size (either by design or simply through the loss of data), the residual variances and covariances change with $ n $ (Equation 22.23b). In this case, the residual covariance matrix would be specified in terms of the three environmental variance/covariance terms, $ \\sigma^2(E_d), \\sigma^2(E_s) $, and $ \\sigma(E_d, E_s) $."
+    },
+    {
+      "type": "discussion",
+      "content": "Provided $ \\rho > 0 $, an equivalent approach is simply to fit a random group effect (Bergsema et al. 2008; Ellen et al. 2008). Example 22.14 works through an example. This approach is computationally less demanding than jointly estimating $ \\sigma^2(e) $ and $ \\rho $ in an R matrix. However, if the covariance, $ \\sigma(E_d, E_s) $, between environmental direct and social effects is sufficiently negative, $ \\rho $ can be negative (Equation 22.23b) and the simple random group-effects model fails, as the group variance $ \\sigma^2(g_p) $ must be positive. As Equation 22.23b suggests, as group size increases, the contribution from $ \\sigma^2(E_s) $ eventually dominates $ \\rho $, making it positive. Thus, for a design with large group size, fitting a random group effect will often suffice."
     },
     {
       "type": "example",

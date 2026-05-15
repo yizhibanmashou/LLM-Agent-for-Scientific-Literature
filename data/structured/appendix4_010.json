@@ -2,7 +2,7 @@
   "id": "appendix4_010",
   "metadata": {
     "chapter": "appendix4",
-    "section": "Appendix: Introduction",
+    "section": "BONFERRONI CORRECTIONS AND THEIR EXTENSIONS",
     "subsections": [
       "Hommel's Method"
     ],
@@ -12,10 +12,10 @@
     "table_references": [
       "inline_1"
     ],
-    "section_level_1": "Appendix: Introduction",
+    "section_level_1": "BONFERRONI CORRECTIONS AND THEIR EXTENSIONS",
     "section_level_2": "Hommel's Method",
     "heading_path": [
-      "Appendix: Introduction",
+      "BONFERRONI CORRECTIONS AND THEIR EXTENSIONS",
       "Hommel's Method"
     ],
     "display_heading": "Hommel's Method",
@@ -26,11 +26,31 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "Hommel's method (1988) is slightly more complicated, but it is more powerful than the Simes-Hochberg correction (Hommel 1989). Under Hommel's method, we reject all hypotheses whose p values are less than or equal to $ \\pi/k^{*} $, where $$ k^{*}=\\max_{i}\\left(p(n-i+j)>\\pi\\frac{j}{i}\\right)\\quad for all j=1,\\cdots,i $$"
+      "content": "Hommel's method (1988) is slightly more complicated, but it is more powerful than the Simes-Hochberg correction (Hommel 1989). Under"
     },
     {
       "type": "example",
       "content": "[[SEE_EXAMPLE:A4.4]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Example A4.4 shows how all three of these methods are applied."
+    },
+    {
+      "type": "discussion",
+      "content": "For an experiment-wide level of significance of $ \\pi = 0.05 $, the Bonferroni correction is $ \\alpha = 0.05 / 10 = 0.005 $. Hence, using a strict Bonferroni, we reject hypotheses 1 and 2, and we fail to reject (i.e., we accept) 3 through 10. To apply sequential methods, we use the associated $ \\pi/(n-i+1) $ values for $ \\pi = 0.05 $, which are given above in the table. Under Holm's method, $ p(i) \\leq \\pi/(n-i+1) $ for $ i \\leq 3 $, and hence we reject $ H(1) $ through $ H(3) $ and accept the others. Under Simes-Hochberg, we fail to reject $ H(7) $ through $ H(10) $ [as $ p(i) > \\pi/(n-i+1) $], but because $ p(6) = 0.009 \\leq \\pi/(n-i+1) = 0.010 $, we reject $ H(6) $ through $ H(1) $."
+    },
+    {
+      "type": "discussion",
+      "content": "To apply Hommel's method, we reject all hypotheses whose $p$ values are less than or equal to $\\pi/k^{*}$, where $$ k^{*}=\\max_{i}\\left(p(n-i+j)>\\pi\\frac{j}{i}\\right)\\quad for all j=1,\\cdots,i $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Solving $k^{*}$ requires an iterative approach, as follows. First, start with $i = 1$. Here, $(i = 1, j = 1)$, $p(10) = 0.5350 > \\pi \\cdot (1/1) = 0.05$. Now let us try $i = 2$, which yields (for $j = 1, 2)$, $p(9) = 0.1055 > \\pi(1/2) = 0.025$ and (as above) $p(10) > \\pi$. Hommel's condition still holds for $i = 3$, as $p(8) = 0.025 > \\pi \\cdot (1/3) = 0.0167$, $p(9) > \\pi \\cdot (2/3) = 0.033$, and $p(10) > \\pi$. However, it fails for $i = 4$, as while it holds for $p(7) = 0.175 > \\pi \\cdot (1/4) = 0.0125$, it fails for $(i = 4, j = 2)$ because $p(8) = 0.025 = \\pi \\cdot (1/2)$. Hence, $k^{*} = 3$ (because Hommel's condition holds for $k = 3$ but not for $k = 4$), and we reject all hypotheses whose $p$ values are"
+    },
+    {
+      "type": "discussion",
+      "content": "$ \\leq 0.05/3 = 0.0167 $, which means $ H(1) $ through $ H(6) $. Note that a strict Bonferroni rejected the fewest null hypotheses and Simes-Hochberg and Hommel's rejected the most null hypotheses (i.e., declared them to be significant), and all methods controlled the experiment-wide false-positive rate at 0.05."
     }
   ]
 }
