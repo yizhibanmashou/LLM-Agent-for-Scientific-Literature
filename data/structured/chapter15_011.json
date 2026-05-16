@@ -47,11 +47,11 @@
     },
     {
       "type": "discussion",
-      "content": "An example of an apparent maternally induced reversed response was seen by Falconer (1960b, 1965) in his selection experiments on litter size in mice. This character shows a negative maternal effect, with $ m $ and $ h^2 $ estimated to be $ -0.13 $ and $ 0.11 $, respectively. Because selection for litter size occurs only in females, Equation 15.27b implies that a reversed response in the first generation is expected (as $ 1 - \\sqrt{1 + 0.11} \\simeq -0.05 > m = -0.13 $). As Figure 15.3 shows, a reversed response was indeed observed."
+      "content": "An example of an apparent maternally induced reversed response was seen by Falconer (1960b, 1965) in his selection experiments on litter size in mice. This character shows a negative maternal effect, with $ m $ and $ h^2 $ estimated to be $ -0.13 $ and $ 0.11 $, respectively. Because selection for litter size occurs only in females, Equation 15.27b implies that a reversed response in the first generation is expected (as $ 1 - \\sqrt{1 + 0.11} \\simeq -0.05 > m = -0.13 $). As [[SEE_FIGURE:15.3]] shows, a reversed response was indeed observed."
     },
     {
       "type": "discussion",
-      "content": "An observed reversed response can be misleading because the permanent response is expected to have the same sign as $S$, while the initial observed response also includes a transient component that (in this case) is of the opposite sign and of a larger magnitude than the permanent response component. It may take several generations for this transient component to decay to the point that the actual genetic changes are revealed (Figure 15.3). For a single generation of selection, the expected genetic change is $2S\\, h^{2}/[(2-m)(1-m)]$, as shown by Equation 15.33 (below)."
+      "content": "An observed reversed response can be misleading because the permanent response is expected to have the same sign as $S$, while the initial observed response also includes a transient component that (in this case) is of the opposite sign and of a larger magnitude than the permanent response component. It may take several generations for this transient component to decay to the point that the actual genetic changes are revealed ([[SEE_FIGURE:15.3]]). For a single generation of selection, the expected genetic change is $2S\\, h^{2}/[(2-m)(1-m)]$, as shown by Equation 15.33 (below)."
     },
     {
       "type": "derivation",
@@ -63,7 +63,11 @@
     },
     {
       "type": "derivation",
-      "content": "How much of this response is permanent? Suppose selection ends at generation $ t $, and suppose we denote by $ \\tau $ the number of generations since selection was stopped. Iterating Equation 15.25 with $ S(t) = S $, $ S(t + \\tau) = 0 $ for $ \\tau \\geq 1 $ yields [[SEE_FORMULA:15.30]] where $ \\Delta\\mu_{z}(t) $ is given by Equation 15.28a. Thus, the selection response continues even after the cessation of selection (Figure 15.3), a feature that Kirkpatrick and Lande (1989) called evolutionary momentum. Using Equation 15.5b to sum Equation 15.30 over $ \\tau $ yields the cumulative response following the last generation of selection [[SEE_FORMULA:15.31]] which, as $ \\tau \\rightarrow \\infty $, converges to [[SEE_FORMULA:15.32]]"
+      "content": "How much of this response is permanent? Suppose selection ends at generation $ t $, and suppose we denote by $ \\tau $ the number of generations since selection was stopped. Iterating Equation 15.25 with $ S(t) = S $, $ S(t + \\tau) = 0 $ for $ \\tau \\geq 1 $ yields [[SEE_FORMULA:15.30]] where $ \\Delta\\mu_{z}(t) $ is given by Equation 15.28a. Thus, the selection response continues even after the cessation of selection ([[SEE_FIGURE:15.3]]), a feature that Kirkpatrick and Lande (1989) called evolutionary momentum. Using Equation 15.5b to sum Equation 15.30 over $ \\tau $ yields the cumulative response following the last generation of selection [[SEE_FORMULA:15.31]] which, as $ \\tau \\rightarrow \\infty $, converges to [[SEE_FORMULA:15.32]]"
+    },
+    {
+      "type": "figure",
+      "content": "[[FIGURE:15.4]]"
     },
     {
       "type": "derivation",
@@ -71,11 +75,11 @@
     },
     {
       "type": "derivation",
-      "content": "On the other hand, if maternal effects are either negative $ (m < 0) $ or sufficiently large [[SEE_FORMULA:15.34b]] the response will continue for a few generations following the relaxation of selection. This occurs by the transient component of response decaying away to reveal the actual permanent response due to changes in breeding values. Figure 15.4 plots some sample trajectories."
+      "content": "On the other hand, if maternal effects are either negative $ (m < 0) $ or sufficiently large [[SEE_FORMULA:15.34b]] the response will continue for a few generations following the relaxation of selection. This occurs by the transient component of response decaying away to reveal the actual permanent response due to changes in breeding values. [[SEE_FIGURE:15.4]] plots some sample trajectories."
     },
     {
       "type": "discussion",
-      "content": "In summary, the presence of maternal effects introduces several complications even under this simplest of models (in which the direct and maternal trait are the same). First, predicting the response to selection in a given generation requires, not only knowledge of the inheritance parameters (m, $ h^2 $) and current selection differential, but also knowledge of previous selection, namely, $ \\Delta\\mu_z(t-1) $ and $ S_{mo}(t-1) $. Second, after selection is stopped, the mean is likely to continue to change due to lag effects (e.g., Figure 15.4). If $ m < 0 $, the response will continue, while if $ m > 0 $, the response may either continue or partly decay. This clearly causes problems if we are trying to estimate the nature of selection acting on a character by comparing changes in means between generations. For example, an observed cross-generation decrease in a character could be due to four very different causes: (i) $ S < 0 $, (ii) $ S > 0 $ and there is a reversed response due to maternal effects, (iii) there is no selection in the observed generation but a previous history of $ S > 0 $, with the decrease in mean due to a positive maternal effect (reflecting a decay in response), or (iv) there is no current selection but a previous history of $ S < 0 $, with the decrease in mean due to a negative (or sufficiently large positive) maternal effect (reflecting a continuation of response)."
+      "content": "In summary, the presence of maternal effects introduces several complications even under this simplest of models (in which the direct and maternal trait are the same). First, predicting the response to selection in a given generation requires, not only knowledge of the inheritance parameters (m, $ h^2 $) and current selection differential, but also knowledge of previous selection, namely, $ \\Delta\\mu_z(t-1) $ and $ S_{mo}(t-1) $. Second, after selection is stopped, the mean is likely to continue to change due to lag effects (e.g., [[SEE_FIGURE:15.4]]). If $ m < 0 $, the response will continue, while if $ m > 0 $, the response may either continue or partly decay. This clearly causes problems if we are trying to estimate the nature of selection acting on a character by comparing changes in means between generations. For example, an observed cross-generation decrease in a character could be due to four very different causes: (i) $ S < 0 $, (ii) $ S > 0 $ and there is a reversed response due to maternal effects, (iii) there is no selection in the observed generation but a previous history of $ S > 0 $, with the decrease in mean due to a positive maternal effect (reflecting a decay in response), or (iv) there is no current selection but a previous history of $ S < 0 $, with the decrease in mean due to a negative (or sufficiently large positive) maternal effect (reflecting a continuation of response)."
     }
   ]
 }

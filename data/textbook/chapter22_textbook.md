@@ -53,7 +53,7 @@ A simple example will introduce Griffing's idea. As shown in Figure 22.1, consid
 
 > **Figure 22.1** · page 4 · source: `chapter22`
 >
-> ![Figure 22.1](../figures/fig_0098.png)
+> ![Figure 22.1](figures/fig_0098.png)
 >
 > Figure 22.1 Left: The phenotypic value,  $ z_{1} $, of the focal individual is the sum of its direct phenotypic effect,  $ P_{d,1} $, plus the associative effects,  $ P_{s,2} $,  $ P_{s,3} $,  $ P_{s,4} $, of the three other members in its group. Right: The total breeding value ( $ A_{T,1} $) of individual 1 is its direct breeding value,  $ A_{d,1} $, plus the total contribution of the associative-effect breeding value,  $ A_{s,1} $, to the three members of its group. A key concept is that only part of  $ A_{T} $ (namely  $ A_{d} $) is embedded within its own phenotypic value. The remaining part of  $ A_{T} $, namely its associative component,  $ 3A_{s} $, is only expressed in the phenotypes of other group members.
 
@@ -133,7 +133,7 @@ The second feature about groups is their formation and reproduction, an issue th
 
 > **Figure 22.2** · page 6 · source: `chapter22`
 >
-> ![Figure 22.2](../figures/fig_0099.png)
+> ![Figure 22.2](figures/fig_0099.png)
 >
 > Figure 22.2 The difference between trait-based and variance-component based models. Here, the phenotypic value,  $ z_{o,1} $, of a trait (which we label 1) in an offspring is a function of maternal phenotype. We suppose that there are three maternal traits (i, j, k) whose phenotypes influence the offspring value. Top: Under a variance-component based approach, we ignore all the maternal trait values and simply estimate a single maternal performance value,  $ P_{m,1} $, that directly influences the trait value in the offspring. The resulting model becomes  $ z_{o,1} = \mu + A_{d,1} + E_{d,1} + P_{m,1} $, where  $ A_{d,1} $ is the trait breeding value in the offspring,  $ E_{d,1} $, its environmental value, and  $ P_{m,1} = A_{s,1} + E_{s,1} $ can be decomposed into the social breeding value on trait 1 plus a residual. Bottom: Under a trait-based model, provided we know all of the maternal traits whose phenotypes influence trait 1 in the offspring, then we directly incorporate these, along with their regression coefficients,  $ \Psi_{1,i} $, showing how these maternal phenotypes translate into offspring trait value. Here,  $ z_{o,1} = \mu + A_{d,1} + E_{d,1} + \Psi_{1,i} z_{m,i} + \Psi_{1,j} z_{m,j} + \Psi_{1,k} z_{m,k} $, where the last three terms together comprise  $ P_{m,1} $. Trait-based models are required if one wishes to consider the joint evolution of traits 1 and i, j, k. Their drawback is that one has to specify to all of the relevant maternal traits. Conversely, under a variance-component method, all of the maternal phenotypes are conveniently collapsed into a single value, whose breeding value can be estimated from an appropriate design (detailed below).
 
@@ -996,7 +996,7 @@ Notice, by comparison to Equation 22.4c, that the term appearing when group memb
 
 > **Figure 22.3** · page 24 · source: `chapter22`
 >
-> ![Figure 22.3](../figures/fig_0100.png)
+> ![Figure 22.3](figures/fig_0100.png)
 >
 > Figure 22.3 Accuracy of the index, I, as a function of the group weight, g, for groups of different types of relatives (the curves corresponding to different values of r). Accuracy was computed using Equation 22.28f, whose components are given by Equations 22.29d, 22.7b, and 22.30d. The variance components used were from Ellen et al. (2008) for survival days for chickens, and are given in Example 22.8, which also works through the calculations. Accuracy increases with r and is maximized at some intermediate strength of group selection, g.
 
@@ -1290,7 +1290,7 @@ In his classic paper, Muir (2005) not only laid out the approach for incorporati
 
 > **Figure 22.4** · page 33 · source: `chapter22`
 >
-> ![Figure 22.4](../figures/fig_0101.png)
+> ![Figure 22.4](figures/fig_0101.png)
 >
 > Figure 22.4 Selection response for two differentially selected lines of Japanese quail (Muir 2005). Both lines were selected for six-week weight using BLUP. Line D-BLUP selected individuals with the largest estimated direct breeding values, while line C-BLUP selected individuals with the largest estimated total breeding values. A: (Top) Mean response in six-week weight over 23 cycles of selection. The C-BLUP line showed a significant improvement, while the D-BLUP line showed a slight (but not significant) negative trend. (B: (Bottom) The trend in mean social values showed an increase in the C-BLUP lines, and a decrease in D-BLUP lines. Hence, competition increased in lines strictly selected for direct breeding value, while it decreased in lines selected on an index of direct and associative effects.
 

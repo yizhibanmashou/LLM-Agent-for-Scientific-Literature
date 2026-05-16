@@ -1,4 +1,4 @@
-# Appendix 6 · Appendix
+# Appendix 6 · Appendix 6 / Derivatives of Vectors and Vector-valued Functions
 
 ## appendix6_001 · Appendix: Introduction
 

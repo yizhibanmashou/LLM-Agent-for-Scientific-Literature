@@ -12,16 +12,16 @@ By building around applications to the analysis of selection experiments (includ
 
 ## chapter19_002 · Analysis of Short-term Selection Experiments: 2. Mixed-model and Bayesian Approaches: Introduction / MIXED-MODEL VERSUS LEAST-SQUARES ANALYSIS
 
+Figure 19.1 illustrates the result of a mixed-model analysis of selection response. Note that instead of measuring response from the observed phenotypic means (the LS approach), response is measured from the estimated mean breeding values obtained from BLUP. Further, instead of estimating a realized heritability, a mixed-model (REML) analysis estimates the additive genetic variance in the base population.
+
 **[Figure]**
 
 > **Figure 19.1** · page 2 · source: `chapter19`
 >
-> ![Figure 19.1](../figures/fig_0075.png)
+> ![Figure 19.1](figures/fig_0075.png)
 >
 > Figure 19.1 Results from high and low selection on 6-week weight in mice. Left: Observed (filled boxes and circles) and predicted (open boxes and circles) mean phenotypic values in the up- and down-selected lines, expressed as deviations from the control population. The predicted mean for a specific generation is given by the estimated mean breeding value plus the estimated environmental value. Right: Estimated mean breeding values for both selected populations and the control. See Examples 19.2 and 19.7 for more details on this experiment. (After Meyer and Hill 1991.)
 
-
-Figure 19.1 illustrates the result of a mixed-model analysis of selection response. Note that instead of measuring response from the observed phenotypic means (the LS approach), response is measured from the estimated mean breeding values obtained from BLUP. Further, instead of estimating a realized heritability, a mixed-model (REML) analysis estimates the additive genetic variance in the base population.
 
 Mixed-models readily allow records to be adjusted for any number of fixed effects (differences between the expected value of individuals from different categories). For example, one might correct for trait differences between sexes, trait differences between individuals from different litter sizes, age effects, known environmental factors, etc. Such adjustments result in a more accurate prediction of an individual's genetic value, and thus a more accurate estimate of the population's genetic response. Further, a properly formatted MM analysis can separate phenotypic changes into genetic and environmental components without using a control population. In contrast, an LS analysis cannot separate genetic from environmental trends when only a single line is considered. Under a mixed model, such a separation is possible because the covariance structure associated with the pedigree of all individuals in the experiment allows information to be borrowed from relatives across generations.
 
@@ -408,7 +408,7 @@ The estimated common-environmental (b) and additive-genetic (a) effects are high
 
 > **Figure 19.2** · page 16 · source: `chapter19`
 >
-> ![Figure 19.2](../figures/fig_0076.png)
+> ![Figure 19.2](figures/fig_0076.png)
 >
 > Figure 19.2 Trends for the selection experiment in Example 19.3. See the example for details.
 
@@ -948,23 +948,23 @@ Prenatal survival (as a function of the mother) was examined using the repeatabi
 
 **[Figure]**
 
-> **Figure 19.3** · page 37 · source: `chapter19`
->
-> ![Figure 19.3](../figures/fig_0077.png)
->
-> Figure 19.3 Analysis of ovulation rate at puberty in French Large White pigs. Left: Assumed priors for  $ \sigma_{A}^{2} $ (see text for details). Right: The Bayesian estimate of selection response is shown by presenting the marginal posterior density for the mean breeding value in ovulation rate in the last generation of selection as a histogram (all three priors gave very similar results). This distribution is approximately normal (the solid curve). (After Blasco et al. 1998.)
-
-
-**[Figure]**
-
 > **Figure 19.4** · page 37 · source: `chapter19`
 >
-> ![Figure 19.4](../figures/fig_0078.png)
+> ![Figure 19.4](figures/fig_0078.png)
 >
 > Figure 19.4 Analysis of French Large White pig prenatal survival. Left: Priors for the additive variance (see text for details). Right: Posterior distribution of mean breeding values (at generation 4) in prenatal survival (based on prior 1), which deviates from the best-fitting normal. (After Blasco et al. 1998.)
 
 
 Among the fixed effects in $ \beta $ are terms for the parity of the mother (first litter, second litter, and so on). The marginal posterior distribution for breeding values (and hence, recalling Equation 19.8b, for the response via $ \mathbf{K}^T\mathbf{a} $) was obtained by using the Gibbs-sampler approach of Sorensen et al. (1994) outlined previously. For each trait, two independent chains of length 100,000 were computed, with the first 10,000 samples discarded (to remove burn-in effects) and sampling at every 30 iterations thereafter, which generated a trimmed sampler of length 3000. The authors obtained these burn-in and resampling values after several initial runs, using the diagnostics suggested by Raftery and Lewis (1992a) for level of precision and Geyer (1992) for autocorrelation between samples. A uniform prior was taken for the fixed effects, while different priors were used for the variances (discussed below).
+
+**[Figure]**
+
+> **Figure 19.3** · page 37 · source: `chapter19`
+>
+> ![Figure 19.3](figures/fig_0077.png)
+>
+> Figure 19.3 Analysis of ovulation rate at puberty in French Large White pigs. Left: Assumed priors for  $ \sigma_{A}^{2} $ (see text for details). Right: The Bayesian estimate of selection response is shown by presenting the marginal posterior density for the mean breeding value in ovulation rate in the last generation of selection as a histogram (all three priors gave very similar results). This distribution is approximately normal (the solid curve). (After Blasco et al. 1998.)
+
 
 We will consider the results for ovulation rate at puberty first. Figure 19.3 shows the three priors assumed for the additive variance in this trait. The phenotypic variance of this trait is 6.25, which sets an upper limit on $ \sigma_A^2 $. Prior 1 is a uniform distribution that weights all values in the parameter space equally. Priors 2 and 3 (which are scaled inverse- $ \chi^2 $)
 

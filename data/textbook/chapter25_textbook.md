@@ -16,7 +16,7 @@ We start by examining an idealized model where an initially linear response decl
 
 > **Figure 25.1** · page 2 · source: `chapter25`
 >
-> ![Figure 25.1](data/figures/fig_0109.png)
+> ![Figure 25.1](figures/fig_0109.png)
 >
 > Figure 25.1 Examples of the expected response to selection, here assuming truncation selection (with the upper 20% saved) and n identical diallelic loci (each with genotypic values of 0 : a : 2a, and a favorable allele frequency of p). We further assume that there is no epistasis and ignore any effects of gametic-phase disequilibrium. All populations start with  $ \sigma_A^2(0) = 100 $ and  $ \sigma_E^2 = 100 $, so  $ h^2(0) = 0.5 $. Curves are plotted for models with 10, 25, and 250 equivalent loci, each with initial allele frequency  $ p = 0.5 $ and  $ a $ values of 4.47, 2.82, and 0.89, respectively. A mixed genetic model is also shown, which consists of 5 identical major loci ( $ p = 0.25 $ and  $ a = 5.16 $) and 125 identical minor loci ( $ p = 0.5 $ and  $ a = 0.89 $); as a consequence of these starting values, the major and minor loci contribute equally to the initial additive-genetic variance. Left: Short-term response over the first 10 generations. Right: Response over the first 40 generations. Note that the total response increases with the number of loci. In the infinitesimal-model limit, the response remains linear over all generations (after correcting for the slight decrease over the first few generations from linkage disequilibrium; see Example 16.3).
 
@@ -33,7 +33,7 @@ Figure 25.1 illustrates differences in the long-term selection response for four
 
 > **Figure 25.2** · page 3 · source: `chapter25`
 >
-> ![Figure 25.2](data/figures/fig_0110.png)
+> ![Figure 25.2](figures/fig_0110.png)
 >
 > Figure 25.2 With strong directional dominance, an apparent selection limit can result when favored alleles are dominant, because selection is only acting against the increasingly rare recessive homozygotes. Here the genotypes have values of 0:2a:2a, and we ignore epistasis and gametic-phase disequilibrium. The population consists of 25 identical loci, with a = 2.82 and initial dominant-allele frequency of p = 0.8. We assume truncation selection with the upper (or lower) 20% of the population being saved. If all loci are fixed for the favored allele, the selection limit is 2·2.82·25 = 141 (indicated by the horizontal line). There is little response to upward selection and the population appears at a selection limit, even though there was considerable genetic variation in the base population, as shown by the rapid response of the down-selected line.
 
@@ -100,6 +100,15 @@ Finally, the allele frequency, $ p_{\beta} $, at which a preset fraction, $ \bet
 > $$ m(p_{\beta})-m(p_{0})=\beta\left[m(1)-m(p_{0})\right] $$
 
 
+**[Figure]**
+
+> **Figure 25.3** · page 5 · source: `chapter25`
+>
+> ![Figure 25.3](figures/fig_0111.png)
+>
+> Figure 25.3 Left: The contribution to total response from a diallelic locus assuming allele B, starting at frequency  $ p_0 $, is eventually fixed. The genotypes BB : Bb : bb have values of  $ 2a : a(1 + k) : 0 $. The three curves correspond to B being additive  $ (k = 0) $, dominant  $ (k = 1) $, and recessive  $ (k = -1) $. The smallest contribution is made by dominant alleles at high frequencies, and the largest from recessive alleles at low frequencies. Right: The allele frequency,  $ p_{0.5} $, at which half the total response contributed by a locus occurs, as a function of its initial frequency,  $ p_0 $.
+
+
 **[Table]**
 
 > **Table 25.1** · `25.1` · page 5 · source: `chapter25_004`
@@ -110,15 +119,6 @@ Finally, the allele frequency, $ p_{\beta} $, at which a preset fraction, $ \bet
 > B additive ( $ k = 0 $) | 2a(1 - p_{0}) | (1 + p_{0})/2
 > B dominant ( $ k = 1 $) | 2a(1 - p_{0})^{2} | 1 - $ \sqrt{[1 - p_{0}(2 - p_{0})]/2} $
 > B recessive ( $ k = -1 $) | 2a(1 - p_{0}^{2}) | $ \sqrt{(1 + p_{0}^{2})/2} $
-
-
-**[Figure]**
-
-> **Figure 25.3** · page 5 · source: `chapter25`
->
-> ![Figure 25.3](data/figures/fig_0111.png)
->
-> Figure 25.3 Left: The contribution to total response from a diallelic locus assuming allele B, starting at frequency  $ p_0 $, is eventually fixed. The genotypes BB : Bb : bb have values of  $ 2a : a(1 + k) : 0 $. The three curves correspond to B being additive  $ (k = 0) $, dominant  $ (k = 1) $, and recessive  $ (k = -1) $. The smallest contribution is made by dominant alleles at high frequencies, and the largest from recessive alleles at low frequencies. Right: The allele frequency,  $ p_{0.5} $, at which half the total response contributed by a locus occurs, as a function of its initial frequency,  $ p_0 $.
 
 
 for $ p_{\beta} $, with $ m(1) $ is replaced by $ m(\widehat{p}) $ when $ k > 1 $. A case of particular interest is $ p_{0.5} $, the frequency at which half of the expected response occurs ($ \beta = 1/2 $). Expressions for $ p_{0.5} $ as a function of initial allele frequency are given in Table 25.1 and plotted in Figure 25.3. Observe that rare recessives have to increase substantially in frequency to yield half their ultimate response (e.g., for $ k = -1 $, $ p_{0.5} \simeq 0.71 $ when $ p_0 = 0.1 $).
@@ -226,7 +226,7 @@ These results ignore the effects of gametic-phase disequilibrium. Negative diseq
 
 > **Figure 25.4** · page 8 · source: `chapter25`
 >
-> ![Figure 25.4](data/figures/fig_0112.png)
+> ![Figure 25.4](figures/fig_0112.png)
 >
 > Figure 25.4 The expected times for a diallelic locus to contribute half of its total response, assuming the favored allele, B, is eventually fixed. These curves are obtained by substituting  $ p_{0.5} $ from Table 25.1 into the appropriate version of Equation 5.3. Note that times for half-life scale as  $ s^{-1} = (\bar{i}a/\sigma_z)^{-1} $ generations.
 
@@ -235,7 +235,7 @@ These results ignore the effects of gametic-phase disequilibrium. Negative diseq
 
 > **Figure 25.5** · page 8 · source: `chapter25`
 >
-> ![Figure 25.5](data/figures/fig_0113.png)
+> ![Figure 25.5](figures/fig_0113.png)
 >
 > Figure 25.5 Correlation between observed and predicted (from estimated QTL effect size) changes in marker allele frequencies in two inbred-line crosses (A × B and C × D) of maize subsequently subjected to seven cycles of selection. Left: QTL effect size was a fairly good predictor in the A × B selected lines (r = 0.55). The expectation is a line with a slope of b = 1 (observed = predicted; the dotted line), while the solid line is the best-fitting regression, with a slope of b = 0.54. While significantly different from 0 (showing a positive association between observed and predicted values), the predicted allele-frequency change is less than the observed allele-frequency change. Right: No significant association between the observed and predicted allele-frequency change was seen in the C × D selected lines (r = 0.13, ns). Further details are provided in Example 25.2. (After Falke et al. 2007.)
 
@@ -315,9 +315,17 @@ To evaluate the derivatives of the marginal fitnesses of the major locus, first 
 > Table 25.2 Lande's (1983) model for simultaneous selection on a major locus and background polygenes. The distribution of phenotypic values for each major-locus genotype is assumed to be normal, with variance  $ \sigma^2 $. The distribution of background polygenic values around each major genotype is normal with variance  $ h^2\sigma^2 $. Here  $ \varphi(z, \mu, \sigma^2) $ denotes the density function for a normal random variable with mean  $ \mu $ and variance  $ \sigma^2 $, and  $ w(z) $ is the expected fitness associated with phenotype z.
 >
 > <table><tr><td rowspan="2"></td><td colspan="3">Major-locus genotype</td></tr><tr><td>$ bb $</td><td>$ Bb $</td><td>$ BB $</td></tr><tr><td>Frequency</td><td>$ (1-p)^{2} $</td><td>$ 2p(1-p) $</td><td>$ p^{2} $</td></tr><tr><td>Mean phenotype</td><td>$ \mu $</td><td>$ \mu+\alpha_{1} $</td><td>$ \mu+\alpha_{2} $</td></tr><tr><td>Natural selection</td><td>1</td><td>$ 1-s_{1} $</td><td>$ 1-s_{2} $</td></tr><tr><td>Mean fitness</td><td>$ \overline{W}_{0} $</td><td>$ (1-s_{1})\overline{W}_{1} $</td><td>$ (1-s_{2})\overline{W}_{2} $</td></tr></table>
+>
+> $$ \overline{W}_{i}=\int w(z)\varphi(z,\mu+\alpha_{i},\sigma^{2})d z\quad for i=0,1,2 $$
+>
+> Mean fitness:
+>
+> $$ \begin{aligned}\overline{W}&=(1-p)^{2}W_{bb}+2p(1-p)W_{Bb}+p^{2}W_{BB}\\&=(1-p)^{2}\overline{W}_{0}+2p(1-p)(1-s_{1})\overline{W}_{1}+p^{2}(1-s_{2})\overline{W}_{2}\end{aligned} $$
+>
+> Mean phenotype:
+>
+> $$ \overline{z}=\mu\left(1+2\alpha_{1}p(1-p)+\alpha_{2}p^{2}\right) $$
 
-
-$$ \overline{W}_{i}=\int w(z)\varphi(z,\mu+\alpha_{i},\sigma^{2})d z\quad for i=0,1,2 $$
 
 **[推导 Derivation]**
 
@@ -360,7 +368,7 @@ From Table 25.2, the new mean becomes
 
 > **Figure 25.6** · page 12 · source: `chapter25`
 >
-> ![Figure 25.6](data/figures/fig_0114.png)
+> ![Figure 25.6](figures/fig_0114.png)
 >
 > Figure 25.6 Lande's analysis of selection toward a new optimum when a major gene and polygenes are present. In both examples, the population initially starts 10 units below the new optimum value (zero), and the favored major-gene homozygote adds a value of 5. Dashed lines represent contours of equal fitness in the  $ (p, \mu) $ space, while the arrowed solid lines represent the allele-frequency trajectories of the major gene. A: The favored homozygote has a pleiotropic disadvantage of s = 0.02. Here there are two peaks on the  $ (p, \mu) $ fitness surface, on the lower right  $ (p = 0, \mu = 0) $ and in the upper middle  $ (p = 1, \mu = -5) $. If the initial frequency of the major allele is above 0.025, the major allele is fixed, while it is lost if the initial frequency is below this critical frequency. B: The favored homozygote has a pleiotropic disadvantage of s = 0.40. There is a single peak on the fitness surface  $ (p = 0, \mu = 0) $, and although p may initially increase in frequency, it will always be lost, with the ultimate response being entirely polygenic. A significant fraction of the initial response can be through the major gene, but eventually this is replaced by the polygenic component. As polygenic response drives the population mean toward the optimum, the pleiotropic disadvantage of the major allele eventually exceeds its fitness advantage from selection on the trait, resulting in its eventual loss. (After Lande 1983.)
 
@@ -478,20 +486,20 @@ Finally, the results from examining adaptations (often inferred from species dif
 
 ## chapter25_013 · AN OVERVIEW OF LONG-TERM SELECTION EXPERIMENTS
 
+**[Figure]**
+
+> **Figure 25.7** · page 18 · source: `chapter25`
+>
+> ![Figure 25.7](figures/fig_0115.png)
+>
+> Figure 25.7 Bünger and Herrendörfer's (1994) fit of an exponential regression to the long-term selection experiment of Goodale on mouse weight at 60 days (Goodale 1938; Wilson et al. 1971). The estimated selection limit was 43.5 grams (for a total response of 21.3 grams), with a half-life of 12 generations. The plotted curve regresses the cumulative response as a function of generation number. When the regression is instead plotted as a function of the cumulative selection differential (as opposed to generations), the estimated total response was 17.5 grams.
+
+
 The above theory suggests that populations under selection should show a reasonably smooth response (albeit often with considerable sampling noise; Chapter 18), which is initially linear, but eventually (in the absence of new mutations) asymptotes to a selection limit as base-population genetic variance becomes exhausted. Unfortunately, this simple picture is very often wrong. Selection response can be rather erratic, showing periods of acceleration even after many generations of selection, and limits often occur in spite of significant additive variance in the character under artificial selection. Before reviewing the experimental data, a few remarks on estimating the actual limit and duration of response are in order.
 
 ---
 
 ## chapter25_014 · AN OVERVIEW OF LONG-TERM SELECTION EXPERIMENTS / Estimating Selection Limits and Half-lives
-
-**[Figure]**
-
-> **Figure 25.7** · page 18 · source: `chapter25`
->
-> ![Figure 25.7](data/figures/fig_0115.png)
->
-> Figure 25.7 Bünger and Herrendörfer's (1994) fit of an exponential regression to the long-term selection experiment of Goodale on mouse weight at 60 days (Goodale 1938; Wilson et al. 1971). The estimated selection limit was 43.5 grams (for a total response of 21.3 grams), with a half-life of 12 generations. The plotted curve regresses the cumulative response as a function of generation number. When the regression is instead plotted as a function of the cumulative selection differential (as opposed to generations), the estimated total response was 17.5 grams.
-
 
 Because the selection limit is approached asymptotically, the typical measure of duration is the half-life of response—the time for half the response to occur. As was the case for short-term response (Chapters 18 and 19), this parameter is generally estimated by curve-fitting, and in doing so accommodating the inherent sampling noise in selection response data (Chapter 18). Given that the response curve is nonlinear, a number of authors have used quadratic regressions, taking the maximum of the regression as the limit (James 1965; Eisen 1972; Rutledge et al. 1973). Grassini et al. (2013) used a piecewise approach, breaking the response into either two distinct linear regressions or a quadratic regression segment followed by a constant value (the latter is used to represent the plateau).
 
@@ -593,7 +601,7 @@ As Figure 25.8 illustrates, long-term selection experiments display a wide range
 
 > **Figure 25.8** · page 21 · source: `chapter25`
 >
-> ![Figure 25.8](data/figures/fig_0116.png)
+> ![Figure 25.8](figures/fig_0116.png)
 >
 > Figure 25.8 A few of the nonstandard behaviors observed in long-term selection experiments. A: Delayed accelerated response during selection for increased six-week body weight in mice. An apparent limit of 31 grams had been reached in the up-selected line (CL) by generation 15. A second burst of response occurred around generation 43, with the mean weight increasing to around 35 grams (Roberts 1966). B: Selection for increased abdominal bristle number in Drosophila. At generation 90, selection was relaxed and most lines showed a considerable (but not complete) erosion of response. The presence of segregating lethals accounts for some of this erosion. Also note the bursts of response for line CRb (the short-dashed curve in the lower panel) around generations 50 and 75 (Yoo 1980a).
 
@@ -602,7 +610,7 @@ As Figure 25.8 illustrates, long-term selection experiments display a wide range
 
 > **Figure 25.9** · page 22 · source: `chapter25`
 >
-> ![Figure 25.9](data/figures/fig_0117.png)
+> ![Figure 25.9](figures/fig_0117.png)
 >
 > Figure 25.9 Example of long-term selection experiments showing no apparent selection limits. The top two panels are from the Illinois long-term selection experiment on oil and protein content in maize. A: Response over 106 generations of selection for increased or decreased oil percentage. Lines IHO and ILO (Illinois high and low oil) are up- and down-selected, while lines RHO and RIL are lines of IHO and ILO subjected to reversed selection around generation 50. Line SHO (switchover high oil) is an up-selected line using RHO. The responses in RHO, RLO, and SHO indicate significant additive variance present in the population when these new lines were formed. (After Dudley 2007.) B: Response over 106 generations of selection for changes in the percentage of protein. Lines IHP and ILP were up- and down-selected, while lines RHP and RLP are the result of reverse selection starting around generation 50. Again, the responses of RHP and RLP indicate significant additive variance. (After Dudley 2007.) C: One hundred generations of response for increased flight speed in Drosophila melanogaster. Two replicate lines showed very similar response. (After Weber 1996.) D: Response in the Dummerstorf long-term mouse lines, which were subjected to continuous selection for 42-day weight. Conducted over 160 generations, this is the longest continuous selection experiment in mammals (Renne et al. 2013). (After Bünger et al. 2001.)
 
@@ -664,7 +672,7 @@ Contrary to the expectations of idealized long-term response, phenotypic and add
 
 > **Figure 25.10** · page 26 · source: `chapter25`
 >
-> ![Figure 25.10](data/figures/fig_0118.png)
+> ![Figure 25.10](figures/fig_0118.png)
 >
 > Figure 25.10 Examples of a delayed accelerated response due to the increase of an initially rare allele of major effect. The character is determined by a polygenic background (100 completely additive diallelic loci, with $a = 0.5$ and $p = 0.5$, so that the initial additive variance contributed by the polygenic background is $\sigma_{A}^{2} = 12.5$) plus a major allele that is initially at low frequency ($a = 10$ and $p = 0.05$). We assume that the favored allele at the major locus is either additive ($k = 0$; contributing an initial additive variance of 9.5) or recessive ($k = -1$; contributing an initial additive variance of 0.095). A: Response under the recessive model shows an accelerated response around generation 35, while the additive major gene results in an acceleration around generation 10. B: Heritabilities clearly show the basis for this acceleration. C: Changes in the major-allele frequency show the much longer time required for the recessive major allele to increase in frequency. Note that the change in the polygenic frequencies (the middle two curves; solid for $k = 0$ and dashed for $k = -1$) are almost the same under the two different major-locus dominance values.
 
@@ -681,7 +689,7 @@ Major alleles can be arise by mutation while selection is ongoing, creating burs
 
 > **Figure 25.11** · page 27 · source: `chapter25`
 >
-> ![Figure 25.11](data/figures/fig_0119.png)
+> ![Figure 25.11](figures/fig_0119.png)
 >
 > Figure 25.11 The impact of a distribution of initial allele frequencies and effects on the long-term response to directional truncation selection on a trait in an infinite population. The model simulated here assumes 100 underlying loci, that are unlinked and with completely additive effects within and among loci (no dominance or epistasis). Linkage disequilibrium is ignored, with Equation 25.3 iterated to generate the dynamics (see Example 25.2). Allelic effects were randomly sampled from an exponential distribution reflected about zero (effects were equally likely to be positive or negative). Initial allele frequencies were either sampled from uniform or Watterson (Equation 2.34a) distributions, with randomly assigned allelic effects. Given the initial distribution of allele frequencies and effects, a base-population additive variance,  $ \sigma_A^2(0) $, was computed, and  $ \sigma_E^2 $ was set at  $ (7/3) \cdot \sigma_A^2(0) $ to give the trait a starting heritability of 30% (a typical value for many traits). Results from two realizations are presented here. The joint distribution of initial frequencies and their standardized effects,  $ a/\sigma_z $, is plotted for a given realization from the uniform (A) and Watterson (C) distributions. As (B) shows, under a uniform distribution of starting allele frequencies at the underlying loci, the temporal change in the heritability was generally well-behaved over the course of selection (here, a slight initial increase, followed by a nearly monotonic decrease). Conversely, (D) shows that change in the heritability under an initial Watterson distribution was highly erratic. While the specific realization shown here for the Watterson distribution was typical for a number of simulations, even more erratic patterns (i.e., heritabilities rapidly increasing after many generations of selection) were seen in some realizations. In experimental populations, drift and founder-sampling would obscure these patterns.
 
@@ -690,7 +698,7 @@ Major alleles can be arise by mutation while selection is ongoing, creating burs
 
 > **Figure 25.12** · page 28 · source: `chapter25`
 >
-> ![Figure 25.12](data/figures/fig_0120.png)
+> ![Figure 25.12](figures/fig_0120.png)
 >
 > Figure 25.12 The response to selection in Drosophila melanogaster for high and low abdominal bristle numbers. While equal amounts of selection was applied to both sexes, results are separated by sex-specific response. A: Response in females. B: Response in males. While two of the down-selected lines (LA and LC) show bursts of response in females, no such response is seen in the males from these lines. C: The phenotypic variances for these lines. The figure plots the average of the male- and female-specific variances for all three high-selected lines (which showed no sex-specific differences over the response), while sex-specific differences were seen in two of the low-selected lines. Note that the variance increased only in females from the two lines showing a burst of response. (After Frankham et al. 1980.)
 
@@ -719,7 +727,7 @@ Recombinational breakdown of preexisting gametic-phase disequilibrium can also g
 
 > **Figure 25.13** · page 30 · source: `chapter25`
 >
-> ![Figure 25.13](data/figures/fig_0121.png)
+> ![Figure 25.13](figures/fig_0121.png)
 >
 > Figure 25.13 An apparent example of linkage between QTLs and deleterious fitness loci. Latter and Robertson (1962) selected for increased abdominal bristle number in Drosophila melanogaster, creating sublines (indicated by the dashed lines) from the selected lines at various generations and subjecting these sublines to relaxed selection. Sublines of line AH2 extracted in the first three generations of selection showed significant erosion of response upon relaxation of selection, while sublines extracted in later generations show little erosion. Note also that line AH2, which has a depressed response relative to line AH1 over generations 1–4, shows an accelerated response following generation 4. One explanation for this pattern is that alleles increasing the character were initially in gametic-phase disequilibrium with alleles having deleterious effects on fitness in line AH2. By generation 4, this disequilibrium had largely broken down, allowing the frequencies of alleles increasing the character value to remain stable following relaxation of selection and allowing a faster response to selection. (After Latter and Robertson 1962.)
 
@@ -730,7 +738,7 @@ An accelerated response can also occur when recombination generates coupling gam
 
 > **Figure 25.14** · page 31 · source: `chapter25`
 >
-> ![Figure 25.14](data/figures/fig_0122.png)
+> ![Figure 25.14](figures/fig_0122.png)
 >
 > Figure 25.14 Accelerated response in sternopleural bristle number in Drosophila melanogaster lines selected by Thoday and Boam (1961). All lines showed acceleration in response, but the acceleration in line vg 4 was especially dramatic.
 
@@ -874,7 +882,7 @@ Likewise, the equilibrium frequency, $ \tilde{p} $, following the removal of let
 
 > **Figure 25.15** · page 37 · source: `chapter25`
 >
-> ![Figure 25.15](data/figures/fig_0123.png)
+> ![Figure 25.15](figures/fig_0123.png)
 >
 > Figure 25.15 The equilibrium frequency,  $ \widetilde{p} $, of a lethal allele that also increases the value of a trait under artificial selection. Selection is assumed to act in the zygote, so that  $ \widetilde{p} $ is the frequency of the allele in surviving individuals before artificial selection is performed. The equilibrium frequency is a function of the strength of artificial selection (measure by the fraction,  $ q $, of adults saved under truncation selection) and the contribution,  $ a/\sigma $, of the allele to the trait under artificial selection. The four curves are for values of  $ a/\sigma = 1 $, 0.50, 0.25, and 0.10, respectively. See Example 25.10 for further details.
 

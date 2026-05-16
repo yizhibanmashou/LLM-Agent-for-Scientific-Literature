@@ -1,4 +1,4 @@
-# Appendix 2 · Appendix
+# Appendix 2 · Appendix 2 / Introduction to Bayesian Analysis
 
 ## appendix2_001 · Appendix: Introduction
 
@@ -171,18 +171,18 @@ Obviously, a critical feature of any Bayesian analysis is the choice of a prior.
 
 One of the most commonly used priors is the flat or diffuse (also called uninformative or naive) prior, which is simply a constant $$ p(\theta)=\frac{1}{b-a}\qquad for\qquad a\leq\theta\leq b $$
 
+This conveys that we have no a priori reason to favor any particular parameter value over another. With a flat prior, the posterior is just a constant C times the likelihood $$ p(\theta\mid\mathbf{x})=C\ell(\theta\mid\mathbf{x}) $$ and we typically write that $ p(\theta|\mathbf{x}) \propto \ell(\theta|\mathbf{x}) $. In many cases, classical expressions from frequentist statistics are obtained by Bayesian analysis through assuming a flat prior.
+
+If the variable (i.e., parameter) of interest ranges over $ (0, \infty) $ or $ (-\infty, +\infty) $, then, strictly speaking, a flat prior does not exist as, if the constant takes on any nonzero value, the integral does not exist. In such cases a flat prior (i.e., assuming $ p[\theta \mid \mathbf{x}] \propto \ell[\theta \mid \mathbf{x}] $) is referred to as an improper prior, and care must be taken to ensure that the product of the prior and the likelihood results in a proper posterior (i.e., $ \ell[\theta \mid \mathbf{x}] $ has a finite integral over the parameter range). This is by no means certain.
+
 **[Figure]**
 
 > **Figure A2.1** · page 9 · source: `appendix2`
 >
-> ![Figure A2.1](../figures/fig_0001.png)
+> ![Figure A2.1](figures/fig_0001.png)
 >
 > Figure A2.1 A uniform prior on one scale does not result in a flat prior on a transformed scale. Suppose a flat prior on  $ (0,10000) $ is assumed for both the additive and residual variances. To mimic what happens under MCMC, we display these priors by using the resulting histograms generated from a large number of random draws, with a uniform expected to return a flat histogram. Left: The resulting prior for the standard deviation of either variance (the square root of a random draw). Right: The resulting prior for  $ h^{2} $, the ratio of a random draw for the additive variance divided by this value plus a random draw for the residual variance. Neither of these priors results in a uniform prior (namely, a flat histogram) on the transformed scale.
 
-
-This conveys that we have no a priori reason to favor any particular parameter value over another. With a flat prior, the posterior is just a constant C times the likelihood $$ p(\theta\mid\mathbf{x})=C\ell(\theta\mid\mathbf{x}) $$ and we typically write that $ p(\theta|\mathbf{x}) \propto \ell(\theta|\mathbf{x}) $. In many cases, classical expressions from frequentist statistics are obtained by Bayesian analysis through assuming a flat prior.
-
-If the variable (i.e., parameter) of interest ranges over $ (0, \infty) $ or $ (-\infty, +\infty) $, then, strictly speaking, a flat prior does not exist as, if the constant takes on any nonzero value, the integral does not exist. In such cases a flat prior (i.e., assuming $ p[\theta \mid \mathbf{x}] \propto \ell[\theta \mid \mathbf{x}] $) is referred to as an improper prior, and care must be taken to ensure that the product of the prior and the likelihood results in a proper posterior (i.e., $ \ell[\theta \mid \mathbf{x}] $ has a finite integral over the parameter range). This is by no means certain.
 
 **[命题 Proposition]**
 
@@ -260,20 +260,20 @@ We are now in a position to inquire about the relative importance of the prior v
 
 Before examining the Gaussian likelihood with unknown variance, a brief aside is needed to develop the inverse chi-square distribution, denoted by $ \chi^{-2} $. We do this via the gamma and inverse-gamma distributions, as both $ \chi^{2} $ and $ \chi^{-2} $ are special cases of these distributions.
 
-**[Figure]**
-
-> **Figure A2.2** · page 13 · source: `appendix2`
->
-> ![Figure A2.2](../figures/fig_0002.png)
->
-> Figure A2.2 The effect of the shape ( $ \alpha $) and rate ( $ \beta = 1/\lambda $, the inverse of the scale) parameters on the gamma distribution function. For  $ \alpha = 1 $, the resulting distribution is the simple monotonically decreasing exponential, while for  $ \alpha > 1 $, the distribution is unimodal. The effect of a change in the rate or scale is to keep the general shape but change the scaling with respect to x.
-
-
 To motivate the gamma distribution, first consider the simple exponential waiting-time distribution, where $ \beta $ is the rate (the probability of a success in some small time unit, $ \delta_{t} $, is given by $ \beta \delta_{t} $), then the probability density function (pdf) for the exponential is $$ p(x\mid\beta)=\beta e^{-\beta x}\quad for\quad0\leq x<\infty,\quad\beta>0 $$ Because the expected waiting time until a success is $ \lambda = 1/\beta $, this can be reparameterized in terms of the scale (waiting time) parameter as $$ p(x\mid\beta)=\lambda^{-1}e^{-x/\lambda} $$
 
 The sum of $ k $ exponentials with the same rate (or scale) parameter is called an Erlang distribution, and it was initially developed for certain problems in telephone queuing theory. Expressed in terms of the rate parameter, the resulting pdf becomes $$ p(x\mid k,\beta)=\frac{\beta^{k}}{(k-1)!}\; x^{k-1}\; e^{-\beta x}\quad\mathrm{f o r}\quad0\leq x<\infty $$ where the integer k is called the shape parameter, with k = 1 recovering the exponential.
 
 The gamma distribution follows by allowing the shape parameter to be any positive number, $ \alpha $, with $ x \sim \Gamma(\alpha, \beta) $ having its pdf defined by its shape ($ \alpha $) and rate ($ \beta $) values, $$ \begin{align*}p(x\mid\alpha,\beta)=\frac{\beta^\alpha}{\Gamma(\alpha)}x^{\alpha-1}e^{-\beta x}\quad{\rm for}\alpha,\beta,x>0\end{align*} $$
+
+**[Figure]**
+
+> **Figure A2.2** · page 13 · source: `appendix2`
+>
+> ![Figure A2.2](figures/fig_0002.png)
+>
+> Figure A2.2 The effect of the shape ( $ \alpha $) and rate ( $ \beta = 1/\lambda $, the inverse of the scale) parameters on the gamma distribution function. For  $ \alpha = 1 $, the resulting distribution is the simple monotonically decreasing exponential, while for  $ \alpha > 1 $, the distribution is unimodal. The effect of a change in the rate or scale is to keep the general shape but change the scaling with respect to x.
+
 
 Note that the factorial in the Erlang is replaced by the gamma function, $ \Gamma(x) $, which is defined below (Equation A2.26a). Figure A2.2 shows how changes in these two parameters influence the shape of the distribution. Note that, as a function of x, $$ p(x\mid\alpha,\beta)\propto x^{\alpha-1}e^{-\beta x} $$
 
@@ -339,18 +339,18 @@ The use of a prior density that conjugates the likelihood allows us to develop a
 
 With a binomial, each trial (observation) has two possible outcomes and the likelihood is a function of the sample size (number of trials), $ n $, and a single success probability, $ p $ (as the two outcomes on any given trial have probabilities of $ p $ and $ 1 - p $). The generalization of this model is the multinomial distribution, where now each trial has $ k $ possible outcomes, and which requires $ k - 1 $ success probabilities to describe the likelihood. In particular, for a total of $ n $ observations, the probability that $ n_1 $ are in category 1, $ n_2 $ in category 2, $ \cdots $, and $ n_k $ in category $ k $ is $$ p(n_{1},\cdots n_{k})=\frac{n!}{n_{1}!n_{2}!\cdots n_{k}!}\ p_{1}^{n_{1}}\cdots p_{k}^{n_{k}}\quad where\quad\sum_{i}n_{i}=n\quad and\quad\sum_{i}p_{i}=1 $$
 
+The conjugate prior for the multinomial likelihood is the Dirichlet distribution. If we let $ \mathbf{x} = (x_1, x_2, \cdots, x_k) $ denote the $ k $ success probabilities, when pdf for $ \mathbf{x} \sim \text{Dirichlet}(\alpha_1, \cdots, \alpha_k) $ is $$ \begin{align*}p(x_1,\cdots x_k\mid\alpha_1,\cdots,\alpha_k)=\frac{\Gamma(\alpha_0)}{\Gamma(\alpha_1)\cdots\Gamma(\alpha_k)}x_1^{\alpha_1-1}\cdots x_k^{\alpha_k-1}\end{align*} $$ where $$ \alpha_{0}=\sum_{i=1}^{k}\alpha_{i}\quad with\quad\alpha_{i}>0,\quad and\quad\sum_{i=1}^{k}x_{i}=1\quad with\quad0\leq x_{i}\leq1 $$
+
+At first glance, this looks like the multinomial density function (with $ \alpha_i - 1 = n_i $). The difference is that the multinomial is calculated over a set of discrete random variables ($ n_i $), thus returning the expected probabilities for any vector of discrete numbers of counts (successes) in each category. Conversely, the Dirichlet treats an equivalent of the vector of outcomes (generalized to non-integers) as fixed and returns the continuous distribution for all possible configurations of the success parameters given this data, which means that the data ($ \alpha_i $) is fixed, and the success parameters ($ x_i $) are random. A few key moments of this distribution are $$ \begin{align*}\mu_{x_i}={\alpha_i\over\alpha_0},\quad\sigma^2(x_i)={\alpha_i(\alpha_0-\alpha_i)\over\alpha_0^2(\alpha_0+1)},\quad{\rm and}\quad\sigma(x_i,x_j)=-{\alpha_i\alpha_j\over\alpha_0^2(\alpha_0+1)}\end{align*} $$
+
 **[Figure]**
 
 > **Figure A2.3** · page 18 · source: `appendix2`
 >
-> ![Figure A2.3](../figures/fig_0003.png)
+> ![Figure A2.3](figures/fig_0003.png)
 >
 > Figure A2.3 For  $ \alpha = \beta = 1 $ (long-dashed curve), the beta distribution is simply the uniform distribution over  $ (0, 1) $. The pdf for the beta distribution can also be U-shaped ( $ \alpha = \beta = 0.5 $; solid curve), unimodal ( $ \alpha = 2 $,  $ \beta = 5 $; short-dashed curve), or L-shaped ( $ \alpha = 10 $,  $ \beta = 1 $; dotted curve). Because the beta distribution is symmetric in  $ \alpha $ and  $ \beta $, switching their parameter values generates a distribution of the same shape translated about 0.5.
 
-
-The conjugate prior for the multinomial likelihood is the Dirichlet distribution. If we let $ \mathbf{x} = (x_1, x_2, \cdots, x_k) $ denote the $ k $ success probabilities, when pdf for $ \mathbf{x} \sim \text{Dirichlet}(\alpha_1, \cdots, \alpha_k) $ is $$ \begin{align*}p(x_1,\cdots x_k\mid\alpha_1,\cdots,\alpha_k)=\frac{\Gamma(\alpha_0)}{\Gamma(\alpha_1)\cdots\Gamma(\alpha_k)}x_1^{\alpha_1-1}\cdots x_k^{\alpha_k-1}\end{align*} $$ where $$ \alpha_{0}=\sum_{i=1}^{k}\alpha_{i}\quad with\quad\alpha_{i}>0,\quad and\quad\sum_{i=1}^{k}x_{i}=1\quad with\quad0\leq x_{i}\leq1 $$
-
-At first glance, this looks like the multinomial density function (with $ \alpha_i - 1 = n_i $). The difference is that the multinomial is calculated over a set of discrete random variables ($ n_i $), thus returning the expected probabilities for any vector of discrete numbers of counts (successes) in each category. Conversely, the Dirichlet treats an equivalent of the vector of outcomes (generalized to non-integers) as fixed and returns the continuous distribution for all possible configurations of the success parameters given this data, which means that the data ($ \alpha_i $) is fixed, and the success parameters ($ x_i $) are random. A few key moments of this distribution are $$ \begin{align*}\mu_{x_i}={\alpha_i\over\alpha_0},\quad\sigma^2(x_i)={\alpha_i(\alpha_0-\alpha_i)\over\alpha_0^2(\alpha_0+1)},\quad{\rm and}\quad\sigma(x_i,x_j)=-{\alpha_i\alpha_j\over\alpha_0^2(\alpha_0+1)}\end{align*} $$
 
 An important special case of the Dirichlet (for k = 2 classes) is the beta distribution, whose pdf is given by $$ \begin{align*}p(x)=\frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)}\; x^{\alpha-1}(1-x)^{\beta-1}\quad{\rm for}\quad0\le x\le1,\quad\alpha,\;\beta>0\end{align*} $$ which has a mean and a variance of $$ \begin{align*}\mu=\frac{\alpha}{\alpha+\beta}\qquad{\rm and}\qquad\sigma^2=\frac{\alpha\beta}{(\alpha+\beta)^2(\alpha+\beta-1)}\end{align*} $$ As Figure A2.3 illustrates, the beta distribution is extremely flexible, and can be flat, unimodal, U-, or L-shaped, depending on the choice of $ \alpha $ and $ \beta $.
 

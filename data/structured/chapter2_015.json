@@ -46,8 +46,12 @@
       "content": "The logic used to derive this result is easily extended to the entire sample of $n$ gene copies. There are $p_n = n(n - 1)/2$ possible pairs of $n$ copies, each of which will or will not coalesce in the preceding generation with respective probabilities $1/(2N)$ and $[1 - (1/2N)]$. If the sample size is much smaller than the population size, the probability of coalescence for any pair in the sample in the preceding generation is simply the product $p_n/(2N)$. Thus, the probability distribution for the coalescence time of one pair within a set of $n$ sequences is [[SEE_FORMULA:2.39]]"
     },
     {
+      "type": "figure",
+      "content": "[[FIGURE:2.10]]"
+    },
+    {
       "type": "derivation",
-      "content": "Namely, a geometric random variable with success parameter $ (p_n/2N) $. The mean time to coalescence of the first pair is then $ 2N/p_n $ generations (as opposed to 2N generations with a single pair). Because at this point two copies have coalesced into one, the sample size has been reduced by one, and the mean time to coalescence of the next pair is found by resetting $ p_n $ to $ p_{n-1} = (n-1)(n-2)/2 $. This procedure can be followed recursively down to the final pair $ (p_n=1) $, which again has an expected coalescence time of 2N generations (Figure 2.10). The implication of these results is that the expected time for merging n random lineages into n-1 lineages, [[SEE_FORMULA:2.40]] increases with decreasing sample size."
+      "content": "Namely, a geometric random variable with success parameter $ (p_n/2N) $. The mean time to coalescence of the first pair is then $ 2N/p_n $ generations (as opposed to 2N generations with a single pair). Because at this point two copies have coalesced into one, the sample size has been reduced by one, and the mean time to coalescence of the next pair is found by resetting $ p_n $ to $ p_{n-1} = (n-1)(n-2)/2 $. This procedure can be followed recursively down to the final pair $ (p_n=1) $, which again has an expected coalescence time of 2N generations ([[SEE_FIGURE:2.10]]). The implication of these results is that the expected time for merging n random lineages into n-1 lineages, [[SEE_FORMULA:2.40]] increases with decreasing sample size."
     },
     {
       "type": "derivation",

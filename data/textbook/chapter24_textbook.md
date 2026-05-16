@@ -184,7 +184,7 @@ Hence, Gaussian COA models make the assumption that the distribution of additive
 
 > **Figure 24.1** · page 10 · source: `chapter24`
 >
-> ![Figure 24.1](../figures/fig_0106.png)
+> ![Figure 24.1](figures/fig_0106.png)
 >
 > Figure 24.1 The impact of a finite population size, on the genic variance,  $ \sigma_a^2 $ (upper left panel), heritability (upper right panel), disequilibrium  $ d $ (lower left panel), and cumulative selection response (lower right panel). Open circles correspond to  $ N_e = 10 $, and filled circles to the infinitesimal model in the absence of drift ( $ N_e = \infty $). Details in Example 24.2.
 
@@ -292,7 +292,7 @@ Because either directional or stabilizing selection generates negative values of
 
 > **Figure 24.2** · page 13 · source: `chapter24`
 >
-> ![Figure 24.2](../figures/fig_0107.png)
+> ![Figure 24.2](figures/fig_0107.png)
 >
 > Figure 24.2 The impact of a finite number, $n$, of loci on heritability and selection response. In both upper panels, the filled circles correspond to the response, with $n = 10$ and $N_e = \infty$, while the open circles correspond to $N_e = 10$ and $n = \infty$. The lower panel displays the cumulative response under four different combinations of $N_e$ and $n$. Note that the values of $N_e = n = \infty$ corresponds to the standard infinitesimal model.
 
@@ -301,7 +301,7 @@ Because either directional or stabilizing selection generates negative values of
 
 > **Figure 24.3** · page 13 · source: `chapter24`
 >
-> ![Figure 24.3](../figures/fig_0108.png)
+> ![Figure 24.3](figures/fig_0108.png)
 >
 > Figure 24.3 The change in the genic variance,  $ \sigma_{a}^{2} $ (open circles), and the effective number of loci,  $ n_{e} $ (filled circles; see Equation 24.3), for a model with 5 major and 125 minor loci. See Example 24.4 for details.
 

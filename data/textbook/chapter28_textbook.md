@@ -28,16 +28,16 @@ The simplest models are fully neutral: the trait, and its underlying loci, have 
 
 A central issue concerning direct-selection models is that stabilizing selection on a trait usually generates underdominance in fitness at its underlying loci, thus removing variation (Example 5.6). Hence, strict stabilizing selection, by itself, cannot account for quantitative-trait variance. This removal of variation could be countered by either mutation (mutation-stabilizing selection balance) or by selectively favored pleiotropic fitness effects. Under the latter scenario, loci underlying the trait under stabilizing selection are also under balancing selection for some other independent component of fitness (balancing-stabilizing selection). The central issue concerning mutation-selection balance is that the estimated strengths of stabilizing selection and polygenic mutation appear to be inconsistent with observed levels of heritability.
 
+A critical question in the maintenance of genetic variation is just how much of observed stabilizing selection is actually real. Pleiotropic models can easily generate apparent (or spurious) stabilizing selection by returning a signature of stabilizing selection in a quadratic regression of fitness on the phenotypic value of a neutral trait (Chapters 29 and 30). Hence, it is possible that some (or perhaps much) of the observed stabilizing selection in nature is not real, but rather is instead due to pleiotropic fitness effects. Under pleiotropic models, the variation at the loci underlying a neutral trait is assumed to be maintained by either overdominant effects on fitness (pleiotropic overdominance) or because the underlying loci are slightly deleterious, but in mutation-selection equilibrium (pleiotropic deleterious mutation-selection balance). The problem with pleiotropy models is that the strength of selection on the underlying loci required to recover the observed strength of apparent stabilizing selection seen in nature is usually inconsistent with some other observable feature of the model. Various combinations of elements of these basic models have been proposed, as have refinements adding additional forces (such as drift), but most give inconsistent results when trying to simultaneously account for observed amounts of selection and variation.
+
 **[Figure]**
 
 > **Figure 28.1** · page 3 · source: `chapter28`
 >
-> ![Figure 28.1](../figures/fig_0138.png)
+> ![Figure 28.1](figures/fig_0138.png)
 >
 > Figure 28.1 Flow chart of the various classes of models for the maintenance of quantitative-genetic variance. Roughly speaking, there are direct-effect models that assume that selection is acting on the phenotype of the focal trait (whose variation we are trying to explain) and models that assume that this trait is neutral. Pleiotropic models assume that loci underlying a trait have fitness effects independent of their impact on the focal trait (which is often assumed to be strictly neutral). As detailed below, models also vary in the importance assigned to mutation in countering the removal of genetic variation by selection and drift.
 
-
-A critical question in the maintenance of genetic variation is just how much of observed stabilizing selection is actually real. Pleiotropic models can easily generate apparent (or spurious) stabilizing selection by returning a signature of stabilizing selection in a quadratic regression of fitness on the phenotypic value of a neutral trait (Chapters 29 and 30). Hence, it is possible that some (or perhaps much) of the observed stabilizing selection in nature is not real, but rather is instead due to pleiotropic fitness effects. Under pleiotropic models, the variation at the loci underlying a neutral trait is assumed to be maintained by either overdominant effects on fitness (pleiotropic overdominance) or because the underlying loci are slightly deleterious, but in mutation-selection equilibrium (pleiotropic deleterious mutation-selection balance). The problem with pleiotropy models is that the strength of selection on the underlying loci required to recover the observed strength of apparent stabilizing selection seen in nature is usually inconsistent with some other observable feature of the model. Various combinations of elements of these basic models have been proposed, as have refinements adding additional forces (such as drift), but most give inconsistent results when trying to simultaneously account for observed amounts of selection and variation.
 
 Finally, differences in the assumed granularity of the underlying genetic architecture of a trait can significantly impact the results. If a few loci, each with only a few alleles, underlie a trait, the resulting genotypic values have a fairly granular distribution. The dynamics under stabilizing selection are different when one of these genotypic values matches the optimal stabilizing selection value compared to those of the situation when none do. Likewise, with just a few alleles at a few loci, the opportunity for independent selection on many traits is constrained. Conversely, under continuum-of-alleles (COA) models (Chapter 24), with their large number of alleles at each locus, there is a distribution of allelic effects and the potential for significantly more fine-turning. A key point of this chapter is that the relative strengths of the underlying evolutionary forces dictates which genetic architecture is more appropriate. If drift is strong relative to the other forces, then at most, only a few alleles at a locus are likely (beyond a constellation of very rare new mutations). The same is true when selection is strong relative to mutation. Conversely, when the strength of mutation is greater than the strength of selection or drift at a locus, we expect it to harbor a number of alleles in a large population. As we will see, differences in the strength of mutation relative to selection at a locus lead to qualitatively different results.
 
@@ -84,15 +84,6 @@ The second required extension is some assumption relating the current effect of 
 > $$ \widetilde{h}^{2}=\frac{2N_{e}h_{m}^{2}}{1+2N_{e}h_{m}^{2}}=1-\frac{1}{1+2N_{e}h_{m}^{2}} $$
 
 
-**[Figure]**
-
-> **Figure 28.2** · page 6 · source: `chapter28`
->
-> ![Figure 28.2](../figures/fig_0139.png)
->
-> Figure 28.2 The expected heritability,  $ h^2 $, for large  $ N_e $, at mutation-drift equilibrium under the mutational regression model of Zeng and Cockerham (Equation 28.2a). This model includes the incremental ( $ \tau = 1 $) and HOC ( $ \tau = 0 $) models as special cases. Curves denote different values of  $ h_m^2/(2\mu) = n\sigma_a^2/\sigma_E^2 $, the ratio of the mutational heritability to the per-locus mutation rate.
-
-
 Note the connection with the expression for neutral allelic heterozygosity, $ \widetilde{H} $, as both are of the form $ 2N_e y/(1 + 2N_e y) $, with $ y = h_m^2 $ for heritability and $ y = 2\mu $ for heterozygosity. As with $ \widetilde{H} $, even modest values of $ N_e (\sim 1000) $ return $ \widetilde{h}^2 $ values over 0.5, while larger values return heritabilities of close to one. For example, when $ h_m^2 = 0.001 $, $ N_e $ is constrained to be in the range of 50–1200 in order to recover typical heritability values (0.1 to 0.6). As noted in Chapter 11, the incremental mutational model represents one extreme, wherein the value of the new mutation is closely tied to the evolutionary history (x) of its parental allele. The other extreme is the house-of-cards (HOC) model, which was formally developed by Kingman (1977, 1978; although also assumed by Wright 1948b, 1969). Under $ HOC $, $ x' = \alpha $, independent of an allele's starting value $ x $, where again $ \alpha \sim (0, \sigma_{\alpha}^2) $, so that past evolutionary history is completely irrelevant.
 
 **[推导 Derivation]**
@@ -109,6 +100,15 @@ where
 > **Formula (28.2b)** · `28.2b` · source: `chapter28_block_021` · Mutational Models and Quantitative Variation
 >
 > $$ K=\frac{h_{m}^{2}}{\mu(1-\tau^{2})}=\frac{2\mu n\sigma_{\alpha}^{2}/\sigma_{E}^{2}}{\mu(1-\tau^{2})}=\frac{2n\sigma_{\alpha}^{2}/\sigma_{E}^{2}}{1-\tau^{2}} $$
+
+
+**[Figure]**
+
+> **Figure 28.2** · page 6 · source: `chapter28`
+>
+> ![Figure 28.2](figures/fig_0139.png)
+>
+> Figure 28.2 The expected heritability,  $ h^2 $, for large  $ N_e $, at mutation-drift equilibrium under the mutational regression model of Zeng and Cockerham (Equation 28.2a). This model includes the incremental ( $ \tau = 1 $) and HOC ( $ \tau = 0 $) models as special cases. Curves denote different values of  $ h_m^2/(2\mu) = n\sigma_a^2/\sigma_E^2 $, the ratio of the mutational heritability to the per-locus mutation rate.
 
 
 Figure 28.2 plots $ \tilde{h}^2 $ as a function of $ \tau $ and $ h_m^2/(2\mu) = n\sigma_\alpha^2/\sigma_E $ (the scaled variance of mutational effects over all loci). The expected heritability increases as the role of past evolutionary history of an allele becomes increasingly important in predicting its mutated value (i.e., $ \tilde{h}^2 $ increases with $ \tau $). Likewise, $ \tilde{h}^2 $ increases with the total variance of mutational effects, $ n\sigma_\alpha^2 $. Assuming a typical value of $ h_m^2 = 0.001 $, an underlying per-locus mutation rate of $ \mu = 10^{-3} $
@@ -515,7 +515,7 @@ When effects vary over loci, the above expression holds, with the effective numb
 
 > **Figure 28.3** · page 20 · source: `chapter28`
 >
-> ![Figure 28.3](../figures/fig_0140.png)
+> ![Figure 28.3](figures/fig_0140.png)
 >
 > Figure 28.3 The equilibrium heritabilities expected under the Lande model (Equation 28.14c).
 
@@ -944,7 +944,7 @@ This reduces (to leading order) to Equation 11.25 as $ V_s \to \infty $ (i.e., a
 
 > **Figure 28.4** · page 35 · source: `chapter28`
 >
-> ![Figure 28.4](../figures/fig_0141.png)
+> ![Figure 28.4](figures/fig_0141.png)
 >
 > Figure 28.4 A: Comparison of Waxman's assumed distribution of the mutational effects,  $ \alpha $ (Equation 28.29a), and a Gaussian distribution. B: Use of the Waxman distribution for mutational effects leads to an exact solution of Equation 28.21c, showing the impact of varying mutation rates on the equilibrium distribution,  $ p(x) $, of allelic effects, x. The solution distribution is plotted as  $ p(x)/p(0) $, namely, the value of  $ p(x) $ scaled by its value at 0. In the front slice, the mutation rate is low and we recover the HCA result. As the mutation rate increases (moving toward the rear slices), the distribution becomes much more spread out, recovering the Gaussian approximation for the distribution of allelic effects. (After Waxman 2003.)
 
@@ -1422,7 +1422,7 @@ The variance to allele-frequency relationship for purely neutral alleles is in s
 
 > **Figure 28.5** · page 51 · source: `chapter28`
 >
-> ![Figure 28.5](../figures/fig_0142.png)
+> ![Figure 28.5](figures/fig_0142.png)
 >
 > Figure 28.5 Results of the Eyre-Walker (2010) model for the maintenance of genetic variation for a neutral trait by deleterious mutations having pleiotropic effects. Here,  $ \bar{s} $ is the average strength of selection against a new allele, and  $ \tau $ is a measure connecting the trait effect,  $ \alpha $, to  $ s $, with  $ \tau = 0 $ indicating neutrality (see Example 28.13 for details). The figure plots the probability density of the amount of equilibrium additive-genetic variance accounted for by alleles at a specific allele frequency,  $ x $, for two different values of  $ 4N_e\bar{s} $. Hence, the amount of variation attributable to alleles in a certain frequency range is simply the area under the curve for that range.
 
@@ -1431,7 +1431,7 @@ The variance to allele-frequency relationship for purely neutral alleles is in s
 
 > **Figure 28.6** · page 51 · source: `chapter28`
 >
-> ![Figure 28.6](../figures/fig_0143.png)
+> ![Figure 28.6](figures/fig_0143.png)
 >
 > Figure 28.6 Expected number of polymorphisms, and the fraction of the trait variance explained, as a function of the minor allele frequency (MAF) under an equilibrium neutral model (i.e., the Watterson distribution). See Example 28.13 for details.
 
@@ -1639,16 +1639,16 @@ Most of the above models can easily accommodate sufficient genetic variation. In
 
 While Turelli's (1984) benchmark of $ V_s \simeq 20\sigma_E^2 $ is typically assumed, the data today are both more extensive, and more problematic, than when he extracted this value from the literature. The classic paper by Lande and Arnold (1983), which launched an entire cottage industry on the estimation of these parameters, appeared at essentially the same time as Turelli's analysis. We examine fitness estimation in detail in Chapters 29 and 30, noting here the basic conclusion that there is considerable uncertainty on the strength of natural selection on a typical trait. The relative constancy of many morphological phenotypes over evolutionary time is consistent with some form of stabilizing selection, as are the divergence data for gene-expression levels (Chapter 12). However, the strength of such selection is far less clear. The meta-analysis by Kingsolver et al. (2001) on the quadratic term, $ \gamma $, of a Lande-Arnold fitness regression (Figure 30.5) shows that it is equally likely to be positive (disruptive selection) or negative (stabilizing selection). Conditioning on this value being negative, the mean strength is slightly stronger than Turelli's value ($ \sim 10\sigma_E^2 $). If correct, these higher estimates of $ V_s $ are more problematic for the previous models.
 
+Besides the standard concerns of measurement error and power (especially with an inherently noisy trait like fitness), there are three issues that significantly obscure the actual strength of selection on a trait (Chapters 29 and 30). First, almost all fitness-trait regressions in the literature use a component of fitness (such as mating success, fecundity, or viability), not total fitness itself. Such component-based estimates can be very misleading. representing only a fraction of the total fitness (e.g., Johnston et al. 2013). Second, selection acting on phenotypically correlated characters obscures not just the actual strength of selection on a target trait, but more fundamentally can also disguise its true nature. For example, a neutral trait can show a strong signal of stabilizing selection if there is selection on phenotypically correlated traits (Example 28.1). The standard approach for dealing with this concern is a multivariate regression with a number of traits, in the hope that some of them are highly correlated with the actual targets of selection, so their inclusion acts as a covariate to reduce spurious associations. However, this approach is far from foolproof (Chapter 30). As Example 28.1 highlights, what matters for evolution is not the strength of selection on the phenotype, but rather the strength of selection on the breeding value. A highly heritable trait under strong apparent stabilizing selection can experience little to no selection on its breeding value if the target of selection is not the trait itself (Chapters 20, 29, and 30).
+
 **[Figure]**
 
 > **Figure 28.7** · page 57 · source: `chapter28`
 >
-> ![Figure 28.7](../figures/fig_0144.png)
+> ![Figure 28.7](figures/fig_0144.png)
 >
 > Figure 28.7 If the true fitness function has an asymptotic optimum, approximating it with a quadratic can be very misleading.
 
-
-Besides the standard concerns of measurement error and power (especially with an inherently noisy trait like fitness), there are three issues that significantly obscure the actual strength of selection on a trait (Chapters 29 and 30). First, almost all fitness-trait regressions in the literature use a component of fitness (such as mating success, fecundity, or viability), not total fitness itself. Such component-based estimates can be very misleading. representing only a fraction of the total fitness (e.g., Johnston et al. 2013). Second, selection acting on phenotypically correlated characters obscures not just the actual strength of selection on a target trait, but more fundamentally can also disguise its true nature. For example, a neutral trait can show a strong signal of stabilizing selection if there is selection on phenotypically correlated traits (Example 28.1). The standard approach for dealing with this concern is a multivariate regression with a number of traits, in the hope that some of them are highly correlated with the actual targets of selection, so their inclusion acts as a covariate to reduce spurious associations. However, this approach is far from foolproof (Chapter 30). As Example 28.1 highlights, what matters for evolution is not the strength of selection on the phenotype, but rather the strength of selection on the breeding value. A highly heritable trait under strong apparent stabilizing selection can experience little to no selection on its breeding value if the target of selection is not the trait itself (Chapters 20, 29, and 30).
 
 A more subtle issue is that most estimates of the strength of stabilizing selection are based on the quadratic term in a fitness regression (Equation 28.3; Chapter 29). However, if Gaussian stabilizing selection or quadratic are poor models of the actual nature of nonadditive selection, these regression terms can be very misleading (see Figure 29.9). An alternative class of nonlinear candidate fitness functions are those that reach as asymptotic value (Figure 28.7). The quadratic approximations of such fitness functions are expected to be rather misleading, and (to our knowledge) little work has been done on the maintenance of quantitative-genetic variation under such a fitness function. The drift barrier (Chapter 7) arising from improved alleles eventually having too small a selective advantage to overpower drift could potentially result in considerable levels of variation at equilibrium.
 
@@ -1741,18 +1741,18 @@ Assuming both a larger number of loci and a higher mutation rate per locus can a
 
 ## chapter28_043 · Maintenance of Quantitative Genetic Variation: Introduction / WHAT DOES GENETIC ARCHITECTURE TELL US?
 
+A potential window into deciding which forces are predominantly responsible for quantitative variation is that the different models predict somewhat different genetic architectures. As noted by Kelly (2008), ideally such predictions are both robust and exclusive. Robust predictions imply that slight departures from model assumptions do not dramatically change the prediction, while exclusivity (predictions that are unique to a given model) is much more elusive.
+
+One fairly robust prediction is that alleles in mutation-selection balance (MSB) should generally be at low frequencies. While this prediction is exclusive to MSB models, it does not distinguish between direct selection versus pleiotropic deleterious effects. In the case of direct stabilizing selection, alleles with larger trait effects have reduced fitness, generating a strong negative correlation between effect size and frequency. For trait alleles maintained by MSB due to pleiotropic deleterious fitness effects, the expected relationship between frequency and effect size is less clear. If there is a strong positive correlation between trait effect size and fitness, the same negative correlation is expected. Conversely, if there is a weak correlation, any such pattern would be greatly diminished.
+
 **[Figure]**
 
 > **Figure 28.8** · page 61 · source: `chapter28`
 >
-> ![Figure 28.8](../figures/fig_0145.png)
+> ![Figure 28.8](figures/fig_0145.png)
 >
 > Figure 28.8 Plot of estimated allelic-effect size for known sites influencing human height versus allele frequency. The gap in the middle of the figure reflects a lack of power for either GWAS or linkage studies to detect genes in these regions. (After Kemper et al. 2012.)
 
-
-A potential window into deciding which forces are predominantly responsible for quantitative variation is that the different models predict somewhat different genetic architectures. As noted by Kelly (2008), ideally such predictions are both robust and exclusive. Robust predictions imply that slight departures from model assumptions do not dramatically change the prediction, while exclusivity (predictions that are unique to a given model) is much more elusive.
-
-One fairly robust prediction is that alleles in mutation-selection balance (MSB) should generally be at low frequencies. While this prediction is exclusive to MSB models, it does not distinguish between direct selection versus pleiotropic deleterious effects. In the case of direct stabilizing selection, alleles with larger trait effects have reduced fitness, generating a strong negative correlation between effect size and frequency. For trait alleles maintained by MSB due to pleiotropic deleterious fitness effects, the expected relationship between frequency and effect size is less clear. If there is a strong positive correlation between trait effect size and fitness, the same negative correlation is expected. Conversely, if there is a weak correlation, any such pattern would be greatly diminished.
 
 **[命题 Proposition]**
 

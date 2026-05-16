@@ -1,7 +1,9 @@
 from __future__ import annotations
 
 import json
+import os
 import re
+import shutil
 from collections import defaultdict
 from dataclasses import dataclass
 from pathlib import Path
@@ -10,6 +12,7 @@ from typing import Any, Iterable
 
 CHUNK_FILE_RE = re.compile(r"^((?:chapter|appendix)\d+)_(\d+)\.json$", re.IGNORECASE)
 NUMBERED_REF_RE = re.compile(r"^(\d+)\.\d+")
+FIGURE_TEXT_REF_RE = re.compile(r"\bFigure(?:s)?\s+(?P<id>(?:A\d+|\d+)\.\d+[a-z]?)\b", re.IGNORECASE)
 PLACEHOLDER_RE = re.compile(
     r"\[\[(?P<tag>SEE_FORMULA|SEE_TABLE|SEE_EXAMPLE|SEE_FIGURE|TABLE|FORMULA|EXAMPLE|FIGURE):(?P<id>[^\]]+)\]\]",
     re.IGNORECASE,
@@ -49,6 +52,7 @@ def export_textbooks(
 ) -> list[TextbookExportResult]:
     structured_path = Path(structured_dir)
     output_path = Path(out_dir)
+    figure_library_path = Path(figure_library) if figure_library else default_figure_library_path(structured_path)
     chapter_filter = (
         {normalize_chapter_id(chapter) for chapter in chapters if normalize_chapter_id(chapter)}
         if chapters is not None
@@ -65,8 +69,12 @@ def export_textbooks(
             continue
         grouped[chapter].append(path)
 
-    renderer = TextbookRenderer(structured_path, figure_library=Path(figure_library) if figure_library else None)
     output_path.mkdir(parents=True, exist_ok=True)
+    renderer = TextbookRenderer(
+        structured_path,
+        figure_library=figure_library_path,
+        output_dir=output_path,
+    )
 
     results: list[TextbookExportResult] = []
     for chapter in sorted(grouped, key=chapter_sort_key):
@@ -82,12 +90,22 @@ def export_textbooks(
 
 
 class TextbookRenderer:
-    def __init__(self, structured_dir: Path, figure_library: Path | None = None):
+    def __init__(
+        self,
+        structured_dir: Path,
+        figure_library: Path | None = None,
+        output_dir: Path | None = None,
+    ):
         self.structured_dir = structured_dir
         self.figure_library_path = figure_library
         self.figure_library_root = figure_library.parent if figure_library else structured_dir
+        self.output_dir = output_dir
         self.formula_map = self._load_formula_map()
         self.figure_map = self._load_figure_map()
+        self.figure_ids_by_chapter: dict[str, set[str]] = defaultdict(set)
+        for chapter, figure_id in self.figure_map:
+            if chapter:
+                self.figure_ids_by_chapter[chapter].add(figure_id)
         self.tables_by_id, self.tables_by_chapter_id = self._load_table_maps()
         (
             self.examples_by_ref,
@@ -104,6 +122,8 @@ class TextbookRenderer:
             "",
         ]
 
+        expanded_figures: set[str] = set()
+        explicitly_placed_figures = explicit_figure_ids(chunks)
         for chunk in chunks:
             chunk_id = str(chunk.get("id") or "")
             metadata = chunk.get("metadata") if isinstance(chunk.get("metadata"), dict) else {}
@@ -127,6 +147,8 @@ class TextbookRenderer:
                     current_chapter=chapter,
                     current_chunk_id=chunk_id,
                     force_expand_tables=block_type == "table",
+                    expanded_figures=expanded_figures,
+                    explicitly_placed_figures=explicitly_placed_figures,
                 )
 
                 if block_type != "discussion":
@@ -182,8 +204,11 @@ class TextbookRenderer:
         current_chunk_id: str | None = None,
         force_expand_tables: bool = False,
         inline_table_scope: str | None = None,
+        expanded_figures: set[str] | None = None,
+        explicitly_placed_figures: set[str] | None = None,
     ) -> str:
         content = normalize_latex_for_katex(content)
+        figure_assets = expanded_figures if expanded_figures is not None else expanded_assets
         def replace_see_table(match: re.Match[str]) -> str:
             table_id = match.group("id").strip()
             if (
@@ -218,7 +243,14 @@ class TextbookRenderer:
             if tag == "TABLE" and inline_table_scope and self.table_is_inline(raw_id, current_chapter):
                 asset_key = f"{asset_key}:{inline_table_scope}"
 
-            if asset_key in expanded_assets:
+            if tag == "FIGURE":
+                if asset_key in figure_assets:
+                    parts.append(self.render_repeat_reference(tag, raw_id))
+                else:
+                    expanded_assets.add(asset_key)
+                    figure_assets.add(asset_key)
+                    parts.append(self.render_figure_block(raw_id, current_chapter))
+            elif asset_key in expanded_assets:
                 parts.append(self.render_repeat_reference(tag, raw_id))
             else:
                 expanded_assets.add(asset_key)
@@ -227,9 +259,15 @@ class TextbookRenderer:
                 elif tag == "TABLE":
                     parts.append(self.render_table_block(raw_id, current_chapter))
                 elif tag in {"SEE_EXAMPLE", "EXAMPLE"}:
-                    parts.append(self.render_example_block(raw_id, expanded_assets, current_chapter))
-                elif tag == "FIGURE":
-                    parts.append(self.render_figure_block(raw_id, current_chapter))
+                    parts.append(
+                        self.render_example_block(
+                            raw_id,
+                            expanded_assets,
+                            current_chapter,
+                            figure_assets,
+                            explicitly_placed_figures or set(),
+                        )
+                    )
                 else:
                     parts.append(match.group(0))
             last_end = match.end()
@@ -238,7 +276,13 @@ class TextbookRenderer:
         if remaining:
             parts.append(remaining)
         rendered = "\n\n".join(parts) if parts else content
-        return self.replace_inline_figure_references(rendered)
+        rendered = self.replace_inline_figure_references(rendered)
+        return self.append_auto_figure_blocks(
+            rendered,
+            figure_assets,
+            current_chapter,
+            explicitly_placed_figures or set(),
+        )
 
     def table_is_inline(self, table_id: str, current_chapter: str | None) -> bool:
         table = self.resolve_table(table_id, current_chapter)
@@ -309,6 +353,7 @@ class TextbookRenderer:
         unit_id = str(source.get("unit_id") or "?")
         rows = normalize_table_rows(table.get("rows"))
         html = str(table.get("html") or "")
+        markdown_body = normalize_latex_for_katex(str(table.get("markdown_body") or "").strip())
         resolved_id = clean_ref_id(table.get("id") or table_id)
         table_type = str(table.get("table_type") or "").strip().lower()
 
@@ -328,24 +373,34 @@ class TextbookRenderer:
                         cell = render_cell(row[0]).strip()
                         if cell:
                             lines.append(f"> {cell}")
+                    self.append_table_markdown_body(lines, markdown_body)
                     lines.append("")
                     return "\n".join(lines)
                 lines.append("> " + " | ".join(render_cell(cell) for cell in rows[0]))
                 lines.append("> " + " | ".join("---" for _ in range(column_count)))
                 for row in rows[1:]:
                     lines.append("> " + " | ".join(render_cell(cell) for cell in row))
+                self.append_table_markdown_body(lines, markdown_body)
                 lines.append("")
                 return "\n".join(lines)
 
         if html:
             for line in html.splitlines() or [html]:
                 lines.append(f"> {line}")
+            self.append_table_markdown_body(lines, markdown_body)
             lines.append("")
             return "\n".join(lines)
 
         lines.append("> [Table data not available]")
         lines.append("")
         return "\n".join(lines)
+
+    def append_table_markdown_body(self, lines: list[str], markdown_body: str) -> None:
+        if not markdown_body:
+            return
+        lines.append(">")
+        for line in markdown_body.splitlines():
+            lines.append(f"> {line}" if line else ">")
 
     def markdown_asset_table_cell(self, value: str) -> str:
         return markdown_table_cell(self.render_inline_asset_references(str(value or "")))
@@ -379,7 +434,7 @@ class TextbookRenderer:
         caption = normalize_latex_for_katex(str(figure.get("caption") or f"Figure {figure_ref}"))
         asset_path = str(figure.get("asset_path") or "").strip()
         asset_target = self.figure_library_root / asset_path if asset_path else None
-        image_path = str(asset_target).replace("\\", "/") if asset_target else ""
+        image_path = self.markdown_asset_path(asset_target) if asset_target else ""
         page = figure.get("page", "?")
         chapter = normalize_chapter_id(figure.get("chapter") or current_chapter or "")
         lines = [
@@ -389,6 +444,22 @@ class TextbookRenderer:
             lines.extend([">", f"> ![Figure {figure_ref}]({image_path})"])
         lines.extend([">", f"> {caption}", ""])
         return "\n".join(lines)
+
+    def markdown_asset_path(self, asset_target: Path) -> str:
+        if self.output_dir is None:
+            return str(asset_target).replace("\\", "/")
+        if asset_target.exists():
+            try:
+                relative = asset_target.resolve().relative_to(self.figure_library_root.resolve())
+            except ValueError:
+                relative = Path(asset_target.name)
+            output_target = self.output_dir / relative
+            output_target.parent.mkdir(parents=True, exist_ok=True)
+            if asset_target.resolve() != output_target.resolve(strict=False):
+                shutil.copy2(asset_target, output_target)
+            return relative.as_posix()
+        relative = os.path.relpath(asset_target.resolve(strict=False), start=self.output_dir.resolve())
+        return relative.replace("\\", "/")
 
     def render_figure_reference(self, figure_id: str) -> str:
         return f"Figure {clean_ref_id(figure_id)}"
@@ -401,11 +472,73 @@ class TextbookRenderer:
             flags=re.IGNORECASE,
         )
 
+    def append_auto_figure_blocks(
+        self,
+        rendered: str,
+        expanded_figures: set[str],
+        current_chapter: str | None,
+        explicitly_placed_figures: set[str],
+    ) -> str:
+        figure_ids = self.figure_refs_in_text(rendered, current_chapter)
+        additions: list[str] = []
+        for figure_id in figure_ids:
+            if figure_id in explicitly_placed_figures:
+                continue
+            asset_key = self.asset_key("FIGURE", figure_id, current_chapter)
+            if asset_key in expanded_figures:
+                continue
+            expanded_figures.add(asset_key)
+            additions.append(self.render_figure_block(figure_id, current_chapter).strip())
+        if not additions:
+            return rendered
+        return "\n\n".join([rendered, *additions])
+
+    def figure_refs_in_text(self, value: str, current_chapter: str | None) -> list[str]:
+        chapter = normalize_chapter_id(current_chapter or "")
+        known_ids = self.figure_ids_by_chapter.get(chapter, set())
+        if not chapter or not known_ids:
+            return []
+
+        found: list[str] = []
+        seen: set[str] = set()
+
+        def add(raw_id: str) -> None:
+            figure_id = self.base_figure_id(raw_id, known_ids)
+            if figure_id not in known_ids or figure_id in seen:
+                return
+            figure = self.resolve_figure(figure_id, chapter)
+            figure_chapter = normalize_chapter_id((figure or {}).get("chapter") or "")
+            if figure_chapter != chapter:
+                return
+            seen.add(figure_id)
+            found.append(figure_id)
+
+        for match in FIGURE_TEXT_REF_RE.finditer(value or ""):
+            add(match.group("id"))
+            tail = value[match.end() : match.end() + 120]
+            for candidate in sorted(known_ids, key=natural_key):
+                if candidate in seen:
+                    continue
+                if re.search(rf"(?:,|and)\s+{re.escape(candidate)}\b", tail, flags=re.IGNORECASE):
+                    add(candidate)
+        return found
+
+    def base_figure_id(self, value: str, known_ids: set[str]) -> str:
+        figure_id = clean_ref_id(value).strip(".,;:()[]")
+        if figure_id in known_ids:
+            return figure_id
+        match = re.fullmatch(r"((?:A\d+|\d+)\.\d+)[A-Za-z]", figure_id)
+        if match and match.group(1) in known_ids:
+            return match.group(1)
+        return figure_id
+
     def render_example_block(
         self,
         example_ref: str,
         expanded_assets: set[str],
         current_chapter: str | None,
+        expanded_figures: set[str] | None = None,
+        explicitly_placed_figures: set[str] | None = None,
     ) -> str:
         example = self.resolve_example(example_ref, current_chapter)
         if not example:
@@ -427,6 +560,8 @@ class TextbookRenderer:
             expanded_assets,
             example_chapter,
             inline_table_scope=f"example:{clean_ref_id(example_ref)}",
+            expanded_figures=expanded_figures,
+            explicitly_placed_figures=explicitly_placed_figures or set(),
         )
 
         lines = [
@@ -596,6 +731,35 @@ def read_json_if_exists(path: Path, default: Any) -> Any:
     if not path.exists():
         return default
     return read_json(path)
+
+
+def explicit_figure_ids(chunks: list[dict[str, Any]]) -> set[str]:
+    figure_ids: set[str] = set()
+    for chunk in chunks:
+        blocks = chunk.get("blocks") if isinstance(chunk, dict) else []
+        if not isinstance(blocks, list):
+            continue
+        for block in blocks:
+            if not isinstance(block, dict):
+                continue
+            for match in re.finditer(r"\[\[FIGURE:(?P<id>[^\]]+)\]\]", str(block.get("content") or ""), re.IGNORECASE):
+                figure_ids.add(clean_ref_id(match.group("id")))
+    return figure_ids
+
+
+def default_figure_library_path(structured_dir: Path) -> Path | None:
+    candidates = [
+        structured_dir / "figure_library.json",
+        structured_dir.parent / "figure_library.json",
+    ]
+    for candidate in candidates:
+        if candidate.exists():
+            return candidate
+    return None
+
+
+def natural_key(value: Any) -> list[object]:
+    return [int(part) if part.isdigit() else part.lower() for part in re.split(r"(\d+)", str(value))]
 
 
 def normalize_chapter_id(value: Any) -> str:

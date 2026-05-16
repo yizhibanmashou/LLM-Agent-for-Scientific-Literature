@@ -21,11 +21,15 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "As suggested by the Schweder-Spötvoll plot, the distribution of $p$ values offers insight into the number of truly null hypotheses, $n_{0}$. While this plot offers either a simple visual, or a more formal regression-based, estimator of $n_{0}$, it tends to overestimate the number of nulls. Further, it can be difficult to specify exactly where the upturn in the plotted values begins. A number of other estimators have been suggested, again based on a uniform distribution of $p$ values for those tests under the null. Recall that the histogram from a sufficiently large number of draws from a uniform distribution is flat, as all values are equally likely (Figure A4.2A). However, if the null is false for at least some of the tests, then the distribution of $p$ values is shifted away from uniform, and usually with a skew toward smaller values (Figure A4.2B), but potentially also skewed toward one (for example, if one-tailed tests are used when a two-tailed test is appropriate; Figure A4.2C)."
+      "content": "As suggested by the Schweder-Spötvoll plot, the distribution of $p$ values offers insight into the number of truly null hypotheses, $n_{0}$. While this plot offers either a simple visual, or a more formal regression-based, estimator of $n_{0}$, it tends to overestimate the number of nulls. Further, it can be difficult to specify exactly where the upturn in the plotted values begins. A number of other estimators have been suggested, again based on a uniform distribution of $p$ values for those tests under the null. Recall that the histogram from a sufficiently large number of draws from a uniform distribution is flat, as all values are equally likely ([[SEE_FIGURE:A4.2]]). However, if the null is false for at least some of the tests, then the distribution of $p$ values is shifted away from uniform, and usually with a skew toward smaller values ([[SEE_FIGURE:A4.2]]), but potentially also skewed toward one (for example, if one-tailed tests are used when a two-tailed test is appropriate; [[SEE_FIGURE:A4.2]])."
+    },
+    {
+      "type": "figure",
+      "content": "[[FIGURE:A4.1]]"
     },
     {
       "type": "discussion",
-      "content": "If the collection of tests contains some alternative hypotheses mixed in with true nulls, we expect the distribution to be a mixture, with fraction, $ \\pi_0 = n_0/n $, consisting of draws from a uniform and the remaining fraction, $ (1 - n_0/n) $, from some other distribution. Figure A4.3 plots the empirical distribution of $ p $ values from a study by Mosig et al. (2001) on marker-trait associations. While the middle of the distribution appears to be consistent with random sampling around a flat average, there is a large excess of values near zero."
+      "content": "If the collection of tests contains some alternative hypotheses mixed in with true nulls, we expect the distribution to be a mixture, with fraction, $ \\pi_0 = n_0/n $, consisting of draws from a uniform and the remaining fraction, $ (1 - n_0/n) $, from some other distribution. [[SEE_FIGURE:A4.3]] plots the empirical distribution of $ p $ values from a study by Mosig et al. (2001) on marker-trait associations. While the middle of the distribution appears to be consistent with random sampling around a flat average, there is a large excess of values near zero."
     },
     {
       "type": "discussion",
@@ -46,6 +50,14 @@
     {
       "type": "example",
       "content": "[[SEE_EXAMPLE:A4.6]]"
+    },
+    {
+      "type": "figure",
+      "content": "[[FIGURE:A4.2]]"
+    },
+    {
+      "type": "figure",
+      "content": "[[FIGURE:A4.3]]"
     },
     {
       "type": "discussion",

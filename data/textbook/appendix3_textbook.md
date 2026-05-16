@@ -1,4 +1,4 @@
-# Appendix 3 · Appendix
+# Appendix 3 · Appendix 3 / Markov Chain Monte Carlo and Gibbs Sampling
 
 ## appendix3_001 · Appendix: Introduction
 
@@ -118,7 +118,7 @@ Hastings (1970) generalized the Metropolis algorithm by using an arbitrary (as o
 
 > **Figure A3.1** · page 8 · source: `appendix3`
 >
-> ![Figure A3.1](../figures/fig_0004.png)
+> ![Figure A3.1](figures/fig_0004.png)
 >
 > Figure A3.1 Traces for the samplers discussed in Example A3.3. A: A sample run when the candidate-generating distribution is a uniform over  $ (0, 100) $. B: A sample run when the candidate-generating distribution is a  $ \chi_{1}^{2} $.
 
@@ -208,7 +208,7 @@ Under a proposal distribution using an independent chain, the probability of jum
 
 > **Figure A3.2** · page 13 · source: `appendix3`
 >
-> ![Figure A3.2](../figures/fig_0005.png)
+> ![Figure A3.2](figures/fig_0005.png)
 >
 > Figure A3.2 Trace plots for the two samplers discussed in Example A3.5. A: The proposal distribution is a  $ \chi_{10}^{2} $. B: The proposal distribution is a  $ \chi_{2}^{2} $.
 
@@ -350,7 +350,7 @@ While computing the MC estimate for any moment using the sampler is straightforw
 
 > **Figure A3.3** · page 21 · source: `appendix3`
 >
-> ![Figure A3.3](../figures/fig_0006.png)
+> ![Figure A3.3](figures/fig_0006.png)
 >
 > Figure A3.3 The approximation of the marginal posterior distribution for x for the distribution given in Example A3.6 using a Gibbs sequence. The open bars represent the approximation using a binomial with the Gibbs-sequence mean value of y as the success parameter, while the solid bars represent the approximation based on a weighted sum of binomials. See Example A3.8 for details.
 

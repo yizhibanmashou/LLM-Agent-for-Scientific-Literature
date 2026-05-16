@@ -1,4 +1,4 @@
-# Chapter 26 · Long-term Response
+# Chapter 26 · Long-term Response: 2. Finite Population Size and Mutation
 
 ## chapter26_001 · Long-term Response: Introduction
 
@@ -58,20 +58,20 @@ Even when an allele is strongly selected ($ 4N_{e}s \gg 1 $), drift is important
 
 Hence, the probability of fixation starting with a single copy, $ p_0 = 1/(2N) $, of an advantageous allele is approximately $ 2s $ ($ N_e/N $) when $ 4N_e s \gg 1 $, implying that a favorable allele introduced as a single copy is usually lost by drift. Conversely, the fixation of a favored allele becomes almost certain as its frequency becomes sufficiently large. Equation 26.2a shows that if $ p_0 \geq 1/(2N_e s) $, the probability of fixation exceeds 0.86, while if $ p_0 \geq 1/(N_e s) $, the probability of fixation exceeds 0.98. Thus, if a favorable allele initially increases by drift, it can reach a threshold frequency above which deterministic selection dominates, which rapidly increases its frequency toward 1.0. As it approaches a frequency of 1.0, drift will again dominate, fixing the allele much more rapidly than expected under deterministic selection (Example 8.1).
 
+**[Figure]**
+
+> **Figure 26.1** · page 3 · source: `chapter26`
+>
+> ![Figure 26.1](figures/fig_0124.png)
+>
+> Figure 26.1 The probability of fixation of an additive allele as a function of  $ N_{e} $s and its initial allele frequency,  $ p_{0} $ (from Equation 26.2a).
+
+
 Finally, recall the Cohan effect (Example 7.4), which states that uniform selection can result in greater between-replicate divergence than drift. This occurs because the between-line divergence is maximized when the fixation probability of an allele is 0.5. Given that the fixation probability under neutrality is $ p_0 $, selection results in greater divergence than it does under neutrality when $ u(p_0)[1 - u(p_0)] > p_0[1 - p_0] $. Figure 7.3 shows that the conditions for this to occur are not very restrictive under additive selection. As is discussed below, the Cohan effect has implications when crossing and then reselecting replicate lines.
 
 ---
 
 ## chapter26_003 · THE POPULATION GENETICS OF SELECTION AND DRIFT / Fixation Probabilities for Alleles at a QTL
-
-**[Figure]**
-
-> **Figure 26.1** · page 3 · source: `chapter26`
->
-> ![Figure 26.1](../figures/fig_0124.png)
->
-> Figure 26.1 The probability of fixation of an additive allele as a function of  $ N_{e} $s and its initial allele frequency,  $ p_{0} $ (from Equation 26.2a).
-
 
 **[推导 Derivation]**
 
@@ -477,7 +477,7 @@ One complication with Robertson’s theory is that as population size increases,
 
 > **Figure 26.2** · page 15 · source: `chapter26`
 >
-> ![Figure 26.2](../figures/fig_0125.png)
+> ![Figure 26.2](figures/fig_0125.png)
 >
 > Figure 26.2 Cumulative response at generation 50 as a function of  $ N_{e}\bar{i} $ for selection on increased abdominal bristle number in Drosophila melanogaster. (After Jones et al. 1968.)
 
@@ -486,23 +486,23 @@ One complication with Robertson’s theory is that as population size increases,
 
 > **Figure 26.3** · page 15 · source: `chapter26`
 >
-> ![Figure 26.3](../figures/fig_0126.png)
+> ![Figure 26.3](figures/fig_0126.png)
 >
 > Figure 26.3 A: Selection for wing-tip height in Drosophila melanogaster (in mils = 0.001 inches). Three replicated selection lines (left to right) with estimated population sizes of 11 (3 replicates), 56 (2 replicates) and 280 (2 replicates) were used. Symbols represent the mean value, while the one-sided whisker shows its associated standard error (displayed in only one direction). Note that the response increases with  $ N_{e} $. (After Weber 1990.) B: The ratio of cumulative selection response at generation 50 to response in the first generation as a function of effective population size, for nine different experiments (represented by the different symbols). The lower sigmoidal curve is the prediction using Equation 26.15a; the upper sigmoidal curve is the prediction given by Equation 26.30c, which allows for response from new mutations (assuming  $ \sigma_{m}^{2}/\sigma_{E}^{2} = 0.001 $). The curve marked  $ 2N_{e} $ is the expected limit under Robertson's additive model (Equation 26.15b). (After Weber and Diggins 1990.)
-
-
-**[Figure]**
-
-> **Figure 26.4** · page 16 · source: `chapter26`
->
-> ![Figure 26.4](../figures/fig_0127.png)
->
-> Figure 26.4 Weber's selection experiments for increased flight speed in Drosophila. A: Results of 300 generations of selection in two replicate lines (circles with dashed lines and squares with solid lines); also see Figure 25.9 for the first 100 generations. (After Weber 2004.) B: Response to selection in hybrid sublines formed by crossing two replicate generation 75 selection lines (AA1 and AA2) back to controls (CN1 and CN2). Selection started on the  $ F_{2} $ lines, with only six generations of selection (the  $ F_{8} $ lines) required to recover essentially all of the initial response of  $ \sim $140 cm/sec. (After Weber 1996.)
 
 
 Perhaps the largest long-term artificial selection experiment (outside of microbes) is the heroic effort of Weber, which was introduced in Chapter 25. Weber (1996) scored a total of over 9,000,000 Drosophila for flight speed in two replicate lines subjected to 100 generations of selection (Figure 25.9). The resulting $ N_{e} $ was in the 500–1000 range, with a percent selected of p = 0.045 (for a selection intensity of $ \bar{i} = 2.11 $). The average speed before selection was around 2 cm/second, while the mean speed at generation 100 was 170 cm/sec. As shown in Figure 25.9, response continued in both lines for 100 generations but was diminishing with time, as indicated by a significant quadratic component in the response curve. Figure 26.3 shows the results for over 300 generations of selection from Weber (2004). As of this writing, the experiment is over 650 generations, with response, albeit diminishing, still occurring (Weber, pers. comm.).
 
 Unlike in many artificial selection experiments, there was little slippage upon relaxation of selection and only a minimal loss in fitness relative to the control populations (fitness decreases of 6% and 7% at generations 50 and 85, respectively). Weber attributes this to the larger effective population size, which both reduces the level of inbreeding and allows for more efficient selection on modifiers. The latter can reduce deleterious pleiotropic effects that might accompany major alleles improving flight speed, as the weak second-order effects on modifiers are much easier to select for in larger populations. Larger population sizes also allow recombination to be more efficient, reducing the effects of deleterious alleles linked to alleles improving flight speed.
+
+**[Figure]**
+
+> **Figure 26.4** · page 16 · source: `chapter26`
+>
+> ![Figure 26.4](figures/fig_0127.png)
+>
+> Figure 26.4 Weber's selection experiments for increased flight speed in Drosophila. A: Results of 300 generations of selection in two replicate lines (circles with dashed lines and squares with solid lines); also see Figure 25.9 for the first 100 generations. (After Weber 2004.) B: Response to selection in hybrid sublines formed by crossing two replicate generation 75 selection lines (AA1 and AA2) back to controls (CN1 and CN2). Selection started on the  $ F_{2} $ lines, with only six generations of selection (the  $ F_{8} $ lines) required to recover essentially all of the initial response of  $ \sim $140 cm/sec. (After Weber 1996.)
+
 
 Weber gained some insight into the genetic nature of the response by examining the selection response in hybrid lines formed by crossing each replicate selection line at generation 75 (lines AA1 and AA2) back to control lines (CN1 and CN2). As Figure 26.4 shows, both the $ F_{1} $ and $ F_{2} $ were close to the control line values, indicating very strong dominance for reduced flight speed. Evidence for epistasis was more equivocal. From the theory of line-cross analysis (LW Chapter 9), an estimate of composite epistatic effects is provided by the linear contrast of means of the parental and first two filal populations, $ 4\overline{z}_{F_2} - 2\overline{z}_{F_1} - \overline{z}_{P_1} - \overline{z}_{P_2} $, but the resulting value was not significantly different from zero ($ -38.5 \pm 37.5 $). Selection on both resulting $ F_2 $ lines required only six generations to recover essentially all of the response seen in the parental (75-generation) lines ($ \sim 140 $ cm/sec).
 
@@ -663,6 +663,15 @@ Supporting an earlier conjecture of Dempster (1955b), Robertson (1960a) found (f
 
 Because the term in brackets is independent of $p$, response (as a function of $p$) is maximized at the maximum value of $\varphi(x_{[1-p]})$, which occurs at $x = 0$, or a $p$ value of 0.5. As Figure 26.5 illustrates, the selection limit as a function of p becomes extremely flat-topped as M increases, so even fairly large deviations from p = 0.50 yield essentially the same limit. If we relax the assumption of normality, Cockerham and Burrows (1980) found that the optimal proportion for truncation selection is still near 0.50, unless the phenotypic distribution is extremely skewed. Hill and Robertson (1966), Robertson (1970a), and Hospital and Chevalet (1993) found that the optimal proportion increases to above p = 0.50 when linkage is important (recall from Chapter 24 that linkage disequilibrium generates skew in the genotypic distribution, causing it to depart from a normal).
 
+**[Figure]**
+
+> **Figure 26.5** · page 21 · source: `chapter26`
+>
+> ![Figure 26.5](figures/fig_0128.png)
+>
+> Figure 26.5 A: The selection limit as a function of the fraction selected (allowed to reproduce) for 10 and 50 individuals scored. (After Robertson 1960a.) B: The optimal proportion,  $ p_{opt} $, of individuals selected in each generation to maximize the selection advance over t generations, as a function of t/M, where M is the number of measured individuals. (After Robertson 1970b.) Both sets of curves can be generated using Equation 26.23, taking  $ M = N_{e} $.
+
+
 **[Table]**
 
 > **Table 26.4** · `26.4` · page 21 · source: `chapter26_015`
@@ -673,15 +682,6 @@ Because the term in brackets is independent of $p$, response (as a function of $
 > 25 | 0.8 | 20.0 | 0.80 | 161
 > 10 | 1.4 | 6.2 | 0.62 | 87
 > 5 | 1.8 | 2.6 | 0.52 | 47
-
-
-**[Figure]**
-
-> **Figure 26.5** · page 21 · source: `chapter26`
->
-> ![Figure 26.5](../figures/fig_0128.png)
->
-> Figure 26.5 A: The selection limit as a function of the fraction selected (allowed to reproduce) for 10 and 50 individuals scored. (After Robertson 1960a.) B: The optimal proportion,  $ p_{opt} $, of individuals selected in each generation to maximize the selection advance over t generations, as a function of t/M, where M is the number of measured individuals. (After Robertson 1970b.) Both sets of curves can be generated using Equation 26.23, taking  $ M = N_{e} $.
 
 
 Robertson's prediction of the optimal selection intensity for long-term response is experimentally supported. Madalena and Robertson (1975) selected for decreased sternopleural bristle number in Drosophila. When the best 5 of 25 were chosen, the limit was 18.0 bristles, less extreme than the limit of 17.1 when the best 10 of 25 were chosen. Similar results were seen for increased abdominal bristle number in Drosophila (Jones et al. 1968), increased egg-laying in Tribolium castaneum (Ruano et al. 1975), and increased postweaning weight in mice (Hanrahan et al. 1973).
@@ -708,7 +708,7 @@ So far, we have been considering only the effects of drift due to selecting N ad
 
 > **Figure 26.6** · page 23 · source: `chapter26`
 >
-> ![Figure 26.6](../figures/fig_0129.png)
+> ![Figure 26.6](figures/fig_0129.png)
 >
 > Figure 26.6 Effects of population bottlenecks on selection response. A: Selection for sternopleural bristle number in Drosophila melanogaster, with the most extreme 10 pairs out of 25 scored pairs selected in each generation. The outermost curves are responses using the base population. The middle curves are the responses for sublines formed from a single parental pair. The innermost curves correspond to sublines formed by single parental pairs for three consecutive generations prior to selection. (After Robertson 1966b.) B: Selection for abdominal bristle number in Drosophila melanogaster. The responses denoted by 40 (10%), 40 (20%), and 40 (40%) correspond to populations where the uppermost 40 pairs of adults are selected in each generation, with different selection intensities. For example, 200 pairs are scored and the uppermost 40 are chosen in the 40 (20%) population. Responses denoted by X (10%), X (20%), and X (40%) refer to lines split from the corresponding 40-pair lines after 16 generations of selection and selected thereafter at the same intensity with 10 pairs of parents per generation. Note that all X lines show reduced responses (being below their counterparts). (After Jones et al. 1968.)
 
@@ -755,7 +755,7 @@ A more accurate measure would be to weight the fixation probability, $ u(p) $, b
 
 > **Figure 26.7** · page 25 · source: `chapter26`
 >
-> ![Figure 26.7](../figures/fig_0130.png)
+> ![Figure 26.7](figures/fig_0130.png)
 >
 > Figure 26.7 The effect of an initial bottleneck on selection for increased abdominal bristle number in Drosophila. Curve B corresponds to the response in bottlenecked populations formed from a single pair of parents ( $ N_{0} = 2 $), curve U to a nonbottlenecked population, and curve C corresponds to the response from the unselected control. All lines were maintained by using 20 pairs of parents in each generation. (After Frankham 1980.)
 
@@ -937,7 +937,7 @@ Denoting the initial heritability by $ h^{2} $ and recalling that $ \sigma_{E}^{
 
 > **Figure 26.8** · page 31 · source: `chapter26`
 >
-> ![Figure 26.8](../figures/fig_0131.png)
+> ![Figure 26.8](figures/fig_0131.png)
 >
 > Figure 26.8 The expected generation,  $ t^* $, at which the per-generation response from mutational input equals the per-generation response from the initial variation in the base population (Equation 26.31a). We assume that  $ h_m^2 = \sigma_m^2 / \sigma_E^2 = 0.005 $, the average value in LW Table 12.1, from which Equation 26.31b yields  $ \Psi = 100h^2 / \left( \left(1 - h^2 \right) N_e \right) $. The four curves correspond to initial heritabilities of 0.05, 0.10, 0.25 and 0.50. For sufficiently large values of  $ N_e $,  $ t^* $ becomes independent of  $ N_e $ and approaches the approximation given by Equation 26.31c. Note when  $ h^2 $ is modest to large that Equation 26.31c significantly overestimate  $ t^* $ for small  $ N_e $.
 
@@ -1115,5 +1115,22 @@ where a tilde denotes an equilibrium value and $ \widetilde{\rho}(i) $ denotes t
 >
 > Example 26.6. Consider the asymptotic response to mass (m) versus within-family (w) selection. Under within-family (full-sib) selection, $ N_{e(w)} \simeq 2N $, as the among-family variance is zero (Equation 3.4). In contrast, $ N_{e(m)} < N $, with the difference between $ N_{e(m)} $ and N increasing with the selection intensity and heritability (Equation 26.8), implying that $$ \sqrt{\frac{N_{e(w)}}{N_{e(m)}}}\geq\sqrt{2} $$ (29.39a) The accuracy for mass selection is given by $$ \rho(z,A)=\frac{\sigma(z,A)}{\sigma_{A}\sigma_{z}}=\frac{\sigma_{A}^{2}}{\sigma_{A}\sigma_{z}}=\frac{\sigma_{A}^{2}}{\sqrt{\sigma_{A}^{2}\left(\sigma_{A}^{2}+\sigma_{E}^{2}\right)}} $$ (29.39b) yielding an asymptotic accuracy as $$ \widetilde{\rho}(m)=\frac{\widetilde{\sigma}_{A}^{2}}{\sqrt{\widetilde{\sigma}_{A}^{2}(\widetilde{\sigma}_{A}^{2}+\sigma_{E}^{2})}}=\frac{2N_{e(m)}\sigma_{m}^{2}}{\sqrt{2N_{e(m)}\sigma_{m}^{2}(2N_{e(m)}\sigma_{m}^{2}+\sigma_{E}^{2})}} $$ (29.39c) as obtained by Wei et al. (1996). Turning to within-family selection, let $ \overline{z}_{f} $ denote the family mean. Selection decisions are based on the value of $ z - \overline{z}_{f} $. Recalling our treatment of within-family selection from Chapter 21, the resulting accuracy for within-family (full-sib) selection becomes $$ \rho(w)=\rho(z-\overline{z}_{f},A)\simeq\frac{\sigma(z-\overline{z}_{f},A)}{\sqrt{\sigma^{2}(A)\sigma^{2}(z-\overline{z}_{f})}}\simeq\frac{\sigma_{A}^{2}/2}{\sqrt{\sigma_{A}^{2}(\sigma_{G w}^{2}+\sigma_{E_{s}}^{2})}} $$ (29.39d) where the last step ignores the effect of the number of sibs (n) in each family by assuming that n is large (see Chapter 21 for expressions for when n is small). The within-family genetic variance, $ \sigma_{Gw}^{2} $, equals $ \sigma_{A}^{2}/2 $ for a full-sib family with only additive effects, while the within-family environmental variance, $ \sigma_{E_{s}}^{2} $, equals $ \sigma_{E}^{2} $ under the assumption of no common-family effects (Chapter 21). We make these simplifying assumptions here, but more general expressions easily follow. At equilibrium $$ \widetilde{\rho}(w)=\frac{\widetilde{\sigma}_{A}^{2}/2}{\sqrt{\widetilde{\sigma}_{A}^{2}(\widetilde{\sigma}_{A}^{2}/2+\sigma_{E}^{2})}}=\frac{N_{e(w)}\sigma_{m}^{2}}{\sqrt{2N_{e(w)}\sigma_{m}^{2}(N_{e(w)}\sigma_{m}^{2}+\sigma_{E}^{2})}} $$ (29.39e) (Wei et al. 1996). Applying Equation 26.39a along with Equations 26.39c and 26.39e yields $$ \frac{\rho_{(w,\infty)}}{\rho_{(m,\infty)}}\geq\frac{1}{\sqrt{2}} $$ Thus, $$ \frac{\widetilde{R}_{w}}{\widetilde{R}_{m}}=\left[\sqrt{\frac{N_{e(w)}}{N_{e(m)}}}\right]\left[\frac{\widetilde{\rho}_{(w)}}{\widetilde{\rho}_{(m)}}\right]\geq\sqrt{2}\frac{1}{\sqrt{2}}=1 $$ and hence $ \widetilde{R}_{w} \geq \widetilde{R}_{m} $. That is, for the same selection intensity, the asymptotic response is greater under within-family selection than under mass selection.
 
+
+**[推导 Derivation]**
+
+The effects of different selection schemes on the effective population size can be seen by considering the general weighted index of within- and among-family information,
+
+> **Formula (26.40)** · `26.40` · source: `chapter26_block_169` · Optimizing the Asymptotic Selection Response
+>
+> $$ I=(z-\overline{z}_{f})+\lambda(\overline{z}_{f}-\overline{z})=(\mathrm{within-family})+\lambda\left(\mathrm{among-family}\right) $$
+
+
+where $z$ is an individual's phenotypic value, $\overline{z}_f$ is the mean of its family, and $\overline{z}$ is the grand mean. A number of selection schemes can be represented (either exactly or to a good approximation) by this index (Chapter 21). For example, $\lambda = 1$ corresponds to individual selection (as $I = z - \overline{z}$), while $\lambda = 0$ corresponds to strict within-family selection ($I = z - \overline{z}_f$). The accuracy of selection using this index with an appropriately chosen value of $\lambda$ is greater than the accuracy of individual selection ($\rho(I, A) > \rho(z, A)$; Equation 21.53b), and hence selection using the optimal index gives a greater short-term response than mass selection. To a first approximation, BLUP selection corresponds to this optimal index.
+
+Because the effective population size is reduced by inflating the among-family variance, the larger the value of $ \lambda $ in Equation 26.40, the greater is the reduction in $ N_{e} $. Larger values of $ \lambda $ place more weight on family information, resulting in more individuals from the best families being coselected. The reduction in $ N_{e} $ is greatest when heritability is small, as in these cases the index places the most weight on the among-family component. Yet, however, it is exactly this setting under which index and BLUP selection have the greatest short-term advantage over individual selection. Conversely, when care is taken to equalize the amount of inbreeding across methods, individual selection can produce a larger single-generation response than index selection or BLUP (Quinton et al. 1992; Andersson et al. 1998).
+
+Can one balance this tradeoff between increased accuracy for short-term response using information from relatives versus inflation of the among-family variance (and the resulting reduction in the long-term response via reduction in $ N_e $) that these schemes produce? Several authors have proposed schemes for reducing the among-family variance following selection. Toro and colleagues (Toro and Nieto 1984; Toro et al. 1988; Toro and Pérez-Enciso 1990) suggested that selected individuals be mated in ways that minimize the coancestry between them. A slightly different strategy, compensatory mating, was suggested by Grundy et al. (1994). Here, individuals from families that are overrepresented following selection are mated to individuals from underrepresented families. This has the effect of reducing the cumulative effect of selection ($ Q_\tau $ in Equation 26.6c) by reducing the variance in family contribution. Grundy et al. also suggested a more subtle approach. They noted that by using slightly biased selection parameters in the index (for example, using upwardly biased estimates of $ h^2 $ when computing the optimal $ \lambda $), the slight reduction in the accuracy of the adjusted index from its optimal value is more than offset by a much smaller decrease in $ N_e $. They suggested that this approach, combined with compensatory mating, provides a simple way for ameliorating the reduction in $ N_e $. Verrier et al. (1993) also suggested that schemes placing slightly less emphasis on family information can, in small populations, give greater long-term response than BLUP selection. We examine the optimal control for inbreeding under BLUP in detail in Volume 3.
+
+This tradeoff between optimal short-term versus optimal asymptotic response has economic consequences for breeders. While breeders are ultimately better off in the long run (in terms of total response) using selection schemes that are initially less accurate, competing breeders using the initially more accurate schemes will achieve a larger short-term response. Breeders must thus decide between staying in business over the short term versus experiencing a larger payoff (in terms of a greater response) over the long run.
 
 ---

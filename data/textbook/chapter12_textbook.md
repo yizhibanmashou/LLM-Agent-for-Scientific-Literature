@@ -82,7 +82,7 @@ where $ \lambda_1 = 1 - 1/(2N) $. Lynch (1988a) provided approximate expressions
 
 > **Figure 12.1** · page 6 · source: `chapter12`
 >
-> ![Figure 12.1](../figures/fig_0033.png)
+> ![Figure 12.1](figures/fig_0033.png)
 >
 > Figure 12.1 Confidence limits and critical values for $\sigma^2$ estimated from a sample of $n$ observations. Define $X_{p,n}$ as satisfying $\operatorname{Pr}(\chi_n^2 \leq X_{p,n}) = p$. (Top) Upper and low values correspond to $(n - 1)/X_{0.025,n-1}$ and $(n - 1)/X_{0.975,n-1}$, respectively, the coefficients that multiply the estimated sample variance, Var, to yield a 95% confidence interval for $\sigma^2$ (Equation 12.6c). For example, for $n = 10$, the 95% confidence interval for $\sigma^2$ is 0.44. Var to 3.33. Var. (Bottom) Upper and low values correspond to $X_{0.975,n-1}/(n - 1)$ and $X_{0.025,n-1}/(n - 1)$, respectively, the coefficients that multiply the assumed variance, $\sigma_0^2$, to yield upper and lower 2.5% critical values for an observed sample variance (Equation 12.7a). For example, for $n = 10$, 95% of the values of Var are expected to fall within the interval of $0.30 - \sigma_0^2$ to $2.11 \cdot \sigma_0^2$.
 
@@ -139,7 +139,7 @@ This motivates a $ (1-\alpha)100% $ confidence interval for the true variance, $
 
 > **Figure 12.2** · page 7 · source: `chapter12`
 >
-> ![Figure 12.2](../figures/fig_0034.png)
+> ![Figure 12.2](figures/fig_0034.png)
 >
 > Figure 12.2 Observed and expected levels of the among-population variance for pupal weight in a divergence experiment with the flour beetle Tribolium. Solid lines are the expected divergence ( $ 2\sigma_{A}^{2}(0)f_{t}=920f_{t} $), dotted lines are the least-squares regressions of the observations, and the paired dashed lines give the approximate 95% confidence interval. (Data from Rich et al. 1984.)
 
@@ -270,18 +270,18 @@ Again focusing on a character with a purely additive genetic basis, starting wit
 
 where $ \sigma_{m}^{2} $ is the per-generation mutational rate of input of genetic variance, as described in Chapter 11. This expression shows that as t becomes large, the expected rate of increase of the among-population variance for a neutral quantitative trait becomes a constant $ 2\sigma_{m}^{2} $ per generation. The same formulation applies to the among-species genetic covariance for a pair of traits, if the mutational rate of production of covariance between the traits is substituted for $ \sigma_{m}^{2} $ (Lande 1979a).
 
+Thus, under the infinite-alleles model, the asymptotic divergence rate is independent of the population size, just as it is in the neutral theory of molecular evolution (Chapter 7; Kimura 1983). Although the expected number of new mutations entering a population in each generation is $ 2N_{u} $ per locus, the probability of fixation of a new mutation is its initial frequency $ 1/(2N) $, so (at equilibrium), the expected number of mutations that is fixed per locus, per population, per generation is simply the mutation rate, u. With each fixed mutation causing an increase in expected among-population variance of $ \sim E[(2a)^2] $, and n loci contributing, the asymptotic divergence rate is $ nuE[(2a)^2] = 2\sigma_m^2 $.
+
+Under the assumptions of the infinite-alleles model, the asymptotic divergence rate of $ 2\sigma_{m}^{2} $ is a fairly general result. It is independent of the degree of dominance of new mutations, the linkage relationships of the constituent loci, and the mating system (Lynch and Hill 1986). This is because both dominance and gametic-phase disequilibrium are transient properties of alleles en route to loss or fixation, and not cumulative phenomena, and because the probability of fixation of a new neutral mutation is equal to its initial frequency regardless of the breeding system.
+
 **[Figure]**
 
 > **Figure 12.3** · page 11 · source: `chapter12`
 >
-> ![Figure 12.3](../figures/fig_0035.png)
+> ![Figure 12.3](figures/fig_0035.png)
 >
 > Figure 12.3 The expected fraction of neutral among-population variance attributable to mutations arising subsequent to the isolation event. It is assumed that the base population is in drift-mutation equilibrium,  $ \sigma_A^2(0) = 2N_e\sigma_m^2 $, with the same effective size as the daughter species, so that from Equation 12.1b, the divergence due to base-population variance is  $ 4N_e\sigma_m^2[1 - e^{-t/(2N_e)}] $. To obtain the actual number of generations of divergence for any population size, the horizontal axis is multiplied by  $ N_e $.
 
-
-Thus, under the infinite-alleles model, the asymptotic divergence rate is independent of the population size, just as it is in the neutral theory of molecular evolution (Chapter 7; Kimura 1983). Although the expected number of new mutations entering a population in each generation is $ 2N_{u} $ per locus, the probability of fixation of a new mutation is its initial frequency $ 1/(2N) $, so (at equilibrium), the expected number of mutations that is fixed per locus, per population, per generation is simply the mutation rate, u. With each fixed mutation causing an increase in expected among-population variance of $ \sim E[(2a)^2] $, and n loci contributing, the asymptotic divergence rate is $ nuE[(2a)^2] = 2\sigma_m^2 $.
-
-Under the assumptions of the infinite-alleles model, the asymptotic divergence rate of $ 2\sigma_{m}^{2} $ is a fairly general result. It is independent of the degree of dominance of new mutations, the linkage relationships of the constituent loci, and the mating system (Lynch and Hill 1986). This is because both dominance and gametic-phase disequilibrium are transient properties of alleles en route to loss or fixation, and not cumulative phenomena, and because the probability of fixation of a new neutral mutation is equal to its initial frequency regardless of the breeding system.
 
 How long should populations be isolated before one should start to worry about the contribution of new mutations to divergence? From Equation 12.10, it can be seen that this depends on the initial level of genetic variance and on the effective sizes of the derived isolates. In Figure 12.3, it is assumed that the initial base population is in drift-mutation equilibrium, so that $ \sigma_A^2(0) = 2N_e\sigma_m^2 $, and that the isolated lineages have rapidly attained the same effective sizes ($ N_e $). Under these circumstances, by the time $ N_e $ generations have elapsed, polygenic mutation subsequent to the isolation event has caused about 20% of the divergence, whereas for $ t > 3N_e $ generations, the majority of the divergence is due to new mutations.
 
@@ -328,7 +328,7 @@ As discussed in detail in LW Chapter 12, the theoretical expectations of the neu
 
 > **Figure 12.4** · page 13 · source: `chapter12`
 >
-> ![Figure 12.4](../figures/fig_0036.png)
+> ![Figure 12.4](figures/fig_0036.png)
 >
 > Figure 12.4 The increase in total additive genetic variance (within-plus among-population components) from new mutational variance in an expanding set of lines of corn. See text for details. (After Russell et al. 1963.)
 
@@ -465,7 +465,7 @@ where $U$ is a unit normal random variable. Lande’s (1976) original test (dist
 
 > **Figure 12.5** · page 18 · source: `chapter12`
 >
-> ![Figure 12.5](../figures/fig_0037.png)
+> ![Figure 12.5](figures/fig_0037.png)
 >
 > Figure 12.5 Critical values for an  $ \alpha $-level test of a departure from drift having either too little, or too much, absolute divergence. Too much absolute divergence occurs when the unit-normal scaled test score is either in the lower  $ \alpha/4 $ or upper  $ \alpha/4 $ tail (for a total probability of  $ \alpha/2 $). Too little absolute divergence occurs when the unit-normal scaled test score is too close to zero, namely, a region of probability  $ \alpha/4 $ below zero and a region of probability  $ \alpha/4 $ above zero (for a total probability of  $ \alpha/2 $). Here,  $ z_p $ satisfies  $ \Pr(U \leq z_p) = p $, where  $ U $ is a unit-normal random variable. See the text for further details.
 
@@ -729,7 +729,7 @@ It should be stressed that the power of this approach is not the initial small s
 
 > **Figure 12.6** · page 26 · source: `chapter12`
 >
-> ![Figure 12.6](../figures/fig_0038.png)
+> ![Figure 12.6](figures/fig_0038.png)
 >
 > Figure 12.6 A De Finetti diagram of the support for the random walk, directional walk, and stasis models. Each point corresponds to the coordinates of the Akaike weights for these three models (which sum to one) for a single stratophenetic series. Points near vertices corresponds to almost 100% support for a particular model, hence the lables at the vertices. Points along an edge of the triangle indicate very little support for the model perpendicular to that edge. Unfilled points indicate strong support (weight for most supported model at least 2.7 times the weight of any other model). (After Hopkins and Lidgard 2012.)
 
@@ -744,7 +744,7 @@ While Estes and Arnold (2007) were able to account for their observed pattern in
 
 > **Figure 12.7** · page 27 · source: `chapter12`
 >
-> ![Figure 12.7](../figures/fig_0039.png)
+> ![Figure 12.7](figures/fig_0039.png)
 >
 > Figure 12.7. The blunderbuss pattern of divergence observed by Uyeda et al. (2011). Bounded variation is seen over the first  $ 10^6 $ years, after which considerable divergence can occur. Divergence is scored as the log difference between means (at time points a and b, for an interval of  $ b - a $), scaled by the dimension  $ k $ of the data ( $ k = 2 $ for area,  $ k = 3 $ for mass). (After Uyeda et al. 2011.)
 
@@ -877,16 +877,16 @@ Insight into power is obtained by asking, under the null, how often the ratio $ 
 > $$ \Pr\left(\frac{Q_{ST}}{\overline{F}_{ST}}>\delta\right)=\Pr\left(\frac{(n_{d}-1)Q_{ST}}{\overline{F}_{ST}}>\delta(n_{d}-1)\right)=\Pr\left(\chi_{n_{d}-1}^{2}>\delta(n_{d}-1)\right) $$
 
 
+Consider $ n_d = 2 $, as occurs when comparing two populations. How much larger must the true value of $ Q_{ST} $ be than the true value $ F_{ST} $ for this difference to be significant at the $ \alpha = 0.05 $ level? Because tests involving $ Q_{ST} $ are two-sided (either too large or too small being of interest), and $ \Pr(\chi^2 > 5.02) = 0.025 $, Equation 12.28c gives the critical value as $ \delta = 5.02 $. Hence, $ Q_{ST} $ must be in excess of 5 times $ \overline{F}_{ST} $ to be significant at the 5% level. For $ n = 10 $, $ \Pr(\chi_0^2 > 19.03) = 0.025 $, or $ \delta = 19.03/3 = 2.1 $, and hence only a two-fold difference is required for significance. The same logic can be used to obtain the critical value when $ Q_{ST} < F_{ST} $. For example, because $ \Pr(\chi_0^2 < 2.7) = 0.025 $, a value of $ Q_{ST} $ less than one third of $ \overline{F}_{ST} $ (2.7/9 = 0.3) is significant at the 5% level when $ n_d = 10 $.
+
 **[Figure]**
 
 > **Figure 12.8** · page 32 · source: `chapter12`
 >
-> ![Figure 12.8](../figures/fig_0040.png)
+> ![Figure 12.8](figures/fig_0040.png)
 >
 > Figure 12.8 When  $ \overline{F}_{ST} $ is small, the  $ Q_{ST} $ distribution for a neutral, completely additive trait should approximately follow the Lewontin-Krakauer distribution (Equations 9.10a and 12.28a). In this example, two traits, one with  $ Q_{ST} = 0.09 $, and a second with  $ Q_{ST} = 0.16 $ are both larger than  $ \overline{F}_{ST} = 0.06 $, but only trait 2 is significant. (After Whitlock 2008.)
 
-
-Consider $ n_d = 2 $, as occurs when comparing two populations. How much larger must the true value of $ Q_{ST} $ be than the true value $ F_{ST} $ for this difference to be significant at the $ \alpha = 0.05 $ level? Because tests involving $ Q_{ST} $ are two-sided (either too large or too small being of interest), and $ \Pr(\chi^2 > 5.02) = 0.025 $, Equation 12.28c gives the critical value as $ \delta = 5.02 $. Hence, $ Q_{ST} $ must be in excess of 5 times $ \overline{F}_{ST} $ to be significant at the 5% level. For $ n = 10 $, $ \Pr(\chi_0^2 > 19.03) = 0.025 $, or $ \delta = 19.03/3 = 2.1 $, and hence only a two-fold difference is required for significance. The same logic can be used to obtain the critical value when $ Q_{ST} < F_{ST} $. For example, because $ \Pr(\chi_0^2 < 2.7) = 0.025 $, a value of $ Q_{ST} $ less than one third of $ \overline{F}_{ST} $ (2.7/9 = 0.3) is significant at the 5% level when $ n_d = 10 $.
 
 Figure 12.8 shows the basic structure of tests based on this simple approach: compute $ Q_{ST} $ and compare this value with the distribution of realized values for single-locus $ F_{ST} $, where the mean of this latter distribution as taken is $ \overline{F}_{ST} $, the mean $ F_{ST} $ value over all loci in the sample. This approach assumes that just a single trait is of interest and that $ Q_{ST} $ is measured without error (again, we return to this below). In the typical study setting, however, one has $ k Q_{ST} $ values (one for each of the k traits in the study), but uses the same set of markers (and hence the same $ \overline{F}_{ST} $ value) for all traits. This is now a multiple-comparisons setting (Appendix 4). One approach to accommodate this concern is to use the first k order statistics from the Lewontin-Krakauer distribution (Equation 12.28a), which can be obtained as follows. A large number of samples are generated by randomly drawing $ k \chi^{2} $ random variables and scaling each using Equation 12.28a to generate an empirical distribution of the k order statistics (i.e., the values of the k realizations, ranked from largest—the first order statistic—to smallest; Chapter 14). The largest $ Q_{ST} $ value is assessed by comparing it against critical values for the empirical distribution of the largest value from each of the simulated samples. If this $ Q_{ST} $ value is significant (for example, only 2% of the simulated samples of k draws each have a greater value for their largest order statistic), one can then turn to the second largest $ Q_{ST} $ value and compare it with the simulated distribution of the second largest order statistic, and so on until a $ Q_{ST} $ value is no longer significant relative to its corresponding order statistic.
 
@@ -894,7 +894,7 @@ Figure 12.8 shows the basic structure of tests based on this simple approach: co
 
 > **Figure 12.9** · page 33 · source: `chapter12`
 >
-> ![Figure 12.9](../figures/fig_0041.png)
+> ![Figure 12.9](figures/fig_0041.png)
 >
 > Figure 12.9 A violin plot for the distribution of the difference  $ \left(\widehat{Q}_{ST} - Q_{ST}^{n}\right) $ for body length in the sea-run brown trout (Salmo trutta), using the resampling scheme suggested by Whitlock and Guillaume (2009), and detailed in Example 12.9. The width of the “violin” indicates the probability mass in that interval, the dot denotes the highest posterior probability, and the error bars the 95% credibility interval. Here this interval is completely above zero, demonstrating that  $ \widehat{Q}_{ST} $ is significantly in excess of its predicted neutral value given  $ \overline{F}_{ST} $. (After Rogell et al. 2012.)
 
@@ -930,7 +930,7 @@ Support for $ Q_{ST} $ as a method for detecting selection was also offered by R
 
 > **Figure 12.10** · page 35 · source: `chapter12`
 >
-> ![Figure 12.10](../figures/fig_0042.png)
+> ![Figure 12.10](figures/fig_0042.png)
 >
 > Figure 12.10 The joint distribution of  $ Q_{ST} $ vs.  $ F_{ST} $ seen in the meta-analysis of Leinonen et al. (2008). The solid line represents the neutral expectation,  $ Q_{ST} = F_{ST} $, while the dashed line is their smoothed nonlinear regression. There is a very strong tendency for  $ Q_{ST} > F_{ST} $. While consistent with widespread diversifying selection, as discussed in the text, such a pattern can also arise from ascertainment bias or the use of highly polymorphic markers (which underestimate  $ F_{ST} $).
 
@@ -939,7 +939,7 @@ Support for $ Q_{ST} $ as a method for detecting selection was also offered by R
 
 > **Figure 12.11** · page 35 · source: `chapter12`
 >
-> ![Figure 12.11](../figures/fig_0043.png)
+> ![Figure 12.11](figures/fig_0043.png)
 >
 > Figure 12.11 Correlation between the difference  $ (Q_{ST} - F_{ST}) $ and heterozygosity at the marker loci, with each point representing one trait comparison. Filled circles involve microsatellites, and open circles denote allozyme markers. The solid line is the regression slope of  $ (Q_{ST} - F_{ST}) $ on heterozygosity; the dashed line is the same regression, but correcting the previously discussed decline in  $ F_{ST} $ with heterozygosity. (After Edelaar et al. 2011.)
 

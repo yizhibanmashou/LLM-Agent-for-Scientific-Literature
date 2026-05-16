@@ -335,7 +335,7 @@ First, the MK framework assumes that deleterious mutations are strongly deleteri
 
 > **Figure 10.1** · page 15 · source: `chapter10`
 >
-> ![Figure 10.1](../figures/fig_0022.png)
+> ![Figure 10.1](figures/fig_0022.png)
 >
 > Figure 10.1 The estimated constraint, 1 - f, on replacement sites as a function of effective population size, where f is the ratio of effectively neutral mutation rates (the fraction of new mutations that efficiently behave as neutral alleles) at replacement versus silent sites. As  $ N_{e} $ increases, more deleterious mutations move from the effectively neutral class into the strongly deleterious class (f decreases), reducing the effectively neutral mutation rate and increasing the amount of constraint on a gene. (After Wright and Andolfatto 2008.)
 
@@ -587,7 +587,7 @@ Drawing a clear conclusion from these initial data is problematic for several re
 
 > **Figure 10.2** · page 24 · source: `chapter10`
 >
-> ![Figure 10.2](../figures/fig_0023.png)
+> ![Figure 10.2](figures/fig_0023.png)
 >
 > Figure 10.2 Estimated  $ \bar{\alpha} $ values for ten plant species, where the listed species supplied the polymorphism data. Boxes and whiskers indicate, respectively, the 50% and 95% confidence intervals for the estimates of  $ \bar{\alpha} $, obtained using Eyre-Walker and Keightley's (2009) ML method, which allows for a distribution of deleterious fitness effects and potentially different effective population sizes in the divergence and polymorphism phases. Only the comparison involving sunflowers (polymorphism data from Helianthus petiolaris, divergence between petiolaris and annuus) had an estimated average  $ \alpha $ that was significantly positive. Surprisingly, the comparison using polymorphism data from H. annuus and the same divergence (petiolaris versus annuus) gave a negative estimate of average  $ \alpha $ (but was not significantly different from zero). Note that most estimates are negative (although only one was significantly so, ). Recall that negative estimates of  $ \alpha $ occur when the neutrality index (Equation 10.6a) is greater than one, namely, when there is an excessive number of segregating replacement sites. As mentioned throughout this chapter, this can occur if weakly deleterious alleles are common, which inflate the number of polymorphisms but not fixations. (After Gossmann et al. 2010.)
 
@@ -865,7 +865,7 @@ Bayesian hierarchical models take this idea a step further. Consider data struct
 
 > **Figure 10.3** · page 33 · source: `chapter10`
 >
-> ![Figure 10.3](../figures/fig_0024.png)
+> ![Figure 10.3](figures/fig_0024.png)
 >
 > Figure 10.3 Bustamante et al. (2002) examined 12 genes from Arabidopsis thaliana (using a single allele from A. lyrata to compute divergence) and 34 genes from D. melanogaster (with a single allele for D. simulans). This figure plots the resulting posterior distribution for  $ \gamma $ for each gene (i.e., the locus-specific value,  $ \gamma_{i} $ from Equation 10.17a). The circle represents the mean, and the vertical lines denote the 95% credible intervals (the shortest span of the posterior distribution containing 95% of the probability; Appendix 2). These are plotted by rank order within the two species, with Arabidopsis plotted first (open circles) and D. melanogaster second (filled circles). If the vertical line is entirely below zero, selection on mutations at this locus is significantly negative (i.e., purifying selection). For lines entirely above zero, selection on new variants is significantly positive. Half (6 of 12) of the Arabidopsis genes are significantly negative, while none are significantly positive. Conversely, no Drosophila genes are significantly negative, while 9/34 are significantly positive.
 
@@ -965,7 +965,7 @@ ML methods require a specific probability model for the movement among the 64 di
 
 > **Figure 10.4** · page 39 · source: `chapter10`
 >
-> ![Figure 10.4](../figures/fig_0025.png)
+> ![Figure 10.4](figures/fig_0025.png)
 >
 > Figure 10.4 The various possible state changes and their rates under the codon evolution model (Equation 10.18) for the nine new codons that are within a single nucleotide change from the target codon (here AAC). Asterisks denote a replacement change, where the rate is a function of selection, and hence  $ \omega $. Because transitions (denoted in the figure by t) and transversions (w) may occur at different rates, setting the transversion rate as the baseline,  $ \kappa $ denotes any transition rate correction (with  $ \kappa = 1 $ if the two rates are equal). All changes are a function of  $ \pi_j $, the equilibrium frequency of the mutant codon, j. Performing these same calculations over all 60 other nonstop codons generates the full transition matrix, Q.
 
@@ -1107,6 +1107,21 @@ We can connect these parameters as follows. Assume that silent sites are taken a
 > $ \omega=f+2\gamma p_{b}=\frac{2\gamma p_{b}}{\alpha} $ (Equations 10.25a and 10.25c)
 > $ \gamma=\frac{\omega-f}{2 p_{b}}=\frac{\omega-p_{0}}{2 p_{b}} $ (Equation 10.25b)
 > $ \alpha=\frac{\lambda}{\lambda+\mu p_{0}}=\frac{2\gamma}{2\gamma+p_{0}/p_{b}}=\frac{2\gamma p_{b}}{\omega} $ (Equations 10.16b, 10.16c, and 10.25c)
+>
+> | $ \alpha $ The fraction of substitutions that are adaptive |
+> | --- |
+> | $ \gamma $ The scaled strength of selection, $ 2 N_{e} s $ |
+> | $ \mu $ The total per-site mutation rate |
+> | $ \mu_{s} $ The effectively neutral per-site mutation rate at silent sites (usually assume $ \mu_{s} \simeq \mu $) |
+> | $ \mu_{b} $ The adaptive (beneficial) mutation rate |
+> | $ p_{b} $ The fraction of new mutations at a site that are advantageous, $ \mu_{b}=p_{b}\mu $ |
+> | $ \lambda $ The rate of adaptive fixations, $ \lambda=2\gamma\mu_{b} $ |
+> | $ f=p_{0} $ The fraction of neutral mutations |
+> | $ 1-f $ The amount of constraint on a site (relative to some standard, typically silent sites) |
+> | $ \omega $ The ratio of the replacement- to silent-site substitution rates |
+> | $ \omega=f+2\gamma p_{b}=\frac{2\gamma p_{b}}{\alpha} $ (Equations 10.25a and 10.25c) |
+> | $ \gamma=\frac{\omega-f}{2 p_{b}}=\frac{\omega-p_{0}}{2 p_{b}} $ (Equation 10.25b) |
+> | $ \alpha=\frac{\lambda}{\lambda+\mu p_{0}}=\frac{2\gamma}{2\gamma+p_{0}/p_{b}}=\frac{2\gamma p_{b}}{\omega} $ (Equations 10.16b, 10.16c, and 10.25c) |
 
 
 **[推导 Derivation]**

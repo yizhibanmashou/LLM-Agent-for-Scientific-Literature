@@ -1,4 +1,4 @@
-# Chapter 18 · Analysis of Short-term Selection Experiments: 1. Least-squares Approaches
+# Chapter 18 · Analysis of Short-term Selection Experiments:
 
 ## chapter18_001 · Analysis of Short-term Selection Experiments: 1. Least-squares Approaches
 
@@ -30,7 +30,7 @@ The expected variation among the means of replicate lines subjected to the same 
 
 > **Figure 18.1** · page 3 · source: `chapter18`
 >
-> ![Figure 18.1](../figures/fig_0066.png)
+> ![Figure 18.1](figures/fig_0066.png)
 >
 > Figure 18.1 Examples of the variance in response to selection among replicate lines. Top: Postweaning weight gain in male and female mice (Hanrahan et al. 1973). Each replicate consists of a full-sib single family, which was propagated by selecting the largest pair within each family. Bottom: Abdominal bristle number in Drosophila melanogaster (Frankham et al. 1968a). Here, 50 pairs of parents were scored and the largest 10 of each sex were used to form the next generation. Notice that these graphs differ in the way the response is plotted. In the upper graph, response is given as a function of the cumulative selection differential, which has an expected slope of  $ h^2 $ under the breeder's equation. On the lower graph, response is a function of the number of generations, which can depart from linearity if S varies over time.
 
@@ -206,20 +206,20 @@ We will refer to this as the OLS regression estimator of the realized heritabili
 
 The theory for estimating realized heritabilities (via a LS analysis) in populations with overlapping generations is less well-developed. As will be discussed in Volume 3, approaches assuming an asymptotic selection response are flawed in that many generations are required to reach a stable genetic structure when starting from an unselected base population. For nonasymptotic response, see Hill (1974a) and Johnson (1977a) for the relevant theory, and Atkins and Thompson (1986) for an example with Scottish Blackface sheep. Mixed-model approaches (Chapter 19) easily accommodate overlapping generations, but they require the full pedigree of all measured individuals used in making selection decisions. This is often quite feasible with selection on large domesticated animals, and it is becoming increasingly feasible in more general settings using dense-marker estimates of relationships (Chapter 20).
 
+**[Figure]**
+
+> **Figure 18.2** · page 8 · source: `chapter18`
+>
+> ![Figure 18.2](figures/fig_0067.png)
+>
+> Figure 18.2 Response seen in Mackay's (1985a) divergent selection experiment on abdominal bristle number in Drosophila melanogaster. Details are provided in Example 18.2.
+
+
 The ratio estimate of the realized heritability (Equation 18.12) is $ \hat{h}_r^2 = 2.63/12.51 = 0.2102 $. The regression, forced through the origin, of cumulative response ($ R_C $) on cumulative selection differential ($ S_C $) is plotted in Figure 18.2. Equation 18.14 yields an OLS regression estimator of the realized heritability of $$ \widehat{h}_{r}^{2}=\widehat{b}_{C}(O L S)=\frac{\sum_{i=1}^{5}S_{C}(i)\cdot R_{C}(i)}{\sum_{i=1}^{5}S_{C}^{2}(i)}=\frac{78.96}{350.45}=0.2245 $$
 
 ---
 
 ## chapter18_007 · REALIZED HERITABILITIES / Weighted Least-squares Estimates of Realized Heritability
-
-**[Figure]**
-
-> **Figure 18.2** · page 8 · source: `chapter18`
->
-> ![Figure 18.2](../figures/fig_0067.png)
->
-> Figure 18.2 Response seen in Mackay's (1985a) divergent selection experiment on abdominal bristle number in Drosophila melanogaster. Details are provided in Example 18.2.
-
 
 **[推导 Derivation]**
 
@@ -344,16 +344,16 @@ There are a few final caveats in using a realized heritability estimator in plac
 
 ## chapter18_010 · REALIZED HERITABILITIES / Empirical Versus Predicted Standard Errors
 
+While the standard error in response can be directly estimated from the among-line variance over a series of replicate lines subjected to identical selection, this approach is generally not cost-effective given the large standard error on such estimates (Chapter 12). As a result, the standard errors reported for most experiments use the pure-drift approximation discussed previously. How closely do the empirical (observed) standard errors match those predicted by the drift approximation? Unfortunately, very few experiments have addressed this issue, and those few that do often use OLS-generated standard errors (which are too small) to compare the fit with the observed among-line variance.
+
 **[Figure]**
 
 > **Figure 18.3** · page 13 · source: `chapter18`
 >
-> ![Figure 18.3](../figures/fig_0068.png)
+> ![Figure 18.3](figures/fig_0068.png)
 >
 > Figure 18.3 Realized heritability estimates (and their associated standard errors) from Falconer's (1973) selection experiment in mice. Six replicate experiments were performed and realized heritabilities within each replicate were estimated by comparing up- and down-selection lines to a control (High and Low, respectively) as well as to each other (Divergent). For each comparison, the estimated heritability plus or minus one standard error (using the OLS regression) is plotted, resulting in six estimates per class. Two combined estimates were also used with each yielding a single estimator for the three classes. The three Pooled estimates (for High, Low, and Divergent) used an OLS regression that took the average value over the six replicates at the data point for any given generation. The three Mean estimates correspond to the mean value of the estimates over the six replicates, with the error bars corresponding to the empirical standard error among the heritability estimates for these six different realizations. While these observed variances were larger than predicted from an OLS regression on the pooled data, this is not unexpected, as the OLS method underestimates the true standard errors.
 
-
-While the standard error in response can be directly estimated from the among-line variance over a series of replicate lines subjected to identical selection, this approach is generally not cost-effective given the large standard error on such estimates (Chapter 12). As a result, the standard errors reported for most experiments use the pure-drift approximation discussed previously. How closely do the empirical (observed) standard errors match those predicted by the drift approximation? Unfortunately, very few experiments have addressed this issue, and those few that do often use OLS-generated standard errors (which are too small) to compare the fit with the observed among-line variance.
 
 Perhaps the most extensive study is that of Falconer (1973), who performed two-way selection for 6-week weight in mice (Figure 18.3). Six replicate sets of lines were used. Each set consisted of a line selected for larger size, a line selected for smaller size, and an unselected control, for a total of 18 lines in the entire experiment. Realized heritabilities were estimated (by OLS regression) using the three different contrasts available within each replicate set: large versus control (High), small versus control (Low), and large versus small (Divergent).
 
@@ -381,7 +381,7 @@ The authors cleverly noted how this estimator can be related to the Mann-Whitney
 
 > **Figure 18.4** · page 15 · source: `chapter18`
 >
-> ![Figure 18.4](../figures/fig_0069.png)
+> ![Figure 18.4](figures/fig_0069.png)
 >
 > Figure 18.4 The relative percentage by which the base population heritability is underestimated by the realized heritability due to reduction in the additive variance by gametic-phase disequilibrium. The three curves correspond to different levels of directional truncation selection on a normally distributed trait, with 5% (upper curve), 10% (middle curve), and 20% (lower curve) of the population saved (corresponding to  $ \bar{x} $ values of 2.06, 1.75, and 1.40, respectively). Values were obtained by numerically solving Equation 18.21 and assuming the infinitesimal model (no significant selection-induced changes in allele frequencies) holds.
 
@@ -503,7 +503,7 @@ Finally, $ N_{e} $ decreases as selection intensity increases (Chapter 3 and 26)
 
 > **Figure 18.5** · page 20 · source: `chapter18`
 >
-> ![Figure 18.5](../figures/fig_0070.png)
+> ![Figure 18.5](figures/fig_0070.png)
 >
 > Figure 18.5 Selection response on abdominal bristle number in male Drosophila melanogaster. Two replicates in each direction (High and Low) were performed, all with the same selection differential. Contrary to the symmetric response expected under the breeder's equation, an asymmetric selection response was observed. (After Sheldon 1963.)
 
@@ -512,7 +512,7 @@ Finally, $ N_{e} $ decreases as selection intensity increases (Chapter 3 and 26)
 
 > **Figure 18.6** · page 20 · source: `chapter18`
 >
-> ![Figure 18.6](../figures/fig_0071.png)
+> ![Figure 18.6](figures/fig_0071.png)
 >
 > Figure 18.6 An example of a scale effect generating an asymmetric selection response. Left: Selection for resistance to dental caries (cavities) in albino rats (Rattus norvegicus), response measured as the expected number of days to develop caries on a standard diet. Right: The same data presented on a log scale show a symmetric response. (Based on Falconer's 1954 analysis of data from Hunt et al. 1944.)
 
@@ -542,7 +542,7 @@ Even though lines may have quite different values of $ h_{r}^{2} $, there remain
 
 > **Figure 18.7** · page 22 · source: `chapter18`
 >
-> ![Figure 18.7](../figures/fig_0072.png)
+> ![Figure 18.7](figures/fig_0072.png)
 >
 > Figure 18.7. Further examples of asymmetric response to selection. Top: Twelve-week body weight in chickens (Maloney et al. 1963). Bottom: Rearing activity in rats (Sanders 1981).
 
@@ -565,7 +565,7 @@ While we have focused on the effects of a single major gene, the effects of uneq
 
 > **Figure 18.8** · page 24 · source: `chapter18`
 >
-> ![Figure 18.8](../figures/fig_0073.png)
+> ![Figure 18.8](figures/fig_0073.png)
 >
 > Figure 18.8 Top: Asymmetric selection response for abdominal bristle number in Drosophila melanogaster from a base population containing a major allele  $ sm^{lab} $ that was initially at low frequency. L1–L3 are three replicate low lines, H1–H3 are three replicate high lines, and C is the control line. Data were log-transformed to remove scale effects, and on this new scale, low line L1 has a symmetric response with high lines H1–H3, while lines L2 and L3 do not. Further, there is also a greater variance in response among the low lines. Bottom: Changes in heritabilities in the control (dashed curve) and lines L1–L3. Heritability was estimated from phenotypic correlations between bristle numbers of adjacent segments of the same fly (see Frankham and Nurthen [1981] for details). Note the large increases in heritability for lines L2 and L3, the lines that show an asymmetric selection response (relative to H1–H3), while the heritability is roughly constant in L1, which does not show an asymmetric response. The increase in  $ h^{2} $ reflects an increase in the major allele  $ sm^{lab} $ due to selection. This allele increased rapidly in frequency after generation 5 and was essentially fixed by generation 10, which is reflected by a rapid increase in  $ h^{2} $ after generation 5, with  $ h^{2} $ returning to normal (the level in the unselected control) as the allele becomes fixed. (After Frankham and Nurthen 1981.)
 
@@ -574,20 +574,20 @@ When might such an asymmetric distribution of allele frequencies be present? One
 
 After selection: only clone A survives artificial selection experiment.
 
-**[Figure]**
-
-> **Figure 18.9** · page 25 · source: `chapter18`
->
-> ![Figure 18.9](../figures/fig_0074.png)
->
-> Figure 18.9 Haldane's (1931) example of a reversed response generated by genotype × environment interaction. The population consists of equal numbers of two asexual clones, A and B. The mean phenotypic value of A ( $ \mu_A $) is less than the mean phenotypic value of B ( $ \mu_B $). However, clone A has a larger environmental variance than B. Strong truncation selection culls out all members of clone B in the population, leaving only A. The new mean in the generation following selection,  $ \mu_A $, is less than the mean before selection,  $ (\mu_A + \mu_B)/2 $. In this case, selection for increased character value z, resulted in a lowering of the population mean.
-
-
 Components of reproductive fitness, such as fecundity and development time, are expected to have asymmetric allele frequencies, as natural selection increases the frequency of alleles increasing fitness. This condition suggests that asymmetric responses in the selection for reproductive traits are expected, and it further predicts that response should be larger in lines selected for a decrease in reproductive fitness. This was seen in a review by Frankham (1990), who found a larger response in the direction of reduced reproductive fitness in 24 of 30 experiments. Frankham suggested that the presence of rare recessives decreasing reproductive fitness was the most likely cause for this trend. As Figure 25.2 will show, very marked asymmetric responses are expected in such situations.
 
 ---
 
 ## chapter18_018 · EXPERIMENTAL EVALUATION OF THE BREEDER'S EQUATION / Reversed Response
+
+**[Figure]**
+
+> **Figure 18.9** · page 25 · source: `chapter18`
+>
+> ![Figure 18.9](figures/fig_0074.png)
+>
+> Figure 18.9 Haldane's (1931) example of a reversed response generated by genotype × environment interaction. The population consists of equal numbers of two asexual clones, A and B. The mean phenotypic value of A ( $ \mu_A $) is less than the mean phenotypic value of B ( $ \mu_B $). However, clone A has a larger environmental variance than B. Strong truncation selection culls out all members of clone B in the population, leaving only A. The new mean in the generation following selection,  $ \mu_A $, is less than the mean before selection,  $ (\mu_A + \mu_B)/2 $. In this case, selection for increased character value z, resulted in a lowering of the population mean.
+
 
 The most extreme departure from the breeder's equation is a reversed response, a response in the opposite direction of selection. Negative maternal effects can result in such a response (Figures 15.3 and 15.4). Likewise, they can arise from sufficiently large genotypic-dependent environmental variances (Haldane 1931; Chapter 17). Haldane's intuition was based on selection with two asexual clones, the first with a higher mean but smaller environmental variance than the second. As shown in Figure 18.9, if the most extreme individuals are selected, there will be an excess of the clone with the smaller mean but higher variance, resulting in a decrease in mean value in the next generation. Wright (1969) expanded Haldane's model to a single diallelic locus. Gimelfarb (1986b) presented a particularly interesting analysis when there is a multiplicative genotype × environment interaction, showing for this model that while phenotypes are subjected to directional selection, the nature of the interaction between genotype and environment is such that genotypic values can actually be under either stabilizing or disruptive selection. The interesting feature of both Haldane's and Gimelfarb's models is that reversed response is most probable when selection is very intense, as this is the setting most favorable to genotypes with high variances (Chapter 17).
 
@@ -760,6 +760,12 @@ and the covariance between generations within the same line
 > Selection in a single direction without a control line | $$ f_{t}=f_{s,t},\qquad A=\frac{1}{N_{s}},\qquad B_{t}=\frac{1}{M_{s,t}}\quad for t\geq0 $$
 > Selection in a single direction with a control line | $$ f_{t}=f_{s,t}+f_{c,t},\qquad A=\frac{1}{N_{s}}+\frac{1}{N_{c}},\qquad B_{t}=\frac{1}{M_{s,t}}+\frac{1}{M_{c,t}}\quad for t\geq0 $$
 > Divergent selection without a control line | $$ f_{t}=f_{u,t}+f_{d,t},\qquad A=\frac{1}{N_{u}}+\frac{1}{N_{d}},\qquad B_{t}=\frac{1}{M_{u,t}}+\frac{1}{M_{d,t}}\quad for t\geq0 $$
+>
+> | Selection scheme | Formula |
+> | --- | --- |
+> | Selection in a single direction without a control line | $$ f_{t}=f_{s,t},\qquad A=\frac{1}{N_{s}},\qquad B_{t}=\frac{1}{M_{s,t}}\quad for t\geq0 $$ |
+> | Selection in a single direction with a control line | $$ f_{t}=f_{s,t}+f_{c,t},\qquad A=\frac{1}{N_{s}}+\frac{1}{N_{c}},\qquad B_{t}=\frac{1}{M_{s,t}}+\frac{1}{M_{c,t}}\quad for t\geq0 $$ |
+> | Divergent selection without a control line | $$ f_{t}=f_{u,t}+f_{d,t},\qquad A=\frac{1}{N_{u}}+\frac{1}{N_{d}},\qquad B_{t}=\frac{1}{M_{u,t}}+\frac{1}{M_{d,t}}\quad for t\geq0 $$ |
 
 
 ---
@@ -796,6 +802,12 @@ Hence, regardless of the value of $ \sigma_{b}^{2} $, if sufficient generations 
 > Selection in a single direction with a control line | $$E\left[R_{C}(t)\right]=t h^{2}\bar{\imath}\sigma_{z},\qquad\mathrm{C V}\left[R_{C}(t)\right]\simeq\frac{1}{h\bar{\imath}}\sqrt{\frac{2}{N t}}$$
 > Selection in a single direction without a control line | $$E\left[R_{C}(t)\right]=t h^{2}\bar{\imath}\sigma_{z},\qquad\mathrm{C V}\left[R_{C}(t)\right]\simeq\frac{1}{h\bar{\imath}}\sqrt{\frac{1}{N t}}+\frac{1}{t h^{2}\bar{\imath}}\left(\frac{\sigma_{d}}{\sigma_{z}}\right)$$
 > Divergent selection without a control line | $$E\left[R_{C}(t)\right]=2t h^{2}\bar{\imath}\sigma_{z},\qquad\mathrm{C V}\left[R_{C}(t)\right]\simeq\frac{1}{h\bar{\imath}}\sqrt{\frac{1}{2N t}}$$
+>
+> | Selection scheme | Formula |
+> | --- | --- |
+> | Selection in a single direction with a control line | [[SEE_FORMULA:18.32a]] |
+> | Selection in a single direction without a control line | [[SEE_FORMULA:18.32b]] |
+> | Divergent selection without a control line | [[SEE_FORMULA:18.32c]] |
 
 
 ---

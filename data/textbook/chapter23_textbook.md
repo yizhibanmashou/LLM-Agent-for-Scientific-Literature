@@ -191,6 +191,15 @@ The nature of the identity-by-descent (IBD) measures, $ \Delta_i $, provides som
 
 ## chapter23_007 · BASIC ISSUES IN SELECTION RESPONSE UNDER INBREEDING / Limitations
 
+**[Figure]**
+
+> **Figure 23.1** · page 7 · source: `chapter23`
+>
+> ![Figure 23.1](figures/fig_0102.png)
+>
+> Figure 23.1 The  $ \Delta_{i} $ coefficients of relatedness and their impact on the genetic covariance between relatives. Following Figure 11.5, the upper two dots correspond to the two alleles in (diploid) relative x, and the bottom two to those in relative y. A horizontal line indicates inbreeding in that relative (the two alleles are identical by descent, IBD), while a line connecting alleles from different relatives indicates that these alleles are IBD. See Figure 11.5 and Chapter 11 for details.
+
+
 **[命题 Proposition]**
 
 The major limitation with the ancestral regression approach is the assumption that selection does not significantly alter the covariances between relatives over what is expected under the system of inbreeding (in the absence of selection). Clearly, if there are favorable major alleles, selection will favor individuals carrying them, thus further increasing the amount of inbreeding in the population. As a result, this general approach is best thought of as a weak selection approximation, that is, it assumes that selection is weak on any underlying locus. although selection on the trait itself may still be strong. Even in the absence of major alleles, the effect of selection is to generally make individuals more inbred than expected by the particular system of inbreeding (Chapters 3 and 26). In such cases, the covariances between relatives are also affected. The other significant caveat is that, even under the infinitesimal-model, selection-induced disequilibrium between alleles at different loci can significantly alter the variances (the Bulmer effect, described in Chapter 16). By reducing the frequency of heterozygotes, inbreeding reduces the opportunities for recombination to remove linkage disequilibrium, which magnifies the Bulmer effect over its role (which is significant) under random mating. We return to this concern later in the chapter.
@@ -198,15 +207,6 @@ The major limitation with the ancestral regression approach is the assumption th
 ---
 
 ## chapter23_008 · Selection Under Inbreeding: Introduction / FAMILY SELECTION WITH INBREEDING AND RANDOM MATING
-
-**[Figure]**
-
-> **Figure 23.1** · page 7 · source: `chapter23`
->
-> ![Figure 23.1](../figures/fig_0102.png)
->
-> Figure 23.1 The  $ \Delta_{i} $ coefficients of relatedness and their impact on the genetic covariance between relatives. Following Figure 11.5, the upper two dots correspond to the two alleles in (diploid) relative x, and the bottom two to those in relative y. A horizontal line indicates inbreeding in that relative (the two alleles are identical by descent, IBD), while a line connecting alleles from different relatives indicates that these alleles are IBD. See Figure 11.5 and Chapter 11 for details.
-
 
 **[推导 Derivation]**
 
@@ -827,7 +827,7 @@ Predicting response to family selection—using the phenotypic means of the self
 
 > **Figure 23.2** · page 26 · source: `chapter23`
 >
-> ![Figure 23.2](../figures/fig_0103.png)
+> ![Figure 23.2](figures/fig_0103.png)
 >
 > Figure 23.2 The hierarchical structuring of selfed populations. The gray circles denote sibs in the selection unit, the solid circles denote relatives of interest, and  $ k, t, T $, and  $ \tau $ denote the generations of selfing experienced by an individual. The arrows denote lines of descent through selfing and may be longer than one generation. A: Often we select using a parent in generation t of selfing by scoring its (selfed) offspring in generation  $ \tau $, and we need the covariance between  $ \tau $ and some future generation,  $ T $, where the common relative to both is from generation t. B: Another level of hierarchical structuring of selfed populations: When selecting within a substructure of the selfing pedigree, we may be interested in the response using parents in generation t whose offspring are scored in generation  $ \tau $ and for which the response is across those families in the pedigree sharing an earlier common parent in generation  $ k < t $.
 
@@ -970,7 +970,7 @@ For more general families, $ t - 1 $ is replaced by $ t - j $ when the last comm
 
 > **Figure 23.3** · page 30 · source: `chapter23`
 >
-> ![Figure 23.3](../figures/fig_0104.png)
+> ![Figure 23.3](figures/fig_0104.png)
 >
 > Figure 23.3 Examples of family selection in selfed lines. Top: The selection unit is the selfed offspring of a parent, and the recombination unit is a (selfed) remnant seed from this parent, so that selection is based on  $ S_{t,t+1} $ families. The covariance of interest is between an individual in the selection unit (generation  $ \tau = t + 1 $) and a descendant of the recombination unit (measured in generation T), which had a common parent in generation t. Bottom: In species with a low seed set, a single plant may not generate sufficient seed for family testing. In this case, additional seed can be generated by a second round of selfing. If selection is based upon such  $ S_{t,t+2} $ families, and we use a remnant (selfed) seed from the parent as the recombination unit, the common parent is two generations removed from the selection unit ( $ \tau = t + 2 $).
 
@@ -1286,7 +1286,7 @@ One of the most widespread natural systems of inbreeding is partial selfing, whe
 
 > **Figure 23.4** · page 36 · source: `chapter23`
 >
-> ![Figure 23.4](../figures/fig_0105.png)
+> ![Figure 23.4](figures/fig_0105.png)
 >
 > Figure 23.4 When inbreeding depression is present, the parent-offspring regression under partial selfing can be nonlinear. To see this, suppose we have just two groups:  $ f = 0 $ (outcrossed) and  $ f = 1 $ (fully inbred). Within each group, parent-offspring regressions are linear (as indicated by the dashed lines). However, for the population as a whole (i.e., examining individuals without knowledge of which group they belong to), the regression is nonlinear. Here B denotes the inbreeding depression (the change in mean, the open squares, between the outcrossed and fully inbred populations). (After Kelly 1999a.)
 

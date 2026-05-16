@@ -1,4 +1,4 @@
-# Appendix 1 · Appendix
+# Appendix 1 · Appendix 1
 
 ## appendix1_001 · Appendix: Introduction
 

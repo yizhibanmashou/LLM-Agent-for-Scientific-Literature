@@ -1,4 +1,4 @@
-# Chapter 27 · Long-term Response
+# Chapter 27 · Long-term Response: 3. Adaptive Walks
 
 ## chapter27_001 · Long-term Response: Introduction
 
@@ -10,16 +10,16 @@ Our treatment of long-term selection response started by considering the role of
 
 ## chapter27_002 · Long-term Response: Introduction / FISHER'S MODEL: THE ADAPTIVE GEOMETRY OF NEW MUTATIONS
 
+Fisher (1930) offered a highly simplified, yet elegant and powerful, geometric argument suggesting that the probability that a new mutation increases fitness is a simple function of the size of the mutational effect relative to the distance of the original phenotype from the optimal trait value. Fisher believed that his model, while idealized, captured the “statistical requirements of the situation” of adaptation: one complex thing (the organism) must fit into another complex thing (the environment). Although Fisher envisioned that adaptation requires a highly multivariate phenotype meshing with a highly multivariate fitness function, Figure 27.1 shows the basic structure of his model in two dimensions. Stabilizing selection is assumed, with the current phenotypic value at a distance d from a fitness optimum, $ \theta $. The two traits have been scaled and rotated to be independent, with equal selection intensity on both (this can be accomplished using a transformation along the lines suggested by Equation A5.16). As depicted in Figure 27.1, we assume stabilizing selection acting on two independent traits. Let the vector z, at distance d from the optimal value, $ \theta $, represent the current multivariate phenotype associated with a particular genotype. The phenotypic change by a new mutation is given by a vector of length r (the effect size of the mutation) extended from the current value (z) in some random direction (i.e., the incremental model). Any mutation whose distance to $ \theta $ is less than d has increased fitness (and is said to be beneficial or adaptive), while a mutation whose distance from $ \theta $ is greater than d has lower fitness. Drawing a circle of radius d around $ \theta $ (a contour of equal fitnesses corresponding to that of the original phenotype), the probability that the new mutation is advantageous will be simply the probability that the mutation lies within this contour (i.e., is closer to θ).
+
 **[Figure]**
 
 > **Figure 27.1** · page 2 · source: `chapter27`
 >
-> ![Figure 27.1](../figures/fig_0132.png)
+> ![Figure 27.1](figures/fig_0132.png)
 >
 > Figure 27.1 A: Fisher’s (1930) model for the probability that a new mutation increases fitness for the simple case of two independent traits under stabilizing selection. The optimal fitness value occurs at  $ \theta $, while the mean phenotypic value of the genotype about to experience a mutation is z, which is at distance d from the optimum. The solid circle denotes the fitness contour passing through the current value z, meaning that all points inside this circle have higher fitness. The effect of a new mutation is to move the expected phenotype by some distance (r) in a random direction around z, with the space of possible new phenotypes denoted by the dashed circle (the isotropic assumption of equal and independent mutational effects on both traits). The probability of increased fitness for a random mutation of effect r is the fraction of the circumference of the dashed circle that resides inside the solid circle (i.e., is closer to  $ \theta $), namely, the fraction of all new mutations (whose range of possible phenotypes fall exactly along the circumference of the dashed circle) with a higher fitness than the original allele. More generally, under anisotropic conditions (correlated and/or unequal effects for selection, mutation, or both), these circles are replaced by ellipses in two dimensions, and the hyperspheres are replaced by hyperellipsoids in three or more dimensions. B: For an n-dimensional phenotype, the probability  $ p_b $, that a new mutation is beneficial (has an increased fitness) is  $ 1 - \Phi[r \sqrt{n}/(2d)] $, where  $ \Phi[x] $ is the cumulative density function of a unit normal (Equation 27.1b).
 
-
-Fisher (1930) offered a highly simplified, yet elegant and powerful, geometric argument suggesting that the probability that a new mutation increases fitness is a simple function of the size of the mutational effect relative to the distance of the original phenotype from the optimal trait value. Fisher believed that his model, while idealized, captured the “statistical requirements of the situation” of adaptation: one complex thing (the organism) must fit into another complex thing (the environment). Although Fisher envisioned that adaptation requires a highly multivariate phenotype meshing with a highly multivariate fitness function, Figure 27.1 shows the basic structure of his model in two dimensions. Stabilizing selection is assumed, with the current phenotypic value at a distance d from a fitness optimum, $ \theta $. The two traits have been scaled and rotated to be independent, with equal selection intensity on both (this can be accomplished using a transformation along the lines suggested by Equation A5.16). As depicted in Figure 27.1, we assume stabilizing selection acting on two independent traits. Let the vector z, at distance d from the optimal value, $ \theta $, represent the current multivariate phenotype associated with a particular genotype. The phenotypic change by a new mutation is given by a vector of length r (the effect size of the mutation) extended from the current value (z) in some random direction (i.e., the incremental model). Any mutation whose distance to $ \theta $ is less than d has increased fitness (and is said to be beneficial or adaptive), while a mutation whose distance from $ \theta $ is greater than d has lower fitness. Drawing a circle of radius d around $ \theta $ (a contour of equal fitnesses corresponding to that of the original phenotype), the probability that the new mutation is advantageous will be simply the probability that the mutation lies within this contour (i.e., is closer to θ).
 
 **[推导 Derivation]**
 
@@ -59,16 +59,16 @@ Fisher’s model can also be derived from biological first principles. Martin (2
 
 ## chapter27_003 · FISHER'S MODEL: THE ADAPTIVE GEOMETRY OF NEW MUTATIONS / Fisher-Kimura-Orr Adaptive Walks
 
+A subtle feature, first noted by Kimura (1983), makes Fisher's smaller-is-better result misleading. An examination of Equation 27.1b and Figure 27.1 suggests that the majority of beneficial mutations are those with very small effects—those mutations whose length, $r$, satisfies $x \ll 1$, namely, $r \ll 2d/\sqrt{n}$. While this is indeed correct (under Fisher's model), Kimura noted that such small-effect mutations also have very small selective advantages, and therefore (while beneficial) are unlikely to be fixed by natural selection. Recall from Chapter 7 that the fixation probability of a favorable allele is $\simeq 2s$, so that the magnitude of $s$, not only its sign, is important in determining which factors become fixed.
+
 **[Figure]**
 
 > **Figure 27.2** · page 4 · source: `chapter27`
 >
-> ![Figure 27.2](../figures/fig_0133.png)
+> ![Figure 27.2](figures/fig_0133.png)
 >
 > Figure 27.2 The probability of adaptation (the probability of being beneficial times the probability of fixation) for a new mutation with scaled effect  $ x = r\sqrt{n}/(2d) $. Figure 27.1B shows the probability,  $ p_b $, that such a mutation is beneficial, while the curve in this figure (which also incorporates the resulting selection coefficient) is the chance that it is beneficial and fixed.
 
-
-A subtle feature, first noted by Kimura (1983), makes Fisher's smaller-is-better result misleading. An examination of Equation 27.1b and Figure 27.1 suggests that the majority of beneficial mutations are those with very small effects—those mutations whose length, $r$, satisfies $x \ll 1$, namely, $r \ll 2d/\sqrt{n}$. While this is indeed correct (under Fisher's model), Kimura noted that such small-effect mutations also have very small selective advantages, and therefore (while beneficial) are unlikely to be fixed by natural selection. Recall from Chapter 7 that the fixation probability of a favorable allele is $\simeq 2s$, so that the magnitude of $s$, not only its sign, is important in determining which factors become fixed.
 
 Under Fisher’s model, and conditioning on a mutation being beneficial, the expected value of $s$ is linearly proportional to $x$, as the distance from $\theta$ is an indicator of fitness (Kimura 1983; Orr 1998b). This can be more compactly written as $E[s] \propto x$. Thus, the probability that a mutation will be fixed is a function of both its selective advantage and its chance of being beneficial, $(2s) \cdot p_b \propto (2x) \cdot [1 - \Phi(x)]$. We call this the probability of adaptation. As shown in Figure 27.2, the outcome is a dramatic shift in our interpretation of Fisher’s result: adaptation favors mutations of intermediate effect. A comparison of the difference between Figure 27.1 and Figure 27.2 highlights a critical distinction important throughout this chapter, namely, the difference between the distribution of effects (be they trait values or fitness) over all new beneficial mutations versus the distribution of effects restricted to fixed beneficial mutations.
 
@@ -104,7 +104,7 @@ How much closer does fixing a mutation move us toward the optimum? The first fix
 
 > **Figure 27.3** · page 6 · source: `chapter27`
 >
-> ![Figure 27.3](../figures/fig_0134.png)
+> ![Figure 27.3](figures/fig_0134.png)
 >
 > Figure 27.3 An example of an adaptive walk (in two dimensions), starting at z and moving toward the optimal value,  $ \theta $. Here  $ x_i $ denotes the scaled mutational size of the ith fixed mutation (with  $ r_i = 2d_0x_i / \sqrt{n} $), while  $ x_{[i]} $ denotes the ith largest step (the ith largest x value over all mutations fixed during the walk). In this example, the largest jump,  $ x_{[1]} $, occurs at the second step  $ (x_2) $, rather than at the first  $ (x_1) $.
 
@@ -285,7 +285,7 @@ Under Gillespie’s model, fitness values for new mutations are drawn from some 
 
 > **Figure 27.4** · page 14 · source: `chapter27`
 >
-> ![Figure 27.4](../figures/fig_0135.png)
+> ![Figure 27.4](figures/fig_0135.png)
 >
 > Figure 27.4 Top: Extreme-value theory applied to the distribution of fitness effects of new beneficial alleles. Assume some arbitrary, and unknown, fitness distribution for possible alleles at a given locus. Provided the current allele is fairly fit, it is a draw from the righthand tail (extreme upper values) of this distribution. Let  $ W_i $ denote its current fitness, with i denoting the fitness rank of the current allele relative to the set that it can mutate to.  $ W_1 $ is the most fit possible allele at this locus,  $ W_2 $ is the next most fit, and so on. Bottom: The trinity theorem (Example 27.2) states that the limiting distribution of draws from the extreme tail of a distribution is one of only three possible types (or domains), depending upon a shape parameter,  $ \kappa $ (see Equation 27.7). The figure displays the form of the density function for these three limiting cases. Under the Gumbel domain, the limiting extreme-value distribution is exponential. If there is a finite upper limit on the original distribution, its extreme-value distribution is from the Weibull domain (which, as depicted in the figure, can have a wide variety of shapes depending on the value of  $ \kappa $). Finally, if the tail of the original distribution is heavier (falls off more slowly) than an exponential, its limiting extreme-value distribution is in the Fréchet domain. (After Beisel et al. 2007.)
 
@@ -320,16 +320,16 @@ Gillespie (1983) also showed that the mean number of substitutions during a walk
 > $$ \frac{1}{2}\left(1+\sum_{j=1}^{k-1}\frac{1}{j}\right) $$
 
 
+The simplification given in Equation 27.8b of Gillespie’s original result is due to Orr (2002). Because Equation 27.8b scales as $ \sim\ln(k) $, the mean number of steps (substitutions) typically ranges between two and five (Gillespie 1994). This sequential series of fixations until the best allele is fixed yields a burst of substitutions followed by stasis (unless there is a significant change in the environment, and thus in the fitness function). The result is an overdispersed molecular clock (a higher variance than expected from the Poisson distribution for substitutions that is generated under drift). Remember that extreme-value theory walks focus on the substitution patterns in a single gene or tightly linked genetic region. Hence, many such walks may simultaneously be ongoing within a (recombining) genome. We return to the important issue of context-specific fitness (i.e., epistasis), and how it alters the walk, shortly.
+
 **[Figure]**
 
 > **Figure 27.5** · page 16 · source: `chapter27`
 >
-> ![Figure 27.5](../figures/fig_0136.png)
+> ![Figure 27.5](figures/fig_0136.png)
 >
 > Figure 27.5 Let  $ \Delta_i = W_i - W_{i+1} $ denote the spacing (difference) in fitnesses between the genotype of fitness rank  $ i $ and  $ i + 1 $. When the current genotype has a high fitness (its rank,  $ i $, is not too large) and the underlying fitness distribution is in the Gumbel domain, then the values of  $ \Delta_i $ follow an exponential distribution (Gillespie 1983; Orr 2003b).
 
-
-The simplification given in Equation 27.8b of Gillespie’s original result is due to Orr (2002). Because Equation 27.8b scales as $ \sim\ln(k) $, the mean number of steps (substitutions) typically ranges between two and five (Gillespie 1994). This sequential series of fixations until the best allele is fixed yields a burst of substitutions followed by stasis (unless there is a significant change in the environment, and thus in the fitness function). The result is an overdispersed molecular clock (a higher variance than expected from the Poisson distribution for substitutions that is generated under drift). Remember that extreme-value theory walks focus on the substitution patterns in a single gene or tightly linked genetic region. Hence, many such walks may simultaneously be ongoing within a (recombining) genome. We return to the important issue of context-specific fitness (i.e., epistasis), and how it alters the walk, shortly.
 
 **[推导 Derivation]**
 
@@ -436,7 +436,7 @@ Recall for the FGM that Orr (2006) showed the distribution of fitness effects fo
 
 > **Figure 27.6** · page 21 · source: `chapter27`
 >
-> ![Figure 27.6](../figures/fig_0137.png)
+> ![Figure 27.6](figures/fig_0137.png)
 >
 > Figure 27.6 The distribution of the fitness effects for beneficial mutations at a locus underlying a phenotype under stabilizing selection, with the current allele close to the optimum. Let  $ s_0 \ll 1 $ denote the maximal fitness advantage for any new mutation (which occurs when a mutation jumps the phenotype exactly to the optimum). A: The distribution of fitness effects among all beneficial mutations follows a beta distribution, Beta(1, m/2), where m is a measure of pleiotropy. The dotted curves show the corresponding exponential distributions, with the two distributions being very similar for values of m modest to large (>10). B: The distribution of fitness effects among fixed beneficial mutations also follows a beta distribution, but now with the first beta shape parameter changing from one to two, returning a unimodal distribution, Beta(2, m/2). Note that the exponential provides a very poor fit to this distribution unless m is very large and small values are ignored.
 

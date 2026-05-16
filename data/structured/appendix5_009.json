@@ -24,6 +24,10 @@
       "content": "A powerful use of diagonalization is that it allows one to extract a set of $n$ uncorrelated variables for any $n \\times n$ nonsingular covariance matrix, $\\mathbf{V}_{\\mathbf{x}}$. Consider the transformation $$ \\mathbf{y}=\\mathbf{U}^{T}\\mathbf{x} $$ where $ \\mathbf{U} = (\\mathbf{e}_1, \\mathbf{e}_2, \\cdots, \\mathbf{e}_n) $ contains the normalized eigenvectors of $ \\mathbf{V}_x $. Because $ \\mathbf{U} $ is an orthonormal matrix, this transformation is a rigid rotation of the axes of the original $ (x_1, \\cdots, x_n) $ coordinate system to a new system given by $ (e_1, \\cdots, e_n) $. Applying LW Equation 8.21b and Equation A5.12, respectively, the covariance matrix for $ \\mathbf{y} $ is $$ \\mathbf{V_{y}}=\\mathbf{U}^{T}\\mathbf{V_{x}}\\mathbf{U}=\\boldsymbol{\\Lambda} $$ where A is a diagonal matrix whose elements are the eigenvalues of $ V_{x} $, $$ \\sigma(y_{i},y_{j})=\\left\\{\\begin{aligned}&\\lambda_{i}&if i=j\\\\ &0&if i\\neq j\\end{aligned}\\right. $$"
     },
     {
+      "type": "figure",
+      "content": "[[FIGURE:A5.4]]"
+    },
+    {
       "type": "discussion",
       "content": "The rigid rotation introduced by U creates a set of n uncorrelated variables, the ith of which is $$ y_{i}=\\mathbf{e}_{i}^{T}\\mathbf{x} $$ Because the $ e_i $ are of unit length, from Equation A5.3b we have that $ y_i = e_i^T x $ is the length of the projection of $ x $ onto the $ i $th eigenvector of $ V_x $, which implies that the axes of the new coordinate system are given by the orthogonal set of eigenvectors of $ V_x $."
     },

@@ -1,4 +1,4 @@
-# Chapter 21 · Family-Based Selection
+# Chapter 21 · 21
 
 ## chapter21_001 · Family-Based Selection
 
@@ -62,6 +62,15 @@ Conversely, suppose that environmental effects unique to each individual account
 
 Under mass selection, individuals are scored and those with the best phenotypic values are used as parents to form the next generation. Here groups of individuals upon which selection decisions are based and those used for recombination (gamete production to form the next generation) are one and the same, and a single cycle of selection takes a single generation. In family-based selection schemes, the individuals used for selection decisions may be entirely separate from those used as parents to form the next generation. Further, a single cycle of selection may take two (or more) generations, as one must generate, score, and recombine families. For perennial species (such as forage crops), traits may be scored over several years before selection decisions are made, such as selecting for winter hardiness (Vogel and Pedersen 1993).
 
+**[Figure]**
+
+> **Figure 21.1** · page 5 · source: `chapter21`
+>
+> ![Figure 21.1](figures/fig_0090.png)
+>
+> Figure 21.1 Under family-based schemes, selection decisions are based on some function of the values of measured sibs  $ (x_i) $ in the selection unit. An offspring,  $ y $, in the next generation has parents,  $ \mathcal{R}_1 $ and  $ \mathcal{R}_2 $, that are chosen on the basis of the selection unit. Members of the selection  $ (x_i) $ and recombination  $ (\mathcal{R}_i) $ units are related as they both share a common relative,  $ P_i $, which in this case is the parent of sib  $ x_i $. Under within-family or family-index selection,  $ \mathcal{R} $ is simply one of the measured sibs, while under among-family selection,  $ \mathcal{R} $ is often an unmeasured relative. See Figure 21.2 for specific examples.
+
+
 Following the convention of plant breeders, we distinguish between an individual, $ x_i $, in the selection unit (those measured individuals upon which selection decisions are made, which throughout this chapter are we assume are sibs) and an individual, $ R_i $ (a relative of $ x_i $, potentially including $ x_i $ itself), from the recombination unit (individuals serving as parents for the next generation) whose resulting offspring are $ y $. Even though we may not directly select on the parents ($ R_1 $, $ R_2 $) of $ y $, we expect some response in $ y $ due to the genetic correlation between $ x_i $ and $ R_i $ caused by their sharing of (at least) one common relative, $ P_i $ (Figure 21.1). An equivalent way to think about this distinction is that selection response occurs due to observations on the selection unit, x, providing information to predict the breeding value of R. As mentioned in the introduction, the variety of family-based schemes appearing in the literature arises from the combination of four specific components: 1. Type of sib family comprising the selection unit. Sibs can be half- or full-sibs, full-sibs nested within half-sibs (NC Design I), or selfed sibs (which are considered in Chapter 23).
 
 2. Nature of the selection decisions based on the sib information. Selection can be based on sib-family means, the deviations of individuals within families, an index of both, or strict rank within families.
@@ -75,15 +84,6 @@ While the variety of family-based selection schemes may seem a bit overwhelming 
 ---
 
 ## chapter21_007 · DETAILS OF FAMILY-BASED SELECTION SCHEMES / Variations of the Selection Unit
-
-**[Figure]**
-
-> **Figure 21.1** · page 5 · source: `chapter21`
->
-> ![Figure 21.1](../figures/fig_0090.png)
->
-> Figure 21.1 Under family-based schemes, selection decisions are based on some function of the values of measured sibs  $ (x_i) $ in the selection unit. An offspring,  $ y $, in the next generation has parents,  $ \mathcal{R}_1 $ and  $ \mathcal{R}_2 $, that are chosen on the basis of the selection unit. Members of the selection  $ (x_i) $ and recombination  $ (\mathcal{R}_i) $ units are related as they both share a common relative,  $ P_i $, which in this case is the parent of sib  $ x_i $. Under within-family or family-index selection,  $ \mathcal{R} $ is simply one of the measured sibs, while under among-family selection,  $ \mathcal{R} $ is often an unmeasured relative. See Figure 21.2 for specific examples.
-
 
 Once the type of family (half-sib, full-sib, nested, or inbred $ S_i $) has been specified, there is still the issue of how to incorporate sib information when making selection decisions. To distinguish between a particular sib and the trait value of that sib, we use $ x_i $ to denote the ith sib and $ z_i $ to denote its trait value, and more generally, $ x_{ij} $ and $ z_{ij} $ for the jth individual. from the ith family. We select the uppermost fraction, p, of the relevant population, with m families each with n sibs, for a total of M = mn scored individuals, which we use to choose N parents. Four different approaches for weighting sib information are commonly used: 1. Among-family selection: Individuals are selected solely on the basis of their family means, $ \overline{z}_{i} $, with the result that all individuals from the same family have the same selective rank. Here, the best N = pm families are chosen.
 
@@ -114,7 +114,7 @@ Finally, the choice of the selection scheme also influences the long-term effect
 
 > **Figure 21.2** · page 7 · source: `chapter21`
 >
-> ![Figure 21.2](../figures/fig_0091.png)
+> ![Figure 21.2](figures/fig_0091.png)
 >
 > Figure 21.2 Under among-family selection, decisions as to which families to choose are made on the basis of observations from sibs, while the next generation is formed by crossing relatives (R) of sibs from the chosen families. The measured sibs upon which selection decisions are based are denoted by  $ x_{1}, \cdots, x_{n} $, while y denotes a random offspring from a random member, R, from the recombination unit. Different types of relatives can be used for R, with a few of the most common types illustrated here. Let P denote the shared parent(s) of  $ x_{i} $ and R. The pedigrees illustrated here all focus on just one parent of y, with a corresponding pedigree for the other parent. A: Family selection: R is one of the measured sibs ( $ x_{1} = R $). B: Sib selection: R is an unmeasured sib. C: Parental selection (also known as progeny testing): R is the parent of the sibs ( $ R = P $). D:  $ S_{1} $ seed selection: R is the selfed progeny of the parent of the sibs, but R is then outcrossed to generate the offspring, y. In this chapter, we assume offspring are generated by outcrossing ( $ R_{1} $ and  $ R_{2} $ are unrelated), whereas in Chapter 23 we examine the setting wherein y is obtained by selfing R, as well as more general inbreeding schemes (such as the tested sibs being the result of selfing).
 
@@ -264,7 +264,7 @@ In the absence of epistasis, inbreeding, and shared environmental effects, $ \si
 
 > **Figure 21.3** · page 12 · source: `chapter21`
 >
-> ![Figure 21.3](../figures/fig_0092.png)
+> ![Figure 21.3](figures/fig_0092.png)
 >
 > Figure 21.3 Derivation of the coefficient of coancestry,  $ \Theta $, values in Table 21.2, showing pedigrees (left) and associated path diagrams (right) for computing  $ \Theta $ between a measured sib,  $ x_{1} $, and an offspring,  $ y $, from the parent,  $ \mathcal{R}_{1} $.  $ P_{1} $ to  $ P_{5} $ are assumed to be unrelated and noninbred. A:  $ x_{1} $ and  $ \mathcal{R}_{1} $ are half-sibs. The product of the path coefficients yields  $ \Theta_{x_{1}y} = (1/2)^{4} = 1/16 $. B:  $ x_{1} $ and  $ y $ are half-sibs, with  $ \Theta_{x_{1}y} = (1/2)^{3} = 1/8 $. C:  $ \mathcal{R}_{1} $ is a selfed progeny from the common parent,  $ P_{1} $. There are two separate paths between  $ x_{1} $ and  $ y $ (two different routes through  $ P_{1} $), yielding  $ \Theta_{x_{1}y} = 2 \cdot (1/2)^{4} = 1/8 $. D:  $ x_{1} $ and  $ \mathcal{R}_{1} $ are full-sibs. Again there are two paths between  $ x_{1} $ and  $ y $ (one through each parent), each being  $ (1/2)^{4} $, giving a total of  $ \Theta_{x_{1}y} = 2 \cdot (1/2)^{4} = 1/8 $.
 
@@ -323,6 +323,17 @@ In much of the animal-breeding literature, Wright's coefficient of relationship,
 > Within-family Selection: | 
 > Selection on family deviations (FD) | $$ \sigma(\left.z_{i j}-\overline{z}_{i},y\right\|\mathcal{R}_{1})=\left(1-r_{n}\right)\left(\sigma_{A}^{2}/2\right)=\left\{\begin{array}{l l}\left(1-1/n\right)\left(3/8\right)\sigma_{A}^{2}&\mathrm{h a l f-s i b s}\\ \left(1-1/n\right)\left(\sigma_{A}^{2}/4\right)&\mathrm{f u l l-s i b s}\end{array}\right. $$
 > Strict within-family selection (FW) | $$ \sigma(z_{ij}-\mu_{i},y\mid\mathcal{R}_{1})=(1-r)\left(\sigma_{A}^{2}/2\right)=\left\{\begin{array}{ll}(3/8)\sigma_{A}^{2}&half-sibs\\\sigma_{A}^{2}/4&full-sibs\end{array}\right. $$
+>
+> | Selection scheme | Formula |
+> | --- | --- |
+> | Among-family Selection: |  |
+> | Family selection ( $ R_{1} $ is a measured sib from family i) | $$ \sigma(\overline{z}_{i},y\mid\mathcal{R}_{1})=r_{n}\left(\sigma_{A}^{2}/2\right)=\left\{\begin{array}{ll}(1+3/n)\left(\sigma_{A}^{2}/8\right)&\text{half-sibs}\\ (1+1/n)\left(\sigma_{A}^{2}/4\right)&\text{full-sibs}\end{array}\right. $$ |
+> | Sib selection / Remnant seed ( $ R_{1} $ is an unmeasured sib from family i) | $$ \sigma(\overline{z}_{i},y\mid\mathcal{R}_{1})=r\left(\sigma_{A}^{2}/2\right)=\left\{\begin{aligned}&\sigma_{A}^{2}/8&half-sibs\\&\sigma_{A}^{2}/4&full-sibs\end{aligned}\right. $$ |
+> | Parental selection / Progeny testing ( $ R_{1} $ is a parent of the measured sibs) | $$ \sigma(\overline{z}_{i},y\mid\mathcal{R}_{1})=\sigma_{A}^{2}/4 $$ |
+> | $ S_{1} $ seed design ( $ R_{1} $ is a selfed progeny of a parent of the measured sibs) | $$ \sigma(\overline{z}_{i},y\mid\mathcal{R}_{1})=\sigma_{A}^{2}/4 $$ |
+> | Within-family Selection: |  |
+> | Selection on family deviations (FD) | $$ \sigma(\left.z_{i j}-\overline{z}_{i},y\right\|\mathcal{R}_{1})=\left(1-r_{n}\right)\left(\sigma_{A}^{2}/2\right)=\left\{\begin{array}{l l}\left(1-1/n\right)\left(3/8\right)\sigma_{A}^{2}&\mathrm{h a l f-s i b s}\\ \left(1-1/n\right)\left(\sigma_{A}^{2}/4\right)&\mathrm{f u l l-s i b s}\end{array}\right. $$ |
+> | Strict within-family selection (FW) | $$ \sigma(z_{ij}-\mu_{i},y\mid\mathcal{R}_{1})=(1-r)\left(\sigma_{A}^{2}/2\right)=\left\{\begin{array}{ll}(3/8)\sigma_{A}^{2}&half-sibs\\\sigma_{A}^{2}/4&full-sibs\end{array}\right. $$ |
 
 
 ---
@@ -430,6 +441,14 @@ In the animal-breeding literature, this equation is often more compactly written
 > Half-sib with nested full-sibs (nested sibs) among-family variance $ (n_{f} $ females per male, $ n_{s} $ offspring per female, $ n = n_{f}n_{s} $ offspring per male $ | $$ \sigma^{2}\big(\overline{z}_{H S(F S)}\big)=\frac{\sigma_{A}^{2}}{4}\left(1+\frac{1}{n_{f}}+\frac{2}{n}\right)+\frac{\sigma_{D}^{2}}{4n_{f}}\left(1+\frac{3}{n_{s}}\right)+\frac{\sigma_{E_{s}}^{2}}{n}+\frac{\sigma_{E_{c}(F S)}^{2}}{n_{f}}+\sigma_{E_{c}(H S)}^{2} $$
 > Half-sib within-family variance | $$ \sigma^{2}(z_{i j}-\overline{z}_{i}\mid H S)=\left(1-\frac{1}{n}\right)\left(\frac{3}{4}\sigma_{A}^{2}+\sigma_{D}^{2}+\sigma_{E_{s}}^{2}\right) $$
 > Full-sib within-family variance | $$ \sigma^{2}(z_{i j}-\overline{{z}}_{i}\mid F S)=\left(1-\frac{1}{n}\right)\left(\frac{1}{2}\sigma_{A}^{2}+\frac{3}{4}\sigma_{D}^{2}+\sigma_{E_{s}}^{2}\right) $$
+>
+> | Selection scheme | Formula |
+> | --- | --- |
+> | Half-sib among-family variance | $$ \sigma^{2}(\overline{z}_{HS})=\frac{\sigma_{A}^{2}}{4}+\frac{(3/4)\sigma_{A}^{2}+\sigma_{D}^{2}+\sigma_{E_{s}}^{2}}{n}+\sigma_{E_{c}(HS)}^{2} $$ |
+> | Full-sib among-family variance | $$ \sigma^{2}\big(\overline{z}_{F S}\big)=\frac{\sigma_{A}^{2}}{2}+\frac{\sigma_{D}^{2}}{4}+\frac{(1/2)\sigma_{A}^{2}+(3/4)\sigma_{D}^{2}+\sigma_{E_{s}}^{2}}{n}+\sigma_{E_{c}(F S)}^{2} $$ |
+> | Half-sib with nested full-sibs (nested sibs) among-family variance $ (n_{f} $ females per male, $ n_{s} $ offspring per female, $ n = n_{f}n_{s} $ offspring per male $ | $$ \sigma^{2}\big(\overline{z}_{H S(F S)}\big)=\frac{\sigma_{A}^{2}}{4}\left(1+\frac{1}{n_{f}}+\frac{2}{n}\right)+\frac{\sigma_{D}^{2}}{4n_{f}}\left(1+\frac{3}{n_{s}}\right)+\frac{\sigma_{E_{s}}^{2}}{n}+\frac{\sigma_{E_{c}(F S)}^{2}}{n_{f}}+\sigma_{E_{c}(H S)}^{2} $$ |
+> | Half-sib within-family variance | $$ \sigma^{2}(z_{i j}-\overline{z}_{i}\mid H S)=\left(1-\frac{1}{n}\right)\left(\frac{3}{4}\sigma_{A}^{2}+\sigma_{D}^{2}+\sigma_{E_{s}}^{2}\right) $$ |
+> | Full-sib within-family variance | $$ \sigma^{2}(z_{i j}-\overline{{z}}_{i}\mid F S)=\left(1-\frac{1}{n}\right)\left(\frac{1}{2}\sigma_{A}^{2}+\frac{3}{4}\sigma_{D}^{2}+\sigma_{E_{s}}^{2}\right) $$ |
 
 
 ---
@@ -1093,7 +1112,7 @@ Relative accuracies are typically expressed in terms of the phenotypic correlati
 
 > **Figure 21.4** · page 32 · source: `chapter21`
 >
-> ![Figure 21.4](../figures/fig_0093.png)
+> ![Figure 21.4](figures/fig_0093.png)
 >
 > Figure 21.4 Regions of the family size (n)-sib correlation (t) space where individual, among-family (family selection) and within-family (selection of family deviations, [FD]) are the most accurate (based on Equations 21.35a and 21.35b). If t is sufficiently large, within-family selection yields the largest response (for large values of n; t > 7/16 = 0.4375 for half-sibs and t > 3/4 for full-sibs). Among-family selection is best when t is sufficiently small (for large values of n; t < 1/16 = 0.0625 for half-sibs, and t < 1/4 for full-sibs). Individual selection yields the largest response for intermediate values of t. For large n (t_n, r_n approaching t, r), among-family selection equals sib selection, as does parental selection (using the curve for full-sibs), while family-deviations selection approaches strict within-family (WF) selection.
 
@@ -1102,7 +1121,7 @@ Relative accuracies are typically expressed in terms of the phenotypic correlati
 
 > **Figure 21.5** · page 32 · source: `chapter21`
 >
-> ![Figure 21.5](../figures/fig_0094.png)
+> ![Figure 21.5](figures/fig_0094.png)
 >
 > Figure 21.5 Accuracies of among-family selection (top row) and selection on family deviations (FD) (bottom row) relative to individual selection. In all graphs, filled circles correspond to n = 2 and open circles to large n. In the upper two graphs, the filled triangles correspond to n = 10 and correspond to n = 5 in the lower two graphs. Strict within-family selection (WF) corresponds to the large-n values for FD selection (open circles). Assuming equal selection intensities, values exceeding one indicate an increased single-generation response relative to individual selection.
 
@@ -1366,7 +1385,7 @@ where $ \sigma^{2}(\overline{z}_{HS}) $ is calculated by Equation 21.42a. For la
 
 > **Figure 21.6** · page 41 · source: `chapter21`
 >
-> ![Figure 21.6](../figures/fig_0095.png)
+> ![Figure 21.6](figures/fig_0095.png)
 >
 > Figure 21.6 Lonnquist's (1964) modified ear-to-row selection scheme. Half-sib families (represented here by the maize ears in the middle of the figure) are planted both as rows in multiple environments (the yield trials over environments  $ E_{1} $ through  $ E_{4} $ at the bottom of the figure) and as a single additional row in yet another location, the so-called crossing block (the rows at the top of the figure). From the best families in the yield trials (the first and fourth in the above figure) one then chooses the best individuals (indicated by the circled plants) from their sibs in the crossing block (within-family selection) to form the next generation.
 
@@ -1564,7 +1583,7 @@ Using the optimal weights, Equation 21.53c simplifies to yield the response unde
 
 > **Figure 21.7** · page 46 · source: `chapter21`
 >
-> ![Figure 21.7](../figures/fig_0096.png)
+> ![Figure 21.7](figures/fig_0096.png)
 >
 > Figure 21.7 The ratio,  $ b_{2}/b_{1} $, of the weights placed on the among- $ (b_{2}) $ relative to within- $ (b_{1}) $ family weights under the optimal Lush index (Equation 21.54). Individual selection corresponds to  $ b_{2}/b_{1} = 1 $. These optimal weights are a function of the phenotypic correlation, t, between sibs and the number, n, of sibs per family.
 
@@ -1589,6 +1608,15 @@ Figure 21.8 plots Equation 21.56b as a function of t and n for half- and full-si
 
 which can take on large values for t near zero or one, as seen by the roughly U-shaped plots in Figure 21.8.
 
+**[Figure]**
+
+> **Figure 21.8** · page 47 · source: `chapter21`
+>
+> ![Figure 21.8](figures/fig_0097.png)
+>
+> Figure 21.8 Response of Lush's index relative to individual selection, as a function of the number of sibs, n, for full-sibs (r = 1/2) and half-sibs (r = 1/4). Except at r = t (where the expected responses are equal), Lush's index results in a larger expected response than individual selection.
+
+
 **[示例 Example]**
 
 > **Example 21.12** · ref: `21.12` · source: `chapter21_038.json` · blocks 6–9
@@ -1605,15 +1633,6 @@ The Lush index weights change with t and r, and so may have to be periodically u
 Specifically, the amount of within-family additive variance (in the absence of drift or inbreeding) remains at $ \sigma_a^2/2 $ (half the genic variance, the value of $ \sigma_A^2 $ in the absence of LD), while the amount of among-family variance is $ \sigma_a^2/2 + d $, where $ d < 0 $ (Chapter 16). Hence, LD has no impact on the within-family component of additive variance, but it decreases the among-family component. Wray and Hill (1989) noted that while the relative efficiency of index selection over individual selection may be greatly diminished by gametic-phase disequilibrium, the relative rankings of the methods still hold.
 
 A concern with any index is that the population parameters have to be correctly estimated, otherwise the index constructed from these estimates will have incorrect weights and be less than optimal (Volume 3). Fortunately, only the intraclass correlation, t, must be estimated for the Lush index, and Sales and Hill (1976) showed that the efficiency of index selection is quite robust to estimation errors in t (as initially suggested by Lush 1947).
-
-**[Figure]**
-
-> **Figure 21.8** · page 47 · source: `chapter21`
->
-> ![Figure 21.8](../figures/fig_0097.png)
->
-> Figure 21.8 Response of Lush's index relative to individual selection, as a function of the number of sibs, n, for full-sibs (r = 1/2) and half-sibs (r = 1/4). Except at r = t (where the expected responses are equal), Lush's index results in a larger expected response than individual selection.
-
 
 Nonetheless, given some of these concerns, it is not surprising that experimental verification of the advantage of the Lush index over individual or family selection is mixed. Further, the common problem of low statistical power in most selection experiments due to small sample sizes makes negative results difficult to interpret (Chapter 18). McBride and Robertson (1963) and Avalos and Hill (1981) found that index selection resulted in a larger response than individual selection for abdominal bristles in Drosophila melanogaster. More conclusive results, also on Drosophila bristle number, were those of James (cited in Frankham 1982), who found that the observed increase in response under index selection (relative to mass selection) was 133% ± 9.7% and 111% ± 7% in two replicates, consistent with the expected increase of 121%. Results for selection for egg production in poultry were less conclusive, and although Kinney et al. (1970) found that individual selection gave a larger (but not significant) response than family index selection, while Garwood and Lowe (1981) found that index selection gave a larger response (again not significant) than family selection. Work on larval and pupal weight in Tribolium showed similar mixed results, as Wilson (1974) found that individual selection gave the largest response, while Campo and Tagarro (1977) did not find any significant differences (index selection gave a larger response in a replicate with large family size, while individual selection showed the larger response in a replicate with small family size).
 

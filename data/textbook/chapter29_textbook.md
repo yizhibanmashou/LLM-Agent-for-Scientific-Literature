@@ -202,6 +202,15 @@ where $ f_{i}(j) $ denotes half of $ j' $s fecundity at age i (Lenski and Servic
 
 Example 29.4 shows that individuals with the same LRS can have very different $ \lambda_{ind} $ values. Indeed, the rankings of individuals based on LRS versus $ \lambda_{ind} $ can be rather nonconcordant. Hence, it should not be surprising that Brommer et al. (2002) noted several cases where inferences on selection were altered when $ \lambda_{ind} $ was used in place of LRS. An especially telling example in shown in Figure 29.1, which plots these two measures of fitness for female Ural owls (Strix uralensis). As the figure shows, there is a diminishing return in $ \lambda_{ind} $ with increasing values of LRS. This occurs because reproductive contributions later in life are increasingly down-weighted by $ \lambda_{ind} $ (Equation 29.3c).
 
+**[Figure]**
+
+> **Figure 29.1** · page 10 · source: `chapter29`
+>
+> ![Figure 29.1](figures/fig_0146.png)
+>
+> Figure 29.1 Lifetime reproductive success (LRS) versus  $ \lambda_{ind} $ in 56 Ural owls (Strix uralensis) where offspring were measured as fledglings. Increasing LRS results in diminishing returns in  $ \lambda_{ind} $, which occurs because additional reproduction later in life is increasingly down-weighted by this rate-sensitive measure. (After Brommer et al. 2002.)
+
+
 ---
 
 ## chapter29_007 · Individual Fitness and the Measurement of Univariate Selection: Introduction / Concurrent Selective Episodes, Reproductive Timing, and Individual Fitness, $ \lambda_{ind} $
@@ -213,15 +222,6 @@ In closing, we remark that there is a robust discussion in the literature on the
 ---
 
 ## chapter29_008 · EPISODES OF SELECTION AND THE ASSIGNMENT OF FITNESS / Sensitivities and Elasticities of the Elements of L
-
-**[Figure]**
-
-> **Figure 29.1** · page 10 · source: `chapter29`
->
-> ![Figure 29.1](../figures/fig_0146.png)
->
-> Figure 29.1 Lifetime reproductive success (LRS) versus  $ \lambda_{ind} $ in 56 Ural owls (Strix uralensis) where offspring were measured as fledglings. Increasing LRS results in diminishing returns in  $ \lambda_{ind} $, which occurs because additional reproduction later in life is increasingly down-weighted by this rate-sensitive measure. (After Brommer et al. 2002.)
-
 
 **[推导 Derivation]**
 
@@ -269,16 +269,16 @@ As will be discussed later in the chapter, elasticities provide a link between t
 
 How do we compare the amount of selection acting on different populations? At first glance, one might consider using the variance-standardized selection differential (the selection intensity), $ \bar{\imath} = S/\sigma $, to compare the relative strengths of individual selection between populations (Chapter 13). The limitation with $ \bar{\imath} $ as a measure of overall selection on populations is that it is character specific. Hence, $ \bar{\imath} $ may be appropriate when comparing the strength of selection on a particular character (one could also use mean-standardization, $ S/\mu $, instead; Chapters 13 and 30), but it is inappropriate for comparing the overall strength of selection in a population. This is because two populations may have the same $ \bar{\imath} $ value for a given character, but if that character is tightly correlated with fitness in one population and only weakly correlated in the other, selection will be much stronger in the latter population.
 
+Another issue with using $ \bar{\tau} $ is that considerable selection can occur without changing the mean (e.g., stabilizing selection). Haldane (1954) and Van Valen (1965) proposed measures of the intensity of selection, which is suitable for stabilizing selection. Both contrast the mean fitness, $ \overline{W} $, with $ W_o $, the fitness of the optimal phenotype (usually estimated as the value of the mode of a stabilizing selection function, e.g., $ \theta $ in Equation 28.3). Haldane suggested $$ I_{H}=\ln(W_{o})-\ln(\overline{W}) $$ while Van Valen proposed $$ \begin{align*}I_{VV}={W_o-\overline{W}\over W_o}=1-\exp(-I_H)\end{align*} $$
+
 **[Figure]**
 
 > **Figure 29.2** · page 12 · source: `chapter29`
 >
-> ![Figure 29.2](../figures/fig_0147.png)
+> ![Figure 29.2](figures/fig_0147.png)
 >
 > Figure 29.2 The fraction of $I$ (the opportunity for selection) that is translated into a change in the mean depends on the correlation, $\rho(z,w)$, between relative fitness and the trait value. Traits $z_1$ and $z_2$ have the same marginal distribution of fitness, but only the regression of $w$ on $z_1$ is significant. Thus, within a generation, selection changes the mean of $z_1$, but not of $z_2$.
 
-
-Another issue with using $ \bar{\tau} $ is that considerable selection can occur without changing the mean (e.g., stabilizing selection). Haldane (1954) and Van Valen (1965) proposed measures of the intensity of selection, which is suitable for stabilizing selection. Both contrast the mean fitness, $ \overline{W} $, with $ W_o $, the fitness of the optimal phenotype (usually estimated as the value of the mode of a stabilizing selection function, e.g., $ \theta $ in Equation 28.3). Haldane suggested $$ I_{H}=\ln(W_{o})-\ln(\overline{W}) $$ while Van Valen proposed $$ \begin{align*}I_{VV}={W_o-\overline{W}\over W_o}=1-\exp(-I_H)\end{align*} $$
 
 For small values, note that $ I_{VV} \simeq I_H $ (as $ e^{-x} \simeq 1 - x $ for small $ x $). These measures, however, also have limitations as comparative measures of the strength of selection. First, the value of $ W_o $ when selection is strictly directional is unclear, and second, like $ \bar{\imath} $, these metrics are also trait-specific.
 
@@ -417,15 +417,6 @@ Random offspring mortality always inflates the variance in reproductive success,
 
 ## chapter29_012 · VARIANCE IN INDIVIDUAL FITNESS / Caveats in Using the Opportunity for Selection
 
-**[Figure]**
-
-> **Figure 29.3** · page 16 · source: `chapter29`
->
-> ![Figure 29.3](../figures/fig_0148.png)
->
-> Figure 29.3 The ratio of the opportunity for selection on reproductive success to the lifetime opportunity for the coreid bug, Colpula lativentris, as a function of observation period. Males are given by the filled circles and females by the open circles. Note the inflation in I when very short time intervals are considered. (After Nishida 1989.)
-
-
 There are several subtle issues in the interpretation of I. To begin with, even though this variable appears to remove scaling effects due to different types of fitnesses, for estimates of I to be truly comparable, they must be based on consistent measures of fitness (Trial 1985). Consider the opportunity for selection based on number of mates per male (sexual selection), $ I_{s} $, versus the opportunity for selection based on total male reproductive success (the number of offspring per male), $ I_{rs} $. Total male reproductive success depends on both the number of mates and the fertility per mating. Recalling Equation 29.8, $ I_{rs} = I_{s} + I_{f} + R $, where $ I_{f} $ is the opportunity for selection based on differences in male fertility per mating. Hence, $ I_{rs} $ is expected to exceed $ I_{s} $ unless there is sufficient negative covariance between the mating success and fertility components ($ R < -I_{f} $).
 
 **[推导 Derivation]**
@@ -435,6 +426,15 @@ A second point is that if the variance in fitness is not independent of $ \overl
 > **Formula (29.10)** · `29.10` · source: `chapter29_block_064` · Caveats in Using the Opportunity for Selection
 >
 > $$ I=\frac{p(1-p)}{p^{2}}\simeq\frac{1}{p}\quad if p\ll1 $$
+
+
+**[Figure]**
+
+> **Figure 29.3** · page 16 · source: `chapter29`
+>
+> ![Figure 29.3](figures/fig_0148.png)
+>
+> Figure 29.3 The ratio of the opportunity for selection on reproductive success to the lifetime opportunity for the coreid bug, Colpula lativentris, as a function of observation period. Males are given by the filled circles and females by the open circles. Note the inflation in I when very short time intervals are considered. (After Nishida 1989.)
 
 
 In this case, the mean and variance in individual fitness are not independent, and the opportunity for selection depends entirely on mean population fitness. As the time window for observing mating pairs decreases, fewer matings are seen and p decreases, which increases I. As the data plotted in Figure 29.3 illustrate, the opportunity for selection is often inflated if the observation period is short relative to the total mating period. Exactly the same problem occurs for viability selection (where p is now the probability of survival), but here p is expected to decrease (increasing I) as the window becomes longer.
@@ -516,7 +516,7 @@ The operational sex ratio (ORS) of Emlen and Oring (1977), which is the ratio of
 
 > **Figure 29.4** · page 21 · source: `chapter29`
 >
-> ![Figure 29.4](../figures/fig_0149.png)
+> ![Figure 29.4](figures/fig_0149.png)
 >
 > Figure 29.4 Examples of Bateman gradients, the regression of total offspring number (reproductive success [RS]) as a function of number of mates (mating success [MS]). A: Data for male (open diamonds and solid line) and female (filled circles and dashed line) rough-skinned newts (Taricha granulosa). The slope for males is significantly different from zero while the slope for females is not, and the sex-specific slopes are significantly different from each other. (After Jones et al. 2002.) B: Data for male (filled symbols and solid lines) and female (open symbols and dashed lines) bank voles (Clethrionomys glareolus), for three different operational sex ratios (ORS), indicated by squares, circles, and triangles. Again, the male slopes (at all three values of ORS) are significantly positive, while none of the female slopes are. (After Mills et al. 2007.) C: Gradients for a Québec population of eastern chipmunks (Tamias striatus). Males are open circles (regression given by the dashed line), and females are filled circles (solid line). The gradients on both sexes are positive and very similar, allowing for the possibility of strong sexual selection in both males and females. (After Bergeron et al. 2012.)
 
@@ -635,7 +635,7 @@ The expected fitness, $ W(z) = E[W \mid z] $, of an individual with a phenotypic
 
 > **Figure 29.5** · page 25 · source: `chapter29`
 >
-> ![Figure 29.5](../figures/fig_0150.png)
+> ![Figure 29.5](figures/fig_0150.png)
 >
 > Figure 29.5 Phenotypic selection has historically been classified into three basic forms depending on the local geometry of the individual fitness surface,  $ W(z) $: stabilizing (A), directional (B), and disruptive (C). As D illustrates, populations can also simultaneously experience multiple forms of selection. Likewise, if the population mean ( $ \mu_z $) in (A) does not correspond with the maximum value of  $ W(z) $, the population experiences directional selection as it is moved toward this value.
 
@@ -648,20 +648,20 @@ Mean fitness is a function of both individual fitness, $ W(z) $, and the paramet
 
 To stress this distinction between the $ W(z) $ and $ \overline{W} $ fitness geometries, the former is referred to as the individual fitness surface, and the latter as the mean fitness surface or (preferably) the fitness landscape. The term landscape traces back to Simpson (1944, 1952), who called $ \overline{W}(\Theta) $ the adaptive landscape as an extension (to changes in trait means in phenotypic space) of Wright's notion of an adaptive topography for allele-frequency change in genotypic space (Equation 5.5b). Knowledge of the individual fitness surface allows us to compute the fitness landscape for any specified phenotypic distribution, $ p(z) $, but the converse is not true. Given this important distinction between the two different geometries, Lande (1976), Arnold (2003), and Morrissey and Sakrejda (2013) suggested restricting the term surface to individual fitnesses, $ W(z) $, and the term landscape to mean population fitnesses, $ \overline{W}(\Theta) $, and we follow this convention here.
 
+**[Figure]**
+
+> **Figure 29.6** · page 26 · source: `chapter29`
+>
+> ![Figure 29.6](figures/fig_0151.png)
+>
+> Figure 29.6 In this example, a small change in z is associated with a large change in the individual fitness surface,  $ W(z) $. However, because the mean population fitness,  $ \overline{W}(\mu_z) $, averages individual fitnesses over the phenotypic distribution (the filled curve in the left panel), small changes in  $ \mu_z $ result in only small changes in  $ \overline{W}(\mu_z) $. As a result, the corresponding fitness landscape is much smoother than the underlying individual fitness surface.
+
+
 Populations, not individuals, evolve, and the fitness landscape provides the connection between the fitness of individuals and the evolution of the population. When the breeder's equation holds, the partial derivatives of $ \overline{W} $ with respect to the first two phenotypic moments ($ \mu_{z} $ and $ \sigma_{z}^{2} $) describe the changes in mean and variance (Example 24.9). More generally, partials of $ \overline{W} $ with respect to higher phenotypic moments describe the dynamics of selection in the Barton-Turelli selection-response equations (Equations 24.26 and 24.28). The individual fitness surface may have discontinuities and rough spots, for example, regions where very small changes in phenotypic values result in large changes in individual fitness. As shown in Figure 29.6, such regions are smoothed (at least to some extent) by the averaging of $ W(z) $ over $ p(z) $ in the fitness landscape, and this smoothing facilitates the existence of the various partials of mean fitness used in the Barton-Turelli equations.
 
 ---
 
 ## chapter29_019 · Individual Fitness and the Measurement of Univariate Selection: Introduction / DESCRIBING PHENOTYPIC SELECTION: CHANGES IN PHENOTYPIC MOMENTS
-
-**[Figure]**
-
-> **Figure 29.6** · page 26 · source: `chapter29`
->
-> ![Figure 29.6](../figures/fig_0151.png)
->
-> Figure 29.6 In this example, a small change in z is associated with a large change in the individual fitness surface,  $ W(z) $. However, because the mean population fitness,  $ \overline{W}(\mu_z) $, averages individual fitnesses over the phenotypic distribution (the filled curve in the left panel), small changes in  $ \mu_z $ result in only small changes in  $ \overline{W}(\mu_z) $. As a result, the corresponding fitness landscape is much smoother than the underlying individual fitness surface.
-
 
 Selection for particular phenotypes changes the trait distribution (although it need not change all moments; for example, the mean may be unchanged). Thus, selection on a target trait can be detected by testing for differences between the distribution of phenotypes before and after some episode of selection. While complete distributions can be compared (e.g., using the $d$ statistic from the DSD approach, as discussed below), the most common procedure for detecting selection acting on a trait is to test for changes in its first few phenotypic moments. Standard statistical tests for differences in means ($t$ tests) and variances ($F$ tests) can be used, but these tests rely on normality assumptions that are often violated, and nonparametric tests may be more appropriate. Differences in means can be tested using the Wilcoxon-Mann-Whitney test, while Conover's squared rank test (Conover 1999) can be used to test for changes in variances. Other nonparametric tests for changes in variance exist, but care must be exercised, as some (e.g., the Siegel-Tukey test) are quite sensitive to differences in means; see Conover (1999) and Sprent and Smeeton (2007). While these issues are important, the main problem in detecting whether selection is occurring on a particular trait is that changes in the moments may be due entirely to selection on phenotypically correlated characters (Chapters 20 and 30). Keeping this important caveat in mind, we now examine measures of selection for single characters.
 
@@ -784,6 +784,15 @@ Furthermore, if z is normally distributed, then $ \mu_{4,z} = 3\sigma_{z}^{4} $ 
 > $$ \frac{|C|}{\sigma_{z}^{2}}\leq\sqrt{2I} $$
 
 
+**[Figure]**
+
+> **Figure 29.7** · page 29 · source: `chapter29`
+>
+> ![Figure 29.7](figures/fig_0152.png)
+>
+> Figure 29.7 Even when a population is under strict stabilizing selection, the mean can change if the phenotypic distribution is skewed. One standard fitness function for stabilizing selection is Wright's quadratic, namely  $ W(z) = 1 - b(z - \theta)^2 $ (Equation 28.3a). O'Donald (1968) found that when the population mean is at the optimum value  $ \mu_z = \theta $, S is nonzero when the skew is nonzero  $ \mu_{3,z} \neq 0 $, as  $ S = -(b\mu_{3,z})/(1 - b\sigma_z^2) $. The dashed line and solid line (the latter with the corresponding filled curve), respectively, represent the preselection and postselection phenotypic distributions (both standardized to unit area). Left: If phenotypes are symmetrically distributed about the mean  $ \mu_{3,z} = 0 $, the distribution after selection has the same mean when  $ \mu_z = \theta $. Right: When the distribution is skewed, the longer tail experiences more selection than the shorter tail, which changes the mean.
+
+
 **[推导 Derivation]**
 
 Finally, the quadratic analog of $ \beta $, the quadratic (or stabilizing) selection gradient, $ \gamma $, was defined by Lande and Arnold (1983) as
@@ -798,15 +807,6 @@ As was the case for $ \beta $, in its univariate form, $ \gamma $ appears as a s
 ---
 
 ## chapter29_023 · DESCRIBING PHENOTYPIC SELECTION: CHANGES IN PHENOTYPIC MOMENTS / Under Trait Normality, Gradients Describe the Local Geometry of the Fitness Landscape
-
-**[Figure]**
-
-> **Figure 29.7** · page 29 · source: `chapter29`
->
-> ![Figure 29.7](../figures/fig_0152.png)
->
-> Figure 29.7 Even when a population is under strict stabilizing selection, the mean can change if the phenotypic distribution is skewed. One standard fitness function for stabilizing selection is Wright's quadratic, namely  $ W(z) = 1 - b(z - \theta)^2 $ (Equation 28.3a). O'Donald (1968) found that when the population mean is at the optimum value  $ \mu_z = \theta $, S is nonzero when the skew is nonzero  $ \mu_{3,z} \neq 0 $, as  $ S = -(b\mu_{3,z})/(1 - b\sigma_z^2) $. The dashed line and solid line (the latter with the corresponding filled curve), respectively, represent the preselection and postselection phenotypic distributions (both standardized to unit area). Left: If phenotypes are symmetrically distributed about the mean  $ \mu_{3,z} = 0 $, the distribution after selection has the same mean when  $ \mu_z = \theta $. Right: When the distribution is skewed, the longer tail experiences more selection than the shorter tail, which changes the mean.
-
 
 A number of expressions equating $ \beta $ and $ \gamma $ to different gradient functions of fitness surfaces and landscapes appear in the literature. A potential source of confusion is that while these gradient functions are formally different (Geyer and Shaw 2008), they turn out to be equivalent when traits are normally distributed (Lande and Arnold 1983), and hence are used somewhat interchangeably in the literature.
 
@@ -1144,20 +1144,20 @@ which is also written as
 > $$ \begin{align*}w=a+b_{sd,1}z_{sd,1}+b_{sd,2}z_{sd}^2+e\end{align*} $$
 
 
+**[Figure]**
+
+> **Figure 29.8** · page 37 · source: `chapter29`
+>
+> ![Figure 29.8](figures/fig_0153.png)
+>
+> Figure 29.8 The relationship between  $ \gamma $ and curvature of a quadratic fitness function (solid line). The dashed curve represents the distribution of z. A:  $ W(z) $ is strictly linear, hence  $ \gamma = 0 $. B:  $ W(z) $ curves downward (is concave), but has no maximum over the range of z examined. Hence,  $ \gamma < 0 $, implying stabilizing selection by the Lande-Arnold criterion, when in fact selection is entirely directional. C: Stabilizing selection only, as there is no change in the mean. D: A combination of directional and stabilizing selection, as the population mean is not at the optimal fitness value. (After Mitchell-Olds and Shaw 1987.)
+
+
 A positive quadratic term $ (b_2 \text{ or } b_{sd,2} > 0) $ indicates that the best-fitting quadratic approximation of the individual fitness surface has an upward (convex) curvature, while a negative value $ (b_2 < 0) $ implies that the curvature is downward (concave). Lande and Arnold (1983) suggested that $ b_2 > 0 $ indicates disruptive selection while $ b_2 < 0 $ indicates stabilizing selection. Their reasoning follows from elementary geometry in that a necessary condition for a local minimum is that a function must be convex over some interval, while a necessary condition for a local maximum is that the function is concave. However, Mitchell-Olds and Shaw (1987) and Schluter (1988) noted that this condition is not sufficient for the presence of a local extrema. Stabilizing selection is generally defined as the presence of a local maximum in $ w(z) $ and disruptive selection by the presence of a local minimum, while $ b_2 $ indicates curvature rather than the presence of local extrema. As Figure 29.8 shows, a quadratic fitness function can curve downward without the population experiencing a local maximum. It can also curve upward without having a local minimum. Because of these issues, the current usage is to denote $ b_2 < 0 $ as concave selection and $ b_2 > 0 $ as convex selection.
 
 ---
 
 ## chapter29_030 · DESCRIBING PHENOTYPIC SELECTION: INDIVIDUAL FITNESS SURFACES / Lande-Arnold Fitness Regressions
-
-**[Figure]**
-
-> **Figure 29.8** · page 37 · source: `chapter29`
->
-> ![Figure 29.8](../figures/fig_0153.png)
->
-> Figure 29.8 The relationship between  $ \gamma $ and curvature of a quadratic fitness function (solid line). The dashed curve represents the distribution of z. A:  $ W(z) $ is strictly linear, hence  $ \gamma = 0 $. B:  $ W(z) $ curves downward (is concave), but has no maximum over the range of z examined. Hence,  $ \gamma < 0 $, implying stabilizing selection by the Lande-Arnold criterion, when in fact selection is entirely directional. C: Stabilizing selection only, as there is no change in the mean. D: A combination of directional and stabilizing selection, as the population mean is not at the optimal fitness value. (After Mitchell-Olds and Shaw 1987.)
-
 
 **[推导 Derivation]**
 
@@ -1360,18 +1360,18 @@ where Var denotes a sample variance (for either z or w) and r denotes the sample
 
 Using this result, power calculations follow from standard approaches, wherein for a given strength of selection (scaled as $ \rho $), sample size $ (n) $, and level of significance $ (\alpha) $, one can compute the probability of rejecting the null hypothesis of $ \rho = 0 $ (see similar examples in LW Appendix 5). As shown in Figure 29.9, sample size typically needs to be in the hundreds to have significant power of detecting even modest selection on a trait. With zero/one coded fitness data (such as viability), the residuals follow binomial (rather than normal) distributions, and simulations by Hersch and Phillips (2004) showed that using Equation 29.32d overestimates the power to detect a trait-fitness association in this case. Values of n obtained from Equation 29.32d should thus be regarded as lower bounds. Further, because of the higher sampling variances with estimates of $ z^{2} $, for a fixed value of n, the power to detect quadratic effects (such as $ \gamma $) is expected to be much less than the power associated with a comparable value for a linear effect ($ \beta $). Hence, if a large n is required to have any serious power to detect a linear effect, an even larger (and often much larger) value of n is required to detect a similar quadratic effect.
 
----
-
-## chapter29_034 · DESCRIBING PHENOTYPIC SELECTION: INDIVIDUAL FITNESS SURFACES / Mean-standardized Gradients and Fitness Elasticities
-
 **[Figure]**
 
 > **Figure 29.9** · page 43 · source: `chapter29`
 >
-> ![Figure 29.9](../figures/fig_0154.png)
+> ![Figure 29.9](figures/fig_0154.png)
 >
 > Figure 29.9 The power of a univariate regression to detect a directional selection gradient is a function of the correlation ( $ \rho $) between trait value and relative fitness, where  $ \rho = \bar{\nu}/\sigma_w = \beta \sigma_z / \sigma_w $. Power is plotted as a function of  $ \rho $ with the curves for sample sizes starting at  $ n = 25 $ and successively doubling until 800. Here power is the probability that the sample correlation is declared significantly different from zero using a test of significance of  $ \alpha = 0.05 $. (After Hersch and Phillips 2004.)
 
+
+---
+
+## chapter29_034 · DESCRIBING PHENOTYPIC SELECTION: INDIVIDUAL FITNESS SURFACES / Mean-standardized Gradients and Fitness Elasticities
 
 Most traits of interest are scaled in the units of their measurement, which could be linear (lengths), areal (leaf surface), volumetric (mass), and even ordinal (traits such as shades of color). The evaluation of different traits across such a range of scales requires some sort of standardization to return a dimensionless quantity for comparison. Typically this is done by dividing a trait by its standard deviation (variance-standardization), or, less frequently, dividing it by its mean (mean-standardization). For example, Chapters 6 and 13 compared mean- and variance-standardization for the additive genetic variance and the selection response. As shown in Chapter 6, determining which standardization to use is not a trivial issue, as traits that are closely related to fitness have lower heritabilities (variance-standardized values) but higher coefficients of additive variance (mean-standardized values) relative to traits that are more distantly related to fitness.
 
@@ -1451,18 +1451,18 @@ Despite their appeal, there are restrictions and caveats concerning mean-standar
 
 A potentially serious problem with quadratic regressions as estimators of $ W(z) $ is that they allow for only a single local maximum or minimum. Fitness surfaces with multiple local maxima, or even sharp transitions, are thus poorly described by a quadratic. Figure 29.10 presents a particularly illustrative example, showing that a quadratic fit to a truncation-selection fitness function creates a spurious local minimum. Given this potential for a very misleading view of the fitness surface, why is there so much focus on quadratic regressions? There are two primary motivations. First, the quadratic is the simplest function that allows for curvature, and hence is the simplest estimate of any nonlinearity in the fitness surface. Second, and much more important, when the conditions for the breeder's equation hold (Chapters 6, 13, and 24), the sole measures of phenotypic change entering into the short-term selection response equations for mean (Equation 13.8c) and variance (Equation 16.7b) are the coefficients from the best linear ($ \beta $ from Equation 29.25b) and best quadratic ($ \gamma $ from Equation 29.29f) fit. Hence, even if the fitness surface is very poorly described by a quadratic, even to the point of being very misleading (Figure 29.10), one would still extract the coefficients for the response in the mean and variance by using the quadratic estimate. There is thus the potential for conflict in the use of quadratic regressions between ecologists (who wish to ascertain how traits influence fitness) and evolutionary biologists (who wish to examine how these traits might evolve). In reality, however, both viewpoints are correct. The more accurate the description of the fitness surface, the more ecological insight it provides into the trait, but this fitness surface also needs to be translated into the required parameters to predict the evolutionary dynamics of the trait.
 
----
-
-## chapter29_036 · MOVING AWAY FROM QUADRATIC FITNESS FUNCTIONS / Gaussian and Exponential Fitness Functions
-
 **[Figure]**
 
 > **Figure 29.10** · page 46 · source: `chapter29`
 >
-> ![Figure 29.10](../figures/fig_0155.png)
+> ![Figure 29.10](figures/fig_0155.png)
 >
 > Figure 29.10 Examples of misleading approximations of W(z) resulting from using a quadratic regression. A: A hypothetical example wherein phenotypes are normally distributed with only individuals exceeding one phenotypic standard deviation surviving (i.e., threshold selection). The best quadratic regression erroneously suggests the presence of disruptive selection (by introducing a false minimum), rather than the strict directional selection that is actually occurring. In contrast (not shown), the same logic shows that if individuals above 1.0 are culled, then the quadratic surface would indicate stabilizing selection by introducing a false maximum. (After Schluter 1988.) B: Data from Mitchell-Olds and Bergelson (1990) on individual fitness as a function of late growth rate (z) for the annual plant Impatiens capensis. The data clearly depart from linearity, as they show curvature. The best-fitting quadratic (plotted) indicates a minimum in fitness (disruptive selection) around z ≈ −2.4. However, a better fit was given by a model of exponentially increasing fitness, with w(z) + 0.5 = exp(0.52 + 0.46 - z - 0.002 - z^2), suggesting that strict directional selection is acting on z, as this function monotonically increases over the character range being measured. (After Mitchell-Olds and Bergelson 1990.) C: When the optimal value under true stabilizing selection (solid curve; with the true W(z) given by Equation 29.34a) is sufficiently above the current population mean, the best-fitting quadratic (dashed curve) has a positive curvature ( $ \gamma > 0 $). Here the population mean is at zero, and the optimum is two standard deviations above zero. If the mean were two standard deviations above the optimum, the best-fitting quadratic would have a negative curvature ( $ \gamma < 0 $). (After Geyer and Shaw 2008; Shaw and Geyer 2010.)
 
+
+---
+
+## chapter29_036 · MOVING AWAY FROM QUADRATIC FITNESS FUNCTIONS / Gaussian and Exponential Fitness Functions
 
 **[推导 Derivation]**
 
@@ -1477,7 +1477,7 @@ If our sole focus is in describing the fitness surface (as opposed to extracting
 
 > **Figure 29.11** · page 47 · source: `chapter29`
 >
-> ![Figure 29.11](../figures/fig_0156.png)
+> ![Figure 29.11](figures/fig_0156.png)
 >
 > Figure 29.11 Examples of fitness surfaces generated using Schluter's cubic-spline estimate. The actual fitness values for individuals are indicated by +, and the solid curve indicates the cubic-spline estimate of  $ W(z) $. A: Probability of survival as a function of beak depth in Darwin's finch ( $ Geospiza\ fortis $). The dashed curve indicates the estimate of the surface by a quadratic regression, which generates a spurious minimum. B: Overwinter survival in juvenile female song sparrows ( $ Melospiza\ melodia $) as a function of tarsus length. C: Survival of male human infants as a function of birth weight. (After Schluter 1988.)
 
@@ -1723,18 +1723,18 @@ where (as above) $ \phi(j \mid z) = \operatorname{Pr}(W = j \mid z) $ is a discr
 
 ## chapter29_042 · MORE REALISTIC MODELS OF THE DISTRIBUTION OF FITNESS COMPONENTS / Aster Models: Modeling the Distribution of Total Fitness
 
+While the above section presented more realistic distributions for a given component of fitness, the distribution of lifetime fitness is much more complex, compounding a series of Bernoulli (viability, mating, etc.) and discrete counting distributions (number of mates, number of offspring, etc.). The resulting distribution incorporating all of these episodes has an excess of zero values and does not fit any standard distribution. Ideally, one would like an approach that allows an investigator to specify the distribution of each of the components and then arrive at the correct distribution of total fitness.
+
+An example of this problem is presented in Figure 29.12, which shows the life history of the purple coneflower (Echinacea angustifolia) in the family Asteraceae (Geyer et al. 2007). A single individual may survive year one ($ M_1 $), in which case it may flower ($ F_1 $), in which case it has some discrete flower head-count status ($ H_1 $), with this pattern continuing in years two and three (assuming survival). Lifetime flower head production ($ \sum H_i $) is used as the surrogate for total fitness. Even this fairly simple life history has a complex, very nonstandard, distribution for total fitness. One can model the $ M_i $ and $ F_i $ values as Bernoulli random variables, and the $ H_i $ values as zero-truncated Poisson's (because we are conditioning on them flowering). Equivalently, conditioned on survival ($ M_i = 1 $), flower head status $ H_i $ could be directly modeled as a zero-inflated Poisson.
+
 **[Figure]**
 
 > **Figure 29.12** · page 53 · source: `chapter29`
 >
-> ![Figure 29.12](../figures/fig_0157.png)
+> ![Figure 29.12](figures/fig_0157.png)
 >
 > Figure 29.12 A life-history graph of potential fitness components in the aster Echinacea angustifolia. The distribution of lifetime fitness starts by considering the discrete number of offspring left by a single individual (the 1 at the upper right starting the graph). First, this individual must survive to year one  $ (M_1) $, in which case it may flower  $ (F_1) $, and if it flowers, it has some (discrete) number  $ (H_1) $ of flower heads (taken as the surrogate for fitness). The same pattern continues (providing it survives) over years two and three, with lifetime fitness given by  $ H_1 + H_2 + H_3 $. A life history can be constructed as a forest graph, as there are no loops and each node has only one predecessor. Further, if the value of a predecessor is zero, then all descendant values from that predecessor are also zero. For example, if an individual fails to survive to year two  $ (M_2 $ is zero $, then  $ H_2 $ and  $ H_3 $ are zero. If  $ F_1 $ is zero, then  $ H_1 $ is zero, but this (by itself) tells us nothing about  $ H_2 $ or  $ H_3 $, as they are not descendants of  $ F_1 $. This graphical representation allows very complex life histories to be accurately modeled. (After Geyer et al. 2007.)
 
-
-While the above section presented more realistic distributions for a given component of fitness, the distribution of lifetime fitness is much more complex, compounding a series of Bernoulli (viability, mating, etc.) and discrete counting distributions (number of mates, number of offspring, etc.). The resulting distribution incorporating all of these episodes has an excess of zero values and does not fit any standard distribution. Ideally, one would like an approach that allows an investigator to specify the distribution of each of the components and then arrive at the correct distribution of total fitness.
-
-An example of this problem is presented in Figure 29.12, which shows the life history of the purple coneflower (Echinacea angustifolia) in the family Asteraceae (Geyer et al. 2007). A single individual may survive year one ($ M_1 $), in which case it may flower ($ F_1 $), in which case it has some discrete flower head-count status ($ H_1 $), with this pattern continuing in years two and three (assuming survival). Lifetime flower head production ($ \sum H_i $) is used as the surrogate for total fitness. Even this fairly simple life history has a complex, very nonstandard, distribution for total fitness. One can model the $ M_i $ and $ F_i $ values as Bernoulli random variables, and the $ H_i $ values as zero-truncated Poisson's (because we are conditioning on them flowering). Equivalently, conditioned on survival ($ M_i = 1 $), flower head status $ H_i $ could be directly modeled as a zero-inflated Poisson.
 
 Motivated by the problem posed by Figure 29.12, Geyer et al. (2007; 2013; Shaw et al. 2008; Geyer 2010; Geyer and Shaw 2010a, 2010b) developed an approach they called aster models (a homage to the initial aster study) as a very flexible framework for modeling the distribution of total lifetime fitness given a life-history graph. As Geyer noted, the term aster models is far catchier than “forest graph exponential family conditional or unconditional canonical statistic models.” Aster models start with a life-history graph (a forest graph, as there are no loops and each node has only one predecessor), and assume that the distribution to the next step of the graph (a fitness component) is a member of the exponential family (which includes Bernoulli, binomial, Poisson, and negative binomial distributions, as well as their truncated versions).
 
@@ -1778,18 +1778,18 @@ The ultimate aim of detecting selection on a trait is not just to understand its
 > $$ h=a+\sum_{i}b_{i}z_{i}+\sum_{j}\sum_{k}c_{jk}z_{j}z_{k}+\epsilon $$
 
 
+Arnold suggested that performance surfaces can offer important insight, potentially bridging a conceptual gap between trait and fitness values through a functional intermediate that is more biologically interpretable (also see Geber and Griffin 2003 for a plant perspective). By analogy with Equation 29.29b, the regression coefficients $ (b_i $ and $ c_{jk}) $ in Equation 29.43 are often referred to as performance gradients.
+
+Performance is occasionally used as a direct proxy for fitness (one measures performance, rather than directly measuring fitness), and the performance gradients subsequently taken as proxies for fitness gradients. Franklin and Morrissey (2017) cautioned that the conditions under which performance gradients (coefficients of z in the h on z regression) correspond to selection gradients (coefficients of z in the w on z regression) are very narrow. Specifically, the regression of fitness on the performance score (h) must be both linear and with an intercept of zero.
+
 **[Figure]**
 
 > **Figure 29.13** · page 56 · source: `chapter29`
 >
-> ![Figure 29.13](../figures/fig_0158.png)
+> ![Figure 29.13](figures/fig_0158.png)
 >
 > Figure 29.13 The eco-evolutionary surface for selection on fledging weight in great tits (Parus major), based on data from Wytham Woods, Oxford, England. The fitted surface plots the selection differential, S, for fledging weight as a function of biotic (food) and abiotic (temperature) variables. The abiotic variable was the average December to February temperature, the biotic variable the amount of beech tree (Fagus sylvatica) nuts, given by the mast score. (After MacColl 2011.)
 
-
-Arnold suggested that performance surfaces can offer important insight, potentially bridging a conceptual gap between trait and fitness values through a functional intermediate that is more biologically interpretable (also see Geber and Griffin 2003 for a plant perspective). By analogy with Equation 29.29b, the regression coefficients $ (b_i $ and $ c_{jk}) $ in Equation 29.43 are often referred to as performance gradients.
-
-Performance is occasionally used as a direct proxy for fitness (one measures performance, rather than directly measuring fitness), and the performance gradients subsequently taken as proxies for fitness gradients. Franklin and Morrissey (2017) cautioned that the conditions under which performance gradients (coefficients of z in the h on z regression) correspond to selection gradients (coefficients of z in the w on z regression) are very narrow. Specifically, the regression of fitness on the performance score (h) must be both linear and with an intercept of zero.
 
 **[推导 Derivation]**
 
@@ -1806,7 +1806,7 @@ where $ f_{i} $ represent environmental and biotic values. This is a modificatio
 
 > **Figure 29.14** · page 57 · source: `chapter29`
 >
-> ![Figure 29.14](../figures/fig_0159.png)
+> ![Figure 29.14](figures/fig_0159.png)
 >
 > Figure 29.14 The impact of environmental manipulation of agents of possible selection on Anolis lizards in the Caribbean. The presence or absence of predators did not change the selection gradients on three traits (snout-vent length, limb length, running stamina), while lizard density had a significant impact  $ (p \leq 0.05) $. See Example 29.12 for more details. (After Calsbeek and Cox 2010.)
 

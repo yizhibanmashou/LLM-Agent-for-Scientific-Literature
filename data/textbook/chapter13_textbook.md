@@ -31,20 +31,20 @@ Recall (Equation 6.12) that two other technical restrictions are also required t
 
 ## chapter13_003 · SINGLE-GENERATION RESPONSE: THE BREEDER'S EQUATION / The Importance of Linearity
 
+**[Figure]**
+
+> **Figure 13.1** · page 3 · source: `chapter13`
+>
+> ![Figure 13.1](figures/fig_0044.png)
+>
+> Figure 13.1 The importance of linearity in the parent-offspring regression. If this regression is nonlinear, different subsets of the population with the same mean can have different offspring means. Suppose equal numbers of parents with values  $ z_a $ and  $ z_b $ are chosen. If we denote the expected value of offspring from parents with value  $ z_x $ by  $ E[z \mid z_x] $, the offspring mean in this case is given by  $ (E[z \mid z_a] + E[z \mid z_b]) / 2 $. In contrast, choosing parents all with value  $ (z_a + z_b) / 2 $ gives the same parental mean as in the case of mixed parents, and hence the same  $ S $, but the expected offspring mean is now  $ E[z \mid (z_a + z_b) / 2] $, which, as shown above, can deviate considerably from  $ E[z \mid z_a] + E[z \mid z_b] / 2 $ when nonlinearity is significant.
+
+
 A variety of factors, such as a major gene with dominance, can result in a nonlinear parent-offspring regression (Chapter 6; LW Chapter 17). In such cases, the mean of the selected parents (and hence the selection differential, S) is not sufficient to predict the offspring mean. As Figure 13.1 shows, two selected parental populations with the same mean, but different variances, can have different expected responses when this regression is nonlinear. Even if phenotypes are normally distributed and the character is completely determined by additive loci (no dominance or epistasis), if the underlying distribution of genotypic values is skewed, selection on the variance (e.g., selection for, or against, extreme phenotypes) also results in a change in the mean (see Equation 5.27b). In this case, S is again not sufficient to describe the expected response to selection. While a sufficient condition for linearity is that the joint distribution of breeding and phenotypic values be bivariate normal (LW Chapter 8), selection generally causes the distribution of genotypic values to depart from normality (Chapters 16 and 24), creating at least slight departures from linear parent-offspring regressions. The selection response under strongly nonnormal distributions can be very complicated, depending on summary statistics of the underlying genetic architecture, which do not easily translate into standard (and measurable) variance components (Chapter 24).
 
 ---
 
 ## chapter13_004 · SINGLE-GENERATION RESPONSE: THE BREEDER'S EQUATION / Response is the Change in Mean Breeding Value
-
-**[Figure]**
-
-> **Figure 13.1** · page 3 · source: `chapter13`
->
-> ![Figure 13.1](../figures/fig_0044.png)
->
-> Figure 13.1 The importance of linearity in the parent-offspring regression. If this regression is nonlinear, different subsets of the population with the same mean can have different offspring means. Suppose equal numbers of parents with values  $ z_a $ and  $ z_b $ are chosen. If we denote the expected value of offspring from parents with value  $ z_x $ by  $ E[z \mid z_x] $, the offspring mean in this case is given by  $ (E[z \mid z_a] + E[z \mid z_b]) / 2 $. In contrast, choosing parents all with value  $ (z_a + z_b) / 2 $ gives the same parental mean as in the case of mixed parents, and hence the same  $ S $, but the expected offspring mean is now  $ E[z \mid (z_a + z_b) / 2] $, which, as shown above, can deviate considerably from  $ E[z \mid z_a] + E[z \mid z_b] / 2 $ when nonlinearity is significant.
-
 
 Under the infinitesimal model and a linear parent-offspring regression, a key concept is that the response equals the mean breeding value of the selected parents. Recall that (non-inbred, sexually reproducing) parents pass along only a fraction of their total genotypic value, namely, their breeding value, A, to their offspring. Under the infinitesimal model, the expected offspring value is simply the average breeding values of its parents (LW Chapter 4).
 
@@ -235,7 +235,7 @@ Hence, $ S_e = 4.70 $, yielding an expected response of $ R = 0.3 \cdot 4.70 = 1
 
 > **Figure 13.2** · page 9 · source: `chapter13`
 >
-> ![Figure 13.2](../figures/fig_0045.png)
+> ![Figure 13.2](figures/fig_0045.png)
 >
 > Figure 13.2 The general selection problem: The ultimate goal is to predict the selection response in some response trait (whose values are denoted by y), based on the values of a potentially different—but genetically correlated—selected trait (whose values are denoted by z). The values of the selected trait are measured on one set of individuals (indexed by  $ x_i $). For example, the value  $ (z_x) $ of the selected trait in individual x may be an index that weights  $ x' $'s value for the response trait, as well as the values of the response trait in several of  $ x' $'s relatives. In the figure,  $ x_3 $ has the highest value of the selected trait, but instead of using  $ x_3 $ as a parent for the next generation (which would correspond to individual selection), we instead use a relative,  $ \mathcal{R} $, of  $ x_3 $, with o denoting an offspring from  $ \mathcal{R} $. The covariance required for predicting the mean change in the response trait is  $ \sigma(z_x, y_0) $, namely, the covariance between the selection trait value  $ (z_x) $ in individual x and the response trait value  $ (y_0) $ in the offspring of parent  $ \mathcal{R} $. Under our infinitesimal assumption that the expected value of an offspring is the average of the two parental breeding values, this covariance is also  $ \sigma[z_x, A_y(\mathcal{R})/2] $, half the covariance between the phenotypic value of the selection trait in x and the breeding value for the response trait in  $ x' $'s relative,  $ \mathcal{R} $.
 

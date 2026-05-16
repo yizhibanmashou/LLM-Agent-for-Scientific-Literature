@@ -22,6 +22,7 @@ from textbook_exporter import export_textbooks
 
 CHUNK_FILE_RE = re.compile(r"^((?:chapter|appendix)\d+)_(\d+)\.json$", re.IGNORECASE)
 FIGURE_REF_RE = re.compile(r"\bFigure(?:s)?\s+(?P<id>(?:A\d+|\d+)\.\d+[a-z]?)\b", re.IGNORECASE)
+TABLE_PLACEHOLDER_RE = re.compile(r"\[\[TABLE:(?P<id>[^\]]+)\]\]", re.IGNORECASE)
 TEXT_ANCHOR_LABELS = {"abstract", "display_formula", "doc_title", "paragraph_title", "text"}
 MIN_COORDINATE_ANCHOR_SCORE = 0.34
 MAX_COORDINATE_ANCHORS_PER_BLOCK = 10
@@ -29,6 +30,15 @@ MAX_RAW_MATCH_CANDIDATES = 80
 MAX_INDEX_TOKENS_PER_BLOCK = 48
 MIN_RELIABLE_BLOCK_PAGE_SCORE = 0.85
 NEAR_TEXT_REFERENCE_DISTANCE = 900.0
+NEAR_COORDINATE_TEXT_DISTANCE = 300.0
+NEAR_COORDINATE_OBJECT_DISTANCE = 300.0
+MIN_NEAR_COORDINATE_TEXT_SCORE = 0.9
+TEXT_COORDINATE_ANCHOR_LABELS = {"abstract", "text"}
+OBJECT_COORDINATE_ANCHOR_LABELS = {"table"}
+SEE_FIGURE_PLACEHOLDER_RE = re.compile(
+    r"\[\[SEE_FIGURE:(?P<id>[^\]]+)\]\]",
+    re.IGNORECASE,
+)
 
 
 def natural_key(value: str) -> list[object]:
@@ -148,6 +158,10 @@ def load_example_reference_texts(structured_dir: Path) -> dict[tuple[str, str], 
 
 def figure_ids_in_text(text: str, known_ids: set[str]) -> set[str]:
     found: set[str] = set()
+    for match in SEE_FIGURE_PLACEHOLDER_RE.finditer(text or ""):
+        figure_id = base_figure_id(match.group("id"), known_ids)
+        if figure_id in known_ids:
+            found.add(figure_id)
     for match in FIGURE_REF_RE.finditer(text or ""):
         figure_id = base_figure_id(match.group("id"), known_ids)
         if figure_id in known_ids:
@@ -258,6 +272,19 @@ def replace_figure_references(text: str, known_ids: set[str]) -> str:
             flags=re.IGNORECASE,
         )
     return updated
+
+
+def standalone_figure_placeholder_id(content: str, known_ids: set[str]) -> str:
+    match = re.fullmatch(r"\s*\[\[FIGURE:(?P<id>[^\]]+)\]\]\s*", str(content or ""), flags=re.IGNORECASE)
+    if not match:
+        return ""
+    figure_id = base_figure_id(match.group("id"), known_ids)
+    return figure_id if figure_id in known_ids else ""
+
+
+def table_placeholder_id(content: str) -> str:
+    match = TABLE_PLACEHOLDER_RE.search(str(content or ""))
+    return clean_ref_id(match.group("id")) if match else ""
 
 
 def chapter_files(structured_dir: Path, chapter: str) -> list[Path]:
@@ -421,20 +448,89 @@ def candidate_raw_rows(content: str, raw_index: dict[str, Any] | None) -> list[d
     return [rows[row_index] for row_index in best_indices]
 
 
+def figure_layout_bbox(figure: dict[str, Any]) -> list[float] | None:
+    """Return the physical figure zone, including caption when available."""
+    caption_block = figure.get("caption_block") if isinstance(figure.get("caption_block"), dict) else {}
+    boxes = [
+        bbox
+        for bbox in (
+            figure.get("raw_bbox"),
+            caption_block.get("bbox") if isinstance(caption_block, dict) else None,
+        )
+        if isinstance(bbox, list) and len(bbox) >= 4
+    ]
+    parsed_boxes: list[list[float]] = []
+    for bbox in boxes:
+        try:
+            parsed_boxes.append([float(value) for value in bbox[:4]])
+        except (TypeError, ValueError):
+            continue
+    if not parsed_boxes:
+        return None
+    return [
+        min(bbox[0] for bbox in parsed_boxes),
+        min(bbox[1] for bbox in parsed_boxes),
+        max(bbox[2] for bbox in parsed_boxes),
+        max(bbox[3] for bbox in parsed_boxes),
+    ]
+
+
+def physical_source_bbox(source: dict[str, Any]) -> list[float] | None:
+    boxes = [
+        bbox
+        for bbox in (source.get("bbox"), source.get("caption_bbox"))
+        if isinstance(bbox, list) and len(bbox) >= 4
+    ]
+    parsed_boxes: list[list[float]] = []
+    for bbox in boxes:
+        try:
+            parsed_boxes.append([float(value) for value in bbox[:4]])
+        except (TypeError, ValueError):
+            continue
+    if not parsed_boxes:
+        return None
+    return [
+        min(bbox[0] for bbox in parsed_boxes),
+        min(bbox[1] for bbox in parsed_boxes),
+        max(bbox[2] for bbox in parsed_boxes),
+        max(bbox[3] for bbox in parsed_boxes),
+    ]
+
+
+def table_coordinate_sources(structured_dir: Path) -> dict[str, dict[str, Any]]:
+    table_path = structured_dir / "table_library.json"
+    if not table_path.exists():
+        return {}
+    try:
+        payload = load_json(table_path)
+    except Exception:
+        return {}
+    tables = payload.get("tables") if isinstance(payload, dict) else []
+    result: dict[str, dict[str, Any]] = {}
+    for table in tables if isinstance(tables, list) else []:
+        if not isinstance(table, dict):
+            continue
+        table_id = clean_ref_id(table.get("id") or table.get("table_id") or table.get("table_ref"))
+        source = table.get("source") if isinstance(table.get("source"), dict) else {}
+        page = int(source.get("page") or 0)
+        bbox = physical_source_bbox(source)
+        if table_id and page > 0 and bbox:
+            result[table_id] = {
+                "page": page,
+                "bbox": bbox,
+                "unit_id": str(source.get("unit_id") or ""),
+            }
+    return result
+
+
 def figure_anchor_candidates(figure: dict[str, Any]) -> list[dict[str, Any]]:
     source = Path(str(figure.get("source_paddle_raw") or ""))
     page = int(figure.get("page") or 0)
-    caption_block = figure.get("caption_block") if isinstance(figure.get("caption_block"), dict) else {}
-    caption_bbox = caption_block.get("bbox") if isinstance(caption_block.get("bbox"), list) else None
-    body_bbox = figure.get("raw_bbox") if isinstance(figure.get("raw_bbox"), list) else None
-    if not source.exists() or not caption_bbox:
+    layout_bbox = figure_layout_bbox(figure)
+    if not source.exists() or not layout_bbox:
         return []
-
-    zone_boxes = [caption_bbox]
-    if body_bbox:
-        zone_boxes.append(body_bbox)
-    zone_top = min(float(bbox[1]) for bbox in zone_boxes)
-    zone_bottom = max(float(bbox[3]) for bbox in zone_boxes)
+    zone_top = float(layout_bbox[1])
+    zone_bottom = float(layout_bbox[3])
 
     candidates: list[dict[str, Any]] = []
     for row in text_anchor_rows(source, page):
@@ -665,31 +761,48 @@ def build_structured_coordinate_index(
     for raw_path in sorted(raw_paths, key=lambda item: str(item)):
         if raw_path.exists():
             raw_rows.extend(raw_anchor_rows(raw_path))
-    if not raw_rows:
+    table_sources = table_coordinate_sources(chunk_payloads[0][0].parent) if chunk_payloads else {}
+    if not raw_rows and not table_sources:
         return []
-    raw_index = raw_anchor_index(raw_rows)
+    raw_index = raw_anchor_index(raw_rows) if raw_rows else None
 
     anchors: list[dict[str, Any]] = []
     for _, chunk in chunk_payloads:
+        chunk_id = str(chunk.get("id") or "")
         blocks = chunk.get("blocks") if isinstance(chunk.get("blocks"), list) else []
         for block_index, block in enumerate(blocks):
             if not isinstance(block, dict):
                 continue
             content = str(block.get("content") or "")
-            matches = raw_matches_for_block(content, raw_rows, raw_index=raw_index)
-            if not matches:
+            if raw_rows:
+                for match in raw_matches_for_block(content, raw_rows, raw_index=raw_index):
+                    anchors.append(
+                        {
+                            "chunk": chunk_id,
+                            "block_index": block_index,
+                            "page": match["page"],
+                            "bbox": match["bbox"],
+                            "score": match["score"],
+                            "label": match.get("label"),
+                        }
+                    )
+            table_id = table_placeholder_id(content)
+            table_source = table_sources.get(table_id)
+            if not table_source:
                 continue
-            for match in matches:
-                anchors.append(
-                    {
-                        "chunk": str(chunk.get("id") or ""),
-                        "block_index": block_index,
-                        "page": match["page"],
-                        "bbox": match["bbox"],
-                        "score": match["score"],
-                        "label": match.get("label"),
-                    }
-                )
+            unit_id = str(table_source.get("unit_id") or "")
+            if unit_id and unit_id != chunk_id:
+                continue
+            anchors.append(
+                {
+                    "chunk": chunk_id,
+                    "block_index": block_index,
+                    "page": table_source["page"],
+                    "bbox": table_source["bbox"],
+                    "score": 1.0,
+                    "label": "table",
+                }
+            )
     return anchors
 
 
@@ -751,7 +864,7 @@ def coordinate_nearest_positions(
         return positions
 
     for figure_id, figure in figures.items():
-        raw_bbox = figure.get("raw_bbox")
+        raw_bbox = figure_layout_bbox(figure)
         figure_page = int(figure.get("page") or 0)
         if not (isinstance(raw_bbox, list) and len(raw_bbox) >= 4 and figure_page > 0):
             continue
@@ -763,17 +876,32 @@ def coordinate_nearest_positions(
                 block_page=int(block_anchor["page"]),
                 block_bbox=[float(value) for value in block_anchor["bbox"][:4]],
             )
+            block_score = float(block_anchor["score"])
+            method = "raw_layout_nearest_block"
+            label = str(block_anchor.get("label") or "").strip().lower()
+            if (
+                label in OBJECT_COORDINATE_ANCHOR_LABELS
+                and block_score >= MIN_NEAR_COORDINATE_TEXT_SCORE
+                and distance <= NEAR_COORDINATE_OBJECT_DISTANCE
+            ):
+                method = "near_coordinate_object_anchor"
+            elif (
+                label in TEXT_COORDINATE_ANCHOR_LABELS
+                and block_score >= MIN_NEAR_COORDINATE_TEXT_SCORE
+                and distance <= NEAR_COORDINATE_TEXT_DISTANCE
+            ):
+                method = "near_coordinate_text_anchor"
             combined = distance - float(block_anchor["score"]) * 10.0
             if best is None or combined < float(best["combined"]):
                 best = {
                     "chunk": block_anchor["chunk"],
                     "block_index": block_anchor["block_index"],
                     "side": side,
-                    "method": "raw_layout_nearest_block",
+                    "method": method,
                     "distance": distance,
                     "block_page": block_anchor["page"],
                     "block_bbox": block_anchor["bbox"],
-                    "block_match_score": block_anchor["score"],
+                    "block_match_score": block_score,
                     "figure_page": figure_page,
                     "figure_bbox": raw_bbox,
                     "combined": combined,
@@ -836,7 +964,7 @@ def text_reference_position(
         "method": "text_reference_fallback",
     }
     figure = figures.get(figure_id)
-    raw_bbox = figure.get("raw_bbox") if isinstance(figure, dict) else None
+    raw_bbox = figure_layout_bbox(figure) if isinstance(figure, dict) else None
     figure_page = int(figure.get("page") or 0) if isinstance(figure, dict) else 0
     if not (isinstance(raw_bbox, list) and len(raw_bbox) >= 4 and figure_page > 0):
         return position
@@ -884,7 +1012,9 @@ def position_distance(position: dict[str, Any]) -> float:
 def position_priority(position: dict[str, Any]) -> int:
     method = str(position.get("method") or "raw_layout_coordinate")
     priorities = {
-        "near_text_reference": 7,
+        "near_coordinate_object_anchor": 9,
+        "near_text_reference": 8,
+        "near_coordinate_text_anchor": 7,
         "caption_heading_metadata": 6,
         "caption_neighbor_anchor": 5,
         "text_reference_fallback": 2,
@@ -992,6 +1122,16 @@ def patch_chapter(
                 new_blocks.append(block)
                 continue
             content = str(block.get("content") or "")
+            existing_figure_id = standalone_figure_placeholder_id(content, known_ids)
+            if existing_figure_id:
+                audit.setdefault("removed_existing_figure_blocks", []).append(
+                    {
+                        "figure_id": existing_figure_id,
+                        "chunk": chunk.get("id"),
+                        "block_index": block_index,
+                    }
+                )
+                continue
             artifact_match = matching_body_artifact(content, artifact_records)
             if artifact_match:
                 audit.setdefault("removed_body_artifact_blocks", []).append(
@@ -1071,10 +1211,21 @@ def patch_chapter(
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Tmp-only figure relink preview builder.")
+    parser = argparse.ArgumentParser(description="Figure relink preview and optional structured writer.")
     parser.add_argument("--structured-dir", type=Path, default=ROOT / "data" / "structured")
     parser.add_argument("--figure-root", type=Path, default=ROOT / "tmp" / "figure_relink_probe")
+    parser.add_argument(
+        "--figure-library",
+        type=Path,
+        default=None,
+        help="Figure library to use. Defaults to <figure-root>/figure_library.json.",
+    )
     parser.add_argument("--chapters", default="", help="Comma-separated chapter ids. Defaults to all structured chapters.")
+    parser.add_argument(
+        "--apply-to-structured",
+        action="store_true",
+        help="Write relinked chapter JSON files back to --structured-dir instead of only creating a tmp preview.",
+    )
     return parser.parse_args()
 
 
@@ -1082,7 +1233,7 @@ def main() -> int:
     args = parse_args()
     structured_dir = args.structured_dir.resolve()
     figure_root = args.figure_root.resolve()
-    figure_library = figure_root / "figure_library.json"
+    figure_library = (args.figure_library or (figure_root / "figure_library.json")).resolve()
     figures = load_figure_library(figure_library)
     figures_by_chapter: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for figure in figures:
@@ -1095,7 +1246,9 @@ def main() -> int:
     patch_dir = figure_root / "structured_patch_preview"
     textbook_dir = figure_root / "textbook_preview"
     example_texts = load_example_reference_texts(structured_dir)
-    copy_asset_libraries(structured_dir, patch_dir)
+    output_structured_dir = structured_dir if args.apply_to_structured else patch_dir
+    if not args.apply_to_structured:
+        copy_asset_libraries(structured_dir, patch_dir)
     artifact_records = body_artifact_records(figures)
 
     audits = []
@@ -1105,30 +1258,42 @@ def main() -> int:
                 chapter=chapter,
                 figures=figures_by_chapter.get(chapter, []),
                 structured_dir=structured_dir,
-                out_dir=patch_dir,
+                out_dir=output_structured_dir,
                 example_texts=example_texts,
             )
         )
 
-    repair_copied_formula_library_metadata(patch_dir, artifact_records)
-    export_textbooks(
-        structured_dir=patch_dir,
-        out_dir=textbook_dir,
-        chapters=set(chapters),
-        figure_library=figure_library,
-    )
+    if not args.apply_to_structured:
+        repair_copied_formula_library_metadata(patch_dir, artifact_records)
+        export_textbooks(
+            structured_dir=patch_dir,
+            out_dir=textbook_dir,
+            chapters=set(chapters),
+            figure_library=figure_library,
+        )
     write_json(figure_root / "preview_audit.json", {"chapters": audits})
     write_json(
         figure_root / "preview_source_policy.json",
         {
             "source_of_truth": "Original PDFs in data background-materials directory plus Paddle raw layout.",
-            "structured_dir_role": "Read-only preview scaffold; may be incomplete or stale.",
-            "textbook_role": "Generated tmp preview only; formal data/textbook is not written.",
+            "structured_dir_role": (
+                "Formal structured files were updated with figure placeholders."
+                if args.apply_to_structured
+                else "Read-only preview scaffold; may be incomplete or stale."
+            ),
+            "textbook_role": (
+                "Not generated by this apply run; rerun textbook_exporter for formal Markdown."
+                if args.apply_to_structured
+                else "Generated tmp preview only; formal data/textbook is not written."
+            ),
         },
     )
 
-    print(f"structured_patch_preview={patch_dir}")
-    print(f"textbook_preview={textbook_dir}")
+    if args.apply_to_structured:
+        print(f"updated_structured_dir={structured_dir}")
+    else:
+        print(f"structured_patch_preview={patch_dir}")
+        print(f"textbook_preview={textbook_dir}")
     for audit in audits:
         print(
             f"{audit['chapter']}: figures={len(audit['figures'])} "

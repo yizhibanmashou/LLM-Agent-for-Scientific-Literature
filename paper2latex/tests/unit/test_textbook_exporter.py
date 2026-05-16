@@ -237,6 +237,53 @@ class TextbookExporterTests(unittest.TestCase):
         self.assertIn("![Figure A5.1](", output)
         self.assertIn("figures/fig_0001.png", output)
         self.assertIn("> Figure A5.1 Some basic geometric concepts of vectors.", output)
+        self.assertTrue((out_dir / "figures" / "fig_0001.png").exists())
+
+    def test_auto_expands_first_in_chapter_text_figure_reference(self):
+        root = make_test_workspace("auto_text_figure")
+        structured_dir = root / "structured"
+        out_dir = root / "textbook"
+        figure_asset = root / "figures" / "fig_0001.png"
+        figure_asset.parent.mkdir(parents=True, exist_ok=True)
+        figure_asset.write_bytes(b"png")
+
+        write_json(
+            structured_dir / "chapter26_001.json",
+            {
+                "id": "chapter26_001",
+                "metadata": {"chapter": "chapter26", "display_heading": "Figures"},
+                "blocks": [
+                    {
+                        "type": "discussion",
+                        "content": "Values are plotted in Figure 26.1. Figure 26.1 is discussed again.",
+                    }
+                ],
+            },
+        )
+        write_json(structured_dir / "formula_library.json", {"formulas": []})
+        write_json(structured_dir / "table_library.json", {"tables": []})
+        write_json(structured_dir / "example_library.json", {"examples": []})
+        write_json(
+            root / "figure_library.json",
+            {
+                "figures": {
+                    "26.1": {
+                        "id": "26.1",
+                        "chapter": "chapter26",
+                        "asset_path": "figures/fig_0001.png",
+                        "caption": "Figure 26.1 Fixation probability.",
+                        "page": 3,
+                    }
+                }
+            },
+        )
+
+        export_textbooks(structured_dir, out_dir, chapters={"chapter26"})
+
+        output = (out_dir / "chapter26_textbook.md").read_text(encoding="utf-8")
+        self.assertEqual(output.count("> **Figure 26.1**"), 1)
+        self.assertIn("![Figure 26.1](figures/fig_0001.png)", output)
+        self.assertTrue((out_dir / "figures" / "fig_0001.png").exists())
 
     def test_renders_chapter_heading_from_intro_heading_fallback(self):
         root = make_test_workspace("chapter_heading_intro_fallback")
@@ -660,6 +707,53 @@ class TextbookExporterTests(unittest.TestCase):
         output = (out_dir / "chapter23_textbook.md").read_text(encoding="utf-8")
 
         self.assertIn("> <table><tr><td>i</td><td>1.00</td></tr></table>", output)
+
+    def test_table_markdown_body_is_rendered_after_html_table(self):
+        root = make_test_workspace("table_markdown_body")
+        structured_dir = root / "structured"
+        out_dir = root / "textbook"
+
+        write_json(
+            structured_dir / "chapter25_001.json",
+            {
+                "id": "chapter25_001",
+                "metadata": {"chapter": "chapter25", "section": "Tables"},
+                "blocks": [{"type": "table", "content": "[[TABLE:25.2]]"}],
+            },
+        )
+        write_json(structured_dir / "formula_library.json", {"formulas": []})
+        write_json(structured_dir / "example_library.json", {"examples": []})
+        write_json(
+            structured_dir / "table_library.json",
+            {
+                "tables": [
+                    {
+                        "id": "25.2",
+                        "label_format": "Table 25.2",
+                        "title": "Major locus parameters.",
+                        "rows": [["Genotype"], ["bb", "$ \\overline{W}_{0} $"]],
+                        "html": "<table><tr><td>Genotype</td><td>Fitness</td></tr></table>",
+                        "markdown_body": (
+                            "$$ \\overline{W}_{i}=a $$\n\n"
+                            "Mean fitness:\n\n"
+                            "$$ \\overline{W}=b $$\n\n"
+                            "Mean phenotype:\n\n"
+                            "$$ \\overline{z}=c $$"
+                        ),
+                        "source": {"chapter": "chapter25", "unit_id": "chapter25_001", "page": 11},
+                    }
+                ]
+            },
+        )
+
+        export_textbooks(structured_dir, out_dir, chapters={"chapter25"})
+        output = (out_dir / "chapter25_textbook.md").read_text(encoding="utf-8")
+
+        self.assertIn("> <table><tr><td>Genotype</td><td>Fitness</td></tr></table>", output)
+        self.assertIn("> Mean fitness:", output)
+        self.assertIn("> $$ \\overline{W}=b $$", output)
+        self.assertIn("> Mean phenotype:", output)
+        self.assertIn("> $$ \\overline{z}=c $$", output)
 
     def test_exports_tex_title_parent_for_numbered_chapter_subtitle(self):
         root = make_test_workspace("tex_title_parent")

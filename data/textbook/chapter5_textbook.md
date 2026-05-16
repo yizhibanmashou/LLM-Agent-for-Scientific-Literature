@@ -77,7 +77,7 @@ As shown in Figure 5.1, a graph of $ \Delta p $ as a function of p provides a us
 
 > **Figure 5.1** · page 3 · source: `chapter5`
 >
-> ![Figure 5.1](../figures/fig_0195.png)
+> ![Figure 5.1](figures/fig_0195.png)
 >
 > Figure 5.1 A plot of allele-frequency change  $ \Delta p $ as a function of  $ p $ is a useful device for examining how frequencies change under selection. If  $ \Delta p > 0 $, the frequency of  $ A $ increases (moves to the right), as indicated by the right-pointing arrow. If  $ \Delta p < 0 $, the frequency of  $ A $ decreases (left-pointing arrow). If  $ \Delta p = 0 $, the allele frequencies are at equilibrium. (A) Directional selection with additive fitnesses favoring allele  $ A $. For  $ p \neq 0 $,  $ 1; \Delta p > 0 $, and  $ p $ increases to one, with the rate of change becoming symmetric about  $ p = 1/2 $. (B) Directional selection with dominance and allele  $ A $ favored. Curve  $ D $ corresponds to allele  $ A $ dominant, and curve  $ R $ to  $ A $ recessive. Here the response is asymmetric about  $ p = 1/2 $. In both cases,  $ \Delta p > 0 $ (provided  $ p \neq 0, 1 $), and the frequency of  $ A $ increases to 1. (C) Overdominant selection, where the heterozygote is more fit than either homozygote (Example 5.4), has an internal equilibrium frequency of  $ \widehat{p} $. For frequencies above the equilibrium,  $ \Delta p < 0 $ and the frequency decreases to  $ \widehat{p} $; whereas if  $ p $ is less than  $ \widehat{p} $,  $ \Delta p > 0 $ and the allele frequency increases to  $ \widehat{p} $. Thus,  $ \widehat{p} $ is a stable equilibrium. (D) With underdominant selection, the heterozygote is less fit than either homozygote. Again, there is an internal equilibrium allele frequency, but in this case it is unstable. If  $ p < \widehat{p} $,  $ p $ decreases toward zero, while if  $ p > \widehat{p} $,  $ p $ increases toward one. The result is fixation of either  $ A $ or  $ a $, depending on the starting allele frequency.
 
@@ -291,16 +291,16 @@ Extending single-locus models from two to multiple alleles is a straightforward 
 
 ## chapter5_013 · SINGLE-LOCUS SELECTION: MULTIPLE ALLELES / Marginal Fitnesses and Average Excesses
 
-For a locus with n alleles under viability selection and random mating, the frequencies of the $ A_i A_j $ heterozygotes and $ A_i A_i $ homozygotes after selection are $ 2 p_i p_j W_{ij} / \overline{W} $ and $ p_i^2 W_{ii} / \overline{W} $. As in Table 5.1, for a biallelic locus, this follows from weighting the (random-mating) frequency of a genotype before selection by its fitness, with $$ \begin{align*}\overline{W}=\sum\limits_{i=1}^n\sum\limits_{j=1}^n p_i p_j W_{ij}\end{align*} $$
-
 **[Figure]**
 
 > **Figure 5.2** · page 11 · source: `chapter5`
 >
-> ![Figure 5.2](../figures/fig_0196.png)
+> ![Figure 5.2](figures/fig_0196.png)
 >
 > Figure 5.2 Plots of mean population fitness,  $ \overline{W}(p) $, as a function of allele frequency p (as in Figure 5.1). In all cases, the best genotype has a fitness of 2.0 and the worst has a fitness of 1.0. (A) Directional selection with additive fitness, with allele A favored. (B) Directional selection with dominance, with allele A favored. The upper curve (D) is for A dominant and the lower (R) is for A recessive. In both (A) and (B), mean fitness is maximized at the stable equilibrium point (p = 1). (C) With overdominant selection, fitness is maximized at the stable equilibrium point  $ \hat{p} $. (D) With underdominant selection, fitness is minimized at the unstable internal equilibrium point  $ \hat{p} $.
 
+
+For a locus with n alleles under viability selection and random mating, the frequencies of the $ A_i A_j $ heterozygotes and $ A_i A_i $ homozygotes after selection are $ 2 p_i p_j W_{ij} / \overline{W} $ and $ p_i^2 W_{ii} / \overline{W} $. As in Table 5.1, for a biallelic locus, this follows from weighting the (random-mating) frequency of a genotype before selection by its fitness, with $$ \begin{align*}\overline{W}=\sum\limits_{i=1}^n\sum\limits_{j=1}^n p_i p_j W_{ij}\end{align*} $$
 
 **[推导 Derivation]**
 
@@ -370,7 +370,7 @@ A more profound result obtained by Kingman is that the existence of a single int
 
 > **Figure 5.3** · page 13 · source: `chapter5`
 >
-> ![Figure 5.3](../figures/fig_0197.png)
+> ![Figure 5.3](figures/fig_0197.png)
 >
 > Figure 5.3 The simplex for three alleles, namely the space of all possible allele frequencies, subject to the constraint that they must sum to 1. Note that the plane of possible values intersects each allele-frequency axis at a value of 1 for that allele, and 0 for all others. Within the simplex, three types of equilibria are possible. Corner equilibria occur when one allele has frequency 1; these are monomorphic equilibria, with no genetic variation. Polymorphic equilibria can either be edge equilibria, when at least two (but not all) allele frequencies are nonzero (here alleles 1 and 3 are segregating while allele 2 is absent), or internal equilibria, wherein all alleles are segregating.
 
@@ -641,7 +641,7 @@ In summary, analyses of strong-selection two-locus models instill caution about 
 
 > **Figure 5.4** · page 23 · source: `chapter5`
 >
-> ![Figure 5.4](../figures/fig_0198.png)
+> ![Figure 5.4](figures/fig_0198.png)
 >
 > Figure 5.4 Different regions of equilibrium behavior under the generalized quadratic optimal model (Example 5.11). Here $s$ is the strength of phenotypic selection, $c$ is the recombination rate between loci, and $a_{1}$ and $a_{2}$ are the additive effects for alleles at the two loci (with $a_{1} \geq a_{2}$). Region 0 corresponds to corner equilibria (Figure 5.3), where the population is fixed for a single gamete. Region 1 corresponds to edge equilibria, where the major locus is segregating and the minor locus is fixed. Region 2 corresponds to conditions where selection maintains polymorphisms at both loci (an internal equilibria). In region 2b, this equilibrium is unsymmetric (allele frequencies are unequal), while it is symmetric (all alleles have frequency 1/2) in region 2a. Wright's classic (1935a, 1935b) analysis, which assumes $a_{2}/a_{1} = 1$, places the system in region 0, with the system fixed for a single gamete type (which varies depending on starting conditions). (After Bürger and Gimelfarb 1999.)
 
@@ -713,7 +713,7 @@ The approximation given by Equation 5.16a motivates two alternative expressions 
 
 > **Figure 5.5** · page 25 · source: `chapter5`
 >
-> ![Figure 5.5](../figures/fig_0199.png)
+> ![Figure 5.5](figures/fig_0199.png)
 >
 > Figure 5.5 The unconditional phenotypic distribution  $ p(z) $ has a mean of  $ \mu $, while the conditional phenotypic distribution  $ p_i(z) $ for an individual carrying a copy of allele  $ A_i $ has a mean of  $ \mu + \alpha_i $, the mean plus the average excess for allele  $ A_i $. If  $ \alpha_i $ is small, then (to order  $ \alpha_i $) we can approximate  $ p_i(z) $ by  $ p(z - \alpha_i) $, which shifts the phenotypic distribution to the right (for  $ \alpha_i > 0 $) by  $ \alpha_i $. This is only approximate, as knowing which allele is present at one locus decreases the genetic variance and results in the conditional phenotypic distribution having a (slightly) smaller variance.
 

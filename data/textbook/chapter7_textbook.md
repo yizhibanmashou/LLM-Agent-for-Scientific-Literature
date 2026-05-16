@@ -221,7 +221,7 @@ A number of other useful approximations for alleles with additive effects on fit
 
 > **Figure 7.1** · page 8 · source: `chapter7`
 >
-> ![Figure 7.1](../figures/fig_0205.png)
+> ![Figure 7.1](figures/fig_0205.png)
 >
 > Figure 7.1 Probability of fixation (solid line) and lifetime contribution to heterozygosity (dashed line) of a new mutant allele with additive effects on fitness as a function of  $ 4N_{e}s $ (using Equations 7.11 and 7.12), both relative to the neutral expectation.
 
@@ -270,7 +270,7 @@ yields the residual times conditional upon eventual loss
 
 > **Figure 7.2** · page 9 · source: `chapter7`
 >
-> ![Figure 7.2](../figures/fig_0206.png)
+> ![Figure 7.2](figures/fig_0206.png)
 >
 > Figure 7.2 Average number of generations that a new mutation spends within different frequency classes,  $ x = 1/(2N), \cdots, (2N - 1)/(2N) $, conditional on going to fixation (Left) or conditional on being lost (Right), given as a function of the scaled selection parameter  $ S = 4N_e s $ (inset values), obtained using Equations 7.13a and 7.13d, with  $ N = N_e = 1000 $. Note that in each case, the results are identical for beneficial and deleterious mutations with the same absolute values of  $ s $. With  $ N_e \neq N $, the results must be multiplied by  $ N_e/N $.
 
@@ -362,7 +362,7 @@ The mean frequency prior to absorption is simply $ \overline{n}/(2N) $ divided b
 
 > **Figure 7.3** · page 11 · source: `chapter7`
 >
-> ![Figure 7.3](../figures/fig_0207.png)
+> ![Figure 7.3](figures/fig_0207.png)
 >
 > Figure 7.3 The influence of drift on the probability of fixation of alternative alleles in a pair of populations starting from an identical state. A diallelic locus under additive selection with fitnesses 1, 1 + s, and 1 + 2s is considered. The slightly darker shaded area on the lower left is the region of  $ p_0 $ (the initial frequency of A) and  $ 4N_e $s space where the probability that isolated populations are eventually fixed for alternative alleles under selection and drift is higher than under drift alone. In this region, parallel selection increases the amount of evolutionary indeterminism relative to drift alone.
 
@@ -463,7 +463,7 @@ Nei and Roychoudhury (1973) evaluated this issue further with newly arisen overd
 
 > **Figure 7.4** · page 14 · source: `chapter7`
 >
-> ![Figure 7.4](../figures/fig_0208.png)
+> ![Figure 7.4](figures/fig_0208.png)
 >
 > Figure 7.4 Ratios for the fixation probabilities and expected times to fixation for a newly arisen overdominant mutation relative to the expectation for a neutral mutation. These are given as a function of the equilibrium frequency expected in a population of infinite size,  $ \tilde{P} = s_{2}/(s_{1} + s_{2}) $, where the fitnesses are  $ 1 - s_{1} $, 1, and  $ 1 - s_{2} $ (with the first value being the fitness for the mutant homozygote). Each curve gives results for a different value of  $ N_{e}(s_{1} + s_{2}) $, a measure of the ratio of the overall power of selection to drift, where  $ N_{e} $ is the effective population size. For any value of  $ N_{e}(s_{1} + s_{2}) $, the probability of fixation increases with the magnitude of selection against the alternative homozygote, as this defines the selective advantage of the novel allele in the heterozygous state. (From Nei and Roychoudhury 1973.)
 
@@ -519,20 +519,20 @@ The latter case is of special interest, as one can identify a critical effective
 > $$ N_{e}^{*}>\frac{t+2s}{s^{2}} $$
 
 
+**[Figure]**
+
+> **Figure 7.5** · page 16 · source: `chapter7`
+>
+> ![Figure 7.5](figures/fig_0209.png)
+>
+> Figure 7.5 The probability of fixation of a newly arisen underdominant mutation, relative to the neutral expectation of  $ 1/(2N) $, with a selective disadvantage of s in the heterozygous state and an advantage of t in the derived homozygous state, and  $ \eta = t/(2s) $. (After Walsh 1982.)
+
+
 (Lynch 2012a). For example, with a mutant allele with a disadvantage of s = 0.01 in the heterozygous state but an advantage of t = 0.01 in the homozygous state, an effective population size above 300 imposes a very strong barrier to its establishment. Lande (1979b, 1985) showed that such selective valleys are much more likely to be vaulted in subdivided populations, where local extinction and recolonization permit individual demes to make transitions to an alternative genotypic state and then export such a fixed change to a newly opened habitat.
 
 ---
 
 ## chapter7_009 · SELECTION AND DRIFT AT SINGLE LOCI / Expected Allele Frequency in a Particular Generation
-
-**[Figure]**
-
-> **Figure 7.5** · page 16 · source: `chapter7`
->
-> ![Figure 7.5](../figures/fig_0209.png)
->
-> Figure 7.5 The probability of fixation of a newly arisen underdominant mutation, relative to the neutral expectation of  $ 1/(2N) $, with a selective disadvantage of s in the heterozygous state and an advantage of t in the derived homozygous state, and  $ \eta = t/(2s) $. (After Walsh 1982.)
-
 
 A number of applications, including attempts to predict the response to selection, arise for which it is useful to know the expected allele frequency at time $ t $, $ E(\rho_t) $. While exact results can be obtained from probability transition matrices (Hill 1969a; Carr and Nassar 1970) and good approximations can be derived from diffusion theory (Appendix 1; Maruyama 1977; Ewens 2004) and other approaches (Curnow and Baker 1968, 1969; Pike 1969), these methods tend to be numerically intensive. Fortunately, simple approximations have been developed for dealing with weak selection.
 
@@ -625,15 +625,6 @@ is the equilibrium proportion of time for which the sites are polymorphic, with 
 
 Figure 7.6 provides some examples of the form of the stationary distribution for biallelic loci experiencing bidirectional mutation. For neutral mutations, the distribution is highly U- or J-shaped (depending on the magnitude of mutation bias) at low population mutation rates ($ 4N\mu $ and $ 4Nv \ll 1 $), as the population is almost always in a nearly fixed state, with the probability of the alternative fixed states being given by Equation 7.5. The distribution becomes flat with values of $ 4N\mu $ and $ 4Nv $ near 1.0, and then becomes more peaked as $ 4N\mu $ and $ 4Nv $ become progressively larger (with the mean centered on the infinite-population expectation given by Equation 7.5). Selection skews the distribution toward the more favorable allele, but even with an S as large as 10, a moderate frequency of the deleterious allele can be expected (even though fixation of the latter would essentially never occur).
 
-**[Figure]**
-
-> **Figure 7.6** · page 19 · source: `chapter7`
->
-> ![Figure 7.6](../figures/fig_0210.png)
->
-> Figure 7.6 Stationary distributions of allele frequencies under the joint forces of mutation, selection, and random genetic drift (Equation 7.31a). An absolute population size of N = 2000 is assumed with  $ N_{e} = N $.
-
-
 **[推导 Derivation]**
 
 Equation 7.31a is useful in a number of applications. Consider, for example, the case of a deleterious recessive allele maintained by mutation (with $ \mu $ being the mutation rate to deleterious alleles, and $ s $ being the selective disadvantage of mutant homozygotes). If we let $ x $ be the frequency of the deleterious allele, the mean population fitness is $ \overline{W} = 1 - s x^2 $. Using the approximation $ (1 - y)^{2N_e} \simeq e^{-2N_e y} $ for small values of $ y $, so that $ \overline{W}^{2N_e} \simeq e^{-2N_e s x^2} $, and ignoring back mutation to the advantageous allele, yields the equilibrium distribution
@@ -644,6 +635,15 @@ Equation 7.31a is useful in a number of applications. Consider, for example, the
 
 
 a result originally due to Wright (1938b).
+
+**[Figure]**
+
+> **Figure 7.6** · page 19 · source: `chapter7`
+>
+> ![Figure 7.6](figures/fig_0210.png)
+>
+> Figure 7.6 Stationary distributions of allele frequencies under the joint forces of mutation, selection, and random genetic drift (Equation 7.31a). An absolute population size of N = 2000 is assumed with  $ N_{e} = N $.
+
 
 **[推导 Derivation]**
 

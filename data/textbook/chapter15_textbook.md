@@ -102,15 +102,6 @@ A related result (used later in the chapter) is that
 > $$ \sum_{i=1}^{n}x^{i}=\frac{1-x^{n+1}}{1-x}-1=\frac{x(1-x^{n})}{1-x} $$
 
 
-**[Figure]**
-
-> **Figure 15.1** · page 4 · source: `chapter15`
->
-> ![Figure 15.1](../figures/fig_0054.png)
->
-> Figure 15.1 The permanent and transient response to selection (scaled in units of S) assuming pairwise epistasis in a diploid, with  $ h^2 = 1/4 $ and  $ \sigma_{AA}^2/\sigma_z^2 = 1/2 $. Left: The cumulative response assuming a constant amount of selection for various values of c. Note that even with this large amount of epistasis ( $ \sigma_{AA}^2 $ accounts for half the total variance), it is difficult to distinguish the curvilinear response with epistasis from a linear response. Right: The decay of response following a single generation of selection due to the decay of the contribution from epistasis. Provided c > 0, the cumulative response eventually decays to  $ h^2S = S/4 $, the expectation under no epistasis.
-
-
 **[推导 Derivation]**
 
 If loci are completely linked $ (c = 0) $, $ R_{AA}(t) = t S \sigma_{AA}^{2}/(2\sigma_{z}^{2}) $, but provided $ c > 0 $, the total epistatic contribution approaches a limiting value of
@@ -129,6 +120,15 @@ The expected time, $ t_{1/2} $, for half the total epistatic response to accumul
 > **Formula (15.6b)** · `15.6b` · source: `chapter15_block_017` · Additive Epistasis
 >
 > $$ t_{1/2}=\frac{-\ln(2)}{\ln(1-c)} $$
+
+
+**[Figure]**
+
+> **Figure 15.1** · page 4 · source: `chapter15`
+>
+> ![Figure 15.1](figures/fig_0054.png)
+>
+> Figure 15.1 The permanent and transient response to selection (scaled in units of S) assuming pairwise epistasis in a diploid, with  $ h^2 = 1/4 $ and  $ \sigma_{AA}^2/\sigma_z^2 = 1/2 $. Left: The cumulative response assuming a constant amount of selection for various values of c. Note that even with this large amount of epistasis ( $ \sigma_{AA}^2 $ accounts for half the total variance), it is difficult to distinguish the curvilinear response with epistasis from a linear response. Right: The decay of response following a single generation of selection due to the decay of the contribution from epistasis. Provided c > 0, the cumulative response eventually decays to  $ h^2S = S/4 $, the expectation under no epistasis.
 
 
 For small value of c, this is approximately $ \simeq 0.68/c $. As linkage becomes tighter, the total cumulative epistatic response increases, as does the time for half of this total response to occur (Figure 15.1).
@@ -305,15 +305,6 @@ This model serves as a useful introduction to some of the dynamics that can occu
 
 To simplify matters further, assume that this regression coefficient is independent of the sexes of the parent and offspring, although this condition can easily be relaxed. Here the expected contribution from a father to his offspring is $ e_{fa} = bE_{fa} = b(z_{fa} - \mu) $, where $ E_{fa} $ is the father's total environmental value. Further assuming that the parents and the offspring have the same phenotypic variance, then $ b = \rho/2 $, where $ \rho $ is the slope of the midparent-offspring regression. In principle, b can be negative under some environmental conditions, e.g., if parents and offspring compete for a limited common resource, and larger parents gather a disproportionate share of resources, resulting in smaller offspring.
 
-**[Figure]**
-
-> **Figure 15.2** · page 11 · source: `chapter15`
->
-> ![Figure 15.2](../figures/fig_0055.png)
->
-> Figure 15.2 The response when resemblance between relatives is due entirely to correlation between environmental values in parents and offspring. Selection with a constant value of S starts at t = 0 and continues until generation 10 (indicated by the arrow), at which point selection is stopped. Note the interesting dynamics that occur if environmental values are negatively correlated, wherein the response to selection is reversed with respect to the selection differential. In this case, selection for increased character value results in a decreased mean value, with the total response in this example eventually converging to  $ -S/3 $ (for  $ \rho = -0.5 $). Once selection is relaxed (denoted by the arrows), there is an initial positive response (generation 11), which then quickly decays to zero.
-
-
 **[推导 Derivation]**
 
 Provided $ E_{fa} $ and $ E_{mo} $ are uncorrelated, the expected value of an offspring from parents with phenotypic values of $ z_{fa} $ and $ z_{mo} $ is
@@ -342,6 +333,15 @@ and defining the change in mean as $ \Delta\mu_{t}=\mu_{t+1}-\mu_{t} $ yields
 > **Formula (15.16a)** · `15.16a` · source: `chapter15_block_044` · RESPONSE DUE TO ENVIRONMENTAL CORRELATIONS
 >
 > $$ \begin{aligned}\Delta\mu_{t}&=\left[\mu+\rho\left(\mu_{t}+S_{t}-\mu\right)\right]-\left[\mu+\rho\left(\mu_{t-1}+S_{t-1}-\mu\right)\right]\\&=\rho\left[\left(\mu_{t}-\mu_{t-1}\right)+\left(S_{t}-S_{t-1}\right)\right]\\&=\rho\left[\Delta\mu_{t-1}+\left(S_{t}-S_{t-1}\right)\right]\end{aligned} $$
+
+
+**[Figure]**
+
+> **Figure 15.2** · page 11 · source: `chapter15`
+>
+> ![Figure 15.2](figures/fig_0055.png)
+>
+> Figure 15.2 The response when resemblance between relatives is due entirely to correlation between environmental values in parents and offspring. Selection with a constant value of S starts at t = 0 and continues until generation 10 (indicated by the arrow), at which point selection is stopped. Note the interesting dynamics that occur if environmental values are negatively correlated, wherein the response to selection is reversed with respect to the selection differential. In this case, selection for increased character value results in a decreased mean value, with the total response in this example eventually converging to  $ -S/3 $ (for  $ \rho = -0.5 $). Once selection is relaxed (denoted by the arrows), there is an initial positive response (generation 11), which then quickly decays to zero.
 
 
 **[推导 Derivation]**
@@ -542,7 +542,7 @@ Substituting this result for the average of the breeding values in Equation 15.2
 
 > **Figure 15.3** · page 16 · source: `chapter15`
 >
-> ![Figure 15.3](../figures/fig_0056.png)
+> ![Figure 15.3](figures/fig_0056.png)
 >
 > Figure 15.3 Top: Falconer's experiments on selection response for litter size in mice. The dashed line is the response to selection for smaller litters, the thick line is the response to selection for larger litters, and the dotted line is the control. Note the reversed response in the first generation in both the up- and down-selected lines. (After Falconer 1960b.) Bottom: The predicted change in population mean following a single generation of selection on females with  $ S_{mo} > 0 $ (using Falconer's estimated values of  $ h^2 = 0.11 $ and  $ m = -0.13 $). There is a reversed response in the first generation, even though the net genetic change is to increase the character. By generation 3, the net nongenetic change in phenotypic mean has largely decayed away, revealing the net genetic change of  $ S_{mo} h^2 / [(1 - m)(2 - m)] = 0.044 \cdot S_{mo} $ (Equation 15.33).
 
@@ -652,7 +652,7 @@ which, as $ \tau \rightarrow \infty $, converges to
 
 > **Figure 15.4** · page 18 · source: `chapter15`
 >
-> ![Figure 15.4](../figures/fig_0057.png)
+> ![Figure 15.4](figures/fig_0057.png)
 >
 > Figure 15.4 Examples of the predicted selection response with maternal effects under Falconer's dilution model. Selection starts at generation 0, with  $ S_{fa} = S_{mo} = S $ until generation 10 (arrows), at which point selection stops. We assume that  $ h^2 = 0.35 $ throughout, with the different curves corresponding to different maternal effect coefficients, m. Top: Positive maternal effects (m > 0). For this value of  $ h^2 $, Equation 15.34a gives the critical m value (below which some erosion of response occurs upon cessation of selection) as 0.52, meaning that the selection response continues (for a few generations) after selection is relaxed for m = 0.75, while response decays for m = 0.5 and 0.25. Bottom: Negative maternal effects (m < 0). The dynamics here are considerably more interesting, with additional response following the cessation of selection for all values of m < 0.
 
@@ -753,7 +753,7 @@ To see how the presence of maternal selection changes the selection-response equ
 
 > **Figure 15.5** · page 22 · source: `chapter15`
 >
-> ![Figure 15.5](../figures/fig_0058.png)
+> ![Figure 15.5](figures/fig_0058.png)
 >
 > Figure 15.5 Some of the complications for predicting selection response that arise when maternal selection or maternal inheritance occur. The figure displays the simplest bivariate model, where the direct and maternal effects are separate traits. Here  $ z_d $ and  $ z_m $ denote the direct trait and maternal trait values, respectively, in the focal offspring, whose fitness is  $ w $. Similarly,  $ z_{m,mo} $ denotes the value of the maternal trait in the offspring's mother. For ease of presentation, paths involving potential genetic correlations (e.g.,  $ z_m \leftrightarrow z_d $;  $ z_{m,mo} \rightarrow z_m $) are not shown. Maternal inheritance ( $ m \neq 0 $) occurs when the value of  $ z_{m,mo} $ influences the value of  $ z_d $ in her offspring. In the figure, this is indicated by the path whose coefficient is given by  $ m $, as we assume the maternal inheritance model given by Equation 15.35a. If  $ \beta_z $ denotes the direct selection gradient on the focal trait, under maternal inheritance, the mother's maternal trait value indirectly influences the fitness of her offspring through the path  $ z_{m,mo} \rightarrow z_d \rightarrow w $, or an effect of  $ m\beta_z $. Maternal selection ( $ \beta_{ms} \neq 0 $) occurs when there is a direct path from the mother's trait value to the fitness of her offspring (the single-step path  $ z_{m,mo} \rightarrow w $, whose coefficient is  $ \beta_{ms} $). The figure also allows for the possibility that there is direct selection on the value of the maternal trait itself (the gradient  $ \beta_m $, shown in the figure operating on the offspring), if, e.g., there is a direct fitness cost for high maternal performance,  $ \beta_m < 0 $. Equations 15.35 through 15.37 give the dynamics for the case when  $ m \neq 0 $ and  $ \beta_{ms} = 0 $, while Equation 15.40 gives the relative fitness when  $ m = 0 $ and  $ \beta_{ms} \neq 0 $.
 
