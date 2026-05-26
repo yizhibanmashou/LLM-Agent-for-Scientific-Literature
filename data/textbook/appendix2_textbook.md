@@ -179,7 +179,7 @@ If the variable (i.e., parameter) of interest ranges over $ (0, \infty) $ or $ (
 
 > **Figure A2.1** · page 9 · source: `appendix2`
 >
-> ![Figure A2.1](figures/fig_0001.png)
+> ![Figure A2.1](figures/A2.1.png)
 >
 > Figure A2.1 A uniform prior on one scale does not result in a flat prior on a transformed scale. Suppose a flat prior on  $ (0,10000) $ is assumed for both the additive and residual variances. To mimic what happens under MCMC, we display these priors by using the resulting histograms generated from a large number of random draws, with a uniform expected to return a flat histogram. Left: The resulting prior for the standard deviation of either variance (the square root of a random draw). Right: The resulting prior for  $ h^{2} $, the ratio of a random draw for the additive variance divided by this value plus a random draw for the residual variance. Neither of these priors results in a uniform prior (namely, a flat histogram) on the transformed scale.
 
@@ -270,7 +270,7 @@ The gamma distribution follows by allowing the shape parameter to be any positiv
 
 > **Figure A2.2** · page 13 · source: `appendix2`
 >
-> ![Figure A2.2](figures/fig_0002.png)
+> ![Figure A2.2](figures/A2.2.png)
 >
 > Figure A2.2 The effect of the shape ( $ \alpha $) and rate ( $ \beta = 1/\lambda $, the inverse of the scale) parameters on the gamma distribution function. For  $ \alpha = 1 $, the resulting distribution is the simple monotonically decreasing exponential, while for  $ \alpha > 1 $, the distribution is unimodal. The effect of a change in the rate or scale is to keep the general shape but change the scaling with respect to x.
 
@@ -347,7 +347,7 @@ At first glance, this looks like the multinomial density function (with $ \alpha
 
 > **Figure A2.3** · page 18 · source: `appendix2`
 >
-> ![Figure A2.3](figures/fig_0003.png)
+> ![Figure A2.3](figures/A2.3.png)
 >
 > Figure A2.3 For  $ \alpha = \beta = 1 $ (long-dashed curve), the beta distribution is simply the uniform distribution over  $ (0, 1) $. The pdf for the beta distribution can also be U-shaped ( $ \alpha = \beta = 0.5 $; solid curve), unimodal ( $ \alpha = 2 $,  $ \beta = 5 $; short-dashed curve), or L-shaped ( $ \alpha = 10 $,  $ \beta = 1 $; dotted curve). Because the beta distribution is symmetric in  $ \alpha $ and  $ \beta $, switching their parameter values generates a distribution of the same shape translated about 0.5.
 

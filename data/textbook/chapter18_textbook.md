@@ -30,7 +30,7 @@ The expected variation among the means of replicate lines subjected to the same 
 
 > **Figure 18.1** · page 3 · source: `chapter18`
 >
-> ![Figure 18.1](figures/fig_0066.png)
+> ![Figure 18.1](figures/18.1.png)
 >
 > Figure 18.1 Examples of the variance in response to selection among replicate lines. Top: Postweaning weight gain in male and female mice (Hanrahan et al. 1973). Each replicate consists of a full-sib single family, which was propagated by selecting the largest pair within each family. Bottom: Abdominal bristle number in Drosophila melanogaster (Frankham et al. 1968a). Here, 50 pairs of parents were scored and the largest 10 of each sex were used to form the next generation. Notice that these graphs differ in the way the response is plotted. In the upper graph, response is given as a function of the cumulative selection differential, which has an expected slope of  $ h^2 $ under the breeder's equation. On the lower graph, response is a function of the number of generations, which can depart from linearity if S varies over time.
 
@@ -210,7 +210,7 @@ The theory for estimating realized heritabilities (via a LS analysis) in populat
 
 > **Figure 18.2** · page 8 · source: `chapter18`
 >
-> ![Figure 18.2](figures/fig_0067.png)
+> ![Figure 18.2](figures/18.2.png)
 >
 > Figure 18.2 Response seen in Mackay's (1985a) divergent selection experiment on abdominal bristle number in Drosophila melanogaster. Details are provided in Example 18.2.
 
@@ -350,7 +350,7 @@ While the standard error in response can be directly estimated from the among-li
 
 > **Figure 18.3** · page 13 · source: `chapter18`
 >
-> ![Figure 18.3](figures/fig_0068.png)
+> ![Figure 18.3](figures/18.3.png)
 >
 > Figure 18.3 Realized heritability estimates (and their associated standard errors) from Falconer's (1973) selection experiment in mice. Six replicate experiments were performed and realized heritabilities within each replicate were estimated by comparing up- and down-selection lines to a control (High and Low, respectively) as well as to each other (Divergent). For each comparison, the estimated heritability plus or minus one standard error (using the OLS regression) is plotted, resulting in six estimates per class. Two combined estimates were also used with each yielding a single estimator for the three classes. The three Pooled estimates (for High, Low, and Divergent) used an OLS regression that took the average value over the six replicates at the data point for any given generation. The three Mean estimates correspond to the mean value of the estimates over the six replicates, with the error bars corresponding to the empirical standard error among the heritability estimates for these six different realizations. While these observed variances were larger than predicted from an OLS regression on the pooled data, this is not unexpected, as the OLS method underestimates the true standard errors.
 
@@ -381,7 +381,7 @@ The authors cleverly noted how this estimator can be related to the Mann-Whitney
 
 > **Figure 18.4** · page 15 · source: `chapter18`
 >
-> ![Figure 18.4](figures/fig_0069.png)
+> ![Figure 18.4](figures/18.4.png)
 >
 > Figure 18.4 The relative percentage by which the base population heritability is underestimated by the realized heritability due to reduction in the additive variance by gametic-phase disequilibrium. The three curves correspond to different levels of directional truncation selection on a normally distributed trait, with 5% (upper curve), 10% (middle curve), and 20% (lower curve) of the population saved (corresponding to  $ \bar{x} $ values of 2.06, 1.75, and 1.40, respectively). Values were obtained by numerically solving Equation 18.21 and assuming the infinitesimal model (no significant selection-induced changes in allele frequencies) holds.
 
@@ -503,7 +503,7 @@ Finally, $ N_{e} $ decreases as selection intensity increases (Chapter 3 and 26)
 
 > **Figure 18.5** · page 20 · source: `chapter18`
 >
-> ![Figure 18.5](figures/fig_0070.png)
+> ![Figure 18.5](figures/18.5.png)
 >
 > Figure 18.5 Selection response on abdominal bristle number in male Drosophila melanogaster. Two replicates in each direction (High and Low) were performed, all with the same selection differential. Contrary to the symmetric response expected under the breeder's equation, an asymmetric selection response was observed. (After Sheldon 1963.)
 
@@ -512,7 +512,7 @@ Finally, $ N_{e} $ decreases as selection intensity increases (Chapter 3 and 26)
 
 > **Figure 18.6** · page 20 · source: `chapter18`
 >
-> ![Figure 18.6](figures/fig_0071.png)
+> ![Figure 18.6](figures/18.6.png)
 >
 > Figure 18.6 An example of a scale effect generating an asymmetric selection response. Left: Selection for resistance to dental caries (cavities) in albino rats (Rattus norvegicus), response measured as the expected number of days to develop caries on a standard diet. Right: The same data presented on a log scale show a symmetric response. (Based on Falconer's 1954 analysis of data from Hunt et al. 1944.)
 
@@ -542,7 +542,7 @@ Even though lines may have quite different values of $ h_{r}^{2} $, there remain
 
 > **Figure 18.7** · page 22 · source: `chapter18`
 >
-> ![Figure 18.7](figures/fig_0072.png)
+> ![Figure 18.7](figures/18.7.png)
 >
 > Figure 18.7. Further examples of asymmetric response to selection. Top: Twelve-week body weight in chickens (Maloney et al. 1963). Bottom: Rearing activity in rats (Sanders 1981).
 
@@ -565,7 +565,7 @@ While we have focused on the effects of a single major gene, the effects of uneq
 
 > **Figure 18.8** · page 24 · source: `chapter18`
 >
-> ![Figure 18.8](figures/fig_0073.png)
+> ![Figure 18.8](figures/18.8.png)
 >
 > Figure 18.8 Top: Asymmetric selection response for abdominal bristle number in Drosophila melanogaster from a base population containing a major allele  $ sm^{lab} $ that was initially at low frequency. L1–L3 are three replicate low lines, H1–H3 are three replicate high lines, and C is the control line. Data were log-transformed to remove scale effects, and on this new scale, low line L1 has a symmetric response with high lines H1–H3, while lines L2 and L3 do not. Further, there is also a greater variance in response among the low lines. Bottom: Changes in heritabilities in the control (dashed curve) and lines L1–L3. Heritability was estimated from phenotypic correlations between bristle numbers of adjacent segments of the same fly (see Frankham and Nurthen [1981] for details). Note the large increases in heritability for lines L2 and L3, the lines that show an asymmetric selection response (relative to H1–H3), while the heritability is roughly constant in L1, which does not show an asymmetric response. The increase in  $ h^{2} $ reflects an increase in the major allele  $ sm^{lab} $ due to selection. This allele increased rapidly in frequency after generation 5 and was essentially fixed by generation 10, which is reflected by a rapid increase in  $ h^{2} $ after generation 5, with  $ h^{2} $ returning to normal (the level in the unselected control) as the allele becomes fixed. (After Frankham and Nurthen 1981.)
 
@@ -584,7 +584,7 @@ Components of reproductive fitness, such as fecundity and development time, are 
 
 > **Figure 18.9** · page 25 · source: `chapter18`
 >
-> ![Figure 18.9](figures/fig_0074.png)
+> ![Figure 18.9](figures/18.9.png)
 >
 > Figure 18.9 Haldane's (1931) example of a reversed response generated by genotype × environment interaction. The population consists of equal numbers of two asexual clones, A and B. The mean phenotypic value of A ( $ \mu_A $) is less than the mean phenotypic value of B ( $ \mu_B $). However, clone A has a larger environmental variance than B. Strong truncation selection culls out all members of clone B in the population, leaving only A. The new mean in the generation following selection,  $ \mu_A $, is less than the mean before selection,  $ (\mu_A + \mu_B)/2 $. In this case, selection for increased character value z, resulted in a lowering of the population mean.
 

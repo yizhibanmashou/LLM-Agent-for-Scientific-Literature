@@ -227,7 +227,7 @@ For starters, analyzing markers one at a time is rather inefficient, in that one
 
 > **Figure 9.1** · page 12 · source: `chapter9`
 >
-> ![Figure 9.1](figures/fig_0221.png)
+> ![Figure 9.1](figures/9.1.png)
 >
 > Figure 9.1 A scan of Bos taurus chromosome 19, contrasting differences in SNP allele frequencies between specialized dairy (Holstein) and meat (Angus) breeds. Positive values indicate alleles at higher frequencies in Holstein cattle (dairy-specific), and negative values indicate alleles that are more common in Angus cattle (meat-specific). Differences were based on a sliding window of five adjacent markers, using a set of 175 SNPs. The horizontal axis represents chromosomal position, and the vertical axis is the average between-breed difference in SNP allele frequencies over the five-SNP window. The upper and lower dashed lines indicate the 5% threshold levels as assessed via a permutation test (see the text for details). As annotated in the figure, the authors were able to associate these exceptional peaks and valleys with known QTLs for dairy and beef traits. Because QTL intervals tend to be rather vague (averaging around 20 megabases, or roughly 20 cM, for these traits), the significance of these associations with known QTLs, while suggestive, is unclear. (After Prasad et al. 2008.)
 
@@ -330,7 +330,7 @@ In other words, scaled individual $ F_{ST} $ values follow a chi-square distribu
 
 > **Figure 9.2** · page 17 · source: `chapter9`
 >
-> ![Figure 9.2](figures/fig_0222.png)
+> ![Figure 9.2](figures/9.2.png)
 >
 > Figure 9.2  $ F_{ST} $-based branch lengths for Tibetan (T), Han (H), and Danish (D) populations. (Left) Lengths based on the average  $ F_{ST} $ values for all sampled markers. (Right) The tree for the EPAS1 gene. While the D and H branches show increased divergence relative to the average  $ F_{ST} $, the divergence along the T lineage is far more dramatic. This is consistent with excessive allelic divergence due to selection for living at high altitude (or perhaps other features, such as allelic surfing). (After Yi et al. 2010.)
 
@@ -483,7 +483,7 @@ The most basic approach is a simple plot of variation as a function of genomic l
 
 > **Figure 9.3** · page 26 · source: `chapter9`
 >
-> ![Figure 9.3](figures/fig_0223.png)
+> ![Figure 9.3](figures/9.3.png)
 >
 > Figure 9.3 Using microsatellites in the search for dog domestication genes. (A) Large Munsterlanders have a black coat, suggesting the pigment gene TYRP1 on chromosome 11 may be a possible domestication gene. A plot of variation for this breed (black) relative to both control (neither black or brown) and brown individuals shows depressed variation spanning this gene. (B) Dachshunds are characterized by shortened limbs, suggesting the FGFR3 gene on chromosome 3 as a candidate. Dachshunds have an absence of variation at three microsatellites spanning this gene, while variation is present in controls (normal-limbed breeds). (After Pollinger et al. 2005.)
 
@@ -898,7 +898,7 @@ These expressions are from Simonsen et al. (1995), with Equation 9.26e correctin
 
 > **Figure 9.4** · page 42 · source: `chapter9`
 >
-> ![Figure 9.4](figures/fig_0224.png)
+> ![Figure 9.4](figures/9.4.png)
 >
 > Figure 9.4 The power (P) of the H and D tests to detect signatures of a recent sweep is very fleeting. The power of H (which is based on high-frequency derived alleles) falls off especially rapidly after a sweep (as high-frequency alleles are fixed), essentially having power only within  $ 0.2N_e $ generations following a sweep. D, which is based on an excess of rare alleles, can detect new mutations that enter following the sweep and has power over about  $ 0.5N_e $ generations following a sweep. A value of c/s = 0.01 was used and power (for a sample size of 50) was graphed for two different values of  $ 4N_e $s. For D (the upper two curves in the figure, which are essentially superimposed on each other), the power is essentially identical for these two values of  $ 4N_e $s, while for H (the lower two curves), there is a very slight power increase for  $ 4N_e $s =  $ 10^4 $ when  $ t < 0.1N_e $. (After Przeworski 2002.)
 
@@ -975,7 +975,7 @@ The site-frequency tests summarized in Table 9.1 critically depend on the Watter
 
 > **Figure 9.5** · page 44 · source: `chapter9`
 >
-> ![Figure 9.5](figures/fig_0225.png)
+> ![Figure 9.5](figures/9.5.png)
 >
 > Figure 9.5 Distribution of Tajima's D for 201 genes in African-American (A) and European-American (B) samples. The empirical distribution is represented by the histogram, the solid line represents the simulated values under the equilibrium neutral model, and the dashed line the simulated distribution under the best-fitting demographic model. For (A), this is exponential growth starting 50,000 years ago, while for (B), this is a bottleneck starting 40,000 years ago. (After Ronald and Akey 2005.)
 
@@ -1389,7 +1389,7 @@ The currently most popular class of allele-age-based tests are those that search
 
 > **Figure 9.6** · page 61 · source: `chapter9`
 >
-> ![Figure 9.6](figures/fig_0226.png)
+> ![Figure 9.6](figures/9.6.png)
 >
 > Figure 9.6 Haplotype homozygosity (HH) is defined as the probability that two randomly chosen chromosomes containing the same core SNP variant (used to define allelic classes) are identical (homozygous) at all markers within a defined window. In the figure, HH is computed at a series of SNP markers moving away from the core (allelic-defining) SNP. The open and filled circles correspond to the HH values at a given SNP in the two allelic classes, namely, the probability that random draws of chromosomes from the same allelic class are identical within the region between the core SNP and the marker SNP. The relationship between HH and distance from the core is usually summarized using one of two statistics. (Left) The extended haplotype homozygosity (EHH) for an allelic class is the length of the region around the core where the HH value is  $ \geq $ 5% (above the dashed line). The allele corresponding to the filled circles has a larger EHH value, and thus a longer haplotype. (Right) A potentially more informative measure is given by the integrated EHH score, iHS, the total area under the HH curve over the region spanned by the EHH for that allele. For ease of presentation, only the values corresponding to the allele with the larger EHH value (filled circles) are plotted.
 
@@ -1402,7 +1402,7 @@ Recall our previous discussion on the definition of an allele, namely a core SNP
 
 > **Figure 9.7** · page 62 · source: `chapter9`
 >
-> ![Figure 9.7](figures/fig_0227.png)
+> ![Figure 9.7](figures/9.7.png)
 >
 > Figure 9.7 As a proof-of-concept of the rEHH method, Sabeti et al. (2002) looked for signatures of selection at two loci, G6PD and the CD40 ligand gene (TNFSF5), that carry segregating alleles that are strongly suspected of increasing resistance to malaria. Standard site-frequency tests (Taijma's D, Fu and Li's D*, and Fay and Wu's H; see Table 9.1) were all nonsignificant. However, recall from Chapter 8 that site-frequency spectrum signals are weak when the favored allele is at a modest frequency. The figure displays rEHH versus allele frequency for the candidate alleles (solid squares) along with values for alleles at other randomly chosen autosomal loci (open circles). The curves (from top to bottom) correspond to the empirical 95th, 75th, and 50th percentiles, respectively, of the cumulative distribution. (After Sabeti et al. 2002.)
 
@@ -1576,7 +1576,7 @@ Gene flow between lineages of independent origin, and between domesticated lines
 
 > **Figure 9.8** · page 73 · source: `chapter9`
 >
-> ![Figure 9.8](figures/fig_0228.png)
+> ![Figure 9.8](figures/9.8.png)
 >
 > Figure 9.8 The ABBA-BABA test for detecting the introgression or genes from taxon 3 into either taxon 1 or 2; see Example 9.16 for details. Here A and B denote the ancestral and derived alleles, with the ancestral allele present in the outgroup, O. The test compares the distribution of A and B in taxa 1 and 2, conditioned on taxon 3 containing the derived allele, B. If there is simply neutral lineage sorting between the outgroup and the three resulting taxa, then configurations I (ABBA) and II (BABA) should be equally frequent. However, if there has been symmetric introgression of alleles from taxon 3 into one of these populations (but not the other), this pattern will be skewed, with one configuration being in excess of 50%.
 

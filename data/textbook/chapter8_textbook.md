@@ -24,7 +24,7 @@ Although usually attributed to Maynard Smith and Haigh (1974), the term hitchhik
 
 > **Figure 8.1** · page 2 · source: `chapter8`
 >
-> ![Figure 8.1](figures/fig_0211.png)
+> ![Figure 8.1](figures/8.1.png)
 >
 > Figure 8.1 (A) The signature of positive directional selection (a selective sweep) around a selected site (the solid circle). The background levels of linked neutral variation (measured as the average nucleotide diversity,  $ \pi $, in a sliding window of markers) show a significant decrease around the selected site, reflecting the decreased effective population size (and hence a shorter time to the most recent common ancestor, TMRCA) for regions linked to this site. (B) By contrast, balancing selection generates an increase in nucleotide diversity at linked neutral markers, reflecting a longer TMRCA, and hence more opportunities for mutation to generate variation.
 
@@ -45,7 +45,7 @@ The underpinning for many tests of selection using polymorphism data (Chapter 9)
 
 > **Figure 8.2** · page 3 · source: `chapter8`
 >
-> ![Figure 8.2](figures/fig_0212.png)
+> ![Figure 8.2](figures/8.2.png)
 >
 > Figure 8.2 Examples of selection influencing levels of variation at linked neutral sites. (A) A sliding-window plot of levels of nucleotide diversity,  $ \pi $, around the tb1 gene in maize (corn) and teosinte, a candidate gene for the domestication of teosinte into corn. Relative to teosinte, maize variation is dramatically reduced in the 5' UTR region of tb1, suggesting a sweep linked to this region. (After Wang et al. 1999.) (B) Inflated levels of variation are seen around a site that results in an amino acid change (arrow), generating two allelic classes, fast and slow, at the Adh gene in Drosophila melanogaster. These alternative alleles have long been thought to be under balancing selection, which is consistent with the increased variation observed around this site. However, the nature of selection on this gene is still an open issue, as Begun et al. (1999) showed that the excess variation is within slow haplotypes, not between fast and slow haplotypes as would be expected if these two alleles were under balancing selection. (After Kreitman and Hudson 1991.)
 
@@ -54,7 +54,7 @@ The underpinning for many tests of selection using polymorphism data (Chapter 9)
 
 > **Figure 8.3** · page 4 · source: `chapter8`
 >
-> ![Figure 8.3](figures/fig_0213.png)
+> ![Figure 8.3](figures/8.3.png)
 >
 > Figure 8.3 Example coalescent (or genealogical) structures (Chapter 2) for loci from the same population under pure drift, balancing selection, a selective sweep, and a partial sweep (ongoing selection in which an allele is still increasing in frequency). The tips of the tree at the bottom of the graph represent five sampled alleles, which eventually coalesce into a single lineage as we go back in time (the top of the graph). This final coalescent point represents the most recent common ancestor (MRCA) for the sampled alleles. For balancing selection, the time to the MRCA (TMRCA) is greater than for neutral genes, which in turn is greater than a region undergoing a sweep. The shape (measured by the relative distances between nodes) of the coalescent is also influenced by selection. Individual coalescent times for a sweep are much more compressed (the nodes are closer together) as one moves back in time, while under a neutral drift process, coalescent times increase as we approach the MRCA (Equation 2.40). A partial sweep represents a mixture, with a sweep-like structure in one part of the genealogy (here, the right branch) and a drift-like structure in the other (the left-branch).
 
@@ -73,7 +73,7 @@ Alternatively, the nature of selection may shift before fixation/equilibrium is 
 
 > **Figure 8.4** · page 5 · source: `chapter8`
 >
-> ![Figure 8.4](figures/fig_0214.png)
+> ![Figure 8.4](figures/8.4.png)
 >
 > Figure 8.4 Types of sweeps and their corresponding collection of haplotypes. (A) A hard sweep. A new mutation is immediately favored, resulting in only a single haplotype sweeping to high frequency. (B) A single-origin soft sweep. Here a single mutation is initially neutral or even slightly deleterious. It drifts around the population, appearing in new haplotypes through recombination. At some point, an environmental change places this site under strong selection, which sweeps it to fixation, carrying along a sample of its existing collection of linked haplotypes.
 
@@ -521,7 +521,7 @@ As with Equation 8.11, $ t_{0.5} \simeq 1.4N_e $ generations are required to rec
 
 > **Figure 8.5** · page 16 · source: `chapter8`
 >
-> ![Figure 8.5](figures/fig_0215.png)
+> ![Figure 8.5](figures/8.5.png)
 >
 > Figure 8.5 The effect of a hard sweep on the unfolded site-frequency spectrum of derived alleles. Under the equilibrium neutral model, this distribution is hyperbolic, an L-shaped curve that is monotonically declining, with most derived alleles being at low frequencies (the Watterson distribution; Equation 2.34a). The effect of a sweep is to shift some derived alleles to very high frequencies while shifting the others to frequencies near zero, resulting in a more U-shaped distribution (Equation 8.13).
 
@@ -566,7 +566,7 @@ The temporal dynamics of this structure are shown in Figure 8.6, which plots the
 
 > **Figure 8.6** · page 19 · source: `chapter8`
 >
-> ![Figure 8.6](figures/fig_0216.png)
+> ![Figure 8.6](figures/8.6.png)
 >
 > Figure 8.6 The dynamics of linkage disequilibrium (LD) between two neutral markers as a function of their location relative to the selected site. The neutral markers in this figure are separated by c = 0.0002, with x (measured in units of c) representing the location of the selected site. A value of x = 0 implies that the selected site is exactly between the two markers and it is flanked by the markers provided  $ |x| < 0.0001 $, whereas both markers are on the same side of the site when  $ |x| > 0.0001 $ (see the figure panel). The figure plots the LD dynamics (measured by D) for pairs of markers during the time course of a sweep, which starts at generation 0 (the rear slice along the generations axis) and runs until the conclusion of the sweep (the front slice). One sees a strong signal of LD across the site  $ |x| < 0.0001 $ during the early phase of the sweep (the partial sweep stage), with a sharp increase in LD for markers flanking the selected site. As the favorable allele reaches intermediate frequency, the LD flanking the site starts to decay (the region  $ |x| < 0.0001 $), while the LD on either side largely remains intact  $ |x| > 0.0001 $. Upon fixation, the result is very little LD between markers that flank the site (often below that in the starting background), while strong regions of LD exist for pairs of markers on the same side of the selected site. (After Stephan et al. 2006.)
 
@@ -798,7 +798,7 @@ One might expect that a successful sweep (i.e., the selected allele is destined 
 
 > **Figure 8.7** · page 27 · source: `chapter8`
 >
-> ![Figure 8.7](figures/fig_0217.png)
+> ![Figure 8.7](figures/8.7.png)
 >
 > Figure 8.7 Plots of  $ \Pr_{ex}(0.1) $, the probability of a selected sweep from standing variation, given that a sweep has occurred within  $ 0.1N_e $ generations following a change in the environment (Equation 8.20, with simulated data given by the points). This is a function of the beneficial mutation rate,  $ \theta_b = 4N_e\mu_b $ (separate curves within each graph), and the scaled strength of selection,  $ \alpha_b = 4N_e s $, during the sweep (horizontal axis). (Left) The allele is neutral in the old environment ( $ \alpha_d = 0 $). (Right) The allele is deleterious in the old environment ( $ \alpha_d = 4N_e s_d = 100 $) (After Hermisson and Pennings 2005.)
 
@@ -903,7 +903,7 @@ Our analyses thus far have assumed a panmictic population, but the effects of po
 
 > **Figure 8.8** · page 34 · source: `chapter8`
 >
-> ![Figure 8.8](figures/fig_0218.png)
+> ![Figure 8.8](figures/8.8.png)
 >
 > Figure 8.8 The expected pattern of among-population divergence (measured by  $ F_{ST} $; Chapter 2) around a selected site. (A) A localized hard sweep, with an allele that is favored in only a subset of the demes. (B) A global hard sweep, with the same favorable allele fixed over all demes. In both figures, the expected  $ F_{ST} $ value for markers sufficiently far way from the selected site asymptotes out to the neutral mutation-migration-drift values for the given population structure. (After Bierne 2010.)
 
@@ -1056,7 +1056,7 @@ A technically more demanding approach for gaining insight into the parameters of
 
 > **Figure 8.9** · page 42 · source: `chapter8`
 >
-> ![Figure 8.9](figures/fig_0219.png)
+> ![Figure 8.9](figures/8.9.png)
 >
 > Figure 8.9 An example of the Andolfatto regression of nucleotide diversity,  $ \pi $, on the per-site amino acid divergence,  $ d_a $, in Drosophila miranda, under the assumption of the same recombination rate (c) among all sampled sites. In this setting, the regression given by Equation 8.25 becomes  $ \pi = \pi_0 / (1 + \beta x) $, where  $ x = d_a $ (the mean number of amino acid substitutions per codon in the region for the estimated  $ \pi $ value) and  $ \beta = \alpha \gamma \kappa / (2tc) $. The solid curve is the least-squares fit of Equation 8.25, which gives estimates of  $ \pi_0 $ and  $ \gamma $ (as  $ \alpha $, c, and t were independently estimated). (After Bachtrog 2008.)
 
@@ -1065,7 +1065,7 @@ A technically more demanding approach for gaining insight into the parameters of
 
 > **Figure 8.10** · page 42 · source: `chapter8`
 >
-> ![Figure 8.10](figures/fig_0220.png)
+> ![Figure 8.10](figures/8.10.png)
 >
 > Figure 8.10 The pattern of nucleotide diversity over a large region may provide clues about the frequency and strength of past sweeps. Within this hypothetical region, three hard sweeps have occurred. Sweep 1 is a strong, recent sweep; sweep 2 is a strong older sweep; and sweep 3 is a weak, recent sweep. Strong sweeps result in a depression in variation over a significant region (1). As the signal from a past sweep decays, its window of influence stays roughly the same size, but its impact within that window vanishes over time. An old, strong sweep leaves a weak signal of depressed variation over a fairly large region (2), while an old weak sweep leaves a signal similar to (2), but over a much smaller region. (After Macpherson et al. 2007.)
 

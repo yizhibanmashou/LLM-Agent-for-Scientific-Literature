@@ -16,7 +16,7 @@ Fisher (1930) offered a highly simplified, yet elegant and powerful, geometric a
 
 > **Figure 27.1** · page 2 · source: `chapter27`
 >
-> ![Figure 27.1](figures/fig_0132.png)
+> ![Figure 27.1](figures/27.1.png)
 >
 > Figure 27.1 A: Fisher’s (1930) model for the probability that a new mutation increases fitness for the simple case of two independent traits under stabilizing selection. The optimal fitness value occurs at  $ \theta $, while the mean phenotypic value of the genotype about to experience a mutation is z, which is at distance d from the optimum. The solid circle denotes the fitness contour passing through the current value z, meaning that all points inside this circle have higher fitness. The effect of a new mutation is to move the expected phenotype by some distance (r) in a random direction around z, with the space of possible new phenotypes denoted by the dashed circle (the isotropic assumption of equal and independent mutational effects on both traits). The probability of increased fitness for a random mutation of effect r is the fraction of the circumference of the dashed circle that resides inside the solid circle (i.e., is closer to  $ \theta $), namely, the fraction of all new mutations (whose range of possible phenotypes fall exactly along the circumference of the dashed circle) with a higher fitness than the original allele. More generally, under anisotropic conditions (correlated and/or unequal effects for selection, mutation, or both), these circles are replaced by ellipses in two dimensions, and the hyperspheres are replaced by hyperellipsoids in three or more dimensions. B: For an n-dimensional phenotype, the probability  $ p_b $, that a new mutation is beneficial (has an increased fitness) is  $ 1 - \Phi[r \sqrt{n}/(2d)] $, where  $ \Phi[x] $ is the cumulative density function of a unit normal (Equation 27.1b).
 
@@ -65,7 +65,7 @@ A subtle feature, first noted by Kimura (1983), makes Fisher's smaller-is-better
 
 > **Figure 27.2** · page 4 · source: `chapter27`
 >
-> ![Figure 27.2](figures/fig_0133.png)
+> ![Figure 27.2](figures/27.2.png)
 >
 > Figure 27.2 The probability of adaptation (the probability of being beneficial times the probability of fixation) for a new mutation with scaled effect  $ x = r\sqrt{n}/(2d) $. Figure 27.1B shows the probability,  $ p_b $, that such a mutation is beneficial, while the curve in this figure (which also incorporates the resulting selection coefficient) is the chance that it is beneficial and fixed.
 
@@ -104,7 +104,7 @@ How much closer does fixing a mutation move us toward the optimum? The first fix
 
 > **Figure 27.3** · page 6 · source: `chapter27`
 >
-> ![Figure 27.3](figures/fig_0134.png)
+> ![Figure 27.3](figures/27.3.png)
 >
 > Figure 27.3 An example of an adaptive walk (in two dimensions), starting at z and moving toward the optimal value,  $ \theta $. Here  $ x_i $ denotes the scaled mutational size of the ith fixed mutation (with  $ r_i = 2d_0x_i / \sqrt{n} $), while  $ x_{[i]} $ denotes the ith largest step (the ith largest x value over all mutations fixed during the walk). In this example, the largest jump,  $ x_{[1]} $, occurs at the second step  $ (x_2) $, rather than at the first  $ (x_1) $.
 
@@ -285,7 +285,7 @@ Under Gillespie’s model, fitness values for new mutations are drawn from some 
 
 > **Figure 27.4** · page 14 · source: `chapter27`
 >
-> ![Figure 27.4](figures/fig_0135.png)
+> ![Figure 27.4](figures/27.4.png)
 >
 > Figure 27.4 Top: Extreme-value theory applied to the distribution of fitness effects of new beneficial alleles. Assume some arbitrary, and unknown, fitness distribution for possible alleles at a given locus. Provided the current allele is fairly fit, it is a draw from the righthand tail (extreme upper values) of this distribution. Let  $ W_i $ denote its current fitness, with i denoting the fitness rank of the current allele relative to the set that it can mutate to.  $ W_1 $ is the most fit possible allele at this locus,  $ W_2 $ is the next most fit, and so on. Bottom: The trinity theorem (Example 27.2) states that the limiting distribution of draws from the extreme tail of a distribution is one of only three possible types (or domains), depending upon a shape parameter,  $ \kappa $ (see Equation 27.7). The figure displays the form of the density function for these three limiting cases. Under the Gumbel domain, the limiting extreme-value distribution is exponential. If there is a finite upper limit on the original distribution, its extreme-value distribution is from the Weibull domain (which, as depicted in the figure, can have a wide variety of shapes depending on the value of  $ \kappa $). Finally, if the tail of the original distribution is heavier (falls off more slowly) than an exponential, its limiting extreme-value distribution is in the Fréchet domain. (After Beisel et al. 2007.)
 
@@ -326,7 +326,7 @@ The simplification given in Equation 27.8b of Gillespie’s original result is d
 
 > **Figure 27.5** · page 16 · source: `chapter27`
 >
-> ![Figure 27.5](figures/fig_0136.png)
+> ![Figure 27.5](figures/27.5.png)
 >
 > Figure 27.5 Let  $ \Delta_i = W_i - W_{i+1} $ denote the spacing (difference) in fitnesses between the genotype of fitness rank  $ i $ and  $ i + 1 $. When the current genotype has a high fitness (its rank,  $ i $, is not too large) and the underlying fitness distribution is in the Gumbel domain, then the values of  $ \Delta_i $ follow an exponential distribution (Gillespie 1983; Orr 2003b).
 
@@ -436,7 +436,7 @@ Recall for the FGM that Orr (2006) showed the distribution of fitness effects fo
 
 > **Figure 27.6** · page 21 · source: `chapter27`
 >
-> ![Figure 27.6](figures/fig_0137.png)
+> ![Figure 27.6](figures/27.6.png)
 >
 > Figure 27.6 The distribution of the fitness effects for beneficial mutations at a locus underlying a phenotype under stabilizing selection, with the current allele close to the optimum. Let  $ s_0 \ll 1 $ denote the maximal fitness advantage for any new mutation (which occurs when a mutation jumps the phenotype exactly to the optimum). A: The distribution of fitness effects among all beneficial mutations follows a beta distribution, Beta(1, m/2), where m is a measure of pleiotropy. The dotted curves show the corresponding exponential distributions, with the two distributions being very similar for values of m modest to large (>10). B: The distribution of fitness effects among fixed beneficial mutations also follows a beta distribution, but now with the first beta shape parameter changing from one to two, returning a unimodal distribution, Beta(2, m/2). Note that the exponential provides a very poor fit to this distribution unless m is very large and small values are ignored.
 

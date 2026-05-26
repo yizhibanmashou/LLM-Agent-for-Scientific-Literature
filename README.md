@@ -89,13 +89,16 @@ data/背景资料/*.pdf
 
 - `chapterX_textbook.md`：按 chunk 顺序串接正文，并展开公式、表格、example、figure 占位符。
 - `[[TABLE:*]]` 展开表格本体，`[[SEE_TABLE:*]]` 保持短引用文本。
-- `[[FIGURE:*]]` 展开为 `data/figures/` 图片和 caption，`[[SEE_FIGURE:*]]` 保持短引用文本。
+- `[[FIGURE:*]]` 展开为图片、页码、caption，`[[SEE_FIGURE:*]]` 保持短引用文本。
+- `textbook_exporter` 会把 `data/figures/` 中被引用的图片复制到 `data/textbook/figures/`，Markdown 使用相对链接 `figures/<教材图号>.png`，因此 `data/textbook/` 可以直接独立打开核查。
 - inline table 使用章节内优先匹配，避免跨章节 `inline_1` / `inline_2` 混淆。
 
 `data/figures/` 与 `data/figure_library.json` 是图片回接后的正式资产：
 
-- `data/figures/fig_*.png`：从原始 PDF 裁剪出的图片本体（228 张），caption 不截进图片。
-- `data/figure_library.json`：图片 id、caption、来源 PDF 页面、bbox、资产路径和绑定置信度。
+- `data/figures/*.png`：从原始 PDF 裁剪出的图片本体（228 张），caption 不截进图片。
+- 图片文件名使用教材图号，如 `5.1.png` / `A2.1.png` / `30.18.png`，不再使用 `fig_0001.png` 这类流水号。
+- `data/figure_library.json`：图片 id、caption、来源 PDF 页面、bbox、资产路径和绑定置信度；其中 `asset_path` 必须指向 `figures/<教材图号>.png`。
+- 不要只手工重命名图片文件。改名时必须同步 `data/figure_library.json`、`data/textbook/*.md` 和 `data/textbook/figures/`，或者重新跑 figure relink / textbook export 流程。
 
 当前基线状态：structured / textbook 占位符与引用审查为 0 个已知阻断问题；全书导出 36 个 `chapter*_textbook.md` / `appendix*_textbook.md` 文件。
 

@@ -107,7 +107,7 @@ Trait 1 can evolve as a consequence of direct selection (if it has additive vari
 
 > **Figure 20.1** · page 5 · source: `chapter20`
 >
-> ![Figure 20.1](figures/fig_0081.png)
+> ![Figure 20.1](figures/20.1.png)
 >
 > Figure 20.1 An environmental variable (soil nitrate) influences both fitness and trait value (alkaloid levels), creating a covariance between the trait and fitness (measured by seed production), when in fact the trait value is not a causal determinant of fitness. In low-nitrate soils (open triangles), plants have low fitness and low levels of alkaloids. In high-nitrate soils (filled circles), plants have high fitness and high levels of alkaloids. Within each of the two environments, there is no association between the trait and fitness (dotted regressions). If one ignores the environmental effects and simply lumps all the individuals together, there is a strong association between fitness and the trait value (dashed regression). (Based on Rausher 1992 and Mauricio and Mojonnier 1997.)
 
@@ -118,7 +118,7 @@ The idea of an environmental feature being the target of selection dates back to
 
 > **Figure 20.2** · page 6 · source: `chapter20`
 >
-> ![Figure 20.2](figures/fig_0082.png)
+> ![Figure 20.2](figures/20.2.png)
 >
 > Figure 20.2 A path diagram (LW Appendix 2) of the components in the Fisher-Price-Kirkpatrick-Arnold model, showing the connections between breeding date, z, nutritional state, n, and fitness, W. The breeding value, A, general environmental value, e, and nutritional state, n, all influence the breeding date, z, which itself influences fitness (path coefficient  $ \beta_{z} $). Further, there is a second path to fitness directly from the nutritional state ( $ \beta_{h} $), which represents the direct contribution to W of n after its indirect contribution through breeding date is removed. We assume that A, e, and n are all uncorrelated, and hence not connected by any paths. (After Price et al. 1988.)
 
@@ -206,7 +206,7 @@ As these examples show, one of the most serious limitations in applying the bree
 
 > **Figure 20.3** · page 8 · source: `chapter20`
 >
-> ![Figure 20.3](figures/fig_0083.png)
+> ![Figure 20.3](figures/20.3.png)
 >
 > Figure 20.3 The pathways by which the components of a character (phenotype, z, additive genetic value, A, common environmental effect, E, and special environmental effect,  $ e_s $) influence fitness, W. A: The breeder's equation assumes that only the phenotype (z) of a character causally influences fitness. This is not an unreasonable starting assumption for artificial selection, wherein the breeder directly chooses individuals on the basis of phenotypes and randomizes environments with respect to phenotypes. B: Other pathways by which the components of a character can influence fitness. Either (or both) of the additive genetic and environmental values can influence fitness independently of their influence on phenotype. For example, an environmental value can both influence the character of interest and independently influence fitness. The influence of other traits that are also under selection, whose breeding values are correlated with our focal trait, appears through A and not through z. Similarly, the effect of shared environmental factors on phenotypic correlations appears through E. Finally, genotypic and environmental values may be correlated ( $ \sigma(A, E) \neq 0 $), which is indicated by the double-headed arrows connecting A and E.
 
@@ -969,7 +969,7 @@ Finally, for $ z = A + E $, Postma (2006) showed that the prediction-error varia
 
 > **Figure 20.4** · page 30 · source: `chapter20`
 >
-> ![Figure 20.4](figures/fig_0084.png)
+> ![Figure 20.4](figures/20.4.png)
 >
 > Figure 20.4 Comparison of predicted breeding values (PBVs) as a function of phenotypic value, z, based on different amounts of information from relatives. With only a single observation (i.e., no relatives), PBVs (open circles) show no variation about their predicted value of  $ \hat{a} = h^2(z - \mu) $, and  $ \rho^2 = h^2 $. As more information from relatives accrues,  $ \rho^2 > h^2 $, and the PBVs (gray-filled circles) become less dependent on an individual's phenotype, showing greater spread about the regression. Now, for a given phenotypic value,  $ z $, the residual variance of a PBV around its mean predicted value of  $ h^2(z - \mu) $ is  $ (\rho^2 - h^2)\sigma^2(A) $. When  $ \rho = 1 $ (PBV = true BV, shown in the figure as black circles) this spread around  $ z $ is  $ (1 - h^2)\sigma^2(A) $, which can be substantial when heritability is low, as  $ z $ is a poor predictor of A. (After Postma and Charmantier 2007.)
 
@@ -1151,7 +1151,7 @@ In contrast, the y values are said to be missing at random (MAR) when the proces
 
 > **Figure 20.5** · page 35 · source: `chapter20`
 >
-> ![Figure 20.5](figures/fig_0085.png)
+> ![Figure 20.5](figures/20.5.png)
 >
 > Figure 20.5 The different categories of missing data, as illustrated through a simple example where the missing data, y (vertical axes), are a linear function of x (horizontal axes). Regression lines using the observed data (filled circles) are illustrated. A: The uncensored full dataset. In the remaining three panels, roughly 20% of the original data is missing (unfilled circles). B: Here, y values were removed entirely at random. Such data are said to be missing completely at random (MCAR). C: The data are not missing at random, but rather missing as a function of x (the y values for large x values are missing). Note, however, that in this setting (because y is a function of x), our estimate of the relationship between x and y (as in B) is not biased. Such data are said to be missing at random (MAR). In the settings (B) and (C), namely MCAR and MAR data, the missing data are said to be ignorable, as estimates of the regression parameters are not biased by the missing data. D: Here the data are missing as a function of y (culled for extreme values). The resulting estimated regression is seriously biased in both its slope and its intercept. Such data are said to be missing not at random (MNAR), and said to be nonignorable, as estimates of the regression parameters are indeed biased by the missing data.
 
@@ -1168,7 +1168,7 @@ The gold standard for detecting a genetic change is to grow two populations in a
 
 > **Figure 20.6** · page 36 · source: `chapter20`
 >
-> ![Figure 20.6](figures/fig_0086.png)
+> ![Figure 20.6](figures/20.6.png)
 >
 > Figure 20.6 The anticonservative nature of using mean PBVs regressed on time to detect a genetic trend, with support for a trend given by a significantly nonzero slope for this regression. Here, the trait is body weight in Soay sheep. The peak of the thick smooth curve centered slightly to the right of zero represents the OLS estimate of the slope for the regression of mean BLUP-PBVs on generation number (i.e., time), and the spread of the curve represents the associated sampling error, which is almost entirely to the right of zero. This shows that the OLS slope estimate is significantly positive. Conversely, the histogram gives samples from the posterior distribution of slopes from a Bayesian analysis (details in the text). While this distribution has the same mean as the BLUP-based slope estimates, its variance is significantly greater. Indeed, 28% of the probability mass is less than zero, showing that the Bayesian estimate of the slope (which more fully accounts for the uncertainty and correlations among individual estimates) is not significantly different from zero. (After Hadfield et al. 2010.)
 
@@ -1179,7 +1179,7 @@ The more delicate issue is that of inference. As we saw in Chapter 18, both OLS 
 
 > **Figure 20.7** · page 37 · source: `chapter20`
 >
-> ![Figure 20.7](figures/fig_0087.png)
+> ![Figure 20.7](figures/20.7.png)
 >
 > Figure 20.7 Postma and Charmantier's (2007) recommendations for the interpretation of genetic trends.
 
@@ -1209,7 +1209,7 @@ A final issue is that if one has individuals throughout the pedigree with missin
 
 > **Figure 20.8** · page 39 · source: `chapter20`
 >
-> ![Figure 20.8](figures/fig_0088.png)
+> ![Figure 20.8](figures/20.8.png)
 >
 > Figure 20.8 An application of Hadfield et al.'s (2010) approach for testing whether a genetic trend is significantly different from that expected under drift alone. Data are for age at first reproduction (AFR) for human settlers on an isolated island in Québec. Diamonds represent the average of 1,000 MCMC samples from the marginal posterior ( $ \pm $ their standard errors) of the mean predicted breeding value for AFR for each of the eight 20-year cohorts. The regression of these mean PBVs on cohort number is given by the dashed line. As a test for drift, a posteriori-sampled value for the additive variance is drawn, and then used to generate random breeding values (RBVs), given the pedigree structure. The average slope for mean RBVs is given by the solid line, showing that the observed PBV trend (dashed line) is more excessive than that expected by drift. This was confirmed by a comparison of the posterior distribution of regression slopes based on observed PBVs and RBVs (Example 20.7).
 
@@ -1254,7 +1254,7 @@ One striking example of apparent cryptic evolution is the study by Merilä et al
 
 > **Figure 20.9** · page 42 · source: `chapter20`
 >
-> ![Figure 20.9](figures/fig_0089.png)
+> ![Figure 20.9](figures/20.9.png)
 >
 > Figure 20.9 Body condition at fledging for a Gotland population of collared flycatchers between 1980 and 1999. A: Trend for the mean phenotype. B: Trend for the mean breeding value (the average of the individual PBVs in a given year). (After Merilä et al. 2001b.)
 

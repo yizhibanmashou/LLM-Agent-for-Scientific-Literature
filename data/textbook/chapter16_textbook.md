@@ -51,7 +51,7 @@ Thus, under our (short-term response) assumption that allele frequencies remain 
 
 > **Figure 16.1** · page 3 · source: `chapter16`
 >
-> ![Figure 16.1](figures/fig_0059.png)
+> ![Figure 16.1](figures/16.1.png)
 >
 > Figure 16.1 Artificial stabilizing and disruptive selection using double truncation. In both cases, a fraction, p, of the population is allowed to reproduce. Under stabilizing selection, the central p of the distribution is saved, while under disruptive selection, the uppermost and lowermost p/2 are saved.
 
@@ -60,7 +60,7 @@ Thus, under our (short-term response) assumption that allele frequencies remain 
 
 > **Figure 16.2** · page 3 · source: `chapter16`
 >
-> ![Figure 16.2](figures/fig_0060.png)
+> ![Figure 16.2](figures/16.2.png)
 >
 > Figure 16.2 The generation of covariances (gametic-phase disequilibrium, LD) by the various type of truncation selection. The variables  $ x $ and  $ y $ (e.g., allelic effects at two different loci) are uncorrelated before selection, with their distribution indicated by the open circle. Left: Under directional selection, only those values of  $ x + y $ above some threshold (say, a) are retained. The resulting distribution (the shaded area above the line for  $ x + y = a $) now displays a negative covariance between the remaining  $ x $ and  $ y $ values. Middle: Under stabilizing selection, only those values in the range of  $ -a \leq x + y \leq a $ are retained, also generating a negative covariance. Right: Under disruptive selection, only values of  $ x + y \geq a $ or  $ x + y \leq -a $ are retained, now resulting in a positive covariance between the remaining  $ x $ and  $ y $ values.
 
@@ -353,7 +353,7 @@ yielding an equilibrium heritability of
 
 > **Figure 16.3** · page 11 · source: `chapter16`
 >
-> ![Figure 16.3](figures/fig_0061.png)
+> ![Figure 16.3](figures/16.3.png)
 >
 > Figure 16.3 The fractional reduction,  $ \kappa $, of phenotypic variance removed by truncation selection (Figure 16.1) as a function of the fraction,  $ p $, of individuals saved. Following selection, the new variance is  $ (1 - \kappa)\sigma_z^2 $. Top: The lower-most curve (values of  $ \kappa < 0 $) corresponds to disruptive selection (and hence an increase in the variance,  $ \sigma_z^2 > \sigma_z^2 $), while the upper two curves ( $ \kappa > 0 $) correspond to directional (middle curve) and stabilizing selection (upper curve), and hence a decrease in the variance,  $ \sigma_z^2 < \sigma_z^2 $. Bottom: Close-up for directional (lower curve) and stabilizing selection (upper curve).
 
@@ -373,7 +373,7 @@ Figure 16.4 plots the equilibrium heritability as a function of $ \kappa $ and t
 
 > **Figure 16.4** · page 12 · source: `chapter16`
 >
-> ![Figure 16.4](figures/fig_0062.png)
+> ![Figure 16.4](figures/16.4.png)
 >
 > Figure 16.4 Equilibrium  $ h^2 $ values as a function of  $ \kappa $ and the initial heritability,  $ h^2 $. Note that for  $ \kappa < 0 $, the variance is increased by selection ( $ \sigma_z^2 > \sigma_z^2 $, as occurs with disruptive selection) and the equilibrium  $ h^2 $ is greater than its initial value.
 
@@ -386,7 +386,7 @@ Figure 16.4 plots the equilibrium heritability as a function of $ \kappa $ and t
 
 > **Figure 16.5** · page 12 · source: `chapter16`
 >
-> ![Figure 16.5](figures/fig_0063.png)
+> ![Figure 16.5](figures/16.5.png)
 >
 > Figure 16.5 Equilibrium heritability values under directional (truncation) selection as a function of the fraction, p, saved and the initial heritability,  $ h^{2} $. The three curves correspond to initial heritability values of 0.75, 0.5, and 0.25, with the dashed lines displaying the constant heritability values and the solid line displaying the value at equilibrium.
 
@@ -536,7 +536,7 @@ Experiments examining the effects of selection on the variance were reviewed by 
 
 > **Figure 16.6** · page 18 · source: `chapter16`
 >
-> ![Figure 16.6](figures/fig_0064.png)
+> ![Figure 16.6](figures/16.6.png)
 >
 > Figure 16.6 The response to the same amount of direction selection for two different starting populations, one initially subjected to stabilizing selection and the other to disruptive selection. See Example 16.4 for details.
 

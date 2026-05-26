@@ -26,7 +26,7 @@ In addition to being the commonest form of artificial selection, truncation sele
 
 > **Figure 14.1** · page 2 · source: `chapter14`
 >
-> ![Figure 14.1](figures/fig_0046.png)
+> ![Figure 14.1](figures/14.1.png)
 >
 > Figure 14.1 Under truncation selection, the uppermost (or lowermost) fraction, $p$, of a population is selected to reproduce. Alternatively, one could set a threshold level, $T$, in advance. To predict the selection response, given either $p$ or $T$, we need to know the expected mean of the selected tail ($\mu^{*}$), from which we can compute either $S = \mu^{*} - \mu$ or $\bar{i} = S/\sigma$, and then apply the breeder's equation.
 
@@ -101,7 +101,7 @@ To more formally treat the effects of finite sample size, assume M adults are sa
 
 > **Figure 14.2** · page 4 · source: `chapter14`
 >
-> ![Figure 14.2](figures/fig_0047.png)
+> ![Figure 14.2](figures/14.2.png)
 >
 > Figure 14.2 The distribution of 10,000 random draws of  $ \bar{\imath}_{(1,10)} $, the largest order statistic in a sample of ten unit normal random variables. The mean value is 1.54, as opposed to the expected value of  $ \bar{\imath}=1.75 $ for p=0.1 in an infinite population (Equation 14.3a). Notice that there is a considerable spread about the mean, and that the distribution is not symmetric, but rather is skewed toward higher values.
 
@@ -133,7 +133,7 @@ where $ \bar{\tau} $ is given by Equation 14.3a, using $ p = N/M $. Lindgren and
 
 > **Figure 14.3** · page 5 · source: `chapter14`
 >
-> ![Figure 14.3](figures/fig_0048.png)
+> ![Figure 14.3](figures/14.3.png)
 >
 > Figure 14.3 The expected selection intensity,  $ E[\bar{i}_{(N,M)}] $, under truncation selection on a normally distributed phenotype, as a function of the total number of individuals measured, M, and the fraction of these saved,  $ p = N/M $. The curve  $ M = \infty $ is given by Equation 14.3a, while the curves for M = 10, 20, 50, and 100 were obtained from the average of the expected values of the N = pM largest unit normal order statistics (Harter 1961). Note that Equation 14.3a is generally a good approximation, even when N is fairly small.
 
@@ -183,7 +183,7 @@ where $ x_{[p]} $ is the probit transformation of $ p $ (Equation 14.2a), as sug
 
 > **Figure 14.4** · page 7 · source: `chapter14`
 >
-> ![Figure 14.4](figures/fig_0049.png)
+> ![Figure 14.4](figures/14.4.png)
 >
 > Figure 14.4 Selection response for a binary trait when the underlying liability, z, exceeds some threshold value, T. We assume that an appropriate scale can be found such that  $ z \sim N(\mu_t, 1) $, where  $ \mu_t $ is the current mean and  $ T = 0 $. Under this scaling for T, a mean liability of zero ( $ \mu = 0 $) implies that 50% of the population shows the trait, while  $ <50\% $ display the trait when  $ \mu < 0 $ and  $ >50\% $ do when  $ \mu > 0 $. Because z is normally distributed, the probit transform estimates  $ \mu_t $ from the frequency,  $ q_t $, of individuals displaying the character (Equation 14.6). We assume that the breeder's equation holds on the liability scale, so that  $ \mu_{t+1} = \mu_t + S_t h^2 $, where  $ S_t = \mu_t^* - \mu_t $. Using properties of the unit normal allows translation of the mean liability following selection,  $ \mu_{t+1} $, into the new frequency,  $ q_{t+1} $, of the trait (Equation 14.7). Note that after selection, where a fraction,  $ p_t $, of the selected parents display the trait, the mean liability value is now the weighted average of the means of two truncated normal distributions (Equation 14.8a).
 
@@ -210,7 +210,7 @@ It remains to obtain $S_t = \mu_t^* - \mu_t$, where $\mu_t^*$ is the mean liabil
 
 > **Figure 14.5** · page 8 · source: `chapter14`
 >
-> ![Figure 14.5](figures/fig_0050.png)
+> ![Figure 14.5](figures/14.5.png)
 >
 > Figure 14.5 The response to selection on a threshold trait. Changes in q and S are plotted below, where solid circles denote  $ q_{t} $, and open circles denote  $ S_{t} $. See Example 14.3 for details.
 
@@ -302,7 +302,7 @@ which has a value of 0.5 at $ z = m $ and a scaling factor, $ \alpha $, that set
 
 > **Figure 14.6** · page 11 · source: `chapter14`
 >
-> ![Figure 14.6](figures/fig_0051.png)
+> ![Figure 14.6](figures/14.6.png)
 >
 > Figure 14.6 A more realistic model of threshold traits is that the liability, z (horizontal axis), determines the probability, p(z), of displaying the trait (vertical axis). One flexible model is to assume that p(z) follows a logistic function (Equation 14.10b) with a scale parameter of  $ \alpha $, plotted here for values of  $ \alpha = 1, 5 $, and 10. For  $ \alpha $ values in excess of 5, the logistic function essentially recovers the discrete threshold model.
 
@@ -331,7 +331,7 @@ Taking derivatives of both sides yields
 
 > **Figure 14.7** · page 12 · source: `chapter14`
 >
-> ![Figure 14.7](figures/fig_0052.png)
+> ![Figure 14.7](figures/14.7.png)
 >
 > Figure 14.7 A comparison of the unit normal and unit logistic ( $ \mu = 0 $,  $ \sigma^{2} = 1 $) distributions (dashed and solid curves, respectively), with the horizontal axis denoting the value of z. (Left) Probability density functions: the logistic is more peaked, with positive kurtosis. (Right) The cumulative distribution functions are extremely similar.
 
@@ -360,7 +360,7 @@ An interesting biological interpretation of the scale parameter, $ \alpha $ (tha
 
 > **Figure 14.8** · page 13 · source: `chapter14`
 >
-> ![Figure 14.8](figures/fig_0053.png)
+> ![Figure 14.8](figures/14.8.png)
 >
 > Figure 14.8 The logistic regressions for the relationship between dry weight and flowering in hound's-tongue (Cynoglossum officinale). Data were obtained from Wesselingh and de Jong (1995). Regressions are given for control, high, and low lines, grown contemporaneously. See Example 14.5 for further details.
 

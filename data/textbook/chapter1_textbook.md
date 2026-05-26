@@ -22,7 +22,7 @@ This introductory chapter starts with a historical overview of considerations of
 
 > **Figure 1.1** · page 4 · source: `chapter1`
 >
-> ![Figure 1.1](figures/fig_0079.png)
+> ![Figure 1.1](figures/1.1.png)
 >
 > Figure 1.1 A striking example of the power of artificial selection is seen in lines of broilers, chickens selected for meat production. The figure compares the performance of a representative base line from 1957, an improved line from 1978, and a recent line from 2005, all raised in the same environment. Besides these extremely impressive differences in growth, there are equally important improvements in feed-to-protein conversion efficiency. (After Zuidhof et al. 2014.)
 
@@ -31,7 +31,7 @@ This introductory chapter starts with a historical overview of considerations of
 
 > **Figure 1.2** · page 5 · source: `chapter1`
 >
-> ![Figure 1.2](figures/fig_0080.png)
+> ![Figure 1.2](figures/1.2.png)
 >
 > Figure 1.2 Yield (measured in tons per hectare) in maize hybrid lines as a function of year of release. Using remnant seed, all lines were grown in the same set of years, with 1992 being highly favorable, 1993 cool and extremely wet, and 2001 hot and dry. Note that the response is parallel over the three different environments (years), suggesting little genotype × environment interaction. Such “common-garden” experiments are the cleanest way to separate an observed gain into genetic versus environmental components (Chapters 19 and 20 present alternative mixed-model approaches that can also accomplish this goal). This separation is critical, as a yield improvement over time could simply reflect improved agronomic practices, rather than genetic gain. In maize, hybrid improvement accounts for between 50 and 70% of the total improvement in yield, with the remainder due to improved farming practices (Duvick 2001). (After Duvick 2005.)
 

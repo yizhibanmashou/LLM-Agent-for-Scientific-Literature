@@ -263,7 +263,7 @@ Now suppose the parent-offspring regression is nonlinear. Assuming the simplest 
 
 > **Figure 6.2** · page 15 · source: `chapter6`
 >
-> ![Figure 6.2](figures/fig_0201.png)
+> ![Figure 6.2](figures/6.2.png)
 >
 > Figure 6.2 The behavior of genetic variance components and the heritability for fitness as a function of allele frequency p under the parameters given in Example 6.5. (Left) Note that total genetic variance is maximized at the value  $ (p = 1/2) $, where the additive variance is zero. (Right) Assuming that there is no environmental variance, the heritability is simply the ratio of additive to total genetic variance, which is also zero when total variance is maximized.
 
@@ -367,7 +367,7 @@ There are two sources for response: a change, $ b_j \Delta p_j $, from the chang
 
 > **Figure 6.1** · page 10 · source: `chapter6`
 >
-> ![Figure 6.1](figures/fig_0200.png)
+> ![Figure 6.1](figures/6.1.png)
 >
 > Figure 6.1 Analysis of the model from Example 6.3. (Left) Graph of the exact (using one-locus theory; Equation 6.16b) and predicted (via the breeder's equation; Equation 6.16f) response as a function of allele-frequency p, for a trait under selection determined by a single dominant locus. (Right) The relative accuracies of the breeder's equation as a function of p.
 
@@ -620,7 +620,7 @@ Under the classical view, if a trait is known to be under selection, one might b
 
 > **Figure 6.3** · page 17 · source: `chapter6`
 >
-> ![Figure 6.3](figures/fig_0202.png)
+> ![Figure 6.3](figures/6.3.png)
 >
 > Figure 6.3 Two studies examining the association between a character's heritability and its total fitness, measured by  $ r^{2} $, the squared phenotypic correlation between the character and lifetime fitness. (Left) Gustafsson's (1986) work on the collared flycatcher Ficedula albicollis on the island of Gotland in the Baltic Sea. (Right) Schwaegerle and Levin's (1991) study of Phlox drummondii, with fruit production used as a measure of total fitness.
 
@@ -679,7 +679,7 @@ A study by Kruuk et al. (2000) on Scottish red deer (Cervus elaphus) offers some
 
 > **Figure 6.4** · page 19 · source: `chapter6`
 >
-> ![Figure 6.4](figures/fig_0203.png)
+> ![Figure 6.4](figures/6.4.png)
 >
 > Figure 6.4 Kruuk et al.'s (2000) study of life-history and morphological traits in the Scottish red deer (Cervus elaphus). Circles denote life-history traits, squares morphological traits. Filled symbols are for males, open for females. (Left) The heritability of a trait is negatively associated with the correlation of that trait with fitness. (Right) The coefficient of additive genetic variation  $ CV_{A} $ (the square root of the additive genetic variance of a trait divided by the trait mean, here multiplied by 100) is positively associated with fitness in males, and negatively associated with fitness in females.
 
@@ -904,7 +904,7 @@ Thus, even when the parent-offspring regression is nonlinear, we can express the
 
 > **Figure 6.5** · page 25 · source: `chapter6`
 >
-> ![Figure 6.5](figures/fig_0204.png)
+> ![Figure 6.5](figures/6.5.png)
 >
 > Figure 6.5 The partial covariance,  $ \sigma(w, \overline{z} \parallel z) $, is the covariance  $ \sigma(e_w, e_{\overline{z}}) $ between the residuals  $ (e_{\overline{z}}) $ of the linear regression of  $ \overline{z}_i $ on  $ z_i $ (the parent-offspring regression; Equation 6.30b) and the residuals  $ (e_w) $ of the linear regression of  $ w_i $ on  $ z_i $ (fitness-phenotype regression; Equation 6.20c). In this example, both of these relationships are nonlinear, resulting in the distribution of residuals for the best fitting linear regression being nonrandomly distributed. A plot of these residuals against each other shows a strong negative covariance, so while  $ \sigma(w, z) $,  $ \sigma(\overline{z}, z) $, and  $ \sigma(w, \overline{z}) $, are all positive,  $ \sigma(w, \overline{z} \parallel z) $ is negative.
 

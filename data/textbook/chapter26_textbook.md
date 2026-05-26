@@ -62,7 +62,7 @@ Hence, the probability of fixation starting with a single copy, $ p_0 = 1/(2N) $
 
 > **Figure 26.1** · page 3 · source: `chapter26`
 >
-> ![Figure 26.1](figures/fig_0124.png)
+> ![Figure 26.1](figures/26.1.png)
 >
 > Figure 26.1 The probability of fixation of an additive allele as a function of  $ N_{e} $s and its initial allele frequency,  $ p_{0} $ (from Equation 26.2a).
 
@@ -477,7 +477,7 @@ One complication with Robertson’s theory is that as population size increases,
 
 > **Figure 26.2** · page 15 · source: `chapter26`
 >
-> ![Figure 26.2](figures/fig_0125.png)
+> ![Figure 26.2](figures/26.2.png)
 >
 > Figure 26.2 Cumulative response at generation 50 as a function of  $ N_{e}\bar{i} $ for selection on increased abdominal bristle number in Drosophila melanogaster. (After Jones et al. 1968.)
 
@@ -486,7 +486,7 @@ One complication with Robertson’s theory is that as population size increases,
 
 > **Figure 26.3** · page 15 · source: `chapter26`
 >
-> ![Figure 26.3](figures/fig_0126.png)
+> ![Figure 26.3](figures/26.3.png)
 >
 > Figure 26.3 A: Selection for wing-tip height in Drosophila melanogaster (in mils = 0.001 inches). Three replicated selection lines (left to right) with estimated population sizes of 11 (3 replicates), 56 (2 replicates) and 280 (2 replicates) were used. Symbols represent the mean value, while the one-sided whisker shows its associated standard error (displayed in only one direction). Note that the response increases with  $ N_{e} $. (After Weber 1990.) B: The ratio of cumulative selection response at generation 50 to response in the first generation as a function of effective population size, for nine different experiments (represented by the different symbols). The lower sigmoidal curve is the prediction using Equation 26.15a; the upper sigmoidal curve is the prediction given by Equation 26.30c, which allows for response from new mutations (assuming  $ \sigma_{m}^{2}/\sigma_{E}^{2} = 0.001 $). The curve marked  $ 2N_{e} $ is the expected limit under Robertson's additive model (Equation 26.15b). (After Weber and Diggins 1990.)
 
@@ -499,7 +499,7 @@ Unlike in many artificial selection experiments, there was little slippage upon 
 
 > **Figure 26.4** · page 16 · source: `chapter26`
 >
-> ![Figure 26.4](figures/fig_0127.png)
+> ![Figure 26.4](figures/26.4.png)
 >
 > Figure 26.4 Weber's selection experiments for increased flight speed in Drosophila. A: Results of 300 generations of selection in two replicate lines (circles with dashed lines and squares with solid lines); also see Figure 25.9 for the first 100 generations. (After Weber 2004.) B: Response to selection in hybrid sublines formed by crossing two replicate generation 75 selection lines (AA1 and AA2) back to controls (CN1 and CN2). Selection started on the  $ F_{2} $ lines, with only six generations of selection (the  $ F_{8} $ lines) required to recover essentially all of the initial response of  $ \sim $140 cm/sec. (After Weber 1996.)
 
@@ -667,7 +667,7 @@ Because the term in brackets is independent of $p$, response (as a function of $
 
 > **Figure 26.5** · page 21 · source: `chapter26`
 >
-> ![Figure 26.5](figures/fig_0128.png)
+> ![Figure 26.5](figures/26.5.png)
 >
 > Figure 26.5 A: The selection limit as a function of the fraction selected (allowed to reproduce) for 10 and 50 individuals scored. (After Robertson 1960a.) B: The optimal proportion,  $ p_{opt} $, of individuals selected in each generation to maximize the selection advance over t generations, as a function of t/M, where M is the number of measured individuals. (After Robertson 1970b.) Both sets of curves can be generated using Equation 26.23, taking  $ M = N_{e} $.
 
@@ -708,7 +708,7 @@ So far, we have been considering only the effects of drift due to selecting N ad
 
 > **Figure 26.6** · page 23 · source: `chapter26`
 >
-> ![Figure 26.6](figures/fig_0129.png)
+> ![Figure 26.6](figures/26.6.png)
 >
 > Figure 26.6 Effects of population bottlenecks on selection response. A: Selection for sternopleural bristle number in Drosophila melanogaster, with the most extreme 10 pairs out of 25 scored pairs selected in each generation. The outermost curves are responses using the base population. The middle curves are the responses for sublines formed from a single parental pair. The innermost curves correspond to sublines formed by single parental pairs for three consecutive generations prior to selection. (After Robertson 1966b.) B: Selection for abdominal bristle number in Drosophila melanogaster. The responses denoted by 40 (10%), 40 (20%), and 40 (40%) correspond to populations where the uppermost 40 pairs of adults are selected in each generation, with different selection intensities. For example, 200 pairs are scored and the uppermost 40 are chosen in the 40 (20%) population. Responses denoted by X (10%), X (20%), and X (40%) refer to lines split from the corresponding 40-pair lines after 16 generations of selection and selected thereafter at the same intensity with 10 pairs of parents per generation. Note that all X lines show reduced responses (being below their counterparts). (After Jones et al. 1968.)
 
@@ -755,7 +755,7 @@ A more accurate measure would be to weight the fixation probability, $ u(p) $, b
 
 > **Figure 26.7** · page 25 · source: `chapter26`
 >
-> ![Figure 26.7](figures/fig_0130.png)
+> ![Figure 26.7](figures/26.7.png)
 >
 > Figure 26.7 The effect of an initial bottleneck on selection for increased abdominal bristle number in Drosophila. Curve B corresponds to the response in bottlenecked populations formed from a single pair of parents ( $ N_{0} = 2 $), curve U to a nonbottlenecked population, and curve C corresponds to the response from the unselected control. All lines were maintained by using 20 pairs of parents in each generation. (After Frankham 1980.)
 
@@ -937,7 +937,7 @@ Denoting the initial heritability by $ h^{2} $ and recalling that $ \sigma_{E}^{
 
 > **Figure 26.8** · page 31 · source: `chapter26`
 >
-> ![Figure 26.8](figures/fig_0131.png)
+> ![Figure 26.8](figures/26.8.png)
 >
 > Figure 26.8 The expected generation,  $ t^* $, at which the per-generation response from mutational input equals the per-generation response from the initial variation in the base population (Equation 26.31a). We assume that  $ h_m^2 = \sigma_m^2 / \sigma_E^2 = 0.005 $, the average value in LW Table 12.1, from which Equation 26.31b yields  $ \Psi = 100h^2 / \left( \left(1 - h^2 \right) N_e \right) $. The four curves correspond to initial heritabilities of 0.05, 0.10, 0.25 and 0.50. For sufficiently large values of  $ N_e $,  $ t^* $ becomes independent of  $ N_e $ and approaches the approximation given by Equation 26.31c. Note when  $ h^2 $ is modest to large that Equation 26.31c significantly overestimate  $ t^* $ for small  $ N_e $.
 

@@ -28,7 +28,7 @@ Vectors can differ by length, direction, or both. The angle, $ \theta $, between
 
 > **Figure A5.1** · page 2 · source: `appendix5`
 >
-> ![Figure A5.1](figures/fig_0015.png)
+> ![Figure A5.1](figures/A5.1.png)
 >
 > Figure A5.1 Some basic geometric concepts of vectors. While we use examples from two dimensions, these concepts easily extend to $n$ dimensions. A: A vector $x$ can be thought of as an arrow from the origin to a point in space whose coordinates are given by the elements of $x$. B: Multiplying a vector by $-1$ results in a reflection about the origin. C: One measure of the difference in direction between two vectors is the angle $(\theta)$ between them. D: Proj($\mathbf{b}$ on $\mathbf{a}$) is the vector resulting from the projection of $\mathbf{b}$ onto a. Note that the resulting projection vector is either in the same direction as $a$ or in the direction of the reflection of $a$, as seen for Proj($\mathbf{c}$ on $\mathbf{a}$).
 
@@ -72,7 +72,7 @@ When we multiply a vector, x, by a matrix, A, to create a new vector, y = Ax, A 
 
 > **Figure A5.2** · page 4 · source: `appendix5`
 >
-> ![Figure A5.2](figures/fig_0016.png)
+> ![Figure A5.2](figures/A5.2.png)
 >
 > Figure A5.2 If we use the values of  $ \beta $ and G from Example A5.1, observe that G translates the directional selection gradient vector  $ (\beta) $ into the response vector  $ (R) $ in a counterintuitive fashion. While  $ \beta $ shows that fitness is maximized by increasing both traits 1 and 2, the resulting response vector, R, increases trait 2 but decreases trait 1. This behavior results from the strong negative additive-genetic covariance between  $ z_1 $ and  $ z_2 $, as will become more obvious shortly, when we consider the eigenvectors of G (Figure A5.3). As shown in Example A5.1, the angle between the vectors  $ \beta $ and R is 45 degrees.
 
@@ -120,7 +120,7 @@ If we again apply Equation A5.3b, we can express this decomposition as $$ \mathb
 
 > **Figure A5.3** · page 7 · source: `appendix5`
 >
-> ![Figure A5.3](figures/fig_0017.png)
+> ![Figure A5.3](figures/A5.3.png)
 >
 > Figure A5.3 Left: The scaled eigenvectors associated with the covariance matrix, G, from Example A5.1, plotted along with the selection gradient,  $ \beta $. Note that  $ e_1 $ and  $ e_2 $ are orthogonal and hence can be thought of as describing a new coordinate system. Because  $ \lambda_1 \gg \lambda_2 $, the leading eigenvector,  $ e_1 $, largely dominates the transformation. Right: This is shown by taking the projections of  $ \beta $ on each of these eigenvectors (shown here on a magnified scale relative to the left figure). Even though  $ \beta $ is nearly parallel to  $ e_2 $ ( $ \theta | e_1 $,  $ \beta = 13.2^\circ $), the projection of  $ \beta $ on  $ e_1 $ yields a vector of greater length than the projection of  $ \beta $ on  $ e_2 $ ( $ 3.803 $ versus  $ 2.353 $). From Equation A5.9b, the vector of responses to selection, R, is the sum of these two projections.
 
@@ -170,7 +170,7 @@ A powerful use of diagonalization is that it allows one to extract a set of $n$ 
 
 > **Figure A5.4** · page 10 · source: `appendix5`
 >
-> ![Figure A5.4](figures/fig_0018.png)
+> ![Figure A5.4](figures/A5.4.png)
 >
 > Figure A5.4 The transformation (Equation A5.15a) generating a set of independent variables for the covariance matrix G from Example A5.4 results in a rigid rotation of axes of the original traits onto the new, uncorrelated set. Left: The direction of the new axes are given by the eigenvectors  $ e_1 $ and  $ e_2 $. The angle between the new axis,  $ e_1 $, and the original  $ z_1 $ axis is given by the angle between  $ e_1 $ and  $ z_1 = (1, 0)^T $. Here,  $ ||e_1|| = ||z_1|| = 1 $ and  $ e_1^T z_1 = 0.851 $, giving  $ \theta = \cos^{-1}(0.851) \simeq 32^\circ $. As this transformation is a rigid rotation, the angle between  $ e_2 $ and the  $ z_2 = (0, 1)^T $ axis is also also  $ 32^\circ $. Right: On the  $ (y_1, y_2) $ coordinates, the angle between  $ R $ and  $ \beta $ remains unchanged. See Example A5.4 for further details.
 
@@ -227,7 +227,7 @@ If all eigenvalues are positive (all $ \lambda_i > 0 $), then any quadratic form
 
 > **Figure A5.5** · page 13 · source: `appendix5`
 >
-> ![Figure A5.5](figures/fig_0019.png)
+> ![Figure A5.5](figures/A5.5.png)
 >
 > Figure A5.5 The general shape of surfaces of constant variance for the additive-genetic covariance matrix, G, given in Example A5.1. Defining a new composite character  $ y = az_1 + bz_2 $, the rotated ellipse represents the set of weights  $ (a, b) $ that give y the same additive-genetic variance,  $ c^2 $. The major axis of the ellipse is along  $ e_2 $, the eigenvector associated with the smallest eigenvalue of G, where  $ \lambda_2 \simeq 0.765 $, giving  $ 1/\sqrt{\lambda_2} \simeq 1.143 $. The minor axis of the ellipse is along  $ e_1 $, the eigenvector associated with the largest eigenvalue of G, where  $ \lambda_1 \simeq 5.241 $, giving  $ 1/\sqrt{\lambda_1} \simeq 0.437 $.
 
@@ -238,7 +238,7 @@ Equations of the form $$ \begin{align*}\mathbf{x}^T\mathbf{A}\mathbf{x}=\sum\lim
 
 > **Figure A5.6** · page 14 · source: `appendix5`
 >
-> ![Figure A5.6](figures/fig_0020.png)
+> ![Figure A5.6](figures/A5.6.png)
 >
 > Figure A5.6 Surfaces for a multivariate normal (MVN) distribution. Left: Surfaces of equal probability assuming that the additive-genetic values associated with the characters  $ z_1 $ and  $ z_2 $ in Example A5.1 are  $ \sim \mathrm{MVN}(\mu, \mathbf{G}) $. These surfaces are ellipses centered at  $ \mu $, with the major axis of the ellipse along  $ e_1 $ and the minor axis along  $ e_2 $, whose lengths (for a fixed c) are, respectively,  $ \sqrt{\lambda_1} = 2.289 $ and  $ \sqrt{\lambda_2} = 0.875 $. Right: A plot of the associated probability density. Slicing along either the major or minor axis gives a normal curve. Because the variance in the major axis is greater, the curve is much broader along this axis. The covariance between the breeding values of  $ z_1 $ and  $ z_2 $ rotates the distribution so that the principal axes ( $ e_1 $,  $ e_2 $) do not coincide with the original ( $ z_1 $,  $ z_2 $) axes.
 
@@ -303,7 +303,7 @@ A fairly simple graphical test can be developed by extending the notion of the n
 
 > **Figure A5.7** · page 18 · source: `appendix5`
 >
-> ![Figure A5.7](figures/fig_0021.png)
+> ![Figure A5.7](figures/A5.7.png)
 >
 > Figure A5.7 Plots of ranked distance data  $ (d_{(j)}^{2}) $ being the jth smallest distance) versus the expected corresponding  $ \chi^{2} $ value for the data of Jolicoeur and Mosimann from Example A5.8. Left: The untransformed data do not appear to depart significantly from linearity, although they depart slightly from the intercept (0) and slope (1) of the expected regression under multivariate normality. Right: Log-transforming the data gives a slightly better linear fit  $ (r^{2} = 0.983 \text{ versus } r^{2} = 0.952) $, with the best-fitting line passing through the origin as expected if the distance data follow a  $ \chi^{2} $ distribution, and has a slope of essentially one. See Example A5.8 for more details.
 

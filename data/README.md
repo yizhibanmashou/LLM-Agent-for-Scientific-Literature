@@ -15,11 +15,11 @@ This is the boundary that downstream systems should read from.
 - `structured/`
   Structured knowledge outputs, including chapter JSON files, formula library, table library, example library, and figure placeholders
 - `textbook/`
-  Readable Markdown exported from `structured/`, saved as `chapterX_textbook.md`
+  Readable Markdown exported from `structured/`, saved as `chapterX_textbook.md`; referenced figures are copied into `textbook/figures/`
 - `figures/`
-  Cropped figure assets referenced by `textbook/`
+  Cropped figure assets referenced by `textbook/`; filenames use textbook figure ids such as `5.1.png`, `A2.1.png`, and `30.18.png`
 - `figure_library.json`
-  Figure metadata, captions, source pages, bbox provenance, and asset mapping
+  Figure metadata, captions, source pages, bbox provenance, and asset mapping. `asset_path` should point to `figures/<textbook figure id>.png`
 - `knowledge_graph/`
   Future graph or entity-relation outputs; large exports are local-only and ignored
 
@@ -43,6 +43,8 @@ Current baseline counts:
 - example library entries: 323
 - figure image files: 228
 - textbook Markdown files: 36
+
+Figure assets are intentionally named after the textbook figure id, not extraction order. The canonical copy lives in `data/figures/`; `textbook_exporter` copies referenced images into `data/textbook/figures/` so Markdown files can be opened directly. If a figure filename changes, keep `figure_library.json`, `textbook/*.md`, and `textbook/figures/` in sync, or regenerate them from the exporter.
 
 All downstream systems should treat these as the canonical inputs:
 
@@ -77,4 +79,5 @@ chunk order, block order, formula references, table references, and source metad
 6. Inline LaTeX repairs should only touch formula spans, not whole paragraphs or table structure.
 7. High-confidence repairs backed by PDF rendering, Paddle raw layout, or direct source evidence may be applied to `structured/`; exploratory candidates should stay in `tmp/`.
 8. Figure image files should contain only the figure body; captions live in `figure_library.json` and are expanded by the textbook exporter.
-9. `背景资料/`, `paddle_output/`, `glmocr_output/`, and `knowledge_graph/knowledge_graph_export.json` are local-only assets and should remain ignored by Git.
+9. Figure filenames should stay aligned with textbook figure ids, e.g. `figures/5.1.png`; do not reintroduce extraction-order names such as `fig_0001.png`.
+10. `背景资料/`, `paddle_output/`, `glmocr_output/`, and `knowledge_graph/knowledge_graph_export.json` are local-only assets and should remain ignored by Git.

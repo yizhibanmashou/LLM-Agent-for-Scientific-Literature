@@ -421,7 +421,7 @@ Example 17.4 illustrates the fact that as truncation selection becomes stronger,
 
 > **Figure 17.1** · page 16 · source: `chapter17`
 >
-> ![Figure 17.1](figures/fig_0065.png)
+> ![Figure 17.1](figures/17.1.png)
 >
 > Figure 17.1 The relative strengths of selection on the mean  $ (i) $ and variance  $ (x_{[1-p]}\,\bar{i}) $ under truncation selection as a function of the fraction, p, saved. The two strengths of selection are equal around  $ p = 0.16 $ (as  $ x_{[1-0.16]} = x_{[0.84]} = 1 $). Note that for p > 0.5, there is (weak) selection to decrease the variance, as the curve for  $ x_{[1-p]}\,\bar{i} $ dips below the horizontal dashed line that indicates a value of zero.
 

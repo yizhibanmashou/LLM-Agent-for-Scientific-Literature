@@ -18,7 +18,7 @@ Figure 19.1 illustrates the result of a mixed-model analysis of selection respon
 
 > **Figure 19.1** · page 2 · source: `chapter19`
 >
-> ![Figure 19.1](figures/fig_0075.png)
+> ![Figure 19.1](figures/19.1.png)
 >
 > Figure 19.1 Results from high and low selection on 6-week weight in mice. Left: Observed (filled boxes and circles) and predicted (open boxes and circles) mean phenotypic values in the up- and down-selected lines, expressed as deviations from the control population. The predicted mean for a specific generation is given by the estimated mean breeding value plus the estimated environmental value. Right: Estimated mean breeding values for both selected populations and the control. See Examples 19.2 and 19.7 for more details on this experiment. (After Meyer and Hill 1991.)
 
@@ -408,7 +408,7 @@ The estimated common-environmental (b) and additive-genetic (a) effects are high
 
 > **Figure 19.2** · page 16 · source: `chapter19`
 >
-> ![Figure 19.2](figures/fig_0076.png)
+> ![Figure 19.2](figures/19.2.png)
 >
 > Figure 19.2 Trends for the selection experiment in Example 19.3. See the example for details.
 
@@ -950,7 +950,7 @@ Prenatal survival (as a function of the mother) was examined using the repeatabi
 
 > **Figure 19.4** · page 37 · source: `chapter19`
 >
-> ![Figure 19.4](figures/fig_0078.png)
+> ![Figure 19.4](figures/19.4.png)
 >
 > Figure 19.4 Analysis of French Large White pig prenatal survival. Left: Priors for the additive variance (see text for details). Right: Posterior distribution of mean breeding values (at generation 4) in prenatal survival (based on prior 1), which deviates from the best-fitting normal. (After Blasco et al. 1998.)
 
@@ -961,7 +961,7 @@ Among the fixed effects in $ \beta $ are terms for the parity of the mother (fir
 
 > **Figure 19.3** · page 37 · source: `chapter19`
 >
-> ![Figure 19.3](figures/fig_0077.png)
+> ![Figure 19.3](figures/19.3.png)
 >
 > Figure 19.3 Analysis of ovulation rate at puberty in French Large White pigs. Left: Assumed priors for  $ \sigma_{A}^{2} $ (see text for details). Right: The Bayesian estimate of selection response is shown by presenting the marginal posterior density for the mean breeding value in ovulation rate in the last generation of selection as a histogram (all three priors gave very similar results). This distribution is approximately normal (the solid curve). (After Blasco et al. 1998.)
 

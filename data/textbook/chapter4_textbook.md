@@ -96,7 +96,7 @@ where
 
 > **Figure 4.1** · page 4 · source: `chapter4`
 >
-> ![Figure 4.1](figures/fig_0191.png)
+> ![Figure 4.1](figures/4.1.png)
 >
 > Figure 4.1 Expected sampling standard deviations for estimates of  $ \theta $ from sequences assumed to be neutral, in drift-mutation equilibrium, and experiencing no intragenic recombination. Results are derived from Equations 4.2 (Tajima estimator based on heterozygosity, solid line), 4.4 (Watterson estimator based on segregating sites, long-dashed line), and 4.5 (maximally efficient, short-dashed line), for  $ \theta = 0.1 $, 0.01, and 0.001 in descending order. The assumed number of sites is  $ L = 10,000 $ in all cases.
 
@@ -227,7 +227,7 @@ where $ L_{\max,ij} $ is the distance between the maximally separated heterozygo
 
 > **Figure 4.2** · page 9 · source: `chapter4`
 >
-> ![Figure 4.2](figures/fig_0192.png)
+> ![Figure 4.2](figures/4.2.png)
 >
 > Figure 4.2 Approximate upper and lower bounds on the fraction of recombination events that produce nonparental gametes among two or more neutrally evolving sites (from Equations 4.8a and 4.8b).  $ \Theta = L\theta $ is the product of the population mutation rate per site ( $ \theta $) and the length of the segment (L in base pairs).
 
@@ -486,7 +486,7 @@ To apply this approach, Tenesa et al. (2007) scored $ \sim10^{6} $ SNPs to exami
 
 > **Figure 4.3** · page 18 · source: `chapter4`
 >
-> ![Figure 4.3](figures/fig_0193.png)
+> ![Figure 4.3](figures/4.3.png)
 >
 > Figure 4.3 Estimates of historical values of  $ N_e $ using linkage-disequilibrium between large numbers of pairs of markers with different genetic-map distances. The estimates were pooled into categories with different values of  $ c $ (between markers), with the bin-specific values of  $ 1/(2c) $ serving as estimates of the time in the past (in generations) for which the categories provide estimates of  $ N_e $. The latter is calculated by using the simplified version of Equation 4.14 given the average estimate of  $ r^2 $ and  $ c $ for the bin. A: Estimates of historical changes in  $ N_e $ for a Utah population of European extraction. For a given generation time slice, the points represent an estimate based on the markers from each of the 22 human autosomes. Note the rapid increase in  $ N_e $ in the recent past. (After Tenesa et al. 2007.) B: Estimates for the Swiss Eringer breed of cattle. Here, the different curves represent different assumptions used to correct estimates of  $ \rho $ for sampling effects and different estimates of the fine-scale recombination rates. Regardless of the assumptions involved, it is clear that in contrast to the results for the human population,  $ N_e $ has dramatically declined over the past 500 years. (After Flury et al. 2010.)
 
@@ -681,7 +681,7 @@ These observations suggest that the vast majority of the variance in the average
 
 > **Figure 4.4** · page 28 · source: `chapter4`
 >
-> ![Figure 4.4](figures/fig_0194.png)
+> ![Figure 4.4](figures/4.4.png)
 >
 > Figure 4.4 Average rates of recombination per physical distance for four major groupings of eukaryotes, determined from information on total physical and genetic map sizes. The two dashed lines have slopes of -1.0 in accordance with the theory discussed in the text. Letting C be the average number of crossovers, and N be the number of chromosomes, the top line assumes CN = 50, i.e., 50 chromosomes with an average length of 1.0 Morgans, 25 with average lengths of 2.0 Morgans, 100 with average lengths of 0.5 Morgans, etc. The lower line assumes CN = 3. For the plotted species, C is in the range of 0.3 to 3.1 (with one exception) and N is in the range of 3 to 44. (From Lynch et al. 2011.)
 

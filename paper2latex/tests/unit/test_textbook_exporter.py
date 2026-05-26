@@ -187,7 +187,7 @@ class TextbookExporterTests(unittest.TestCase):
         figure_root = root / "figure_library_output"
         figures_dir = figure_root / "figures"
         figures_dir.mkdir(parents=True)
-        (figures_dir / "fig_0001.png").write_bytes(b"png")
+        (figures_dir / "A5.1.png").write_bytes(b"png")
 
         write_json(
             structured_dir / "appendix5_001.json",
@@ -216,7 +216,7 @@ class TextbookExporterTests(unittest.TestCase):
                     "A5.1": {
                         "id": "A5.1",
                         "chapter": "appendix5",
-                        "asset_path": "figures/fig_0001.png",
+                        "asset_path": "figures/A5.1.png",
                         "caption": "Figure A5.1 Some basic geometric concepts of vectors.",
                         "page": 2,
                     }
@@ -235,15 +235,15 @@ class TextbookExporterTests(unittest.TestCase):
         self.assertIn("See Figure A5.1.", output)
         self.assertIn("> **Figure A5.1** · page 2 · source: `appendix5`", output)
         self.assertIn("![Figure A5.1](", output)
-        self.assertIn("figures/fig_0001.png", output)
+        self.assertIn("figures/A5.1.png", output)
         self.assertIn("> Figure A5.1 Some basic geometric concepts of vectors.", output)
-        self.assertTrue((out_dir / "figures" / "fig_0001.png").exists())
+        self.assertTrue((out_dir / "figures" / "A5.1.png").exists())
 
     def test_auto_expands_first_in_chapter_text_figure_reference(self):
         root = make_test_workspace("auto_text_figure")
         structured_dir = root / "structured"
         out_dir = root / "textbook"
-        figure_asset = root / "figures" / "fig_0001.png"
+        figure_asset = root / "figures" / "26.1.png"
         figure_asset.parent.mkdir(parents=True, exist_ok=True)
         figure_asset.write_bytes(b"png")
 
@@ -270,7 +270,7 @@ class TextbookExporterTests(unittest.TestCase):
                     "26.1": {
                         "id": "26.1",
                         "chapter": "chapter26",
-                        "asset_path": "figures/fig_0001.png",
+                        "asset_path": "figures/26.1.png",
                         "caption": "Figure 26.1 Fixation probability.",
                         "page": 3,
                     }
@@ -282,8 +282,8 @@ class TextbookExporterTests(unittest.TestCase):
 
         output = (out_dir / "chapter26_textbook.md").read_text(encoding="utf-8")
         self.assertEqual(output.count("> **Figure 26.1**"), 1)
-        self.assertIn("![Figure 26.1](figures/fig_0001.png)", output)
-        self.assertTrue((out_dir / "figures" / "fig_0001.png").exists())
+        self.assertIn("![Figure 26.1](figures/26.1.png)", output)
+        self.assertTrue((out_dir / "figures" / "26.1.png").exists())
 
     def test_renders_chapter_heading_from_intro_heading_fallback(self):
         root = make_test_workspace("chapter_heading_intro_fallback")

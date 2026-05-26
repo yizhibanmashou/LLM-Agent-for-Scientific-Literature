@@ -322,7 +322,7 @@ It is important to bear in mind that, when applied to matters of genetic variati
 
 > **Figure 3.1** · page 12 · source: `chapter3`
 >
-> ![Figure 3.1](figures/fig_0189.png)
+> ![Figure 3.1](figures/3.1.png)
 >
 > Figure 3.1 Erosion of expected heterozygosity under continuous breeding schemes involving self-fertilization, full-sib mating, and double first-cousin mating.
 
@@ -371,7 +371,7 @@ Moving on, with a constant population size of four breeding adults, the minimum 
 
 > **Figure 3.2** · page 13 · source: `chapter3`
 >
-> ![Figure 3.2](figures/fig_0190.png)
+> ![Figure 3.2](figures/3.2.png)
 >
 > Figure 3.2 Mating schemes under continuous double first-cousin mating (left) and under circular mating with four individuals (right). Genes that are identical by descent do not appear in the same individual for three and four generations, respectively, under these two schemes. Males and females are denoted by separate symbols (squares and circles), and lines connect parents (above) and offspring (below).
 

@@ -65,6 +65,31 @@ def natural_key(path: Path) -> list[object]:
     return [int(part) if part.isdigit() else part for part in re.split(r"(\d+)", path.name.lower())]
 
 
+def figure_asset_name(figure_id: str, chapter: str, used_names: set[str]) -> str:
+    base = re.sub(r'[<>:"/\\|?*\s]+', "_", figure_id.strip()).strip("._")
+    if not base:
+        base = re.sub(r'[<>:"/\\|?*\s]+', "_", chapter.strip()).strip("._") or "figure"
+    asset_name = f"{base}.png"
+    if asset_name.lower() not in used_names:
+        used_names.add(asset_name.lower())
+        return asset_name
+
+    chapter_suffix = re.sub(r'[<>:"/\\|?*\s]+', "_", chapter.strip()).strip("._")
+    fallback_base = f"{base}_{chapter_suffix}" if chapter_suffix else base
+    asset_name = f"{fallback_base}.png"
+    if asset_name.lower() not in used_names:
+        used_names.add(asset_name.lower())
+        return asset_name
+
+    counter = 2
+    while True:
+        asset_name = f"{fallback_base}_{counter}.png"
+        if asset_name.lower() not in used_names:
+            used_names.add(asset_name.lower())
+            return asset_name
+        counter += 1
+
+
 def load_json(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
 
@@ -326,7 +351,7 @@ def main() -> int:
         "duplicate_ids": [],
     }
 
-    asset_counter = 1
+    used_asset_names: set[str] = set()
     for raw_path in raw_paths:
         chapter = chapter_from_output_dir(raw_path.parents[1]).lower()
         if chapter_filter and chapter not in chapter_filter:
@@ -369,9 +394,8 @@ def main() -> int:
                             f"{chapter}:{figure_id}:page{page_number}:{body_match_summary(body_match)}"
                         )
                     raw_bbox = expand_bbox(union_bbox(body_match.bbox_rows), raw_width, raw_height, args.margin)
-                    asset_name = f"fig_{asset_counter:04d}.png"
+                    asset_name = figure_asset_name(figure_id, chapter, used_asset_names)
                     asset_path = figures_dir / asset_name
-                    asset_counter += 1
 
                     try:
                         page = pdf[page_number - 1]

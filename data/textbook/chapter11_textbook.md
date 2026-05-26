@@ -156,7 +156,7 @@ where $ \lambda_{j}=1-(j/2N_{e}) $ for $ j=1,2,3 $ (Cockerham and Weir 1983).
 
 > **Figure 11.1** · page 6 · source: `chapter11`
 >
-> ![Figure 11.1](figures/fig_0026.png)
+> ![Figure 11.1](figures/11.1.png)
 >
 > Figure 11.1 Measures of identity by descent (IBD) for single loci  $ (f, \gamma, \delta, \Delta) $ and pairs of loci  $ (f, \widetilde{\gamma}, \widetilde{\Delta}) $. The large circles denote gametes (alleles when restricted to a single locus), and the open and closed dots within them represent alleles from one (top four relationships) or two (bottom three) loci. Identity by descent is indicated by a horizontal line. For example,  $ \delta $ is the probability that four randomly chosen alleles are all IBD, while  $ \Delta $ is the probability that, in any two pairs of gametes, each pair has an IBD allele (i.e., two diploid genotypes are IBD). As discussed in the text,  $ \Delta $ includes  $ \delta $ as a special case.
 
@@ -267,7 +267,7 @@ Although it may not be immediately apparent, the coefficients in the final two (
 
 > **Figure 11.2** · page 10 · source: `chapter11`
 >
-> ![Figure 11.2](figures/fig_0027.png)
+> ![Figure 11.2](figures/11.2.png)
 >
 > Figure 11.2 Dynamics of the coefficients for the terms contributing to the additive, dominance, and additive × additive genetic variance within populations for an effective population size of 10 and freely recombining loci (c = 0.5), obtained by use of Equations 11.3 and 11.4, along with Table 11.1. The top panel gives the contributions of each term to the within-population additive variance, while the bottom panel gives the same for the within-population dominance (and  $ A \times A $) variance. The coefficient for the contribution of  $ (\ell^2 - \iota^*) $ to the additive genetic variance is barely visible on the scale in the bottom graph. These results apply approximately to any other population size,  $ N_e $, if the time scale is transformed by multiplying by  $ N_e / 10 $. To obtain the actual dynamics of the variance components, the coefficients need to be multiplied by the base-population properties. For example, the additive genetic variance in generation 50 is approximately  $ 0.08(\sigma_A^2 + \sigma_{ADI}) + 0.04\sigma_{DI}^2 + 0.01(\sigma_D^2 + \iota^*) + 0.28\sigma_{AA}^2 $, while the additive × additive genetic variance is  $ \simeq 0 $, and the dominance genetic variance is  $ \simeq 0.04(\iota^* + \sigma_D^2) $.
 
@@ -430,7 +430,7 @@ The influence of small population size on components of genetic variance is of s
 
 > **Figure 11.3** · page 16 · source: `chapter11`
 >
-> ![Figure 11.3](figures/fig_0028.png)
+> ![Figure 11.3](figures/11.3.png)
 >
 > Figure 11.3 Response of the average within-line and among-line phenotypic variance to inbreeding in experimental lines. References and system of mating: top: Horner and Weber (1956), selfing; middle: López-Fanjul and Jódar (1977), full-sib mating, control-corrected; bottom: Bateman and Mather (1951), selfing. Solid and open points denote the within- and among-population components of phenotypic variance.
 
@@ -447,7 +447,7 @@ Bryant et al. (1986b) put populations of houseflies (Musca domestica) through si
 
 > **Figure 11.4** · page 18 · source: `chapter11`
 >
-> ![Figure 11.4](figures/fig_0029.png)
+> ![Figure 11.4](figures/11.4.png)
 >
 > Figure 11.4 Additive genetic variances for eight morphometric traits averaged over four replicate lines of bottlenecked housefly ( $ Musca\ domestica $) populations. Horizontal lines (along the bottom axes) connect variances that were not significantly different at the 0.05 level. C denotes a large randomly mating control population, whereas the remaining populations were propagated through single-generation bottlenecks of 1, 4, and 16 pairs. WL denotes wing length; WW, wing width; HW, head width; SL, scutellum length; IE, inner-eye separation; SW, scutellum width; ML, metafemur length; and TS, thoracic-suture length. (From Bryant et al. 1986b.)
 
@@ -495,7 +495,7 @@ Might the creation of new additive genetic variance nevertheless compensate for 
 
 > **Figure 11.5** · page 21 · source: `chapter11`
 >
-> ![Figure 11.5](figures/fig_0030.png)
+> ![Figure 11.5](figures/11.5.png)
 >
 > Figure 11.5 The 15 possible states of identity by descent for a locus in individuals x and y; condensed into nine classes. Alleles that are identical by descent are connected by lines, with horizontal lines indicating an inbred individual ( $ \Delta_1 $ through  $ \Delta_6 $). Note that  $ \Delta_4 $,  $ \Delta_6 $, and  $ \Delta_9 $ involve unrelated individuals (there are no lines between any gene of x to any gene of y).
 
@@ -614,7 +614,7 @@ Although Equation 11.15 applies to an entire collection of selfed lines, within 
 
 > **Figure 11.6** · page 25 · source: `chapter11`
 >
-> ![Figure 11.6](figures/fig_0031.png)
+> ![Figure 11.6](figures/11.6.png)
 >
 > Figure 11.6 Observed covariances between relatives in a selfing series starting from a highly heterozygous  $ F_2 $ synthetic population (i.e., that formed by all pairwise crosses among a set of lines) of soybeans (t = 0). Here i and j denote the generations of the individuals under consideration, and t is the generation of their last common ancestor. For example, the covariance between individuals in generations 2 and 3 with a last common ancestor at generation 0 is indicated by i = 2, j = 3, t = 0. The lines represent the expectations (for a given value of t) under the assumption of an additive model,  $ (1 + f_t)\sigma_A^2 $ with  $ f_t = 1 - (1/2)^t $ and  $ \sigma_A^2 = 10.9 $. (Data are from Horner and Weber 1956.)
 
@@ -755,7 +755,7 @@ Almost all estimates of $ h_m^2 $ are in the range of 0.01 to 0.0001 with a medi
 
 > **Figure 11.7** · page 30 · source: `chapter11`
 >
-> ![Figure 11.7](figures/fig_0032.png)
+> ![Figure 11.7](figures/11.7.png)
 >
 > Figure 11.7 (Top) Levels of heritability expected for neutral characters with an additive genetic basis under drift-mutation equilibrium, assuming the Lynch-Hill (1986) incremental (i.e., Brownian-motion) model. The three levels of mutational heritability,  $ \sigma_m^2 / \sigma_E^2 $, span the range of observed values. (Bottom) Comparison of the predictions of the Lynch-Hill model (solid line) with that of the Cockerham-Tachida model for three different gametic mutation rates for the trait (dotted and dashed lines), with  $ h_m^2 = 0.001 $ in both cases.
 

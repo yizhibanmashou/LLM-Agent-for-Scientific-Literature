@@ -34,7 +34,7 @@ A critical question in the maintenance of genetic variation is just how much of 
 
 > **Figure 28.1** · page 3 · source: `chapter28`
 >
-> ![Figure 28.1](figures/fig_0138.png)
+> ![Figure 28.1](figures/28.1.png)
 >
 > Figure 28.1 Flow chart of the various classes of models for the maintenance of quantitative-genetic variance. Roughly speaking, there are direct-effect models that assume that selection is acting on the phenotype of the focal trait (whose variation we are trying to explain) and models that assume that this trait is neutral. Pleiotropic models assume that loci underlying a trait have fitness effects independent of their impact on the focal trait (which is often assumed to be strictly neutral). As detailed below, models also vary in the importance assigned to mutation in countering the removal of genetic variation by selection and drift.
 
@@ -106,7 +106,7 @@ where
 
 > **Figure 28.2** · page 6 · source: `chapter28`
 >
-> ![Figure 28.2](figures/fig_0139.png)
+> ![Figure 28.2](figures/28.2.png)
 >
 > Figure 28.2 The expected heritability,  $ h^2 $, for large  $ N_e $, at mutation-drift equilibrium under the mutational regression model of Zeng and Cockerham (Equation 28.2a). This model includes the incremental ( $ \tau = 1 $) and HOC ( $ \tau = 0 $) models as special cases. Curves denote different values of  $ h_m^2/(2\mu) = n\sigma_a^2/\sigma_E^2 $, the ratio of the mutational heritability to the per-locus mutation rate.
 
@@ -515,7 +515,7 @@ When effects vary over loci, the above expression holds, with the effective numb
 
 > **Figure 28.3** · page 20 · source: `chapter28`
 >
-> ![Figure 28.3](figures/fig_0140.png)
+> ![Figure 28.3](figures/28.3.png)
 >
 > Figure 28.3 The equilibrium heritabilities expected under the Lande model (Equation 28.14c).
 
@@ -944,7 +944,7 @@ This reduces (to leading order) to Equation 11.25 as $ V_s \to \infty $ (i.e., a
 
 > **Figure 28.4** · page 35 · source: `chapter28`
 >
-> ![Figure 28.4](figures/fig_0141.png)
+> ![Figure 28.4](figures/28.4.png)
 >
 > Figure 28.4 A: Comparison of Waxman's assumed distribution of the mutational effects,  $ \alpha $ (Equation 28.29a), and a Gaussian distribution. B: Use of the Waxman distribution for mutational effects leads to an exact solution of Equation 28.21c, showing the impact of varying mutation rates on the equilibrium distribution,  $ p(x) $, of allelic effects, x. The solution distribution is plotted as  $ p(x)/p(0) $, namely, the value of  $ p(x) $ scaled by its value at 0. In the front slice, the mutation rate is low and we recover the HCA result. As the mutation rate increases (moving toward the rear slices), the distribution becomes much more spread out, recovering the Gaussian approximation for the distribution of allelic effects. (After Waxman 2003.)
 
@@ -1422,7 +1422,7 @@ The variance to allele-frequency relationship for purely neutral alleles is in s
 
 > **Figure 28.5** · page 51 · source: `chapter28`
 >
-> ![Figure 28.5](figures/fig_0142.png)
+> ![Figure 28.5](figures/28.5.png)
 >
 > Figure 28.5 Results of the Eyre-Walker (2010) model for the maintenance of genetic variation for a neutral trait by deleterious mutations having pleiotropic effects. Here,  $ \bar{s} $ is the average strength of selection against a new allele, and  $ \tau $ is a measure connecting the trait effect,  $ \alpha $, to  $ s $, with  $ \tau = 0 $ indicating neutrality (see Example 28.13 for details). The figure plots the probability density of the amount of equilibrium additive-genetic variance accounted for by alleles at a specific allele frequency,  $ x $, for two different values of  $ 4N_e\bar{s} $. Hence, the amount of variation attributable to alleles in a certain frequency range is simply the area under the curve for that range.
 
@@ -1431,7 +1431,7 @@ The variance to allele-frequency relationship for purely neutral alleles is in s
 
 > **Figure 28.6** · page 51 · source: `chapter28`
 >
-> ![Figure 28.6](figures/fig_0143.png)
+> ![Figure 28.6](figures/28.6.png)
 >
 > Figure 28.6 Expected number of polymorphisms, and the fraction of the trait variance explained, as a function of the minor allele frequency (MAF) under an equilibrium neutral model (i.e., the Watterson distribution). See Example 28.13 for details.
 
@@ -1645,7 +1645,7 @@ Besides the standard concerns of measurement error and power (especially with an
 
 > **Figure 28.7** · page 57 · source: `chapter28`
 >
-> ![Figure 28.7](figures/fig_0144.png)
+> ![Figure 28.7](figures/28.7.png)
 >
 > Figure 28.7 If the true fitness function has an asymptotic optimum, approximating it with a quadratic can be very misleading.
 
@@ -1749,7 +1749,7 @@ One fairly robust prediction is that alleles in mutation-selection balance (MSB)
 
 > **Figure 28.8** · page 61 · source: `chapter28`
 >
-> ![Figure 28.8](figures/fig_0145.png)
+> ![Figure 28.8](figures/28.8.png)
 >
 > Figure 28.8 Plot of estimated allelic-effect size for known sites influencing human height versus allele frequency. The gap in the middle of the figure reflects a lack of power for either GWAS or linkage studies to detect genes in these regions. (After Kemper et al. 2012.)
 
