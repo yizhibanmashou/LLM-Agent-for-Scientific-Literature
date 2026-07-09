@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>量化遗传学 Study Reader</title>
+  <link rel="icon" href="data:,">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Literata:opsz,wght@7..72,400;7..72,500;7..72,650&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="reader-header">
+      <div class="brand-block">
+        <p class="eyebrow">Study Reader</p>
+        <h1>量化遗传学 Study Reader</h1>
+        <p class="header-subtitle">章节阅读与前置概念工作台</p>
+        <p id="bookContext" class="book-context"></p>
+      </div>
+      <div class="header-controls" aria-label="阅读控制">
+        <label class="book-picker control-capsule">
+          <span>教材</span>
+          <select id="bookSelect" aria-label="选择教材"></select>
+        </label>
+        <label class="chapter-picker control-capsule">
+          <span>学习章节</span>
+          <select id="chapterSelect" aria-label="选择学习章节"></select>
+        </label>
+        <button type="button" id="returnButton" class="return-button" hidden>返回原文位置</button>
+      </div>
+    </header>
+
+    <main class="reader-layout">
+      <section class="reading-pane" aria-label="章节阅读器">
+        <div class="reader-toolbar">
+          <div>
+            <p class="pane-label">Reading</p>
+            <h2 id="chapterTitle">Loading...</h2>
+          </div>
+          <div id="chapterMeta" class="chapter-meta"></div>
+        </div>
+        <div id="readerStatus" class="status-line">Loading study data...</div>
+        <nav id="sectionRail" class="section-rail" aria-label="当前章节小节导览"></nav>
+        <div id="railTooltip" class="rail-tooltip" hidden></div>
+        <article id="markdownRoot" class="markdown-body reader-scroll"></article>
+      </section>
+
+      <aside class="concept-pane" aria-label="当前学习章节依赖的前置概念">
+        <div class="concept-header">
+          <div>
+            <p class="pane-label">Prerequisites</p>
+            <h2>前置概念</h2>
+            <p id="conceptScope" class="scope-line"></p>
+          </div>
+          <span id="conceptCount" class="count-pill">0</span>
+        </div>
+        <div id="conceptList" class="concept-list"></div>
+      </aside>
+    </main>
+  </div>
+</body>
+</html>

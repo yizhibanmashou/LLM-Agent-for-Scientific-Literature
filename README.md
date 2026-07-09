@@ -1,6 +1,6 @@
 # LLM-Agent 科学文献系统知识库处理
 
-把教材/论文 PDF 加工成可检索、可审核、可追溯的结构化知识库。核心产物是 `data/structured/` 下的章节 chunk、公式库、表格库，以及从结构化结果导出的 `data/textbook/` 可读教材 Markdown；配套的 review app 用于质量审核。
+把教材 PDF 加工成可追溯的结构化知识库，并导出可阅读的教材 Markdown。当前面向学习与备课的正式前端是 `study_reader/`：左侧阅读章节，右侧展示由 LLM 审查后的前置概念与可跳转来源。
 
 ## 项目主线
 
@@ -9,153 +9,67 @@ data/背景资料/*.pdf
   -> paper2latex / Paddle
   -> data/paddle_output/*_full/main.tex
   -> knowledge_engineering.pipeline.process
-  -> data/structured/*.json              # 基础结构化产物
-  -> structured_fusion                   # 通用后处理（去噪、补表、引用归一）
-  -> figure relink                       # 从原始 PDF 回接图片资产与 caption
-  -> textbook_exporter                   # 可读教材 Markdown 导出
-  -> review_app                          # 人工质量审核
-  -> 下游 graph / retrieval / memory / agent
+  -> data/structured/*.json
+  -> textbook_exporter
+  -> data/textbook/*.md + data/textbook/figures/*.png
+  -> study_reader
 ```
 
-- **主来源**：`paper2latex`/Paddle 产出的 LaTeX。
-- **GLM OCR**：辅助参考，不作为结构主来源。仅在 `--fusion-enable-glm-prose-repair` 开启时用于高置信度 prose 修复，默认关闭。
-- **structured_fusion**：通用后处理层，不依赖章节特例，对后续扫描书同样可复用。
-- **example_pipeline**：可选的示例库注入与 `[[SEE_EXAMPLE:*]]` 折叠步骤，只有在需要生成 `example_library.json` 时才开启。
+## 目录职责
 
-## 目录架构
+| 路径 | 职责 |
+| --- | --- |
+| `data/背景资料/` | 原始 PDF，本地保留，不进 Git |
+| `data/paddle_output/` | OCR / LaTeX 中间输出，本地保留 |
+| `data/structured/` | 正式结构化 JSON 产物 |
+| `data/textbook/` | 从 structured 导出的可读教材 Markdown 与 figures |
+| `knowledge_engineering/` | 清洗、切分、修复和融合流程 |
+| `textbook_exporter/` | structured -> textbook Markdown |
+| `study_reader/` | 双教材章节阅读与前置概念工作台 |
+| `tmp/` | 可清理的实验、缓存和审计中间产物 |
+
+## Study Reader
+
+Study Reader 支持两本教材：
+
+- `Evolution and Selection of Quantitative Traits`
+- `Genetics and Analysis of Quantitative Traits`
+
+本地构建数据：
+
+```powershell
+python study_reader/build_study_reader.py --books Evolution,Genetics --chapters Evolution_chapter28,Genetics_chapter12
+```
+
+为两本书全部章节刷新 LLM 前置概念审查：
+
+```powershell
+python study_reader/build_study_reader.py --books Evolution,Genetics --all-llm
+```
+
+只构建阅读索引、不生成前置概念：
+
+```powershell
+python study_reader/build_study_reader.py --books Evolution,Genetics --skip-llm
+```
+
+启动本地服务：
+
+```powershell
+python study_reader/serve_study_reader.py --port 8000
+```
+
+打开：
 
 ```text
-.
-├── data/
-│   ├── 背景资料/              # 原始 PDF 和参考资料（本地保留，不进 Git）
-│   ├── paddle_output/          # Paddle / paper2latex 原始输出（本地保留，不进 Git）
-│   ├── glmocr_output/          # GLM OCR 辅助输出（本地保留，不进 Git）
-│   ├── structured/            # 正式结构化知识产物
-│   ├── textbook/              # 从 structured 导出的可读教材 Markdown
-│   ├── figures/               # textbook 引用的裁剪图片资产
-│   ├── figure_library.json     # figure 元数据、caption、图片映射
-│   └── knowledge_graph/        # 后续图谱数据位置（导出大文件本地保留）
-├── textbook_exporter/          # structured -> textbook Markdown 独立导出器
-├── knowledge_engineering/      # 清洗、切分、修复、落库的核心流程
-├── review_app/                 # 本地结构化结果审核工作台
-├── paper2latex/                # PDF -> LaTeX 的上游转换模块及其测试
-├── glmocr/                     # GLM OCR 调用与批处理脚本
-├── tmp/                        # 中间产物、缓存、审计报告、patch，不是源码入口
-├── docs/                       # 预留的长文档目录
-└── scripts/                    # 预留脚本目录
+http://127.0.0.1:8000/study_reader/
 ```
 
-### 目录职责
+旧 `/review_app/` 和 `/knowledge_engineering/review_app/` 会重定向到 `/study_reader/`。
 
-| 目录 | 职责 | 是否应手工改 |
-| --- | --- | --- |
-| `data/背景资料/` | 原始 PDF/背景资料；本地保留，不进入 Git | 通常不改 |
-| `data/paddle_output/` | Paddle / paper2latex 原始输出；结构化流程的上游证据 | 重新跑 OCR/转换时更新 |
-| `data/glmocr_output/` | GLM OCR 辅助输出；只作修复参考 | 重新跑 OCR 时更新 |
-| `data/structured/` | 下游系统读取的正式 JSON 产物 | 只通过脚本/修复流程更新 |
-| `data/textbook/` | 从 structured 导出的可读教材 Markdown | 通过 `textbook_exporter` 重建 |
-| `data/figures/` / `data/figure_library.json` | 从原始 PDF 裁出的图片资产与 caption/位置映射 | 通过 figure relink 流程更新 |
-| `data/knowledge_graph/` | 图谱导出本地缓存位置；大 JSON 本地保留，不进入 Git | 重新导出时更新 |
-| `knowledge_engineering/` | 主处理流程、结构化修复、fusion 后处理 | 是核心代码 |
-| `textbook_exporter/` | 将结构化 chunk/公式/表格/example 展开为教材 Markdown | 是核心代码 |
-| `review_app/` | 审核 chunks/formulas/tables 的本地前端和数据生成器 | 可以改 |
-| `paper2latex/` | 上游 PDF 到 LaTeX 工具和相关测试 | 谨慎改 |
-| `glmocr/` | GLM OCR 辅助通道 | 谨慎改 |
-| `tmp/` | 可复现/可清理的中间产物和缓存 | 不当作源码维护 |
+## 数据维护
 
-### 核心模块
-
-| 文件 | 职责 |
-| --- | --- |
-| `knowledge_engineering/pipeline/process.py` | 主入口：解析 LaTeX、清洗噪声、切分章节、构建公式/表格库，并可选接入 fusion / example pipeline |
-| `knowledge_engineering/pipeline/structured_fusion.py` | 通用后处理：去噪、补表、引用归一、OCR 表格绑定审计、公式 LaTeX 规范化 |
-| `knowledge_engineering/pipeline/example_pipeline.py` | 可选的 Example library 注入、占位符折叠与 `example_library.json` 生成 |
-| `knowledge_engineering/processors/ocr_evidence.py` | Paddle raw layout / GLM OCR 跨通道证据索引，用于表格绑定与修复候选 |
-| `knowledge_engineering/processors/structured_repair.py` | 底层工具：GLM 审计、候选修复构建、排序去重 |
-| `textbook_exporter/exporter.py` | 从 `data/structured` 导出 `data/textbook/chapterX_textbook.md` |
-| `review_app/build_review_app.py` | 审核数据生成器，支持 `--chapters` 按章节过滤 |
-
-## 关键数据产物
-
-`data/structured/` 是当前最重要的结果目录：
-
-- `chapter*_*.json` / `appendix*_*.json`：按章节切分后的知识单元（988 个）。
-- `formula_library.json`：全书公式库（2248 条）。
-- `table_library.json`：全书表格库（164 条）。
-- `example_library.json`：全书示例库（323 条），只有在 example pipeline 开启时才会生成。
-- `[[FIGURE:*]]` / `[[SEE_FIGURE:*]]`：图片本体位置与正文交叉引用，占位符由 figure relink 流程维护。
-
-`data/textbook/` 是面向阅读和人工核查的 Markdown 产物：
-
-- `chapterX_textbook.md`：按 chunk 顺序串接正文，并展开公式、表格、example、figure 占位符。
-- `[[TABLE:*]]` 展开表格本体，`[[SEE_TABLE:*]]` 保持短引用文本。
-- `[[FIGURE:*]]` 展开为图片、页码、caption，`[[SEE_FIGURE:*]]` 保持短引用文本。
-- `textbook_exporter` 会把 `data/figures/` 中被引用的图片复制到 `data/textbook/figures/`，Markdown 使用相对链接 `figures/<教材图号>.png`，因此 `data/textbook/` 可以直接独立打开核查。
-- inline table 使用章节内优先匹配，避免跨章节 `inline_1` / `inline_2` 混淆。
-
-`data/figures/` 与 `data/figure_library.json` 是图片回接后的正式资产：
-
-- `data/figures/*.png`：从原始 PDF 裁剪出的图片本体（228 张），caption 不截进图片。
-- 图片文件名使用教材图号，如 `5.1.png` / `A2.1.png` / `30.18.png`，不再使用 `fig_0001.png` 这类流水号。
-- `data/figure_library.json`：图片 id、caption、来源 PDF 页面、bbox、资产路径和绑定置信度；其中 `asset_path` 必须指向 `figures/<教材图号>.png`。
-- 不要只手工重命名图片文件。改名时必须同步 `data/figure_library.json`、`data/textbook/*.md` 和 `data/textbook/figures/`，或者重新跑 figure relink / textbook export 流程。
-
-当前基线状态：structured / textbook 占位符与引用审查为 0 个已知阻断问题；全书导出 36 个 `chapter*_textbook.md` / `appendix*_textbook.md` 文件。
-
-结构化产物要保持这些约束：
-
-- chunk 数量、block 顺序和章节编号可追溯。
-- `[[SEE_FORMULA:*]]` / `[[SEE_TABLE:*]]` 等占位符不能被随意删除。
-- 表格行列结构不能被修复脚本改坏。
-- inline LaTeX 修复只替换 `$...$` 内的公式片段，不替换 `$...$` 外正文。
-
-## 常用流程
-
-### 1. 生成 structured（含 fusion 后处理）
-
-从 `data/paddle_output/*_full/main.tex` 生成结构化 JSON 并自动跑 fusion：
-
-```powershell
-python -m knowledge_engineering.pipeline.process `
-  -i data\paddle_output `
-  -o data\structured `
-  --artifacts-dir tmp\knowledge_engineering `
-  --skip-llm-cleaning `
-  --llm-phase 0 `
-  --structured-fusion `
-  --glmocr-dir data\glmocr_output `
-  --reference-structured-dir tmp\structured_quality_probe\old_structured
-```
-
-单章节调试：
-
-```powershell
-python -m knowledge_engineering.pipeline.process `
-  -i data\paddle_output\chapter6_full\main.tex `
-  -o data\structured `
-  --chapter-name chapter6 `
-  --artifacts-dir tmp\knowledge_engineering
-```
-
-如果还需要生成 `example_library.json`，再显式加上 `--example-pipeline`。
-
-### 2. 单独跑 fusion（对比/调试用）
-
-不走主流程，直接对已有 structured 目录做 fusion 后处理：
-
-```powershell
-python -m knowledge_engineering.pipeline.structured_fusion `
-  --structured-dir data/structured `
-  --out tmp/fusion_test/structured `
-  --glmocr-dir data/glmocr_output `
-  --paddle-output-dir data/paddle_output `
-  --reference-structured-dir tmp/structured_quality_probe/old_structured `
-  --artifacts-dir tmp/fusion_test/artifacts
-```
-
-### 3. 导出 textbook Markdown
-
-从当前 `data/structured` 生成正式可读教材 Markdown：
+从 structured 重新导出 Markdown：
 
 ```powershell
 python -m textbook_exporter --structured-dir data/structured --out-dir data/textbook
@@ -164,78 +78,11 @@ python -m textbook_exporter --structured-dir data/structured --out-dir data/text
 按章节导出：
 
 ```powershell
-python -m textbook_exporter --structured-dir data/structured --out-dir data/textbook --chapters chapter25
+python -m textbook_exporter --structured-dir data/structured --out-dir data/textbook --chapters Evolution_chapter25
 ```
 
-### 4. 刷新 review app 数据
+维护规则：
 
-全章节审核：
-
-```powershell
-python review_app/build_review_app.py --structured-dir data/structured
-python review_app/serve_review_app.py --port 8000
-```
-
-按章节审核：
-
-```powershell
-python review_app/build_review_app.py --structured-dir data/structured --chapters chapter5,chapter13
-python review_app/serve_review_app.py --port 8000
-```
-
-打开：
-
-```text
-http://127.0.0.1:8000/review_app/
-```
-
-## LLM 全流程耗时估算
-
-全书当前规模：
-
-- PDF 输入：37 个 PDF，约 1318 页。
-- structured baseline：988 个 unit。
-- textbook 输出：36 个 Markdown 文件。
-- figure assets：228 张裁剪图片。
-
-在 DeepSeek `deepseek-v4-flash`、`KE_LLM_REVIEW_WORKERS=16`、缓存未命中的条件下，开启 LLM phase 3、structured fusion、GLM prose repair、OCR table repair 和 example pipeline 后，全书 structured 处理预计约 65 分钟，token 用量预计约 8.07M。`textbook_exporter` 相比 LLM review 很快，通常可以视为秒级到分钟内的尾部步骤。
-
-并发 16 不是理论极限，只是当前实测中表现稳定的并发点。DeepSeek 实际不限并发，可以继续试 24、32 或更高；是否继续接近线性提速取决于远程限流、网络稳定性、失败重试和本地写入开销。
-
-## tmp 边界
-
-`tmp/` 只放可复现实验、审计报告、缓存和流程 artifacts，不放必须保留的上游 OCR 输入。
-
-当前需要保留的实验目录：
-
-- `tmp/figure_relink_probe/`：图片回接实验审计、patch preview、textbook preview 和 QA 记录。正式图片资产已进入 `data/figures/` 与 `data/figure_library.json`，但这个目录仍可用于追溯本轮构建过程。
-
-可重跑的临时目录示例：
-
-- `tmp/knowledge_engineering/`
-- `tmp/fusion_test/`
-- `tmp/structured_quality_probe/`
-
-不要把 `tmp/` 当作统一源码目录；真正稳定的代码入口在 `knowledge_engineering/`、`review_app/`、`glmocr/`、`paper2latex/`。
-
-这些目录在 `data/` 下本地保留并被 Git 忽略，上传前不要误删：
-
-- `data/背景资料/`
-- `data/paddle_output/`
-- `data/glmocr_output/`
-- `data/knowledge_graph/knowledge_graph_export.json`
-
-## 环境配置
-
-API 密钥和服务地址放在根目录 `.env`，不要提交真实密钥。可以从 `.env.example` 复制：
-
-```powershell
-Copy-Item .env.example .env
-```
-
-常用变量：
-
-- `ZHIPU_API_KEY`：GLM OCR 调用凭证。
-- `GLMOCR_INPUT_DIR` / `GLMOCR_OUTPUT_DIR`：覆盖 GLM OCR 输入输出目录。
-- `PAPER2LATEX_PADDLE_API_URL`、`PAPER2LATEX_PADDLE_API_TOKEN`、`PAPER2LATEX_PADDLE_PIPELINE`：Paddle 服务配置。
-- `KE_LLM_*`：结构化流程中可选的 LLM 审核配置。
+- `data/textbook/` 应从 `data/structured/` 重建，不手工改大段正文。
+- figure 文件名必须和 `data/figure_library.json`、Markdown 引用保持同步。
+- `.codegraph/`、`.understand-anything/`、`tmp/`、`data/背景资料/`、`data/paddle_output/` 都是本地工作区内容，不进入 Git。
