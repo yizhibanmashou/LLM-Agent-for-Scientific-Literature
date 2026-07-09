@@ -162,6 +162,7 @@ async function openChapter(chapterId, anchor = "", options = {}) {
   const markdown = await fetchText(chapter.markdown_path);
   const root = document.getElementById("markdownRoot");
   root.innerHTML = renderMarkdown(markdown);
+  appendGeneratedAssets(root);
   renderSectionRail();
   renderMath(root);
   setStatus(sourceModeStatus());
@@ -462,7 +463,7 @@ function prerequisiteTitle(item) {
 function sourceButtonLabel(link) {
   const type = String(link.ref_type || "").toLowerCase();
   if (type === "chapter") return `${link.label || chapterLabel(link.chapter_id)} overview`;
-  if (type === "equation" || type === "formula") return `Equation ${link.ref_id || ""}`.trim();
+  if (type === "equation" || type === "formula") return `Formula ${link.ref_id || ""}`.trim();
   if (type === "figure") return `Figure ${link.ref_id || ""}`.trim();
   if (type === "table") return `Table ${link.ref_id || ""}`.trim();
   if (type === "example") return `Example ${link.ref_id || ""}`.trim();
@@ -562,9 +563,117 @@ function renderMarkdown(markdown) {
       if (!/^\*\*\[[^\]]+\]\*\*$/.test(currentTrimmed)) paragraph.push(currentTrimmed);
       index += 1;
     }
-    if (paragraph.length) html.push(`<p>${renderInline(paragraph.join(" "), { sectionAnchor: currentSectionAnchor })}</p>`);
+    if (paragraph.length) html.push(renderParagraph(paragraph.join(" "), { sectionAnchor: currentSectionAnchor }));
   }
 
+  return html.join("\n");
+}
+
+function appendGeneratedAssets(root) {
+  const data = chapterData(STATE.currentChapterId);
+  const generatedAssets = (data.assets || []).filter((asset) => (
+    ["formula", "table", "example"].includes(normalizeAssetKind(asset.kind)) &&
+    ["paddle", "placeholder", "formula-library", "table-library", "example-library"].includes(String(asset.origin || ""))
+  ));
+  generatedAssets.forEach((asset) => {
+    const anchor = asset.anchor || assetAnchor(asset.kind, asset.id);
+    if (!anchor || root.querySelector(`#${cssEscape(anchor)}`)) return;
+    const wrapper = document.createElement("div");
+    wrapper.className = "generated-asset-slot";
+    wrapper.innerHTML = renderGeneratedAsset(asset);
+    if (!wrapper.innerHTML.trim()) return;
+    insertAtSectionEnd(root, wrapper, asset.section_id || "");
+  });
+}
+
+function renderGeneratedAsset(asset) {
+  const kind = normalizeAssetKind(asset.kind);
+  if (kind === "formula") return renderFormulaBlock(asset.id, asset);
+  if (kind === "table") {
+    return renderTable({
+      id: asset.anchor || assetAnchor("table", asset.id),
+      label: asset.label || `Table ${asset.id}`,
+      caption: asset.caption || "",
+      rows: Array.isArray(asset.rows) ? asset.rows : [],
+      htmlTable: asset.html || asset.htmlTable || "",
+    });
+  }
+  if (kind === "example") {
+    const content = String(asset.content_markdown || asset.excerpt || "").trim();
+    const body = content ? renderGeneratedExampleBody(content) : "";
+    return `
+      <section class="asset-block example-block" id="${escapeHtml(asset.anchor || assetAnchor("example", asset.id))}">
+        <h3>${escapeHtml(asset.label || `Example ${asset.id}`)}</h3>
+        ${body}
+      </section>
+    `;
+  }
+  return "";
+}
+
+function renderGeneratedExampleBody(content) {
+  return String(content || "")
+    .split(/\n{2,}/)
+    .map((chunk) => chunk.trim())
+    .filter(Boolean)
+    .map((chunk) => `<p>${renderInline(chunk.replace(/^Example\s+\S+\.\s*/i, ""))}</p>`)
+    .join("");
+}
+
+function insertAtSectionEnd(root, element, sectionId) {
+  const data = chapterData(STATE.currentChapterId);
+  const section = (data.sections || []).find((item) => item.id === sectionId);
+  if (!section?.anchor) {
+    root.appendChild(element);
+    return;
+  }
+  const heading = root.querySelector(`[data-section-anchor="${cssEscape(section.anchor)}"]`);
+  if (!heading) {
+    root.appendChild(element);
+    return;
+  }
+  let cursor = heading.nextElementSibling;
+  while (cursor && !cursor.matches("[data-section-anchor]")) {
+    cursor = cursor.nextElementSibling;
+  }
+  root.insertBefore(element, cursor || null);
+}
+
+function renderParagraph(text, context = {}) {
+  const value = String(text || "");
+  const pattern = /(?:(LW)\s+)?\[\[SEE_FORMULA:([^\]]+)\]\]|\$\$([\s\S]+?)\$\$/gi;
+  const html = [];
+  let lastIndex = 0;
+  let match;
+
+  const pushText = (chunk) => {
+    const trimmed = String(chunk || "").trim();
+    if (trimmed) html.push(`<p>${renderInline(trimmed, context)}</p>`);
+  };
+
+  while ((match = pattern.exec(value)) !== null) {
+    const [raw, lw, refId, displayLatex] = match;
+    pushText(value.slice(lastIndex, match.index));
+    if (displayLatex) {
+      const asset = findFormulaAssetByLatex(displayLatex);
+      if (asset) {
+        html.push(renderFormulaBlock(asset.id, asset));
+      } else {
+        html.push(`<p>${renderInline(raw, context)}</p>`);
+      }
+    } else {
+      const targetChapterId = chapterIdFromRef(refId, lw ? "Genetics" : currentBookId());
+      const asset = targetChapterId === STATE.currentChapterId ? findAsset("formula", refId, STATE.currentChapterId) : null;
+      if (asset?.origin === "placeholder" || asset?.origin === "paddle") {
+        html.push(renderFormulaBlock(refId, asset));
+      } else {
+        html.push(`<p>${renderInline(raw, context)}</p>`);
+      }
+    }
+    lastIndex = match.index + raw.length;
+  }
+
+  pushText(value.slice(lastIndex));
   return html.join("\n");
 }
 
@@ -616,23 +725,17 @@ function dequote(line) {
 
 function renderQuoteBlock(lines, context = {}) {
   const text = lines.join("\n");
-  const formula = text.match(/\*\*Formula\s+\(([^)]+)\)\*\*/i);
-  const figure = text.match(/\*\*Figure\s+(A?\d+\.\d+[a-z]?)\*\*/i);
-  const table = text.match(/\*\*Table\s+(A?\d+\.\d+[a-z]?)\*\*/i);
-  const example = text.match(/\*\*Example\s+(A?\d+\.\d+[a-z]?)\*\*/i);
+  const header = firstAssetHeader(lines);
+  const formula = header.match(/\*\*Formula\s+\(([^)]+)\)\*\*/i);
+  const figure = header.match(/\*\*Figure\s+(A?\d+\.\d+[a-z]?)\*\*/i);
+  const table = header.match(/\*\*Table\s+(A?\d+\.\d+[a-z]?)\*\*/i);
+  const example = header.match(/\*\*Example\s+(A?\d+\.\d+[a-z]?)\*\*/i);
 
   if (formula) {
     const refId = formula[1];
     const asset = findAsset("formula", refId, STATE.currentChapterId);
     const latex = asset?.latex_render || asset?.latex || extractDisplayMath(lines);
-    return `
-      <figure class="asset-block formula-block" id="${escapeHtml(assetAnchor("formula", refId))}">
-        <div class="formula-row">
-          <div class="math-block" data-tex="${escapeAttribute(latex)}"></div>
-          <span class="formula-number">(${escapeHtml(refId)})</span>
-        </div>
-      </figure>
-    `;
+    return renderFormulaBlock(refId, { latex_render: latex, latex });
   }
 
   if (figure) {
@@ -657,20 +760,136 @@ function renderQuoteBlock(lines, context = {}) {
 
   if (example) {
     const refId = example[1];
-    const body = lines
-      .filter((item) => !/^\*\*Example\s+/i.test(item))
-      .join(" ")
-      .replace(/^Example\s+\S+\.\s*/i, "");
     return `
       <section class="asset-block example-block" id="${escapeHtml(assetAnchor("example", refId))}">
         <h3>Example ${escapeHtml(refId)}</h3>
-        <p>${renderInline(body, context)}</p>
+        ${renderExampleContent(lines, context)}
       </section>
     `;
   }
 
   const paragraphs = lines.filter(Boolean).map((item) => `<p>${renderInline(item, context)}</p>`).join("");
   return `<blockquote class="reader-quote">${paragraphs}</blockquote>`;
+}
+
+function firstAssetHeader(lines) {
+  return (lines || []).map((line) => String(line || "").trim()).find(Boolean) || "";
+}
+
+function renderFormulaBlock(refId, asset = {}) {
+  const latex = asset.latex_render || asset.latex || "";
+  return `
+    <figure class="asset-block formula-block" id="${escapeHtml(assetAnchor("formula", refId))}">
+      <div class="formula-label">Formula ${escapeHtml(refId)}</div>
+      <div class="formula-row">
+        <div class="math-block" data-tex="${escapeAttribute(latex)}"></div>
+        <span class="formula-number">(${escapeHtml(refId)})</span>
+      </div>
+    </figure>
+  `;
+}
+
+function findFormulaAssetByLatex(latex) {
+  const key = latexKey(latex);
+  if (!key) return null;
+  return (chapterData(STATE.currentChapterId).assets || []).find((asset) => (
+    asset.kind === "formula" &&
+    (asset.origin === "paddle" || asset.origin === "placeholder") &&
+    (latexKey(asset.latex) === key || latexKey(asset.latex_render) === key)
+  )) || null;
+}
+
+function latexKey(latex) {
+  return String(latex || "")
+    .trim()
+    .replace(/^\$\$|\$\$$/g, "")
+    .replace(/\s+/g, "");
+}
+
+function renderExampleContent(lines, context = {}) {
+  const bodyLines = (lines || []).filter((item) => !/^\*\*Example\s+/i.test(String(item || "").trim()));
+  const html = [];
+  let paragraph = [];
+  let index = 0;
+
+  const flushParagraph = () => {
+    const text = paragraph.join(" ").trim().replace(/^Example\s+\S+\.\s*/i, "");
+    if (text) html.push(`<p>${renderInline(text, context)}</p>`);
+    paragraph = [];
+  };
+
+  while (index < bodyLines.length) {
+    const line = String(bodyLines[index] || "").trim();
+    if (!line) {
+      flushParagraph();
+      index += 1;
+      continue;
+    }
+    if (isNestedAssetHeader(line)) {
+      flushParagraph();
+      const collected = collectNestedAssetLines(bodyLines, index);
+      const nested = collected.lines;
+      index = collected.nextIndex;
+      html.push(renderQuoteBlock(nested, context));
+      continue;
+    }
+    paragraph.push(line);
+    index += 1;
+  }
+  flushParagraph();
+  return html.join("\n");
+}
+
+function isNestedAssetHeader(line) {
+  return /\*\*(?:Formula\s+\([^)]+\)|Figure\s+A?\d+\.\d+[a-z]?|Table\s+A?\d+\.\d+[a-z]?)\*\*/i.test(line);
+}
+
+function collectNestedAssetLines(lines, start) {
+  const first = String(lines[start] || "");
+  const nested = [first];
+  const formula = first.match(/\*\*Formula\s+\(([^)]+)\)\*\*/i);
+  const figure = first.match(/\*\*Figure\s+(A?\d+\.\d+[a-z]?)\*\*/i);
+  const table = first.match(/\*\*Table\s+(A?\d+\.\d+[a-z]?)\*\*/i);
+  let index = start + 1;
+  let inMath = false;
+  let sawMath = false;
+  let sawFigureCaption = false;
+
+  while (index < lines.length) {
+    const line = String(lines[index] || "");
+    const trimmed = line.trim();
+    if (isNestedAssetHeader(trimmed)) break;
+    nested.push(line);
+    index += 1;
+
+    if (formula) {
+      if (trimmed.includes("$$")) {
+        const count = (trimmed.match(/\$\$/g) || []).length;
+        sawMath = true;
+        if (count >= 2 && !inMath) break;
+        inMath = !inMath;
+        if (sawMath && !inMath) break;
+      }
+      continue;
+    }
+
+    if (figure) {
+      if (trimmed.startsWith(`Figure ${figure[1]}`)) sawFigureCaption = true;
+      if (sawFigureCaption) break;
+      continue;
+    }
+
+    if (table && sawTableEnd(nested)) break;
+  }
+
+  return { lines: nested, nextIndex: index };
+}
+
+function sawTableEnd(lines) {
+  const content = lines.map((line) => String(line || "").trim()).filter(Boolean);
+  if (content.length < 3) return false;
+  const last = content[content.length - 1];
+  return content.some((line) => /^\|?\s*:?-{3,}:?\s*(\|\s*:?-{3,}:?\s*)+\|?\s*$/.test(line)) && !last.includes("|");
 }
 
 function extractDisplayMath(lines) {
@@ -774,14 +993,14 @@ function renderInline(rawValue, context = {}) {
     return renderReferenceLink(kind, refId, match, { ...context, bookHint: lw ? "Genetics" : "" });
   });
   html = html.replace(/\bLW\s+\[\[SEE_(FIGURE|TABLE|EXAMPLE|FORMULA):([^\]]+)\]\]/gi, (_, kind, refId) => {
-    const labelKind = kind.toLowerCase() === "formula" ? "Equation" : titleCase(kind);
+    const labelKind = kind.toLowerCase() === "formula" ? "Formula" : titleCase(kind);
     return renderReferenceLink(kind, refId, `LW ${labelKind} ${refId}`, { ...context, bookHint: "Genetics" });
   });
   html = html.replace(/\[\[SEE_(FIGURE|TABLE|EXAMPLE|FORMULA):([^\]]+)\]\]/gi, (_, kind, refId) => {
-    const labelKind = kind.toLowerCase() === "formula" ? "Equation" : titleCase(kind);
+    const labelKind = kind.toLowerCase() === "formula" ? "Formula" : titleCase(kind);
     return renderReferenceLink(kind, refId, `${labelKind} ${refId}`, context);
   });
-  html = html.replace(/\b(?:(LW)\s+)?Chapters?\s+((?:\d+|and|,|\s)+)/gi, (match, lw, rawNumbers) => {
+  html = html.replace(/\b(?:(LW)\s+)?Chapters?\s+(\d{1,2}(?:\s*(?:,|and|&)\s*\d{1,2})*)(?!\s*,\s*\d{3,4})/gi, (match, lw, rawNumbers) => {
     const bookHint = lw ? "Genetics" : "";
     const rendered = rawNumbers.replace(/\d+/g, (number) => renderChapterReferenceButton(number, bookHint, context));
     if (!/\d/.test(rendered)) return match;
@@ -841,14 +1060,37 @@ function resolveReference(kind, refId, context = {}) {
   const targetChapterId = chapterIdFromRef(refId, context.bookHint || currentBookId()) || STATE.currentChapterId;
   const data = chapterData(targetChapterId);
   const wantedKind = normalizeAssetKind(kind);
-  const asset = (data.assets || []).find((item) => {
-    const itemKind = normalizeAssetKind(item.kind);
-    return itemKind === wantedKind && String(item.id || "").toLowerCase() === String(refId || "").toLowerCase();
-  });
+  const asset = findReferenceAsset(data.assets || [], wantedKind, refId);
   if (asset) return { chapterId: targetChapterId, anchor: asset.anchor };
-  const firstSection = data.sections?.[0];
-  if (firstSection && chapterById(targetChapterId)) return { chapterId: targetChapterId, anchor: firstSection.anchor };
   return null;
+}
+
+function findReferenceAsset(assets, wantedKind, refId) {
+  const wantedId = String(refId || "").trim().toLowerCase();
+  const normalizedKind = normalizeAssetKind(wantedKind);
+  const exact = assets.find((item) => normalizeAssetKind(item.kind) === normalizedKind && String(item.id || "").trim().toLowerCase() === wantedId);
+  if (exact) return exact;
+  if (normalizedKind === "figure") {
+    const baseRefId = wantedId.replace(/[a-z]$/i, "");
+    return assets.find((item) => normalizeAssetKind(item.kind) === "figure" && String(item.id || "").trim().toLowerCase() === baseRefId) || null;
+  }
+  if (normalizedKind === "formula" && /^a?\d+\.\d+(?:\.\d+)?$/i.test(wantedId)) {
+    const matches = assets
+      .filter((item) => normalizeAssetKind(item.kind) === "formula" && new RegExp(`^${escapeRegExp(wantedId)}[a-z]$`, "i").test(String(item.id || "").trim()))
+      .sort((a, b) => formulaRefSortValue(String(a.id || "")).localeCompare(formulaRefSortValue(String(b.id || ""))));
+    return matches[0] || null;
+  }
+  return null;
+}
+
+function formulaRefSortValue(refId) {
+  const match = String(refId || "").trim().toLowerCase().match(/^(a?\d+)\.(\d+)(?:\.(\d+))?([a-z]?)$/);
+  if (!match) return String(refId || "");
+  return `${match[1].padStart(4, "0")}.${match[2].padStart(4, "0")}.${(match[3] || "0").padStart(4, "0")}.${match[4] || ""}`;
+}
+
+function escapeRegExp(value) {
+  return String(value || "").replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
 function normalizeAssetKind(kind) {
@@ -867,7 +1109,12 @@ function findAsset(kind, refId, chapterId = STATE.currentChapterId) {
 
 function chapterIdFromRef(refId, bookId = currentBookId()) {
   const value = String(refId || "").trim();
-  if (/^a\d+/i.test(value)) return `${bookId}_appendix${Number(value.match(/^a(\d+)/i)[1])}`;
+  if (/^a\d+/i.test(value)) {
+    const appendixId = `${bookId}_appendix${Number(value.match(/^a(\d+)/i)[1])}`;
+    if (chapterById(appendixId)) return appendixId;
+    if (String(bookId).toLowerCase() === "genetics" && chapterById("Genetics_chapter27")) return "Genetics_chapter27";
+    return appendixId;
+  }
   const number = value.match(/^(\d+)/)?.[1];
   return number ? chapterIdForNumber(number, bookId) : "";
 }

@@ -41,7 +41,12 @@ UNIT_TITLE_PATTERN = re.compile(
     re.IGNORECASE,
 )
 CHAPTER_MD_PATTERN = re.compile(r"^(?P<id>(?P<book>[A-Za-z]+)_(?:chapter|appendix)\d+)_textbook\.md$", re.IGNORECASE)
-CHAPTER_REF_PATTERN = re.compile(r"\b(?P<lw>LW\s+)?Chapters?\s+(?P<numbers>(?:\d+|and|,|\s)+)", re.IGNORECASE)
+CHAPTER_REF_PATTERN = re.compile(
+    r"\b(?P<lw>LW\s+)?Chapters?\s+"
+    r"(?P<numbers>\d{1,2}(?:\s*(?:,|and|&)\s*\d{1,2})*)"
+    r"(?!\s*,\s*\d{3,4})",
+    re.IGNORECASE,
+)
 NUMBERED_REF_PATTERN = re.compile(
     r"\b(?P<kind>Equation|Figure|Table|Example)s?\s+"
     r"(?P<id>(?:A?\d+)\.\d+(?:\.\d+)?[a-z]?)",
@@ -362,6 +367,15 @@ def extract_latex_from_quote(quote: list[str]) -> str:
     return "\n".join(part for part in chunks if part).strip()
 
 
+def extract_display_math_chunks(text: str) -> list[str]:
+    chunks: list[str] = []
+    for match in re.finditer(r"\$\$([\s\S]+?)\$\$", text or ""):
+        latex = match.group(1).strip()
+        if latex:
+            chunks.append(latex)
+    return chunks
+
+
 def normalize_latex_for_katex(latex: str) -> str:
     """Apply conservative KaTeX-oriented cleanup without changing formula meaning."""
     value = str(latex or "").strip()
@@ -395,6 +409,213 @@ def normalize_latex_for_katex(latex: str) -> str:
     value = re.sub(r"\\nonumber\b", "", value)
     value = re.sub(r"\s+", " ", value).strip()
     return value
+
+
+def latex_key(latex: str) -> str:
+    value = re.sub(r"^\s*\$\$|\$\$\s*$", "", str(latex or "").strip())
+    return re.sub(r"\s+", "", value)
+
+
+def formula_ref_sort_key(ref_id: str) -> tuple[int, int, int, str]:
+    match = re.match(r"^a?(?P<chapter>\d+)\.(?P<body>\d+(?:\.\d+)?)(?P<suffix>[a-z]?)$", str(ref_id or ""), re.IGNORECASE)
+    if not match:
+        return (9999, 9999, 9999, str(ref_id))
+    body_parts = [int(part) for part in match.group("body").split(".")]
+    return (
+        int(match.group("chapter")),
+        body_parts[0] if body_parts else 0,
+        body_parts[1] if len(body_parts) > 1 else 0,
+        match.group("suffix").lower(),
+    )
+
+
+def is_formula_ref_valid_for_chapter(ref_id: str, chapter_id: str) -> bool:
+    parts = chapter_parts(chapter_id)
+    if not parts:
+        return False
+    book, kind, number = parts
+    value = str(ref_id or "").strip()
+    appendix = re.match(r"^a(?P<num>\d+)\.", value, re.IGNORECASE)
+    if appendix:
+        if kind == "appendix":
+            return int(appendix.group("num")) == number
+        return book.lower() == "genetics" and kind == "chapter" and number == 27
+    numeric = re.match(r"^(?P<num>\d+)\.", value)
+    return bool(numeric and kind == "chapter" and int(numeric.group("num")) == number)
+
+
+def formula_ref_ids_from_record(record: dict[str, Any], chapter_id: str) -> list[str]:
+    values = [
+        record.get("id", ""),
+        record.get("label_format", ""),
+        record.get("label", ""),
+        (record.get("source") or {}).get("source_label", "") if isinstance(record.get("source"), dict) else "",
+    ]
+    refs: list[str] = []
+    for value in values:
+        for match in re.finditer(r"(?<![A-Za-z0-9])(?:Formula\s*)?\(?((?:A?\d+)\.\d+(?:\.\d+)?[a-z]?)\)?", str(value), re.IGNORECASE):
+            ref_id = match.group(1)
+            if is_formula_ref_valid_for_chapter(ref_id, chapter_id) and ref_id.lower() not in {item.lower() for item in refs}:
+                refs.append(ref_id)
+    return refs
+
+
+def load_formula_library_by_chapter(structured_dir: Path) -> dict[str, list[dict[str, Any]]]:
+    payload = load_json(structured_dir / "formula_library.json")
+    formulas = payload.get("formulas", [])
+    by_chapter: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    if not isinstance(formulas, list):
+        return by_chapter
+    for formula in formulas:
+        if not isinstance(formula, dict):
+            continue
+        source = formula.get("source")
+        if not isinstance(source, dict):
+            continue
+        chapter_id = str(source.get("chapter") or "").strip()
+        if chapter_id:
+            by_chapter[chapter_id].append(formula)
+    return by_chapter
+
+
+def extract_formula_library_assets(
+    chapter_id: str,
+    formula_library_by_chapter: dict[str, list[dict[str, Any]]],
+    existing_assets: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    existing_formula_ids = {
+        str(asset.get("id", "")).lower()
+        for asset in existing_assets
+        if asset.get("kind") == "formula"
+    }
+    assets: list[dict[str, Any]] = []
+    for record in formula_library_by_chapter.get(chapter_id, []):
+        latex = str(record.get("latex") or "").strip()
+        if not latex:
+            continue
+        source = record.get("source") if isinstance(record.get("source"), dict) else {}
+        section_id = str(source.get("unit_id") or "").strip()
+        for ref_id in formula_ref_ids_from_record(record, chapter_id):
+            if ref_id.lower() in existing_formula_ids:
+                continue
+            assets.append(
+                {
+                    "kind": "formula",
+                    "id": ref_id,
+                    "anchor": asset_anchor("formula", ref_id),
+                    "label": f"Formula ({ref_id})",
+                    "section_id": section_id,
+                    "latex": latex,
+                    "latex_render": normalize_latex_for_katex(latex),
+                    "origin": "formula-library",
+                    "source_label": source.get("source_label", ""),
+                }
+            )
+            existing_formula_ids.add(ref_id.lower())
+    return sorted(assets, key=lambda item: formula_ref_sort_key(str(item.get("id", ""))))
+
+
+def load_table_library_by_chapter(structured_dir: Path) -> dict[str, list[dict[str, Any]]]:
+    payload = load_json(structured_dir / "table_library.json")
+    tables = payload.get("tables", [])
+    by_chapter: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    if not isinstance(tables, list):
+        return by_chapter
+    for table in tables:
+        if not isinstance(table, dict):
+            continue
+        source = table.get("source")
+        if not isinstance(source, dict):
+            continue
+        chapter_id = str(source.get("chapter") or "").strip()
+        if chapter_id:
+            by_chapter[chapter_id].append(table)
+    return by_chapter
+
+
+def extract_table_library_assets(
+    chapter_id: str,
+    table_library_by_chapter: dict[str, list[dict[str, Any]]],
+    existing_assets: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    existing_table_ids = {
+        str(asset.get("id", "")).lower()
+        for asset in existing_assets
+        if asset.get("kind") == "table"
+    }
+    assets: list[dict[str, Any]] = []
+    for record in table_library_by_chapter.get(chapter_id, []):
+        ref_id = str(record.get("id") or "").strip()
+        if not ref_id or not is_formula_ref_valid_for_chapter(ref_id, chapter_id):
+            continue
+        if ref_id.lower() in existing_table_ids:
+            continue
+        source = record.get("source") if isinstance(record.get("source"), dict) else {}
+        title = str(record.get("title") or record.get("label_format") or f"Table {ref_id}").strip()
+        assets.append(
+            {
+                "kind": "table",
+                "id": ref_id,
+                "anchor": asset_anchor("table", ref_id),
+                "label": f"Table {ref_id}",
+                "section_id": str(source.get("unit_id") or "").strip(),
+                "caption": title,
+                "rows": record.get("rows") if isinstance(record.get("rows"), list) else [],
+                "html": str(record.get("html") or ""),
+                "origin": "table-library",
+            }
+        )
+        existing_table_ids.add(ref_id.lower())
+    return assets
+
+
+def load_example_library_by_chapter(structured_dir: Path) -> dict[str, list[dict[str, Any]]]:
+    payload = load_json(structured_dir / "example_library.json")
+    examples = payload.get("examples", [])
+    by_chapter: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    if not isinstance(examples, list):
+        return by_chapter
+    for example in examples:
+        if not isinstance(example, dict):
+            continue
+        chapter_id = str(example.get("chapter") or "").strip()
+        if chapter_id:
+            by_chapter[chapter_id].append(example)
+    return by_chapter
+
+
+def extract_example_library_assets(
+    chapter_id: str,
+    example_library_by_chapter: dict[str, list[dict[str, Any]]],
+    existing_assets: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    existing_example_ids = {
+        str(asset.get("id", "")).lower()
+        for asset in existing_assets
+        if asset.get("kind") == "example"
+    }
+    assets: list[dict[str, Any]] = []
+    for record in example_library_by_chapter.get(chapter_id, []):
+        ref_id = str(record.get("example_id") or "").strip()
+        if not ref_id or not is_formula_ref_valid_for_chapter(ref_id, chapter_id):
+            continue
+        if ref_id.lower() in existing_example_ids:
+            continue
+        content = str(record.get("content_markdown") or "").strip()
+        assets.append(
+            {
+                "kind": "example",
+                "id": ref_id,
+                "anchor": asset_anchor("example", ref_id),
+                "label": f"Example {ref_id}",
+                "section_id": str(record.get("source_file") or "").replace(".json", ""),
+                "excerpt": trim_text(plain_text(content or str(record.get("title") or "")), 480),
+                "content_markdown": content,
+                "origin": "example-library",
+            }
+        )
+        existing_example_ids.add(ref_id.lower())
+    return assets
 
 
 def formula_needs_llm_repair(latex: str) -> bool:
@@ -472,6 +693,69 @@ def extract_blockquote(lines: list[str], start: int) -> tuple[list[str], int]:
     return quote, index
 
 
+def first_asset_header(quote: list[str]) -> str:
+    return next((line.strip() for line in quote if line.strip()), "")
+
+
+def nested_asset_segments(quote: list[str]) -> list[list[str]]:
+    segments: list[list[str]] = []
+    header_pattern = re.compile(
+        r"\*\*(?:Formula\s+\([^)]+\)|Figure\s+A?\d+\.\d+[a-z]?|Table\s+A?\d+\.\d+[a-z]?)\*\*",
+        re.IGNORECASE,
+    )
+    index = 0
+    while index < len(quote):
+        line = quote[index].strip()
+        if not header_pattern.search(line):
+            index += 1
+            continue
+        segment, index = collect_nested_asset_segment(quote, index, header_pattern)
+        segments.append(segment)
+    return segments
+
+
+def collect_nested_asset_segment(
+    quote: list[str],
+    start: int,
+    header_pattern: re.Pattern[str],
+) -> tuple[list[str], int]:
+    first = quote[start]
+    formula = FORMULA_HEADER_PATTERN.search(first)
+    figure = FIGURE_HEADER_PATTERN.search(first)
+    segment = [first]
+    index = start + 1
+    in_math = False
+    saw_math = False
+    saw_figure_caption = False
+
+    while index < len(quote):
+        line = quote[index]
+        stripped = line.strip()
+        if header_pattern.search(stripped):
+            break
+        segment.append(line)
+        index += 1
+
+        if formula:
+            if "$$" in stripped:
+                count = stripped.count("$$")
+                saw_math = True
+                if count >= 2 and not in_math:
+                    break
+                in_math = not in_math
+                if saw_math and not in_math:
+                    break
+            continue
+
+        if figure:
+            if stripped.startswith(f"Figure {figure.group('id')}"):
+                saw_figure_caption = True
+            if saw_figure_caption:
+                break
+
+    return segment, index
+
+
 def parse_table_rows(lines: list[str]) -> list[list[str]]:
     rows: list[list[str]] = []
     for line in lines:
@@ -518,10 +802,11 @@ def extract_assets(markdown: str, chapter_id: str) -> list[dict[str, Any]]:
             section = section_for_line(index)
             section_id = section["id"] if section else ""
 
-            formula = FORMULA_HEADER_PATTERN.search(quote_text)
-            figure = FIGURE_HEADER_PATTERN.search(quote_text)
-            table = TABLE_HEADER_PATTERN.search(quote_text)
-            example = EXAMPLE_HEADER_PATTERN.search(quote_text)
+            header = first_asset_header(quote)
+            formula = FORMULA_HEADER_PATTERN.search(header)
+            figure = FIGURE_HEADER_PATTERN.search(header)
+            table = TABLE_HEADER_PATTERN.search(header)
+            example = EXAMPLE_HEADER_PATTERN.search(header)
 
             if formula:
                 ref_id = formula.group("id")
@@ -579,10 +864,258 @@ def extract_assets(markdown: str, chapter_id: str) -> list[dict[str, Any]]:
                         "excerpt": trim_text(plain_text(quote_text), 480),
                     }
                 )
+                for segment in nested_asset_segments(quote[1:]):
+                    segment_text = "\n".join(segment)
+                    nested_formula = FORMULA_HEADER_PATTERN.search(first_asset_header(segment))
+                    nested_figure = FIGURE_HEADER_PATTERN.search(first_asset_header(segment))
+                    nested_table = TABLE_HEADER_PATTERN.search(first_asset_header(segment))
+                    if nested_formula:
+                        nested_ref_id = nested_formula.group("id")
+                        if any(item["kind"] == "formula" and item["id"] == nested_ref_id for item in assets):
+                            continue
+                        latex = extract_latex_from_quote(segment)
+                        assets.append(
+                            {
+                                "kind": "formula",
+                                "id": nested_ref_id,
+                                "anchor": asset_anchor("formula", nested_ref_id),
+                                "label": f"Formula ({nested_ref_id})",
+                                "section_id": section_id,
+                                "latex": latex,
+                                "latex_render": normalize_latex_for_katex(latex),
+                            }
+                        )
+                    elif nested_figure:
+                        nested_ref_id = nested_figure.group("id")
+                        if any(item["kind"] == "figure" and item["id"] == nested_ref_id for item in assets):
+                            continue
+                        image_match = re.search(r"!\[[^\]]*\]\((?P<src>[^)]+)\)", segment_text)
+                        caption = " ".join(line for line in segment if line.strip().startswith(f"Figure {nested_ref_id}"))
+                        assets.append(
+                            {
+                                "kind": "figure",
+                                "id": nested_ref_id,
+                                "anchor": asset_anchor("figure", nested_ref_id),
+                                "label": f"Figure {nested_ref_id}",
+                                "section_id": section_id,
+                                "src": image_match.group("src") if image_match else "",
+                                "caption": caption,
+                            }
+                        )
+                    elif nested_table:
+                        nested_ref_id = nested_table.group("id")
+                        if any(item["kind"] == "table" and item["id"] == nested_ref_id for item in assets):
+                            continue
+                        caption = " ".join(line for line in segment if line.strip().startswith(f"Table {nested_ref_id}"))
+                        assets.append(
+                            {
+                                "kind": "table",
+                                "id": nested_ref_id,
+                                "anchor": asset_anchor("table", nested_ref_id),
+                                "label": f"Table {nested_ref_id}",
+                                "section_id": section_id,
+                                "caption": caption,
+                                "rows": parse_table_rows(segment),
+                            }
+                        )
             index = next_index
             continue
         index += 1
 
+    return assets
+
+
+def extract_placeholder_formula_assets(
+    markdown: str,
+    chapter_id: str,
+    structured_dir: Path,
+    existing_assets: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    current_parts = chapter_parts(chapter_id)
+    current_book = current_parts[0] if current_parts else DEFAULT_BOOK_PREFIX
+    existing_formula_ids = {
+        str(asset.get("id", "")).lower()
+        for asset in existing_assets
+        if asset.get("kind") == "formula"
+    }
+    assets: list[dict[str, Any]] = []
+
+    for section in split_markdown_sections(markdown, chapter_id):
+        placeholders: list[str] = []
+        for match in PLACEHOLDER_REF_PATTERN.finditer(section.get("text", "")):
+            if match.group("kind").lower() != "formula":
+                continue
+            ref_id = match.group("id").strip()
+            if chapter_ref_id(ref_id, current_book) != chapter_id:
+                continue
+            if ref_id.lower() in existing_formula_ids:
+                continue
+            placeholders.append(ref_id)
+        if not placeholders:
+            continue
+
+        structured_path = structured_dir / f"{section['id']}.json"
+        payload = load_json(structured_path)
+        blocks = payload.get("blocks", []) if payload else []
+        formulas: list[str] = []
+        for block in blocks:
+            formulas.extend(extract_display_math_chunks(str(block.get("content", ""))))
+
+        for ref_id, latex in zip(placeholders, formulas):
+            if not latex or ref_id.lower() in existing_formula_ids:
+                continue
+            assets.append(
+                {
+                    "kind": "formula",
+                    "id": ref_id,
+                    "anchor": asset_anchor("formula", ref_id),
+                    "label": f"Formula ({ref_id})",
+                    "section_id": section["id"],
+                    "latex": latex,
+                    "latex_render": normalize_latex_for_katex(latex),
+                    "origin": "placeholder",
+                }
+            )
+            existing_formula_ids.add(ref_id.lower())
+
+    return assets
+
+
+def section_lookup_for_formulas(chapter_id: str, structured_dir: Path) -> dict[str, str]:
+    lookup: dict[str, str] = {}
+    for path in sorted(structured_dir.glob(f"{chapter_id}_*.json")):
+        payload = load_json(path)
+        section_id = str(payload.get("id") or path.stem)
+        for block in payload.get("blocks", []):
+            for latex in extract_display_math_chunks(str(block.get("content", ""))):
+                lookup.setdefault(latex_key(latex), section_id)
+    return lookup
+
+
+def paddle_blocks_for_page(page: dict[str, Any]) -> list[dict[str, Any]]:
+    blocks = page.get("parsing_res_list")
+    if not isinstance(blocks, list):
+        pruned = page.get("prunedResult")
+        if isinstance(pruned, dict):
+            blocks = pruned.get("parsing_res_list")
+    if not isinstance(blocks, list):
+        return []
+    indexed: list[tuple[int, dict[str, Any]]] = []
+    for fallback_order, item in enumerate(blocks):
+        if not isinstance(item, dict):
+            continue
+        raw_order = item.get("block_order")
+        if raw_order is None:
+            raw_order = item.get("order")
+        try:
+            order = int(raw_order)
+        except (TypeError, ValueError):
+            order = fallback_order
+        indexed.append((order, item))
+    return [item for _, item in sorted(indexed, key=lambda pair: pair[0])]
+
+
+def block_center_y(block: dict[str, Any], fallback: int) -> float:
+    bbox = block.get("block_bbox") or block.get("bbox")
+    if isinstance(bbox, list) and len(bbox) >= 4:
+        try:
+            return (float(bbox[1]) + float(bbox[3])) / 2
+        except (TypeError, ValueError):
+            pass
+    return float(fallback * 100)
+
+
+def extract_paddle_formula_assets(
+    chapter_id: str,
+    structured_dir: Path,
+    existing_assets: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    existing_formula_ids = {
+        str(asset.get("id", "")).lower()
+        for asset in existing_assets
+        if asset.get("kind") == "formula"
+    }
+    paddle_path = structured_dir.parent / "paddle_output" / f"{chapter_id}_full" / "intermediate" / "paddle_raw_response.json"
+    try:
+        pages = json.loads(paddle_path.read_text(encoding="utf-8-sig"))
+    except (OSError, json.JSONDecodeError):
+        return []
+    if not isinstance(pages, list):
+        return []
+
+    section_lookup = section_lookup_for_formulas(chapter_id, structured_dir)
+    assets: list[dict[str, Any]] = []
+    for page in pages:
+        if not isinstance(page, dict):
+            continue
+        blocks = paddle_blocks_for_page(page)
+        display_blocks: list[tuple[int, dict[str, Any], str]] = []
+        number_blocks: list[tuple[int, dict[str, Any], str]] = []
+        for index, block in enumerate(blocks):
+            if block.get("block_label") != "display_formula":
+                if block.get("block_label") == "formula_number":
+                    number = re.search(r"\(?\s*([A]?\d+(?:\.\d+)+(?:[a-z])?)\s*\)?", str(block.get("block_content", "")), re.IGNORECASE)
+                    if number:
+                        number_blocks.append((index, block, number.group(1)))
+                continue
+            latex_chunks = extract_display_math_chunks(str(block.get("block_content", "")))
+            if not latex_chunks:
+                continue
+            display_blocks.append((index, block, latex_chunks[0]))
+            ref_id = ""
+            for follower in blocks[index + 1 : index + 4]:
+                if follower.get("block_label") == "display_formula":
+                    break
+                if follower.get("block_label") == "formula_number":
+                    number = re.search(r"\(?\s*([A]?\d+(?:\.\d+)+(?:[a-z])?)\s*\)?", str(follower.get("block_content", "")), re.IGNORECASE)
+                    if number:
+                        ref_id = number.group(1)
+                    break
+            if not ref_id or ref_id.lower() in existing_formula_ids:
+                continue
+            latex = latex_chunks[0]
+            assets.append(
+                {
+                    "kind": "formula",
+                    "id": ref_id,
+                    "anchor": asset_anchor("formula", ref_id),
+                    "label": f"Formula ({ref_id})",
+                    "section_id": section_lookup.get(latex_key(latex), ""),
+                    "latex": latex,
+                    "latex_render": normalize_latex_for_katex(latex),
+                    "origin": "paddle",
+                }
+            )
+            existing_formula_ids.add(ref_id.lower())
+
+        for number_index, number_block, ref_id in number_blocks:
+            if ref_id.lower() in existing_formula_ids or not display_blocks:
+                continue
+            number_y = block_center_y(number_block, number_index)
+            nearest = min(
+                display_blocks,
+                key=lambda item: (
+                    abs(block_center_y(item[1], item[0]) - number_y),
+                    abs(item[0] - number_index),
+                ),
+            )
+            display_index, display_block, latex = nearest
+            distance = abs(block_center_y(display_block, display_index) - number_y)
+            if distance > 240:
+                continue
+            assets.append(
+                {
+                    "kind": "formula",
+                    "id": ref_id,
+                    "anchor": asset_anchor("formula", ref_id),
+                    "label": f"Formula ({ref_id})",
+                    "section_id": section_lookup.get(latex_key(latex), ""),
+                    "latex": latex,
+                    "latex_render": normalize_latex_for_katex(latex),
+                    "origin": "paddle",
+                }
+            )
+            existing_formula_ids.add(ref_id.lower())
     return assets
 
 
@@ -594,6 +1127,49 @@ def discover_chapters(textbook_dir: Path, book_ids: set[str] | None = None) -> l
         if match and (not normalized_book_ids or match.group("book").lower() in normalized_book_ids):
             ids.append(match.group("id"))
     return sorted(ids, key=chapter_sort_key)
+
+
+def asset_matches_reference(asset: dict[str, Any], ref_kind: str, ref_id: str) -> bool:
+    asset_kind = str(asset.get("kind") or "").lower()
+    wanted_kind = "formula" if str(ref_kind or "").lower() in {"equation", "formula"} else str(ref_kind or "").lower()
+    if asset_kind != wanted_kind:
+        return False
+    asset_id = str(asset.get("id") or "").strip().lower()
+    wanted_id = str(ref_id or "").strip().lower()
+    if asset_id == wanted_id:
+        return True
+    if wanted_kind == "figure" and asset_id == re.sub(r"[a-z]$", "", wanted_id, flags=re.IGNORECASE):
+        return True
+    if wanted_kind == "formula" and re.fullmatch(r"a?\d+\.\d+(?:\.\d+)?", wanted_id, re.IGNORECASE):
+        return bool(re.fullmatch(re.escape(wanted_id) + r"[a-z]", asset_id, re.IGNORECASE))
+    return False
+
+
+def find_asset_for_reference(assets: list[dict[str, Any]], ref_kind: str, ref_id: str) -> dict[str, Any] | None:
+    exact = [
+        asset for asset in assets
+        if str(asset.get("id") or "").strip().lower() == str(ref_id or "").strip().lower()
+        and asset_matches_reference(asset, ref_kind, ref_id)
+    ]
+    if exact:
+        return exact[0]
+    matches = [asset for asset in assets if asset_matches_reference(asset, ref_kind, ref_id)]
+    if not matches:
+        return None
+    if str(ref_kind or "").lower() in {"equation", "formula"}:
+        return sorted(matches, key=lambda item: formula_ref_sort_key(str(item.get("id", ""))))[0]
+    return matches[0]
+
+
+def resolve_chapter_id_for_ref(ref_id: str, book_prefix: str, chapter_cache: dict[str, dict[str, Any]]) -> str | None:
+    target = chapter_ref_id(ref_id, book_prefix)
+    if target in chapter_cache:
+        return target
+    if str(book_prefix or "").lower() == "genetics" and re.match(r"^a\d+", str(ref_id or ""), re.IGNORECASE):
+        fallback = "Genetics_chapter27"
+        if fallback in chapter_cache:
+            return fallback
+    return target
 
 
 def build_source_link(
@@ -615,15 +1191,7 @@ def build_source_link(
     excerpt = ""
 
     if ref_kind != "chapter":
-        asset = next(
-            (
-                item
-                for item in assets
-                if item.get("kind") == ref_kind or (ref_kind == "equation" and item.get("kind") == "formula")
-                if str(item.get("id", "")).lower() == ref_id.lower()
-            ),
-            None,
-        )
+        asset = find_asset_for_reference(assets, ref_kind, ref_id)
         if asset:
             target_anchor = asset["anchor"]
             section_id = asset.get("section_id")
@@ -675,7 +1243,11 @@ def external_reference_groups(
     for section_id, refs in refs_by_section.items():
         section = next((item for item in sections if item["id"] == section_id), None)
         for reference in refs:
-            source_chapter_id = chapter_ref_id(reference["id"], target_book_for_reference(reference, current_book))
+            source_chapter_id = resolve_chapter_id_for_ref(
+                reference["id"],
+                target_book_for_reference(reference, current_book),
+                chapter_cache,
+            )
             if not source_chapter_id or source_chapter_id == current_chapter_id:
                 continue
             if not is_prerequisite_source(current_chapter_id, source_chapter_id):
@@ -994,9 +1566,10 @@ def build_semantic_chapter_links(
         for reference in refs:
             if reference.get("kind") != "chapter":
                 continue
-            source_chapter_id = chapter_ref_id(
+            source_chapter_id = resolve_chapter_id_for_ref(
                 reference.get("id", ""),
                 target_book_for_reference(reference, current_book),
+                chapter_cache,
             )
             if not source_chapter_id or source_chapter_id == current_chapter_id:
                 continue
@@ -1130,6 +1703,10 @@ def build_dataset(
 ) -> tuple[dict[str, Any], dict[str, Any]]:
     existing_dataset, existing_audit = existing_generated_payloads()
     textbook_dir = resolve_repo_path(config.get("textbook_dir"), "data/textbook")
+    structured_dir = resolve_repo_path(config.get("structured_dir"), "data/structured")
+    formula_library_by_chapter = load_formula_library_by_chapter(structured_dir)
+    table_library_by_chapter = load_table_library_by_chapter(structured_dir)
+    example_library_by_chapter = load_example_library_by_chapter(structured_dir)
     books = configured_books(config, selected_books)
     book_order = {book["id"]: index for index, book in enumerate(books)}
     book_ids = set(book_order)
@@ -1144,6 +1721,11 @@ def build_dataset(
         markdown = path.read_text(encoding="utf-8-sig")
         sections = split_markdown_sections(markdown, chapter_id)
         assets = extract_assets(markdown, chapter_id)
+        assets.extend(extract_formula_library_assets(chapter_id, formula_library_by_chapter, assets))
+        assets.extend(extract_table_library_assets(chapter_id, table_library_by_chapter, assets))
+        assets.extend(extract_example_library_assets(chapter_id, example_library_by_chapter, assets))
+        assets.extend(extract_paddle_formula_assets(chapter_id, structured_dir, assets))
+        assets.extend(extract_placeholder_formula_assets(markdown, chapter_id, structured_dir, assets))
         assets = enhance_formula_assets_with_llm(
             assets,
             skip_llm=skip_llm or chapter_id not in formula_llm_chapters,
