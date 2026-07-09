@@ -1,0 +1,51 @@
+{
+  "id": "Genetics_chapter27_044",
+  "metadata": {
+    "chapter": "Genetics_chapter27",
+    "section": "Variance-Component Estimation with Complex Pedigrees",
+    "subsections": [
+      "EQUIVALENT LINEAR MODELS"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter27_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Variance-Component Estimation with Complex Pedigrees",
+    "section_level_2": "EQUIVALENT LINEAR MODELS",
+    "heading_path": [
+      "Variance-Component Estimation with Complex Pedigrees",
+      "EQUIVALENT LINEAR MODELS"
+    ],
+    "display_heading": "EQUIVALENT LINEAR MODELS"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Two linear models are said to be equivalent if they have the same mean vector $ E(\\mathbf{y}) $ and covariance matrix $ \\sigma(\\mathbf{y}, \\mathbf{y}) $. The utility of equivalent models is that the parameters of one model can always be expressed as linear combinations of the parameters of any equivalent model. Hence, by choosing an appropriate equivalent model, one can often greatly simplify computations. An example of this approach is the reduced animal model of Quaas and Pollak (1980) discussed in Chapter 26. Likewise, Equation 26.23, for estimating the BLUP values of dominance effects as a function of estimated breeding values, also follows from using equivalent models. Additional examples from BLUP are given by Henderson (1985c). Our purpose here is to briefly introduce the use and construction of equivalent models."
+    },
+    {
+      "type": "discussion",
+      "content": "Consider two different mixed linear models, both using the same vector y of observations but with different assumed vectors of fixed $(\\beta$ vs. $\\beta_{*})$ and random (u and e vs. $\\mathbf{u}_{*}$ and $\\mathbf{e}_{*}$) effects. Model 1 is $$ \\mathbf{y}=\\mathbf{X}\\mathbf{\\beta}+\\mathbf{Z}\\mathbf{u}+\\mathbf{e},\\quad{\\mathrm{w h e r e}}\\quad\\mathbf{u}\\sim(\\mathbf{0},\\mathbf{G})\\quad{\\mathrm{a n d}}\\quad\\mathbf{e}\\sim(\\mathbf{0},\\mathbf{R}) $$ while model 2 is $$ \\mathbf{y}=\\mathbf{X}_{*}\\boldsymbol{\\beta}_{*}+\\mathbf{Z}_{*}\\mathbf{u}_{*}+\\mathbf{e}_{*},\\quad{\\mathrm{w h e r e}}\\quad\\mathbf{u}_{*}\\sim(\\mathbf{0},\\mathbf{G}_{*})\\quad{\\mathrm{a n d}}\\quad\\mathbf{e}_{*}\\sim(\\mathbf{0},\\mathbf{R}_{*}) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Recalling our treatment of general mixed linear models (Chapter 26), Equation 26.2 implies that for model 1, $$ \\mathbf{y}\\sim(\\mathbf{X}\\boldsymbol{\\beta},\\mathbf{V}),\\quad\\mathrm{w h e r e}\\quad\\mathbf{V}=\\mathbf{Z}\\mathbf{G}\\mathbf{Z}^{T}+\\mathbf{R} $$ while for model 2, $$ \\mathbf{y}\\sim(\\mathbf{X}_{\\ast}\\boldsymbol{\\beta}_{\\ast},\\mathbf{V}_{\\ast}),\\quad\\mathrm{w h e r e}\\quad\\mathbf{V}_{\\ast}=\\mathbf{Z}_{\\ast}\\mathbf{G}_{\\ast}\\mathbf{Z}_{\\ast}^{T}+\\mathbf{R}_{\\ast} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, these two models are equivalent if $$ \\mathbf{X}\\boldsymbol{\\beta}=\\mathbf{X}_{*}\\boldsymbol{\\beta}_{*} $$ and $ \\mathbf{V} = \\mathbf{V}_*, $ or $$ \\mathbf{Z}\\mathbf{G}\\mathbf{Z}^{T}+\\mathbf{R}=\\mathbf{Z}_{*}\\mathbf{G}_{*}\\mathbf{Z}_{*}^{T}+\\mathbf{R}_{*} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Equations A3.21a,b provide the framework for constructing equivalent models, and hence obtaining models that are potentially easier to analyze. Consider the situation where our interest is in the prediction of random effects and we wish to obtain an equivalent model that considers the same fixed effects but uses a different vector of random effects. (For example, instead of considering a vector of both parental and offspring breeding values, we might simply consider the vector of parental breeding values, using the parental estimates to subsequently estimate the breeding values in their offspring.) If the original model is $$ \\mathbf{y}=\\mathbf{X}\\mathbf{\\beta}+\\mathbf{Z}\\mathbf{u}+\\mathbf{e},\\qquad{\\mathrm{w h e r e}}\\quad\\mathbf{u}\\sim(0,\\mathbf{G}),\\quad{\\mathrm{a n d}}\\quad\\mathbf{e}\\sim(0,\\mathbf{R}) $$ an equivalent model using any vector of random effects $ \\mathbf{u}_*\\sim(0,\\mathbf{G}_*) $ is given by $$ \\mathbf{y}=\\mathbf{X}\\mathbf{\\beta}+\\mathbf{Z}_{*}\\mathbf{u}_{*}+\\mathbf{e}_{*},\\qquad\\mathrm{w h e r e}\\quad\\mathbf{u}_{*}\\sim(0,\\mathbf{G}_{*}),\\quad\\mathrm{a n d}\\quad\\mathbf{e}_{*}\\sim(0,\\mathbf{R}_{*}) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Since for these models to be equivalent, we require that $ \\mathbf{V} = \\mathbf{V}_* $, it immediately follows from Equation A3.21b that the covariance matrix for the vector of new residual values, $ \\mathbf{e}_* $, is given by $$ \\mathbf{R}_{*}=\\mathbf{R}+\\mathbf{Z}\\mathbf{G}\\mathbf{Z}^{T}-\\mathbf{Z}_{*}\\mathbf{G}_{*}\\mathbf{Z}_{*}^{T} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Given an estimate of $ \\mathbf{u}_* $, an estimate of $ \\mathbf{u} $ can be directly obtained, as parameters of a linear model can always be expressed as linear combinations of the parameters of any equivalent model. In this case, given the BLUP estimate $ (\\widehat{\\mathbf{u}}_*) $ of $ \\mathbf{u}_* $, the BLUP estimate of $ \\mathbf{u} $ is given by $$ \\widehat{\\mathbf{u}}=\\mathbf{C}\\mathbf{G}^{-1}\\widehat{\\mathbf{u}}_{*} $$ where $\\mathbf{C}$ is the covariance matrix between $\\mathbf{u}_*$ and $\\mathbf{u}$, and $\\mathbf{G}$ is the covariance matrix associated with $\\mathbf{u}$ (Henderson 1977b). This is just the linear regression of $\\mathbf{u}_*$ on $\\mathbf{u}$ (see Equation 8.27). Note that the vectors $\\mathbf{u}_*$ and $\\mathbf{u}$ can have different dimensionality, so that if $\\mathbf{u}_*$ is $r \\times 1$ and $\\mathbf{u}$ is $q \\times 1$, then $\\mathbf{C}$ is an $r \\times q$ matrix with $C_{ij} = \\sigma(u_{*i}, u_j)$."
+    }
+  ]
+}

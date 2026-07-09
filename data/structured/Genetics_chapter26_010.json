@@ -1,0 +1,35 @@
+{
+  "id": "Genetics_chapter26_010",
+  "metadata": {
+    "chapter": "Genetics_chapter26",
+    "section": "Introduction",
+    "subsections": [
+      "The Gametic Model"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter26_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "The Gametic Model",
+    "heading_path": [
+      "Introduction",
+      "The Gametic Model"
+    ],
+    "display_heading": "The Gametic Model"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "The gametic model is often used when parental breeding values are of more concern than offspring values, as when one is attempting to estimate the breeding value of bulls from large arrays of descendants. In this model the additive genetic value of each offspring is expressed in terms of its parents' breeding values. In particular, letting $ a_{si} $ and $ a_{di} $ be the breeding values for individual i's sire and dam, we can express i's breeding value as $$ a_{i}=\\left(\\frac{a_{si}}{2}+\\frac{a_{di}}{2}\\right)+e_{ai} $$ the sum of its predicted value (the average of parental values) and a random deviation $ e_{ai} $ resulting from Mendelian segregation. Thus, we can rewrite the simplest animal model (Equation 26.8) as $$ \\begin{aligned}y_{i}&=\\mu+a_{i}+e_{i}\\\\&=\\mu+\\left(\\frac{a_{si}}{2}+\\frac{a_{di}}{2}\\right)+\\left(e_{ai}+e_{i}\\right)\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The sire model used in Example 1 is a variation of the gametic model wherein the dam contribution is ignored (and hence incorporated into the error term)."
+    },
+    {
+      "type": "discussion",
+      "content": "The residual error in the gametic model, $ e_{ai} + e_i $, contains a genetic component $ e_{ai} $ (the segregation error) in addition to an uncorrelated environmental component $ e_i $. As in the animal model, the $ e_i $ are assumed to be uncorrelated with common variance $ \\sigma_E^2 $ so that their covariance matrix is $ \\sigma_E^2 $ I. For noninbred parents, the variance of the segregation error is $ \\sigma_A^2/2 $, while if the parents are inbred, $$ \\sigma^{2}(e_{a i})=\\left(1-\\frac{f_{s i}+f_{d i}}{2}\\right)\\frac{\\sigma_{A}^{2}}{2}=\\left(1-\\overline{f}_{i}\\right)\\frac{\\sigma_{A}^{2}}{2} $$ where $f$ denotes the inbreeding coefficient and $\\overline{f}_{i}$ is the average amount of inbreeding for both parents (Dempfle 1990). The inbreeding coefficient can be obtained directly from the additive genetic relationship matrix of the parents (A). Since $A_{ii}=2\\Theta_{ii}=1+f_{i}$ (Equation 7.3), we have $$ \\overline{f}_{i}=\\frac{A_{si,si}+A_{di,di}}{2}-1 $$ Because they are random deviations around expectations, the segregation errors for all individuals are uncorrelated. Hence, the covariance matrix for the residual errors becomes $$ \\mathbf{R}=\\sigma_{E}^{2}\\mathbf{I}+\\sigma_{A}^{2}\\begin{pmatrix}(1-\\overline{f}_{1})/2&\\cdots&0\\\\\\vdots&\\ddots&\\vdots\\\\0&\\cdots&(1-\\overline{f}_{k})/2\\end{pmatrix}=\\sigma_{E}^{2}\\mathbf{W} $$ where $\\mathbf{W}$ is a diagonal matrix with diagonal elements equal to $1 + (1 - \\overline{f}_{i})/(2\\lambda)$, with $\\lambda = \\sigma_{E}^{2}/\\sigma_{A}^{2}$ (as in the animal model). Note that $\\sigma_{E}^{2}W_{ii}$ is the total within-family variance (the within-family segregation variance plus the within-family environmental variance)."
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "id": "Evolution_chapter29_024",
+  "metadata": {
+    "chapter": "Evolution_chapter29",
+    "section": "DESCRIBING PHENOTYPIC SELECTION: CHANGES IN PHENOTYPIC MOMENTS",
+    "subsections": [
+      "Partitioning Changes in Means and Variances Into Episodes of Selection"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter29_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "DESCRIBING PHENOTYPIC SELECTION: CHANGES IN PHENOTYPIC MOMENTS",
+    "section_level_2": "Partitioning Changes in Means and Variances Into Episodes of Selection",
+    "heading_path": [
+      "DESCRIBING PHENOTYPIC SELECTION: CHANGES IN PHENOTYPIC MOMENTS",
+      "Partitioning Changes in Means and Variances Into Episodes of Selection"
+    ],
+    "display_heading": "Partitioning Changes in Means and Variances Into Episodes of Selection"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Suppose the total amount of within-generation selection is partitioned into $k$ episodes of selection. Let $\\mu_j$ and $\\sigma_j^2$ be the (fitness-weighted) mean and variance after the $j$th episode of selection ($\\mu = \\mu_0$ and $\\sigma^2 = \\sigma_0^2$) are the baseline mean and variance before the first measured episode of selection). The definitions of $S$ and $C$ suggest that their appropriate counterparts for the $j$th episode of selection are calculated by $$ S_{j}=\\mu_{j}-\\mu_{j-1} $$ $$ C_{j}=\\sigma_{j}^{2}-\\sigma_{j-1}^{2}+S_{j}^{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "(Arnold and Wade 1984a). The properties for S and C hold for each episode of selection, with $$ \\begin{array}{r l r}{S_{j}=\\sigma(w_{j},z)}&{{}\\quad\\mathrm{a n d}\\quad}&{C_{j}=\\sigma\\left[w_{j},(z-\\mu_{j-1})^{2}\\right]}\\end{array} $$ where $ w_j $ is the relative fitness for the $ j $th episode of selection. Likewise, substituting $ I_j = \\sigma^2(w_i) $ for $ I $ in Equations 29.6 and 29.18c bounds the possible values of $ S_j $ and $ C_j $."
+    },
+    {
+      "type": "discussion",
+      "content": "How do these individual-episode measures relate to their total measure (i.e., over all episodes)? The partition of the total differentials, $ S_{T} $ and $ C_{T} $, into those components are additive, with $$ S_{T}=\\mu_{k}-\\mu_{0}=\\sum_{j=1}^{k}\\left(\\mu_{i}-\\mu_{i-1}\\right)=\\sum_{j=1}^{k}S_{j} $$ and $$ \\begin{aligned}C_{T}&=\\sigma_{k}^{2}-\\sigma_{0}^{2}+S_{T}^{2}=\\sum_{j=1}^{k}\\left(\\sigma_{i}^{2}-\\sigma_{i-1}^{2}\\right)+S_{T}^{2}\\\\&=\\sum_{j=1}^{k}\\left(C_{j}-S_{j}^{2}\\right)+S_{T}^{2}=\\sum_{j=1}^{k}C_{j}+\\left(S_{T}^{2}-\\sum_{j=1}^{k}S_{j}^{2}\\right)\\end{aligned} $$"
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:29.8]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Partitioning $ \\beta $ and $ \\gamma $ requires a little more care, as we have to account for changes in the phenotypic variance following each episode. From their definitions, the appropriate gradients for the jth episode of selection are $$ \\beta_{j}=\\frac{S_{j}}{\\sigma_{j-1}^{2}}\\qquad and\\qquad\\gamma_{j}=\\frac{C_{j}}{\\sigma_{j-1}^{4}} $$"
+    },
+    {
+      "type": "definition",
+      "content": "In their original paper, Arnold and Wade (1984a) initially defined gradients for each episode using the baseline variance, $\\sigma_0^2$, throughout. With this definition, gradients are additive across episodes, as their numerators (being covariances) are additive and the denominators are unchanged. This approach is often called the additive partition (or more correctly, the unweighted additive partition), as $\\beta_T = \\sum \\beta_j^0$, where $\\beta_j^0 = S_j / \\sigma_0^2$. Kalisz (1986) and Wade and Kalisz (1989) noted that the correct definition for an episodic gradient depends upon the trait variance at the start of each episode (Equation 29.23a), and the variance is expected to change during each episode. Writing $S_j = \\beta_j \\sigma_{j-1}^2$ gives $$ \\beta_{T}=\\frac{S_{T}}{\\sigma_{0}^{2}}=\\sum_{j=1}^{k}\\frac{S_{j}}{\\sigma_{0}^{2}}=\\sum_{j=1}^{k}\\frac{\\beta_{j}\\sigma_{j-1}^{2}}{\\sigma_{0}^{2}}=\\sum_{j=1}^{k}\\beta_{j}a_{j},\\quad\\mathrm{w h e r e}\\quad a_{j}=\\frac{\\sigma_{j-1}^{2}}{\\sigma_{0}^{2}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Equation 29.23b defines the variance-weighted additive partition of gradients, where the total selection gradient is now a weighted sum of the individual gradients associated with each episode. The partition of $ \\gamma $ follows in a similar manner, with $$ \\gamma=\\sum_{j=1}^{k}\\gamma_{j}a_{j}^{2}+\\frac{1}{\\sigma_{0}^{4}}\\left[S_{T}^{2}-\\sum_{j=1}^{k}S_{j}^{2}\\right] $$ where $ \\gamma_j $ is calculated by Equation 29.23a. McGlothlin (2010) presented the multivariate version of Equation 29.23c and also revealed a key feature of Equation 29.23c. Note that $ \\gamma $ can be nonzero even when all of the values of $ \\gamma_j $ are zero. Further, when directional selection is occurring, the sign of $ \\gamma $ can be different from the sign of the average value of $ \\gamma_k $."
+    }
+  ]
+}

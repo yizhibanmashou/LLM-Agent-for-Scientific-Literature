@@ -1,0 +1,55 @@
+{
+  "id": "Genetics_chapter16_003",
+  "metadata": {
+    "chapter": "Genetics_chapter16",
+    "section": "Introduction",
+    "subsections": [
+      "A Single Half-sib Family"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter16_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "A Single Half-sib Family",
+    "heading_path": [
+      "Introduction",
+      "A Single Half-sib Family"
+    ],
+    "display_heading": "A Single Half-sib Family"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Suppose a single sire is crossed to $n$ unrelated dams and a single offspring from each mating is measured. Ideally, this sire should be informative at a number of marker loci covering a significant fraction of the genome (as can be accomplished by using a large number of highly informative markers). While we have much less control over the choice of QTL-informative sires, if a major gene is involved, a pilot segregation analysis with a number of candidate sires can be used to estimate the probability that a particular sire is a QTL heterozygote (e.g., Equation 13.24), and those sires with the highest such probabilities can be used. One might also select those sires showing the greatest offspring variance (the idea being that this variance increases with the number of heterozygous QTLs), but within-family variance can be a poor indicator of sire QTL heterozygosity."
+    },
+    {
+      "type": "discussion",
+      "content": "Let $ M_{1} $ and $ M_{2} $ denote the alternative sire alleles at a heterozygous marker locus, and let $ z_{ij} $ denote the phenotype of the jth individual with sire marker allele i. The simplest linear model for examining whether this marker is linked to a QTL (heterozygous in the sire) is $$ z_{ij}=\\mu+m_{i}+e_{ij} $$ where the marker effect $ m_{i} $ is the expected deviation from the mean trait value $ \\mu $, given that an offspring has sire allele $ M_{i} $. Since there are only two marker classes, a t test can be used to determine if offspring with $ M_{1} $ vs. $ M_{2} $ sire alleles have significantly different means, $$ t=\\frac{\\overline{z}_{M_{1}}-\\overline{z}_{M_{2}}}{\\sqrt{\\mathrm{Var}\\left(\\overline{z}_{M_{1}}\\right)+\\mathrm{Var}\\left(\\overline{z}_{M_{2}}\\right)}}=\\frac{\\mathrm{MC}}{\\mathrm{SE}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Here, MC denotes the marker contrast between alternative sire alleles, and SE is the standard error of the marker contrast. A significant t value implies that the marker is linked to a QTL that is heterozygous in the sire. Typically, only those offspring whose sire alleles can be determined are included in this analysis. If the marker locus is not very polymorphic, many offspring will be uninformative. Dentine and Cowan (1990) present a GLS regression method that allows uninformative individuals to be included in the analysis."
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, consider the expected value of the marker contrast, given the sire genotype. Suppose the sire is $ M_1Q_i/M_2Q_j $ and that c is the recombination frequency between the marker and the QTL. The conditional probabilities for alternate QTL alleles in gametes carrying a known sire marker allele are $$ \\Pr(Q_{i}\\mid M_{1})=\\Pr(Q_{j}\\mid M_{2})=1-c,\\qquad\\Pr(Q_{i}\\mid M_{1})=\\Pr(Q_{j}\\mid M_{2})=c(16.7) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Suppose there are $n_Q$ QTL alleles $(Q_1,\\cdots,Q_{n_Q})$ with frequencies $q_1,\\cdots,q_{n_Q}$. Following Chapter 4, decompose the mean value of $Q_iQ_j$ as $\\mu_{Q_iQ_j} = \\mu + \\alpha_i + \\alpha_j + \\delta_{ij}$, where the deviation from the population mean is determined by the average effects of both alleles $(\\alpha_i + \\alpha_j)$ plus the dominance deviation $(\\delta_{ij})$. Assuming random mating; the dam contributes an allele at random, giving the expected value in offspring with sire marker $M_1$ as $$ \\begin{aligned}E\\left[\\left.\\mu_{M_{1}}\\right|\\mathbf{s i r e}=M_{1}Q_{i}/M_{2}Q_{j}\\right]&=\\left(1-c\\right)\\sum_{k=1}^{n_{Q}}\\mu_{Q_{i}Q_{k}}q_{k}+c\\sum_{k=1}^{n_{Q}}\\mu_{Q_{j}Q_{k}}q_{k}\\\\&=\\mu+\\left(1-c\\right)\\alpha_{i}+c\\alpha_{j}\\end{aligned} $$ which follows since $\\sum\\alpha_{k}q_{k}=\\sum\\delta_{jk}q_{k}=0$ (Chapter 4). The expected value for the marker contrasts from this sire becomes $$ E\\left[\\left.\\mu_{M_{1}}-\\mu_{M_{2}}\\right|\\mathbf{s i r e}=M_{1}Q_{i}/M_{2}Q_{j}\\right]=\\left(1-2c\\right)\\left(\\alpha_{i}-\\alpha_{j}\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, assuming a single QTL linked to the marker, the expected marker contrast for a given sire is the difference of the average effects of his alleles at this QTL, scaled by the QTL-marker recombination frequency."
+    },
+    {
+      "type": "discussion",
+      "content": "While a marker contrast may be significantly different from zero within a sibship, the expected value of this contrast across a random collection of sibships is zero for a population in linkage equilibrium, as $ E(\\alpha_x) = 0 $. Thus, one cannot simply combine contrasts across families, as these are expected to cancel. On the other hand, squared marker contrasts have expected values that are a function of the additive variance of the linked QTL. To see this relationship, assume that each sire marker allele has sample size $ n/2 $ and that the within-marker (residual) variance is the same for both marker alleles. Under these assumptions, $ \\sigma^2(\\overline{z}_{M_1}) = \\sigma^2(\\overline{z}_{M_2}) = \\sigma_e^2/(n/2) $, implying that the variance of the observed marker contrast about its expected value within each family is $$ \\sigma^{2}\\left(\\mathbf{M}\\mathbf{C}\\right)=E\\left(\\mathbf{S}\\mathbf{E}^{2}\\right)=\\sigma^{2}(\\overline{z}_{M_{1}})+\\sigma^{2}(\\overline{z}_{M_{2}})=\\frac{4\\sigma_{e}^{2}}{n} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Combining this result with Equation 16.9 gives the expected value of a squared marker contrast as $$ \\begin{aligned}E\\left(\\mathbf{M}\\mathbf{C}^{2}\\right)&=E\\left[\\left(\\overline{z}_{M_{1}}-\\overline{z}_{M_{2}}\\right)^{2}\\right]=E\\left[\\left(\\mu_{M_{1}}-\\mu_{M_{2}}\\right)^{2}\\right]+\\sigma^{2}(\\overline{z}_{M_{1}})+\\sigma^{2}(\\overline{z}_{M_{2}})\\\\&=(1-2c)^{2}E\\left[\\left(\\alpha_{i}-\\alpha_{j}\\right)^{2}\\right]+\\frac{4\\sigma_{e}^{2}}{n}\\\\&=(1-2c)^{2}\\sigma_{A}^{2}+\\frac{4\\sigma_{e}^{2}}{n}\\tag{16.10}\\end{aligned} $$ where the last step follows from $ E[(\\alpha_i - \\alpha_j)^2] = 2E(\\alpha_i^2) = \\sigma_A^2 $ (Equation 4.23b)."
+    }
+  ]
+}

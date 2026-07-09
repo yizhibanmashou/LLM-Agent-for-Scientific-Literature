@@ -1,0 +1,35 @@
+{
+  "id": "Genetics_chapter27_009",
+  "metadata": {
+    "chapter": "Genetics_chapter27",
+    "section": "Variance-Component Estimation with Complex Pedigrees",
+    "subsections": [
+      "SOLVING THE ML/REML EQUATIONS"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter27_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Variance-Component Estimation with Complex Pedigrees",
+    "section_level_2": "SOLVING THE ML/REML EQUATIONS",
+    "heading_path": [
+      "Variance-Component Estimation with Complex Pedigrees",
+      "SOLVING THE ML/REML EQUATIONS"
+    ],
+    "display_heading": "SOLVING THE ML/REML EQUATIONS"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Because the equations for the ML/REML solutions are highly nonlinear, closed analytical solutions are only available in very special cases (e.g., certain completely balanced designs). In principle, the solutions can be obtained by performing an exhaustive grid search — computing the log-likelihood of the data at each point on a grid covering the entire range of parameter space, and letting the solution be defined by the point on the grid giving the largest log-likelihood. However, this procedure is impractical under ML if $ \\beta $ contains more than a few elements, since each element of $ \\beta $ adds to the dimensionality of the search. Under REML, the dimensionality of parameter space can be greatly reduced, but the likelihood function is considerably more complicated to compute. Thus, simple grid searches are rarely used by themselves, although they are sometimes used in conjunction with other methods that restrict the search to one or a few dimensions."
+    },
+    {
+      "type": "discussion",
+      "content": "A wide variety of iterative techniques for solving ML/REML equations have been proposed based on various modifications of two basic approaches: the Newton-Raphson algorithm and the EM algorithm. Both procedures start with preliminary estimates of the parameters (obtained, for example, by ordinary least-squares analysis), and using information on the slope of the likelihood surface, these estimates are then moved in a direction that increases the log-likelihood of the data. The revised estimates are subsequently modified in an iterative fashion, until a satisfactory degree of convergence on a final set of estimates has been achieved. With these types of approaches, the search for ML/REML solutions avoids spending huge amounts of computational time in regions of low likelihood. Such hill-climbing methods are not guaranteed to converge on the global maximum of the likelihood function, but potential problems with secondary peaks in the likelihood surface can be investigated through the use of different starting values."
+    },
+    {
+      "type": "discussion",
+      "content": "Our review of numerical methods for obtaining solutions to the ML/REML equations is intentionally brief, focusing only on the general principles. All of the methods are very intensive computationally when large pedigrees are involved, as they usually require the inversion of large matrices at each step. Detailed reviews of this highly technical area appear in Meyer (1989b), Harville and Callanan (1990), and Searle et al. (1992)."
+    }
+  ]
+}

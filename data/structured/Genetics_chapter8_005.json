@@ -1,0 +1,31 @@
+{
+  "id": "Genetics_chapter8_005",
+  "metadata": {
+    "chapter": "Genetics_chapter8",
+    "section": "Introduction",
+    "subsections": [
+      "Partitioned Matrices"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter8_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "Partitioned Matrices",
+    "heading_path": [
+      "Introduction",
+      "Partitioned Matrices"
+    ],
+    "display_heading": "Partitioned Matrices"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "It is often useful to work with partitioned matrices wherein each element in a matrix is itself a matrix. There are several ways to partition a matrix. For example, we could write the matrix C above as $$ \\mathbf{C}=\\begin{pmatrix}3&1&2\\\\2&5&4\\\\1&1&2\\end{pmatrix}=\\begin{pmatrix}3&\\vdots&1&2\\\\\\cdots&\\cdots&\\cdots&\\cdots\\\\2&\\vdots&5&4\\\\1&\\vdots&1&2\\end{pmatrix}=\\begin{pmatrix}\\mathbf{a}&\\mathbf{b}\\\\\\mathbf{d}&\\mathbf{B}\\end{pmatrix} $$ where $$ \\mathbf{a}=\\left(3\\right),\\quad\\mathbf{b}=\\left(1\\quad2\\right),\\quad\\mathbf{d}=\\left(2\\atop1\\right),\\quad\\mathbf{B}=\\left(5\\quad4\\atop1\\quad2\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Alternatively, we could partition C into a single row vector whose elements are themselves column vectors, $$ \\mathbf{C}=\\left(\\begin{array}{l l l l}{\\mathbf{c}_{1}}&{\\mathbf{c}_{2}}&{\\mathbf{c}_{3}}\\end{array}\\right)\\quad\\text{where}\\quad\\mathbf{c}_{1}=\\left(\\begin{array}{l}{3}\\\\ {2}\\\\ {1}\\end{array}\\right),\\quad\\mathbf{c}_{2}=\\left(\\begin{array}{l}{1}\\\\ {5}\\\\ {1}\\end{array}\\right),\\quad\\mathbf{c}_{3}=\\left(\\begin{array}{l}{2}\\\\ {4}\\\\ {2}\\end{array}\\right) $$ or C could be written as a column vector whose elements are row vectors, $$ \\mathbf{C}=\\left(\\begin{array}{l}{\\mathbf{b_{1}}}\\\\ {\\mathbf{b_{2}}}\\\\ {\\mathbf{b_{3}}}\\end{array}\\right)\\quad\\mathrm{w h e r e}\\quad\\mathbf{b_{1}}=\\left(\\begin{array}{l l l}{3}&{1}&{2}\\end{array}\\right),\\quad\\mathbf{b_{2}}=\\left(\\begin{array}{l l l}{2}&{5}&{4}\\end{array}\\right),\\quad\\mathbf{b_{3}}=\\left(\\begin{array}{l l l}{1}&{1}&{2}\\end{array}\\right) $$"
+    }
+  ]
+}

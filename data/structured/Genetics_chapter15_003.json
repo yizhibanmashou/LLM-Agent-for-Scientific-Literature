@@ -1,0 +1,79 @@
+{
+  "id": "Genetics_chapter15_003",
+  "metadata": {
+    "chapter": "Genetics_chapter15",
+    "section": "Introduction",
+    "subsections": [
+      "Conditional Probabilities of QTL Genotypes"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter15_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "Conditional Probabilities of QTL Genotypes",
+    "heading_path": [
+      "Introduction",
+      "Conditional Probabilities of QTL Genotypes"
+    ],
+    "display_heading": "Conditional Probabilities of QTL Genotypes"
+  },
+  "blocks": [
+    {
+      "type": "definition",
+      "content": "The basic element upon which the formal theory of QTL mapping is built is the conditional probability that the QTL genotype is $Q_{k}$, given the observed marker genotype is $M_{j}$. From the definition of a conditional probability, this is $$ \\Pr(Q_{k}|M_{j})=\\frac{\\Pr(Q_{k}M_{j})}{\\Pr(M_{j})} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The joint and marginal probabilities, $ \\Pr(Q_{k}M_{j}) $ and $ \\Pr(M_{j}) $, are functions of the experimental design and the linkage map (the position of the putative QTLs with respect to the marker loci). Computing these probabilities is a relatively simple matter of bookkeeping (see Example 1), but can get rather tedious as the number of markers and/or QTLs under consideration increases."
+    },
+    {
+      "type": "proposition",
+      "content": "When computing joint probabilities involving more than two loci, one must also account for recombinational interference between loci (Chapter 14). Consider a single QTL flanked by two markers, $ M_{1} $ and $ M_{2} $. The gamete frequencies depend on three parameters: the recombination frequency $ c_{12} $ between markers, the recombination frequency $c_{1}$ between marker $M_{1}$ and the QTL, and the recombination frequency $c_{2}$ between the QTL and marker $M_{2}$. Under the assumption of no interference, $c_{12}=c_{1}+c_{2}-2c_{1}c_{2}$, while $c_{12}=c_{1}+c_{2}$ under complete interference (Chapter 14). When $c_{12}$ is small, gamete frequencies are essentially identical under either interference assumption. Typically, $c_{12}$ is assumed known, leaving two unknown recombination parameters $(c_{1}$ and $c_{2})$ under general assumptions about interference. In either case, there is only one parameter to estimate, as assuming complete interference $c_{2}=c_{12}-c_{1}$, and assuming no interference $c_{2}=(c_{12}-c_{1})/(1-2c_{1})$. Hence, for flanking-marker analysis, we restrict attention to the single recombination parameter $c_{1}$, the distance from marker locus $M_{1}$ to the QTL. When considering analysis of single-marker loci, for notational ease we drop the subscript, using $c$ in place of $c_{1}$."
+    },
+    {
+      "type": "discussion",
+      "content": "Conditional probabilities involving more than three linked loci are generally dealt with by first assuming an appropriate mapping function on which distances are additive (Chapter 14), and then translating these distances into recombination frequencies. When a large number of markers is considered, missing marker information can become a problem. Many individuals can be left with incomplete multilocus marker genotypes, excluding them from further analysis. Martínez and Curnow (1992) show how information from linked markers can be used to estimate the genotype at missing or incomplete (i.e., dominant) markers."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 1. Consider a single-marker analysis using the F₂ formed by crossing two inbred lines, MMQQ × mmqq. If the recombination frequency between the marker locus and the QTL is c, the expected F₁ gamete frequencies are $$ \\Pr(MQ)=\\Pr(mq)=(1-c)/2,\\qquad\\Pr(Mq)=\\Pr(mQ)=c/2 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The probability that an $\\mathrm{F}_{2}$ individual is $MMQQ$ is $\\Pr(MQ) \\cdot \\Pr(MQ) = [(1 - c)/2]^{2}$. Likewise, $2 \\cdot \\Pr(MQ) \\cdot \\Pr(mQ) = 2(c/2)[(1 - c)/2]$ is the probability of an $MmQQ$ individual, and so on. Since the probabilities of the marker genotypes $MM$, $Mm$, and $mm$ are $1/4$, $1/2$, and $1/4$, Equation 15.1 gives the $\\mathrm{F}_{2}$ conditional probabilities as $$ \\Pr(QQ\\mid MM)=(1-c)^{2},\\quad\\Pr(Qq\\mid MM)=2c(1-c),\\quad\\Pr(qq\\mid MM)=c^{2} $$ $$ \\Pr(QQ\\mid M m)=c(1-c),\\Pr(Q q\\mid M m)=(1-c)^{2}+c^{2},\\Pr(q q\\mid M m)=c(1-c) $$ $$ \\Pr(QQ\\mid mm)=c^{2},\\quad\\Pr(Qq\\mid mm)=2c(1-c),\\quad\\Pr(qq\\mid mm)=(1-c)^{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "This same logic extends to multiple marker loci. Suppose the QTL is flanked by two scored markers, and consider the $ F_{2} $ in a cross of lines fixed for $ M_{1}QM_{2} $ and $ m_{1}qm_{2} $. What are the conditional probabilities of the three QTL genotypes when the marker genotype is $M_{1}M_{1}M_{2}M_{2}$? Since all F$_{1}$s are $M_{1}QM_{2}/m_{1}qm_{2}$, under the assumptions of no interference, the frequency of F$_{1}$ gametes involving $M_{1}M_{2}$ are $$ \\operatorname*{P r}(M_{1}Q M_{2})=(1-c_{1})(1-c_{2})/2,\\qquad\\operatorname*{P r}(M_{1}q M_{2})=c_{1}\\,c_{2}/2 $$ giving expected frequencies in the $ F_{2} $ of $ M_{1}M_{1}M_{2}M_{2} $ offspring as $$ \\begin{aligned}\\Pr(M_{1}QM_{2}/M_{1}QM_{2})&=[(1-c_{1})(1-c_{2})/2]^{2}\\\\\\Pr(M_{1}QM_{2}/M_{1}qM_{2})&=2[(1-c_{1})(1-c_{2})/2][c_{1}c_{2}/2]\\\\\\Pr(M_{1}qM_{2}/M_{1}qM_{2})&=(c_{1}c_{2}/2)^{2}\\end{aligned} $$ where $c_{2}=(c_{12}-c_{1})/(1-2c_{1})$. The overall frequency of $M_{1}M_{1}M_{2}M_{2}$ individuals, $\\mathrm{Pr}(M_{1}M_{1}M_{2}M_{2})$, is the sum of the three above terms, or $(1-c_{12})^{2}/4$. Substituting into Equation 15.1 gives $$ \\begin{aligned}\\Pr(QQ\\mid M_{1}M_{1}M_{2}M_{2})&=\\frac{(1-c_{1})^{2}(1-c_{2})^{2}}{(1-c_{12})^{2}}\\\\\\Pr(Qq\\mid M_{1}M_{1}M_{2}M_{2})&=\\frac{2c_{1}c_{2}(1-c_{1})(1-c_{2})}{(1-c_{12})^{2}}\\\\\\Pr(qq\\mid M_{1}M_{1}M_{2}M_{2})&=\\frac{c_{1}^{2}c_{2}^{2}}{(1-c_{12})^{2}}\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Conditional probabilities for other marker genotypes are computed in a similar fashion. Since $c_1c_2$ is usually very small if $c_{12}$ is moderate to small, essentially all $M_1M_1M_2M_2$ individuals are QQ. For example, assuming $c_1 = c_2 = c_{12}/2$ (the worst case), the conditional probabilities of an $M_1M_1M_2M_2$ individual being QQ are 0.96, 0.98, and 0.99 for $c_1 = c_2 = 0.25$, 0.2, and 0.1."
+    },
+    {
+      "type": "discussion",
+      "content": "We now move on to the conditional probabilities for other single-marker line cross designs, starting with backcrosses. For a $B_{1}$ population, where the $F_{1}$ is backcrossed to $P_{1}$ (with genotype $MMQQ$), one parental gamete is always $MQ$. Hence, for a single-marker analysis, there are only two marker genotypes, $MM$ and $Mm$. Using the frequencies for the four possible gametes (Example 1) of the $F_{1}$ parent gives the following conditional probabilities $$ \\begin{aligned}\\Pr(QQ\\mid MM)&=1-c,\\quad&\\Pr(Qq\\mid MM)&=c\\\\\\Pr(QQ\\mid Mm)&=c,\\quad&\\Pr(Qq\\mid Mm)&=1-c\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Likewise, when backcrossing to the $P_{2}$ (mmqq), the two possible single-locus marker genotypes are $Mm$ and $mm$, and the conditional probabilities become $$ \\begin{aligned}{\\operatorname*{P r}(q q\\mid m m)}&{{}=1-c,\\qquad}&{\\operatorname*{P r}(Q q\\mid m m)}&{{}=c}\\\\ {\\operatorname*{P r}(q q\\mid M m)}&{{}=c,\\qquad}&{\\operatorname*{P r}(Q q\\mid M m)}&{{}=1-c}\\\\ \\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "For designs involving more than one generation of recombination, the single-generation recombination frequency $ c $ is simply replaced by a corrected frequency $ \\tilde{c} $ that is a function of the particular design. We consider three such designs: advanced intercross lines (AILs), recombinant inbred lines (RILs), and double-haploid lines (DHLs)."
+    },
+    {
+      "type": "discussion",
+      "content": "Advanced intercross lines (Darvasi and Soller 1995) are obtained by crossing two inbred lines, but instead of stopping at the $ F_{2} $, random mating proceeds for $ t $ generations, generating an $ F_{t} $. In this case, unlike the strategy used to create RILs (Chapter 14), inbreeding is avoided by keeping the breeding population size large. As the result of the multiple rounds of recombination, markers in an $ F_{t} $ individual show an expansion of the genetic map relative to an $ F_{2} $, with the expected frequency of a recombinant gamete in the $ F_{t} $ for a pair of loci at recombination fraction $ c $ being $$ \\widetilde{c}=\\frac{1-(1-c)^{t-2}(1-2c)}{2}\\simeq\\frac{t}{2}c $$ where the approximation holds for $ ct << 1 $ (Darvasi and Soller 1995, Liu et al. 1996). For example, if the marker-QTL recombination frequency is $ c = 0.01 $, only 1% of the $ F_2 $ gametes are recombinant ($ M_q $, $ mQ $), but this increases to 2.5% in an $ F_5 $ and 9.1% in an $ F_{20} $. The conditional genotype probabilities for an $ F_t $ AIL are given by the $ F_2 $-design expressions in Example 1, with $ \\tilde{c} $ substituted for $ c $."
+    },
+    {
+      "type": "discussion",
+      "content": "Recombinant inbred lines (RILs) also involve several generations of recombination, but here genotypes are fixed by inbreeding. Starting with a $ MQ/mq $ $ F_1 $ parent, there are only four possible genotypes in the resulting RILs — $ MMQQ $, $ MMqq $, $ mmQQ $, and $ mmqq $. The frequency of recombinant gametes ($ Mq $, $ mQ $) in RILs approaches a limiting value of $ \\tilde{c} = 2c/(1 + 2c) $ for selfed lines and $ \\tilde{c} = 4c/(1 + 6c) $ for lines formed by brother-sister mating (Haldane and Waddington 1931). Thus, the expected frequencies of genotypes in RILs are $$ \\begin{array}{r l r}&{\\mathrm{L i n e~g e n o t y p e}}&{\\mathrm{F r e q u e n c y}}\\\\ &{\\hline M M Q Q,m m q q}&{(1-\\widetilde{c})/2}\\\\ &{M M q q,m m Q Q}&{\\widetilde{c}/2}\\end{array} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "While doubled-haploid lines (DHLs) also have only these four genotypes, they are formed by a single generation of meiosis, so that $ \\widetilde{c} = c $. Hence, among either RILs or DHLs, the conditional QTL probabilities are $$ \\begin{aligned}\\Pr(QQ\\mid MM)&=1-\\widetilde{c},\\quad&\\Pr(qq\\mid MM)&=\\widetilde{c}\\\\\\Pr(QQ\\mid mm)&=\\widetilde{c},\\quad&\\Pr(qq\\mid mm)&=1-\\widetilde{c}\\end{aligned} $$ where $$ \\widetilde{c}=\\left\\{\\begin{array}{l l}{c}&{\\mathrm{f o r~D H L s}}\\\\ {2c/(1+2c)}&{\\mathrm{f o r~R I L s~f o r m e d~b y~s e l f i n g}}\\\\ {4c/(1+6c)}&{\\mathrm{f o r~R I L s~f o r m e d~b y~b r o t h e r-s i s t e r~m a t i n g}}\\end{array}\\right. $$"
+    }
+  ]
+}

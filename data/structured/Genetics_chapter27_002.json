@@ -1,0 +1,35 @@
+{
+  "id": "Genetics_chapter27_002",
+  "metadata": {
+    "chapter": "Genetics_chapter27",
+    "section": "Variance-Component Estimation with Complex Pedigrees",
+    "subsections": [
+      "ML VERSUS REML ESTIMATES OF VARIANCE COMPONENTS"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter27_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Variance-Component Estimation with Complex Pedigrees",
+    "section_level_2": "ML VERSUS REML ESTIMATES OF VARIANCE COMPONENTS",
+    "heading_path": [
+      "Variance-Component Estimation with Complex Pedigrees",
+      "ML VERSUS REML ESTIMATES OF VARIANCE COMPONENTS"
+    ],
+    "display_heading": "ML VERSUS REML ESTIMATES OF VARIANCE COMPONENTS"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Although algebraically tedious, maximum likelihood (ML) is conceptually very simple. It was introduced to variance component-estimation by Hartley and Rao (1967). For a specified model, such as Equation 26.1, and a specified form for the joint distribution of the elements of y, ML estimates the parameters of the distribution that maximize the likelihood of the observed data. This distribution is almost always assumed to be multivariate normal. An advantage of ML estimators is their efficiency — they simultaneously utilize all of the available data and account for any nonindependence."
+    },
+    {
+      "type": "discussion",
+      "content": "One drawback with variance-component estimation via the usual maximum likelihood approach is that all fixed effects are assumed to be known without error. This is rarely true in practice, and as a consequence, ML estimators yield biased estimates of variance components. Most notably (as we show below), estimates of the residual variance tend to be downwardly biased. This bias occurs because the observed deviations of individual phenotypic values from an estimated population mean tend to be smaller than their deviations from the true (parametric) mean. Such bias can become quite large when a model contains numerous fixed effects, particularly when sample sizes are small."
+    },
+    {
+      "type": "discussion",
+      "content": "Unlike ML estimators, restricted maximum likelihood (REML) estimators maximize only the portion of the likelihood that does not depend on the fixed effects. In this sense, REML is a restricted version of ML. The elimination of bias by REML is analogous to the removal of bias that arises in the estimate of a variance component when the mean squared deviation is divided by the degrees of freedom instead of by the sample size (Chapter 2, and below). REML does not always eliminate all of the bias in parameter estimation, since many methods for obtaining REML estimates cannot return negative estimates of a variance component. However, this source of bias also exists with ML, so REML is clearly the preferred method for analyzing large data sets with complex structure. In the ideal case of a completely balanced design, REML yields estimates of variance components that are identical to those obtained by classical analysis of variance. Since it was first introduced to breeders by Patterson and Thompson (1971), many thorough references to REML, its justification, and its various applications have been published (Harville 1977; Ott 1979; Henderson 1984b, 1986; Gianola and Fernando 1986; Little and Rubin 1987; Robinson 1987; Searle 1987; Shaw 1987; Searle et al. 1992)."
+    }
+  ]
+}

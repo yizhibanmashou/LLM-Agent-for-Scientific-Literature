@@ -1,0 +1,31 @@
+{
+  "id": "Evolution_appendix4_029",
+  "metadata": {
+    "chapter": "Evolution_appendix4",
+    "section": "FORMAL META-ANALYSIS",
+    "subsections": [
+      "Bias When Estimating Magnitudes"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_appendix4_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "FORMAL META-ANALYSIS",
+    "section_level_2": "Bias When Estimating Magnitudes",
+    "heading_path": [
+      "FORMAL META-ANALYSIS",
+      "Bias When Estimating Magnitudes"
+    ],
+    "display_heading": "Bias When Estimating Magnitudes"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Finally, consider a random-effects setting, in which the parameter of interest, $\\theta_{ii}$ in a given study (i) is drawn from normal distribution with a mean of $\\mu$ and a variance of $\\sigma_{\\mu}^{2}$, so $\\theta_{i} \\sim N(\\mu, \\sigma_{\\mu}^{2})$. Suppose we assume the observed effect, $T_{i}$, for this study is also normal, but with an additional sampling error, $\\sigma_{e}^{2}$, so that $T_{i} \\sim N(\\mu, \\sigma_{u}^{2} + \\sigma_{e}^{2})$. This additional variance has no effect on our estimate of the desired mean, $\\mu$, as $E[T_{i}] = \\mu$. However, in many setting in quantitative genetics (as well as ecology and evolution), our interest may be in the absolute magnitude, $|\\theta|$, of the effect, rather than its mean value. An important example of this type of inquiry is the estimation of the average strength of selection, $|\\beta|$, on a trait (Chapters 29 and 30). As noted by Hereford et al. (2004) and Morrissey (2016), $E[|T|] > E[\\|\\theta\\|]$ when $\\sigma_{e}^{2} > 0$, which will result in an overestimate of the expected absolute value of the effect. In particular, if $\\mu = 0$, then (Example A4.11), $$ E[|\\theta|]=\\sigma_{u}\\sqrt{2/\\pi},\\qquad\\mathrm{w h i l e}\\qquad E[|T|]=\\sqrt{\\sigma_{u}^{2}+\\sigma_{e}^{2}}\\cdot\\sqrt{2/\\pi} $$ which yields a relative error of $$ \\frac{E[|T|]-E[|\\theta|]}{E[|\\theta|]}=\\sqrt{\\frac{\\sigma_{e}^{2}}{\\sigma_{u}^{2}}+1-1} $$ which can be a significant overestimation of the average magnitude of an effect if the error variance is large relative to the effect variance (Figure A4.8). Morrissey (2016) presented several additional examples where the concern of a meta-analysis is in some measure of dispersion about a mean, in which case the error variance associated with using an estimate $ (T_{i}) $ will result in an upwardly biased estimator. Morrissey showed how the use of appropriate mixed models helps to resolve this concern."
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:A4.11]]"
+    }
+  ]
+}

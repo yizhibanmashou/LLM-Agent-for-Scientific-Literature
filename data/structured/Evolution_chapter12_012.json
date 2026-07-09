@@ -1,0 +1,63 @@
+{
+  "id": "Evolution_chapter12_012",
+  "metadata": {
+    "chapter": "Evolution_chapter12",
+    "section": "TESTING THE NULL HYPOTHESIS OF NEUTRAL PHENOTYPIC DIVERGENCE: RATE-BASED TESTS",
+    "subsections": [
+      "Lande's Brownian-motion Model of Neutral Trait Evolution"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter12_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "TESTING THE NULL HYPOTHESIS OF NEUTRAL PHENOTYPIC DIVERGENCE: RATE-BASED TESTS",
+    "section_level_2": "Lande's Brownian-motion Model of Neutral Trait Evolution",
+    "heading_path": [
+      "TESTING THE NULL HYPOTHESIS OF NEUTRAL PHENOTYPIC DIVERGENCE: RATE-BASED TESTS",
+      "Lande's Brownian-motion Model of Neutral Trait Evolution"
+    ],
+    "display_heading": "Lande's Brownian-motion Model of Neutral Trait Evolution"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "The basic structure of tests for neutral trait divergence have the form of $ \\mu_t \\sim (\\mu_0, \\sigma_B^2[t]) $, namely, the mean phenotype at time $ t $ has an expected value equal to the initial mean"
+    },
+    {
+      "type": "proposition",
+      "content": "$\\mu_0$ and variance $\\sigma_B^2(t)$. To proceed further, we need additional assumptions about the actual distribution from which the means are sampled, which is generally assumed to be Gaussian (normal). Support for this assumption traces back to Lande (1976), who framed mean divergence in terms of a Brownian-motion process (Appendix 1). Under the simplest Brownian-motion model, the expected change in value over a small time interval is zero with a constant variance of $b$. Under this model, the distribution of values at time $t$ is normal with mean $x_0$ (the initial value) and variance $\\sigma_t^2 = b t$ (Equation A1.31b). Assuming a strictly additive model with no environmental trends, Lande noted that if we sample $N_e$ individuals, their mean breeding value (i.e., the trait mean) will have a sampling variance in each generation of $\\sigma_A^2 / N_e$, which is used for $b$. Hence, at generation $t$, the distribution of phenotypic means is approximately normal with mean $\\mu_0$ (the initial mean) and variance $$ \\sigma_{t}^{2}=t\\sigma_{A}^{2}/N_{e} $$"
+    },
+    {
+      "type": "proposition",
+      "content": "This approach assumes a constant additive genetic variance as well as a constant effective population size during the period of divergence being considered. Because drift can also change $ \\sigma_A^2 $, the assumption of a constant $ \\sigma_A^2 $ is reasonable only for $ t \\ll N_e $, unless the initial variance is close to its mutation-drift equilibrium value ($ 2N_e\\sigma_m^2 $; see Equation 11.20b). More generally, if the additive variance and $ N_e $ are both changing in each generation, then under the Brownian-motion model (taking the first time point at $ i = 0 $ and the last at $ i = t - 1 $, bringing us up to generation $ t $), $$ \\sigma_{t}^{2}=\\sum_{i=0}^{t-1}\\left(\\frac{\\sigma_{A}^{2}(i)}{N_{e}(i)}\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "For example, assuming a constant effective population size, the additive genetic variance at time t under drift and mutation is given by Equation 11.20b. Substituting this into Equation 12.14b yields $$ \\begin{align*}\\sigma_{t}^{2}&=\\frac{1}{N_{e}}\\sum_{i=0}^{t-1}\\left[2N_{e}\\sigma_{m}^{2}+\\left(\\sigma_{A}^{2}(0)-2N_{e}\\sigma_{m}^{2}\\right)e^{-i/2N_{e}}\\right]\\\\&=2\\sigma_{m}^{2}t+\\left(\\sigma_{A}^{2}(0)-2N_{e}\\sigma_{m}^{2}\\right)\\left(\\frac{1}{N_{e}}\\sum_{0=1}^{t-1}e^{-i/2N_{e}}\\right)\\end{align*} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "By noting that $$ \\frac{1}{N_{e}}\\sum_{i=0}^{t-1}e^{-i/2N_{e}}\\simeq2\\left(1-e^{-t/2N_{e}}\\right) $$ recovers the previous expression (Equation 12.10) for $ \\sigma_{B}^{2} $ under drift and mutation. This useful identity follows by recalling that the partial sum of a geometric series is $$ \\sum_{i=0}^{k-1}x^{i}=\\frac{1-x^{k}}{1-x}. $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Taking $ x = e^{-1/2N_e} $ and noting from a first-order Taylor series that $$ 1-e^{-1/2N_{e}}\\simeq1-\\left(1-\\frac{1}{2N_{e}}\\right)=\\frac{1}{2N_{e}} $$ returns Equation 12.15a."
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, as expected, the variance $ \\sigma_{t}^{2} $ of the Brownian-motion process corresponds to the among-group drift variance $ \\sigma_{B}^{2}(t) $ in population means. The notion that (under a pure drift model) the additive variance within populations reaches a drift-mutation equilibrium value has resulted in different parameterizations of $ \\sigma_{t}^{2} $ in tests of drift (Lande 1976; Turelli et al. 1988). Lande assumed a constant variance, $ \\sigma_t^2 = t\\sigma_A^2/N_e $, but because part of his concern was evolution in the fossil record, he replaced $ \\sigma_A^2 $ by $ h^2\\sigma_z^2 $, yielding $$ \\sigma_{t}^{2}=h^{2}\\sigma_{z}^{2}t/N_{e} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "His logic was that $ \\sigma_z^2 $ could be estimated directly from a sample in the fossil record, while $ h^2 $ values for many morphological traits fall within a relatively narrow range. Hence, either a representative value for $ h^2 $ could be used, or different values of $ h^2 $ could be explored to examine the robustness of any conclusions. This results in a test based on joint considerations of $ N_e $ and $ h^2 $."
+    },
+    {
+      "type": "discussion",
+      "content": "Conversely, Turelli et al. (1988) noted that if the population has been at its current size sufficiently long enough that the additive genetic variance is at its mutation-drift equilibrium value, then (assuming the infinite-alleles model) $ \\sigma_A^2 = 2N_e\\sigma_m^2 $, yielding $$ \\sigma_{t}^{2}=2t N_{e}\\sigma_{m}^{2}/N_{e}=2t\\sigma_{m}^{2}, $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Under this setting, $ N_e $ does not appear in $ \\sigma_t^2 $ and tests are based on whether the values of $ \\sigma_m^2 $ required to be consistent with drift are plausible. This is the quantitative-trait analog of the divergence ($ d = tu $) between two neutral sequences separated by $ t $ total generations (Chapter 7), with the allelic mutation rate ($ u $) replaced by twice the trait mutational variance, $ 2\\sigma_m^2 $. It needs to be stressed, however, that this apparent independence of $ N_e $ is a bit misleading. As mentioned previously, some fraction of its underlying variation may be due to alleles with deleterious pleiotropic effects on fitness (Chapter 28). Any such alleles are expected to have ever-decreasing frequencies (and hence less impact on $ h_m^2 $) as $ N_e $ increases. Hence, the evolutionary relevant fraction of $ h_m^2 $ very likely declines with $ N_e $, even for a neutral trait, resulting in less neutral divergence than expected."
+    }
+  ]
+}

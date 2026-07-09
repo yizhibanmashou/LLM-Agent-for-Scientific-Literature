@@ -1,0 +1,107 @@
+{
+  "id": "Genetics_chapter14_019",
+  "metadata": {
+    "chapter": "Genetics_chapter14",
+    "section": "Introduction",
+    "subsections": [
+      "Marker-based Introgressions"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter14_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "Marker-based Introgressions",
+    "heading_path": [
+      "Introduction",
+      "Marker-based Introgressions"
+    ],
+    "display_heading": "Marker-based Introgressions"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Although NILs formed by selection have generally focused on phenotypic characters such as disease resistance or a small set of desirable characters, one can also select for the retention of specific donor marker alleles. Such marker selection allows the introgression of a specific region (such as one containing QTLs of"
+    },
+    {
+      "type": "discussion",
+      "content": "[[FIGURE:14.8]] modest to small effect) into an otherwise isogenic background (Young et al. 1988, Tanksley et al. 1989, Paterson et al. 1991, Dudley 1993). Independent NILs formed while selecting on the same marker are expected to differ in the regions retained around the marker (Figure 14.8), so crossing such NILs allows for finer scale mapping. This approach has been used to fine map QTLs (mainly resistance genes) in maize (Bentolila et al. 1991, Koester et al. 1993, Touzet et al. 1995), rice (Yu et al. 1991, Ronald et al. 1992), lettuce (Paran et al. 1991), wheat (Hartl et al. 1993; Schachermayr et al. 1994, 1995), barley (Schüller et al. 1992, Hinze et al. 1991), oats (Penner et al. 1993), and tomatoes (Osborn et al. 1987, Tanksley and Hewitt 1988)."
+    },
+    {
+      "type": "discussion",
+      "content": "Sarfatti et al. 1989, Paterson et al. 1990). selecting for the retention of a donor marker while backcrossing to the recurrent parent yields a NIL with a block of donor DNA surrounding the marker that can be rather large. One consequence of this is that linked undesirable genes can be dragged along with the marker, a phenomenon that plant breeders refer to as linkage drag (Brinkman and Frey 1977). Conversely, a single marker may remain associated with several favorable linked QTLs within the introgressed region. The amount of donor DNA present following marker-selected introgression has been examined by several authors (Bartlett and Haldane 1935, Hanson 1959a–d, Stam and Zeven 1981, Naveira and Barbadilla 1992). The donor DNA remaining in the NILs can either reside on the chromosome under marker selection or on the other (unmarked) chromosomes. We consider these two sources separately."
+    },
+    {
+      "type": "discussion",
+      "content": "Suppose there are $n$ chromosomes and a total genome length of $L = L_M + \\sum L_i$, with $L_M$ being the length of the marker chromosome and $L_i$ being the length of the $i$th unmarked chromosome (all lengths in Morgans). Consider the DNA retained around the marker, and suppose that the selected marker is in the center of the chromosome. Letting $t = b + 1$, the proportion $p_M(b)$ of donor DNA on this marker chromosome after $b$ generations of backcrossing and a final generation of selfing has expected value $$ E[p_{M}(b)]=2~\\left(\\frac{1-e^{-t L_{M}/2}}{t L_{M}}\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "(Hanson 1959b), while the variance is $$ \\sigma^{2}[p_{M}(b)]=\\frac{2}{(t L_{M})^{2}}\\left[1-\\left(t L_{M}+e^{-t L_{M}/2}\\right)e^{-t L_{M}/2}\\right] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "(Naveira and Barbadilla 1992). For $tL_{M}>>1$, these are approximately $$ E[p_{M}(b)]\\simeq\\frac{2}{t L_{M}},\\qquad\\sigma^{2}[p_{M}(b)]\\simeq\\frac{2}{(t L_{M})^{2}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Since these equations refer to the proportion of this chromosome retained, the corresponding chromosome lengths retained are given by $L_{M} \\cdot p_{M}(b)$, yielding a mean length $\\pm$ SD (in Morgans) of $2/t \\pm \\sqrt{2}/t$ for $t L_{M} >> 1$."
+    },
+    {
+      "type": "discussion",
+      "content": "The restriction of the marker being in the center of the chromosome was removed by Stam and Zeven (1981), who showed that using Equations 14.10a–c for a randomly placed marker generally introduces only a small error. Of broader concern is that these equations consider only the segment around the marker, while the marked chromosome can also retain blocks of donor DNA elsewhere. Stam and Zeven show that these two effects (noncentrality of the marker and blocks of donor DNA retained outside of the marker) largely cancel, leaving Hanson's original result as a very good approximation."
+    },
+    {
+      "type": "discussion",
+      "content": "Turning now to the unmarked chromosomes, let $p_{U_{i}}(b)$ denote the proportion of donor DNA on an unmarked chromosome of length $L_{i}$. The mean and variance are given by $$ E[p_{U_{i}}(b)]=\\frac{1}{2^{t}} $$ $$ \\sigma^{2}[p_{U_{i}}(b)]=2\\left(\\frac{1-e^{-t L_{i}/2}}{t L_{i}2^{t}}\\right)-\\frac{1}{2^{2t}} $$ as shown by Stam and Zeven (1981). The expected total length of donor DNA retained over all unmarked chromosomes thus becomes $$ \\sum_{i=1}^{n-1}L_{i}E[p_{U_{i}}(b)]=\\frac{1}{2^{t}}\\sum_{i=1}^{n-1}L_{i}=\\frac{L-L_{M}}{2^{t}} $$ with variance $$ \\sum_{i=1}^{n-1}L_{i}^{2}\\cdot\\sigma^{2}[p_{U_{i}}(b)] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Example 12. Suppose there are $n = 15$ chromosomes, each of length 75 cM, and that we select for retention of a marker located in the middle of chromosome 1 during five generations of backcrossing and a generation of selfing. Applying Equation 14.10a, the expected fraction of donor DNA on chromosome 1 is $$ E[p_{M}(5)]=2\\left(\\frac{1-e^{-6(0.75/2)}}{0.75\\cdot6}\\right)\\simeq0.40 $$ or, in units of chromosome length, $ 0.4 \\cdot 75\\ \\text{cM} = 30\\ \\text{cM} $. Equation 14.10b gives the standard deviation of the expected proportion retained as 0.23, or 17.25 cM. Likewise, applying Equations 14.11a,b, the proportion of donor DNA on any nonmarker chromosome is $ 0.016 \\pm 0.077 $, or $ 1.2 \\pm 5.8\\ \\text{cM} $. The fraction of the total expected donor DNA in the NIL contributed by the marked chromosome is $ 30/(30 + 14 \\cdot 1.2) = 0.64 $."
+    },
+    {
+      "type": "discussion",
+      "content": "Fewer and more generations of backcrossing give the following expected values: <table border=1 style='margin: auto; word-wrap: break-word;'><tr><td rowspan=\"2\">b</td><td colspan=\"2\">Lengths of Introgressed Segment (cM)</td><td rowspan=\"2\">% from Marked Chromosome</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Marker chromosome</td><td style='text-align: center; word-wrap: break-word;'>All unmarked</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>2</td><td style='text-align: center; word-wrap: break-word;'>45.0 $ \\pm $ 19.1</td><td style='text-align: center; word-wrap: break-word;'>131.25 $ \\pm $ 255.9</td><td style='text-align: center; word-wrap: break-word;'>25.6</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>7</td><td style='text-align: center; word-wrap: break-word;'>23.8 $ \\pm $ 14.8</td><td style='text-align: center; word-wrap: break-word;'>4.10 $ \\pm $ 36.7</td><td style='text-align: center; word-wrap: break-word;'>85.3</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>10</td><td style='text-align: center; word-wrap: break-word;'>17.9 $ \\pm $ 12.0</td><td style='text-align: center; word-wrap: break-word;'>0.51 $ \\pm $ 11.3</td><td style='text-align: center; word-wrap: break-word;'>97.3</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>12</td><td style='text-align: center; word-wrap: break-word;'>15.3 $ \\pm $ 10.5</td><td style='text-align: center; word-wrap: break-word;'>0.13 $ \\pm $ 5.2</td><td style='text-align: center; word-wrap: break-word;'>99.2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>15</td><td style='text-align: center; word-wrap: break-word;'>12.5 $ \\pm $ 8.7</td><td style='text-align: center; word-wrap: break-word;'>0.02 $ \\pm $ 1.7</td><td style='text-align: center; word-wrap: break-word;'>99.9</td></tr></table>"
+    },
+    {
+      "type": "discussion",
+      "content": "A NIL line created by selecting for retention of a marker contains significantly more donor DNA than a NIL created without any selection. The total map length in this example is 1,125 cM, giving the expected total length of donor DNA in an NIL formed without selection as $ 1125/2^{b+1} $, or 17.58, 4.39, and 0.55 cM after 5, 7, and 10 generations of backcrossing, respectively."
+    },
+    {
+      "type": "discussion",
+      "content": "If donor and recurrent-parent DNAs are sufficiently different, recombination between donor and recurrent chromosomes can be greatly reduced, resulting in a much longer segment of donor DNA being retained than expected (e.g., Young and Tanksley 1989a, Paterson et al. 1990). In these cases, the above expressions may give rather serious underestimates. For example, Young and Tanksley (1989a) examined the length of donor DNA introgressed by selecting for a donor marker (resistance to tobacco mosaic virus) in a cross between two species of tomatoes."
+    },
+    {
+      "type": "discussion",
+      "content": "Traditional single- marker selection"
+    },
+    {
+      "type": "discussion",
+      "content": "Selection using flanking markers"
+    },
+    {
+      "type": "discussion",
+      "content": "[[FIGURE:14.9]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Even after 11 generations of backcrossing, the length of the introgressed segment in one line was over 51 cM, as compared to the theoretical expectation of $ 16.7 \\pm 11.8 $ cM from Equation 14.10c."
+    },
+    {
+      "type": "discussion",
+      "content": "Young and Tanksley (1989a,b) suggested that selection using multiple markers (instead of single markers) can greatly accelerate the formation of NILs with very short introgressed segments. Likewise, selection for recurrent markers on nontarget chromosomes increases the rate of removal of donor DNA on other chromosomes."
+    },
+    {
+      "type": "discussion",
+      "content": "Equation 14.10c shows that 99 backcross generations are required to reduce the average length of a marker-selected introgressed region to 2 cM. However, with a dense marker map, such a region can be obtained in one or two generations by using markers that flank the region of interest (Figure 14.9). If we can screen a very large number of individuals, this can be done in a single generation by looking for a double recombinant. Using flanking markers 1 cM on either side of the region of interest, the probability of a double recombinant (assuming no interference) is $ 0.01^{2} $, or about one out of every 10,000 progeny. If interference is significant, which is likely for tightly linked markers, far more progeny may need to be scored. This problem can be avoided by screening for two generations, with first-generation individuals showing a single recombinant (on either side of the marker) being used as parents for the second generation (Figure 14.9)."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 13. Suppose the region of interest is flanked by markers, each at recombination frequency $c$ from the locus of interest. To have a 95% probability of recovering a double recombinant in a single generation, one must examine roughly $3/c^2$ individuals, or 30,000 individuals for $c = 0.01$ (a 2 cM interval). This follows since the probability of no double recombinants among $n$ sampled chromosomes is $(1-c^2)^n$, giving the probability of at least one double as $1-(1-c^2)^n$. Setting this equal to 0.95 and solving for $n$ gives $n = -\\ln(0.05)/\\ln(1-c^2) \\simeq 3/c^2$. How much of a savings can the two-generation method offer?"
+    },
+    {
+      "type": "discussion",
+      "content": "If $ n_1 $ first-generation individuals are screened, the probability that at least one of them is a single recombinant is $ 1-(1-2c)^{n_1} $ (with 2c being the probability of recombination on either side of the marker, 1-2c is the probability that a chromosome is nonrecombinant with respect to the flanking markers). Using a single recombinant to form the next generation, the probability of a single recombination event on the opposite side of the region is $ 1-(1-c)^{n_2} $. The probability of obtaining a double recombinant after two generations is the probability of a single recombinant in the first generation times the probability of a single recombinant in the second. Thus, to have an overall probability of 95%, we need a probability of 97.5% for each of the two events, as $ 0.975^2 = 0.95 $. The sample size required to have a 97.5% chance of a single recombinant (on either side of the region) in the first generation is obtained by solving $ 0.975 = 1 - (1-2c)^{n_1} $, yielding $ n_1 \\simeq 1.85/c $. Likewise, solving $ 0.975 = 1 - (1-c)^{n_2} $ gives $ n_2 \\simeq 3.7/c = 2 n_1 $. Hence, using this two-generation approach, to have a 95% probability of recovering a double recombinant, a total of $n_{1}+n_{2}=5.55/c$ individuals must be scored. For $c=0.01$, this is 555 individuals (185 in the first generation, 370 in the second), only two percent of the 30,000 required for the single-generation method."
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "id": "Evolution_chapter7_002",
+  "metadata": {
+    "chapter": "Evolution_chapter7",
+    "section": "Interaction of Selection, Mutation, and Drift: Introduction",
+    "subsections": [
+      "SELECTION AND MUTATION AT SINGLE LOCI"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter7_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Interaction of Selection, Mutation, and Drift: Introduction",
+    "section_level_2": "SELECTION AND MUTATION AT SINGLE LOCI",
+    "heading_path": [
+      "Interaction of Selection, Mutation, and Drift: Introduction",
+      "SELECTION AND MUTATION AT SINGLE LOCI"
+    ],
+    "display_heading": "SELECTION AND MUTATION AT SINGLE LOCI"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "As discussed in Chapter 5, many of the central questions in population and quantitative genetics concern the mechanisms responsible for the maintenance of genetic variation in natural populations. Here, we introduce a few classical models for the balance between the opposing forces of mutation and directional selection. Our preliminary focus will be on the simple case of two alleles, as this serves as the foundation for more complex models for the maintenance of quantitative variation, which are covered in Chapter 28."
+    },
+    {
+      "type": "discussion",
+      "content": "Consider a locus with an advantageous allele A and a deleterious allele a, which have respective frequencies of 1 - p and p. Let $ \\mu $ be the mutation rate from A to a, let v be the rate of back mutation to A, and assume there is selection preceding mutation in each generation, followed by random mating in a population that is effectively infinite in size. From Chapter 5, the new frequency of a after a generation of viability selection is $$ p^{\\prime}=p\\frac{W_{\\mathrm{a}}}{\\overline{W}} $$ where $ W_a $ is the marginal fitness of $ a $ (Equation 5.7b), and $ \\overline{W} $ is the mean fitness. Letting $ p' $ be the allele frequency following mutation, we then have $$ p^{\\prime \\prime}=(1-v)p^{\\prime}+u(1-p^{\\prime})=(1-\\mu-v)p^{\\prime}+\\mu $$"
+    },
+    {
+      "type": "discussion",
+      "content": "This follows because 1 - v is the fraction of a that remains unchanged following mutation, while a fraction $ \\mu $ of all A alleles (with frequency 1 - $ p' $) mutate to a. Thus, one generation of the joint action of selection and mutation leads to the new frequency of a $$ p^{\\prime\\prime}=(1-\\mu-v)p\\frac{W_{\\mathrm{a}}}{\\overline{W}}+\\mu $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Haldane (1927) was the first to consider the equilibrium allele frequencies that are eventually reached under this model of opposing mutation and selection pressures. If we let the fitnesses of genotypes AA, Aa, and aa be 1, 1 - hs, and 1 - s, respectively, the equilibrium frequencies, $ \\widetilde{p} $, satisfying $ \\Delta p = p'' - p = 0 $ are given by the solutions of the rather complicated cubic equation $$ \\begin{aligned}(1-\\widetilde{p})^{3}s(2h-1)&+(1-\\widetilde{p})^{2}[2-3h+\\mu h+v(1-h)]\\\\&+(1-\\widetilde{p})[-s(1-h)+\\mu(1-hs)+v(1-2s+hs)]-v(1-s)=0\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "(Bürger 2000). Provided 0 < s < 1 and $ h \\leq 0.5 $, this expression has a single stable equilibrium and considerable simplification is possible in a number of biologically realistic cases. For example, for the case of neutrality (s = 0), the equilibrium is simply defined by the opposing forces of mutation $$ \\widetilde{p}=\\frac{\\mu}{\\mu+v} $$"
+    },
+    {
+      "type": "proposition",
+      "content": "A situation of special interest concerns the polymorphism maintained by a balance between selection and mutation when allele a is at a selective disadvantage. To simplify the solution, it is generally assumed that back mutation to the advantageous allele is a negligible force. There are several mathematical justifications and one biological justification for such an assumption. First, unless the selection coefficient is small relative to the mutation rate, the frequency of the mutant allele will generally be low enough that back mutation will be a second-order effect. Second, although functional genes may mutate to deleterious alleles through numerous mechanisms, precise back mutations to normal alleles will necessarily be much rarer events, i.e., we expect that $ v \\ll \\mu $. Letting $ v = 0 $, Equation 7.4 can be reduced to a more manageable quadratic equation, with a solution of $$ \\widetilde{p}=\\frac{(1+\\mu)h s-\\sqrt{[h s(1+\\mu)]^{2}-4(1-2h)\\mu s}}{2(2h-1)s} $$ assuming $ s > \\mu $. For the general case of intermediate dominance ($ 0 < h \\leq 1 $) $$ \\tilde{p}\\simeq\\frac{\\mu}{h s},\\quad\\mathrm{p r o v i d e d}\\quad h\\gg\\sqrt{\\mu/s} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "For the extreme situation in which a is a completely dominant deleterious mutation (h = 1) $$ \\widetilde{p}=\\frac{\\mu}{s} $$ whereas if A is recessive $ (h = 0) $ $$ \\widetilde{p}=\\sqrt{\\frac{\\mu}{s}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "A number of other special cases were presented in Nagylaki (1992a) and Bürger (2000); for example, $ \\widetilde{p} \\simeq 3\\mu/s $ for sex-linked recessives."
+    },
+    {
+      "type": "discussion",
+      "content": "The multiple-allele version of this model can be obtained in a straightforward manner. Suppose there are $ k $ alleles $ (A_1, \\cdots, A_k) $ and let $ \\mu_{ij} $ be the probability that allele $ A_i $ mutates to allele $ A_j $. If we let $ \\mu_i = \\sum_{j \\neq i} \\mu_{ij} $ be the total mutation rate from allele $ A_i $ to any other allele, and assuming constant viability selection followed by mutation and then random mating, the allele-frequency change equations become $$ p_{i}^{\\prime\\prime}=\\frac{1}{\\overline{W}}\\left(\\left(1-\\mu_{i}\\right)W_{i}p_{i}+\\sum_{j\\neq i}\\mu_{j i}W_{j}p_{j}\\right) $$ where $ W_{i} $ is the marginal fitness of allele $ A_{i} $ (Equation 5.7b). The equilibrium behavior of this system can be quite complex, and with sufficiently strong mutation there will be the possibility that stable cycles exists (Bürger 2000)."
+    },
+    {
+      "type": "discussion",
+      "content": "Clark (1998) examined a special case of the multiple-allele model in which there is one optimal allele, and all heterozygotes for single mutations have a fitness of 1 - hs, while heterozygotes for two different mutant alleles have a fitness of 1 - ks, where k is a measure of complementation between two deleterious alleles (with k = 0 implying that each allele compensates for the other allele's deficiencies). Under this model, multiple deleterious alleles are maintained by mutation pressure, and provided k < 1, the sum of their frequencies was higher than expected under the two-allele model. The latter result arises as interallelic complementation reduces the magnitude of selection operating on mutant alleles when they are jointly present in the same genotype."
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:7.1]]"
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:7.2]]"
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:7.3]]"
+    }
+  ]
+}

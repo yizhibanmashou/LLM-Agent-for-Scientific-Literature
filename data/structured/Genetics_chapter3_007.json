@@ -1,0 +1,55 @@
+{
+  "id": "Genetics_chapter3_007",
+  "metadata": {
+    "chapter": "Genetics_chapter3",
+    "section": "Covariance, Regression, and Correlation",
+    "subsections": [
+      "Derivation of the Least-Squares Linear Regression"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter3_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Covariance, Regression, and Correlation",
+    "section_level_2": "Derivation of the Least-Squares Linear Regression",
+    "heading_path": [
+      "Covariance, Regression, and Correlation",
+      "Derivation of the Least-Squares Linear Regression"
+    ],
+    "display_heading": "Derivation of the Least-Squares Linear Regression"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "The mathematical method of least-squares linear regression provides one such best-fit solution. Without making any assumptions about the true joint distribution of $x$ and $y$, least-squares regression minimizes the average value of the squared (vertical) deviations of the observed $y$ from the values predicted by the regression line. That is, the least-squares solution yields the values of $a$ and $b$ that minimize the mean squared residual, $\\overline{e^2}$. Other criteria could be used to define “best fit.” For example, one might minimize the mean absolute deviations (or cubed deviations) of observed values from predicted values. However, as we will now see, least-squares regression has the unique and very useful property of maximizing the amount of variance in $y$ that can be explained by a linear model."
+    },
+    {
+      "type": "definition",
+      "content": "Consider a sample of $n$ individuals, each of which has been measured for $x$ and $y$. Recalling the definition of a residual $$ e=y-\\widehat{y}=y-a-b x $$ and then adding and subtracting the quantity $(\\overline{y} + b\\overline{x})$ on the right side, we obtain"
+    },
+    {
+      "type": "discussion",
+      "content": "[[FIGURE:3.2]] $$ e=\\left(y-\\overline{y}\\right)-b\\left(x-\\overline{x}\\right)-\\left(a+b\\overline{x}-\\overline{y}\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Squaring both sides leads to $$ $$ e^ 2 &= (y-)^ 2 -2b (y-) (x-)+b^ 2 (x-)^ 2 + (a+b -)^ 2 \\\\& -2 (y-) (a+b -)+2b (x-) a+b -. $$ $$"
+    },
+    {
+      "type": "definition",
+      "content": "Finally, we consider the average value of $ e^{2} $ in the sample. The final two terms in Equation 3.13b drop out here because, by definition, the mean values of $ (x - \\overline{x}) $ and $ (y - \\overline{y}) $ are zero. However, by definition, the mean values of the first three terms are directly related to the sample variances and covariance. Thus, $$ \\overline{e^{2}}=\\left(\\frac{n-1}{n}\\right)\\left[\\operatorname{Var}(y)-2b\\operatorname{Cov}(x,y)+b^{2}\\operatorname{Var}(x)\\right]+(a+b\\overline{x}-\\overline{y})^{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The values of a and b that minimize $\\overline{e^{2}}$ are obtained by taking partial derivatives of this function and setting them equal to zero: $$ \\begin{aligned}\\frac{\\partial\\left(e^{2}\\right)}{\\partial a}&=2\\left(a+b\\overline{x}-\\overline{y}\\right)=0\\\\\\frac{\\partial\\left(\\overline{e^{2}}\\right)}{\\partial b}&=2\\left[\\left(\\frac{n-1}{n}\\right)\\left[-\\operatorname{Cov}(x,y)+b\\operatorname{Var}(x)\\right]+\\overline{x}\\left(a+b\\overline{x}-\\overline{y}\\right)\\right]=0\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The solutions to these two equations are $$ a=\\overline{y}-b\\overline{x} $$ $$ b=\\frac{\\operatorname{Cov}(x,y)}{\\operatorname{Var}(x)} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, the least-squares estimators for the intercept and slope of a linear regression are simple functions of the observed means, variances, and covariances. From the standpoint of quantitative genetics, this property is exceedingly useful, since such statistics are readily obtainable from phenotypic data."
+    }
+  ]
+}

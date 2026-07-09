@@ -1,0 +1,35 @@
+{
+  "id": "Genetics_chapter16_021",
+  "metadata": {
+    "chapter": "Genetics_chapter16",
+    "section": "Introduction",
+    "subsections": [
+      "Genomic Scanning"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter16_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "Genomic Scanning",
+    "heading_path": [
+      "Introduction",
+      "Genomic Scanning"
+    ],
+    "display_heading": "Genomic Scanning"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Given the increasing density of the human genetic map, genomic scans for diseases have become popular. In their simplest form, the investigator computes an ASP test statistic (such as the MLS value) at each of a number of markers, scanning the genome for markers showing linkage to DS genes. Examples include scans for type 1 (Davies et al. 1994) and type 2 (Hanis et al. 1996) diabetes and for multiple sclerosis (Ebers et al. 1996). Lander and Kruglyak's (1995) suggested guidelines (for humans) on the appropriate significance level for such tests have generated much discussion (Witte et al. 1996, Curtis 1996, Lander and Kruglyak 1996, Kruglyak 1996)."
+    },
+    {
+      "type": "discussion",
+      "content": "A more sophisticated version of genomic scanning has been developed by Kruglyak and Lander (1995b), who used a multipoint method (simultaneously incorporating information from all linked markers) to estimate the ibd distribution at each point along a chromosome. This estimated distribution is then used to compute some ASP statistic for that point. For example, for arbitrary chromosomal map position $c$, Kruglyak and Lander obtain estimates of $\\pi_{20}(c)$, $\\pi_{21}(c)$, and $\\pi_{22}(c)$ — the ibd values at this position in doubly affected sib pairs — which can then be used to compute any ASP statistics, such as MLS. This method allows for a genomic scan of all chromosomal positions, not just those points corresponding to marker loci. As with likelihood maps, estimates of the locations of DS genes are given by local maxima of the test statistic plot, provided they exceed the significance threshold. With the putative DS gene position in hand, estimates of its effect can be obtained by using the estimated ibd distribution at that position. Recall that the effect of a QTL can be expressed in terms of the relative risks in full-sib and parent-offspring pairs ($\\lambda_S$ and $\\lambda_O$). First noting that estimates of $d_{20}$ and $d_{21}$ can be obtained from the estimated ibd values, $\\widehat{d}_{20} = 1/4 - \\widehat{\\pi}_{20}$ and $\\widehat{d}_{21} = 1/2 - \\widehat{\\pi}_{21}$, substitution of these into Equations 16.52b,c (with $c = 0$) and rearranging gives $$ \\widehat{\\lambda}_{S}=\\frac{1}{1-4\\widehat{d}_{20}}=\\frac{1}{4\\widehat{\\pi}_{20}}\\qquad\\mathrm{a n d}\\qquad\\widehat{\\lambda}_{O}=\\frac{1-2\\widehat{d}_{21}}{1-4\\widehat{d}_{20}}=\\frac{\\widehat{\\pi}_{21}}{2\\widehat{\\pi}_{20}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "If desired, these can be translated into estimates of genetic variances using Equations 16.47b and 16.49b. Kruglyak and Lander (1995a) found that 200 affected pairs are sufficient to localize a gene with effect $ \\lambda_S = \\lambda_O = 5 $ to within 1 cM. Localization of a gene with $ \\lambda_S = 2 $ with the same precision requires 700 pairs."
+    }
+  ]
+}

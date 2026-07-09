@@ -1,0 +1,47 @@
+{
+  "id": "Genetics_chapter18_005",
+  "metadata": {
+    "chapter": "Genetics_chapter18",
+    "section": "Introduction",
+    "subsections": [
+      "Hypothesis Testing"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter18_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "Hypothesis Testing",
+    "heading_path": [
+      "Introduction",
+      "Hypothesis Testing"
+    ],
+    "display_heading": "Hypothesis Testing"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "In obtaining the variance-component estimators, Equations 18.12a,b, we made no assumptions as to how the data or their underlying components $ (s_{i}\\text{ and }e_{ij}) $ were distributed, other than the constraint that they are independent of each other. This distribution-free condition illustrates a useful feature of ANOVA that is not shared by many other estimation procedures — it yields variance-component estimates that are unbiased with respect to the true parametric values (although, as just noted, nonlinear functions, such as ratios, of these estimates will be biased). Unfortunately, this distribution-free property does not extend to the estimation of confidence intervals for the variance components, nor to most traditional methods of hypothesis testing."
+    },
+    {
+      "type": "discussion",
+      "content": "Most conventional hypothesis tests involving ANOVA assume normality and homogeneity of error variances. Thus, prior to embarking on an analysis of variance, an attempt should always be made to ensure that the observed data are on an appropriate scale of measurement (Chapter 11). It should be realized, however, that normality of the observed data does not guarantee normality of the distributions of the underlying factors $s_{i}$ and $e_{i i}$."
+    },
+    {
+      "type": "discussion",
+      "content": "Assuming that adequate normalization has been accomplished, standard theoretical results can be used to test the hypothesis that the among-family component of variance, and hence the heritability, is significantly greater than zero. We accomplish this by recalling from Appendix 5 that when normally distributed variables with mean zero and variance one (unit normals) are squared, they follow a $ \\chi^{2} $ distribution. Dividing an observed sum of squares (SS) by its associated E(MS) transforms the SS into a sum of squared unit normals, which is $ \\chi^{2} $-distributed with the associated degrees of freedom. For the one-way ANOVA, from Equations 18.7a, 18.9, and 18.11, the expected mean squares are $$ E(\\mathbf{M}\\mathbf{S}_{s})=\\sigma_{e}^{2}+n\\sigma_{s}^{2} $$ $$ E(\\mathbf{M}\\mathbf{S}_{e})=\\sigma_{e}^{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, $$ \\frac{\\mathrm{SS}_{s}}{\\sigma_{e}^{2}+n\\sigma_{s}^{2}}\\sim\\chi_{N-1}^{2} $$ $$ \\frac{\\mathrm{S}\\mathrm{S}_{e}}{\\sigma_{e}^{2}}\\sim\\chi_{T-N}^{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Recall also that the ratio of two $\\chi^{2}$-distributed variables, each divided by its respective degrees of freedom, follows an $F$ distribution (Appendix 5)."
+    },
+    {
+      "type": "discussion",
+      "content": "Now notice that if $ \\sigma_{s}^{2}=0 $, the denominators of Equations 18.17a and 18.17b are the same, in which case their ratio is simply $ \\mathrm{SS}_{s}/\\mathrm{SS}_{e} $. Recalling that $ \\mathrm{SS}_{x}/\\mathrm{df}_{x}=\\mathrm{MS}_{x} $, $$ F=\\frac{\\mathbf{M}\\mathbf{S}_{s}}{\\mathbf{M}\\mathbf{S}_{e}} $$ provides a test of the hypothesis that $ E(MS_s) = E(MS_e) $, or equivalently that $ \\sigma_s^2 = 0 $. If $ \\sigma_s^2 > 0 $, we expect the ratio of observed mean squares to be greater than one. However, it needs to be significantly larger than one if we are to be confident in our conclusion that $ MS_s > MS_e $ did not occur just by chance. An explicit test of the null hypothesis of no sire effects is made by referring to standard F-distribution tables and comparing the observed value of F with the critical values associated with $ (N - 1) $ and $ (T - N) $ degrees of freedom."
+    }
+  ]
+}

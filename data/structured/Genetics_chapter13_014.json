@@ -1,0 +1,47 @@
+{
+  "id": "Genetics_chapter13_014",
+  "metadata": {
+    "chapter": "Genetics_chapter13",
+    "section": "Introduction",
+    "subsections": [
+      "Common-family Effects"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter13_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "Common-family Effects",
+    "heading_path": [
+      "Introduction",
+      "Common-family Effects"
+    ],
+    "display_heading": "Common-family Effects"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Members of full-sib families usually share environmental effects, and likelihood functions accounting for these have been developed (Morton and MacLean 1974; Knott and Haley 1992a,b). Let the $ i^{th} $ family have a common effect $ c_{i} $, and assume that these effects are normally distributed among families with mean zero and variance $ \\sigma_{c}^{2} $. With this modification, the expected phenotypic value of an offspring with genotype $ g_{o} $ from family i is $ \\mu_{g_{o}} + c_{i} $. As before, we assume that the phenotypic values for each genotype (conditional on $ c_{i} $) are normally distributed with variance $ \\sigma^{2} $, giving the conditional likelihood for the $ n_{i} $ offspring from this family as $$ \\ell(z_{i}.|g_{f},g_{m},c_{i})=\\prod_{j=1}^{n_{i}}\\left[\\sum_{g_{o_{j}}=1}^{3}\\Pr(g_{o_{j}}|g_{f},g_{m})\\cdot\\varphi(z_{ij},\\mu_{g_{o_{j}}}+c_{i},\\sigma^{2})\\right] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Averaging over all possible values of the common-family effect $c_{i}$ gives $$ \\ell(z_{i.}\\mid g_{f},g_{m})=\\int_{-\\infty}^{\\infty}\\ell(z_{i.}\\mid g_{f},g_{m},c)\\cdot\\varphi(c,0,\\sigma_{c}^{2})d c $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, using the above expression for $\\ell(z_{i}.|g_{f},g_{m})$, averaging over all possible parental genotypes gives the unconditional likelihood for this family (Equation 13.11b). Assuming the QTL genotypes are in Hardy-Weinberg proportions, the unconditional likelihood has six unknown parameters: the three genotypic means, the allele frequency $p$, and the variances $\\sigma^{2}$ and $\\sigma_{c}^{2}$. Assuming the $n_{f}$ families in our pedigree are unrelated, the total likelihood is the product of the individual family likelihoods (Equation 13.13)."
+    },
+    {
+      "type": "discussion",
+      "content": "The likelihood for the ith family under the restricted model assuming common-family effects, but no major genes, is $$ $$"
+    },
+    {
+      "type": "discussion",
+      "content": "(z_ i)&= _ - ^ (z_ i c) (c,0, _ c ^ 2)dc\\\\&= _ - ^ (c,0, _ c ^ 2)dc $$ $$"
+    },
+    {
+      "type": "discussion",
+      "content": "A test for common-family effects but no major gene is given by the likelihood-ratio test using Equation 13.18 versus the likelihood function with $ \\sigma_{c}^{2} = 0 $. The latter is just the likelihood function assuming a single underlying normal, which has its maximum value given by Equation 13.8. Likewise, the likelihood-ratio test for a major gene but no common-family effects uses the full likelihood and a restricted likelihood assuming $ \\sigma_{c}^{2} = 0 $."
+    }
+  ]
+}

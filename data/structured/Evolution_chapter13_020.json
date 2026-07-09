@@ -1,0 +1,31 @@
+{
+  "id": "Evolution_chapter13_020",
+  "metadata": {
+    "chapter": "Evolution_chapter13",
+    "section": "THE MULTIVARIATE BREEDER'S EQUATION",
+    "subsections": [
+      "Accounting for Phenotypic Correlations: The Selection Gradient"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter13_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "THE MULTIVARIATE BREEDER'S EQUATION",
+    "section_level_2": "Accounting for Phenotypic Correlations: The Selection Gradient",
+    "heading_path": [
+      "THE MULTIVARIATE BREEDER'S EQUATION",
+      "Accounting for Phenotypic Correlations: The Selection Gradient"
+    ],
+    "display_heading": "Accounting for Phenotypic Correlations: The Selection Gradient"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Recall from Equation 13.8b that the univariate directional selection gradient, $ \\beta = S/\\sigma_z^2 $, is the slope of the linear regression of relative fitness, $ w $, as a function of the phenotypic value, $ z $, of the trait (Equation 13.8a). The multivariate extension is given by $$ \\boldsymbol{\\beta}=\\mathbf{P}^{-1}\\mathbf{S} $$ where the vector $ \\boldsymbol{\\beta} = (\\boldsymbol{\\beta}_1, \\cdots, \\boldsymbol{\\beta}_n)^T $ contains the coefficients for the multiple linear regression $$ w=a+\\sum_{i}\\beta_{i}z_{i}+e=a+\\beta^{T}\\mathbf{z}+e $$ of relative fitness, w, on the vector, z, of trait values (LW Equation 8.10c). The interpretation of $ \\beta_i $ is that it represents the change in relative fitness given a one unit change in trait i while holding all other trait values constant. In other words, $ \\beta_i $ measures the amount of direct selection on trait i, removing any indirect effects from selection on phenotypically correlated traits included in the analysis, i.e., all traits in the vector z (Chapter 30). Because $ \\beta = P^{-1}S $, then $ \\mathbf{S} = \\mathbf{P}\\beta $, resulting in an observed selection differential of $$ S_{i}=P_{ii}\\beta_{i}+\\sum_{j\\neq i}P_{ij}\\beta_{j} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The within-generation change, $S_i$, in the mean of trait $i$ following selection thus consists of an effect from direct selection on that trait ($P_{ii}\\beta_i$) plus the effects of selection on all other phenotypically correlated traits ($P_{ij}\\beta_j \\neq 0$). Hence, the sign of $S_i$ tells us nothing about the sign of $\\beta_i$ (the amount of direct selection on that trait), as correlated selection ($P_{ij}\\beta_j$ terms) can easily overpower the direct effect. The selection gradient, $\\beta$, presents the correct picture of which traits are under selection, provided there are no additional traits under direct selection that are phenotypically correlated with our focal vector, z, of traits (Chapter 30)."
+    }
+  ]
+}

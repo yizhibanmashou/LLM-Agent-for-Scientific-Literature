@@ -7,6 +7,7 @@ the knowledge-engineering pipeline while keeping the extraction rules unchanged.
 from __future__ import annotations
 
 from collections import Counter, defaultdict
+from difflib import SequenceMatcher
 from pathlib import Path
 import re
 import time
@@ -20,6 +21,7 @@ from knowledge_engineering.core.common import (
     utc_now_iso,
     write_json,
 )
+from knowledge_engineering.core.runtime import FormulaLibrary
 from knowledge_engineering.processors.example_extraction import (
     PROJECT_ROOT,
     ExampleCandidate,
@@ -59,6 +61,12 @@ TOKEN_RE = re.compile(r"[0-9A-Za-z]+")
 TABLE_PLACEHOLDER_RE = re.compile(r"\[\[(?:SEE_)?TABLE\s*:\s*([^\]\n\r]+?)\s*\]\]", re.IGNORECASE)
 INLINE_TABLE_ID_RE = re.compile(r"^inline_\d+$", re.IGNORECASE)
 EXAMPLE_TITLE_PREFIX_RE = re.compile(r"^\s*Example\s+(?P<example_id>(?:A\d+|\d+)\.\d+[a-z]?)", re.IGNORECASE)
+EXAMPLE_ANY_PLACEHOLDER_RE = re.compile(r"\[\[(?:SEE_)?EXAMPLE\s*:\s*([^\]\n\r]+?)\s*\]\]", re.IGNORECASE)
+FIGURE_PLACEHOLDER_RE = re.compile(r"\[\[FIGURE\s*:\s*([^\]\n\r]+?)\s*\]\]", re.IGNORECASE)
+FIGURE_CAPTION_START_RE = re.compile(
+    r"\b(?:Figure|Fig\.)\s+(?P<id>(?:A\d+|\d+)\.\d+[A-Za-z]?)\b",
+    re.IGNORECASE,
+)
 
 
 def _token_spans(text: str) -> list[tuple[str, int, int]]:
@@ -68,11 +76,54 @@ def _token_spans(text: str) -> list[tuple[str, int, int]]:
 def _find_subsequence(haystack: list[str], needle: list[str]) -> int | None:
     if not needle or len(needle) > len(haystack):
         return None
-    last_start = len(haystack) - len(needle)
-    for index in range(last_start + 1):
-        if haystack[index : index + len(needle)] == needle:
-            return index
+    table = [0] * len(needle)
+    prefix_len = 0
+    for index in range(1, len(needle)):
+        while prefix_len and needle[index] != needle[prefix_len]:
+            prefix_len = table[prefix_len - 1]
+        if needle[index] == needle[prefix_len]:
+            prefix_len += 1
+            table[index] = prefix_len
+    matched = 0
+    for index, token in enumerate(haystack):
+        while matched and token != needle[matched]:
+            matched = table[matched - 1]
+        if token != needle[matched]:
+            continue
+        matched += 1
+        if matched == len(needle):
+            return index - len(needle) + 1
     return None
+
+
+def _example_placeholders_in_text(text: str) -> list[str]:
+    return [match.group(0) for match in EXAMPLE_ANY_PLACEHOLDER_RE.finditer(str(text or ""))]
+
+
+def _example_placeholder_refs_in_text(text: str) -> list[str]:
+    return [clean_ref_id(match.group(1)) for match in EXAMPLE_ANY_PLACEHOLDER_RE.finditer(str(text or ""))]
+
+
+def _example_ref_from_placeholder(placeholder: str) -> str:
+    match = EXAMPLE_ANY_PLACEHOLDER_RE.fullmatch(str(placeholder or "").strip())
+    return clean_ref_id(match.group(1)) if match else ""
+
+
+def _content_has_example_placeholder(content: str, placeholder: str) -> bool:
+    if placeholder and placeholder in str(content or ""):
+        return True
+    wanted = _example_ref_from_placeholder(placeholder)
+    if not wanted:
+        return False
+    return any(ref.lower() == wanted.lower() for ref in _example_placeholder_refs_in_text(content))
+
+
+def _block_is_standalone_example_placeholder(block: Any) -> str | None:
+    if not isinstance(block, dict):
+        return None
+    content = str(block.get("content") or "").strip()
+    match = re.fullmatch(r"\[\[(?:SEE_)?EXAMPLE\s*:\s*([^\]\n\r]+?)\s*\]\]", content, flags=re.IGNORECASE)
+    return match.group(0) if match else None
 
 
 def _int_metadata(item: ExampleCandidate, key: str, default: int | None = None) -> int | None:
@@ -339,12 +390,421 @@ def write_example_library(output_structured: Path, rows: list[dict[str, Any]], *
     )
 
 
+def _sync_example_numbered_formulas(
+    structured_dir: Path,
+    rows: list[dict[str, Any]],
+    *,
+    dry_run: bool,
+    exclude_chapters: set[str] | None = None,
+) -> dict[str, Any]:
+    """Add explicitly numbered display formulas from example bodies to formula_library."""
+
+    stats: dict[str, Any] = {
+        "rows_scanned": 0,
+        "display_formulas_seen": 0,
+        "formulas_added": 0,
+        "formulas_existing": 0,
+        "formulas_conflicted": 0,
+        "formulas_skipped": 0,
+        "formula_ids_added": [],
+        "formula_ids_conflicted": [],
+        "formula_ids_skipped": [],
+    }
+    formula_path = structured_dir / "formula_library.json"
+    library = FormulaLibrary.load(str(formula_path))
+    added_ids: list[str] = []
+    conflicted_ids: list[dict[str, str]] = []
+    skipped_ids: list[dict[str, str]] = []
+    subsection_cache: dict[str, str] = {}
+
+    def normalize_example_formula_label(label: str, content: str) -> str:
+        value = str(label or "").strip().lower()
+        match = re.fullmatch(r"(?P<prefix>(?:a\d+|\d+)\.\d+)1", value, flags=re.IGNORECASE)
+        if not match:
+            return value
+        prefix = match.group("prefix")
+        if re.search(rf"\({re.escape(prefix)}k\)", content, flags=re.IGNORECASE) and re.search(
+            rf"\({re.escape(prefix)}m\)",
+            content,
+            flags=re.IGNORECASE,
+        ):
+            return f"{prefix}l"
+        return value
+
+    def source_subsection(source_file: str, row: dict[str, Any]) -> str:
+        if source_file in subsection_cache:
+            return subsection_cache[source_file]
+        value = ""
+        path = structured_dir / source_file if source_file else None
+        if path is not None and path.exists():
+            try:
+                data = read_json(path)
+                if isinstance(data, dict):
+                    value = _unit_subsection(data)
+            except Exception:
+                value = ""
+        if not value:
+            value = str(row.get("title") or row.get("label") or "").strip()
+        subsection_cache[source_file] = value
+        return value
+
+    for row in rows:
+        if not isinstance(row, dict):
+            continue
+        chapter = str(row.get("chapter") or "").strip().lower()
+        if not chapter or (exclude_chapters and chapter in exclude_chapters):
+            continue
+        content = str(row.get("content_markdown") or row.get("content_plain") or "")
+        if "$$" not in content:
+            continue
+        stats["rows_scanned"] += 1
+        source_file = str(row.get("source_file") or "").strip()
+        source_unit_id = _source_unit_id(source_file) if source_file else ""
+        subsection = source_subsection(source_file, row)
+        for match in FormulaLibrary.FORMULA_BLOCK_PATTERN.finditer(content):
+            latex = str(match.group("latex") or "").strip()
+            label = normalize_example_formula_label(str(match.group("label") or ""), content)
+            if not latex or not label:
+                continue
+            stats["display_formulas_seen"] += 1
+            if not FormulaLibrary._label_matches_chapter(label, chapter):
+                stats["formulas_skipped"] += 1
+                skipped_ids.append(
+                    {
+                        "chapter": chapter,
+                        "example_id": str(row.get("example_id") or row.get("example_ref") or ""),
+                        "source_file": source_file,
+                        "formula_id": label,
+                        "reason": "label_chapter_mismatch",
+                    }
+                )
+                continue
+            existing = library.get_formula(label, source_chapter=chapter)
+            formula = library.add_formula(
+                label=label,
+                label_format=f"({label})",
+                latex=latex,
+                formula_type="block",
+                source_unit_id=source_unit_id,
+                source_chapter=chapter,
+                source_subsection=subsection,
+                context=FormulaLibrary._build_context(content, match.start(), match.end()),
+            )
+            if formula is None:
+                stats["formulas_conflicted"] += 1
+                conflicted_ids.append(
+                    {
+                        "chapter": chapter,
+                        "example_id": str(row.get("example_id") or row.get("example_ref") or ""),
+                        "source_file": source_file,
+                        "formula_id": label,
+                        "reason": "existing_formula_latex_conflict",
+                    }
+                )
+            elif existing is not None:
+                stats["formulas_existing"] += 1
+            else:
+                stats["formulas_added"] += 1
+                added_ids.append(label)
+
+    if added_ids and not dry_run:
+        library.save(str(formula_path))
+    stats["formula_ids_added"] = sorted(set(added_ids), key=natural_key)
+    stats["formula_ids_conflicted"] = conflicted_ids[:100]
+    stats["formula_ids_skipped"] = skipped_ids[:100]
+    return stats
+
+
+def _load_figure_library_rows(project_root: Path) -> list[dict[str, Any]]:
+    path = project_root / "data" / "figure_library.json"
+    if not path.exists():
+        return []
+    try:
+        payload = read_json(path)
+    except Exception:
+        return []
+    figures = payload.get("figures") if isinstance(payload, dict) else []
+    if isinstance(figures, dict):
+        return [item for item in figures.values() if isinstance(item, dict)]
+    if isinstance(figures, list):
+        return [item for item in figures if isinstance(item, dict)]
+    return []
+
+
+def _caption_span_for_figure(content: str, figure_id: str, caption: str) -> tuple[int, int] | None:
+    caption_tokens = _token_spans(caption)
+    if len(caption_tokens) < 12:
+        return None
+    content_spans = _token_spans(content)
+    if len(content_spans) < 12:
+        return None
+    caption_words = [token for token, _, _ in caption_tokens]
+    content_words = [token for token, _, _ in content_spans]
+    min_prefix = min(12, len(caption_words))
+    for match in FIGURE_CAPTION_START_RE.finditer(content or ""):
+        if clean_ref_id(match.group("id")).lower() != clean_ref_id(figure_id).lower():
+            continue
+        marker_token = next((idx for idx, (_, start, _) in enumerate(content_spans) if start >= match.start()), None)
+        body_token = next((idx for idx, (_, start, _) in enumerate(content_spans) if start >= match.end()), None)
+        if marker_token is None or body_token is None:
+            continue
+        starts = [body_token]
+        marker_prefix = content_words[marker_token : marker_token + min_prefix]
+        if marker_prefix == caption_words[:min_prefix]:
+            starts.insert(0, marker_token)
+        matched_start: int | None = None
+        match_len = 0
+        for candidate_start in starts:
+            prefix = content_words[candidate_start : candidate_start + min_prefix]
+            if prefix != caption_words[:min_prefix]:
+                continue
+            candidate_len = 0
+            max_len = min(len(caption_words), len(content_words) - candidate_start)
+            while (
+                candidate_len < max_len
+                and content_words[candidate_start + candidate_len] == caption_words[candidate_len]
+            ):
+                candidate_len += 1
+            if candidate_len >= min_prefix:
+                matched_start = candidate_start
+                match_len = candidate_len
+                break
+        if matched_start is None:
+            continue
+        end_token = matched_start + match_len - 1
+        return content_spans[marker_token][1], content_spans[end_token][2]
+    return None
+
+
+def _normalize_figure_placeholder_punctuation(text: str) -> str:
+    value = str(text or "")
+    value = re.sub(r"\(\s*(\[\[FIGURE:[^\]\n\r]+?\]\])\s*\.\s*\)", r"(\1)", value, flags=re.IGNORECASE)
+    value = re.sub(r"(\[\[FIGURE:[^\]\n\r]+?\]\])\s*\.\s*\)", r"\1)", value, flags=re.IGNORECASE)
+    value = re.sub(r"(\[\[FIGURE:[^\]\n\r]+?\]\])\s*\.\s*(?=\s|$)", r"\1", value, flags=re.IGNORECASE)
+    value = re.sub(r"\(\s*(\[\[FIGURE:[^\]\n\r]+?\]\])(?=\s|$)", r"(\1)", value, flags=re.IGNORECASE)
+    value = re.sub(r"(\[\[FIGURE:[^\]\n\r]+?\]\])\)\)(?=\s|$)", r"\1", value, flags=re.IGNORECASE)
+    value = re.sub(r"(\[\[FIGURE:[^\]\n\r]+?\]\])\)\)(?=\s|[,.;:]|$)", r"\1", value, flags=re.IGNORECASE)
+    value = re.sub(r"(\[\[FIGURE:[^\]\n\r]+?\]\])\)\.(?=\s|$)", r"\1", value, flags=re.IGNORECASE)
+    value = re.sub(r"(?<!\()(\[\[FIGURE:[^\]\n\r]+?\]\])\)(?=\s|[,.;:]|$)", r"\1", value, flags=re.IGNORECASE)
+    value = re.sub(
+        r"(\[\[FIGURE:[^\]\n\r]+?\]\])\s+(?=(?:Because|This|That|These|Those|Combining|Solving)\b)",
+        r"\1. ",
+        value,
+        flags=re.IGNORECASE,
+    )
+    value = re.sub(r"(\[\[FIGURE:[^\]\n\r]+?\]\])\.\s+(?=that\b)", r"\1 ", value, flags=re.IGNORECASE)
+    return collapse_ws(value)
+
+
+def _figure_refs_from_example_content(text: str) -> list[str]:
+    refs = list(extract_figure_refs(text))
+    for match in FIGURE_PLACEHOLDER_RE.finditer(text or ""):
+        ref = clean_ref_id(match.group(1))
+        if ref and ref not in refs:
+            refs.append(ref)
+    return refs
+
+
+def _figure_standalone_positions(structured_dir: Path, figure_id: str) -> list[dict[str, Any]]:
+    positions: list[dict[str, Any]] = []
+    placeholder = f"[[FIGURE:{clean_ref_id(figure_id)}]]"
+    for path in load_unit_files(structured_dir):
+        try:
+            data = read_json(path)
+        except Exception:
+            continue
+        blocks = data.get("blocks") if isinstance(data, dict) else []
+        if not isinstance(blocks, list):
+            continue
+        for block_index, block in enumerate(blocks):
+            if not isinstance(block, dict):
+                continue
+            content = str(block.get("content") or "")
+            if placeholder.lower() not in content.lower():
+                continue
+            positions.append(
+                {
+                    "source_file": path.name,
+                    "unit_id": str(data.get("id") or path.stem),
+                    "block_index": block_index,
+                    "standalone": content.strip().lower() == placeholder.lower(),
+                }
+            )
+    return positions
+
+
+def _remove_standalone_figure_placeholders(
+    structured_dir: Path,
+    rows: list[dict[str, Any]],
+    positions: list[dict[str, Any]],
+    *,
+    dry_run: bool,
+) -> int:
+    removed = 0
+    by_file: dict[str, list[int]] = defaultdict(list)
+    for position in positions:
+        if not position.get("standalone"):
+            continue
+        source_file = str(position.get("source_file") or "")
+        try:
+            block_index = int(position.get("block_index"))
+        except (TypeError, ValueError):
+            continue
+        if source_file:
+            by_file[source_file].append(block_index)
+    for source_file, indexes in by_file.items():
+        removed_in_file = 0
+        path = structured_dir / source_file
+        if not path.exists():
+            continue
+        try:
+            data = read_json(path)
+        except Exception:
+            continue
+        blocks = data.get("blocks") if isinstance(data, dict) else []
+        if not isinstance(blocks, list):
+            continue
+        for block_index in sorted(set(indexes), reverse=True):
+            if block_index < 0 or block_index >= len(blocks):
+                continue
+            block = blocks[block_index]
+            if not isinstance(block, dict):
+                continue
+            if str(block.get("type") or "").strip().lower() != "figure":
+                continue
+            content = str(block.get("content") or "")
+            if not FIGURE_PLACEHOLDER_RE.fullmatch(content.strip()):
+                continue
+            del blocks[block_index]
+            _shift_row_indexes_after_remove(
+                rows,
+                source_file,
+                block_index,
+                removed_placeholder=content.strip(),
+            )
+            removed += 1
+            removed_in_file += 1
+        if removed_in_file and not dry_run:
+            data["blocks"] = blocks
+            write_json(path, data)
+    return removed
+
+
+def _sync_example_numbered_figures(
+    structured_dir: Path,
+    rows: list[dict[str, Any]],
+    *,
+    project_root: Path,
+    dry_run: bool,
+    exclude_chapters: set[str] | None = None,
+) -> dict[str, Any]:
+    stats: dict[str, Any] = {
+        "rows_scanned": 0,
+        "caption_spans_replaced": 0,
+        "figures_added_to_examples": 0,
+        "standalone_figure_positions_remaining": 0,
+        "standalone_figure_placeholders_removed": 0,
+        "replacements": [],
+    }
+    figures_by_chapter_id: dict[tuple[str, str], dict[str, Any]] = {}
+    for figure in _load_figure_library_rows(project_root):
+        figure_id = clean_ref_id(figure.get("id"))
+        chapter = str(figure.get("chapter") or "").strip().lower()
+        if figure_id and chapter:
+            figures_by_chapter_id[(chapter, figure_id.lower())] = figure
+    if not figures_by_chapter_id:
+        return stats
+
+    changed = False
+    replacements: list[dict[str, Any]] = []
+    for row in rows:
+        if not isinstance(row, dict):
+            continue
+        chapter = str(row.get("chapter") or "").strip().lower()
+        if not chapter or (exclude_chapters and chapter in exclude_chapters):
+            continue
+        content = str(row.get("content_markdown") or row.get("content_plain") or "")
+        if not content or "Figure" not in content and "Fig." not in content:
+            continue
+        stats["rows_scanned"] += 1
+        local_changes: list[tuple[int, int, str, str]] = []
+        seen_ids: set[str] = set()
+        for match in FIGURE_CAPTION_START_RE.finditer(content):
+            figure_id = clean_ref_id(match.group("id"))
+            if figure_id.lower() in seen_ids:
+                continue
+            figure = figures_by_chapter_id.get((chapter, figure_id.lower()))
+            if not figure:
+                continue
+            caption = str(figure.get("caption") or figure.get("title") or "")
+            span = _caption_span_for_figure(content, figure_id, caption)
+            if span is None:
+                continue
+            seen_ids.add(figure_id.lower())
+            local_changes.append((span[0], span[1], figure_id, f"[[FIGURE:{figure_id}]]"))
+        if not local_changes:
+            continue
+        updated = content
+        for start, end, figure_id, placeholder in sorted(local_changes, key=lambda item: item[0], reverse=True):
+            updated = f"{updated[:start]}{placeholder}{updated[end:]}"
+            positions = _figure_standalone_positions(structured_dir, figure_id)
+            remaining = [pos for pos in positions if str(pos.get("source_file") or "") != str(row.get("source_file") or "")]
+            removed = _remove_standalone_figure_placeholders(
+                structured_dir,
+                rows,
+                remaining,
+                dry_run=dry_run,
+            )
+            replacements.append(
+                {
+                    "chapter": chapter,
+                    "example_id": str(row.get("example_id") or row.get("example_ref") or ""),
+                    "source_file": str(row.get("source_file") or ""),
+                    "figure_id": figure_id,
+                    "standalone_positions": positions,
+                    "standalone_positions_outside_example_source": remaining,
+                    "standalone_placeholders_removed": removed,
+                }
+            )
+            stats["standalone_figure_positions_remaining"] += max(0, len(remaining) - removed)
+            stats["standalone_figure_placeholders_removed"] += removed
+        row["content_markdown"] = _normalize_figure_placeholder_punctuation(updated)
+        row["content_plain"] = collapse_ws(strip_structured_refs(strip_html(row["content_markdown"])))
+        row["figure_refs"] = _figure_refs_from_example_content(row["content_markdown"])
+        metadata = row.get("metadata") if isinstance(row.get("metadata"), dict) else {}
+        row["metadata"] = {
+            **metadata,
+            "has_figure": bool(row["figure_refs"]),
+            "word_count": len(row["content_plain"].split()) if row["content_plain"] else 0,
+        }
+        evidence = row.get("evidence") if isinstance(row.get("evidence"), dict) else {}
+        row["evidence"] = {
+            **evidence,
+            "example_figure_caption_placeholders_added": True,
+        }
+        stats["caption_spans_replaced"] += len(local_changes)
+        stats["figures_added_to_examples"] += len({item[2].lower() for item in local_changes})
+        changed = True
+
+    stats["replacements"] = replacements[:100]
+    if changed and not dry_run:
+        write_example_library(structured_dir, rows)
+    return stats
+
+
 def _table_reference_key(chapter: str, table_id: str) -> str:
     return table_reference_key(chapter, table_id)
 
 
 def _source_unit_id(source_file: str) -> str:
     return Path(str(source_file or "")).stem
+
+
+def _path_chapter_is_excluded(path: Path, exclude_chapters: set[str] | None) -> bool:
+    if not exclude_chapters:
+        return False
+    chapter = str(path.stem).split("_", 1)[0].strip().lower()
+    return bool(chapter and chapter in exclude_chapters)
 
 
 def _unit_subsection(data: dict[str, Any]) -> str:
@@ -460,6 +920,7 @@ def _rebind_inline_table_sources_from_examples(
     rows: list[dict[str, Any]],
     *,
     dry_run: bool,
+    exclude_chapters: set[str] | None = None,
 ) -> dict[str, int]:
     stats = {
         "example_rows_scanned": 0,
@@ -483,9 +944,11 @@ def _rebind_inline_table_sources_from_examples(
             continue
         stats["example_rows_scanned"] += 1
         chapter = str(row.get("chapter") or "").strip().lower()
+        if not chapter or (exclude_chapters and chapter in exclude_chapters):
+            continue
         source_file = str(row.get("source_file") or "").strip()
         source_unit = _source_unit_id(source_file)
-        if not chapter or not source_unit:
+        if not source_unit:
             continue
         table_refs = [
             str(item).strip()
@@ -1075,8 +1538,13 @@ def _split_missing_examples_from_existing_library(
     project_root: Path,
     rows: list[dict[str, Any]],
     dry_run: bool,
+    exclude_chapters: set[str] | None = None,
 ) -> dict[str, Any]:
-    targets = _existing_sequence_gap_targets(rows)
+    targets = [
+        target
+        for target in _existing_sequence_gap_targets(rows)
+        if not exclude_chapters or target[0] not in exclude_chapters
+    ]
     stats: dict[str, Any] = {
         "targeted": len(targets),
         "raw_recovered": 0,
@@ -1448,10 +1916,11 @@ def _row_quality_score(row: dict[str, Any]) -> tuple[int, int, int, int]:
     content = str(row.get("content_markdown") or row.get("content_plain") or "")
     table_refs = row.get("table_refs") if isinstance(row.get("table_refs"), list) else extract_table_refs(content)
     formula_refs = row.get("formula_refs") if isinstance(row.get("formula_refs"), list) else extract_formula_refs(content)
+    figure_refs = row.get("figure_refs") if isinstance(row.get("figure_refs"), list) else extract_figure_refs(content)
     plain = collapse_ws(strip_structured_refs(strip_html(content)))
     return (
         0 if metadata.get("needs_review") else 1,
-        int(bool(table_refs)) * 2 + int(bool(formula_refs)),
+        int(bool(table_refs)) * 2 + int(bool(formula_refs)) + int(bool(figure_refs)),
         len(plain.split()),
         len(content),
     )
@@ -1461,7 +1930,7 @@ def _candidate_quality_score(item: ExampleCandidate) -> tuple[int, int, int, int
     _refresh_candidate_metadata(item)
     return (
         0 if item.metadata.get("needs_review") else 1,
-        int(bool(item.table_refs)) * 2 + int(bool(item.formula_refs)),
+        int(bool(item.table_refs)) * 2 + int(bool(item.formula_refs)) + int(bool(item.figure_refs)),
         len(item.content_plain.split()) if item.content_plain else 0,
         len(item.content_markdown),
     )
@@ -1778,6 +2247,53 @@ def _raw_candidate_boundary_evidence(raw_item: ExampleCandidate, row: dict[str, 
     return evidence
 
 
+def _raw_candidate_extends_existing_visual_boundary(raw_item: ExampleCandidate, row: dict[str, Any]) -> dict[str, Any]:
+    raw_evidence = raw_item.evidence if isinstance(raw_item.evidence, dict) else {}
+    evidence: dict[str, Any] = {
+        "before_word_count": 0,
+        "raw_word_count": 0,
+        "evidence_codes": [],
+    }
+    if not raw_evidence.get("visual_stop_clipped"):
+        return evidence
+
+    before_content = str(row.get("content_markdown") or "")
+    before_plain = collapse_ws(strip_structured_refs(strip_html(before_content)))
+    raw_plain = collapse_ws(strip_structured_refs(strip_html(raw_item.content_markdown)))
+    before_words = before_plain.split()
+    raw_words = raw_plain.split()
+    evidence["before_word_count"] = len(before_words)
+    evidence["raw_word_count"] = len(raw_words)
+    if len(before_words) < 40 or len(raw_words) < len(before_words) + 24:
+        return evidence
+
+    before_head = normalize_match_text(" ".join(before_words[: min(24, len(before_words))]))
+    raw_head = normalize_match_text(" ".join(raw_words[: min(24, len(raw_words))]))
+    before_tail = normalize_match_text(" ".join(before_words[-min(14, len(before_words)) :]))
+    raw_norm = normalize_match_text(raw_plain)
+    before_norm = normalize_match_text(before_plain)
+    if not before_head or before_head != raw_head:
+        return evidence
+    if before_tail and before_tail not in raw_norm:
+        return evidence
+    if before_norm and before_norm not in raw_norm and len(before_words) >= 80:
+        return evidence
+
+    evidence.update(
+        {
+            "evidence_codes": ["pdf_rendered_horizontal_rule_extends_example"],
+            "visual_stop_source": raw_evidence.get("visual_stop_source"),
+            "visual_stop_page": raw_evidence.get("visual_stop_page"),
+            "visual_stop_row_index": raw_evidence.get("visual_stop_row_index"),
+            "visual_stop_rule_bbox": raw_evidence.get("visual_stop_rule_bbox"),
+        }
+    )
+    raw_tail = " ".join(raw_words[-18:])
+    if raw_tail:
+        evidence["raw_tail_preview"] = raw_tail
+    return evidence
+
+
 def _raw_candidate_is_boundary_improvement(raw_item: ExampleCandidate, row: dict[str, Any]) -> bool:
     return bool(_raw_candidate_boundary_evidence(raw_item, row).get("evidence_codes"))
 
@@ -1865,6 +2381,11 @@ def _shift_row_indexes_after_remove(
                 span[0] - 1 if span[0] > removed_index else span[0],
                 span[1] - 1 if span[1] > removed_index else span[1],
             ]
+        placeholder_index = _safe_block_index(replacement.get("placeholder_block_index"))
+        if placeholder_index is not None and placeholder_index > removed_index:
+            replacement["placeholder_block_index"] = placeholder_index - 1
+            replacement["placeholder_source_file"] = source_file
+        if replacement:
             row["replacement"] = replacement
 
 
@@ -1882,7 +2403,7 @@ def _append_placeholder_to_unit(
     blocks = data.get("blocks") if isinstance(data, dict) else None
     if not isinstance(blocks, list):
         return None
-    if any(isinstance(block, dict) and str(block.get("content") or "") == placeholder for block in blocks):
+    if any(isinstance(block, dict) and _content_has_example_placeholder(str(block.get("content") or ""), placeholder) for block in blocks):
         return None
     new_index = len(blocks)
     blocks.append({"type": "example", "content": placeholder})
@@ -1907,7 +2428,7 @@ def _insert_placeholder_at_unit(
     blocks = data.get("blocks") if isinstance(data, dict) else None
     if not isinstance(blocks, list):
         return None
-    if any(isinstance(block, dict) and placeholder in str(block.get("content") or "") for block in blocks):
+    if any(isinstance(block, dict) and _content_has_example_placeholder(str(block.get("content") or ""), placeholder) for block in blocks):
         found = _read_placeholder_position(structured_dir, source_file, placeholder)
         return found[0] if found is not None else None
     insert_index = min(max(insert_index, 0), len(blocks))
@@ -1939,11 +2460,17 @@ def _remove_placeholder_from_unit(
             new_blocks.append(block)
             continue
         content = str(block.get("content") or "")
-        if content == placeholder:
+        if content == placeholder or (content.strip() and content.strip() == _block_is_standalone_example_placeholder(block) and _content_has_example_placeholder(content, placeholder)):
             changed = True
             continue
-        if placeholder in content:
-            updated = collapse_ws(content.replace(placeholder, " "))
+        if _content_has_example_placeholder(content, placeholder):
+            wanted = _example_ref_from_placeholder(placeholder)
+            updated = collapse_ws(
+                EXAMPLE_ANY_PLACEHOLDER_RE.sub(
+                    lambda match: " " if clean_ref_id(match.group(1)).lower() == wanted.lower() else match.group(0),
+                    content,
+                )
+            )
             if updated:
                 new_block = dict(block)
                 new_block["content"] = updated
@@ -2255,12 +2782,32 @@ def _repair_example_heading_units_from_raw_order(
     raw_rows: dict[tuple[str, str], dict[str, Any]],
     dry_run: bool,
 ) -> dict[str, int]:
-    stats = {"units_scanned": 0, "heading_units_repaired": 0, "placeholders_moved": 0}
+    stats = {
+        "units_scanned": 0,
+        "heading_units_repaired": 0,
+        "heading_units_relocated_to_previous_real_prose": 0,
+        "placeholders_moved": 0,
+    }
     rows_by_identity = {
         (str(row.get("chapter") or "").strip().lower(), str(row.get("example_id") or "").strip()): row
         for row in rows
         if isinstance(row, dict)
     }
+    chapter_units: dict[str, list[tuple[Path, dict[str, Any]]]] = defaultdict(list)
+    for unit_path in load_unit_files(structured_dir):
+        try:
+            unit_data = read_json(unit_path)
+        except Exception:
+            continue
+        if not isinstance(unit_data, dict):
+            continue
+        unit_metadata = unit_data.get("metadata") if isinstance(unit_data.get("metadata"), dict) else {}
+        unit_chapter = str(unit_metadata.get("chapter") or unit_path.stem.split("_", 1)[0]).strip().lower()
+        if unit_chapter:
+            chapter_units[unit_chapter].append((unit_path, unit_data))
+    for units in chapter_units.values():
+        units.sort(key=lambda item: natural_key(item[0].name))
+
     for path in load_unit_files(structured_dir):
         data = read_json(path)
         if not isinstance(data, dict):
@@ -2283,6 +2830,13 @@ def _repair_example_heading_units_from_raw_order(
         blocks = data.get("blocks") if isinstance(data.get("blocks"), list) else []
         if not isinstance(blocks, list):
             continue
+        chapter_sequence = chapter_units.get(chapter, [])
+        current_index = next((idx for idx, (candidate_path, _) in enumerate(chapter_sequence) if candidate_path.name == path.name), None)
+        previous_owner = (
+            _previous_real_prose_unit(chapter_sequence, current_index)
+            if current_index is not None
+            else None
+        )
         _remove_placeholder_and_shift_rows(
             structured_dir,
             str(row.get("source_file") or ""),
@@ -2294,16 +2848,49 @@ def _repair_example_heading_units_from_raw_order(
         blocks = data.get("blocks") if isinstance(data.get("blocks"), list) else []
         trailing_blocks = _blocks_after_example_heading_unit_span(blocks, raw_row)
         _clean_example_heading_metadata(data)
-        data["blocks"] = [{"type": "example", "content": placeholder}, *trailing_blocks]
+        if previous_owner is not None:
+            owner_path, owner_data = previous_owner
+            owner_data = read_json(owner_path)
+            owner_blocks = owner_data.get("blocks") if isinstance(owner_data.get("blocks"), list) else []
+            if not isinstance(owner_blocks, list):
+                owner_blocks = []
+            existing_position = _read_placeholder_position(structured_dir, owner_path.name, placeholder)
+            if existing_position is not None:
+                new_index = existing_position[0]
+            else:
+                new_index = len(owner_blocks)
+                owner_blocks.append({"type": "example", "content": placeholder})
+                _shift_row_indexes_after_insert(rows, owner_path.name, new_index, inserted_placeholder=placeholder)
+            owner_data["blocks"] = owner_blocks
+            data["blocks"] = trailing_blocks
+            if not dry_run:
+                write_json(owner_path, owner_data)
+                write_json(path, data)
+            _replace_row_payload_from_raw(
+                row,
+                raw_row,
+                source_file=owner_path.name,
+                block_index=new_index,
+                reason="example_heading_unit_relocated_to_previous_real_prose",
+            )
+            row_evidence = row.get("evidence") if isinstance(row.get("evidence"), dict) else {}
+            row["evidence"] = {
+                **row_evidence,
+                "relocated_from_source_file": path.name,
+                "relocated_to_previous_real_prose_unit": owner_path.name,
+            }
+            stats["heading_units_relocated_to_previous_real_prose"] += 1
+        else:
+            data["blocks"] = [{"type": "example", "content": placeholder}, *trailing_blocks]
+            _replace_row_payload_from_raw(
+                row,
+                raw_row,
+                source_file=path.name,
+                block_index=0,
+                reason="example_heading_unit_repaired_from_raw_order",
+            )
         if not dry_run:
             write_json(path, data)
-        _replace_row_payload_from_raw(
-            row,
-            raw_row,
-            source_file=path.name,
-            block_index=0,
-            reason="example_heading_unit_repaired_from_raw_order",
-        )
         stats["heading_units_repaired"] += 1
         stats["placeholders_moved"] += 1
     return stats
@@ -2442,6 +3029,7 @@ def _repair_raw_layout_example_order(
         "inversions_found": 0,
         "rows_relocated": 0,
         "heading_units_repaired": 0,
+        "heading_units_relocated_to_previous_real_prose": 0,
         "placeholders_moved": 0,
     }
     chapters = {str(row.get("chapter") or "").strip().lower() for row in rows if isinstance(row, dict)}
@@ -2464,6 +3052,9 @@ def _repair_raw_layout_example_order(
         dry_run=dry_run,
     )
     stats["heading_units_repaired"] += heading_stats["heading_units_repaired"]
+    stats["heading_units_relocated_to_previous_real_prose"] += heading_stats[
+        "heading_units_relocated_to_previous_real_prose"
+    ]
     stats["placeholders_moved"] += heading_stats["placeholders_moved"]
 
     by_chapter: dict[str, list[dict[str, Any]]] = defaultdict(list)
@@ -2651,6 +3242,11 @@ def _read_placeholder_position(structured_dir: Path, source_file: str, placehold
         char_index = content.find(placeholder)
         if char_index >= 0:
             return block_index, char_index
+        wanted = _example_ref_from_placeholder(placeholder)
+        if wanted:
+            for match in EXAMPLE_ANY_PLACEHOLDER_RE.finditer(content):
+                if clean_ref_id(match.group(1)).lower() == wanted.lower():
+                    return block_index, match.start()
     return None
 
 
@@ -2674,7 +3270,7 @@ def _insert_placeholder_after_unit(
     blocks = data.get("blocks") if isinstance(data, dict) else None
     if not isinstance(blocks, list):
         return None
-    if any(isinstance(block, dict) and placeholder in str(block.get("content") or "") for block in blocks):
+    if any(isinstance(block, dict) and _content_has_example_placeholder(str(block.get("content") or ""), placeholder) for block in blocks):
         found = _read_placeholder_position(structured_dir, source_file, placeholder)
         return found[0] if found is not None else None
     insert_index = min(max(after_block_index + 1, 0), len(blocks))
@@ -3090,6 +3686,8 @@ def _refresh_existing_rows_from_raw_layout(
         "rows_replaced": 0,
         "rows_physical_span_refreshed": 0,
         "rows_improved_with_tables": 0,
+        "rows_improved_with_figures": 0,
+        "standalone_figure_placeholders_removed": 0,
         "rows_boundary_clipped": 0,
         "replacement_reason_counts": {},
         "boundary_evidence_counts": {},
@@ -3127,8 +3725,11 @@ def _refresh_existing_rows_from_raw_layout(
             before_content = str(row.get("content_markdown") or "")
             before_plain = collapse_ws(strip_structured_refs(strip_html(before_content)))
             before_tables = {str(ref) for ref in (row.get("table_refs") or [])}
+            before_figures = {str(ref) for ref in (row.get("figure_refs") or [])}
             raw_tables = set(raw_item.table_refs)
+            raw_figures = set(raw_item.figure_refs)
             boundary_evidence = _raw_candidate_boundary_evidence(raw_item, row)
+            extension_evidence = _raw_candidate_extends_existing_visual_boundary(raw_item, row)
             should_replace = False
             reason = "raw_layout_existing_library_refresh"
             evidence_patch: dict[str, Any] = {}
@@ -3152,6 +3753,11 @@ def _refresh_existing_rows_from_raw_layout(
                         "visual_stop_rule_bbox": raw_evidence.get("visual_stop_rule_bbox"),
                     }
                 }
+            elif extension_evidence.get("evidence_codes"):
+                should_replace = True
+                stats["rows_boundary_clipped"] += 1
+                reason = "raw_layout_pdf_rule_boundary_extension"
+                evidence_patch = {"raw_layout_refresh": extension_evidence}
             elif raw_tables - before_tables:
                 should_replace = True
                 stats["rows_improved_with_tables"] += 1
@@ -3162,6 +3768,22 @@ def _refresh_existing_rows_from_raw_layout(
                         "before_word_count": len(before_plain.split()),
                         "raw_word_count": len(raw_item.content_plain.split()),
                         "added_table_refs": sorted(raw_tables - before_tables),
+                    }
+                }
+            elif raw_has_visual_stop and raw_figures - before_figures:
+                should_replace = True
+                stats["rows_improved_with_figures"] += 1
+                reason = "raw_layout_figure_placeholders_added"
+                evidence_patch = {
+                    "raw_layout_refresh": {
+                        "evidence_codes": ["adds_missing_figure_placeholders_inside_example"],
+                        "before_word_count": len(before_plain.split()),
+                        "raw_word_count": len(raw_item.content_plain.split()),
+                        "added_figure_refs": sorted(raw_figures - before_figures, key=natural_key),
+                        "visual_stop_source": raw_evidence.get("visual_stop_source"),
+                        "visual_stop_page": raw_evidence.get("visual_stop_page"),
+                        "visual_stop_row_index": raw_evidence.get("visual_stop_row_index"),
+                        "visual_stop_rule_bbox": raw_evidence.get("visual_stop_rule_bbox"),
                     }
                 }
             elif (
@@ -3210,12 +3832,26 @@ def _refresh_existing_rows_from_raw_layout(
 
             if not should_replace:
                 continue
+            added_figures = sorted(raw_figures - before_figures, key=natural_key)
             replacement_reason_counts[reason] += 1
             refresh_evidence = evidence_patch.get("raw_layout_refresh") if isinstance(evidence_patch, dict) else None
             if isinstance(refresh_evidence, dict):
                 for code in refresh_evidence.get("evidence_codes") or []:
                     boundary_evidence_counts[str(code)] += 1
             _replace_row_from_candidate(row, raw_item, reason=reason, evidence_patch=evidence_patch)
+            for figure_id in added_figures:
+                positions = _figure_standalone_positions(structured_dir, figure_id)
+                remaining = [
+                    pos
+                    for pos in positions
+                    if str(pos.get("source_file") or "") != str(row.get("source_file") or "")
+                ]
+                stats["standalone_figure_placeholders_removed"] += _remove_standalone_figure_placeholders(
+                    structured_dir,
+                    rows,
+                    remaining,
+                    dry_run=dry_run,
+                )
             if _refresh_row_physical_span_from_raw_alignment(row, raw_item, structured_dir):
                 stats["rows_physical_span_refreshed"] += 1
             stats["rows_replaced"] += 1
@@ -3269,15 +3905,16 @@ def _validate_example_library_indexes(
                 stats["stale"] += 1
             continue
 
-        # Build placeholder -> block_index map
         placeholder_to_index: dict[str, int] = {}
+        ref_to_index: dict[str, int] = {}
         for idx, block in enumerate(blocks):
             if not isinstance(block, dict):
                 continue
             content = str(block.get("content") or "")
-            if block.get("type") == "example" and "[[SEE_EXAMPLE:" in content:
-                for ph_match in re.finditer(r'\[\[SEE_EXAMPLE:[^\]]+\]\]', content):
+            if block.get("type") == "example" and EXAMPLE_ANY_PLACEHOLDER_RE.search(content):
+                for ph_match in EXAMPLE_ANY_PLACEHOLDER_RE.finditer(content):
                     placeholder_to_index[ph_match.group(0)] = idx
+                    ref_to_index[clean_ref_id(ph_match.group(1)).lower()] = idx
 
         for row in file_rows:
             stats["scanned"] += 1
@@ -3292,13 +3929,15 @@ def _validate_example_library_indexes(
                 start_idx is not None
                 and start_idx < len(blocks)
                 and isinstance(blocks[start_idx], dict)
-                and placeholder in str(blocks[start_idx].get("content") or "")
+                and _content_has_example_placeholder(str(blocks[start_idx].get("content") or ""), placeholder)
             ):
                 stats["correct"] += 1
                 continue
 
             # Search for correct index
             correct_idx = placeholder_to_index.get(placeholder)
+            if correct_idx is None:
+                correct_idx = ref_to_index.get(_example_ref_from_placeholder(placeholder).lower())
             if correct_idx is not None:
                 repl = row.get("replacement") if isinstance(row.get("replacement"), dict) else {}
                 if repl.get("placeholder_block_index") == correct_idx:
@@ -3551,6 +4190,7 @@ def _remove_duplicate_existing_example_placeholders(
     rows: list[dict[str, Any]],
     *,
     dry_run: bool,
+    exclude_chapters: set[str] | None = None,
 ) -> dict[str, int]:
     stats = {"rows_scanned": 0, "duplicate_placeholders_removed": 0, "files_changed": 0}
     canonical_positions: dict[str, tuple[str, int]] = {}
@@ -3576,6 +4216,8 @@ def _remove_duplicate_existing_example_placeholders(
 
     file_changed: set[str] = set()
     for path in load_unit_files(structured_dir):
+        if _path_chapter_is_excluded(path, exclude_chapters):
+            continue
         data = read_json(path)
         blocks = data.get("blocks") if isinstance(data, dict) else None
         if not isinstance(blocks, list):
@@ -3590,16 +4232,22 @@ def _remove_duplicate_existing_example_placeholders(
             updated_content = content
             remove_whole_block = False
             for placeholder, (source_file, canonical_index) in canonical_positions.items():
-                if placeholder not in updated_content:
+                if not _content_has_example_placeholder(updated_content, placeholder):
                     continue
                 if path.name == source_file and block_index == canonical_index:
                     continue
-                if updated_content.strip() == placeholder:
+                if _block_is_standalone_example_placeholder({"content": updated_content.strip()}):
                     remove_whole_block = True
                     changed = True
                     stats["duplicate_placeholders_removed"] += 1
                     break
-                updated_content = collapse_ws(updated_content.replace(placeholder, " "))
+                wanted = _example_ref_from_placeholder(placeholder)
+                updated_content = collapse_ws(
+                    EXAMPLE_ANY_PLACEHOLDER_RE.sub(
+                        lambda match: " " if clean_ref_id(match.group(1)).lower() == wanted.lower() else match.group(0),
+                        updated_content,
+                    )
+                )
                 changed = True
                 stats["duplicate_placeholders_removed"] += 1
             if remove_whole_block:
@@ -3620,46 +4268,605 @@ def _remove_duplicate_existing_example_placeholders(
     return stats
 
 
+def _row_example_ref(row: dict[str, Any]) -> str:
+    return clean_ref_id(str(row.get("example_ref") or row.get("example_id") or ""))
+
+
+def _unit_real_prose_word_count(data: dict[str, Any]) -> int:
+    blocks = data.get("blocks") if isinstance(data.get("blocks"), list) else []
+    total = 0
+    for block in blocks:
+        if not isinstance(block, dict):
+            continue
+        block_type = str(block.get("type") or "").strip().lower()
+        if block_type in {"example", "table", "figure"}:
+            continue
+        content = EXAMPLE_ANY_PLACEHOLDER_RE.sub(" ", str(block.get("content") or ""))
+        content = TABLE_PLACEHOLDER_RE.sub(" ", content)
+        total += len(normalize_match_text(content).split())
+    return total
+
+
+def _unit_is_isolated_example_chunk(data: dict[str, Any]) -> bool:
+    blocks = data.get("blocks") if isinstance(data.get("blocks"), list) else []
+    if not blocks or _unit_real_prose_word_count(data) > 0:
+        return False
+    return all(_block_is_standalone_example_placeholder(block) for block in blocks if isinstance(block, dict))
+
+
+def _block_plain_word_count(block: dict[str, Any]) -> int:
+    content = EXAMPLE_ANY_PLACEHOLDER_RE.sub(" ", str(block.get("content") or ""))
+    content = TABLE_PLACEHOLDER_RE.sub(" ", content)
+    content = re.sub(
+        r"\[\[(?:SEE_)?(?:FORMULA|FIGURE)\s*:\s*[^\]\n\r]+?\s*\]\]",
+        " ",
+        content,
+        flags=re.IGNORECASE,
+    )
+    return len(normalize_match_text(content).split())
+
+
+def _block_is_short_boundary_residue(block: dict[str, Any]) -> bool:
+    block_type = str(block.get("type") or "").strip().lower()
+    if block_type in {"example", "table", "figure"}:
+        return False
+    content = collapse_ws(str(block.get("content") or ""))
+    if not content:
+        return True
+    word_count = _block_plain_word_count(block)
+    if word_count == 0:
+        return True
+    if word_count > 12:
+        return False
+    return bool(
+        EXAMPLE_TITLE_PREFIX_RE.search(content)
+        or re.fullmatch(r"\[\[SEE_?\s*", content, flags=re.IGNORECASE)
+        or re.search(
+            r"\b(as an alternative expression|suggests a more general estimator|For\s+\$\\gamma_2\$)",
+            content,
+            flags=re.IGNORECASE,
+        )
+    )
+
+
+def _unit_detached_example_placeholders(data: dict[str, Any], *, min_real_prose_words: int = 12) -> list[str]:
+    blocks = data.get("blocks") if isinstance(data.get("blocks"), list) else []
+    if not blocks or _unit_real_prose_word_count(data) >= min_real_prose_words:
+        return []
+    placeholders: list[str] = []
+    for block in blocks:
+        if not isinstance(block, dict):
+            return []
+        block_type = str(block.get("type") or "").strip().lower()
+        placeholder = _block_is_standalone_example_placeholder(block)
+        if placeholder:
+            placeholders.append(placeholder)
+            continue
+        if block_type in {"table", "figure"}:
+            return []
+    return placeholders
+
+
+def _unit_residue_can_be_cleared_after_example_move(data: dict[str, Any]) -> bool:
+    blocks = data.get("blocks") if isinstance(data.get("blocks"), list) else []
+    for block in blocks:
+        if not isinstance(block, dict):
+            return False
+        if _block_is_standalone_example_placeholder(block):
+            continue
+        if not _block_is_short_boundary_residue(block):
+            return False
+    return True
+
+
+def _previous_real_prose_unit(
+    chapter_units: list[tuple[Path, dict[str, Any]]],
+    before_index: int,
+) -> tuple[Path, dict[str, Any]] | None:
+    for path, data in reversed(chapter_units[:before_index]):
+        if _unit_real_prose_word_count(data) >= 12:
+            return path, data
+    return None
+
+
+def _row_for_example_ref(rows: list[dict[str, Any]], chapter: str, example_ref: str) -> dict[str, Any] | None:
+    wanted = clean_ref_id(example_ref).lower()
+    for row in rows:
+        if not isinstance(row, dict):
+            continue
+        if str(row.get("chapter") or "").strip().lower() != chapter:
+            continue
+        if _row_example_ref(row).lower() == wanted or str(row.get("example_id") or "").strip().lower() == wanted:
+            return row
+    return None
+
+
+def _relocate_isolated_example_chunks(
+    structured_dir: Path,
+    rows: list[dict[str, Any]],
+    *,
+    dry_run: bool,
+) -> dict[str, Any]:
+    stats: dict[str, Any] = {
+        "units_scanned": 0,
+        "isolated_units": 0,
+        "detached_units": 0,
+        "placeholders_moved": 0,
+        "units_cleared": 0,
+        "rows_relocated": 0,
+        "files_changed": 0,
+        "changed_files": [],
+    }
+    by_chapter: dict[str, list[tuple[Path, dict[str, Any]]]] = defaultdict(list)
+    for path in load_unit_files(structured_dir):
+        data = read_json(path)
+        if not isinstance(data, dict):
+            continue
+        metadata = data.get("metadata") if isinstance(data.get("metadata"), dict) else {}
+        chapter = str(metadata.get("chapter") or path.stem.split("_", 1)[0]).strip().lower()
+        if chapter:
+            by_chapter[chapter].append((path, data))
+    for chapter_units in by_chapter.values():
+        chapter_units.sort(key=lambda item: natural_key(item[0].name))
+
+    changed_files: set[str] = set()
+    for chapter, chapter_units in sorted(by_chapter.items(), key=lambda item: chapter_sort_key(item[0])):
+        for index, (path, data) in enumerate(chapter_units):
+            stats["units_scanned"] += 1
+            placeholders = _unit_detached_example_placeholders(data)
+            if not placeholders:
+                continue
+            previous = _previous_real_prose_unit(chapter_units, index)
+            if previous is None:
+                continue
+            if _unit_is_isolated_example_chunk(data):
+                stats["isolated_units"] += 1
+            else:
+                stats["detached_units"] += 1
+            previous_path, previous_data = previous
+            previous_blocks = previous_data.get("blocks") if isinstance(previous_data.get("blocks"), list) else None
+            if not isinstance(previous_blocks, list):
+                continue
+            moved = 0
+            for placeholder in placeholders:
+                ref = _example_ref_from_placeholder(placeholder)
+                row = _row_for_example_ref(rows, chapter, ref)
+                if row is None:
+                    continue
+                existing_position = _read_placeholder_position(structured_dir, previous_path.name, placeholder)
+                if existing_position is not None:
+                    new_index = existing_position[0]
+                else:
+                    new_index = len(previous_blocks)
+                    previous_blocks.append({"type": "example", "content": placeholder})
+                    _shift_row_indexes_after_insert(rows, previous_path.name, new_index, inserted_placeholder=placeholder)
+                row["source_file"] = previous_path.name
+                row["start_block_index"] = new_index
+                row["end_block_index"] = new_index
+                replacement = row.get("replacement") if isinstance(row.get("replacement"), dict) else {}
+                row["replacement"] = {
+                    **replacement,
+                    "status": "replaced",
+                    "reason": replacement.get("reason") or "placeholder_block_written",
+                    "source_block_span": [new_index, new_index],
+                    "placeholder_block_index": new_index,
+                    "placeholder_source_file": previous_path.name,
+                }
+                evidence = row.get("evidence") if isinstance(row.get("evidence"), dict) else {}
+                row["evidence"] = {
+                    **evidence,
+                    "existing_library_repair": "isolated_example_chunk_relocated",
+                    "relocated_from_source_file": path.name,
+                }
+                moved += 1
+            if moved == 0:
+                continue
+            previous_data["blocks"] = previous_blocks
+            metadata = data.get("metadata") if isinstance(data.get("metadata"), dict) else {}
+            data["metadata"] = {
+                **metadata,
+                "isolated_example_chunk_relocated_to": previous_path.stem,
+            }
+            if _unit_residue_can_be_cleared_after_example_move(data):
+                data["blocks"] = []
+                stats["units_cleared"] += 1
+            else:
+                retained_blocks = []
+                for block_index, block in enumerate(data.get("blocks", [])):
+                    if not isinstance(block, dict):
+                        continue
+                    if _block_is_standalone_example_placeholder(block):
+                        _shift_row_indexes_after_remove(
+                            rows,
+                            path.name,
+                            block_index,
+                            removed_placeholder=str(block.get("content") or ""),
+                        )
+                        continue
+                    retained_blocks.append(block)
+                data["blocks"] = retained_blocks
+            changed_files.update({path.name, previous_path.name})
+            stats["placeholders_moved"] += moved
+            stats["rows_relocated"] += moved
+            if not dry_run:
+                write_json(previous_path, previous_data)
+                write_json(path, data)
+    stats["files_changed"] = len(changed_files)
+    stats["changed_files"] = sorted(changed_files, key=natural_key)
+    return stats
+
+
+def _example_duplicate_span_in_block(
+    block_content: str,
+    example_content: str,
+    *,
+    min_words: int = 28,
+    min_partial_ratio: float = 0.35,
+    min_fuzzy_words: int = 40,
+    min_fuzzy_coverage: float = 0.55,
+) -> tuple[int, int, str] | None:
+    block_spans = _token_spans(block_content)
+    example_spans = _token_spans(example_content)
+    block_tokens = [token for token, _, _ in block_spans]
+    example_tokens = [token for token, _, _ in example_spans]
+    if len(block_tokens) < min_words or len(example_tokens) < min_words:
+        return None
+
+    def in_example(tokens: list[str]) -> bool:
+        return _find_subsequence(example_tokens, tokens) is not None
+
+    if in_example(block_tokens):
+        return 0, len(block_content), "full_block"
+
+    candidates: list[tuple[int, int, int, str]] = []
+    max_start = len(block_tokens) - min_words
+    for start_token in range(1, max_start + 1):
+        suffix_tokens = block_tokens[start_token:]
+        if len(suffix_tokens) / len(block_tokens) < min_partial_ratio:
+            continue
+        if in_example(suffix_tokens):
+            candidates.append((len(suffix_tokens), block_spans[start_token][1], len(block_content), "suffix"))
+            break
+
+    for end_token in range(len(block_tokens) - 1, min_words - 1, -1):
+        prefix_tokens = block_tokens[:end_token]
+        if len(prefix_tokens) / len(block_tokens) < min_partial_ratio:
+            break
+        if in_example(prefix_tokens):
+            candidates.append((len(prefix_tokens), 0, block_spans[end_token - 1][2], "prefix"))
+            break
+
+    if not candidates:
+        fuzzy = _example_fuzzy_duplicate_span_in_block(
+            block_spans,
+            example_tokens,
+            min_words=max(min_words, min_fuzzy_words),
+            min_coverage=min_fuzzy_coverage,
+            min_partial_ratio=min_partial_ratio,
+        )
+        if fuzzy is None:
+            return None
+        start_token, end_token, kind = fuzzy
+        if kind == "full_block_fuzzy":
+            return 0, len(block_content), kind
+        return block_spans[start_token][1], block_spans[end_token - 1][2], kind
+    _, start_char, end_char, kind = max(candidates, key=lambda item: item[0])
+    return start_char, end_char, kind
+
+
+def _clean_trimmed_duplicate_prose(text: str) -> str:
+    stripped = collapse_ws(str(text or ""))
+    dangling_ref = re.search(r"\[\[(?:SEE_)?(?:EXAMPLE|TABLE|FIGURE|FORMULA)\s*$", stripped, flags=re.IGNORECASE)
+    if dangling_ref:
+        stripped = stripped[: dangling_ref.start()]
+    stripped = re.sub(r"^[\s,:;.\-–—]+", "", stripped)
+    stripped = re.sub(r"[\s,:;.\-–—]+$", "", stripped)
+    stripped = re.sub(r"\$\$\s*\\\s*\\?\}\s*\$\$", "", stripped).strip()
+    stripped = re.sub(r"^\)\s*\$\$\s*", "", stripped).strip()
+    stripped = re.sub(r"^\s*[\])}]+[,:;.]+\s*", "", stripped).strip()
+    if not stripped:
+        return ""
+    without_refs = EXAMPLE_ANY_PLACEHOLDER_RE.sub(" ", stripped)
+    without_refs = TABLE_PLACEHOLDER_RE.sub(" ", without_refs)
+    without_refs = re.sub(
+        r"\[\[(?:SEE_)?(?:FORMULA|FIGURE)\s*:\s*[^\]\n\r]+?\s*\]\]",
+        " ",
+        without_refs,
+        flags=re.IGNORECASE,
+    )
+    without_refs = re.sub(r"[\s,:;.\-–—]+", " ", without_refs).strip()
+    if not re.search(r"[A-Za-z0-9]", without_refs):
+        return ""
+    return stripped
+
+
+def _example_fuzzy_duplicate_span_in_block(
+    block_spans: list[tuple[str, int, int]],
+    example_tokens: list[str],
+    *,
+    min_words: int,
+    min_coverage: float,
+    min_partial_ratio: float,
+) -> tuple[int, int, str] | None:
+    block_tokens = [token for token, _, _ in block_spans]
+    if len(block_tokens) < min_words or len(example_tokens) < min_words:
+        return None
+    matcher = SequenceMatcher(None, block_tokens, example_tokens, autojunk=False)
+    matching_blocks = [item for item in matcher.get_matching_blocks() if item.size >= 8]
+    if not matching_blocks:
+        return None
+    matching_blocks.sort(key=lambda item: item.a)
+    first_start = matching_blocks[0].a
+    last_end = max(item.a + item.size for item in matching_blocks)
+    total_matched = sum(item.size for item in matching_blocks)
+    if (
+        total_matched / max(1, len(block_tokens)) >= 0.72
+        and first_start <= 3
+        and len(block_tokens) - last_end <= 8
+    ):
+        return 0, len(block_tokens), "full_block_fuzzy"
+
+    runs: list[tuple[int, int, int]] = []
+    current_start = matching_blocks[0].a
+    current_end = matching_blocks[0].a + matching_blocks[0].size
+    current_matched = matching_blocks[0].size
+    for block in matching_blocks[1:]:
+        start = block.a
+        end = block.a + block.size
+        gap = start - current_end
+        if gap <= 8:
+            current_end = max(current_end, end)
+            current_matched += block.size
+            continue
+        runs.append((current_start, current_end, current_matched))
+        current_start = start
+        current_end = end
+        current_matched = block.size
+    runs.append((current_start, current_end, current_matched))
+
+    candidates: list[tuple[float, int, int, str]] = []
+    block_len = len(block_tokens)
+    for start, end, matched in runs:
+        span_len = end - start
+        if span_len < min_words:
+            continue
+        coverage = matched / max(1, span_len)
+        if coverage < min_coverage:
+            continue
+        span_ratio = span_len / block_len
+        matched_words = matched
+        if start == 0 and end == block_len:
+            kind = "full_block_fuzzy"
+        elif start == 0 and span_ratio >= min_partial_ratio:
+            kind = "prefix_fuzzy"
+        elif end == block_len and span_ratio >= min_partial_ratio:
+            kind = "suffix_fuzzy"
+        elif span_ratio >= 0.20 and matched_words >= 60 and coverage >= 0.70:
+            kind = "middle_fuzzy"
+        else:
+            continue
+        candidates.append((coverage * matched, start, end, kind))
+    if not candidates:
+        return None
+    _, start, end, kind = max(candidates, key=lambda item: item[0])
+    return start, end, kind
+
+
+def _remove_duplicate_example_body_prose_blocks(
+    structured_dir: Path,
+    rows: list[dict[str, Any]],
+    *,
+    dry_run: bool,
+    max_passes: int = 4,
+) -> dict[str, Any]:
+    stats = {
+        "rows_scanned": 0,
+        "candidate_files": 0,
+        "prose_blocks_checked": 0,
+        "duplicate_spans_removed": 0,
+        "full_blocks_removed": 0,
+        "partial_blocks_trimmed": 0,
+        "files_changed": 0,
+        "changed_files": [],
+        "passes": 0,
+    }
+    changed_files: set[str] = set()
+    for pass_index in range(max(1, max_passes)):
+        pass_stats = _remove_duplicate_example_body_prose_blocks_once(
+            structured_dir,
+            rows,
+            dry_run=dry_run,
+        )
+        stats["passes"] = pass_index + 1
+        for key in [
+            "rows_scanned",
+            "candidate_files",
+            "prose_blocks_checked",
+            "duplicate_spans_removed",
+            "full_blocks_removed",
+            "partial_blocks_trimmed",
+        ]:
+            stats[key] += int(pass_stats.get(key) or 0)
+        changed_files.update(str(item) for item in pass_stats.get("changed_files", []))
+        if int(pass_stats.get("duplicate_spans_removed") or 0) == 0:
+            break
+        if dry_run:
+            break
+    stats["files_changed"] = len(changed_files)
+    stats["changed_files"] = sorted(changed_files, key=natural_key)
+    return stats
+
+
+def _remove_duplicate_example_body_prose_blocks_once(
+    structured_dir: Path,
+    rows: list[dict[str, Any]],
+    *,
+    dry_run: bool,
+) -> dict[str, Any]:
+    stats = {
+        "rows_scanned": 0,
+        "candidate_files": 0,
+        "prose_blocks_checked": 0,
+        "duplicate_spans_removed": 0,
+        "full_blocks_removed": 0,
+        "partial_blocks_trimmed": 0,
+        "files_changed": 0,
+        "changed_files": [],
+    }
+    units_by_chapter: dict[str, list[tuple[Path, dict[str, Any]]]] = defaultdict(list)
+    for path in load_unit_files(structured_dir):
+        data = read_json(path)
+        if not isinstance(data, dict):
+            continue
+        metadata = data.get("metadata") if isinstance(data.get("metadata"), dict) else {}
+        chapter = str(metadata.get("chapter") or path.stem.split("_", 1)[0]).strip().lower()
+        if chapter:
+            units_by_chapter[chapter].append((path, data))
+    for chapter_units in units_by_chapter.values():
+        chapter_units.sort(key=lambda item: natural_key(item[0].name))
+
+    candidates_by_file: dict[str, list[dict[str, str]]] = defaultdict(list)
+    for row in rows:
+        if not isinstance(row, dict):
+            continue
+        content = str(row.get("content_markdown") or row.get("content_plain") or "")
+        if len(_token_spans(content)) < 28:
+            continue
+        ref = _row_example_ref(row)
+        chapter = str(row.get("chapter") or "").strip().lower()
+        source_file = str(row.get("source_file") or "").strip()
+        if not ref or not chapter or not source_file:
+            continue
+        chapter_units = units_by_chapter.get(chapter, [])
+        source_index = next((idx for idx, (path, _) in enumerate(chapter_units) if path.name == source_file), None)
+        if source_index is None:
+            continue
+        stats["rows_scanned"] += 1
+        for path, _ in chapter_units[max(0, source_index - 3) : min(len(chapter_units), source_index + 4)]:
+            candidates_by_file[path.name].append(
+                {
+                    "example_ref": ref,
+                    "content": content,
+                }
+            )
+    stats["candidate_files"] = len(candidates_by_file)
+
+    changed_files: set[str] = set()
+    for chapter_units in units_by_chapter.values():
+        for path, data in chapter_units:
+            candidates = candidates_by_file.get(path.name)
+            if not candidates:
+                continue
+            blocks = data.get("blocks") if isinstance(data.get("blocks"), list) else []
+            if not isinstance(blocks, list):
+                continue
+            new_blocks: list[Any] = []
+            removed_original_indexes: list[int] = []
+            changed = False
+            for block_index, block in enumerate(blocks):
+                if not isinstance(block, dict):
+                    new_blocks.append(block)
+                    continue
+                block_type = str(block.get("type") or "").strip().lower()
+                content = str(block.get("content") or "")
+                if block_type in {"example", "table", "figure"} or not content.strip():
+                    new_blocks.append(block)
+                    continue
+                stats["prose_blocks_checked"] += 1
+                match: tuple[int, int, str] | None = None
+                for candidate in candidates:
+                    match = _example_duplicate_span_in_block(content, candidate["content"])
+                    if match is not None:
+                        break
+                if match is None:
+                    new_blocks.append(block)
+                    continue
+                start_char, end_char, kind = match
+                stats["duplicate_spans_removed"] += 1
+                changed = True
+                if start_char <= 0 and end_char >= len(content):
+                    stats["full_blocks_removed"] += 1
+                    removed_original_indexes.append(block_index)
+                    continue
+                trimmed = _clean_trimmed_duplicate_prose(f"{content[:start_char]} {content[end_char:]}")
+                if not trimmed:
+                    stats["full_blocks_removed"] += 1
+                    removed_original_indexes.append(block_index)
+                    continue
+                updated = dict(block)
+                updated["content"] = trimmed
+                updated_metadata = updated.get("metadata") if isinstance(updated.get("metadata"), dict) else {}
+                updated["metadata"] = {
+                    **updated_metadata,
+                    "example_duplicate_prose_trimmed": kind,
+                }
+                stats["partial_blocks_trimmed"] += 1
+                new_blocks.append(updated)
+            if not changed:
+                continue
+            data["blocks"] = new_blocks
+            for offset, original_index in enumerate(removed_original_indexes):
+                _shift_row_indexes_after_remove(
+                    rows,
+                    path.name,
+                    original_index - offset,
+                    removed_placeholder="",
+                )
+            changed_files.add(path.name)
+            if not dry_run:
+                write_json(path, data)
+    stats["files_changed"] = len(changed_files)
+    stats["changed_files"] = sorted(changed_files, key=natural_key)
+    return stats
+
+
 def _repair_existing_example_library(
     *,
     structured_dir: Path,
     project_root: Path,
     rows: list[dict[str, Any]],
     dry_run: bool,
+    exclude_chapters: set[str] | None = None,
 ) -> dict[str, Any]:
-    false_heading_stats = _restore_false_example_rows(structured_dir, rows, dry_run=dry_run)
+    active_rows = [
+        row
+        for row in rows
+        if not exclude_chapters
+        or str(row.get("chapter") or "").strip().lower() not in exclude_chapters
+    ]
+    false_heading_stats = _restore_false_example_rows(structured_dir, active_rows, dry_run=dry_run)
     raw_refresh_stats = _refresh_existing_rows_from_raw_layout(
         structured_dir=structured_dir,
         project_root=project_root,
-        rows=rows,
+        rows=active_rows,
         dry_run=dry_run,
     )
     monotonic_order_stats = _repair_nonmonotonic_existing_example_order(
         structured_dir=structured_dir,
-        rows=rows,
+        rows=active_rows,
         dry_run=dry_run,
     )
     relocate_stats = _relocate_out_of_order_existing_examples(
         structured_dir=structured_dir,
         project_root=project_root,
-        rows=rows,
+        rows=active_rows,
         dry_run=dry_run,
     )
     sequence_gap_neighbor_stats = _repair_sequence_gap_neighbor_insert_placeholders(
         structured_dir=structured_dir,
         project_root=project_root,
-        rows=rows,
+        rows=active_rows,
         dry_run=dry_run,
     )
     raw_global_order_stats = _repair_raw_layout_example_order(
         structured_dir=structured_dir,
         project_root=project_root,
-        rows=rows,
+        rows=active_rows,
         dry_run=dry_run,
     )
     source_span_rewrite_stats = _rewrite_existing_example_source_spans(
         structured_dir,
-        rows,
+        active_rows,
         dry_run=dry_run,
     )
     split_stats = _split_missing_examples_from_existing_library(
@@ -3667,25 +4874,38 @@ def _repair_existing_example_library(
         project_root=project_root,
         rows=rows,
         dry_run=dry_run,
+        exclude_chapters=exclude_chapters,
     )
     duplicate_placeholder_stats = _remove_duplicate_existing_example_placeholders(
         structured_dir,
-        rows,
+        active_rows,
+        dry_run=dry_run,
+        exclude_chapters=exclude_chapters,
+    )
+    isolated_example_chunk_stats = _relocate_isolated_example_chunks(
+        structured_dir,
+        active_rows,
+        dry_run=dry_run,
+    )
+    duplicate_body_prose_stats = _remove_duplicate_example_body_prose_blocks(
+        structured_dir,
+        active_rows,
         dry_run=dry_run,
     )
     orphan_placeholder_stats = _append_orphan_placeholder_rows_from_raw(
         structured_dir=structured_dir,
         project_root=project_root,
         rows=rows,
+        exclude_chapters=exclude_chapters,
     )
     missing_placeholder_restore_stats = _restore_missing_existing_example_placeholders(
         structured_dir=structured_dir,
         project_root=project_root,
-        rows=rows,
+        rows=active_rows,
         dry_run=dry_run,
     )
     # Fix 3: validate that library row indexes actually point to their placeholders
-    validation_stats = _validate_example_library_indexes(structured_dir, rows, dry_run=dry_run)
+    validation_stats = _validate_example_library_indexes(structured_dir, active_rows, dry_run=dry_run)
     changed = (
         false_heading_stats["source_blocks_restored"] > 0
         or raw_refresh_stats["rows_replaced"] > 0
@@ -3698,6 +4918,8 @@ def _repair_existing_example_library(
         or split_stats["split_from_existing_rows"] > 0
         or split_stats["updated_source_blocks"] > 0
         or duplicate_placeholder_stats["duplicate_placeholders_removed"] > 0
+        or isolated_example_chunk_stats["rows_relocated"] > 0
+        or duplicate_body_prose_stats["duplicate_spans_removed"] > 0
         or orphan_placeholder_stats["rows_added"] > 0
         or missing_placeholder_restore_stats["placeholders_inserted"] > 0
         or validation_stats["corrected"] > 0
@@ -3706,6 +4928,8 @@ def _repair_existing_example_library(
         write_example_library(structured_dir, rows)
     return {
         "changed": changed,
+        "excluded_chapters": sorted(exclude_chapters or []),
+        "active_rows": len(active_rows),
         "false_heading": false_heading_stats,
         "raw_layout_refresh": raw_refresh_stats,
         "monotonic_order": monotonic_order_stats,
@@ -3715,6 +4939,8 @@ def _repair_existing_example_library(
         "source_span_rewrite": source_span_rewrite_stats,
         "sequence_gap_split": split_stats,
         "duplicate_placeholders": duplicate_placeholder_stats,
+        "isolated_example_chunks": isolated_example_chunk_stats,
+        "duplicate_body_prose": duplicate_body_prose_stats,
         "orphan_placeholders": orphan_placeholder_stats,
         "missing_placeholder_restore": missing_placeholder_restore_stats,
         "index_validation": validation_stats,
@@ -4661,6 +5887,7 @@ def _append_orphan_placeholder_rows_from_raw(
     structured_dir: Path,
     project_root: Path,
     rows: list[dict[str, Any]],
+    exclude_chapters: set[str] | None = None,
 ) -> dict[str, Any]:
     refs_by_chapter = _structured_placeholder_refs(structured_dir)
     existing = {
@@ -4673,6 +5900,8 @@ def _append_orphan_placeholder_rows_from_raw(
     }
     missing_by_chapter: dict[str, set[str]] = defaultdict(set)
     for chapter, refs in refs_by_chapter.items():
+        if exclude_chapters and chapter in exclude_chapters:
+            continue
         for ref in refs:
             if (chapter, ref) not in existing:
                 missing_by_chapter[chapter].add(ref)
@@ -4840,12 +6069,14 @@ def _summarize_existing_example_library(
     before_blocks: int,
     started: float,
     dry_run: bool,
+    exclude_chapters: set[str] | None = None,
 ) -> dict[str, Any]:
     repair_stats = _repair_existing_example_library(
         structured_dir=structured_path,
         project_root=project_root,
         rows=rows,
         dry_run=dry_run,
+        exclude_chapters=exclude_chapters,
     )
     # Fix 4: if rows have stale indexes (placeholder blocks missing), signal fallback to re-extraction
     stale_count = repair_stats.get("index_validation", {}).get("stale", 0)
@@ -4854,6 +6085,20 @@ def _summarize_existing_example_library(
         structured_path,
         rows,
         dry_run=dry_run,
+        exclude_chapters=exclude_chapters,
+    )
+    example_formula_sync_stats = _sync_example_numbered_formulas(
+        structured_path,
+        rows,
+        dry_run=dry_run,
+        exclude_chapters=exclude_chapters,
+    )
+    example_figure_sync_stats = _sync_example_numbered_figures(
+        structured_path,
+        rows,
+        project_root=project_root,
+        dry_run=dry_run,
+        exclude_chapters=exclude_chapters,
     )
     status_counts = _status_counts_for_rows(rows)
     placeholder_stats = _existing_placeholder_stats(structured_path, rows)
@@ -4888,6 +6133,7 @@ def _summarize_existing_example_library(
         "structured_dir": str(structured_path),
         "artifacts_dir": str(artifact_path) if artifact_path else None,
         "dry_run": dry_run,
+        "excluded_chapters": sorted(exclude_chapters or []),
         "existing_example_library_used": True,
         "example_library_preserved": True,
         "total_examples": len(rows),
@@ -4903,6 +6149,8 @@ def _summarize_existing_example_library(
             key=natural_key,
         ),
         "table_source_rebind_stats": table_source_rebind_stats,
+        "example_formula_sync_stats": example_formula_sync_stats,
+        "example_figure_sync_stats": example_figure_sync_stats,
         "blocks_before": before_blocks,
         "blocks_after": after_blocks,
         "blocks_removed_by_example_fold": before_blocks - after_blocks,
@@ -4924,6 +6172,7 @@ def apply_example_pipeline(
     reference_structured_dir: str | Path | None = None,
     artifacts_dir: str | Path | None = None,
     dry_run: bool = False,
+    exclude_chapters: set[str] | None = None,
 ) -> dict[str, Any]:
     """Extract examples, fold selected spans, and write ``example_library.json``.
 
@@ -4940,6 +6189,7 @@ def apply_example_pipeline(
     artifact_path = Path(artifacts_dir).resolve() if artifacts_dir else None
     before_hashes = _library_hashes(structured_path)
     before_blocks = count_blocks(structured_path)
+    excluded = {str(chapter).strip().lower() for chapter in (exclude_chapters or set()) if str(chapter).strip()}
 
     existing_rows = _load_existing_example_library_rows(structured_path)
     if existing_rows:
@@ -4952,6 +6202,7 @@ def apply_example_pipeline(
             before_blocks=before_blocks,
             started=started,
             dry_run=dry_run,
+            exclude_chapters=excluded,
         )
         # Fix 4: if repair found too many stale rows, delete library and re-extract
         if isinstance(result, dict) and result.get("_fallback_to_reextract"):
@@ -5046,8 +6297,24 @@ def apply_example_pipeline(
             )
         )
     _refresh_rows_after_replacement(library_rows, replacement_stats)
+    isolated_example_chunk_stats = _relocate_isolated_example_chunks(
+        structured_path,
+        [
+            row
+            for row in library_rows
+            if not excluded
+            or str(row.get("chapter") or "").strip().lower() not in excluded
+        ],
+        dry_run=dry_run,
+    )
 
     write_example_library(structured_path, library_rows, dry_run=dry_run)
+    example_formula_sync_stats = _sync_example_numbered_formulas(
+        structured_path,
+        library_rows,
+        dry_run=dry_run,
+        exclude_chapters=excluded,
+    )
     raw_global_order_stats = _repair_raw_layout_example_order(
         structured_dir=structured_path,
         project_root=Path(project_root).resolve(),
@@ -5058,6 +6325,14 @@ def apply_example_pipeline(
         structured_path,
         library_rows,
         dry_run=dry_run,
+        exclude_chapters=excluded,
+    )
+    example_figure_sync_stats = _sync_example_numbered_figures(
+        structured_path,
+        library_rows,
+        project_root=Path(project_root).resolve(),
+        dry_run=dry_run,
+        exclude_chapters=excluded,
     )
 
     after_blocks = count_blocks(structured_path) if not dry_run else before_blocks - sum(
@@ -5071,6 +6346,7 @@ def apply_example_pipeline(
         "structured_dir": str(structured_path),
         "artifacts_dir": str(artifact_path) if artifact_path else None,
         "dry_run": dry_run,
+        "excluded_chapters": sorted(excluded),
         "existing_example_library_used": False,
         "example_library_preserved": False,
         "reference_structured_dir": str(reference_path) if reference_path else None,
@@ -5084,8 +6360,11 @@ def apply_example_pipeline(
         "skipped_examples": len(library_rows) - status_counts.get("replaced", 0),
         "per_file_counts": per_file_counts,
         "replacement_stats": replacement_stats,
+        "isolated_example_chunk_stats": isolated_example_chunk_stats,
         "raw_layout_global_order_stats": raw_global_order_stats,
         "table_source_rebind_stats": table_source_rebind_stats,
+        "example_formula_sync_stats": example_formula_sync_stats,
+        "example_figure_sync_stats": example_figure_sync_stats,
         "blocks_before": before_blocks,
         "blocks_after": after_blocks,
         "blocks_removed_by_example_fold": before_blocks - after_blocks,

@@ -1,0 +1,67 @@
+{
+  "id": "Genetics_chapter17_003",
+  "metadata": {
+    "chapter": "Genetics_chapter17",
+    "section": "Parent-Offspring Regression",
+    "subsections": [
+      "Unequal Family Sizes"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter17_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Parent-Offspring Regression",
+    "section_level_2": "Unequal Family Sizes",
+    "heading_path": [
+      "Parent-Offspring Regression",
+      "Unequal Family Sizes"
+    ],
+    "display_heading": "Unequal Family Sizes"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "When there is significant variation in family size, one is confronted with the problem of how to weight the information from families of different sizes. With a goal of minimizing the sampling error of the heritability estimate, it is logical that families of larger size should be given more weight in a regression since their mean phenotype estimates are more accurate. Should one simply weight each family by the number of offspring measured, as would be the case if one were to regress each individual on its parent's phenotype? The answer is no — the appropriate weights are less than proportional to the actual family sizes. Once one has measured a very large number of offspring from a family, very little improvement in the precision of the family mean will be obtained by making additional measurements."
+    },
+    {
+      "type": "discussion",
+      "content": "In one of the first applications of weighted least-squares regression (Chapter 8), Kempthorne and Tandon (1953; see also Bohren et al. 1961) showed that the appropriate weights are proportional to the inverse of the residual sampling variances of family means about the parent-offspring regression. Although more sophisticated maximum-likelihood approaches now exist for the analysis of populations with arbitrary family structures (Chapter 27), these will not be particularly transparent to the reader at this point in the book, so we consider the Kempthorne-"
+    },
+    {
+      "type": "discussion",
+      "content": "Tandon derivation in some detail. To obtain their result, we require the use of the intraclass correlation, here defined to be the phenotypic correlation between sibs. $$ t=\\frac{\\mathbf{Cov}(S)}{\\mathbf{Var}(z)} $$ where $ \\mathrm{Cov}(S) $ denotes the phenotypic covariance of sibs. The intraclass correlation estimates the fraction of the total phenotypic variance attributable to factors causing resemblance between members of the same sib family. It follows that $ (1-t) $ estimates the fraction of the phenotypic variance due to differences among individuals of the same family. Stated in another way, $ (1-t)\\mathrm{Var}(z) $ and $ t\\cdot\\mathrm{Var}(z) $ are estimates of the within- and among-family components of phenotypic variance."
+    },
+    {
+      "type": "discussion",
+      "content": "Letting $\\overline{z}_{oi}$ be the mean phenotype of offspring from the ith family, the linear model becomes $$ \\overline{z}_{oi}=\\alpha+\\beta_{op}z_{pi}+e_{i} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "To perform a weighted regression, we need expressions for the variance of the residual errors around the regression (the $ e_{i} $) as a function of family size. The residual variance is the sum of two components: (1) the variance of the “true” family mean deviations from the regression, and (2) the sampling variance of the estimated family means around their expectations. The first of these components is independent of family size."
+    },
+    {
+      "type": "proposition",
+      "content": "For a family of size $n$, it follows from above that the second component of the residual variance is simply $(1-t)\\mathrm{Var}(z)/n$. The first component is easily obtained by process of elimination. The variance of the true offspring family means is estimated by $t\\mathrm{Var}(z)$, and from this we have to subtract the variance accounted for by the regression. For a single-parent regression, Equation 3.17 gives the regression variance as $r_{op}^{2}\\mathrm{Var}(z)=b_{op}^{2}\\mathrm{Var}(z)$. (Under the assumption of equal parent and offspring variances, Equation 3.15b implies the regression and correlation coefficients are the same for the single parent-offspring regression.) For a midparent analysis, the variance due to regression is $r_{op}^{2}\\mathrm{Var}(z)=b_{op}^{2}\\mathrm{Var}(z)/2$. This follows from Equation 3.15b, as $$ b_{o\\overline{p}}^{2}=r_{o\\overline{p}}^{2}\\frac{\\mathbf{Var}(z_{o})}{\\mathbf{Var}(z_{\\overline{p}})}=2r_{o\\overline{p}}^{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, the variance of “true” family means from the regression is $ (t - B)\\mathrm{Var}(z) $, where $ B = b_{op}^2 $ or $ b_{op}^2/2 $ depending on whether one or both parents are used. Summing up, we obtain the expression for the conditional variance of the $ i $th family mean, $$ \\mathbf{Var}(e_{i})=\\left(t-B+\\frac{1-t}{n_{i}}\\right)\\mathbf{Var}(z) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The sampling variance of the parent-offspring regression coefficient is minimized by weighting the contribution of different families by the reciprocal of this"
+    },
+    {
+      "type": "discussion",
+      "content": "[[FIGURE:17.1]] quantity (see Example 11, Chapter 8). Since $ \\operatorname{Var}(z) $ is a constant factor, it can be dropped from the analysis. Thus, the weight for the ith family is $$ w_{i}=\\frac{n_{i}}{n_{i}(t-B)+(1-t)} $$ and, from Equation 8.36b, the weighted least-squares regression coefficient is $$ b=\\frac{\\sum_{i=1}^{N}w_{i}(\\overline{z}_{oi}-\\overline{z}_{o})(z_{pi}-\\overline{z}_{p})}{\\sum_{i=1}^{N}w_{i}(z_{pi}-\\overline{z}_{p})^{2}}. $$ where $$ \\overline{{z}}_{p}=\\sum_{i=1}^{N}w_{i}z_{p i}/\\sum_{i=1}^{N}w_{i}\\qquad\\mathrm{a n d}\\qquad\\overline{{z}}_{o}=\\sum_{i=1}^{N}w_{i}\\overline{{z}}_{o i}/\\sum_{i=1}^{N}w_{i} $$ are the weighted mean phenotypes for the parent and offspring generations. (For a midparent regression, $ z_{\\bar{p}i} $ needs to be substituted for $ z_{pi} $.)"
+    },
+    {
+      "type": "discussion",
+      "content": "Equation 17.5a shows that as $ n_i $ becomes large, the weight $ w_i $ approaches the limiting value $ (t - B)^{-1} $, i.e., once the family size is very large, very little is gained by measuring additional progeny. This asymptotic value is reached more rapidly when t is large, because in that case, only a few offspring are sufficient to give an accurate estimate of the family mean. The diminishing returns of large family size can be seen especially clearly by considering case (B) in Figure 17.1 in the context of a single-parent regression. Here, since $ B = b_{op}^{2} = 0.05 $, the heritability is moderate ($ h^{2} \\simeq 2\\sqrt{B} = 0.45 $): Assuming that the families consist of full-sibs, $ t = 0.5 $ implies that there is considerable resemblance between sibs due to factors other than additive genetic variance (since the correlation would be expected to be approximately $ h^{2}/2 $ on the basis of additive genetic covariance alone). Under these circumstances, families with 10 measured progeny should only be given twice as much weight as families with single offspring."
+    },
+    {
+      "type": "discussion",
+      "content": "A practical issue that arises in applying the weighted regression technique is that the weighting factor, $ w_{i} $, is a function of both t and B. Although t can be calculated directly as the correlation between sib phenotypes, B is a function of the regression coefficient, precisely the quantity that we want to estimate. Resolution of this difficulty is relatively straightforward. A preliminary estimate of B can be obtained from the slope of an unweighted regression analysis. This B is then substituted into Equation 17.5a to generate some preliminary weights. The new regression coefficient generated by Equation 17.5b is then compared with the initial unweighted estimate, and, if the values are the same, the computation is over. If they are different, the second estimate of B is used to generate new weights and a third regression estimate. The entire procedure is repeated until satisfactory convergence has been attained, which usually requires only a few iterations."
+    }
+  ]
+}

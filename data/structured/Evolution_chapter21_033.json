@@ -1,0 +1,71 @@
+{
+  "id": "Evolution_chapter21_033",
+  "metadata": {
+    "chapter": "Evolution_chapter21",
+    "section": "SELECTION ON A FAMILY INDEX",
+    "subsections": [
+      "Lush's Optimal Index"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter21_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "SELECTION ON A FAMILY INDEX",
+    "section_level_2": "Lush's Optimal Index",
+    "heading_path": [
+      "SELECTION ON A FAMILY INDEX",
+      "Lush's Optimal Index"
+    ],
+    "display_heading": "Lush's Optimal Index"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "As the previous example shows, by making the appropriate choice of index weights, we can always obtain a response at least as large as that expected under mass selection. Note from Equation 21.51 that $ \\sigma_{A} $ and $ \\bar{\\imath}_{I} $ remain constant under different index weights, implying that the maximal response occurs if we choose the weights that maximize the correlation, $ \\rho(I, y) $, between the index and offspring value (Equation 21.5 shows that this is equivalent to maximizing the correlation, $ \\rho(I, A) $), between the index and breeding values of an individual. Lush (1947) showed that the resulting optimal index weights are $$ b_{1}=\\frac{1-r}{1-t}\\quad and\\quad b_{2}=\\frac{1+(n-1)r}{1+(n-1)t} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The formal derivation (which follows from a Smith-Hazel index; Example A6.8) is given in our general treatment of index selection in Volume 3. We refer to the family index using these weights as the Lush index. Note that the weight $ (b_1) $ on family deviations is independent of the family size $ (n) $, while the weight on the family mean $ (b_2) $ depends on $ n $, approaching $ r/t $ for large families. Figure 21.7 plots the ratio of among- to within-family weights $ (b_2/b_1) $ for the Lush index as a function of $ t $ and $ n $. For small between-sib correlations $ (t) $, more weight is placed on family mean, while more weight is placed on within-family deviation when the sib correlation is large."
+    },
+    {
+      "type": "discussion",
+      "content": "We can rearrange the Lush index as $ I_L = z_{ij} + B_L \\overline{z}_i $, where substituting Equation 21.54 into Equation 21.50c returns $$ B_{L}=\\frac{(r-t)n}{(1-r)[1+(n-1)t]} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Using the optimal weights, Equation 21.53c simplifies to yield the response under Lush's index as $$ R_{LI}=\\bar{\\imath}\\sigma_{A}h\\sqrt{1+\\frac{(r-t)^{2}(n-1)}{(1-t)[1+(n-1)t]}\\} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The resulting increase in response over that expected under individual selection ($ R_{m} = \\bar{i}\\sigma_{A}h $; Equation 13.6b) is thus $$ \\begin{align*}{R_{LI}\\over R_m}=\\sqrt{1+{(r-t)^2(n-1)\\over(1-t)[1+(n-1)t]}}\\quad\\geq1\\end{align*} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Figure 21.8 plots Equation 21.56b as a function of t and n for half- and full-sibs. Because the quantity in the square root exceeds one, the expected response under Lush's index exceeds the response under individual selection, except at $r = t$ (i.e., $t = 0.25$ for half-sibs, $t = 0.5$ for full-sibs), in which case the expected responses are equal. For large values of $n$, Equation 21.56b converges to $$ \\frac{R_{LI}}{R_{m}}=\\sqrt{1+\\frac{(r-t)^{2}}{(1-t)t}} $$ which can take on large values for t near zero or one, as seen by the roughly U-shaped plots in Figure 21.8."
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:21.12]]"
+    },
+    {
+      "type": "discussion",
+      "content": "The Lush index weights change with t and r, and so may have to be periodically updated as changes in the genetic variance change t and as inbreeding changes r (Chapters 16, 23, and 24). In particular, both drift and gametic-phase disequilibrium can be important when several generations of selection are considered (Chapter 16). As selection proceeds, both these forces increase the relative importance of within-family selection over among-family selection (Chapters 16 and 24). This results in individual values given increased weight and family means given decreased weight."
+    },
+    {
+      "type": "discussion",
+      "content": "Specifically, the amount of within-family additive variance (in the absence of drift or inbreeding) remains at $ \\sigma_a^2/2 $ (half the genic variance, the value of $ \\sigma_A^2 $ in the absence of LD), while the amount of among-family variance is $ \\sigma_a^2/2 + d $, where $ d < 0 $ (Chapter 16). Hence, LD has no impact on the within-family component of additive variance, but it decreases the among-family component. Wray and Hill (1989) noted that while the relative efficiency of index selection over individual selection may be greatly diminished by gametic-phase disequilibrium, the relative rankings of the methods still hold."
+    },
+    {
+      "type": "discussion",
+      "content": "A concern with any index is that the population parameters have to be correctly estimated, otherwise the index constructed from these estimates will have incorrect weights and be less than optimal (Volume 3). Fortunately, only the intraclass correlation, t, must be estimated for the Lush index, and Sales and Hill (1976) showed that the efficiency of index selection is quite robust to estimation errors in t (as initially suggested by Lush 1947)."
+    },
+    {
+      "type": "discussion",
+      "content": "Nonetheless, given some of these concerns, it is not surprising that experimental verification of the advantage of the Lush index over individual or family selection is mixed. Further, the common problem of low statistical power in most selection experiments due to small sample sizes makes negative results difficult to interpret (Chapter 18). McBride and Robertson (1963) and Avalos and Hill (1981) found that index selection resulted in a larger response than individual selection for abdominal bristles in Drosophila melanogaster. More conclusive results, also on Drosophila bristle number, were those of James (cited in Frankham 1982), who found that the observed increase in response under index selection (relative to mass selection) was 133% ± 9.7% and 111% ± 7% in two replicates, consistent with the expected increase of 121%. Results for selection for egg production in poultry were less conclusive, and although Kinney et al. (1970) found that individual selection gave a larger (but not significant) response than family index selection, while Garwood and Lowe (1981) found that index selection gave a larger response (again not significant) than family selection. Work on larval and pupal weight in Tribolium showed similar mixed results, as Wilson (1974) found that individual selection gave the largest response, while Campo and Tagarro (1977) did not find any significant differences (index selection gave a larger response in a replicate with large family size, while individual selection showed the larger response in a replicate with small family size)."
+    },
+    {
+      "type": "discussion",
+      "content": "We note in passing that a more general family index was considered by Osborne (1957a, 1957b) for the nested-sib design, which separately weights information from full- and half-sib families. If $ z_{ijk} $ denotes the $ k $th full-sib from dam $ j $ and sire $ i $, an index weighting both half- and full-sib information is $$ I=b_{1}\\left(z_{i j k}-\\overline{{z}}_{i j}\\right)+b_{2}\\left(\\overline{{z}}_{i j}-\\overline{{z}}_{i.}\\right)+b_{3}\\overline{{z}}_{i}. $$ where $ b_{1} $ is the weight on the deviation within a full-sib family, $ b_{2} $ is the weight on the deviation among dam-family means within a sire, and $ b_{3} $ is the sire weight (half-sib means). Volume 3 examines this, and more general indices, in much greater detail."
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "id": "Evolution_appendix4_021",
+  "metadata": {
+    "chapter": "Evolution_appendix4",
+    "section": "FDR: THE FALSE-DISCOVERY RATE",
+    "subsections": [
+      "A (Slightly More) Formal Derivation of the Estimated FDR"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_appendix4_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "FDR: THE FALSE-DISCOVERY RATE",
+    "section_level_2": "A (Slightly More) Formal Derivation of the Estimated FDR",
+    "heading_path": [
+      "FDR: THE FALSE-DISCOVERY RATE",
+      "A (Slightly More) Formal Derivation of the Estimated FDR"
+    ],
+    "display_heading": "A (Slightly More) Formal Derivation of the Estimated FDR"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Following Storey and Tibshirani (2003), we consider the expected FDR for an experiment where we declare a hypothesis to be significant if its $p$ value is less than or equal to some threshold value, $\\tau$. Obviously, as $\\tau$ becomes smaller, the FDR is smaller (as significant nulls become increasingly less likely). However, if $\\tau$ is set too small, we lose power (e.g., suppose we set $\\tau = \\pi/n$; namely, the Bonferroni correction). What we would like to do is to find the expected value of the FDR as a function of the chosen threshold parameter, $\\tau$, to allow us to optimally tune this parameter to obtain the desired FDR. If we have a large number of tested hypotheses, $$ E[F D R(\\tau)]=E\\left[\\frac{F(\\tau)}{S(\\tau)}\\right]\\simeq\\frac{E[F(\\tau)]}{E[S(\\tau)]} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "A simple estimate of $ E[S(\\tau)] $ is given by the observed number of significant tests when the threshold is $ \\tau $."
+    },
+    {
+      "type": "discussion",
+      "content": "To obtain an estimate for $ E[F(\\tau)] $, we again use the fact that the distribution of p values under the null follows a uniform $ (0,1) $ distribution. Hence, $$ \\Pr(p\\leq\\tau\\mid null hypothesis)=\\int_{0}^{\\tau}\\phi_{u}(p)dp=\\tau $$ where $ \\phi_{u}(p) $ is the uniform probability density function for p values under the null (Equation A4.8a). Hence, if $ n_{0} $ of the n tests are truly null, then $$ E[F(\\tau)]=n_{0}\\cdot\\Pr(p\\leq\\tau\\mid null hypothesis)\\simeq n_{0}\\cdot\\tau $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Hence, $$ E[FDR(\\tau)]=\\frac{n_{0}\\cdot\\tau}{S(\\tau)} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Setting $ \\tau = p(k) $, then $ S(\\tau) = k $, and Equation A4.21 becomes $ n_0 p(k)/k $, recovering Equation A4.17. Using the Storey-Tibshirani estimator for $ n_0 $ (Equation A4.9b), an estimated value for the FDR using threshold value, $ \\tau $ (and based on the tuning parameter, $ \\lambda $, in the Storey-Tibshirani estimator), becomes $$ \\widehat{F D R}(\\tau)=n_{0}\\cdot\\frac{\\tau}{S(\\tau)}=\\left(\\frac{N[p(i)\\ values>\\lambda]}{1-\\lambda}\\right)\\cdot\\left(\\frac{\\tau}{N[p(i)\\ values\\leq\\tau]}\\right) $$ where $ N[x] $ is the number of occurrences of event x. Ideally, over a reasonable range of $ \\lambda $ values, we expect this estimate be stable. If $ \\lambda $ is set too large, the likelihood that almost all values correspond to draws from a null will be countered by the much smaller sample size (and hence a larger sampling error) from using such a small fraction of the total data."
+    },
+    {
+      "type": "discussion",
+      "content": "Under a mixture-model setting (e.g., Equation A4.10), the false-discovery rate for a given a significance threshold ($ \\tau $) is simply the fraction of all true positives that are declared significant divided by the fraction of all tests that are declared significant (i.e., those tests for which $ p \\leq \\tau $). This can be estimated directly from the parameters of the mixture distribution, $$ \\mathrm{F D R}(\\tau)=\\frac{\\pi_{0}\\mathrm{c d f}_{U}(\\tau)}{\\pi_{0}\\mathrm{c d f}_{U}(\\tau)+\\left(1-\\pi_{0}\\right)\\mathrm{c d f}_{A}(\\tau)}=\\frac{\\pi_{0}\\tau}{\\pi_{0}\\tau+\\left(1-\\pi_{0}\\right)\\mathrm{c d f}_{A}(\\tau)}, $$ where cdf denotes the cumulative distribution function, with $$ \\mathbf{c}\\mathbf{d}\\mathbf{f}_{U}(x)=\\int_{0}^{x}\\phi_{U}(p)d p=x\\qquad\\mathbf{c}\\mathbf{d}\\mathbf{f}_{A}(x)=\\int_{0}^{x}\\phi_{A}(p)d p $$ where $ \\phi_{U} $ is the uniform distribution under the null and $ \\phi_{A} $ is the distribution of p values under the alternative (for example, a fitted beta)."
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "id": "Evolution_chapter21_032",
+  "metadata": {
+    "chapter": "Evolution_chapter21",
+    "section": "SELECTION ON A FAMILY INDEX",
+    "subsections": [
+      "Response to Selection on a Family Index"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter21_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [
+      "21.3",
+      "21.4"
+    ],
+    "section_level_1": "SELECTION ON A FAMILY INDEX",
+    "section_level_2": "Response to Selection on a Family Index",
+    "heading_path": [
+      "SELECTION ON A FAMILY INDEX",
+      "Response to Selection on a Family Index"
+    ],
+    "display_heading": "Response to Selection on a Family Index",
+    "table_reference_keys": [
+      "Evolution_chapter21:21.3",
+      "Evolution_chapter21:21.4"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Once again, either Equations 21.1a or 21.4a can be used to predict the single-generation response to selection. Taking x = I returns $$ R_{I}=\\frac{\\sigma(I,y\\mid\\mathcal{R}_{1})}{\\sigma_{I}^{2}}\\left(S_{I_{m}}+S_{I_{f}}\\right)=\\bar{\\imath}_{I}\\sigma_{z}\\rho(I,y) $$ where $ \\sigma(I,y|\\mathcal{R}_{1}) $ is the covariance between the index value, $ I $, of a parent and the phenotype of its offspring, $ y $. The variances and covariances required for Equation 21.51 are obtained as follows. Using the covariances summarized in [[SEE_TABLE:21.3]], $$ \\begin{aligned}\\sigma(I,y\\mid\\mathcal{R}_{1})&=b_{1}\\sigma(z_{ij}-\\overline{z}_{i},y\\mid\\mathcal{R}_{1}=x_{ij})+b_{2}\\sigma(\\overline{z}_{i},y\\mid\\mathcal{R}_{1}=x_{ij})\\\\&=b_{1}\\left(1-r_{n}\\right)(\\sigma_{A}^{2}/2)+b_{2}r_{n}(\\sigma_{A}^{2}/2)\\\\&=\\left[b_{1}+r_{n}(b_{2}-b_{1})\\right](\\sigma_{A}^{2}/2)\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Likewise, if we recall that $ \\sigma^{2}(x+y)=\\sigma_{x}^{2}+\\sigma_{y}^{2}+2\\sigma_{x,y} $, the variances summarized in [[SEE_TABLE:21.4]] yield $$ \\begin{aligned}\\sigma^{2}(I)&=b_{1}^{2}\\sigma^{2}(z_{ij}-\\overline{z}_{i})+b_{2}^{2}\\sigma^{2}(\\overline{z}_{i})+2b_{1}b_{2}\\sigma(z_{ij}-\\overline{z}_{i},\\overline{z}_{i})\\\\&=b_{1}^{2}\\left(1-t_{n}\\right)\\sigma_{z}^{2}+b_{2}^{2}t_{n}\\sigma_{z}^{2}+2b_{1}b_{2}\\sigma(z_{ij},\\overline{z}_{i})-2b_{1}b_{2}\\sigma^{2}(\\overline{z}_{i})\\\\&=\\left(b_{1}^{2}\\left(1-t_{n}\\right)+b_{2}^{2}t_{n}+2b_{1}b_{2}t_{n}-2b_{1}b_{2}t_{n}\\right)\\sigma_{z}^{2}\\\\&=\\left[b_{1}^{2}+t_{n}(b_{2}^{2}-b_{1}^{2})\\right]\\sigma_{z}^{2}\\\\ \\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The resulting heritability of the index becomes $$ h_{I}^{2}=\\frac{2\\sigma(I,y\\mid\\mathcal{R}_{1})}{\\sigma^{2}(I)}=h^{2}\\left[\\frac{b_{1}+r_{n}(b_{2}-b_{1})}{b_{1}^{2}+t_{n}(b_{2}^{2}-b_{1}^{2})}\\right] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, because parents only pass along half their breeding value to an offspring (Chapters 6 and 16), it follows that $ \\sigma(I, y \\mid \\mathcal{R}_1) = \\sigma(I, A)/2 $, namely, half the covariance between the parent's index and breeding values. Hence, from Equations 21.52a and 21.52b, the correlation between an individual's index score (I) and breeding value (A) is $$ \\rho(I,A)=\\frac{\\sigma(I,A)}{\\sigma(I)\\sigma(A)}=\\frac{2\\sigma(I,y\\mid\\mathcal{R}_{1})}{\\sigma(I)\\sigma(A)}=h\\left[\\frac{b_{1}+r_{n}(b_{2}-b_{1})}{\\sqrt{b_{1}^{2}+t_{n}(b_{2}^{2}-b_{1}^{2})}}\\right] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Given that $ \\rho(z, A) = h $ (Equation 13.11e), the term in the brackets represents the accuracy of the index relative to mass selection. Substituting Equation 21.53a into Equation 21.51 (and recalling that $ \\sigma_z h^2 = h \\sigma_A $) yields an expected response of $$ R_{I}=\\bar{\\imath}_{I}h\\sigma_{A}\\frac{b_{1}+r_{n}(b_{2}-b_{1})}{\\sqrt{b_{1}^{2}+t_{n}(b_{2}^{2}-b_{1}^{2})}} $$ where $ \\bar{\\imath}_I = (\\bar{\\imath}_{I_m} + \\bar{\\imath}_{I_f})/2 = (S_{I_m} + S_{s_{I_f}})/(2\\sigma_I) $ is the average selection intensity on both sexes. Observe from Equation 21.53c that if we create a new index with weights of $ ab_1 $ and $ ab_2 $, that the constant $ a $ cancels, and (as noted above) yields the same response."
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:21.11]]"
+    }
+  ]
+}

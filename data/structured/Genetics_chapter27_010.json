@@ -1,0 +1,59 @@
+{
+  "id": "Genetics_chapter27_010",
+  "metadata": {
+    "chapter": "Genetics_chapter27",
+    "section": "Variance-Component Estimation with Complex Pedigrees",
+    "subsections": [
+      "Derivative-based Methods"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter27_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Variance-Component Estimation with Complex Pedigrees",
+    "section_level_2": "Derivative-based Methods",
+    "heading_path": [
+      "Variance-Component Estimation with Complex Pedigrees",
+      "Derivative-based Methods"
+    ],
+    "display_heading": "Derivative-based Methods"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "The Newton-Raphson (NR) algorithm, a standard method for numerically solving coupled sets of nonlinear equations, has been used extensively to solve ML / REML equations (Harville 1977, Jennrich and Sampson 1976, Searle et al. 1992). Specific applications to genetic variance-component estimation include Lange et al. (1977) for ML estimates of additive and dominance variances for single characters and Meyer (1983, 1985) for REML estimates of the additive genetic covariance matrix for multiple characters. We confine our discussion of Newton-Raphson iteration to REML estimates, as applications to ML follow in a similar fashion."
+    },
+    {
+      "type": "discussion",
+      "content": "The Newton-Raphson method obtains the REML estimate of the vector of parameters $ \\Theta $ by starting with some initial value $ \\Theta^{(0)} $ and then iterating to convergence to a final solution by using $$ \\mathbf{\\Theta}^{(k+1)}=\\mathbf{\\Theta}^{(k)}-\\left(\\mathbf{H}^{(k)}\\right)^{-1}\\frac{\\partial L}{\\partial\\mathbf{\\Theta}}\\bigg|_{\\mathbf{\\Theta}^{(k)}} $$ where $\\partial L/\\partial\\Theta$ is a column vector of the partials of the log-likelihood function with respect to each parameter evaluated at the estimate $\\Theta^{(k)}$, and H is the Hessian matrix of all second-order partial derivatives of the log-likelihood $L$ with respect to the variance components. $\\mathbf{H}^{-1}$ and $\\partial L/\\partial\\Theta$ respectively provide measures of the curvature and the slope (and directionality) of the likelihood surface, given the current estimates. Their product gives a projected degree of movement of the vector $\\Theta$ towards an improved set of values to be used in the next iteration."
+    },
+    {
+      "type": "discussion",
+      "content": "Consider again the mixed model with $m$ random factors plus a residual, $$ \\mathbf{y}=\\mathbf{X}\\boldsymbol{\\beta}+\\sum_{i=1}^{m}\\mathbf{Z}_{i}\\mathbf{u}_{i}+\\mathbf{e} $$ where $ \\mathbf{u}_i \\sim \\text{MVN}(\\mathbf{0}, \\sigma_i^2 \\mathbf{B}_i) $ for $ 1 \\leq i \\leq m $, and $ \\mathbf{B}_i $ is a square symmetric $ n_i \\times n_i $ matrix of known constants. The residuals are also assumed to be multivariate normal with $ \\mathbf{e} \\sim \\text{MVN}(\\mathbf{0}, \\sigma_E^2 \\mathbf{I}) $. Since $ \\mathbf{y} $ is the sum of multivariate normals, it is also multivariate normal with $ \\mathbf{y} \\sim \\text{MVN}(\\mathbf{X}\\beta, \\mathbf{V}) $, where $$ \\mathbf{V}=\\sum_{i=1}^{m}\\sigma_{i}^{2}\\mathbf{Z}_{i}\\mathbf{B}_{i}\\mathbf{Z}_{i}^{T}+\\sigma_{E}^{2}\\mathbf{I} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Under REML, $ \\boldsymbol{\\Theta} = (\\sigma_{1}^{2}, \\sigma_{2}^{2}, \\cdots, \\sigma_{E}^{2})^{T} $ and Equations 27.14b and 27.27b give the elements of $ \\partial L/\\partial \\boldsymbol{\\Theta} $ as $$ \\frac{\\partial L}{\\partial\\sigma_{i}^{2}}\\bigg|_{\\mathbf{\\Theta}^{(k)}}=-\\frac{1}{2}\\mathbf{t r}\\left(\\mathbf{P}^{(k)}\\mathbf{V}_{i}\\right)+\\frac{1}{2}\\mathbf{y}^{T}\\mathbf{P}^{(k)}\\mathbf{V}_{i}\\mathbf{P}^{(k)}\\mathbf{y} $$ where $V_{i}$ is given by Equation 27.15 and $\\mathbf{P}^{(k)}$ is calculated from Equation 27.17b using the current variance-component estimates in $\\Theta^{(k)}$. Searle et al. (1992) give the elements of $\\mathbf{H}$ for REML as $$ \\mathbf{H}_{i j}^{(k)}=\\frac{\\partial^{2}L}{\\partial\\sigma_{i}^{2}\\partial\\sigma_{j}^{2}}=\\frac{1}{2}\\mathbf{t r}\\left(\\mathbf{P}^{(k)}\\mathbf{V}_{i}\\mathbf{P}^{(k)}\\mathbf{V}_{j}\\right)-\\mathbf{y}^{T}\\mathbf{P}^{(k)}\\mathbf{V}_{i}\\mathbf{P}^{(k)}\\mathbf{V}_{j}\\mathbf{P}^{(k)}\\mathbf{y} $$ where again the partials are evaluated using $\\Theta^{(k)}$"
+    },
+    {
+      "type": "discussion",
+      "content": "A common variant of the Newton-Raphson algorithm is Fisher's scoring method, which replaces the inverse of the Hessian matrix in Equation 27.32 by its expected value, which after allowing for a change in sign, turns out to be defined by the inverse of Fisher's information matrix, $ -\\mathbf{F}^{-1} $ (Equation 27.20). This reduces the iterative equation to $$ \\Theta^{\\left(k+1\\right)}=\\Theta^{\\left(k\\right)}+\\left(\\mathbf{F}^{\\left(k\\right)}\\right)^{-1}\\frac{\\partial L}{\\partial\\mathbf{\\Theta}}\\Bigg|_{\\mathbf{\\Theta}^{\\left(k\\right)}} $$ with $$ F_{i j}^{(k)}=\\frac{1}{2}\\mathrm{t r}\\big(\\mathbf{P}^{(k)}\\mathbf{V}_{i}\\mathbf{P}^{(k)}\\mathbf{V}_{j}\\big) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "There are several motivations for employing this modification. First, as noted above, the inverse of the information matrix, when evaluated at the REML values, estimates the standard errors for these estimates. Second, F is easier to compute than $ \\mathbf{H}^{-1} $ (compare Equations 27.34 and 27.35b). Finally, Fisher's scoring method appears to be slightly more robust to initial values than strict Newton-Raphson iteration (Jennrich and Sampson 1976)."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 4. Again consider the simple animal model with a single observation per individual, $ \\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\mathbf{a} + \\mathbf{e} $. For REML estimates, letting $$ \\mathbf{\\Theta}^{(k)}=\\left(\\begin{matrix}{\\left(\\sigma_{A}^{2}\\right)^{(k)}}\\\\ {\\left(\\sigma_{E}^{2}\\right)^{(k)}}\\\\ \\end{matrix}\\right)\\qquad\\mathrm{g i v e s}\\qquad\\frac{\\partial{\\cal L}}{\\partial\\mathbf{\\Theta}}=\\frac{1}{2}\\left(\\begin{matrix}{-\\operatorname{t r}(\\mathbf{\\cal P})+\\mathbf{y}^{T}\\mathbf{P}\\mathbf{\\cal P}\\mathbf{y}}\\\\ {-\\operatorname{t r}(\\mathbf{\\cal P}\\mathbf{A})+\\mathbf{y}^{T}\\mathbf{\\cal P}\\mathbf{A}\\mathbf{\\cal P}\\mathbf{y}}\\\\ \\end{matrix}\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Note that P is a function of the current variance-component estimates, with $$ \\mathbf{P}=(\\mathbf{V}^{-1})^{(k)}-(\\mathbf{V}^{-1})^{(k)}\\mathbf{X}(\\mathbf{X}^{T}(\\mathbf{V}^{-1})^{(k)}\\mathbf{X})^{-1}\\mathbf{X}^{T}(\\mathbf{V}^{-1})^{(k)} $$ where $$ \\mathbf{V}^{(k)}=(\\sigma_{A}^{2})^{(k)}\\mathbf{A}+(\\sigma_{E}^{2})^{(k)}\\mathbf{I} $$ with A being the relationship matrix for the individuals being measured. Likewise, from Equation 27.34 the Hessian matrix H is given by $$ \\frac{\\partial^{2}L}{\\partial\\Theta^{2}}\\Bigg|_{\\mathbf{\\Theta}^{(k)}}=\\frac{1}{2}\\left(\\begin{array}{l l}{\\mathrm{t r}(\\mathbf{\\Theta}\\mathbf{P}\\mathbf{P})-2\\mathbf{y}^{T}\\mathbf{P}\\mathbf{P}\\mathbf{P}\\mathbf{y}}&{\\mathrm{t r}(\\mathbf{\\Theta}\\mathbf{P}\\mathbf{A}\\mathbf{P})-2\\mathbf{y}^{T}\\mathbf{P}\\mathbf{A}\\mathbf{P}\\mathbf{P}\\mathbf{y}}\\\\ &\\\\ {\\mathrm{t r}(\\mathbf{\\Theta}\\mathbf{P}\\mathbf{A}\\mathbf{P})-2\\mathbf{y}^{T}\\mathbf{P}\\mathbf{A}\\mathbf{P}\\mathbf{P}\\mathbf{y}}&{\\mathrm{t r}(\\mathbf{\\Theta}\\mathbf{P}\\mathbf{A}\\mathbf{P}\\mathbf{A})-2\\mathbf{y}^{T}\\mathbf{P}\\mathbf{A}\\mathbf{P}\\mathbf{A}\\mathbf{P}\\mathbf{y}}\\end{array}\\right) $$ and the Fisher information matrix by $$ \\mathbf{F}=-E\\left(\\frac{\\partial^{2}L}{\\partial\\boldsymbol{\\Theta}^{2}}\\right)=\\frac{1}{2}\\left(\\begin{array}{c c}{\\operatorname{t r}(\\mathbf{P}\\mathbf{P})}&{\\operatorname{t r}(\\mathbf{P}\\mathbf{A}\\mathbf{P})}\\\\ &\\\\ {\\operatorname{t r}(\\mathbf{P}\\mathbf{P}\\mathbf{A})}&{\\operatorname{t r}(\\mathbf{P}\\mathbf{A}\\mathbf{P}\\mathbf{A})}\\end{array}\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Note that $ \\mathbf{P} $ is really indexed by $ k $ since it depends on the current estimates of the unknown variance components, $ \\widehat{\\sigma}_A^2 $ and $ \\widehat{\\sigma}_E^2 $."
+    }
+  ]
+}

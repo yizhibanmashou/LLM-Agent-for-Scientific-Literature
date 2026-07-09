@@ -1,0 +1,59 @@
+{
+  "id": "Genetics_chapter25_005",
+  "metadata": {
+    "chapter": "Genetics_chapter25",
+    "section": "Introduction",
+    "subsections": [
+      "MULTIPLE THRESHOLDS"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter25_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "MULTIPLE THRESHOLDS",
+    "heading_path": [
+      "Introduction",
+      "MULTIPLE THRESHOLDS"
+    ],
+    "display_heading": "MULTIPLE THRESHOLDS"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "In principle, the model developed above can be extended to any number of thresholds. Indeed, in his original analyses of digit number in guinea pigs, Wright (1934c,d) actually considered three classes of individuals: those with the usual three toes, those with an incomplete fourth toe, and those with four complete digits. The computations become rather lengthy for more than three character states, but a two-threshold model, which we will focus upon here, is fairly straightforward."
+    },
+    {
+      "type": "discussion",
+      "content": "There are two very useful attributes of multiple threshold models. First, they provide a means for evaluating the relative means and variances of liability in different populations. Second, by providing several estimates of the regression between relatives, they provide an internal check on the consistency of the model. With a three-character state model, there are two thresholds (Figure 25.5). We will refer to these as $ T_1 $ and $ T_2 $, the wide and narrow thresholds, respectively. With this notation, individuals are classified as normal (character state 1, with liability less than $ T_1 $), $ \\text{wide} $ (character states 2 and 3, with liability exceeding $ T_1 $), or $ \\text{narrow} $ (character state 3, with liability exceeding $ T_2 $). From above, we know that $ x_{p2} $, the distance of $ T_2 $ from the mean in standard deviations, can be extracted from tables if the incidence of character state 3 is known. Similarly, $ x_{p1} $ is obtainable from the total incidence of character states 2 and 3. The absolute distance between the two thresholds, $ (x_{p2} - x_{p1})\\sigma $, may then be defined as one threshold unit, implying that the standard deviation in threshold units is $ \\sigma = 1/(x_{p2} - x_{p1}) $. The mean, measured as the deviation from the wide threshold, is then $ \\overline{z}_p = -x_{p1}\\sigma $. Thus, if different populations can be assumed to have their thresholds located at the same position on the phenotypic scale for liability, this simple approach allows a comparison of the means and standard deviations of their underlying phenotypic distributions (in threshold units)."
+    },
+    {
+      "type": "discussion",
+      "content": "The two-threshold model provides four routes to estimating the heritability of liability (Reich et al. 1972). First, by ignoring one of the thresholds, the standard single-threshold model can be applied to the data. In this case, individuals having character states 2 and 3 can be treated as the same (normal vs. wide), or individuals with character states 1 and 2 can be aggregated (narrow vs. not narrow). Either way, the population is divided into two classes of individuals."
+    },
+    {
+      "type": "discussion",
+      "content": "[[FIGURE:25.5]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Two estimates of heritability can also be obtained from information on “cross prevalence.” Consider, for example, the propositi to be parents with character state 3. From their incidence, we obtain an estimate of $ x_{p2} $. The affected offspring of these parents can be scored as all individuals exhibiting character states 2 or 3. The normal deviate for these individuals, $ x'_{o1} $ (Figure 25.5), refers to the widely affected offspring of narrowly affected parents. Similarly, $ x'_{o2} $ is obtained from the narrowly affected offspring of widely affected (character state 2 or 3) parents (as the distance of the mean of these offspring from the upper threshold). From this information, two additional estimators of the parent-offspring regression are: $$ b_{op}=\\frac{x_{p2}-x^{\\prime}_{o2}\\sqrt{1-(x^{2}_{p2}-x^{\\prime}^{2}_{o2})[1-(x_{p1}/a_{1})]}}{a_{1}+x^{\\prime}^{2}_{o2}(a_{1}-x_{p1})} $$ $$ b_{op}=\\frac{x_{p1}-x_{o1}^{\\prime}\\sqrt{1-(x_{p1}^{2}-x_{o1}^{\\prime2})[1-(x_{p2}/a_{2})]}}{a_{2}+x_{o1}^{\\prime2}(a_{2}-x_{p2})} $$ where $a_{1}=p(x_{p1})/\\Phi_{p1}$ and $a_{2}=p(x_{p2})/\\Phi_{p2}$. If the assumptions of the threshold model have been met, then all four estimates of $b_{op}$ should be similar."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 2. The application of the two-threshold model can be illustrated with data on the incidence of diabetes in the Edinburgh population (Smith et al. 1972). Considerable variation exists for the age of onset of diabetes, and the authors wanted to know whether early-onset vs. late-onset diabetes simply represent different levels of liability. Through interviews of diabetics attending a clinic, information on the incidence of the disease in first-degree relatives was obtained. The affected individuals were partitioned into those first exhibiting the disease before and after age 25 years. Thus, the narrowly affected individuals were those affected between ages 0 and 25. A large survey estimated the incidence of narrowly affected individuals to be $ \\Phi_{p2} = 0.0006 $, whereas the total (or wide) incidence of the disease was $ \\Phi_{p1} = 0.0039 $. From a table of the standard normal distribution, $ x_{p2} = 3.24 $, $ x_{p1} = 2.66 $, $ a_{2} = 3.51 $, and $ a_{1} = 2.97 $. Thus, the wide and narrow thresholds are approximately 2.7 and 3.2 standard deviations above the mean on the liability scale, and the distance between the two thresholds is $ (x_{p1} - x_{p2}) = 0.58 $ standard deviations."
+    },
+    {
+      "type": "discussion",
+      "content": "Data on the incidence of late- and early-onset diabetes in first degree relatives are given in the table at the top of the following page. If early-onset patients represent a subset of the population with more extreme genetic values for liability than late-onset patients, the total incidence of the disease should be higher in the relatives of the former than the latter. The data show this to be true — first-degree relatives of early- and late-onset patients have total incidences of 0.0520 and 0.0312, respectively."
+    },
+    {
+      "type": "discussion",
+      "content": "Converting the incidences of disease in relatives to their respective $x$ values, the four possible heritability estimates (twice the regression coefficients) range from 0.46 to 0.76. From Equation 25.1b, the standard errors of $h^2$ based on narrow propositi and relatives and on wide propositi and relatives are found to be approximately 0.10 and 0.03, respectively. Thus, with one possible exception, the four estimates are in approximate agreement, leading to an overall estimate of $h^2 = 0.56$ for the liability."
+    },
+    {
+      "type": "discussion",
+      "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td rowspan=\"2\">Propositi</td><td colspan=\"3\">Incidence</td><td rowspan=\"2\">$ b_{{op}} $</td><td rowspan=\"2\">Equation</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Relatives</td><td style='text-align: center; word-wrap: break-word;'>Among Relatives:</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td rowspan=\"2\">Narrow</td><td style='text-align: center; word-wrap: break-word;'>Narrow</td><td style='text-align: center; word-wrap: break-word;'>0.0205</td><td style='text-align: center; word-wrap: break-word;'>$ x_{{o2}} = 2.044 $</td><td style='text-align: center; word-wrap: break-word;'>0.38</td><td style='text-align: center; word-wrap: break-word;'>(25.3)</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Wide</td><td style='text-align: center; word-wrap: break-word;'>0.0315</td><td style='text-align: center; word-wrap: break-word;'>$ x_{{o1}}^{\\prime} = 1.859 $</td><td style='text-align: center; word-wrap: break-word;'>0.23</td><td style='text-align: center; word-wrap: break-word;'>(25.4a)</td></tr><tr><td rowspan=\"2\">Wide</td><td style='text-align: center; word-wrap: break-word;'>Narrow</td><td style='text-align: center; word-wrap: break-word;'>0.0045</td><td style='text-align: center; word-wrap: break-word;'>$ x_{{o2}}^{\\prime} = 2.612 $</td><td style='text-align: center; word-wrap: break-word;'>0.24</td><td style='text-align: center; word-wrap: break-word;'>(25.4b)</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Wide</td><td style='text-align: center; word-wrap: break-word;'>0.0267</td><td style='text-align: center; word-wrap: break-word;'>$ x_{{o1}} = 1.932 $</td><td style='text-align: center; word-wrap: break-word;'>0.27</td><td style='text-align: center; word-wrap: break-word;'>(25.3)</td></tr></table>"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "id": "Evolution_appendix2_013",
+  "metadata": {
+    "chapter": "Evolution_appendix2",
+    "section": "POSTERIOR DISTRIBUTIONS UNDER NORMALITY ASSUMPTIONS",
+    "subsections": [
+      "Gaussian Likelihood With Known Variance and Unknown Mean"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_appendix2_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "POSTERIOR DISTRIBUTIONS UNDER NORMALITY ASSUMPTIONS",
+    "section_level_2": "Gaussian Likelihood With Known Variance and Unknown Mean",
+    "heading_path": [
+      "POSTERIOR DISTRIBUTIONS UNDER NORMALITY ASSUMPTIONS",
+      "Gaussian Likelihood With Known Variance and Unknown Mean"
+    ],
+    "display_heading": "Gaussian Likelihood With Known Variance and Unknown Mean"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "As a starting point, assume that the variance, $ \\sigma^2 $, is known, while the mean, $ \\mu $, is unknown. For a Bayesian analysis, it remains to specify the prior for $ \\mu $, $ p(\\mu) $. Suppose we assume a Gaussian prior, $ \\mu \\sim \\mathrm{N}(\\mu_0, \\sigma_0^2) $, with $$ p(\\mu)=\\frac{1}{\\sqrt{2\\pi\\sigma_{0}^{2}}}\\exp\\left(-\\frac{(\\mu-\\mu_{0})^{2}}{2\\sigma_{0}^{2}}\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The mean and variance of the prior, $ \\mu_0 $ and $ \\sigma_0^2 $, are referred to as hyperparameters. Here, $ \\mu_0 $ specifies a prior location for the parameter (the unknown mean, $ \\mu $), while $ \\sigma_0^2 $ specifies our uncertainty in this prior location—the larger $ \\sigma_0^2 $, the greater is our uncertainty. In the limit as $ \\sigma_0^2 \\to \\infty $, $ p(\\mu) $ approaches a flat (and in this case, improper) prior."
+    },
+    {
+      "type": "discussion",
+      "content": "A useful device when calculating the posterior distribution is to ignore terms that are constants with respect to the unknown parameters. Suppose x denotes the data and $ \\Theta_1 $ is a vector of known model parameters, while $ \\Theta_2 $ is a vector of unknown parameters. If we can write the posterior as $$ p(\\boldsymbol{\\Theta}_{2}\\mid\\mathbf{x},\\boldsymbol{\\Theta}_{1})=f(\\mathbf{x},\\boldsymbol{\\Theta}_{1})\\cdot g(\\mathbf{x},\\boldsymbol{\\Theta}_{1},\\boldsymbol{\\Theta}_{2}) $$ then $$ p(\\boldsymbol{\\Theta}_{2}\\mid\\mathbf{x},\\boldsymbol{\\Theta}_{1})\\propto g(\\mathbf{x},\\boldsymbol{\\Theta}_{1},\\boldsymbol{\\Theta}_{2}) $$ which follows since $ f(\\mathbf{x}, \\boldsymbol{\\Theta}_{1}) $ is constant with respect to $ \\boldsymbol{\\Theta}_{2} $. With the prior given by Equation A2.19, we can express the resulting posterior distribution as $$ \\begin{aligned}p(\\mu\\mid\\mathbf{x})&\\propto\\ell(\\mu\\mid\\mathbf{x})\\cdot p(\\mu)\\\\&\\propto\\exp\\left[-\\frac{(\\mu-\\mu_{0})^{2}}{2\\sigma_{0}^{2}}-\\frac{1}{2\\sigma^{2}}\\left(\\sum_{i=1}^{n}x_{i}^{2}-2\\mu n\\overline{x}+n\\mu^{2}\\right)\\right]\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "We can factor out additional terms not involving $ \\mu $ to obtain $$ p(\\mu\\mid\\mathbf{x})\\propto\\exp\\left(-\\frac{\\mu^{2}}{2\\sigma_{0}^{2}}+\\frac{\\mu\\mu_{0}}{\\sigma_{0}^{2}}+\\frac{\\mu n\\overline{x}}{\\sigma^{2}}-\\frac{n\\mu^{2}}{2\\sigma^{2}}\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Factoring in terms of $ \\mu $, the term in the exponential becomes $$ -\\frac{\\mu^{2}}{2}\\left(\\frac{1}{\\sigma_{0}^{2}}+\\frac{n}{\\sigma^{2}}\\right)+\\mu\\left(\\frac{\\mu_{0}}{\\sigma_{0}^{2}}+\\frac{n\\overline{x}}{\\sigma^{2}}\\right)=-\\frac{\\mu^{2}}{\\sigma_{*}^{2}}+\\frac{2\\mu\\mu_{*}}{2\\sigma_{*}^{2}} $$ where $$ \\sigma_{*}^{2}=\\left(\\frac{1}{\\sigma_{0}^{2}}+\\frac{n}{\\sigma^{2}}\\right)^{-1}\\quad and\\quad\\mu_{*}=\\sigma_{*}^{2}\\left(\\frac{\\mu_{0}}{\\sigma_{0}^{2}}+\\frac{n\\overline{x}}{\\sigma^{2}}\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, by completing the square, we have $$ p(\\mu\\mid\\mathbf{x})\\propto\\exp\\left[-\\frac{(\\mu-\\mu_{*})^{2}}{2\\sigma_{*}^{2}}+f(\\mathbf{x},\\mu_{0},\\sigma^{2},\\sigma_{0}^{2})\\right] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Recalling Equation A2.20b, we can ignore the second term in the exponential (as it does not involve $ \\mu $), and the resulting posterior for $ \\mu $ (given the observed data x) becomes $$ p(\\mu\\mid\\mathbf{x})\\propto\\exp\\left[-\\frac{(\\mu-\\mu_{*})^{2}}{2\\sigma_{*}^{2}}\\right] $$ demonstrating that the posterior density function for $ \\mu $ is a normal with a mean of $ \\mu_{*} $ and a variance of $ \\sigma_{*}^{2} $, namely, $$ \\mu\\mid(\\mathbf{x},\\sigma^{2})\\sim\\mathrm{N}\\left(\\mu_{*},\\sigma_{*}^{2}\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Notice that the posterior density is in the same form as the prior. This occurred because the prior conjugated with the likelihood function—the product of the prior and likelihood returned a distribution in the same family as the prior (but with different distribution parameters). The use of such conjugate priors associated with a given family of likelihood functions is a key concept in Bayesian analysis, and we will explore it more fully below."
+    },
+    {
+      "type": "discussion",
+      "content": "We are now in a position to inquire about the relative importance of the prior versus the data. Under the assumed prior, the mean (and in this case, the mode as well) of the posterior distribution is $$ \\mu_{*}=\\mu_{0}\\frac{\\sigma_{*}^{2}}{\\sigma_{0}^{2}}+\\overline{x}\\frac{\\sigma_{*}^{2}}{\\sigma^{2}/n} $$ With a very diffuse prior on $ \\mu $ (i.e., $ \\sigma_0^2 \\gg \\sigma^2 $), $ \\sigma_*\\to \\sigma^2/n $ and $ \\mu_*\\to \\overline{x} $. Also note from Equation A2.22b that as we collect enough data (i.e., achieve a sufficiently large value of $ n $), $ \\sigma_*\\to \\sigma^2/n $ and again $ \\mu_*\\to \\overline{x} $, implying that primarily the data, rather than the prior, will influence the posterior when the value of $ n $ is sufficiently large."
+    }
+  ]
+}

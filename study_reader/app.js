@@ -7,6 +7,7 @@ const STATE = {
   currentChapterId: "",
   activeAnchor: "",
   returnPoint: null,
+  openPicker: "",
   markdownCache: new Map(),
 };
 
@@ -36,6 +37,41 @@ function bindControls() {
 
   document.getElementById("chapterSelect").addEventListener("change", async (event) => {
     await openStudyChapter(event.target.value);
+  });
+
+  document.getElementById("bookPickerButton").addEventListener("click", (event) => {
+    event.stopPropagation();
+    togglePicker("book");
+  });
+
+  document.getElementById("chapterPickerButton").addEventListener("click", (event) => {
+    event.stopPropagation();
+    togglePicker("chapter");
+  });
+
+  document.getElementById("bookPickerMenu").addEventListener("click", async (event) => {
+    const option = event.target.closest("[data-book-id]");
+    if (!option) return;
+    closePicker();
+    const bookId = option.dataset.bookId;
+    const book = bookById(bookId);
+    const target = book?.default_chapter || chaptersForBook(bookId)[0]?.id || STATE.dataset.default_chapter || "";
+    if (target) await openStudyChapter(target);
+  });
+
+  document.getElementById("chapterPickerMenu").addEventListener("click", async (event) => {
+    const option = event.target.closest("[data-chapter-id]");
+    if (!option) return;
+    closePicker();
+    await openStudyChapter(option.dataset.chapterId);
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!event.target.closest(".smart-picker")) closePicker();
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closePicker();
   });
 
   document.getElementById("returnButton").addEventListener("click", async () => {
@@ -117,6 +153,7 @@ async function openChapter(chapterId, anchor = "", options = {}) {
   renderChapterOptions();
   document.getElementById("bookSelect").value = STATE.studyBookId || chapterBookId(chapter) || "";
   document.getElementById("chapterSelect").value = STATE.studyChapterId || chapter.id;
+  updatePickerDisplays();
   document.getElementById("chapterTitle").textContent = chapter.label;
   document.getElementById("chapterMeta").textContent = chapterMetaText(chapter);
   updateHeaderContext(chapter);
@@ -183,6 +220,8 @@ function renderBookOptions() {
   const select = document.getElementById("bookSelect");
   const books = STATE.dataset.books || [];
   select.innerHTML = books.map((book) => `<option value="${escapeHtml(book.id)}">${escapeHtml(book.label || book.id)}</option>`).join("");
+  document.getElementById("bookPickerMenu").innerHTML = books.map(renderBookPickerOption).join("");
+  updatePickerDisplays();
 }
 
 function renderChapterOptions() {
@@ -195,10 +234,87 @@ function renderChapterOptions() {
     chapters.length ? `<optgroup label="Chapters">${chapters.map(renderChapterOption).join("")}</optgroup>` : "",
     appendices.length ? `<optgroup label="Appendices">${appendices.map(renderChapterOption).join("")}</optgroup>` : "",
   ].join("");
+  document.getElementById("chapterPickerMenu").innerHTML = [
+    chapters.length ? `<div class="picker-section-title">Chapters</div>${chapters.map(renderChapterPickerOption).join("")}` : "",
+    appendices.length ? `<div class="picker-section-title">Appendices</div>${appendices.map(renderChapterPickerOption).join("")}` : "",
+  ].join("");
+  updatePickerDisplays();
 }
 
 function renderChapterOption(chapter) {
   return `<option value="${escapeHtml(chapter.id)}">${escapeHtml(chapter.label)}</option>`;
+}
+
+function renderBookPickerOption(book) {
+  const count = chaptersForBook(book.id).length;
+  const selected = book.id === STATE.studyBookId;
+  const defaultLabel = chapterLabel(book.default_chapter || "");
+  return `
+    <button type="button" class="picker-option" role="option" aria-selected="${selected ? "true" : "false"}" data-book-id="${escapeAttribute(book.id)}">
+      <span class="picker-option-title">${escapeHtml(book.label || book.id)}</span>
+      <span class="picker-option-note">${count} 个章节/附录${defaultLabel ? ` · 默认 ${escapeHtml(defaultLabel)}` : ""}</span>
+    </button>
+  `;
+}
+
+function renderChapterPickerOption(chapter) {
+  const selected = chapter.id === STATE.studyChapterId;
+  const note = `${chapter.section_count || 0} 小节 · ${chapter.prerequisite_count || 0} 前置`;
+  return `
+    <button type="button" class="picker-option" role="option" aria-selected="${selected ? "true" : "false"}" data-chapter-id="${escapeAttribute(chapter.id)}">
+      <span class="picker-option-title">${escapeHtml(chapter.label)}</span>
+      <span class="picker-option-note">${escapeHtml(note)}</span>
+    </button>
+  `;
+}
+
+function togglePicker(type) {
+  if (STATE.openPicker === type) {
+    closePicker();
+    return;
+  }
+  closePicker();
+  STATE.openPicker = type;
+  const picker = document.querySelector(`.smart-picker[data-picker="${type}"]`);
+  const button = document.getElementById(`${type}PickerButton`);
+  const menu = document.getElementById(`${type}PickerMenu`);
+  picker?.classList.add("is-open");
+  button?.setAttribute("aria-expanded", "true");
+  if (menu) menu.hidden = false;
+}
+
+function closePicker() {
+  if (!STATE.openPicker) return;
+  document.querySelectorAll(".smart-picker.is-open").forEach((picker) => picker.classList.remove("is-open"));
+  document.querySelectorAll(".picker-button[aria-expanded='true']").forEach((button) => button.setAttribute("aria-expanded", "false"));
+  document.querySelectorAll(".picker-menu").forEach((menu) => {
+    menu.hidden = true;
+  });
+  STATE.openPicker = "";
+}
+
+function updatePickerDisplays() {
+  const book = bookById(STATE.studyBookId);
+  const studyChapter = chapterById(STATE.studyChapterId);
+  const currentChapter = chapterById(STATE.currentChapterId);
+  const bookChapters = chaptersForBook(STATE.studyBookId);
+  const chapterMeta = studyChapter
+    ? `${studyChapter.section_count || 0} 小节 · ${studyChapter.prerequisite_count || 0} 前置`
+    : "";
+
+  document.getElementById("bookPickerValue").textContent = book?.label || STATE.studyBookId || "选择教材";
+  document.getElementById("bookPickerMeta").textContent = bookChapters.length ? `${bookChapters.length} 个章节/附录` : "";
+  document.getElementById("chapterPickerValue").textContent = studyChapter?.label || "选择章节";
+  document.getElementById("chapterPickerMeta").textContent = isSourceMode() && currentChapter
+    ? `正在查看来源：${currentChapter.label}`
+    : chapterMeta;
+
+  document.querySelectorAll("[data-book-id]").forEach((option) => {
+    option.setAttribute("aria-selected", option.dataset.bookId === STATE.studyBookId ? "true" : "false");
+  });
+  document.querySelectorAll("[data-chapter-id]").forEach((option) => {
+    option.setAttribute("aria-selected", option.dataset.chapterId === STATE.studyChapterId ? "true" : "false");
+  });
 }
 
 function chapterById(chapterId) {
@@ -669,7 +785,7 @@ function renderInline(rawValue, context = {}) {
     const bookHint = lw ? "Genetics" : "";
     const rendered = rawNumbers.replace(/\d+/g, (number) => renderChapterReferenceButton(number, bookHint, context));
     if (!/\d/.test(rendered)) return match;
-    return rendered.replace(/^(?=\s*)/, lw ? "LW " : "");
+    return rendered;
   });
   html = html.replace(/\u0000(\d+)\u0000/g, (_, index) => tokens[Number(index)] || "");
   return html;
@@ -694,7 +810,7 @@ function renderChapterReferenceButton(chapterNumber, bookHint = "", context = {}
     chapterId,
     anchor: chapterData(chapterId).sections?.[0]?.anchor || "",
   };
-  const label = `${bookHint === "Genetics" ? "Chapter" : "Chapter"} ${Number(chapterNumber)}`;
+  const label = `${bookHint === "Genetics" ? "LW Chapter" : "Chapter"} ${Number(chapterNumber)}`;
   return `<button type="button" class="inline-ref chapter-ref" data-jump-chapter="${escapeAttribute(target.chapterId)}" data-jump-anchor="${escapeAttribute(target.anchor || "")}">${escapeHtml(label)}</button>`;
 }
 

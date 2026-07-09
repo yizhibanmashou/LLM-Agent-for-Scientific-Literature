@@ -1,0 +1,43 @@
+{
+  "id": "Genetics_chapter4_013",
+  "metadata": {
+    "chapter": "Genetics_chapter4",
+    "section": "Introduction",
+    "subsections": [
+      "Additive Effects"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter4_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "Additive Effects",
+    "heading_path": [
+      "Introduction",
+      "Additive Effects"
+    ],
+    "display_heading": "Additive Effects"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "As in the diallelic case, with $n$ alleles the additive effects are defined to be the set of $\\alpha_{i}$ that minimizes $E(\\delta_{ij}^{2})$, obtained from the least-squares solution for the multiple regression $$ G=\\mu_{G}+\\sum_{i=1}^{n}\\alpha_{i}N_{i}+\\delta $$ This expression is the $n$-allele extension of Equation 4.5a, with $N_i$ being the number of copies of allele $i$ carried by an individual. For example, for the genotype $G_{34}$, $\\sum \\alpha_i N_i = \\alpha_3 + \\alpha_4$, and $\\delta_{34} = G_{34} - \\mu_G - \\alpha_3 - \\alpha_4$."
+    },
+    {
+      "type": "discussion",
+      "content": "Multivariate regressions are covered in detail in Chapter 8, and here we simply cite the basic result — the regression coefficients (i.e., the $ \\alpha_{i} $) are defined by the set of equations $$ \\sigma(G,N_{i})=\\sum_{j=1}^{n}\\alpha_{j}\\sigma(N_{i},N_{j})\\qquad\\mathrm{f o r}1\\leq i\\leq n $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Expressed in this way, the definitions of the average effects are not immediately transparent, and the general solution to these equations is rather involved (Kempthorne 1957). However, under random mating, the solutions are simplified greatly and can be expressed in two ways. First, drawing from the previous example, $$ \\alpha_{i}=\\frac{\\sigma(G,N_{i})}{2p_{i}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Second, an equivalent and even more transparent solution follows from Equation 4.16b, $$ \\alpha_{i}=\\sum_{j=1}^{n}p_{j}G_{ij}-\\mu_{G} $$ i.e., under random mating, the average effects are equal to conditional mean deviations from $\\mu_{G}$."
+    },
+    {
+      "type": "discussion",
+      "content": "If mating is nonrandom, but genotype frequencies are given by $$ P_{ii}=(1-f)p_{i}^{2}+fp_{i} $$ $$ P_{ij}=2(1-f)p_{i} p_{j} $$ as occurs under regular inbreeding (Chapter 10), then $$ \\alpha_{i}=\\frac{\\alpha_{i}^{*}}{1+f} $$ where $f$, the inbreeding coefficient, is the fractional reduction of heterozygote frequencies relative to those expected under random mating."
+    }
+  ]
+}

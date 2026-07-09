@@ -86,7 +86,7 @@ PHYSICAL_TABLE_PLACEHOLDER_RE = re.compile(
 )
 TABLE_TEXT_RE = re.compile(r"\bTable\s+(?P<label>\d+\.\d+[A-Za-z]?)\b", re.IGNORECASE)
 BROKEN_PLACEHOLDER_RE = re.compile(
-    r"\[\[(?:SEE_FORMULA|FORMULA|SEE_TABLE|TABLE):(?:(?!\]\]).)*$",
+    r"\[\[(?:SEE_)?(?:FORMULA|TABLE|EXAMPLE|FIGURE)\s*(?::(?:(?!\]\]).)*)?$",
     re.IGNORECASE | re.DOTALL,
 )
 INLINE_MATH_RE = re.compile(r"(?<!\$)\$(?!\$)[^\n$]*?(?<!\$)\$(?!\$)")
@@ -114,7 +114,7 @@ PUBLICATION_FOOTER_TAIL_RE = re.compile(
     re.IGNORECASE,
 )
 
-DETERMINISTIC_DROP_ISSUES = {"empty_content", "h_only_block", "ghost_block"}
+DETERMINISTIC_DROP_ISSUES = {"empty_content", "h_only_block", "ghost_block", "broken_placeholder"}
 REPAIR_ATTEMPT_ISSUES = set(REPAIRABLE_ISSUES)
 REFERENCE_ONLY_ISSUES = {"formula_reference_missing", "table_reference_missing"}
 
@@ -418,6 +418,10 @@ def _normalize_latex_in_text(text: str) -> tuple[str, list[str]]:
     reasons: list[str] = []
     if not value:
         return value, reasons
+    updated = re.sub(r"\s*\$\$\s*E\s*=\s*mc\^2\s*\$\$\s*", " ", value)
+    if updated != value:
+        reasons.append("placeholder_formula_pollution_removed")
+        value = re.sub(r"\s{2,}", " ", updated).strip()
     updated = FORMULA_SPACING_COMMAND_RE.sub(r"\1 ", value)
     if updated != value:
         reasons.append("spaced_command_suffix")
@@ -646,7 +650,7 @@ def audit_block_content(
         add("error", "ghost_block", "Block contains only page/symbol noise.", stripped)
     if _has_ocr_residual_marker(stripped):
         add("error", "ocr_residual_marker", "OCR/layout float marker residue leaked into block content.", "[h]")
-    if BROKEN_PLACEHOLDER_RE.search(stripped):
+    if BROKEN_PLACEHOLDER_RE.search(stripped) or re.search(r"\[\[\s*SEE_?\s*$", stripped, flags=re.IGNORECASE):
         add("error", "broken_placeholder", "Structured placeholder appears incomplete.")
     orphan_code = _orphan_reference_fragment_code(stripped)
     if orphan_code:
@@ -1876,6 +1880,36 @@ def _materialize_numbered_tables_in_units(
     events: list[dict[str, Any]] = []
     records_by_unit = {record.unit.id: record for record in records}
     physical_table_locations: dict[str, tuple[UnitRecord, int]] = {}
+    demoted_table_locations: dict[str, UnitRecord] = {}
+
+    def remove_or_demote_physical_placeholder(record: UnitRecord, table_id: str) -> int:
+        placeholder = f"[[TABLE:{table_id}]]"
+        see_placeholder = f"[[SEE_TABLE:{table_id}]]"
+        removed = 0
+        kept_blocks: list[KnowledgeBlock] = []
+        for block in record.unit.blocks:
+            if block.type == "table" and block.content.strip() == placeholder:
+                removed += 1
+                continue
+            if placeholder in block.content:
+                new_content = block.content.replace(placeholder, see_placeholder)
+                if new_content != block.content:
+                    removed += 1
+                    block = KnowledgeBlock(type=block.type, content=new_content)
+            kept_blocks.append(block)
+        if removed:
+            record.unit.blocks = kept_blocks
+        return removed
+
+    def append_physical_placeholder(record: UnitRecord, table_id: str) -> int:
+        placeholder = f"[[TABLE:{table_id}]]"
+        record.unit.blocks.append(KnowledgeBlock(type="table", content=placeholder))
+        return len(record.unit.blocks) - 1
+
+    def table_location_is_unit_end(location: tuple[UnitRecord, int]) -> bool:
+        location_record, location_block_index = location
+        return location_block_index == len(location_record.unit.blocks) - 1
+
     for record in records:
         block_index = 0
         while block_index < len(record.unit.blocks):
@@ -1887,6 +1921,30 @@ def _materialize_numbered_tables_in_units(
             if block.type == "table" and len(matches) == 1 and block.content.strip() == matches[0].group(0):
                 table_id = matches[0].group(1).strip()
                 physical_table_locations.setdefault(table_id, (record, block_index))
+                block_index += 1
+                continue
+            if block.content.strip() in {match.group(0) for match in matches}:
+                table_id = matches[0].group(1).strip()
+                record.unit.blocks[block_index] = KnowledgeBlock(type="table", content=f"[[TABLE:{table_id}]]")
+                physical_table_locations.setdefault(table_id, (record, block_index))
+                stats["standalone_table_placeholders_typed"] += 1
+                block_index += 1
+                continue
+            if block.type != "table":
+                new_content = block.content
+                for match in matches:
+                    table_id = match.group(1).strip()
+                    new_content = new_content.replace(match.group(0), f"[[SEE_TABLE:{table_id}]]")
+                    demoted_table_locations.setdefault(table_id, record)
+                record.unit.blocks[block_index] = KnowledgeBlock(type=block.type, content=new_content)
+                stats["embedded_table_placeholders_demoted_to_see_refs"] += 1
+                events.append(
+                    {
+                        "unit_id": record.unit.id,
+                        "action": "demote_embedded_table_placeholder_to_see_ref",
+                        "block_index": block_index,
+                    }
+                )
                 block_index += 1
                 continue
             new_blocks: list[KnowledgeBlock] = []
@@ -1943,16 +2001,8 @@ def _materialize_numbered_tables_in_units(
         existing_location = physical_table_locations.get(table_id)
         if existing_location is not None:
             existing_record, existing_block_index = existing_location
-            if physical_record is not None and existing_record.unit.id != physical_record.unit.id:
-                existing_record.unit.blocks = [
-                    block
-                    for block in existing_record.unit.blocks
-                    if not (block.type == "table" and block.content.strip() == placeholder)
-                ]
-                existing_location = None
-                physical_table_locations.pop(table_id, None)
-                stats["numbered_table_wrong_physical_placeholder_removed"] += 1
-            elif str(source.get("unit_id") or "").strip() != existing_record.unit.id:
+            desired_unit_id = physical_record.unit.id if physical_record is not None else existing_record.unit.id
+            if existing_record.unit.id == desired_unit_id and table_location_is_unit_end(existing_location):
                 updated_source = dict(source)
                 updated_source["unit_id"] = existing_record.unit.id
                 updated_source["chapter"] = existing_record.unit.chapter
@@ -1962,22 +2012,88 @@ def _materialize_numbered_tables_in_units(
                 updated_source["physical_placeholder_verified_by"] = "structured_fusion_numbered_table_materializer"
                 updated_source["physical_placeholder_block_index"] = existing_block_index
                 entry.source = updated_source
-                stats["numbered_table_source_rebound_to_existing_placeholder"] += 1
+                stats["numbered_table_existing_physical_placeholder_verified"] += 1
                 events.append(
                     {
                         "table_id": table_id,
                         "unit_id": existing_record.unit.id,
-                        "previous_unit_id": unit_id,
-                        "action": "rebind_numbered_table_source_to_existing_placeholder",
+                        "action": "verify_numbered_table_placeholder_at_unit_end",
                         "block_index": existing_block_index,
                     }
                 )
+                existing_location = (existing_record, existing_block_index)
+            else:
+                removed = remove_or_demote_physical_placeholder(existing_record, table_id)
+                if existing_record.unit.id != desired_unit_id:
+                    stats["numbered_table_wrong_physical_placeholder_removed"] += removed
+                    action = "remove_wrong_numbered_table_placeholder"
+                else:
+                    stats["numbered_table_physical_placeholder_moved_to_unit_end"] += removed
+                    if removed > 1:
+                        stats["duplicate_physical_table_placeholder_removed_same_unit"] += removed - 1
+                    action = "move_numbered_table_placeholder_to_unit_end"
+                events.append(
+                    {
+                        "table_id": table_id,
+                        "unit_id": existing_record.unit.id,
+                        "target_unit_id": desired_unit_id,
+                        "action": action,
+                        "removed": removed,
+                    }
+                )
+                existing_location = None
+                physical_table_locations.pop(table_id, None)
             if existing_location is not None:
                 continue
+            record = records_by_unit.get(desired_unit_id) or record
+        if existing_location is None and physical_record is None and table_id in demoted_table_locations:
+            record = demoted_table_locations[table_id]
+            source = {
+                **source,
+                "unit_id": record.unit.id,
+                "chapter": record.unit.chapter,
+                "subsection": record.unit.subsections[-1] if record.unit.subsections else source.get("subsection"),
+                "physical_owner_rebound_by": "structured_fusion_embedded_table_reference_owner",
+            }
+            entry.source = source
         if not record:
             continue
         if source.get("has_physical_placeholder"):
             stats["numbered_table_source_claimed_placeholder_missing"] += 1
+        if existing_location is None and record is not None:
+            already_has_physical_placeholder = any(
+                block.type == "table" and block.content.strip() == placeholder
+                for block in record.unit.blocks
+            )
+            if not already_has_physical_placeholder and (physical_record is not None or table_id in {str(ref) for ref in record.unit.table_references}):
+                insert_index = append_physical_placeholder(record, table_id)
+                source = dict(source)
+                source["unit_id"] = record.unit.id
+                source["chapter"] = record.unit.chapter
+                if record.unit.subsections:
+                    source["subsection"] = record.unit.subsections[-1]
+                source["has_physical_placeholder"] = True
+                source["physical_placeholder_inserted_by"] = (
+                    "structured_fusion_physical_owner_unit_end"
+                    if physical_record is not None
+                    else "structured_fusion_numbered_table_materializer"
+                )
+                source["physical_placeholder_insert_mode"] = "append_to_owner_unit"
+                source["physical_placeholder_block_index"] = insert_index
+                entry.source = source
+                if physical_record is not None:
+                    stats["numbered_table_placeholders_inserted_by_physical_owner"] += 1
+                else:
+                    stats["numbered_table_placeholders_appended"] += 1
+                events.append(
+                    {
+                        "table_id": table_id,
+                        "unit_id": record.unit.id,
+                        "action": "append_numbered_table_placeholder_to_owner_end",
+                        "block_index": insert_index,
+                    }
+                )
+                continue
         has_unit_reference = table_id in {str(ref) for ref in record.unit.table_references}
         has_explicit_see_ref = any(
             re.search(
@@ -2027,7 +2143,6 @@ def _materialize_numbered_tables_in_units(
             new_blocks: list[KnowledgeBlock] = []
             if prefix:
                 new_blocks.append(KnowledgeBlock(type=block.type, content=prefix))
-            new_blocks.append(KnowledgeBlock(type="table", content=placeholder))
             if suffix:
                 new_blocks.append(KnowledgeBlock(type=block.type, content=suffix))
             record.unit.blocks = [
@@ -2035,62 +2150,38 @@ def _materialize_numbered_tables_in_units(
                 *new_blocks,
                 *record.unit.blocks[block_index + 1 :],
             ]
+            placeholder_index = append_physical_placeholder(record, table_id)
             source = dict(source)
             source["has_physical_placeholder"] = True
             source["physical_placeholder_inserted_by"] = "structured_fusion_numbered_table_materializer"
+            source["physical_placeholder_insert_mode"] = "append_to_owner_unit"
+            source["physical_placeholder_block_index"] = placeholder_index
             entry.source = source
             stats["numbered_table_placeholders_inserted"] += 1
             events.append(
                 {
                     "table_id": table_id,
                     "unit_id": record.unit.id,
-                    "action": "insert_numbered_table_placeholder",
-                    "block_index": block_index,
+                    "action": "insert_numbered_table_placeholder_at_unit_end",
+                    "block_index": placeholder_index,
                 }
             )
             inserted = True
             break
         if not inserted and physical_record is not None:
-            insert_index = 0
-            following_body = source.get("following_body") if isinstance(source.get("following_body"), dict) else None
-            preceding_body = source.get("preceding_body") if isinstance(source.get("preceding_body"), dict) else None
-            if owner_reason == "structured_fusion_table_before_following_heading":
-                insert_index = len(record.unit.blocks)
-            elif owner_reason == "structured_fusion_table_preceding_body_anchor":
-                insert_index = len(record.unit.blocks)
-                preceding_tokens = normalize_match_text(str((preceding_body or {}).get("content") or "")).split()
-                if preceding_tokens:
-                    anchor = preceding_tokens[: min(16, len(preceding_tokens))]
-                    for block_index, block in enumerate(record.unit.blocks):
-                        if _find_token_subsequence(normalize_match_text(block.content).split(), anchor) is not None:
-                            insert_index = block_index + 1
-                            break
-            else:
-                following_tokens = normalize_match_text(str((following_body or {}).get("content") or "")).split()
-                if following_tokens:
-                    anchor = following_tokens[: min(16, len(following_tokens))]
-                    for block_index, block in enumerate(record.unit.blocks):
-                        if _find_token_subsequence(normalize_match_text(block.content).split(), anchor) is not None:
-                            insert_index = block_index
-                            break
-            if owner_reason == "structured_fusion_table_following_body_anchor" and following_body:
-                anchor = following_tokens[: min(16, len(following_tokens))]
-                for block_index, block in enumerate(record.unit.blocks):
-                    if _find_token_subsequence(normalize_match_text(block.content).split(), anchor) is not None:
-                        insert_index = block_index
-                        break
-            record.unit.blocks.insert(insert_index, KnowledgeBlock(type="table", content=placeholder))
+            insert_index = append_physical_placeholder(record, table_id)
             source = dict(source)
             source["has_physical_placeholder"] = True
-            source["physical_placeholder_inserted_by"] = "structured_fusion_following_body_anchor"
+            source["physical_placeholder_inserted_by"] = "structured_fusion_physical_owner_unit_end"
+            source["physical_placeholder_insert_mode"] = "append_to_owner_unit"
             source["physical_placeholder_block_index"] = insert_index
             entry.source = source
-            stats["numbered_table_placeholders_inserted_by_following_body"] += 1
+            stats["numbered_table_placeholders_inserted_by_physical_owner"] += 1
             events.append(
                 {
                     "table_id": table_id,
                     "unit_id": record.unit.id,
-                    "action": "insert_numbered_table_placeholder_by_following_body",
+                    "action": "insert_numbered_table_placeholder_at_physical_owner_end",
                     "block_index": insert_index,
                 }
             )
@@ -2108,11 +2199,12 @@ def _materialize_numbered_tables_in_units(
                 }
             )
             continue
-        record.unit.blocks.append(KnowledgeBlock(type="table", content=placeholder))
+        insert_index = append_physical_placeholder(record, table_id)
         source = dict(source)
         source["has_physical_placeholder"] = True
         source["physical_placeholder_inserted_by"] = "structured_fusion_numbered_table_materializer"
         source["physical_placeholder_insert_mode"] = "append_to_source_unit"
+        source["physical_placeholder_block_index"] = insert_index
         entry.source = source
         stats["numbered_table_placeholders_appended"] += 1
         events.append(
@@ -2120,7 +2212,7 @@ def _materialize_numbered_tables_in_units(
                 "table_id": table_id,
                 "unit_id": record.unit.id,
                 "action": "append_numbered_table_placeholder",
-                "block_index": len(record.unit.blocks) - 1,
+                "block_index": insert_index,
             }
         )
     return stats, events
@@ -2254,16 +2346,30 @@ def _replace_table_body_residue_with_placeholder(
                 ),
                 None,
             )
+            any_placeholder_index = next(
+                (
+                    index
+                    for index, block in enumerate(record.unit.blocks)
+                    if block.type == "table" and block.content.strip() == placeholder
+                ),
+                None,
+            )
             if record.unit.id != str(source.get("unit_id") or "").strip() and not is_formula_table:
                 continue
-            if local_placeholder_index is None and not is_formula_table:
+            if local_placeholder_index is None and any_placeholder_index is None and not is_formula_table:
                 continue
-            has_local_placeholder = local_placeholder_index is not None
+            has_local_placeholder = local_placeholder_index is not None or any_placeholder_index is not None
             new_blocks = list(record.unit.blocks[:first_index])
-            inserted_index = local_placeholder_index if local_placeholder_index is not None else first_index
+            inserted_index = any_placeholder_index if any_placeholder_index is not None else first_index
             if not has_local_placeholder:
                 new_blocks.append(KnowledgeBlock(type="table", content=placeholder))
-            new_blocks.extend(record.unit.blocks[last_index + 1 :])
+            for block in record.unit.blocks[last_index + 1 :]:
+                if block.type == "table" and block.content.strip() == placeholder:
+                    continue
+                new_blocks.append(block)
+            if has_local_placeholder:
+                new_blocks.append(KnowledgeBlock(type="table", content=placeholder))
+                inserted_index = len(new_blocks) - 1
             record.unit.blocks = new_blocks
 
             removed_duplicates = _remove_duplicate_physical_table_placeholders(

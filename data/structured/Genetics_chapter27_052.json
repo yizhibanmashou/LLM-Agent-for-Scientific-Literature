@@ -1,0 +1,39 @@
+{
+  "id": "Genetics_chapter27_052",
+  "metadata": {
+    "chapter": "Genetics_chapter27",
+    "section": "Variance-Component Estimation with Complex Pedigrees",
+    "subsections": [
+      "Likelihood-ratio Tests for the General Linear Model"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter27_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Variance-Component Estimation with Complex Pedigrees",
+    "section_level_2": "Likelihood-ratio Tests for the General Linear Model",
+    "heading_path": [
+      "Variance-Component Estimation with Complex Pedigrees",
+      "Likelihood-ratio Tests for the General Linear Model"
+    ],
+    "display_heading": "Likelihood-ratio Tests for the General Linear Model"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "As a final example of likelihood-ratio tests, consider the general linear model (Chapters 8, 26, 27), $ \\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\mathbf{e} $, where we assume that the $ n \\times 1 $ vector of residual errors $ \\mathbf{e} $ is multivariate normal, with mean vector zero and covariance matrix $ \\mathbf{V} $, i.e., $ \\mathbf{e} \\sim \\text{MVN}(0, \\mathbf{V}) $. From Equation 8.24, the density function for $ \\mathbf{e} $ is $$ (2\\pi)^{-n/2}|\\mathbf{V}|^{-1/2}\\exp\\left(-\\frac{1}{2}\\mathbf{e}^{T}\\mathbf{V}^{-1}\\mathbf{e}\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Writing the vector of residuals as $\\mathbf{e} = \\mathbf{y} - \\mathbf{X} \\boldsymbol{\\beta}$ gives the resulting likelihood for $\\beta$ and $\\mathbf{V}$, conditional on the observed data $(\\mathbf{y}, \\mathbf{X})$, as $$ \\ell(\\boldsymbol{\\beta},\\mathbf{V}|\\mathbf{y},\\mathbf{X})=(2\\pi)^{-n/2}|\\mathbf{V}|^{-1/2}\\exp\\left(-\\frac{1}{2}(\\mathbf{y}-\\mathbf{X}\\boldsymbol{\\beta})^{T}\\mathbf{V}^{-1}(\\mathbf{y}-\\mathbf{X}\\boldsymbol{\\beta})\\right) $$ which has log-likelihood $$ {\\cal L}=\\ln\\ell=-\\frac{n}{2}\\ln(2\\pi)-\\frac{1}{2}\\ln|\\mathbf{V}|-\\frac{1}{2}(\\mathbf{y}-\\mathbf{X}\\mathbf{\\beta})^{T}\\mathbf{V}^{-1}(\\mathbf{y}-\\mathbf{X}\\mathbf{\\beta}) $$ Here $ \\beta $ is a vector of fixed effects and the matrix $ \\mathbf{V} $ is a function of $ k $ variance components, with $ \\mathbf{V} = \\sum_{i=1}^{k} \\mathbf{R}_i \\sigma_i^2 $ where the $ \\mathbf{R}_i $ are matrices of known constants. Thus, the parameters to be estimated are the vector $ \\beta $ of fixed effects and the $ k $ variances, $ \\sigma_x^2 $."
+    },
+    {
+      "type": "discussion",
+      "content": "Suppose we wish to compare the relative fit of two models that assume the same covariance structure (i.e., the same V), but have different vectors of fixed effects, a vector $ \\beta_f $ for the full model vs. a vector $ \\beta_r $ for the reduced model that assumes fewer factors. The resulting likelihood-ratio test statistic is $$ \\begin{aligned}L R&=-2\\Biggl[L(\\widehat{\\boldsymbol{\\beta}}_{r}\\mid\\mathbf{y},\\mathbf{X}_{r})-L(\\widehat{\\boldsymbol{\\beta}}_{f}\\mid\\mathbf{y},\\mathbf{X}_{f})\\Biggr]\\\\&=\\left[(\\mathbf{y}-\\widehat{\\mathbf{y}}_{r})^{T}\\widehat{\\mathbf{V}}^{-1}(\\mathbf{y}-\\widehat{\\mathbf{y}}_{r})-(\\mathbf{y}-\\widehat{\\mathbf{y}}_{f})^{T}\\widehat{\\mathbf{V}}^{-1}(\\mathbf{y}-\\widehat{\\mathbf{y}}_{f})\\right]\\end{aligned} $$ where $ \\widehat{\\mathbf{y}}_f = \\mathbf{X}_f\\widehat{\\boldsymbol{\\beta}}_f $ and $ \\widehat{\\mathbf{y}}_r = \\mathbf{X}_r\\widehat{\\boldsymbol{\\beta}}_r $ are the predicted means under the full and reduced models. For large sample sizes, this test statistic follows a $ \\chi^2 $ distribution with $ n_f - n_r $ degrees of freedom, where $ n_f $ and $ n_r $ are the degrees of freedom for the full and reduced models, respectively. whose $i$th element is the variance of the $i$th mean. Denoting the variance of the $i$th mean by $\\mathrm{Var}(y_{i})$, then recalling Equation A3.11c, the quadratic product in the LR test reduces to $$ (\\mathbf{y}-\\widehat{\\mathbf{y}})^{T}\\widehat{\\mathbf{V}}^{-1}(\\mathbf{y}-\\widehat{\\mathbf{y}})=\\sum_{i=1}^{n}\\frac{(y_{i}-\\widehat{y}_{i})^{2}}{\\mathrm{V a r}(y_{i})} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Hence, the likelihood-ratio test statistic for comparing a full model with a reduced model assuming fewer effects is given by $$ \\sum_{i=1}^{n}\\frac{\\left[y_{i}-\\widehat{y}_{i}(r)\\right]^{2}}{\\mathrm{Var}(y_{i})}-\\sum_{i=1}^{n}\\frac{\\left[y_{i}-\\widehat{y}_{i}(f)\\right]^{2}}{\\mathrm{Var}(y_{i})} $$ which is just the difference in the $\\chi^{2}$ values for the fit of the full and reduced models. This test follows a $\\chi^{2}$ distribution with degrees of freedom given by the difference in degrees of freedom for the full and reduced models."
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "id": "Evolution_chapter7_004",
+  "metadata": {
+    "chapter": "Evolution_chapter7",
+    "section": "SELECTION AND DRIFT AT SINGLE LOCI",
+    "subsections": [
+      "Probability of Fixation Under Additive Selection"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter7_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "SELECTION AND DRIFT AT SINGLE LOCI",
+    "section_level_2": "Probability of Fixation Under Additive Selection",
+    "heading_path": [
+      "SELECTION AND DRIFT AT SINGLE LOCI",
+      "Probability of Fixation Under Additive Selection"
+    ],
+    "display_heading": "Probability of Fixation Under Additive Selection"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "There is no possibility of having a perfectly stable polymorphism when drift and selection interact. Indeed, even in the case of overdominant selection (where there is a stable equilibrium in an infinite population; Chapter 5), one allele will eventually drift to fixation unless both homozygotes are lethal. Under this scenario, all new mutations ultimately become either lost or fixed at the population level, and those that become fixed will themselves be subject to replacement by subsequently arising mutations. Thus, when finite populations are considered, we need to think in terms of fixation probabilities and sojourn times of mutations. Even highly favorable alleles have fixation probabilities of less than 1.0 to a degree that depends on the initial frequency $ p_0 $, the strength of selection, and the effective population size $ N_e $."
+    },
+    {
+      "type": "discussion",
+      "content": "Suppose we denote by $ u_f(p_0) $ the probability that an allele starting at initial frequency $ p_0 $ will become fixed. As noted in Chapter 2, under neutrality, the probability of fixation depends only on an allele's initial frequency regardless of population size, so that $$ u_{f}(p_{0})=p_{0} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Depending on the magnitude and direction of selection, this probability will either increase or decrease. When allelic effects on fitness behave additively, such that each copy of allele a changes fitness by s (giving fitnesses of 1, 1 + s, and 1 + 2s) $$ u_{f}(p_{0})\\simeq\\frac{1-e^{-4N_{e}sp_{0}}}{1-e^{-4N_{e}s}} $$ $$ \\simeq p_{0}+2N_{e}sp_{0}(1-p_{0})\\quad when2N_{e}|s|\\leq1 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Equation 7.10a, due to Kimura (1957) with a slightly improved version given by Cash (1977), was derived using diffusion theory in Appendix 1. The simplified version, Equation 7.10b, was developed by Robertson (1960a) using the Taylor series approximation $ e^{-x} \\simeq 1 - x + x^2 / 2 $ for $ |x| \\ll 1 $, and an alternative derivation is given below. Although these approximations apply to both beneficial $ (s > 0) $ and deleterious $ (s < 0) $ alleles, and work especially well with favorable alleles (Carr and Nassar 1970), they can significantly overestimate the fixation probabilities of highly deleterious alleles ($ N_e \\leq -1 $), an issue examined in detail by Bürger and Ewens (1995)."
+    },
+    {
+      "type": "discussion",
+      "content": "It is critical to note that even when an allele is under strong selection, drift still plays a powerful role when allele frequencies are near zero. Starting with a single copy of an advantageous allele (with frequency $ p_0 = 1/(2N) $, where $ N $ is the number of reproductive adults in the population), Equation 7.10a implies that the probability of fixation of a new mutation is approximately $ 2s(N_e/N) $ when $ 4N_e s \\gg 1 $. As we expect $ N_e $ to generally be $ \\ll N $ (Chapter 3) and $ s $ is typically $ \\ll 1 $, this implies that a newly arisen favorable mutation will usually be lost by drift, no matter how beneficial. However, once the frequency of a strongly beneficial allele becomes sufficiently high, fixation is almost certain. For example, if $ N_{e}sp_0 > 0.5 $, the probability of fixation exceeds 0.70, while if $ N_{e}sp_0 > 1 $, the probability of fixation exceeds 0.93."
+    },
+    {
+      "type": "discussion",
+      "content": "For mutations with a weak effect, it is informative to consider the probability of fixation of a newly arisen mutation relative to the neutral expectation of $ 1/(2N) $. Returning to Equation 7.10a, and approximating the numerator as $ 4N_{e}sp_{0} $, with $ p_{0}=1/(2N) $, the scaled probability of fixation $$ u_{f}^{\\prime}(p_{0})=\\frac{u_{f}(p_{0})}{1/(2N)}\\simeq\\frac{4N_{e}s}{1-e^{-4N_{e}s}}=\\frac{S}{1-e^{-S}} $$ is found to be entirely a function of the composite parameter $ S = 4N_e s $, which, as noted above, is a measure of the strength of selection (2s in favor of homozygotes) relative to that of drift, $ 1/(2N_e) $ (Figure 7.1). For positive selection with $ S = 0.01 $, 0.1, and 1.0, respectively, $ u_f'(p_0) \\simeq 1.005 $, 1.05, and 1.58, respectively, whereas with negative selection with the same absolute values, $ u_f'(p_0) \\simeq 0.995 $, 0.95, and 0.58, respectively. This shows that the fixation probability of a mutant allele will be very close to the neutral expectation of $ 1/(2N) $ provided $ |S| \\ll 1 $. This domain of effectively neutrality is potentially significant in a number of different contexts. For example, populations of sufficiently small size are unable to purge deleterious mutations or promote beneficial mutations with $ |s| < 1/(4N_e) $."
+    },
+    {
+      "type": "discussion",
+      "content": "A number of other useful approximations for alleles with additive effects on fitness have been derived from diffusion theory. For example, Kimura (1969) found that the average cumulative contribution of a new mutation to the population-level heterozygosity (summed over all generations until it is lost or fixed) is equal to $$ H_{T}=\\left(\\frac{4N_{e}}{N}\\right)\\left(\\frac{S-1+e^{-S}}{S[1-e^{-S}]}\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Although this measure may seem somewhat abstract, the product of $ H_T $ times the number of new mutations arising in the population per generation, $ 2N_\\mu $, is equal to the expected heterozygosity under selection-mutation-drift equilibrium. For neutral mutations ($ S \\to 0 $), $ H_T \\to 2N_e/N $, implying an expected heterozygosity of $ 4N_e\\mu $ (which, assuming $ 4N_e\\mu \\ll 1 $, is consistent with results in Chapter 2 that were obtained by a different method). For large positive values of $ S $ (strongly beneficial mutations), $ H_T $ approaches a limiting value of $ 4N_e/N $, implying that on a per-mutation basis, such mutations make twice the contribution to the heterozygosity as neutral mutations. Finally, for deleterious mutations with sufficiently strong effects to be eliminated by selection, $ H_T \\simeq 2/(N|s|) $. As in the case of the fixation probability, the expected heterozygosity at a locus scaled to the neutral expectation (dividing $ 2N\\mu H_T $ by $ 4N_e\\mu $) is a simple function of $ S $ (Figure 7.1). Viewed in this way, it can be seen that although both the relative fixation rate and the contribution to heterozygosity increase with S, the former responds much more rapidly. This is because deleterious mutations that essentially never fix in a population nevertheless make transient contributions to the heterozygosity prior to their elimination by selection, whereas positively selected mutations that are driven through the population relatively rapidly contribute to heterozygosity for only a relatively short period of time."
+    },
+    {
+      "type": "discussion",
+      "content": "A useful approximation for newly arisen mutations with additive effects is that, conditional upon fixation, the expected number of generations spent at frequency x will be $$ \\Phi_{f}(x)=\\frac{2N_{e}(1-e^{-Sx})(1-e^{-S(1-x)})}{SNx(1-x)(1-e^{-S})} $$ where $ x = 1/(2N), \\cdots, (2N - 1)/(2N) $ (from Equation 8.66 in Kimura 1983). There are two notable points with respect to this residence-time relationship (Figure 7.2). First, provided $ |S| < 1.0 $, conditional upon fixation, a new mutant allele will spend approximately $ 2N_e/N $ generations in each frequency class. Second, the residence-time features of a deleterious mutation en route to fixation are exactly the same as those for a beneficial mutation with the same absolute fitness effects, implying that both have the same mean time to fixation, even though the probability of fixation is lower in the former case. First pointed out by Maruyama and Kimura (1974), this counterintuitive behavior results from the fact that if a deleterious allele is to become fixed, it must do so as a consequence of some fortuitously rapid and extreme sampling errors."
+    },
+    {
+      "type": "discussion",
+      "content": "It is also sometimes useful to know the expected residence times of mutations that eventually become lost, $ \\Phi_{l}(x) $. From Equation 8.70 in Kimura (1983), the unconditional mean residence time for mutations (regardless of being fixed or lost) is $$ \\begin{align*}\\Phi(x)={{2N_e(1-e^{-S(1-x)})\\over Nx(1-x)(1-e^{-S})}}\\end{align*} $$ and using the fact that $$ \\begin{align*}\\Phi(x)=u_f(1/2N)\\cdot\\Phi_f(x)+[1-u_f(1/2N)]\\cdot\\Phi_l(x)\\end{align*} $$ yields the residual times conditional upon eventual loss $$ \\Phi_{l}(x)=\\frac{N_{e}e^{Sx}(e^{S(1-x)}-1)^{2}}{N^{2}x(1-x)(e^{S}-1)(e^{S[1-(1/2N)]}-1)} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Again, we see that the residence times conditional upon loss are essentially the same for positive and negative selection coefficients of the same absolute magnitude (Figure 7.2). This is not true for the unconditional residence times, $ \\Phi(x) $, which are functions of $ \\Phi_f(x) $ and $ \\Phi_l(x) $ weighted by the probabilities of fixation and loss (Equation 7.13c)."
+    },
+    {
+      "type": "discussion",
+      "content": "For effectively neutral mutations destined to loss, $ |S| < 1.0 $, $$ \\Phi_{l}(x)\\simeq\\frac{N_{e}(1-x)}{N\\lambda x} $$ where $ \\lambda = 1 - [1/(2N)] $, whereas the unconditional residence time is $$ \\Phi(x)\\simeq\\frac{N_{e}}{Nx} $$ i.e., the average time spent in frequency class x is inversely proportional to x."
+    },
+    {
+      "type": "discussion",
+      "content": "The preceding expressions are useful in a number of applications. For example, the mean numbers of generations to fixation, loss, or either (removal of either allele) can be obtained, respectively, by summing Equations 7.13a, 7.13d, and 7.13c over all frequency classes in the interval $ \\left[(1/(2N), 1 - 1/(2N))\\right] $. Simplifications can be made possible in some cases. For example, as noted above, a neutral mutation that is destined for fixation spends an average of $ 2N_e/N $ generations in each frequency class, and because there are $ 2N - 1 $ classes, the time to fixation of effectively neutral alleles is essentially $ 4N_e $ generations, an outcome obtained in Chapter 2 by different means. The conditional time to loss of a neutral mutation is $$ t_{l}=\\frac{2N_{e}\\ln(2N)}{N\\lambda} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "(derived in Example A1.8). The mean number of generations until the complete loss of a new mutation with a deleterious heterozygous effect of s < 0 is $$ t_{l}\\simeq2(N_{e}/N)[\\ln(2N/|S|)+0.423] $$ provided $ |S| \\gg 1 $ (Kimura and Ohta 1969b; Nei 1971). More general expressions, which require some numerical integration, can be found in Kimura and Ohta (1969a)."
+    },
+    {
+      "type": "discussion",
+      "content": "Knowing the mean total number of copies descendent from a mutation prior to its loss or fixation is useful in a number of contexts, e.g., determining the total number of individuals affected by a deleterious mutation. This is defined as $$ \\overline{n}=\\sum_{y=1}^{2N-1}\\Phi(y/2N)\\cdot y $$ with a shift of the function $ \\Phi $ to $ \\Phi_{l} $ or $ \\Phi_{f} $, leading to the expected numbers conditional on loss or fixation, respectively. For the case of neutral mutations $$ \\overline{n}=4N_{e}\\lambda $$ $$ \\overline{n}_{f}=4N_{e}N\\lambda $$ $$ \\overline{n}_{l}=2N_{e}\\lambda $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The mean frequency prior to absorption is simply $ \\overline{n}/(2N) $ divided by the average absorption time."
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:7.4]]"
+    }
+  ]
+}

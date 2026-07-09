@@ -1,0 +1,60 @@
+{
+  "id": "Evolution_chapter16_013",
+  "metadata": {
+    "chapter": "Evolution_chapter16",
+    "section": "Short-term Changes in the Variance: 1. Changes in the Additive Variance: Introduction",
+    "subsections": [
+      "RESPONSE UNDER NORMALIZING SELECTION"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter16_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [
+      "inline_3"
+    ],
+    "section_level_1": "Short-term Changes in the Variance: 1. Changes in the Additive Variance: Introduction",
+    "section_level_2": "RESPONSE UNDER NORMALIZING SELECTION",
+    "heading_path": [
+      "Short-term Changes in the Variance: 1. Changes in the Additive Variance: Introduction",
+      "RESPONSE UNDER NORMALIZING SELECTION"
+    ],
+    "display_heading": "RESPONSE UNDER NORMALIZING SELECTION",
+    "table_reference_keys": [
+      "Evolution_chapter16:inline_3"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "While double truncation is the common mode of artificial stabilizing selection, one standard model for approximating stabilizing selection in natural populations is normalizing (or nor-optimal) selection (Weldon 1895; Haldane 1954), $$ W(z)=\\exp\\Big(-\\frac{(z-\\theta)^{2}}{2\\omega^{2}}\\Big) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Here, the optimal value is $ z = \\theta $, and the strength of selection is given by the width, $ \\omega^2 $, of the fitness function, which corresponds to the variance term in a normal distribution. When $ \\omega^2 $ is large (corresponding to a large variance in the fitness function), selection is weak, as the fitness function falls off slowly around the optimal value, $ \\theta $. Conversely, a small value of $ \\omega^2 $ corresponds to a small variance in the fitness function and strong selection, with fitness quickly declining away from $ \\theta $. Formally, it is useful to compare $ \\omega^2 $ to the phenotypic variance, with $ \\omega^2 \\gg \\sigma_z^2 $ corresponding to weak selection and $ \\omega^2 \\ll \\sigma_z^2 $ corresponding to strong selection."
+    },
+    {
+      "type": "discussion",
+      "content": "If phenotypes are normally distributed before selection, with a mean of $ \\mu $ and variance of $ \\sigma_{z}^{2} $, then after selection, phenotypes remain normally distributed, with a new mean and variance $$ \\mu^{*}=\\mu+\\frac{\\sigma_{z}^{2}}{\\sigma_{z}^{2}+\\omega^{2}}(\\theta-\\mu)\\quad and\\quad\\sigma_{z^{*}}^{2}=\\sigma_{z}^{2}\\left(1-\\frac{\\sigma_{z}^{2}}{\\sigma_{z}^{2}+\\omega^{2}}\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Writing the change in variance as $ \\sigma_{z}^{2} = (1 - \\kappa) \\sigma_{z}^{2} $, Equation 16.18a shows that $ \\kappa = \\sigma_{z}^{2} / (\\sigma_{z}^{2} + \\omega^{2}) $ is no longer a constant, but rather a function of the changing variance, $ \\sigma_{z}^{2} $. Thus, previous results assuming a constant, $ \\kappa $, no longer apply. However, under normalizing selection, the distribution of genotypes remains normal after selection, and hence parent-offspring regressions remain linear throughout. Thus, we can apply the breeder's equation to predict changes in the mean and Equation 16.7a to predict changes in the variance (under the infinitesimal model). Here, $$ S=\\frac{\\sigma_{z}^{2}}{\\sigma_{z}^{2}+\\omega^{2}}(\\theta-\\mu)\\quad and\\quad\\delta\\left(\\sigma_{z^{*}}^{2}\\right)=-\\frac{\\sigma_{z}^{4}}{\\sigma_{z}^{2}+\\omega^{2}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Note that both directional and stabilizing selection can occur simultaneously with normalizing selection, as when $ \\mu \\neq \\theta $, the mean changes under selection. Substituting Equation 16.18b into the breeder's equation yields $$ R(t)=h^{2}(t)S(t)=h^{2}(t)\\frac{\\sigma_{z}^{2}(t)\\left[\\theta-\\mu(t)\\right]}{\\sigma_{z}^{2}(t)+\\omega^{2}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "This shows that the mean converges to $ \\theta $, as the sign of $ R $ is given by the sign of $ \\theta - \\mu(t) $, which is positive when $ \\mu(t) $ is below $ \\theta $ and negative when above it. However, Equation 16.18a shows that the change in variance is independent of the current mean value, $ \\mu $. From Equation 16.7a, the change in the disequilibrium contribution is given by $$ d(t+1)=\\frac{d(t)}{2}-\\frac{h^{4}(t)}{2}\\frac{\\sigma_{z}^{4}(t)}{\\sigma_{z}^{2}(t)+\\omega^{2}}=\\frac{d(t)}{2}-\\frac{1}{2}\\frac{[\\sigma_{a}^{2}+d(t)]^{2}}{\\sigma_{z}^{2}+d(t)+\\omega^{2}} $$ implying that the equilibrium value, $ \\tilde{d} $, satisfies $$ \\widetilde{d}=\\frac{\\widetilde{d}}{2}-\\frac{1}{2}\\frac{[\\sigma_{a}^{2}+\\widetilde{d}]^{2}}{\\sigma_{z}^{2}+\\widetilde{d}+\\omega^{2}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "This rearranges to the quadratic equation $$ 2\\widetilde{d}^{2}+\\left(\\sigma_{z}^{2}+\\omega^{2}+2\\sigma_{a}^{2}\\right)\\widetilde{d}+\\sigma_{a}^{4}=0 $$ which has one admissible solution (again, the constraint being that additive genetic variance must be nonnegative, hence $ \\widetilde{d} + \\sigma_{a}^{2} \\geq 0 $), $$ \\widetilde{d}=\\frac{-b+\\sqrt{b^{2}-8\\sigma_{a}^{4}}}{4}\\quad\\mathrm{w i t h}\\quad b=\\sigma_{z}^{2}+\\omega^{2}+2\\sigma_{a}^{2} $$"
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:16.5]]"
+    }
+  ]
+}

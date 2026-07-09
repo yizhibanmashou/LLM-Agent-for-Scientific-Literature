@@ -1,0 +1,51 @@
+{
+  "id": "Evolution_chapter30_037",
+  "metadata": {
+    "chapter": "Evolution_chapter30",
+    "section": "PATH ANALYSIS AND FITNESS ESTIMATION",
+    "subsections": [
+      "Morrissey's Extended Selection Gradient Vector, $ \\eta $"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter30_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "PATH ANALYSIS AND FITNESS ESTIMATION",
+    "section_level_2": "Morrissey's Extended Selection Gradient Vector, $ \\eta $",
+    "heading_path": [
+      "PATH ANALYSIS AND FITNESS ESTIMATION",
+      "Morrissey's Extended Selection Gradient Vector, $ \\eta $"
+    ],
+    "display_heading": "Morrissey's Extended Selection Gradient Vector, $ \\eta $"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Consider the following two path diagrams connecting a focal trait (z), fitness (w), and some unmeasured factor (f): $$ \\operatorname{path}1\\colon z\\leftarrow f\\rightarrow w\\qquad\\qquad\\operatorname{path}2\\colon z\\rightarrow f\\rightarrow w $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Both paths generate a correlation between the focal trait and fitness, which results (in a regression analysis) in a nonzero gradient, $ \\beta $, when f is excluded (as z and w are correlated), and a $ \\beta $ value of 0 when it is included (as, when it is conditioned on f, z and w are uncorrelated). Path 1 is the “missing trait” concern in a Lande-Arnold regression: if f is not included in the analysis, the regression falsely suggests a direct effect of z on fitness. Conversely, for path 2, z influences the unmeasured factor, f (e.g., some measure of performance; Arnold 1983b, 1988) which in turn influences fitness. While both paths generate a $ \\beta $ value of zero when the factor f is included in the analysis, they reflect very different settings. In a regression analysis, we strive to avoid situations like those in path 1, while a nonzero value of $ \\beta $ for path 2 when f is not in the analysis typically need not trouble us, as z has a causal influence on fitness (albeit an indirect one). Note that both paths can have identical correlation structures between all pairwise elements (and thus both would yield the exact same Lande-Arnold regression), which shows the importance of a causal diagram in the analysis of selection on correlated traits."
+    },
+    {
+      "type": "discussion",
+      "content": "Motivated by situations like path 2, where z has an indirect causal impact on fitness but a $ \\beta $ value of 0 if traits in the causal structure between z and w are included in the analysis (e.g., f in path 2), Morrissey (2014a) proposed the concept of an extended selection gradient vector, $ \\eta $. This variable measures the total selection caused by a trait and its downstream causative components. Recall (Equation 30.3) that the selection differential is measure of the total selection on a trait from both direct and indirect (correlated) selection, and that $$ S_{i}=\\beta_{i}P_{ii}+\\sum_{j\\neq i}\\beta_{j}P_{ij} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Morrissey's idea is that the extended selection gradient, $ \\eta $, is the total selection on a trait that is directly connected through its causal connections (as opposed to correlations) with w. For a given causal structure (path diagram), suppose we let $ \\beta_{pa,i} $ denote the selection gradient for the direct effect of a trait on fitness (i.e., for the single-arrow path $ i \\to w $). Likewise, let $ \\Phi_{ij} $ be the total impact over all connecting paths of the effect of i on trait j (see Example 30.10 for details). Then, by analogy with Equation 30.3, $$ \\eta_{i}=\\beta_{pa,i}\\cdot1+\\sum_{j\\neq i}\\beta_{pa,j}\\Phi_{ij} $$ As with $S$, the extended gradient decomposes into the direct effect from a trait (the path $i \\to w$) plus the indirect effects from direct selection on all other traits that are causally associated with $i$ ($i \\to \\cdots \\to j \\to w$)."
+    },
+    {
+      "type": "discussion",
+      "content": "One can compute the value of $ \\Phi_{ij} $ directly by taking the product of path coefficients for a path connecting i and j, and then summing over all such paths. However, Morrissey found a quicker approach for obtaining $ \\Phi_{ij} $ based on the matrix, B, of path coefficients for a given causal structure. The elements of B are constructed as follows (see below for a worked example): if $ i \\rightarrow j $, then $ B_{ij} $ is the path coefficient between them, while $ B_{ji} = 0 $ because j does not influence i. Likewise, if there is not a direct connection between i and j, then $ B_{ij} = 0 $, even if they are causally connected though intermediates; and finally, we define $ B_{ii} = 0 $. With B defined in this fashion, Morrissey found that the values of $ \\Phi_{ij} $ are calculated by $$ \\boldsymbol{\\varPhi}=(\\mathbf{I}-\\mathbf{B})^{-1} $$ From Equation 30.33a, we have $$ \\boldsymbol{\\eta}=\\boldsymbol{\\Phi}\\boldsymbol{\\beta}_{pa}=(\\mathbf{I}-\\mathbf{B})^{-1}\\boldsymbol{\\beta}_{pa} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "One very desirable feature of $ \\eta_i $ is that if trait $ i $ has a causal effect (either direct or indirect) on fitness, then $ \\eta_i $ is not changed by the addition (or subtraction) of new traits in the causal chain between $ i $ and $ w $. In terms of our path 2 above ($ z \\to f \\to w $), the value of $ \\eta_z $ equals the value of $ \\beta_z $ in a model where $ f $ is ignored ($ z \\to w $)."
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:30.10]]"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "id": "Evolution_chapter23_024",
+  "metadata": {
+    "chapter": "Evolution_chapter23",
+    "section": "RESPONSE UNDER PARTIAL SELFING",
+    "subsections": [
+      "An Approximate Treatment Using Covariances"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter23_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [
+      "23.4"
+    ],
+    "section_level_1": "RESPONSE UNDER PARTIAL SELFING",
+    "section_level_2": "An Approximate Treatment Using Covariances",
+    "heading_path": [
+      "RESPONSE UNDER PARTIAL SELFING",
+      "An Approximate Treatment Using Covariances"
+    ],
+    "display_heading": "An Approximate Treatment Using Covariances",
+    "table_reference_keys": [
+      "Evolution_chapter23:23.4"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Partial selfing has been examined by Wright and Cockerham (1985, 1986a) and Wright (1988), who obtained the appropriate cross-generational covariances and predicted response when using the method on ancestral regression. They assumed that the population is at the equilibrium mean inbreeding value and that each individual has the same probability ($ \\eta $) of selfing (i.e., there is no genetic variation in selfing vs. outcrossing rates). Because a parent can either self or outcross (or both, e.g., on different flowers on the same plant), the parent-offspring covariance must take this into account. Further, because of selfing, the covariances for selection before and after reproduction are slightly different. For selection before reproduction (BR), the single-generation response is given by $$ R_{BR}=\\bar{\\imath}\\frac{\\sigma_{G(BR)}(t+1,t)}{\\sqrt{\\sigma_{G}^{2}+\\sigma_{e}^{2}}} $$ where the genetic covariance for selection before reproduction is $$ \\sigma_{G(B R)}(t+1,t)=2(1-\\eta)\\sigma_{G_{O}}(P,O)+\\eta\\sigma_{G_{S}}(P,O) $$ where $ \\sigma_{G_0}(P, O) $ is the parent-offspring covariance under outcrossing and $ \\sigma_{GS}(P, O) $ is the parent-offspring covariance under selfing. Because the population is assumed to be at its inbreeding equilibrium, the parent-offspring covariances and total genetic variation ($ \\sigma_G^2 $) are assumed to be constants, independent of $ t $. [[SEE_TABLE:23.4]] shows the coefficients for these covariances, as well as those for $ \\sigma_G^2 $. Note that an additional quadratic component, $ \\iota^2 - \\iota^* $, also appears in the covariance between relatives (which arises because there is a distribution of inbreeding values in the population). As we will see, there is a significant transient component to the immediate response. For selection after reproduction (AR), an outcrossed individual has only one parent under selection (the pollen parent not being under selection), and the covariance in the numerator of Equation 23.56a is replaced by $$ \\sigma_{G(A R)}(t+1,t)=(1-\\eta)\\sigma_{G_{O}}(P,O)+\\eta\\sigma_{G_{S}}(P,O) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The permanent response to selection is given by replacing the numerator covariance in Equation 23.56a by the appropriate version of $ \\sigma_G(\\infty, t) $. For selection before reproduction, Wright and Cockerham showed that this equals $$ \\begin{align*}\\sigma_{G(BR)}(\\infty,t)=(1+f)\\sigma_A^2+\\left[\\frac{\\eta(3-\\eta)}{(2-\\eta)^2}\\right]\\sigma_{ADI}+\\left[\\frac{\\eta^2}{(2-\\eta)^2}\\right]\\sigma_{DI}^2\\end{align*} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Further, the before- and after-selection covariances are related by $$ \\begin{align*}\\sigma_{G(AR)}(\\infty,t)=\\left({1+\\eta\\over2}\\right)\\sigma_{G(BR)}(\\infty,t)\\end{align*} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "While the coefficient on $ \\sigma_A^2 $ is unchanged in $ \\sigma_G(\\infty, t) $ ($ 1 + f $ for any value of $ t $), the limiting contributions ($ T = \\infty $) from all the other quadratic components have rather different coefficients relative to their single-generation values. Thus, the transient component of response is expected to be considerable. Wright and Cockerham found that $$ \\begin{align*}\\sigma_{G(BR)}(t+T,t)=\\sigma_{G(BR)}(\\infty,t)+\\left[\\sigma_G^2-\\sigma_{G(BR)}(\\infty,t)\\right]\\left(\\frac{\\eta}{2}\\right)^T\\end{align*} $$ with a similar expression for the covariance for selection after reproduction. The transient component decays rather rapidly, as the rate of decay is no slower than $ 2^{-T} $. Wright and Cockerham also showed that the final change in the mean from a generation of selection can be predicted from the response in the first two generations after selection, with $$ \\overline{z}_{\\infty}=\\frac{2\\overline{z}_{2}-\\eta\\overline{z}_{1}}{2-\\eta} $$ where $ \\overline{z}_{i} $ is the mean i generations after a generation of selection. Family selection was also examined by Wright and Cockerham (1986a) and Edwards (2008). With partial-selfing, there are a number of potential families that one can consider for the selection unit: outcrossed half- and full-sibs, selfed individuals, or naturally pollinated individuals (a mixture of selfed and outcrossed progeny). Consult Wright and Cockerham for details on response under these different systems."
+    },
+    {
+      "type": "discussion",
+      "content": "While straightforward (beyond some tedious bookkeeping), there are several potential problems with this covariance approach for accommodating partial selfing, which arise from individuals varying in the amount of selfing. In particular, selected individuals may not be a random sample of the inbreeding classes. If the focal trait shows inbreeding depression, the less-inbred individuals are expected to be chosen by selection more often. This has the effect of creating a nonlinear parent-offspring regression (Figure 23.4). If the nonlinearity is significant, the covariance approach (which makes predictions based on a linear regression) is inappropriate. Even in the absence of inbreeding depression on the focal trait, more-inbred individuals are often expected to be generally less fit. Together with any inbreeding depression on the focal trait, this skews the distribution of selected individuals that have selfed for i generations away from the geometric value $ (1-\\eta)\\eta^{i} $ predicted under no selection (Kelley 1999a)."
+    }
+  ]
+}

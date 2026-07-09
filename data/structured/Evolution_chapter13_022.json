@@ -1,0 +1,56 @@
+{
+  "id": "Evolution_chapter13_022",
+  "metadata": {
+    "chapter": "Evolution_chapter13",
+    "section": "THE MULTIVARIATE BREEDER'S EQUATION",
+    "subsections": [
+      "Selection Gradients and Mean Population Fitness"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter13_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [
+      "13.1"
+    ],
+    "section_level_1": "THE MULTIVARIATE BREEDER'S EQUATION",
+    "section_level_2": "Selection Gradients and Mean Population Fitness",
+    "heading_path": [
+      "THE MULTIVARIATE BREEDER'S EQUATION",
+      "Selection Gradients and Mean Population Fitness"
+    ],
+    "display_heading": "Selection Gradients and Mean Population Fitness",
+    "table_reference_keys": [
+      "Evolution_chapter13:13.1"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Under appropriate conditions, the selection gradient, $ \\beta $, demonstrates how a within-generation change in the vector of trait means maps into a change in the mean fitness of a population. If $ W(z) $ denotes the expected fitness of an individual with a character value of z, then when phenotypes are normally distributed and fitness is frequency-independent (individual fitnesses are not a function of the means of the characters), the directional selection gradient satisfies $ \\beta = \\partial \\ln \\overline{W} / \\partial \\mu $ (Lande 1976; Example A6.3 gives the full multivariate derivation). Hence we can express the breeder's equation as $$ R=\\sigma_{A}^{2}\\left(\\frac{\\partial\\ln\\overline{W}}{\\partial\\mu}\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The multivariate version of this partial derivative is the gradient of mean fitness with respect to the vector of character means, which is the vector of partials of the log of mean fitness with respect to each trait mean under consideration $$ \\beta=\\frac{\\partial\\ln\\overline{W}}{\\partial\\mu} $$ with $ \\beta_i = \\partial \\ln \\overline{W} / \\partial \\mu_i $ (the change in log mean fitness from a change in the mean of trait $ i $). The resulting gradient version of the Lande equation becomes $$ \\mathbf{R}=\\mathbf{G}\\ \\frac{\\partial\\ln\\overline{W}}{\\partial\\mu} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The vector $ \\beta $ represents the direction for the joint change in the means that maximizes the local increase in mean fitness. In contrast, the actual response involves the product (or projection) of this vector with the genetic covariance matrix G. The resulting response vector is generally not parallel to $ \\beta $, as the genetic covariance structure causes the character means to change in a direction that does not necessarily result in the optimal change in population fitness. We examine the implications of genetic constraints imposed by the structure of G in detail in Volume 3."
+    },
+    {
+      "type": "proposition",
+      "content": "We can connect the somewhat abstract notion of variance in fitness with a measurable quantity, the amount of selection, $ \\beta $, on a vector, z, of traits, as follows. Walsh and Blows (2009) showed that the additive variance in relative fitness w accounted for by selection on z is $$ \\sigma_{A}(\\mathbf{z}^{T},w)\\mathbf{G}^{-1}\\sigma_{A}(\\mathbf{z},w) $$ where the notation $ \\sigma_A(x, y) $ denotes the covariance between the breeding values of $ x $ and $ y $. Recalling Robertson's secondary theorem (1968 version; Equation 6.24a), $ \\sigma_A(\\mathbf{z}, w) = \\mathbf{R} = \\mathbf{G}\\beta $ (assuming the conditions for the multivariate breeder's equation hold), yielding $$ \\left(\\mathbf{G}\\boldsymbol{\\beta}\\right)^{T}\\mathbf{G}^{-1}\\left(\\mathbf{G}\\boldsymbol{\\beta}\\right)=\\boldsymbol{\\beta}^{T}\\mathbf{G}\\boldsymbol{\\beta} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The additive variance in fitness that remains unaccounted for after the effects of z are removed becomes $$ \\sigma_{A}^{2}(w)-\\beta^{T}\\mathbf{G}\\beta $$"
+    },
+    {
+      "type": "discussion",
+      "content": "In theory, if one had an estimate of $ \\sigma_A^2(w) $ in hand (Chapter 20), the significance of a set, z, of traits can be determined. If these account for most of the variation, there is little need to consider additional traits. If these account for only a small fraction, important traits are missing."
+    },
+    {
+      "type": "proposition",
+      "content": "Finally, we can use the multivariate breeder's equation to make a connection with the classical interpretation of Fisher's fundamental theorem (Chapter 6). If the fitness determined by the vector of traits, z, can be expressed as a linear regression (Equation 13.25b), then the expected change in fitness from selection response on these traits is $$ \\Delta\\overline{w}=\\beta^{T}\\Delta\\mathbf{z}=\\beta^{T}\\mathbf{R}=\\beta^{T}\\mathbf{G}\\beta $$ From Equation 13.28b, this is just the additive variance in fitness associated with these traits. Thus, we recover Fisher's theorem that the change in mean fitness equals the additive variance in relative fitness (Equation 6.17c)."
+    }
+  ]
+}

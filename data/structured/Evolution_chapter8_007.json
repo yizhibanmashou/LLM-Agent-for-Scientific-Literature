@@ -1,0 +1,103 @@
+{
+  "id": "Evolution_chapter8_007",
+  "metadata": {
+    "chapter": "Evolution_chapter8",
+    "section": "THE BEHAVIOR OF A NEUTRAL LOCUS LINKED TO A SELECTED SITE",
+    "subsections": [
+      "Allele-frequency Change"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter8_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "THE BEHAVIOR OF A NEUTRAL LOCUS LINKED TO A SELECTED SITE",
+    "section_level_2": "Allele-frequency Change",
+    "heading_path": [
+      "THE BEHAVIOR OF A NEUTRAL LOCUS LINKED TO A SELECTED SITE",
+      "Allele-frequency Change"
+    ],
+    "display_heading": "Allele-frequency Change"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "To quantify the impact of a sweep, we need to determine how selection influences the frequency of a neutral allele, m, at a linked locus. The ultimate variable of interest is $ q(t) $, the frequency of m in generation t of the sweep, with $ q(\\infty) $ denoting its frequency at the sweep's completion. In the absence of any recombination during the sweep, $ q(\\infty) = 1 $, as the initial haplotype bearing the new favorable mutation (and m) is swept to fixation. The degree to which $ q(\\infty) $ actually approaches one depends on the relative strengths of recombination, c (between the selected site and the neutral marker), and the strength of selection, s, on the favored site. In Chapter 5 we showed that the time to fixation from selection scales with 1/s, so it is reasonable to expect that $ q(\\infty) $ is some function of c/s."
+    },
+    {
+      "type": "discussion",
+      "content": "In order to obtain $ q(t) $, we need to follow the frequencies of m on the two different chromosomal backgrounds, those with selected allele A and those carrying the alternative allele, a. If we let $ q_A(t) $ and $ q_a(t) $ denote the frequencies of allele m on A- and a-bearing chromosomes, conditional probability gives the population frequency of m as $$ q(t)=q_{A}(t)\\cdot p(t)+q_{a}(t)\\cdot\\left[1-p(t)\\right] $$ where $ p(t) $ is the frequency of A in generation t of the sweep. When A becomes fixed, $ q(\\infty) = q_{A}(\\infty) $, the fraction of A-bearing chromosomes that still contain m."
+    },
+    {
+      "type": "discussion",
+      "content": "A related quantity is the difference, $ \\delta_{q} $, in the frequency of m on these two backgrounds"
+    },
+    {
+      "type": "discussion",
+      "content": "(A versus a), whose initial value is $$ \\delta_{q}(0)=q_{A}(0)-q_{a}(0) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Nonzero values of $ \\delta_q $ imply linkage disequilibrium between $ A $ and $ m $, with the frequency of $ m $ on $ A $-bearing chromosomes differing from its unconditional frequency in the general population. Hitchhiking is basically a race between the rate of recombination reducing the initial disequilibrium (and hence $ \\delta_q $) and the rate of selection fixing $ A $, eliminating any further recombination. Smaller values of $ c $ (slower rates of recombination) and/or larger values of $ s $ (faster time to fixation) increase the impact of a sweep. When $ A $ is introduced as just one or a few copies, then $ q_a(0) \\simeq q(0) $, as essentially all of the copies of $ m $ are on a chromosomes. If $ A $ arises as a single copy on an $ m $-bearing chromosome, then $ q_A(0) = 1 $ (as the only $ A $-bearing chromosome contains $ m $), yielding $ \\delta_q(0) = 1 - q(0) $. Finally, let $$ \\Delta_{q}=q(\\infty)-q(0) $$ denote the final change in the frequency of the linked neutral allele m after A has swept to fixation. Summarizing our notation to this point, we have $$ q(t)\\qquad\\qquad\\mathrm{U n c o n d i t i o n a l~f r e q u e n c y~o f~}m\\mathrm{~i n~g e n e r a t i o n~}t $$ $$ q_{A}(t)\\qquad\\qquad\\mathrm{C o n d i t i o n a l~f r e q u e n c y~o f~}m\\mathrm{~o n~}A\\mathrm{-b e a r i n g~c h r o m o s o m e s} $$ $$ q_{a}(t)\\qquad\\qquad\\mathrm{C o n d i t i o n a l~f r e q u e n c y~o f~}m\\mathrm{~o n~}a\\mathrm{-b e a r i n g~c h r o m o s o m e s} $$ $$ \\delta_{q}(t)=q_{A}(t)-q_{a}(t)\\quad\\mathrm{D i f f e r e n c e~i n~f r e q u e n c y~o f~}m\\mathrm{~o n~}A\\mathrm{-~v e r s u s~}a\\mathrm{-b e a r i n g~c h r o m o s o m e s} $$ $$ \\Delta_{q}=q(\\infty)-q(0)\\quad\\text{Change in frequency of}m\\text{ after a sweep} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "In particular, note that $ \\delta_{q}(\\infty) $ and $ \\Delta_{q} $, while related, are still distinct."
+    },
+    {
+      "type": "discussion",
+      "content": "To proceed, we define the critical measure of the strength of a hitchhiking event, $$ f_{s}=\\frac{\\Delta_{q}}{\\delta_{q}(0)}=\\frac{q(\\infty)-q(0)}{q_{A}(0)-q_{a}(0)}\\simeq\\frac{q(\\infty)-q(0)}{1-q(0)}\\quad when p(0)\\ll q(0) $$ which is the fraction of the initial excess association of $m$ with $A$, $\\delta_q(0)$, that persists when $A$ is fixed ($\\Delta_q$). If the sweep is started with a single lineage, $f_s$ is the probability of identity-by-descent at the $m$ locus among fixed $A$ chromosomes (Gillespie 2000; Kim and Nielsen 2004). In the absence of recombination, $f_s = 1$, resulting in an allele-frequency change of $\\Delta_q = \\delta_q(0)$, which is $1 - q(0)$ at the point where $A$ arose as a single copy. With recombination, $f_s < 1$, and our task is to evaluate how the relative values of selection ($s$) and recombination ($c$) determine the magnitude of this effect. An important result in sweep theory is that the final allele frequency of $m$ for the case of $A$ arising as a single copy can be expressed as $$ q(\\infty)=q(0)+\\Delta_{q}=q(0)+f_{s}\\delta_{q}(0)=q(0)+f_{s}[1-q(0)]=f_{s}+q(0)(1-f_{s}) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The derivation of the standard deterministic approximation for $ \\Delta_{q} $ (given in Example 8.2) requires a few tricks, and the basic biology can get somewhat lost during its development. Hence, we first sketch a rough approximation of how selection and recombination compete before presenting more accurate results. As noted by Maynard Smith and Haigh (1974) and Barton (2002), because m is neutral, its frequency on either background only changes through recombination, with $$ \\delta_{q}(t)=q_{A}(t)-q_{a}(t)=(1-c)^{t}\\left[q_{A}(0)-q_{a}(0)\\right]\\simeq\\delta_{q}(0)e^{-c t} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "A rapid increase of A reduces the opportunity for recombination between A- and a-bearing chromosomes, which becomes nonexistent when A is fixed. Assuming A is under additive selection with fitness s, then as shown in Example 8.1, if A is introduced into the population as a single copy and is destined to become fixed, its approximate time to fixation is $ \\tau \\simeq 2 \\ln(4N_{e}s)/s $. Substituting this time into Equation 8.2a yields $$ \\delta_{q}(\\infty)=\\delta_{q}(0)e^{-c\\tau}\\simeq\\delta_{q}(0)\\exp\\left[-(2c/s)\\ln(4N_{e}s)\\right]=\\delta_{q}(0)\\left(4N_{e}s\\right)^{-2c/s} $$ so that $$ \\frac{\\delta_{q}(\\infty)}{\\delta_{q}(0)}=\\left(\\frac{1}{4N_{e}s}\\right)^{2c/s} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "This shows that the fraction of initial association that persists following the sweep is a function of $ c/s $, which is the key parameter for determining the strength of hitchhiking. When $ c/s \\ll 1 $, most of the initial association remains at the conclusion of the sweep, while as ever-more-distant sites are considered (so that $ c/s $ increases), any initial association decay toward zero."
+    },
+    {
+      "type": "discussion",
+      "content": "While Equation 8.2c conveys the general notion of competition between recombination and selection, this is a rather crude analysis, as it only considers the time to fixation for A (and hence the end of any opportunity for further recombination) and uses $ \\delta_q(\\infty) $ in place of the real quantity of interest, $ \\Delta_q $. As presented in Example 8.2, an improved analysis accounts for how the actual change in the frequency of A influences the opportunity for recombination. This problem has received considerable attention, starting with a strictly deterministic analysis by Maynard Smith and Haigh (1974; also see Stephan et al. (2006), followed by analyses allowing for finite population size by Kaplan et al. (1989), Stephan et al. (1992), Barton (1995a, 1998, 2000), Otto and Barton (1997), Durrett and Schweinsberg (2004), Etheridge et al. (2006), Pfaffelhuber et al. (2006), Pfaffelhuber and Studeny (2007), Ewing et al. (2011), and Coop and Ralph (2012)."
+    },
+    {
+      "type": "discussion",
+      "content": "The details for a deterministic analysis accounting for the change in A are given in Example 8.2. Under this analysis, if $ p(0) $ is the starting frequency of A at the time of selection, then for $ c/s \\ll 1 $, the change in q at the fixation of A is $$ \\Delta_{q}\\simeq\\delta_{q}(0)p(0)^{c/s} $$ so as a result, from Equation 8.1d, $$ f_{s}=\\frac{\\Delta_{q}}{\\delta_{q}(0)}=p(0)^{c/s} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "This result shows that our approximate analysis leading to Equation 8.2c underestimated the effect of a sweep, as it scaled as the power $ 2c/s $, inflating the importance of recombination (Example 8.2 details why this occurs). Recalling that $$ x^{a}=e^{a\\ln(x)}\\simeq1+a\\ln(x)\\qquad for\\quad|a\\ln(x)|\\ll1 $$ and applying this approximation to Equation 8.3b recovers the original result of Maynard Smith and Haigh (1974), $$ f_{s}\\simeq1+\\frac{c}{s}\\ln\\left[p(0)\\right] $$ $$ \\simeq1-\\frac{c}{s}\\ln(2N)\\quad for\\quad p(0)=\\frac{1}{2N} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "This approximation can fail if $ (c/s) \\mid \\ln [p(0)] $ is too large, although the more exact Equation 8.3b will still hold. If the favorable mutation is initially linked to deleterious alleles at nearby loci, this will result in a lower net selective advantage during the sweep (diminishing the effective value of s), and hence a diminished value of $ f_s $ (Hartfield and Otto 2011; Good and Desai 2014). As Equation 8.3e shows, the hitchhiking effect for a favorable mutation introduced as a single copy diminishes with increasing population size, reflecting the longer time to reach fixation in larger populations and hence a greater reduction of any initial association by recombination. This effect, however, is rather modest, scaling as the log of population size."
+    },
+    {
+      "type": "discussion",
+      "content": "When dominance is present, so that the fitnesses are 1: 1 + 2hs: 2s, then c/s in Equations 8.3a–8.3d is replaced by c/(2hs) for $ h \\neq 0 $. For the case of a completely recessive allele $ (h = 0) $, Maynard Smith and Haigh (1974) found that $$ f_{s}\\simeq1-\\left(\\frac{c}{2s}\\frac{1}{p(0)}\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "For example, with $ p(0) = 1/(2N) $, Equation 8.3f becomes $ 1 - (c/s)N $ versus $ 1 - (c/s)\\ln(2N) $ (Equation 8.3d). The much weaker hitchhiking effect (smaller value of $ f_s $) reflects the much longer fixation time for a recessive mutation and hence the greater opportunity for recombination to decay any initial disequilibrium. Conversely, the decreased fixation time for a favorable dominant allele ($ h = 1 $) effectively doubles the strength of selection (with $ c/[2s] $ replacing c/s in Equation 8.3a), resulting in a larger region influenced by the sweep (also see Teshima and Przeworski 2006; Ewing et al. 2011)."
+    },
+    {
+      "type": "discussion",
+      "content": "These results are for a deterministic analysis. When an analysis allowing for drift is performed, using the initial frequency $ 1/(2N) $ for a single copy underestimates the effects of hitchhiking, as those alleles that become fixed leave the drift-dominated boundary region of the allele-frequency space faster than would be predicted by a deterministic analysis (Example 8.1). As a reasonable approximation, this can be accommodated by replacing $ p(0) = 1/(2N) $ with $ p(0) = 1/(4N_{e}s) $ in all of the previous expressions (as already seen in Equation 8.2c), yielding $$ f_{s}\\simeq1-\\frac{c}{2h s}\\ln(4N_{e}s)\\quad for p(0)=1/(2N) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "For those who wish a more refined analysis, there is a growing body of very technical literature focusing on the genealogical structure of a sample from a hard sweep (Kaplan et al. 1989; Barton 1998; Etheridge et al. 2006; Pfaffelhuber et al. 2006; Pfaffelhuber and Studeny 2007; Ewing et al. 2011)."
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:8.1]]"
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:8.2]]"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "id": "Evolution_chapter11_008",
+  "metadata": {
+    "chapter": "Evolution_chapter11",
+    "section": "RESPONSE OF WITHIN-POPULATION GENETIC VARIANCE TO DRIFT",
+    "subsections": [
+      "Sampling Error"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter11_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "RESPONSE OF WITHIN-POPULATION GENETIC VARIANCE TO DRIFT",
+    "section_level_2": "Sampling Error",
+    "heading_path": [
+      "RESPONSE OF WITHIN-POPULATION GENETIC VARIANCE TO DRIFT",
+      "Sampling Error"
+    ],
+    "display_heading": "Sampling Error"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "It cannot be emphasized too strongly that the preceding expressions give only the expected change of the within-population variance for a neutral quantitative character. Due to the stochastic nature of random genetic drift, departures from this expectation will arise in any individual population, so a central concern is the degree to which the average behavior of a small number of populations (e.g., a typical replicated experiment) will represent the expected pattern."
+    },
+    {
+      "type": "discussion",
+      "content": "In the following discourse, we denote the realized additive genetic variance for any particular population by $ \\widehat{\\sigma}_{A}^{2}(t) $. Estimation error on the part of the investigator aside, three sources of error contribute to the variation in $ \\widehat{\\sigma}_{A}^{2}(t) $ among replicate populations: (1) variation in the genetic variance among founder populations caused by sampling; (2) subsequent departures of the within-population heterozygosity from its expectation caused by drift; and (3) deviations from Hardy-Weinberg and gametic-phase equilibrium."
+    },
+    {
+      "type": "discussion",
+      "content": "Quantification of these sources of variation is difficult, but some general results have been obtained for characters with a purely additive genetic basis. The additive genetic variance within a particular population can be written as $$ \\widehat{\\sigma}_{A}^{2}(t)=\\sigma_{a}^{2}(t)+\\widehat{\\sigma}_{H W}(t)+\\widehat{\\sigma}_{L}(t) $$ where $ \\sigma_a^2(t) $ is the variance due to the true gene effects expected if the line were expanded into an infinitely large, randomly mating population with global Hardy-Weinberg and gametic-phase disequilibrium (the genic variance; Chapters 16 and 24), while $ \\widehat{\\sigma}_{HW}(t) $ and $ \\widehat{\\sigma}_L(t) $ are transient covariances of genic effects within and among loci caused by disequilibria within and between loci. The expected value of $ \\sigma_a^2(t) $, given by Equation 11.2, is $ \\sigma_A^2(t) $, as the disequilibria are equally likely to occur in positive and negative directions in the absence of selection. Thus, the expected value of $ \\widehat{\\sigma}_A^2(t) $ is also equal to $ \\sigma_A^2(t) $."
+    },
+    {
+      "type": "discussion",
+      "content": "Each of the terms on the right side of Equation 11.10 has a variance associated with it, meaning that the expected variance of the within-population additive genetic variance among hypothetical replicate populations can be expressed as $$ \\sigma^{2}\\left[\\widehat{\\sigma}_{A}^{2}(t)\\right]=\\sigma^{2}\\left[\\sigma_{a}^{2}(t)\\right]+\\sigma^{2}\\left[\\widehat{\\sigma}_{H W}(t)\\right]+\\sigma^{2}\\left[\\widehat{\\sigma}_{L}(t)\\right] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The variance of the “true” additive genetic variance is $$ \\sigma^{2}\\left[\\sigma_{a}^{2}(t)\\right]=\\sum_{i=1}^{n}a_{i}^{4}\\sigma_{H_{i}}^{2}(t) $$ where $ \\sigma_{H_i}^2(t) $ is the expected variance of heterozygosity, $ H_i(t) = 2p_i(t)[1 - p_i(t)] $, at a locus $ i $ among replicate populations $ t $ generations after divergence. Bulmer (1980) obtained an expression for $ \\sigma_{H_i}^2(t) $ for a locus with two alleles, and a very close approximation to this is given in Example 2.5. While the exact dynamics of $ \\sigma^2[\\sigma_a^2(t)] $ will depend on the initial allele frequencies at all loci, which are generally unknown, a useful qualitative statement can be made. For fixed initial genetic variance in the base population, the average value of $ a_i^2 $ must scale inversely with the number of loci. Thus, because $ \\sigma^2[\\sigma_a^2(t)] $ is the sum of $ n $ terms, each of which is a function of $ a_i^4 \\propto n^{-2} $, then $ \\sigma^2[\\sigma_a^2(t)] $ must be inversely proportional to $ n $. Therefore, for characters with large effective numbers of loci, deviations from the true additive genetic variance caused by variance in heterozygosity are likely to be of negligible importance."
+    },
+    {
+      "type": "discussion",
+      "content": "The expected variance of the within-population variance from Hardy-Weinberg deviations is $ \\sigma^2[\\widehat{\\sigma}_{HW}(t)] \\simeq \\sigma_A^4(t)/N_e $ (Bulmer 1976, 1980), but the variation due to gametic-phase disequilibrium is more substantial, and the details of the rather tedious derivations appear in Avery and Hill (1977) and Bulmer (1980). Regardless of the degree of linkage, $ \\sigma^2[\\widehat{\\sigma}_L(1)] \\simeq \\sigma_A^4(0)/N_e $ in the first generation of inbreeding, and thereafter for the special case of unlinked loci, $ \\sigma^2[\\widehat{\\sigma}_L(t)] \\simeq 5\\sigma_A^4(t)/(3N_e) $. With linkage $ \\sigma^2[\\widehat{\\sigma}_L(t)] $ is necessarily larger, but for most cases it will not be substantially so (Avery and Hill 1977), and regardless of the state of disequilibrium in the base population, the expected value of $ \\sigma^2[\\widehat{\\sigma}_L(t)] $ is almost always attained within five generations."
+    },
+    {
+      "type": "discussion",
+      "content": "An advantage of the preceding expressions for the variance of the components of the within-population genetic variance is that they are defined in terms of measurable quantities. However, to achieve this useful property, several assumptions (ideal population structure, no association between map distances and effects of genes, additivity of gene effects) had to be made, violations of which will tend to inflate the variance of $ \\widehat{\\sigma}_{A}^{2}(t) $. Thus, summing over the two disequilibrium sources, we find that $ \\sigma^{2}[\\widehat{\\sigma}_{A}^{2}(t)] $ must be at least $ 8\\sigma_A^4(t)/3N_e $. A similar conclusion was reached by Zeng and Cockerham (1991), who presented a more thorough and highly technical analysis."
+    },
+    {
+      "type": "discussion",
+      "content": "These theoretical results have significant implications for the interpretation of observed changes of genetic variance in small populations, in particular in the use of such observations to infer any significant conversion of nonadditive to additive genetic variance. Clearly, estimates of $ \\widehat{\\sigma}_{A}^{2}(t) $ derived from a small number of replicate populations, even over several generations, provide unreliable assessments of the expected dynamics of $ \\sigma_{A}^{2}(t) $. If we average over $ L $ independent lines, the sampling variance of the average of the within-line additive variances is at least $ 8\\sigma_{A}^{4}(t)/(3Ln_{e}) $. Therefore, if it is desirable to keep the standard error of an estimate of the additive genetic variance at a level of 10% of the expectation, $ \\sigma_{A}^{2}(t) $, the design must be such that $ N_{e}L \\simeq 270 $, i.e., approximately 70 lines of $ N_{e} = 4 $, or 17 of $ N_{e} = 16 $. For self-fertilizing lines, the sampling variance is closer to $ 7\\sigma_{A}^{4}(t)/L $ over the first five generations of inbreeding (Lynch 1988a), so on the order of 700 lines would have to be monitored to achieve a similar level of precision. In practice, one would need to set the target number of lines even higher than these estimates, because the additional variation due to parameter estimation, i.e., the deviation of the observation Var(A, t) from the realized parameter $ \\widehat{\\sigma}_{A}^{2}(t) $, which may be considerable, has been ignored in the preceding arguments."
+    },
+    {
+      "type": "discussion",
+      "content": "One final problem that bears mentioning is that the values of $ \\hat{\\sigma}_A^2(t) $ observed in successive generations are not independent, as the minimum correlation between adjacent generations equals one-half for unlinked loci. Thus, if the genetic variation within a particular population exceeds the expectation due to chance in one generation, it is likely to remain in excess for several consecutive generations. When this problem is confounded with the sampling variance described above, there is a substantial possibility that $ \\hat{\\sigma}_A^2(t) $ for a particular replicate population may on occasion increase for several generations, contrary to the expected trend, and even for characters with a purely additive genetic basis (Avery and Hill 1977; Bulmer 1980)."
+    },
+    {
+      "type": "discussion",
+      "content": "In summary, even in the case of purely additive gene action, obtaining a reliable empirical view of the expected dynamics of the additive genetic variance requires a very large number of replicate populations. There are three levels at which sampling error plays a role. First, in each replicate, the variance observed by the investigator, $ \\text{Var}(A) $, is likely to deviate substantially from the parametric value $ \\widehat{\\sigma}_A^2 $ for the replicate, due simply to the finite number of individuals monitored. Second, the true realized variance, $ \\widehat{\\sigma}_A^2 $, in each line may deviate considerably from the actual equilibrium value, $ \\sigma_a^2 $, expected in the absence of Hardy-Weinberg and gametic-phase disequilibrium. Finally, random genetic drift will cause $ \\sigma_a^2 $ to deviate from the global expectation, $ \\sigma_A^2 $. One can expect the situation to get even more complex in the presence of nonadditive gene action, but mastering the details of the sampling theory remains a formidable challenge."
+    }
+  ]
+}

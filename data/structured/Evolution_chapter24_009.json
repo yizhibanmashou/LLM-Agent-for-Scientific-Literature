@@ -1,0 +1,39 @@
+{
+  "id": "Evolution_chapter24_009",
+  "metadata": {
+    "chapter": "Evolution_chapter24",
+    "section": "THEORETICAL IMPLICATIONS OF THE STANDARD INFINITESIMAL MODEL",
+    "subsections": [
+      "What Generates a Gaussian Distribution Within a Family?"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter24_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "THEORETICAL IMPLICATIONS OF THE STANDARD INFINITESIMAL MODEL",
+    "section_level_2": "What Generates a Gaussian Distribution Within a Family?",
+    "heading_path": [
+      "THEORETICAL IMPLICATIONS OF THE STANDARD INFINITESIMAL MODEL",
+      "What Generates a Gaussian Distribution Within a Family?"
+    ],
+    "display_heading": "What Generates a Gaussian Distribution Within a Family?"
+  },
+  "blocks": [
+    {
+      "type": "proposition",
+      "content": "The central limit theorem from probability theory—that sums of random variables typically converge to a Gaussian distribution—implies that the distribution of breeding values is Gaussian under the infinitesimal genetics model (Bulmer 1971b; Barton et al. 2017). This Gaussian limit requires the key assumptions that loci are not too tightly linked, mating is random, and there has been no previous selection or any other force generating disequilibrium. If alleles are sufficiently correlated across loci, or if their effects are significantly different (for example, some remain at finite values while the rest become vanishingly small), then convergence to a normal is by no means assured (Lange 1978, 1997; Matthyssee et al. 1979; Dawson 1997)."
+    },
+    {
+      "type": "discussion",
+      "content": "In particular, as we will demonstrate, selection can generate dependencies (linkage disequilibrium [LD]) among sets of three (or more) loci, which can transform a normal distribution into a non-normal one as selection proceeds. However, under the infinitesimal genetics model, there are no changes in allele frequencies, implying that once selection stops and random mating occurs, any departures from normality (being due to LD) quickly decay. Indeed, Bulmer (1980) showed that the kth-order departure from normality (measured by cumulants, which are introduced later in the chapter) decays by $ (1/2)^{k-1} $ in each generation (assuming unlinked loci), so that following t generations of random mating, the kth-order initial departure from normality is scaled by $ (1/2)^{t(k-1)} $, which quickly approaches zero. The issue remains as to how much of a departure from normality LD generates and whether this biases infinitesimal-model-based predictions of the selection response. We return to this issue later in the chapter."
+    },
+    {
+      "type": "discussion",
+      "content": "A widely used feature of the Fisher-Bulmer infinitesimal model is (for unlinked loci in noninbred parents) a constant within-family genetic variance. Specifically, the distribution of breeding values, $ A_o $, in the offspring, conditioned on the breeding values, $ A_f $ and $ A_m $, of the parents, is assumed to be normally distributed, with a mean of $ (A_f + A_m)/2 $ and a variance of $ \\sigma_a^2/2 $ (half the genic variance). Thus, we have homoscedasticity with the predictor error variance, $ \\sigma_a^2/2 $, being a constant, independent of the parental values. This constant Mendelian sampling variance (or segregation variance) is caused by segregation of heterozygous loci in the parents. Provided the loci are unlinked, this feature holds even when gametic-phase disequilibrium is present, as with the independent assortment of heterozygotes, the linkage phase of a parent does not influence gamete frequencies for unlinked loci (Example 16.2). More generally, the segregation variance is given by $ \\sigma_a^2(1 - \\bar{f})/2 $, where $ \\bar{f} $ is the average amount of inbreeding in the two parents (reflecting the decrease in heterozygosity in the parents; Example 16.2). As detailed in Chapter 19, the additive relationship matrix, $ A $, fully across for relatedness-based changes in $ \\sigma_a^2 $ among a collection of individuals in a BLUP analysis."
+    },
+    {
+      "type": "proposition",
+      "content": "Under the infinitesimal genetics model and its assumption of no selection-induced allele-frequency change, the genic variance (corrected parental inbreeding) remains constant. However, if the infinitesimal genetic assumption is are violated, the even allels with very small effects eventually will have their frequencies changed by selection. This alters the genic variance, and hence changes the segregation variance. When major genes are present, the segregation variance depends on parental genotypes, which compromises the constant-variance (i.e., genotype-independent) assumption made under the Fisher-Bulmer infinitesimal. Indeed, recall from LW Chapter 8, that such variation of the within-family variance over families is one (albeit weak) test for the presence of a major gene."
+    }
+  ]
+}

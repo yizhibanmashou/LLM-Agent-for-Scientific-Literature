@@ -1,0 +1,55 @@
+{
+  "id": "Genetics_chapter8_017",
+  "metadata": {
+    "chapter": "Genetics_chapter8",
+    "section": "Introduction",
+    "subsections": [
+      "THE MULTIVARIATE NORMAL DISTRIBUTION"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter8_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "THE MULTIVARIATE NORMAL DISTRIBUTION",
+    "heading_path": [
+      "Introduction",
+      "THE MULTIVARIATE NORMAL DISTRIBUTION"
+    ],
+    "display_heading": "THE MULTIVARIATE NORMAL DISTRIBUTION"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "As we have seen above, matrix notation provides a compact way to express vectors of random variables. We now consider the most commonly assumed distribution for such vectors, the multivariate analog of the normal distribution discussed in Chapter 2. Much of the theory for the evolution of quantitative traits is based on this distribution, which we hereafter denote as the MVN."
+    },
+    {
+      "type": "discussion",
+      "content": "Consider the probability density function for $n$ independent normal random variables, where $x_{i}$ is normally distributed with mean $\\mu_{i}$ and variance $\\sigma_{i}^{2}$. In this case, because the variables are independent, the joint probability density function is simply the product of each univariate density, $$ \\begin{aligned}p(\\mathbf{x})&=\\prod_{i=1}^{n}(2\\pi)^{-1/2}\\sigma_{i}^{-1}\\exp\\left(-\\frac{(x_{i}-\\mu_{i})^{2}}{2\\sigma_{i}^{2}}\\right)\\\\&=(2\\pi)^{-n/2}\\left(\\prod_{i=1}^{n}\\sigma_{i}\\right)^{-1}\\exp\\left(-\\sum_{i=1}^{n}\\frac{(x_{i}-\\mu_{i})^{2}}{2\\sigma_{i}^{2}}\\right)\\\\ \\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "We can express this equation more compactly in matrix form by defining the matrices $$ \\mathbf{V}=\\begin{pmatrix}\\sigma_{1}^{2}&0&\\cdots&0\\\\0&\\sigma_{2}^{2}&\\cdots&0\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\0&\\cdots&\\cdots&\\sigma_{n}^{2}\\end{pmatrix}\\qquad\\text{and}\\qquad\\boldsymbol{\\mu}=\\begin{pmatrix}\\mu_{1}\\\\\\mu_{2}\\\\\\vdots\\\\\\mu_{n}\\end{pmatrix} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Since V is diagonal, its determinant is simply the product of the diagonal elements $$ |\\mathbf{V}|=\\prod_{i=1}^{n}\\sigma_{i}^{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Likewise, using quadratic products, note that $$ \\sum_{i=1}^{n}\\frac{(x_{i}-\\mu_{i})^{2}}{\\sigma_{i}^{2}}=(\\mathbf{x}-\\boldsymbol{\\mu})^{T}\\mathbf{V}^{-1}(\\mathbf{x}-\\boldsymbol{\\mu}) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Putting these together, Equation 8.23 can be rewritten as $$ p(\\mathbf{x})=(2\\pi)^{-n/2}|\\mathbf{V}|^{-1/2}\\exp\\left[-{\\frac{1}{2}}(\\mathbf{x}-\\boldsymbol{\\mu})^{T}\\mathbf{V}^{-1}(\\mathbf{x}-\\boldsymbol{\\mu})\\right] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "We will also write this density as $p(\\mathbf{x}, \\boldsymbol{\\mu}, \\mathbf{V})$ when we wish to stress that it is a function of the mean vector $\\boldsymbol{\\mu}$ and the covariance matrix $\\mathbf{V}$."
+    },
+    {
+      "type": "discussion",
+      "content": "More generally, when the elements of x are correlated, Equation 8.24 gives the probability density function for a vector of multivariate normally distributed random variables, with mean vector $ \\mu $ and covariance matrix V. We denote this by $$ \\mathbf{x}\\sim\\mathrm{M V N}_{n}(\\boldsymbol{\\mu},\\mathbf{V}) $$ where the subscript indicating the dimensionality of x is usually omitted. The multivariate normal distribution is also referred to as the Gaussian distribution."
+    }
+  ]
+}

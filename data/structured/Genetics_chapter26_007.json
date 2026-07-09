@@ -1,0 +1,35 @@
+{
+  "id": "Genetics_chapter26_007",
+  "metadata": {
+    "chapter": "Genetics_chapter26",
+    "section": "Introduction",
+    "subsections": [
+      "Standard Errors"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter26_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "Standard Errors",
+    "heading_path": [
+      "Introduction",
+      "Standard Errors"
+    ],
+    "display_heading": "Standard Errors"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "A relatively straightforward extension of Henderson's mixed-model equations provides estimates of the standard errors of the fixed and random effects. Let the inverse of the leftmost matrix in Equation 26.5 be $$ \\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{X}&\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{Z}&.\\\\\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{X}&\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{Z}+\\mathbf{G}^{-1}\\end{pmatrix}^{-1}=\\begin{pmatrix}\\mathbf{C}_{11}&\\mathbf{C}_{12}\\\\\\mathbf{C}_{12}^{T}&\\mathbf{C}_{22}\\end{pmatrix} $$ where $C_{11}$, $C_{12}$, and $C_{22}$ are, respectively, $p\\times p$, $p\\times q$, and $q\\times q$ submatrices. Using this notation, Henderson (1975) showed that the sampling covariance matrix for the BLUE of $\\beta$ is given by $$ \\boldsymbol{\\sigma}(\\widehat{\\boldsymbol{\\beta}})=\\mathbf{C}_{11} $$ that the sampling covariance matrix of the prediction errors (u - u) is given by $$ \\boldsymbol{\\sigma}(\\hat{\\mathbf{u}}-\\mathbf{u})=\\mathbf{C}_{22} $$ and that the sampling covariance of estimated effects and prediction errors is given by $$ \\boldsymbol{\\sigma}(\\hat{\\boldsymbol{\\beta}},\\hat{\\mathbf{u}}-\\mathbf{u})=\\mathbf{C}_{12} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "(We consider $\\hat{\\mathbf{u}} - \\mathbf{u}$ rather than $\\hat{\\mathbf{u}}$ as the latter includes variance from both the prediction error and the random effects $\\mathbf{u}$ themselves.) The standard errors of the fixed and random effects are obtained, respectively, as the square roots of the diagonal elements of $\\mathbf{C}_{11}$ and $\\mathbf{C}_{22}$. For very large animal breeding designs where the inverse of the MME matrix may be difficult to compute, Meyer (1989a) presents methods for approximating the diagonal elements of the inverse of this matrix (and hence the standard errors). $$ \\begin{pmatrix}4&0&\\vdots&1&2&1\\\\0&2&&\\vdots&1&0&1\\\\\\ddots&\\cdots&&\\ddots&\\ddots&\\\\1&1&&5&0&0\\\\2&0&\\vdots&0&5&0\\\\1&1&&0&0&5\\end{pmatrix}^{-1}=\\frac{1}{270}\\begin{pmatrix}100&25&\\vdots&-25&-40&-25\\\\25&175&\\cdots&-40&-10&-40\\\\ \\cdots&\\cdots&&\\cdots&\\cdots&\\\\ -25&-40&\\cdots&67&10&13\\\\ -40&-10&\\vdots&10&70&10\\\\ -25&-40&&\\cdots&13&10&67\\end{pmatrix} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Hence, $$ \\mathbf{C}_{11}=\\frac{1}{270}\\left(\\begin{array}{cc}100&25\\\\ 25&175\\end{array}\\right)\\quad and\\quad\\mathbf{C}_{22}=\\frac{1}{270}\\left(\\begin{array}{ccc}67&10&13\\\\ 10&70&10\\\\ 13&10&67\\end{array}\\right) $$ so that, for example, $$ \\sigma^{2}(\\widehat{\\beta_{1}})=\\frac{100}{270},\\quad\\sigma^{2}(\\widehat{\\beta_{2}})=\\frac{175}{270},\\quad\\sigma(\\widehat{\\beta_{1}},\\widehat{\\beta_{2}})=\\frac{25}{270} $$ and, likewise, $$ \\sigma^{2}(\\widehat{u_{2}}-u_{2})=\\frac{70}{270},\\quad\\sigma(\\widehat{u_{1}}-u_{1},\\widehat{u_{3}}-u_{3})=\\frac{13}{270},\\quad\\mathrm{a n d~s o~o n}. $$"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "id": "Genetics_chapter12_009",
+  "metadata": {
+    "chapter": "Genetics_chapter12",
+    "section": "Introduction",
+    "subsections": [
+      "The Bateman-Mukai Technique"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter12_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "The Bateman-Mukai Technique",
+    "heading_path": [
+      "Introduction",
+      "The Bateman-Mukai Technique"
+    ],
+    "display_heading": "The Bateman-Mukai Technique"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Using estimates of the per generation changes in the grand mean and the among-line variance for a trait caused by mutation, it is possible to place bounds on the mutation rate and the average effect of a new mutation (Bateman 1959, Mukai 1964, Mukai et al. 1972, Crow and Simmons 1983). Although Bateman and Mukai were primarily interested in the deleterious consequences of mutation, the statistical approach that they advocated applies to any character for which mutation causes a directional change in the mean. We will first derive the general results following Lynch (1994), and then apply them specifically to the analysis of fitness characters."
+    },
+    {
+      "type": "proposition",
+      "content": "We start with the assumption that the mutation-accumulation lines are kept at a small enough size that essentially all new mutations are effectively neutral, i.e., the vagaries of random genetic drift overwhelm the forces of selection. Roughly speaking, this requires that the selection coefficients of mutant alleles be less than $ 1/(2N) $, e.g., s < 0.5 for lines maintained by self-fertilization and single-seed descent, or s < 0.25 for lines maintained by single brother-sister mating. Letting U denote the genomic mutation rate for the trait, then NU new mutations enter a line each generation, and each of these has a fixation probability equal to its initial frequency, $ 1/(2N) $. The expected number of fixations per generation is simply the product of these two terms, U/2 (the gametic mutation rate). Following the notation used earlier in this chapter, conditional on fixation, each mutation causes an expected change in the mean genotypic value equal to $ E(2a) $. Thus, assuming there are no substantial epistatic interactions among new mutations, the expected dynamics of change in the mean genotypic value in a mutation-accumulation experiment are given by $$ \\bar{g}(t)=\\bar{g}(0)+U\\overline{a}t $$ where $\\bar{g}(t)$ is the mean genotypic value in generation $t$. In the following, we let $\\Delta M$ denote an estimate of the rate of change in the mean, $U_{\\overline{a}}$. It may be obtained from a regression of line means on time, or as the total change in the mean $\\bar{g}(t) - \\bar{g}(0)$ divided by $t$. As noted above, the expected rate of increase of the among-line variance in a mutation-accumulation experiment is equal to $ 2\\sigma_{m0}^{2}=2UE(a^{2}) $. Thus, twice the squared rate of change in the mean divided by the rate of change in the variance is equal to $ U\\overline{a}^{2}/\\overline{a^{2}} $. This quantity reduces to U in the unlikely event that mutations have constant effects. More generally, the ratio is equal to $ U/(1+C_{m}) $, where $ C_{m}=\\sigma_{a}^{2}/\\overline{a}^{2} $ is the squared coefficient of variation of mutational effects. Letting $ \\Delta V $ be an estimate of the rate of line divergence, $ 2\\sigma_{m0}^{2} $, and accounting for the bias produced by sampling error in the estimators $ \\Delta M $ and $ \\Delta V $, a lower-bound estimate for the genomic mutation rate is $$ \\widehat{U}_{m i n}=\\frac{2(\\Delta M)^{2}}{\\Delta V(1+C_{\\Delta M})(1+C_{\\Delta V})} $$ where $C_{\\Delta M}$ and $C_{\\Delta V}$ are squared coefficients of sampling variance (ratios of sampling variance to squared estimates) of $\\Delta M$ and $\\Delta V$, e.g., $$ C_{\\Delta M}=[\\mathtt{S E}(\\Delta M)/\\Delta M]^{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "By similar means, it can be shown that an upper-bound estimate of the average mutational effect is given by $$ \\widehat{a}_{m a x}=\\frac{\\Delta V}{2(\\Delta M)(1+C_{\\Delta M})} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The expected value of $ \\widehat{a}_{max} $ is actually $ (1 + C_{m})\\overline{a} $, so the factor by which it over-estimates $ \\overline{a} $ is identical to the factor by which the mutation rate estimator under-estimates U."
+    },
+    {
+      "type": "discussion",
+      "content": "By crossing lines in which mutations have accumulated independently, some insight can be gained into the dominance of mutational effects. For example, starting from a base population that is in mutation-drift equilibrium, the expected difference between mean phenotypes of hybrid progeny and that of their contemporary (mutation-accumulation line) parents after $t$ generations of divergence is $UE(ak)t$ (Lynch 1994). Letting $\\Delta D$ denote an estimate of $UE(ak)$, then $$ \\widehat{k}=\\frac{\\Delta D}{\\Delta M(1+C_{\\Delta M})} $$ provides an estimate of $ \\overline{k} \\cdot [1 + (\\sigma_{a,k}/\\overline{a}\\overline{k})] $, where $ \\sigma_{a,k} $ is the covariance of effects a and k in new mutations. Since the signs of all of the terms in this expression can be positive or negative, $ \\widehat{k} $ can be either an upwardly or downwardly biased estimator of $ \\overline{k} $, the bias being negligible if $ (\\sigma_{a,k}/\\overline{a}\\overline{k}) $ is small. Other approaches to estimating the dominance properties of mutations and their influence on the mutational variance are discussed in Mukai (1979) and Lynch (1994)."
+    },
+    {
+      "type": "discussion",
+      "content": "The preceding expressions can be interpreted as yielding estimates of the genomic mutation rate and mutational effects that would explain the pattern of change in the mean and variance of a trait in a mutation-accumulation experiment if all mutations had constant effects. The formulae are general, in that they can be applied to any quantitative trait, so long as $ \\Delta M \\neq 0 $. In principle, the bias inherent in these estimators can be removed if information is available on the variance of mutational effects, but such information is not ordinarily available. An additional precaution that should be taken in the interpretation of the Bateman-Mukai estimators (Equations 12.6 and 12.7) is that, like all estimators, they are subject to sampling error. Thus, if the estimates $ \\Delta M $ and/or $ \\Delta V $ are not very accurate, then the estimate of $ U_{min} $ can easily be substantially above or below its actual value."
+    },
+    {
+      "type": "discussion",
+      "content": "The derivations presented above apply to diploid sexual lines, but they are readily modified for alternative reproductive systems. For example, for haploids"
+    },
+    {
+      "type": "discussion",
+      "content": "(either sexual or asexual), the expected rate of change of the mean is $U\\overline{a}$, where $U$ is the genomic mutation rate of the haploid individual and $\\overline{a}$ is the mean effect of a mutational change. As noted above, the rate of divergence of haploid line means is $\\sigma_{m0}^{2}/2$. Again letting $\\Delta M$ and $\\Delta V$ denote estimates of the rates of change of mean and variance, estimators for the genomic mutation rate and the average mutational effect are $$ \\widehat{U}_{m i n}=\\frac{(\\Delta M)^{2}}{\\Delta V(1+C_{\\Delta M})(1+C_{\\Delta V})} $$ $$ \\widehat{a}_{m a x}=\\frac{\\Delta V}{\\Delta M(1+C_{\\Delta M})} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "(These are the estimators used in the analysis of Drosophila mutation-accumulation experiments involving haploid chromosomes, although the terms involving sampling error have routinely been ignored.) These same estimators apply to diploid asexual populations, except that Equation 12.9b estimates the upper bound on the average heterozygous effect, $ E[a(1+k)] $."
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, we note that the among-line genetic covariances involving pairs of traits, like the among-line genetic variances, increase proportionally with the genomic mutation rate and generation number. Thus, the pleiotropic effects of mutations on pairs of traits can be quantified by the genetic correlation, $$ r_{m}(x,y)=\\frac{\\Delta C_{x,y}}{\\sqrt{\\Delta V_{x}\\Delta V_{y}}} $$ where $\\Delta C_{x,y}$ is the rate of change in the among-line covariance between traits $x$ and $y$ (Lynch and Hill 1986, Lynch 1994). For diploid sexual lines and for haploid lines, $r_{m}(x,y)$ provides an estimate of the correlation between homozygous effects ($a_{x}$ and $a_{y}$), while for diploid asexuals, it estimates the correlation between heterozygous effects ($[a(1+k)]_{x}$ and $[a(1+k)]_{y}$). In the absence of selection and epistasis, the genetic correlation is expected to remain constant through time, although later estimates are expected to be much more accurate as more mutations are sampled."
+    }
+  ]
+}

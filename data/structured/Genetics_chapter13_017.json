@@ -1,0 +1,39 @@
+{
+  "id": "Genetics_chapter13_017",
+  "metadata": {
+    "chapter": "Genetics_chapter13",
+    "section": "Introduction",
+    "subsections": [
+      "Ascertainment Bias"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter13_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "Ascertainment Bias",
+    "heading_path": [
+      "Introduction",
+      "Ascertainment Bias"
+    ],
+    "display_heading": "Ascertainment Bias"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "The preceding likelihood functions assume that families (or more generally, pedigrees) are chosen at random from the population as a whole. In many cases nonrandom sampling is much more efficient, as even a large random sample can miss pedigrees segregating a rare major gene. When pedigrees are not chosen at random, the likelihood function must be modified to account for how the observed pedigrees were sampled (ascertained). Pedigrees are ascertained through probands, individuals who cause a particular pedigree to enter the sample. As first noted by Weinberg (1927), failure to account for how probands are ascertained can bias the analysis."
+    },
+    {
+      "type": "discussion",
+      "content": "To see the importance of correctly accounting for the sampling scheme, let $ \\ell(z_{i\\cdot} \\mid g_{f}, g_{m}) $ denote the likelihood function for the $ i $th family, conditioned on the major-locus genotypes of the parents (Equation 13.11a). To obtain the unconditional likelihood, we compute the expectation of this likelihood over all possible parental genotypes giving Equation 13.11b, $$ \\ell(z_{i\\cdot})=\\sum_{g_{f},g_{m}}\\ell(z_{i\\cdot}\\mid g_{f},g_{m})\\operatorname*{P r}(g_{f},g_{m}) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "In our previous treatment, we assumed that parents are chosen at random, so that (for a random-mating population) $ \\Pr(g_f, g_m) $ is entirely determined by p, the frequency of allele Q. However, if parents are not chosen at random, $ \\Pr(g_f, g_m) $ is no longer just a function of p, but also of how the parents were sampled."
+    },
+    {
+      "type": "discussion",
+      "content": "Unfortunately, using an incorrect model of ascertainment can create as much bias as performing an analysis without considering ascertainment problems. As certain correction is a very complicated subject, the details of which we will not pursue further. Some basic concepts are reviewed by Morton (1959), Cavalli-Sforza and Bodmer (1971, see their Appendix II), and Elston (1980, 1981a). Recent important papers include Cannings and Thompson (1977), Elston and Sobel (1979), Ewens and Shute (1986), Shute and Ewens (1988a,b), Hodge (1988), and Vieland and Hodge (1995). A nice discussion of some of the subtleties inherent in defining ascertainment schemes is given by Greenberg (1986)."
+    }
+  ]
+}

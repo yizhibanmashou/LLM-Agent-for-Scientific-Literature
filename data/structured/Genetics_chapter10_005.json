@@ -1,0 +1,51 @@
+{
+  "id": "Genetics_chapter10_005",
+  "metadata": {
+    "chapter": "Genetics_chapter10",
+    "section": "Introduction",
+    "subsections": [
+      "Single-generation Analysis"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter10_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "Single-generation Analysis",
+    "heading_path": [
+      "Introduction",
+      "Single-generation Analysis"
+    ],
+    "display_heading": "Single-generation Analysis"
+  },
+  "blocks": [
+    {
+      "type": "definition",
+      "content": "A common short-term test of inbreeding depression involves the comparison of the mean phenotypes of offspring from random matings with those from a specific class of consanguineous mating. In any such analysis, both types of individuals should be raised simultaneously in a random design to eliminate the possibility that the differences in means are a product of the environment. Ideally, the offspring of both types of matings should be derived from several mothers to minimize the importance of maternal effects, and all mothers certainly should be derived from the same base population. With such an experimental design, an approximate $t$ test can be constructed for the null hypothesis of no inbreeding depression. Here we take the null model to be one of purely additive gene action. Consider the situation in which $n$ progeny are assayed from each of $L$ independent families, both in the control and in the inbred population. Under the null hypothesis of no inbreeding depression, the difference between the observed mean phenotypes of noninbred and inbred offspring ($\\Delta\\bar{z} = \\bar{z}_{O} - \\bar{z}_{I}$) has expectation zero, and the observed difference must be evaluated against its sampling variance, the sum of the variances of $\\bar{z}_{O}$ and $\\bar{z}_{I}$. Several factors contribute to this variance, as can be seen by referring to the definition of the sample mean $$ \\bar{z}=\\frac{1}{L n}\\sum_{i=1}^{L}\\sum_{j=1}^{n}(A_{i\\cdot}+a_{i j}+E_{i\\cdot}+e_{i j}) $$ where $ A_{i} $. is the mean genotypic value associated with the $ i $th family, $ a_{ij} $ is the deviation from that value for the $ j $th member of the family, $ E_{i} $. is the maternal effect associated with the $ i $th family, and $ e_{ij} $ is the residual environmental effect on the $ i $th individual."
+    },
+    {
+      "type": "discussion",
+      "content": "We start by considering the control. First, the variance in the control mean caused by environmental effects specific to individuals is $ \\sigma_{e}^{2}/(Ln) $ because all such effects are distributed independently among the $ Ln $ individuals. Second, the variance caused by maternal (or general environmental) effects is $ \\sigma_{E}^{2}/L $; it is only divided by $ L $ because $ L $ mothers contribute to the control mean. Third, because the segregational variance within families in the random-mating base population is $ \\sigma^{2}(a_{ij}) = \\sigma_{A}^{2}/2 $, and the effects of such residual variation are random with respect to individuals, the contribution of the within-family genetic variance to the variance of the mean is $ \\sigma_{A}^{2}/(2Ln) $. (To ease the passage through this difficult area, we give this and a few other results without proof.) Finally, the among-family variance, $ \\sigma^{2}(A_{i.}) $, is also $ \\sigma_{A}^{2}/2 $, and it contributes $ \\sigma_{A}^{2}/(2L) $ to the sampling variance of the control mean. Summing up terms, the variance of the control mean phenotype is $$ \\sigma^{2}(\\bar{z}_{O})=\\frac{1}{L}\\left[\\frac{1}{2}\\left(1+\\frac{1}{n}\\right)\\sigma_{A}^{2}+\\sigma_{E}^{2}+\\frac{\\sigma_{e}^{2}}{n}\\right] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Now consider the situation for a sample of progeny derived by selfing $ L $ mothers with n progeny sampled per mother. The sampling variance of the mean resulting from general and specific environmental effects is exactly the same as in the control. In the first generation of selfing, the within-family segregational variance is also identical to that within the control, $\\sigma_{A}^{2}/2$. However, because of inbreeding, the variance among families is $\\sigma_{A}^{2}$, twice that in the control families, where $\\sigma_{A}^{2}$ is still defined as the genetic variance in the base (control) population. Thus, the expected variance of the mean of the sample of selfed progeny is $$ \\sigma^{2}(\\bar{z}_{S})=\\frac{1}{L}\\left[\\left(1+\\frac{1}{2n}\\right)\\sigma_{A}^{2}+\\sigma_{E}^{2}+\\frac{\\sigma_{e}^{2}}{n}\\right] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The situation for full-sib mating is a little more complicated, but assuming that all progeny within lines are derived from a single brother-sister mating, $$ \\sigma^{2}(\\bar{z}_{FS})=\\frac{1}{L}\\left[\\left(\\frac{7}{8}+\\frac{3}{8n}\\right)\\sigma_{A}^{2}+\\sigma_{E}^{2}+\\frac{\\sigma_{e}^{2}}{n}\\right] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The above expressions are at slight variance with those in Lynch (1988a) and appear to be more accurate."
+    },
+    {
+      "type": "discussion",
+      "content": "Although these formulae give exact expectations of the variances of control and inbred line means under the additive model, they are difficult to implement unless one has prior information on the components of variance in the base population. However, the basic structures of the formulae yield a very useful result. Note that for the cases of selfing and sib-mating, $ \\sigma^{2}(\\Delta\\bar{z}_{S})=\\sigma^{2}(\\bar{z}_{o})+\\sigma^{2}(\\bar{z}_{S}) $ and $ \\sigma^{2}(\\Delta\\bar{z}_{FS})=\\sigma^{2}(\\bar{z}_{o})+\\sigma^{2}(\\bar{z}_{FS}) $, respectively. In both of these cases, provided the sample size within families $ (n) $ is at least two, then $ \\sigma^{2}(\\Delta\\bar{z})\\leq2\\sigma^{2}(z_{O})/L $, where $ \\sigma^{2}(z_{O}) $ is the phenotypic variance within the control line. Thus, a conservative test for inbreeding depression based on a single generation of consanguineous mating employs the test statistic $$ t=\\frac{|\\Delta\\bar{z}|}{\\mathrm{SD}(z_{O})\\sqrt{2/L}} $$ where $SD(z_{O})$ is the observed phenotypic standard deviation in the random-mating population. Sampling distributions of means are usually approximately normally distributed, so $t$ may be treated as $t$-distributed with $L-1$ degrees of freedom."
+    },
+    {
+      "type": "discussion",
+      "content": "In the case of self-compatible plants that produce multiple flowers, there is a simple way to further increase the power of a test of inbreeding depression. For any pair of parent plants (A and B), both reciprocal outcrosses (A × B and B × A) and two inbreds (A × A and B × B) can be produced. Because the two parents contribute equal numbers of genes to both inbred and outbred progeny, variance from general (maternal) environmental effects and parent sampling do not contribute to $\\sigma^{2}(\\Delta\\bar{z})$ in this case, and for any pair of parent individuals, the test statistic $$ \\Delta\\bar{z}_{A,B}=\\frac{\\left(\\bar{z}_{A A}+\\bar{z}_{B B}\\right)-\\left(\\bar{z}_{A B}+\\bar{z}_{B A}\\right)}{2} $$ has an expected value equal to zero under the null hypothesis of no inbreeding depression. If $n$ replicates are assayed within each of the four groups of progeny, the expected sampling variance of $\\Delta\\bar{z}_{A,B}$ is $$ \\sigma^{2}(\\Delta\\bar{z}_{A,B})=\\frac{(\\sigma_{A}^{2}/2)+\\sigma_{e}^{2}}{n} $$ Because the numerator of this expression is less than $\\sigma^{2}(z_{O})$, a conservative test for inbreeding depression associated with any pair of parents is provided by $$ t=\\frac{|\\Delta\\bar{z}_{A,B}|}{\\mathbf{S}\\mathbf{D}(z_{O})/\\sqrt{n}} $$ where $\\mathrm{SD}(z_{O})$ is again the phenotypic standard deviation of outcrossed individuals."
+    }
+  ]
+}

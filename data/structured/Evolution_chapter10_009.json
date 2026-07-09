@@ -1,0 +1,94 @@
+{
+  "id": "Evolution_chapter10_009",
+  "metadata": {
+    "chapter": "Evolution_chapter10",
+    "section": "THE HKA AND MCDONALD-KREITMAN TESTS",
+    "subsections": [
+      "The McDonald-Kreitman (MK) Test: Basics"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter10_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [
+      "inline_3",
+      "inline_4",
+      "inline_5",
+      "inline_9"
+    ],
+    "section_level_1": "THE HKA AND MCDONALD-KREITMAN TESTS",
+    "section_level_2": "The McDonald-Kreitman (MK) Test: Basics",
+    "heading_path": [
+      "THE HKA AND MCDONALD-KREITMAN TESTS",
+      "The McDonald-Kreitman (MK) Test: Basics"
+    ],
+    "display_heading": "The McDonald-Kreitman (MK) Test: Basics",
+    "table_reference_keys": [
+      "Evolution_chapter10:inline_3",
+      "Evolution_chapter10:inline_4",
+      "Evolution_chapter10:inline_5",
+      "Evolution_chapter10:inline_9"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "One of the most straightforward, and widely used, tests of selection was proposed by McDonald and Kreitman (1991a), who contrasted the amounts of polymorphism and divergence between two categories of sites within a single gene (Example 10.1). Typically, these categories are silent versus replacement sites, but the basic logic can be extended to other comparisons. Under the neutral theory, deleterious mutations are assumed to occur, but to then be quickly removed by selection, thus not contributing to either polymorphism or divergence (Figure 7.1). In the standard neutral-theory expressions for the amount of polymorphism $ (4N_{e}\\mu) $ and divergence $ (2t\\mu) $, $ \\mu $ is the effectively neutral mutation rate, which is the rate at which effectively neutral $ (4N_{e}|s|\\ll1) $ mutations arise. While most mutations at silent sites may often be effectively neutral, a much smaller fraction, f, of new mutations at replacement sites are neutral, resulting in a lower effectively neutral mutation rate, $ f\\mu $. Given that f is the fraction of replacement mutations that is effectively neutral, 1 - f is a measure of functional constraints, with values of 1 - f near one ($ f \\simeq 0 $) implying that most new mutations are not effectively neutral (i.e., they are deleterious). A minor bookkeeping detail is that the silent and replacement mutation rates in the MK test refer to the sum over all sites, so that $ \\mu_s = \\mu n_s $ and $ \\mu_a = \\mu f n_a $ are the total neutral mutation rates over the collection of $ n_s $ silent and $ n_a $ replacement sites in the gene of interest (generally $ n_a > 2n_s $, as all second-base and many third-base positions within codons are replacement sites). As before, under the equilibrium neutral model, the expected number of substitutions $ (D_i) $ in site class $ i $ is $ 2t\\mu_i $, while the expected number of segregating sites $ (S_i) $ in a sample of $ n $ sequences is $ a_n\\theta_i $ (Equation 9.21a). Because $ S_i $ is a measure of the amount of polymorphism, we denote it by $ P_i $ to conform to the standard notation for MK tests. Thus, under neutrality, $$ \\frac{D_{a}}{D_{s}}=\\frac{2t\\mu_{a}}{2t\\mu_{s}}=\\frac{2t\\mu f n_{a}}{2t\\mu n_{s}}=f\\frac{n_{a}}{n_{s}},\\quad\\frac{P_{a}}{P_{s}}=\\frac{S_{a}}{S_{s}}=\\frac{a_{n}\\theta_{a}}{a_{n}\\theta_{s}}=\\frac{4N_{e}\\mu f n_{a}}{4N_{e}\\mu n_{s}}=f\\frac{n_{a}}{n_{s}} $$ where the subscript a denotes replacement (amino-acid changing) sites, and s denotes silent sites. Hence, under the equilibrium neutral model, we expect that, on average, $$ D_{a}/D_{s}=P_{a}/P_{s} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "If some replacement sites are under positive selection, because of their rapid sojourn times relative to drift, these will generally contribute very little to the within-species polymorphism (Kimura 1969; Smith and Eyre-Walker 2002; Figure 7.1), but they will result in an excess of replacement substitutions, so that $ D_a/D_s > P_a/P_s $. Similarly, note that $$ \\frac{P_{a}}{D_{a}}=\\frac{a_{n}\\theta_{a}}{2t\\mu_{a}}=\\frac{a_{n}4N_{e}\\mu f n_{a}}{2t\\mu f n_{a}}=\\frac{a_{n}2N_{e}}{t},\\quad\\frac{P_{s}}{D_{s}}=\\frac{a_{n}\\theta_{s}}{2t\\mu_{s}}=\\frac{a_{n}2N_{e}}{t} $$ and thus, under neutrality, we also have $$"
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:10.5]]"
+    },
+    {
+      "type": "proposition",
+      "content": "McDonald and Kreitman provided a more general derivation of the polymorphism ratio in Equation 10.5a, replacing $ 4N_e $ (the equilibrium value) by $ T_{tot} $, the total time on all of the within-species coalescent branches (Chapter 2). By considering the ratio of the number of polymorphic sites in the two categories, the common term $ T_{tot} $ cancels, so that any effects of demography also cancel. Hence, provided the effectively neutral mutation rates remain unchanged, the MK test is unaffected by population demography (Hudson 1993; Nielsen 2001). Because the coalescent structure that determines the amount of polymorphism is explicitly removed by using the $ P_a / P_s $ ratio, there is no assumption that the allele frequencies are in mutation-drift equilibrium nor any assumption about constant population size. This is a very robust feature not shared by most other tests of selection."
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, while Zhai et al. (2008) found that the HKA test was more powerful than the MK test when the equilibrium assumptions hold, the robustness of the MK test (and lack of robustness of the HKA test) when demographic issues are present favors the use of the former. However, as we will see shortly, the MK test is by no means foolproof, as changes in the effective population size can influence the effectively neutral mutation rates (the rate at which alleles with $ 4N_c|s| < 1 $ arise), which can bias some of the comparisons used by the test. Another complication is that mildly deleterious alleles can contribute to within-species polymorphisms, but not to between-species divergence, and thus their presence inflates the polymorphism ratio over the divergence ratio, reducing the power to detect positive selection."
+    },
+    {
+      "type": "discussion",
+      "content": "The MK test is performed by contrasting polymorphism and divergence data at silent and replacement sites for the gene in question. Given that these two ratios are expected to be equal under neutrality, the test uses a simple $ 2 \\times 2 $ contingency table (Example 10.1). The presentation of the data required for the MK test is often referred to as either an MK table or a DPRS table, the latter based on the (clockwise order) of the table's four categories: Divergence (number of substitutions), Polymorphism (number of segregating sites), Replacement, and Silent (or Synonymous):"
+    },
+    {
+      "type": "discussion",
+      "content": "Example 10.1 presented the original data used by McDonald and Kreitman, while Example 10.5 shows how their test can be modified to examine different regions within the same gene."
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:10.6]]"
+    },
+    {
+      "type": "discussion",
+      "content": "While initially presented as a contrast between silent and replacement sites within a single gene, the basic logic of the MK test is not limited to this specific type of comparison. Other types of sites can be contrasted (e.g., noncoding versus silent), and one can easily construct tests involving more than two categories with a simple extension of the contingency table logic underlying MK tests (e.g., Hudson 1993; Templeton 1996; Podlaha et al. 2005; Egea et al. 2008; Chen et al. 2009). Further, as Example 10.5 highlights, one often performs separate MK tests in different regions of the same gene. The general issue of how to detect selection heterogeneity based on a scan of a region is examined by McDonald (1996, 1998) and Goss and Lewontin (1996)."
+    },
+    {
+      "type": "discussion",
+      "content": "A McDonald-Kreitman test will be significant when $ P_a/D_a $ is significantly different from $ P_s/D_s $ (Equation 10.5d). Because it is assumed that the silent-site ratio is unchanged by selection, a significant MK test can occur either through an excess of replacement polymorphisms ($ P_a $ too large relative to $ D_a $ and $ P_s/D_s $) or through an excess of replacement substitutions ($ D_a $ too large relative to $ P_a $ and $ P_s/D_s $). The neutrality index of Rand and Kann (1996), $$ NI=\\frac{P_{a}/D_{a}}{P_{s}/D_{s}}=\\frac{P_{a}D_{s}}{P_{s}D_{a}} $$ indicates which of these two scenarios occurs. Note that NI is simply the odds ratio for the MK contingency table (Jewell 1986). A value greater than one indicates more polymorphic replacement sites than expected, while a value less than one indicates an excess of replacement substitutions. Values less than one suggest that some of the substitutions are adaptive, while values greater than one are suggestive of weakly deleterious segregating alleles."
+    },
+    {
+      "type": "discussion",
+      "content": "Note that NI is not defined if either $ P_{s} $ or $ D_{a} $ are zero, and it is biased if either is small (Stoletzki and Eyre-Walker 2011). Hence, its use is problematic when the gene being considered shows little divergence. When the observed cell numbers in any MK table are small (less than 5), a number of corrections are possible, which basically start by adding an extra count to $ D_{a} $ and $ P_{s} $ (Haldane 1956; Jewel 1986). Stoletzki and Eyre-Walker (2011) noted that these corrections are still biased, and they proposed a direction of selection (DoS) statistic, $$ DoS=\\frac{D_{a}}{D_{a}+D_{s}}-\\frac{P_{a}}{P_{a}+P_{s}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Positive values indicate an excess of replacement substitutions (suggesting adaptive evo- lution), while negative values imply an excess of replacement polymorphisms (suggesting that slightly deleterious alleles are segregating)."
+    },
+    {
+      "type": "discussion",
+      "content": "While the DoS statistic is appropriate when comparing divergence to polymorphism features of genes as a function of some other variable (such as recombination rate or GC content), other approaches have been used when the aim is to return a single summary statistic for the entire genome. A simple average of the NI values over all sampled genes is biased, as genes for which NI is not defined ($ P_{s} $ or $ D_{a} $ are zero) are excluded, and those genes with small values for either $ P_{s} $ or $ D_{a} $ return biased estimates. Example 10.8 illustrates one commonly used approach to avoid these issues, namely, summing over all sites to create a grand MK table for the entire collection of sampled genes."
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:10.7]]"
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:10.8]]"
+    }
+  ]
+}

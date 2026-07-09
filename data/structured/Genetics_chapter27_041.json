@@ -1,0 +1,71 @@
+{
+  "id": "Genetics_chapter27_041",
+  "metadata": {
+    "chapter": "Genetics_chapter27",
+    "section": "Variance-Component Estimation with Complex Pedigrees",
+    "subsections": [
+      "The Sample Variance Expressed as a Quadratic Form"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter27_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Variance-Component Estimation with Complex Pedigrees",
+    "section_level_2": "The Sample Variance Expressed as a Quadratic Form",
+    "heading_path": [
+      "Variance-Component Estimation with Complex Pedigrees",
+      "The Sample Variance Expressed as a Quadratic Form"
+    ],
+    "display_heading": "The Sample Variance Expressed as a Quadratic Form"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "As an introduction to expressing sums of squares as quadratic forms, consider the sample variance for n observations, $$ \\mathbf{Var}(x)=\\frac{1}{n-1}\\sum_{i=1}^{n}(x_{i}-\\overline{x})^{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Define the unit matrix $ J_{n \\times k} $ as an $ n \\times k $ matrix in which every element is unity, e.g., $$ \\mathbf{J}_{n\\times1}=\\binom{1}{\\vdots}{1\\choose n}, 紙 \\mathbf{J}_{2\\times3}=\\binom{1\\quad1\\quad1}{1\\quad1\\quad1} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Likewise, define the matrix $$ \\mathbf{N}=\\frac{1}{n-1}\\left(\\mathbf{I}-\\frac{1}{n}\\mathbf{J}\\right)=\\frac{1}{n-1}\\begin{pmatrix}1-1/n&-1/n&\\cdots&-1/n\\\\ -1/n&1-1/n&\\cdots&-1/n\\\\ \\vdots&\\vdots&\\ddots&\\vdots\\\\ -1/n&-1/n&\\cdots&1-1/n\\end{pmatrix} $$ where J is $ n \\times n $. Noting that $$ \\mathbf{N}\\mathbf{x}=\\frac{1}{n-1}\\left(\\mathbf{x}-\\frac{1}{n}\\mathbf{J}\\mathbf{x}\\right)=\\frac{1}{n-1}\\begin{pmatrix}x_{1}-\\overline{x}\\\\ \\vdots\\\\ x_{n}-\\overline{x}\\end{pmatrix} $$ it follows that $$ \\mathbf{x}^{T}\\mathbf{N}\\mathbf{x}=\\operatorname{Var}(x) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "To see this, observe that $$ \\begin{aligned}\\mathbf{x}^{T}\\mathbf{N}\\mathbf{x}&=\\frac{1}{n-1}\\left(\\begin{array}{l l l}x_{1}&\\cdots&x_{n}\\end{array}\\right)\\begin{pmatrix}x_{1}-\\overline{x}\\\\ \\vdots\\\\ x_{n}-\\overline{x}\\end{pmatrix}\\\\&=\\frac{1}{n-1}\\sum_{i=1}^{n}x_{i}\\left(\\begin{array}{l}x_{i}-\\overline{x}\\end{array}\\right)=\\frac{1}{n-1}\\left(\\sum_{i=1}^{n}x_{i}^{2}-\\overline{x}\\sum_{i=1}^{n}x_{i}\\right)\\\\&=\\frac{1}{n-1}\\sum_{i=1}^{n}\\left(x_{i}-\\overline{x}\\right)^{2}=\\operatorname{Var}(x)\\end{aligned} $$"
+    },
+    {
+      "type": "proposition",
+      "content": "Example 4. Since we have expressed $ \\mathrm{Var}(x) $ as a quadratic form, we can use Equation A3.12a to compute its expected value and Equation A3.12b (under the assumption of normality) to compute its sampling variance. If $ \\mathbf{x} \\sim (\\boldsymbol{\\mu}, \\mathbf{V}) $, the expected value of $ \\mathrm{Var}(x) $ is $$ E[\\operatorname{Var}(x)]=E(\\mathbf{x}^{T}\\mathbf{N}\\mathbf{x})=\\operatorname{tr}(\\mathbf{N}\\mathbf{V})+\\boldsymbol{\\mu}^{T}\\mathbf{N}\\boldsymbol{\\mu} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "To compute this expression, first note from Equation A3.14b that $$ \\boldsymbol{\\mu}^{T}\\mathbf{N}\\boldsymbol{\\mu}=\\frac{1}{n-1}\\sum_{i=1}^{n}(\\mu_{i}-\\overline{\\mu})^{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Likewise, from Equation A3.13b $$ \\mathbf{N V}=\\frac{\\mathbf{V}}{n-1}-\\frac{\\mathbf{J V}}{n(n-1)} $$ which has diagonal elements $$ (\\mathbf{N V})_{i i}=\\frac{1}{n-1}\\left(\\sigma^{2}(z_{i})-\\frac{\\sum_{j}\\sigma(z_{i},z_{j})}{n}\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "After some simplification, we have $$ \\mathbf{tr}(\\mathbf{N}\\mathbf{V})=\\sum_{i=1}^{n}(\\mathbf{N}\\mathbf{V})_{ii}=\\frac{1}{n}\\sum_{i=1}^{n}\\sigma^{2}(z_{i})-\\frac{2}{n(n-1)}\\sum_{i<j}\\sigma(z_{i},z_{j}) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Putting these results together gives $$ E[\\mathrm{Var}(x)]=\\frac{1}{n}\\sum_{i=1}^{n}\\sigma^{2}(z_{i})-\\frac{2}{n(n-1)}\\sum_{i<j}\\sigma(z_{i},z_{j})+\\frac{1}{n-1}\\sum_{i=1}^{n}(\\mu_{i}-\\overline{\\mu})^{2} $$ where $\\overline{\\mu} = \\sum \\mu_i / n$. In the simple situation where all observations have the same mean and variance ($\\mu_i = \\mu, \\sigma^2(z_i) = \\sigma^2$) and are uncorrelated, this reduces to $$ E[\\operatorname{Var}(x)]=\\sigma^{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Turning now to the sample variance of $ \\mathrm{Var}(x) $, if we are willing to assume that x is multivariate normal, then from Equation A3.12b, $$ \\sigma^{2}[\\mathbf{V a r}(x)]=\\sigma^{2}(\\mathbf{x}^{T}\\mathbf{N}\\mathbf{x})=2\\operatorname{t r}\\left[\\mathbf{N}\\mathbf{V}\\mathbf{N}\\mathbf{V}\\right]+4\\mu^{T}\\mathbf{N}\\mathbf{V}\\mathbf{N}\\mu $$"
+    },
+    {
+      "type": "discussion",
+      "content": "If, for example, $ \\mathbf{V} = \\sigma^2 \\mathbf{I} $ (the $ x_i $ are uncorrelated with common variance), then $$ \\begin{aligned}\\mathbf{N V N V}=\\sigma^{4}\\mathbf{N N}&=\\frac{\\sigma^{4}}{(n-1)^{2}}\\left(\\mathbf{I}-\\frac{1}{n}\\mathbf{J}_{n\\times n}\\right)\\left(\\mathbf{I}-\\frac{1}{n}\\mathbf{J}_{n\\times n}\\right)\\\\&=\\frac{\\sigma^{4}}{(n-1)^{2}}\\left(\\mathbf{I}-\\frac{2}{n}\\mathbf{J}_{n\\times n}+n^{-2}\\mathbf{J}_{n\\times n}\\mathbf{J}_{n\\times n}\\right)\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The ijth element in $\\mathbf{J}_{n\\times n}\\mathbf{J}_{n\\times n}$ is $n$, giving $\\mathbf{J}_{n\\times n}^{2}=n\\mathbf{J}_{n\\times n}$. Hence, the ith diagonal element of NVNV is $$ \\frac{\\sigma^{4}}{(n-1)^{2}}\\left(1-\\frac{2}{n}+n^{-2}n\\right)=\\frac{\\sigma^{4}}{n(n-1)} $$ giving $ \\mathrm{tr}(\\mathbf{N}\\mathbf{V}\\mathbf{N}\\mathbf{V}) = \\sigma^{4}/(n-1) $. When all of the means are equal, it follows that $ \\mathbf{N}\\boldsymbol{\\mu} = \\mathbf{0} $ and the second term in Equation A3.12b vanishes, giving $$ \\sigma^{2}[\\operatorname{Var}(x)]=\\frac{2\\sigma^{4}}{n-1} $$"
+    }
+  ]
+}

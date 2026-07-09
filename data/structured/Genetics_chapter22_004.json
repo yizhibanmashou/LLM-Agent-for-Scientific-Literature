@@ -1,0 +1,75 @@
+{
+  "id": "Genetics_chapter22_004",
+  "metadata": {
+    "chapter": "Genetics_chapter22",
+    "section": "Genotype $ \\times $ Environment Interaction",
+    "subsections": [
+      "GENETIC CORRELATION ACROSS TWO ENVIRONMENTS"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter22_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Genotype $ \\times $ Environment Interaction",
+    "section_level_2": "GENETIC CORRELATION ACROSS TWO ENVIRONMENTS",
+    "heading_path": [
+      "Genotype $ \\times $ Environment Interaction",
+      "GENETIC CORRELATION ACROSS TWO ENVIRONMENTS"
+    ],
+    "display_heading": "GENETIC CORRELATION ACROSS TWO ENVIRONMENTS"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Falconer (1952) had the useful insight that the same character measured in two different environments can be treated as two different traits. Genotype $ \\times $ environment interaction can then be detected from the genetic correlation between the two traits. If the family genetic effects do not change across environments or if they are related such that performance of any genotype in environment 2 is proportional to that in environment 1 (Figures 22.1A,B), the genetic correlation of family members across environments is equal to one. The null hypothesis of no significant genotype $ \\times $ environment interaction is rejected whenever the genetic correlation across environments is significantly less than one."
+    },
+    {
+      "type": "definition",
+      "content": "To achieve a more explicit understanding of the relationship between the genetic correlation across environments and the amount of genotype $ \\times $ environment interaction, a clear description of the linear model is required. Throughout this chapter, we use a liberal definition of “genotype,” letting j denote an average member of the jth genetic group, where the group may consist of genetically identical individuals (e.g., members of a clone or an inbred line) or of members of the same family (e.g., paternal half sibs). From Equation 22.1, the phenotypes of two individuals (k and l) of genetic group j, each in a different environment (1 and 2), can be represented as $$ z_{1j k}=\\mu+G_{j}+I_{1j}+E_{1}+e_{1j k} $$ $$ z_{2j l}=\\mu+G_{j}+I_{2j}+E_{2}+e_{2j l} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Here, to simplify notation, we drop the subscript g on the general environmental effect $ E_{g} $. We also use e rather than $ E_{s} $ to denote the residual effect, since the former potentially contains some genetic as well as environmental sources of variation when the “genotype” is a collection of related, but not identical, individuals."
+    },
+    {
+      "type": "discussion",
+      "content": "Using the definitions given in the introduction, this model can be simplified in two ways. First, since $ E_1 = \\mu_1 - \\mu $, $ E_2 = \\mu_2 - \\mu $, and $ \\mu = (\\mu_1 + \\mu_2)/2 $, it follows that $ E_1 = -E_2 $. Thus, the macroenvironmental effects can be denoted by $ \\pm E $. Second, since $ I_{1j} = \\mu_{1j} - \\mu - G_j - E $, $ I_{2j} = \\mu_{2j} - \\mu - G_j + E $, and $ G_j = [(\\mu_{1j} + \\mu_{2j})/2] - \\mu $, it follows that $ I_{1j} = -I_{2j} $, so the interaction effects for specific genetic groups in the alternate environments can be denoted as $ \\pm I_j $. With these modifications, the preceding equations become $$ z_{1j k}=\\mu+G_{j}+I_{j}+E+e_{1j k} $$ $$ z_{2j l}=\\mu+G_{j}-I_{j}-E+e_{2j l} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The fundamental properties of this linear model can be summarized as follows: (1) $ \\mu $ is the grand mean of all genotypes across both environments; (2) the genetic (family) effects are assumed to be random variables with expectation zero and variance $ \\sigma_{G}^{2} $; (3) for a given environment, the interaction effects are random variables with expectation zero and variance $ \\sigma_{I}^{2} $; (4) within genetic groups, the mean interaction effect is constrained to be zero; (5) genotypic values and interaction effects may be correlated with covariance $ \\sigma_{G,I} $ (Figure 22.1B provides an example of such covariance, genotypes with higher values of G having higher values of I); (6) the average value of the two environmental effects is zero; and (7) the residual deviations within environments have expectation zero and variance $ \\sigma_{e}^{2} $ for all genetic groups."
+    },
+    {
+      "type": "discussion",
+      "content": "Within each environment, the genotypic effects are $ G_{1j} = G_j + I_j $ and $ G_{2j} = G_j - I_j $. Thus, the variances among genotypic group (typically family) effects within each environment and the covariance across environments are $$ \\sigma_{G}^{2}(1)=\\sigma^{2}(G_{j}+I_{j})=\\sigma_{G}^{2}+\\sigma_{I}^{2}+2\\sigma_{G,I} $$ $$ \\sigma_{G}^{2}(2)=\\sigma^{2}(G_{j}-I_{j})=\\sigma_{G}^{2}+\\sigma_{I}^{2}-2\\sigma_{G,I} $$ $$ \\sigma_{G}(1,2)=\\sigma[(G_{j}+I_{j}),(G_{j}-I_{j})]=\\sigma_{G}^{2}-\\sigma_{I}^{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "We emphasize that here and below, $ \\sigma_{G}^{2}(1) $, $ \\sigma_{G}^{2}(2) $, and $ \\sigma_{G}(1,2) $ refer to variances and covariances of family (genotypic group) means, not to genetic variances at the levels of individuals."
+    },
+    {
+      "type": "discussion",
+      "content": "Three distinctive features emerge from these expressions. First, within any environment, the portion of the genotypic variance that is responsive to environmental change ($ \\sigma_{I}^{2} $) is confounded with the variance of genotypic means across environments ($ \\sigma_{G}^{2} $). That is, in a single-environment setting, the contributions of $ \\sigma_{G}^{2} $ and $ \\sigma_{I}^{2} $ to the genetic variance cannot be isolated (since they appear as a sum). Second, the genetic variance differs between the two environments whenever there is a covariance between mean effects and interaction effects of the genetic groups ($ \\sigma_{G,I} \\neq 0 $). In the context of Figure 22.1, this requires that the slopes and elevations of genotypic reaction norms be correlated. Third, from the variances of family means within environments and the covariance of family means across environments, the genetic variance and interaction variance can be isolated, as $$ \\sigma_{G}^{2}=\\frac{1}{2}\\left[\\sigma_{G}(1,2)+\\frac{\\sigma_{G}^{2}(1)+\\sigma_{G}^{2}(2)}{2}\\right] $$ $$ \\sigma_{I}^{2}=\\frac{1}{2}\\left[\\frac{\\sigma_{G}^{2}(1)+\\sigma_{G}^{2}(2)}{2}-\\sigma_{G}(1,2)\\right] $$ $$ \\sigma_{G,I}=\\frac{\\sigma_{G}^{2}(1)-\\sigma_{G}^{2}(2)}{4} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Now recall the rule that an among-family variance is equivalent to the phenotypic covariance of individuals within families (Chapter 18). Thus, additive genetic variance contributes to $ \\sigma_{G}^{2}(1) $ and $ \\sigma_{G}^{2}(2) $ in the amounts $ 2\\Theta\\sigma_{A}^{2}(1) $ and $ 2\\Theta\\sigma_{A}^{2}(2) $, where $ \\Theta $ is the coefficient of coancestry among individuals within families (or more generally, in the group of individuals chosen). Similarly, additive genetic covariance contributes to $ \\sigma_{G}(1,2) $ in the amount $ 2\\Theta\\sigma_{A}(1,2) $. Thus, since all three contributions are proportional to $ 2\\Theta $, ignoring nonadditive genetic effects, the additive genetic correlation across environments is defined to be $$ \\rho_{x}=\\frac{\\sigma_{A}(1,2)}{\\sigma_{A}(1)\\sigma_{A}(2)}=\\frac{\\sigma_{G}(1,2)}{\\sigma_{G}(1)\\sigma_{G}(2)} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "This expression shows that the genetic correlation across environments can be estimated directly using measures of the among-family variances, $ \\sigma_{G}^{2}(1) $ and $ \\sigma_{G}^{2}(2) $, and covariance, $ \\sigma_{G}(1,2) $."
+    },
+    {
+      "type": "discussion",
+      "content": "Substituting Equations 22.4a-c, $ \\rho_{\\times} $ can be expressed in causal terms as $$ \\rho_{\\times}=\\frac{\\sigma_{G}^{2}-\\sigma_{I}^{2}}{\\sqrt{(\\sigma_{G}^{2}+\\sigma_{I}^{2})^{2}-4\\sigma_{G,I}^{2}}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "This expression helps clarify a number of issues. First, in the absence of genotype $ \\times $ environment interaction, $ \\sigma_{I}^{2} = \\sigma_{G,I} = 0 $, and $ \\rho_{\\times} = 1 $. Second, if there is a perfect negative correlation between rankings of genetic groups in the two environments such that all families have the same mean performance across environments ($ \\sigma_G^2 = 0 $), then $ \\sigma_{G,I} $ must also be zero, and $ \\rho_\\times = -1 $. Third, from Equations 22.4a,b it can be seen that when the among-family variances in the two environments are the same [i.e., $ \\sigma_G^2(1) = \\sigma_G^2(2) $], then $ \\sigma_{G,I} = 0 $, reducing Equation 22.7a to $$ \\rho_{\\times}=\\frac{\\sigma_{G}^{2}-\\sigma_{I}^{2}}{\\sigma_{G}^{2}+\\sigma_{I}^{2}} $$ and implying that genotype $ \\times $ environment interaction reduces the genetic correlation below +1. If, on the other hand, $ \\sigma_G^2(1) \\neq \\sigma_G^2(2) $, $ \\rho_\\times $ can equal one even when there is significant interaction variance. This requires only that the average effects of genotypes be correlated perfectly with their interaction effects, i.e., $ \\sigma_{G,I} = \\sigma_G \\sigma_I $, or equivalently, $ I_j = b \\cdot G_j $, where $ b $ is a constant independent of genotype."
+    },
+    {
+      "type": "discussion",
+      "content": "In summary, a genetic correlation across environments significantly less than one cannot exist in the absence of genotype $ \\times $ environment interaction. On the other hand, a genetic correlation across environments equal to one need not imply an absence of genotype $ \\times $ environment interaction, although when $ \\rho_{x}=1 $, any genotype $ \\times $ environment interaction will most likely be a simple scale effect. In practical applications, such an effect can be verified by simply transforming the data prior to analysis so that the among-family variances in both environments are equal."
+    }
+  ]
+}

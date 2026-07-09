@@ -1,0 +1,111 @@
+{
+  "id": "Evolution_chapter20_007",
+  "metadata": {
+    "chapter": "Evolution_chapter20",
+    "section": "MODIFYING THE BREEDER'S EQUATION FOR NATURAL POPULATIONS",
+    "subsections": [
+      "Complications in the Absence of Environmental Change"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter20_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "MODIFYING THE BREEDER'S EQUATION FOR NATURAL POPULATIONS",
+    "section_level_2": "Complications in the Absence of Environmental Change",
+    "heading_path": [
+      "MODIFYING THE BREEDER'S EQUATION FOR NATURAL POPULATIONS",
+      "Complications in the Absence of Environmental Change"
+    ],
+    "display_heading": "Complications in the Absence of Environmental Change"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "How these complications bias the breeder's equation was examined by van Tienderen and de Jong (1994), with similar analysis (under a multivariate breeder's equation framework) by Hadfield (2008). van Tienderen and de Jong assumed complete additivity (no dominance or epistasis), multivariate normality, and linear parent-offspring regressions. As shown in Figure 20.3, they used a path analysis argument (LW Appendix 2) to explore the relationship between the selection response (R) and the selection differential (S) when complications such as selection on correlated characters and genotype-environment correlations exist."
+    },
+    {
+      "type": "proposition",
+      "content": "To proceed, we decompose the phenotype, z, as $$ z=A+E+e_{s} $$ where $A$ is the additive genetic value, $E$ is the general environmental effect (for example, the average impact of a particular macrohabitat), and $e_s$ is the special (or residual) environmental effect unique to each individual (LW Chapter 6). By construction, $e_s$ is independent of the other variables (meaning that the total environmental variance is $\\sigma_E^2 + \\sigma_{e_s}^2$), but $A$ and $E$ may be correlated. Consider Figure 20.3, which shows possible paths of how the environmental value, $E$, the genotypic value, $A$, and the phenotypic value, $z$, can influence fitness. Figure 20.3A shows the breeder's equation assumption that $E$ and $A$ influence fitness only through the phenotypic value, $z$."
+    },
+    {
+      "type": "discussion",
+      "content": "Figure 20.3B shows the general situation where E and A can influence fitness independent of (or, in addition to) their effects on z, as can occur if the focal trait is phenotypically and/or genetically correlated with other characters that are under selection. If fitness is entirely determined by the phenotypic value of the focal trait, there should be no expected differences in the fitness of individuals with the same phenotypic value, z, but different underlying genetic (A) or environmental values (E). Suppose two individuals both have z = 100 and $ e_s = 0 $, but individual 1 has A = 80 and E = 20, while individual 2 arrives at this phenotypic value by A = 10 and E = 90. If selection is entirely on the phenotype, both individuals have the same expected fitness, but their expected fitnesses may differ if there is additional selection on A and/or E beyond that based on direct selection on z. For example, if correlated characters are under selection, then individuals with the same z value can have different fitnesses due to correlations between their A and/or E values with the genetic and/or environmental values at other traits that influence fitness."
+    },
+    {
+      "type": "discussion",
+      "content": "To quantify the effects from these different paths influencing fitness, van Tienderen and de Jong considered the multiple regression of relative fitness, w, as a function of z, A, and E, $$ w=\\alpha+\\beta_{z}z+\\beta_{A}A+\\beta_{E}E+\\epsilon $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The partial regression coefficients ($ \\beta $) represent the expected change in fitness when holding the other variables constant (LW Chapter 8). For example, $ \\beta_z $ is the expected change in fitness from a unit change in the phenotype, z, holding the other variables (A and E) constant. In particular, if selection is entirely based on phenotypic value, then $ \\beta_A = \\beta_E = 0 $, because once we have controlled for z, A and E will have no effect on fitness. As shown by Queller (1992a), the condition for this to occur is that the partial covariances (given z) of breeding value and fitness, and of environmental value and fitness, are both zero, $$ \\sigma(A,w\\mid\\mid z)=\\sigma(E,w\\mid\\mid z)=0 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "We return to this observation in the next section. The notation $ \\sigma(x, y \\mid \\mid z) $ is used to remind the reader that the partial covariance of $ x $ and $ y $ (given $ z $) can be different from $ \\sigma(x, y \\mid z) $, which is the covariance of $ x $ and $ y $ conditional on $ z $ (see Example 6.8)."
+    },
+    {
+      "type": "discussion",
+      "content": "A notational aside is that we use $ \\beta $ for the partial regression coefficients with respect to fitness (a special case of which is $ \\beta_i $, the selection gradient on trait $ i $ in the multivariate breeder's equation, e.g., Equation 20.1a), and we use $ b $ in the next section for the slopes of the univariate fitness regressions based on either $ A $, $ E $, or $ z $ separately. For example, for the univariate regression $ w = 1 + b_z z + \\epsilon $, the regression slope is $ b_z = \\sigma(z, w)/\\sigma_z^2 $, while $ \\beta_z $ denotes the partial regression slope on fitness when $ A $ and $ E $ are also included (Equation 20.7a). As developed in the next section, comparing the appropriate univariate ($ b $) and partial ($ \\beta $) regression slopes provides information on whether unmeasured variables are potentially influencing response. From multiple regression theory (LW Chapter 8), the partial regression coefficients in Equation 20.7a satisfy the matrix equation $$ \\begin{pmatrix}\\sigma(w,z)\\\\\\sigma(w,A)\\\\\\sigma(w,E)\\end{pmatrix}=\\begin{pmatrix}S\\\\\\boldsymbol{R}\\\\\\sigma(w,E)\\end{pmatrix}=\\begin{pmatrix}\\sigma_{z}^{2}&\\sigma(z,A)&\\sigma(z,E)\\\\\\sigma(z,A)&\\sigma_{A}^{2}&\\sigma(E,A)\\\\\\sigma(z,E)&\\sigma(E,A)&\\sigma_{E}^{2}\\end{pmatrix}\\begin{pmatrix}\\beta_{z}\\\\\\beta_{A}\\\\\\beta_{E}\\end{pmatrix} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The left-most vector contains the covariances between relative fitness, w, and the predictor variables $ (z, A, \\text{ and } E) $, with $ S = \\sigma(w, z) $ following from the Robertson-Price identity"
+    },
+    {
+      "type": "proposition",
+      "content": "(Equation 6.10) and $ R = \\sigma(w, A) $ from Robertson’s secondary theorem (his 1966 version; Equation 6.25a). The $ 3 \\times 3 $ matrix on the right-hand side of Equation 20.8a is the variance-covariance matrix for the three predictor variables, where the covariance $$ \\sigma(z,A)=\\sigma(A+E+e_{s},A)=\\sigma_{A}^{2}+\\sigma(E,A) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "In a similar fashion, one can show that $ \\sigma(z, E) = \\sigma_E^2 + \\sigma(E, A) $. Using these identities, and considering the first two rows of Equation 20.8a after multiplying out the matrix product, returns the within-generation change as $$ \\begin{aligned}S&=\\sigma_{z}^{2}\\beta_{z}+\\sigma(z,A)\\beta_{A}+\\sigma(z,E)\\beta_{E}\\\\&=\\sigma_{z}^{2}\\beta_{z}+\\left[\\sigma_{A}^{2}+\\sigma(E,A)\\right]\\beta_{A}+\\left[\\sigma_{E}^{2}+\\sigma(E,A)\\right]\\beta_{E}\\\\&=\\sigma_{z}^{2}\\beta_{z}+\\sigma_{A}^{2}\\beta_{A}+\\sigma_{E}^{2}\\beta_{E}+\\sigma(E,A)(\\beta_{A}+\\beta_{E})\\\\ \\end{aligned} $$ and the response as $$ \\begin{aligned}R&=\\sigma(A,z)\\beta_{z}+\\sigma_{A}^{2}\\beta_{A}+\\sigma(E,A)\\beta_{E}\\\\&=\\left[\\sigma_{A}^{2}+\\sigma(E,A)\\right]\\beta_{z}+\\sigma_{A}^{2}\\beta_{A}+\\sigma(E,A)\\beta_{E}\\\\&=\\sigma_{A}^{2}\\beta_{z}+\\sigma_{A}^{2}\\beta_{A}+\\sigma(E,A)(\\beta_{z}+\\beta_{E})\\\\ \\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "If there are no genotype-environment correlations $ [\\sigma(E,A)=0] $, then $$ S=\\sigma_{z}^{2}\\beta_{z}+\\sigma_{A}^{2}\\beta_{A}+\\sigma_{E}^{2}\\beta_{E} $$ and $$ R=\\sigma_{A}^{2}(\\beta_{z}+\\beta_{A}) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "It is worth noting the connection between the expression for $S$ from Equation 20.10a (based on following a single focal trait) and Equation 20.1a, where the selection differential on a focal trait is expressed in terms of direct selection on that trait ($\\beta_1$) plus indirect selection from a correlated trait under selection ($\\beta_2 \\neq 0$). If we equating the two equations, we obtain $$ S=\\sigma^{2}(z_{1})\\beta_{1}+\\sigma(z_{1},z_{2})\\beta_{2}=\\sigma_{z}^{2}\\beta_{z}+\\sigma_{A}^{2}\\beta_{A}+\\sigma_{E}^{2}\\beta_{E} $$ where trait 2 (with a value of $ z_2 $) is the unmeasured correlated trait and trait 1 (with a value of $ z_1 = z $) is the focal trait. In the notation of Equation 20.1a, $ \\sigma^2(z_1)\\beta_1 = \\sigma_z^2\\beta_z $, giving $$ \\sigma(z_{1},z_{2})\\beta_{2}=\\sigma_{A}^{2}\\beta_{A}+\\sigma_{E}^{2}\\beta_{E} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Writing $ z_{1}=A+E $, we have $$ \\sigma(z_{1},z_{2})\\beta_{2}=\\sigma(A+E,z_{2})\\beta_{2}=\\sigma(A,z_{2})\\beta_{2}+\\sigma(E,z_{2})\\beta_{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "If we match the terms in Equations 20.11b and 20.12a, $$ \\sigma(A,z_{2})\\beta_{2}=\\sigma_{A}^{2}\\beta_{A}\\qquad\\mathrm{a n d}\\qquad\\sigma(E,z_{2})\\beta_{2}=\\sigma_{E}^{2}\\beta_{E} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Under the formulation for $S$ given by Equation 20.9a, selection on any phenotypically correlated traits appears as a nonzero value of $\\beta_A$ (if the phenotypic correlations are, at least in part, due to correlated breeding values) and/or $\\beta_E$ (if the correlations are due, at least in part, to shared environmental values). Turning to the response, Equation 20.9b is much more general than the single correlated-trait expression given by Equation 20.1b, as $\\beta_A$ and $\\beta_E$ encompass all of the effects of any genetically and/or phenotypically correlated traits."
+    },
+    {
+      "type": "discussion",
+      "content": "Further insight into the generalized response when no genotype-environment correlations are present follows if we first rearrange Equation 20.10a to isolate $ \\sigma_z^2 \\beta_z $ and then multiply both sides of Equation 20.10a by $ h^2 $, which yields $$ h^{2}\\sigma_{z}^{2}\\beta_{z}=\\sigma_{A}^{2}\\beta_{z}=h^{2}\\left[S-\\left(\\sigma_{A}^{2}\\beta_{A}+\\sigma_{E}^{2}\\beta_{E}\\right)\\right] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Substituting this expression for $ \\sigma_{A}^{2}\\beta_{z} $ into Equation 20.10b yields $$ R=h^{2}S+\\sigma_{A}^{2}(1-h^{2})\\beta_{A}-h^{2}\\sigma_{E}^{2}\\beta_{E} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Any extra (positive) selection on additive genetic values, $ \\beta_A > 0 $ (due to selection on genetically correlated traits), inflates the selection response over the value predicted by the breeder's equation, while extra (positive) selection on environmental values ($ \\beta_E > 0 $) decreases the response. The response is similarly decreased when $ \\beta_A < 0 $."
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, following this same approach, Equations 20.9a and 20.9b yield a more general response (when $ \\sigma(E, A) \\neq 0 $) of $$ R=h^{2}S+\\sigma_{A}^{2}(1-h^{2})\\beta_{A}-h^{2}\\sigma_{E}^{2}\\beta_{E}+\\sigma(E,A)\\left[\\beta_{z}-h^{2}\\beta_{A}+(1-h^{2})\\beta_{E}\\right] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "These expressions can be further simplified if selection acts only on the phenotype of the character being considered. In this case, $ \\beta_A = \\beta_E = 0 $, and Equation 20.9a reduces to $ S = \\sigma_z^2 \\beta_z $, implying that $ \\beta_z = S / \\sigma_z^2 $. Substituting these values into Equation 20.9b gives the response as $$ R=\\beta_{z}\\left[\\sigma_{z}^{2}+\\sigma(E,A)\\right]=\\left(h^{2}+\\frac{\\sigma(E,A)}{\\sigma_{z}^{2}}\\right)S $$ which (as expected) reduces to the breeder's equation when there is no genotype-environment correlation. As discussed in Chapter 15, unless the correlation between E and A is perfect, the component of response from $ \\sigma(E, A) $ is transient, decaying to zero once selection stops."
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, these expressions provide insight into a key difference between artificial and natural selection. Under artificial selection, it is generally assumed that individual fitness is entirely based on the phenotype of the character of interest, specifically those phenotypes chosen by the breeder. In this case, the partial regression coefficients of fitness on genotype and environmental values are zero, as the phenotype entirely determines fitness. In natural populations, however, we do not have this luxury, and another possibility is that there is no natural selection on the character of interest (i.e., its phenotype, by itself, has no effect on fitness, meaning that $ \\beta_z = 0 $), but rather that selection occurs on characters correlated with the one we are following. If these traits under selection are only connected to the focal trait through its breeding value (i.e., there is no environmental correlation between characters), then $ \\beta_A \\neq 0 $ while $ \\beta_z = \\beta_E = 0 $. In this case, using Equation 20.9a to express $ \\beta_A $ in terms of S returns the response as $$ R=\\beta_{A}\\sigma_{A}^{2}=S\\left(\\frac{\\sigma_{A}^{2}}{\\sigma_{A}^{2}+\\sigma(E,A)}\\right) $$ which reduces to R = S in the absence of a genotype-environment correlation for the focal trait. The reason for this strong response is that (in this extreme setting) all of the selection is on the breeding value of the trait. With selection on phenotypes (the breeder's equation), only a fraction $ (h^{2}) $ translates into selection on breeding values."
+    },
+    {
+      "type": "discussion",
+      "content": "A final possibility is that the only correlation between features influencing fitness and our focal character is through shared environmental effects, giving $ \\beta_E \\neq 0 $, while $ \\beta_A = \\beta_z = 0 $. In this case, using Equation 20.9b, the response becomes $$ R=\\beta_{E}\\sigma(E,A)=S\\left(\\frac{\\sigma(E,A)}{\\sigma_{E}^{2}+\\sigma(E,A)}\\right) $$ which equals zero unless a genotype-environment correlation exists. Again, in the absence of a perfect correlation between E and A, this response is transient (Chapter 15)."
+    }
+  ]
+}

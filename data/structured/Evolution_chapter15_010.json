@@ -1,0 +1,107 @@
+{
+  "id": "Evolution_chapter15_010",
+  "metadata": {
+    "chapter": "Evolution_chapter15",
+    "section": "SELECTION IN THE PRESENCE OF HERITABLE MATERNAL EFFECTS",
+    "subsections": [
+      "Selection Response Under Falconer's Dilution Model"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter15_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "SELECTION IN THE PRESENCE OF HERITABLE MATERNAL EFFECTS",
+    "section_level_2": "Selection Response Under Falconer's Dilution Model",
+    "heading_path": [
+      "SELECTION IN THE PRESENCE OF HERITABLE MATERNAL EFFECTS",
+      "Selection Response Under Falconer's Dilution Model"
+    ],
+    "display_heading": "Selection Response Under Falconer's Dilution Model"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "One of the simplest models of maternal effects (motivated by the inheritance of litter size in mice) is that of Falconer (1965): the value of the focal trait in the mother determines M (reviewed in LW Chapter 23). Falconer reasoned that offspring from large litters receive less maternal resources per individual than those in smaller litters, and that this can have carryover effects when they become mothers themselves."
+    },
+    {
+      "type": "discussion",
+      "content": "Assume that the maternal contribution is a linear function of the maternal phenotype, $ z_{mo} $ (the size of her litter), so that $ M = mz_{mo} $ and, upon substitution of this result into Equation 15.20a, the phenotypic decomposition becomes $$ z=G+M+e=G+m z_{m o}+e $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Conceivably, $M$ could be a nonlinear function of $z_{moi}$, but linearity is assumed for tractability. Equation 15.21 is called the dilation model, because the effect of the maternal phenotype becomes diluted over successive generations (for $|m| < 1$). The parameter $m$ can be regarded as the partial regression coefficient (i.e., holding the offspring's genotypic value, $G$, constant) of offspring phenotype on maternal phenotype and can be estimated as the difference between slopes of the maternal- and paternal-offspring regressions (LW Equation 23.13)."
+    },
+    {
+      "type": "discussion",
+      "content": "Negative estimates of m have been reported: values of -0.15 for litter size in mice (Falconer 1965); of -0.58 and -0.40 for age of maturity in two replicate lines of the springtail insect, Orchesella cincta (Janssen et al. 1988); of -0.25 for clutch size in the collared flycatcher, Ficedula albicollis (Schluter and Gustafsson 1993); and of -0.29 for juvenile growth rate in the red squirrel Tamiasciurus hudsonicus (McAdam and Boutin 2003)."
+    },
+    {
+      "type": "discussion",
+      "content": "If we further assume that the joint distribution of phenotypes and breeding values in parents and offspring is multivariate normal and there is an absence of epistasis, the expected phenotypic value of an offspring whose mother has a phenotypic value of $ z_{mo} $ is $$ E\\left[z_{o}\\mid A_{mo},A_{fa},z_{mo}\\right]=\\frac{A_{mo}}{2}+\\frac{A_{fa}}{2}+m z_{mo} $$ where $ A_{mo} $ and $ A_{fa} $ are the maternal and paternal breeding values. Averaging over the selected parents, the mean in generation t becomes $$ \\mu_{z}(t+1)=\\frac{A_{fa}^{*}(t)+A_{mo}^{*}(t)}{2}+m\\mu_{mo}^{*}(t) $$ where $ A_{fa}^{*}(t) $ and $ A_{mo}^{*}(t) $ are the mean breeding values of the selected parents and $ \\mu_{mo}^{*}(t) $ is the mean phenotypic value of selected mothers in generation t. The first term is the expected breeding value in the offspring, $ \\mu_{A}(t) $, and the second term is the additional maternal contribution."
+    },
+    {
+      "type": "discussion",
+      "content": "To proceed in using this model to predict response, we first use the regression of breeding value on phenotype $$ A=\\mu_{A}+b_{A|z}\\left(z-\\mu_{z}\\right)+e $$"
+    },
+    {
+      "type": "discussion",
+      "content": "In particular, we can rewrite $ A_{mo}^{*}(t) = E_{s}[A_{mo}] $, the expected breeding values in selected mothers, as $$ \\begin{aligned}A_{mo}^{*}(t)&=E_{s}[A_{mo}(t)]=E_{s}\\left[\\mu_{A}(t)+b_{A|z}\\left[z_{mo}-\\mu_{z}(t)\\right]+e\\right]\\\\&=\\mu_{A}(t)+b_{A|z}S_{mo}(t)\\end{aligned} $$ where $ E_s[\\cdot] $ denotes the expected value over the selected parents and $ S_{mo} $ denotes the selection differential on the trait in mothers in generation $ t $. A similar expression for $ A_a^*(t) $ includes the selection differential, $ S_{fa} $, on fathers. In the absence of maternal effects, $ b_{A|z} = h^2 $. However, the dilution model generates an equilibrium covariance between $ M $ and $ A $, specifically $ \\sigma_{A,M} = m \\sigma_A^2 / (2 - m) $, which in turn alters the covariance between $ z $ and $ A $ (Falconer 1965; Kirkpatrick and Lande 1989; see LW Equation 23.12a). The resulting regression slope (at equilibrium) is $$ b_{A|z}=h^{2}\\frac{2}{2-m} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The expected breeding value in the offspring is the average of the breeding values of the selected parents, which (from Equations 15.22c and 15.23a) yields $$ \\mu_{A}(t+1)=\\frac{A_{m o}^{*}(t)+A_{f a}^{*}(t)}{2}=\\mu_{A}(t)+\\frac{h^{2}}{2-m}\\Biggl(S_{m o}(t)+S_{f a}(t)\\Biggr) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Substituting this result for the average of the breeding values in Equation 15.22b and using $ \\mu_{mo}^{*}(t) = \\mu_{z}(t) + S_{mo}(t) $ yields $$ \\mu_{z}(t+1)=\\mu_{A}(t)+\\frac{h^{2}}{2-m}\\Biggl(S_{m o}(t)+S_{f a}(t)\\Biggr)+m\\Biggl(\\mu_{z}(t)+S_{m o}(t)\\Biggr) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The change in population mean over one generation, $ \\Delta\\mu_{z}(t) $, is thus $$ \\begin{align*}\\Delta\\mu_{z}(t)=\\mu_{z}(t+1)-\\mu_{z}(t)=&\\Bigg[\\mu_{A}(t)+\\frac{h^{2}}{2-m}\\bigg(S_{mo}(t)+S_{fa}(t)\\bigg)+m\\bigg(\\mu_{z}(t)+S_{mo}(t)\\bigg)\\Bigg]\\\\-\\Bigg[\\mu_{A}(t-1)+\\frac{h^{2}}{2-m}\\bigg(S_{mo}(t-1)+S_{fa}(t-1)\\bigg)+m\\bigg(\\mu_{z}(t-1)+S_{mo}(t-1)\\bigg)\\Bigg]\\end{align*} $$ which, using Equation 15.23b, simplifies to $$ \\begin{align*}\\Delta\\mu_z(t)={h^2\\over2-m}\\Big(S_{mo}(t)+S_{fa}(t)\\Big)+m S_{mo}(t)+m\\Big(\\Delta\\mu_z(t-1)-S_{mo}(t-1)\\Big)\\end{align*} $$ This result can be interpreted as follows: the first two terms are the change in character value resulting from selection in generation $ t $ due to genetic $ (h^2 / [2 - m]) $ and maternal $ (m) $ contributions. The final term, which can be expressed as $ m \\left[\\mu_z(t) - \\mu_z^*(t-1) \\right] $, represents the decay in the maternal contribution from the previous generation."
+    },
+    {
+      "type": "discussion",
+      "content": "Assuming that an equilibrium for maternal effects has been reached such that Equation 15.23a holds and then starting with an unselected base population, the response to a single generation of selection is $$ \\begin{align*}\\Delta\\mu_z(1)={h^2\\over2-m}\\bigg(S_{mo}(1)+S_{fa}(1)\\bigg)+mS_{mo}(1)\\end{align*} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "An interesting implication of Equation 15.26 is that if $m < 0$, there is some possibility of a reversed response, with $\\Delta\\mu_z$ being opposite in sign from $S$. If $S_{fa} = S_{mo} = S$, a reversed response is expected if $$ m<1-\\sqrt{1+2h^{2}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "If selection is only occurring on females, this condition is $$ m<1-\\sqrt{1+h^{2}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "An example of an apparent maternally induced reversed response was seen by Falconer (1960b, 1965) in his selection experiments on litter size in mice. This character shows a negative maternal effect, with $ m $ and $ h^2 $ estimated to be $ -0.13 $ and $ 0.11 $, respectively. Because selection for litter size occurs only in females, Equation 15.27b implies that a reversed response in the first generation is expected (as $ 1 - \\sqrt{1 + 0.11} \\simeq -0.05 > m = -0.13 $). As Figure 15.3 shows, a reversed response was indeed observed."
+    },
+    {
+      "type": "discussion",
+      "content": "An observed reversed response can be misleading because the permanent response is expected to have the same sign as $S$, while the initial observed response also includes a transient component that (in this case) is of the opposite sign and of a larger magnitude than the permanent response component. It may take several generations for this transient component to decay to the point that the actual genetic changes are revealed (Figure 15.3). For a single generation of selection, the expected genetic change is $2S\\, h^{2}/[(2-m)(1-m)]$, as shown by Equation 15.33 (below)."
+    },
+    {
+      "type": "discussion",
+      "content": "The possibility of a reversed selection response hints at some of the complicated dynamics that can appear when maternal effects are present. To examine these dynamics in more detail, consider the dilution model with constant directional selection occurring equally on both sexes, i.e., $ S_{fa}(t) = S_{mo}(t) = S $ for $ t \\geq 1 $. Iteration of Equation 15.25 yields $$ \\Delta\\mu_{z}(t)=S\\bigg[\\frac{2h^{2}}{(1-m)(2-m)}\\bigg(1-m^{t}\\bigg)+m^{t}\\bigg] $$ which (for $ |m|<1 $) converges to $$ \\Delta\\mu_{z}=S\\frac{2h^{2}}{(1-m)(2-m)} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Hence, after a sufficient number of generations, the per-generation change is constant. If $ |m| $ is near zero, the per-generation response rapidly converges to this asymptotic value, while if $ |m| $ is near one, the rate of convergence is considerably slower. Summing over the single-generation changes (Equation 15.28a) and recalling Equation 15.5b, the cumulative response to t generations of selection is $$ R(t)=\\sum_{i=1}^{t}\\Delta\\mu_{z}(i)=\\frac{S}{1-m}\\bigg[t\\frac{2h^{2}}{2-m}+m\\left(1-m^{t}\\right)\\bigg(1-\\frac{2h^{2}}{(1-m)(2-m)}\\bigg)\\bigg] $$ which converges (for $ |m|<1 $) to $$ \\frac{S}{1-m}\\left[\\frac{2h^{2}}{2-m}\\left(t-\\frac{m}{1-m}\\right)+m\\right] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "How much of this response is permanent? Suppose selection ends at generation $ t $, and suppose we denote by $ \\tau $ the number of generations since selection was stopped. Iterating Equation 15.25 with $ S(t) = S $, $ S(t + \\tau) = 0 $ for $ \\tau \\geq 1 $ yields $$ \\Delta\\mu_{z}(t+\\tau)=m^{\\tau}\\left[\\Delta\\mu_{z}(t)-S\\right] $$ where $ \\Delta\\mu_{z}(t) $ is given by Equation 15.28a. Thus, the selection response continues even after the cessation of selection (Figure 15.3), a feature that Kirkpatrick and Lande (1989) called evolutionary momentum. Using Equation 15.5b to sum Equation 15.30 over $ \\tau $ yields the cumulative response following the last generation of selection $$ R^{*}(\\tau)=\\frac{m(1-m^{\\tau})}{1-m}\\left[\\Delta\\mu_{z}(t)-S\\right] $$ which, as $ \\tau \\rightarrow \\infty $, converges to $$ \\begin{align*}R^*=S{m\\left(1-m^t\\right)\\over1-m}\\left[{2h^2\\over(1-m)(2-m)}-1\\right]\\end{align*} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Summing Equations 15.29a and 15.32, the permanent response to t generations of selection is $$ \\begin{align*}R(t)+R^*=t h^2\\, S\\begin{array}{c}2\\ $ 1-m)(2-m)\\end{array}\\end{align*} $$ which is just t times the asymptotic response (Equation 15.28b). If $ R^* $ is opposite in sign to S, there is some erosion of the cumulative response upon relaxation of selection (we have already seen a special case of this with reversed response). For $ |m| < 1 $, erosion in response occurs if $$ 0<m<\\frac{3-\\sqrt{1+8h^{2}}}{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "On the other hand, if maternal effects are either negative $ (m < 0) $ or sufficiently large $$ m>\\frac{3-\\sqrt{1+8h^{2}}}{2} $$ the response will continue for a few generations following the relaxation of selection. This occurs by the transient component of response decaying away to reveal the actual permanent response due to changes in breeding values. Figure 15.4 plots some sample trajectories."
+    },
+    {
+      "type": "discussion",
+      "content": "In summary, the presence of maternal effects introduces several complications even under this simplest of models (in which the direct and maternal trait are the same). First, predicting the response to selection in a given generation requires, not only knowledge of the inheritance parameters (m, $ h^2 $) and current selection differential, but also knowledge of previous selection, namely, $ \\Delta\\mu_z(t-1) $ and $ S_{mo}(t-1) $. Second, after selection is stopped, the mean is likely to continue to change due to lag effects (e.g., Figure 15.4). If $ m < 0 $, the response will continue, while if $ m > 0 $, the response may either continue or partly decay. This clearly causes problems if we are trying to estimate the nature of selection acting on a character by comparing changes in means between generations. For example, an observed cross-generation decrease in a character could be due to four very different causes: (i) $ S < 0 $, (ii) $ S > 0 $ and there is a reversed response due to maternal effects, (iii) there is no selection in the observed generation but a previous history of $ S > 0 $, with the decrease in mean due to a positive maternal effect (reflecting a decay in response), or (iv) there is no current selection but a previous history of $ S < 0 $, with the decrease in mean due to a negative (or sufficiently large positive) maternal effect (reflecting a continuation of response)."
+    }
+  ]
+}

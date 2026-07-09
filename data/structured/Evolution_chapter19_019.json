@@ -1,0 +1,51 @@
+{
+  "id": "Evolution_chapter19_019",
+  "metadata": {
+    "chapter": "Evolution_chapter19",
+    "section": "MODIFICATIONS OF THE BASIC ANIMAL MODEL",
+    "subsections": [
+      "Common Family and Maternal Effects"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter19_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "MODIFICATIONS OF THE BASIC ANIMAL MODEL",
+    "section_level_2": "Common Family and Maternal Effects",
+    "heading_path": [
+      "MODIFICATIONS OF THE BASIC ANIMAL MODEL",
+      "Common Family and Maternal Effects"
+    ],
+    "display_heading": "Common Family and Maternal Effects"
+  },
+  "blocks": [
+    {
+      "type": "proposition",
+      "content": "When sibs are present, any common-family environmental effects (if not included directly in the model) are subsumed into the residuals, creating a correlation between the residuals of sibs. For example, if two sibs (i and j) share a common environmental value, $ c $, then $ \\sigma(e_i, e_j) = \\sigma_c^2 $. Hence, there are off-diagonal elements in the covariance matrix of residuals, and we no longer have the standard OLS assumption of $ \\mathbf{Var}(e) = \\sigma_e^2 \\mathbf{I} $. Such correlations can easily be accommodated by adding an additional vector of random effects."
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:19.7]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Sib correlations (beyond those accounted for by their correlations in breeding value for the focal trait) can arise for multiple reasons. The first is dominance, which we will address shortly. The second and third reasons are common family effects, which can arise from two different sources: shared environmental effects and shared maternal effects with a genetic component (i.e., maternal performance itself has a genetic component; see Chapters 15 and 22). The distinction between the genetic and the environmental components of maternal effects (both of which may be included in a model) was foreshadowed in Example 19.6, in that they result in different covariance structures. Environmental correlations are unique to a given family, while maternal-genetic effects are correlated over relatives, even those in different generations. In Example 19.7, the common environment, c, was assumed to be uncorrelated between sibships, implying that its covariance structure is $ \\mathbf{Var}(c) = \\sigma_c^2 I $, which is a diagonal matrix whose dimension is set by the number of families. There is no correlation across different sibships and thus no shared information."
+    },
+    {
+      "type": "discussion",
+      "content": "When a mother has several litters (especially when each may contain a modest to large number of offspring), modifications beyond assigning a single (random) common-family environment value for all her litters may be considered. One approach is to assume that each particular litter has a unique common-family effect, that is uncorrelated across litters from the same mother. Here, the covariance structure remains $ \\mathbf{Var}(c) = \\sigma_c^2 \\mathbf{I} $, but now each litter (rather than each mother) has its own c value."
+    },
+    {
+      "type": "discussion",
+      "content": "A second, and perhaps biologically more realistic, approach is to consider something akin to a repeatability model (Example 19.6), wherein the contribution from the mother to a particular litter has two components, one shared over all litters, and a second unique to each litter. Under this model, the common-family environmental effect for all sibs in the ith litter from mother $k$ is given by $c_{ki} + p_k$, a permanent environmental effect for this mother, $p_k$ (a common effect shared by all her litters, as in our initial model), plus a unique environment shared by all members of her ith litter, $c_{ki}$. For this model, we need to estimate the variances $\\sigma_p^2$ and $\\sigma_c^2$, which correspond to the contributions from $p_k$ and $c_{ki}$, respectively. We assume that at least one litter has two or more individuals, otherwise $c_{ki}$ and $p_k$ cannot be estimated separately. More generally, this model is not expected to be very efficient unless the expected number of offspring per litter is modest to large. If the common-litter effect under this model is environmental, namely, that a mother does not pass along any of her performance genetically to her daughters, then the covariance structure for these two vectors of random effects will be $\\mathbf{Var}(\\mathbf{c}) = \\sigma_c^2 \\mathbf{I}$ and $\\mathbf{Var}(\\mathbf{p}) = \\sigma_p^2 \\mathbf{I}$, square matrices whose dimensions are the total number of separate litters in the experiment and the number of mothers, respectively."
+    },
+    {
+      "type": "discussion",
+      "content": "However, maternal performance could also have a genetic component, such that female relatives have correlated maternal performances. In this case, we would add a third random effect, $ a_m $ (the breeding value of this maternal effect), to the model. This vector of breeding values for maternal performance has a covariance matrix of $ \\mathbf{Var}(\\mathbf{a}_m) = \\sigma_A^2(a_m) \\mathbf{A} $. Distinguishing between maternal and direct effects requires that there are paternal, as well as maternal, links in the pedigree (Clément et al. 2001; Kruuk 2004; Chapter 22). A complication is that the breeding values for the focal trait and maternal performance can be correlated. This raises a multiple-trait problem (LW Chapter 27). We discuss maternal effects in greater detail in Chapter 22 in the context of more general models of associative effects."
+    },
+    {
+      "type": "discussion",
+      "content": "In summary, from an operational standpoint, if maternal effects are suspected, at a minimum, a common-family effect should be included, and it should be in the form of a repeatability model if the female has multiple litters (provided each has several offspring). More generally, if there are many links between female relatives (with litters) in the data set, one should seriously consider a genetic maternal-effects model. Failure to do so may result in contributions from shared genetic maternal performance being regarded as breeding values for the direct trait, giving a biased picture of the nature of the selection response (Milner et al. 2000; Clément et al. 2001; Kruuk 2004). Chapter 22 will examine in more detail when to include, and when to exclude, random effects when constructing more complex models."
+    }
+  ]
+}

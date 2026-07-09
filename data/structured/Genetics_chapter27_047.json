@@ -1,0 +1,39 @@
+{
+  "id": "Genetics_chapter27_047",
+  "metadata": {
+    "chapter": "Genetics_chapter27",
+    "section": "Variance-Component Estimation with Complex Pedigrees",
+    "subsections": [
+      "LIKELIHOOD, SUPPORT, AND SCORE FUNCTIONS"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter27_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Variance-Component Estimation with Complex Pedigrees",
+    "section_level_2": "LIKELIHOOD, SUPPORT, AND SCORE FUNCTIONS",
+    "heading_path": [
+      "Variance-Component Estimation with Complex Pedigrees",
+      "LIKELIHOOD, SUPPORT, AND SCORE FUNCTIONS"
+    ],
+    "display_heading": "LIKELIHOOD, SUPPORT, AND SCORE FUNCTIONS"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "The basic idea underlying ML is quite simple. Usually, when specifying a probability density function (say, a normal with unknown mean $ \\mu $ and unit variance), we treat the pdf as a function of z (the value of the random variable) with the distribution parameters $ \\Theta $ assumed to be known. (While much of our discussion is in terms of a vector $ \\Theta $, we use $ \\theta $ to indicate results for a single parameter.) With maximum likelihood estimation, we reverse the roles of the observed value and the distribution parameters by asking: Given a vector of observations z, what can we say about $ \\Theta $? To specify this alternative interpretation, the density function is denoted as $ \\ell(\\Theta|\\mathbf{z}) $, the likelihood of $ \\Theta $ given the observed vector of data z. This defines a likelihood surface, as $ \\ell(\\Theta|\\mathbf{z}) $ assigns a value to each possible point in the $ \\Theta $-parameter space given the observed data z. The maximum likelihood estimate (MLE) of the unknown parameters, $ \\widehat{\\Theta} $, is the value of $ \\Theta $ corresponding to the maximum of $ \\ell(\\Theta|\\mathbf{z}) $, i.e., the MLE is the value of $ \\Theta $ that is “most likely” to have produced the data z. It is usually easier to find the maximum of a likelihood function by first taking its log and working with the resulting log-likelihood $$ L(\\boldsymbol{\\Theta}\\left|\\mathbf{z}\\right)=\\ln\\left[\\ell(\\boldsymbol{\\Theta}\\left|\\mathbf{z}\\right)\\right] $$ $L$ is also referred to as the support. Since the natural log is a monotonic function, $\\ell(\\boldsymbol{\\Theta})$ has the same maxima as $\\ln\\left[\\ell(\\boldsymbol{\\Theta})\\right]$, so that the maximum of $L$ also corresponds to the maximum of the likelihood function. The score $S$ of a likelihood function is the first derivative of $L$ with respect to the likelihood parameters, with $S(\\theta) = \\partial L(\\theta)/\\partial\\theta$ for a single parameter likelihood function, and $$ \\mathbf{S}(\\boldsymbol{\\Theta})=\\frac{\\partial L(\\boldsymbol{\\Theta})}{\\partial\\boldsymbol{\\Theta}}=\\left(\\begin{matrix}{\\partial L(\\boldsymbol{\\Theta})/\\partial\\Theta_{1}}\\\\ {\\vdots}\\\\ {\\partial L(\\boldsymbol{\\Theta})/\\partial\\Theta_{n}}\\\\ \\end{matrix}\\right) $$ for a vector of $n$ parameters. From elementary calculus it follows that the score evaluated at the MLE is zero, $\\mathbf{S}(\\widehat{\\boldsymbol{\\Theta}})=\\mathbf{0}$. This provides one approach for obtaining MLEs."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 1. Suppose $n$ values, $z_1 \\cdots z_n$, are sampled independently from an underlying normal with unknown mean $\\mu$ and unit variance ($\\sigma^2 = 1$). Letting $\\mathbf{z} = (z_1, z_2, \\cdots, z_n)$, what is the MLE for $\\mu$ given $\\mathbf{z}$? Since the observations are independent, the resulting probability density function for $\\mathbf{z}$ is the product of $n$ normal density functions, $$ \\begin{aligned}p(\\mathbf{z},\\mu)&=\\prod_{i=1}^{n}(2\\pi)^{-1/2}\\exp\\left[-(z_{i}-\\mu)^{2}/2\\right]\\\\&=(2\\pi)^{-n/2}\\exp\\left[-\\sum_{i=1}^{n}(z_{i}-\\mu)^{2}/2\\right]\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The log-likelihood (or support) becomes $$ L(\\mu\\mid\\mathbf{z})=\\ln\\left[\\ell(\\mu\\mid\\mathbf{z})\\right]=-\\left(\\frac{n}{2}\\right)\\ln(2\\pi)-\\frac{1}{2}\\sum_{i=1}^{n}(z_{i}-\\mu)^{2} $$ which has the score function $$ S(\\mu)=\\frac{\\partial L(\\mu|\\mathbf{z})}{\\partial\\mu}=\\sum_{i=1}^{n}(z_{i}-\\mu)=n(\\overline{z}-\\mu) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Setting the score equal to zero and solving gives the MLE, $ \\widehat{\\mu} = \\overline{z} $."
+    }
+  ]
+}

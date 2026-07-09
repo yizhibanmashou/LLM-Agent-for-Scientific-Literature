@@ -1,0 +1,55 @@
+{
+  "id": "Genetics_chapter14_012",
+  "metadata": {
+    "chapter": "Genetics_chapter14",
+    "section": "Introduction",
+    "subsections": [
+      "How Many Markers Are Needed?"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter14_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "How Many Markers Are Needed?",
+    "heading_path": [
+      "Introduction",
+      "How Many Markers Are Needed?"
+    ],
+    "display_heading": "How Many Markers Are Needed?"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "For most organisms, genetic maps are not yet available, and one must start with randomly obtained markers. As a rough approximation for the number of random polymorphic markers necessary for a desired saturation of the linkage map, assume a circular linkage map of total length L map units. In order to have a fraction p of all loci within m map units of some marker, the required number of randomly distributed markers is $$ n=\\frac{\\ln(1-p)}{\\ln(1-2m/L)} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "(Lange and Boehnke 1982, Beckmann and Soller 1983). This rearranges to give the proportion of the genome within m map units of a marker as approximately $$ p\\simeq1-\\exp\\left(-\\frac{2mn}{L}\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "(Jacob et al. 1991). Assuming a circular genome map ignores the effect of chromosome ends, causing Equation 14.6a to underestimate n and Equation 14.6b to overestimate p. A more general expression, which accounts for linear chromosomes, is given by Bishop et al (1983). Assuming a haploid chromosome number C, $$ p=1-\\frac{2C\\left[\\left(1-x\\right)^{n+1}-\\left(1-2x\\right)^{n+1}\\right]}{n+1}-\\left(1-2x C\\right)\\left(1-2x\\right)^{n} $$ where x = m/L."
+    },
+    {
+      "type": "discussion",
+      "content": "An alternative consideration is the average distance between a locus and the nearest random marker. Martin et al. (1991) show that the expected distance of a gene from the closest of n random markers is $$ E(m)=\\frac{L}{2(n+1)} $$ with the upper 95% confidence interval for this distance given by $$ \\frac{L}{2}\\left(1-0.05^{1/n}\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "It is important to note that the above expressions refer to randomly chosen markers. It is much more efficient to use sets of equally spaced markers. If the entire genome is covered by marker loci equally spaced at m map units apart, no locus is more than m/2 from any marker, and the average distance of a locus from a marker (assuming a uniform distribution of loci along the chromosome) is m/4."
+    },
+    {
+      "type": "discussion",
+      "content": "Here $L = 3300$ cM, $m = 10$ cM, and $p = 0.9$. The circular-chromosome approximation (Equation 14.6a) gives $$ n=\\frac{\\ln(1-.9)}{\\ln(1-2/330)}\\simeq379 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Numerically solving Equation 14.7 with p = 0.9 gives n = 404. Hence, the effect of ignoring chromosome ends underestimates n by about 7%."
+    },
+    {
+      "type": "discussion",
+      "content": "Suppose that 110 random markers are used. From Equation 14.8a, the expected distance of a particular gene from the nearest of these 110 markers is 14.9 cM, while Equation 14.8b gives the upper 95% confidence interval for this distance as 44.3 cM. In contrast, suppose these 110 markers are not random, but are instead chosen to be equally spaced at 30 cM apart. With this spacing, no locus is more than 15 cM from a marker, and all loci are, on average, 7.5 cM from a marker."
+    }
+  ]
+}

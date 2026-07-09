@@ -1,0 +1,39 @@
+{
+  "id": "Evolution_chapter3_006",
+  "metadata": {
+    "chapter": "Evolution_chapter3",
+    "section": "The Genetic Effective Size of a Population: Introduction",
+    "subsections": [
+      "VARIABLE POPULATION SIZE"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter3_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "The Genetic Effective Size of a Population: Introduction",
+    "section_level_2": "VARIABLE POPULATION SIZE",
+    "heading_path": [
+      "The Genetic Effective Size of a Population: Introduction",
+      "VARIABLE POPULATION SIZE"
+    ],
+    "display_heading": "VARIABLE POPULATION SIZE"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Most populations vary in density from generation to generation, often dramatically so, and this raises practical problems in the implementation of the previous theory. As noted in Equation 2.7, with variable population size, the expected loss of heterozygosity over $ t $ generations is no longer $ [1 - (1/2N_e)]^t $ but rather is now a product of $ t $ terms, each incorporating the effective population size of a particular generation such that $$ H_{t}=H_{0}\\prod_{i=0}^{t-1}\\left(1-\\frac{1}{2N_{e,i}}\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, it is informative to evaluate the size of an ideal population of constant size with the same expected heterozygosity after t generations as a population with variable size over the same period. An approximate answer can be obtained by noting that with a moderately large $ N_{e,i} $, Equation 3.16 simplifies to $$ H_{t}\\simeq H_{0}\\exp\\left(-\\sum_{i=0}^{t-1}\\frac{1}{2N_{e,i}}\\right) $$ which may be compared to $$ H_{t}\\simeq H_{0}e^{-t/2N_{e}} $$ for the ideal case of constant effective size. Equating the exponents of these two expressions, $$ N_{e}^{*}\\simeq\\frac{t}{1/N_{e,0}+1/N_{e,1}+\\cdots+1/N_{e,t-1}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, the long-term effective size $ N_e^* $ is approximately equal to the harmonic mean of the generation-specific effective sizes. An asterisk is placed on $ N_e $ to remind the reader that the inbreeding projected by $ N_e^* $ strictly pertains to generation $ t $. Other generations may exhibit more or less loss of variation than anticipated depending upon the actual pattern of temporal changes in $ N_e,i $."
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:3.4]]"
+    }
+  ]
+}

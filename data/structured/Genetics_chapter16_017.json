@@ -1,0 +1,43 @@
+{
+  "id": "Genetics_chapter16_017",
+  "metadata": {
+    "chapter": "Genetics_chapter16",
+    "section": "Introduction",
+    "subsections": [
+      "MAPPING DICHOTOMOUS CHARACTERS"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter16_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "MAPPING DICHOTOMOUS CHARACTERS",
+    "heading_path": [
+      "Introduction",
+      "MAPPING DICHOTOMOUS CHARACTERS"
+    ],
+    "display_heading": "MAPPING DICHOTOMOUS CHARACTERS"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Finally, we turn our attention to mapping and characterizing QTLs that underlie dichotomous characters. This problem has received a tremendous amount of attention from human geneticists, whose ultimate goal is the isolation of disease susceptibility (DS) genes — QTLs that influence human disease. When a disease can be treated as a continuous character by measuring the appropriate underlying continuous variables, such as blood pressure or cholesterol level, the methods discussed in previous sections of this chapter can be applied. However, for many diseases, the appropriate underlying physiological variables are unresolved, and the observed phenotype is naturally dichotomous, with individuals being scored as either normal or affected. Even when the appropriate underlying variables are known, individuals are often still placed into discrete categories, such as high vs. normal blood pressure. We frame our discussion in terms of normal vs. affected character states, although our treatment is general."
+    },
+    {
+      "type": "discussion",
+      "content": "If the disease has a simple Mendelian basis, wherein a single gene underlies the disease and all individuals of a given genotype have the same character state, standard mapping approaches for simple Mendelian genes can be used (reviewed by Ott 1991, Terwilliger and Ott 1994). However, most human diseases have a more complex genetic basis, with no single gene showing perfect segregation with the disease. Even when genetic causes are attributable to a single locus, lack of perfect association can occur for a variety of reasons (Lander and Schork 1994). There can be incomplete penetrance (not all susceptible genotypes show the disease), phenocopies (individuals display the disease for environmental, rather than genetic, reasons) and genetic heterogeneity (multiple alleles at a given locus have different effects on disease susceptibility). Likewise, the disease could have a polygenic basis. All of these factors confound a simple Mendelian analysis, requiring that other methods be used."
+    },
+    {
+      "type": "discussion",
+      "content": "Starting with Penrose (1935, 1954b), human geneticists have developed a variety of methods for mapping DS genes, and these are reviewed by Weiss (1993), Terwilliger and Ott (1994), Lander and Schork (1994), and Weeks and Lathrop (1995). One approach is to modify the likelihood functions constructed for segregation analysis of dichotomous characters (Equation 13.29) to incorporate marker information by using Equation 16.27. For a diallelic QTL, the resulting likelihood function has five unknown parameters: QTL position (c), allele frequency (p), and effects (measured by the penetrances $ \\psi_{1} $, $ \\psi_{2} $, $ \\psi_{3} $ of the three QTL genotypes). Likelihood-ratio tests for linkage follow by comparing the restricted model assuming $ c = 1/2 $ (no linkage) against the full model where c is estimated from the data. Instead of attempting to maximize the entire likelihood over a complex pedigree structure, human geneticists usually further reduce the parameter space by assuming p is known, then performing the likelihood-ratio test for linkage under one or more reduced models where at least one of the penetrances is assigned a fixed value. Typically, it is assumed that the DS locus is either completely dominant or fully recessive, so that if D and N denote the disease and normal alleles at the DS locus, the two models generally considered are"
+    },
+    {
+      "type": "discussion",
+      "content": "Dominance model: $$ \\psi_{D D}=\\psi_{D N}=\\psi\\qquad\\psi_{N N}=\\psi_{p} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Recessive model: $$ \\psi_{D D}=\\psi_{\\phi}\\quad\\psi_{D N}=\\psi_{N N}=\\psi_{p} $$ where the two parameters to estimate by ML are $\\psi$, the penetrance of a susceptible genotype, and $ \\psi_{p} $, the probability of a phenocopy. Frequently, the model is reduced further by preassigning a value to $ \\psi_{p} $ (most often being set to zero). A serious limitation of this approach is that it is very model-dependent. Using the wrong model can potentially result in reports of false linkage or (more likely) failure to detect a linked QTL (Clerget-Darpoux et al. 1986, Curtis and Stam 1995). Further, likelihood methods can be computationally very intense, especially in complex pedigrees."
+    }
+  ]
+}

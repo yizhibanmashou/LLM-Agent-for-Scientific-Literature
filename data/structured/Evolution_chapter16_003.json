@@ -1,0 +1,71 @@
+{
+  "id": "Evolution_chapter16_003",
+  "metadata": {
+    "chapter": "Evolution_chapter16",
+    "section": "Short-term Changes in the Variance: 1. Changes in the Additive Variance: Introduction",
+    "subsections": [
+      "CHANGES IN VARIANCE UNDER THE INFINITESIMAL MODEL"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter16_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Short-term Changes in the Variance: 1. Changes in the Additive Variance: Introduction",
+    "section_level_2": "CHANGES IN VARIANCE UNDER THE INFINITESIMAL MODEL",
+    "heading_path": [
+      "Short-term Changes in the Variance: 1. Changes in the Additive Variance: Introduction",
+      "CHANGES IN VARIANCE UNDER THE INFINITESIMAL MODEL"
+    ],
+    "display_heading": "CHANGES IN VARIANCE UNDER THE INFINITESIMAL MODEL"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Because allele frequencies remain essentially constant under the assumptions of the infinitesimal model, the additive genic variance, $ \\sigma_a^2 $, remains constant and all changes in the additive genetic variance, $ \\sigma_A^2 $, are due to changes in $ d $. Assuming the population is initially in gametic-phase equilibrium, so that $ d(0) = 0 $, then $ \\sigma_A^2(0) = \\sigma_a^2 $, yielding $$ \\sigma_{A}^{2}(t)=\\sigma_{a}^{2}+d(t)=\\sigma_{A}^{2}(0)+d(t) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Let $ h^2(t) $ and $ \\sigma_z^2(t) $ denote the heritability and phenotypic variance before selection in generation $ t $, and $ h^2 $ and $ \\sigma_z^2 $ be the values of these quantities in the absence of gametic-phase disequilibrium."
+    },
+    {
+      "type": "proposition",
+      "content": "While LD can alter the additive variance, what is its impact on the dominance genetic variance? Under the infinitesimal model, Bulmer (1971b) suggested that gametic-phase disequilibrium does not change $ \\sigma_D^2 $. To see Bulmer's argument, first note from LW Equation 5.16b, that with a finite number of loci (n), the disequilibrium contribution to dominance genetic variance is of the order of $ n^2 \\overline{D}^2 $, where $ \\overline{D} $ is the average pairwise disequilibrium. Under the infinitesimal model, the total disequilibrium (summing over all pairs of loci) remains bounded as the number of loci increases, implying that $ \\overline{D} $ is of the order of $ n^{-2} $ as there are $ n(n-1)/2 \\approx n^2/2 $ pairs of loci contributing to $ \\overline{D} $. The contribution to dominance variance from disequilibrium is thus of the order of $ n^2(n^{-2})^2 = n^{-2} $, which converges to zero in the infinitesimal-model limit (as the number of loci $ n \\to \\infty $). There is, however, some delicacy involved in this argument. In Chapter 24, we show that with strong directional dominance, the amount of inbreeding depression becomes unbounded as one increases the number of loci to the infinitesimal limit. These arguments on the lack of impact from LD on $ \\sigma_D^2 $ assume the presence of a large number of small-effect loci. By contrast, Jorjani et al. (1998) used simulations to show that with a modest number of loci and small population size, changes in disequilibrium (in their case, from assortative mating) can significantly change the dominance variance. While we make the Bulmer assumption that there is no effect of dominance throughout this chapter, further exploration of the impact of disequilibrium on $ \\sigma_D^2 $ is warranted. With this assumption in mind, in the absence of any epistatic variance, genotype $ \\times $ environment interactions or correlations, the phenotypic variance and heritability at generation t become $$ \\sigma_{z}^{2}(t)=\\sigma_{E}^{2}+\\sigma_{D}^{2}+\\sigma_{A}^{2}(t)=\\sigma_{z}^{2}+d(t) $$ $$ h^{2}(t)=\\frac{\\sigma_{A}^{2}(t)}{\\sigma_{z}^{2}(t)}=\\frac{\\sigma_{a}^{2}+d(t)}{\\sigma_{z}^{2}+d(t)} $$ where $ \\sigma_z^2 = \\sigma_z^2(0) $ is the phenotypic variance before selection in the initial (unselected) population ($ d(0) = 0 $). Thus, knowledge of the value of $ d(t) $ is sufficient to predict the variances in generation $ t $, and hence the heritability and the response in the mean, using $$ R(t)=h^{2}(t)S(t)=h^{2}(t)\\bar{\\imath}(t)\\sigma_{z}(t) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Under the infinitesimal model, genotypic values are normally distributed before selection (Bulmer 1971b, 1976b). Recalling that $ z = G + E $, we then see that if the environmental values, $ E $, are also normally distributed, the joint distribution of phenotypic and genotypic values is multivariate normal. Hence, from standard statistical theory (e.g., LW Chapter 8), the regression of offspring phenotypic value, $ z_{o} $, on parental phenotypes, $ z_{m} $ and $ z_{f} $, is linear and homoscedastic, with $$ z_{o}=\\mu+\\frac{h^{2}}{2}(z_{m}-\\mu)+\\frac{h^{2}}{2}(z_{f}-\\mu)+e $$ where $$ \\sigma_{e}^{2}=\\left(1-\\frac{h^{4}}{2}\\right)\\sigma_{z}^{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The derivation of Equation 16.5 follows from standard multiple-regression theory and the correlations between relatives (see Example 6 in LW Chapter 8 for details)."
+    },
+    {
+      "type": "discussion",
+      "content": "We denote the within-generation change in variance by $ \\delta(\\sigma_z^2) = \\sigma_z^2 - \\sigma_z^2 $, where $ z^* $ refers to a phenotypic value from the selected population. (More generally, $ \\sigma_z^2 $, is the fitness-weighted trait variance; see Chapter 29). Throughout this chapter we use the notation $ \\delta $ to distinguish the within-generation change of a variable from its between-generation change, $ \\Delta $, as the latter incorporates the effects of genetic transmission across a generation. If we take variances of both sides of Equation 16.5a and assume random mating (so that $ \\sigma(z_f, z_m) = 0 $) and identical selection on both sexes, the phenotypic variance among the offspring from selected parents becomes $$ \\begin{aligned}\\sigma^{2}(z_{o})&=\\frac{h^{4}}{4}\\left[\\sigma^{2}(z_{m}^{*})+\\sigma^{2}(z_{f}^{*})\\right]+\\sigma_{e}^{2}\\\\&=\\frac{h^{4}}{2}\\left[\\sigma_{z}^{2}+\\delta(\\sigma_{z}^{2})\\right]+\\left(1-\\frac{h^{4}}{2}\\right)\\sigma_{z}^{2}\\\\&=\\sigma_{z}^{2}+\\frac{h^{4}}{2}\\delta\\left(\\sigma_{z}^{2}\\right)\\\\ \\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The change in phenotypic variance in the offspring due to selection on their parents generating disequilibrium is thus $ (h^4/2)\\delta(\\sigma_z^2) $. Because there is no change in the environmental, dominance, or genic variances, this change is all in the disequilibrium component, $ d $, of the additive genetic variance, $ \\sigma_A^2 $. Combining Equations 16.6 and 16.3 yields a general recursion for changes in the variance under the infinitesimal model with unlinked loci of $$ d(t+1)=\\frac{d(t)}{2}+\\frac{h^{4}(t)}{2}\\delta\\left(\\sigma_{z(t)}^{2}\\right) $$ implying that the between-generation change in the disequilibrium contribution is $$ \\begin{aligned}\\Delta d(t)&=\\Delta\\sigma_{z(t)}^{2}=\\Delta\\sigma_{A}^{2}(t)\\\\&=-\\frac{d(t)}{2}+\\frac{h^{4}(t)}{2}\\delta\\left(\\sigma_{z(t)}^{2}\\right)\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "This Bulmer equation (1971a) is the variance analog of the breeder’s equation, which predicts short-term changes in the variance as opposed to the mean. The first term is the decay due to recombination in the disequilibrium contribution from the previous generation (assuming loci are unlinked), while the second term is the amount of new disequilibrium generated by selection that is passed onto the offspring generation. As with the breeder’s equation, this second term is a function of the within-generation change ($ \\delta $) in the phenotypic variance and the fraction ($ h^{4}/2 $) transmitted to the next generation. When loci are linked with a recombination fraction of c, a larger fraction (1 - c) of any previous d remains, yielding the change (from recombination alone) of $ \\Delta d(t) = (1 - c)d(t) - d(t) = -cd(t) $. Chapter 24 examines the effect of linked loci in more detail."
+    },
+    {
+      "type": "discussion",
+      "content": "Note from Equation 16.7b that if we start from a base population in linkage equilibrium, $ d(0) = 0 $, the sign of the within-generation change in the variance, $ \\delta(\\sigma_{z(t)}^{2}) $, equals the sign of d. Selection that decreases the phenotypic variance generates negative values of d, while selection that inflates the variance generates positive values of d. This change in the variance (typically a reduction) due to selection generating disequilibrium is called the Bulmer effect. Provided the joint distribution of phenotypic and genotypic values remains multivariate normal, under the infinitesimal model, the complete dynamics of the phenotypic distribution are jointly described by the change in the variance (Equations 16.7a and 16.7b), while the change in the mean is given by updating the breeder's equation, $ R(t) = h^{2}(t) S(t) $, using Equation 16.4b."
+    },
+    {
+      "type": "discussion",
+      "content": "Equation 16.7a makes the further point that if we wish to use variance components to predict the response to selection, we need to start from an unselected base population. If a population has experienced recent prior selection, then $ d(0) \\neq 0 $, and hence the change in $ \\sigma_A^2 $ (and, in turn, the response to selection) cannot be predicted without knowing the value of $ d $ in the starting population. Finally, setting $ \\Delta d = 0 $ in Equation 16.7b shows that, at equilibrium, $$ \\widetilde{d}=\\widetilde{h}^{4}\\widetilde{\\delta}(\\sigma_{z}^{2}) $$ where the tilde denotes an equilibrium value."
+    },
+    {
+      "type": "discussion",
+      "content": "One very important implication for evolution follows from Equation 16.7a, which shows that loci underlying traits whose variance is reduced following selection tend to be in negative disequilibrium. Specifically, the frequency of gametes containing two positive (or two negative) alleles are underrepresented compared to the situation in random mating. Fitness itself is also a quantitative trait, which is influenced by numerous loci and environmental effects. Following selection, the variance in fitness is decreased, and hence Equation 16.7a implies that favorable alleles will be in negative disequilibrium. This reduces any additive variance in fitness, which in turn reduces the efficiency of selection."
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:16.1]]"
+    }
+  ]
+}

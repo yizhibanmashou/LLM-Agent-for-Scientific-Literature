@@ -1,0 +1,39 @@
+{
+  "id": "Evolution_chapter9_029",
+  "metadata": {
+    "chapter": "Evolution_chapter9",
+    "section": "CHANGES IN THE CHROMOSOMAL PATTERN OF NEUTRAL VARIATION",
+    "subsections": [
+      "Tests of Sweeps Using Genomic Positional Information: “SweepFinder”"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter9_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "CHANGES IN THE CHROMOSOMAL PATTERN OF NEUTRAL VARIATION",
+    "section_level_2": "Tests of Sweeps Using Genomic Positional Information: “SweepFinder”",
+    "heading_path": [
+      "CHANGES IN THE CHROMOSOMAL PATTERN OF NEUTRAL VARIATION",
+      "Tests of Sweeps Using Genomic Positional Information: “SweepFinder”"
+    ],
+    "display_heading": "Tests of Sweeps Using Genomic Positional Information: “SweepFinder”"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Nielsen et al. (2005b) proposed a modification of the CLRT approach, replacing the Watterson distribution by an empirical site-frequency spectrum, $ \\mathbf{p} = (\\widehat{p}_1, \\cdots, \\widehat{p}_{n-1}) $, where $ \\mathbf{p} $ is estimated by using a reference sample of $ m $ segregating, and presumed neutral, sites. Here $ \\widehat{p}_k = n_k / m $ is the fraction of these $ m $ sites that contain exactly $ k $ copies of the derived allele, where $ n_k $ is the number of such sites in the sample. Their idea is that the Watterson distribution assumes an equilibrium neutral population, while using the actual distribution observed in the population of interest (at presumed neutral sites) to a large extent can accommodate any demographically induced departures. The use of an empirical site-frequency spectrum should also at least partly correct for any SNP ascertainment bias. While an elegant approach, the delicate issue is being able to find an appropriate (and large) set of presumed neutral sites. This approach goes by the name SweepFinder, and the resulting likelihood function is derived in Example 9.9. Simulations by Nielsen et al. (2005b) showed that while this approach is more robust than the CLR test, demography can still influence the test statistic. In particular, intermediate bottlenecks (of a size reduced to 5% to 10% of the original $ N_{e} $) seem to be the most problematic in terms of false positives (Williamson et al. 2007; Stephan 2010a), while the test has little power under strong bottlenecks (Poh et al. 2014). Hence, significance values should be obtained by simulating this procedure under a set of assumed demographic models."
+    },
+    {
+      "type": "discussion",
+      "content": "A cautionary tale on the importance of accounting for demography was given by Long et al (2013) and Huber et al. (2014). Long et al. sequenced 180 lines of Arabidopsis thaliana from Sweden, with 130 from southern Sweden (a population generally regarded as being continuous with the main European population) and 50 lines from an isolated population in northern Sweden. Sweepfinder was run separately on both populations, yielding 22 strong signals from the northern population and only one from the southern population. This disparity was surprising, especially given the much larger sample size for the southern population. Huber et al. reanalyzed these data by first constructing a demographic model for these populations from the sequence data. They found that the resulting CLR distribution under the null was left-shifted by demography, making the cutoffs used by Long et al. too conservative, while it was right-shifted for the northern population, making the cutoffs too liberal. Using these demographic-corrected cutoffs, Huber et al. found that only three of the original 22 northern signals were significant, while they found significant signatures for nine sweeps in the southern population."
+    },
+    {
+      "type": "discussion",
+      "content": "While SweepFinder uses only sites that show variation within the sample, Huber et al. (2016) expanded the original concept by including sites that show fixed differences with an outgroup. This partly accounts for the variation in mutation rates, and their simulations showed that this improves both power and precision. Finally, if one assumes that background selection is a more appropriate null (as suggested in the introduction to this chapter), the presumed neutral sites must be chosen from genomic regions whose ratio of gene density to recombination rate is similar to that of the target region. Huber et al. (2016) discussed how to replace the empirical p (the observed site-frequency for reference, and presumably neutral, loci) with estimates corrected for background selection."
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:9.9]]"
+    }
+  ]
+}

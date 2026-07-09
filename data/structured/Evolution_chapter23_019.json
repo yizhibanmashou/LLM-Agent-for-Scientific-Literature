@@ -1,0 +1,83 @@
+{
+  "id": "Evolution_chapter23_019",
+  "metadata": {
+    "chapter": "Evolution_chapter23",
+    "section": "FAMILY SELECTION UNDER PURE SELFING",
+    "subsections": [
+      "The Covariance Between Relatives in a Structured Selfing Population"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter23_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "FAMILY SELECTION UNDER PURE SELFING",
+    "section_level_2": "The Covariance Between Relatives in a Structured Selfing Population",
+    "heading_path": [
+      "FAMILY SELECTION UNDER PURE SELFING",
+      "The Covariance Between Relatives in a Structured Selfing Population"
+    ],
+    "display_heading": "The Covariance Between Relatives in a Structured Selfing Population"
+  },
+  "blocks": [
+    {
+      "type": "proposition",
+      "content": "Given the need to account for the structure in a selfing population, Cockerham (1983) and Cockerham and Martzinger (1985), built on concepts from Horner (1952) and Gates et al. (1957) and generalized the covariance given by Equation 23.23 to $ \\sigma_G(T, \\tau, t) $, the covariance between a relative in generation $ T $ and another relative in generation $ \\tau \\leq T $, when the last common relative of both is from generation $ t \\leq \\tau $ (Figure 23.2A). This covariance was given by Equation 11.15, namely, $$ \\begin{aligned}\\sigma_{G}(T,\\tau,t)&=(1+f_{t})\\sigma_{A}^{2}+\\left(\\frac{(1-f_{T})(1-f_{\\tau})}{1-f_{t}}\\right)\\sigma_{D}^{2}+\\left(f_{t}+\\frac{f_{T}+f_{\\tau}}{2}\\right)\\sigma_{ADI}\\\\&+\\left(f_{t}+\\frac{(f_{T}-f_{t})(f_{\\tau}-f_{t})}{2(1-f_{t})}\\right)\\sigma_{DI}^{2}+\\left(\\frac{f_{t}(1-f_{T})(1-f_{\\tau})}{1-f_{t}}\\right)\\iota^{*}\\\\&+(1+f_{t})^{2}\\sigma_{AA}^{2}+(1+f_{t})^{3}\\sigma_{AAA}^{2}+\\cdots(1+f_{t})^{k}\\sigma_{A^{k}}^{2}\\\\ \\end{aligned} $$ where $ t \\leq \\tau \\leq T $. Notice that Equation 23.32 reduces to Equation 23.23 when $ \\tau = t $ (parents are the selection unit), as $ \\sigma_G(T, t, t) = \\sigma_G(T, t) $. The epistatic terms are often ignored, and Equation 23.32 does not account for nonadditive epistatic terms and assumes linkage equilibrium. For cross-generational covariances indexed by two or more relatives, such as $ \\sigma_G(T, t) $ and $ \\sigma_G(T, \\tau, t) $, we use the convention that the rightmost index (t in this case) references the oldest (earliest-generation) individual, while the leftmost (T in this case) references the youngest (latest-generation). Thus, as one proceeds right-to-left in the index, more recent relatives are being considered; see Figure 23.2. Again, to use these covariances in predicting the selection response, we must make the strong assumption that selection does not significantly modify this covariance from the unselected version (Equation 23.32). The covariance between a parent in generation t and an offspring in generation T follows by noting that here $ t = \\tau $ and Equation 23.32 reduces to Equation 23.23."
+    },
+    {
+      "type": "discussion",
+      "content": "For the special case of a pure-line cross ($ \\iota^* = \\sigma_D^2, \\sigma_DI^2 = \\sigma_{ADI} = 0 $), Equation 23.32 simplifies considerably, to $$ \\begin{align*}\\sigma_G(T,\\tau,t)&=(1+f_t)\\sigma_A^2+\\left(\\frac{(1+f_t)(1-f_T)(1-f_\\tau)}{1-f_t}\\right)\\sigma_D^2+(1+f_t)^2\\sigma_{AA}^2+\\cdots\\\\&=\\left(2-\\frac{1}{2^t}\\right)\\left(\\sigma_A^2+\\frac{\\sigma_D^2}{2^{T+\\tau-t}}+\\left(2-\\frac{1}{2^t}\\right)\\sigma_{AA}^2+\\cdots\\right)\\\\\\end{align*} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The permanent selection response is given by the covariance between a completely inbred $ F_{\\infty} $ line ($ f_{\\infty} = 1 $) and a relative (for example, from the selection unit) in generation $ \\tau $ who last both shared a relative in generation t (as would occur if remnant seed from t was used to form the new lines). Here, Equation 23.32 reduces to $$ \\begin{aligned}\\sigma_{G}(\\infty,\\tau,t)&=(1+f_{t})\\sigma_{A}^{2}+\\frac{1+2f_{t}+f_{\\tau}}{2}\\sigma_{ADI}+\\frac{f_{t}+f_{\\tau}}{2}\\sigma_{DI}^{2}\\\\&\\quad+(1+f_{t})^{2}\\sigma_{AA}^{2}+(1+f_{t})^{3}\\sigma_{AAA}^{2}+\\cdots(1+f_{t})^{k}\\sigma_{A^{k}}^{2}\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "For offspring resulting from selfing a pure-line cross, $ \\sigma_{ADI} = \\sigma_{DI}^2 = 0 $, leaving the permanent response as only a function of the additive (and additive epistatic) effects, $$ \\sigma_{G}(\\infty,\\tau,t)=(1+f_{t})\\sigma_{A}^{2}+(1+f_{t})^{2}\\sigma_{A A}^{2}+\\cdots(1+f_{t})^{k}\\sigma_{A^{k}}^{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Equation 23.33 also provides the genetic variance for any particular generation. For the sake of a clearer exposition, we will ignore additive epistasis in what follows (although their inclusion is trivial). First, the total genetic variance in generation T is given by $$ \\sigma_{G}(T,T,T)=(1+f_{T})\\sigma_{A}^{2}+(1-f_{T})\\sigma_{D}^{2}+2f_{T}\\sigma_{ADI}+f_{T}\\sigma_{DI}^{2}+f_{T}(1-f_{T})\\iota^{*} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "This is the genetic variance across the entire population (across all the lines present in generation T). For a pure-line cross, this reduces to $$ \\sigma_{G}(T,T,T)=(1+f_{T})\\sigma_{A}^{2}+(1-f_{T})(1+f_{T})\\sigma_{D}^{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "We also require the genetic variance in generation T among the subset of lines that descend from a single individual in generation t. Here, $ \\tau = T $ and the variance becomes $$ \\begin{aligned}\\sigma_{G}(T,T,t)=(1+f_{t})\\sigma_{A}^{2}+\\frac{(1-f_{T})^{2}}{1-f_{t}}\\sigma_{D}^{2}+(f_{t}+f_{T})\\sigma_{ADI}\\\\+\\left(f_{t}+\\frac{(f_{T}-f_{t})^{2}}{2(1-f_{t})}\\right)\\sigma_{DI}^{2}+\\frac{f_{t}(1-f_{T})^{2}}{1-f_{t}}\\iota^{*}\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "An example of this would be the genetic variance across the collection of $ F_3 $ or $ F_4 $ bulk families from a single $ F_2 $ parent. For an $ F_3 $ family this is $ \\sigma_G(1,1,0) $, as the $ F_2 $ represents generation 0 of selfing, while the entire collection of $ F_4 $ families that trace back to this $ F_2 $ individual has a variance of $ \\sigma_G(2,2,0) $. For the selfed offspring from a pure-line cross, Equation 23.36a simplifies to $$ \\sigma_{G}(T,T,t)=(1+f_{t})\\sigma_{A}^{2}+\\frac{(1-f_{T})^{2}}{1-f_{t}}\\left(1+f_{t}\\right)\\sigma_{D}^{2} $$"
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:23.7]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, it will prove useful to decompose the total genetic covariance, $ \\sigma_G(T,t) $, into within- and among-family covariances, $ \\sigma_{Gw}(T,t) $ and $ \\sigma_{Gb}(T,t) $, respectively, where $$ \\sigma_{G}(T,t)=\\sigma_{G w}(T,t)+\\sigma_{G b}(T,t) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The among-family covariance in generation t is the covariance between sibs from a parent in generation t - 1 $$ \\sigma_{Gb}(T,t)=\\sigma_{G}(T,t,t-1) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The within-family genetic covariance follows as $$ \\begin{aligned}\\sigma_{Gw}(T,t)&=\\sigma_{G}(T,t)-\\sigma_{Gb}(T,t)\\\\&=\\sigma_{G}(T,t,t)-\\sigma_{G}(T,t,t-1)\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "For more general families, $ t - 1 $ is replaced by $ t - j $ when the last common ancestor to the family occurred $ j $ generations before the collection of families was scored. Note that the within- and among-family genetic variances in generation $ t $ are given by $ \\sigma_{Gw}(t, t) $ and $ \\sigma_{Gb}(t, t) $, respectively. Recalling Equation 23.8b, this implies a phenotypic variance for the among-family means of $ \\sigma_{\\overline{z}}(t, t) = \\sigma_{Gb}(t, t) + \\sigma_{e}^2 $."
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:23.8]]"
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:23.9]]"
+    }
+  ]
+}

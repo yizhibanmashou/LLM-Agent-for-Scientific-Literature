@@ -43,7 +43,8 @@ class TextbookExporterTests(unittest.TestCase):
                         "type": "discussion",
                         "content": (
                             "Opening text [[SEE_FORMULA:25.1]] cites [[SEE_TABLE:25.1]]. "
-                            "Now expand [[TABLE:inline_2]] and [[SEE_EXAMPLE:25.1]]."
+                            "It also cites [[SEE_EXAMPLE:25.1]]. "
+                            "Now expand [[TABLE:inline_2]] and [[EXAMPLE:25.1]]."
                         ),
                     }
                 ],
@@ -140,14 +141,241 @@ class TextbookExporterTests(unittest.TestCase):
         self.assertLess(output.index("## chapter25_001"), output.index("## chapter25_002"))
         self.assertIn("## chapter25_002 · Section A / Subsection B", output)
         self.assertIn("**[推导 Derivation]**", output)
-        self.assertIn("> **Formula (25.1)** · `25.1` · source: `chapter25_block_001`", output)
-        self.assertIn("cites Table 25.1.", output)
+        self.assertNotIn("> **Formula (25.1)** · `25.1` · source: `chapter25_block_001`", output)
+        self.assertIn("Opening text [[SEE_FORMULA:25.1]] cites [[SEE_TABLE:25.1]].", output)
+        self.assertIn("cites [[SEE_TABLE:25.1]].", output)
+        self.assertIn("It also cites [[SEE_EXAMPLE:25.1]].", output)
         self.assertIn("> **Inline Table 2** · `inline_2` · page 6 · source: `chapter25_001`", output)
         self.assertIn("> Correct chapter inline table", output)
         self.assertIn("Population | Value", output)
         self.assertIn("> **Example 25.1** · ref: `25.1`", output)
         self.assertGreaterEqual(output.count("**Inline Table 2** · `inline_2` · page 6 · source: `chapter25_001`"), 2)
         self.assertNotIn("Wrong chapter table", output)
+
+    def test_sinks_numbered_tables_to_end_of_subsection_but_keeps_inline_tables_in_place(self):
+        root = make_test_workspace("sink_numbered_tables")
+        structured_dir = root / "structured"
+        out_dir = root / "textbook"
+
+        write_json(
+            structured_dir / "chapter2_001.json",
+            {
+                "id": "chapter2_001",
+                "metadata": {
+                    "chapter": "chapter2",
+                    "heading_path": ["Moments"],
+                    "display_heading": "Moments",
+                },
+                "blocks": [
+                    {
+                        "type": "discussion",
+                        "content": "Opening cites [[TABLE:2.1]] and expands [[TABLE:inline_1]].",
+                    }
+                ],
+            },
+        )
+        write_json(
+            structured_dir / "chapter2_002.json",
+            {
+                "id": "chapter2_002",
+                "metadata": {
+                    "chapter": "chapter2",
+                    "heading_path": ["Moments"],
+                    "display_heading": "Moments",
+                },
+                "blocks": [{"type": "discussion", "content": "Last paragraph in same subsection."}],
+            },
+        )
+        write_json(structured_dir / "formula_library.json", {"formulas": []})
+        write_json(
+            structured_dir / "table_library.json",
+            {
+                "tables": [
+                    {
+                        "id": "2.1",
+                        "label_format": "Table 2.1",
+                        "title": "Numbered table",
+                        "rows": [["Trait", "Value"], ["weight", "10"]],
+                        "source": {
+                            "chapter": "chapter2",
+                            "unit_id": "chapter2_001",
+                            "subsection": "Moments",
+                            "page": 3,
+                        },
+                    },
+                    {
+                        "id": "inline_1",
+                        "label_format": "Inline Table 1",
+                        "title": "Inline table",
+                        "table_type": "inline",
+                        "rows": [["A", "B"], ["1", "2"]],
+                        "source": {
+                            "chapter": "chapter2",
+                            "unit_id": "chapter2_001",
+                            "subsection": "Moments",
+                            "page": 4,
+                        },
+                    },
+                ]
+            },
+        )
+        write_json(structured_dir / "example_library.json", {"examples": []})
+
+        export_textbooks(structured_dir, out_dir, chapters={"chapter2"})
+
+        output = (out_dir / "chapter2_textbook.md").read_text(encoding="utf-8")
+        self.assertIn("Opening cites", output)
+        self.assertIn("[[SEE_TABLE:2.1]]", output)
+        self.assertIn("and expands", output)
+        self.assertIn("> **Inline Table 1**", output)
+        self.assertEqual(output.count("> **Table 2.1**"), 1)
+        self.assertLess(output.index("## chapter2_002"), output.index("> **Table 2.1**"))
+        self.assertLess(output.index("> **Inline Table 1**"), output.index("## chapter2_002"))
+
+    def test_moves_owned_raw_html_table_to_subsection_end(self):
+        root = make_test_workspace("sink_raw_html_table")
+        structured_dir = root / "structured"
+        out_dir = root / "textbook"
+
+        raw_html = "<table><tr><td>A</td><td>B</td></tr><tr><td>1</td><td>2</td></tr></table>"
+        inline_raw_html = "<table><tr><td>example</td><td>value</td></tr></table>"
+        write_json(
+            structured_dir / "chapter2_001.json",
+            {
+                "id": "chapter2_001",
+                "metadata": {
+                    "chapter": "chapter2",
+                    "heading_path": ["Distribution", "Moments"],
+                    "display_heading": "Moments",
+                },
+                "blocks": [
+                    {
+                        "type": "discussion",
+                        "content": (
+                            f"Text before. {raw_html} Text after still in subsection. "
+                            f"Example keeps {inline_raw_html} in place."
+                        ),
+                    }
+                ],
+            },
+        )
+        write_json(
+            structured_dir / "chapter2_002.json",
+            {
+                "id": "chapter2_002",
+                "metadata": {
+                    "chapter": "chapter2",
+                    "heading_path": ["Distribution", "Moments"],
+                    "display_heading": "Moments",
+                },
+                "blocks": [{"type": "discussion", "content": "Final prose."}],
+            },
+        )
+        write_json(structured_dir / "formula_library.json", {"formulas": []})
+        write_json(
+            structured_dir / "table_library.json",
+            {
+                "tables": [
+                    {
+                        "id": "2.1",
+                        "label_format": "Table 2.1",
+                        "title": "Recovered from raw html",
+                        "table_type": "missing",
+                        "rows": [],
+                        "html": "",
+                        "source": {
+                            "chapter": "chapter2",
+                            "unit_id": "chapter2_001",
+                            "subsection": "Moments",
+                        },
+                    }
+                ]
+            },
+        )
+        write_json(structured_dir / "example_library.json", {"examples": []})
+
+        export_textbooks(structured_dir, out_dir, chapters={"chapter2"})
+
+        output = (out_dir / "chapter2_textbook.md").read_text(encoding="utf-8")
+        self.assertIn("Text before.", output)
+        self.assertIn("Text after still in subsection.", output)
+        self.assertLess(output.index("## chapter2_002"), output.index("> **Table 2.1**"))
+        self.assertIn("> <table><tr><td>A</td><td>B</td></tr>", output)
+        self.assertIn("Example keeps", output)
+        self.assertLess(output.index("Example keeps"), output.index("## chapter2_002"))
+        self.assertEqual(output.count("<table>"), 2)
+
+    def test_recovers_late_split_raw_html_table_for_previous_formal_table(self):
+        root = make_test_workspace("sink_late_split_raw_html_table")
+        structured_dir = root / "structured"
+        out_dir = root / "textbook"
+
+        first_half = "<table><tr><td>first</td></tr></table>"
+        second_half = "<table><tr><td>second</td></tr></table>"
+        example_table = "<table><tr><td>example</td></tr></table>"
+        write_json(
+            structured_dir / "chapter2_001.json",
+            {
+                "id": "chapter2_001",
+                "metadata": {
+                    "chapter": "chapter2",
+                    "heading_path": ["Distribution", "Moments"],
+                    "display_heading": "Moments",
+                },
+                "blocks": [{"type": "discussion", "content": "The owner section cites a formal table."}],
+            },
+        )
+        write_json(
+            structured_dir / "chapter2_002.json",
+            {
+                "id": "chapter2_002",
+                "metadata": {
+                    "chapter": "chapter2",
+                    "heading_path": ["Distribution", "Next"],
+                    "display_heading": "Next",
+                },
+                "blocks": [
+                    {
+                        "type": "discussion",
+                        "content": (
+                            f"{first_half} {second_half} "
+                            f"Example 1. This calculation keeps {example_table} inline."
+                        ),
+                    }
+                ],
+            },
+        )
+        write_json(structured_dir / "formula_library.json", {"formulas": []})
+        write_json(
+            structured_dir / "table_library.json",
+            {
+                "tables": [
+                    {
+                        "id": "2.1",
+                        "label_format": "Table 2.1",
+                        "title": "Late recovered table",
+                        "table_type": "missing",
+                        "rows": [],
+                        "html": "",
+                        "source": {
+                            "chapter": "chapter2",
+                            "unit_id": "chapter2_001",
+                            "subsection": "Moments",
+                        },
+                    }
+                ]
+            },
+        )
+        write_json(structured_dir / "example_library.json", {"examples": []})
+
+        export_textbooks(structured_dir, out_dir, chapters={"chapter2"})
+
+        output = (out_dir / "chapter2_textbook.md").read_text(encoding="utf-8")
+        table_block_pos = output.index("> **Table 2.1**")
+        self.assertLess(table_block_pos, output.index("## chapter2_002"))
+        self.assertGreater(output.index("> <table><tr><td>first</td></tr></table>"), table_block_pos)
+        self.assertGreater(output.index("> <table><tr><td>second</td></tr></table>"), table_block_pos)
+        self.assertIn("Example 1. This calculation keeps <table><tr><td>example</td></tr></table> inline.", output)
 
     def test_renders_chapter_heading_with_metadata_title(self):
         root = make_test_workspace("chapter_heading_metadata")
@@ -179,6 +407,58 @@ class TextbookExporterTests(unittest.TestCase):
                 "# Chapter 22 · Associative Effects: Competition, Social Interactions, Group and Kin Selection"
             )
         )
+
+    def test_exports_prefixed_chapter_files_with_numeric_filter(self):
+        root = make_test_workspace("prefixed_chapter")
+        structured_dir = root / "structured"
+        out_dir = root / "textbook"
+
+        write_json(
+            structured_dir / "Evolution_chapter1_001.json",
+            {
+                "id": "Evolution_chapter1_001",
+                "metadata": {
+                    "chapter": "Evolution_chapter1",
+                    "chapter_title": "Changes in Quantitative Traits Over Time",
+                    "heading_path": [
+                        "1: Changes in Quantitative Traits Over Time",
+                        "Introduction",
+                    ],
+                    "display_heading": "Introduction",
+                },
+                "blocks": [{"type": "discussion", "content": "Opening [[FIGURE:1.1]]."}],
+            },
+        )
+        write_json(structured_dir / "formula_library.json", {"formulas": []})
+        write_json(structured_dir / "table_library.json", {"tables": []})
+        write_json(structured_dir / "example_library.json", {"examples": []})
+        write_json(
+            structured_dir / "figure_library.json",
+            {
+                "figures": {
+                    "1.1": {
+                        "id": "1.1",
+                        "chapter": "Evolution_chapter1",
+                        "display_ref": "1.1",
+                        "caption": "Figure 1.1 Caption.",
+                        "page": 4,
+                    }
+                }
+            },
+        )
+
+        results = export_textbooks(structured_dir, out_dir, chapters={"1"})
+
+        self.assertEqual(len(results), 1)
+        self.assertEqual(results[0].chapter, "Evolution_chapter1")
+        output_path = out_dir / "Evolution_chapter1_textbook.md"
+        self.assertTrue(output_path.exists())
+        output = output_path.read_text(encoding="utf-8")
+        self.assertIn("# Chapter 1", output)
+        self.assertIn("## Evolution_chapter1_001", output)
+        self.assertNotIn("1: Changes in Quantitative Traits Over Time / Introduction", output)
+        self.assertIn("source: `Evolution_chapter1`", output)
+        self.assertNotIn("source: `evolution_chapter1`", output)
 
     def test_expands_figure_placeholders_from_figure_library(self):
         root = make_test_workspace("figure_placeholders")
@@ -238,6 +518,173 @@ class TextbookExporterTests(unittest.TestCase):
         self.assertIn("figures/A5.1.png", output)
         self.assertIn("> Figure A5.1 Some basic geometric concepts of vectors.", output)
         self.assertTrue((out_dir / "figures" / "A5.1.png").exists())
+
+    def test_see_example_placeholder_stays_reference_even_in_example_block(self):
+        root = make_test_workspace("example_block_see_example_reference")
+        structured_dir = root / "structured"
+        out_dir = root / "textbook"
+        write_json(
+            structured_dir / "chapter6_001.json",
+            {
+                "id": "chapter6_001",
+                "metadata": {"chapter": "chapter6", "display_heading": "Price"},
+                "blocks": [
+                    {"type": "discussion", "content": "Plain prose cites [[SEE_EXAMPLE:6.1]]."},
+                    {"type": "example", "content": "[[SEE_EXAMPLE:6.1]]"},
+                ],
+            },
+        )
+        write_json(structured_dir / "formula_library.json", {"formulas": []})
+        write_json(structured_dir / "table_library.json", {"tables": []})
+        write_json(
+            structured_dir / "example_library.json",
+            {
+                "examples": [
+                    {
+                        "example_id": "6.1",
+                        "chapter": "chapter6",
+                        "label": "Example 6.1",
+                        "source_file": "chapter6_001.json",
+                        "content_markdown": "Example 6.1. Expanded body.",
+                    }
+                ]
+            },
+        )
+
+        export_textbooks(structured_dir, out_dir, chapters={"chapter6"})
+
+        output = (out_dir / "chapter6_textbook.md").read_text(encoding="utf-8")
+        self.assertIn("Plain prose cites [[SEE_EXAMPLE:6.1]].", output)
+        self.assertIn("[[SEE_EXAMPLE:6.1]]", output)
+        self.assertNotIn("> **Example 6.1**", output)
+
+    def test_example_block_expands_example_placeholder(self):
+        root = make_test_workspace("example_block_example")
+        structured_dir = root / "structured"
+        out_dir = root / "textbook"
+        write_json(
+            structured_dir / "chapter6_001.json",
+            {
+                "id": "chapter6_001",
+                "metadata": {"chapter": "chapter6", "display_heading": "Price"},
+                "blocks": [{"type": "example", "content": "[[EXAMPLE:6.1]]"}],
+            },
+        )
+        write_json(structured_dir / "formula_library.json", {"formulas": []})
+        write_json(structured_dir / "table_library.json", {"tables": []})
+        write_json(
+            structured_dir / "example_library.json",
+            {
+                "examples": [
+                    {
+                        "example_id": "6.1",
+                        "chapter": "chapter6",
+                        "label": "Example 6.1",
+                        "source_file": "chapter6_001.json",
+                        "content_markdown": "Example 6.1. Expanded body.",
+                    }
+                ]
+            },
+        )
+
+        export_textbooks(structured_dir, out_dir, chapters={"chapter6"})
+
+        output = (out_dir / "chapter6_textbook.md").read_text(encoding="utf-8")
+        self.assertIn("> **Example 6.1**", output)
+        self.assertIn("> Example 6.1. Expanded body.", output)
+
+    def test_skips_empty_structured_chunks(self):
+        root = make_test_workspace("skip_empty_chunks")
+        structured_dir = root / "structured"
+        out_dir = root / "textbook"
+        write_json(
+            structured_dir / "chapter6_001.json",
+            {
+                "id": "chapter6_001",
+                "metadata": {"chapter": "chapter6", "display_heading": "Empty"},
+                "blocks": [],
+            },
+        )
+        write_json(
+            structured_dir / "chapter6_002.json",
+            {
+                "id": "chapter6_002",
+                "metadata": {"chapter": "chapter6", "display_heading": "Real"},
+                "blocks": [{"type": "discussion", "content": "Real content."}],
+            },
+        )
+        write_json(structured_dir / "formula_library.json", {"formulas": []})
+        write_json(structured_dir / "table_library.json", {"tables": []})
+        write_json(structured_dir / "example_library.json", {"examples": []})
+
+        export_textbooks(structured_dir, out_dir, chapters={"chapter6"})
+
+        output = (out_dir / "chapter6_textbook.md").read_text(encoding="utf-8")
+        self.assertNotIn("chapter6_001", output)
+        self.assertIn("chapter6_002", output)
+        self.assertIn("Real content.", output)
+
+    def test_example_internal_figure_counts_as_explicit_placement(self):
+        root = make_test_workspace("example_internal_figure")
+        structured_dir = root / "structured"
+        out_dir = root / "textbook"
+        figure_root = root / "figure_library_output"
+        figures_dir = figure_root / "figures"
+        figures_dir.mkdir(parents=True)
+        (figures_dir / "28.4.png").write_bytes(b"png")
+
+        write_json(
+            structured_dir / "chapter28_001.json",
+            {
+                "id": "chapter28_001",
+                "metadata": {"chapter": "chapter28", "display_heading": "Examples"},
+                "blocks": [{"type": "example", "content": "[[EXAMPLE:28.8]]"}],
+            },
+        )
+        write_json(structured_dir / "formula_library.json", {"formulas": []})
+        write_json(structured_dir / "table_library.json", {"tables": []})
+        write_json(
+            structured_dir / "example_library.json",
+            {
+                "examples": [
+                    {
+                        "example_id": "28.8",
+                        "chapter": "chapter28",
+                        "label": "Example 28.8",
+                        "source_file": "chapter28_001.json",
+                        "content_markdown": (
+                            "Example 28.8. As Figure 28.4A shows one panel. "
+                            "[[FIGURE:28.4]] Figure 28.4B is discussed again."
+                        ),
+                    }
+                ]
+            },
+        )
+        write_json(
+            figure_root / "figure_library.json",
+            {
+                "figures": {
+                    "28.4": {
+                        "id": "28.4",
+                        "chapter": "chapter28",
+                        "asset_path": "figures/28.4.png",
+                        "caption": "Figure 28.4 Caption.",
+                        "page": 35,
+                    }
+                }
+            },
+        )
+
+        export_textbooks(
+            structured_dir,
+            out_dir,
+            chapters={"chapter28"},
+            figure_library=figure_root / "figure_library.json",
+        )
+
+        output = (out_dir / "chapter28_textbook.md").read_text(encoding="utf-8")
+        self.assertEqual(output.count("> **Figure 28.4**"), 1)
+        self.assertIn("![Figure 28.4](figures/28.4.png)", output)
 
     def test_auto_expands_first_in_chapter_text_figure_reference(self):
         root = make_test_workspace("auto_text_figure")
@@ -579,6 +1026,7 @@ class TextbookExporterTests(unittest.TestCase):
                         "title": "Formula table",
                         "table_type": "formula_table",
                         "rows": [["Scheme", "Formula"], ["Directional", "[[SEE_FORMULA:16.11a]]"]],
+                        "markdown_body": "| Scheme | Formula |\n| --- | --- |\n| Directional | [[SEE_FORMULA:16.11a]] |",
                         "html": "",
                         "source": {"chapter": "chapter16", "unit_id": "chapter16_001"},
                     }
@@ -592,6 +1040,7 @@ class TextbookExporterTests(unittest.TestCase):
 
         self.assertIn("Directional | $$\\kappa=a$$", output)
         self.assertNotIn("[[SEE_FORMULA:16.11a]]", output)
+        self.assertEqual(output.count("Directional | $$\\kappa=a$$"), 1)
 
     def test_table_title_normalizes_nested_subscripts_for_katex(self):
         root = make_test_workspace("nested_subscripts")

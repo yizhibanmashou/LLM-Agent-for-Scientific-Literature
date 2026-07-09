@@ -1,0 +1,114 @@
+{
+  "id": "Genetics_chapter9_010",
+  "metadata": {
+    "chapter": "Genetics_chapter9",
+    "section": "Introduction",
+    "subsections": [
+      "The Castle-Wright Estimator"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter9_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [
+      "9.2",
+      "9.6"
+    ],
+    "section_level_1": "Introduction",
+    "section_level_2": "The Castle-Wright Estimator",
+    "heading_path": [
+      "Introduction",
+      "The Castle-Wright Estimator"
+    ],
+    "display_heading": "The Castle-Wright Estimator",
+    "table_reference_keys": [
+      "chapter9:9.2",
+      "chapter9:9.6"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "proposition",
+      "content": "The most widely used method for estimating $ n_{e} $ utilizes information on the phenotypic means and variances of two parental lines and their line-cross derivatives ($ F_{1} $, $ F_{2} $, $ B_{1} $, $ B_{2} $, etc.) As first developed by Castle (1921) with his graduate student Sewall Wright (1968), the method was intended for use with inbred parental lines. Lande (1981) generalized it for use with genetically variable base populations, and the theory developed below is based on his modifications, and those of Cockerham (1986). In addition to additive gene action, the Castle-Wright technique assumes unlinked loci and equality of allelic effects, although we relax the latter assumption in the following derivation. It also assumes that all genes with a positive influence on the trait are sorted into one line and all those with negative influences into the other."
+    },
+    {
+      "type": "discussion",
+      "content": "Letting $\\alpha_i^c$ be the composite additive effect for the $i$th locus, the mean phenotype of the $\\mathrm{P}_1$ line can be written as $\\mu(\\mathrm{P}_1) = \\mu_0 + \\sum_{i=1}^n \\alpha_i^c = \\mu_0 + n \\overline{\\alpha_i^c}$, where $\\overline{\\alpha_i^c}$ is the average composite additive effect of a locus. That for the $\\mathrm{P}_2$ line is $\\mu(\\mathrm{P}_2) = \\mu_0 - n \\overline{\\alpha_i^c}$. Thus, the expected difference in mean phenotypes is $\\mu(\\mathrm{P}_1) - \\mu(\\mathrm{P}_2) = 2n \\overline{\\alpha_i^c}$. The segregational variance, defined in Equation 9.15, can also be written as $$ \\sigma_{S}^{2}=n[\\sigma^{2}(\\alpha_{i}^{c})+(\\overline{{\\alpha_{i}^{c}}})^{2}]/2 $$ where $\\sigma^{2}(\\alpha_{i}^{c})$ is the variance of composite effects among loci. The trick to deriving an estimator of $n_{e}$ is to note that the expected squared difference between parental line means is $$ \\begin{aligned}[\\mu(\\mathrm{P}_{1})-\\mu(\\mathrm{P}_{2})]^{2}]&=E[(2\\sum_{i=1}^{n}\\alpha_{i}^{c})^{2}]\\\\&=4n[\\overline{(\\alpha_{i}^{c})^{2}}+(n-1)(\\overline{\\alpha_{i}^{c}})^{2}]\\\\&=4n[n(\\overline{\\alpha_{i}^{c}})^{2}+\\sigma^{2}(\\alpha_{i}^{c})]\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Taking the ratio of these two results $$ \\frac{[\\mu(\\mathrm{P}_{1})-\\mu(\\mathrm{P}_{2})]^{2}}{\\sigma_{S}^{2}}=\\frac{8[n(\\overline{\\alpha}_{i}^{c})^{2}+\\sigma^{2}(\\alpha_{i}^{c})]}{(\\overline{\\alpha}_{i}^{c})^{2}+\\sigma^{2}(\\alpha_{i}^{c})} $$ which upon rearrangement yields $$ n_{e}=\\frac{[\\mu(\\mathrm{P}_{1})-\\mu(\\mathrm{P}_{2})]^{2}(1+C_{\\alpha})}{8\\sigma_{S}^{2}}-C_{\\alpha} $$ where $ C_{\\alpha} = \\sigma^2(\\alpha_i^c)/(\\overline{\\alpha_i^c})^2 $ is the squared coefficient of variation of the locus-specific additive effects. In the very unlikely event that all of the assumptions of the model hold, then Equation 9.23 would define the actual number of loci. In recognition of the fact that one or more assumptions are likely to be violated, Equation 9.23 is denoted as a measure of the effective number of factors, $ n_e $. In effect, Equation 9.23 states that the line means and segregational variance are distributed in the same way that would occur if the two populations were differentiated at $ n_e $ freely recombining loci with equal and additive effects."
+    },
+    {
+      "type": "discussion",
+      "content": "In general, $C_{\\alpha}$ is an unobservable quantity, but it must be positive. Ignoring this term for the time being, and substituting observed quantities for expectations, we obtain a biased estimator for the effective number of factors, $$ \\widehat{n}_{e}=\\frac{[\\bar{z}(\\mathrm{P}_{1})-\\bar{z}(\\mathrm{P}_{2})]^{2}-\\mathrm{Var}[\\bar{z}(\\mathrm{P}_{1})]-\\mathrm{Var}[\\bar{z}(\\mathrm{P}_{2})]}{8\\mathrm{Var}(S)} $$ hereafter referred to as the Castle-Wright estimator, where the $ \\bar{z}(\\mathrm{P}_{i}) $ and $ \\mathrm{Var}[\\bar{z}(\\mathrm{P}_{i})] $ are the observed means and sampling variances of the means for the ith parental line. Estimates of $ n_{e} $ in the literature often ignore the two variance terms in the numerator, but these are required to correct for the sampling error of the estimates of the line means (Cockerham 1986)."
+    },
+    {
+      "type": "discussion",
+      "content": "When data are available for the backcross generations, the segregational variance estimate, $ \\mathrm{Var}(S) $, can be obtained by the weighted least-squares procedure described above. In the absence of backcrosses, it can be computed as a linear function of the observed phenotypic variances within lines, either as $ \\mathrm{Var}(\\mathrm{F}_2) - \\mathrm{Var}(\\mathrm{F}_1) $ or $ \\mathrm{Var}(\\mathrm{F}_2) - \\{[2\\mathrm{Var}(\\mathrm{F}_1) + \\mathrm{Var}(\\mathrm{P}_1) + \\mathrm{Var}(\\mathrm{P}_2)]/4\\} $. The importance of using least-squares estimates whenever possible is seen from Example 4, where $ \\mathrm{Var}(\\mathrm{F}_2) - \\mathrm{Var}(\\mathrm{F}_1) $ is negative, but the least-squares estimate of $ \\sigma_S^2 $ is 17."
+    },
+    {
+      "type": "proposition",
+      "content": "The large-sample variance of $n_{e}$, obtained from the equation for the variance of a ratio under the assumption of normality (Appendix 1), is approximately $$ \\mathrm{Var}(\\widehat{n}_{e})=\\widehat{n}_{e}^{2}\\left[\\frac{4\\{\\mathrm{Var}[\\bar{z}(\\mathrm{P}_{1})]+\\mathrm{Var}[\\bar{z}(\\mathrm{P}_{2})]\\}}{\\left[\\bar{z}(\\mathrm{P}_{1})-\\bar{z}(\\mathrm{P}_{2})\\right]^{2}}+\\frac{\\mathrm{Var}[\\mathrm{Var}(S)]}{[\\mathrm{Var}(S)]^{2}}\\right] $$"
+    },
+    {
+      "type": "proposition",
+      "content": "If $ \\mathrm{Var}(S) $ is estimated by least-squares analysis, its sampling variance, $ \\mathrm{Var}[\\mathrm{Var}(S)] $, is obtained directly from the matrix $ (\\mathbf{M}^{T}\\mathbf{V}^{-1}\\mathbf{M})^{-1} $, as described above. Otherwise, it is estimated by the sum of the variances of the variances used to compute $ \\mathrm{Var}(S) $, each weighted by the square of the appropriate coefficient. For example, if $ \\mathrm{Var}(S) $ is estimated by $ \\mathrm{Var}(\\mathrm{F}_2) - \\mathrm{Var}(\\mathrm{F}_1) $, then $$ \\mathrm{Var}[\\mathrm{Var}(S)]=\\frac{2[\\mathrm{Var}(\\mathrm{F}_{2})]^{2}}{n_{\\mathrm{F}_{2}}+2}+\\frac{2[\\mathrm{Var}(\\mathrm{F}_{1})]^{2}}{n_{\\mathrm{F}_{1}}+2} $$ where $ n_{F_2} $ and $ n_{F_1} $ are the sample sizes. This follows since $ \\text{Var}(F_1) $ and $ \\text{Var}(F_2) $ are independent estimates, and since under the assumption of normality, the large-sample variance of a variance is $ 2\\text{Var}^2/(n+2) $ (Appendix 1)."
+    },
+    {
+      "type": "discussion",
+      "content": "We noted above that failure to account for the variation in composite effects among segregating loci, i.e., ignoring $C_{\\alpha}$, will tend to depress $\\widehat{n}_{e}$ below the true number of segregating loci. Additional factors will usually result in a further downward bias. For example, if the genes with positive effects are distributed among both parental lines, the difference between the parental line means will be less than the maximum value because the positive effects of genes at some loci will be canceled by negative effects at others. Consider the case of one line being fixed for +1 genes at locus 1 and -1 genes at locus 2 and another line being fixed for -1 genes at locus 1 and +1 genes at locus 2. The number of segregating loci in the $F_{2}$ generation is two, but since both parental lines have mean phenotypes equal to zero, the expected value of $n_{e}$ yielded by Equation 9.24 would equal zero. Such problems become immediately apparent when $F_{2}$ individuals exhibit phenotypes outside of the range of variation in both parental lines, a phenomenon known as transgressive segregation (Chapter 15), but the absence of such individuals does not rule out the possibility of transgression. In order to minimize such interpretative difficulties, most investigators utilize parental lines with the maximum range of variation between mean phenotypes. This is often accomplished by artificially selecting lines in the upward and downward direction for several generations prior to crossing."
+    },
+    {
+      "type": "discussion",
+      "content": "By inflating the estimated segregational variance, linkage will also cause $ \\widehat{n}_{e} $ to be downwardly biased. Letting $ c_{ij} $ be the recombination fraction between loci i and j, a more general formula for the segregational variance in the $ F_{2} $ generation is $$ \\sigma_{S}^{2}=\\frac{1}{2}\\left[\\sum_{i=1}^{n}(\\alpha_{i}^{c})^{2}+\\sum_{i=1}^{n}\\sum_{j\\neq i}^{n}\\alpha_{i}^{c}\\alpha_{j}^{c}(1-2c_{ij})\\right] $$ where the term on the right is the disequilibrium covariance. Assuming that the effects of pairs of alleles are uncorrelated with their map distances, then Equation 9.26a simplifies to $$ \\sigma_{S}^{2}=\\frac{n}{2}\\left[\\sigma^{2}(\\alpha_{i}^{c})+(\\overline{{\\alpha_{i}^{c}}})^{2}+(n-1)(1-2\\bar{c})(\\overline{{\\alpha_{i}^{c}}})^{2}\\right] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "In principle, the disequilibrium contribution to $\\sigma_{S}^{2}$ can be removed by taking the $F_{2}$ generation through several additional generations of random mating, since this reduces the disequilibrium covariance by the factor $(1-c)$ each generation (Chapters 5 and 16). A modified estimate of the segregational variance can then be obtained as the difference between the variance in the advanced generation and that in the $F_{1}$ line."
+    },
+    {
+      "type": "discussion",
+      "content": "An alternative way to deal with the problem of linkage is to use this more general expression for $\\sigma_{S}^{2}$, Equation 9.26b, combined with our previous expression for the expected squared difference between line means to define the relationship between the effective number of factors and the actual number of loci. Substituting Equation 9.26b into 9.23 and rearranging leads to the expression $$ n=\\frac{2\\bar{c}n_{e}+C_{\\alpha}(n_{e}-1)}{1-n_{e}(1-2\\bar{c})} $$ which reduces to Equation 9.23 for the special case in which $ \\bar{c}=0.5 $. Zeng (1992) suggested that by substituting the estimate $ \\widehat{n}_{e} $, obtained by use of Equation 9.24, into this expression, nearly unbiased estimates of the actual number of loci $ (n) $ are achievable."
+    },
+    {
+      "type": "proposition",
+      "content": "In order to take advantage of Zeng's suggestion, we require, at the very least, estimates of $\\bar{c}$ and $C_{\\alpha}$. We have already provided a number of estimates of $\\bar{c}$ in [[SEE_TABLE:9.2]], showing how these can be obtained from genetic maps of chromosomes under the assumption of randomly distributed loci. For many species, such detailed information is not available. However, provided the haploid chromosome number $M$ is known, then a downwardly biased estimate of $\\bar{c}$ is given by $$ \\bar{c}=\\frac{M-1}{2M} $$ which assumes that recombination only occurs between pairs of genes on different chromosomes (by independent assortment), and that all chromosomes contain equal numbers of genes. Fortunately, estimates of $ \\bar{c} $ using this approximation are not greatly different than the more refined estimates obtained by use of Equation 9.3. For example, for humans (M = 23), maize (M = 10), and Arabidopsis (M = 5), Equation 9.28 yields estimates of $ \\bar{c} = 0.478, 0.450 $, and 0.400, respectively, which contrast with the more exact computations, 0.490, 0.474, and 0.443. Thus, provided the minimum amount of information exists on the cytology of the organism, fairly reasonable estimates of $ \\bar{c} $ are achievable."
+    },
+    {
+      "type": "discussion",
+      "content": "The squared coefficient of variation of effects, $C_{\\alpha}$, is much more elusive. While estimates of the distribution of allelic effects are expected to be generated in the future as QTL mapping continues (Chapters 14–16), the only available estimates of this parameter derive from Keightley's (1994) analysis of data from mutation-accumulation experiments performed on lines of Drosophila melanogaster (Chapter 12). For abdominal bristle number, sternopleural bristle number, and viability, $C_{\\alpha}$ is on the order of 6, 24, and 17, respectively. Unfortunately, aside from the fact that these estimates have very large sampling variances, it is unclear how similar the spectrum of effects of spontaneous mutations is to that of the effects of alleles normally segregating in natural populations. To the extent that they are representative, such high values of $C_{\\alpha}$ suggest a very leptokurtic (L-shaped) distribution of allelic effects, with a very high density of small effects and a long tail to the right. For comparison, with a half-normal distribution (truncated at the mean), $C_{\\alpha}=0.57$, and with a negative exponential distribution, $C_{\\alpha}=1.0$."
+    },
+    {
+      "type": "discussion",
+      "content": "The modifications suggested above are not trivial, as the magnitude of bias that variation in allelic effects and/or linkage causes with the Castle-Wright estimator can be quite large. Consider, for example, the situation in which $ C_{\\alpha} = 15 $, the average of the results reported above, and suppose that the Castle-Wright estimator yields $ \\widehat{n}_{e} = 4 $. Substituting into Equation 9.27, for humans, for which $ \\bar{c} = 0.49 $, such an estimate would be compatible with the presence of 53 actual loci, and for C. elegans, for which $ \\bar{c} = 0.42 $, it would imply the presence of 134 loci. Assuming constant allelic effects ($ C_{\\alpha} = 0 $), the estimate for humans would be essentially unbiased, as $ \\widehat{n} $ still equals four, but for C. eleoans. $ \\widehat{n} = 9 $."
+    },
+    {
+      "type": "discussion",
+      "content": "By inflating the segregational variance in the $ F_{2} $, nonadditive gene action is still another factor that has a downward influence on estimates derived by the Castle-Wright estimator. However, provided dominance is the primary source of nonadditivity, then the use of $ 2\\mathrm{Var}(F_{2}) - \\mathrm{Var}(B_{1}) - \\mathrm{Var}(B_{2}) $ as the estimate of the segregational variance in Equation 9.24 can eliminate most of the problem (Wright 1968, Ollivier and Janss 1993). Since the expectation of this quantity is identical to $ \\sigma_{S}^{2} $ defined in Equation 9.26b, Equation 9.27 applies as well."
+    },
+    {
+      "type": "discussion",
+      "content": "In summary, we find that violations of the various assumptions of the Castle-Wright model usually conspire to ensure that $ \\widehat{n}_{e} $ is an underestimate of the actual number of loci contributing to the divergence of lines. However, although the bias can be very substantial (Zeng et al. 1990), most of it can be eliminated by making the modifications suggested above, i.e., by first computing $ \\widehat{n}_{e} $ by use of Equation 9.24, then substituting this estimate and estimates of $ C_{\\alpha} $ and $ \\bar{c} $ into Equation 9.27, and solving. An approximate expression for the sampling variance of the improved estimate of the actual number of loci is given by $$ \\mathbf{Var}(\\widehat{n})=\\frac{4\\bar{c}^{2}(1+C_{\\alpha})^{2}\\mathbf{Var}(\\widehat{n}_{e})}{[1-\\widehat{n}_{e}(1-2\\bar{c})]^{4}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "(Zeng 1992), where $ \\operatorname{Var}(\\widehat{n}_e) $ is defined in Equation 9.25. Simulations by Zeng (1992) suggest that $ \\widehat{n} $ provides much more reasonable estimates of the number of loci $ (n) $, than does $ \\widehat{n}_e $. However, the sampling variance of $ \\widehat{n} $ can be quite large. Even negative estimates are possible, when by chance the estimate of $ \\sigma_S^2 $ is negative. (Negativity can occur with the Castle-Wright estimator as well.) Thus, any attempt to estimate $ n $ by either approach should be based on large sample sizes (ideally, with hundreds of individuals measured in each line)."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 5. In previous examples involving human skin color, we found that $ \\bar{z}(P_1) = 14.4 $ and $ \\bar{z}(P_2) = 41.0 $. Squaring the standard errors of the means, $ \\text{Var}[\\bar{z}(P_1)] = 0.205 $ and $ \\text{Var}[\\bar{z}(P_2)] = 0.373 $. The estimated segregational variance (Example 3) is $ \\text{Var}(S) = 17.264 $, and its sampling variance is obtained by squaring its standard error, $ \\text{Var}[\\text{Var}(S)] = 11.033^2 = 121.724 $. Substituting into Equation 9.24, we obtain $ \\hat{n}_e = 5.1 $. Substituting into Equation 9.25, Var $ \\langle \\widehat{n}_e \\rangle = 10.703 $, giving the standard error of $ \\widehat{n}_e $ as $ 10.703^{1/2} \\simeq 3.3 $. Thus, the data suggest the hypothesis that the majority of the genetic difference in skin color between the major races of man is a consequence of a very small number of segregating factors. It should be kept in mind, however, that because of the low degree of accuracy of the estimated segregational variance, $ \\widehat{n}_e $ is a highly uncertain measure of the effective number of factors."
+    },
+    {
+      "type": "discussion",
+      "content": "Supposing, for heuristic purposes, that the estimate $ \\widehat{n}_{e} $ is accurate, what might the actual number of loci (n) contributing to the character be? From [[SEE_TABLE:9.2]], we know that the mean recombination fraction for randomly distributed genes is extremely high in humans ($ \\bar{c} = 0.49 $). Substituting this and $ n_{e} = 5 $ into Equation 9.27, we obtain $$ n=\\frac{4.9+4C_{\\alpha}}{0.9} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Assuming that all loci have equal effects $(C_{\\alpha}=0)$, which seems unlikely, then $n=10$. For $C_{\\alpha}=1$, 10, and 100, $n=10$, 50, and 450. Thus, if the squared coefficient of variation of effects is much greater than one, the actual number of loci may greatly exceed the effective number of factors."
+    },
+    {
+      "type": "discussion",
+      "content": "A survey of estimates of $ \\widehat{n}_{e} $ is given in [[SEE_TABLE:9.6]]. Here it should be emphasized that each estimate only applies to the specific pair of parental lines and that substantial differences would be likely if other parental stocks were used. Furthermore, the data are adequately described by an additive model in only a few cases, so most of the estimates are definitely biased in the downward direction by nonadditive gene action. Despite these limitations, while several of the analyses imply that a dozen or more loci are responsible for the differentiation of characters between parental lines, a number of cases suggest the possibility that a single major factor is involved. The latter conclusion may, of course, be substantially in error due to the approximate and biased nature of the biometrical approach. Nevertheless, the Castle-Wright model serves as a flag for situations in which a leading-factor (major gene) hypothesis (Chapter 13) warrants consideration."
+    }
+  ]
+}

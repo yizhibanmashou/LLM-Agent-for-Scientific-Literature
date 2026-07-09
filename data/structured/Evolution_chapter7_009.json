@@ -1,0 +1,75 @@
+{
+  "id": "Evolution_chapter7_009",
+  "metadata": {
+    "chapter": "Evolution_chapter7",
+    "section": "Interaction of Selection, Mutation, and Drift: Introduction",
+    "subsections": [
+      "HALDANE'S PRINCIPLE AND THE MUTATION LOAD"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter7_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Interaction of Selection, Mutation, and Drift: Introduction",
+    "section_level_2": "HALDANE'S PRINCIPLE AND THE MUTATION LOAD",
+    "heading_path": [
+      "Interaction of Selection, Mutation, and Drift: Introduction",
+      "HALDANE'S PRINCIPLE AND THE MUTATION LOAD"
+    ],
+    "display_heading": "HALDANE'S PRINCIPLE AND THE MUTATION LOAD"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Having established the expected allele frequencies at a locus that is jointly influenced by mutation, selection, and drift, we will now consider in more detail the price that all organisms pay for the privilege of evolving. Because most mutations are deleterious, and many are unconditionally so, for every beneficial allele created by mutation, many more detrimental mutations will be introduced to a population. In populations of sufficiently large size, the majority of such mutations will be kept at a low frequency and eventually purged, but the relentless flux of new mutations will nevertheless result in an equilibrium load on the mean fitness in the population (Muller 1950; Crow 1993). What is remarkable is that, under reasonably general conditions, this load is often essentially independent of the effects of individual mutations."
+    },
+    {
+      "type": "discussion",
+      "content": "In an elegant display of population-genetic reasoning, Haldane (1937b) proposed that the reduction in fitness resulting from recurrent deleterious mutations is a function of the deleterious mutation rate alone, an observation that has come to be known as Haldane's principle. To illustrate, consider a deleterious recessive allele a, with a selective disadvantage, s, in homozygotes. Recalling Equation 7.6d reveals that the mean population fitness when this locus is in selection-mutation balance is $$ \\overline{W}=1-s\\cdot\\mathrm{f r e q}(a a)=1-s\\left(\\sqrt{\\frac{\\mu}{s}}\\right)^{2}=1-\\mu $$ Because the expected frequency of recessive homozygotes is inversely proportional to the selective disadvantage, the reduction in mean fitness (the $ \\text{mutation load} $) is independent of the strength of selection and simply equal to the deleterious mutation rate per allele."
+    },
+    {
+      "type": "discussion",
+      "content": "Now consider an allele with partial to complete dominance and with heterozygote a fitness of 1 - hs. If we recall from Equation 7.6d that the equilibrium allele frequency is $ \\widetilde{p} = \\mu / (hs) $, the mean population fitness is $$ \\begin{align*}\\overline{W}&=1-2hs\\widetilde{p}(1-\\widetilde{p})-s\\widetilde{p}^2\\\\&\\simeq1-2hs\\widetilde{p}=1-2hs\\left(\\frac{\\mu}{hs}\\right)=1-2\\mu\\end{align*} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The approximation, which assumes weak mutation, meaning that that $ \\tilde{p}^2 \\ll 1 $, shows that the expected mean fitness is independent of both $ h $ and $ s $. Bürger (2000) explored these expressions in considerable detail and showed that the error in ignoring secondary terms in the preceding expressions is on the order of $ \\mu^2/s $ or smaller. With multiple deleterious alleles per locus, these same expressions apply if $ \\mu $ is interpreted as the total mutation rate of the most beneficial allele to all classes of deficient alleles at a locus (Crow and Kimura 1964; Clark 1998)."
+    },
+    {
+      "type": "proposition",
+      "content": "One potential caveat about these results is that the derivation assumes a situation in which there are negligible epistatic effects on fitness. To examine the robustness of this assumption, Kimura and Maruyama (1966) considered a quadratic fitness function of the form $ w_i = 1 - h_1 i - h_2 i^2 $, where $ i $ is the number of mutations carried by the individual. With $ h_2 = 0 $, the model of additive effects assumed above is closely approximated, and Haldane's principle continues to hold, with a mean fitness approximately equal to $ e^{-U} $, where $ U $ is the deleterious mutation rate per diploid genome. However, at the opposite extreme, with $ h_1 = 0 $, fitness declines with the square of the number of mutations, and mean fitness is elevated to $ \\sim e^{-U/2} $ regardless of the magnitude of $ h_2 $. A more general analysis, which allows for nonzero values of both $ h_1 $ and $ h_2 $, was provided by Kimura and Maruyama (1966) and demonstrated that this type of synergistic epistasis always reduces the mutational load on a sexual population. In contrast, when there is diminishing-returns epistasis, where the decline in fitness with increasing numbers of deleterious mutations becomes progressively shallower, the mutation load will be elevated above the Haldane expectation."
+    },
+    {
+      "type": "discussion",
+      "content": "Fitness functions involving epistasis have played a significant role in our attempt to understand the evolution of sexual reproduction, primarily because the behavior just noted does not extend to asexual genomes, as first shown by Kimura and Maruyama (1966) in a remarkably simple way. Consider an asexual population of mixed clones, with $ p_0 $ being the frequency of the clone with the minimum number of mutations in one generation and $ p'_0 $ being its frequency in the next generation. Then, accounting for selection and mutation, $$ p_{0}^{\\prime}=\\frac{p_{0}W_{0}e^{-U}}{\\overline{W}} $$ where $ \\overline{W} $ is the mean population fitness, $ W_0 = 1 $ is the fitness of the optimal genotype, and $ e^{-U} $ is the fraction of the members of this class that do not acquire mutations. Note that no assumptions have been made here with respect to the mode of gene action or on the form of the fitness distribution, and yet at equilibrium ($ p_0 = p_0 $) we obtain the very general result that mean fitness, $ \\overline{W} $, equals $ e^{-U} $. Thus, if synergistic epistasis among deleterious mutations is important, a matter on which there is little empirical consensus (Rice 2002b; Barton and Otto 2005; Kouyos et al. 2007; Keightley and Halligan 2009), a sexual population will have a long-term advantage in terms of mean fitness. Substantial additional work has been done on this subject (e.g., Kondrashov 1984, 1988; Charlesworth 1990; Agrawal and Chasnov 2001; Otto 2003; Haag and Roze 2007)."
+    },
+    {
+      "type": "discussion",
+      "content": "An additional issue with respect to Haldane's principle is that $ N_{e} $ must be several-fold greater than $ 1/(h_{s}) $ for Haldane's principle to be closely approximated. If this is not the case, deleterious alleles will be capable of drifting to frequencies higher than what would be expected under selection-mutation balance alone. Although this observation led Kimura et al. (1963) to conclude that the mutational load due to segregating mutations will increase monotonically with decreasing $ N_{e} $, their study invoked a relatively high level of back mutation in order to maintain a quasi-equilibrium allele frequency."
+    },
+    {
+      "type": "discussion",
+      "content": "If, instead, one treats back mutation as a negligible force (for reasons stated above), it can be shown that the load associated with segregating mutations is nonmonotonic with respect to $ N_e $. The segregational load actually reaches a maximum (in excess of the Haldane expectation) at the point where $ 1/(2N_e) \\simeq h_s $, as it is at this point that mutations have a maximum deleterious effect that is still consistent with being highly vulnerable to random genetic drift (Lynch et al. 1995a, 1995b). As $ N_e $ declines below this point, the segregational load approaches zero simply because drift becomes so strong that few segregating polymorphisms of any kind are maintained, and at this point permanent damage accrues via the fixation of deleterious alleles, i.e., there is a fixation load in addition to any segregational load. Indeed, once a population enters this small-population-size domain, the mutation load may no longer even be maintained at a quasi-equilibrium state as a continual flux of new rounds of weakly deleterious mutations will lead to further fixations. If unopposed for a sufficiently long time, such a condition can eventually reduce mean population fitness to the point at which the average individual will be incapable of replacing itself, leading to population extinction via a mutational meltdown (Lynch et al. 1995a, 1995b)."
+    },
+    {
+      "type": "discussion",
+      "content": "Even populations large enough to avoid extinction by a mutational meltdown must experience some fixation load, as they will often include mutationally derived alleles with small enough deleterious effects to be immune to selection (i.e., $ |s| < 4N_e $). The issue has been explored with a variety of models for mutational passage between allelic classes (Hartl and Taubes 1998; Poon and Otto 2000; Sella and Hirsh 2005; Lynch 2012b). Although the exact results vary somewhat among studies, in every case the load resulting from the fixation of suboptimal alleles is inversely proportional to the effective population size, often with an upper bound on the order of $ 1/(4N_e) $."
+    },
+    {
+      "type": "discussion",
+      "content": "One way to arrive at this result is to recall the additive two-allele model given above as Equation 7.37. Noting that the load associated with a fixed deleterious mutation is the homozygous effect, 2s, multiplied by the expected fraction of time for which the deleterious allele is fixed, we then have $$ \\begin{aligned}L&=2s(1-\\widetilde{P}_{opt})=\\frac{2s\\mu/v}{e^{S}+(\\mu/v)}\\\\&\\simeq\\frac{2s\\mu/v}{1+4N_{e}s+(\\mu/v)}\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The approximation applies when $ S = 4N_e s < 1 $, which must be the case for there to be a significant chance of fixation of a deleterious allele. Under the latter conditions, with symmetrical mutation rates $ (\\mu = v) $, $$ L=\\frac{1}{2N_{e}+\\left(1/s\\right)}<\\frac{1}{4N_{e}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Mutational bias in the direction of deleterious alleles ($ \\mu/v > 1 $) will elevate this load, but the point remains the same. Finite population size imposes an ultimate barrier to adaptive refinements that can be maintained in a population. Although this load may appear to be small, as noted in Chapter 4, in all known cases, $ \\mu < 1/(2N_e) $, suggesting that the drift load per locus is likely to be typically greater than Haldane's segregational load. In addition, the previous derivations apply to single loci, whereas the cumulative load over all $ n $ loci contributing to a trait will be roughly $ n $ times the single-locus load, assuming weak multiplicative fitness effects. Thus, drift appears to generally impose a nontrivial barrier to adaptive perfection."
+    },
+    {
+      "type": "discussion",
+      "content": "There has been considerable debate about the meaning and consequences of the genetic load (Wallace 1991; Crow 1993; Kondrashov and Crow 1993; Reed and Aquadro 2006). As deleterious mutations impose differences in survival and/or reproduction, they must have some demographic consequences. Taken literally, if the deleterious mutation-free genotype is viewed as the standard $ (W_0 = 1) $, an equilibrium load, $ L $, would imply approximately $ e^{-L} $ viability (not including mortality unassociated with genetic variation) provided its entire influence is on survivorship. This would then require an inflation of family sizes by a factor of $ e^L $ relative to the minimum value of two that is necessary to maintain population-size stability. Under this view, the load concept is paradoxical in that a low-fecundity organism such as a vertebrate would never be able to bear the demographic costs should the genome-wide deleterious mutation rate exceed $ \\sim1.0 $, which is likely the case in vertebrates (Chapter 4). Lesecque et al. (2012) showed, however, that the magnitude of selective death is greatly diminished if the fitness of individuals is scaled relative to the actual mean fitness in the population rather than to the idealized $ W_0 = 1 $. Such a situation would be expected if selection operates mainly through competition of the actual members of the population, rather than by comparison to a nonexistent (idealized) genotype."
+    }
+  ]
+}

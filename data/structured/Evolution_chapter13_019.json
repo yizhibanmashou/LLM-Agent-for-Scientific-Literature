@@ -1,0 +1,35 @@
+{
+  "id": "Evolution_chapter13_019",
+  "metadata": {
+    "chapter": "Evolution_chapter13",
+    "section": "THE MULTIVARIATE BREEDER'S EQUATION",
+    "subsections": [
+      "Response With Two Traits"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter13_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "THE MULTIVARIATE BREEDER'S EQUATION",
+    "section_level_2": "Response With Two Traits",
+    "heading_path": [
+      "THE MULTIVARIATE BREEDER'S EQUATION",
+      "Response With Two Traits"
+    ],
+    "display_heading": "Response With Two Traits"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "One expects that selection is always acting on more than a single trait, as even with strong artificial selection on a single character, natural selection is likely operating on other traits as well. What risks do we run by ignoring this expectation and treating selection as a univariate problem? While this is examined much more fully in Volume 3, we can gain significant insight by considering the simple case of two traits, both of which are potentially under selection. Equation 13.23b gives the expected vector of responses as $$ \\mathbf{R}=\\begin{pmatrix}R_{1}\\\\ R_{2}\\end{pmatrix}=\\mathbf{G}\\mathbf{P}^{-1}\\mathbf{S}=\\begin{pmatrix}G_{11}&G_{12}\\\\ G_{12}&G_{22}\\end{pmatrix}\\begin{pmatrix}P_{11}&P_{12}\\\\ P_{12}&P_{22}\\end{pmatrix}^{-1}\\begin{pmatrix}S_{1}\\\\ S_{2}\\end{pmatrix} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Using LW Equation 8.11 to compute the inverse of P, and, recalling for a covariance that $ P_{12} = \\rho_{z} \\sqrt{P_{11} P_{22}} $, where $ \\rho_{z} $ is the phenotypic correlation between the two traits, yields $$ \\begin{aligned}\\mathbf{P}^{-1}\\mathbf{S}&=\\frac{1}{P_{11}P_{22}-P_{12}^{2}}\\begin{pmatrix}P_{22}&-P_{12}\\\\ -P_{12}&P_{11}\\end{pmatrix}\\begin{pmatrix}S_{1}\\\\ S_{2}\\end{pmatrix}\\\\&=\\frac{1}{P_{11}P_{22}(1-\\rho_{z}^{2})}\\begin{pmatrix}S_{1}P_{22}-S_{2}P_{12}\\\\ -S_{1}P_{12}+S_{2}P_{11}\\end{pmatrix}\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Substituting into Equation 13.24a and recalling that $ h_{i}^{2} = G_{ii} / P_{ii} $, the response in trait one becomes $$ \\begin{aligned}R_{1}&=\\frac{1}{P_{11}P_{22}(1-\\rho_{z}^{2})}\\left(G_{11}\\quad G_{12}\\right)\\left(\\begin{aligned}&S_{1}P_{22}-S_{2}P_{12}\\\\&-S_{1}P_{12}+S_{2}P_{11}\\end{aligned}\\right)\\\\&=\\frac{G_{11}\\left(S_{1}P_{22}-S_{2}P_{12}\\right)+G_{12}\\left(-S_{1}P_{12}+S_{2}P_{11}\\right)}{P_{11}P_{22}(1-\\rho_{z}^{2})}\\\\&=\\frac{h_{1}^{2}}{\\left(1-\\rho_{z}^{2}\\right)}\\left(S_{1}-S_{2}\\frac{P_{12}}{P_{22}}\\right)+\\frac{G_{12}\\left(-S_{1}P_{12}+S_{2}P_{11}\\right)}{P_{11}P_{22}(1-\\rho_{z}^{2})}\\end{aligned} $$ with an analogous expression for $ R_2 $. The breeder's equation is recovered only when trait one is phenotypically $ (P_{12} = \\rho_z = 0) $ and genetically $ (G_{12} = 0) $ uncorrelated with trait two. As we now demonstrate, this complicated expression masks the rather different roles played by phenotypic and genetic correlations, impacting (respectively) the within- and between-generation changes. Volume 3 examines these points in some detail."
+    }
+  ]
+}

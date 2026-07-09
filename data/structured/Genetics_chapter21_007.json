@@ -1,0 +1,51 @@
+{
+  "id": "Genetics_chapter21_007",
+  "metadata": {
+    "chapter": "Genetics_chapter21",
+    "section": "Introduction",
+    "subsections": [
+      "COMPONENTS OF THE PHENOTYPIC CORRELATION"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter21_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "COMPONENTS OF THE PHENOTYPIC CORRELATION",
+    "heading_path": [
+      "Introduction",
+      "COMPONENTS OF THE PHENOTYPIC CORRELATION"
+    ],
+    "display_heading": "COMPONENTS OF THE PHENOTYPIC CORRELATION"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "As noted in the introduction, phenotypic covariance between two traits arises from both genetic and environmental causes. We have just seen how the basic machinery for estimating heritabilities can be extended to the estimation of genetic correlations. However, the environmental correlation, $\\rho_{E}$, can only be calculated directly under a very special set of circumstances. If a collection of genetically homogeneous individuals (either a highly inbred line or a single clone) is used, so there is no genetic variance among individuals within the group, the phenotypic and environmental correlations are equivalent."
+    },
+    {
+      "type": "discussion",
+      "content": "Ordinarily, a more circuitous route to the estimation of $ \\rho_{E} $ is necessary. The usual approach is to estimate the phenotypic and genetic correlations first, and to extract the environmental correlation from the algebraic relationship between the three quantities. The phenotypic correlation between two traits is easily acquired, as it is simply the correlation of the measures of the two traits in the same individual, $$ \\rho_{z}=\\frac{\\sigma_{z}(1,2)}{\\sigma_{z}(1)\\cdot\\sigma_{z}(2)} $$ where $\\sigma_{z}(1)$ and $\\sigma_{z}(2)$ are the phenotypic standard deviations of the two traits and $\\sigma_{z}(1,2)$ is the covariance of traits 1 and 2 in the same individual. The relationship between the three types of correlations is fairly easily derived. Noting that covariances are additive (Chapter 3) and assuming that all covariance is due to additive genetic and special environmental effects, $\\sigma_{z}(1,2)=\\sigma_{A}(1,2)+\\sigma_{E}(1,2)$, where $$ $$"
+    },
+    {
+      "type": "discussion",
+      "content": "_ A (1,2)&= _ A _ z (1)h_ 1 _ z (2)h_ 2 \\\\ _ E (1,2)&= _ E (_ z (1) 1-h_ 1 ^ 2) (_ z (2) 1-h_ 2 ^ 2) $$ $$ $$ \\rho_{z}=h_{1}h_{2}\\rho_{A}+\\rho_{E}\\sqrt{(1-h_{1}^{2})(1-h_{2}^{2})} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Equation 21.10 then expands to rearrangement of which leads to $$ \\rho_{E}=\\frac{\\rho_{z}-h_{1}h_{2}\\rho_{A}}{\\sqrt{(1-h_{1}^{2})(1-h_{2}^{2})}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "(An alternative derivation based on path analysis is provided in Appendix 2.) Estimates of the environmental correlation are obtained by substituting observed for expected quantities in this expression."
+    },
+    {
+      "type": "proposition",
+      "content": "The derivation of Equation 21.12 assumes zero covariance between the genetic value of trait 1 in individual x and the environmental deviation of trait 2 in relative y, and vice versa, a reasonable assumption if maternal effects can be ruled out. This problem aside, it should also be emphasized that because Equations 21.6, 21.7, and 21.9 only provide approximations of the additive genetic correlation, Equation 21.12 yields only an approximation of the environmental correlation. All of the nonadditive genetic variance and covariance that is not included in the estimation of $ \\rho_{A} $ will contribute to $ \\rho_{E} $. For example, when the genetic covariance is estimated by twice the covariance of offspring and midparents, the actual composition of the excess “environmental” covariance is $$ \\sigma_{z}(1,2)-\\left[\\sigma_{A}(1,2)+\\frac{\\sigma_{AA}(1,2)}{2}\\right]=\\sigma_{E}(1,2)+\\sigma_{D}(1,2)+\\frac{\\sigma_{AA}(1,2)}{2}+\\sigma_{AD}(1,2)+\\cdots $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Since any of the covariance terms can be positive or negative, estimates of environmental correlations can be biased in either direction by nonadditive gene action."
+    }
+  ]
+}

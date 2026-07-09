@@ -1,0 +1,84 @@
+{
+  "id": "Genetics_chapter7_007",
+  "metadata": {
+    "chapter": "Genetics_chapter7",
+    "section": "Introduction",
+    "subsections": [
+      "Gametic Phase Disequilibrium"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter7_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [
+      "7.3"
+    ],
+    "section_level_1": "Introduction",
+    "section_level_2": "Gametic Phase Disequilibrium",
+    "heading_path": [
+      "Introduction",
+      "Gametic Phase Disequilibrium"
+    ],
+    "display_heading": "Gametic Phase Disequilibrium",
+    "table_reference_keys": [
+      "chapter7:7.3"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Further complications arise when loci are in gametic phase disequilibrium since this can cause a covariance between the effects of genes carried in the same gamete. The problem has been addressed by Weir et al. (1980), who ignored epistasis and assumed random mating, as we do below. In Chapter 5 (Equations 5.16a,b), we saw that in the presence of gametic phase disequilibrium, the total genetic variance can be expressed as $$ \\sigma_{G}^{2}=\\sigma_{A}^{2}+\\sigma_{A,A}+\\sigma_{D}^{2}+\\sigma_{D,D} $$ where $\\sigma_{A,A}$ is the contribution due to covariance of additive effects of nonalleles within gametes (the additive disequilibrium covariance), and $\\sigma_{D,D}$ is the contribution of covariance due to dominance effects of different loci within individuals (the dominance disequilibrium covariance)."
+    },
+    {
+      "type": "discussion",
+      "content": "We now consider the genetic covariance between relatives derived from a base population displaying gametic phase disequilibria. The covariance between relatives attributable to equilibrium additive and dominance genetic variance ($ \\sigma_{A}^{2} $ and $ \\sigma_{D}^{2} $) is the same as given above, so it is only necessary to consider the additional contributions resulting from $ \\sigma_{A,A} $ and $ \\sigma_{D,D} $. For situations in which the study population is being maintained in a steady state of disequilibrium from generation to generation (by processes such as natural selection, migration, and/or nonrandom mating), the modifications to the theory are simple — all of the preceding formulations still apply, except that $ (\\sigma_{A}^{2} + \\sigma_{A,A}) $ replaces $ \\sigma_{A}^{2} $, and $ (\\sigma_{D}^{2} + \\sigma_{D,D}) $ replaces $ \\sigma_{D}^{2} $."
+    },
+    {
+      "type": "discussion",
+      "content": "The more interesting situation arises when a study population, initially in gametic phase disequilibrium, is allowed to mate randomly in an environment in which the forces maintaining disequilibria are relaxed. In this case, the covariances between relatives change through time as recombination causes the disequilibrium components of covariance to decay towards zero. In the following, we will consider only the simple (and most common) situation in which the ancestors leading to a relationship are all members of the same generation; more general results can be found in Weir et al. (1980)."
+    },
+    {
+      "type": "discussion",
+      "content": "We start by considering the additive component of disequilibrium covariance. Returning to Equation 7.10, we make the distinction that allele i at the first locus and allele k at the second locus are inherited in one gamete, whereas genes j and l are inherited in the other gamete. By using the expression for the variance of a sum, Equation 3.11b, the additive equilibrium genetic variance is defined to be $$ \\sigma_{A}^{2}=E(\\alpha_{i}^{2})+E(\\alpha_{j}^{2})+E(\\alpha_{k}^{2})+E(\\alpha_{l}^{2}) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "On the other hand, the additive disequilibrium covariance in the base population is $$ \\sigma_{A,A}(0)=2E(\\alpha_{i}\\alpha_{k})+2E(\\alpha_{j}\\alpha_{l}) $$"
+    },
+    {
+      "type": "proposition",
+      "content": "Note that terms involving cross-gamete expectations, e.g., $ E(\\alpha_{i}\\alpha_{j}) $ and $ E(\\alpha_{i}\\alpha_{l}) $, do not appear in this expression because their expected values are zero under the assumption of random mating (as there is no correlation between gametes). In Chapter 5, we found that in the absence of restoring forces, gametic phase disequilibrium is reduced by a fraction c after each generation of random mating. Thus, the additive disequilibrium covariance remaining after t generations is $$ \\sigma_{A,A}(t)=(1-c)^{t}\\sigma_{A,A}(0) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "To obtain the covariance between relatives associated with the additive equilibrium component of variance, we take expectations of the cross-products of additive effects of genes in two individuals. A similar procedure is followed in obtaining the covariance due to $ \\sigma_{A,A} $, except that we now focus on pairs of genes at different loci, one in each member of the relationship, $$ \\begin{aligned}\\sigma_{A,A}(\\boldsymbol{x},\\boldsymbol{y},t)=\\left[E(\\alpha_{i}^{x}\\alpha_{k}^{y})+E(\\alpha_{i}^{x}\\alpha_{l}^{y})+E(\\alpha_{j}^{x}\\alpha_{k}^{y})+E(\\alpha_{j}^{x}\\alpha_{l}^{y})\\right.\\\\ \\left.+~E(\\alpha_{k}^{x}\\alpha_{i}^{y})+E(\\alpha_{k}^{x}\\alpha_{j}^{y})+E(\\alpha_{l}^{x}\\alpha_{i}^{y})+E(\\alpha_{l}^{x}\\alpha_{j}^{y})\\right]\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "For any of the terms in this equation to be nonzero, the genes in them must be equivalent by descent. The key to solving Equation 7.15d is the fact that the probability of equivalence by descent for genes at different loci in different gametes is the same as the probability of identity by descent for alleles at the same locus. The reason for this equivalence is that when parents produce a gamete pool, although the two loci (A and B) may be linked, under random mating the gene at the A locus in one parental gamete is independent of the gene at the B locus in a second gamete. Thus, the probability of any term in Equation 7.15d being nonzero is $ \\Theta_{xy} $. from Equation 7.15b, we see that nonzero terms of the form $E(\\alpha_{i}\\alpha_{k})$ initially have expected values equal to $\\sigma_{A,A}(0)/4$. At time $t$, however, each of the nonzero terms in Equation 7.15d has expected value $\\sigma_{A,A}(t)/4$. Because there are eight terms, the covariance between relatives due to additive disequilibrium covariance is $8\\Theta_{xy}\\sigma_{A,A}(t)/4$, or from Equation 7.15c, $$ \\sigma_{A,A}(x,y,t)=2\\Theta_{x y}(1-c)^{t}\\sigma_{A,A}(0) $$ where $t$ denotes the number of generations that the common ancestors are removed from the base population. Thus, for example, the parent-offspring covariance (with $\\Theta_{xy} = 1/4$) resulting from additive disequilibrium covariance is $\\sigma_{A,A}(0)/2$ if the parents are members of the base population, $(1 - c)\\sigma_{A,A}(0)/2$ if the parents are second-generation individuals, and $(1 - c)^2\\sigma_{A,A}(0)/2$ if they are third-generation individuals."
+    },
+    {
+      "type": "discussion",
+      "content": "Derivation of the covariance between relatives resulting from dominance disequilibrium covariance follows the same logic just presented. However, in this case, the dominance disequilibrium covariance declines each generation to $ (1 - c)^2 $ of its previous value. This quadratic decline occurs because dominance disequilibria are only maintained if neither of the gametes fusing to form a zygote. have undergone recombination. Thus, the dominance disequilibrium covariance is $$ \\sigma_{D,D}(t)=(1-c)^{2t}\\sigma_{D,D}(0) $$ and the covariance between relatives due to this disequilibrium is $$ \\sigma_{D,D}(x,y,t)=\\Delta_{x y}(1-c)^{2t}\\sigma_{D,D}(0) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "For example, the covariance between full sibs resulting from dominance disequilibrium covariance is $ \\sigma_{D,D}(0)/4 $, $ (1-c)^{2}\\sigma_{D,D}(0)/4 $, and $ (1-c)^{4}\\sigma_{D,D}(0)/4 $, respectively, when the parents are members of the base population, second, and third generations."
+    },
+    {
+      "type": "discussion",
+      "content": "The general coefficients for the disequilibrium covariances for common types of relationships, assuming the common ancestor to be a member of generation t (where t = 0 denotes the base population), are given in [[SEE_TABLE:7.3]]. Unlike all of the equilibrium components of genetic variance, which always cause positive phenotypic covariance between relatives, the components resulting from disequilibrium covariance may be positive or negative depending upon whether loci are in coupling or repulsion disequilibrium."
+    },
+    {
+      "type": "discussion",
+      "content": "Strictly speaking, the modified coefficients in [[SEE_TABLE:7.3]] apply to a single pair of loci with recombination frequency c. These expressions could be refined further to account for the influence of linkage and/or gametic phase disequilibrium of all loci on the covariance between relatives by summing terms over all pairs of loci, weighting each locus by its specific set of variances and covariances. However, without detailed information on the map structure of the constituent loci for a quantitative trait, such refinements would be of little practical value. An alternative approximation can be obtained by assuming that the loci underlying the trait are distributed randomly throughout the genome and using the average recombination frequency $ \\bar{c} $ in place of c. Estimates of $ \\bar{c} $ are given for a number of species in [[SEE_TABLE:9.2]]."
+    },
+    {
+      "type": "discussion",
+      "content": "It may be argued that linkage is of little consequence for the resemblance between relatives in organisms with high chromosome numbers since most pairs of loci will lie on different chromosomes. In this case, $ \\lambda \\simeq 0 $, and there is no inflation of the epistatic components of covariance, regardless of the magnitude of gametic phase disequilibrium. However, regardless of the degree of linkage, gametic phase disequilibrium is of special concern, as theoretical arguments and some empirical data suggest that it may reach significant levels for characters under selection (Chapter 5). In this case, even with free recombination ($ c = 0.5 $), the contribution of disequilibrium covariance to the resemblance between relatives is nonzero. In the following section, we consider a common situation in which the build-up of positive $ \\sigma_{A,A} $ is inevitable, even with unlinked loci."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 3. There is one case where the probability of equivalence by descent is unequal to the coefficient of coancestry, which renders Equations 7.17a,b inappropriate. In monozygotic twins, both members of the pair are products of the same gametes, so the genes inherited in one twin are not independent of those inherited in the other twin through the same parent. Because monozygotic twins have genetic effects at all loci identical by descent, the covariance between monozygotic twins is equivalent to the expressed genetic variance in the population in the present generation. For twins whose parents are members of the base population, the probability that each ancestral gamete contributing to the twin progeny has not experienced a recombination event (between two loci of interest) is $ (1 - c) $. Therefore, the covariance between monozygotic twins resulting from additive and dominance effects is $$ \\sigma_{A}(M Z)=\\sigma_{A}^{2}+(1-c)\\sigma_{A,A}(0) $$ $$ \\sigma_{D}(M Z)=\\sigma_{D}^{2}+(1-c)^{2}\\sigma_{D,D}(0) $$ where the disequilibrium covariances refer to the levels in the parental generation. The sum of these two quantities is the total expressed genetic variance in the population in the twin's generation (ignorning epistasis)."
+    }
+  ]
+}

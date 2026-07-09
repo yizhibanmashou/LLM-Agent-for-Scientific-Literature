@@ -1,0 +1,43 @@
+{
+  "id": "Genetics_chapter3_002",
+  "metadata": {
+    "chapter": "Genetics_chapter3",
+    "section": "Covariance, Regression, and Correlation",
+    "subsections": [
+      "JOINTLY DISTRIBUTED RANDOM VARIABLES"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter3_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Covariance, Regression, and Correlation",
+    "section_level_2": "JOINTLY DISTRIBUTED RANDOM VARIABLES",
+    "heading_path": [
+      "Covariance, Regression, and Correlation",
+      "JOINTLY DISTRIBUTED RANDOM VARIABLES"
+    ],
+    "display_heading": "JOINTLY DISTRIBUTED RANDOM VARIABLES"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "The probability of joint occurrence of a pair of random variables $(x, y)$ is specified by the joint probability density function, $p(x, y)$, where $$ \\mathrm{P}(y_{1}\\leq y\\leq y_{2},x_{1}\\leq x\\leq x_{2})=\\int_{y_{1}}^{y_{2}}\\int_{x_{1}}^{x_{2}}p(x,y)dx dy $$"
+    },
+    {
+      "type": "discussion",
+      "content": "We often ask questions of the form: What is the distribution of $y$ given that $x$ equals some specified value? For example, we might want to know the probability that parents whose height is 68 inches have offspring with height exceeding 70 inches. To answer such questions, we use $p(y|x)$, the conditional density of $y$ given $x$, where $$ \\mathrm{P}(y_{1}\\leq y\\leq y_{2}\\mid x)=\\int_{y_{1}}^{y_{2}}p(y\\mid x)dy $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Joint probability density functions, $p(x,y)$, and conditional density functions, $p(y|x)$, are connected by $$ p(x,y)=p(y\\mid x)p(x) $$ where $ p(x) = \\int_{-\\infty}^{+\\infty} p(y \\mid x) \\, dy $ is the marginal (univariate) density of x."
+    },
+    {
+      "type": "discussion",
+      "content": "Two random variables, $x$ and $y$, are said to be independent if $p(x, y)$ can be factored into the product of a function of $x$ only and a function of $y$ only, i.e., $$ p(x,y)=p(x)p(y) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "If $x$ and $y$ are independent, knowledge of $x$ gives no information about the value of $y$. From Equations 3.3a and 3.3b, if $p(x,y)=p(x)\\,p(y)$, then $p(y|x)=p(y)$."
+    }
+  ]
+}

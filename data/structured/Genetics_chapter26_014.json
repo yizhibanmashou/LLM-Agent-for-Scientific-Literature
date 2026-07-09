@@ -1,0 +1,35 @@
+{
+  "id": "Genetics_chapter26_014",
+  "metadata": {
+    "chapter": "Genetics_chapter26",
+    "section": "Introduction",
+    "subsections": [
+      "JOINT ESTIMATION OF SEVERAL VECTORS OF RANDOM EFFECTS"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter26_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "JOINT ESTIMATION OF SEVERAL VECTORS OF RANDOM EFFECTS",
+    "heading_path": [
+      "Introduction",
+      "JOINT ESTIMATION OF SEVERAL VECTORS OF RANDOM EFFECTS"
+    ],
+    "display_heading": "JOINT ESTIMATION OF SEVERAL VECTORS OF RANDOM EFFECTS"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "The mixed-model equations can be easily extended to situations where two (or more) vectors of random effects are of interest, as for example, in the estimation of both additive and dominance values or in the estimation of breeding values and maternal effects. With two vectors of random effects (u₁ and u₂) uncorrelated with each other, the mixed model becomes $$ \\mathbf{y}=\\mathbf{X}\\boldsymbol{\\beta}+\\mathbf{Z}_{1}\\mathbf{u}_{1}+\\mathbf{Z}_{2}\\mathbf{u}_{2}+\\mathbf{e} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The vectors of random effects can have different dimensions $(q_1$ for $\\mathbf{u}_1$, $q_2$ for $\\mathbf{u}_2)$, so with $n$ individuals in the vector $\\mathbf{y}$, the incidence matrix $\\mathbf{Z}_i$ is $n \\times q_i$ (for $i = 1, 2$). Letting $\\mathbf{R}$ be the $n \\times n$ covariance matrix for the vector of residual errors $\\mathbf{e}$, and $\\mathbf{G}_i$ be the $q_i \\times q_i$ covariance matrix for $\\mathbf{u}_i$, the MMEs become $$ \\begin{aligned}\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{X}&\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{Z}_{1}&\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{Z}_{2}\\\\\\mathbf{Z}_{1}^{T}\\mathbf{R}^{-1}\\mathbf{X}&\\mathbf{Z}_{1}^{T}\\mathbf{R}^{-1}\\mathbf{Z}_{1}+\\mathbf{G}_{1}^{-1}&\\mathbf{Z}_{1}^{T}\\mathbf{R}^{-1}\\mathbf{Z}_{2}\\\\\\mathbf{Z}_{2}^{T}\\mathbf{R}^{-1}\\mathbf{X}&\\mathbf{Z}_{2}^{T}\\mathbf{R}^{-1}\\mathbf{Z}_{1}&\\mathbf{Z}_{2}^{T}\\mathbf{R}^{-1}\\mathbf{Z}_{2}+\\mathbf{G}_{2}^{-1}\\end{pmatrix}&\\begin{pmatrix}\\widehat{\\boldsymbol{\\beta}}\\\\\\widehat{\\mathbf{u}}_{1}\\\\\\widehat{\\mathbf{u}}_{2}\\end{pmatrix}\\\\&=\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{y}\\\\\\mathbf{Z}_{1}^{T}\\mathbf{R}^{-1}\\mathbf{y}\\\\\\mathbf{Z}_{2}^{T}\\mathbf{R}^{-1}\\mathbf{y}\\end{pmatrix}\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Equation 26.19b can be extended in an obvious fashion to incorporate additional uncorrelated vectors of random effects. The following sections outline a few common applications of this extension of the mixed model."
+    }
+  ]
+}

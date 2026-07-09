@@ -1,0 +1,48 @@
+{
+  "id": "Evolution_chapter12_027",
+  "metadata": {
+    "chapter": "Evolution_chapter12",
+    "section": "TRAIT-AUGMENTED MARKER-BASED APPROACHES: TESTS USING QTL INFORMATION",
+    "subsections": [
+      "Orr's QTLST and QTLST-EE Sign Tests"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter12_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [
+      "12.3"
+    ],
+    "section_level_1": "TRAIT-AUGMENTED MARKER-BASED APPROACHES: TESTS USING QTL INFORMATION",
+    "section_level_2": "Orr's QTLST and QTLST-EE Sign Tests",
+    "heading_path": [
+      "TRAIT-AUGMENTED MARKER-BASED APPROACHES: TESTS USING QTL INFORMATION",
+      "Orr's QTLST and QTLST-EE Sign Tests"
+    ],
+    "display_heading": "Orr's QTLST and QTLST-EE Sign Tests",
+    "table_reference_keys": [
+      "Evolution_chapter12:12.3"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Assume that n detected QTL differences (alternative fixed alleles at n loci) are found via a standard QTL mapping experiment involving a cross between two lines (LW Chapter 15). Under neutrality, there should be no systematic directionality as to whether a line is fixed for increasing (plus) alleles over decreasing (minus) alleles at any particular QTL. This simple idea forms the basis of sign tests, but it requires modifications to account for the actual biology. For example, when the line means differ, the high (larger trait value) line is expected to contain more plus alleles (assuming equal effects; with a distribution of allelic effects, this need not be the case, as is discussed below). Orr noted that by choosing the larger line, we have introduced an ascertainment bias, as this line is expected to contain an excess of plus alleles. To proceed, we need some appropriate conditioning on this fact to obtain an unbiased statistic representing the value that constitutes an excess of plus alleles. The simplest approach is Orr's equal-effects model, where all n QTLs have close to equal effects. Here, the large line must contain at least $ [n/2] $ high (plus) QTLs, where $$ [n/2]=\\left\\{\\begin{array}{ll}(n/2)+1&for n even\\ $ n+1)/2&for n odd\\end{array}\\right. $$"
+    },
+    {
+      "type": "discussion",
+      "content": "In other words, the high line must contain at least one more high allele than the low line (because all have equal effects). Determining whether an observed number, $ n_{high} $, of plus alleles in the high line constitutes an excess now becomes a simple combinatorial problem. The probability of k high alleles in one line (under neutrality) follows from the binomial, where there is an equal chance that a random line gets a plus or a minus allele at any particular QTL, yielding $$ \\Pr(n_{+}=k)=\\binom{n}{k}(1/2)^{k}(1/2)^{n-k}=\\binom{n}{k}(1/2)^{n} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Note that all values of $ k $ contain a $ (1/2)^n $ term. We now condition this probability of $ k $ alleles in the high line on the fact that this line must contain at least $ [n/2] $ plus alleles, yielding $$ \\Pr(n_{+}\\geq n_{high}\\mid n_{+}\\geq[n/2])=\\frac{\\Pr(n_{+}\\geq n_{high})}{\\Pr(n_{+}\\geq[n/2])}=\\sum_{i\\geq n_{high}}^{n}\\binom{n}{i}\\bigg/\\sum_{j\\geq[n/2]}^{n}\\binom{n}{j} $$ where the common term of $ (1/2)^n $ in both the numerator and denominator cancels. This is Orr's QTL sign test for equal effects, or QTLST-EE. Orr noted that a minimum of n = 6 detected QTLs is required for this test to be applied. To see this, note for n = 6 that $ [n/2] = 4 $, and the most extreme value, $ n_{high} = 6 $, gives a p value of $ 1/2 \\sim 0.05 $, while for n = $ n_{high} = 5 $, the smallest p is $ 1/16 \\sim 0.0625 $. For large values of n, Orr noted that Equation 12.31a can be approximated by a normal, with $$ \\Pr\\left(n_{+}\\geq n_{high}\\mid n_{+}\\geq[n/2]\\right)\\simeq2\\left[1-\\Phi\\left(\\frac{n_{high}-[n/2]}{\\sqrt{n/4}}\\right)\\right] $$ where $ \\Phi(x) = \\Pr(U \\leq x) $ for $ U \\sim N(0,1) $."
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:12.8]]"
+    },
+    {
+      "type": "table",
+      "content": "[[TABLE:12.3]]"
+    }
+  ]
+}

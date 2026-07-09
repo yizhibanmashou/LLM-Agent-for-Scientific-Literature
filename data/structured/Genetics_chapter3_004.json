@@ -1,0 +1,47 @@
+{
+  "id": "Genetics_chapter3_004",
+  "metadata": {
+    "chapter": "Genetics_chapter3",
+    "section": "Covariance, Regression, and Correlation",
+    "subsections": [
+      "COVARIANCE"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter3_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Covariance, Regression, and Correlation",
+    "section_level_2": "COVARIANCE",
+    "heading_path": [
+      "Covariance, Regression, and Correlation",
+      "COVARIANCE"
+    ],
+    "display_heading": "COVARIANCE"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Consider a set of paired variables, $(x, y)$. For each pair, subtract the population mean $\\mu_{x}$ from the measure of $x$, and similarly subtract $\\mu_{y}$ from $y$. Finally, for each pair of observations, multiply both of these new measures together to obtain $(x - \\mu_{x})(y - \\mu_{y})$. The covariance of $x$ and $y$ is defined to be the average of this quantity over all pairs of measures in the population, $$ \\sigma(x,y)=E[\\left(x-\\mu_{x}\\right)\\left(y-\\mu_{y}\\right)] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "(A)"
+    },
+    {
+      "type": "discussion",
+      "content": "[[FIGURE:3.1]]"
+    },
+    {
+      "type": "discussion",
+      "content": "We often denote covariance by $\\sigma_{x,y}$. Because $E(x) = \\mu_{x}$ and $E(y) = \\mu_{y}$, expansion of the product leads to further simplification, $$ \\begin{aligned}\\sigma(x,y)&=E[(x-\\mu_{x})\\left(y-\\mu_{y}\\right)]\\\\&=E\\left(xy-\\mu_{y}x-\\mu_{x}y+\\mu_{x}\\mu_{y}\\right)\\\\&=E(x y)-\\mu_{y}E(x)-\\mu_{x}E(y)+\\mu_{x}\\mu_{y}\\\\&=E(x y)-\\mu_{x}\\mu_{y}\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "In words, the covariance is the mean of the pairwise cross-product $x$ $y$ minus the cross-product of the means. The sampling estimator of $\\sigma(x, y)$ is similar in form to that for a variance, $$ \\mathrm{Cov}(x,y)=\\frac{n\\left(\\overline{xy}-\\overline{x}\\cdot\\overline{y}\\right)}{n-1} $$ where $n$ is the number of pairs of observations, and $$ \\overline{xy}=\\frac{1}{n}\\sum_{i=1}^{n}x_{i}y_{i} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The covariance is a measure of association between $x$ and $y$ (Figure 3.1). It is positive if $y$ increases with increasing $x$, negative if $y$ decreases as $x$ increases, and zero if there is no linear tendency for $y$ to change with $x$. If $x$ and $y$ are independent, then $\\sigma(x,y)=0$, but the converse is not true — a covariance of zero does not necessarily imply independence. (We will return to this shortly; see Figure 3.3.)"
+    }
+  ]
+}

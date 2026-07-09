@@ -1,0 +1,109 @@
+{
+  "id": "Evolution_chapter22_014",
+  "metadata": {
+    "chapter": "Evolution_chapter22",
+    "section": "SELECTION IN THE PRESENCE OF ASSOCIATIVE EFFECTS",
+    "subsections": [
+      "Group Selection: Theory"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter22_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "22.22"
+    ],
+    "table_references": [],
+    "section_level_1": "SELECTION IN THE PRESENCE OF ASSOCIATIVE EFFECTS",
+    "section_level_2": "Group Selection: Theory",
+    "heading_path": [
+      "SELECTION IN THE PRESENCE OF ASSOCIATIVE EFFECTS",
+      "Group Selection: Theory"
+    ],
+    "display_heading": "Group Selection: Theory"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Under individual selection with unrelated group members, there is no contribution from $ \\sigma^2(A_s) $ to the response, and changes in $ A_s $ only enter as a correlated response to changes in $ A_d $, which can be in an unfavorable direction when $ \\sigma(A_d, A_s) < 0 $. As we will see, $ \\sigma^2(A_s) $ enters into the response under group selection even when there are no relatives in the group. The reason is that the group phenotype is a function of the distribution of $ A_s $ values. Under strict group selection, selection is based on the group mean, $ \\overline{z} $, or equivalently the total value of the group, $ n\\overline{z} = \\sum z $, and we will usually work with the latter. To obtain the covariance between the total value of a group and the total breeding value of one of its members, first note that $$ \\begin{aligned}\\sum_{j=1}^{n}z_{j}&=\\sum_{j=1}^{n}\\left[A_{d_{j}}+E_{d_{j}}+\\sum_{k\\neq j}^{n}\\left(A_{s_{k}}+E_{s_{k}}\\right)\\right]=\\sum_{j=1}^{n}A_{d_{j}}+\\sum_{j=1}^{n}\\sum_{k\\neq j}^{n}A_{s_{k}}+\\sum_{j=1}^{n}e_{j}\\\\&=\\sum_{j=1}^{n}A_{d_{j}}+(n-1)\\sum_{j=1}^{n}A_{s_{j}}+\\sum_{j=1}^{n}e_{j}\\\\&=\\sum_{j=1}^{n}A_{T_{j}}+\\sum_{j=1}^{n}e_{j}\\end{aligned} $$ where the residual values, $ e_{i} $, sweep up a variety of environmental terms, and are given by Equation 22.1c. The residuals are assumed to be uncorrelated with any breeding values, but of course residuals can be (and usually are) correlated within a group (e.g., Equation"
+    },
+    {
+      "type": "discussion",
+      "content": "22.23a). If $ r_{ij} $ is the relationship between individuals i and j, the covariance between the group total and the total breeding value of a group member, i, is $$ \\begin{align*}\\sigma\\bigg(A_{T_{i}},\\sum_{j=1}^{n}z_{j}\\bigg)&=\\sigma\\bigg(A_{T_{i}},\\sum_{j=1}^{n}[A_{T_{j}}+e_{j}]\\bigg)=\\sum_{j=1}^{n}\\sigma\\left(A_{T_{i}},A_{T_{j}}\\right)=\\sigma^{2}(A_{T})\\sum_{j=1}r_{ij}\\\\&=\\sigma^{2}(A_{T})\\bigg(1+\\sum_{i\\neq i}r_{ij}\\bigg)\\quad&(\\end{align*} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "If the group members are unrelated, then $$ \\begin{align*}\\sigma\\bigg(A_{T_i},\\sum\\limits_{j=1}^n z_j\\bigg)=\\sigma^2(A_T)\\end{align*} $$ which implies that $ \\sigma(A_{T}, \\overline{z}) = \\sigma^{2}(A_{T})/n $. Hence, group selection acts on the total breeding value of an individual, rather than on only part of $ A_{T} $, as was the case with individual selection (e.g., Equation 22.12e). The contribution of associative effects to the total breeding value does not influence the phenotype of the focal individual, but does influence the phenotypes of other group members, and hence, $ \\overline{z} $. Group selection directly targets these effects. If all members have the same degree of relationship (r), then $$ \\sigma\\Bigg(A_{T_{i}},\\sum_{j=1}^{n}z_{j}\\Bigg)=\\sigma^{2}(A_{T})\\left[1+(n-1)r\\right] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Selection can act on associative effects even when none of the individuals in the group are related, but its efficiency is amplified when using relatives (compare Equations 22.19b and 22.19c). From Equation 22.19c, the covariance of the total breeding value, $ A_T $, of a group member with its group mean, $ \\overline{z} $, is $$ \\sigma\\left(A_{T_{i}},\\overline{z}\\right)=\\frac{1}{n}\\sigma^{2}(A_{T})\\left[1+(n-1)r\\right]=\\sigma^{2}(A_{T})\\left(r+\\frac{1-r}{n}\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Turning to the phenotypic variance of the group total, $ n\\bar{z} $, a little bit of algebra is required. From Equation 22.18, we can decompose this group variance into additive-genetic and environmental components $$ \\sigma^{2}\\Big(\\sum_{j=1}^{n}A_{T_{j}}+\\sum_{j=1}^{n}e_{j}\\Big)=\\sigma\\Big(\\sum_{j=1}^{n}A_{T_{j}},\\sum_{k=1}^{n}A_{T_{k}}\\Big)+\\sigma\\Big(\\sum_{j=1}^{n}e_{j},\\sum_{k=1}^{n}e_{k}\\Big) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Tackling the genetic component first yields $$ \\sigma\\Bigg(\\sum_{j=1}^{n}A_{T_{j}},\\sum_{k=1}^{n}A_{T_{k}}\\Bigg)=\\sigma^{2}(A_{T})\\cdot\\sum_{j=1}^{n}\\sum_{k=1}^{n}r_{ij} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "When all group members have the same degree of relationship, r, this reduces to $$ \\sigma\\Bigg(\\sum_{j=1}^{n}A_{T_{j}},\\sum_{k=1}^{n}A_{T_{k}}\\Bigg)=\\sigma^{2}(A_{T})n\\left[1+(n-1)r\\right] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Turning our attention to the residual terms, recall (Equation 22.1c) that the residual is a function of both direct and social environmental effects, $$ e_{i}=E_{d_{i}}+\\sum_{k\\neq i}E_{s_{k}} $$"
+    },
+    {
+      "type": "derivation",
+      "content": "Clearly, individuals within the same group are correlated because they share the $ E_s $ values from the other group members. Recalling that $ \\sigma(E_{d_i}, E_{s_k}) = 0 $ for $ i \\neq k $, the residual variance becomes [[SEE_FORMULA:22.22]]"
+    },
+    {
+      "type": "discussion",
+      "content": "For $ i \\neq j $ in the same group, the covariance among residuals is $$ \\begin{aligned}\\sigma(e_{i},e_{j})&=\\sigma\\Big(E_{d_{i}}+E_{s_{j}}+\\sum_{k\\neq i,j}E_{s_{k}},E_{d_{j}}+E_{s_{i}}+\\sum_{k\\neq i,j}E_{s_{k}}\\Big)\\\\&=\\sigma\\left(E_{d_{i}},E_{d_{j}}\\right)+\\sigma\\left(E_{d_{i}},E_{s_{i}}\\right)+\\sigma\\left(E_{d_{j}},E_{s_{j}}\\right)+\\sigma\\Big(\\sum_{k\\neq i,j}E_{s_{k}},\\sum_{k\\neq i,j}E_{s_{k}}\\Big)\\\\&=0+2\\sigma(E_{d},E_{s})+\\sum_{k\\neq i,j}\\sigma\\Big(E_{s_{k}},E_{s_{k}}\\Big)\\\\&=2\\sigma(E_{d},E_{s})+(n-2)\\sigma^{2}(E_{s})\\end{aligned}\\quad(2 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The first term accounts for the fact that the direct and social environmental values can be correlated within the same individual, while the second term accounts for the shared environmental values contributed by the other n−2 group members. Putting these together yields $$ \\sigma(e_{i},e_{j})=\\left\\{\\begin{array}{ll}\\sigma^{2}(e)&i=j\\\\ \\rho\\sigma^{2}(e)&i\\neq j,i and j in the same group\\\\ 0&i\\neq j,i and j in different groups\\end{array}\\right. $$ where $$ \\sigma^{2}(e)=\\sigma^{2}(E_{d})+(n-1)\\sigma^{2}(E_{s})\\quad and\\quad\\rho=\\frac{2\\sigma(E_{d},E_{s})+(n-2)\\sigma^{2}(E_{s})}{\\sigma^{2}(e)} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Here $ \\rho $ is the correlation among environmental values within a group, and can be either positive or negative. For large values of $ n $, we expect $ \\sigma^2(E_s) $ to dominate the covariance term, yielding $ \\rho > 0 $. Equations 22.23a and 22.23b were first obtained by Bijma et al. (2007b). Correlations among environmental residuals are also generated by shared maternal effects and (for full-sibs) dominance. If all group members are the same type of relative, this is simply incorporated into $ \\rho $. However, when a group consists of two (or more) families, the additional residual covariance among sibs needs to be accounted for (Example 22.14, below, shows how this is accomplished in a BLUP framework)."
+    },
+    {
+      "type": "discussion",
+      "content": "Using these results, and following the same logic as with additive-genetic values, yields $$ \\sigma\\Bigg(\\sum_{j=1}^{n}e_{j},\\sum_{k=1}^{n}e_{k}\\Bigg)=n\\sigma^{2}(e)+\\sum_{j\\neq k}\\sigma\\left(e_{j},e_{k}\\right)=n\\sigma^{2}(e)\\left[1+(n-1)\\rho\\right] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Substituting Equations 22.21b and 22.24 into Equation 22.20 returns the variance of the group total as $$ \\sigma^{2}\\Bigg(\\sum_{j=1}^{n}z_{j}\\Bigg)=n\\sigma^{2}(A_{T})\\left[1+(n-1)r\\right]+n\\sigma^{2}(e)\\left[1+(n-1)\\rho\\right] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The variance of the group mean is simply $ 1/n^{2} $ of this value, or $$ \\begin{aligned}\\sigma^{2}(\\overline{z})&=\\sigma^{2}(A_{T})\\left(\\frac{1+(n-1)r}{n}\\right)+\\sigma^{2}(e)\\left(\\frac{1+(n-1)\\rho}{n}\\right)\\\\&=\\sigma^{2}(A_{T})\\left(r+\\frac{1-r}{n}\\right)+\\sigma^{2}(e)\\left(\\rho+\\frac{1-\\rho}{n}\\right)\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Note the symmetric roles of the relatedness, r, of group members and the within-group correlation, $ \\rho $, of residuals with respect to, respectively, the variance in total breeding values and the residual variance."
+    },
+    {
+      "type": "discussion",
+      "content": "Using the covariance between total breeding value and group mean (Equation 22.19d) and the variance of the group mean (Equation 22.25b), the resulting response to selection (i.e., the change in trait mean) follows from our general response expression (Equation 13.10b), and is $$ R=\\frac{\\sigma(A_{T},\\overline{z})}{\\sigma^{2}(\\overline{z})}S=\\frac{\\sigma^{2}(A_{T})r_{n}}{\\sigma^{2}(A_{T})r_{n}+\\sigma^{2}(e)\\rho_{n}}S $$ $$ =\\frac{\\sigma(A_{T},\\overline{z})}{\\sigma(\\overline{z})}\\overline{\\imath}=\\frac{\\sigma^{2}(A_{T})r_{n}}{\\sqrt{\\sigma^{2}(A_{T})r_{n}+\\sigma^{2}(e)\\rho_{n}}}\\overline{\\imath} $$ where $$ r_{n}=r+\\frac{1-r}{n}\\quad and\\quad\\rho_{n}=\\rho+\\frac{1-\\rho}{n} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "For n = 2 and r = 0, applying Equations 22.19b and 22.25a recovers Griffing's result (Equation 22.11b). As expected, in cases where there are only direct effects, Equations 22.26a and 22.26b reduce to our expressions for family selection (Chapter 21)."
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:22.7]]"
+    },
+    {
+      "type": "discussion",
+      "content": "While Equation 22.26a shows that group selection always results in an expected non-negative response (as $ \\sigma^2(A_T) \\geq 0 $), it may be less than optimal. If direct effects account for the majority of variance, group selection can be very inefficient relative to individual selection. To see this, consider groups of unrelated individuals and suppose the trait of interest has no associative effects, $ \\sigma^2(A_s) = 0 $, so that $ \\sigma^2(A_T) = \\sigma^2(A_d) $. Under individual (or mass) selection, the response is $ R_m = h\\sigma(A_d) \\bar{i} $ (Equation 13.6b). Now consider the response, $ R_G $, in the mean of trait $ z $ under group selection, where $ \\sigma(\\bar{z}, A_T) = (1/n)\\sigma^2(A_d) $ and $ \\sigma^2(\\bar{z}) = \\sigma^2/n $, giving the response (from Equation 22.26b) as $$ R_{G}=\\frac{\\sigma(\\overline{z},A_{T})}{\\sigma(\\overline{z})}\\overline{\\imath}=\\frac{(1/n)\\sigma^{2}(A_{d})}{\\sigma_{z}/\\sqrt{n}}\\overline{\\imath}=\\frac{1}{\\sqrt{n}}\\frac{\\sigma(A_{d})}{\\sigma_{z}}\\sigma(A_{d})\\overline{\\imath}=\\frac{1}{\\sqrt{n}}h\\sigma(A_{d})\\overline{\\imath}=\\frac{1}{\\sqrt{n}}R_{m} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Under these conditions, individual selection is always superior to group selection, with the superiority increasing with group size. For groups of 5, 10, and 25, group selection has only 44.7%, 31.6%, and 20% (respectively) of the expected response of individual selection."
+    }
+  ]
+}

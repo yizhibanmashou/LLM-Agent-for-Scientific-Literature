@@ -1,0 +1,72 @@
+{
+  "id": "Genetics_chapter4_014",
+  "metadata": {
+    "chapter": "Genetics_chapter4",
+    "section": "Introduction",
+    "subsections": [
+      "Additive Genetic Variance"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter4_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [
+      "4.3"
+    ],
+    "section_level_1": "Introduction",
+    "section_level_2": "Additive Genetic Variance",
+    "heading_path": [
+      "Introduction",
+      "Additive Genetic Variance"
+    ],
+    "display_heading": "Additive Genetic Variance",
+    "table_reference_keys": [
+      "chapter4:4.3"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "To obtain the variance associated with the additive effects, we first need a result from regression theory. Consider the regression $ y = \\mu + \\sum \\beta_i x_i + e $. Since the total variance of a response variable $ y $ equals the variance accounted for by the regression plus the residual variance $ \\sigma_e^2 $ (Chapter 8), it follows that the variance accounted for by the predictor variables is $\\sum \\beta_{i} \\sigma(y, x_{i})$. This can be immediately seen by noting $$ \\sigma_{y}^{2}=\\sigma(y,y)=\\sigma(y,\\mu+\\sum\\beta_{i}x_{i}+e)=\\sum_{i=1}^{N}\\beta_{i}\\sigma(y,x_{i})+\\sigma_{e}^{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Drawing the analogy with Equation 4.18, where the additive effects arise by considering the genotype $G$ as a response variable and the gene contents $N_{i}$ as predictor variables, the variance associated with the additive effects becomes $$ \\sum_{i=1}^{n}\\alpha_{i}\\sigma(G,N_{i}) $$"
+    },
+    {
+      "type": "definition",
+      "content": "Thus, recalling the result from Example 5 that $\\sigma(G, N_{i}) = 2p_{i} \\alpha_{i}^{*}$, the additive genetic variance is $$ \\sigma_{A}^{2}=2\\sum_{i=1}^{n}p_{i}\\alpha_{i}\\alpha_{i}^{*} $$ as noted by Fisher (1941) and Kempthorne (1957). This general definition for the additive genetic variance holds for both randomly and nonrandomly mating populations. In the latter case, it reduces to $$ \\sigma_{A}^{2}=2\\sum_{i=1}^{n}p_{i}\\alpha_{i}^{2} $$ which with $n = 2$ (a diallelic locus) reduces further to Equation 4.12a. Thus, under random mating, $\\sigma_{A}^{2}$ for a locus is simply equal to the mean-squared additive effect, multiplied by two to account for diploidy. More generally, since $E[\\alpha] = 0$, $\\sigma_{A}^{2} = E[(\\alpha_{i} + \\alpha_{j})^{2}]$. From Equation 4.22, it follows that under regular inbreeding, $$ \\sigma_{A}^{2}=2(1+f)\\sum_{i=1}^{n}p_{i}\\alpha_{i}^{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "In general, inbreeding inflates the additive genetic variance by causing correlations among the effects of alleles within the same individuals. However, because the additive effect itself is a function of $f$, inbreeding does not necessarily simply increase the additive genetic variance by the factor $(1 + f)$. From Kempthorne (1957), $$ \\alpha_{i}=\\left(\\frac{1-f}{1+f}\\right)\\alpha_{ir}+\\left(\\frac{f}{1+f}\\right)\\left(G_{ii}-\\mu_{G}\\right) $$ where $ \\alpha_{ir} $ and $ \\mu_{G} $ respectively denote the additive effect of allele i and the mean phenotype in the noninbred population. If gene action is additive, then $ G_{ii} - \\mu_{G} = $"
+    },
+    {
+      "type": "discussion",
+      "content": "2a, $\\alpha_{i}=\\alpha_{ir}=a$, and the additive genetic variance in an inbred population is, in fact, $(1+f)$ times greater than that under random mating. However, with any level of dominance, $\\alpha_{i}\\neq\\alpha_{ir}$ under inbreeding, and the change in additive genetic variance with $f$ is not likely to be linear."
+    },
+    {
+      "type": "definition",
+      "content": "Finally, we consider the general definition of the breeding value ($ A_{ij} $) under random mating. Parents with genotype $ B_{i}B_{j} $ transmit alleles i and j with equal frequency, and the expected additive effect of the allele contributed by their mates is equal to zero. Thus, the expected deviation of the mean phenotype of offspring of genotype $ B_{i}B_{j} $ from the population mean is $$ \\left(\\mu_{G}+\\frac{\\alpha_{i}+\\alpha_{j}}{2}\\right)-\\mu_{G}=\\frac{A_{ij}}{2} $$ which is half the breeding value of the parental genotype. Returning to Equation 4.18, $$ \\begin{aligned}\\boldsymbol{G}_{ij}&=\\mu_{G}+\\alpha_{i}+\\alpha_{j}+\\delta_{ij}\\\\&=\\mu_{G}+A_{ij}+\\delta_{ij}\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, the genotypic value at any locus can be decomposed into four quantities: the mean genotypic value for the population, the additive effects of the two genes (whose sum is the breeding value), and a dominance deviation due to the interaction between the genes. Since $\\mu_{G}$ is a constant, and $A$ and $\\delta$ are (by the properties of least-squares regression) uncorrelated, it follows from Equation 4.26 that the genetic variance can be represented as $$ \\sigma_{G}^{2}=\\sigma^{2}(\\alpha_{i}+\\alpha_{j})+\\sigma^{2}(\\delta_{i j}) $$"
+    },
+    {
+      "type": "definition",
+      "content": "This is a completely general definition, applying even to the case of nonrandom mating (although as noted above, the definitions of the $\\alpha_{i}$ and $\\delta_{ij}$ change with the degree of inbreeding). For the special case of random mating, $\\alpha_{i}$ and $\\alpha_{j}$ are uncorrelated, and $$ \\sigma_{G}^{2}=\\sigma_{A}^{2}+\\sigma_{D}^{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Comparing this with Equation 4.9, we find that $\\sigma_{A}^{2}$ has a very specific and useful meaning. Under random mating, the additive genetic variance is equivalent to the variance of breeding values of individuals in the population."
+    },
+    {
+      "type": "discussion",
+      "content": "Summing up, the additive effect of an allele, the breeding value of an individual, and the additive-genetic variance of a population are hierarchically related measures of genetic effects ([[SEE_TABLE:4.3]]). All of this notation can be quite confusing, particularly when the nonsubscripted $ \\alpha $ is used to denote the average effect of allelic substitution. We used the latter quantity in our introduction of the one-locus model for historical reasons and because it provides useful insight into the two-allele situation. However, we will not be using it much in the remainder of"
+    },
+    {
+      "type": "definition",
+      "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Homozygous effect, a Dominance coefficient, k</td><td style='text-align: center; word-wrap: break-word;'>Intrinsic properties of allelic products. Not functions of allele frequencies, but may vary with genetic background.</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Additive effect, $ \\alpha_{i} $ Average excess, $ \\alpha_{i}^{*} $</td><td style='text-align: center; word-wrap: break-word;'>Properties of alleles in a particular population. Functions of homozygous effects, dominance coefficients, and genotype frequencies.</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Breeding value, A</td><td style='text-align: center; word-wrap: break-word;'>Property of a particular individual in reference to a particular population. Sum of the additive effects of an individual's alleles.</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Additive genetic variance, $ \\sigma_{A}^{2} $</td><td style='text-align: center; word-wrap: break-word;'>Property of a particular population. Variance of the breeding values of individuals within the population.</td></tr></table> the book, nor will we be utilizing the concept of average excess (the latter plays a significant role in considerations of selection response, which is covered in our next book). Unless otherwise noted, we will be dealing with randomly mating populations, so our reference to the additive effect of an allele will be consistent with the conditional mean deviation definition (Equation 4.20b), as well as formally equivalent to a least-squares regression coefficient. Further commentary on the relationship between average excesses and additive effects can be found in Falconer (1985) and Templeton (1987)."
+    }
+  ]
+}

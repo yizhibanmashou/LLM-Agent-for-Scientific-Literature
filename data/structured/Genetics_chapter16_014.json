@@ -1,0 +1,44 @@
+{
+  "id": "Genetics_chapter16_014",
+  "metadata": {
+    "chapter": "Genetics_chapter16",
+    "section": "Introduction",
+    "subsections": [
+      "Estimating the Number of Marker Genes ibd"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter16_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [
+      "16.3"
+    ],
+    "section_level_1": "Introduction",
+    "section_level_2": "Estimating the Number of Marker Genes ibd",
+    "heading_path": [
+      "Introduction",
+      "Estimating the Number of Marker Genes ibd"
+    ],
+    "display_heading": "Estimating the Number of Marker Genes ibd",
+    "table_reference_keys": [
+      "chapter16:16.3"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "An obvious question is how to determine the number of alleles that are ibd at a given marker. If both parents are different marker heterozygotes (i.e., the family is fully informative), ibd status can be determined with certainty in all of their offspring. However, other relative pairs are problematic, as ibd status must be estimated rather than determined with certainty. In the absence of pedigree information, Haseman and Elston (1972) and Elston (1990b) suggested the following general estimator of $ \\pi_{jm} $ for any pair of relatives, $$ p_{jm}=\\frac{f_{2}\\cdot\\Pr(M\\mid i=2)+(f_{1}/2)\\cdot\\Pr(M\\mid i=1)}{f_{2}\\cdot\\Pr(M\\mid i=2)+f_{1}\\cdot\\Pr(M\\mid i=1)+f_{0}\\cdot\\Pr(M\\mid i=0)} $$ where $f_{i}$ is the prior probability that the pair of relatives share $i$ genes ibd, and the $\\mathrm{Pr}(M|i)$ are the probabilities of the observed pair $M$ of marker genotypes given that the pair shares $i$ alleles ibd ([[SEE_TABLE:16.3]]). While easy to compute, one must exercise caution in the application of Equation 16.42, as it is rather sensitive to errors in the estimated marker allele frequencies (Babron et al. 1993). Risch (1990c) develops alternative ML estimators for $p_{jm}$ based on these probabilities, while Hu et al. (1995) show how to modify Equation 16.42 to accommodate sex-linked markers."
+    },
+    {
+      "type": "discussion",
+      "content": "The probability $\\mathrm{Pr}(M|i)$ of observing a given pair $M$ of marker genotypes in two relatives given that they share $i$ marker alleles ibid is computed as follows. If the two relatives share no alleles ibd, the frequencies of marker genotype pairs are given by the probability of drawing two such individuals at random. For example, the probability the pair has genotypes $ M_j M_j $ and $ M_j M_k $ is $ 2 \\cdot p_j^2 \\cdot 2 p_j p_k = 4 p_j^3 p_k $. If one allele is ibd between the pair of relatives, the shared allele is chosen at random (say $ M_j $ with probability $ p_j $) while the remaining allele in each relative is chosen at random. For the previous marker pair, the probability becomes $ p_j \\cdot (2 p_j p_k) = 2 p_j^2 p_k $. If both alleles are ibd, marker genotypes are identical and the probability of observing the pair equals the probability of observing one such genotype, i.e., $ p_i^2 $ for $ (M_i M_i, M_i M_i) $, $ 2 p_i p_j $ for $ (M_i M_j, M_i M_j) $. Using this logic, values for the seven different classes of paired marker genotypes can be computed ([[SEE_TABLE:16.3]])."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 4. Suppose a marker has four alleles with frequencies $p_{1} = 0.5$, $p_{2} = 0.25$, $p_{3} = 0.15$, and $p_{4} = 0.1$. The marker genotypes for three independent pairs of full sibs were found to be: Pair $1 = (M_{1}M_{1}, M_{1}M_{1})$; Pair $2 = (M_{3}M_{4}, M_{3}M_{4})$; Pair $3 = (M_{4}M_{4}, M_{4}M_{4})$. Recall from Chapter 7 that for full sibs, $f_{0} = f_{2} = 1/4$, $f_{1} = 1/2$. Applying Equation 16.42 and using [[SEE_TABLE:16.3]], the estimated proportions of ibid marker alleles for these three pairs are $$ p_{1m}=\\frac{\\left(1/4\\right)p_{1}^{2}+\\left[\\left(1/2\\right)/2\\right]p_{1}^{3}}{\\left(1/4\\right)p_{1}^{2}+\\left(1/2\\right)p_{1}^{3}+\\left(1/4\\right)p_{1}^{4}}\\simeq0.67 $$ $$ p_{2m}=\\frac{(1/4)2p_{3}p_{4}+[(1/2)/2]p_{3}p_{4}\\left(p_{3}+p_{4}\\right)}{(1/4)2p_{3}p_{4}+(1/2)p_{3}p_{4}\\left(p_{3}+p_{4}\\right)+(1/4)4p_{3}^{2}p_{4}^{2}}\\simeq0.88 $$ $$ p_{3m}=\\frac{\\left(1/4\\right)p_{4}^{2}+\\left[\\left(1/2\\right)/2\\right]p_{4}^{3}}{\\left(1/4\\right)p_{4}^{2}+\\left(1/2\\right)p_{4}^{3}+\\left(1/4\\right)p_{4}^{4}}\\simeq0.91 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "These values are substituted in place of $\\pi_{jm}$ when computing the H-E regression. By comparing the first and third pairs, it can be seen that rarer alleles are more informative as to ibd status."
+    }
+  ]
+}

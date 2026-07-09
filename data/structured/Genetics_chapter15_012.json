@@ -1,0 +1,67 @@
+{
+  "id": "Genetics_chapter15_012",
+  "metadata": {
+    "chapter": "Genetics_chapter15",
+    "section": "Introduction",
+    "subsections": [
+      "ML Interval Mapping"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter15_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "ML Interval Mapping",
+    "heading_path": [
+      "Introduction",
+      "ML Interval Mapping"
+    ],
+    "display_heading": "ML Interval Mapping"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "ML mapping with line crosses usually employs the genotypes of a pair of flanking markers as the unit of analysis. The likelihood functions for such ML interval mapping follow from Equation 15.15 using the appropriate conditional probabilities for QTL genotypes given the two-locus marker genotypes (Jensen 1989, Lander and Botstein 1989, Knapp et al. 1990, Carbonell et al. 1992, van Ooijen 1992, Korol et al. 1996). Example 5 shows the basic structure of the resulting likelihood functions. As with single-marker analysis, support for a QTL is evaluated with a likelihood map for the interval, with the peak of the likelihood map corresponding to the ML estimate of QTL position within that interval and its significance given by a likelihood-ratio test."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 5. Likelihood functions for interval mapping follow by substituting the appropriate conditional probabilities into Equation 15.15. For example, consider the $F_{2}$ formed by crossing two inbred lines. Assuming no interference, from"
+    },
+    {
+      "type": "discussion",
+      "content": "Equation 15.2 the likelihood for marker genotype $ M_{1}M_{1}M_{2}M_{2} $ is $$ \\begin{aligned}\\ell(z\\mid M_{1}M_{1}M_{2}M_{2})&=\\left[\\frac{(1-c_{1})^{2}(1-c_{2})^{2}}{(1-c_{12})^{2}}\\right]\\cdot\\varphi(z,\\mu_{QQ},\\sigma^{2})&\\\\&+\\left[\\frac{2c_{1}c_{2}\\left(1-c_{1}\\right)(1-c_{2})}{(1-c_{12})^{2}}\\right]\\cdot\\varphi(z,\\mu_{Qq},\\sigma^{2})\\\\ &\\\\&+\\left[\\frac{c_{1}^{2}c_{2}^{2}}{(1-c_{12})^{2}}\\right]\\cdot\\varphi(z,\\mu_{qq},\\sigma^{2})\\\\ \\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Likelihoods for the other eight flanking-marker genotypes follow similarly and can be found in Luo and Kearsey (1992), Carbonell et al. (1992), and van Ooijen (1992). Even though these likelihoods involve three recombination parameters ($ c_{12} $, $ c_{1} $, $ c_{2} $), the distance between markers ($ c_{12} $) is usually taken as known, and hence $ c_{2} = (c_{12} - c_{1})/(1 - 2c_{1}) $ (assuming no interference) or $ c_{2} = c_{12} - c_{1} $ (complete interference). This leaves five parameters to estimate: three QTL means, the common variance $ \\sigma^{2} $, and the position $ c_{1} $ of the putative QTL within the interval. Likelihoods for other designs follow using the appropriate conditional probabilities."
+    },
+    {
+      "type": "discussion",
+      "content": "One of the first applications of ML interval mapping was performed by Paterson et al. (1988), who examined 237 backcross individuals in a cross between the tomato species Lycopersicon esculentum and L. chmielewskii for several fruit-related traits (Figure 15.1 gives the chromosome 10 likelihood maps for three traits). By using 68 markers (63 RFLP and 5 isozyme variants), 95% of the genome was within 20 cM of a marker. Six QTLs affecting fruit mass, four affecting concentration of soluble solids, and five affecting fruit pH were detected. A follow-up study (Paterson et al. 1990) using NILs (Chapter 14) detected additional QTLs. However, this finer mapping could not confirm the presence of one putative QTL that showed a highly significant peak on the likelihood map in the 1988 study, suggesting it was a false positive. With ML interval mapping, the likelihood map for an entire chromosome is constructed by pasting together the likelihood maps for each successive interval. If the order of markers on a particular chromosome is $ M_{1}-M_{2}-M_{3}-\\cdots-M_{n} $, the likelihood map for the $ M_{1}-M_{2} $ interval is constructed using only marker information from these two loci, the map for the $ M_{2}-M_{3} $ interval uses only information from $ M_{2} $ and $ M_{3} $, etc. The map resulting from joining the maps for each interval together is smooth; see Figures 15.1 and 15.3."
+    },
+    {
+      "type": "discussion",
+      "content": "Given the multiple-test nature of these plots (since each map is actually multiple intervals), the appropriate threshold value for the collection of internal maps that constitutes the likelihood map for a chromosome is debatable. Knott and Haley (1992a) note that the total number of independent tests is bounded above by the number of intervals examined, but since these intervals are linked, they are not independent tests (Zeng 1993). The lower bound is set by the number of chromosomes examined, as these segregate independently. Hence, we first set a threshold level for each chromosome that ensures a desired genome-wide significance level for the entire collection of chromosomes. If $C$ chromosomes are examined, Equation 15.13b implies that in order to obtain a genome-wide significance level $\\gamma$, the significance level used to set thresholds for each chromosome is $$ 1-(1-\\gamma)^{1/C}\\simeq\\gamma/C $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Rebai et al. (1994b) suggest an improved approach that takes into account differences in chromosome lengths. Turning now to the significance values for intervals on a given chromosome, suppose the chromosome of interest has $m$ intervals and we have set the chromosome-wide significance as $\\gamma_{i}$. Simulation studies by Zeng (1994) suggest that if the number of markers is not too large, then, for large sample sizes, the critical value for each interval is approximately given by a $\\chi_{k}^{2}$ value with significance $\\gamma_{i}/m$. Here $k$ is the number of free parameters in the likelihood-ratio test. More exact approximations assuming an infinitely dense map have been developed (Lander and Botstein 1989, Feingold et al. 1993), as have those for a finite number of markers (Zeng 1994, Rebai et al. 1994b). Simulations by Doerge and Rebai (1996) show that, dense marker methods (assuming a very large number of markers per chromosome) are conservative, with the probability of a test statistic exceeding the $\\alpha$-level threshold being less than $\\alpha$ when no QTL is present."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 6. Suppose five chromosomes are used for ML-interval mapping in an $ F_{2} $ design. Chromosomes 1 through 5 have 10, 5, 20, 30, and 40 markers, respectively. In order to achieve a genome-wide level of significance of $ \\gamma = 0.10 $, what are the approximate critical values for each chromosome? Applying Equation 15.17, the overall level of significance for each chromosome is $ 1 - (1 - 0.1)^{1/5} = 0.021 $."
+    },
+    {
+      "type": "discussion",
+      "content": "The critical values for each chromosome vary with the number of markers. For chromosome 1, the significance levels for each test become approximately 0.021/10 = 0.0021. Recall that the degrees of freedom for the test of no QTLs in an F₂ design are 5–2 = 3. Since $ \\Pr(\\chi^2_3 > 14.71) = 0.0021 $, this implies that the critical values for the likelihood ratios for chromosome 1 is 14.7. Similarly, the critical values for the remaining four chromosomes are 13.2, 16.2, 17.0, and 17.6."
+    },
+    {
+      "type": "discussion",
+      "content": "An alternative approach to obtaining critical values is to use permutation tests to set the threshold levels (Churchill and Doerge 1994, Doerge and Churchill 1996). This resampling procedure has the advantage of being robust to the actual distribution of effects. Further, resampling is superior to analytical approximations for data with missing and incomplete marker information, as the permutation test, by keeping genotypes intact during reshuffling, automatically incorporates the special nature of each data set (Doerge and Rebai 1996)."
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, it should be mentioned that the null hypothesis usually assumed, that of no QTLs, may be misleading. Crossed lines are often chosen because they differ in traits of interest, so that there is certainly segregating genetic variance in the $ F_{2} $ and other line-cross populations. Visscher and Haley (1996) note that if such background variance is present, it results in a more frequent rejection of the null hypothesis of no QTL than expected. They argue that the more appropriate null hypothesis should be that, taking the strain differences into account, the amount of genetic variance explained by a chromosome segment is that expected by chance, and they propose several tests of this hypothesis."
+    }
+  ]
+}

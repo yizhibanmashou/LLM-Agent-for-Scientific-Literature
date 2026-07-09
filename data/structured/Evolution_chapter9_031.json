@@ -1,0 +1,31 @@
+{
+  "id": "Evolution_chapter9_031",
+  "metadata": {
+    "chapter": "Evolution_chapter9",
+    "section": "CHANGES IN THE CHROMOSOMAL PATTERN OF NEUTRAL VARIATION",
+    "subsections": [
+      "Ascertainment Issues"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter9_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "CHANGES IN THE CHROMOSOMAL PATTERN OF NEUTRAL VARIATION",
+    "section_level_2": "Ascertainment Issues",
+    "heading_path": [
+      "CHANGES IN THE CHROMOSOMAL PATTERN OF NEUTRAL VARIATION",
+      "Ascertainment Issues"
+    ],
+    "display_heading": "Ascertainment Issues"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Because many of these likelihood models exploiting genomic positional information are computationally demanding, they are typically employed following a general scan of a genome for some signature of selection, such as regions of depressed variation, or showing unusual site-frequency spectra (such as those with a negative Tajima's D or positive Fay and Wu's H values, which are discussed in the next section). Choosing the region or regions in which to perform the likelihood tests based on the appearance of these special features creates a strong ascertainment bias that dramatically shifts the null distribution. (Note that this is different from SNP ascertainment bias arising from the nonrandom choice of SNPs at the start of the analysis.) The coalescent process can be noisy, and regions with unusual underlying genealogies (such as strong compression of the nodes) can occur by chance even under the equilibrium neutral model. This is especially true when a large number of sites are sampled, presenting more draws from the same underlying process, some of which will be realizations that are extreme values."
+    },
+    {
+      "type": "discussion",
+      "content": "Thornton and Jensen (2007) outlined an approach to adjust for both ascertainment and nonequilibrium population structure when simulating the neutral null distribution. First, genome-scan data are used to estimate the parameters for an appropriate demographic model (such as the time and duration of a bottleneck). Next, these are used in neutral coalescent simulations. Normally, this would be the null distribution, but we need to also model the ascertainment process itself as well. For example, suppose the lowermost 2% of regions of reduced variation are chosen for follow-up CLR tests. The appropriate null would be constructed by also sampling such low-variation regions from the unconditional null, and then using these as the appropriately ascertained null distribution. Thornton and Jensen noted that increasing the length of the region of analysis is a good general strategy for increasing power. Likewise, they and Teshima et al. (2006) both noted that measures of either diversity (such as reduced heterozygosity) or population differentiation (such as $ F_{ST} $ values) seem more reliable for identifying outliers than do frequency-spectrum based approaches."
+    }
+  ]
+}

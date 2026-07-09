@@ -1,0 +1,79 @@
+{
+  "id": "Genetics_chapter3_013",
+  "metadata": {
+    "chapter": "Genetics_chapter3",
+    "section": "Covariance, Regression, and Correlation",
+    "subsections": [
+      "Regression of Offspring Phenotype on Midparent Phenotype"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter3_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Covariance, Regression, and Correlation",
+    "section_level_2": "Regression of Offspring Phenotype on Midparent Phenotype",
+    "heading_path": [
+      "Covariance, Regression, and Correlation",
+      "Regression of Offspring Phenotype on Midparent Phenotype"
+    ],
+    "display_heading": "Regression of Offspring Phenotype on Midparent Phenotype"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Although the previous example has provided some insight into the genetic basis of phenotypic variation without getting bogged down in genetic complexities, in practice that approach is not very useful. Whereas phenotypic values are easily obtained (they are what we measure), the underlying genetic values are essentially unobservable without an extensive breeding program, and even then, they cannot be determined with complete accuracy (Chapter 26)."
+    },
+    {
+      "type": "discussion",
+      "content": "Fortunately, there are alternative ways to estimate levels of genetic variance of quantitative traits. All such methods are based on the simple fact that related individuals carry copies of many of the same alleles. Consider the resemblance between phenotypes of offspring ($ z_{o} $) and their midparents ($ z_{mp} $). A midparent value is simply the mean phenotype of a mother ($ z_{m} $) and a father ($ z_{f} $), $$ z_{mp}=\\frac{z_{m}+z_{f}}{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "We will confine our attention to a simple genetic situation — a single locus with purely additive gene effects, diploidy, random mating, and no selection. Let $g_{m}$ and $g_{f}$, respectively, be the effects of the alleles that the offspring inherits from its mother and father, and $g_{m}^{\\prime}$ and $g_{f}^{\\prime}$ be the effects of the alleles that are not transmitted by the parents to this particular offspring. Further letting the environmental effects on the phenotypes of parents and offspring be $E_{m}, E_{f}$, and $E_{o}$, the three phenotypes may be expressed as $$ z_{m}=g_{m}+g_{m}^{\\prime}+E_{m} $$ $$ z_{f}=g_{f}+g_{f}^{\\prime}+E_{f} $$ $$ z_{o}=g_{m}+g_{f}+E_{o} $$ Because the equation for the offspring phenotype contains three terms and that for the midparent phenotype contains six, the complete algebraic expression for the midparent-offspring covariance, $\\sigma(z_{mp}, z_{o})$, is quite complex. It contains 18 terms. However, provided certain assumptions are met, most of these terms have expected values equal to zero. First, under the assumptions of random mating and no selection, there can be no covariance between the effects of alleles within individuals. Thus, the genes inherited by an offspring have zero covariance with the genes that are not inherited, and the genes in mothers are uncorrelated with those in fathers, i.e., $\\sigma(g_{m}, g_{m}^{\\prime}) = \\sigma(g_{m}, g_{f}) = \\sigma(g_{m}, g_{f}^{\\prime}) = \\sigma(g_{f}, g_{f}^{\\prime}) = \\sigma(g_{f}, g_{m}) = \\sigma(g_{f}, g_{m}^{\\prime}) = 0$. Second, provided there is no genotype-environment covariance, i.e., individuals are not assorted into environments on the basis of their genetic attributes, $\\sigma(g_{m}, E_{m}) = \\sigma(g_{m}, E_{f}) = \\sigma(g_{f}, E_{m}) = \\sigma(g_{f}, E_{f}) = \\sigma(g_{m}, E_{o}) = \\sigma(g_{m}^{\\prime}, E_{o}) = \\sigma(g_{f}^{\\prime}, E_{o}) = 0$. Finally, provided the parents do not transmit their environmental effects to their progeny, i.e., there are no significant maternal or paternal environmental effects, then $\\sigma(E_{o}, E_{f}) = \\sigma(E_{o}, E_{m}) = 0$."
+    },
+    {
+      "type": "discussion",
+      "content": "Most of these assumptions can be fulfilled in carefully designed experiments. Assuming this is the case, the only potential sources of covariance that exist between midparent and offspring phenotypes are those involving the inherited genes. Thus, $$ $$"
+    },
+    {
+      "type": "discussion",
+      "content": "(z_ mp,z_ o)&= \\\\&= \\\\&= ^ 2 (g_ m)+ ^ 2 (g_ f) 2 $$ $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Recall that we assumed the genotypic value to be entirely defined by the additive effects of the two alleles. Thus, under random mating, the total genetic variance in the population is the sum of the variances of maternally and paternally derived genes, $ \\sigma^{2}(g_{m}) + \\sigma^{2}(g_{f}) $. Since the gene effects are purely additive, this quantity may also be referred to as the additive genetic variance, $ \\sigma_{A}^{2} $. Thus, provided a number of assumptions are met, the phenotypic covariance between midparent and offspring is equivalent to half the additive genetic variance in the population, $$ \\sigma(z_{mp},z_{o})=\\frac{\\sigma_{A}^{2}}{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "In Chapters 5 and 7, it will be shown that this equation holds for any number of loci provided they interact additively."
+    },
+    {
+      "type": "discussion",
+      "content": "To obtain the expected least-squares regression of offspring on midparent phenotype, the covariance needs to be divided by the variance of midparent phenotypes. Using the properties of variances outlined above, and noting that the phenotypic covariance between parents, $ \\sigma(z_{f}, z_{m}) $, is zero under random mating, $$ \\sigma^{2}(z_{mp})=\\sigma^{2}\\left(\\frac{z_{m}+z_{f}}{2}\\right)=\\frac{\\sigma^{2}(z_{m})+\\sigma^{2}(z_{f})}{4} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, provided the phenotypic variance in the two sexes is equal (or has been scaled to be so), the phenotypic variance of midparent values is half the phenotypic variance in the population, $$ \\sigma^{2}(z_{mp})=\\frac{\\sigma_{z}^{2}}{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The slope of the least-squares linear regression of offspring phenotype on midparent phenotype is then $$ \\beta_{o,mp}=\\frac{\\sigma_{A}^{2}}{\\sigma_{z}^{2}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, for this special case, the slope of a midparent-offspring regression provides an estimate of the proportion of the phenotypic variance that is attributable to additive genetic factors. Obviously, we have made many assumptions in order to arrive at this expression, and the significance of these will be addressed in the remainder of the book. The salient issue here is that inferences concerning the genetic basis of quantitative traits can be extracted from phenotypic measures of the resemblance between relatives."
+    },
+    {
+      "type": "discussion",
+      "content": "In closing, we note that there is an important distinction between the measures of genetic variance that appear in Equations 3.24b and 3.27. In Equation 3.24b, $\\sigma_{G}^{2}$ refers to the total genetic variance, including that due to nonadditive interactions within and among loci. In Equation 3.27, $\\sigma_{A}^{2}$ refers specifically to the additive component of genetic variation. The ratio $\\sigma_{A}^{2}/\\sigma_{z}^{2}$ is known as the narrow-sense heritability and is generally abbreviated as $h^{2}$. It is possible for the total genetic variance to be entirely additive, but often it is not. This distinction between broad- and narrow-sense heritability and the decomposition of genetic variance into additive and nonadditive components will be covered in detail in Chapters 4, 5, and 7."
+    },
+    {
+      "type": "discussion",
+      "content": "The central importance of $h^{2}$ can be appreciated by recalling the breeders' equation, Equation 3.22, where $\\beta$ can now be seen to be $h^{2}$. Thus, if $S$ is the change in mean phenotype caused by selection prior to reproduction, then the response to selection across generations is $$ \\Delta\\mu=h^{2}S $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The narrow-sense heritability can be thought of as the efficiency of the response to selection. If $ h^{2} = 0 $, i.e., if there is no tendency for offspring to resemble their parents, there can be no evolutionary change, regardless of the strength of selection."
+    }
+  ]
+}

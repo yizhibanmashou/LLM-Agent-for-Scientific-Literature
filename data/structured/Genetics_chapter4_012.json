@@ -1,0 +1,43 @@
+{
+  "id": "Genetics_chapter4_012",
+  "metadata": {
+    "chapter": "Genetics_chapter4",
+    "section": "Introduction",
+    "subsections": [
+      "Average Excess"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter4_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "Average Excess",
+    "heading_path": [
+      "Introduction",
+      "Average Excess"
+    ],
+    "display_heading": "Average Excess"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "When n alleles are present, the average excess, $ \\alpha_{i}^{*} $, for any allele $ B_{i} $ is given by $$ \\alpha_{i}^{*}=\\sum_{j=1}^{n}P_{ij|i}G_{ij}-\\mu_{G} $$ where $P_{ij|i}$ is the conditional probability of a $B_{i}B_{j}$ genotype given that one allele is $B_{i}$. Under random mating, this reduces to $$ \\alpha_{i}^{*}=\\sum_{j=1}^{n}p_{j}G_{ij}-\\mu_{G} $$ where $p_{j}$ is the frequency of the $j$th allele."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 5. Here we show how the average excess $\\alpha_{i}^{*}$ of an allele $i$ can be related to $\\sigma(G, N_{i})$, the covariance between genotypic value and the number of copies of that allele. This result will be useful in the following sections."
+    },
+    {
+      "type": "discussion",
+      "content": "To compute $\\sigma(G, N_i) = E(G \\cdot N_i) - E(N_i) \\cdot E(G)$, we start with the fact that $E(G) = \\mu_G$, so we merely require expressions for $E(N_i)$ and $E(G \\cdot N_i)$. The mean number of alleles of type $i$ at the locus, $E(N_i)$, is straightforward. Since there are two genes at each locus, and the frequency of allele $i$ is $p_i$, $E(N_i) = 2p_i$."
+    },
+    {
+      "type": "definition",
+      "content": "To obtain $E(G \\cdot N_{i})$, we use ordered-genotype notation, where $P_{ij(o)}$ is the probability of getting allele $i$ from the mother and allele $j$ from the father. We assume that $P_{ij(o)} = P_{ji(o)}$ so $P_{ij} = 2P_{ij(o)}$ when $i \\neq j$. Because the variable $N_{i}$ takes on only two nonzero values, two and one, the expected cross-product is $$ E(G\\cdot N_{i})=(G_{ii}\\cdot2)\\cdot P_{ii(o)}+\\sum_{j\\neq i}^{n}(G_{ij}\\cdot1)\\cdot2P_{ij(o)}=2p_{i}\\sum_{j=1}^{n}P_{ij|i}G_{ij} $$ where the last step follows from the definition of a conditional genotype probability as $P_{ij|i} = P_{ij(o)}/p_i$. Putting the above results together, and recalling Equation 4.16a, $$ \\sigma(G,N_{i})=2p_{i}\\left[\\sum_{j=1}^{n}P_{ij|i}G_{ij}-\\mu_{G}\\right]=2p_{i}\\alpha_{i}^{*} $$"
+    },
+    {
+      "type": "proposition",
+      "content": "Under the assumption of random mating, average excesses are identical to additive effects, and $$ \\sigma(G,N_{i})=2p_{i}\\alpha_{i} $$"
+    }
+  ]
+}

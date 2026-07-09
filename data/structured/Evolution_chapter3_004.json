@@ -1,0 +1,51 @@
+{
+  "id": "Evolution_chapter3_004",
+  "metadata": {
+    "chapter": "Evolution_chapter3",
+    "section": "GENERAL CONSIDERATIONS",
+    "subsections": [
+      "DIOECY"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter3_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "GENERAL CONSIDERATIONS",
+    "section_level_2": "DIOECY",
+    "heading_path": [
+      "GENERAL CONSIDERATIONS",
+      "DIOECY"
+    ],
+    "display_heading": "DIOECY"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "As in the case of monoecy with self-incompatibility, when the sexes are separate, inbreeding always needs to be defined with reference to the grandparent generation, which is the earliest point back to which the two genes of an individual can coalesce. Separate sexes also introduce the possibility of different levels of inbreeding through males and females, as might be expected, for example, in polygynous species in which most females mate with a relatively small segment of the male population."
+    },
+    {
+      "type": "discussion",
+      "content": "If O is the offspring of interest, with M and F being its mother and father, there are two ways by which O may derive two genes from the same grandparent: (1) M and F may share the same mother (with probability $ 1/N_{ef} $, where $ 1/N_{ef} $ is the effective number of females); or (2) M and F may share the same father (with probability $ 1/N_{em} $, where $ 1/N_{em} $ is the effective number of males). In either case, because each parent transmits to O a gene from the shared ancestor with probability 0.5, the probability that O inherits both genes from the shared grandparent is 1/4. Thus, the total probability that O inherits two genes from the same grandparent is $$ P=\\frac{1}{N_{e}}=\\frac{1}{4N_{em}}+\\frac{1}{4N_{ef}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "What do we mean by the effective numbers of males and females? Assuming random mating (including no prohibition of mating between sibs), the effective number of each sex can be derived by the same method used to obtain Equation 3.3. Skipping the intermediate steps, we simply note that $$ N_{es}=\\frac{\\mu_{sk}N_{s,t-2}-1}{\\left(\\sigma_{sk}^{2}/\\mu_{sk}\\right)+\\mu_{sk}-1} $$ where $s$ denotes the sex $(m$ or $f)$, and $\\mu_{sk}$ and $\\sigma_{sk}^{2}$ are the mean and variance of gamete production by sex $s$ (Crow and Denniston 1988). Latter (1959) provided a more elaborate expression for $N_{es}$ that explicitly accounts for the variance and covariance of male and female progeny production. Letting $\\phi$ be the sex ratio (proportion of females), $$ N_{em}=\\frac{4N_{m,t-2}}{2+\\sigma_{mm}^{2}+\\frac{2(1-\\phi)}{\\phi}\\sigma_{mm,mf}+\\left(\\frac{1-\\phi}{\\phi}\\right)^{2}\\sigma_{mf}^{2}} $$ $$ N_{ef}=\\frac{4N_{f,t-2}}{2+\\sigma_{ff}^{2}+\\frac{2\\phi}{1-\\phi}\\sigma_{fm,ff}+\\left(\\frac{\\phi}{1-\\phi}\\right)^{2}\\sigma_{fm}^{2}} $$ where for male parents, $ \\sigma_{mm}^{2} $ is the variance of male progeny number, $ \\sigma_{mf}^{2} $ is the variance of female progeny number, and $ \\sigma_{mm,mf} $ is the covariance of male and female progeny number, with similar definitions for female parents. There are a variety of situations in which these types of specifications may be useful. For example, if parents produce a fixed number of offspring, the covariances $ \\sigma_{mm,mf} $ and $ \\sigma_{fm,ff} $ between numbers of sons and daughters must be negative, whereas these terms can be positive if parents differ in the resources available for overall progeny production."
+    },
+    {
+      "type": "discussion",
+      "content": "Further simplification of Equation 3.10 is possible when certain assumptions are met. Consider, for example, the case in which members of the same sex produce equal numbers of potential gametes, such that $ \\sigma_{sk}^2 = \\mu_{sk} $, and the variation in family size is a simple consequence of the random union of gametes. It then follows from the development of the monoecy model that $ N_{em} = N_{m,t-1} $ and $ N_{ef} = N_{f,t-1} $. Rearranging Equation 3.9, assuming constant population features and dropping the designation of time, and noting that $ N_m = (1 - \\phi)N $ and $ N_f = \\phi N $, $$ N_{e}=\\frac{4N_{m}N_{f}}{N_{m}+N_{f}}=4\\phi(1-\\phi)N $$"
+    },
+    {
+      "type": "discussion",
+      "content": "In this case, $ N_e $ attains a maximum of $ N $ when the sex ratio is balanced ($ \\phi = 0.5 $), but with skewed sex ratios, $ N_e $ is influenced much more strongly by the density of the rarer sex. For example, in a highly polygynous species, as $ \\phi \\to 1 $, $ N_e \\to 4(1 - \\phi)N \\simeq 4N_m $, namely four times the number of males."
+    },
+    {
+      "type": "discussion",
+      "content": "In natural populations, where individuals inhabit different environments that influence the availability of resources and mates, it is likely that the variance in progeny production will exceed the mean (i.e., $ \\sigma_k^2 > \\mu_k $), in which case $ N_e $ will be less than that predicted by Equation 3.12. For example, in a summary of data on lifetime reproductive success in female birds, Grant (1990) found that $ \\sigma_{fk}^2 / \\mu_{fk} $ ranged from 1.2 to 4.2. Assuming a stable population size ($ \\mu_{fk} = 2 $) and substituting into Equation 3.10, the female effective population sizes for these species are found to be 40% to 90% of the actual number of females. Nonrandom variation in family sizes appears to be the rule even in laboratory populations. For example, caged populations of Drosophila typically exhibit effective sizes on the order of 10% of the census size of the adult population (Briscoe et al. 1992). Observations from natural populations of other animals with separate sexes suggest an average $ N_e / N $ ratio for single generations on the order of 0.7 (Crow and Morton 1955; Nunney and Elam 1994)."
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, the results for dioecy can be linked to those for the monoecy model in the following informative way. The mean gamete production for the whole population is $ \\mu_k = (1 - \\phi)\\mu_{mk} + \\phi\\mu_{fk} $, or equivalently, because all individuals have a father and a mother, $ \\mu_k = 2(1 - \\phi)\\mu_{mk} = 2\\phi\\mu_{fk} $. The variance of gamete production across the entire population is $ \\sigma_k^2 = (1 - \\phi)\\sigma_mk^2 + \\phi\\sigma_fk^2 + \\phi(1 - \\phi)(\\mu_{mk} - \\mu_{fk})^2 $. Using these expressions, Equation 3.9 is essentially equivalent to Equation 3.7 (Kimura and Crow 1963b), showing that the effective size of an ideal population with separate sexes is the same as that for a monoecious, self-incompatible population with the same population properties $ \\mu_k $ and $ \\sigma_k^2 $."
+    }
+  ]
+}

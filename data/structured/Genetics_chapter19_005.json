@@ -1,0 +1,78 @@
+{
+  "id": "Genetics_chapter19_005",
+  "metadata": {
+    "chapter": "Genetics_chapter19",
+    "section": "Introduction",
+    "subsections": [
+      "Heritability Estimation"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter19_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [
+      "19.2",
+      "19.3"
+    ],
+    "section_level_1": "Introduction",
+    "section_level_2": "Heritability Estimation",
+    "heading_path": [
+      "Introduction",
+      "Heritability Estimation"
+    ],
+    "display_heading": "Heritability Estimation",
+    "table_reference_keys": [
+      "chapter19:19.2",
+      "chapter19:19.3"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "An upper limit to the broad-sense heritability, based only on monozygotic-twin data, is the intraclass correlation (the fraction of the total variance that is attributable to differences among pairs) $$ H^{2}=t_{\\mathrm{M Z}}=\\frac{\\mathrm{M S}_{b}(\\mathrm{M Z})-\\mathrm{M S}_{e}(\\mathrm{M Z})}{\\mathrm{M S}_{b}(\\mathrm{M Z})+\\mathrm{M S}_{e}(\\mathrm{M Z})} $$ From Equation 18.21, the standard error of this estimator is approximately $$ \\mathbf{SE}(H^{2})\\simeq\\frac{1-t_{\\mathrm{M Z}}^{2}}{\\sqrt{N}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Under conditions of normality, the $100(1-\\alpha)%$ confidence interval for $H^{2}$ is given by $$ \\left[\\frac{\\left(F/F_{U}\\right)-1}{\\left(F/F_{U}\\right)+1}\\right]<H^{2}<\\left[\\frac{\\left(F/F_{L}\\right)-1}{\\left(F/F_{L}\\right)+1}\\right] $$ where $F$ is the ratio of observed mean squares, and $F_{U} = F_{(N-1),N,(\\alpha/2)}$ and $F_{L} = 1/[F_{N,(N-1),(\\alpha/2)}]$ are the upper and lower $F$ values associated with $(\\alpha/2)$ (Searle et al. 1992). the estimate $H^{2} = 0.955$ and the standard error $\\mathrm{SE}(H^{2}) = 0.005$. With an $F$ ratio of 43.66, this heritability estimate is highly significant. To obtain the 99% confidence interval for $H^{2}$, we first find $F_{U} = F_{259,260,0.005} \\simeq 1.4$ and $F_{L} = 1/F_{260,259,0.005} \\simeq 0.7$. Substituting these values into Equation 19.7c, the lower and upper confidence limits are found to be 0.937 and 0.984. As an estimator of the broad-sense heritability, the intraclass correlation will be inflated by the presence of any common environmental effects, $\\sigma_{E_c}^2$ (MZ). This can be checked by comparing the correlation between twins raised together with that between twins raised apart (by one or more adoptive parents). The difference between the two correlations provides a measure of the fraction of the phenotypic variance that is due to common-environment effects. Generally, intraclass correlations for twins raised together do exceed those for twins raised apart, but the difference is usually only on the order of a few percent ([[SEE_TABLE:19.2]]). Thus, in humans, a large fraction of the variation in size, physiology, and mental ability appears to have a genetic basis, and not much appears to be associated with shared environment (except in the case of IQ). There is still some need for caution here, however, since it is unlikely that the foster homes of twins are ever perfectly randomized, and postnatal separation does not eliminate prenatal maternal effects, which may be important in mammals (Chapter 23). In humans, an alternative means of testing for the importance of shared environment is to consider the correlation between unrelated adoptees raised by the same foster parents. For IQ, this correlation is approximately 0.34 (Rowe 1994), which is slightly higher than the difference between correlations for monozygotic twins raised together and apart ([[SEE_TABLE:19.2]])."
+    },
+    {
+      "type": "discussion",
+      "content": "Some success at eliminating the contribution of common environmental effects in twin analysis has also been obtained by the following approximation $$ \\widetilde{H}^{2}\\simeq\\frac{2[\\mathrm{M S}_{e}(\\mathrm{D Z})-\\mathrm{M S}_{e}(\\mathrm{M Z})]}{\\mathrm{V a r}(z)} $$ where $ \\mathrm{Var}(z) $ is the average of the estimates of total variance obtained for monozygotic and dizygotic types of twins. Provided the variance due to special environmental effects is comparable in the two types of twins, and some other assumptions to be discussed below are met, $ \\widetilde{H}^{2} $ has an expectation equal to approximately $ [\\sigma_{A}^{2}+(3\\sigma_{D}^{2}/2)+(3\\sigma_{AA}^{2}/2)+\\cdots]/\\sigma_{z}^{2} $. Thus, Equation 19.8 still overestimates the broad-sense heritability if the relative magnitude of dominance and/or epistatic variance is large. Nevertheless, a reasonable test of the hypothesis $ \\widetilde{H}^{2}=0 $ is provided by the $ F $ statistic $ \\mathrm{MS}_{e}(\\mathrm{DZ})/\\mathrm{MS}_{e}(\\mathrm{MZ}) $. Estimates of broad-sense heritability using Equation 19.8, like those using Equation 19.7a, indicate that variation in human size attributes has a large genetic component ([[SEE_TABLE:19.3]])."
+    },
+    {
+      "type": "discussion",
+      "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Character</td><td style='text-align: center; word-wrap: break-word;'>$ t_{MZT} $</td><td style='text-align: center; word-wrap: break-word;'>$ t_{MZA} $</td><td style='text-align: center; word-wrap: break-word;'>$ t_{MZT} - t_{MZA} $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Fingerprint ridge count</td><td style='text-align: center; word-wrap: break-word;'>0.96</td><td style='text-align: center; word-wrap: break-word;'>0.97</td><td style='text-align: center; word-wrap: break-word;'>-0.01</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Height</td><td style='text-align: center; word-wrap: break-word;'>0.93</td><td style='text-align: center; word-wrap: break-word;'>0.86</td><td style='text-align: center; word-wrap: break-word;'>0.07</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Weight</td><td style='text-align: center; word-wrap: break-word;'>0.83</td><td style='text-align: center; word-wrap: break-word;'>0.73</td><td style='text-align: center; word-wrap: break-word;'>0.10</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Blood pressure</td><td style='text-align: center; word-wrap: break-word;'>0.70</td><td style='text-align: center; word-wrap: break-word;'>0.64</td><td style='text-align: center; word-wrap: break-word;'>0.06</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Heart rate</td><td style='text-align: center; word-wrap: break-word;'>0.54</td><td style='text-align: center; word-wrap: break-word;'>0.49</td><td style='text-align: center; word-wrap: break-word;'>0.05</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>IQ</td><td style='text-align: center; word-wrap: break-word;'>0.88</td><td style='text-align: center; word-wrap: break-word;'>0.69</td><td style='text-align: center; word-wrap: break-word;'>0.19</td></tr></table>"
+    },
+    {
+      "type": "discussion",
+      "content": "Source: Bouchard et al. 1990."
+    },
+    {
+      "type": "discussion",
+      "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Character</td><td style='text-align: center; word-wrap: break-word;'>MS $ _{e} $(DZ)</td><td style='text-align: center; word-wrap: break-word;'>MS $ _{e} $(MZ)</td><td style='text-align: center; word-wrap: break-word;'>Var(z)</td><td style='text-align: center; word-wrap: break-word;'>$ \\widetilde{H}^{2} $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Height</td><td style='text-align: center; word-wrap: break-word;'>1620.3</td><td style='text-align: center; word-wrap: break-word;'>195.4</td><td style='text-align: center; word-wrap: break-word;'>3031.7</td><td style='text-align: center; word-wrap: break-word;'>0.94</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Arm span</td><td style='text-align: center; word-wrap: break-word;'>2132.0</td><td style='text-align: center; word-wrap: break-word;'>317.7</td><td style='text-align: center; word-wrap: break-word;'>3944.1</td><td style='text-align: center; word-wrap: break-word;'>0.92</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Middle finger length</td><td style='text-align: center; word-wrap: break-word;'>11.9</td><td style='text-align: center; word-wrap: break-word;'>1.4</td><td style='text-align: center; word-wrap: break-word;'>22.3</td><td style='text-align: center; word-wrap: break-word;'>0.94</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Foot length</td><td style='text-align: center; word-wrap: break-word;'>58.5</td><td style='text-align: center; word-wrap: break-word;'>10.9</td><td style='text-align: center; word-wrap: break-word;'>105.8</td><td style='text-align: center; word-wrap: break-word;'>0.90</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Chest circumference</td><td style='text-align: center; word-wrap: break-word;'>1098.8</td><td style='text-align: center; word-wrap: break-word;'>423.7</td><td style='text-align: center; word-wrap: break-word;'>1776.6</td><td style='text-align: center; word-wrap: break-word;'>0.76</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Head breadth</td><td style='text-align: center; word-wrap: break-word;'>14.9</td><td style='text-align: center; word-wrap: break-word;'>4.2</td><td style='text-align: center; word-wrap: break-word;'>25.5</td><td style='text-align: center; word-wrap: break-word;'>0.84</td></tr></table>"
+    },
+    {
+      "type": "discussion",
+      "content": "Source: Clark 1956."
+    },
+    {
+      "type": "discussion",
+      "content": "Note: Data are from 44 pairs of monozygotic twins and 37 pairs of dizygotic twins of the same sex in Michigan high schools and junior high schools. Because monozygotic and dizygotic twins develop in different types of placental environments, one might question the assumptions that $\\sigma_{E_{s}}^{2}$ (MZ) $=\\sigma_{E_{s}}^{2}$ (DZ) and $\\sigma_{E_{c}}^{2}$ (MZ) $=\\sigma_{E_{c}}^{2}$ (DZ). Mammalian embryos are surrounded by two types of fetal membranes: an amnion (or birth sac), which is continuous with the body wall of the embryo and forms a fluid-filled chamber, and a more external chorion (placenta) through which exchange of nutrients, gases, and wastes takes place. Human dizygotic twins always have separate membranes, but only about a third of monozygotic twins do (Nance 1979). Thus, due to the greater sharing of prenatal environments, monozygotic twins may exhibit higher similarity due to shared environmental effects and deviate less because of specific effects. The fact that dichorionic and monochorionic monozygotic twins differ significantly in their within-pair mean squares for plasma cholesterol (Christian et al. 1976) and fingerprint patterns (Reed et al. 1978) is consistent with this idea."
+    },
+    {
+      "type": "discussion",
+      "content": "More remarkably, embryo transplant experiments with highly inbred lines of mice have shown that monozygotic twins separated at the eight-cell stage are significantly more similar to each other than are dizygotic twins (separate since conception) treated in the same manner (Gärtner and Baunack 1981). In this study, dizygotic twins are no more different genetically than monozygotic twins since the parents are highly homozygous. Thus, these results suggest that by the third cell division, zygotes can be modified by common environmental effects that have substantial impact on the adult phenotype."
+    },
+    {
+      "type": "discussion",
+      "content": "A number of other important assumptions underly twin analysis (Price 1950; Kempthorne and Osborne 1961; Nance 1976, 1979; Eaves et al. 1978; Martin et al. 1978; Rowe 1994). For example, one might question whether twins are a random subset of the gene pool of the general population. Since it is the population at large about which one normally wants to make inferences, there is reason for concern here. The dizygotic twinning rate differs significantly among races of humans as well as among individuals (Bulmer 1970). In addition, dizygotic twins are more frequently produced by older mothers, for whom congenital malformations are also more common. An additional concern is whether the environmental component of variance may be exceptionally high or low in twins relative to singletons. Parents may treat twins differently than singleton offspring. Because of their contemporaneity, twins may also experience an exceptional level of sib competition (or cooperation)."
+    },
+    {
+      "type": "discussion",
+      "content": "One or more of the above-mentioned problems would be suggested if the phenotypic variances for monozygotic twins and dizygotic twins were found to be significantly different. This can be tested by the ratio $$ F=\\frac{\\mathrm{MS}_{b}(\\mathrm{DZ})+\\mathrm{MS}_{e}(\\mathrm{DZ})}{\\mathrm{MS}_{b}(\\mathrm{MZ})+\\mathrm{MS}_{e}(\\mathrm{MZ})} $$"
+    },
+    {
+      "type": "definition",
+      "content": "Using Satterthwaite's (1946) method (Chapter 18), the degrees of freedom associated with the numerator are approximately $$ d f=\\frac{N[\\mathrm{M S}_{b}(\\mathrm{D Z})+\\mathrm{M S}_{e}(\\mathrm{D Z})]^{2}}{\\mathrm{M S}_{b}^{2}(\\mathrm{D Z})+\\mathrm{M S}_{e}^{2}(\\mathrm{D Z})} $$ and a parallel definition applies to the denominator."
+    }
+  ]
+}

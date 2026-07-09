@@ -1,0 +1,47 @@
+{
+  "id": "Genetics_chapter27_020",
+  "metadata": {
+    "chapter": "Genetics_chapter27",
+    "section": "Variance-Component Estimation with Complex Pedigrees",
+    "subsections": [
+      "EXPECTATIONS AND VARIANCES OF PRODUCTS"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter27_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Variance-Component Estimation with Complex Pedigrees",
+    "section_level_2": "EXPECTATIONS AND VARIANCES OF PRODUCTS",
+    "heading_path": [
+      "Variance-Component Estimation with Complex Pedigrees",
+      "EXPECTATIONS AND VARIANCES OF PRODUCTS"
+    ],
+    "display_heading": "EXPECTATIONS AND VARIANCES OF PRODUCTS"
+  },
+  "blocks": [
+    {
+      "type": "definition",
+      "content": "Consider the product $f = uv$, where $u$ and/or $v$ may be variables or functions of variables. Here $\\partial f/\\partial v = u$, $\\partial f/\\partial u = v$, $\\partial^2 f/\\partial u \\partial v = 1$, and all other partial derivatives are zero. By including all terms involving these three nonzero partials in the application of Equation A1.4a, we obtain the expectation $$ E(u v)=\\mu_{u}\\mu_{v}+\\sigma(u,v) $$ where $\\mu_{u}$ and $\\mu_{v}$ are, respectively, the expected values of $u$ and $v$. This expression also follows directly from the definition of a covariance, $\\sigma(u,v) = E(uv) - \\mu_{u}\\mu_{v}$."
+    },
+    {
+      "type": "discussion",
+      "content": "Applying Equation A1.7b, $$ \\sigma^{2}(u v)=E\\left\\{\\left[(u-\\mu_{u})\\mu_{v}+(v-\\mu_{v})\\mu_{u}+(v-\\mu_{v})(u-\\mu_{u})-\\sigma(u,v)\\right]^{2}\\right\\} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "After a little algebra, this becomes $$ \\begin{aligned}\\sigma^{2}(uv)&=\\mu_{v}^{2}\\sigma^{2}(u)+\\mu_{u}^{2}\\sigma^{2}(v)+E[(v-\\mu_{v})^{2}(u-\\mu_{u})^{2}]-[\\sigma(u,v)]^{2}\\\\&\\quad+2\\bigg(\\mu_{u}\\mu_{v}\\sigma(u,v)+\\mu_{u}E[(v-\\mu_{v})^{2}(u-\\mu_{u})]\\\\&\\quad+\\mu_{v}E[(v-\\mu_{v})(u-\\mu_{u})^{2}]\\bigg)\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "If u and v are bivariate normally distributed, then from Kendall and Stuart (1977, p. 85), $$ E[(v-\\mu_{v})^{2}(u-\\mu_{u})^{2}]=\\sigma^{2}(u)\\sigma^{2}(v)+2\\left[\\sigma(u,v)\\right]^{2} $$ and $$ E[(v-\\mu_{v})^{2}(u-\\mu_{u})]=E[(v-\\mu_{v})(u-\\mu_{u})^{2}]=0 $$ in which case $$ \\sigma^{2}(u v)=\\mu_{v}^{2}\\sigma^{2}(u)+\\mu_{u}^{2}\\sigma^{2}(v)+[\\sigma(u,v)]^{2}+2\\mu_{u}\\mu_{v}\\sigma(u,v)+\\sigma^{2}(u)\\sigma^{2}(v) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "When u and v are independent, this equation reduces further to $$ \\sigma^{2}(u v)=\\mu_{v}^{2}\\sigma^{2}(u)+\\mu_{u}^{2}\\sigma^{2}(v)+\\sigma^{2}(u)\\sigma^{2}(v) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "A useful compendium of facts regarding the variances and covariances of products of random variables can be found in Bohrstedt and Goldberger (1969)."
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "id": "Genetics_chapter26_018",
+  "metadata": {
+    "chapter": "Genetics_chapter26",
+    "section": "Introduction",
+    "subsections": [
+      "Multiple Traits"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter26_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "Multiple Traits",
+    "heading_path": [
+      "Introduction",
+      "Multiple Traits"
+    ],
+    "display_heading": "Multiple Traits"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "In principle, in the estimation of breeding values for multiple traits, one can simply perform univariate BLUP analyses on each individual trait, but this does not necessarily make efficient use of the available data. When characters are correlated, measurements on each trait provide some information on the breeding values of the other correlated traits. Multivariate BLUP takes this information directly into account by computing breeding values as conditional expectations given the measurements of all traits in all relatives. On the other hand, limitations of multivariate BLUP include the need for accurate estimates of the genetic and environmental covariances among traits and its high computational demands. We have already considered the difficulties in procuring reliable estimates of covariances among traits (Chapter 22), and we return to the issue of computational speed at the end of this section."
+    },
+    {
+      "type": "discussion",
+      "content": "To illustrate the basic principles of multivariate BLUP, we follow the approach of Henderson and Quaas (1976), restricting our attention to the simplest of situations in which each of k traits has been measured once in each of n individuals. (For modifications necessary with missing data, see Henderson and Quaas 1976 and Mrode 1996.) The $ (nk) \\times 1 $ dimensional column vector of observations is denoted by the stack of univariate vectors, $$ \\mathbf{y}=\\begin{pmatrix}\\mathbf{y}_{1}\\\\ \\mathbf{y}_{2}\\\\ \\vdots\\\\ \\mathbf{y}_{k}\\end{pmatrix} $$ where the $i$th element of the column vector $\\mathbf{y}_{j}$ corresponds to the observation of character $j$ in the $i$th individual."
+    },
+    {
+      "type": "discussion",
+      "content": "Here we assume that each trait follows the animal model $$ \\mathbf{y}_{j}=\\mathbf{X}_{j}\\boldsymbol{\\beta}_{j}+\\mathbf{Z}_{j}\\mathbf{a}_{j}+\\mathbf{e}_{j} $$ where there are $q_j$ fixed effects associated with character $j$ so that $\\mathbf{X}_j$ and $\\boldsymbol{\\beta}_j$ have, respectively, dimensionality $n \\times q_j$ and $q_j \\times 1$ for each trait. Assuming there is a single measurement for each character in each individual, $\\mathbf{Z}_j = \\mathbf{I}$, and the mixed model can then be written as $$ \\begin{pmatrix}\\mathbf{y}_{1}\\\\\\mathbf{y}_{2}\\\\\\vdots\\\\\\mathbf{y}_{k}\\end{pmatrix}=\\begin{pmatrix}\\mathbf{X}_{1}&\\mathbf{0}&\\cdots&\\mathbf{0}\\\\\\mathbf{0}&\\mathbf{X}_{2}&\\cdots&\\mathbf{0}\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\\\mathbf{0}&\\mathbf{0}&\\cdots&\\mathbf{X}_{k}\\end{pmatrix}\\begin{pmatrix}\\boldsymbol{\\beta}_{1}\\\\\\boldsymbol{\\beta}_{2}\\\\\\vdots\\\\\\boldsymbol{\\beta}_{k}\\end{pmatrix}+\\begin{pmatrix}\\mathbf{a}_{1}\\\\\\mathbf{a}_{2}\\\\\\vdots\\\\\\mathbf{a}_{k}\\end{pmatrix}+\\begin{pmatrix}\\mathbf{e}_{1}\\\\\\mathbf{e}_{2}\\\\\\vdots\\\\\\mathbf{e}_{k}\\end{pmatrix} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "To obtain the mixed-model equations for the total vectors of fixed effects and breeding values, it only remains to specify the $ (nk) \\times (nk) $ covariance matrices $ \\mathbf{R} $ and $ \\mathbf{G} $ associated with the total vector $ \\mathbf{e}^T = (\\mathbf{e}_1^T, \\cdots, \\mathbf{e}_k^T) $ of residual errors and the total vector $ \\mathbf{a}^T = (\\mathbf{a}_1^T, \\cdots, \\mathbf{a}_k^T) $ of random effects."
+    },
+    {
+      "type": "discussion",
+      "content": "First, consider the vector of environmental effects, $ \\mathbf{R} $. While residual deviations for the same character measured in different individuals can often be assumed to be uncorrelated, this is not necessarily the case for different characters measured in the same individual, which can exhibit an environmental correlation (Chapter 21). The covariance matrix between $ \\mathbf{e}_i $ and $ \\mathbf{e}_j $ can be written as $ \\boldsymbol{\\sigma}(\\mathbf{e}_i, \\mathbf{e}_j) = \\epsilon_{ij} \\mathbf{I} $, where $ \\epsilon_{ij} = \\sigma_F^2(i, j) $ is the environmental covariance between traits $i$ and $j$ as expressed in the same individual. The resulting $(nk) \\times (nk)$ co-variance matrix for the total error vector $\\mathbf{e} = (\\mathbf{e}_1^T, \\cdots, \\mathbf{e}_k^T)$ becomes $$ \\begin{pmatrix}\\sigma(\\mathbf{e}_{1},\\mathbf{e}_{1})&\\sigma(\\mathbf{e}_{1},\\mathbf{e}_{2})&\\cdots&\\sigma(\\mathbf{e}_{1},\\mathbf{e}_{k})\\\\\\sigma(\\mathbf{e}_{2},\\mathbf{e}_{1})&\\sigma(\\mathbf{e}_{2},\\mathbf{e}_{2})&\\cdots&\\sigma(\\mathbf{e}_{2},\\mathbf{e}_{k})\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\\\sigma(\\mathbf{e}_{k},\\mathbf{e}_{1})&\\sigma(\\mathbf{e}_{k},\\mathbf{e}_{2})&\\cdots&\\sigma(\\mathbf{e}_{k},\\mathbf{e}_{k})\\end{pmatrix}=\\begin{pmatrix}\\mathbf{I}\\epsilon_{11}&\\mathbf{I}\\epsilon_{12}&\\cdots&\\mathbf{I}\\epsilon_{1k}\\\\\\mathbf{I}\\epsilon_{21}&\\mathbf{I}\\epsilon_{22}&\\cdots&\\mathbf{I}\\epsilon_{2k}\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\\\mathbf{I}\\epsilon_{k1}&\\mathbf{I}\\epsilon_{k2}&\\cdots&\\mathbf{I}\\epsilon_{kk}\\end{pmatrix} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "An extremely convenient notation for $\\mathbf{R}$ utilizes the Kronecker product. For a $k\\times l$ matrix $\\mathbf{A}$ and a $m\\times n$ matrix $\\mathbf{B}$, $$ \\mathbf{A}=\\begin{pmatrix}a_{11}&a_{12}&\\cdots&a_{1l}\\\\a_{21}&a_{22}&\\cdots&a_{2l}\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\a_{k1}&a_{k2}&\\cdots&a_{kl}\\end{pmatrix}\\qquad\\text{and}\\qquad\\mathbf{B}=\\begin{pmatrix}b_{11}&b_{12}&\\cdots&b_{1n}\\\\b_{21}&b_{22}&\\cdots&b_{2n}\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\b_{m1}&b_{m2}&\\cdots&b_{mn}\\end{pmatrix} $$ the Kronecker product of $\\mathbf{A}$ and $\\mathbf{B}$, denoted $\\mathbf{A} \\otimes \\mathbf{B}$, is the $(km) \\times (ln)$ matrix $$ \\mathbf{A}\\otimes\\mathbf{B}=\\begin{pmatrix}\\mathbf{B}a_{11}&\\mathbf{B}a_{12}&\\cdots&\\mathbf{B}a_{1l}\\\\\\mathbf{B}a_{21}&\\mathbf{B}a_{22}&\\cdots&\\mathbf{B}a_{2l}\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\\\mathbf{B}a_{k1}&\\mathbf{B}a_{k2}&\\cdots&\\mathbf{B}a_{kl}\\end{pmatrix} $$ where each element is itself a matrix (of order $ m \\times n $) with $$ \\mathbf{B}\\ a_{ij}=\\begin{pmatrix}a_{ij}b_{11}&a_{ij}b_{12}&\\cdots&a_{ij}b_{1n}\\\\a_{ij}b_{21}&a_{ij}b_{22}&\\cdots&a_{ij}b_{2n}\\\\\\vdots&\\ddots&\\vdots&\\ddots&\\vdots\\\\a_{ij}b_{m1}&a_{ij}b_{m2}&\\cdots&a_{ij}b_{mn}\\end{pmatrix} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "An especially useful feature of Kronecker products (indeed, our primary reason for using this notation) is that for two square nonsingular matrices A and B, $$ (\\mathbf{A}\\otimes\\mathbf{B})^{-1}=\\mathbf{A}^{-1}\\otimes\\mathbf{B}^{-1} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Let $\\mathbf{E}$ be the $k \\times k$ covariance matrix of within-individual environmental effects, with the $ij$th element being $\\sigma_E(i,j) = \\epsilon_{ij}$. In Kronecker product notation, the covariance matrix $\\mathbf{R}$ for the total vector of errors $\\mathbf{e}^T = (\\mathbf{e}_1^T, \\cdots, \\mathbf{e}_k^T)$ is $$ \\mathbf{R}=\\mathbf{E}\\otimes\\mathbf{I} $$ giving $$ \\mathbf{R}^{-1}=\\mathbf{E}^{-1}\\otimes\\mathbf{I}^{-1}=\\begin{pmatrix}\\mathbf{I}\\boldsymbol{\\epsilon}^{11}&\\mathbf{I}\\boldsymbol{\\epsilon}^{12}&\\cdots&\\mathbf{I}\\boldsymbol{\\epsilon}^{1k}\\\\\\mathbf{I}\\boldsymbol{\\epsilon}^{21}&\\mathbf{I}\\boldsymbol{\\epsilon}^{22}&\\cdots&\\mathbf{I}\\boldsymbol{\\epsilon}^{2k}\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\\\mathbf{I}\\boldsymbol{\\epsilon}^{k1}&\\mathbf{I}\\boldsymbol{\\epsilon}^{k2}&\\cdots&\\mathbf{I}\\boldsymbol{\\epsilon}^{kk}\\end{pmatrix} $$ where $\\epsilon^{ij}$ denotes the ijth element of $\\mathbf{E}^{-1}$. Thus, although $\\mathbf{R}$ is $(nk) \\times (nk)$, its inverse can be computed from the inverse of a much smaller $k \\times k$ matrix."
+    },
+    {
+      "type": "discussion",
+      "content": "The same argument can be used to obtain the covariance matrix G of the additive effects and its inverse. Let C be the $ k \\times k $ matrix of additive genetic covariances, with $ c_{ij} = \\sigma_A(i, j) $ being the additive genetic covariance between characters i and j within an individual. The covariance between the additive genetic value of character i in individual l and the additive genetic value of character j in individual m is (from Chapter 21) the additive genetic covariance between characters i and j times twice the coefficient of coancestry $ (2\\Theta_{lm}) $ between l and m. In terms of the relationship matrix, this is $ c_{ij}A_{lm} $. Thus, the covariance of $ \\mathbf{a}_i $ and $ \\mathbf{a}_j $ is $ c_{ij}A $, and the resulting $ (nk) \\times (nk) $ matrix G for the total vector $ \\mathbf{a}^T = (\\mathbf{a}_1^T, \\cdots, \\mathbf{a}_k^T) $ of estimated breeding values becomes $$ \\mathbf{G}=\\left(\\begin{matrix}{\\mathbf{A}\\:c_{11}}&{\\mathbf{A}\\:c_{12}}&{\\cdots}&{\\mathbf{A}\\:c_{1k}}\\\\ {\\mathbf{A}\\:c_{21}}&{\\mathbf{A}\\:c_{22}}&{\\cdots}&{\\mathbf{A}\\:c_{2k}}\\\\ {\\vdots}&{\\vdots}&{\\ddots}&{\\vdots}\\\\ {\\mathbf{A}\\:c_{k1}}&{\\mathbf{A}\\:c_{k2}}&{\\cdots}&{\\mathbf{A}\\:c_{k k}}\\\\ \\end{matrix}\\right)=\\mathbf{C}\\otimes\\mathbf{A} $$ where $\\mathbf{A}$ (as before) is the $n\\times n$ relationship matrix. Hence, $$ \\mathbf{G}^{-1}=\\begin{pmatrix}\\mathbf{A}^{-1}c^{11}&\\mathbf{A}^{-1}c^{12}&\\cdots&\\mathbf{A}^{-1}c^{1k}\\\\\\mathbf{A}^{-1}c^{21}&\\mathbf{A}^{-1}c^{22}&\\cdots&\\mathbf{A}^{-1}c^{2k}\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\\\mathbf{A}^{-1}c^{k1}&\\mathbf{A}^{-1}c^{k2}&\\cdots&\\mathbf{A}^{-1}c^{kk}\\end{pmatrix}=\\mathbf{C}^{-1}\\otimes\\mathbf{A}^{-1} $$ where $ c^{ij} $ is the ijth element of $ C^{-1} $."
+    },
+    {
+      "type": "discussion",
+      "content": "We can now substitute directly into the MMEs using these expressions for $ \\mathbf{R}^{-1} $ and $ \\mathbf{G}^{-1} $. Recalling that we assumed $ \\mathbf{Z} = \\mathbf{I} $, Equation 26.5 becomes $$ \\begin{array}{c}{\\left(\\begin{array}{c c}{\\mathbf{X}^{T}(\\mathbf{E}^{-1}\\otimes\\mathbf{I})\\mathbf{X}}&{\\mathbf{X}^{T}(\\mathbf{E}^{-1}\\otimes\\mathbf{I})}\\\\ {}&{}\\\\ {(\\mathbf{E}^{-1}\\otimes\\mathbf{I})\\mathbf{X}}&{(\\mathbf{E}^{-1}\\otimes\\mathbf{I})+(\\mathbf{C}^{-1}\\otimes\\mathbf{A}^{-1})}\\\\ \\end{array}\\right)\\left(\\begin{array}{c}{\\widehat{\\boldsymbol{\\beta}}}\\\\ {\\widehat{\\mathbf{a}}}\\\\ \\end{array}\\right)}\\\\ {=\\left(\\begin{array}{c}{\\mathbf{X}^{T}(\\mathbf{E}^{-1}\\otimes\\mathbf{I})\\mathbf{y}}\\\\ {(\\mathbf{E}^{-1}\\otimes\\mathbf{I})\\mathbf{y}}\\\\ \\end{array}\\right)}\\\\ \\end{array} $$ where $$ \\mathbf{X}=\\left(\\begin{array}{c c c c}{\\mathbf{X}_{1}}&{\\mathbf{0}}&{\\cdots}&{\\mathbf{0}}\\\\ {\\mathbf{0}}&{\\mathbf{X}_{2}}&{\\cdots}&{\\mathbf{0}}\\\\ {\\vdots}&{\\vdots}&{\\ddots}&{\\vdots}\\\\ {\\mathbf{0}}&{\\mathbf{0}}&{\\cdots}&{\\mathbf{X}_{k}}\\\\ \\end{array}\\right),\\quad\\mathbf{\\beta}=\\left(\\begin{matrix}{\\mathbf{\\beta}_{1}}\\\\ {\\mathbf{\\beta}_{2}}\\\\ {\\vdots}\\\\ {\\mathbf{\\beta}_{k}}\\\\ \\end{matrix}\\right),\\quad\\mathbf{a}=\\left(\\begin{matrix}{\\mathbf{a}_{1}}\\\\ {\\mathbf{a}_{2}}\\\\ {\\vdots}\\\\ {\\mathbf{a}_{k}}\\\\ \\end{matrix}\\right),\\quad\\mathbf{y}=\\left(\\begin{matrix}{\\mathbf{y}_{1}}\\\\ {\\mathbf{y}_{2}}\\\\ {\\vdots}\\\\ {\\mathbf{y}_{k}}\\\\ \\end{matrix}\\right). $$ with $ \\beta $ having dimensionality $ (\\sum^k q_i) \\times 1 $ and a and y having dimensionality $ (nk) \\times 1 $."
+    },
+    {
+      "type": "discussion",
+      "content": "Since the dimensionality of the multivariate MME coefficient matrix is at least $(nk)\\times(nk)$, solving the mixed-model equations with more than two or three traits can be rather tortuous. However, multivariate BLUP can be greatly streamlined by constructing a canonical transformation for the characters being considered (Thompson 1977, Ducrocq and Besbes 1993). The idea here is to transform the vector of correlated traits into a new vector of uncorrelated variables. The transformed variables can then be analyzed by standard univariate BLUP analyses, with the breeding values of the transformed variables being subsequently transformed back to the original scale of measurement."
+    },
+    {
+      "type": "discussion",
+      "content": "The canonical transformation is accomplished by use of a transformation matrix $\\mathbf{Q}$. Letting $\\mathbf{y}_{i}$ be the vector of observations (on the $n$ traits) for individual $i$, then the transformed variables are given by $\\mathbf{y}_{i}^{*}=\\mathbf{Q}\\mathbf{y}_{i}$. The matrix $\\mathbf{Q}$ is chosen to satisfy the conditions that the residual covariance matrix of transformed variables is the identity matrix $$ \\mathbf{Q}\\mathbf{E}\\mathbf{Q}^{T}=\\mathbf{I} $$ and that the covariance matrix of transformed variables is a diagonal matrix $$ \\mathbf{Q}\\mathbf{C}\\mathbf{Q}^{T}=\\mathbf{W} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "(Anderson 1984, Mrode 1996). Letting $\\widehat{\\mathbf{a}}_{i}^{*}$ be the vector of breeding values estimated on the transformed scale for the $i$th individual, these can then be converted back to the original scale of measurement by $$ \\mathbf{\\widehat{a}}_{i}=\\mathbf{Q}^{-1}\\mathbf{\\widehat{a}}_{i}^{*} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "See Árnason (1982) for an example, and Meyer (1985), Schaeffer (1986), Jensen and Mao (1988), Itoh and Iwaisaki (1990), and Mrode (1996) for general treatments."
+    }
+  ]
+}

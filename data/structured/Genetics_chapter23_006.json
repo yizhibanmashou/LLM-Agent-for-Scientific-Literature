@@ -1,0 +1,82 @@
+{
+  "id": "Genetics_chapter23_006",
+  "metadata": {
+    "chapter": "Genetics_chapter23",
+    "section": "COMPONENTS OF VARIANCE AND COVARIANCE",
+    "subsections": [
+      "CROSS-FOSTERING EXPERIMENTS"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter23_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [
+      "23.1",
+      "23.3"
+    ],
+    "section_level_1": "COMPONENTS OF VARIANCE AND COVARIANCE",
+    "section_level_2": "CROSS-FOSTERING EXPERIMENTS",
+    "heading_path": [
+      "COMPONENTS OF VARIANCE AND COVARIANCE",
+      "CROSS-FOSTERING EXPERIMENTS"
+    ],
+    "display_heading": "CROSS-FOSTERING EXPERIMENTS",
+    "table_reference_keys": [
+      "chapter23:23.1",
+      "chapter23:23.3"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "For species in which it is possible to transplant progeny to surrogate mothers, a cross-fostering experiment can reveal whether maternal effects contribute to the resemblance between relatives. In the absence of maternal effects subsequent to the transplantation event, unrelated individuals that are raised by the same mother should exhibit zero phenotypic covariance with each other as well as with their foster mother. Cross-fostering is expected to decrease the phenotypic covariance of parents and their true offspring if maternal effects are significant. The phenotypic covariance between mother and her fostered offspring (FO, raised by a nonrelative) is identical to the father-offspring covariance, $$ \\sigma_{z}(M,F O)=\\frac{\\sigma_{A_{o}}^{2}}{2}+\\frac{\\sigma_{A_{o},A_{m}}}{4} $$ whereas the phenotypic covariance between foster mother and unrelated foster child is $$ \\sigma_{z}(FM,FO)=(\\sigma_{A_{o},A_{m}}+\\sigma_{D_{o},D_{m}}+\\sigma_{E_{o},E_{m}})+\\frac{\\sigma_{A_{m}}^{2}}{2}+b\\sigma_{E_{m}}^{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "These expressions clarify several things. First, note that the two equations sum to the usual covariance between mother and offspring, $ \\sigma(M, O) $ (Example 1) — the first equation is the phenotypic covariance of a mother and her offspring, exclusive of transmitted maternal effects, whereas the second equation is the covariance of a mother and her offspring, exclusive of direct effects. Second, Equation 23.7b is identical to the difference between the mother-offspring and father-offspring covariance (Example 1). Thus, the regression of foster offspring on foster parent provides a second means of estimating the composite parameter m introduced in Example 1. Third, we see again that since the different types of covariances between mothers and offspring contain covariances between direct and maternal effects, they can take on negative values."
+    },
+    {
+      "type": "discussion",
+      "content": "Cross-fostering experiments have been used frequently with natural populations of banded birds to evaluate the validity of heritability estimates derived from parent-offspring regressions. Regressions on true parents typically lead to high heritability estimates (0.5 to 1.0) for morphological traits such as beak dimensions, tarsus and wing length, and body weight ([[SEE_TABLE:17.1]]). In order to counter the criticism that such estimates are inflated by maternal effects, some investigators have exchanged eggs of incubating females. Such experiments only control for the effects of maternal investment subsequent to egg laying. Generally, the regressions employing foster parents have not been significantly different from zero, and the regressions of fostered offspring on true parents have remained high, suggesting that variance due to maternal effects is in fact negligible (Figure 23.2). However, exceptions do exist. In great tits (Parus major), significant positive regressions on foster parents have been observed for body weight when growth conditions are poor (Gebhardt-Henrich and van Noordwijk 1991)."
+    },
+    {
+      "type": "discussion",
+      "content": "Although the preceding approach provides a simple way to test for the presence of maternal effects, it does not allow any further separation of terms such as those involving the covariance between direct and maternal effects. A more"
+    },
+    {
+      "type": "discussion",
+      "content": "[[FIGURE:23.2]] powerful approach is to incorporate cross-fostering into a full-sib design (Rutledge et al. 1972). Rather than completely exchanging offspring between mothers, pairs of unrelated mothers giving birth on the same day are forced to exchange half of their progeny. Such cross-fostering gives rise to a replicated $ 2 \\times 2 $ factorial design, with each exchange creating four situations: offspring of mother A raised by A, offspring of A raised by mother B, offspring of B raised by A, and offspring of B raised by B. The rationale of this approach is that maternal effects contribute to the covariance among sibs raised by the same mother (whether it is the true mother, or the foster mother), but not to the covariance among sibs raised by different mothers."
+    },
+    {
+      "type": "discussion",
+      "content": "The progeny phenotypes in such an experiment can be described by the following linear model, $$ z_{i j k l}=\\mu+P_{i}+M_{i j}+N_{i k}+I_{i j k}+e_{i j k l} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Factor</td><td style='text-align: center; word-wrap: break-word;'>df</td><td style='text-align: center; word-wrap: break-word;'>Sums of Squares</td><td style='text-align: center; word-wrap: break-word;'>Expected Mean Squares</td></tr><tr><td rowspan=\"2\">Pairs</td><td rowspan=\"2\">$ N_{p} - 1 $</td><td rowspan=\"2\">$ 4n \\sum_{i} (\\overline{z}_{i} - \\overline{z})^{2} $</td><td style='text-align: center; word-wrap: break-word;'>$ \\sigma^{2}_{e} + n\\sigma^{2}_{I} + 2n\\sigma^{2}_{M} + 2n\\sigma^{2}_{N} $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>+ 4n $ \\sigma^{2}_{P} $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Mothers</td><td style='text-align: center; word-wrap: break-word;'>$ N_{p} $</td><td style='text-align: center; word-wrap: break-word;'>$ 2n \\sum_{i,j} (\\overline{z}_{ij} - \\overline{z}_{i})^{2} $</td><td style='text-align: center; word-wrap: break-word;'>$ \\sigma^{2}_{e} + n\\sigma^{2}_{I} + 2n\\sigma^{2}_{M} $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Nurses</td><td style='text-align: center; word-wrap: break-word;'>$ N_{p} $</td><td style='text-align: center; word-wrap: break-word;'>$ 2n \\sum_{i,k} (\\overline{z}_{ik} - \\overline{z}_{i})^{2} $</td><td style='text-align: center; word-wrap: break-word;'>$ \\sigma^{2}_{e} + n\\sigma^{2}_{I} + 2n\\sigma^{2}_{N} $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>M $ \\times $ N</td><td style='text-align: center; word-wrap: break-word;'>$ N_{p} $</td><td style='text-align: center; word-wrap: break-word;'>$ n \\sum_{i,j,k} (\\overline{z}_{ijk} - \\overline{z}_{ij} - \\overline{z}_{ik} + \\overline{z}_{i})^{2} $</td><td style='text-align: center; word-wrap: break-word;'>$ \\sigma^{2}_{e} + n\\sigma^{2}_{I} $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Error</td><td style='text-align: center; word-wrap: break-word;'>$ 4N_{p}(n - 1) $</td><td style='text-align: center; word-wrap: break-word;'>$ \\sum_{i,j,k,l} (z_{ijkl} - \\overline{z}_{ijk.})^{2} $</td><td style='text-align: center; word-wrap: break-word;'>$ \\sigma^{2}_{e} $</td></tr></table>"
+    },
+    {
+      "type": "discussion",
+      "content": "Note: $ \\overline{z} $ is the mean phenotype over all families, $ \\overline{z}_{i} $ is the mean phenotype of progeny in the ith pair, $ \\overline{z}_{ij} $ is the mean phenotype of progeny of the jth mother within the ith pair, $ \\overline{z}_{ik} $ is the mean phenotype of offspring raised by the kth nurse within the ith pair, and $ \\overline{z}_{ijk} $ is the mean phenotype of progeny of the jth mother raised by the kth nurse within the ith pair. where $P_i$ is the average effect of the $i$th cross-fostered pair, $M_{ij}$ is the direct effect of the $j$th (genetic) mother within the $i$th pair ($j = 1$ or 2), $N_{ik}$ is the effect of the $k$th (unrelated) nurse within the $i$th pair ($k = 1$ or 2), $I_{ijk}$ is the $M \\times N$ interaction within the $i$th pair, and $e_{ijkl}$ is the residual error for the $l$th offspring of the $j$th mother raised by the $k$th nurse within the $i$th pair. All of the effects in the model are assumed to be independently distributed with zero expectations. The complete layout of the analysis of variance for such an experiment is given in [[SEE_TABLE:23.3]], where we assume a balanced design with $N_p$ cross-fostering pairs, each involving $n$ full-sibs within a particular mother-nurse grouping (i.e., each mother has $2n$ offspring, $n$ of which are cross-fostered)."
+    },
+    {
+      "type": "discussion",
+      "content": "We next consider how the observable variance components for mothers, nurses, and mother $ \\times $ nurse interactions relate to the causal components of variance and covariance outlined above. As we have now encountered the general definitions of the variance components in the two-way ANOVA in two preceding chapters (20 and 22), it is not necessary to go into great detail. The variance component due to mothers, $ \\sigma_{M}^{2} $, is equivalent to the covariance between full sibs raised by different nurses. (This can be seen by use of Equation 23.8, noting that within the ith pair, full sibs that are raised by different nurses share only the term"
+    },
+    {
+      "type": "discussion",
+      "content": "$ M_{ij} $.) The variance due to nurses, $ \\sigma_{N}^{2} $, is the covariance of unrelated individuals raised by the same nurse. The variance due to mother $ \\times $ nurse interaction, $ \\sigma_{I}^{2} $, is the covariance of full sibs raised by their mother minus $ (\\sigma_{M}^{2} + \\sigma_{N}^{2}) $."
+    },
+    {
+      "type": "discussion",
+      "content": "Using these definitions and the coefficients described in [[SEE_TABLE:23.1]], the observable components of variance can be expressed in causal terms, $$ \\sigma_{M}^{2}=\\frac{\\sigma_{A_{o}}^{2}}{2}+\\frac{\\sigma_{D_{o}}^{2}}{4} $$ $$ \\sigma_{N}^{2}=\\sigma_{A_{m}}^{2}+\\sigma_{D_{m}}^{2}+(b^{2}+c)\\sigma_{E_{m}}^{2} $$ $$ \\sigma_{I}^{2}=\\sigma_{A_{o},A_{m}}+2\\sigma_{E_{o},E_{m}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The sum of these three components is equal to the expected phenotypic covariance among full sibs raised by their mother. An attractive feature of the cross-fostering design is that it allows a clean partitioning of the causal sources of phenotypic resemblance into components due to the variance of direct effects, variance of maternal effects, and covariance of direct and maternal effects. Note that $ \\sigma_{M}^{2} $ is influenced only by the direct effects of genes, since maternal effects do not contribute to the resemblance of individuals raised by unrelated females. (However, any maternal effects that are expressed prior to the cross-fostering (e.g., prenatal effects) will contribute to $ \\sigma_{M}^{2} $. On the other hand, $ \\sigma_{N}^{2} $ is influenced only by maternal effects, since the individuals concerned are unrelated. Finally, $ \\sigma_{I}^{2} $ defines the remaining contribution to the covariance among full sibs raised by the same mother, the covariance of direct and maternal effects."
+    },
+    {
+      "type": "discussion",
+      "content": "Without observations on additional kinds of relatives, further decomposition of these quantities into their subsidiary (additive, dominance, and environmental) components is not possible. Riska et al. (1985) suggest how additional information can be extracted from a cross-fostering experiment when phenotypic data are available for sires and dams as well as their offspring. In this case, separate estimates of $ \\sigma_{A_o}^2 $, $ \\sigma_{D_o}^2 $, and $ \\sigma_{A_m}^2 $ can be acquired, although $ \\sigma_{D_m}^2 + (b^2 + c)\\sigma_{E_m}^2 $ and $ \\sigma_{A_o, A_m} + 2\\sigma_{E_o, E_m} $ still appear as composite terms."
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "id": "Evolution_appendix2_011",
+  "metadata": {
+    "chapter": "Evolution_appendix2",
+    "section": "THE CHOICE OF A PRIOR",
+    "subsections": [
+      "The Jeffreys Prior"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_appendix2_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "THE CHOICE OF A PRIOR",
+    "section_level_2": "The Jeffreys Prior",
+    "heading_path": [
+      "THE CHOICE OF A PRIOR",
+      "The Jeffreys Prior"
+    ],
+    "display_heading": "The Jeffreys Prior"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Jeffreys (1961) proposed a general prior based on the Fisher information information, I, of the likelihood. Recall (LW Appendix 4) that $$ I(\\theta\\mid\\mathbf{x})=-E\\left[\\frac{\\partial^{2}\\ln\\ell(\\theta\\mid\\mathbf{x})}{\\partial\\theta^{2}}\\right] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The Jeffreys prior is as follows: $$ p(\\theta)\\propto\\sqrt{I(\\theta\\mid\\mathbf{x})} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "A full discussion, with derivation, can be found in Lee (2012)."
+    },
+    {
+      "type": "discussion",
+      "content": "When there are $ k $ parameters, I is the $ k \\times k $ Fisher information matrix of the expected second partials, where the elements of I are calculated by $$ \\mathbf{I}(\\boldsymbol{\\Theta}|\\mathbf{x})_{i j}=-E_{x}\\left[\\frac{\\partial^{2}\\ln\\ell(\\boldsymbol{\\Theta}|\\mathbf{x})}{\\partial\\theta_{i}\\partial\\theta_{j}}\\right] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "In this case, the Jeffreys prior becomes $$ p(\\boldsymbol{\\Theta})\\propto\\sqrt{\\det[\\mathbf{I}(\\boldsymbol{\\theta}\\mid\\mathbf{x})]} $$"
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:A2.4]]"
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:A2.5]]"
+    }
+  ]
+}

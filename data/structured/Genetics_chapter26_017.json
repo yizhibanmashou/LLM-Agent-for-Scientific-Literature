@@ -1,0 +1,43 @@
+{
+  "id": "Genetics_chapter26_017",
+  "metadata": {
+    "chapter": "Genetics_chapter26",
+    "section": "Introduction",
+    "subsections": [
+      "Maternal Effects"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter26_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "Maternal Effects",
+    "heading_path": [
+      "Introduction",
+      "Maternal Effects"
+    ],
+    "display_heading": "Maternal Effects"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "As discussed in detail in Chapter 23, for species with maternal care, the phenotype of an individual can depend on both genetic and environmental components of maternal effects, in addition to the individual's direct additive genetic value and a random environmental deviation. As first pointed out by Quaas and Pollak (1981), Willham's (1963) model for maternal effects is readily incorporated into a mixed-model framework, allowing the estimation of breeding values as well as maternal genetic and environmental effects. Here we simply consider the animal-model framework, although application of the reduced animal model is also straightforward (Mrode 1996). The structure of the model is very similar to that provided above for dominance and for repeated measures, the main difference being the addition of a third vector of random effects."
+    },
+    {
+      "type": "discussion",
+      "content": "Letting $\\beta$ denote the vector of fixed effects, a the vector of breeding (direct additive genetic) values, $m$ the vector of genetic maternal effects, and $c$ the vector of environmental maternal effects, the mixed-model becomes $$ \\mathbf{y}=\\mathbf{X}\\boldsymbol{\\beta}+\\mathbf{Z}_{1}\\mathbf{a}+\\mathbf{Z}_{2}\\mathbf{m}+\\mathbf{Z}_{3}\\mathbf{c}+\\mathbf{e} $$ where $Z_{1}$, $Z_{2}$, and $Z_{3}$ are, respectively, the incidence matrices for random breeding values, genetic maternal effects, and environmental maternal effects. Assuming there are $n$ individuals in the observation vector $y$ (each with a single measure) and $m$ mothers in the analysis (not all of which may have been observed), the vector of breeding values a contains $q$ elements, where $q$ is the total number of observations plus the number of unobserved mothers. The vectors of genetic maternal effects and environmental maternal effects are also $q\\times1$, while that for residual deviations is $n\\times1$. Assuming a single observation for each individual, $Z_{1}$ has dimensionality $n\\times q$ with all elements in each row being equal to zero except for a one in the column denoting the individual. $Z_{2}$ also has dimensionality $n\\times q$, and again consists entirely of zeros, with a one in each row denoting the individual's mother. Finally, $Z_{3}$ has dimensionality $n\\times q$, with all elements being equal to zero, except a single one in each row denoting the individual's mother. (Note that with this latter treatment, we assume that environmental maternal effects are not transmitted across generations. With cross-generational transmission, as in Falconer's model (Chapter 23), elements in $Z_{3}$ involving maternal grandmothers and others in the maternal line may take on nonzero values.)"
+    },
+    {
+      "type": "discussion",
+      "content": "The breeding values, genetic and environmental maternal effects, and residual environmental effects are assumed to be random with respective variances $ \\sigma_{A_o}^2 $, $ \\sigma_{A_m}^2 $, $ \\sigma_{E_m}^2 $, and $ \\sigma_{E_s}^2 $. All effects are also assumed to be distributed independently except for the direct and maternal genetic effects, which may have covariance $ \\sigma_{A_o, A_m} $ due to pleiotropic gene effects. Letting $ \\mathbf{A} $ be the $ q \\times q $ relationship matrix, the covariance matrix of breeding values is $ \\sigma_{A_o}^2 \\mathbf{A} $, the covariance matrix of genetic maternal effects is $\\sigma_{A_{m}}^{2}\\mathbf{A}$, and the covariance matrix of direct and maternal genetic effects is $\\sigma_{A_{o},A_{m}}\\mathbf{A}$."
+    },
+    {
+      "type": "discussion",
+      "content": "The BLUEs and BLUPs for this model are the solutions to the following mixed-model equations: $$ \\begin{aligned}\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{X}&\\mathbf{X}^{T}\\mathbf{Z}_{1}&\\mathbf{X}^{T}\\mathbf{Z}_{2}&\\mathbf{X}^{T}\\mathbf{Z}_{3}\\\\\\mathbf{Z}_{1}^{T}\\mathbf{X}&\\mathbf{Z}_{1}^{T}\\mathbf{Z}_{1}+\\lambda_{1}\\mathbf{A}^{-1}&\\mathbf{Z}_{1}^{T}\\mathbf{Z}_{2}+\\lambda_{2}\\mathbf{A}^{-1}&\\mathbf{Z}_{1}^{T}\\mathbf{Z}_{3}\\\\\\mathbf{Z}_{2}^{T}\\mathbf{X}&\\mathbf{Z}_{2}^{T}\\mathbf{Z}_{1}+\\lambda_{2}\\mathbf{A}^{-1}&\\mathbf{Z}_{2}^{T}\\mathbf{Z}_{2}+\\lambda_{3}\\mathbf{A}^{-1}&\\mathbf{Z}_{2}^{T}\\mathbf{Z}_{3}\\\\\\mathbf{Z}_{3}^{T}\\mathbf{X}&\\mathbf{Z}_{3}^{T}\\mathbf{Z}_{1}&\\mathbf{Z}_{3}^{T}\\mathbf{Z}_{2}&\\mathbf{Z}_{3}^{T}\\mathbf{Z}_{3}+\\lambda_{4}\\mathbf{I}\\end{pmatrix}&\\begin{pmatrix}\\widehat{\\boldsymbol{\\beta}}\\\\\\widehat{\\mathbf{a}}\\\\\\widehat{\\mathbf{m}}\\\\\\widehat{\\mathbf{c}}\\end{pmatrix}\\\\&=\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{y}\\\\\\mathbf{Z}_{1}^{T}\\mathbf{y}\\\\\\mathbf{Z}_{2}^{T}\\mathbf{y}\\\\\\mathbf{Z}_{3}^{T}\\mathbf{y}\\end{pmatrix}\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Letting the covariance matrix of direct and maternal genetic effects be $$ \\mathbf{g}=\\left(\\begin{matrix}{\\sigma_{A_{o}}^{2}}&{\\sigma_{A_{o},A_{m}}}\\\\ {}&{}\\\\ {\\sigma_{A_{o},A_{m}}}&{\\sigma_{A_{m}}^{2}}\\\\ \\end{matrix}\\right) $$ and its inverse be $$ \\mathbf{g}^{-1}=\\begin{pmatrix}g^{11}&g^{12}\\\\ g^{21}&g^{22}\\end{pmatrix} $$ then $$ \\begin{pmatrix}\\lambda_{1}&\\lambda_{2}\\\\\\lambda_{2}&\\lambda_{3}\\end{pmatrix}=\\sigma_{E_{s}}^{2}\\begin{pmatrix}g^{11}&g^{12}\\\\g^{21}&g^{22}\\end{pmatrix} $$ and $ \\lambda_{4} = \\sigma_{E_{s}}^{2} / \\sigma_{C}^{2} $"
+    }
+  ]
+}

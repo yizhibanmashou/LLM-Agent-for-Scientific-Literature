@@ -1,0 +1,43 @@
+{
+  "id": "Evolution_chapter2_005",
+  "metadata": {
+    "chapter": "Evolution_chapter2",
+    "section": "Neutral Evolution in One- and Two-Locus Systems: Introduction",
+    "subsections": [
+      "THE AGE OF A NEUTRAL ALLELE"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter2_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Neutral Evolution in One- and Two-Locus Systems: Introduction",
+    "section_level_2": "THE AGE OF A NEUTRAL ALLELE",
+    "heading_path": [
+      "Neutral Evolution in One- and Two-Locus Systems: Introduction",
+      "THE AGE OF A NEUTRAL ALLELE"
+    ],
+    "display_heading": "THE AGE OF A NEUTRAL ALLELE"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "A classic result from standard theory relates the age of a neutral allele to its frequency (Kimura and Ohta 1973; Maruyama 1974; Watterson 1976; Slatkin and Rannala 1997, 2000). In particular, the expected age t (in generations) of an allele with current frequency p is $$ E(t)=-\\frac{4Np\\ln(p)}{1-p} $$ assuming a constant population size during the allele's sojourn through the population (Kimura and Ohta 1973). As shown in Figure 2.3, alleles at higher frequency are expected to be older. Most notably, as $ p \\rightarrow 1 $, $ E(t) \\rightarrow 4N $ generations, which is consistent with the result in the previous example showing that the mean time to fixation of a rare (e.g., new mutant) neutral allele is 4N generations. This result is more than just an esoteric finding, as one class of tests for selection evaluates whether an allele, given its frequency, is too young to be compatible with neutrality (Chapter 9)."
+    },
+    {
+      "type": "discussion",
+      "content": "Equation 2.12 is not, however, the whole story, as a very old allele can sometimes be at low frequency, having transiently drifted up to a high frequency before drifting back toward zero frequency by chance. Thus, we expect the confidence interval for allele-age estimates to be highly asymmetric about the mean. Slatkin and Rannala (2000) provide an approximation for the cumulative probability for the age of an allele, given a frequency of p in a random sample of n alleles, $$ \\Pr(t\\leq\\tau)=(1-p)^{-1+[n/(1+nN\\tau)]} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "One final caveat is in order with respect to Equation 2.12. Unless the sample size is very large, the estimated frequency of a rare allele can be quite misleading. Consider, for example, a singleton with a sample frequency of 1/n. Application of Equation 2.12 would imply an estimated age of $ 4N \\ln(n)/[n(1-1/n)] $ generations. If ten diploid individuals were sampled, the minimum allele frequency would be 0.05, so the estimated age of a singleton would be $ \\sim 0.84N $ generations. As very rare alleles, with true frequencies $ \\ll 1/n $ will either be recorded as singletons or not at all in a sample of size n, it is clear that Equation 2.12 yields upwardly biased estimates of the ages of rare alleles unless the sample size is large enough that the estimate of frequency p is highly accurate."
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:2.3]]"
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:2.4]]"
+    }
+  ]
+}

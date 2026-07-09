@@ -1,0 +1,36 @@
+{
+  "id": "Evolution_chapter12_006",
+  "metadata": {
+    "chapter": "Evolution_chapter12",
+    "section": "SHORT-TERM DIVERGENCE",
+    "subsections": [
+      "Estimating the Among-group Variance"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter12_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [
+      "18.1"
+    ],
+    "section_level_1": "SHORT-TERM DIVERGENCE",
+    "section_level_2": "Estimating the Among-group Variance",
+    "heading_path": [
+      "SHORT-TERM DIVERGENCE",
+      "Estimating the Among-group Variance"
+    ],
+    "display_heading": "Estimating the Among-group Variance",
+    "table_reference_keys": [
+      "Evolution_chapter18:18.1"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "With $ L $ replicate populations, a common estimate in the literature for $ \\sigma_B^2(t) $ is $$ V_{B}(t)=\\frac{1}{L-1}\\sum_{i=1}^{L}\\left[\\overline{z}_{i}(t)-\\overline{z}_{.}(t)\\right]^{2} $$ the sample variance among the sample means, $ \\overline{z}_{1}, \\cdots, \\overline{z}_{L} $, of the replicate population. When just two populations are being considered (as in some of the tests developed below), their squared difference $$ d^{2}(t)=\\left[\\overline{z}_{1}(t)-\\overline{z}_{2}(t)\\right]^{2} $$ is often used. This is easily related to Equation 12.8a by noting for L = 2 that $$ V_{B}=\\frac{1}{2-1}\\sum_{i=1}^{2}\\left(\\overline{z}_{i}-\\frac{\\overline{z}_{1}+\\overline{z}_{2}}{2}\\right)^{2}=\\frac{\\left(\\overline{z}_{1}-\\overline{z}_{2}\\right)^{2}}{4}+\\frac{\\left(\\overline{z}_{2}-\\overline{z}_{1}\\right)^{2}}{4}=\\frac{d^{2}}{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "These expressions for $ V_B $ overestimate the true among-line variance $ \\sigma_B^2 $, as the sample means are measured with error. In particular, $ \\overline{z}_i = \\mu_i + e_i $, so that $$ \\sigma^{2}(\\overline{z}_{i})=\\sigma^{2}(\\mu_{i})+\\sigma^{2}(e_{i})=\\sigma_{B}^{2}+\\frac{\\sigma_{z}^{2}}{n} $$ where $ \\sigma_z^2 $ is the trait variance and $ n $ is the sample sized used to estimate $ \\mu_i $. When $ \\sigma_B^2 = 2f_t\\sigma_A^2 \\gg \\sigma_z^2/n $ (which is equivalent to $ 2f_t h^2 \\gg 1/n $), the difference between $ \\sigma^2(\\overline{z}_i) $ and $ \\sigma_B^2 $ is small. As suggested by a number of authors (Lynch 1988a, 1990; Turelli et al. 1988; Bjöklund 1991; Savalli 1993), a simple way to avoid this issue is to estimate the among-group variance from a standard one-way ANOVA, with $$ V_{B}(t)=\\frac{MS_{B}-MS_{W}}{n_{0}} $$ using the among- and within-group mean squares $ (MS_{B} $ and $ MS_{W} $, respectively), with $ n_{0} $ being a measure of the average sample size per group (see LW Table 18.1)."
+    }
+  ]
+}

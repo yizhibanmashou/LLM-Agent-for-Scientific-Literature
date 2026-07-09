@@ -1,0 +1,43 @@
+{
+  "id": "Genetics_chapter8_019",
+  "metadata": {
+    "chapter": "Genetics_chapter8",
+    "section": "Introduction",
+    "subsections": [
+      "OVERVIEW OF LINEAR MODELS"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter8_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "OVERVIEW OF LINEAR MODELS",
+    "heading_path": [
+      "Introduction",
+      "OVERVIEW OF LINEAR MODELS"
+    ],
+    "display_heading": "OVERVIEW OF LINEAR MODELS"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Linear models form the backbone of most estimation procedures in quantitative genetics and will be extensively used throughout the rest of this book. They are generally structured such that a vector of observations of one variable (y) is modeled as a linear combination of other variables observed along with y. The remainder of this chapter introduces some of the basic tools and key concepts underlying the use of linear models. Advanced topics are examined in detail in Chapters 26 and 27, and further comments are given in Appendix 3."
+    },
+    {
+      "type": "discussion",
+      "content": "In multiple regression, the commonest type of linear model, the predictor variables $x_{1},\\cdots,x_{n}$ represent observed values for $n$ traits of interest. More generally, some or all of the predictor variables could be indicator variables, with values of 0 or 1 indicating whether an observation belongs in a particular category or grouping of interest. As an example, consider the half-sib design wherein each of $p$ unrelated sires is mated at random to a number of unrelated dams and a single offspring is measured from each cross. The simplest model for this design is $$ y_{ij}=\\mu+s_{i}+e_{ij} $$ where $y_{ij}$ is the phenotype of the $j$th offspring from sire $i$, $\\mu$ is the population mean, $s_{i}$ is the sire effect, and $e_{ij}$ is the residual error (the “noise” remaining in the data after the sire effect is removed). Although this is clearly a linear model, it differs significantly from the regression model described above in that while there are parameters to estimate (the sire effects $s_{i}$), the only measured values are the $y_{ij}$. Nevertheless, we can express this model in a form that is essentially identical to the standard regression model by using $p$ indicator (i.e., zero or one) variables to classify the sires of the offspring. The resulting linear model becomes $$ y_{ij}=\\mu+\\sum_{k=1}^{p}s_{k}x_{ik}+e_{ij} $$ where $$ x_{ik}=\\left\\{\\begin{aligned}&1&\\text{if}\\operatorname{sire}k=i\\\\ &0&\\text{otherwise}\\end{aligned}\\right. $$"
+    },
+    {
+      "type": "discussion",
+      "content": "By the judicious use of indicator variables, an extremely wide class of problems can be handled by linear models. Models containing only indicator variables are usually termed ANOVA (analysis of variance) models, while regression usually refers to models in which predictor variables can take on a continuous range of values. Both procedures are special cases of the general linear model (GLM), wherein each observation (y) is assumed to be a linear function of p observed and/or indicator variables plus a residual error (e), $$ y_{i}=\\sum_{k=1}^{p}\\beta_{k}x_{ik}+e_{i} $$ where $x_{i1},\\cdots,x_{ip}$ are the values of the $p$ predictor variables for the $i$th individual. For a vector of $n$ observations, the GLM can be written in matrix form as $$ \\mathbf{y}=\\mathbf{X}\\boldsymbol{\\beta}+\\mathbf{e} $$ where the design or incidence matrix $\\mathbf{X}$ is $n \\times p$, and $e$ is the vector of residual errors. It is important to note that $\\mathbf{y}$ and $\\mathbf{X}$ contain the observed values, while $\\beta$ is a vector of parameters (usually called factors or effects) to be estimated."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 8. Suppose that three different sires used in the above half-sib design have two, one, and three offspring, respectively. This can be expressed in GLM form, $ \\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\mathbf{e} $ with $$ \\mathbf{y}=\\begin{pmatrix}y_{11}\\\\y_{12}\\\\y_{21}\\\\y_{31}\\\\y_{32}\\\\y_{33}\\end{pmatrix},\\quad\\mathbf{X}=\\begin{pmatrix}1&1&0&0\\\\1&1&0&0\\\\1&0&1&0\\\\1&0&0&1\\\\1&0&0&1\\\\1&0&0&1\\end{pmatrix},\\quad\\boldsymbol{\\beta}=\\begin{pmatrix}\\mu\\\\s_{1}\\\\s_{2}\\\\s_{3}\\end{pmatrix},\\quad and\\quad\\mathbf{e}=\\begin{pmatrix}e_{11}\\\\e_{12}\\\\e_{21}\\\\e_{31}\\\\e_{32}\\\\e_{33}\\end{pmatrix} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Likewise, the multiple regression $$ y_{i}=\\alpha+\\sum_{j=1}^{p}\\beta_{j}x_{ij}+e_{i} $$ can be written in GLM form with $$ \\mathbf{y}=\\begin{pmatrix}y_{1}\\\\ \\vdots\\\\ y_{n}\\end{pmatrix},\\quad\\mathbf{X}=\\begin{pmatrix}1&x_{11}&\\cdots&x_{1p}\\\\ 1&x_{21}&\\cdots&x_{2p}\\\\ \\vdots&\\vdots&\\ddots&\\vdots\\\\ 1&x_{n1}&\\cdots&x_{np}\\end{pmatrix},\\quad\\boldsymbol{\\beta}=\\begin{pmatrix}\\alpha\\\\ \\beta_{1}\\\\ \\vdots\\\\ \\beta_{p}\\end{pmatrix},\\quad\\mathrm{a n d}\\quad\\mathbf{e}=\\begin{pmatrix}e_{1}\\\\ \\vdots\\\\ e_{n}\\end{pmatrix} $$"
+    }
+  ]
+}

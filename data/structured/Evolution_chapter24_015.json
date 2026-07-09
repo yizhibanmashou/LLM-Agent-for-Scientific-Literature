@@ -1,0 +1,39 @@
+{
+  "id": "Evolution_chapter24_015",
+  "metadata": {
+    "chapter": "Evolution_chapter24",
+    "section": "GAUSSIAN CONTINUUM-OF-ALLELES MODELS",
+    "subsections": [
+      "The Effective Number of Loci, $ n_{e} $"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter24_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "GAUSSIAN CONTINUUM-OF-ALLELES MODELS",
+    "section_level_2": "The Effective Number of Loci, $ n_{e} $",
+    "heading_path": [
+      "GAUSSIAN CONTINUUM-OF-ALLELES MODELS",
+      "The Effective Number of Loci, $ n_{e} $"
+    ],
+    "display_heading": "The Effective Number of Loci, $ n_{e} $"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Chevalet (1994) allowed loci to differ in the amount of genetic variance they contribute, replacing the acutal number of loci, n, in Equations 24.2a and 24.2b by the effective number of loci, $ n_{e} $, defined as $$ n_{e}=\\frac{n}{1+c_{v}^{2}} $$ where $ c_{v} $ is the coefficient of variation in the genic variance contributed by each locus, $ \\sigma\\left(\\sigma_{ai}^{2}\\right)/E[\\sigma_{ai}^{2}], $ with $ \\sigma_{ai}^{2} $ being the genic variance contributed by locus $ i $. (Note that Equation 24.3 is closely related to the Castle-Wright estimator for the effective number of segregating genes in a line-cross $ F_{2} $ population; LW Chapter 9.) If all loci contribute the same variance, then $ c_{v}=0 $ and $ n_{e}=n $, while $ n_{e}\\ll n $ when $ c_{v}\\gg1 $."
+    },
+    {
+      "type": "discussion",
+      "content": "Note that $ n_e $ changes over time, as allele-frequency changes alter the genic variance contributed by any particular locus. Indeed, loci with the largest genetic variance should show the largest initial response to selection, and also the fastest depletion of locus-specific variance (Chapter 25). In such cases, one can move from a situation where the effective number of loci is quite small (a few loci with large effects, and hence a high value of $ c_v $) to a situation where $ n_e $ can be quite large (with the remaining loci all having roughly equal effects, so that $ c_v $ is small). Hence, $ n_e $ can increase over time, but we also correspondingly expect the total genic variance, $ \\sigma_a^2 $, for the remaining loci to decrease (Figure 24.3)."
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:24.4]]"
+    },
+    {
+      "type": "discussion",
+      "content": "As Example 24.4 illustrates, a selection response can result in an increase in the additive variance at some point during selection (typically fairly early), as favored alleles at low frequencies increase to intermediate frequencies. Hospital and Chevalet (1996) observed a similar phenomenon in their simulation of linkage, namely, that finite-locus models can also show an increase in additive variation. The distinction is that this increase may come, not rather quickly (as was the case for rare alleles), but only many generations after selection is initiated, reflecting recombination finally generating favorable gametes, which then increase in frequency. They also found that linked systems are vulnerable to lower selection responses due to hitchhiking fixing less favorable alleles, an issue examined further in Chapter 26."
+    }
+  ]
+}

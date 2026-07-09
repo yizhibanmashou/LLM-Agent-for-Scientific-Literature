@@ -20,12 +20,12 @@ def build_arg_parser() -> argparse.ArgumentParser:
         "--out-dir",
         default="data/textbook",
         type=Path,
-        help="Directory where chapter*_textbook.md files will be written.",
+        help="Directory where prefixed chapter textbook files, e.g. Evolution_chapter25_textbook.md, will be written.",
     )
     parser.add_argument(
         "--chapters",
         default=None,
-        help="Optional comma-separated chapter filter, e.g. chapter25,chapter30 or 25,30.",
+        help="Optional comma-separated chapter filter, e.g. Evolution_chapter25,Evolution_chapter30 or 25,30.",
     )
     parser.add_argument(
         "--figure-library",

@@ -1,0 +1,79 @@
+{
+  "id": "Genetics_chapter26_004",
+  "metadata": {
+    "chapter": "Genetics_chapter26",
+    "section": "Introduction",
+    "subsections": [
+      "Estimating Fixed Effects and Predicting Random Effects"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter26_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "Estimating Fixed Effects and Predicting Random Effects",
+    "heading_path": [
+      "Introduction",
+      "Estimating Fixed Effects and Predicting Random Effects"
+    ],
+    "display_heading": "Estimating Fixed Effects and Predicting Random Effects"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "As outlined in the preceding chapters, the primary goal of a quantitative-genetic analysis is often solely to estimate variance components. However, there are also numerous situations in which inferences about fixed effects (such as the effect of a particular environment or year) and/or random effects (such as the breeding value of a particular individual) are the central motivation. Inferences about fixed effects have come to be called estimates, whereas those that concern random effects are known as predictions. Procedures for obtaining such estimators and predictors have been developed using a variety of approaches, such as likelihood theory (Appendix 4). The most widely used procedures are BLUE and BLUP, referring respectively to best linear unbiased estimator and best linear unbiased predictor. They are best in the sense that they minimize the sampling variance, linear in the sense that they are linear functions of the observed phenotypes y, and unbiased in the sense that $ E[\\text{BLUE}(\\boldsymbol{\\beta})] = \\beta $ and $ E[\\text{BLUP}(\\mathbf{u})] = \\mathbf{u} $."
+    },
+    {
+      "type": "proposition",
+      "content": "For the mixed model given by Equation 26.1, the BLUE of $ \\beta $ is $$ \\hat{\\boldsymbol{\\beta}}=\\left(\\mathbf{X}^{T}\\mathbf{V}^{-1}\\mathbf{X}\\right)^{-1}\\mathbf{X}^{T}\\mathbf{V}^{-1}\\mathbf{y} $$ with V as given by Equation 26.2. Notice that this is just the generalized least-squares (GLS) estimator discussed in Chapter 8. Henderson (1963) showed that the BLUP of u is $$ \\widehat{\\mathbf{u}}=\\mathbf{G}\\mathbf{Z}^{T}\\mathbf{V}^{-1}\\left(\\mathbf{y}-\\mathbf{X}\\widehat{\\boldsymbol{\\beta}}\\right) $$ which is equivalent to the conditional expectation of u given y under the assumption of multivariate normality (cf. Equation 8.27). As noted above, the practical application of both of these expressions requires that the variance components be known. Thus, prior to a BLUP analysis, the variance components need to be estimated by ANOVA or REML."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 2. What are the BLUP values for the sire effects $(u_1, u_2, u_3)$ in Example 1? In order to proceed, we require the covariance matrices for sire effects and errors. We assume that the residual variances within both environments are the same $(\\sigma_E^2)$, so $\\mathbf{R} = \\sigma_E^2 \\mathbf{I}$, where $\\mathbf{I}$ is the $6 \\times 6$ identity matrix. Assuming that all three sires are unrelated and drawn from the same population, $\\mathbf{G} = \\sigma_S^2 \\mathbf{I}$, where $\\mathbf{I}$ is the $3 \\times 3$ identity matrix and $\\sigma_S^2$ is the variance of sire effects. Assuming only additive genetic variance, the sire effects (breeding values) are half the sires' additive genetic values. Thus, since the sires are sampled randomly from an outbred base population, $\\sigma_S^2 = \\sigma_A^2/4$, where $\\sigma_A^2$ is the additive genetic variance. Assuming that $\\sigma_A^2 = 8$ and $\\sigma_E^2 = 6$, the covariance matrix $\\mathbf{V}$ for the vector of observations $\\mathbf{y}$ is given by $\\mathbf{Z}\\mathbf{G}\\mathbf{Z}^T + \\mathbf{R}$, or $$ \\mathbf{V}=\\frac{8}{4}\\begin{pmatrix}1&0&0\\\\1&0&0\\\\0&1&0\\\\0&1&0\\\\0&0&1\\\\0&0&1\\end{pmatrix}\\begin{pmatrix}1&0&0\\\\0&1&0\\\\0&0&1\\end{pmatrix}\\begin{pmatrix}1&1&0&0&0&0\\\\0&0&1&1&0&0\\\\0&0&0&0&1&1\\end{pmatrix}+6\\begin{pmatrix}1&0&0&0&0&0\\\\0&1&0&0&0&0\\\\0&0&1&0&0&0\\\\0&0&0&1&0&0\\\\0&0&0&0&1&0\\\\0&0&0&0&0&1\\end{pmatrix} $$ $$ \\begin{aligned}=\\left(\\begin{array}{c c c c c c}{8}&{2}&{0}&{0}&{0}&{0}\\\\ {2}&{8}&{0}&{0}&{0}&{0}\\\\ {0}&{0}&{8}&{2}&{0}&{0}\\\\ {0}&{0}&{2}&{8}&{0}&{0}\\\\ {0}&{0}&{0}&{0}&{8}&{2}\\\\ {0}&{0}&{0}&{0}&{2}&{8}\\end{array}\\right)\\quad giving\\quad\\mathbf{V}^{-1}=\\frac{1}{30}\\cdot\\left(\\begin{array}{c c c c c c}{4}&{-1}&{0}&{0}&{0}&{0}\\\\ {-1}&{4}&{0}&{0}&{0}&{0}\\\\ {0}&{0}&{4}&{-1}&{0}&{0}\\\\ {0}&{0}&{-1}&{4}&{0}&{0}\\\\ {0}&{0}&{0}&{0}&{4}&{-1}\\\\ {0}&{0}&{0}&{0}&{-1}&{4}\\end{array}\\right)\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Using this result, a few simple matrix calculations give $$ \\widehat{\\boldsymbol{\\beta}}=\\left(\\begin{matrix}\\widehat{\\beta}_{1}\\\\ \\widehat{\\beta}_{2}\\end{matrix}\\right)=\\left(\\mathbf{X}^{T}\\mathbf{V}^{-1}\\mathbf{X}\\right)^{-1}\\mathbf{X}^{T}\\mathbf{V}^{-1}\\mathbf{y}=\\frac{1}{18}\\left(\\begin{matrix}148\\\\ 235\\end{matrix}\\right) $$ and $$ \\widehat{\\mathbf{u}}=\\begin{pmatrix}\\widehat{u}_{1}\\\\ \\widehat{u}_{2}\\\\ \\widehat{u}_{3}\\end{pmatrix}=\\mathbf{G}\\mathbf{Z}^{T}\\mathbf{V}^{-1}\\left(\\mathbf{y}-\\mathbf{X}\\widehat{\\boldsymbol{\\beta}}\\right)=\\frac{1}{18}\\begin{pmatrix}-1\\\\ 2\\\\ -1\\end{pmatrix} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Example 3. As mentioned in Chapter 13, the effects of different genotypes at a single QTL are often estimated by ordinary least squares (OLS), using the model $$ y_{ij}=g_{i}+e_{ij} $$ where $y_{ij}$ is the observed phenotype of the $j$th individual of genotype $i$, $g_{i}$ is the mean genotypic value for the $i$th genotype at the locus of interest, and $e_{ij}$ is a residual deviation assumed to be independently distributed among individuals. While this model may be reasonable for a random collection of individuals from a large population, when some sampled individuals are relatives, the sharing of alleles at other loci influencing the trait will induce correlations between residuals. If this is the case, OLS analysis can produce biased estimates of the QTL effects. When one of the QTL genotypes is very rare, as is often the case, the sampled individuals may be intentionally selected from the same pedigree, so the problem of bias is not trivial."
+    },
+    {
+      "type": "discussion",
+      "content": "Use of a mixed model provides a means for accounting for associations among background QTLs in a way that eliminates bias in estimates of QTL effects. If the relatives in question share only additive effects (as in a pedigree with no full sibs or double first cousins, or when there is no nonadditive gene action), the correlations among residuals are accounted for by the additive genetic relationship matrix $ \\mathbf{A} $, where $ A_{ij} $ is twice the coefficient of coancestry, $ 2\\Theta_{ij} $. When sibs are included and dominance is present at background QTLs, both $ \\mathbf{A} $ and a dominance relationship matrix (see below) are required."
+    },
+    {
+      "type": "discussion",
+      "content": "Here we assume that all of the background genetic effects are additive, in which case the simplest mixed model can be applied, $$ y_{ij}=g_{i}+a_{ij}+e_{ij} $$ with the contribution from the different single-locus genotypes $(g_{i})$ being treated as fixed effects. The additive genetic background effects $(a_{ij})$ and the residual environmental deviations $(e_{ij})$ are treated as random effects, both with expected values equal to zero, and with respective variances $\\sigma_{A}^{2}$ and $\\sigma_{E}^{2}$. Note that $\\sigma_{A}^{2}$ is the background additive genetic variance for the trait in excess of that caused by the QTL."
+    },
+    {
+      "type": "discussion",
+      "content": "In matrix form, $$ \\mathbf{y}=\\mathbf{X}\\mathbf{g}+\\mathbf{Z}\\mathbf{a}+\\mathbf{e} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "If there is a single observation for each individual, as we assume below, then $\\mathbf{Z}=\\mathbf{I}$ and the covariance matrix for the vector of observations (y) is $$ \\mathbf{V}=\\sigma_{A}^{2}\\mathbf{A}+\\sigma_{E}^{2}\\mathbf{I} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, the covariance between the residual errors of two individuals (i and j) is just $ 2\\Theta_{ij}\\sigma_{A}^{2} $, while the variance of individual errors is $ \\sigma_{A}^{2}+\\sigma_{E}^{2} $. The error in using OLS to estimate single gene effects is that A is assumed to equal an identity matrix, so that V is incorrectly assumed to be a diagonal matrix. From Equation 26.3, the estimates of the QTL means are given by $$ \\mathbf{\\widehat{g}}=\\left(\\mathbf{X}^{T}\\mathbf{V}^{-1}\\mathbf{X}\\right)^{-1}\\mathbf{X}^{T}\\mathbf{V}^{-1}\\mathbf{y} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Kennedy et al. (1992) showed that mixed-model estimates of QTL effects are much more reliable than OLS estimates, especially in small selected populations. Building on this approach, several authors (Hoeschele 1988, Hofer and Kennedy 1993, Kinghorn et al. 1993) have proposed BLUP-based segregation analysis for estimating the effects of an unknown major gene. Here the elements in the design matrix X associated with $ g_{i} $ are probabilistic estimates for the major-locus genotypes of each individual."
+    },
+    {
+      "type": "discussion",
+      "content": "Note that the solution of Equations 26.3 and 26.4 requires the inverse of the covariance matrix V. In the preceding example, $ V^{-1} $ was not particularly difficult to obtain. However, when y contains many thousands of observations, as is commonly the case in cattle breeding, the computation of $ V^{-1} $ can be quite difficult. As a way around this problem, Henderson (1950, 1963, 1973, 1984a) offered a more compact method for jointly obtaining $\\widehat{\\beta}$ and $\\widehat{u}$ in the form of his mixed-model equations (MME), $$ \\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{X}&\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{Z}\\\\*&\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{X}&\\\\\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{X}&&\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{Z}+\\mathbf{G}^{-1}\\\\\\end{pmatrix}\\begin{pmatrix}\\widehat{\\boldsymbol{\\beta}}\\\\\\mathbf{\\widehat{u}}\\end{pmatrix}=\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{y}\\\\\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{y}\\end{pmatrix} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "While these expressions may look considerably more complicated than Equations 26.3 and 26.4, $ \\mathbf{R}^{-1} $ and $ \\mathbf{G}^{-1} $ are trivial to obtain if $ \\mathbf{R} $ and $ \\mathbf{G} $ are diagonal, and hence the submatrices in Equation 26.5 are much easier to compute than $ \\mathbf{V}^{-1} $. A second advantage of Equation 26.5 can be seen by considering the dimensionality of the matrix on the left. Recalling that $ \\mathbf{X} $ and $ \\mathbf{Z} $ are $ n \\times p $ and $ n \\times q $ respectively, $ \\mathbf{X}^T \\mathbf{R}^{-1} \\mathbf{X} $ is $ p \\times p $, $ \\mathbf{X}^T \\mathbf{R}^{-1} \\mathbf{Z} $ is $ p \\times q $, and $ \\mathbf{Z}^T \\mathbf{R}^{-1} \\mathbf{Z} + \\mathbf{G}^{-1} $ is $ q \\times q $. Thus, the matrix that needs to be inverted to obtain the solution for $ \\widehat{\\boldsymbol{\\beta}} $ and $ \\widehat{\\mathbf{u}} $ is of order $ (p+q) \\times (p+q) $, which is usually considerably less than the dimensionality of $ \\mathbf{V} $ (an $ n \\times n $ matrix)."
+    },
+    {
+      "type": "discussion",
+      "content": "Although there are several ways to derive the mixed-model equations (Robinson 1991), Henderson (1950) originally obtained them by assuming that the covariance matrices G and R are known and that the densities of the vectors u and e are each multivariate normal with no correlations between them. Equation 26.5 then yields the maximum likelihood estimates of the fixed and random effects. Henderson (1963) later showed that the mixed-model equations do not actually depend on normality, and that $ \\widehat{\\beta} $ and $ \\widehat{u} $ are BLUE and BLUP, respectively, under general conditions provided the variances are known."
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "id": "Evolution_chapter29_026",
+  "metadata": {
+    "chapter": "Evolution_chapter29",
+    "section": "DESCRIBING PHENOTYPIC SELECTION: CHANGES IN PHENOTYPIC MOMENTS",
+    "subsections": [
+      "Standard Errors for Estimates of Differentials and Gradients"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter29_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "DESCRIBING PHENOTYPIC SELECTION: CHANGES IN PHENOTYPIC MOMENTS",
+    "section_level_2": "Standard Errors for Estimates of Differentials and Gradients",
+    "heading_path": [
+      "DESCRIBING PHENOTYPIC SELECTION: CHANGES IN PHENOTYPIC MOMENTS",
+      "Standard Errors for Estimates of Differentials and Gradients"
+    ],
+    "display_heading": "Standard Errors for Estimates of Differentials and Gradients"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Because it is difficult to measure all of the individuals in a population, the effects of selection are usually estimated from a sample. This is also true in most longitudinal studies, with the cohort usually viewed as representative of phenotypes from the population. There are, however, occasional exceptions, such as when cohort members are intentionally chosen to include the most extreme phenotypes at much higher frequencies than their population levels."
+    },
+    {
+      "type": "discussion",
+      "content": "There are a number of statistical issues involved in extrapolating from samples to the entire population, many of which still are unresolved. For example, individual fitness is usually measured with error. Further, there is generally a bias toward underestimating individual fitness—for example, marked individuals may not be recaptured and hence recorded as having zero fitness even if they survived. Likewise, the number of mates or offspring can be easily undercounted."
+    },
+    {
+      "type": "discussion",
+      "content": "Assuming individual fitness is measured without error, the methods of LW Appendix 1 can be used to obtain approximate large-sample variances for estimators of differentials and gradients. The exact sampling variance for the directional selection differential is $$ \\sigma^{2}\\left(\\widehat{S}_{j}\\right)=\\frac{\\sigma_{j}^{2}}{n_{j}}+\\frac{\\sigma_{j-1}^{2}}{n_{j-1}} $$ where $ n_{j} $ is the sample size for the jth episode. Using the delta-method approximation from LW Appendix 1, the large-sample variance for C is approximately $$ \\begin{aligned}\\sigma^{2}\\left(\\widehat{C}_{j}\\right)&\\simeq4S_{j}^{2}\\sigma^{2}\\left(\\widehat{S}_{j}\\right)+8S_{j}\\left(\\frac{\\mu_{3,j}}{n_{j}}+\\frac{\\mu_{3,j-1}}{n_{j-1}}\\right)\\\\&+\\frac{\\mu_{4,j}-\\sigma_{j}^{4}}{n_{j}}+\\frac{\\mu_{4,j-1}-\\sigma_{j-1}^{4}}{n_{j-1}}\\end{aligned} $$ where $ \\mu_3 $ and $ \\mu_4 $ are the third and fourth central moments around the mean, $ \\mu_i = E[(z - \\mu)^i] $. If phenotypes are normally distributed ($ \\mu_3 = 0 $, $ \\mu_4 = 3\\sigma^4 $), this reduces to $$ \\sigma^{2}\\left(\\widehat{C}_{j}\\right)\\simeq4S_{j}^{2}\\sigma^{2}\\left(\\widehat{S}_{j}\\right)+2\\left[\\frac{\\sigma_{j}^{4}}{n_{j}}+\\frac{\\sigma_{j-1}^{4}}{n_{j-1}}\\right] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "If the scaled skewness, $ \\kappa_3 $ (LW Equation 2.8), and kurtosis, $ \\kappa_4 $ (LW Equation 2.12a), are small, this normal approximation is still appropriate."
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:29.10]]"
+    }
+  ]
+}

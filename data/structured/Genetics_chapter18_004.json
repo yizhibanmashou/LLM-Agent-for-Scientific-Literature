@@ -1,0 +1,84 @@
+{
+  "id": "Genetics_chapter18_004",
+  "metadata": {
+    "chapter": "Genetics_chapter18",
+    "section": "Introduction",
+    "subsections": [
+      "One-way Analysis of Variance"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter18_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [
+      "18.1"
+    ],
+    "section_level_1": "Introduction",
+    "section_level_2": "One-way Analysis of Variance",
+    "heading_path": [
+      "Introduction",
+      "One-way Analysis of Variance"
+    ],
+    "display_heading": "One-way Analysis of Variance",
+    "table_reference_keys": [
+      "chapter18:18.1"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "ANOVA uses sums of squares, the derivation of which we outline below. Throughout, we use SS to denote an observed sum of squares, and $ E(SS) $ to denote its expected value. As we will see shortly, scaled sums of squares, known as mean squares, are used to estimate variance components. We use the parallel notation, MS and $ E(MS) $, to denote observed and expected mean squares."
+    },
+    {
+      "type": "definition",
+      "content": "Consider the balanced design in which $n$ half sibs are assayed from each of $N$ males, so that there are a total $T = Nn$ individuals in the analysis. The quantity $$ \\mathsf{SS}_{T}=\\sum_{i=1}^{N}\\sum_{j=1}^{n}(z_{ij}-\\overline{z})^{2} $$ defines the observed total sum of squares around the grand mean $ \\overline{z} $. ANOVA partitions $ SS_{T} $ into components describing variation among the $ s_{i} $ (i.e., among families) and among the $ e_{ij} $ within families. This partitioning is readily accom- plished by expanding around the observed family means, $ \\overline{z}_{i} = \\sum_{j=1}^{n} z_{ij}/n $, $$ \\begin{aligned}\\mathbf{S}\\mathbf{S}_{T}&=\\sum_{i=1}^{N}\\sum_{j=1}^{n}\\left[(z_{ij}-\\overline{z}_{i})+(\\overline{z}_{i}-\\overline{z})\\right]^{2}\\\\&=\\sum_{i=1}^{N}\\sum_{j=1}^{n}\\left[(z_{ij}-\\overline{z}_{i})^{2}+2(z_{ij}-\\overline{z}_{i})(\\overline{z}_{i}-\\overline{z})+(\\overline{z}_{i}-\\overline{z})^{2}\\right]\\end{aligned} $$ The middle term of this expression is equal to zero, since by the definition of a mean, $ \\sum_{j=1}^{n}(z_{ij} - \\overline{z_i}) = 0 $. The third term may be written as $ n \\sum_{i=1}^{N}(\\overline{z_i} - \\overline{z})^2 $ since it does not contain j. Thus, the total sum of squares is partitioned into an among-and a within-family component, $$ \\begin{aligned}\\mathsf{SS}_{T}&=n\\sum_{i=1}^{N}(\\overline{z}_{i}-\\overline{z})^{2}+\\sum_{i=1}^{N}\\sum_{j=1}^{n}(z_{ij}-\\overline{z}_{i})^{2}\\\\&=\\mathsf{SS}_{s}+\\mathsf{SS}_{e}\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The within-family sum of squares $ (SS_{e}) $ is simply the sum of the squared deviations of individual measures from their observed family means, while the among-family sum of squares $ (SS_{s}) $ is the sum (over all progeny) of the squared deviations of observed family means from the grand mean."
+    },
+    {
+      "type": "proposition",
+      "content": "Assuming that the parents are a random sample of the population at large, the sums of squares can be used to obtain unbiased estimates of the within- and among-family components of variance in the following way. We note first that the expected within-family sum of squares is $$ E(\\mathrm{SS}_{e})=\\sum_{i=1}^{N}E\\left[\\sum_{j=1}^{n}(z_{ij}-\\overline{z}_{i})^{2}\\right]=N(n-1)\\sigma_{e}^{2} $$ This result follows from the fact that $ \\sum_{j=1}^{n}(z_{ij} - \\overline{z}_{i})^{2}/(n-1) $ is an unbiased estimate of the variance among sibs in the ith family (Chapter 2) and from our assumption that the variance within each family is equal to $ \\sigma_{e}^{2} $."
+    },
+    {
+      "type": "discussion",
+      "content": "For the among-family sum of squares, similar reasoning leads to $$ E(\\mathsf{S S}_{s})=n E\\left[\\sum_{i=1}^{N}(\\overline{z}_{i}-\\overline{z})^{2}\\right]=n(N-1)\\sigma^{2}(\\overline{z}_{i}) $$ where $ \\sigma^{2}(\\overline{z}_{i}) $ is the expected variance of the observed family means, here (with a balanced design) assumed to be the same for all families. Further simplification of this expression is possible. The variance of observed family means is a function of the variance of the true family means, the $ (\\mu+s_{i}) $, as well as of their sampling error, the $ \\overline{e}_{i}=\\overline{z}_{i}-(\\mu+s_{i}) $. Thus, assuming that the measurement error is independent of the family mean, $$ \\sigma^{2}(\\overline{{z}}_{i})=\\sigma^{2}(\\mu+s_{i})+\\sigma^{2}(\\overline{{e}}_{i}) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Since $\\mu$ is a constant, the first term of this expression is the among-family variance, $\\sigma_{s}^{2}$, while the second is the expected sampling variance of a mean, $\\sigma_{e}^{2}/n$ (Chapter 2). Substituting into Equation 18.7b, $$ E(\\mathsf{S S}_{s})=(N-1)(\\sigma_{e}^{2}+n\\sigma_{s}^{2}) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, rearranging Equations 18.7a and 18.9, the variance components can be expressed in terms of the expected sums of squares, $$ \\sigma_{e}^{2}=\\frac{E(\\mathsf{S}\\mathsf{S}_{e})}{N(n-1)} $$ $$ \\sigma_{s}^{2}=\\frac{1}{n}\\left[\\frac{E(\\mathrm{SS}_{s})}{N-1}-\\frac{E(\\mathrm{SS}_{e})}{N(n-1)}\\right] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Note that the sums of squares in these expressions are divided by constants. Such weighted sums of squares are the mean squares (MS) referred to above, and the quantities in their denominators are the associated degrees of freedom (df). For the half-sib model, $$ \\mathrm{MS}_{s}=\\frac{\\mathrm{SS}_{s}}{N-1} $$ $$ \\mathbf{M}\\mathbf{S}_{e}=\\frac{\\mathbf{S}\\mathbf{S}_{e}}{N(n-1)} $$ are the observed among- and within-family mean squares. Substitution of observed mean squares for their expectations in Equations 18.10a,b yields the following unbiased estimators of $\\sigma_{s}^{2}$, $\\sigma_{e}^{2}$, and $\\sigma_{z}^{2}$, $$ \\mathrm{Var}(s)=\\frac{\\mathrm{MS}_{s}-\\mathrm{MS}_{e}}{n} $$ $$ \\mathbf{Var}(e)=\\mathbf{MS}_{e} $$ $$ \\mathrm{Var}(z)=\\mathrm{Var}(s)+\\mathrm{Var}(e) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "A summary of the steps for obtaining the observed mean squares, generalized to allow for unequal family sizes, is given in [[SEE_TABLE:18.1]]. This general procedure of estimating variance components from observed mean squares is an example of the method of moments, as the unknown variances can be expressed in terms of observable moments (here, the mean squares)."
+    },
+    {
+      "type": "discussion",
+      "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Factor</td><td style='text-align: center; word-wrap: break-word;'>df</td><td style='text-align: center; word-wrap: break-word;'>SS</td><td style='text-align: center; word-wrap: break-word;'>MS</td><td style='text-align: center; word-wrap: break-word;'>E(MS)</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Among-families</td><td style='text-align: center; word-wrap: break-word;'>N - 1</td><td style='text-align: center; word-wrap: break-word;'>SS $ _{s} $ = $ \\sum $ $ _{i=1}^{N} n_{i} $ ($ \\overline{z}_{i} $ - $ \\overline{z} $) $ ^{2} $</td><td style='text-align: center; word-wrap: break-word;'>SS $ _{s} $/(N - 1)</td><td style='text-align: center; word-wrap: break-word;'>$ \\sigma_{{e}}^{{2}} $ + $ n_{0} $ $ \\sigma_{{s}}^{{2}} $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Within-families</td><td style='text-align: center; word-wrap: break-word;'>T - N</td><td style='text-align: center; word-wrap: break-word;'>SS $ _{e} $ = $ \\sum $ $ _{i=1}^{N} \\sum $ $ _{j=1}^{n_{i}} $ ($ z_{ij} $ - $ \\overline{z}_{i} $) $ ^{2} $</td><td style='text-align: center; word-wrap: break-word;'>SS $ _{e} $/(T - N)</td><td style='text-align: center; word-wrap: break-word;'>$ \\sigma_{{e}}^{{2}} $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Total</td><td style='text-align: center; word-wrap: break-word;'>T - 1</td><td style='text-align: center; word-wrap: break-word;'>SS $ _{T} $ = $ \\sum $ $ _{i=1}^{N} \\sum $ $ _{j=1}^{n_{i}} $ ($ z_{ij} $ - $ \\overline{z} $) $ ^{2} $</td><td style='text-align: center; word-wrap: break-word;'>SS $ _{T} $/(T - 1)</td><td style='text-align: center; word-wrap: break-word;'>$ \\sigma_{{z}}^{{2}} $</td></tr><tr><td colspan=\"5\">Note: The total sample size is T = $ \\sum $ $ _{i=1}^{N} n_{i} $, and $ n_{0} $ = [T - ($ \\sum n_{i}^{{2}} $/T)]/(N - 1), which reduces to n with equal family sizes. Degrees of freedom are denoted by df, observed sums of squares by SS, and expected mean squares by E(MS).</td></tr></table>"
+    },
+    {
+      "type": "discussion",
+      "content": "The quantity $$ t_{\\mathrm{P H S}}=\\frac{\\mathrm{V a r}(s)}{\\mathrm{V a r}(z)} $$ is the intraclass correlation (Fisher 1918, 1925), discussed previously in Chapter 17. It provides an estimate of the fraction of the phenotypic variance attributable to differences among sires. Recalling from above that $ \\sigma_{s}^{2}=\\sigma(\\mathrm{PHS})\\simeq\\sigma_{A}^{2}/4 $, the paternal half-sib ANOVA estimator of the heritability is $$ h^{2}\\simeq4t_{\\mathrm{P H S}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "This expression again assumes that contributions from epistatic genetic variance are small."
+    },
+    {
+      "type": "discussion",
+      "content": "Ratios of quantities estimated with sampling error are usually biased with respect to their parametric values (Appendix 1), and this is true for the intraclass correlation (Ponzoni and James 1978, Wang et al. 1991). Letting $ \\tau $ be the parametric value, the downward bias is approximately $$ \\Delta_{t}=\\tau-E(t_{\\mathrm{P H S}})=\\frac{2\\tau(1-\\tau)[(n-1)\\tau+1]}{n N} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "In principle, correction for this bias can be made by substituting the observed $t_{\\mathrm{PHS}}$ for $\\tau$ in the preceding expression and adding the estimated bias $\\Delta_{t}$ to $t_{\\mathrm{PHS}}$ prior to estimating the heritability with Equation 18.14. The bias in $t_{\\mathrm{PHS}}$ can be considerable if $N$ is very small (less than 20), but for larger designs it is generally no more than a few percent."
+    }
+  ]
+}

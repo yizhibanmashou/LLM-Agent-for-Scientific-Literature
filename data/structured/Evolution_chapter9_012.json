@@ -1,0 +1,31 @@
+{
+  "id": "Evolution_chapter9_012",
+  "metadata": {
+    "chapter": "Evolution_chapter9",
+    "section": "ALLELE-FREQUENCY CHANGE IN A SINGLE POPULATION",
+    "subsections": [
+      "Scans and Simulation-based Approaches"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter9_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "ALLELE-FREQUENCY CHANGE IN A SINGLE POPULATION",
+    "section_level_2": "Scans and Simulation-based Approaches",
+    "heading_path": [
+      "ALLELE-FREQUENCY CHANGE IN A SINGLE POPULATION",
+      "Scans and Simulation-based Approaches"
+    ],
+    "display_heading": "Scans and Simulation-based Approaches"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "As presented, these tests for shifts in allele frequencies are performed one marker at a time, as they herald from the days of testing just one or a few unlinked candidate genes. With a few unlinked markers, Bonferroni corrections (or the slightly more powerful sequential methods; Appendix 4) can be applied to assign overall significance levels. Likewise, FDR approaches can use used to assign false-discovery rates among the set of markers declared to be significant (the fraction of tests declared to be significant that are actually from the null; Appendix 4). However, in the genomic-scan era, with the potential for thousands of linked markers on each chromosome, tests are no longer independent, thus compromising FDR approaches (Chen and Storey 2006). Even if tests are largely independent, their vast number makes Bonferroni-type corrections untenable for a test to have any power (Appendix 4). How then can these tests be extended to the dense marker maps used in genomic scans?"
+    },
+    {
+      "type": "discussion",
+      "content": "For starters, analyzing markers one at a time is rather inefficient, in that one potentially loses shared information from linked markers. A better approach is to compute the average allele-frequency change within a small sliding window. Starting with the initial allele frequencies within a given window and either their known or assumed recombination rates, simulations under pure drift (and recombination) can generate a null distribution of average change as a comparison point for the actual observed divergence (e.g., Example 9.3; Johansson et al. 2010). Other, less formal approaches can also be used to simply indicate regions of interest (as opposed to regions that are formally statistically supported); see Figure 9.1."
+    }
+  ]
+}

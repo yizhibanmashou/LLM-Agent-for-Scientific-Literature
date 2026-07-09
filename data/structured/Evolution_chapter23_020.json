@@ -1,0 +1,43 @@
+{
+  "id": "Evolution_chapter23_020",
+  "metadata": {
+    "chapter": "Evolution_chapter23",
+    "section": "FAMILY SELECTION UNDER PURE SELFING",
+    "subsections": [
+      "Response to Family Selection"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter23_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "FAMILY SELECTION UNDER PURE SELFING",
+    "section_level_2": "Response to Family Selection",
+    "heading_path": [
+      "FAMILY SELECTION UNDER PURE SELFING",
+      "Response to Family Selection"
+    ],
+    "display_heading": "Response to Family Selection"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Our earlier discussions of selection with selfing (Equations 23.23–23.28) assumed that the selection unit was the parent (individual selection), meaning that $ \\tau = t $. More generally, consider a parent in generation $ t $ where we save selfed seed from this individual for the recombination unit and test the parent using the mean of its bulked selfed offspring in generation $ \\tau $, namely, an $ S_{t,\\tau} $ family (Figure 23.3). For such cases, the response in generation $ T $ from selection among parents in generation t is $$ R(T,\\tau,t)=\\bar{\\imath}\\frac{\\sigma_{G}(T,\\tau,t)}{\\sqrt{\\sigma_{G}(\\tau,\\tau,t)+\\sigma_{e}^{2}}} $$ where $ \\sigma_c^2 $ is the error variance for the mean of the $ S_{t,\\tau} $ family. Equation 23.39 follows because the genetic variance of the selection unit is $ \\sigma_G(\\tau,\\tau,t) $, while the covariance between the selection unit ($ \\tau $) and an offspring of the recombination unit measured in generation $ T $ have their last common parent in generation $ t $, and hence the appropriate covariance is given by $ \\sigma_G(T,\\tau,t) $ (Figure 23.3)."
+    },
+    {
+      "type": "discussion",
+      "content": "For the cases in Figure 23.3, where families are selected and remnant seed from those families is used to form the next (selfed) generation, then for selection based on such $ S_{t,t+1} $ families, Equation 23.34 returns the permanent response to selection (that remaining in the fully inbred lines) as $$ \\begin{align*}\\sigma_G(\\infty,t+1,t)=(1+f_t)\\sigma_A^2+\\frac{3+5f_t}{4}\\sigma_{ADI}+\\frac{1+3f_t}{4}\\sigma_{DI}^2+(1+f_t)^2\\sigma_{AA}^2\\end{align*} $$ while for selection based on $ S_{t,t+2} $ families, $$ \\sigma_{G}(\\infty,t+2,t)=(1+f_{t})\\sigma_{A}^{2}+\\frac{7+9f_{t}}{8}\\sigma_{ADI}+\\frac{3+5f_{t}}{8}\\sigma_{DI}^{2}+(1+f_{t})^{2}\\sigma_{AA}^{2} $$ As pointed out by Cockerham and Matzinger (1985), the long-term response under these two schemes differs only in the dominance-related terms, $ \\sigma_{DI}^{2} $ and $ \\sigma_{ADI} $. Because both of these terms are zero in lines derived from the cross of two pure lines, the permanent response in such cases is entirely a function of additive and additive-epistatic effects."
+    },
+    {
+      "type": "discussion",
+      "content": "If instead of using remnant seed, a measured sib from the selected families is selfed (strict family selection, as opposed to sib—remnant seed—selection), the expressions become a little more complex. If n family members are scored, the appropriate covariance for the permanent response selection based upon families from one generation of selfing is $$ \\frac{1}{n}\\sigma_{G}(\\infty,t+1,t+1)+\\frac{n-1}{n}\\sigma_{G}(\\infty,t+1,t) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "This arises if we follow the logic leading to Equation 23.8b. Because selection is based on the family mean, $ 1/n $ is the weight on the individual in the family that is also the recombination unit (hence, the common ancestor is simply this individual, which is in generation $ t + 1 $) and the remainder $ (1 - 1/n) $ are sibs of this individual (and the common ancestor is in the previous generation). If the number, n, of family members tested is large, the correction given by Equation 23.41a can be ignored and the simpler version (Equation 23.40a) can be used instead. Similarly, if family selection is based on two generations of selfing, then the appropriate covariance becomes $$ \\frac{1}{n^{2}}\\sigma_{G}(\\infty,t+2,t+2)+\\frac{n-1}{n^{2}}\\sigma_{G}(\\infty,t+2,t+1)+\\frac{n-1}{n}\\sigma_{G}(\\infty,t+2,t) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "For large values of n, this reduces to Equation 23.40b."
+    }
+  ]
+}

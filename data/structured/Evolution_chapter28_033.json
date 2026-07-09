@@ -1,0 +1,66 @@
+{
+  "id": "Evolution_chapter28_033",
+  "metadata": {
+    "chapter": "Evolution_chapter28",
+    "section": "Maintenance of Quantitative Genetic Variation: Introduction",
+    "subsections": [
+      "The Hill-Keightley Pleiotropic Side-effects Model"
+    ],
+    "source_file": "tmp\\paddle_output\\Evolution_chapter28_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "28.47b",
+      "28.47c"
+    ],
+    "table_references": [],
+    "section_level_1": "Maintenance of Quantitative Genetic Variation: Introduction",
+    "section_level_2": "The Hill-Keightley Pleiotropic Side-effects Model",
+    "heading_path": [
+      "Maintenance of Quantitative Genetic Variation: Introduction",
+      "The Hill-Keightley Pleiotropic Side-effects Model"
+    ],
+    "display_heading": "The Hill-Keightley Pleiotropic Side-effects Model"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Can the constant-s model account for both the observed levels of variation and the strengths of stabilizing selection? It can not. With $ s = 0.001 $ and $ \\sigma_m^2 = \\sigma_E^2 / 10^3 $, Equation 28.45b yields $ \\tilde{\\sigma}_A^2 = \\sigma_E^2 $. From Equation 28.47a, the induced apparent strength of stabilizing selection is $ 1000 \\sigma_E^2 $ ($ \\tilde{V}_s = \\tilde{\\sigma}_A^2 / s = \\sigma_E^2 / 0.001 $), far too weak relative to estimates from natural populations of $ \\sim 20 \\sigma_E^2 $. Conversely, taking observed values of $ V_s $ to be around $ 20 \\sigma_E^2 $ and using a value of $ \\sigma_m^2 = \\sigma_E^2 / 10^3 $ in Equation 28.46c yields $ s = \\tilde{\\sigma}_A^2 / \\tilde{V}_s = \\sigma_E^2 / (20 \\sigma_E^2) = 0.05 $. With this value of $ s $, Equation 28.45a yields $ \\tilde{\\sigma}_A^2 = 10^{-3} \\sigma_E^2 / 0.05 = 0.02 \\sigma_E^2 $, for an equilibrium heritability of $ \\tilde{h}^2 = 0.02 / (1 + 0.02) \\simeq 0.02 $. Hence, using the typical estimate of the strength of stabilizing selection to estimate s yields too small a heritability."
+    },
+    {
+      "type": "derivation",
+      "content": "The problem with the constant-s model is that it either does not produce enough additive variance (s is too large) or it gives apparent stabilizing selection that is too weak (s is too small, and the corresponding $ \\hat{V}_s $ is too big). This failure follows because s influences both $ \\widetilde{\\sigma}_A^2 $ and $ \\widehat{V}_s $, imposing a constraint on their relationship (Barton 1990; Kondrashov and Turelli 1992; Gavrilet and de Jong 1993; Zhang et al 2002). From Equation 28.46d [[SEE_FORMULA:28.47b]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Noting that $ \\sigma_A^2 = [h^2 / (1 - h^2)] \\sigma_E^2 $, Equation 28.47b can be expressed as [[SEE_FORMULA:28.47c]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Using this expression, typical values for selection ($ \\tilde{V}_s/\\sigma_E^2 = 20 $) and mutational variance ($ \\sigma_E^2/\\sigma_m^2 = 10^3 $) imply an equilibrium heritability of less than 0.17. Thus, as with previous models, no constant value of $ s $ in the pure-pleiotropy model can produce both sufficiently strong apparent stabilizing selection and a moderate heritability."
+    },
+    {
+      "type": "discussion",
+      "content": "While the constant-s model is mathematically tractable, it is also biologically unrealistic, as we expect s to vary and to be at least somewhat correlated with $ \\alpha $, because mutations with large absolute effects are expected to be more deleterious. Does incorporation of these features resolve the inconsistencies between the equilibrium additive variance and strength of apparent stabilizing selection? The short answer is no, while the longer answer is that variation in s introduces additional complications."
+    },
+    {
+      "type": "discussion",
+      "content": "When $ s $ (and $ \\alpha $) vary over mutations, Equation 28.44a shows that the expected additive variation from a locus is $ 2\\mu E[\\alpha^2/s] $, and Equation 28.44b shows that in order to approximate $ E[\\alpha^2/s] $, one must (at least) specify both the correlation, $ \\rho $, between $ s $ and $ \\alpha^2 $, as well as the kurtosis of the distribution of trait mutational effects, $ \\sigma^2(\\alpha^2) $. Further, different families of bivariate distributions that otherwise have the same values for $ \\rho $ and $ \\sigma^2(\\alpha^2) $ can give very different results, making the outcome extremely model-dependent (Hill and Keightley 1988; Caballero and Keightley 1990; Keightley and Hill 1990; Johnson and Barton 2005), see [[SEE_EXAMPLE:28.12]]."
+    },
+    {
+      "type": "discussion",
+      "content": "One immediate problem arises from $\\rho$. If $\\rho = 1$, the HK model simply recovers mutation-stabilizing selection balance with its inherent limitations (because mutational effects are completely correlated, the value of $\\alpha^2$ determines the value of $s$). Conversely, for variable $s$ when $\\rho < 1$, the additive variance can continue to increase without limit with $N_e$. This occurs because some small fraction of new mutations are effectively neutral, with the additive variance approaching the neutral result (Equation 11.20c), but with a lower mutation rate. Because the effectively neutral mutation rate decreases as $N_e$ increases (for any value of $s$, a sufficiently large value of $N_e$ satisfies $4N_e|s| \\gg 1$), the result is a less than linear increase in additive variation with $N_e$, but the resulting variance is still unbounded under many joint distributions of $s$ and $\\alpha$. As Johnson and Barton (2005) note, the conditional distribution of $\\alpha$ for those values of $s$ very near zero (near neutrality) determines whether the additive variance is unbounded in $N_e$, and very slight differences in the assumed joint distribution of $\\alpha$ and $s$ can result in dramatic differences in behavior."
+    },
+    {
+      "type": "discussion",
+      "content": "Despite this impact of $ \\rho $ on the model behavior for large values of $ N_{e} $, a few general features of the HK model emerge from extensive simulations by Caballero and Keightley (1990) and Keightley and Hill (1990), as well as from analytic results assuming a general bivariate gamma distribution for $ \\alpha $ and s (Zhang et al. 2002): 1. Allowing $s$ to vary increases both $\\widetilde{\\sigma}_{A}^{2}$ and $V_{s}$ relative to a constant-$s$ model (using $E[s]$ as the constant value), so that the strength of apparent stabilizing selection is generally too weak relative to observed values in nature, although abundant variation can potentially be maintained."
+    },
+    {
+      "type": "discussion",
+      "content": "2. Dominance in trait mutations has little effect on the amount of trait variance maintained (this is not the case for fitness mutations, as we discuss shortly)."
+    },
+    {
+      "type": "discussion",
+      "content": "3. Increasing the correlation, $ \\rho $, between $ \\alpha^2 $ and $ s $, decreases $ \\widetilde{\\sigma}_A^2 $, as does increasing the average strength of deleterious selection, $ E[s] $."
+    }
+  ]
+}

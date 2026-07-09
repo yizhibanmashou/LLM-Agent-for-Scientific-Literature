@@ -1,0 +1,55 @@
+{
+  "id": "Genetics_chapter16_019",
+  "metadata": {
+    "chapter": "Genetics_chapter16",
+    "section": "Introduction",
+    "subsections": [
+      "Affected Sib-pair Tests"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter16_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "Affected Sib-pair Tests",
+    "heading_path": [
+      "Introduction",
+      "Affected Sib-pair Tests"
+    ],
+    "display_heading": "Affected Sib-pair Tests"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "When dealing with a dichotomous character, pairs of relatives can be classified into three groups: pairs where both are normal, singly affected pairs with one affected and one normal member, and doubly affected pairs. The first and last pairs are also called concordant, while pairs that differ are called discordant. The motivation behind relative-pair tests is that if a marker is linked to a QTL influencing the trait, concordant and discordant pairs should have different distributions for the number of ibd marker alleles."
+    },
+    {
+      "type": "discussion",
+      "content": "In addition to being much more robust than ML methods for dichotomous characters, relative-pair tests also have the advantage of selective genotyping in that pairs are usually chosen so that at least one member is affected. The pairs of relatives considered are usually full sibs, and a number of variants of these affected sib-pair, or ASP, methods have been proposed (e.g., Day and Simons 1976; de Vries et al. 1976; Green and Woodrow 1977; Suarez 1978; Suarez et al. 1978; Fishman et al. 1978; Suarez and Eerdewegh 1984; Badner et al. 1984; Hopper et al. 1984; Thompson 1986; Lange 1986a,b; Risch 1987, 1990a–c; Faraway 1993; Commenges 1994; Curtis and Stam 1994; Kruglyak and Lander 1995b). Most of these are detection tests, rather than estimation procedures, as they cannot provide independent estimates of QTL effect and position. While our attention focuses on full-sib pairs, this basic approach can easily be applied to any pair of relatives, provided there is variability in the number of ibd alleles. (This excludes parent-offspring pairs, as these share exactly one allele ibd.) Most affected sib-pair tests have the basic structure of comparing the observed ibd frequencies (or some statistic based on them) of doubly affected pairs with either their expected values under no linkage or with the corresponding values in singly affected pairs. There are many possible tests based on this idea and most, it seems, have made their way into the literature. We consider three here."
+    },
+    {
+      "type": "proposition",
+      "content": "Among those $n_i$ pairs with $i$ affected members ($i = 0, 1, 2$), let $p_{ij}$ denote the frequency of such pairs with $j$ ibd marker alleles ($j = 0, 1, 2$). From the binomial distribution, the estimator $\\widehat{p}_{ij}$ has mean $p_{ij}$ and variance $p_{ij}(1 - p_{ij})/n_i$. One ASP test is based on $\\widehat{p}_{22}$, the observed frequency of doubly affected pairs that have two marker alleles ibd. Under the assumption of no linkage, $\\widehat{p}_{22}$ has mean $1/4$ (as full sibs have a 25% chance of sharing both alleles ibd) and variance $(1/4)(1 - 1/4)/n_2 = 3/(16 n_2)$, suggesting the test $$ T_{2}=\\frac{\\widehat{p}_{22}-1/4}{\\sqrt{\\frac{3}{16n_{2}}}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "For a large number of doubly affected pairs, $T_{2}$ is approximately distributed as a unit normal under the null hypothesis of no linkage. This test is one-sided, as $p_{22} > 1/4$ under linkage."
+    },
+    {
+      "type": "discussion",
+      "content": "An alternative approach is to consider statistics that employ the mean number of ibd marker alleles, $ p_{i1} + 2p_{i2} $. Under the hypothesis of no linkage, this has expected value $ 1\\cdot(1/2)+2\\cdot(1/4) = 1 $ and variance $ [1^{2}\\cdot(1/2)+2^{2}\\cdot(1/4)]-1^{2} = 1/2 $. For doubly affected pairs, the test statistic becomes $$ T_{m}=\\sqrt{2n_{2}}\\left(\\widehat{p}_{21}+2\\widehat{p}_{22}-1\\right) $$ which again for large samples is approximately distributed as a unit normal and is a one-sided test, as $ p_{21} + 2p_{22} > 1 $ under linkage."
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, maximum likelihood-based goodness-of-fit tests can be used (Risch 1990b,c). In keeping with the tradition of human geneticists, ML-based tests usually report LOD (likelihood of odds) scores in place of the closely related likelihood ratio (LR). (Recall from Equation 15.16 that 1 LR = 4.61 LOD.) Here the data are $ n_{20} $, $ n_{21} $, and $ n_{22} $, the number of doubly affected sibs sharing zero, one, or two marker alleles ibd, with the unknown parameters to estimate being the population frequencies of these classes ($ p_{20} $, $ p_{21} $, $ p_{22} $). The MLEs for these population frequencies are given by $ \\widehat{p}_{2i} = n_{2i}/n_{2} $. The LOD score for the test of no linkage becomes $$ MLS=\\log_{10}\\left[\\prod_{i=0}^{2}\\left(\\frac{\\widehat{p}_{2i}}{\\pi_{2i}}\\right)^{n_{2i}}\\right]=\\sum_{i=0}^{2}n_{2i}\\log_{10}\\left(\\frac{\\widehat{p}_{2i}}{\\pi_{2i}}\\right) $$ where $ \\pi_{2i} $ is the probability that the pair of doubly affected sibs shares i alleles ibid in the absence of linkage to a QTL. (For full sibs, $ \\pi_{20} = \\pi_{22} = 1/4 $, $ \\pi_{21} = 1/2 $.) The test statistic given by Equation 16.51 is referred to as the maximum LOD score, or MLS, with a score exceeding three being taken as significant evidence for linkage (Risch 1990b, Morton 1955b)."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 6. An alternative formulation for the MLS test is to consider each informative parent separately, simply scoring whether or not a doubly affected sib pair shares a marker allele from this parent. This approach generates 0 (match, both affected sibs share the allele) or 1 (no match) ibid data. Under the null hypothesis of no linkage, each state (0 or 1) has probability 1/2, and the MLS test statistic becomes $$ MLS=\\left(1-n_{1}\\right)\\log_{10}\\left(\\frac{1-\\widehat{p}_{1}}{1/2}\\right)+n_{1}\\log_{10}\\left(\\frac{\\widehat{p}_{1}}{1/2}\\right) $$ where $n_{1}$ and $p_{1}$ are, respectively, the number and frequency of sibs sharing the parental allele. This method has the advantage that sibs informative for only one parental marker can still be used. Using this approach, Davies et al. (1994) did a genome-wide search for markers linked to DS genes influencing human type 1 diabetes. Among doubly affected sibs, one marker on chromosome 6, D6S273, had 92 pairs sharing parental alleles and 31 pairs not sharing parental alleles. A second marker on the opposite end of this chromosome, D6S415, had 74 pairs sharing parental alleles and 60 not sharing alleles. The MLS scores for these two markers are $$ MLS(D6S273)=31\\cdot\\log_{10}\\left(\\frac{2\\cdot31}{123}\\right)+92\\cdot\\log_{10}\\left(\\frac{2\\cdot92}{123}\\right)=6.87 $$ $$ MLS(D6S415)=60\\cdot\\log_{10}\\left(\\frac{2\\cdot60}{134}\\right)+74\\cdot\\log_{10}\\left(\\frac{2\\cdot74}{134}\\right)=0.32 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, the first marker shows significant evidence of linkage, while the second does not. Translating these LOD scores into LR values (the latter being distributed as a $\\chi^{2}$ with one degree of freedom) gives LR = 4.61 $\\cdot$ 6.87 = 31.6 ($P < 0.001$) for D6S273 and LR = 4.61 $\\cdot$ 0.32 = 1.47 ($P = 0.2$) for D6S415."
+    }
+  ]
+}

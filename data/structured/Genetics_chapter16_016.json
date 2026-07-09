@@ -1,0 +1,67 @@
+{
+  "id": "Genetics_chapter16_016",
+  "metadata": {
+    "chapter": "Genetics_chapter16",
+    "section": "Introduction",
+    "subsections": [
+      "Interval Mapping by a Modified Haseman-Elston Regression"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter16_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "Interval Mapping by a Modified Haseman-Elston Regression",
+    "heading_path": [
+      "Introduction",
+      "Interval Mapping by a Modified Haseman-Elston Regression"
+    ],
+    "display_heading": "Interval Mapping by a Modified Haseman-Elston Regression"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Fulker and Cardon (1994) proposed an interval mapping modification that allows separate estimates of QTL effect ($ \\sigma_{A}^{2} $) and position (c) by considering two linked markers simultaneously. Recall Equation 16.36, $$ E(Y_{j}|\\pi_{j t})=E[(z_{1j}-z_{2j})^{2}|\\pi_{j t}]=(2\\sigma_{A}^{2}+\\sigma_{e}^{2})-(2\\sigma_{A}^{2})\\cdot\\pi_{j t} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Fulker and Cardon show that the proportion $ \\pi_{jt} $ of alleles ibid at the trait locus can be estimated by using a regression on $ \\pi_{jm}^{(1)} $ and $ \\pi_{jm}^{(2)} $, the proportion of alleles ibid at two marker loci flanking the QTL, where $$ \\widehat{\\pi}_{j t}=\\frac{1-\\beta_{1}-\\beta_{2}}{2}+\\beta_{1}\\pi_{j m}^{(1)}+\\beta_{2}\\pi_{j m}^{(2)} $$ and $$ \\beta_{1}=\\frac{(1-2c_{1})^{2}-(1-2c_{2})^{2}(1-2c)^{2}}{1-(1-2c)^{4}},\\quad\\beta_{2}=\\frac{(1-2c_{2})^{2}-(1-2c_{1})^{2}(1-2c)^{2}}{1-(1-2c)^{4}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Here, as elsewhere, $c_1$ is the recombination frequency between the first marker and the QTL, $c_2$ between the QTL and second marker, and $c$ between markers (assumed known). As in Chapter 15, $c_2$ follows directly from $c_1$ and $c$ under various assumptions about interference (e.g., with complete interference $c_2 = c - c_1$), leaving the $\\beta_i$ as functions of only one unknown parameter, $c_1$. When the markers are reasonably close ($c < 0.2$), these coefficients simplify to $\\beta_{m,1} \\simeq c_2/c$ and $\\beta_{m,2} \\simeq c_1/c$. Substituting into Equation 16.36, $$ E(Y_{j})=\\alpha-\\left(2\\sigma_{A}^{2}\\right)\\left(\\beta_{1}\\pi_{jm}^{(1)}+\\beta_{2}\\pi_{jm}^{(2)}\\right) $$ where $$ \\alpha=\\left[\\sigma_{A}^{2}\\left(1+\\beta_{1}+\\beta_{2}\\right)+\\sigma_{e}^{2}\\right] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Following the approach of Haley and Knott (1992), Fulker and Cardon compute this regression for each value of $c_{1}$ ($0 \\leq c_{1} \\leq c$), with that value giving the regression with the largest $r^{2}$ taken to be the estimate of map position, and $2\\sigma_{A}^{2}$ estimated from the associated regression coefficients. This method offers increased power for QTL detection relative to the standard Haseman-Elston method (Fulker and Cardon 1994, Cardon and Fulker 1994). This increase is small when the single-marker power is either very poor or very high, but can be considerable when single-marker power is modest. As with the single-marker regression, selective genotyping further increases power (Cardon and Fulker 1994)."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 5. Cardon et al. (1994) used this interval mapping test to examine whether QTLs influencing reading disability are linked to markers on human chromosome 6. Previous work had suggested linkage to this chromosome. For more refined mapping, these authors used a set of five highly informative markers. In the following figure, support for QTL position is given by plotting the regression t statistic as a function of putative QTL position on chromosome 6."
+    },
+    {
+      "type": "discussion",
+      "content": "The number of alleles for each marker locus ranged from 9–13 with associated heterozygosities of 0.6–0.9. Two independent sets of relatives were examined, a collection of 358 siblings from 19 families, and an independent collection of 50 dizygotic twins. Selective genotyping was used, with both sets of relatives chosen by the presence of one sib in each pair who scored very poorly on standardized reading tests (following suitable correction for other environmental factors). Interval mapping on both relative sets shows strong (and independent) support for a QTL near the markers D6S105 and TNFB. Support for a second QTL at 70 cM is suggested from the twin data, but this is not confirmed by the siblings data set. (Figure after Cardon et al. 1994.)"
+    },
+    {
+      "type": "discussion",
+      "content": "Standard (i.e., two-marker) interval mapping can be extended to multipoint interval mapping by considering all linked markers on a chromosome (Fulker et al. 1995, Kruglyak and Lander 1995b). In the approach of Fulker et al., the two-marker regression estimate of the QTL ibd status (Equation 16.43) is replaced by a multiple regression that incorporates all n linked markers on a chromosome, $$ \\widehat{\\pi}_{j t}=\\alpha+\\sum_{k=1}^{n}\\beta_{k}\\pi_{j m}^{(k)} $$ where the fraction $\\widehat{\\pi}_{jt}$ of ibd QTL alleles for the $j$th pair is predicted using the fractions $\\pi_{jm}^{(k)}$ of ibd alleles at each of the $n$ marker loci on the chromosome containing the putative QTL. The $\\beta_{k}$ are obtained from standard GLS regressions (Chapter"
+    },
+    {
+      "type": "discussion",
+      "content": "8), where the vector $ \\boldsymbol{\\beta}^{T} = (\\beta_{1}, \\cdots, \\beta_{n}) $ satisfies $ \\boldsymbol{\\beta} = \\mathbf{V}^{-1}\\mathbf{C} $, where $$ V_{ik}=\\sigma\\left(\\pi_{m}^{(i)},\\pi_{m}^{(k)}\\right)=\\left\\{\\begin{matrix}\\operatorname{Var}\\left(\\pi_{m}^{(i)}\\right)&\\operatorname{for}i=k\\\\ 8\\left(1-2c_{ik}\\right)\\operatorname{Var}\\left(\\pi_{m}^{(i)}\\right)\\operatorname{Var}\\left(\\pi_{m}^{(k)}\\right)&\\operatorname{for}i\\neq k\\end{matrix}\\right. $$ and $$ \\begin{array}{r}{C_{i}=\\sigma\\left(\\pi_{t},\\pi_{m}^{(i)}\\right)=\\left(1-2c_{i}\\right)\\mathrm{V a r}\\left(\\pi_{m}^{(i)}\\right)}\\end{array} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Here $ \\mathrm{Var}(\\pi_{m}^{(i)}) $ is the observed sample variance for ibd status at the ith marker (i.e., the sample variance of the $ \\pi_{jm}^{(i)} $ over all included pairs), $ c_{ik} $ is the distance between markers i and k (assumed known), and $ c_{i} $ is the (unknown) distance between the QTL and marker i."
+    },
+    {
+      "type": "discussion",
+      "content": "Again the regression is computed by first assuming a particular position for the QTL along the chromosome, computing $ \\widehat{\\pi}_{jt} $ using Equation 16.45, and substituting this value into the standard Haseman-Elston regression (Equation 16.36). This process is repeated for all possible positions of the QTL along the chromosome, with the estimate of QTL position taken as that which gives the regression with the largest $ r^{2} $ value. (This is equivalent to the regression giving the largest t statistic.) Fulker et al. show that this method offers high precision for mapping and (unlike two-locus interval mapping) accounts for differences in the information content of adjacent markers. When only two markers are used, Fulker et al. show that QTL position is biased towards the more informative marker. Multipoint interval mapping avoids this problem by incorporating all the marker information along the entire chromosome. Since the multipoint regression is easily computed, there is little reason to prefer simple interval mapping (Equation 16.43) over multipoint mapping (Equation 16.45)."
+    },
+    {
+      "type": "discussion",
+      "content": "An improved multipoint estimator is given by Kruglyak and Lander (1995b). While Equation 16.45 uses marker information to estimate the mean value of $ \\pi_{jt} $, Kruglyak and Lander use all the marker information to provide an ML estimate at each point along a chromosome of the actual distribution of ibid values (i.e., the probabilities at any particular chromosomal position that the pair shares zero, one, or two ibid alleles). An EM method (Appendix 4) is then used to compute the regression using this distribution, resulting in greater power than in an analysis one based simply on the estimated mean of $ \\pi_{jt} $. As before, regressions are computed at each point along a chromosome, generating a t statistic plot for the regression significance as a function of putative QTL position."
+    }
+  ]
+}

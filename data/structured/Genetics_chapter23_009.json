@@ -1,0 +1,74 @@
+{
+  "id": "Genetics_chapter23_009",
+  "metadata": {
+    "chapter": "Genetics_chapter23",
+    "section": "COMPONENTS OF VARIANCE AND COVARIANCE",
+    "subsections": [
+      "Bondari's Experiment"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter23_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [
+      "23.1",
+      "23.4"
+    ],
+    "section_level_1": "COMPONENTS OF VARIANCE AND COVARIANCE",
+    "section_level_2": "Bondari's Experiment",
+    "heading_path": [
+      "COMPONENTS OF VARIANCE AND COVARIANCE",
+      "Bondari's Experiment"
+    ],
+    "display_heading": "Bondari's Experiment",
+    "table_reference_keys": [
+      "chapter23:23.1",
+      "chapter23:23.4"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Starting with 331 males of the flour beetle Tribolium castaneum, each of which was mated to two unrelated females, Bondari et al. (1978) developed three types of mating structures to estimate the causal components of variance for pupal weight (Figure 23.4). As shown in [[SEE_TABLE:23.4]], each design provides the basis for a nested analysis of variance, details of which have been covered in Chapter 18."
+    },
+    {
+      "type": "discussion",
+      "content": "Design I. The primary purpose for this design, which is simply the full-sib, half-sib nested design outlined in Chapter 18, is to obtain an estimate of $ \\sigma^{2}(A_{o}) $. Recalling the results of Chapter 18, the variance among sires is formally equivalent to the covariance among paternal half-sibs, which we know has the expectation $ \\sigma_{A_{o}}^{2}/4 $ ([[SEE_TABLE:23.1]])."
+    },
+    {
+      "type": "discussion",
+      "content": "The design utilized all $N = 331$ males, each mated to two random females $(M = 2)$, with $n = 2$ pupae being weighed within each full-sib family. Setting the observed mean squares in [[SEE_TABLE:23.4]] equal to their expectations and solving, we obtain estimates of the three hierarchical components of variance: $\\mathrm{Var}(a) = 3,384$, $\\mathrm{Var}(b) = 7,514$, and $\\mathrm{Var}(e) = 25,852$, respectively referring to sires, dams within sires, and offspring within dams. Thus, the total phenotypic variance is estimated to be $\\mathrm{Var}(z) = 36,750$, and the additive genetic variance involving direct effects is estimated by $\\mathrm{Var}(A_{o}) = 4\\mathrm{Var}(a) = 13,536$."
+    },
+    {
+      "type": "discussion",
+      "content": "[[FIGURE:23.4]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Design II. This experiment, which spans three generations, provides a means for estimating the additive genetic covariance between direct and maternal effects, $ \\sigma_{A_{o},A_{m}} $. A fraction $ (N=208) $ of the fathers in Design I served as the grandsires in Design II. For each grandsire, a single son was taken from the progeny of one mate and crossed to an unrelated female to produce a full-sib family; a single daughter was taken from the progeny of the second mate and crossed to an unrelated male to produce a second full-sib family. The members of the third-generation families served as the experimental units. As in Design I, the results can be analyzed by nested ANOVA, in this case with $ \\sigma_{a}^{2} $ being the variance associated with grandsires. Note in Figure 23.4 that"
+    },
+    {
+      "type": "discussion",
+      "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Factor</td><td style='text-align: center; word-wrap: break-word;'>Degrees of Freedom</td><td style='text-align: center; word-wrap: break-word;'>Mean Squares</td><td style='text-align: center; word-wrap: break-word;'>Expected Mean Squares</td></tr><tr><td colspan=\"4\">Design I</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Sires</td><td style='text-align: center; word-wrap: break-word;'>$ (N_a - 1) = 330 $</td><td style='text-align: center; word-wrap: break-word;'>54,418</td><td style='text-align: center; word-wrap: break-word;'>$ \\sigma_e^2 + n\\sigma_b^2 + N_b n\\sigma_a^2 $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Dams (sires)</td><td style='text-align: center; word-wrap: break-word;'>$ N_a(N_b - 1) = 331 $</td><td style='text-align: center; word-wrap: break-word;'>40,880</td><td style='text-align: center; word-wrap: break-word;'>$ \\sigma_e^2 + n\\sigma_b^2 $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Sibs (dams)</td><td style='text-align: center; word-wrap: break-word;'>$ N_a N_b (n - 1) = 330 $</td><td style='text-align: center; word-wrap: break-word;'>25,852</td><td style='text-align: center; word-wrap: break-word;'>$ \\sigma_e^2 $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'></td><td colspan=\"2\">$ \\sigma_a^2 = \\sigma(\\text{PHS}) = \\frac{\\sigma_{A_o}^2}{4} $</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td colspan=\"4\">Design II</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Grandsires</td><td style='text-align: center; word-wrap: break-word;'>$ (N_a - 1) = 207 $</td><td style='text-align: center; word-wrap: break-word;'>48,499</td><td style='text-align: center; word-wrap: break-word;'>$ \\sigma_e^2 + n\\sigma_b^2 + N_b n\\sigma_a^2 $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Parents (grandsires)</td><td style='text-align: center; word-wrap: break-word;'>$ N_a(N_b - 1) = 208 $</td><td style='text-align: center; word-wrap: break-word;'>46,672</td><td style='text-align: center; word-wrap: break-word;'>$ \\sigma_e^2 + n\\sigma_b^2 $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Sibs (parents)</td><td style='text-align: center; word-wrap: break-word;'>$ N_a N_b (n - 1) = 416 $</td><td style='text-align: center; word-wrap: break-word;'>23,867</td><td style='text-align: center; word-wrap: break-word;'>$ \\sigma_e^2 $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'></td><td colspan=\"2\">$ \\sigma_a^2 = \\sigma(\\text{HFC, II}) = \\frac{\\sigma_{A_o}^2}{16} + \\frac{\\sigma_{A_o, A_m}}{8} $</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td colspan=\"4\">Design III</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Grandsires</td><td style='text-align: center; word-wrap: break-word;'>$ (N_a - 1) = 122 $</td><td style='text-align: center; word-wrap: break-word;'>48,336</td><td style='text-align: center; word-wrap: break-word;'>$ \\sigma_e^2 + n\\sigma_b^2 + N_b n\\sigma_a^2 $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Parents (grandsires)</td><td style='text-align: center; word-wrap: break-word;'>$ N_a(N_b - 1) = 123 $</td><td style='text-align: center; word-wrap: break-word;'>38,495</td><td style='text-align: center; word-wrap: break-word;'>$ \\sigma_e^2 + n\\sigma_b^2 $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Sibs (parents)</td><td style='text-align: center; word-wrap: break-word;'>$ N_a N_b (n - 1) = 246 $</td><td style='text-align: center; word-wrap: break-word;'>23,310</td><td style='text-align: center; word-wrap: break-word;'>$ \\sigma_e^2 $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'></td><td colspan=\"2\">$ \\sigma_a^2 = \\sigma(\\text{HFC, III}) = \\frac{\\sigma_{A_o}^2}{16} + \\frac{\\sigma_{A_o, A_m}}{4} + \\frac{\\sigma_{A_m}^2}{4} $</td><td style='text-align: center; word-wrap: break-word;'></td></tr></table>"
+    },
+    {
+      "type": "discussion",
+      "content": "Note: For each of three designs, $ \\sigma_{a}^{2} $, $ \\sigma_{b}^{2} $, and $ \\sigma_{e}^{2} $ denote the three observable hierarchical components of variance, and $ N_{a} $, $ N_{b} $, and n denote the nested sample sizes for the three hierarchical levels. The design was completely balanced. Further details on the analysis of nested data can be found in Chapter 18. grandchild $x$ has a father that is a half-sib of the mother of grandchild $y$. Thus, $x$ and $y$ are half-first cousins. From the rule that an among-group variance is equivalent to the covariance between members in the same group, $\\sigma_{a}^{2}$ is equivalent to the covariance between half-first cousins related through parents of the opposite sex. The expected phenotypic covariance for such a relationship is $\\mathrm{Var}(\\mathrm{HFC},\\mathrm{II}) = (\\sigma_{A_{o}}^{2}/16) + (\\sigma_{A_{o},A_{m}}/8)$."
+    },
+    {
+      "type": "discussion",
+      "content": "Again substituting observed for expected mean squares in [[SEE_TABLE:23.4]] and solving, we obtain the estimate $ \\mathrm{Var}(a) = \\mathrm{Var}(\\mathrm{HFC}, \\mathrm{II}) = 457 $. Recalling from Design I that $ \\mathrm{Var}(A_o) = 13,536 $, and substituting into the expression for $ \\sigma^2(\\mathrm{HFC}, \\mathrm{II}) $. we estimate the covariance between direct and maternal effects to be $ \\mathrm{Cov}(A_{o}, A_{m}) = -3,112 $. Thus, the data suggest that there is a negative genetic correlation between direct and maternal effects for pupal weight."
+    },
+    {
+      "type": "discussion",
+      "content": "Design III. This experiment provides an estimate of the variance of additive genetic maternal effects, $ \\sigma_{A_m}^2 $. The design is identical in form to Design II, except that the grandchildren $ x $ and $ y $ have mothers that are half-sibs and fathers that are unrelated. Thus, $ x $ and $ y $ are still half-first cousins, but because they are related through their mothers, they are influenced by common maternal-effect genes. The expression for the covariance between these types of relatives, which is a function of $ \\sigma_{A_o}^2 $, $ \\sigma_{A_o,A_m} $, and $ \\sigma_{A_m}^2 $, is given in [[SEE_TABLE:23.4]]."
+    },
+    {
+      "type": "discussion",
+      "content": "The remaining $N = 123$ fathers from Design I served as grandsires in this experiment. Again substituting observed for expected mean squares in [[SEE_TABLE:23.4]], we find $\\mathrm{Var}(a) = 2,460$. Equating this grandsire variance component to $\\sigma(\\mathrm{HFC},\\mathrm{III})$, and substituting the previous estimates of $\\sigma^{2}(A_{o})$ and $\\sigma(A_{o},A_{m})$ into the expression for $\\sigma(\\mathrm{HFC},\\mathrm{III})$, yields $\\mathrm{Var}(A_{m}) = 9,568$."
+    },
+    {
+      "type": "discussion",
+      "content": "All three experiments yielded similar estimates of the phenotypic variance, the average of which is $ \\text{Var}(z) = 35,280 $. Thus, from the results of Design I, an estimate of the heritability of pupal weight, unbiased by maternal effects, is $ h^2 = 13,536/35,280 = 0.38 $. An estimate of the additive genetic correlation between direct and maternal effects is $ \\text{Cov}(A_o, A_m)/\\sqrt{\\text{Var}(A_o)\\text{Var}(A_m)} = -0.27 $. Thus, in this species, genes that increase pupal weight through their direct effects decrease it through maternal effects. Although the authors did not pursue it, this multigenerational experiment could have yielded estimates of the covariance between several other types of relatives, and hence of additional causal sources of variance."
+    }
+  ]
+}

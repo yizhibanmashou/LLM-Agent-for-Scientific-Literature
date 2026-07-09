@@ -1,0 +1,63 @@
+{
+  "id": "Evolution_chapter30_046",
+  "metadata": {
+    "chapter": "Evolution_chapter30",
+    "section": "LEVELS OF SELECTION",
+    "subsections": [
+      "Early Survival: Offspring or Maternal Fitness Component?"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter30_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "LEVELS OF SELECTION",
+    "section_level_2": "Early Survival: Offspring or Maternal Fitness Component?",
+    "heading_path": [
+      "LEVELS OF SELECTION",
+      "Early Survival: Offspring or Maternal Fitness Component?"
+    ],
+    "display_heading": "Early Survival: Offspring or Maternal Fitness Component?"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "As mentioned in Chapters 15 and 22, a classic example of a levels-of-selection problem is maternal care, wherein features of both the mother and offspring may influence offspring survival. An area of some contention, especially among biologists working with species that display extensive maternal care (i.e., ornithologists and mammalianogists), is whether the fitness associated with early survival should be assigned to the mother (acknowledging her maternal performance) or to the offspring (acknowledging features of their own that enhance survival). As mentioned in Chapter 29, the fitness of a mother is often scored as the number of her offspring remaining after some interval of potential early offspring mortality, rather than simply the total number of offspring that she produced. For birds, the number of hatchlings, fledglings, or recruits (offspring that have mated) are used as the measure of female fitness, rather than the number of eggs. In mammals, the number of weaned offspring or recruits is often used in place of number of births. This notion of fitness crossing generations has proponents (e.g., Clutton-Brock 1988) and opponents (Arnold 1983a; Lande and Arnold 1983; Cheverud 1984b; Thomson and Hadfield 2017), in part because different questions are being asked by the two sides. The implications of assigning fitnesses of offspring to their mothers (i.e., their early survival is part of their mother's fitness), and what potential biases this may induce, were examined by Wolf and Wade (2009; also see Thomson and Hadfield 2017), whose approach we closely follow."
+    },
+    {
+      "type": "discussion",
+      "content": "Suppose the true fitness (such as early offspring survival) is a function of the offspring phenotype, $ z_{o(t)} $, and the value of some trait in their mother, $ z_{m(t-1)} $, where t indexes the current offspring generation and t - 1 indexes a phenotype (in this case its mother) in the previous generation. This is an example of what Kirkpatrick and Lande (1989) called maternal selection (Chapter 15). The relative fitness of a male offspring is given by $$ w_{(t)}[male]=\\alpha_{(t)}+b_{m}z_{m(t-1)}+b_{o}z_{o(t)}+\\epsilon_{(t)} $$ where $ b_{o} $ and $ b_{m} $ measure the strengths of selection on offspring value and maternal care, respectively. In female offspring, there is an additional source of potential selection, as a sex-limited maternal trait can have a cost. For example, a mother with a trait for increased foraging enhances the survival of her offspring, but also increases her own risk of predation. Incorporating the direct cost $ (b_{d}) $ of such a trait in females yields $$ \\begin{align*}w_{(t)}\\left[\\mathsf{f e m a l e}\\right]=\\alpha_{(t)}+b_{m}z_{m(t-1)}+b_{d}z_{m(t)}+b_{o}z_{o(t)}+\\epsilon_{(t)}\\end{align*} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Figure 30.18A presents the path diagram for this fitness model. If we assume that Equations 30.40a and 30.40b represent the correct fitness model, the selection differential, $ S_{m} $, on the maternal trait value, $ z_{m} $, can be computed from the Robertson-Price identity (Equation 6.10). Because $ w(t) $ depends on whether the offspring is male or female, we let $ \\delta_{f} $ be a zero (for male) or one (for female) indicator variable. Equations 30.40a, 30.40b and 6.10 yield $$ \\begin{aligned}S_{m}(\\mathrm{off})&=\\sigma(w_{(t)},z_{m(t)})\\\\&=\\sigma\\big(b_{m}z_{m(t-1)}+\\delta_{f}b_{d}z_{m(t)}+b_{o}z_{o(t)},z_{m(t)}\\big)\\\\&=b_{m}\\sigma(z_{m(t-1)},z_{m(t)})+\\delta_{f}b_{d}\\sigma(z_{m(t)},z_{m(t)})+b_{o}\\sigma(z_{o(t)},z_{m(t)})\\\\ \\end{aligned} $$ Because the total differential is the weighted average over both sexes (Equation 13.5), $$ \\begin{align*}S_{m}(\\mathrm{off})&=b_{m}\\sigma(z_{m(t-1)},z_{m(t)})+\\frac{b_{d}}{2}\\sigma(z_{m(t)},z_{m(t)})+b_{o}\\sigma(z_{o(t)},z_{m(t)})\\\\&=\\frac{b_{m}}{2}\\sigma^{2}(A_{m})+\\frac{b_{d}}{2}\\sigma^{2}(z_{m})+b_{o}\\sigma(A_{m},A_{o})\\end{align*} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "This last step assumes that $ \\sigma(z_{o(t)}, z_{m(t)}) = \\sigma(A_{o(t)} + e_{o(t)}, A_{m(t)} + e_{m(t)}) = \\sigma(A_{m}, A_{o}) $, namely, that the environment effects between the maternal and direct effects are uncorrelated within an individual."
+    },
+    {
+      "type": "discussion",
+      "content": "Now suppose that an investigator assumes the offspring fitness is assigned to its mother (Figure 30.18B), which Thomson and Hadfield (2017) call the mixed-fitness model. The mother's total fitness can be considered as the sum of two separate episodes: selection on early survival in her offspring, $ w_{o(t)} $, and selection on her maternal trait, $ w_{m(t-1)} $, where $$ w_{o(t)}=\\alpha_{o(t)}+b_{m}z_{m(t-1)}+b_{o}z_{o(t)}+\\epsilon_{(t)} $$ $$ w_{m(t-1)}=\\alpha_{m(t-1)}+b_{d}z_{m(t-1)}+\\epsilon_{(t-1)} $$ giving her total fitness as $$ w_{o(t)}+w_{m(t-1)}=\\left(\\alpha_{o(t)}+\\alpha_{m(t-1)}\\right)+b_{m}z_{m(t-1)}+b_{d}z_{m(t-1)}+b_{o}z_{o(t)}+\\left(\\epsilon_{(t)}+\\epsilon_{(t-1)}\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The difference between this expression (mother-assigned offspring early-viability fitness) and Equation 30.40b (offspring assigned their own fitness) is in the direct fitness of the maternal effect. This component is weighted by $ b_{m}z_{m(t-1)} $ in Equation 30.41c (the value of the mother), and by $ b_{m}z_{m(t)} $ in Equation 30.40b (the cost to the offspring). Following the same logic leading to Equation 30.40d, the selection differential on the maternal trait becomes $$ \\begin{aligned}S_{m}(\\mathrm{mother})&=\\sigma(w_{o(t)}+w_{m(t-1)},z_{m(t-1)})\\\\&=\\frac{1}{2}\\Biggl[(b_{m}+b_{d})\\sigma^{2}(z_{m})+b_{o}\\sigma(z_{o(t)},z_{m(t-1)})\\Biggr]\\\\&=\\frac{1}{2}\\Biggl[(b_{m}+b_{d})\\sigma^{2}(z_{m})+b_{o}\\frac{\\sigma^{2}(A_{m},A_{o})}{2}\\Biggr]\\\\ \\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Subtracting Equation 30.41d from Equation 30.40d yields $$ S_{m}(\\mathrm{mother})-S_{m}(\\mathrm{off})=\\frac{b_{m}}{2}\\left[\\sigma^{2}(z_{m})-\\sigma^{2}(A_{m})\\right]-\\frac{3}{4}b_{o}\\sigma(A_{m},A_{o}) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The first term shows that maternal selection is overestimated by assigning fitness to mothers, as only a fraction (the additive variance, $ \\sigma^2[A_m] $) of the total maternal trait variation, $ \\sigma^2(z_m) $, is passed to the offspring. The second term either reduces this overestimation or amplifies it, depending the sign of the genetic covariance between the maternal trait and the offspring trait. Wolf and Wade (2001) stated that there is no reason to expect that these terms will largely cancel, making estimates of maternal selection when offspring fitness is assigned to mothers problematic in many cases."
+    },
+    {
+      "type": "discussion",
+      "content": "Conversely, Equation 30.42 shows the conditions under which assigning fitnesses to mothers is unbiased. First, the maternal and offspring traits must be uncorrelated $$ \\sigma\\left(z_{o(t)},z_{m(t)}\\right)=0 $$ implying that $ \\sigma(A_m, A_o) = 0 $, provided that $ \\sigma(e_o, e_m) = 0 $. Second, and more problematic, the maternal trait must have a very high heritability, such that $ \\sigma^2(z_m) \\simeq \\sigma^2(A_m) $. As a result, as Wolf and Wade (2001) suggested, assigning offspring viability as a component of offspring fitness is less biased. Thomson and Hadfield (2017) echoed this point, noting that the conditions are even more restrictive for the mixed-fitness model to be unbiased if the parental trait influencing offspring fitness (upon which selection against the parent can occur) is not sex-limited. They also note that roughly 40% of fecundity estimates in the literature (mainly from birds and mammals) are based on mixed-fitness estimates (namely, weighted by some concept of offspring survival)."
+    },
+    {
+      "type": "discussion",
+      "content": "Both sets of authors pointed out that unless a fitness regression of the form given by Equation 30.40b is used, the levels-of-selection impact from a parent can easily be missed. Unfortunately, this requires one to either know, or at least have a good idea of, the potential parental traits that impact offspring survival. By using a list of such candidate traits, one can fit regressions of this form to test which traits (if any) have a significant impact on offspring fitness."
+    }
+  ]
+}

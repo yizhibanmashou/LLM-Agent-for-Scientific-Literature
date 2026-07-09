@@ -1,0 +1,103 @@
+{
+  "id": "Evolution_chapter20_022",
+  "metadata": {
+    "chapter": "Evolution_chapter20",
+    "section": "APPLYING MIXED MODELS TO NATURAL POPULATIONS",
+    "subsections": [
+      "Consistency Tests: Accuracy, Reliability, and Caveats when Using PBVs"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter20_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "APPLYING MIXED MODELS TO NATURAL POPULATIONS",
+    "section_level_2": "Consistency Tests: Accuracy, Reliability, and Caveats when Using PBVs",
+    "heading_path": [
+      "APPLYING MIXED MODELS TO NATURAL POPULATIONS",
+      "Consistency Tests: Accuracy, Reliability, and Caveats when Using PBVs"
+    ],
+    "display_heading": "Consistency Tests: Accuracy, Reliability, and Caveats when Using PBVs"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Many of the initial applications of animal models in natural populations used individual PBVs in tests of selection on breeding, versus environmental, values (Equations 20.18 and 20.20), for example, fitting the Rausher-Simms regression using PBVs, $ w = 1 + \\beta_A \\widehat{a} + \\beta_E \\widehat{e} + \\epsilon $. However, Postma (2006) noted that there are significant problems with using an estimated value, $ \\widehat{a} $, in place of the true breeding value, $ A $ (to conform with the literature, we use an italicized $ A $ for the true breeding value, $ \\widehat{a} $ for the PBV, and a bold roman $ A $ for the relationship matrix). His central point was that when the pedigree adds little additional information, the PBV for an individual is almost entirely determined by its phenotype. The resulting"
+    },
+    {
+      "type": "discussion",
+      "content": "PBVs are biased by environmental values influencing the phenotypes of individuals, which confounds their ability to separate A from E. Further, as shown by Hadfield (2008, Hadfield et al. 2010), PBVs are correlated with each other, and this correlation structure must be taken into account for proper inference."
+    },
+    {
+      "type": "discussion",
+      "content": "To quantify these concerns, we first need to consider several related measures of the uncertainty of predicted breeding values. Their accuracy, $ \\rho $, is the correlation between the predicted, $ \\widehat{a} $, and actual, A, breeding values (Chapter 13), while the reliability, $ \\rho^2 $, is the fraction of variation in A accounted for by the PBVs. When using only the phenotype of an individual to obtain its PBV, $ \\rho = h $ (Chapter 13). The difference, $ \\rho^2 - h^2 $, between the reliability of a particular PBV and the heritability is a measure of how much additional information is provided from relatives (i.e., from the pedigree). Expressing a PBV as its expected value (the true breeding value) plus an uncorrelated residual, $ \\widehat{a} = A + \\epsilon $, then $ \\sigma^2(\\widehat{a} - A) = \\sigma^2(\\epsilon) $ is the prediction-error variance (PEV; Chapter 19). When the PBVs are small, the PBVs will be very close to the true breeding values."
+    },
+    {
+      "type": "discussion",
+      "content": "These measures of uncertainty ($ \\rho $ and PEV) in the PBVs are connected as follows. By construction, $ A $ and the residual $ \\epsilon $ are uncorrelated, implying $ \\sigma(\\widehat{a}, A) = \\sigma(\\widehat{a}, \\widehat{a} + \\epsilon) = \\sigma^2(\\widehat{a}) $. This allows us to express the PEV as $$ \\sigma^{2}(\\epsilon)=\\sigma^{2}(\\widehat{a}-A)=\\sigma^{2}(\\widehat{a})-2\\sigma(\\widehat{a},A)+\\sigma^{2}(A)=\\sigma^{2}(A)-\\sigma^{2}(\\widehat{a}) $$"
+    },
+    {
+      "type": "definition",
+      "content": "Second, the definition of a correlation yields the accuracy as $$ \\rho=\\frac{\\sigma(\\widehat{a},A)}{\\sqrt{\\sigma^{2}(\\widehat{a})\\sigma^{2}(A)}}=\\sqrt{\\frac{\\sigma^{2}(\\widehat{a})}{\\sigma^{2}(A)}} $$ $$ \\sigma^{2}(\\widehat{a})=\\rho^{2}\\sigma^{2}(A) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Hence, Because $ \\rho^2 \\leq 1 $, it immediately follows that $ \\sigma^2(\\widehat{a}) \\leq \\sigma^2(A) $."
+    },
+    {
+      "type": "discussion",
+      "content": "We have already seen a hint of this result, in that individual PBVs are shrunk back toward their expected values, A, reducing their variance relative to the variance of their true values (Figure 20.4). These results imply that the correlation between the PBV and the phenotypic value of the trait, z, is greater than the correlation between A and z, as $ \\sigma(\\widehat{a}, z) = \\sigma(A - \\epsilon, z) = \\sigma(A, z) $, hence $$ \\begin{aligned}\\left|\\operatorname{corr}(\\widehat{a},z)\\right|&=\\frac{\\left|\\sigma(\\widehat{a},z)\\right|}{\\sqrt{\\sigma^{2}(\\widehat{a})\\sigma^{2}(z)}}=\\frac{\\left|\\sigma(A,z)\\right|}{\\sqrt{\\sigma^{2}(\\widehat{a})\\sigma^{2}(z)}}\\\\&=\\frac{\\left|\\sigma(A,z)\\right|}{\\rho\\sqrt{\\sigma^{2}(A)\\sigma^{2}(z)}}=\\frac{\\left|\\operatorname{corr}(A,z)\\right|}{\\rho}\\geq\\left|\\operatorname{corr}(A,z)\\right|\\end{aligned} $$ where we use corr to denote a correlation, as $ \\rho $ here is restricted to a very specific correlation, namely, that between $ \\hat{a} $ and $ A $ (the accuracy). Equations 20.24a and 20.24c show the connection between $ \\rho $ and the PEV, with $$ \\sigma^{2}(\\epsilon)=\\sigma^{2}(\\widehat{a}-A)=\\left(1-\\rho^{2}\\right)\\sigma^{2}(A) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, for $ z = A + E $, Postma (2006) showed that the prediction-error variance equals the covariance between the PBV and the environmental (or more generally, residual) deviation, E, so that we can also write"
+    },
+    {
+      "type": "discussion",
+      "content": "● True breeding value ($ \\rho^{2}=1 $)"
+    },
+    {
+      "type": "discussion",
+      "content": "◉ Predicted breeding value ($ h^{2}<\\rho^{2}<1 $)"
+    },
+    {
+      "type": "discussion",
+      "content": "○ Predicted breeding value ($ \\rho^{2}=h^{2} $) $$ \\sigma^{2}(\\epsilon)=\\sigma(\\widehat{a},E)=\\left(1-\\rho^{2}\\right)\\sigma^{2}(A) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "When $ \\rho^2 < 1/2 $, the implication is that PBVs resemble individual phenotypes more than they do the true breeding values (Figure 20.4), and hence PBVs are biased by environmental influences on the phenotype. In particular, Equation 20.24f shows that the prediction error is the covariance of an individual's environmental value and its PBV. When $ \\rho^2 \\sim 1 $, the environmental value has no impact on the estimate, $ \\widehat{\\rho} $, but when $ \\rho^2 $ is modest to small, the PBV is a mixture of the true breeding value, A, plus an error reflecting environmental effects."
+    },
+    {
+      "type": "discussion",
+      "content": "Figure 20.4 illustrates this phenomenon in a plot of predicted breeding values versus phenotypic values. When the predicted breeding value is based solely on the phenotypic value, $z$, of a single individual (open circles), there is no variation about its predicted value of $h^{2}(z-\\mu)$, as all individuals with the same $z$ value have the same predicted breeding value. In this case, while there is no variance in the PBVs for a given $z$ (as all PBVs are the same), the residual variance between $z$ and the true breeding value can be considerable, namely $\\sigma^{2}(\\epsilon)=(1-h^{2})\\sigma^{2}(A)$. This follows from Equation 20.24e and the fact that $\\rho^{2}=h^{2}$ when only $z$ is used to predict A. With a standard heritability of around 0.3, this amounts to 70% of the additive variance remaining unaccounted for by the PBVs. When PBVs are based on information from the phenotypes of relatives (in addition to an individual's phenotype), the reliability $\\rho^{2}$ exceeds $h^{2}$, and influenced by this information from relatives, the predicted values start to vary about their mean value of $h^{2}(z-\\mu)$ for a given $z$, giving a more accurate picture of the true values. The influence of relatives is to make an individual's predicted breeding value less dependent on its own phenotypic (and hence, environmental) value. The residual variance for the true breeding value for a given phenotypic value, $z$, is $(\\rho^{2}-h^{2})\\sigma^{2}(A)$, which is maximized at $(1-h^{2})\\sigma^{2}(A)$, when the reliability is complete $(\\rho=1)$. Postma and Charmantier (2007) noted that $\\rho^{2}$ is often around 0.5 for wild pedigrees, so that roughly half of the estimate of a typical PBV is influenced by the environment (Equation 20.24f)."
+    },
+    {
+      "type": "discussion",
+      "content": "The prediction-error variance for any specific PBV can be obtained from Equation 19.5c, which returns the covariance matrix of the PEVs for each of the estimated breeding values (also see Meyer 1989; Tosh and Wilton 1994). The ith diagonal element of this covariance matrix yields a prediction-error variance for individual i of $$ PEV_{ii}=(1-\\rho_{i}^{2})\\sigma^{2}(A) $$ and hence a prediction reliability of $$ \\rho_{i}^{2}=1-\\left(\\frac{P E V_{i i}}{\\sigma^{2}(A)}\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The degree to which $ \\rho_i^2 $ exceeds $ h^2 $ is a measure of the amount of additional information on that individual's breeding value provided by the pedigree (i.e., the additional information beyond that provided by the phenotype of the focal individual). A more subtle, but equally important, point is that the PEV matrix is not a diagonal, but rather contains numerous nonzero off-diagonal elements, as the PBVs for relatives are correlated (because they are based on shared information). Hence, the residual-error structure for the Rausher-Simms regression (Equation 20.20) is complex, requiring GLS, not OLS, regression (Chapter 18; LW Chapter 8). We return to this point below, as it has consequences for tests of genetic trends."
+    },
+    {
+      "type": "discussion",
+      "content": "These results also have important implications for populations under selection. If an individual is lost before it leaves offspring (i.e., its fitness is zero), it will have fewer links in the pedigree than higher-fitness individuals who survive to leave offspring. The breeding-value predictions for individuals of low fitness are thus expected to have lower reliabilities than for individuals with higher fitness, and are thus more influenced by environmental values than those for higher-fitness individuals (Postma 2006). This can bias estimates of the amount of selection on breeding value."
+    },
+    {
+      "type": "discussion",
+      "content": "Postma (2006) noted that besides the prospect of differential bias in PBVs for individuals with different fitnesses, a critical component of Rausher's consistency condition (Equation 20.17b) fails to hold when this regression is based on $ \\widehat{a} $. Recall that when selection is entirely on phenotypic values (i.e., when Equation 20.16b is satisfied), then $$ b_{A}=\\frac{\\sigma(w,A)}{\\sigma^{2}(A)}=\\frac{h^{2}\\sigma(w,z)}{h^{2}\\sigma^{2}(z)}=b_{z} $$ namely, the univariate regression slope is the same when relative fitness is regressed on either breeding (A) or phenotypic (z) value. However, when using predicted breeding values ($ \\widehat{a} $) in place of A, recalling Equation 20.24c yields $$ b_{\\hat{a}}=\\frac{\\sigma(w,\\widehat{a})}{\\sigma^{2}(\\widehat{a})}=\\frac{h^{2}\\sigma(w,z)}{\\rho^{2}h^{2}\\sigma^{2}(z)}=\\frac{b_{z}}{\\rho^{2}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Hence, the slope of the regression of relative fitness on PBV ($ \\hat{a} $) differs from that using phenotypic value (z). Thus, when $ \\rho^2 < 1 $ (as would always be expected in wild pedigrees), $ b_{\\hat{a}} > b_A $, showing that a selection gradient based on predicted breeding values ($ b_{\\hat{a}} $) overestimates the gradient expected for true breeding values ($ b_A $), thus compromising the Rausher-Simms equality test (Equation 20.20) for selection entirely on phenotypes."
+    },
+    {
+      "type": "discussion",
+      "content": "To circumvent this problem, Postma (2006) suggested that the consistency test $ h^{2}S_{z} = S_{A} $ (Equation 20.18) be used instead, as when selection is based entirely on the phenotype of the focal trait, then $$ S_{A}=\\sigma(A,w)=S_{\\hat{a}}=\\sigma(\\widehat{a},w) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "A caveat with this approach is that $ \\sigma(\\widehat{a}, w) $ is a biased estimate of $ \\sigma(A, w) $ in a univariate animal model because the breeding values are estimated separately from fitnesses (Hadfield 2008). When the components are estimated separately, $ \\sigma(\\widehat{a}, w) $ is unbiased only when Equation 20.16b is satisfied (i.e., exactly one of the Robertson consistency conditions is tested). Fortunately, a solution to both these of problems is achieved by jointly modeling the trait and fitness in a bivariate animal model, and then using REML-estimated variance components for consistency tests, as detailed in the following section."
+    }
+  ]
+}

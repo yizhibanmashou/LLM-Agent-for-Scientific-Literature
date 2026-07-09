@@ -1,0 +1,63 @@
+{
+  "id": "Genetics_chapter12_011",
+  "metadata": {
+    "chapter": "Genetics_chapter12",
+    "section": "Introduction",
+    "subsections": [
+      "Analysis of Natural Populations"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter12_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "Analysis of Natural Populations",
+    "heading_path": [
+      "Introduction",
+      "Analysis of Natural Populations"
+    ],
+    "display_heading": "Analysis of Natural Populations"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Mutation-accumulation experiments of the sort described above are extremely labor intensive and require evolutionarily inert controls that are not easily maintained in most species. An alternative approach to characterizing the features of the deleterious mutation process is to evaluate various properties of the distribution of fitness in a natural population and to interpret them in light of their expected values under mutation-selection balance. Morton et al. (1956) and Mukai and Yamaguchi (1974) first suggested how the genomic deleterious mutation rate in a random-mating population might be estimated from the observed inbreeding depression for fitness, provided an estimate of the average degree of dominance were available, and Charlesworth et al. (1990) expanded their approach to obligately selfing populations. Both methods have been generalized by Deng and Lynch (1996b) to yield joint estimators of $ U, \\overline{h} $, and $ \\overline{s} $ for mutations affecting total fitness. Their method, which we review below, requires estimates of both the mean fitness and the genetic variance for fitness in inbred and outbred generations."
+    },
+    {
+      "type": "discussion",
+      "content": "Recall from Chapter 10 that the equilibrium frequency of a deleterious allele under mutation-selection balance is $ u/(h s) $, where u is the genic mutation rate, and $ h s $ is the fractional loss of fitness in heterozygotes. Using this result, and assuming that mutations are distributed among individuals in a Poisson fashion and interact multiplicatively to define total fitness (i.e., there is no epistasis), the mean fitness and genetic variance in fitness in a random-mating (outcrossing) population can be shown to be $$ \\overline{W}_{O}=W_{max}\\exp(-U) $$ and $$ \\sigma_{W}^{2}(O)=\\overline{{W}}_{O}^{2}\\{\\exp[U(\\overline{{h s}})]-1\\} $$ where $W_{max}$ is the expected measure of fitness in a mutation-free individual, and $\\overline{hs}$ denotes the mean effect of a mutation in the heterozygous state. Suppose now that progeny are produced via self-fertilization of a random sample of parental genotypes, and that multiple progeny are assayed per parent. The expected mean fitness and genetic variance in fitness among selfed families are $$ \\overline{{W}}_{S}=W_{m a x}\\exp\\{-{(U/4)}[2+({1/\\widetilde{h}})]\\} $$ $$ \\sigma_{W}^{2}(S)=\\overline{{W}}_{S}^{2}\\{\\exp[(U/4)(\\bar{s}+(1/4)[\\overline{{s/h}}]+\\overline{{h s}})]-1\\} $$ where $ \\widetilde{h} $ is the harmonic mean dominance coefficient of new mutations, and $ \\overline{s/h} $ is the mean value of the ratio s/h for new mutations. These four equations can be rearranged to eliminate the parameter $ W_{max} $, yielding a set of estimators for $ U, \\overline{s} $, and $ \\overline{h} $."
+    },
+    {
+      "type": "discussion",
+      "content": "First, we define a set of observable measures, $$ \\widehat{x}=\\ln\\left(\\frac{\\mathrm{Var}(W_{O})}{\\overline{W}_{O}^{2}}+1\\right) $$ $$ \\widehat{y}=\\ln\\left(\\frac{\\overline{W}_{S}}{\\overline{W}_{O}}\\right) $$ $$ \\widehat{z}=\\ln\\left(\\frac{\\mathrm{Var}(W_{S})}{\\overline{W}_{S}^{2}}+1\\right) $$ where $ \\mathrm{Var}(W_{O}) $ is the observed genetic variance in fitness in the parental generation and $ \\mathrm{Var}(W_{S}) $ is the observed genetic variance in fitness among selfed families. A variety of methods for estimating genetic variances will be covered in the following chapters. Note that $ \\widehat{y} $, the natural logarithm of the ratio of fitnesses observed in selfed and outcrossed generations, is a measure of inbreeding depression, whereas $ \\widehat{x} $ and $ \\widehat{z} $ are, respectively, functions of the squared coefficients of genetic variation of fitness in the random-mating and selfed populations."
+    },
+    {
+      "type": "discussion",
+      "content": "Given information on the means and genetic variances in fitness, $\\widehat{x},\\widehat{y}$, and $\\widehat{z}$ can be computed, and then estimates of the mutation parameters can be obtained from the solutions of Equations 12.11a–d, $$ \\widehat{h}\\simeq\\frac{1}{8\\sqrt{\\widehat{z}/\\widehat{\\boldsymbol{x}}}-4}\\left(C_{h}+\\frac{2-C_{s,h}^{2}}{1+C_{s,h}}\\right) $$ $$ \\widehat{U}\\simeq\\frac{4\\widehat{h}\\widehat{y}}{2\\widehat{h}-1-C_{h}} $$ $$ \\widehat{s}\\simeq\\frac{\\widehat{x}}{\\widehat{U}\\widehat{h}(1+C_{s,h})} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Here, $\\widehat{h}$ and $\\widehat{s}$ are estimates of the arithmetic mean properties of new mutations. Two new terms appearing in these formulae are functions of the distribution of mutational effects: $ C_{h}=\\sigma_{h}^{2}/\\overline{h}^{2} $, the squared coefficient of variation of dominance coefficients for new mutations, and $ C_{s,h}=\\sigma_{s,h}/(\\overline{h}\\cdot\\overline{s}) $, the coefficient of covariation between s and h. Rarely will quantitative estimates of these properties be available. However, $ C_{s,h} $ is expected to be negative (more deleterious mutations tending to be more recessive), and $ C_{h} $ is necessarily positive, although arguments presented in Deng and Lynch (1996b) suggest that it may be small. In the absence of information on these quantities, Equations 12.13a-c can be still be solved by setting $ C_{h}=C_{s,h}=0 $. The estimators will then be biased — the average degree of dominance and the genomic mutation rate in a downward direction, and the average selection coefficient in an upward direction."
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, as in the case of the Bateman-Mukai estimators, the method of Deng and Lynch can yield estimates of one-sided bounds on the mutation parameters. Given these estimates, additional composite measures can also be approximated. For example, the long-term rate of decline in fitness that would result if natural selection were rendered ineffective (as in a very small population) is $$ \\Delta M=\\frac{\\widehat{U}\\widehat{s}}{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Results in Deng and Lynch (1996b) suggest that Equation 12.14 is an almost unbiased estimator because the downward bias in the estimate $ \\widehat{U} $ is balanced by the upward bias in the estimate $ \\widehat{s} $. Moreover, $ \\Delta M $ can be simply estimated by the quantity $ \\widehat{z}/2 $, where $ \\widehat{z} $ is defined in Equation 12.12c."
+    },
+    {
+      "type": "discussion",
+      "content": "Deng and Lynch (1996b) present a parallel set of equations, which provides the basis for parameter estimation by outcrossing ordinarily selfing populations. These estimators tend to be less biased by variance in mutational effects, apparently because most of the bias is caused by highly deleterious recessives, which are normally purged from regularly selfing populations (Chapter 10). Further information on the practical application of the technique, its power as a function of sample size, and its sensitivity to violations of the assumptions of the model is provided in Deng and Lynch (1996b)."
+    },
+    {
+      "type": "discussion",
+      "content": "Although the method of Deng and Lynch has not yet been applied to natural populations, a few estimates of U have been obtained from the observed improvement in fitness in outcrossed progeny of normally self-fertilizing plants. Such estimates make use of the estimator of Charlesworth et al. (1990), $$ U=\\frac{\\widehat{y}}{\\widehat{h}-0.5} $$ where $\\widehat{y}$ is defined in Equation 12.12b. As noted above, this method requires an independent estimate of the degree of dominance, $\\widehat{h}$. A variety of methods for estimating $h$ were covered in Chapter 10, although it must be stressed that these estimate the average degree of dominance of segregating mutations. The latter is likely to be somewhat less than the degree of dominance of new mutations"
+    },
+    {
+      "type": "discussion",
+      "content": "(the parameter that should be used in Equation 12.15), since selection removes more dominant mutations with greater efficiency. In their original survey of the literature, Charlesworth et al. (1990) obtained results that suggested that U must be at least 0.5 for individual fitness components. Johnston and Schoen (1995) obtained estimates of U for total fitness in four populations of the annual plant Amsinckia ranging from 0.24 to 0.87, and Charlesworth et al. (1994) obtained estimates of U ≈ 0.8 and 1.5 for two species of Leavenworthia. All of these estimates are in rough accord with the more direct results cited above for Drosophila and Arabidopsis, supporting the idea that the genomic deleterious mutation rate for total fitness is on the order of 0.2 to 2.0 per individual per generation."
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "id": "Evolution_appendix3_009",
+  "metadata": {
+    "chapter": "Evolution_appendix3",
+    "section": "THE METROPOLIS-HASTINGS ALGORITHM",
+    "subsections": [
+      "Autocorrelation and Sample Size Inflation"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_appendix3_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "THE METROPOLIS-HASTINGS ALGORITHM",
+    "section_level_2": "Autocorrelation and Sample Size Inflation",
+    "heading_path": [
+      "THE METROPOLIS-HASTINGS ALGORITHM",
+      "Autocorrelation and Sample Size Inflation"
+    ],
+    "display_heading": "Autocorrelation and Sample Size Inflation"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "We often expect adjacent members from an MCMC sequence to be positively correlated, and we can quantify the nature of this correlation by using an autocorrelation function. Consider a sequence, $(\\theta_1, \\cdots, \\theta_n)$, of length $n$. Correlations can occur between adjacent members, $\\rho(\\theta_i, \\theta_{i+1}) \\neq 0$, and, more generally, between more distant members, $\\rho(\\theta_i, \\theta_{i+k}) \\neq 0$. The $k$th order autocorrelation, $\\rho_k$, can be estimated by $$ \\begin{align*}\\widehat{\\rho}_k=\\frac{\\mathrm{Cov}(\\theta_t,\\theta_{t+k})}{\\mathrm{Var}(\\theta_t)}=\\frac{\\sum\\limits_{t=1}^{n-k}\\left(\\theta_t-\\overline{\\theta}\\right)\\left(\\theta_{t+k}-\\overline{\\theta}\\right)}{\\sum\\limits_{t=1}^{n-k}\\left(\\theta_t-\\overline{\\theta}\\right)^2},\\quad\\textrm{with}\\quad\\overline{\\theta}=\\frac{1}{n}\\sum\\limits_{t=1}^n\\theta_t\\end{align*} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "An important result from the theory of time series analysis is that if the values of $ \\theta_t $ are from a stationary (and correlated) process, correlated draws still provide an unbiased picture of the distribution provided the sample size is sufficiently large. The reason for this large-sample stipulation is that, strictly speaking, Equation A3.16 applies only to a stationary process."
+    },
+    {
+      "type": "discussion",
+      "content": "Some indication of the required sample size comes from the theory of a first-order autoregressive process $ (AR_{1}) $, where $$ \\theta_{t}=\\mu+\\alpha\\big(\\theta_{t-1}-\\mu\\big)+\\epsilon $$ where $ |\\alpha| < 1 $ and $ \\epsilon $ is white noise, namely, $ \\epsilon \\sim N(0, \\sigma^2) $. Here $ \\rho_1 = \\alpha $ and the $ k $th order autocorrelation is given by $ \\rho_k = \\rho_1^k = \\alpha^k $. Under this process, $ E(\\bar{\\theta}) = \\mu $ with a standard error of $$ \\mathrm{SE}\\left(\\overline{\\theta}\\right)=\\frac{\\sigma}{\\sqrt{n}}\\sqrt{\\frac{1+\\rho}{1-\\rho}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The first ratio is the standard error for white noise, while the second ratio, $ \\sqrt{(1+\\rho)/(1-\\rho)} $, is the sample size inflation factor (SSIF), which shows how the autocorrelation inflates the sampling variance relative to independent samples. For $ \\rho = 0.5, 0.75, 0.9, 0.95 $, and 0.99, the associated SSIF values become 3, 7, 19, 39, and 199, respectively. With an autocorrelation of 0.95 (which is not uncommon in a Metropolis-Hastings sequence), roughly 40 times as many iterations are required for the same precision as with an uncorrelated sequence."
+    },
+    {
+      "type": "discussion",
+      "content": "One historical strategy for reducing autocorrelation is thinning (or subsampling) the output, which involves storing only every $ m $th point after the burn-in period. Suppose a Metropolis-Hastings sequence follows an $ AR_1 $ model, with $ \\rho_1 = 0.99 $. In this case, sampling every 50, 100, and 500 points gives the correlation between the thinned samples as $ 0.605 (= 0.99^{50}) $, 0.366, and 0.007, respectively, returning SSIF values of 2, 1.5, and 1.007. In addition to reducing autocorrelation, thinning the sequence also saves computer memory. However, this throws out a huge amount of the data. If computer memory is not an issue, Geyer (1992) and MacEachern and Berliner (1994) found that it is more efficient (yielding smaller Monte Carlo variances) to keep the entire chain than to use thinning."
+    }
+  ]
+}

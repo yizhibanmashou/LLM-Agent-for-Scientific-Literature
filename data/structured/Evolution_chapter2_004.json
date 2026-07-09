@@ -1,0 +1,35 @@
+{
+  "id": "Evolution_chapter2_004",
+  "metadata": {
+    "chapter": "Evolution_chapter2",
+    "section": "Neutral Evolution in One- and Two-Locus Systems: Introduction",
+    "subsections": [
+      "PROBABILITIES AND TIMES TO FIXATION OR LOSS"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter2_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Neutral Evolution in One- and Two-Locus Systems: Introduction",
+    "section_level_2": "PROBABILITIES AND TIMES TO FIXATION OR LOSS",
+    "heading_path": [
+      "Neutral Evolution in One- and Two-Locus Systems: Introduction",
+      "PROBABILITIES AND TIMES TO FIXATION OR LOSS"
+    ],
+    "display_heading": "PROBABILITIES AND TIMES TO FIXATION OR LOSS"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Because Equation 2.8 denotes the probability density of allele frequency p given that the population is still polymorphic, $$ \\Omega(p_{0},t)=\\int_{1/(2N)}^{1-1/(2N)}\\varphi(p_{t}|p_{0})d p_{t} $$ is the probability that both alleles are still present in generation t. The probability that an allele with initial frequency $ p_{0} $ has been fixed by generation t is $$ \\begin{align*}p_{f}(p_{0},t)=p_{0}+p_{0}(1-p_{0})\\sum_{i=1}^{\\infty}(2i+1)(-1)^{i}\\\\ \\cdot F(1-i,i+2,2,p_{0})\\cdot e^{-i(i+1)t/4N}\\end{align*} $$ whereas the probability of loss of the allele, $ p_l(p_0, t) $, is given by Equation 2.9b with $ (1 - p_0) $ exchanged for $ p_0 $ (Kimura 1955b). Summing up, $$ \\Omega(p_{0},t)+p_{f}(p_{0},t)+p_{l}(p_{0},t)=1 $$ As can be seen from the negative exponential terms in the previous expressions, as $ t \\to \\infty $, $ \\Omega(p_0, t) \\to 0 $, $ p_f(p_0, t) \\to p_0 $, and $ p_i(p_0, t) \\to (1 - p_0) $. Thus, under neutrality, the probability that a particular allele will become fixed is simply equal to its initial frequency, $ p_0 $. It follows that, in averaging over a very large number of replicate populations, the expected allele frequency will remain constant at $ p_0 $, with a fraction $ p_0 $ of all replicates ultimately reaching allele frequency 1, and the remaining fraction $ 1 - p_0 $ having allele frequency 0."
+    },
+    {
+      "type": "discussion",
+      "content": "An issue of special interest is the mean time until an allele is absorbed into either state $ p = 0 $ or $ p = 1 $. Using diffusion approximations (Appendix 1), Kimura and Ohta (1969a) obtained expressions for both quantities, and Kimura (1970) presented a description of the entire probability distributions for absorption times. The following example uses a somewhat simpler approach to arrive at results identical to those of Kimura and Ohta (1969a), and provides yet another illustration of how the effects of random genetic drift scale with population size."
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:2.2]]"
+    }
+  ]
+}

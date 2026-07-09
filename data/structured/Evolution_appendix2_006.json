@@ -1,0 +1,39 @@
+{
+  "id": "Evolution_appendix2_006",
+  "metadata": {
+    "chapter": "Evolution_appendix2",
+    "section": "Appendix: Introduction",
+    "subsections": [
+      "SUMMARIZING THE POSTERIOR DISTRIBUTION"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_appendix2_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Appendix: Introduction",
+    "section_level_2": "SUMMARIZING THE POSTERIOR DISTRIBUTION",
+    "heading_path": [
+      "Appendix: Introduction",
+      "SUMMARIZING THE POSTERIOR DISTRIBUTION"
+    ],
+    "display_heading": "SUMMARIZING THE POSTERIOR DISTRIBUTION"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "How do we extract a Bayesian estimator for some unknown parameter, $ \\theta $? If our mindset is to use some sort of point estimator (as is usually done in classical statistics), then there are a number of candidates. We could follow maximum likelihood and use the mode of the posterior distribution (its maximal value) $$ \\widehat{\\theta}=\\max_{\\theta}\\left[p(\\boldsymbol{\\theta}\\mid\\mathbf{x})\\right] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "We could take the expected value of $ \\theta $ (its mean) given the posterior $$ \\widehat{\\boldsymbol{\\theta}}=\\boldsymbol{E}[\\boldsymbol{\\theta}\\mid\\mathbf{x}]=\\int\\boldsymbol{\\theta}\\boldsymbol{p}(\\boldsymbol{\\theta}\\mid\\mathbf{x})d\\boldsymbol{\\theta} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Another candidate is the median of the posterior, which is more robust than the mean to outliers. Here the estimator satisfies $ \\Pr(\\theta > \\widehat{\\theta} | \\mathbf{x}) = \\Pr(\\theta < \\widehat{\\theta} | \\mathbf{x}) = 0.5 $, hence $$ \\int_{\\widehat{\\theta}}^{+\\infty}p(\\theta\\mid\\mathbf{x})d\\theta=\\int_{-\\infty}^{\\widehat{\\theta}}p(\\theta\\mid\\mathbf{x})d\\theta=\\frac{1}{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "However, using any of the above estimators, or even all three simultaneously, loses the full power of a Bayesian analysis, as the full estimator is the entire posterior density itself. If we cannot obtain the full form of the posterior distribution, then these estimates of general features of the distribution can be presented. However, as we will see in Appendix 3, we can generally obtain the full posterior by simulation using MCMC sampling, and hence the Bayesian estimate of a parameter is often presented as a frequency histogram (potentially smoothed) of the MCMC-generated samples from the posterior distribution (an empirical posterior)."
+    }
+  ]
+}

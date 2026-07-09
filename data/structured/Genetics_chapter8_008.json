@@ -1,0 +1,47 @@
+{
+  "id": "Genetics_chapter8_008",
+  "metadata": {
+    "chapter": "Genetics_chapter8",
+    "section": "Introduction",
+    "subsections": [
+      "Example 2. Compute the product $ \\mathbf{L} = \\mathbf{M}\\mathbf{N} $ where"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter8_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "Example 2. Compute the product $ \\mathbf{L} = \\mathbf{M}\\mathbf{N} $ where",
+    "heading_path": [
+      "Introduction",
+      "Example 2. Compute the product $ \\mathbf{L} = \\mathbf{M}\\mathbf{N} $ where"
+    ],
+    "display_heading": "Example 2. Compute the product $ \\mathbf{L} = \\mathbf{M}\\mathbf{N} $ where"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "$$ \\mathbf{M}=\\begin{pmatrix}{{{3}}}&{{{1}}}&{{{2}}} \\\\{{{2}}}&{{{5}}}&{{{4}}} \\\\{{{1}}}&{{{1}}}&{{{2}}}\\end{pmatrix}\\qquad and\\qquad\\mathbf{N}=\\begin{pmatrix}{{{4}}}&{{{1}}}&{{{0}}} \\\\{{{1}}}&{{{1}}}&{{{3}}} \\\\{{{3}}}&{{{2}}}&{{{2}}}\\end{pmatrix} $$ Writing $\\mathbf{M} = \\begin{pmatrix} \\mathbf{m}_{1} \\\\ \\mathbf{m}_{2} \\\\ \\mathbf{m}_{3} \\end{pmatrix}$ and $\\mathbf{N} = (\\mathbf{n}_{1} \\, \\mathbf{n}_{2} \\, \\mathbf{n}_{3})$, we have $$ \\mathbf{m}_{1}=\\left(\\begin{array}{l l l}{3}&{1}&{2}\\end{array}\\right),\\quad\\mathbf{m}_{2}=\\left(\\begin{array}{l l l}{2}&{5}&{4}\\end{array}\\right),\\quad\\mathbf{m}_{3}=\\left(\\begin{array}{l l l}{1}&{1}&{2}\\end{array}\\right) $$ and $$ \\mathbf{n_{1}}=\\begin{pmatrix}4\\\\ 1\\\\ 3\\end{pmatrix},\\quad\\mathbf{n_{2}}=\\begin{pmatrix}1\\\\ 1\\\\ 2\\end{pmatrix},\\quad\\mathbf{n_{3}}=\\begin{pmatrix}0\\\\ 3\\\\ 2\\end{pmatrix} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The resulting matrix $ \\mathbf{L} $ is $ 3 \\times 3 $. Applying Equation 8.6b, the element in the first row and first column of $ \\mathbf{L} $ is the dot product of the first row vector of $ \\mathbf{M} $ with the first column vector of $ \\mathbf{N} $, $$ \\begin{aligned}L_{11}&=\\mathbf{m_{1}}\\cdot\\mathbf{n_{1}}=\\begin{pmatrix}3&1&2\\end{pmatrix}\\begin{pmatrix}4\\\\ 1\\\\ 3\\end{pmatrix}=\\sum_{k=1}^{3}M_{1k}N_{k1}\\\\&=M_{11}N_{11}+M_{12}N_{21}+M_{13}N_{31}=(3\\times4)+(1\\times1)+(2\\times3)=19\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Computing the other elements gives $$ \\mathbf{L}=\\begin{pmatrix}\\mathbf{m}_{1}\\cdot\\mathbf{n}_{1}&\\mathbf{m}_{1}\\cdot\\mathbf{n}_{2}&\\mathbf{m}_{1}\\cdot\\mathbf{n}_{3}\\\\\\mathbf{m}_{2}\\cdot\\mathbf{n}_{1}&\\mathbf{m}_{2}\\cdot\\mathbf{n}_{2}&\\mathbf{m}_{2}\\cdot\\mathbf{n}_{3}\\\\\\mathbf{m}_{3}\\cdot\\mathbf{n}_{1}&\\mathbf{m}_{3}\\cdot\\mathbf{n}_{2}&\\mathbf{m}_{3}\\cdot\\mathbf{n}_{3}\\end{pmatrix}=\\begin{pmatrix}19&8&7\\\\25&15&23\\\\11&6&7\\end{pmatrix} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Certain dimensional properties must be satisfied when two matrices are to be multiplied. Specifically, since the dot product is defined only for vectors of the same length, for the matrix product MN to be defined, the number of columns in M must equal the number of rows in N. Thus, while $$ \\begin{pmatrix}3&0\\\\1&2\\end{pmatrix}\\begin{pmatrix}4\\\\3\\end{pmatrix}=\\begin{pmatrix}12\\\\10\\end{pmatrix},\\qquad\\begin{pmatrix}4\\\\3\\end{pmatrix}\\begin{pmatrix}3&0\\\\1&2\\end{pmatrix} $$ is undefined."
+    },
+    {
+      "type": "discussion",
+      "content": "Writing $ \\mathbf{M}_{r \\times c} \\mathbf{N}_{c \\times b} = \\mathbf{L}_{r \\times b} $ shows that the inner indices must match, while the outer indices $ (r $ and $ b) $ give the number of rows and columns of the resulting matrix. The order in which matrices are multiplied is critical. In general, AB is not equal to BA. For example, when the order of the matrices in Example 2 is reversed, $$ \\mathbf{N M}=\\left(\\begin{array}{l l l}{4}&{1}&{0}\\\\ {1}&{1}&{3}\\\\ {3}&{2}&{2}\\end{array}\\right)\\left(\\begin{array}{l l l}{3}&{1}&{2}\\\\ {2}&{5}&{4}\\\\ {1}&{1}&{2}\\end{array}\\right)=\\left(\\begin{array}{l l l}{14}&{9}&{12}\\\\ {8}&{9}&{12}\\\\ {15}&{15}&{18}\\end{array}\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Since order is important in matrix multiplication, it has specific terminology. For the product AB, we say that matrix B is premultiplied by the matrix A, or that matrix A is postmultiplied by the matrix B."
+    }
+  ]
+}

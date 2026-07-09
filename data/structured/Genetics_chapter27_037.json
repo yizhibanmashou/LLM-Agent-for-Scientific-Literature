@@ -1,0 +1,51 @@
+{
+  "id": "Genetics_chapter27_037",
+  "metadata": {
+    "chapter": "Genetics_chapter27",
+    "section": "Variance-Component Estimation with Complex Pedigrees",
+    "subsections": [
+      "THE SQUARE ROOT OF A MATRIX"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter27_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Variance-Component Estimation with Complex Pedigrees",
+    "section_level_2": "THE SQUARE ROOT OF A MATRIX",
+    "heading_path": [
+      "Variance-Component Estimation with Complex Pedigrees",
+      "THE SQUARE ROOT OF A MATRIX"
+    ],
+    "display_heading": "THE SQUARE ROOT OF A MATRIX"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "The concept of the square root of a symmetric nonsingular matrix provides another useful matrix tool for the analysis of linear models. In particular, using the square root of the covariance matrix transforms a vector of correlated variables into a new vector of variables with covariance matrix I, implying that the transformed variables are uncorrelated with unit variance."
+    },
+    {
+      "type": "discussion",
+      "content": "Consider a symmetric nonsingular matrix V and define $ V^{1/2} $ as the matrix satisfying $$ \\mathbf{V}^{1/2}\\mathbf{V}^{1/2}=\\mathbf{V} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "In effect, $ \\mathbf{V}^{1/2} $ is the square root of a matrix, in that, when squared, we recover $ \\mathbf{V} $. Denoting the inverse of $ \\mathbf{V}^{1/2} $ as $ \\mathbf{V}^{-1/2} $, we have the following properties $$ \\mathbf{V}^{-1/2}\\mathbf{V}^{1/2}=\\mathbf{I},\\quad\\mathbf{V}^{-1/2}\\mathbf{V}^{-1/2}=\\mathbf{V}^{-1},\\quad\\mathrm{a n d}\\quad\\mathbf{V}^{-1/2}\\mathbf{V}=\\mathbf{V}^{1/2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Likewise, both $ \\mathbf{V}^{1/2} $ and its inverse are symmetric."
+    },
+    {
+      "type": "discussion",
+      "content": "Suppose the random vector y has covariance matrix V and consider the new vector $ \\mathbf{z} = \\mathbf{V}^{-1/2}\\mathbf{y} $. Recalling Equation 8.21b, the resulting covariance matrix for $ \\mathbf{z} $ becomes $$ \\mathbf{V a r}(\\mathbf{z})=\\mathbf{V}^{-1/2}\\mathbf{V a r}(\\mathbf{y})\\mathbf{V}^{-1/2}=\\mathbf{V}^{-1/2}\\mathbf{V}\\mathbf{V}^{-1/2}=\\mathbf{I} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, the transformed variables have unit variance and are uncorrelated. Suppose y is an $ n \\times 1 $ column vector with $ y \\sim \\text{MVN}(\\mu, \\mathbf{V}) $. It follows that $$ \\mathbf{z}=\\mathbf{V}^{-1/2}(\\mathbf{y}-\\boldsymbol{\\mu})\\sim\\mathbf{M V N}(\\mathbf{0},\\mathbf{I}) $$ so that $ z_i \\sim \\mathrm{N}(0,1) $, and hence the transformed variables are independent unit normals. Thus, $$ \\begin{aligned}(\\mathbf{y}-\\boldsymbol{\\mu})^{T}\\mathbf{V}^{-1}(\\mathbf{y}-\\boldsymbol{\\mu})&=(\\mathbf{y}-\\boldsymbol{\\mu})^{T}\\mathbf{V}^{-1/2}\\mathbf{V}^{-1/2}(\\mathbf{y}-\\boldsymbol{\\mu})\\\\&=\\mathbf{z}^{T}\\mathbf{z}\\\\&=\\sum_{i=1}^{n}z_{i}^{2}\\sim\\chi_{n}^{2}\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The last step follows by recalling that the sum of $n$ squared unit normal random variables follows a $\\chi^2$ distribution with $n$ degrees of freedom (Appendix 5). Thus when $\\mathbf{y}$ is multivariate normal, the quadratic form $(\\mathbf{y}-\\boldsymbol{\\mu})^T\\mathbf{V}^{-1}(\\mathbf{y}-\\boldsymbol{\\mu})$ follows a $\\chi^2$ distribution. As we will see shortly, Equation A3.9 is the basis for goodness-of-fit tests of linear models."
+    }
+  ]
+}

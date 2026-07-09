@@ -1,0 +1,47 @@
+{
+  "id": "Evolution_chapter29_027",
+  "metadata": {
+    "chapter": "Evolution_chapter29",
+    "section": "Individual Fitness and the Measurement of Univariate Selection: Introduction",
+    "subsections": [
+      "DESCRIBING PHENOTYPIC SELECTION: INDIVIDUAL FITNESS SURFACES"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter29_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Individual Fitness and the Measurement of Univariate Selection: Introduction",
+    "section_level_2": "DESCRIBING PHENOTYPIC SELECTION: INDIVIDUAL FITNESS SURFACES",
+    "heading_path": [
+      "Individual Fitness and the Measurement of Univariate Selection: Introduction",
+      "DESCRIBING PHENOTYPIC SELECTION: INDIVIDUAL FITNESS SURFACES"
+    ],
+    "display_heading": "DESCRIBING PHENOTYPIC SELECTION: INDIVIDUAL FITNESS SURFACES"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "The fitness (W) of an individual with a trait value of z can be decomposed into the sum of its expected fitness, $ W(z) = E[W \\mid z] $, plus a residual deviation, $ e_W $, $$ W=E[W\\mid z]+e_{W}=W(z)+e_{W} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The residual variance for a given $ z $, $ \\sigma_{e_w}^2(z) $, measures the variance in fitness among individuals with a phenotypic value of $ z $. Estimation of the individual fitness surface is thus a generalized regression problem, with the goal being to choose a candidate function for $ W(z) $ that minimizes the average residual variance, $ E_z[\\sigma_{e_w}^2(z)] $. Because the total variance in fitness ($ \\sigma_W^2 $) equals the sum of the within-group (individuals with the same trait value) and among-group variances in fitness, $$ \\frac{\\sigma_{W}^{2}-E_{z}[\\sigma_{e_{W}}^{2}(z)]}{\\sigma_{W}^{2}}=1-\\frac{E_{z}[\\sigma_{e_{W}}^{2}(z)]}{\\sigma_{W}^{2}} $$ is the fraction of individual fitness variation accounted for by a particular estimate of $ W(z) $, providing a metric for comparing different estimates of the fitness function."
+    },
+    {
+      "type": "discussion",
+      "content": "There are at least two sources of variation that contribute to the fitness residual, $ e_{W} $. First, there can be errors in measuring the actual fitness of an individual (these are almost always ignored, although they induce serious biases; see Hadfield 2008). Second, the actual (or realized) fitness of any particular individual is a random variable distributed around its expected value. Generally, these residual deviations are heteroscedastic, with the residual variance varying with z (Mitchell-Olds and Shaw 1987; Schluter 1988). As we will see later, aster models provide a general strategy for accounting for such errors structures."
+    },
+    {
+      "type": "discussion",
+      "content": "Consider fitness measured by survival to a particular age. While $ W(z) = p_z $ is the probability of survival for an individual with a character value of $ z $, the fitness for a particular individual is a Bernoulli random variable, as it either survives (value of one) or does not (value of zero). The resulting residual has only two possible values, $ e_W = 1 - p_z $ with probability $ p_z $, and $ e_W = -p_z $ with probability $ 1 - p_z $, giving $$ \\sigma_{e_{W}}^{2}(z)=E[(e_{W})^{2}]=(1-p_{z})^{2}p_{z}+p_{z}^{2}(1-p_{z})=p_{z}(1-p_{z}) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Unless $ p_z $ is constant over $ z $, the residuals are heteroscedastic. Note that after accounting for phenotypic-specific differences (here, the $ p_z $ values), there still remains substantial variance in individual fitness. This within-class variance is most extreme at intermediate survival rates ($ p_z \\simeq 1/2 $)."
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, inferences about the individual fitness surface are limited by the range of phenotypes in the population. Unless this range is very large, only a small region of the fitness surface can be explored with any precision. Estimates of the fitness surface at the tails of the current phenotypic distribution are extremely imprecise yet potentially very informative, as they suggest patterns of selection for populations at the margins of the observed range of phenotypes. A further complication is that the fitness surface can change as the environment changes, so that year-to-year estimates can differ (e.g., Kalisz 1986). Such change may require an investigator to choose between a time-averaged fitness surface (which can impart bias) versus a series of year-specific estimates (which suffer from lower power). Finally, as emphasized in Chapter 22, organisms often modify their environments as they evolve, implying that the biotic environment, and hence $ W(z) $, also evolves."
+    }
+  ]
+}

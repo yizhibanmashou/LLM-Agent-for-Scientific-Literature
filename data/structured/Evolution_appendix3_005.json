@@ -1,0 +1,67 @@
+{
+  "id": "Evolution_appendix3_005",
+  "metadata": {
+    "chapter": "Evolution_appendix3",
+    "section": "Appendix: Introduction",
+    "subsections": [
+      "THE METROPOLIS-HASTINGS ALGORITHM"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_appendix3_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Appendix: Introduction",
+    "section_level_2": "THE METROPOLIS-HASTINGS ALGORITHM",
+    "heading_path": [
+      "Appendix: Introduction",
+      "THE METROPOLIS-HASTINGS ALGORITHM"
+    ],
+    "display_heading": "THE METROPOLIS-HASTINGS ALGORITHM"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "The roots of MCMC methods trace back to a problem faced by mathematical physicists in applying Monte Carlo integration, namely, generating random samples from some complex distribution in order to apply Equation A3.1. Their solution was the Metropolis-Hastings algorithm (Metropolis and Ulam 1949; Metropolis et al. 1953; Hastings 1970), which was reviewed by Chib and Greenberg (1995)."
+    },
+    {
+      "type": "discussion",
+      "content": "Suppose our goal is to draw samples from some distribution, $ p(\\theta) = f(\\theta)/K $, where the normalizing constant, K, may be very difficult to compute. Note that Bayesian posteriors are of this form (Equation A2.4b). The Metropolis algorithm (Metropolis and Ulam 1949; Metropolis et al. 1953), which generates a sequence of draws from this distribution, is as follows: 1. Start with any initial value, $ \\theta_{0} $, satisfying $ f(\\theta_{0}) > 0 $."
+    },
+    {
+      "type": "discussion",
+      "content": "2. Using the current value of $\\theta$, sample a candidate point, $\\theta^{*}$, from some jumping distribution, $q(\\theta_1, \\theta_2) = \\Pr(\\theta_1 \\to \\theta_2)$, which is the probability of returning a value of $\\theta_2$ given a previous value of $\\theta_1$. This distribution is also referred to as the proposal distribution or candidate-generating distribution. The only restriction on the jump density in the Metropolis algorithm is that it is symmetric, with $q(\\theta_1, \\theta_2) = q(\\theta_2, \\theta_1)$."
+    },
+    {
+      "type": "discussion",
+      "content": "3. Given the candidate point, $ \\theta^{*} $, calculate the ratio of the density at the candidate and current, $ \\theta_{t-1} $, points, $$ \\alpha=\\frac{p(\\theta^{*})}{p(\\theta_{t-1})}=\\frac{f(\\theta^{*})}{f(\\theta_{t-1})} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Notice that because we are considering the ratio of $ p(x) $ under two different values, the normalizing constant, K, cancels out."
+    },
+    {
+      "type": "discussion",
+      "content": "4. If the jump increases the density ($ \\alpha > 1 $), accept the candidate point (set $ \\theta_t = \\theta^* $) and return to step 2. If the jump decreases the density ($ \\alpha < 1 $), then with a probability of $ \\alpha $ we accept the candidate point, else we reject it and return to step 2. Note that $ \\alpha $ is a ratio of two likelihoods, so the probability of accepting a move is the ratio of the candidate to current likelihoods."
+    },
+    {
+      "type": "discussion",
+      "content": "We can summarize Metropolis sampling as first computing $$ \\alpha=\\min\\left(\\frac{f(\\theta^{*})}{f(\\theta_{t-1})},1\\right) $$ and then accepting a candidate value, $ \\theta^* $, with probability $ \\alpha $ (the probability of a move). This generates a Markov chain, $ (\\theta_0, \\theta_1, \\cdots, \\theta_k, \\cdots) $, as the transition probabilities from $ \\theta_t $ to $ \\theta_{t+1} $ depend only on $ \\theta_t $ and not on $ (\\theta_0, \\cdots, \\theta_{t-1}) $. Following a sufficient burn-in period (of, say, $ k $ steps), the chain approaches its stationary distribution and (as we will demonstrate shortly) samples from the vector $ (\\theta_{k+1}, \\cdots, \\theta_{k+n}) $ are samples from $ p(\\theta) $."
+    },
+    {
+      "type": "discussion",
+      "content": "Hastings (1970) generalized the Metropolis algorithm by using an arbitrary (as opposed to strictly symmetric) transition probability function, $ q(\\theta_1, \\theta_2) = \\Pr(\\theta_1 \\to \\theta_2) $, and setting the acceptance probability for a candidate point as $$ \\alpha=\\min\\left(\\frac{f(\\theta^{*})q(\\theta^{*},\\theta_{t-1})}{f(\\theta_{t-1})q(\\theta_{t-1},\\theta^{*})},1\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "This is the Metropolis-Hastings algorithm, and Equation A3.13 is the Hastings ratio. When the proposal distribution is symmetric, $ q(x, y) = q(y, x) $, we recover the original Metropolis algorithm."
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:A3.3]]"
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:A3.4]]"
+    }
+  ]
+}

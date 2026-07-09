@@ -1,0 +1,83 @@
+{
+  "id": "Genetics_chapter16_004",
+  "metadata": {
+    "chapter": "Genetics_chapter16",
+    "section": "Introduction",
+    "subsections": [
+      "Several Half-sib Families"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter16_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "Several Half-sib Families",
+    "heading_path": [
+      "Introduction",
+      "Several Half-sib Families"
+    ],
+    "display_heading": "Several Half-sib Families"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Equation 16.10b immediately suggests that one approach for combining information from $N$ (unrelated) half-sib families is to use the sum of the squared $t$ statistics (Equation 16.6) for each (informative) marker contrast, $$ T=\\sum_{i=1}^{N}t_{i}^{2}=\\sum_{i=1}^{N}\\frac{\\mathrm{MC}_{i}^{2}}{\\mathrm{SE}_{i}^{2}} $$ where from Equations 16.10a and 16.10b, $$ E(T)\\simeq N\\frac{E(\\mathrm{M C^{2}})}{E(\\mathrm{S E^{2}})}=N\\left[1+(1-2c)^{2}\\frac{n}{4}\\frac{\\sigma_{A}^{2}}{\\sigma_{e}^{2}}\\right] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "(We stress that $ \\sigma_{A}^{2} $ is the additive genetic variance accounted for by the QTL, not the trait as a whole.) A value of T significantly greater than N suggests linkage to a QTL. If the sample size within each marker class is sufficiently large, so that the observed value of $ SE^{2} $ can be taken to be very close to the population value of $ \\sigma^{2} $(MC), then the distribution of T is approximately $ \\chi^{2} $ with N degrees of freedom."
+    },
+    {
+      "type": "discussion",
+      "content": "Rearranging Equation 16.11b suggests the following method-of-moments estimate of $(1-2c)^{2}\\sigma_{A}^{2}$, $$ \\frac{4\\mathbf{Var}(e)}{n}\\left(\\frac{T}{N}-1\\right) $$ where $ \\mathrm{Var}(e) $ is an estimate of $ \\sigma_{e}^{2} $ (the within-marker class variance). Aspects of this approach are further examined by Geldermann (1975), Weller et al. (1990), and van der Beck et al. (1995)."
+    },
+    {
+      "type": "discussion",
+      "content": "A closely related, and more widely used, approach is a nested ANOVA (Neimann-Sørensen and Robertson 1961, Lowry and Schultz 1959), which considers marker effects nested within each sibship. We only briefly consider the properties of nested ANOVA here, as these are extensively discussed in Chapter 18 (where effects of dams are nested within those for sires for the different purpose of estimating genetic variance components summed over all loci). The basic linear model is $$ z_{ijk}=\\mu+s_{i}+m_{ij}+e_{ijk} $$ where $z_{ijk}$ denotes the phenotype of the $k$th individual of marker genotype $j$ from sibship $i$, $s_i$ is the effect of sire $i$, $m_{ij}$ is the effect of marker genotype $j$ in sibship $i$, and $e_{ijk}$ is the within-marker, within-sibship residual. It is assumed that $s$, $m$, and $e$ have means equal to zero, are uncorrelated, and are normally distributed with variances $\\sigma_s^2$ (the between-sire variance), $\\sigma_m^2$ (the between-marker, within-sibship variance), and $\\sigma_e^2$ (the residual or within-marker, within-sibship variance). A significant marker variance indicates linkage to a segregating QTL, and is tested by using the statistic $$ F=\\frac{\\mathbf{M}\\mathbf{S}_{m}}{\\mathbf{M}\\mathbf{S}_{e}} $$ where the mean squares are given in [[SEE_TABLE:18.3]]. Assuming normality, Equation 16.14 follows an $F$ distribution under the null hypothesis that $\\sigma_{m}^{2}=0$. Assuming a balanced design with $N$ sires, each with $n/2$ half-sibs in each marker class, Equation 16.14 has $N$ and $N(n-2)$ degrees of freedom. Chapter 18 discusses the appropriate degrees of freedom under an unbalanced design."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 2. Three studies have attempted to map QTLs influencing milk production characters in dairy cows with nested ANOVA, using electrophoretically scored markers to examine half-sibships. The pioneering study of Neimann-Sørensen and Robertson (1961) used six markers and six production characters in Red Danish cattle, with 123 sires and 12 to 13 daughters per sire. None of the 36 possible marker-trait associations were significant at the 1% level, while three were significant at the 5% level. Four production characters in Holsteins (14 markers) and Guernseys (15 markers) were examined by Gonyon et al. (1987) and Haenlein et al. (1987), respectively. In Holsteins, the average number of sires was 181, with an average of 5.3 daughters per sire. Of 56 possible marker-character combinations, six were significant at the 1% level, and another three were significant at the 5% level. The sample sizes were smaller in Guernseys, with an average of 88 sires and 5.4 daughters per sire. None of the resulting 64 marker-character combinations were significant at the 1% level, while three were significant at the 5% level."
+    },
+    {
+      "type": "discussion",
+      "content": "Taking into account the problem of multiple comparisons, the Red Danish data do not show convincing evidence of marker effects, as the probability of finding 3 (or more) of 36 tests significant at the 5% level is 0.10. The same is true for the Guernsey data, as the probability of 3 (or more) out of 64 tests being significant at the 5% level is 0.40. On the other hand, at least some of the Holstein associations are likely to be significant, even after accounting for multiple comparisons."
+    },
+    {
+      "type": "discussion",
+      "content": "The connection between sums of squared marker contrasts used in $t$ tests (Equation 16.11) and nested ANOVAs can be seen by considering the marker mean squares, $MS_{m}$, which can be expressed as a function of the marker contrasts, $$ \\mathrm{M S}_{m}=\\frac{1}{N}\\sum_{i=1}^{N}\\frac{n}{2}\\left[\\left(\\overline{z}_{i1}-\\overline{z}_{i.}\\right)^{2}+\\left(\\overline{z}_{i2}-\\overline{z}_{i.}\\right)^{2}\\right]=\\frac{n}{4N}\\sum_{i=1}^{N}\\mathrm{M C}_{i}^{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The first equality follows from [[SEE_TABLE:18.3]], while the second follows by noting that the mean phenotype of progeny of the ith sire is $ \\overline{z}_{i\\cdot} = (\\overline{z}_{i1} + \\overline{z}_{i2})/2 $, where $ \\overline{z}_{ij} $ is the mean trait value for marker j in family i."
+    },
+    {
+      "type": "discussion",
+      "content": "Again referring to [[SEE_TABLE:18.3]], we see that for a balanced design the mean squares have expected values of $$ E(\\mathrm{\\bf MS}_{m})=\\sigma_{e}^{2}+n\\sigma_{m}^{2}\\qquad\\mathrm{and}\\qquad E(\\mathrm{\\bf MS}_{e})=\\sigma_{e}^{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td rowspan=\"2\">N</td><td colspan=\"2\">$ \\Delta = 0.10 $</td><td colspan=\"2\">$ \\Delta = 0.05 $</td><td colspan=\"2\">$ \\Delta = 0.01 $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>n</td><td style='text-align: center; word-wrap: break-word;'>$ N_T $</td><td style='text-align: center; word-wrap: break-word;'>n</td><td style='text-align: center; word-wrap: break-word;'>$ N_T $</td><td style='text-align: center; word-wrap: break-word;'>n</td><td style='text-align: center; word-wrap: break-word;'>$ N_T $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>5</td><td style='text-align: center; word-wrap: break-word;'>150 $ ^\\circ $</td><td style='text-align: center; word-wrap: break-word;'>1,505</td><td style='text-align: center; word-wrap: break-word;'>290</td><td style='text-align: center; word-wrap: break-word;'>2,905</td><td style='text-align: center; word-wrap: break-word;'>1450</td><td style='text-align: center; word-wrap: break-word;'>14,505</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>20</td><td style='text-align: center; word-wrap: break-word;'>40</td><td style='text-align: center; word-wrap: break-word;'>1,620</td><td style='text-align: center; word-wrap: break-word;'>110</td><td style='text-align: center; word-wrap: break-word;'>4,420</td><td style='text-align: center; word-wrap: break-word;'>540</td><td style='text-align: center; word-wrap: break-word;'>21,620</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>100</td><td style='text-align: center; word-wrap: break-word;'>22</td><td style='text-align: center; word-wrap: break-word;'>4,500</td><td style='text-align: center; word-wrap: break-word;'>40</td><td style='text-align: center; word-wrap: break-word;'>8,100</td><td style='text-align: center; word-wrap: break-word;'>200</td><td style='text-align: center; word-wrap: break-word;'>40,100</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>200</td><td style='text-align: center; word-wrap: break-word;'>14</td><td style='text-align: center; word-wrap: break-word;'>5,800</td><td style='text-align: center; word-wrap: break-word;'>28</td><td style='text-align: center; word-wrap: break-word;'>11,400</td><td style='text-align: center; word-wrap: break-word;'>132</td><td style='text-align: center; word-wrap: break-word;'>53,000</td></tr></table>"
+    },
+    {
+      "type": "discussion",
+      "content": "Note: The QTL effect is measured by $\\Delta = (1 - 2c)^{2}\\sigma_{A}^{2}/\\sigma_{e}^{2}$, where $c$ is the marker-QTL recombination frequency. Here $\\sigma_{e}^{2}$ is the residual variance, i.e., the variance within half-sib families not accounted for by the marker effects. $N$ and $n$ denote the number of sires and the number of offspring per sire, assuming $n/2$ offspring per marker class per sire. $N_{T} = N(2n + 1)$ is the total number of genotyped individuals (one for each sire, dam, and offspring). All sires are assumed to be marker informative, and we assume that $N$ is sufficiently large that at least one family is QTL-informative. The number $N(\\gamma)$ of random sires required to have probability $\\gamma$ that at least one of them is QTL-informative (for a QTL with $n_{Q}$ alleles with frequencies $q_{1}, \\cdots, q_{n_{Q}}$) satisfies $\\Pr(\\text{none of the } N \\text{ sires are informative}) = \\left(\\sum_{i=1}^{n_{Q}} q_{i}^{2}\\right)^{N(\\gamma)} = 1 - \\gamma$. Solving gives $N(\\gamma) = \\ln(1 - \\gamma)/\\ln\\left(\\sum_{i=1}^{n_{Q}} q_{i}^{2}\\right) \\geq \\gamma/\\ln(n_{Q})$, where the last step follows from $\\sum_{i=1}^{n_{Q}} q_{i}^{2} \\geq 1/n_{Q}$ and $\\ln(1 - \\gamma) \\simeq -\\gamma$. with Equations 16.10b and 16.15 gives, $$ \\sigma_{m}^{2}=\\frac{E(\\mathrm{M S}_{m})-E(\\mathrm{M S}_{e})}{n}=(1-2c)^{2}\\frac{\\sigma_{A}^{2}}{4} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, an estimate of the QTL effect (measured by its additive variance, scaled by the distance between QTL and marker), can be obtained from the observed mean squares."
+    },
+    {
+      "type": "discussion",
+      "content": "One immediate drawback of measuring a QTL effect by its variance in an outbred population is that even a completely linked QTL with a large effect can nonetheless have a small $ \\sigma_{m}^{2} $. Consider a strictly additive diallelic QTL with allele frequency p, where $ \\sigma_{A}^{2}=2a^{2}p(1-p) $. Even if a is large, the additive genetic variance can still be quite small if the QTL allele frequencies are near zero or one. An alternative way of visualizing this relationship is to note that the probability of a QTL-informative sire is $ 2p(1-p) $. If this is small, even if a is large, $ \\sigma_{A}^{2} $ will be small, as most families will not be informative. In those rare informative families, however, the between-marker effect is large. Combining this"
+    },
+    {
+      "type": "discussion",
+      "content": "[[FIGURE:16.2]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Contrast this to the situation with inbred-line crosses, where the QTL effect estimates $ 2a $, since here all families are informative, rather than the fraction $ 2p(1-p) $ seen an outbred population."
+    }
+  ]
+}

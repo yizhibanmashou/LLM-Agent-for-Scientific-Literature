@@ -1,0 +1,47 @@
+{
+  "id": "Genetics_chapter17_002",
+  "metadata": {
+    "chapter": "Genetics_chapter17",
+    "section": "Parent-Offspring Regression",
+    "subsections": [
+      "Balanced Data"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter17_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Parent-Offspring Regression",
+    "section_level_2": "Balanced Data",
+    "heading_path": [
+      "Parent-Offspring Regression",
+      "Balanced Data"
+    ],
+    "display_heading": "Balanced Data"
+  },
+  "blocks": [
+    {
+      "type": "proposition",
+      "content": "It is a rather exceptional circumstance when one has the same amount of data from all families, but to simplify discussion, we will start with the assumption that only a single offspring and a single parent are observed in each family. The appropriate linear model for such an analysis is $$ z_{oi}=\\alpha+\\beta_{op}z_{pi}+e_{i} $$ where $ z_{oi} $ and $ z_{pi} $ represent the offspring and parent phenotypes for the $ i $th family, $ \\alpha = \\mu_o - \\beta_{op} \\mu_p $ is the intercept, $ \\beta_{op} $ is the regression coefficient, and $ e_i $ is the residual deviation from the regression. In statistical terms, from Chapter 3 we know that the least-squares regression coefficient, $ b_{op} = \\text{Cov}(z_o, z_p) / \\text{Var}(z_p) $, provides an estimate of $ \\beta_{op} $. If there are no environmental causes of resemblance between parents and offspring, we then have (from Chapter 7), $$ E(b_{op})=\\frac{\\sigma(z_{o},z_{p})}{\\sigma^{2}(z_{p})}\\simeq\\frac{(\\sigma^{2}_{A}/2)+(\\sigma^{2}_{AA}/4)+(\\sigma^{2}_{AAA}/8)+\\cdots}{\\sigma^{2}_{z}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, under the stated assumptions, a simple (possibly upwardly biased) estimate of $ h^{2} = \\sigma_{A}^{2} / \\sigma_{z}^{2} $ is twice the (single) parent-offspring regression, $ 2b_{op} $."
+    },
+    {
+      "type": "discussion",
+      "content": "Greater precision is possible when both parents can be measured, as one can then regress offspring phenotypes on the mean phenotypes of their parents (also known as the midparent values). Our model is now slightly altered to become $$ z_{oi}=\\alpha+\\beta_{o\\overline{p}}\\left(\\frac{z_{mi}+z_{fi}}{2}\\right)+e_{i} $$ where $z_{mi}$ and $z_{fi}$ refer to the phenotypes of mothers and fathers. The least-squares slope of the midparent-offspring regression, $b_{o\\overline{p}}$, is a direct estimate of the heritability. To obtain this result, let us assume that the phenotypic variance is the same in both sexes and in both generations and that the resemblance between relatives is independent of their sex. We then have $$ \\begin{aligned}{b_{o\\overline{{p}}}}&{{}=\\frac{\\operatorname{Cov}[z_{o},(z_{m}+z_{f})/2]}{\\operatorname{Var}[(z_{m}+z_{f})/2]}}\\\\ {}&{{}=\\frac{[\\operatorname{Cov}(z_{o},z_{m})+\\operatorname{Cov}(z_{o},z_{f})]/2}{[\\operatorname{Var}(z)+\\operatorname{Var}(z)]/4}}\\\\ {}&{{}=\\frac{2\\operatorname{Cov}(z_{o},z_{p})}{\\operatorname{Var}(z)}=2b_{o p}}\\\\ \\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "In obtaining this result, we have assumed that there is no assortative mating, i.e., $ \\mathrm{Cov}(z_m, z_f) = 0 $. Referring to Equation 17.1, we see that $ b_{o\\overline{p}} \\simeq \\sigma_A^2 / \\sigma_z^2 $, ignoring terms involving epistasis."
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, consider the situation when multiple $(n)$ offspring are measured in each family. The expected phenotypic covariance of a parent $i$ and the average of its $j=1,\\cdots,n$ offspring may be written $\\sigma[(\\sum_{j=1}^{n}z_{oij}/n),z_{p}]$. Under the assumptions of the previous paragraph, all $n$ of the covariance terms contained in this expression have the same expected value, reducing it to $n\\sigma(z_{o},z_{p})/n=\\sigma(z_{o},z_{p})$, which is the same as the expectation for single offspring. Thus, provided family sizes are equal, the interpretation of a parent-offspring regression is the same whether individual offspring data or the progeny means are used in the analysis."
+    },
+    {
+      "type": "discussion",
+      "content": "The results for the multiple-offspring regression help clarify why heritabilities are usually estimated from regression rather than correlation coefficients. Assuming equal phenotypic variances in the two generations, the correlation between single offspring and single parents, $ r_{op} $, is identical to the regression coefficient $ b_{op} $ (see Equation 3.15b). The single offspring-midparent regression, $ r_{op} $, is equal to $ b_{op}/\\sqrt{2} $, a simple transformation. However, with multiple offspring per family, the variance of offspring family means is a function of both the family size and the heritability itself (see next section), rendering the interpretation of the correlation coefficient difficult. Such problems do not arise with the regression coefficient, which does not involve the use of the offspring family variance. The following section provides a broader coverage of the issues that arise when multiple offspring are assayed per family."
+    }
+  ]
+}

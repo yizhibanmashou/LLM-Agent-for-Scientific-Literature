@@ -1,0 +1,47 @@
+{
+  "id": "Evolution_chapter30_006",
+  "metadata": {
+    "chapter": "Evolution_chapter30",
+    "section": "SELECTION ON MULTIVARIATE PHENOTYPES: DIFFERENTIALS AND GRADIENTS",
+    "subsections": [
+      "Changes in the Covariance Matrix: The Quadratic Selection Differential Matrix, C"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter30_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "SELECTION ON MULTIVARIATE PHENOTYPES: DIFFERENTIALS AND GRADIENTS",
+    "section_level_2": "Changes in the Covariance Matrix: The Quadratic Selection Differential Matrix, C",
+    "heading_path": [
+      "SELECTION ON MULTIVARIATE PHENOTYPES: DIFFERENTIALS AND GRADIENTS",
+      "Changes in the Covariance Matrix: The Quadratic Selection Differential Matrix, C"
+    ],
+    "display_heading": "Changes in the Covariance Matrix: The Quadratic Selection Differential Matrix, C"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Motivated by the univariate case wherein $ C = \\sigma[w, (z - \\mu)(z - \\mu)] $, the multivariate quadratic selection differential is defined as the square $ (n \\times n) $ matrix, C, whose elements are the covariances between all pairs of quadratic deviations, $ (z_i - \\mu_i)(z_j - \\mu_j) $, and relative fitness, w, namely, $$ C_{i j}=\\sigma[w,(z_{i}-\\mu_{i})(z_{j}-\\mu_{j})] $$ As derived in Example 30.2, Lande and Arnold (1983) showed that $$ \\mathbf{C}=\\boldsymbol{\\sigma}[w,(\\mathbf{z}-\\boldsymbol{\\mu})(\\mathbf{z}-\\boldsymbol{\\mu})^{T}]=\\mathbf{P}^{*}-\\mathbf{P}+\\mathbf{S}\\mathbf{S}^{T} $$ where P and $ P^{*} $ are, respectively, the phenotypic covariance matrices before- and after-selection. If no quadratic selection is acting, the covariance between each quadratic deviation and fitness is zero, and with C = 0. In this case, Equation 30.7b returns the within-generation change in P resulting from selection as $$ P_{ij}^{*}-P_{ij}=-S_{i}S_{j} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "This demonstrates that the $S_i S_j$ term corrects $C_{ij}$ for the change in covariance caused by directional selection alone. This expression is the multivariate extension of the condition $\\sigma^2(z^*) - \\sigma^2(z) = P^* - P = -S^2$ for a single trait (Equation 29.16a); the latter expression follows as a special case ($i = j$) for Equation 30.7c."
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:30.2]]"
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:30.3]]"
+    },
+    {
+      "type": "definition",
+      "content": "Substituting these results into Equation 30.8b yields $$ \\begin{aligned}\\mathbf{P}^{*}&=\\int\\left(\\mathbf{z}-\\boldsymbol{\\mu}\\right)\\left(\\mathbf{z}-\\boldsymbol{\\mu}\\right)^{T}\\boldsymbol{w}(\\mathbf{z})\\boldsymbol{p}(\\mathbf{z})\\mathrm{d}\\mathbf{z}-\\mathbf{S}\\mathbf{S}^{T}-\\mathbf{S}\\mathbf{S}^{T}+\\mathbf{S}\\mathbf{S}^{T}\\\\&=E\\left[\\boldsymbol{w}(\\mathbf{z})\\cdot\\left(\\mathbf{z}-\\boldsymbol{\\mu}\\right)\\left(\\mathbf{z}-\\boldsymbol{\\mu}\\right)^{T}\\right]-\\mathbf{S}\\mathbf{S}^{T}\\end{aligned} $$ Because $ E[w(\\mathbf{z})] = 1 $, we can write $ \\mathbf{P} = E[w(\\mathbf{z})] \\cdot \\mathbf{P} $. Using the definition of $ \\mathbf{P} $, $$ \\begin{aligned}\\mathbf{P}^{*}-\\mathbf{P}&=E\\left[w(\\mathbf{z})\\cdot(\\mathbf{z}-\\boldsymbol{\\mu})\\left(\\mathbf{z}-\\boldsymbol{\\mu}\\right)^{T}\\right]-\\mathbf{S}\\mathbf{S}^{T}-E[w(\\mathbf{z})]\\cdot E\\left[(\\mathbf{z}-\\boldsymbol{\\mu})\\left(\\mathbf{z}-\\boldsymbol{\\mu}\\right)^{T}\\right]\\\\&=\\sigma\\left[w(\\mathbf{z}),(\\mathbf{z}-\\boldsymbol{\\mu})(\\mathbf{z}-\\boldsymbol{\\mu})^{T}\\right]-\\mathbf{S}\\mathbf{S}^{T}\\quad(30.8e\\end{aligned} $$ with the last equality following from the definition of a covariance, $ \\sigma(x,y) = E(x \\cdot y) - E(x)E(y) $. As was the case for S, the fact that $ C_{ij} $ is a covariance immediately allows us to bound its range using the opportunity for selection (Chapter 29). Because $ \\sigma^2(x, y) \\leq \\sigma^2(x) \\sigma^2(y) $, $$ C_{i j}^{2}\\leq\\sigma^{2}(w)\\sigma^{2}[(z_{i}-\\mu_{i})(z_{j}-\\mu_{j})]=I\\sigma^{2}[(z_{i}-\\mu_{i})(z_{j}-\\mu_{j})] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "When $ z_{i} $ and $ z_{j} $ are bivariate-normal, then (Kendall and Stuart 1983), $$ \\sigma^{2}[(z_{i}-\\mu_{i})(z_{j}-\\mu_{j})]=P_{i j}^{2}+P_{i i}P_{j j}=P_{i j}^{2}(1+\\rho_{i j}^{-2}) $$ where $ \\rho_{ij} $ is the phenotypic covariance between $ z_{i} $ and $ z_{j} $. Hence, for Gaussian-distributed phenotypes, $$ \\left|\\frac{C_{ij}}{P_{ij}}\\right|\\leq\\sqrt{I}\\sqrt{1+\\rho_{ij}^{-2}} $$ which is a variant of the original bound based on I, as suggested by Arnold (1986). Note that when $ i = j $, $ \\rho_{ii} = 1 $, and we recover Equation 29.18c."
+    }
+  ]
+}

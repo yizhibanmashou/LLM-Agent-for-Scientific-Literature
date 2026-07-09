@@ -1,0 +1,43 @@
+{
+  "id": "Genetics_chapter27_029",
+  "metadata": {
+    "chapter": "Genetics_chapter27",
+    "section": "Variance-Component Estimation with Complex Pedigrees",
+    "subsections": [
+      "Correlations Between Characters"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter27_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Variance-Component Estimation with Complex Pedigrees",
+    "section_level_2": "Correlations Between Characters",
+    "heading_path": [
+      "Variance-Component Estimation with Complex Pedigrees",
+      "Correlations Between Characters"
+    ],
+    "display_heading": "Correlations Between Characters"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Path analysis can also be used to describe the correlation between two different characters, x and y, in the same individual. Here we denote the two phenotypes as $$ z_{x}=G_{x}+E_{x} $$ $$ z_{y}=G_{y}+E_{y} $$ where, as usual, $E_x$ has a mean of zero and is independent of $G_x$, and the same properties apply to $E_y$ and $G_y$. The path diagram joining the two traits is drawn in its most general form in Figure A2.4. The path $G_x \\leftrightarrow G_y$ indicates the possibility of a correlation between genotypic values of the two traits, owing to their expression being mutually determined by shared genes. Correlation between the environmental effects on the two traits is denoted by $\\rho_e$, while those between the genotypic value of one trait and the environmental deviation of the other are indicated by $\\rho_{xe,yg}$ and $\\rho_{xg,ye}$. The phenotypic correlation between"
+    },
+    {
+      "type": "discussion",
+      "content": "Figure A2.4 Path diagram for the phenotypic correlation between two characters $ (z_{x} $ and $ z_{y} $) in terms of genetic values $ (G_{x} $ and $ G_{y} $) and environmental deviations $ (E_{x} $ and $ E_{y} $). characters $x$ and $y$, $\\rho_{xy}$, derives from four possible paths: $z_x \\leftarrow G_x \\leftrightarrow G_y \\rightarrow z_y$, $z_x \\leftarrow E_x \\leftrightarrow E_y \\rightarrow z_y$, $z_x \\leftarrow E_x \\leftrightarrow G_y \\rightarrow z_y$, and $z_x \\leftarrow G_x \\leftrightarrow E_y \\rightarrow z_y$. Summing the appropriate products of path and correlation coefficients, $$ \\rho_{x y}=h_{x}\\rho_{g}h_{y}+e_{x}\\rho_{e}e_{y}+e_{x}\\rho_{x e,y g}h_{y}+e_{y}\\rho_{x g,y e}h_{x} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Note that there are only two arrows pointing to $z_{x}$ and that these come from variables that are uncorrelated (as $E_{x}$ and $G_{x}$ are not connected by any paths). The same is true for $z_{y}$. Thus, by the equation of complete determination, $$ \\begin{array}{l}h_{x}^{2}+e_{x}^{2}=1\\\\h_{y}^{2}+e_{y}^{2}=1\\end{array} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Rearranging and substituting $ e_x = \\sqrt{1 - h_x^2} $ and $ e_y = \\sqrt{1 - h_y^2} $ into Equation A2.11, $$ \\begin{aligned}\\rho_{xy}&=h_{x} h_{y}\\rho_{g}+\\rho_{e}\\sqrt{(1-h_{x}^{2})(1-h_{y}^{2})}\\\\&\\quad+\\rho_{xe,yg}h_{y}\\sqrt{1-h_{x}^{2}}+\\rho_{xg,ye}h_{x}\\sqrt{1-h_{y}^{2}}\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, the phenotypic correlation between two traits is entirely described in terms of correlations between components of the traits and their heritabilities. Frequently in quantitative-genetic applications, the correlations between $ E_{x} $ and $ G_{y} $ and between $ E_{y} $ and $ G_{x} $ are zero. In this case, Equation A2.12 reduces to $$ \\rho_{x y}=h_{x}h_{y}\\rho_{g}+\\rho_{e}\\sqrt{(1-h_{x}^{2})(1-h_{y}^{2})} $$"
+    }
+  ]
+}

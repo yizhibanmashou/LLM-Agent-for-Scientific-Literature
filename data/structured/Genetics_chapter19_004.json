@@ -1,0 +1,60 @@
+{
+  "id": "Genetics_chapter19_004",
+  "metadata": {
+    "chapter": "Genetics_chapter19",
+    "section": "Introduction",
+    "subsections": [
+      "THE CLASSICAL APPROACH"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter19_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [
+      "19.1"
+    ],
+    "section_level_1": "Introduction",
+    "section_level_2": "THE CLASSICAL APPROACH",
+    "heading_path": [
+      "Introduction",
+      "THE CLASSICAL APPROACH"
+    ],
+    "display_heading": "THE CLASSICAL APPROACH",
+    "table_reference_keys": [
+      "chapter19:19.1"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "The most commonly used methodology for twin analysis relies on the simple one-way analysis of variance (Kempthorne and Osborne 1961, Haseman and Elston 1970, Christian et al. 1974, Kang et al. 1974, Eaves et al. 1978, Martin et al. 1978). Separate analyses are performed for monozygotic and dizygotic twins using the layout given in [[SEE_TABLE:19.1]]. Since twin groups always consist of two individuals, this is one of the few designs in quantitative-genetic analysis that is always perfectly balanced."
+    },
+    {
+      "type": "proposition",
+      "content": "For both types of twins, we start with the simple linear model $$ z_{ij}=\\mu+b_{i}+e_{ij} $$ where $z_{ij}$ is the phenotype of the $j$th member ($j=1$ or 2) of the $i$th pair, $b_{i}$ is the effect of the $i$th pair, and $e_{ij}$ is the residual error resulting from segregation (in the case of dizygotic twins) and environmental variance. As usual, we assume that the $e_{ij}$ have zero expectations, are uncorrelated with each other, and have common variance within each family, $\\sigma_{e}^{2}$. The twin pairs within each analysis are also assumed to be a random sample of the entire population so that $E(b_{i})=0$. For monozygotic and dizygotic twin analyses respectively, we denote the variance among pairs by $\\sigma_{b}^{2}(\\mathrm{MZ})$ and $\\sigma_{b}^{2}(\\mathrm{DZ})$ and the variance within pairs by $\\sigma_{e}^{2}(\\mathrm{MZ})$ and $\\sigma_{e}^{2}(\\mathrm{DZ})$. As in the case of sib analysis (Chapter 18), estimates of the within- and among-pair components of variance are obtained by setting the observed mean squares equal to their expectations and solving. The observed variance components can, in turn, be used to derive inferences about causal sources of phenotypic variance. From Equation 19.1, it can be seen that under the assumption of independent residuals, the expected among-pair variance is equivalent to the covariance of members of the same pair, $ \\sigma(z_{i1}, z_{i2}) = \\sigma(b_i, b_i) = \\sigma_b^2 $. In causal terms, for monozygotic twins, this is equivalent to $$ \\sigma_{b}^{2}(\\mathrm{M Z})=\\sigma_{G}^{2}+\\sigma_{E_{c}}^{2}(\\mathrm{M Z}) $$ where $\\sigma_{G}^{2}$ is the total genetic variance, and $\\sigma_{E_{c}}^{2}$ (MZ) is the variance due to common familial environment. The genetic covariance between monozygotic twins is equal to the total genetic variance because of the complete genetic identity of the individuals involved. For dizygotic twins, $$ \\sigma_{b}^{2}(\\mathbf{D Z})=\\frac{1}{2}\\sigma_{A}^{2}+\\frac{1}{4}\\sigma_{D}^{2}+\\frac{1}{4}\\sigma_{A A}^{2}+\\cdots+\\sigma_{E_{c}}^{2}(\\mathbf{D Z}) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Separate notation is needed for the variance due to common familial environment because it is not necessarily the same in the two types of twins. Since $ \\sigma_{z}^{2} = \\sigma_{b}^{2} + \\sigma_{e}^{2} $, it follows that the remainder of the phenotypic variance is in the within-pair component. Therefore, $$ \\sigma_{e}^{2}(\\mathbf{M}\\mathbf{Z})=\\sigma_{E_{s}}^{2}(\\mathbf{M}\\mathbf{Z}) $$ and $$ \\sigma_{e}^{2}(\\mathrm{D Z})=\\frac{1}{2}\\sigma_{A}^{2}+\\frac{3}{4}\\sigma_{D}^{2}+\\frac{3}{4}\\sigma_{A A}^{2}+\\cdots+\\sigma_{E_{s}}^{2}(\\mathrm{D Z}) $$ where the terms $\\sigma_{E_{s}}^{2}(\\mathrm{MZ})$ and $\\sigma_{E_{s}}^{2}(\\mathrm{DZ})$ refer to the residual environmental variance, i.e., environmental variance not attributable to common familial effects (Chapter 6)."
+    },
+    {
+      "type": "discussion",
+      "content": "All of the procedures outlined in Chapter 18 for the one-way analysis of variance of sibs apply to twin analysis. From [[SEE_TABLE:19.1]], it can be seen that the among-pair variance is estimated by $$ Var(b)=\\frac{MS_{b}-MS_{e}}{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Taking the sampling variance of the mean squares to be approximately $ 2(\\mathrm{MS})^{2}/N $ (from Equation 18.19), and recalling that the mean squares are distributed independently under a balanced design, the large-sample variance of $ \\mathrm{Var}(b) $ is $$ \\mathrm{Var}[\\mathrm{Var}(b)]\\simeq\\frac{\\mathrm{Var}(\\mathrm{MS}_{b})+\\mathrm{Var}(\\mathrm{MS}_{e})}{4}=\\frac{(\\mathrm{MS}_{b})^{2}+(\\mathrm{MS}_{e})^{2}}{2N} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The within-pair variance is approximated by $$ \\mathrm{Var}(e)=\\mathrm{MS}_{e} $$ and its large-sample variance is $$ \\mathbf{Var}[\\mathbf{Var}(e)]\\simeq2(\\mathbf{MS}_{e})^{2}/N $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Combining the estimators for $ \\sigma_{b}^{2} $ and $ \\sigma_{e}^{2} $, we obtain $$ \\mathrm{Var}(z)=\\frac{\\mathrm{MS}_{b}+\\mathrm{MS}_{e}}{2} $$ as the estimator of $\\sigma_{z}^{2}$. Its large-sample variance estimator is identical to that of Var(b). Confidence intervals for the within- and among-pair components of variance can be obtained by using Equations 18.22 and 18.23."
+    },
+    {
+      "type": "discussion",
+      "content": "Recalling the arguments laid out in Chapter 18, the ratio of mean squares, $ F = MS_b/MS_e $, provides a test statistic for evaluating the significance of the among-pair component of variance. The null hypothesis of no pair effects is tested by referring to standard $ F $-distribution tables and comparing the observed $ F $ with the 5% or 1% critical values associated with $ (N - 1) $ and $ N $ degrees of freedom."
+    }
+  ]
+}

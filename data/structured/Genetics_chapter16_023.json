@@ -1,0 +1,35 @@
+{
+  "id": "Genetics_chapter16_023",
+  "metadata": {
+    "chapter": "Genetics_chapter16",
+    "section": "Introduction",
+    "subsections": [
+      "Affected Pedigree Member Tests"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter16_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "Affected Pedigree Member Tests",
+    "heading_path": [
+      "Introduction",
+      "Affected Pedigree Member Tests"
+    ],
+    "display_heading": "Affected Pedigree Member Tests"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "In many cases, the investigator may have a number of pedigrees, each containing several affected members. While an affected sib-pair analysis could be used, there is potentially more information to be gained by considering all affected relatives, not just those that happen to be sibs (or some other group of like relatives). This is the motivation behind an affected pedigree member, or APM, analysis wherein all pairs of doubly affected relatives within each pedigree are examined in a single analysis. One immediate obstacle to such an analysis is ascertaining the ibid status for marker alleles within each pair of relatives. At a minimum, this requires genotyping all individuals within a pedigree, not just those who are affected. Further, for late-onset diseases (such as Alzheimer's), it is often impossible to genotype the parents, and hence estimates of ibid status of sib-pairs can be equivocal, at best. Instead of working with ibid status, Lange (1986a,b) suggested using the identity by state (ibs) status among marker alleles. While ibis status is trivial to ascertain, ibis-based tests are expected to have lower power unless the marker locus is sufficiently polymorphic that ibis status is a strong indicator of ibid status."
+    },
+    {
+      "type": "discussion",
+      "content": "While Lange’s initial suggestion was to use ibs status for pairs of affected sibs, Weeks and Lange (1988) generalized this approach to consider all pairs of affected members within a pedigree, and a number of extensions have been proposed (Weeks and Lange 1992, Ward 1993, Schroeder et al. 1994, Brown et al. 1994, Davis et al. 1996). The APM test of Weeks and Lange is developed as follows. Consider a pair of affected relatives, i and j, which have marker genotypes $ M_{i1}M_{i2} $ and $ M_{j1}M_{j2} $. If the marker is linked to a DS gene, doubly affected relatives should have more similar marker genotypes than expected by chance alone. The simplest measure of the shared marker alleles between relatives is to consider $$ Z_{i j}=\\frac{1}{4}\\sum_{k=1}^{2}\\sum_{\\ell=1}^{2}\\delta(M_{i k},M_{j\\ell})\\quad\\mathrm{w h e r e}\\quad\\delta(x,y)=\\left\\{\\begin{matrix}{1}&{\\mathrm{i f}\\;x=y}\\\\ {0}&{\\mathrm{o t h e r w i s e}}\\\\ \\end{matrix}\\right. $$ which is just the probability that a randomly chosen marker allele from relative i is identical in state to a random marker allele in relative j. Note that $ Z_{ij} $ is trivial to compute for any pair of affected relatives. Weeks and Lange's test statistic for a pedigree with n (genotyped) affected relatives is $$ T=\\frac{Z-E(Z)}{\\sigma(Z)}\\qquad\\mathrm{w h e r e}\\qquad Z=\\sum_{i<j}Z_{i j} $$ the sum being taken over all $ n(n-1)/2 $ pairs of doubly affected relatives. For sufficiently large sample sizes, T is approximately distributed as a unit normal, where $E(Z)$ and $\\sigma^{2}(Z)$ are computed from pedigree information; see Weeks and Lange for details. Simulations can be used to compute confidence levels (e.g., Davis et al. 1996)."
+    },
+    {
+      "type": "discussion",
+      "content": "Since the measure $Z_{ij}$ given by Equation 16.54 weights all genotypes equally, Weeks and Lange suggest that a more reasonable measure weights matching ibles alleles by some function of their allele frequencies, $$ Z_{ij}=\\frac{1}{4}\\sum_{k=1}^{2}\\sum_{\\ell=1}^{2}\\delta(M_{ik},M_{j\\ell})f(p_{M_{ik}}) $$ where $p_{M_{ik}}$ is the frequency of allele $M_{ik}$. The motivation for this modification is that a match involving a rare allele in distant relatives should be weighted more than a match involving a frequent allele (e.g., Example 4). Weeks and Lange suggest three candidate weight functions, $f(p) = 1$ (no weight), $1/\\sqrt{p}$, and $1/p$. The first places no weight on allele frequencies and recovers Equation 16.55a. It is most applicable if all alleles have roughly equal frequencies. The last two functions give greater weight to rarer alleles. While $f = 1/p$ places the most weight on rare alleles, Weeks and Lange note that it often creates severe nonnormality in the data. They offer $f = 1/\\sqrt{p}$ as a compromise function weighting rare alleles but preserving normality. One criticism of this method is that the weighting functions are rather ad hoc, and it is possible that some of the functions may give significant results while others do not, making the interpretation of linkage somewhat problematic. One solution might be to simply use weights that minimize the sampling variance of the $Z_{ij}$, which is a standard procedure. A second criticism is that ibs-based tests are sensitive to estimates of the marker-allele frequencies and can give false positives (indications of a linked QTL when none is present) when incorrect frequencies are used (Babron et al. 1993, Van Eerdewegh et al. 1993)."
+    }
+  ]
+}

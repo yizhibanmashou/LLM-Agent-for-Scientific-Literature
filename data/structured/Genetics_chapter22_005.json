@@ -1,0 +1,55 @@
+{
+  "id": "Genetics_chapter22_005",
+  "metadata": {
+    "chapter": "Genetics_chapter22",
+    "section": "Genotype $ \\times $ Environment Interaction",
+    "subsections": [
+      "Estimation Procedures"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter22_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Genotype $ \\times $ Environment Interaction",
+    "section_level_2": "Estimation Procedures",
+    "heading_path": [
+      "Genotype $ \\times $ Environment Interaction",
+      "Estimation Procedures"
+    ],
+    "display_heading": "Estimation Procedures"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "To obtain an estimate of the genetic correlation across environments, $ r_{\\times} $, estimates of the among-family variances are required for both environments, as is an estimate of the covariance of family means across environments. The simplest way of procuring such estimates is to split the families, assaying for each family one set of individuals in one environment and another set in the second environment. Methods for estimating the among-family components of variance within single environments, $ \\sigma_{G}^{2}(1) $ and $ \\sigma_{G}^{2}(2) $, have been presented in previous chapters (e.g., one-way ANOVA), so we will consider that issue no further. Via (1984) reviews several procedures for estimating $ \\sigma_{G}(1,2) $, the most straightforward of which is the simple computation of the covariance of family means in the different environments. In all such analyses, care should be taken to avoid the use of families containing individuals that share family environmental effects, i.e., individuals that share the same mothers. After the among-family variances and covariances have been estimated, the estimate $ r_{\\times} $ is obtained by substituting observed values for their expectations in Equation 22.6. As in the case of other genetic correlation estimators encountered in Chapter 21, this indirect way of estimating $ \\rho_x $ is not equivalent to the computation of a product-moment correlation, and as a consequence, sampling error can cause estimates to exceed the natural boundaries of $ \\pm1 $. For purposes of hypothesis testing, however, a product-moment correlation, $ r(\\overline{z}_{1j}, \\overline{z}_{2j}) $, can be obtained from the simple regression of family means (i.e., $ \\overline{z}_{1j} $ on $ \\overline{z}_{2j} $). The significance level associated with such a regression provides a conservative test as to whether $ r_{\\times} $ is significantly different from zero, since the correlation coefficient will be biased towards zero by the inclusion of residual variance in the denominator (see below)."
+    },
+    {
+      "type": "discussion",
+      "content": "Based on the arguments in the preceding section, a more interesting question in the analysis of genotype $ \\times $ environment interaction is whether the correlation across environments is significantly different from +1. For this purpose, the jackknife and bootstrap procedures discussed in the previous chapter may be exploited profitably. If the true genetic correlation across environments were +1, one would expect the distribution of estimates of $ \\rho_{\\times} $ derived from bootstrap samples to significantly overlap +1."
+    },
+    {
+      "type": "discussion",
+      "content": "A number of investigators have used the correlation of observed family means, $ r(\\overline{z}_{1j}, \\overline{z}_{2j}) $, as an estimate of the genetic correlation across environments. As noted above and in Chapter 21, the absolute value of any such estimate will be biased downwardly relative to $ \\rho_{\\times} $ since the variances of family means will be inflated by contributions from measurement error and environmental variance. Thus, although this procedure does not affect the sign of the correlation (since the covariance is still estimated in the way we just outlined), it does artifactually create a tendency towards falsely concluding that genotype $ \\times $ environment interaction is present. A slight modification of Equation 21.9 shows the magnitude of the bias, $$ \\rho(\\overline{{z}}_{1j},\\overline{{z}}_{2j})\\simeq\\rho_{\\times}\\left[\\frac{2\\Theta n h_{1}h_{2}}{\\sqrt{(\\phi h_{1}^{2}+1)(\\phi h_{2}^{2}+1)}}\\right] $$ where $\\phi = 2\\Theta(n-1)$, and $h_{1}^{2} = \\sigma_{A}^{2}(1)/\\sigma_{z}^{2}(1)$ and $h_{2}^{2} = \\sigma_{A}^{2}(2)/\\sigma_{z}^{2}(2)$ are the heritabilities of the trait as expressed in the two environments. Note that with moderately large sample sizes ($n \\geq 10$ in each environment) and assuming the heritabilities in both environments are approximately the same, the quantity in brackets is approximately $\\phi h^{2}/(\\phi h^{2}+1)$. Thus, the correlation between family means can substantially underestimate $\\rho_{\\times}$ unless $\\phi h^{2} >> 1$. That is, unless the heritabilities in both environments are quite high, large family sizes $[n>>1/(2\\Theta h^{2})]$ are essential to reduce the sampling bias of the correlation of family means to a reasonable level. The following empirical example demonstrates the misleading nature of correlations of family means."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 1. In an attempt to determine whether cowpea weevils (Callosobruchus maculatus) exhibit variance in their relative performances on alternative hosts, Fox (1993) raised members of full-sib families ($ \\Theta = 0.25 $ and $ n = 5 $) on both cowpea and azuki beans. The correlations between family means (and their standard errors obtained by bootstrapping over families) are given for development time and three morphological characters in the following table. (Data are for females only.) Note that the family-mean correlations $ r(\\overline{z}_{1j}, \\overline{z}_{2j}) $ for all four characters are well over three standard errors below +1, suggesting significant genotype $ \\times $ environment interaction."
+    },
+    {
+      "type": "discussion",
+      "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Character</td><td style='text-align: center; word-wrap: break-word;'>$ r(\\bar{z}_{1j}, \\bar{z}_{2j}) $</td><td style='text-align: center; word-wrap: break-word;'>$ h^{2} $</td><td style='text-align: center; word-wrap: break-word;'>$ \\frac{2\\Theta nh^{2}}{\\phi h^{2}+1} $</td><td style='text-align: center; word-wrap: break-word;'>$ r_{\\times} $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Development time</td><td style='text-align: center; word-wrap: break-word;'>0.24 (0.16)</td><td style='text-align: center; word-wrap: break-word;'>0.68</td><td style='text-align: center; word-wrap: break-word;'>0.72</td><td style='text-align: center; word-wrap: break-word;'>0.33 (0.22)</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Pronotum width</td><td style='text-align: center; word-wrap: break-word;'>0.30 (0.14)</td><td style='text-align: center; word-wrap: break-word;'>0.50</td><td style='text-align: center; word-wrap: break-word;'>0.62</td><td style='text-align: center; word-wrap: break-word;'>0.48 (0.25)</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Elytron length</td><td style='text-align: center; word-wrap: break-word;'>0.33 (0.14)</td><td style='text-align: center; word-wrap: break-word;'>0.48</td><td style='text-align: center; word-wrap: break-word;'>0.61</td><td style='text-align: center; word-wrap: break-word;'>0.54 (0.23)</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Emergence weight</td><td style='text-align: center; word-wrap: break-word;'>0.36 (0.17)</td><td style='text-align: center; word-wrap: break-word;'>0.30</td><td style='text-align: center; word-wrap: break-word;'>0.46</td><td style='text-align: center; word-wrap: break-word;'>0.78 (0.37)</td></tr></table>"
+    },
+    {
+      "type": "discussion",
+      "content": "The author provides data that yield the average heritability estimates given in the table. Using these as well as the values of $\\Theta$ and $n$ given above, the quantity in the large brackets in Equation 22.8 can be estimated for each character. These bias estimates, which appear in the fourth column of the table, give the expected degree to which the correlation between family means underestimates the true correlation across environments; a value of one implies there is no bias. Division of the correlations between family means by their respective biases yields the estimates of $\\rho_{\\times}$ given in the final column. The corrected standard errors reported in the table were obtained in the same manner, i.e., by dividing the previous standard errors by the bias. However, this procedure must lead to the standard errors being downwardly biased since it does not account for sampling error associated with the heritability estimates."
+    },
+    {
+      "type": "discussion",
+      "content": "All of the estimates of the correlation across environments ($ r_{\\times} $) are substantially higher than those for the correlation between family means, $ [r(\\overline{z}_{1j},\\overline{z}_{2j})] $. That for emergence weight is clearly not significantly different from +1, while those for pronotum width and elytron length are of questionable significance. Thus, the correlation between family means substantially inflates the confidence that should be attached to the hypothesis of genotype $ \\times $ environment interaction."
+    },
+    {
+      "type": "discussion",
+      "content": "Several other studies have used correlations of family means across environments to test for local adaptation of insect pests to different host plants. Full-sib families of leaf miners and pea aphids have been found to have significantly negative genetic correlations for fitness-related characters when raised on different crops (Via 1984, 1991), suggesting the potential for evolutionary specialization to local host plants. In this case, it is unlikely that a reanalysis of the data would lead to a change in interpretation; since the correlation between family means yields a downwardly biased estimate of the absolute value of $ \\rho_{x} $, the true values of the genetic correlations are probably more negative than Via's estimates. Thus, Via's study populations appear to exhibit a real genetic tradeoff in performance on alternative hosts. On the other hand, several other studies have found positive correlations between family mean performances on different hosts (Rausher 1984, Futuyma and Phillipi 1987, Takano et al. 1987, Karowe 1990). Although such results imply an absence of tradeoffs, as in the case of Fox's analysis, they are less clear with respect to genotype $ \\times $ environment interaction (see also Fry 1993)."
+    }
+  ]
+}

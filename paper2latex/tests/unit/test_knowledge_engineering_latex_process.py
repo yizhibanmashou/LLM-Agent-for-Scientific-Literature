@@ -76,6 +76,10 @@ class TestKnowledgeEngineeringLatexProcess(unittest.TestCase):
         tex_path = str(Path("data") / "paddle_output" / "appendix2_full" / "main.tex")
         self.assertEqual(derive_chapter_name(tex_path), "appendix2")
 
+    def test_derive_chapter_name_preserves_book_prefix(self):
+        tex_path = str(Path("data") / "paddle_output" / "Genetics_chapter6_full" / "main.tex")
+        self.assertEqual(derive_chapter_name(tex_path), "Genetics_chapter6")
+
     def test_recover_paddle_footer_body_text_restores_body_footer_before_next_anchor(self):
         pages = [
             {
@@ -246,6 +250,32 @@ class TestKnowledgeEngineeringLatexProcess(unittest.TestCase):
 
         self.assertEqual(reference_ids, ["formula_2.5", "formula_2.11a"])
         self.assertEqual(formula_library.get_stats()["total"], 2)
+
+    def test_formula_library_accepts_appendix_labels(self):
+        formula_library = FormulaLibrary()
+        formula = formula_library.add_formula(
+            label="A1.3",
+            label_format="(A1.3)",
+            latex="x=y",
+            formula_type="block",
+            source_unit_id="appendix1_003",
+            source_chapter="appendix1",
+            source_subsection="APPENDIX 1",
+        )
+
+        self.assertIsNotNone(formula)
+        self.assertEqual(formula_library.get_labels(source_chapter="appendix1"), ["a1.3"])
+        self.assertIsNone(
+            formula_library.add_formula(
+                label="A1.4",
+                label_format="(A1.4)",
+                latex="x=z",
+                formula_type="block",
+                source_unit_id="appendix2_003",
+                source_chapter="appendix2",
+                source_subsection="APPENDIX 2",
+            )
+        )
 
     def test_preprocess_does_not_absorb_prose_into_formula_block(self):
         sample = (

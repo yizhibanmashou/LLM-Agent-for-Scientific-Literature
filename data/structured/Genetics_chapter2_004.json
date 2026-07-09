@@ -1,0 +1,63 @@
+{
+  "id": "Genetics_chapter2_004",
+  "metadata": {
+    "chapter": "Genetics_chapter2",
+    "section": "Properties of Distributions",
+    "subsections": [
+      "The Truncated Normal Distribution"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter2_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Properties of Distributions",
+    "section_level_2": "The Truncated Normal Distribution",
+    "heading_path": [
+      "Properties of Distributions",
+      "The Truncated Normal Distribution"
+    ],
+    "display_heading": "The Truncated Normal Distribution"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "We now consider the properties of a subset of the normal distribution, specifically a tail of the distribution (Figure 2.2). Such a consideration is important in the extreme form of directional selection that is used by most plant and animal breeders. Under truncation selection, all individuals below a certain phenotype are culled from the population and hence have zero fitness. The critical phenotype, T, is called the truncation point. For a normally distributed phenotype, the mean phenotype of the population above the threshold (i.e., after selection) can be written as $$ \\mu_{s}=\\frac{\\int_{T}^{\\infty}z p(z)d z}{\\int_{T}^{\\infty}p(z)d z} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "In computing a mean, the phenotype frequencies must sum to one, and this is"
+    },
+    {
+      "type": "discussion",
+      "content": "[[FIGURE:2.3]] accomplished by letting the density of phenotype z after selection be $$ \\frac{p(z)}{\\int_{T}^{\\infty}p(z)dz} $$ Since the denominator, $\\int_{T}^{\\infty} p(z) dz$, is the sum of frequencies for phenotypes greater than $T$ (i.e., the fraction of individuals allowed to reproduce), it is a measure of the intensity of selection, and we hereafter denote it as $\\Phi_{T}$. After integration, the solution to Equation 2.13 is found to be $$ \\mu_{s}=\\mu+\\frac{\\sigma p_{T}}{\\Phi_{T}} $$ where $p_{T}$ is the height of the standard normal curve at the truncation point, obtained by setting $z^{\\prime} = (T - \\mu)/\\sigma$ in Equation 2.11, $$ p_{T}=(2\\pi)^{-1/2}\\exp\\left[-\\frac{(T-\\mu)^{2}}{2\\sigma^{2}}\\right] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "[[FIGURE:2.4]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Numerical values for $\\Phi_{T}$, which are functions of the standardized distance $z^{\\prime}$ of $T$ from $\\mu$, are obtainable from tables of the standard normal distribution (see also Figure 2.3)."
+    },
+    {
+      "type": "discussion",
+      "content": "Equation 2.14 states that if the upper proportion $\\Phi_{T}$ of a normally distributed population is selected, the mean will advance $\\mu_{s}-\\mu=\\sigma p_{T}/\\Phi_{T}$ units. This change in the mean caused by selection is often denoted by $S$, the directional selection differential (Chapter 3). In units of phenotypic standard deviations, the standardized selection differential is simply $(\\mu_{s}-\\mu)/\\sigma=p_{T}/\\Phi_{T}$, which is plotted in Figure 2.4."
+    },
+    {
+      "type": "discussion",
+      "content": "In a similar fashion, the variance of the selected population can be shown to be $$ \\sigma_{s}^{2}=\\left[1+\\frac{p_{T}z^{\\prime}}{\\Phi_{T}}-\\left(\\frac{p_{T}}{\\Phi_{T}}\\right)^{2}\\right]\\sigma^{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "(Johnson and Kotz 1970a, p. 83). The quantity within brackets gives the fraction of phenotypic variance remaining after selection, $\\sigma_{s}^{2}/\\sigma^{2}$ (Figure 2.4)."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 5. Equation 2.14 can be used to answer another interesting question. What is the average absolute deviation from the mean, $ E(|z - \\mu|) $, for an individual drawn randomly from a normally distributed population?"
+    },
+    {
+      "type": "discussion",
+      "content": "Since the normal distribution is symmetrical, we can set $\\Phi_T = 0.5$ to obtain the average deviation to the right of the mean; the average deviation to the left of the mean will be identical in absolute value, but opposite in sign. Since the truncation point is the mean, $z' = 0$, which when applied to Equation 2.11 yields $p_T = (2\\pi)^{-1/2}e^0 = 0.399$. Substituting into Equation 2.14, we obtain $(\\mu_s - \\mu) = 0.798\\,\\sigma$. Thus, the average absolute value of individual deviations from the mean is about 80% of the standard deviation. This quantity is known as the most probable error. Early in this century it was widely used by statisticians, but now the simple standard deviation is usually reported."
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "id": "Genetics_chapter4_008",
+  "metadata": {
+    "chapter": "Genetics_chapter4",
+    "section": "Introduction",
+    "subsections": [
+      "FISHER'S DECOMPOSITION OF THE GENOTYPIC VALUE"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter4_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [
+      "4.1"
+    ],
+    "section_level_1": "Introduction",
+    "section_level_2": "FISHER'S DECOMPOSITION OF THE GENOTYPIC VALUE",
+    "heading_path": [
+      "Introduction",
+      "FISHER'S DECOMPOSITION OF THE GENOTYPIC VALUE"
+    ],
+    "display_heading": "FISHER'S DECOMPOSITION OF THE GENOTYPIC VALUE",
+    "table_reference_keys": [
+      "chapter4:4.1"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "The number of copies of a particular allele (say $B_{2}$) in a genotype ($N_{2} = 0$, 1, or 2 for diploids) is referred to as the gene content. As noted above, unless this allele interacts additively with all other alleles, there will be a nonlinear relationship between the gene content and the genotypic value. It is, nevertheless, useful to consider the best linear approximation to this relationship, as this leads to a partitioning of the genotypic values into their “expected” values based on additivity ($\\widehat{G}$) and deviations from those expectations resulting from dominance ($\\delta$) (Figure 4.6)."
+    },
+    {
+      "type": "discussion",
+      "content": "The preceding points can be formalized by least-squares regression of genotypic values on the number of $B_{1}$ and $B_{2}$ alleles in the genotype ($N_{1}$ and $N_{2}$), $$ G_{i j}=\\widehat{G}_{i j}+\\delta_{i j}=\\mu_{G}+\\alpha_{1}N_{1}+\\alpha_{2}N_{2}+\\delta_{i j} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The genotypic value of genotype $B_{i}B_{j}$ is a function of $\\mu_{G}$, the mean genotypic value in the population, $\\alpha_{1}$ and $\\alpha_{2}$, the slopes of the regression, $N_{1}$ and $N_{2}$, the predictor variables, and $\\delta_{ij}$, the residual error. This partitioning of genotypic values into various components is one of several major advances developed in Fisher's 1918 paper. Many of the innovative ideas in this classic paper are presented in a characteristically cursory manner, but a useful interpretative guide has been produced by Moran and Smith (1966)."
+    },
+    {
+      "type": "discussion",
+      "content": "Unlike the univariate regression discussed in Chapter 3, Equation 4.5a is a multiple regression, the properties of which are discussed in Chapter 8. For the two-allele case, however, we can reduce the model to a standard univariate regression by noting that for any individual, $N_{1}=2-N_{2}$, so that $$ \\begin{aligned}\\boldsymbol{G}_{ij}&=\\mu_{G}+\\alpha_{1}\\left(2-N_{2}\\right)+\\alpha_{2}N_{2}+\\delta_{ij}\\\\&=\\iota+\\left(\\alpha_{2}-\\alpha_{1}\\right)N_{2}+\\delta_{ij}\\end{aligned} $$ where $\\iota=\\mu_{G}+2\\alpha_{1}$ is the intercept. We denote the slope of this regression by $$ \\alpha=\\alpha_{2}-\\alpha_{1} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "[[FIGURE:4.6]] and discuss its meaning shortly. The genotypic values predicted by the regression are $$ \\widehat{G}_{i j}=\\mu_{G}+\\alpha_{i}+\\alpha_{j}=\\left\\{\\begin{aligned}&\\mu_{G}+2\\alpha_{1}&&\\text{for}G_{11}\\\\ &\\mu_{G}+\\alpha_{1}+\\alpha_{2}&&\\text{for}G_{21}\\\\ &\\mu_{G}+2\\alpha_{2}&&\\text{for}G_{22}\\end{aligned}\\right. $$"
+    },
+    {
+      "type": "discussion",
+      "content": "We next show that the weighted mean of the coefficients $\\alpha_{1}$ and $\\alpha_{2}$ is equal to zero. To accomplish this, return to Equation 4.5a, and take expectations, $$ \\mu_{G}=\\mu_{G}+\\alpha_{1}E(N_{1})+\\alpha_{2}E(N_{2})+0 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The expected value of the residual $ \\delta_{ij} $ is equal to zero by the properties of least-squares regression, and $ E(N_{1})/2 $ and $ E(N_{2})/2 $ are equivalent, respectively, to $ p_{1} $ and $ p_{2} $, the frequencies of the $ B_{1} $ and $ B_{2} $ alleles. Thus, the previous expression simplifies to $$ p_{1}\\alpha_{1}+p_{2}\\alpha_{2}=0 $$ showing that the mean value of $\\alpha_{i}$ is indeed zero. Finally, from Equations 4.6 and 4.8 and the fact that $p_{1}+p_{2}=1$, we obtain $$ \\alpha_{2}=p_{1}\\alpha\\qquad\\mathrm{a n d}\\qquad\\alpha_{1}=-p_{2}\\alpha $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Now recall from Chapter 3 that the slope of a univariate regression is simply the covariance between response and predictor variable, divided by the variance of the predictor variable. Thus, the slope of the regression in Figure 4.6 is $$ \\alpha=\\frac{\\sigma(G,N_{2})}{\\sigma^{2}(N_{2})} $$"
+    },
+    {
+      "type": "proposition",
+      "content": "The terms $\\sigma(G, N_{2})$ and $\\sigma^{2}(N_{2})$ are functions of the gene effects (a and k) and frequencies $(p_{1}$ and $p_{2})$. The steps leading up to their computation, under the assumption of random mating, are outlined in [[SEE_TABLE:4.1]]. Upon substitution, <table border=1 style='margin: auto; word-wrap: break-word;'><tr><td rowspan=\"2\">Genotype</td><td rowspan=\"2\">Gene Content (N)</td><td colspan=\"3\">Genotypic</td><td style='text-align: center; word-wrap: break-word;'>Regression Value ($ \\widehat{G} $)</td><td rowspan=\"2\">Dominance Deviation ($ \\delta = G - \\widehat{G} $)</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Value (G)</td><td style='text-align: center; word-wrap: break-word;'>Freq.</td><td style='text-align: center; word-wrap: break-word;'>$ G \\cdot N $</td><td style='text-align: center; word-wrap: break-word;'>$ N^{2} $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>$ B_{1}B_{1} $</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>$ p_{1}^{2} $</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>$ \\ell $</td><td style='text-align: center; word-wrap: break-word;'>- $ \\ell $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>$ B_{1}B_{2} $</td><td style='text-align: center; word-wrap: break-word;'>1</td><td style='text-align: center; word-wrap: break-word;'>$ (1+k)a $</td><td style='text-align: center; word-wrap: break-word;'>$ 2p_{1}p_{2} $</td><td style='text-align: center; word-wrap: break-word;'>$ (1+k)a $</td><td style='text-align: center; word-wrap: break-word;'>1</td><td style='text-align: center; word-wrap: break-word;'>$ \\ell+\\alpha $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>$ B_{2}B_{2} $</td><td style='text-align: center; word-wrap: break-word;'>2</td><td style='text-align: center; word-wrap: break-word;'>2a</td><td style='text-align: center; word-wrap: break-word;'>$ p_{2}^{2} $</td><td style='text-align: center; word-wrap: break-word;'>4a</td><td style='text-align: center; word-wrap: break-word;'>4</td><td style='text-align: center; word-wrap: break-word;'>$ \\ell+2\\alpha $</td></tr><tr><td colspan=\"4\">$ \\mu_{N}=2p_{1}p_{2}(1)+p_{2}^{2}(2)=2p_{2} $</td><td colspan=\"3\">$ \\mu_{\\widehat{G}}=\\ell+2p_{1}p_{2}\\alpha+2p_{2}^{2}\\alpha=\\ell+2p_{2}\\alpha $</td></tr><tr><td colspan=\"4\">$ E(N^{2})=2p_{1}p_{2}(1)+p_{2}^{2}(4)=2p_{2}(1+p_{2}) $</td><td colspan=\"3\">$ \\mu_{\\delta}=-\\ell+2p_{1}p_{2}[(1+k)a-\\alpha]+2p_{2}^{2}(a-\\alpha)=0 $</td></tr><tr><td colspan=\"4\">$ \\mu_{G}=2p_{1}p_{2}a(1+k)+2p_{2}^{2}a=2p_{2}a(1+p_{1}k) $</td><td colspan=\"3\">$ E(\\widehat{G}^{2})=p_{1}^{2}\\iota^{2}+2p_{1}p_{2}(\\iota+\\alpha)^{2}+p_{2}^{2}(\\iota+2\\alpha)^{2}=\\iota^{2}+4p_{2}\\alpha\\iota+2p_{2}\\alpha^{2}(1+p_{2}) $</td></tr><tr><td colspan=\"4\">$ E(GN)=2p_{1}p_{2}a(1+k)+4p_{2}^{2}a=2p_{2}a[2p_{2}+p_{1}(1+k)] $</td><td colspan=\"3\">$ E(\\delta^{2})=p_{1}^{2}\\iota^{2}+2p_{1}p_{2}[(1+k)a-\\iota-\\alpha]^{2}+p_{2}^{2}(2a-\\iota-2\\alpha)^{2}=(2p_{1}p_{2}ak)^{2} $</td></tr><tr><td colspan=\"4\">$ \\sigma(G,N)=E(GN)-\\mu_{G}\\mu_{N}=2p_{1}p_{2}a[1+k(p_{1}-p_{2})] $</td><td colspan=\"3\">$ \\sigma_{A}^{2}=E(\\widehat{G}^{2})-\\mu_{\\widehat{G}}^{2} $</td></tr><tr><td colspan=\"4\">$ \\sigma^{2}(N)=E(N^{2})-\\mu_{N}^{2}=2p_{1}p_{2} $</td><td colspan=\"3\">$ \\sigma_{D}^{2}=E(\\delta^{2})-\\mu_{\\delta}^{2} $</td></tr></table>"
+    },
+    {
+      "type": "discussion",
+      "content": "[[FIGURE:4.7]] we obtain $$ \\alpha=a\\left[1+k\\left(p_{1}-p_{2}\\right)\\right] $$"
+    },
+    {
+      "type": "proposition",
+      "content": "Under the assumption of random mating, $\\alpha$ is known as the average effect of allelic substitution. It represents the average change in genotypic value that results when a $B_{2}$ allele is randomly substituted for a $B_{1}$ allele. For the purely additive case ($k=0$), $\\alpha$ is simply equal to $a$. However, for all other cases, $\\alpha$ is also a function of $k$ and of the allele frequencies in the population (Figure 4.7). Such behavior results because, with dominance, the phenotypic effect of a gene substitution depends on the status of the unsubstituted allele. If $B_{2}$ is a dominant allele $(k>0)$, then $\\alpha$ will be inflated relative to the case of additivity if $B_{2}$ is rare $(p_{1}>p_{2})$, but diminished if $B_{2}$ is common $(p_{1}<p_{2})$. Thus, except in the case of additivity, the average effect of allelic substitution is not simply a function of the inherent physiological properties of the allele. It can only be defined in the context of the population."
+    }
+  ]
+}

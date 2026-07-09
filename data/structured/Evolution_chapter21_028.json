@@ -1,0 +1,67 @@
+{
+  "id": "Evolution_chapter21_028",
+  "metadata": {
+    "chapter": "Evolution_chapter21",
+    "section": "RESPONSE WHEN FAMILIES ARE REPLICATED OVER ENVIRONMENTS",
+    "subsections": [
+      "Among-family Variance Under Replication"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter21_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "RESPONSE WHEN FAMILIES ARE REPLICATED OVER ENVIRONMENTS",
+    "section_level_2": "Among-family Variance Under Replication",
+    "heading_path": [
+      "RESPONSE WHEN FAMILIES ARE REPLICATED OVER ENVIRONMENTS",
+      "Among-family Variance Under Replication"
+    ],
+    "display_heading": "Among-family Variance Under Replication"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "The expected response to among-family selection under replication follows from Equation 21.14a, using the appropriate among-family variance, $ \\sigma^2(\\overline{z}) $, given the replication design used by the breeder. In the simplest case, only a single macroenvironment (such as a growing region) is considered, and the family is replicated by raising $ n_s $ sips in each of $ n_p $ separate plots (for a total of $ N = n_p n_s $ sips per family). Under this replication scheme, the total environmental value can be partitioned as $ E = E_c + E_p + E_{s_r} $ representing a common-family effect ($ E_c $), a plot-specific effect ($ E_p $), and individual-specific effects ($ E_s $). Following similar logic to that in Example 21.3, the resulting variance becomes $$ \\sigma^{2}(\\overline{z})=\\sigma_{F}^{2}+\\frac{\\sigma_{E_{p}}^{2}}{n_{p}}+\\frac{\\sigma_{w}^{2}}{N} $$ where $\\sigma_{E_p}^2$ is the plot-to-plot variance (the environmental variance among plots in the same macroenvironment), $\\sigma_F^2 = \\sigma_{GF}^2 + \\sigma_{E_c}^2$ is the among-family variance, and $\\sigma_w^2 = \\sigma_{Gw}^2 + \\sigma_{Es}^2$ is the within-plot variance of individuals about their family averages. Recall that $\\sigma_{Gw}^2 = \\sigma_G^2 - \\sigma_{GF}^2$, and values for the among- and within-family genetic variances are given by Equations 21.11a and 21.11b, respectively, when epistasis is absent, and more generally by Equations 21.26a and 21.26b."
+    },
+    {
+      "type": "discussion",
+      "content": "An alternative way to express the variance of family means is $$ \\sigma^{2}(\\overline{{z}})=\\sigma_{G F}^{2}+\\sigma_{E_{c}}^{2}+\\sigma^{2}(\\epsilon) $$ where for the design given by Equation 21.41a, the residual variance is $$ \\sigma^{2}(\\epsilon)=\\frac{\\sigma_{G w}^{2}}{N}+\\frac{\\sigma_{E_{s}}^{2}}{N}+\\frac{\\sigma_{E_{p}}^{2}}{n_{p}}=\\left(\\frac{1}{N}\\right)\\left(\\sigma_{G w}^{2}+\\sigma_{E_{s}}^{2}+n_{s}\\sigma_{E_{p}}^{2}\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The critical observation is that the contribution from $ \\sigma^{2}(\\epsilon) $ can be largely controlled by the experimental design (here, the choice of $ n_{s} $ and $ n_{p} $)."
+    },
+    {
+      "type": "discussion",
+      "content": "More generally, if the family is replicated over $ n_e $ distinct macroenvironments, each with $ n_p $ plots and $ n_s $ sibs per plot, for a total of $ N = n_p n_s n_e $ sibs, Equation 21.41b holds, with the residual variance now being $$ \\begin{aligned}\\sigma^{2}(\\epsilon)=&\\frac{\\sigma_{Gw}^{2}}{N}+\\frac{\\sigma_{GF\\times E}^{2}}{n_{e}}+\\frac{\\sigma_{E_{p}}^{2}}{n_{e}n_{p}}+\\frac{\\sigma_{E_{s}}^{2}}{N}\\\\=&\\left(\\frac{1}{N}\\right)\\left(\\sigma_{Gw}^{2}+\\sigma_{E_{s}}^{2}+n_{s}\\sigma_{E_{p}}^{2}+n_{p}n_{s}\\sigma_{GF\\times E}^{2}\\right)\\end{aligned} $$ where $ \\sigma_{GF}^{2} $ is the genetic variance among family means over this set of environments, and $ \\sigma_{GF \\times E}^{2} $ is the variance from the family-environment interaction (LW Chapter 22)."
+    },
+    {
+      "type": "discussion",
+      "content": "Plant breeders often use an alternative partition of the environment into location (L) and year (Y) effects. Suppose a family is replicated over $ n_\\ell $ locations over $ n_y $ years, where each of the $ n_\\ell n_y $ year-location combinations is replicated as $ n_p $ plots of $ n_s $ sigs each, for a total of $ N = n_\\ell n_y n_p n_s $ sigs per family. Again, Equation 21.41b holds, with a residual variance of $$ \\begin{align*}\\sigma^{2}(\\epsilon)&=\\frac{\\sigma_{GF\\times L}^{2}}{n_\\ell}+\\frac{\\sigma_{GF\\times Y}^{2}}{n_{y}}+\\frac{\\sigma_{GF\\times L\\times Y}^{2}}{n_\\ell n_{y}}+\\frac{\\sigma_{E_{p}}^{2}}{n_\\ell n_{y} n_{p}}+\\frac{\\sigma_{Gw}^{2}+\\sigma_{E_{s}}^{2}}{n_\\ell n_{y} n_{p} n_{s}}\\\\&=\\left(\\frac{1}{N}\\right)\\left[\\sigma_{Gw}^{2}+\\sigma_{E_{s}}^{2}+n_{s}\\sigma_{E_{p}}^{2}+n_{p} n_{s}\\left(n_{y}\\sigma_{GF\\times L}^{2}+n_\\ell\\sigma_{GF\\times Y}^{2}+\\sigma_{GF\\times L\\times Y}^{2}\\right)\\right]\\end{align*} $$ where $ \\sigma_{GF \\times L}^{2} $, $ \\sigma_{GF \\times Y}^{2} $, and $ \\sigma_{GF \\times L \\times Y}^{2} $ are the family by environment (year, location, and year-location) interactions (Lonnquist 1964; Comstock and Moll 1973; Patterson et al. 1977; Brennan and Byth 1979; Thompson and Cunningham 1979)."
+    },
+    {
+      "type": "discussion",
+      "content": "The above expressions for $\\sigma^2(\\epsilon)$ show the importance of replication and provide some guidance as to how one should allocate resources. For a fixed number of sibs per family $(N)$, how should one choose $n_e$, $n_p$, and $n_s$ to minimize $\\sigma^2(\\overline{z})$? If $N$ is fixed, then the relative weightings on the within-family genetic variance and individual-specific environmental variance are fixed. When the genotype $\\times$ environment interaction variance $(\\sigma_GF \\times E)$ is large, its effect on the selection response can be reduced by replicating families across more environments (increasing $n_e$). More generally, when viewing environments as locations-years (Equation 21.42b), the total number of environments is $n_e = n_t n_y$, and preliminary estimates of the variation components $(\\sigma_GF \\times L', \\sigma_GF \\times Y}$, and $\\sigma_GF \\times L \\times Y$) can suggest the appropriate allocation over locations versus years for a fixed value of $n_e$. When the amongst-plot variance $(\\sigma_{E_p}^2)$ is large, its effect is reduced by increasing $n_p$ or $n_e$. With preliminary estimates of the variance components in hand, one can numerically search for the optimal values of $n_e$, $n_p$, and $n_s$ that give the smallest $\\sigma^2(\\overline{z})$ for a fixed value of $N = n_e n_p n_s$. Using replication can result in a considerable improvement over mass selection. For example, using variance components estimated for maize lines grown in several locations in India, Sanghi (1983) estimated that full-sib selection with replication would be three to sixfold times more efficient than mass selection."
+    },
+    {
+      "type": "discussion",
+      "content": "One consequence of replication is that the among-family heritability, $ h_b^2 = \\gamma \\sigma_A^2 / \\sigma^2(\\overline{z}) $ (Equation 21.15b), is now a complex function of the design, namely, the values of $ n_e $ and $ n_p $, in addition to the total number of sibs, which enter through $ \\sigma^2(\\overline{z}) $, via $ \\sigma^2(\\epsilon) $. Thus, with replication, an among-family heritability does not directly translate into an individual heritability (Hanson 1963; Nyquist 1991; Holland et al. 2003). Even with the same variance components, $ h_b^2 $ changes as a function of the replication design. Hanson suggested that, when replication is present, the among-family heritability needs to be defined with respect to a particular standard design, such as his proposal in soybeans of a design with two years over two locations, with two replications in each location-year combination."
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, consider the among-family variance under a nested-sib design with replication. Suppose (as before) that there are $ n_{f} $ females per male, but now that each full-sib family is replicated as $ n_{s} $ sibs over $ n_{e} $ environments. The resulting variance becomes $$ \\sigma^{2}\\big(\\overline{z}\\big)=\\sigma_{G F(H S)}^{2}+\\frac{\\sigma_{G(f|m)}^{2}}{n_{f}}+\\frac{\\sigma_{G F(H S)\\times E}^{2}}{n_{e}}+\\frac{\\sigma_{G(f|m)\\times E}^{2}}{n_{f}n_{e}}+\\frac{\\sigma_{G w(F S)}^{2}+\\sigma_{E_{s}}^{2}}{N} $$ where $ N = n_{f}n_{e}n_{s} $ is the total number of half-sibs per male (Robertson et al. 1955; Webel and Lonnquist 1967; da Silva and Lonnquist 1968). Assuming no epistasis or genotype by environment interaction ($ G \\times E $), we can express this among-family variance as $$ \\frac{\\sigma_{A}^{2}}{4}+\\frac{\\sigma_{A}^{2}+\\sigma_{D}^{2}}{4n_{f}}+\\frac{\\sigma_{A\\times E}^{2}}{4n_{e}}+\\frac{\\sigma_{A\\times E}^{2}+\\sigma_{D\\times E}^{2}}{4n_{f}n_{e}}+\\frac{(1/2)\\sigma_{A}^{2}+(3/4)\\sigma_{D}^{2}+\\sigma_{E_{s}}^{2}}{N} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The extension of this result to multiple plots per location when G×E is present follows in a similar fashion from our development above for Equation 21.42b."
+    },
+    {
+      "type": "discussion",
+      "content": "An example of family selection with replication was provided by selection for increased grain yield in maize by the International Maize and Wheat Improvement Center (CIMMYT), summarized by Pandey et al. (1986, 1987) and Crossa and Gardner (1989). The goal of the CIMMYT selection schemes was to develop varieties of maize that yield well over a wide range of environments. Starting in 1974, 250 full-sib families, along with six local checks (control lines to allow for standardized comparisons), were evaluated at six lowland tropical locations (with two replications per location) in the northern and southern hemispheres. A total of 28 countries were used during the course of five cycles of selection. Selection (initially) was strictly among families with the international field trials conducted on full-sib families, while the recombination unit consisted of $ S_{1} $ seed from the superior families. The selection scheme was later modified to allow for within-family selection as well. Roughly 50% of the families were selected based on the international trials, about 20% of which were subsequently rejected given their poor performance in disease- and insect-resistance trials in separate nurseries. The average gain in yield per cycle was around 2%."
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:21.9]]"
+    }
+  ]
+}

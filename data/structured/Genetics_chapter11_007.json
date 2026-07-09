@@ -1,0 +1,35 @@
+{
+  "id": "Genetics_chapter11_007",
+  "metadata": {
+    "chapter": "Genetics_chapter11",
+    "section": "Introduction",
+    "subsections": [
+      "Kleckowski's Transformation"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter11_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "Kleckowski's Transformation",
+    "heading_path": [
+      "Introduction",
+      "Kleckowski's Transformation"
+    ],
+    "display_heading": "Kleckowski's Transformation"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "We have already encountered the idea that a log transformation can render the variance of different samples independent of the mean when the CV is approximately constant on the underlying scale. For this to be strictly valid, the SD must be directly proportional to the mean, $ SD(z) = b\\bar{z} $. However, a fairly common situation is for the regression of standard deviations on means to have an intercept significantly greater than zero (Figure 11.4). This causes the coefficient of variation to increase dramatically as the mean approaches zero, which in turn implies an inflation of the variance on the logarithmic scale."
+    },
+    {
+      "type": "discussion",
+      "content": "Kleckowski (1949) suggested a simple way to eliminate this problem. If the standard deviation on the original scale can be described adequately by the linear regression $ \\mathrm{SD}(z) = a + b\\overline{z} $, then it follows by rearrangement that $ \\mathrm{SD}(z)/(\\overline{z} + a/b) = b $. Because a/b is a constant, $ \\mathrm{SD}(z) = \\mathrm{SD}[z + (a/b)] $, so the previous ratio is equivalent to the coefficient of variation of y = z + a/b. Thus, the use of the transformed variable y = z + a/b in place of z yields an expected coefficient of variation that is equal to b and independent of the mean (also see Example 3). This results in the independence of the mean and variance for the log-transformed variable $ \\ln(y) = \\ln(z + a/b) $."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 2. Consider the Uta data in Figure 11.4. The intercept and slope of the least-squares regression, $SD(z) = 0.33 + 0.052\\overline{z}$, are highly significant (W. C. Kerfoot, pers. comm.). Since the relationship between the standard deviation and the mean closely approximates linearity, the transformation $$ y=\\ln(z+0.33/0.052)=\\ln(z+6.35) $$ renders the variance of different populations independent of the mean."
+    }
+  ]
+}

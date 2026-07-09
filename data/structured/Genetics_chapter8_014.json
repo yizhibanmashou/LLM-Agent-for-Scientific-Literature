@@ -1,0 +1,43 @@
+{
+  "id": "Genetics_chapter8_014",
+  "metadata": {
+    "chapter": "Genetics_chapter8",
+    "section": "Introduction",
+    "subsections": [
+      "Example 5. Compute the inverse of"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter8_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "Example 5. Compute the inverse of",
+    "heading_path": [
+      "Introduction",
+      "Example 5. Compute the inverse of"
+    ],
+    "display_heading": "Example 5. Compute the inverse of"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "$$ \\mathbf{A}=\\left(\\begin{array}{l l l}{3}&{1}&{2}\\\\ {2}&{5}&{4}\\\\ {1}&{1}&{2}\\end{array}\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "First, find the determinants of the minors, $$ \\left|\\mathbf{A}_{11}\\right|=\\left|\\begin{matrix}5&4\\\\ 1&2\\end{matrix}\\right|=6\\quad\\left|\\mathbf{A}_{23}\\right|=\\left|\\begin{matrix}3&1\\\\ 1&1\\end{matrix}\\right|=2 $$ $$ \\left|\\mathbf{A}_{12}\\right|=\\left|\\begin{matrix}2&4\\\\ 1&2\\end{matrix}\\right|=0\\qquad\\left|\\mathbf{A}_{31}\\right|=\\left|\\begin{matrix}1&2\\\\ 5&4\\end{matrix}\\right|=-6 $$ $$ \\left|\\mathbf{A}_{13}\\right|=\\left|\\begin{matrix}2&5\\\\ 1&1\\end{matrix}\\right|=-3\\quad\\left|\\mathbf{A}_{32}\\right|=\\left|\\begin{matrix}3&2\\\\ 2&4\\end{matrix}\\right|=8 $$ $$ \\left|\\mathbf{A}_{21}\\right|=\\left|\\begin{matrix}1&2\\\\ 1&2\\end{matrix}\\right|=0\\quad\\left|\\mathbf{A}_{33}\\right|=\\left|\\begin{matrix}3&1\\\\ 2&5\\end{matrix}\\right|=13 $$ $$ \\left|\\mathbf{A}_{22}\\right|=\\left|\\begin{matrix}3&2\\\\ 1&2\\end{matrix}\\right|=4 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Using Equation 8.12b and expanding using the first row of A gives $$ |\\mathbf{A}|=3|\\mathbf{A}_{11}|-|\\mathbf{A}_{12}|+2|\\mathbf{A}_{13}|=12 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Returning to the matrix in brackets in Equation 8.13, we obtain $$ \\frac{1}{12}\\begin{pmatrix}1\\times6&-1\\times0&1\\times-3\\\\-1\\times0&1\\times4&-1\\times2\\\\1\\times-6&-1\\times8&1\\times13\\end{pmatrix}=\\frac{1}{12}\\begin{pmatrix}6&0&-3\\\\0&4&-2\\\\-6&-8&13\\end{pmatrix} $$ and then taking the transpose, $$ \\mathbf{A}^{-1}=\\frac{1}{12}\\begin{pmatrix}6&0&-6\\\\0&4&-8\\\\-3&-2&13\\end{pmatrix} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "To verify that this is indeed the inverse of $\\mathbf{A}$, multiply $\\mathbf{A}^{-1}$ by $\\mathbf{A}$, $$ \\frac{1}{12}\\begin{pmatrix}6&0&-6\\\\0&4&-8\\\\-3&-2&13\\end{pmatrix}\\begin{pmatrix}3&1&2\\\\2&5&4\\\\1&1&2\\end{pmatrix}=\\frac{1}{12}\\begin{pmatrix}12&0&0\\\\0&12&0\\\\0&0&12\\end{pmatrix}=\\begin{pmatrix}1&0&0\\\\0&1&0\\\\0&0&1\\end{pmatrix} $$"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "id": "Evolution_appendix3_015",
+  "metadata": {
+    "chapter": "Evolution_appendix3",
+    "section": "Appendix: Introduction",
+    "subsections": [
+      "THE GIBBS SAMPLER"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_appendix3_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Appendix: Introduction",
+    "section_level_2": "THE GIBBS SAMPLER",
+    "heading_path": [
+      "Appendix: Introduction",
+      "THE GIBBS SAMPLER"
+    ],
+    "display_heading": "THE GIBBS SAMPLER"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "The Gibbs sampler (introduced in the context of image processing by Geman and Geman 1984), is a special case of Metropolis-Hastings sampling wherein the random value is always accepted (i.e., $ \\alpha = 1 $). The key to the Gibbs sampler is that, at any point in the process, one only considers univariate conditional distributions—the distribution when all but one of the random variables are assigned fixed values. Such conditional distributions are far easier to simulate than complex joint distributions and usually have simple forms (often they are normals, inverse- $ \\chi^{2} $, or other common prior distributions). An important use of conjugate priors (Table A2.2) is that they often result in relatively simple forms for conditional distributions. Thus, one simulates n random variables sequentially from the n univariate conditionals rather than generating a single n-dimensional vector in a single pass using the full joint distribution. Given their great efficiency (every value is accepted), it is often thought that one should strive to generate a Gibbs sampler whenever possible. However, one should consult Geyer (2011) for a different perspective."
+    },
+    {
+      "type": "discussion",
+      "content": "To introduce the Gibbs sampler, consider a bivariate random variable $ (x, y) $, and suppose we wish to compute one or both of the marginals, $ p(x) $ and $ p(y) $. The idea behind the sampler is that it is far easier to consider a sequence of conditional distributions, $ p(x \\mid y) $ and $ p(y \\mid x) $, than it is to obtain the marginal by integration of the joint density $ p(x, y) $, namely, $ p(x) = \\int p(x, y) \\, dy $. The sampler starts with some initial value, $ y_0 $, for y and obtains $ x_0 $ by generating a random variable from the conditional distribution $ p(x \\mid y = y_0) $. The sampler then uses $ x_0 $ to generate a new value of $ y_1 $, drawing from the conditional distribution based on the value of $ x_0 $, $ p(y \\mid x = x_0) $. The sampler proceeds as follows: $$ x_{i}\\sim p(x\\mid y=y_{i-1}) $$ $$ y_{i}\\sim p(y\\mid x=x_{i}) $$"
+    },
+    {
+      "type": "proposition",
+      "content": "Repeating this process $k$ times generates a Gibbs sequence of length $k$, where a subset of points $(x_j, y_j)$ for $1 \\leq j \\leq m < k$ are taken as our simulated draws from the full joint distribution. One iteration of all the univariate distributions is often called a $\\mathbf{scan}$ of the sampler. To obtain the desired total of $m$ sample values (here each value in the sampler is a vector of realizations of the two random variables), one samples the chain following a sufficient burn-in to remove the effects of the initial starting values, potentially thinning the sequence as well. The Gibbs sequence converges to a stationary (equilibrium) distribution that is independent of the starting values, and by construction this stationary distribution is the target distribution we are trying to simulate (Tierney 1994). As with any MCMC, a guarantee of convergence at some limit is no guarantee that our sample size is sufficiently large to justify the assumption of stationarity for a burned-in (and potentially thinned) sampler."
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:A3.6]]"
+    },
+    {
+      "type": "discussion",
+      "content": "When more than two variables are involved, the sampler is extended in the obvious fashion. In particular, the value of the $ k $th variable is drawn from the distribution $ p(\\theta^{(k)} \\mid \\boldsymbol{\\Theta}^{(-k)}) $, where $ \\boldsymbol{\\Theta}^{(-k)} $ denotes a vector containing all of the variables but $ k $. Thus, during the $ i $th iteration of the sample, to obtain the value of $ \\theta_i^{(k)} $, we draw from the distribution $$ \\theta_{i}^{(k)}\\sim p(\\theta^{(k)}\\mid\\theta^{(1)}=\\theta_{i}^{(1)},\\cdots,\\theta^{(k-1)}=\\theta_{i}^{(k-1)},\\theta^{(k+1)}=\\theta_{i-1}^{(k+1)},\\cdots,\\theta^{(n)}=\\theta_{i-1}^{(n)}) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "For example, if there are four variables, $ (w, x, y, z) $, the sampler becomes $$ w_{i}\\sim p(w\\mid x=x_{i-1},y=y_{i-1},z=z_{i-1}) $$ $$ x_{i}\\sim p(x\\mid w=w_{i},y=y_{i-1},z=z_{i-1}) $$ $$ y_{i}\\sim p(y\\mid w=w_{i},x=x_{i},z=z_{i-1}) $$ $$ z_{i}\\sim p(z\\mid w=w_{i},x=x_{i},y=y_{i}) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Gelfand and Smith (1990) illustrated the power of the Gibbs sampler to address a wide variety of statistical issues, while Smith and Roberts (1993) showed the natural marriage of the Gibbs sampler with Bayesian statistics for obtaining posterior distributions. A nice introduction to the sampler was presented by Casella and George (1992), while further details can be found in Tanner (1996), Besag et al. (1995), Sorensen and Gianola (2002), Robert and Casella (2004), and Lee (2013). Note that the Gibbs sampler can be thought of as a stochastic analog to the Expectation-Maximization (EM) approaches (LW Appendix 4) used to obtain likelihood functions when missing data are present. In the sampler, random sampling replaces the expectation and maximization steps."
+    }
+  ]
+}

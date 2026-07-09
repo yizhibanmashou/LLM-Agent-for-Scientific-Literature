@@ -1,0 +1,39 @@
+{
+  "id": "Evolution_chapter13_021",
+  "metadata": {
+    "chapter": "Evolution_chapter13",
+    "section": "THE MULTIVARIATE BREEDER'S EQUATION",
+    "subsections": [
+      "Accounting for Genetic Correlations: The Lande Equation"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter13_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "THE MULTIVARIATE BREEDER'S EQUATION",
+    "section_level_2": "Accounting for Genetic Correlations: The Lande Equation",
+    "heading_path": [
+      "THE MULTIVARIATE BREEDER'S EQUATION",
+      "Accounting for Genetic Correlations: The Lande Equation"
+    ],
+    "display_heading": "Accounting for Genetic Correlations: The Lande Equation"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "To see the effects of genetic correlations, substituting $ \\mathbf{P}^{-1}\\mathbf{S} = \\beta $ into Equation 13.23b gives the Lande equation (Lande 1979a), $$ \\mathbf{R}=\\mathbf{G}\\boldsymbol{\\beta} $$ which is the multivariate version of Equation 13.8c, $ R = \\sigma_A^2 \\beta $. Considering two traits, using the Lande equation $$ \\mathbf{R}=\\begin{pmatrix}R_{1}\\\\ R_{2}\\end{pmatrix}=\\mathbf{G}\\boldsymbol{\\beta}=\\begin{pmatrix}G_{11}&G_{12}\\\\ G_{12}&G_{22}\\end{pmatrix}\\begin{pmatrix}\\beta_{1}\\\\ \\beta_{2}\\end{pmatrix} $$ yields greatly simplified expressions (relative to Equation 13.24c) for the responses $$ R_{1}=G_{11}\\beta_{1}+G_{12}\\beta_{2} $$ $$ R_{2}=G_{12}\\beta_{1}+G_{22}\\beta_{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The role of genetic correlations $ (G_{12}) $ is now obvious, in that direct selection on trait two $ (\\beta_2 \\neq 0) $ influences the response (between-generation change) in trait one only when the two traits have a nonzero genetic correlation $ (G_{12} \\neq 0) $. The contribution, $ G_{ii}\\beta_i $, from direct selection is called the direct response, and the contribution to response on trait i from direct selection on other genetically correlated traits $ (G_{ij}\\beta_j \\neq 0) $ is called the correlated response. If two traits are genetically uncorrelated, selection on one has no impact on the response of the other, even if they are phenotypically correlated. More generally, with n potentially correlated traits $$ R_{i}=G_{ii}\\beta_{i}+\\sum_{j\\neq i}G_{ij}\\beta_{j} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Comparison with Equation 13.25c shows that $ P_{ij} $ for the within-generation changes ($ S_i $) are replaced by $ G_{ij} $ for the between-generation changes ($ R_i $)."
+    },
+    {
+      "type": "proposition",
+      "content": "The Lande equation shows that when the multivariate breeder's equation holds, we can distinguish between phenotypic selection, which is the change in a phenotypic distribution within a generation (measured by S, with the nature of selection, i.e., the direct effects, summarized by $ \\beta $), and the evolutionary response to selection, which is the transmission of these within-generation changes to the next generation (given by R). Lande and Arnold (1983) and Arnold and Wade (1984a, 1984b), following Fisher (1930, 1958) and Haldane (1954), have stressed the utility of this approach. Attempts to measure selection by comparing phenotypic distributions across generations are confounded by inheritance, as R depends on $ \\beta $ through G. Chapters 29 and 30 examine in detail methods for estimating the nature of phenotypic selection in natural populations. When the breeder’s equation fails, this separation of selection from inheritance may no longer be possible, leading to the recent use of Robertson’s secondary theorem, $ \\mathbf{R} = \\sigma(w, \\mathbf{A}_z) $, for examining response in natural populations (Chapter 20)."
+    }
+  ]
+}

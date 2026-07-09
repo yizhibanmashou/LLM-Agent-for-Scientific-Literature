@@ -1,0 +1,51 @@
+{
+  "id": "Genetics_chapter21_006",
+  "metadata": {
+    "chapter": "Genetics_chapter21",
+    "section": "Introduction",
+    "subsections": [
+      "Regression of Family Means"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter21_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "Regression of Family Means",
+    "heading_path": [
+      "Introduction",
+      "Regression of Family Means"
+    ],
+    "display_heading": "Regression of Family Means"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Because of technical difficulties in acquiring genetic correlation estimates and in testing for their significance, a number of investigators have opted to use the correlation between family mean phenotypes as a surrogate for estimating $ \\rho_{A} $. Here one simply regresses the family mean phenotype of character 1 on that of character 2, using the same individuals to compute each mean. The rationale for such an approach is that as the size of a family increases, the sampling error of the mean becomes diminishingly small, leaving the family mean phenotype as an estimate of the family mean genotypic value. However, if the heritability of either trait is low, this approach can yield misleading results because the variances and covariances of family means will be biased estimates of the additive genetic expectations. Although we do not advocate this approach, we elaborate on it somewhat to illustrate the interpretative difficulties that can arise."
+    },
+    {
+      "type": "discussion",
+      "content": "Suppose each family consists of a group of $n$ individuals, all related with coefficient of coancestry $\\Theta$ (for example, a group of paternal half-sibs), and let $\\bar{z}_{1i}$ be the mean phenotype of the $i$th family and $z_{1ij}$ be the phenotype of the $j$th member of that family. Assuming that all of the resemblance between relatives is a consequence of additive gene action (in particular, that there are no shared environmental effects), the expected variance among family means for character 1 can then be expressed as $$ $$"
+    },
+    {
+      "type": "discussion",
+      "content": "^ 2 (_ 1i)&= n^ 2 ^ 2 (_ j=1 ^ n z_ 1ij)= n ^ 2 (z_ 1ij)+ n^ 2 (z_ 1ij,z_ 1ik)\\\\&= n [_ z ^ 2 (1)-2 _ A ^ 2 (1)]+2 _ A ^ 2 (1) $$ $$ where $\\sigma_{z}^{2}(1)$ is the phenotypic variance of the trait. The same logic gives the expected covariance between family means for traits 1 and 2 as $$ \\sigma(\\overline{{z}}_{1i},\\overline{{z}}_{2i})=\\frac{1}{n}[\\sigma_{z}(1,2)-2\\Theta\\sigma_{A}(1,2)]+2\\Theta\\sigma_{A}(1,2) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "After some algebraic rearrangement, and continuing to ignore all sources of variation and covariation except those due to additive genetic effects, the correlation of family means is found to be $$ \\rho_{\\overline{{z}}}\\simeq\\frac{\\sigma(\\overline{{z}}_{1,i},\\overline{{z}}_{2,i})}{\\sigma(\\overline{{z}}_{1,i})\\cdot\\sigma(\\overline{{z}}_{2,i})}=\\rho_{A}\\left[\\frac{\\phi h_{1}h_{2}+(\\rho_{z}/\\rho_{A})}{\\sqrt{(\\phi h_{1}^{2}+1)(\\phi h_{2}^{2}+1)}}\\right] $$ where $\\phi = 2\\Theta(n-1)$, $h_{1}^{2} = \\sigma_{A}^{2}(1)/\\sigma_{z}^{2}(1)$ and $h_{2}^{2} = \\sigma_{A}^{2}(2)/\\sigma_{z}^{2}(2)$ are the heritabilities of the traits, and $\\rho_{z}$ is the phenotypic correlation. The quantity in brackets defines the factor by which the regression of family means deviates from the desired value $ \\rho_{A} $. The amount of bias can be seen to depend on $ \\phi $, $ h_{1}^{2} $, $ h_{2}^{2} $, and on the ratio of phenotypic to genetic correlations."
+    },
+    {
+      "type": "discussion",
+      "content": "In the extreme case in which the heritabilities of both traits are equal to one, the genetic and phenotypic correlations are equal (as there is no environmental variance), and the correlation of family means provides an unbiased estimate of the genetic correlation, i.e., $ \\rho_{\\overline{z}} = \\rho_{A} $. However, such concordance is unlikely to arise under any other circumstances. More generally, in order for the correlation between family means to closely approximate the genetic correlation, both $ \\phi h_{1}^{2} $ and $ \\phi h_{2}^{2} $ must be substantially larger than one and than $ |\\rho_{z}/\\rho_{A}| $. Even if the two traits have moderately high heritabilities, the first condition requires large family sizes. Consider, for example, the situation in which both traits have heritabilities of 0.5, 50 paternal half sibs ($ 2\\Theta = 0.25 $) are sampled per family, and the phenotypic correlation is five times larger than the genetic correlation. Substituting for the quantities in the brackets, we find that the correlation of family means inflates the estimate of the genetic correlation by a factor of 1.8."
+    },
+    {
+      "type": "discussion",
+      "content": "A perceived advantage of the family-mean approach is that $ \\rho_{\\overline{z}} $ is a true product-moment correlation. Thus, unlike the other estimators described above, the correlation among family means cannot exceed $ \\pm1 $, and its significance can be evaluated in a straightforward manner using standard tables of critical values for the sample correlation coefficient. However, the actual utility of this property seems questionable, given the uncertainty of what $ \\rho_{\\overline{z}} $ actually measures."
+    },
+    {
+      "type": "discussion",
+      "content": "A more reasonable path to estimating the genetic correlation from family means involves a combination of univariate ANOVA with covariance analysis, as follows. If each family is divided into two independent groups, one used to estimate the mean of character 1 and the other for character 2, the expected covariance between means is simply $ 2\\Theta\\sigma_{A}(1,2) $. Assuming common family environment is not a significant source of variation, there is no bias from environmental covariance because the two groups being compared contain different individuals. Combining the resultant estimate of $ \\sigma_{A}(1,2) $ with estimates of $ \\sigma_{A}^{2}(1) $ and $ \\sigma_{A}^{2}(2) $ obtained by ANOVA provides a basis for a relatively unbiased estimate of $ \\rho_{A} $."
+    }
+  ]
+}

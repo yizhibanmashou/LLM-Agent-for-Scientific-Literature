@@ -1,0 +1,31 @@
+{
+  "id": "Genetics_chapter13_009",
+  "metadata": {
+    "chapter": "Genetics_chapter13",
+    "section": "Introduction",
+    "subsections": [
+      "The Distribution under a Mixture Model"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter13_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "The Distribution under a Mixture Model",
+    "heading_path": [
+      "Introduction",
+      "The Distribution under a Mixture Model"
+    ],
+    "display_heading": "The Distribution under a Mixture Model"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Assume the distribution of interest results from a weighted mixture of several underlying distributions. If there are $ i = 1, \\cdots, n $ underlying distributions, $ p_1(z), \\cdots, p_n(z) $, each with frequency $ \\mathrm{Pr}(i) $, the resulting probability density of an observed variable z is given by a generalization of Equation 13.3, $$ p(z)=\\sum_{i=1}^{n}\\Pr(i)\\cdot p_{i}(z) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "It is usually assumed that the underlying distributions are normals, so this becomes $$ p(z)=\\sum_{i=1}^{n}\\Pr(i)\\cdot\\varphi(z,\\mu_{i},\\sigma_{i}^{2}) $$ where $$ \\varphi(z,\\mu_{i},\\sigma_{i}^{2})=\\frac{1}{\\sqrt{2\\pi\\sigma_{i}^{2}}}\\exp\\left[-\\frac{(z-\\mu_{i})^{2}}{2\\sigma_{i}^{2}}\\right] $$ is the probability density function for a normally distributed random variable with mean $ \\mu_i $ and variance $ \\sigma_i^2 $. Equation 13.5 has $ 3n - 1 $ parameters to estimate: the $ n - 1 $ mixing proportions $ \\mathrm{Pr}(i) $, and the $ n $ means and variances of the underlying distributions. It is usually assumed that all the variances are equal, reducing the number of unknown parameters to $ 2n $. Various genetic hypotheses allow us to further specify and evaluate the structure of the mixing proportions."
+    }
+  ]
+}

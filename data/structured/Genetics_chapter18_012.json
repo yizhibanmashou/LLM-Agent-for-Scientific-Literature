@@ -1,0 +1,63 @@
+{
+  "id": "Genetics_chapter18_012",
+  "metadata": {
+    "chapter": "Genetics_chapter18",
+    "section": "Introduction",
+    "subsections": [
+      "FULL-SIB ANALYSIS"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter18_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "FULL-SIB ANALYSIS",
+    "heading_path": [
+      "Introduction",
+      "FULL-SIB ANALYSIS"
+    ],
+    "display_heading": "FULL-SIB ANALYSIS"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "The statistical methodology outlined above for half sibs also applies to full-sib analysis, provided the interpretations of the within- and among-family components of variance are modified appropriately. For the special case in which there are no dominance effects and no common environmental effects, twice the intra-class correlation coefficient for full sibs provides an estimate of the narrow-sense heritability. However, since the significance of these two sources of variance is generally unknown in advance of a quantitative-genetic analysis, it is best to avoid the exclusive use of full sibs to estimate $ h^{2} $."
+    },
+    {
+      "type": "discussion",
+      "content": "On the other hand, a supplementary full-sib analysis can be valuable precisely because it provides information on the relative significance of the components of variance associated with dominance and common environmental effects. Such an analysis is only a small step beyond the paternal half-sib design. As before, $ N $ randomly selected fathers (sires) are each mated to several different females (dams), but now several (rather than one) offspring are assayed."
+    },
+    {
+      "type": "discussion",
+      "content": "[[FIGURE:18.3]] per dam (Figure 18.3). Under this design, all offspring of a given female are full sibs, while as before, progeny of different females that share the same mate are paternal half sibs."
+    },
+    {
+      "type": "proposition",
+      "content": "The linear model for this nested design is $$ z_{i j k}=\\mu+s_{i}+d_{i j}+e_{i j k} $$ where $z_{ijk}$ is the phenotype of the kth offspring from the family of the ith sire and jth dam, $s_{i}$ is the effect of the ith sire, $d_{ij}$ is the effect of the jth dam mated to the ith sire, and $e_{ijk}$ is the residual deviation. As usual, under the assumption that individuals are random members of the same population, the $s_{i}$, $d_{ij}$, and $e_{ijk}$ are defined to be independent random variables with expectations equal to zero. It then follows that the total phenotypic variance is $$ \\sigma_{z}^{2}=\\sigma_{s}^{2}+\\sigma_{d}^{2}+\\sigma_{e}^{2} $$ where $\\sigma_{s}^{2}$ is the variance among sires, $\\sigma_{d}^{2}$ is the variance among dams within sires, and $\\sigma_{e}^{2}$ is the variance within full-sib families."
+    },
+    {
+      "type": "discussion",
+      "content": "The next step is to relate the observable components of variance to covariances between relatives. First, we note that the total phenotypic variance can be partitioned into two components, the variance within and among full-sib families. Following the rule that the variance among groups is equivalent to the covariance of members within groups, we know that the variance among full-sib families equals the phenotypic covariance of full sibs, $\\sigma(\\mathrm{FS})$. Thus, the variance within full-sib families (the residual variance in the model) is simply $$ \\sigma_{e}^{2}=\\sigma_{z}^{2}-\\sigma(\\mathrm{F S}) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Similarly, as already shown in Equation 18.3, the variance among sires is equivalent to the covariance of individuals with the same father but different mothers, i.e., the covariance of paternal half sibs, $$ \\sigma_{s}^{2}=\\sigma(\\mathrm{P H S}) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Since the three components of variance must sum to $ \\sigma_{z}^{2} $, $$ \\begin{aligned}\\sigma_{d}^{2}&=\\sigma_{z}^{2}-\\sigma_{s}^{2}-\\sigma_{e}^{2}\\\\&=\\sigma(\\mathbf{F}\\mathbf{S})-\\sigma(\\mathbf{P}\\mathbf{H}\\mathbf{S})\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, we express the observable components of variance in terms of their underlying causal sources. Recalling the genetic/environmental interpretations of $\\sigma$(PHS) and $\\sigma$(FS), and ignoring sources of genetic variance beyond two-locus epistasis, $$ \\sigma_{s}^{2}\\simeq\\frac{\\sigma_{A}^{2}}{4}+\\frac{\\sigma_{A A}^{2}}{16} $$ $$ \\sigma_{d}^{2}\\simeq\\frac{\\sigma_{A}^{2}}{4}+\\frac{\\sigma_{D}^{2}}{4}+\\frac{3\\sigma_{A A}^{2}}{16}+\\frac{\\sigma_{A D}^{2}}{8}+\\frac{\\sigma_{D D}^{2}}{16}+\\sigma_{E_{c}}^{2} $$ $$ \\sigma_{e}^{2}\\simeq\\frac{\\sigma_{A}^{2}}{2}+\\frac{3\\sigma_{D}^{2}}{4}+\\frac{3\\sigma_{A A}^{2}}{4}+\\frac{7\\sigma_{A D}^{2}}{8}+\\frac{15\\sigma_{D D}^{2}}{16}+\\sigma_{E_{s}}^{2} $$ where $\\sigma_{E_{c}}^{2}$ is the environmental component of variance due to common (maternal) environmental effects, and $\\sigma_{E_{s}}^{2}$ is that due to individual (special) environmental effects."
+    },
+    {
+      "type": "discussion",
+      "content": "An obvious problem with the preceding set of equations is that they are overdetermined — there are seven causal sources of variance, but only three observable variance components. The usual approach in sib analysis is to assume that the epistatic sources of variance are of negligible significance, so that $$ \\sigma_{s}^{2}\\simeq\\frac{\\sigma_{A}^{2}}{4} $$ $$ \\sigma_{d}^{2}\\simeq\\frac{\\sigma_{A}^{2}}{4}+\\frac{\\sigma_{D}^{2}}{4}+\\sigma_{E_{c}}^{2} $$ $$ \\sigma_{e}^{2}\\simeq\\frac{\\sigma_{A}^{2}}{2}+\\frac{3\\sigma_{D}^{2}}{4}+\\sigma_{E_{s}}^{2} $$"
+    },
+    {
+      "type": "proposition",
+      "content": "Under this assumption, as in half-sib analysis, four times the sire component of variance provides an estimate of the additive genetic variance. The difference $\\sigma_{d}^{2}-\\sigma_{s}^{2}$ provides an indication as to whether dominance (and/or maternal effects) makes a significant contribution to the total phenotypic variance. However, the relative importance of these two factors cannot be determined without information on the resemblance between other types of relatives."
+    }
+  ]
+}

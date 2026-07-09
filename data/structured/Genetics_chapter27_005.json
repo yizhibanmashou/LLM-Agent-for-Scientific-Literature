@@ -1,0 +1,47 @@
+{
+  "id": "Genetics_chapter27_005",
+  "metadata": {
+    "chapter": "Genetics_chapter27",
+    "section": "Variance-Component Estimation with Complex Pedigrees",
+    "subsections": [
+      "Standard Errors of ML Estimates"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter27_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Variance-Component Estimation with Complex Pedigrees",
+    "section_level_2": "Standard Errors of ML Estimates",
+    "heading_path": [
+      "Variance-Component Estimation with Complex Pedigrees",
+      "Standard Errors of ML Estimates"
+    ],
+    "display_heading": "Standard Errors of ML Estimates"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Recall from the theory of maximum likelihood (Appendix 4) that standard errors of ML estimates can be obtained from the appropriate elements of the inverse of the Fisher information matrix (F) involving the vector of parameters being estimated ($ \\Theta $). The elements of F are functions of the second derivatives of the log-likelihood function, evaluated by substituting ML estimates of the parameters, $$ \\mathbf{F}_{i j}=-E\\left(\\frac{\\partial^{2}L}{\\partial\\theta_{i}~\\partial\\theta_{j}}\\right)\\simeq-\\frac{\\partial^{2}L}{\\partial\\theta_{i}~\\partial\\theta_{j}}~\\left|\\mathbf{\\Theta}=\\widehat{\\mathbf{\\Theta}}\\right. $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The sampling variance of the ML estimate of the parameter $ \\theta_{i} $ is approximated by $ F_{ii}^{-1} $ (the ith diagonal element of $ F^{-1} $), while the sampling covariance between the ML estimates of $ \\theta_{i} $ and $ \\theta_{j} $ is approximated by $ F_{ij}^{-1} $."
+    },
+    {
+      "type": "discussion",
+      "content": "Computing the partials for the mixed model gives the information matrix for the ML estimates of $\\beta$ and $\\sigma^{2}$ (the vector of variance-component estimates) as $$ \\mathbf{F}=\\left(\\begin{array}{c c}{\\mathbf{X}^{T}\\mathbf{V}^{-1}\\mathbf{X}}&{\\mathbf{0}}\\\\ {\\mathbf{0}}&{\\mathbf{S}}\\\\ \\end{array}\\right) $$ where $$ S_{i j}=\\frac{1}{2}\\operatorname{t r}\\left(\\mathbf{V}^{-1}\\mathbf{V}_{i}\\mathbf{V}^{-1}\\mathbf{V}_{j}\\right) $$ with $\\mathbf{V}_{i}$ given by Equation 27.15 (Searle et al. 1992). Inverting gives $$ \\mathbf{F}^{-1}=\\left(\\begin{array}{c c}{\\left(\\mathbf{X}^{T}\\mathbf{V}^{-1}\\mathbf{X}\\right)^{-1}}&{\\mathbf{0}}\\\\ {\\mathbf{0}}&{\\mathbf{S}^{-1}}\\\\ \\end{array}\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Hence, $$ \\sigma(\\beta_{i},\\beta_{j})=\\left(\\mathbf{X}^{T}\\mathbf{V}^{-1}\\mathbf{X}\\right)_{i j}^{-1},\\quad\\sigma(\\sigma_{i}^{2},\\sigma_{j}^{2})=\\left(\\mathbf{S}^{-1}\\right)_{i j} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The ML estimates for fixed effects are uncorrelated with those for variance components, i.e., $ \\sigma(\\beta_{i}, \\sigma_{j}^{2}) = 0 $."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 2. For the simple model with dominance (Example 1), the Fisher information submatrix S dealing with the ML variance estimates $(\\sigma_{A}^{2}, \\sigma_{D}^{2}, \\sigma_{E}^{2})$ is $$ \\mathbf{S}=\\frac{1}{2}\\left(\\begin{matrix}{\\mathbf{t r}(\\mathbf{V}^{-1}\\mathbf{A}\\mathbf{V}^{-1}\\mathbf{A})}&{\\mathbf{t r}(\\mathbf{V}^{-1}\\mathbf{A}\\mathbf{V}^{-1}\\mathbf{D})}&{\\mathbf{t r}(\\mathbf{V}^{-1}\\mathbf{A}\\mathbf{V}^{-1})}\\\\ {}&{}&{}\\\\ {\\mathbf{t r}(\\mathbf{V}^{-1}\\mathbf{A}\\mathbf{V}^{-1}\\mathbf{D})}&{\\mathbf{t r}(\\mathbf{V}^{-1}\\mathbf{D}\\mathbf{V}^{-1}\\mathbf{D})}&{\\mathbf{t r}(\\mathbf{V}^{-1}\\mathbf{D}\\mathbf{V}^{-1})}\\\\ {}&{}&{}\\\\ {\\mathbf{t r}(\\mathbf{V}^{-1}\\mathbf{A}\\mathbf{V}^{-1})}&{\\mathbf{t r}(\\mathbf{V}^{-1}\\mathbf{D}\\mathbf{V}^{-1})}&{\\mathbf{t r}(\\mathbf{V}^{-1}\\mathbf{V}^{-1})}\\\\ \\end{matrix}\\right) $$ where V is as given in Example 1."
+    }
+  ]
+}

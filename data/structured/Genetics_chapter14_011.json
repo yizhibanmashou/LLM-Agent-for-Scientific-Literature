@@ -1,0 +1,76 @@
+{
+  "id": "Genetics_chapter14_011",
+  "metadata": {
+    "chapter": "Genetics_chapter14",
+    "section": "Introduction",
+    "subsections": [
+      "Map Distances vs. Recombination Frequencies"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter14_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [
+      "14.3"
+    ],
+    "section_level_1": "Introduction",
+    "section_level_2": "Map Distances vs. Recombination Frequencies",
+    "heading_path": [
+      "Introduction",
+      "Map Distances vs. Recombination Frequencies"
+    ],
+    "display_heading": "Map Distances vs. Recombination Frequencies",
+    "table_reference_keys": [
+      "chapter14:14.3"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Genetic map construction involves both the ordering of loci and the measurement of distance between them. Ideally, distances should be additive so that when new loci are added to the map, previously obtained distances do not need to be radically adjusted. Unfortunately, recombination frequencies are not additive and hence are inappropriate as distance measures. To illustrate, suppose that three loci are arranged in the order A, B, and C with recombination frequencies $ c_{AB} $, $ c_{AC} $, and $ c_{BC} $. Each recombination frequency is the probability that an odd number of crossovers occurs between the markers, while 1 - c is the probability of an even number (including zero). There are two different ways to get an odd number of crossovers in the interval A-C: an odd number in A-B and an even number in B-C, or an even number in A-B and an odd number in B-C. If there is no interference, so that the presence of a crossover in one region has no effect on the frequency of crossovers in adjacent regions, these probabilities can be related as $$ c_{AC}=c_{AB}\\left(1-c_{BC}\\right)+\\left(1-c_{AB}\\right)c_{BC}=c_{AB}+c_{BC}-2c_{AB}c_{BC} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "This is Trow's formula (Trow 1913). More generally, if the presence of a crossover in one region depresses the probability of a crossover in an adjacent region, $$ c_{A C}=c_{A B}+c_{B C}-2(1-\\delta)c_{A B}c_{B C} $$ where the interference parameter $\\delta$ ranges from zero if crossovers are independent (no interference) to one if the presence of a crossover in one region completely suppresses crossovers in adjacent regions (complete interference)."
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, in the absence of very strong interference, recombination frequencies can only be considered to be additive if they are small enough that the product $ 2c_{ABC}c_{BC} $ can be ignored. This is not surprising given that the recombination frequency measures only a part of all recombinant events (those that result in an odd number of crossovers). A map distance m, on the other hand, attempts to measure the total number of crossovers (both odd and even) between two markers. This is a naturally additive measure, as the number of crossovers between A and C equals the number of crossovers between A and B plus the number of crossovers between B and C."
+    },
+    {
+      "type": "discussion",
+      "content": "A number of mapping functions attempt to predict the number of crossovers (m) from the observed recombination frequency (c). The simplest, derived by Haldane (1919), assumes that crossovers occur randomly and independently over the entire chromosome, i.e., no interference. Let $p(m, k)$ be the probability of $k$ crossovers between two loci $m$ map units apart. Under the assumptions of this model, Haldane showed that $p(m, k)$ follows a Poisson distribution, so that the observed fraction of gametes containing an odd number of crossovers is $$ c=\\sum_{k=0}^{\\infty}p(m,2k+1)=e^{-m}\\sum_{k=0}^{\\infty}\\frac{m^{2k+1}}{(2k+1)!}=\\frac{1-e^{-2m}}{2} $$ where $m$ is the expected number of crossovers. Rearranging, we obtain Haldane's mapping function, which yields the (Haldane) map distance $m$ as a function of the observed recombination frequency $c$, $$ m=-\\frac{\\ln(1-2c)}{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "For small $c, m \\simeq c$, while for large $m, c$ approaches $1/2$. Map distance is usually reported in units of Morgans (after T. H. Morgan, who first postulated a chromosomal basis for the existence of linkage groups) or as centiMorgans (cM), where $100$ cM = 1$ Morgan. For example, a Haldane map distance of $20$ cM ($m = 0.2$) corresponds to a recombination frequency of $c = (1 - e^ -0.2)/2 0.16$."
+    },
+    {
+      "type": "discussion",
+      "content": "Although Haldane's mapping function is still used frequently, several other functions allow for the possibility of crossover interference in adjacent sites (Bailey 1961, Felsenstein 1979, Karlin 1982, Pascoe and Morton 1987, Ott 1991, Zhao and Speed 1996). For example, geneticists often use Kosambi's (1944) mapping function, which allows for modest interference, $$ m=\\frac{1}{4}\\ln\\left(\\frac{1+2c}{1-2c}\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Figure 14.6 compares the Haldane and Kosambi mapping functions. For small $c(<0.15)$, both give $m \\simeq c$. For large $m$, both approach $c = 1/2$. The appropriateness of a potential mapping function can be assessed by checking if the computed map distances depart significantly from additivity (e.g., Pascoe and Morton 1987)."
+    },
+    {
+      "type": "discussion",
+      "content": "There is no universal relationship between map distance and the actual physical distance between loci ([[SEE_TABLE:14.3]]). A centiMorgan can correspond to a span of between ten thousand to a million nucleotide base pairs (10 kb to 1,000 kb), depending on the species. Even within a chromosome, there can be rather dramatic differences. For example, crossovers are often suppressed in particular chromosomal regions (increasing the number of base pairs per cM), such as near the centromere and telomeres (chromosome ends), e.g., True et al. (1996). Further, the rate of recombination is under genetic control with some modifier genes having a general influence throughout the genome and others having a fine-scaled influence on specific chromosomal regions (Brooks 1988). Thus, there may be considerable variation among individuals and among populations in the strength of linkage. The recombination rate can also vary between the sexes. In mammals, for example, females usually have greater map distances than do males. In male Drosophila, crossing-over is generally entirely suppressed."
+    },
+    {
+      "type": "discussion",
+      "content": "[[FIGURE:14.6]]"
+    },
+    {
+      "type": "discussion",
+      "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Species</td><td style='text-align: center; word-wrap: break-word;'>Haploid Genome Size (kilobase pairs)</td><td style='text-align: center; word-wrap: break-word;'>Map Length (centiMorgans)</td><td style='text-align: center; word-wrap: break-word;'>Kilobases/centiMorgan</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Yeast</td><td style='text-align: center; word-wrap: break-word;'>$ 2.2 \\times 10^{4} $</td><td style='text-align: center; word-wrap: break-word;'>3,700</td><td style='text-align: center; word-wrap: break-word;'>6</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Neurospora</td><td style='text-align: center; word-wrap: break-word;'>$ 4.2 \\times 10^{4} $</td><td style='text-align: center; word-wrap: break-word;'>500</td><td style='text-align: center; word-wrap: break-word;'>80</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Arabidopsis</td><td style='text-align: center; word-wrap: break-word;'>$ 7.0 \\times 10^{4} $</td><td style='text-align: center; word-wrap: break-word;'>500</td><td style='text-align: center; word-wrap: break-word;'>140</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Drosophila</td><td style='text-align: center; word-wrap: break-word;'>$ 2.0 \\times 10^{5} $</td><td style='text-align: center; word-wrap: break-word;'>290</td><td style='text-align: center; word-wrap: break-word;'>700</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Tomato</td><td style='text-align: center; word-wrap: break-word;'>$ 7.2 \\times 10^{5} $</td><td style='text-align: center; word-wrap: break-word;'>1,400</td><td style='text-align: center; word-wrap: break-word;'>510</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Human</td><td style='text-align: center; word-wrap: break-word;'>$ 3.0 \\times 10^{6} $</td><td style='text-align: center; word-wrap: break-word;'>2,710</td><td style='text-align: center; word-wrap: break-word;'>1,110</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Corn</td><td style='text-align: center; word-wrap: break-word;'>$ 3.0 \\times 10^{6} $</td><td style='text-align: center; word-wrap: break-word;'>1,400</td><td style='text-align: center; word-wrap: break-word;'>2,140</td></tr></table>"
+    },
+    {
+      "type": "discussion",
+      "content": "Source: Catchside 1977, Shields 1989."
+    },
+    {
+      "type": "discussion",
+      "content": "Note: These data are rather crude approximations, averaged over the entire genome and do not account for the substantial variation in map-distance relationships that can exist within and between individuals."
+    }
+  ]
+}

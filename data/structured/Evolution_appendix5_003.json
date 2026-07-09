@@ -1,0 +1,75 @@
+{
+  "id": "Evolution_appendix5_003",
+  "metadata": {
+    "chapter": "Evolution_appendix5",
+    "section": "THE GEOMETRY OF VECTORS AND MATRICES",
+    "subsections": [
+      "Comparing Vectors: Lengths and Angles"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_appendix5_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "THE GEOMETRY OF VECTORS AND MATRICES",
+    "section_level_2": "Comparing Vectors: Lengths and Angles",
+    "heading_path": [
+      "THE GEOMETRY OF VECTORS AND MATRICES",
+      "Comparing Vectors: Lengths and Angles"
+    ],
+    "display_heading": "Comparing Vectors: Lengths and Angles"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "As Figure A5.1A shows, a vector, x, can be treated as a geometric object, consisting of an arrow leading from the origin to an n-dimensional point whose coordinates are given by the elements of x. By changing coordinate systems, we change the resulting vector, potentially changing both its direction (rotating the vector) and length (scaling the vector). This geometric interpretation suggests several ways for comparing vectors, such as the angle between two vectors and the projection of one vector onto another."
+    },
+    {
+      "type": "discussion",
+      "content": "Consider first the length (or norm) of a vector. The most common measure of length is the Euclidean distance of the vector from the origin, $ \\|x\\| $, defined as $$ \\begin{align*}||\\mathbf{x}||=\\sqrt{x_1^2+x_2^2+\\cdots+x_n^2}=\\sqrt{\\mathbf{x}^T\\mathbf{x}}\\end{align*} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "For any scalar $ a, ||a\\mathbf{x}|| = |a|||\\mathbf{x}| $. Similarly, the squared Euclidean distance between the vectors x and y is $$ \\begin{align*}\\vert\\vert\\mathbf{x}-\\mathbf{y}\\vert\\vert^{2}=\\sum\\limits_{i=1}^n(x_i-y_i)^{2}=(\\mathbf{x}-\\mathbf{y})^{T}(\\mathbf{x}-\\mathbf{y})=(\\mathbf{y}-\\mathbf{x})^{T}(\\mathbf{y}-\\mathbf{x})\\end{align*} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Vectors can differ by length, direction, or both. The angle, $ \\theta $, between two vectors (x and y) provides a measure of how much they differ in direction (Figure A5.1C). If the vectors"
+    },
+    {
+      "type": "discussion",
+      "content": ".. satisfy $ax = y$, they both point in exactly the same direction ($\\theta = 0$; they are codirectional) when $a > 0$. If $a < 0$, they are exactly 180 degrees apart and differ in direction only by a reflection about the origin (Figure A5.1B). At the other extreme, two vectors can be at right angles to each other ($\\theta = 90^\\circ$ or $270^\\circ$), in which case they are said to be orthogonal. Orthogonal vectors of unit length are further said to be orthonormal. For any two $n$-dimensional vectors, $\\theta$ satisfies $$ \\begin{align*}\\cos(\\theta)=\\frac{\\mathbf{x}^T\\mathbf{y}}{||\\mathbf{x}||~||\\mathbf{y}||}=\\frac{\\mathbf{y}^T\\mathbf{x}}{||\\mathbf{x}||~||\\mathbf{y}||}\\end{align*} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Hence, $$ \\begin{align*}\\theta=\\cos^{-1}\\left({\\bf{y}^T\\bf{x}\\over||\\bf{x}||~||\\bf{y}||}\\right)\\end{align*} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "If both x and y are of unit length, then $ \\theta = \\cos^{-1}(\\mathbf{y}^T\\mathbf{x}) $, which reveals the close connection between vector angles and inner products. Note that because $ \\cos(90^\\circ) = \\cos(270^\\circ) = 0 $, two vectors are orthogonal if, and only if, their inner product is zero, $ \\mathbf{x}^T\\mathbf{y} = 0 $."
+    },
+    {
+      "type": "discussion",
+      "content": "Another way to compare two vectors is to consider the projection vector of one onto the other. Proj(x on y), the projection of x on y, is a vector in the direction of y, whose length is given by how much of the vector x lies along the direction of y. For any two n-dimensional vectors, the projection of x on y is defined by $$ \\mathrm{Proj}(\\mathbf{x}\\mathrm{on}\\mathbf{y})=\\frac{\\mathbf{x}^{T}\\mathbf{y}}{\\mathbf{y}^{T}\\mathbf{y}}\\mathbf{y}=\\frac{\\mathbf{x}^{T}\\mathbf{y}}{||\\mathbf{y}||^{2}}\\mathbf{y}=\\left(\\cos(\\theta)\\frac{||\\mathbf{x}||}{||\\mathbf{y}||}\\right)\\mathbf{y} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The term in the parentheses (which follows from Equation A5.2a) is a scalar, representing the length that x projects in the direction of y, which means that Proj(x on y) is a scaled version of the vector y onto which we are projecting. If $ \\|y\\| = 1 $, then $$ \\mathbf{P r o j}(\\mathbf{x}\\mathbf{o n}\\mathbf{y})=(\\mathbf{x}^{T}\\mathbf{y})\\mathbf{y}=(\\cos(\\theta)\\left|\\left|\\mathbf{x}\\right|\\right|)\\mathbf{y} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The vector resulting from the projection of x on y is in the same direction as y unless $ 90^\\circ < \\theta < 270^\\circ $, in which case $ \\cos(\\theta) < 0 $ and the projection vector is in exactly the opposite direction (the reflection of y about the origin). The length of the projection vector is $$ \\left\\| \\mathbf{Proj}(\\mathbf{x}on\\mathbf{y}) \\right\\|= \\left\\| \\cos(\\theta) \\right\\| \\left\\| \\mathbf{x} \\right\\|\\leq \\left\\| \\mathbf{x} \\right\\| $$"
+    },
+    {
+      "type": "discussion",
+      "content": "If two vectors lie in exactly the same direction ($ \\theta = 0 $), the projection of one on the other simply recovers the vector (i.e., $ \\text{Proj}(\\mathbf{x} \\text{ on } \\mathbf{y}) = \\mathbf{x} $). Conversely, if two vectors are orthogonal, the projection of one on the other yields a vector of length zero."
+    },
+    {
+      "type": "discussion",
+      "content": "An important property of projection vectors is that if $ \\mathbf{y}_1, \\mathbf{y}_2, \\cdots, \\mathbf{y}_n $ is any set of mutually orthogonal $ n $-dimensional vectors, then any $ n $-dimensional vector $ x $ can be represented as the sum of projections of $ x $ onto the members of this set, namely, $$ \\mathbf{x}=\\sum_{i=1}^{n}Proj(\\mathbf{x}on\\mathbf{y}_{i}) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "One way to think about such a decomposition is as the transformation from one set of axes (or coordinates) into another (defined by the vectors, $ y_i $, that span, or completely cover, the vector space). We can also consider the projection of a vector into some subspace of a matrix (say $ y_1, \\cdots, y_k $, where $ k < n $), namely, the projection onto some subset of the vectors that span the space of the original matrix. For example, one might consider the subspace of a covariance matrix imposed by (say) its three largest factors (eigenvalues). The notion of a subspace of the genetic covariance matrix G will prove useful in describing the constraints caused by the genetic covariance structure (Volume 3)."
+    }
+  ]
+}

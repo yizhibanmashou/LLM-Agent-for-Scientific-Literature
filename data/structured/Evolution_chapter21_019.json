@@ -1,0 +1,55 @@
+{
+  "id": "Evolution_chapter21_019",
+  "metadata": {
+    "chapter": "Evolution_chapter21",
+    "section": "RESPONSE FOR PARTICULAR DESIGNS",
+    "subsections": [
+      "Within-family Selection:"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter21_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "RESPONSE FOR PARTICULAR DESIGNS",
+    "section_level_2": "Within-family Selection:",
+    "heading_path": [
+      "RESPONSE FOR PARTICULAR DESIGNS",
+      "Within-family Selection:"
+    ],
+    "display_heading": "Within-family Selection:"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Within-family selection chooses individuals based on their relative performance within families. Under family-deviations (FD) selection, individuals with the largest family deviations are chosen, independent of which family they come from. In contrast, strict within-family (WF) selection chooses the largest individuals from each family, independent of how much they actually deviate from their family means. Suppose that in family one the deviations for three measured sibs are 4, 3, and -7, while the deviations in family two are 1, 0, and -1. If we select the upper one-third, then under WF selection, the top individual from each family is chosen, while under FD selection, two individuals from family one and none from family two are chosen. The result of this rather subtle distinction is that FD selection is influenced by the observed mean, $ \\overline{z}_{i} $, while WF selection is not. Family deviations and strict within-family selection have been confused in the literature, and the correct expression for WF selection was provided by Dempfle (1975, 1990) and Hill et al. (1996). Because WF selection ensures an equal representation of families, while FD selection does not, WF selection has a larger effective population size (Equation 3.4), and hence an expected larger long-term response (Chapter 26)."
+    },
+    {
+      "type": "discussion",
+      "content": "Under family-deviations (FD) selection, the selection unit is the value of an individual's within-family deviation, $ z_{ij} - \\overline{z}_i $. Using the results from Tables 21.3 and 21.4, Equation 21.1a yields an expected response of $$ \\begin{aligned}R_{FD}&=\\frac{\\sigma(z_{ij}-\\overline{z}_{i},y\\mid\\mathcal{R}_{m})}{\\sigma(z_{ij}-\\overline{z}_{i})}\\overline{\\imath}_{x_{m}}+\\frac{\\sigma(z_{ij}-\\overline{z}_{i},y\\mid\\mathcal{R}_{f})}{\\sigma(z_{ij}-\\overline{z}_{i})}\\overline{\\imath}_{x_{f}}\\\\&=\\frac{1-r_{n}}{\\sqrt{1-t_{n}}}\\sigma_{A}h\\left(\\frac{\\overline{\\imath}_{x_{m}}+\\overline{\\imath}_{x_{f}}}{2}\\right)\\end{aligned} $$ with the last equality following from $ \\sigma_{A}^{2}/\\sigma_{z}=\\sigma_{A}h $."
+    },
+    {
+      "type": "discussion",
+      "content": "Under strict within-family (WF) selection, individuals are chosen entirely on their rank within each family, resulting in the observed mean, $ \\overline{z}_{i} $, being replaced by the true (and unobserved) mean, $ \\mu_{i} $ (Dempfle 1975, 1990; Hill et al. 1996). The response becomes $$ \\begin{aligned}R_{WF}&=\\frac{\\sigma\\left(z_{ij}-\\mu_{i},y\\mid\\mathcal{R}_{m}\\right)}{\\sigma\\left(z_{ij}-\\mu_{i}\\right)}\\overline{\\iota}_{x_{m}}+\\frac{\\sigma\\left(z_{ij}-\\mu_{i},y\\mid\\mathcal{R}_{f}\\right)}{\\sigma\\left(z_{ij}-\\mu_{i}\\right)}\\overline{\\iota}_{x_{f}}\\\\&=\\frac{1-r}{\\sqrt{1-t}}\\sigma_{A}h\\left(\\frac{\\overline{\\iota}_{x_{m}}+\\overline{\\iota}_{x_{f}}}{2}\\right)\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Noting that $$ \\frac{1-r_{n}}{\\sqrt{1-t_{n}}}=\\frac{(1-1/n)(1-r)}{\\sqrt{(1-1/n)(1-t)}}=\\frac{1-r}{\\sqrt{1-t}}\\sqrt{1-\\frac{1}{n}} $$ it follows that $$ R_{FD}=R_{WF}\\frac{\\bar{\\imath}_{FD}}{\\bar{\\imath}_{WF}}\\sqrt{1-\\frac{1}{n}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, when the number of measured sibs in each family is modest to large (meaning that the selection intensities are essentially equal, $ \\bar{\\nu}_{FD} \\simeq \\bar{\\nu}_{WF} $; see Example 24.1), the difference between the expected responses under WF versus FD selection is very small. For large values of n, Equation 21.20 yields a resulting response for strict within-family (WF) selection using half- and full-sib families of $$ R_{WF}=\\left\\{\\begin{array}{ll}\\frac{(3/8)\\sigma_{A}}{\\sqrt{1-t(HS)}}h\\left(\\bar{\\imath}_{x_{m}}+\\bar{\\imath}_{x_{f}}\\right)&\\text{half-sibs}\\\\\\frac{(1/4)\\sigma_{A}}{\\sqrt{1-t(FS)}}h\\left(\\bar{\\imath}_{x_{m}}+\\bar{\\imath}_{x_{f}}\\right)&\\text{full-sibs}\\end{array}\\right. $$"
+    },
+    {
+      "type": "discussion",
+      "content": "When expressed in terms of variance components, $$ R_{WF}=\\left\\{\\begin{array}{ll}\\frac{(3/8)\\sigma_{A}^{2}}{\\sqrt{(3/4)\\sigma_{A}^{2}+\\sigma_{D}^{2}+\\sigma_{E_{s}}^{2}}}\\left(\\bar{\\imath}_{x_{m}}+\\bar{\\imath}_{x_{f}}\\right)&\\text{half-sibs}\\\\\\frac{(1/4)\\sigma_{A}^{2}}{\\sqrt{\\sigma_{A}^{2}/2+(3/4)\\sigma_{D}^{2}+\\sigma_{E_{s}}^{2}}}\\left(\\bar{\\imath}_{x_{m}}+\\bar{\\imath}_{x_{f}}\\right)&\\text{full-sibs}\\end{array}\\right. $$ With their smaller amounts of among-family genetic variance, there is more usable within-family variance among half-sibs, namely, a within-family additive variance of $ (3/4)\\sigma_{A}^{2} $. Only half of this variance is passed from parent to offspring, giving the $ (3/8)\\sigma_{A}^{2} $ term in Equations 21.22a and 21.22b. For full-sibs, the within-family additive variance is $ (1/2)\\sigma_{A}^{2} $, again only half of which is passed onto offspring, which results in the $ \\sigma_{A}^{2}/4 $ term in these equations."
+    },
+    {
+      "type": "discussion",
+      "content": "The within-family heritability, $ h_{w}^{2} $, is the same under both FD and WF within-family selection because $$ \\frac{1-r_{n}}{1-t_{n}}=\\frac{(1-1/n)(1-r)}{(1-1/n)(1-t)}=\\frac{(1-r)}{(1-t)} $$ yielding $$ h_{w}^{2}=\\frac{2\\sigma(z_{ij}-\\overline{z}_{i},y\\mid\\mathcal{R}_{1})}{\\sigma^{2}(z_{ij}-\\overline{z}_{i})}=\\frac{(1-r_{n})\\sigma_{A}^{2}}{(1-t_{n})\\sigma_{z}^{2}}=\\frac{(1-r)}{(1-t)}h^{2} $$"
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:21.5]]"
+    }
+  ]
+}

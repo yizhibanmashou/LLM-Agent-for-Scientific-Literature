@@ -20,7 +20,8 @@ DEFAULT_SOURCE_TITLE = "Evolution and Selection of Quantitative Traits"
 CHAPTER_NAME_PATTERN = re.compile(r"^chapter(?P<num>\d+)$", re.IGNORECASE)
 APPENDIX_NAME_PATTERN = re.compile(r"^appendix(?P<num>\d+)$", re.IGNORECASE)
 LABEL_ID_PATTERN = re.compile(
-    r"^(?P<chapter>\d+)\.(?P<index>\d+)(?:\.(?P<subindex>\d+))?(?P<suffix>[A-Za-z]?)$"
+    r"^(?P<chapter>A?\d+)\.(?P<index>\d+)(?:\.(?P<subindex>\d+))?(?P<suffix>[A-Za-z]?)$",
+    re.IGNORECASE,
 )
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
@@ -73,8 +74,10 @@ def _label_sort_key(label: str) -> tuple[int, int, int, int, str]:
     suffix = match.group("suffix").lower()
     suffix_rank = 0 if not suffix else ord(suffix) - 96
     subindex = int(match.group("subindex")) if match.group("subindex") else 0
+    chapter = match.group("chapter").lower()
+    chapter_rank = 1000 + int(chapter[1:]) if chapter.startswith("a") else int(chapter)
     return (
-        int(match.group("chapter")),
+        chapter_rank,
         int(match.group("index")),
         subindex,
         suffix_rank,
@@ -722,9 +725,10 @@ class Formula:
 class FormulaLibrary:
     formulas: List[Formula] = field(default_factory=list)
 
-    LABEL_PATTERN = re.compile(r"^\d+\.\d+(?:\.\d+)?[a-zA-Z]?$")
+    LABEL_PATTERN = re.compile(r"^(?:a\d+|\d+)\.\d+(?:\.\d+)?[a-zA-Z]?$", re.IGNORECASE)
     FORMULA_BLOCK_PATTERN = re.compile(
-        r"\$\$\s*(?P<latex>[\s\S]*?)\s*\$\$\s*(?:\((?P<label>\d+\.\d+(?:\.\d+)?[A-Za-z]?)\))?"
+        r"\$\$\s*(?P<latex>[\s\S]*?)\s*\$\$\s*(?:\((?P<label>(?:A\d+|\d+)\.\d+(?:\.\d+)?[A-Za-z]?)\))?",
+        re.IGNORECASE,
     )
     PLACEHOLDER_PATTERN = re.compile(r"__FORMULA_REF_(?P<label>[0-9A-Za-z._]+)__")
 
@@ -756,10 +760,14 @@ class FormulaLibrary:
     @staticmethod
     def _label_matches_chapter(label: str, source_chapter: str) -> bool:
         chapter_match = re.search(r"chapter\s*(\d+)", source_chapter, flags=re.IGNORECASE)
-        if not chapter_match:
-            return True
+        appendix_match = re.search(r"appendix\s*(\d+)", source_chapter, flags=re.IGNORECASE)
         try:
-            return int(label.split(".")[0]) == int(chapter_match.group(1))
+            label_chapter = str(label or "").split(".", 1)[0].lower()
+            if chapter_match:
+                return label_chapter == chapter_match.group(1).lower()
+            if appendix_match:
+                return label_chapter == f"a{appendix_match.group(1).lower()}"
+            return True
         except (ValueError, IndexError):
             return False
 
@@ -1330,21 +1338,17 @@ def extract_semantic_blocks(
 
 
 def build_composite_chunks(blocks: List[SemanticBlock]) -> List[CompositeChunk]:
+    """Group blocks into chunks by heading boundary. One subsection = one chunk."""
     if not blocks:
         return []
-
-    target_words = 1400
-    max_blocks = 10
     chunks: List[CompositeChunk] = []
     current: List[SemanticBlock] = []
     current_heading_key = tuple(blocks[0].heading_path or [blocks[0].subsection])
-
     def flush() -> None:
         nonlocal current
         if current:
             chunks.append(CompositeChunk(blocks=current))
             current = []
-
     for block in blocks:
         block_heading_key = tuple(block.heading_path or [block.subsection])
         if current and block_heading_key != current_heading_key:
@@ -1352,37 +1356,8 @@ def build_composite_chunks(blocks: List[SemanticBlock]) -> List[CompositeChunk]:
             current_heading_key = block_heading_key
         elif not current:
             current_heading_key = block_heading_key
-
         current.append(block)
-        word_count = sum(item.word_count for item in current)
-        if word_count >= target_words or len(current) >= max_blocks:
-            flush()
-
     flush()
-
-    # Rebalance only within the same subsection (hard subsection boundary preserved).
-    changed = True
-    while changed and len(chunks) > 1:
-        changed = False
-        merged: List[CompositeChunk] = []
-        idx = 0
-        while idx < len(chunks):
-            current_chunk = chunks[idx]
-            if idx + 1 < len(chunks):
-                next_chunk = chunks[idx + 1]
-                same_subsection = current_chunk.subsections == next_chunk.subsections
-                combined_words = current_chunk.word_count + next_chunk.word_count
-                combined_blocks = len(current_chunk.blocks) + len(next_chunk.blocks)
-                small_tail = current_chunk.word_count < 700 or next_chunk.word_count < 700
-                if same_subsection and small_tail and combined_words <= 1800 and combined_blocks <= 14:
-                    merged.append(CompositeChunk(blocks=current_chunk.blocks + next_chunk.blocks))
-                    idx += 2
-                    changed = True
-                    continue
-            merged.append(current_chunk)
-            idx += 1
-        chunks = merged
-
     return chunks
 
 

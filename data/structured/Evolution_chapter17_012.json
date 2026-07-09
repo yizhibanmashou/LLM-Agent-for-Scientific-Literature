@@ -1,0 +1,35 @@
+{
+  "id": "Evolution_chapter17_012",
+  "metadata": {
+    "chapter": "Evolution_chapter17",
+    "section": "Short-term Changes in the Variance: 2. Changes in the Environmental Variance: Introduction",
+    "subsections": [
+      "Response From Stabilizing Selection on Phenotypic Value, z"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter17_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Short-term Changes in the Variance: 2. Changes in the Environmental Variance: Introduction",
+    "section_level_2": "Response From Stabilizing Selection on Phenotypic Value, z",
+    "heading_path": [
+      "Short-term Changes in the Variance: 2. Changes in the Environmental Variance: Introduction",
+      "Response From Stabilizing Selection on Phenotypic Value, z"
+    ],
+    "display_heading": "Response From Stabilizing Selection on Phenotypic Value, z"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "We have previously suggested that selection either for, or against, extreme individuals may also result in some selection for genotypes with higher, or lower, environmental variances. We formalize this by considering how selection on a phenotypic value, z, maps onto selection on $ A_{m} $ and $ A_{v} $. First consider a quadratic fitness model of stabilizing selection. Here, the expected fitness of an individual with a phenotypic value of z is $$ W(z)=1-s(z-\\theta)^{2} $$ where $ \\theta $ is the optimal trait value and $ s $ is the strength of stabilizing selection. This is a weak selection model, as $ W \\geq 0 $ only for sufficiently small $ s $ relative to the total variance of $ z $. Note that if we set $ s < 0 $, Equation 17.7a becomes a model of (weak) disruptive selection. Gavrilets and Hastings (1994c) examined how this phenotypic fitness function translates into selection on $ (A_m, A_v) $ under the multiplicative model. To do so, we replace $ z $ by $ A_m + A_v $ and take the expectation over $ e $. Noting that $ \\mathrm{E}[e] = 0 $, $ \\mathrm{E}[e^2] = \\sigma_e^2 $, the expected fitness as a function of $ A_m $ and $ A_v $ becomes $$ \\begin{aligned}W(A_{m},A_{v})&=1-s\\operatorname{E}\\left[\\left(A_{m}+A_{v}e-\\theta\\right)^{2}\\mid A_{m},A_{v}\\right]\\\\&=1-s\\left[\\left(A_{m}-\\theta\\right)^{2}+2(A_{m}-\\theta)A_{v}\\operatorname{E}\\left[e\\right]+A_{v}^{2}\\operatorname{E}\\left(e^{2}\\right)\\right]\\\\&=1-s\\left[\\left(A_{m}-\\theta\\right)^{2}+A_{v}^{2}\\sigma_{e}^{2}\\right]\\\\ \\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Similar fitnesses arise under the Gaussian model of weak stabilizing selection (Equation 16.17); see Hill and Mulder (2010), and Example 17.3 for a more exact analysis. Equation 17.7b shows that phenotypic stabilizing selection favors $ A_v $ values near zero, thus decreasing $ \\sigma_E^2 $ (Hansen et al. 2006), which has two important consequences. First, the reduction in phenotypic variance can be significantly greater than predicted from the simple reduction in the additive variance from the Bulmer effect (Chapter 16). And second, there can be cases where the trait heritability, $ h_z^2 $, will increase under stabilizing selection. Because both additive and environmental variances are decreased, if the decrease in environmental variance is sufficiently greater, then $ h_z^2 $ increases. Results for quadratic disruptive selection follow by changing the sign on $ s $, which results in selection to increase $ A_v $."
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:17.3]]"
+    }
+  ]
+}

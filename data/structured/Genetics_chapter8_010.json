@@ -1,0 +1,75 @@
+{
+  "id": "Genetics_chapter8_010",
+  "metadata": {
+    "chapter": "Genetics_chapter8",
+    "section": "Introduction",
+    "subsections": [
+      "Inverses and Solutions to Systems of Equations"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter8_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "Inverses and Solutions to Systems of Equations",
+    "heading_path": [
+      "Introduction",
+      "Inverses and Solutions to Systems of Equations"
+    ],
+    "display_heading": "Inverses and Solutions to Systems of Equations"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "While matrix multiplication provides a compact way of writing systems of equations, we also need a compact notation for expressing the solutions of such systems. Such solutions utilize the inverse of a matrix, an operation analogous to scalar division. The essential utility of matrix inversion can be noted by first considering the solution of the simple scalar equation $ ax = b $ for x. Multiplying both sides by $ a^{-1} $, we have $ (a^{-1}a)x = 1 \\cdot x = x = a^{-1}b $. Now consider a square matrix A. The inverse of A, denoted $ A^{-1} $, satisfies $ A^{-1}A = I = AA^{-1} $, where I, the identity matrix, is a square matrix with diagonal elements equal to one and all other elements equal to zero. The identity matrix serves the role that 1 plays in scalar multiplication. Just as $ 1 \\times a = a \\times 1 = a $ in scalar multiplication, for any matrix A = IA = AI. A matrix is called nonsingular if its inverse exists. Conditions under which this occurs are discussed in the next section. A useful property of inverses is that if the matrix product AB is a square matrix (where A and B are square), then $$ \\left(\\mathbf{A}\\mathbf{B}\\right)^{-1}=\\mathbf{B}^{-1}\\mathbf{A}^{-1} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The fundamental relationship between the inverse of a matrix and the solution of systems of linear equations can be seen as follows. For a square nonsingular matrix A, the unique solution for x in the matrix equation $ Ax = c $ is obtained by premultiplying by $ A^{-1} $, $$ \\mathbf{x}=\\mathbf{A}^{-1}\\mathbf{A}\\mathbf{x}=\\mathbf{A}^{-1}\\mathbf{c} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "When A is either singular or nonsquare, solutions for x can still be obtained using generalized inverses in place of $ A^{-1} $ (Appendix 3), but such solutions are not unique, applying instead to certain linear combinations of the elements of x. (See Appendix 3 for details.) Recalling Equation 8.5, the solution of the multiple regression equation can be expressed as $$ \\boldsymbol{\\beta}=\\mathbf{V}^{-1}\\mathbf{c} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Likewise, for the Pearson-Lande-Arnold regression giving the best linear predictor of fitness, $$ \\boldsymbol{\\beta}=\\mathbf{P}^{-1}\\mathbf{s} $$ where P is the covariance matrix for phenotypic measures $ z_{1}, \\ldots, z_{n} $, and s is the vector of selection differentials for the n characters."
+    },
+    {
+      "type": "discussion",
+      "content": "Before developing the formal method for inverting a matrix, we consider two extreme (but very useful) cases that lead to simple expressions for the inverse. First, if the matrix is diagonal (all off-diagonal elements are zero), then the matrix inverse is also diagonal, with $ A_{ii}^{-1} = 1/A_{ii} $. For example, $$ for\\quad\\mathbf{A}=\\begin{pmatrix}{{{a}}}&{{{0}}}&{{{0}}} \\\\{{{0}}}&{{{b}}}&{{{0}}} \\\\{{{0}}}&{{{0}}}&{{{c}}}\\end{pmatrix}\\qquad then\\quad\\mathbf{A}^{-1}=\\begin{pmatrix}{{{a^{-1}}}}&{{{0}}}&{{{0}}} \\\\{{{0}}}&{{{b^{-1}}}}&{{{0}}} \\\\{{{0}}}&{{{0}}}&{{{c^{-1}}}}\\end{pmatrix} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Note that if any of the diagonal elements of $\\mathbf{A}$ are zero, $\\mathbf{A}^{-1}$ is not defined, as $1/0$ is undefined. Second, for any $2 \\times 2$ matrix $\\mathbf{A}$, $$ \\mathbf{A}=\\left(\\begin{array}{l l}{a}&{b}\\\\ {c}&{d}\\end{array}\\right)\\qquad\\mathrm{t h e n}\\qquad\\mathbf{A}^{-1}=\\frac{1}{a d-b c}\\left(\\begin{array}{l l}{d}&{-b}\\\\ {-c}&{a}\\end{array}\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "To check this result, note that $$ \\begin{aligned}\\mathbf{A}\\mathbf{A}^{-1}&=\\frac{1}{ad-bc}\\begin{pmatrix}{{{a}}}&{{{b}}} \\\\{{{c}}}&{{{d}}}\\end{pmatrix}\\begin{pmatrix}{{{d}}}&{{{-b}}} \\\\{{{-c}}}&{{{a}}}\\end{pmatrix}\\\\&=\\frac{1}{ad-bc}\\begin{pmatrix}{{{ad-bc}}}&{{{0}}} \\\\{{{0}}}&{{{ad-bc}}}\\end{pmatrix}=\\mathbf{I}\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "If $ad = bc$, the inverse does not exist, as division by zero is undefined."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 3. Consider the multiple regression of y on two predictor variables, $ z_{1} $ and $ z_{2} $, so that $ y = \\alpha + \\beta_{1}z_{1} + \\beta_{2}z_{2} + e $. In the notation of Equation 8.5, we have $$ \\mathbf{c}=\\left(\\begin{matrix}{\\sigma(y,z_{1})}\\\\ {\\sigma(y,z_{2})}\\\\ \\end{matrix}\\right)\\qquad\\mathbf{V}=\\left(\\begin{matrix}{\\sigma^{2}(z_{1})}&{\\sigma(z_{1},z_{2})}\\\\ {}&{}\\\\ {\\sigma(z_{1},z_{2})}&{\\sigma^{2}(z_{2})}\\\\ \\end{matrix}\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Recalling that $ \\sigma(z_{1}, z_{2}) = \\rho_{12} \\sigma(z_{1}) \\sigma(z_{2}) $, Equation 8.11 gives $$ \\mathbf{V}^{-1}=\\frac{1}{\\sigma^{2}(z_{1})\\sigma^{2}(z_{2})\\left(1-\\rho_{12}^{2}\\right)}\\begin{pmatrix}\\sigma^{2}(z_{2})&-\\sigma(z_{1},z_{2})\\\\ &\\\\ -\\sigma(z_{1},z_{2})&\\sigma^{2}(z_{1})\\end{pmatrix} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The inverse exists provided both characters have nonzero variance and are not completely correlated ($ |\\rho_{12}| \\neq 1 $). Recalling Equation 8.10b, the partial regression coefficients are given by $ \\boldsymbol{\\beta} = \\mathbf{V}^{-1}\\mathbf{c} $, or $$ \\begin{pmatrix}\\beta_{1}\\\\\\beta_{2}\\end{pmatrix}=\\frac{1}{\\sigma^{2}(z_{1})\\sigma^{2}(z_{2})\\left(1-\\rho_{12}^{2}\\right)}\\begin{pmatrix}\\sigma^{2}(z_{2})&-\\sigma(z_{1},z_{2})\\\\-\\sigma(z_{1},z_{2})&\\sigma^{2}(z_{1})\\end{pmatrix}\\begin{pmatrix}\\sigma(y,z_{1})\\\\\\sigma(y,z_{2})\\end{pmatrix} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Again using $\\sigma(z_{1}, z_{2}) = \\rho_{12} \\sigma(z_{1}) \\sigma(z_{2})$, this equation reduces to $$ \\beta_{1}=\\frac{1}{1-\\rho_{12}^{2}}\\left[\\frac{\\sigma(y,z_{1})}{\\sigma^{2}(z_{1})}-\\rho_{12}\\frac{\\sigma(y,z_{2})}{\\sigma(z_{1})\\sigma(z_{2})}\\right] $$ and $$ \\beta_{2}=\\frac{1}{1-\\rho_{12}^{2}}\\left[\\frac{\\sigma(y,z_{2})}{\\sigma^{2}(z_{2})}-\\rho_{12}\\frac{\\sigma(y,z_{1})}{\\sigma(z_{1})\\sigma(z_{2})}\\right] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Note that only when the predictor variables are uncorrelated ($ \\rho_{12}=0 $), do the partial regression coefficients $ \\beta_{1} $ and $ \\beta_{2} $ reduce to the univariate regression slopes, $$ \\beta_{1}=\\frac{\\sigma(y,z_{1})}{\\sigma^{2}(z_{1})}\\quad and\\quad\\beta_{2}=\\frac{\\sigma(y,z_{2})}{\\sigma^{2}(z_{2})} $$"
+    }
+  ]
+}

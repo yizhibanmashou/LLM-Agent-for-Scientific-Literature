@@ -1,0 +1,51 @@
+{
+  "id": "Genetics_chapter27_045",
+  "metadata": {
+    "chapter": "Genetics_chapter27",
+    "section": "Variance-Component Estimation with Complex Pedigrees",
+    "subsections": [
+      "DERIVATIVES OF VECTORS AND MATRICES"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter27_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Variance-Component Estimation with Complex Pedigrees",
+    "section_level_2": "DERIVATIVES OF VECTORS AND MATRICES",
+    "heading_path": [
+      "Variance-Component Estimation with Complex Pedigrees",
+      "DERIVATIVES OF VECTORS AND MATRICES"
+    ],
+    "display_heading": "DERIVATIVES OF VECTORS AND MATRICES"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Our final special topic in matrix algebra concerns the derivatives of vector- and matrix-valued functions, which we use rather extensively in Chapter 27. We present a few simple results here, and the reader is referred to Morrison (1976), Graham (1981), and Searle (1982) for more details. Consider first the simplest function of vector x, namely the product of x and either a vector (a) or matrix (A) of constants. The derivatives of these functions with respect to the vector x become $$ \\frac{\\partial\\mathbf{a}^{T}\\mathbf{x}}{\\partial\\mathbf{x}}=\\frac{\\partial\\mathbf{x}^{T}\\mathbf{a}}{\\partial\\mathbf{x}}=\\mathbf{a} $$ $$ \\frac{\\partial\\mathbf{A}\\mathbf{x}}{\\partial\\mathbf{x}}=\\mathbf{A}^{T} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Turning to quadratic forms, if A is symmetric, then $$ \\frac{\\partial\\mathbf{x}^{T}\\mathbf{A}\\mathbf{x}}{\\partial\\mathbf{x}}=2\\mathbf{A}\\mathbf{x} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Three useful identities involving quadratic forms follow $$ \\frac{\\partial\\left(\\mathbf{a}-\\mathbf{x}\\right)^{T}\\mathbf{A}\\left(\\mathbf{a}-\\mathbf{x}\\right)}{\\partial\\mathbf{x}}=-2\\mathbf{A}\\left(\\mathbf{a}-\\mathbf{x}\\right) $$ $$ \\frac{\\partial\\left(\\mathbf{a}-\\mathbf{B}\\mathbf{x}\\right)^{T}(\\mathbf{a}-\\mathbf{B}\\mathbf{x})}{\\partial\\mathbf{x}}=-2\\mathbf{B}^{T}(\\mathbf{a}-\\mathbf{B}\\mathbf{x}) $$ $$ \\frac{\\partial\\left(\\mathbf{a}-\\mathbf{B}\\mathbf{x}\\right)^{T}\\mathbf{A}\\left(\\mathbf{a}-\\mathbf{B}\\mathbf{x}\\right)}{\\partial\\mathbf{x}}=-2\\mathbf{B}^{T}\\mathbf{A}\\left(\\mathbf{a}-\\mathbf{B}\\mathbf{x}\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Example 5. The OLS solution for a linear model is the value of $ \\beta $ that minimizes the residual sum of squares given y and X. In matrix form, $$ \\sum_{i=1}^{n}e_{i}^{2}=\\mathbf{e}^{T}\\mathbf{e}=(\\mathbf{y}-\\mathbf{X}\\boldsymbol{\\beta})^{T}(\\mathbf{y}-\\mathbf{x}\\boldsymbol{\\beta}) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Taking the derivative with respect to $ \\beta $ and using Equation A3.25c (with $ \\mathbf{a} = \\mathbf{y} $, $ \\mathbf{B} = \\mathbf{X} $, and $ \\mathbf{x} = \\boldsymbol{\\beta} $) gives $$ \\frac{\\partial\\mathbf{e}^{T}\\mathbf{e}}{\\partial\\beta}=\\frac{(\\mathbf{y}-\\mathbf{X}\\beta)^{T}(\\mathbf{y}-\\mathbf{x}\\beta)}{\\partial\\beta}=-2\\mathbf{X}^{T}\\left(\\mathbf{y}-\\mathbf{X}\\beta\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Setting this equal to zero gives $ \\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta} = \\mathbf{X}^T\\mathbf{y} $, or"
+    },
+    {
+      "type": "discussion",
+      "content": "If $ \\mathbf{X}^T \\mathbf{X} $ is singular, a generalized inverse is used instead. $$ \\boldsymbol{\\beta}=\\left(\\mathbf{X}^{T}\\mathbf{X}\\right)^{-1}\\mathbf{X}^{T}\\mathbf{y} $$"
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "id": "Genetics_chapter17_006",
+  "metadata": {
+    "chapter": "Genetics_chapter17",
+    "section": "Parent-Offspring Regression",
+    "subsections": [
+      "OPTIMUM EXPERIMENTAL DESIGN"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter17_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Parent-Offspring Regression",
+    "section_level_2": "OPTIMUM EXPERIMENTAL DESIGN",
+    "heading_path": [
+      "Parent-Offspring Regression",
+      "OPTIMUM EXPERIMENTAL DESIGN"
+    ],
+    "display_heading": "OPTIMUM EXPERIMENTAL DESIGN"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Prior to embarking on a long-term, labor-intensive study, it is important to consider how the sampling variance of the parent-offspring regression coefficient might be minimized. Given the constraint of being able to measure a certain number of individuals, the primary question is, How should one's resources be allocated to measuring numbers of families versus numbers of offspring/family? Klein et al. (1973) and Klein (1974) present a useful series of tables outlining the expected standard errors of parent-offspring regressions under various experimental designs."
+    },
+    {
+      "type": "discussion",
+      "content": "Latter and Robertson (1960) developed a general procedure for determining the optimal design, showing how the solution depends upon the nature of the constraints on the investigator. We first consider the situation when the investigator is simply limited by the total number of offspring that can be measured (T). If progeny from N families are measured, then the number of progeny measured per family (n) must satisfy $ T = Nn $. A general expression for the sampling variance of a regression coefficient has already been given in Equation 17.6. The numerator of that expression is the residual variance around the regression, which was defined in another manner in Equation 17.4. Making the appropriate substitutions in Equation 17.6, $$ \\mathbf{Var}(b_{op})\\simeq\\frac{n(t-b_{op}^{2})+(1-t)}{Nn} $$ for a single-parent regression, and $$ \\mathbf{Var}(b_{o\\overline{{p}}})\\simeq\\frac{2[n(t-b_{o\\overline{{p}}}^{2}/2)+(1-t)]}{N n} $$ for a midparent regression. In both cases, since $N_n$ is taken to be the constant $T$, it is clear that the sampling variance of the regression coefficient is minimized by measuring just a single offspring ($n=1$) from $N=T$ families."
+    },
+    {
+      "type": "discussion",
+      "content": "Now suppose there is a baseline cost to evaluating a family, irrespective of family size. In a natural setting, for example, a certain amount of effort may be necessary to locate a known parent and offspring. In a laboratory setting, a certain amount of time may be necessary for the basic setup and maintenance of a family. Let the limiting resource be the T total time units available for the study, and let $ \\tau $ be the baseline time required for evaluating a family. If one scales the unit of time to be that required for the processing of a single individual in excess of the baseline investment for the family, then $ \\tau + n $ is the time that it takes to process a family of n offspring, and the number of families that can be processed is $ N = T/(\\tau + n) $. The optimal family size $ \\widehat{n} $ can be computed by substituting $ N = T/(\\tau + n) $ into Equations 17.8a,b, setting the derivative of Var(b) with respect to n equal to zero, and solving for $ \\widehat{n} $. In both cases, $$ \\widehat{n}=\\left[\\frac{\\tau(1-t)}{t-B}\\right]^{1/2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Recall that both $t$ and $B$ are functions of $h^{2}$. Thus, with this slightly different and perhaps more realistic constraint, the optimal experimental design depends upon the value of the very quantity that we wish to solve for. This obviously reduces the general utility of Equation 17.9. However, an educated guess can sometimes be made, based upon past experience or information in the literature, as to the approximate value of $h^{2}$. On average, an estimate of $\\hat{n}$ based upon this information ought to be better than a blind guess. As an example of the use of Equation 17.9, consider the special case in which the character of interest has a purely additive genetic basis and there are no"
+    },
+    {
+      "type": "discussion",
+      "content": "[[FIGURE:17.2]] environmental effects causing resemblance between sibs. Then, for full- and half-sib families respectively, $ t $ is $ h^2/2 $ and $ h^2/4 $. For single-parent and midparent regressions, $ B $ is $ h^4/4 $ and $ h^4/2 $. Substituting the appropriate values into Equation 17.9, we obtain optimal designs for the three kinds of parent-offspring regressions: $$ \\mathrm{Single~parents,full-sib~families:}\\qquad\\widehat{n}=\\left[\\frac{2\\tau}{h^{2}}\\right]^{1/2} $$ $$ \\mathrm{S i n g l e~p a r e n t s,h a l f-s i b~f a m i l i e s:}\\qquad\\widehat{n}=\\left[\\frac{\\tau(4-h^{2})}{h^{2}(1-h^{2})}\\right]^{1/2} $$ $$ \\mathrm{Midparents,~full-sib~families:}\\qquad\\widehat{n}=\\left[\\frac{\\tau(2-h^{2})}{h^{2}(1-h^{2})}\\right]^{1/2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The relationship of $ \\hat{n} $ to $ h^{2} $ is given in Figure 17.2 for these three kinds of experimental designs for the special case in which $ \\tau = 3 $ (i.e., the cost of securing a new family is three times that required for measuring an individual in an established family). Note that the optimal family size is a complex function of the type of family evaluated as well as of the heritability, but that $ \\hat{n} $ is never less than 2 in this particular example."
+    },
+    {
+      "type": "discussion",
+      "content": "[[FIGURE:17.3]]"
+    },
+    {
+      "type": "discussion",
+      "content": "By use of the above equations, some insight can be gained into the magnitude of the standard errors of heritability that would arise under an optimal design. Consider the situation where the optimal design has been determined to be n = 1, N = T. Substituting n = 1 into Equations 17.8a,b, and again assuming the covariance between sibs to be solely due to additive genetic variance, we find: Single-parent regression: $$ \\mathbf{SE}(h^{2})=\\left(\\frac{4-h^{4}}{N}\\right)^{1/2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Midparent regression: $$ \\mathrm{SE}(h^{2})=\\left(\\frac{2-h^{4}}{N}\\right)^{1/2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Three important results can be noted from these expressions. First, since the range of possible values for $ h^2 $ is 0 to 1, the standard error of $ h^2 $ is nearly independent of $ h^2 $. For a single-parent regression, it is approximately equal to $ 2/\\sqrt{N} $. This is illustrated in Figure 17.3 where the standard error is plotted as a function of N for extreme values of $ h^2 = 0.1 $ and 1.0. Second, compared to a single-parent regression, a midparent regression yields a 30 to 40% improvement in precision. Thus, it is generally well worth gathering data on both parents if possible. Third, unless the heritability is quite high, the detection of statistically significant heritabilities by parent-offspring regression can require large sample sizes. If our estimate of $ h^{2} $ were 1.0, we would require a standard error of about 0.5 to say with 95% confidence that the true heritability is significantly greater than zero. In the case of a single-parent regression, this would require the measurement of only about 12 parent-offspring pairs. As the heritability declines, however, the sample sizes required for the demonstration of significance rapidly increases. If $ h^{2} = 0.1, \\sim 1600 $ parent-offspring pairs are required to obtain a standard error of 0.05."
+    },
+    {
+      "type": "discussion",
+      "content": "While the sample size required for a given standard error is straightforward, a more rigorous approach is to compute the actual power of the experimental design. The power is the probability that a test statistic will be significant, given the sample size and some assumed true values for the unknown parameters. Power calculations are examined in detail in Appendix 5. Suppose the true $ h^{2} = 1 $, and we test the hypothesis of a significant regression using a test with significance level $ \\alpha = 0.05 $. Taking 12 parent-offspring pairs (as suggested above), the probability of a significant regression coefficient is only 0.53. If the sample size is doubled to 24, the probability of a significant regression increases to 0.82, while 38 parent-offspring pairs are required in order to have a 90% probability. Likewise, for $ h^{2} = 0.1 $, taking 1600 parent-offspring pairs (as suggested by the standard error approach) gives only a 64% chance of the resulting regression being significant. A sample size of 3500 pairs is required to have a 90% chance that the regression is significant."
+    },
+    {
+      "type": "discussion",
+      "content": "Hill (1990) has suggested that a further reduction in the standard error of a parent-offspring regression is obtainable if most of the effort is applied to families of parents with phenotypes far from the population mean. The increase in efficiency is a simple consequence of the fact that parents with phenotypes near the mean provide little information on the slope of the regression. A special application of this idea is covered in the following section."
+    }
+  ]
+}

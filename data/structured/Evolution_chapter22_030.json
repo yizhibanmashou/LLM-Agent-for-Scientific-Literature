@@ -1,0 +1,55 @@
+{
+  "id": "Evolution_chapter22_030",
+  "metadata": {
+    "chapter": "Evolution_chapter22",
+    "section": "ASSOCIATIVE-EFFECTS, INCLUSIVE FITNESS, AND FISHER'S THEOREM",
+    "subsections": [
+      "Inclusive Fitness"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter22_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "ASSOCIATIVE-EFFECTS, INCLUSIVE FITNESS, AND FISHER'S THEOREM",
+    "section_level_2": "Inclusive Fitness",
+    "heading_path": [
+      "ASSOCIATIVE-EFFECTS, INCLUSIVE FITNESS, AND FISHER'S THEOREM",
+      "Inclusive Fitness"
+    ],
+    "display_heading": "Inclusive Fitness"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "As Equation 22.47a illustrates, when heritable interactions are present, the fitness of an individual depends on both its own genes as well as the genes in others. Hamilton (1964a, 1964b) suggested that evolutionary focus should shift from individual fitness to what he called inclusive fitness: that component of fitness influenced only by the alleles carried by the focal individual. Hamilton argued that evolution strives to increase inclusive, as opposed to individual, fitness (also see Michod and Abugov 1980; Grafen 2006; Akçay and Van Cleve 2016)."
+    },
+    {
+      "type": "proposition",
+      "content": "Formally, the inclusive fitness of an individual is context specific, and is defined as individual fitness plus the effect of that individual on the fitness of others (weighted by the relatedness to these others) minus any contribution to that fitness from the group environment. While sounding rather abstract, when placed in an associative-effect framework, this definition is quite clear. From Equation 22.47a, for individual i, $ A_{d_i} $ is the heritable component of individual fitness ($ W_i $) remaining when the social contributions from others have been removed. The focal individual's social breeding value ($ A_{s_i} $) does not influence its own fitness, but the social effects of other group members do, with the (heritable) contribution to individual i's fitness from individual j being $ A_{s_j} $. The correlation between the breeding value $ A_{s_i} $ carried by i and the contribution to i's fitness from j is the relatedness $ r_{ij} $, so that $ r_{ij}A_{s_i} $ is the predicted value of $ A_{s_j} $ given $ A_{s_i} $. Putting these together gives the heritable component (i.e., breeding value) of i's inclusive fitness as $$ A_{incf,i}=A_{d_{i}}+A_{s_{i}}\\sum_{j\\neq i}^{n}r_{ij}=A_{d_{i}}+r(n-1)A_{s_{i}} $$ where the last equality makes our standard assumption that all group members are equally related (which is easily relaxed). Note that the presence of r makes a genotype's inclusive fitness context specific: if the same genotype interacts with two different groups (even when both have identical allele frequencies), it may have different inclusive fitnesses."
+    },
+    {
+      "type": "discussion",
+      "content": "The resulting variance in the breeding value for inclusive fitness becomes $$ \\sigma^{2}(A_{i n c f})=\\sigma^{2}(A_{d})+2r(n-1)\\sigma(A_{d},A_{s})+r^{2}(n-1)^{2}\\sigma^{2}(A_{s}) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "In the absence of heritable associative effects, $ \\sigma^2(A_s) = 0 $, this reduces to the additive variance in direct fitness, as is also the case when $ r = 0 $. It is important to note that the heritable component of inclusive fitness is not the same as the total breeding value, $ A_T $, for fitness, as a comparison of Equation 22.51a to Equation 22.3 shows that $$ A_{T_{i}}=A_{i n c f,i}+(1-r)(n-1)A_{s_{i}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Just as Equation 22.49a decomposed the total response into components from direct and associative effects, we can similarly decompose the change in mean individual fitness, $ R_{W} $, into change in mean inclusive fitness, $ R_{W,incf} $, plus a residual response. From Equation 22.51c $$ R_{W}=R_{W,incf}+(1-r)(n-1)R_{W,s} $$ showing that the total response in fitness is the change in inclusive fitness plus any response in the residual of the mean social value (after the effects of group relatives are absorbed into inclusive fitness). Using the same logic leading to Equation 22.48c, the response in the mean inclusive fitness is given by $$ R_{W,incf}=\\frac{1}{\\overline{W}}\\sigma(W,A_{incf}) $$ where, from Equations 22.47a and 22.51a, we have $$ \\begin{align*}\\sigma(W,A_{incf})&=\\sigma\\Big(\\mu+A_{d_{i}}+\\sum_{j\\neq i}A_{s_{j}}+e_{i},A_{d_{i}}+r(n-1)A_{s_{i}}\\Big)\\\\&=\\sigma^{2}(A_{d})+2r(n-1)\\sigma(A_{d},A_{s})+r^{2}(n-1)^{2}\\sigma^{2}(A_{s})\\end{align*} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The last line follows by evaluating the covariance in a similar fashion as done throughout this chapter. Note by comparison with Equation 22.51b that Equation 22.52c is simply $ \\sigma^{2}(A_{incf}) $, yielding $$ R_{W,incf}=\\frac{\\sigma^{2}(A_{incf})}{\\overline{W}} $$ Hence (under our simple model), the response in mean inclusive fitness is proportional to the additive variance in inclusive fitness, so that mean inclusive fitness is nondecreasing."
+    },
+    {
+      "type": "discussion",
+      "content": "Why, then, can the mean of individual fitness decline despite the continual increase in mean inclusive fitness? The reason is a decline in the mean (residual) social value. Recalling Equation 22.49c, Equation 22.52a becomes $$ R_{W}-R_{W,i n c f}=\\frac{(1-r)(n-1)}{\\overline{W}}\\Biggl(\\sigma(A_{d},A_{s})+r(n-1)\\sigma^{2}(A_{s})\\Biggr) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Hence, if the covariance between direct and associative effects is sufficiently negative, any increase in inclusive fitness is more than countered by the decline in the mean social environment. When r = 0, $$ R_{W}-R_{W,incf}=\\frac{(n-1)\\sigma(A_{d},A_{s})}{\\overline{W}} $$ which can be positive or negative, depending on the sign of the covariance. Note, from Equation 22.52e, that increasing the relatedness, r, of group members decreases the residual response between mean individual and inclusive fitness, which in turn increases the chances that individual mean fitness increases."
+    }
+  ]
+}

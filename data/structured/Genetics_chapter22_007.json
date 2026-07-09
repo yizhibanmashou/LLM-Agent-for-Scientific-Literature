@@ -1,0 +1,35 @@
+{
+  "id": "Genetics_chapter22_007",
+  "metadata": {
+    "chapter": "Genetics_chapter22",
+    "section": "Genotype $ \\times $ Environment Interaction",
+    "subsections": [
+      "Relationship to Falconer's Correlation Across Environments"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter22_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Genotype $ \\times $ Environment Interaction",
+    "section_level_2": "Relationship to Falconer's Correlation Across Environments",
+    "heading_path": [
+      "Genotype $ \\times $ Environment Interaction",
+      "Relationship to Falconer's Correlation Across Environments"
+    ],
+    "display_heading": "Relationship to Falconer's Correlation Across Environments"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "There is a close relationship between the ANOVA approach to genotype $ \\times $ environment interaction and Falconer's genetic correlation across environments (Robertson 1959b; Dickerson 1962; Yamada 1962, Yamada et al. 1988). Here we show the connection between Falconer's fixed-effects model and the random-effects interpretation (Equation 22.9). For the time being, we assume that the total genetic variance is the same in different environments, so that Falconer's correlation is given by Equation 22.7b, which is expressed in terms of the same variance components that we have used in the mixed model. Substituting from Equations 22.10a,b, the equivalent expression in terms of the random-effects model is $$ \\rho_{\\times}=\\frac{\\sigma_{\\widetilde{G}}^{2}+[(2-N_{E})/N_{E}]\\sigma_{\\widetilde{I}}^{2}}{\\sigma_{\\widetilde{G}}^{2}+\\sigma_{\\widetilde{I}}^{2}} $$ which reduces to $$ \\rho_{\\times}=\\frac{\\sigma_{\\widetilde{G}}^{2}}{\\sigma_{\\widetilde{G}}^{2}+\\sigma_{\\widetilde{I}}^{2}} $$ when there are only two environments. Written in this manner, for analyses involving only two environments, $ \\rho_x $ can be interpreted as an intraclass correlation of genotypic values in the different environments. Thus, a third way of computing the genetic correlation across two environments is to perform a conventional two-way ANOVA on the data, computing the variance components by the method of moments, and substituting the appropriate values into either Equation 22.7b or 22.12b. One advantage of the ANOVA approach is that the $ F $ ratio, $ MS_I/MS_e $, provides an explicit test of the hypothesis of no genotype $ \\times $ environment interaction."
+    },
+    {
+      "type": "discussion",
+      "content": "Equation 22.7b, or equivalently Equation 22.12a, can also be used in experiments employing multiple ($ N_{E} > 2 $) environments to estimate the average degree of genetic correlation across all pairs of environments. Following the logic developed above, $ \\rho_{x} $ can be negative, but geometric constraints make the chance of this very small when $ N_{E} $ is large."
+    },
+    {
+      "type": "discussion",
+      "content": "A slight complication arises when the among-family variance differs among environments, as this causes the interaction variance extracted from two-way ANOVA to be inflated by scale effects. The resultant downward bias in $ \\rho_{x} $ can be corrected by subtracting from the denominator of Equation 22.12a (or 22.7b) the variance of the environment-specific genetic standard deviations (Robertson 1959b, Dickerson 1962, Itoh and Yamada 1990, Muir et al. 1992). To apply this correction, one-way ANOVAs need to be performed on the data for each of the $ N_{E} $ environments. In each case, the among-family component of variance is obtained by the method of moments. Square roots are then taken of each of the $ N_{E} $ estimates, and the variance of the among-family standard deviations is subtracted from the denominator of the preliminary estimate of $ \\rho_{\\times} $ to provide a scale-independent estimate of the correlation across environments."
+    }
+  ]
+}

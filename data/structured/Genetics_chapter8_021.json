@@ -1,0 +1,55 @@
+{
+  "id": "Genetics_chapter8_021",
+  "metadata": {
+    "chapter": "Genetics_chapter8",
+    "section": "Introduction",
+    "subsections": [
+      "Generalized Least Squares"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter8_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "Generalized Least Squares",
+    "heading_path": [
+      "Introduction",
+      "Generalized Least Squares"
+    ],
+    "display_heading": "Generalized Least Squares"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Under OLS, the unweighted sum of squared residuals is minimized. However, if some residuals are inherently more variable than others (have a higher variance), less weight should be assigned to the more variable data. Correlations between residuals can also influence the weight that should be assigned to each individual, as the data are not independent. Thus, if the residual errors are heteroscedastic and/or correlated, ordinary least-squares estimates of regression parameters and standard errors of these estimates are potentially biased."
+    },
+    {
+      "type": "discussion",
+      "content": "A more general approach to regression analysis expresses the covariance matrix of the vector of residuals as $\\sigma_{e}^{2}\\mathbf{R}$, with $\\sigma(e_{i},e_{j})=R_{ij}\\sigma_{e}^{2}$. Lack of independence between residuals is indicated by the presence of nonzero off-diagonal elements in $\\mathbf{R}$, while heteroscedasticity is indicated by differences in the diagonal elements of $\\mathbf{R}$. Generalized (or weighted) least squares (GLS) takes these complications into account. As shown in Appendix 3, if the linear model is $$ \\mathbf{y}=\\mathbf{X}\\boldsymbol{\\beta}+\\mathbf{e}\\qquad\\mathrm{w i t h}\\mathbf{e}\\sim(0,\\mathbf{R}\\sigma_{e}^{2}) $$ the GLS estimate of $ \\beta $ is $$ \\mathbf{b}=\\left(\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{X}\\right)^{-1}\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{y} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "(Aitken 1935). The covariance matrix for the GLS estimates is $$ \\mathbf{V_{b}}=\\left(\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{X}\\right)^{-1}\\sigma_{e}^{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "If residuals are independent and homoscedastic, $ \\mathbf{R} = \\mathbf{I} $, and GLS estimates are the same as OLS estimates. If $ e \\sim \\text{MVN}(0, \\mathbf{R}\\sigma_{e}^{2}) $, the GLS estimate of $ \\beta $ is also the maximum-likelihood estimate."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 11. A common situation requiring weighted least-squares analysis occurs when residuals are independent but heteroscedastic with $ \\sigma^{2}(e_{i}) = \\sigma_{e}^{2}/w_{i} $, where $ w_{i} $ are known positive constants. For example, if each observation $ y_{i} $ is the mean of $ n_{i} $ independent observations (each with uncorrelated residuals with variance $ \\sigma_{e}^{2} $), then $ \\sigma^{2}(e_{i}) = \\sigma_{e}^{2}/n_{i} $, and hence $ w_{i} = n_{i} $. Here $$ \\mathbf{R}=\\mathrm{D i a g}(w_{1}^{-1},w_{2}^{-1},\\ldots,w_{n}^{-1}) $$ where Diag denotes a diagonal matrix, giving $$ \\mathbf{R}^{-1}=\\mathbf{D i a g}\\big(w_{1},w_{2},\\ldots,w_{n}\\big) $$ With this residual variance structure, consider the weighted least-squares estimate for the simple univariate regression model $ y = \\alpha + \\beta x + e $. In GLM form, $$ \\mathbf{y}=\\begin{pmatrix}y_{1}\\\\ \\vdots\\\\ y_{n}\\end{pmatrix},\\qquad\\mathbf{X}=\\begin{pmatrix}1&x_{1}\\\\ \\vdots&\\vdots\\\\ 1&x_{n}\\end{pmatrix},\\qquad and\\qquad\\boldsymbol{\\beta}=\\begin{pmatrix}\\alpha\\\\ \\boldsymbol{\\beta}\\end{pmatrix} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Define the following weighted means and cross products, $$ w=\\sum_{i=1}^{n}w_{i},\\quad\\overline{x}_{w}=\\sum_{i=1}^{n}\\frac{w_{i}x_{i}}{w},\\quad\\overline{x^{2}}_{w}=\\sum_{i=1}^{n}\\frac{w_{i}x_{i}^{2}}{w} $$ $$ \\overline{y}_{w}=\\sum_{i=1}^{n}\\frac{w_{i}y_{i}}{w},\\quad\\overline{x}\\overline{y}_{w}=\\sum_{i=1}^{n}\\frac{w_{i}x_{i}y_{i}}{w} $$ With these definitions, matrix multiplication and a little simplification give $$ \\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{y}=w\\begin{pmatrix}\\overline{y}_{w}\\\\ \\\\ \\overline{x}\\overline{y}_{w}\\end{pmatrix}\\qquad and\\qquad\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{X}=w\\begin{pmatrix}1&\\overline{x}_{w}\\\\ &\\\\ \\overline{x}_{w}&\\overline{x^{2}}_{w}\\end{pmatrix} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Applying Equation 8.34, the GLS estimates of $ \\alpha $ and $ \\beta $ are $$ a=\\overline{y}_{w}-b\\overline{x}_{w} $$ $$ b=\\frac{\\overline{x}\\overline{y}_{w}-\\overline{x}_{w}\\overline{y}_{w}}{\\overline{x^{2}}_{w}-\\overline{x}^{2}_{w}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "If all weights are equal ($w_{i}=c$), these expressions reduce to the standard (OLS) least-squares estimators given by Equation 3.14. Applying Equation 8.35, the sampling variances and covariance for these estimates are $$ \\sigma^{2}(a)=\\frac{\\sigma_{e}^{2}\\cdot\\overline{x^{2}}_{w}}{w\\left(\\overline{x^{2}}_{w}-\\overline{x}_{w}^{2}\\right)} $$ $$ \\sigma^{2}(b)=\\frac{\\sigma_{e}^{2}}{w\\left(\\overline{x^{2}}_{w}-\\overline{x}_{w}^{2}\\right)} $$ $$ \\sigma(a,b)=\\frac{-\\sigma_{e}^{2}\\overline{x}_{w}}{w\\left(\\overline{x^{2}}_{w}-\\overline{x}_{w}^{2}\\right)} $$"
+    }
+  ]
+}

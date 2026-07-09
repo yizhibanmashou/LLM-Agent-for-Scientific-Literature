@@ -1,0 +1,48 @@
+{
+  "id": "Evolution_chapter27_008",
+  "metadata": {
+    "chapter": "Evolution_chapter27",
+    "section": "WALKS IN SEQUENCE SPACE: MAYNARD-SMITH-GILLESPIE-ORR ADAPTIVE WALKS",
+    "subsections": [
+      "Extreme-Value Theory (EVT)"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter27_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [
+      "27.1"
+    ],
+    "section_level_1": "WALKS IN SEQUENCE SPACE: MAYNARD-SMITH-GILLESPIE-ORR ADAPTIVE WALKS",
+    "section_level_2": "Extreme-Value Theory (EVT)",
+    "heading_path": [
+      "WALKS IN SEQUENCE SPACE: MAYNARD-SMITH-GILLESPIE-ORR ADAPTIVE WALKS",
+      "Extreme-Value Theory (EVT)"
+    ],
+    "display_heading": "Extreme-Value Theory (EVT)",
+    "table_reference_keys": [
+      "Evolution_chapter27:27.1"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "proposition",
+      "content": "Under Gillespie’s model, fitness values for new mutations are drawn from some unknown, and complex, underlying fitness distribution. However, the current allele is likely rather fit (even if moved to a new environment) relative to all of the possible 3L alleles that are one step (a single-base change) removed. Hence, its current fitness value is already in the right-hand tail of the fitness distribution, with new favorable alleles being drawn from values that are even more extreme (farther to the right); see Figure 27.4. In such settings, EVT states that one of three possible limiting distributions (referred to as domains) will occur (Example 27.2). Gillespie (1983, 1984b) assumed the Gumbel domain, which arises for a very wide range of underlying distributions. Joyce et al. (2008) examined the properties of adaptive walks under the two other EVT limiting distributions, the Weibull (truncated right tails) and Fréchet (tails heavier than exponential) domains. They did so by extending many of the results that we present below (which assume a Gumbel), under a generalized Pareto distribution as a function of its tail parameter ($ \\kappa $), which sets the domain (Example 27.2). Joyce et al. found that results based on the Gumbel ($ \\kappa = 0 $) assumption are fairly robust for biologically realistic Fréchet distributions ($ 0 < \\kappa < 0.5 $), and for moderate Weibull distributions ($ -0.5 \\leq \\kappa < 0 $). However, for more extreme Weibull distributions ($ \\kappa < -0.5 $), significant departures in behavior from Gumbel-assumption results can occur."
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:27.2]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Most common distributions (normal, gamma, etc.) have a Gumbel EV distribution ($ \\kappa = 0 $), which has an exponential tail. This is the most commonly assumed EV distribution for beneficial mutations. When the underlying distribution is truncated to the right (the upper bound of $ -\\tau/\\kappa > 0 $, as $ \\kappa < 0 $), the extreme-value distribution is in the Weibull domain."
+    },
+    {
+      "type": "discussion",
+      "content": "Such an upper-truncated underlying distribution may hold for loci that are near their fitness optimum, as the fittest possible allele simply moves to the optimal value (Martin and Lenormand 2008). The final possible EV distribution (arising when $ \\kappa > 0 $) is the Fréchet domain, which has much heavier tails than an exponential. Biologically, this implies that highly beneficial new mutations are rather likely to occur, and hence it is generally not used (Orr 2006), although some experimental data are consistent with the underlying fitness distribution being in the Fréchet domain ([[SEE_TABLE:27.1]]). By noting that $ \\kappa $ determines the domain family, Beisel et al. (2007) developed a likelihood-ratio test for $ \\kappa = 0 $. They found that the power to detect the Weibull domain alternative ($ \\kappa < 0 $) versus a Gumbel null ($ \\kappa = 0 $) is reasonable if ten or more beneficial mutations are scored."
+    },
+    {
+      "type": "discussion",
+      "content": "One alternative approach to modeling walks is based upon the Fisher–Kolmogorov equation (Fisher 1937; Kolmogorov 1937), which was originally used to model the speed of the traveling wave of advance of an advantageous mutation over a linearcline (the analysis of allelic surfing is based on this approach; Chapters 8 and 9). As applied to an adaptive walk, one treats the \"wave\" of advance as the rate at which mean population fitness increases due to increases in the frequency of new advantageous mutations (see Hallatschek 2011 and Neher 2013 for reviews). The leading edge of this traveling wave of advance (the most fit alleles, namely, the extreme right tail of the fitness distribution) is often called the nose of the distribution, leading to the term nose theory being used to describe this modeling approach. The connection with EVT is that if the distribution of fitnesses in the nose (the extreme values of the distribution) falls off more quickly than an exponential, the distribution of fitness effects is in the Weibull domain, with the fitnesses of new advantageous alleles tending to be somewhat uniform (in the words of Neder 2013, their distribution \"tends to be smooth\"). Conversely, if the tail of the underlying fitness distribution declines at a rate slower than an exponential, extreme fitnesses are drawn from the Fréchet domain and the behavior of the walk can be dominated by a few large-effect mutations."
+    }
+  ]
+}

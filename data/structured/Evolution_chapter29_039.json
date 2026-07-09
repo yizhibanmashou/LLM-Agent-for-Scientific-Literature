@@ -1,0 +1,95 @@
+{
+  "id": "Evolution_chapter29_039",
+  "metadata": {
+    "chapter": "Evolution_chapter29",
+    "section": "MORE REALISTIC MODELS OF THE DISTRIBUTION OF FITNESS COMPONENTS",
+    "subsections": [
+      "Generalized Linear Models for Fitness Components"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter29_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "MORE REALISTIC MODELS OF THE DISTRIBUTION OF FITNESS COMPONENTS",
+    "section_level_2": "Generalized Linear Models for Fitness Components",
+    "heading_path": [
+      "MORE REALISTIC MODELS OF THE DISTRIBUTION OF FITNESS COMPONENTS",
+      "Generalized Linear Models for Fitness Components"
+    ],
+    "display_heading": "Generalized Linear Models for Fitness Components"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "The data for total fitness are nonnegative integers, representing the number of offspring left by an individual. The components that make up total fitness are also integer data, and fall into two broad distributional categories. We first consider Bernoulli random variables (fitness components have a value of 1 with probability p, else they have a value of 0), such as occurs with viability selection (alive or dead) and mating status (mated or not mated)."
+    },
+    {
+      "type": "discussion",
+      "content": "Translating Bernoulli components of fitness into a fitness surface requires a model of how p varies with trait value, z (or more generally, a set of trait values represented by the vector, z). A natural choice is the logistic regression model (Janzen and Stein 1998), which was introduced in Chapter 14. Equation 14.10a presented its simplest version, $$ W(z)=p(z)=\\Pr(survival\\mid z)=\\frac{\\exp(a+bz)}{1+\\exp(a+bz)}=\\frac{1}{1+\\exp(-[a+bz])} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Equation 29.36a is a model of directional selection, as $ W(z) $ increases toward one as z increases when b > 0. Likewise, $ W(z) $ decreases toward zero as z increases when b < 0. As discussed in Chapter 14, a logistic regression is equivalent to modeling $ p(z) $ using the logit function, $$ \\begin{aligned}\\operatorname{logit}[p(z)]=\\ln\\left[\\frac{p(z)}{1-p(z)}\\right]=\\begin{cases}a+b z&(univariate case)\\\\a+\\sum_{i}b_{i}z_{i}=a+\\mathbf{b}^{T}\\mathbf{z}&(multivariate case)\\end{cases}\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The upper righthand expression in Equation 29.36b corresponds to modeling the logit of p with a simple linear regression, while the lower expression is a more general linear model, which could include quadratic terms (e.g., $ b_1 z + b_2 z^2 $), which allows for the possibility of either concave or convex selection. Most generally, the righthand expressions in Equation 29.36b could be a full mixed model. For example, Coulson (2012), modeled the impact of size, z, on survival in Soay sheep by assuming that $$ \\mathrm{logit}[p(z,t)]=a+bz-\\eta N(t)+r(t) $$ where the fixed effect ($ \\eta $) accounts for density-dependent survival ($ N[t] $ is the population size at time t), and the random effect, $ r(t) $, accounts for the environmental effect at time t."
+    },
+    {
+      "type": "discussion",
+      "content": "Logistic regressions naturally accommodate the heteroscedastic nature of residuals for viability (and other Bernoulli random variables), and maximum likelihood (LW Appendix 3) can be used to estimate model parameters. Modifications of logistic regressions can also be used to estimate fitness using capture-recapture data (Kingsolver and Smith 1995). Capture-recapture models were reviewed by Lebreton et al. (1992), while the analysis of the targets of selection using capture-recapture data was further discussed by Conroy et al. (2002), Zabel et al. (2005), and Gimenez et al. (2006)."
+    },
+    {
+      "type": "discussion",
+      "content": "The logit function takes an unconstrained linear model (with potential values over $ -\\infty $ to $ \\infty $) and maps it into the constrained parameter space for $ p $, namely, between zero and one. As mentioned in Chapter 14, this is the basic structure of generalized linear models: the conditional expectation of an observed value, $ y $, given some underlying variable, $ z $, can be expressed as $ E(y \\mid z) = g(z) $ for some monotonic function $ g $, where some inverse transformation returns a linear model, $$ g^{-1}\\left[E(y\\mid z)\\right]=z=\\mu+\\sum\\beta_{k}x_{k,i} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The inverse function, $ g^{-1} $, is called the link function, as it transforms the conditional expectation into a linear model."
+    },
+    {
+      "type": "discussion",
+      "content": "The basic idea of such models is that some underlying (and unobserved) latent variable, z, is transformed into an observed variable, y. Such a model can be thought of as having three distinct scales (de Villemereuil et al. 2016): (i) an underlying latent scale, the value of z; (ii) an expected data scale, $ E(y \\mid z) = g(z) $, which is the expected value of y for that value of z; and (iii) an observed data scale, the actual observed value of y, which is a function of its expectation plus a residual error, where the latter need not be normal (and indeed, usually is not). This approach is called a generalized linear model (GLM) if the latent variable, z, is modeled via a standard general linear model (involving only fixed effects), and a generalized linear mixed model (GLMM) if we model z as a mixed linear model (z is a mixture of both fixed and random effects; e.g., Coulson 2012). GLMs and GLMMs allow for fairly general error structures (e.g., Poisson, binomial, etc.) and are generally solved by either maximum-likelihood or Bayesian approaches (e.g., Hadfield 2010). GLMs and GLMMs were reviewed in detail by McCulloch et al. (2008) and Stroup (2012)."
+    },
+    {
+      "type": "discussion",
+      "content": "More general survival functions (beyond the simple logistic) can be found in the analysis of clinical trials (e.g., Klein and Moeschberger 1997; Lawless 2003) and time-to-failure analysis from industrial statistics (e.g., Kenett and Zacks 1998), both examples of survival analysis. Manly (1976) suggested the use of the double exponential fitness function for viability data, where $$ W(z)=\\Pr(survival\\mid z)=\\exp(-\\exp[a+bz]) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "This is a special case of the classic proportional-hazards model (Cox 1972) for human clinical trails, wherein the probability of survival to time t is determined by a general risk for every individual in the population (specified by some monotonically nondecreasing function, $ g(t) $, so that probability of survival declines with increasing values of t), and a specific (proportional) risk for the particular phenotype z, which yields $$ W(z,t)=\\Pr(survival\\mid z,t)=\\exp(-\\exp[ag(t)+bz]) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "One choice is $ g(t) = \\ln(t) $, giving the general risk as $ \\exp(-\\exp[ag(t)]) = \\exp(-\\lambda t) $, namely the exponential distribution (a constant, i.e., age-independent, risk), weighted by the risk for phenotype z, $$ W(z,t)=\\exp\\left(-\\left[\\lambda t\\right]\\cdot\\exp[b z]\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "If survival at stage j is measured, the proportional-hazards model can be written as $$ W(z,j)=\\Pr(survival\\mid z,j)=\\exp(-\\exp[h_{j}+bz]) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "One advantage of using proportional-hazards models (due to the memoryless feature of the exponential distribution) is that they can allow for certain types of missing, or censored, data (Little and Rubin 2002), such as the last time a marked individual was recovered."
+    },
+    {
+      "type": "discussion",
+      "content": "Given that an individual has survived and mated, the second broad class of probability models for fitness components involves discrete counting distributions, which range over 0, 1, 2,..., such as number of mates or number of offspring per mating. One candidate distribution is the Poisson (Equation 14.16), which is solely a function of its mean value, $ \\theta $. As with Bernoulli data, we need a model for how $ \\theta $ varies as a function of the trait value z, in which case the probability of j offspring (or j mates, or j of some other fitness component) is $$ \\Pr(W=j\\mid z)=e^{-\\theta(z)}\\frac{\\theta(z)^{j}}{j!} $$ From Equation 14.17b, the log-linear model is a candidate for translating z into a mean for the Poisson, where $$ \\ln[\\theta(z)]=a+b z $$ Because $ \\theta(z) $ is constrained to be nonnegative, Equation 29.39b takes an unconstrained linear model and maps it into the range $ (0,\\infty) $, corresponding to the allowable range of means for a Poisson. More generally, for n traits we can use the log-linear model, $$ \\ln[\\theta(z)]=a+\\sum_{i}^{n}b_{i}z_{i}=a+\\mathbf{b}^{T}\\mathbf{z} $$ which again can include quadratic terms (e.g., $ a + b_{1}z + b_{2}z^{2} $) and hence model concave or convex selection."
+    },
+    {
+      "type": "discussion",
+      "content": "One limitation of the Poisson is that its mean equals its variance, whereas fitness data are often overdispersed, with the variance exceeding the mean (often, but not always, caused by an excess of zero values). In overdispersed settings, an alternative candidate model is the negative binomial distribution. This models the total number of successes $ (y) $ that occur before $ r $ failures for independent trials with a success probability of $ p $, $$ \\Pr(y=j\\mid r,p)=\\frac{(j+r-1)!}{j!(r-1)!}p^{j}(1-p)^{r}\\quad for\\quad j=0,1,\\cdots $$"
+    },
+    {
+      "type": "discussion",
+      "content": "If a random variable, y, follows a negative-binomial distribution, denoted by $ y \\sim NB(r, p) $, then its mean and variance are $$ \\mu_{y}=\\frac{pr}{1-p}\\quad and\\quad\\sigma_{y}^{2}=\\frac{pr}{(1-p)^{2}}.\\quad Hence\\quad\\frac{\\sigma_{y}^{2}}{\\mu_{y}}=\\frac{1}{1-p}>1 $$ showing that the variance can exceed the mean by an arbitrary amount. Because of this feature, the negative-binomial is often used in place of a Poisson to allow for overdispersion (Wilson et al. 2005b; Yang et al. 2009). One approach for modeling fitness data using this distribution is to assume a constant r value for all trait values (estimated from the data), and then model $ p(z) $ using the logit function (Equation 29.36b). The negative binomial is the sum of r geometric random variables, and hence is the discrete counterpart of the gamma distribution (which is the sum of r exponential random variables; Appendix 2)."
+    },
+    {
+      "type": "discussion",
+      "content": "Two other approaches for building discrete counting distributions for fitness components deal with the often problematic issue of handling an excess of zero values (Martin et al. 2005). The first is to use a zero-truncated distribution, whose values are conditional on being nonzero (i.e., they ignore zero values entirely). If we let $ \\phi(j|z) = \\operatorname{Pr}(W = j|z) $ denote a discrete counting distribution (such as a Poisson, binomial, or negative binomial), then its zero-truncated version is given by $$ \\Pr(W=j\\mid z)=\\frac{\\phi(j\\mid z)}{1-\\phi(0\\mid z)}\\quad for\\quad j\\geq1 $$ where $ j $ equals number of offspring, mates, flower heads, and so forth. For example, the zero-truncated Poisson is $$ \\Pr[W=j\\mid\\theta(z)]=\\frac{\\theta(z)^{j}e^{-\\theta(z)}/j!}{1-e^{-\\theta(z)}}=\\frac{e^{-\\theta(z)}}{1-e^{-\\theta(z)}}\\cdot\\frac{\\theta(z)^{j}}{j!}\\quad for\\quad j\\geq1 $$ As above, the trait-specific mean $ \\theta(z) $ can be modeled as a log-linear model (Equations 29.39b and 29.39c). This can be generalized to a k-truncated distribution, wherein the first k states (i.e., 0 to a value of k - 1) are ignored $$ \\Pr(W=j\\mid z)=\\frac{\\phi(j\\mid z)}{1-\\sum_{i=0}^{k-1}\\phi(i\\mid z)}\\quad for\\quad j\\geq k $$ and which occasionally appears in the selection literature (Shaw et al. 2008)."
+    },
+    {
+      "type": "discussion",
+      "content": "The other approach is to construct a zero-inflated distribution, which includes an additional point mass, $ 1 - q(z) $, at zero, $$ \\Pr(W=j\\mid z)=\\left\\{\\begin{aligned}&1-q(z)+q(z)\\phi(0\\mid z)&\\text{for}j=0\\\\ &q(z)\\phi(j\\mid z)&\\text{for}j\\geq1\\end{aligned}\\right. $$ where (as above) $ \\phi(j \\mid z) = \\operatorname{Pr}(W = j \\mid z) $ is a discrete counting distribution and $ q(z) $ is the probability that the observation given z is not zero-inflated. As above, we can model $ q(z) $ using the logit function (Equation 29.36b). Alternatively, one can model the zero-inflated distribution as an atom (probability mass) at zero and a zero-truncated distribution if not zero."
+    }
+  ]
+}

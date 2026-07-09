@@ -1,0 +1,47 @@
+{
+  "id": "Genetics_chapter14_024",
+  "metadata": {
+    "chapter": "Genetics_chapter14",
+    "section": "Introduction",
+    "subsections": [
+      "Estimating Effects of Candidate Loci"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter14_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "Estimating Effects of Candidate Loci",
+    "heading_path": [
+      "Introduction",
+      "Estimating Effects of Candidate Loci"
+    ],
+    "display_heading": "Estimating Effects of Candidate Loci"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "While the estimation of genotype means for a candidate locus seems straightforward, there are several potential sources of bias. While it is possible in some settings to distinguish between the direct effects of a candidate locus and its indirect effects due to association with linked QTLs (e.g., Bovenhuis and Weller 1994), as noted above the presence of linkage disequilibrium greatly confounds the interpretation of candidate-locus means. We consider other, more subtle, sources of bias below."
+    },
+    {
+      "type": "discussion",
+      "content": "Let $z_{ij}$ denote the phenotypic value of the $j$th individual with candidate-locus genotype $i$ ($1 \\leq i \\leq n_g$). If $\\mu_i$ is the mean character value for genotype $i$, then the simplest model is $$ z_{ij}=\\mu_{i}+\\epsilon_{ij} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "If individuals are sampled at random from a large homogeneous population, the residuals are uncorrelated and the $ \\mu_{i} $ values can be estimated simply by using $ \\overline{z}_{i} $. However, when relatives are present in the sample, one must take the residual covariance matrix into consideration to obtain a correct estimator. The residual error can be decomposed into a genetic component (G) due to segregation at loci other than the target QTL plus the general (E) and specific (e) environmental effects, $$ \\epsilon_{ij}=G_{ij}+E_{ij}+e_{ij} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Indexing two distinct individuals by $j$ and $k$, $$ \\sigma(\\epsilon_{j},\\epsilon_{k})=\\sigma(G_{j},G_{k})+\\sigma(E_{j},E_{k}) $$ as special environmental effects are not shared by different individuals (Chapter 6), and G and E are assumed to be uncorrelated. If the relationships among sampled individuals are known, the elements of the covariance matrix can be computed from Equation 14.24b, using the methods of Chapter 7. For example, if i and j are full-sibs, $ \\sigma(G_{j}, G_{k}) = (\\sigma_{A}^{2}/2) + (\\sigma_{D}^{2}/4) $, where the variances refer to the contribution of background polygenes. Estimates of the variance components associated with G and E can be obtained by a variety of methods introduced in Chapters 17–27. Using these to estimate the residual covariance matrix, genotypic means can be estimated by a GLS regression (Chapter 8). An example of the importance of correcting for common relatives is provided by Bentsen and Klemetsdal (1991), who examined the association between egg productivity and six different MHC haplotypes in chickens. The relative rankings of 5 of the 6 haplotype effects differed when comparing uncorrected estimates with those obtained by correcting for shared ancestry. More generally, when additional fixed factors (such as sex- or age-specific effects) are included in the model, BLUP estimation can be used (Boerwinkle et al. 1986, Cowan et al. 1990, Hoeschele and Meinert 1990, Bentsen and Klemetsdal 1991, Blangero et al. 1992, Kennedy et al. 1992). Chapter 26 examines this in some detail."
+    },
+    {
+      "type": "discussion",
+      "content": "Many estimates of the amount of variability attributable to a candidate locus are upwardly biased, even for a random population sample. If $q_{i}$ is the frequency of candidate-locus genotype $i$, then the variance contributed by this locus is $$ \\sigma_{L}^{2}=\\sum_{i=1}^{n_{g}}q_{i}\\left(\\mu_{i}-\\mu\\right)^{2}\\qquad\\mathrm{w h e r e}\\qquad\\mu=\\sum_{i=1}^{n_{g}}q_{i}\\mu_{i} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Boerwinkle and Sing (1986) showed that the obvious estimator $$ s^{2}=\\sum_{i=1}^{n_{g}}\\widehat{q_{i}}\\left(\\overline{z}_{i}-\\overline{z}\\right)^{2} $$ using the estimates $ \\widehat{q}_{i} $, $ \\overline{z}_{i} $, and $ \\overline{z} $ in place of their true values is biased because it includes the sampling error of these three estimates. To account for the sampling variances in $ \\overline{z}_{i} $ and $ \\overline{z} $, Boerwinkle and Sing suggest the improved estimator (for a collection of unrelated individuals), $$ s_{L}^{2}=\\sum_{i=1}^{n_{g}}\\widehat{q_{i}}\\left(\\overline{z}_{i}-\\overline{z}\\right)^{2}-\\left(\\frac{n_{g}-1}{n}\\right)\\mathrm{V a r}(e) $$ where $ \\mathrm{Var}(e) $ is the estimate of the residual variance (within genotypes) and we assume n measured individuals per genotype. While an improvement over Equation 14.26a, this estimator still ignores the sampling variance introduced by using $ \\widehat{q}_{i} $ and hence still tends to overestimate the variance accounted for by the candidate locus. Resampling approaches for constructing confidence intervals of both $ \\sigma_{L}^{2} $ and its additive and dominance components have been suggested by Kaprio et al. (1991) and Zerba et al. (1996)."
+    }
+  ]
+}

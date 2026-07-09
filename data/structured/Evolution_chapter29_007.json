@@ -1,0 +1,39 @@
+{
+  "id": "Evolution_chapter29_007",
+  "metadata": {
+    "chapter": "Evolution_chapter29",
+    "section": "EPISODES OF SELECTION AND THE ASSIGNMENT OF FITNESS",
+    "subsections": [
+      "Sensitivities and Elasticities of the Elements of L"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter29_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "EPISODES OF SELECTION AND THE ASSIGNMENT OF FITNESS",
+    "section_level_2": "Sensitivities and Elasticities of the Elements of L",
+    "heading_path": [
+      "EPISODES OF SELECTION AND THE ASSIGNMENT OF FITNESS",
+      "Sensitivities and Elasticities of the Elements of L"
+    ],
+    "display_heading": "Sensitivities and Elasticities of the Elements of L"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Measures of how a small change in a vital rate (one of the elements of L) impact $ \\lambda $ provide a connection between selection on particular traits and demography (van Tienderen 2000). An introduction to these metrics was offered by de Kroon et al (2000), with a more detailed treatment by Caswell (1989, 2001). The sensitivity, $ s_{ij} $, of an element, $ L_{ij} $, of a Leslie matrix is defined as the impact of a small change in that element on the total growth rate, $$ s_{ij}=\\frac{\\partial\\lambda}{\\partial L_{ij}}=\\frac{v_{i}\\cdot w_{j}}{\\mathbf{v}^{T}\\mathbf{w}} $$ where v and w are the left and right eigenvectors associated with the dominant eigenvalue ($ \\lambda $) of L (Caswell 1978). The right-most identity follows from the spectral decomposition (Equation A5.9a) of L. The right eigenvector is the familiar $ Lw = \\lambda w $, while the left eigenvector satisfies $ v^T L = \\lambda v^T $. Taking transposes on both sides shows that $ L^T v = \\lambda v $, which means that v is the right eigenvalue of $ L^T $. Sensitivity provides the absolute change in the growth rate, $ \\lambda $, given an infinitesimal change in $ L_{ij} $."
+    },
+    {
+      "type": "discussion",
+      "content": "In contrast, the elasticity, $ e_{ij} $, of element $ L_{ij} $ is the proportional change in $ \\lambda $ given a proportional change in $ L_{ij} $, $$ e_{ij}=\\frac{\\partial\\lambda/\\lambda}{\\partial L_{ij}/L_{ij}}=\\frac{L_{ij}}{\\lambda}\\frac{\\partial\\lambda}{\\partial L_{ij}}=\\frac{L_{ij}}{\\lambda}s_{ij} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Recalling from the chain rule of calculus that $ \\partial\\ln[f(x)]/\\partial x = [1/f(x)] \\cdot [\\partial f(x)/\\partial x] $ shows that elasticities can also be expressed as $$ e_{ij}=\\frac{\\partial\\lambda/\\lambda}{\\partial L_{ij}/L_{ij}}=\\frac{\\partial\\ln(\\lambda)}{\\partial\\ln(L_{ij})} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Caswell (1984) and de Kroon et al. (1986) showed that the elasticities of all of the elements of L sum to one, giving the result of de Kroon et al. (2000), namely, that $$ \\lambda=\\lambda\\cdot1=\\lambda\\sum_{ij}e_{ij}=\\lambda\\sum_{ij}\\frac{L_{ij}}{\\lambda}s_{ij}=\\sum_{ij}L_{ij}s_{ij} $$ As will be discussed later in the chapter, elasticities provide a link between the impact of a trait on fitness components and the impact of those components on the growth rate (van Tienderen 2000). Volume 3 examines selection in age-structured populations in more detail."
+    }
+  ]
+}

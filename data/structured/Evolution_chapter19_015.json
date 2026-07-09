@@ -1,0 +1,39 @@
+{
+  "id": "Evolution_chapter19_015",
+  "metadata": {
+    "chapter": "Evolution_chapter19",
+    "section": "ANIMAL-MODEL ANALYSIS OF SELECTION EXPERIMENTS",
+    "subsections": [
+      "Estimating the Additive Variance at Generation t"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter19_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "ANIMAL-MODEL ANALYSIS OF SELECTION EXPERIMENTS",
+    "section_level_2": "Estimating the Additive Variance at Generation t",
+    "heading_path": [
+      "ANIMAL-MODEL ANALYSIS OF SELECTION EXPERIMENTS",
+      "Estimating the Additive Variance at Generation t"
+    ],
+    "display_heading": "Estimating the Additive Variance at Generation t"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Even under the infinitesimal model, the additive variance changes over time by the generation of disequilibrium (Chapter 16) and inbreeding (Chapters 3 and 24), a point more fully explicated in the next section. While REML provides an estimate of the base population additive genic variance, $ \\sigma_a^2(0) $ (which is unbiased provided the model assumptions hold), it does not immediately provide estimates of the actual additive variance, $ \\sigma_A^2(t) = \\sigma_a^2(t) + d(t) $, in any particular generation of selection. The most straightforward approach is to use the parent-offspring regression for each generation of selection to estimate the additive genetic variance in the parents. With parents from generation $ t $ and offspring in generation $ t + 1 $, the regression estimates the heritability of the parents, $ h_A^2(t) $ (Robertson 1977b). The drawback with this approach is the typically small sample size associated with each generation (resulting in large standard errors for each heritability or variance estimate). Ideally, one would like to be able to combine information across generations in such a way as to improve the variance estimates."
+    },
+    {
+      "type": "discussion",
+      "content": "Sorensen and Kennedy (1984b) suggested one approach, which is to use a mixed-model analysis treating generation t as the base population. In particular, one considers only the data from generation t onward (say, to generation T), and the relationship matrix is adjusted to assume that generation t is the base population. The resulting covariance matrix for the breeding values becomes $$ \\mathbf{V a r}\\begin{pmatrix}\\mathbf{a}_{t}\\\\\\mathbf{a}_{t+1}\\\\\\vdots\\\\\\mathbf{a}_{T}\\end{pmatrix}=\\sigma_{A}^{2}(t)\\begin{pmatrix}\\mathbf{I}&\\mathbf{A}_{t,t+1}&\\cdots&\\mathbf{A}_{t,T}\\\\\\mathbf{A}_{t,t+1}&\\mathbf{A}_{t+1,t+1}&\\cdots&\\mathbf{A}_{t+1,T}\\\\\\vdots&\\ddots&\\vdots&\\vdots\\\\\\mathbf{A}_{t,T}&\\mathbf{A}_{t+1,T}&\\cdots&\\mathbf{A}_{T,T}\\end{pmatrix} $$ where $ a_k $ is the vector of breeding values in generation $ k $, and $ A_{j,k} $ is the relationship matrix of associations between individuals in generations $ j $ and $ k $. By taking $ \\mathbf{Var}(\\mathbf{a}_t) = \\sigma_A^2(t)\\mathbf{I} $, we are assuming that all individuals in generation $ t $ are unrelated and noninbred, as this is now our base population. All measured individuals from generation $ t $ (including those not leaving offspring) are included in the base population. While this approach seems logical, it is still somewhat ad hoc and not exact. Simulation studies by van der Werf and de Boer (1990) showed that Sorensen and Kennedy's approach tends to overestimate the true additive-genetic variance."
+    },
+    {
+      "type": "discussion",
+      "content": "Another potential approach to estimating the additive variance in generation t would be to use the variance among the predicted breeding values within a generation $$ \\mathrm{Var}(A_{t})=\\frac{1}{n-1}\\sum_{i=1}^{n_{t}}\\left(\\widehat{a}_{ti}-\\widehat{\\overline{a}}_{t}\\right)^{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Again, however, there are complications. One is that the assumed genetic variance used to obtain the BLUP estimates has a strong influence on the values of the estimated $ \\widehat{a}_{ti} $. Another is that Equation 19.14 estimates $ \\sigma^2(\\widehat{a}) $, which is different from $ \\sigma_A^2 $, as the former estimates $ \\rho^2\\sigma_A^2 $, where $ \\rho^2 < 1 $ is the accuracy of the predicted breeding values (Equation 20.23c). Hence, Equation 19.14 is expected to underestimate the true variance, $ \\sigma_A^2 $. Sorensen et al. (2001) noted that the use of Equation 19.14 in a Bayesian framework (wherein the uncertainty in variance estimates is naturally incorporated into the analysis) avoids both of these problems."
+    }
+  ]
+}

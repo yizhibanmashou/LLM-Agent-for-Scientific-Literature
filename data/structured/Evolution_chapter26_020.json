@@ -1,0 +1,67 @@
+{
+  "id": "Evolution_chapter26_020",
+  "metadata": {
+    "chapter": "Evolution_chapter26",
+    "section": "ASYMPTOTIC RESPONSE DUE TO MUTATIONAL INPUT",
+    "subsections": [
+      "Expected Asymptotic Response Under More General Conditions"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter26_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "ASYMPTOTIC RESPONSE DUE TO MUTATIONAL INPUT",
+    "section_level_2": "Expected Asymptotic Response Under More General Conditions",
+    "heading_path": [
+      "ASYMPTOTIC RESPONSE DUE TO MUTATIONAL INPUT",
+      "Expected Asymptotic Response Under More General Conditions"
+    ],
+    "display_heading": "Expected Asymptotic Response Under More General Conditions"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "The infinitesimal model assumes that allele-frequency changes are due entirely to drift. Clearly, selection can also change allele frequencies, and in this case other methods of analysis are required. One approach (Hill 1982a, 1982b) is to consider the expected contribution resulting from the eventual fixation by drift and selection of some of the new mutations that arise in each generation. Provided mutation and selection remain constant over time, at equilibrium the rate of response equals this expected per-generation contribution. Assuming M adults are measured, the frequency of a new mutant allele, $ A^* $, is $ 1/(2M) $. To allow for dominance, assume that the genotypic values of $ AA^* $ and $ A^*A^* $ are, respectively, incremented by $ \\alpha(1+k) $ and $ 2\\alpha $ relative to the value of AA. As before, we assume that the joint distribution of $ \\alpha $ and $ k $ is independent of the genotypic value of the parental allele. Let $ f(\\alpha, k) $ denote this joint probability density function and let $ \\mu = \\sum \\mu_i $ be the total gametic mutation rate for the trait of interest. The expected contribution to the total response from a new mutant appearing as a single copy becomes $ 2\\alpha \\cdot u(1/[2M], \\alpha, k) $, the change in genotypic value if the new allele is fixed times its probability of fixation (the latter can be obtained by Equation 7.18a, using the fitnesses given by Equation 25.4). Because $ 2M\\mu $ new mutants appear each generation, the asymptotic rate of response is $$ \\begin{align*}r_{m}(\\infty)&=2M\\mu E\\bigg[2\\alpha\\cdot u\\left(\\frac{1}{2M},\\alpha,k\\right)\\bigg]\\\\&=2M\\mu\\int_{-\\infty}^{\\infty}\\int_{-\\infty}^{\\infty}2\\alpha\\cdot u\\left(\\frac{1}{2M},\\alpha,k\\right)f(\\alpha,k)d\\alpha d k\\end{align*} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Note that the expected asymptotic rate depends critically on the exact shape of the distribution of mutational effects (a point echoed in Chapter 28). Fortunately, some fairly general results emerge by using simple approximations for the probability of fixation (similar to Equations 7.19a and 7.19b; see Hill 1982a, 1982b for details)."
+    },
+    {
+      "type": "discussion",
+      "content": "Consider first the case where all new mutants are additive $ (k = 0) $. Hill (1982b) found that, provided major alleles are not common among new mutants, $$ r_{m}(\\infty)\\simeq2N_{e}\\bar{\\imath}\\mu\\frac{E^{+}[\\alpha^{2}]}{\\sigma_{z}}=\\frac{4N_{e}\\bar{\\imath}\\sigma_{m}^{2}}{\\sigma_{z}}\\frac{E^{+}[\\alpha^{2}]}{E[\\alpha^{2}]} $$ where $$ E^{+}[\\alpha^{2}]=\\int_{0}^{\\infty}\\alpha^{2}f(\\alpha)d\\alpha $$ is the average squared increment of favorable alleles (i.e., those with $ \\alpha > 0 $). If the distribution of mutational increments, $ f(\\alpha) $, is symmetric about zero, then $ E^{+}[\\alpha^2] = E[\\alpha^2]/2 $, as $ \\int_0^\\infty f(\\alpha) \\, d\\alpha = 1/2 $, and the asymptotic response reduces to Equation 26.29. When major alleles are common among new mutants, correction terms involving $ E^{+}[\\alpha^3] $ appear; see Hill (1982b) for details. With divergent selection (the divergence between an up- and down-selected line; Chapter 25), effects due to asymmetry in $ f(\\alpha) $ cancel, and the asymptotic rate of divergence between high and low lines is simply twice the rate (for single-direction selection) predicted from the infinitesimal model, namely, $$ 4N_{e}\\bar{\\tau}\\frac{\\sigma_{m}^{2}}{\\sigma_{z}} $$ independent of the shape of $ f(\\alpha) $. The effect of linkage on asymptotic response was examined by Keightley and Hill (1983, 1987), who found it to generally be small, with the relative effects of linkage increasing with $ \\sigma_{m}^{2} $ and $ N_{e} $."
+    },
+    {
+      "type": "discussion",
+      "content": "Hill and Keightley (1988) allowed for the possibility that new mutations are also influenced by natural selection. If both the trait and fitness effects of mutations are small, the distribution of $ \\alpha $ is symmetric, and natural selection effects are also symmetric in $ \\alpha $ (e.g., the change in fitness is a function only of $ |\\alpha| $, there is no change in the asymptotic rate of response. If these assumptions are violated, the asymptotic rate can be reduced."
+    },
+    {
+      "type": "proposition",
+      "content": "To allow for dominance, we continue to assume the incremental mutation model. From LW Equation 4.12a, the additive variance contributed by a rare allele is $$ 2p(1-p)\\alpha^{2}[1+k(1-2p)]^{2}\\simeq2p\\alpha^{2}(1+k)^{2} $$ yielding a contribution to $ \\sigma_{A}^{2} $ from a single new mutation, where $ p_{0}=1/(2M) $, of approximately $$ \\alpha^{2}(1+k)^{2}/M $$ Because the expected number of new mutations per locus in any given generation is $ 2M\\mu $, the expected additive variance contributed in each generation by new mutations at a given locus is $$ 2M\\mu E[\\alpha^{2}(1+k)^{2}/M]=2\\mu E[\\alpha^{2}(1+k)^{2}] $$ where the expectation is taken over the joint distribution of $ \\alpha $ and k values in new mutants. Summing over all loci, the expected new additive variance contributed each generation (in the absence of linkage disequilibrium) is $$ \\sigma_{m}^{2}=2\\sum_{i=1}^{n}\\mu_{i}E[\\alpha^{2}(1+k)^{2}]=2\\mu E[\\alpha^{2}(1+k)^{2}] $$ as obtained by Hill (1982b). The last equality assumes the distribution of mutational values and rates to be the same at each locus. When all mutations are additive (k = 0) and symmetric (E[] = 0), this reduces to our previous definition of $ \\sigma_m^2 $. More generally, with complete additivity, but removing the assumption that E[] = 0, we have $$ \\sigma_{m}^{2}=2\\mu E[\\alpha^{2}] $$ while with complete dominance $ (k=1) $, $$ \\sigma_{m}^{2}=2\\mu E\\big[\\left(2\\alpha\\right)^{2}\\big]=8\\mu E\\big[\\alpha^{2}\\big] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "For the same $ \\alpha $ and $ \\mu $ values, the mutational variance with complete dominance is four times larger than that for complete additivity (as the genotypic value of heterozygotes is doubled, which increases the variance by $ 2^2 = 4 $)."
+    },
+    {
+      "type": "discussion",
+      "content": "For the case of complete dominance, Hill (1982b) found that the asymptotic rate of response is approximately $$ r_{m}(\\infty)\\simeq16N_{e}\\bar{\\imath}\\mu E^{+}\\left[\\alpha^{2}\\right]/\\sigma_{z} $$ where $ E^{+} $ [α²] is defined by Equation 26.33b. With a symmetric distribution of mutational effects, Equation 26.35a reduces to $$ r_{m}(\\infty)\\simeq N_{e}\\bar{\\imath}\\frac{\\sigma_{m}^{2}}{\\sigma_{z}} $$ where $ \\sigma_m^2 $ is given by Equation 26.34c. For the same values of $ \\sigma_m^2 $, the response when all mutants are completely dominant is only half the expected response when alleles are additive (compare Equations 26.29 and 26.35b). However, for fixed values of $ \\mu $ and $ E\\left[\\alpha^2\\right] $, $ \\sigma_m^2 $ is larger with complete dominance (compare Equations 26.34b and 26.34c), and the rate of response under dominance is twice as large as that expected for complete additivity."
+    },
+    {
+      "type": "discussion",
+      "content": "If alleles are completely recessive, allelic effects are small, and the distribution of mutational effects is symmetric, the asymptotic response is approximately $$ r_{m}(\\infty)\\simeq2N_{e}\\bar{\\imath}\\mu E\\left[\\alpha^{2}\\right]/\\sigma_{z} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "(Hill 1982b). For recessives with large effects (cf. Equation 7.19b) $$ r_{m}(\\infty)\\simeq2\\mu E^{+}\\left[\\alpha^{3/2}\\right]\\sqrt{\\frac{2N_{e}\\bar{\\tau}}{\\pi\\sigma_{z}}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, the limiting response when all new mutations are recessive is not predictable from $ \\sigma_m^2 $, even if mutational effects are symmetrically distributed. With recessive major alleles, the selection response scales as $ \\sqrt{N_e} \\bar{\\imath} $, and hence it increases much more slowly with $ N_e \\bar{\\imath} $ than with complete dominance or additivity."
+    },
+    {
+      "type": "discussion",
+      "content": "When loci are linked, the asymptotic response is reduced, but the effect is small unless linkage is tight, as might occur with a few small chromosomes (Keightley and Hill 1983). As mentioned previously, reduction in response also occurs if loci influencing the trait are linked to loci under natural selection."
+    }
+  ]
+}

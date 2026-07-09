@@ -1,0 +1,63 @@
+{
+  "id": "Genetics_chapter27_062",
+  "metadata": {
+    "chapter": "Genetics_chapter27",
+    "section": "Variance-Component Estimation with Complex Pedigrees",
+    "subsections": [
+      "Applications: Parent-offspring Regressions"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter27_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Variance-Component Estimation with Complex Pedigrees",
+    "section_level_2": "Applications: Parent-offspring Regressions",
+    "heading_path": [
+      "Variance-Component Estimation with Complex Pedigrees",
+      "Applications: Parent-offspring Regressions"
+    ],
+    "display_heading": "Applications: Parent-offspring Regressions"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "As is detailed in Chapters 7 and 17, the slope $ b_{op} $ of the parent-offspring regression provides information on genetic variance components. What is the power of such parent-offspring regressions? We first note that N data points are used to compute the regression. For a single-parent regression, N is the number of parents, while for a midparent regression, N is the number of pairs of parents (we distinguish between these by indexing the regressions by p and $ \\overline{p} $, respectively). For each parental point, the offspring value could be that for a single offspring (n = 1) or the mean value of n offspring (indexed by o and $ \\overline{o} $, respectively)."
+    },
+    {
+      "type": "discussion",
+      "content": "Since the increase in power with sample size results from a reduction in the sampling variance, it is again useful to write the sampling variance of $ b_{op} $ as some function $ f $ divided by the number $ N $ of families, $ \\sigma^2(b_{op}) = f_{op}^2/N $. From Equation 17.6 $$ f_{op}^{2}=\\left(1-r_{op}^{2}\\right)\\frac{\\sigma^{2}(z_{o})}{\\sigma^{2}(z_{p})} $$ where $ r_{op} $ is the parent-offspring correlation. The sampling variance under the null hypothesis that $ b_{op} = 0 $ follows by setting $ r_{op} = 0 $. If the parent-offspring regression has true slope $ b_{op} $, what sample size (measured by number of parents) is required for a test to have power $ 1 - \\beta $? Since this is a one-sided test ($ b_{op} = 0 $ vs. $ b_{op} > 0 $), substituting Equation A5.9 into Equation A5.4c (and hence assuming that the variances under null and alternative hypotheses are essentially equal, i.e., $ \\sigma_{0}^{2} \\simeq \\sigma_{1}^{2} $) gives $$ N=\\left[z_{(1-\\alpha)}+z_{(1-\\beta)}\\right]^{2}\\frac{(1-r_{op}^{2})}{b_{op}^{2}}\\frac{\\sigma^{2}(z_{o})}{\\sigma^{2}(z_{p})} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "This expression, which assumes single parents and single offspring, can easily be modified to account for midparents and/or multiple offspring per family. With $n$ measured offspring per family, $\\sigma^{2}(z_{\\overline{o}}) = \\sigma^{2}(z_{o})[t + (1 - t)/n]$ replaces $\\sigma^{2}(z_{o})$, where $t$ is the correlation between full sibs. Likewise, for a midparent-offspring regression, $\\sigma^{2}(z_{\\overline{p}}) = \\sigma^{2}(z_{p})/2$ replaces $\\sigma^{2}(z_{p})$, and $r_{o\\overline{p}}$ and $b_{o\\overline{p}}$ replace $r_{op}$ and $b_{op}$. Chapter 17 discusses these modifications in more detail"
+    },
+    {
+      "type": "discussion",
+      "content": "Example 2. Suppose 200 (single) parent-offspring pairs are measured ($N=200$, $n=1$) for a character with $h^{2}=0.2$ and no epistasis or maternal effects. Assuming a test with $\\alpha=0.05$, what is the power of this design to detect this regression as being significant? Here $z_{(1-0.05)}=1.65$ and from Chapter 7, $$ b_{op}=r_{op}=h^{2}/2=0.1 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Assuming parent and offspring have equal variance, $ \\sigma^{2}(z_{o}) = \\sigma^{2}(z_{p}) $, Equation A5.9 gives $$ \\sigma^{2}(b_{op})=\\frac{f^{2}}{N}=\\frac{1-r_{op}^{2}}{N}=\\frac{1-0.1^{2}}{200}=0.00495 $$ while under the null hypothesis of zero slope, $ r_{op} = 0 $ and hence $ \\sigma^{2}(b_{op}) = 1/200 = 0.005 $. Equation A5.3 gives the power as $$ \\begin{aligned}\\Pr\\left(U>\\frac{\\mu_{o}-\\mu_{1}}{\\sigma_{1}}+z_{(1-\\alpha)}\\frac{\\sigma_{o}}{\\sigma_{1}}\\right)&=\\Pr\\left(U>\\frac{(0-0.1)}{\\sqrt{0.00495}}+1.65\\frac{\\sqrt{0.005}}{\\sqrt{0.00495}}\\right)\\\\&=\\Pr(U>0.236)=0.40\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The false-negative rate for this design is $ \\beta = 0.60 $, so that the majority of time the observed slope will not be judged to be significantly greater than zero."
+    },
+    {
+      "type": "discussion",
+      "content": "Measuring only a single offspring per family (n = 1), how many families must be used to have 90% probability that the observed slope is significantly positive (using a test with $ \\alpha = 0.05 $? To make use of Equation A5.4, first note that here $ \\beta = 0.1 $, and from unit normal tables, $$ Pr(U\\leq1.28)=0.9,\\quad giving\\quad z_{(1-\\beta)}=1.28 $$ hence $$ \\left(z_{(1-\\alpha)}+z_{(1-\\beta)}\\right)^{2}=\\left(1.65+1.28\\right)^{2}=8.58 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Substituting this result into Equation A5.10 gives the required N as $$ N=8.58~\\frac{(1-r_{op}^{2})}{b_{op}^{2}}~\\frac{\\sigma^{2}(z_{o})}{\\sigma^{2}(z_{p})} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "For a single-parent regression, $ b_{op} = r_{op} = h^{2}/2 = 0.1 $, and the required number of single-parent families is $$ N=8.58\\frac{(1-0.1^{2})}{0.1^{2}}=850 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "For a midparent-offspring regression, $ b_{o\\overline{p}} = h^2 = 0.2 $, $ r_{o\\overline{p}}^2 = b_{o\\overline{p}}^2/2 = 0.02 $, and $$ \\frac{\\sigma^{2}(z_{o})}{\\sigma^{2}(z_{\\overline{{p}}})}=\\frac{\\sigma^{2}(z_{o})}{\\sigma^{2}(z_{p})/2}=2 $$ giving the required number of two-parent families as $$ N=\\frac{8.58\\cdot2\\left(1-0.02\\right)}{0.2^{2}}=420 $$"
+    }
+  ]
+}

@@ -21,7 +21,7 @@ FIGURE_CAPTION_RE = re.compile(
     re.IGNORECASE,
 )
 PANEL_LABEL_RE = re.compile(r"^\s*\(?[A-Z]\)(?:\s+.+)?\s*$")
-BODY_LABELS = {"image", "chart"}
+BODY_LABELS = {"image", "chart", "display_formula"}
 FALLBACK_BODY_LABELS = {"paragraph_title", "table", "text"}
 PANEL_LABELS = {"figure_title"}
 
@@ -65,10 +65,30 @@ def natural_key(path: Path) -> list[object]:
     return [int(part) if part.isdigit() else part for part in re.split(r"(\d+)", path.name.lower())]
 
 
+def book_prefix_from_chapter(chapter: str) -> str:
+    match = re.match(r"^(?P<prefix>[A-Za-z]+)_(?:chapter|appendix)\d+\b", chapter.strip(), flags=re.IGNORECASE)
+    return match.group("prefix") if match else ""
+
+
+def figure_library_key(figure_id: str, chapter: str, existing_keys: set[str]) -> str:
+    prefix = book_prefix_from_chapter(chapter)
+    base = f"{prefix}_{figure_id}" if prefix else figure_id
+    key = base
+    counter = 2
+    while key in existing_keys:
+        key = f"{base}#{counter}"
+        counter += 1
+    existing_keys.add(key)
+    return key
+
+
 def figure_asset_name(figure_id: str, chapter: str, used_names: set[str]) -> str:
     base = re.sub(r'[<>:"/\\|?*\s]+', "_", figure_id.strip()).strip("._")
     if not base:
         base = re.sub(r'[<>:"/\\|?*\s]+', "_", chapter.strip()).strip("._") or "figure"
+    prefix = book_prefix_from_chapter(chapter)
+    if prefix:
+        base = f"{prefix}_{base}"
     asset_name = f"{base}.png"
     if asset_name.lower() not in used_names:
         used_names.add(asset_name.lower())
@@ -138,6 +158,15 @@ def is_panel_label(row: RawRow) -> bool:
     return row.label in PANEL_LABELS and bool(PANEL_LABEL_RE.match(row.content))
 
 
+def is_short_figure_body_label(row: RawRow, selected: list[RawRow]) -> bool:
+    if row.label != "text" or not selected:
+        return False
+    if len(row.content.strip()) > 120:
+        return False
+    nearest_top = min(item.top for item in selected)
+    return 0 <= nearest_top - row.bottom <= 80
+
+
 def union_bbox(rows: list[RawRow]) -> list[float]:
     return [
         min(row.bbox[0] for row in rows),
@@ -166,6 +195,24 @@ def scale_bbox_to_pdf(raw_bbox: list[float], raw_width: float, raw_height: float
         raw_bbox[3] * scale_y,
     )
     return rect & page.rect
+
+
+def raw_page_size(page_payload: dict[str, Any], rows: list[RawRow], page: fitz.Page) -> tuple[float, float]:
+    raw_width = float(page_payload.get("width") or 0)
+    raw_height = float(page_payload.get("height") or 0)
+    if raw_width > 0 and raw_height > 0:
+        return raw_width, raw_height
+
+    max_x = max((row.bbox[2] for row in rows), default=page.rect.width)
+    max_y = max((row.bbox[3] for row in rows), default=page.rect.height)
+    scale_hint = max(
+        max_x / page.rect.width if page.rect.width else 1.0,
+        max_y / page.rect.height if page.rect.height else 1.0,
+        1.0,
+    )
+    if scale_hint > 1.15:
+        scale_hint = math.ceil(scale_hint * 2.0) / 2.0
+    return page.rect.width * scale_hint, page.rect.height * scale_hint
 
 
 def find_fallback_body_rows(rows: list[RawRow], caption_index: int) -> list[RawRow]:
@@ -209,6 +256,9 @@ def find_body_rows(rows: list[RawRow], caption_index: int) -> BodyMatch | None:
             selected.append(row)
             saw_body = True
             continue
+        if saw_body and is_short_figure_body_label(row, selected):
+            selected.append(row)
+            continue
         if is_panel_label(row):
             selected.append(row)
             continue
@@ -217,10 +267,11 @@ def find_body_rows(rows: list[RawRow], caption_index: int) -> BodyMatch | None:
     body_rows = [row for row in selected if row.label in BODY_LABELS]
     if body_rows:
         selected.sort(key=lambda item: (item.top, item.left, item.index))
+        bbox_rows = selected if all(row.label == "display_formula" for row in body_rows) else body_rows
         return BodyMatch(
             rows=selected,
-            bbox_rows=body_rows,
-            bbox_source="union of preceding image/chart blocks",
+            bbox_rows=bbox_rows,
+            bbox_source="union of preceding figure body blocks",
             confidence=0.95,
         )
     fallback_rows = find_fallback_body_rows(rows, caption_index)
@@ -249,6 +300,9 @@ def pdf_for_chapter(pdf_dir: Path, chapter: str) -> Path | None:
     direct = pdf_dir / f"{chapter}.pdf"
     if direct.exists():
         return direct
+    for candidate in pdf_dir.glob("*.pdf"):
+        if candidate.stem.lower() == chapter.lower():
+            return candidate
     matches = sorted(pdf_dir.rglob(f"{chapter}.pdf"), key=natural_key)
     return matches[0] if matches else None
 
@@ -352,9 +406,10 @@ def main() -> int:
     }
 
     used_asset_names: set[str] = set()
+    used_library_keys: set[str] = set()
     for raw_path in raw_paths:
-        chapter = chapter_from_output_dir(raw_path.parents[1]).lower()
-        if chapter_filter and chapter not in chapter_filter:
+        chapter = chapter_from_output_dir(raw_path.parents[1])
+        if chapter_filter and chapter.lower() not in chapter_filter:
             continue
         pdf_path = pdf_for_chapter(pdf_dir, chapter)
         if pdf_path is None:
@@ -372,19 +427,24 @@ def main() -> int:
                 if not isinstance(page_payload, dict):
                     continue
                 page_number = page_index + 1
-                raw_width = float(page_payload.get("width") or 0)
-                raw_height = float(page_payload.get("height") or 0)
+                if page_number > pdf.page_count:
+                    audit["crop_failed"].append(
+                        f"{chapter}:page{page_number}: raw page exceeds pdf page count {pdf.page_count}"
+                    )
+                    continue
+                page = pdf[page_number - 1]
                 rows = page_rows(page_payload, page_number)
+                raw_width, raw_height = raw_page_size(page_payload, rows, page)
                 for row_index, row in enumerate(rows):
                     match = is_figure_caption(row)
                     if not match:
                         continue
                     figure_id = match.group("id")
                     caption = row.content
-                    key = figure_id
-                    if key in library["figures"]:
+                    key = figure_library_key(figure_id, chapter, used_library_keys)
+                    base_key = f"{book_prefix_from_chapter(chapter)}_{figure_id}" if book_prefix_from_chapter(chapter) else figure_id
+                    if key != base_key:
                         audit["duplicate_ids"].append(f"{chapter}:{figure_id}")
-                        key = f"{figure_id}#{chapter}"
                     body_match = find_body_rows(rows, row_index)
                     if not body_match:
                         audit["missing_body"].append(f"{chapter}:{figure_id}:page{page_number}")
@@ -398,7 +458,6 @@ def main() -> int:
                     asset_path = figures_dir / asset_name
 
                     try:
-                        page = pdf[page_number - 1]
                         pdf_rect = scale_bbox_to_pdf(raw_bbox, raw_width, raw_height, page)
                         if pdf_rect.is_empty or not math.isfinite(pdf_rect.width) or not math.isfinite(pdf_rect.height):
                             raise RuntimeError("empty crop rect")

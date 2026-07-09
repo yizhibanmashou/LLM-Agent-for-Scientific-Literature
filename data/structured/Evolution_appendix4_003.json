@@ -1,0 +1,35 @@
+{
+  "id": "Evolution_appendix4_003",
+  "metadata": {
+    "chapter": "Evolution_appendix4",
+    "section": "Appendix: Introduction",
+    "subsections": [
+      "Fisher's $ \\chi^{2} $ Method"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_appendix4_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Appendix: Introduction",
+    "section_level_2": "Fisher's $ \\chi^{2} $ Method",
+    "heading_path": [
+      "Appendix: Introduction",
+      "Fisher's $ \\chi^{2} $ Method"
+    ],
+    "display_heading": "Fisher's $ \\chi^{2} $ Method"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Fisher (1932b) was among the first to offer a simple approach for combining $p$ values (along with Tippett 1931), based on the important concept that the distribution of realized $p$ values under the null follows a uniform distribution over $(0,1)$. Further, if $p \\sim \\text{Uniform}(0,1)$, then $-2 \\ln(p) \\sim \\chi_{2}^{2}$ (Pearson 1938). Hence, under the null, twice the negative natural log of a $p$ value follows a chi-square distribution with two degrees of freedom. If we have $k$ independent tests, then the sum of their log-transformed $p$ values is the sum of $k$ chi-square variables. Such a sum is itself chi-square, with the degrees of freedom given by the sum of the degrees of freedom for the individual chi-squares (LW Appendix 5). These observations formed the motivation for Fisher's combined probability test: for $k$ independent tests, where $ p_{i} $ denotes the p value for test i, the sum $$ X^{2}=-2\\sum_{i=1}^{k}\\ln(p_{i}) $$ approximately follows a $ \\chi_{2k}^{2} $ distribution."
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:A4.1]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Rice (1990b; also see Whitlock 2005) noted that a problem with Fisher's method is that smaller p values are differentially weighted compared to complementary larger p values (e.g., p versus 1 - p). Equation A4.1a can be rearranged to yield $$ X^{2}=-2k\\ln(\\overline{p}_{G}) $$ where $ \\overline{p}_G $ is the geometric mean of the individual $ p $ values, which differentially weights smaller values. Under Fisher’s method, an observed $ p $ value of (say) 0.001 receives more weight than a complementary value of 0.999, which is as extreme (with $ -\\ln $ weights of 6.9 vs. 0.001). However, under the Z-score transformation—which is obtained by solving $ \\Pr(U > Z) = p $, where $ U \\sim \\mathrm{N}(0,1) $—the two complementary $ p $ values are of equal magnitude (Z scores of $ -3.09 $ and $ 3.09 $). This motivates the Z-score method, which we now consider."
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "id": "Genetics_chapter15_017",
+  "metadata": {
+    "chapter": "Genetics_chapter15",
+    "section": "Introduction",
+    "subsections": [
+      "SAMPLES SIZES REQUIRED FOR QTL DETECTION"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter15_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "SAMPLES SIZES REQUIRED FOR QTL DETECTION",
+    "heading_path": [
+      "Introduction",
+      "SAMPLES SIZES REQUIRED FOR QTL DETECTION"
+    ],
+    "display_heading": "SAMPLES SIZES REQUIRED FOR QTL DETECTION"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Before investing the time and expense in a QTL mapping experiment, it is critical to have an understanding of the sample sizes required for the detection of QTLs of specified effects. The probability of a significant marker-trait association is increased by increasing the difference between means and/or by decreasing the within-marker class (or residual) variance. Increasing the sample size reduces the within-class variance, while changing the experimental design can increase the difference between means. The residual variance can also often be decreased by adding explanatory factors to the model, such as sex- or age-effects."
+    },
+    {
+      "type": "discussion",
+      "content": "The following discussion of sample size is restricted to single-marker $t$ tests using the $F_{2}$ or backcross designs, where a QTL is indicated if the means for two alternative marker genotypes are significantly different. Using the theory of power calculations (reviewed in Appendix 5), simple expressions can be obtained for these designs. The broad utility of the results developed below is that both theoretical (Simpson 1989, 1992; Haley and Knott 1992; Darvasi et al. 1993; Rebai et al. 1995) and empirical (e.g., Stuber et al. 1992, deVicente and Tanksley 1993, Nodari et al. 1993, Damerval et al. 1994, Champux et al. 1995, Kennard and Harvey 1995) studies how that $t$ tests and more elaborate flanking-marker methods have very similar power for detection, especially when adjacent markers are no further than 20 cM apart. Hence, the sample size expressions developed below provide a baseline for most designs."
+    },
+    {
+      "type": "discussion",
+      "content": "We start by considering the $t$ test for an $\\mathrm{F}_2$ design, where the presence of a linked QTL is indicated when $\\overline{z}_{MM} - \\overline{z}_{mm}$ is significantly different from zero. Suppose that the marker is completely linked to a single QTL with additive value $a$, in which case $E(\\overline{z}_{MM} - \\overline{z}_{mm}) = 2a$. Assuming that the distribution of phenotypes about each QTL genotype has constant variance $\\sigma_e^2$, then if the numbers of $MM$ and $mm$ individuals measured are $n_1$ and $n_2$, $$ \\sigma^{2}\\left(\\overline{z}_{M M}-\\overline{z}_{m m}\\right)=\\sigma^{2}\\left(\\overline{z}_{M M}\\right)+\\sigma^{2}\\left(\\overline{z}_{m m}\\right)=\\left(\\frac{1}{n_{1}}+\\frac{1}{n_{2}}\\right)\\sigma_{e}^{2} $$ If $n$ total $\\mathrm{F}_{2}$ individuals are scored, we expect only one in four to be a particular marker homozygote, giving $n_{1}=n_{2}=n/4$ and the expected variance $8\\sigma_{e}^{2}/n$. If $r_{F_{2}}^{2}$ denotes the fraction of the total $\\mathrm{F}_{2}$ phenotypic variance $\\left[\\sigma_{z}^{2}(F_{2})\\right]$ due to segregation at the QTL, then $\\sigma_{e}^{2}=(1-r_{F_{2}}^{2})\\sigma_{z}^{2}(F_{2})$. Hence, if $n$ is reasonably large, the observed difference in marker means is approximately normally distributed, with $$ \\overline{{z}}_{M M}-\\overline{{z}}_{m m}\\sim N\\left[2a,8(1-r_{F_{2}}^{2})\\sigma_{z}^{2}(F_{2})/n\\right] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Under the null hypothesis of no QTL, this difference is distributed as a normal with mean zero and variance $ 8\\sigma_{z}^{2}(F_{2})/n $."
+    },
+    {
+      "type": "discussion",
+      "content": "Using the machinery developed in Appendix 5, the sample size required to have probability $1 - \\beta$ of detecting a QTL using a test with an $\\alpha$ level of significance becomes $$ n_{F_{2}}=\\frac{8(1-r_{F_{2}}^{2})}{\\delta_{F_{2}}^{2}}\\left(\\frac{z_{(1-[\\alpha/2])}}{\\sqrt{1-r_{F_{2}}^{2}}}+z_{(1-\\beta)}\\right)^{2} $$ where $ z_{(p)} $ satisfies $ \\Pr(U \\leq z_{(p)}) = p $ with $ U \\sim N(0,1) $, and $$ \\delta_{F_{2}}=\\frac{\\mu_{Q Q}-\\mu_{q q}}{\\sigma_{z}(F_{2})}=\\frac{2a}{\\sigma_{z}(F_{2})} $$ is the difference in QTL means in units of $ F_2 $ phenotypic standard deviations. The variance contributed by $ F_2 $ segregation at this locus is $ \\sigma_Q^2(F_2) = a^2(2 + k^2)/4 $, where $ k $ is the dominance coefficient, implying $$ r_{F_{2}}^{2}=\\frac{\\sigma_{Q}^{2}(F_{2})}{\\sigma_{z}^{2}(F_{2})}=\\frac{a^{2}(2+k^{2})/4}{\\sigma_{z}^{2}(F_{2})}=\\frac{\\delta_{F_{2}}^{2}(2+k^{2})}{16} $$ which for a completely additive QTL $(k=0)$ is $r_{F_2}^2 = \\delta_{F_2}^2/8$. Using Equation 15.36b, we can alternatively express the required sample size in terms of the fraction of variation accounted for by the QTL, $$ n_{F_{2}}=\\left(\\frac{1-r_{F_{2}}^{2}}{r_{F_{2}}^{2}}\\right)\\cdot\\left(\\frac{z_{(1-\\left[\\alpha/2\\right])}}{\\sqrt{1-r_{F_{2}}^{2}}}+z_{(1-\\beta)}\\right)^{2}[1+(k^{2}/2)] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Example 11. What sample sizes are required to detect a completely linked QTL using a test with $\\alpha = 0.05$ and $\\beta = 0.1$ (i.e., a 5% probability of a false positive and a 10% probability of missing a true association)? From normal tables, Pr(U < 1.96) = 0.975 and Pr(U < 1.28) = 0.9, so that $z_{(1-[\\alpha/2])} = z_{(0.975)} = 1.96$ and $z_{(1-\\beta)} = z_{(0.9)} = 1.28$. Substituting these into Equation 15.37 gives the following sample sizes for a completely additive $(k = 0)$ and a completely dominant or completely recessive $(k \\pm 1)$ QTL whose segregation accounts for $r^2$ of the total $F_2$ variance: <table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>$ r^{{2}} $</td><td style='text-align: center; word-wrap: break-word;'>0.5</td><td style='text-align: center; word-wrap: break-word;'>0.3</td><td style='text-align: center; word-wrap: break-word;'>0.1</td><td style='text-align: center; word-wrap: break-word;'>0.05</td><td style='text-align: center; word-wrap: break-word;'>0.01</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Additive QTL</td><td style='text-align: center; word-wrap: break-word;'>16</td><td style='text-align: center; word-wrap: break-word;'>31</td><td style='text-align: center; word-wrap: break-word;'>101</td><td style='text-align: center; word-wrap: break-word;'>206</td><td style='text-align: center; word-wrap: break-word;'>1046</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Dominant QTL</td><td style='text-align: center; word-wrap: break-word;'>25</td><td style='text-align: center; word-wrap: break-word;'>46</td><td style='text-align: center; word-wrap: break-word;'>151</td><td style='text-align: center; word-wrap: break-word;'>309</td><td style='text-align: center; word-wrap: break-word;'>1568</td></tr></table>"
+    },
+    {
+      "type": "discussion",
+      "content": "Note that the presence of dominance can significantly inflate the required $F_{2}$ sample size."
+    },
+    {
+      "type": "discussion",
+      "content": "Turning now to the backcross designs, consider $B_{1}=F_{1}\\times P_{1}$ (i.e., $MQ/mq\\times MQ/MQ$). Here $n_{1}=n_{2}=n/2$, while $\\mu_{QQ}-\\mu_{Qq}=a(1-k)$, giving $$ \\overline{{z}}_{M M}-\\overline{{z}}_{M m}\\sim N\\left[a(1-k),4(1-r_{B_{1}}^{2})\\sigma_{z}^{2}(B_{1})/n\\right] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Using the same logic as above, the required sample size is found to be $$ n_{B_{1}}=\\left(\\frac{1-r_{B_{1}}^{2}}{r_{B_{1}}^{2}}\\right)\\left(\\frac{z_{(1-\\left[\\alpha/2\\right])}}{\\sqrt{1-r_{B_{1}}^{2}}}+z_{(1-\\beta)}\\right)^{2} $$ with $$ r_{B_{1}}^{2}=\\frac{\\delta_{B_{1}}^{2}}{4},\\qquad\\mathrm{w h e r e}\\qquad\\delta_{B_{1}}=\\frac{a(1-k)}{\\sigma_{z}(B_{1})} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "For the $\\mathrm{B}_{2}$ population, the results are similar, except that the comparison is now $\\overline{z}_{Mm}-\\overline{z}_{mm}$ and $-k$ replaces $k$ in the above expressions. Comparing the $\\mathrm{F}_{2}$ and the backcross design (for small to modest $r^{2}$), the ratio of samples sizes to achieve the same power is approximately $$ \\frac{n_{B_{1}}}{n_{F_{2}}}\\simeq\\left[\\frac{2}{(1-k)^{2}}\\right]\\left[\\frac{\\sigma_{z}(B_{1})}{\\sigma_{z}(F_{2})}\\right]^{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, if the backcross and $F_{2}$ phenotypic variances are the same, the backcross design requires twice as many individuals as an $F_{2}$ for a completely additive QTL $(k=0)$. When dominance is present, depending on its direction relative to the backcross population used, the backcross design can require more than twice as many individuals as an $F_{2}$ $(k>0$ for $B_{1}, k<0$ for $B_{2})$ or fewer individuals than the $F_{2}$. (If $k=-1$, the required sample size for the $B_{1}$ is only half of that for an $F_{2}$ design.) A further complication is that the phenotypic variance is generally rather different in the $F_{2}$ and backcross populations due to changes in the variance from background QTLs. In the $F_{2}$ population, all QTL alleles have frequency $1/2$, which gives maximum additive variance (provided all QTLs are additive). In a backcross, the allele frequency is $1/4$, and additive genetic variance is often reduced significantly relative to that in the $F_{2}$. Thus, if background QTLs contribute significantly to the character, the backcross can show a reduced variance and more power."
+    },
+    {
+      "type": "discussion",
+      "content": "If the QTL is not completely linked to the marker, two corrections are required for the above expressions. First, the difference in means for $ F_{2} $ homozygous marker genotypes now estimates $ 2a(1-2c) $. A more subtle correction is that the variance about the marker means increases when $ c \\neq 0 $, as the phenotypic distribution for each marker class is now a mixture of distributions with different means. In spite of these complications, to a very good approximation the sample sizes required for a specific power of QTL detection are given by $ n_{0}/(1-2c)^{2} $, where $ n_{0} $ is the required sample size under complete linkage (Soller et al. 1976, Soller and Genizi 1978). Thus, the power to detect a linked QTL falls off as $ (1-2c)^{2} $ decreases, being very weak when c > 0.2 (25 cM under the Haldane map)."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 12. Suppose we wish to have a 90% chance of detecting (using a test with $\\alpha = 0.05$) a QTL whose segregation accounts for 10% the total $F_{2}$ variance. Further assume that all of the genetic variation at this locus is additive. From Example 11, 101 individuals are required to detect this QTL using a completely linked marker. With a marker at recombination frequency $c$ from the QTL, $n = 101/(1-2c)^{2}$, giving sample sizes of 281, 158, and 125 for $c = 0.2$, 0.1, 0.05, respectively."
+    },
+    {
+      "type": "discussion",
+      "content": "One can increase the power to detect a linked QTL either by increasing the number of markers (which decreases c and hence increases the difference between marker means) or by increasing the number of individuals genotyped (which decreases the sampling variance). To see the relative importance of each, note from Equation 15.35a that the t statistic has approximate expected value $$ E\\left[\\frac{\\mu_{M M}-\\mu_{m m}}{\\sigma\\left(\\overline{{z}}_{M M}-\\overline{{z}}_{m m}\\right)}\\right]\\simeq\\sqrt{n}\\left(1-2c\\right)\\left[\\frac{a}{\\sqrt{2}\\left(1-r_{F_{2}}^{2}\\right)\\sigma_{z}\\left(F_{2}\\right)}\\right] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The term in brackets is fixed for a given QTL, so that the test statistic scales with the square root of the sample size. Increasing the number of markers results in an increase in the test statistic, but there is a point of diminishing returns when markers are already closely spaced. For example, for $c = 0.2$ (corresponding to markers spaced 50 cM apart), moving to an infinitely dense map ($c = 0$) requires that only 36% as many individuals be scored to give the same power. However, for markers spaced at $c = 0.1$ and 0.05, these percentages become 81% and 90%."
+    },
+    {
+      "type": "discussion",
+      "content": "Darvasi and Soller (1994b) show under rather general conditions that the spacing of markers giving the highest chance of detecting a QTL, given the constraint of scoring a fixed total number of marker genotypes (marker loci × individuals) is 20 to 30 cM. Here each QTL is no further than 10 to 15 cM (and on average is within 5 to 7.5 cM) from any marker. Thus, for markers spaced 10 cM or closer, there is really little point in further increasing the marker density when the goal is simple detection of a linked QTL. However, increasing marker density does become important if the goal is a highly precise estimate of QTL position or the dissection of a cluster of tightly linked QTLs."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 13. As mentioned in Example 3, Edwards et al. (1987, 1992) examined the same cross of two maize strains with two different designs. The 1987 design used 1,776 F₂ individuals and 17 markers, while the 1992 design used 187 F₂ individuals and 114 markers. The two designs represent a tradeoff between increased marker density (1992 design) and increased sample size (1987 design), as both examined a somewhat similar number of total marker genotypes (1776 × 17 = 30,200 vs. 187 × 114 = 21,300). Comparisons of c values in the two studies is problematic, given that only a fraction of the genome was covered in the 1987 study (about 40% of the genome was within 20 cM of a marker), while under the 1992 design most of the genome was 5 to 10 cM from a marker. Choosing c = 0.25 (1987 design) and c = 0.08 (1992 design), from Equation 15.40 the expected ratio of t statistics becomes $$ \\frac{\\sqrt{1776}\\left(1-2\\cdot0.25\\right)}{\\sqrt{187}\\left(1-2\\cdot0.08\\right)}=1.8 $$ showing that (for these $c$ values) the 1987 design had greater power."
+    },
+    {
+      "type": "discussion",
+      "content": "ML interval mapping is expected to be somewhat more powerful than the simple single-marker $t$ test, so the above results can be considered as upper bounds for the required sample size, although they are not greatly exaggerated. For example, the power of ML interval mapping to detect QTLs has been examined by several authors (Lander and Botstein 1989, van Ooijen 1992, Carbonell et al. 1993, Darvasi et al. 1993), who conclude that with a reasonable density of markers (one every 20 cM), $250\\,F_{2}$ individuals are sufficient to detect a QTL whose segregation accounts for at least 5% of the $F_{2}$ variation. How does this compare with the required sample size for a $t$ test? Since markers spaced at 20 cM intervals imply that a marker is within 10 cM from the QTL, using the result for $r^{2}=0.05$ from Example 11 gives the required sample size for a $t$ test as $206/(1-2\\cdot0.1)^{2}=263$. Hence, the above $t$ test guidelines are also reasonable for ML interval mapping."
+    }
+  ]
+}

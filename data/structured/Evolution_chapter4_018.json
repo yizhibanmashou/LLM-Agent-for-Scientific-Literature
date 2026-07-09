@@ -1,0 +1,51 @@
+{
+  "id": "Evolution_chapter4_018",
+  "metadata": {
+    "chapter": "Evolution_chapter4",
+    "section": "MUTATION RATE",
+    "subsections": [
+      "Short-term Enrichment"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter4_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "MUTATION RATE",
+    "section_level_2": "Short-term Enrichment",
+    "heading_path": [
+      "MUTATION RATE",
+      "Short-term Enrichment"
+    ],
+    "display_heading": "Short-term Enrichment"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "The preceding approach employs a strategy of augmenting the pool of observable mutations by passing lines through a large number of generations. The advantage of such a protocol is that mutations are equally enriched throughout the genome, minimizing the chances that the mutational profile will be biased by making observations at any particular target locus. However, with genome-wide mutation-accumulation analysis, an enormous number of sites (typically many tens of millions) need to be searched to obtain just a few dozen mutations."
+    },
+    {
+      "type": "discussion",
+      "content": "An alternative approach, which is widely applied to microbial cultures, focuses on reporter constructs (specific marker loci at which at least a subset of mutations causes obvious phenotypic changes). Here, the emphasis is on the efficient screening of a very large pool of cells in a relatively short period of time for a small subset of mutations, e.g., exponentially growing an initially nonmutant stock to a population size in excess of the reciprocal of the mutation rate (so there will be more than one mutational event in the culture), and then isolating the subset of cells that have acquired a mutation at a locus that is nonessential in the background environment but permits subsequent growth on a selective medium (Luria and Delbrück 1943). From estimates of the total number of mutant and nonmutant cells in the culture, it is then possible to determine the mutation rate per cell division."
+    },
+    {
+      "type": "discussion",
+      "content": "For the marker approach to yield reliable estimates of u, a good deal of knowledge must exist on the molecular features of the target locus. Because mutant cells reproduce during culture expansion, the relationship between the number of mutant cells observed in a population and the actual number of mutational events that produced them is generally not one-to-one. Thus, the first challenge is to convert the observed number of mutant cells to the number of mutations leading to them (m). In addition, because not all mutations produce an observed phenotype, the second challenge is to determine the fraction of mutations that are detectable at the target locus (d). The true number of mutations is estimated by m/d. Finally, in order to determine the mutation rate per nucleotide site, one must know the mutational target size (n, in base pairs)."
+    },
+    {
+      "type": "discussion",
+      "content": "Several methods exist for estimating the number of unique mutational events from the observed numbers of mutant and nonmutant cells in short-term experiments, with broad overviews provided by Rosche and Foster (2000) and Angerer (2001a, 2001b). Suppose a large series of replicate cultures is developed, and one then simply scores the fraction of cultures at the end point that are completely free of mutations $ (p_{0}) $. Assuming that the number of mutational events per culture is Poisson distributed with expectation m, the expected frequency of mutation-free cultures is then simply $$ E(p_{0})=e^{-m} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Rearrangement leads to the estimator $ \\widehat{m} = -\\ln(p_0) $, which ignores the sampling bias resulting from the error in estimating $ p_0 $. This approach works well when m is on the order of 0.5 to 2.5, but with more extreme values, $ p_0 $ will be close enough to 0.0 or 1.0 that meaningful estimates are not possible unless the number of cultures is enormous. A second disadvantage of this approach is its failure to use most of the information in the set of cultures, as the distribution of mutant numbers among replicate cultures is completely ignored. Full use of such information can be incorporated into a maximum-likelihood framework (e.g., Lea and Coulson 1949; Sarkar et al. 1992)."
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:4.3]]"
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:4.4]]"
+    }
+  ]
+}

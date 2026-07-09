@@ -1,0 +1,43 @@
+{
+  "id": "Evolution_appendix5_016",
+  "metadata": {
+    "chapter": "Evolution_appendix5",
+    "section": "TESTING FOR MULTIVARIATE NORMALITY",
+    "subsections": [
+      "Mardia's Test: Multivariate Skewness and Kurtosis"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_appendix5_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "TESTING FOR MULTIVARIATE NORMALITY",
+    "section_level_2": "Mardia's Test: Multivariate Skewness and Kurtosis",
+    "heading_path": [
+      "TESTING FOR MULTIVARIATE NORMALITY",
+      "Mardia's Test: Multivariate Skewness and Kurtosis"
+    ],
+    "display_heading": "Mardia's Test: Multivariate Skewness and Kurtosis"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "As was the case for univariate normality, we can test for multivariate normality by examining the sample skewness and kurtosis. Mardia (1970, 1974) proposed multivariate extensions of skewness and kurtosis measures and suggested a large-sample test based on the asymptotic distribution of these statistics. If there are m vectors of observations (with each vector measuring n characters), then the multivariate skewness is estimated by $$ b_{1,n}=\\frac{1}{m^{2}}\\sum_{i=1}^{m}\\sum_{j=1}^{m}\\left[\\left(\\mathbf{z}_{i}-\\overline{\\mathbf{z}}\\right)^{T}\\mathbf{S}_{\\mathbf{Z}}^{-1}\\left(\\mathbf{z}_{j}-\\overline{\\mathbf{z}}\\right)\\right]^{3} $$ while the multivariate kurtosis is estimated by $$ b_{2,n}=\\frac{1}{m}\\sum_{i=1}^{m}\\left[\\left(\\mathbf{z}_{i}-\\overline{\\mathbf{z}}\\right)^{T}\\mathbf{S}_{\\mathbf{Z}}^{-1}\\left(\\mathbf{z}_{i}-\\overline{\\mathbf{z}}\\right)\\right]^{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "If $ z \\sim MVN $, then $ b_{1,n} $ and $ b_{2,n} $ have expected values 0 and $ n(n+2) $. For large values of m, Mardia showed that the (scaled) multivariate skewness is asymptotically distributed as a chi-square random variable with f degrees of freedom, with $$ \\frac{m}{6}b_{1,n}\\sim\\chi_{f}^{2},\\qquad\\mathrm{w h e r e~}f=\\frac{n(n+1)(n+2)}{6} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Likewise for large values of m, the multivariate kurtosis (following appropriate scaling) is distributed as a unit-normal, with $$ \\frac{b_{2,n}-n(n+2)}{\\sqrt{8n(n+2)/m}}\\sim N(0,1) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "If either Equation A5.25a or A5.25b is significant, then multivariate normality is rejected."
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:A5.9]]"
+    }
+  ]
+}

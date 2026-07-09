@@ -1,0 +1,82 @@
+{
+  "id": "Genetics_chapter22_006",
+  "metadata": {
+    "chapter": "Genetics_chapter22",
+    "section": "Genotype $ \\times $ Environment Interaction",
+    "subsections": [
+      "TWO-WAY ANALYSIS OF VARIANCE"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter22_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [
+      "22.1",
+      "22.2"
+    ],
+    "section_level_1": "Genotype $ \\times $ Environment Interaction",
+    "section_level_2": "TWO-WAY ANALYSIS OF VARIANCE",
+    "heading_path": [
+      "Genotype $ \\times $ Environment Interaction",
+      "TWO-WAY ANALYSIS OF VARIANCE"
+    ],
+    "display_heading": "TWO-WAY ANALYSIS OF VARIANCE",
+    "table_reference_keys": [
+      "chapter22:22.1",
+      "chapter22:22.2"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Two-way ANOVA provides an approach for detecting genotype $ \\times $ environment interaction when data are available for more than two environments. Applications date back to Sprague and Federer (1951). The sums of squares are computed in the same manner as in a diallel ([[SEE_TABLE:20.1]]), the two factors now being genotypes (or families) and environments, rather than fathers and mothers. However, as pointed out by Ayres and Thomas (1990) and Fry (1992), much confusion exists in the literature regarding the interpretation of the mean squares (and the variance components extracted from them) in genotype $ \\times $ environment analysis."
+    },
+    {
+      "type": "discussion",
+      "content": "We will assume throughout that the genetic groups under analysis are sampled randomly from some larger population about which inferences are to be made and are hence random effects. The main issue then concerns the treatment of the macroenvironmental effects. If the environments in which the genotypes are assayed are regarded as random with respect to the possible set of environments in which the study species is located naturally, then a random-effects interpretation is appropriate. This would be the case, for example, if genotypes of a plant species were replicated in plots randomly distributed over the native habitat (Stratton 1994). If, on the other hand, the environments are selected for a particular reason and/or are the only ones of interest, as in the assay of crop varieties at future production sites, they should be regarded as fixed effects. In this case, a mixed-model interpretation (random genotypes, fixed environments) is required."
+    },
+    {
+      "type": "discussion",
+      "content": "We start with the random-effects model, as the basic machinery has already been introduced in Chapter 20. As we will see below, because of its focus on two specific environments, Falconer's approach, described by Equations 22.2a,b, is equivalent to a mixed-model analysis, with the environmental effects being interpreted as fixed factors. To distinguish that model from the random-effects model, a slight change in notation is required. We denote terms from the random-effects model with tildes, $$ z_{i j k}=\\mu+\\widetilde{G}_{j}+\\widetilde{I}_{i j}+\\widetilde{E}_{i}+e_{i j k} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The properties of this model are identical to those encountered in Chapter 20 — the model components $ \\widetilde{G}_j $, $ \\widetilde{I}_{ij} $, $ \\widetilde{E}_j $, and $ e_{ijk} $ all have expected values equal to zero, are distributed independently, and have variances respectively denoted by $ \\sigma_G^2 $, $ \\sigma_I^2 $, $ \\sigma_E^2 $, and $ \\sigma_e^2 $. A simple change of terms from [[SEE_TABLE:20.1]] yields the expressions for the expected mean squares given in [[SEE_TABLE:22.1]]."
+    },
+    {
+      "type": "definition",
+      "content": "Properties of the random-effects model are widely agreed upon by statisticians, but things are more complicated under the mixed model. Under one interpretation, all of the properties given above for the random-effects model hold, except for the definition of the environmental effects as fixed constants rather than random variables. In this case, the expressions for the expected mean"
+    },
+    {
+      "type": "discussion",
+      "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td rowspan=\"2\">Factor</td><td rowspan=\"2\">Degrees of Freedom</td><td colspan=\"2\">Expected Mean Squares</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Random Effects</td><td style='text-align: center; word-wrap: break-word;'>Mixed Model</td></tr><tr><td rowspan=\"2\">Environment</td><td rowspan=\"2\">$ N_E - 1 $</td><td style='text-align: center; word-wrap: break-word;'>$ \\sigma_e^2 + n\\sigma_I^2 + nN_G\\sigma_E^2 $</td><td style='text-align: center; word-wrap: break-word;'>$ \\sigma_e^2 + \\frac{nN_E}{(N_E - 1)}\\sigma_I^2 $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>$ + \\frac{nN_G}{N_E - 1}\\sum_{i=1}^{N_E}E_i^2 $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Genetic</td><td style='text-align: center; word-wrap: break-word;'>$ N_G - 1 $</td><td style='text-align: center; word-wrap: break-word;'>$ \\sigma_e^2 + n\\sigma_I^2 + nN_E\\sigma_G^2 $</td><td style='text-align: center; word-wrap: break-word;'>$ \\sigma_e^2 + nN_E\\sigma_G^2 $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>G E</td><td style='text-align: center; word-wrap: break-word;'>$ (N_E - 1)(N_G - 1) $</td><td style='text-align: center; word-wrap: break-word;'>$ \\sigma_e^2 + n\\sigma_I^2 $</td><td style='text-align: center; word-wrap: break-word;'>$ \\sigma_e^2 + \\frac{nN_E}{(N_E - 1)}\\sigma_I^2 $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Error</td><td style='text-align: center; word-wrap: break-word;'>$ N_E N_G(n - 1) $</td><td style='text-align: center; word-wrap: break-word;'>$ \\sigma_e^2 $</td><td style='text-align: center; word-wrap: break-word;'>$ \\sigma_e^2 $</td></tr><tr><td colspan=\"4\">Note: The sums of squares are computed in an identical manner under both models, and are defined in [[SEE_TABLE:22.2]]. A completely balanced design is assumed, with n members of $ N_G $ genetic groups being assayed in each of $ N_E $ environments.</td></tr></table> squares for genotypes, interaction effects, and residual deviations are identical to those for the random-effects model. A second interpretation is that because the macroenvironmental effects are assumed to be fixed effects, their mean value should be constrained to be zero. Given this constraint, it is argued that there should be a partial restriction on the interaction effects, such that $ \\sum_{i=1}^{N_{E}} I_{ij} = 0 $, i.e., within each genetic group, the interaction effects should also have mean zero across environments. This is the interpretation that we made in introducing the causal determinants of Falconer's correlation across environments, where we let the interaction effect of genotype j be +I_j in one environment and -I_j in the other, and where we let the two environmental effects be $ \\pm E $. To maintain continuity, we adhere to this latter interpretation of the mixed model throughout this chapter. A good general introduction to the issues distinguishing the two interpretations of the mixed model can be found in Searle et al. (1992, pp. 123–127). Itoh and Yamada (1990) provide an overview of the two approaches in genotype $ \\times $ environment interaction analysis."
+    },
+    {
+      "type": "discussion",
+      "content": "For the remainder of our discussion on the mixed model, we return to Equation 22.1, emphasizing again that the only changes in assumptions from the random-effects model (Equation 22.8) are that the observed macroenvironmental effects are assumed to be constants with mean zero (under the random-effects model, the expected value of the mean macroenvironmental effect is zero, but the sample mean is not so constrained), and that the interaction effects within genotypes are constrained to have mean zero. As in the random-effects model, $ G_j $ is still a random variable with expectation zero, but we now denote its variance as $ \\sigma_G^2 $ (as opposed to $ \\sigma_G^2 $). The interaction effects are random variables across genotypes with zero means and variance $ \\sigma_I^2 $. However, the summation restriction on the interaction effects causes them to be nonindependent within genotypes, the average covariance within genotypes being $ -\\sigma_I^2/(N_E - 1) $. For example, with Falconer's model, where $ N_E = 2 $, $ \\sigma(I_{1j}, I_{2j}) = \\sigma(+I_j, -I_j) = -\\sigma_I^2 $. This negative covariance causes the sample-wide expectation of the interaction variance to be $ [N_E/(N_E - 1)]\\sigma_I^2 $, rather than $ \\sigma_I^2 $ (which is the expectation in the absence of the zero-sum restriction), leading to the unusual appearance of the interaction variance contribution to the expected mean squares in [[SEE_TABLE:22.1]]."
+    },
+    {
+      "type": "discussion",
+      "content": "Note that despite these subtle technical differences, there is a simple and close connection between the variance components underlying the random-effects and mixed models, as can be seen by comparing the expressions for the expected mean squares in [[SEE_TABLE:22.1]]. $$ \\sigma_{I}^{2}=\\frac{N_{E}-1}{N_{E}}\\sigma_{I}^{\\sim2} $$ $$ \\sigma_{G}^{2}=\\sigma_{\\widetilde{G}}^{2}+\\frac{\\sigma_{\\widetilde{I}}^{2}}{N_{E}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "A simple way of understanding these relationships is to recall (from Chapter 2) that, with a sample size of $N$, the average squared deviation of an observed variable from an observed mean is a downwardly biased estimate of the population variance by a factor of $(N-1)/N$. In effect, by defining the mean interaction effects within genotypes to be zero, the mixed model ignores this sampling bias. On the other hand, the sampling variance of mean interaction effects within genotypes, $(\\sigma_{I}^{2}/N_{E})$, ignored by the mixed model, inflates the genotypic variance. The net effect is that the sum of components of variance associated with genotypes and interaction effects is identical in both models, i.e., $\\sigma_{G}^{2}+\\sigma_{I}^{2}=\\sigma_{G}^{2}+\\sigma_{I}^{2}$."
+    },
+    {
+      "type": "discussion",
+      "content": "Still another way of understanding the main difference between the random- and fixed-effects models provides some help in interpreting the meaning of the variance components. Under the mixed model, $\\sigma_{G}^{2}$ is a measure of the variance among marginal mean genotypic values (i.e., genotypic means averaged over all sampled environments), including that caused by sampling of the interaction effects. This equivalence can be seen from Equation 22.10b, which shows $\\sigma_{G}^{2}$ to be the sum of the variance of random genotypic values $(\\widetilde{G}_{j})$ and the variance of a mean interaction effect based on a sample size of $N_{E}$. On the other hand, despite its notation as a variance, $\\sigma_{G}^{2}$ can be seen from Equation 22.9 to be equivalent to the covariance between family members raised in different environments (Hocking 1985, Fry 1992). This result follows from the standard rule, encountered in previous chapters, that an among-group variance component extracted by ANOVA is equivalent to the covariance of individuals within groups. Thus, in the context of genotype $ \\times $ environment interaction, $ \\sigma_{G}^{2} $ can actually take on negative values if, for example, there is a strong tendency for the reaction norms of different genetic groups to cross. As a variance of marginal means, $ \\sigma_{G}^{2} $ is constrained to be positive, as are $ \\sigma_{I}^{2} $ and $ \\sigma_{I}^{2} $ (although estimates of them can be negative). With the simple translations given by Equations 22.10a,b, and the fact that both models utilize exactly the same observed mean squares, it is relatively easy to move from one sort of analysis to the other. The variance components underlying the two models are strictly identical only in the absence of genotype $ \\times $ environment interaction ($ \\sigma_{I}^{2} = \\sigma_{I}^{2} = 0 $), and they can be quite different when $ N_{E} $ is only two. Note, however, from Equations 22.10a,b, that as the number of environments ($ N_{E} $) becomes large, $ \\sigma_{G}^{2} $ converges on $ \\sigma_{G}^{2} $ (as does $ \\sigma_{I}^{2} $ on $ \\sigma_{I}^{2} $), and the likelihood of a negative $ \\sigma_{G}^{2} $ becomes diminishingly small. As can be seen from the structure of the expected mean squares in [[SEE_TABLE:22.1]], under either model the hypothesis of no significant interaction variance can be evaluated by use of the $F$ ratio $MS_{I}/MS_{e}$. With the random-effects model, the test statistic for significant genotype effects is $MS_{G}/MS_{I}$, whereas with the mixed model, it is $MS_{G}/MS_{e}$. This difference follows from the requirement that, under the null hypothesis of no significant effects, both mean squares have the same expected values."
+    },
+    {
+      "type": "discussion",
+      "content": "Care must be taken in using the variance components extracted from ANOVA to interpret the heritability of a trait. Under either model, assuming purely additive gene effects, the average additive genetic variance within an environment is $ (\\sigma_{G}^{2} + \\sigma_{I}^{2})/(2\\Theta) $, where $ \\Theta $ is the coefficient of coancestry within genetic groups in the analysis. Thus, if the population were to be confined to a single environment, the expected heritability would be $$ h^{2}=\\frac{\\sigma_{G}^{2}+\\sigma_{I}^{2}}{2\\Theta\\big(\\sigma_{e}^{2}+\\sigma_{G}^{2}+\\sigma_{I}^{2}\\big)} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "If, on the other hand, the population is viewed as being distributed randomly over heterogeneous macroenvironments, then the interaction variance does not contribute to the resemblance between relatives (assuming family members develop in different macroenvironments), and the total phenotypic variance needs to include that due to macroenvironmental effects. Thus, the relevant measure of heritability becomes $$ h^{2}=\\frac{\\sigma_{\\widetilde{G}}^{2}}{2\\Theta(\\sigma_{e}^{2}+\\sigma_{\\widetilde{G}}^{2}+\\sigma_{\\widetilde{I}}^{2}+\\sigma_{\\widetilde{E}}^{2})} $$ plant clonal replicates to various positions in a natural landscape. In one of the few experiments of this type, Stratton (1994) assayed the performance of three genotypes of the asexual annual plant Erigeron annuus at 630 locations in an 0.5 hectare old field. As can be seen in the following contour map of total seed production, average performance varied dramatically across the landscape."
+    },
+    {
+      "type": "discussion",
+      "content": "Stratton distributed his plants over the landscape in a hierarchical design: sections separated by distances > 25 m, clusters within sections separated by 3 to 25 m, plots within clusters separated by 0.5 to 1.0 m, and subplots within plots with individuals separated by 10 cm. Significant genotype $ \\times $ environment interaction was detected in this study, but 78% of it was at the level of subplots, i.e., at a spatial scale of 10 cm or less. Seed dispersal experiments indicated that almost all seeds disperse much farther from their parents than 10 cm, implying that the relevant measure of heritability for this population is given by Equation 22.11b. With only three clones in the experiment, the results can hardly be viewed as giving reliable heritability estimates, and we simply point them out for heuristic purposes. The vast majority of the variance for lifetime fitness (70%) appears at the level of replicate plants within subplots. Such variance is potentially a consequence of microenvironmental variation occurring at scales less than 10 cm and of developmental noise. The phenotypic variance attributable to differences among all higher levels of spatial scale is 22%, that attributable to genotype $ \\times $ environment interaction is 8%, and that associated with genotypes is only 0.3%. Thus, the broadsense heritability for total fitness in this population (0.003) is essentially zero."
+    }
+  ]
+}

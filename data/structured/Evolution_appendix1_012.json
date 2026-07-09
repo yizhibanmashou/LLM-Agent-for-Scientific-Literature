@@ -1,0 +1,59 @@
+{
+  "id": "Evolution_appendix1_012",
+  "metadata": {
+    "chapter": "Evolution_appendix1",
+    "section": "DIFFUSION APPLICATIONS IN POPULATION GENETICS",
+    "subsections": [
+      "Time to Fixation"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_appendix1_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "DIFFUSION APPLICATIONS IN POPULATION GENETICS",
+    "section_level_2": "Time to Fixation",
+    "heading_path": [
+      "DIFFUSION APPLICATIONS IN POPULATION GENETICS",
+      "Time to Fixation"
+    ],
+    "display_heading": "Time to Fixation"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "The time for a process to reach a specified value (or values) is called the sojourn time. While we are often interested in the sojourn time to an absorbing boundary (the fixation time), the more general problem of the time to first reach a specific value within the interval over which the diffusion is defined is also tractable. Letting $ \\bar{t}_{a,b} $ denote the expected time that a diffusion spends in the interval $ (a,b) $ given it starts at frequency p, then $$ \\bar{t}_{a,b}=\\int_{0}^{\\infty}\\Pr\\left(a\\leq x_{t}\\leq b\\right)dt=\\int_{0}^{\\infty}\\int_{a}^{b}\\varphi(x,t,p)dx dt $$"
+    },
+    {
+      "type": "discussion",
+      "content": "If a stationary distribution exists, this time is infinite and hence not really of much biological interest. However, if one or both boundaries are absorbing (and accessible), then $ \\bar{t}(p) $, the total time the diffusion spends in the interior, is obtained from Equation A1.21 by letting a and b be the lower and upper limits, respectively, of the diffusion (typically, a = 0, b = 1)."
+    },
+    {
+      "type": "discussion",
+      "content": "A very useful approach for solving Equation A1.21, and more general problems, is to consider $ h(x,p) $, the expected amount of time that the process (starting at p) spends in the neighborhood of x before it is eventually absorbed. Formally, this is given by $$ h(x,p)=\\int_{0}^{\\infty}\\varphi(x,t,p)dt $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, Equation A1.21 can be expressed as $$ \\begin{align*}\\bar t_{a,b}=\\int_a^b h(x,p)dx\\end{align*} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "$ h(x,p) $ is called a Green's function, and it will prove very useful in solving a variety of problems. The general solution for $ h(x,p) $, obtained by Maruyama (1977), is $$ h(x,p)=\\left\\{\\begin{aligned}&\\frac{2[1-u(p)]}{v(x)G(x)}\\int_{a}^{x}G(y)dy&\\text{for}a<x<p\\\\ &\\frac{2u(p)}{v(x)G(x)}\\int_{x}^{b}G(y)dy&\\text{for}p<x<b\\end{aligned}\\right. $$ where the fixation probability, $ u(p) $, is provided by Equation A1.17a."
+    },
+    {
+      "type": "discussion",
+      "content": "One can also obtain modified Green’s functions for conditional processes, such as processes leading only to loss or processes leading only to fixation. For example, $ \\bar{t}_{F} $, the expected time to fix allele A (in those populations where it is fixed) is given by replacing $ h(x,p) $ in Equation A1.22b by $$ h_{1}(x,p)=h(x,p)\\frac{u(x)}{u(p)} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "This follows from standard conditional probability arguments (see Ewens 1979, 2004), with $ u(x)/u(p) $ correcting for the fact that we are only considering those sample paths over which the allele of interest (A) is fixed. This occurs with probability $ u(p) $, and hence $ u(x)/u(p) $ is the conditional density. Similarly, $ \\bar{t}_{L} $, the expected time to lose allele A, is obtained by replacing $ h(x,p) $ in Equation A1.22b by $$ h_{0}(x,p)=h(x,p)\\frac{1-u(x)}{1-u(p)} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, we note that $ \\bar{t}, \\bar{t}_{F} $, and $ \\bar{t}_{L} $ are related by $$ \\bar{t}(p)=u(p)\\bar{t}_{F}(p)+[1-u(p)]\\bar{t}_{L}(p) $$ That is, the expected time to loss or fixation is equal to the expected time to fixation multiplied by the probability of fixation plus the expected time to loss multiplied by the probability of loss."
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:A1.8]]"
+    }
+  ]
+}

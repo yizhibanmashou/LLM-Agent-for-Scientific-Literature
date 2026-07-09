@@ -1,0 +1,43 @@
+{
+  "id": "Genetics_chapter12_004",
+  "metadata": {
+    "chapter": "Genetics_chapter12",
+    "section": "Introduction",
+    "subsections": [
+      "THE MUTATIONAL RATE OF PRODUCTION OF QUANTITATIVE VARIATION"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter12_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "THE MUTATIONAL RATE OF PRODUCTION OF QUANTITATIVE VARIATION",
+    "heading_path": [
+      "Introduction",
+      "THE MUTATIONAL RATE OF PRODUCTION OF QUANTITATIVE VARIATION"
+    ],
+    "display_heading": "THE MUTATIONAL RATE OF PRODUCTION OF QUANTITATIVE VARIATION"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Estimates of the rate of production of new quantitative variation by mutation are normally computed on a per character, rather than a per locus, basis. The measure generally sought is the amount of additive genetic variation produced by mutation per generation. This measure compound three issues: the genic mutation rate, u; the number of loci underlying the character, n; and the mean squared effect of a mutant allele in the heterozygous state. Here, as in Chapter 4, we scale the genotypic values at a locus such that the ancestral homozygous state is 0, the heterozygous state is $a(1+k)$, and the homozygous mutant state is 2a. Noting that the frequency of newly arisen mutations at a locus in any generation $(2u_{i})$ is very small so that the change in the mean effect at the locus is negligible, then after summing over all loci, the mutational variance becomes $$ \\begin{aligned}\\sigma_{m}^{2}&=2\\sum_{i=1}^{n}u_{i}E[a_{i}^{2}(1+k_{i})^{2}]\\\\&=\\sigma_{m0}^{2}+2\\sigma_{m1}^{2}+\\sigma_{m2}^{2}\\end{aligned} $$ where $ \\sigma_{m0}^{2} = UE(a^{2}) $, $ \\sigma_{m1}^{2} = UE(a^{2}k) $, and $ \\sigma_{m2}^{2} = UE(a^{2}k^{2}) $, with $ U = 2\\sum_{i=1}^{n} u_{i} $ being the zygotic mutation rate for the character (i.e., the expected number of mutations influencing the trait that arise in a newborn each generation), and $ E(x) $ denoting the average value of x. For mutations with purely additive effects $ (k=0) $, the mutational variance simplifies to $$ \\sigma_{m}^{2}=\\sigma_{m0}^{2}=U E(a^{2}) $$"
+    },
+    {
+      "type": "definition",
+      "content": "A cautionary note in the interpretation of Equation 12.1a is necessary. Strictly speaking, the mutational variance defined in this expression is nonsegregational mutational variance in that it describes the variance produced by a cohort of new mutations that exist entirely as heterozygotes, rather than at Hardy-Weinberg frequencies where the mutations appear in both heterozygotes and homozygotes. In the case of mutations with additive effects, this definition is not a problem because the variance produced by an allelic effect is independent of the genetic background and uninfluenced by segregation. With completely recessive $ (k = -1) $ mutations, however, Equation 12.1a defines the mutational variance to be zero, despite the fact that variation will be exposed once the mutant alleles have segregated into their homozygous states. For autosomal loci, Hardy-Weinberg frequencies are reached in one generation under monocacy and in two generations under dioecy."
+    },
+    {
+      "type": "discussion",
+      "content": "A reasonable way to define the relevant measure of mutational variance for a segregating population is to consider the situation in which the only determinants of the dynamics of genetic variance are mutation and random genetic drift. Under this neutral model, considered in detail in Lynch and Hill (1986), populations with constant size eventually reach an equilibrium state at which point the input of new variation by mutation is balanced by the loss via random genetic drift. For populations of size one, maintained by self-fertilization and single-seed descent, the equilibrium genetic variance among the progeny is $$ \\sigma_{W}^{2}=\\frac{3}{2}\\sigma_{m0}^{2}+\\left(\\frac{8\\sigma_{m1}^{2}+5\\sigma_{m2}^{2}}{4}\\right) $$ With full-sib mating, the equilibrium variance is $$ \\sigma_{W}^{2}=4\\sigma_{m0}^{2}+2\\left(\\frac{6\\sigma_{m1}^{2}+5\\sigma_{m2}^{2}}{3}\\right) $$ and with all larger population sizes (with effective size denoted by $N_{e}$), it is very close to $$ \\sigma_{W}^{2}=2N_{e}\\left(\\sigma_{m0}^{2}+\\frac{2}{3}(\\sigma_{m1}^{2}+\\sigma_{m2}^{2})\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "In this latter case, all of the genetic variance is additive, except for $2N_{e}\\sigma_{m2}^{2}/3$, which defines the dominance component of variance (Lynch and Hill 1986). Note that for recessive mutations $(k<0)$, which are likely to be the rule (Chapters 4 and 10), $\\sigma_{m1}^{2}$ is negative while $\\sigma_{m2}^{2}$ is positive, so the contributions from these terms partially cancel (completely canceling in the case of fully recessive mutations). Moreover, the absolute values of both terms are necessarily less than that of $\\sigma_{m0}^{2}$. Thus, although not exact in all cases, we may expect the equilibrium level of genetic variance in the absence of selection to be close to $2N_{e}\\sigma_{m0}^{2}$ in most cases. This result justifies the reliance on $\\sigma_{m0}^{2}$ as a measure of mutational variance, a useful relationship since, as we will soon see, $\\sigma_{m0}^{2}$ is much easier to estimate than either $\\sigma_{m1}^{2}$ or $\\sigma_{m2}^{2}$."
+    },
+    {
+      "type": "discussion",
+      "content": "Estimates of the mutational variance are often scaled by the environmental variance to give the mutational heritability, $$ h_{m}^{2}=\\frac{\\sigma_{m0}^{2}}{\\sigma_{E}^{2}} $$ a dimensionless measure suitable for comparing different characters. When mutations have additive effects, $ h_m^2 $ approximates the heritability of an initially homozygous population following one generation of mutation. (The fact that the denominator in $ h_m^2 $ is the environmental, rather than the total, variance is not problematical because, as will be shown below, $ \\sigma_{m0}^2 << \\sigma_E^2 $)."
+    }
+  ]
+}

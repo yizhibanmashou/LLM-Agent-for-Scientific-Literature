@@ -1,0 +1,72 @@
+{
+  "id": "Evolution_chapter21_014",
+  "metadata": {
+    "chapter": "Evolution_chapter21",
+    "section": "THEORY OF EXPECTED SINGLE-CYCLE RESPONSE",
+    "subsections": [
+      "Variance of the Selection Unit, $ \\sigma_{x}^{2} $"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter21_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [
+      "21.4"
+    ],
+    "section_level_1": "THEORY OF EXPECTED SINGLE-CYCLE RESPONSE",
+    "section_level_2": "Variance of the Selection Unit, $ \\sigma_{x}^{2} $",
+    "heading_path": [
+      "THEORY OF EXPECTED SINGLE-CYCLE RESPONSE",
+      "Variance of the Selection Unit, $ \\sigma_{x}^{2} $"
+    ],
+    "display_heading": "Variance of the Selection Unit, $ \\sigma_{x}^{2} $",
+    "table_reference_keys": [
+      "Evolution_chapter21:21.4"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "The variance, $ \\sigma_{x}^{2} $, of the selection unit is a function of the within- and among-family variances, and obtaining it requires a bit of bookkeeping. We start by assuming that the total environmental value can be partitioned as $ E = E_{c} + E_{s} $, a common-family effect ($ E_{c} $) plus an individual-specific effect ($ E_{s} $). This decomposes the total environmental variances into among- and within-family components, $ \\sigma_{E}^{2} = \\sigma_{E_{c}}^{2} + \\sigma_{E_{s}}^{2} $. When families are replicated over plots and environments, the environmental variance contains additional structure and is usually partitioned into further components (Equations 21.41 and 21.42)."
+    },
+    {
+      "type": "discussion",
+      "content": "The among-family variance $ \\sigma_{b}^{2} $ (the variance among the expected family means, $ \\mu_{i} $) $$ \\sigma_{b}^{2}=\\sigma^{2}(\\mu_{i})=\\sigma_{G F}^{2}+\\sigma_{E c}^{2} $$ where $ \\sigma_{GF}^{2} $, the among-family genetic variance (the variance in the expected mean genotypic value among families), is developed below (Equations 21.11a and 21.26a). Likewise, the within-family variance about the expected family mean is $$ \\sigma_{w}^{2}=\\sigma^{2}(z_{ij}-\\mu_{i})=\\sigma_{Gw}^{2}+\\sigma_{Es}^{2} $$ where $ \\sigma_{Gw}^{2} $ is the within-family genetic variance (Equations 21.11b and 21.26b). Note that $ \\sigma_{b}^{2} $ and $ \\sigma_{w}^{2} $ are functions of the true family mean, $ \\mu_{i} $, while the variance of the selection unit usually relies upon the variances about the observed mean, $ \\overline{z}_{i} $, of each family. Replacing $ \\mu_{i} $ with $ \\overline{z}_{i} $ results in a slight inflation of the among-family variance and a slight reduction in the within-family variance (this is formally shown below in Example 21.3). With n sibs in each family, the among-family variance based on the observed means becomes $$ \\sigma^{2}(\\overline{z}_{i})=\\sigma^{2}(\\mu_{i}+\\overline{e}_{i})=\\sigma_{b}^{2}+\\sigma_{w}^{2}/n $$ namely, the among-family variance, $ \\sigma^2(\\mu_i) = \\sigma_b^2 $, plus the variance, $ \\sigma^2(\\bar{e}_i) = \\sigma_w^2/n $, in the error from estimating $ \\mu_i $ from $ \\bar{z}_i $. Because the total variance is the sum of the among- and within-family variances ($ \\sigma_b^2 + \\sigma_w^2 $), the within-family variance (about the observed, rather than expected, mean) is correspondingly reduced to $$ \\sigma^{2}(z_{i j}-\\overline{{z}}_{i})=(1-1/n)\\sigma_{w}^{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Equation 21.8c thus implies $$ \\sigma^{2}(\\overline{z}_{i})=\\sigma_{G F}^{2}+\\sigma_{E_{c}}^{2}+\\frac{\\sigma_{G w}^{2}+\\sigma_{E_{s}}^{2}}{n} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "In the animal-breeding literature, this equation is often more compactly written in terms of t, the phenotypic correlation between sibs (the intraclass correlation coefficient; see"
+    },
+    {
+      "type": "discussion",
+      "content": "LW Chapter 7). The phenotypic covariance between sibs can be expressed as $ t\\sigma_{z}^{2} = \\sigma_{b}^{2} = \\sigma_{GF}^{2} + \\sigma_{E_{c}}^{2} $ (Example 21.3), implying that $$ \\sigma^{2}(\\overline{z}_{i})=t_{n}\\sigma_{z}^{2} $$ where, akin to our use of $ r_{n} $ (Equation 21.6b), $$ t_{n}=t+\\frac{1-t}{n}. $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Likewise, the within-family variance (about the observed mean) is $$ \\sigma^{2}(z_{i j}-\\overline{{z}}_{i})=\\left(1-\\frac{1}{n}\\right)\\left(\\sigma_{G w}^{2}+\\sigma_{E_{s}}^{2}\\right) $$ which is usually written as $$ \\sigma^{2}(z_{i j}-\\overline{{z}}_{i})=\\left(1-t_{n}\\right)\\sigma_{z}^{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "[[SEE_TABLE:21.4]] gives these family variances in terms of genetic and environmental variance components, which follow upon expressing the within- and among-family genetic variances in terms of additive and dominance variance components. Recalling from ANOVA theory that the among-group variance equals the within-group covariance (LW Chapter 18), the among-family component, $ \\sigma_{GF}^{2} $, equals the genetic covariances between sibs. If, for now, we ignore epistasis, $$ \\sigma_{GF}^{2}=\\left\\{\\begin{aligned}&\\frac{1}{4}\\sigma_{A}^{2}&\\quad half-sibs\\\\ &\\\\ &\\frac{1}{2}\\sigma_{A}^{2}+\\frac{1}{4}\\sigma_{D}^{2}&\\quad full-sibs\\end{aligned}\\right. $$ Because the total genetic variance ($ \\sigma_{G}^{2} $) equals the among-family genetic variance plus the within-family variance, $$ \\sigma_{Gw}^{2}=\\sigma_{G}^{2}-\\sigma_{GF}^{2}=\\left\\{\\begin{aligned}&\\frac{3}{4}\\sigma_{A}^{2}+\\sigma_{D}^{2}\\quad&half-sibs\\\\ &\\frac{1}{2}\\sigma_{A}^{2}+\\frac{3}{4}\\sigma_{D}^{2}\\quad&full-sibs\\end{aligned}\\right. $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, under a nested-sib design (the North Carolina Design I of Comstock and Robinson 1948), one sex (typically a male or a pollen plant) is mated to each of $ n_f $ (unrelated) females (or seed parents), each of which produces $ n_s $ sibs, for a total of $ n = n_f n_s $ sibs per male. The expression in [[SEE_TABLE:21.4]] for the among-family variance under the nested-sib design follows, with similar logic as in Example 21.3, and with $$ \\sigma^{2}\\big(\\overline{z}_{H S(F S)}\\big)=\\sigma_{G F(H S)}^{2}+\\frac{\\sigma_{G(f|m)}^{2}}{n_{f}}+\\frac{\\sigma_{G w(F S)}^{2}}{n_{s}n_{f}}+\\frac{\\sigma_{E_{s}}^{2}}{n}+\\frac{\\sigma_{E_{c}(F S)}^{2}}{n_{f}}+\\sigma_{E_{c}(H S)}^{2} $$ where $ \\sigma_{G(f|m)}^{2} $, the genetic variances of females nested within males, is $$ \\sigma_{G(f|m)}^{2}=\\sigma_{GF(FS)}^{2}-\\sigma_{GF(HS)}^{2}=\\frac{\\sigma_{A}^{2}+\\sigma_{D}^{2}}{4} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "When epistasis is present, Equation 21.26a (below) provides the appropriate additional genetic variance terms in $ \\sigma_{G(f|m)}^{2} $. The among-family variance under a nested design is bounded below by the half-sib variance ($ n_{f} = n $ and $ n_{s} = 1 $) and above by the full-sib variance ($ n_{f} = 1 $ and $ n_{s} = n $)."
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:21.3]]"
+    },
+    {
+      "type": "table",
+      "content": "[[TABLE:21.4]]"
+    }
+  ]
+}

@@ -1,0 +1,191 @@
+{
+  "id": "Genetics_chapter5_002",
+  "metadata": {
+    "chapter": "Genetics_chapter5",
+    "section": "Introduction",
+    "subsections": [
+      "A GENERAL LEAST-SQUARES MODEL FOR GENETIC EFFECTS"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter5_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "A GENERAL LEAST-SQUARES MODEL FOR GENETIC EFFECTS",
+    "heading_path": [
+      "Introduction",
+      "A GENERAL LEAST-SQUARES MODEL FOR GENETIC EFFECTS"
+    ],
+    "display_heading": "A GENERAL LEAST-SQUARES MODEL FOR GENETIC EFFECTS"
+  },
+  "blocks": [
+    {
+      "type": "definition",
+      "content": "We now consider a statistical procedure for the definition of epistatic effects, which is a straightforward extension of the one-locus linear model introduced in Chapter 4. We will confine our attention to two loci, as the extension to higher numbers of loci should become obvious, and we assume random mating throughout."
+    },
+    {
+      "type": "definition",
+      "content": "In the previous chapter, the additive effect of an allele was shown to be equal to the deviation of members of the population with the allele from the population mean phenotype. This definition does not change with the addition of loci. Letting $ G_{i} $ represent the conditional mean phenotype of individuals with allele i at the first locus without regard to the other allele at the locus or to the genotype at the second locus, then $$ \\alpha_{i}=G_{i...}-\\mu_{G} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Analogous expressions follow for the three other additive effects $(\\alpha_{j}, \\alpha_{k}, \\text{ and } \\alpha_{l})$. Within each locus, the mean value of the average effects (weighted by the allele frequencies) is equal to zero."
+    },
+    {
+      "type": "discussion",
+      "content": "The dominance effects are defined by considering $G_{ij..}$, the conditional mean phenotype of individuals with alleles i and j at the first locus without regard to genotypic state at the second locus. From Equation 4.26, it follows that $$ \\delta_{i j}=G_{i j..}-\\mu_{G}-\\alpha_{i}-\\alpha_{j} $$ $$ \\delta_{k l}=G_{..k l}-\\mu_{G}-\\alpha_{k}-\\alpha_{l} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Here, we have subtracted the mean genotypic value and the additive effects, leaving the dominance effect as the only unexplained portion of the conditional mean at the locus. As in the case of additive effects, the mean dominance deviation at each locus is equal to zero."
+    },
+    {
+      "type": "definition",
+      "content": "The definition of epistatic effects proceeds in a similar fashion. Letting $G_{i,k}$. be the mean phenotype of individuals with gene $i$ at locus 1 and $k$ at locus 2, without regard to the other two genes, the ikth additive $\\times$ additive effect is $$ (\\alpha\\alpha)_{i k}=G_{i.k.}-\\mu_{G}-\\alpha_{i}-\\alpha_{k} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "In other words, $(\\alpha\\alpha)_{ik}$ is the deviation of the conditional mean $G_{i.k.}$ from the expectation based on the population mean $\\mu_{G}$ and the additive effects $\\alpha_{i}$ and $\\alpha_{k}$. An additive $\\times$ dominance effect measures the interaction between an allele at one locus with a particular genotype of another locus. It is defined as the deviation of the conditional mean $G_{i.kl}$ from the expectation based on all lower-order effects, in this case the three additive effects, one dominance effect, and two additive $\\times$ additive effects involving the constituent genes, $$ (\\alpha\\delta)_{i k l}=G_{i.k l}-\\mu_{G}-\\alpha_{i}-\\alpha_{k}-\\alpha_{l}-\\delta_{k l}-(\\alpha\\alpha)_{i k}-(\\alpha\\alpha)_{i l} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, for a dominance $ \\times $ dominance effect, $$ \\begin{aligned}(\\delta\\delta)_{ijkl}&=G_{ijkl}-\\mu_{G}-\\alpha_{i}-\\alpha_{j}-\\alpha_{k}-\\alpha_{l}-\\delta_{ij}-\\delta_{kl}\\\\&\\quad-(\\alpha\\alpha)_{ik}-(\\alpha\\alpha)_{il}-(\\alpha\\alpha)_{jk}-(\\alpha\\alpha)_{jl}\\\\&\\quad-(\\alpha\\delta)_{ikl}-(\\alpha\\delta)_{jkl}-(\\alpha\\delta)_{ijk}-(\\alpha\\delta)_{ijl}\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "This partitioning of the total genotypic value into a series of effects can be summarized as follows. We started with the lowest-order effects, the additive effects of alleles. These are defined in a least-squares sense (Chapter 3), in that they account for as much of the variance in genotypic values as possible. We then progressively defined higher-order effects, each time accounting for as much of the residual variation as possible. In the two-locus example, $ (\\delta\\delta)_{ijkl} $ describes the final bit of variation not accounted for by additive, dominance, additive $ \\times $ additive, or additive $ \\times $ dominance effects. Summing up terms, we have a complete description of a genotypic value, $$ \\begin{aligned}G_{ijkl\\cdots}=&\\mu_{G}+[\\alpha_{i}+\\alpha_{j}+\\alpha_{k}+\\alpha_{l}]+[\\delta_{ij}+\\delta_{kl}]\\\\&+[(\\alpha\\alpha)_{ik}+(\\alpha\\alpha)_{il}+(\\alpha\\alpha)_{jk}+(\\alpha\\alpha)_{jl}]\\\\&+[(\\alpha\\delta)_{ikl}+(\\alpha\\delta)_{jkl}+(\\alpha\\delta)_{ijk}+(\\alpha\\delta)_{ijl}]+(\\delta\\delta)_{ijkl}+\\cdots\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The open-ended equation merely implies that there are many more terms when more than two loci are involved in the expression of a trait. The parameters in this model depend very much upon the genotype frequencies in the population and can change as allele frequencies change (Example 4, Chapter 4). However, the mean value of each type of effect is always equal to zero."
+    },
+    {
+      "type": "discussion",
+      "content": "At first glance, Equation 5.7 may seem to be of little practical use. After all, if the genotypic value of an individual cannot be ascertained without error because of environmental contributions to the phenotype, then what hope is there of identifying the individual components? Often there is none. However, a great conceptual advance is achieved when Equation 5.7 is extended to the population level. Provided that mating is random and segregation of loci is independent, there is no statistical relationship between the genes found within or among loci. Therefore, the total genetic variance is simply the sum of the variance of the individual effects. Letting $ \\sigma_{A}^{2}=\\sigma^{2}(\\alpha_{i})+\\sigma^{2}(\\alpha_{j})+\\sigma^{2}(\\alpha_{k})+\\sigma^{2}(\\alpha_{l}) $, $ \\sigma_{D}^{2}=\\sigma^{2}(\\delta_{ij})+\\sigma^{2}(\\delta_{kl}) $, $ \\sigma_{AA}^{2}=\\sigma^{2}[(\\alpha\\alpha)_{ik}]+\\sigma^{2}[(\\alpha\\alpha)_{il}]+\\sigma^{2}[(\\alpha\\alpha)_{jk}]+\\sigma^{2}[(\\alpha\\alpha)_{jl}] $, and so on, the total genetic variance can be expressed as $$ \\sigma_{G}^{2}=\\sigma_{A}^{2}+\\sigma_{D}^{2}+\\sigma_{A A}^{2}+\\sigma_{A D}^{2}+\\sigma_{D D}^{2}+\\cdots $$"
+    },
+    {
+      "type": "discussion",
+      "content": "This partitioning of the genetic variance into a series of components, the multilocus analog of Equation 4.11, was developed independently, but with very different approaches, by both Cockerham and Kempthorne in 1954. Because of the hierarchical way in which genetic effects are defined, one might expect the magnitude of genetic variance components to become progressively smaller at higher stages in the hierarchy. Indeed, it is common for quantitative geneticists to use this argument as a rationalization for ignoring epistasis altogether. Unfortunately, such logic does not always hold up — as pointed out in the previous chapter, unless information on gene frequencies is available, variance components provide limited insight into the physiological mode of gene action. Recall that by modifying the additive effects of alleles, dominance (a higher-order effect than additivity) can inflate or deflate $ \\sigma_{A}^{2} $ relative to the situation expected under complete additivity (Figure 4.8). Qualitatively similar results apply to epistasis — depending on the frequencies of the genes involved, epistatic interactions (through their statistical influence on the additive and dominance effects of alleles) can greatly inflate the additive and/or dominance components of genetic variance. Thus, as will be seen in the next example and as cogently pointed out by Keightley (1989) and Cheverud and Routman (1995), relatively low magnitudes of epistatic components of variance are by no means incompatible with the existence of strong epistatic gene action."
+    },
+    {
+      "type": "discussion",
+      "content": "A simple quantitative argument points further to the potential for significant epistasis in the expression of quantitative traits. With $n$ loci underlying a trait, the number of additive effects is of order $n$, while the number of diallelic and triallelic epistatic effects are potentially of order $n^{2}$ and $n^{3}$. Thus, even if individual epistatic effects are relatively small, their summed effects may be large. This raises a serious issue for quantitative genetics that will become more apparent in later chapters. Although there are many possible types of epistasis, methods for evaluating their quantitative significance have substantial limitations from the standpoint of statistical power and experimental design."
+    },
+    {
+      "type": "discussion",
+      "content": "In summary, simple statistical arguments suggest that epistatic interactions are likely to be important in the expression of many quantitative traits as well as in the determinance of levels of additive genetic variance. There is certainly no firm empirical evidence that epistasis is of negligible importance, and Wright (1968), for one, argued strongly that epistasis is the rule rather than the exception. We will be reaffirming that viewpoint throughout the book. For further reviews of the evidence, see Wright (1968), Barker (1979), and Moreno (1994)."
+    },
+    {
+      "type": "proposition",
+      "content": "Example 2. To acquire a deeper understanding of the connections between conditional genotypic values, genetic effects, and variance components, we return to the data in Example 1, making the assumption that the entries in the table are accurate estimates of the nine genotypic values associated with the marker loci. Suppose that this population randomly mates, with all alleles having frequency 0.5. What are the genetic effects associated with the different alleles (and their combinations), and what are the expected components of genetic variance associated with the two marker loci?"
+    },
+    {
+      "type": "proposition",
+      "content": "Under the assumption that the two loci are unlinked (in actuality, they are on different chromosomes), the frequencies of the two-locus genotypes are defined in the following table. They are simply equal to the products of the Hardy-Weinberg frequencies at the individual loci. Thus, each of the four double-homozygote classes has frequency $ (1/4)^2 $, while the classes with a single heterozygous locus have frequency $ (1/2) \\times (1/4) $, and the double-heterozygote has frequency $ (1/2)^2 $."
+    },
+    {
+      "type": "discussion",
+      "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td rowspan=\"2\">BV302</td><td colspan=\"3\">UMC107</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>$ U_{MM} $</td><td style='text-align: center; word-wrap: break-word;'>$ U_{MT} $</td><td style='text-align: center; word-wrap: break-word;'>$ U_{TT} $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>$ B_{MM} $</td><td style='text-align: center; word-wrap: break-word;'>1/16</td><td style='text-align: center; word-wrap: break-word;'>1/8</td><td style='text-align: center; word-wrap: break-word;'>1/16</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>$ B_{MT} $</td><td style='text-align: center; word-wrap: break-word;'>1/8</td><td style='text-align: center; word-wrap: break-word;'>1/4</td><td style='text-align: center; word-wrap: break-word;'>1/8</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>$ B_{TT} $</td><td style='text-align: center; word-wrap: break-word;'>1/16</td><td style='text-align: center; word-wrap: break-word;'>1/8</td><td style='text-align: center; word-wrap: break-word;'>1/16</td></tr></table>"
+    },
+    {
+      "type": "discussion",
+      "content": "In the following computations, we let $G_{ijkl}$ denote the genotypic value of individuals with alleles i and j at locus BV302 and alleles k and l at locus UMC107, where i, j, k, and l are either M or T. Letting $P_{ijkl}$ be the frequency of the ijkth genotype, the mean genotypic value in the population is $$ \\begin{aligned}\\mu_{G}&=\\sum P_{ijkl}G_{ijkl}\\\\&=\\left[\\left(1/16\\right)\\times\\left(18.0+61.1+47.8+101.7\\right)\\right]\\\\&\\quad+\\left[\\left(1/8\\right)\\times\\left(40.9+54.6+66.5+83.6\\right)\\right]+\\left[\\left(1/4\\right)\\times47.6\\right]\\\\&=56.8875\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Additive effects. Prior to computing the additive effects, we require the conditional genotypic means associated with each allele. These are obtained by weighting the phenotypic data in the table of Example 1 with conditional genotype frequencies. For example, the conditional genotypic mean for individuals containing a $B_{M}$ allele is $$ G_{B_{M}\\cdots}=\\sum_{j,k,l}P(i j k l\\mid i=B_{M})G_{B_{M}j k l} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The conditional probability $P(ijkl \\mid i = B_M)$ is the probability that an individual has alleles $j$, $k$, and $l$, given that it is has one $B_M$ allele. This probability is simply the product of the appropriate (Hardy-Weinberg) genotype frequency at the UMC107 locus and the appropriate allele frequency at locus BV302. For example, if $j = B_{M}, k = U_{M}$, and $j = U_{M}$, $P(ijkl|i = B_{M}) = 0.5 \\times 0.25 = 0.125$. Thus, the genotypic mean conditional on having a $B_{M}$ allele is $$ \\begin{aligned}G_{B_{M}\\cdots}&=(0.5\\times0.25\\times18.0)+(0.5\\times0.5\\times40.9)\\\\&\\quad+(0.5\\times0.25\\times61.1)+(0.5\\times0.25\\times54.6)\\\\&\\quad+(0.5\\times0.5\\times47.6)+(0.5\\times0.25\\times66.5)=47.1500\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The three other conditional means involving single alleles are obtained in a similar manner, $$ G_{B_{T}\\ldots}=66.6250\\qquad G_{\\ldots U_{M^{\\cdot}}}=49.3375\\qquad G_{\\ldots U_{T^{\\cdot}}}=64.4375 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Recalling Equation 5.2, we obtain the additive effects by subtracting the population mean $\\mu_{G}$ from the conditional means, $$ \\begin{array}{l}\\alpha_{B_{M}}=-9.7375\\\\ \\alpha_{U_{M}}=-7.5500\\end{array}\\quad\\begin{array}{l}\\alpha_{B_{T}}=9.7375\\\\ \\alpha_{U_{T}}=7.5500\\end{array} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Noting that each allele has frequency 0.5, the mean additive effect of the alleles at each locus is equal to zero."
+    },
+    {
+      "type": "discussion",
+      "content": "Dominance effects. To obtain the dominance effects, we require the conditional genotypic means. In this case, for each single-locus genotype, we simply take the average of the three genotypic values associated with the second locus, weighted by their Hardy-Weinberg frequencies. For example, for the $B_{MM}$ genotype, $$ \\begin{aligned}{G_{B_{M M^{...}}}}&{{}=\\sum_{k,l}P({i j k l}\\left|{i,j}=B_{M}\\right){G}_{B_{M M}k l}}\\\\ {}&{{}=\\left(0.25\\times18.0\\right)+\\left(0.5\\times40.9\\right)+\\left(0.25\\times61.1\\right)=40.225}\\\\ \\end{aligned}. $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Similarly, the conditional means for the $B_{MT}$ and $B_{TT}$ genotypes are found to be $$ G_{B_{M T}..}=54.075\\qquad G_{B_{T T}..}=79.175 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Substituting these values, the population mean, and the appropriate additive effects into Equation 5.3, we obtain the dominance effects, $$ \\delta_{B_{M M}}=2.8125\\qquad\\delta_{B_{M T}}=-2.8125\\qquad\\delta_{B_{T T}}=2.8125 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Weighting these by the Hardy-Weinberg frequencies associated with each genotype, it can be seen that the mean dominance effect at the BV302 locus is equal to zero. We leave it to the reader to show that for the UMC107 locus, $$ \\delta_{U_{M M}}=1.9625\\qquad\\delta_{U_{M T}}=-1.9625\\qquad\\delta_{U_{T T}}=1.9625 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Additive × additive effects. The same logic is used to obtain the additive × additive effects. Because there are two alleles at each locus, four conditional means (each involving one allele at each locus) must be considered. Each gametic type is found in four two-locus genotypes, in this case with equal frequency 0.25 because all alleles have frequency 0.5. Thus, for example, the conditional mean $ G_{BM} \\cdot U_{M} $ is the average of the genotypic values for the genotypes $ B_{MM}U_{MM} $, $ B_{MT}U_{MM} $, $ B_{MM}U_{MT} $, and $ B_{MT}U_{MT} $. The four conditional means are $$ \\begin{array}{l l}{G_{B_{M}\\cdot U_{M}\\cdot}}&{G_{B_{M}\\cdot U_{T}\\cdot}=54.025}\\\\ {G_{B_{T}\\cdot U_{M}\\cdot}}&{G_{B_{T}\\cdot U_{T}\\cdot}=74.850}\\\\ \\end{array} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The additive $ \\times $ additive effects are computed by substituting these values, the population mean, and the appropriate additive effects into Equation 5.4. $$ (\\alpha\\alpha)_{B_{M}\\cdot U_{M\\cdot}}=0.675\\qquad(\\alpha\\alpha)_{B_{M}\\cdot U_{T\\cdot}}=-0.675 $$ $$ \\left(\\alpha\\alpha\\right)_{B_{T}\\cdot U_{T\\cdot}}=0.675\\qquad\\left(\\alpha\\alpha\\right)_{B_{T}\\cdot U_{M\\cdot}}=-0.675 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Again, the mean value of these effects (weighted by their frequencies at occurrence) is zero."
+    },
+    {
+      "type": "discussion",
+      "content": "Additive $ \\times $ dominance effects. At this point, we assume that the basic strategy for calculating conditional means is familiar, and we leave it to the reader to verify that the conditional means involving one allele at one locus and two at the other locus are $$ G_{B_{M},U_{M M}}=36.30\\qquad G_{B_{M},U_{M T}}=44.25\\qquad G_{B_{M},U_{T T}}=63.80 $$ $$ G_{B_{T}.U_{M M}}=51.20\\qquad G_{B_{T}.U_{M T}}=65.60\\qquad\\underbrace{G_{B_{T}.U_{T T}}}_{}=84.10 $$ $$ c_{_{R_{MM}U_{M}}}=29.45\\quad G_{B_{MT}U_{M}}=51.10\\quad G_{B_{TT}U_{M}}=65.70 $$ $$ G_{B_{M M}U_{T^{\\cdot}}}=51.00\\qquad G_{B_{M T}U_{T^{\\cdot}}}=57.05\\qquad G_{B_{T T}U_{T^{\\cdot}}}=92.65 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The additive $ \\times $ dominance effects follow from substitution of quantities given above into Equation 5.5, $$ (\\alpha\\delta)_{B_{M}.U_{M M}}={\\begin{array}{l}{0.9375}\\end{array}}(\\alpha\\delta)_{B_{M}.U_{M T}}=-0.9375{\\begin{array}{l}{(\\alpha\\delta)_{B_{M}.U_{T T}}=}\\end{array}}{\\begin{array}{l}{0.9375}\\end{array}} $$ $$ \\begin{array}{r l r}{\\left(\\alpha\\delta\\right)_{B_{T},U_{M M}}=-0.9375}&{{}\\mathrm{~}({\\alpha\\delta})_{B_{T},U_{M T}}=}&{0.9375\\quad({\\alpha\\delta})_{B_{T},U_{T T}}=-0.9375}\\end{array} $$ $$ \\begin{array}{r l r}{(\\alpha\\delta)_{B_{M M}U_{M.}}=-4.5750}&{{}\\mathrm{(}\\alpha\\delta)_{B_{M T}U_{M.}}=}&{4.5750\\mathrm{\\quad}(\\alpha\\delta)_{B_{T T}U_{M.}}=-4.5750}\\end{array} $$ $$ (\\alpha\\delta)_{B_{M M}U_{T.}}=~4.5750\\quad(\\alpha\\delta)_{B_{M T}U_{T.}}=-4.5750\\quad(\\alpha\\delta)_{B_{T T}U_{T.}}=~4.5750 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Dominance $ \\times $ dominance effects. The nine dominance $ \\times $ dominance effects are computed from the observed genotypic values using Equation 5.6. $$ (\\delta\\delta)_{B_{M M}U_{M M}}=-4.5125\\quad(\\delta\\delta)_{B_{M M}U_{M T}}=4.5125\\quad(\\delta\\delta)_{B_{M M}U_{T T}}=-4.5125 $$ $$ (\\delta\\delta)_{B_{M T}U_{M M}}={\\quad4.5125\\quad}(\\delta\\delta)_{B_{M T}U_{M T}}=-4.5125\\quad(\\delta\\delta)_{B_{M T}U_{T T}}={\\quad4.5125\\quad}. $$ $$ (\\delta\\delta)_{B_{T T}U_{M M}}^{\\cdots\\cdots\\cdots}=-4.5125\\quad(\\delta\\delta)_{B_{T T}U_{M T}}^{\\cdots\\cdots}=\\quad4.5125\\quad(\\delta\\delta)_{B_{T T}U_{T T}}=-4.5125 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Variance components. The final step in this example is to compute the components of genetic variance. Because the average effects are computed in such a way that their means are always equal to zero, the variances are simply equal to the mean squared effects (weighted by their frequency of occurrence) multiplied by the number of times the effect occurs. For example, for the additive genetic variance, the contribution associated with the BV302 locus is $ 2 \\times [(0.5 \\times (-9.7375))^2) + (0.5 \\times 9.7375^2)] = 189.6378 $; the mean-squared effect is multiplied by two because there are two additive effects per diploid locus. In the same manner, the additive genetic variance associated with the UMC107 locus is found to be 114.0050. The total additive genetic variance associated with these two loci is simply the sum of the locus-specific contributions, $$ \\sigma_{A}^{2}=303.6428 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "(The same answer is obtained by defining the breeding values of the nine different genotypes as $ A_{ijkl} = \\alpha_i + \\alpha_j + \\alpha_k + \\alpha_l $, and computing the mean squared breeding value; see Example 4, Chapter 4)."
+    },
+    {
+      "type": "discussion",
+      "content": "The dominance genetic variance associated with each locus is equal to the mean squared dominance effect, $ 2.8125^{2} = 7.9101 $ for the BV302 locus and $ 1.9625^{2} = 3.8514 $ for the UMC107 locus. Thus, the total dominance genetic variance is $$ \\sigma_{D}^{2}=11.7615 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The additive $ \\times $ additive variance is obtained by multiplying the mean squared additive $ \\times $ additive effect by four, because four such effects contribute to each genotypic value. In this example, all of the additive $ \\times $ additive effects have absolute value 0.675 (as in the case of the additive and dominance effects, the symmetry is a special consequence of all of the gene frequencies being equal to 0.5). Thus, the additive $ \\times $ additive variance is simply $ 4 \\times 0.675^{2} $, $$ \\sigma_{A A}^{2}=1.8225 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "For the additive $ \\times $ dominance variance, there are again four effects contributing to the genotypic value of each individual, two involving BV302 additive effects and two involving UMC107 additive effects. The additive $ \\times $ dominance variance is therefore $ (2 \\times 0.9375^{2}) + (2 \\times 4.575^{2}) $, $$ \\sigma_{A D}^{2}=43.6191 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, because there is only one dominance $ \\times $ dominance term per individual, the dominance $ \\times $ dominance variance is simply the mean squared effect, $ 4.5125^{2} $, $$ \\sigma_{D D}^{2}=20.3627 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Summing the five components of genetic variance, we obtain the total genetic variance associated with the two markers, $$ \\sigma_{G}^{2}=381.2086 $$ As a check on the validity of this result, the total genetic variance can be computed directly from the data in the table in Example 1 as $ \\sum P_{ijkl} G_{ijkl}^{2} - \\mu_{G}^{2} $; the same answer is obtained."
+    },
+    {
+      "type": "discussion",
+      "content": "These results show that despite the existence of strong epistatic interactions between the effects of genes associated with the two markers (Example 1), most of the interaction effects are associated statistically with the additive effects of alleles. The three epistatic components of variance account for only 17% of the total genetic variance, and the dominance genetic variance contributes only another 3%. Thus, as emphasized above, the relative magnitude of variance components provides little insight into the actual physiological mode of gene action."
+    },
+    {
+      "type": "discussion",
+      "content": "In closing, we note that this example is a somewhat unconventional application of the linear model. Usually, the genes underlying quantitative traits are unknown, in which case it is impossible to estimate their individual effects. However, with the widespread application of molecular markers, this situation is changing rapidly (Chapters 13–16). In Chapter 7, we will begin to see that estimation of the components of genetic variance associated with the entire pool of constituent loci underlying a quantitative trait does not require any information about their identity."
+    }
+  ]
+}

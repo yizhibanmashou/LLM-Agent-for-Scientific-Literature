@@ -1,0 +1,63 @@
+{
+  "id": "Genetics_chapter18_003",
+  "metadata": {
+    "chapter": "Genetics_chapter18",
+    "section": "Introduction",
+    "subsections": [
+      "HALF-SIB ANALYSIS"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter18_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "HALF-SIB ANALYSIS",
+    "heading_path": [
+      "Introduction",
+      "HALF-SIB ANALYSIS"
+    ],
+    "display_heading": "HALF-SIB ANALYSIS"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "The utility of half-sib analysis stems from the close relationship between the add- itive genetic variance and the covariance between half sibs (Chapter 7). Under random mating and free recombination, four times the genetic covariance be- tween half sibs is $ \\sigma_{A}^{2}+(\\sigma_{AA}^{2}/4)+(\\sigma_{AAA}^{2}/16)+\\cdots $, which is approximately equal to twice the genetic covariance between parents and offspring, $ \\sigma_{A}^{2}+(\\sigma_{AA}^{2}/2)+ $"
+    },
+    {
+      "type": "discussion",
+      "content": "$ (\\sigma_{AAA}^{2}/4)+\\cdots $, provided that the components of epistatic genetic variance are small relative to $ \\sigma_{A}^{2} $. Thus, if epistasis is of minor importance and if common en- vironmental effects do not contribute to the phenotypic resemblance of half sibs, $ 4\\sigma $(HS) provides an estimate of $ \\sigma_{A}^{2} $. (Here $ \\sigma $(HS) denotes the expected covariance between a pair of half sibs. Similar notation is used below for other types of sibs.)"
+    },
+    {
+      "type": "discussion",
+      "content": "The potential for common environmental effects is the main drawback of any sib analysis, and special precautions should always be taken to minimize the problem. If the variance due to common environmental effects is of the order of $ \\sigma_{A}^{2} $, then $ 4\\sigma $(HS) can greatly exceed $ \\sigma_{A}^{2} $. The most reliable way to minimize this problem is to exclusively employ paternal half-sib families in order to eliminate common maternal effects. A typical paternal half-sib design involves the random mating of each of $ N $ males to $ n $ different females and evaluation of a single offspring from each female (Figure 18.1). Under this design, all of the progeny of a given male are half sibs, unrelated to progeny of other males."
+    },
+    {
+      "type": "discussion",
+      "content": "There are two logical ways to analyze paternal half-sib data. One could simply perform a regression of half-sib on half-sib using all possible combinations within a family as entries (assuming a balanced design). Problems arise with this approach, since pairs of points within families are not independent. Karlin et al. (1981) suggest several regression methods involving different weightings for family size, but the statistical justification for these has not been established."
+    },
+    {
+      "type": "discussion",
+      "content": "The traditional approach to analyzing half-sib data is the one-way analysis of variance, based on the linear model $$ z_{ij}=\\mu+s_{i}+e_{ij} $$ where $ z_{ij} $ is the phenotype of the jth offspring of the ith father, $ s_{i} $ is the effect of the"
+    },
+    {
+      "type": "discussion",
+      "content": "[[FIGURE:18.1]] ith father (the sire effect), and $ e_{ij} $ is the residual error resulting from segregation, dominance, genetic variance among mothers, and environmental variance. Stated another way, $ e_{ij} $ is the deviation of the phenotype of the $ ij $th individual from the expected value for the $ ith $ family. As deviations from the linear model, the $ e_{ij} $ have expectations equal to zero. We further assume that the $ e_{ij} $ are uncorrelated with each other and have common variance $ \\sigma_{e}^{2} $, the within-family variance. The $ N $ sires are assumed to be a random sample of the entire population so that $ E(s_{i}) = 0 $. The variance among sire effects (the among-family variance) is denoted by $ \\sigma_{s}^{2} $."
+    },
+    {
+      "type": "proposition",
+      "content": "A basic assumption of linear models underlying ANOVA is that the random factors are uncorrelated with each other. As first recognized by Fisher in his classical 1918 paper, this leads to a key feature — the analysis of variance partitions the total phenotypic variance into the sum of the variances from each of the contributing factors. For example, for the half-sib model, the critical assumption is that the residual deviations are uncorrelated with the sire effects, i.e., $ \\sigma(s_i, e_{ij}) = E(s_i e_{ij}) = 0 $. Thus, the total phenotypic variance equals the variance due to sires plus the residual variance, $$ \\sigma_{z}^{2}=\\sigma_{s}^{2}+\\sigma_{e}^{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "A second relationship that proves to be very useful is that the phenotypic covariance between members of the same group equals the variance among groups. For the model given in Equation 18.1, this can be shown quite simply. Members of the same group (paternal half sibs) share sire effects, but have independent residual deviations, so $$ \\begin{aligned}\\sigma(PHS)&=\\sigma(z_{ij},z_{ik})\\\\&=\\sigma[(\\mu+s_{i}+e_{ij}),(\\mu+s_{i}+e_{ik})]\\\\&=\\sigma(s_{i},s_{i})+\\sigma(s_{i},e_{ik})+\\sigma(e_{ij},s_{i})+\\sigma(e_{ij},e_{ik})\\\\&=\\sigma_{s}^{2}\\\\ \\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, the covariance between paternal half sibs equals the variance among sire effects. This is a particularly useful identity since, as we will see below, ANOVA provides a simple means of estimating $ \\sigma_s^2 $. Hence, for the ideal case in which a character has no epistatic variance, the additive genetic variance can be estimated as four times the among-family variance, i.e., $ 4\\sigma_s^2 = \\sigma_s^2 $."
+    },
+    {
+      "type": "discussion",
+      "content": "The pure half-sib design employs the simplest possible linear model. However, the general logic just outlined applies to the estimation of variance components in all linear models, including those employed in subsequent chapters. Thus, the steps we have just taken are worth summarizing. First, the linear model is written down. Second, with the assumptions of the model made explicit, an expression for the total phenotypic variance is written in terms of components. Third, the components of variance associated with the model are expressed as covariances between specific classes of relatives. Fourth, using the mechanistic interpretations of phenotypic covariances between relatives outlined in Chapter 7, the observable variance components are used to partition the phenotypic variance into its causal sources. We now demonstrate the practical utility of this approach by showing how ANOVA generates estimates of the within- and among-family components of variance from phenotypic data."
+    }
+  ]
+}

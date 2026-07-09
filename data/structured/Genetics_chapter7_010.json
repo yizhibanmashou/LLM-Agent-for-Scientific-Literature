@@ -1,0 +1,152 @@
+{
+  "id": "Genetics_chapter7_010",
+  "metadata": {
+    "chapter": "Genetics_chapter7",
+    "section": "Introduction",
+    "subsections": [
+      "ENVIRONMENTAL SOURCES OF COVARIANCE BETWEEN RELATIVES"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter7_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [
+      "7.6"
+    ],
+    "section_level_1": "Introduction",
+    "section_level_2": "ENVIRONMENTAL SOURCES OF COVARIANCE BETWEEN RELATIVES",
+    "heading_path": [
+      "Introduction",
+      "ENVIRONMENTAL SOURCES OF COVARIANCE BETWEEN RELATIVES"
+    ],
+    "display_heading": "ENVIRONMENTAL SOURCES OF COVARIANCE BETWEEN RELATIVES",
+    "table_reference_keys": [
+      "chapter7:7.6"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Up to now, we have focused entirely on the genetic causes of resemblance between relatives. There are, however, many circumstances in which the environmental effects on the phenotypes of relatives are correlated. The most obvious situation arises when full sibs are raised in a common familial environment, but the resemblance between other types of relatives can also be modified by shared aspects of the environment. For example, in a spatially heterogeneous environment, the resemblance between parents and offspring may be exaggerated by environmental effects if the latter do not randomly disperse following birth. In humans, and probably in other vertebrates, cultural transmission can create a continuity in the behavioral phenotypes of parents and offspring as well as among more distant relatives. In some circumstances, the environment may actually deflate the resemblance between relatives. Consider, for example, trees with limited seed-dispersal abilities. Parent trees that have grown large due to fortuitous circumstances, such as germination in a light gap, may tend to create relatively poor microhabitats for their offspring as a consequence of shading, attraction of herbivores, and so on."
+    },
+    {
+      "type": "discussion",
+      "content": "In an effort to deal with the complications of cultural transmission, human quantitative geneticists have gone to great extremes to incorporate various types of environmental covariance into expressions for the resemblance between relatives (Rao et al. 1974, Eaves 1976, Cloninger et al. 1979a,b, Eaves et al. 1988). The result is a family of models that contain large numbers of parameters. Since the number of observable relationships must equal or exceed the number of parameters for there to be any hope of estimating the latter, these models are of little practical utility for most organisms. However, in humans the difficulties are not insurmountable. Due to the frequency of divorce, adoption, and fostering by relatives, and to the availability of records on parentage, many kinds of familial relationships are observable."
+    },
+    {
+      "type": "proposition",
+      "content": "Here we consider some of the possibilities, under the assumption of additive gene action, and negligible linkage, gametic phase disequilibrium, and inbreeding. To illustrate the major points, we will rely on path analysis (Appendix 2), drawing specifically from examples given in Rao et al. (1974). The basic feature of path analysis that we will exploit is its ability to partition the correlation between any two variables into a series of pathways connecting the two variables through causal components. As noted above with coefficients of coancestry, the proportional contribution of each pathway to the correlation between relatives is simply equal to the product of various path coefficients and correlation coefficients along the pathway. We start by providing some general definitions, and then show, for several types of relationships, how path analysis can yield expressions for the expected phenotypic correlations in terms of causal genetic and environmental components. We then complete our discussion of environmental effects by providing a worked example involving a large data set on human birth weight."
+    },
+    {
+      "type": "discussion",
+      "content": "Before proceeding, we consider how the phenotypic variance can be partitioned in terms of path coefficients. As usual, we consider an individual's phenotype (z) to be the sum of its genotypic value (G), general (shared) environmental effects (E), and special environmental effects (e). However, we now partition G into three quantities: the population mean ($ \\mu_{G} $), the mean genotypic (breeding) value of the parents ($ \\bar{A} $), and the deviation of G from $ \\bar{A} $ caused by segregation of parental genes (S). Thus, an individual's phenotypic value is expressed as $$ z=\\mu_{G}+\\bar{A}+S+E+e $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The path coefficients from $\\bar{A}, S, E$, and $e$ to the phenotype are denoted by $g, s, c$, and $d$, respectively (for expected $\\underline{g}$ genotypic value, deviation due to $\\underline{s}$ segregation, common environmental effect, and residual $ \\underline{\\text{deviation}} $). Since S is a random genetic deviation, it is uncorrelated with the other components of Equation 7.23. However, genotype-environment correlation may exist between $ \\bar{A} $ and E when offspring are raised by their own parents, and we denote it by $ \\rho_{GE} $."
+    },
+    {
+      "type": "discussion",
+      "content": "The phenotypic variance among individuals raised by their biological parents is $$ \\sigma_{z}^{2}=\\sigma_{\\bar{A}}^{2}+\\sigma_{S}^{2}+\\sigma_{E}^{2}+\\sigma_{e}^{2}+2\\sigma_{\\bar{A},E} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Dividing all terms by $\\sigma_{z}^{2}$ provides an expression for the partitioning of the phenotypic variance of offspring raised by their own parents, $$ 1=g^{2}+s^{2}+c^{2}+d^{2}+2g\\rho_{G E}c $$"
+    },
+    {
+      "type": "discussion",
+      "content": "In this expression, $ g^2 $, $ s^2 $, $ c^2 $, and $ d^2 $, are the fractions of the phenotypic variance attributable to midparent breeding values, segregational, general and special environmental effects, while $ 2g\\rho_{GE}c = 2\\sigma(G, E)/\\sigma_z^2 $ is the fraction resulting from genotype-environment covariance."
+    },
+    {
+      "type": "proposition",
+      "content": "This expression requires modification in the case of progeny raised in adoptive homes. Under the assumption that there is no correlation between offspring genotype and the environment provided by an adoptive home, then $ \\rho_{GE} = 0 $, and the phenotypic variance of adopted children can differ from that of progeny raised by their own parents. For example, if $ \\rho_{GE} > 0 $ in intact families, the variance among adopted children will be reduced. To account for this, Equation 7.24b needs to be modified to ensure that the sum of the various paths is equal to one. For adopted children, the modification is accomplished by letting $$ 1=\\theta^{2}(g^{2}+s^{2}+c^{2}+d^{2}) $$ where $ \\theta^{2}=1/(1-2g\\rho_{GEC}) $ is the ratio of the phenotypic variances for the two types of offspring. Multiplication by $ \\theta^{2} $ has the effect of dividing each of the causal path contributions by the phenotypic variance of progeny raised in adoptive homes rather than by the phenotypic variance of progeny raised by their biological parents."
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, we note that it is useful to define $$ h^{2}=g^{2}+s^{2} $$ as the heritability of the trait, i.e., the fraction of the total phenotypic variance attributable to additive genetic differences among individuals. With assortative mating, $$ g=h\\sqrt{(1+\\rho_{g})/2} $$ $$ s=h\\sqrt{(1-\\rho_{g})/2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Monozygotic twins"
+    },
+    {
+      "type": "discussion",
+      "content": "Raised by own parents"
+    },
+    {
+      "type": "discussion",
+      "content": "Raised by different parents"
+    },
+    {
+      "type": "discussion",
+      "content": "Full sibs where, as before, $\\rho_{g}$ is the genetic correlation between mates. Under random mating, $g = s = h/\\sqrt{2}$."
+    },
+    {
+      "type": "discussion",
+      "content": "To illustrate how these general relationships can be extended to the description of the expected phenotypic correlation between individuals, we now focus on the path diagrams for four specific relationships (Figure 7.8). For simplicity, the diagrams only include those factors that contribute jointly to the phenotypes. of both members of a pair of individuals. Thus, the residual environmental deviation (e) never appears, while $S$ (as a random genetic deviation) is only relevant in the case of monozygotic twins. Because they are genetically identical, monozygotic twins (or clonemates) raised by their natural parents share the same general environmental effects, midparent value, and segregation deviation. Allowing for genotype-environment covariance, and summing over all pathways between $ z_{x} $ and $ z_{y} $, we obtain the phenotypic correlation, $$ \\rho(M Z)=s^{2}+g^{2}+c^{2}+2g\\rho_{G E}c=h^{2}+c^{2}+2g\\rho_{G E}c $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, the correlation between monozygotic twins raised by their biological parents is not particularly informative, since it is a function of additive genetic variance ($ h^{2} $), variance due to shared environment ($ c^{2} $), and genotype-environment correlation $ 2g\\rho_{GEC} $."
+    },
+    {
+      "type": "discussion",
+      "content": "Now consider the situation in which monozygotic twins are separated at birth, with each being raised in a different adoptive home. The removal of the common-environment effect eliminates the path $ z_x \\leftarrow E \\to z_y $ (Figure 7.8), and as noted above, the absence of genotype-environment correlation changes the phenotypic variance in the subpopulation of such twins. Thus, the expected phenotypic correlation between twins raised by different foster parents is $ h^2\\theta^2 $. An estimate of the heritability can be acquired after factoring out $ \\theta^2 $ (the ratio of phenotypic variances, defined above). Expressions for twins living in other combinations of home environments are given in [[SEE_TABLE:7.6]]. (Note that when one member of a relationship is living with its parents and the other is living in an adoptive home, the correlation is multiplied by $ \\theta $, rather than $ \\theta^2 $, because only one member of the pair is from a subpopulation with modified variance.) Chapter 19 treats the issue of twin analysis in considerable detail."
+    },
+    {
+      "type": "discussion",
+      "content": "We next consider the correlation between full sibs. The path diagram in this case is identical to that for monozygotic twins, except that the sibs, being products of different gametes, do not share the segregational deviation (S). Thus, the expected correlation between full sibs raised by their biological parents is $$ \\rho(FS)=g^{2}+c^{2}+2g\\rho_{GE}c $$ As in the case of monozygotic twins, this expression is simplified in situations where one or both sibs are raised in adoptive environments. For example, suppose one sib is raised by its biological parents, while the other is raised by unrelated foster parents (Figure 7.8). This eliminates the paths $ z_x \\leftarrow E \\to z_y $ and $ z_x \\leftarrow \\bar{A} \\leftrightarrow E \\to z_y $. Moreover, since the second sib comes from a segment of the population without genotype-environment correlation, all of the path coefficients leading to it must be multiplied by $ \\theta $. Summing over the two paths between $ x $ and $ y $, the phenotypic correlation becomes $ \\theta(g^2 + g\\rho_{GE}c) $. The issue of sib analysis will be covered in detail in Chapter 18."
+    },
+    {
+      "type": "discussion",
+      "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Relationship</td><td style='text-align: center; word-wrap: break-word;'>Phenotypic correlation</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Monozygotic twins:</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Reared by own parents</td><td style='text-align: center; word-wrap: break-word;'>$ h^{{2}} + c^{{2}} + 2g\\rho_{{GE}}c $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>One reared by own parents, one by foster parents</td><td style='text-align: center; word-wrap: break-word;'>$ (h^{{2}}+g\\rho_{{GE}}c)\\theta $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Raised by different foster parents</td><td style='text-align: center; word-wrap: break-word;'>$ h^{{2}}\\theta^{{2}} $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Reared together by foster parents</td><td style='text-align: center; word-wrap: break-word;'>$ (h^{{2}}+c^{{2}})\\theta^{{2}} $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Full sibs:</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Reared by own parents</td><td style='text-align: center; word-wrap: break-word;'>$ g^{{2}}+c^{{2}}+2g\\rho_{{GE}}c $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>One reared by own parents, one by foster parents</td><td style='text-align: center; word-wrap: break-word;'>$ (g^{{2}}+g\\rho_{{GE}}c)\\theta $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Reared by different foster parents</td><td style='text-align: center; word-wrap: break-word;'>$ g^{{2}}\\theta^{{2}} $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Half sibs:</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Raised by common parent</td><td style='text-align: center; word-wrap: break-word;'>$ \\phi g^{{2}}+c^{{2}}+2g\\rho_{{GE}}c $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>One reared by own parents, one by foster parents</td><td style='text-align: center; word-wrap: break-word;'>$ (\\phi g^{{2}}+g\\rho_{{GE}}c)\\theta $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Reared by different foster parents</td><td style='text-align: center; word-wrap: break-word;'>$ \\phi g^{{2}}\\theta^{{2}} $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Reared apart by own parents</td><td style='text-align: center; word-wrap: break-word;'>$ \\phi g^{{2}}+c^{{2}}b+g\\rho_{{GE}}c $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Unrelated foster sibs:</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Reared together by same foster parents</td><td style='text-align: center; word-wrap: break-word;'>$ c^{{2}}\\theta^{{2}} $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Reared together by parents of one of them</td><td style='text-align: center; word-wrap: break-word;'>$ (c^{{2}}+g\\rho_{{GE}}c)\\theta $</td></tr><tr><td colspan=\"2\">Source: Rao et al. 1974.</td></tr><tr><td colspan=\"2\">Note: All coefficients are defined in the text except b, which is the correlation of environments provided by parents of half sibs. Completely additive gene action is assumed.</td></tr></table>"
+    },
+    {
+      "type": "discussion",
+      "content": "A slight complication arises in the case of half sibs. The correlation between midparent values ($ \\bar{A}_x $ and $ \\bar{A}_y $) is no longer one, since there is only one common parent. Rao et al. (1974) showed it to be $ \\phi = (1 + 3\\rho_g)/[2(1 + \\rho_g)] $, which reduces to 1/2 under random mating. Summing over all paths between $ z_x $ and $ z_y $ (Figure 7.8), the correlation between half sibs raised by the parent creating the common environmental effect is $$ \\rho(H S)=\\phi g^{2}+c^{2}+2g\\rho_{G E}c $$ Again, various simplifications arise when one or both members of the sib pair are raised by foster parents ([[SEE_TABLE:7.6]]). For example, when each sib is raised in a different adoptive environment, the only path between sib phenotypes is $ z_x \\leftarrow \\bar{A}_x \\leftrightarrow \\bar{A}_y \\to z_y $, so the correlation is simply $ \\phi g^2 \\theta^2 $."
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, we note that unrelated individuals fostered by the same set of parents can resemble each other as a consequence of the common environment in the adoptive home. The expected phenotypic correlation between such individuals depends on whether the adoptive parents are the biological parents of one of the foster sibs (Figure 7.8, [[SEE_TABLE:7.6]])."
+    },
+    {
+      "type": "discussion",
+      "content": "Even more complicated scenarios, for additional types of relatives, have been considered by the authors cited above. However, we assume that the basic principles are clear at this point, and will not pursue these any further. One very notable aspect of the models outlined above is their ability to provide estimates of genotype-environment correlation when data are available on sibs raised in various types of home environments. For example, when covariances are observed for monozygotic twins living in the four types of environmental settings outlined in [[SEE_TABLE:7.6]], joint estimates of $ h^{2} $, $ c^{2} $, and $ \\rho_{GE} $ can be obtained by setting the observed correlations equal to their expected values and solving. Modifications of all the expressions in [[SEE_TABLE:7.6]] are necessary, however, in the presence of significant sources of nonadditive genetic variance. We close this section with an example of a character whose expression is strongly influenced by shared environmental effects."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 6. Several large and independent studies have been performed on human birth weight. As can be seen in the following table, the estimated correlations between relatives are quite consistent among studies. For example, the five available full-sib correlations have a narrow range of 0.47 to 0.52. Mi et al. (1986) performed large analyses on several ethnic groups in Hawaii and found only minor differences among them for the correlations between relatives. We will therefore pool the independent estimates where they exist. In keeping with the linear model just outlined, we will assume that dominance and epistatic sources of variance are of negligible importance. In the absence of conflicting data, we will also assume that assortative mating and genotype-environment correlation are negligible, and that general environmental effects are only transmitted through mothers. Under these assumptions, $ \\rho_G = 0 $, $ g^2 = h^2/2 $, $ \\rho_{GE} = 0 $, and $ \\theta = 1 $."
+    },
+    {
+      "type": "discussion",
+      "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Relationship</td><td style='text-align: center; word-wrap: break-word;'>Estimated Correlations</td><td style='text-align: center; word-wrap: break-word;'>Prediction</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Full sibs $ ^{2-6} $</td><td style='text-align: center; word-wrap: break-word;'>0.50, 0.52, 0.47, 0.48, 0.48</td><td style='text-align: center; word-wrap: break-word;'>$ \\frac{{h^{2}}}{2} + c^{2} = 0.50 $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Maternal half sibs $ ^{3} $</td><td style='text-align: center; word-wrap: break-word;'>0.58</td><td style='text-align: center; word-wrap: break-word;'>$ \\frac{{h^{2}}}{4} + c^{2} = 0.42 $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Paternal half sibs $ ^{3} $</td><td style='text-align: center; word-wrap: break-word;'>0.10</td><td style='text-align: center; word-wrap: break-word;'>$ \\frac{{h^{2}}}{4} = 0.08 $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Maternal first cousins $ ^{2,6} $</td><td style='text-align: center; word-wrap: break-word;'>0.14, 0.13</td><td style='text-align: center; word-wrap: break-word;'>$ \\frac{{h^{2}}}{8} + \\frac{{c_{G}^{2}}}{2} = 0.15 $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Paternal first cousins $ ^{2,6} $</td><td style='text-align: center; word-wrap: break-word;'>0.02, 0.06</td><td style='text-align: center; word-wrap: break-word;'>$ \\frac{{h^{2}}}{8} = 0.04 $</td></tr></table>"
+    },
+    {
+      "type": "discussion",
+      "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Relationship</td><td style='text-align: center; word-wrap: break-word;'>Estimated Correlations</td><td style='text-align: center; word-wrap: break-word;'>Prediction</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Monozygotic twins $ ^{{1}} $</td><td style='text-align: center; word-wrap: break-word;'>0.67</td><td style='text-align: center; word-wrap: break-word;'>$ h^{{2}} + c^{{2}} = 0.65 $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Dizygotic twins $ ^{{2,3}} $</td><td style='text-align: center; word-wrap: break-word;'>0.59, 0.66</td><td style='text-align: center; word-wrap: break-word;'>$ \\frac{{h^{{2}}}}{{2}} + c^{{2}} = 0.50 $</td></tr><tr><td colspan=\"3\">Half sibs via monozygotic twin parents:</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Maternal $ ^{{5}} $</td><td style='text-align: center; word-wrap: break-word;'>0.31</td><td style='text-align: center; word-wrap: break-word;'>$ \\frac{{h^{{2}}}}{{4}} + c_{G}^{{2}} = 0.30 $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Paternal $ ^{{5,7}} $</td><td style='text-align: center; word-wrap: break-word;'>-0.03, 0.12</td><td style='text-align: center; word-wrap: break-word;'>$ \\frac{{h^{{2}}}}{{4}} = 0.08 $</td></tr></table>"
+    },
+    {
+      "type": "discussion",
+      "content": "References: 1. Penrose (1954a); 2. Robson (1955); 3. Morton (1955a); 4. Billewicz (1972); 5. Nance et al. (1983); 6. Mi et al. (1986); 7. Magnus (1984)."
+    },
+    {
+      "type": "discussion",
+      "content": "We first consider the additive genetic variance. Inferences about it must be derived from relationships for which shared environmental effects do not influence the covariance. Paternal half sibs and paternal first cousins satisfy these conditions. The expected correlations for these types of relatives are $ h^2/4 $ and $ h^2/8 $, respectively, where $ h^2 = \\sigma_A^2/\\sigma_z^2 $. Since the observed correlations are 0.10 and 0.04, we obtain independent estimates of $ h^2 $ of $ 4 \\times 0.10 = 0.40 $ and $ 8 \\times 0.04 = 0.32 $. Also available is an average correlation of 0.05 for offspring of monozygotic twin brothers. Such individuals are genetically equivalent to paternal half sibs (the fathers are different individuals, but identical genetically), so this result yields an additional estimate of $ h^2 = 4 \\times 0.05 = 0.20 $. Averaging over all three types of relationship, $ h^2 \\simeq 0.30 $, i. e., additive genetic variance appears to account for approximately 30% of the phenotypic variance."
+    },
+    {
+      "type": "discussion",
+      "content": "The data make it very clear that aspects of the maternal environment have a substantial influence on birth weight. For example, the correlation between maternal half sibs is several times greater than that between paternal half sibs, and the same pattern is seen for maternal vs. paternal first cousins. The total variation caused by the maternal environment can be obtained from the maternal half-sib correlation, 0.58, whose expectation is $ (h^{2}/4) + c^{2} $. Subtracting out the additive genetic contribution, $ c^{2} = 0.58 - (0.30/4) = 0.50 $. Pooling this with an independent estimate of $ c^{2} = 0.20 $ obtained by Magnus (1984), we estimate $ c^{2} \\simeq 0.35 $. Thus, aspects of the mother (in excess of the genes that she contributes to her offspring) account for approximately 35% of the variance in birth weight."
+    },
+    {
+      "type": "discussion",
+      "content": "There are two ways to partition the maternal effects variance into genetic and environmental components, $ c^{2} = c_{G}^{2} + c_{E}^{2} $. First, monozygotic twin sisters provide the same genetic environment but different home settings for their progeny, which are genetically equivalent to maternal half sibs. The expected correlation between half sibs via this route is therefore $ (h^{2}/4) + c_{G}^{2} $. Subtracting $ h^{2}/4 $ from the observed correlation, we obtain an estimate of the variance caused by genetic maternal effects, $ c_{G}^{2} = 0.31 - (0.30/4) = 0.23 $. Second, the covariance between maternal first cousins is unaffected by common maternal environment, but is influenced by half the genetic maternal variance since the mothers are full sibs; their expected correlation is therefore $ (h^2/8) + (c_G^2/2) $. Again equating observed and expected correlations, we obtain a second estimate $ c_G^2 = 2[0.14 - (0.30/8)] = 0.20 $. Thus, of the maternal effects variance, approximately two-thirds $ (0.215/0.35) $ appears to be caused by the effects of the maternal genotype on the uterine environment."
+    },
+    {
+      "type": "discussion",
+      "content": "The causes of approximately 35% of the variance remain to be identified. Offspring sex, birth order, and gestation age account for 2, 3, and 4% of the variance, respectively (Penrose 1954a, Morton 1955a, Billewicz 1972, Magnus 1984). Some of these sources of variance presumably fall in the environmental maternal-effects category. Relatively low weights for first-born offspring account for another 5% of the variation. Morton (1955a) has argued for the existence of dominance genetic variance, but the following argument suggests that this source of variance is negligible. In principle, the correlation between full sibs is $ (\\sigma_{A}^{2}/2+\\sigma_{D}^{2}/4+\\sigma_{E}^{2})/\\sigma_{z}^{2} $. However, from the above $ (\\sigma_{A}^{2}/2+\\sigma_{E}^{2})/\\sigma_{z}^{2} \\simeq (0.30/2)+0.35=0.50 $, which accounts for the mean observed correlation of 0.49."
+    },
+    {
+      "type": "discussion",
+      "content": "The approach that we have taken to analyze these data is not very rigorous from a statistical standpoint, our main objective having simply been to provide a heuristic guide to understanding how correlations derived from several types of relatives can be used to estimate components of variance. Nevertheless, when the estimates of $ h^{2} $, $ c^{2} $, and $ c_{G}^{2} $ are substituted into the expressions for the expected correlations between relatives, the overall fit to the data is quite good (last column in the preceding table). Thus, variation in human birth weight appears to be largely a function of additive gene action, maternal effects, and special environmental effects, each of which accounts for about a third of the total variance."
+    }
+  ]
+}

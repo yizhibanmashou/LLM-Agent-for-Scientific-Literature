@@ -1,0 +1,67 @@
+{
+  "id": "Evolution_chapter28_016",
+  "metadata": {
+    "chapter": "Evolution_chapter28",
+    "section": "MUTATION-STABILIZING SELECTION BALANCE: BASIC MODELS",
+    "subsections": [
+      "Kimura-Lande-Fleming Continuum-of-alleles Models"
+    ],
+    "source_file": "tmp\\paddle_output\\Evolution_chapter28_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [
+      "28.14a",
+      "28.14b",
+      "28.14c",
+      "28.14d",
+      "28.14e",
+      "28.15"
+    ],
+    "table_references": [
+      "28.1"
+    ],
+    "section_level_1": "MUTATION-STABILIZING SELECTION BALANCE: BASIC MODELS",
+    "section_level_2": "Kimura-Lande-Fleming Continuum-of-alleles Models",
+    "heading_path": [
+      "MUTATION-STABILIZING SELECTION BALANCE: BASIC MODELS",
+      "Kimura-Lande-Fleming Continuum-of-alleles Models"
+    ],
+    "display_heading": "Kimura-Lande-Fleming Continuum-of-alleles Models",
+    "table_reference_keys": [
+      "Evolution_chapter28:28.1"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "derivation",
+      "content": "In contrast to the Latter-Bulmer two-allele model, starting with Kimura (1965a), a number of continuum-of-alleles models (Chapter 24) have been proposed that allow for a large number of alleles at a locus (Lande 1975, 1977a, 1980a, 1984a; Fleming 1979). Kimura's original analysis followed the distribution, $ p_i(x) $, of allelic effects (x) at a given locus, i, assuming the incremental model of mutation ([[SEE_TABLE:28.1]]). As detailed in [[SEE_EXAMPLE:28.4]], by assuming small mutational effects, Kimura was able to use a Taylor-series approximation (Equation 28.22a) to show that the distribution of effects at an individual locus are normally distributed, with mean zero and variance $ \\sqrt{\\mu_i \\sigma_{\\alpha_i}^2 \\, V_s} $. Kimura's result is for a haploid model, where $ \\sigma^2(a_i) = \\sqrt{\\mu_i \\sigma_{\\alpha_i}^2 \\, V_s} $ denotes the variance in allelic effects from locus i in a haploid gamete. Because of their similar notation, we remind the reader that $ \\sigma^2(a_i) $ denotes the equilibrium variance in allelic effects, while $ \\sigma_{\\alpha_i}^2 $ denotes the variance in mutational effects. Assuming additivity, the additive variance from locus i becomes $ \\sigma_A(i) = 2\\sigma^2(a_i) $. Assuming no LD, [[SEE_EXAMPLE:28.4]] shows that summing over loci gives Kimura's expression for the additive variance with n equivalent underlying diploid loci as [[SEE_FORMULA:28.14a]] [[SEE_FORMULA:28.14b]]"
+    },
+    {
+      "type": "discussion",
+      "content": "When effects vary over loci, the above expression holds, with the effective number of loci replacing n."
+    },
+    {
+      "type": "figure",
+      "content": "[[FIGURE:28.3]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Lande (1975) extended Kimura’s model to a full multilocus analysis to allow for linkage disequilibrium ([[SEE_EXAMPLE:28.7]]). He did so by assuming that the vector of allelic effects for the n loci in a gamete is multivariate normal, and he obtained a slightly different expression for n equivalent underlying loci, [[SEE_FORMULA:28.14c]] which essentially reduces to Kimura's result (Equation 28.14a) when $ n\\sigma_{m}^{2} \\ll 1 $. As with Equation 28.14a, when loci differ, $ n_{e} $ (Equation 28.14b) replaces n. Unlike Latter (1960), Lande concluded that mutation-selection balance could indeed account for high levels of additive variation ([[SEE_FIGURE:28.3]]). Nagylaki (1984) and Turelli (1984) noted that with weak selection, Equation 28.14c slightly overestimates the genetic variance and is slightly less accurate than Equation 28.14a."
+    },
+    {
+      "type": "derivation",
+      "content": "One can also recover Equation 28.14a using results from Chapter 24 on the Gaussian continuum-of-alleles model (which, as in Lande 1975, assumes the distribution of allelic effects at a locus to be normal). Equation 24.2a gave the dynamics for the change in genic variance, $ \\Delta \\sigma_a^2(t) $, under the Gaussian COA model, which had an equilibrium value of $ \\widetilde{\\sigma}_a^2 = 0 $. However, adding a term, $ \\sigma_a^2 $, for new mutation to Equation 24.2a, ignoring the effects of linkage disequilibrium (i.e., assuming $ d = 0 $, and hence the genic variance, $ \\sigma_a^2 $, equals the additive-genetic variance $ \\sigma_A^2 $), and setting $ N_e = \\infty $, yields [[SEE_FORMULA:28.14d]]"
+    },
+    {
+      "type": "derivation",
+      "content": "Recall that $\\kappa$ is a measure of the strength of stabilizing selection, namely, the fraction by which the phenotypic variance is reduced following selection (Equation 16.10a). Because $\\widetilde{h}^2 = \\widetilde{\\sigma}_A^2 / \\widetilde{\\sigma}_z^2$, Equation 28.14d can be expressed as [[SEE_FORMULA:28.14e]] Because $ \\kappa \\simeq \\widetilde{\\sigma}_z^2 / V_s $ (Equation 16.18a), then $ \\widetilde{\\sigma}_z^2 / \\kappa = V_s $, which recovers Equation 28.14a."
+    },
+    {
+      "type": "derivation",
+      "content": "Fleming (1979) presented an improved (but still approximate) analysis of Kimura's model. He did so by scaling both the strengths of selection and mutation by a small parameter, $ \\epsilon $, and then expressing the strength of selection as $ (2V_s)^{-1} = \\gamma \\epsilon $ and the mutational-effects variance as $ \\sigma_{\\alpha}^2 = \\delta \\epsilon $. This scaling (which Turelli notes implies a per-locus mutation rate $ \\mu \\gg \\sigma_{\\alpha}^2 / V_s $) assumes both selection and mutation are weak. By letting $ \\epsilon \\to 0 $, Fleming was able to express the equilibrium distribution of allelic effects in terms of zero and first-order expressions of $ \\epsilon $, namely, $ \\phi(x) = \\phi_0(x) + \\epsilon \\phi_1(x) + O(\\epsilon^2) $. His zero-order term (i.e., the function $ \\phi_0[x] $) is a normal with a variance given by Equation 28.14a, and it is independent of the linkage map. The first-order expression ($ \\phi_1 $) has significant kurtosis, which shows that the distribution of segregating allelic effects departs from a Gaussian. When the mutational increment, $ \\alpha $, is drawn from a normal distribution, Fleming's approximation yields [[SEE_FORMULA:28.15]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Fleming (1979) and Bürger (1998a) present more general expressions, which allow for non-Gaussian kurtosis in the distribution of mutational effects. Simulation studies by Turelli (1984) found that Equation 28.15 is accurate over a much wider range of parameter values $ (1 < \\sigma_{\\alpha_i} / (V_s \\mu_i) < 10) $ than might be expected given the nature of the approximation. Applied mathematics aficionados are referred to Fleming's paper, and less technical discussions were provided by Nagylaki (1984) and Turelli (1984). By using methods from applied physics, Bürger (1986, 1988a, 1988c) obtained a number of conclusions regarding the solution to the general Kimura model, but as we now detail, most results are based on one of two different approximations of the equilibrium solution."
+    }
+  ]
+}

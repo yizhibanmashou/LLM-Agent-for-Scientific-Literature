@@ -1,0 +1,39 @@
+{
+  "id": "Genetics_chapter27_043",
+  "metadata": {
+    "chapter": "Genetics_chapter27",
+    "section": "Variance-Component Estimation with Complex Pedigrees",
+    "subsections": [
+      "TESTING HYPOTHESES ABOUT LINEAR MODELS"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter27_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Variance-Component Estimation with Complex Pedigrees",
+    "section_level_2": "TESTING HYPOTHESES ABOUT LINEAR MODELS",
+    "heading_path": [
+      "Variance-Component Estimation with Complex Pedigrees",
+      "TESTING HYPOTHESES ABOUT LINEAR MODELS"
+    ],
+    "display_heading": "TESTING HYPOTHESES ABOUT LINEAR MODELS"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Since sums of squares are very closely related to the variances accounted for by the various components of a particular linear model, it should not be surprising that hypothesis testing is based on the sums of squares. Such hypothesis tests can be quite involved, especially if we are evaluating the various components of a complex model. Here we consider the simplest case of testing the fit of the total model to the data."
+    },
+    {
+      "type": "discussion",
+      "content": "If the residuals are multivariate-normally distributed with $$ \\mathbf{e}\\sim\\operatorname{M V N}(\\mathbf{0},\\sigma_{e}^{2}\\mathbf{I})\\quad\\mathrm{f o r O L S};\\qquad\\mathbf{e}\\sim\\operatorname{M V N}(\\mathbf{0},\\sigma_{e}^{2}\\mathbf{R})\\quad\\mathrm{f o r G L S} $$ then (recalling Equation A3.11a and A3.17b), $ SS_{E}/\\sigma_{e}^{2} $ is the sum of squared unit normals and hence is $ \\chi^{2} $-distributed. In particular, with n observations and p estimated parameters, $$ \\mathrm{\\frac{SS_{E}}{\\sigma_{e}^{2}}}\\sim\\chi_{n-p}^{2} $$ as a degree of freedom is lost for each estimated model parameter."
+    },
+    {
+      "type": "definition",
+      "content": "Suppose we have $n$ observations and wish to compare two linear models, a full model fitting $p$ parameters and a reduced model which uses only a subset $(q < p)$ of the parameters in the full model. Do the additional $p - q$ fitted parameters provide a significant increase in the amount of variation accounted for by the model? Let $SS_{E_f}$ and $SS_{E_r}$ denote the appropriate (OLS or GLS) error sums of squares for the full and reduced models. Under the null hypothesis (that the full model provides the same fit as the reduced model), the difference in error sums of squares $(SS_{E_r} - SS_{E_f})$ is distributed as constant $(\\sigma_e^2)$ times a $\\chi_{p-q}^2$. Likewise, from Equation A3.18, $SS_{E_f} \\sim \\sigma_e^2 \\chi_{n-p}^2$. Recalling the definition of the $F$ distribution (Appendix 5), it follows that $$ \\frac{\\left(\\mathrm{SS}_{\\mathrm{E}_{r}}-\\mathrm{SS}_{\\mathrm{E}_{f}}\\right)/\\left(p-q\\right)}{\\mathrm{SS}_{\\mathrm{E}_{f}}/\\left(n-p\\right)}=\\left(\\frac{n-p}{p-q}\\right)\\left(\\frac{\\mathrm{SS}_{\\mathrm{E}_{r}}}{\\mathrm{SS}_{\\mathrm{E}_{f}}}-1\\right) $$ is distributed as $F_{p-q,n-p}$ under the null hypothesis of no improved fit."
+    },
+    {
+      "type": "discussion",
+      "content": "For example, we can ask if a particular linear model accounts for a significant fraction of the variation in $y$ by considering that model versus the simplest reduced model $y_i = \\mu + e_i$. It is easily seen that the least-squares solution for $\\mu$ is $\\overline{y}$ for OLS and the weighted mean for GLS, giving $SS_{E_r} = SS_T$. Since the number of parameters in the reduced model is $q = 1$, the test for whether a particular linear model accounts for a significant amount of the variation is $$ \\left(\\frac{n-p}{p-1}\\right)\\left(\\frac{\\mathrm{S}\\mathrm{S}_{\\mathrm{T}}}{\\mathrm{S}\\mathrm{S}_{\\mathrm{E}_{f}}}-1\\right)=\\left(\\frac{n-p}{p-1}\\right)\\left(\\frac{r^{2}}{1-r^{2}}\\right) $$ where $ r^{2} $ is the coefficient of determination for the full model (Equation A3.15). This test statistic follows an $ F_{p-1,n-p} $ distribution."
+    }
+  ]
+}

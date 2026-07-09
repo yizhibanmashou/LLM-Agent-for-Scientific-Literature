@@ -1,0 +1,79 @@
+{
+  "id": "Genetics_chapter27_070",
+  "metadata": {
+    "chapter": "Genetics_chapter27",
+    "section": "Variance-Component Estimation with Complex Pedigrees",
+    "subsections": [
+      "Application: Power of the Half-sib Design for Variance Estimation"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter27_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Variance-Component Estimation with Complex Pedigrees",
+    "section_level_2": "Application: Power of the Half-sib Design for Variance Estimation",
+    "heading_path": [
+      "Variance-Component Estimation with Complex Pedigrees",
+      "Application: Power of the Half-sib Design for Variance Estimation"
+    ],
+    "display_heading": "Application: Power of the Half-sib Design for Variance Estimation"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "As an example of computing the power of random-effects ANOVA designs for estimating variance components, consider the standard half-sib design for estimating additive genetic variance (Chapter 18). Assuming a balanced design, $N$ sires are each mated to $n$ unique and unrelated females. The linear model (Equation 18.1) is $y_{ij} = \\mu + s_i + e_{ij}$, where $s \\sim (0, \\sigma_s^2)$ and $e \\sim (0, \\sigma_e^2)$. Assume further that $s$ and $e$ are normally distributed. Then, from Equation A5.28, the sire effect sum of squares, $SS_s$, follows a $\\chi^2$ distribution, with $$ \\begin{array}{r}{\\mathrm{S S}_{s}\\sim n\\cdot\\sigma^{2}\\cdot\\chi_{N-1}^{2}=\\left(n\\sigma_{s}^{2}+\\sigma_{e}^{2}\\right)\\cdot\\chi_{N-1}^{2}}\\end{array} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Likewise, from Equation A5.29, the resulting test statistic $F$ for a significant sire variance follows an $F$ distribution, with $$ F=\\frac{\\mathsf{S}\\mathsf{S}_{s}/(N-1)}{\\mathsf{S}\\mathsf{S}_{e}/N(n-1)}\\sim\\left(1+n\\frac{\\sigma_{s}^{2}}{\\sigma_{e}^{2}}\\right)F_{(N-1),N(n-1)} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Expressing the sire variance in terms of additive genetic and environmental variance components (ignoring epistasis), $$ \\sigma_{s}^{2}=\\sigma_{A}^{2}/4=(h^{2}/4)\\sigma_{z}^{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Since $ \\sigma_{z}=\\sigma_{s}^{2}+\\sigma_{e}^{2} $, it immediately follows that $$ \\sigma_{e}^{2}=\\sigma_{z}^{2}-\\sigma_{s}^{2}=\\sigma_{z}^{2}(1-h^{2}/4) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Substituting these into Equation A5.33a gives $$ F\\sim\\left(1+\\frac{n h^{2}}{4-h^{2}}\\right)F_{(N-1),N(n-1)} $$ From Equation A5.30b, the power of this test is $$ \\Pr\\left[F_{N-1,N(n-1)}>\\frac{F_{N-1,N(n-1),[1-\\alpha]}}{1+n h^{2}/(4-h^{2})}\\right] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Example 6. Suppose $ h^2 = 0.25 $, so that the sire variance is $ \\sigma_s^2 = h^2/4 = 0.0625 $. What is the probability of detecting a significant sire variance (with a test of $ \\alpha = 0.05 $) using 10 sires, each mated to 5 dams? Here $ N = 10 $ and $ n = 5 $, and from $ F $ tables, the critical value of the test is $ F_{N-1,N(n-1),[1-\\alpha]} = F_{9,40,[0.95]} = 2.12 $. Applying Equation A5.33c, the power of this design to detect a sire variance at least this large is $$ \\Pr\\left[F_{9,40}>\\frac{2.12}{1+5\\cdot0.25/(4-0.25)}=1.59\\right]=0.15 $$ Hence the power is very poor, with the test indicating a significant sire effect only 15 percent of the time."
+    },
+    {
+      "type": "discussion",
+      "content": "If we keep the number of dams/sire constant at 5, how many sires are required to give this test 90% power? Trial and error shows that with $N = 255$ sires, the critical value becomes $F_{N-1,N(n-1),[1-\\alpha]} = F_{254,1020,[0.95]} = 1.17$, and Equation A5.33c gives $$ \\Pr\\left[F_{254,1020}>\\frac{1.17}{1+5\\cdot0.25/(4-0.25)}=0.88\\right]=0.90 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Note from the form of Equation A5.33c that the number of dams/sire, n, appears to assert a more important role than N. Keeping N constant at 10, how many dams/sire are required to have 90% power? Again trial and error shows for n = 47 that $ F_{N-1,N(n-1),[1-\\alpha]} = F_{9,460,[0.95]} = 1.90 $, and Equation A5.33c gives $$ \\Pr\\left[F_{9,460}>\\frac{1.90}{1+47\\cdot0.25/(4-0.25)}=0.46\\right]=0.90 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, recall from Chapter 18 that if a total of $T$ individuals are measured, the optimal number of sires per dam is given by $n = 4/h^4$. Hence $N = T/n = Th^2/4$, and the power under the optimal design for $T$ individuals is $$ \\Pr\\left[F_{\\{\\{T h^{2}/4\\}-1\\},T(1-h^{2}/4)}>\\frac{F_{\\{\\{T h^{2}/4\\}-1\\},T(1-h^{2}/4),[1-\\alpha]}}{1+4/\\left(4-h^{2}\\right)}\\right] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Table A5.1 gives the power under the optimal design for various values of T and $ h^{2} $. Note that with modest, but reasonable, heritabilities ($ h^{2} = 0.25 $), at least 250 individuals must be used to have a reasonable chance of the half-sib design showing a significant sire variance."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 7. For Example 6, where $ h^{2} = 0.25 $ and T = 50, the optimal number of dams/sire is $ 4/h^{2} = 16 $. Rounding up to approach T = 50, we take N = 3 and n = 17 for T = 51. Under this design, the power is computed to be 0.234. For N = 2 and N = 25 (T = 50) the power is 0.224, while for N = 4 and n = 12 (T = 48) the power is 0.211. As expected, the optimal design (n = 17) does indeed show the largest power."
+    },
+    {
+      "type": "discussion",
+      "content": "Table A5.1 The power to detect a significant heritability under the optimal sampling scheme for a half-sib design as a function of $h^{2}$ and the total number $T$ of individuals measured."
+    },
+    {
+      "type": "discussion",
+      "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td rowspan=\"2\">T</td><td colspan=\"5\">$ h^{{2}} $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>0.1</td><td style='text-align: center; word-wrap: break-word;'>0.25</td><td style='text-align: center; word-wrap: break-word;'>0.5</td><td style='text-align: center; word-wrap: break-word;'>0.75</td><td style='text-align: center; word-wrap: break-word;'>1.0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>50</td><td style='text-align: center; word-wrap: break-word;'>0.12</td><td style='text-align: center; word-wrap: break-word;'>0.22</td><td style='text-align: center; word-wrap: break-word;'>0.36</td><td style='text-align: center; word-wrap: break-word;'>0.44</td><td style='text-align: center; word-wrap: break-word;'>0.59</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>100</td><td style='text-align: center; word-wrap: break-word;'>0.22</td><td style='text-align: center; word-wrap: break-word;'>0.36</td><td style='text-align: center; word-wrap: break-word;'>0.58</td><td style='text-align: center; word-wrap: break-word;'>0.68</td><td style='text-align: center; word-wrap: break-word;'>0.82</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>250</td><td style='text-align: center; word-wrap: break-word;'>0.35</td><td style='text-align: center; word-wrap: break-word;'>0.65</td><td style='text-align: center; word-wrap: break-word;'>0.87</td><td style='text-align: center; word-wrap: break-word;'>0.95</td><td style='text-align: center; word-wrap: break-word;'>0.99</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>500</td><td style='text-align: center; word-wrap: break-word;'>0.57</td><td style='text-align: center; word-wrap: break-word;'>0.86</td><td style='text-align: center; word-wrap: break-word;'>0.99</td><td style='text-align: center; word-wrap: break-word;'>1.00</td><td style='text-align: center; word-wrap: break-word;'>1.00</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>750</td><td style='text-align: center; word-wrap: break-word;'>0.70</td><td style='text-align: center; word-wrap: break-word;'>0.95</td><td style='text-align: center; word-wrap: break-word;'>1.00</td><td style='text-align: center; word-wrap: break-word;'>1.00</td><td style='text-align: center; word-wrap: break-word;'>1.00</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>1000</td><td style='text-align: center; word-wrap: break-word;'>0.80</td><td style='text-align: center; word-wrap: break-word;'>0.99</td><td style='text-align: center; word-wrap: break-word;'>1.00</td><td style='text-align: center; word-wrap: break-word;'>1.00</td><td style='text-align: center; word-wrap: break-word;'>1.00</td></tr></table>"
+    },
+    {
+      "type": "discussion",
+      "content": "Note: For fixed $T$, the optimal number of dams per sire is $n = 4/h^2$, or 40, 16, 8, 5, and 4 under the above respective heritabilities. Power is computed using the design closest to these optimal values, given the constraint that the total number of individuals in the balanced design is $T$. For example, for $h^2 = 0.1$, $n = 40$ is the optimal value. However, since design must have $N \\geq 2$, for $T = 50$, power is computed using $N = 2$ and $n = 25$."
+    }
+  ]
+}

@@ -5,6 +5,8 @@ from unittest.mock import patch
 from uuid import uuid4
 
 from knowledge_engineering.pipeline.example_pipeline import apply_example_pipeline
+from knowledge_engineering.pipeline.example_pipeline import _clean_trimmed_duplicate_prose
+from knowledge_engineering.pipeline.example_pipeline import _sync_example_numbered_formulas
 from knowledge_engineering.processors import example_extraction as example_trial
 
 
@@ -29,6 +31,46 @@ def write_json(path: Path, payload: dict) -> None:
 
 
 class ExamplePipelineTests(unittest.TestCase):
+    def test_clean_trimmed_duplicate_prose_removes_dangling_close_punctuation(self):
+        self.assertEqual(
+            _clean_trimmed_duplicate_prose("). As Example 9.14 shows, potential evidence remains."),
+            "As Example 9.14 shows, potential evidence remains",
+        )
+
+    def test_sync_example_numbered_formulas_normalizes_l_suffix_ocr_confusion(self):
+        root = make_test_workspace("example_formula_l_suffix")
+        structured_dir = root / "structured"
+        write_json(
+            structured_dir / "chapter20_019.json",
+            {
+                "id": "chapter20_019",
+                "metadata": {"chapter": "chapter20", "heading_path": ["Marker Data"]},
+                "blocks": [{"type": "example", "content": "[[SEE_EXAMPLE:20.6]]"}],
+            },
+        )
+        write_json(structured_dir / "formula_library.json", {"metadata": {"total_formulas": 0}, "formulas": []})
+        rows = [
+            {
+                "example_id": "20.6",
+                "chapter": "chapter20",
+                "source_file": "chapter20_019.json",
+                "content_markdown": (
+                    "Example 20.6. $$ k $$ (20.23k) "
+                    "$$ should be ell $$ (20.231) "
+                    "$$ m $$ (20.23m)"
+                ),
+            }
+        ]
+
+        stats = _sync_example_numbered_formulas(structured_dir, rows, dry_run=False)
+
+        self.assertIn("20.23l", stats["formula_ids_added"])
+        self.assertNotIn("20.231", stats["formula_ids_added"])
+        library = read_json(structured_dir / "formula_library.json")
+        ids = {row["id"] for row in library["formulas"]}
+        self.assertIn("20.23l", ids)
+        self.assertNotIn("20.231", ids)
+
     def test_apply_example_pipeline_writes_library_and_preserves_reference_libraries(self):
         root = make_test_workspace("formal_pipeline")
         structured_dir = root / "structured"
@@ -83,6 +125,499 @@ class ExamplePipelineTests(unittest.TestCase):
         self.assertEqual(library["examples"][0]["example_ref"], "1.1")
         self.assertEqual(library["examples"][0]["replacement"]["status"], "replaced")
         self.assertTrue((artifacts_dir / "example_pipeline_summary.json").exists())
+
+    def test_fresh_extraction_relocates_isolated_example_chunk_to_previous_real_prose_unit(self):
+        root = make_test_workspace("fresh_isolated_example_chunk")
+        structured_dir = root / "structured"
+        write_json(
+            structured_dir / "chapter8_024.json",
+            {
+                "id": "chapter8_024",
+                "metadata": {"chapter": "chapter8", "display_heading": "How Likely is a Sweep?"},
+                "blocks": [
+                    {
+                        "type": "discussion",
+                        "content": (
+                            "Hermisson and Pennings used population genetic models to examine sweeps from "
+                            "standing variation, and this real prose should own the worked example."
+                        ),
+                    }
+                ],
+            },
+        )
+        write_json(
+            structured_dir / "chapter8_025.json",
+            {
+                "id": "chapter8_025",
+                "metadata": {"chapter": "chapter8", "display_heading": "How Likely is a Sweep?"},
+                "blocks": [
+                    {
+                        "type": "paragraph",
+                        "content": (
+                            "Example 8.8. Mutation can be rate limiting when a favorable allele is absent, "
+                            "but standing variation can seed a sweep more quickly."
+                        ),
+                    }
+                ],
+            },
+        )
+        write_json(structured_dir / "formula_library.json", {"formulas": []})
+        write_json(structured_dir / "table_library.json", {"tables": []})
+
+        summary = apply_example_pipeline(structured_dir, project_root=root)
+
+        stats = summary["isolated_example_chunk_stats"]
+        self.assertEqual(stats["rows_relocated"], 1)
+        owner = read_json(structured_dir / "chapter8_024.json")
+        self.assertEqual(owner["blocks"][-1], {"type": "example", "content": "[[SEE_EXAMPLE:8.8]]"})
+        self.assertEqual(read_json(structured_dir / "chapter8_025.json")["blocks"], [])
+        row = read_json(structured_dir / "example_library.json")["examples"][0]
+        self.assertEqual(row["source_file"], "chapter8_024.json")
+        self.assertEqual(row["replacement"]["placeholder_source_file"], "chapter8_024.json")
+
+    def test_existing_library_exclude_chapter_does_not_rebind_inline_tables(self):
+        root = make_test_workspace("exclude_chapter_inline_table")
+        structured_dir = root / "structured"
+        write_json(
+            structured_dir / "chapter28_003.json",
+            {
+                "id": "chapter28_003",
+                "metadata": {"chapter": "chapter28", "display_heading": "Reviewed chapter"},
+                "blocks": [
+                    {
+                        "type": "discussion",
+                        "content": "Reviewed prose cites [[SEE_EXAMPLE:5.6]] and must not be touched.",
+                    },
+                    {"type": "example", "content": "[[SEE_EXAMPLE:28.1]]"},
+                ],
+            },
+        )
+        write_json(
+            structured_dir / "chapter5_006.json",
+            {
+                "id": "chapter5_006",
+                "metadata": {"chapter": "chapter5", "display_heading": "Selection example"},
+                "blocks": [{"type": "example", "content": "[[SEE_EXAMPLE:5.6]]"}],
+            },
+        )
+        write_json(
+            structured_dir / "chapter28_004.json",
+            {
+                "id": "chapter28_004",
+                "metadata": {"chapter": "chapter28", "display_heading": "Other reviewed chunk"},
+                "blocks": [{"type": "discussion", "content": "Original owner metadata stays here."}],
+            },
+        )
+        write_json(structured_dir / "formula_library.json", {"formulas": []})
+        write_json(
+            structured_dir / "table_library.json",
+            {
+                "tables": [
+                    {
+                        "id": "inline_1",
+                        "chapter": "chapter28",
+                        "table_type": "inline",
+                        "title": "Inline derivation table",
+                        "rows": [["alpha", "beta"]],
+                        "source": {"chapter": "chapter28", "unit_id": "chapter28_004"},
+                    }
+                ]
+            },
+        )
+        write_json(
+            structured_dir / "example_library.json",
+            {
+                "schema": "example_library.v1",
+                "examples": [
+                    {
+                        "example_id": "5.6",
+                        "example_ref": "5.6",
+                        "placeholder": "[[SEE_EXAMPLE:5.6]]",
+                        "chapter": "chapter5",
+                        "source_file": "chapter5_006.json",
+                        "start_block_index": 0,
+                        "end_block_index": 0,
+                        "content_markdown": "Example 5.6. Underdominance.",
+                        "content_plain": "Example 5.6. Underdominance.",
+                        "formula_refs": [],
+                        "table_refs": [],
+                        "figure_refs": [],
+                        "external_refs": [],
+                        "metadata": {"needs_review": False},
+                        "replacement": {
+                            "status": "replaced",
+                            "placeholder_block_index": 0,
+                            "placeholder_source_file": "chapter5_006.json",
+                        },
+                    },
+                    {
+                        "example_id": "28.1",
+                        "example_ref": "28.1",
+                        "placeholder": "[[SEE_EXAMPLE:28.1]]",
+                        "chapter": "chapter28",
+                        "source_file": "chapter28_003.json",
+                        "start_block_index": 1,
+                        "end_block_index": 1,
+                        "content_markdown": "Example 28.1. Inline derivation table [[TABLE:inline_1]] uses alpha beta.",
+                        "content_plain": "Example 28.1. Inline derivation table uses alpha beta.",
+                        "formula_refs": [],
+                        "table_refs": ["inline_1"],
+                        "figure_refs": [],
+                        "external_refs": [],
+                        "metadata": {"needs_review": False},
+                        "replacement": {
+                            "status": "replaced",
+                            "placeholder_block_index": 1,
+                            "placeholder_source_file": "chapter28_003.json",
+                        },
+                    }
+                ],
+            },
+        )
+
+        summary = apply_example_pipeline(structured_dir, project_root=root, exclude_chapters={"chapter28"})
+
+        stats = summary["table_source_rebind_stats"]
+        self.assertEqual(stats["table_sources_rebound"], 0)
+        table = read_json(structured_dir / "table_library.json")["tables"][0]
+        self.assertEqual(table["source"]["unit_id"], "chapter28_004")
+        reviewed = read_json(structured_dir / "chapter28_003.json")
+        self.assertNotIn("table_references", reviewed["metadata"])
+        self.assertIn("[[SEE_EXAMPLE:5.6]]", reviewed["blocks"][0]["content"])
+
+    def test_existing_example_library_syncs_numbered_display_formulas(self):
+        root = make_test_workspace("example_formula_sync")
+        structured_dir = root / "structured"
+        write_json(
+            structured_dir / "appendix1_003.json",
+            {
+                "id": "appendix1_003",
+                "metadata": {"chapter": "appendix1", "display_heading": "Diffusion examples"},
+                "blocks": [{"type": "example", "content": "[[SEE_EXAMPLE:A1.1]]"}],
+            },
+        )
+        write_json(
+            structured_dir / "example_library.json",
+            {
+                "schema": "example_library.v1",
+                "example_count": 1,
+                "examples": [
+                    {
+                        "example_id": "A1.1",
+                        "example_ref": "A1.1",
+                        "chapter": "appendix1",
+                        "source_file": "appendix1_003.json",
+                        "start_block_index": 0,
+                        "end_block_index": 0,
+                        "placeholder": "[[SEE_EXAMPLE:A1.1]]",
+                        "content_markdown": "Example A1.1. The result is $$ x=y $$ (A1.3).",
+                        "formula_refs": [],
+                        "table_refs": [],
+                        "figure_refs": [],
+                        "replacement": {
+                            "status": "replaced",
+                            "placeholder_source_file": "appendix1_003.json",
+                            "placeholder_block_index": 0,
+                        },
+                    }
+                ],
+            },
+        )
+        write_json(structured_dir / "formula_library.json", {"formulas": []})
+        write_json(structured_dir / "table_library.json", {"tables": []})
+
+        summary = apply_example_pipeline(structured_dir, project_root=root)
+
+        self.assertEqual(summary["example_formula_sync_stats"]["formulas_added"], 1)
+        self.assertTrue(summary["formula_library_changed"])
+        formulas = read_json(structured_dir / "formula_library.json")["formulas"]
+        self.assertEqual(formulas[0]["id"], "a1.3")
+        self.assertEqual(formulas[0]["source"]["unit_id"], "appendix1_003")
+
+    def test_existing_example_library_replaces_embedded_figure_caption_with_placeholder(self):
+        root = make_test_workspace("example_figure_caption_sync")
+        structured_dir = root / "structured"
+        data_dir = root / "data"
+        write_json(
+            data_dir / "figure_library.json",
+            {
+                "figures": [
+                    {
+                        "id": "6.1",
+                        "chapter": "chapter6",
+                        "caption": (
+                            "Figure 6.1 Analysis of the model from Example 6.3. "
+                            "Left graph of the exact and predicted response as a function of allele-frequency p. "
+                            "Right graph of the relative accuracies."
+                        ),
+                    }
+                ]
+            },
+        )
+        write_json(
+            structured_dir / "chapter6_008.json",
+            {
+                "id": "chapter6_008",
+                "metadata": {"chapter": "chapter6", "display_heading": "Selection response"},
+                "blocks": [
+                    {"type": "discussion", "content": "Real prose anchors the example."},
+                    {"type": "example", "content": "[[SEE_EXAMPLE:6.3]]"},
+                ],
+            },
+        )
+        write_json(
+            structured_dir / "chapter6_009.json",
+            {
+                "id": "chapter6_009",
+                "metadata": {"chapter": "chapter6", "display_heading": "Next section"},
+                "blocks": [{"type": "figure", "content": "[[FIGURE:6.1]]"}],
+            },
+        )
+        write_json(
+            structured_dir / "example_library.json",
+            {
+                "schema": "example_library.v1",
+                "example_count": 1,
+                "examples": [
+                    {
+                        "example_id": "6.3",
+                        "example_ref": "6.3",
+                        "chapter": "chapter6",
+                        "label": "Example 6.3",
+                        "source_file": "chapter6_008.json",
+                        "start_block_index": 1,
+                        "end_block_index": 1,
+                        "placeholder": "[[SEE_EXAMPLE:6.3]]",
+                        "content_markdown": (
+                            "Example 6.3. Ordinary discussion mentions Figure 6.1, we see the approximation. "
+                            "Figure 6.1 Analysis of the model from Example 6.3. "
+                            "Left graph of the exact and predicted response as a function of allele-frequency p. "
+                            "Right graph of the relative accuracies."
+                        ),
+                        "content_plain": "",
+                        "formula_refs": [],
+                        "table_refs": [],
+                        "figure_refs": [],
+                        "external_refs": [],
+                        "metadata": {},
+                        "evidence": {},
+                        "replacement": {
+                            "status": "replaced",
+                            "placeholder_source_file": "chapter6_008.json",
+                            "placeholder_block_index": 1,
+                        },
+                    }
+                ],
+            },
+        )
+        write_json(structured_dir / "formula_library.json", {"formulas": []})
+        write_json(structured_dir / "table_library.json", {"tables": []})
+
+        summary = apply_example_pipeline(structured_dir, project_root=root)
+
+        stats = summary["example_figure_sync_stats"]
+        self.assertEqual(stats["caption_spans_replaced"], 1)
+        self.assertEqual(stats["standalone_figure_placeholders_removed"], 1)
+        row = read_json(structured_dir / "example_library.json")["examples"][0]
+        self.assertIn("Figure 6.1, we see", row["content_markdown"])
+        self.assertIn("[[FIGURE:6.1]]", row["content_markdown"])
+        self.assertEqual(row["figure_refs"], ["6.1"])
+        self.assertEqual(row["metadata"]["has_figure"], True)
+        standalone = read_json(structured_dir / "chapter6_009.json")
+        self.assertEqual(standalone["blocks"], [])
+
+    def test_embedded_figure_caption_matches_library_caption_without_marker_prefix(self):
+        root = make_test_workspace("example_figure_caption_without_marker_prefix")
+        structured_dir = root / "structured"
+        data_dir = root / "data"
+        write_json(
+            data_dir / "figure_library.json",
+            {
+                "figures": {
+                    "figure_25.15": {
+                        "id": "25.15",
+                        "chapter": "chapter25",
+                        "caption": (
+                            "The equilibrium frequency of a lethal allele that also increases the value "
+                            "of a trait under artificial selection. Selection is assumed to act in the zygote."
+                        ),
+                    }
+                }
+            },
+        )
+        write_json(
+            structured_dir / "chapter25_025.json",
+            {
+                "id": "chapter25_025",
+                "metadata": {"chapter": "chapter25", "display_heading": "Artificial selection"},
+                "blocks": [{"type": "example", "content": "[[SEE_EXAMPLE:25.10]]"}],
+            },
+        )
+        write_json(
+            structured_dir / "example_library.json",
+            {
+                "schema": "example_library.v1",
+                "examples": [
+                    {
+                        "example_id": "25.10",
+                        "example_ref": "25.10",
+                        "chapter": "chapter25",
+                        "source_file": "chapter25_025.json",
+                        "start_block_index": 0,
+                        "end_block_index": 0,
+                        "placeholder": "[[SEE_EXAMPLE:25.10]]",
+                        "content_markdown": (
+                            "Example 25.10. Equation text ends here. "
+                            "Figure 25.15 The equilibrium frequency of a lethal allele that also "
+                            "increases the value of a trait under artificial selection. Selection "
+                            "is assumed to act in the zygote. Later prose says Figure 25.15 plots "
+                            "the result, which is a normal reference."
+                        ),
+                        "content_plain": "",
+                        "formula_refs": [],
+                        "table_refs": [],
+                        "figure_refs": [],
+                        "external_refs": [],
+                        "metadata": {},
+                    }
+                ],
+            },
+        )
+        write_json(structured_dir / "formula_library.json", {"formulas": []})
+        write_json(structured_dir / "table_library.json", {"tables": []})
+
+        summary = apply_example_pipeline(structured_dir, project_root=root)
+
+        self.assertEqual(summary["example_figure_sync_stats"]["caption_spans_replaced"], 1)
+        row = read_json(structured_dir / "example_library.json")["examples"][0]
+        self.assertIn("[[FIGURE:25.15]]", row["content_markdown"])
+        self.assertNotIn("[[FIGURE:25.15]].", row["content_markdown"])
+        self.assertIn("Figure 25.15 plots the result", row["content_markdown"])
+        self.assertEqual(row["figure_refs"], ["25.15"])
+
+    def test_visual_box_numbered_figures_are_absorbed_into_existing_example(self):
+        root = make_test_workspace("example_visual_box_figures")
+        structured_dir = root / "structured"
+        write_json(
+            root / "data" / "figure_library.json",
+            {
+                "figures": {
+                    "2.2": {"id": "2.2", "chapter": "chapter2", "caption": "Figure 2.2 Mean times."},
+                    "2.3": {"id": "2.3", "chapter": "chapter2", "caption": "Figure 2.3 Expected age."},
+                }
+            },
+        )
+        write_json(
+            structured_dir / "chapter2_005.json",
+            {
+                "id": "chapter2_005",
+                "metadata": {"chapter": "chapter2", "display_heading": "THE AGE OF A NEUTRAL ALLELE"},
+                "blocks": [{"type": "example", "content": "[[SEE_EXAMPLE:2.3]]"}],
+            },
+        )
+        write_json(
+            structured_dir / "chapter2_017.json",
+            {
+                "id": "chapter2_017",
+                "metadata": {"chapter": "chapter2", "display_heading": "Quantifying Population Structure"},
+                "blocks": [
+                    {"type": "figure", "content": "[[FIGURE:2.2]]"},
+                    {"type": "figure", "content": "[[FIGURE:2.3]]"},
+                ],
+            },
+        )
+        write_json(
+            structured_dir / "example_library.json",
+            {
+                "schema": "example_library.v1",
+                "example_count": 1,
+                "examples": [
+                    {
+                        "example_id": "2.3",
+                        "example_ref": "2.3",
+                        "chapter": "chapter2",
+                        "source_file": "chapter2_005.json",
+                        "start_block_index": 0,
+                        "end_block_index": 0,
+                        "placeholder": "[[SEE_EXAMPLE:2.3]]",
+                        "content_markdown": "Example 2.3. The mutation is considered. The final sentence ends the example.",
+                        "content_plain": "Example 2.3. The mutation is considered. The final sentence ends the example.",
+                        "formula_refs": [],
+                        "table_refs": [],
+                        "figure_refs": [],
+                        "external_refs": [],
+                        "metadata": {},
+                        "evidence": {},
+                    }
+                ],
+            },
+        )
+        write_json(structured_dir / "formula_library.json", {"formulas": []})
+        write_json(structured_dir / "table_library.json", {"tables": []})
+        pages = [
+            {
+                "prunedResult": {
+                    "parsing_res_list": [
+                        {
+                            "block_label": "text",
+                            "block_content": "Example 2.3. The mutation is considered.",
+                            "block_bbox": [150, 1200, 900, 1260],
+                        }
+                    ]
+                }
+            },
+            {
+                "prunedResult": {
+                    "parsing_res_list": [
+                        {
+                            "block_label": "figure_title",
+                            "block_content": "Figure 2.2 Mean times.",
+                            "block_bbox": [320, 700, 1030, 760],
+                        },
+                        {
+                            "block_label": "figure_title",
+                            "block_content": "Figure 2.3 Expected age.",
+                            "block_bbox": [320, 1300, 1030, 1350],
+                        },
+                        {
+                            "block_label": "text",
+                            "block_content": "The final sentence ends the example.",
+                            "block_bbox": [320, 1390, 1030, 1460],
+                        },
+                    ]
+                }
+            },
+            {
+                "prunedResult": {
+                    "parsing_res_list": [
+                        {
+                            "block_label": "text",
+                            "block_content": "Example 2.4. The next example starts here.",
+                            "block_bbox": [150, 590, 900, 670],
+                        }
+                    ]
+                }
+            },
+        ]
+        rules = {
+            0: [{"bbox": [138, 1150, 897, 1152], "coverage": 0.64, "max_row_dark_ratio": 0.76}],
+            2: [{"bbox": [138, 556, 897, 556], "coverage": 0.64, "max_row_dark_ratio": 0.76}],
+        }
+
+        with patch.object(example_trial, "load_paddle_raw_pages", return_value=pages), patch.object(
+            example_trial,
+            "raw_example_pdf_visual_rules",
+            return_value=rules,
+        ):
+            summary = apply_example_pipeline(structured_dir, project_root=root)
+
+        stats = summary["existing_library_repair_stats"]["raw_layout_refresh"]
+        self.assertEqual(stats["rows_improved_with_figures"], 1)
+        row = read_json(structured_dir / "example_library.json")["examples"][0]
+        self.assertIn("[[FIGURE:2.2]]", row["content_markdown"])
+        self.assertIn("[[FIGURE:2.3]]", row["content_markdown"])
+        self.assertEqual(row["figure_refs"], ["2.2", "2.3"])
+        self.assertEqual(read_json(structured_dir / "chapter2_017.json")["blocks"], [])
 
     def test_numbered_table_expansion_after_example_is_not_folded_into_example(self):
         root = make_test_workspace("numbered_table_after_example")
@@ -1211,10 +1746,93 @@ class ExamplePipelineTests(unittest.TestCase):
 
         self.assertEqual(len(recovered), 1)
         content = recovered[0].content_markdown
-        self.assertIn("Figure 27.4 Top", content)
+        self.assertIn("[[FIGURE:27.4]]", content)
+        self.assertEqual(recovered[0].figure_refs, ["27.4"])
         self.assertIn("provides the basis", content)
         self.assertIn("F(x)", content)
         self.assertNotIn("following ordinary discussion", content)
+        self.assertTrue(recovered[0].evidence["visual_stop_clipped"])
+
+    def test_raw_layout_visual_box_keeps_author_year_paragraph_until_next_rule(self):
+        root = make_test_workspace("raw_box_author_year")
+        structured_dir = root / "structured"
+        write_json(
+            structured_dir / "chapter28_022.json",
+            {
+                "id": "chapter28_022",
+                "metadata": {"chapter": "chapter28", "formula_references": [], "table_references": []},
+                "blocks": [
+                    {"type": "discussion", "content": "Before."},
+                    {"type": "example", "content": "[[SEE_EXAMPLE:28.4]]"},
+                ],
+            },
+        )
+        write_json(structured_dir / "formula_library.json", {"formulas": []})
+        write_json(structured_dir / "table_library.json", {"tables": []})
+        pages = [
+            {
+                "prunedResult": {
+                    "parsing_res_list": [
+                        {
+                            "block_label": "figure_title",
+                            "block_content": (
+                                "Example 28.4. The mutation model begins inside the visual example box."
+                            ),
+                            "block_bbox": [322, 647, 1036, 700],
+                        },
+                        {
+                            "block_label": "text",
+                            "block_content": (
+                                "Kimura (1965a) considered mutations with a continuum of effects, "
+                                "and this paragraph is still inside Example 28.4."
+                            ),
+                            "block_bbox": [322, 725, 1036, 780],
+                        },
+                        {
+                            "block_label": "display_formula",
+                            "block_content": "$$ V_m=2N_eu a^2 $$",
+                            "block_bbox": [430, 805, 900, 850],
+                        },
+                    ]
+                }
+            },
+            {
+                "prunedResult": {
+                    "parsing_res_list": [
+                        {
+                            "block_label": "figure_title",
+                            "block_content": "Example 28.5. The next visual example starts after the next black rule.",
+                            "block_bbox": [322, 240, 1036, 310],
+                        },
+                    ]
+                }
+            },
+        ]
+        rules = {
+            0: [{"bbox": [293.75, 612.0, 1053.12, 614.0], "coverage": 0.66, "max_row_dark_ratio": 0.78}],
+            1: [{"bbox": [293.75, 220.0, 1053.12, 222.0], "coverage": 0.66, "max_row_dark_ratio": 0.78}],
+        }
+
+        with (
+            patch.object(example_trial, "load_paddle_raw_pages", return_value=pages),
+            patch.object(example_trial, "raw_example_pdf_visual_rules", return_value=rules),
+        ):
+            context = example_trial.build_structured_context(structured_dir)
+            recovered = example_trial.recover_examples_from_paddle_raw(
+                project_root=root,
+                chapter="chapter28",
+                context=context,
+                existing_ids=set(),
+                target_ids={"28.4"},
+                skip_structured_matches=False,
+            )
+
+        self.assertEqual(len(recovered), 1)
+        content = recovered[0].content_markdown
+        self.assertIn("Example 28.4", content)
+        self.assertIn("Kimura (1965a)", content)
+        self.assertIn("V_m", content)
+        self.assertNotIn("Example 28.5", content)
         self.assertTrue(recovered[0].evidence["visual_stop_clipped"])
 
     def test_raw_layout_merge_preserves_inline_table_inside_structured_example(self):
@@ -2214,6 +2832,89 @@ class ExamplePipelineTests(unittest.TestCase):
         library = read_json(structured_dir / "example_library.json")
         self.assertIn("tail89", library["examples"][0]["content_markdown"])
 
+    def test_visual_raw_refresh_extends_short_existing_example(self):
+        root = make_test_workspace("visual_raw_extends_existing")
+        structured_dir = root / "structured"
+        write_json(
+            structured_dir / "chapter42_001.json",
+            {
+                "id": "chapter42_001",
+                "metadata": {"chapter": "chapter42", "formula_references": [], "table_references": []},
+                "blocks": [{"type": "example", "content": "[[SEE_EXAMPLE:42.2]]"}],
+            },
+        )
+        write_json(structured_dir / "formula_library.json", {"formulas": []})
+        write_json(structured_dir / "table_library.json", {"tables": []})
+        shared_prefix = " ".join(f"shared{i}" for i in range(45))
+        missing_tail = " ".join(f"visualtail{i}" for i in range(45))
+        write_json(
+            structured_dir / "example_library.json",
+            {
+                "schema": "example_library.v1",
+                "example_count": 1,
+                "examples": [
+                    {
+                        "example_id": "42.2",
+                        "chapter": "chapter42",
+                        "label": "Example 42.2",
+                        "title": "Short visual",
+                        "source_file": "chapter42_001.json",
+                        "start_block_index": 0,
+                        "end_block_index": 0,
+                        "block_ids": [],
+                        "content_markdown": f"Example 42.2. {shared_prefix}.",
+                        "content_plain": "",
+                        "formula_refs": [],
+                        "table_refs": [],
+                        "figure_refs": [],
+                        "external_refs": [],
+                        "evidence": {},
+                        "metadata": {"needs_review": False},
+                        "example_ref": "42.2",
+                        "placeholder": "[[SEE_EXAMPLE:42.2]]",
+                        "replacement": {"status": "replaced", "reason": "placeholder_block_written", "source_block_span": [0, 0]},
+                    }
+                ],
+            },
+        )
+        visual_stop = example_trial.RawExampleVisualStop(
+            example_id="42.2",
+            included_tail=missing_tail,
+            stop_text="The next prose block starts here.",
+            page_index=0,
+            row_index=3,
+            vertical_gap=24.0,
+            source="pdf_rendered_horizontal_rule",
+            rule_bbox=[100, 300, 500, 302],
+            rule_coverage=0.9,
+        )
+        raw_candidate = example_trial.raw_example_to_candidate(
+            chapter="chapter42",
+            example_id="42.2",
+            raw_parts=[f"Example 42.2. {shared_prefix}. {missing_tail}."],
+            source_file="chapter42_001.json",
+            source_block_index=0,
+            source_page=1,
+            visual_stop=visual_stop,
+        )
+
+        with patch("knowledge_engineering.pipeline.example_pipeline.recover_examples_from_paddle_raw", return_value=[raw_candidate]):
+            summary = apply_example_pipeline(structured_dir, project_root=root)
+
+        refresh = summary["existing_library_repair_stats"]["raw_layout_refresh"]
+        self.assertEqual(refresh["rows_replaced"], 1)
+        self.assertEqual(
+            refresh["replacement_reason_counts"],
+            {"raw_layout_pdf_rule_boundary_extension": 1},
+        )
+        library = read_json(structured_dir / "example_library.json")
+        row = library["examples"][0]
+        self.assertIn("visualtail44", row["content_markdown"])
+        self.assertEqual(
+            row["evidence"]["raw_layout_refresh"]["evidence_codes"],
+            ["pdf_rendered_horizontal_rule_extends_example"],
+        )
+
     def test_raw_layout_global_order_repairs_same_chunk_reversed_placeholders(self):
         root = make_test_workspace("raw_global_order_same_chunk")
         structured_dir = root / "structured"
@@ -2327,7 +3028,16 @@ class ExamplePipelineTests(unittest.TestCase):
             {
                 "id": "chapter28_001",
                 "metadata": {"chapter": "chapter28", "formula_references": [], "table_references": []},
-                "blocks": [{"type": "example", "content": "[[SEE_EXAMPLE:28.15]]"}],
+                "blocks": [
+                    {
+                        "type": "discussion",
+                        "content": (
+                            "The joint-effects model has enough surrounding prose to be the real owner. "
+                            "It describes why the equilibrium variance remains biologically plausible."
+                        ),
+                    },
+                    {"type": "example", "content": "[[SEE_EXAMPLE:28.15]]"},
+                ],
             },
         )
         write_json(
@@ -2410,13 +3120,14 @@ class ExamplePipelineTests(unittest.TestCase):
 
         repair = summary["existing_library_repair_stats"]["raw_layout_global_order"]
         self.assertEqual(repair["heading_units_repaired"], 1)
+        self.assertEqual(repair["heading_units_relocated_to_previous_real_prose"], 1)
         early = read_json(structured_dir / "chapter28_001.json")
-        self.assertEqual(early["blocks"], [])
+        self.assertEqual(early["blocks"][-1], {"type": "example", "content": "[[SEE_EXAMPLE:28.15]]"})
         fixed = read_json(structured_dir / "chapter28_002.json")
-        self.assertEqual(fixed["blocks"], [{"type": "example", "content": "[[SEE_EXAMPLE:28.15]]"}])
+        self.assertEqual(fixed["blocks"], [])
         self.assertEqual(fixed["metadata"]["display_heading"], "Joint-effects Models")
         rows = read_json(structured_dir / "example_library.json")["examples"]
-        self.assertEqual(rows[0]["source_file"], "chapter28_002.json")
+        self.assertEqual(rows[0]["source_file"], "chapter28_001.json")
         self.assertIn("As an application", rows[0]["content_markdown"])
 
     def test_raw_layout_global_order_keeps_stable_cross_unit_placeholder(self):
@@ -2631,7 +3342,16 @@ class ExamplePipelineTests(unittest.TestCase):
             {
                 "id": "chapter28_001",
                 "metadata": {"chapter": "chapter28", "formula_references": [], "table_references": []},
-                "blocks": [{"type": "example", "content": "[[SEE_EXAMPLE:28.15]]"}],
+                "blocks": [
+                    {
+                        "type": "discussion",
+                        "content": (
+                            "The preceding real prose explains the joint-effects model and should own "
+                            "the following example after repair."
+                        ),
+                    },
+                    {"type": "example", "content": "[[SEE_EXAMPLE:28.15]]"},
+                ],
             },
         )
         write_json(
@@ -2708,11 +3428,18 @@ class ExamplePipelineTests(unittest.TestCase):
         summary = apply_example_pipeline(structured_dir, project_root=root)
 
         self.assertEqual(summary["existing_library_repair_stats"]["raw_layout_global_order"]["heading_units_repaired"], 1)
+        self.assertEqual(
+            summary["existing_library_repair_stats"]["raw_layout_global_order"][
+                "heading_units_relocated_to_previous_real_prose"
+            ],
+            1,
+        )
+        owner = read_json(structured_dir / "chapter28_001.json")
+        self.assertEqual(owner["blocks"][-1], {"type": "example", "content": "[[SEE_EXAMPLE:28.15]]"})
         fixed = read_json(structured_dir / "chapter28_002.json")
         self.assertEqual(
             fixed["blocks"],
             [
-                {"type": "example", "content": "[[SEE_EXAMPLE:28.15]]"},
                 {"type": "discussion", "content": "The following section should remain ordinary body text."},
             ],
         )
@@ -2889,6 +3616,593 @@ class ExamplePipelineTests(unittest.TestCase):
         rows = {row["example_id"]: row for row in read_json(structured_dir / "example_library.json")["examples"]}
         self.assertIn("3.6", rows)
         self.assertIn("positive and negative", rows["3.6"]["content_markdown"])
+
+    def test_existing_library_repair_removes_example_body_duplicated_as_prose(self):
+        root = make_test_workspace("duplicate_example_body_prose")
+        structured_dir = root / "structured"
+        artifacts_dir = root / "artifacts"
+        duplicate_body = (
+            "Example 3.6. Because natural populations are subject to both positive and negative selective "
+            "forces, the total influence of selection on effective population size must reflect both "
+            "background selection and selective sweeps. Consider a large population of constant breeding "
+            "size and variance in family size, and use the approximation to evaluate the joint reduction."
+        )
+        write_json(
+            structured_dir / "chapter3_013.json",
+            {
+                "id": "chapter3_013",
+                "metadata": {"chapter": "chapter3", "formula_references": [], "table_references": []},
+                "blocks": [
+                    {"type": "discussion", "content": "Background selection discussion."},
+                    {"type": "example", "content": "[[SEE_EXAMPLE:3.6]]"},
+                ],
+            },
+        )
+        write_json(
+            structured_dir / "chapter3_014.json",
+            {
+                "id": "chapter3_014",
+                "metadata": {"chapter": "chapter3", "formula_references": [], "table_references": []},
+                "blocks": [
+                    {"type": "discussion", "content": duplicate_body},
+                    {"type": "discussion", "content": "Following real prose remains."},
+                    {"type": "example", "content": "[[SEE_EXAMPLE:3.7]]"},
+                ],
+            },
+        )
+        write_json(structured_dir / "formula_library.json", {"formulas": []})
+        write_json(structured_dir / "table_library.json", {"tables": []})
+        write_json(
+            structured_dir / "example_library.json",
+            {
+                "schema": "example_library.v1",
+                "example_count": 2,
+                "examples": [
+                    {
+                        "example_id": "3.6",
+                        "example_ref": "3.6",
+                        "placeholder": "[[SEE_EXAMPLE:3.6]]",
+                        "chapter": "chapter3",
+                        "source_file": "chapter3_013.json",
+                        "start_block_index": 1,
+                        "end_block_index": 1,
+                        "content_markdown": duplicate_body,
+                        "content_plain": duplicate_body,
+                        "formula_refs": [],
+                        "table_refs": [],
+                        "figure_refs": [],
+                        "external_refs": [],
+                        "metadata": {"needs_review": False},
+                        "replacement": {
+                            "status": "replaced",
+                            "reason": "placeholder_block_written",
+                            "source_block_span": [1, 1],
+                            "placeholder_block_index": 1,
+                            "placeholder_source_file": "chapter3_013.json",
+                        },
+                    },
+                    {
+                        "example_id": "3.7",
+                        "example_ref": "3.7",
+                        "placeholder": "[[SEE_EXAMPLE:3.7]]",
+                        "chapter": "chapter3",
+                        "source_file": "chapter3_014.json",
+                        "start_block_index": 2,
+                        "end_block_index": 2,
+                        "content_markdown": "Example 3.7. Next example.",
+                        "content_plain": "Example 3.7. Next example.",
+                        "formula_refs": [],
+                        "table_refs": [],
+                        "figure_refs": [],
+                        "external_refs": [],
+                        "metadata": {"needs_review": False},
+                        "replacement": {
+                            "status": "replaced",
+                            "reason": "placeholder_block_written",
+                            "source_block_span": [2, 2],
+                            "placeholder_block_index": 2,
+                            "placeholder_source_file": "chapter3_014.json",
+                        },
+                    },
+                ],
+            },
+        )
+
+        summary = apply_example_pipeline(
+            structured_dir,
+            project_root=root,
+            artifacts_dir=artifacts_dir,
+        )
+
+        repair = summary["existing_library_repair_stats"]["duplicate_body_prose"]
+        self.assertEqual(repair["duplicate_spans_removed"], 1)
+        self.assertEqual(repair["full_blocks_removed"], 1)
+        unit = read_json(structured_dir / "chapter3_014.json")
+        self.assertEqual(
+            [block["content"] for block in unit["blocks"]],
+            ["Following real prose remains.", "[[SEE_EXAMPLE:3.7]]"],
+        )
+        rows = {row["example_id"]: row for row in read_json(structured_dir / "example_library.json")["examples"]}
+        self.assertEqual(rows["3.7"]["start_block_index"], 1)
+        self.assertEqual(rows["3.7"]["replacement"]["placeholder_block_index"], 1)
+
+    def test_duplicate_example_repair_drops_orphan_reference_only_remainder(self):
+        root = make_test_workspace("duplicate_example_body_orphan_reference")
+        structured_dir = root / "structured"
+        duplicate_prefix = (
+            "Example 8.1. While Equation 8.4c appears often in the literature, it overestimates "
+            "the time to fixation in a finite population. A better approximation replaces epsilon "
+            "and yields an improved sweep-time expression."
+        )
+        write_json(
+            structured_dir / "chapter8_008.json",
+            {
+                "id": "chapter8_008",
+                "metadata": {"chapter": "chapter8", "formula_references": [], "table_references": []},
+                "blocks": [{"type": "example", "content": "[[SEE_EXAMPLE:8.1]]"}],
+            },
+        )
+        write_json(
+            structured_dir / "chapter8_009.json",
+            {
+                "id": "chapter8_009",
+                "metadata": {"chapter": "chapter8", "formula_references": [], "table_references": []},
+                "blocks": [{"type": "derivation", "content": f"{duplicate_prefix} [[SEE_FORMULA:8.4d]]"}],
+            },
+        )
+        write_json(structured_dir / "formula_library.json", {"formulas": []})
+        write_json(structured_dir / "table_library.json", {"tables": []})
+        write_json(
+            structured_dir / "example_library.json",
+            {
+                "schema": "example_library.v1",
+                "examples": [
+                    {
+                        "example_id": "8.1",
+                        "example_ref": "8.1",
+                        "placeholder": "[[SEE_EXAMPLE:8.1]]",
+                        "chapter": "chapter8",
+                        "source_file": "chapter8_008.json",
+                        "start_block_index": 0,
+                        "end_block_index": 0,
+                        "content_markdown": f"{duplicate_prefix} $$ x = y $$ (8.4d)",
+                        "content_plain": f"{duplicate_prefix} x = y (8.4d)",
+                        "formula_refs": ["8.4d"],
+                        "table_refs": [],
+                        "figure_refs": [],
+                        "external_refs": [],
+                        "metadata": {"needs_review": False},
+                    }
+                ],
+            },
+        )
+
+        summary = apply_example_pipeline(structured_dir, project_root=root)
+
+        repair = summary["existing_library_repair_stats"]["duplicate_body_prose"]
+        self.assertEqual(repair["full_blocks_removed"], 1)
+        self.assertEqual(read_json(structured_dir / "chapter8_009.json")["blocks"], [])
+
+    def test_duplicate_example_repair_trims_middle_fuzzy_overlap_only(self):
+        root = make_test_workspace("duplicate_example_body_middle_fuzzy")
+        structured_dir = root / "structured"
+        before = (
+            "Returning to the figure, the axes of symmetry describe the visible surface. "
+            "This surrounding discussion should remain in the structured section."
+        )
+        duplicate_middle = (
+            "gamma one matrix has entries negative two and point two five, while the eigenvector "
+            "matrix rotates the coordinate system and the diagonal matrix stores the canonical "
+            "curvatures used in the worked example. the transformed variables are obtained from "
+            "the eigenvectors and the resulting quadratic term separates the two canonical axes "
+            "with one curvature attached to each transformed coordinate. because the eigenvectors "
+            "define a rotated coordinate system the same quadratic surface can be described without "
+            "a cross product term in the canonical coordinates. the first transformed coordinate "
+            "collects the contribution from the first eigenvector and the second transformed "
+            "coordinate collects the contribution from the second eigenvector. this repeated "
+            "matrix calculation belongs inside the worked example rather than in the surrounding "
+            "section prose."
+        )
+        after = (
+            "Further issues relating to visualization are discussed in the following paragraph, "
+            "and this trailing prose also belongs to the section."
+        )
+        write_json(
+            structured_dir / "chapter30_014.json",
+            {
+                "id": "chapter30_014",
+                "metadata": {"chapter": "chapter30", "formula_references": [], "table_references": []},
+                "blocks": [
+                    {"type": "example", "content": "[[SEE_EXAMPLE:30.5]]"},
+                    {"type": "discussion", "content": f"{before} {duplicate_middle} {after}"},
+                ],
+            },
+        )
+        write_json(structured_dir / "formula_library.json", {"formulas": []})
+        write_json(structured_dir / "table_library.json", {"tables": []})
+        write_json(
+            structured_dir / "example_library.json",
+            {
+                "schema": "example_library.v1",
+                "examples": [
+                    {
+                        "example_id": "30.5",
+                        "example_ref": "30.5",
+                        "placeholder": "[[SEE_EXAMPLE:30.5]]",
+                        "chapter": "chapter30",
+                        "source_file": "chapter30_014.json",
+                        "start_block_index": 0,
+                        "end_block_index": 0,
+                        "content_markdown": (
+                            "Example 30.5. Consider the first scenarios. "
+                            f"{duplicate_middle} The transformed variables complete the example."
+                        ),
+                        "content_plain": (
+                            "Example 30.5. Consider the first scenarios. "
+                            f"{duplicate_middle} The transformed variables complete the example."
+                        ),
+                        "formula_refs": [],
+                        "table_refs": [],
+                        "figure_refs": [],
+                        "external_refs": [],
+                        "metadata": {"needs_review": False},
+                    }
+                ],
+            },
+        )
+
+        summary = apply_example_pipeline(structured_dir, project_root=root)
+
+        repair = summary["existing_library_repair_stats"]["duplicate_body_prose"]
+        self.assertEqual(repair["partial_blocks_trimmed"], 1)
+        content = read_json(structured_dir / "chapter30_014.json")["blocks"][1]["content"]
+        self.assertIn("surrounding discussion should remain", content)
+        self.assertIn("trailing prose also belongs", content)
+        self.assertNotIn("diagonal matrix stores", content)
+
+    def test_existing_library_relocates_isolated_example_chunk_to_previous_real_prose_unit(self):
+        root = make_test_workspace("isolated_example_chunk")
+        structured_dir = root / "structured"
+        artifacts_dir = root / "artifacts"
+        write_json(
+            structured_dir / "chapter8_024.json",
+            {
+                "id": "chapter8_024",
+                "metadata": {"chapter": "chapter8", "display_heading": "How Likely is a Sweep?"},
+                "blocks": [
+                    {
+                        "type": "discussion",
+                        "content": (
+                            "Hermisson and Pennings used population genetic models to examine sweeps from "
+                            "standing variation, and this real prose should own the worked examples."
+                        ),
+                    }
+                ],
+            },
+        )
+        write_json(
+            structured_dir / "chapter8_025.json",
+            {
+                "id": "chapter8_025",
+                "metadata": {"chapter": "chapter8", "display_heading": "How Likely is a Sweep?"},
+                "blocks": [
+                    {"type": "example", "content": "[[SEE_EXAMPLE:8.8]]"},
+                    {"type": "example", "content": "[[EXAMPLE:8.9]]"},
+                ],
+            },
+        )
+        write_json(structured_dir / "formula_library.json", {"formulas": []})
+        write_json(structured_dir / "table_library.json", {"tables": []})
+        write_json(
+            structured_dir / "example_library.json",
+            {
+                "schema": "example_library.v1",
+                "example_count": 2,
+                "examples": [
+                    {
+                        "example_id": "8.8",
+                        "example_ref": "8.8",
+                        "placeholder": "[[SEE_EXAMPLE:8.8]]",
+                        "chapter": "chapter8",
+                        "source_file": "chapter8_025.json",
+                        "start_block_index": 0,
+                        "end_block_index": 0,
+                        "content_markdown": "Example 8.8. Mutation can be rate limiting.",
+                        "content_plain": "Example 8.8. Mutation can be rate limiting.",
+                        "formula_refs": [],
+                        "table_refs": [],
+                        "figure_refs": [],
+                        "external_refs": [],
+                        "metadata": {"needs_review": False},
+                        "replacement": {
+                            "status": "replaced",
+                            "reason": "placeholder_block_written",
+                            "source_block_span": [0, 0],
+                            "placeholder_block_index": 0,
+                            "placeholder_source_file": "chapter8_025.json",
+                        },
+                    },
+                    {
+                        "example_id": "8.9",
+                        "example_ref": "8.9",
+                        "placeholder": "[[EXAMPLE:8.9]]",
+                        "chapter": "chapter8",
+                        "source_file": "chapter8_025.json",
+                        "start_block_index": 1,
+                        "end_block_index": 1,
+                        "content_markdown": "Example 8.9. Standing variation can seed a sweep.",
+                        "content_plain": "Example 8.9. Standing variation can seed a sweep.",
+                        "formula_refs": [],
+                        "table_refs": [],
+                        "figure_refs": [],
+                        "external_refs": [],
+                        "metadata": {"needs_review": False},
+                        "replacement": {
+                            "status": "replaced",
+                            "reason": "placeholder_block_written",
+                            "source_block_span": [1, 1],
+                            "placeholder_block_index": 1,
+                            "placeholder_source_file": "chapter8_025.json",
+                        },
+                    },
+                ],
+            },
+        )
+
+        summary = apply_example_pipeline(
+            structured_dir,
+            project_root=root,
+            artifacts_dir=artifacts_dir,
+        )
+
+        repair = summary["existing_library_repair_stats"]["isolated_example_chunks"]
+        self.assertEqual(repair["rows_relocated"], 2)
+        owner = read_json(structured_dir / "chapter8_024.json")
+        isolated = read_json(structured_dir / "chapter8_025.json")
+        self.assertEqual(
+            [block["content"] for block in owner["blocks"]],
+            [
+                "Hermisson and Pennings used population genetic models to examine sweeps from standing variation, and this real prose should own the worked examples.",
+                "[[SEE_EXAMPLE:8.8]]",
+                "[[EXAMPLE:8.9]]",
+            ],
+        )
+        self.assertEqual(isolated["blocks"], [])
+        rows = {row["example_id"]: row for row in read_json(structured_dir / "example_library.json")["examples"]}
+        self.assertEqual(rows["8.8"]["source_file"], "chapter8_024.json")
+        self.assertEqual(rows["8.8"]["replacement"]["placeholder_block_index"], 1)
+        self.assertEqual(rows["8.9"]["source_file"], "chapter8_024.json")
+        self.assertEqual(rows["8.9"]["replacement"]["placeholder_block_index"], 2)
+
+    def test_existing_library_relocates_detached_example_with_short_residue_only(self):
+        root = make_test_workspace("detached_example_short_residue")
+        structured_dir = root / "structured"
+        write_json(
+            structured_dir / "chapter30_013.json",
+            {
+                "id": "chapter30_013",
+                "metadata": {"chapter": "chapter30", "display_heading": "Canonical axes"},
+                "blocks": [
+                    {
+                        "type": "discussion",
+                        "content": (
+                            "The real prose preceding this worked example explains the canonical "
+                            "axes and has enough words to be the owner section."
+                        ),
+                    }
+                ],
+            },
+        )
+        write_json(
+            structured_dir / "chapter30_014.json",
+            {
+                "id": "chapter30_014",
+                "metadata": {"chapter": "chapter30", "display_heading": "Example 30.5"},
+                "blocks": [
+                    {"type": "discussion", "content": "For $\\gamma_2$ ([[SEE_FIGURE:30.3]])"},
+                    {"type": "example", "content": "[[SEE_EXAMPLE:30.5]]"},
+                ],
+            },
+        )
+        write_json(structured_dir / "formula_library.json", {"formulas": []})
+        write_json(structured_dir / "table_library.json", {"tables": []})
+        write_json(
+            structured_dir / "example_library.json",
+            {
+                "schema": "example_library.v1",
+                "examples": [
+                    {
+                        "example_id": "30.5",
+                        "example_ref": "30.5",
+                        "placeholder": "[[SEE_EXAMPLE:30.5]]",
+                        "chapter": "chapter30",
+                        "source_file": "chapter30_014.json",
+                        "start_block_index": 1,
+                        "end_block_index": 1,
+                        "content_markdown": "Example 30.5. Matrix calculation.",
+                        "content_plain": "Example 30.5. Matrix calculation.",
+                        "formula_refs": [],
+                        "table_refs": [],
+                        "figure_refs": [],
+                        "external_refs": [],
+                        "metadata": {"needs_review": False},
+                    }
+                ],
+            },
+        )
+
+        summary = apply_example_pipeline(structured_dir, project_root=root)
+
+        stats = summary["existing_library_repair_stats"]["isolated_example_chunks"]
+        self.assertEqual(stats["detached_units"], 1)
+        self.assertEqual(stats["rows_relocated"], 1)
+        self.assertEqual(read_json(structured_dir / "chapter30_014.json")["blocks"], [])
+        owner = read_json(structured_dir / "chapter30_013.json")
+        self.assertEqual(owner["blocks"][-1], {"type": "example", "content": "[[SEE_EXAMPLE:30.5]]"})
+        row = read_json(structured_dir / "example_library.json")["examples"][0]
+        self.assertEqual(row["source_file"], "chapter30_013.json")
+
+    def test_existing_library_keeps_example_in_unit_with_real_prose(self):
+        root = make_test_workspace("example_with_real_prose_not_detached")
+        structured_dir = root / "structured"
+        write_json(
+            structured_dir / "chapter30_013.json",
+            {
+                "id": "chapter30_013",
+                "metadata": {"chapter": "chapter30", "display_heading": "Canonical axes"},
+                "blocks": [{"type": "discussion", "content": "A preceding unit with real prose."}],
+            },
+        )
+        write_json(
+            structured_dir / "chapter30_014.json",
+            {
+                "id": "chapter30_014",
+                "metadata": {"chapter": "chapter30", "display_heading": "Canonical axes continued"},
+                "blocks": [
+                    {
+                        "type": "discussion",
+                        "content": (
+                            "This chunk has enough real prose to carry its own worked example "
+                            "inside the same section without being moved backward."
+                        ),
+                    },
+                    {"type": "example", "content": "[[SEE_EXAMPLE:30.5]]"},
+                ],
+            },
+        )
+        write_json(structured_dir / "formula_library.json", {"formulas": []})
+        write_json(structured_dir / "table_library.json", {"tables": []})
+        write_json(
+            structured_dir / "example_library.json",
+            {
+                "schema": "example_library.v1",
+                "examples": [
+                    {
+                        "example_id": "30.5",
+                        "example_ref": "30.5",
+                        "placeholder": "[[SEE_EXAMPLE:30.5]]",
+                        "chapter": "chapter30",
+                        "source_file": "chapter30_014.json",
+                        "start_block_index": 1,
+                        "end_block_index": 1,
+                        "content_markdown": "Example 30.5. Matrix calculation.",
+                        "content_plain": "Example 30.5. Matrix calculation.",
+                        "formula_refs": [],
+                        "table_refs": [],
+                        "figure_refs": [],
+                        "external_refs": [],
+                        "metadata": {"needs_review": False},
+                    }
+                ],
+            },
+        )
+
+        summary = apply_example_pipeline(structured_dir, project_root=root)
+
+        stats = summary["existing_library_repair_stats"]["isolated_example_chunks"]
+        self.assertEqual(stats["rows_relocated"], 0)
+        self.assertEqual(
+            read_json(structured_dir / "chapter30_014.json")["blocks"][1]["content"],
+            "[[SEE_EXAMPLE:30.5]]",
+        )
+
+    def test_existing_library_moves_example_from_short_new_heading_but_keeps_trailing_body(self):
+        root = make_test_workspace("example_short_new_heading")
+        structured_dir = root / "structured"
+        write_json(
+            structured_dir / "chapter12_010.json",
+            {
+                "id": "chapter12_010",
+                "metadata": {"chapter": "chapter12", "display_heading": "Migration and Selection"},
+                "blocks": [
+                    {
+                        "type": "discussion",
+                        "content": (
+                            "The previous real subsection introduces the biological setting and "
+                            "is the nearest prose owner for the worked example."
+                        ),
+                    }
+                ],
+            },
+        )
+        write_json(
+            structured_dir / "chapter12_011.json",
+            {
+                "id": "chapter12_011",
+                "metadata": {"chapter": "chapter12", "display_heading": "A New Heading"},
+                "blocks": [
+                    {"type": "discussion", "content": "A short bridge phrase"},
+                    {"type": "example", "content": "[[SEE_EXAMPLE:12.4]]"},
+                    {"type": "example", "content": "[[SEE_EXAMPLE:12.5]]"},
+                ],
+            },
+        )
+        write_json(structured_dir / "formula_library.json", {"formulas": []})
+        write_json(structured_dir / "table_library.json", {"tables": []})
+        write_json(
+            structured_dir / "example_library.json",
+            {
+                "schema": "example_library.v1",
+                "examples": [
+                    {
+                        "example_id": "12.4",
+                        "example_ref": "12.4",
+                        "placeholder": "[[SEE_EXAMPLE:12.4]]",
+                        "chapter": "chapter12",
+                        "source_file": "chapter12_011.json",
+                        "start_block_index": 1,
+                        "end_block_index": 1,
+                        "content_markdown": "Example 12.4. The migration example belongs above.",
+                        "content_plain": "Example 12.4. The migration example belongs above.",
+                        "formula_refs": [],
+                        "table_refs": [],
+                        "figure_refs": [],
+                        "external_refs": [],
+                        "metadata": {"needs_review": False},
+                        "replacement": {"placeholder_block_index": 1, "source_block_span": [1, 1]},
+                    },
+                    {
+                        "example_id": "12.5",
+                        "example_ref": "12.5",
+                        "placeholder": "[[SEE_EXAMPLE:12.5]]",
+                        "chapter": "chapter12",
+                        "source_file": "chapter12_011.json",
+                        "start_block_index": 2,
+                        "end_block_index": 2,
+                        "content_markdown": "Example 12.5. The next example also belongs above.",
+                        "content_plain": "Example 12.5. The next example also belongs above.",
+                        "formula_refs": [],
+                        "table_refs": [],
+                        "figure_refs": [],
+                        "external_refs": [],
+                        "metadata": {"needs_review": False},
+                        "replacement": {"placeholder_block_index": 2, "source_block_span": [2, 2]},
+                    },
+                ],
+            },
+        )
+
+        summary = apply_example_pipeline(structured_dir, project_root=root)
+
+        stats = summary["existing_library_repair_stats"]["isolated_example_chunks"]
+        self.assertEqual(stats["detached_units"], 1)
+        self.assertEqual(stats["rows_relocated"], 2)
+        owner = read_json(structured_dir / "chapter12_010.json")
+        self.assertEqual(
+            [block["content"] for block in owner["blocks"]],
+            [
+                "The previous real subsection introduces the biological setting and is the nearest prose owner for the worked example.",
+                "[[SEE_EXAMPLE:12.4]]",
+                "[[SEE_EXAMPLE:12.5]]",
+            ],
+        )
+        trailing = read_json(structured_dir / "chapter12_011.json")
+        self.assertEqual(trailing["blocks"], [{"type": "discussion", "content": "A short bridge phrase"}])
+        rows = {row["example_id"]: row for row in read_json(structured_dir / "example_library.json")["examples"]}
+        self.assertEqual(rows["12.4"]["source_file"], "chapter12_010.json")
+        self.assertEqual(rows["12.4"]["replacement"]["placeholder_block_index"], 1)
+        self.assertEqual(rows["12.5"]["source_file"], "chapter12_010.json")
+        self.assertEqual(rows["12.5"]["replacement"]["placeholder_block_index"], 2)
 
 
 if __name__ == "__main__":

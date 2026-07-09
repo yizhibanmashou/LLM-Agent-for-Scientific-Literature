@@ -1,0 +1,39 @@
+{
+  "id": "Evolution_chapter5_004",
+  "metadata": {
+    "chapter": "Evolution_chapter5",
+    "section": "SINGLE-LOCUS SELECTION: TWO ALLELES",
+    "subsections": [
+      "Expected Time for Allele-frequency Change"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter5_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "SINGLE-LOCUS SELECTION: TWO ALLELES",
+    "section_level_2": "Expected Time for Allele-frequency Change",
+    "heading_path": [
+      "SINGLE-LOCUS SELECTION: TWO ALLELES",
+      "Expected Time for Allele-frequency Change"
+    ],
+    "display_heading": "Expected Time for Allele-frequency Change"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "A key issue in selection theory is the expected time required for a given amount of allele-frequency change. Assuming that s and sh are small (i.e., there is weak selection, so that $ \\overline{W} \\simeq 1 $), we can ignore $ \\overline{W} $ in Equation 5.1.c as a first-order approximation (see Example 5.1). Equation 5.1c then shows that the change in allele frequency p under weak selection is approximated by the differential equation $$ \\frac{dp}{dt}=sp(1-p)[1+h(1-2p)] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "For additive selection $ (h = 0) $, this has a simple solution of $$ p_{t}=\\frac{p_{0}}{p_{0}+(1-p_{0})e^{-st}} $$ where $ p_t $ is the frequency of allele $ A $ at time $ t $. Often of greater interest is $ t_{p_t,p_0} $, the expected time required to move from initial frequency of $ p_0 $ to target value of $ p_t $. From Equation 5.3a, this is given by the integral $$ t_{p_{t},p_{0}}=\\frac{1}{s}\\int_{p_{0}}^{p_{t}}\\frac{dx}{x(1-x)[1+h(1-2x)]} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Crow and Kimura (1970) presented explicit results for several important cases. If fitnesses are additive $ (h = 0) $ $$ t_{p_{t},p_{0}}\\simeq\\frac{1}{s}\\ln\\left(\\frac{p_{t}\\left(1-p_{0}\\right)}{p_{0}\\left(1-p_{t}\\right)}\\right) $$ whereas if A is recessive $ (h = -1) $ $$ t_{p_{t},p_{0}}\\simeq\\frac{1}{2s}\\left[\\ln\\left(\\frac{p_{t}\\left(1-p_{0}\\right)}{p_{0}\\left(1-p_{t}\\right)}\\right)-\\frac{1}{p_{t}}+\\frac{1}{p_{0}}\\right] $$ and finally, if A is dominant $ (h = 1) $ $$ t_{p_{t},p_{0}}\\simeq\\frac{1}{2s}\\left[\\ln\\left(\\frac{p_{t}\\left(1-p_{0}\\right)}{p_{0}\\left(1-p_{t}\\right)}\\right)+\\frac{1}{1-p_{t}}-\\frac{1}{1-p_{0}}\\right] $$"
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:5.2]]"
+    }
+  ]
+}

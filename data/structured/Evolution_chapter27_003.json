@@ -1,0 +1,99 @@
+{
+  "id": "Evolution_chapter27_003",
+  "metadata": {
+    "chapter": "Evolution_chapter27",
+    "section": "FISHER'S MODEL: THE ADAPTIVE GEOMETRY OF NEW MUTATIONS",
+    "subsections": [
+      "Fisher-Kimura-Orr Adaptive Walks"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter27_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "FISHER'S MODEL: THE ADAPTIVE GEOMETRY OF NEW MUTATIONS",
+    "section_level_2": "Fisher-Kimura-Orr Adaptive Walks",
+    "heading_path": [
+      "FISHER'S MODEL: THE ADAPTIVE GEOMETRY OF NEW MUTATIONS",
+      "Fisher-Kimura-Orr Adaptive Walks"
+    ],
+    "display_heading": "Fisher-Kimura-Orr Adaptive Walks"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "A subtle feature, first noted by Kimura (1983), makes Fisher's smaller-is-better result misleading. An examination of Equation 27.1b and Figure 27.1B suggests that the majority of beneficial mutations are those with very small effects—those mutations whose length, $r$, satisfies $x \\ll 1$, namely, $r \\ll 2d/\\sqrt{n}$. While this is indeed correct (under Fisher's model), Kimura noted that such small-effect mutations also have very small selective advantages, and therefore (while beneficial) are unlikely to be fixed by natural selection. Recall from Chapter 7 that the fixation probability of a favorable allele is $\\simeq 2s$, so that the magnitude of $s$, not only its sign, is important in determining which factors become fixed."
+    },
+    {
+      "type": "discussion",
+      "content": "Under Fisher’s model, and conditioning on a mutation being beneficial, the expected value of $s$ is linearly proportional to $x$, as the distance from $\\theta$ is an indicator of fitness (Kimura 1983; Orr 1998b). This can be more compactly written as $E[s] \\propto x$. Thus, the probability that a mutation will be fixed is a function of both its selective advantage and its chance of being beneficial, $(2s) \\cdot p_b \\propto (2x) \\cdot [1 - \\Phi(x)]$. We call this the probability of adaptation. As shown in Figure 27.2, the outcome is a dramatic shift in our interpretation of Fisher’s result: adaptation favors mutations of intermediate effect. A comparison of the difference between Figures 27.1B and 27.2 highlights a critical distinction important throughout this chapter, namely, the difference between the distribution of effects (be they trait values or fitness) over all new beneficial mutations versus the distribution of effects restricted to fixed beneficial mutations."
+    },
+    {
+      "type": "discussion",
+      "content": "There is an irony here in that although Fisher was a pan-selectionist, his initial analysis suggested that alleles of very small effect (i.e., nearly neutral) were more important for adaptation (i.e., comprise the majority of beneficial mutations). Conversely, Kimura, the founder of the neutral theory, showed that Fisher's model (when more carefully considered) argues for a role of stronger selection than envisioned by Fisher (i.e., fixing alleles of intermediate, rather than small, effect)."
+    },
+    {
+      "type": "discussion",
+      "content": "It is important to note that Figure 27.2 does not reflect the distribution of the x values for fixed mutations (i.e., the scaled lengths of fixed mutations). Rather, it describes the filter of natural selection, giving the chance that a mutation with effect x is fixed. The distribution of the x-scaled r values for fixed mutations depends on the product of the distribution of new mutational input (the distribution of r values among new alleles) and the chance that each is fixed (Figure 27.2)."
+    },
+    {
+      "type": "discussion",
+      "content": "To decouple the separate issues of the impact of selection (given a specific effect size) and the distribution of mutational effect sizes, both Kimura and Orr initially assumed a uniform distribution of effect sizes. This focuses on the role of the filter of selection. The key finding, of a roughly exponential distribution of fixed trait effects, holds under rather general distributions of the effects of new mutations. For example, an exponential distribution of r, when compounded with an exponential distribution of fixed effects for a given value of r, returns an exponential. Orr's (1998b) simulations showed that the result of a roughly exponential distribution of the effect sizes of successful (i.e., fixed) mutations was remarkably robust to the assumed distribution of mutational effect sizes."
+    },
+    {
+      "type": "discussion",
+      "content": "To examine the impact of selection on the pattern of successive fixations, we first consider the scaled length $ (x_1) $ of the initial successful (fixed) mutation at the start of a walk. The scaling from $ r $ into $ x $ accounts for both the initial distance from the optimum $ (d_0 = ||\\mathbf{z} - \\boldsymbol{\\theta}||) $ and dimensionality $ (n) $ of the process (Equation 27.1a). Assuming a uniform distribution for the $ r $ values of new mutations, Kimura found that the expected value for $ x_1 = r_1 \\sqrt{n}/[2d_0] $ of this first successful mutation is $ E[x_1] \\simeq 1.06 $. Hence, $$ E[x_{1}]=\\frac{E[r_{1}]\\sqrt{n}}{2d_{0}}\\simeq1.06,\\quad or\\quad E[r_{1}]\\simeq\\frac{2.12d_{0}}{\\sqrt{n}} $$ where $ E[r_1] $ is the expected value of $ r $ for the first-fixed mutation. For example, for $ n = 10 $, $ E[r_1] = 0.67d_0 $, while $ E[r_1] = 0.3d_0 $ for $ n = 50 $. Orr (1998b, 1999, 2000) noted that Kimura's result is simply the first step of the adaptive walk starting at distance $ d_0 $ from the optimum. Following this first fixation, the walk starts anew from distance $ d_1 < d_0 $ (Figure 27.3)."
+    },
+    {
+      "type": "discussion",
+      "content": "It is important to note that $ E[r_1] $ is the expected total length of the vector of mutational increments (the distance between $ z $ and its value, $ z' = z + m $, after the mutation, with $ r = ||m|| $). Our real interest is not this length, but rather in how much of this displacement is toward $ \\theta $, meaning that the new phenotype is actually closer (and more adaptive) than $ z $, i.e., $ ||z' - \\theta|| < ||z - \\theta|| $. A large value of $ r_1 $, by itself, does not imply a large jump closer to $ \\theta $. Hence, to continue our analysis of the walk, we first need to compute the expected distance moved toward the optimum (i.e., the new distance, $ d_1 = ||z' - \\theta|| $, from $ \\theta $; Figure 27.3) after this first step of the walk (the first fixation event)."
+    },
+    {
+      "type": "discussion",
+      "content": "How much closer does fixing a mutation move us toward the optimum? The first fixed mutation almost never points exactly in the direction of the optimum, so that the actual amount of adaptation (distance moved toward $ \\theta $) is less, and likely much less, than the length of the jump (Figure 27.3). Thus, instead of $ E[x_1] $, we need to consider the length, $ E[x_p,1] $, of the expected projection (Appendix 5) in the direction of the optimum. For large n, Orr (1998b) found that this projection is approximately $$ E[x_{p,1}]\\simeq\\frac{E[x_{1}]}{\\sqrt{n}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Scaling the phenotypes such that the initial distance from the optimum is one ($ ||\\mathbf{z}-\\boldsymbol{\\theta}|| = d_0 = 1 $), from Equation 27.1a the starting distance on the $ x $ scale is $ \\sqrt{n}/2 $. Hence, following the first jump (the first fixation of a beneficial mutation), the population (on average) moves to a distance (in the $ x $ value scale) of $$ \\begin{align*}\\sqrt{n}/2-E[x_{p,1}]=\\sqrt{n}/2-E[x_1]/\\sqrt{n}\\end{align*} $$ which implies that the new distance to the optimum (on the x scale) following the first jump is a fraction, $$ \\frac{\\sqrt{n}/2-E[x_{1}]/\\sqrt{n}}{\\sqrt{n}/2}=1-2E[x_{1}]/n $$ of the initial starting distance."
+    },
+    {
+      "type": "discussion",
+      "content": "Orr's key insight was that the size distribution of the second jump (i.e., the distribution of $ x_2 $) is the same as that of the first jump, but with the distance to the optimum reduced an amount given by Equation 27.2c. Likewise, following the second jump, the distance to the optimum (as a fraction of the original distance) is the square of the value calculated by Equation 27.2c, and so forth, which generates a self-similar process for each step of the walk toward the optimum, for which $ E[d_i] = (1 - 2E[x_1]/n)^r d_0 $. It is this self-similar feature that generates the exponential distribution of effect sizes among fixed mutations. Orr (1998b) obtained the distribution for the Fisher-scaled effect size ($ x = r \\sqrt{n}/2 $, taking $ d = d_0 = 1 $) of the new mutation (Equation 27.1a) during step $ k $ of the walk as $$ \\begin{align*}\\psi(x,k)=C c_k^2 x\\left[1-\\Phi(c_kx)\\right]\\quad{\\rm where}\\quad c_k=\\left(1-\\frac{2E[x_1]}{n}\\right)^{1-k}\\end{align*} $$ where $C$ is a normalization constant. This expression is for a uniform distribution of mutation effects (the $r$ values). More generally, the $C c_k^2$ terms in Equation 27.3 are replaced by $C \\phi(c_k x) c_k^2 x$, where $\\phi$ is the assumed distribution of mutational effects (Orr 1998b)."
+    },
+    {
+      "type": "discussion",
+      "content": "Assuming a uniform distribution of mutation effects (the $r$ values), Orr showed that Equation 27.3 implies that the distribution of the $x_i = r_i \\sqrt{n}/2$ is approximately exponential with parameter $ \\lambda \\simeq 2.9 $ (i.e., with a mean value of $ 1/\\lambda \\sim 0.34 $). Simulation studies by Orr (1998b, 1999) showed that this result is very robust to different assumptions about the distribution of mutational inputs, especially when large-effect mutations are not common."
+    },
+    {
+      "type": "discussion",
+      "content": "Orr’s simulations also showed that the exponential approximation may break down for mutations near the very end of the walk, where the fixed values of $ x_i $ are very small as the process very closely approaches $ \\theta $. In part, this behavior arises because of the drift barrier, discussed in Chapter 7. As the fitness effects of a mutation become sufficiently small ($ 4N_e|s| \\ll 1 $), the fixation probability approaches the neutral expectation (i.e., the initial allele frequency, $ 1/[2N] $), rather than 2s. Hence, even in a constant environment, perfect adaptation does not occur. Rather, as the drift barrier is approached, there is a constant fixation of mutations of very small effect, which are random in their direction toward, and away from, the optimum. Hence, Orr’s key finding that the distribution of the effects of fixed mutations during a walk is roughly exponential is tempered somewhat by departures for fixed mutations with very small effects. However, given that this class of fixed mutations with very small effects would be very difficult to detect, from an empirical standpoint, the bulk of any detected substitutions during a walk would follow an approximately exponential distribution."
+    },
+    {
+      "type": "discussion",
+      "content": "A critical point noted by Orr (1998b), and shown in Figure 27.3, is that the largest “jump” in the walk, $ x_{[1]} $ (the largest scaled length for any of the fixed mutations), does not necessarily correspond to the first jump, $ x_{1} $ (the scaled length of the vector of effects for the first fixed mutation). The expected value of the largest jump is approximately $$ E[x_{[1]}]\\simeq\\frac{1}{\\lambda}\\left[\\ln\\left(\\frac{\\lambda n}{2}\\right)+0.5772\\right] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "For example, taking $ \\lambda = 2.9 $ and $ n = 50 $, Equation 27.4a yields the expected largest jump as $ E[x_{[1]}] \\simeq 1.68 $, implying an expected total mutational size of $ E[r_{[1]}] = 3.36d_0/\\sqrt{n} $. Conversely, the expected value of the first jump is $ E[x_1] \\simeq 1.06 $, or a mutation with $ E[r_{[1]}] = 2.12d_0/\\sqrt{n} $, which is $ \\sim 60% $ of the expected size of the largest jump. More generally, the expected value of the $ k $th largest jump is $$ E[x_{[k]}]\\simeq\\frac{1}{\\lambda}\\left[\\ln\\left(\\frac{\\lambda n}{2}\\right)-\\sum_{i=1}^{k-1}\\frac{1}{i}+0.5772\\right] $$ and Equation 27.1a yields $ E[r_{[k]}] = (2d_0/\\sqrt{n})E[x_{[k]}] $. Using this result to consider the quantity $ (E[x_{[k]}] - E[x_{[k+1]}]) $ provides the expected difference in the scaled $ r $ values for the $ k $ and $ k + 1 $ largest fixed mutations, which yields $$ E[x_{[k]}]-E[x_{[k+1]}]=E[\\Delta_{[k]}]\\simeq\\frac{1}{\\lambda}\\left[\\sum_{i=1}^{k}\\frac{1}{i}-\\sum_{i=1}^{k-1}\\frac{1}{i}\\right]=\\frac{1}{\\lambda k}=\\frac{0.349}{k} $$ for $ \\lambda \\simeq 2.9 $. For example, rearranging yields $ E[x_{[2]}] = E[x_{[1]}] - 0.349 = 1.33 $, and so on. This form of spacing will reappear in our discussion of walks modeled by extreme-value theory."
+    },
+    {
+      "type": "discussion",
+      "content": "The careful reader might have noticed that Orr’s finding of an approximate exponential distribution in the effects of fixed mutations refers to the lengths, r, of the vectors of these mutations. This is different from the actual phenotypic effect size for any single trait. Orr (1999) addressed this issue, and found that the projection of a favorable (but otherwise random with respect to direction) vector of length r onto any particular trait (say trait j) is roughly normally distributed, with an expected absolute value of $$ E[|z_{j}|]=\\frac{2r}{\\pi\\sqrt{n}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Hence, the distribution of the effect sizes for a single trait is the result of sampling from two distributions. First, the expected value of the effect size (Equation 27.5) is a function of the random variable, r, which is roughly exponentially distributed for fixed mutations. Second, there is sampling noise around the expected value given by Equation 27.5, namely, the roughly normal distribution for the projection from a given value of r onto the mutational effect on any given single trait. It is therefore not surprising that Orr's simulations showed that the effect-size distribution on any particular single trait also shows a strong exponential trend (with Gaussian sampling noise around the expected trend). Thus, while the total lengths of the mutational displacement vectors associated with fixed mutations are roughly exponentially distributed, so too are the resulting changes in the phenotypic values of fixed mutations for any particular trait. Consequently, if we could score the phenotypic effects on a trait over the set of fixed mutations leading to the current adaptation, we would expect them to be roughly exponential (except for those fixed mutations with effects on a trait that are extremely small, and therefore difficult to detect)."
+    },
+    {
+      "type": "discussion",
+      "content": "The view of a random walk as a series of discrete, fixed steps is one extreme vision, and essentially a hard-sweep view (Chapter 8). The other extreme view is of the constant generation of mutations of small effect, which mount a continuous infinitesimal response (soft or partial sweeps; Chapter 8). Lande's analysis (Chapter 25) showed that polygenic response (changes in the trait mean through allele-frequency changes, and not necessarily fixations, at a large number of loci of small effect) is favored when major genes have negative pleiotropic effects on other traits, unless there is strong selection on a focal trait. Hence, adaptive walks that follow Fisher's model may be biased toward cases of traits that are under strong selection."
+    },
+    {
+      "type": "proposition",
+      "content": "A second assumption of the Fisher-Kimura-Orr adaptive walk model is weak mutation, with only a single beneficial mutation segregating at any one time. With multiple segregating mutations, Hill-Robertson effects (Chapters 3, 7, and 8) reduce the effectiveness of selection, the most extreme example being clonal interference in asexuals (Gerrish and Lenski 1998; Rozen et al. 2002). When considering the fixation of mutations in clonal (asexual) populations, a new beneficial mutation must first avoid stochastic loss when rare. While such surviving cosegregating beneficial mutations (which we denote as competing) may be fixed in a sexual population, in an asexual population they are fully linked to genomes that may experience additional beneficial mutations before the initial mutation becomes fixed. When $ N_{\\mu} \\ll 1 $, the presence of multiple segregating beneficial mutations is unlikely (where $ \\mu $ is now the genomewide beneficial mutation rate). However, when $ N_{\\mu} \\gg 1 $, clonal interference can occur, wherein the most fit genomes compete with each other and only one is ultimately fixed (Gerrish and Lenski 1998; Elena and Lenski 2003; Barrick and Lenski 2013; Levy et al. 2015). As noted by Barrett et al. (2006a), the winning genome often accrues several beneficial mutations on its way to fixation (outcompeting genomes with potentially more favorable initial mutations that did not accumulate additional beneficial mutations), which can result in an investigator overestimating the fitness effects under the assumption of a single beneficial mutation driving the fixation."
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:27.1]]"
+    }
+  ]
+}

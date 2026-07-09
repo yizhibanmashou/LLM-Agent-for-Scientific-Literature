@@ -1,0 +1,63 @@
+{
+  "id": "Genetics_chapter7_014",
+  "metadata": {
+    "chapter": "Genetics_chapter7",
+    "section": "Introduction to Matrix Algebra and Linear Models",
+    "subsections": [
+      "MULTIPLE REGRESSION"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter7_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction to Matrix Algebra and Linear Models",
+    "section_level_2": "MULTIPLE REGRESSION",
+    "heading_path": [
+      "Introduction to Matrix Algebra and Linear Models",
+      "MULTIPLE REGRESSION"
+    ],
+    "display_heading": "MULTIPLE REGRESSION"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "As a point of departure, consider the multiple regression $$ y=\\alpha+\\beta_{1}z_{1}+\\beta_{2}z_{2}+\\cdots+\\beta_{n}z_{n}+e $$ where $y$ is the response variable, and the $z_{i}$ are the predictor (or explanatory) variables used to predict the value of the response variable. This multivariate equation is similar to the expression for a simple linear regression, Equation 3.12a, except that $y$ is now a function of $n$ predictor variables, rather than of one. The variables $y, z_1, \\ldots, z_n$ represent observed measures, whereas $\\alpha$ and $\\beta_1, \\ldots, \\beta_n$ are constants to be estimated. As in the case of simple linear regression, $e$ (the residual error) is the deviation between the observed and fitted value of $y$. Recall that the use of a linear model involves no assumptions regarding the true form of relationship between $y$ and $z_1, \\ldots, z_n$. It simply gives the best linear approximation. Many statistical techniques, including path analysis (Appendix 2) and analysis of variance (Chapter 17), are based on versions of Equation 8.1."
+    },
+    {
+      "type": "discussion",
+      "content": "The terms $ \\beta_{1}, \\ldots, \\beta_{n} $ are known as partial regression coefficients. Notice that when all but the $ i $th predictor variable are held constant in Equation 8.1, the formula reduces to a univariate model similar to Equation 3.12a but with slope $ \\beta_{i} $. This partial regression coefficient often differs from the simple regression coefficient, $ \\beta_{i} $. Suppose, for example, that a simple regression of $ y $ on $ z_{1} $ has a slope of zero. This might lead to the suggestion that there is no relationship between $ z_{1} $ and $ y $. However, it is conceivable that $ z_{1} $ actually has a strong positive effect on $ y $ that is obscured by positive correlations of $ z_{1} $ with other variables that have negative influences on $ y $. A multiple regression that included the appropriate variables would clarify this situation by yielding a positive $ \\beta_{1} $."
+    },
+    {
+      "type": "discussion",
+      "content": "Since it is usually impossible for biologists to evaluate partial regression coefficients by empirically imposing constancy on all extraneous variables, we require a more indirect approach to the problem. From Chapter 3, the covariance of y and a predictor variable is $$ $$"
+    },
+    {
+      "type": "discussion",
+      "content": "(y,z_ i)&= \\\\&= _ 1 (z_ 1,z_ i)+ _ 2 (z_ 2,z_ i)+ + _ n (z_ n,z_ i)+ (e,z_ i) $$ $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The term $ \\sigma(\\alpha, z_i) $ has dropped out because the covariance of $ z_i $ with a constant $ (\\alpha) $ is zero. By applying Equation 8.2 to each predictor variable, we obtain a set of $ n $ equations in $ n $ unknowns $ (\\beta_1, \\ldots, \\beta_n) $, $$ \\begin{aligned}\\sigma(y,z_{1})&=\\beta_{1}\\sigma^{2}(z_{1})+\\beta_{2}\\sigma(z_{1},z_{2})+\\cdots+\\beta_{n}\\sigma(z_{1},z_{n})+\\sigma(z_{1},e)\\\\\\sigma(y,z_{2})&=\\beta_{1}\\sigma(z_{1},z_{2})+\\beta_{2}\\sigma^{2}(z_{2})+\\cdots+\\beta_{n}\\sigma(z_{2},z_{n})+\\sigma(z_{2},e)\\\\\\vdots&\\quad\\vdots\\quad\\vdots\\quad\\ddots\\quad\\vdots\\quad\\vdots\\\\\\sigma(y,z_{n})&=\\beta_{1}\\sigma(z_{1},z_{n})+\\beta_{2}\\sigma(z_{2},z_{n})+\\cdots+\\beta_{n}\\sigma^{2}(z_{n})+\\sigma(z_{n},e)\\end{aligned} $$ As in univariate regression, our task is to find the set of constants ($ \\alpha $ and the partial regression coefficients $ \\beta_i $) that gives the best linear fit of the conditional expectation of $ y $ given $ z_1, \\cdots, z_n $. Again, the criterion we choose for “best” relies on the least-squares approach, which minimizes the squared differences between observed and expected values. Thus, our task is to find that set of $ \\alpha, \\beta_1, \\cdots, \\beta_n $ giving $ \\widehat{y} = \\alpha + \\sum \\beta_i z_i $ such that $ E[(y - \\widehat{y})^2 | z_1, \\cdots, z_n] $ is minimized. Taking derivatives of this expectation with respect to $ \\alpha $ and the $ \\beta_i $ and setting each equal to zero, it can be shown that the set of equations given by Equation 8.3 is, in fact, the least-squares solution to Equation 8.1. If the appropriate variances and covariances are known, the $ \\beta_{i} $ can be obtained exactly. If these are unknown, as is usually the case, the least-squares estimates $ b_{i} $ are obtained from Equation 8.3 by substituting the observed (estimated) variances and covariances for their (unknown) population values."
+    },
+    {
+      "type": "discussion",
+      "content": "The properties of least-squares multiple regression are analogous to those for simple regression. First, the procedure yields a solution such that the average deviation of y from $ \\widehat{y} $, $ E(e) $, is zero. Hence $ E(y) = E(\\widehat{y}) $, implying $$ \\bar{y}=a+b_{1}\\bar{z}_{1}+\\cdots+b_{n}\\bar{z}_{n} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, once the fitted values $b_{1},\\ldots,b_{n}$ are obtained from Equation 8.3, the intercept is defined by $a=\\bar{y}-b_{1}\\bar{z}_{1}-\\cdots-b_{n}\\bar{z}_{n}$. Second, least-squares analysis gives a solution in which the residual errors are uncorrelated with the predictor variables. Thus, the terms $\\sigma(e,z_{i})$ can be dropped from Equation 8.3. Third, the partial regression coefficients are entirely defined by variances and covariances. However, unlike simple regression coefficients, which depend on only a single variance and covariance, each partial regression coefficient is a function of the variances and covariances of all measured variables. Notice that if $n=1$, then $\\sigma(y,z_{1})=\\beta_{1}\\sigma^{2}(z_{1})$, and we recover the univariate solution $\\beta_{1}=\\sigma(y,z_{1})/\\sigma^{2}(z_{1})$."
+    },
+    {
+      "type": "discussion",
+      "content": "A simple pattern exists in each of the $n$ equations in 8.3. The $i$th equation defines the covariance of $y$ and $z_i$ as the sum of two types of quantities: a single term, which is the product of the $i$th partial regression coefficient and the variance of $z_i$, and a set of $(n-1)$ terms, each of which is the product of a partial regression coefficient and the covariance of $z_i$ with the corresponding predictor variable. This general pattern suggests an alternative way of writing Equation 8.3, $$ \\begin{pmatrix}\\sigma^{2}(z_{1})&\\sigma(z_{1},z_{2})&\\cdots&\\sigma(z_{1},z_{n})\\\\\\sigma(z_{1},z_{2})&\\sigma^{2}(z_{2})&\\cdots&\\sigma(z_{2},z_{n})\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\\\sigma(z_{1},z_{n})&\\sigma(z_{2},z_{n})&\\cdots&\\sigma^{2}(z_{n})\\end{pmatrix}\\begin{pmatrix}\\beta_{1}\\\\\\beta_{2}\\\\\\vdots\\\\\\beta_{n}\\end{pmatrix}=\\begin{pmatrix}\\sigma(y,z_{1})\\\\\\sigma(y,z_{2})\\\\\\vdots\\\\\\sigma(y,z_{n})\\end{pmatrix} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The table of variances and covariances on the left is referred to as a $ \\mathbf{matrix} $, while the columns of partial regression coefficients and of covariances involving y are called $ \\mathbf{vectors} $. If these matrices and vectors are abbreviated as $ \\mathbf{V}, \\beta $, and c, Equation 8.4 can be written even more compactly as $$ \\mathbf{V}\\boldsymbol{\\beta}=\\mathbf{c} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The standard procedure of denoting matrices as bold capital letters and vectors as bold lowercase letters is adhered to in this book. Notice that V, which is generally called a covariance matrix, is symmetrical about the main diagonal. As we shall see shortly, the $ i $th equation in 8.3 can be recovered from Equation 8.4 by"
+    }
+  ]
+}

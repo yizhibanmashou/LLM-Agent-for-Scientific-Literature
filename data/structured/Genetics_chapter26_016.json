@@ -1,0 +1,75 @@
+{
+  "id": "Genetics_chapter26_016",
+  "metadata": {
+    "chapter": "Genetics_chapter26",
+    "section": "Introduction",
+    "subsections": [
+      "Repeated Records"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter26_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "Repeated Records",
+    "heading_path": [
+      "Introduction",
+      "Repeated Records"
+    ],
+    "display_heading": "Repeated Records"
+  },
+  "blocks": [
+    {
+      "type": "proposition",
+      "content": "Another situation in which correlations are expected among residual errors arises when multiple observations are made on individuals, a common procedure used to reduce measurement error. Here, assuming dominance is of negligible importance, the residual error can be described as $p + e$, where $p$ is the “permanent” environmental effect common to all observations on the same individual, and $e$ is the residual error between observations of the same individual due, for example, to measurement error and changes in some environmental factors. Recall from Chapter 6 that the repeatability of a character (r) is defined to be the correlation between different measurements in the same individual. If j and k denote different observations on the same individual i, the covariance between repeated measurements is $$ \\begin{aligned}\\sigma(y_{ij},y_{ik})=r\\sigma_{y}^{2}&=\\sigma(a_{i}+p_{i}+e_{ij},a_{i}+p_{i}+e_{ik})\\\\&=\\sigma_{A}^{2}+\\sigma_{P}^{2}\\end{aligned} $$ which follows from the assumption that the residual errors for the same individual are uncorrelated. Assuming purely additive gene action, $ \\sigma_{A}^{2} = h^{2}\\sigma_{y}^{2} $ of the covariance is due to genetic effects, leaving $ (r - h^{2})\\sigma_{y}^{2} = \\sigma_{P}^{2} $ as the covariance due to permanent environmental effects."
+    },
+    {
+      "type": "discussion",
+      "content": "One approach to estimating breeding values when repeated measures are contained in the data set is to continue to apply the simple animal model (Equation 26.8), with suitable Z to accommodate multiple records, modifying the residual covariance matrix R such that"
+    },
+    {
+      "type": "discussion",
+      "content": "$$ R_{j k}=\\left\\{\\begin{array}{l l}{(1-h^{2})\\sigma_{y}^{2}}&{j=k\\mathrm{~(t h e~s a m e~m e a s u r e m e n t~i n~a n~i n d i v i d u a l)}}\\\\ {(r-h^{2})\\sigma_{y}^{2}}&{j\\mathrm{~a n d~}k\\mathrm{~a r e~r e p e a t e d~m e a s u r e s}}\\\\ {0}&{j\\mathrm{~a n d~}k\\mathrm{~a r e~m e a s u r e s~o n~d i f f e r e n t~i n d i v i d u a l s.}}\\end{array}\\right. $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Since the resulting covariance matrix is not diagonal, it is not always easily inverted, a potentially serious complication for extremely large data sets."
+    },
+    {
+      "type": "discussion",
+      "content": "An alternative approach follows the same rationale as the model incorporating dominance, i.e., explicitly accounting for shared environmental effects (rather than incorporating them into the residual error structure) by introducing a new random factor into the model, such that $$ y_{ij}=\\mu+a_{i}+p_{i}+e_{ij} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "(Henderson 1977a). With this structure, all residual effects are again uncorrelated with common variance $ \\sigma_{E}^{2} = (1 - r)\\sigma_{y}^{2} $."
+    },
+    {
+      "type": "discussion",
+      "content": "Suppose a total of k measurements are made on n individuals (such a balanced design is not essential). We can write this in the general mixed-model framework as $$ \\mathbf{y}=\\mathbf{X}\\boldsymbol{\\beta}+\\mathbf{Z}(\\mathbf{a}+\\mathbf{p})+\\mathbf{e}=\\mathbf{X}\\boldsymbol{\\beta}+\\mathbf{Z}\\mathbf{a}+\\mathbf{Z}\\mathbf{p}+\\mathbf{e} $$ where $ \\mathbf{a}^{T} = (a_{1}, \\cdots, a_{n})^{T} $ and $ \\mathbf{p}^{T} = (p_{1}, \\cdots, p_{n})^{T} $, and each row of the $ nk \\times n $ incidence matrix Z has all zeros except a one at the position corresponding to the individual measured. This model has the resulting covariance matrices $$ \\sigma(\\mathbf{a},\\mathbf{a})=h^{2}\\sigma_{y}^{2}\\mathbf{A},\\qquad\\sigma(\\mathbf{p},\\mathbf{p})=\\left(r-h^{2}\\right)\\sigma_{y}^{2}\\mathbf{I},\\qquad\\sigma(\\mathbf{e},\\mathbf{e})=\\left(1-r\\right)\\sigma_{y}^{2}\\mathbf{I} $$ with a, p, and e being assumed to be uncorrelated. Applying Equation 26.19b and removing the common factor $\\sigma_{y}^{2}$ from all expressions, the mixed-model equations become $$ \\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{X}&\\mathbf{X}^{T}\\mathbf{Z}&\\mathbf{X}^{T}\\mathbf{Z}\\\\\\mathbf{Z}^{T}\\mathbf{X}&\\mathbf{Z}^{T}\\mathbf{Z}+\\lambda_{A}\\mathbf{A}^{-1}&\\mathbf{Z}^{T}\\mathbf{Z}\\\\\\mathbf{Z}^{T}\\mathbf{X}&\\mathbf{Z}^{T}\\mathbf{Z}&\\mathbf{Z}^{T}\\mathbf{Z}+\\lambda_{P}\\mathbf{I}\\end{pmatrix}\\begin{pmatrix}\\widehat{\\boldsymbol{\\beta}}\\\\\\widehat{\\mathbf{a}}\\\\\\widehat{\\mathbf{p}}\\end{pmatrix}=\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{y}\\\\\\mathbf{Z}^{T}\\mathbf{y}\\\\\\mathbf{Z}^{T}\\mathbf{y}\\end{pmatrix} $$ where $$ \\lambda_{A}=\\frac{\\sigma_{E}^{2}}{\\sigma_{A}^{2}}=\\frac{1-r}{h^{2}},\\qquad\\lambda_{P}=\\frac{\\sigma_{E}^{2}}{\\sigma_{P}^{2}}=\\frac{1-r}{r-h^{2}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Example 10. To compare the two different methods for dealing with repeated records, suppose three unrelated and noninbred individuals are measured, with two observations on individual one ($ y_{1}=7 $, $ y_{2}=8 $), three observations on individual two ($ y_{3}=6 $, $ y_{4}=6 $, $ y_{5}=5 $), and one observation on individual three ($ y_{6}=9 $). Assume that the only fixed factor is the mean and that the character has heritability $ h^{2}=0.4 $ and repeatability r=0.5, giving $ 1-h^{2}=0.6 $ and $ r-h^{2}=0.1 $. For either formulation, we have $$ \\mathbf{y}=\\begin{pmatrix}7\\\\ 8\\\\ 6\\\\ 6\\\\ 5\\\\ 9\\end{pmatrix},\\quad\\boldsymbol{\\beta}=(\\mu),\\quad\\mathbf{X}=\\begin{pmatrix}1\\\\ 1\\\\ 1\\\\ 1\\\\ 1\\end{pmatrix},\\quad\\mathbf{Z}=\\begin{pmatrix}1&0&0\\\\ 1&0&0\\\\ 0&1&0\\\\ 0&1&0\\\\ 0&1&0\\\\ 0&0&1\\end{pmatrix} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Since all three individuals are assumed to be unrelated, $\\mathbf{A}=\\mathbf{I}$."
+    },
+    {
+      "type": "discussion",
+      "content": "To apply the permanent-effects model $y_{i}=\\mu+a_{i}+p_{i}+e_{i}$, note that $$ \\lambda_{A}=\\frac{1-r}{h^{2}}=\\frac{1-0.5}{0.4}=1.25,\\qquad\\lambda_{P}=\\frac{1-r}{r-h^{2}}=\\frac{1-0.5}{0.5-0.4}=5, $$ $$ \\mathbf{X}^{T}\\mathbf{X}=6,\\qquad\\mathbf{X}^{T}\\mathbf{y}=41, $$ $$ \\mathbf{Z}^{T}\\mathbf{X}=(\\mathbf{X}^{T}\\mathbf{Z})^{T}=\\begin{pmatrix}2\\\\ 3\\\\ 1\\end{pmatrix},\\qquad\\mathbf{Z}^{T}\\mathbf{y}=\\begin{pmatrix}15\\\\ 17\\\\ 9\\end{pmatrix},\\qquad\\mathbf{Z}^{T}\\mathbf{Z}=\\begin{pmatrix}2&0&0\\\\ 0&3&0\\\\ 0&0&1\\end{pmatrix}, $$ $$ \\mathbf{Z}^{T}\\mathbf{Z}+\\lambda_{A}\\mathbf{A}^{-1}=\\begin{pmatrix}{{{3.25}}}&{{{0}}}&{{{0}}} \\\\{{{0}}}&{{{4.25}}}&{{{0}}} \\\\{{{0}}}&{{{0}}}&{{{2.25}}}\\end{pmatrix},\\qquad\\mathbf{Z}^{T}\\mathbf{Z}+\\lambda_{P}\\mathbf{I}=\\begin{pmatrix}{{{7}}}&{{{0}}}&{{{0}}} \\\\{{{0}}}&{{{8}}}&{{{0}}} \\\\{{{0}}}&{{{0}}}&{{{6}}}\\end{pmatrix} $$ giving the MMEs (Equation 26.28a) as $$ \\begin{pmatrix}6&2&3&1&2&3&1\\\\2&3.25&0&0&2&0&0\\\\3&0&4.25&0&0&3&0\\\\1&0&0&2.25&0&0&1\\\\2&2&0&0&7&0&0\\\\3&0&3&0&0&8&0\\\\1&0&0&1&0&0&6\\end{pmatrix}\\begin{pmatrix}\\widehat{\\mu}\\\\\\widehat{a}_{1}\\\\\\widehat{a}_{2}\\\\\\widehat{a}_{3}\\\\\\widehat{p}_{1}\\\\\\widehat{p}_{2}\\\\\\widehat{p}_{3}\\end{pmatrix}=\\begin{pmatrix}41\\\\15\\\\17\\\\9\\\\15\\\\17\\\\9\\end{pmatrix} $$ which has solutions $$ \\widehat{\\mu}\\simeq7.174,\\qquad\\left(\\begin{matrix}{\\widehat{a}_{1}}\\\\ {\\widehat{a}_{2}}\\\\ {\\widehat{a}_{3}}\\\\ \\end{matrix}\\right)\\simeq\\left(\\begin{matrix}{0.174}\\\\ {-0.904}\\\\ {0.730}\\\\ \\end{matrix}\\right),\\qquad\\left(\\begin{matrix}{\\widehat{p}_{1}}\\\\ {\\widehat{p}_{2}}\\\\ {\\widehat{p}_{3}}\\\\ \\end{matrix}\\right)\\simeq\\left(\\begin{matrix}{0.043}\\\\ {-0.226}\\\\ {0.183}\\\\ \\end{matrix}\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Conversely, applying the simple animal model $y_{i}=\\mu+a_{i}+e_{i}$, from Equation 26.25 the covariance matrix for the residual errors becomes $$ \\mathbf{R}=\\sigma_{y}^{2}\\left(\\begin{matrix}{0.5}&{0.1}&{0}&{0}&{0}&{0}\\\\ {0.1}&{0.5}&{0}&{0}&{0}&{0}\\\\ {0}&{0}&{0.5}&{0.1}&{0.1}&{0}\\\\ {0}&{0}&{0.1}&{0.5}&{0.1}&{0}\\\\ {0}&{0}&{0.1}&{0.1}&{0.5}&{0}\\\\ {0}&{0}&{0}&{0}&{0}&{0.5}\\\\ \\end{matrix}\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Likewise, $\\mathbf{G}=h^{2}\\sigma_{y}^{2}\\mathbf{I}$, and hence $\\mathbf{G}^{-1}=(h^{2}\\sigma_{y}^{2})^{-1}\\mathbf{I}$. Removing the factor $\\sigma_{y}^{2}$ common to all expressions gives $$ \\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{X}\\simeq8.27,\\qquad\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{X}=(\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{Z})^{T}\\simeq\\left(\\begin{matrix}{2.86}\\\\ {3.75}\\\\ {1.67}\\\\ \\end{matrix}\\right) $$ $$ \\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{Z}+\\mathbf{G}^{-1}=\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{Z}+\\frac{1}{h^{2}}\\mathbf{I}\\simeq\\begin{pmatrix}5.36&0&0\\\\0&6.25&0\\\\0&0&4.17\\end{pmatrix} $$ $$ \\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{y}=57.68,\\quad\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{y}\\simeq\\begin{pmatrix}21.43\\\\ 21.25\\\\ 15\\end{pmatrix} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Substituting into Equation 26.5 gives the MMEs $$ \\begin{pmatrix}{{{8.27}}}&{{{2.86}}}&{{{3.75}}}&{{{1.67}}} \\\\{{{2.86}}}&{{{5.36}}}&{{{0}}}&{{{0}}} \\\\{{{3.75}}}&{{{0}}}&{{{6.25}}}&{{{0}}} \\\\{{{1.67}}}&{{{0}}}&{{{0}}}&{{{4.17}}}\\end{pmatrix}\\begin{pmatrix}{{{\\widehat{\\mu}}}} \\\\{{{\\widehat{a}_{1}}}} \\\\{{{\\widehat{a}_{2}}}} \\\\{{{\\widehat{a}_{3}}}}\\end{pmatrix}=\\begin{pmatrix}{{{57.68}}} \\\\{{{21.43}}} \\\\{{{21.25}}} \\\\{{{15}}}\\end{pmatrix} $$"
+    }
+  ]
+}

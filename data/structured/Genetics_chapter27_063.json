@@ -1,0 +1,51 @@
+{
+  "id": "Genetics_chapter27_063",
+  "metadata": {
+    "chapter": "Genetics_chapter27",
+    "section": "Variance-Component Estimation with Complex Pedigrees",
+    "subsections": [
+      "examines the use of doubly affected full sib pairs to detect QTLs influencing a binary character (typically disease presence/absence, so that both sibs in each pair display the disease). If the marker is linked to a QTL influencing the character, we expect the pair members to share more marker alleles than expected by chance. A number of tests based on the number of ibd (identical by descent) marker alleles shared between pair members have been proposed for detecting a linked QTL. Letting $ p_{2i} $ and $ \\widehat{p}_{2i} $ denote the true and estimated fractions of doubly affected pairs sharing i = 0, 1, 2 ibd marker alleles (the leading 2 in the subscript indicates we are restricting attention to pairs where both sibs are affected), we consider two such tests here. One test statistic, $ T_2 = \\widehat{p}_{22} $, is based on the fraction of doubly affected pairs sharing 2 ibd alleles. A second test statistic, $ T_m = \\widehat{p}_{21}/2 + \\widehat{p}_{22} $, corresponds to the mean number of ibd marker alleles shared by a doubly affected pair. The true ibd frequencies can be expressed as deviations from the values expected with no linked QTL,"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter27_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Variance-Component Estimation with Complex Pedigrees",
+    "section_level_2": "examines the use of doubly affected full sib pairs to detect QTLs influencing a binary character (typically disease presence/absence, so that both sibs in each pair display the disease). If the marker is linked to a QTL influencing the character, we expect the pair members to share more marker alleles than expected by chance. A number of tests based on the number of ibd (identical by descent) marker alleles shared between pair members have been proposed for detecting a linked QTL. Letting $ p_{2i} $ and $ \\widehat{p}_{2i} $ denote the true and estimated fractions of doubly affected pairs sharing i = 0, 1, 2 ibd marker alleles (the leading 2 in the subscript indicates we are restricting attention to pairs where both sibs are affected), we consider two such tests here. One test statistic, $ T_2 = \\widehat{p}_{22} $, is based on the fraction of doubly affected pairs sharing 2 ibd alleles. A second test statistic, $ T_m = \\widehat{p}_{21}/2 + \\widehat{p}_{22} $, corresponds to the mean number of ibd marker alleles shared by a doubly affected pair. The true ibd frequencies can be expressed as deviations from the values expected with no linked QTL,",
+    "heading_path": [
+      "Variance-Component Estimation with Complex Pedigrees",
+      "examines the use of doubly affected full sib pairs to detect QTLs influencing a binary character (typically disease presence/absence, so that both sibs in each pair display the disease). If the marker is linked to a QTL influencing the character, we expect the pair members to share more marker alleles than expected by chance. A number of tests based on the number of ibd (identical by descent) marker alleles shared between pair members have been proposed for detecting a linked QTL. Letting $ p_{2i} $ and $ \\widehat{p}_{2i} $ denote the true and estimated fractions of doubly affected pairs sharing i = 0, 1, 2 ibd marker alleles (the leading 2 in the subscript indicates we are restricting attention to pairs where both sibs are affected), we consider two such tests here. One test statistic, $ T_2 = \\widehat{p}_{22} $, is based on the fraction of doubly affected pairs sharing 2 ibd alleles. A second test statistic, $ T_m = \\widehat{p}_{21}/2 + \\widehat{p}_{22} $, corresponds to the mean number of ibd marker alleles shared by a doubly affected pair. The true ibd frequencies can be expressed as deviations from the values expected with no linked QTL,"
+    ],
+    "display_heading": "examines the use of doubly affected full sib pairs to detect QTLs influencing a binary character (typically disease presence/absence, so that both sibs in each pair display the disease). If the marker is linked to a QTL influencing the character, we expect the pair members to share more marker alleles than expected by chance. A number of tests based on the number of ibd (identical by descent) marker alleles shared between pair members have been proposed for detecting a linked QTL. Letting $ p_{2i} $ and $ \\widehat{p}_{2i} $ denote the true and estimated fractions of doubly affected pairs sharing i = 0, 1, 2 ibd marker alleles (the leading 2 in the subscript indicates we are restricting attention to pairs where both sibs are affected), we consider two such tests here. One test statistic, $ T_2 = \\widehat{p}_{22} $, is based on the fraction of doubly affected pairs sharing 2 ibd alleles. A second test statistic, $ T_m = \\widehat{p}_{21}/2 + \\widehat{p}_{22} $, corresponds to the mean number of ibd marker alleles shared by a doubly affected pair. The true ibd frequencies can be expressed as deviations from the values expected with no linked QTL,"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "$$ p_{20}=\\frac{1}{4}-d_{20},\\qquad p_{21}=\\frac{1}{2}-d_{21},\\qquad p_{22}=\\frac{1}{4}+d_{22} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Under the null hypotheses (the marker is unlinked to a QTL), the $ d_{2i} $ are zero, while Equation 16.52 gives their values as functions of the QTL effects and distance from the marker if a QTL is linked to the marker. Note from Equation 16.52 that $ d_{2i} \\geq 0 $ under linkage."
+    },
+    {
+      "type": "discussion",
+      "content": "We examine the power of the test based on $ T_2 = \\widehat{p}_{22} $ first. This test statistic has mean $ p_{22} $ and variance $ p_{22}(1 - p_{22})/n $, where $ n $ is the number of doubly affected pairs. Expressing the variance of the test statistic as $ \\sigma^2(T) = f^2/n $, shows that here $ f^2 = p_{22}(1 - p_{22}) $. Under the null hypothesis of no linked QTL, $ p_{22} = 1/4 $, giving the mean and variance as $ \\mu_o = 1/4 $ and $ f_0^2 = (1/4)(3/4) = 3/16 $. When a linked QTL is present, so that $ p_{22} = 1/4 + d_{22} $, the mean and variance become $$ E(\\widehat{p}_{22})=\\frac{1}{4}+d_{22},\\quad\\mathrm{a n d}\\quad f_{1}^{2}=p_{22}(1-p_{22})=(1/4+d_{22})(3/4-d_{22}) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Hence, $(\\mu_1 - \\mu_0)^2 = d_{22}^2$. The $T_2$ test is one-sided, as $p_{22} > 1/4$ under linkage to a QTL, and from Equation A5.4b, the required number of doubly affected pairs to have power $1 - \\beta$ using a test with significance $\\alpha$ is $$ n_{T_{2}}=\\left(\\frac{z_{(1-\\beta)}\\sqrt{(1/4+d_{22})(3/4-d_{22})}+z_{(1-\\alpha)}\\sqrt{3/16}}{d_{22}}\\right)^{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "In a similar fashion, the expected value for the test statistic $ T_{m} $ is $$ \\mu_{1}=p_{21}+2p_{22}=\\left(\\frac{1}{2}-d_{21}\\right)+2\\left(\\frac{1}{4}+d_{22}\\right)=1+2d_{22}-d_{21} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "To compute the variance $\\sigma_{1}^{2}=f_{1}^{2}/n$, let $x$ denote the fraction of ibd alleles in a randomly chosen individual. Taking expectations gives $$ \\begin{aligned}f^{2}_{1}&=E(x^{2})-\\mu^{2}_{x}=\\left[1^{2}\\cdot\\Pr(x=1)+2^{2}\\cdot\\Pr(x=2)\\right]-\\mu^{2}_{x}&\\\\&=\\left[1^{2}\\left(\\frac{1}{2}-d_{21}\\right)+2^{2}\\left(\\frac{1}{4}+d_{22}\\right)\\right]-(1+2d_{22}-d_{21})^{2}\\\\ &=\\frac{1}{2}+d_{21}-(2d_{22}-d_{21})^{2}\\\\ \\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Under the null hypothesis of no linked QTLs, $ d_{21} = d_{22} = 0 $, giving $ \\mu_0 = 1/2 $ and $ f_0^2 = 1/2 $. Again, this is a one-sided test, as $ T_m > 1/2 $ for a marker linked to a QTL. Applying Equation A5.4b gives the required number of doubly affected pairs as $$ n_{T_{m}}=\\left(\\frac{z_{(1-\\beta)}\\sqrt{1/2+d_{21}-(2d_{22}-d_{21})^{2}}+z_{(1-\\alpha)}\\sqrt{1/2}}{2d_{22}-d_{21}}\\right)^{2} $$"
+    }
+  ]
+}

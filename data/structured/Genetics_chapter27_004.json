@@ -1,0 +1,99 @@
+{
+  "id": "Genetics_chapter27_004",
+  "metadata": {
+    "chapter": "Genetics_chapter27",
+    "section": "Variance-Component Estimation with Complex Pedigrees",
+    "subsections": [
+      "ML ESTIMATES OF VARIANCE COMPONENTS IN THE GENERAL MIXED MODEL"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter27_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Variance-Component Estimation with Complex Pedigrees",
+    "section_level_2": "ML ESTIMATES OF VARIANCE COMPONENTS IN THE GENERAL MIXED MODEL",
+    "heading_path": [
+      "Variance-Component Estimation with Complex Pedigrees",
+      "ML ESTIMATES OF VARIANCE COMPONENTS IN THE GENERAL MIXED MODEL"
+    ],
+    "display_heading": "ML ESTIMATES OF VARIANCE COMPONENTS IN THE GENERAL MIXED MODEL"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "In light of the fundamental role that the mixed model plays in quantitative genetics, we attempt in this section to give a clear step-by-step development of the maximum likelihood procedures, following the same steps that were used above for the simple model (y = 1μ + e). Although REML is preferred over ML as a method of analysis, we start with ML, since REML estimation can be expressed as an ML problem by a simple linear transform. as an ML problem by a simple im行人传"
+    },
+    {
+      "type": "discussion",
+      "content": "We start with the general mixed model (Equation 26.1), $ \\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\mathbf{Z}\\mathbf{u} + \\mathbf{e} $, and we assume that $ \\mathbf{u} \\sim \\text{MVN}(0, \\mathbf{G}) $ and $ \\mathbf{e} \\sim \\text{MVN}(0, \\mathbf{R}) $. Under this model, $ \\mathbf{y} $ is also multivariate normal, with mean $ \\mathbf{X}\\boldsymbol{\\beta} $ and variance-covariance matrix $ \\mathbf{V} = \\mathbf{Z}\\mathbf{G}\\mathbf{Z}^{T} + \\mathbf{R} $. Recalling the form of the multivariate normal distribution (Equation 8.24), the probability density of the data $ \\mathbf{y} $, analogous to that in Equation 27.2, is $$ p(\\mathbf{y}|\\mathbf{X}\\boldsymbol{\\beta},\\mathbf{V})=(2\\pi)^{-n/2}|\\mathbf{V}|^{-1/2}\\exp\\left[-\\frac{1}{2}(\\mathbf{y}-\\mathbf{X}\\boldsymbol{\\beta})^{T}\\mathbf{V}^{-1}(\\mathbf{y}-\\mathbf{X}\\boldsymbol{\\beta})\\right] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The next step, analogous to Equation 27.3a, is to take the natural logarithm of the expression on the right of Equation 27.7a. This yields the log-likelihood of $ \\beta $ and V given the observed data (X, y) as $$ {\\cal L}(\\beta,{\\bf V}\\mid{\\bf X},{\\bf y})=-\\frac{n}{2}\\ln(2\\pi)-\\frac{1}{2}\\ln\\mid{\\bf V}\\mid-\\frac{1}{2}({\\bf y}-{\\bf X}\\beta)^{T}{\\bf V}^{-1}({\\bf y}-{\\bf X}\\beta) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The following discussion considers $\\mathbf{u} = \\mathbf{a}$ to be the vector of additive genetic (breeding) values. The variance components that we are trying to estimate are embedded within $\\mathbf{G}$ and $\\mathbf{R}$, and we assume that $\\mathbf{G} = \\sigma_{A}^{2} \\mathbf{A}$, where $\\mathbf{A}$ is the additive genetic relationship matrix, and that $\\mathbf{R} = \\sigma_{E}^{2} \\mathbf{I}$, i.e., the residual deviations of different individuals are independent and homoscedastic."
+    },
+    {
+      "type": "discussion",
+      "content": "This approach extends readily to the estimation of additional variance components by using the generalized model $$ \\mathbf{y}=\\mathbf{X}\\boldsymbol{\\beta}+\\sum_{i=1}^{m}\\mathbf{Z}_{i}\\mathbf{u}_{i}+\\mathbf{e} $$ where the $m$ vectors of random effects $(\\mathbf{u}_i)$ are assumed to be uncorrelated, with $\\mathbf{u}_i \\sim \\mathrm{MVN}(\\mathbf{0}, \\sigma_i^2 \\mathbf{B}_i)$ and $\\mathbf{B}_i$ being a matrix of known constants. This more general model can incorporate estimates of dominance and other nonadditive variances, and maternal effects variances, to name a few (see Chapter 26). The log-likelihood is still given by Equation 27.7b, but now the covariance matrix $\\mathbf{V}$ consists of $m+1$ (unknown) variances, $$ \\mathbf{V}=\\sum_{i=1}^{m}\\sigma_{i}^{2}\\mathbf{Z}_{i}\\mathbf{B}_{i}\\mathbf{Z}_{i}^{T}+\\sigma_{E}^{2}\\mathbf{I} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "We now move on to the partial derivatives of the log-likelihood required for the derivation of the ML estimators. Consider first the derivative with respect to the vector of fixed effects, $ \\beta $. This derivative involves only the final term of Equation 27.7b, and its procurement is facilitated by using a general result for matrix derivatives. Applying Equation A3.25d, $$ \\frac{\\partial\\left[(\\mathbf{y}-\\mathbf{X}\\boldsymbol{\\beta})^{T}\\mathbf{V}^{-1}(\\mathbf{y}-\\mathbf{X}\\boldsymbol{\\beta})\\right]}{\\partial\\boldsymbol{\\beta}}=-2\\mathbf{X}^{T}\\mathbf{V}^{-1}(\\mathbf{y}-\\mathbf{X}\\boldsymbol{\\beta}) $$ which yields $$ \\frac{\\partial L(\\boldsymbol{\\beta},\\mathbf{V}|\\mathbf{X},\\mathbf{y})}{\\partial\\boldsymbol{\\beta}}=\\mathbf{X}^{T}\\mathbf{V}^{-1}(\\mathbf{y}-\\mathbf{X}\\boldsymbol{\\beta}) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Obtaining the partial derivatives with respect to the variances $ \\sigma_{A}^{2} $ and $ \\sigma_{E}^{2} $ involves two other general results from matrix theory (Searle 1982, pp. 335–336). If M is a square matrix whose elements are functions of a scalar variable x, then $$ \\frac{\\partial\\ln|\\mathbf{M}|}{\\partial x}=\\mathbf{t r}\\left(\\mathbf{M}^{-1}\\frac{\\partial\\mathbf{M}}{\\partial x}\\right) $$ $$ \\frac{\\partial\\mathbf{M}^{-1}}{\\partial x}=-\\mathbf{M}^{-1}\\frac{\\partial\\mathbf{M}}{\\partial x}\\mathbf{M}^{-1} $$ where tr, the trace, denotes the sum of the diagonal elements of a square matrix (Chapter 8). The trace operator appears frequently in this chapter, and the following properties will prove useful $$ \\mathrm{tr}\\left(\\boldsymbol{a}\\mathbf{A}\\right)=\\boldsymbol{a}\\mathrm{tr}\\left(\\mathbf{A}\\right) $$ $$ \\mathrm{tr}\\left(\\mathbf{I}_{n}\\right)=n $$ $$ \\mathbf{t r}\\left(\\mathbf{B}_{n\\times m}\\mathbf{A}_{m\\times n}\\right)=\\mathbf{t r}\\left(\\mathbf{A}_{m\\times n}\\mathbf{B}_{n\\times m}\\right) $$ $$ \\mathrm{t r}\\left(\\mathbf{A}+\\mathbf{C}\\right)=\\mathrm{t r}\\left(\\mathbf{A}\\right)+\\mathrm{t r}\\left(\\mathbf{C}\\right) $$ where $I_{n}$ is the $n\\times n$ identity matrix."
+    },
+    {
+      "type": "discussion",
+      "content": "Recall that prior to the differentiation of Equation 27.3a, we rewrote the sum of squared deviations of observed mean phenotypes from the population mean in terms of $(y_{i}-\\mu)$ and $\\overline{y}-\\mu$. Performing the analogous changes in matrix form, we find that $$ \\begin{aligned}\\left(\\mathbf{y}-\\mathbf{X}\\boldsymbol{\\beta}\\right)^{T}\\mathbf{V}^{-1}(\\mathbf{y}-\\mathbf{X}\\boldsymbol{\\beta})&=\\left(\\mathbf{y}-\\mathbf{X}\\widehat{\\boldsymbol{\\beta}}\\right)^{T}\\mathbf{V}^{-1}(\\mathbf{y}-\\mathbf{X}\\widehat{\\boldsymbol{\\beta}})\\\\&\\quad+(\\widehat{\\boldsymbol{\\beta}}-\\boldsymbol{\\beta})^{T}\\mathbf{X}^{T}\\mathbf{V}^{-1}\\mathbf{X}(\\widehat{\\boldsymbol{\\beta}}-\\boldsymbol{\\beta})\\end{aligned} $$ where $\\widehat{\\beta}$ is the estimate of $\\beta$. (This step is not really necessary here, but its incorporation will allow us to see the bias in ML estimates of the variance components, as it did in the previous section.)"
+    },
+    {
+      "type": "discussion",
+      "content": "Moving now to the derivatives with respect to the variance components, we first assume the simple case of only two unknown variances, typically $ \\sigma_{E}^{2} $ and $ \\sigma_{A}^{2} $. Writing V in terms of these two components, we have $ \\mathbf{V} = \\sigma_{A}^{2} \\mathbf{Z} \\mathbf{A} \\mathbf{Z}^{T} + \\sigma_{E}^{2} \\mathbf{I} $. Using the notation of $ \\sigma_{i}^{2} $ to denote the variance component being estimated, we have $$ \\frac{\\partial\\mathbf{V}}{\\partial\\sigma_{i}^{2}}=\\mathbf{V}_{i}=\\left\\{\\begin{matrix}\\mathbf{I}&\\text{when}\\sigma_{i}^{2}=\\sigma_{E}^{2}\\\\ \\mathbf{Z}\\mathbf{A}\\mathbf{Z}^{T}&\\text{when}\\sigma_{i}^{2}=\\sigma_{A}^{2}\\end{matrix}\\right. $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Substituting Equation 27.13 into Equation 27.7b, using Equations 27.11a,b, and letting $ \\sigma_{i}^{2} $ denote either $ \\sigma_{A}^{2} $ or $ \\sigma_{E}^{2} $, we obtain the general equation $$ \\begin{aligned}\\frac{\\partial L(\\boldsymbol{\\beta},\\mathbf{V}|\\mathbf{X},\\mathbf{y})}{\\partial\\sigma_{i}^{2}}&=-\\frac{1}{2}\\mathrm{tr}(\\mathbf{V}^{-1}\\mathbf{V}_{i})+\\frac{1}{2}(\\mathbf{y}-\\mathbf{X}\\widehat{\\boldsymbol{\\beta}})^{T}\\mathbf{V}^{-1}\\mathbf{V}_{i}\\mathbf{V}^{-1}(\\mathbf{y}-\\mathbf{X}\\widehat{\\boldsymbol{\\beta}})\\\\&\\quad+\\frac{1}{2}(\\widehat{\\boldsymbol{\\beta}}-\\boldsymbol{\\beta})^{T}\\mathbf{X}^{T}\\mathbf{V}^{-1}\\mathbf{V}_{i}\\mathbf{V}^{-1}\\mathbf{X}(\\widehat{\\boldsymbol{\\beta}}-\\boldsymbol{\\beta})\\quad(27)\\end{aligned} $$ where $\\mathbf{V}_i$ is given by Equation 27.14a. Equations 27.10 and 27.14b are directly analogous to Equations 27.4a,b derived above. Note that $\\mathbf{V}_i$ is a fixed matrix of known constants, whereas $\\mathbf{V} = \\sigma_A^2 \\mathbf{Z}\\mathbf{A}\\mathbf{Z}^T + \\sigma_E^2 \\mathbf{I}$ is a function of the variance-component estimates. More generally, with $m$ random effects plus a residual error (Equation 27.8a), Equation 27.14b holds for each of the $m+1$ variance components with $$ \\frac{\\partial\\mathbf{V}}{\\partial\\sigma_{i}^{2}}=\\mathbf{V}_{i}=\\left\\{\\begin{matrix}{\\mathbf{I}}&{\\mathrm{w h e n}\\sigma_{i}^{2}=\\sigma_{E}^{2}}\\\\ {\\mathbf{Z}_{i}\\mathbf{B}_{i}\\mathbf{Z}_{i}^{T}}&{\\mathrm{o t h e r w i s e}}\\\\ \\end{matrix}\\right. $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The maximum likelihood (ML) estimators are obtained by setting Equations 27.10 and 27.14b equal to zero and solving. Using Equation 27.10 alone, a little rearranging gives the ML estimate of the vector of fixed effects as $$ \\hat{\\boldsymbol{\\beta}}=(\\mathbf{X}^{T}\\hat{\\mathbf{V}}^{-1}\\mathbf{X})^{-1}\\mathbf{X}^{T}\\hat{\\mathbf{V}}^{-1}\\mathbf{y} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Note that this is the BLUE (best linear unbiased estimator) of $ \\beta $ obtained in the previous chapter (Equation 26.3). The ML estimators for the variance components are obtained by setting $ \\widehat{\\beta} = \\beta $ in Equation 27.14b, rendering the last term equal to zero. Rearranging, we obtain $$ \\mathrm{t r}(\\widehat{\\mathbf{V}}^{-1}\\mathbf{V}_{i})=(\\mathbf{y}-\\mathbf{X}\\widehat{\\boldsymbol{\\beta}})^{T}\\widehat{\\mathbf{V}}^{-1}\\mathbf{V}_{i}\\widehat{\\mathbf{V}}^{-1}(\\mathbf{y}-\\mathbf{X}\\widehat{\\boldsymbol{\\beta}}) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "This equation can be simplified by using the matrix $$ \\mathbf{P}=\\mathbf{V}^{-1}-\\mathbf{V}^{-1}\\mathbf{X}(\\mathbf{X}^{T}\\mathbf{V}^{-1}\\mathbf{X})^{-1}\\mathbf{X}^{T}\\mathbf{V}^{-1} $$ which will appear frequently throughout the rest of the chapter. In particular, we have the very useful result that $$ \\mathbf{P}\\mathbf{y}=\\mathbf{V}^{-1}\\mathbf{y}-\\mathbf{V}^{-1}\\mathbf{X}(\\mathbf{X}^{T}\\mathbf{V}^{-1}\\mathbf{X})^{-1}\\mathbf{X}^{T}\\mathbf{V}^{-1}\\mathbf{y}=\\mathbf{V}^{-1}(\\mathbf{y}-\\mathbf{X}\\widehat{\\boldsymbol{\\beta}}) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Using this identity, Equation 27.17a can be more compactly written as $$ \\mathrm{t r}(\\widehat{\\mathbf{V}}^{-1}\\mathbf{V}_{i})=\\mathbf{y}^{T}\\widehat{\\mathbf{P}}\\mathbf{V}_{i}\\widehat{\\mathbf{P}}\\mathbf{y} $$ where we use the notation $ \\widehat{\\mathbf{P}} $ to remind the reader that $ \\mathbf{P} $, being a function of $ \\mathbf{V} $, depends on the variance components that we are trying to estimate. Although it may not be immediately apparent, Equation 27.17d is directly analogous to Equation 27.5c. The variance estimates that we wish to obtain, $ \\widehat{\\sigma}_{A}^{2} $ and $ \\widehat{\\sigma}_{E}^{2} $, are contained on both sides of Equation 27.17d, embedded in the inverted variance-covariance matrix $ \\widehat{\\mathbf{V}}^{-1} $ that appears in $ \\mathbf{P} $."
+    },
+    {
+      "type": "discussion",
+      "content": "In summary, the ML estimates satisfy the solutions to Equation 27.16 (for the fixed effects) and the set of equations for the variance components (Equation 27.17d). For the additive model assumed above, the two variance equations are $$ \\mathbf{t r}\\big(\\widehat{\\mathbf{V}}^{-1}\\big)=\\mathbf{y}^{T}\\widehat{\\mathbf{P}}\\widehat{\\mathbf{P}}\\mathbf{y}\\quad\\mathrm{f o r~\\sigma^{2}_{E}~} $$ $$ \\mathbf{t r}(\\widehat{\\mathbf{V}}^{-1}\\mathbf{Z}\\mathbf{A}\\mathbf{Z}^{T})=\\mathbf{y}^{T}\\widehat{\\mathbf{P}}\\mathbf{Z}\\mathbf{A}\\mathbf{Z}^{T}\\widehat{\\mathbf{P}}\\mathbf{y}\\qquad\\quad\\mathrm{f o r~\\sigma_{A}^{2}~} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "More generally, with $m$ random effects plus a residual (Equation 27.8a), the set of $m+1$ ML equations for the variances of random effects is $$ \\mathbf{t r}(\\widehat{\\mathbf{V}}^{-1})=\\mathbf{y}^{T}\\widehat{\\mathbf{P}}\\widehat{\\mathbf{P}}\\mathbf{\\hat{y}}\\mathbf{y}\\quad\\mathrm{f o r~\\sigma^{2}_{E}~} $$ $$ \\mathbf{t r}\\big(\\widehat{\\mathbf{V}}^{-1}\\mathbf{Z}_{i}\\mathbf{B}_{i}\\mathbf{Z}_{i}^{T}\\big)=\\mathbf{y}^{T}\\widehat{\\mathbf{P}}\\mathbf{Z}_{i}\\mathbf{B}_{i}\\mathbf{Z}_{i}^{T}\\widehat{\\mathbf{P}}\\mathbf{y}\\qquad\\mathrm{f o r~}\\sigma_{i}^{2},1\\leq i\\leq m $$ where $ \\widehat{\\mathbf{P}} $ now uses $$ \\widehat{\\mathbf{V}}=\\sum_{i=1}^{m}\\widehat{\\sigma}_{i}^{2}\\mathbf{Z}_{i}\\mathbf{B}_{i}\\mathbf{Z}_{i}^{T}+\\widehat{\\sigma}_{E}^{2}\\mathbf{I} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "These solutions have two troublesome properties. First, unlike our simple example at the start of this chapter where there was a closed form estimator for the fixed effect $\\mu$, the ML vector of fixed effects $\\widehat{\\beta}$ is a function of the variance-covariance matrix $\\widehat{\\mathbf{V}}$, which in turn contains the variance components that we wish to estimate. Second, because these solutions involve the inverse of $\\widehat{\\mathbf{V}}$, they are nonlinear functions of the variance components. As a consequence, there is no simple one-step solution. ML estimation of $\\beta$, $\\sigma_{A}^{2}$, and $\\sigma_{E}^{2}$ requires an iterative procedure, several steps of which are described below."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 1. Consider the simple animal model, $ \\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\mathbf{a} + \\mathbf{e} $, where there is only one observation per individual $ (\\mathbf{Z} = \\mathbf{I}) $, and we assume $ \\mathbf{a} \\sim \\text{MVN}(\\mathbf{0}, \\sigma_A^2 \\mathbf{A}) $ and $ \\mathbf{e} \\sim \\text{MVN}(\\mathbf{0}, \\sigma_F^2 \\mathbf{I}) $. In this case, the ML equations become $$ \\widehat{\\boldsymbol{\\beta}}=(\\mathbf{X}^{T}\\widehat{\\mathbf{V}}^{-1}\\mathbf{X})^{-1}\\mathbf{X}^{T}\\widehat{\\mathbf{V}}^{-1}\\mathbf{y} $$ $$ \\mathrm{t r}(\\widehat{\\mathbf{V}}^{-1})=\\mathbf{y}^{T}\\widehat{\\mathbf{P}}\\widehat{\\mathbf{P}}\\mathbf{y} $$ $$ \\mathrm{t r}(\\widehat{\\mathbf{V}}^{-1}\\mathbf{A})=\\mathbf{y}^{T}\\widehat{\\mathbf{P}}\\mathbf{A}\\widehat{\\mathbf{P}}\\mathbf{y} $$ where $$ \\widehat{\\mathbf{V}}=\\widehat{\\sigma}_{A}^{2}\\mathbf{A}+\\widehat{\\sigma}_{E}^{2}\\mathbf{I} $$ and $\\widehat{\\mathrm{P}}$ is obtained by substituting $\\widehat{\\mathrm{V}}$ into Equation 27.17b."
+    },
+    {
+      "type": "discussion",
+      "content": "If we further allow for dominance, the model becomes modified to $ \\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\mathbf{a} + \\mathbf{d} + \\mathbf{e} $. Assuming $ \\mathbf{a} \\sim \\text{MVN}(\\mathbf{0}, \\sigma_A^2 \\mathbf{A}) $, $ \\mathbf{d} \\sim \\text{MVN}(\\mathbf{0}, \\sigma_D^2 \\mathbf{D}) $, and $ \\mathbf{e} \\sim \\text{MVN}(\\mathbf{0}, \\sigma_E^2 \\mathbf{I}) $, the ML equations now become $$ \\hat{\\boldsymbol{\\beta}}=(\\mathbf{X}^{T}\\hat{\\mathbf{V}}^{-1}\\mathbf{X})^{-1}\\mathbf{X}^{T}\\hat{\\mathbf{V}}^{-1}\\mathbf{y} $$ $$ \\mathbf{t r}(\\widehat{\\mathbf{V}}^{-1})=\\mathbf{y}^{T}\\widehat{\\mathbf{P}}\\widehat{\\mathbf{P}}\\mathbf{y} $$ $$ \\mathrm{t r}(\\widehat{\\mathbf{V}}^{-1}\\mathbf{A})=\\mathbf{y}^{T}\\widehat{\\mathbf{P}}\\mathbf{A}\\widehat{\\mathbf{P}}\\mathbf{y} $$ $$ \\mathrm{t r}(\\widehat{\\mathbf{V}}^{-1}\\mathbf{D})=\\mathbf{y}^{T}\\widehat{\\mathbf{P}}\\widehat{\\mathbf{D}}\\widehat{\\mathbf{P}}\\mathbf{y} $$ where $\\widehat{\\mathrm{P}}$ is a function of $$ \\widehat{\\mathbf{V}}=\\widehat{\\sigma}_{A}^{2}\\mathbf{A}+\\widehat{\\sigma}_{D}^{2}\\mathbf{D}+\\widehat{\\sigma}_{E}^{2}\\mathbf{I} $$"
+    }
+  ]
+}

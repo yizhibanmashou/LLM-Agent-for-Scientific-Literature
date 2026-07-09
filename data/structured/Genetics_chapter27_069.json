@@ -1,0 +1,55 @@
+{
+  "id": "Genetics_chapter27_069",
+  "metadata": {
+    "chapter": "Genetics_chapter27",
+    "section": "Variance-Component Estimation with Complex Pedigrees",
+    "subsections": [
+      "Power of a Random-effects ANOVA Design"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter27_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Variance-Component Estimation with Complex Pedigrees",
+    "section_level_2": "Power of a Random-effects ANOVA Design",
+    "heading_path": [
+      "Variance-Component Estimation with Complex Pedigrees",
+      "Power of a Random-effects ANOVA Design"
+    ],
+    "display_heading": "Power of a Random-effects ANOVA Design"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Under a random-effects model, the simple one-way ANOVA model becomes $ y_{ij} = \\mu + t_i + e_{ij} $, where $ t $ is now a random variable drawn from a normal distribution with variance $ \\sigma_t^2 $, so that $ t_i \\sim \\mathrm{N}(0, \\sigma_t^2) $. Residuals are assumed independent with $ e_{ij} \\sim \\mathrm{N}(0, \\sigma_e^2) $ as before. Assuming a balanced design with $ n $ replicates for each of the $ N $ $ t_i $ values, the treatment and error sums of squares are also given by Equation A5.18a. As with the fixed-effects model, $ \\mathrm{SS}_e \\sim \\sigma_e^2 \\cdot \\chi_{N(n-1)}^2 $. However, the distribution of the treatment sum of squares remains a central $ \\chi^2 $, even when $ \\sigma_t^2 > 0 $. To see this, note that $ \\overline{y}_i \\sim \\mathrm{N}(0, \\sigma^2) $ with $ \\sigma^2 = \\sigma_t^2 + \\sigma_e^2/n $. Applying Equation A5.14c, the same logic leading to Equation A5.19 now gives $$ \\mathsf{S}\\mathsf{S}_{t}\\sim n\\cdot\\sigma^{2}\\cdot\\chi_{N-1}^{2}=\\left(n\\sigma_{t}^{2}+\\sigma_{e}^{2}\\right)\\cdot\\chi_{N-1}^{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Hence, the $F$-ratio statistic is distributed as $$ $$"
+    },
+    {
+      "type": "discussion",
+      "content": "F&= _ t /(N-1) _ e /N(n-1) (n ^ 2 _ t + ^ 2 _ e) ^ 2 _ N-1 /(N-1) ^ 2 _ e ^ 2 _ N(n-1) /N(n-1) \\\\& (1+n ^ 2 _ t ^ 2 _ e)F_ (N-1),N(n-1) $$ $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Note that the term in parentheses is just $ E(\\mathrm{MS}_{t})/E(\\mathrm{MS}_{e}) $. Hence $$ \\frac{F}{1+n\\left(\\sigma_{t}^{2}/\\sigma_{e}^{2}\\right)}\\sim F_{N-1,N(n-1)}. $$ giving the power of this test as $$ \\Pr\\left[F_{N-1,N(n-1)}>\\frac{F_{N-1,N(n-1),[1-\\alpha]}}{1+n\\left(\\sigma_{t}^{2}/\\sigma_{e}^{2}\\right)}\\right] $$"
+    },
+    {
+      "type": "definition",
+      "content": "Since, by definition (Equation A5.13b), $$ \\operatorname*{P r}\\left[F_{N-1,N(n-1)}>F_{N-1,N(n-1),[\\beta]}\\right]=1-\\beta $$ to have power $1 - \\beta$ requires that $$ F_{N-1,N(n-1),[1-\\alpha]}=\\left(1+n\\frac{\\sigma_{t}^{2}}{\\sigma_{e}^{2}}\\right)F_{N-1,N(n-1),[\\beta]} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Under more general random-effect models, if the test statistic is $F = MS_{x}/MS_{y}$, then $$ \\frac{F}{R}\\sim F_{n_{x},n_{y}},\\qquad\\mathrm{w h e r e}\\qquad R=\\frac{E(\\mathrm{M S}_{x})}{E(\\mathrm{M S}_{y})} $$ and to obtain power $ 1 - \\beta $ requires choosing sample sizes such that $$ F_{n_{x},n_{y},[1-\\alpha]}=\\left[\\frac{E(\\mathbf{M S}_{x})}{E(\\mathbf{M S}_{y})}\\right]F_{n_{x},n_{y},[\\beta]} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Example 5. Consider a random-effects model with design parameters similar to Example 3, with $\\sigma_{t}^{2}/\\sigma_{e}^{2}=1/3$, $N=4$, and $n=5$. What is the power of this design for a test with $\\alpha=0.05$? Here $F_{3,16,[0.95]}=3.24$ and $1+n(\\sigma_{t}^{2}/\\sigma_{e}^{2})=1+5/3=8/3$. From Equation A5.30b, the power becomes $$ \\Pr\\left(F_{3,16}>\\frac{3.24}{8/3}=1.215\\right)=0.103 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "What value of $n$ is required to give 90% power? With increasing values of $n$, we find that for $n = 38$, $N(n-1) = 148$, $1 + n(\\sigma_{t}^{2}/\\sigma_{e}^{2}) = 13.67$, and $F_{3,148,[0.95]} = 2.66$, giving $$ \\Pr\\left(F_{3,148}>\\frac{2.66}{13.67}=0.195\\right)=0.90 $$"
+    }
+  ]
+}

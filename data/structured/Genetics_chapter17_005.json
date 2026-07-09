@@ -1,0 +1,35 @@
+{
+  "id": "Genetics_chapter17_005",
+  "metadata": {
+    "chapter": "Genetics_chapter17",
+    "section": "Parent-Offspring Regression",
+    "subsections": [
+      "PRECISION OF ESTIMATES"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter17_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Parent-Offspring Regression",
+    "section_level_2": "PRECISION OF ESTIMATES",
+    "heading_path": [
+      "Parent-Offspring Regression",
+      "PRECISION OF ESTIMATES"
+    ],
+    "display_heading": "PRECISION OF ESTIMATES"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "As in all attempts to estimate parameters, it is always desirable to ascertain the degree of precision of heritability estimates. Since the statistical properties of least-squares regression are well known, this is relatively easy to do with parent-offspring analysis. Provided the data have been measured or transformed so that the joint distribution of parent and offspring phenotypes is bivariate normal, the sampling variance of the single parent-single offspring regression is, from Equation A1.20a, approximately $$ \\mathbf{Var}(b_{op})\\simeq\\frac{(1-r_{op}^{2})\\mathbf{Var}(z_{o})}{N\\mathbf{Var}(z_{p})} $$ where N is the number of parent-offspring pairs. This expression reduces to $ (1 - r^{2})/N $ when the phenotypic variances in the two generations are equal."
+    },
+    {
+      "type": "discussion",
+      "content": "Equation 17.6 also applies to regressions involving midparents if $ \\mathrm{Var}(\\overline{z}_p) = \\mathrm{Var}(z_p)/2 $ is substituted for $ \\mathrm{Var}(z_p) $ and $ r_{o\\overline{p}} $ for $ r_{op} $, and it applies to regressions involving multiple progeny when $ \\mathrm{Var}(z_o) \\cdot [t + (1-t)/n] $ is substituted for $ \\mathrm{Var}(z_o) $. For unequal family sizes, Kempthorne and Tandon (1953) show that, when the convergent regression coefficient has been attained, $$ \\mathrm{Var}(b)\\simeq\\frac{\\mathrm{Var}(z_{o})}{\\displaystyle\\sum_{i=1}^{N}w_{i}(z_{pi}-\\overline{z}_{p})^{2}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Provided the joint distribution of offspring and parent phenotypes is bivariate normal, the sampling distribution of a regression coefficient is also normal. The standard error of b can then be used to construct a confidence interval for the heritability estimate. Provided the number of families N > 15 (which is generally necessary for any reasonable degree of precision), the 95% confidence interval for a regression coefficient is approximately $ b \\pm 2SE(b) $, where $ \\mathrm{SE}(b) = \\sqrt{\\mathrm{Var}(b)} $. For a midparent-offspring regression, the confidence interval for the slope is also the confidence interval for $ h^2 $. For a regression involving single parents, the confidence interval for $ h^2 $ is twice that of the regression coefficient."
+    }
+  ]
+}

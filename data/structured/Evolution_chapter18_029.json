@@ -1,0 +1,67 @@
+{
+  "id": "Evolution_chapter18_029",
+  "metadata": {
+    "chapter": "Evolution_chapter18",
+    "section": "LINE-CROSS ANALYSIS OF SELECTION EXPERIMENTS",
+    "subsections": [
+      "The Hammond-Gardner Model"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter18_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "LINE-CROSS ANALYSIS OF SELECTION EXPERIMENTS",
+    "section_level_2": "The Hammond-Gardner Model",
+    "heading_path": [
+      "LINE-CROSS ANALYSIS OF SELECTION EXPERIMENTS",
+      "The Hammond-Gardner Model"
+    ],
+    "display_heading": "The Hammond-Gardner Model"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Motivated by the general diallel analysis of Gardner and Eberhart (1966), Hammond and Gardner (1974) extended the simple additive model to allow for dominance, which requires three additional parameters $ (D_{0}, D, \\text{ and } D_{q}) $. Assuming all lines start from the same base population, as derived below in Example 18.10, the Hammond-Gardner (HG) model returns means for various lines and line crosses of: $$ C_{k}=m+A\\cdot k+D_{0}+D\\cdot k+D_{q}\\cdot k^{2} $$ $$ C_{k}(s)=m+A\\cdot k+\\frac{1}{2}\\left(D_{0}+D\\cdot k+D_{q}\\cdot k^{2}\\right) $$ $$ C_{k\\times j}=m+\\frac{A}{2}(k+j)+D_{0}+\\frac{1}{2}\\left[D\\cdot(k+j)+2D_{q}\\cdot k j\\right] $$ $$ C_{k\\times j}(s)=m+\\frac{A}{2}(k+j)+\\frac{D_{0}}{2}+\\frac{1}{4}\\left[D\\cdot(k+j)+2D_{q}\\cdot k j\\right] $$ $$ C_{k\\times j}(rm)=C_{k\\times j}+\\frac{D_{q}}{4}(k-j)^{2} $$ where $ (s) $ and $ (rm) $, respectively, denote the selfed and randomly mated next generations given the cross or line. For example, $ C_4(s) $ is the mean among the selfed progeny of individuals from cycle four. Likewise, for $ C_{2\\times6}(rm) $, we cross cycle two and cycle six individuals, let their offspring (the $ F_1 $, $ C_{2\\times6}[rm] $) randomly mate, and then measure their resulting progeny (the $ F_2 $). As expected, when all of the dominance terms are zero, Equations 18.38a–18.38e reduce to Equations 18.37a and 18.37b. With no dominance, there is no change in the line mean following inbreeding, so $ C_k = C_k(s) $, and the $ F_1 $ progeny mean from a cross has the same mean as the progeny from either a selfed or randomly mated $ F_2 $, $ C_{k\\times i} = C_{k\\times i}(s) = C_{k\\times i}(rm) $."
+    },
+    {
+      "type": "discussion",
+      "content": "Five parameters $ (m, A, D, D_0, $ and $ D_q) $ are required under the full model, and closer inspection of the coefficients on these model parameters in Equations 18.38a–18.38e reveals what types of crosses are required to estimate parameters of interest. If the investigator only has the unselfed line means, $ C_k $, and their $ F_1 $ crosses, $ C_{k \\times j} $, A and D are not separately estimable, as they appear as $ k(A + D) $ in expressions for these means (see Equations 18.38a and 18.38c). Obtaining separate estimates requires having different coefficients on the A and D terms, as occurs with either selfed lines or selfed $ F_2 $ crosses (Equations 18.38b and 18.38d). These particular crosses provide additional information on the genetic nature of the between-generation divergence that is not given by the simple line means, or their $ F_1 $s, alone. Likewise, one cannot obtain separate estimates of m and $ D_0 $ unless there is at least one selfed line in the study. These terms enter as $ m + D_0 $ in all randomly mating populations, but they enter as $ m + D_0 / 2 $ in selfed lines. As with the strictly additive model, we can express the parameters of the Hammond-Gardner model in terms of locus-specific parameters, with m and A as defined by Equation 18.36. Letting $ d_i $ be the dominance for locus i, which now makes the genotypic values 0: $ a_i + d_i: 2a_i $, the dominance-related parameters, $ D_0 $, D, and $ D_q $, in Equations 18.38a–18.38e are as follows. $ D_0 $ is the contribution (to the mean) from dominance in the initial (cycle-zero) population $$ D_{0}=2\\sum p_{i}(1-p_{i})d_{i} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The role of dominance in response in the line means enters through D and $ D_{q} $, which are the linear and quadratic regression coefficients on cycle number. D is calculated by $$ D=2\\sum\\Delta p_{i}(1-2p_{i})d_{i} $$ and it appears in Equations 18.38a–18.38e as terms of the form $ D \\cdot k $, namely, D times the appropriate selection cycle number, k. Recalling (LW Equation 4.10b) that the average effect, $ \\alpha $, of an allelic substitution (replacing an unfavorable allele by a favorable one) is given by $ \\alpha = a + d(1 - 2p) $, we have $$ \\begin{align*}A+D&=2\\left(\\sum\\Delta p_i a_i+\\sum\\Delta p_i(1-2p_i)d_i\\right)\\\\&=2\\left(\\sum\\Delta p_i\\left[a_i+(1-2p_i)d_i\\right]\\right)=2\\sum\\Delta p_i\\alpha_i\\end{align*} $$ with $ A+D $ representing the per-generation change in the trait mean as a linear regression on cycle number (e.g., $ k[A+D] $ for line $ k $). This is also twice the average effect of substituting the unfavorable allele with the favorable one weighted by the allele-frequency change."
+    },
+    {
+      "type": "discussion",
+      "content": "The final dominance term $$ D_{q}=-2\\sum\\left(\\Delta p_{i}\\right)^{2}d_{i} $$ appears as a quadratic function of cycle number, with terms of the form $ k^{2}D_{q} $ for cycle k and $ k\\dot{j}D_{q} $ for crosses between lines from cycles j and k. This is perhaps the most interesting dominance term, as it measures both inbreeding depression and the expected heterosis when two lines are crossed. As discussed below, $ D_{q} $ has also been interpreted as the component of change in the mean due to the effects of drift, with $ A + D $ representing the response from selection (the expected deterministic change). Recall (LW Chapter 10) that the heterosis, H, between two lines $$ H=\\mu_{1\\times2}-\\frac{\\mu_{1}+\\mu_{2}}{2} $$ is the difference between the mean of the $ F_{1} $ and the average of its parental lines. In the absence of epistasis $$ H=\\sum(\\delta p_{i})^{2}d_{i} $$ where $ \\delta p_i $ is the between-line difference in allele frequency for the favorable allele at the $ i $th locus and $ d_i $ is the associated dominance term. Because the expected difference, $ \\delta p_i $, in allele frequency between lines separated by a single cycle of selection is $ \\Delta p_i $, comparing Equations 18.39d and 18.39e shows that $ D_q $ is the negative of twice the heterosis generated by a single generation of selection, namely, $ D_q = -2H $."
+    },
+    {
+      "type": "discussion",
+      "content": "The composite parameters $ (m, A, D, D_0,\\text{and } D_q) $ are typically estimated by OLS, with the vector of estimates given by $ \\left(\\mathbf{X}^T\\mathbf{X}\\right)^{-1}\\mathbf{X}^T\\mathbf{y} $, with y being the vector of population means and the design matrix, $ \\mathbf{X} $, containing the appropriate coefficients for the parameters of interest (Example 18.9). The machinery introduced in LW Chapter 9 for standard line-cross analysis, such as hypothesis testing, testing goodness-of-fit, and estimation via GLS when the standard errors vary over means, can all be applied in a straightforward fashion. As with a standard line-cross analysis, one starts a GMA with the simple additive model and then tests whether adding additional model terms significantly improves the fit (LW Chapter 9). Typically one ends up with a reduced model, as some of the parameters turn out to be nonsignificant."
+    },
+    {
+      "type": "discussion",
+      "content": "GMA can be extended to situations where some of the crosses are between lines from different base populations (Smith 1979b, 1983; Helms et al. 1989; Butruille et al. 2004; Melchinger and Flachenecker 2006). The same logic holds as before, with the frequency of the favorable allele in cycle $k$ from base population $j$ being $p_j(k) \\simeq p_j + k \\Delta p_j$, and with associated parameters $m_j, A_j, D_j, D_{0,j}$, and $D_{q,j}$. Additional terms are required to account for any initial heterosis (cycle-zero crosses between base populations $j$ and $i$) which, from Equation 18.39e, is a function of the square of the difference in their allele frequencies, $\\delta_{i,j}^2 = (p_i - p_j)^2$. Finally, terms for any additional heterosis that has accrued during selection are required, and again these are functions of the squared allele-frequency differences. For a cycle-$k$ line from base population $i$ crossed to a cycle-$l$ line from base population $j$, this is $$ [\\delta_{i,j}(k,\\ell)]^{2}=[p_{j}(k)-p_{i}(\\ell)]^{2}=[(p_{j}+k\\Delta p_{j})-(p_{i}+\\ell\\Delta p_{i})]^{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The motivation for this type of analysis is examined in our final volume, where we discuss the breeding of superior hybrids between lines. Basically, one tries to improve the performance of both selected lines, as well as that of their resulting hybrid. Generation means analysis can help partition any observed improvement into components of within-line and between-line (hybrid) improvement."
+    },
+    {
+      "type": "discussion",
+      "content": "The resulting vector, y, of means and the design matrix, X, become $$ \\mathbf{y}=\\begin{pmatrix}{{{59.7}}} \\\\{{{63.4}}} \\\\{{{68.9}}} \\\\{{{42.3}}} \\\\{{{61.2}}} \\\\{{{79.6}}} \\\\{{{72.3}}} \\\\{{{40.3}}}\\end{pmatrix},\\qquad\\mathbf{X}=\\begin{pmatrix}{{{1}}}&{{{0}}}&{{{1}}}&{{{0}}} \\\\{{{1}}}&{{{4}}}&{{{1}}}&{{{4}}} \\\\{{{1}}}&{{{7}}}&{{{1}}}&{{{7}}} \\\\{{{1}}}&{{{7}}}&{{{0.5}}}&{{{3.5}}} \\\\{{{1}}}&{{{2}}}&{{{1}}}&{{{2}}} \\\\{{{1}}}&{{{3.5}}}&{{{1}}}&{{{3.5}}} \\\\{{{1}}}&{{{5.5}}}&{{{1}}}&{{{5.5}}} \\\\{{{1}}}&{{{5.5}}}&{{{0.5}}}&{{{2.75}}}\\end{pmatrix} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Solving for the vector of parameter estimates yields $$ \\begin{aligned}\\left(\\begin{array}{c}\\widehat{m}\\\\\\widehat{A}\\\\\\widehat{D}_{0}\\\\\\widehat{D}\\\\\\end{array}\\right)=\\left(\\mathbf{X}^{T}\\mathbf{X}\\right)^{-1}\\mathbf{X}^{T}\\mathbf{y}=\\left(\\begin{array}{c}4.266\\\\1.072\\\\57.402\\\\0.523\\\\\\end{array}\\right)\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Based on this subset of data, we note that there is considerable initial dominance ($ D_{0} = 57.402 $) influencing the initial value of the trait. Of the per-generation change of $ A + D = 1.595 $ per generation, roughly two-thirds are from $ A (1.072) $, and one-third is from $ D (0.5223) $. Standard errors for these estimates follow using standard OLS machinery (LW Chapter 9)."
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:18.10]]"
+    }
+  ]
+}

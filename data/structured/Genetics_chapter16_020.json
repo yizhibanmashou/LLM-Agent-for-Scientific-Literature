@@ -1,0 +1,47 @@
+{
+  "id": "Genetics_chapter16_020",
+  "metadata": {
+    "chapter": "Genetics_chapter16",
+    "section": "Introduction",
+    "subsections": [
+      "Power of ASP Tests and Related Issues"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter16_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "Power of ASP Tests and Related Issues",
+    "heading_path": [
+      "Introduction",
+      "Power of ASP Tests and Related Issues"
+    ],
+    "display_heading": "Power of ASP Tests and Related Issues"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "The power of different sib-pair tests has been examined by several authors (Suarez et al. 1978, Blackwelder and Elston 1985, Goldin and Gershon 1988, Risch 1990a-c, Schaid and Nick 1990, Sribney and Swift 1992, Goldin and Weeks 1993, Green and Shah 1993, Shah and Green 1994), who conclude that most of the power resides in doubly affected pairs. Blackwelder and Elston (1985) and Schaid and Nick (1990) compared the performance of tests based on the mean number of ibid alleles with those based on a single ibid frequency class (e.g., Equation 16.50b vs. 16.50a). If dominance is modest or linkage is loose, $ T_{m} $ is a more powerful test than $ T_{2} $. However, with strong dominance and tight linkage, the test based on $ T_{2} $ is slightly more powerful. Sribney and Swift (1992), noting that assortative mating and multiple underlying loci can inflate the number of required sib-pairs to achieve a given power, suggest that the use of discordant sib-trios (two normal and one affected, or vice versa) can offer higher power in these cases."
+    },
+    {
+      "type": "discussion",
+      "content": "The ibd distribution for a marker locus linked to a DS gene has been solved for full sibs by Suarez et al. (1978) and for more general pairs of relatives by Risch (1990b). These expressions are useful for both power calculations (Appendix 5; Figure 16.4) and for showing how the DS parameters influence the ibd distribution. Since many tests use only doubly affected full-sib pairs, we restrict attention to this case. It is convenient to express the ibd distribution as the expected frequency under no linkage plus a deviation due to linkage, $$ p_{20}=\\frac{1}{4}-d_{20},\\quad p_{21}=\\frac{1}{2}-d_{21},\\quad p_{22}=\\frac{1}{4}+d_{22}, $$"
+    },
+    {
+      "type": "discussion",
+      "content": "[[FIGURE:16.4]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Here, as above, $p_{2i}$ is the probability that a doubly affected pair shares $i$ ibd marker alleles. If $c$ is the recombination fraction between marker and QTL, these deviations are given by $$ d_{20}=\\Gamma+\\left[\\Gamma\\cdot\\Delta\\cdot4c(1-c)\\right] $$ $$ d_{21}=2\\Gamma\\cdot\\Delta\\cdot(1-2c)^{2} $$ $$ d_{22}=\\Gamma+\\{\\Gamma\\cdot\\Delta\\cdot2[(1-c)^{2}+c^{2}]\\} $$ with $$ \\Gamma=\\frac{(1-2c)^{2}}{4}\\left(1-\\frac{1}{\\lambda_{S}}\\right)\\qquad\\mathrm{a n d}\\qquad\\Delta=\\frac{\\lambda_{S}-\\lambda_{O}}{\\lambda_{S}-1} $$ where $\\lambda_{S}$ and $\\lambda_{O}$ are the relative risks in full-sib and parent-offspring pairs attributable to the DS locus. If there is no dominance at the DS locus ($\\lambda_{S}=\\lambda_{O}$ and hence $\\Delta=0$), then $d_{21}=0$, so this class provides no information on linkage. Further, in this case the magnitude of the deviations for $p_{20}$ and $p_{22}$ are identical, and hence each class provides the same amount of linkage information. When dominance is present, $d_{22}>d_{20}$, implying that the $p_{22}$ class provides the most linkage information. Equation 16.52a assumes that a single linked locus underlies the disease. When multiple loci are involved, the marker ibid distribution is no longer a simple function of the population $ \\lambda_{R} $ values, and can be rather involved (Risch 1990a,b)."
+    },
+    {
+      "type": "discussion",
+      "content": "The power using different types of relative pairs has been examined by Risch (1990b,c) and Bishop and Williamson (1990). For diseases with large $ \\lambda_{S} $ values, grandparent-grandchild pairs offer the highest power of detection when tightly linked markers are available. For diseases with smaller $ \\lambda_{S} $ values and/or less tightly linked markers, sibs offer the most power."
+    },
+    {
+      "type": "discussion",
+      "content": "An important issue related to power is the verification of previous linkage claims. Such verification has been especially problematic in studies claiming associations between markers and certain psychiatric disorders (reviewed in Gershon and Cloninger 1994, Risch and Botstein 1996). An analysis of this problem was presented by Suarez et al. (1994), who found that when the character is determined by several QTLs of roughly similar effects, the number of families required to detect the first marker-trait association is much smaller than the number of independent families required to replicate the initial claim (also see Bell and Lathrop 1996). In effect, the waiting time (measured as number of sib pairs that must be sampled) required for replication of a claim is far greater than the waiting time to detect an association. This result occurs because if the trait is determined by n QTLs of equal effect, and if p is the probability of detecting a given QTL (i.e., the power of the design), then there are n chances for detecting significant marker effects (and hence a power of approximately np), but only one chance of replicating the initial observation (with probability p). This waiting time is especially a problem if a number of rare genes of large effect are involved, as affected individuals in one set of families may arise from one gene, while a second set of families involves another QTL and hence does not replicate the original finding."
+    }
+  ]
+}

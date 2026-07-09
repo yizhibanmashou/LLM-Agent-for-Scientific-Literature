@@ -1,0 +1,47 @@
+{
+  "id": "Evolution_chapter2_017",
+  "metadata": {
+    "chapter": "Evolution_chapter2",
+    "section": "MUTATION-MIGRATION-DRIFT EQUILIBRIUM",
+    "subsections": [
+      "Quantifying Population Structure: $ F_{ST} $"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter2_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "MUTATION-MIGRATION-DRIFT EQUILIBRIUM",
+    "section_level_2": "Quantifying Population Structure: $ F_{ST} $",
+    "heading_path": [
+      "MUTATION-MIGRATION-DRIFT EQUILIBRIUM",
+      "Quantifying Population Structure: $ F_{ST} $"
+    ],
+    "display_heading": "Quantifying Population Structure: $ F_{ST} $"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "The classic measure of population structure, $ F_{ST} $, was defined by Wright (1943, 1951) as the correlation (identical by descent status) between alleles in different individuals from the same subpopulation. $ F_{ST} $ is a measure of the amount of inbreeding introduced by the population structure, relative to what would be expected in one large panmictic population. Effectively, $ F_{ST} $ measures the fraction of total genetic variance due to differences between subpopulations (indeed, S stands for subpopulation and T for total population). This directly follows from the standard ANOVA (analysis of variance) identity that the among-group component of variance equals the within-group covariance (LW Chapter 18), with the latter equal to the correlation among group members times the total variance. In particular, consider the distribution of the allele frequencies for a biallelic locus (with alleles B and b) over a set of populations. If $ p_0 $ denotes the average frequency of B over this set, the allelic variance for the total metapopulation is just $ p_0(1 - p_0) $. $ F_{ST} $ is then defined as the fraction of the total variance attributable to the variance in the frequency of allele B among demes, $ \\sigma^2(p) $, $$ F_{ST}=\\frac{\\sigma^{2}(p)}{p_{0}(1-p_{0})} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Wright was somewhat ambiguous in his use of $ F_{ST} $, and some confusion has surrounded various interpretations of its true meaning. These issues were nicely cleaned up by Balding (2003)."
+    },
+    {
+      "type": "discussion",
+      "content": "Recalling Equation 2.14, which gives the expected variance in the allele frequency between two populations separated from a common ancestor t generations in the past (ignoring mutation and assuming no migration among groups), we have that $$ F_{ST}=\\left[1-\\left(1-\\frac{1}{2N_{e}}\\right)^{t}\\right]\\simeq\\frac{t}{2N_{e}}\\quad for\\quad t\\ll N_{e} $$"
+    },
+    {
+      "type": "proposition",
+      "content": "Under this model, $ F_{ST} $ eventually increases to one, as in the absence of mutation, drift eventually removes all variation within groups, with the different demes becoming randomly fixed for alternative alleles. With recurrent mutation and gene flow among demes, however, neither the within-nor the among-population variation is ever expected to reach absolute zero, and $ F_{ST} $ will be in the $ (0,1) $ interval, with its magnitude depending on the relative impact of the three contributing forces (mutation, migration, and drift). A variety of methods, including extensions to multiple alleles, have been developed for estimating $ F_{ST} $ from samples of alleles from multiple subpopulations under the assumption of the infinite-alleles model (Nei and Chesser 1983; Weir and Cockerham 1984; Weir and Hill 2002; Balding 2003), and others allow for highly mutable alleles with a significant chance of back mutation (Slatkin 1995a; Goodman 1997)."
+    },
+    {
+      "type": "discussion",
+      "content": "A result of great conceptual utility is that $ F_{ST} $ values are closely related to the average coalescence times of alleles within subpopulations, $ \\bar{t}_{0} $, and of alleles drawn randomly from the entire metapopulation, $ \\bar{t} $, $$ F_{S T}=\\frac{\\overline{t}-\\overline{t}_{0}}{\\overline{t}}=1-\\frac{\\overline{t}_{0}}{\\overline{t}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "(Slaktin 1991). If $ \\bar{t}_{0} $ is very close to $ \\bar{t} $, there is little among-group differentiation, as pairs of alleles within groups have essentially the same amount of time to diverge mutationally as those among groups. Because the coalescent structure of a population simply represents a genealogical sampling process and is independent of the mutations that incidentally arise, Equation 2.44 shows that the equilibrium level of population subdivision is also independent of the mutation process."
+    }
+  ]
+}

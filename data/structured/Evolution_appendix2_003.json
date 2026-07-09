@@ -1,0 +1,64 @@
+{
+  "id": "Evolution_appendix2_003",
+  "metadata": {
+    "chapter": "Evolution_appendix2",
+    "section": "Appendix: Introduction",
+    "subsections": [
+      "BAYES' THEOREM"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_appendix2_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [
+      "inline_1"
+    ],
+    "section_level_1": "Appendix: Introduction",
+    "section_level_2": "BAYES' THEOREM",
+    "heading_path": [
+      "Appendix: Introduction",
+      "BAYES' THEOREM"
+    ],
+    "display_heading": "BAYES' THEOREM",
+    "table_reference_keys": [
+      "Evolution_appendix2:inline_1"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "proposition",
+      "content": "The foundation of Bayesian statistics is Bayes' theorem. Suppose we observe a random variable, x, and wish to make inferences about another random variable, $ \\theta $, in the case where $ \\theta $ is drawn from some distribution, $ \\operatorname{Pr}(\\theta) $. From the definition of conditional probability $$ \\Pr(\\theta\\mid x)=\\frac{\\Pr(x,\\theta)}{\\Pr(x)} $$ where (for now) x and $ \\theta $ are discrete random variables. Again from the definition of conditional probability, we can express the joint probability by conditioning on $ \\theta $ to give $$ \\Pr(x,\\theta)=\\Pr(x\\mid\\theta)\\Pr(\\theta) $$"
+    },
+    {
+      "type": "proposition",
+      "content": "Putting these together yields Bayes' theorem $$ \\mathrm{Pr}(\\theta\\mid x)=\\frac{\\mathrm{Pr}(x\\mid\\theta)\\mathrm{Pr}(\\theta)}{\\mathrm{Pr}(x)} $$"
+    },
+    {
+      "type": "proposition",
+      "content": "Bayes' theorem flips the conditioning variable, allowing us to move from $ \\Pr(x \\mid \\theta) $ to $ \\Pr(\\theta \\mid x) $. With $ k $ possible values of $ \\theta $ ($ \\theta_1 $ through $ \\theta_k $), the discrete version of Bayes' theorem becomes $$ \\Pr(\\theta_{j}\\mid x)=\\frac{\\Pr(x\\mid\\theta_{j})\\Pr(\\theta_{j})}{\\Pr(x)}=\\frac{\\Pr(x\\mid\\theta_{j})\\Pr(\\theta_{j})}{\\displaystyle\\sum_{i=1}^{k}\\Pr(\\theta_{i})\\Pr(x\\mid\\theta_{i})}\\quad for\\quad1\\leq j\\leq k $$"
+    },
+    {
+      "type": "discussion",
+      "content": "In Bayesian statistics, x represents an observable variable (the data), while $ \\theta $ represents a parameter describing the distribution of x. In this setting, $ \\Pr(\\theta) $ is the prior distribution of possible parameter values, while $ \\Pr(\\theta \\mid x) $ is the subsequent posterior distribution of $ \\theta $ given the observed data x and the prior. In classical statistics, the unknown parameters are treated as fixed and the data are considered random, whereas under a Bayesian analysis, the data are considered fixed and the unknown parameters that generated the data are considered random."
+    },
+    {
+      "type": "proposition",
+      "content": "All of the above statements also hold for continuous random variables, for which the probability density function, p, replaces the discrete probability value, Pr. In particular, the continuous multivariate version of Bayes' theorem is $$ p(\\boldsymbol{\\Theta}\\mid\\mathbf{x})=\\frac{p(\\mathbf{x}\\mid\\boldsymbol{\\Theta})p(\\boldsymbol{\\Theta})}{p(\\mathbf{x})}=\\frac{p(\\mathbf{x}\\mid\\boldsymbol{\\Theta})p(\\boldsymbol{\\Theta})}{\\int p(\\mathbf{x},\\boldsymbol{\\Theta})d\\boldsymbol{\\Theta}} $$ where $ \\boldsymbol{\\Theta} = (\\theta_1, \\theta_2, \\cdots, \\theta_n) $ is a vector of $ n $ (potentially) continuous variables. As with the univariate case, $ p(\\boldsymbol{\\Theta}) $ is the assumed prior distribution of the unknown parameters, while $ p(\\boldsymbol{\\Theta} \\mid \\mathbf{x}) $ is the posterior distribution given the prior, $ p(\\boldsymbol{\\Theta}) $, and the data, $ \\mathbf{x} $."
+    },
+    {
+      "type": "proposition",
+      "content": "The origin of Bayes' theorem has a fascinating history (Stigler 1983). It is named after the Rev. Thomas Bayes, a priest who never published a mathematical paper during his lifetime. The paper in which the theorem appears was posthumously read before the Royal Society by his friend Richard Price in 1764. Stigler suggests it was first discovered by Nicholas"
+    },
+    {
+      "type": "discussion",
+      "content": "Saunderson, a blind mathematician and optician who, at age 29, became Lucasian Professor of Mathematics at Cambridge (the position held earlier by Issac Newton). This is an example of Stigler's Law of Eponymy (Stigler 1980), wherein no discovery or invention is named after its first discoverer (an eponym). As is fitting, Stigler's law is self-consistent, as this phenomenon was previously mentioned by Merton (1965)."
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:A2.1]]"
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:A2.2]]"
+    }
+  ]
+}

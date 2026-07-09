@@ -1,0 +1,43 @@
+{
+  "id": "Genetics_chapter4_005",
+  "metadata": {
+    "chapter": "Genetics_chapter4",
+    "section": "Introduction",
+    "subsections": [
+      "Testing for Hardy-Weinberg Proportions"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter4_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "Testing for Hardy-Weinberg Proportions",
+    "heading_path": [
+      "Introduction",
+      "Testing for Hardy-Weinberg Proportions"
+    ],
+    "display_heading": "Testing for Hardy-Weinberg Proportions"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "When data are available on genotype frequencies in a population, it is standard practice to cross-check these with the Hardy-Weinberg expectations. Lack of concordance between the two implies that at least one of the assumptions of the Hardy-Weinberg model is violated and often instigates further investigation. Several different statistical techniques have been proposed (Weir 1996), the most popular by far being the $\\chi^{2}$ (Chi-square) test. However, the likelihood-ratio test is now becoming more common and appears to be at least as reliable as the former. Likelihood-based tests have a number of desirable statistical features (Appendix 4). Letting $N_{ij}$ and $\\hat{N}_{ij}$ be the observed and expected numbers of genotype $B_{i}B_{j}$ in a sample, then the likelihood-ratio test statistic $$ G=-2\\sum_{i=1}^{n}\\sum_{j\\geq i}^{n}N_{ij}\\ln\\left(\\frac{\\widehat{N}_{ij}}{N_{ij}}\\right) $$ has a sampling distribution very similar to the well-known $\\chi^{2}$ distribution. That is, if a population in Hardy-Weinberg equilibrium is sampled many different times and $G$ calculated each time, the frequency distribution of the observed $G$ values will be nearly $\\chi^{2}$ distributed. Thus, the test for Hardy-Weinberg proportions compares the observed statistic $G$ with the cumulative $\\chi^{2}$ distribution. If $G$ exceeds the level at which there is a 5% chance of obtaining a higher $\\chi^{2}$, then one can reject the null hypothesis of Hardy-Weinberg proportions with 95% confidence."
+    },
+    {
+      "type": "proposition",
+      "content": "Regardless of which approach to testing for Hardy-Weinberg frequencies is taken, it should be kept in mind that some of the conditions underlying the Hardy-Weinberg theorem may be violated without causing detectable departures of observations from expectations. For example, if the product of the survivorships of the two homozygotes is equal to the square of the heterozygote survival, the zygotic frequencies after selection will still be in Hardy-Weinberg proportions (Lewontin and Cockerham 1959). Thus, a failure to reject the Hardy-Weinberg model should be interpreted with caution."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 2. As an example of the application of Equation 4.4, we return to the data in the table of Example 1."
+    },
+    {
+      "type": "discussion",
+      "content": "The best estimates for the Hardy-Weinberg expectations are obtained from the observed allele frequencies: $ \\widehat{N}_{11} = p_{1}^{2}N = 905 $, $ \\widehat{N}_{12} = 2p_{1}p_{2}N = 79 $, and $ \\widehat{N}_{22} = p_{2}^{2}N = 2 $. Applying these and the observed values ($ N_{11} $, $ N_{12} $, and $ N_{22} $) from the table, $$ G=-2\\left[905\\ln(905/905)+78\\ln(79/78)+3\\ln(2/3)\\right]=0.446 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Under the null hypothesis of Hardy-Weinberg frequencies, the sampling distribution of $G$ is a function of the number of degrees of freedom, which in the case of the Hardy-Weinberg test is the number of genotypic classes minus the number of allele frequencies that must be estimated from the data minus one. Here, it was necessary to estimate one parameter $(p_{1})$ from the data, so there is $3-1-1=1$ degree of freedom. Referring to a $\\chi^{2}$ table in any statistics text, it can be found that, with one degree of freedom, $G$ must exceed 3.841 to reject the null hypothesis at the 0.05 probability level. Therefore, the observed data are not significantly different from those expected under the Hardy-Weinberg expectations."
+    }
+  ]
+}

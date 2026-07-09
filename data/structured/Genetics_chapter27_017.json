@@ -1,0 +1,51 @@
+{
+  "id": "Genetics_chapter27_017",
+  "metadata": {
+    "chapter": "Genetics_chapter27",
+    "section": "Variance-Component Estimation with Complex Pedigrees",
+    "subsections": [
+      "Variances of Complex Variables"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter27_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Variance-Component Estimation with Complex Pedigrees",
+    "section_level_2": "Variances of Complex Variables",
+    "heading_path": [
+      "Variance-Component Estimation with Complex Pedigrees",
+      "Variances of Complex Variables"
+    ],
+    "display_heading": "Variances of Complex Variables"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "The preceding approach can also be used to obtain an expression for the variance of a function. Again expanding around $ c = \\mu_x $, and substituting for f from Equation A1.1 and $ E(f) $ from Equation A1.2, $$ \\begin{aligned}\\sigma_{f}^{2}=&E\\left\\{[f-E(f)]^{2}\\right\\}\\\\=&E\\left\\{\\left[\\left(f(\\mu_{x})+(x-\\mu_{x})\\frac{\\partial f(\\mu_{x})}{\\partial x}+\\cdots\\right)-\\left(f(\\mu_{x})+\\sigma^{2}(x)\\frac{\\partial^{2}f(\\mu_{x})}{2\\partial x^{2}}+\\cdots\\right)\\right]^{2}\\right\\}\\\\=&E\\left\\{\\left[(x-\\mu_{x})\\frac{\\partial f(\\mu_{x})}{\\partial x}+[(x-\\mu_{x})^{2}-\\sigma^{2}(x)]\\frac{\\partial^{2}f(\\mu_{x})}{2\\partial x^{2}}+\\cdots\\right]^{2}\\right\\}\\quad(A1.6)\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Ignoring all but the two lowest-order terms, and noting that $E(x - \\mu_{x}) = 0$, $$ \\begin{aligned}\\sigma_{f}^{2}\\simeq E\\left[(x-\\mu_{x})^{2}\\right]\\left[\\frac{\\partial f(\\mu_{x})}{\\partial x}\\right]^{2}+2E\\left[(x-\\mu_{x})^{3}\\right]\\left[\\frac{\\partial f(\\mu_{x})}{\\partial x}\\right]\\left[\\frac{\\partial^{2}f(\\mu_{x})}{2\\partial x^{2}}\\right]\\\\-2E(x-\\mu_{x})\\sigma^{2}(x)\\left[\\frac{\\partial f(\\mu_{x})}{\\partial x}\\right]\\left[\\frac{\\partial^{2}f(\\mu_{x})}{2\\partial x^{2}}\\right]+E\\left[(x-\\mu_{x})^{4}\\right]\\left[\\frac{\\partial^{2}f(\\mu_{x})}{2\\partial x^{2}}\\right]^{2}\\\\-2E\\left[(x-\\mu_{x})^{2}\\right]\\sigma^{2}(x)\\left[\\frac{\\partial^{2}f(\\mu_{x})}{2\\partial x^{2}}\\right]^{2}+\\sigma^{4}(x)\\left[\\frac{\\partial^{2}f(\\mu_{x})}{2\\partial x^{2}}\\right]^{2}\\\\=\\sigma^{2}(x)\\left[\\frac{\\partial f(\\mu_{x})}{\\partial x}\\right]^{2}+2\\mu_{3x}\\left[\\frac{\\partial f(\\mu_{x})}{\\partial x}\\right]\\left[\\frac{\\partial^{2}f(\\mu_{x})}{2\\partial x^{2}}\\right]\\\\+\\left[\\mu_{4x}-\\sigma^{4}(x)\\right]\\left[\\frac{\\partial^{2}f(\\mu_{x})}{2\\partial x^{2}}\\right]^{2}\\tag{A1.7a}\\end{aligned} $$ where $\\mu_{3x}=E[(x-\\mu_x)^3]$ and $\\mu_{4x}=E[(x-\\mu_x)^4]$ are the third and fourth moments about the mean of $x$. When $f$ is a function of two variables, Equation A1.6a expands to $$ \\begin{aligned}\\sigma_{f}^{2}&=E\\Bigg\\{\\left[(x-\\mu_{x})\\frac{\\partial f(\\mu_{x},\\mu_{y})}{\\partial x}+(y-\\mu_{y})\\frac{\\partial f(\\mu_{x},\\mu_{y})}{\\partial y}\\right.\\\\&\\quad+\\left[(x-\\mu_{x})^{2}-\\sigma^{2}(x)\\right]\\frac{\\partial^{2}f(\\mu_{x},\\mu_{y})}{2\\partial x^{2}}+\\left[(x-\\mu_{x})(y-\\mu_{y})-\\sigma(x,y)\\right]\\frac{\\partial^{2}f(\\mu_{x},\\mu_{y})}{\\partial x\\partial y}\\\\&\\quad+\\left[(y-\\mu_{y})^{2}-\\sigma^{2}(y)\\right]\\frac{\\partial^{2}f(\\mu_{x},\\mu_{y})}{2\\partial y^{2}}+\\cdots\\Bigg|^{2}\\Bigg\\}\\tag{A1.7b}\\end{aligned} $$ where $\\sigma(x,y)$ is the covariance of $x$ and $y$. An approximation often used in place of Equation A1.7b is obtained by ignoring all but the first-order terms. Then, if $f$ is a function of $n$ variables, $$ \\sigma_{f}^{2}\\simeq\\sum_{i=1}^{n}\\sum_{j=1}^{n}\\sigma(x_{i},x_{j})\\left(\\frac{\\partial f}{\\partial x_{i}}\\right)\\left(\\frac{\\partial f}{\\partial x_{j}}\\right) $$ where $\\sigma(x_{i}, x_{j})$ is a variance if $i = j$ and a covariance otherwise, and the partial derivatives are evaluated at the expectations for all underlying variables."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 3. Imagine sampling a population many times independently for $n$ individuals, each time estimating the mean. Can we express the variance of the sample means, $\\sigma^{2}(\\overline{x})$, in terms of the variance of individual measures, $\\sigma^{2}(x)$?"
+    },
+    {
+      "type": "definition",
+      "content": "Recall that the definition of a sample estimate of the mean is $$ \\overline{x}=\\frac{x_{1}+x_{2}+\\cdots+x_{n}}{n} $$"
+    },
+    {
+      "type": "proposition",
+      "content": "Under the assumption that the population is sampled randomly, there is no covariance between the measures of different individuals, so that Equation A1.7c reduces to $$ \\sigma_{f}^{2}\\simeq\\sum_{i=1}^{n}\\sigma^{2}(x_{i})\\left(\\frac{\\partial f}{\\partial x_{i}}\\right)^{2} $$ where in this example $f = \\overline{x}$. The partial derivative of $\\overline{x}$ with respect to each individual measure $x_{i}$ is simply $1/n$, and assuming a homogeneous population, $\\sigma^{2}(x_{i}) = \\sigma^{2}(x)$ for all $i$. Thus, substituting into Equation A1.8a, the sampling variance of a mean is $$ \\sigma^{2}(\\overline{x})=\\sum_{i=1}^{n}\\frac{\\sigma^{2}(x_{i})}{n^{2}}=\\frac{\\sigma^{2}(x)}{n} $$ i.e., the sampling variance of a mean is equal to the variance of individual measures divided by the sample size."
+    },
+    {
+      "type": "discussion",
+      "content": "The practical utility of this expression might be questioned since the parameter $\\sigma^{2}(x)$ is something that we can only estimate. However, recall from Example 2 that an unbiased estimator of $\\sigma^{2}(x)$ is $\\mathrm{Var}(x)=n(\\overline{x^{2}}-\\overline{x}^{2})/(n-1)$. It follows that $$ \\mathrm{Var}(\\overline{x})=\\frac{\\mathrm{Var}(x)}{n} $$ is an unbiased estimator of $ \\sigma^{2}(\\overline{x}) $. The square root of $ \\mathrm{Var}(\\overline{x}) $ is known as the standard error of the mean."
+    },
+    {
+      "type": "proposition",
+      "content": "The practice of substituting an observed (and, ideally, unbiased) statistic for a population parameter in sampling-variance equations is widely used to obtain approximate sampling variances of statistics. Since the accuracy of formulations employing such estimates increases with sample size, these formulations are usually referred to as large-sample variance expressions, their square roots yielding standard errors of the statistic. It is often possible to use the standard error to construct a confidence interval around the estimate, such that the parametric value is encompassed within the confidence limits with a certain probability. However, the construction of confidence intervals for complex functions is generally very difficult not only because of the approximate nature of the variance estimates but also because the forms of distributions of complex functions are usually unknown. As pointed out in Chapter 2, if it is reasonable to assume that the statistic of interest is approximately normally distributed, then the estimate plus or minus twice the square root of the sampling variance provides an estimate of the 95% confidence interval, i.e., of the interval within which the true parametric value lies with approximately 95% probability. For variables that are not normally distributed, a more general statement can be made. By Chebyshev's theorem, if $f$ and $\\mu_f$ are observed and parametric values of a function, the probability that $\\mu_f$ is in the range $f \\pm k\\sigma(f)$ is at least $1 - (1/k^2)$. For example, the probability that a parametric value lies within two (true) standard deviations of its estimate is at least 3/4 regardless of the sampling distribution of the estimator. The probability increases to 95% if $k \\simeq 4.5$. In other words, $\\pm 4.5$ times the standard error of an estimate provides a very conservative estimate of the 95% confidence interval."
+    }
+  ]
+}

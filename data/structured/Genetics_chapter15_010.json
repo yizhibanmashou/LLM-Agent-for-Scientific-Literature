@@ -1,0 +1,39 @@
+{
+  "id": "Genetics_chapter15_010",
+  "metadata": {
+    "chapter": "Genetics_chapter15",
+    "section": "Introduction",
+    "subsections": [
+      "Likelihood Maps"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter15_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "Likelihood Maps",
+    "heading_path": [
+      "Introduction",
+      "Likelihood Maps"
+    ],
+    "display_heading": "Likelihood Maps"
+  },
+  "blocks": [
+    {
+      "type": "proposition",
+      "content": "In the likelihood framework, tests of whether a QTL is linked to the marker(s) under consideration are based on the likelihood-ratio statistic, $$ \\mathrm{LR}=-2\\ln\\left[\\frac{\\max\\ell_{r}(\\mathbf{z})}{\\max\\ell(\\mathbf{z})}\\right] $$ where $\\max \\ell_{r}(\\mathbf{z})$, given by Equation 13.8, is the maximum of the likelihood function under the null hypothesis of no segregating QTL (i.e., under the assumption"
+    },
+    {
+      "type": "discussion",
+      "content": "[[FIGURE:15.1]] that the phenotypic distribution is a single normal). This test statistic is approximately $ \\chi^{2} $-distributed, with the degrees of freedom given by the extra number of fitted parameters in the full model. For a model assuming a single QTL, most designs have five parameters in the full model (the three QTL means, the variance, and the QTL position), and two in the reduced model (the mean and variance), giving three degrees of freedom. Certain designs (such as a backcross, RIL, or DHL) involve situations where only two QTL means enter (e.g., QQ and qq for RILs/DHLs, Qq and QQ or qq for a backcross), and here the likelihood ratio has two degrees of freedom."
+    },
+    {
+      "type": "discussion",
+      "content": "The amount of support for a QTL at a particular map position is often displayed graphically through the use of likelihood maps (Figures 15.1, 15.2), which plot the likelihood-ratio statistic (or a closely related quantity) as a function of map position of the putative QTL. For example, the value of the likelihood map at c = 0.05 gives the likelihood-ratio statistic that a QTL is at recombination fraction 0.05 from the marker vs. a model assuming no QTL. This approach for displaying the support for a QTL was introduced by Lander and Botstein (1989), who plotted the LOD (likelihood of odds) scores (Morton 1955b). The LOD score for a particular value of c is related to the likelihood-ratio test statistic (LR) by $$ \\mathrm{L O D}(c)=\\log_{10}\\left[\\frac{\\max\\ell_{r}(\\mathbf{z})}{\\max\\ell(\\mathbf{z},c)}\\right]=\\frac{\\mathrm{L R}(c)}{2\\ln10}\\simeq\\frac{\\mathrm{L R}(c)}{4.61} $$ showing that the LOD score is simply a constant times the likelihood-ratio statistic. Here $ \\max \\ell(\\mathbf{z}, c) $ denotes the maximum of the likelihood function given a QTL at recombination frequency c from the marker. Another variant is simply to plot $ \\max \\ell(\\mathbf{z}, c) $ instead of the likelihood-ratio statistic, as the restricted likelihood, $ \\max \\ell_r(\\mathbf{z}) $, is the same for each value of c."
+    },
+    {
+      "type": "discussion",
+      "content": "The likelihood map projects the multidimensional likelihood surface (which is a function of the QTL means, variance, and map position) on to a single dimension, that of the map position, c. The ML estimate of c is that which yields the maximum value on the likelihood map, and the values for the QTL means and variance that maximize the likelihood given this value of c are the ML estimates for the QTL effects. Thus, in the likelihood framework, detection of a linked QTL and estimation of its position are coupled — if the likelihood ratio exceeds the critical threshold for that chromosome, it provides evidence for a linked QTL, whose position is estimated by the peak of the likelihood map. If the peak does not exceed this threshold, there is no evidence for a linked QTL."
+    }
+  ]
+}

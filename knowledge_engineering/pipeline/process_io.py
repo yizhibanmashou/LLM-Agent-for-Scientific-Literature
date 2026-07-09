@@ -92,20 +92,24 @@ def derive_chapter_name(tex_path: str) -> str:
 
     for candidate in (parent_name, stem_name):
         chapter_match = re.match(
-            r"^chapter[_-]?(?P<num>\d+)(?:_full)?$",
+            r"^(?:(?P<prefix>[A-Za-z]+)_)?chapter[_-]?(?P<num>\d+)(?:_full)?$",
             candidate,
             re.IGNORECASE,
         )
         if chapter_match:
-            return f"chapter{chapter_match.group('num')}"
+            prefix = chapter_match.group("prefix")
+            chapter = f"chapter{chapter_match.group('num')}"
+            return f"{prefix}_{chapter}" if prefix else chapter
 
         appendix_match = re.match(
-            r"^appendix[_-]?(?P<num>\d+)(?:_full)?$",
+            r"^(?:(?P<prefix>[A-Za-z]+)_)?appendix[_-]?(?P<num>\d+)(?:_full)?$",
             candidate,
             re.IGNORECASE,
         )
         if appendix_match:
-            return f"appendix{appendix_match.group('num')}"
+            prefix = appendix_match.group("prefix")
+            appendix = f"appendix{appendix_match.group('num')}"
+            return f"{prefix}_{appendix}" if prefix else appendix
 
         numeric_full_match = re.match(r"^(?P<num>\d+)_full$", candidate, re.IGNORECASE)
         if numeric_full_match:

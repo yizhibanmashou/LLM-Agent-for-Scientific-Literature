@@ -1,0 +1,56 @@
+{
+  "id": "Genetics_chapter22_003",
+  "metadata": {
+    "chapter": "Genetics_chapter22",
+    "section": "Genotype $ \\times $ Environment Interaction",
+    "subsections": [],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter22_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Genotype $ \\times $ Environment Interaction",
+    "section_level_2": null,
+    "heading_path": [
+      "Genotype $ \\times $ Environment Interaction"
+    ],
+    "display_heading": "Genotype $ \\times $ Environment Interaction"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "To this point, we have been conceptualizing the phenotype of an individual as the sum of independent genetic and environmental contributions, with both factors having essentially continuous distributions and the environmental effect being a random deviate with expectation zero. As noted in Chapter 6, more precise statements can sometimes be made about the environmental contribution when individuals are distributed over a discrete set of environments. For example, two different locations or years may present very different growth conditions for a crop variety. Such a difference can be recorded as a macroenvironmental effect, and no further complications are introduced provided all varieties of interest respond in the same way. However, things are not so simple if varieties differ in their response to environmental change, i.e., if there is genotype $ \\times $ environment interaction."
+    },
+    {
+      "type": "discussion",
+      "content": "Issues concerning genotype $ \\times $ environment interaction arise in many contexts in quantitative genetics. Genotype $ \\times $ environment interaction is a major concern in attempts to develop economically important breeds of plants and animals with wide geographical utility. It is also of considerable concern in quantitative-genetic investigations of natural populations when broad inferences are made from studies of individuals raised in simple, often novel, laboratory environments. Finally, genotype $ \\times $ environment interaction is of substantial importance in genetic epidemiological studies that show certain genotypes to have elevated sensitivities to environmental risk factors. As a point of departure, recall that a general description of the phenotype of an individual of genotype j living in the ith environmental setting is $$ z_{ijk}=\\mu+G_{j}+I_{ij}+E_{g,i}+E_{s,ijk} $$ where $\\mu$ is the average phenotype over all genotypes and environments, $G_{j}$ is the effect of the $j$th genotype averaged over all environments, $E_{g,i}$ is the average (general) effect of the $i$th environment on all genotypes, $I_{ij}$ is the interaction effect between genotype $j$ and environment $i$, and $E_{s,ijk}$ is the special environmental effect (residual deviation) for the $k$th replicate of genotype $j$ in environment $i$. The effect of the $i$th environment is interpreted as the difference between the mean phenotype of all genotypes grown in environment $i$ and the grand mean, i.e., as $E_{g,i} = \\mu_{i} - \\mu$. Similarly, the $j$th genotypic value is defined to be the difference between the mean phenotype of genotype $j$ over all environments and the grand mean, $G_{j} = \\mu_{j} - \\mu$, and the $ij$th genotype $\\times$ environment interaction is $I_{ij} = \\mu_{ij} - \\mu - G_{j} - E_{g,i} = \\mu_{ij} - \\mu_{j} - \\mu_{i} + \\mu$."
+    },
+    {
+      "type": "discussion",
+      "content": "[[FIGURE:22.1]]"
+    },
+    {
+      "type": "discussion",
+      "content": "If $I_{ij} = 0$ for all $ij$, then all genotypes respond to macroenvironmental change in a parallel fashion, as shown in Figure 22.1A for the case of two environments. A nonparallel response to environmental change implies genotype $\\times$ environment interaction with respect to phenotypic expression. Such interaction can come about in two not necessarily exclusive ways: (1) a change of scale, such that higher-ranking genotypes in one environment react more (or less) strongly to conditions in the second environment (Figure 22.1B), and (2) a change of ranking (Figure 22.1C). With multiple genotypes in multiple environments, many more complex patterns are possible."
+    },
+    {
+      "type": "discussion",
+      "content": "The function relating mean phenotypic response of a genotype to a change in the environment is called a reaction norm (Woltereck 1909, Schmalhausen 1949). Like any other character, reaction norms can evolve in response to environmental pressures. For example, in Figure 22.1D, selection for the high-performing geno- type in environment 2 leads to the evolution of a steep reaction norm (i.e., high variance in phenotypic expression across environments), while selection for the high-performing genotype in environment 1 leads to a population dominated by individuals with low environmental sensitivity. If selection occurred in both environments, and genotypes were distributed randomly across environments, the reaction norm giving the highest average performance would come to dominate."
+    },
+    {
+      "type": "discussion",
+      "content": "This chapter is concerned with reaction norm analysis, i.e., with the statistical methodology for quantifying differences among genotypes in response to environmental change. Two classes of traits are of interest in this regard. Labile traits are those for which phenotypic expression can adjust rapidly within individuals, through physiological and/or behavioral means, to changes in the environment. Examples include behavioral changes in the presence vs. absence of predators, competitors, and/or mates. Nonlabile traits are those for which phenotypic expression becomes fixed during some sensitive period of development, e.g., age at first reproduction or adult size in an arthropod with determinate growth. Both types of traits can exhibit genotype $ \\times $ environment interaction. But from a practical standpoint, there is an important distinction between labile and nonlabile traits. The entire reaction norm of a labile trait can be determined at the individual level by scoring the same individual in a number of environments, but with nonlabile traits, different points on the reaction norm need to be assayed in different individuals. Many traits, of course, have both labile and nonlabile components. For example, the behavior of an individual can often be conditioned by prior experiences, and the metabolic rates of individuals can depend both on current environmental conditions and on conditions that existed during development."
+    },
+    {
+      "type": "discussion",
+      "content": "The statistical methods relevant to reaction norm analysis largely follow from previous chapters. We start by considering the special, but common, case in which multiple genotypic groups are assayed in two environments. With this sort of experimental design, the concept of genetic correlation (Chapter 21) can be applied to the problem of genotype $ \\times $ environment interaction. We then show how a fuller resolution of the issues can be achieved by assaying genotypes over a more complete spectrum of environments. With multiple environments, two-way analysis of variance (Chapter 20) becomes useful, the two factors being genotypes and environments. As in all of the methods introduced in previous chapters, maximum likelihood provides an alternative framework for analyzing genotype $ \\times $ environment interaction (Platenkamp and Shaw 1992), an issue that we defer until Chapter 27. We conclude the chapter by considering some recent theoretical developments that may help guide future interpretations of reaction norm analyses."
+    },
+    {
+      "type": "discussion",
+      "content": "Before proceeding, we raise the caveat that the literature on genotype $ \\times $ environment interaction analysis is littered with disagreements and inconsistencies as to how parameter estimates are to be interpreted. Much of the controversy concerns differences in opinions as to whether environmental treatments should be considered to be random vs. fixed effects. Treating the environments as fixed implies concern only with the particular set of environments considered (such as particular climates for cultivars). Treating the environments as random implies that the sampled environments represent a random sample from a larger universe of environments. The confusion goes beyond this issue, since there is more than one way to parameterize a linear model containing fixed effects. Moreover, some applications of genotype $ \\times $ environment interaction even depart from the basic linear model given above, treating the interaction term as a function of the product of the genotypic value and environmental effect, $ I_{ij} = G_j \\cdot E_{g,i} $ (Gauch 1988, Gimelfarb 1994, Piepho 1995). We have chosen to focus on the more general model, Equation 22.1, and in the following pages we attempt to sort out the relevant issues regarding fixed and random effects. Before analyzing any experiment on genotype $ \\times $ environment interaction, the practitioner will need to give careful consideration to the merits of alternative approaches."
+    },
+    {
+      "type": "discussion",
+      "content": "Reviews on genotype $ \\times $ environment interaction from various applied perspectives can be found in Dickerson (1962), Comstock and Moll (1963), Bradshaw (1965), Pani and Lasley (1972), Freeman (1973), J. Hill (1975), Barlow (1981), Simmonds (1981), Hohenboken (1985), Schlichting (1986), Becker and Léon (1988), Wahlsten (1990), and Kang and Gauch (1995). The overwhelming message from the extensive empirical literature on varieties of crops and domesticated animals is that genotype $ \\times $ environment interaction is extremely common. However, there are still surprisingly few data on its significance in natural populations."
+    }
+  ]
+}

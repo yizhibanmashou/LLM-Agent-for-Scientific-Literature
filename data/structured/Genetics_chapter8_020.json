@@ -1,0 +1,71 @@
+{
+  "id": "Genetics_chapter8_020",
+  "metadata": {
+    "chapter": "Genetics_chapter8",
+    "section": "Introduction",
+    "subsections": [
+      "Ordinary Least Squares"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter8_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "Ordinary Least Squares",
+    "heading_path": [
+      "Introduction",
+      "Ordinary Least Squares"
+    ],
+    "display_heading": "Ordinary Least Squares"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Estimates of the vector $\\beta$ for the general linear model are usually obtained by the method of least-squares, which uses the observations y and X and makes special assumptions about the covariance structure of the vector of residual errors e. The method of ordinary least squares assumes that the residual errors are homoscedastic and uncorrelated, i.e., $\\sigma^{2}(e_{i}) = \\sigma_{e}^{2}$ for all $i$, and $\\sigma(e_{i}, e_{j}) = 0$ for $i \\neq j$."
+    },
+    {
+      "type": "discussion",
+      "content": "Let b be an estimate of $\\beta$, and denote the vector of $y$ values predicted from this estimate by $\\hat{y} = X\\mathbf{b}$, so that the resulting vector of residual errors is $$ \\mathbf{\\hat{e}}=\\mathbf{y}-\\mathbf{\\hat{y}}=\\mathbf{y}-\\mathbf{X}\\mathbf{b} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The ordinary least-squares (OLS) estimate of $\\beta$ is the b vector that minimizes the residual sum of squares, $$ \\sum_{i=1}^{n}\\widehat{e}_{i}^{2}=\\widehat{\\mathbf{e}}^{T}\\widehat{\\mathbf{e}}=(\\mathbf{y}-\\mathbf{X}\\mathbf{b})^{T}(\\mathbf{y}-\\mathbf{X}\\mathbf{b}) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Taking derivatives, it can be shown that our desired estimate satisfies $$ \\mathbf{b}=(\\mathbf{X}^{T}\\mathbf{X})^{-1}\\mathbf{X}^{T}\\mathbf{y} $$"
+    },
+    {
+      "type": "proposition",
+      "content": "Under the assumption that the residual errors are uncorrelated and homoscedastic (i.e., the covariance matrix of the residuals is $\\sigma_{e}^{2} \\cdot \\mathbf{I}$), the covariance matrix of the elements of b is $$ \\mathbf{V_{b}}=(\\mathbf{X}^{T}\\mathbf{X})^{-1}\\sigma_{e}^{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Hence, the OLS estimator of $ \\beta_{i} $ is the $ i $th element of the column vector $ \\mathbf{b} $, while the variance of this estimator is the $ i $th diagonal element of the matrix $ \\mathbf{V}_{\\mathbf{b}} $. Likewise, the covariance of this estimator with the OLS estimator for $ \\beta_{j} $ is the $ i $th element of $ \\mathbf{V}_{\\mathbf{b}} $."
+    },
+    {
+      "type": "discussion",
+      "content": "If the residuals follow a multivariate normal distribution with $ e \\sim MVN(0, \\sigma_{e}^{2} \\cdot \\mathbf{I}) $, the OLS estimate is also the maximum-likelihood estimate. If $ \\mathbf{X}^{T} \\mathbf{X} $ is singular, Equations 8.33a,b still hold when a generalized inverse is used, although only certain linear combinations of fixed factors can be estimated (see Appendix 3 for details)."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 9. Consider a univariate regression where the predictor and response variable both have expected mean zero, so that the regression passes through the origin. The appropriate model becomes $$ y_{i}=\\beta x_{i}+e_{i} $$ With observations on $n$ individuals, this relationship can be written in GLM form with $\\boldsymbol{\\beta} = \\beta$ and design matrix $\\mathbf{X} = (x_1, x_2, \\cdots x_n)^T$, implying $$ \\mathbf{X}^{T}\\mathbf{X}=\\sum_{i=1}^{n}x_{i}^{2}\\qquad\\mathrm{a n d}\\qquad\\mathbf{X}^{T}\\mathbf{y}=\\sum_{i=1}^{n}x_{i}y_{i} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Applying Equations 8.33a,b gives the OLS estimate of $\\beta$ and its sample variance (assuming the covariance matrix of e is $\\mathbf{I} \\cdot \\sigma_{e}^{2}$) as $$ b=\\left(\\mathbf{X}^{T}\\mathbf{X}\\right)^{-1}\\mathbf{X}^{T}\\mathbf{y}=\\frac{\\sum x_{i}y_{i}}{\\sum x_{i}^{2}},\\qquad\\sigma^{2}(b)=\\left(\\mathbf{X}^{T}\\mathbf{X}\\right)^{-1}\\sigma_{e}^{2}=\\frac{\\sigma_{e}^{2}}{\\sum x_{i}^{2}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "This estimate of $\\beta$ differs from the standard univariate regression slope (Equation 3.14b) where the intercept value is not assumed to be equal to zero."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 10. Recall from Equation 8.10b that the vector of partial regression coefficients for a multivariate regression is defined to be $ \\mathbf{b} = \\mathbf{V}^{-1} \\mathbf{c} $ (where $ \\mathbf{V} $ is the estimated covariance matrix, and $ \\mathbf{c} $ is the vector of estimated covariances between $ \\mathbf{y} $ and $ \\mathbf{z} $). Here we show that this expression is equivalent to the OLS estimator $ \\mathbf{b} = (\\mathbf{X}^T \\mathbf{X})^{-1} \\mathbf{X}^T \\mathbf{y} $. Using the notation from Example 8, for the $ i $th individual we observe $ y_i $ and the values of $ p $ predictor variables, $ z_{i1}, \\cdots, z_{ip} $. Since the regression satisfies $ \\bar{y} = \\alpha + \\beta_1 \\bar{z}_1 + \\cdots + \\beta_p \\bar{z}_p $, subtracting the mean from each observation removes the intercept, with $$ y_{i}^{*}=(\\boldsymbol{y}_{i}-\\bar{\\boldsymbol{y}})=\\beta_{1}(z_{i1}-\\bar{z}_{1})+\\cdots+\\beta_{p}(z_{ip}-\\bar{z}_{p})+e_{i} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "For $n$ observations, the resulting linear model $\\mathbf{y}^{*} = \\mathbf{X}\\boldsymbol{\\beta} + \\mathbf{e}$ has $$ \\mathbf{y}^{*}=\\begin{pmatrix}y_{1}-\\overline{y}\\\\\\vdots\\\\y_{n}-\\overline{y}\\end{pmatrix},\\quad\\boldsymbol{\\beta}=\\begin{pmatrix}\\beta_{1}\\\\\\vdots\\\\\\beta_{p}\\end{pmatrix},\\quad\\mathbf{X}=\\begin{pmatrix}(z_{11}-\\bar{z}_{1})&\\cdots&(z_{1p}-\\bar{z}_{p})\\\\\\vdots&\\ddots&\\vdots\\ $ z_{n1}-\\bar{z}_{1})&\\cdots&(z_{np}-\\bar{z}_{p})\\end{pmatrix} $$ where $z_{ij}$ is the value of character $j$ in the $i$th individual. Partitioning the design matrix $\\mathbf{X}$ into $p$ column vectors corresponding to the $n$ observations on each of the $p$ predictor variables gives $$ \\mathbf{X}=\\left(\\mathbf{x}_{1},\\quad\\cdots,\\quad\\mathbf{x}_{p}\\right)\\quad where\\quad\\mathbf{x}_{j}=\\begin{pmatrix}z_{1j}-\\bar{z}_{j}\\\\z_{2j}-\\bar{z}_{j}\\\\\\vdots\\\\z_{nj}-\\bar{z}_{j}\\end{pmatrix} $$ giving the $j$th element of the vector $\\mathbf{X}^{t}\\mathbf{y}^{*}$ as $$ \\left(\\mathbf{X}^{T}\\mathbf{y}^{*}\\right)_{j}=\\mathbf{x}_{j}^{T}\\mathbf{y}^{*}=\\sum_{i=1}^{n}(y_{i}-\\bar{y})(z_{ij}-\\bar{z}_{j})=(n-1)\\mathrm{Cov}(y,z_{j}) $$ and implying $ \\mathbf{X}^T \\mathbf{y}^* = (n - 1) \\mathbf{c} $. Likewise, the $ j $th element of $ \\mathbf{X}^T \\mathbf{X} $ is $$ \\mathbf{x}_{j}^{T}\\mathbf{x}_{k}=\\sum_{i=1}^{n}(z_{ij}-\\bar{z}_{j})(z_{ik}-\\bar{z}_{k})=(n-1)\\mathrm{Cov}(z_{j},z_{k}) $$ implying $ \\mathbf{X}^{T}\\mathbf{X} = (n-1)\\mathbf{V} $. Putting these results together gives $$ (\\mathbf{X}^{T}\\mathbf{X})^{-1}\\mathbf{X}^{T}\\mathbf{y}^{*}=\\mathbf{V}^{-1}\\mathbf{c} $$ showing that Equation 8.10b does indeed give the OLS estimates of the partial regression coefficients."
+    }
+  ]
+}

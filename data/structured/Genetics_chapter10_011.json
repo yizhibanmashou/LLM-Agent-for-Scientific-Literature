@@ -1,0 +1,52 @@
+{
+  "id": "Genetics_chapter10_011",
+  "metadata": {
+    "chapter": "Genetics_chapter10",
+    "section": "Introduction",
+    "subsections": [
+      "THE NUMBER OF LETHAL EQUIVALENTS"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter10_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [
+      "10.1"
+    ],
+    "section_level_1": "Introduction",
+    "section_level_2": "THE NUMBER OF LETHAL EQUIVALENTS",
+    "heading_path": [
+      "Introduction",
+      "THE NUMBER OF LETHAL EQUIVALENTS"
+    ],
+    "display_heading": "THE NUMBER OF LETHAL EQUIVALENTS",
+    "table_reference_keys": [
+      "chapter10:10.1"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Morton et al. (1956) developed a simple regression technique for summarizing the deleterious consequences of inbreeding for attributes classified by incidence, such as survival, expression of mental retardation, and so on. They defined a lethal equivalent (detrimental equivalent for traits other than survival) as any group of genes “that if dispersed in different individuals... would cause on average one death.” Thus, a lethal equivalent can consist of a single lethal gene or of a large number of mildly deleterious genes."
+    },
+    {
+      "type": "discussion",
+      "content": "Assuming that the environment and all loci act independently in determining survivorship, the probability of survival at inbreeding level $f$ can be written as $$ S_{f}=\\left(1-P_{e}\\right)\\prod_{i=1}^{n}[1-P_{i}(f)] $$ where $P_{e}$ is the genotype-independent probability of dying from environmental causes, and $P_{i}(f)$ is the probability of dying as a result of deleterious genes at the ith locus when the inbreeding coefficient is equal to $f$. From [[SEE_TABLE:10.1]], $$ P_{i}(f)=f q_{i}s_{i}+(1-f)[q_{i}^{2}s_{i}+2q_{i}(1-q_{i})(s h)_{i}] $$ where $q_{i}$ is the frequency of the deleterious allele, and $s_{i}$ and $(sh)_{i}$ are the probabilities of mortality for homozygotes and heterozygotes. If the probability of dying from any single cause is small, then the approximation $(1-x)\\simeq e^{-x}$ gives $$ S_{f}\\simeq\\exp\\left[-P_{e}-\\sum_{i=1}^{n}P_{i}(f)\\right]=\\exp[-(A+Bf)] $$ where $$ A=P_{e}+\\sum_{i=1}^{n}q_{i}[q_{i}s_{i}+2(1-q_{i})(s h)_{i}] $$ is the sum of probabilities of mortality in the random-mating population, and $$ B=\\sum_{i=1}^{n}q_{i}[s_{i}-q_{i}s_{i}-2(1-q_{i})(s h)_{i}] $$ is the excess sum of probabilities of mortality that would exist in a completely inbred population. Logarithmic transformation of Equation 10.18a leads to $$ \\ln S_{f}\\simeq-A-B f $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, the composite measures A and B can be estimated by regressing the natural logarithm of survivorship on the inbreeding coefficient."
+    },
+    {
+      "type": "discussion",
+      "content": "A slight problem with this approach arises in cases in which the observed survivorship for certain inbreeding classes is zero, since the logarithm of zero is undefined. Templeton and Read (1984) suggest the small sample-size correction $$ S_{f}^{\\prime}=\\frac{1+N_{f}^{\\prime}}{2+N_{f}} $$ where $N_{f}$ and $N_{f}^{\\prime}$ are the numbers of total and surviving individuals at inbreeding level $f$. With no observed survivors, this quantity rapidly approaches zero as the total sample size increases. Morton et al. (1956) also recommend the use of weighted least-squares analysis, weighting the data by $N_{f}S_{f}/[1-S_{f}]$, the inverse of the sampling variance of $\\ln S_{f}$, and iterating the regression by substituting expected for observed $S_{f}$ in the weights. (Recall that a similar procedure is used in the estimation of line-cross variances; Chapter 9.)"
+    },
+    {
+      "type": "discussion",
+      "content": "Unfortunately, the mean number of lethal equivalents per gamete, $ \\sum q_i s_i $, cannot be separated cleanly from other terms in the definitions of A and B. However, since $ A + B = P_e + \\sum q_i s_i $, the number of lethal equivalents per gamete must be between B and $ A + B $, assuming $ (sh)_i \\geq 0 $. As will be seen below, estimates of $ A + B $ are usually not much greater than B, so the use of B as an approximation of the effective number of lethals is not greatly troubling."
+    },
+    {
+      "type": "discussion",
+      "content": "Practical situations often arise in which one only has data for noninbred individuals and a single class of inbred individuals. A regression is not possible in this case, but the parameters can still be estimated by $$ A=-\\ln S_{0} $$ $$ B=-\\frac{\\ln(S_{f}/S_{0})}{f} $$ where, for example, $f$ is $1/2$ for self-fertilization and $1/4$ for full-sib mating. Using the methods of Appendix 1, the large-sample variance for $B$ in this case is found to be $$ \\mathbf{Var}(B)\\simeq\\frac{1}{f^{2}}\\left(\\frac{1-S_{f}}{S_{f} N_{f}}+\\frac{1-S_{0}}{S_{0}N_{0}}\\right) $$"
+    }
+  ]
+}

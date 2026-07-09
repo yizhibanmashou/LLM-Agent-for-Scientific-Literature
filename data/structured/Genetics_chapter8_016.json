@@ -1,0 +1,51 @@
+{
+  "id": "Genetics_chapter8_016",
+  "metadata": {
+    "chapter": "Genetics_chapter8",
+    "section": "Introduction",
+    "subsections": [
+      "COVARIANCE MATRICES OF TRANSFORMED VECTORS"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter8_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "COVARIANCE MATRICES OF TRANSFORMED VECTORS",
+    "heading_path": [
+      "Introduction",
+      "COVARIANCE MATRICES OF TRANSFORMED VECTORS"
+    ],
+    "display_heading": "COVARIANCE MATRICES OF TRANSFORMED VECTORS"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "To develop expressions for variances and covariances of linear combinations of random variables, we must first introduce the concept of quadratic forms. Consider an $ n \\times n $ square matrix A and an $ n \\times 1 $ column vector x. From the rules of matrix multiplication, $$ \\mathbf{x}^{T}\\mathbf{A}\\mathbf{x}=\\sum_{i=1}^{n}\\sum_{j=1}^{n}a_{ij}x_{i}x_{j} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Expressions of this form are called quadratic forms (or quadratic products) and yield a scalar. A generalization of a quadratic form is the bilinear form, $ \\mathbf{b}^{T} \\mathbf{A}\\mathbf{a} $, where $ \\mathbf{b} $ and $ \\mathbf{a} $ are, respectively, $ n \\times 1 $ and $ m \\times 1 $ column vectors and $ \\mathbf{A} $ is an $ n \\times m $ matrix. Indexing the matrices and vectors in this expression by their dimensions, $ \\mathbf{b}_{1 \\times n}^{T} \\mathbf{A}_{n \\times m} \\mathbf{a}_{m \\times 1} $, shows that the resulting matrix product is a $ 1 \\times 1 $ matrix — in other words, a scalar. As scalars, bilinear forms equal their transposes, giving the useful identity $$ \\mathbf{b}^{T}\\mathbf{A}\\mathbf{a}=\\left(\\mathbf{b}^{T}\\mathbf{A}\\mathbf{a}\\right)^{T}=\\mathbf{a}^{T}\\mathbf{A}^{T}\\mathbf{b} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Again let x be a column vector of n random variables. A compact way to express the n variances and $ n(n-1)/2 $ covariances associated with the elements of x is the matrix $ \\mathbf{V} $, where $ V_{ij} = \\sigma(x_i, x_j) $ is the covariance between the random variables $ x_i $ and $ x_j $. We will generally refer to $ \\mathbf{V} $ as a covariance matrix, noting that the diagonal elements represent the variances and off-diagonal elements the covariances. The $ \\mathbf{V} $ matrix is symmetric, as $$ V_{i j}=\\sigma(x_{i},x_{j})=\\sigma(x_{j},x_{i})=V_{j i} $$ Now consider a univariate random variable $y = \\sum c_k x_k$ generated from a linear combination of the elements of $\\mathbf{x}$. In matrix notation, $y = \\mathbf{c}^T \\mathbf{x}$, where $\\mathbf{c}$ is a column vector of constants. The variance of $y$ can be expressed as a quadratic form involving the covariance matrix $\\mathbf{V}$ for the elements of $\\mathbf{x}$, $$ \\begin{aligned}\\sigma^{2}\\left(\\mathbf{c}^{T}\\mathbf{x}\\right)&=\\sigma^{2}\\left(\\sum_{i=1}^{n}c_{i}x_{i}\\right)=\\sigma\\left(\\sum_{i=1}^{n}c_{i}x_{i},\\sum_{j=1}^{n}c_{j}x_{j}\\right)\\\\&=\\sum_{i=1}^{n}\\sum_{j=1}^{n}\\sigma\\left(c_{i}x_{i},c_{j}x_{j}\\right)=\\sum_{i=1}^{n}\\sum_{j=1}^{n}c_{i}c_{j}\\sigma\\left(x_{i},x_{j}\\right)\\\\&=\\mathbf{c}^{T}\\mathbf{V}\\mathbf{c}\\\\ \\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Likewise, the covariance between two univariate random variables created from different linear combinations of x is given by the bilinear form $$ \\sigma(\\mathbf{a}^{T}\\mathbf{x},\\mathbf{b}^{T}\\mathbf{x})=\\mathbf{a}^{T}\\mathbf{V}\\mathbf{b} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "If we transform $\\mathbf{x}$ to two new vectors $\\mathbf{y}_{\\ell\\times1} = \\mathbf{A}_{\\ell\\times n} \\mathbf{x}_{n\\times1}$ and $\\mathbf{z}_{m\\times1} = \\mathbf{B}_{m\\times n} \\mathbf{x}_{n\\times1}$, then instead of a single covariance we have an $\\ell \\times m$ dimensional covariance matrix, denoted $\\boldsymbol{\\sigma}(\\mathbf{y}, \\mathbf{z})$. Letting $\\boldsymbol{\\mu}_{\\mathbf{y}} = \\mathbf{A}\\boldsymbol{\\mu}$ and $\\boldsymbol{\\mu}_{\\mathbf{z}} = \\mathbf{B}\\boldsymbol{\\mu}$, with $E(\\mathbf{x}) = \\boldsymbol{\\mu}$, then $\\boldsymbol{\\sigma}(\\mathbf{y}, \\mathbf{z})$ can be expressed in terms of $\\mathbf{V}$, the covariance matrix of $\\mathbf{x}$, $$ \\begin{aligned}\\boldsymbol{\\sigma}(\\mathbf{y},\\mathbf{z})&=\\boldsymbol{\\sigma}(\\mathbf{A}\\mathbf{x},\\mathbf{B}\\mathbf{x})\\\\&=\\boldsymbol{E}\\left[(\\mathbf{y}-\\boldsymbol{\\mu}_{\\mathbf{y}})(\\mathbf{z}-\\boldsymbol{\\mu}_{\\mathbf{z}})^{T}\\right]\\\\&=\\boldsymbol{E}\\left[\\mathbf{A}(\\mathbf{x}-\\boldsymbol{\\mu})(\\mathbf{x}-\\boldsymbol{\\mu})^{T}\\mathbf{B}^{T}\\right]\\\\&=\\mathbf{A}\\mathbf{V}\\mathbf{B}^{T}\\\\ \\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "In particular, the covariance matrix for $\\mathbf{y} = \\mathbf{A}\\mathbf{x}$ is $$ \\mathbf{\\sigma}(\\mathbf{y},\\mathbf{y})=\\mathbf{A}\\mathbf{V}\\mathbf{A}^{T} $$ so that the covariance between $y_{i}$ and $y_{j}$ is given by the $ij$th element of the matrix product $\\mathrm{AVA}^{T}$."
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, note that if x is a vector of random variables with expected value $\\mu$, then the expected value of the scalar quadratic product $\\mathbf{x}^{T} A\\mathbf{x}$ is $$ E(\\mathbf{x}^{T}\\mathbf{A}\\mathbf{x})=\\operatorname{t r}(\\mathbf{A}\\mathbf{V})+\\mu^{T}\\mathbf{A}\\mu $$ where $\\mathbf{V}$ is the covariance matrix for the elements of $\\mathbf{x}$, and the trace of a square matrix, $\\mathrm{tr}(\\mathbf{M}) = \\sum M_{ii}$, is the sum of its diagonal values (Searle 1971)."
+    }
+  ]
+}

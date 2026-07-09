@@ -1,0 +1,100 @@
+{
+  "id": "Evolution_appendix4_018",
+  "metadata": {
+    "chapter": "Evolution_appendix4",
+    "section": "FDR: THE FALSE-DISCOVERY RATE",
+    "subsections": [
+      "Morton's Posterior Error Rate (PER) and the FDR"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_appendix4_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [
+      "inline_3"
+    ],
+    "section_level_1": "FDR: THE FALSE-DISCOVERY RATE",
+    "section_level_2": "Morton's Posterior Error Rate (PER) and the FDR",
+    "heading_path": [
+      "FDR: THE FALSE-DISCOVERY RATE",
+      "Morton's Posterior Error Rate (PER) and the FDR"
+    ],
+    "display_heading": "Morton's Posterior Error Rate (PER) and the FDR",
+    "table_reference_keys": [
+      "Evolution_appendix4:inline_3"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Table A4.1 reminds the reader of the various test parameters that arise when multiple comparisons are considered. We now show how these are related. First, the relationship between $ \\alpha $, $ \\pi $, and $ F $ is as follows. Suppose we have set the false-positive rate (i.e., the Type-I error rate) for an individual test at $ \\alpha $. Such a $ p $-value threshold only guarantees that the expected number of false positives is bounded above by $ E[F] \\leq \\alpha \\cdot n $. For $ n $ independent tests, a $ \\pi $-level experiment-wide false-positive error (setting $ \\alpha = \\pi/n $; namely, the Bonferroni correction) implies that $ \\Pr(F \\geq 1) \\leq \\pi $, i.e., the probability of at least one false positive is no greater than $ \\pi $. To show how $ \\alpha $, $ \\beta $, $ \\pi_0 $, and $ \\delta $ are related, we first need to introduce the concept of the posterior error rate."
+    },
+    {
+      "type": "discussion",
+      "content": "Fernando et al. (2004) and Manly et al. (2004) both noted that FDR measures are closely related to Morton’s (1955) posterior error rate (PER), originally introduced in the context of linkage analysis in humans (this is also referred to as the false positive report probability [FPRP]; Wacholder et al. 2004). Morton’s PER is simply the probability that a single significant test is a false positive, $$ PER=Pr(F=1\\mid S=n=1) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The connection between the FDR and the PER is that if we set the FDR to $ \\delta $, then the PER for a randomly drawn significant test is also $ \\delta $."
+    },
+    {
+      "type": "proposition",
+      "content": "Framing tests in terms of the PER highlights the screening paradox: “Type-I error control may not lead to a suitably low PER” (Manly et al. 2004). For example, we might choose $ \\alpha = 0.05 $, but the PER may be far higher, which means that a test that is declared to be significant may have a much larger probability than 5% of being a false positive. The key is that because we are conditioning on the test being significant (as opposed to conditioning on the hypothesis being a null, as occurs with $ \\alpha $), S may include either false positives or true positives. The relative fractions of each (and hence the probability of a false positive) is a function of the single test parameters, $ \\alpha $ and $ \\beta $, and the fraction, $ \\pi_0 $, of hypotheses that are truly null. To see this, we apply Bayes’ theorem (Equation A2.2a), which yields $$ PER=Pr(F=1\\mid S=n=1)=\\frac{Pr(false positive\\mid null true)\\cdot Pr(null)}{Pr(S=n=1)} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Consider the numerator of Equation A4.13 first. Let $ \\pi_0 = n_0/n $ be the fraction of all hypotheses that are truly null. The probability that a null is declared significant is simply the Type-I error, $ \\alpha $, hence $$ \\Pr(false positive\\mid null true)\\cdot\\Pr(null)=\\alpha\\cdot\\pi_{0} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Turning to the denominator of Equation A4.13, what is the probability that a single (randomly chosen) test will be declared significant, $ \\Pr(S = n = 1) $? This event can occur because we choose to test a hypothesis that is truly null $ (\\pi_0) $ and have a Type-I error $ (\\alpha) $, or because we choose to test a hypothesis that is truly false $ (\\pi - \\pi_0) $ and avoid a Type-II error. For the latter, the power is simply $ T/n_1 $, the fraction of all tests under the alternative that is declared to be significant. If we write the power as $ 1 - \\beta $ ($ \\beta $ is the Type-II error), the resulting probability that a single (randomly drawn) test is significant is $$ \\Pr(S=n=1)=\\alpha\\pi_{0}+(1-\\beta)(1-\\pi_{0}) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Substituting Equations A4.14a and A4.14b into Equation A4.13 yields $$ PER=\\frac{\\alpha\\cdot\\pi_{0}}{\\alpha\\cdot\\pi_{0}+\\left(1-\\beta\\right)\\cdot\\left(1-\\pi_{0}\\right)}=\\left(1+\\frac{\\left(1-\\beta\\right)\\cdot\\left(1-\\pi_{0}\\right)}{\\alpha\\cdot\\pi_{0}}\\right)^{-1} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Figure A4.5 plots Equation A4.15a for various values of $ \\pi_{0} $ and $ \\beta $."
+    },
+    {
+      "type": "discussion",
+      "content": "Sham and Purcell (2014) noted that one can rearrange Equation A4.15a to find the $ \\alpha $ value to obtain a desired PER value of $ \\gamma $, with $$ \\begin{align*}\\alpha=\\left({\\gamma\\over1-\\gamma}\\right)\\left({1-\\pi_0\\over\\pi_0}\\right)(1-\\beta)\\end{align*} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "In particular, if there is complete power ($ \\beta = 0 $) and only one of the $ n $ tested hypotheses departs from the null ($ \\pi_0 = n/[n + 1] $), Equation A4.15c reduces to $$ \\begin{align*}\\alpha=\\left({\\gamma\\over1-\\gamma}\\right)\\left({1\\over n}\\right)\\simeq{\\gamma\\over n}\\end{align*} $$ which recovers the Bonferroni correction (Equation A4.4)."
+    },
+    {
+      "type": "discussion",
+      "content": "The Type-I error rate, $ \\alpha $, of a random test, and the PER for a significant test, which are often assumed to be the same, are actually very different. In addition to $ \\alpha $, the PER also depends on the power, $ \\beta $, of a test and the fraction, $ \\pi_{0} $, of tests that are truly null (as these latter parameters influence the probability that a test is declared to be significant). Manly et al. (2004) noted that the PER is acceptably low only if the fraction of alternative hypotheses $ (1 - \\pi_{0}) $ is well above $ \\alpha $."
+    },
+    {
+      "type": "discussion",
+      "content": "Thinking in terms of the PER allows us to consider multiple comparisons in a continuum from Bonferroni-type corrections to using FDR to control the PER. If $ \\pi_1 = 1 - \\pi_0 $ is very small, most tests will truly be from the null hypothesis, and we can control the overall false-positive rate with a Bonferroni-type correction. However, if some fraction of the hypotheses is expected to be false (i.e., $ 1 - \\pi_0 $ is at least of modest value), then using FDR corrections makes more sense for controlling the PER."
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:A4.7]]"
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:A4.8]]"
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:A4.9]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, a randomly chosen significant test has a 96.1% probability of being a false positive."
+    },
+    {
+      "type": "discussion",
+      "content": "Now suppose that the alternative is not especially rare, for example $ n_1 = 500 $ ($ \\pi_0 = 0.9 $). The expected number of false positives is $ 4500 \\cdot 0.005 = 22.5 $, while the expected number of true positives is 500, yielding a PER of $$ PER=\\frac{22.5}{522.5}=0.043 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The PER is thus rather sensitive to $ \\pi_0 $, the fraction of all tests that are truly from the null hypothesis. If $ \\pi_0 $ is essentially 1, a PER of $ \\delta $ is obtained using the Bonferroni correction, $ \\alpha = \\delta/n $. However, if $ \\pi_0 $ departs even slightly from one (i.e., more than a few of the alternative hypotheses are correct), then the per-test level of $ \\alpha $ to achieve a desired PER rate is considerably larger (i.e., less stringent) than that given by the Bonferroni correction, namely, $ \\alpha(\\delta) > \\delta/n $. For example, for a 0.04 experiment-wide error rate, $ \\alpha = 0.04/5000 = 8 \\cdot 10^{-6} $, which is roughly 625 times smaller than the value of $ \\alpha = 0.005 $ required for a 4% FDR, highlighting the greatly increased power under the FDR framework. This increased power arises because the FDR approach acknowledges that some fraction of the tests are not from the null."
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "id": "Genetics_chapter7_003",
+  "metadata": {
+    "chapter": "Genetics_chapter7",
+    "section": "Introduction",
+    "subsections": [
+      "The Coefficient of Fraternity"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter7_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [
+      "7.1"
+    ],
+    "section_level_1": "Introduction",
+    "section_level_2": "The Coefficient of Fraternity",
+    "heading_path": [
+      "Introduction",
+      "The Coefficient of Fraternity"
+    ],
+    "display_heading": "The Coefficient of Fraternity",
+    "table_reference_keys": [
+      "chapter7:7.1"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Up to now we have been considering the identity of single genes by descent. Another useful measure is the probability that single-locus genotypes (both genes) of two individuals are identical by descent. The formulation of such a measure, which we denote as $ \\Delta_{xy} $, is attributable to Cotterman (1954) and was called the coefficient of fraternity by Trustrum (1961). The problem is set out in Figure 7.5. Here we denote the mothers of individuals x and y as $ m_x $ and $ m_y $, and the fathers as $ f_x $ and $ f_y $. The coefficients of coancestry $ \\Theta_{m_x m_y} $, $ \\Theta_{m_x f_y} $, $ \\Theta_{f_x m_y} $, and $ \\Theta_{f_x f_y} $ provide measures of the probability of drawing genes identical by descent from all four combinations of parents."
+    },
+    {
+      "type": "discussion",
+      "content": "There are two ways by which the genotype of $x$ can be identical by descent with that of $y$: (1) the gene descending from $m_x$ may be identical by descent with that descending from $m_y$, and that from $f_x$ identical by descent with that from $f_y$, or (2) the gene from $m_x$ may be identical by descent with that from $f_y$, and that from $f_x$ identical by descent with that from $f_y$. Thus, the coefficient of fraternity is defined as $$ \\Delta_{x y}=\\Theta_{m_{x}m_{y}}\\Theta_{f_{x}f_{y}}+\\Theta_{m_{x}f_{y}}\\Theta_{f_{x}m_{y}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "In terms of the condensed coefficients of identity, $ \\Delta_{xy} = \\Delta_1 + \\Delta_7 $, which reduces to $ \\Delta_7 $ in the absence of inbreeding."
+    },
+    {
+      "type": "discussion",
+      "content": "Two examples will suffice to illustrate the use of this equation. First, consider the situation when x and y are full sibs, in which case the mothers are the same individual ($ m_x = m_y = m $), as are the fathers $ f_x = f_y = f $. Equation 7.7 then reduces to $$ \\Delta_{x y}=\\Theta_{m m}\\Theta_{f f}+\\Theta_{m f}^{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "If the parents are unrelated, then $ \\Theta_{mf} = 0 $; and if the parents are not inbred, then $ \\Theta_{mm} = \\Theta_{ff} = 1/2 $. Substituting these values into the above expression, we obtain $ \\Delta_{xy} = 1/4 $."
+    },
+    {
+      "type": "discussion",
+      "content": "Now consider the case of paternal half sibs, in which case the fathers are the same individual, but the mothers are different. Now, $$ \\Delta_{x y}=\\Theta_{m_{x}m_{y}}\\Theta_{f f}+\\Theta_{m_{x}f}\\Theta_{f m_{y}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Provided that the parents are unrelated, then $\\Theta_{ff} = 1/2$ and $\\Theta_{m_x m_y} = \\Theta_{m_x f} = \\Theta_{fm_y} = 0$, which yields $\\Delta_{xy} = 0$. The genotypes of two individuals cannot be identical by descent if their maternally (or paternally) derived genes come from unrelated individuals."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 2. Returning to the figure in Example 1, what is $\\Delta_{xy}$ for $x = \\text{Royal Duke of Gloster and } y = \\text{Princess Royal}$?"
+    },
+    {
+      "type": "discussion",
+      "content": "Designate the parents as $f_x = \\text{Grand Duke of Gloster}, m_x = \\text{Mimulus}, f_y = \\text{Champion of England}$, and $m_y = \\text{Carmine}$. Noting that Champion of England is the father of Grand Duke of Gloster and Mimulus, $\\Theta_{f_xf_y} = \\Theta_{m_xf_y} = (1/4)$. Counting the number of individuals in the paths of descent between the remaining two pairs of parents, $\\Theta_{m_xm_y} = \\Theta_{f_xm_y} = (1/2)^5$. Substituting into Equation 7.7, the probability that $x$ and $y$ have identical genotypes by descent at an arbitrary autosomal locus is $$ \\Delta_{xy}=(1/4)(1/2)^{5}+(1/2)^{5}(1/4)=(1/2)^{6} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "We now have a complete system for describing the identity by descent at an arbitrary locus for any two individuals. For complex pedigrees, this can be a rather tedious process, but relatively simple algorithms exist for the computation of $ \\Theta_{xy} $ from simple information on parentage (Chapter 26). Karigl (1981) gives a general recursive procedure for obtaining all nine condensed coefficients of identity for arbitrary pedigrees. The identity coefficients for several common relationships are summarized in [[SEE_TABLE:7.1]]."
+    }
+  ]
+}

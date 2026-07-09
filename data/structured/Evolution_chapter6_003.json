@@ -1,0 +1,118 @@
+{
+  "id": "Evolution_chapter6_003",
+  "metadata": {
+    "chapter": "Evolution_chapter6",
+    "section": "PRICE'S GENERAL THEOREM OF SELECTION",
+    "subsections": [
+      "The Life and Times of George Price"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter6_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [
+      "6.1",
+      "inline_1"
+    ],
+    "section_level_1": "PRICE'S GENERAL THEOREM OF SELECTION",
+    "section_level_2": "The Life and Times of George Price",
+    "heading_path": [
+      "PRICE'S GENERAL THEOREM OF SELECTION",
+      "The Life and Times of George Price"
+    ],
+    "display_heading": "The Life and Times of George Price",
+    "table_reference_keys": [
+      "Evolution_chapter6:6.1",
+      "Evolution_chapter6:inline_1"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "proposition",
+      "content": "George Price was one of the most enigmatic figures in modern evolutionary biology (Frank 1995, Schwartz 2000, and Harman 2011 all reviewed Price's life and contributions). After obtaining a Ph.D. in chemistry from the University of Chicago, he worked on the Manhattan Project before joining IBM as an engineer. At age 44, Price quit his job and started working under Cedric Smith at University College London (from 1968 to 1974). In this brief tenure, he only published four solo papers and was the coauthor on two others, but in his roughly 25 total pages of publications, he made three fundamental contributions to modern evolutionary theory. In addition to Price's theorem, he introduced the power of game theory to evolutionary biology (Maynard Smith and Price 1973), and he was the first to fully grasp what Fisher had really meant by his enigmatic fundamental theorem (Price 1972b). Price left academia in 1974, working as a night janitor before giving away all his worldly possessions to homeless alcoholics and dying by his own hand in 1975 while a squatter in one of the poorest areas of London."
+    },
+    {
+      "type": "proposition",
+      "content": "Price's Theorem, $"
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:6.1]]"
+    },
+    {
+      "type": "proposition",
+      "content": "Price’s theorem expresses the expected selection response in a trait in general terms of covariances, rather than relying on any explicit model of transmission, and as such is a completely general description of any evolutionary response. As succinctly stated by Rice (2004a, p. 170), “it is an exact characterization of a relationship that must hold between phenotype, fitness, selection, and evolution.” The key to Price’s equation is to first consider the effect of selection on specific categories (measured by how many descendants each leaves) and then consider how trait values may differ between an ancestral category and its descendants. This is an extremely subtle shift in focus, one that is easy to miss and misinterpret. However, this perspective nicely decomposes the evolutionary change $ (R_{z}) $ into a selection term and a remainder term due to all other forces, such as (but not limited to) imperfect transmission."
+    },
+    {
+      "type": "discussion",
+      "content": "Consider selection first. Suppose there are $N$ categories in the population, where $q_i$ and $z_i$, respectively, denote the frequency of category $i$ and the mean value for the trait of interest over all members of this category. Note that $z$ can be any trait measure. For example, if $x$ denotes the value of a trait, taking $z = (x - \\mu_x)^2$ or $z = (x - \\mu_x)^4$ gives the response in the variance and the fourth moment, respectively. Averaging over all categories, the mean trait value is $$ \\overline{z}=\\sum_{i=1}^{N}q_{i}z_{i} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Suppose that the members of category i leave a total of $ n_{i} $ descendants (the absolute fitness, $ W_{i} $, for that category). The average number of descendants over categories (the mean fitness) is $$ \\overline{W}=\\sum_{i=1}^{N}q_{i}W_{i} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The relative fitness of category i is $ w_{i} = W_{i}/\\overline{W} $."
+    },
+    {
+      "type": "discussion",
+      "content": "Price’s key idea was to define $ q_{i}^{\\prime} $ as the frequency of all descendants that have category i as their ancestor $$ q_{i}^{\\prime}=w_{i}q_{i} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Note, in particular, that $ q_{i}^{\\prime} $ is not the frequency of descendants in category i, but rather the fraction of all descendants that are from ancestors in category i. The focus is entirely on the categories of ancestors, not on which categories the descendants are in. As an example of this shift in focus, suppose our three categories of interest are the genotypes AA, Aa, and aa at a diallelic locus. In a traditional population-genetics analysis (Chapter 5), we would write equations to describe how the frequency of each category changes. Price used a different focus, considering instead the frequency of the descendants that come from each category. Suppose category i = 2 corresponds to Aa and imagine an extreme case where only Aa individuals survive. Here $ q_{2}^{\\prime} = 1 $, as all offspring have Aa parents. However, in the next generation (before selection), segregation results in the genotypes AA, Aa, and aa at the frequencies 0.25, 0.5, and 0.25, i.e., all three categories are present in the offspring, but all have only Aa parents."
+    },
+    {
+      "type": "discussion",
+      "content": "Now consider the transmission phase (which more generally includes everything other than selection). Let $ \\overline{z}_{i} $ denote the mean value of the descendants from category i, which we can decompose as $$ \\overline{z}_{i}=z_{i}+\\overline{\\delta}_{i} $$ namely, the mean value, $ z_{i} $, of their ancestors plus a deviation, $ \\overline{\\delta}_{i} $, due to imperfect transmission. Taking the average over all ancestral categories, the average trait value over all the descendants becomes $$ \\overline{z}^{\\prime}=\\sum_{i}q_{i}^{\\prime}\\overline{z}_{i} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Recalling Equations 6.1, 6.2b, and 6.3b, the response in trait value, $ R_z = \\overline{z}' - \\overline{z} $, becomes $$ \\begin{aligned}R_{z}&=\\sum_{i}q_{i}^{\\prime}\\overline{z}_{i}-\\sum_{i}q_{i}z_{i}\\\\&=\\left(\\sum_{i}q_{i}^{\\prime}z_{i}-\\sum_{i}q_{i}z_{i}\\right)+\\left(\\sum_{i}q_{i}^{\\prime}\\overline{z}_{i}-\\sum_{i}q_{i}^{\\prime}z_{i}\\right)\\\\&=\\sum_{i}\\left(q_{i}^{\\prime}-q_{i}\\right)z_{i}+\\sum_{i}q_{i}^{\\prime}\\left(\\overline{z}_{i}-z_{i}\\right)\\\\&=\\sum_{i}\\Delta q_{i}z_{i}+\\sum_{i}q_{i}^{\\prime}\\overline{\\delta}_{i}\\\\ \\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The second line follows by adding and subtracting $ \\sum q_i' z_i $, and the third by suitably gathering terms. This version of the Price equation is based on Frank (1997, 2012). The first term (containing $ \\Delta q_i z_i $) represents the change due to selection based entirely on ancestral values, or the partial evolutionary change caused by natural selection (Price 1972b; Ewens 1989; Frank 2012). The second term (containing $ q_i' \\bar{\\delta}_i $) is the part of total change caused by imperfect transmission of ancestral values to their descendants. Equation 6.4 is conceptually very powerful, as it decomposes the response into two separate components, one strictly based on the nature of selection ($ \\Delta q_i $) and the other on transmission ($ \\bar{\\delta}_i $)."
+    },
+    {
+      "type": "discussion",
+      "content": "Both these terms can be expressed in a more transparent form. For the first term, $$ \\begin{align*}\\sum_{i}\\Delta q_{i}z_{i}&=\\sum_{i}\\left(w_{i}q_{i}-q_{i}\\right)z_{i}=\\sum_{i}w_{i}z_{i}q_{i}-\\sum z_{i}q_{i}=E(w_{i}z_{i})-E(z)\\cdot1\\\\&=E(w_{i}z_{i})-E(z)\\cdot E(w)\\\\&=\\sigma(w_{i},z_{i})\\end{align*} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Note that to obtain this result, we use the identity $ E(w) = 1 $. For the second term, $$ \\sum_{i}q_{i}^{\\prime}\\overline{\\delta}_{i}=\\sum_{i}q_{i}w_{i}\\overline{\\delta}_{i}=E(w_{i}\\overline{\\delta}_{i}) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Substituting Equations 6.5a and 6.5b into Equation 6.4 yields the more traditional form of the Price equation, $$ R_{z}=\\overline{z}^{\\prime}-\\overline{z}=\\sigma(w_{i},z_{i})+E(w_{i}\\overline{\\delta}_{i}) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "(Price 1970, 1972a). Note that all expectations are computed with respect to the pre-selection frequencies of the ancestral categories $ (q_{i}) $. The first term is the covariance between phenotype and fitness (the within-generation change, S, in the mean of ancestral values), while the second is the fitness-weighted transmission of any changes between the value of an ancestor and the mean of its descendants."
+    },
+    {
+      "type": "definition",
+      "content": "Several equivalent expressions for the Price equation are useful in that they emphasize different features. For example, using the definition of a covariance $$ E(w_{i}\\overline{\\delta}_{i})=\\sigma(w_{i},\\overline{\\delta}_{i})+E(w_{i})\\cdot E(\\overline{\\delta}_{i})=\\sigma(w_{i},\\overline{\\delta}_{i})+E(\\overline{\\delta}_{i}) $$ and substituting this result into Equation 6.6 yields $$ R_{z}=\\sigma(w_{i},z_{i})+\\sigma(w_{i},\\overline{\\delta}_{i})+E(\\overline{\\delta}_{i}) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Using Equation 6.3a to combine the first two covariances in Equation 6.7b gives $$ R_{z}=\\sigma(w_{i},\\overline{z}_{i})+E(\\overline{\\delta}_{i}) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Equation 6.7c relates the selection response to the covariance between the fitness, $ w_i $, of an ancestor and the mean value, $ \\overline{z}_i $, of its descendants. The second term, $ E(\\overline{\\delta}_i) $, is often thought of as the expected change in mean value from ancestor to descendant in the absence of selection. As we will see at the end of the chapter, this interpretation is not quite correct, as this last term does contain a contribution from selection (Equation 6.38)."
+    },
+    {
+      "type": "proposition",
+      "content": "To summarize, if $ z_i $ denotes the average value in category $ i $, which has a frequency of $ q_i $ before selection and a frequency of $ q'_i $ after selection, and whose offspring have average value $ \\overline{z}_i = z_i + \\overline{\\delta}_i $, then equivalent forms of Price's theorem are $$ R_{z}=\\left\\{\\begin{array}{l}\\sum_{i}\\Delta q_{i}z_{i}+\\sum_{i}q_{i}^{\\prime}\\overline{\\delta}_{i}\\\\\\sigma(w_{i},z_{i})+E(w_{i}\\overline{\\delta}_{i})\\\\\\sigma(w_{i},z_{i})+\\sigma(w_{i},\\overline{\\delta}_{i})+E(\\overline{\\delta}_{i})\\\\\\sigma(w_{i},\\overline{z}_{i})+E(\\overline{\\delta}_{i})\\end{array}\\right. $$ As noted in [[SEE_TABLE:6.1]], and as will be shown shortly (Equation 6.10), the selection differential, S, can be substituted for $ \\sigma(w_i, z_i) $ in the middle two expressions of Equation 6.8. As is further shown below, many of the standard approximations for evolutionary response (e.g., the breeder's equation, Fisher's fundamental theorem, Robertson's secondary theorem) follow directly from the $ \\sigma(w_i, z_i) $ selection term under the assumption that the residual term $ E(w_i \\overline{\\delta}_i) $ is zero. Hence, these approximations fail when this term is significant."
+    },
+    {
+      "type": "proposition",
+      "content": "While a discussion of Price’s theorem often assumes the ancestor to be a parent or midparent and the descendants to be their offspring in the next generation, the theorem holds for any time interval and for any set of ancestors (such as a group of individuals; Chapter 22) that one wishes to consider. In this sense, Price’s theorem is completely general and makes absolutely no assumptions about the mechanism of transmission of trait values from ancestors to their descendants, although it does make the assumption that all descendants have ancestors. This may seem trivial, but it is violated by migration, wherein an individual appears in the next generation from ancestors not considered. Kerr and Godfrey-Smith (2008) generalized the Price equation to accommodate missing ancestors and more general causal connections between ancestors and descendants."
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:6.2]]"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": "Evolution_chapter29_019",
+  "metadata": {
+    "chapter": "Evolution_chapter29",
+    "section": "DESCRIBING PHENOTYPIC SELECTION: CHANGES IN PHENOTYPIC MOMENTS",
+    "subsections": [
+      "Henshaw's Distributional Selection Differential (DSD)"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter29_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "DESCRIBING PHENOTYPIC SELECTION: CHANGES IN PHENOTYPIC MOMENTS",
+    "section_level_2": "Henshaw's Distributional Selection Differential (DSD)",
+    "heading_path": [
+      "DESCRIBING PHENOTYPIC SELECTION: CHANGES IN PHENOTYPIC MOMENTS",
+      "Henshaw's Distributional Selection Differential (DSD)"
+    ],
+    "display_heading": "Henshaw's Distributional Selection Differential (DSD)"
+  },
+  "blocks": [
+    {
+      "type": "definition",
+      "content": "While various nonparametric approaches can be used to compare a distribution of phenotypes before and after an episode of selection, simply finding a significant difference is not particularly informative. Henshaw (Henshaw et al. 2016; Henshaw and Zemel 2017) proposed a metric, the distribution selection differential (DSD, whose statistic is denoted by d), that uses differences in the shape of the entire distribution to quantify the nature and strength of selection. The original definition (Henshaw et al. 2016) was $$ d=\\int_{-\\infty}^{\\infty}\\left|F^{*}(z)-F(z)\\right|dz,\\quad\\mathrm{w h e r e}\\quad F(z)=\\int_{-\\infty}^{z}p(x)dx $$ namely, the total difference in the cumulative distribution functions of a trait before and after selection, $ F(z) $ and $ F^{*}(z) $, respectively. Empirically, this metric is estimated by $$ \\widehat{d}=\\sum_{i=1}^{n-1}\\left[\\left(z_{i+1}-z_{i}\\right)\\cdot\\left|\\sum_{j=1}^{i}\\frac{1-w_{j}}{n}\\right|\\right] $$ where we have ordered phenotypes from smallest $ (z_{1}) $ to largest $ (z_{n}) $, with $ w_{j} $ indicating the relative fitness of the jth-ranked phenotypic value."
+    },
+    {
+      "type": "discussion",
+      "content": "Henshaw and Zemel (2017) demonstrated that Equation 29.15a is equivalent to several other definitions, including a generalized Price-Robertson covariance expression (see their paper for details). They also noted two additional useful features of the DSD. First, under strictly directional selection, in which $ W(z) $ is a monotonic function of z, $$ d=\\left|\\bar{\\imath}\\right| $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Hence, when computed using a variance-standardized trait, d equals the selection intensity (Equation 13.6a). This observation implies that $$ d_{N}=d-\\left|\\bar{\\imath}\\right| $$ provides a measure of the amount of residual selection remaining after the strictly directional component has been removed (the so-called nondirectional selection fraction). Second, again for a variance-standardized trait, d is bounded by the variance, I, in relative fitness, $$ d\\leq\\sqrt{I} $$ which shows that the bound from the opportunity for selection (Equation 29.6b) also extends to the DSD. See Henshaw and Zemel (2017) for a discussion of additional features and extensions of the DSD concept to multiple traits."
+    }
+  ]
+}

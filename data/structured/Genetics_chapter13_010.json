@@ -1,0 +1,31 @@
+{
+  "id": "Genetics_chapter13_010",
+  "metadata": {
+    "chapter": "Genetics_chapter13",
+    "section": "Introduction",
+    "subsections": [
+      "Parameter Estimation"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter13_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "Parameter Estimation",
+    "heading_path": [
+      "Introduction",
+      "Parameter Estimation"
+    ],
+    "display_heading": "Parameter Estimation"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Parameters of mixture models are typically estimated by maximum likelihood procedures (Hasselblad 1966, Day 1969, Everitt and Hand 1981, Redner and Walker 1984, Titterington et al. 1985, McLachlan and Basford 1988), in which case Equation 13.5 gives the likelihood function $ \\ell(z) $ of the unknown parameters $ \\Pr(1), \\cdots, \\Pr(n), \\mu_1, \\cdots, \\mu_n, \\sigma_1^2, \\cdots, \\sigma_n^2 $ as a function of the observed value $ z $. As just mentioned, typically one sets most (or all) of the variances equal to each other; one reason for equating variances is that, if they are all free to vary, there can be singularities in the likelihood function. As an example of how likelihood functions are constructed, consider the situation for a random individual drawn from a population with a single segregating diallelic major locus. Indexing the three genotypes by $i$ where $i = QQ$, $Qq$, and $qq$, and assuming that individuals with major-locus genotype $i$ are normally distributed with mean $\\mu_{i}$ and common variance $\\sigma^{2}$, the resulting likelihood for the $j$th individual is $$ \\begin{aligned}\\ell(z_{j})&=\\Pr(QQ)p_{QQ}(z_{j})+\\Pr(Qq)p_{Qq}(z_{j})+\\Pr(qq)p_{qq}(z_{j})&\\quad(13.6a)\\\\ &\\\\&=\\Pr(QQ)\\varphi(z_{j},\\mu_{QQ},\\sigma^{2})+\\Pr(Qq)\\varphi(z_{j},\\mu_{Qq},\\sigma^{2})+\\Pr(qq)\\varphi(z_{j},\\mu_{qq},\\sigma^{2})\\\\ \\end{aligned} $$ where $ z_j $ is the character value in the focal individual. The likelihood for an individual is easily generalizable to more complicated genetic models. For example, if there are more than two alleles, or multiple loci, the likelihood has the form of Equation 13.6a with the sum now extending over all $ n_g $ multilocus genotypes. For $ n $ random (unrelated) individuals, denoting the observed phenotypic values by $ \\mathbf{z} = (z_1, z_2, \\cdots, z_n) $, the overall likelihood is just the product of the $ n $ individual likelihoods, $$ \\ell(\\mathbf{z})=\\ell(z_{1},z_{2},\\cdots,z_{n})=\\prod_{j=1}^{n}\\ell(z_{j}) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Assuming random mating, the Hardy-Weinberg principle describes the frequencies $ \\Pr(\\cdot) $ of the major locus genotypes as a function of p, the frequency of one allele. This leaves five parameters to estimate — $ p, \\sigma^{2}, \\mu_{QQ}, \\mu_{Qq} $, and $ \\mu_{qq} $."
+    }
+  ]
+}

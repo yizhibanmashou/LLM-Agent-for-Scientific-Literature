@@ -1,0 +1,47 @@
+{
+  "id": "Evolution_chapter12_004",
+  "metadata": {
+    "chapter": "Evolution_chapter12",
+    "section": "SHORT-TERM DIVERGENCE",
+    "subsections": [
+      "Sample Variance Confidence Intervals"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter12_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "SHORT-TERM DIVERGENCE",
+    "section_level_2": "Sample Variance Confidence Intervals",
+    "heading_path": [
+      "SHORT-TERM DIVERGENCE",
+      "Sample Variance Confidence Intervals"
+    ],
+    "display_heading": "Sample Variance Confidence Intervals"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Given the critical role played by the sample variance in empirical tests of the additive-drift model, we digress here to briefly consider a few statistical issues (construction of confidence intervals and power) related to estimating a variance from a sample, which are used throughout the rest of the chapter. This section may be skipped by both the statistically sophisticated and the casual reader. Let $ z_i $ be the trait value in individual $ i $, with population mean $ \\mu $ and variance $ \\sigma^2 $. Provided that individual observations used to estimate a sample variance are uncorrelated and normally distributed with $ z_i \\sim N(\\mu, \\sigma^2) $, then (LW Equation A5.14c) for a sample of size $ n $, for the sample estimator $ \\text{Var} = \\sum(z_i - \\overline{z})^2 / (n - 1) $, we have that $$ (n-1)\\mathrm{Var}\\sim\\sigma^{2}\\chi^{2}_{n-1} $$ namely, that the variance estimator, Var, is distributed as a scaled chi-square random variable with $n-1$ degrees of freedom. As a result, confidence intervals for the true variance, $\\sigma^2$, based on the observed sample variance, Var, follow from critical values for a $\\chi^2$ distribution. Letting $X_{p,n}$ satisfy $\\Pr(\\chi_n^2 \\leq X_{p,n}) = p$, then $$ \\Pr(X_{\\alpha/2,n}\\leq\\chi_{n}^{2}\\leq X_{1-\\alpha/2,n})=1-\\alpha $$ From Equation 12.5a, substituting $ (n-1)\\mathrm{Var}/\\sigma^{2} $ for $ \\chi_{n-1}^{2} $, we have $$ \\Pr\\left(X_{\\alpha/2,n-1}\\leq\\frac{(n-1)Var}{\\sigma^{2}}\\leq X_{1-\\alpha/2,n-1}\\right) $$ $$ =\\Pr\\left(\\frac{1}{X_{\\alpha/2,n-1}}\\geq\\frac{\\sigma^{2}}{(n-1)\\mathrm{Var}}\\geq\\frac{1}{X_{1-\\alpha/2,n-1}}\\right)=1-\\alpha $$ yielding $$ \\Pr\\left[\\left(\\frac{n-1}{X_{1-\\alpha/2,n-1}}\\right)\\operatorname{Var}\\leq\\sigma^{2}\\leq\\left(\\frac{n-1}{X_{\\alpha/2,n-1}}\\right)\\operatorname{Var}\\right]=1-\\alpha $$"
+    },
+    {
+      "type": "discussion",
+      "content": "This motivates a $ (1-\\alpha)100% $ confidence interval for the true variance, $ \\sigma^{2} $, given the observed sample variance, Var. As shown in Figure 12.1, confidence intervals for $ \\sigma^{2} $ are asymmetrical about the estimated value, Var. and tend to be quite large, even for modest sample sizes."
+    },
+    {
+      "type": "discussion",
+      "content": "A second important issue is power: how likely are we to declare the variance to be statistically distinct from some hypothesized null value, $ \\sigma_0^2 $? Intuitively, power increases with both the sample size (n) and the difference between the true and null values. To formally develop this relationship, note from Equation 12.6a that the upper and lower critical values for a $ 100(1 - \\alpha)% $ confidence interval on the value of Var when the true variance is $ \\sigma_0^2 $ are $$ \\left(\\frac{\\sigma_{0}^{2}}{n-1}\\right)X_{\\alpha/2,n-1}\\leq\\operatorname{Var}\\leq\\left(\\frac{\\sigma_{0}^{2}}{n-1}\\right)X_{1-\\alpha/2,n-1} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "If Var falls outside this interval, we declare that the true variance is statistically different (at level $ \\alpha $) from the assumed value, $ \\sigma_0^2 $. If $ \\beta $ denotes the probability that a sample value of Var falls within this internal, namely the probability of a type-II error (failing to declare a test significant when the null is false, i.e., when the true variance is $ \\sigma_1^2 $), then the power is $ 1 - \\beta $. We can obtain $ \\beta $ by noting that the true distribution is given by $ [(n - 1)/\\sigma_1^2] $ Var $ \\sim \\chi_{n-1}^2 $. Multiplying all terms of Equation 12.7a by $ (n - 1)/\\sigma_1^2 $ gives the probability $ \\beta $ of a sample variance failing to be declared significant as $$ \\begin{aligned}\\beta&=\\Pr\\left[\\left(\\frac{\\sigma_{0}^{2}}{n-1}\\right)\\left(\\frac{n-1}{\\sigma_{1}^{2}}\\right)X_{\\alpha/2,n-1}\\leq\\chi_{n-1}^{2}\\leq\\left(\\frac{\\sigma_{0}^{2}}{n-1}\\right)\\left(\\frac{n-1}{\\sigma_{1}^{2}}\\right)X_{1-\\alpha/2,n-1}\\right]\\\\&=\\Pr\\left[\\left(\\frac{\\sigma_{0}^{2}}{\\sigma_{1}^{2}}\\right)X_{\\alpha/2,n-1}\\leq\\chi_{n-1}^{2}\\leq\\left(\\frac{\\sigma_{0}^{2}}{\\sigma_{1}^{2}}\\right)X_{1-\\alpha/2,n-1}\\right]\\quad&()\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The complement of this event (namely, either less than the lower critical value or greater than the upper critical value) is the power, $$ 1-\\beta=\\Pr\\left[\\chi_{n-1}^{2}\\leq\\left(\\frac{\\sigma_{0}^{2}}{\\sigma_{1}^{2}}\\right)X_{\\alpha/2,n-1}\\right]+\\Pr\\left[\\chi_{n-1}^{2}\\geq\\left(\\frac{\\sigma_{0}^{2}}{\\sigma_{1}^{2}}\\right)X_{1-\\alpha/2,n-1}\\right] $$"
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:12.1]]"
+    }
+  ]
+}

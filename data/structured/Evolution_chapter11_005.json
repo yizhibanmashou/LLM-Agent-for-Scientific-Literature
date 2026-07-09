@@ -1,0 +1,50 @@
+{
+  "id": "Evolution_chapter11_005",
+  "metadata": {
+    "chapter": "Evolution_chapter11",
+    "section": "RESPONSE OF WITHIN-POPULATION GENETIC VARIANCE TO DRIFT",
+    "subsections": [
+      "One- and Two-locus Identity Coefficients"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter11_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [
+      "11.1",
+      "11.3"
+    ],
+    "section_level_1": "RESPONSE OF WITHIN-POPULATION GENETIC VARIANCE TO DRIFT",
+    "section_level_2": "One- and Two-locus Identity Coefficients",
+    "heading_path": [
+      "RESPONSE OF WITHIN-POPULATION GENETIC VARIANCE TO DRIFT",
+      "One- and Two-locus Identity Coefficients"
+    ],
+    "display_heading": "One- and Two-locus Identity Coefficients",
+    "table_reference_keys": [
+      "Evolution_chapter11:11.1",
+      "Evolution_chapter11:11.3"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "The contributions of the factors in [[SEE_TABLE:11.1]] to the traditional components of genetic variance ($ \\sigma_{A}^{2} $, $ \\sigma_{D}^{2} $, and $ \\sigma_{AA}^{2} $) in a finite population depend upon several one- and two-locus identity coefficients. As shown in Figure 11.1, these give the probabilities that randomly drawn combinations (from the population) of two, three, or four alleles at a given locus are identical by descent (both IBD and ibd are used in the literature; LW Chapter 7), with extensions to the two-locus case for randomly drawn combinations of two, three, or four two-locus gametes. Of the one-locus coefficients, f is the familiar inbreeding coefficient, i.e., the probability that two alleles are identical by descent at a particular locus (Chapter 2). The probabilities that the members of random groups of three and four alleles are all identical by descent are denoted by $ \\gamma $ and $ \\delta $ (the latter is not to be confused with the dominance effects, which are subscripted in [[SEE_TABLE:11.1]])."
+    },
+    {
+      "type": "discussion",
+      "content": "The coefficient $ \\Delta $ also involves four gametes (Figure 11.1), and is the probability of IBD within two pairs of gametes (including the possibility that all four genes are IBD). Under the random union of gametes, this corresponds to the probability that two (diploid) individuals have genotypes that are IBD. With a probability of $ \\delta $, both individuals are inbred, and thus all four alleles are IBD, with the resulting genotypes being homozygotes. The more interesting scenario, which occurs with a probability of $ \\Delta - \\delta $, is that where the two genotypes are IBD but the alleles within each individual are not (i.e., neither individual is inbred). Hence, the shared genotypes could be either heterozygotes or homozygotes. For example, suppose both of diploid genotypes are AA and that the maternal copy of A in both individuals is IBD, as is the paternal copy of A, but the maternal and paternal copies are not IBD. This generates two homozygotes that are not inbred (the two copies of A within each individual are not IBD), yet both genotypes are IBD to each other. Similarly, if both genotypes are Aa, neither individual is inbred, but if the A is IBD in both individuals, and so too are the a alleles, then the genotypes are IBD, but not inbred."
+    },
+    {
+      "type": "discussion",
+      "content": "For randomly mating monoecious populations under the classical Wright-Fisher model, the transition equations for these coefficients are functions of $ N_{e} $ and t, with $$ f_{t}=1-\\lambda_{1}^{t} $$ $$ \\begin{align*}\\gamma_t=1-{3\\lambda_1^t\\over2}+{\\lambda_2^t\\over2}\\end{align*} $$ $$ \\Delta_{t}=1-\\frac{24\\lambda_{1}^{t}-10\\lambda_{2}^{t}+\\lambda_{3}^{t}}{15}+\\frac{\\lambda_{1}^{t}-\\lambda_{3}^{t}}{5(5N_{e}-3)} $$ $$ \\delta_{t}=1-\\frac{9\\lambda_{1}^{t}-5\\lambda_{2}^{t}+\\lambda_{3}^{t}}{5}-\\frac{3\\lambda_{1}^{t}}{20(5N_{e}-3)}+\\frac{\\lambda_{2}^{t}}{12(N_{e}-1)}-\\frac{(8N_{e}-3)\\lambda_{3}^{t}}{30(5N_{e}-3)(N_{e}-1)} $$ where $ \\lambda_{j}=1-(j/2N_{e}) $ for $ j=1,2,3 $ (Cockerham and Weir 1983)."
+    },
+    {
+      "type": "discussion",
+      "content": "The three two-locus coefficients (denoted by tildes in Figure 11.1) refer to joint identities by descent at two loci. First, $ \\widetilde{f} $ refers to pairs of alleles on two gametes and is the joint probability of IBD at locus 1 and IBD at locus 2. Under neutrality, random mating, and linkage equilibrium, $ \\widetilde{f} $ cannot be less than the product of the separate identity probabilities for each locus, $ f^2 $. Second, $ \\widetilde{\\gamma} $ refers to the situation in which each member of a pair of genes in one gamete is identical by descent with a gene in a separate gamete (IBD at locus 1 for gametes one and two, IBD at locus 2 for gametes two and three). Finally, $ \\widetilde{\\Delta} $ is the joint identity by descent of genes (two at each locus) in two pairs of different gametes (IBD at locus 1 for gametes one and two, IBD at locus 2 for gametes three and four). The transition equations for these double identity-by-descent measures, which were derived by Weir and Cockerham (1969) for ideal monoecious populations, depend upon $ N_e $, $ t $, and the linkage parameter $ \\rho = 1 - 2c $ (where $ c \\leq 0.5 $ is the recombination frequency between loci). Letting $ \\widetilde{f}_t = \\widetilde{f}_t^* + 2f_t - 1 $, $ \\widetilde{\\gamma}_t = \\widetilde{\\gamma}_t^* + 2f_t - 1 $, and $ \\widetilde{\\Delta}_t = \\widetilde{\\Delta}_t^* + 2f_t - 1 $, the coefficients are obtained by use of Equation 11.3a and the following matrix expression, $$ \\begin{align*}\\left(\\begin{array}{c}\\widetilde{f}_{t+1}^{*}\\\\ \\widetilde{\\gamma}_{t+1}^{*}\\\\ \\widetilde{\\Delta}_{t+1}^{*}\\end{array}\\right)=\\mathbf{M}\\left(\\begin{array}{c}f_{t}^{*}\\\\ \\widetilde{\\gamma}_{t}^{*}\\\\ \\widetilde{\\Delta}_{t}^{*}\\end{array}\\right)\\end{align*} $$ starting with $ \\widetilde{f}_{0}^{*}=\\widetilde{\\gamma}_{0}^{*}=\\widetilde{\\Delta}_{0}^{*}=1 $, where $$ \\mathbf{M}=\\begin{pmatrix}\\frac{(1+\\rho)^{2}}{4}-\\frac{\\rho}{2N_{e}}&\\frac{(N_{e}-1)(1-\\rho^{2})}{2N_{e}}&\\frac{(N_{e}-1)(1-\\rho)^{2}}{4N_{e}}\\\\\\frac{1+\\rho}{4N_{e}}-\\frac{\\rho}{4N_{e}^{2}}&\\frac{(N_{e}-1)[N_{e}+1+\\rho(N_{e}-2)]}{2N_{e}^{2}}&\\frac{(N_{e}-1)(2N_{e}-3)(1-\\rho)}{4N_{e}^{2}}\\\\\\frac{2N_{e}-1}{4N_{e}^{3}}&\\frac{(N_{e}-1)(2N_{e}-1)}{N_{e}^{3}}&\\frac{(N_{e}-1)(2N_{e}-1)(2N_{e}-3)}{4N_{e}^{3}}\\end{pmatrix} $$"
+    },
+    {
+      "type": "table",
+      "content": "[[TABLE:11.3]]"
+    }
+  ]
+}

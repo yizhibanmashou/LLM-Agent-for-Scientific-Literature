@@ -1,0 +1,71 @@
+{
+  "id": "Genetics_chapter15_015",
+  "metadata": {
+    "chapter": "Genetics_chapter15",
+    "section": "Introduction",
+    "subsections": [
+      "Marker-Difference Regression"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter15_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "Marker-Difference Regression",
+    "heading_path": [
+      "Introduction",
+      "Marker-Difference Regression"
+    ],
+    "display_heading": "Marker-Difference Regression"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Two groups (Kearsey and Hyne 1994, Hyne and Kearsey 1995, Wu and Li 1994, 1996) proposed a very simple, yet powerful, regression method that simultaneously considers all of the markers on a single chromosome. While the authors refer to this method as marker regression or joint mapping, we will use the more descriptive term marker-difference regression, or MDR, to emphasize that this approach is rather different from the regressions that we have considered up to this point. With MDR, each data point in the regression corresponds to a population mean value, rather than to values for single individuals (as in our previous regressions). While this data structure results in far fewer points in the regression, the use of means allows the inclusion of individuals missing some marker information and also allows the joint incorporation of information from several experiments."
+    },
+    {
+      "type": "proposition",
+      "content": "The motivation for MDR follows from Equation 15.7a. We first present the method under the assumption of a single QTL to illustrate the main points before extending it to multiple QTLs. Suppose there are n linked markers on a chromosome containing a single QTL (with alleles Q and q). If the ith marker is at recombination frequency $ c_{i} $ from the QTL, the expected difference between marker homozygote means is $$ y_{i}=\\mu(M_{i}M_{i})-\\mu(m_{i}m_{i})=2a(1-2c_{i}) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, if we plot the differences $y_{i}$ vs. $(1-2c_{i})$ for each marker on the chromosome, the resulting $n$ points are expected to fall on a straight line passing through the origin with slope $2a=\\mu_{QQ}-\\mu_{qq}$. Figure 15.4 illustrates this point, showing two regressions using the same set of marker differences but assuming two different locations for the QTL. The regression computed using the correct position of the QTL is linear, while that assuming the incorrect position is highly nonlinear. As with Haley-Knott regressions, one slides the position of a putative QTL along the chromosome, computing a regression at each point. The regression giving the best fit (i.e., the largest $r^{2}$) corresponds to the estimate of QTL position, and the slope of that regression divided by two provides an estimate of the QTL effect, $a$."
+    },
+    {
+      "type": "discussion",
+      "content": "To formally develop this approach, suppose that there are $n$ linked markers scored along a single chromosome, and consider the regression $$ y_{i}=\\overline{z}(M_{i}M_{i})-\\overline{z}(m_{i}m_{i})=\\beta x_{i}+e_{i} $$ with the $ x_{i}=1-2c_{i} $ values obtained by fixing the QTL position and then computing $ c_{i} $. Because the residuals are correlated and potentially heteroscedastic, [[FIGURE:15.4]] generalized least-squares regression (Chapter 8) must be used, with $$ \\hat{\\boldsymbol{\\beta}}=\\left(\\mathbf{X}^{T}\\mathbf{V}^{-1}\\mathbf{X}\\right)^{-1}\\mathbf{X}^{T}\\mathbf{V}^{-1}\\mathbf{y} $$ which has sample variance $$ \\sigma^{2}(\\widehat{\\boldsymbol{\\beta}})=\\left(\\mathbf{X}^{T}\\mathbf{V}^{-1}\\mathbf{X}\\right)^{-1} $$ where $$ \\mathbf{y}=\\begin{pmatrix}y_{1}\\\\ \\vdots\\\\ y_{n}\\end{pmatrix},\\quad\\mathbf{X}=\\begin{pmatrix}1-2c_{1}\\\\ \\vdots\\\\ 1-2c_{n}\\end{pmatrix} $$ and $$ \\mathrm{V}_{i j}=\\left\\{\\begin{aligned}{}&{{}\\frac{\\operatorname{V a r}(M_{i}M_{i})}{n(M_{i}M_{i})}+\\frac{\\operatorname{V a r}(m_{i}m_{i})}{n(m_{i}m_{i})}}&{i=j}\\\\ {}&{{}(1-2c_{i j})\\sqrt{\\mathrm{V}_{i i}\\mathrm{~V}_{j j}}}&{i\\neq j}\\\\ \\end{aligned}\\right. $$ where $\\mathrm{Var}(M_x)$ is the sample variance of $\\overline{z}(M_x)$ and $n(M_x)$ is the sample size for marker class $M_x$ (Wu and Li 1996)."
+    },
+    {
+      "type": "discussion",
+      "content": "Assuming normally distributed residuals, from Equation A3.11a the residual sum of squares, $$ \\mathbf{S}\\mathbf{S}_{E}=\\widehat{\\mathbf{e}}^{T}\\mathbf{V}^{-1}\\widehat{\\mathbf{e}}=(\\mathbf{y}-\\mathbf{X}\\widehat{\\boldsymbol{\\beta}})^{T}\\mathbf{V}^{-1}(\\mathbf{y}-\\mathbf{X}\\widehat{\\boldsymbol{\\beta}}) $$ follows a $\\chi^{2}$ distribution with $n-2$ degrees of freedom ($n$ data points minus two estimated parameters, the QTL effect $\\beta=2a$ and the assumed position). The test for a significant QTL effect compares the $SS_{E}$ for this regression with that for the regression assuming no marker effect ($y_{i}=\\mu+e_{i}$). The $SS_{E}$ for the reduced model is also $\\chi^{2}$-distributed, but with $n-1$ degrees of freedom. Recalling (Appendix 5) the additivity property of the chi-square, the difference in residual sums of squares for these two models follows a $\\chi_{1}^{2}$ distribution under the null hypothesis. Hence, the regression is significant at the $\\alpha$ level if $SS_{E}$ (reduced model) - $SS_{E}$(QTL model) exceeds $\\chi_{1}^{2}(\\alpha)$, the $\\alpha$-level cutoff for a $\\chi_{1}^{2}$. Separate regressions are computed for each chromosome, so that to obtain a genome-wide level of significance $\\gamma$, each chromosomal regression is tested with significance level $\\alpha=1-(1-\\gamma)^{1/C}\\simeq\\gamma/C$, where $C$ is the number of chromosomes examined."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 9. Consider the following hypothetical data (plotted in Figure 15.4) generated by assuming a single QTL with effect $a = 2.0$ at map position 60 cM along a chromosome containing six markers: <table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Marker Position (cM)</td><td style='text-align: center; word-wrap: break-word;'>$ \\overline{z}(M_{i}M_{i}) - \\overline{z}(m_{i}m_{i}) $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>10</td><td style='text-align: center; word-wrap: break-word;'>1.26</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>25</td><td style='text-align: center; word-wrap: break-word;'>2.06</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>50</td><td style='text-align: center; word-wrap: break-word;'>3.04</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>65</td><td style='text-align: center; word-wrap: break-word;'>3.54</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>75</td><td style='text-align: center; word-wrap: break-word;'>2.90</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>90</td><td style='text-align: center; word-wrap: break-word;'>2.15</td></tr></table>"
+    },
+    {
+      "type": "discussion",
+      "content": "We assume that the variance associated with each marker class is the same with $ \\mathrm{Var}(M_x)=5 $, and that 50 individuals of each marker class are scored, giving $ V_{ii}=2\\cdot5/50=0.2 $. Using this and the $ c_{ij} $ values with Equation 15.25d fills out the rest of V. For a MDR analysis, one computes a separate regression for each possible QTL position. Consider the regression for a QTL assumed to be at map position 50 cM. For the first marker, the QTL-marker map distance is 40 cM, which (assuming a Haldane map distance, Equation 14.3) translates into a recombination frequency of $$ c_{1}=\\frac{1-e^{(-2\\cdot0.4)}}{2}\\simeq0.275 $$ giving $x_{1}=(1-2c_{1})=0.45$, and the data point associated this marker becomes (0.45, 1.26). Computing the remaining data points and applying Equations 15.25 and 15.26 gives a regression with $ SS_{E} = 11.03 $. After this procedure is repeated for all positions along the chromosome, the resulting plot of $ SS_{E} $ vs. putative QTL position (shown below) exhibits a minimum value (0.43) at map position 61, and hence $ r^{2} $ is maximized at this position (see Equation A3.15)."
+    },
+    {
+      "type": "discussion",
+      "content": "Whether the fit under the single-QTL model is a significant improvement over a model assuming no QTL can be assessed by comparing the error sum of squares of the QTL model ($ SS_E = 0.43 $) with the error sum of squares of the reduced (no QTL) model $ y_i = \\mu + e_i $. Since the QTL model fits an extra parameter, the difference in sums of squares follows a $ \\chi^2 $ distribution with one degree of freedom (one df) under the hypothesis of no QTL effect. For the reduced model, $ SS_E = 19.16 $, which is obtained by setting $ \\mathbf{X} $ equal to a vector of ones and applying Equation 15.25a. Hence, the QTL effect is highly significant as $ \\Pr(\\chi_1^2 > 19.16 - 0.43) < 0.001 $."
+    },
+    {
+      "type": "discussion",
+      "content": "The adequacy of the single-QTL model can be assessed by noting that if this model is correct, $ SS_E $ follows a $ \\chi^2_4 $ distribution (there are six data points and two fitted parameters, for four df). Since $ \\Pr(\\chi^2_4 > 0.43) = 0.99 $, $ SS_E $ is not larger than expected by chance, suggesting that there is no need to consider additional QTLs."
+    },
+    {
+      "type": "discussion",
+      "content": "Using the estimated map position, the resulting regression has slope 3.84, giving the estimated QTL effect as $ \\widehat{\\alpha} = 3.84/2 = 1.92 $. From Equation 15.25b, we have $ \\sigma^2(2\\widehat{\\alpha}) = (\\mathbf{X}^T\\mathbf{V}^{-1}\\mathbf{X})^{-1} = 0.16 $, giving the standard error of $ \\widehat{\\alpha} $ as $ \\sqrt{0.16}/2 = 0.20 $. Since $ SS_E $ follows a $ \\chi^2_1 $ distribution, the 95% confidence interval for QTL position contains those values giving regressions with $ SS_E $ not exceeding $ \\chi^2_1(0.05) = 3.84 $ of the minimal $ SS_E $ value of 0.43 (i.e., $ SS_E $ values less than 4.27). This gives the confidence interval for the QTL position as 54 to 69 cM (see figure)."
+    },
+    {
+      "type": "discussion",
+      "content": "This approach easily extends to multiple QTLs. Recalling Equation 15.8a, if there are $N$ linked QTLs, the $j$th of which is at recombination frequency $c_{ji}$ from marker $i$, then (assuming no epistasis), $$ y_{i}=\\mu(M_{i}M_{i})-\\mu(m_{i}m_{i})=2a_{1}(1-2c_{1i})+\\cdots+2a_{N}(1-2c_{N i}) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "This immediately suggests the multiple regression $$ y_{i}=\\beta_{1}\\cdot x_{1i}+\\cdots+\\beta_{N}\\cdot x_{Ni}+e_{i} $$ where $ x_{ji} = (1 - 2c_{ji}) $ and $ \\beta_j = 2a_j $. The estimates are still given by Equation 15.25a, with y and V being defined in the univariate case, and $$ \\boldsymbol{\\beta}=\\left(\\begin{matrix}{\\beta_{1}}\\\\ {\\vdots}\\\\ {\\beta_{N}}\\\\ \\end{matrix}\\right)\\qquad\\mathrm{a n d}\\qquad\\mathbf{X}=\\left(\\begin{matrix}{1-2c_{11}}&{\\cdots}&{1-2c_{N1}}\\\\ {\\vdots}&{\\ddots}&{\\vdots}\\\\ {1-2c_{1n}}&{\\cdots}&{1-2c_{N n}}\\\\ \\end{matrix}\\right) $$ where $N$ is the number of assumed QTLs, and $n$ is the number of markers. As above, one computes the regression over the set of all possible QTL positions, with the estimates of QTL positions being given by the regression with the smallest $SS_E$ value (or largest $r^2$). Each additional QTL reduces the degrees of freedom of $SS_E$ by two (one for QTL effect, one for position). The test for whether adding another QTL significantly improves the fit compares the difference in the resulting two error sums of squares (for models assuming $N$ versus $N-1$ QTLs) with the appropriate critical value for a $\\chi_2^2$."
+    }
+  ]
+}

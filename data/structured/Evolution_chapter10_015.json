@@ -1,0 +1,103 @@
+{
+  "id": "Evolution_chapter10_015",
+  "metadata": {
+    "chapter": "Evolution_chapter10",
+    "section": "ESTIMATING PARAMETERS OF ADAPTIVE EVOLUTION",
+    "subsections": [
+      "Estimating the Fraction, $ \\alpha $, of Substitutions That are Adaptive"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter10_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "ESTIMATING PARAMETERS OF ADAPTIVE EVOLUTION",
+    "section_level_2": "Estimating the Fraction, $ \\alpha $, of Substitutions That are Adaptive",
+    "heading_path": [
+      "ESTIMATING PARAMETERS OF ADAPTIVE EVOLUTION",
+      "Estimating the Fraction, $ \\alpha $, of Substitutions That are Adaptive"
+    ],
+    "display_heading": "Estimating the Fraction, $ \\alpha $, of Substitutions That are Adaptive"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "It was quickly realized that DPRS tables offer much more than simply an opportunity to test for selection (Sawyer and Hartl 1992; Charlesworth 1994b; Fay et al. 2001, 2002; Smith and Eyre-Walker 2002). A neutrality index < 1 indicates that the observed number of replacement substitutions is greater than expected from the ratio of the number of replacement to silent polymorphic sites. Assuming that the $ P_{a}/P_{s} $ ratio does indeed reflect the ratio of effectively neutral mutation rates at these two classes of sites, then, when coupled with the observed number of silent substitutions, it predicts the expected number of effectively neutral replacement substitutions. Any statistically significant excess over this predicted value either reflects sites fixed under positive selection or is the result of changes in the effectively neutral mutation rate between the population (or populations) generating the polymorphism data and those responsible for the divergence data. As mentioned, excessive divergence can occur if the effective population size was much smaller during the divergence phase, allowing more slightly deleterious mutations to escape selection and become fixed. As above, let $\\mu$ and $f_\\mu$ denote the per-site rates at which effectively neutral mutations arise at silent and replacement sites, so that $\\mu_a = f\\mu n_a$ and $\\mu_s = \\mu n_s$ are the total rates for the replacement and silent sites in our sample (where $n_a$ and $n_s$ are, respectively, the number of replacement and silent sites). Under neutrality, the expected numbers of effectively neutral substitutions for each class are $D_s = 2\\mu_s t$ and $D_{a,n} = 2\\mu_a t$. Now suppose there are $\\eta_a$ additional replacement substitutions fixed by positive selection, giving the total number of replacement substitutions as $D_a = D_{a,n} + \\eta_a = 2\\mu_a t + \\eta_a$. Ideally, we would like to estimate both the number, $\\eta_a$, and the fraction, $\\alpha = \\eta_a / D_a$, of replacement substitutions that are adaptive. To estimate $\\eta_a$, note that the expected number of segregating sites for category $x$ is given by $\\theta_x a_n$ (Equation 9.21a), yielding $P_s = 4\\mu_s N_e a_n$ and $P_a = 4\\mu_a N_e a_n$, where the latter assumes that the vast bulk of segregating sites are neutral (adaptive mutations are assumed to be both rare and also fixed quickly, and hence make little contribution to $P_a$). First note that $$ D_{s}\\frac{P_{a}}{P_{s}}=2\\mu_{s}t\\frac{\\mu_{a}}{\\mu_{s}}=2\\mu_{a}t $$ From above, this last expression is simply the expected number of neutral replacement substitutions, $ D_{a,n} $, and because $ \\eta_{a}=D_{a}-D_{a,n} $, our estimate of the number of adaptive replacement substitutions becomes $$ \\widehat{\\eta}_{a}=D_{a}-D_{s}\\frac{P_{a}}{P_{s}} $$ as obtained by Charlesworth (1994b), Fay et al. (2001, 2002), and Smith and Eyre-Walker (2002). This immediately suggests an estimator for the fraction, $ \\alpha $, of replacement substitutions that are adaptive, $$ \\widehat{\\alpha}=\\frac{\\widehat{\\eta}_{a}}{D_{a}}=1-\\frac{D_{s}P_{a}}{D_{a}P_{s}}=1-N I $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Note that a positive estimate of $ \\alpha $ requires a neutrality index <1. Using the data from Example 10.6 for noncoding regions on the X chromosome in D. melanogaster, $ \\hat{\\alpha} = 1 - 0.906 = 0.094 $ using all polymorphic sites, and $ \\hat{\\alpha} = 1 - 0.764 = 0.236 $ if singletons are ignored. Hence, between roughly 10% and 25% of all substitutions in these noncoding regions might be adaptive. Similarly, Kousathanas et al. (2010) obtained estimates of around 10% adaptive substitutions in the immediate up- and downstream regions around protein-coding genes in the house mouse (Mus musculus castaneus)."
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, note that we can estimate the fraction, f, of replacement mutations that are effectively neutral by rearranging Equation 10.5a to $$ \\widehat{f}=\\frac{P_{a}}{P_{s}}\\frac{n_{s}}{n_{a}}=\\frac{P_{a}/n_{a}}{P_{s}/n_{s}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "This is simply the ratio of the fraction of replacement sites that are polymorphic divided by the fraction of silent sites that are polymorphic. Recall that 1 - f is a measure of the amount of constraint relative to a silent site, as f is the fraction of replacement-site mutations (relative to those at silent sites) that are effectively neutral. For Drosophila, estimated 1 - f values are 0.94 for replacement sites, 0.81 for UTRs, 0.61 for intergenic regions, and 0.56 for intron sequences (summarized by Sella et al. 2009). Further, Halligan and Keightley (2006) showed that silent sites are not the fastest evolving sequences in Drosophila: rather, this distinction belongs to FEI (fastest evolving intronic) sites. In comparison to these sites, the constraint on silent sites is 0.09, suggesting that 9% of new silent mutations are deleterious. Lawrie et al. (2013), used site-frequency spectrum data to obtain a more extreme value, finding that close to 20% of D. melanogaster silent sites are under strong functional constraints."
+    },
+    {
+      "type": "discussion",
+      "content": "While Equations 10.7b and 10.7c can be applied to single genes, individual-gene estimates of $ \\alpha $ are expected to have a large sampling variance and low power. If the actual fraction of adaptive substitutions is small, the modest increase in the number of substitutions will often not be large enough to be significantly different from its neutral expectation, and the resulting estimate of $ \\alpha $ will not be significantly different from zero. For example, if five substitutions are expected at our focal gene given the ratio of silent to replacement polymorphisms, an observed value of eight substitutions is unlikely to be excessive enough to be declared significantly different from five. However, if three of the eight substitutions were indeed driven to fixation by positive selection, then $ \\alpha = 0.375 $, which is quite substantial."
+    },
+    {
+      "type": "discussion",
+      "content": "Despite low power for estimating $ \\alpha $ at any single locus, considerable power can be obtained by estimating the expected value, $ E[\\alpha] = \\overline{\\alpha} $, over a number of loci. To accomplish this task, Fay et al. (2001, 2002) suggested the estimator $$ \\widehat{\\overline{\\alpha}}_{F a y}=1-\\frac{\\overline{D}_{s}}{\\overline{D}_{a}}\\left(\\frac{\\overline{P_{a}}}{\\overline{P_{s}}}\\right) $$ where the bar implies the average of that quantity over all sampled genes, e.g., $ \\overline{D}_s $ is the average number of silent substitutions over all the sampled genes. Note that we use $ \\alpha $ when referring to a single gene, $ \\overline{\\alpha} $ for its expected value over a set of genes, and $ \\widehat{\\overline{\\alpha}} $ as an estimate of $ \\overline{\\alpha} $."
+    },
+    {
+      "type": "discussion",
+      "content": "The estimator given by Equation 10.8a has two potential sources of bias, both of which can lead to an overestimation of $ \\overline{\\alpha} $ (Smith and Eyre-Walker 2002; Welch 2006). Let $ \\mu $ and $ f_{\\mu} $ denote the effectively neutral per-site substitution rates for silent and replacement sites within a gene, where f is allowed to vary over genes. Following Welch (2006), one can show that $$ E\\left[\\frac{\\overline{D}_{s}}{\\overline{D}_{a}}\\right]=\\frac{\\overline{n}_{s}}{\\overline{n}_{a}}\\frac{1}{E[f]}\\left(E\\left[\\frac{1}{1-\\alpha}\\right]\\right)^{-1}\\simeq\\frac{\\overline{n}_{s}}{\\overline{n}_{a}}\\frac{1}{E[f]}\\left[1-\\overline{\\alpha}-\\sigma^{2}(\\alpha)\\right] $$ where $ n_x $ is the average number of sites of type $ x $ over all genes, $ E[\\cdot] $ is the expectation over all sampled genes, and $ \\sigma^2(\\alpha) = E[\\alpha^2] - (E[\\alpha])^2 $ is the among-gene variance in the fraction of adaptive substitutions ($ \\alpha $), with the last approximation following from the delta method (LW Equation A1.3). Equation 10.8b shows that when there is among-locus variation in $ \\alpha $ (so that $ \\sigma^2(\\alpha) > 0 $), $ \\overline{\\alpha} $ is overestimated by Equation 10.8a."
+    },
+    {
+      "type": "discussion",
+      "content": "A more subtle bias occurs if f and $ 4N_{e}\\mu $ are negatively correlated over genes, as $$ E\\left[\\overline{\\overline{P}}_{a}\\right]=\\frac{\\overline{n}_{a}}{\\overline{n}_{s}}\\left(E[f]+\\frac{\\sigma(4N_{e}\\mu,f)}{4E[N_{e}\\mu]}\\right) $$ as obtained by Smith and Eyre-Walker (2002) and Welch (2006). Hence, Equation 10.7d underestimates $ f $, and therefore results in an overestimation of $ \\overline{\\alpha} $, if $ 4N_{e}u $ and $ f $ are negatively correlated (and underestimates $ \\overline{\\alpha} $ if they are positively correlated). Smith and Eyre-Walker (2002) noted that a negative correlation is biologically reasonable, as the effective population size can vary over the genome (Chapters 3 and 8), and regions with smaller $ N_{e} $ are likely have higher $ f $ values (Figure 10.1), as more mutations become effectively neutral."
+    },
+    {
+      "type": "discussion",
+      "content": "To reduce bias from correlations between f and $ N_{e} $, Smith and Eyre-Walker (2002) suggested the estimator $$ \\widehat{\\overline{\\alpha}}_{SEW}=1-\\frac{\\overline{D_{s}}}{\\overline{D_{a}}}\\overline{\\left(\\frac{P_{a}}{P_{s}+1}\\right)} $$ where the second term is the average of the quantity $ P_a/(P_s + 1) $ over the sampled genes. Provided that the number of polymorphic silent sites in the sample is modest (five or greater), this adjusted polymorphism ratio is unbiased by correlations between f and $ N_e $, with $$ E\\left[\\widehat{\\overline{\\alpha}}_{SEW}\\right]\\simeq\\overline{\\alpha}+\\sigma^{2}(\\alpha) $$ as shown by Smith and Eyre-Walker (2002) and Welch (2006). While this correction removes concern over correlations between f and $ N_{e} $, overestimation of $ \\overline{\\alpha} $ remains when among-locus variation in $ \\alpha $ is present."
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:10.11]]"
+    },
+    {
+      "type": "discussion",
+      "content": "A potential concern with Equations 10.8a and 10.9a is bias due to the Yule-Simpson effect. Recalling Equations 10.7c and 10.6c suggests that the estimator $$ \\widehat{\\overline{\\alpha}}_{TG}=1-NI_{TG}=1-\\frac{\\sum_{i}D_{si}P_{ai}/(P_{si}+D_{si})}{\\sum_{i}P_{si}D_{ai}/(P_{si}+D_{si})} $$ is perhaps the most robust approach to this problem. While Stoletzki and Eyre-Walker (2011) found very close agreement between $ \\widehat{\\alpha}_{TG} $ and $ \\widehat{\\alpha}_{Fay} $ over the data sets they examined, all of the above considerations suggest that the most prudent estimator is $ \\widehat{\\alpha}_{TG} $. We will refer to estimators of $ \\alpha $ that use departures from the expectation under neutrality in a DPRS table collectively as MK estimators (Equations 10.7c, 10.8a, 10.9a, and 10.9c)."
+    },
+    {
+      "type": "discussion",
+      "content": "Confidence intervals for $ \\overline{\\alpha} $ using any of these estimators can be obtained using bootstrap resampling. One generates a sample of genes by drawing with replacement from the original list of all genes and estimates $ \\overline{\\alpha} $ for this sample. This process is repeated a large number of times to generate a distribution of the estimate under resampling. Taking the lower 2.5% and upper 97.5% in this distribution yields the 95% bootstrap confidence interval."
+    },
+    {
+      "type": "discussion",
+      "content": "While the above sources of bias (among-locus variation in $ \\alpha $ and correlations between $ f $ and $ 4N_e\\mu $; Equations 10.8b and 10.8c) are generally modest and in a predictable direction (overestimation of $ \\overline{\\alpha} $), the presence of mildly deleterious alleles provides a major bias, which can be either positive or negative (Eyre-Walker 2002; Bieren and Eyre-Walker 2004; Welch 2006; Charlesworth and Eyre-Waker 2008; Eyre-Walker and Keightley 2009; Halligan et al. 2010; Schneider et al. 2011; Keightley and Eyre-Waker 2012; Messer and Petrov 2013b). Estimates of $ \\alpha $ are downwardly biased by the presence of low-frequency deleterious alleles that contribute to $ P_a $ but not $ D_a $, thus inflating the polymorphism ratio relative to the divergence ratio (Eyre-Walker 2006; Eyre-Walker and Keightley 2009). As with MK tests, one approach is to count only “common” polymorphisms for $ P_a $ and $ P_s $. However, Charlesworth and Eyre-Walker (2008) noted that while this approach is “better than doing nothing,” estimates of $ \\alpha $ still tend to be downwardly biased even after making this correction unless the true $ \\alpha $ is fairly substantial. Further, the bias is a function of the complex distribution of fitness effects (Charlesworth and Eyre-Walker 2008; Welch et al. 2008; Eyre-Walker and Keightley 2009; Schneider et al. 2011; Keightley and Eyre-Waker 2012)."
+    },
+    {
+      "type": "discussion",
+      "content": "Messer and Petrov (2013b) suggested that one simple solution is to estimate $ \\overline{\\alpha} $ using different cutoff levels for rare polymorphisms, with $ \\overline{\\alpha}(x) $ denoting the estimate that ignores polymorphisms whose derived allele frequency is below $ x $. Note that $ \\overline{\\alpha}(x) $ could be based on any of our previous MK estimators (e.g., Equations 10.8a, 10.9a, and 10.9c) simply by ignoring polymorphisms below this threshold. Recalculating this statistic for increasing values of $ x $, an exponential regression of the form $ \\alpha(x) = a + b \\exp(-cx) $ is fit to the data, and the asymptotic value (the projected value at $ x = 1 $) is given by the Messer-Petrov asymptotic estimate of $ \\overline{\\alpha} $. $$ \\overline{\\alpha}_{MP}=a+b\\exp(-c) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The presence of mildly deleterious alleles also biases estimates of $ \\alpha $ if the population size differed during the divergence and polymorphism phases. If the population has recently undergone an expansion, this can upwardly bias estimates of $ \\alpha $. In such cases, slightly deleterious alleles may have previously been fixed (contributing to divergence), but would be quickly removed in the new, larger population, thus not contributing to $ P_a $. Conversely, if the population has recently undergone a contraction, this inflates $ P_a $ as more deleterious alleles are segregating, downwardly biasing estimates of $ \\alpha $. Eyre-Walker and Keightley (2009) and Halligan et al. (2010) obtained a simple expression for the bias in $ \\alpha $ when the recent population size, $ N_P $, generating the polymorphism data differs from the ancestral size, $ N_D $, generating the divergence data. Assuming beneficial mutations are sufficiently strong that $ \\alpha $ is invariant under the two population sizes, and that deleterious new mutations have their fitness effects drawn from a gamma distribution with a shape parameter of $ \\beta > 0 $, then the connection between the expected value, $ \\alpha_{est} $, of an estimated $ \\alpha $ and its true value is $$ \\alpha=1+\\left(\\alpha_{est}-1\\right)\\left(\\frac{N_{P}}{N_{D}}\\right)^{\\beta} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "A contraction in $ N_e $ ($ N_P < N_D $) leads to an underestimation of $ \\alpha $, while an expansion ($ N_P > N_D $) results in an overestimation. The same approach leading to Equation 10.10 was used in Example 10.10 to examine the behavior of the neutrality index (which is closely related to $ \\alpha $; see Equation 10.7c) under changes in $ N_e $."
+    },
+    {
+      "type": "discussion",
+      "content": "Maximum-likelihood (ML) estimators of $ \\alpha $ have been proposed that attempt to account for segregating deleterious mutations (Bierne and Eyre-Walker 2004; Welch 2006; Boyko et al. 2008; Eyre-Walker and Keightley 2009; Schneider et al. 2011; Keightley and Eyre-Waker 2012). This is done by assuming a standard form (such as a gamma) for the distribution of deleterious fitness effects, and then using site-frequency spectrum data to estimate the parameters of this distribution. We sketch the basic outline of this approach in the next section (in the context of Poisson random field models). While it is elegant and powerful when the model assumptions are correct, the concern is that this approach is highly dependent on the assumed functional form (e.g., gamma, normal, or other) of the unknown distribution of fitness effects for the slightly deleterious mutations. Indeed, Kousanthanas and Keightley (2013) found that these models perform poorly when the distribution of fitness effects is multimodal, and they suggested using nonparametric approaches for such cases."
+    },
+    {
+      "type": "discussion",
+      "content": "Another potential source of bias, which was first noted by Akashi (1995), is codon usage. Strong codon usage bias results in the synonymous substitution rate underestimating the neutral divergence rate, which in turn inflates estimates of $ \\alpha $. If strong bias occurs on just a few genes, this will have a minor impact on $ \\bar{\\alpha} $. However, chromosome-wide biases can cause problems. Recall that the D. melanogaster X chromosome has a higher codon usage bias than the autosomes (Chapter 8). Because this appears to be due to stronger selection on X-specific genes, it can result in different biases in $ \\alpha $ between estimates based on X versus those based on autosomal loci (Campos et al. 2012)."
+    },
+    {
+      "type": "discussion",
+      "content": "Given these competing sources of bias (overestimation of $\\overline{\\alpha}$ when $\\sigma^{2}(\\alpha) > 0$ and underestimation of $\\alpha$ when deleterious alleles are segregating), are MK estimators more likely to over- or underestimate the true $\\overline{\\alpha}$? Indeed, are they reliable at all? As Example 10.11 highlights, the overestimation of $\\overline{\\alpha}$ when $\\alpha$ varies over genes, while not trivial, is often modest, especially if $\\overline{\\alpha}$ is moderate to large. Conversely, as mentioned above, the presence of segregating weakly deleterious replacement alleles (which are unlikely to become fixed) inflates the polymorphism ratio, $ P_a/P_s $, leading to an underestimation of the actual excess number of adaptive substitutions. This effect can be quite dramatic. In particular, if deleterious alleles are common, a neutrality index value greater than 1.0 can occur, which results in a negative estimate of $ \\alpha $ (Equation 10.7c). Upon putting these two sources of bias together, $ \\bar{\\alpha} $ is generally likely to be underestimated unless the population has undergone a recent size expansion."
+    },
+    {
+      "type": "proposition",
+      "content": "A final complication, noted by Fay (2011), is the assumption that each site evolves independently (also see Messer and Petrov 2012). Two possible sources of overestimation of $ \\alpha $ are possible when this assumption fails. First, slightly deleterious mutations may be fixed by hitchhiking to a favorable substitution, potentially inflating $ D_{a} $ and hence estimates of $ \\alpha $. Second, epistasis in fitness between sites may occur such that fixation at one site changes the constraints on other sites within the gene, which again can potentially result in an inflation in $ D_{a} $."
+    }
+  ]
+}

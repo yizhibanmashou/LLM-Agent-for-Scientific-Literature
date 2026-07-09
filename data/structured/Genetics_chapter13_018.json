@@ -1,0 +1,39 @@
+{
+  "id": "Genetics_chapter13_018",
+  "metadata": {
+    "chapter": "Genetics_chapter13",
+    "section": "Introduction",
+    "subsections": [
+      "Estimating Individual Genotypes"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter13_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "Estimating Individual Genotypes",
+    "heading_path": [
+      "Introduction",
+      "Estimating Individual Genotypes"
+    ],
+    "display_heading": "Estimating Individual Genotypes"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "When a major locus is indicated, the investigator may wish to estimate the genotypes of particular individuals. For example, when the trait is determined by both a major gene and a polygenic background, extreme individuals in some families result from having extreme major-locus genotypes, while in other families they result from having extreme polygenic values. This is a particular problem with studies of human disease where pedigrees are gathered from very wide sampling on the basis of extreme phenotypes. Obviously, one would like to sort out these different causes before proceeding to detailed molecular analyses. For example, in a study of 70 pedigrees displaying high levels of blood cholesterol, Moll et al. al. (1984) found strong evidence for segregation of a major gene in only three cases, with only polygenic and/or environmental factors influencing cholesterol in the remaining pedigrees. Their strategy was to first fit a mixed (major gene plus background polygene) model to the data, and then use the estimated model parameters to predict the major-locus genotype of each parent, given observed parental and offspring phenotypic values."
+    },
+    {
+      "type": "proposition",
+      "content": "The key to predicting the major-locus genotype is $ \\mathrm{Bayes}^{\\prime} $ $ \\mathrm{theorem} $, which can be used to estimate the probability of each genotype given the phenotypic values and estimates of the major gene parameters obtained from segregation analysis (such as allele frequencies and genotypic means). $ \\mathrm{Bayes}^{\\prime} $ theorem is as follows: suppose there are $ n $ possible outcomes $ (b_1, b_2, \\cdots, b_n) $ of a random variable that we cannot observe. Given the observed outcome of a correlated variable $ A $, what is the probability of $ b_j $? From the definition of a conditional probability, $ \\mathrm{Pr}(b_j | A) = \\mathrm{Pr}(b_j, A)/\\mathrm{Pr}(A) $. We can decompose this further, by noting that $ \\mathrm{Pr}(b_j, A) = \\mathrm{Pr}(b_j) \\mathrm{Pr}(A | b_j) $ and $ \\mathrm{Pr}(A) = \\sum_{i}^{n} \\mathrm{Pr}(b_i) \\mathrm{Pr}(A | b_i) $. Putting these together gives $ \\mathrm{Bayes}^{\\prime} $ theorem, $$ \\Pr(b_{j}\\mid A)=\\frac{\\Pr(b_{j})\\Pr(A\\mid b_{j})}{\\Pr(A)}=\\frac{\\Pr(b_{j})\\Pr(A\\mid b_{j})}{\\displaystyle\\sum_{i=1}^{n}\\Pr(b_{i})\\Pr(A\\mid b_{i})} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "In particular, the probability that an individual with phenotypic value $z$ has genotype $j$ (for $1 \\leq j \\leq n$) is $$ \\Pr(g_{j}\\mid z)=\\frac{\\Pr(g_{j})\\Pr(z\\mid g_{j})}{\\Pr(z)}=\\frac{\\Pr(g_{j})\\Pr(z\\mid g_{j})}{\\displaystyle\\sum_{i=1}^{n}\\Pr(g_{i})\\Pr(z\\mid g_{i})} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Note that $ \\Pr(z) $ is simply the distribution of phenotypic values and the probabilities involving $ g_i $ can be computed using the ML estimates of the major gene parameters. More generally, the phenotypes of an individual's offspring and/or additional relatives can be used by replacing the single observation z with a vector z of phenotypes. Computing $ \\Pr(z \\mid g_i) $, the probability of the observed vector z of phenotypes, given that the individual of interest has genotype $ g_i $, is straightforward but can be very tedious (Elston and Stewart 1971, Heuch and Li 1972, van Arendonk et al. 1989, Kinghorn et al. 1993)."
+    }
+  ]
+}

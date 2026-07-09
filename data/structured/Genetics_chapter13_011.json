@@ -1,0 +1,59 @@
+{
+  "id": "Genetics_chapter13_011",
+  "metadata": {
+    "chapter": "Genetics_chapter13",
+    "section": "Introduction",
+    "subsections": [
+      "Hypothesis Testing"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter13_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "Hypothesis Testing",
+    "heading_path": [
+      "Introduction",
+      "Hypothesis Testing"
+    ],
+    "display_heading": "Hypothesis Testing"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "An important issue in tests for major genes is model fitting, i.e., evaluating whether the full model is needed, or if some subset of the model gives essentially the same fit. For example, we might initially assume a mixture of two normals with different means and common variance, so that the full model has parameters $ \\mu_{1}, \\mu_{2}, \\sigma^{2} $, and p. Is the fit using these four parameters significantly better than the fit assuming a single underlying normal with parameters $ \\mu $ and $ \\sigma^{2} $? For large sample sizes, the likelihood ratio (LR) statistic test for whether the full model provides a better fit than a particular subset of the model is $$ \\Lambda(\\mathbf{z})=-2\\ln\\left[\\frac{\\widehat{\\ell}_{r}(\\mathbf{z})}{\\widehat{\\ell}(\\mathbf{z})}\\right]=-2\\left\\{\\ln\\left[\\widehat{\\ell}_{r}(\\mathbf{z})\\right]-\\ln\\left[\\widehat{\\ell}(\\mathbf{z})\\right]\\right\\} $$ where $ \\widehat{\\ell}(\\mathbf{z}) $ is the likelihood function evaluated at the MLE for the full model, and $ \\widehat{\\ell}_{r}(\\mathbf{z}) $ is the maximum of the likelihood function for the restricted model under which r parameters of the full model are assigned fixed values. Under appropriate conditions, the LR test statistic is approximately distributed as $ \\chi_{r}^{2} $, i.e., as a $ \\chi^{2} $ distribution with r degrees of freedom (Wald 1943); see Appendix 4."
+    },
+    {
+      "type": "discussion",
+      "content": "The simplest restricted model assumes no mixture at all, so that the overall distribution is just a single normal distribution with unknown mean and variance. As shown in Appendix 4, the resulting likelihood is just the product of n identical normals with mean $ \\mu $ and variance $ \\sigma^{2} $. The MLEs in this case are the sample mean $ \\bar{z} $ and the uncorrected sample variance $$ \\mathrm{Var}(z)=\\frac{1}{n}\\sum_{j=1}^{n}(z_{j}-\\overline{z})^{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Note that the ML estimate of the variance is slightly different from the unbiased variance estimator, which divides the sum of squares by $n-1$. Substituting the MLEs of $\\sigma^{2}$ and $\\mu$ gives the maximum value of this restricted likelihood as $$ \\widehat{\\ell}_{r}(\\mathbf{z})=\\prod_{j=1}^{n}\\left\\{\\frac{1}{\\sqrt{2\\pi\\operatorname{V a r}(z)}}\\exp\\left[-\\frac{(z_{j}-\\overline{{z}})^{2}}{2\\operatorname{V a r}(z)}\\right]\\right\\} $$"
+    },
+    {
+      "type": "definition",
+      "content": "Taking logarithms and recalling the definition of Var gives $$ -2\\ln\\left[\\widehat{\\ell}_{r}(\\mathbf{z})\\right]=n\\cdot\\left[\\ln\\operatorname{V a r}(z)+\\ln2\\pi+1\\right] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Example 2. Consider the likelihood-ratio test statistic for whether a diallelic major gene (in Hardy-Weinberg frequencies, with the phenotypes for each major locus genotype normally distributed with constant variance) provides a better fit of the data than a single normal distribution. Assume that the data consist of $n$ (unrelated) individuals, randomly chosen from the population. From Equations 13.7 and 13.8, the likelihood-ratio test statistic is given by $$ \\begin{aligned}\\Lambda(\\mathbf{z})&=-2\\left\\{\\ln\\left[\\widehat{\\ell}_{r}(\\mathbf{z})\\right]-\\ln\\left[\\widehat{\\ell}(\\mathbf{z})\\right]\\right\\}\\\\&=2\\ln\\left[\\widehat{\\ell}(\\mathbf{z})\\right]+n\\cdot[\\ln\\operatorname{Var}(z)+\\ln2\\pi+1]\\end{aligned} $$ where $$ \\widehat{\\ell}(\\mathbf{z})=\\max\\left[\\prod_{j=1}^{n}\\ell(z_{j})\\right] $$ the maximum being taken over all admissible values of $p$ ($0 \\leq p \\leq 1$), $\\mu_{QQ}$, $\\mu_{Qq}$, $\\mu_{qq}(-\\infty < \\mu < \\infty)$, and $\\sigma^{2}(\\sigma^{2} \\geq 0)$ and $$ \\ell(z_{j})=p^{2}\\cdot\\varphi(z_{j},\\mu_{Q Q},\\sigma^{2})+2p(1-p)\\cdot\\varphi(z_{j},\\mu_{Q q},\\sigma^{2})+(1-p)^{2}\\cdot\\varphi(z_{j},\\mu_{q q},\\sigma^{2}) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Since the full model has five unknown parameters while the reduced model has two $(\\mu, \\sigma^{2})$, the test statistic $\\Lambda$ is approximately distributed as $\\chi_{3}^{2}$. Hence $\\Lambda$ values exceeding 7.82 and 11.4 indicate that a mixture of three normals provides a better fit at the 5% and 1% levels of significance, respectively, than a single normal."
+    },
+    {
+      "type": "discussion",
+      "content": "Likelihood-ratio tests require that alternate hypotheses be nested, one model being a subset of the other (i.e., by fixing some parameters of one model we recover the second). If they are not, the large-sample distribution does not necessarily approach a $ \\chi^{2} $. Likelihood functions involving nonnested hypotheses can be compared by using Akaike's (1974) information content (AIC), $$ \\mathrm{A I C}=-2\\ln(\\mathrm{m a x i m u m~l i k e l i h o o d})+2(\\mathrm{n u m b e r~o f~f i t t e d~p a r a m e t e r s}) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The model with the smallest AIC is chosen as the most parsimonious. The AIC is a descriptive statistic only and not a formal hypothesis test, but it provides a useful measure for comparing rather different models. An alternative approach involves the use of resampling methods (Schork and Schork 1989, Churchill and Doerge 1994). Two such methods, permutation tests and bootstrapping, are discussed in Chapter 15."
+    },
+    {
+      "type": "discussion",
+      "content": "How does one proceed if the underlying distributions of a mixture model are not normal? MacLean et al. (1976), Elston (1984), and Schork and Schork (1988) suggest that the Box-Cox (1964) power transform can be used to normalize each of the underlying distributions. Recall from Chapter 11 that this transformation is described by a single parameter $ \\lambda $, with $ x = (z^{\\lambda} - 1)/\\lambda $ for $ \\lambda \\neq 0 $ and $ x = \\ln z $ for $ \\lambda = 0 $. Hence, in the likelihood function, the $ i $th underlying distribution uses $ x_i = (z^{\\lambda_i} - 1)/\\lambda_i $ in place of $ z $, allowing each underlying distribution to have a different transform. If we assume that an observed distribution is generated by $ k $ underlying distributions that can be transformed to normality by the appropriate Box-Cox transform, the resulting mixture model can be expressed as a mixture of $ k $ normals. The $ i $th normalized underlying distribution has mean $ \\mu_i $, variance $ \\sigma_i^2 $, and transformation parameter $ \\lambda_i $, all of which can be estimated by standard ML methods. This approach offers a test for whether an observed skewed distribution results from a single naturally skewed distribution, from a mixture of underlying normals, or from a mixture of underlying distributions that can be transformed to normality. If the distribution results from a mixture of normals, a standard mixture model should give a significantly better fit than a single transformed distribution (where the transformation parameter $ \\lambda $ is estimated from the data). Whether a mixture model provides a significantly better fit can be evaluated by a likelihood-ratio test. Likewise, the hypothesis that the underlying mixture distributions are themselves skewed can be tested by fitting the $ \\lambda_{i} $ from the data and comparing this to a model with $ \\lambda_{i}=1 $ (no transformation)."
+    }
+  ]
+}

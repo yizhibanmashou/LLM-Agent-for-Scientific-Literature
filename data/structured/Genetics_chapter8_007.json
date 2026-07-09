@@ -1,0 +1,43 @@
+{
+  "id": "Genetics_chapter8_007",
+  "metadata": {
+    "chapter": "Genetics_chapter8",
+    "section": "Introduction",
+    "subsections": [
+      "Multiplication"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter8_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "Multiplication",
+    "heading_path": [
+      "Introduction",
+      "Multiplication"
+    ],
+    "display_heading": "Multiplication"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Multiplying a matrix by a scalar is also straightforward. If $\\mathbf{M} = a\\mathbf{N}$, where $a$ is a scalar, then $M_{ij} = aN_{ij}$. Each element of $\\mathbf{N}$ is simply multiplied by the scalar. For example, $$ \\left(-2\\right)\\begin{pmatrix}{{{1}}}&{{{0}}} \\\\{{{3}}}&{{{1}}}\\end{pmatrix}=\\begin{pmatrix}{{{-2}}}&{{{0}}} \\\\{{{-6}}}&{{{-2}}}\\end{pmatrix} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Matrix multiplication is a little more involved. We start by considering the dot product of two vectors, as this forms the basic operation of matrix multiplication. Letting a and b be two $n$-dimensional vectors (the first a column vector, the second a row vector), their dot product $\\mathbf{a} \\cdot \\mathbf{b}$ is a scalar given by $$ \\mathbf{a}\\cdot\\mathbf{b}=\\sum_{i=1}^{n}a_{i}b_{i} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "For example, for the two vectors $$ \\mathbf{a}=\\begin{pmatrix}1\\\\ 2\\\\ 3\\\\ 4\\end{pmatrix}\\quad and\\quad\\mathbf{b}=\\begin{pmatrix}4&5&7&9\\end{pmatrix} $$ the dot product is $ \\mathbf{a} \\cdot \\mathbf{b} = (1 \\times 4) + (2 \\times 5) + (3 \\times 7) + (4 \\times 9) = 71 $. Note that the dot product is not defined if the vectors have different lengths."
+    },
+    {
+      "type": "discussion",
+      "content": "Now consider the matrix $ \\mathbf{L} = \\mathbf{M} \\mathbf{N} $ produced by multiplying the $ r \\times c $ matrix M by the $ c \\times b $ matrix N. Partitioning M as a column vector of r row vectors, $$ \\mathbf{M}=\\left(\\begin{matrix}{\\mathbf{m_{1}}}\\\\ {\\mathbf{m_{2}}}\\\\ {\\vdots}\\\\ {\\mathbf{m_{r}}}\\\\ \\end{matrix}\\right)\\qquad\\mathrm{w h e r e}\\qquad\\mathbf{m_{i}}=\\left(\\begin{matrix}{M_{i1}}&{M_{i2}}&{\\cdots}&{M_{i c}}\\\\ \\end{matrix}\\right) $$ and N as a row vector of b column vectors, $$ \\mathbf{N}=\\left(\\begin{array}{l l l l}{\\mathbf{n_{1}}}&{\\mathbf{n_{2}}}&{\\cdots}&{\\mathbf{n_{b}}}\\end{array}\\right)\\qquad\\mathrm{w h e r e}\\qquad\\mathbf{n_{j}}=\\left(\\begin{array}{c}{N_{1j}}\\\\ {N_{2j}}\\\\ {\\vdots}\\\\ {N_{c j}}\\end{array}\\right) $$ the ijth element of L is given by the dot product $$ L_{i j}=\\mathbf{m_{i}}\\cdot\\mathbf{n_{j}}=\\sum_{k=1}^{c}M_{i k}N_{k j} $$ Hence the resulting matrix L is of dimension $ r \\times b $ with $$ \\mathbf{L}=\\begin{pmatrix}\\mathbf{m}_{1}\\cdot\\mathbf{n}_{1}&\\mathbf{m}_{1}\\cdot\\mathbf{n}_{2}&\\cdots&\\mathbf{m}_{1}\\cdot\\mathbf{n}_{\\mathbf{b}}\\\\\\mathbf{m}_{2}\\cdot\\mathbf{n}_{1}&\\mathbf{m}_{2}\\cdot\\mathbf{n}_{2}&\\cdots&\\mathbf{m}_{2}\\cdot\\mathbf{n}_{\\mathbf{b}}\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\\\mathbf{m}_{\\mathbf{r}}\\cdot\\mathbf{n}_{1}&\\mathbf{m}_{\\mathbf{r}}\\cdot\\mathbf{n}_{2}&\\cdots&\\mathbf{m}_{\\mathbf{r}}\\cdot\\mathbf{n}_{\\mathbf{b}}\\end{pmatrix} $$"
+    },
+    {
+      "type": "definition",
+      "content": "Note that using this definition, the matrix product given by Equation 8.4 recovers the set of equations given by Equation 8.3."
+    }
+  ]
+}

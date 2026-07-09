@@ -1,0 +1,100 @@
+{
+  "id": "Evolution_chapter22_008",
+  "metadata": {
+    "chapter": "Evolution_chapter22",
+    "section": "DIRECT VERSUS ASSOCIATIVE EFFECTS",
+    "subsections": [
+      "The Total Breeding Value (TBV) and $ T^{2} $"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter22_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [
+      "inline_1"
+    ],
+    "section_level_1": "DIRECT VERSUS ASSOCIATIVE EFFECTS",
+    "section_level_2": "The Total Breeding Value (TBV) and $ T^{2} $",
+    "heading_path": [
+      "DIRECT VERSUS ASSOCIATIVE EFFECTS",
+      "The Total Breeding Value (TBV) and $ T^{2} $"
+    ],
+    "display_heading": "The Total Breeding Value (TBV) and $ T^{2} $",
+    "table_reference_keys": [
+      "Evolution_chapter22:inline_1"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Given that an individual contains breeding values for both direct and social effects, what is its contribution to the next generation? We can directly see this from Equation 22.1d, where it is shown as the contribution to the population mean from individual 1 from its direct breeding value $ (A_{d_1}) $ plus its contribution to the $ (n-1) $ other individuals in its group through its associative-effects breeding value, $ A_{s_1} $ (Figure 22.1b). Based on this observation, Bijma et al. (2007a) defined the total breeding value (TBV), $ A_T $, of a trait from an individual measured in a group of size $ n $ as the sum of its direct effect plus the total associative effects over all group members, or $$ A_{T_{i}}=A_{d_{i}}+(n-1)A_{s_{i}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Moore et al. (1997) introduced a similar measure for trait-based models. Noting that the mean of the population is simply the mean breeding value allows Equation 22.3 to recover Equation 22.1d. The critical observation is that when associative effects are present, the total breeding value of an individual contains components that are not expressed in its own phenotype, but rather, only in the phenotypes of other individuals with which it interacts."
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:22.2]]"
+    },
+    {
+      "type": "discussion",
+      "content": "The covariance between an individual’s phenotype and total breeding value is $$ \\begin{align*}\\sigma(z_{i},A_{T_{i}})&=\\sigma\\bigg[\\mu+A_{d_{i}}+\\sum_{j\\neq i}^{n}A_{s_{j}}+e_{i},A_{d_{i}}+(n-1)A_{s_{i}}\\bigg]\\\\&=\\sigma\\bigg[A_{d_{i}},A_{d_{i}}+(n-1)A_{s_{i}}\\bigg]+\\sum_{j\\neq i}^{n}\\sigma\\bigg[A_{s_{j}},A_{d_{i}}+(n-1)A_{s_{i}}\\bigg]\\end{align*} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "For now, we assume group members are unrelated, in which case the covariances in the summation are all zero, $$ \\sigma(z,A_{T})=\\sigma^{2}(A_{d})+(n-1)\\sigma(A_{d},A_{s}) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "If the direct and associative effects are uncorrelated, this reduces to the standard result that the covariance between an individual's phenotype and breeding value is simply the additive genetic variance (in this case, of direct effects). By contrast, the variance of the total breeding value becomes $$ \\begin{align*}\\sigma^{2}(A_{T})&=\\sigma^{2}\\left[A_{d}+(n-1)A_{s}\\right]\\\\&=\\sigma^{2}(A_{d})+2(n-1)\\sigma(A_{d},A_{s})+(n-1)^{2}\\sigma^{2}(A_{s})\\\\&=\\sigma(z,A_{T})+(n-1)\\left[\\sigma(A_{d},A_{s})+(n-1)\\sigma^{2}(A_{s})\\right.\\end{align*} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Equation 22.4d shows that the covariance between total breeding value and phenotype is different from the variance in total breeding value. This reflects the fact that the associative effects of an individual do not influence its own phenotype. Note from Equation 22.4c that $ \\sigma(A_d, A_s) $ and $ \\sigma^2(A_s) $ are scaled by $ (n-1) $ and $ (n-1)^2 $, respectively, in $ \\sigma^2(A_T) $. Hence, with even modest group sizes, small values of $ \\sigma(A_d, A_s) $ and $ \\sigma^2(A_s) $ can still have a very significant impact. Some of the early papers reporting estimates of these two quantities ignored this scaling with $ n $, and hence tended to downplay the importance of social interactions (Chen et al. 2006; Van Vleck et al. 2007)."
+    },
+    {
+      "type": "discussion",
+      "content": "Now consider the phenotypic variance, $$ \\sigma_{z}^{2}=\\sigma^{2}\\bigg(P_{d_{i}}+\\sum_{j\\neq i}^{n}P_{s_{j}}\\bigg) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "If we assume (for now) that the group members are unrelated, then $ \\sigma(P_{d_i}, P_{s_j}) = 0 $. For a group of size $ n $, Equation 22.5a reduces to $$ \\sigma_{z}^{2}=\\sigma^{2}(P_{d})+(n-1)\\sigma^{2}(P_{s}) $$ $$ =\\sigma^{2}(A_{d})+(n-1)\\sigma^{2}(A_{s})+\\sigma^{2}(E_{d})+(n-1)\\sigma^{2}(E_{s}) $$ $$ =\\sigma^{2}(A_{d})+(n-1)\\sigma^{2}(A_{s})+\\sigma^{2}(e) $$ where $ e $ is given by Equation 22.1c. With the phenotypic variance in hand, we can define the heritability of the direct and associative effects, $ h_d^2 $ and $ h_s^2 $, respectively, as $$ h_{d}^{2}=\\frac{\\sigma^{2}(A_{d})}{\\sigma_{z}^{2}}\\quad and\\quad h_{s}^{2}=\\frac{\\sigma^{2}(A_{s})}{\\sigma_{z}^{2}} $$"
+    },
+    {
+      "type": "definition",
+      "content": "The careful reader will note that there is a different, but perhaps more natural, definition of these two heritabilities. Equation 22.6a standardizes the genetic variances with respect to the total trait variance, but one could also standardize them with respect to the variance of direct and associative effects, for example, $$ h_{d^{\\prime}}^{2}=\\frac{\\sigma^{2}(A_{d})}{\\sigma^{2}(P_{d})}\\quad and\\quad h_{s^{\\prime}}^{2}=\\frac{\\sigma^{2}(A_{s})}{\\sigma^{2}(P_{s})} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "We use a prime to distinguish these from the heritiabilities scaled to total trait variance $ \\sigma^2(P_x) $ vs. $ \\sigma_z^2 $. While heritiabilities scaled by $ \\sigma_z^2 $ (Equation 22.6a) are the most widespread in the literature, there are some advantages to scaling heritiabilities by $ \\sigma^2(P_x) $ (where $ x = d $ or $ s $). On this scale, the heritiabilities measure the fraction of additive genetic variation in the actual effect (direct or associative) itself, rather than in the trait value. Further, $ h_x^2 $, is independent of the group size (provided that $ A_s $ does not change with group size), as $ \\sigma_z^2(P_x) $ is independent of $ n $, while $ \\sigma_z^2 $ is a function of $ n $ (Equation 22.5b)."
+    },
+    {
+      "type": "discussion",
+      "content": "In keeping with Equation 22.6a, we can similarly define the “heritability” of the total breeding value as $$ T^{2}=\\frac{\\sigma^{2}(A_{T})}{\\sigma_{z}^{2}} $$ as suggested by Bijma et al. (2007a). The reason we have used $ T^2 $ rather than $ h_T^2 $ is that, unlike heritabilities, $ T^2 $ can exceed one. This can happen because $ \\sigma^2(A_T) $ contains additional terms not found in $ \\sigma_z^2 $, as the associative effect of an individual influences others in the group, rather than the individual in which it resides."
+    },
+    {
+      "type": "discussion",
+      "content": "To see this, first assume that the environmental effects are all zero ($ \\sigma^{2}(e) = 0 $), so that we can focus on differences in the genetic variance components. From Equations 22.4c and 22.5c, $$ \\begin{aligned}\\sigma^{2}(A_{T})-\\sigma_{z}^{2}&=2(n-1)\\sigma(A_{d},A_{s})+(n-1)^{2}\\sigma^{2}(A_{s})-(n-1)\\sigma^{2}(A_{s})\\\\&=(n-1)\\left[2\\sigma(A_{d},A_{s})+(n-2)\\sigma^{2}(A_{s})\\right]\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "If this difference exceeds the contribution (σ2) from environmental effects, then T2 > 1."
+    },
+    {
+      "type": "definition",
+      "content": "Bijma (2011, 2014) noted that $ \\sigma^{2}(A_{T}) $ provides the appropriate (and general) definition for the amount of heritable variation underlying the potential for response. Recalling Equations 22.1e and 22.3, the Robertson-Price identity (Equation 6.10) yields the expected response (change in mean breeding value) to selection as $$ R=\\sigma(w,A_{T}) $$ Because the linear regression of w on $ A_{T} $ has a slope of $$ \\beta_{w|A_{T}}=\\frac{\\sigma(w,A_{T})}{\\sigma^{2}(A_{T})} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "(LW Equation 3.14b), the general expression for response can be written as $$ R=\\beta_{w|A_{T}}\\sigma^{2}(A_{T}) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The apparent simplicity of this expression is somewhat misleading, as $ \\beta_{w|A_T} $ can be a very complex function of the relationship among group members (see Bijma 2011 for examples)."
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:22.3]]"
+    }
+  ]
+}

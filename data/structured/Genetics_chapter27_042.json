@@ -1,0 +1,67 @@
+{
+  "id": "Genetics_chapter27_042",
+  "metadata": {
+    "chapter": "Genetics_chapter27",
+    "section": "Variance-Component Estimation with Complex Pedigrees",
+    "subsections": [
+      "Sums of Squares Expressed as Quadratic Forms"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter27_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Variance-Component Estimation with Complex Pedigrees",
+    "section_level_2": "Sums of Squares Expressed as Quadratic Forms",
+    "heading_path": [
+      "Variance-Component Estimation with Complex Pedigrees",
+      "Sums of Squares Expressed as Quadratic Forms"
+    ],
+    "display_heading": "Sums of Squares Expressed as Quadratic Forms"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "In the same fashion that we decomposed total variance into genetic and phenotypic components (Chapters 3–7), we can decompose the total variance of a response vector y into the variance accounted for by the linear model and the remaining (error or residual) variance. This is typically done by considering the sums of squares, with the total sum of squares $ (SS_{T}) $ being the sum of two components, the error (or residual) sum of squares $ (SS_{E}) $ and the model sum of squares $ (SS_{M}) $, $$ \\mathrm{S}\\mathrm{S}_{\\mathrm{T}}=\\mathrm{S}\\mathrm{S}_{\\mathrm{M}}+\\mathrm{S}\\mathrm{S}_{\\mathrm{E}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The total sum of squares measures the total variability in the data, while the model sum of squares measures the amount of variation accounted for by the linear model. As noted in our discussions of univariate regression in Chapter 3, the fraction of total variance explained by a linear model is given by the coefficient of determination, $$ r^{2}=\\frac{\\mathsf{S}\\mathsf{S}_{\\mathrm{M}}}{\\mathsf{S}\\mathsf{S}_{\\mathrm{T}}}=1-\\frac{\\mathsf{S}\\mathsf{S}_{\\mathrm{E}}}{\\mathsf{S}\\mathsf{S}_{\\mathrm{T}}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The sums of squares have different forms under OLS and GLS. Under OLS, the residuals are assumed to be independent with common variance $ \\sigma_{e}^{2} $. In this case, each observation/residual is weighted equally, and the total sum of squares is simply $$ \\mathsf{SS_{T}}=\\sum_{i=1}^{n}(y_{i}-\\overline{y})^{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Sums of squares can be expressed as a quadratic form of the vector of observations y, allowing the use of Equations 3A.12a,b to obtain their expectations and variances. Recalling Equation A3.14b and A3.13a, $$ \\mathrm{SS}_{\\mathrm{T}}=\\mathbf{y}^{T}\\left(\\mathbf{I}-\\frac{1}{n}\\mathbf{J}\\right)\\mathbf{y} $$ where J is $n \\times n$."
+    },
+    {
+      "type": "discussion",
+      "content": "Now consider the error sum of squares $$ \\mathrm{SS}_{\\mathrm{E}}=\\sum_{i=1}^{n}(y_{i}-\\widehat{y}_{i})^{2}=\\sum_{i=1}^{n}\\widehat{e}_{i}^{2} $$ Since $ \\hat{\\mathbf{e}} = \\mathbf{y} - \\hat{\\mathbf{y}} $ and $ \\hat{\\mathbf{y}} = \\mathbf{X}\\mathbf{b} = \\mathbf{X}\\left(\\mathbf{X}^T\\mathbf{X}\\right)^{-1}\\mathbf{X}^T\\mathbf{y} $, we have $$ \\mathrm{S S}_{\\mathrm{E}}=\\widehat{\\mathbf{e}}^{T}\\widehat{\\mathbf{e}},\\quad\\mathrm{w h e r e}\\quad\\widehat{\\mathbf{e}}=\\left[\\mathbf{I}-\\mathbf{X}\\left(\\mathbf{X}^{T}\\mathbf{X}\\right)^{-1}\\mathbf{X}^{T}\\right]\\mathbf{y} $$ Expanding this expression and noting that $ \\mathbf{X}^T\\mathbf{X}\\left(\\mathbf{X}^T\\mathbf{X}\\right)^{-1} = \\mathbf{I} $, this simplifies to $$ \\mathsf{S}\\mathsf{S}_{\\mathbf{E}}=\\mathbf{y}^{T}\\left[\\mathbf{I}-\\mathbf{X}\\left(\\mathbf{X}^{T}\\mathbf{X}\\right)^{-1}\\mathbf{X}^{T}\\right]\\mathbf{y} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, the model sum of squares is the difference between the total and error sums of squares, $$ \\mathsf{S}\\mathsf{S}_{\\mathrm{M}}=\\mathsf{S}\\mathsf{S}_{\\mathrm{T}}-\\mathsf{S}\\mathsf{S}_{\\mathrm{E}}=\\mathbf{y}^{T}\\left[\\mathbf{X}\\left(\\mathbf{X}^{T}\\mathbf{X}\\right)^{-1}\\mathbf{X}^{T}-\\frac{1}{n}\\mathbf{J}\\right]\\mathbf{y} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Note that $$ \\mathsf{SS_{M}}=\\sum_{i=1}^{n}(\\widehat{y_{i}}-\\overline{y})^{2} $$ so that (for OLS) the model sum of squares is the sum of squared deviations of the predicted values from the overall mean."
+    },
+    {
+      "type": "discussion",
+      "content": "The sums of squares under generalized least-squares (GLS) are slightly different, as we have to correct for heteroscedasticity and/or the lack of independence among the residuals. Assume that the residuals have covariance matrix $ \\sigma_e^2 \\mathbf{R} $. From Equation A3.10, $ \\mathbf{y} $ is replaced by $ \\mathbf{R}^{-1/2} \\mathbf{y} $ and $ \\mathbf{X} $ is replaced by $ \\mathbf{R}^{-1/2} \\mathbf{X} $ in the above OLS expressions for sums of squares. Hence, the total sum of squares for GLS becomes $$ $$"
+    },
+    {
+      "type": "discussion",
+      "content": "_ &= ^ T ^ -1/2 (- n) ^ -1/2 \\\\&= ^ T $$ $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Likewise, the error sum of squares becomes $$ $$"
+    },
+    {
+      "type": "discussion",
+      "content": "_ &= ^ T ^ -1 \\\\&= ^ T $$ $$ and the model sum of squares becomes $$ \\mathsf{S}\\mathsf{S}_{\\mathrm{M}}=\\mathbf{y}^{T}\\left[\\mathbf{R}^{-1}\\mathbf{X}\\left(\\mathbf{X}^{T}\\dot{\\mathbf{R}}^{-1}\\mathbf{X}\\right)^{-1}\\mathbf{X}^{T}\\mathbf{R}^{-1}-\\frac{1}{n}\\mathbf{R}^{-1/2}\\mathbf{J}\\mathbf{R}^{-1/2}\\right]\\mathbf{y} $$"
+    }
+  ]
+}

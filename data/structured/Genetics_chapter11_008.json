@@ -1,0 +1,35 @@
+{
+  "id": "Genetics_chapter11_008",
+  "metadata": {
+    "chapter": "Genetics_chapter11",
+    "section": "Introduction",
+    "subsections": [
+      "General Variance-stabilizing Transformations"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter11_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "General Variance-stabilizing Transformations",
+    "heading_path": [
+      "Introduction",
+      "General Variance-stabilizing Transformations"
+    ],
+    "display_heading": "General Variance-stabilizing Transformations"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "For more complicated relationships between means and standard deviations, a general formula exists for ascertaining the correct variance-stabilizing transformation. Given the relationship $ \\sigma_{z}=f(\\mu_{z}) $, the appropriate transform is given by a result due to Fisher, $$ y=C\\int\\frac{dz}{f(z)} $$ where $C$ is an arbitrary nonnegative constant, generally chosen to set the rescaled variance equal to one. The rescaled character $y$ has a variance that is independent of the mean in any particular population. Thus, the procedure for obtaining a variance-stabilizing transform for any standard deviation-mean relationship, $f(\\overline{z})$, is simple. A fit for the function $f(\\overline{z})$ is obtained by a least-squares polynomial (or some other nonlinear) regression, and Equation 11.8 is solved using the estimated regression coefficients."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 3. Suppose $\\mathrm{SD}(z) = a + b\\overline{z}$. Applying Equation 11.8, the variance-stabilizing transform is given by $$ y=C\\int\\frac{dz}{a+b\\cdot z}=\\frac{C}{b}\\ln\\left(z+\\frac{a}{b}\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Note that there is no unique solution for $y$, as we can multiply $y$ by any constant and still have a variance-stabilizing transform. Letting $C = b$ recover S Kleckowski's correction, $y = \\ln(z + a/b)$."
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "id": "Genetics_chapter22_010",
+  "metadata": {
+    "chapter": "Genetics_chapter22",
+    "section": "Genotype $ \\times $ Environment Interaction",
+    "subsections": [
+      "Testing for Cross-over Interaction"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter22_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Genotype $ \\times $ Environment Interaction",
+    "section_level_2": "Testing for Cross-over Interaction",
+    "heading_path": [
+      "Genotype $ \\times $ Environment Interaction",
+      "Testing for Cross-over Interaction"
+    ],
+    "display_heading": "Testing for Cross-over Interaction"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "For cases in which significant genotype $ \\times $ environment interaction is revealed by ANOVA or other means, a closer look at the data often reveals that the estimated norms of reaction have a wide variety of shapes, parallel in some ranges of environments, diverging in others, and intersecting on occasion (Figure 22.4)."
+    },
+    {
+      "type": "discussion",
+      "content": "[[FIGURE:22.4]]"
+    },
+    {
+      "type": "discussion",
+      "content": "The latter condition, a cross-over interaction, is of particular interest as it cannot be eliminated by a change in scale. Provided they are not artifacts of sampling error, cross-over interactions imply that different genotypes are adapted to different environments, a mechanism that can lead to the maintenance of genetic variance in populations inhabiting heterogeneous environments (Gillespie and Turelli 1989). In agriculture, strong cross-over interactions between alternative cultivars or breeds suggests the need for developing locally adapted strains."
+    },
+    {
+      "type": "discussion",
+      "content": "There are several ways to test for the significance of observed cross-over interactions, two of which are outlined in Baker (1988). Here we mention only the test developed by Gail and Simon (1985), which considers the performances of two genotypic groups, 1 and 2, over all $ N_E $ environmental states. For each environment, the difference between genotypes is computed, and the differences are grouped into positive ones ($ \\overline{z}_{i1} $ exceeding $ \\overline{z}_{i2} $) and negative ones ($ \\overline{z}_{i2} $ exceeding $ \\overline{z}_{i1} $). Two test statistics are then constructed, one for each group, from the sum of squared deviations standardized by their respective sampling variances, $$ Q^{+}=\\sum_{i=1}^{N_{E}}\\frac{(\\overline{z}_{i1}-\\overline{z}_{i2})^{2}\\delta_{i}}{\\mathrm{Var}(\\overline{z}_{i1})+\\mathrm{Var}(\\overline{z}_{i2})} $$ $$ Q^{-}=\\sum_{i=1}^{N_{E}}\\frac{(\\overline{z}_{i2}-\\overline{z}_{i1})^{2}\\delta_{i}}{\\mathbf{V a r}(\\overline{z}_{i1})+\\mathbf{V a r}(\\overline{z}_{i2})} $$ where $ \\delta_{i}=1 $ when the difference within parentheses is positive and $ \\delta_{i}=0 $ otherwise. To test for the significance of cross-over interaction between the two genotypic groups, the minimum of the two statistics is compared with critical values given in Table 1 of Gail and Simon (1985). Large values of the final test statistic imply that cross-overs occur more frequently than can be expected by chance, given the observed sampling variances of the means."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 4. Baker (1988) reports differences in mean grain yield (g/m²) between two cultivars of wheat grown under nine different conditions (combinations of sites and years). On five occasions, the first cultivar outperformed the second: $ \\overline{z}_{i1} - \\overline{z}_{i2} = 20 $, 17, 84, 22, and 84. On four occasions, the second cultivar outperformed the first: $ \\overline{z}_{i1} - \\overline{z}_{i2} = -12 $, -43, -78, and -21. The standard errors of the differences between means were fairly similar under all nine conditions, averaging 15.3. We will use the square of this value, 235.1, as a general estimate of $ [\\mathrm{Var}(\\overline{z}_{i1}) + \\mathrm{Var}(\\overline{z}_{i2})] $. Squaring the differences between means, and substituting into Equations 22.16a,b, $ Q^{+} = 65.0 $ and $ Q^{-} = 36.2 $. The minimum of these values substantially exceeds the 0.001 critical value (19.9) for nine environments given in Table 1 of Gail and Simon (1985). Thus, it can be concluded that significant cross-over interactions exist between the two cultivars."
+    }
+  ]
+}

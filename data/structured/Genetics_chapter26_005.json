@@ -1,0 +1,39 @@
+{
+  "id": "Genetics_chapter26_005",
+  "metadata": {
+    "chapter": "Genetics_chapter26",
+    "section": "Introduction",
+    "subsections": [
+      "Example 4. Using the values from Examples 1 and 2, we find that"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter26_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "Example 4. Using the values from Examples 1 and 2, we find that",
+    "heading_path": [
+      "Introduction",
+      "Example 4. Using the values from Examples 1 and 2, we find that"
+    ],
+    "display_heading": "Example 4. Using the values from Examples 1 and 2, we find that"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "$$ \\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{X}=\\frac{1}{6}\\left(\\begin{matrix}{4}&{0}\\\\ {0}&{2}\\\\ \\end{matrix}\\right),\\qquad\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{Z}=\\left(\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{X}\\right)^{T}=\\frac{1}{6}\\left(\\begin{matrix}{1}&{2}&{1}\\\\ {1}&{0}&{1}\\\\ \\end{matrix}\\right) $$ $$ \\mathbf{G}^{-1}+\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{Z}=\\frac{5}{6}\\begin{pmatrix}{{{1}}}&{{{0}}}&{{{0}}} \\\\{{{0}}}&{{{1}}}&{{{0}}} \\\\{{{0}}}&{{{0}}}&{{{1}}}\\end{pmatrix},\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{y}=\\frac{1}{6}\\begin{pmatrix}{{{33}}} \\\\{{{26}}}\\end{pmatrix},\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{y}=\\frac{1}{6}\\begin{pmatrix}{{{21}}} \\\\{{{17}}} \\\\{{{21}}}\\end{pmatrix} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, after factoring out 1/6 from both sides, the mixed-model equations for these data become $$ \\begin{pmatrix}4&0&1&2&1\\\\0&2&1&0&1\\\\1&1&5&0&0\\\\2&0&0&5&0\\\\1&1&0&0&5\\end{pmatrix}\\begin{pmatrix}\\widehat{\\beta}_{1}\\\\\\widehat{\\beta}_{2}\\\\\\widehat{u}_{1}\\\\\\widehat{u}_{2}\\\\\\widehat{u}_{3}\\end{pmatrix}=\\begin{pmatrix}33\\\\26\\\\21\\\\17\\\\21\\end{pmatrix} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Taking the inverse gives the solution $$ \\begin{pmatrix}\\widehat{\\beta}_{1}\\\\\\widehat{\\beta}_{2}\\\\\\widehat{u}_{1}\\\\\\widehat{u}_{2}\\\\\\widehat{u}_{3}\\end{pmatrix}=\\frac{1}{270}\\begin{pmatrix}100&25&-25&-40&-25\\\\25&175&-40&-10&-40\\\\-25&-40&67&10&13\\\\-40&-10&10&70&10\\\\-25&-40&13&10&67\\end{pmatrix}\\begin{pmatrix}33\\\\26\\\\21\\\\17\\\\21\\end{pmatrix}=\\frac{1}{18}\\begin{pmatrix}148\\\\235\\\\-1\\\\2\\\\-1\\end{pmatrix} $$ which is identical to the results obtained in Example 2."
+    },
+    {
+      "type": "discussion",
+      "content": "Although the method of predicting random effects using BLUP methodology was first discussed by Henderson (1949, 1950), the expression “best linear unbiased predictor” was apparently first used by Goldberger (1962), with the acronym BLUP due to Henderson (1973). In a relatively short time, BLUP has become the method of choice for estimating the breeding values of individuals from field records of large and complex pedigrees. For BLUPs to be the best unbiased estimates, the appropriate genetic variances must be known without error. Kackar and Harville (1981) show that BLUP estimates remain unbiased when estimates of genetic variances are used in place of actual values (as is usually the case), although they are not guaranteed to be the best of all unbiased linear estimators."
+    }
+  ]
+}

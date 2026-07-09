@@ -1,0 +1,59 @@
+{
+  "id": "Genetics_chapter27_006",
+  "metadata": {
+    "chapter": "Genetics_chapter27",
+    "section": "Variance-Component Estimation with Complex Pedigrees",
+    "subsections": [
+      "RESTRICTED MAXIMUM LIKELIHOOD"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter27_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Variance-Component Estimation with Complex Pedigrees",
+    "section_level_2": "RESTRICTED MAXIMUM LIKELIHOOD",
+    "heading_path": [
+      "Variance-Component Estimation with Complex Pedigrees",
+      "RESTRICTED MAXIMUM LIKELIHOOD"
+    ],
+    "display_heading": "RESTRICTED MAXIMUM LIKELIHOOD"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "REML is based on a linear transformation of the observation vector y that removes the fixed effects from the model. The simplest way to see how this is done is to imagine a transformation matrix K associated with the design matrix X for the model under consideration such that $$ \\mathbf{K}\\mathbf{X}=\\mathbf{0} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Applying this transformation matrix to the mixed model yields $$ \\begin{aligned}\\mathbf{y}^{*}=\\mathbf{K}\\mathbf{y}&=\\mathbf{K}(\\mathbf{X}\\boldsymbol{\\beta}+\\mathbf{Z}\\mathbf{a}+\\mathbf{e})\\\\&=\\mathbf{K}\\mathbf{Z}\\mathbf{a}+\\mathbf{K}\\mathbf{e}\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The linear contrasts $y^{*}$ are equivalent to residual deviations from the estimated fixed effects, akin to using $y_{i}^{*}=y_{i}-\\overline{y}$ in the introductory example used at the start of this chapter. REML estimates of variance components are equivalent to ML estimates of the transformed variables. Thus, we can use the ML solutions outlined above by making the following substitutions: $$ \\mathbf{K}\\mathbf{y}{\\mathrm{~f o r~}}\\mathbf{y},\\qquad\\mathbf{K}\\mathbf{X}=\\mathbf{0}{\\mathrm{~f o r~}}\\mathbf{X},\\qquad\\mathbf{K}\\mathbf{Z}{\\mathrm{~f o r~}}\\mathbf{Z},\\qquad\\mathbf{K}\\mathbf{V}\\mathbf{K}^{T}{\\mathrm{~f o r~}}\\mathbf{V} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "While REML appears to require the additional task of finding a matrix K that satisfies Equation 27.25, the REML equations can actually be expressed directly in terms of V, y, and P. This result follows from the very useful identity, proven in Searle et al. (1992), that K satisfies $$ \\mathbf{P}=\\mathbf{K}^{T}(\\mathbf{K}\\mathbf{V}\\mathbf{K}^{T})^{-1}\\mathbf{K} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Noting that $$ (\\mathbf{y}^{*})^{T}(\\mathbf{V}^{*})^{-1}\\mathbf{y}^{*}=(\\mathbf{y}^{T}\\mathbf{K}^{T})(\\mathbf{K}\\mathbf{V}\\mathbf{K}^{T})^{-1}(\\mathbf{K}\\mathbf{y})=\\mathbf{y}^{T}\\mathbf{P}\\mathbf{y} $$ and substituting the expressions given as 27.26b into Equation 27.17a, after some rearrangement, the ML equations yield the REML estimators, $$ \\mathrm{t r}(\\widehat{\\mathbf{P}})=\\mathbf{y}^{T}\\widehat{\\mathbf{P}}\\widehat{\\mathbf{P}}\\mathbf{y}\\quad\\mathrm{f o r}\\quad\\sigma_{E}^{2} $$ $$ \\mathrm{t r}(\\widehat{\\mathbf{P}}\\mathbf{Z}\\mathbf{A}\\mathbf{Z}^{T})=\\mathbf{y}^{T}\\widehat{\\mathbf{P}}\\mathbf{Z}\\mathbf{A}\\mathbf{Z}^{T}\\widehat{\\mathbf{P}}\\mathbf{y}\\qquad\\quad\\mathrm{f o r~\\sigma_{A}^{2}~} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Note that REML does not return estimates of $ \\beta $, since the fixed effects are removed by setting $ \\beta^{*}=0 $."
+    },
+    {
+      "type": "discussion",
+      "content": "Since the transformation $ \\mathbf{y}^* = \\mathbf{K}\\mathbf{y} $ satisfying Equation 27.25 solely depends on the design matrix, this general approach still holds with $ m $ uncorrelated random vectors. In this case, Equation 27.8a expands to $$ \\mathbf{y}^{*}=\\sum_{i=1}^{m}\\mathbf{K}\\mathbf{Z}_{i}\\mathbf{u}_{i}+\\mathbf{K}\\mathbf{e} $$ and the REML equations for the $m+1$ variance components become $$ \\mathbf{tr}(\\widehat{\\mathbf{P}})=\\mathbf{y}^{T}\\widehat{\\mathbf{P}}\\widehat{\\mathbf{P}}\\mathbf{y}\\quad for\\sigma_{E}^{2} $$ $$ \\mathbf{t r}(\\widehat{\\mathbf{P}}\\mathbf{Z}_{i}\\mathbf{B}_{i}\\mathbf{Z}_{i}^{T})=\\mathbf{y}^{T}\\widehat{\\mathbf{P}}\\mathbf{Z}_{i}\\mathbf{B}_{i}\\mathbf{Z}_{i}^{T}\\widehat{\\mathbf{P}}\\mathbf{y}\\qquad\\mathrm{f o r~}\\sigma_{i}^{2},1\\leq i\\leq m $$ where $ \\widehat{\\mathbf{P}} $ is now a function of $ \\widehat{\\mathbf{V}} = \\sum \\widehat{\\sigma}_{i}^{2} \\mathbf{Z}_{i} \\mathbf{B}_{i} \\mathbf{Z}_{i}^{T} + \\widehat{\\sigma}_{E}^{2} \\mathbf{I} $. With REML, the information matrix contains only items corresponding to variance-component estimates, so $\\mathbf{F} = \\mathbf{S}$, where $$ S_{i j}=\\frac{1}{2}\\mathrm{t r}({\\bf P}{\\bf V}_{i}{\\bf P}{\\bf V}_{j}) $$ with $V_{i}$ given by Equation 27.15. Estimates of the sampling variances and covariances of the variance-component estimates are obtained from the inverse of the matrix S, as described above."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 3. The REML variance-component estimates for the single-records dominance model of Example 2, $ \\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\mathbf{a} + \\mathbf{d} + \\mathbf{e} $, satisfy $$ \\begin{aligned}\\operatorname{tr}(\\widehat{\\mathbf{P}})&=\\mathbf{y}^{T}\\widehat{\\mathbf{P}}\\widehat{\\mathbf{P}}\\mathbf{y}\\quad&for\\sigma_{E}^{2}\\\\\\operatorname{tr}(\\widehat{\\mathbf{P}}\\mathbf{A})&=\\mathbf{y}^{T}\\widehat{\\mathbf{P}}\\mathbf{A}\\widehat{\\mathbf{P}}\\mathbf{y}\\quad&for\\sigma_{A}^{2}\\\\\\operatorname{tr}(\\widehat{\\mathbf{P}}\\mathbf{D})&=\\mathbf{y}^{T}\\widehat{\\mathbf{P}}\\mathbf{D}\\widehat{\\mathbf{P}}\\mathbf{y}\\quad&for\\sigma_{D}^{2}\\end{aligned} $$ where $ \\widehat{\\mathbf{P}} $ is defined as in Equation 27.17b with $ \\mathbf{V} = \\widehat{\\sigma}_A^2 \\mathbf{A} + \\widehat{\\sigma}_D^2 \\mathbf{D} + \\widehat{\\sigma}_E^2 \\mathbf{I} $. For purposes of estimating sampling variances and covariances of these estimates, the information matrix is given by $$ \\mathbf{S}=\\frac{1}{2}\\begin{pmatrix}\\mathrm{tr}(\\mathbf{PAPA})&\\mathrm{tr}(\\mathbf{PAPD})&\\mathrm{tr}(\\mathbf{PAP})\\\\ \\mathrm{tr}(\\mathbf{PAPD})&\\mathrm{tr}(\\mathbf{PDPD})&\\mathrm{tr}(\\mathbf{PDP})\\\\ \\mathrm{tr}(\\mathbf{PAP})&\\mathrm{tr}(\\mathbf{PDP})&\\mathrm{tr}(\\mathbf{PP})\\end{pmatrix} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "When the estimate of P is inserted into this matrix, the standard errors of the variance-component estimates are obtained as the square roots of the diagonal elements of $ \\mathbf{S}^{-1} $, and the covariance between $ \\widehat{\\sigma}_{i}^{2} $ and $ \\widehat{\\sigma}_{j}^{2} $ is given by $ S_{ij}^{-1} $."
+    }
+  ]
+}

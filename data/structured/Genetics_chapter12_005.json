@@ -1,0 +1,59 @@
+{
+  "id": "Genetics_chapter12_005",
+  "metadata": {
+    "chapter": "Genetics_chapter12",
+    "section": "Introduction",
+    "subsections": [
+      "Estimation from Divergence Experiments"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter12_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "Estimation from Divergence Experiments",
+    "heading_path": [
+      "Introduction",
+      "Estimation from Divergence Experiments"
+    ],
+    "display_heading": "Estimation from Divergence Experiments"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Estimation of the mutational variance is straightforward, but labor intensive. The simplest approach is a divergence experiment. Replicate lines, extracted from the same ancestral population, are maintained at a small enough size so that the fate of essentially all newly arisen mutations will be determined by random genetic drift. In the cases of selfed lines maintained by single-seed descent and of full-sib mated lines, all but extremely deleterious alleles will be impervious to selection, so that any census of mutational effects will yield nearly unbiased results. Over time, the mean phenotypes of the replicate lines are expected to drift apart as they randomly accumulate unique mutations. If the mutations have directional effects, a shift in the grand mean phenotype (averaged over all lines) is also expected to occur."
+    },
+    {
+      "type": "discussion",
+      "content": "Provided that, prior to expansion, the base population is kept at the same size as the derived lines for a long enough period to be in mutation-drift equilibrium, the expected increment in the among-line component of variance per generation is equal to $ 2\\sigma_{m0}^{2} $ (Bailey 1959, Lande 1976, Chakraborty and Nei 1982, Lynch and"
+    },
+    {
+      "type": "discussion",
+      "content": "Hill 1986). The simplest way to obtain this result is to note from the neutral theory (Kimura 1983) that the expected number of mutational substitutions per locus differentiating two populations separated for $t$ generations is $2u_{i}t$. (Letting $N$ denote the population size, then each generation in each population, an expected $2Nu_{i}$ new mutations arise. Each of these has an ultimate probability of fixation equal to the initial frequency, $1/(2N)$, so that at equilibrium, the expected number of fixations in a pair of populations each generation is $2\\times2Nu_{i}\\times1/(2N)=2u_{i}$ at the $i$th locus.) Upon fixation, each mutation causes an expected increment in the among-population variance of $E[(2a-0)^{2}]/2=2E(a^{2})$. Thus, summing over all loci, the expected among-line variance after $t$ generations of divergence is $$ \\sigma_{B}^{2}(t)=2\\sum_{i=1}^{n}(2u_{i}t)\\cdot E(a^{2})=2\\sigma_{m0}^{2}t $$"
+    },
+    {
+      "type": "discussion",
+      "content": "This is a fairly robust result in that it does not depend on the population size, on the degree of dominance of new mutations, or on the linkage relationships among loci (Lynch and Hill 1986). Dominance has no influence on the rate of divergence because it has a transient effect; once a mutant allele goes to fixation, a permanent shift in the mean phenotype to $ 2a_{i} $ occurs at the locus, regardless of $ k_{i} $. In principle, the asymptotic rate of divergence might accelerate (or decelerate) when mutations have general epistatic effects (Tachida and Cockerham 1990), but the time scale over which such complications would arise is likely to be quite long (dozens to hundreds of generations), and the details of such a model have not yet been worked out."
+    },
+    {
+      "type": "discussion",
+      "content": "To summarize, a conceptually simple way to estimate the mutational variance is to perform a long-term divergence experiment with replicate lines kept at small population sizes, extracting the among-line component of variance ($ \\sigma_{B}^{2} $) by analysis of variance. Division of the latter by twice the number of generations of divergence (2t) provides an estimate of $ \\sigma_{m0}^{2} $. These results apply strictly to diploid sexual populations, but only slight modifications are required for other forms of reproduction. For example, for haploid populations (sexual or asexual), the preceding expression becomes $$ \\sigma_{B}^{2}(t)=\\sigma_{m0}^{2}t/2 $$ whereas for diploid asexuals, $$ \\sigma_{B}^{2}(t)=\\sigma_{m}^{2}t $$ where $ \\sigma_{m}^{2} $ is defined as in Equation 12.1a (Lynch 1994). Terms involving dominance arise in the case of diploid asexuals because, in the absence of segregation, mutations are kept permanently in the heterozygous state with effects $ a(1+k) $."
+    },
+    {
+      "type": "discussion",
+      "content": "There are several potential sources of error in the estimation of the mutational variance with a divergence experiment. A common misconception is that estimates of the mutational variance will be upwardly biased by the segregation of genetic variance in the base population if the latter is not 100% homozygous. On the contrary, the expected increase in among-line variance of $ 2\\sigma_{m0}^{2} $ per generation strictly applies to situations in which the base population has been kept at the same size as the descendent lines for about $ 6N_{e} $ or so generations prior to the initiation of a divergence experiment (Lynch and Hill 1986). If the base population is totally homozygous, the rate of divergence will be less than $ 2\\sigma_{m0}^{2} $ during the early generations of the experiment due to the lack of segregating polymorphisms. If the base population contains excess heterozygosity relative to the equilibrium expectations within the descendent lines, the divergence rate will exceed $ 2\\sigma_{m0}^{2} $ in the early generations of the experiment. Eventually, under the neutral model, all lines will asymptotically diverge at the rate $ 2\\sigma_{m0}^{2} $ regardless of the status of the base population."
+    },
+    {
+      "type": "discussion",
+      "content": "A second potentially serious issue in the analysis of a divergence experiment concerns the possibility that environmental effects artificially inflate the among-line component of variance. To guard against such inflation, a set of control lines should be assayed in parallel with the mutation-accumulation lines whenever possible. The control lines should be genetically identical (and maintained in an evolutionarily inert state by, for example, freezing or seed storage) so that any variance among them can only be attributable to environmental causes. Any variance among control lines can then be subtracted from that observed among the mutation-accumulation lines. Maternal effects can be a significant source of inflation of the among-line variance when all of the progeny assayed within a subline are derived from a single mother. Such problems can be eliminated by deriving all assay individuals from different mothers, as this ensures that any variance associated with maternal effects will contribute to the within-line component of variance (Lynch 1985)."
+    },
+    {
+      "type": "discussion",
+      "content": "Third, contamination events can be a major problem in mutation-accumulation experiments, either deflating estimates of $ \\sigma_{m0}^{2} $ when gene flow accidentally occurs among lines, or inflating it if foreign genotypes immigrate into the experiment. Periodic screening of lines for the genomic distribution of mobile elements or for other informative molecular markers, such as highly mutable microsatellite loci, can provide an excellent control against contamination (Mackay et al. 1992a, Keightley and Hill 1992)."
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, we note that an alternative approach to estimating the mutational variance involves the application of artificial selection to an initially homozygous base population. Recall from Chapter 3 that the single-generation response to selection is equal to $ R = h^{2}S $, where S is the selection differential imposed by the investigator. The idea behind the selection approach to estimating mutational variance is that the standing heritability in a population can be estimated from the ratio of selection response to selection differential, $ \\widehat{h}^{2} = R/S $. As in the case of the neutral model, expressions can be derived for the expected equilibrium heritability of a quantitative trait under truncation selection as a function of the population size and the mutational variance (Hill 1982b,c). Thus, by equating observed and expected heritabilities, an estimate of $\\sigma_{m0}^{2}$ can be obtained."
+    }
+  ]
+}

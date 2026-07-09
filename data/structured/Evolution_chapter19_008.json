@@ -1,0 +1,39 @@
+{
+  "id": "Evolution_chapter19_008",
+  "metadata": {
+    "chapter": "Evolution_chapter19",
+    "section": "ANIMAL-MODEL ANALYSIS OF SELECTION EXPERIMENTS",
+    "subsections": [
+      "The Basic Animal Model"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter19_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "ANIMAL-MODEL ANALYSIS OF SELECTION EXPERIMENTS",
+    "section_level_2": "The Basic Animal Model",
+    "heading_path": [
+      "ANIMAL-MODEL ANALYSIS OF SELECTION EXPERIMENTS",
+      "The Basic Animal Model"
+    ],
+    "display_heading": "The Basic Animal Model"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Mixed-models easily allow for overlapping generations by simply predicting breeding values at discrete time points (e.g., every year or at each natural cohort) rather than in each generation. Hence, in the discussion that follows, one can easily replace “generation” by “year” or some other time measure."
+    },
+    {
+      "type": "discussion",
+      "content": "To apply the animal model to a selection experiment, one first vectorizes the observations from the entire experiment by letting $ y_{ij} $ denote the trait measurement on the $ j $th individual from generation $ i $, where $ 0 \\leq i \\leq t $ (generation 0 represents the unselected base population) and $ 1 \\leq j \\leq n_i $, where $ n_i $ is the number of measured individuals in generation $ i $. Let the vector $ y $ denote the observations on all measured individuals from the entire experiment $$ \\mathbf{y}=\\begin{pmatrix}\\mathbf{y}_{0}\\\\ \\mathbf{y}_{1}\\\\ \\vdots\\\\ \\mathbf{y}_{t}\\end{pmatrix}\\qquad where\\qquad\\mathbf{y}_{i}=\\begin{pmatrix}\\mathbf{y}_{i1}\\\\ \\vdots\\\\ \\mathbf{y}_{in_{i}}\\end{pmatrix} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The vector $ y_i $ includes the values for all measured individuals from generation $ i $, including those culled as well as those that were allowed to reproduce. The simplest animal model for these data is $$ y_{ij}=\\mu+a_{ij}+e_{ij} $$ where $ \\mu $ is an overall mean, $ a_{ij} $ is the breeding value of the $ j $th measured individual from generation $ i $, and $ e_{ij} $, the deviation between breeding and phenotypic values. Equation 19.1 gives the mixed model as $ \\mathbf{y} = \\mathbf{X}\\beta + \\mathbf{Z}\\mathbf{a} + \\mathbf{e} $. With exactly one record per individual, $ \\mathbf{Z} = \\mathbf{I} $. In this simple model, the only fixed effect is the mean, returning $ \\beta = (\\mu) $ and $ \\mathbf{X} = \\mathbf{1} $ (a vector of ones) thus reducing Equation 19.1 to $$ \\mathbf{y}=\\boldsymbol{\\mu}\\cdot\\mathbf{1}+\\mathbf{a}+\\mathbf{e} $$ where a is the vector of breeding values for all individuals measured during the course of the experiment, with $ \\mathbf{Var}(\\mathbf{a}) = \\sigma_A^2 \\mathbf{A} $."
+    },
+    {
+      "type": "discussion",
+      "content": "The relationship matrix, A, is the key to the animal model, as it includes all of the pedigree information. Because of this information, the animal model is easily extended to allow breeding values to be estimated for individuals without records, provided they have measured relatives in the analysis (see Example 19.5). The diagonal elements of A describe the amount of inbreeding, with $ A_{ii} = (1 + f_i) = 2 \\Theta_{ii} $, while the off-diagonal elements given by $ A_{ij} = 2 \\Theta_{ij} $ (twice the coefficient of coancestry; see LW Chapters 7 and 26) describe the relatedness of individuals i and j. Recursive methods for obtaining the elements of A (and $ \\mathbf{A}^{-1} $), given a pedigree, are discussed in LW Chapter 26. The simple animal model assumes that all genetic variance is additive, so there is no genetic covariance between residuals. In this case, it is generally assumed that $ \\mathbf{Var}(\\mathbf{e}) = \\sigma_e^2 \\mathbf{I} $, and the mixed-model equations (Equation 19.4) simplify to $$ \\begin{pmatrix}\\widehat{\\mu}\\\\\\widehat{\\mathbf{a}}\\end{pmatrix}=\\begin{pmatrix}n&\\mathbf{1}^{T}\\\\\\mathbf{1}&\\mathbf{I}+\\lambda\\mathbf{A}^{-1}\\end{pmatrix}^{-1}\\begin{pmatrix}n\\overline{y}\\\\\\mathbf{y}\\end{pmatrix} $$ where $n$ is the total number of individuals in the experiment, $\\lambda = \\sigma_e^2 / \\sigma_A^2 = (1 - h^2) / h^2$, $\\hat{\\mathbf{a}}$ is the $n$-dimensional vector of the predicted breeding values of all measured individuals, and $1$ is an $n$-dimensional vector of ones. Likewise, the covariance matrices for the fixed effects estimates, $\\mathbf{C}_{11}$, the predictor errors for the BLUPs of breeding values, $\\mathbf{C}_{22}$, and the covariances, $\\mathbf{C}_{12}$, between these estimates are given by $$ \\begin{pmatrix}\\mathbf{C}_{11}&\\mathbf{C}_{12}\\\\\\mathbf{C}_{12}^{T}&\\mathbf{C}_{22}\\end{pmatrix}=\\begin{pmatrix}n&\\mathbf{1}^{T}\\\\\\mathbf{1}&\\mathbf{I}+\\lambda\\mathbf{A}^{-1}\\end{pmatrix}^{-1} $$"
+    }
+  ]
+}

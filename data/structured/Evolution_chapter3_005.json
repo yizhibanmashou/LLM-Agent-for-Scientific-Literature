@@ -1,0 +1,56 @@
+{
+  "id": "Evolution_chapter3_005",
+  "metadata": {
+    "chapter": "Evolution_chapter3",
+    "section": "The Genetic Effective Size of a Population: Introduction",
+    "subsections": [
+      "AGE STRUCTURE"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter3_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [
+      "inline_1"
+    ],
+    "section_level_1": "The Genetic Effective Size of a Population: Introduction",
+    "section_level_2": "AGE STRUCTURE",
+    "heading_path": [
+      "The Genetic Effective Size of a Population: Introduction",
+      "AGE STRUCTURE"
+    ],
+    "display_heading": "AGE STRUCTURE",
+    "table_reference_keys": [
+      "Evolution_chapter3:inline_1"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "proposition",
+      "content": "Because the previous formulae were obtained under the assumption of discrete generations, they provide estimates of $ N_{e} $ for explicit generational intervals. Such expressions are reasonable for organisms such as annual plants (ignoring the problem of seed banks; Nunney 2002) or univoltine insects, but for species that reproduce at different ages, as is the case for most vertebrates and perennial plants, the overlapping of generations raises additional complications. Nevertheless, as first pointed out by Hill (1972e, 1979), there is a simple correspondence between the effective sizes of populations with and without age structure."
+    },
+    {
+      "type": "discussion",
+      "content": "In the previous formulations, N was the number of potential reproductive individuals entering the population in each generation. For age-structured populations, we must consider instead $ N_{b} $, the total number of newborns entering the population during each unit of time, as well as the number of time units per generation. The latter quantity, known as the generation time (T), is the average age of parents giving birth, which in turn is a function of the age-specific schedules of survival and reproduction. For an ideal monocious population, $$ T=\\frac{\\sum\\limits_{i=1}^{\\tau}i\\ell_{i}b_{i}}{\\sum\\limits_{i=1}^{\\tau}\\ell_{i}b_{i}} $$ where $ \\ell_i $ is the probability of surviving to age $ i $, $ b_i $ is the expected number of offspring produced by parents of age $ i $, and $ \\tau $ is the maximum reproductive age. The quantity $ \\ell_i b_i $ denotes the expected number of births by an individual of age $ i $, discounting for prior mortality. For a dioecious population, $ T $ is further complicated by the need to average over males $ (m) $ and females $ (f) $, $$ T=\\frac{T_{mm}+T_{mf}+T_{fm}+T_{ff}}{4} $$ where $ T_{mf} $, for example, is the average age of male parents of daughters. The average generation length is the natural time scale for the evolutionary analysis of age-structured populations. Letting $ N = N_{eb}T $, with $ N_{eb} = 4\\phi_b(1 - \\phi_b)N_b $ being the effective size of the newborn age class and $ \\phi_b $ being the sex ratio of newborns, all of the preceding formulae for discrete generations apply provided the structure and size of the population are stable."
+    },
+    {
+      "type": "discussion",
+      "content": "However, we are still left with the rather substantial problem of estimating $ \\sigma_{k}^{2} $, which now depends on variation in longevity as well as variation in fertility."
+    },
+    {
+      "type": "proposition",
+      "content": "Felsenstein (1971), Johnson (1977b), and Emigh and Pollak (1979) showed how the variance in offspring production can be expressed in terms of the age-specific parameters $ \\ell_{i} $ and $ b_{i} $. Again making the assumption that the population is stable in terms of size, sex ratio, and age composition, the effective size of an age-structured population with separate sexes is $$ N_{e}=\\frac{N_{eb}T}{1+\\left(1-\\phi_{b}\\right)\\sum_{i=1}^{\\tau_{f}}\\left(\\frac{1}{\\ell_{i+1}^{f}}-\\frac{1}{\\ell_{i}^{f}}\\right)\\left(\\sum_{f}\\right)^{2}+\\phi_{b}\\sum_{i=1}^{\\tau_{m}}\\left(\\frac{1}{\\ell_{i+1}^{m}}-\\frac{1}{\\ell_{i}^{m}}\\right)\\left(\\sum_{m}\\right)^{2}} $$ where $ (\\sum_s)^2 = \\left(\\sum_{j \\geq i+1} \\ell_j^s b_j^s \\right)^2 $, $ \\tau_s $ is the maximum age of reproduction for sex $ s $, and $ s = m $ or $ f $ (Emigh and Pollak 1979). An analogous expression is available for monoecious populations (Felsenstein 1971). While the derivations underlying these expressions rely on the assumption that gametes are drawn randomly from the members within age classes, no assumptions are made with regard to the preference of matings between age classes."
+    },
+    {
+      "type": "proposition",
+      "content": "Despite their complicated structure, demographic formulae such as Equation 3.15 are useful for analyzing the sensitivity of a population's effective size to modifications in the life-history schedule. Nevertheless, the Emigh-Pollak equation has some practical difficulties. First, it rests on the assumption of a stable population structure. Such situations are rare in nature because of temporal changes in the environment. Johnson (1977b) and Choy and Weir (1978) derived dynamical equations to resolve these difficulties, and the entire subject was reviewed by Charlesworth (1994a). Second, Equation 3.15 was derived under the assumption that the age-specific mortality and birthrates of individuals are uncorrelated, i.e., that individuals with an elevated likelihood of survivorship do not have elevated or reduced birthrates. This will not be true for populations in which energetic trade-offs exist between different life-history characters. The problem needs further investigation."
+    },
+    {
+      "type": "discussion",
+      "content": "Substantial simplification of Equation 3.15 can be achieved under some conditions. For example, if year-to-year survival is age independent, and if the mating system can be described in simple terms, $ N_{e} $ can be defined as a function of a small number of parameters, thus eliminating the need for refined age-specific schedules of survivorship and fecundity. Using this approach, Nunney (1993) concluded that $ N_{e} $ in animals with overlapping generations is typically on the order of N/2 to N, although his analysis ignores the important influence of variation in N across generations (as will be seen in a following section)."
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:3.3]]"
+    }
+  ]
+}

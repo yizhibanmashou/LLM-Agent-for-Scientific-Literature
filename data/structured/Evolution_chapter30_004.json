@@ -1,0 +1,67 @@
+{
+  "id": "Evolution_chapter30_004",
+  "metadata": {
+    "chapter": "Evolution_chapter30",
+    "section": "SELECTION ON MULTIVARIATE PHENOTYPES: DIFFERENTIALS AND GRADIENTS",
+    "subsections": [
+      "The Directional Selection Gradient Vector, $ \\beta $"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter30_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "SELECTION ON MULTIVARIATE PHENOTYPES: DIFFERENTIALS AND GRADIENTS",
+    "section_level_2": "The Directional Selection Gradient Vector, $ \\beta $",
+    "heading_path": [
+      "SELECTION ON MULTIVARIATE PHENOTYPES: DIFFERENTIALS AND GRADIENTS",
+      "The Directional Selection Gradient Vector, $ \\beta $"
+    ],
+    "display_heading": "The Directional Selection Gradient Vector, $ \\beta $"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "As was discussed briefly in Chapters 13 and 20, $ \\beta $, removes the effects of phenotypic correlations (among the set of traits being considered) because it is a vector of partial regression coefficients. From multiple regression theory (LW Chapter 8), the vector of partial regression coefficients for predicting the value of w, given a vector of observations z, is $ \\mathbf{P}^{-1}\\sigma(\\mathbf{z},w) $, where $ \\mathbf{P} $ is the covariance matrix of z and $ \\sigma(\\mathbf{z},w) $ is the vector of covariances between the elements of z and fitness, with an ith element of $ \\sigma(z_i,w) $. Because $ \\mathbf{S}=\\sigma(\\mathbf{z},w) $, it immediately follows that $$ \\mathbf{P}^{-1}\\boldsymbol{\\sigma}(\\mathbf{z},w)=\\mathbf{P}^{-1}\\mathbf{S}=\\boldsymbol{\\beta} $$ is the vector of partial regression coefficients for the linear regression of relative fitness, w, on phenotypic value, z, namely, $$ \\begin{align*}w(\\mathbf{z})=1+\\sum\\limits_{j=1}^n\\beta_j(z_j-\\mu_j)+e=1+\\beta^T(\\mathbf{z}-\\boldsymbol{\\mu})+e\\end{align*} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Recalling the fact (LW Chapters 3 and 8) that the regression must pass through the means of both w and z (1 and $ \\mu $, respectively), allows us to remove the intercept constant, a, in the regression. We could equivalently write Equation 30.2b as $ w(\\mathbf{z}) = a + \\beta^{T}\\mathbf{z} + e $, where $ a = 1 - \\beta^{T}\\mu $."
+    },
+    {
+      "type": "discussion",
+      "content": "The partial regression coefficient, $ \\beta_j $, represents the change in $ w $ from a one-unit increase in $ z_j $ while holding all the other characters constant. It is important to note, however, that $ \\beta $ accounts for the effects of phenotypic correlations only among the measured set of characters that comprise the elements of $ z $. Among the members of this set, a character under no directional selection has a value of $ \\beta_j = 0 $. Because S = Pβ, we have $$ \\begin{align*}S_i=\\sum\\limits_{j=1}^n\\beta_j\\; P_{ij}=\\beta_i\\; P_{ii}+\\sum\\limits_{j\\ne i}^n\\beta_j\\; P_{ij}\\end{align*} $$ which illustrates that the directional selection differential for trait $i$ confounds direct selection on that character ($\\beta_i$) with indirect contributions due to selection on phenotypically correlated characters ($\\beta_j P_{ij} \\neq 0$). These contributions are given, respectively, by the first and second terms in Equation 30.3."
+    },
+    {
+      "type": "discussion",
+      "content": "Operationally, fitness regressions are usually computed using standardized variables, $$ \\begin{align*}z_{sd,i}=\\frac{z_i-\\mu_i}{\\sigma_i}\\end{align*} $$ with $ z_{sd,i} $ having a mean of zero and unit variance (this is often denoted by $ z'_{i} $ in the literature). As mentioned in Chapter 29, one could also mean-standardize $ (z_{i}/\\mu_{i}) $, but when the term standardized variable is used in the evolutionary and ecological literature, it usually implies Equation 30.4a. The selection differential of the standardized variable is simply the selection intensity $ \\bar{\\tau} $ (Equation 13.6a), as $$ S_{sd,i}=\\sigma(z_{sd,i},w)=\\sigma(z_{i}/\\sigma_{i},w)=\\frac{\\sigma(z_{i},w)}{\\sigma_{i}}=\\frac{S_{i}}{\\sigma_{i}}=\\bar{\\imath}_{i} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The standardization given by Equation 30.4 can be expressed in matrix form as $$ \\mathbf{z}_{sd}=\\mathbf{D}^{-1}(\\mathbf{z}-\\boldsymbol{\\mu}) $$ where D is the diagonal matrix $$ \\mathbf{D}=\\begin{pmatrix}{{{\\sigma_{1}}}}&{{{0}}}&{{{\\cdots}}}&{{{0}}} \\\\{{{0}}}&{{{\\sigma_{2}}}}&{{{\\cdots}}}&{{{0}}} \\\\{{{\\vdots}}}&{{{\\ddots}}}&{{{\\vdots}}} \\\\{{{0}}}&{{{0}}}&{{{\\cdots}}}&{{{\\sigma_{n}}}}\\end{pmatrix} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Equations 30.4b and 30.4c imply that the phenotypic covariance matrix $ (P_{sd}) $ for the standardized variables is simply the matrix of all pairwise correlations. Following our notation from Chapter 29, we denote selection gradients using variance-standardized variables by $ \\beta_{sd,i} $, although they are often denoted by $ \\beta_i' $ in the literature. When expressed with standardized variables, Equation 30.2b becomes $$ \\begin{array}{r l}{w(\\mathbf{z}_{s d})=1+\\beta_{s d}^{T}\\mathbf{z}_{s d}+e,}&{{}\\mathrm{w h e r e}\\quad\\beta_{s d}=\\mathbf{P}_{s d}^{-1}\\mathbf{S}_{s d}}\\end{array} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Here $ \\beta_{sd,i} $ is the expected change in relative fitness given a change of one standard deviation in trait $ z_i $ when all of the other measured trait values (i.e., the elements of $ \\mathbf{z} $) are held constant."
+    },
+    {
+      "type": "discussion",
+      "content": "The total strength of directional selection on the set of measured characters is a quantity of interest, and is given by the norm of $ \\beta $, where (Equation A5.1a) $$ ||\\boldsymbol{\\beta}||=\\sqrt{\\boldsymbol{\\beta}^{T}\\boldsymbol{\\beta}}=\\sqrt{\\sum\\boldsymbol{\\beta}_{i}^{2}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Morrissey (2014b) noted that $ E[\\|\\beta\\|] \\geq \\|\\beta\\| $, as the values of $ \\beta_i $ are measured with error, and such error carries over into the norm. Suppose $ k $ independent traits are measured, where $ \\widehat{\\beta}_i \\sim N(\\beta, \\sigma^2) $, so that each $ \\beta_i $ is independent and identically distributed, with sampling error $ \\sigma^2 $. In this case, $ E[\\|\\widehat{\\beta}\\|] = \\sqrt{k(\\beta + \\sigma^2)} > \\|\\beta\\| = \\sqrt{k\\beta} $. Given that the standard error of an estimate of $ \\beta $ is often of the same order as the estimate itself (Morrissey 2014b), the total strength of selection can be considerably overestimated by $ \\|\\beta\\| $."
+    },
+    {
+      "type": "discussion",
+      "content": "We also remark in passing that the Henshaw-Zemel (2017) distributional selection differential (a nonparametric measure of the total shift in a distribution following selection; Equation 29.15a) can be generalized into a multivariate version that also partitions trait selection into direct and indirect effects; see their paper for details."
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:30.1]]"
+    }
+  ]
+}

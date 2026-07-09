@@ -1,0 +1,52 @@
+{
+  "id": "Genetics_chapter16_006",
+  "metadata": {
+    "chapter": "Genetics_chapter16",
+    "section": "Introduction",
+    "subsections": [
+      "A Single Full-sib Family"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter16_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [
+      "16.1"
+    ],
+    "section_level_1": "Introduction",
+    "section_level_2": "A Single Full-sib Family",
+    "heading_path": [
+      "Introduction",
+      "A Single Full-sib Family"
+    ],
+    "display_heading": "A Single Full-sib Family",
+    "table_reference_keys": [
+      "chapter16:16.1"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Large half-sib families are not feasible for many species, and one must instead consider full-sib families, which are often much smaller (as is the case in humans). Some domesticated animals such as pigs and poultry can have full-sib families of at least modest size, while others (such as certain trees) can have huge full-sib families. With a single full-sib family, one can again use a simple one-way ANOVA to detect QTLs (Equation 16.5). The only modification required is that the number of offspring marker genotypes ranges from two to four, depending on the marker genotypes of the parents ([[SEE_TABLE:16.1]]). With a backcross family $ (M_i M_j \\times M_k M_k) $, the resulting ANOVA has two marker genotypes $ (M_i M_k $ and $ M_j M_k) $, corresponding to the alternate alleles from the informative parent (and hence the marker contrast $ \\overline{z}_{M_i} - \\overline{z}_{M_j} $). With a fully informative family $ (M_i M_j \\times M_k M_\\ell) $, all genotypes are informative as to parental alleles, and the resulting ANOVA considers all four marker genotypes (giving rise to two marker contrasts, $ \\overline{z}_{M_i} - \\overline{z}_{M_j} $ and $ \\overline{z}_{M_k} - \\overline{z}_{M_\\ell} $, one for each parent). Finally, while an intercross family $ (M_i M_j \\times M_i M_j) $ has three offspring marker genotypes, heterozygotes provide no information on parental marker alleles and are usually excluded. The ANOVA in this case considers only $ M_i M_i $ and $ M_j M_j $ offspring (leading to the marker contrast $ \\overline{z}_{M_i M_i} - \\overline{z}_{M_j M_j} $). Obviously, as one considers different markers, a family that is fully informative for one marker may be a backcross family for another, and noninformative for a third. With a large half-sib family, the effect of a QTL allele from the common parent (typically the sire) is averaged over a large number of random QTL alleles from the other parents, and hence only its additive effect enters into the expected values of marker contrasts. Within a full-sib family, however, each QTL allele from an informative parent is averaged over at most two QTL alleles from the other parent, which results in dominance entering into the expected marker contrasts. To see this result, denote the genotypes of the parents by $ M_{1}Q_{1}/M_{2}Q_{2} $ and $ M_{3}Q_{3}/M_{4}Q_{4} $. This notation simply indicates that the marker allele $ M_{i} $ is associated with QTL allele $ Q_{i} $, and does not indicate the actual state of the allele itself. We also allow the possibility that two or more alleles are the same, so that (for example), $ M_{1}=M_{4} $ and $ Q_{1}=Q_{2} $."
+    },
+    {
+      "type": "discussion",
+      "content": "Consider the gametes from the first parent. Among $M_{1}$-bearing gametes, $(1-c)$ contain $Q_{1}$ while the rest $(c)$ contain $Q_{2}$. Likewise, of the $M_{3}$-bearing gametes, $(1-c)$ contain $Q_{3}$ while the rest $(c)$ contain $Q_{4}$. The resulting expected genotypic value for $M_{1}M_{3}$ offspring becomes $$ \\mu_{M_{1}M_{3}}=(1-c)^{2}\\mu_{Q_{1}Q_{3}}+c(1-c)\\mu_{Q_{1}Q_{4}}+c(1-c)\\mu_{Q_{2}Q_{3}}+c^{2}\\mu_{Q_{2}Q_{4}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The other three marker means follow similarly. These values can be used to compute the average genotypic value of offspring (within this family) carrying a particular parental marker allele. For example, for $M_{1}$, $$ \\begin{aligned}\\mu_{M_{1}}&=\\frac{\\mu_{M_{1}M_{3}}+\\mu_{M_{1}M_{4}}}{2}\\\\&=(1-c)\\left(\\frac{\\mu_{Q_{1}Q_{3}}+\\mu_{Q_{1}Q_{4}}}{2}\\right)+c\\left(\\frac{\\mu_{Q_{2}Q_{3}}+\\mu_{Q_{2}Q_{4}}}{2}\\right)\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Using these results, the expected value of the contrast between offspring bearing alternative marker alleles from the first parent becomes $$ $$ _ M_ 1 - _ M_ 2 &=(1-2c) \\\\&=(1-2c) $$ $$ where we have again decomposed the QTL genotype as $ \\mu_{Q_i Q_j} = \\mu + \\alpha_i + \\alpha_j + \\delta_{ij} $. As expected, if this parent is a QTL homozygote ($ Q_1 = Q_2 $), the contrast has expected value zero. Comparing this with the similar contrast in a half-sib design (Equation 16.9) shows that the two are identical in the absence of dominance $ \\delta_{ij} = 0 $. When dominance is present, the contrast in a full-sib design can be larger or smaller than that which would occur in a half-sib design, depending on the dominance relationships between the QTL alleles of the focal individual and those of its mate."
+    },
+    {
+      "type": "discussion",
+      "content": "For an intercross family (both parents are the same marker heterozygote, say, $ M_{1}M_{2} $), the contrast of interest is between the marker homozygotes, and (noting that $ M_{1}=M_{3} $ and $ M_{2}=M_{4} $) Equation 16.19a gives $$ \\begin{aligned}\\mu_{M_{1}M_{1}}-\\mu_{M_{2}M_{2}}&=\\left(1-2c\\right)\\left[\\mu_{Q_{1}Q_{3}}-\\mu_{Q_{2}Q_{4}}\\right]\\\\&=\\left(1-2c\\right)\\left[\\left(\\alpha_{1}+\\alpha_{3}\\right)-\\left(\\alpha_{2}+\\alpha_{4}\\right)+\\left(\\delta_{13}-\\delta_{24}\\right)\\right]\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Note that even though the parents share marker alleles (so that $ M_{1}=M_{3} $ and $ M_{2}=M_{4} $), they need not share the corresponding QTL alleles (so that $ Q_{1} $ and $ Q_{3} $ are potentially different, as are $ Q_{2} $ and $ Q_{4} $)."
+    }
+  ]
+}

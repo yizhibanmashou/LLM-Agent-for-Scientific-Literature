@@ -2162,6 +2162,12 @@ def cleanup_toc_outputs(output_dir: str, toc_name: str) -> int:
     return removed
 
 
+def _is_toc_input(tex_path: str) -> bool:
+    """Detect whether a tex input path is a table-of-contents file."""
+    name = Path(tex_path).parent.name
+    return bool(re.search(r"(?:\\u76ee\\u5f55|toc|contents?)", name, re.IGNORECASE))
+
+
 def _roman_to_int(token: str) -> int | None:
     values = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100}
     token = token.strip().upper()
@@ -3982,9 +3988,14 @@ def main() -> None:
         help="Override chapter name (recommended only for single-file input)",
     )
     parser.add_argument(
+        "--clear-output",
+        action="store_true",
+        help="Clear existing output files before processing. Destructive; by default existing structured files are preserved.",
+    )
+    parser.add_argument(
         "--no-clear-output",
         action="store_true",
-        help="Preserve existing output files instead of clearing the output directory first",
+        help="Preserve existing output files. This is the default; kept for backward-compatible command lines.",
     )
     parser.add_argument(
         "--skip-llm-cleaning",
@@ -4107,6 +4118,11 @@ def main() -> None:
         help="Optional structured directory whose example_library.json seeds guarded example recovery.",
     )
     parser.add_argument(
+        "--example-exclude-chapters",
+        default=(os.getenv("KE_EXAMPLE_EXCLUDE_CHAPTERS") or ""),
+        help="Comma-separated chapters excluded from example-library repair, e.g. chapter28.",
+    )
+    parser.add_argument(
         "--llm-example-boundaries",
         action="store_true",
         help="Run guarded LLM Example boundary pilot and write a separate candidate structured directory.",
@@ -4156,10 +4172,15 @@ def main() -> None:
         f"phase3={sorted(llm_policy['phase3_chapters'])}"
     )
 
-    if not args.no_clear_output:
+    if args.clear_output and args.no_clear_output:
+        parser.error("--clear-output and --no-clear-output cannot be used together")
+
+    if args.clear_output:
         removed = clear_directory(args.output)
         if removed > 0:
             print(f"[CLEANUP] Cleared {removed} existing entries from {args.output}")
+    else:
+        print(f"[CLEANUP] Preserving existing entries in {args.output}")
 
     try:
         client = LLMClient()
@@ -4323,7 +4344,31 @@ def main() -> None:
             all_units.extend(units)
             all_tables.extend(tables)
     else:
-        for tex_path in tex_files:
+        toc_tex_files = [p for p in tex_files if _is_toc_input(p)]
+        chapter_tex_files = [p for p in tex_files if p not in toc_tex_files]
+
+        for tex_path in toc_tex_files:
+            relative_source = os.path.relpath(tex_path, start=os.getcwd())
+            with open(tex_path, encoding="utf-8") as f:
+                raw_tex = f.read()
+            toc_text = strip_latex_markup(raw_tex)
+            if toc_text:
+                removed_toc = cleanup_toc_outputs(args.output, args.toc_name)
+                if removed_toc > 0:
+                    print(f"[CLEANUP] Removed {removed_toc} stale TOC outputs for {args.toc_name}")
+                generated = build_toc_outputs_from_text(
+                    toc_text=toc_text,
+                    output_dir=args.output,
+                    toc_name=args.toc_name,
+                    source_file=relative_source,
+                    source_title=args.title,
+                )
+                if generated > 0:
+                    print(f"[DONE] Generated {generated} TOC navigation units -> {args.output}")
+            else:
+                print(f"[WARN] TOC input {tex_path} produced no toc_text after stripping")
+
+        for tex_path in chapter_tex_files:
             chapter_name = args.chapter_name if len(tex_files) == 1 and args.chapter_name else derive_chapter_name(tex_path)
 
             removed_count = cleanup_chapter_outputs(args.output, chapter_name)
@@ -4412,6 +4457,7 @@ def main() -> None:
             project_root=REPO_ROOT,
             reference_structured_dir=args.example_reference_structured_dir or None,
             artifacts_dir=Path(args.artifacts_dir) / "example_pipeline",
+            exclude_chapters=_parse_chapter_allowlist(args.example_exclude_chapters, set()),
         )
         print(
             "  example pipeline: "
@@ -4509,6 +4555,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
-
 

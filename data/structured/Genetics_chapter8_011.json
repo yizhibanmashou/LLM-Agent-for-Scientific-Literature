@@ -1,0 +1,31 @@
+{
+  "id": "Genetics_chapter8_011",
+  "metadata": {
+    "chapter": "Genetics_chapter8",
+    "section": "Introduction",
+    "subsections": [
+      "Determinants and Minors"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter8_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "Determinants and Minors",
+    "heading_path": [
+      "Introduction",
+      "Determinants and Minors"
+    ],
+    "display_heading": "Determinants and Minors"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "For a $2 \\times 2$ matrix, the quantity $$ \\left|\\mathbf{A}\\right|=A_{11}A_{22}-A_{12}A_{21} $$ is called the determinant, which more generally is denoted by $ \\det(\\mathbf{A}) $ or $ |\\mathbf{A}| $. As with the 2-dimensional case, $ \\mathbf{A}^{-1} $ exists for a square matrix $ \\mathbf{A} $ (of any dimensionality) if and only if $ \\det(\\mathbf{A}) \\neq 0 $. For square matrices with dimensionality greater than two, the determinant is obtained recursively from the general expression $$ |\\mathbf{A}|=\\sum_{j=1}^{n}A_{ij}(-1)^{i+j}|\\mathbf{A}_{ij}| $$ where $i$ is any fixed row of the matrix $\\mathbf{A}$ and $\\mathbf{A}_{ij}$ is a submatrix obtained by deleting the $i$th row and $j$th column from $\\mathbf{A}$. Such a submatrix is known as a minor. In words, each of the $n$ quantities in this equation is the product of three components: the element in the row around which one is working, $-1$ to the $(i+j)$th power, and the determinant of the $ij$th minor. In applying Equation 8.12b, one starts with the original $n\\times n$ matrix and works down until the minors are reduced to $2\\times2$ matrices whose determinants are scalars of the form $A_{11}A_{22}-A_{12}A_{21}$. A useful result is that the determinant of a diagonal matrix is the product of the diagonal elements of that matrix, so that if $$ A_{i j}=\\left\\{\\begin{array}{l l}{a_{i}}&{i=j}\\\\ {0}&{i\\neq j}\\end{array}\\right.\\qquad\\mathrm{t h e n}\\qquad|\\mathbf{A}|=\\prod_{i=1}^{n}a_{i} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The next section shows how determinants are used in the computation of a matrix inverse."
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "id": "Evolution_chapter19_004",
+  "metadata": {
+    "chapter": "Evolution_chapter19",
+    "section": "Analysis of Short-term Selection Experiments: 2. Mixed-model and Bayesian Approaches: Introduction",
+    "subsections": [
+      "BASICS OF MIXED-MODEL ANALYSIS"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter19_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Analysis of Short-term Selection Experiments: 2. Mixed-model and Bayesian Approaches: Introduction",
+    "section_level_2": "BASICS OF MIXED-MODEL ANALYSIS",
+    "heading_path": [
+      "Analysis of Short-term Selection Experiments: 2. Mixed-model and Bayesian Approaches: Introduction",
+      "BASICS OF MIXED-MODEL ANALYSIS"
+    ],
+    "display_heading": "BASICS OF MIXED-MODEL ANALYSIS"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Here, we start with a quick review of some of the key theoretical results of mixed-model analysis and then examine specific applications. We encourage the reader to review LW Chapters 26 and 27 (either before, or after, reading this short introduction). These chapters provide additional worked examples to give a better feel for mixed models and also consider advanced topics in MM analysis in greater detail."
+    },
+    {
+      "type": "discussion",
+      "content": "Mixed models are so named because they consider both fixed and random effects. Recall that fixed effects are unknown constants, while random effects have values that are drawn from some underlying distribution (LW Chapters 8 and 26). Hence, any particular value for a random effect represents just one possible realization from this underlying distribution, which is usually assumed to be normal with a mean of zero and an unknown (yet to be estimated) variance."
+    },
+    {
+      "type": "proposition",
+      "content": "A brief example will remind the reader of a powerful feature of random-effects models. Suppose we have $ T $ time points and include an environmental value, $ E_i $, for each time point in our model. Treating these values as fixed effects makes no assumption as to how the $ E_i $ from different generations are related to each other, but the cost is $ T $ degrees of freedom. Conversely, if we make a random-effects assumption that the $ E_i $ values are drawn from some underlying distribution, we use far fewer degrees of freedom. If we assume the $ E_i $ are independent draws from an underlying normal, then we only need a single degree of freedom (the variance, $ \\sigma_E^2 $, of this distribution, as the mean value of a random effect is zero), no matter the value of $ T $. More generally, one could make additional assumptions about the distribution of the $ E_i $ values, at the cost of additional degrees of freedom. For example, one could assume that all the $ E_i $ values for adjacent generations are autocorrelated by the same amount, $ \\rho $, which introduces an additional parameter to be estimated."
+    },
+    {
+      "type": "discussion",
+      "content": "Typically, statisticians speak of estimating fixed effects and predicting the realized values of random effects. Both LS and MM analyses estimate the fixed effects in a model, while MM analysis also predicts the values of the random effects by using the covariances between observations (after adjusting for fixed effects). (Note that under a Bayesian analysis, as will be discussed later, every effect is assumed to be random, and this distinction between fixed and random effects is more subtle.) The standard mixed model for a vector, y, of n observations is $$ \\mathbf{y}=\\mathbf{X}\\boldsymbol{\\beta}+\\mathbf{Z}\\mathbf{a}+\\mathbf{e} $$ where $ \\beta $ is a $ q \\times 1 $ vector of $ q $ fixed effects, a is a $ p \\times 1 $ vector of $ p $ random effects (in our case, the breeding values of the individuals in our experiment), and $ \\mathbf{e} $ is the $ n \\times 1 $ vector of $ n $ residuals (which is also random). The matrices $ \\mathbf{X} $ and $ \\mathbf{Z} $ are, respectively, the $ n \\times q $ design matrix and the $ n \\times p $ incidence matrix associated with the fixed and random effects, respectively."
+    },
+    {
+      "type": "proposition",
+      "content": "In the absence of the vector, a, of random effects, Equation 19.1 reduces to a least-squares model, $ \\mathbf{y} = \\mathbf{X}\\beta + \\mathbf{e} $, and whether ordinary (unweighted) least-squares (OLS) or generalized (weighted) least-squares (GLS) analysis is used to estimate $ \\beta $ depends on our assumption about the covariance structure of the vector, e, of the residuals. OLS assumes that residuals are uncorrelated and homoscedastic, yielding $ \\mathbf{Var}(\\mathbf{e}) = \\sigma_e^2 \\mathbf{I} $. More generally, if $ \\mathbf{Var}(\\mathbf{e}) = \\mathbf{V} $, where the only constraint is that $ \\mathbf{V} $ be symmetric and positive-definite, then generalized GLS is used (Equation 19.3a)."
+    },
+    {
+      "type": "discussion",
+      "content": "In order to solve Equation 19.1, we need to specify the covariance structure for the vectors of random effects, a and e. As just noted, it is generally assumed that the residuals are uncorrelated and homoscedastic, so $ \\operatorname{Var}(\\mathbf{e}) = \\sigma_e^2 \\mathbf{I} $. The covariance of a (the vector of breeding values) has a more complicated structure, which is given by the pedigree, $ \\operatorname{Var}(\\mathbf{a}) = \\sigma_A^2 \\mathbf{A} $, with $ \\sigma(a_i, a_j) = \\sigma_A^2 A_{ij} $. Here $ \\mathbf{A} $ is a matrix of known constants (the numerator relationship matrix, often abbreviated as simply the relationship matrix), whose elements are given by the pedigree structure (or, more recently, from sufficiently dense marker information). The resulting $ n \\times n $ covariance matrix, $ \\mathbf{V} $, for the vector of observations, $ \\mathbf{y} $, becomes $$ \\mathbf{V}=\\sigma_{A}^{2}\\mathbf{Z}\\mathbf{A}\\mathbf{Z}^{T}+\\sigma_{e}^{2}\\mathbf{I} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "For the case of a single phenotypic measurement for each individual with no missing phenotypic data, $ \\mathbf{Z} = \\mathbf{I} $ and Equation 19.2a reduces to $ \\mathbf{V} = \\sigma_A^2 \\mathbf{A} + \\sigma_e^2 \\mathbf{I} $. More generally, when there are multiple observations per individual, or individuals with missing phenotypic data, then $ \\mathbf{Z} $ departs from an identity matrix (e.g., Example 19.5)."
+    },
+    {
+      "type": "discussion",
+      "content": "The covariance matrix, V, is thus a function of the (usually unknown) variance components ($ \\sigma_A^2 $ and $ \\sigma_e^2 $) and matrices of known constants (Z, A, and I). Because a is a vector of breeding values, we can alternatively express V as a function of the heritability ($ h^2 $) and the (fixed-effect-adjusted) phenotypic variance ($ \\sigma_z^2 = \\sigma_A^2 + \\sigma_e^2 $) of the trait of interest $$ \\mathbf{V}=\\sigma_{z}^{2}\\cdot\\left(h^{2}\\mathbf{Z}\\mathbf{A}\\mathbf{Z}^{T}+(1-h^{2})\\mathbf{I}\\right) $$ as $ \\sigma_e^2 = \\sigma_z^2 - \\sigma_A^2 = \\sigma_z^2(1 - h^2) $. Because our focus is generally on breeding values, any dominance variance gets swept into $ \\sigma_e^2 $. This potentially results in $ e_i $ values within families being correlated (due to full sibs sharing $ \\sigma_D^2/4 $), and we will discuss corrections for this shortly."
+    },
+    {
+      "type": "discussion",
+      "content": "Assuming V is known exactly, estimation of the vector, $ \\beta $, of fixed effects follows from GLS (LW Chapter 8) $$ \\hat{\\boldsymbol{\\beta}}=\\left(\\mathbf{X}^{T}\\mathbf{V}^{-1}\\mathbf{X}\\right)^{-1}\\mathbf{X}^{T}\\mathbf{V}^{-1}\\mathbf{y} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Equation 19.3a is called the best linear unbiased estimator (BLUE) of the vector, $ \\beta $, of fixed effects. The estimability of the fixed effects can be an issue, as the structure of the data (indicated by the number of independent columns—the column rank—of X) may not allow for unique estimates of all fixed effects. In such cases, generalized inverses can be used to obtain unique estimates of certain linear combinations of the fixed effects (LW Appendix 2). If X has a column rank of $ \\ell \\leq q $, then exactly $ \\ell $ combinations of the q fixed effects can be estimated; see LW Chapter 26, and LW Appendix 2, for further details. Finally, note that although the BLUEs are a function of V (and hence of $ \\sigma_A^2 $ and $ \\sigma_c^2 $), applying Equation 19.2b shows that the phenotypic variance, $ \\sigma_z^2 $, in V cancels out in Equation 19.3a ($ V^{-1} $ scales as $ 1/\\sigma_z^2 $, while the inverse of $ V^{-1} $ scales as $ \\sigma_z^2 $), leaving the BLUE estimate (for Equation 19.1) as a function of the heritability alone."
+    },
+    {
+      "type": "discussion",
+      "content": "If we again assume that V is exactly known, the best linear unbiased predictor (BLUP) of the vector of random effects is given by $$ \\hat{\\mathbf{a}}=\\mathbf{V}\\mathbf{a}\\mathbf{r}(\\mathbf{a})\\mathbf{Z}^{T}\\mathbf{V}^{-1}\\left(\\mathbf{y}-\\mathbf{X}\\widehat{\\boldsymbol{\\beta}}\\right)=\\sigma_{A}^{2}\\mathbf{A}\\mathbf{Z}^{T}\\mathbf{V}^{-1}\\left(\\mathbf{y}-\\mathbf{X}\\widehat{\\boldsymbol{\\beta}}\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The BLUPs for breeding values are often called PBVs or EBVs, for predicted or estimated breeding values. Equation 19.3b is the regression of a on $ (y - \\mathbf{X}\\beta) $, the vector of observations, y, adjusted for their expected mean values, $ \\mathbf{X}\\beta $. Recall that for the univariate regression predicting a from y, the scaling of $ (y - \\hat{y}) $ is given by the regression slope, $ \\sigma(a, y)/\\sigma^2(y) $. In Equation 19.3b, this scaling is of the form of the covariance matrix, $ \\sigma(\\mathbf{a}, \\mathbf{y}) = \\sigma(\\mathbf{a}, \\mathbf{Z}\\mathbf{a}) $."
+    },
+    {
+      "type": "discussion",
+      "content": "$ \\sigma_A^2 \\mathbf{A} \\mathbf{Z}^T $ times the inverse of $ \\mathbf{V} = \\sigma(\\mathbf{y}, \\mathbf{y}) $. Even if the number of random effects exceeds the number of actual observations (i.e., $ p > n $), Equation 19.3b still provides unique estimates of each (provided $ \\mathbf{V}^{-1} $ exists). This occurs because the $ p \\times p $ covariance structure (A) of the vector, $ \\mathbf{a} $, is incorporated in the model. As with the BLUEs, BLUPs are simply functions of $ h^2 $ as $ \\sigma_A^2 = h^2 \\sigma_z^2 $, while $ \\mathbf{V}^{-1} $ scales as $ 1/\\sigma_z^2 $. An alternative expression, due to Kennedy and Trus (1993), is $$ \\hat{\\mathbf{a}}=\\left(\\mathbf{Z}^{T}\\mathbf{M}\\mathbf{Z}+\\lambda\\mathbf{A}^{-1}\\right)^{-1}\\mathbf{Z}^{T}\\mathbf{M}\\mathbf{y} $$ where $ \\lambda = \\sigma_{e}^{2} / \\sigma_{A}^{2} = (1 - h^{2}) / h^{2} $, and $$ \\mathbf{M}=\\mathbf{I}-\\mathbf{X}\\left(\\mathbf{X}^{T}\\mathbf{X}\\right)^{-1}\\mathbf{X}^{T} $$ is the absorption matrix for the fixed effects, and the design matrix, X, assigns the fixed effects associated with any particular observation (Equation 19.1). As an aside $$ \\mathbf{H}=\\mathbf{X}\\left(\\mathbf{X}^{T}\\mathbf{X}\\right)^{-1}\\mathbf{X}^{T} $$ is referred to as the hat matrix (Hoaglin and Welsch 1978), because for an OLS estimate $$ \\hat{\\mathbf{y}}=\\mathbf{X}\\hat{\\boldsymbol{\\beta}}=\\mathbf{X}\\left(\\mathbf{X}^{T}\\mathbf{X}\\right)^{-1}\\mathbf{X}^{T}\\mathbf{y}=\\mathbf{H}\\mathbf{y} $$ and H maps the observed y values onto those predicted, $ \\hat{y} $, by the fixed effects. Hence $$ \\mathbf{M}\\mathbf{y}=(\\mathbf{I}-\\mathbf{H})\\mathbf{y}=\\mathbf{y}-\\widehat{\\mathbf{y}}=\\mathbf{y}-\\mathbf{X}\\widehat{\\boldsymbol{\\beta}} $$ are the adjusted values for y after the fixed effects have been removed, namely, the vector of the deviations of the observations, y, from their expected values, $ \\hat{y} $ (based on fixed effects only)."
+    },
+    {
+      "type": "discussion",
+      "content": "In practice, Equations 19.3a–19.3c are often not used, as they require the inversion of the potentially very large $ (n \\times n) $ matrix, V. As an alternative, $ \\widehat{\\beta} $ and $ \\widehat{a} $ can be obtained without computing an inverse by numerically solving (e.g., by applying Gaussian elimination to) Henderson's mixed-model equations, (derived in Example A6.5) $$ \\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{X}&\\mathbf{X}^{T}\\mathbf{Z}\\\\\\mathbf{Z}^{T}\\mathbf{X}&\\mathbf{Z}^{T}\\mathbf{Z}+\\lambda\\mathbf{A}^{-1}\\end{pmatrix}\\begin{pmatrix}\\widehat{\\beta}\\\\\\widehat{\\mathbf{a}}\\end{pmatrix}=\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{y}\\\\\\mathbf{Z}^{T}\\mathbf{y}\\end{pmatrix} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The careful reader might wonder why we worried so much about avoiding computing the inverse of V, given that the mixed-model equations contain A, which at first blush looks just as complicated to invert as V. In fact, however, A turns out to be very easy to invert, as a slight modification of the recursive approach used to compute A from a pedigree can be used to directly compute A $ ^{-1} $ (Henderson 1976; Quaas 1976)."
+    },
+    {
+      "type": "discussion",
+      "content": "The sampling variance-covariance matrices for $ \\hat{a} $ and $ \\beta $ also follow from the mixed-model equations. First we partition the inverse of the $ (p+q) \\times (p+q) $ matrix in Equation 19.4 as $$ \\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{X}&\\mathbf{X}^{T}\\mathbf{Z}\\\\\\mathbf{Z}^{T}\\mathbf{X}&\\mathbf{Z}^{T}\\mathbf{Z}+\\lambda\\mathbf{A}^{-1}\\end{pmatrix}^{-1}=\\begin{pmatrix}\\mathbf{C}_{11}&\\mathbf{C}_{12}\\\\\\mathbf{C}_{12}^{T}&\\mathbf{C}_{22}\\end{pmatrix} $$ where $C_{11}$, $C_{12}$, and $C_{22}$ are, respectively, $q \\times q$, $q \\times p$, and $p \\times p$ submatrices. Henderson (1975) showed that the $q \\times q$ covariance matrix for the BLUE vector of fixed effects, $\\beta$, is given by $$ \\mathbf{V a r}(\\widehat{\\beta})=\\sigma_{e}^{2}\\mathbf{C}_{11} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The variance of the predicted breeding values, $ \\hat{a} $, is a bit more subtle, as our real interest is not $ \\text{Var}(\\hat{a}) $, but rather the prediction error variances (PEVs), $ \\text{Var}(\\hat{a} - \\mathbf{a}) $. These are the variances and covariances among the vector of prediction errors ($ \\hat{a} - \\mathbf{a} $), and they are given by the $ p \\times p $ matrix $$ \\mathbf{V a r}(\\widehat{\\mathbf{a}}-\\mathbf{a})=\\sigma_{e}^{2}\\mathbf{C}_{22} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Note that $$ \\mathbf{V a r}(\\widehat{\\mathbf{a}})=\\mathbf{V a r}(\\widehat{\\mathbf{a}}-\\mathbf{a})+\\mathbf{V a r}(\\mathbf{a})=\\sigma_{e}^{2}\\mathbf{C}_{22}+\\sigma_{A}^{2}\\mathbf{A} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Following Equation 19.3c, Kennedy and Trus (1993) showed that we can also express Equation 19.5c as $$ \\mathbf{V a r}(\\widehat{\\mathbf{a}}-\\mathbf{a})=\\sigma_{e}^{2}\\left(\\mathbf{Z}^{T}\\mathbf{M}\\mathbf{Z}+\\lambda\\mathbf{A}^{-1}\\right)^{-1} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The prediction error variances for individual EBVs are not of serious interest in this chapter, as we measure selection response by taking the average of the EBVs over all individuals within each generation. However, individual EBVs can be important when we try to disentangle selection in natural populations, and we will revisit PEVs in Chapter 20."
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, the covariances between estimated fixed effects and prediction errors are $$ \\boldsymbol{\\sigma}(\\widehat{\\boldsymbol{\\beta}},\\widehat{\\mathbf{a}}-\\mathbf{a})=\\sigma_{e}^{2}\\mathbf{C}_{12} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Equations 19.5b–19.5f assume that both $ \\sigma_e^2 $ and $ \\lambda = \\sigma_e^2 / \\sigma_A^2 $ are known without error. When BLUP estimates are obtained using estimated values (e.g., $ \\hat{\\sigma}_e^2 $), this additional source of error further inflates the sampling variances. Bayesian methods (discussed below) accommodate this additional uncertainty."
+    },
+    {
+      "type": "discussion",
+      "content": "One concern is that the BLUPs and BLUEs obtained using these procedures may be biased by selection. However, Henderson (1975) showed that, provided variances are known, the estimates will be unbiased by selection when two conditions hold. First, selection decisions must be based on linear combinations of data (such as truncation selection based on individual phenotypes or a linear index based on the phenotypes of an individual and its relatives). Second, that the model must use estimates of fixed effects that are unbiased when selection is absent. These conditions hold under many reasonable forms of artificial selection."
+    }
+  ]
+}

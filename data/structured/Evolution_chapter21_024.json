@@ -1,0 +1,75 @@
+{
+  "id": "Evolution_chapter21_024",
+  "metadata": {
+    "chapter": "Evolution_chapter21",
+    "section": "EFFICIENCY OF FAMILY-BASED VS. INDIVIDUAL SELECTION",
+    "subsections": [
+      "The Relative Accuracies of Family-based vs. Individual Selection"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter21_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "EFFICIENCY OF FAMILY-BASED VS. INDIVIDUAL SELECTION",
+    "section_level_2": "The Relative Accuracies of Family-based vs. Individual Selection",
+    "heading_path": [
+      "EFFICIENCY OF FAMILY-BASED VS. INDIVIDUAL SELECTION",
+      "The Relative Accuracies of Family-based vs. Individual Selection"
+    ],
+    "display_heading": "The Relative Accuracies of Family-based vs. Individual Selection"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Relative accuracies are typically expressed in terms of the phenotypic correlation, $t$, between sibs and their coefficient of relatedness, $r$. Under the simple environmental model ($E = E_c + E_s$), the variance of family means is $\\sigma^2(\\mu_i) = t\\sigma_z^2 = \\sigma_{GF}^2 + \\sigma_{Ec}^2$. Hence, $$ t=\\frac{\\sigma_{GF}^{2}}{\\sigma_{z}^{2}}+\\frac{\\sigma_{Ec}^{2}}{\\sigma_{z}^{2}}=\\frac{r\\sigma_{A}^{2}}{\\sigma_{z}^{2}}+\\frac{\\left(\\sigma_{GF}^{2}-r\\sigma_{A}^{2}\\right)+\\sigma_{Ec}^{2}}{\\sigma_{z}^{2}}=r h^{2}+\\frac{\\left(\\sigma_{GF}^{2}-r\\sigma_{A}^{2}\\right)+\\sigma_{Ec}^{2}}{\\sigma_{z}^{2}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "In the absence of epistasis, Equation 21.11a yields $$ t=r h^{2}+c^{2},\\quad\\mathrm{w i t h}\\quad c^{2}\\sigma_{z}^{2}=\\left\\{\\begin{aligned}&\\sigma_{E c(H S)}^{2}\\quad&\\mathrm{h a l f-s i b s}\\\\ &\\frac{1}{4}\\sigma_{D}^{2}+\\sigma_{E c(F S)}^{2}\\quad&\\mathrm{f u l l-s i b s}\\end{aligned}\\right. $$ where $ c^2 $ scales the residual among-family variance (upon removal of any shared additive variance). Figures 21.4 and 21.5 plot the relative accuracies and responses under among-family (family selection) and within-family (family-deviations) selection. Note that if $ c = 0 $, then $ t = rh^2 $, which is bounded above by $ 1/4 $ in half-sibs and $ 1/2 $ in full-sibs (because $ h^2 \\leq 1 $, it follows that $ t \\leq r $). For $ t $ to exceed $ r $ requires that $ c > 0 $."
+    },
+    {
+      "type": "discussion",
+      "content": "What are the exact conditions for a particular method to be more accurate than individual selection? Equation 21.35a shows that among-family selection is more accurate when $ \\gamma^{2} > t_{n} $, or $$ t_{n}=t+\\frac{1-t}{n}=\\left(r h^{2}+c^{2}\\right)\\left(1-\\frac{1}{n}\\right)+\\frac{1}{n}<\\gamma^{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "For values of $n$ that are moderate to large (such that $t_n \\simeq t$), among-family selection is more accurate than mass selection when $c^2$, the fraction of the total due to residual among-family effects, is sufficiently small. Substituting the value of $\\gamma$ associated with a particular selection scheme (Equation 21.14b) into Equation 21.37a (for moderate to large values of $n$) yields the condition for among-family selection to be more accurate than individual selection as $$ c^{2}<\\left\\{\\begin{aligned}&\\frac{1}{16}\\left(1-4h^{2}\\right)&\\text{half-sibs(for family and sib selection;\\gamma=1/4)}\\\\&\\frac{1}{4}\\left(1-h^{2}\\right)&\\text{half-sibs(for parental and S_{1} seed selection;\\gamma=1/2)}\\\\&\\frac{1}{4}\\left(1-2h^{2}\\right)&\\text{full-sibs}(\\gamma=1/2)\\end{aligned}\\right. $$"
+    },
+    {
+      "type": "discussion",
+      "content": "If $ h^2 > 1/2 $, the condition given by Equation 21.37b when full-sibs comprise the selection unit becomes $ c^2 < 0 $, and among-family selection is always less efficient than individual selection. With half-sibs comprising the selection unit, family- and sib-selection are always less efficient than individual selection when $ h^2 > 1/4 $. Among-family selection is, therefore, only more effective than mass selection when heritability is small and the fraction, $ c^2 $, of total variation due to common-family residual variation is also small."
+    },
+    {
+      "type": "discussion",
+      "content": "Turning to within-family selection, Equation 21.35b shows that family deviations (FD) selection yields a larger response than individual selection when $ (1 - r_n)/\\sqrt{1 - t_n} > 1 $. When families are large $ (n \\gg 1 $, such that $ t_n \\simeq t $ and $ r_n \\simeq r $), this condition reduces to $$ t=rh^{2}+c^{2}>1-(1-r)^{2} $$ $$ c^{2}>1-\\left(1-r\\right)^{2}-r h^{2}=\\left\\{\\begin{array}{ll}\\displaystyle\\frac{7}{16}-\\frac{h^{2}}{4}&half-sibs(r=1/4)\\\\ \\displaystyle\\frac{3}{4}-\\frac{h^{2}}{2}&full-sibs(r=1/2)\\end{array}\\right. $$ or Because $ h^2 + c^2 \\leq 1 $ (both being fractions of the total variance due to different sources), there is an additional constraint that $ 1 - h^2 \\geq c^2 $. When $ h^2 > 0.75 $, within-family (half-sib) selection is always less efficient than individual selection, as here $ c^2 \\leq 1 - h^2 = 0.25 $, while the critical $ c^2 $ value that must be exceeded is $ 0.25 \\left[\\left(\\frac{7}{16} \\right) - \\left(\\frac{3}{4} \\right) / 4 \\right] = \\frac{1}{4} $. By the same logic, for full-sibs, individual selection is more efficient than within-family selection whenever $ h^2 > 0.5 $. Because we assumed that $ n $ is large, $ r $ and $ t $ replace $ r_n $ and $ t_{n_r} $, respectively, and hence Equations 21.38a and 21.38b are also the conditions for strict within-family (WF) selection. Within-family selection is thus more efficient than individual selection only when the heritability is low and the residual among-family variance $ (c^{2}\\sigma_{z}^{2}) $ accounts for a very significant fraction of the total variance; in other words, common-family effects account for much of the phenotypic variance."
+    },
+    {
+      "type": "discussion",
+      "content": "Willeke (1982) suggested that an excellent candidate trait for within-family selection would be litter size in pigs. Recall (Chapter 15) that mice from large litters tend to have a negative environmental value for litter size. Given that the heritability estimates for pig litter size from a grandmother-granddaughter regression are higher than those based on a mother-daughter regression, a similar situation likely occurs in pigs. Thus, there is a large family contribution that obscures prediction of the breeding value from the phenotypic value, resulting in the female's ranking within a family being a more informative predictor of her breeding value than her phenotypic value."
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:21.8]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, it is informative to compare methods using the heritability version of response, $ R_{x} = h_{x}^{2} S_{x} $. From Equation 21.23, the within-family heritability exceeds the individual heritability when 1 - r > 1 - t. Hence, $$ h_{w}^{2}>h^{2}\\quad when\\quad t>r $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Likewise, from Equation 21.15b, the among-family heritability satisfies $$ h_{b}^{2}>h^{2}\\quad when\\quad\\gamma>t_{n} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The careful reader may have noticed that these conditions are rather different from those given by Equations 21.37a and 21.38a. For example, Equation 21.37a implies that among-family selection yields a larger response than individual selection when $ \\gamma > \\sqrt{t_n} $, whereas Equation 21.39b implies that the among-family heritability is greater than $ h^2 $ when $ \\gamma > t_n $. What is the discrepancy between these two approaches (accuracies versus heritabilities)?"
+    },
+    {
+      "type": "discussion",
+      "content": "The key is that the variances of the groups being selected differ. Because $ \\sigma_z^2 = \\sigma_b^2 + \\sigma_{w} $, the among-family and within-family variances are each less than the phenotypic variance of a random individual. Because $ S_x = \\bar{x}\\sigma_x $, larger selection intensities are required to give a family-based approach the same selection differential as individual selection. Because the within- and among-family variances are $ (1 - t_n)\\sigma_z^2 $ and $ t_n\\sigma_z^2 $, respectively, it follows that $$ \\frac{S_{b}}{S_{m}}=\\frac{\\bar{i}_{b}\\sigma_{b}}{\\bar{i}_{m}\\sigma_{z}}=\\frac{\\bar{i}_{b}}{\\bar{i}_{m}}\\sqrt{t_{n}}\\quad\\mathrm{a n d}\\quad\\frac{S_{w}}{S_{m}}=\\frac{\\bar{i}_{w}\\sigma_{w}}{\\bar{i}_{m}\\sigma_{z}}=\\frac{\\bar{i}_{w}}{\\bar{i}_{m}}\\sqrt{1-t_{n}} $$"
+    },
+    {
+      "type": "proposition",
+      "content": "Under identical selection intensities, the differentials for among- and within-family selection are $ \\sqrt{f_n} $ and $ \\sqrt{1 - t_n} $, respectively, of the differential under mass selection. Thus, even when $ h_w^2 $ or $ h_b^2 $ exceeds $ h^2 $, this advantage is partially countered by smaller selection differentials due to smaller variances. The contrast of heritabilities as a comparison of expected response assumes that there is the same selection differential, and thus has a hidden assumption of more selection under family-based selection, as the presence of identical S values implies a larger value of $ \\bar{\\tau} $ for family-based selection (Equation 21.39c)."
+    }
+  ]
+}

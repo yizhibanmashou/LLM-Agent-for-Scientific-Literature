@@ -1,0 +1,35 @@
+{
+  "id": "Evolution_chapter18_007",
+  "metadata": {
+    "chapter": "Evolution_chapter18",
+    "section": "REALIZED HERITABILITIES",
+    "subsections": [
+      "Weighted Least-squares Estimates of Realized Heritability"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter18_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "REALIZED HERITABILITIES",
+    "section_level_2": "Weighted Least-squares Estimates of Realized Heritability",
+    "heading_path": [
+      "REALIZED HERITABILITIES",
+      "Weighted Least-squares Estimates of Realized Heritability"
+    ],
+    "display_heading": "Weighted Least-squares Estimates of Realized Heritability"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Ordinary least-squares regression assumes that the residuals are homoscedastic and uncorrelated, yielding a covariance matrix for the vector of residuals, e, as $ \\operatorname{Var}(e) = \\sigma_e^2 \\cdot \\mathbf{I} $ (LW Chapter 8). Genetic drift causes the residual covariance structure of the regression given by Equation 18.13 to depart significantly from this simple form. In particular, the residual variance increases with time (Equation 18.8) and residuals from different generations within a given line are correlated (Equation 18.9). Thus, $ \\operatorname{Var}(e) $ is not simply $ \\sigma_e^2 \\cdot \\mathbf{I} $, and generalized least-squares (GLS) must be used to account for the overall covariance structure. From LW Equation 8.34, the GLS estimator of the regression slope is given by $$ \\widehat{b}_{C}(\\mathrm{GLS})=(\\mathbf{S}^{T}\\mathbf{V}^{-1}\\mathbf{S})^{-1}\\mathbf{S}^{T}\\mathbf{V}^{-1}\\mathbf{R} $$ where V is the variance-covariance matrix associated with selection response, with elements $$ V_{ij}=\\sigma_{e}(i,j)=\\sigma\\left[R_{C}(i),R_{C}(j)\\right] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The elements of V can be obtained from the pure-drift approximation, with the variances, $ V_{ii} $, given by Equation 18.8 and the covariances, $ V_{ij} $, by Equation 18.9, yielding $$ V_{ij}=\\left\\{\\begin{array}{ll}\\left(\\frac{1}{M_{0}}+2f_{i}\\right)h^{2}\\sigma_{z}^{2}+\\sigma_{z}^{2}/M_{i}&for i=j\\\\\\left(\\frac{1}{M_{0}}+2f_{i}\\right)h^{2}\\sigma_{z}^{2}&for i<j\\end{array}\\right. $$ where $ 2f_i \\simeq i/N_e $ (Equation 18.5). If differences in environmental values across generations are not accommodated for by the design, then $ V_{ii} $ has an additional term, $ \\sigma_b^2 $, reflecting random changes in the environment that influence the mean trait value (as discussed below, the use of control lines can often remove this term). Even though OLS assumes an incorrect residual structure, it still provides an unbiased estimate of $ b_C $. However, OLS significantly underestimates the standard error of $ b_C $, and it is for this reason that GLS estimators should be used whenever possible (Hill 1971, 1972c, 1972d, 1974b, 1977a, 1980, 1986)."
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:18.3]]"
+    }
+  ]
+}

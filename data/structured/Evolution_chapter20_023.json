@@ -1,0 +1,51 @@
+{
+  "id": "Evolution_chapter20_023",
+  "metadata": {
+    "chapter": "Evolution_chapter20",
+    "section": "APPLYING MIXED MODELS TO NATURAL POPULATIONS",
+    "subsections": [
+      "Bivariate Animal Models: REML Estimates of $ \\sigma(A_{z}, A_{w}), S_{A} $, and $ S_{z} $"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter20_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "APPLYING MIXED MODELS TO NATURAL POPULATIONS",
+    "section_level_2": "Bivariate Animal Models: REML Estimates of $ \\sigma(A_{z}, A_{w}), S_{A} $, and $ S_{z} $",
+    "heading_path": [
+      "APPLYING MIXED MODELS TO NATURAL POPULATIONS",
+      "Bivariate Animal Models: REML Estimates of $ \\sigma(A_{z}, A_{w}), S_{A} $, and $ S_{z} $"
+    ],
+    "display_heading": "Bivariate Animal Models: REML Estimates of $ \\sigma(A_{z}, A_{w}), S_{A} $, and $ S_{z} $"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "LW Chapter 26 introduced the multivariate animal model, in which a set of potentially correlated traits is measured in a pedigree of individuals. For trait j, a standard animal model is fit, $$ \\mathbf{y}_{j}=\\mathbf{X}_{j}\\mathbf{b}_{j}+\\mathbf{Z}_{j}\\mathbf{a}_{j}+\\mathbf{e}_{j} $$ where $ X_j $ and $ Z_j $ are, respectively, the design and incidence matrices (Chapter 19; LW Chapter 26) associated with trait $ j $, $ a_j $ is the vector of breeding values for trait $ j $, and the covariance model for the random effects associated with $ j $ is $$ \\begin{pmatrix}\\mathbf{a}_{j}\\\\\\mathbf{e}_{j}\\end{pmatrix}\\sim\\begin{pmatrix}\\mathbf{0}\\\\\\mathbf{0}\\end{pmatrix},\\begin{pmatrix}\\sigma^{2}(A_{j})\\mathbf{A}&\\mathbf{0}\\\\\\mathbf{0}&\\sigma^{2}(e_{j})\\mathbf{I}\\end{pmatrix} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Consider the bivariate case, where $ y_1 = z $ is the vector of phenotypes for the trait of interest and $ y_2 = w $ is the vector of corresponding relative fitnesses, so $ (z_i, w_i) $ are the values of the focal trait and relative fitness for individual $ i $. The resulting bivariate mixed model becomes $$ \\begin{pmatrix}\\mathbf{y}_{1}\\\\\\mathbf{y}_{2}\\end{pmatrix}=\\begin{pmatrix}\\mathbf{z}\\\\\\mathbf{w}\\end{pmatrix}=\\begin{pmatrix}\\mathbf{X}_{z}&\\mathbf{0}\\\\\\mathbf{0}&\\mathbf{X}_{w}\\end{pmatrix}\\begin{pmatrix}\\mathbf{b}_{z}\\\\\\mathbf{b}_{w}\\end{pmatrix}+\\begin{pmatrix}\\mathbf{Z}_{z}&\\mathbf{0}\\\\\\mathbf{0}&\\mathbf{Z}_{w}\\end{pmatrix}\\begin{pmatrix}\\mathbf{a}_{z}\\\\\\mathbf{a}_{w}\\end{pmatrix}+\\begin{pmatrix}\\mathbf{e}_{z}\\\\\\mathbf{e}_{w}\\end{pmatrix} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Note that the structure of this model allows the trait and fitness to have different fixed effects. The model can logically be extended to include more complex designs, such as maternal effects or repeated measures (e.g., Morrissey et al. 2012). The resulting covariance structure for the stacked vector of breeding values is $$ \\boldsymbol{\\sigma}\\left(\\mathbf{a}\\right)=\\boldsymbol{\\sigma}\\begin{pmatrix}\\mathbf{a}_{z}\\\\ \\mathbf{a}_{w}\\end{pmatrix}=\\begin{pmatrix}\\boldsymbol{\\sigma}^{2}(A_{z})\\mathbf{A}&\\boldsymbol{\\sigma}(A_{z},A_{w})\\mathbf{A}\\\\ \\boldsymbol{\\sigma}(A_{z},A_{w})\\mathbf{A}&\\boldsymbol{\\sigma}^{2}(A_{w})\\mathbf{A}\\end{pmatrix}=\\mathbf{G}\\otimes\\mathbf{A} $$ where $ \\otimes $ denotes the Kronecker (or direct) product (LW Chapter 26) and $$ \\mathbf{G}=\\begin{pmatrix}\\sigma^{2}(A_{z})&\\sigma(A_{z},A_{w})\\\\ \\sigma(A_{z},A_{w})&\\sigma^{2}(A_{w})\\end{pmatrix} $$ is the matrix of genetic covariances of interest. Similarly, the covariance structure for the stacked vectors of residuals is $$ \\boldsymbol{\\sigma}\\begin{pmatrix}\\mathbf{e}_{z}\\\\ \\mathbf{e}_{w}\\end{pmatrix}=\\mathbf{E}\\otimes\\mathbf{I},\\quad\\mathrm{w h e r e}\\quad\\mathbf{E}=\\begin{pmatrix}\\sigma^{2}(e_{z})&\\sigma(e_{z},e_{w})\\\\ \\sigma(e_{z},e_{w})&\\sigma^{2}(e_{w})\\end{pmatrix} $$"
+    },
+    {
+      "type": "proposition",
+      "content": "Finally, we need to specify any covariances between a and e. By construction $ \\sigma(A_{z}, e_{z}) = \\sigma(A_{w}, e_{w}) = 0 $, while the standard assumption is $ \\sigma(A_{z}, e_{w}) = \\sigma(A_{w}, e_{z}) = 0 $, yielding an assumed covariance structure of $$ \\sigma\\begin{pmatrix}{{{\\mathbf{a}_{z}}}} \\\\{{{\\mathbf{a}_{w}}}} \\\\{{{\\mathbf{e}_{z}}}} \\\\{{{\\mathbf{e}_{w}}}}\\end{pmatrix}=\\begin{pmatrix}{{{\\mathbf{G}\\otimes\\mathbf{A}}}}&{{{\\mathbf{0}}}} \\\\{{{\\mathbf{0}}}}&{{{\\mathbf{E}\\otimes\\mathbf{I}}}}\\end{pmatrix} $$"
+    },
+    {
+      "type": "proposition",
+      "content": "The resulting six variance components for G (Equation 20.27c) and E (Equation 20.27d) are estimated by REML, and these components are our main interest. For example, $ \\sigma(A_z, A_w) $ is the expected selection response under the 1968 version of Robertson's theorem (Equation 6.24a). From the assumption that $ \\sigma(A_z, e_w) = \\sigma(A_w, e_z) = 0 $, $$ S_{z}=\\sigma(z,w)=\\sigma(A_{z}+e_{z},A_{w}+e_{w})=\\sigma(A_{z},A_{w})+\\sigma(e_{z},e_{w}) $$ is a direct estimate of the selection differential on the phenotypic value $ (z) $ of the focal trait, while $$ S_{A}=\\sigma(A_{z},w)=\\sigma(A_{z},A_{w}+e_{w})=\\sigma(A_{z},A_{w}) $$ is an estimate of the selection differential on the breeding value $ (A_z) $ of the focal trait. By using these variance components directly, we avoid the pitfalls associated with working with individual PBVs, and Postma's (Equation 20.18) and Morrissey's (Equation 20.21c) consistency conditions are easily computed from these variance components. Ideally, this is done within a Bayesian setting, so that the posterior distribution reflects all of the model uncertainty (from pedigree estimation on down). For example, draws from the MCMC sampler for such an analysis (Appendix 3) can be used to compute the posterior distribution of (say) $ S_A - h^2 S_z $, and thus test whether there is sufficient support to include (consistent with $ S_A = h^2 S_z $) or exclude (consistent with $ S_A \\neq h^2 S_z $) a zero value for the difference, $ S_A - h^2 S_z $."
+    },
+    {
+      "type": "proposition",
+      "content": "Removing the assumption that $ \\sigma(A_{z}, e_{w}) = \\sigma(A_{w}, e_{z}) = 0 $, the covariance structure given by Equation 20.27e is replaced by $$ \\boldsymbol{\\sigma}\\begin{pmatrix}\\mathbf{a}_{z}\\\\ \\mathbf{a}_{w}\\\\ \\mathbf{e}_{z}\\\\ \\mathbf{e}_{w}\\end{pmatrix}=\\begin{pmatrix}\\mathbf{G}\\otimes\\mathbf{A}&\\mathbf{C}\\\\ \\mathbf{C}^{T}&\\mathbf{E}\\otimes\\mathbf{I}\\end{pmatrix} $$ where $$ \\mathbf{C}=\\begin{pmatrix}\\boldsymbol{\\sigma}(\\mathbf{a}_{z},\\mathbf{e}_{z})&\\boldsymbol{\\sigma}(\\mathbf{a}_{z},\\mathbf{e}_{w})\\\\\\boldsymbol{\\sigma}(\\mathbf{a}_{w},\\mathbf{e}_{z})&\\boldsymbol{\\sigma}(\\mathbf{a}_{w},\\mathbf{e}_{w})\\end{pmatrix}=\\begin{pmatrix}\\mathbf{0}&\\boldsymbol{\\sigma}(A_{z},e_{w})\\mathbf{A}\\\\\\boldsymbol{\\sigma}(A_{w},e_{z})\\mathbf{A}&\\mathbf{0}\\end{pmatrix} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "These two additional variance components allow us to use the more general consistency condition given by Equation 20.21b. Likewise, to apply Postma's test (Equation 20.18), the phenotypic and breeding-value selection differentials now become $$ S_{z}=\\sigma(A_{z},A_{w})+\\sigma(e_{z},e_{w})+\\sigma(A_{z},e_{w})+\\sigma(A_{w},e_{z}) $$ and $$ S_{A}=\\sigma(A_{z},A_{w})+\\sigma(A_{z},e_{w}) $$"
+    }
+  ]
+}

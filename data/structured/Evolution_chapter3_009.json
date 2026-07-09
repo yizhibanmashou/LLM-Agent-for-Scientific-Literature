@@ -1,0 +1,51 @@
+{
+  "id": "Evolution_chapter3_009",
+  "metadata": {
+    "chapter": "Evolution_chapter3",
+    "section": "The Genetic Effective Size of a Population: Introduction",
+    "subsections": [
+      "POPULATION SUBDIVISION"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter3_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "The Genetic Effective Size of a Population: Introduction",
+    "section_level_2": "POPULATION SUBDIVISION",
+    "heading_path": [
+      "The Genetic Effective Size of a Population: Introduction",
+      "POPULATION SUBDIVISION"
+    ],
+    "display_heading": "POPULATION SUBDIVISION"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Although few species exhibit internal isolation as extreme as that just noted, many (probably most) species occupy spatially structured environments. Such structure causes local inbreeding, as mates are more related than random pairs from the entire population. One of the simplest models of population structure is Wright's (1951) island model, introduced in Chapter 2 (Figure 2.11). Here, the metapopulation consists of $ d $ demes, each containing a fixed number $ N $ of randomly mating individuals with idealized Wright-Fisher properties, and each deme contributes an equal fraction $ m $ of its genes to the migrant pool, which is then equally distributed among the remaining demes. Under this model, an equilibrium level of population divergence is eventually reached (Equation 2.46), at which point the increase in divergence resulting from within-deme genetic drift is balanced by the exchange of alleles by migration."
+    },
+    {
+      "type": "discussion",
+      "content": "Recalling from Chapter 2 that the mean coalescence time for an ideal, random-mating population is 2N generations, Equation 2.45b (giving the mean coalescence time under this population structure) implies an effective size for the overall metapopulation of $$ N_{e}=Nd+\\frac{(d-1)^{2}}{4dm} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "In this simplest case, we see that the effective size of a metapopulation exceeds the sum of the demic effective sizes (Nd) by an amount approaching $ d/(4m) $ when the number of demes is large. With low migration rates ($ m \\ll 1 $), this inflation can be substantial. For example, if $ m < 1/(4N) $, $ N_e $ exceeds twice the total number of breeding adults (2Nd). This confirms Robertson's (1964) argument that population subdivision can reduce the overall rate of loss of variation by drift as unique alleles are sequestered within individual demes. However, numerous authors have pointed out that this inflation of $ N_e $ in the ideal island model is a special consequence of the absence of variation in deme productivity (analogous to the consequences of constant family sizes within a single population, noted above)."
+    },
+    {
+      "type": "discussion",
+      "content": "The next simplest type of island model allows for extinction and recolonization of the individual demes. In each generation, a fraction $e$ of the demes goes extinct, but immediate recolonization ensures the maintenance of a fixed number $(d)$ of demes. Tracing back to Slatkin (1977) and Maruyama and Kimura (1980), most attempts to model this process have assumed that the newly colonized deme is immediately restored to size $N$ in a single generation, with recolonization involving $k$ immigrants either derived from a single random deme (the propagule-pool model) or from a random pool of migrants from the entire metapopulation (the migrant-pool model). This simple modification results in a reduction in $N_{e}$ for the metapopulation by inducing variation in productivity among the demes surviving in each generation—demes that contribute to a colonization event experience a burst of productivity relative to demes that do not."
+    },
+    {
+      "type": "discussion",
+      "content": "Using the logic noted above, approximate expressions for mean coalescence times for metapopulations experiencing extinction and recolonization (Pannell and Charlesworth 1999) yield formulae for the metapopulation $ N_e $. Such expressions are functions of the relative rates of extinction and migration and the size and type of colonizing pool, and we only give two examples for the propagule-pool model. If the extinction rate is smaller than the migration rate ($ e \\leq m $) and much smaller than the relative size of the colonizing pool ($ e \\ll k/N $), $$ N_{e}\\simeq N d\\frac{\\left[4m+(1/N)\\right]}{4(e+m)} $$ a result also obtained by Maruyama and Kimura (1980) and Whitlock and Barton (1997). Under these conditions, local extinctions are sufficiently rare that within-deme variation is able to recover substantially by migration between bottleneck events, and although $ N_e < N_d $, it approaches the latter value as $ e \\to 0 $ unless $ N $ is tiny. On the other hand, if the extinction rate is relatively high, such that $ e \\gg m $ and $ e \\gg k/N $, $$ N_{e}\\simeq\\frac{d}{4e} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "In this case, extinctions are so frequent that local demes (reestablished from a small number of colonists and experiencing little immigration) are almost completely inbred, and the total effective size is independent of the number of individuals per deme and simply defined by deme number and average deme longevity ($ e^{-1} $ generations)."
+    },
+    {
+      "type": "discussion",
+      "content": "A more general expression for the effective size of a metapopulation under the island model was derived by Whitlock and Barton (1997). Assuming large $d$, so that $d \\simeq d - 1$ as a first-order approximation, $$ N_{e}\\simeq\\frac{d(1+4N m)}{4m+2\\sigma_{K}^{2}(1+2m)} $$ where $ \\sigma_K^2 $ denotes the among-deme variance in the number of gametes contributing to the next generation (the analogue for the variance $ \\sigma_k^2 $ in individual contributions). Comparing this expression to Equation 3.26, it can be seen that $ \\sigma_K^2 > 0 $ will always cause a reduction in $ N_e $. In addition, for $ N_e $ to be less than the total metapopulation size $ 2N_d $, $ \\sigma_K^2 $ need only be larger than $ 1/(2N) $. This amount of among-deme variance in gamete production is trivial, as even under ideal conditions in which individual family sizes are Poisson distributed, the variance in total deme productivity will be on the order of $ 2/N $. This follows from the fact, noted above, that within an ideal random-mating deme, $ \\sigma_k^2 = 2 $, so that at the deme level, $ \\sigma_K^2 = 2/N $. Thus, it appears that population subdivision will almost always result in a reduction in $ N_{e} $, provided the individual demes are not completely isolated, a point first made by Wright (1940; see also Nunney 1999)."
+    }
+  ]
+}

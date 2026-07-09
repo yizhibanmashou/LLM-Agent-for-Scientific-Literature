@@ -1,0 +1,40 @@
+{
+  "id": "Genetics_chapter27_001",
+  "metadata": {
+    "chapter": "Genetics_chapter27",
+    "section": "Variance-Component Estimation with Complex Pedigrees",
+    "subsections": [],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter27_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Variance-Component Estimation with Complex Pedigrees",
+    "section_level_2": null,
+    "heading_path": [
+      "Variance-Component Estimation with Complex Pedigrees"
+    ],
+    "display_heading": "Variance-Component Estimation with Complex Pedigrees"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "In the numerous forms of analysis of variance (ANOVA) discussed in previous chapters, variance components were estimated by equating observed mean squares to expressions describing their expected values, these being functions of the variance components. ANOVA has the nice feature that the estimators for the variance components are unbiased regardless of whether the data are normally distributed, but it also has two significant limitations. First, field observations often yield records on a variety of relatives, such as offspring, parents, or sibs, that cannot be analyzed jointly with ANOVA. Second, ANOVA estimates of variance components require that sample sizes be well balanced, with the number of observations for each set of conditions being essentially equal. In field situations, individuals are often lost, and even the most carefully crafted balanced design can quickly collapse into an extremely unbalanced one. Although modifications to the ANOVA sums of squares have been proposed to account for unbalanced data (Henderson 1953, Searle et al. 1992), their sampling properties are poorly understood."
+    },
+    {
+      "type": "discussion",
+      "content": "Unlike ANOVA estimators, maximum likelihood (ML) and restricted maximum likelihood (REML) estimators do not place any special demands on the design or balance of data. Such estimates are ideal for the unbalanced designs that arise in quantitative genetics, as they can be obtained readily for any arbitrary pedigree of individuals. Since many aspects of ML and REML estimation are quite difficult technically, the detailed mathematics can obscure the general power and flexibility of the methods. Therefore, our main concern is to make the theory more accessible to the nonspecialist, and as a consequence, we are not as thorough in our coverage of the literature as in previous chapters. Also, unlike elsewhere in this book, we occasionally rely upon mathematical machinery (such as matrix derivatives) that is not fully developed here (see Appendix 3 for an introduction). This chapter is mathematically difficult in places, and the reader will do well to review some of the advanced topics in Chapter 8 (such as the multivariate normal and expectations of quadratic products) and Appendix 4."
+    },
+    {
+      "type": "discussion",
+      "content": "We start at a relatively elementary level, providing a simple example to show how ML and REML procedures can be used to estimate variance components and how these estimates differ. We then develop the ML and REML equations for variance-component estimation under the general mixed model (introduced in Chapter 26). Extension of these methods to multiple traits, wherein full covariance matrices, rather than single variance components, must be estimated, are then reviewed. We conclude our coverage of ML/REML by examining a number of computational methods for solving the ML/REML equations."
+    },
+    {
+      "type": "discussion",
+      "content": "ML/REML methods provide a powerful approach to estimating variance components in populations with complex but known pedigrees. In studies of natural populations, however, the relationships between individuals are often uncertain. We close the book with a brief discussion of a new and conceptually simple procedure that yields estimates of variance components using relatedness estimates indirectly inferred from information on molecular markers. This exciting development is of potentially great utility for the quantitative-genetic analysis of natural populations in undisturbed settings."
+    },
+    {
+      "type": "discussion",
+      "content": "While our focus is largely on the estimation of additive genetic and environmental variances, we remind the reader that ML/REML analysis can be applied to a wide variety of issues (as was the case with BLUP), including those involving the estimation of nonadditive genetic variances (Henderson 1985b), mutational variances (Wray 1990), genetic covariances across environments (Platenkamp and Shaw 1992), and maternal and cytoplasmic genetic variances (Southwood et al. 1989)."
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "id": "Evolution_chapter23_011",
+  "metadata": {
+    "chapter": "Evolution_chapter23",
+    "section": "FAMILY SELECTION WITH INBREEDING AND RANDOM MATING",
+    "subsections": [
+      "$ S_{1}, S_{2}, \\text{and } S_{i,j} $ Family Selection"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter23_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [
+      "11.1",
+      "23.1",
+      "23.2",
+      "23.3",
+      "inline_2"
+    ],
+    "section_level_1": "FAMILY SELECTION WITH INBREEDING AND RANDOM MATING",
+    "section_level_2": "$ S_{1}, S_{2}, \\text{and } S_{i,j} $ Family Selection",
+    "heading_path": [
+      "FAMILY SELECTION WITH INBREEDING AND RANDOM MATING",
+      "$ S_{1}, S_{2}, \\text{and } S_{i,j} $ Family Selection"
+    ],
+    "display_heading": "$ S_{1}, S_{2}, \\text{and } S_{i,j} $ Family Selection",
+    "table_reference_keys": [
+      "Evolution_chapter11:11.1",
+      "Evolution_chapter23:23.1",
+      "Evolution_chapter23:23.2",
+      "Evolution_chapter23:23.3",
+      "Evolution_chapter23:inline_2"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Another scheme for family selection using inbreeding is $ S_1 $ family selection, wherein an (outbred) individual is selfed, and the family mean of the selfed progeny is used for selection decisions (i.e., individuals are chosen based on the mean trait value of their $ S_1 $ family). This scheme takes two generations. In the first generation, the selfed seed must be grown for scoring families. An additional generation is then required for remnant $ S_1 $ seeds from superior families to be grown and outcrossed to form the start of the next cycle of selection. Note that $ S_1 $ family selection is different from $ S_1 $ seed selection (the latter is discussed in Chapter 21). While seed selection also uses remnant $ S_1 $ seeds as the recombination unit, the tested family under $ S_1 $ seed selection consists of outbred half-sibs, rather than the $ S_1 $-sibs used in family selection."
+    },
+    {
+      "type": "discussion",
+      "content": "Selection can also be based on $ S_2 $ families. Under classical $ S_2 $ family selection, an outbred individual is selfed to form an $ S_1 $, with a single $ S_1 $ plant selfed again to form the $ S_2 $ family (upon which selection decisions are made, i.e., the selection unit is an $ S_2 $ family). Remnant seed from the $ S_1 $ is used as the recombination unit, with seed from superior families grown and crossed at random to start the next cycle of selection. There is the potential for ambiguity with $ S_2 $ selection, as either: (i) the family to be tested could be (as above), the progeny from a single $ S_1 $ individual; or (ii) they could be a collection of progeny from a set of $ S_1 $ individuals. Because of this ambiguity, we use a modification of the notation suggested by Wricke and Weber (1986) and consider $ S_{i,j} $ family selection (Wricke and Weber used $ I_{i,j} $). Here $ j $ denotes the generations of inbreeding in the tested family and $ i $ denotes the generations of inbreeding for the founding individual for that family. Hence, $ S_1 $ family selection becomes $ S_{0,1} $ selection (the selfed progeny from a noninbred plant) and classical $ S_2 $ family selection becomes $ S_{1,2} $ (the selfed progeny from a single $ S_1 $), while $ S_{0,2} $ corresponds to bulk $ S_2 $ family selection, wherein the tested family are the selfed-progeny from a set of $ S_1 $ lines from a single outbred individual (and hence $ i = 0 $)."
+    },
+    {
+      "type": "discussion",
+      "content": "Expressions for the response to $ S_{1} $ selection in the literature (e.g., Choo and Kannenberg 1981; Hallauer and Miranda 1981; Bradshaw 1983) are based on the result of Empig et al. (1972). Let $ p_{i} $ and $ q_{i} $ denote the frequencies of alleles $ A_{i,1} $ and $ A_{i,2} $ at the $ i $th underlying locus for the trait, whose genotypic values are given by $ -a_{i}: d_{i}: a_{i} $. Assuming linkage equilibrium, Empig et al. found that the covariance between an individual, x, in the selection unit and the offspring, y, of its selfed sib is given by $$ \\sigma(x,y)=\\sigma_{A}^{2}+\\beta\\qquad\\mathrm{w h e r e}\\qquad\\beta=\\sum_{i=1}^{n}2p_{i}q_{i}(p_{i}-1/2)d_{i}[a_{i}+(q_{i}-p_{i})d_{i}] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Similar expressions exist for the response to $ S_{1,2} $ selection (Hallauer and Miranda 1981) and for $ S_{0,j} $ selection (Wricke and Weber 1986)."
+    },
+    {
+      "type": "discussion",
+      "content": "However, it is fairly easily to obtain a variance component-based expression (and hence the ability of estimate the required quantities) for response under general $ S_{i,j} $ family selection. Because a member of the recombination unit ($ \\mathcal{R} $) is outcrossed, it passes on only single alleles to each offspring, y. This situation excludes all of the identity states except for $ \\Delta_3 $ (both alleles in x are IBD, and one is passed on to the offspring y through $ \\mathcal{R} $), $ \\Delta_8 $ (the alleles in x are unrelated and one is passed onto y via $ \\mathcal{R} $), and $ \\Delta_9 $ (the alleles in x are unrelated to those in y). As a result, Equation 23.6a implies that the selection unit-offspring covariance only depends on $ \\sigma_A^2 $ and $ \\sigma_{ADI} $. As shown in Example 23.2 (which can be skipped by the casual reader), the required values of $ \\Delta_i $ can be obtained by some simple bookkeeping as $$ \\Delta_{3}=f_{i}+\\left(1-f_{i}\\right)\\left(\\frac{1-2^{-\\left(j-i\\right)}}{2}\\right)=1-\\frac{1}{2}\\left(\\frac{1}{2^{i}}+\\frac{1}{2^{j}}\\right) $$ $$ \\Delta_{8}=(1-f_{i})2^{-(j-i)}=2^{-j} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Substituting these results into Equation 23.6b yields $$ 2\\Theta_{xy}=\\Delta_{3}+\\Delta_{8}/2=1-\\frac{1}{2^{i+1}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The covariance $ \\sigma_G(x, y) $ immediately follows from Equations 23.6a and 23.6b, where only $ \\Delta_3 $ and $ \\Delta_8 $ are nonzero. Because both of the parents of $ y $ come from superior (i.e., selected) families, we double the covariance to give the total (i.e., accounting for both parents of $ y $) selection unit-offspring covariance under $ S_{i,j} $ family selection as $$ \\begin{aligned}2\\sigma_{G}(x,y)&=4\\theta_{x,y}\\sigma_{A}^{2}+2\\Delta_{3}\\sigma_{ADI}\\\\&=2\\sigma_{A}^{2}\\left(1-\\frac{1}{2^{i+1}}\\right)+2\\sigma_{ADI}\\left(1-\\frac{1}{2^{i+1}}-\\frac{1}{2^{j+1}}\\right)\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Numerical values for these coefficients are presented in [[SEE_TABLE:23.2]]. Using the results in [[SEE_TABLE:11.1]], a little algebra shows that $ \\beta = \\sigma_{ADI}/2 $, which connects Equations 23.12 and 23.14."
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, the genetic variance among $ S_{i,j} $ families is $$ \\begin{aligned}&\\sigma_{G}^{2}(S_{i,j})=(2-2^{i})\\sigma_{A}^{2}+2^{-(2j-i)}\\sigma_{D}^{2}+(2-2^{-i}-2^{-j})\\sigma_{ADI}^{2}\\\\ &\\quad+\\left(1+2^{-(2j+1-i)}-2^{-j}-2^{-(i+1)}\\right)\\sigma_{DI}^{2}+2^{-(2j-i)}\\left(1-2^{-i}\\right)\\iota^{*}\\\\ \\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "This expression is derived below in Example 23.7. Substituting Equation 23.14 and 23.15 into Equation 23.7 yields the general expression for a single generation of response to $ S_{i,j} $ family selection as $$ R_{S_{i,j}}=\\bar{\\imath}\\frac{2\\sigma_{A}^{2}(1-2^{-(i+1)})+2\\sigma_{ADI}(1-2^{-(i+1)}-2^{-(j+1)})}{\\sqrt{\\sigma_{G}^{2}(S_{i,j})+\\sigma_{e}^{2}(S_{i,j})}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "In particular, the response to S1 family selection (i = 0, j = 1) is $$ R_{S_{0,1}}=\\bar{\\imath}\\frac{\\sigma_{A}^{2}+(1/2)\\sigma_{ADI}}{\\sqrt{\\sigma_{A}^{2}+(1/4)\\sigma_{D}^{2}+(1/2)\\sigma_{ADI}+(1/8)\\sigma_{DI}^{2}+\\sigma_{e}^{2}(S_{0,1})}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The response to “classic” $ S_{2} $ family selection $ (i = 1, j = 2) $ is $$ (3/2)\\sigma_{A}^{2}+(5/4)\\sigma_{A D I} $$ $$ R_{S_{1,2}}=\\bar{\\tau}\\frac{(3/2)\\sigma_{A}^{2}+(5/4)\\sigma_{ADI}}{\\sqrt{(3/2)\\sigma_{A}^{2}+(1/8)\\sigma_{D}^{2}+(5/4)\\sigma_{ADI}+(9/16)\\sigma_{DI}^{2}+(1/16)\\iota^{*}+\\sigma_{e}^{2}(S_{1,2})}} $$ while the response to bulk S₂ family selection (i = 0, j = 2) is $$ R_{S_{0,2}}=\\bar{\\imath}\\frac{\\sigma_{A}^{2}+(3/4)\\sigma_{ADI}}{\\sqrt{\\sigma_{A}^{2}+(1/16)\\sigma_{D}^{2}+(3/4)\\sigma_{ADI}+(9/32)\\sigma_{DI}^{2}+\\sigma_{e}^{2}(S_{0,2})}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Starting with $ F_1 $s from a pure-line cross (and hence $ \\sigma_{DI}^2 = \\sigma_{ADI} = 0 $ and $ \\iota^* = \\sigma_D^2 $, as $ p = q = 1/2 $; see Chapter 11), Equation 23.16 reduces to $$ R_{S_{i,j}}=\\bar{\\imath}\\frac{2\\sigma_{A}^{2}(1-2^{-(i+1)})}{\\sqrt{(2-2^{i})\\sigma_{A}^{2}+2^{-(2j-i-1)}(1-2^{-(i+1)})\\sigma_{D}^{2}+\\sigma_{e}^{2}(S_{i,j})}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The simplifications for Equations 23.17a–23.17c in this setting follow in a similar fashion."
+    },
+    {
+      "type": "proposition",
+      "content": "How does the use of selfed families compare with other types of among-family selection? Equation 23.16 shows that the response depends on $ \\sigma_G(x,y) $ in the numerator and $ \\sigma^2(\\overline{z}) = \\sigma_G^2(S_{i,j}) + \\sigma_e^2(S_{i,j}) $ in the denominator, making formal comparisons between methods a bit tedious. If we assume that the denominators are roughly similar (i.e., $ \\sigma^2(\\overline{z}) $ is roughly equal over different schemes), then we can simply compare the numerators. Because different schemes take different number of generations, the scaled response ratio, $ R/[\\bar{x}\\sigma_A^2\\sigma(\\overline{z})] $, should be expressed in terms of response per generation. We also need to adjust for whether one or both parents have been chosen from superior families. [[SEE_TABLE:23.3]] presents the response per cycle after accounting for all these factors under the assumption of no dominance (i.e., $ \\sigma_{ADI} = 0 $)."
+    },
+    {
+      "type": "proposition",
+      "content": "[[SEE_TABLE:23.3]] shows that $ S_1 $ and $ S_{1,2} $ selection are superior to the other approaches that were listed (under the assumption of no dominance and roughly equal family variances among the different approaches). While we have not included comparisons with methods using inbred parents, these are easily obtained by multiplying the scaled response per generation by $ 1 + f $ (see [[SEE_TABLE:23.1]]). While $ S_{1,2} $ selection yields a larger response per cycle ($ R^* = 3/4 $), this is countered by increased cycle time ($ g = 3 $). Note that $ S_2 $ bulk-family selection ($ S_{0,2} $) is not as efficient as $ S_1 $ or $ S_{1,2} $. For other types of $ S_{i,j} $ selection, the tradeoff between an increase in additive variance, scaling as $ 2(1 - 2^{-(i+1)})\\sigma_A^2 $, versus the increase in cycle time ($ g $ increasing with $ i $) is such that the scaled response per generation, $ R/(\\sigma_A^2\\bar{i}) $, is under 1/2 for $ i > 2 $ and hence not as efficient as either $ S_1 $ or $ S_{1,2} $ selection. recombination occurs only every other generation (as opposed to every generation under mass and ear-to-row selection)."
+    },
+    {
+      "type": "discussion",
+      "content": "Consistent with these theoretical predictions, several researchers found that $ S_{1} $ recurrent selection was better than testcross (half-sib) selection for increasing yield in maize (Duclos and Crane 1968; Burton et al. 1971; Carangal et al. 1971; Geneter 1973; Moll and Smith 1981; Tanner and Smith 1987) and sorghum (Doggett 1972). Likewise, Moll and Smith (1981) reported that $ S_{1} $ selection for yield in maize resulted in a roughly 50% greater response than full-sib selection. $ S_{1} $ lines, however, did show an increased loss of genetic variation (Mulamba et al. 1983; Tanner and Smith 1987). A caveat is that $ S_{1} $ lines can show greater genotype × environment interaction (Lonnquist and Lindsey 1964; Wricke 1976; Jan-orn et al. 1976). Caution is thus in order for declaring the general superior of $ S_{1} $ or $ S_{1,2} $ selection over other family-based approaches."
+    },
+    {
+      "type": "proposition",
+      "content": "The results in [[SEE_TABLE:23.3]] rely on two assumptions: no dominance and equal among-family variance. Both among-family genetic differences over the different schemes, as well as G × E and other replication-dependent error terms in σ²(z), can cause this latter assumption to be incorrect (e.g., Equations 21.42a and 21.42b). One can easily imagine situations where the difference in error variance more than compensates for the difference in the selection unit-offspring covariances. For example, half-sib selection may generate far more family members for testing than an S₁, thus greatly reducing the error variance (by increasing n in Equation 23.8c). Likewise, σ_ADI can be negative, thus reducing the expected advantage of S₁ and S₁,₂ selection. Indeed, Jan-orn et al. (1976) estimated that σ_ADI/σ_A² was around −0.5 for many traits in sorghum, suggesting that σ_ADI can be both negative and substantial."
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:23.2]]"
+    },
+    {
+      "type": "table",
+      "content": "[[TABLE:23.2]]"
+    },
+    {
+      "type": "table",
+      "content": "[[TABLE:23.3]]"
+    }
+  ]
+}

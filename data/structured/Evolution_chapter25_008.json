@@ -1,0 +1,100 @@
+{
+  "id": "Evolution_chapter25_008",
+  "metadata": {
+    "chapter": "Evolution_chapter25",
+    "section": "MAJOR GENES VERSUS POLYGENIC RESPONSE: THEORY",
+    "subsections": [
+      "Lande's Model: Response With a Major Gene in an Infinitesimal Background"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter25_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [
+      "25.2"
+    ],
+    "section_level_1": "MAJOR GENES VERSUS POLYGENIC RESPONSE: THEORY",
+    "section_level_2": "Lande's Model: Response With a Major Gene in an Infinitesimal Background",
+    "heading_path": [
+      "MAJOR GENES VERSUS POLYGENIC RESPONSE: THEORY",
+      "Lande's Model: Response With a Major Gene in an Infinitesimal Background"
+    ],
+    "display_heading": "Lande's Model: Response With a Major Gene in an Infinitesimal Background",
+    "table_reference_keys": [
+      "Evolution_chapter25:25.2"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Lande (1983) assumed a single major gene and an infinitesimal background of polygenes, and his concern was how often a selection response (such as an adaptation by natural selection) is primarily due to a single (or a very few) major genes versus being polygenic. Because genes with major effects on a trait often have deleterious effects on overall fitness (Wright 1977; Lande 1983; Kemper et al. 2012), Lande allowed for such pleiotropic fitness effects acting on the major locus in addition to its influence on the trait under phenotypic selection. The basic parameters of his model are given in [[SEE_TABLE:25.2]]. For each of the three major-locus genotypes, the distribution of phenotypic values is assumed to be normal with a mean of $ \\mu + \\alpha_i $ and a variance of $ \\sigma^2 $. Part of this variance, $ h^2 \\sigma^2 $, is from the additive-genetic variance of background polygenes, where $ h^2 $ is the polygenic heritability. As the expression for the trait mean in [[SEE_TABLE:25.2]] suggests, the dynamics of the mean jointly depend on the change in frequency of the major allele ($ \\Delta p $) and the change in the mean ($ \\Delta \\mu $) of the background polygenes (also see Equation 25.8e). While both $ p $ and $ \\mu $ change over time, to avoid excessive notation we suppress the subscript for generation on each."
+    },
+    {
+      "type": "discussion",
+      "content": "Consider the change in the major allele-frequency, p, first. Using the mean and marginal fitnesses from [[SEE_TABLE:25.2]], Wright's formula (Equation 5.5b) yields the expected change as $$ \\begin{aligned}\\Delta p&=\\frac{p(1-p)}{2\\overline{W}}\\frac{\\partial\\overline{W}}{\\partial p}\\\\&=\\frac{p(1-p)}{\\overline{W}}\\left[(p-1)\\overline{W}_{0}+(1-2p)(1-s_{1})\\overline{W}_{1}+p(1-s_{2})\\overline{W}_{2}\\right]\\end{aligned} $$ with the second step following upon differentiation of the mean fitness. Note that the $ \\overline{W}_{i} $ are not constants, but rather change with the polygenic mean, $ \\mu $, whose expected change follows from the Lande equation (13.27a) $$ \\Delta\\mu=h^{2}\\sigma^{2}\\frac{\\partial\\ln(\\overline{W})}{\\partial\\mu}=\\frac{h^{2}\\sigma^{2}}{\\overline{W}}\\frac{\\partial\\overline{W}}{\\partial\\mu} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Taking the derivative of $ \\overline{W} $ with respect to $ \\mu $ returns $$ \\Delta\\mu=\\frac{h^{2}\\sigma^{2}}{\\overline{W}}\\left[(1-p)^{2}\\frac{\\partial\\overline{W}_{0}}{\\partial\\mu}+2p(1-p)(1-s_{1})\\frac{\\partial\\overline{W}_{1}}{\\partial\\mu}+p^{2}(1-s_{2})\\frac{\\partial\\overline{W}_{2}}{\\partial\\mu}\\right] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "To evaluate the derivatives of the marginal fitnesses of the major locus, first note that the normal density function is given by $$ \\varphi(z,\\mu,\\sigma^{2})=\\frac{1}{\\sqrt{2\\pi\\sigma^{2}}}\\cdot\\exp\\left[-\\frac{(z-\\mu)^{2}}{2\\sigma^{2}}\\right] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "[[SEE_TABLE:25.2]] $$ \\overline{W}_{i}=\\int w(z)\\varphi(z,\\mu+\\alpha_{i},\\sigma^{2})d z\\quad for i=0,1,2 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "To obtain the required derivatives of $ \\varphi(z,\\mu,\\sigma^{2}) $, recall from the chain rule of differentiation that $$ \\frac{\\partial\\exp[f(x)]}{\\partial x}=\\frac{\\partial[f(x)]}{\\partial x}\\cdot\\exp[f(x)] $$ yielding $$ \\frac{\\partial\\varphi(z,\\mu+\\alpha_{i},\\sigma^{2})}{\\partial\\mu}=\\frac{z-(\\mu+\\alpha_{i})}{\\sigma^{2}}\\varphi(z,\\mu+\\alpha_{i},\\sigma^{2}) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Hence, $$ \\begin{aligned}\\frac{\\partial W_{i}}{\\partial\\mu}&=\\int w(z)\\frac{\\partial\\varphi(z,\\mu+\\alpha_{i},\\sigma^{2})}{\\partial\\mu}dz\\\\&=\\frac{1}{\\sigma^{2}}\\left[\\int z w(z)\\varphi(z,\\mu+\\alpha_{i},\\sigma^{2})dz-(\\mu+\\alpha_{i})\\int w(z)\\varphi(z,\\mu+\\alpha_{i},\\sigma^{2})dz\\right]\\\\&=\\frac{1}{\\sigma^{2}}\\left[\\int z w(z)p_{i}(z)dz-(\\mu+\\alpha_{i})\\ \\overline{W}_{i}\\right]=\\frac{\\overline{W}_{i}}{\\sigma^{2}}\\ S_{i}\\end{aligned} $$ $$ S_{i}=\\int z w(z)\\frac{p_{i}(z)}{\\overline{W}_{i}}d z-(\\mu+\\alpha_{i}) $$ where is the selection differential acting on the major-locus genotype, i. This equivalence follows from the fact that the integral represents the mean value for major-locus genotype i following selection ($ \\mu_{s_i} $), the second term is the mean for i before selection ($ \\mu_i $), and $ S_i = \\mu_{s_i} - \\mu_i $. From Equations 25.7b and 25.8b, the expected change in the polygenic mean becomes $$ \\Delta\\mu=h^{2}\\left[(1-p)^{2}\\frac{\\overline{W}_{0}}{\\overline{W}}S_{0}+2p(1-p)(1-s_{1})\\frac{\\overline{W}_{1}}{\\overline{W}}S_{1}+p^{2}(1-s_{2})\\frac{\\overline{W}_{2}}{\\overline{W}}S_{2}\\right] $$ From [[SEE_TABLE:25.2]], the new mean becomes $$ \\overline{z}=(\\mu+\\Delta\\mu)\\Biggl[1+2\\alpha_{1}(p+\\Delta p)(1-p-\\Delta p)+\\alpha_{2}\\left(p+\\Delta p\\right)^{2}\\Biggr] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Note that while changes in $ p $ influence changes in $ \\mu $, and vice-versa, Lande assumed that the infinitesimal variance, $ \\sigma^2 $, and heritability, $ h^2 $, remain unchanged over time (ignoring the Bulmer effect). By using the machinery from Chapter 16, we could modify these expressions to allow for the changes caused by selection generating gametic-phase disequilibrium."
+    },
+    {
+      "type": "discussion",
+      "content": "Lande provides extensive analysis of his model in several settings, two of which we will consider. The first is the evolution toward a new optimum. Suppose the optimal phenotype suddenly shifts (for example, due to a major environmental change). In such cases, if the frequency of the major allele is sufficiently rare relative to the strength of selection on the trait (and also relative to the strength of pleiotropic selection against the major allele), it will be lost and the response will be entirely polygenic. As Figure 25.6 illustrates, the dynamics can be complex in this case. The key to understanding this frequency-dependent behavior is to recall the dynamics of an underdominant locus (Figure 5.1). Here, there is an unstable internal equilibrium, with the allele becoming fixed provided it starts above this value, and otherwise being lost."
+    },
+    {
+      "type": "discussion",
+      "content": "Two additional remarks concerning Lande's examples displayed in Figure 25.6 are in order. First, because B is strictly deleterious before the shift in optimum, its initial frequency is expected to be low. For example, for an additive allele with mutation rate $ \\nu $, $ p \\simeq 2\\nu/s $ (Equation 7.6b). While most of the trajectories in Figure 25.6A show fixations, almost all populations would be expected to start with the frequency of B below the 0.025 initial allele-frequency threshold for fixation (the initial frequency is below this value when $ 2\\nu/0.02 < 0.025 $, or when $ \\nu < 0.00025 $). Second, this is a deterministic analysis, which has implications for Figure 25.6B. Notice that the trajectory for an allele starting at frequency 0.8 approaches one before eventually declining to zero. As polygenic response moves the trait mean toward the optimum, the deleterious pleiotropic effects of this allele become greater than its favorable effect on the trait, resulting in the major allele becoming selected against, and eventually removed. In a finite population, selection may initially drive the major-allele frequency sufficiently close to one for drift to fix B before polygenic response negates its favorable effect on the trait. In such cases, a major gene response will be seen."
+    },
+    {
+      "type": "discussion",
+      "content": "Lande's analysis of directional selection used an exponential model of trait fitness, $ w(z) \\propto \\exp(\\beta z) $, which reduces to a simple linear fitness function, $ w(z) \\simeq 1 + \\beta z $, for weak selection ($ |\\beta z| \\ll 1 $). Lande showed that under exponential fitnesses, his model is nicely behaved, with the polygenic mean evolving at a constant rate $$ \\Delta\\mu=\\sigma_{A}^{2}\\beta $$ while the relationships between the major-locus genotypic fitnesses remain constant, with $$ \\frac{\\overline{W}_{i}}{\\overline{W}_{0}}=e^{\\beta\\alpha_{i}}\\quad for i=1,2 $$"
+    },
+    {
+      "type": "proposition",
+      "content": "The resulting relative fitnesses of the three major locus genotypes become $$ W_{b b}=1\\quad W_{B b}=\\left(1-s_{1}\\right)e^{\\beta\\alpha_{1}}\\quad W_{B B}=\\left(1-s_{2}\\right)e^{\\beta\\alpha_{2}} $$ Because these are constants, the machinery of Chapter 5 quickly informs us as to the fate of the major gene. Selection maintains both alleles as a stable polymorphism when $ W_{Bb} > W_{BB} $, $ W_{bb} $. There is an unstable internal equilibrium when $ W_{Bb} < W_{BB} $, $ W_{bb} $, with B being lost if sufficiently rare (frequency below the equilibrium value), and otherwise being fixed. Finally, if $ W_{bb} < W_{Bb} \\leq W_{BB} $ or $ W_{bb} \\leq W_{Bb} < W_{BB} $, then the major allele is fixed (under our assumption, in this chapter, of no drift)."
+    },
+    {
+      "type": "discussion",
+      "content": "The simple fate of the major allele is not a complete analysis of the full dynamics of this system, as even if the allele is fixed, its contribution could be far outstripped by the polygenic response. Lande examined this possibility by letting $ \\alpha $ represent the difference between the two major-locus homozygotes and assuming that B is initially rare. He then compared the expected amount of time for a B allele (starting at frequency $ p_0 \\ll 0.5 $) to increase to the point where the response from the locus is half its potential response, $ \\alpha/2 $. This is accomplished by using Equation 25.1e to find the critical frequency, and then applying the appropriate version of Equation 5.3 to obtain the required time for this amount of allele-frequency change. If the polygenic response over this amount of time exceeds $ \\alpha/2 $, the response is primarily polygenic, even if B is fixed. For weak exponential selection (Equation 25.9c), the resulting initial frequencies above which the major gene exceeds the polygenic response are approximately $$ p_{0}>\\begin{cases}2/b&recessive\\\\e^{-b/4}&additive\\\\e^{-b/2}&dominant\\end{cases}\\qquad where\\quad b=\\left(1-\\frac{s}{\\beta\\alpha}\\right)\\frac{\\alpha^{2}}{\\sigma_{A}^{2}} $$ where, before, $ \\beta $ is the strength of directional selection on the trait."
+    },
+    {
+      "type": "proposition",
+      "content": "Much of this discussion is framed by the assumption that genes that have a large effect on a trait generally have deleterious effects in natural populations. However, as Orr and Coyne (1992) pointed out, if genes with a small effect on the character also have similarly small (and negative) effects on fitness, their advantage over a major locus largely (or completely) disappears. However, if the potential pool of alleles of small effects is large, it will become enriched by natural selection for those alleles with nearly neutral pleiotropic fitness effects."
+    },
+    {
+      "type": "discussion",
+      "content": "Gomulkiewicz et al. (2010) reached a somewhat different conclusion from Lande's suggestion that major genes generally require very strong selection on a trait in order to account for the majority of response. They focused on the time required for a population that has invaded a harsh new environment (equivalent to a major environmental shift) to evolve persistence. This is a different scenario from that envisioned by Lande, who focused on the genetic composition once an adaptation had occurred (the equilibrium value following a shift). One of the major points from Gomulkiewicz can be seen in Figure 25.6B. Here, a major allele can substantially increase in frequency, but at some point it is overtaken by polygenic response, and ultimately lost. Gomulkiewicz noted that such a situation may be critical for a population to evolve persistence in a harsh new environment. Even though the major gene is eventually lost, the population runs a risk of extinction if this allele is not initially present. Thus, by shifting the focus toward the dynamics during adaptation, rather than on the equilibrium values, a potentially different view of the relative importance of major and minor genes arises. Important roles of major genes may therefore be overlooked if one only focuses on the alleles that are ultimately fixed."
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, while the importance of deleterious pleiotropic fitness effects has been framed as a constraining force for major alleles, Otto (2004) showed that the presence of pleiotropy may impact small-effect alleles as well, which returns us to the point made earlier by Orr and Coyne (1992)."
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:25.5]]"
+    },
+    {
+      "type": "table",
+      "content": "[[TABLE:25.2]]"
+    }
+  ]
+}

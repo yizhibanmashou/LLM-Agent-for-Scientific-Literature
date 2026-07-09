@@ -1,0 +1,31 @@
+{
+  "id": "Evolution_chapter9_011",
+  "metadata": {
+    "chapter": "Evolution_chapter9",
+    "section": "ALLELE-FREQUENCY CHANGE IN A SINGLE POPULATION",
+    "subsections": [
+      "Schaffer's Linear Trend Test"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter9_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "ALLELE-FREQUENCY CHANGE IN A SINGLE POPULATION",
+    "section_level_2": "Schaffer's Linear Trend Test",
+    "heading_path": [
+      "ALLELE-FREQUENCY CHANGE IN A SINGLE POPULATION",
+      "Schaffer's Linear Trend Test"
+    ],
+    "display_heading": "Schaffer's Linear Trend Test"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "A variation of the Fisher-Ford test was suggested by Schaffer et al. (1977), who noted that power might be improved by going beyond a simple lack of fit test against the model $ y_{t} = \\mu + e $ (where $ \\mu $ is the transformed initial allele frequency), by asking if a significant linear trend is present. The model now becomes $$ y_{t}=\\mu+\\beta t+e $$ where a trend is indicated if $ \\beta $ is significantly different from zero (the Fisher-Ford test assumes $ \\beta = 0 $). Such a linear trend is not expected under drift but would be expected under directional selection, assuming that the direction of selection is not changing (migration from a population with a different allele frequency could also generate a linear trend). In general-linear-model form (LW Chapter 8), Equation 9.7a becomes $ y = X\\beta + e $, where $$ \\mathbf{X}=\\begin{pmatrix}1&t_{1}\\\\\\vdots&\\vdots\\\\1&t_{k}\\end{pmatrix},\\quad\\boldsymbol{\\beta}=\\begin{pmatrix}\\mu\\\\\\boldsymbol{\\beta}\\end{pmatrix},\\qquad\\widehat{\\boldsymbol{\\beta}}=(\\mathbf{X}^{T}\\mathbf{V}^{-1}\\mathbf{X})^{-1}\\mathbf{X}^{T}\\mathbf{V}^{-1}\\mathbf{y} $$ where the elements of V are given by Equations 9.5c and 9.5d. For the data in Example 9.2, the resulting X matrix and the GLS estimate, $ \\widehat{\\beta} $, of the vector of parameters becomes $$ \\mathbf{X}=\\begin{pmatrix}{{{1}}}&{{{0}}} \\\\{{{1}}}&{{{4}}} \\\\{{{1}}}&{{{8}}}\\end{pmatrix},\\qquad\\widehat{\\boldsymbol{\\beta}}=\\begin{pmatrix}{{{0.609}}} \\\\{{{-0.028}}}\\end{pmatrix} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Applying LW Equation 8.35, the standard error on the slope is found to be 0.0086, showing that it is highly significant. Stuber et al. (1980) used this approach to infer selection at sites linked to several allozyme markers in a series of selected maize lines. One advantage of the linear-trend test is that it does not require highly accurate estimates of $ N_{e} $."
+    }
+  ]
+}

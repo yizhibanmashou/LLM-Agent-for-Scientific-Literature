@@ -28,9 +28,10 @@ EXAMPLE_HEAD_RE = re.compile(
     r"Example\s+(?P<example_id>(?:A\d+|\d+)\.\d+[a-z]?)(?P<trailing>\.)?",
     re.IGNORECASE,
 )
-STRUCTURED_REF_RE = re.compile(r"\[\[(?:SEE_)?(?:FORMULA|TABLE):([^\]\n\r]+?)\s*\]\]", re.IGNORECASE)
+STRUCTURED_REF_RE = re.compile(r"\[\[(?:SEE_)?(?:FORMULA|TABLE|FIGURE):([^\]\n\r]+?)\s*\]\]", re.IGNORECASE)
 FORMULA_MARKER_RE = re.compile(r"\[\[(?:SEE_)?FORMULA\s*:\s*([^\]\n\r]+?)\s*\]\]", re.IGNORECASE)
 TABLE_MARKER_RE = re.compile(r"\[\[(?:SEE_)?TABLE\s*:\s*([^\]\n\r]+?)\s*\]\]", re.IGNORECASE)
+FIGURE_MARKER_RE = re.compile(r"\[\[(?:SEE_)?FIGURE\s*:\s*([^\]\n\r]+?)\s*\]\]", re.IGNORECASE)
 STANDALONE_NUMBERED_TABLE_RE = re.compile(
     r"^\s*\[\[TABLE\s*:\s*(?P<label>(?:A\d+|\d+)\.\d+[A-Za-z]?)\s*\]\]\s*$",
     re.IGNORECASE,
@@ -53,7 +54,7 @@ NATURAL_TABLE_RE = re.compile(
     r"(?<!LW\s)(?<!Lynch and Walsh\s)\bTables?\s+([A-Z]?\d+\.\d+[a-z]?)\b",
     re.IGNORECASE,
 )
-EXAMPLE_PLACEHOLDER_RE = re.compile(r"\[\[SEE_EXAMPLE:([^\]\n\r]+?)\]\]", re.IGNORECASE)
+EXAMPLE_PLACEHOLDER_RE = re.compile(r"\[\[(?:SEE_)?EXAMPLE:([^\]\n\r]+?)\]\]", re.IGNORECASE)
 FIGURE_CAPTION_START_RE = re.compile(r"^\s*(?:Figure|Fig\.)\s+(?:A\d+|\d+)\.\d+[a-z]?\b", re.IGNORECASE)
 PADDLE_RAW_FILE_NAMES = (
     "paddle_raw_api_response.json",
@@ -267,6 +268,8 @@ def strip_structured_refs(text: str) -> str:
         label = clean_ref_id(match.group(1))
         if "FORMULA" in kind.upper():
             return f"Equation {label}"
+        if "FIGURE" in kind.upper():
+            return f"Figure {label}"
         return f"Table {label}"
 
     return STRUCTURED_REF_RE.sub(repl, text or "")
@@ -348,6 +351,8 @@ def extract_table_refs(text: str) -> list[str]:
 
 def extract_figure_refs(text: str) -> list[str]:
     ordered: list[tuple[int, str]] = []
+    for match in FIGURE_MARKER_RE.finditer(text or ""):
+        ordered.append((match.start(), clean_ref_id(match.group(1))))
     for match in FIGURE_REF_RE.finditer(text or ""):
         ordered.append((match.start(), clean_ref_id(match.group(1))))
     ordered.sort(key=lambda item: item[0])
@@ -804,6 +809,8 @@ def bbox_horizontal_overlap_ratio(left_bbox: list[Any] | None, right_bbox: list[
 
 
 def looks_like_post_rule_body(record: RawRecord) -> bool:
+    if looks_like_example_start(record.content):
+        return True
     if record.label == "paragraph_title":
         return True
     if record.label not in {"text", "reference_content", "figure_title", "header"}:
@@ -1114,6 +1121,17 @@ def looks_like_in_example_figure_caption(record: RawRecord) -> bool:
     return bool(re.search(r"\b(?:Example|Equation)\s+(?:A\d+|\d+)\.\d+[a-z]?\b", content, flags=re.IGNORECASE))
 
 
+def raw_figure_caption_ref(record: RawRecord) -> str:
+    if record.label != "figure_title":
+        return ""
+    match = re.match(
+        r"^\s*(?:Figure|Fig\.)\s+((?:A\d+|\d+)\.\d+[a-z]?)\b",
+        collapse_ws(record.content),
+        flags=re.IGNORECASE,
+    )
+    return clean_ref_id(match.group(1)) if match else ""
+
+
 def is_potential_example_continuation(record: RawRecord, parts: list[str]) -> bool:
     if not parts:
         return False
@@ -1125,6 +1143,8 @@ def is_potential_example_continuation(record: RawRecord, parts: list[str]) -> bo
         content = collapse_ws(record.content)
         previous = parts[-1] if parts else ""
         if previous.endswith(("-", "‐", "‑", "‒", "–")) and is_lowercase_continuation(content):
+            return True
+        if raw_figure_caption_ref(record):
             return True
         if not FIGURE_CAPTION_START_RE.match(content):
             return True
@@ -1243,7 +1263,11 @@ def raw_example_stop_for_body(
     if parts:
         head_match = raw_example_start_match(parts[0])
         current_example_id = clean_ref_id(head_match.group("example_id")) if head_match else ""
-    if current_example_id and looks_like_post_example_body(record, current_example_id):
+    if (
+        current_example_id
+        and not visual_box_active
+        and looks_like_post_example_body(record, current_example_id)
+    ):
         return True
     if looks_like_example_start(record.content):
         return True
@@ -1255,7 +1279,8 @@ def raw_example_stop_for_body(
         return True
     if FIGURE_CAPTION_START_RE.match(record.content) and not (
         looks_like_figure_reference_sentence(record)
-        or (visual_box_active and looks_like_in_example_figure_caption(record))
+        or visual_box_active
+        or looks_like_in_example_figure_caption(record)
     ):
         return True
     if chapter_records is not None and raw_table_has_numbered_caption(record, chapter_records):
@@ -1307,6 +1332,10 @@ def append_raw_record_to_example_parts(
         return
     if record.label == "display_formula":
         parts.append(record.content)
+        return
+    figure_ref = raw_figure_caption_ref(record)
+    if figure_ref:
+        parts.append(f"[[FIGURE:{figure_ref}]]")
         return
     if parts and should_continue_raw_example(record, parts):
         parts[-1] = join_hyphenated(parts[-1], record.content)

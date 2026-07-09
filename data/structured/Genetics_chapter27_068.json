@@ -1,0 +1,67 @@
+{
+  "id": "Genetics_chapter27_068",
+  "metadata": {
+    "chapter": "Genetics_chapter27",
+    "section": "Variance-Component Estimation with Complex Pedigrees",
+    "subsections": [
+      "Application: Power of QTL Mapping in Half-sib Families"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter27_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Variance-Component Estimation with Complex Pedigrees",
+    "section_level_2": "Application: Power of QTL Mapping in Half-sib Families",
+    "heading_path": [
+      "Variance-Component Estimation with Complex Pedigrees",
+      "Application: Power of QTL Mapping in Half-sib Families"
+    ],
+    "display_heading": "Application: Power of QTL Mapping in Half-sib Families"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "As an example of analysis of a more complex design, consider the nested ANOVA design for mapping QTLs in half-sib families (Chapter 16). In the QTL half-sib design, each sire heterozygous for a marker locus is crossed to n dams and a single offspring is scored from each mating. Evidence of a QTL linked to the marker is indicated if the mean trait values for alternative sire alleles at this marker locus are significantly different. Since a different dam is used for each mating, all offspring from the same sire are half-sibs. The model here is $$ y_{ijk}=\\mu+s_{i}+m_{ij}+e_{ijk} $$ where $y_{ijk}$ denotes the $k$th offspring of marker genotype $j$ (with $j=1$ for offspring carrying sire allele 1, $j=2$ for sire allele 2) from sire $i$. We assume a completely balanced design, with $N$ sires, each of which have $n$ offspring equally distributed over the two alternative genotypes (the alternative sire marker alleles). The residuals are assumed independent with $e_{ijk} \\sim \\mathrm{N}(0,\\sigma_{e}^{2})$ and the test statistic for a significant marker effect is $F \\sim \\mathrm{MS}_{m}/\\mathrm{MS}_{e}$. To compute the power of this test, we need to obtain the distributions of sums of squares. Starting with the error sum of squares (see Chapter 18 for details), $$ \\begin{aligned}\\mathrm{SS}_{e}\\dot{=}&\\sum_{i=1}^{N}\\sum_{j=1}^{2}\\sum_{k=1}^{n/2}\\left(y_{ijk}-\\overline{y}_{ij.}\\right)^{2}=\\sum_{i=1}^{N}\\sum_{j=1}^{2}\\sum_{k=1}^{n/2}\\left(e_{ijk}-\\overline{e}_{ij.}\\right)^{2}\\\\ \\sim&\\sum_{i=1}^{N}\\sum_{j=1}^{2}\\sigma_{e}^{2}\\cdot\\chi_{(n/2-1)}^{2}=\\sigma_{e}^{2}\\cdot\\chi_{2N(n/2-1)}^{2}\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The last two identities follow from Equations A5.14c and A5.14a, respectively. Hence, there are $N(n-2)$ degrees of freedom associated with $SS_{e}$. Turning to the marker sum of squares, $$ \\mathrm{SS}_{m}=\\sum_{i=1}^{N}\\sum_{j=1}^{2}\\sum_{k=1}^{n/2}\\left(\\overline{y}_{ij.}-\\overline{y}_{i..}\\right)^{2}=\\left(\\frac{n}{2}\\right)\\sum_{i=1}^{N}\\sum_{j=1}^{2}\\left(\\overline{y}_{ij.}-\\overline{y}_{i..}\\right)^{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Since $\\sigma^{2}(\\overline{e}_{ij.}) = \\sigma_{e}^{2}/(n/2)$, it follows that $\\overline{y}_{ij.} \\sim \\mathrm{N}(m_{ij}, 2\\sigma_{e}^{2}/n)$. Applying Equation A5.15e gives $$ \\sum_{j=1}^{2}\\left(\\overline{y}_{ij.}-\\overline{y}_{i..}\\right)^{2}=\\frac{2\\sigma_{e}^{2}}{n}\\cdot\\chi_{1,\\lambda_{i}}^{2}\\quad\\mathrm{w h e r e}\\quad\\lambda_{i}=\\frac{n}{2\\sigma_{e}^{2}}\\cdot\\left(m_{i1}^{2}+m_{i2}^{2}\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Substituting this into Equation A5.26a and applying Equation A5.15c gives $$ \\begin{array}{r l r}{\\mathrm{S S}_{m}\\sim\\sigma_{e}^{2}\\cdot\\chi_{N,\\lambda}^{2}}&{{}}&{\\mathrm{w h e r e}\\quad\\lambda=\\frac{n}{2\\sigma_{e}^{2}}\\displaystyle\\sum_{i=1}^{N}(m_{i1}^{2}+m_{i2}^{2})}\\end{array} $$ Hence the marker sum of squares follows a noncentral $\\chi^{2}$ distribution with $N$ degrees of freedom and noncentrality parameter $\\lambda$. It thus remains to compute $\\lambda$ as a function of the unknown QTL parameters."
+    },
+    {
+      "type": "discussion",
+      "content": "If the $ i $th sire has marker-QTL genotype $ Q_j M_1 / Q_\\ell M_2 $, then $ m_{i1} $ is the expected within-sire deviation for offspring carrying sire marker allele 1 given the sire has this genotype, or $$ m_{i1}=E\\left(\\left.\\overline{{y}}_{i1}-\\overline{{y}}_{i}\\right|\\mathbf{s i r e}_{i}=Q_{j}M_{1}/Q_{\\ell}M_{2}\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Recall from Equation 16.8, that $$ E\\left(\\mathbf{\\bar{y}}_{i1}|\\mathbf{s i r e}_{i}=Q_{j}M_{1}/Q_{\\ell}M_{2}\\right)=\\mu+c\\alpha_{\\ell}+\\left(1-c\\right)\\alpha_{j} $$ while $E\\left(\\overline{y}_{i}\\mid\\mathrm{sire}_{i}=Q_{j}/Q_{\\ell}\\right)=\\mu+\\left(\\alpha_{j}+\\alpha_{\\ell}\\right)/2$. Putting these together gives $$ m_{i1}=\\mu+c\\alpha_{\\ell}+\\left(1-c\\right)\\alpha_{j}-\\left[\\mu+\\left(\\frac{\\alpha_{j}+\\alpha_{\\ell}}{2}\\right)\\right]=\\left(0.5-c\\right)\\left(\\alpha_{j}-\\alpha_{\\ell}\\right) $$ where $\\alpha_{j}$ is the average effect of allele $Q_{j}$ and $c$ is the marker-QTL recombination frequency. Since $E(m_{i})=0$, it follows that $m_{i1}=-m_{i2}$ and hence $$ m_{i1}^{2}+m_{i2}^{2}=2(0.5-c)^{2}(\\alpha_{\\ell}-\\alpha_{j})^{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Taking the expected value over all possible sire QTL genotoypes, $$ E(m_{i1}^{2}+m_{i2}^{2})=2(0.5-c)^{2}E\\left[\\left(\\alpha_{\\ell}-\\alpha_{j}\\right)^{2}\\right]=2(0.5-c)^{2}\\sigma_{A}^{2} $$ giving the noncentrality parameter for the marker sum of squares as $$ \\lambda=N\\cdot n\\left[\\frac{(1-2c)^{2}}{4}\\right]\\left(\\frac{\\sigma_{A}^{2}}{\\sigma_{e}^{2}}\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, under the hypothesis of no linkage (c = 0.5), the test statistic is $$ \\pmb{F}=\\frac{\\mathbf{M}\\mathbf{S}_{m}}{\\mathbf{M}\\mathbf{S}_{e}}\\sim F_{N,N(n-2)} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Hence, a sire marker effect is declared to be significant at the $ \\alpha $-level if $ F > F_{N,N(n-2),[1-\\alpha]} $. The power of this test is the probability that the test statistic $ F $ exceeds this critical value, $$ \\Pr\\left[F_{N,N(n-2),\\lambda}>F_{N,N(n-2),[1-\\alpha]}\\right] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Example 4. Suppose we have a completely linked QTL $(c=0)$ with $\\sigma_{A}^{2}/\\sigma_{e}^{2}=0.1$. With $N=20$ sires and $n=35$ sibs/sire, what is the power of this test to detect this QTL using a significance level of $\\alpha=0.05$? Here $N(n-2)=560$, and from central $F$ tables, we find $F_{20,560,[0.95]}=1.589$. Since $\\lambda=20\\cdot36\\cdot0.1/4=15$, the power is $$ \\Pr(F_{20,560,15}>1.589)=0.60 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "How many sibs are required per sire to have 90% power? Solving with increasing n values, we find that for $n=53$, $N(n-2)=1020$, $F_{20,1020,[0.95]}=1.581$, and $\\lambda=20\\cdot36\\cdot0.1/4=26.5$ for a power of $$ \\Pr(F_{20,1020,26.5}>1.581)=0.90 $$"
+    }
+  ]
+}

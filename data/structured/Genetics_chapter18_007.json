@@ -1,0 +1,43 @@
+{
+  "id": "Genetics_chapter18_007",
+  "metadata": {
+    "chapter": "Genetics_chapter18",
+    "section": "Introduction",
+    "subsections": [
+      "Confidence Intervals"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter18_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "Confidence Intervals",
+    "heading_path": [
+      "Introduction",
+      "Confidence Intervals"
+    ],
+    "display_heading": "Confidence Intervals"
+  },
+  "blocks": [
+    {
+      "type": "proposition",
+      "content": "Under the assumption of normality, approximate confidence intervals for variance-component estimates can be obtained from the expected distributions of the sums of squares (Harville and Fenech 1985, Searle et al. 1992). For the within-family variance, recalling the distribution of $ SS_e/\\sigma_e^2 $ given in Equation 18.17b, the lower and upper values associated with the $ 100(1-\\alpha)% $ confidence level are simply $$ \\frac{SS_{e}}{\\chi^{2}_{(T-N),(\\alpha/2)}}<\\operatorname{Var}(e)<\\frac{SS_{e}}{\\chi^{2}_{(T-N),(1-\\alpha/2)}} $$ where $ \\chi_{(T-N),(\\alpha/2)}^{2} $ and $ \\chi_{(T-N),(1-\\alpha/2)}^{2} $ are the upper and lower $ \\chi^{2} $ values associated with $ \\alpha $ given $ (T-N) $ degrees of freedom. For example, for a 95% confidence interval (2.5% error on each side of the estimate), $ \\chi_{(T-N),0.025}^{2} $ is the point at which the probability of obtaining a higher $ \\chi_{T-N}^{2} $ by chance is 0.025 and $ \\chi_{(T-N),0.975}^{2} $ is the point at which the probability of obtaining a higher value is 0.975. These values can be found in tabular form in most elementary statistics texts."
+    },
+    {
+      "type": "discussion",
+      "content": "For the among-family variance, the lower and upper confidence limits associated with the $100(1-\\alpha)%$ level are given by $$ \\frac{\\mathrm{M S}_{e}}{n}\\bigg[\\frac{F}{F_{(N-1),\\infty,(\\alpha/2)}}-1-\\left(\\frac{F_{(N-1),(T-N),(\\alpha/2)}}{F_{(N-1),\\infty,(\\alpha/2)}}-1\\right)\\left(\\frac{F_{(N-1),(T-N),(\\alpha/2)}}{F}\\right)\\bigg] $$ and $$ \\frac{\\mathrm{M S}_{e}}{n}\\left\\lfloor F\\cdot F_{\\infty,(N-1),(\\alpha/2)}-1+\\left(1-\\frac{F_{\\infty,(N-1),(\\alpha/2)}}{F_{(T-N),(N-1),(\\alpha/2)}}\\right)\\left(\\frac{1}{F_{(T-N),(N-1),(\\alpha/2)}}\\right)\\right\\rfloor $$ respectively, where the unsubscripted $F$ is the ratio of observed mean squares defined by Equation 18.18, and the $F$ values subscripted by their degrees of freedom are the critical values associated with $\\alpha/2$. These values are also obtainable from standard tables."
+    },
+    {
+      "type": "discussion",
+      "content": "Assuming normality of the underlying data, the $100(1 - \\alpha)%$ confidence interval for the heritability is given by $$ 4\\left[\\frac{\\left(F/F_{U}\\right)-1}{\\left(F/F_{U}\\right)+n-1}\\right]<h^{2}<4\\left[\\frac{\\left(F/F_{L}\\right)-1}{\\left(F/F_{L}\\right)+n-1}\\right] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "(Scheffé 1959, Graybill 1961, Williams 1962). In these expressions, $F$ is again the ratio of observed mean squares defined by Equation 18.18, and $F_U$ and $F_L$ are the upper and lower $F$ values associated with $(\\alpha/2)$ at $(N-1)$, $(T-N)$ degrees of freedom. Specifically, $F_U = F_{(N-1),(T-N),(\\alpha/2)}$, whereas $F_L = 1/(F_{(T-N),(N-1),(\\alpha/2)})$. (See Example 2 for an application of this equation.)"
+    },
+    {
+      "type": "discussion",
+      "content": "Although somewhat complicated, the preceding expressions are general, provided the data are normally distributed with homogeneous variance (i.e., $ s \\sim \\mathrm{N}(0, \\sigma_{s}^{2}) $ and $ e \\sim \\mathrm{N}(0, \\sigma_{e}^{2}) $ for all families). However, most confidence intervals reported in the literature are approximated by a simpler route. The usual procedure is to assume that the degrees of freedom are large enough that parameter estimates are approximately normally distributed. Then, symmetrical confidence intervals can be computed more simply from the standard errors, e.g., 95% confidence intervals are obtained by multiplying the standard error by 1.96 (Chapter 2). The degree to which this approach can yield biased confidence intervals will be illustrated in Example 2."
+    }
+  ]
+}

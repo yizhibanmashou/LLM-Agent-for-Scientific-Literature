@@ -1,0 +1,47 @@
+{
+  "id": "Evolution_chapter26_022",
+  "metadata": {
+    "chapter": "Evolution_chapter26",
+    "section": "ASYMPTOTIC RESPONSE DUE TO MUTATIONAL INPUT",
+    "subsections": [
+      "Optimizing the Asymptotic Selection Response"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter26_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "ASYMPTOTIC RESPONSE DUE TO MUTATIONAL INPUT",
+    "section_level_2": "Optimizing the Asymptotic Selection Response",
+    "heading_path": [
+      "ASYMPTOTIC RESPONSE DUE TO MUTATIONAL INPUT",
+      "Optimizing the Asymptotic Selection Response"
+    ],
+    "display_heading": "Optimizing the Asymptotic Selection Response"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Because the asymptotic response is a function of $ N_e\\bar{i} $, response is maximized by selection strategies that maximize this product. As was the case for maximizing long-term response (the total response using only the initial variation), there is a tradeoff in that the optimal short-term response (maximizing $ \\bar{i} $) is in conflict with the optimal asymptotic response (because increasing $ \\bar{i} $ decreases $ N_e $). If our choice is simply the fraction of individuals to save, the previous discussion on the optimal selection intensity for long-term response also applies to considerations of the asymptotic response."
+    },
+    {
+      "type": "discussion",
+      "content": "However, the breeder or experimentalist can use other design options beyond simply tuning the selection intensity. We have generally been assuming individual (or mass) selection, which is based solely on an individual's phenotype. There are, however, numerous other selection schemes, such as those incorporating information on the phenotypes of relatives (e.g., family-index and BLUP selection; Chapters 21 and 13, respectively). Schemes incorporating such information can improve the accuracy of an individual's breeding value estimate, and hence improve the accuracy of short-term response. This can be seen by recalling (Equation 13.11c) that the single-generation response, R, for any particular selection scheme is given by $ R/(\\bar{x}_{x}\\sigma_{A})=\\rho(x,A) $, where selection occurs on some index, x, and $ \\rho(x,A) $ is the accuracy of the index (the correlation between an individual's index, x, and breeding values, A). Holding $ \\bar{x} $ constant, the single-generation response increases with the accuracy, $ \\rho(x,A) $, of the selection method. While different schemes can improve the short-term response over mass selection, what is their effect on asymptotic response? Once again, the answer is that schemes improving the short-term response usually do so at the expense of the asymptotic response."
+    },
+    {
+      "type": "discussion",
+      "content": "Optimal asymptotic response occurs by maximizing the fixation probabilities of favorable QTLs, which amounts to maximizing $ N_{e}s $, where s is the selection coefficient on the QTL. For an additive trait, Hill (1985) and Caballero et al. (1996) generalized Equation 25.4 to show that $$ s=\\left(\\overline{\\imath}\\frac{a}{\\sigma_{z}}\\right)\\frac{\\rho(x,A)}{h} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Note that $ \\rho(x, A) = h $ for individual selection (the index is simply the trait value, x = z), recovering Equation 25.4. Fixation probabilities under different selection schemes with the same selection intensities are thus functions of the product $ N_e s $, which is proportional to $ N_e \\rho(x, A) $. The tradeoff is that increasing $ \\rho(x, A) $ typically decreases $ N_e $ by increasing the among-family variance in trait value (and hence in fitness). Thus, as was the case in our previous discussion on the optimal selection intensity, the optimal selection scheme for short-term response may differ from the optimal scheme for long-term response."
+    },
+    {
+      "type": "discussion",
+      "content": "The accuracy, $ \\rho $, depends on the genetic variance, and hence can change over time as these variances change. As shown in Chapters 24 and 25, predicting long-term changes in variances can be extremely difficult. Once again, the analysis is greatly simplified by assuming the infinitesimal model. Under this model, the additive genetic variance eventually converges to a value of $ \\widetilde{\\sigma}_{A}^{2} = 2N_{e}\\sigma_{m}^{2} $. The effect of different selection schemes on the equilibrium additive variance (and $ \\rho $) is then entirely determined by the effective population size that each scheme generates. In comparing two different selection schemes (i and j) with the same selection intensity, Wei et al. (1996) showed that the ratio of asymptotic responses becomes $$ \\frac{\\widetilde{R}_{i}}{\\widetilde{R}_{j}}=\\frac{\\widetilde{\\rho}(i)\\widetilde{\\sigma}_{A}(i)}{\\widetilde{\\rho}(j)\\widetilde{\\sigma}_{A}(j)}=\\frac{\\widetilde{\\rho}(i)}{\\widetilde{\\rho}(j)}\\sqrt{\\frac{N_{e}(i)}{N_{e}(j)}} $$ where a tilde denotes an equilibrium value and $ \\widetilde{\\rho}(i) $ denotes the accuracy (at the equilibrium variances) of selection scheme i. The careful reader will note that the effect of $ N_e $ is twofold—there is a direct effect (the square root of the $ N_e $ ratio) and also an indirect effect through the ratio of the $ \\widetilde{\\rho} $ (which is a function of $ \\widetilde{\\sigma}_A $, and hence of $ N_e $)."
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:26.6]]"
+    }
+  ]
+}

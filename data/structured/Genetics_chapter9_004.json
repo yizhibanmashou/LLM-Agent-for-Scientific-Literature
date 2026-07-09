@@ -1,0 +1,111 @@
+{
+  "id": "Genetics_chapter9_004",
+  "metadata": {
+    "chapter": "Genetics_chapter9",
+    "section": "Introduction",
+    "subsections": [
+      "Hypothesis Testing"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter9_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "Hypothesis Testing",
+    "heading_path": [
+      "Introduction",
+      "Hypothesis Testing"
+    ],
+    "display_heading": "Hypothesis Testing"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "When the number of observations equals the number of parameters to be estimated, the solution of simultaneous equations cannot be used to evaluate the adequacy of the genetic model, as the parameter estimates are constrained to yield the observed line means exactly. This problem is eliminated when the number of observed line means exceeds the number of parameters to be estimated. For example, if data are available for the $P_{1}$, $P_{2}$, $F_{1}$, and $F_{2}$ lines, the statistic $$ \\Delta=\\bar{z}(\\mathbf{F}_{2})-\\left(\\frac{\\bar{z}(\\mathbf{P}_{1})+\\bar{z}(\\mathbf{P}_{2})}{4}+\\frac{\\bar{z}(\\mathbf{F}_{1})}{2}\\right) $$ provides a simple test for epistasis. In the absence of epistasis, the expected value of $ \\Delta $ is zero because at every locus, by the Hardy-Weinberg law, the $ F_{2} $ is 25% $ P_{1}P_{1} $, 50% $ P_{1}P_{2} $, and 25% $ P_{2}P_{2} $. The sampling variance of this test statistic is $$ \\mathrm{Var}(\\Delta)=\\mathrm{Var}[\\bar{z}(\\mathrm{F}_{2})]+\\frac{\\mathrm{Var}[\\bar{z}(\\mathrm{F}_{1})]}{4}+\\frac{\\mathrm{Var}[\\bar{z}(\\mathrm{P}_{1})]+\\mathrm{Var}[\\bar{z}(\\mathrm{P}_{2})]}{16} $$"
+    },
+    {
+      "type": "proposition",
+      "content": "Under the reasonable assumption that the sampling distribution of $ \\Delta $ is approximately normal, the ratio $ |\\Delta| / \\sqrt{\\text{Var}(\\Delta)} $ provides a simple t test for epistasis. For large samples, if this ratio is greater than 1.96, then the null hypothesis of no epistasis can be rejected with 95% confidence."
+    },
+    {
+      "type": "discussion",
+      "content": "A more general approach to hypothesis testing uses least-squares regression to estimate the model parameters and then compares the observed means with the model predictions. With this approach, one can start with a very simple model, evaluate its significance, and gradually add higher-order composite effects to the model, until no further significant improvement in the model fit occurs. This procedure, first suggested by Cavalli (1952) and Hayman (1960a), is known as the joint-scaling test."
+    },
+    {
+      "type": "discussion",
+      "content": "Consider the simple additive model, $$ \\bar{z}_{i}=\\mu_{0}+\\theta_{S i}\\alpha_{i}^{c}+e_{i} $$ where the $i$th line mean $(\\bar{z}_i)$ has coefficient $\\theta_{Si}$, and $e_i$ denotes the deviation of the observed mean from the prediction of the model. In matrix form, letting $\\bar{z}$ be the vector of observed line means, a be the $(2\\times1)$ vector of effects $\\mu_0$ and $\\alpha_1^c$, and $\\mathbf{M}$ be the matrix of coefficients, the linear model becomes $$ \\bar{\\mathbf{z}}=\\mathbf{M}\\mathbf{a}+\\mathbf{e} $$ where e is the column vector of residual errors, i.e., the vector of deviations between observed and predicted line means. Note that all of the elements in the first column of M are equal to one, as they are all multipliers for $ \\mu_{0} $, whereas the second column contains the coefficients $ \\theta_{Si} $ for the various lines."
+    },
+    {
+      "type": "discussion",
+      "content": "Since the line means may vary with respect to accuracy (reflecting, for example, different sample sizes), they should not be weighted equally in the computation of a. From Equation 8.34, the weighted least-squares solution is $$ \\mathbf{\\widehat{a}}=(\\mathbf{M}^{T}\\mathbf{V}^{-1}\\mathbf{M})^{-1}\\mathbf{M}^{T}\\mathbf{V}^{-1}\\mathbf{\\bar{z}} $$ where the covariance matrix V for the residuals is diagonal with diagonal elements equal to the squared standard errors of the means. The treatment of V as a diagonal matrix assumes that the measured individuals from the different lines are unrelated, i.e., that there is no sampling covariance between the observed means. From Equation 8.35, the sampling variances and covariances of the two parameter estimates, $\\widehat{\\mu}_{0}$ and $\\widehat{\\alpha}_{1}^{c}$, are given by the elements of the $(2 \\times 2)$ covariance matrix $$ \\mathbf{Var}(\\widehat{\\mathbf{a}})=\\mathbf{C}=(\\mathbf{M}^{T}\\mathbf{V}^{-1}\\mathbf{M})^{-1} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The two diagonal elements are $ \\mathrm{Var}(\\widehat{\\mu}_0) $ and $ \\mathrm{Var}(\\widehat{\\alpha}^c) $, whereas both off-diagonal elements are equal to $ \\mathrm{Cov}(\\widehat{\\mu}_0, \\widehat{\\alpha}^c) $. Sampling covariance arises between estimates of the parameters because they are jointly estimated from a common data set. Letting $ \\widehat{z}_i = \\widehat{\\mu}_0 + \\theta_{Si} \\widehat{\\alpha}^c $ be the fitted (predicted) mean phenotype for the ith line, the sampling variance of $ \\widehat{z}_i $ is simply the variance of a sum, $$ \\mathbf{V a r}(\\widehat{z}_{i})=\\mathbf{V a r}(\\widehat{\\mu}_{0})+2\\theta_{S i}\\mathbf{C o v}(\\widehat{\\mu}_{0},\\widehat{\\alpha}^{c})+\\theta_{S i}^{2}\\mathbf{V a r}(\\widehat{\\alpha}^{c}) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Using Equations 8.21b and 9.8b, the covariance matrix for the predicted means is $$ \\mathrm{V a r}(\\widehat{\\mathbf{z}})=\\mathrm{V a r}(\\mathbf{M}\\widehat{\\mathbf{a}})=\\mathbf{M}\\mathbf{C}\\mathbf{M}^{T}=\\mathbf{M}(\\mathbf{M}^{T}\\mathbf{V}^{-1}\\mathbf{M})^{-1}\\mathbf{M}^{T} $$"
+    },
+    {
+      "type": "proposition",
+      "content": "Although the least-squares solution is completely general, significance testing requires the assumption of normality. If that assumption is met, the weighted error sum of squares $$ \\chi^{2}=\\sum_{i=1}^{k}\\frac{(\\bar{z}_{i}-\\widehat{z}_{i})^{2}}{\\mathbf{Var}(\\bar{z}_{i})} $$ where $k$ is the number of observed lines, provides a test statistic for the adequacy of the model (Appendix 3). Under the null hypothesis of purely additive gene action, this test statistic will be $\\chi^{2}$ distributed with degrees of freedom equal to the number of lines minus the number of estimated parameters, giving $(k-2)$ df."
+    },
+    {
+      "type": "discussion",
+      "content": "If the test statistic is large enough to reject the additive model, the logical next step is to evaluate the additive-dominance model. In this case, the vector a contains a third element, $ \\delta_{1}^{c} $, and the matrix M contains a third row consisting of the elements $ \\theta_{Hi} $. The solution again follows from Equation 9.8a, and the new fit is evaluated by use of Equation 9.10, where the $ \\chi^{2} $ statistic is now distributed with k - 3 degrees of freedom, as three parameters are fitted."
+    },
+    {
+      "type": "discussion",
+      "content": "Letting $\\chi_{A}^{\\bar{2}}$ and $\\chi_{AD}^{2}$ denote the test statistics associated with the additive and additive-dominance models, then the difference $$ \\Lambda=\\chi_{A}^{2}-\\chi_{A D}^{2} $$ is equivalent to a likelihood-ratio test statistic (see Example 5 from Appendix 4). Such statistics are asymptotically $\\chi^{2}$ distributed (with large sample sizes), with degrees of freedom equal to the difference in the number of parameters included in the two models (in this case, one). While the inclusion of dominance in the model will definitely improve the fit, Equation 9.11 provides a test for whether the improvement is significant."
+    },
+    {
+      "type": "discussion",
+      "content": "If the additive-dominance model is rejected on the basis of an overly large value for $\\chi_{AD}^{2}$, the next step is to proceed with the analysis of models containing epistatic effects, assuming that enough line means are available for such analysis. At this point, $\\delta_{1}^{c}$ may or may not be dropped from the model depending on its degree of significance in the previous analysis. The significance of the improvement of fit with models containing epistasis can again be evaluated by use of the appropriate likelihood-ratio test, i.e., by the difference in $\\chi^{2}$ test statistics between the modified model and the previous restricted model."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 2. We now use the joint-scaling test to study the genetic basis of human skin color. The sample consists primarily of residents of Liverpool, England (Harrison and Owen 1964). Pigmentation was measured as the reflectance of the medial aspect of the right upper arm at 545 m$\\mu$. The $P_{1}$ consists of individuals of West African origin and the $P_{2}$ of individuals of European descent."
+    },
+    {
+      "type": "discussion",
+      "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>$ P_{{1}} $</td><td style='text-align: center; word-wrap: break-word;'>$ P_{{2}} $</td><td style='text-align: center; word-wrap: break-word;'>$ F_{{1}} $</td><td style='text-align: center; word-wrap: break-word;'>$ F_{{2}} $</td><td style='text-align: center; word-wrap: break-word;'>$ B_{{1}} $</td><td style='text-align: center; word-wrap: break-word;'>$ B_{{2}} $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>$ \\bar{z}_{i} $</td><td style='text-align: center; word-wrap: break-word;'>14.4</td><td style='text-align: center; word-wrap: break-word;'>41.0</td><td style='text-align: center; word-wrap: break-word;'>28.4</td><td style='text-align: center; word-wrap: break-word;'>30.3</td><td style='text-align: center; word-wrap: break-word;'>24.2</td><td style='text-align: center; word-wrap: break-word;'>34.7</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>$ \\text{{SE}}(\\bar{z}_{i}) $</td><td style='text-align: center; word-wrap: break-word;'>0.611</td><td style='text-align: center; word-wrap: break-word;'>0.453</td><td style='text-align: center; word-wrap: break-word;'>0.581</td><td style='text-align: center; word-wrap: break-word;'>1.483</td><td style='text-align: center; word-wrap: break-word;'>1.334</td><td style='text-align: center; word-wrap: break-word;'>1.122</td></tr></table>"
+    },
+    {
+      "type": "discussion",
+      "content": "There is a threefold range of variation in the standard errors of the mean phenotypes, and this translates into a tenfold range in the sampling variances. Clearly, weighted least-squares regression is desirable in this situation."
+    },
+    {
+      "type": "discussion",
+      "content": "We start by considering the simplest genetic model, assuming that all gene action is additive within and between loci. The coefficients for the effects $\\mu_{0}$ and $\\alpha^{c}$ are given by $$ \\mathbf{M}=\\begin{pmatrix}{{{1}}}&{{{1}}} \\\\{{{1}}}&{{{-1}}} \\\\{{{1}}}&{{{0}}} \\\\{{{1}}}&{{{0}}} \\\\{{{1}}}&{{{0.5}}} \\\\{{{1}}}&{{{-0.5}}}\\end{pmatrix} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The sampling covariance matrix for the line means is diagonal with $ V_{ii} = [\\mathrm{SE}(\\bar{z}_i)]^2 $, $$ \\mathbf{V}=\\begin{pmatrix}0.373&0.000&0.000&0.000&0.000&0.000\\\\0.000&0.205&0.000&0.000&0.000&0.000\\\\0.000&0.000&0.338&0.000&0.000&0.000\\\\0.000&0.000&0.000&2.199&0.000&0.000\\\\0.000&0.000&0.000&0.000&1.780&0.000\\\\0.000&0.000&0.000&0.000&0.000&1.259\\end{pmatrix} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "These lead to $$ \\mathbf{M}^{T}\\mathbf{V}^{-1}\\mathbf{M}=\\begin{pmatrix}12.325&-2.311\\\\ -2.311&7.891\\end{pmatrix} $$ which yields the sampling covariance matrix for the parameter estimates (Equation 9.8b), $$ \\mathbf{C}=(\\mathbf{M}^{T}\\mathbf{V}^{-1}\\mathbf{M})^{-1}=\\begin{pmatrix}0.086&0.025\\\\ 0.025&0.134\\end{pmatrix} $$ and from Equation 9.8a, the parameter estimates $$ \\mathbf{\\widehat{a}}=\\left(\\begin{matrix}{\\widehat{\\mu}_{0}}\\\\ {\\widehat{\\alpha}^{c}}\\\\ \\end{matrix}\\right)=\\left(\\begin{matrix}{\\phantom{-}28.17}\\\\ {-13.07}\\\\ \\end{matrix}\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The standard errors of the parameter estimates are equal to the square roots of the diagonal elements of C, $$ \\begin{aligned}SE(\\widehat{\\mu}_{0})&=(0.086)^{1/2}=0.29\\\\ SE(\\widehat{\\alpha}^{c})&=(0.134)^{1/2}=0.37\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The line means predicted by the model are obtained as $ \\hat{\\mathbf{z}} = \\mathbf{M}\\hat{\\mathbf{a}} $, and the sampling variances and covariances of predicted values by Equation 9.9b, $$ \\mathbf{V a r}(\\widehat{\\mathbf{z}})=\\mathbf{M}(\\mathbf{M}^{T}\\mathbf{V}^{-1}\\mathbf{M})^{-1}\\mathbf{M}^{T} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The square roots of the diagonal elements of this latter matrix are the estimated standard errors of the predicted means. In all cases, the predicted values are very close to the observed means: <table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>$ P_{{1}} $</td><td style='text-align: center; word-wrap: break-word;'>$ P_{{2}} $</td><td style='text-align: center; word-wrap: break-word;'>$ F_{{1}} $</td><td style='text-align: center; word-wrap: break-word;'>$ F_{{2}} $</td><td style='text-align: center; word-wrap: break-word;'>$ B_{{1}} $</td><td style='text-align: center; word-wrap: break-word;'>$ B_{{2}} $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>$ \\widehat{z} $</td><td style='text-align: center; word-wrap: break-word;'>15.2</td><td style='text-align: center; word-wrap: break-word;'>41.2</td><td style='text-align: center; word-wrap: break-word;'>28.2</td><td style='text-align: center; word-wrap: break-word;'>28.2</td><td style='text-align: center; word-wrap: break-word;'>21.6</td><td style='text-align: center; word-wrap: break-word;'>34.7</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>$ \\widetilde{z} - \\widehat{z} $</td><td style='text-align: center; word-wrap: break-word;'>-0.8</td><td style='text-align: center; word-wrap: break-word;'>-0.2</td><td style='text-align: center; word-wrap: break-word;'>0.2</td><td style='text-align: center; word-wrap: break-word;'>2.1</td><td style='text-align: center; word-wrap: break-word;'>2.6</td><td style='text-align: center; word-wrap: break-word;'>0.0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>$ \\text{SE}(\\widehat{z}) $</td><td style='text-align: center; word-wrap: break-word;'>0.52</td><td style='text-align: center; word-wrap: break-word;'>0.41</td><td style='text-align: center; word-wrap: break-word;'>0.29</td><td style='text-align: center; word-wrap: break-word;'>0.29</td><td style='text-align: center; word-wrap: break-word;'>0.38</td><td style='text-align: center; word-wrap: break-word;'>0.31</td></tr></table>"
+    },
+    {
+      "type": "discussion",
+      "content": "The test statistic, $ \\chi_{A}^{2} = 7.510 $, with four degrees of freedom, is not significant as $ \\Pr(\\chi_{4}^{2} \\geq 7.510) = 0.11 $. Thus, the fitted model with $ \\widehat{\\mu}_{0} = 28.17 $ and $ \\widehat{\\alpha}^{c} = -13.07 $ appears to adequately explain the data. Reevaluation of the data with the additive-dominance model confirms this conclusion. In this case, the analysis proceeds with $$ \\mathbf{M}=\\begin{pmatrix}{{{1}}}&{{{1}}}&{{{-1}}} \\\\{{{1}}}&{{{-1}}}&{{{-1}}} \\\\{{{1}}}&{{{0}}}&{{{1}}} \\\\{{{1}}}&{{{0}}}&{{{0}}} \\\\{{{1}}}&{{{0.5}}}&{{{0}}} \\\\{{{1}}}&{{{-0.5}}}&{{{0}}}\\end{pmatrix} $$ and $$ \\mathbf{a}=\\begin{pmatrix}\\mu_{0}\\\\ \\alpha^{c}\\\\ \\delta^{c}\\end{pmatrix} $$ yielding the parameter estimates (and associated standard errors): $$ \\widehat{\\mu}_{0}=28.32\\left(0.32\\right),\\quad\\widehat{\\alpha}^{c}=-13.14\\left(0.37\\right),\\quad\\widehat{\\delta}^{c}=0.44\\left(0.34\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Notice that the estimates $\\widehat{\\mu}_0$ and $\\widehat{\\alpha}^c$ are very close to those obtained under the purely additive model, and that $\\widehat{\\delta}^c$ is only slightly greater than its standard error. The test statistic for this analysis is $\\chi_{AD}^2 = 5.879$. The likelihood-ratio test statistic, $\\Lambda = \\chi_A^2 - \\chi_{AD}^2 = 1.631$, provides a test of the hypothesis that dominance accounts for a significant proportion of the variance among line means. With one degree of freedom, $\\Lambda$ is not significant, as $\\Pr(\\chi_1^2 \\geq 1.631) = 0.20$."
+    }
+  ]
+}

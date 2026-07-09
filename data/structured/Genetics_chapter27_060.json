@@ -1,0 +1,55 @@
+{
+  "id": "Genetics_chapter27_060",
+  "metadata": {
+    "chapter": "Genetics_chapter27",
+    "section": "Variance-Component Estimation with Complex Pedigrees",
+    "subsections": [
+      "One-sided Tests"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter27_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Variance-Component Estimation with Complex Pedigrees",
+    "section_level_2": "One-sided Tests",
+    "heading_path": [
+      "Variance-Component Estimation with Complex Pedigrees",
+      "One-sided Tests"
+    ],
+    "display_heading": "One-sided Tests"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Some hypotheses are naturally one-sided. For example, we may wish to test whether heritability $ h^{2} $ is significantly different from zero. In this case, true values of $ h^{2} < 0 $ cannot occur, so that the alternative to the null hypothesis $ h^{2} = 0 $ is $ h^{2} > 0 $."
+    },
+    {
+      "type": "discussion",
+      "content": "Consider the null hypothesis that the test statistic has mean $ \\mu = \\mu_{o} $ versus the alternative hypothesis that $ \\mu = \\mu_{1} $, where (for example) $ \\mu_{1} > \\mu_{0} $. Suppose that"
+    },
+    {
+      "type": "discussion",
+      "content": "Figure A5.2 Areas under the normal curve for one-sided (left) and two-sided (right) tests of significance at level $ \\alpha $. under the null hypothesis, the test statistic $ T \\sim \\mathrm{N}(\\mu_o, \\sigma_o^2) $, so that $ (T - \\mu_o)/\\sigma_o $ is distributed as a unit normal, implying from Equation A5.1b that $$ \\Pr\\left(\\frac{T-\\mu_{o}}{\\sigma_{o}}>z_{(1-\\alpha)}\\right)=\\Pr\\left(T>\\mu_{o}+\\sigma_{o} z_{(1-\\alpha)}\\right)=\\alpha $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, comparing the observed statistic $T$ with the $\\alpha$-level critical value, $T_{c}(\\alpha)$, where $$ T_{c}(\\alpha)=\\mu_{o}+\\sigma_{o}z_{(1-\\alpha)} $$ gives the one-sided test of significance with probability $ \\alpha $ of a false positive. We reject the null hypothesis when $ T > T_{c}(\\alpha) $."
+    },
+    {
+      "type": "discussion",
+      "content": "Suppose that the alternative hypothesis is correct, so that $ T \\sim \\mathrm{N}(\\mu_1, \\sigma^2) $. What is the probability that the resulting test statistic is significant (and hence a false negative is avoided)? Since it is now $ (T - \\mu_1)/\\sigma_1 $ that follows a unit normal, the probability that the test statistic exceeds the critical value $ T_c(\\alpha) $ given by Equation A5.2b is $$ \\begin{aligned}\\Pr\\left(T>T_{c}(\\alpha)\\right)&=\\Pr\\left(\\frac{T-\\mu_{1}}{\\sigma_{1}}>\\frac{T_{c}(\\alpha)-\\mu_{1}}{\\sigma_{1}}\\right)\\\\&=\\Pr\\left(U>\\frac{\\mu_{o}-\\mu_{1}}{\\sigma_{1}}+z_{(1-\\alpha)}\\frac{\\sigma_{o}}{\\sigma_{1}}\\right)\\end{aligned} $$ where $U$ is a unit normal random variable. Noting that $\\Pr(U > z_{(\\beta)}) = 1 - \\beta$ (Equation A5.1b), from Equation A5.3 it immediately follows that for the test to have power $1 - \\beta$ requires $$ \\frac{\\mu_{o}-\\mu_{1}}{\\sigma_{1}}+z_{(1-\\alpha)}\\frac{\\sigma_{o}}{\\sigma_{1}}=z_{(\\beta)} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Using our notation for writing the variance of the test statistic as a function $f$ divided by the sample size $n$ (i.e., $\\sigma_{i}^{2} = f_{i}^{2}/n$), this becomes $$ \\sqrt{n}\\ \\frac{\\left(\\mu_{o}-\\mu_{1}\\right)}{f_{1}}+z_{(1-\\alpha)}\\ \\frac{f_{o}}{f_{1}}=z_{(\\beta)} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Since $ -z_{(\\beta)} = z_{(1-\\beta)} $ (Equation A5.1c), this rearranges to give $$ n=\\frac{f_{1}^{2}}{(\\mu_{1}-\\mu_{o})^{2}}\\left(z_{(1-\\alpha)}\\frac{f_{o}}{f_{1}}+z_{(1-\\beta)}\\right)^{2} $$ $$ =\\left(\\frac{z_{(1-\\beta)}\\;f_{1}+z_{(1-\\alpha)}\\;f_{0}}{\\mu_{1}-\\mu_{0}}\\right)^{2} $$ $$ \\simeq\\frac{f_{1}^{2}}{(\\mu_{1}-\\mu_{o})^{2}}\\left(z_{(1-\\alpha)}+z_{(1-\\beta)}\\right)^{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Equation A5.4c holds when the sample variances under the null hypothesis and true parameter values are approximately equal $ (f_0 \\simeq f_1) $, as is often the case."
+    }
+  ]
+}

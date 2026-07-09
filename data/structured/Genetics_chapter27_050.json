@@ -1,0 +1,43 @@
+{
+  "id": "Genetics_chapter27_050",
+  "metadata": {
+    "chapter": "Genetics_chapter27",
+    "section": "Variance-Component Estimation with Complex Pedigrees",
+    "subsections": [
+      "LIKELIHOOD-RATIO TESTS"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter27_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Variance-Component Estimation with Complex Pedigrees",
+    "section_level_2": "LIKELIHOOD-RATIO TESTS",
+    "heading_path": [
+      "Variance-Component Estimation with Complex Pedigrees",
+      "LIKELIHOOD-RATIO TESTS"
+    ],
+    "display_heading": "LIKELIHOOD-RATIO TESTS"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Maximum likelihood provides for extremely convenient tests of hypotheses in the form of likelihood-ratio, or LR, tests (reviewed in Chapter 24 of Kendall and Stuart 1979) that examine whether a reduced model provides the same fit as a full model. The likelihood-ratio test statistic is given by $$ L R=2\\ln\\biggl(\\frac{\\ell(\\widehat{\\boldsymbol{\\Theta}}\\mid\\mathbf{z})}{\\ell(\\widehat{\\boldsymbol{\\Theta}}_{r}\\mid\\mathbf{z})}\\biggr)=-2\\ln\\biggl(\\frac{\\ell(\\widehat{\\boldsymbol{\\Theta}}_{r}\\mid\\mathbf{z})}{\\ell(\\widehat{\\boldsymbol{\\Theta}}\\mid\\mathbf{z})}\\biggr)=-2\\left[L(\\widehat{\\boldsymbol{\\Theta}}_{r}\\mid\\mathbf{z})-L(\\widehat{\\boldsymbol{\\Theta}}\\mid\\mathbf{z})\\right] $$ where $ \\ell(\\widehat{\\Theta}|\\mathbf{z}) $ is the likelihood evaluated at the MLE and $ \\ell(\\widehat{\\Theta}_{r}|\\mathbf{z}) $ is the maximum of the likelihood function, subject to the restriction that $ r $ parameters unconstrained in the full likelihood analysis are assigned fixed values. For sufficiently large sample size, the LR test statistic is $ \\chi^{2}_{r} $-distributed, a $ \\chi^{2} $ with $ r $ degrees of freedom (Wald 1943)."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 4. Suppose we wish to test the hypothesis that $ \\mu = 0 $ in Example 1. Here the MLE is $ \\widehat{\\mu} = \\overline{z} $ and the LR test statistic becomes $$ \\begin{aligned}{-2\\operatorname{l n}\\biggl(\\frac{\\ell(0\\mid\\mathbf{z})}{\\ell(\\widehat{\\mu}\\mid\\mathbf{z})}\\biggr)}&{{}=-2\\operatorname{l n}\\left(\\frac{(2\\pi)^{-n/2}\\operatorname{e x p}\\Bigl(-\\sum_{i=1}^{n}(z_{i}-0)^{2}/2\\Bigr)}{(2\\pi)^{-n/2}\\operatorname{e x p}\\Bigl(-\\sum_{i=1}^{n}(z_{i}-\\overline{{z}})^{2}/2\\Bigr)}\\right)}\\\\ {}&{{}=\\sum_{i=1}^{n}\\left[z_{i}^{2}-(z_{i}-\\overline{{z}})^{2}\\right]=n\\overline{{z}}^{2}}\\\\ \\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "This test statistic is distributed as a $\\chi^{2}$ with one degree of freedom, as one parameter $(\\mu)$ was assigned a fixed value in the reduced model. Since $\\text{Prob}(\\chi_{1}^{2} > 3.84) = 0.05$, the hypothesis $\\mu = 0$ is rejected at the 5% level if the test statistic exceeds 3.84."
+    },
+    {
+      "type": "discussion",
+      "content": "Now suppose we wish to test this hypothesis under the conditions of Example 3, where the variance is also unknown and hence must also be estimated. Here the MLEs for the full model are given by Equation A4.8c. Substituting $ \\mu = 0 $ into Equation A4.8b gives the score function for the restricted model as $$ \\frac{\\partial L(\\sigma^{2})}{\\partial\\sigma^{2}}=\\frac{n}{\\sigma^{2}}\\left(\\frac{\\overline{z^{2}}}{2\\sigma^{2}}-\\frac{1}{2}\\right) $$ giving the MLE for $\\sigma^{2}$ under this restriction as $\\widehat{\\sigma}_{r}^{2} = \\overline{z^{2}}$. Substituting the MLEs into the likelihood functions, and once again using the identity $\\sum(z_{i} - \\mu)^{2} = n\\left(\\overline{z^{2}} - 2\\overline{z}\\mu + \\mu^{2}\\right)$ gives the LR test statistic as $$ -2\\ln\\left(\\frac{\\ell(0,\\widehat{\\sigma}_{r}^{2}|\\mathbf{z})}{\\ell(\\widehat{\\mu},\\widehat{\\sigma}^{2}|\\mathbf{z})}\\right) $$ $$ \\begin{aligned}=-2\\ln\\left(\\frac{(\\overline{z^{2}})^{-n/2}\\cdot\\exp\\left[-n\\overline{z^{2}}/\\left(2\\overline{z^{2}}\\right)\\right]}{(\\overline{z^{2}}-\\overline{z}^{2})^{-n/2}\\cdot\\exp\\left[-n\\left(\\overline{z^{2}}-\\overline{z}^{2}\\right)/2\\left(\\overline{z^{2}}-\\overline{z}^{2}\\right)\\right]}\\right)\\\\ =-n\\ln\\left(1-\\frac{(\\overline{z})^{2}}{\\overline{z^{2}}}\\right)\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Again, for large samples this follows a $\\chi_{1}^{2}$ distribution as the value of one parameter is assigned a fixed value."
+    }
+  ]
+}

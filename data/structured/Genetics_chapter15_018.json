@@ -1,0 +1,31 @@
+{
+  "id": "Genetics_chapter15_018",
+  "metadata": {
+    "chapter": "Genetics_chapter15",
+    "section": "Introduction",
+    "subsections": [
+      "Power under Selective Genotyping"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter15_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "Power under Selective Genotyping",
+    "heading_path": [
+      "Introduction",
+      "Power under Selective Genotyping"
+    ],
+    "display_heading": "Power under Selective Genotyping"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "The idea behind selective genotyping is that scoring characters is often much less expensive than scoring markers. Hence, if $n$ individuals are scored and genotyped in a normal design, there may be merit in scoring a larger number of individuals $n_{z} > n$ for the trait value, and then choosing a subset $n_{g} \\leq n$ of these for genotyping. Typically, the uppermost and lowermost fractions $(p)$ of scored individuals are genotyped, giving $n_{g} = 2p n_{z} \\leq n$. Darvasi and Soller (1992) show that selective genotyping by scoring $n_{z}$ individuals and genotyping $n_{g} = 2p n_{z}$ gives the same power as an analysis genotyping all $n$ individuals, when $$ n_{z}=\\frac{n}{2p+2z_{(1-p)}\\varphi(z_{(1-p)})} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Here, $\\varphi(z_{(1-p)})$ is the unit normal density function evaluated at $z_{(1-p)}$, where $\\Pr(U > z_{(1-p)}) = p$ with $U \\sim N(0,1)$. Figure 15.7 plots the ratio $n_z/n$ as a function of $p$. For example, selective genotyping using the uppermost and lowermost 10% $(p = 0.1)$ of the population requires that $n_z = 1.54$ $n$ individuals be phenotyped but only $n_g = 2 \\cdot 0.1 \\cdot n_z = 0.3$ $n$ be genotyped. Since a decrease in $p$ reduces the number of individuals that must be genotyped but increases the number that must be scored for the trait, the optimal $p$ value depends on the relative costs of phenotyping and genotyping each individual (Darvasi and Soller 1992)."
+    }
+  ]
+}

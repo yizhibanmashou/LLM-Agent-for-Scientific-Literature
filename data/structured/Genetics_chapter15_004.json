@@ -1,0 +1,79 @@
+{
+  "id": "Genetics_chapter15_004",
+  "metadata": {
+    "chapter": "Genetics_chapter15",
+    "section": "Introduction",
+    "subsections": [
+      "Expected Marker-class Means"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter15_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "Expected Marker-class Means",
+    "heading_path": [
+      "Introduction",
+      "Expected Marker-class Means"
+    ],
+    "display_heading": "Expected Marker-class Means"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "With these conditional probabilities in hand, the expected trait values for the various marker genotypes follow immediately. Suppose there are $N$ QTL genotypes, $Q_{1}, \\cdots, Q_{N}$, where the mean of the $k$th QTL genotype is $\\mu_{Q_{k}}$. The mean value for marker genotype $M_{j}$ is just $$ \\mu_{M_{j}}=\\sum_{k=1}^{N}\\mu_{Q_{k}}\\mathrm{Pr}(Q_{k}\\mid M_{j}) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The QTL effects enter through the $\\mu_{Q_k}$, while the QTL positions enter through the conditional probabilities $\\mathrm{Pr}(Q_k|M_j)$. Equation 15.6 is completely general, allowing for multilocus marker genotypes and multiple QTLs."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 2. Consider the single-marker F$_{2}$ design with a single QTL linked (at recombination frequency $c$) to the marker. Denote the QTL genotypic values by $$ \\mu_{Q Q}=\\mu+2a,\\quad\\mu_{Q q}=\\mu+a(1+k),\\quad\\mathrm{a n d}\\quad\\mu_{q q}=\\mu $$ where a measures the additive value and k the degree of dominance. Applying the conditional probabilities developed in Example 1 to Equation 15.6, the mean values for the marker genotypes are $$ \\mu_{M M}=\\mu+2a(1-c)^{2}+2c(1-c)(1+k)a $$ $$ \\mu_{M m}=\\mu+2a c(1-c)+[1-2c(1-c)](1+k)a $$ $$ \\mu_{m m}=\\mu+2a c^{2}+2c(1-c)(1+k)a $$"
+    },
+    {
+      "type": "discussion",
+      "content": "If the marker and QTL are unlinked ($c = 1/2$), all markers have the same mean, $\\mu + a[1 + (k/2)]$. Rearranging these equations gives $$ (\\mu_{M M}-\\mu_{m m})/2=a(1-2c)=a^{*} $$ $$ \\frac{\\mu_{Mm}-(\\mu_{MM}+\\mu_{mm})/2}{(\\mu_{MM}-\\mu_{mm})/2}=k(1-2c)=k^{*} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Hence, one strategy for detecting QTLs is to test for significant differences between the mean trait values associated with different marker genotypes. This is the basis for QTL detection via regression or ANOVA, which we generically refer to as linear model approaches."
+    },
+    {
+      "type": "discussion",
+      "content": "This example shows that while contrasts of single-marker means can be used to estimate both $a^{*}$ and $k^{*}$, these underestimate the magnitude of $a$ and $k$ by the (unknown) fraction $1 - 2c$. If the marker and QTL are tightly linked, this error is small, but it increases rather dramatically as $c$ approaches $1/2$. A small difference between marker-homozygote means is thus compatible with either a tightly linked QTL of small effect or a loosely linked QTL of large effect. As we will show shortly, when multilocus marker genotypes are considered, the use of appropriate combinations of marker means allows for separate estimates of QTL effect and position."
+    },
+    {
+      "type": "discussion",
+      "content": "If there are $N$ QTLs linked to the marker, the $i$th of which is at recombination frequency $c_{i}$ from the marker and has associated additive and dominance effects $a_{i}$ and $k_{i}$, then (from Edwards et al. 1987), $$ (\\mu_{M M}-\\mu_{m m})/2=\\sum_{i=1}^{N}a_{i}^{*} $$ $$ \\frac{\\mu_{Mm}-(\\mu_{MM}+\\mu_{mm})/2}{(\\mu_{MM}-\\mu_{mm})/2}=\\sum_{i=1}^{N}a_{i}^{*}k_{i}^{*}\\bigg/\\sum_{i=1}^{N}a_{i}^{*} $$ where $ a_{i}^{*} = a_{i}(1 - 2c_{i}) $ and $ k_{i}^{*} = k_{i}(1 - 2c_{i}) $. If some of the linked QTLs have effects of opposite sign, some cancellation occurs, reducing the marker-trait association. Moreover, with multiple linked QTLs, the degrees of dominance ($ k_{i} $) are confounded with the homozygous effects ($ a_{i} $)."
+    },
+    {
+      "type": "discussion",
+      "content": "Marker-class means for other designs follow by applying the appropriate conditional probabilities to Equation 15.6. For example, for the $B_{1}$ design, from Equation 15.3a, $$ \\mu_{M M}-\\mu_{M m}=(\\mu_{Q Q}-\\mu_{Q q})(1-2c)=a(1-k)(1-2c) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, under a backcross design the scaled QTL effects are influenced strongly by the (unknown) degree of dominance $k$. If $Q$ is completely dominant to $q$, $k = 1$, and there is no marker-QTL effect. Conversely, if $q$ is dominant to $Q$, $k = -1$ and the scaled effect becomes $2a(1 - 2c)$, which is the same as under an $\\mathrm{F}_2$ design. Recalling Equation 15.3b, the reciprocal backcross ($\\mathrm{B}_2 = \\mathrm{F}_1 \\times \\mathrm{P}_2$) yields a similar expression, $$ \\mu_{M m}-\\mu_{m m}=(\\mu_{Q q}-\\mu_{q q})(1-2c)=a(1+k)(1-2c) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Note that the ratio of Equation 15.9a to 15.9b gives $(1-k)/(1+k)$, so that (provided only a single QTL is linked to the marker) an estimate of $k$ can be obtained if one has access to both backcross populations."
+    },
+    {
+      "type": "discussion",
+      "content": "The expressions developed in Example 2 for $\\mathrm{F}_{2}$ analysis hold for an $\\mathrm{F}_{t}$ population, provided $\\widetilde{c}$ (given by Equation 15.4) replaces $c$. For example, $\\mu_{MM} - \\mu_{mm} = 2a(1-2\\widetilde{c})$, and so forth. Since $(1-2c) > (1-2\\widetilde{c})$, AILs have smaller differences between marker means, and hence reduced power of QTL detection, relative to the $\\mathrm{F}_{2}$ design. Despite this, Darvasi and Soller (1995) advocate the use of AILs for fine-mapping of QTLs, as the expansion of the genetic map offers a higher precision of estimates of QTL position. We expand on this point below."
+    },
+    {
+      "type": "discussion",
+      "content": "For RILs and DHLs, the recombination parameter $ \\tilde{c} $ is given by Equation 15.5b, and from Equations 15.5a and 15.6 it follows that $$ \\mu_{M M}=\\mu_{Q Q}\\left(1-\\widetilde{c}\\right)+\\mu_{q q}\\widetilde{c}\\qquad\\mathrm{a n d}\\qquad\\mu_{m m}=\\mu_{Q Q}\\widetilde{c}+\\mu_{q q}\\left(1-\\widetilde{c}\\right) $$ giving $$ \\frac{\\mu_{M M}-\\mu_{m m}}{2}=a(1-2\\widetilde{c})=a^{*} $$ again providing an estimate of a composite parameter of the QTL effect (a) and position (c). Because $ \\widetilde{c} $ is smallest in DHLs (see Equation 15.5b), the largest marker effect (and greatest power for QTL detection) occurs in this type of line, followed by selfed RILs, and finally by sib-mated RILs."
+    },
+    {
+      "type": "proposition",
+      "content": "Finally, note that by considering two-locus (rather than single-locus) marker means, separate estimates of QTL effect and position can be obtained. Taking the genotype at two adjacent marker loci ($ M_{1}/m_{1} $ and $ M_{2}/m_{2} $) as the unit of analysis, consider the difference between the contrasting double homozygotes in an $ F_{2} $. If the markers flank a QTL, then under the assumption of no interference, Equation 15.2 (and its analog for $ m_{1}m_{1}m_{2}m_{2} $ probabilities) implies $$ \\begin{aligned}\\frac{\\mu_{M_{1}M_{1}M_{2}M_{2}}-\\mu_{m_{1}m_{1}m_{2}m_{2}}}{2}&=a\\left(\\frac{1-c_{1}-c_{2}}{1-c_{1}-c_{2}+2c_{1}c_{2}}\\right)\\\\&\\simeq a\\left(1-2c_{1}c_{2}\\right)\\end{aligned} $$ where $ c_1 $ is the $ M_1 $-QTL recombination frequency. Equation 15.11a is essentially equal to $ a $ when the distance between flanking markers $ c_{12} \\leq 0.20 $, as here $ (1 - 2c_1 c_2) \\geq 0.98 $. Thus, recalling from Equation 15.7a that $ \\mu_{M_1 M_1} - \\mu_{m_1 m_1} = 2a(1 - 2c_1) $, we can obtain estimates of the recombination frequencies by substituting Equation 15.11a for $ a $ and rearranging to give $$ \\begin{aligned}c_{1}&=\\frac{1}{2}\\left(1-\\frac{\\mu_{M_{1}M_{1}}-\\mu_{m_{1}m_{1}}}{2a}\\right)\\\\&\\simeq\\frac{1}{2}\\left(1-\\frac{\\mu_{M_{1}M_{1}}-\\mu_{m_{1}m_{1}}}{\\mu_{M_{1}M_{1}M_{2}M_{2}}-\\mu_{m_{1}m_{1}m_{2}m_{2}}}\\right)\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Estimates for other flanking-marker designs are given by Knapp et al. (1990), Knapp and Bridges (1990), and Knapp (1991)."
+    }
+  ]
+}

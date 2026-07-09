@@ -1,0 +1,67 @@
+{
+  "id": "Evolution_chapter2_014",
+  "metadata": {
+    "chapter": "Evolution_chapter2",
+    "section": "THE DETAILED STRUCTURE OF NEUTRAL VARIATION",
+    "subsections": [
+      "The Infinite-Sites Model and the Associated Site-frequency Spectrum"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter2_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "THE DETAILED STRUCTURE OF NEUTRAL VARIATION",
+    "section_level_2": "The Infinite-Sites Model and the Associated Site-frequency Spectrum",
+    "heading_path": [
+      "THE DETAILED STRUCTURE OF NEUTRAL VARIATION",
+      "The Infinite-Sites Model and the Associated Site-frequency Spectrum"
+    ],
+    "display_heading": "The Infinite-Sites Model and the Associated Site-frequency Spectrum"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "An alternate framework for summarizing molecular variation is embodied in the infinites- sites model, which treats a region as a series of L sites. Each new mutation is again viewed as unique, but now occurring at a novel (not currently segregating) site, and as with the infinite- alleles model, recombination within the region is assumed to be insignificant. Because this model allows only a single mutation per site, a particular variant at a polymorphic site is either ancestral (original) or derived (mutated), and each segregating site is treated as biallelic. With sequence data from one or more outgroups, one can often polarize the nucleotides at any particular site, determining which is derived by assuming the outgroup harbors the ancestral state. In the absence of such information, the minor-allele frequency, the frequency of the rarest nucleotide, is reported for each site. In the following expressions, we will make use of both measures of the population mutation rate noted above, with $ \\theta_L = 4NuL = \\theta L $."
+    },
+    {
+      "type": "discussion",
+      "content": "The infinite-sites model offers a much richer set of information than can be achieved with the infinite-alleles model. One measure is the number of segregating sites $S$, i.e., the number of polymorphic sites in a sample (the loose analog to number of alleles). A second is the nucleotide diversity $\\pi$, the average per-site heterozygosity within the region of interest. Finally, one can consider the site-frequency spectrum, the counterpart of the allele-frequency spectrum. In this case, instead of counting the number of times each allele appears in the sample, one considers the number of sites $s_j$ in the sample with $j$ copies of a nucleotide. The unfolded frequency spectrum refers to polarized nucleotides, with $s_j$ being the number of sites with $j \\leq n$ copies of the derived nucleotide. For a folded frequency spectrum, $s_j$ is the number of sites with $j$ copies of the minor nucleotide, with $j \\leq n/2$."
+    },
+    {
+      "type": "discussion",
+      "content": "For the example data set in Figure 2.9, four of the six sites are monomorphic, whereas site 4 has 3 Gs and 2 As, and site 6 has 4 Cs and an A. For a folded frequency spectrum, this gives four sites in class 0, one site in class 1, and one site in class 2 (i.e., $ s_0 = 4 $, $ s_1 = 1 $, $ s_2 = 1 $). If the nucleotides were polarized, so that (for example) the ancestral states at the six sites were (respectively) A-A-G-G-G-A, the unfolded frequency spectrum would be three in class 0 (sites 1, 2, 3), one in class 2 (site 4), one in class 4 (site 6), and one in class 5 (site 5) (i.e., $ s_0 = 3 $, $ s_2 = 1 $, $ s_4 = 1 $, $ s_5 = 1 $). Many of the analyses using site-frequency spectrum data condition on only sites that are polymorphic in the sample."
+    },
+    {
+      "type": "discussion",
+      "content": "For a very long region ($ L \\gg 1 $) (again assuming neutrality, and mutation-drift equilibrium), the fraction of sites in the entire population that have a derived nucleotide at frequency x (for 0 < x < 1) is given by the (unfolded) Watterson (1975) distribution, $$ \\phi(x)=\\frac{\\theta}{x}\\quad for\\quad\\frac{1}{2N}\\leq x\\leq1-\\frac{1}{2N} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "This tells us that under the neutral model most sites are expected to have a low frequency of derived nucleotides in the population. Reconfiguring Equation 2.34a for unpolarized alleles, so that $ 0 < x \\leq 0.5 $ where x is the minor-allele frequency, gives the folded Watterson distribution, $$ \\phi(x)=\\frac{\\theta}{x}+\\frac{\\theta}{1-x}=\\frac{\\theta}{x(1-x)}\\quad for\\quad\\frac{1}{2N}\\leq x\\leq1/2 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The folded and unfolded frequency spectra are very similar over the range where both are defined $ (0 < x \\leq 0.5) $, as high-frequency derived nucleotides are rare under the equilibrium neutral model, due to the fact that most new mutations are lost by drift."
+    },
+    {
+      "type": "discussion",
+      "content": "The site-frequency spectrum for a sample is not the same as that for the entire population, but it follows from the Watterson distribution. In the case of an unfolded frequency spectrum, for a sample of size n, the number $ s_{i} $ of the L total sites with i derived nucleotides has the expected value $$ E(s_{i})=\\frac{\\theta_{L}}{i},\\quad for\\quad1\\leq i\\leq n-1 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "(Fu 1995; Ewens 2004). Because $ \\theta_L = iE(s_i) $, Equation 2.35a motivates several infinite-site estimators of $ \\theta $ developed in Chapters 4 and 9. By using different regions of the site-frequency spectrum (i.e., different ranges for $ i $) to estimate $ \\theta $, various assumptions of the standard neutral model (e.g., constant population size, and absence of selection) can be tested (Chapter 9). Similarly, for a folded frequency spectrum, where $ s_i $ now denotes the number of sites with minor-nucleotide frequency $ i/n $, $$ E(s_{i})=\\frac{\\theta_{L}}{i}+\\frac{\\theta_{L}}{n-i}=\\frac{\\theta_{L}n}{i(n-i)},\\quad for\\quad1\\leq i\\leq[n/2] $$ where $ [n/2] $ denotes the largest integer $ \\leq n/2 $."
+    },
+    {
+      "type": "discussion",
+      "content": "Although the expectations given by Equations 2.35a and 2.35b can be used for method-of-moments estimators of $ \\theta $, likelihood estimators (LW Appendix 4) require the full distribution within a sample, not just the expected value. The probability of seeing exactly k derived nucleotides at a site with allele-frequency x follows from the binomial, $$ \\Pr(k\\mid x,n)=\\binom{n}{k}x^{k}(1-x)^{n-k} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "In addition, the probability that a sample is polymorphic at a site with allele-frequency x is just one minus the probability of a sample monomorphic for either the derived $ (x^{n}) $ or the ancestral $ (1 - x)^{n} $ nucleotide, $$ \\Pr(1\\leq k\\leq n-1)=1-x^{n}-(1-x)^{n} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The probability of seeing k derived nucleotides at a random site in a sample is the average of Equation 2.36a over the possible x values, $$ \\Pr(k\\mid n)=\\binom{n}{k}\\int_{1/(2N)}^{1-1/(2N)}x^{k}(1-x)^{n-k}\\phi(x)dx $$ where $ \\phi(x) $ is defined by Equation 2.34a. This formula, which forms the null model for several of the likelihood-based tests for a selective sweep (Chapters 8 and 9), is the infinite-sites analog to Ewens' sampling formula for the infinite-alleles model (both of which are functions of n and $ \\theta $). Ewens' formula (Equation 2.30a) gives the probability that k alleles are seen in a sample of size n, whereas Equation 2.36c gives the probability that a randomly-chosen site is segregating k copies of a derived nucleotide. The latter formula also defines the probability of k copies of a minor nucleotide under the folded spectrum if Equation 2.34b is used for $ \\phi(x) $."
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "id": "Evolution_appendix6_003",
+  "metadata": {
+    "chapter": "Evolution_appendix6",
+    "section": "Appendix: Introduction",
+    "subsections": [
+      "THE HESSIAN MATRIX, LOCAL MAXIMA/MINIMA, AND MULTIDIMENSIONAL TAYLOR SERIES"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_appendix6_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Appendix: Introduction",
+    "section_level_2": "THE HESSIAN MATRIX, LOCAL MAXIMA/MINIMA, AND MULTIDIMENSIONAL TAYLOR SERIES",
+    "heading_path": [
+      "Appendix: Introduction",
+      "THE HESSIAN MATRIX, LOCAL MAXIMA/MINIMA, AND MULTIDIMENSIONAL TAYLOR SERIES"
+    ],
+    "display_heading": "THE HESSIAN MATRIX, LOCAL MAXIMA/MINIMA, AND MULTIDIMENSIONAL TAYLOR SERIES"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "In univariate calculus, the local extrema of a function occur when its slope (first derivative) is zero. The multivariate extension is that the gradient vector is zero, so the slope of the function with respect to all variables is zero. A point $ x_{e} $ where this occurs is called a stationary or equilibrium point, and corresponds to either a local maximum, minimum, saddle point, or inflection point. As with the calculus of single variables, determining which of these cases is correct depends on the second derivative. With n variables, the appropriate generalization is the Hessian matrix $$ \\mathbf{H}_{\\mathbf{X}}[f]=\\nabla_{\\mathbf{X}}\\left[\\left(\\nabla_{\\mathbf{X}}[f]\\right)^{T}\\right]=\\frac{\\partial^{2}f}{\\partial\\mathbf{x}\\partial\\mathbf{x}^{T}}=\\left(\\begin{array}{c c c}\\frac{\\partial^{2}f}{\\partial x_{1}^{2}}&\\cdots&\\frac{\\partial^{2}f}{\\partial x_{1}\\partial x_{n}}\\\\ \\vdots&\\ddots&\\vdots\\\\ \\frac{\\partial^{2}f}{\\partial x_{1}\\partial x_{n}}&\\cdots&\\frac{\\partial^{2}f}{\\partial x_{n}^{2}}\\end{array}\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Note that this is the outer product of $ \\nabla_{\\mathbf{x}} [f] $ with itself. Recall for an $ n $-dimensional column vector $ \\mathbf{a}_{n\\times1} $ that while the inner product, $ \\mathbf{a}_{1\\times n}^T \\mathbf{a}_{n\\times1} = \\sum a_i $, returns a $ 1 \\times 1 $ matrix (a scalar), the outer product, $ \\mathbf{a}_{n\\times1} \\mathbf{a}_{1\\times n}^T $, returns an $ n \\times n $ matrix whose $ ij $th element is $ a_i a_j $, or (in our case) $$ \\mathbf{H}_{ij}=\\frac{\\partial\\left(f(\\mathbf{x})/\\partial x_{i}\\right)}{\\partial x_{j}}=\\frac{\\partial^{2}f(\\mathbf{x})}{\\partial x_{i}\\partial x_{j}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "This matrix is symmetric, as mixed partials are equal under suitable continuity conditions, and it measures the local multidimensional curvature of the function."
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:A6.6]]"
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:A6.7]]"
+    }
+  ]
+}

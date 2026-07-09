@@ -1,0 +1,83 @@
+{
+  "id": "Genetics_chapter7_002",
+  "metadata": {
+    "chapter": "Genetics_chapter7",
+    "section": "Introduction",
+    "subsections": [
+      "Coefficients of Coancestry and Inbreeding"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter7_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "Coefficients of Coancestry and Inbreeding",
+    "heading_path": [
+      "Introduction",
+      "Coefficients of Coancestry and Inbreeding"
+    ],
+    "display_heading": "Coefficients of Coancestry and Inbreeding"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Suppose now that single genes are drawn randomly from individuals x and y. The probability that these two genes are identical by descent, $ \\Theta_{xy} $, is called the coefficient of coancestry. (In other publications, $ \\Theta_{xy} $ is sometimes referred to as the coefficient of consanguinity, coefficient of kinship, or coefficient de parente). In terms of the condensed coefficients of identity, $$ \\Theta_{x y}=\\Delta_{1}+\\frac{1}{2}(\\Delta_{3}+\\Delta_{5}+\\Delta_{7})+\\frac{1}{4}\\Delta_{8} $$"
+    },
+    {
+      "type": "definition",
+      "content": "Here, we have simply weighted each condensed coefficient of identity by the conditional probability that a randomly drawn gene from $x$ is identical by descent with a randomly drawn gene from $y$ (at the same locus). Another way to look at the problem is to consider a hypothetical offspring ($z$) of $x$ and $y$. By the above definition, $\\Theta_{xy}$ is the probability that the two genes at a locus in individual $z$ are identical by descent. The latter quantity is Wright's (1922) inbreeding coefficient, $f_z$. Thus, an individual's inbreeding coefficient is equivalent to its parents' coefficient of coancestry, $f_z = \\Theta_{xy}$."
+    },
+    {
+      "type": "discussion",
+      "content": "We now proceed by example to demonstrate how estimates of $ \\Theta_{xy} $ are derived. The first problem to be tackled is the coefficient of coancestry of an individual with itself, $ \\Theta_{xx} $. This may seem like a nonsensical task. However, we will soon see that $ \\Theta_{xx} $ is an essential element of all coancestry estimates. Denote the two genes carried by individual x as $ A_1 $ and $ A_2 $, and then randomly draw a gene from the locus, replace it, and randomly draw another. $ \\Theta_{xx} $ is the probability that the two genes drawn are identical by descent. There are four ways, each with probability $ 1/4 $, in which the genes can be drawn: $ A_1 $ both times, $ A_1 $ first and $ A_2 $ second, $ A_2 $ first and $ A_1 $ second, and $ A_2 $ both times. If two $ A_1 $ genes are drawn, they must be identical by descent since they are copies of the same gene. The same applies to a draw of two $ A_2 $ genes. Thus, provided that genes $ A_1 $ and $ A_2 $ are not identical to each other by descent, then $ \\Theta_{xx} $ is simply $ (1/4)(1)+(1/4)(1)=1/2 $. We should, however, recognize the possibility that individual x is inbred, in which case the probability that the gene $ A_1 $ is identical by descent with the gene $ A_2 $ is $ f_x $. Thus, a general expression for the coefficient of coancestry of an individual with itself is $$ \\Theta_{x x}=\\frac{1}{4}(1+f_{x}+f_{x}+1)=\\frac{1}{2}(1+f_{x}) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "A slightly more complicated situation arises in calculating the coefficient of coancestry between a parent and its offspring. In order to simplify the discussion, [[FIGURE:7.3]] we will call the parent $(p)$ of interest the mother, but the same results apply to fathers provided the locus is autosomal. We first consider the situation in which neither the mother nor her offspring $(o)$ are inbred, i.e., the mother's parents are unrelated, and she is unrelated to her mate. In that case, of the four ways in which single genes can be drawn from the mother and the child, only one involves a pair that is identical by descent (Figure 7.3, left). Therefore, $\\Theta_{po} = 1/4$. Suppose, however, that the mother is inbred (Figure 7.3, center), so that the probability that both of her alleles are identical by descent is $f_{p}$. This is the same as the probability that the maternal gene inherited by the offspring is identical by descent with the maternal gene not inherited. The probability of drawing such a gene combination is $1/4$. Therefore, inbreeding in the parent inflates $\\Theta_{po}$ to $(1 + f_{p})/4$. With complete inbreeding $(f_{p} = 1)$, both parental alleles are identical by descent, increasing $\\Theta_{po}$ to $1/2$. Finally, we allow for the possibility that the parents of $o$ are related, so that the offspring is inbred with coefficient $f_{o}$ (Figure 7.3, right). It is now necessary to consider the implications of drawing a paternally derived gene from the offspring, the probability of which is $1/2$. Since $f_{o}$ is equivalent to the probability that maternally and paternally derived genes are identical by descent, the additional parent-offspring identity induced by inbreeding is $f_{o}/2$. In summary, the most general expression for the coefficient of coancestry for a parent and offspring is $$ \\Theta_{po}=\\frac{1}{4}(1+f_{p}+2f_{o}) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Often in the literature, $ \\Theta_{po} $ is simply considered to be 1/4. It should now be clear that this implicitly assumes the absence of matings between relatives."
+    },
+    {
+      "type": "discussion",
+      "content": "We now move on to the coefficient of coancestry of two individuals that share the same father and mother (full sibs). We assume a species with separate sexes so that the mother and father are different individuals, and we again start with"
+    },
+    {
+      "type": "discussion",
+      "content": "[[FIGURE:7.4]] the simplest situation, progressively allowing the parents to be inbred and/or related (Figure 7.4). For the analysis of full sibs as well as more complicated degrees of relationship, the method of path analysis (Appendix 2) provides a useful tool. The elements in Figure 7.4 no longer represent gametes (as in Figure 7.3) but individuals."
+    },
+    {
+      "type": "discussion",
+      "content": "Let $m$ represent the mother, $f$ the father, and $x$ and $y$ their two offspring. When the parents are neither inbred nor related, there are two paths by which the same gene can be passed to both $x$ and $y$: $x \\leftarrow m \\rightarrow y$ and $x \\leftarrow f \\rightarrow y$. Since both paths have identical consequences, we will simply consider the first of them. First, we note that the probability that both $x$ and $y$ receive the same maternal gene is $1/2$. This is the coefficient of coancestry of the (noninbred) mother with herself, $\\Theta_{mm}$, and is represented by the double-headed arrow in the figure. Second, we note that the probability of randomly drawing a maternal gene from individual $x$ is $1/2$, and that the same is true for individual $y$. Thus, the probability of drawing two maternal genes, identical by descent, one from $x$ and the other from $y$, is $\\Theta_{mm}/4 = 1/8$. Adding the same contribution from the paternal path, $x \\leftarrow f \\rightarrow y$, we obtain the coefficient of coancestry $\\Theta_{xy} = 1/4$. Path analysis (Appendix 2) provides a simple way to obtain this result. First, set the path coefficients on all of the single-headed arrows in Figure 7.4 equal to $1/2$. Then, note that the contribution of a path to a correlation between two variables is equal to the product of the path coefficients and the correlation coefficient associated with the common factor (in this case, $\\Theta_{mm}$ or $\\Theta_{ff} = 1/2$)."
+    },
+    {
+      "type": "discussion",
+      "content": "We now allow for the possibility that the parents are inbred with inbreeding coefficients $ f_{m} $ and $ f_{f} $, a condition that inflates the coefficient of coancestry of an individual with itself. This is the only necessary change for the path diagram in Figure 7.4 (center). There are still only two paths that lead to genes identical by descent in x and y, and their sum is $$ \\Theta_{x y}=\\frac{1}{4}\\left(\\Theta_{m m}+\\Theta_{f f}\\right)=\\frac{1}{4}\\left(\\frac{1+f_{m}}{2}+\\frac{1+f_{f}}{2}\\right)=\\frac{1}{8}\\left(2+f_{m}+f_{f}\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, we allow for the possibility that $m$ and $f$ are related, such that the probability of drawing two genes (one from each of them) that are identical by descent is $\\Theta_{mf}$. It is then necessary to consider two additional paths between $x$ and $y$: $x \\leftarrow m \\leftrightarrow f \\rightarrow y$ and $x \\leftarrow f \\leftrightarrow m \\rightarrow y$ (Figure 7.4, right). Again taking the coefficients on the single-headed arrows to be $1/2$, it can be seen that each of these two new paths makes a contribution $\\Theta_{mf}/4$ to $\\Theta_{xy}$. Adding these to our previous result, we obtain a general expression for the coefficient of coancestry of full sibs, $$ \\Theta_{x y}=\\frac{1}{8}\\left(2+f_{m}+f_{f}+4\\Theta_{m f}\\right) $$ which reduces to $ \\Theta_{xy} = 1/4 $ under random mating."
+    },
+    {
+      "type": "discussion",
+      "content": "The preceding techniques are extended readily to more distant relationships and more complicated schemes of relatedness. The coefficient of coancestry is always the sum of a series of two types of paths between x and y. The first type of path leads from a single common ancestor to the two individuals of interest, while the second type passes through two remote ancestors that are related to each other. Neither type of path is allowed to pass through the same ancestor more than once. This procedure is summarized by the following equation $$ \\Theta_{x y}=\\sum_{i}\\Theta_{i i}\\left(\\frac{1}{2}\\right)^{n_{i}-1}+\\sum_{j}\\sum_{j\\neq k}\\Theta_{j k}\\left(\\frac{1}{2}\\right)^{n_{j k}-2} $$ where $ n_{i} $ is the number of individuals (including x and y) in the path leading from common ancestor i, and $ n_{jk} $ is the number of individuals (including x and y) on the path leading from two different but related ancestors, j and k. Formal proof of this equation can be found in Boucher (1988)."
+    },
+    {
+      "type": "discussion",
+      "content": "Up to now, we have assumed an autosomal locus. The rules change when the locus of interest is sex-linked. Assuming the female is the heterogametic sex, a male cannot receive an X-linked gene from his father, whereas fathers pass on their X-linked genes to daughters with probability one. Females have two X chromosomes and pass each one on to sons or daughters with the usual probability of one-half. Thus, the protocol for obtaining the coefficient of coancestry for an X-linked locus is similar to that used for autosomal loci except that path coefficients leading from fathers to daughters are replaced by a 1 and those leading from fathers to sons are replaced by a 0. For all paths containing two consecutive males, the probability that X-linked genes are identical by descent is zero."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 1. One of the first pedigrees to which Wright (1922) applied his theory of inbreeding is that of Roan Gauntlet, an English bull. In the following figure, rectangles and ovals refer to bulls and cows, respectively. We wish to compute the coefficient of coancestry of the Royal Duke of Gloster and Princess Royal. This is the same as the inbreeding coefficient of their son, Roan Gauntlet. The four possible paths by which alleles identical by descent can be inherited by the Royal Duke and Princess Royal are indicated by the coded lines adjacent to the arrows in the pedigree. Two of these paths contain four individuals and two contain seven. Thus, assuming that the remote ancestors, Lord Raglan and Champion of England, are not inbred (so that for both, $ \\Theta_{ii} = 1/2 $), the coefficient of coancestry of the Royal Duke and Princess Royal is $ [2(1/2)^4 + 2(1/2)^7] = 0.141 $. This is a slightly closer relationship than that for half sibs (for which $ \\Theta = 0.125 $). Relative to the base population, the alleles at 14% of the autosomal loci in the offspring, Roan Gauntlet, are expected to be identical by descent."
+    },
+    {
+      "type": "discussion",
+      "content": "What is the coefficient of coancestry of the Royal Duke of Gloster and Princess Royal with respect to X-linked loci? Of the four paths between these two individuals, only the one traced by the dotted line does not contain consecutive males. Champion of England passes on his X chromosome to each of his daughters, Mimulus and Princess Royal, with probability 1. Mimulus passes that chromosome on to the Royal Duke of Gloster with probability 1/2. The probability of drawing a specific X chromosome from the Royal Duke is 1 (since he is a male) and from Princess Royal is 1/2. The coefficient of coancestry for X-linked loci is therefore $ 1 \\cdot 1/2 \\cdot 1 \\cdot 1/2 = 1/4 $. This is substantially greater than the coefficient for autosomal loci over the same path, which is $ (1/2)^4 = 1/16 $."
+    },
+    {
+      "type": "discussion",
+      "content": "[[FIGURE:7.5]]"
+    }
+  ]
+}

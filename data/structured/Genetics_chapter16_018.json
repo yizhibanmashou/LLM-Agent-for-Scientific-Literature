@@ -1,0 +1,63 @@
+{
+  "id": "Genetics_chapter16_018",
+  "metadata": {
+    "chapter": "Genetics_chapter16",
+    "section": "Introduction",
+    "subsections": [
+      "Recurrent and Relative Risks for Pairs of Relatives"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter16_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "Recurrent and Relative Risks for Pairs of Relatives",
+    "heading_path": [
+      "Introduction",
+      "Recurrent and Relative Risks for Pairs of Relatives"
+    ],
+    "display_heading": "Recurrent and Relative Risks for Pairs of Relatives"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Relative-pair approaches, on the other hand, are computationally very simple and require no assumptions about the underlying genetic model. Not surprisingly, these methods are very popular, and they form the bulk of our discussion. Such tests are based on the common theme of allele sharing — if a marker is linked to a QTL, two relatives with the same character state should, on average, share more ibid marker alleles than expected by chance."
+    },
+    {
+      "type": "discussion",
+      "content": "Before examining these methods, a brief introduction to measures of risk is in order. Human geneticists have devised a number of measures for the risk that an individual is affected, given that a relative is, and these can be expressed as a function of the genetic parameters of the DS locus. Assigning values to the alternative states of the character of 0 (if unaffected) or 1 (if affected) yields several useful identities. Under this coding, the character follows a binomial distribution with mean $K$ (the population prevalence) and variance $K(1-K)$. If the character has a genetic basis, relatives of an affected individual should have a probability greater than $K$ of also being affected. Letting $z_1$ and $z_2$ denote the character states of two relatives, this probability is quantified by the recurrence risk, $$ K_{R}=\\Pr\\big(z_{2}=1\\mid z_{1}=1\\big) $$ which is the conditional probability that a relative of relationship $R$ (say, a full sib) to an affected individual is also affected. Since $\\Pr(A, B) = \\Pr(A \\mid B) \\cdot \\Pr(B)$, it follows that the probability that both relatives are affected is $K_R \\cdot K$. An alternative measure is the $\\text{relative risk}$, $\\lambda_R$, the increase in risk given that one relative is affected, $$ \\lambda_{R}=\\frac{K_{R}}{K} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "For example, the population prevalence for type 1 diabetes is 0.4% (K = 0.004), while the probability that a sib has diabetes given it has an affected sib is 6% (K_ s = 0.06), giving the relative risk in sibs as $ \\lambda_{S} = 0.06/0.004 = 15 $ (Davies et al. 1994)."
+    },
+    {
+      "type": "discussion",
+      "content": "James' identity (1971) relates the recurrence risk to the population prevalence and the covariance between relatives, $$ K_{R}=K+\\frac{\\mathrm{Cov}(z_{1},z_{2})}{K} $$ while rearranging gives Risch's (1990a) expression, $$ \\lambda_{R}-1=\\frac{\\mathrm{Cov}(z_{1},z_{2})}{K^{2}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "James' identity is completely general and is obtained as follows. Because the $ z_i $ are zero-one indicator variables, $ z_1 \\cdot z_2 = 0 $ unless $ z_1 = z_2 = 1 $, and hence $$ \\operatorname{C o v}(z_{1},z_{2})+K^{2}=E(z_{1}z_{2})=1\\cdot\\operatorname*{P r}(z_{1}=1,z_{2}=1)=K_{R}\\cdot K $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The first step follows by recalling $ E(z_1 z_2) = \\mathrm{Cov}(z_1, z_2) + E(z_1) E(z_2) $ and $ E(z_i) = K $."
+    },
+    {
+      "type": "discussion",
+      "content": "Ignoring epistasis and shared environmental effects, $$ \\mathrm{C o v}(z_{1},z_{2})=2\\Theta_{12}\\sigma_{A}^{2}+\\Delta_{12}\\sigma_{D}^{2} $$ where $\\sigma_{A}^{2}$ and $\\sigma_{D}^{2}$ are the additive and dominance variances associated with this character (measured on the $0/1$ scale), $\\Theta_{12}$ is the coefficient of coancestry, and $\\Delta_{12}$ is the coefficient of fraternity for these two individuals (Chapter 7). Hence, $$ K_{R}=K+\\frac{2\\Theta_{R}\\sigma_{A}^{2}+\\Delta_{R}\\sigma_{D}^{2}}{K} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Genetic variances can be estimated using the observed recurrent risks for different sets of relatives (Suarez et al. 1978, Olson 1995). For example, assuming only additive and dominance genetic variance is present and rearranging Equation 16.49a gives $$ \\sigma_{A}^{2}=2K\\big(K_{O}-K\\big)\\qquad\\mathrm{a n d}\\qquad\\sigma_{D}^{2}=4K\\big(K_{S}-K_{O}\\big) $$ where $K_{O}$ and $K_{S}$ denote, respectively, the recurrent risk for parent-offspring and full-sib pairs. Likewise, the total genetic variance $\\sigma_{G}^{2}$, even in the presence of epistasis, is $$ \\sigma_{G}^{2}=K\\big(K_{M Z}-\\dot{K}\\big) $$ where $K_{MZ}$ is the recurrent risk for monozygotic (identical) twins."
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, the rate of decrease of $\\lambda_{R}-1$ in sets of ever-distant relatives provides a test for epistasis (Risch 1990a). To see this, consider sets of relatives where $\\Delta_{R}=0$, so that dominance terms can be ignored. In this case Equation 16.48b can be generalized to $$ \\lambda_{R}-1=\\frac{1}{K^{2}}\\left[2\\Theta_{R}\\sigma_{A}^{2}+(2\\Theta_{R})^{2}\\sigma_{A A}^{2}+(2\\Theta_{R})^{3}\\sigma_{A A A}^{2}+\\cdots\\right] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "In the absence of epistasis, $\\lambda_{R}-1$ decreases by a factor of two when comparing relatives whose coefficient of coancestry also differs by a factor of two (e.g., half sibs vs. first cousins). A greater than twofold decrease in $ \\lambda_{R}-1 $ implies epistasis, and, of course, multiple loci. Risch used this approach to provide evidence for multiple interacting loci for schizophrenia."
+    }
+  ]
+}

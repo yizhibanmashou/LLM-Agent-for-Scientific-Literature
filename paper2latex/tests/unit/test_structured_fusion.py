@@ -999,7 +999,7 @@ class StructuredFusionTests(unittest.TestCase):
         unit = read_json(structured_dir / "chapter30_001.json")
         self.assertEqual(
             [block["content"] for block in unit["blocks"]],
-            ["Intro.", "[[TABLE:30.1]]", "Tail text."],
+            ["Intro.", "Tail text.", "[[TABLE:30.1]]"],
         )
         self.assertEqual(summary["table_stats"].get("table_body_residue_placeholders_rebound"), 1)
         self.assertEqual(summary["table_stats"].get("table_body_residue_blocks_removed"), 3)
@@ -1122,6 +1122,95 @@ class StructuredFusionTests(unittest.TestCase):
         placeholders = [block for block in unit["blocks"] if block["content"] == "[[TABLE:18.7]]"]
         self.assertEqual(len(placeholders), 1)
         self.assertEqual(summary["table_stats"].get("table_body_residue_placeholders_rebound"), 1)
+
+    def test_numbered_page_top_table_moves_to_physical_owner_unit_end(self):
+        root = make_test_workspace("numbered_table_physical_owner_end")
+        structured_dir = root / "structured"
+        write_json(
+            structured_dir / "chapter18_001.json",
+            {
+                "id": "chapter18_001",
+                "metadata": {
+                    "chapter": "chapter18",
+                    "heading_path": ["EXPERIMENTAL EVALUATION", "Most Traits Respond to Selection"],
+                    "formula_references": [],
+                    "table_references": ["18.1"],
+                },
+                "blocks": [
+                    {
+                        "type": "discussion",
+                        "content": (
+                            "[[SEE_TABLE:18.1]] genetic variation) for specific combinations "
+                            "of traits, despite significant heritabilities."
+                        ),
+                    }
+                ],
+            },
+        )
+        write_json(
+            structured_dir / "chapter18_002.json",
+            {
+                "id": "chapter18_002",
+                "metadata": {
+                    "chapter": "chapter18",
+                    "heading_path": ["EXPERIMENTAL EVALUATION", "Sheridan's Analysis"],
+                    "formula_references": [],
+                    "table_references": ["18.1"],
+                },
+                "blocks": [
+                    {
+                        "type": "discussion",
+                        "content": "[[TABLE:18.1]] shows the fit for the remaining experiments.",
+                    }
+                ],
+            },
+        )
+        write_json(structured_dir / "formula_library.json", {"metadata": {"total_formulas": 0}, "formulas": []})
+        write_json(
+            structured_dir / "table_library.json",
+            {
+                "metadata": {"total_tables": 1, "numbered_tables": 1, "inline_tables": 0},
+                "tables": [
+                    {
+                        "id": "18.1",
+                        "label_format": "Table 18.1",
+                        "title": "Table 18.1 Comparison of realized heritabilities.",
+                        "table_type": "numbered",
+                        "html": "<table></table>",
+                        "rows": [["Species", "n"], ["Drosophila", "60"]],
+                        "source": {
+                            "chapter": "chapter18",
+                            "unit_id": "chapter18_001",
+                            "bbox": [144, 338, 890, 692],
+                            "caption_bbox": [131, 206, 905, 325],
+                            "following_body": {
+                                "label": "text",
+                                "content": (
+                                    "genetic variation) for specific combinations of traits, "
+                                    "despite significant heritabilities"
+                                ),
+                            },
+                        },
+                    }
+                ],
+            },
+        )
+
+        summary = apply_structured_fusion(structured_dir=structured_dir, enable_ocr_table_evidence=False)
+
+        owner = read_json(structured_dir / "chapter18_001.json")
+        next_unit = read_json(structured_dir / "chapter18_002.json")
+        self.assertEqual(owner["blocks"][-1], {"type": "table", "content": "[[TABLE:18.1]]"})
+        self.assertIn("[[SEE_TABLE:18.1]] genetic variation", owner["blocks"][0]["content"])
+        self.assertNotIn("[[TABLE:18.1]]", json.dumps(next_unit, ensure_ascii=False))
+        self.assertIn("[[SEE_TABLE:18.1]] shows the fit", next_unit["blocks"][0]["content"])
+        table = read_json(structured_dir / "table_library.json")["tables"][0]
+        self.assertEqual(table["source"]["unit_id"], "chapter18_001")
+        self.assertEqual(
+            table["source"]["physical_placeholder_inserted_by"],
+            "structured_fusion_physical_owner_unit_end",
+        )
+        self.assertEqual(summary["table_stats"].get("embedded_table_placeholders_demoted_to_see_refs"), 1)
 
     def test_numbered_table_residue_does_not_rebind_across_units(self):
         root = make_test_workspace("numbered_table_residue_cross_unit_guard")
@@ -1531,6 +1620,37 @@ class StructuredFusionTests(unittest.TestCase):
         self.assertEqual(summary["table_stats"].get("numbered_table_source_claimed_placeholder_missing"), 1)
         self.assertEqual(summary["table_stats"].get("numbered_table_placeholders_appended"), 1)
 
+    def test_placeholder_formula_pollution_and_broken_reference_residue_are_removed(self):
+        root = make_test_workspace("placeholder_pollution_cleanup")
+        structured_dir = root / "structured"
+        write_json(
+            structured_dir / "chapter8_001.json",
+            {
+                "id": "chapter8_001",
+                "metadata": {"chapter": "chapter8", "formula_references": [], "table_references": []},
+                "blocks": [
+                    {
+                        "type": "discussion",
+                        "content": "The result is $$ H=H_0 $$ $$ E = mc^2 $$ where the sweep is recent.",
+                    },
+                    {"type": "discussion", "content": "[[SEE_"},
+                    {"type": "discussion", "content": "Tail text."},
+                ],
+            },
+        )
+        write_json(structured_dir / "formula_library.json", {"metadata": {"total_formulas": 0}, "formulas": []})
+        write_json(structured_dir / "table_library.json", {"metadata": {"total_tables": 0}, "tables": []})
+
+        summary = apply_structured_fusion(structured_dir=structured_dir, enable_ocr_table_evidence=False)
+
+        unit = read_json(structured_dir / "chapter8_001.json")
+        self.assertEqual(
+            [block["content"] for block in unit["blocks"]],
+            ["The result is $$ H=H_0 $$ where the sweep is recent.", "Tail text."],
+        )
+        self.assertEqual(summary["block_stats"].get("blocks_removed"), 1)
+        self.assertEqual(summary["block_stats"].get("block_latex_text_normalized"), 1)
+
     def test_embedded_table_placeholder_is_split_and_prevents_duplicate_append(self):
         root = make_test_workspace("embedded_table_placeholder")
         structured_dir = root / "structured"
@@ -1577,12 +1697,12 @@ class StructuredFusionTests(unittest.TestCase):
 
         first = read_json(structured_dir / "chapter26_001.json")
         second = read_json(structured_dir / "chapter26_002.json")
-        self.assertEqual([block["content"] for block in first["blocks"]], ["Before", "[[TABLE:26.1]]", "after."])
+        self.assertEqual([block["content"] for block in first["blocks"]], ["Before [[SEE_TABLE:26.1]] after.", "[[TABLE:26.1]]"])
         self.assertNotIn("[[TABLE:26.1]]", json.dumps(second, ensure_ascii=False))
         table = read_json(structured_dir / "table_library.json")["tables"][0]
         self.assertEqual(table["source"]["unit_id"], "chapter26_001")
-        self.assertEqual(summary["table_stats"].get("embedded_table_placeholders_split"), 1)
-        self.assertEqual(summary["table_stats"].get("numbered_table_source_rebound_to_existing_placeholder"), 1)
+        self.assertEqual(summary["table_stats"].get("embedded_table_placeholders_demoted_to_see_refs"), 1)
+        self.assertEqual(summary["table_stats"].get("numbered_table_placeholders_appended"), 1)
 
     def test_structured_references_are_not_placeholder_false_positives(self):
         discussion_issues = audit_block_content(

@@ -1,0 +1,35 @@
+{
+  "id": "Evolution_chapter23_021",
+  "metadata": {
+    "chapter": "Evolution_chapter23",
+    "section": "FAMILY SELECTION UNDER PURE SELFING",
+    "subsections": [
+      "Within-family Selection Under Selfing"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter23_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "FAMILY SELECTION UNDER PURE SELFING",
+    "section_level_2": "Within-family Selection Under Selfing",
+    "heading_path": [
+      "FAMILY SELECTION UNDER PURE SELFING",
+      "Within-family Selection Under Selfing"
+    ],
+    "display_heading": "Within-family Selection Under Selfing"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Our results for selfing thus far have only been concerned with selection among lines. If selection is practiced entirely within a single selfed lineage (e.g., within the progeny of a single selfed individual), genetic variation is quickly removed and the selection response rapidly ceases. Pederson (1969b) obtained the response remaining in generation T from within-family selection in generation t as $$ r_{w}(T,t)=\\bar{i}_{t}\\frac{\\sigma_{Gw}(T,t)}{\\sqrt{\\sigma_{Gw}(t,t)+\\sigma_{E_{w}}^{2}}} $$ where $ \\sigma_{E_{w}}^{2} $ is the within-family environmental variance among individuals. If we apply Equation 23.37c, this becomes $$ r_{w}(T,t)=\\bar{\\imath}_{t}\\frac{\\sigma_{G}(T,t,t)-\\sigma_{G}(T,t,t-1)}{\\sqrt{\\sigma_{G}(t,t,t)-\\sigma_{G}(t,t,t-1)+\\sigma_{E_{w}}^{2}}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Recalling Equation 23.34, for a pure-line cross, we have $$ \\sigma_{G}(T,t,t)-\\sigma_{G}(T,t,t-1)= $$ $$ 2^{-t}\\sigma_{A}^{2}+2^{-T}\\sigma_{D}^{2}+\\sum_{\\ell=2}\\left[\\left(2-\\frac{1}{2^{t}}\\right)^{\\ell}-\\left(2-\\frac{1}{2^{t}}\\right)^{\\ell-1}\\right]\\sigma_{A^{\\ell}}^{2} $$ where the sum is over the degree of A-epistasis. Ignoring epistasis, the cumulative response to k generations of selection at generation T > k is $$ R(T\\mid k)=\\sum_{t=1}^{k}\\bar{\\imath}_{t}\\frac{2^{-t}\\sigma_{A}^{2}+2^{-T}\\sigma_{D}^{2}}{\\sqrt{2^{-t}\\left(\\sigma_{A}^{2}+\\sigma_{D}^{2}\\right)+\\sigma_{E_{w}}^{2}}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "(Pederson 1969b). Note that the sum here begins at selfing generation 1, as selection starts within the $ S_1 $ inbred family. Because any within-family genetic variation rapidly decays, after only a few generations the response essentially stops, with the amount of permanent response due to selection in generation $ t $ depending on $ \\sigma_A^2 / 2^t $. Because $$ \\sigma_{E_{w}}^{2}\\leq2^{-t}\\left(\\sigma_{A}^{2}+\\sigma_{D}^{2}\\right)+\\sigma_{E_{w}}^{2}\\leq\\sigma_{z}^{2} $$ it follows that the permanent response $ (T \\to \\infty) $ can be bounded by noting $$ \\bar{\\imath}\\frac{\\sigma_{A}^{2}}{\\sigma_{E_{w}}}\\sum_{t=1}^{\\infty}2^{-t}\\geq\\bar{\\imath}\\sigma_{A}^{2}\\sum_{t=1}^{\\infty}\\frac{2^{-t}}{\\sqrt{2^{-t}\\left(\\sigma_{A}^{2}+\\sigma_{D}^{2}\\right)+\\sigma_{E_{w}}^{2}}}\\geq\\bar{\\imath}\\frac{\\sigma_{A}^{2}}{\\sigma_{z}}\\sum_{t=1}^{\\infty}2^{-t} $$ Because the leftmost and rightmost power series sum to one, the total permanent response $ R(\\infty \\mid \\infty) $ under continued within-family selection (ignoring new mutation) is $$ \\bar{\\imath}\\sigma_{A}^{2}/\\sigma_{E_{w}}\\geq R(\\infty\\mid\\infty)\\geq\\bar{\\imath}h\\sigma_{A} $$ showing that the total response is at least twice the response of the first generation ($ \\bar{\\imath}h\\sigma_{A}/2 $)."
+    }
+  ]
+}

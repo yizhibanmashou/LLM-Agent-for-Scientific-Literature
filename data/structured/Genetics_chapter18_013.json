@@ -1,0 +1,48 @@
+{
+  "id": "Genetics_chapter18_013",
+  "metadata": {
+    "chapter": "Genetics_chapter18",
+    "section": "Introduction",
+    "subsections": [
+      "Nested Analysis of Variance"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter18_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [
+      "18.3"
+    ],
+    "section_level_1": "Introduction",
+    "section_level_2": "Nested Analysis of Variance",
+    "heading_path": [
+      "Introduction",
+      "Nested Analysis of Variance"
+    ],
+    "display_heading": "Nested Analysis of Variance",
+    "table_reference_keys": [
+      "chapter18:18.3"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "As with one-way ANOVA, estimates of the variance components can be obtained by the method of moments, i.e., by partitioning the total observed sum of squares into components, writing the expected mean squares as linear functions of the variance components, equating the observed mean squares to their expectations, and solving for the variances. Let $ \\overline{z}_{ij} $ be the mean phenotype of full-sib family $ i $, $ \\overline{z}_{i} $ be the mean phenotype of progeny of sire i, and $ \\overline{z} $ be the grand mean of the $ z_{ijk} $. The total sum of squared deviations of the $ z_{ijk} $ from $ \\overline{z} $ can be partitioned into components describing deviations of observed sire means from the grand mean, deviations of the full-sib family means from their sire group means, and deviations of individual measures from their full-sib family means ([[SEE_TABLE:18.3]])."
+    },
+    {
+      "type": "discussion",
+      "content": "The variance-component estimators are given by, $$ \\mathrm{Var}(s)=\\frac{\\mathrm{MS}_{s}-\\mathrm{MS}_{e}-(k_{2}/k_{1})(\\mathrm{MS}_{d}-\\mathrm{MS}_{e})}{k_{3}} $$ $$ Var(d)=\\frac{MS_{d}-MS_{e}}{k_{1}} $$ $$ Var(e)=MS_{e} $$ where $ k_{1} $, $ k_{2} $, and $ k_{3} $ are functions of the experimental design (equal to n, n, and Mn under a completely balanced design, where n is the number of offspring per full-sib family, and M is the number of dams per sire). [[SEE_TABLE:18.3]] gives the general expressions for these quantities."
+    },
+    {
+      "type": "discussion",
+      "content": "By analogy with Equation 18.13, the intraclass correlations for paternal half sibs and full sibs are $$ t_{\\mathrm{PHS}}=\\frac{\\mathrm{Cov}(\\mathrm{PHS})}{\\mathrm{Var}(z)}=\\frac{\\mathrm{Var}(s)}{\\mathrm{Var}(z)} $$ $$ t_{\\mathrm{FS}}=\\frac{\\mathrm{Cov}(\\mathrm{FS})}{\\mathrm{Var}(z)}=\\frac{\\mathrm{Var}(s)+\\mathrm{Var}(d)}{\\mathrm{Var}(z)} $$ As in the half-sib design, $4t_{\\mathrm{PHS}}$ provides the best estimate of $h^{2}$ since it is not inflated by dominance and/or maternal effects. If, however, $\\mathrm{Var}(s)$ and $\\mathrm{Var}(d)$ are found to be approximately equal, then dominance and maternal effects can be ruled out as significant causal sources of covariance. In that case, the average"
+    },
+    {
+      "type": "discussion",
+      "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Factor</td><td style='text-align: center; word-wrap: break-word;'>df</td><td style='text-align: center; word-wrap: break-word;'>Sums of Squares</td><td style='text-align: center; word-wrap: break-word;'>MS</td><td style='text-align: center; word-wrap: break-word;'>E(MS)</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Sires</td><td style='text-align: center; word-wrap: break-word;'>N-1</td><td style='text-align: center; word-wrap: break-word;'>$ \\sum_{i=1}^{N}\\sum_{j=1}^{M_{i}}n_{ij}(\\overline{z}_{i}-\\overline{z})^{2} $</td><td style='text-align: center; word-wrap: break-word;'>SS_ s /df_ s </td><td style='text-align: center; word-wrap: break-word;'>$ \\sigma_{e}^{2}+k_{2}\\sigma_{d}^{2}+k_{3}\\sigma_{s}^{2} $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Dams (sires)</td><td style='text-align: center; word-wrap: break-word;'>N($ \\overline{M} $-1)</td><td style='text-align: center; word-wrap: break-word;'>$ \\sum_{i=1}^{N}\\sum_{j=1}^{M_{i}}n_{ij}(\\overline{z}_{ij}-\\overline{z}_{i})^{2} $</td><td style='text-align: center; word-wrap: break-word;'>SS_ d /df_ d </td><td style='text-align: center; word-wrap: break-word;'>$ \\sigma_{e}^{2}+k_{1}\\sigma_{d}^{2} $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Sibs (dams)</td><td style='text-align: center; word-wrap: break-word;'>T-N $ \\overline{M} $</td><td style='text-align: center; word-wrap: break-word;'>$ \\sum_{i=1}^{N}\\sum_{j=1}^{M_{i}}\\sum_{k=1}^{n_{ij}}(z_{ijk}-\\overline{z}_{ij})^{2} $</td><td style='text-align: center; word-wrap: break-word;'>SS_ e /df_ e </td><td style='text-align: center; word-wrap: break-word;'>$ \\sigma_{e}^{2} $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Total</td><td style='text-align: center; word-wrap: break-word;'>T-1</td><td style='text-align: center; word-wrap: break-word;'>$ \\sum_{i=1}^{N}\\sum_{j=1}^{M_{i}}\\sum_{k=1}^{n_{ij}}(z_{ijk}-\\overline{z})^{2} $</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'></td><td colspan=\"4\">$ k_{1}=\\frac{1}{N(\\overline{M}-1)}\\left(T-\\sum_{i=1}^{N}\\frac{\\sum_{j}^{M_{i}}n_{ij}^{2}}{n_{i}}\\right) $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>1</td><td colspan=\"3\">$ \\left(\\sum_{i=1}^{N}\\sum_{j}^{M_{i}}n_{ij}^{2},\\sum_{i=1}^{N}\\sum_{j}^{M_{i}}n_{ij}^{2}\\right) $</td></tr></table> $$ k_{2}=\\frac{1}{N-1}\\left(\\sum_{i=1}^{N}\\frac{\\sum_{j}^{M_{i}}n_{ij}^{2}}{n_{i}}-\\frac{\\sum_{i}^{N}\\sum_{j}^{M_{i}}n_{ij}^{2}}{T}\\right) $$ $$ k_{3}=\\frac{1}{N-1}\\left(T-\\frac{\\sum_{i}^{N}n_{i}^{2}}{N}\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Note: T is the total number of individuals in the experiment, $\\overline{M}$ is the mean number of dams/sire, and $n_{i}$ is the total number of offspring of the ith sire. MS denotes an observed mean square, $E(\\mathrm{MS})$ denotes its expected value, and df denotes degrees of freedom. of $ \\mathrm{Var}(s) $ and $ \\mathrm{Var}(d) $ provides an estimate of $ \\sigma_{A}^{2}/4 $, and when multiplied by 4/Var(z) provides an estimate of $ h^{2} $. Ideally, such an average should weight the two variance-component estimates by the inverse of their sampling variances (Grossman and Norton 1981)."
+    }
+  ]
+}

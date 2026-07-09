@@ -1,0 +1,51 @@
+{
+  "id": "Genetics_chapter3_011",
+  "metadata": {
+    "chapter": "Genetics_chapter3",
+    "section": "Covariance, Regression, and Correlation",
+    "subsections": [
+      "Directional Selection Differentials and the Robertson-Price Identity"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter3_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Covariance, Regression, and Correlation",
+    "section_level_2": "Directional Selection Differentials and the Robertson-Price Identity",
+    "heading_path": [
+      "Covariance, Regression, and Correlation",
+      "Directional Selection Differentials and the Robertson-Price Identity"
+    ],
+    "display_heading": "Directional Selection Differentials and the Robertson-Price Identity"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "The evolutionary response of a character to selection is a function of the intensity of selection and the fraction of the phenotypic variance attributable to certain genetic effects. As noted at the end of last chapter, the directional selection differential, S, is defined to be the within-generation difference between the mean phenotype"
+    },
+    {
+      "type": "discussion",
+      "content": "$\\mu_{s}$ after an episode of selection (but before reproduction) and the mean before selection $\\mu$, $$ S=\\mu_{s}-\\mu $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The degree to which $\\mu_{s}$ deviates from $\\mu$ depends on the survivorship and reproductive rates of individuals with different phenotypes. If all individuals have equal fertility and viability, then $\\mu_{s}=\\mu$, $S=0$, and the population mean phenotype is not expected to change between generations. Now, for simplicity, assume that individuals differ only in the probability of survival to maturity, so that fitness, $W(z)$, is the probability that individuals with phenotype $z$ survive to reproduce. In what follows, no assumptions will be made about the general form of $W(z)$; it may be a continuous or discontinuous function of $z$, and it may take on values of 0 for some $z$. If $p(z)$ is the density of phenotype $z$ before selection, then the density after selection is $$ p_{s}(z)=\\frac{W(z)p(z)}{\\int W(z)p(z)dz} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "This expression is obtained by noting that $W(z)$ is a weighting factor for phenotype $z$. The denominator is the mean individual fitness, $\\overline{W}$. Letting the relative fitness of phenotype $z$ be $w(z) = W(z)/\\overline{W}$, Equation 3.19 simplifies to $p_{s}(z) = w(z)p(z)$. It follows that the mean phenotype after selection is $$ \\mu_{s}=\\dot{\\int}z p_{s}(z)d z=\\int z w(z)p(z)d z=E[z w(z)] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Note also that $$ \\overline{w}=\\int w(z)p(z)dz=\\frac{1}{\\overline{W}}\\int W(z)p(z)dz=\\overline{W}/\\overline{W}=1 $$ i.e., the mean relative fitness in a population is always equal to one, and that since $\\mu = E(z) \\cdot E(w) = E(z) \\cdot 1$, the directional selection differential may be rewritten as $$ S=\\mu_{s}-\\mu=E[z w(z)]-E(z)E(w)=\\sigma[z,w(z)] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, the directional selection differential is equivalent to the covariance of phenotype and relative fitness. This relationship, first noted by Robertson (1966), was greatly elaborated on by Price (1970, 1972). We refer to this very useful result as the Robertson-Price identity. It applies even when phenotypes vary in reproductive output, provided that the absolute fitnesses, $ W(z) $, are weighted accordingly."
+    },
+    {
+      "type": "discussion",
+      "content": "The importance of $S$ can be seen by noting that if the regression of offspring phenotype on that of its average parent is linear with slope $\\beta$ (Figure 1.2), a change in the parental mean phenotype induces an expected change in the mean phenotype across generations equal to $$ \\Delta\\mu=\\mu_{o}-\\mu=\\beta\\left(\\mu_{s}-\\mu\\right)=\\beta S $$ where $\\mu_{o}$ is the mean phenotype of the offspring of the selected parents. This fundamental relationship, known as the breeders' equation, combines information on the forces of selection $(S)$ with that on inheritance $(\\beta)$ to yield a predictive equation for evolutionary change across generations. A genetic interpretation of the regression coefficient $\\beta$ will be provided in the final example of this chapter."
+    }
+  ]
+}

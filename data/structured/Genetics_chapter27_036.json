@@ -1,0 +1,35 @@
+{
+  "id": "Genetics_chapter27_036",
+  "metadata": {
+    "chapter": "Genetics_chapter27",
+    "section": "Variance-Component Estimation with Complex Pedigrees",
+    "subsections": [
+      "Example 3. Consider the linear model $ \\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} $, where"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter27_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Variance-Component Estimation with Complex Pedigrees",
+    "section_level_2": "Example 3. Consider the linear model $ \\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} $, where",
+    "heading_path": [
+      "Variance-Component Estimation with Complex Pedigrees",
+      "Example 3. Consider the linear model $ \\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} $, where"
+    ],
+    "display_heading": "Example 3. Consider the linear model $ \\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} $, where"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "$$ \\boldsymbol{\\beta}=\\begin{pmatrix}\\beta_{1}\\\\\\beta_{2}\\\\\\beta_{3}\\end{pmatrix}\\quad and\\quad\\mathbf{X}=\\begin{pmatrix}1&1&0\\\\1&1&0\\\\0&0&1\\end{pmatrix},\\quad giving\\quad\\mathbf{X}^{T}\\mathbf{X}=\\begin{pmatrix}2&2&0\\\\2&2&0\\\\0&0&1\\end{pmatrix} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Note that $ \\mathbf{X}^T \\mathbf{X} $ is singular, so we cannot obtain unique estimates of all three parameters. For this design matrix, are $ \\beta_3 $, $ \\beta_1 + \\beta_2 $, and $ \\beta_1 $ estimable? These three combinations correspond to vectors of $ \\mathbf{b}^T = (0, 0, 1) $, $ (1, 1, 0) $, and $ (1, 0, 0) $, respectively. For the first two $ \\mathbf{b} $ vectors, we can find a vector $ \\mathbf{a} $ that satisfies $ \\mathbf{X}^T \\mathbf{a} = \\mathbf{b} $, viz., $$ \\mathbf{X}^{T}\\left(\\begin{array}{c}0\\\\ 0\\\\ 1\\end{array}\\right)=\\left(\\begin{array}{c}0\\\\ 0\\\\ 1\\end{array}\\right)\\qquad\\mathrm{a n d}\\qquad\\mathbf{X}^{T}\\left(\\begin{array}{c}1/2\\\\ 1/2\\\\ 0\\end{array}\\right)=\\left(\\begin{array}{c}1\\\\ 1\\\\ 0\\end{array}\\right) $$ so that, from Equation A3.6b, these two linear combinations, $ \\beta_{3} $ and $ (\\beta_{1} + \\beta_{2}) $, are estimable. However, since $$ \\mathbf{X}^{T}\\begin{pmatrix}a_{1}\\\\ a_{2}\\\\ a_{3}\\end{pmatrix}=\\begin{pmatrix}a_{1}+a_{2}\\\\ a_{1}+a_{2}\\\\ a_{3}\\end{pmatrix}\\neq\\begin{pmatrix}1\\\\ 0\\\\ 0\\end{pmatrix} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "$ \\beta_1 $ is not estimable as $ a_1 + a_2 $ cannot simultaneously equal zero and one, and hence there exists no vector $ \\mathbf{a} $ that satisfies $ \\mathbf{X}^T \\mathbf{a} = \\mathbf{b} $ for this particular $ \\mathbf{X} $ and $ \\mathbf{b} $."
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "id": "Evolution_chapter21_017",
+  "metadata": {
+    "chapter": "Evolution_chapter21",
+    "section": "RESPONSE FOR PARTICULAR DESIGNS",
+    "subsections": [
+      "Among-family Selection:"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter21_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [
+      "21.1",
+      "21.4",
+      "21.5",
+      "inline_1"
+    ],
+    "section_level_1": "RESPONSE FOR PARTICULAR DESIGNS",
+    "section_level_2": "Among-family Selection:",
+    "heading_path": [
+      "RESPONSE FOR PARTICULAR DESIGNS",
+      "Among-family Selection:"
+    ],
+    "display_heading": "Among-family Selection:",
+    "table_reference_keys": [
+      "Evolution_chapter21:21.1",
+      "Evolution_chapter21:21.4",
+      "Evolution_chapter21:21.5",
+      "Evolution_chapter21:inline_1"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Here the selection unit is $ \\overline{z} $, the mean of a half-, full-, or nested-sib family. The type of sib family, together with the relatives used to produce the next generation, specifies the particular among-family design ([[SEE_TABLE:21.1]]). Tables 21.3 and 21.4 and Equation 21.13a yields the selection response, $ R_{b} $, to a single cycle of among-family selection as $$ R_{b}=\\frac{\\gamma}{\\sqrt{t_{n}}}\\frac{\\sigma_{A}}{2}h\\left(\\bar{\\imath}_{x_{m}}+\\bar{\\imath}_{x_{f}}\\right)=\\frac{\\gamma}{\\sigma\\left(\\overline{z}\\right)}\\frac{\\sigma_{A}^{2}}{2}\\left(\\bar{\\imath}_{x_{m}}+\\bar{\\imath}_{x_{f}}\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The left equality holds when the sib families are not nested and the families are not replicated, while the rightmost expression is completely general (using $ \\sigma^2(\\overline{z}) $ in place of $ t_n\\sigma_z^2 $). The selection unit-offspring covariance is $ \\gamma\\sigma_A^2/2 $, where $$ \\gamma=\\left\\{\\begin{aligned}r_{n}&=r+(1-r)/n&family selection\\\\ r&&sib selection\\\\ 1/2&&parental or S_{1}seed selection\\end{aligned}\\right. $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Recall that these different values arise because $r$ is the genetic correlation among sibs (1/4 and 1/2, respectively, for half- and full-sibs), and that parental and $S_1$ selection correspond to the case where $r = 1/2$. Under strict sib selection, no measured individual is a parent of the next generation and hence all the correlations between an individual in the selection unit and a parent of the next generation are the same (namely, $r\\sigma_A^2$). Under family selection, one of the $n$ measured individual sibs is also the parent of the next generation, and hence has a genetic covariance of $\\sigma_A^2/2$, while the other $n - 1$ individuals are sibs of this parent, each with a genetic covariance of $r\\sigma_A^2/2$ with the offspring (a covariance of $r\\sigma_A^2$ between sibs times 1/2 for that between parent and offspring)."
+    },
+    {
+      "type": "discussion",
+      "content": "The variance of the selection unit, $ \\sigma^2(\\overline{z}) = t_n \\sigma_z^2 $, depends only on the types of sibs that are measured and is independent of the types of relatives used to form the next generation. The theory of expected response to among-family selection traces back to Lush's classic 1947 paper, and Equation 21.14a is a generalization of his results. [[SEE_TABLE:21.5]] expresses the response in terms of variance components."
+    },
+    {
+      "type": "discussion",
+      "content": "Several variants of Equation 21.14a appear in the literature. Noting that $ \\sigma_{A}h = \\sigma_{z}h^{2} $, the response can be expressed as $$ R_{b}=\\frac{\\gamma}{\\sqrt{t_{n}}}\\sigma_{z}h^{2}\\bar{\\imath} $$ where $ \\bar{\\imath} = (\\bar{\\imath}_{x_f} + \\bar{\\imath}_{x_m})/2 $. Similarly, the response can be expressed in terms of the among-"
+    },
+    {
+      "type": "discussion",
+      "content": "[[SEE_TABLE:21.5]] family heritability, with $$ \\begin{array}{r}{R_{b}=h_{b,\\gamma}^{2}S,\\qquad\\mathrm{w h e r e}\\qquad h_{b,\\gamma}^{2}=\\frac{\\gamma}{t_{n}}h^{2}}\\end{array} $$ and with $ S = (S_f + S_m) / 2 $ being the average selection differential on the parents."
+    },
+    {
+      "type": "discussion",
+      "content": "Turning now to particular among-family designs, we start with family selection. Here, measured sibs (either all or a random subset) from the chosen families form the parents for the next generation. To reduce the effects of inbreeding, crosses between sibs from the same family are typically avoided (Chapter 23 examines the response when sibs are crossed, resulting in offspring that are inbred). With family selection, Equation 21.14a becomes $$ R_{b}=\\left\\{\\begin{aligned}&\\frac{\\left(1+3/n\\right)}{\\sqrt{t_{n}(HS)}}\\frac{\\sigma_{A}}{8}h\\left(\\bar{\\imath}_{x_{m}}+\\bar{\\imath}_{x_{f}}\\right)&\\quad half-sibs\\\\ &\\frac{\\left(1+1/n\\right)}{\\sqrt{t_{n}(FS)}}\\frac{\\sigma_{A}}{4}h\\left(\\bar{\\imath}_{x_{m}}+\\bar{\\imath}_{x_{f}}\\right)&\\quad full-sibs\\end{aligned}\\right. $$ as first obtained by Lush (1947). While full-sibs have twice as much usable among-family additive variance relative to half-sibs ($ \\sigma_A^2/2 $ vs. $ \\sigma_A^2/4 $), this advantage is reduced somewhat because half-sibs have a smaller among-family phenotypic variance, with $ t_{HS}/t_{FS} \\leq 1 $. This inequality follows by recalling that $ \\sigma^2(\\overline{z}) = t\\sigma_z^2 $ and noting that $ (t_{FS} - t_{HS})\\sigma_z^2 = \\sigma^2(\\overline{z}_{FS}) - \\sigma^2(\\overline{z}_{HS}) $, where $$ \\sigma^{2}(\\overline{z}_{FS})-\\sigma^{2}(\\overline{z}_{HS})=\\frac{\\sigma_{A}^{2}+\\sigma_{D}^{2}}{4}+\\left(\\sigma_{Ec(FS)}^{2}-\\sigma_{Ec(HS)}^{2}\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Given that full-sibs share a common mother (and hence potentially share maternal effects), we expect $ \\sigma_{Ec(FS)}^2 \\geq \\sigma_{Ec(HS)}^2 $ and, hence $ \\sigma^2(\\overline{z}_{FS}) > \\sigma^2(\\overline{z}_{HS}) $. Assuming the same selection intensity, Equation 21.15c yields the ratio of response for full- to half-sib family selection as $$ \\frac{R_{b}(FS)}{R_{b}(HS)}=\\left(\\frac{1+1/n}{1+3/n}\\right)\\left(\\frac{8\\sqrt{t_{n}(HS)}}{4\\sqrt{t_{n}(FS)}}\\right)<2\\sqrt{\\frac{t_{n}(HS)}{t_{n}(FS)}}<2 $$ with the last equality following from Equation 21.16a."
+    },
+    {
+      "type": "discussion",
+      "content": "If the character can only be measured after reproduction, females (or seed parents) from the chosen families have already been fertilized, and hence selection has occurred on only one sex $ (S_{m} = \\bar{\\imath}_{x_{m}} = 0) $. Planting these seeds (or, in animals, examining the offspring from fertilized females) and evaluating the resulting families allows for half-sib selection (under random pollination). Full-sib selection can also be accomplished, but each cycle takes an additional generation. Here seeds from open-pollinated selected females are grown and controlled crosses are made between the offspring from different seed parents to create full-sib families for the next cycle of selection."
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:21.4]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Under sib selection, unmeasured sibs from each chosen family are used to form the next generation. The most common response equation for sib selection in the literature, which is due to Robertson (1955a), is $$ R_{s i b}=\\bar{\\imath}\\sigma_{A}h\\frac{n r}{\\sqrt{n(1+\\left[n-1\\right]t)}} $$ where $ \\bar{\\imath} $ denotes the average selection intensity used to choose both parents. Equation 21.17 follows from Equation 21.15a because $ \\gamma = r $ for sib selection and we use $ \\sigma_{A}h $ in place of"
+    },
+    {
+      "type": "discussion",
+      "content": "$ \\sigma_{z}h^{2} $. The use of remnant seed is a variant of sib selection. Forming offspring for the next cycle of selection by randomly crossing plants grown from the remnant seeds of the selected families allows these offspring to be the product of selection on both sexes of parents, but at the cost of an extra generation."
+    },
+    {
+      "type": "discussion",
+      "content": "Under parental selection (progeny testing), parents are chosen based on the performance of a trial set of their offspring. Historically (until it was replaced by BLUP selection), this was the approach used to select the top bulls for dairy production. Typically, half-sib families are used and selection is on only one sex. In this case, the expected response is $$ R_{pt}=\\frac{\\sigma_{A}/4}{\\sqrt{t_{n}(HS)}}h\\bar{\\imath} $$ where $ \\bar{i} $ is the intensity on the selected sex. In monoecious species, the expected response is double that given by Equation 21.18a if one uses the selected parents for both seed and pollen. The use of maternal half-sib families (as commonly occurs in plant breeding) is expected to inflate $ t(HS) $ relative to paternal half-sibs (and hence reduce response), as common-family environmental effects can be rather significant due to shared maternal effects."
+    },
+    {
+      "type": "discussion",
+      "content": "If males (sires or pollen plants) are progeny tested using a nested-sib design, wherein each male is crossed to $ n_{f} $ (unrelated) females (dams or seed plants), each of which has $ n_{s} $ sibs, the among-family variance is given in [[SEE_TABLE:21.4]], and the response becomes $$ \\begin{aligned}R_{pt}&=\\frac{h\\bar{\\imath}\\sigma_{A}^{2}/4}{\\sqrt{\\sigma_{GF(HS)}^{2}+\\frac{\\sigma_{G(f|m)}^{2}}{n_{f}}+\\frac{\\sigma_{Gw(FS)}^{2}}{n_{f}n_{s}}+\\frac{\\sigma_{E_{s}}^{2}}{n_{f}n_{s}}+\\frac{\\sigma_{E_{c}(FS)}^{2}}{n_{f}}+\\sigma_{E_{c}(HS)}^{2}}}\\\\&=\\frac{h\\bar{\\imath}\\sigma_{A}^{2}/4}{\\sqrt{\\frac{\\sigma_{A}^{2}}{4}\\left(1+\\frac{1}{n_{f}}+\\frac{2}{n_{f}n_{s}}\\right)+\\frac{\\sigma_{D}^{2}}{4n_{f}}\\left(1+\\frac{3}{n_{s}}\\right)+\\frac{\\sigma_{E_{s}}^{2}}{n_{f}n_{s}}+\\frac{\\sigma_{E_{c}(FS)}^{2}}{n_{f}}+\\sigma_{E_{c}(HS)}^{2}}}\\\\ \\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "For progeny testing of females using a nested design, the roles of males and females are reversed in the above expression. Because $ \\sigma^2(\\overline{z}_{HS}) \\leq \\sigma^2(\\overline{z}_{HS(FS)}) \\leq \\sigma^2(\\overline{z}_{FS}) $, the response using a nested progeny test is intermediate to that for schemes using half- or full-sibs. All these comments for parental selection equally apply to the $ S_1 $ seed design, as the expected response is the same."
+    },
+    {
+      "type": "table",
+      "content": "[[TABLE:21.5]]"
+    }
+  ]
+}

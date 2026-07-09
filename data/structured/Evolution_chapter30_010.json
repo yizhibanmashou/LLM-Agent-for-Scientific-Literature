@@ -1,0 +1,35 @@
+{
+  "id": "Evolution_chapter30_010",
+  "metadata": {
+    "chapter": "Evolution_chapter30",
+    "section": "MULTIDIMENSIONAL QUADRATIC FITNESS REGRESSIONS",
+    "subsections": [
+      "Estimation, Hypothesis Testing, and Confidence Intervals"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter30_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "MULTIDIMENSIONAL QUADRATIC FITNESS REGRESSIONS",
+    "section_level_2": "Estimation, Hypothesis Testing, and Confidence Intervals",
+    "heading_path": [
+      "MULTIDIMENSIONAL QUADRATIC FITNESS REGRESSIONS",
+      "Estimation, Hypothesis Testing, and Confidence Intervals"
+    ],
+    "display_heading": "Estimation, Hypothesis Testing, and Confidence Intervals"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Even if we can assume that a best-fitting quadratic is a reasonable approximation of the individual fitness surface, we are still faced with a number of statistical issues. For k traits, the full quadratic regression (Equation 30.13) involves $ k(k+3)/2 $ parameters: $ k(k+1)/2 $ from $ \\gamma $ ($ k \\gamma_{ii} $ and $ k[k-1]/2 $ symmetric $ \\gamma_{ij} $ terms) and $ k $ from $ \\beta $. With 5, 10, and 25 characters, this corresponds to 20, 65, and 350 parameters, respectively. Hence, the number of observations should be $ n \\gg k(k+3)/2 $ (ideally, by at least an order of magnitude) in order to estimate these parameters with any precision. Unless we test for, and confirm, trait multivariate normality (Appendix 5), $ \\beta $ must be estimated from the best linear multiple regression, as the vector of linear slopes in a quadratic regression need not equal $ \\beta $. Further, while the literature suggests that the estimate for $ \\gamma $ is obtained from the best quadratic regression (Equation 30.13), Equation 29.28b showed that this estimate is biased by the presence of skew. Following Equation 29.29e, a strictly quadratic regression (i.e., with no linear terms), $$ w=a+\\frac{1}{2}\\mathbf{z}_{sd}^{T}\\gamma_{sd}\\mathbf{z}_{sd}+e $$ is not biased by skew, but is still a biased estimator for $ \\gamma $ if the multivariate pattern of kurtosis differs from that for a multivariate normal (Equation 29.29f)."
+    },
+    {
+      "type": "discussion",
+      "content": "A second problem is multicollinearity—if many of the characters being measured are highly correlated, the phenotypic covariance matrix can be nearly singular, so even small errors in estimating P result in large differences in $ P^{-1} $. This, in turn, results in a very large sampling variance for the estimates of $ \\beta $ and $ \\gamma $ (which translates into their instability). A quick check for multicollinearity is to regress each trait on all the others. Subtracting the resulting model $ R^{2} $ from 1.0 determines the tolerance, with very high $ R^{2} $ or low tolerances indicating that multicollinearity is likely to be an issue. One possible solution is to use principal components (Appendix 5) to extract a subset of the characters (measured as PCs; namely, specific linear combinations of the characters) that explains most of the phenotypic variance of P. Fitness regressions using the first few PCs as the characters can then be computed (Lande and Arnold 1983). This approach also reduces the problem of the number of parameters to estimate, but it risks the real possibility of removing the most important characters. Past strong selection may have eroded away much of the variation (Chapters 5, 16, 25, and 26), resulting in such traits being either excluded in a PC set or spread (with weak effects) over several indices of current traits. A further complication is that PCs—weighted indices of trait values—are often difficult to interpret biologically. While the first PC of P for morphological characters generally corresponds to a general measure of size (but see Somers 1986), the others are typically much more problematic to interpret. Finally, using PCs can spread the effects of direct selection on one character over several PCs, further complicating interpretation. While using the PCs of the phenotypic covariance matrix, P, can be problematic, we will show that the PCs associated with the matrix of quadratic selection gradients, $ \\gamma $, can provide considerable insight into the nature of selection."
+    },
+    {
+      "type": "discussion",
+      "content": "A variety of additional concerns regarding fitness regressions were discussed in Chapter 29. Briefly, residuals of fitness regressions are expected by their nature to be poorly behaved, so using standard methods of confidence intervals on regression coefficients is often not appropriate. Mitchell-Olds and Shaw (1987) and Mitchell-Olds (1989) suggested using the delete-one jackknife method for approximating confidence intervals for coefficients in quadratic regressions when the residuals are not normal. Likewise, the discussions of randomization tests and cross-validation procedures in Chapter 29 extend to multivariate regressions in a straightforward manner. Multivariate tests of the presence of a single mode in the fitness surface were discussed by Mitchell-Olds and Shaw (1987), and we will introduce the Box-Hunter confidence volume for the stationary point on a quadratic fitness surface shortly (after first introducing some required matrix machinery)."
+    }
+  ]
+}

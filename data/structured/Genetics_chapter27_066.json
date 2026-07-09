@@ -1,0 +1,39 @@
+{
+  "id": "Genetics_chapter27_066",
+  "metadata": {
+    "chapter": "Genetics_chapter27",
+    "section": "Variance-Component Estimation with Complex Pedigrees",
+    "subsections": [
+      "Central and Noncentral F Distributions"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter27_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Variance-Component Estimation with Complex Pedigrees",
+    "section_level_2": "Central and Noncentral F Distributions",
+    "heading_path": [
+      "Variance-Component Estimation with Complex Pedigrees",
+      "Central and Noncentral F Distributions"
+    ],
+    "display_heading": "Central and Noncentral F Distributions"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "The ratio of two $\\chi^{2}$-distributed variables leads to the $F$ distribution. In particular, if $u \\sim \\chi_{n}^{2}$ and $v \\sim \\chi_{m}^{2}$, then the ratio of these two $\\chi^{2}$ variables divided by their respective degrees of freedom follows a central $F$ distribution with numerator and denominator degrees of freedom $n$ and $m$ (respectively), i.e., $(u/n)/(v/m) \\sim F_{n,m}$. Since $$ \\lim_{m\\to\\infty}F_{n,m}\\to\\frac{\\chi^{2}_{n}}{n} $$ the $F$ distribution can be approximated by a $\\chi_{n}^{2}$ when the denominator degrees of freedom is large."
+    },
+    {
+      "type": "discussion",
+      "content": "The noncentral $F$ distribution results when the numerator $\\chi^{2}$ variable is noncentral. If $u \\sim \\chi_{n,\\lambda}^{2}$ and $v \\sim \\chi_{m}^{2}$, then $F = (u/n)/(v/m)$ follows a noncentral $F$ distributed with noncentrality parameter $\\lambda$, and we write $F \\sim F_{n,m,\\lambda}$. As with the noncentral $\\chi^{2}$, increasing $\\lambda$ shifts the distribution further to the right. Again, this is seen in the mean and variance, with $$ E(F)=\\frac{m}{m-2}\\left(1+\\frac{2\\lambda}{n}\\right) $$ $$ \\sigma^{2}(F)=2\\left(\\frac{m}{n}\\right)^{2}\\left[\\frac{(n+m)^{2}+(n+2\\lambda)(m-2)}{(m-2)^{2}(m-4)}\\right] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Various mathematical and statistical packages provide routines for computing cumulative probabilities of noncentral $ \\chi^{2} $ and F random variables, and a number of approximations have been suggested (e.g., Patnaik 1949, Severo and Zelen 1960, Tiku 1965). Winer et al. (1991) offer one such approximation based on the unit normal U, with the probability that a noncentral F-distributed random variable exceeds a value $ F_{0} $ being approximately $$ \\Pr\\big(F_{n,m,\\lambda}>F_{o}\\big)\\simeq\\Pr\\big(U>z_{o}\\big) $$ where $$ z_{o}=\\frac{\\sqrt{(2m-1)B}-\\sqrt{2(n+\\lambda)-A}}{\\sqrt{A+B}},\\qquad A=\\frac{n+2\\lambda}{n+\\lambda},\\quad B=\\frac{n}{m}F_{o} $$ From this general expression follow simplified approximations for the special cases of central $F$ and noncentral $\\chi^{2}$ variables. Setting $\\lambda = 0$ gives an approximation for the central $F$ distribution as $$ \\Pr(F_{n,m}>F_{o})\\simeq\\Pr\\big(U>\\widetilde{z}_{o}\\big),\\quad\\mathrm{w i t h}\\quad\\widetilde{z}_{o}=\\frac{\\sqrt{(2m-1)B}-\\sqrt{2n-1}}{\\sqrt{1+B}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Likewise, taking the limit as $ m \\to \\infty $ offers an approximation for the noncentral $ \\chi^2 $, since $ \\chi_n, \\chi_m \\sim n \\cdot F_{n, \\infty, \\lambda} $. Taking the limit of Equation A5.17c as $ m \\to \\infty $ gives the probability that a noncentral $ \\chi^2 $ exceeds a value $ C_o $ as approximately $$ \\Pr(\\chi_{n,\\lambda}^{2}>C_{o})\\simeq\\Pr(U>\\widetilde{z}_{o}),\\quad\\mathrm{w i t h}\\quad\\widetilde{z}_{o}=\\frac{\\sqrt{2C_{o}}-\\sqrt{2(n+\\lambda)-A}}{\\sqrt{A}} $$"
+    }
+  ]
+}

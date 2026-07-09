@@ -1,0 +1,72 @@
+{
+  "id": "Evolution_chapter22_021",
+  "metadata": {
+    "chapter": "Evolution_chapter22",
+    "section": "BLUP ESTIMATION OF DIRECT AND ASSOCIATIVE EFFECTS",
+    "subsections": [
+      "Mixed-Model Estimation of Direct and Associative Effects"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter22_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [
+      "inline_2",
+      "inline_3",
+      "inline_4"
+    ],
+    "section_level_1": "BLUP ESTIMATION OF DIRECT AND ASSOCIATIVE EFFECTS",
+    "section_level_2": "Mixed-Model Estimation of Direct and Associative Effects",
+    "heading_path": [
+      "BLUP ESTIMATION OF DIRECT AND ASSOCIATIVE EFFECTS",
+      "Mixed-Model Estimation of Direct and Associative Effects"
+    ],
+    "display_heading": "Mixed-Model Estimation of Direct and Associative Effects",
+    "table_reference_keys": [
+      "Evolution_chapter22:inline_2",
+      "Evolution_chapter22:inline_3",
+      "Evolution_chapter22:inline_4"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "The general approach follows if we consider a standard animal model with additional random effects (Equations 19.20 and 19.21). Equation 22.1b shows how the phenotype of individual i is the sum of its direct breeding value, the social breeding values of its group members, and the environmental effects, $$ z_{i}=\\mu+\\left(A_{d_{i}}+E_{d_{i}}\\right)+\\sum_{j\\neq1}\\left(A_{s_{j}}+E_{s_{j}}\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "To start, we assume a very simple residual structure $$ z_{i}=\\mu+A_{d_{i}}+\\sum_{j\\neq1}A_{s_{j}}+e_{i} $$ where the $ e_i $ are uncorrelated and homoscedastic, so that $ \\mathbf{e} \\sim (\\mathbf{0}, \\sigma^2(\\mathbf{e}))\\mathbf{I} $. Letting $ \\mathbf{a}_d $ denote the vector of direct breeding values (DBVs), and $ \\mathbf{a}_s $ be the vector of social breeding values (SBVs), the resulting mixed model becomes $$ \\mathbf{z}=\\mathbf{X}\\boldsymbol{\\beta}+\\mathbf{Z}_{d}\\mathbf{a}_{d}+\\mathbf{Z}_{s}\\mathbf{a}_{s}+\\mathbf{e},\\quad with\\quad\\mathbf{e}\\sim(\\mathbf{0},\\sigma^{2}(e)\\mathbf{I}) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Here $ \\beta $ is the vector of fixed effects (which will be just the mean for our simple example) and X is the design matrix associated with these fixed effects. Likewise, $ Z_{d} $ and $ Z_{s} $ are the corresponding incidence matrices for the direct and social effects, which follow logically upon considering the group members (Examples 22.10 and 22.11)."
+    },
+    {
+      "type": "proposition",
+      "content": "To complete the model, we need to specify the covariance structures of the three vectors of random effects. Our initial assumption on the residual errors implies that the covariance matrix for the residuals is $ \\sigma^2(e) $. The covariance structure for the two vectors of random effects is a function of the relationship matrix A (Chapter 19) of the individuals in the study, which has block-matrix form. $$ \\mathbf{V a r}\\begin{pmatrix}\\mathbf{a}_{d}\\\\ \\mathbf{a}_{s}\\end{pmatrix}=\\begin{pmatrix}\\sigma^{2}(A_{d})\\mathbf{A}&\\sigma(A_{d},A_{s})\\mathbf{A}\\\\ \\sigma(A_{d},A_{s})\\mathbf{A}&\\sigma^{2}(A_{s})\\mathbf{A}\\end{pmatrix} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "This is often written more compactly using the Kronecker or direct product notation as $ \\mathbf{G} \\otimes \\mathbf{A} $, where $$ \\mathbf{G}=\\begin{pmatrix}\\sigma^{2}(A_{d})&\\sigma(A_{d},A_{s})\\\\ \\sigma(A_{d},A_{s})&\\sigma^{2}(A_{s})\\end{pmatrix} $$ Because the residuals are assumed to be uncorrelated with the other random effects, the full covariance structure for this model is $$ \\mathbf{V a r}\\begin{pmatrix}\\mathbf{a}_{d}\\\\ \\mathbf{a}_{s}\\\\ \\mathbf{e}\\end{pmatrix}=\\begin{pmatrix}\\sigma^{2}(A_{d})\\mathbf{A}&\\sigma(A_{d},A_{s})\\mathbf{A}&\\mathbf{0}\\\\ \\sigma(A_{d},A_{s})\\mathbf{A}&\\sigma^{2}(A_{s})\\mathbf{A}&\\mathbf{0}\\\\ \\mathbf{0}&\\mathbf{0}&\\sigma^{2}(e)\\mathbf{I}\\end{pmatrix} $$"
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:22.10]]"
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:22.11]]"
+    },
+    {
+      "type": "discussion",
+      "content": "Because we allow for the possibility that the direct and social breeding values are correlated, the standard mixed-model equations for two vectors of random effects (Equation 19.21; LW Equations 26.19b and 26.30) must be slightly modified. They become $$ \\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{X}&\\mathbf{X}^{T}\\mathbf{Z}_{d}&\\mathbf{X}^{T}\\mathbf{Z}_{s}\\\\\\mathbf{Z}_{d}\\mathbf{X}^{T}&\\mathbf{Z}_{d}^{T}\\mathbf{Z}_{d}+\\lambda_{1}\\mathbf{A}^{-1}&\\mathbf{Z}_{d}^{T}\\mathbf{Z}_{s}+\\lambda_{2}\\mathbf{A}^{-1}\\\\\\mathbf{Z}_{s}\\mathbf{X}^{T}&\\mathbf{Z}_{s}^{T}\\mathbf{Z}_{d}+\\lambda_{2}\\mathbf{A}^{-1}&\\mathbf{Z}_{s}^{T}\\mathbf{Z}_{s}+\\lambda_{3}\\mathbf{A}^{-1}\\end{pmatrix}\\begin{pmatrix}\\boldsymbol{\\beta}\\\\\\mathbf{a}_{d}\\\\\\mathbf{a}_{s}\\end{pmatrix}=\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{X}\\\\\\mathbf{X}^{T}\\mathbf{Z}_{d}\\\\\\mathbf{X}^{T}\\mathbf{Z}_{s}\\end{pmatrix} $$ where the weights $ \\left(\\lambda_{i}\\right) $ are related to elements in the inverse of G, namely, $$ \\begin{pmatrix}\\lambda_{1}&\\lambda_{2}\\\\\\lambda_{2}&\\lambda_{3}\\end{pmatrix}=\\sigma^{2}(e)\\mathbf{G}^{-1}=\\sigma^{2}(e)\\begin{pmatrix}\\sigma^{2}(A_{d})&\\sigma(A_{d},A_{s})\\\\\\sigma(A_{d},A_{s})&\\sigma^{2}(A_{s})\\end{pmatrix}^{-1} $$ as obtained by Muir (2005) and Van Vleck and Cassady (2005)."
+    },
+    {
+      "type": "discussion",
+      "content": "In order to solve these equations, estimates of the variance components—$\\sigma^{2}(e)$, $\\sigma^{2}(A_{d})$, $\\sigma^{2}(A_{s})$, and $\\sigma(A_{d}, A_{s})$—are required, and within the mixed-model framework, these are obtained by REML (LW Chapter 27). Van Vleck and Cassady (2005) used simulated data to show that, under the appropriate design, REML does indeed provide separable estimates of the genetic variance components. However, two early applications to real data sets, weight gain in pigs within pens by Arango et al. (2005) and weight gain in Hereford cattle in feedlots by Van Vleck et al. (2007), found that the likelihood surface for $\\sigma^{2}(A_{s})$ was very flat, making model fitting challenging. We will examine such issues of identifiability shortly. While mixed-model methodology is very robust (for example, it easily handles missing data and variable group numbers), it can easily fail if the model is not correctly specified or the experimental design is such that random effects are not separable, points that we will address shortly."
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:22.12]]"
+    }
+  ]
+}

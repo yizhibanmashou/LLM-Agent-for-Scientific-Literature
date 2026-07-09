@@ -1,0 +1,63 @@
+{
+  "id": "Genetics_chapter15_007",
+  "metadata": {
+    "chapter": "Genetics_chapter15",
+    "section": "Introduction",
+    "subsections": [
+      "QTL DETECTION AND ESTIMATION USING LINEAR MODELS"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter15_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "QTL DETECTION AND ESTIMATION USING LINEAR MODELS",
+    "heading_path": [
+      "Introduction",
+      "QTL DETECTION AND ESTIMATION USING LINEAR MODELS"
+    ],
+    "display_heading": "QTL DETECTION AND ESTIMATION USING LINEAR MODELS"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "We now have all of the necessary machinery in place to consider particular estimation methods in greater detail. As noted above, the simplest test for a marker-trait association involves the comparison of the trait means of alternate marker genotypes. This is the basis for linear-model approaches for detecting QTLs. When only two genotypes are compared (such as with single-marker backcross-, RIL-, or DHL-designs), this can be accomplished with a simple $t$ test (e.g., Sokal and Rohlf 1995). Most designs, however, involve more than two marker genotypes. For example, the single-marker $\\mathrm{F}_{2}$ design has three marker genotypes: $\\mathrm{MM}$, $\\mathrm{Mm}$, $\\mathrm{mm}$. In such cases, all marker genotypic means (or some subset of them) can be compared by using standard linear-model approaches, such as ANOVA or regression."
+    },
+    {
+      "type": "discussion",
+      "content": "The simplest linear model considers the phenotypic value $z_{ik}$ of the $k$th individual of marker genotype $i$ as a mean value $\\mu$ plus a marker effect $b_{i}$ and a residual error $e_{ik}$, $$ z_{ik}=\\mu+b_{i}+e_{ik} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "This is a one-way ANOVA model (Chapter 18), with the presence of a linked QTL being indicated by a significant between-marker variance. Equivalently, we can express this model as a multiple regression, with the phenotypic value for individual j given by $$ z_{j}=\\mu+\\sum_{i=1}^{n}b_{i}x_{ij}+e_{j} $$ where the $x_{ij}$ are $n$ indicator variables (one for each marker genotype), $$ x_{i j}=\\left\\{\\begin{array}{l l}{1}&{\\mathrm{i f~i n d i v i d u a l~}j\\mathrm{~h a s~m a r k e r~g e n o t y p e~}i,}\\\\ {0}&{\\mathrm{o t h e r w i s e}.}\\end{array}\\right. $$"
+    },
+    {
+      "type": "proposition",
+      "content": "The number of marker genotypes (n) in Equations 15.14a,b depend on both the number of marker loci and the type of design being used. With a single marker, $n = 2$ for a backcross, RIL, or DH design, while $n = 3$ for an $F_{2}$ design (using codominant markers). When two or more marker loci are simultaneously considered, $b_{i}$ corresponds to the effect of a multilocus marker genotype, and $n$ is the number of such genotypes considered in the analysis. In the regression framework, evidence of a linked QTL is provided by a significant $r^{2}$, which is the fraction of character variance accounted for by the marker genotypes (Chapter 8). Finally, as mentioned above, the presence of a linked QTL can cause different marker genotypes to have different trait variances. If the difference in variance between marker classes is substantial, the standard ANOVA assumption of variance homogeneity is violated and appropriate corrections are required for hypothesis testing (Asins and Carbonell 1988, Xu 1995)."
+    },
+    {
+      "type": "discussion",
+      "content": "Estimation of dominance requires information on all three genotypes at a marker locus, i.e., an $ F_{2} $, $ F_{t} $, or other design (such as both backcross populations). In these cases, dominance can be estimated using an appropriate function of the marker means (e.g., Equations 15.7b, 15.8b). Epistasis between QTLs can be modeled by including interaction terms. Here, an individual with genotype i at one marker locus and genotype k at a second is modeled as $ z = \\mu + a_{i} + b_{k} + d_{ik} + e $, where a and b denote the single-locus marker effects, and d is the interaction term due to epistasis between QTLs linked to those marker loci. In linear regression form this model becomes $$ z_{j}=\\mu+\\sum_{i}^{n_{1}}a_{i}x_{ij}+\\sum_{k}^{n_{2}}b_{k}y_{kj}+\\sum_{i}^{n_{1}}\\sum_{k}^{n_{2}}d_{ik}x_{ij}y_{kj}+e_{j} $$ where $x_{ij}$ and $y_{kj}$ are indicator variables for two different marker genotypes (with $n_{1}$ and $n_{2}$ genotypes, respectively). Significant $a_{i}$ and / or $b_{k}$ terms indicate significant effects at the individual marker loci, while significant $d_{ik}$ terms indicate epistasis between the effects of the two markers."
+    },
+    {
+      "type": "discussion",
+      "content": "Essentially the same approach can be used to look for genotype $ \\times $ environment interactions when markers are examined in several environments. Here the basic model for an individual with marker genotype i measured in the kth environment is $ z = \\mu + b_i + E_k + I_{ik} + e $, where a significant $ E_k $ indicates an environmental effect, while a significant $ I_{ik} $ implies a marker $ \\times $ environment interaction. For example, if the character has significant sex-specific effects, these can be incorporated by using the model $ z = \\mu + b_i + s_k + I_{ik} + e $ for an individual of marker genotype i and sex k. Here, a significant $ s_k $ implies a significant sex effect, while a significant $ I_{ik} $ implies a significant marker $ \\times $ sex interaction. Long et al. (1995) give an example of the utility of this approach, finding very significant sex-specific effects for bristle number in Drosophila."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 3. Edwards et al. (1987) examined two F₂ maize populations. Cross 1 consisted of 1776 individuals scored for 16 markers, while Cross 2 used a different set of parental lines and consisted of 1930 individuals scored for 20 markers. As the frequency distribution (below) shows, the detected marker effects (measured by the fraction $ r^{2} $ of total F₂ phenotypic variance accounted for by each significant marker-trait association) were generally quite small."
+    },
+    {
+      "type": "discussion",
+      "content": "A total of 82 vegetative characters were examined, with 60% (Cross 1) and 64% (Cross 2) of all possible marker-trait combinations showing significant effects (at the $ \\alpha = 0.05 $ level) using single-marker ANOVA. On average, each trait showed 10 (Cross 1) and 14 (Cross 2) significant marker associations. Dominance was common, while pairwise epistasis, as tested by incorporating a marker $ \\times $ marker interaction term into the linear model (Equation 15.14c), was rare."
+    },
+    {
+      "type": "discussion",
+      "content": "The same two F₂ populations were used by Stuber et al. (1987) to examine 25 yield-related characters, with similar results. In that study, most marker-trait combinations were significant (66% and 72% at the α = 0.05 level), and most marker effects were small (over half of the significant associations having r² values less than two percent). As a group, yield-related traits displayed more dominance than vegetative traits, but many yield traits were still largely additive."
+    },
+    {
+      "type": "discussion",
+      "content": "A more recent study by Edwards et al. (1992) examined a subset of the vegetative characters in Cross 2, using a much larger number of markers (114 RFLPs). While only 187 $ F_{2} $ individuals were scored, 15% of marker-trait associations were significant, and the overall results with respect to the distribution of effects were similar to those for the 1987 experiments."
+    }
+  ]
+}

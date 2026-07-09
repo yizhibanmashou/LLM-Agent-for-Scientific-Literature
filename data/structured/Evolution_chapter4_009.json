@@ -1,0 +1,35 @@
+{
+  "id": "Evolution_chapter4_009",
+  "metadata": {
+    "chapter": "Evolution_chapter4",
+    "section": "RELATIVE POWER OF RECOMBINATION AND GENETIC DRIFT",
+    "subsections": [
+      "Other Approaches for Narrow Genomic Intervals"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter4_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "RELATIVE POWER OF RECOMBINATION AND GENETIC DRIFT",
+    "section_level_2": "Other Approaches for Narrow Genomic Intervals",
+    "heading_path": [
+      "RELATIVE POWER OF RECOMBINATION AND GENETIC DRIFT",
+      "Other Approaches for Narrow Genomic Intervals"
+    ],
+    "display_heading": "Other Approaches for Narrow Genomic Intervals"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "An alternative method-of-moments approach to estimating $ \\rho_L $ was suggested by Hudson (1987), who noted that the variance of pairwise measures of neutral sequence divergence is expected to decline with increasing levels of recombination. (With strong linkage disequilibrium, some random pairs of haplotype blocks will be identical over all polymorphic sites, while others will differ at all such sites.) This approach requires an estimate of the average number of nucleotide differences between random sequences of length $ L $, $ \\Theta_\\pi = \\theta_\\pi L $, as well as the observed variance of pairwise divergence, $$ \\begin{align*}\\widehat{\\sigma}^2_k=\\frac{2}{n(n-1)}\\sum_{i=1}^n\\sum_{j>i}^n(k_{ij}-\\Theta_\\pi)^2\\end{align*} $$ where $ k_{ij} $ is the number of sites at which sequences i and j differ, and n is the number of chromosomes scored in the sample. Wakeley's (1997) Equation 15 allows one to estimate $ \\rho_L $ as a function of $ \\Theta_\\pi $, $ \\widehat{\\sigma}_k^2 $, and n."
+    },
+    {
+      "type": "discussion",
+      "content": "Fuller use of the information in sample data can be achieved by considering the probabilities of various sample counts of the four gametic types at two loci or nucleotide sites (i.e., AB, Ab, aB, and ab) assumed to be biallelic, neutral, and in drift-mutation-recombination equilibrium (Hudson 2001). For any hypothetical combination of the parameters $ \\theta $, $ \\rho_{L} $, and sample size n, one may compute the probability of the observed data for each pairwise combination of markers (Golding 1984; Ethier and Griffiths 1990), although obtaining exact probabilities of two-locus sampling configurations is mathematically challenging, and for large sample sizes, approximations must often be obtained by computer simulation (but see Jenkins and Song 2009). Further simplification can be achieved by obtaining probabilities of sampling configurations conditional on two alleles actually segregating at both sites, as this eliminates the dependence on $ \\theta $ (Hudson 2001). One can then combine the likelihood estimates with respect to $ \\rho_{L} $ over all nonoverlapping pairs of linked segregating sites to obtain a global estimate of $ \\rho $ (Hudson 2001). (Usually, this is done by assuming that $ \\rho = \\rho_{L}/L $, although as noted below there are problems with this approach when the distances between sites are highly variable.) Because the data are not entirely independent, this composite likelihood approach is just an approximation to a full ML analysis, and the confidence limits for the resultant estimates can only be achieved by computer simulations. McVean et al. (2002) extended this approach to allow for parallel mutations, which in species with high mutation rates, can lead to the false appearance of recombination under the usual assumptions of the four-gamete test."
+    },
+    {
+      "type": "proposition",
+      "content": "The efficiency of all of these methods can be questioned in the sense that they use summary statistics that do not necessarily make full use of all of the information in the sample. Most notably, they do not account for the genealogical relationships among the sampled haplotypes. To this end, several more elaborate ML approaches and their Bayesian extensions go well beyond the method of Hudson (2001) (e.g., Kuhner et al. 2000; Nielsen 2000; Fearnhead and Donnelly 2001). As the number of genealogies consistent with any given set of mutational and recombinational parameters is enormous, exact solutions are not possible with these computationally intensive approximations. Moreover, although one would expect estimates derived in an explicit likelihood framework to perform better than the ad hoc procedures outlined above, it remains unclear whether that is the case for the sample sizes (n and L) that have been typically applied to date, as all existing estimators appear to be biased, have very large sampling variances, and rely on the assumption of an equilibrium population (Wall 2000)."
+    }
+  ]
+}

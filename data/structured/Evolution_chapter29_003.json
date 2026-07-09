@@ -1,0 +1,56 @@
+{
+  "id": "Evolution_chapter29_003",
+  "metadata": {
+    "chapter": "Evolution_chapter29",
+    "section": "EPISODES OF SELECTION AND THE ASSIGNMENT OF FITNESS",
+    "subsections": [
+      "Assigning Fitness Components"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter29_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [
+      "inline_1"
+    ],
+    "section_level_1": "EPISODES OF SELECTION AND THE ASSIGNMENT OF FITNESS",
+    "section_level_2": "Assigning Fitness Components",
+    "heading_path": [
+      "EPISODES OF SELECTION AND THE ASSIGNMENT OF FITNESS",
+      "Assigning Fitness Components"
+    ],
+    "display_heading": "Assigning Fitness Components",
+    "table_reference_keys": [
+      "Evolution_chapter29:inline_1"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "We now turn to the task of partitioning measures of individual fitnesses in a longitudinal study into fitness components. A cohort of $n$ individuals (indexed by $1 \\leq r \\leq n$) is followed through several discrete (nonoverlapping) episodes of selection. Let $W_j(r)$ be the fitness measure for the $j$th episode of selection for individual $r$. For example, if we are following viability, then $W_j$ is either zero (dead) or one (alive) at the census period. Relative fitness components, $w_j(r) = W_j(r)/\\overline{W}_j$ (mean-standardized fitnesses), will turn out to be especially useful (as $\\overline{w}_j = 1$). At the start of a study, the frequency of each individual is $1/n$, yielding the mean fitness for the first (observed) episode of selection as $$ \\overline{W}_{1}=\\frac{1}{n}\\sum_{r=1}^{n}W_{1}(r) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "(We note the very real possibility that considerable selection on the focal trait may have already occurred prior to the life-cycle stages being examined; Example 29.1.) Following this first episode, the new fitness-weighted frequency of the $ r^{th} $ individual is $ w_{1}(r)/n $, implying that the mean fitness for the second episode of selection is calculated by $$ \\"
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:29.1]]"
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:29.2]]"
+    },
+    {
+      "type": "discussion",
+      "content": "In general, for the jth episode of selection, $$ \\begin{align*}\\overline{W}_{j}=\\sum_{r=1}^n W_{j}(r)\\cdot w_{j-1}(r)\\cdot w_{j-2}(r)\\cdots w_{1}(r)\\cdot\\left(\\frac{1}{n}\\right)\\end{align*} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Note that if $ W_j(r) = 0 $, further fitness components for $ r $ are unmeasured. If we let $ p_j(r) $ be the fitness-weighted frequency of individual $ r $ after $ j $ episodes of selection, it follows that $ p_0(r) = 1/n $ and $$ \\begin{align*}p_j(r)=w_j(r)\\cdot p_{j-1}(r)=\\frac{1}{n}\\prod\\limits_{i=1}^j w_i(r),\\quad{\\rm where}\\quad\\sum\\limits_{r=1}^n p_j(r)=1\\end{align*} $$ The 1/n term represents the initial frequency of individual $r$, while the product is the total relative fitness for individual $r$ following the $j$ episodes of selection. It immediately follows that Equation 29.1c can be expressed as $\\overline{W}_j = \\sum W_j(r) \\cdot p_{j-1}(r)$. Using these weights allows fitness-weighted moments to be calculated. For example, the fitness-weighted mean of a particular character following the $j$th episode is given by $$ \\begin{align*}\\overline{z}_j=\\sum\\limits_{r=1}^n z(r)\\cdot p_j(r)\\end{align*} $$ where $ z(r) $ is the value of the character in individual r. Likewise, the sample variance is $$ \\begin{align*}\\mathrm{Var}(z_j)=\\frac{n}{n-1}\\left[\\sum\\limits_{r=1}^n z^2(r)\\cdot p_j(r)-(\\overline{z}_j)^2\\right]\\end{align*} $$ As discussed later in the chapter, the fitness distribution over a particular episode (or component) may closely correspond to a standard distribution, such as a Bernoulli random variable (with a value of zero or one) for survival or mating status, or a Poisson for the number of offspring or mates. However, the resulting compound distribution of fitness over several episodes is generally very complex. In particular, we usually expect a large probability mass at zero, representing individuals that did not reproduce. The resulting distribution generally does not correspond to any standard one, nor can it easily be transformed into one. As discussed at the end of the chapter, the aster-model approach can be used to construct the full unconditional distribution of total fitness."
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:29.3]]"
+    }
+  ]
+}

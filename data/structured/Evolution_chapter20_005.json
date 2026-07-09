@@ -1,0 +1,63 @@
+{
+  "id": "Evolution_chapter20_005",
+  "metadata": {
+    "chapter": "Evolution_chapter20",
+    "section": "Selection Response in Natural Populations: Introduction",
+    "subsections": [
+      "THE FISHER-PRICE-KIRKPATRICK-ARNOLD MODEL FOR EVOLUTION OF BREEDING DATE"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter20_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Selection Response in Natural Populations: Introduction",
+    "section_level_2": "THE FISHER-PRICE-KIRKPATRICK-ARNOLD MODEL FOR EVOLUTION OF BREEDING DATE",
+    "heading_path": [
+      "Selection Response in Natural Populations: Introduction",
+      "THE FISHER-PRICE-KIRKPATRICK-ARNOLD MODEL FOR EVOLUTION OF BREEDING DATE"
+    ],
+    "display_heading": "THE FISHER-PRICE-KIRKPATRICK-ARNOLD MODEL FOR EVOLUTION OF BREEDING DATE"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "The idea of an environmental feature being the target of selection dates back to Darwin and Fisher. Fisher (1958), based on observations by Darwin (1871), suggested that the condition of a bird influences both her clutch size and the date at which she breeds, with healthier females breeding earlier and having larger clutch sizes. Price, Kirkpatrick, and Arnold (1988) used Fisher's idea as an explanation for the apparent lack of selection response for breeding date in many birds in the temperate zone. Birds that reproduce early have higher fitness than those that breed later in the season, and hence S for breeding date is negative (selection to move the breeding date earlier). Further, when examined, the breeding date typically has moderate to high heritability. Because both $ h^{2} $ and S are nonzero, the breeder's equation predicts a response to selection resulting in a decrease in breeding date, but this is not seen."
+    },
+    {
+      "type": "discussion",
+      "content": "The model of Price et al. (1988) to explain this lack of response is shown in Figure 20.2. For brevity, we refer to the Fisher-Price-Kirkpatrick-Arnold model as simply Fisher's model (we will resist the temptation of referring to this as the Fisher-Price toy model). The model is as follows: assume that the breeding date, z, of a female has three components $$ z=A-n+e $$"
+    },
+    {
+      "type": "discussion",
+      "content": "A is the breeding value for breeding date, e is the environmental value, and n is the nutritional state (or condition) of the female. Equation 20.2 shows that females with a higher value of n (higher nutritional status) breed earlier (i.e., z declines with increasing values of n). Price et al. (following Fisher) treated n as a nonheritable environmental factor, but one could also model n as a heritable trait, thus changing this to a multivariate selection problem (Chapter 13; Volume 3). The three components of Equation 20.2 are assumed to be uncorrelated and normally distributed, with variances of $ \\sigma_A^2 $, $ \\sigma_n^2 $, and $ \\sigma_c^2 $. Let $ \\mu $ be the current mean breeding value and assume that the means of n and e are zero."
+    },
+    {
+      "type": "discussion",
+      "content": "Price et al. (1988) modeled the process of selection by considering two separate components of fitness. First, they assumed there is an optimum breeding date, $ \\theta $, so that z is under stabilizing selection. Recall from Equation 16.17 that a standard model for stabilizing selection in natural populations is nor-optimal (or normalizing) selection (Weldon 1895; Haldane 1954), where $$ \\begin{align*}W(z)=\\exp\\left(-{(z-\\theta)^2\\over2\\omega^2}\\right)\\end{align*} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "This function, giving the expected fitness, $ W(z) $, of an individual with a phenotypic value of $ z $, has the same form as a normal distribution, with the highest fitness at the optimal phenotypic value ($ z = \\theta $) and declining as one moves away from $ \\theta $. The strength of selection is described by $ \\omega^2 $, the “width” of the fitness function. The larger the value of $ \\omega^2 $, the more slowly fitness declines as one moves away from the optimum. If $ \\omega^2 \\gg \\sigma_z^2 $, selection is weak (most of the population has roughly the same fitness), while selection is strong when $ \\omega^2 \\ll \\sigma_z^2 $. One advantage of this fitness function is that if $ z $ is normally distributed before selection, it remains normally distributed following selection, and expressions for the new mean and variance are easily obtained (Equation 16.18a)."
+    },
+    {
+      "type": "discussion",
+      "content": "Second, Price et al. assumed that fitness increases with the nutritional status, n. One way to express this is to assume that $$ W(n)=\\exp(\\alpha n)\\qquad for\\alpha>0 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Note that if $ |\\alpha n| \\ll 1 $, then $ W(n) $ is approximately $ 1 + \\alpha n $. As was the case with nor-optimal fitness, under the fitness function given by Equation 20.3b, traits that were normally distributed before selection remain normal following selection."
+    },
+    {
+      "type": "discussion",
+      "content": "Conditioned on breeding date, z, and nutritional value, n, the resulting fitness is $$ W(n,z)=W(z)\\cdot W(n)=\\exp\\left(\\alpha n-\\frac{(z-\\theta)^{2}}{2\\omega^{2}}\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Recalling Equation 20.2, fitness can be expressed in terms of the components of the model $$ W(n,e,A)=\\exp\\left(\\alpha n-\\frac{(A-n+e-\\theta)^{2}}{2\\omega^{2}}\\right) $$"
+    },
+    {
+      "type": "proposition",
+      "content": "Under the assumption that A is normally distributed with a mean of $ \\mu $, while n and e are normally distributed with a mean of zero, Heywood (2005) found the change in mean to be $$ R=\\sigma_{A}^{2}\\left(\\frac{\\theta-\\mu+\\alpha\\sigma_{n}^{2}}{\\omega^{2}+\\sigma_{z}^{2}}\\right) $$ where $ \\sigma_{n}^{2} $ is the variance in nutritional value. From Equation 20.5, at equilibrium $ (R = 0) $, the mean breeding date is $$ \\widehat{\\mu}=\\theta+\\alpha\\sigma_{n}^{2} $$ which is later than the optimal breeding date, $ \\theta $. Price et al. (1988) commented that this displacement of the equilibrium mean above $ \\theta $ occurs because females that are in good nutritional condition $ (n > 0) $ breed earlier than the mean breeding value at equilibrium, as $ z = A - n + e $ (Equation 20.2), and hence $$ E[z|n>0]=E[A-n+e|n>0]=E[A]+E[e]-E[n|n>0]=\\widehat{\\mu}+0-E[n|n>0]<\\widehat{\\mu} $$ Because $ \\widehat{\\mu} > \\theta $, females that are in good nutritional condition $ (n > 0) $ have a mean breeding date below $ \\widehat{\\mu} $, and therefore closer to the optimal value, $ \\theta $. Price et al. noted that this model may also apply to clutch size in birds and might be a reasonable model for seed germination time (especially for the latter if there is a significant nonheritable nutritional contribution from the maternal endosperm)."
+    }
+  ]
+}

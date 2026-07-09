@@ -1,0 +1,47 @@
+{
+  "id": "Genetics_chapter16_010",
+  "metadata": {
+    "chapter": "Genetics_chapter16",
+    "section": "Introduction",
+    "subsections": [
+      "MAXIMUM LIKELIHOOD OVER GENERAL PEDIGREES: VARIANCE COMPONENTS"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter16_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "MAXIMUM LIKELIHOOD OVER GENERAL PEDIGREES: VARIANCE COMPONENTS",
+    "heading_path": [
+      "Introduction",
+      "MAXIMUM LIKELIHOOD OVER GENERAL PEDIGREES: VARIANCE COMPONENTS"
+    ],
+    "display_heading": "MAXIMUM LIKELIHOOD OVER GENERAL PEDIGREES: VARIANCE COMPONENTS"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "The above likelihood functions explicitly model the transmission of QTL genotypes from parent to offspring, requiring estimation of QTL allele frequencies and genotype means (as well as assumptions about the number of segregating alleles). While this approach can be extended to multigenerational pedigrees, the number of possible combinations of genotypes for individuals in the entire pedigree increases exponentially with the number of pedigree members, and solving the resulting likelihood functions becomes increasingly more difficult. An alternative is to construct likelihood functions using the variance components associated with a QTL (or linked group of QTLs) in a genetic region of interest, rather than explicitly modeling all of the underlying genetic details. This approach allows for very general and complex pedigrees. The basic idea is to use marker information to compute the fraction of a genetic region of interest that is identical by descent. between two individuals. Recall that two alleles are identical by descent, or ibd, if we can trace them back to a single copy in a common ancestor (Chapter 7)."
+    },
+    {
+      "type": "discussion",
+      "content": "Goldgar (1990) was the first to suggest this approach for QTL mapping. We sketch the basic ideas here and refer the reader to Chapter 27 for a more detailed discussion of the estimation of variance components in a likelihood framework. Consider the simplest case, in which the genetic variance is additive for the QTLs in the region of interest as well as for background QTLs unlinked to this region. Under Goldgar's model, an individual's phenotypic value is decomposed as $$ z_{i}=\\mu+A_{i}+A_{i}^{*}+e_{i} $$ where $\\mu$ is the population mean, $A$ is the contribution from the chromosomal interval being examined, $A^{*}$ is the contribution from QTLs outside this interval, and $e$ is the residual. The random effects $A$, $A^{*}$, and $e$ are assumed to be normally distributed with mean zero and variances $\\sigma_{A}^{2}$, $\\sigma_{A^{*}}^{2}$, and $\\sigma_{e}^{2}$. Here $\\sigma_{A}^{2}$ and $\\sigma_{A^{*}}^{2}$ correspond to the additive variances associated with the chromosomal region of interest and background QTLs in the remaining genome, respectively. We assume that none of these background QTLs are linked to the chromosome region of interest so that $A$ and $A^{*}$ are uncorrelated, and we further assume that the residual $e$ is uncorrelated with $A$ and $A^{*}$. Under these assumptions, the phenotypic variance is $\\sigma_{A}^{2}+\\sigma_{A^{*}}^{2}+\\sigma_{e}^{2}$."
+    },
+    {
+      "type": "discussion",
+      "content": "Assuming no shared environmental effects, from Chapter 7 the phenotypic covariance between two individuals is $$ \\sigma(z_{i},z_{j})=R_{i j}\\sigma_{A}^{2}+2\\Theta_{i j}\\sigma_{A*}^{2} $$ where $ R_{ij} $ is the fraction of the chromosomal region shared ibd between individuals i and j, and $ 2\\Theta_{ij} $ is twice Wright's coefficient of coancestry (i.e., $ 2\\Theta_{ij} = 1/2 $ for full sibs). Note that $ R_{ij} $ is a random variable whose expected value is $ 2\\Theta_{ij} $. Goldgar (1990) and Guo (1994a,b) discuss the estimation of $ R_{ij} $ from flanking marker information. For the special case of a nuclear family, Kruglyak and Lander (1995b) discuss the estimation of $ R_{ij} $ at any point along a chromosome using all marker information (multipoint mapping). Approaches such as genomic mismatch scanning (Chapter 14) can also be used with a very dense genetic map to estimate $ R_{ij} $ with high precision. For a vector z of observations on n individuals, the associated covariance matrix V can be expressed as contributions from the region of interest, from background QTLs, and from residual effects, $$ \\mathbf{V}=\\mathbf{R}\\sigma_{A}^{2}+\\mathbf{A}\\sigma_{A^{*}}^{2}+\\mathbf{I}\\sigma_{e}^{2} $$ where $\\mathbf{I}$ is the $n\\times n$ identity matrix, and $\\mathbf{R}$ and $\\mathbf{A}$ are matrices of known constants, $$ \\mathbf{R}_{i j}=\\left\\{\\begin{matrix}{1}&{\\mathbf{f o r}\\;i=j}\\\\ {\\widehat{R}_{i j}}&{\\mathbf{f o r}\\;i\\neq j}\\\\ \\end{matrix}\\right.,\\qquad\\mathbf{A}_{i j}=\\left\\{\\begin{matrix}{1}&{\\mathbf{f o r}\\;i=j}\\\\ {2\\Theta_{i j}}&{\\mathbf{f o r}\\;i\\neq j}\\\\ \\end{matrix}\\right. $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The elements of R contain the estimates of ibd status for the region of interest based on marker information (see below), while the elements of A are given by the pedigree structure."
+    },
+    {
+      "type": "discussion",
+      "content": "The resulting likelihood is a multivariate normal with mean vector $ \\mu $ (all of whose elements are $ \\mu $) and variance-covariance matrix V. From Equation 8.24, $$ \\ell(\\mathbf{z}|\\mu,\\sigma_{A}^{2},\\sigma_{A^{*}}^{2},\\sigma_{e}^{2})=\\frac{1}{\\sqrt{(2\\pi)^{n}|\\mathbf{V}|}}\\exp\\left[-\\frac{1}{2}(\\mathbf{z}-\\pmb{\\mu})^{T}\\mathbf{V}^{-1}(\\mathbf{z}-\\pmb{\\mu})\\right] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "This likelihood has four unknown parameters ($ \\mu $, $ \\sigma_{A}^{2} $, $ \\sigma_{A^{*}}^{2} $, and $ \\sigma_{e}^{2} $). A significant $ \\sigma_{A}^{2} $ indicates the presence of at least one QTL in the interval being considered, while a significant $ \\sigma_{A^{*}}^{2} $ implies background genetic variance contributed from QTLs outside the focal interval. Both of these hypotheses can be tested by likelihood-ratio tests. Using the methodology of Chapters 26 and 27, the simple model given by Equation 16.29 can easily be extended to allow for other genetic effects (such as dominance), multiple chromosomal regions (Schork 1993), shared environmental effects, and any number of fixed effects (such as differences between the sexes, different known environmental effects, and so forth). Incorporation of such additional effects can increase power by reducing the residual variance."
+    }
+  ]
+}

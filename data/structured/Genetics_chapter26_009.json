@@ -1,0 +1,47 @@
+{
+  "id": "Genetics_chapter26_009",
+  "metadata": {
+    "chapter": "Genetics_chapter26",
+    "section": "Introduction",
+    "subsections": [
+      "The Animal Model"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter26_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Introduction",
+    "section_level_2": "The Animal Model",
+    "heading_path": [
+      "Introduction",
+      "The Animal Model"
+    ],
+    "display_heading": "The Animal Model"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Assuming only a single fixed factor (the population mean) under the simplest animal model, the observation for individual $i$ is expressed as $$ y_{i}=\\mu+a_{i}+e_{i} $$ where $a_{i}$ is the additive genetic value of individual $i$. With $k$ individuals, the model can be expressed as in Equation 26.1 with $$ \\mathbf{X}=\\begin{pmatrix}1\\\\ 1\\\\ \\vdots\\\\ 1\\end{pmatrix},\\qquad\\boldsymbol{\\beta}=\\boldsymbol{\\mu},\\qquad\\mathbf{u}=\\begin{pmatrix}a_{1}\\\\ a_{2}\\\\ \\vdots\\\\ a_{k}\\end{pmatrix} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The matrix G describing the covariances among the random effects (here the breeding values) follows from standard results for the covariances between relatives. From Equation 7.12, the additive genetic covariance between two relatives i and j is given by $ 2\\Theta_{ij}\\sigma_{A}^{2} $, i.e., by twice the coefficient of coancestry times the additive genetic variance in the base population. Hence, under the animal model, $ \\mathbf{G} = \\sigma_{A}^{2}\\mathbf{A} $, where the additive genetic (or numerator) relationship matrix A has elements $ A_{ij} = 2\\Theta_{ij} $."
+    },
+    {
+      "type": "proposition",
+      "content": "The covariance matrix $\\mathbf{R}$ for the vector of residual errors requires a little more care. The standard assumption is that $\\mathbf{R} = \\sigma_E^2 \\mathbf{I}$, so that the residual error for each observation has the same variance $\\sigma_E^2$ and is uncorrelated with all other residual errors. There are many ways in which this assumption can fail. For example, if the character displays any dominance and $i$ and $j$ are full sibs, $\\sigma(e_i, e_j) = \\sigma_D^2 / 4$. Shared environmental effects can also cause correlations between residual effects. These complications will be considered below in some detail, but for now we assume that the residual errors have the simple covariance structure $\\mathbf{R} = \\sigma_E^2 \\mathbf{I}$, implying $\\mathbf{R}^{-1} = \\sigma_E^{-2} \\mathbf{I}$."
+    },
+    {
+      "type": "proposition",
+      "content": "Since $ \\mathbf{G}^{-1} = \\sigma_{A}^{-2} \\mathbf{A}^{-1} $, the mixed-model equations (Equation 26.5) for the animal model reduce to $$ \\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{X}&\\mathbf{X}^{T}\\mathbf{Z}\\\\&&\\\\\\mathbf{Z}^{T}\\mathbf{X}&\\mathbf{Z}^{T}\\mathbf{Z}+\\lambda\\mathbf{A}^{-1}\\end{pmatrix}\\begin{pmatrix}\\widehat{\\boldsymbol{\\beta}}\\\\\\mathbf{\\widehat{u}}\\end{pmatrix}=\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{y}\\\\\\\\\\mathbf{Z}^{T}\\mathbf{y}\\end{pmatrix} $$ where $\\lambda = \\sigma_E^2 / \\sigma_A^2 = (1 - h^2) / h^2$ under the assumption of additive gene action. Since the only fixed factor is the mean $\\mu$ (so that $\\beta = \\mu$ and $\\mathbf{X} = \\mathbf{1}$, a vector of ones) and each individual has only a single observation (so that $\\mathbf{Z} = \\mathbf{I}$), with $n$ individuals, Equation 26.9a reduces to $$ \\begin{pmatrix}n&\\mathbf{1}^{T}\\\\\\mathbf{1}&\\mathbf{I}+\\lambda\\mathbf{A}^{-1}\\end{pmatrix}\\begin{pmatrix}\\widehat{\\mu}\\\\\\mathbf{\\widehat{u}}\\end{pmatrix}=\\begin{pmatrix}\\sum^{n}y_{i}\\\\\\mathbf{y}\\end{pmatrix} $$ With the vector of observations, $$ \\mathbf{y}=\\begin{pmatrix}y_{1}\\\\ y_{2}\\\\ y_{3}\\\\ y_{4}\\\\ y_{5}\\end{pmatrix}=\\begin{pmatrix}7\\\\ 9\\\\ 10\\\\ 6\\\\ 9\\end{pmatrix} $$ we can use Equation 26.9b with $\\hat{u}^{*} = (\\widehat{a}_{1}, \\widehat{a}_{2}, \\widehat{a}_{3}, \\widehat{a}_{4}, \\widehat{a}_{5})$. Assuming that individuals 1, 2, and 3 are unrelated and not inbred, the relationship matrix becomes $$ \\mathbf{A}=\\left(\\begin{array}{r r r r r}{1}&{0}&{0}&{1/2}&{0}\\\\ {0}&{1}&{0}&{1/2}&{1/2}\\\\ {0}&{0}&{1}&{0}&{1/2}\\\\ {1/2}&{1/2}&{0}&{1}&{1/4}\\\\ {0}&{1/2}&{1/2}&{1/4}&{1}\\end{array}\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Suppose it is known that $ \\sigma_{E}^{2}=\\sigma_{A}^{2} $, so that $ \\lambda=1 $. Then, $$ \\mathbf{I}+\\lambda\\mathbf{A}^{-1}=\\begin{pmatrix}{{{5/2}}}&{{{1/2}}}&{{{0}}}&{{{-1}}}&{{{0}}} \\\\{{{1/2}}}&{{{3}}}&{{{1/2}}}&{{{-1}}}&{{{-1}}} \\\\{{{0}}}&{{{1/2}}}&{{{5/2}}}&{{{0}}}&{{{-1}}} \\\\{{{-1}}}&{{{-1}}}&{{{0}}}&{{{3}}}&{{{0}}} \\\\{{{0}}}&{{{-1}}}&{{{-1}}}&{{{0}}}&{{{3}}}\\end{pmatrix} $$ Since $n = 5$ and $\\sum y_i = 41$, Equation 26.9b gives the mixed-model equations for these data as $$ \\begin{pmatrix}{{{5}}}&{{{1}}}&{{{1}}}&{{{1}}}&{{{1}}}&{{{1}}} \\\\{{{1}}}&{{{5/2}}}&{{{1/2}}}&{{{0}}}&{{{-1}}}&{{{0}}} \\\\{{{1}}}&{{{1/2}}}&{{{3}}}&{{{1/2}}}&{{{-1}}}&{{{-1}}} \\\\{{{1}}}&{{{0}}}&{{{1/2}}}&{{{5/2}}}&{{{0}}}&{{{-1}}} \\\\{{{1}}}&{{{-1}}}&{{{-1}}}&{{{0}}}&{{{3}}}&{{{0}}} \\\\{{{1}}}&{{{0}}}&{{{-1}}}&{{{-1}}}&{{{0}}}&{{{3}}}\\end{pmatrix}\\begin{pmatrix}{{{\\widehat{\\mu}}}} \\\\{{{\\widehat{a}_{1}}}} \\\\{{{\\widehat{a}_{2}}}} \\\\{{{\\widehat{a}_{3}}}} \\\\{{{\\widehat{a}_{4}}}} \\\\{{{\\widehat{a}_{5}}}}\\end{pmatrix}=\\begin{pmatrix}{{{41}}} \\\\{{{7}}} \\\\{{{9}}} \\\\{{{10}}} \\\\{{{6}}} \\\\{{{9}}}\\end{pmatrix} $$ the solutions of which are $$ \\widehat{\\mu}=\\frac{440}{53}\\simeq8.302,\\qquad\\qquad\\left(\\begin{matrix}{\\widehat{a}_{1}}\\\\ {\\widehat{a}_{2}}\\\\ {\\widehat{a}_{3}}\\\\ {\\widehat{a}_{4}}\\\\ {\\widehat{a}_{5}}\\\\ \\end{matrix}\\right)=\\left(\\begin{matrix}{-662/689}\\\\ {4/53}\\\\ {610/689}\\\\ {-732/689}\\\\ {381/689}\\\\ \\end{matrix}\\right)\\simeq\\left(\\begin{matrix}{-0.961}\\\\ {0.076}\\\\ {0.885}\\\\ {-1.062}\\\\ {0.553}\\\\ \\end{matrix}\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Note that the average breeding value in the base population (individuals 1, 2, and 3) is zero (as expected for a random sample of the population). This is no longer the case once we leave the base population, unless all base-population individuals contribute equally to progeny production."
+    }
+  ]
+}

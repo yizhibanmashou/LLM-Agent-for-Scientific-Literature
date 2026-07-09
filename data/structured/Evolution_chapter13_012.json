@@ -1,0 +1,64 @@
+{
+  "id": "Evolution_chapter13_012",
+  "metadata": {
+    "chapter": "Evolution_chapter13",
+    "section": "EXPANDING THE BASIC BREEDER'S EQUATION",
+    "subsections": [
+      "Reducing Environmental Noise: Repeated-Measures Selection"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter13_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [
+      "inline_4"
+    ],
+    "section_level_1": "EXPANDING THE BASIC BREEDER'S EQUATION",
+    "section_level_2": "Reducing Environmental Noise: Repeated-Measures Selection",
+    "heading_path": [
+      "EXPANDING THE BASIC BREEDER'S EQUATION",
+      "Reducing Environmental Noise: Repeated-Measures Selection"
+    ],
+    "display_heading": "Reducing Environmental Noise: Repeated-Measures Selection",
+    "table_reference_keys": [
+      "Evolution_chapter13:inline_4"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "The repeated-measures design is a second example of increasing accuracy (and response) by providing some control over environmental noise. Here the character of interest is measured n different times on each individual, and selection occurs on $ \\overline{z}_{i} $, the mean value for individual i. For example, if we are considering the number of days to ripening, a better approach is to use a collection of fruit, rather than a single one, to assign a value to an individual tree. Repeated-measures selection is a common design in behavioral experiments, wherein a single measure (such as wheel-running speed) may vary greatly within an individual over time."
+    },
+    {
+      "type": "discussion",
+      "content": "Our analysis depends on the repeatability (LW Chapter 6) of the trait. The character value for the jth measure of individual i is decomposed as $$ z_{ij}=G_{i}+E_{i}+e_{ij} $$ where $ G_i $ and $ E_i $ are the genotypic and (permanent) environmental values common to all measures of $ i $, and $ e_{ij} $ is the special environmental value restricted to the $ j $th measure of $ i $, with the repeatability, $ r $, being defined as $$ r=\\frac{\\sigma_{G}^{2}+\\sigma_{E}^{2}}{\\sigma_{z}^{2}}=1-\\frac{\\sigma_{e}^{2}}{\\sigma_{z}^{2}} $$ yielding $$ r\\sigma_{z}^{2}=\\sigma_{G}^{2}+\\sigma_{E}^{2}\\quad and\\quad(1-r)\\sigma_{z}^{2}=\\sigma_{e}^{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "To obtain the accuracy in using $ \\overline{z}_{i} $ to predict $ A_{i} $, we need both the covariance between $ \\overline{z}_{i} $ and $ A_{i} $, and the variance of $ \\overline{z}_{i} $. The former is simply $$ \\sigma(A_{i},\\overline{z}_{i})=\\sigma\\left(A_{i},\\frac{1}{n}\\sum_{j=1}^{n}z_{ij}\\right)=\\frac{1}{n}\\sum_{j=1}^{n}\\sigma(A_{i},z_{ij})=\\frac{1}{n}n\\sigma(A_{i},A_{i})=\\sigma_{A}^{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "To obtain the variance of $ \\overline{z}_{i} $, starting with $$ \\overline{z}_{i}=\\frac{1}{n}\\sum_{j=1}^{n}z_{ij}=G_{i}+E_{i}+\\frac{1}{n}\\sum_{j=1}^{n}e_{ij} $$ $$ \\begin{aligned}\\sigma^{2}\\left(\\overline{z}_{i}\\right)&=\\sigma_{G}^{2}+\\sigma_{E}^{2}+\\sigma_{e}^{2}/n\\\\&=\\sigma_{z}^{2}r+\\sigma_{z}^{2}\\frac{1-r}{n}=\\sigma_{z}^{2}\\left(\\frac{1+(n-1)r}{n}\\right)\\end{aligned} $$ it immediately follows from Equation 13.16c that"
+    },
+    {
+      "type": "discussion",
+      "content": "The resulting accuracy in using $ \\overline{z}_{i} $ to predict $ A_{i} $ becomes $$ \\rho(\\overline{z}_{i},A_{i})=\\frac{\\sigma(A_{i},\\overline{z}_{i})}{\\sigma_{A}\\sigma(\\overline{z}_{i})}=\\frac{\\sigma_{A}^{2}}{\\sigma_{A}\\sqrt{\\sigma_{z}^{2}\\left(\\frac{1+(n-1)r}{n}\\right)}}=h\\sqrt{\\frac{n}{1+(n-1)r}} $$ giving the response as $$ R=\\bar{\\imath}\\rho(\\overline{z}_{i},A_{i})\\sigma_{A}=\\bar{\\imath}h\\sqrt{\\frac{n}{1+(n-1)r}}\\sigma_{A} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The ratio of accuracies under repeated-measures versus (single-measure) mass selection becomes $$ \\frac{\\rho(\\overline{z}_{i},A_{i})}{\\rho(z_{i},A_{i})}=\\sqrt{\\frac{n}{1+(n-1)r}} $$ which approaches $ 1/\\sqrt{r} $ for large values of $ n $. Hence, when repeatability is low ($ \\sigma_e^2 \\gg \\sigma_G^2 + \\sigma_E^2 $), repeated-measures selection can result in a considerable improvement in response."
+    },
+    {
+      "type": "discussion",
+      "content": "This comparison assumes the same selection intensity under single- versus repeated-measures selection, but one might imagine that they could differ. For example, if one has the time and resources to only score 500 individuals, and (for breeding reasons) must keep (at least) 50 parents, then the fraction to be saved can be as small as 50/500 = 10% under single-measure selection. However, with five replicate measures per individual, we can only score 100 individuals, if we are to save a fraction no smaller than 50/100 = 50%. Applying Equation 14.4c, these translate into selection intensities of $ \\bar{\\imath}_{\\overline{z}_{i}} = 0.79 $ for repeated-measures selection and $ \\bar{\\imath}_{z_{i}} = 1.75 $ for single-measures selection, respectively. Such differences in the potential selection intensity are easily incorporated into comparisons of different selection strategies, with the comparison now being $$ \\frac{R_{\\overline{z}_{i}}}{R_{z_{i}}}=\\frac{\\overline{\\imath}_{\\overline{z}_{i}}}{\\overline{\\imath}_{z_{i}}}\\sqrt{\\frac{n}{1+(n-1)r}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, we note that our analysis of repeated-measures selection assumes that the additive-genetic correlation across individual measurements is 1.0, which is expected for many traits. However, if measures are sufficiently separated in time that age effects are important, or if they represent significantly distinct events (such as litter size at different parities, i.e., distinct litters), these correlations can be less than one. In other words, the traits measured at different ages may not be the same genetically. In such cases, one should treat these measurements as a set of correlated traits and use index-selection theory (Volume 3). With measurements at arbitrary time points that may differ over individuals, the method of random regression (Volume 3) is used."
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:13.6]]"
+    }
+  ]
+}

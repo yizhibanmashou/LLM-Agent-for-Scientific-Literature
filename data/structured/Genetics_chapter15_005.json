@@ -1,0 +1,56 @@
+{
+  "id": "Genetics_chapter15_005",
+  "metadata": {
+    "chapter": "Genetics_chapter15",
+    "section": "Introduction",
+    "subsections": [
+      "Marker Variances and Higher-order Moments"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter15_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [
+      "15.1"
+    ],
+    "section_level_1": "Introduction",
+    "section_level_2": "Marker Variances and Higher-order Moments",
+    "heading_path": [
+      "Introduction",
+      "Marker Variances and Higher-order Moments"
+    ],
+    "display_heading": "Marker Variances and Higher-order Moments",
+    "table_reference_keys": [
+      "chapter15:15.1"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "The same linkage disequilibrium that generates differences in the mean trait values of different marker genotypes can also create differences in the variance and higher moments (e.g., skewness and kurtosis). Such differences are not uncommon. In a cross of tomato species, for example, Weller et al. (1988) found significantly different variances for 28% (40 of 180) of the possible marker-trait associations, while 17% showed significant differences in skewness. In some instances these moments may be of more interest than the mean (Weller and Wyler 1992). For example, a reduction in the variance of flowering time shortens the harvesting window, and by reducing costs this may be more significant than changing mean harvesting time per se."
+    },
+    {
+      "type": "discussion",
+      "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Genotype</td><td style='text-align: center; word-wrap: break-word;'>Freq.</td><td style='text-align: center; word-wrap: break-word;'>/</td><td style='text-align: center; word-wrap: break-word;'>x</td><td style='text-align: center; word-wrap: break-word;'>z</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>MMQQ</td><td style='text-align: center; word-wrap: break-word;'>$ (1 - \\tilde{c})/2 $</td><td style='text-align: center; word-wrap: break-word;'>1</td><td style='text-align: center; word-wrap: break-word;'>z_ QQ </td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>MMqq</td><td style='text-align: center; word-wrap: break-word;'>$ \\tilde{c}/2 $</td><td style='text-align: center; word-wrap: break-word;'>1</td><td style='text-align: center; word-wrap: break-word;'>z_ qq </td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>mmQQ</td><td style='text-align: center; word-wrap: break-word;'>$ \\tilde{c}/2 $</td><td style='text-align: center; word-wrap: break-word;'>-1</td><td style='text-align: center; word-wrap: break-word;'>z_ QQ </td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>mmqq</td><td style='text-align: center; word-wrap: break-word;'>$ (1 - \\tilde{c})/2 $</td><td style='text-align: center; word-wrap: break-word;'>-1</td><td style='text-align: center; word-wrap: break-word;'>z_ qq </td><td style='text-align: center; word-wrap: break-word;'></td></tr></table> $$ \\sigma(x,z)=E(x\\cdot z)=a(1-2\\widetilde{c}) $$ $$ \\sigma^{2}(x)=E(x^{2})=1 $$ $$ \\sigma^{2}(z)=E(z^{2})=(1/2)[E(z_{Q Q})^{2}+\\sigma_{e}^{2}]+(1/2)[E(z_{q q})^{2}+\\sigma_{e}^{2}]=a^{2}+\\sigma_{e}^{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Note: We assume that the difference in QTL means is $ E(z_{QQ}) - E(z_{qq}) = 2a $ and that the phenotypic distributions conditioned on the QTL genotypes have common (within-line) variance $ \\sigma_{e}^{2} $. Since $ \\sigma(x, z) $ and $ \\sigma^{2}(z) $ are unchanged by a change in the mean of z (Chapter 3), we can arbitrarily set $ E(z_{QQ}) = -E(z_{qq}) = a $. Coded this way, $ E(x) = E(z) = 0 $, simplifying calculation of $ \\sigma(x, z) $ and $ \\sigma^{2}(z) $."
+    },
+    {
+      "type": "discussion",
+      "content": "Several workers have suggested the use of these higher-order moments for detection of a linked QTL and estimation of its effects (Zhuchenko et al. 1978, 1979; Korol et al. 1981, 1983, 1987; Ginzburg 1983; Asins and Carbonell 1988; Zhang et al. 1992). One difficulty with this approach is that variances (and higher moments) are estimated with far less precision than means, reducing both the power of detection and the accuracy of estimates. Another complication is that not all designs are capable of revealing significant changes in higher moments (e.g., Asins and Carbonell 1988)."
+    },
+    {
+      "type": "discussion",
+      "content": "RILs and DHLs provide one case where functions of higher-order moments (here, a correlation coefficient) may be of value. Here, single-locus marker information can be used to estimate the recombination frequency $c$ (Hu et al. 1995). As shown in [[SEE_TABLE:15.1]], coding the alternative marker homozygotes as $x=\\pm1$, the expected marker-trait correlation becomes $$ \\rho=\\frac{\\sigma(z,x)}{\\sigma(x)\\sigma(z)}=\\frac{a(1-2\\widetilde{c})}{\\sqrt{a^{2}+\\sigma_{e}^{2}}}=\\frac{1-2\\widetilde{c}}{\\sqrt{1+C^{2}}} $$ where $C=\\sigma_{e}/a$, with $a$ being the QTL effect and $\\sigma_{e}^{2}$ being the within-line variance (see [[SEE_TABLE:15.1]]). (The $C$ term was neglected by Hu et al. 1995.) Rearranging and letting $r$ be an estimate of $\\rho$ suggests the estimator $$ \\widetilde{c}=\\frac{1-r\\sqrt{1+C^{2}}}{2}\\leq\\frac{1-r}{2} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "While the value of $C$ is unknown, by ignoring it one can obtain an upwardly biased estimate of $c$ by first taking $\\tilde{c} = (1 - r)/2$ and then using Equation 15.5b to translate this value of $\\tilde{c}$ into $c$. Rearranging Equation 15.10b, $$ a=\\frac{\\mu_{M M}-\\mu_{m m}}{2(1-2\\widetilde{c})} $$ which, upon using $ 0 \\leq \\widetilde{c} \\leq (1 - r)/2 $, gives $$ \\frac{\\mu_{MM}-\\mu_{mm}}{2}\\leq a\\leq\\frac{\\mu_{MM}-\\mu_{mm}}{2r} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Hence, the use of both the observed correlation $r$ and the difference in marker means $(\\overline{z}_{MM} - \\overline{z}_{mm})$ allows the estimation of upper bounds for both $c$ and $a$."
+    }
+  ]
+}

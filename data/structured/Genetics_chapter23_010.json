@@ -1,0 +1,99 @@
+{
+  "id": "Genetics_chapter23_010",
+  "metadata": {
+    "chapter": "Genetics_chapter23",
+    "section": "COMPONENTS OF VARIANCE AND COVARIANCE",
+    "subsections": [
+      "FALCONER'S APPROACH"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter23_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "COMPONENTS OF VARIANCE AND COVARIANCE",
+    "section_level_2": "FALCONER'S APPROACH",
+    "heading_path": [
+      "COMPONENTS OF VARIANCE AND COVARIANCE",
+      "FALCONER'S APPROACH"
+    ],
+    "display_heading": "FALCONER'S APPROACH"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "In all of the procedures discussed above, the maternal effect was treated as a general feature of the mother, with no specific character in the mother being identified as contributing to the effect. An alternative approach is to identify explicitly one or more maternal characters that are likely to be the source of the maternal effect, and to consider how these modify the expression of other characters in offspring. Falconer (1965a) introduced a simple model in which a single maternal character affects its own expression, e.g., maternal body size influencing the size of offspring via maternal care effects. Under this model, an individual's phenotype is described in the usual way, with the addition of a third term describing the maternal effect. $$ z_{i}=A_{i}+m z_{i1}+E_{i} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Here $z_{i1}$ represents the phenotype of individual $i$'s mother (the 1 denoting 1 generation back), and $m$, the maternal effect coefficient, is defined as the partial regression of offspring phenotype on maternal phenotype, holding the genetic contribution constant. (We will see shortly that m is just the difference between maternal-offspring and paternal-offspring regressions, as previously denoted). The remainder of the phenotype is assumed to be determined by an additive genetic effect $ A_{i} $ and an independently distributed residual deviation $ E_{i} $."
+    },
+    {
+      "type": "discussion",
+      "content": "By extension, the phenotype of the mother can be written as a function of her mother, i.e., $ z_{i1} = A_{i1} + mz_{i2} + E_{i1} $, and that is the case for the phenotype $ z_{i2} $ of i's grandmother, as well as for all more remote members of i's maternal lineage. Consequently, the phenotype of i can be expressed by the infinite series, $$ z_{i}=\\sum_{t=0}^{\\infty}m^{t}(A_{it}+E_{it}) $$ where t denotes the number of generations back in the maternal lineage."
+    },
+    {
+      "type": "discussion",
+      "content": "This simple model yields some interesting features. Assuming that the absolute value of m is less than one, which is necessary for the phenotypic variance to equilibrate, the covariance between mother and offspring is $$ $$"
+    },
+    {
+      "type": "discussion",
+      "content": "(M,O)&= = (z_ i1,A_ i)+m _ z ^ 2 \\\\&= (_ t=0 ^ m^ t A_ i(t+1),A_ i)+m _ z ^ 2 \\\\&= (_ t=0 ^ m^ t 2^ t+1 A_ i,A_ i)+m _ z ^ 2 \\\\&= _ A ^ 2 2-m +m _ z ^ 2 $$ $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The covariance between paternal and offspring phenotypes is found in the same manner, noting that there is no covariance between the maternal effect $ mz_{i1} $ and the father's phenotype, $$ \\sigma(F,O)=\\frac{\\sigma_{A}^{2}}{2-m} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Using Equation 23.11, it is also possible to compute the equilibrium phenotypic variance, $$ \\sigma_{z}^{2}=\\frac{(2+m)\\sigma_{A}^{2}+(2-m)\\sigma_{E}^{2}}{(2-m)(1-m^{2})} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "(Falconer 1965a)."
+    },
+    {
+      "type": "discussion",
+      "content": "The preceding derivations help clarify the meaning of Falconer's maternal effect coefficient m, and also suggest ways to estimate it. First, m is seen to be the difference between the two parent-offspring regressions $$ m=\\frac{\\sigma(M,O)-\\sigma(F,O)}{\\sigma_{z}^{2}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, Falconer's m is identical to the m that we defined in Example 1. In terms of the covariance components of Wilham's model, Equation 23.1, $$ m=\\frac{\\left(\\sigma_{A_{o},A_{m}}+\\sigma_{D_{o},D_{m}}+\\sigma_{E_{o},E_{m}}\\right)+\\frac{\\sigma_{A_{m}}^{2}}{2}+b\\sigma_{E_{m}}^{2}}{\\sigma_{z}^{2}} $$"
+    },
+    {
+      "type": "definition",
+      "content": "Second, from Equation 23.7b, m is also identical to the regression of foster child on foster mother. Third, by setting $ \\sigma_A^2 = 0 $ in Equation 23.12a, it can be seen that m is equivalent to the regression of offspring on mother in a group of genetically uniform individuals. Thus, for species that can be propagated vegetatively, m can be estimated as the average within-clone regression of offspring on mother. All three interpretations of m are consistent with its definition as the regression of offspring on mother above that expected on the basis of gene transmission."
+    },
+    {
+      "type": "discussion",
+      "content": "For some organisms, m can be estimated by experimentally manipulating the expression of the maternal character and monitoring the phenotypes of offspring. For example, by adding and subtracting eggs from clutches of the collared fly-catcher (Ficedula albicollis), Schluter and Gustafsson (1993) obtained an estimate of m = -0.25 (Figure 23.5), i.e., the addition of an egg to a mother's clutch causes the average clutch size of her daughters to decline by 0.25 eggs."
+    },
+    {
+      "type": "discussion",
+      "content": "Restricted to a single character, Falconer's model may seem a bit abstract, but it is readily extended to multiple characters (Kirkpatrick and Lande 1989, Lande and Price 1989). In multivariate terms, Equation 23.11 generalizes to $$ \\mathbf{z}=\\mathbf{a}+\\mathbf{M}\\mathbf{z}_{1}+\\mathbf{e} $$ where M is a matrix of maternal effect coefficients, with the element $ m_{ij} $ defining the strength of the maternal effect of character j in the mother on character i in the progeny. z, a, and e are, respectively, vectors of the phenotypic values, additive genetic values, and special environmental effects on the traits in the individual, and $ z_{1} $ is the vector of phenotypic values in the mother. Note that, in general, M is unlikely to be symmetric. From Kirkpatrick and Lande (1989), the multivariate analogs of Equations 23.12a–c are $$ \\mathbf{C}^{m}=\\frac{1}{2}\\mathbf{G}\\left(\\mathbf{I}-\\frac{1}{2}\\mathbf{M}^{T}\\right)^{-1}+\\mathbf{M}\\mathbf{P} $$ $$ \\mathbf{C}^{f}=\\frac{1}{2}\\mathbf{G}\\left(\\mathbf{I}-\\frac{1}{2}\\mathbf{M}^{T}\\right)^{-1} $$ $$ \\mathbf{P}=\\mathbf{G}+\\mathbf{E}+\\mathbf{M}\\mathbf{P}\\mathbf{M}^{T}+\\mathbf{M}(\\mathbf{C}^{f})^{T}+\\mathbf{C}^{f}\\mathbf{M}^{T} $$ where I is the identity matrix, $ C^m $ and $ C^f $ are the parent-offspring phenotypic covariance matrices ($ m $ denoting mothers, $ f $ denoting fathers) for the different"
+    },
+    {
+      "type": "discussion",
+      "content": "[[FIGURE:23.5]] traits, G is the matrix of additive genetic variances and covariances for the traits, P is the phenotypic covariance matrix, and T denotes a transpose of traits, G is the matrix of additive genetic variances and covariances for the traits, P is the phenotypic covariance matrix, and T denotes a transpose. From the difference between Equations 23.16a,b, the matrix of maternal effects is found to be $$ \\mathbf{M}=(\\mathbf{C}^{m}-\\mathbf{C}^{f})\\mathbf{P}^{-1} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "This expression provides a means of obtaining unbiased estimates of the $ m_{ij} $, provided that all of the maternal characters influencing the characters under study are included in the analysis. (That, of course, may be a formidable task, requiring a deeper understanding of the biology of the system than is usually available). Once M has been obtained, the genetic covariance matrix of direct effects can be obtained by rearrangement of Equation 23.16b, $$ \\mathbf{G}=2\\mathbf{C}^{f}\\left(\\mathbf{I}-\\frac{1}{2}\\mathbf{M}^{T}\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Since M contains $ n^{2} $ coefficients, where n is the number of traits under consideration, it seems unlikely that any of them could be estimated very accurately if n is large, so this general procedure is difficult to apply to most practical problems. An alternative approach is to restrict the number of nonzero elements in M based on one's intuition about the biology of the character of interest, as shown in the following example."
+    },
+    {
+      "type": "discussion",
+      "content": "Example 2. Here we consider a two-character situation (from Lande and Price 1989) in which only one of the four possible maternal effect coefficients is nonzero. Adult size (character 1) of a mother has a direct maternal effect on her offspring's size at birth (character 2) so that $ m_{21} = m \\neq 0 $, but no direct effect on the offspring's size at maturity ($ m_{11} = 0 $). Furthermore, the mother's size at birth has no maternal influence on her offspring's size at birth ($ m_{22} = 0 $) or maturity ($ m_{12} = 0 $). Thus, all of the elements of M are zero but $ m_{21} $. If there are no other maternal characters influencing size at birth or maturity, and the other assumptions of the Kirkpatrick-Lande model are met, then unbiased definitions of the expected values of the parent-offspring covariance matrices are given by Equations 23.16a,b, which reduce to $$ \\begin{aligned}\\mathbf{C}^{m}&=\\begin{pmatrix}\\sigma_{A_{1}}^{2}/2&\\sigma_{A_{1},A_{2}}/2+m_{21}\\sigma_{A_{1}}^{2}/4\\\\\\sigma_{A_{1},A_{2}}/2+m_{21}\\sigma_{z_{1}}^{2}&\\sigma_{A_{2}}^{2}/2+m_{21}\\sigma_{A_{1},A_{2}}/4+m_{21}\\sigma_{z_{1},z_{2}}\\end{pmatrix}\\\\\\mathbf{C}^{f}&=\\begin{pmatrix}\\sigma_{A_{1}}^{2}/2&\\sigma_{A_{1},A_{2}}/2+m_{21}\\sigma_{A_{1}}^{2}/4\\\\\\sigma_{A_{1},A_{2}}/2&\\sigma_{A_{2}}^{2}/2+m_{21}\\sigma_{A_{1},A_{2}}/4\\end{pmatrix}\\end{aligned} $$ where $A_{1}$ denotes the direct additive effect on adult size, and $A_{2}$ the direct additive effect on size at birth."
+    },
+    {
+      "type": "discussion",
+      "content": "Provided that observed values of the elements of the two parent-offspring covariance matrices, $ \\mathbf{C}^m $ and $ \\mathbf{C}^f $, are available along with estimates of the phenotypic variance of the maternal trait, $ \\sigma_{z_1}^2 $, and the phenotypic covariance between the two traits, $ \\sigma_{z_1,z_2} $, estimates of the genetic variances and covariance and of the maternal effect coefficient can be acquired by equating the observed elements of $ \\mathbf{C}^m $ and $ \\mathbf{C}^f $ to their expectations. For example, letting subscripts denote the rows and columns of matrix elements, $$ \\sigma_{A_{1}}^{2}=C_{11}^{m}+C_{11}^{f} $$ $$ \\sigma_{A_{1},A_{2}}=2C_{21}^{f} $$ $$ \\sigma_{A_{2}}^{2}=C_{22}^{m}+C_{22}^{f}-m_{21}[C_{21}^{f}+\\sigma_{z_{1},z_{2}}] $$ $$ m_{21}=\\frac{2(C_{12}^{m}+C_{12}^{f}-2C_{21}^{m})}{C_{11}^{m}+C_{11}^{f}-4\\sigma_{z_{1}}^{2}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Applying this model to weight data for Darwin's finches (Price and Grant 1985) and great tits (van Noordwijk 1984), Lande and Price (1989) obtained estimates of $ m_{21} = 0.6 $ and 0.3 respectively. Assuming the model is valid, these results suggest that the maternal contribution to hatchling body size associated with maternal adult size can be quite substantial in birds with maternal care."
+    }
+  ]
+}

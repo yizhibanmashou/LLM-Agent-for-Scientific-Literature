@@ -1,0 +1,59 @@
+{
+  "id": "Genetics_chapter27_049",
+  "metadata": {
+    "chapter": "Genetics_chapter27",
+    "section": "Variance-Component Estimation with Complex Pedigrees",
+    "subsections": [
+      "The Fisher Information Matrix"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter27_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Variance-Component Estimation with Complex Pedigrees",
+    "section_level_2": "The Fisher Information Matrix",
+    "heading_path": [
+      "Variance-Component Estimation with Complex Pedigrees",
+      "The Fisher Information Matrix"
+    ],
+    "display_heading": "The Fisher Information Matrix"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "When estimating a vector of parameters, Equation A4.6 can be generalized by using the Hessian matrix, H, the matrix of second partials of the log-likelihood, whose ijth element is given by $$ \\mathbf{H}_{i j}=\\frac{\\partial^{2}L(\\pmb{\\omega}\\mid\\mathbf{z})}{\\partial\\pmb{\\omega}_{i}\\pmb{\\partial\\omega}_{j}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "H($ \\Theta_{o} $) refers to the Hessian matrix evaluated at the point $ \\Theta_{o} $ and provides a measure of the local curvature of L around that point. The Fisher information matrix (F), the negative of expected value of the Hessian matrix for L, $$ \\mathbf{F}(\\pmb{\\Theta})=-E\\left[\\mathbf{H}(\\pmb{\\Theta})\\right] $$ provides a measure of the multidimensional curvature of the log-likelihood surface. Alternately, F can be computed as the expected value of the outer product of the score vector, $$ \\mathbf{F}(\\boldsymbol{\\Theta})=E\\left[\\mathbf{S}(\\boldsymbol{\\Theta})\\mathbf{S}(\\boldsymbol{\\Theta})^{T}\\right] $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The covariance matrix for the MLEs is simply the inverse of the information matrix, with $$ \\sigma\\left(\\widehat{\\boldsymbol{\\Theta}}_{i},\\widehat{\\boldsymbol{\\Theta}}_{j}\\right)=\\left[\\mathbf{F}(\\boldsymbol{\\Theta})^{-1}\\right]_{i j} $$ As in the univariate case, if the likelihood surface is highly curved (very peaked) around the MLE, then the standard errors (being the inverse of the local curvature) are small, while if the likelihood is very flat, the sampling variance is large. For large sample sizes, F is often approximated by the Hessian matrix evaluated at the MLE, $$ \\mathbf{F}(\\pmb{\\Theta})\\simeq-\\mathbf{H}(\\widehat{\\pmb{\\Theta}}) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Example 3. Suppose $n$ values are sampled independently from a normal with unknown mean and variance. What are the MLEs and their sampling variances? Here $\\Theta = (\\mu, \\sigma)^T$. Noting that $\\sum_{i=1}^n (z_i - \\mu)^2 = n(\\overline{z^2} - 2\\overline{z}\\mu + \\mu^2)$, the same logic leading to Equation A4.3 shows that the log-likelihood function is $$ L(\\mu,\\sigma^{2}|\\mathbf{z})=-\\left(\\frac{n}{2}\\right)\\ln(2\\pi)-\\left(\\frac{n}{2}\\right)\\ln(\\sigma^{2})-\\frac{n(\\overline{z^{2}}-2\\overline{z}\\mu+\\mu^{2})}{2\\sigma^{2}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Taking derivatives, the score vector becomes $$ \\mathbf{S}(\\boldsymbol{\\Theta})=\\left(\\begin{aligned}\\partial L(\\boldsymbol{\\Theta})/\\partial\\mu\\\\ \\partial L(\\boldsymbol{\\Theta})/\\partial\\sigma^{2}\\end{aligned}\\right)=\\left(\\frac{n}{\\sigma^{2}}\\right)\\left(\\frac{\\overline{z}-\\mu}{\\frac{\\overline{z^{2}}-2\\overline{z}\\mu+\\mu^{2}}{2\\sigma^{2}}-\\frac{1}{2}}\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Solving $ \\mathbf{S}(\\hat{\\boldsymbol{\\Theta}})=\\mathbf{0} $ gives the MLEs as $$ \\widehat{\\boldsymbol{\\Theta}}=\\begin{pmatrix}\\widehat{\\mu}\\\\ \\\\ \\widehat{\\sigma}^{2}\\end{pmatrix}=\\begin{pmatrix}\\overline{z}\\\\ \\\\ \\overline{z^{2}}-\\overline{z}^{2}\\end{pmatrix} $$ As the first step towards computing the Hessian and Fisher matrices, the second partials are found to be $$ \\frac{\\partial L^{2}}{(\\partial\\mu)^{2}}=-\\frac{n}{\\sigma^{2}},\\qquad\\frac{\\partial L^{2}}{\\partial\\mu\\partial\\sigma^{2}}=-\\frac{n(\\overline{z}-\\mu)}{\\sigma^{4}} $$ $$ \\frac{\\partial L^{2}}{(\\partial\\sigma^{2})^{2}}=\\frac{n}{2\\sigma^{4}}\\left(1-\\frac{2\\left(\\overline{z^{2}}-2\\overline{z}\\mu+\\mu^{2}\\right)}{\\sigma^{2}}\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Since $ E(\\overline{z}) = \\mu $, the first two derivatives have expected values of $ -n/\\sigma^2 $ and 0. Likewise, since $ E(\\overline{z^2}) = \\mu^2 + \\sigma^2 $, the expected value of Equation A4.8e becomes $$ E\\left(\\frac{\\partial L^{2}}{(\\partial\\sigma^{2})^{2}}\\right)=\\frac{n}{2\\sigma^{4}}\\left(1-\\frac{2\\left(\\mu^{2}+\\sigma^{2}-2\\mu^{2}+\\mu^{2}\\right)}{\\sigma^{2}}\\right)=-\\frac{n}{2\\sigma^{4}} $$ With the above results, the Fisher matrix becomes $$ \\mathbf{F}=-E(\\mathbf{H})=\\left(\\begin{array}{c c}{\\frac{n}{\\sigma^{2}}}&{0}\\\\ {0}&{\\frac{n}{2\\sigma^{4}}}\\\\ \\end{array}\\right) $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Alternatively, evaluating the derivatives at the MLE, $ \\widehat{\\Theta} = (\\overline{z}, \\widehat{\\sigma}^2)^T $, Equation A4.8d gives values of $ -n/\\widehat{\\sigma}^2 $ and 0, while Equation A4.8e gives $ -n/(2\\widehat{\\sigma}^4) $, so that the value of the Hessian matrix evaluated at the MLE becomes $$ \\mathbf{H}(\\widehat{\\boldsymbol{\\Theta}})=-\\begin{pmatrix}\\frac{n}{\\widehat{\\sigma}^{2}}&0\\\\ 0&\\frac{n}{2\\widehat{\\sigma}^{4}}\\end{pmatrix} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Applying Equation A4.7d gives the large-sample variances and covariance for the MLEs as $$ \\sigma^{2}(\\widehat{\\mu})=\\sigma^{2}/n\\simeq\\widehat{\\sigma}^{2}/n,\\quad\\sigma^{2}(\\widehat{\\sigma}^{2})=2\\sigma^{4}/n\\simeq2\\widehat{\\sigma}^{4}/n,\\quad\\sigma(\\widehat{\\mu},\\widehat{\\sigma}^{2})=0 $$"
+    }
+  ]
+}

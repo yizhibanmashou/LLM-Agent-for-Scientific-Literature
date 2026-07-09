@@ -1,0 +1,52 @@
+{
+  "id": "Genetics_chapter18_014",
+  "metadata": {
+    "chapter": "Genetics_chapter18",
+    "section": "Introduction",
+    "subsections": [
+      "Hypothesis Testing"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter18_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [
+      "18.3"
+    ],
+    "section_level_1": "Introduction",
+    "section_level_2": "Hypothesis Testing",
+    "heading_path": [
+      "Introduction",
+      "Hypothesis Testing"
+    ],
+    "display_heading": "Hypothesis Testing",
+    "table_reference_keys": [
+      "chapter18:18.3"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "proposition",
+      "content": "Under the assumption of normality and balanced design, standard $F$ ratios can be used to test for significant variation associated with sires and dams. In each case, the numerator of the $F$ ratio is the observed mean square at the level containing the factor of interest, and the denominator is the observed mean square at the level containing the factor of interest. next lower level (which incorporates all factors except the one of interest). The test statistic for evaluating whether there is significant variance associated with sires is the $F$ ratio $MS_{s}/MS_{d}$, since under the null hypothesis of $\\sigma_{s}^{2}=0$, the expected value of the numerator is equal to that of the denominator (see [[SEE_TABLE:18.3]]). Similarly, the test statistic for significant dam effects is the ratio $MS_{d}/MS_{e}$, as the expected value of the numerator is again equal to that of the denominator under the null hypothesis of $\\sigma_{d}^{2}=0$ ([[SEE_TABLE:18.3]]). With unbalanced designs, hypothesis testing with $F$ ratios becomes more difficult under the nested model. If the data are normally distributed, the logic developed above tells us that $$ F_{N(\\overline{{{M}}}-1),(T-N\\overline{{{M}}})}=\\frac{\\mathrm{M S}_{d}}{\\mathrm{M S}_{e}} $$ can still be employed as a test for significant dam effects, since the numerator and denominator have identical expectations under the null hypothesis of $ \\sigma_{d}^{2}=0 $. However, since the coefficients $ (k_{1} $ and $ k_{2}) $ associated with $ \\sigma_{d}^{2} $ in the mean squares associated with dams and sires are unequal in an unbalanced design ([[SEE_TABLE:18.3]]), the numerator and denominator of $ MS_{s}/MS_{d} $ no longer have equal expectations under the null hypothesis $ \\sigma_{s}^{2}=0 $. Nevertheless, a linear function of the mean squares can be constructed for the numerator that does fulfill this requirement, leading to the test statistic $$ F_{r,N(\\overline{{M}}-1)}=\\frac{k_{1}\\mathbf{M}\\mathbf{S}_{s}+(k_{2}-k_{1})\\mathbf{M}\\mathbf{S}_{e}}{k_{2}\\mathbf{M}\\mathbf{S}_{d}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The main problem with this test statistic is the unknown degrees of freedom for the numerator, r. A general solution to this problem was developed by Satterthwaite (1946). Consider a linear function of m observed mean squares $$ Q=c_{1}\\mathrm{M S}_{1}+c_{2}\\mathrm{M S}_{2}+\\cdots+c_{m}\\mathrm{M S}_{m} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Satterthwaite showed that $rQ/E(Q)$ is approximately $\\chi^{2}$-distributed with degrees of freedom equal to $$ r=\\frac{Q^{2}}{\\displaystyle\\sum_{i=1}^{m}\\frac{(c_{i}\\mathbf{M}\\mathbf{S}_{i})^{2}}{\\mathbf{d f}_{i}}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, for example, for the numerator of Equation 18.34b, the degrees of freedom is estimated by $$ r=\\frac{Q^{2}}{\\frac{(c_{s}\\mathbf{M}\\mathbf{S}_{s})^{2}}{N-1}+\\frac{(c_{e}\\mathbf{M}\\mathbf{S}_{e})^{2}}{T-N\\overline{M}}} $$ where $ c_{s}=k_{1}/k_{2} $, $ c_{e}=(k_{2}-k_{1})/k_{2} $, and $ Q=c_{s}MS_{s}+c_{e}MS_{e} $. This estimate of r is really only a first-order approximation, as Satterthwaite's derivation assumes that the observed mean squares in the function $Q$ are independently distributed, a condition that is not strictly true with an unbalanced design."
+    },
+    {
+      "type": "discussion",
+      "content": "Recalling that the variance associated with sires is an estimate of $\\sigma_{A}^{2}/4$, the $F$ ratio defined by Equation 18.34b with the numerator degrees of freedom defined by Equation 18.35c provides a test for significant additive genetic variance. Provided that both the sire and dam components of variance are significant, the next question is whether the latter is significantly greater than the former. From Equation 18.31b, it can be seen that a test of the null hypothesis $\\sigma_{s}^{2}=\\sigma_{d}^{2}$ is equivalent to a test for no significant dominance and/or common-environmental effects. This test also requires the construction of a linear function of mean squares whose expectation is equal to the expectation of $MS_{d}$ under the null hypothesis. The appropriate $F$ ratio is $$ F_{r,N(\\overline{M}-1)}=\\frac{c_{s}\\mathrm{MS}_{s}+c_{e}\\mathrm{MS}_{e}}{\\mathrm{MS}_{d}} $$ where $c_{s}=k_{1}/(k_{2}+k_{3})$ and $c_{e}=(k_{2}+k_{3}-k_{1})/(k_{2}+k_{3})$. The numerator degrees of freedom is approximated by Equation 18.35c, with $Q=c_{s}MS_{s}+c_{e}MS_{e}$."
+    },
+    {
+      "type": "discussion",
+      "content": "Resampling procedures provide an alternative to $F$ ratios for testing for the significance of variance components under the nested design. The jackknife, with deletion around sire families, has been shown to provide a relatively robust approach for testing for significance of the sire component of variance (Arvesen and Schmitz 1970, Knapp and Bridges 1988, Mitchell-Olds and Bergelson 1990). Presumably, the jackknife or the bootstrap can also be used to test the hypothesis that $\\sigma_{s}^{2}=\\sigma_{d}^{2}$, by referring to the sampling distribution of $\\mathrm{Var}(d)-\\mathrm{Var}(s)$."
+    }
+  ]
+}

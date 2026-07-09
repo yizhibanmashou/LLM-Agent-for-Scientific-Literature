@@ -1,0 +1,47 @@
+{
+  "id": "Evolution_chapter19_018",
+  "metadata": {
+    "chapter": "Evolution_chapter19",
+    "section": "MODIFICATIONS OF THE BASIC ANIMAL MODEL",
+    "subsections": [
+      "Models with Additional Random Effects"
+    ],
+    "source_file": "data\\paddle_output\\Evolution_chapter19_full\\main.tex",
+    "source_title": "Evolution and Selection of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "MODIFICATIONS OF THE BASIC ANIMAL MODEL",
+    "section_level_2": "Models with Additional Random Effects",
+    "heading_path": [
+      "MODIFICATIONS OF THE BASIC ANIMAL MODEL",
+      "Models with Additional Random Effects"
+    ],
+    "display_heading": "Models with Additional Random Effects"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "We have assumed that residuals of a mixed model are uncorrelated and homoscedastic, making their covariance matrix $ \\mathbf{Var}(\\mathbf{e}) = \\sigma_e^2 \\mathbf{I} $. When additional random effects are present but ignored by the model, they are inadvertently subsumed into the residuals, introducing correlations and heteroscedasticity, which, in turn, may bias the BLUP estimates. For example, if sibs share a common maternal environment, this introduces correlations between them beyond those accounted for by A. If the model only includes a and e, this additional covariance appears between the residuals of sibs, and the true covariance matrix for e is no longer the assumed diagonal, which leads to biased estimates of the BLUEs and BLUPs. By suitably incorporating additional random effects, we can develop a new model, in which the residuals again have the simple OLS covariance structure, $ \\mathbf{Var}(\\mathbf{e}) = \\sigma_e^2 \\mathbf{I} $."
+    },
+    {
+      "type": "discussion",
+      "content": "Suppose there is a second vector, u, of m random effects (e.g., the common effects from the m families in our sample) in addition to the vector, a, of p breeding values, and vector of residuals, e. Equation 19.1 becomes $$ \\mathbf{y}=\\mathbf{X}\\boldsymbol{\\beta}+\\mathbf{Z}\\mathbf{a}+\\mathbf{W}\\mathbf{u}+\\mathbf{e} $$ where X, Z, and W are $ n \\times q $ (n observations and q fixed effects), $ n \\times p $, and $ n \\times m $ incidence matrices. Assuming that common-family effects are not shared across different families (even if the families are related), the assumed covariance structures for the three vectors of random effects become $ \\mathbf{Var}(\\mathbf{a}) = \\sigma_A^2 \\mathbf{A}, \\mathbf{Var}(\\mathbf{u}) = \\sigma_u^2 \\mathbf{I} $, and $ \\mathbf{Var}(\\mathbf{e}) = \\sigma_e^2 \\mathbf{I} $, where a, u, and e are uncorrelated. This can be compactly written as $$ \\operatorname{Var}\\begin{pmatrix}{{{\\mathbf{a}}}} \\\\{{{\\mathbf{u}}}} \\\\{{{\\mathbf{e}}}}\\end{pmatrix}=\\begin{pmatrix}{{{\\sigma_{A}^{2}\\mathbf{A}}}}&{{{0}}}&{{{0}}} \\\\{{{0}}}&{{{\\sigma_{u}^{2}\\mathbf{I}}}}&{{{0}}} \\\\{{{0}}}&{{{0}}}&{{{\\sigma_{e}^{2}\\mathbf{I}}}}\\end{pmatrix} $$ yielding a covariance matrix of y as $$ \\mathbf{V a r}(\\mathbf{y})=\\mathbf{V}=\\sigma_{A}^{2}\\mathbf{Z}\\mathbf{A}\\mathbf{Z}^{T}+\\sigma_{u}^{2}\\mathbf{W}\\mathbf{W}^{T}+\\sigma_{e}^{2}\\mathbf{I} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "If we had assumed the validity of the model $\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\mathbf{Z}\\mathbf{a} + \\mathbf{e}$, the resulting covariance matrix for the residuals would be $\\mathbf{Var}(\\mathbf{e}) = \\sigma_u^2 \\mathbf{W}\\mathbf{W}^T + \\sigma_e^2 \\mathbf{I}$, which shows how the additional random effects alter the covariance structure, which is no longer of OLS form, $\\sigma^2 \\mathbf{I}$. Analysis of this model assuming an OLS covariance structure would thus be erroneous."
+    },
+    {
+      "type": "discussion",
+      "content": "The resulting set of Henderson’s mixed-model equations (Equation 19.4) for the model specified by Equations 19.20a and 19.20b becomes $$ \\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{X}&\\mathbf{X}^{T}\\mathbf{Z}&\\mathbf{X}^{T}\\mathbf{W}\\\\\\mathbf{Z}^{T}\\mathbf{X}&\\mathbf{Z}^{T}\\mathbf{Z}+\\lambda_{A}\\mathbf{A}^{-1}&\\mathbf{Z}^{T}\\mathbf{W}\\\\\\mathbf{W}^{T}\\mathbf{X}&\\mathbf{W}^{T}\\mathbf{Z}&\\mathbf{W}^{T}\\mathbf{W}+\\lambda_{u}\\mathbf{I}\\end{pmatrix}\\begin{pmatrix}\\widehat{\\boldsymbol{\\beta}}\\\\\\widehat{\\mathbf{a}}\\\\\\widehat{\\mathbf{u}}\\end{pmatrix}=\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{y}\\\\\\mathbf{Z}^{T}\\mathbf{y}\\\\\\mathbf{W}^{T}\\mathbf{y}\\end{pmatrix} $$ where $$ \\lambda_{A}=\\frac{\\sigma_{e}^{2}}{\\sigma_{A}^{2}}\\quad and\\quad\\lambda_{u}=\\frac{\\sigma_{e}^{2}}{\\sigma_{u}^{2}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Additional vectors of random effects can be incorporated in a similar manner; see LW Chapters 26 and 27 for details. The mixed-model equations again form the basis for iterative REML estimates of the unknown variance components ($ \\sigma_A^2 $, $ \\sigma_u^2 $, and $ \\sigma_c^2 $), as discussed in detail in LW Chapter 27."
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:19.6]]"
+    }
+  ]
+}

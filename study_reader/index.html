@@ -23,14 +23,24 @@
         <p id="bookContext" class="book-context"></p>
       </div>
       <div class="header-controls" aria-label="阅读控制">
-        <label class="book-picker control-capsule">
-          <span>教材</span>
-          <select id="bookSelect" aria-label="选择教材"></select>
-        </label>
-        <label class="chapter-picker control-capsule">
-          <span>学习章节</span>
-          <select id="chapterSelect" aria-label="选择学习章节"></select>
-        </label>
+        <div class="smart-picker book-picker" data-picker="book">
+          <span class="picker-label">教材</span>
+          <button type="button" id="bookPickerButton" class="picker-button" aria-haspopup="listbox" aria-expanded="false">
+            <span id="bookPickerValue" class="picker-value">Loading...</span>
+            <span id="bookPickerMeta" class="picker-meta"></span>
+          </button>
+          <div id="bookPickerMenu" class="picker-menu" role="listbox" hidden></div>
+          <select id="bookSelect" class="native-select" aria-label="选择教材" tabindex="-1"></select>
+        </div>
+        <div class="smart-picker chapter-picker" data-picker="chapter">
+          <span class="picker-label">章节</span>
+          <button type="button" id="chapterPickerButton" class="picker-button" aria-haspopup="listbox" aria-expanded="false">
+            <span id="chapterPickerValue" class="picker-value">Loading...</span>
+            <span id="chapterPickerMeta" class="picker-meta"></span>
+          </button>
+          <div id="chapterPickerMenu" class="picker-menu chapter-menu" role="listbox" hidden></div>
+          <select id="chapterSelect" class="native-select" aria-label="选择学习章节" tabindex="-1"></select>
+        </div>
         <button type="button" id="returnButton" class="return-button" hidden>返回原文位置</button>
       </div>
     </header>

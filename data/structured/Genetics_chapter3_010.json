@@ -1,0 +1,63 @@
+{
+  "id": "Genetics_chapter3_010",
+  "metadata": {
+    "chapter": "Genetics_chapter3",
+    "section": "Covariance, Regression, and Correlation",
+    "subsections": [
+      "CORRELATION"
+    ],
+    "source_file": "tmp\\genetics_process_input\\Genetics_chapter3_full\\main.tex",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "Covariance, Regression, and Correlation",
+    "section_level_2": "CORRELATION",
+    "heading_path": [
+      "Covariance, Regression, and Correlation",
+      "CORRELATION"
+    ],
+    "display_heading": "CORRELATION"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "For purposes of hypothesis testing, it is often desirable to use a dimensionless measure of association. The most frequently used measure in bivariate analysis is the correlation coefficient, $$ r(x,y)=\\frac{\\operatorname{Cov}(x,y)}{\\sqrt{\\operatorname{Var}(x)\\operatorname{Var}(y)}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Note that $r(x,y)$ is symmetrical, i.e., $r(x,y) = r(y,x)$. Thus, where there is no ambiguity as to the variables being considered, we abbreviate $r(x,y)$ as $r$. The parametric correlation coefficient is denoted by $\\rho(x,y)$ (or $\\rho$) and equals $\\sigma(x,y)/\\sigma(x)\\sigma(y)$. The least-squares regression coefficient is related to the correlation coefficient by $$ b(y,x)=r\\sqrt{\\frac{\\mathrm{Var}(y)}{\\mathrm{Var}(x)}} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "An advantage of correlations over covariances is that the former are scale independent. This can be seen by noting that if $w$ and $c$ are constants, $$ r(w x,c y)=\\frac{\\operatorname{Cov}(w x,c y)}{\\sqrt{\\operatorname{Var}(w x)\\operatorname{Var}(c y)}}=\\frac{w c\\operatorname{Cov}(x,y)}{\\sqrt{w^{2}\\operatorname{Var}(x)c^{2}\\operatorname{Var}(y)}}=r(x,y) $$ Thus scaling $x$ and/or $y$ by constants does not change the correlation coefficient, although the variances and covariances are affected. Since $r$ is dimensionless with limits of $\\pm1$, it gives a direct measure of the degree of association: if $|r|$ is close to one, $x$ and $y$ are very strongly associated in a linear fashion, while if $|r|$ is close to zero, they are not."
+    },
+    {
+      "type": "discussion",
+      "content": "The correlation coefficient has other useful properties. First, $r$ is a standardized regression coefficient (the regression coefficient resulting from rescaling $x$ and $y$ such that each has unit variance). Letting $x' = x/\\sqrt{\\mathrm{Var}(x)}$ and $y' = y/\\sqrt{\\mathrm{Var}(y)}$ gives $\\mathrm{Var}(x') = \\mathrm{Var}(y') = 1$, implying $$ b(y^{\\prime},x^{\\prime})=b(x^{\\prime},y^{\\prime})=\\operatorname{Cov}(x^{\\prime},y^{\\prime})=\\frac{\\operatorname{Cov}(x,y)}{\\sqrt{\\operatorname{Var}(x)\\operatorname{Var}(y)}}=r $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, when variables are standardized, the regression coefficient is equal to the correlation coefficient regardless of whether $x'$ or $y'$ is chosen as the predictor variable."
+    },
+    {
+      "type": "discussion",
+      "content": "Second, the squared correlation coefficient measures the proportion of the variance in $y$ that is explained by assuming that $E(y|x)$ is linear. The variance of the response variable $y$ has two components: $r^{2}$ Var$(y)$, the amount of variance accounted for by the linear model (the regression variance), and $(1-r^{2})$ Var$(y)$, the remaining variance not accountable by the regression (the residual variance). To obtain this result, we derive the variance of the residual deviation defined in Equation 3.13a, $$ \\begin{aligned}\\operatorname{Var}(e)&=\\operatorname{Var}(y-a-bx)=\\operatorname{Var}(y-bx)\\\\&=\\operatorname{Var}(y)-2b\\operatorname{Cov}(x,y)+b^{2}\\operatorname{Var}(x)\\\\&=\\operatorname{Var}(y)-\\frac{2\\left[\\operatorname{Cov}(x,y)\\right]^{2}}{\\operatorname{Var}(x)}+\\frac{\\left[\\operatorname{Cov}(x,y)\\right]^{2}\\operatorname{Var}(x)}{\\left[\\operatorname{Var}(x)\\right]^{2}}\\\\&=\\left(1-\\frac{\\left[\\operatorname{Cov}(x,y)\\right]^{2}}{\\operatorname{Var}(x)\\operatorname{Var}(y)}\\right)\\operatorname{Var}(y)=\\left(1-r^{2}\\right)\\operatorname{Var}(y)\\end{aligned} $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Example 2. Returning to [[SEE_TABLE:2.1]], the preceding formulae can be used to characterize the relationship between maternal weight and offspring number in rats. Here we take offspring number as the response variable $y$ and maternal weight as the predictor variable $x$. The mean and variance for maternal weight were found to be $\\overline{x} = 118.90$ and $\\mathrm{Var}(x) = 623.06$ ([[SEE_TABLE:2.1]]). For offspring number, $\\overline{y} = 5.49$ and $\\mathrm{Var}(y) = 2.94$. In order to obtain an estimate of the covariance, we first require an estimate of $E(x, y)$. Taking the $xy$ cross-product of all classes in [[SEE_TABLE:2.1]] (using the midpoint of the interval for the value of $x$) and weighting them by their frequencies, $$ \\overline{xy}=\\frac{(1\\cdot4\\cdot55)+(3\\cdot5\\cdot55)+(1\\cdot6\\cdot55)+\\cdots+(1\\cdot10\\cdot195)}{1003}=660.14 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "The covariance estimate is then obtained using Equation 3.9. $$ \\mathrm{Cov}(x,y)=\\frac{1003}{1002}\\left[660.14-\\left(118.90\\times5.49\\right)\\right]=7.39 $$ From Equation 3.14b, the slope of the regression is found to be $$ b(y,x)=\\frac{7.39}{623.06}=0.01 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, the expected increase in number of offspring per gram increase in maternal weight is about 0.01. How predictable is this change? From Equation 3.15a, the correlation coefficient is estimated to be $$ r=\\frac{7.39}{\\sqrt{623.06\\times2.94}}=0.17 $$"
+    },
+    {
+      "type": "discussion",
+      "content": "Squaring this value, $ r^{2} = 0.03 $. Therefore, only about 3 percent of the variance in offspring number can be accounted for with a model that assumes a linear relationship with maternal weight."
+    }
+  ]
+}
