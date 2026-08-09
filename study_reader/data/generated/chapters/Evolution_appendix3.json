@@ -1,0 +1,1444 @@
+{
+  "sections": [
+    {
+      "id": "Evolution_appendix3_section_001",
+      "title": "Appendix 3 · Appendix 3 / Markov Chain Monte Carlo and Gibbs Sampling",
+      "nav_label": "Markov Chain Monte Carlo and Gibbs Sampling",
+      "raw_title": "Appendix 3 · Appendix 3 / Markov Chain Monte Carlo and Gibbs Sampling",
+      "level": 1,
+      "depth": 0,
+      "anchor": "evolution_appendix3_section_001",
+      "text_preview": ""
+    },
+    {
+      "id": "Evolution_appendix3_001",
+      "title": "Appendix: Introduction",
+      "nav_label": "Appendix: Introduction",
+      "raw_title": "Evolution_appendix3_001 · Appendix: Introduction",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix3_001",
+      "text_preview": "Far better an approximate answer to the right question, which is often vague, than an exact answer to the wrong question, which can always be made precise. Tukey (1962) We are convinced nevertheless that Monte Carlo methods will one day reach an impressive maturity. Hammersley and Handscomb (1964) The practice of MCMC…"
+    },
+    {
+      "id": "Evolution_appendix3_002",
+      "title": "Appendix: Introduction / MONTE CARLO INTEGRATION",
+      "nav_label": "MONTE CARLO INTEGRATION",
+      "raw_title": "Evolution_appendix3_002 · Appendix: Introduction / MONTE CARLO INTEGRATION",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix3_002",
+      "text_preview": "To better understand the historical roots of MCMC, we digress for a moment to discuss the original Monte Carlo approach, which used random-number generation to approximate integrals. Suppose we wish to compute a complex integral, $$ \\int {a}^{b}h(x)dx $$ If we can decompose $ h(x) $ into the product of a function, $ f…"
+    },
+    {
+      "id": "Evolution_appendix3_003",
+      "title": "MONTE CARLO INTEGRATION / Importance Sampling",
+      "nav_label": "Importance Sampling",
+      "raw_title": "Evolution_appendix3_003 · MONTE CARLO INTEGRATION / Importance Sampling",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix3_003",
+      "text_preview": "$$ \\int f(x)q(x)dx=\\int f(x)\\left(\\frac{q(x)}{p(x)}\\right)p(x)dx=E {p(x)}\\left[f(x)\\left(\\frac{q(x)}{p(x)}\\right)\\right] $$ This forms the basis for the method of importance sampling, with $$ \\int f(x)q(x)dx\\simeq\\frac{1}{n}\\sum {i=1}^{n}f(x {i})\\left(\\frac{q(x {i})}{p(x {i})}\\right) $$ where again the $ x i $ values…"
+    },
+    {
+      "id": "Evolution_appendix3_004",
+      "title": "Appendix: Introduction / INTRODUCTION TO MARKOV CHAINS",
+      "nav_label": "INTRODUCTION TO MARKOV CHAINS",
+      "raw_title": "Evolution_appendix3_004 · Appendix: Introduction / INTRODUCTION TO MARKOV CHAINS",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix3_004",
+      "text_preview": "Before introducing two of the most common MCMC methods, the Metropolis-Hastings algorithm and the Gibbs sampler, a few introductory comments on Markov chains are in order. Let $ X t $ denote the value of a random variable at time $ t $, and let the state space refer to the range of possible $ X $ values. A random vari…"
+    },
+    {
+      "id": "Evolution_appendix3_005",
+      "title": "Appendix: Introduction / INTRODUCTION TO MARKOV CHAINS",
+      "nav_label": "INTRODUCTION TO MARKOV CHAINS",
+      "raw_title": "Evolution_appendix3_005 · Appendix: Introduction / INTRODUCTION TO MARKOV CHAINS",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix3_005",
+      "text_preview": "[示例 Example] Example A3.2 · ref: A3.2 · source: Evolution appendix3 005.json · blocks 0–9 Example A3.2. Suppose the state space consists of three possible weather conditions (Rain, Sunny, Cloudy) and that weather patterns follow a Markov process (of course, they do not!). Under this assumption, the probability of tomo…"
+    },
+    {
+      "id": "Evolution_appendix3_006",
+      "title": "Appendix: Introduction / THE METROPOLIS-HASTINGS ALGORITHM",
+      "nav_label": "THE METROPOLIS-HASTINGS ALGORITHM",
+      "raw_title": "Evolution_appendix3_006 · Appendix: Introduction / THE METROPOLIS-HASTINGS ALGORITHM",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix3_006",
+      "text_preview": "The roots of MCMC methods trace back to a problem faced by mathematical physicists in applying Monte Carlo integration, namely, generating random samples from some complex distribution in order to apply Equation A3.1. Their solution was the Metropolis-Hastings algorithm (Metropolis and Ulam 1949; Metropolis et al. 195…"
+    },
+    {
+      "id": "Evolution_appendix3_008",
+      "title": "THE METROPOLIS-HASTINGS ALGORITHM / Burning-in the Sampler",
+      "nav_label": "Burning-in the Sampler",
+      "raw_title": "Evolution_appendix3_008 · THE METROPOLIS-HASTINGS ALGORITHM / Burning-in the Sampler",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix3_008",
+      "text_preview": "A key issue in the successful implementation of Metropolis-Hastings, or any other MCMC sampler, is the number of steps (iterations) until the chain approaches stationarity (the length of the burn-in period), as initial values are somewhat dependent upon the starting position. Typically the first 1,000 to 50,000 (or mo…"
+    },
+    {
+      "id": "Evolution_appendix3_009",
+      "title": "THE METROPOLIS-HASTINGS ALGORITHM / Simulated Annealing",
+      "nav_label": "Simulated Annealing",
+      "raw_title": "Evolution_appendix3_009 · THE METROPOLIS-HASTINGS ALGORITHM / Simulated Annealing",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix3_009",
+      "text_preview": "Simulated annealing was developed for finding the maximum of complex functions with multiple peaks where standard hill-climbing approaches may trap the algorithm on a less than optimal peak (Kirkpatrick et al. 1983). The idea is that when we initially start sampling the space, we will accept a reasonable probability o…"
+    },
+    {
+      "id": "Evolution_appendix3_010",
+      "title": "THE METROPOLIS-HASTINGS ALGORITHM / Choosing a Jumping (Proposal) Distribution",
+      "nav_label": "Choosing a Jumping (Proposal) Distribution",
+      "raw_title": "Evolution_appendix3_010 · THE METROPOLIS-HASTINGS ALGORITHM / Choosing a Jumping (Proposal) Distribution",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix3_010",
+      "text_preview": "The Metropolis sampler works with any symmetric proposal (or jumping) distribution, while Metropolis-Hastings allows for more general distributions. So how do we determine our best option for a proposal distribution? There are two general approaches: random walks and independent chain sampling. Under a sampler using a…"
+    },
+    {
+      "id": "Evolution_appendix3_011",
+      "title": "THE METROPOLIS-HASTINGS ALGORITHM / Autocorrelation and Sample Size Inflation",
+      "nav_label": "Autocorrelation and Sample Size Inflation",
+      "raw_title": "Evolution_appendix3_011 · THE METROPOLIS-HASTINGS ALGORITHM / Autocorrelation and Sample Size Inflation",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix3_011",
+      "text_preview": "[Figure] Figure A3.2 · page 13 · source: Evolution appendix3 Figure A3.2 Trace plots for the two samplers discussed in Example A3.5. A: The proposal distribution is a $ \\chi {10}^{2} $. B: The proposal distribution is a $ \\chi {2}^{2} $. We often expect adjacent members from an MCMC sequence to be positively correlate…"
+    },
+    {
+      "id": "Evolution_appendix3_012",
+      "title": "THE METROPOLIS-HASTINGS ALGORITHM / The Monte Carlo Variance of a MCMC-Based Estimate",
+      "nav_label": "The Monte Carlo Variance of a MCMC-Based Estimate",
+      "raw_title": "Evolution_appendix3_012 · THE METROPOLIS-HASTINGS ALGORITHM / The Monte Carlo Variance of a MCMC-Based Estimate",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix3_012",
+      "text_preview": "Suppose we are interested in using a burned-in MCMC sequence, $ (\\theta 1, \\cdots, \\theta n) $, to estimate some function, $ h(\\theta) $, of the target distribution, such as a mean, variance, or specific quantile (namely, a specific cumulative probability value). Since we are drawing random variables, associated with…"
+    },
+    {
+      "id": "Evolution_appendix3_013",
+      "title": "Appendix: Introduction / CONVERGENCE DIAGNOSTICS",
+      "nav_label": "CONVERGENCE DIAGNOSTICS",
+      "raw_title": "Evolution_appendix3_013 · Appendix: Introduction / CONVERGENCE DIAGNOSTICS",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix3_013",
+      "text_preview": "The careful reader will note that we have still not answered the fundamental, and vexing, question of how to determine whether the sampler has reached its stationary distribution. Many tests for stationarity have been proposed, and all can indeed show that stationarity has not yet been reached. However, it is importan…"
+    },
+    {
+      "id": "Evolution_appendix3_014",
+      "title": "CONVERGENCE DIAGNOSTICS / Visual Analysis",
+      "nav_label": "Visual Analysis",
+      "raw_title": "Evolution_appendix3_014 · CONVERGENCE DIAGNOSTICS / Visual Analysis",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix3_014",
+      "text_preview": "As shown in Figure A3.1 and Figure A3.2, one should always examine the time series trace, the plot of the random variable being generated versus the number of iterations. In addition to showing evidence for poor mixing, such traces can also suggest a minimum burn-in period for some starting value. For example, suppose…"
+    },
+    {
+      "id": "Evolution_appendix3_015",
+      "title": "CONVERGENCE DIAGNOSTICS / More Formal Approaches",
+      "nav_label": "More Formal Approaches",
+      "raw_title": "Evolution_appendix3_015 · CONVERGENCE DIAGNOSTICS / More Formal Approaches",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix3_015",
+      "text_preview": "Gelman and Rubin's (1992) proposal was to first generate m separate chains at initial locations that are widely dispersed in the parameter space, with each returning a burned-in and thinned (such that autocorrelations between estimates are near zero) sequence of length n. Their approach is essentially an ANOVA, contra…"
+    },
+    {
+      "id": "Evolution_appendix3_016",
+      "title": "CONVERGENCE DIAGNOSTICS / Practical MCMC: How Many Chains and How Long Should They Run?",
+      "nav_label": "Practical MCMC: How Many Chains and How Long Should They Run?",
+      "raw_title": "Evolution_appendix3_016 · CONVERGENCE DIAGNOSTICS / Practical MCMC: How Many Chains and How Long Should They Run?",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix3_016",
+      "text_preview": "One can either use a single long chain (Geyer 1992; Raftery and Lewis 1992b) or multiple chains, with each starting from different initial values (Gelman and Rubin 1992). Note that with parallel processing, using multiple chains may be computationally more efficient (given a fixed amount of analysis time) than a singl…"
+    },
+    {
+      "id": "Evolution_appendix3_017",
+      "title": "Appendix: Introduction / THE GIBBS SAMPLER",
+      "nav_label": "THE GIBBS SAMPLER",
+      "raw_title": "Evolution_appendix3_017 · Appendix: Introduction / THE GIBBS SAMPLER",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix3_017",
+      "text_preview": "The Gibbs sampler (introduced in the context of image processing by Geman and Geman 1984), is a special case of Metropolis-Hastings sampling wherein the random value is always accepted (i.e., $ \\alpha = 1 $). The key to the Gibbs sampler is that, at any point in the process, one only considers univariate conditional d…"
+    },
+    {
+      "id": "Evolution_appendix3_018",
+      "title": "Appendix: Introduction / THE GIBBS SAMPLER",
+      "nav_label": "THE GIBBS SAMPLER",
+      "raw_title": "Evolution_appendix3_018 · Appendix: Introduction / THE GIBBS SAMPLER",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix3_018",
+      "text_preview": "(v) $ x {2} $ is obtained from a B(n, $ y {2} $) = B(10, 0.56) random variable, returning $ x {2} = 7 $. When more than two variables are involved, the sampler is extended in the obvious fashion. In particular, the value of the $ k $th variable is drawn from the distribution $ p(\\theta^{(k)} \\mid \\boldsymbol{\\Theta}^{…"
+    },
+    {
+      "id": "Evolution_appendix3_019",
+      "title": "THE GIBBS SAMPLER / Using the Gibbs Sampler to Approximate Marginal Distributions",
+      "nav_label": "Using the Gibbs Sampler to Approximate Marginal Distributions",
+      "raw_title": "Evolution_appendix3_019 · THE GIBBS SAMPLER / Using the Gibbs Sampler to Approximate Marginal Distributions",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix3_019",
+      "text_preview": "Any feature of interest for the marginals can be computed from the m realizations of the Gibbs sequence. If $ \\theta 1, \\cdots, \\theta m $ is an appropriately burned-in set of realizations from a Gibbs sampler, the expectation of any function, $ f $, of the random variable $ \\theta $ is approximated by $$ E[f(\\theta)]…"
+    },
+    {
+      "id": "Evolution_appendix3_020",
+      "title": "Appendix: Introduction / REJECTION SAMPLING AND APPROXIMATE BAYESIAN COMPUTATION (ABC)",
+      "nav_label": "REJECTION SAMPLING AND APPROXIMATE BAYESIAN COMPUTATION (ABC)",
+      "raw_title": "Evolution_appendix3_020 · Appendix: Introduction / REJECTION SAMPLING AND APPROXIMATE BAYESIAN COMPUTATION (ABC)",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix3_020",
+      "text_preview": "[Figure] Figure A3.3 · page 21 · source: Evolution appendix3 Figure A3.3 The approximation of the marginal posterior distribution for x for the distribution given in Example A3.6 using a Gibbs sequence. The open bars represent the approximation using a binomial with the Gibbs-sequence mean value of y as the success pa…"
+    }
+  ],
+  "assets": [
+    {
+      "kind": "example",
+      "id": "A3.1",
+      "anchor": "example-a3.1",
+      "label": "Example A3.1",
+      "section_id": "Evolution_appendix3_002",
+      "excerpt": "Example A3.1 · ref: A3.1 · source: Evolution appendix3 002.json · blocks 3–7 Example A3.1. An interesting quantitative-genetic application of Monte Carlo integration was suggested by Ovaskainen et al. (2008) for comparing whether two G matrices are similar. As we detail in Volume 3, there are many proposed methods for comparing matrices, but Ovaskainen et al. suggested a (conceptually) simple approach. The G matrix for a given population is really a description of the distri…"
+    },
+    {
+      "kind": "example",
+      "id": "A3.2",
+      "anchor": "example-a3.2",
+      "label": "Example A3.2",
+      "section_id": "Evolution_appendix3_005",
+      "excerpt": "Example A3.2 · ref: A3.2 · source: Evolution appendix3 005.json · blocks 0–9 Example A3.2. Suppose the state space consists of three possible weather conditions (Rain, Sunny, Cloudy) and that weather patterns follow a Markov process (of course, they do not!). Under this assumption, the probability of tomorrow's weather simply depends on today's weather, and not on any other previous days. If this is the case, the observation that it has rained for three straight days does no…"
+    },
+    {
+      "kind": "figure",
+      "id": "A3.1",
+      "anchor": "figure-a3.1",
+      "label": "Figure A3.1",
+      "section_id": "Evolution_appendix3_006",
+      "src": "figures/Evolution_A3.1.png",
+      "caption": "Figure A3.1 Traces for the samplers discussed in Example A3.3. A: A sample run when the candidate-generating distribution is a uniform over  $ (0, 100) $. B: A sample run when the candidate-generating distribution is a  $ \\chi_{1}^{2} $."
+    },
+    {
+      "kind": "example",
+      "id": "A3.3",
+      "anchor": "example-a3.3",
+      "label": "Example A3.3",
+      "section_id": "Evolution_appendix3_006",
+      "excerpt": "Example A3.3 · ref: A3.3 · source: Evolution appendix3 006.json · blocks 9–9 Example A3.3. As a toy example, consider the scaled inverse- $ \\chi^2 $ distribution (Equation A2.30a), $$ \\begin{align }p(x)=C\\cdot x^{-(n/2+1)}\\cdot\\exp\\left({-a\\over2x}\\right)\\end{align } $$ We wish to use the Metropolis algorithm to simulate draws from this distribution with n = 3 degrees of freedom and a scaling factor of a = 4. Here $$ f(x)=x^{-5/2}\\exp[-4/(2x)]=x^{-2.5}\\exp[-2/x] $$ Suppose w…"
+    },
+    {
+      "kind": "example",
+      "id": "A3.4",
+      "anchor": "example-a3.4",
+      "label": "Example A3.4",
+      "section_id": "Evolution_appendix3_006",
+      "excerpt": "Example A3.4 · ref: A3.4 · source: Evolution appendix3 006.json · blocks 11–11 Example A3.4. This rather technical example shows that the Markov chain generated by the Metropolis-Hastings algorithm has a stationary distribution which corresponds to $ p(x) $. Hence, draws from the stationary phase of this chain correspond to random draws from the distribution given by $ p(x) $. We do so by showing that, under this chain, $ p(x) $ satisfies the detailed balance equation (A3.10…"
+    },
+    {
+      "kind": "example",
+      "id": "A3.5",
+      "anchor": "example-a3.5",
+      "label": "Example A3.5",
+      "section_id": "Evolution_appendix3_010",
+      "excerpt": "Example A3.5 · ref: A3.5 · source: Evolution appendix3 010.json · blocks 3–6 Example A3.5. Suppose we wish to use a $ \\chi^2 $ as our proposal distribution. Recall from Equation A2.27b, that for $ x \\sim \\chi n^2 $, $$ g(x)\\propto x^{n/2-1}e^{-x/2} $$ Thus, $ q(x, y) = g(y) = C \\cdot y^{n/2-1} e^{-y/2} $. Note that $ q(x, y) $ is not symmetric, as $ q(y, x) = g(x) \\neq g(y) = q(x, y) $. Hence, we must use Metropolis-Hastings sampling, with an acceptance probability of $$ \\al…"
+    },
+    {
+      "kind": "figure",
+      "id": "A3.2",
+      "anchor": "figure-a3.2",
+      "label": "Figure A3.2",
+      "section_id": "Evolution_appendix3_011",
+      "src": "figures/Evolution_A3.2.png",
+      "caption": "Figure A3.2 Trace plots for the two samplers discussed in Example A3.5. A: The proposal distribution is a  $ \\chi_{10}^{2} $. B: The proposal distribution is a  $ \\chi_{2}^{2} $."
+    },
+    {
+      "kind": "example",
+      "id": "A3.6",
+      "anchor": "example-a3.6",
+      "label": "Example A3.6",
+      "section_id": "Evolution_appendix3_017",
+      "excerpt": "Example A3.6 · ref: A3.6 · source: Evolution appendix3 017.json · blocks 3–9 Example A3.6. Consider the following distribution from Casella and George (1992). Suppose the joint distribution of $ x = 0, 1, \\cdots, n $ and $ 0 \\leq y \\leq 1 $ is given by $$ p(x,y)=\\frac{n!}{(n-x)!x!}\\ y^{x+\\alpha-1}\\left(1-y\\right)^{n-x+\\beta-1} $$ Note that x is discrete and y continuous. While the joint density is complex, the conditional densities are simple distributions. To see this, firs…"
+    },
+    {
+      "kind": "example",
+      "id": "A3.7",
+      "anchor": "example-a3.7",
+      "label": "Example A3.7",
+      "section_id": "Evolution_appendix3_019",
+      "excerpt": "Example A3.7 · ref: A3.7 · source: Evolution appendix3 019.json · blocks 2–4 Example A3.7. Although the sequence of length 3 that was computed in Example A3.6 is too short (and too dependent on the starting value) to be a proper Gibbs sequence, for illustrative purposes we can use it to compute Monte-Carlo estimates. The MC estimates of the means of x and y are $$ \\overline{x} {3}=\\frac{5+3+7}{3}=5,\\quad\\overline{y} {3}=\\frac{0.5+0.33+0.56}{3}=0.46 $$ We use the subscript 3…"
+    },
+    {
+      "kind": "example",
+      "id": "A3.8",
+      "anchor": "example-a3.8",
+      "label": "Example A3.8",
+      "section_id": "Evolution_appendix3_019",
+      "excerpt": "Example A3.8 · ref: A3.8 · source: Evolution appendix3 019.json · blocks 5–5 Example A3.8. Returning to the Gibbs sequence generated in Example A3.6, recall that the distribution of x given y is binomial, with $ x \\mid y \\sim \\mathrm{B}(n, y) $. If we apply Equation A3.27b, the estimate (based on this sequence) of the marginal distribution of x is the weighted sum of three binomials with success parameters of 0.5, 0.33, and 0.56, yielding $$ p {3}(x)=\\frac{10!}{x!(10-x)!}\\le…"
+    },
+    {
+      "kind": "figure",
+      "id": "A3.3",
+      "anchor": "figure-a3.3",
+      "label": "Figure A3.3",
+      "section_id": "Evolution_appendix3_020",
+      "src": "figures/Evolution_A3.3.png",
+      "caption": "Figure A3.3 The approximation of the marginal posterior distribution for x for the distribution given in Example A3.6 using a Gibbs sequence. The open bars represent the approximation using a binomial with the Gibbs-sequence mean value of y as the success parameter, while the solid bars represent the approximation based on a weighted sum of binomials. See Example A3.8 for details."
+    },
+    {
+      "kind": "example",
+      "id": "A3.9",
+      "anchor": "example-a3.9",
+      "label": "Example A3.9",
+      "section_id": "Evolution_appendix3_020",
+      "excerpt": "Example A3.9 · ref: A3.9 · source: Evolution appendix3 020.json · blocks 5–6 Example A3.9. Recall from Chapter 8 that an issue of much evolutionary interest concerns both the rate of selective sweeps and the average strength of selection for the swept allele. We can quantify the rate of sweeps by estimating the per-nucleotide adaptive evolution rate, $ \\lambda $, and quantify their strength by estimating the average selective advantage, s, of a swept allele. As discussed in…"
+    },
+    {
+      "kind": "formula",
+      "id": "A3.1a",
+      "anchor": "formula-a3.1a",
+      "label": "Formula (A3.1a)",
+      "section_id": "Evolution_appendix3_002",
+      "latex": "\\int_{a}^{b}h(x)dx",
+      "latex_render": "\\int_{a}^{b}h(x)dx",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A3.1b",
+      "anchor": "formula-a3.1b",
+      "label": "Formula (A3.1b)",
+      "section_id": "Evolution_appendix3_002",
+      "latex": "\\int_{a}^{b}h(x)dx=\\int_{a}^{b}f(x)p(x)dx=E_{p(x)}[f(x)]",
+      "latex_render": "\\int_{a}^{b}h(x)dx=\\int_{a}^{b}f(x)p(x)dx=E_{p(x)}[f(x)]",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A3.1c",
+      "anchor": "formula-a3.1c",
+      "label": "Formula (A3.1c)",
+      "section_id": "Evolution_appendix3_002",
+      "latex": "\\int_{a}^{b}h(x)dx=E_{p(x)}[f(x)]\\simeq\\frac{1}{n}\\sum_{i=1}^{n}f(x_{i})",
+      "latex_render": "\\int_{a}^{b}h(x)dx=E_{p(x)}[f(x)]\\simeq\\frac{1}{n}\\sum_{i=1}^{n}f(x_{i})",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A3.1d",
+      "anchor": "formula-a3.1d",
+      "label": "Formula (A3.1d)",
+      "section_id": "Evolution_appendix3_002",
+      "latex": "\\widehat{I}(y)=\\frac{1}{n}\\sum_{i=1}^{n}f(y\\mid x_{i})",
+      "latex_render": "\\widehat{I}(y)=\\frac{1}{n}\\sum_{i=1}^{n}f(y\\mid x_{i})",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A3.1e",
+      "anchor": "formula-a3.1e",
+      "label": "Formula (A3.1e)",
+      "section_id": "Evolution_appendix3_002",
+      "latex": "\\mathrm{SE}^{2}[\\widehat{I}(y)]=\\frac{1}{n}\\left[\\frac{1}{n-1}\\sum_{i=1}^{n}\\left(f(y\\mid x_{i})-\\widehat{I}(y)\\right)^{2}\\right]",
+      "latex_render": "\\mathrm{SE}^{2}[\\widehat{I}(y)]=\\frac{1}{n}\\left[\\frac{1}{n-1}\\sum_{i=1}^{n}\\left(f(y\\mid x_{i})-\\widehat{I}(y)\\right)^{2}\\right]",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A3.2a",
+      "anchor": "formula-a3.2a",
+      "label": "Formula (A3.2a)",
+      "section_id": "",
+      "latex": "q(f,g)=\\int\\frac{g(\\mathbf{x})}{g(\\mathbf{x})+f(\\mathbf{x})}f(\\mathbf{x})d\\mathbf{x}",
+      "latex_render": "q(f,g)=\\int\\frac{g(\\mathbf{x})}{g(\\mathbf{x})+f(\\mathbf{x})}f(\\mathbf{x})d\\mathbf{x}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A3.2b",
+      "anchor": "formula-a3.2b",
+      "label": "Formula (A3.2b)",
+      "section_id": "",
+      "latex": "d(f,g)=\\sqrt{1-2q(f,g)}",
+      "latex_render": "d(f,g)=\\sqrt{1-2q(f,g)}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A3.2c",
+      "anchor": "formula-a3.2c",
+      "label": "Formula (A3.2c)",
+      "section_id": "",
+      "latex": "\\widehat{q}(f,g)=\\frac{1}{n}\\sum_{i=1}^{n}\\frac{g(\\mathbf{x}_{i})}{g(\\mathbf{x}_{i})+f(\\mathbf{x}_{i})}\\rightarrow q(f,g)",
+      "latex_render": "\\widehat{q}(f,g)=\\frac{1}{n}\\sum_{i=1}^{n}\\frac{g(\\mathbf{x}_{i})}{g(\\mathbf{x}_{i})+f(\\mathbf{x}_{i})}\\rightarrow q(f,g)",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A3.2d",
+      "anchor": "formula-a3.2d",
+      "label": "Formula (A3.2d)",
+      "section_id": "",
+      "latex": "\\widehat{q}(f,g)=\\frac{1}{n}\\sum_{i=1}^{n}\\frac{\\mid\\mathbf{G}_{2}\\mid\\exp\\left(-\\mathbf{x}_{i}^{T}\\mathbf{G}_{2}^{-1}\\mathbf{x}_{i}/2\\right)}{\\mid\\mathbf{G}_{2}\\mid\\exp\\left(-\\mathbf{x}_{i}^{T}\\mathbf{G}_{2}^{-1}\\mathbf{x}_{i}/2\\right)+\\mid\\mathbf{G}_{1}\\mid\\exp\\left(-\\mathbf{x}_{i}^{T}\\mathbf{G}_{1}^{-1}\\mathbf{x}_{i}/2\\right)}",
+      "latex_render": "\\widehat{q}(f,g)=\\frac{1}{n}\\sum_{i=1}^{n}\\frac{\\mid\\mathbf{G}_{2}\\mid\\exp\\left(-\\mathbf{x}_{i}^{T}\\mathbf{G}_{2}^{-1}\\mathbf{x}_{i}/2\\right)}{\\mid\\mathbf{G}_{2}\\mid\\exp\\left(-\\mathbf{x}_{i}^{T}\\mathbf{G}_{2}^{-1}\\mathbf{x}_{i}/2\\right)+\\mid\\mathbf{G}_{1}\\mid\\exp\\left(-\\mathbf{x}_{i}^{T}\\mathbf{G}_{1}^{-1}\\mathbf{x}_{i}/2\\right)}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A3.3a",
+      "anchor": "formula-a3.3a",
+      "label": "Formula (A3.3a)",
+      "section_id": "Evolution_appendix3_003",
+      "latex": "\\int f(x)q(x)dx=\\int f(x)\\left(\\frac{q(x)}{p(x)}\\right)p(x)dx=E_{p(x)}\\left[f(x)\\left(\\frac{q(x)}{p(x)}\\right)\\right]",
+      "latex_render": "\\int f(x)q(x)dx=\\int f(x)\\left(\\frac{q(x)}{p(x)}\\right)p(x)dx=E_{p(x)}\\left[f(x)\\left(\\frac{q(x)}{p(x)}\\right)\\right]",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A3.3b",
+      "anchor": "formula-a3.3b",
+      "label": "Formula (A3.3b)",
+      "section_id": "Evolution_appendix3_003",
+      "latex": "\\int f(x)q(x)dx\\simeq\\frac{1}{n}\\sum_{i=1}^{n}f(x_{i})\\left(\\frac{q(x_{i})}{p(x_{i})}\\right)",
+      "latex_render": "\\int f(x)q(x)dx\\simeq\\frac{1}{n}\\sum_{i=1}^{n}f(x_{i})\\left(\\frac{q(x_{i})}{p(x_{i})}\\right)",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A3.4",
+      "anchor": "formula-a3.4",
+      "label": "Formula (A3.4)",
+      "section_id": "Evolution_appendix3_003",
+      "latex": "J(y)\\simeq\\frac{1}{n}\\sum_{i=1}^{n}f(y\\mid x_{i})\\left(\\frac{q(x_{i})}{p(x_{i})}\\right)",
+      "latex_render": "J(y)\\simeq\\frac{1}{n}\\sum_{i=1}^{n}f(y\\mid x_{i})\\left(\\frac{q(x_{i})}{p(x_{i})}\\right)",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A3.5a",
+      "anchor": "formula-a3.5a",
+      "label": "Formula (A3.5a)",
+      "section_id": "Evolution_appendix3_003",
+      "latex": "C^{-1}=\\int q(x)d x\\simeq\\frac{1}{n}\\sum_{i=1}^{n}w_{i}\\quad\\mathrm{w h e r e}\\quad w_{i}=\\frac{q(x_{i})}{p(x_{i})}",
+      "latex_render": "C^{-1}=\\int q(x)d x\\simeq\\frac{1}{n}\\sum_{i=1}^{n}w_{i}\\quad\\mathrm{w h e r e}\\quad w_{i}=\\frac{q(x_{i})}{p(x_{i})}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A3.5b",
+      "anchor": "formula-a3.5b",
+      "label": "Formula (A3.5b)",
+      "section_id": "Evolution_appendix3_003",
+      "latex": "C\\cdot\\int f(x)q(x)dx\\simeq\\widehat{I}=\\sum_{i=1}^{n}w_{i}f(x_{i})\\bigg/\\sum_{i=1}^{n}w_{i}",
+      "latex_render": "C\\cdot\\int f(x)q(x)dx\\simeq\\widehat{I}=\\sum_{i=1}^{n}w_{i}f(x_{i})\\bigg/\\sum_{i=1}^{n}w_{i}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A3.5c",
+      "anchor": "formula-a3.5c",
+      "label": "Formula (A3.5c)",
+      "section_id": "Evolution_appendix3_003",
+      "latex": "\\mathrm{Var}\\left(\\widehat{I}\\right)=\\sum_{i=1}^{n}w_{i}\\left[f(x_{i})-\\widehat{I}\\right]^{2}\\bigg/\\sum_{i=1}^{n}w_{i}",
+      "latex_render": "\\mathrm{Var}\\left(\\widehat{I}\\right)=\\sum_{i=1}^{n}w_{i}\\left[f(x_{i})-\\widehat{I}\\right]^{2}\\bigg/\\sum_{i=1}^{n}w_{i}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A3.6",
+      "anchor": "formula-a3.6",
+      "label": "Formula (A3.6)",
+      "section_id": "Evolution_appendix3_004",
+      "latex": "\\Pr(X_{t+1}=s_{j}\\mid X_{0}=s_{k},\\cdots,X_{t}=s_{i})=\\Pr(X_{t+1}=s_{j}\\mid X_{t}=s_{i})",
+      "latex_render": "\\Pr(X_{t+1}=s_{j}\\mid X_{0}=s_{k},\\cdots,X_{t}=s_{i})=\\Pr(X_{t+1}=s_{j}\\mid X_{t}=s_{i})",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A3.7a",
+      "anchor": "formula-a3.7a",
+      "label": "Formula (A3.7a)",
+      "section_id": "Evolution_appendix3_004",
+      "latex": "P(i,j)=P(i\\rightarrow j)=\\Pr(X_{t+1}=s_{j}\\mid X_{t}=s_{i})",
+      "latex_render": "P(i,j)=P(i\\rightarrow j)=\\Pr(X_{t+1}=s_{j}\\mid X_{t}=s_{i})",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A3.7b",
+      "anchor": "formula-a3.7b",
+      "label": "Formula (A3.7b)",
+      "section_id": "Evolution_appendix3_004",
+      "latex": "\\pi_{j}(t)=\\Pr(X_{t}=s_{j})",
+      "latex_render": "\\pi_{j}(t)=\\Pr(X_{t}=s_{j})",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A3.7c",
+      "anchor": "formula-a3.7c",
+      "label": "Formula (A3.7c)",
+      "section_id": "Evolution_appendix3_004",
+      "latex": "\\begin{aligned}\\pi_{j}(t+1)&=\\Pr(X_{t+1}=s_{j})\\\\&=\\sum_{i}\\Pr(X_{t+1}=s_{j}\\mid X_{t}=s_{i})\\cdot\\Pr(X_{t}=s_{i})\\\\&=\\sum_{i}P(i\\rightarrow j)\\pi_{i}(t)=\\sum_{i}P(i,j)\\pi_{i}(t)\\end{aligned}",
+      "latex_render": "\\begin{aligned}\\pi_{j}(t+1)&=\\Pr(X_{t+1}=s_{j})\\\\&=\\sum_{i}\\Pr(X_{t+1}=s_{j}\\mid X_{t}=s_{i})\\cdot\\Pr(X_{t}=s_{i})\\\\&=\\sum_{i}P(i\\rightarrow j)\\pi_{i}(t)=\\sum_{i}P(i,j)\\pi_{i}(t)\\end{aligned}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A3.8a",
+      "anchor": "formula-a3.8a",
+      "label": "Formula (A3.8a)",
+      "section_id": "Evolution_appendix3_004",
+      "latex": "\\boldsymbol{\\pi}(t+1)=\\boldsymbol{\\pi}(t)\\mathbf{P}",
+      "latex_render": "\\boldsymbol{\\pi}(t+1)=\\boldsymbol{\\pi}(t)\\mathbf{P}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A3.8b",
+      "anchor": "formula-a3.8b",
+      "label": "Formula (A3.8b)",
+      "section_id": "Evolution_appendix3_004",
+      "latex": "\\boldsymbol{\\pi}(t)=\\boldsymbol{\\pi}(t-1)\\mathbf{P}=\\left[\\boldsymbol{\\pi}(t-2)\\mathbf{P}\\right]\\mathbf{P}=\\boldsymbol{\\pi}(t-2)\\mathbf{P}^{2}",
+      "latex_render": "\\boldsymbol{\\pi}(t)=\\boldsymbol{\\pi}(t-1)\\mathbf{P}=\\left[\\boldsymbol{\\pi}(t-2)\\mathbf{P}\\right]\\mathbf{P}=\\boldsymbol{\\pi}(t-2)\\mathbf{P}^{2}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A3.8c",
+      "anchor": "formula-a3.8c",
+      "label": "Formula (A3.8c)",
+      "section_id": "Evolution_appendix3_004",
+      "latex": "\\boldsymbol{\\pi}(t)=\\boldsymbol{\\pi}(0)\\mathbf{P}^{t}",
+      "latex_render": "\\boldsymbol{\\pi}(t)=\\boldsymbol{\\pi}(0)\\mathbf{P}^{t}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A3.8d",
+      "anchor": "formula-a3.8d",
+      "label": "Formula (A3.8d)",
+      "section_id": "Evolution_appendix3_004",
+      "latex": "p_{ij}^{(n)}=\\Pr(X_{t+n}=s_{j}\\mid X_{t}=s_{i})",
+      "latex_render": "p_{ij}^{(n)}=\\Pr(X_{t+n}=s_{j}\\mid X_{t}=s_{i})",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A3.9",
+      "anchor": "formula-a3.9",
+      "label": "Formula (A3.9)",
+      "section_id": "Evolution_appendix3_004",
+      "latex": "\\pi^{*}=\\pi^{*}P",
+      "latex_render": "\\pi^{*}=\\pi^{*}P",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A3.10",
+      "anchor": "formula-a3.10",
+      "label": "Formula (A3.10)",
+      "section_id": "Evolution_appendix3_004",
+      "latex": "P(j\\rightarrow i)\\pi_{j}^{*}=P(i\\rightarrow j)\\pi_{i}^{*}",
+      "latex_render": "P(j\\rightarrow i)\\pi_{j}^{*}=P(i\\rightarrow j)\\pi_{i}^{*}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A3.11a",
+      "anchor": "formula-a3.11a",
+      "label": "Formula (A3.11a)",
+      "section_id": "Evolution_appendix3_004",
+      "latex": "\\pi_{t}(y)=\\int\\pi_{t-1}(x)P(x,y)dx",
+      "latex_render": "\\pi_{t}(y)=\\int\\pi_{t-1}(x)P(x,y)dx",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A3.11b",
+      "anchor": "formula-a3.11b",
+      "label": "Formula (A3.11b)",
+      "section_id": "Evolution_appendix3_004",
+      "latex": "\\pi^{*}(y)=\\int\\pi^{*}(x)P(x,y)dx",
+      "latex_render": "\\pi^{*}(y)=\\int\\pi^{*}(x)P(x,y)dx",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A3.12",
+      "anchor": "formula-a3.12",
+      "label": "Formula (A3.12)",
+      "section_id": "Evolution_appendix3_005",
+      "latex": "\\alpha=\\min\\left(\\frac{f(\\theta^{*})}{f(\\theta_{t-1})},1\\right)",
+      "latex_render": "\\alpha=\\min\\left(\\frac{f(\\theta^{*})}{f(\\theta_{t-1})},1\\right)",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A3.13",
+      "anchor": "formula-a3.13",
+      "label": "Formula (A3.13)",
+      "section_id": "Evolution_appendix3_005",
+      "latex": "\\alpha=\\min\\left(\\frac{f(\\theta^{*})q(\\theta^{*},\\theta_{t-1})}{f(\\theta_{t-1})q(\\theta_{t-1},\\theta^{*})},1\\right)",
+      "latex_render": "\\alpha=\\min\\left(\\frac{f(\\theta^{*})q(\\theta^{*},\\theta_{t-1})}{f(\\theta_{t-1})q(\\theta_{t-1},\\theta^{*})},1\\right)",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A3.14a",
+      "anchor": "formula-a3.14a",
+      "label": "Formula (A3.14a)",
+      "section_id": "",
+      "latex": "\\Pr(x\\rightarrow y)=q(x,y)\\alpha(x,y)=q(x,y)\\cdot\\min\\left[\\frac{p(y)q(y,x)}{p(x)q(x,y)},1\\right]",
+      "latex_render": "\\Pr(x\\rightarrow y)=q(x,y)\\alpha(x,y)=q(x,y)\\cdot\\min\\left[\\frac{p(y)q(y,x)}{p(x)q(x,y)},1\\right]",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A3.14b",
+      "anchor": "formula-a3.14b",
+      "label": "Formula (A3.14b)",
+      "section_id": "",
+      "latex": "q(x,y)\\alpha(x,y)p(x)=q(y,x)\\alpha(y,x)p(y)\\quad for all x,y",
+      "latex_render": "q(x,y)\\alpha(x,y)p(x)=q(y,x)\\alpha(y,x)p(y)\\quad for all x,y",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A3.15a",
+      "anchor": "formula-a3.15a",
+      "label": "Formula (A3.15a)",
+      "section_id": "Evolution_appendix3_007",
+      "latex": "\\alpha_{S A}=\\min\\left[1,\\left(\\frac{f(\\theta^{*})}{f(\\theta_{t-1})}\\right)^{1/T(t)}\\right]=\\alpha^{1/T(t)}",
+      "latex_render": "\\alpha_{S A}=\\min\\left[1,\\left(\\frac{f(\\theta^{*})}{f(\\theta_{t-1})}\\right)^{1/T(t)}\\right]=\\alpha^{1/T(t)}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A3.15b",
+      "anchor": "formula-a3.15b",
+      "label": "Formula (A3.15b)",
+      "section_id": "Evolution_appendix3_007",
+      "latex": "T(t)=T_{0}\\left(\\frac{T_{f}}{T_{0}}\\right)^{t/n}",
+      "latex_render": "T(t)=T_{0}\\left(\\frac{T_{f}}{T_{0}}\\right)^{t/n}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A3.15c",
+      "anchor": "formula-a3.15c",
+      "label": "Formula (A3.15c)",
+      "section_id": "Evolution_appendix3_007",
+      "latex": "T(t)=\\max\\left(T_{0}\\left(\\frac{T_{f}}{T_{0}}\\right)^{t/n},T_{f}\\right)",
+      "latex_render": "T(t)=\\max\\left(T_{0}\\left(\\frac{T_{f}}{T_{0}}\\right)^{t/n},T_{f}\\right)",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A3.15d",
+      "anchor": "formula-a3.15d",
+      "label": "Formula (A3.15d)",
+      "section_id": "Evolution_appendix3_007",
+      "latex": "T(t)=\\max\\left(T_{0}^{1-t/n},1\\right)",
+      "latex_render": "T(t)=\\max\\left(T_{0}^{1-t/n},1\\right)",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A3.16",
+      "anchor": "formula-a3.16",
+      "label": "Formula (A3.16)",
+      "section_id": "Evolution_appendix3_009",
+      "latex": "\\begin{align*}\\widehat{\\rho}_k=\\frac{\\mathrm{Cov}(\\theta_t,\\theta_{t+k})}{\\mathrm{Var}(\\theta_t)}=\\frac{\\sum\\limits_{t=1}^{n-k}\\left(\\theta_t-\\overline{\\theta}\\right)\\left(\\theta_{t+k}-\\overline{\\theta}\\right)}{\\sum\\limits_{t=1}^{n-k}\\left(\\theta_t-\\overline{\\theta}\\right)^2},\\quad\\textrm{with}\\quad\\overline{\\theta}=\\frac{1}{n}\\sum\\limits_{t=1}^n\\theta_t\\end{align*}",
+      "latex_render": "\\begin{aligned}\\widehat{\\rho}_k=\\frac{\\mathrm{Cov}(\\theta_t,\\theta_{t+k})}{\\mathrm{Var}(\\theta_t)}=\\frac{\\sum\\limits_{t=1}^{n-k}\\left(\\theta_t-\\overline{\\theta}\\right)\\left(\\theta_{t+k}-\\overline{\\theta}\\right)}{\\sum\\limits_{t=1}^{n-k}\\left(\\theta_t-\\overline{\\theta}\\right)^2},\\quad\\textrm{with}\\quad\\overline{\\theta}=\\frac{1}{n}\\sum\\limits_{t=1}^n\\theta_t\\end{aligned}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A3.17a",
+      "anchor": "formula-a3.17a",
+      "label": "Formula (A3.17a)",
+      "section_id": "Evolution_appendix3_009",
+      "latex": "\\theta_{t}=\\mu+\\alpha\\big(\\theta_{t-1}-\\mu\\big)+\\epsilon",
+      "latex_render": "\\theta_{t}=\\mu+\\alpha\\big(\\theta_{t-1}-\\mu\\big)+\\epsilon",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A3.17b",
+      "anchor": "formula-a3.17b",
+      "label": "Formula (A3.17b)",
+      "section_id": "Evolution_appendix3_009",
+      "latex": "\\mathrm{SE}\\left(\\overline{\\theta}\\right)=\\frac{\\sigma}{\\sqrt{n}}\\sqrt{\\frac{1+\\rho}{1-\\rho}}",
+      "latex_render": "\\mathrm{SE}\\left(\\overline{\\theta}\\right)=\\frac{\\sigma}{\\sqrt{n}}\\sqrt{\\frac{1+\\rho}{1-\\rho}}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A3.18",
+      "anchor": "formula-a3.18",
+      "label": "Formula (A3.18)",
+      "section_id": "Evolution_appendix3_010",
+      "latex": "\\widehat{h}=\\frac{1}{n}\\sum_{i=1}^{n}h(\\theta_{i})",
+      "latex_render": "\\widehat{h}=\\frac{1}{n}\\sum_{i=1}^{n}h(\\theta_{i})",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A3.19",
+      "anchor": "formula-a3.19",
+      "label": "Formula (A3.19)",
+      "section_id": "Evolution_appendix3_010",
+      "latex": "\\mathrm{Var}\\left(\\widehat{h}\\right)=\\frac{1}{c-1}\\sum_{j=1}^{c}\\left(\\widehat{h}_{j}-\\widehat{h^{*}}\\right)^{2}\\quad\\mathrm{w h e r e}\\quad\\widehat{h^{*}}=\\frac{1}{c}\\sum_{j=1}^{c}\\widehat{h}_{j}",
+      "latex_render": "\\mathrm{Var}\\left(\\widehat{h}\\right)=\\frac{1}{c-1}\\sum_{j=1}^{c}\\left(\\widehat{h}_{j}-\\widehat{h^{*}}\\right)^{2}\\quad\\mathrm{w h e r e}\\quad\\widehat{h^{*}}=\\frac{1}{c}\\sum_{j=1}^{c}\\widehat{h}_{j}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A3.20",
+      "anchor": "formula-a3.20",
+      "label": "Formula (A3.20)",
+      "section_id": "Evolution_appendix3_010",
+      "latex": "\\widehat{\\gamma}(k)=\\frac{1}{n-1}\\sum_{i=1}^{n-k}\\left[\\left(h(\\theta_{i})-\\widehat{h}\\right)\\left(h(\\theta_{i+k})-\\widehat{h}\\right)\\right]",
+      "latex_render": "\\widehat{\\gamma}(k)=\\frac{1}{n-1}\\sum_{i=1}^{n-k}\\left[\\left(h(\\theta_{i})-\\widehat{h}\\right)\\left(h(\\theta_{i+k})-\\widehat{h}\\right)\\right]",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A3.21",
+      "anchor": "formula-a3.21",
+      "label": "Formula (A3.21)",
+      "section_id": "Evolution_appendix3_010",
+      "latex": "\\mathrm{Var}\\left(\\widehat{h}\\right)=\\frac{1}{n}\\left(\\widehat{\\gamma}(0)+2\\sum_{i=1}^{2\\delta+1}\\widehat{\\gamma}(i)\\right)",
+      "latex_render": "\\mathrm{Var}\\left(\\widehat{h}\\right)=\\frac{1}{n}\\left(\\widehat{\\gamma}(0)+2\\sum_{i=1}^{2\\delta+1}\\widehat{\\gamma}(i)\\right)",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A3.22",
+      "anchor": "formula-a3.22",
+      "label": "Formula (A3.22)",
+      "section_id": "Evolution_appendix3_010",
+      "latex": "\\widehat{n}=\\frac{\\widehat{\\gamma}(0)}{\\operatorname{Var}\\left(\\widehat{h}\\right)}",
+      "latex_render": "\\widehat{n}=\\frac{\\widehat{\\gamma}(0)}{\\operatorname{Var}\\left(\\widehat{h}\\right)}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A3.23a",
+      "anchor": "formula-a3.23a",
+      "label": "Formula (A3.23a)",
+      "section_id": "Evolution_appendix3_013",
+      "latex": "B=\\frac{n}{m-1}\\sum_{i=1}^{m}(\\overline{\\theta}_{i.}-\\overline{\\theta}_{..})^{2}",
+      "latex_render": "B=\\frac{n}{m-1}\\sum_{i=1}^{m}(\\overline{\\theta}_{i.}-\\overline{\\theta}_{..})^{2}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A3.23b",
+      "anchor": "formula-a3.23b",
+      "label": "Formula (A3.23b)",
+      "section_id": "Evolution_appendix3_013",
+      "latex": "W=\\frac{1}{m}\\left(\\frac{1}{n-1}\\sum_{i=1}^{m}\\sum_{j=1}^{n}(\\overline{\\theta}_{ij}-\\overline{\\theta}_{i.})^{2}\\right)",
+      "latex_render": "W=\\frac{1}{m}\\left(\\frac{1}{n-1}\\sum_{i=1}^{m}\\sum_{j=1}^{n}(\\overline{\\theta}_{ij}-\\overline{\\theta}_{i.})^{2}\\right)",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A3.23c",
+      "anchor": "formula-a3.23c",
+      "label": "Formula (A3.23c)",
+      "section_id": "Evolution_appendix3_013",
+      "latex": "\\widehat{\\sigma^{2}}=\\frac{n-1}{n}W+\\frac{1}{n}B",
+      "latex_render": "\\widehat{\\sigma^{2}}=\\frac{n-1}{n}W+\\frac{1}{n}B",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A3.23d",
+      "anchor": "formula-a3.23d",
+      "label": "Formula (A3.23d)",
+      "section_id": "Evolution_appendix3_013",
+      "latex": "R=\\frac{\\widehat{\\sigma^{2}}}{W}=1+\\frac{1}{n}\\left(\\frac{B}{W}-1\\right)",
+      "latex_render": "R=\\frac{\\widehat{\\sigma^{2}}}{W}=1+\\frac{1}{n}\\left(\\frac{B}{W}-1\\right)",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A3.24",
+      "anchor": "formula-a3.24",
+      "label": "Formula (A3.24)",
+      "section_id": "Evolution_appendix3_013",
+      "latex": "R=\\frac{n-1}{n}+\\left(1+\\frac{1}{m}\\right)\\lambda_{1}",
+      "latex_render": "R=\\frac{n-1}{n}+\\left(1+\\frac{1}{m}\\right)\\lambda_{1}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A3.25a",
+      "anchor": "formula-a3.25a",
+      "label": "Formula (A3.25a)",
+      "section_id": "Evolution_appendix3_015",
+      "latex": "x_{i}\\sim p(x\\mid y=y_{i-1})",
+      "latex_render": "x_{i}\\sim p(x\\mid y=y_{i-1})",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A3.25b",
+      "anchor": "formula-a3.25b",
+      "label": "Formula (A3.25b)",
+      "section_id": "Evolution_appendix3_015",
+      "latex": "y_{i}\\sim p(y\\mid x=x_{i})",
+      "latex_render": "y_{i}\\sim p(y\\mid x=x_{i})",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A3.26a",
+      "anchor": "formula-a3.26a",
+      "label": "Formula (A3.26a)",
+      "section_id": "Evolution_appendix3_016",
+      "latex": "E[f(\\theta)]_{m}=\\frac{1}{m}\\sum_{i=1}^{m}f(\\theta_{i})",
+      "latex_render": "E[f(\\theta)]_{m}=\\frac{1}{m}\\sum_{i=1}^{m}f(\\theta_{i})",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A3.26b",
+      "anchor": "formula-a3.26b",
+      "label": "Formula (A3.26b)",
+      "section_id": "Evolution_appendix3_016",
+      "latex": "E[f(\\theta^{(1)},\\cdots,\\theta^{(n)})]_{m}=\\frac{1}{m}\\sum_{i=1}^{m}f(\\theta_{i}^{(1)},\\cdots,\\theta_{i}^{(n)})",
+      "latex_render": "E[f(\\theta^{(1)},\\cdots,\\theta^{(n)})]_{m}=\\frac{1}{m}\\sum_{i=1}^{m}f(\\theta_{i}^{(1)},\\cdots,\\theta_{i}^{(n)})",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A3.27a",
+      "anchor": "formula-a3.27a",
+      "label": "Formula (A3.27a)",
+      "section_id": "Evolution_appendix3_016",
+      "latex": "p(x)=\\int p(x\\mid y)p(y)dy=E_{y}\\left[p(x\\mid y)\\right]",
+      "latex_render": "p(x)=\\int p(x\\mid y)p(y)dy=E_{y}\\left[p(x\\mid y)\\right]",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A3.27b",
+      "anchor": "formula-a3.27b",
+      "label": "Formula (A3.27b)",
+      "section_id": "Evolution_appendix3_016",
+      "latex": "\\widehat{p}_{m}(x)=\\frac{1}{m}\\sum_{i=1}^{m}p(x\\mid y=y_{i})",
+      "latex_render": "\\widehat{p}_{m}(x)=\\frac{1}{m}\\sum_{i=1}^{m}p(x\\mid y=y_{i})",
+      "origin": "paddle"
+    }
+  ],
+  "references": {
+    "Evolution_appendix3_section_001": [],
+    "Evolution_appendix3_001": [
+      {
+        "kind": "chapter",
+        "id": "19",
+        "label": "Chapter 19",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "chapter",
+        "id": "20",
+        "label": "Chapter 20",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "chapter",
+        "id": "9",
+        "label": "Chapter 9",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "chapter",
+        "id": "10",
+        "label": "Chapter 10",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_appendix3_002": [
+      {
+        "kind": "equation",
+        "id": "A3.1e",
+        "label": "Equation A3.1e",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "A3.1",
+        "label": "Example A3.1",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A3.2a",
+        "label": "Equation A3.2a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A3.1d",
+        "label": "Equation A3.1d",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_appendix3_003": [],
+    "Evolution_appendix3_004": [
+      {
+        "kind": "equation",
+        "id": "2.1",
+        "label": "Equation 2.1",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "2.1",
+        "label": "Example 2.1",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_appendix3_005": [
+      {
+        "kind": "example",
+        "id": "A3.2",
+        "label": "Example A3.2",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A5.9a",
+        "label": "Equation A5.9a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A5.11d",
+        "label": "Equation A5.11d",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A3.10",
+        "label": "Equation A3.10",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_appendix3_006": [
+      {
+        "kind": "equation",
+        "id": "A3.1",
+        "label": "Equation A3.1",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A2.4b",
+        "label": "Equation A2.4b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "figure",
+        "id": "A3.1",
+        "label": "Figure A3.1",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "A3.3",
+        "label": "Example A3.3",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A3.13",
+        "label": "Equation A3.13",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A2.30a",
+        "label": "Equation A2.30a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "figure",
+        "id": "A3.1A",
+        "label": "Figure A3.1A",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "A3.5",
+        "label": "Example A3.5",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "figure",
+        "id": "A3.1B",
+        "label": "Figure A3.1B",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "A3.4",
+        "label": "Example A3.4",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_appendix3_008": [],
+    "Evolution_appendix3_009": [
+      {
+        "kind": "equation",
+        "id": "A3.13",
+        "label": "Equation A3.13",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_appendix3_010": [
+      {
+        "kind": "example",
+        "id": "A3.3",
+        "label": "Example A3.3",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "A3.5",
+        "label": "Example A3.5",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A2.27b",
+        "label": "Equation A2.27b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "figure",
+        "id": "A3.2",
+        "label": "Figure A3.2",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_appendix3_011": [
+      {
+        "kind": "figure",
+        "id": "A3.2",
+        "label": "Figure A3.2",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "A3.5",
+        "label": "Example A3.5",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A3.16",
+        "label": "Equation A3.16",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_appendix3_012": [
+      {
+        "kind": "equation",
+        "id": "A3.1e",
+        "label": "Equation A3.1e",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A3.17b",
+        "label": "Equation A3.17b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A3.16",
+        "label": "Equation A3.16",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_appendix3_013": [],
+    "Evolution_appendix3_014": [
+      {
+        "kind": "figure",
+        "id": "A3.1",
+        "label": "Figure A3.1",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "figure",
+        "id": "A3.2",
+        "label": "Figure A3.2",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_appendix3_015": [],
+    "Evolution_appendix3_016": [],
+    "Evolution_appendix3_017": [
+      {
+        "kind": "table",
+        "id": "A2.2",
+        "label": "Table A2.2",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "A3.6",
+        "label": "Example A3.6",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A2.38a",
+        "label": "Equation A2.38a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_appendix3_018": [],
+    "Evolution_appendix3_019": [
+      {
+        "kind": "example",
+        "id": "A3.7",
+        "label": "Example A3.7",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "A3.6",
+        "label": "Example A3.6",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "A3.8",
+        "label": "Example A3.8",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A3.27b",
+        "label": "Equation A3.27b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "figure",
+        "id": "A3.3",
+        "label": "Figure A3.3",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_appendix3_020": [
+      {
+        "kind": "chapter",
+        "id": "8",
+        "label": "Chapter 8",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "figure",
+        "id": "A3.3",
+        "label": "Figure A3.3",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "A3.6",
+        "label": "Example A3.6",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "A3.8",
+        "label": "Example A3.8",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "A3.9",
+        "label": "Example A3.9",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "9.27",
+        "label": "Equation 9.27",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "9.36b",
+        "label": "Equation 9.36b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ]
+  },
+  "semantic_chapter_links": [
+    {
+      "current_section_id": "Evolution_appendix3_001",
+      "current_anchor": "evolution_appendix3_001",
+      "source_chapter_id": "Evolution_chapter19",
+      "label": "Chapter 19",
+      "target_anchor": "evolution_chapter19_section_001",
+      "target_label": "Chapter 19",
+      "target_ref_type": "chapter",
+      "target_ref_id": "19",
+      "target_section_title": "Chapter 19 · Analysis of Short-term Selection Experiments: 2. Mixed-model and Bayesian Approaches",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "Appendix: Introduction Far better an approximate answer to the right question, which is often vague, than an exact answer to the wrong question, which can always be made precise. Tukey (1962) We are convinced nevertheless that Monte Carlo methods will one day reach an impressive maturity. Hammersley and Handscomb (1964) The practice of MCMC is simple. Set up a Markov chain having the required invariant distribution,…",
+      "match_source": "chapter-overview"
+    },
+    {
+      "current_section_id": "Evolution_appendix3_001",
+      "current_anchor": "evolution_appendix3_001",
+      "source_chapter_id": "Evolution_chapter20",
+      "label": "Chapter 20",
+      "target_anchor": "evolution_chapter20_section_001",
+      "target_label": "Chapter 20",
+      "target_ref_type": "chapter",
+      "target_ref_id": "20",
+      "target_section_title": "Chapter 20 · Selection Response in Natural Populations",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "Appendix: Introduction Far better an approximate answer to the right question, which is often vague, than an exact answer to the wrong question, which can always be made precise. Tukey (1962) We are convinced nevertheless that Monte Carlo methods will one day reach an impressive maturity. Hammersley and Handscomb (1964) The practice of MCMC is simple. Set up a Markov chain having the required invariant distribution,…",
+      "match_source": "chapter-overview"
+    },
+    {
+      "current_section_id": "Evolution_appendix3_001",
+      "current_anchor": "evolution_appendix3_001",
+      "source_chapter_id": "Evolution_chapter9",
+      "label": "Chapter 9",
+      "target_anchor": "evolution_chapter9_section_001",
+      "target_label": "Chapter 9",
+      "target_ref_type": "chapter",
+      "target_ref_id": "9",
+      "target_section_title": "Chapter 9 · Using Molecular Data to Detect Selection: Signatures from Recent Single Events",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "Appendix: Introduction Far better an approximate answer to the right question, which is often vague, than an exact answer to the wrong question, which can always be made precise. Tukey (1962) We are convinced nevertheless that Monte Carlo methods will one day reach an impressive maturity. Hammersley and Handscomb (1964) The practice of MCMC is simple. Set up a Markov chain having the required invariant distribution,…",
+      "match_source": "chapter-overview"
+    },
+    {
+      "current_section_id": "Evolution_appendix3_001",
+      "current_anchor": "evolution_appendix3_001",
+      "source_chapter_id": "Evolution_chapter10",
+      "label": "Chapter 10",
+      "target_anchor": "evolution_chapter10_section_001",
+      "target_label": "Chapter 10",
+      "target_ref_type": "chapter",
+      "target_ref_id": "10",
+      "target_section_title": "Chapter 10 · Using Molecular Data to Detect Selection: Signatures from Multiple Historical Events",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "Appendix: Introduction Far better an approximate answer to the right question, which is often vague, than an exact answer to the wrong question, which can always be made precise. Tukey (1962) We are convinced nevertheless that Monte Carlo methods will one day reach an impressive maturity. Hammersley and Handscomb (1964) The practice of MCMC is simple. Set up a Markov chain having the required invariant distribution,…",
+      "match_source": "chapter-overview"
+    },
+    {
+      "current_section_id": "Evolution_appendix3_020",
+      "current_anchor": "evolution_appendix3_020",
+      "source_chapter_id": "Evolution_chapter8",
+      "label": "Chapter 8",
+      "target_anchor": "evolution_chapter8_section_001",
+      "target_label": "Chapter 8",
+      "target_ref_type": "chapter",
+      "target_ref_id": "8",
+      "target_section_title": "Chapter 8 · Hitchhiking and Selective Sweeps",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "2), but this is a very active research area with no current clean answer. [示例 Example] Example A3.9 · ref: A3.9 · source: Evolution appendix3 020.json · blocks 5–6 Example A3.9. Recall from Chapter 8 that an issue of much evolutionary interest concerns both the rate of selective sweeps and the average strength of selection for the swept allele. We can quantify the rate of sweeps by estimating the per-nucle",
+      "match_source": "chapter-overview"
+    }
+  ],
+  "prerequisites": [
+    {
+      "id": "prereq-evolution_chapter2",
+      "title": "Wright-Fisher Model and Transition Matrices",
+      "source_chapter_id": "Evolution_chapter2",
+      "used_in_sections": [
+        "Evolution_appendix3_004"
+      ],
+      "why_needed": "附录3介绍马尔可夫链和MCMC方法，而Wright-Fisher模型的转移矩阵是理解马尔可夫链在群体遗传学中应用的直接基础。",
+      "key_points": [
+        "Wright-Fisher模型用转移矩阵描述等位基因频率的随机变化。",
+        "转移矩阵元素表示从一种基因型频率状态到另一种的概率。",
+        "马尔可夫链的无记忆性在WF模型中体现为转移概率仅依赖当前状态。"
+      ],
+      "source_links": [
+        {
+          "chapter_id": "Evolution_chapter2",
+          "label": "Equation 2.1",
+          "markdown_path": "/data/textbook/Evolution_chapter2_textbook.md",
+          "anchor": "evolution_chapter2_002",
+          "section_title": "Neutral Evolution in One- and Two-Locus Systems: Introduction / THE WRIGHT-FISHER MODEL",
+          "ref_type": "equation",
+          "ref_id": "2.1",
+          "book_hint": "",
+          "link_scope": "current-book",
+          "excerpt": "\\mathbf{P}=\\begin{pmatrix}{{{1}}}&{{{0}}}&{{{0}}} \\\\{{{0.25}}}&{{{0.50}}}&{{{0.25}}} \\\\{{{0}}}&{{{0}}}&{{{1}}}\\end{pmatrix} $$ Although the numerical values for the elements of P can be obtained directly from Equation 2.1, for this simple example they can also be arrived at intuitively. For example, the elements in the first row of P denote the probabilities that the population will be in states j = 0, 1, 2 in gener…"
+        },
+        {
+          "chapter_id": "Evolution_chapter2",
+          "label": "Example 2.1",
+          "markdown_path": "/data/textbook/Evolution_chapter2_textbook.md",
+          "anchor": "example-2.1",
+          "section_title": "Neutral Evolution in One- and Two-Locus Systems: Introduction / THE WRIGHT-FISHER MODEL",
+          "ref_type": "example",
+          "ref_id": "2.1",
+          "book_hint": "",
+          "link_scope": "current-book",
+          "excerpt": "Example 2.1 · ref: 2.1 · source: Evolution chapter2 002.json · blocks 7–10 Example 2.1. Consider an initially heterozygous individual Bb in a self-fertilizing line maintained by single-progeny descent. With N = 1, the only three possible allele-frequency states in the population are zero, one, or two B alleles. Denoting the initial state of the population by $ \\mathbf{x}(0) = [0, 1, 0] $, the probability that the po…"
+        }
+      ],
+      "source_excerpt": "\\mathbf{P}=\\begin{pmatrix}{{{1}}}&{{{0}}}&{{{0}}} \\\\{{{0.25}}}&{{{0.50}}}&{{{0.25}}} \\\\{{{0}}}&{{{0}}}&{{{1}}}\\end{pmatrix} $$ Although the numerical values for the elements of P can be obtained directly from Equation 2.1, for this simple example they can also be arrived at intuitively. For example, the elements in the first row of P denote the probabilities that the population will be in states j = 0, 1, 2 in gener…",
+      "summary_status": "llm-validated",
+      "usage_count": 1,
+      "explicit_asset_refs": 2,
+      "priority_score": 150,
+      "validated_by_llm": true,
+      "concept_title": "Wright-Fisher Model and Transition Matrices",
+      "nav_label": "Chapter 2 · WF Model",
+      "evidence_summary": "当前附录引入马尔可夫链，而章节2的方程2.1和例2.1分别提供了转移矩阵和具体例子，直接对应马尔可夫链的核心概念。"
+    },
+    {
+      "id": "prereq-evolution_appendix2",
+      "title": "Appendix 2 · 贝叶斯分析基础",
+      "source_chapter_id": "Evolution_appendix2",
+      "used_in_sections": [
+        "Evolution_appendix3_006",
+        "Evolution_appendix3_010",
+        "Evolution_appendix3_017"
+      ],
+      "why_needed": "Gibbs采样器依赖共轭先验（如Table A2.2所示），需要理解后验分布推导才能构建采样器。",
+      "key_points": [
+        "共轭先验简化后验计算，是Gibbs采样器的基础",
+        "后验分布公式（如Equation A2.30a）用于推导条件分布",
+        "理解先验、似然和后验的关系"
+      ],
+      "source_links": [
+        {
+          "chapter_id": "Evolution_appendix2",
+          "label": "Equation A2.30a",
+          "markdown_path": "/data/textbook/Evolution_appendix2_textbook.md",
+          "anchor": "evolution_appendix2_015",
+          "section_title": "POSTERIOR DISTRIBUTIONS UNDER NORMALITY ASSUMPTIONS / Gaussian Likelihood With Unknown Variance: Scaled Inverse- $ \\chi^{2} $ Priors",
+          "ref_type": "equation",
+          "ref_id": "A2.30a",
+          "book_hint": "",
+          "link_scope": "current-book",
+          "excerpt": "u $ (i.e., their values are known), $ S^2 $ is a constant. Further observe that, as a function of the unknown variance, $ \\sigma^2 $, the likelihood is proportional to a scaled inverse $ \\chi^2 $ distribution (Equation A2.30a). If we take the prior for the unknown variance also as a scaled inverse $ \\chi^2 $ with hyperparameters $ \\nu 0 $ and $ \\sigma 0^2 $, the posterior becomes $$ \\begin{align }p(\\sigma^{2}\\mid\\ma…"
+        },
+        {
+          "chapter_id": "Evolution_appendix2",
+          "label": "Table A2.2",
+          "markdown_path": "/data/textbook/Evolution_appendix2_textbook.md",
+          "anchor": "evolution_appendix2_018",
+          "section_title": "Appendix: Introduction / CONJUGATE PRIORS",
+          "ref_type": "table",
+          "ref_id": "A2.2",
+          "book_hint": "",
+          "link_scope": "current-book",
+          "excerpt": "density that conjugates the likelihood allows us to develop analytic expressions of the posterior density. As we will see in Appendix 3, this is critical in developing Gibbs samplers for problems of interest. Table A2.2 summarizes the conjugate priors for several common likelihood functions, with the various families of distributions discussed below. ---"
+        }
+      ],
+      "source_excerpt": "u $ (i.e., their values are known), $ S^2 $ is a constant. Further observe that, as a function of the unknown variance, $ \\sigma^2 $, the likelihood is proportional to a scaled inverse $ \\chi^2 $ distribution (Equation A2.30a). If we take the prior for the unknown variance also as a scaled inverse $ \\chi^2 $ with hyperparameters $ \\nu 0 $ and $ \\sigma 0^2 $, the posterior becomes $$ \\begin{align }p(\\sigma^{2}\\mid\\ma…",
+      "summary_status": "llm-validated",
+      "usage_count": 3,
+      "explicit_asset_refs": 5,
+      "priority_score": 120,
+      "validated_by_llm": true,
+      "concept_title": "Appendix 2 · 贝叶斯分析基础",
+      "nav_label": "贝叶斯基础",
+      "evidence_summary": "当前章节明确引用Table A2.2，说明共轭先验对Gibbs采样器的重要性。"
+    }
+  ],
+  "llm": {
+    "requests_total": 7,
+    "cache_hits": 0,
+    "cache_writes": 7,
+    "remote_calls": 7,
+    "budget_rejections": 0,
+    "prompt_chars_sent": 21949,
+    "response_chars_received": 2086,
+    "api_prompt_tokens": 5564,
+    "api_completion_tokens": 3626,
+    "api_total_tokens": 9190,
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "cache_enabled": true,
+    "cache_dir": "D:\\大学资料\\大二\\LLM-Agent科学文献系统知识库处理\\tmp\\llm_cache",
+    "max_remote_calls": 0,
+    "max_prompt_chars_total": 0,
+    "max_response_chars_total": 0,
+    "validated_only": true,
+    "preserved_from_previous_build": true
+  }
+}

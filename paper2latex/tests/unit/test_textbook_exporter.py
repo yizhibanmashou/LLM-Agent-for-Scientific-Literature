@@ -5,6 +5,7 @@ from pathlib import Path
 from uuid import uuid4
 
 from textbook_exporter import export_textbooks
+from textbook_exporter.exporter import canonicalize_display_math
 
 
 TEST_RUNTIME_ROOT = Path(__file__).resolve().parents[3] / "tmp" / "test_runtime" / "textbook_exporter"
@@ -23,6 +24,17 @@ def write_json(path: Path, payload: dict) -> None:
 
 
 class TextbookExporterTests(unittest.TestCase):
+    def test_canonicalizes_display_math_without_absorbing_inline_prose(self):
+        source = "Before $ p=1 $. Given by $$ x=y $$ where $ y=1 $. $$ a=b $$ $$ c=d $$"
+        rendered = canonicalize_display_math(source)
+        self.assertIn("Before $ p=1 $. Given by\n\n$$\nx=y\n$$\n\nwhere $ y=1 $.", rendered)
+        self.assertIn("$$\na=b\n$$\n\n$$\nc=d\n$$", rendered)
+        self.assertNotIn("$$ $$", rendered)
+
+    def test_canonicalizer_preserves_unclosed_delimiter_for_validation(self):
+        source = "Text before $$ x=y without a close"
+        self.assertEqual(canonicalize_display_math(source), source)
+
     def test_exports_chapter_markdown_with_expanded_assets_and_chapter_scoped_inline_table(self):
         root = make_test_workspace("expanded_assets")
         structured_dir = root / "structured"
@@ -142,9 +154,12 @@ class TextbookExporterTests(unittest.TestCase):
         self.assertIn("## chapter25_002 · Section A / Subsection B", output)
         self.assertIn("**[推导 Derivation]**", output)
         self.assertNotIn("> **Formula (25.1)** · `25.1` · source: `chapter25_block_001`", output)
-        self.assertIn("Opening text [[SEE_FORMULA:25.1]] cites [[SEE_TABLE:25.1]].", output)
-        self.assertIn("cites [[SEE_TABLE:25.1]].", output)
-        self.assertIn("It also cites [[SEE_EXAMPLE:25.1]].", output)
+        self.assertIn(
+            "Opening text *(See Equation 25.1.)* cites *[See Table 25.1 at the end of this section.]*.",
+            output,
+        )
+        self.assertNotIn("[[SEE_TABLE:25.1]]", output)
+        self.assertIn("It also cites *(See Example 25.1.)*.", output)
         self.assertIn("> **Inline Table 2** · `inline_2` · page 6 · source: `chapter25_001`", output)
         self.assertIn("> Correct chapter inline table", output)
         self.assertIn("Population | Value", output)
@@ -225,7 +240,8 @@ class TextbookExporterTests(unittest.TestCase):
 
         output = (out_dir / "chapter2_textbook.md").read_text(encoding="utf-8")
         self.assertIn("Opening cites", output)
-        self.assertIn("[[SEE_TABLE:2.1]]", output)
+        self.assertIn("*[See Table 2.1 at the end of this section.]*", output)
+        self.assertNotIn("[[SEE_TABLE:2.1]]", output)
         self.assertIn("and expands", output)
         self.assertIn("> **Inline Table 1**", output)
         self.assertEqual(output.count("> **Table 2.1**"), 1)
@@ -554,8 +570,8 @@ class TextbookExporterTests(unittest.TestCase):
         export_textbooks(structured_dir, out_dir, chapters={"chapter6"})
 
         output = (out_dir / "chapter6_textbook.md").read_text(encoding="utf-8")
-        self.assertIn("Plain prose cites [[SEE_EXAMPLE:6.1]].", output)
-        self.assertIn("[[SEE_EXAMPLE:6.1]]", output)
+        self.assertIn("Plain prose cites *(See Example 6.1.)*.", output)
+        self.assertNotIn("[[SEE_EXAMPLE:6.1]]", output)
         self.assertNotIn("> **Example 6.1**", output)
 
     def test_example_block_expands_example_placeholder(self):

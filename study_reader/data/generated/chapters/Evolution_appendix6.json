@@ -1,0 +1,915 @@
+{
+  "sections": [
+    {
+      "id": "Evolution_appendix6_section_001",
+      "title": "Appendix 6 · Appendix 6 / Derivatives of Vectors and Vector-valued Functions",
+      "nav_label": "Derivatives of Vectors and Vector-valued Functions",
+      "raw_title": "Appendix 6 · Appendix 6 / Derivatives of Vectors and Vector-valued Functions",
+      "level": 1,
+      "depth": 0,
+      "anchor": "evolution_appendix6_section_001",
+      "text_preview": ""
+    },
+    {
+      "id": "Evolution_appendix6_001",
+      "title": "Appendix: Introduction",
+      "nav_label": "Appendix: Introduction",
+      "raw_title": "Evolution_appendix6_001 · Appendix: Introduction",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix6_001",
+      "text_preview": "Mathematics is a collection of cheap tricks and dirty jokes. Lipman Bers Quantitative genetics often deals with vector-valued functions, and here we provide a brief review of the calculus of such functions. In particular, we review common expressions for derivatives of vectors and vector-valued functions, introduce th…"
+    },
+    {
+      "id": "Evolution_appendix6_002",
+      "title": "Appendix: Introduction / DERIVATIVES OF VECTORS AND VECTOR-VALUED FUNCTIONS",
+      "nav_label": "DERIVATIVES OF VECTORS AND VECTOR-VALUED FUNCTIONS",
+      "raw_title": "Evolution_appendix6_002 · Appendix: Introduction / DERIVATIVES OF VECTORS AND VECTOR-VALUED FUNCTIONS",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix6_002",
+      "text_preview": "Suppose we let $f(\\mathbf{x})$ be a scalar (single-dimension) function of a column vector, $\\mathbf{x} = (x 1, \\cdots, x n)^T$, of $n$ variables. The gradient (or gradient vector) of $f$ with respect to $\\mathbf{x}$ is obtained by taking partial derivatives of the function with respect to each variable. In matrix nota…"
+    },
+    {
+      "id": "Evolution_appendix6_005",
+      "title": "Appendix: Introduction / THE HESSIAN MATRIX, LOCAL MAXIMA/MINIMA, AND MULTIDIMENSIONAL TAYLOR SERIES",
+      "nav_label": "MINIMA, AND MULTIDIMENSIONAL TAYLOR SERIES",
+      "raw_title": "Evolution_appendix6_005 · Appendix: Introduction / THE HESSIAN MATRIX, LOCAL MAXIMA/MINIMA, AND MULTIDIMENSIONAL TAYLOR SERIES",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix6_005",
+      "text_preview": "In univariate calculus, the local extrema of a function occur when its slope (first derivative) is zero. The multivariate extension is that the gradient vector is zero, so the slope of the function with respect to all variables is zero. A point $ x {e} $ where this occurs is called a stationary or equilibrium point, a…"
+    },
+    {
+      "id": "Evolution_appendix6_006",
+      "title": "Appendix: Introduction / OPTIMIZATION UNDER CONSTRAINTS",
+      "nav_label": "OPTIMIZATION UNDER CONSTRAINTS",
+      "raw_title": "Evolution_appendix6_006 · Appendix: Introduction / OPTIMIZATION UNDER CONSTRAINTS",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix6_006",
+      "text_preview": "Occasionally, we wish to find the maximum or minimum of a function subject to a constraint. The solution is to use Lagrange multipliers. Suppose we wish to find the extrema of a function, $ f(\\mathbf{x}) $, subject to the constraint that $ h(\\mathbf{x}) = c $. We first construct a new function by considering $$ g(\\mat…"
+    }
+  ],
+  "assets": [
+    {
+      "kind": "example",
+      "id": "A6.1",
+      "anchor": "example-a6.1",
+      "label": "Example A6.1",
+      "section_id": "Evolution_appendix6_002",
+      "excerpt": "Example A6.1 · ref: A6.1 · source: Evolution appendix6 002.json · blocks 2–11 Example A6.1. For an $ n \\times 1 $ column vector, x, compute the gradient for $$ \\begin{align }f(\\mathbf{x})=\\sum\\limits {i=1}^n x i^2=\\mathbf{x}^T\\mathbf{x}\\end{align } $$ Because $\\partial f/\\partial x i = 2x i$, the gradient vector is just $\\nabla {\\mathbf{x}}[f(\\mathbf{x})] = 2\\mathbf{x}$. At the point $\\mathbf{x} o$, $\\mathbf{x}^T \\mathbf{x}$ locally increases most rapidly if we change $\\math…"
+    },
+    {
+      "kind": "example",
+      "id": "A6.2",
+      "anchor": "example-a6.2",
+      "label": "Example A6.2",
+      "section_id": "Evolution_appendix6_002",
+      "excerpt": "Example A6.2 · ref: A6.2 · source: Evolution appendix6 002.json · blocks 12–12 Example A6.2. The density function $ \\varphi(\\mathbf{x}, \\boldsymbol{\\mu}, \\mathbf{V}) $ for a multivariate normal (MVN) distribution returns a scalar value and is a function of the data vector, $ \\mathbf{x} $, the vector of means, $ \\boldsymbol{\\mu} $, and the covariance matrix, $ \\mathbf{V} $, $$ \\varphi(\\mathbf{x},\\boldsymbol{\\mu},\\mathbf{V})=a\\exp\\left(-\\frac{1}{2}\\cdot(\\mathbf{x}-\\boldsymbol{…"
+    },
+    {
+      "kind": "example",
+      "id": "A6.3",
+      "anchor": "example-a6.3",
+      "label": "Example A6.3",
+      "section_id": "Evolution_appendix6_002",
+      "excerpt": "Example A6.3 · ref: A6.3 · source: Evolution appendix6 002.json · blocks 4–4 Example A6.3. Recall (Equations 13.27c and 30.5a) that when the distribution of phenotypes is multivariate normal, the directional selection gradient, $ \\beta = \\mathbf{P}^{-1}\\mathbf{S} $, equals the gradient of log mean fitness with respect to the vector of trait means, $ \\nabla \\mu[\\ln \\widetilde{W}(\\mu)] $ (Lande 1979a). Hence, the increase in the mean population fitness is maximized if mean cha…"
+    },
+    {
+      "kind": "example",
+      "id": "A6.4",
+      "anchor": "example-a6.4",
+      "label": "Example A6.4",
+      "section_id": "Evolution_appendix6_002",
+      "excerpt": "Example A6.4 · ref: A6.4 · source: Evolution appendix6 002.json · blocks 5–5 Example A6.4. Consider the ordinary least-squares solution for the general linear model, $ \\mathbf{y} = \\mathbf{X} \\boldsymbol{\\beta} + \\mathbf{e} $, where $ \\beta $ is the vector that minimizes the sum of squared residual errors, $ \\sum e i^2 $. In matrix form, this sum becomes $$ \\begin{aligned}\\sum {i=1}^{n}e {i}^{2}&=\\mathbf{e}^{T}\\mathbf{e}=(\\mathbf{y}-\\mathbf{X}\\boldsymbol{\\beta})^{T}(\\mathbf{…"
+    },
+    {
+      "kind": "example",
+      "id": "A6.5",
+      "anchor": "example-a6.5",
+      "label": "Example A6.5",
+      "section_id": "Evolution_appendix6_002",
+      "excerpt": "Example A6.5 · ref: A6.5 · source: Evolution appendix6 002.json · blocks 6–6 Example A6.5. Here we present one derivation of Henderson's mixed-model equations (Equation 19.4). Consider the mixed model $ \\mathbf{y} = \\mathbf{X}\\beta + \\mathbf{Z}\\mathbf{u} + \\mathbf{e} $, where $ \\mathbf{e} \\sim \\text{MVN}(0, \\mathbf{R}) $, $ \\mathbf{u} \\sim \\text{MVN}(0, \\mathbf{G}) $, and $ \\mathbf{e} $ and $ \\mathbf{u} $ are independent (Equation 19.1). If we recall the probability density…"
+    },
+    {
+      "kind": "example",
+      "id": "A6.6",
+      "anchor": "example-a6.6",
+      "label": "Example A6.6",
+      "section_id": "Evolution_appendix6_005",
+      "excerpt": "Example A6.6 · ref: A6.6 · source: Evolution appendix6 005.json · blocks 3–6 Example A6.6. Compute the Hessian matrix for the multivariate normal distribution with respect to the data vector x. If we recall from Equation A6.2a that $ \\nabla {\\mathbf{x}}[\\varphi(\\mathbf{x}, \\boldsymbol{\\mu})] = -\\varphi(\\mathbf{x}, \\boldsymbol{\\mu}) \\cdot \\mathbf{V}^{-1}(\\mathbf{x} - \\boldsymbol{\\mu}) $, we have $$ \\begin{aligned}\\mathbf{H} {\\mathbf{X}}\\left[\\varphi(\\mathbf{x},\\boldsymbol{\\mu…"
+    },
+    {
+      "kind": "example",
+      "id": "A6.7",
+      "anchor": "example-a6.7",
+      "label": "Example A6.7",
+      "section_id": "Evolution_appendix6_005",
+      "excerpt": "Example A6.7 · ref: A6.7 · source: Evolution appendix6 005.json · blocks 7–10 Example A6.7. Consider the following demonstration (due to Lande 1979a) that the mean population fitness increases. A round of selection changes the current vector of means from $ \\mu $ to $ \\mu + \\Delta\\mu $. Expanding the log of mean fitness in a Taylor series around the current population mean gives the change in mean population fitness as $$ \\begin{align }\\Delta\\ln\\overline{W}(\\mu)&=\\ln\\overlin…"
+    },
+    {
+      "kind": "example",
+      "id": "A6.8",
+      "anchor": "example-a6.8",
+      "label": "Example A6.8",
+      "section_id": "Evolution_appendix6_006",
+      "excerpt": "Example A6.8 · ref: A6.8 · source: Evolution appendix6 006.json · blocks 2–7 Example A6.8. A standard approach for selection on multiple traits is to use a selection index, I, which is a new (univariate) trait that is a linear combination of n characters $ \\mathbf{z} = (z 1, z 2, \\cdots, z n)^T $, with $$ I=\\mathbf{b}^{T}\\mathbf{z}=\\sum {k=1}^{n}b {k}z {k} $$ (A6.11a) Notice that what matters for the weights are their relative proportions, as, if we were to multiply all of t…"
+    },
+    {
+      "kind": "formula",
+      "id": "A6.1a",
+      "anchor": "formula-a6.1a",
+      "label": "Formula (A6.1a)",
+      "section_id": "",
+      "latex": "\\nabla_{\\mathbf{x}}\\left[\\mathbf{a}^{T}\\mathbf{x}\\right]=\\nabla_{\\mathbf{x}}\\left[\\mathbf{x}^{T}\\mathbf{a}\\right]=\\mathbf{a}",
+      "latex_render": "\\nabla_{\\mathbf{x}}\\left[\\mathbf{a}^{T}\\mathbf{x}\\right]=\\nabla_{\\mathbf{x}}\\left[\\mathbf{x}^{T}\\mathbf{a}\\right]=\\mathbf{a}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A6.1b",
+      "anchor": "formula-a6.1b",
+      "label": "Formula (A6.1b)",
+      "section_id": "",
+      "latex": "\\nabla_{\\mathbf{x}}\\left[\\mathbf{A}\\mathbf{x}\\right]=\\mathbf{A}^{T}",
+      "latex_render": "\\nabla_{\\mathbf{x}}\\left[\\mathbf{A}\\mathbf{x}\\right]=\\mathbf{A}^{T}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A6.1c",
+      "anchor": "formula-a6.1c",
+      "label": "Formula (A6.1c)",
+      "section_id": "",
+      "latex": "\\nabla_{\\mathbf{x}}\\left[\\mathbf{x}^{T}\\mathbf{A}\\mathbf{x}\\right]=2\\mathbf{A}\\mathbf{x}",
+      "latex_render": "\\nabla_{\\mathbf{x}}\\left[\\mathbf{x}^{T}\\mathbf{A}\\mathbf{x}\\right]=2\\mathbf{A}\\mathbf{x}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A6.1d",
+      "anchor": "formula-a6.1d",
+      "label": "Formula (A6.1d)",
+      "section_id": "",
+      "latex": "\\nabla_{\\mathbf{x}}\\left[\\left(\\mathbf{x}-\\mathbf{a}\\right)^{T}\\mathbf{A}(\\mathbf{x}-\\mathbf{a})\\right]=2\\mathbf{A}(\\mathbf{x}-\\mathbf{a})",
+      "latex_render": "\\nabla_{\\mathbf{x}}\\left[\\left(\\mathbf{x}-\\mathbf{a}\\right)^{T}\\mathbf{A}(\\mathbf{x}-\\mathbf{a})\\right]=2\\mathbf{A}(\\mathbf{x}-\\mathbf{a})",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A6.1e",
+      "anchor": "formula-a6.1e",
+      "label": "Formula (A6.1e)",
+      "section_id": "",
+      "latex": "\\nabla_{\\mathbf{x}}\\left[\\left(\\mathbf{a}-\\mathbf{x}\\right)^{T}\\mathbf{A}(\\mathbf{a}-\\mathbf{x})\\right]=-2\\mathbf{A}(\\mathbf{a}-\\mathbf{x})",
+      "latex_render": "\\nabla_{\\mathbf{x}}\\left[\\left(\\mathbf{a}-\\mathbf{x}\\right)^{T}\\mathbf{A}(\\mathbf{a}-\\mathbf{x})\\right]=-2\\mathbf{A}(\\mathbf{a}-\\mathbf{x})",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A6.1f",
+      "anchor": "formula-a6.1f",
+      "label": "Formula (A6.1f)",
+      "section_id": "",
+      "latex": "\\nabla_{\\mathbf{x}}\\left[\\mathbf{x}^{T}\\mathbf{x}\\right]=\\nabla_{\\mathbf{x}}\\left[\\mathbf{x}^{T}\\mathbf{I}\\mathbf{x}\\right]=2\\mathbf{I}\\mathbf{x}=2\\mathbf{x}",
+      "latex_render": "\\nabla_{\\mathbf{x}}\\left[\\mathbf{x}^{T}\\mathbf{x}\\right]=\\nabla_{\\mathbf{x}}\\left[\\mathbf{x}^{T}\\mathbf{I}\\mathbf{x}\\right]=2\\mathbf{I}\\mathbf{x}=2\\mathbf{x}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A6.1g",
+      "anchor": "formula-a6.1g",
+      "label": "Formula (A6.1g)",
+      "section_id": "",
+      "latex": "\\nabla_{\\mathbf{x}}\\left[\\exp\\{f(\\mathbf{x})\\}\\right]=\\exp[f(\\mathbf{x})]\\nabla_{\\mathbf{x}}\\left[f(\\mathbf{x})\\right]",
+      "latex_render": "\\nabla_{\\mathbf{x}}\\left[\\exp\\{f(\\mathbf{x})\\}\\right]=\\exp[f(\\mathbf{x})]\\nabla_{\\mathbf{x}}\\left[f(\\mathbf{x})\\right]",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A6.1h",
+      "anchor": "formula-a6.1h",
+      "label": "Formula (A6.1h)",
+      "section_id": "",
+      "latex": "\\nabla_{\\mathbf{x}}\\left[\\ln[f(\\mathbf{x})]\\right]=\\frac{1}{f(\\mathbf{x})}\\cdot\\nabla_{\\mathbf{x}}\\left[f(\\mathbf{x})\\right]",
+      "latex_render": "\\nabla_{\\mathbf{x}}\\left[\\ln[f(\\mathbf{x})]\\right]=\\frac{1}{f(\\mathbf{x})}\\cdot\\nabla_{\\mathbf{x}}\\left[f(\\mathbf{x})\\right]",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A6.1i",
+      "anchor": "formula-a6.1i",
+      "label": "Formula (A6.1i)",
+      "section_id": "",
+      "latex": "\\nabla_{\\mathbf{X}}\\left[f(\\mathbf{x})g(\\mathbf{x})\\right]=\\nabla_{\\mathbf{X}}\\left[f(\\mathbf{x})\\right]g(\\mathbf{x})+f(\\mathbf{x})\\nabla_{\\mathbf{X}}\\left[g(\\mathbf{x})\\right]",
+      "latex_render": "\\nabla_{\\mathbf{X}}\\left[f(\\mathbf{x})g(\\mathbf{x})\\right]=\\nabla_{\\mathbf{X}}\\left[f(\\mathbf{x})\\right]g(\\mathbf{x})+f(\\mathbf{x})\\nabla_{\\mathbf{X}}\\left[g(\\mathbf{x})\\right]",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A6.2a",
+      "anchor": "formula-a6.2a",
+      "label": "Formula (A6.2a)",
+      "section_id": "",
+      "latex": "\\nabla_{\\mathbf{X}}\\left[\\varphi(\\mathbf{x},\\boldsymbol{\\mu},\\mathbf{V})\\right]=-\\varphi(\\mathbf{x},\\boldsymbol{\\mu},\\mathbf{V})\\cdot\\mathbf{V}^{-1}\\left(\\mathbf{x}-\\boldsymbol{\\mu}\\right)",
+      "latex_render": "\\nabla_{\\mathbf{X}}\\left[\\varphi(\\mathbf{x},\\boldsymbol{\\mu},\\mathbf{V})\\right]=-\\varphi(\\mathbf{x},\\boldsymbol{\\mu},\\mathbf{V})\\cdot\\mathbf{V}^{-1}\\left(\\mathbf{x}-\\boldsymbol{\\mu}\\right)",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A6.2b",
+      "anchor": "formula-a6.2b",
+      "label": "Formula (A6.2b)",
+      "section_id": "",
+      "latex": "\\nabla_{\\boldsymbol{\\mu}}\\left[\\varphi(\\mathbf{x},\\boldsymbol{\\mu},\\mathbf{V})\\right]=\\varphi(\\mathbf{x},\\boldsymbol{\\mu},\\mathbf{V})\\cdot\\mathbf{V}^{-1}\\left(\\mathbf{x}-\\boldsymbol{\\mu}\\right)",
+      "latex_render": "\\nabla_{\\boldsymbol{\\mu}}\\left[\\varphi(\\mathbf{x},\\boldsymbol{\\mu},\\mathbf{V})\\right]=\\varphi(\\mathbf{x},\\boldsymbol{\\mu},\\mathbf{V})\\cdot\\mathbf{V}^{-1}\\left(\\mathbf{x}-\\boldsymbol{\\mu}\\right)",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A6.2c",
+      "anchor": "formula-a6.2c",
+      "label": "Formula (A6.2c)",
+      "section_id": "",
+      "latex": "\\nabla\\mu[\\ln\\overline{W}(\\mu)]=\\overline{W}^{-1}\\nabla\\mu[\\overline{W}(\\mu)]",
+      "latex_render": "\\nabla\\mu[\\ln\\overline{W}(\\mu)]=\\overline{W}^{-1}\\nabla\\mu[\\overline{W}(\\mu)]",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A6.2d",
+      "anchor": "formula-a6.2d",
+      "label": "Formula (A6.2d)",
+      "section_id": "",
+      "latex": "\\nabla\\boldsymbol{\\mu}\\left[\\varphi(\\mathbf{z},\\boldsymbol{\\mu})\\right]=\\varphi(\\mathbf{z},\\boldsymbol{\\mu})\\mathbf{P}^{-1}(\\mathbf{z}-\\boldsymbol{\\mu})",
+      "latex_render": "\\nabla\\boldsymbol{\\mu}\\left[\\varphi(\\mathbf{z},\\boldsymbol{\\mu})\\right]=\\varphi(\\mathbf{z},\\boldsymbol{\\mu})\\mathbf{P}^{-1}(\\mathbf{z}-\\boldsymbol{\\mu})",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A6.2f",
+      "anchor": "formula-a6.2f",
+      "label": "Formula (A6.2f)",
+      "section_id": "",
+      "latex": "\\nabla\\mu[\\ln\\overline{W}(\\mu)]=\\beta+\\overline{W}^{-1}\\int\\nabla\\mu\\left[W(\\mathbf{z})\\right]\\varphi(\\mathbf{z},\\mu)\\mathrm{d}\\mathbf{z}",
+      "latex_render": "\\nabla\\mu[\\ln\\overline{W}(\\mu)]=\\beta+\\overline{W}^{-1}\\int\\nabla\\mu\\left[W(\\mathbf{z})\\right]\\varphi(\\mathbf{z},\\mu)\\mathrm{d}\\mathbf{z}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A6.3a",
+      "anchor": "formula-a6.3a",
+      "label": "Formula (A6.3a)",
+      "section_id": "",
+      "latex": "\\begin{aligned}\\sum_{i=1}^{n}e_{i}^{2}&=\\mathbf{e}^{T}\\mathbf{e}=(\\mathbf{y}-\\mathbf{X}\\boldsymbol{\\beta})^{T}(\\mathbf{y}-\\mathbf{X}\\boldsymbol{\\beta})\\\\&=\\mathbf{y}^{T}\\mathbf{y}-\\boldsymbol{\\beta}^{T}\\mathbf{X}^{T}\\mathbf{y}-\\mathbf{y}^{T}\\mathbf{X}\\boldsymbol{\\beta}+\\boldsymbol{\\beta}^{T}\\mathbf{X}^{T}\\mathbf{X}\\boldsymbol{\\beta}\\\\&=\\mathbf{y}^{T}\\mathbf{y}-2\\boldsymbol{\\beta}^{T}\\mathbf{X}^{T}\\mathbf{y}+\\boldsymbol{\\beta}^{T}\\mathbf{X}^{T}\\mathbf{X}\\boldsymbol{\\beta}\\end{aligned}",
+      "latex_render": "\\begin{aligned}\\sum_{i=1}^{n}e_{i}^{2}&=\\mathbf{e}^{T}\\mathbf{e}=(\\mathbf{y}-\\mathbf{X}\\boldsymbol{\\beta})^{T}(\\mathbf{y}-\\mathbf{X}\\boldsymbol{\\beta})\\\\&=\\mathbf{y}^{T}\\mathbf{y}-\\boldsymbol{\\beta}^{T}\\mathbf{X}^{T}\\mathbf{y}-\\mathbf{y}^{T}\\mathbf{X}\\boldsymbol{\\beta}+\\boldsymbol{\\beta}^{T}\\mathbf{X}^{T}\\mathbf{X}\\boldsymbol{\\beta}\\\\&=\\mathbf{y}^{T}\\mathbf{y}-2\\boldsymbol{\\beta}^{T}\\mathbf{X}^{T}\\mathbf{y}+\\boldsymbol{\\beta}^{T}\\mathbf{X}^{T}\\mathbf{X}\\boldsymbol{\\beta}\\end{aligned}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A6.3b",
+      "anchor": "formula-a6.3b",
+      "label": "Formula (A6.3b)",
+      "section_id": "",
+      "latex": "\\boldsymbol{\\beta}^{T}\\mathbf{X}^{T}\\mathbf{y}=\\left(\\boldsymbol{\\beta}^{T}\\mathbf{X}^{T}\\mathbf{y}\\right)^{T}=\\mathbf{y}^{T}\\mathbf{X}\\boldsymbol{\\beta}",
+      "latex_render": "\\boldsymbol{\\beta}^{T}\\mathbf{X}^{T}\\mathbf{y}=\\left(\\boldsymbol{\\beta}^{T}\\mathbf{X}^{T}\\mathbf{y}\\right)^{T}=\\mathbf{y}^{T}\\mathbf{X}\\boldsymbol{\\beta}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A6.3c",
+      "anchor": "formula-a6.3c",
+      "label": "Formula (A6.3c)",
+      "section_id": "",
+      "latex": "\\nabla_{\\boldsymbol{\\beta}}\\left[\\mathbf{e}^{T}\\mathbf{e}\\right]=\\frac{\\partial\\mathbf{e}^{T}\\mathbf{e}}{\\partial\\boldsymbol{\\beta}}=-2\\mathbf{X}^{T}\\mathbf{y}+2\\mathbf{X}^{T}\\mathbf{X}\\boldsymbol{\\beta}",
+      "latex_render": "\\nabla_{\\boldsymbol{\\beta}}\\left[\\mathbf{e}^{T}\\mathbf{e}\\right]=\\frac{\\partial\\mathbf{e}^{T}\\mathbf{e}}{\\partial\\boldsymbol{\\beta}}=-2\\mathbf{X}^{T}\\mathbf{y}+2\\mathbf{X}^{T}\\mathbf{X}\\boldsymbol{\\beta}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A6.3d",
+      "anchor": "formula-a6.3d",
+      "label": "Formula (A6.3d)",
+      "section_id": "",
+      "latex": "\\boldsymbol{\\beta}=\\left(\\mathbf{X}^{T}\\mathbf{X}\\right)^{-1}\\mathbf{X}^{T}\\mathbf{y}",
+      "latex_render": "\\boldsymbol{\\beta}=\\left(\\mathbf{X}^{T}\\mathbf{X}\\right)^{-1}\\mathbf{X}^{T}\\mathbf{y}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A6.4a",
+      "anchor": "formula-a6.4a",
+      "label": "Formula (A6.4a)",
+      "section_id": "",
+      "latex": "p(\\mathbf{e})\\propto|\\mathbf{R}|^{-1/2}\\cdot\\exp\\left[-\\frac{1}{2}\\mathbf{e}^{T}\\mathbf{R}^{-1}\\mathbf{e}\\right]\\quad and\\quad p(\\mathbf{u})\\propto|\\mathbf{G}|^{-1/2}\\cdot\\exp\\left[-\\frac{1}{2}\\mathbf{u}^{T}\\mathbf{G}^{-1}\\mathbf{u}\\right]",
+      "latex_render": "p(\\mathbf{e})\\propto|\\mathbf{R}|^{-1/2}\\cdot\\exp\\left[-\\frac{1}{2}\\mathbf{e}^{T}\\mathbf{R}^{-1}\\mathbf{e}\\right]\\quad and\\quad p(\\mathbf{u})\\propto|\\mathbf{G}|^{-1/2}\\cdot\\exp\\left[-\\frac{1}{2}\\mathbf{u}^{T}\\mathbf{G}^{-1}\\mathbf{u}\\right]",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A6.4b",
+      "anchor": "formula-a6.4b",
+      "label": "Formula (A6.4b)",
+      "section_id": "",
+      "latex": "\\left|\\mathbf{R}\\right|^{-1/2}\\left|\\mathbf{G}\\right|^{-1/2}\\cdot\\exp\\left[-\\frac{1}{2}\\left(\\mathbf{y}-\\mathbf{X}\\boldsymbol{\\beta}-\\mathbf{Z}\\mathbf{u}\\right)^{T}\\mathbf{R}^{-1}\\left(\\mathbf{y}-\\mathbf{X}\\boldsymbol{\\beta}-\\mathbf{Z}\\mathbf{u}\\right)-\\frac{1}{2}\\mathbf{u}^{T}\\mathbf{G}^{-1}\\mathbf{u}\\right]",
+      "latex_render": "\\left|\\mathbf{R}\\right|^{-1/2}\\left|\\mathbf{G}\\right|^{-1/2}\\cdot\\exp\\left[-\\frac{1}{2}\\left(\\mathbf{y}-\\mathbf{X}\\boldsymbol{\\beta}-\\mathbf{Z}\\mathbf{u}\\right)^{T}\\mathbf{R}^{-1}\\left(\\mathbf{y}-\\mathbf{X}\\boldsymbol{\\beta}-\\mathbf{Z}\\mathbf{u}\\right)-\\frac{1}{2}\\mathbf{u}^{T}\\mathbf{G}^{-1}\\mathbf{u}\\right]",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A6.4c",
+      "anchor": "formula-a6.4c",
+      "label": "Formula (A6.4c)",
+      "section_id": "",
+      "latex": "\\left(-\\frac{1}{2}\\right)\\left[\\ln(|\\mathbf{R}|)+\\ln(|\\mathbf{G}|)+(\\mathbf{y}-\\mathbf{X}\\boldsymbol{\\beta}-\\mathbf{Z}\\mathbf{u})^{T}\\mathbf{R}^{-1}(\\mathbf{y}-\\mathbf{X}\\boldsymbol{\\beta}-\\mathbf{Z}\\mathbf{u})+\\mathbf{u}^{T}\\mathbf{G}^{-1}\\mathbf{u}\\right]",
+      "latex_render": "\\left(-\\frac{1}{2}\\right)\\left[\\ln(|\\mathbf{R}|)+\\ln(|\\mathbf{G}|)+(\\mathbf{y}-\\mathbf{X}\\boldsymbol{\\beta}-\\mathbf{Z}\\mathbf{u})^{T}\\mathbf{R}^{-1}(\\mathbf{y}-\\mathbf{X}\\boldsymbol{\\beta}-\\mathbf{Z}\\mathbf{u})+\\mathbf{u}^{T}\\mathbf{G}^{-1}\\mathbf{u}\\right]",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A6.4e",
+      "anchor": "formula-a6.4e",
+      "label": "Formula (A6.4e)",
+      "section_id": "",
+      "latex": "\\left(\\begin{array}{c}\\frac{\\partial\\ell}{\\partial\\boldsymbol{\\beta}}\\\\ \\frac{\\partial\\ell}{\\partial\\mathbf{u}}\\end{array}\\right)=\\left(\\begin{array}{c}\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{y}-\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{X}\\boldsymbol{\\beta}-\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{Z}\\mathbf{u}\\\\ \\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{y}-\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{X}\\boldsymbol{\\beta}-\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{Z}\\mathbf{u}+\\mathbf{G}^{-1}\\mathbf{u}\\end{array}\\right)",
+      "latex_render": "\\left(\\begin{array}{c}\\frac{\\partial\\ell}{\\partial\\boldsymbol{\\beta}}\\\\ \\frac{\\partial\\ell}{\\partial\\mathbf{u}}\\end{array}\\right)=\\left(\\begin{array}{c}\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{y}-\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{X}\\boldsymbol{\\beta}-\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{Z}\\mathbf{u}\\\\ \\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{y}-\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{X}\\boldsymbol{\\beta}-\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{Z}\\mathbf{u}+\\mathbf{G}^{-1}\\mathbf{u}\\end{array}\\right)",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A6.4f",
+      "anchor": "formula-a6.4f",
+      "label": "Formula (A6.4f)",
+      "section_id": "",
+      "latex": "\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{y}\\\\\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{y}\\end{pmatrix}=\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{X}\\widehat{\\boldsymbol{\\beta}}+\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{Z}\\widehat{\\mathbf{u}}\\\\\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{X}\\widehat{\\boldsymbol{\\beta}}+\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{Z}\\widehat{\\mathbf{u}}+\\mathbf{G}^{-1}\\widehat{\\mathbf{u}}\\end{pmatrix}",
+      "latex_render": "\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{y}\\\\\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{y}\\end{pmatrix}=\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{X}\\widehat{\\boldsymbol{\\beta}}+\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{Z}\\widehat{\\mathbf{u}}\\\\\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{X}\\widehat{\\boldsymbol{\\beta}}+\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{Z}\\widehat{\\mathbf{u}}+\\mathbf{G}^{-1}\\widehat{\\mathbf{u}}\\end{pmatrix}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A6.4g",
+      "anchor": "formula-a6.4g",
+      "label": "Formula (A6.4g)",
+      "section_id": "",
+      "latex": "\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{y}\\\\\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{y}\\end{pmatrix}=\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{X}&\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{Z}\\\\\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{X}&\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{Z}+\\mathbf{G}^{-1}\\end{pmatrix}\\begin{pmatrix}\\widehat{\\beta}\\\\\\widehat{\\mathbf{u}}\\end{pmatrix}",
+      "latex_render": "\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{y}\\\\\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{y}\\end{pmatrix}=\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{X}&\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{Z}\\\\\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{X}&\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{Z}+\\mathbf{G}^{-1}\\end{pmatrix}\\begin{pmatrix}\\widehat{\\beta}\\\\\\widehat{\\mathbf{u}}\\end{pmatrix}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A6.4h",
+      "anchor": "formula-a6.4h",
+      "label": "Formula (A6.4h)",
+      "section_id": "",
+      "latex": "\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{X}\\widehat{\\boldsymbol{\\beta}}+\\left(\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{Z}+\\mathbf{G}^{-1}\\right)\\widehat{\\mathbf{u}}=\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{y}",
+      "latex_render": "\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{X}\\widehat{\\boldsymbol{\\beta}}+\\left(\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{Z}+\\mathbf{G}^{-1}\\right)\\widehat{\\mathbf{u}}=\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{y}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A6.4i",
+      "anchor": "formula-a6.4i",
+      "label": "Formula (A6.4i)",
+      "section_id": "",
+      "latex": "\\hat{\\mathbf{u}}=\\left(\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{Z}+\\mathbf{G}^{-1}\\right)^{-1}\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\left(\\mathbf{y}-\\mathbf{X}\\hat{\\boldsymbol{\\beta}}\\right)",
+      "latex_render": "\\hat{\\mathbf{u}}=\\left(\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{Z}+\\mathbf{G}^{-1}\\right)^{-1}\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\left(\\mathbf{y}-\\mathbf{X}\\hat{\\boldsymbol{\\beta}}\\right)",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A6.5",
+      "anchor": "formula-a6.5",
+      "label": "Formula (A6.5)",
+      "section_id": "Evolution_appendix6_003",
+      "latex": "\\mathbf{H}_{\\mathbf{X}}[f]=\\nabla_{\\mathbf{X}}\\left[\\left(\\nabla_{\\mathbf{X}}[f]\\right)^{T}\\right]=\\frac{\\partial^{2}f}{\\partial\\mathbf{x}\\partial\\mathbf{x}^{T}}=\\left(\\begin{array}{c c c}\\frac{\\partial^{2}f}{\\partial x_{1}^{2}}&\\cdots&\\frac{\\partial^{2}f}{\\partial x_{1}\\partial x_{n}}\\\\ \\vdots&\\ddots&\\vdots\\\\ \\frac{\\partial^{2}f}{\\partial x_{1}\\partial x_{n}}&\\cdots&\\frac{\\partial^{2}f}{\\partial x_{n}^{2}}\\end{array}\\right)",
+      "latex_render": "\\mathbf{H}_{\\mathbf{X}}[f]=\\nabla_{\\mathbf{X}}\\left[\\left(\\nabla_{\\mathbf{X}}[f]\\right)^{T}\\right]=\\frac{\\partial^{2}f}{\\partial\\mathbf{x}\\partial\\mathbf{x}^{T}}=\\left(\\begin{array}{c c c}\\frac{\\partial^{2}f}{\\partial x_{1}^{2}}&\\cdots&\\frac{\\partial^{2}f}{\\partial x_{1}\\partial x_{n}}\\\\ \\vdots&\\ddots&\\vdots\\\\ \\frac{\\partial^{2}f}{\\partial x_{1}\\partial x_{n}}&\\cdots&\\frac{\\partial^{2}f}{\\partial x_{n}^{2}}\\end{array}\\right)",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A6.6a",
+      "anchor": "formula-a6.6a",
+      "label": "Formula (A6.6a)",
+      "section_id": "",
+      "latex": "\\begin{aligned}\\mathbf{H}_{\\mathbf{x}}\\left[\\varphi(\\mathbf{x},\\boldsymbol{\\mu})\\right]&=\\nabla_{\\mathbf{x}}\\left[\\left(\\nabla_{\\mathbf{x}}\\left[\\varphi(\\mathbf{x},\\boldsymbol{\\mu})\\right]\\right)^{T}\\right]=-\\nabla_{\\mathbf{x}}\\left[\\varphi(\\mathbf{x},\\boldsymbol{\\mu})\\cdot(\\mathbf{x}-\\boldsymbol{\\mu})^{T}\\mathbf{V}^{-1}\\right]\\\\&=-\\nabla_{\\mathbf{x}}\\left[\\varphi(\\mathbf{x},\\boldsymbol{\\mu})\\right]\\cdot(\\mathbf{x}-\\boldsymbol{\\mu})^{T}\\mathbf{V}^{-1}-\\varphi(\\mathbf{x},\\boldsymbol{\\mu})\\cdot\\nabla_{\\mathbf{x}}\\left[\\left(\\mathbf{x}-\\boldsymbol{\\mu}\\right)^{T}\\mathbf{V}^{-1}\\right]\\\\&=-\\left[-\\varphi(\\mathbf{x},\\boldsymbol{\\mu})\\cdot\\mathbf{V}^{-1}\\left(\\mathbf{x}-\\boldsymbol{\\mu}\\right)\\right]\\cdot(\\mathbf{x}-\\boldsymbol{\\mu})^{T}\\mathbf{V}^{-1}-\\varphi(\\mathbf{x},\\boldsymbol{\\mu})\\cdot\\left[\\mathbf{V}^{-1}\\right]\\\\&=\\varphi(\\mathbf{x},\\boldsymbol{\\mu})\\cdot\\left(\\mathbf{V}^{-1}\\left(\\mathbf{x}-\\boldsymbol{\\mu}\\right)(\\mathbf{x}-\\boldsymbol{\\mu})^{T}\\mathbf{V}^{-1}-\\mathbf{V}^{-1}\\right)\\quad(A6.6)\\end{aligned}",
+      "latex_render": "\\begin{aligned}\\mathbf{H}_{\\mathbf{x}}\\left[\\varphi(\\mathbf{x},\\boldsymbol{\\mu})\\right]&=\\nabla_{\\mathbf{x}}\\left[\\left(\\nabla_{\\mathbf{x}}\\left[\\varphi(\\mathbf{x},\\boldsymbol{\\mu})\\right]\\right)^{T}\\right]=-\\nabla_{\\mathbf{x}}\\left[\\varphi(\\mathbf{x},\\boldsymbol{\\mu})\\cdot(\\mathbf{x}-\\boldsymbol{\\mu})^{T}\\mathbf{V}^{-1}\\right]\\\\&=-\\nabla_{\\mathbf{x}}\\left[\\varphi(\\mathbf{x},\\boldsymbol{\\mu})\\right]\\cdot(\\mathbf{x}-\\boldsymbol{\\mu})^{T}\\mathbf{V}^{-1}-\\varphi(\\mathbf{x},\\boldsymbol{\\mu})\\cdot\\nabla_{\\mathbf{x}}\\left[\\left(\\mathbf{x}-\\boldsymbol{\\mu}\\right)^{T}\\mathbf{V}^{-1}\\right]\\\\&=-\\left[-\\varphi(\\mathbf{x},\\boldsymbol{\\mu})\\cdot\\mathbf{V}^{-1}\\left(\\mathbf{x}-\\boldsymbol{\\mu}\\right)\\right]\\cdot(\\mathbf{x}-\\boldsymbol{\\mu})^{T}\\mathbf{V}^{-1}-\\varphi(\\mathbf{x},\\boldsymbol{\\mu})\\cdot\\left[\\mathbf{V}^{-1}\\right]\\\\&=\\varphi(\\mathbf{x},\\boldsymbol{\\mu})\\cdot\\left(\\mathbf{V}^{-1}\\left(\\mathbf{x}-\\boldsymbol{\\mu}\\right)(\\mathbf{x}-\\boldsymbol{\\mu})^{T}\\mathbf{V}^{-1}-\\mathbf{V}^{-1}\\right)\\quad(A6.6)\\end{aligned}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A6.6b",
+      "anchor": "formula-a6.6b",
+      "label": "Formula (A6.6b)",
+      "section_id": "",
+      "latex": "\\mathbf{H}\\boldsymbol{\\mu}\\left[\\varphi(\\mathbf{x},\\boldsymbol{\\mu})\\right]=\\varphi(\\mathbf{x},\\boldsymbol{\\mu})\\cdot\\left(\\mathbf{V}^{-1}\\left(\\mathbf{x}-\\boldsymbol{\\mu}\\right)(\\mathbf{x}-\\boldsymbol{\\mu})^{T}\\mathbf{V}^{-1}-\\mathbf{V}^{-1}\\right)",
+      "latex_render": "\\mathbf{H}\\boldsymbol{\\mu}\\left[\\varphi(\\mathbf{x},\\boldsymbol{\\mu})\\right]=\\varphi(\\mathbf{x},\\boldsymbol{\\mu})\\cdot\\left(\\mathbf{V}^{-1}\\left(\\mathbf{x}-\\boldsymbol{\\mu}\\right)(\\mathbf{x}-\\boldsymbol{\\mu})^{T}\\mathbf{V}^{-1}-\\mathbf{V}^{-1}\\right)",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A6.7a",
+      "anchor": "formula-a6.7a",
+      "label": "Formula (A6.7a)",
+      "section_id": "",
+      "latex": "f(\\mathbf{x})\\simeq f(\\mathbf{x}_{o})+\\sum_{i=1}^{n}(x_{i}-x_{o,i})\\frac{\\partial f}{\\partial x_{i}}+\\frac{1}{2}\\sum_{i=1}^{n}\\sum_{j=1}^{n}(x_{i}-x_{o,i})(x_{j}-x_{o,j})\\frac{\\partial^{2}f}{\\partial x_{i}\\partial x_{j}}+\\cdots",
+      "latex_render": "f(\\mathbf{x})\\simeq f(\\mathbf{x}_{o})+\\sum_{i=1}^{n}(x_{i}-x_{o,i})\\frac{\\partial f}{\\partial x_{i}}+\\frac{1}{2}\\sum_{i=1}^{n}\\sum_{j=1}^{n}(x_{i}-x_{o,i})(x_{j}-x_{o,j})\\frac{\\partial^{2}f}{\\partial x_{i}\\partial x_{j}}+\\cdots",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A6.7b",
+      "anchor": "formula-a6.7b",
+      "label": "Formula (A6.7b)",
+      "section_id": "",
+      "latex": "f(\\mathbf{x})\\simeq f(\\mathbf{x}_{o})+\\nabla^{T}(\\mathbf{x}-\\mathbf{x}_{o})+\\frac{1}{2}(\\mathbf{x}-\\mathbf{x}_{o})^{T}\\mathbf{H}(\\mathbf{x}-\\mathbf{x}_{o})",
+      "latex_render": "f(\\mathbf{x})\\simeq f(\\mathbf{x}_{o})+\\nabla^{T}(\\mathbf{x}-\\mathbf{x}_{o})+\\frac{1}{2}(\\mathbf{x}-\\mathbf{x}_{o})^{T}\\mathbf{H}(\\mathbf{x}-\\mathbf{x}_{o})",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A6.8a",
+      "anchor": "formula-a6.8a",
+      "label": "Formula (A6.8a)",
+      "section_id": "",
+      "latex": "f(\\hat{\\mathbf{x}}+\\mathbf{d})-f(\\hat{\\mathbf{x}})\\simeq\\frac{1}{2}\\cdot\\mathbf{d}^{T}\\mathbf{H}\\mathbf{d}",
+      "latex_render": "f(\\hat{\\mathbf{x}}+\\mathbf{d})-f(\\hat{\\mathbf{x}})\\simeq\\frac{1}{2}\\cdot\\mathbf{d}^{T}\\mathbf{H}\\mathbf{d}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A6.8b",
+      "anchor": "formula-a6.8b",
+      "label": "Formula (A6.8b)",
+      "section_id": "",
+      "latex": "f(\\widehat{\\mathbf{x}}+\\mathbf{d})-f(\\widehat{\\mathbf{x}})\\simeq\\frac{1}{2}\\sum_{i=1}^{n}\\lambda_{i}y_{i}^{2}",
+      "latex_render": "f(\\widehat{\\mathbf{x}}+\\mathbf{d})-f(\\widehat{\\mathbf{x}})\\simeq\\frac{1}{2}\\sum_{i=1}^{n}\\lambda_{i}y_{i}^{2}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A6.9a",
+      "anchor": "formula-a6.9a",
+      "label": "Formula (A6.9a)",
+      "section_id": "",
+      "latex": "\\begin{align*}\\Delta\\ln\\overline{W}(\\mu)&=\\ln\\overline{W}(\\mu+\\Delta\\mu)-\\ln\\overline{W}(\\mu)\\\\&\\simeq\\left(\\nabla\\mu\\left[\\ln\\overline{W}(\\mu)\\right]\\right)^{T}\\Delta\\mu+\\frac{1}{2}\\Delta\\mu^{T}\\mathbf{H}\\mu\\left[\\ln\\overline{W}(\\mu)\\right]\\Delta\\mu\\end{align*}",
+      "latex_render": "\\begin{aligned}\\Delta\\ln\\overline{W}(\\mu)&=\\ln\\overline{W}(\\mu+\\Delta\\mu)-\\ln\\overline{W}(\\mu)\\\\&\\simeq\\left(\\nabla\\mu\\left[\\ln\\overline{W}(\\mu)\\right]\\right)^{T}\\Delta\\mu+\\frac{1}{2}\\Delta\\mu^{T}\\mathbf{H}\\mu\\left[\\ln\\overline{W}(\\mu)\\right]\\Delta\\mu\\end{aligned}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A6.9b",
+      "anchor": "formula-a6.9b",
+      "label": "Formula (A6.9b)",
+      "section_id": "",
+      "latex": "\\Delta\\ln\\overline{W}(\\mu)\\simeq\\left(\\nabla_{\\boldsymbol{\\mu}}[\\ln\\overline{W}(\\boldsymbol{\\mu})]\\right)^{T}\\Delta\\boldsymbol{\\mu}",
+      "latex_render": "\\Delta\\ln\\overline{W}(\\mu)\\simeq\\left(\\nabla_{\\boldsymbol{\\mu}}[\\ln\\overline{W}(\\boldsymbol{\\mu})]\\right)^{T}\\Delta\\boldsymbol{\\mu}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A6.9c",
+      "anchor": "formula-a6.9c",
+      "label": "Formula (A6.9c)",
+      "section_id": "",
+      "latex": "\\Delta\\ln\\overline{W}(\\mu)\\simeq\\beta^{T}\\Delta\\mu",
+      "latex_render": "\\Delta\\ln\\overline{W}(\\mu)\\simeq\\beta^{T}\\Delta\\mu",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A6.9d",
+      "anchor": "formula-a6.9d",
+      "label": "Formula (A6.9d)",
+      "section_id": "",
+      "latex": "\\Delta\\ln\\overline{W}(\\mu)\\simeq\\left(\\mathbf{G}^{-1}\\Delta\\mu\\right)^{T}\\Delta\\mu=\\left(\\Delta\\mu\\right)^{T}\\mathbf{G}^{-1}\\Delta\\mu\\geq0",
+      "latex_render": "\\Delta\\ln\\overline{W}(\\mu)\\simeq\\left(\\mathbf{G}^{-1}\\Delta\\mu\\right)^{T}\\Delta\\mu=\\left(\\Delta\\mu\\right)^{T}\\mathbf{G}^{-1}\\Delta\\mu\\geq0",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A6.9e",
+      "anchor": "formula-a6.9e",
+      "label": "Formula (A6.9e)",
+      "section_id": "",
+      "latex": "\\Delta\\ln\\overline{W}(\\boldsymbol{\\mu})=\\ln\\overline{W}(\\boldsymbol{\\mu}[t+1])-\\ln\\overline{W}(\\boldsymbol{\\mu}[t])=\\ln\\left(\\frac{\\overline{W}(\\boldsymbol{\\mu}[t+1])}{\\overline{W}(\\boldsymbol{\\mu}[t])}\\right)",
+      "latex_render": "\\Delta\\ln\\overline{W}(\\boldsymbol{\\mu})=\\ln\\overline{W}(\\boldsymbol{\\mu}[t+1])-\\ln\\overline{W}(\\boldsymbol{\\mu}[t])=\\ln\\left(\\frac{\\overline{W}(\\boldsymbol{\\mu}[t+1])}{\\overline{W}(\\boldsymbol{\\mu}[t])}\\right)",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A6.10a",
+      "anchor": "formula-a6.10a",
+      "label": "Formula (A6.10a)",
+      "section_id": "Evolution_appendix6_004",
+      "latex": "g(\\mathbf{x},\\lambda)=f(\\mathbf{x})-\\lambda[h(\\mathbf{x})-c]",
+      "latex_render": "g(\\mathbf{x},\\lambda)=f(\\mathbf{x})-\\lambda[h(\\mathbf{x})-c]",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A6.10b",
+      "anchor": "formula-a6.10b",
+      "label": "Formula (A6.10b)",
+      "section_id": "Evolution_appendix6_004",
+      "latex": "\\nabla_{\\mathbf{x}}[g(\\mathbf{x},\\lambda)]=\\nabla_{\\mathbf{x}}[f(\\mathbf{x})]-\\lambda\\cdot\\nabla_{\\mathbf{x}}[h(\\mathbf{x})]=\\mathbf{0}",
+      "latex_render": "\\nabla_{\\mathbf{x}}[g(\\mathbf{x},\\lambda)]=\\nabla_{\\mathbf{x}}[f(\\mathbf{x})]-\\lambda\\cdot\\nabla_{\\mathbf{x}}[h(\\mathbf{x})]=\\mathbf{0}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A6.10c",
+      "anchor": "formula-a6.10c",
+      "label": "Formula (A6.10c)",
+      "section_id": "Evolution_appendix6_004",
+      "latex": "\\frac{d g(\\mathbf{x},\\lambda)}{d\\lambda}=h(\\mathbf{x})-c=0",
+      "latex_render": "\\frac{d g(\\mathbf{x},\\lambda)}{d\\lambda}=h(\\mathbf{x})-c=0",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A6.11a",
+      "anchor": "formula-a6.11a",
+      "label": "Formula (A6.11a)",
+      "section_id": "",
+      "latex": "I=\\mathbf{b}^{T}\\mathbf{z}=\\sum_{k=1}^{n}b_{k}z_{k}",
+      "latex_render": "I=\\mathbf{b}^{T}\\mathbf{z}=\\sum_{k=1}^{n}b_{k}z_{k}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A6.11b",
+      "anchor": "formula-a6.11b",
+      "label": "Formula (A6.11b)",
+      "section_id": "",
+      "latex": "J=\\mathbf{a}^{T}\\boldsymbol{\\mu}=\\sum a_{k}\\mu_{k}",
+      "latex_render": "J=\\mathbf{a}^{T}\\boldsymbol{\\mu}=\\sum a_{k}\\mu_{k}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A6.11c",
+      "anchor": "formula-a6.11c",
+      "label": "Formula (A6.11c)",
+      "section_id": "",
+      "latex": "f(\\mathbf{b})=\\mathbf{a}^{T}\\boldsymbol{\\Delta}\\boldsymbol{\\mu}=\\mathbf{a}^{T}\\mathbf{R}=\\mathbf{a}^{T}\\mathbf{G}\\mathbf{P}^{-1}\\mathbf{S}",
+      "latex_render": "f(\\mathbf{b})=\\mathbf{a}^{T}\\boldsymbol{\\Delta}\\boldsymbol{\\mu}=\\mathbf{a}^{T}\\mathbf{R}=\\mathbf{a}^{T}\\mathbf{G}\\mathbf{P}^{-1}\\mathbf{S}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A6.11d",
+      "anchor": "formula-a6.11d",
+      "label": "Formula (A6.11d)",
+      "section_id": "",
+      "latex": "g(\\mathbf{b})-c=\\mathbf{b}^{T}\\mathbf{b}-1=0",
+      "latex_render": "g(\\mathbf{b})-c=\\mathbf{b}^{T}\\mathbf{b}-1=0",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A6.11e",
+      "anchor": "formula-a6.11e",
+      "label": "Formula (A6.11e)",
+      "section_id": "",
+      "latex": "\\begin{aligned}\\nabla_{\\mathbf{b}}[g(\\mathbf{b},\\lambda)]&=s\\cdot\\nabla_{\\mathbf{b}}[\\mathbf{a}^{T}\\mathbf{G}\\mathbf{P}^{-1}\\mathbf{b}]-\\lambda\\cdot\\nabla_{\\mathbf{b}}[\\mathbf{b}^{T}\\mathbf{b}]\\\\&=s\\cdot\\left(\\mathbf{a}^{T}\\mathbf{G}\\mathbf{P}^{-1}\\right)^{T}-(2\\lambda)\\cdot\\mathbf{b}\\end{aligned}",
+      "latex_render": "\\begin{aligned}\\nabla_{\\mathbf{b}}[g(\\mathbf{b},\\lambda)]&=s\\cdot\\nabla_{\\mathbf{b}}[\\mathbf{a}^{T}\\mathbf{G}\\mathbf{P}^{-1}\\mathbf{b}]-\\lambda\\cdot\\nabla_{\\mathbf{b}}[\\mathbf{b}^{T}\\mathbf{b}]\\\\&=s\\cdot\\left(\\mathbf{a}^{T}\\mathbf{G}\\mathbf{P}^{-1}\\right)^{T}-(2\\lambda)\\cdot\\mathbf{b}\\end{aligned}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A6.11f",
+      "anchor": "formula-a6.11f",
+      "label": "Formula (A6.11f)",
+      "section_id": "",
+      "latex": "\\mathbf{b}=(2\\lambda/s)\\cdot\\mathbf{P}^{-1}\\mathbf{G}^{T}\\mathbf{a}",
+      "latex_render": "\\mathbf{b}=(2\\lambda/s)\\cdot\\mathbf{P}^{-1}\\mathbf{G}^{T}\\mathbf{a}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A6.11g",
+      "anchor": "formula-a6.11g",
+      "label": "Formula (A6.11g)",
+      "section_id": "",
+      "latex": "\\mathbf{b}_{SH}=\\mathbf{P}^{-1}\\mathbf{G}^{T}\\mathbf{a}",
+      "latex_render": "\\mathbf{b}_{SH}=\\mathbf{P}^{-1}\\mathbf{G}^{T}\\mathbf{a}",
+      "origin": "paddle"
+    }
+  ],
+  "references": {
+    "Evolution_appendix6_section_001": [],
+    "Evolution_appendix6_001": [],
+    "Evolution_appendix6_002": [
+      {
+        "kind": "example",
+        "id": "A6.1",
+        "label": "Example A6.1",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A6.1c",
+        "label": "Equation A6.1c",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "A6.2",
+        "label": "Example A6.2",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A6.1g",
+        "label": "Equation A6.1g",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A6.1d",
+        "label": "Equation A6.1d",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A6.1e",
+        "label": "Equation A6.1e",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "A6.3",
+        "label": "Example A6.3",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "13.27c",
+        "label": "Equation 13.27c",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A6.1h",
+        "label": "Equation A6.1h",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A6.2b",
+        "label": "Equation A6.2b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A6.1i",
+        "label": "Equation A6.1i",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "A6.4",
+        "label": "Example A6.4",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A6.1a",
+        "label": "Equation A6.1a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "A6.5",
+        "label": "Example A6.5",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "19.4",
+        "label": "Equation 19.4",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "19.1",
+        "label": "Equation 19.1",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A6.4a",
+        "label": "Equation A6.4a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A6.4e",
+        "label": "Equation A6.4e",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A6.4g",
+        "label": "Equation A6.4g",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "19.3b",
+        "label": "Equation 19.3b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_appendix6_005": [
+      {
+        "kind": "example",
+        "id": "A6.6",
+        "label": "Example A6.6",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A6.2a",
+        "label": "Equation A6.2a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A6.1i",
+        "label": "Equation A6.1i",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A6.1b",
+        "label": "Equation A6.1b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "A6.7",
+        "label": "Example A6.7",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A6.9a",
+        "label": "Equation A6.9a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A6.2e",
+        "label": "Equation A6.2e",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A6.9b",
+        "label": "Equation A6.9b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "13.26a",
+        "label": "Equation 13.26a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A6.9c",
+        "label": "Equation A6.9c",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A6.2f",
+        "label": "Equation A6.2f",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_appendix6_006": [
+      {
+        "kind": "example",
+        "id": "A6.8",
+        "label": "Example A6.8",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A6.10a",
+        "label": "Equation A6.10a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ]
+  },
+  "semantic_chapter_links": [],
+  "prerequisites": [
+    {
+      "id": "prereq-evolution_chapter13",
+      "title": "Chapter 13 · Multivariate Breeder's Equation",
+      "source_chapter_id": "Evolution_chapter13",
+      "used_in_sections": [
+        "Evolution_appendix6_002",
+        "Evolution_appendix6_005"
+      ],
+      "why_needed": "本附录介绍向量导数、Hessian矩阵等多元微积分知识，这些是理解第13章中多变量Lande方程（R=Gβ）和梯度选择的数学基础。",
+      "key_points": [
+        "梯度向量和Hessian矩阵是多元函数极值分析的核心工具。",
+        "刘维尔方程（Lande方程）利用梯度描述选择梯度下的响应。",
+        "多元泰勒展开用于近似适应度曲面。"
+      ],
+      "source_links": [
+        {
+          "chapter_id": "Evolution_chapter13",
+          "label": "Equation 13.27c",
+          "markdown_path": "/data/textbook/Evolution_chapter13_textbook.md",
+          "anchor": "evolution_chapter13_section_001",
+          "section_title": "Chapter 13 · Short-term Changes in the Mean: 1. The Breeder's Equation",
+          "ref_type": "equation",
+          "ref_id": "13.27c",
+          "book_hint": "",
+          "link_scope": "current-book",
+          "excerpt": ""
+        },
+        {
+          "chapter_id": "Evolution_chapter13",
+          "label": "Equation 13.26a",
+          "markdown_path": "/data/textbook/Evolution_chapter13_textbook.md",
+          "anchor": "evolution_chapter13_007",
+          "section_title": "SINGLE-GENERATION RESPONSE: THE BREEDER'S EQUATION / The Robertson-Price Identity, $ S = \\sigma(w, z) $",
+          "ref_type": "equation",
+          "ref_id": "13.26a",
+          "book_hint": "",
+          "link_scope": "current-book",
+          "excerpt": "relates the strength of association, $ \\beta $, between trait value and fitness with the response. This is the univariate version of the multivariate Lande equation (R = G $ \\beta $), to be introduced shortly (Equation 13.26a). ---"
+        }
+      ],
+      "source_excerpt": "relates the strength of association, $ \\beta $, between trait value and fitness with the response. This is the univariate version of the multivariate Lande equation (R = G $ \\beta $), to be introduced shortly (Equation 13.26a). ---",
+      "summary_status": "llm-validated",
+      "usage_count": 2,
+      "explicit_asset_refs": 2,
+      "priority_score": 180,
+      "validated_by_llm": true,
+      "concept_title": "Chapter 13 · Multivariate Breeder's Equation",
+      "nav_label": "Ch13: Breeder's Eq",
+      "evidence_summary": "附录内容直接支持第13章中使用的向量微积分和优化概念，尤其是Lande方程和Robertson-Price恒等式。"
+    }
+  ],
+  "llm": {
+    "requests_total": 2,
+    "cache_hits": 0,
+    "cache_writes": 2,
+    "remote_calls": 2,
+    "budget_rejections": 0,
+    "prompt_chars_sent": 7508,
+    "response_chars_received": 675,
+    "api_prompt_tokens": 2004,
+    "api_completion_tokens": 1394,
+    "api_total_tokens": 3398,
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "cache_enabled": true,
+    "cache_dir": "D:\\大学资料\\大二\\LLM-Agent科学文献系统知识库处理\\tmp\\llm_cache",
+    "max_remote_calls": 0,
+    "max_prompt_chars_total": 0,
+    "max_response_chars_total": 0,
+    "validated_only": true,
+    "preserved_from_previous_build": true
+  }
+}

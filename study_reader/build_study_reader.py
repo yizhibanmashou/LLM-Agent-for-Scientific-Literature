@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import subprocess
 import sys
 from collections import defaultdict
 from datetime import datetime
@@ -16,6 +17,7 @@ CONFIG_PATH = APP_DIR / "source_config.json"
 OUTPUT_DIR = APP_DIR / "data" / "generated"
 STUDY_DATASET_PATH = OUTPUT_DIR / "study_dataset.json"
 PREREQUISITE_AUDIT_PATH = OUTPUT_DIR / "prerequisite_audit.json"
+CHAPTER_DATA_DIR = OUTPUT_DIR / "chapters"
 
 if str(ROOT_DIR) not in sys.path:
     sys.path.insert(0, str(ROOT_DIR))
@@ -1667,7 +1669,26 @@ def existing_chapter_payload(existing_dataset: dict[str, Any], chapter_id: str) 
         payload = data.get(chapter_id)
         if isinstance(payload, dict):
             return payload
+    split_payload = load_json(CHAPTER_DATA_DIR / f"{chapter_id}.json")
+    if split_payload:
+        return split_payload
     return {}
+
+
+def load_legacy_dataset(spec: str) -> dict[str, Any]:
+    """Load an old inline dataset from a path or an explicit git revision spec."""
+    value = str(spec or "").strip()
+    if not value:
+        return {}
+    if value.startswith("git:"):
+        revision_path = value[4:]
+        if ":" not in revision_path:
+            raise ValueError("Git legacy spec must be git:<revision>:<repo-path>")
+        revision, repo_path = revision_path.split(":", 1)
+        raw = subprocess.check_output(["git", "show", f"{revision}:{repo_path}"], cwd=ROOT_DIR)
+        payload = json.loads(raw.decode("utf-8-sig"))
+        return payload if isinstance(payload, dict) else {}
+    return load_json(resolve_repo_path(value, value))
 
 
 def existing_audit_row(existing_audit: dict[str, Any], chapter_id: str) -> dict[str, Any]:
@@ -1685,7 +1706,9 @@ def should_preserve_existing_prerequisites(
     llm_enabled: bool,
     skip_llm: bool,
 ) -> bool:
-    if llm_enabled or skip_llm:
+    # A no-LLM rebuild must retain previously validated decisions.  Only an
+    # explicitly enabled LLM pass is allowed to replace them.
+    if llm_enabled:
         return False
     prerequisites = existing_payload.get("prerequisites")
     if not isinstance(prerequisites, list) or not prerequisites:
@@ -1700,8 +1723,11 @@ def build_dataset(
     selected_books: set[str] | None,
     all_llm: bool,
     skip_llm: bool,
+    existing_dataset_override: dict[str, Any] | None = None,
 ) -> tuple[dict[str, Any], dict[str, Any]]:
     existing_dataset, existing_audit = existing_generated_payloads()
+    if existing_dataset_override:
+        existing_dataset = existing_dataset_override
     textbook_dir = resolve_repo_path(config.get("textbook_dir"), "data/textbook")
     structured_dir = resolve_repo_path(config.get("structured_dir"), "data/structured")
     formula_library_by_chapter = load_formula_library_by_chapter(structured_dir)
@@ -1804,6 +1830,7 @@ def build_dataset(
                 "book_id": chapter_book,
                 "kind": chapter_kind,
                 "markdown_path": markdown_url(markdown_path_for_chapter(textbook_dir, chapter_id)),
+                "data_path": f"./data/generated/chapters/{chapter_id}.json",
                 "section_count": len(cached["sections"]),
                 "asset_count": len(cached["assets"]),
                 "prerequisite_count": len(prerequisites),
@@ -1832,13 +1859,14 @@ def build_dataset(
 
     dataset = {
         "generated_at": datetime.now().isoformat(timespec="seconds"),
-        "version": 3,
+        "version": 4,
         "books": books,
         "textbook_dir": markdown_url(textbook_dir),
         "default_book": str(config.get("default_book") or (books[0]["id"] if books else DEFAULT_BOOK_PREFIX)),
         "default_chapter": default_chapter,
         "chapters": chapters,
-        "data": data,
+        "data_mode": "split",
+        "_chapter_data": data,
     }
     audit = {
         "generated_at": dataset["generated_at"],
@@ -1847,6 +1875,17 @@ def build_dataset(
         "rows": audit_rows,
     }
     return dataset, audit
+
+
+def write_split_dataset(dataset: dict[str, Any], chapter_data: dict[str, Any]) -> None:
+    CHAPTER_DATA_DIR.mkdir(parents=True, exist_ok=True)
+    expected = {f"{chapter_id}.json" for chapter_id in chapter_data}
+    for stale in CHAPTER_DATA_DIR.glob("*.json"):
+        if stale.name not in expected:
+            stale.unlink()
+    for chapter_id, payload in chapter_data.items():
+        write_json(CHAPTER_DATA_DIR / f"{chapter_id}.json", payload)
+    write_json(STUDY_DATASET_PATH, dataset)
 
 
 def parse_chapter_arg(raw_value: str) -> set[str]:
@@ -1859,6 +1898,11 @@ def main(argv: list[str] | None = None) -> None:
     parser.add_argument("--chapters", default="", help="Comma-separated chapters that should receive LLM summaries.")
     parser.add_argument("--all-llm", action="store_true", help="Run LLM prerequisite adjudication for every indexed chapter.")
     parser.add_argument("--skip-llm", action="store_true", help="Build rules-only prerequisites.")
+    parser.add_argument(
+        "--legacy-dataset",
+        default="",
+        help="Optional v3 inline dataset path or git:<revision>:<repo-path> used only to preserve prior LLM results.",
+    )
     args = parser.parse_args(argv)
 
     config = load_config()
@@ -1870,8 +1914,10 @@ def main(argv: list[str] | None = None) -> None:
         selected_books=selected_books,
         all_llm=args.all_llm,
         skip_llm=args.skip_llm,
+        existing_dataset_override=load_legacy_dataset(args.legacy_dataset),
     )
-    write_json(STUDY_DATASET_PATH, dataset)
+    chapter_data = dataset.pop("_chapter_data", {})
+    write_split_dataset(dataset, chapter_data)
     write_json(PREREQUISITE_AUDIT_PATH, audit)
     print(f"Study dataset written: {STUDY_DATASET_PATH}")
     print(f"Prerequisite audit written: {PREREQUISITE_AUDIT_PATH}")

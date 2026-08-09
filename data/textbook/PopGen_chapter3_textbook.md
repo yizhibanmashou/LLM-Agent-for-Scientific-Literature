@@ -22,10 +22,14 @@ The process of sampling gametes from a finite population is depicted in Figure 3
 
 **[定义 Definition]**
 
-To take a specific example, a population of nine diploid organisms arises from a sample of just 18 gametes, but the gametes can be thought of as being sampled from an essentially infinite pool of gametes. Because small samples are frequently not representative, an allele frequency in the sample may differ from that in the entire pool of gametes. Suppose, for example, that a pool of gametes contains the alleles A and a at frequencies p and q, respectively, with $ p + q = 1 $. Then if 2N gametes are drawn at random to produce the zygotes of the next generation, the probability that the sample contains exactly j alleles of type A is the binomial probability $$
+To take a specific example, a population of nine diploid organisms arises from a sample of just 18 gametes, but the gametes can be thought of as being sampled from an essentially infinite pool of gametes. Because small samples are frequently not representative, an allele frequency in the sample may differ from that in the entire pool of gametes. Suppose, for example, that a pool of gametes contains the alleles A and a at frequencies p and q, respectively, with $ p + q = 1 $. Then if 2N gametes are drawn at random to produce the zygotes of the next generation, the probability that the sample contains exactly j alleles of type A is the binomial probability
+
+$$
 \Pr\left\{j a l l e l e s~o f~t y p e~A\right\}=\binom{2N}{j}p^{j}q^{2N-j}=\frac{(2N)!}{j!(2N-j)!}p^{j}q^{2N-j}
 \tag{3.1}
-$$ where $j$ can take on any integer value between 0 and 2N. The binomial coefficient (in parentheses in the middle expression) is often read as “two N choose $j$,” because it is the number of ways that exactly $j$ elements can be chosen from a total of 2N. After one generation of random sampling as embodied in Equation 3.1, the new allele frequency of $A$ in the population (call it $p$) is given by $j/(2N)$ because, by definition, the allele frequency of $A$ equals the number of $A$ alleles (in this case $j$) divided by the total (in this case 2N). In the subsequent generation, the sampling process occurs anew according to Equation 3.1 with $p$ replaced by $p'$ and $q$ by $1-p'$. In this way, the allele frequency can change at random from generation to generation.
+$$
+
+where $j$ can take on any integer value between 0 and 2N. The binomial coefficient (in parentheses in the middle expression) is often read as “two N choose $j$,” because it is the number of ways that exactly $j$ elements can be chosen from a total of 2N. After one generation of random sampling as embodied in Equation 3.1, the new allele frequency of $A$ in the population (call it $p$) is given by $j/(2N)$ because, by definition, the allele frequency of $A$ equals the number of $A$ alleles (in this case $j$) divided by the total (in this case 2N). In the subsequent generation, the sampling process occurs anew according to Equation 3.1 with $p$ replaced by $p'$ and $q$ by $1-p'$. In this way, the allele frequency can change at random from generation to generation.
 
 Computer-generated examples based on random sampling according to Equation 3.1 are shown in Figure 3.2. Each line in Figure 3.2A gives the number of A alleles in 20 successive generations of random genetic drift in a population of size N = 9 (so 2N = 18). As you can see, individual populations behave very erratically. In seven populations, the A allele becomes fixed (that is, p = 1); in five populations, A becomes lost (that is, p = 0). In the other eight populations remain unfixed or segregating for both A and a; however, the final allele frequency among the unfixed populations is as likely to be one value as any other. Figure 3.2B shows the same kind of simulation, except now with 2N = 100. With a larger population size, the rate at which populations go to fixation is obviously slower. The principal conclusion from Figure 3.2 is that allele frequencies behave so erratically in any one population that prediction is virtually impossible.
 
@@ -63,10 +67,14 @@ ANSWER The chance that the first generation offspring is AA is $ \frac{1}{4} $ a
 
 ## PopGen_chapter3_003 · RANDOM GENETIC DRIFT: Introduction / 3.2 THE WRIGHT-FISHER MODEL OF RANDOM GENETIC DRIFT
 
-The model of random genetic drift with binomial sampling described in Equation 3.1 is known as the Wright-Fisher model because Fisher (1930) and Wright (1931) derived the expected distribution of allele frequencies among subpopulations. Although neither author formulated the problem in the manner used here, our approach makes the problem much simpler and gives the same results. If a population contains 2N alleles among which two alleles A and a may be present, then the state of the population can be described by the number of A alleles in the population. The possible states are then 0, 1, 2,... 2N. The states 0 and 2N are special in that these are fixation states, and once the population get into either of these states, it cannot leave unless there is a new mutation (and for the moment we exclude this possibility). The states 0 and 2N are called absorbing states. From any nonfixed allele frequency, it is possible for the population to drift to any other allele frequency. However, the population is more likely to remain close to its present state than to take a large jump. To use an example from Figure 3.4, if 2N = 32, then the chance of drifting from 30 copies of gene A to 29 copies in one generation is 0.186, whereas the chance of drifting to 27 copies is 0.033. The probability of the population drifting from a state having i copies to j copies of allele A is known as the transition probability. The transition probability for the Wright-Fisher model is obtained directly from the binomial distribution (see Equation 3.1). In particular, if a population has i copies of allele A and 2N - i copies of allele a, then the transition probability, $ T_{ij} $, of going from i copies of A to j copies of A in one generation of random genetic drift is given by $$
+The model of random genetic drift with binomial sampling described in Equation 3.1 is known as the Wright-Fisher model because Fisher (1930) and Wright (1931) derived the expected distribution of allele frequencies among subpopulations. Although neither author formulated the problem in the manner used here, our approach makes the problem much simpler and gives the same results. If a population contains 2N alleles among which two alleles A and a may be present, then the state of the population can be described by the number of A alleles in the population. The possible states are then 0, 1, 2,... 2N. The states 0 and 2N are special in that these are fixation states, and once the population get into either of these states, it cannot leave unless there is a new mutation (and for the moment we exclude this possibility). The states 0 and 2N are called absorbing states. From any nonfixed allele frequency, it is possible for the population to drift to any other allele frequency. However, the population is more likely to remain close to its present state than to take a large jump. To use an example from Figure 3.4, if 2N = 32, then the chance of drifting from 30 copies of gene A to 29 copies in one generation is 0.186, whereas the chance of drifting to 27 copies is 0.033. The probability of the population drifting from a state having i copies to j copies of allele A is known as the transition probability. The transition probability for the Wright-Fisher model is obtained directly from the binomial distribution (see Equation 3.1). In particular, if a population has i copies of allele A and 2N - i copies of allele a, then the transition probability, $ T_{ij} $, of going from i copies of A to j copies of A in one generation of random genetic drift is given by
+
+$$
 T_{ij}=\binom{2N}{j}\left(\frac{i}{2N}\right)^{j}\left(\frac{2N-i}{2N}\right)^{2N-j}=\frac{(2N)!}{j!(2N-j)!}p^{j}q^{2N-j}
 \tag{3.2}
-$$ where $p = i/2N$ is the initial allele frequency of $A$ and $q = (2N - i)/2N$ is the initial allele frequency of $a$.
+$$
+
+where $p = i/2N$ is the initial allele frequency of $A$ and $q = (2N - i)/2N$ is the initial allele frequency of $a$.
 
 The transition probabilities can be put in a square matrix T, with elements $ T_{ij} $ giving the transition probability from state i to state j for i, $ j = 0, 1, 2, \ldots, 2N $. The matrix T contains everything that is needed to predict the expected distribution of populations like those in Figure 3.4 over a series of generations. This type of model, expressed in terms of discrete states with fixed probabilities of going from one state to another, is known as a Markov chain, and it has some very elegant mathematical properties. Iterations of the Wright-Fisher model give the expected outcome of a pure drift process (Figure 3.5). In a few minutes, we will use the Wright-Fisher model to show an important result regarding fixation probabilities. PROBLEM 3.2 Consider a population of four diploid individuals. Calculate the probability that a population with four copies of allele A (allele frequency $ p = \frac{1}{2} $) drifts in one generation to having three copies. What is the probability that the population will have four copies of A? Five copies? Now consider a population of the same size, but initially with two copies of A. What is its probability of drifting to one, two, or three copies?
 
@@ -78,10 +86,16 @@ The transition probabilities can be put in a square matrix T, with elements $ T_
 
 ANSWER Applying Equation 3.2, we get $ T_{43} = [8!/(5!3!)](\frac{1}{2})^8 = 7/32 = 0.219 $. $ T_{44} = [8!/(4!4!)](\frac{1}{2})^8 = 70/256 = 0.273 $. $ T_{45} = 0.219 = T_{43} $. (Note that the binomial distribution is symmetric when $ p = \frac{1}{2} $ so there is equal probability for samples that are symmetrically divergent from $ p = \frac{1}{2} $.) In the case when the initial frequency is $ \frac{1}{8} $ we get $ T_{21} = [8!/1!7!](\frac{1}{4})(\frac{3}{4})^7 = 0.267 $, $ T_{22} = [8!/(2!6!)](\frac{1}{4})^2(\frac{3}{4})^6 = 0.311 $, and $ T_{23} = [8!/(3!5!)](\frac{1}{4})^3(\frac{3}{4})^5 = 0.208 $.
 
-PROBLEM 3.3 An alternative formulation of random genetic drift is due to Moran (1958). This model has considerable intuitive appeal, and it also permits explicit expressions to be derived for various quantities of evolutionary interest (Ewens 2004). The Moran model strictly applies only to haploid populations, but to make it comparable to the Wright-Fisher model we will suppose a population of 2N haploid individuals. In each generation, the drift process begins by sampling two individuals at random. The sampling is carried out "with replacement," so the same individual could be chosen twice. If the two sampled individuals are different, pick one of them at random to produce a single offspring, and return the parent and the offspring to the population; discard the other individual. If the two sampled individuals are the same, then return only the offspring to the population. In the Moran model, if a population of 2N haploid individuals contains i of type A and 2N - i of type a, then the only nonzero transition probabilities are $ T_{ij} $ with $ j = i - 1 $, $ j = i $, or $ j = i + 1 $. These transition probabilities are given by $$
+PROBLEM 3.3 An alternative formulation of random genetic drift is due to Moran (1958). This model has considerable intuitive appeal, and it also permits explicit expressions to be derived for various quantities of evolutionary interest (Ewens 2004). The Moran model strictly applies only to haploid populations, but to make it comparable to the Wright-Fisher model we will suppose a population of 2N haploid individuals. In each generation, the drift process begins by sampling two individuals at random. The sampling is carried out "with replacement," so the same individual could be chosen twice. If the two sampled individuals are different, pick one of them at random to produce a single offspring, and return the parent and the offspring to the population; discard the other individual. If the two sampled individuals are the same, then return only the offspring to the population. In the Moran model, if a population of 2N haploid individuals contains i of type A and 2N - i of type a, then the only nonzero transition probabilities are $ T_{ij} $ with $ j = i - 1 $, $ j = i $, or $ j = i + 1 $. These transition probabilities are given by
+
+$$
 T_{ii}=\frac{i^{2}+(2N-i)^{2}}{(2N)^{2}}=p^{2}+q^{2}
 \tag{3.3}
-$$ $$ T_{ij}=\frac{i(2N-i)}{(2N)^{2}}=pq\ for j=i+1or j=i-1 $$
+$$
+
+$$
+T_{ij}=\frac{i(2N-i)}{(2N)^{2}}=pq\ for j=i+1or j=i-1
+$$
 
 Calculate the transition probabilities in the Moran model for the examples in Problem 3.2.
 
@@ -111,14 +125,26 @@ There are actually two approaches for obtaining a diffusion equation, each of wh
 
 The reasoning is outlined in *[See Table 3.1 at the end of this section.]*. Because changes in state are limited to $ \pm\Delta x $ or $ -\Delta x $, a subpopulation can be in state $ x $ at time $ t + \Delta t $ only if it was in state $ x + \Delta x $, $ x $, or $ x - \Delta x $ at time $ t $, and these have probabilities proportional to $ \phi(p, x + \Delta t; t) $, $ \phi(p, x; t) $, and $ \phi(p, x - \Delta x; t) $, respectively. A subpopulation in state $ x - \Delta x $ can change to state $ x $ with probability $ M(x - \Delta x) + V(x - \Delta x)/2 $ according to whether it was pushed by a systematic force (for example, mutation or selection), or else changed randomly because of random drift. A subpopulation in state $ x + \Delta x $ can change to state $ x $ with probability $ V(x - \Delta x)/2 $ due to random drift. Finally, a subpopulation in state $ x $ can remain in state $ x $ with probability $ 1 - M(x) - V(x) $. The required function $ \text{for} \phi(p, x; t) $
 
-*[See Table 3.1 at the end of this section.]* obtained by summing the products of columns 2 and 4 in *[See Table 3.1 at the end of this section.]*, which after some simplification yields the difference equation $$ \begin{aligned}&\phi(p,x;t+\Delta t)-\phi(p,x;t)=\\ &\quad-\left[M(x)\phi(p,x;t)-M(x-\Delta x)\phi(p,x-\Delta x;t)\right]\\ &\quad+\frac{1}{2}\left\{\left[V(x+\Delta x)\phi(p,x+\Delta x;t)-V(x)\phi(p,x;t)\right]\right.\\ &\quad\left.-\left[V(x)\phi(p,x;t)-V(x-\Delta x)\phi(p,x-\Delta x;t)\right]\right\}\\ \end{aligned} $$
+*[See Table 3.1 at the end of this section.]* obtained by summing the products of columns 2 and 4 in *[See Table 3.1 at the end of this section.]*, which after some simplification yields the difference equation
 
-On the left-hand side of the equal sign is the change in $ \phi $ ($ \Delta\phi $) for a given change in $ t $ ($ \Delta t $). On the right-hand side, the first term is the change in $ M\phi $ ($ \Delta M\phi $) for a given change in $ x $ ($ \Delta x $), and the second term is the change in the change in $ V\phi $ ($ \Delta V\phi $) for a two-step change in $ x $ ($ \Delta x $). In symbols, the difference equation can be written as $$ \frac{\Delta\phi(p,x;t)}{\Delta t}=-\frac{\Delta\left[M(x)\phi(p,x;t)\right]}{\Delta x}+\frac{1}{2}\frac{\Delta\left\{\Delta\left[V(x)\phi(p,x;t)\right]\right\}}{\Delta(\Delta x)} $$
+$$
+\begin{aligned}&\phi(p,x;t+\Delta t)-\phi(p,x;t)=\\ &\quad-\left[M(x)\phi(p,x;t)-M(x-\Delta x)\phi(p,x-\Delta x;t)\right]\\ &\quad+\frac{1}{2}\left\{\left[V(x+\Delta x)\phi(p,x+\Delta x;t)-V(x)\phi(p,x;t)\right]\right.\\ &\quad\left.-\left[V(x)\phi(p,x;t)-V(x-\Delta x)\phi(p,x-\Delta x;t)\right]\right\}\\ \end{aligned}
+$$
 
-At this point we can take the limit as $ \Delta t \to 0 $ and $ \Delta x \to 0 $ (as we also overlook a number of technical details) to obtain what is called the Kolmogorov forward equation: $$
+On the left-hand side of the equal sign is the change in $ \phi $ ($ \Delta\phi $) for a given change in $ t $ ($ \Delta t $). On the right-hand side, the first term is the change in $ M\phi $ ($ \Delta M\phi $) for a given change in $ x $ ($ \Delta x $), and the second term is the change in the change in $ V\phi $ ($ \Delta V\phi $) for a two-step change in $ x $ ($ \Delta x $). In symbols, the difference equation can be written as
+
+$$
+\frac{\Delta\phi(p,x;t)}{\Delta t}=-\frac{\Delta\left[M(x)\phi(p,x;t)\right]}{\Delta x}+\frac{1}{2}\frac{\Delta\left\{\Delta\left[V(x)\phi(p,x;t)\right]\right\}}{\Delta(\Delta x)}
+$$
+
+At this point we can take the limit as $ \Delta t \to 0 $ and $ \Delta x \to 0 $ (as we also overlook a number of technical details) to obtain what is called the Kolmogorov forward equation:
+
+$$
 \frac{\partial\phi(p,x;t)}{\partial t}=-\frac{\partial\left[M(x)\phi(p,x;t)\right]}{\partial x}+\frac{1}{2}\frac{\partial^{2}\left[V(x)\phi(p,x;t)\right]}{\partial x^{2}}
 \tag{3.4}
-$$ This is a partial differential equation, and given some initial function $\phi(p,x;0)$, it can be solved (though not easily) for $\phi(p,x;t)$. We have not yet specified
+$$
+
+This is a partial differential equation, and given some initial function $\phi(p,x;0)$, it can be solved (though not easily) for $\phi(p,x;t)$. We have not yet specified
 
 $ M(x) $ or $ V(x) $ in terms that have any relation to population genetics. The function $ M(x) $ is a symbol for the change in allele frequency that occurs in one generation due to any systematic force such as mutation, migration, or selection. The function $ V(x) $ also has a straightforward biological interpretation; $ V(x) $ is the variance in allele frequency after one generation of binomial sampling of 2N alleles according to Equation 3.1; hence $ V(x) = x(1 - x)/(2N) $.
 
@@ -155,21 +181,37 @@ Figure 3:6B shows what happens when the initial allele frequency is 0.1; here th
 
 To find another equation for $\phi(p, x; t)$, we may also look backward in time to the beginning of the process and consider what may have happened in the very first increment of time $\Delta t$. Since the subpopulations initially all begin with an allele frequency of $p$, in the first time increment $\Delta t$ a particular subpopulation could change its state to a frequency of $p + \Delta p$, or it could change its state to $p - \Delta p$, or it could remain at $p$. These possibilities have relative probabilities $M(p) + V(p)/2$, $V(p)/2$, and $1 - M(p) - V(p)$, where again $M(p)$ measures the strength of any systematic force tending to increase the allele frequency and $V(p)$ measures the variance in allele frequency due to random genetic drift.
 
-The bookkeeping is shown in *[See Table 3.2 at the end of this section.]*. If $p$ changed state to $p + \Delta p$ in the first time increment, then the probability of the subpopulation achieving state $x$ in the subsequent $t - \Delta t$ time units is proportional to $\phi(p + \Delta p, x; t - \Delta t)$. Similarly, going from state $p - \Delta p$ to state $x$ in $t - \Delta t$ time units has a probability proportional to $\phi(p - \Delta p, x; t - \Delta t)$. Finally, going from state $p$ at time $\Delta t$ to state $x$ at time $t$ has a probability proportional to $\phi(p, x; t - \Delta t)$. The relevant equation for $\phi(p, x; t)$ is obtained by summing the products of columns 2 and 3 in *[See Table 3.2 at the end of this section.]*. After some rearrangement we obtain $$ \begin{aligned}&\phi(p,x;t)-\phi(p,x;t-\Delta t)=\\ &M(p)\Big[\phi(p+\Delta p,x;t-\Delta t)-\phi(p,x;t-\Delta t)\Big]\\ &+\frac{V(p)}{2}\Big\{\Big[\phi(p+\Delta p,x;t-\Delta t)-\phi(p,x;t-\Delta t)\Big]\\ &-\Big[\phi(p,x;t-\Delta t)-\phi(p-\Delta p,x;t-\Delta t)\Big]\Big\}\\ \end{aligned} $$ As before, the left hand side is equal to the change in $ \phi $ ($ \Delta\phi $) for a given change in $ t $ ($ \Delta t $). On the right-hand side, the first term is $ M(p) $ times the change in $ \phi $ ($ M\Delta\phi $) for a given change in $ p $ ($ \Delta p $), and the second term is $ V(p) $ times the change in the change in $ \phi $ ($ V\Delta\Delta\phi $) for a two-step change in $ p $ ($ \Delta\Delta p $). In these terms, the difference equation can be written as $$ \frac{\Delta\phi(p,x;t)}{\Delta t}=M(p)\frac{\Delta\phi(p,x;t)}{\Delta p}+\frac{V(p)}{2}\frac{\Delta\left(\Delta\phi(p,x;t)\right)}{\Delta(\Delta p)} $$
+The bookkeeping is shown in *[See Table 3.2 at the end of this section.]*. If $p$ changed state to $p + \Delta p$ in the first time increment, then the probability of the subpopulation achieving state $x$ in the subsequent $t - \Delta t$ time units is proportional to $\phi(p + \Delta p, x; t - \Delta t)$. Similarly, going from state $p - \Delta p$ to state $x$ in $t - \Delta t$ time units has a probability proportional to $\phi(p - \Delta p, x; t - \Delta t)$. Finally, going from state $p$ at time $\Delta t$ to state $x$ at time $t$ has a probability proportional to $\phi(p, x; t - \Delta t)$. The relevant equation for $\phi(p, x; t)$ is obtained by summing the products of columns 2 and 3 in *[See Table 3.2 at the end of this section.]*. After some rearrangement we obtain
 
-Once again we will ignore some technical requirements and simply assert that, in the limit as $ \Delta t \to 0 $ and $ \Delta p \to 0 $, the difference equation converges to a partial differential equation called the Kolmogorov backward equation: $$
+$$
+\begin{aligned}&\phi(p,x;t)-\phi(p,x;t-\Delta t)=\\ &M(p)\Big[\phi(p+\Delta p,x;t-\Delta t)-\phi(p,x;t-\Delta t)\Big]\\ &+\frac{V(p)}{2}\Big\{\Big[\phi(p+\Delta p,x;t-\Delta t)-\phi(p,x;t-\Delta t)\Big]\\ &-\Big[\phi(p,x;t-\Delta t)-\phi(p-\Delta p,x;t-\Delta t)\Big]\Big\}\\ \end{aligned}
+$$
+
+As before, the left hand side is equal to the change in $ \phi $ ($ \Delta\phi $) for a given change in $ t $ ($ \Delta t $). On the right-hand side, the first term is $ M(p) $ times the change in $ \phi $ ($ M\Delta\phi $) for a given change in $ p $ ($ \Delta p $), and the second term is $ V(p) $ times the change in the change in $ \phi $ ($ V\Delta\Delta\phi $) for a two-step change in $ p $ ($ \Delta\Delta p $). In these terms, the difference equation can be written as
+
+$$
+\frac{\Delta\phi(p,x;t)}{\Delta t}=M(p)\frac{\Delta\phi(p,x;t)}{\Delta p}+\frac{V(p)}{2}\frac{\Delta\left(\Delta\phi(p,x;t)\right)}{\Delta(\Delta p)}
+$$
+
+Once again we will ignore some technical requirements and simply assert that, in the limit as $ \Delta t \to 0 $ and $ \Delta p \to 0 $, the difference equation converges to a partial differential equation called the Kolmogorov backward equation:
+
+$$
 \frac{\partial\phi(p,x;t)}{\partial t}=M(p)\frac{\partial\phi(p,x;t)}{\partial p}+\frac{V(p)}{2}\frac{\partial^{2}\phi(p,x;t)}{\partial p^{2}}
 \tag{3.5}
 $$
 
 For answering questions of population genetic interest in random drift, the Kolmogorov backward equation (see Equation 3.5) is often more useful
 
-*[See Table 3.2 at the end of this section.]* than the forward equation (see Equation 3.4). The quantities of interest include the probability of ultimate fixation of an allele, the average time to fixation of alleles that are eventually fixed, and so forth. To give a sense of how the backward equation is used for these purposes, imagine the form of Equation 3.5 at a time so advanced that the distribution of allele frequencies $ \phi(p, x; t) $ is no longer changing. Since random drift will continue to change the allele frequencies as long as any subpopulations are still polymorphic, the statement that $ \phi(p, x; t) $ is no longer changing means that all subpopulations have become fixed for one allele or the other, which furthermore implies that the left-hand side of Equation 3.5 equals 0 and that the right-hand side no longer depends on either x (because no populations are still segregating) or t. To emphasize that we are now dealing with a function of a single variable, population geneticists often rewrite this form of Equation 3.5 as $$
+*[See Table 3.2 at the end of this section.]* than the forward equation (see Equation 3.4). The quantities of interest include the probability of ultimate fixation of an allele, the average time to fixation of alleles that are eventually fixed, and so forth. To give a sense of how the backward equation is used for these purposes, imagine the form of Equation 3.5 at a time so advanced that the distribution of allele frequencies $ \phi(p, x; t) $ is no longer changing. Since random drift will continue to change the allele frequencies as long as any subpopulations are still polymorphic, the statement that $ \phi(p, x; t) $ is no longer changing means that all subpopulations have become fixed for one allele or the other, which furthermore implies that the left-hand side of Equation 3.5 equals 0 and that the right-hand side no longer depends on either x (because no populations are still segregating) or t. To emphasize that we are now dealing with a function of a single variable, population geneticists often rewrite this form of Equation 3.5 as
+
+$$
 0=M(p)\frac{d u(p)}{d p}+\frac{V(p)}{2}\frac{d^{2}u(p)}{d p^{2}}
 \tag{3.6}
 $$
 
-In this equation, the symbol $d$ is used instead of $\partial$ to emphasize that $u(p)$ is a function of a single variable. In words, $u(p)$ is the probability of ultimate fixation of the allele $A$, given an initial frequency of $p$. Alternatively, $u(p)$ may be interpreted as the proportion of all subpopulations in which $A$ eventually becomes fixed. In the case of pure random drift with no systematic force, $M(p) = 0$. Equation 3.6 then becomes $$
+In this equation, the symbol $d$ is used instead of $\partial$ to emphasize that $u(p)$ is a function of a single variable. In words, $u(p)$ is the probability of ultimate fixation of the allele $A$, given an initial frequency of $p$. Alternatively, $u(p)$ may be interpreted as the proportion of all subpopulations in which $A$ eventually becomes fixed. In the case of pure random drift with no systematic force, $M(p) = 0$. Equation 3.6 then becomes
+
+$$
 0=\frac{V(p)}{2}\frac{d^{2}u(p)}{d p^{2}}
 \tag{3.7}
 $$
@@ -198,20 +240,28 @@ ANSWER What needs to be shown is that Equation 3.7 is satisfied when $ u(p) = p 
 
 ## PopGen_chapter3_007 · 3.3 THE DIFFUSION APPROXIMATION / Absorption Time and Time to Fixation
 
-For a selectively neutral allele, as indicated in Problem 3.5, the probability of ultimate fixation is equal to its initial allele frequency. Many other important results also follow from an analysis of the Kolmogorov backward equation (see Equation 3.5). These include the expected time for a neutral allele to go to fixation (given that it is eventually fixed) or to loss (given that it is eventually lost). Assuming an initial allele frequency p, Kimura and Ohta (1969) showed that the mean time $ [\tilde{t}_{1}(p) $, in generations] until the allele is fixed (given that it is eventually fixed) is $$
+For a selectively neutral allele, as indicated in Problem 3.5, the probability of ultimate fixation is equal to its initial allele frequency. Many other important results also follow from an analysis of the Kolmogorov backward equation (see Equation 3.5). These include the expected time for a neutral allele to go to fixation (given that it is eventually fixed) or to loss (given that it is eventually lost). Assuming an initial allele frequency p, Kimura and Ohta (1969) showed that the mean time $ [\tilde{t}_{1}(p) $, in generations] until the allele is fixed (given that it is eventually fixed) is
+
+$$
 \overline{t}_{1}(p)=-4N\left(\frac{1-p}{p}\right)\ln(1-p)
 \tag{3.8}
 $$
 
-Similarly, they showed that the mean time to loss $ \bar{t}_{0}(p) $ (given that the allele is eventually lost) is $$
+Similarly, they showed that the mean time to loss $ \bar{t}_{0}(p) $ (given that the allele is eventually lost) is
+
+$$
 \overline{t}_{0}(p)=-4N\left(\frac{p}{1-p}\right)\ln(p)
 \tag{3.9}
 $$
 
-Combining Equations 3.8 and 3.9, the mean persistence time of an allele $ [\bar{t}(p) $, the average length of time that a population is segregating for A and a] is given by $ \bar{t}(p) = p\bar{t}_{1}(p) + (1 - p)\bar{t}_{0}(p) $, which equals $$
+Combining Equations 3.8 and 3.9, the mean persistence time of an allele $ [\bar{t}(p) $, the average length of time that a population is segregating for A and a] is given by $ \bar{t}(p) = p\bar{t}_{1}(p) + (1 - p)\bar{t}_{0}(p) $, which equals
+
+$$
 \overline{t}(p)=-4N\Big[(1-p)\ln(1-p)+p\ln(p)\Big]
 \tag{3.10}
-$$ Figure 3.8 shows the average times to fixation, loss, and persistence of a neutral allele. An allele is expected to remain in a population for the longest time when its initial frequency is $ \frac{1}{2} $. When $ p = \frac{1}{2} $, the average time that a population remains unfixed is about 2.77N generations.
+$$
+
+Figure 3.8 shows the average times to fixation, loss, and persistence of a neutral allele. An allele is expected to remain in a population for the longest time when its initial frequency is $ \frac{1}{2} $. When $ p = \frac{1}{2} $, the average time that a population remains unfixed is about 2.77N generations.
 
 > **Figure 3.8** · page 19 · source: `PopGen_chapter3`
 >
@@ -247,7 +297,9 @@ The probability that the alleles in an individual are identical by descent is of
 
 Now we can be more specific about what we mean by saying that one can choose some arbitrary time in the past and declare that at this time every allele is distinct. In the context of population subdivision as illustrated in Figure 3.9, the time in the past when the alleles are declared as distinct is in the initial populations, when the population subdivision first takes place, and all subpopulations have the same allele frequencies. In symbols, we declare that, at time t = 0 when the subpopulations are first established, $ F_t = 0 $. As time goes on, and each subpopulation undergoes random drift, the genotype frequencies in each subpopulation will satisfy the Hardy-Weinberg principle because mating within subpopulations is random. However, the allele frequencies among the subpopulations will change because of random genetic drift, and moreover the value of $ F_t $ will gradually increase as more and more alleles within any subpopulation become identical by descent owing to common ancestry.
 
-The rate of increase in $ F_t $ can be calculated with the aid of the diagram in Figure 3.10. This figure shows the 2N alleles in a breeding population of generation $ t-1 $. In sampling alleles for generation $ t $, the first allele chosen may be any of those present in generation $ t-1 $ with equal probability. Having chosen the first allele, the probability that the second allele chosen is of the same type as the first is $ 1/(2N) $ (in which case $ F=1 $), because this is the frequency of each allelic type in the pool of gametes; the probability that the second chosen allele is of a different type from the first is accordingly $ 1-1/(2N) $ (in which case $ F=F_{t-1} $). Putting these two possibilities together, the relationship between $ F_t $ and $ F_{t-1} $ is seen to be $$
+The rate of increase in $ F_t $ can be calculated with the aid of the diagram in Figure 3.10. This figure shows the 2N alleles in a breeding population of generation $ t-1 $. In sampling alleles for generation $ t $, the first allele chosen may be any of those present in generation $ t-1 $ with equal probability. Having chosen the first allele, the probability that the second allele chosen is of the same type as the first is $ 1/(2N) $ (in which case $ F=1 $), because this is the frequency of each allelic type in the pool of gametes; the probability that the second chosen allele is of a different type from the first is accordingly $ 1-1/(2N) $ (in which case $ F=F_{t-1} $). Putting these two possibilities together, the relationship between $ F_t $ and $ F_{t-1} $ is seen to be
+
+$$
 F_{t}=\frac{1}{2N}+\left(1-\frac{1}{2N}\right)F_{t-1}
 \tag{3.11}
 $$
@@ -258,15 +310,29 @@ $$
 >
 > FIGURE 3.10 Diagram illustrating the reasoning behind the recursion for $F$ in a finite population. When the gametes are drawn to make up the population at generation $t$, there is a chance $1/(2N)$ that any pair of alleles will have been identical in generation $t-1$. If this happens, the probability of identity is 1. For the allele pairs drawn in generation $t$ from two distinct alleles at generation $t-1$ [the probability of this happening is $1-1/(2N)],$ the probability of identity is $F_{t-1}$,$Adding$ the probabilities of these two events, we get $F_t=1/(2N)+[1-1/(2N)]F_{t-1}$.
 
-Multiplying both sides by -1 and then adding 1 to each side leads to $$ 1-F_{t}=1-\frac{1}{2N}-\left(1-\frac{1}{2N}\right)F_{t-1}=\left(1-\frac{1}{2N}\right)\left(1-F_{t-1}\right) $$ and so $$
+Multiplying both sides by -1 and then adding 1 to each side leads to
+
+$$
+1-F_{t}=1-\frac{1}{2N}-\left(1-\frac{1}{2N}\right)F_{t-1}=\left(1-\frac{1}{2N}\right)\left(1-F_{t-1}\right)
+$$
+
+and so
+
+$$
 1-F_{t}=\left(1-\frac{1}{2N}\right)^{t}\left(1-F_{0}\right)
 \tag{3.12}
-$$ or, when $ F_{0}=0, $ $$
+$$
+
+or, when $ F_{0}=0, $
+
+$$
 F_{t}=1-\left(1-\frac{1}{2N}\right)^{t}
 \tag{3.13}
 $$
 
-Figure 3.11 shows the rapid increase of $ F_t $ in small populations. Even though the genotype frequencies in each individual subpopulation are in Hardy-Weinberg proportions, the frequency of homozygous genotypes in the overall population steadily increases. Conversely, as the frequency of homozygous genotypes increases, the frequency of heterozygous genotypes decreases until, when $ F_t = 1 $, there are no heterozygous genotypes left and all subpopulations are fixed for either A or a. At any time, the average frequency of heterozygous genotypes among the subpopulations, $ H_t $, relative to what it would be without population subdivision, $ H_0 $, decreases linearly in $ F_t $, hence we have $ H_t / H_0 = 1 - F_t $, or $ H_t = (1 - F_t) H_0 $. Solving Equation 3.13 for $ 1 - F_t $ and substituting, we obtain $$
+Figure 3.11 shows the rapid increase of $ F_t $ in small populations. Even though the genotype frequencies in each individual subpopulation are in Hardy-Weinberg proportions, the frequency of homozygous genotypes in the overall population steadily increases. Conversely, as the frequency of homozygous genotypes increases, the frequency of heterozygous genotypes decreases until, when $ F_t = 1 $, there are no heterozygous genotypes left and all subpopulations are fixed for either A or a. At any time, the average frequency of heterozygous genotypes among the subpopulations, $ H_t $, relative to what it would be without population subdivision, $ H_0 $, decreases linearly in $ F_t $, hence we have $ H_t / H_0 = 1 - F_t $, or $ H_t = (1 - F_t) H_0 $. Solving Equation 3.13 for $ 1 - F_t $ and substituting, we obtain
+
+$$
 H_{t}=\left(1-\frac{1}{2N}\right)^{t}H_{0}\approx H_{0}e^{-t/2N}
 \tag{3.14}
 $$
@@ -289,16 +355,24 @@ PROBLEM 3.6 Use Equation 3.14 to determine the average length of time it would t
 
 ANSWER Set $ H_t = \frac{1}{2} H_0 = H_0 e^{-(t/2N)} $. Now divide both sides by $ H_0 $ and take the natural logarithm (base $ e $) to obtain $ \ln(\frac{1}{2}) = -t/(2N) $, or $ t = -2N \ln(\frac{1}{2}) = 1.39N $ generations. In words, this result says that it requires an average of 1.39N generations to halve the heterozygosity, whatever its initial value. Fisher (1918) showed that it also takes 1.39N generations to halve what he called the genic variance in the population. Since the variance of a binomial sample is $ pq/2N $, and the average heterozygosity in a population decreases in proportion to the variance in allele frequency among subpopulations, it follows that the average heterozygosity decreases at the same rate as the variance in allele frequency among subpopulations increases.
 
-Several important consequences of the population structure in Figure 3.9 can now be summarized. First, although each subpopulation is finite in size, we can imagine so many of them that the size of the total population is effectively infinite. For an infinite population, the allele frequencies must remain constant. That is, even though the allele frequency in any individual subpopulation may change willy-nilly due to random genetic drift, the overall average allele frequency of A among subpopulations remains $ p_0 $, where $ p_0 $ represents the allele frequency of A in the initial populations. Figure 3.12B shows an experimental demonstration of the constancy of average allele frequency. Since $ F_t $ is the probability of identity by descent of the two alleles in an individual in generation t, the probability that the two alleles in an individual in generation t are not identical by descent is $ 1 - F_t $. Because $ p_0 $ is the overall allele frequency of A, averaged across all subpopulations, the probability that a randomly chosen individual will be genotypically AA is $ p_0^2(1 - F_t) $ [for the case of nonidentity by descent] + $ p_0F_t $ [for the case of identity by descent], which equals $ p_0^2(1 - F_t) + p_0F_t $. Similarly, the probability that the individual will be Aa equals $ 2p_0q_0(1 - F_t) $, and likewise the probability that the individual will be aa equals $ p_0(1 - F_t) + q_0F_t $. To summarize, the average genotype frequencies among subpopulations at any time t have the expected values: $$
+Several important consequences of the population structure in Figure 3.9 can now be summarized. First, although each subpopulation is finite in size, we can imagine so many of them that the size of the total population is effectively infinite. For an infinite population, the allele frequencies must remain constant. That is, even though the allele frequency in any individual subpopulation may change willy-nilly due to random genetic drift, the overall average allele frequency of A among subpopulations remains $ p_0 $, where $ p_0 $ represents the allele frequency of A in the initial populations. Figure 3.12B shows an experimental demonstration of the constancy of average allele frequency. Since $ F_t $ is the probability of identity by descent of the two alleles in an individual in generation t, the probability that the two alleles in an individual in generation t are not identical by descent is $ 1 - F_t $. Because $ p_0 $ is the overall allele frequency of A, averaged across all subpopulations, the probability that a randomly chosen individual will be genotypically AA is $ p_0^2(1 - F_t) $ [for the case of nonidentity by descent] + $ p_0F_t $ [for the case of identity by descent], which equals $ p_0^2(1 - F_t) + p_0F_t $. Similarly, the probability that the individual will be Aa equals $ 2p_0q_0(1 - F_t) $, and likewise the probability that the individual will be aa equals $ p_0(1 - F_t) + q_0F_t $. To summarize, the average genotype frequencies among subpopulations at any time t have the expected values:
+
+$$
 \begin{array}{r l}{A A:p_{0}^{2}(1-F_{t})+p_{0}F_{t}}&{{}=p_{0}^{2}+p_{0}q_{0}F_{t}}\end{array}
 \tag{3.15a}
-$$ $$
+$$
+
+$$
 \begin{array}{r l r l}{A a\colon2p_{0}q_{0}(1-F_{t})}&{{}}&{}&{{}=2p_{0}q_{0}-2p_{0}q_{0}F_{t}}\end{array}
 \tag{3.15b}
-$$ $$
+$$
+
+$$
 \begin{array}{r l}{a a\colon q_{0}^{2}(1-F_{t})+q_{0}F_{t}}&{{}=q_{0}^{2}+p_{0}q_{0}F_{t}}\end{array}
 \tag{3.15c}
-$$ where $ q_{0}=1-p_{0} $ is the average frequency of a, averaged across all subpopulations.
+$$
+
+where $ q_{0}=1-p_{0} $ is the average frequency of a, averaged across all subpopulations.
 
 Note that, while each individual subpopulation maintains Hardy-Weinberg frequencies, the average genotypic frequencies in the total population are different because there is an excess of homozygotes and a deficiency of heterozygotes. Equation 3.13 implies that the average heterozygosity among subpopulations at time $ t $ equals $ 2p_0q_0(1-F_t)=2p_0q_0[1-1/(2N)]^t $, and this is the theoretical curve plotted in Figure 3.12A (with $ p_0=q_0=\frac{1}{2} $). Additionally, the comment about the variance in the answer to Problem 3.6 can be stated in symbols by saying that, at any time $ t $, the expected variance in allele frequencies among the subpopulations equals $ 2p_0q_0F_t $.
 
@@ -316,34 +390,56 @@ Wright (1931) first worked out the effective population size by considering the 
 
 ## PopGen_chapter3_010 · 3.5 EFFECTIVE POPULATION SIZE / Fluctuation in Population Size
 
-Correction for fluctuating population size is important because natural populations actually do change in size, sometimes by a factor of 10 or more in a single generation. For the sake of simplicity, assume that the population is ideal in all respects except that its size is not constant. We will consider the situation over just two generations. Suppose that the population sizes in two successive generations are $ N_{0} $ and $ N_{1} $. The arguments laid out in Figure 3.10 imply that $$
+Correction for fluctuating population size is important because natural populations actually do change in size, sometimes by a factor of 10 or more in a single generation. For the sake of simplicity, assume that the population is ideal in all respects except that its size is not constant. We will consider the situation over just two generations. Suppose that the population sizes in two successive generations are $ N_{0} $ and $ N_{1} $. The arguments laid out in Figure 3.10 imply that
+
+$$
 1-F_{2}=\left(1-\frac{1}{2N_{1}}\right)\binom{1-F_{1}}{.}
 \tag{3.16}
-$$ and $$
+$$
+
+and
+
+$$
 1-F_{1}=\left(1-\frac{1}{2N_{0}}\right)\left(1-F_{0}\right)
 \tag{3.17}
 $$
 
-Substituting from the second equation into the first leads to $$
+Substituting from the second equation into the first leads to
+
+$$
 1-F_{2}=\left(1-\frac{1}{2N_{1}}\right)\left(1-\frac{1}{2N_{0}}\right)\left(1-F_{0}\right)
 \tag{3.18}
 $$
 
-By analogy with the constant N case, it is appropriate to try to express this equation in the general form $$
+By analogy with the constant N case, it is appropriate to try to express this equation in the general form
+
+$$
 1-F_{t}=\left(1-\frac{1}{2N}\right)^{t}\left(1-F_{0}\right)
 \tag{3.19}
-$$ where N is now the effective population size, usually symbolized as $ N_{e} $. In our example t = 2, so $$
+$$
+
+where N is now the effective population size, usually symbolized as $ N_{e} $. In our example t = 2, so
+
+$$
 \dot{1}-F_{2}=\left(1-\frac{1}{2N}\right)^{2}\left(1-F_{0}\right)
 \tag{3.20}
 $$
 
-Setting the two expressions for $1 - F_{2}$ equal to each other, we obtain $$
+Setting the two expressions for $1 - F_{2}$ equal to each other, we obtain
+
+$$
 \left(1-\frac{1}{2N}\right)^{2}=\left(1-\frac{1}{2N_{_{0}}}\right)\left(1-\frac{1}{2N_{_{1}}}\right)
 \tag{3.21}
-$$ from which $ 1/N = \frac{1}{2}(1/N_{0} + 1/N_{1}) $ turns out to be an excellent approximation. In general, $$
+$$
+
+from which $ 1/N = \frac{1}{2}(1/N_{0} + 1/N_{1}) $ turns out to be an excellent approximation. In general,
+
+$$
 \frac{1}{N_{e}}=\frac{1}{t}\left(\frac{1}{N_{0}}+\frac{1}{N_{1}}+\cdots+\frac{1}{N_{t-1}}\right)
 \tag{3.22}
-$$ and so the effective size $ N_{e} $ is the harmonic mean of the actual numbers—the reciprocal of the average of the reciprocals. As illustrated in the problem below, the harmonic mean tends to be dominated by the smallest terms. In biological reality, this means that a single period of small population size, called a bottleneck, can result in a serious loss in heterozygosity. Population bottlenecks are thought to account for the very low levels of polymorphism found in extant populations of the elephant seal (Bonnell and Selander 1974) and the cheetah (O'Brien et al. 1985, 1987). A severe population bottleneck often occurs in nature when a small group of emigrants from an established subpopulation found a new subpopulation; the accompanying random genetic drift is then known as a founder effect (see Holgate 1966; Nei et al. 1975; Chakraborty and Nei 1977; Neel and Thompson 1978). Founder effects in human populations have implications in medical genetics, because human populations derived from small numbers of founders may have an elevated incidence of an otherwise rare genetic disorder. Examples include Tay-Sachs diseases in Ashkenazi Jews, diastrophic dystrophy in Finns, familial hyperchylomicronemia in Quebecois, and congenital total color blindness in Pinge-lap Islanders (reviewed in Scriver 2001). In addition to reducing the effective population size, and thereby increasing F, population bottlenecks and founder effects may affect many other aspects of the genetic variation, including causing a reduced number of alleles, a distorted distribution of allele frequencies, and an increase in linkage disequilibrium.
+$$
+
+and so the effective size $ N_{e} $ is the harmonic mean of the actual numbers—the reciprocal of the average of the reciprocals. As illustrated in the problem below, the harmonic mean tends to be dominated by the smallest terms. In biological reality, this means that a single period of small population size, called a bottleneck, can result in a serious loss in heterozygosity. Population bottlenecks are thought to account for the very low levels of polymorphism found in extant populations of the elephant seal (Bonnell and Selander 1974) and the cheetah (O'Brien et al. 1985, 1987). A severe population bottleneck often occurs in nature when a small group of emigrants from an established subpopulation found a new subpopulation; the accompanying random genetic drift is then known as a founder effect (see Holgate 1966; Nei et al. 1975; Chakraborty and Nei 1977; Neel and Thompson 1978). Founder effects in human populations have implications in medical genetics, because human populations derived from small numbers of founders may have an elevated incidence of an otherwise rare genetic disorder. Examples include Tay-Sachs diseases in Ashkenazi Jews, diastrophic dystrophy in Finns, familial hyperchylomicronemia in Quebecois, and congenital total color blindness in Pinge-lap Islanders (reviewed in Scriver 2001). In addition to reducing the effective population size, and thereby increasing F, population bottlenecks and founder effects may affect many other aspects of the genetic variation, including causing a reduced number of alleles, a distorted distribution of allele frequencies, and an increase in linkage disequilibrium.
 
 PROBLEM 3.7 Suppose a population went through a bottleneck as follows: $ N_{0} = 1000 $, $ N_{1} = 10 $, and $ N_{2} = 1000 $. Calculate the effective size of this population across all three generations. ANSWER Using Equation 3.22, we get $ 1/N_e = \left(\frac{1}{3}\right)\left(\frac{1}{1000} + \frac{1}{10} + \frac{1}{1000}\right) = 0.034 $, or $ N_e = \frac{1}{10.034} = 29.4 $. The average effective number over the three-generation period is only 29.4, whereas the arithmetic average number of individuals is $ \left(\frac{1}{3}\right)(1000 + 10 + 1000) = 670 $.
 
@@ -351,17 +447,23 @@ PROBLEM 3.7 Suppose a population went through a bottleneck as follows: $ N_{0} =
 
 ## PopGen_chapter3_011 · 3.5 EFFECTIVE POPULATION SIZE / Unequal Sex Ratio, Sex Chromosomes, Organelle Genes
 
-A second important case in which the effective size of a nonideal population can readily be calculated concerns sexual populations in which the number of males and females is unequal. This inequality creates a peculiar sort of bottleneck; because half of the alleles in any generation must come from each sex, any departure of the sex ratio from equality will enhance the opportunity for random genetic drift. This situation is important in wildlife management, where, for many game animals (pheasants and deer come immediately to mind), the legal bag limit for males is much larger than for females. Although some management goals are served by such hunting regulations (for example, the species involved are usually polygamous, so one male can fertilize many females and overall actual population size can be maintained), it must be remembered that the resultant inequality in sex ratio reduces the effective population size. Specifically, if a sexual population consists of $ N_{m} $ males and $ N_{f} $ females, the actual size is $$
+A second important case in which the effective size of a nonideal population can readily be calculated concerns sexual populations in which the number of males and females is unequal. This inequality creates a peculiar sort of bottleneck; because half of the alleles in any generation must come from each sex, any departure of the sex ratio from equality will enhance the opportunity for random genetic drift. This situation is important in wildlife management, where, for many game animals (pheasants and deer come immediately to mind), the legal bag limit for males is much larger than for females. Although some management goals are served by such hunting regulations (for example, the species involved are usually polygamous, so one male can fertilize many females and overall actual population size can be maintained), it must be remembered that the resultant inequality in sex ratio reduces the effective population size. Specifically, if a sexual population consists of $ N_{m} $ males and $ N_{f} $ females, the actual size is
+
+$$
 N_{a}=N_{m}+N_{f}
 \tag{3.23}
 $$
 
-However, the effective population size is $$
+However, the effective population size is
+
+$$
 N_{e}=\frac{4N_{m}N_{f}}{N_{m}+N_{f}}
 \tag{3.24}
 $$
 
-Figure 3.13 shows the relationship between sex ratio and the reduction in effective population size. To take a realistic example, if hunting is permitted to a level at which the number of surviving males is one-tenth the number of females, then the effective population size is a mere one-third of the actual number of individuals in the population. A related problem is the effective population size for an X-linked gene, in which case $ \frac{2}{3} $ of the X chromosomes in any generation come from females in the previous generation and $ \frac{1}{3} $ come from males. The variance effective population size for an X-linked gene is $$
+Figure 3.13 shows the relationship between sex ratio and the reduction in effective population size. To take a realistic example, if hunting is permitted to a level at which the number of surviving males is one-tenth the number of females, then the effective population size is a mere one-third of the actual number of individuals in the population. A related problem is the effective population size for an X-linked gene, in which case $ \frac{2}{3} $ of the X chromosomes in any generation come from females in the previous generation and $ \frac{1}{3} $ come from males. The variance effective population size for an X-linked gene is
+
+$$
 N_{e}=\frac{9N_{m}N_{f}}{4N_{m}+2N_{f}}
 \tag{3.25}
 $$
@@ -372,15 +474,23 @@ $$
 >
 > FIGURE 3.13 Effective size falls off rapidly in populations with a skewed sex ratio.
 
-Equation 3.25 can be justified by noting that the sampling variance for the X chromosomes from males is $ p_{m}q_{m}/N_{m} $, whereas the sampling variance for X chromosomes from females is $ p_{f}q_{f}/2N_{f} $, in which $ p_{m} $ and $ p_{f} $ are the frequencies of allele A in males and females, respectively. The frequency of an A-bearing X chromosome in the population is $$
+Equation 3.25 can be justified by noting that the sampling variance for the X chromosomes from males is $ p_{m}q_{m}/N_{m} $, whereas the sampling variance for X chromosomes from females is $ p_{f}q_{f}/2N_{f} $, in which $ p_{m} $ and $ p_{f} $ are the frequencies of allele A in males and females, respectively. The frequency of an A-bearing X chromosome in the population is
+
+$$
 p=\frac{1}{3}p_{m}+\frac{2}{3}p_{f}
 \tag{3.26}
-$$ Now we use the fact that, if $a$ and $b$ are constants and $X$ and $Y$ are independent random variables, then $Var(aX + bY) = a^2Var(X) + b^2Var(Y)$. In this case $a = \frac{1}{3}$, $b = \frac{2}{3}$, and the variances of $p_m$ and $p_f$ are the binomial variances, and so $$
+$$
+
+Now we use the fact that, if $a$ and $b$ are constants and $X$ and $Y$ are independent random variables, then $Var(aX + bY) = a^2Var(X) + b^2Var(Y)$. In this case $a = \frac{1}{3}$, $b = \frac{2}{3}$, and the variances of $p_m$ and $p_f$ are the binomial variances, and so
+
+$$
 Var\left(p\right)=\frac{1}{9}\left(\frac{p_{m}q_{m}}{N_{m}}\right)+\frac{4}{9}\left(\frac{p_{f}q_{f}}{2N_{f}}\right)
 \tag{3.27}
 $$
 
-At steady state, $ p_{m} = p_{f} = p $ and $ q_{m} = q_{f} = q $. Making these substitutions and factoring $ pq $ results in $$
+At steady state, $ p_{m} = p_{f} = p $ and $ q_{m} = q_{f} = q $. Making these substitutions and factoring $ pq $ results in
+
+$$
 Var\left(p\right)=pq\left(\frac{1}{9}\frac{1}{N_{m}}+\frac{4}{9}\frac{1}{2N_{f}}\right)=\frac{pq}{2\left[\frac{9N_{m}N_{f}}{4N_{m}+2N_{f}}\right]}
 \tag{3.28}
 $$
@@ -397,22 +507,36 @@ ANSWER Mitochondrial DNA is transmitted essentially exclusively by females, and 
 
 **[命题 Proposition]**
 
-An ideal population is one in which each breeding individual has an equal chance of contributing offspring to the next generation. Technically, this means that the statistical distribution of the number of offspring per individual is a binomial distribution with mean 1 and variance 1 - 1/N. The distribution is binomial because its range is the fixed interval [0, N], owing to the fact that no individual can have more than N progeny. If N is reasonably large, this binomial distribution is virtually identical to a Poisson distribution with mean and variance equal to 1. Nevertheless, the assumption that each individual has the same distribution of number of progeny is usually unrealistic because, in real organisms, breeding individuals can manifest large differences in their number of progeny. A more realistic model is one in which there are N individuals in the population and in which the ith individual (i = 1, 2,..., N) produces $ n_i $ offspring. In this situation, the effective size of the population is defined as the reciprocal of the probability P that two randomly chosen gametes in the next generation come from the same parent in the previous generation (Crow and Kimura 1970). We will denote the mean and variance of the distribution of offspring number as $ \xi $ (Greek xi) and $ \sigma^2 $, respectively. With these definitions, $$
+An ideal population is one in which each breeding individual has an equal chance of contributing offspring to the next generation. Technically, this means that the statistical distribution of the number of offspring per individual is a binomial distribution with mean 1 and variance 1 - 1/N. The distribution is binomial because its range is the fixed interval [0, N], owing to the fact that no individual can have more than N progeny. If N is reasonably large, this binomial distribution is virtually identical to a Poisson distribution with mean and variance equal to 1. Nevertheless, the assumption that each individual has the same distribution of number of progeny is usually unrealistic because, in real organisms, breeding individuals can manifest large differences in their number of progeny. A more realistic model is one in which there are N individuals in the population and in which the ith individual (i = 1, 2,..., N) produces $ n_i $ offspring. In this situation, the effective size of the population is defined as the reciprocal of the probability P that two randomly chosen gametes in the next generation come from the same parent in the previous generation (Crow and Kimura 1970). We will denote the mean and variance of the distribution of offspring number as $ \xi $ (Greek xi) and $ \sigma^2 $, respectively. With these definitions,
+
+$$
 \xi=\frac{\sum n_{1}}{N}\quad\text{and}\quad\sigma^{2}=\frac{\sum n_{1}}{N}-\left(\frac{\sum n_{1}}{N}\right)^{2}
 \tag{3.29}
 $$
 
-The probability P that two randomly chosen gametes come from the same parent is given by $$
+The probability P that two randomly chosen gametes come from the same parent is given by
+
+$$
 \begin{aligned}P=&\frac{\Sigma\binom{n_{i}}{2}}{\binom{N\xi}{2}}=\frac{\sum n_{i}(n_{i}-1)}{N\xi(N\xi-1)}=\frac{\sum n_{i}^{2}-\sum n_{i}}{N\xi(N\xi-1)}\\。\end{aligned}
 \tag{3.30}
 $$
 
 **[定义 Definition]**
 
-The rationale for Equation 3.30 is that the numerator is the number of ways that two randomly chosen alleles can be present in offspring from the same parent, and the denominator is the number of ways that two randomly chosen alleles can have any parents. Substitution of Equation 3.29 into Equation 3.30 and a little rearrangement yields $$ P=\frac{(\sigma^{2}/\xi)+(\xi-1)}{N-1} $$ But since $ N_{e}=1/P $ by definition, we can write $$
+The rationale for Equation 3.30 is that the numerator is the number of ways that two randomly chosen alleles can be present in offspring from the same parent, and the denominator is the number of ways that two randomly chosen alleles can have any parents. Substitution of Equation 3.29 into Equation 3.30 and a little rearrangement yields
+
+$$
+P=\frac{(\sigma^{2}/\xi)+(\xi-1)}{N-1}
+$$
+
+But since $ N_{e}=1/P $ by definition, we can write
+
+$$
 N_{e}=\frac{N-1}{(\sigma^{2}/\xi)+(\xi-1)}
 \tag{3.31}
-$$ and so, when $ \xi = 1 $, $ N_e $ is approximately equal to $ N/\sigma^2 $. Therefore, a large variance in offspring number reduces the effective population size by a factor of $ 1/\sigma^2 $, thereby speeding up the process of random genetic drift. The flip side of this principle suggests a management strategy for endangered species: Loss of genetic variation can be reduced when the variance in offspring number is minimized, because if $ \sigma^2 $ is smaller than 1, the effective population size can be larger than the actual population size.
+$$
+
+and so, when $ \xi = 1 $, $ N_e $ is approximately equal to $ N/\sigma^2 $. Therefore, a large variance in offspring number reduces the effective population size by a factor of $ 1/\sigma^2 $, thereby speeding up the process of random genetic drift. The flip side of this principle suggests a management strategy for endangered species: Loss of genetic variation can be reduced when the variance in offspring number is minimized, because if $ \sigma^2 $ is smaller than 1, the effective population size can be larger than the actual population size.
 
 Variance in offspring number can have a large effect on random genetic drift, as can be seen in particularly important cases in which genes are transmitted by different mechanisms in males and females (for example, in the X and Y chromosomes, or in mitochondrial and chloroplast DNA). Generally, even for nuclear genes, the variance in offspring number of males is far greater than that of females, and one particular consequence is that the effective size for the Y chromosome is much smaller than the theoretical value of $ N_{m}/2 $ implied by Problem 3.8.
 
@@ -420,7 +544,9 @@ Variance in offspring number can have a large effect on random genetic drift, as
 
 ## PopGen_chapter3_013 · 3.5 EFFECTIVE POPULATION SIZE / Effective Size of a Subdivided Population
 
-Finally we will consider a model in which a population is subdivided into D subpopulations (demes), each consisting of N diploid individuals, with migration among demes measured by a quantity m equal to the probability that a randomly chosen allele in any deme originates from one of the remaining D−1 demes. The population subdivision creates a situation in which two levels of random drift take place simultaneously. There is a drift process within each deme, which takes place relatively rapidly, and another drift process in the population as a whole, which takes place more slowly. Since the mathematics is somewhat rough going (Wakeley 1999, 2000), we shall present only the main result, which is that, when D is reasonably large, the effective population size of the entire population is given by $$
+Finally we will consider a model in which a population is subdivided into D subpopulations (demes), each consisting of N diploid individuals, with migration among demes measured by a quantity m equal to the probability that a randomly chosen allele in any deme originates from one of the remaining D−1 demes. The population subdivision creates a situation in which two levels of random drift take place simultaneously. There is a drift process within each deme, which takes place relatively rapidly, and another drift process in the population as a whole, which takes place more slowly. Since the mathematics is somewhat rough going (Wakeley 1999, 2000), we shall present only the main result, which is that, when D is reasonably large, the effective population size of the entire population is given by
+
+$$
 N_{e}=N D\left(1+\frac{1}{4N m}\right)
 \tag{3.32}
 $$
@@ -445,26 +571,34 @@ In reality, we do not usually have the genealogical information enabling us to f
 
 Figure 3.14 illustrates one reason why coalescent reasoning is so powerful. If we were to study the process in Figure 3.14 going forward in time by means of computer simulation, many of the alleles that are tracked represent wasted computation, since they do not have descendants in the present generation (generation 0). These alleles are denoted by filled circles, and in this case there are 22 of them. On the other hand, if we were to study the same process going backward in time, none of the alleles tracked would be wasted, because each allele present in any generation must trace back to some allele. present in the previous generation. These alleles are represented by open circles, and in this case there are 27 of them. In other words, the forward simulation wastes nearly half its time generating alleles (22 alleles among a total of 49) that are of no interest because they do not contribute to the ancestry of the alleles present in the current population. This is not a great price in the present case, when the sample size is small, but in samples of hundreds of alleles, the vast majority of lineages simulated in the forward direction are unnecessary. In fact, in an original population of size 2N that has evolved for long enough that one of the alleles has gone to fixation in the contemporary population, it is unnecessary to deal with any of the original 2N−1 lineages that eventually go extinct.
 
-Since we are interested in the time required for a pair of genealogies to coalesce, we need a model from which the coalescence times can be derived. Let us consider the immediate ancestry of two alleles. The probability that the two alleles came from the same allele in the previous generation is $ \frac{1}{(2N)} $ (in a diploid population of size N), so the chance that they came from two distinct alleles the previous generation is $ 1 - \frac{1}{(2N)} $. Similarly, the probability that three alleles in any generation originate from three distinct ancestral alleles in the previous generation is Pr(alleles 1 and 2 have distinct ancestors)Pr(allele 3 has a different ancestor from those of allele 1 and allele 2) = $ \frac{1}{1 - \frac{1}{(2N)}} $[1 - $ \frac{1}{2} $(2N)]. In general, the probability that k alleles had k distinct parental alleles the previous generation is $$
+Since we are interested in the time required for a pair of genealogies to coalesce, we need a model from which the coalescence times can be derived. Let us consider the immediate ancestry of two alleles. The probability that the two alleles came from the same allele in the previous generation is $ \frac{1}{(2N)} $ (in a diploid population of size N), so the chance that they came from two distinct alleles the previous generation is $ 1 - \frac{1}{(2N)} $. Similarly, the probability that three alleles in any generation originate from three distinct ancestral alleles in the previous generation is Pr(alleles 1 and 2 have distinct ancestors)Pr(allele 3 has a different ancestor from those of allele 1 and allele 2) = $ \frac{1}{1 - \frac{1}{(2N)}} $[1 - $ \frac{1}{2} $(2N)]. In general, the probability that k alleles had k distinct parental alleles the previous generation is
+
+$$
 \Pr(\stackrel{i}{k})=\prod_{i=1}^{k-1}\left(1-\frac{i}{2N}\right)\approx1-\frac{(k)}{2N}
 \tag{3.33}
 $$
 
 In each generation the sampling process occurs independently of what happened before, and so the probability that k alleles had k distinct parental alleles two generations ago is the square of the right-hand side of Equation 3.33. Consider two alleles again. Suppose we wish to know the probability that the common ancestor of these two alleles occurred exactly $ t + 1 $ generations ago. In this case there must have been no coalescence (i.e., two distinct ancestral lineages exist) for t generations, and then, in the next preceding generation, a coalescence occurred. The chance of two alleles not coalescing for t generations is $ [1 - 1/(2N)]^t $, and the chance that they coalesce in the next generation is $ 1/(2N) $. The desired probability is the product of these or
 
-Pr (two alleles had common ancestor $ t+1 $ generations ago) $$
+Pr (two alleles had common ancestor $ t+1 $ generations ago)
+
+$$
 =\frac{1}{2N}\left[1-\left(\frac{1}{2N}\right)\right]^{t}\approx\frac{1}{2N}e^{-t/(2N)}
 \tag{3.34}
 $$
 
 The exponential is an approximation that is quite good when $ 1/(2N) $ is small. This distribution has a mean of 2N generations and a variance of $ 4N^{2} $. Note that the confidence interval around the mean time is not very tight, since the standard deviation of the distribution (2N) is equal to the mean.
 
-Returning to our sample of k alleles, the probability that the k alleles do not coalesce for t generations, and then one pair coalesces to give k - 1 alleles at $ t + 1 $ generations ago is as follows: $$
+Returning to our sample of k alleles, the probability that the k alleles do not coalesce for t generations, and then one pair coalesces to give k - 1 alleles at $ t + 1 $ generations ago is as follows:
+
+$$
 \begin{aligned}&=\Pr\left(k\right)^{\mathrm{t}}\left[1-\Pr(k)\right]\\&\approx\frac{\binom{k}{2}}{2\mathrm{N}}\exp\left[-\frac{\binom{k}{2}}{2\mathrm{N}}t\right]\\ \end{aligned}
 \tag{3.35}
 $$
 
-This approximation is valid if $ k \ll N $ (that is, if the sample size is much smaller than the population size, which is usually the case). The distribution in Equation 3.35 has a mean and variance given by $$
+This approximation is valid if $ k \ll N $ (that is, if the sample size is much smaller than the population size, which is usually the case). The distribution in Equation 3.35 has a mean and variance given by
+
+$$
 Mean=\frac{4N}{k(k-1)}generations\quad Variance=\frac{16N^{2}}{\left[k(k-1)\right]^{2}}generations^{2}
 \tag{3.36}
 $$
@@ -483,10 +617,16 @@ Figure 3.15 shows what the gene genealogy is expected to be in the case of five 
 
 Note that the coalescent times become longer as one goes back farther in time, and the last coalescent time (from 2 alleles to 1) is the longest. This pattern is typical of coalescence in a population of constant size. Quantitatively, it requires a fraction $ (1 - 1/n)/(1 - 1/k) $ of the total time for the last $ n $ of $ k $ alleles in a sample to coalesce (Felsenstein 2004). From this relationship it is easy to see that, if $ k $ is reasonably large (say, $ k \geq 10 $), almost half the time is required to coalesce the last two alleles $ (n = 2) $.
 
-For a sample of k alleles, the time to the coalescence of all of the alleles (i.e., the most recent time that the sample of k alleles shared a common ancestor) is $$
+For a sample of k alleles, the time to the coalescence of all of the alleles (i.e., the most recent time that the sample of k alleles shared a common ancestor) is
+
+$$
 t=4N(1-1/k)
 \tag{3.37}
-$$ with variance $$
+$$
+
+with variance
+
+$$
 V=4N^{2}\prod_{i=2}^{k}\frac{1}{\binom{i}{2}^{2}}
 \tag{3.38}
 $$
@@ -533,10 +673,14 @@ The mid-depth method has the drawback that it treats the coalescent tree as know
 
 ## PopGen_chapter3_017 · 3.6 GENE TREES AND COALESCENCE / Coalescent Models with Mutation
 
-The principles embodied in Equation 3.35 allows us to generate simulated gene genealogies whose branch lengths correspond to the assumptions of the Wright-Fisher model. It is important to emphasize that we do not usually know the true ancestral relationships among the alleles. The only cases in which the true ancestries are known come from experimental evolution studies carried out in the laboratory with viruses or microbes in which a sample of genomes is isolated and preserved by freezing at intervals during the process. In other contexts when we want to make inferences about a single sample, we simulate a large number of genealogies consistent with the composition of the sample and then make inferences based on the relative likelihoods of these genealogies: To put the method more formally, what we are interested in is maximizing the likelihood L of observing the actual data D (typically DNA sequences) across all possible genealogies, given some model of mutation and population processes (Rosenberg and Nordborg 2002; Felsenstein 2004). Formally, we can write $$
+The principles embodied in Equation 3.35 allows us to generate simulated gene genealogies whose branch lengths correspond to the assumptions of the Wright-Fisher model. It is important to emphasize that we do not usually know the true ancestral relationships among the alleles. The only cases in which the true ancestries are known come from experimental evolution studies carried out in the laboratory with viruses or microbes in which a sample of genomes is isolated and preserved by freezing at intervals during the process. In other contexts when we want to make inferences about a single sample, we simulate a large number of genealogies consistent with the composition of the sample and then make inferences based on the relative likelihoods of these genealogies: To put the method more formally, what we are interested in is maximizing the likelihood L of observing the actual data D (typically DNA sequences) across all possible genealogies, given some model of mutation and population processes (Rosenberg and Nordborg 2002; Felsenstein 2004). Formally, we can write
+
+$$
 L=\sum_{G}\Pr\left\{D\mid G,\mu\right\}\Pr\left\{G,\alpha\right\}
 \tag{3.39}
-$$ where G represents any particular genealogy, $ \mu $ is the set of parameters that define the mutation model, and $ \alpha $ is the set of parameters that characterize the population process (i.e., population size, growth rate, number of demes, migration rate, and so forth).
+$$
+
+where G represents any particular genealogy, $ \mu $ is the set of parameters that define the mutation model, and $ \alpha $ is the set of parameters that characterize the population process (i.e., population size, growth rate, number of demes, migration rate, and so forth).
 
 Equation 3.39 is usually intractable analytically, and therefore simulation of many thousands of random genealogies is carried out instead. In order to simulate the genealogies and sequences of alleles in a sample, we need to specify some type of mutation model. One widely used model is known as the infinite-sites model, in which each allele is considered as a sequence of nucleotides with mutation altering any site in the sequence. If the mutation rate is sufficiently low, then most sites will be monomorphic in the sample, and all polymorphic sites will be segregating for just two nucleotides. Much of the available data on allelic variation in DNA sequence seems consistent with this view: Few nucleotide sites are segregating for more than two nucleotides. If the DNA sequence is sufficiently long and the frequency of polymorphic sites low, then most of the time new mutations will occur at sites that were previously monomorphic. The infinite-sites model is based on these assumptions. It was developed originally by Kimura (1969, 1971), who considered nucleotides as unlinked, and by Watterson (1975), who took account of the nearly complete linkage among sites.
 
@@ -562,15 +706,23 @@ These data were reconsidered by Nordborg (1998) in the light of a different popu
 
 ## PopGen_chapter3_019 · RANDOM GENETIC DRIFT: Introduction / 3.7 THEORETICAL IMPLICATIONS OF COALESCENCE
 
-The coalescent approach can be used to derive many fundamental principles in population genetics. For example, Equation 3.36 defines the expected length of each interval $ T_{k} $ in a coalescent tree (see also Figure 3.15), and so the expected sum of the branch lengths $ E(T) $ for the entire tree is given by $$
+The coalescent approach can be used to derive many fundamental principles in population genetics. For example, Equation 3.36 defines the expected length of each interval $ T_{k} $ in a coalescent tree (see also Figure 3.15), and so the expected sum of the branch lengths $ E(T) $ for the entire tree is given by
+
+$$
 E(T)=E\left(\sum_{i=2}^{k}iT_{i}\right)=\sum_{i=2}^{k}iE(T_{i})=\sum_{i=2}^{k}i\frac{4N}{i(i-1)}=4N\sum_{i=1}^{k-1}\frac{1}{i}
 \tag{3.40}
 $$
 
-The expected number of segregating sites, $ E(S) $, in a set of aligned DNA sequences is equal to the product of the mutation rate and the expected length of all the branches in the coalescent tree, or $ \mu E(T) $. The expected number of segregating sites in a sample of k aligned sequences is therefore obtained from Equation 3.40 as $$
+The expected number of segregating sites, $ E(S) $, in a set of aligned DNA sequences is equal to the product of the mutation rate and the expected length of all the branches in the coalescent tree, or $ \mu E(T) $. The expected number of segregating sites in a sample of k aligned sequences is therefore obtained from Equation 3.40 as
+
+$$
 E(S)=\mu E(T)=4N\mu\sum_{i=1}^{k-1}\frac{1}{i}=\theta\sum_{i=1}^{k-1}\frac{1}{i}
 \tag{3.41}
-$$ where $ \theta = 4N\mu $. This is the expected number of segregating sites in the infinite-sites model, which we shall discuss again in Chapter 4 in a different context. Note that $ \mu $ is not the mutation rate per nucleotide site; rather it is the mutation rate across the entire length of the DNA sequence. As another example of the theoretical utility of the coalescent approach, consider a sample of alleles taken from population presently in equilibrium between mutation and random genetic drift, which means that new mutations in each generation occur at the same rate as old mutations are lost due to random drift. Tracing any pair of alleles back to the previous generation, the pair of alleles could either coalesce, with probability 1/(2N), or failing to coalesce, one or the other allele could have undergone mutation with probability 2μ. (The factor 2 is necessary because either of the alleles could mutate.) These are the only two events that affect allele identity by descent, and the sum of their probabilities is 1/(2N) + 2μ. The probability of identity by descent (F) is therefore the fraction of the time that the alleles coalesce, or $$
+$$
+
+where $ \theta = 4N\mu $. This is the expected number of segregating sites in the infinite-sites model, which we shall discuss again in Chapter 4 in a different context. Note that $ \mu $ is not the mutation rate per nucleotide site; rather it is the mutation rate across the entire length of the DNA sequence. As another example of the theoretical utility of the coalescent approach, consider a sample of alleles taken from population presently in equilibrium between mutation and random genetic drift, which means that new mutations in each generation occur at the same rate as old mutations are lost due to random drift. Tracing any pair of alleles back to the previous generation, the pair of alleles could either coalesce, with probability 1/(2N), or failing to coalesce, one or the other allele could have undergone mutation with probability 2μ. (The factor 2 is necessary because either of the alleles could mutate.) These are the only two events that affect allele identity by descent, and the sum of their probabilities is 1/(2N) + 2μ. The probability of identity by descent (F) is therefore the fraction of the time that the alleles coalesce, or
+
+$$
 F=\frac{\frac{1}{2N}}{\frac{1}{2N}+2\mu}=\frac{1}{1+\theta}
 \tag{3.42}
 $$
@@ -583,9 +735,17 @@ PROBLEM 3.9 In a model of pure random drift, the probability distribution for th
 
 $ = ze^{-2t} \text{ where } z = \binom{k}{2} / N $ From this one can show that the mean number of generations back to the first coalescence is 1/z. The more genes in the sample, the more likely it will be that a coalescence occurred recently. Calculate the expected time to first coalescence in a population of N = 450 for a sample of 10 genes. How many genes would you have to sample to reduce this coalescence time by half?
 
-ANSWER The expected time to first coalescence in a population of N = 450 for a sample of 10 genes is $$ \begin{aligned}N/\binom{k}{2}&=450/\binom{10}{2}=450/(10\times9/2)\\&=10\text{generations}\end{aligned} $$
+ANSWER The expected time to first coalescence in a population of N = 450 for a sample of 10 genes is
 
-To determine how many genes one would have to sample to halve this coalescence time, solve for $$ 5=450\left/\binom{k}{2}\right. $$
+$$
+\begin{aligned}N/\binom{k}{2}&=450/\binom{10}{2}=450/(10\times9/2)\\&=10\text{generations}\end{aligned}
+$$
+
+To determine how many genes one would have to sample to halve this coalescence time, solve for
+
+$$
+5=450\left/\binom{k}{2}\right.
+$$
 
 This is equivalent to $90 = k!/(2!k - 2!)$ or $180 = k(k - 1)$. This is a quadratic equation $k^2 - k = 180$ that fits the general form $ax^2 + bx + c = 0$, where $a = 1$, $b = -1$, $c = -180$. The solutions are given by $[-b \pm v(b^2 - 4ac)]/(2a)$, and in this case the solution we want is $k = 13.9$ (the other solution is negative). Hence a sample of size 14 will reduce the initial coalescence time to about 5 generations (4.94 to be exact). If you do not know the quadratic formula, you can also get this answer by trial and error. In any case, increasing the sample from 10 to only 14, we expect to find any pair of alleles only half as divergent from each other.
 

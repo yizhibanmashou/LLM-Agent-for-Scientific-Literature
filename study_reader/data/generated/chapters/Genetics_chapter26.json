@@ -1,0 +1,1522 @@
+{
+  "sections": [
+    {
+      "id": "Genetics_chapter26_section_001",
+      "title": "Chapter 26 · Genetics_chapter26",
+      "nav_label": "Genetics_chapter26",
+      "raw_title": "Chapter 26 · Genetics_chapter26",
+      "level": 1,
+      "depth": 0,
+      "anchor": "genetics_chapter26_section_001",
+      "text_preview": ""
+    },
+    {
+      "id": "Genetics_chapter26_001",
+      "title": "Genetics_chapter26",
+      "nav_label": "Genetics_chapter26",
+      "raw_title": "Genetics_chapter26_001 · Genetics_chapter26",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter26_001",
+      "text_preview": "26 ---"
+    },
+    {
+      "id": "Genetics_chapter26_002",
+      "title": "Genetics_chapter26 / Estimation of Breeding Values",
+      "nav_label": "Estimation of Breeding Values",
+      "raw_title": "Genetics_chapter26_002 · Genetics_chapter26 / Estimation of Breeding Values",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter26_002",
+      "text_preview": "Most of the analytical methods encountered in earlier chapters of this book have assumed a data base derived from a setting with a regular design and fairly constant sample sizes in different genetic groups. Such situations are often approachable in laboratory or greenhouse populations, but many natural populations an…"
+    },
+    {
+      "id": "Genetics_chapter26_003",
+      "title": "THE GENERAL MIXED MODEL",
+      "nav_label": "THE GENERAL MIXED MODEL",
+      "raw_title": "Genetics_chapter26_003 · THE GENERAL MIXED MODEL",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter26_003",
+      "text_preview": "Consider a column vector y containing the phenotypic values for a trait measured in n individuals. We assume that these observations are described adequately by a linear model with a $ p \\times 1 $ vector of fixed effects ( $ \\beta $) and a $ q \\times 1 $ vector of random effects (u). The first element of the vector $…"
+    },
+    {
+      "id": "Genetics_chapter26_004",
+      "title": "THE GENERAL MIXED MODEL / Estimating Fixed Effects and Predicting Random Effects",
+      "nav_label": "Estimating Fixed Effects and Predicting Random Effects",
+      "raw_title": "Genetics_chapter26_004 · THE GENERAL MIXED MODEL / Estimating Fixed Effects and Predicting Random Effects",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter26_004",
+      "text_preview": "As outlined in the preceding chapters, the primary goal of a quantitative-genetic analysis is often solely to estimate variance components. However, there are also numerous situations in which inferences about fixed effects (such as the effect of a particular environment or year) and/or random effects (such as the bre…"
+    },
+    {
+      "id": "Genetics_chapter26_005",
+      "title": "THE GENERAL MIXED MODEL / Example 4. Using the values from Examples 1 and 2, we find that",
+      "nav_label": "Example 4. Using the values from Examples 1 and 2, we find that",
+      "raw_title": "Genetics_chapter26_005 · THE GENERAL MIXED MODEL / Example 4. Using the values from Examples 1 and 2, we find that",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter26_005",
+      "text_preview": "$$ \\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{X}=\\frac{1}{6}\\begin{pmatrix}{{{4}}}&{{{0}}} \\\\{{{0}}}&{{{2}}}\\end{pmatrix},\\qquad\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{Z}=\\left(\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{X}\\right)^{T}=\\frac{1}{6}\\begin{pmatrix}{{{1}}}&{{{2}}}&{{{1}}} \\\\{{{1}}}&{{{0}}}&{{{1}}}\\end{pmatrix} $$ $$ \\math…"
+    },
+    {
+      "id": "Genetics_chapter26_006",
+      "title": "THE GENERAL MIXED MODEL / Estimability of Fixed Effects",
+      "nav_label": "Estimability of Fixed Effects",
+      "raw_title": "Genetics_chapter26_006 · THE GENERAL MIXED MODEL / Estimability of Fixed Effects",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter26_006",
+      "text_preview": "It is sometimes impossible to obtain unique BLUE estimates for all of the fixed factors in a model. Suppose, for example, that $$ \\boldsymbol{\\beta}=\\begin{pmatrix}{{{\\beta {1}}}} \\\\{{{\\beta {2}}}} \\\\{{{\\beta {3}}}}\\end{pmatrix}\\quad with\\quad\\mathbf{X}=\\begin{pmatrix}{{{1}}}&{{{1}}}&{{{0}}} \\\\{{{1}}}&{{{1}}}&{{{0}}}…"
+    },
+    {
+      "id": "Genetics_chapter26_007",
+      "title": "THE GENERAL MIXED MODEL / Standard Errors",
+      "nav_label": "Standard Errors",
+      "raw_title": "Genetics_chapter26_007 · THE GENERAL MIXED MODEL / Standard Errors",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter26_007",
+      "text_preview": "A relatively straightforward extension of Henderson’s mixed-model equations provides estimates of the standard errors of the fixed and random effects. Let the inverse of the leftmost matrix in Equation 26.5 be $$ \\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{X}&\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{Z}&.\\\\\\mathbf{…"
+    },
+    {
+      "id": "Genetics_chapter26_008",
+      "title": "MODELS FOR THE ESTIMATION OF BREEDING VALUES",
+      "nav_label": "MODELS FOR THE ESTIMATION OF BREEDING VALUES",
+      "raw_title": "Genetics_chapter26_008 · MODELS FOR THE ESTIMATION OF BREEDING VALUES",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter26_008",
+      "text_preview": "While the [[[[general mixed model]]]] (Equation 26.1) forms the fundamental framework for BLUP analysis, there are numerous ways in which this model can be formulated. Three specific variants of the model provide the basis for most attempts to estimate breeding values. So-called animal models estimate the breeding val…"
+    },
+    {
+      "id": "Genetics_chapter26_009",
+      "title": "MODELS FOR THE ESTIMATION OF BREEDING VALUES / The Animal Model",
+      "nav_label": "The Animal Model",
+      "raw_title": "Genetics_chapter26_009 · MODELS FOR THE ESTIMATION OF BREEDING VALUES / The Animal Model",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter26_009",
+      "text_preview": "Assuming only a single fixed factor (the population mean) under the simplest animal model, the observation for individual i is expressed as $$ y {i}=\\mu+a {i}+e {i} \\tag{26.8} $$ where $ a {i} $ is the additive genetic value of individual i. With k individuals, the model can be expressed as in Equation 26.1 with $$ \\m…"
+    },
+    {
+      "id": "Genetics_chapter26_010",
+      "title": "MODELS FOR THE ESTIMATION OF BREEDING VALUES / The Gametic Model",
+      "nav_label": "The Gametic Model",
+      "raw_title": "Genetics_chapter26_010 · MODELS FOR THE ESTIMATION OF BREEDING VALUES / The Gametic Model",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter26_010",
+      "text_preview": "The gametic model is often used when parental breeding values are of more concern than offspring values, as when one is attempting to estimate the breeding value of bulls from large arrays of descendants. In this model the additive genetic value of each offspring is expressed in terms of its parents' breeding values.…"
+    },
+    {
+      "id": "Genetics_chapter26_011",
+      "title": "MODELS FOR THE ESTIMATION OF BREEDING VALUES / The Reduced Animal Model",
+      "nav_label": "The Reduced Animal Model",
+      "raw_title": "Genetics_chapter26_011 · MODELS FOR THE ESTIMATION OF BREEDING VALUES / The Reduced Animal Model",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter26_011",
+      "text_preview": "Quaas and Pollak (1980) combined features of both the animal and gametic model to obtain a reduced animal model (RAM) for large pedigrees that contain only parents and their offspring (i.e., ignoring individuals in the third generation and beyond). Suppose $k$ parents and a total $l$ of their offspring are each measur…"
+    },
+    {
+      "id": "Genetics_chapter26_012",
+      "title": "SIMPLE RULES FOR COMPUTING A AND $ A^{-1} $",
+      "nav_label": "SIMPLE RULES FOR COMPUTING A AND $ A^{-1} $",
+      "raw_title": "Genetics_chapter26_012 · SIMPLE RULES FOR COMPUTING A AND $ A^{-1} $",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter26_012",
+      "text_preview": "While the identity-coefficient methods introduced in Chapter 7 can be used to compute each of the individual elements of A, this approach can be rather tedious for large pedigrees. However, as pointed out by Henderson (1976), certain features of the pattern of gene flow through pedigrees can be exploited to greatly fa…"
+    },
+    {
+      "id": "Genetics_chapter26_013",
+      "title": "SIMPLE RULES FOR COMPUTING A AND $ A^{-1} $ / Allowing for Mutation when Computing A",
+      "nav_label": "Allowing for Mutation when Computing A",
+      "raw_title": "Genetics_chapter26_013 · SIMPLE RULES FOR COMPUTING A AND $ A^{-1} $ / Allowing for Mutation when Computing A",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter26_013",
+      "text_preview": "While we have been using $ \\mathbf{G} = \\sigma A^2 \\mathbf{A} $ as the covariance matrix for the vector of additive effects, this relationship ignores the effects of mutation. Such an approximation is reasonable in many settings, but for multiple-generation pedigrees, the effects of mutation can become rather signific…"
+    },
+    {
+      "id": "Genetics_chapter26_014",
+      "title": "JOINT ESTIMATION OF SEVERAL VECTORS OF RANDOM EFFECTS",
+      "nav_label": "JOINT ESTIMATION OF SEVERAL VECTORS OF RANDOM EFFECTS",
+      "raw_title": "Genetics_chapter26_014 · JOINT ESTIMATION OF SEVERAL VECTORS OF RANDOM EFFECTS",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter26_014",
+      "text_preview": "The mixed-model equations can be easily extended to situations where two (or more) vectors of random effects are of interest, as for example, in the estimation of both additive and dominance values or in the estimation of breeding values and maternal effects. With two vectors of random effects (u₁ and u₂) uncorrelated…"
+    },
+    {
+      "id": "Genetics_chapter26_015",
+      "title": "JOINT ESTIMATION OF SEVERAL VECTORS OF RANDOM EFFECTS / BLUP Estimates of Dominance Values",
+      "nav_label": "BLUP Estimates of Dominance Values",
+      "raw_title": "Genetics_chapter26_015 · JOINT ESTIMATION OF SEVERAL VECTORS OF RANDOM EFFECTS / BLUP Estimates of Dominance Values",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter26_015",
+      "text_preview": "In animal breeding practices, most attention is generally given to the estimation of additive genetic values (breeding values) of individuals, since nonadditive effects are not transmitted to offspring in noninbreeding populations. However, in certain situations, the total genetic merit (additive plus nonadditive gene…"
+    },
+    {
+      "id": "Genetics_chapter26_016",
+      "title": "JOINT ESTIMATION OF SEVERAL VECTORS OF RANDOM EFFECTS / Repeated Records",
+      "nav_label": "Repeated Records",
+      "raw_title": "Genetics_chapter26_016 · JOINT ESTIMATION OF SEVERAL VECTORS OF RANDOM EFFECTS / Repeated Records",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter26_016",
+      "text_preview": "Another situation in which correlations are expected among residual errors arises when multiple observations are made on individuals, a common procedure used to reduce measurement error. Here, assuming dominance is of negligible importance, the residual error can be described as $ p + e $, where p is the “permanent” e…"
+    },
+    {
+      "id": "Genetics_chapter26_017",
+      "title": "JOINT ESTIMATION OF SEVERAL VECTORS OF RANDOM EFFECTS / Maternal Effects",
+      "nav_label": "Maternal Effects",
+      "raw_title": "Genetics_chapter26_017 · JOINT ESTIMATION OF SEVERAL VECTORS OF RANDOM EFFECTS / Maternal Effects",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter26_017",
+      "text_preview": "As discussed in detail in Chapter 23, for species with maternal care, the phenotype of an individual can depend on both genetic and environmental components of maternal effects, in addition to the individual's direct additive genetic value and a random environmental deviation. As first pointed out by Quaas and Pollak…"
+    },
+    {
+      "id": "Genetics_chapter26_018",
+      "title": "JOINT ESTIMATION OF SEVERAL VECTORS OF RANDOM EFFECTS / Multiple Traits",
+      "nav_label": "Multiple Traits",
+      "raw_title": "Genetics_chapter26_018 · JOINT ESTIMATION OF SEVERAL VECTORS OF RANDOM EFFECTS / Multiple Traits",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter26_018",
+      "text_preview": "In principle, in the estimation of breeding values for multiple traits, one can simply perform univariate BLUP analyses on each individual trait, but this does not necessarily make efficient use of the available data. When characters are correlated, measurements on each trait provide some information on the breeding v…"
+    }
+  ],
+  "assets": [
+    {
+      "kind": "formula",
+      "id": "26.1",
+      "anchor": "formula-26.1",
+      "label": "Formula (26.1)",
+      "section_id": "Genetics_chapter26_001",
+      "latex": "\\mathbf{y}=\\mathbf{X}\\boldsymbol{\\beta}+\\mathbf{Z}\\mathbf{u}+\\mathbf{e}",
+      "latex_render": "\\mathbf{y}=\\mathbf{X}\\boldsymbol{\\beta}+\\mathbf{Z}\\mathbf{u}+\\mathbf{e}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u001"
+    },
+    {
+      "kind": "formula",
+      "id": "26.2",
+      "anchor": "formula-26.2",
+      "label": "Formula (26.2)",
+      "section_id": "Genetics_chapter26_002",
+      "latex": "\\mathbf{V}=\\mathbf{Z}\\mathbf{G}\\mathbf{Z}^{T}+\\mathbf{R}",
+      "latex_render": "\\mathbf{V}=\\mathbf{Z}\\mathbf{G}\\mathbf{Z}^{T}+\\mathbf{R}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u006"
+    },
+    {
+      "kind": "formula",
+      "id": "26.3",
+      "anchor": "formula-26.3",
+      "label": "Formula (26.3)",
+      "section_id": "Genetics_chapter26_003",
+      "latex": "\\hat{\\boldsymbol{\\beta}}=\\left(\\mathbf{X}^{T}\\mathbf{V}^{-1}\\mathbf{X}\\right)^{-1}\\mathbf{X}^{T}\\mathbf{V}^{-1}\\mathbf{y}",
+      "latex_render": "\\hat{\\boldsymbol{\\beta}}=\\left(\\mathbf{X}^{T}\\mathbf{V}^{-1}\\mathbf{X}\\right)^{-1}\\mathbf{X}^{T}\\mathbf{V}^{-1}\\mathbf{y}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u010"
+    },
+    {
+      "kind": "formula",
+      "id": "26.4",
+      "anchor": "formula-26.4",
+      "label": "Formula (26.4)",
+      "section_id": "Genetics_chapter26_003",
+      "latex": "\\widehat{\\mathbf{u}}=\\mathbf{G}\\mathbf{Z}^{T}\\mathbf{V}^{-1}\\left(\\mathbf{y}-\\mathbf{X}\\widehat{\\boldsymbol{\\beta}}\\right)",
+      "latex_render": "\\widehat{\\mathbf{u}}=\\mathbf{G}\\mathbf{Z}^{T}\\mathbf{V}^{-1}\\left(\\mathbf{y}-\\mathbf{X}\\widehat{\\boldsymbol{\\beta}}\\right)",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u011"
+    },
+    {
+      "kind": "formula",
+      "id": "26.5",
+      "anchor": "formula-26.5",
+      "label": "Formula (26.5)",
+      "section_id": "Genetics_chapter26_003",
+      "latex": "\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{X}&\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{Z}\\\\*&\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{X}&\\\\\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{X}&&\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{Z}+\\mathbf{G}^{-1}\\\\\\end{pmatrix}\\begin{pmatrix}\\widehat{\\boldsymbol{\\beta}}\\\\\\mathbf{\\widehat{u}}\\end{pmatrix}=\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{y}\\\\\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{y}\\end{pmatrix}",
+      "latex_render": "\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{X}&\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{Z}\\\\*&\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{X}&\\\\\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{X}&&\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{Z}+\\mathbf{G}^{-1}\\\\\\end{pmatrix}\\begin{pmatrix}\\widehat{\\boldsymbol{\\beta}}\\\\\\mathbf{\\widehat{u}}\\end{pmatrix}=\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{y}\\\\\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{y}\\end{pmatrix}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u021"
+    },
+    {
+      "kind": "formula",
+      "id": "26.6",
+      "anchor": "formula-26.6",
+      "label": "Formula (26.6)",
+      "section_id": "Genetics_chapter26_005",
+      "latex": "\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{X}&\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{Z}&.\\\\\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{X}&\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{Z}+\\mathbf{G}^{-1}\\end{pmatrix}^{-1}=\\begin{pmatrix}\\mathbf{C}_{11}&\\mathbf{C}_{12}\\\\\\mathbf{C}_{12}^{T}&\\mathbf{C}_{22}\\end{pmatrix}",
+      "latex_render": "\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{X}&\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{Z}&.\\\\\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{X}&\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{Z}+\\mathbf{G}^{-1}\\end{pmatrix}^{-1}=\\begin{pmatrix}\\mathbf{C}_{11}&\\mathbf{C}_{12}\\\\\\mathbf{C}_{12}^{T}&\\mathbf{C}_{22}\\end{pmatrix}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u029"
+    },
+    {
+      "kind": "formula",
+      "id": "26.7a",
+      "anchor": "formula-26.7a",
+      "label": "Formula (26.7a)",
+      "section_id": "Genetics_chapter26_006",
+      "latex": "\\boldsymbol{\\sigma}(\\widehat{\\boldsymbol{\\beta}})=\\mathbf{C}_{11}",
+      "latex_render": "\\boldsymbol{\\sigma}(\\widehat{\\boldsymbol{\\beta}})=\\mathbf{C}_{11}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u030"
+    },
+    {
+      "kind": "formula",
+      "id": "26.7b",
+      "anchor": "formula-26.7b",
+      "label": "Formula (26.7b)",
+      "section_id": "Genetics_chapter26_006",
+      "latex": "\\boldsymbol{\\sigma}(\\hat{\\mathbf{u}}-\\mathbf{u})=\\mathbf{C}_{22}",
+      "latex_render": "\\boldsymbol{\\sigma}(\\hat{\\mathbf{u}}-\\mathbf{u})=\\mathbf{C}_{22}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u031"
+    },
+    {
+      "kind": "formula",
+      "id": "26.7c",
+      "anchor": "formula-26.7c",
+      "label": "Formula (26.7c)",
+      "section_id": "Genetics_chapter26_006",
+      "latex": "\\boldsymbol{\\sigma}(\\hat{\\boldsymbol{\\beta}},\\hat{\\mathbf{u}}-\\mathbf{u})=\\mathbf{C}_{12}",
+      "latex_render": "\\boldsymbol{\\sigma}(\\hat{\\boldsymbol{\\beta}},\\hat{\\mathbf{u}}-\\mathbf{u})=\\mathbf{C}_{12}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u032"
+    },
+    {
+      "kind": "formula",
+      "id": "26.8",
+      "anchor": "formula-26.8",
+      "label": "Formula (26.8)",
+      "section_id": "Genetics_chapter26_007",
+      "latex": "y_{i}=\\mu+a_{i}+e_{i}",
+      "latex_render": "y_{i}=\\mu+a_{i}+e_{i}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u037"
+    },
+    {
+      "kind": "formula",
+      "id": "26.9a",
+      "anchor": "formula-26.9a",
+      "label": "Formula (26.9a)",
+      "section_id": "Genetics_chapter26_008",
+      "latex": "\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{X}&\\mathbf{X}^{T}\\mathbf{Z}\\\\&&\\\\\\mathbf{Z}^{T}\\mathbf{X}&\\mathbf{Z}^{T}\\mathbf{Z}+\\lambda\\mathbf{A}^{-1}\\end{pmatrix}\\begin{pmatrix}\\widehat{\\boldsymbol{\\beta}}\\\\\\mathbf{\\widehat{u}}\\end{pmatrix}=\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{y}\\\\\\\\\\mathbf{Z}^{T}\\mathbf{y}\\end{pmatrix}",
+      "latex_render": "\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{X}&\\mathbf{X}^{T}\\mathbf{Z}\\\\&&\\\\\\mathbf{Z}^{T}\\mathbf{X}&\\mathbf{Z}^{T}\\mathbf{Z}+\\lambda\\mathbf{A}^{-1}\\end{pmatrix}\\begin{pmatrix}\\widehat{\\boldsymbol{\\beta}}\\\\\\mathbf{\\widehat{u}}\\end{pmatrix}=\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{y}\\\\\\\\\\mathbf{Z}^{T}\\mathbf{y}\\end{pmatrix}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u039"
+    },
+    {
+      "kind": "formula",
+      "id": "26.9b",
+      "anchor": "formula-26.9b",
+      "label": "Formula (26.9b)",
+      "section_id": "Genetics_chapter26_008",
+      "latex": "\\begin{pmatrix}n&\\mathbf{1}^{T}\\\\\\mathbf{1}&\\mathbf{I}+\\lambda\\mathbf{A}^{-1}\\end{pmatrix}\\begin{pmatrix}\\widehat{\\mu}\\\\\\mathbf{\\widehat{u}}\\end{pmatrix}=\\begin{pmatrix}\\sum^{n}y_{i}\\\\\\mathbf{y}\\end{pmatrix}",
+      "latex_render": "\\begin{pmatrix}n&\\mathbf{1}^{T}\\\\\\mathbf{1}&\\mathbf{I}+\\lambda\\mathbf{A}^{-1}\\end{pmatrix}\\begin{pmatrix}\\widehat{\\mu}\\\\\\mathbf{\\widehat{u}}\\end{pmatrix}=\\begin{pmatrix}\\sum^{n}y_{i}\\\\\\mathbf{y}\\end{pmatrix}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u040"
+    },
+    {
+      "kind": "formula",
+      "id": "26.10a",
+      "anchor": "formula-26.10a",
+      "label": "Formula (26.10a)",
+      "section_id": "Genetics_chapter26_008",
+      "latex": "a_{i}=\\left(\\frac{a_{si}}{2}+\\frac{a_{di}}{2}\\right)+e_{ai}",
+      "latex_render": "a_{i}=\\left(\\frac{a_{si}}{2}+\\frac{a_{di}}{2}\\right)+e_{ai}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u046"
+    },
+    {
+      "kind": "formula",
+      "id": "26.10b",
+      "anchor": "formula-26.10b",
+      "label": "Formula (26.10b)",
+      "section_id": "Genetics_chapter26_009",
+      "latex": "\\begin{aligned}y_{i}&=\\mu+a_{i}+e_{i}\\\\&=\\mu+\\left(\\frac{a_{si}}{2}+\\frac{a_{di}}{2}\\right)+\\left(e_{ai}+e_{i}\\right)\\end{aligned}",
+      "latex_render": "\\begin{aligned}y_{i}&=\\mu+a_{i}+e_{i}\\\\&=\\mu+\\left(\\frac{a_{si}}{2}+\\frac{a_{di}}{2}\\right)+\\left(e_{ai}+e_{i}\\right)\\end{aligned}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u047"
+    },
+    {
+      "kind": "formula",
+      "id": "26.11a",
+      "anchor": "formula-26.11a",
+      "label": "Formula (26.11a)",
+      "section_id": "Genetics_chapter26_009",
+      "latex": "\\sigma^{2}(e_{a i})=\\left(1-\\frac{f_{s i}+f_{d i}}{2}\\right)\\frac{\\sigma_{A}^{2}}{2}=\\left(1-\\overline{f}_{i}\\right)\\frac{\\sigma_{A}^{2}}{2}",
+      "latex_render": "\\sigma^{2}(e_{a i})=\\left(1-\\frac{f_{s i}+f_{d i}}{2}\\right)\\frac{\\sigma_{A}^{2}}{2}=\\left(1-\\overline{f}_{i}\\right)\\frac{\\sigma_{A}^{2}}{2}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u048"
+    },
+    {
+      "kind": "formula",
+      "id": "26.11b",
+      "anchor": "formula-26.11b",
+      "label": "Formula (26.11b)",
+      "section_id": "Genetics_chapter26_009",
+      "latex": "\\overline{f}_{i}=\\frac{A_{si,si}+A_{di,di}}{2}-1",
+      "latex_render": "\\overline{f}_{i}=\\frac{A_{si,si}+A_{di,di}}{2}-1",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u049"
+    },
+    {
+      "kind": "formula",
+      "id": "26.12",
+      "anchor": "formula-26.12",
+      "label": "Formula (26.12)",
+      "section_id": "Genetics_chapter26_009",
+      "latex": "\\mathbf{R}=\\sigma_{E}^{2}\\mathbf{I}+\\sigma_{A}^{2}\\begin{pmatrix}(1-\\overline{f}_{1})/2&\\cdots&0\\\\\\vdots&\\ddots&\\vdots\\\\0&\\cdots&(1-\\overline{f}_{k})/2\\end{pmatrix}=\\sigma_{E}^{2}\\mathbf{W}",
+      "latex_render": "\\mathbf{R}=\\sigma_{E}^{2}\\mathbf{I}+\\sigma_{A}^{2}\\begin{pmatrix}(1-\\overline{f}_{1})/2&\\cdots&0\\\\\\vdots&\\ddots&\\vdots\\\\0&\\cdots&(1-\\overline{f}_{k})/2\\end{pmatrix}=\\sigma_{E}^{2}\\mathbf{W}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u050"
+    },
+    {
+      "kind": "formula",
+      "id": "26.13a",
+      "anchor": "formula-26.13a",
+      "label": "Formula (26.13a)",
+      "section_id": "Genetics_chapter26_009",
+      "latex": "\\mathbf{y}=\\left(\\begin{matrix}{\\mathbf{y}_{p}}\\\\ {\\mathbf{y}_{o}}\\\\ \\end{matrix}\\right),\\qquad\\mathbf{Z}=\\left(\\begin{matrix}{\\mathbf{I}_{k}}\\\\ {\\mathbf{Z}^{*}}\\\\ \\end{matrix}\\right),\\qquad\\mathbf{e}=\\left(\\begin{matrix}{\\mathbf{e}_{p}}\\\\ {\\mathbf{e}_{o}}\\\\ \\end{matrix}\\right)",
+      "latex_render": "\\mathbf{y}=\\left(\\begin{matrix}{\\mathbf{y}_{p}}\\\\ {\\mathbf{y}_{o}}\\\\ \\end{matrix}\\right),\\qquad\\mathbf{Z}=\\left(\\begin{matrix}{\\mathbf{I}_{k}}\\\\ {\\mathbf{Z}^{*}}\\\\ \\end{matrix}\\right),\\qquad\\mathbf{e}=\\left(\\begin{matrix}{\\mathbf{e}_{p}}\\\\ {\\mathbf{e}_{o}}\\\\ \\end{matrix}\\right)",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u051"
+    },
+    {
+      "kind": "formula",
+      "id": "26.13b",
+      "anchor": "formula-26.13b",
+      "label": "Formula (26.13b)",
+      "section_id": "Genetics_chapter26_010",
+      "latex": "\\mathbf{y}=\\begin{pmatrix}\\mathbf{y}_{p}\\\\ \\mathbf{y}_{o}\\end{pmatrix}=\\mathbf{X}\\boldsymbol{\\beta}+\\begin{pmatrix}\\mathbf{I}_{k}\\\\ \\mathbf{Z}^{*}\\end{pmatrix}\\mathbf{u}+\\begin{pmatrix}\\mathbf{e}_{p}\\\\ \\mathbf{e}_{o}\\end{pmatrix}",
+      "latex_render": "\\mathbf{y}=\\begin{pmatrix}\\mathbf{y}_{p}\\\\ \\mathbf{y}_{o}\\end{pmatrix}=\\mathbf{X}\\boldsymbol{\\beta}+\\begin{pmatrix}\\mathbf{I}_{k}\\\\ \\mathbf{Z}^{*}\\end{pmatrix}\\mathbf{u}+\\begin{pmatrix}\\mathbf{e}_{p}\\\\ \\mathbf{e}_{o}\\end{pmatrix}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u052"
+    },
+    {
+      "kind": "formula",
+      "id": "26.14a",
+      "anchor": "formula-26.14a",
+      "label": "Formula (26.14a)",
+      "section_id": "Genetics_chapter26_010",
+      "latex": "\\mathbf{R}=\\sigma_{E}^{2}\\left(\\begin{array}{c c}{\\mathbf{I}_{k}}&{\\mathbf{0}}\\\\ {\\mathbf{0}}&{\\mathbf{W}}\\\\ \\end{array}\\right)",
+      "latex_render": "\\mathbf{R}=\\sigma_{E}^{2}\\left(\\begin{array}{c c}{\\mathbf{I}_{k}}&{\\mathbf{0}}\\\\ {\\mathbf{0}}&{\\mathbf{W}}\\\\ \\end{array}\\right)",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u053"
+    },
+    {
+      "kind": "formula",
+      "id": "26.14b",
+      "anchor": "formula-26.14b",
+      "label": "Formula (26.14b)",
+      "section_id": "Genetics_chapter26_010",
+      "latex": "\\mathbf{R}^{-1}=\\sigma_{E}^{-2}\\begin{pmatrix}\\mathbf{I}_{k}&\\mathbf{0}\\\\ \\mathbf{0}&\\mathbf{W}^{-1}\\end{pmatrix}",
+      "latex_render": "\\mathbf{R}^{-1}=\\sigma_{E}^{-2}\\begin{pmatrix}\\mathbf{I}_{k}&\\mathbf{0}\\\\ \\mathbf{0}&\\mathbf{W}^{-1}\\end{pmatrix}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u054"
+    },
+    {
+      "kind": "formula",
+      "id": "26.15",
+      "anchor": "formula-26.15",
+      "label": "Formula (26.15)",
+      "section_id": "Genetics_chapter26_010",
+      "latex": "\\widehat{a}_{i}=\\frac{1}{2}\\left[\\widehat{a}_{s i}+\\widehat{a}_{d i}\\right]+\\left[\\frac{\\sigma_{A}^{2}(1-\\overline{{f}}_{i})/2}{\\sigma_{E}^{2}+\\sigma_{A}^{2}(1-\\overline{{f}}_{i})/2}\\right]\\left[y_{i}-\\widehat{\\mu}-\\frac{1}{2}\\left(\\widehat{a}_{s i}+\\widehat{a}_{d i}\\right)\\right]",
+      "latex_render": "\\widehat{a}_{i}=\\frac{1}{2}\\left[\\widehat{a}_{s i}+\\widehat{a}_{d i}\\right]+\\left[\\frac{\\sigma_{A}^{2}(1-\\overline{{f}}_{i})/2}{\\sigma_{E}^{2}+\\sigma_{A}^{2}(1-\\overline{{f}}_{i})/2}\\right]\\left[y_{i}-\\widehat{\\mu}-\\frac{1}{2}\\left(\\widehat{a}_{s i}+\\widehat{a}_{d i}\\right)\\right]",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u055"
+    },
+    {
+      "kind": "formula",
+      "id": "26.16a",
+      "anchor": "formula-26.16a",
+      "label": "Formula (26.16a)",
+      "section_id": "Genetics_chapter26_011",
+      "latex": "A_{ii}=1+f_{i}=1+\\Theta_{gh}=1+\\frac{A_{gh}}{2}",
+      "latex_render": "A_{ii}=1+f_{i}=1+\\Theta_{gh}=1+\\frac{A_{gh}}{2}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u069"
+    },
+    {
+      "kind": "formula",
+      "id": "26.16b",
+      "anchor": "formula-26.16b",
+      "label": "Formula (26.16b)",
+      "section_id": "Genetics_chapter26_011",
+      "latex": "A_{ij}=A_{ji}=\\Theta_{jg}+\\Theta_{jh}=\\frac{A_{jg}+A_{jh}}{2}",
+      "latex_render": "A_{ij}=A_{ji}=\\Theta_{jg}+\\Theta_{jh}=\\frac{A_{jg}+A_{jh}}{2}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u070"
+    },
+    {
+      "kind": "formula",
+      "id": "26.17a",
+      "anchor": "formula-26.17a",
+      "label": "Formula (26.17a)",
+      "section_id": "Genetics_chapter26_011",
+      "latex": "\\mathbf{A}=\\mathbf{T}\\mathbf{D}\\mathbf{T}^{T}",
+      "latex_render": "\\mathbf{A}=\\mathbf{T}\\mathbf{D}\\mathbf{T}^{T}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u077"
+    },
+    {
+      "kind": "formula",
+      "id": "26.17b",
+      "anchor": "formula-26.17b",
+      "label": "Formula (26.17b)",
+      "section_id": "Genetics_chapter26_011",
+      "latex": "\\mathbf{A}^{-1}=(\\mathbf{T}^{-1})^{T}\\mathbf{D}^{-1}\\mathbf{T}^{-1}",
+      "latex_render": "\\mathbf{A}^{-1}=(\\mathbf{T}^{-1})^{T}\\mathbf{D}^{-1}\\mathbf{T}^{-1}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u078"
+    },
+    {
+      "kind": "formula",
+      "id": "26.18",
+      "anchor": "formula-26.18",
+      "label": "Formula (26.18)",
+      "section_id": "Genetics_chapter26_013",
+      "latex": "\\mathbf{G}=\\sigma_{A}^{2}\\left(\\mathbf{A}+\\frac{\\sigma_{m0}^{2}}{\\sigma_{A}^{2}}\\sum_{k=1}^{t}\\mathbf{A}_{k}\\right)",
+      "latex_render": "\\mathbf{G}=\\sigma_{A}^{2}\\left(\\mathbf{A}+\\frac{\\sigma_{m0}^{2}}{\\sigma_{A}^{2}}\\sum_{k=1}^{t}\\mathbf{A}_{k}\\right)",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u082"
+    },
+    {
+      "kind": "formula",
+      "id": "26.19a",
+      "anchor": "formula-26.19a",
+      "label": "Formula (26.19a)",
+      "section_id": "Genetics_chapter26_012",
+      "latex": "\\mathbf{y}=\\mathbf{X}\\boldsymbol{\\beta}+\\mathbf{Z}_{1}\\mathbf{u}_{1}+\\mathbf{Z}_{2}\\mathbf{u}_{2}+\\mathbf{e}",
+      "latex_render": "\\mathbf{y}=\\mathbf{X}\\boldsymbol{\\beta}+\\mathbf{Z}_{1}\\mathbf{u}_{1}+\\mathbf{Z}_{2}\\mathbf{u}_{2}+\\mathbf{e}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u083"
+    },
+    {
+      "kind": "formula",
+      "id": "26.19b",
+      "anchor": "formula-26.19b",
+      "label": "Formula (26.19b)",
+      "section_id": "Genetics_chapter26_013",
+      "latex": "\\begin{aligned}\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{X}&\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{Z}_{1}&\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{Z}_{2}\\\\\\mathbf{Z}_{1}^{T}\\mathbf{R}^{-1}\\mathbf{X}&\\mathbf{Z}_{1}^{T}\\mathbf{R}^{-1}\\mathbf{Z}_{1}+\\mathbf{G}_{1}^{-1}&\\mathbf{Z}_{1}^{T}\\mathbf{R}^{-1}\\mathbf{Z}_{2}\\\\\\mathbf{Z}_{2}^{T}\\mathbf{R}^{-1}\\mathbf{X}&\\mathbf{Z}_{2}^{T}\\mathbf{R}^{-1}\\mathbf{Z}_{1}&\\mathbf{Z}_{2}^{T}\\mathbf{R}^{-1}\\mathbf{Z}_{2}+\\mathbf{G}_{2}^{-1}\\end{pmatrix}&\\begin{pmatrix}\\widehat{\\boldsymbol{\\beta}}\\\\\\widehat{\\mathbf{u}}_{1}\\\\\\widehat{\\mathbf{u}}_{2}\\end{pmatrix}\\\\&=\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{y}\\\\\\mathbf{Z}_{1}^{T}\\mathbf{R}^{-1}\\mathbf{y}\\\\\\mathbf{Z}_{2}^{T}\\mathbf{R}^{-1}\\mathbf{y}\\end{pmatrix}\\end{aligned}",
+      "latex_render": "\\begin{aligned}\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{X}&\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{Z}_{1}&\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{Z}_{2}\\\\\\mathbf{Z}_{1}^{T}\\mathbf{R}^{-1}\\mathbf{X}&\\mathbf{Z}_{1}^{T}\\mathbf{R}^{-1}\\mathbf{Z}_{1}+\\mathbf{G}_{1}^{-1}&\\mathbf{Z}_{1}^{T}\\mathbf{R}^{-1}\\mathbf{Z}_{2}\\\\\\mathbf{Z}_{2}^{T}\\mathbf{R}^{-1}\\mathbf{X}&\\mathbf{Z}_{2}^{T}\\mathbf{R}^{-1}\\mathbf{Z}_{1}&\\mathbf{Z}_{2}^{T}\\mathbf{R}^{-1}\\mathbf{Z}_{2}+\\mathbf{G}_{2}^{-1}\\end{pmatrix}&\\begin{pmatrix}\\widehat{\\boldsymbol{\\beta}}\\\\\\widehat{\\mathbf{u}}_{1}\\\\\\widehat{\\mathbf{u}}_{2}\\end{pmatrix}\\\\&=\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{y}\\\\\\mathbf{Z}_{1}^{T}\\mathbf{R}^{-1}\\mathbf{y}\\\\\\mathbf{Z}_{2}^{T}\\mathbf{R}^{-1}\\mathbf{y}\\end{pmatrix}\\end{aligned}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u084"
+    },
+    {
+      "kind": "formula",
+      "id": "26.20a",
+      "anchor": "formula-26.20a",
+      "label": "Formula (26.20a)",
+      "section_id": "Genetics_chapter26_014",
+      "latex": "\\Delta_{i j}=\\Theta_{g k}\\Theta_{h l}+\\Theta_{g l}\\Theta_{h k}",
+      "latex_render": "\\Delta_{i j}=\\Theta_{g k}\\Theta_{h l}+\\Theta_{g l}\\Theta_{h k}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u085"
+    },
+    {
+      "kind": "formula",
+      "id": "26.20b",
+      "anchor": "formula-26.20b",
+      "label": "Formula (26.20b)",
+      "section_id": "Genetics_chapter26_014",
+      "latex": "D_{ij}=\\frac{A_{gk}A_{hl}+A_{gl}A_{hk}}{4}",
+      "latex_render": "D_{ij}=\\frac{A_{gk}A_{hl}+A_{gl}A_{hk}}{4}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u086"
+    },
+    {
+      "kind": "formula",
+      "id": "26.21",
+      "anchor": "formula-26.21",
+      "label": "Formula (26.21)",
+      "section_id": "Genetics_chapter26_014",
+      "latex": "\\left(\\begin{array}{c c c}{\\mathbf{X}^{T}\\mathbf{X}}&{\\mathbf{X}^{T}}&{\\mathbf{X}^{T}}\\\\ {\\mathbf{X}}&{\\mathbf{I}+\\lambda_{A}\\mathbf{A}^{-1}}&{\\mathbf{I}}\\\\ {\\mathbf{X}}&{\\mathbf{I}}&{\\mathbf{I}+\\lambda_{D}\\mathbf{D}^{-1}}\\end{array}\\right)\\left(\\begin{array}{c}{\\widehat{\\boldsymbol{\\beta}}}\\\\ {\\widehat{\\mathbf{a}}}\\\\ {\\widehat{\\mathbf{d}}}\\end{array}\\right)=\\left(\\begin{array}{c}{\\mathbf{X}^{T}\\mathbf{y}}\\\\ {\\mathbf{y}}\\\\ {\\mathbf{y}}\\end{array}\\right)",
+      "latex_render": "\\left(\\begin{array}{c c c}{\\mathbf{X}^{T}\\mathbf{X}}&{\\mathbf{X}^{T}}&{\\mathbf{X}^{T}}\\\\ {\\mathbf{X}}&{\\mathbf{I}+\\lambda_{A}\\mathbf{A}^{-1}}&{\\mathbf{I}}\\\\ {\\mathbf{X}}&{\\mathbf{I}}&{\\mathbf{I}+\\lambda_{D}\\mathbf{D}^{-1}}\\end{array}\\right)\\left(\\begin{array}{c}{\\widehat{\\boldsymbol{\\beta}}}\\\\ {\\widehat{\\mathbf{a}}}\\\\ {\\widehat{\\mathbf{d}}}\\end{array}\\right)=\\left(\\begin{array}{c}{\\mathbf{X}^{T}\\mathbf{y}}\\\\ {\\mathbf{y}}\\\\ {\\mathbf{y}}\\end{array}\\right)",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u088"
+    },
+    {
+      "kind": "formula",
+      "id": "26.22",
+      "anchor": "formula-26.22",
+      "label": "Formula (26.22)",
+      "section_id": "Genetics_chapter26_014",
+      "latex": "\\mathbf{A}^{-1}\\widehat{\\mathbf{a}}/\\sigma_{A}^{2}=\\mathbf{D}^{-1}\\widehat{\\mathbf{d}}/\\sigma_{D}^{2}",
+      "latex_render": "\\mathbf{A}^{-1}\\widehat{\\mathbf{a}}/\\sigma_{A}^{2}=\\mathbf{D}^{-1}\\widehat{\\mathbf{d}}/\\sigma_{D}^{2}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u089"
+    },
+    {
+      "kind": "formula",
+      "id": "26.23",
+      "anchor": "formula-26.23",
+      "label": "Formula (26.23)",
+      "section_id": "Genetics_chapter26_014",
+      "latex": "\\hat{\\mathbf{d}}=(\\sigma_{D}^{2}/\\sigma_{A}^{2})\\mathbf{D}\\mathbf{A}^{-1}\\hat{\\mathbf{a}}",
+      "latex_render": "\\hat{\\mathbf{d}}=(\\sigma_{D}^{2}/\\sigma_{A}^{2})\\mathbf{D}\\mathbf{A}^{-1}\\hat{\\mathbf{a}}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u090"
+    },
+    {
+      "kind": "formula",
+      "id": "26.24",
+      "anchor": "formula-26.24",
+      "label": "Formula (26.24)",
+      "section_id": "Genetics_chapter26_014",
+      "latex": "\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{X}&\\mathbf{X}^{T}[\\mathbf{I}+\\left(\\sigma_{D}^{2}/\\sigma_{A}^{2}\\right)\\mathbf{D}\\mathbf{A}^{-1}]\\\\*&*\\\\ \\mathbf{X}&\\mathbf{I}+\\left(\\sigma_{D}^{2}/\\sigma_{A}^{2}\\right)\\mathbf{D}\\mathbf{A}^{-1}+\\left(\\sigma_{E}^{2}/\\sigma_{A}^{2}\\right)\\mathbf{A}^{-1}\\end{pmatrix}\\begin{pmatrix}\\widehat{\\boldsymbol{\\beta}}\\\\*\\\\\\widehat{\\mathbf{a}}\\end{pmatrix}=\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{y}\\\\*\\\\\\mathbf{y}\\end{pmatrix}",
+      "latex_render": "\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{X}&\\mathbf{X}^{T}[\\mathbf{I}+\\left(\\sigma_{D}^{2}/\\sigma_{A}^{2}\\right)\\mathbf{D}\\mathbf{A}^{-1}]\\\\*&*\\\\ \\mathbf{X}&\\mathbf{I}+\\left(\\sigma_{D}^{2}/\\sigma_{A}^{2}\\right)\\mathbf{D}\\mathbf{A}^{-1}+\\left(\\sigma_{E}^{2}/\\sigma_{A}^{2}\\right)\\mathbf{A}^{-1}\\end{pmatrix}\\begin{pmatrix}\\widehat{\\boldsymbol{\\beta}}\\\\*\\\\\\widehat{\\mathbf{a}}\\end{pmatrix}=\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{y}\\\\*\\\\\\mathbf{y}\\end{pmatrix}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u091"
+    },
+    {
+      "kind": "formula",
+      "id": "26.25",
+      "anchor": "formula-26.25",
+      "label": "Formula (26.25)",
+      "section_id": "Genetics_chapter26_015",
+      "latex": "R_{j k}=\\left\\{\\begin{array}{l l}{(1-h^{2})\\sigma_{y}^{2}}&{j=k\\mathrm{~(t h e~s a m e~m e a s u r e m e n t~i n~a n~i n d i v i d u a l)}}\\\\ {(r-h^{2})\\sigma_{y}^{2}}&{j\\mathrm{~a n d~}k\\mathrm{~a r e~r e p e a t e d~m e a s u r e s}}\\\\ {0}&{j\\mathrm{~a n d~}k\\mathrm{~a r e~m e a s u r e s~o n~d i f f e r e n t~i n d i v i d u a l s.}}\\end{array}\\right.",
+      "latex_render": "R_{j k}=\\left\\{\\begin{array}{l l}{(1-h^{2})\\sigma_{y}^{2}}&{j=k\\mathrm{~(t h e~s a m e~m e a s u r e m e n t~i n~a n~i n d i v i d u a l)}}\\\\ {(r-h^{2})\\sigma_{y}^{2}}&{j\\mathrm{~a n d~}k\\mathrm{~a r e~r e p e a t e d~m e a s u r e s}}\\\\ {0}&{j\\mathrm{~a n d~}k\\mathrm{~a r e~m e a s u r e s~o n~d i f f e r e n t~i n d i v i d u a l s.}}\\end{array}\\right.",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u093"
+    },
+    {
+      "kind": "formula",
+      "id": "26.26",
+      "anchor": "formula-26.26",
+      "label": "Formula (26.26)",
+      "section_id": "Genetics_chapter26_015",
+      "latex": "y_{ij}=\\mu+a_{i}+p_{i}+e_{ij}",
+      "latex_render": "y_{ij}=\\mu+a_{i}+p_{i}+e_{ij}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u094"
+    },
+    {
+      "kind": "formula",
+      "id": "26.27",
+      "anchor": "formula-26.27",
+      "label": "Formula (26.27)",
+      "section_id": "Genetics_chapter26_015",
+      "latex": "\\mathbf{y}=\\mathbf{X}\\boldsymbol{\\beta}+\\mathbf{Z}(\\mathbf{a}+\\mathbf{p})+\\mathbf{e}=\\mathbf{X}\\boldsymbol{\\beta}+\\mathbf{Z}\\mathbf{a}+\\mathbf{Z}\\mathbf{p}+\\mathbf{e}",
+      "latex_render": "\\mathbf{y}=\\mathbf{X}\\boldsymbol{\\beta}+\\mathbf{Z}(\\mathbf{a}+\\mathbf{p})+\\mathbf{e}=\\mathbf{X}\\boldsymbol{\\beta}+\\mathbf{Z}\\mathbf{a}+\\mathbf{Z}\\mathbf{p}+\\mathbf{e}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u095"
+    },
+    {
+      "kind": "formula",
+      "id": "26.28a",
+      "anchor": "formula-26.28a",
+      "label": "Formula (26.28a)",
+      "section_id": "Genetics_chapter26_015",
+      "latex": "\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{X}&\\mathbf{X}^{T}\\mathbf{Z}&\\mathbf{X}^{T}\\mathbf{Z}\\\\\\mathbf{Z}^{T}\\mathbf{X}&\\mathbf{Z}^{T}\\mathbf{Z}+\\lambda_{A}\\mathbf{A}^{-1}&\\mathbf{Z}^{T}\\mathbf{Z}\\\\\\mathbf{Z}^{T}\\mathbf{X}&\\mathbf{Z}^{T}\\mathbf{Z}&\\mathbf{Z}^{T}\\mathbf{Z}+\\lambda_{P}\\mathbf{I}\\end{pmatrix}\\begin{pmatrix}\\widehat{\\boldsymbol{\\beta}}\\\\\\widehat{\\mathbf{a}}\\\\\\widehat{\\mathbf{p}}\\end{pmatrix}=\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{y}\\\\\\mathbf{Z}^{T}\\mathbf{y}\\\\\\mathbf{Z}^{T}\\mathbf{y}\\end{pmatrix}",
+      "latex_render": "\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{X}&\\mathbf{X}^{T}\\mathbf{Z}&\\mathbf{X}^{T}\\mathbf{Z}\\\\\\mathbf{Z}^{T}\\mathbf{X}&\\mathbf{Z}^{T}\\mathbf{Z}+\\lambda_{A}\\mathbf{A}^{-1}&\\mathbf{Z}^{T}\\mathbf{Z}\\\\\\mathbf{Z}^{T}\\mathbf{X}&\\mathbf{Z}^{T}\\mathbf{Z}&\\mathbf{Z}^{T}\\mathbf{Z}+\\lambda_{P}\\mathbf{I}\\end{pmatrix}\\begin{pmatrix}\\widehat{\\boldsymbol{\\beta}}\\\\\\widehat{\\mathbf{a}}\\\\\\widehat{\\mathbf{p}}\\end{pmatrix}=\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{y}\\\\\\mathbf{Z}^{T}\\mathbf{y}\\\\\\mathbf{Z}^{T}\\mathbf{y}\\end{pmatrix}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u097"
+    },
+    {
+      "kind": "formula",
+      "id": "26.28b",
+      "anchor": "formula-26.28b",
+      "label": "Formula (26.28b)",
+      "section_id": "Genetics_chapter26_015",
+      "latex": "\\lambda_{A}=\\frac{\\sigma_{E}^{2}}{\\sigma_{A}^{2}}=\\frac{1-r}{h^{2}},\\qquad\\lambda_{P}=\\frac{\\sigma_{E}^{2}}{\\sigma_{P}^{2}}=\\frac{1-r}{r-h^{2}}",
+      "latex_render": "\\lambda_{A}=\\frac{\\sigma_{E}^{2}}{\\sigma_{A}^{2}}=\\frac{1-r}{h^{2}},\\qquad\\lambda_{P}=\\frac{\\sigma_{E}^{2}}{\\sigma_{P}^{2}}=\\frac{1-r}{r-h^{2}}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u098"
+    },
+    {
+      "kind": "formula",
+      "id": "26.29",
+      "anchor": "formula-26.29",
+      "label": "Formula (26.29)",
+      "section_id": "Genetics_chapter26_016",
+      "latex": "\\mathbf{y}=\\mathbf{X}\\boldsymbol{\\beta}+\\mathbf{Z}_{1}\\mathbf{a}+\\mathbf{Z}_{2}\\mathbf{m}+\\mathbf{Z}_{3}\\mathbf{c}+\\mathbf{e}",
+      "latex_render": "\\mathbf{y}=\\mathbf{X}\\boldsymbol{\\beta}+\\mathbf{Z}_{1}\\mathbf{a}+\\mathbf{Z}_{2}\\mathbf{m}+\\mathbf{Z}_{3}\\mathbf{c}+\\mathbf{e}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u111"
+    },
+    {
+      "kind": "formula",
+      "id": "26.30",
+      "anchor": "formula-26.30",
+      "label": "Formula (26.30)",
+      "section_id": "Genetics_chapter26_016",
+      "latex": "\\begin{aligned}\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{X}&\\mathbf{X}^{T}\\mathbf{Z}_{1}&\\mathbf{X}^{T}\\mathbf{Z}_{2}&\\mathbf{X}^{T}\\mathbf{Z}_{3}\\\\\\mathbf{Z}_{1}^{T}\\mathbf{X}&\\mathbf{Z}_{1}^{T}\\mathbf{Z}_{1}+\\lambda_{1}\\mathbf{A}^{-1}&\\mathbf{Z}_{1}^{T}\\mathbf{Z}_{2}+\\lambda_{2}\\mathbf{A}^{-1}&\\mathbf{Z}_{1}^{T}\\mathbf{Z}_{3}\\\\\\mathbf{Z}_{2}^{T}\\mathbf{X}&\\mathbf{Z}_{2}^{T}\\mathbf{Z}_{1}+\\lambda_{2}\\mathbf{A}^{-1}&\\mathbf{Z}_{2}^{T}\\mathbf{Z}_{2}+\\lambda_{3}\\mathbf{A}^{-1}&\\mathbf{Z}_{2}^{T}\\mathbf{Z}_{3}\\\\\\mathbf{Z}_{3}^{T}\\mathbf{X}&\\mathbf{Z}_{3}^{T}\\mathbf{Z}_{1}&\\mathbf{Z}_{3}^{T}\\mathbf{Z}_{2}&\\mathbf{Z}_{3}^{T}\\mathbf{Z}_{3}+\\lambda_{4}\\mathbf{I}\\end{pmatrix}&\\begin{pmatrix}\\widehat{\\boldsymbol{\\beta}}\\\\\\widehat{\\mathbf{a}}\\\\\\widehat{\\mathbf{m}}\\\\\\widehat{\\mathbf{c}}\\end{pmatrix}\\\\&=\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{y}\\\\\\mathbf{Z}_{1}^{T}\\mathbf{y}\\\\\\mathbf{Z}_{2}^{T}\\mathbf{y}\\\\\\mathbf{Z}_{3}^{T}\\mathbf{y}\\end{pmatrix}\\end{aligned}",
+      "latex_render": "\\begin{aligned}\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{X}&\\mathbf{X}^{T}\\mathbf{Z}_{1}&\\mathbf{X}^{T}\\mathbf{Z}_{2}&\\mathbf{X}^{T}\\mathbf{Z}_{3}\\\\\\mathbf{Z}_{1}^{T}\\mathbf{X}&\\mathbf{Z}_{1}^{T}\\mathbf{Z}_{1}+\\lambda_{1}\\mathbf{A}^{-1}&\\mathbf{Z}_{1}^{T}\\mathbf{Z}_{2}+\\lambda_{2}\\mathbf{A}^{-1}&\\mathbf{Z}_{1}^{T}\\mathbf{Z}_{3}\\\\\\mathbf{Z}_{2}^{T}\\mathbf{X}&\\mathbf{Z}_{2}^{T}\\mathbf{Z}_{1}+\\lambda_{2}\\mathbf{A}^{-1}&\\mathbf{Z}_{2}^{T}\\mathbf{Z}_{2}+\\lambda_{3}\\mathbf{A}^{-1}&\\mathbf{Z}_{2}^{T}\\mathbf{Z}_{3}\\\\\\mathbf{Z}_{3}^{T}\\mathbf{X}&\\mathbf{Z}_{3}^{T}\\mathbf{Z}_{1}&\\mathbf{Z}_{3}^{T}\\mathbf{Z}_{2}&\\mathbf{Z}_{3}^{T}\\mathbf{Z}_{3}+\\lambda_{4}\\mathbf{I}\\end{pmatrix}&\\begin{pmatrix}\\widehat{\\boldsymbol{\\beta}}\\\\\\widehat{\\mathbf{a}}\\\\\\widehat{\\mathbf{m}}\\\\\\widehat{\\mathbf{c}}\\end{pmatrix}\\\\&=\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{y}\\\\\\mathbf{Z}_{1}^{T}\\mathbf{y}\\\\\\mathbf{Z}_{2}^{T}\\mathbf{y}\\\\\\mathbf{Z}_{3}^{T}\\mathbf{y}\\end{pmatrix}\\end{aligned}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u112"
+    },
+    {
+      "kind": "formula",
+      "id": "26.31",
+      "anchor": "formula-26.31",
+      "label": "Formula (26.31)",
+      "section_id": "Genetics_chapter26_017",
+      "latex": "\\begin{pmatrix}\\mathbf{y}_{1}\\\\\\mathbf{y}_{2}\\\\\\vdots\\\\\\mathbf{y}_{k}\\end{pmatrix}=\\begin{pmatrix}\\mathbf{X}_{1}&\\mathbf{0}&\\cdots&\\mathbf{0}\\\\\\mathbf{0}&\\mathbf{X}_{2}&\\cdots&\\mathbf{0}\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\\\mathbf{0}&\\mathbf{0}&\\cdots&\\mathbf{X}_{k}\\end{pmatrix}\\begin{pmatrix}\\boldsymbol{\\beta}_{1}\\\\\\boldsymbol{\\beta}_{2}\\\\\\vdots\\\\\\boldsymbol{\\beta}_{k}\\end{pmatrix}+\\begin{pmatrix}\\mathbf{a}_{1}\\\\\\mathbf{a}_{2}\\\\\\vdots\\\\\\mathbf{a}_{k}\\end{pmatrix}+\\begin{pmatrix}\\mathbf{e}_{1}\\\\\\mathbf{e}_{2}\\\\\\vdots\\\\\\mathbf{e}_{k}\\end{pmatrix}",
+      "latex_render": "\\begin{pmatrix}\\mathbf{y}_{1}\\\\\\mathbf{y}_{2}\\\\\\vdots\\\\\\mathbf{y}_{k}\\end{pmatrix}=\\begin{pmatrix}\\mathbf{X}_{1}&\\mathbf{0}&\\cdots&\\mathbf{0}\\\\\\mathbf{0}&\\mathbf{X}_{2}&\\cdots&\\mathbf{0}\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\\\mathbf{0}&\\mathbf{0}&\\cdots&\\mathbf{X}_{k}\\end{pmatrix}\\begin{pmatrix}\\boldsymbol{\\beta}_{1}\\\\\\boldsymbol{\\beta}_{2}\\\\\\vdots\\\\\\boldsymbol{\\beta}_{k}\\end{pmatrix}+\\begin{pmatrix}\\mathbf{a}_{1}\\\\\\mathbf{a}_{2}\\\\\\vdots\\\\\\mathbf{a}_{k}\\end{pmatrix}+\\begin{pmatrix}\\mathbf{e}_{1}\\\\\\mathbf{e}_{2}\\\\\\vdots\\\\\\mathbf{e}_{k}\\end{pmatrix}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u118"
+    },
+    {
+      "kind": "formula",
+      "id": "26.32",
+      "anchor": "formula-26.32",
+      "label": "Formula (26.32)",
+      "section_id": "Genetics_chapter26_017",
+      "latex": "\\begin{pmatrix}\\sigma(\\mathbf{e}_{1},\\mathbf{e}_{1})&\\sigma(\\mathbf{e}_{1},\\mathbf{e}_{2})&\\cdots&\\sigma(\\mathbf{e}_{1},\\mathbf{e}_{k})\\\\\\sigma(\\mathbf{e}_{2},\\mathbf{e}_{1})&\\sigma(\\mathbf{e}_{2},\\mathbf{e}_{2})&\\cdots&\\sigma(\\mathbf{e}_{2},\\mathbf{e}_{k})\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\\\sigma(\\mathbf{e}_{k},\\mathbf{e}_{1})&\\sigma(\\mathbf{e}_{k},\\mathbf{e}_{2})&\\cdots&\\sigma(\\mathbf{e}_{k},\\mathbf{e}_{k})\\end{pmatrix}=\\begin{pmatrix}\\mathbf{I}\\epsilon_{11}&\\mathbf{I}\\epsilon_{12}&\\cdots&\\mathbf{I}\\epsilon_{1k}\\\\\\mathbf{I}\\epsilon_{21}&\\mathbf{I}\\epsilon_{22}&\\cdots&\\mathbf{I}\\epsilon_{2k}\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\\\mathbf{I}\\epsilon_{k1}&\\mathbf{I}\\epsilon_{k2}&\\cdots&\\mathbf{I}\\epsilon_{kk}\\end{pmatrix}",
+      "latex_render": "\\begin{pmatrix}\\sigma(\\mathbf{e}_{1},\\mathbf{e}_{1})&\\sigma(\\mathbf{e}_{1},\\mathbf{e}_{2})&\\cdots&\\sigma(\\mathbf{e}_{1},\\mathbf{e}_{k})\\\\\\sigma(\\mathbf{e}_{2},\\mathbf{e}_{1})&\\sigma(\\mathbf{e}_{2},\\mathbf{e}_{2})&\\cdots&\\sigma(\\mathbf{e}_{2},\\mathbf{e}_{k})\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\\\sigma(\\mathbf{e}_{k},\\mathbf{e}_{1})&\\sigma(\\mathbf{e}_{k},\\mathbf{e}_{2})&\\cdots&\\sigma(\\mathbf{e}_{k},\\mathbf{e}_{k})\\end{pmatrix}=\\begin{pmatrix}\\mathbf{I}\\epsilon_{11}&\\mathbf{I}\\epsilon_{12}&\\cdots&\\mathbf{I}\\epsilon_{1k}\\\\\\mathbf{I}\\epsilon_{21}&\\mathbf{I}\\epsilon_{22}&\\cdots&\\mathbf{I}\\epsilon_{2k}\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\\\mathbf{I}\\epsilon_{k1}&\\mathbf{I}\\epsilon_{k2}&\\cdots&\\mathbf{I}\\epsilon_{kk}\\end{pmatrix}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u119"
+    },
+    {
+      "kind": "formula",
+      "id": "26.33",
+      "anchor": "formula-26.33",
+      "label": "Formula (26.33)",
+      "section_id": "Genetics_chapter26_017",
+      "latex": "(\\mathbf{A}\\otimes\\mathbf{B})^{-1}=\\mathbf{A}^{-1}\\otimes\\mathbf{B}^{-1}",
+      "latex_render": "(\\mathbf{A}\\otimes\\mathbf{B})^{-1}=\\mathbf{A}^{-1}\\otimes\\mathbf{B}^{-1}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u123"
+    },
+    {
+      "kind": "formula",
+      "id": "26.34",
+      "anchor": "formula-26.34",
+      "label": "Formula (26.34)",
+      "section_id": "Genetics_chapter26_017",
+      "latex": "\\mathbf{R}=\\mathbf{E}\\otimes\\mathbf{I}",
+      "latex_render": "\\mathbf{R}=\\mathbf{E}\\otimes\\mathbf{I}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u124"
+    },
+    {
+      "kind": "formula",
+      "id": "26.35",
+      "anchor": "formula-26.35",
+      "label": "Formula (26.35)",
+      "section_id": "Genetics_chapter26_017",
+      "latex": "\\mathbf{R}^{-1}=\\mathbf{E}^{-1}\\otimes\\mathbf{I}^{-1}=\\begin{pmatrix}\\mathbf{I}\\boldsymbol{\\epsilon}^{11}&\\mathbf{I}\\boldsymbol{\\epsilon}^{12}&\\cdots&\\mathbf{I}\\boldsymbol{\\epsilon}^{1k}\\\\\\mathbf{I}\\boldsymbol{\\epsilon}^{21}&\\mathbf{I}\\boldsymbol{\\epsilon}^{22}&\\cdots&\\mathbf{I}\\boldsymbol{\\epsilon}^{2k}\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\\\mathbf{I}\\boldsymbol{\\epsilon}^{k1}&\\mathbf{I}\\boldsymbol{\\epsilon}^{k2}&\\cdots&\\mathbf{I}\\boldsymbol{\\epsilon}^{kk}\\end{pmatrix}",
+      "latex_render": "\\mathbf{R}^{-1}=\\mathbf{E}^{-1}\\otimes\\mathbf{I}^{-1}=\\begin{pmatrix}\\mathbf{I}\\boldsymbol{\\epsilon}^{11}&\\mathbf{I}\\boldsymbol{\\epsilon}^{12}&\\cdots&\\mathbf{I}\\boldsymbol{\\epsilon}^{1k}\\\\\\mathbf{I}\\boldsymbol{\\epsilon}^{21}&\\mathbf{I}\\boldsymbol{\\epsilon}^{22}&\\cdots&\\mathbf{I}\\boldsymbol{\\epsilon}^{2k}\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\\\mathbf{I}\\boldsymbol{\\epsilon}^{k1}&\\mathbf{I}\\boldsymbol{\\epsilon}^{k2}&\\cdots&\\mathbf{I}\\boldsymbol{\\epsilon}^{kk}\\end{pmatrix}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u125"
+    },
+    {
+      "kind": "formula",
+      "id": "26.36",
+      "anchor": "formula-26.36",
+      "label": "Formula (26.36)",
+      "section_id": "Genetics_chapter26_017",
+      "latex": "\\mathbf{G}=\\left(\\begin{matrix}{\\mathbf{A}\\:c_{11}}&{\\mathbf{A}\\:c_{12}}&{\\cdots}&{\\mathbf{A}\\:c_{1k}}\\\\ {\\mathbf{A}\\:c_{21}}&{\\mathbf{A}\\:c_{22}}&{\\cdots}&{\\mathbf{A}\\:c_{2k}}\\\\ {\\vdots}&{\\vdots}&{\\ddots}&{\\vdots}\\\\ {\\mathbf{A}\\:c_{k1}}&{\\mathbf{A}\\:c_{k2}}&{\\cdots}&{\\mathbf{A}\\:c_{k k}}\\\\ \\end{matrix}\\right)=\\mathbf{C}\\otimes\\mathbf{A}",
+      "latex_render": "\\mathbf{G}=\\left(\\begin{matrix}{\\mathbf{A}\\:c_{11}}&{\\mathbf{A}\\:c_{12}}&{\\cdots}&{\\mathbf{A}\\:c_{1k}}\\\\ {\\mathbf{A}\\:c_{21}}&{\\mathbf{A}\\:c_{22}}&{\\cdots}&{\\mathbf{A}\\:c_{2k}}\\\\ {\\vdots}&{\\vdots}&{\\ddots}&{\\vdots}\\\\ {\\mathbf{A}\\:c_{k1}}&{\\mathbf{A}\\:c_{k2}}&{\\cdots}&{\\mathbf{A}\\:c_{k k}}\\\\ \\end{matrix}\\right)=\\mathbf{C}\\otimes\\mathbf{A}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u126"
+    },
+    {
+      "kind": "formula",
+      "id": "26.37",
+      "anchor": "formula-26.37",
+      "label": "Formula (26.37)",
+      "section_id": "Genetics_chapter26_017",
+      "latex": "\\mathbf{G}^{-1}=\\begin{pmatrix}\\mathbf{A}^{-1}c^{11}&\\mathbf{A}^{-1}c^{12}&\\cdots&\\mathbf{A}^{-1}c^{1k}\\\\\\mathbf{A}^{-1}c^{21}&\\mathbf{A}^{-1}c^{22}&\\cdots&\\mathbf{A}^{-1}c^{2k}\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\\\mathbf{A}^{-1}c^{k1}&\\mathbf{A}^{-1}c^{k2}&\\cdots&\\mathbf{A}^{-1}c^{kk}\\end{pmatrix}=\\mathbf{C}^{-1}\\otimes\\mathbf{A}^{-1}",
+      "latex_render": "\\mathbf{G}^{-1}=\\begin{pmatrix}\\mathbf{A}^{-1}c^{11}&\\mathbf{A}^{-1}c^{12}&\\cdots&\\mathbf{A}^{-1}c^{1k}\\\\\\mathbf{A}^{-1}c^{21}&\\mathbf{A}^{-1}c^{22}&\\cdots&\\mathbf{A}^{-1}c^{2k}\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\\\mathbf{A}^{-1}c^{k1}&\\mathbf{A}^{-1}c^{k2}&\\cdots&\\mathbf{A}^{-1}c^{kk}\\end{pmatrix}=\\mathbf{C}^{-1}\\otimes\\mathbf{A}^{-1}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u127"
+    },
+    {
+      "kind": "formula",
+      "id": "26.38",
+      "anchor": "formula-26.38",
+      "label": "Formula (26.38)",
+      "section_id": "Genetics_chapter26_017",
+      "latex": "\\begin{array}{c}{\\left(\\begin{array}{c c}{\\mathbf{X}^{T}(\\mathbf{E}^{-1}\\otimes\\mathbf{I})\\mathbf{X}}&{\\mathbf{X}^{T}(\\mathbf{E}^{-1}\\otimes\\mathbf{I})}\\\\ {}&{}\\\\ {(\\mathbf{E}^{-1}\\otimes\\mathbf{I})\\mathbf{X}}&{(\\mathbf{E}^{-1}\\otimes\\mathbf{I})+(\\mathbf{C}^{-1}\\otimes\\mathbf{A}^{-1})}\\\\ \\end{array}\\right)\\left(\\begin{array}{c}{\\widehat{\\boldsymbol{\\beta}}}\\\\ {\\widehat{\\mathbf{a}}}\\\\ \\end{array}\\right)}\\\\ {=\\left(\\begin{array}{c}{\\mathbf{X}^{T}(\\mathbf{E}^{-1}\\otimes\\mathbf{I})\\mathbf{y}}\\\\ {(\\mathbf{E}^{-1}\\otimes\\mathbf{I})\\mathbf{y}}\\\\ \\end{array}\\right)}\\\\ \\end{array}",
+      "latex_render": "\\begin{array}{c}{\\left(\\begin{array}{c c}{\\mathbf{X}^{T}(\\mathbf{E}^{-1}\\otimes\\mathbf{I})\\mathbf{X}}&{\\mathbf{X}^{T}(\\mathbf{E}^{-1}\\otimes\\mathbf{I})}\\\\ {}&{}\\\\ {(\\mathbf{E}^{-1}\\otimes\\mathbf{I})\\mathbf{X}}&{(\\mathbf{E}^{-1}\\otimes\\mathbf{I})+(\\mathbf{C}^{-1}\\otimes\\mathbf{A}^{-1})}\\\\ \\end{array}\\right)\\left(\\begin{array}{c}{\\widehat{\\boldsymbol{\\beta}}}\\\\ {\\widehat{\\mathbf{a}}}\\\\ \\end{array}\\right)}\\\\ {=\\left(\\begin{array}{c}{\\mathbf{X}^{T}(\\mathbf{E}^{-1}\\otimes\\mathbf{I})\\mathbf{y}}\\\\ {(\\mathbf{E}^{-1}\\otimes\\mathbf{I})\\mathbf{y}}\\\\ \\end{array}\\right)}\\\\ \\end{array}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u128"
+    }
+  ],
+  "references": {
+    "Genetics_chapter26_section_001": [
+      {
+        "kind": "chapter",
+        "id": "26",
+        "label": "Chapter 26",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Genetics_chapter26_001": [],
+    "Genetics_chapter26_002": [
+      {
+        "kind": "chapter",
+        "id": "27",
+        "label": "Chapter 27",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "chapter",
+        "id": "8",
+        "label": "Chapter 8",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Genetics_chapter26_003": [
+      {
+        "kind": "chapter",
+        "id": "8",
+        "label": "Chapter 8",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "26.1",
+        "label": "Equation 26.1",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "8.21b",
+        "label": "Equation 8.21b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Genetics_chapter26_004": [
+      {
+        "kind": "chapter",
+        "id": "8",
+        "label": "Chapter 8",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "chapter",
+        "id": "13",
+        "label": "Chapter 13",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "26.1",
+        "label": "Equation 26.1",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "26.2",
+        "label": "Equation 26.2",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "8.27",
+        "label": "Equation 8.27",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "26.3",
+        "label": "Equation 26.3",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "26.5",
+        "label": "Equation 26.5",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Genetics_chapter26_005": [],
+    "Genetics_chapter26_006": [
+      {
+        "kind": "equation",
+        "id": "26.3",
+        "label": "Equation 26.3",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Genetics_chapter26_007": [
+      {
+        "kind": "equation",
+        "id": "26.5",
+        "label": "Equation 26.5",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Genetics_chapter26_008": [
+      {
+        "kind": "equation",
+        "id": "26.1",
+        "label": "Equation 26.1",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Genetics_chapter26_009": [
+      {
+        "kind": "equation",
+        "id": "26.1",
+        "label": "Equation 26.1",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "7.12",
+        "label": "Equation 7.12",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "26.5",
+        "label": "Equation 26.5",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "26.9a",
+        "label": "Equation 26.9a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "26.9b",
+        "label": "Equation 26.9b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Genetics_chapter26_010": [
+      {
+        "kind": "equation",
+        "id": "26.8",
+        "label": "Equation 26.8",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "7.3",
+        "label": "Equation 7.3",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Genetics_chapter26_011": [
+      {
+        "kind": "equation",
+        "id": "26.1",
+        "label": "Equation 26.1",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "16.12",
+        "label": "Equation 16.12",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "26.5",
+        "label": "Equation 26.5",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "26.15",
+        "label": "Equation 26.15",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Genetics_chapter26_012": [
+      {
+        "kind": "chapter",
+        "id": "7",
+        "label": "Chapter 7",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "26.16a",
+        "label": "Equation 26.16a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "26.17b",
+        "label": "Equation 26.17b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Genetics_chapter26_013": [
+      {
+        "kind": "chapter",
+        "id": "12",
+        "label": "Chapter 12",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "26.18",
+        "label": "Equation 26.18",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Genetics_chapter26_014": [
+      {
+        "kind": "equation",
+        "id": "26.19b",
+        "label": "Equation 26.19b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Genetics_chapter26_015": [
+      {
+        "kind": "chapter",
+        "id": "7",
+        "label": "Chapter 7",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "7.7",
+        "label": "Equation 7.7",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "26.19b",
+        "label": "Equation 26.19b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "26.21",
+        "label": "Equation 26.21",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "26.23",
+        "label": "Equation 26.23",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "26.24",
+        "label": "Equation 26.24",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Genetics_chapter26_016": [
+      {
+        "kind": "chapter",
+        "id": "6",
+        "label": "Chapter 6",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "26.8",
+        "label": "Equation 26.8",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "26.19b",
+        "label": "Equation 26.19b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "26.28a",
+        "label": "Equation 26.28a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "26.25",
+        "label": "Equation 26.25",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "26.5",
+        "label": "Equation 26.5",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Genetics_chapter26_017": [
+      {
+        "kind": "chapter",
+        "id": "23",
+        "label": "Chapter 23",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Genetics_chapter26_018": [
+      {
+        "kind": "chapter",
+        "id": "22",
+        "label": "Chapter 22",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "chapter",
+        "id": "21",
+        "label": "Chapter 21",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "26.5",
+        "label": "Equation 26.5",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ]
+  },
+  "semantic_chapter_links": [
+    {
+      "current_section_id": "Genetics_chapter26_002",
+      "current_anchor": "genetics_chapter26_002",
+      "source_chapter_id": "Genetics_chapter27",
+      "label": "Chapter 27",
+      "target_anchor": "genetics_chapter27_section_001",
+      "target_label": "Chapter 27",
+      "target_ref_type": "chapter",
+      "target_ref_id": "27",
+      "target_section_title": "Chapter 27 · Variance-Component Estimation with Complex Pedigrees",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "n problems encountered in previous chapters. This chapter introduces best linear unbiased prediction (BLUP), a general method for predicting random effects (such as breeding values and maternal effects), while Chapter 27 is concerned with the estimation of genetic variances by restricted maximum likelihood (REML). These two methods are related in that BLUP assumes that the appropriate variance components are known,…",
+      "match_source": "chapter-overview"
+    },
+    {
+      "current_section_id": "Genetics_chapter26_002",
+      "current_anchor": "genetics_chapter26_002",
+      "source_chapter_id": "Genetics_chapter8",
+      "label": "Chapter 8",
+      "target_anchor": "genetics_chapter8_018",
+      "target_label": "Equation 8.27",
+      "target_ref_type": "equation",
+      "target_ref_id": "8.27",
+      "target_section_title": "Introduction / Properties of the MVN",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "4a,b) and parental imprinting (Schaeffer et al. 1989, Tier and Sölkner 1993). Because the next two chapters rely very heavily on matrix algebra, before proceeding, the reader will likely benefit from reviewing Chapter 8, especially the sections on the multivariate normal and the general linear model. ---",
+      "match_source": "llm-prerequisite"
+    },
+    {
+      "current_section_id": "Genetics_chapter26_003",
+      "current_anchor": "genetics_chapter26_003",
+      "source_chapter_id": "Genetics_chapter8",
+      "label": "Chapter 8",
+      "target_anchor": "genetics_chapter8_018",
+      "target_label": "Equation 8.27",
+      "target_ref_type": "equation",
+      "target_ref_id": "8.27",
+      "target_section_title": "Introduction / Properties of the MVN",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "so that $ \\mathbf{R} $ is a diagonal matrix, with $ \\mathbf{R} = \\sigma E^2 \\mathbf{I} $. We are now in a position to contrast the mixed model and the general linear model. Under the general linear model (Chapter 8), $$ \\mathbf{y}=\\mathbf{X}\\boldsymbol{\\beta}+\\mathbf{e}^{ }\\qquad\\mathrm{w h e r e}\\quad\\mathbf{e}^{ }\\sim(\\mathbf{0},\\mathbf{V})\\quad\\mathrm{i m p l y i n g}\\mathbf{y}\\sim(\\mathbf{X}\\boldsymbol{\\beta},",
+      "match_source": "llm-prerequisite"
+    },
+    {
+      "current_section_id": "Genetics_chapter26_004",
+      "current_anchor": "genetics_chapter26_004",
+      "source_chapter_id": "Genetics_chapter8",
+      "label": "Chapter 8",
+      "target_anchor": "genetics_chapter8_018",
+      "target_label": "Equation 8.27",
+      "target_ref_type": "equation",
+      "target_ref_id": "8.27",
+      "target_section_title": "Introduction / Properties of the MVN",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "mathbf{V}^{-1}\\mathbf{X}\\right)^{-1}\\mathbf{X}^{T}\\mathbf{V}^{-1}\\mathbf{y} \\tag{26.3} $$ with V as given by Equation 26.2. Notice that this is just the generalized least-squares (GLS) estimator discussed in Chapter 8. Henderson (1963) showed that the BLUP of u is $$ \\hat{\\mathbf{u}}=\\mathbf{G}\\mathbf{Z}^{T}\\mathbf{V}^{-1}\\left(\\mathbf{y}-\\mathbf{X}\\hat{\\boldsymbol{\\beta}}\\right) \\tag{26.4} $$ which is equivalent to…",
+      "match_source": "llm-prerequisite"
+    },
+    {
+      "current_section_id": "Genetics_chapter26_004",
+      "current_anchor": "genetics_chapter26_004",
+      "source_chapter_id": "Genetics_chapter13",
+      "label": "Chapter 13",
+      "target_anchor": "genetics_chapter13_section_001",
+      "target_label": "Chapter 13",
+      "target_ref_type": "chapter",
+      "target_ref_id": "13",
+      "target_section_title": "Chapter 13 · 13 Detecting Major Genes",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "\\frac{1}{18}\\begin{pmatrix}-1\\\\2\\\\-1\\end{pmatrix} $$ [示例 Example] Example 3 · ref: Genetics chapter26:3 · source: Genetics chapter26 004.json · blocks 13–32 Example 3. As mentioned in Chapter 13, the effects of different genotypes at a single QTL are often estimated by ordinary least squares (OLS), using the model $$ y {ij}=g {i}+e {ij} $$ where $ y {ij} $ is the observed phenotype of",
+      "match_source": "chapter-overview"
+    },
+    {
+      "current_section_id": "Genetics_chapter26_012",
+      "current_anchor": "genetics_chapter26_012",
+      "source_chapter_id": "Genetics_chapter7",
+      "label": "Chapter 7",
+      "target_anchor": "genetics_chapter7_003",
+      "target_label": "Equation 7.7",
+      "target_ref_type": "equation",
+      "target_ref_id": "7.7",
+      "target_section_title": "Introduction / The Coefficient of Fraternity",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "SIMPLE RULES FOR COMPUTING A AND $ A^{-1} $ While the identity-coefficient methods introduced in Chapter 7 can be used to compute each of the individual elements of A, this approach can be rather tedious for large pedigrees. However, as pointed out by Henderson (1976), certain features of the pattern of gene flow t",
+      "match_source": "llm-prerequisite"
+    },
+    {
+      "current_section_id": "Genetics_chapter26_013",
+      "current_anchor": "genetics_chapter26_013",
+      "source_chapter_id": "Genetics_chapter12",
+      "label": "Chapter 12",
+      "target_anchor": "genetics_chapter12_section_001",
+      "target_label": "Chapter 12",
+      "target_ref_type": "chapter",
+      "target_ref_id": "12",
+      "target_section_title": "Chapter 12 · Polygenes and Polygenic Mutation",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "ma {A}^{2}\\left(\\mathbf{A}+\\frac{\\sigma {m0}^{2}}{\\sigma {A}^{2}}\\sum {k=1}^{t}\\mathbf{A} {k}\\right) \\tag{26.18} $$ where $ \\sigma {m0}^{2} $ is the mutational rate of input of new additive genetic variance (Chapter 12). Here A is the standard relationship matrix ignoring mutation, while $ A {k} $ is the relationship matrix computed under the assumption that ancestors born in generations 0 to k - 1 are ignored. Henc…",
+      "match_source": "chapter-overview"
+    },
+    {
+      "current_section_id": "Genetics_chapter26_015",
+      "current_anchor": "genetics_chapter26_015",
+      "source_chapter_id": "Genetics_chapter7",
+      "label": "Chapter 7",
+      "target_anchor": "genetics_chapter7_003",
+      "target_label": "Equation 7.7",
+      "target_ref_type": "equation",
+      "target_ref_id": "7.7",
+      "target_section_title": "Introduction / The Coefficient of Fraternity",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "xpand from the purely additive model, the main modification that we require is a means for converting pedigree information into the covariance matrix of dominance effects. This idea has already been covered in Chapter 7, where we found that the covariance of dominance values for two individuals $i$ and $j$ is the product of the dominance genetic variance and the coefficient of fraternity, $\\sigma {D}^{2}\\Delta {ij}$…",
+      "match_source": "llm-prerequisite"
+    },
+    {
+      "current_section_id": "Genetics_chapter26_016",
+      "current_anchor": "genetics_chapter26_016",
+      "source_chapter_id": "Genetics_chapter6",
+      "label": "Chapter 6",
+      "target_anchor": "genetics_chapter6_section_001",
+      "target_label": "Chapter 6",
+      "target_ref_type": "chapter",
+      "target_ref_id": "6",
+      "target_section_title": "Chapter 6 · 6 Sources of Environmental Variation",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "to all observations on the same individual, and e is the residual error between observations of the same individual due, for example, to measurement error and changes in some environmental factors. Recall from Chapter 6 that the repeatability of a character (r) is defined to be the correlation between different measurements in the same individual. If j and k denote different observations on the same individual i, th…",
+      "match_source": "chapter-overview"
+    },
+    {
+      "current_section_id": "Genetics_chapter26_017",
+      "current_anchor": "genetics_chapter26_017",
+      "source_chapter_id": "Genetics_chapter23",
+      "label": "Chapter 23",
+      "target_anchor": "genetics_chapter23_section_001",
+      "target_label": "Chapter 23",
+      "target_ref_type": "chapter",
+      "target_ref_id": "23",
+      "target_section_title": "Chapter 23 Textbook Mapping",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "JOINT ESTIMATION OF SEVERAL VECTORS OF RANDOM EFFECTS / Maternal Effects As discussed in detail in Chapter 23, for species with maternal care, the phenotype of an individual can depend on both genetic and environmental components of maternal effects, in addition to the individual's direct additive genetic value and a",
+      "match_source": "llm-prerequisite"
+    },
+    {
+      "current_section_id": "Genetics_chapter26_018",
+      "current_anchor": "genetics_chapter26_018",
+      "source_chapter_id": "Genetics_chapter22",
+      "label": "Chapter 22",
+      "target_anchor": "genetics_chapter22_section_001",
+      "target_label": "Chapter 22",
+      "target_ref_type": "chapter",
+      "target_ref_id": "22",
+      "target_section_title": "Chapter 22 · Genotype × Environment Interaction",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "estimates of the genetic and environmental covariances among traits and its high computational demands. We have already considered the difficulties in procuring reliable estimates of covariances among traits (Chapter 22), and we return to the issue of computational speed at the end of this section. To illustrate the basic principles of multivariate BLUP, we follow the approach of Henderson and Quaas (1976), restrict…",
+      "match_source": "chapter-overview"
+    },
+    {
+      "current_section_id": "Genetics_chapter26_018",
+      "current_anchor": "genetics_chapter26_018",
+      "source_chapter_id": "Genetics_chapter21",
+      "label": "Chapter 21",
+      "target_anchor": "genetics_chapter21_section_001",
+      "target_label": "Chapter 21",
+      "target_ref_type": "chapter",
+      "target_ref_id": "21",
+      "target_section_title": "Chapter 21 · Correlations Between Characters",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "ured in different individuals can often be assumed to be uncorrelated, this is not necessarily the case for different characters measured in the same individual, which can exhibit an environmental correlation (Chapter 21). The covariance matrix between $ \\mathbf{e} i $ and $ \\mathbf{e} j $ can be written as $ \\boldsymbol{\\sigma}(\\mathbf{e} i, \\mathbf{e} j) = \\epsilon {ij} \\mathbf{I} $, where $ \\epsilon {ij} = \\sigma…",
+      "match_source": "llm-prerequisite"
+    }
+  ],
+  "prerequisites": [
+    {
+      "id": "prereq-genetics_chapter8",
+      "title": "Chapter 8 · Multivariate Normal Distribution & Conditional Expectation",
+      "source_chapter_id": "Genetics_chapter8",
+      "used_in_sections": [
+        "Genetics_chapter26_002",
+        "Genetics_chapter26_003",
+        "Genetics_chapter26_004"
+      ],
+      "why_needed": "第26章中随机效应（育种值）的预测依赖于多元正态分布的条件期望公式，该公式由第8章的方程8.27给出。",
+      "key_points": [
+        "理解多元正态分布的条件均值和方差公式。",
+        "掌握BLUP的核心思想：基于协方差矩阵的线性无偏预测。",
+        "复习方程8.27及其在回归中的含义。"
+      ],
+      "source_links": [
+        {
+          "chapter_id": "Genetics_chapter8",
+          "label": "Equation 8.27",
+          "markdown_path": "/data/textbook/Genetics_chapter8_textbook.md",
+          "anchor": "genetics_chapter8_018",
+          "section_title": "Introduction / Properties of the MVN",
+          "ref_type": "equation",
+          "ref_id": "8.27",
+          "book_hint": "",
+          "link_scope": "current-book",
+          "excerpt": "found in most multivariate statistics texts, e.g., Morrison (1976). 4. If $\\mathbf{x} \\sim \\mathrm{MVN}$, the regression of any subset of $\\mathbf{x}$ on another subset is linear and homoscedastic. Rewriting Equation 8.27 in terms of a regression of the predicted value of the vector $\\mathbf{x} {1}$ given an observed value of the vector $\\mathbf{x} {2}$, we have $$ \\mathbf{x {1}}=\\boldsymbol{\\mu {1}}+\\mathbf{V} {\\ma…"
+        }
+      ],
+      "source_excerpt": "Chapter 8 Textbook Mapping",
+      "summary_status": "llm-validated",
+      "usage_count": 3,
+      "explicit_asset_refs": 2,
+      "priority_score": 180,
+      "validated_by_llm": true,
+      "concept_title": "Chapter 8 · Multivariate Normal Distribution & Conditional Expectation",
+      "nav_label": "MVN & BLUP",
+      "evidence_summary": "当前章节在混合模型预测中直接引用了方程8.27，说明多元正态条件是计算育种值的基础。"
+    },
+    {
+      "id": "prereq-genetics_chapter21",
+      "title": "Chapter 21 · Correlations Between Characters",
+      "source_chapter_id": "Genetics_chapter21",
+      "used_in_sections": [
+        "Genetics_chapter26_018"
+      ],
+      "why_needed": "理解性状间的遗传相关是多性状BLUP分析的基础，本章提供了相关性的定义和估计方法。",
+      "key_points": [
+        "遗传相关表型相关和环境相关的关系",
+        "相关系数的估计方法",
+        "相关对多性状选择的影响"
+      ],
+      "source_links": [
+        {
+          "chapter_id": "Genetics_chapter21",
+          "label": "Chapter 21",
+          "markdown_path": "/data/textbook/Genetics_chapter21_textbook.md",
+          "anchor": "genetics_chapter21_section_001",
+          "section_title": "Chapter 21 · Correlations Between Characters",
+          "ref_type": "chapter",
+          "ref_id": "21",
+          "book_hint": "",
+          "link_scope": "current-book",
+          "excerpt": "Chapter 21 · Correlations Between Characters"
+        }
+      ],
+      "source_excerpt": "Chapter 21 · Correlations Between Characters",
+      "summary_status": "llm-validated",
+      "usage_count": 1,
+      "explicit_asset_refs": 0,
+      "priority_score": 180,
+      "validated_by_llm": true,
+      "concept_title": "Chapter 21 · Correlations Between Characters",
+      "nav_label": "性状相关",
+      "evidence_summary": "当前章节讨论多性状BLUP，直接依赖性状相关性的概念，而第21章正是讲解性状间的相关。"
+    },
+    {
+      "id": "prereq-genetics_chapter23",
+      "title": "Chapter 23 · Maternal genetic and environmental effects",
+      "source_chapter_id": "Genetics_chapter23",
+      "used_in_sections": [
+        "Genetics_chapter26_017"
+      ],
+      "why_needed": "本章讨论母体效应，需要第23章中关于母体遗传和环境效应的基础知识和模型。",
+      "key_points": [
+        "母体效应包括遗传和环境两方面的贡献。",
+        "Willham (1963) 提出了母体效应模型。",
+        "混合模型框架可用于估计育种值及母体遗传和环境效应。"
+      ],
+      "source_links": [
+        {
+          "chapter_id": "Genetics_chapter23",
+          "label": "Chapter 23",
+          "markdown_path": "/data/textbook/Genetics_chapter23_textbook.md",
+          "anchor": "genetics_chapter23_section_001",
+          "section_title": "Chapter 23 Textbook Mapping",
+          "ref_type": "chapter",
+          "ref_id": "23",
+          "book_hint": "",
+          "link_scope": "current-book",
+          "excerpt": "Chapter 23 Textbook Mapping"
+        }
+      ],
+      "source_excerpt": "Chapter 23 Textbook Mapping",
+      "summary_status": "llm-validated",
+      "usage_count": 1,
+      "explicit_asset_refs": 0,
+      "priority_score": 180,
+      "validated_by_llm": true,
+      "concept_title": "Chapter 23 · Maternal genetic and environmental effects",
+      "nav_label": "Ch23 Maternal effects",
+      "evidence_summary": "当前章节明确引用第23章详细讨论了母体效应，并基于其模型进行扩展。"
+    },
+    {
+      "id": "prereq-genetics_chapter7",
+      "title": "Chapter 7 · Identity Coefficients and Coefficient of Fraternity",
+      "source_chapter_id": "Genetics_chapter7",
+      "used_in_sections": [
+        "Genetics_chapter26_009",
+        "Genetics_chapter26_010",
+        "Genetics_chapter26_012",
+        "Genetics_chapter26_015"
+      ],
+      "why_needed": "第26章在计算亲缘关系矩阵A时直接引用了第7章的同系系数方法，这是理解动物模型和BLUP估计的基础。",
+      "key_points": [
+        "理解同系系数（identity coefficients）的定义和计算方法",
+        "掌握同胞系数（coefficient of fraternity）的公式及应用",
+        "学会利用同系系数推导亲缘关系矩阵A的元素"
+      ],
+      "source_links": [
+        {
+          "chapter_id": "Genetics_chapter7",
+          "label": "Equation 7.7",
+          "markdown_path": "/data/textbook/Genetics_chapter7_textbook.md",
+          "anchor": "genetics_chapter7_003",
+          "section_title": "Introduction / The Coefficient of Fraternity",
+          "ref_type": "equation",
+          "ref_id": "7.7",
+          "book_hint": "",
+          "link_scope": "current-book",
+          "excerpt": "ce to illustrate the use of this equation. First, consider the situation when x and y are full sibs, in which case the mothers are the same individual ($ m x = m y = m $), as are the fathers $ f x = f y = f $. Equation 7.7 then reduces to $$ \\Delta {x y}=\\Theta {m m}\\Theta {f f}+\\Theta {m f}^{2} $$ If the parents are unrelated, then $ \\Theta {mf} = 0 $; and if the parents are not inbred, then $ \\Theta {mm} = \\Theta…"
+        }
+      ],
+      "source_excerpt": "the assumption of gametic phase equilibrium, linkage influences only the epistatic components of genetic covariance, which depend upon the multilocus gene combinations inherited through gametes. Recall that in Equation 7.12, each component of epistatic variance is weighted by a coefficient of the form $ (2\\Theta {xy})^{n}\\Delta {xy}^{m} $. The term $ \\Theta {xy}^{n} $ is the probability that randomly drawn pairs of…",
+      "summary_status": "llm-validated",
+      "usage_count": 4,
+      "explicit_asset_refs": 3,
+      "priority_score": 150,
+      "validated_by_llm": true,
+      "concept_title": "Chapter 7 · Identity Coefficients and Coefficient of Fraternity",
+      "nav_label": "Identity Coefficients",
+      "evidence_summary": "第26章第12节明确提到“第7章介绍的同系系数方法可用于计算A的每个元素”，因此第7章是必要的先修内容。"
+    },
+    {
+      "id": "prereq-genetics_chapter25",
+      "title": "Heritability on the observed scale",
+      "source_chapter_id": "Genetics_chapter25",
+      "used_in_sections": [
+        "Genetics_chapter26_001"
+      ],
+      "why_needed": "本章在计算性别决定性状的遗传力时直接引用了源章节中的公式25.8b，理解该公式的推导和适用条件是正确进行遗传力转换的前提。",
+      "key_points": [
+        "掌握观测尺度遗传力与潜在尺度遗传力的转换公式25.8b。",
+        "理解在二元性状中，环境偏差在观测尺度上不独立的特性。",
+        "熟悉利用阈值模型和正态分布参数（Φ、x、p）进行校正的方法。"
+      ],
+      "source_links": [
+        {
+          "chapter_id": "Genetics_chapter25",
+          "label": "Equation 25.8b",
+          "markdown_path": "/data/textbook/Genetics_chapter25_textbook.md",
+          "anchor": "genetics_chapter25_007",
+          "section_title": "Introduction / HERITABILITY ON THE OBSERVED SCALE",
+          "ref_type": "equation",
+          "ref_id": "25.8b",
+          "book_hint": "",
+          "link_scope": "current-book",
+          "excerpt": "environmental deviations are not independent on the observed scale. Sometimes it is more practical to initially calculate heritability on the observed scale and then compute $ h^2 $ indirectly by rearranging Equation 25.8b. Any of the procedures described in earlier chapters can be used for this purpose, applying the analysis to the 0, 1 variables. One problem with this approach, pointed Figure 25.6 · page 20 · sour…"
+        }
+      ],
+      "source_excerpt": "environmental deviations are not independent on the observed scale. Sometimes it is more practical to initially calculate heritability on the observed scale and then compute $ h^2 $ indirectly by rearranging Equation 25.8b. Any of the procedures described in earlier chapters can be used for this purpose, applying the analysis to the 0, 1 variables. One problem with this approach, pointed Figure 25.6 · page 20 · sour…",
+      "summary_status": "llm-validated",
+      "usage_count": 1,
+      "explicit_asset_refs": 1,
+      "priority_score": 150,
+      "validated_by_llm": true,
+      "concept_title": "Heritability on the observed scale",
+      "nav_label": "Eq. 25.8b",
+      "evidence_summary": "当前章节在计算遗传力时显式使用了公式25.8b，并引用了其推导过程，表明该方程是必备的知识点。"
+    }
+  ],
+  "llm": {
+    "requests_total": 10,
+    "cache_hits": 0,
+    "cache_writes": 10,
+    "remote_calls": 10,
+    "budget_rejections": 0,
+    "prompt_chars_sent": 27820,
+    "response_chars_received": 3206,
+    "api_prompt_tokens": 6903,
+    "api_completion_tokens": 4431,
+    "api_total_tokens": 11334,
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "cache_enabled": true,
+    "cache_dir": "D:\\大学资料\\大二\\LLM-Agent科学文献系统知识库处理\\tmp\\llm_cache",
+    "max_remote_calls": 0,
+    "max_prompt_chars_total": 0,
+    "max_response_chars_total": 0,
+    "validated_only": true,
+    "preserved_from_previous_build": true
+  }
+}

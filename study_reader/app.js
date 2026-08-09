@@ -9,6 +9,7 @@ const STATE = {
   returnPoint: null,
   openPicker: "",
   markdownCache: new Map(),
+  chapterDataCache: new Map(),
 };
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -146,6 +147,7 @@ async function openStudyChapter(chapterId, anchor = "") {
 async function openChapter(chapterId, anchor = "", options = {}) {
   const chapter = chapterById(chapterId);
   if (!chapter) throw new Error(`Unknown chapter: ${chapterId}`);
+  await ensureChapterData(chapter);
 
   STATE.currentChapterId = chapter.id;
   STATE.activeAnchor = anchor || "";
@@ -335,7 +337,15 @@ function chapterBookId(chapter) {
 }
 
 function chapterData(chapterId = STATE.currentChapterId) {
-  return STATE.dataset?.data?.[chapterId] || { sections: [], assets: [], prerequisites: [] };
+  return STATE.chapterDataCache.get(chapterId)
+    || STATE.dataset?.data?.[chapterId]
+    || { sections: [], assets: [], references: {}, semantic_chapter_links: [], prerequisites: [] };
+}
+
+async function ensureChapterData(chapter) {
+  if (!chapter?.id || STATE.chapterDataCache.has(chapter.id) || STATE.dataset?.data?.[chapter.id]) return;
+  const path = chapter.data_path || `./data/generated/chapters/${chapter.id}.json`;
+  STATE.chapterDataCache.set(chapter.id, await fetchJson(path));
 }
 
 function studyChapterData() {
@@ -641,39 +651,53 @@ function insertAtSectionEnd(root, element, sectionId) {
 
 function renderParagraph(text, context = {}) {
   const value = String(text || "");
-  const pattern = /(?:(LW)\s+)?\[\[SEE_FORMULA:([^\]]+)\]\]|\$\$([\s\S]+?)\$\$/gi;
   const html = [];
-  let lastIndex = 0;
-  let match;
+  let inlineBuffer = "";
 
-  const pushText = (chunk) => {
+  const pushText = () => {
+    const chunk = inlineBuffer;
+    inlineBuffer = "";
     const trimmed = String(chunk || "").trim();
     if (trimmed) html.push(`<p>${renderInline(trimmed, context)}</p>`);
   };
 
-  while ((match = pattern.exec(value)) !== null) {
-    const [raw, lw, refId, displayLatex] = match;
-    pushText(value.slice(lastIndex, match.index));
-    if (displayLatex) {
-      const asset = findFormulaAssetByLatex(displayLatex);
-      if (asset) {
-        html.push(renderFormulaBlock(asset.id, asset));
-      } else {
-        html.push(`<p>${renderInline(raw, context)}</p>`);
-      }
-    } else {
+  const appendTextWithFormulaRefs = (rawText) => {
+    const pattern = /(?:(LW)\s+)?\[\[SEE_FORMULA:([^\]]+)\]\]/gi;
+    let lastIndex = 0;
+    let match;
+    while ((match = pattern.exec(rawText)) !== null) {
+      inlineBuffer += rawText.slice(lastIndex, match.index);
+      const [raw, lw, refId] = match;
       const targetChapterId = chapterIdFromRef(refId, lw ? "Genetics" : currentBookId());
       const asset = targetChapterId === STATE.currentChapterId ? findAsset("formula", refId, STATE.currentChapterId) : null;
       if (asset?.origin === "placeholder" || asset?.origin === "paddle") {
+        pushText();
         html.push(renderFormulaBlock(refId, asset));
       } else {
-        html.push(`<p>${renderInline(raw, context)}</p>`);
+        inlineBuffer += raw;
       }
+      lastIndex = match.index + raw.length;
     }
-    lastIndex = match.index + raw.length;
-  }
+    inlineBuffer += rawText.slice(lastIndex);
+  };
 
-  pushText(value.slice(lastIndex));
+  const parsed = window.StudyMath?.tokenizeMath(value) || { tokens: [{ kind: "text", value }], diagnostics: [] };
+  reportMathDiagnostics(parsed.diagnostics, value, "paragraph");
+  parsed.tokens.forEach((token) => {
+    if (token.kind === "display") {
+      pushText();
+      const asset = findFormulaAssetByLatex(token.value);
+      if (asset) {
+        html.push(renderFormulaBlock(asset.id, asset));
+      } else {
+        html.push(`<div class="math-block" data-tex="${escapeAttribute(token.value)}"></div>`);
+      }
+      return;
+    }
+    if (token.kind === "inline") inlineBuffer += `$${token.value}$`;
+    else appendTextWithFormulaRefs(token.value);
+  });
+  pushText();
   return html.join("\n");
 }
 
@@ -975,16 +999,15 @@ function renderTable({ id = "", label = "", caption = "", rows = [], htmlTable =
 function renderInline(rawValue, context = {}) {
   const tokens = [];
   let text = cleanText(String(rawValue || ""));
-  text = text.replace(/\$\$([\s\S]+?)\$\$/g, (_, tex) => {
+  const parsed = window.StudyMath?.tokenizeMath(text) || { tokens: [{ kind: "text", value: text }], diagnostics: [] };
+  reportMathDiagnostics(parsed.diagnostics, text, "inline");
+  text = parsed.tokens.map((part) => {
+    if (part.kind === "text") return part.value;
     const token = `\u0000${tokens.length}\u0000`;
-    tokens.push(`<span class="math-display-inline" data-tex="${escapeAttribute(tex.trim())}"></span>`);
+    const className = part.kind === "display" ? "math-display-inline" : "math-inline";
+    tokens.push(`<span class="${className}" data-tex="${escapeAttribute(part.value)}"></span>`);
     return token;
-  });
-  text = text.replace(/\$([^$\n]+?)\$/g, (_, tex) => {
-    const token = `\u0000${tokens.length}\u0000`;
-    tokens.push(`<span class="math-inline" data-tex="${escapeAttribute(tex.trim())}"></span>`);
-    return token;
-  });
+  }).join("");
 
   let html = escapeHtml(text);
   html = html.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
@@ -1011,8 +1034,25 @@ function renderInline(rawValue, context = {}) {
 }
 
 function renderMathInTrustedHtml(rawHtml) {
-  return String(rawHtml || "").replace(/\$([^$\n]+?)\$/g, (_, tex) => {
-    return `<span class="math-inline" data-tex="${escapeAttribute(tex.trim())}"></span>`;
+  return String(rawHtml || "").split(/(<[^>]+>)/g).map((part) => {
+    if (!part || part.startsWith("<")) return part;
+    const parsed = window.StudyMath?.tokenizeMath(part) || { tokens: [{ kind: "text", value: part }], diagnostics: [] };
+    reportMathDiagnostics(parsed.diagnostics, part, "table");
+    return parsed.tokens.map((token) => {
+      if (token.kind === "text") return token.value;
+      const className = token.kind === "display" ? "math-display-inline" : "math-inline";
+      return `<span class="${className}" data-tex="${escapeAttribute(token.value)}"></span>`;
+    }).join("");
+  }).join("");
+}
+
+function reportMathDiagnostics(diagnostics, source, surface) {
+  if (!diagnostics?.length) return;
+  console.warn("Math delimiter diagnostic", {
+    chapter: STATE.currentChapterId,
+    surface,
+    diagnostics,
+    source: String(source || "").slice(0, 240),
   });
 }
 
@@ -1135,8 +1175,14 @@ function renderMath(root) {
   if (!window.katex) return 0;
   let failures = 0;
   root.querySelectorAll("[data-tex]").forEach((element) => {
-    const tex = element.dataset.tex || "";
+    // Decode entities introduced by legacy HTML serialization before KaTeX.
+    const tex = String(element.dataset.tex || "")
+      .replace(/&lt;/g, "<")
+      .replace(/&gt;/g, ">")
+      .replace(/&amp;/g, "&")
+      .replace(/&nbsp;/g, " ");
     try {
+      if (!tex.trim() || /(^|[^\\])\$/.test(tex)) throw new Error("invalid TeX boundary");
       window.katex.render(tex, element, {
         displayMode: element.classList.contains("math-block") || element.classList.contains("math-display-inline"),
         throwOnError: true,
@@ -1147,6 +1193,12 @@ function renderMath(root) {
       failures += 1;
       element.classList.add("math-fallback");
       element.textContent = tex;
+      element.title = "Formula could not be rendered; original TeX is shown.";
+      console.error("KaTeX render failed", {
+        chapter: STATE.currentChapterId,
+        tex,
+        message: error instanceof Error ? error.message : String(error),
+      });
     }
   });
   return failures;

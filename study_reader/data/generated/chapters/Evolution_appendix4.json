@@ -1,0 +1,2138 @@
+{
+  "sections": [
+    {
+      "id": "Evolution_appendix4_section_001",
+      "title": "Appendix 4 · Appendix 4 / Multiple Comparisons: Bonferroni Corrections, False-discovery Rates, and Meta-analysis",
+      "nav_label": "Multiple Comparisons: Bonferroni Corrections, False-discovery Ra",
+      "raw_title": "Appendix 4 · Appendix 4 / Multiple Comparisons: Bonferroni Corrections, False-discovery Rates, and Meta-analysis",
+      "level": 1,
+      "depth": 0,
+      "anchor": "evolution_appendix4_section_001",
+      "text_preview": ""
+    },
+    {
+      "id": "Evolution_appendix4_001",
+      "title": "Appendix: Introduction",
+      "nav_label": "Appendix: Introduction",
+      "raw_title": "Evolution_appendix4_001 · Appendix: Introduction",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix4_001",
+      "text_preview": "If your experiment needs statistics, you ought to have done a better experiment. Ernest Rutherford Facts are stubborn things, but statistics are pliable. Mark Twain Often one is faced with interpreting a list of p values (the probabilities of the observed outcomes under their null hypotheses), either from a set of ind…"
+    },
+    {
+      "id": "Evolution_appendix4_002",
+      "title": "Appendix: Introduction / COMBINING p VALUES OVER INDEPENDENT TESTS",
+      "nav_label": "COMBINING p VALUES OVER INDEPENDENT TESTS",
+      "raw_title": "Evolution_appendix4_002 · Appendix: Introduction / COMBINING p VALUES OVER INDEPENDENT TESTS",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix4_002",
+      "text_preview": "Hypotheses of interest are often tested in multiple studies, and an important issue (the statistical field of meta-analysis—the analysis of analyses) is how best to combine the results from a set of such studies into a single global statement. The most obvious approach is simply to pool all of the data and perform a s…"
+    },
+    {
+      "id": "Evolution_appendix4_003",
+      "title": "Appendix: Introduction / Fisher's $ \\chi^{2} $ Method",
+      "nav_label": "Fisher's $ \\chi^{2} $ Method",
+      "raw_title": "Evolution_appendix4_003 · Appendix: Introduction / Fisher's $ \\chi^{2} $ Method",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix4_003",
+      "text_preview": "[示例 Example] Example A4.1 · ref: A4.1 · source: Evolution appendix4 003.json · blocks 0–0 Example A4.1. Suppose five different groups collected data to test the same hypothesis, and these groups (perhaps using different methods of analysis) report p values of 0.10, 0.06, 0.15, 0.08, and 0.07. Notice that while none of…"
+    },
+    {
+      "id": "Evolution_appendix4_004",
+      "title": "Appendix: Introduction / Stouffer's Z Score",
+      "nav_label": "Stouffer's Z Score",
+      "raw_title": "Evolution_appendix4_004 · Appendix: Introduction / Stouffer's Z Score",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix4_004",
+      "text_preview": "An alternative to Fisher’s approach for combining p values was offered by Stouffer et al. (1949), who transformed the individual p values into Z scores. The sum of k independent unit normals is itself normal, with a mean of zero and a variance of k. These results lead to Stouffer’s Z score method: assign a score of $…"
+    },
+    {
+      "id": "Evolution_appendix4_005",
+      "title": "Appendix: Introduction / BONFERRONI CORRECTIONS AND THEIR EXTENSIONS",
+      "nav_label": "BONFERRONI CORRECTIONS AND THEIR EXTENSIONS",
+      "raw_title": "Evolution_appendix4_005 · Appendix: Introduction / BONFERRONI CORRECTIONS AND THEIR EXTENSIONS",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix4_005",
+      "text_preview": "We now turn to the complementary problem of determining the significance level, $ \\alpha $, for individual tests required to control the overall false-positive rate over a collection of n tests. The typical setting is that a single study or experiment has gathered data and a number of different tests, usually on diffe…"
+    },
+    {
+      "id": "Evolution_appendix4_006",
+      "title": "BONFERRONI CORRECTIONS AND THEIR EXTENSIONS / Standard Bonferroni Corrections",
+      "nav_label": "Standard Bonferroni Corrections",
+      "raw_title": "Evolution_appendix4_006 · BONFERRONI CORRECTIONS AND THEIR EXTENSIONS / Standard Bonferroni Corrections",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix4_006",
+      "text_preview": "The probability of not making any Type-I errors (false positives) over n independent tests, each at level $ \\alpha $, is $ (1 - \\alpha)^n $. Hence, the probability, $ \\pi $, of having at least one false positive over the entire collection is simply one minus this or $$ \\pi=1-\\left(1-\\alpha\\right)^{n} $$ If we solve fo…"
+    },
+    {
+      "id": "Evolution_appendix4_007",
+      "title": "BONFERRONI CORRECTIONS AND THEIR EXTENSIONS / Sequential Bonferroni Corrections",
+      "nav_label": "Sequential Bonferroni Corrections",
+      "raw_title": "Evolution_appendix4_007 · BONFERRONI CORRECTIONS AND THEIR EXTENSIONS / Sequential Bonferroni Corrections",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix4_007",
+      "text_preview": "Under a strict Bonferroni correction, only those tests whose associated $p$ values are $\\leq \\pi/n$ are rejected (declared significant); all others are accepted (or more formally, fail to be rejected). This results in a considerable reduction in power if two or more of the hypotheses are actually false. When we reject…"
+    },
+    {
+      "id": "Evolution_appendix4_008",
+      "title": "BONFERRONI CORRECTIONS AND THEIR EXTENSIONS / Holm's Method",
+      "nav_label": "Holm's Method",
+      "raw_title": "Evolution_appendix4_008 · BONFERRONI CORRECTIONS AND THEIR EXTENSIONS / Holm's Method",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix4_008",
+      "text_preview": "The simplest of these sequential adjustments is Holm's method (Holm 1979). The first step is to order the $p$ values for the $n$ hypotheses being tested from smallest to largest, $p(1) \\leq p(2) \\leq \\cdots \\leq p(n)$, and let $H(i)$ be the hypothesis associated with $p(i)$. One proceeds with Holm's method as follows:…"
+    },
+    {
+      "id": "Evolution_appendix4_009",
+      "title": "BONFERRONI CORRECTIONS AND THEIR EXTENSIONS / Simes-Hochberg Method",
+      "nav_label": "Simes-Hochberg Method",
+      "raw_title": "Evolution_appendix4_009 · BONFERRONI CORRECTIONS AND THEIR EXTENSIONS / Simes-Hochberg Method",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix4_009",
+      "text_preview": "With Holm's method, we stop once we fail to reject a hypothesis. An improvement on this approach is the Simes-Hochberg correction (Simes 1986; Hochberg 1988), which effectively starts backward, working with the largest p values first. (i) If $ p(n) \\leq \\pi $, then all hypothesis are rejected. (ii) If not, $ H(n) $ ca…"
+    },
+    {
+      "id": "Evolution_appendix4_010",
+      "title": "BONFERRONI CORRECTIONS AND THEIR EXTENSIONS / Hommel's Method",
+      "nav_label": "Hommel's Method",
+      "raw_title": "Evolution_appendix4_010 · BONFERRONI CORRECTIONS AND THEIR EXTENSIONS / Hommel's Method",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix4_010",
+      "text_preview": "Hommel's method (1988) is slightly more complicated, but it is more powerful than the Simes-Hochberg correction (Hommel 1989). Under [示例 Example] Example A4.4 · ref: A4.4 · source: Evolution appendix4 010.json · blocks 1–1 Example A4.4. Suppose for n = 10 tests, the (ordered) p values are as follows: Inline Table 1 ·…"
+    },
+    {
+      "id": "Evolution_appendix4_011",
+      "title": "BONFERRONI CORRECTIONS AND THEIR EXTENSIONS / Cheverud's Method and Other Approach for Dealing with Dependence",
+      "nav_label": "Cheverud's Method and Other Approach for Dealing with Dependence",
+      "raw_title": "Evolution_appendix4_011 · BONFERRONI CORRECTIONS AND THEIR EXTENSIONS / Cheverud's Method and Other Approach for Dealing with Dependence",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix4_011",
+      "text_preview": "When different tests share correlated data, it introduces dependency between the $p$ values for these tests. How do we account for this? One approach (Cheverud 2001; Li and Ji 2005; Nyholt 2005) is to use the nature of the dependency structure of the data to estimate an effective number of independent tests, $n {e}$.…"
+    },
+    {
+      "id": "Evolution_appendix4_012",
+      "title": "Appendix: Introduction / DETECTING AN EXCESS NUMBER OF SIGNIFICANT TESTS",
+      "nav_label": "DETECTING AN EXCESS NUMBER OF SIGNIFICANT TESTS",
+      "raw_title": "Evolution_appendix4_012 · Appendix: Introduction / DETECTING AN EXCESS NUMBER OF SIGNIFICANT TESTS",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix4_012",
+      "text_preview": "While Bonferroni corrections (and their sequential counterparts) are widely used, when the number of tests is modest to large, their application significantly erodes power, leading to very high Type-II errors (failing to declare a test significant when the null is false). This tradeoff of Type-I versus Type-II errors…"
+    },
+    {
+      "id": "Evolution_appendix4_013",
+      "title": "DETECTING AN EXCESS NUMBER OF SIGNIFICANT TESTS / How Many False Positives?",
+      "nav_label": "How Many False Positives?",
+      "raw_title": "Evolution_appendix4_013 · DETECTING AN EXCESS NUMBER OF SIGNIFICANT TESTS / How Many False Positives?",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix4_013",
+      "text_preview": "Suppose we perform n independent tests, each with a Type-I error rate of $ \\alpha $. If all hypotheses are truly null, the number, j, of false positives follows a binomial distribution, with a “success” probability (a false positive) of $ \\alpha $, and n trials (the number of tests), yielding $$ \\Pr(j\\mathsf{f a l s e…"
+    },
+    {
+      "id": "Evolution_appendix4_014",
+      "title": "DETECTING AN EXCESS NUMBER OF SIGNIFICANT TESTS / Schweder-Spjøtvoll plots",
+      "nav_label": "Schweder-Spjøtvoll plots",
+      "raw_title": "Evolution_appendix4_014 · DETECTING AN EXCESS NUMBER OF SIGNIFICANT TESTS / Schweder-Spjøtvoll plots",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix4_014",
+      "text_preview": "A simple graphical approach using the empirical distribution of $p$ values was suggested by Schweder and Spjøtvoll (1982). If one rank-orders the $p$ values from the smallest $p(1)$ to the largest $p(n)$, a plot of $p(i)$ versus $i$ is a straight line under a uniform. Because our interest is usually in detecting an ex…"
+    },
+    {
+      "id": "Evolution_appendix4_015",
+      "title": "DETECTING AN EXCESS NUMBER OF SIGNIFICANT TESTS / Estimating $ n_{0} $: Subsampling From a Uniform Distribution",
+      "nav_label": "Estimating $ n_{0} $: Subsampling From a Uniform Distribution",
+      "raw_title": "Evolution_appendix4_015 · DETECTING AN EXCESS NUMBER OF SIGNIFICANT TESTS / Estimating $ n_{0} $: Subsampling From a Uniform Distribution",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix4_015",
+      "text_preview": "As suggested by the Schweder-Spötvoll plot, the distribution of $p$ values offers insight into the number of truly null hypotheses, $n {0}$. While this plot offers either a simple visual, or a more formal regression-based, estimator of $n {0}$, it tends to overestimate the number of nulls. Further, it can be difficult…"
+    },
+    {
+      "id": "Evolution_appendix4_016",
+      "title": "DETECTING AN EXCESS NUMBER OF SIGNIFICANT TESTS / Estimating $ n_{0} $: Mixture Models",
+      "nav_label": "Estimating $ n_{0} $: Mixture Models",
+      "raw_title": "Evolution_appendix4_016 · DETECTING AN EXCESS NUMBER OF SIGNIFICANT TESTS / Estimating $ n_{0} $: Mixture Models",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix4_016",
+      "text_preview": "Allison et al. (2002) suggested that $ \\pi 0 $ can be estimated by treating the distribution of $ p $ values as a mixture, a fraction $ \\pi 0 $ of which comes from a uniform (and hence a uniform distribution function, $ \\phi u $), while the remainder $ (1 - \\pi 0) $ are from the distribution, $ \\phi A(p) $, of $ p $ v…"
+    },
+    {
+      "id": "Evolution_appendix4_017",
+      "title": "Appendix: Introduction / FDR: THE FALSE-DISCOVERY RATE",
+      "nav_label": "FDR: THE FALSE-DISCOVERY RATE",
+      "raw_title": "Evolution_appendix4_017 · Appendix: Introduction / FDR: THE FALSE-DISCOVERY RATE",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix4_017",
+      "text_preview": "As mentioned, Bonferroni corrections (and their extensions) are appropriate when we expect that only a very few of the many null hypotheses are false. An alternate setting is that in which some substantial fraction of the null hypotheses is expected to be false. In such cases, even sequential Bonferroni corrections ar…"
+    },
+    {
+      "id": "Evolution_appendix4_018",
+      "title": "FDR: THE FALSE-DISCOVERY RATE / Morton's Posterior Error Rate (PER) and the FDR",
+      "nav_label": "Morton's Posterior Error Rate (PER) and the FDR",
+      "raw_title": "Evolution_appendix4_018 · FDR: THE FALSE-DISCOVERY RATE / Morton's Posterior Error Rate (PER) and the FDR",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix4_018",
+      "text_preview": "Table A4.1 reminds the reader of the various test parameters that arise when multiple comparisons are considered. We now show how these are related. First, the relationship between $ \\alpha $, $ \\pi $, and $ F $ is as follows. Suppose we have set the false-positive rate (i.e., the Type-I error rate) for an individual…"
+    },
+    {
+      "id": "Evolution_appendix4_019",
+      "title": "Appendix: Introduction / Morton's Posterior Error Rate (PER) and the FDR",
+      "nav_label": "Morton's Posterior Error Rate (PER) and the FDR",
+      "raw_title": "Evolution_appendix4_019 · Appendix: Introduction / Morton's Posterior Error Rate (PER) and the FDR",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix4_019",
+      "text_preview": "The Type-I error rate, $ \\alpha $, of a random test, and the PER for a significant test, which are often assumed to be the same, are actually very different. In addition to $ \\alpha $, the PER also depends on the power, $ \\beta $, of a test and the fraction, $ \\pi {0} $, of tests that are truly null (as these latter p…"
+    },
+    {
+      "id": "Evolution_appendix4_020",
+      "title": "FDR: THE FALSE-DISCOVERY RATE / A Technical Aside: Different Definitions of False-discovery Rate",
+      "nav_label": "A Technical Aside: Different Definitions of False-discovery Rate",
+      "raw_title": "Evolution_appendix4_020 · FDR: THE FALSE-DISCOVERY RATE / A Technical Aside: Different Definitions of False-discovery Rate",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix4_020",
+      "text_preview": "While the false-discovery rate for any experiment is simply F/S, there are several subtly different ways to formally define the expectation of this ratio. The original notion of a false-discovery rate is due to Benjamini and Hochberg (1995), with modifications suggested by a number of other workers, most notable Store…"
+    },
+    {
+      "id": "Evolution_appendix4_021",
+      "title": "FDR: THE FALSE-DISCOVERY RATE / The Benjamini-Hochberg FDR Estimator",
+      "nav_label": "The Benjamini-Hochberg FDR Estimator",
+      "raw_title": "Evolution_appendix4_021 · FDR: THE FALSE-DISCOVERY RATE / The Benjamini-Hochberg FDR Estimator",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix4_021",
+      "text_preview": "The original estimator for the FDR was introduced by Benjamini and Hochberg (1995). Suppose we declare a test to be significant if its $p$ value is at or below some threshold value, $\\tau = p(k)$, in which case $k$ of the hypotheses will be declared significant (as $p[k]$ is the $k$th smallest $p$ value), and $S = k$.…"
+    },
+    {
+      "id": "Evolution_appendix4_022",
+      "title": "FDR: THE FALSE-DISCOVERY RATE / A (Slightly More) Formal Derivation of the Estimated FDR",
+      "nav_label": "A (Slightly More) Formal Derivation of the Estimated FDR",
+      "raw_title": "Evolution_appendix4_022 · FDR: THE FALSE-DISCOVERY RATE / A (Slightly More) Formal Derivation of the Estimated FDR",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix4_022",
+      "text_preview": "Following Storey and Tibshirani (2003), we consider the expected FDR for an experiment where we declare a hypothesis to be significant if its $p$ value is less than or equal to some threshold value, $\\tau$. Obviously, as $\\tau$ becomes smaller, the FDR is smaller (as significant nulls become increasingly less likely).…"
+    },
+    {
+      "id": "Evolution_appendix4_023",
+      "title": "FDR: THE FALSE-DISCOVERY RATE / Storey's q Value",
+      "nav_label": "Storey's q Value",
+      "raw_title": "Evolution_appendix4_023 · FDR: THE FALSE-DISCOVERY RATE / Storey's q Value",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix4_023",
+      "text_preview": "While we can control the FDR for an entire set of experiments, we would also like to have an indication of the FDR for any particular experiment (or test) within this family of tests. Intuitively, tests with smaller p values should also have smaller associated FDR values. To address this, Storey (2002; Storey and Tibs…"
+    },
+    {
+      "id": "Evolution_appendix4_024",
+      "title": "FDR: THE FALSE-DISCOVERY RATE / Closing Caveats in Using the FDR",
+      "nav_label": "Closing Caveats in Using the FDR",
+      "raw_title": "Evolution_appendix4_024 · FDR: THE FALSE-DISCOVERY RATE / Closing Caveats in Using the FDR",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix4_024",
+      "text_preview": "While controlling the FDR is a very powerful approach for many multiple-comparison problems, it is not a panacea. One concern is correlations among tests. As mentioned, in this case the null distribution of p values can significantly depart from a uniform, giving biased estimates of $ \\pi {0} $ (and thus FDR). Further…"
+    },
+    {
+      "id": "Evolution_appendix4_025",
+      "title": "Appendix: Introduction / FORMAL META-ANALYSIS",
+      "nav_label": "FORMAL META-ANALYSIS",
+      "raw_title": "Evolution_appendix4_025 · Appendix: Introduction / FORMAL META-ANALYSIS",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix4_025",
+      "text_preview": "Another class of analysis involving multiple comparisons considers comparison across studies, rather than trying to adjust for multiple comparisons within a single study. Such an analysis of analyses, coined meta-analysis (MA) by Glass (1976), is a tool of expanding importance in quantitative genetics. While multiple-…"
+    },
+    {
+      "id": "Evolution_appendix4_026",
+      "title": "FORMAL META-ANALYSIS / Informal, or Narrative, Meta-analysis",
+      "nav_label": "Informal, or Narrative, Meta-analysis",
+      "raw_title": "Evolution_appendix4_026 · FORMAL META-ANALYSIS / Informal, or Narrative, Meta-analysis",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix4_026",
+      "text_preview": "Table A4.3 shows the canonical structure of the data for a meta-analysis: one has a number of studies, either published or unpublished, dealing with a specific question (such as the average strength of natural selection; Chapter 30). Study i reports an estimate, $ T i $, of an effect whose true (and unknown) value is…"
+    },
+    {
+      "id": "Evolution_appendix4_027",
+      "title": "FORMAL META-ANALYSIS / Standardizing Effect Sizes",
+      "nav_label": "Standardizing Effect Sizes",
+      "raw_title": "Evolution_appendix4_027 · FORMAL META-ANALYSIS / Standardizing Effect Sizes",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix4_027",
+      "text_preview": "A formal meta-analysis proceeds by averaging over the standardized effect sizes for each study. As we will detail below, this weights each study by the strength (precision) of the evidence it provides. We will briefly review a few of the common standardizations here, pointing the reader to the general references cited…"
+    },
+    {
+      "id": "Evolution_appendix4_028",
+      "title": "FORMAL META-ANALYSIS / Fixed-effects, Random-effects, and Mixed-model Meta-analysis",
+      "nav_label": "Fixed-effects, Random-effects, and Mixed-model Meta-analysis",
+      "raw_title": "Evolution_appendix4_028 · FORMAL META-ANALYSIS / Fixed-effects, Random-effects, and Mixed-model Meta-analysis",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix4_028",
+      "text_preview": "Once an appropriate summary statistic, along with its standard error, has been chosen, the next step is to decide if a fixed, random, or mixed meta-analysis should be used. For questions of interest to quantitative geneticists, a mixed-model analysis is likely the most appropriate. This is also the most general model,…"
+    },
+    {
+      "id": "Evolution_appendix4_029",
+      "title": "FORMAL META-ANALYSIS / Publication and Other Sources in Bias",
+      "nav_label": "Publication and Other Sources in Bias",
+      "raw_title": "Evolution_appendix4_029 · FORMAL META-ANALYSIS / Publication and Other Sources in Bias",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix4_029",
+      "text_preview": "The most common concern of a meta-analysis is the issue of publication bias, whereby the chosen sample of studies is nonrandom with respect to all of the actual studies that have been done. Before addressing this, we need to stress that the most serious MA problem is simply poor data reporting (Gurevitch and Hedges 19…"
+    },
+    {
+      "id": "Evolution_appendix4_030",
+      "title": "FORMAL META-ANALYSIS / Bias When Estimating Magnitudes",
+      "nav_label": "Bias When Estimating Magnitudes",
+      "raw_title": "Evolution_appendix4_030 · FORMAL META-ANALYSIS / Bias When Estimating Magnitudes",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix4_030",
+      "text_preview": "[Figure] Figure A4.8 · page 30 · source: Evolution appendix4 Figure A4.8 The consequences of considering the absolute value, $ \\theta $, of an effect. Here, the true size effect ( $ \\theta $) is normally distributed with a variance of $ \\sigma^2 $, whose distribution is indicated by the solid curves. Of course, we do…"
+    }
+  ],
+  "assets": [
+    {
+      "kind": "example",
+      "id": "A4.1",
+      "anchor": "example-a4.1",
+      "label": "Example A4.1",
+      "section_id": "Evolution_appendix4_003",
+      "excerpt": "Example A4.1 · ref: A4.1 · source: Evolution appendix4 003.json · blocks 0–0 Example A4.1. Suppose five different groups collected data to test the same hypothesis, and these groups (perhaps using different methods of analysis) report p values of 0.10, 0.06, 0.15, 0.08, and 0.07. Notice that while none of these individual tests are significant, the trend is clearly that all are “close” to being significant ( $ \\bar{p} = 0.09 $). Fisher’s statistic returns a value of $$ X^{2}…"
+    },
+    {
+      "kind": "example",
+      "id": "A4.2",
+      "anchor": "example-a4.2",
+      "label": "Example A4.2",
+      "section_id": "Evolution_appendix4_004",
+      "excerpt": "Example A4.2 · ref: A4.2 · source: Evolution appendix4 004.json · blocks 1–2 Example A4.2. Reconsider the data from Example A4.1. The $ Z i $ values are easily obtained using $ R $, as the command $ \\text{qnorm}(1-\\text{p}) $ returns $ Z $ satisfying $ \\text{Pr}(U \\leq Z) = 1 - p $, or (equivalently) $ \\text{Pr}(U Z) = p $. For example, $ Z 1 $ is calculated by $ \\text{qnorm}(1-0.1) $, or 1.281. Similarly computing the other $ Z {i} $ values yields $$ \\sum {i=1}^{5}Z {i}=6.7…"
+    },
+    {
+      "kind": "example",
+      "id": "A4.3",
+      "anchor": "example-a4.3",
+      "label": "Example A4.3",
+      "section_id": "Evolution_appendix4_006",
+      "excerpt": "Example A4.3 · ref: A4.3 · source: Evolution appendix4 006.json · blocks 4–5 Example A4.3. Suppose we have $n = 100$ independent tests and wish to obtain an overall $\\pi$ value of 0.05. What value of $\\alpha$ should be used for each individual test to achieve an experiment-wide false-positive rate of 0.05? The Dunn-Sidak correction suggests $$ \\alpha=1-(1-0.05)^{1/100}=0.000512 $$ $$ \\alpha=0.05/100=0.0005 $$ while the Bonferroni correction is Note that using such small $ \\a…"
+    },
+    {
+      "kind": "example",
+      "id": "A4.4",
+      "anchor": "example-a4.4",
+      "label": "Example A4.4",
+      "section_id": "Evolution_appendix4_010",
+      "excerpt": "Example A4.4 · ref: A4.4 · source: Evolution appendix4 010.json · blocks 1–1 Example A4.4. Suppose for n = 10 tests, the (ordered) p values are as follows: Inline Table 1 · inline 1 · page 6 · source: Evolution appendix4 010 Inline Table 1 i 1 2 3 4 5 6 7 8 9 10 --- --- --- --- --- --- --- --- --- --- --- p(i) 0.0020 0.0045 0.0060 0.0080 0.0085 0.0090 0.0175 0.0250 0.1055 0.5350 $ \\frac{\\pi}{n-i+1} $ 0.0050 0.0056 0.0063 0.0071 0.0083 0.0100 0.0125 0.0167 0.0250 0.0500 For a…"
+    },
+    {
+      "kind": "example",
+      "id": "A4.5",
+      "anchor": "example-a4.5",
+      "label": "Example A4.5",
+      "section_id": "Evolution_appendix4_013",
+      "excerpt": "Example A4.5 · ref: A4.5 · source: Evolution appendix4 013.json · blocks 2–5 Example A4.5. Suppose 250 independent tests are performed, each with $ \\alpha = 0.025 $ (a 2.5% chance of declaring a result from the null hypothesis to be significant), and 15 tests are declared significant by this criteria. Is this number greater than expected by chance? The expected number of significant tests under the global null hypothesis is $ n\\alpha = 250 \\cdot 0.025 = 6.25 $. From Equation…"
+    },
+    {
+      "kind": "figure",
+      "id": "A4.1",
+      "anchor": "figure-a4.1",
+      "label": "Figure A4.1",
+      "section_id": "Evolution_appendix4_015",
+      "src": "figures/Evolution_A4.1.png",
+      "caption": "Figure A4.1 A Schweder-Spjøtvoll plot is one approach for detecting departures from a uniform distribution of p values. The p values are ordered from smallest, p(1), to largest, p(n), and one plot the rank of 1 - p(i) versus its value. These ranks are reversed from the ranks of p(i), as the rank of 1 - p(n), being the smallest value, is 1. Under a uniform, the result is a straight line passing through the origin and the point (1, n). The upper curve (solid triangles), generated by randomly sampling n = 100 values from a uniform (0,1), fits this pattern. The lower curve (open circles), generated by simulating p values for 80 true nulls and 20 tests where the alternative was correct, shows an inflation of p values near zero (1 - p values near one). This results in a strong departure from linearity near one. Ignoring this upturn and extrapolating the linear fit for the values below this inflection point gives an approximate value of 80 for the value of this projected line when 1 - p = 1. This is the estimate of  $ n_0 $."
+    },
+    {
+      "kind": "example",
+      "id": "A4.6",
+      "anchor": "example-a4.6",
+      "label": "Example A4.6",
+      "section_id": "Evolution_appendix4_015",
+      "excerpt": "Example A4.6 · ref: A4.6 · source: Evolution appendix4 015.json · blocks 6–9 Example A4.6. According to the data in Figure A4.3, what is $ n 0 $? Consider the bins centered around $ p = 0.5 $. Based on the central three bins (0.4, 0.5, and 0.6), a total of $ 60 + 46 + 48 = 154 $ tests have $ p $ values in this interval. From Equation A4.8b, $ 154 = n 0 \\cdot 0.3 \\cdot r 0 = 154/0.3 = 513 $, and hence a fraction, $ \\pi 0 = n 0/n = 513/644 = 0.80 $, of the tests are true nulls…"
+    },
+    {
+      "kind": "figure",
+      "id": "A4.2",
+      "anchor": "figure-a4.2",
+      "label": "Figure A4.2",
+      "section_id": "Evolution_appendix4_015",
+      "src": "figures/Evolution_A4.2.png",
+      "caption": "Figure A4.2 Simulated distribution of $p$ values based on 5000 tests for samples of 25 draws from a normal distribution with a mean of $\\mu$ and a variance of one. The null hypothesis is $H_0 : \\mu \\leq 0$. A: The distribution of $p$ values when $\\mu = 0$ (the null is correct) is uniform. B: The distribution when $\\mu = 0.2$ is skewed toward an excess of values near zero. C: The distribution when $\\mu = -0.2$ is skewed toward an excess of values near one."
+    },
+    {
+      "kind": "figure",
+      "id": "A4.3",
+      "anchor": "figure-a4.3",
+      "label": "Figure A4.3",
+      "section_id": "Evolution_appendix4_015",
+      "src": "figures/Evolution_A4.3.png",
+      "caption": "Figure A4.3 An empirical distribution of p values (for n = 644 tests) from Mosig et al. (2001). The number of p values in each of ten bins (of width 0.1) are given above the bars. Note the large excess of values near zero."
+    },
+    {
+      "kind": "figure",
+      "id": "A4.4",
+      "anchor": "figure-a4.4",
+      "label": "Figure A4.4",
+      "section_id": "Evolution_appendix4_016",
+      "src": "figures/Evolution_A4.4.png",
+      "caption": "Figure A4.4 The empirical distribution of $p$ values can be treated as a mixture model of a uniform plus a beta distribution (whose shape parameters, $a$ and $b$, can be estimated via ML), see Equation A4.10b. In this hypothetical example, a weighted mixture of a uniform (horizontal dashed line) and a beta with ($a < 1$, $b = 1$; dashed curve), yields the mixture distribution (solid curve) that fits the empirical distribution of the $p$ values."
+    },
+    {
+      "kind": "figure",
+      "id": "A4.5",
+      "anchor": "figure-a4.5",
+      "label": "Figure A4.5",
+      "section_id": "Evolution_appendix4_018",
+      "src": "figures/Evolution_A4.5.png",
+      "caption": "Figure A4.5 Plot of the posterior error rate (Equation A4.15a) for  $ \\alpha = 0.05 $, as a function of  $ \\pi_0 $ (the fraction of cases where the null hypothesis holds) and  $ \\beta $ (the Type-II error, which is one minus the power). The solid curve corresponds to  $ \\beta = 0.9 $ (10% power), the short-dashed curve corresponds to  $ \\beta = 0.7 $ (30% power), and the long-dashed (lower) curve corresponds to  $ \\beta = 0 $ (100% power)."
+    },
+    {
+      "kind": "example",
+      "id": "A4.7",
+      "anchor": "example-a4.7",
+      "label": "Example A4.7",
+      "section_id": "Evolution_appendix4_019",
+      "excerpt": "Example A4.7 · ref: A4.7 · source: Evolution appendix4 019.json · blocks 2–4 Example A4.7. In Morton's original application, because there are 23 pairs of human chromosomes, he argued that two randomly chosen genes had a $ 1/23 \\simeq 0.05 $ prior probability of linkage, namely, $ 1 - \\pi 0 = 0.05 $, and thus $ \\pi 0 = 0.95 $. Assuming a Type-I error rate of $ \\alpha = 0.05 $ and 80% power to detect linkage ( $ \\beta = 0.20 $), applying Equation A4.15a yields a PER of $$ \\fr…"
+    },
+    {
+      "kind": "example",
+      "id": "A4.8",
+      "anchor": "example-a4.8",
+      "label": "Example A4.8",
+      "section_id": "Evolution_appendix4_019",
+      "excerpt": "Example A4.8 · ref: A4.8 · source: Evolution appendix4 019.json · blocks 5–8 Example A4.8. Suppose we set $ \\alpha = 0.005 $ for each test, and assume that the resulting power is essentially 1 (i.e., $ \\beta \\simeq 0 $). Consider 5000 tests under two different settings. First, suppose that the alternative is very rare, with $ n 1 = 1 $ ( $ \\pi 0 = 0.9998 $). Under this setting, we expect $ 4999 \\cdot 0.005 = 24.995 $ false positives and one true positive ( $ 1 \\cdot [1 - \\be…"
+    },
+    {
+      "kind": "example",
+      "id": "A4.9",
+      "anchor": "example-a4.9",
+      "label": "Example A4.9",
+      "section_id": "Evolution_appendix4_023",
+      "excerpt": "Example A4.9 · ref: A4.9 · source: Evolution appendix4 023.json · blocks 3–3 Example A4.9. Consider again the 10 ordered $p$ values from Example A4.4. Computing $n$ $p(k)/k = 10$ $p(k)/k$, where $k$ denotes the test with the $k$-th smallest $p$ value, yields the following table: Inline Table 3 · inline 3 · page 15 · source: Evolution appendix4 018 Inline Table 3 Parameter Definition --- --- $ \\alpha $ Comparison-wide Type-I error (false positive). $ \\beta $ Type-II error (fa…"
+    },
+    {
+      "kind": "example",
+      "id": "A4.10",
+      "anchor": "example-a4.10",
+      "label": "Example A4.10",
+      "section_id": "Evolution_appendix4_023",
+      "excerpt": "Example A4.10 · ref: A4.10 · source: Evolution appendix4 023.json · blocks 3–5 Example A4.10. As an example of the interplay between the family-wide error rate ($\\pi$), and the individual $p$ and $q$ values for a particular test, consider Storey and Tibshirani's (2003) analysis of a microarray dataset comparing BRCA1 and BRCA2 positive breast cancer tumors. A total of 3226 genes were examined. Setting a critical $p$ value of $\\alpha = 0.001$ detects 51 significant genes (i.e…"
+    },
+    {
+      "kind": "figure",
+      "id": "A4.6",
+      "anchor": "figure-a4.6",
+      "label": "Figure A4.6",
+      "section_id": "Evolution_appendix4_029",
+      "src": "figures/Evolution_A4.6.png",
+      "caption": "Figure A4.6 A funnel plot contrasts the estimated effect size (on the horizontal axis) of a study versus a measure of its precision (such as the sample size or  $ 1/s_{i}^{2} $) on the vertical axis. A: An idealized funnel plot showing symmetry about the grand mean (dotted line). B: A funnel plot showing asymmetry, in this case an excess of larger effect-size estimates in studies with lower precision."
+    },
+    {
+      "kind": "figure",
+      "id": "A4.7",
+      "anchor": "figure-a4.7",
+      "label": "Figure A4.7",
+      "section_id": "Evolution_appendix4_029",
+      "src": "figures/Evolution_A4.7.png",
+      "caption": "Figure A4.7 Contour-enhanced funnel plots help in the interpretation of asymmetry. Both of the plots show asymmetry, with the open ellipse showing the area of “missing” studies that generates the asymmetry. Such missing values would be added under the trim-and-fill method. The contours (showing regions of statistical significance) show the expected likelihood of study values under the null of no effect. A: The “missing” studies are in a region where they are likely to occur by chance (p > 0.1), suggesting they are absent due to publication bias. B: Here, these studies will all fall into regions unlikely to be seen under the null (p < 0.05), and hence may be missing for reasons other than publication bias. (After Peters et al. 2008.)"
+    },
+    {
+      "kind": "figure",
+      "id": "A4.8",
+      "anchor": "figure-a4.8",
+      "label": "Figure A4.8",
+      "section_id": "Evolution_appendix4_030",
+      "src": "figures/Evolution_A4.8.png",
+      "caption": "Figure A4.8 The consequences of considering the absolute value,  $ |\\theta| $, of an effect. Here, the true size effect ( $ \\theta $) is normally distributed with a variance of  $ \\sigma^2 $, whose distribution is indicated by the solid curves. Of course, we do not observe the true value, but rather an estimate,  $ T $, which has the same mean as  $ \\theta $, but an additional sampling error,  $ \\sigma_e^2 $, so that while  $ \\theta \\sim N(\\mu, \\sigma^2) $,  $ T \\sim N(\\mu, \\sigma^2 + \\sigma_e^2) $, which (dashed curves) has a larger total variance. In (A) and (C),  $ \\mu = 0 $, while  $ \\mu > 0 $ in (B) and (D). The distribution of  $ |\\theta| $ is given by folding the distribution about zero, with  $ \\Pr(|\\theta|) = \\Pr(\\theta) + \\Pr(-\\theta) $ for  $ \\theta > 0 $, as shown in panels (C) and (D). While the sampling variance ( $ \\sigma_e^2 $) does not translate into bias when estimating the mean, as  $ E[T] = E[\\theta] $, it introduces bias when the absolute value of  $ \\theta $ is of interest, with  $ E[|T|] > E[|\\theta|] $ when  $ \\sigma_e^2 > 0 $, as shown in (C) and (D). (After Nakagawa and Lagisz 2016.)"
+    },
+    {
+      "kind": "example",
+      "id": "A4.11",
+      "anchor": "example-a4.11",
+      "label": "Example A4.11",
+      "section_id": "Evolution_appendix4_030",
+      "excerpt": "Example A4.11 · ref: A4.11 · source: Evolution appendix4 030.json · blocks 1–1 Example A4.11. Hereford et al. (2004) and Morrissey (2016) presented general expressions for $ E[ x ] $ when $ x \\sim N(\\mu, \\sigma^2) $. As shown in Figure A4.8, the distribution of $ x $ is given by a folded normal distribution, from which it follows that $$ \\begin{align }E[ x ]=\\sigma\\sqrt{2\\over\\pi}\\exp\\left(-{\\mu^2\\over2\\sigma^2}\\right)+ \\mu \\cdot\\textrm{erf}\\left({\\mu \\over\\sigma\\sqrt{2}}\\ri…"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.1a",
+      "anchor": "formula-a4.1a",
+      "label": "Formula (A4.1a)",
+      "section_id": "Evolution_appendix4_003",
+      "latex": "X^{2}=-2\\sum_{i=1}^{k}\\ln(p_{i})",
+      "latex_render": "X^{2}=-2\\sum_{i=1}^{k}\\ln(p_{i})",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.1b",
+      "anchor": "formula-a4.1b",
+      "label": "Formula (A4.1b)",
+      "section_id": "Evolution_appendix4_003",
+      "latex": "X^{2}=-2k\\ln(\\overline{p}_{G})",
+      "latex_render": "X^{2}=-2k\\ln(\\overline{p}_{G})",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.2a",
+      "anchor": "formula-a4.2a",
+      "label": "Formula (A4.2a)",
+      "section_id": "Evolution_appendix4_004",
+      "latex": "Z_{s}=\\frac{\\sum_{i=1}^{k}Z_{i}}{\\sqrt{k}}",
+      "latex_render": "Z_{s}=\\frac{\\sum_{i=1}^{k}Z_{i}}{\\sqrt{k}}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.2b",
+      "anchor": "formula-a4.2b",
+      "label": "Formula (A4.2b)",
+      "section_id": "Evolution_appendix4_004",
+      "latex": "p=\\Pr(U>Z_{s})",
+      "latex_render": "p=\\Pr(U>Z_{s})",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.2c",
+      "anchor": "formula-a4.2c",
+      "label": "Formula (A4.2c)",
+      "section_id": "Evolution_appendix4_004",
+      "latex": "Z_{w}=\\frac{\\sum_{i=1}^{k}w_{i}Z_{i}}{\\sqrt{\\sum_{i=1}^{k}w_{i}^{2}}}",
+      "latex_render": "Z_{w}=\\frac{\\sum_{i=1}^{k}w_{i}Z_{i}}{\\sqrt{\\sum_{i=1}^{k}w_{i}^{2}}}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.3a",
+      "anchor": "formula-a4.3a",
+      "label": "Formula (A4.3a)",
+      "section_id": "Evolution_appendix4_006",
+      "latex": "\\pi=1-\\left(1-\\alpha\\right)^{n}",
+      "latex_render": "\\pi=1-\\left(1-\\alpha\\right)^{n}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.3b",
+      "anchor": "formula-a4.3b",
+      "label": "Formula (A4.3b)",
+      "section_id": "Evolution_appendix4_006",
+      "latex": "\\alpha=1-(1-\\pi)^{1/n}",
+      "latex_render": "\\alpha=1-(1-\\pi)^{1/n}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.4",
+      "anchor": "formula-a4.4",
+      "label": "Formula (A4.4)",
+      "section_id": "Evolution_appendix4_006",
+      "latex": "\\alpha=\\pi/n",
+      "latex_render": "\\alpha=\\pi/n",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.5a",
+      "anchor": "formula-a4.5a",
+      "label": "Formula (A4.5a)",
+      "section_id": "Evolution_appendix4_011",
+      "latex": "n_{e,Cheverud}=n\\left(1-\\frac{(n-1)\\sigma^{2}(\\lambda)}{n^{2}}\\right),\\qquad\\mathrm{where}\\qquad\\sigma^{2}(\\lambda)=\\frac{1}{n-1}\\sum_{i=1}^{n}(\\lambda_{i}-1)^{2}",
+      "latex_render": "n_{e,Cheverud}=n\\left(1-\\frac{(n-1)\\sigma^{2}(\\lambda)}{n^{2}}\\right),\\qquad\\mathrm{where}\\qquad\\sigma^{2}(\\lambda)=\\frac{1}{n-1}\\sum_{i=1}^{n}(\\lambda_{i}-1)^{2}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.5b",
+      "anchor": "formula-a4.5b",
+      "label": "Formula (A4.5b)",
+      "section_id": "Evolution_appendix4_011",
+      "latex": "n_{e,Li-Ji}=\\sum_{i=1}^{N}I(\\lambda_{i}\\geq1)+\\sum_{i=1}^{N}(\\lambda_{i}-\\mathrm{floor}[\\lambda_{i}])",
+      "latex_render": "n_{e,Li-Ji}=\\sum_{i=1}^{N}I(\\lambda_{i}\\geq1)+\\sum_{i=1}^{N}(\\lambda_{i}-\\mathrm{floor}[\\lambda_{i}])",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.6",
+      "anchor": "formula-a4.6",
+      "label": "Formula (A4.6)",
+      "section_id": "Evolution_appendix4_013",
+      "latex": "\\Pr(j\\mathsf{f a l s e p o s i t i v e s})=\\frac{n!}{(n-j)!j!}(1-\\alpha)^{n-j}\\alpha^{j}",
+      "latex_render": "\\Pr(j\\mathsf{f a l s e p o s i t i v e s})=\\frac{n!}{(n-j)!j!}(1-\\alpha)^{n-j}\\alpha^{j}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.7",
+      "anchor": "formula-a4.7",
+      "label": "Formula (A4.7)",
+      "section_id": "Evolution_appendix4_013",
+      "latex": "\\Pr(j\\mathsf{f a l s e p o s i t i v e s})\\simeq\\frac{(n\\alpha)^{j}e^{-n\\alpha}}{j!}",
+      "latex_render": "\\Pr(j\\mathsf{f a l s e p o s i t i v e s})\\simeq\\frac{(n\\alpha)^{j}e^{-n\\alpha}}{j!}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.8a",
+      "anchor": "formula-a4.8a",
+      "label": "Formula (A4.8a)",
+      "section_id": "Evolution_appendix4_015",
+      "latex": "\\phi_{u}(p)=1\\quad for\\quad0\\leq p\\leq1",
+      "latex_render": "\\phi_{u}(p)=1\\quad for\\quad0\\leq p\\leq1",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.8b",
+      "anchor": "formula-a4.8b",
+      "label": "Formula (A4.8b)",
+      "section_id": "Evolution_appendix4_015",
+      "latex": "\\begin{align*}n_0\\int_a^b\\phi_u(p)dp=n_0\\int_a^b1\\cdot dp=n_0(b-a)\\end{align*}",
+      "latex_render": "\\begin{aligned}n_0\\int_a^b\\phi_u(p)dp=n_0\\int_a^b1\\cdot dp=n_0(b-a)\\end{aligned}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.8c",
+      "anchor": "formula-a4.8c",
+      "label": "Formula (A4.8c)",
+      "section_id": "Evolution_appendix4_015",
+      "latex": "\\widehat{n}_{0}(a,b)=\\frac{Number of p(i)values in(a,b)}{b-a}",
+      "latex_render": "\\widehat{n}_{0}(a,b)=\\frac{Number of p(i)values in(a,b)}{b-a}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.8d",
+      "anchor": "formula-a4.8d",
+      "label": "Formula (A4.8d)",
+      "section_id": "Evolution_appendix4_015",
+      "latex": "\\begin{aligned}\\widehat{\\pi}_{0}(a,b)&=\\frac{\\text{Number of}p(i)\\text{values in}(a,b)}{n(b-a)}\\\\&=\\frac{\\text{Fraction of}p(i)\\text{values in}(a,b)}{b-a}\\end{aligned}",
+      "latex_render": "\\begin{aligned}\\widehat{\\pi}_{0}(a,b)&=\\frac{\\text{Number of}p(i)\\text{values in}(a,b)}{n(b-a)}\\\\&=\\frac{\\text{Fraction of}p(i)\\text{values in}(a,b)}{b-a}\\end{aligned}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.9a",
+      "anchor": "formula-a4.9a",
+      "label": "Formula (A4.9a)",
+      "section_id": "Evolution_appendix4_015",
+      "latex": "\\widehat{\\pi}_{0}(\\lambda)=\\frac{Number of p(i)values>\\lambda}{n(1-\\lambda)}",
+      "latex_render": "\\widehat{\\pi}_{0}(\\lambda)=\\frac{Number of p(i)values>\\lambda}{n(1-\\lambda)}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.9b",
+      "anchor": "formula-a4.9b",
+      "label": "Formula (A4.9b)",
+      "section_id": "Evolution_appendix4_015",
+      "latex": "\\widehat{n}_{0}(\\lambda)=n\\cdot\\widehat{\\pi}_{0}(\\lambda)=\\frac{Number of p(i)values>\\lambda}{1-\\lambda}",
+      "latex_render": "\\widehat{n}_{0}(\\lambda)=n\\cdot\\widehat{\\pi}_{0}(\\lambda)=\\frac{Number of p(i)values>\\lambda}{1-\\lambda}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.10a",
+      "anchor": "formula-a4.10a",
+      "label": "Formula (A4.10a)",
+      "section_id": "Evolution_appendix4_016",
+      "latex": "\\phi_{A}(p)=\\frac{\\Gamma(a+b)}{\\Gamma(a)\\Gamma(b)}p^{a-1}(1-p)^{b-1}",
+      "latex_render": "\\phi_{A}(p)=\\frac{\\Gamma(a+b)}{\\Gamma(a)\\Gamma(b)}p^{a-1}(1-p)^{b-1}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.10b",
+      "anchor": "formula-a4.10b",
+      "label": "Formula (A4.10b)",
+      "section_id": "Evolution_appendix4_016",
+      "latex": "\\ell(p)=(1-\\pi_{0})\\phi_{A}(p)+\\pi_{0}\\phi_{u}(p)=(1-\\pi_{0})\\frac{\\Gamma(a+b)}{\\Gamma(a)\\Gamma(b)}p^{a-1}(1-p)^{b-1}+\\pi_{0}",
+      "latex_render": "\\ell(p)=(1-\\pi_{0})\\phi_{A}(p)+\\pi_{0}\\phi_{u}(p)=(1-\\pi_{0})\\frac{\\Gamma(a+b)}{\\Gamma(a)\\Gamma(b)}p^{a-1}(1-p)^{b-1}+\\pi_{0}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.10c",
+      "anchor": "formula-a4.10c",
+      "label": "Formula (A4.10c)",
+      "section_id": "Evolution_appendix4_016",
+      "latex": "\\ell(\\mathbf{p})=\\prod_{i=1}^{n}\\ell(p_{i})",
+      "latex_render": "\\ell(\\mathbf{p})=\\prod_{i=1}^{n}\\ell(p_{i})",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.11a",
+      "anchor": "formula-a4.11a",
+      "label": "Formula (A4.11a)",
+      "section_id": "Evolution_appendix4_017",
+      "latex": "\\mathrm{FDR}=\\mathrm{Pr}(i is truly null\\mid i is deemed significant)=\\delta",
+      "latex_render": "\\mathrm{FDR}=\\mathrm{Pr}(i is truly null\\mid i is deemed significant)=\\delta",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.11b",
+      "anchor": "formula-a4.11b",
+      "label": "Formula (A4.11b)",
+      "section_id": "Evolution_appendix4_017",
+      "latex": "\\mathrm{FPR}=\\mathrm{Pr}(i is deemed significant\\mid i is truly null)=\\alpha",
+      "latex_render": "\\mathrm{FPR}=\\mathrm{Pr}(i is deemed significant\\mid i is truly null)=\\alpha",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.12",
+      "anchor": "formula-a4.12",
+      "label": "Formula (A4.12)",
+      "section_id": "Evolution_appendix4_018",
+      "latex": "PER=Pr(F=1\\mid S=n=1)",
+      "latex_render": "PER=Pr(F=1\\mid S=n=1)",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.13",
+      "anchor": "formula-a4.13",
+      "label": "Formula (A4.13)",
+      "section_id": "Evolution_appendix4_018",
+      "latex": "PER=Pr(F=1\\mid S=n=1)=\\frac{Pr(false positive\\mid null true)\\cdot Pr(null)}{Pr(S=n=1)}",
+      "latex_render": "PER=Pr(F=1\\mid S=n=1)=\\frac{Pr(false positive\\mid null true)\\cdot Pr(null)}{Pr(S=n=1)}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.14a",
+      "anchor": "formula-a4.14a",
+      "label": "Formula (A4.14a)",
+      "section_id": "Evolution_appendix4_018",
+      "latex": "\\Pr(false positive\\mid null true)\\cdot\\Pr(null)=\\alpha\\cdot\\pi_{0}",
+      "latex_render": "\\Pr(false positive\\mid null true)\\cdot\\Pr(null)=\\alpha\\cdot\\pi_{0}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.14b",
+      "anchor": "formula-a4.14b",
+      "label": "Formula (A4.14b)",
+      "section_id": "Evolution_appendix4_018",
+      "latex": "\\Pr(S=n=1)=\\alpha\\pi_{0}+(1-\\beta)(1-\\pi_{0})",
+      "latex_render": "\\Pr(S=n=1)=\\alpha\\pi_{0}+(1-\\beta)(1-\\pi_{0})",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.15a",
+      "anchor": "formula-a4.15a",
+      "label": "Formula (A4.15a)",
+      "section_id": "Evolution_appendix4_018",
+      "latex": "PER=\\frac{\\alpha\\cdot\\pi_{0}}{\\alpha\\cdot\\pi_{0}+\\left(1-\\beta\\right)\\cdot\\left(1-\\pi_{0}\\right)}=\\left(1+\\frac{\\left(1-\\beta\\right)\\cdot\\left(1-\\pi_{0}\\right)}{\\alpha\\cdot\\pi_{0}}\\right)^{-1}",
+      "latex_render": "PER=\\frac{\\alpha\\cdot\\pi_{0}}{\\alpha\\cdot\\pi_{0}+\\left(1-\\beta\\right)\\cdot\\left(1-\\pi_{0}\\right)}=\\left(1+\\frac{\\left(1-\\beta\\right)\\cdot\\left(1-\\pi_{0}\\right)}{\\alpha\\cdot\\pi_{0}}\\right)^{-1}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.15b",
+      "anchor": "formula-a4.15b",
+      "label": "Formula (A4.15b)",
+      "section_id": "Evolution_appendix4_018",
+      "latex": "\\begin{align*}\\alpha=\\left({\\gamma\\over1-\\gamma}\\right)\\left({1-\\pi_0\\over\\pi_0}\\right)(1-\\beta)\\end{align*}",
+      "latex_render": "\\begin{aligned}\\alpha=\\left({\\gamma\\over1-\\gamma}\\right)\\left({1-\\pi_0\\over\\pi_0}\\right)(1-\\beta)\\end{aligned}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.15c",
+      "anchor": "formula-a4.15c",
+      "label": "Formula (A4.15c)",
+      "section_id": "Evolution_appendix4_018",
+      "latex": "\\begin{align*}\\alpha=\\left({\\gamma\\over1-\\gamma}\\right)\\left({1\\over n}\\right)\\simeq{\\gamma\\over n}\\end{align*}",
+      "latex_render": "\\begin{aligned}\\alpha=\\left({\\gamma\\over1-\\gamma}\\right)\\left({1\\over n}\\right)\\simeq{\\gamma\\over n}\\end{aligned}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.16a",
+      "anchor": "formula-a4.16a",
+      "label": "Formula (A4.16a)",
+      "section_id": "Evolution_appendix4_020",
+      "latex": "\\frac{np(k)}{k}\\leq\\delta_{k}",
+      "latex_render": "\\frac{np(k)}{k}\\leq\\delta_{k}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.16b",
+      "anchor": "formula-a4.16b",
+      "label": "Formula (A4.16b)",
+      "section_id": "Evolution_appendix4_020",
+      "latex": "p(k)\\leq\\delta\\frac{k}{n}",
+      "latex_render": "p(k)\\leq\\delta\\frac{k}{n}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.17",
+      "anchor": "formula-a4.17",
+      "label": "Formula (A4.17)",
+      "section_id": "Evolution_appendix4_020",
+      "latex": "\\widehat{\\delta}_{k}=\\frac{\\widehat{n}_{0}p(k)}{k}",
+      "latex_render": "\\widehat{\\delta}_{k}=\\frac{\\widehat{n}_{0}p(k)}{k}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.18",
+      "anchor": "formula-a4.18",
+      "label": "Formula (A4.18)",
+      "section_id": "Evolution_appendix4_021",
+      "latex": "E[F D R(\\tau)]=E\\left[\\frac{F(\\tau)}{S(\\tau)}\\right]\\simeq\\frac{E[F(\\tau)]}{E[S(\\tau)]}",
+      "latex_render": "E[F D R(\\tau)]=E\\left[\\frac{F(\\tau)}{S(\\tau)}\\right]\\simeq\\frac{E[F(\\tau)]}{E[S(\\tau)]}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.19",
+      "anchor": "formula-a4.19",
+      "label": "Formula (A4.19)",
+      "section_id": "Evolution_appendix4_021",
+      "latex": "\\Pr(p\\leq\\tau\\mid null hypothesis)=\\int_{0}^{\\tau}\\phi_{u}(p)dp=\\tau",
+      "latex_render": "\\Pr(p\\leq\\tau\\mid null hypothesis)=\\int_{0}^{\\tau}\\phi_{u}(p)dp=\\tau",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.20",
+      "anchor": "formula-a4.20",
+      "label": "Formula (A4.20)",
+      "section_id": "Evolution_appendix4_021",
+      "latex": "E[F(\\tau)]=n_{0}\\cdot\\Pr(p\\leq\\tau\\mid null hypothesis)\\simeq n_{0}\\cdot\\tau",
+      "latex_render": "E[F(\\tau)]=n_{0}\\cdot\\Pr(p\\leq\\tau\\mid null hypothesis)\\simeq n_{0}\\cdot\\tau",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.21",
+      "anchor": "formula-a4.21",
+      "label": "Formula (A4.21)",
+      "section_id": "Evolution_appendix4_021",
+      "latex": "E[FDR(\\tau)]=\\frac{n_{0}\\cdot\\tau}{S(\\tau)}",
+      "latex_render": "E[FDR(\\tau)]=\\frac{n_{0}\\cdot\\tau}{S(\\tau)}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.22",
+      "anchor": "formula-a4.22",
+      "label": "Formula (A4.22)",
+      "section_id": "Evolution_appendix4_021",
+      "latex": "\\widehat{F D R}(\\tau)=n_{0}\\cdot\\frac{\\tau}{S(\\tau)}=\\left(\\frac{N[p(i)\\ values>\\lambda]}{1-\\lambda}\\right)\\cdot\\left(\\frac{\\tau}{N[p(i)\\ values\\leq\\tau]}\\right)",
+      "latex_render": "\\widehat{F D R}(\\tau)=n_{0}\\cdot\\frac{\\tau}{S(\\tau)}=\\left(\\frac{N[p(i)\\ values>\\lambda]}{1-\\lambda}\\right)\\cdot\\left(\\frac{\\tau}{N[p(i)\\ values\\leq\\tau]}\\right)",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.23",
+      "anchor": "formula-a4.23",
+      "label": "Formula (A4.23)",
+      "section_id": "Evolution_appendix4_021",
+      "latex": "\\mathrm{F D R}(\\tau)=\\frac{\\pi_{0}\\mathrm{c d f}_{U}(\\tau)}{\\pi_{0}\\mathrm{c d f}_{U}(\\tau)+\\left(1-\\pi_{0}\\right)\\mathrm{c d f}_{A}(\\tau)}=\\frac{\\pi_{0}\\tau}{\\pi_{0}\\tau+\\left(1-\\pi_{0}\\right)\\mathrm{c d f}_{A}(\\tau)},",
+      "latex_render": "\\mathrm{F D R}(\\tau)=\\frac{\\pi_{0}\\mathrm{c d f}_{U}(\\tau)}{\\pi_{0}\\mathrm{c d f}_{U}(\\tau)+\\left(1-\\pi_{0}\\right)\\mathrm{c d f}_{A}(\\tau)}=\\frac{\\pi_{0}\\tau}{\\pi_{0}\\tau+\\left(1-\\pi_{0}\\right)\\mathrm{c d f}_{A}(\\tau)},",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.24",
+      "anchor": "formula-a4.24",
+      "label": "Formula (A4.24)",
+      "section_id": "Evolution_appendix4_022",
+      "latex": "\\widehat{q}\\left[p(i)\\right]=\\min_{\\tau\\geq p(i)}\\widehat{F D R}(\\tau)",
+      "latex_render": "\\widehat{q}\\left[p(i)\\right]=\\min_{\\tau\\geq p(i)}\\widehat{F D R}(\\tau)",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.25",
+      "anchor": "formula-a4.25",
+      "label": "Formula (A4.25)",
+      "section_id": "Evolution_appendix4_026",
+      "latex": "T_{i}=\\overline{z}_{i},\\qquad\\mathrm{w i t h}\\qquad s_{i}^{2}=\\frac{1}{n_{i}-1}\\sum_{j=1}^{n_{i}}\\left(z_{i j}-\\overline{z}_{i}\\right)^{2}",
+      "latex_render": "T_{i}=\\overline{z}_{i},\\qquad\\mathrm{w i t h}\\qquad s_{i}^{2}=\\frac{1}{n_{i}-1}\\sum_{j=1}^{n_{i}}\\left(z_{i j}-\\overline{z}_{i}\\right)^{2}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.26a",
+      "anchor": "formula-a4.26a",
+      "label": "Formula (A4.26a)",
+      "section_id": "Evolution_appendix4_026",
+      "latex": "T_{i}=\\overline{z}_{i,t}-\\overline{z}_{i,c}",
+      "latex_render": "T_{i}=\\overline{z}_{i,t}-\\overline{z}_{i,c}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.26b",
+      "anchor": "formula-a4.26b",
+      "label": "Formula (A4.26b)",
+      "section_id": "Evolution_appendix4_026",
+      "latex": "D_{i}=\\frac{T_{i}}{s_{i,p}}",
+      "latex_render": "D_{i}=\\frac{T_{i}}{s_{i,p}}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.27",
+      "anchor": "formula-a4.27",
+      "label": "Formula (A4.27)",
+      "section_id": "Evolution_appendix4_026",
+      "latex": "s_{i,p}^{2}=\\frac{(n_{i,t}-1)s_{i,t}^{2}+(n_{i,c}-1)s_{i,c}^{2}}{n_{i,c}+n_{i,t}}",
+      "latex_render": "s_{i,p}^{2}=\\frac{(n_{i,t}-1)s_{i,t}^{2}+(n_{i,c}-1)s_{i,c}^{2}}{n_{i,c}+n_{i,t}}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.28a",
+      "anchor": "formula-a4.28a",
+      "label": "Formula (A4.28a)",
+      "section_id": "Evolution_appendix4_026",
+      "latex": "g_{i}=\\frac{\\overline{z}_{i,t}-\\overline{z}_{i,c}}{s_{i,p}},\\quad\\mathrm{w h e r e}\\quad s_{i,p}^{2}=\\frac{(n_{i,t}-1)s_{i,t}^{2}+(n_{i,c}-1)s_{i,c}^{2}}{n_{i,c}+n_{i,t}-2}",
+      "latex_render": "g_{i}=\\frac{\\overline{z}_{i,t}-\\overline{z}_{i,c}}{s_{i,p}},\\quad\\mathrm{w h e r e}\\quad s_{i,p}^{2}=\\frac{(n_{i,t}-1)s_{i,t}^{2}+(n_{i,c}-1)s_{i,c}^{2}}{n_{i,c}+n_{i,t}-2}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.28b",
+      "anchor": "formula-a4.28b",
+      "label": "Formula (A4.28b)",
+      "section_id": "Evolution_appendix4_026",
+      "latex": "g_{i}\\left(1-\\frac{3}{4(n_{i,c}+n_{i,t})-9}\\right)",
+      "latex_render": "g_{i}\\left(1-\\frac{3}{4(n_{i,c}+n_{i,t})-9}\\right)",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.29a",
+      "anchor": "formula-a4.29a",
+      "label": "Formula (A4.29a)",
+      "section_id": "Evolution_appendix4_026",
+      "latex": "r_{i}^{*}=r_{i}+\\frac{r_{i}(1-r_{i}^{2})}{2(n_{i}-3)}",
+      "latex_render": "r_{i}^{*}=r_{i}+\\frac{r_{i}(1-r_{i}^{2})}{2(n_{i}-3)}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.29b",
+      "anchor": "formula-a4.29b",
+      "label": "Formula (A4.29b)",
+      "section_id": "Evolution_appendix4_026",
+      "latex": "z_{i,r}=\\frac{1}{2}\\ln\\left(\\frac{1+r_{i}}{1-r_{i}}\\right),\\qquad\\mathrm{w i t h}\\qquad s_{i}^{2}=\\frac{1}{n_{i}-3}",
+      "latex_render": "z_{i,r}=\\frac{1}{2}\\ln\\left(\\frac{1+r_{i}}{1-r_{i}}\\right),\\qquad\\mathrm{w i t h}\\qquad s_{i}^{2}=\\frac{1}{n_{i}-3}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.29c",
+      "anchor": "formula-a4.29c",
+      "label": "Formula (A4.29c)",
+      "section_id": "Evolution_appendix4_026",
+      "latex": "r=\\frac{e^{2z_{r}}-1}{e^{2z_{r}}+1}",
+      "latex_render": "r=\\frac{e^{2z_{r}}-1}{e^{2z_{r}}+1}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.30a",
+      "anchor": "formula-a4.30a",
+      "label": "Formula (A4.30a)",
+      "section_id": "Evolution_appendix4_027",
+      "latex": "T_{i}=\\theta+e_{i}",
+      "latex_render": "T_{i}=\\theta+e_{i}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.30b",
+      "anchor": "formula-a4.30b",
+      "label": "Formula (A4.30b)",
+      "section_id": "Evolution_appendix4_027",
+      "latex": "\\overline{T}=\\frac{\\sum_{i=1}^{k}w_{i}T_{i}}{\\sum_{i=1}^{k}w_{i}},\\quad\\mathrm{w h e r e}\\quad w_{i}=\\frac{1}{s_{i}^{2}}",
+      "latex_render": "\\overline{T}=\\frac{\\sum_{i=1}^{k}w_{i}T_{i}}{\\sum_{i=1}^{k}w_{i}},\\quad\\mathrm{w h e r e}\\quad w_{i}=\\frac{1}{s_{i}^{2}}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.30c",
+      "anchor": "formula-a4.30c",
+      "label": "Formula (A4.30c)",
+      "section_id": "Evolution_appendix4_027",
+      "latex": "s_{T}^{2}=\\frac{1}{\\sum_{i=1}^{k}w_{i}}",
+      "latex_render": "s_{T}^{2}=\\frac{1}{\\sum_{i=1}^{k}w_{i}}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.30d",
+      "anchor": "formula-a4.30d",
+      "label": "Formula (A4.30d)",
+      "section_id": "Evolution_appendix4_027",
+      "latex": "\\sigma^{2}(\\overline{T})=\\frac{\\sigma^{2}}{nk}",
+      "latex_render": "\\sigma^{2}(\\overline{T})=\\frac{\\sigma^{2}}{nk}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.31",
+      "anchor": "formula-a4.31",
+      "label": "Formula (A4.31)",
+      "section_id": "Evolution_appendix4_027",
+      "latex": "Q=\\sum_{i=1}^{k}\\frac{\\left(T_{i}-\\overline{T}\\right)^{2}}{s_{i}^{2}}",
+      "latex_render": "Q=\\sum_{i=1}^{k}\\frac{\\left(T_{i}-\\overline{T}\\right)^{2}}{s_{i}^{2}}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.32",
+      "anchor": "formula-a4.32",
+      "label": "Formula (A4.32)",
+      "section_id": "Evolution_appendix4_027",
+      "latex": "T_{i}=\\theta+\\sum_{j=1}^{m}b_{j}M_{ij}+e_{i}",
+      "latex_render": "T_{i}=\\theta+\\sum_{j=1}^{m}b_{j}M_{ij}+e_{i}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.33a",
+      "anchor": "formula-a4.33a",
+      "label": "Formula (A4.33a)",
+      "section_id": "Evolution_appendix4_027",
+      "latex": "T_{i}=\\mu+u_{i}+e_{i}",
+      "latex_render": "T_{i}=\\mu+u_{i}+e_{i}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.33b",
+      "anchor": "formula-a4.33b",
+      "label": "Formula (A4.33b)",
+      "section_id": "Evolution_appendix4_027",
+      "latex": "w_{i}=\\frac{1}{s_{i}^{2}+\\widehat{\\sigma}_{u}^{2}}",
+      "latex_render": "w_{i}=\\frac{1}{s_{i}^{2}+\\widehat{\\sigma}_{u}^{2}}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.33c",
+      "anchor": "formula-a4.33c",
+      "label": "Formula (A4.33c)",
+      "section_id": "Evolution_appendix4_027",
+      "latex": "\\widehat{\\sigma}_{u}^{2}=\\frac{Q-(k-1)}{S_{1}-(S_{2}/S_{1})},\\quad\\mathrm{w h e r e}\\quad S_{j}=\\sum_{i=1}^{k}s_{i}^{-2j}",
+      "latex_render": "\\widehat{\\sigma}_{u}^{2}=\\frac{Q-(k-1)}{S_{1}-(S_{2}/S_{1})},\\quad\\mathrm{w h e r e}\\quad S_{j}=\\sum_{i=1}^{k}s_{i}^{-2j}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.34",
+      "anchor": "formula-a4.34",
+      "label": "Formula (A4.34)",
+      "section_id": "Evolution_appendix4_027",
+      "latex": "\\sigma^{2}(\\overline{T})=\\frac{\\sigma^{2}}{nk}+\\frac{\\sigma_{u}^{2}}{k}",
+      "latex_render": "\\sigma^{2}(\\overline{T})=\\frac{\\sigma^{2}}{nk}+\\frac{\\sigma_{u}^{2}}{k}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.35a",
+      "anchor": "formula-a4.35a",
+      "label": "Formula (A4.35a)",
+      "section_id": "Evolution_appendix4_027",
+      "latex": "T_{i}=\\mu+\\sum_{j=1}^{m}b_{j}M_{ij}+u_{i}+e_{i}",
+      "latex_render": "T_{i}=\\mu+\\sum_{j=1}^{m}b_{j}M_{ij}+u_{i}+e_{i}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.35b",
+      "anchor": "formula-a4.35b",
+      "label": "Formula (A4.35b)",
+      "section_id": "Evolution_appendix4_027",
+      "latex": "\\mathbf{y}=\\mathbf{M}\\mathbf{b}+\\mathbf{u}+\\mathbf{e}",
+      "latex_render": "\\mathbf{y}=\\mathbf{M}\\mathbf{b}+\\mathbf{u}+\\mathbf{e}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.36",
+      "anchor": "formula-a4.36",
+      "label": "Formula (A4.36)",
+      "section_id": "Evolution_appendix4_028",
+      "latex": "y_{i}=a+b s_{i}+e,\\quad\\mathrm{w h e r e}\\quad y_{i}=(T_{i}-\\overline{T})",
+      "latex_render": "y_{i}=a+b s_{i}+e,\\quad\\mathrm{w h e r e}\\quad y_{i}=(T_{i}-\\overline{T})",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.37a",
+      "anchor": "formula-a4.37a",
+      "label": "Formula (A4.37a)",
+      "section_id": "Evolution_appendix4_029",
+      "latex": "E[|\\theta|]=\\sigma_{u}\\sqrt{2/\\pi},\\qquad\\mathrm{w h i l e}\\qquad E[|T|]=\\sqrt{\\sigma_{u}^{2}+\\sigma_{e}^{2}}\\cdot\\sqrt{2/\\pi}",
+      "latex_render": "E[|\\theta|]=\\sigma_{u}\\sqrt{2/\\pi},\\qquad\\mathrm{w h i l e}\\qquad E[|T|]=\\sqrt{\\sigma_{u}^{2}+\\sigma_{e}^{2}}\\cdot\\sqrt{2/\\pi}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.37b",
+      "anchor": "formula-a4.37b",
+      "label": "Formula (A4.37b)",
+      "section_id": "Evolution_appendix4_029",
+      "latex": "\\frac{E[|T|]-E[|\\theta|]}{E[|\\theta|]}=\\sqrt{\\frac{\\sigma_{e}^{2}}{\\sigma_{u}^{2}}+1-1}",
+      "latex_render": "\\frac{E[|T|]-E[|\\theta|]}{E[|\\theta|]}=\\sqrt{\\frac{\\sigma_{e}^{2}}{\\sigma_{u}^{2}}+1-1}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.38a",
+      "anchor": "formula-a4.38a",
+      "label": "Formula (A4.38a)",
+      "section_id": "",
+      "latex": "\\begin{align*}E[|x|]=\\sigma\\sqrt{2\\over\\pi}\\exp\\left(-{\\mu^2\\over2\\sigma^2}\\right)+|\\mu|\\cdot\\textrm{erf}\\left({\\mu|\\over\\sigma\\sqrt{2}}\\right)\\end{align*}",
+      "latex_render": "\\begin{aligned}E[|x|]=\\sigma\\sqrt{2\\over\\pi}\\exp\\left(-{\\mu^2\\over2\\sigma^2}\\right)+|\\mu|\\cdot\\textrm{erf}\\left({\\mu|\\over\\sigma\\sqrt{2}}\\right)\\end{aligned}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A4.38b",
+      "anchor": "formula-a4.38b",
+      "label": "Formula (A4.38b)",
+      "section_id": "",
+      "latex": "E[|x|]\\sim|\\mu|",
+      "latex_render": "E[|x|]\\sim|\\mu|",
+      "origin": "paddle"
+    }
+  ],
+  "references": {
+    "Evolution_appendix4_section_001": [],
+    "Evolution_appendix4_001": [],
+    "Evolution_appendix4_002": [],
+    "Evolution_appendix4_003": [
+      {
+        "kind": "example",
+        "id": "A4.1",
+        "label": "Example A4.1",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A4.1a",
+        "label": "Equation A4.1a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_appendix4_004": [
+      {
+        "kind": "example",
+        "id": "A4.2",
+        "label": "Example A4.2",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "A4.1",
+        "label": "Example A4.1",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A4.2c",
+        "label": "Equation A4.2c",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A4.2a",
+        "label": "Equation A4.2a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_appendix4_005": [],
+    "Evolution_appendix4_006": [
+      {
+        "kind": "equation",
+        "id": "A4.3b",
+        "label": "Equation A4.3b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "A4.3",
+        "label": "Example A4.3",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_appendix4_007": [
+      {
+        "kind": "example",
+        "id": "A4.4",
+        "label": "Example A4.4",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_appendix4_008": [
+      {
+        "kind": "equation",
+        "id": "A4.3a",
+        "label": "Equation A4.3a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_appendix4_009": [
+      {
+        "kind": "example",
+        "id": "A4.4",
+        "label": "Example A4.4",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_appendix4_010": [
+      {
+        "kind": "example",
+        "id": "A4.4",
+        "label": "Example A4.4",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_appendix4_011": [
+      {
+        "kind": "chapter",
+        "id": "15",
+        "label": "LW Chapter 15",
+        "book_hint": "Genetics",
+        "link_scope": "lw"
+      },
+      {
+        "kind": "chapter",
+        "id": "16",
+        "label": "LW Chapter 16",
+        "book_hint": "Genetics",
+        "link_scope": "lw"
+      },
+      {
+        "kind": "equation",
+        "id": "A4.3b",
+        "label": "Equation A4.3b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A5.8",
+        "label": "Equation A5.8",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A4.5b",
+        "label": "Equation A4.5b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_appendix4_012": [],
+    "Evolution_appendix4_013": [
+      {
+        "kind": "example",
+        "id": "A4.5",
+        "label": "Example A4.5",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A4.5",
+        "label": "Equation A4.5",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A4.7",
+        "label": "Equation A4.7",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_appendix4_014": [
+      {
+        "kind": "figure",
+        "id": "A4.1",
+        "label": "Figure A4.1",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_appendix4_015": [
+      {
+        "kind": "figure",
+        "id": "A4.2",
+        "label": "Figure A4.2",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "figure",
+        "id": "A4.1",
+        "label": "Figure A4.1",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "figure",
+        "id": "A4.3",
+        "label": "Figure A4.3",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "A4.6",
+        "label": "Example A4.6",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A4.8b",
+        "label": "Equation A4.8b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A4.8c",
+        "label": "Equation A4.8c",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A4.9b",
+        "label": "Equation A4.9b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_appendix4_016": [
+      {
+        "kind": "figure",
+        "id": "A4.4",
+        "label": "Figure A4.4",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "figure",
+        "id": "A2.3",
+        "label": "Figure A2.3",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A4.10b",
+        "label": "Equation A4.10b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_appendix4_017": [],
+    "Evolution_appendix4_018": [
+      {
+        "kind": "table",
+        "id": "A4.1",
+        "label": "Table A4.1",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A2.2a",
+        "label": "Equation A2.2a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A4.13",
+        "label": "Equation A4.13",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A4.14a",
+        "label": "Equation A4.14a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "figure",
+        "id": "A4.5",
+        "label": "Figure A4.5",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A4.15a",
+        "label": "Equation A4.15a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A4.15c",
+        "label": "Equation A4.15c",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A4.4",
+        "label": "Equation A4.4",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_appendix4_019": [
+      {
+        "kind": "example",
+        "id": "A4.7",
+        "label": "Example A4.7",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A4.15a",
+        "label": "Equation A4.15a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "A4.8",
+        "label": "Example A4.8",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_appendix4_020": [
+      {
+        "kind": "table",
+        "id": "A4.2",
+        "label": "Table A4.2",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_appendix4_021": [
+      {
+        "kind": "equation",
+        "id": "A4.8",
+        "label": "Equation A4.8",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A4.16a",
+        "label": "Equation A4.16a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_appendix4_022": [
+      {
+        "kind": "equation",
+        "id": "A4.8a",
+        "label": "Equation A4.8a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A4.21",
+        "label": "Equation A4.21",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A4.17",
+        "label": "Equation A4.17",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A4.9b",
+        "label": "Equation A4.9b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A4.10",
+        "label": "Equation A4.10",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_appendix4_023": [
+      {
+        "kind": "example",
+        "id": "A4.9",
+        "label": "Example A4.9",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "A4.4",
+        "label": "Example A4.4",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "A4.10",
+        "label": "Example A4.10",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_appendix4_024": [
+      {
+        "kind": "chapter",
+        "id": "15",
+        "label": "LW Chapter 15",
+        "book_hint": "Genetics",
+        "link_scope": "lw"
+      }
+    ],
+    "Evolution_appendix4_025": [],
+    "Evolution_appendix4_026": [
+      {
+        "kind": "chapter",
+        "id": "30",
+        "label": "Chapter 30",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "table",
+        "id": "A4.3",
+        "label": "Table A4.3",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_appendix4_027": [
+      {
+        "kind": "chapter",
+        "id": "27",
+        "label": "LW Chapter 27",
+        "book_hint": "Genetics",
+        "link_scope": "lw"
+      },
+      {
+        "kind": "equation",
+        "id": "A4.26b",
+        "label": "Equation A4.26b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A4.25",
+        "label": "Equation A4.25",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A4.28a",
+        "label": "Equation A4.28a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "table",
+        "id": "A4.3",
+        "label": "Table A4.3",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_appendix4_028": [
+      {
+        "kind": "chapter",
+        "id": "8",
+        "label": "LW Chapter 8",
+        "book_hint": "Genetics",
+        "link_scope": "lw"
+      },
+      {
+        "kind": "chapter",
+        "id": "19",
+        "label": "Chapter 19",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "chapter",
+        "id": "20",
+        "label": "Chapter 20",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "chapter",
+        "id": "26",
+        "label": "LW Chapter 26",
+        "book_hint": "Genetics",
+        "link_scope": "lw"
+      },
+      {
+        "kind": "chapter",
+        "id": "27",
+        "label": "LW Chapter 27",
+        "book_hint": "Genetics",
+        "link_scope": "lw"
+      },
+      {
+        "kind": "equation",
+        "id": "A4.32",
+        "label": "Equation A4.32",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A4.30b",
+        "label": "Equation A4.30b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A4.31",
+        "label": "Equation A4.31",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A4.33b",
+        "label": "Equation A4.33b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A4.30d",
+        "label": "Equation A4.30d",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A4.35a",
+        "label": "Equation A4.35a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A1.31",
+        "label": "Equation A1.31",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A1.33",
+        "label": "Equation A1.33",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_appendix4_029": [
+      {
+        "kind": "chapter",
+        "id": "14",
+        "label": "Chapter 14",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "figure",
+        "id": "A4.6",
+        "label": "Figure A4.6",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "figure",
+        "id": "A4.7",
+        "label": "Figure A4.7",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "figure",
+        "id": "30.7",
+        "label": "Figure 30.7",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_appendix4_030": [
+      {
+        "kind": "chapter",
+        "id": "29",
+        "label": "Chapter 29",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "chapter",
+        "id": "30",
+        "label": "Chapter 30",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "figure",
+        "id": "A4.8",
+        "label": "Figure A4.8",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "A4.11",
+        "label": "Example A4.11",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A4.38a",
+        "label": "Equation A4.38a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A4.37a",
+        "label": "Equation A4.37a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ]
+  },
+  "semantic_chapter_links": [
+    {
+      "current_section_id": "Evolution_appendix4_011",
+      "current_anchor": "evolution_appendix4_011",
+      "source_chapter_id": "Genetics_chapter15",
+      "label": "LW Chapter 15",
+      "target_anchor": "genetics_chapter15_section_001",
+      "target_label": "Chapter 15",
+      "target_ref_type": "chapter",
+      "target_ref_id": "15",
+      "target_section_title": "Chapter 15 · Mapping and Characterizing QTLs: Inbred Line Crosses",
+      "book_hint": "Genetics",
+      "link_scope": "lw",
+      "context_excerpt": "BONFERRONI CORRECTIONS AND THEIR EXTENSIONS / Cheverud's Method and Other Approach for Dealing with Dependence When different tests share correlated data, it introduces dependency between the $p$ values for these tests. How do we account for this? One approach (Cheverud 2001; Li and Ji 2005; Nyholt 2005) is to use the nature of the dependency structure of the data to estimate an effective number of independent tests…",
+      "match_source": "chapter-overview"
+    },
+    {
+      "current_section_id": "Evolution_appendix4_011",
+      "current_anchor": "evolution_appendix4_011",
+      "source_chapter_id": "Genetics_chapter16",
+      "label": "LW Chapter 16",
+      "target_anchor": "genetics_chapter16_section_001",
+      "target_label": "Chapter 16",
+      "target_ref_type": "chapter",
+      "target_ref_id": "16",
+      "target_section_title": "Chapter 16 · Mapping and Characterizing QTLs: Outbred Populations",
+      "book_hint": "Genetics",
+      "link_scope": "lw",
+      "context_excerpt": "BONFERRONI CORRECTIONS AND THEIR EXTENSIONS / Cheverud's Method and Other Approach for Dealing with Dependence When different tests share correlated data, it introduces dependency between the $p$ values for these tests. How do we account for this? One approach (Cheverud 2001; Li and Ji 2005; Nyholt 2005) is to use the nature of the dependency structure of the data to estimate an effective number of independent tests…",
+      "match_source": "chapter-overview"
+    },
+    {
+      "current_section_id": "Evolution_appendix4_024",
+      "current_anchor": "evolution_appendix4_024",
+      "source_chapter_id": "Genetics_chapter15",
+      "label": "LW Chapter 15",
+      "target_anchor": "genetics_chapter15_section_001",
+      "target_label": "Chapter 15",
+      "target_ref_type": "chapter",
+      "target_ref_id": "15",
+      "target_section_title": "Chapter 15 · Mapping and Characterizing QTLs: Inbred Line Crosses",
+      "book_hint": "Genetics",
+      "link_scope": "lw",
+      "context_excerpt": "gate variable analysis to account for dependencies among the data before the actual p values for individual tests are obtained. A second issue is a bit more subtle. Consider a standard QTL mapping experiment (LW Chapter 15) wherein a controlled cross is made between two lines (which are typically inbred) and one looks for marker-trait associations in the resulting $ F {2} $ (or other) progeny by scanning for linkage…",
+      "match_source": "chapter-overview"
+    },
+    {
+      "current_section_id": "Evolution_appendix4_026",
+      "current_anchor": "evolution_appendix4_026",
+      "source_chapter_id": "Evolution_chapter30",
+      "label": "Chapter 30",
+      "target_anchor": "figure-30.7",
+      "target_label": "Figure 30.7",
+      "target_ref_type": "figure",
+      "target_ref_id": "30.7",
+      "target_section_title": "THE STRENGTH AND PATTERN OF SELECTION IN NATURAL POPULATIONS / Directional Selection: Strong or Weak?",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "shows the canonical structure of the data for a meta-analysis: one has a number of studies, either published or unpublished, dealing with a specific question (such as the average strength of natural selection; Chapter 30). Study i reports an estimate, $ T i $, of an effect whose true (and unknown) value is denoted by $ \\theta i $. Unfortunately, however, many studies report only $ T i $ and perhaps, $ p i $, althoug…",
+      "match_source": "llm-prerequisite"
+    },
+    {
+      "current_section_id": "Evolution_appendix4_027",
+      "current_anchor": "evolution_appendix4_027",
+      "source_chapter_id": "Genetics_chapter27",
+      "label": "LW Chapter 27",
+      "target_anchor": "genetics_chapter27_section_001",
+      "target_label": "Chapter 27",
+      "target_ref_type": "chapter",
+      "target_ref_id": "27",
+      "target_section_title": "Chapter 27 · Variance-Component Estimation with Complex Pedigrees",
+      "book_hint": "Genetics",
+      "link_scope": "lw",
+      "context_excerpt": "ize and standard error (respectively) for the treatment group, with similar expressions for the control group, c. This corresponds to the ML estimate of the pooled standard error (and hence is slightly biased; LW Chapter 27, LW Appendix 4). Another common standardization in the literature is Hedge's g, which uses $$ g {i}=\\frac{\\overline{z} {i,t}-\\overline{z} {i,c}}{s {i,p}},\\quad\\mathrm{w h e r e}\\quad s {i,p}^{2}=…",
+      "match_source": "chapter-overview"
+    },
+    {
+      "current_section_id": "Evolution_appendix4_028",
+      "current_anchor": "evolution_appendix4_028",
+      "source_chapter_id": "Genetics_chapter8",
+      "label": "LW Chapter 8",
+      "target_anchor": "genetics_chapter8_section_001",
+      "target_label": "Chapter 8",
+      "target_ref_type": "chapter",
+      "target_ref_id": "8",
+      "target_section_title": "Chapter 8 · Introduction to Matrix Algebra and Linear Models",
+      "book_hint": "Genetics",
+      "link_scope": "lw",
+      "context_excerpt": "i}) = s {i}^{2} $. Under the fixed-effects model, our interest is in combining studies to obtain a better estimate of the common (fixed) effect, $ \\theta $. This simply involves generalized least-squares (GLS; LW Chapter 8), with the resulting meta-analysis global estimate of $ \\theta $ (given the k studies) being $$ \\overline{T}=\\frac{\\sum {i=1}^{k}w {i}T {i}}{\\sum {i=1}^{k}w {i}},\\quad\\mathrm{w h e r e}\\quad w {i}…",
+      "match_source": "chapter-overview"
+    },
+    {
+      "current_section_id": "Evolution_appendix4_028",
+      "current_anchor": "evolution_appendix4_028",
+      "source_chapter_id": "Evolution_chapter19",
+      "label": "Chapter 19",
+      "target_anchor": "evolution_chapter19_section_001",
+      "target_label": "Chapter 19",
+      "target_ref_type": "chapter",
+      "target_ref_id": "19",
+      "target_section_title": "Chapter 19 · Analysis of Short-term Selection Experiments: 2. Mixed-model and Bayesian Approaches",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "FORMAL META-ANALYSIS / Fixed-effects, Random-effects, and Mixed-model Meta-analysis Once an appropriate summary statistic, along with its standard error, has been chosen, the next step is to decide if a fixed, random, or mixed meta-analysis should be used. For questions of interest to quantitative geneticists, a mixed-model analysis is likely the most appropriate. This is also the most general model, with the fixed-…",
+      "match_source": "llm-prerequisite"
+    },
+    {
+      "current_section_id": "Evolution_appendix4_028",
+      "current_anchor": "evolution_appendix4_028",
+      "source_chapter_id": "Evolution_chapter20",
+      "label": "Chapter 20",
+      "target_anchor": "evolution_chapter20_section_001",
+      "target_label": "Chapter 20",
+      "target_ref_type": "chapter",
+      "target_ref_id": "20",
+      "target_section_title": "Chapter 20 · Selection Response in Natural Populations",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "FORMAL META-ANALYSIS / Fixed-effects, Random-effects, and Mixed-model Meta-analysis Once an appropriate summary statistic, along with its standard error, has been chosen, the next step is to decide if a fixed, random, or mixed meta-analysis should be used. For questions of interest to quantitative geneticists, a mixed-model analysis is likely the most appropriate. This is also the most general model, with the fixed-…",
+      "match_source": "chapter-overview"
+    },
+    {
+      "current_section_id": "Evolution_appendix4_028",
+      "current_anchor": "evolution_appendix4_028",
+      "source_chapter_id": "Genetics_chapter26",
+      "label": "LW Chapter 26",
+      "target_anchor": "genetics_chapter26_section_001",
+      "target_label": "Chapter 26",
+      "target_ref_type": "chapter",
+      "target_ref_id": "26",
+      "target_section_title": "Chapter 26 · Genetics_chapter26",
+      "book_hint": "Genetics",
+      "link_scope": "lw",
+      "context_excerpt": "FORMAL META-ANALYSIS / Fixed-effects, Random-effects, and Mixed-model Meta-analysis Once an appropriate summary statistic, along with its standard error, has been chosen, the next step is to decide if a fixed, random, or mixed meta-analysis should be used. For questions of interest to quantitative geneticists, a mixed-model analysis is likely the most appropriate. This is also the most general model, with the fixed-…",
+      "match_source": "chapter-overview"
+    },
+    {
+      "current_section_id": "Evolution_appendix4_028",
+      "current_anchor": "evolution_appendix4_028",
+      "source_chapter_id": "Genetics_chapter27",
+      "label": "LW Chapter 27",
+      "target_anchor": "genetics_chapter27_section_001",
+      "target_label": "Chapter 27",
+      "target_ref_type": "chapter",
+      "target_ref_id": "27",
+      "target_section_title": "Chapter 27 · Variance-Component Estimation with Complex Pedigrees",
+      "book_hint": "Genetics",
+      "link_scope": "lw",
+      "context_excerpt": "FORMAL META-ANALYSIS / Fixed-effects, Random-effects, and Mixed-model Meta-analysis Once an appropriate summary statistic, along with its standard error, has been chosen, the next step is to decide if a fixed, random, or mixed meta-analysis should be used. For questions of interest to quantitative geneticists, a mixed-model analysis is likely the most appropriate. This is also the most general model, with the fixed-…",
+      "match_source": "chapter-overview"
+    },
+    {
+      "current_section_id": "Evolution_appendix4_029",
+      "current_anchor": "evolution_appendix4_029",
+      "source_chapter_id": "Evolution_chapter14",
+      "label": "Chapter 14",
+      "target_anchor": "evolution_chapter14_section_001",
+      "target_label": "Chapter 14",
+      "target_ref_type": "chapter",
+      "target_ref_id": "14",
+      "target_section_title": "Chapter 14 · Short-term Changes in the Mean:",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "ion bias are model-based approaches. These require a model of the ascertainment scheme. For example, Copas and Shi (2000) proposed an ascertainment model that is very much like the model for a threshold trait (Chapter 14), wherein some underlying latent variable determines whether a study is published or not. In their model, this variable is a function of the standardized effect size, which means that studies with s…",
+      "match_source": "chapter-overview"
+    },
+    {
+      "current_section_id": "Evolution_appendix4_030",
+      "current_anchor": "evolution_appendix4_030",
+      "source_chapter_id": "Evolution_chapter29",
+      "label": "Chapter 29",
+      "target_anchor": "evolution_chapter29_section_001",
+      "target_label": "Chapter 29",
+      "target_ref_type": "chapter",
+      "target_ref_id": "29",
+      "target_section_title": "Chapter 29 · Individual Fitness and the Measurement of Univariate Selection",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "FORMAL META-ANALYSIS / Bias When Estimating Magnitudes [Figure] Figure A4.8 · page 30 · source: Evolution appendix4 Figure A4.8 The consequences of considering the absolute value, $ \\theta $, of an effect. Here, the true size effect ( $ \\theta $) is normally distributed with a variance of $ \\sigma^2 $, whose distribution is indicated by the solid curves. Of course, we do not observe the true value, but rather an est…",
+      "match_source": "chapter-overview"
+    },
+    {
+      "current_section_id": "Evolution_appendix4_030",
+      "current_anchor": "evolution_appendix4_030",
+      "source_chapter_id": "Evolution_chapter30",
+      "label": "Chapter 30",
+      "target_anchor": "figure-30.7",
+      "target_label": "Figure 30.7",
+      "target_ref_type": "figure",
+      "target_ref_id": "30.7",
+      "target_section_title": "THE STRENGTH AND PATTERN OF SELECTION IN NATURAL POPULATIONS / Directional Selection: Strong or Weak?",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "FORMAL META-ANALYSIS / Bias When Estimating Magnitudes [Figure] Figure A4.8 · page 30 · source: Evolution appendix4 Figure A4.8 The consequences of considering the absolute value, $ \\theta $, of an effect. Here, the true size effect ( $ \\theta $) is normally distributed with a variance of $ \\sigma^2 $, whose distribution is indicated by the solid curves. Of course, we do not observe the true value, but rather an est…",
+      "match_source": "llm-prerequisite"
+    }
+  ],
+  "prerequisites": [
+    {
+      "id": "prereq-evolution_chapter30",
+      "title": "Chapter 30 · Measuring Multivariate Selection",
+      "source_chapter_id": "Evolution_chapter30",
+      "used_in_sections": [
+        "Evolution_appendix4_026",
+        "Evolution_appendix4_029",
+        "Evolution_appendix4_030"
+      ],
+      "why_needed": "元分析中估计自然选择强度需要理解选择梯度的定义、计算及出版偏倚的影响，Chapter 30提供了这些基础概念和实证示例。",
+      "key_points": [
+        "选择梯度的定义及如何量化自然选择强度",
+        "出版偏倚如何导致选择梯度的高估"
+      ],
+      "source_links": [
+        {
+          "chapter_id": "Evolution_chapter30",
+          "label": "Chapter 30",
+          "markdown_path": "/data/textbook/Evolution_chapter30_textbook.md",
+          "anchor": "evolution_chapter30_section_001",
+          "section_title": "Chapter 30 · Measuring Multivariate Selection",
+          "ref_type": "chapter",
+          "ref_id": "30",
+          "book_hint": "",
+          "link_scope": "current-book",
+          "excerpt": "Chapter 30 · Measuring Multivariate Selection"
+        },
+        {
+          "chapter_id": "Evolution_chapter30",
+          "label": "Figure 30.7",
+          "markdown_path": "/data/textbook/Evolution_chapter30_textbook.md",
+          "anchor": "figure-30.7",
+          "section_title": "THE STRENGTH AND PATTERN OF SELECTION IN NATURAL POPULATIONS / Directional Selection: Strong or Weak?",
+          "ref_type": "figure",
+          "ref_id": "30.7",
+          "book_hint": "",
+          "link_scope": "current-book",
+          "excerpt": "Figure 30.7 Overestimation of selection gradients due to publication bias. Hersch and Phillips (2004) simulated a model in which five values of $ \\beta_{sd} $ were drawn from a distribution and only included in the final dataset if at least one of them was significant. The model coefficient of determination ( $ R^{2} $) is the total amount of variation in fitness explained by all of the traits (a small value of $ R^…"
+        }
+      ],
+      "source_excerpt": "Chapter 30 · Measuring Multivariate Selection",
+      "summary_status": "llm-validated",
+      "usage_count": 3,
+      "explicit_asset_refs": 1,
+      "priority_score": 180,
+      "validated_by_llm": true,
+      "concept_title": "Chapter 30 · Measuring Multivariate Selection",
+      "nav_label": "Chapter 30",
+      "evidence_summary": "当前章节在介绍元分析时明确引用Chapter 30关于自然选择强度，并引用图30.7说明出版偏倚问题。"
+    },
+    {
+      "id": "prereq-evolution_appendix2",
+      "title": "Appendix 2: Beta and Dirichlet Distributions",
+      "source_chapter_id": "Evolution_appendix2",
+      "used_in_sections": [
+        "Evolution_appendix4_016",
+        "Evolution_appendix4_018"
+      ],
+      "why_needed": "当前章节用Beta分布拟合p值在备择假设下的分布，需理解Beta分布的形状与参数。",
+      "key_points": [
+        "Beta分布是(0,1)上的连续分布，由两个形状参数α和β控制。",
+        "当α=β=1时，Beta分布退化为均匀分布。",
+        "Beta分布可呈U形、单峰、L形等，适合拟合多种p值分布。"
+      ],
+      "source_links": [
+        {
+          "chapter_id": "Evolution_appendix2",
+          "label": "Figure A2.3",
+          "markdown_path": "/data/textbook/Evolution_appendix2_textbook.md",
+          "anchor": "figure-a2.3",
+          "section_title": "CONJUGATE PRIORS / The Beta and Dirichlet Distributions",
+          "ref_type": "figure",
+          "ref_id": "A2.3",
+          "book_hint": "",
+          "link_scope": "current-book",
+          "excerpt": "Figure A2.3 For $ \\alpha = \\beta = 1 $ (long-dashed curve), the beta distribution is simply the uniform distribution over $ (0, 1) $. The pdf for the beta distribution can also be U-shaped ( $ \\alpha = \\beta = 0.5 $; solid curve), unimodal ( $ \\alpha = 2 $, $ \\beta = 5 $; short-dashed curve), or L-shaped ( $ \\alpha = 10 $, $ \\beta = 1 $; dotted curve). Because the beta distribution is symmetric in $ \\alpha $ and $ \\…"
+        },
+        {
+          "chapter_id": "Evolution_appendix2",
+          "label": "Equation A2.2a",
+          "markdown_path": "/data/textbook/Evolution_appendix2_textbook.md",
+          "anchor": "evolution_appendix2_section_001",
+          "section_title": "Appendix 2 · Appendix 2 / Introduction to Bayesian Analysis",
+          "ref_type": "equation",
+          "ref_id": "A2.2a",
+          "book_hint": "",
+          "link_scope": "current-book",
+          "excerpt": ""
+        }
+      ],
+      "source_excerpt": "Figure A2.3 For $ \\alpha = \\beta = 1 $ (long-dashed curve), the beta distribution is simply the uniform distribution over $ (0, 1) $. The pdf for the beta distribution can also be U-shaped ( $ \\alpha = \\beta = 0.5 $; solid curve), unimodal ( $ \\alpha = 2 $, $ \\beta = 5 $; short-dashed curve), or L-shaped ( $ \\alpha = 10 $, $ \\beta = 1 $; dotted curve). Because the beta distribution is symmetric in $ \\alpha $ and $ \\…",
+      "summary_status": "llm-validated",
+      "usage_count": 2,
+      "explicit_asset_refs": 2,
+      "priority_score": 180,
+      "validated_by_llm": true,
+      "concept_title": "Appendix 2: Beta and Dirichlet Distributions",
+      "nav_label": "Beta distribution",
+      "evidence_summary": "当前章节明确引用附录2中的Beta分布来建立混合模型。"
+    },
+    {
+      "id": "prereq-evolution_chapter19",
+      "title": "Chapter 19 · 混合模型与贝叶斯方法",
+      "source_chapter_id": "Evolution_chapter19",
+      "used_in_sections": [
+        "Evolution_appendix4_028"
+      ],
+      "why_needed": "附录4讨论固定、随机和混合效应元分析，其中混合模型是核心。第19章提供了混合模型在选择实验分析中的应用，为理解元分析中的混合模型提供了必要基础。",
+      "key_points": [
+        "混合模型如何分解固定效应和随机效应",
+        "方差组分估计的基本原理",
+        "似然比检验在模型比较中的应用"
+      ],
+      "source_links": [
+        {
+          "chapter_id": "Evolution_chapter19",
+          "label": "Chapter 19",
+          "markdown_path": "/data/textbook/Evolution_chapter19_textbook.md",
+          "anchor": "evolution_chapter19_section_001",
+          "section_title": "Chapter 19 · Analysis of Short-term Selection Experiments: 2. Mixed-model and Bayesian Approaches",
+          "ref_type": "chapter",
+          "ref_id": "19",
+          "book_hint": "",
+          "link_scope": "current-book",
+          "excerpt": "Chapter 19 · Analysis of Short-term Selection Experiments: 2. Mixed-model and Bayesian Approaches"
+        }
+      ],
+      "source_excerpt": "Chapter 19 · Analysis of Short-term Selection Experiments: 2. Mixed-model and Bayesian Approaches",
+      "summary_status": "llm-validated",
+      "usage_count": 1,
+      "explicit_asset_refs": 0,
+      "priority_score": 150,
+      "validated_by_llm": true,
+      "concept_title": "Chapter 19 · 混合模型与贝叶斯方法",
+      "nav_label": "混合模型基础",
+      "evidence_summary": "附录4明确提及混合模型是元分析的最一般形式，而第19章专门讲解混合模型方法，两者直接相关。"
+    }
+  ],
+  "llm": {
+    "requests_total": 12,
+    "cache_hits": 0,
+    "cache_writes": 12,
+    "remote_calls": 12,
+    "budget_rejections": 0,
+    "prompt_chars_sent": 32522,
+    "response_chars_received": 3148,
+    "api_prompt_tokens": 8177,
+    "api_completion_tokens": 4537,
+    "api_total_tokens": 12714,
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "cache_enabled": true,
+    "cache_dir": "D:\\大学资料\\大二\\LLM-Agent科学文献系统知识库处理\\tmp\\llm_cache",
+    "max_remote_calls": 0,
+    "max_prompt_chars_total": 0,
+    "max_response_chars_total": 0,
+    "validated_only": true,
+    "preserved_from_previous_build": true
+  }
+}

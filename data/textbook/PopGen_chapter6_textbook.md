@@ -52,13 +52,19 @@ Figure 6.2 also illustrates the effect of inbreeding on the genotype frequencies
 
 **[定义 Definition]**
 
-To understand how inbreeding affects the genotype frequencies, we need only consider the implications of the definition of F for a population of inbred organisms. For this purpose, consider the alleles of a gene present in any one of the inbred organisms. Either of two things must be true: The alleles must either be allozygous (probability 1 - F) or be autozygous (probability F). If the alleles are allozygous, then the probability that the chosen organism has any particular genotype is simply the probability of that genotype in a random-mating population, because, by chance, the inbreeding has not affected this particular gene. On the other hand, if the alleles are autozygous, then the chosen organism must be homozygous, and the probability of homozygosity for any particular allele is simply the frequency of the allele in the subpopulation as a whole. (Because the alleles in question are autozygous, knowing which allele is present in one chromosome immediately tells you that an identical allele is in the homologous chromosome.) These considerations hold regardless of the number of alleles, but to simplify matters, we consider the case of two alleles A and a at frequencies p and q (with $ p + q = 1 $). In this case the genotype frequencies are given by $$
+To understand how inbreeding affects the genotype frequencies, we need only consider the implications of the definition of F for a population of inbred organisms. For this purpose, consider the alleles of a gene present in any one of the inbred organisms. Either of two things must be true: The alleles must either be allozygous (probability 1 - F) or be autozygous (probability F). If the alleles are allozygous, then the probability that the chosen organism has any particular genotype is simply the probability of that genotype in a random-mating population, because, by chance, the inbreeding has not affected this particular gene. On the other hand, if the alleles are autozygous, then the chosen organism must be homozygous, and the probability of homozygosity for any particular allele is simply the frequency of the allele in the subpopulation as a whole. (Because the alleles in question are autozygous, knowing which allele is present in one chromosome immediately tells you that an identical allele is in the homologous chromosome.) These considerations hold regardless of the number of alleles, but to simplify matters, we consider the case of two alleles A and a at frequencies p and q (with $ p + q = 1 $). In this case the genotype frequencies are given by
+
+$$
 AA:\quad p^{2}(1-F)+pF=\quad p^{2}\ +pqF
 \tag{6.1a}
-$$ $$
+$$
+
+$$
 \begin{array}{r l r}{A\dot{a}{:}}&{{}2p q(1-F)}&{{}\quad=\quad2p q-2p q F}\end{array}
 \tag{6.1b}
-$$ $$
+$$
+
+$$
 aa:\quad q^{2}(1-F)+pF~=~q^{2}~+pqF
 \tag{6.1c}
 $$
@@ -79,10 +85,14 @@ The genotype frequencies with inbreeding are summarized graphically in Figure 6.
 
 Note also from Equation 6.1 that, while inbreeding does change the genotype frequencies in a population, it does not change the allele frequencies. This is true because, for any value of F, the allele frequency of A is given by $ [p^2 + pqF] \div (\frac{1}{2})[2pq - 2pqF] = p^2 + pq = p(p + q) = p $. This principle requires the assumption that all genotypes have the same fitness, which is to say that no natural selection takes place. If there is selection, then the allele frequencies can change with inbreeding.
 
-Equation 6.1 generalizes to multiple alleles in a straightforward way. If a gene has multiple alleles $ A_1, A_2, \ldots A_n $ at respective frequencies $ p_1, p_2, \ldots p_n $ (with $ p_1 + p_2 + \cdots + p_n = 1 $), then in a population with inbreeding coefficient $ F $, the frequencies of $ A_i A_j $ homozygotes and $ A_i A_j $ heterozygotes are as follows: $$
+Equation 6.1 generalizes to multiple alleles in a straightforward way. If a gene has multiple alleles $ A_1, A_2, \ldots A_n $ at respective frequencies $ p_1, p_2, \ldots p_n $ (with $ p_1 + p_2 + \cdots + p_n = 1 $), then in a population with inbreeding coefficient $ F $, the frequencies of $ A_i A_j $ homozygotes and $ A_i A_j $ heterozygotes are as follows:
+
+$$
 \begin{array}{r l}{A_{i}A_{i}\colon}&{{}p_{i}^{2}(1-F)+p_{i}F=p_{i}^{2}\;+\; p_{i}(1-p_{i})\mathrm{F}}\end{array}
 \tag{6.2a}
-$$ $$
+$$
+
+$$
 \begin{array}{r l r l}{A_{i}A_{j}:}&{{}2p_{i}p_{j}(1-F)}&{}&{{}=2p_{i}p_{j}-2p_{i}p_{j}F}\end{array}
 \tag{6.2b}
 $$
@@ -91,17 +101,23 @@ $$
 
 CORRELATION BETWEEN UNITING GAMETES Wright's (1922) original conception of the inbreeding coefficient F was as a measure of the correlation between uniting gametes. That this concept is consistent with the probability interpretation is shown for gene with two alleles in *[See Table 6.2 at the end of this section.]*. The upper part of the table shows all possible pairs of uniting gametes and their frequencies with inbreeding, with the female gamete on the left and the male gamete on the right. The alleles have been coded with numerical values, A with a value 1 and a with value 0. Any arbitrary numerical values lead to the same conclusion, but the assignments in *[See Table 6.2 at the end of this section.]* simplify the formulas. The bottom part of the table shows how various expected values are calculated, with the goal of deducing $ Cov(xy) $, the covariance between x and y, as well as $ V(x) $ and $ V(y) $, the variances. By definition, the correlation between uniting gametes $ r_{UG}(UG $ for uniting gametes) is the ratio of the covariance to the product of the standard deviations, and hence
 
-*[See Table 6.2 at the end of this section.]* $$
+*[See Table 6.2 at the end of this section.]*
+
+$$
 r_{UG}=\frac{Cov(x,y)}{\sqrt{V(x)V(y)}}=\frac{pqF}{pq}=F
 \tag{6.3}
 $$
 
 Wright, to the end of his long and extraordinarily productive life (he died in 1988 at the age of 98), always preferred his own interpretation of F as a correlation, because under some exceptional circumstances $ r_{UG} $ can be negative, and in these cases the probability interpretations fails because a probability cannot be negative.
 
-REDUCTION IN THE FREQUENCY OF HETEROZYGOUS GENOTYPES One of the main effects of inbreeding is that a group of inbred individuals has reduced frequency of heterozygous genotypes, relative to a group of noninbred individuals (see Equation 6.1b). To examine this effect quantitatively, let $ H_1 $ denote the probability that a gene in an inbred individual is heterozygous, and let $ H_5 $ denote the proportion of heterozygous genotypes expected with random mating in the subpopulation of which I is a member. With two alleles, Equation 6.1b implies that $ H_1 = 2pq - 2pqF $, and the Hardy-Weinberg principle implies that $ H_5 = 2pq $. The proportionate reduction in heterozygosity due to inbreeding, relative to the subpopulation as a whole, is symbolized as $ F_{15} $ and given by the expression $$
+REDUCTION IN THE FREQUENCY OF HETEROZYGOUS GENOTYPES One of the main effects of inbreeding is that a group of inbred individuals has reduced frequency of heterozygous genotypes, relative to a group of noninbred individuals (see Equation 6.1b). To examine this effect quantitatively, let $ H_1 $ denote the probability that a gene in an inbred individual is heterozygous, and let $ H_5 $ denote the proportion of heterozygous genotypes expected with random mating in the subpopulation of which I is a member. With two alleles, Equation 6.1b implies that $ H_1 = 2pq - 2pqF $, and the Hardy-Weinberg principle implies that $ H_5 = 2pq $. The proportionate reduction in heterozygosity due to inbreeding, relative to the subpopulation as a whole, is symbolized as $ F_{15} $ and given by the expression
+
+$$
 F_{IS}=\frac{H_{S}-H_{I}}{H_{S}}=\frac{2pq-(2pq-2pqF)}{2pq}=F
 \tag{6.4}
-$$ As we shall see Section 6.2, this formulation is particularly useful in thinking about subdivided populations, when both inbreeding and random genetic drift contribute to the overall probability of identity by descent. of P. cuspidata, two alleles of the phosphoglucomutase-2 gene were observed, which we will designate as the A and a alleles. The sample included were 15 AA, 6 Aa, and 14 aa genotypes (Levin 1978). Are these numbers consistent with the estimate $ F = 0.64 $? (Note: The $ \chi^{2} $ in this case has one degree of freedom because only the allele frequency is estimated from the data; if F also were estimated from the data, rather than being calculated independently from the degree of self-fertilization, then there would be zero degrees of freedom and no goodness-of-fit test would be possible.)
+$$
+
+As we shall see Section 6.2, this formulation is particularly useful in thinking about subdivided populations, when both inbreeding and random genetic drift contribute to the overall probability of identity by descent. of P. cuspidata, two alleles of the phosphoglucomutase-2 gene were observed, which we will designate as the A and a alleles. The sample included were 15 AA, 6 Aa, and 14 aa genotypes (Levin 1978). Are these numbers consistent with the estimate $ F = 0.64 $? (Note: The $ \chi^{2} $ in this case has one degree of freedom because only the allele frequency is estimated from the data; if F also were estimated from the data, rather than being calculated independently from the degree of self-fertilization, then there would be zero degrees of freedom and no goodness-of-fit test would be possible.)
 
 ANSWER The allele frequencies of A and a are estimated as $ (30 + 6)/70 = 0.514 $ and $ 1 - 0.514 = 0.486 $, respectively. The hypothesis is that F = 0.64, and so 1 - F = 0.36. The expected numbers of the genotypes AA, Aa, and aa are, respectively, $ [(0.514)^2(0.36) + (0.514)(0.64)](35) = 14.8 $, $ [2(0.514)(0.486)(0.36)](35) = 6.3 $, and $ [(0.486)^2(0.36) + (0.486)(0.64)](35) = 13.9 $. With these expectations, the $ \chi^2 = 0.02 $ with one degree of freedom, and the associated probability is about 0.96. The fit to the inbreeding model is excellent.
 
@@ -123,10 +139,14 @@ ANSWER The allele frequencies of A and a are estimated as $ (30 + 6)/70 = 0.514 
 
 ## PopGen_chapter6_005 · 6.1 INBREEDING / Genetic Effects of Inbreeding
 
-In outcrossing species (those that regularly avoid mating between relatives), close inbreeding is generally harmful. The effects are seen most dramatically when inbreeding is complete or nearly complete. In most species of animals, complete autozygosity requires many generations of brother-sister mating. But in Drosophila melanogaster, autozygosity of entire chromosomes can be achieved in just a few generations because of the absence of crossing over in the male and the ready availability of genetically marked chromosomes with multiple inversions to prevent crossing over in the female. One widely used inversion chromosome is marked with the dominant mutation Cy (for Curly wings), and the critical experimental cross is of the form Cy/+i × Cy/+i, where is the ith member of a sample of wildtype chromosomes isolated from a natural population, and the +i chromosomes are identical by descent. Homozygous Cy genotypes do not survive, and so the theoretically expected progeny are Cy/+i (with curly wings) and +i/+i (with straight wings) in a ratio of $ \frac{2}{3}: \frac{1}{3} $. If the wildtype chromosome carries one or more mutations that decrease survivorship, then there will be fewer than $ \frac{1}{3} $ straight-wing flies, and if the chromosome carries a recessive lethal mutation, then straight-wing flies will be absent. Control crosses are of the form $ Cy/+_i \times Cy/+_j $, where the $ +\_i $ and $ +\_j $ chromosomes are not identical by descent. For either type of mating, an estimate $ \hat{v} $ of the viability (survivorship) of the $ +\_/+ $ genotype, relative to that of the $ Cy/+ $ genotype, is given by $$
+In outcrossing species (those that regularly avoid mating between relatives), close inbreeding is generally harmful. The effects are seen most dramatically when inbreeding is complete or nearly complete. In most species of animals, complete autozygosity requires many generations of brother-sister mating. But in Drosophila melanogaster, autozygosity of entire chromosomes can be achieved in just a few generations because of the absence of crossing over in the male and the ready availability of genetically marked chromosomes with multiple inversions to prevent crossing over in the female. One widely used inversion chromosome is marked with the dominant mutation Cy (for Curly wings), and the critical experimental cross is of the form Cy/+i × Cy/+i, where is the ith member of a sample of wildtype chromosomes isolated from a natural population, and the +i chromosomes are identical by descent. Homozygous Cy genotypes do not survive, and so the theoretically expected progeny are Cy/+i (with curly wings) and +i/+i (with straight wings) in a ratio of $ \frac{2}{3}: \frac{1}{3} $. If the wildtype chromosome carries one or more mutations that decrease survivorship, then there will be fewer than $ \frac{1}{3} $ straight-wing flies, and if the chromosome carries a recessive lethal mutation, then straight-wing flies will be absent. Control crosses are of the form $ Cy/+_i \times Cy/+_j $, where the $ +\_i $ and $ +\_j $ chromosomes are not identical by descent. For either type of mating, an estimate $ \hat{v} $ of the viability (survivorship) of the $ +\_/+ $ genotype, relative to that of the $ Cy/+ $ genotype, is given by
+
+$$
 \hat{v}=\frac{2n_{+/-}}{1+n_{Cy/+}}
 \tag{6.5}
-$$ where $ n_{+/+} $ and $ n_{Cy/+} $ are the counts of wildtype and Curly offspring, respectively (Haldane 1956). The addition of 1 to the denominator makes the estimate of v almost unbiased. When the total number of offspring is large, $ \hat{v} $ is essentially equal to two times the number of wildtype offspring divided by the number of Curly offspring.
+$$
+
+where $ n_{+/+} $ and $ n_{Cy/+} $ are the counts of wildtype and Curly offspring, respectively (Haldane 1956). The addition of 1 to the denominator makes the estimate of v almost unbiased. When the total number of offspring is large, $ \hat{v} $ is essentially equal to two times the number of wildtype offspring divided by the number of Curly offspring.
 
 Results of such experiment to estimate the viabilities of autozygous (homozygous) and allozygous (heterozygous) wildtype chromosomes from a natural population are shown in Figure 6.4. It is evident that the homozygous genotypes (shaded histogram) are relatively poor in viability. In fact, about 37% of the homozygous genotypes are lethal. Moreover, among the homozygous genotypes that have viabilities within the normal range of the heterozygous genotypes (open histogram), virtually all can be shown to have reduced fertility (Sved 1975; Simmons and Crow 1977). Inbreeding so close as to make entire chromosomes homozygous is rare in outcrossing species, except in the kind of experiment in Figure 6.4, but the effects are clearly very harmful and provide a new dimension of genetic diversity. In the case of single nucleotide polymorphisms (SNPs), genetic diversity results from common alleles that do not perceptibly impair viability or fertility when homozygous. In the case of inbreeding, the effects are mainly due to rare alleles that are severely detrimental when homozygous. (The fact that the alleles are rare is shown by the small proportion of lethal or near-lethal heterozygous combinations.) Figure 6.4 shows that natural populations of Drosophila contain considerable hidden genetic variation in the form of rare deleterious recessive alleles.
 
@@ -140,7 +160,9 @@ Detrimental effects of inbreeding, called inbreeding depression, are found in vi
 
 In human populations, as in most organisms, the deleterious effects of inbreeding are largely due to the increased homozygosity of rare recessive alleles, and so inbreeding effects in human beings are seen most dramatically in the increased frequency of genetic abnormalities due to harmful recessive alleles among the children of first-cousin matings. The increased frequency of such conditions can be deduced from the genotype frequency given in Equation 6.1c. For the offspring of a first-cousin mating, $ F = \frac{1}{16} $, as will be shown in the next section. Suppose that a is a rare deleterious recessive allele with an allele frequency of q. Then, among the children of first-cousin matings, the frequency of aa is expected to be $ q^2 + pq(\frac{1}{16}) $. On the other hand, among the offspring of matings that take place at random, the frequency of homozygous recessives equals $ q^2 $.
 
-Now if c is the proportion of first-cousin matings in a population, then the expected proportion of homozygous aa offspring in the population as a whole that result from the first-cousin matings is given by $$
+Now if c is the proportion of first-cousin matings in a population, then the expected proportion of homozygous aa offspring in the population as a whole that result from the first-cousin matings is given by
+
+$$
 \frac{c(q^{2}+pq\left/16\right.)}{q^{2}(1-c)+c(q^{2}+pq\left/16\right.)}=\frac{c(1+15q)}{c+16q-cq}
 \tag{6.6}
 $$
@@ -167,7 +189,13 @@ Calculation of F from a pedigree is simplified by drawing the pedigree in the fo
 
 **[定义 Definition]**
 
-The third step in calculating $F_i$ is to calculate the probability of autozygosity in I due to each of the paths in turn. For the path DB$\hat{\text{ACE}}$, the reasoning is illustrated in Figure 6.7. Here the black dots represent alleles transmitted along the gametic paths, and the number associated with each step is the probability of identity by descent of the alleles indicated. For all steps except that around the common ancestor, the probability is $\frac{1}{2}$ because, with Mendelian segregation, the probability that a particular allele present in a parent is transmitted to a specified offspring is $\frac{1}{2}$. To understand why ($\frac{1}{2}$)(1 + $F_A$) is the probability associated with the loop around the common ancestor, denote the alleles in the common ancestor as $\alpha_1$ and $\alpha_2$. These symbols are used to avoid confusion with conventional allele symbols designating functional types of alleles, such as $A$ for dominant and $a$ for recessive. The pair of gametes contributed by $A$ could contain $\alpha_{1}\alpha_{1}$, $\alpha_{2}\alpha_{2}$, $\alpha_{1}\alpha_{2}$, or $\alpha_{2}\alpha_{1}$, each with a probability of $\frac{1}{4}$ because of Mendelian segregation. In the first two cases, the alleles are clearly identical by descent; in the second two cases, the alleles are identical by descent only if $\alpha_{1}$ and $\alpha_{2}$ are already identical by descent, which means that $A$ is autozygous. The probability that $A$ is autozygous is, by definition, the inbreeding coefficient of $A$, $F_{A}$, Hence, the probability for the step around the common ancestor $A$ is $\left(\frac{1}{4}\right)+\left(\frac{1}{4}\right)+\left(\frac{1}{4}\right)F_{A}+\left(\frac{1}{4}\right)F_{A}=\left(\frac{1}{2}\right)+\left(\frac{1}{2}\right)F_{A}=\left(\frac{1}{2}\right)(1+F_{A})$. Because each of the steps in Figure 6.7 is independent of the others, the total probability of autozygosity in I due to the path through $A$ is $\left(\frac{1}{2}\right)\times\left(\frac{1}{2}\right)\times\left(\frac{1}{2}\right)(1+F_{A})\times\left(\frac{1}{2}\right)\times\left(\frac{1}{2}\right)=\left(\frac{1}{2}\right)^{5}(1+F_{A})$. Make special note that the exponent $\epsilon$ in the $\left(\frac{1}{2}\right)$ is simply the total number of ancestors in the path. In general, if a path through a common ancestor $A$ contains $i$ individuals, the probability of autozygosity due to that path is $$ (\tfrac{1}{2})^{i}(1+F_{A}) $$ Thus, the inbreeding coefficient of I in Figure 6.6A is $ \left(\frac{1}{2}\right)^{5}(1 + F_{A}) $. Assuming that A itself is not inbred $ (F_{A} = 0) $, the inbreeding coefficient of I reduces to $ F_{I} = \left(\frac{1}{2}\right)^{5} = \frac{1}{32} $.
+The third step in calculating $F_i$ is to calculate the probability of autozygosity in I due to each of the paths in turn. For the path DB$\hat{\text{ACE}}$, the reasoning is illustrated in Figure 6.7. Here the black dots represent alleles transmitted along the gametic paths, and the number associated with each step is the probability of identity by descent of the alleles indicated. For all steps except that around the common ancestor, the probability is $\frac{1}{2}$ because, with Mendelian segregation, the probability that a particular allele present in a parent is transmitted to a specified offspring is $\frac{1}{2}$. To understand why ($\frac{1}{2}$)(1 + $F_A$) is the probability associated with the loop around the common ancestor, denote the alleles in the common ancestor as $\alpha_1$ and $\alpha_2$. These symbols are used to avoid confusion with conventional allele symbols designating functional types of alleles, such as $A$ for dominant and $a$ for recessive. The pair of gametes contributed by $A$ could contain $\alpha_{1}\alpha_{1}$, $\alpha_{2}\alpha_{2}$, $\alpha_{1}\alpha_{2}$, or $\alpha_{2}\alpha_{1}$, each with a probability of $\frac{1}{4}$ because of Mendelian segregation. In the first two cases, the alleles are clearly identical by descent; in the second two cases, the alleles are identical by descent only if $\alpha_{1}$ and $\alpha_{2}$ are already identical by descent, which means that $A$ is autozygous. The probability that $A$ is autozygous is, by definition, the inbreeding coefficient of $A$, $F_{A}$, Hence, the probability for the step around the common ancestor $A$ is $\left(\frac{1}{4}\right)+\left(\frac{1}{4}\right)+\left(\frac{1}{4}\right)F_{A}+\left(\frac{1}{4}\right)F_{A}=\left(\frac{1}{2}\right)+\left(\frac{1}{2}\right)F_{A}=\left(\frac{1}{2}\right)(1+F_{A})$. Because each of the steps in Figure 6.7 is independent of the others, the total probability of autozygosity in I due to the path through $A$ is $\left(\frac{1}{2}\right)\times\left(\frac{1}{2}\right)\times\left(\frac{1}{2}\right)(1+F_{A})\times\left(\frac{1}{2}\right)\times\left(\frac{1}{2}\right)=\left(\frac{1}{2}\right)^{5}(1+F_{A})$. Make special note that the exponent $\epsilon$ in the $\left(\frac{1}{2}\right)$ is simply the total number of ancestors in the path. In general, if a path through a common ancestor $A$ contains $i$ individuals, the probability of autozygosity due to that path is
+
+$$
+(\tfrac{1}{2})^{i}(1+F_{A})
+$$
+
+Thus, the inbreeding coefficient of I in Figure 6.6A is $ \left(\frac{1}{2}\right)^{5}(1 + F_{A}) $. Assuming that A itself is not inbred $ (F_{A} = 0) $, the inbreeding coefficient of I reduces to $ F_{I} = \left(\frac{1}{2}\right)^{5} = \frac{1}{32} $.
 
 > **Figure 6.7** · page 14 · source: `PopGen_chapter6`
 >
@@ -183,10 +211,22 @@ In pedigrees of greater complexity, there is more than one common ancestor and t
 >
 > FIGURE 6.8 On the left is a pedigree of individual I, the offspring of a first-cousin mating. On the right are the two paths through common ancestors (heavy lines) used in calculating the inbreeding coefficient of I. Below each path is the contribution to $F_{1}$ due to that path, calculated as in Figure 6.7. Each path is mutually exclusive of the others, and so their probabilities add. Thus, the total inbreeding coefficient of I is the sum of the two separate contributions. If $F_{A}=F_{B}=0$, then $F_{I}=\frac{1}{16}$.
 
-In general, for any autosomal gene, the formula for calculating the inbreeding coefficient $ F_{1} $ of an inbred organism I is $$
+In general, for any autosomal gene, the formula for calculating the inbreeding coefficient $ F_{1} $ of an inbred organism I is
+
+$$
 F_{I}=\sum_{A}\left(\frac{1}{2}\right)^{i}(1+F_{A})
 \tag{6.7}
-$$ in which the summation over A means summation over all possible paths through all common ancestors, i is the number of organisms in each path, and A is the common ancestor in each path. Figure 6.9 gives the inbreeding coefficient of an offspring produced by mating between any of several common types of relatives in human pedigrees. assuming that none of the common ancestors is inbred. (Altogether, there are four common ancestors and six paths.) ANSWER $ F_{1} = \left(\frac{1}{2}\right)^{3}(1 + F_{C}) + \left(\frac{1}{2}\right)^{3}(1 + F_{D}) + \left(\frac{1}{2}\right)^{5}(1 + F_{A}) + \left(\frac{1}{2}\right)^{5}(1 + F_{B}) + \left(\frac{1}{2}\right)^{5}(1 + F_{A}) + \left(\frac{1}{2}\right)^{5}(1 + F_{B}) $. When the common ancestors are assumed to $$ F_{A}=F_{B}=F_{C}=F_{D}=0 $$ $$ F_{I}=\tfrac{3}{8} $$
+$$
+
+in which the summation over A means summation over all possible paths through all common ancestors, i is the number of organisms in each path, and A is the common ancestor in each path. Figure 6.9 gives the inbreeding coefficient of an offspring produced by mating between any of several common types of relatives in human pedigrees. assuming that none of the common ancestors is inbred. (Altogether, there are four common ancestors and six paths.) ANSWER $ F_{1} = \left(\frac{1}{2}\right)^{3}(1 + F_{C}) + \left(\frac{1}{2}\right)^{3}(1 + F_{D}) + \left(\frac{1}{2}\right)^{5}(1 + F_{A}) + \left(\frac{1}{2}\right)^{5}(1 + F_{B}) + \left(\frac{1}{2}\right)^{5}(1 + F_{A}) + \left(\frac{1}{2}\right)^{5}(1 + F_{B}) $. When the common ancestors are assumed to
+
+$$
+F_{A}=F_{B}=F_{C}=F_{D}=0
+$$
+
+$$
+F_{I}=\tfrac{3}{8}
+$$
 
 > **Figure 6.9** · page 16 · source: `PopGen_chapter6`
 >
@@ -198,10 +238,14 @@ $$ in which the summation over A means summation over all possible paths through
 
 ## PopGen_chapter6_007 · 6.1 INBREEDING / Regular Systems of Mating
 
-In plant and animal breeding, it is often important to know how rapidly the inbreeding coefficient increases when a strain is propagated by a regular system of mating, a systematic and repeated pattern of inbreeding, such as self-fertilization, sib mating, or backcrossing to a standard strain. The reasoning involved in calculating the inbreeding coefficient for any generation is illustrated in Figure 6.10 for repeated self-fertilization. In this figure, the labels t - 1 and t refer to the inbred organisms after t - 1 and t generations of self-fertilization. The loop around the ancestor in generation t - 1 designates the probability that the two indicated alleles are identical by descent. Here the formula in Equation 6.7 applies with only one path and only one ancestor in the path, and so $ F_t = \left(\frac{1}{2}\right)^t(1 + F_{t-1}) $, where $ F_t $ is the inbreeding coefficient in generation $ t $. This equation is easy to solve in terms of the quantity $ 1 - F_t $, which is often called the panmictic index (panmixia) is an old-fashioned word for random mating). Multiplying both sides of the equation for $ F_t $ by -1 and then adding +1 to each side leads to $ 1 - F_t = 1 - \left(\frac{1}{2}\right)(1 + F_{t-1}) = 1 - \left(\frac{1}{2}\right) - \left(\frac{1}{2}\right)F_{t-1} = \left(\frac{1}{2}\right)(1 - F_{t-1}) $, or $$
+In plant and animal breeding, it is often important to know how rapidly the inbreeding coefficient increases when a strain is propagated by a regular system of mating, a systematic and repeated pattern of inbreeding, such as self-fertilization, sib mating, or backcrossing to a standard strain. The reasoning involved in calculating the inbreeding coefficient for any generation is illustrated in Figure 6.10 for repeated self-fertilization. In this figure, the labels t - 1 and t refer to the inbred organisms after t - 1 and t generations of self-fertilization. The loop around the ancestor in generation t - 1 designates the probability that the two indicated alleles are identical by descent. Here the formula in Equation 6.7 applies with only one path and only one ancestor in the path, and so $ F_t = \left(\frac{1}{2}\right)^t(1 + F_{t-1}) $, where $ F_t $ is the inbreeding coefficient in generation $ t $. This equation is easy to solve in terms of the quantity $ 1 - F_t $, which is often called the panmictic index (panmixia) is an old-fashioned word for random mating). Multiplying both sides of the equation for $ F_t $ by -1 and then adding +1 to each side leads to $ 1 - F_t = 1 - \left(\frac{1}{2}\right)(1 + F_{t-1}) = 1 - \left(\frac{1}{2}\right) - \left(\frac{1}{2}\right)F_{t-1} = \left(\frac{1}{2}\right)(1 - F_{t-1}) $, or
+
+$$
 1-F_{t}=(\frac{1}{2})^{t}(1-F_{0})
 \tag{6.8}
-$$ where $ F_0 $ is the inbreeding coefficient in the initial generation when the repeated self-fertilization begins. Self-fertilization therefore leads to an extremely rapid increase in the inbreeding coefficient. When $ F_0 = 0 $, then $ F_1 = \frac{1}{2} $, $ F_2 = \frac{3}{4} $, $ F_3 = \frac{7}{8} $, $ F_4 = \frac{15}{16} $, and so on. The increase in $ F $ under self-fertilization and several other regular systems of mating is shown in Figure 6.11. No matter how much inbreeding has taken place in a population, a single generation of random mating completely erases the effects, and the genotype frequencies return to the Hardy-Weinberg proportions.
+$$
+
+where $ F_0 $ is the inbreeding coefficient in the initial generation when the repeated self-fertilization begins. Self-fertilization therefore leads to an extremely rapid increase in the inbreeding coefficient. When $ F_0 = 0 $, then $ F_1 = \frac{1}{2} $, $ F_2 = \frac{3}{4} $, $ F_3 = \frac{7}{8} $, $ F_4 = \frac{15}{16} $, and so on. The increase in $ F $ under self-fertilization and several other regular systems of mating is shown in Figure 6.11. No matter how much inbreeding has taken place in a population, a single generation of random mating completely erases the effects, and the genotype frequencies return to the Hardy-Weinberg proportions.
 
 > **Figure 6.10** · page 17 · source: `PopGen_chapter6`
 >
@@ -217,7 +261,25 @@ $$ where $ F_0 $ is the inbreeding coefficient in the initial generation when th
 
 Many plants reproduce predominantly by self-fertilization, including crop plants such as soybeans, sorghum, barley, and wheat. As expected of highly self-fertilizing species, each plant is highly homozygous for alleles. Yet in comparing different populations, the proportion of polymorphic genes is comparable to that found in outcrossing species. Polymorphisms are found because self-fertilization does not eliminate genetic variation; it simply reorganizes genetic variation into homozygous genotypes. On the other hand, self-fertilizing species do contain fewer deleterious recessives than do outcrossing species, presumably because the increased frequency of homozygous recessive genotypes permits deleterious mutations to be eliminated from the population by natural selection. The high frequency of homozygous genotypes in naturally self-fertilizing species also impedes recombination producing new gametic types not already present in the parent. Therefore, a predominance of self-fertilization has the effect of slowing the approach to linkage equilibrium because the approach to linkage equilibrium is through recombination in double heterozygotes (A B/a b and A b/a B in the case of two alleles at each locus); with extreme inbreeding, such doubly heterozygous genotypes are rare. Indeed, the most extreme examples of linkage disequilibrium have been found in predominantly self-fertilizing species such as barley (Hordeum vulgare) and wild oats (Avena barbata).
 
-Barley, which regularly undergoes more than 99% self-fertilization, provides an extreme example of linkage disequilibrium between two unlinked esterase genes (Clegg et al. 1972). A population that had originated as a complex cross was maintained for 26 generations under normal agricultural conditions without conscious selection. The population was polymorphic for two alleles of an Esterase-B gene, which we will designate as alleles A and a, and also polymorphic for two alleles of an Esterase-D gene, which we will designate as alleles B and b. The gametic types were found in the following proportions. For all practical purposes, these numbers also refer to homozygous genotypes because there is such close inbreeding. $$ AB\qquad1501\qquad $$ (1642.6) $$ Ab\qquad754 $$ $$ a B\qquad\text{…}720 $$ $$ \begin{array}{r l r l r}{a b}&{{}}&{74}&{{}}&{{}(215.6)}\end{array} $$
+Barley, which regularly undergoes more than 99% self-fertilization, provides an extreme example of linkage disequilibrium between two unlinked esterase genes (Clegg et al. 1972). A population that had originated as a complex cross was maintained for 26 generations under normal agricultural conditions without conscious selection. The population was polymorphic for two alleles of an Esterase-B gene, which we will designate as alleles A and a, and also polymorphic for two alleles of an Esterase-D gene, which we will designate as alleles B and b. The gametic types were found in the following proportions. For all practical purposes, these numbers also refer to homozygous genotypes because there is such close inbreeding.
+
+$$
+AB\qquad1501\qquad
+$$
+
+(1642.6)
+
+$$
+Ab\qquad754
+$$
+
+$$
+a B\qquad\text{…}720
+$$
+
+$$
+\begin{array}{r l r l r}{a b}&{{}}&{74}&{{}}&{{}(215.6)}\end{array}
+$$
 
 **[命题 Proposition]**
 
@@ -290,24 +352,32 @@ Furthermore, the reduction in heterozygosity resulting from population subdivisi
 
 ## PopGen_chapter6_011 · 6.2 POPULATION SUBDIVISION / Wright's F Statistics
 
-To quantify the inbreeding effect of population subdivision, Wright (1921) defined what has come to be called the fixation index. This index equals the reduction in heterozygosity expected with random mating at any one level of a population hierarchy relative to another, more inclusive level of the hierarchy. The fixation index is a useful index of genetic differentiation because it allows an objective comparison of the overall effect of population structure among different organisms without getting into details of allele frequencies, observed levels of heterozygosity, and so forth. The genetic symbol for a fixation index is F embellished with subscripts denoting the levels of the hierarchy being compared. For example, $ F_{SR} $ is the fixation index of the subpopulations relative to the regional aggregates: $$
+To quantify the inbreeding effect of population subdivision, Wright (1921) defined what has come to be called the fixation index. This index equals the reduction in heterozygosity expected with random mating at any one level of a population hierarchy relative to another, more inclusive level of the hierarchy. The fixation index is a useful index of genetic differentiation because it allows an objective comparison of the overall effect of population structure among different organisms without getting into details of allele frequencies, observed levels of heterozygosity, and so forth. The genetic symbol for a fixation index is F embellished with subscripts denoting the levels of the hierarchy being compared. For example, $ F_{SR} $ is the fixation index of the subpopulations relative to the regional aggregates:
+
+$$
 E_{SR}=\frac{H_{R}-H_{S}}{H_{R}}
 \tag{6.9}
 $$
 
 In words, Equation 6.9 defines $ F_{SR} $ as the decrease of heterozygosity among subpopulations within regions $ (H_{R}-H_{S}) $, relative to the heterozygosity. ity among regions $ (H_{R}) $. For the Linanthus example in *[See Table 6.3 at the end of this section.]*, $ F_{SR} = (0.1589 - 0.1424)/0.1589 = 0.1036 $.
 
-At the next level of the hierarchy, we may define the fixation index $ F_{RT} $ as the proportionate reduction in heterozygosity of the regional aggregates relative to the total combined population: $$
+At the next level of the hierarchy, we may define the fixation index $ F_{RT} $ as the proportionate reduction in heterozygosity of the regional aggregates relative to the total combined population:
+
+$$
 F_{RT}=\frac{H_{T}-H_{R}}{H_{T}}
 \tag{6.10}
 $$
 
 The data in *[See Table 6.3 at the end of this section.]* indicate that $ F_{RT} = (0.2371 - 0.1589)/0.2371 = 0.3299 $. Comparison of this value with $ F_{SR} $ above already makes it clear that there is substantially more variation among regions (as measured by $ F_{RT} $) than there is among subpopulations within regions (as measured by $ F_{SR} $). The comparison of the fixation indices at the two levels gives quantitative expression to the regional differences apparent in Figure 6.13.
 
-The fixation index $ F_{ST} $ compares the least inclusive to the most inclusive levels of the population hierarchy and measures all effects of population structure combined: $$
+The fixation index $ F_{ST} $ compares the least inclusive to the most inclusive levels of the population hierarchy and measures all effects of population structure combined:
+
+$$
 F_{ST}=\frac{H_{T}-H_{S}}{H_{T}}
 \tag{6.11}
-$$ From *[See Table 6.3 at the end of this section.]*, $ F_{ST} = (0.2371 - 0.1424) / 0.2371 = 0.3993 $. The overall reduction in average heterozygosity is therefore close to 40% of the total heterozygosity—a very substantial effect.
+$$
+
+From *[See Table 6.3 at the end of this section.]*, $ F_{ST} = (0.2371 - 0.1424) / 0.2371 = 0.3993 $. The overall reduction in average heterozygosity is therefore close to 40% of the total heterozygosity—a very substantial effect.
 
 The hierarchical F-statistics defined in Equations 6.9 through 6.11 are all types of fixation indices, but they differ in the reference populations: $ F_{SR} $ is concerned with subpopulations (S) relative to the regional aggregates (R), $ F_{RT} $ is concerned with the regional groupings relative to the total population (T), and $ F_{ST} $ is concerned with the subpopulations relative to the total population. The index $ F_{ST} $ is the most inclusive measure of population subdivision.
 
@@ -317,7 +387,9 @@ The mathematical relation between the three types of F statistics is demonstrate
 
 ## PopGen_chapter6_012 · 6.2 POPULATION SUBDIVISION / PROBLEM 6.3 Show that $ F_{SR}, F_{RT}, $ and $ F_{ST} $ are related by the equation
 
-$$ 1-F_{S T}=(1-F_{S R})(1-F_{R T}) $$
+$$
+1-F_{S T}=(1-F_{S R})(1-F_{R T})
+$$
 
 ANSWER From Equation 6.9, $ F_{SR} = 1 - (H_S / H_R) $, or $ 1 - F_{SR} = H_S / H_R $. Equation 6.10 implies that $ F_{RT} = 1 - (H_R / H_T) $, or $ 1 - F_{RT} = H_R / H_T $. Finally, Equation 6.11 implies that $ F_{ST} = 1 - (H_S / H_T) $, or $ 1 - F_{ST} = H_S / H_T $. Now multiply the expressions for $ 1 - F_{SR} $ and $ 1 - F_{RT} $ together to obtain $ (1 - F_{SR}) \times (1 - F_{RT}) = (H_S / H_R) \times (H_R / H_T) = H_S / H_T = (1 - F_{ST}) $.
 
@@ -398,7 +470,9 @@ The subpopulations of hypothetical mice in Figure 6.12 afford an illustration of
 
 In human population genetics, the Wahlund principle is usually cited for its implication that fusion of subpopulations results in a decrease in the average frequency of children born with a genetic disease resulting from homozygosity for a rare recessive allele, particularly an allele with a relatively high frequency in one of the subpopulations. Examples of harmful recessive alleles at high frequency in some human subpopulations include the alleles for $ \alpha_1 $-antitrypsin deficiency ($ q \approx 0.024 $) and cystic fibrosis ($ q \approx 0.022 $) in Europeans, sickle-cell anemia ($ q \approx 0.05 $ in African Americans, up to $ q \approx 0.1 $ in some African subpopulations), albinism ($ q \approx 0.07 $ in the Hopi and some other Southwest Native American subpopulations), and Tay-Sachs disease ($ q \approx 0.013 $ in Ashkenazi Jews).
 
-The Wahlund principle for a recessive allele in two subpopulations is illustrated in Figure 6.15. On the left are two subpopulations, each undergoing random mating, in which the frequency of the recessive allele and the frequency of homozygous recessive genotypes are indicated. The average frequency of the homozygous recessive genotype across both subpopulations equals $ (q_1^2 + q_2^2)/2 $. The result of fusion and random mating of the subpopulations is shown on the right. Assuming that the subpopulations are equal in size, the allele frequency in the combined population is $ \bar{q} = (q_1 + q_2)/2 $, and the frequency of the homozygous recessive genotype equals $ \bar{q}^2 $. Therefore, subpopulation fusion and random mating reduces the average frequency of homozygous recessives by: $$
+The Wahlund principle for a recessive allele in two subpopulations is illustrated in Figure 6.15. On the left are two subpopulations, each undergoing random mating, in which the frequency of the recessive allele and the frequency of homozygous recessive genotypes are indicated. The average frequency of the homozygous recessive genotype across both subpopulations equals $ (q_1^2 + q_2^2)/2 $. The result of fusion and random mating of the subpopulations is shown on the right. Assuming that the subpopulations are equal in size, the allele frequency in the combined population is $ \bar{q} = (q_1 + q_2)/2 $, and the frequency of the homozygous recessive genotype equals $ \bar{q}^2 $. Therefore, subpopulation fusion and random mating reduces the average frequency of homozygous recessives by:
+
+$$
 \begin{aligned}R_{separate}-R_{fused}&=\frac{q_{1}^{2}+q_{2}^{2}}{2}-\overline{q}^{2}\\&=\frac{1}{2}(q_{1}-\overline{q})^{2}+\frac{1}{2}(q_{2}-\overline{q})^{2}\\&=\sigma_{q}^{2}\end{aligned}
 \tag{6.12}
 $$
@@ -419,14 +493,22 @@ To illustrate the effect of isolate breaking, imagine a subpopulation of gray sq
 
 ## PopGen_chapter6_016 · 6.3 THE WAHLUND PRINCIPLE / Wahlund's Principle and the Fixation Index
 
-Equation 6.12 applies equally well to AA homozygotes as to aa homozygotes. Therefore, letting P represent the frequency of homozygous AA genotypes, we can write $$
+Equation 6.12 applies equally well to AA homozygotes as to aa homozygotes. Therefore, letting P represent the frequency of homozygous AA genotypes, we can write
+
+$$
 P_{s e p a r a t e}-P_{f u s e d}=\sigma_{p}^{2}
 \tag{6.13}
 $$
 
-When there are only two alleles, the total reduction in homozygosity must be the summation of Equations 6.12 and 6.13, which equals $ \sigma_p^2 + \sigma_q^2 $. Because there are only two alleles, it is also true that $ \sigma_p^2 = \sigma_q^2 $, which we will write as $ \sigma^2 $. Hence, the total reduction in homozygosity from the Wahlund effect upon population fusion and random mating can be expressed as follows: $$ \mathrm{R e d u c t i o n~i n~t o t a l~h o m o z y g o s i t y}=2\sigma^{2} $$
+When there are only two alleles, the total reduction in homozygosity must be the summation of Equations 6.12 and 6.13, which equals $ \sigma_p^2 + \sigma_q^2 $. Because there are only two alleles, it is also true that $ \sigma_p^2 = \sigma_q^2 $, which we will write as $ \sigma^2 $. Hence, the total reduction in homozygosity from the Wahlund effect upon population fusion and random mating can be expressed as follows:
 
-On the other hand, the reduction in total homozygosity with population fusion must also equal the increase in heterozygosity $ H_T - H_S $, which Equation 6.11 says is the numerator of $ F_{ST} $. Hence, $ F_{ST} = (H_T - H_S) / H_T = 2\sigma^2 / H_T $. However, $ H_T $ is the heterozygosity with random mating when the allele frequencies equal the average allele frequencies across subpopulations, $ \bar{p} $ and $ \bar{q} $. Therefore, the connection between the fixation index $ F_{ST} $ and the variance in allele frequency is given by $$
+$$
+\mathrm{R e d u c t i o n~i n~t o t a l~h o m o z y g o s i t y}=2\sigma^{2}
+$$
+
+On the other hand, the reduction in total homozygosity with population fusion must also equal the increase in heterozygosity $ H_T - H_S $, which Equation 6.11 says is the numerator of $ F_{ST} $. Hence, $ F_{ST} = (H_T - H_S) / H_T = 2\sigma^2 / H_T $. However, $ H_T $ is the heterozygosity with random mating when the allele frequencies equal the average allele frequencies across subpopulations, $ \bar{p} $ and $ \bar{q} $. Therefore, the connection between the fixation index $ F_{ST} $ and the variance in allele frequency is given by
+
+$$
 F_{S T}=\frac{\sigma^{2}}{\overline{{p}}\overline{{q}}}
 \tag{6.14}
 $$
@@ -439,7 +521,9 @@ Consequently, the $F$ statistics at the various levels of a hierarchical populat
 
 In many organisms in which the population structure is hierarchical, it is useful to be able to calculate directly the average genotype frequencies across all subpopulations. Equations 6.12 through 6.14 make it possible to deduce the average genotype frequencies. To do this, first note that $ R_{fused} $ in Equation 6.12 equals $ \overline{q}^2 $ and $ P_{fused} $ in Equation 6.13 equals $ \overline{p}^2 $. Hence Equation 6.12 implies the average genotype frequency of aa among the subpopulations is given by $ \sigma_q^2 + \bar{p} \bar{q} $, and Equation 6.13 implies the average genotype frequency of AA among the subpopulations is given by $ \sigma_p^2 + \bar{p} \bar{q} $. Since there are only two alleles, $ \sigma_q^2 = \sigma_p^2 = \sigma^2 $, and Equation 6.14 says that $ \sigma^2 = F_{\mathrm{ST}} \times \bar{p} \times \bar{q} $. Putting all this together, the average genotype frequency of AA across subpopulations must equal $ \bar{p}^2 + F_{\mathrm{ST}} \bar{p} \bar{q} $, and the average genotype frequency of aa across subpopulations must equal $ \bar{q}^2 + F_{\mathrm{ST}} \bar{p} \bar{q} $. Because every genotype that is not homozygous must be heterozygous, the average genotype frequency of heterozygotes across subpopulations is given by $ 1 - (\overline{p}^2 + F_{ST} \overline{p} \overline{q}) - (\overline{q}^2 + F_{ST} \overline{p} \overline{q}) $. Note that $ 1 - \overline{p}^2 - \overline{q}^2 = 2 \overline{p} \overline{q} $, and so the average frequency of heterozygotes simplifies to $ 2 \overline{p} \overline{q} - 2 \overline{p} \overline{q} F_{ST} $.
 
-Consequently, the genotype frequencies averaged across subpopulations in a subdivided population can be written as: $$
+Consequently, the genotype frequencies averaged across subpopulations in a subdivided population can be written as:
+
+$$
 \begin{aligned}&a a:\overline{q}^{2}+\overline{p}\overline{q}F_{ST}\\ &\\ &Aa:2\overline{p}\overline{q}-2\overline{p}\overline{q}F_{ST}\\ &\\ &aa:\overline{q}^{2}+\overline{p}\overline{q}F_{ST}\\ \end{aligned}
 \tag{6.15}
 $$
@@ -456,10 +540,16 @@ So far we have assumed that mating within each subpopulation of a subdivided pop
 
 Equation 6.11 implies that $ 1 - F_{ST} = H_{S} / H_{T} $, where $ F_{ST} $ is the reduction in heterozygosity in the subpopulation, relative to that expected with random mating in the population as a whole. The value of $ F_{ST} $ takes into account only the autozygosity due to population subdivision.
 
-To take both inbreeding and population structure into account, we can define another measure of autozygosity, denoted $ F_{IT} $, which measures the probability of autozygosity of an inbred individual relative to the population as a whole, were all the subpopulations to fuse and undergo random mating. Equation 6.16 asserts that $ F_{IT} $ is equal to $$
+To take both inbreeding and population structure into account, we can define another measure of autozygosity, denoted $ F_{IT} $, which measures the probability of autozygosity of an inbred individual relative to the population as a whole, were all the subpopulations to fuse and undergo random mating. Equation 6.16 asserts that $ F_{IT} $ is equal to
+
+$$
 F_{IT}=\frac{H_{T}-H_{I}}{H_{T}}
 \tag{6.16}
-$$ which implies that $1 - F_{IT} = H_{I} / H_{T}$. Considering this expression in light of $1 - F_{IS} = H_{I} / H_{S}$ and $1 - F_{ST} = H_{S} / H_{T}$, it follows that $$
+$$
+
+which implies that $1 - F_{IT} = H_{I} / H_{T}$. Considering this expression in light of $1 - F_{IS} = H_{I} / H_{S}$ and $1 - F_{ST} = H_{S} / H_{T}$, it follows that
+
+$$
 (1-F_{IS})(1-F_{ST})=1-F_{IT}
 \tag{6.17}
 $$
@@ -488,7 +578,9 @@ In a subdivided population, random genetic drift results in genetic divergence a
 
 ## PopGen_chapter6_021 · 6.5 MIGRATION / One-Way Migration
 
-When migration takes place predominantly from one population into another, without an equal amount of migration in the reverse direction, then there is said to be one-way migration. An illustration of one-way migration between a large mainland population and a small island subpopulation is shown in Figure 6.16. For simplicity, we consider a gene with two alleles, A and a, with respective frequencies $ p^{*} $ and $ q^{*} $ on the mainland and p and q on the island. Suppose that, in any generation, a proportion m of zygotes in the island subpopulation originates as a random sample of organisms from the mainland. Then, if p and $ p' $ are the frequencies of A in the island subpopulation in two successive generations, it follows that $$
+When migration takes place predominantly from one population into another, without an equal amount of migration in the reverse direction, then there is said to be one-way migration. An illustration of one-way migration between a large mainland population and a small island subpopulation is shown in Figure 6.16. For simplicity, we consider a gene with two alleles, A and a, with respective frequencies $ p^{*} $ and $ q^{*} $ on the mainland and p and q on the island. Suppose that, in any generation, a proportion m of zygotes in the island subpopulation originates as a random sample of organisms from the mainland. Then, if p and $ p' $ are the frequencies of A in the island subpopulation in two successive generations, it follows that
+
+$$
 p^{\prime}=(1-m)p+m p^{*}
 \tag{6.18}
 $$
@@ -499,7 +591,9 @@ $$
 >
 > FIGURE 6.16 Model of one-way migration from a large land mass onto an island. The allele frequencies in the source population,  $ p^{*} $ and  $ q^{*} $, are assumed to remain constant, whereas those in the recipient population,  $ p_{t} $ and  $ q_{t} $, change with time.
 
-In Equation 6.18, m is called the migration rate between the mainland and the island. Subtracting $ p^{*} $ from both sides of Equation 6.18 and simplifying leads to the expression $ p' - p^{*} = (1 - m)(p - p^{*}) $, and from this expression it follows that $ p_{t} - p^{*} = (1 - m)^{t}(p_{0} - p^{*}) $, where $ p_{t} $ is the frequency of A in the island subpopulation in generation t. Hence, $$
+In Equation 6.18, m is called the migration rate between the mainland and the island. Subtracting $ p^{*} $ from both sides of Equation 6.18 and simplifying leads to the expression $ p' - p^{*} = (1 - m)(p - p^{*}) $, and from this expression it follows that $ p_{t} - p^{*} = (1 - m)^{t}(p_{0} - p^{*}) $, where $ p_{t} $ is the frequency of A in the island subpopulation in generation t. Hence,
+
+$$
 p_{t}=p^{*}+(1-m)^{t}(p_{0}-p^{*})
 \tag{6.19}
 $$
@@ -526,17 +620,21 @@ In the island model of migration, a large population is split into many subpopul
 >
 > FIGURE 6.18 The island model of migration with five subpopulations. Migration is completely symmetrical. Each subpopulation contributes individuals or gametes to a pool of migrants, which then distribute themselves randomly among the subpopulations. In this model, a migrant can re-enter the same subpopulation it came from, indicated by the loops.
 
-Now let $ \vec{p} $ be the average allele frequency of A among the subpopulations. Since the migrant individuals or gametes form a pool with an equal contribution from each subpopulation, the expected allele frequency among the migrants must equal the average allele frequency among the subpopulations. The parameter m is the probability that a randomly chosen allele in any subpopulation comes from a migrant. Let us consider a particular subpopulation with an allele frequency of A equal to $ p_t $ in generation t. For a randomly chosen allele in this subpopulation in generation t, the allele could have come from the same subpopulation in generation t - 1 with probability 1 - m, in which case it is an A allele with probability $ p_{t-1} $. Alternatively, the allele could have come from the migrant pool in generation t - 1 with probability m, in which case it is an A allele with probability $ \vec{p} $. Because all evolutionary processes other than migration are ignored, $ \vec{p} $ stays the same in all generations. Altogether, $$
+Now let $ \vec{p} $ be the average allele frequency of A among the subpopulations. Since the migrant individuals or gametes form a pool with an equal contribution from each subpopulation, the expected allele frequency among the migrants must equal the average allele frequency among the subpopulations. The parameter m is the probability that a randomly chosen allele in any subpopulation comes from a migrant. Let us consider a particular subpopulation with an allele frequency of A equal to $ p_t $ in generation t. For a randomly chosen allele in this subpopulation in generation t, the allele could have come from the same subpopulation in generation t - 1 with probability 1 - m, in which case it is an A allele with probability $ p_{t-1} $. Alternatively, the allele could have come from the migrant pool in generation t - 1 with probability m, in which case it is an A allele with probability $ \vec{p} $. Because all evolutionary processes other than migration are ignored, $ \vec{p} $ stays the same in all generations. Altogether,
+
+$$
 p_{t}=p_{t-1}(1-m)+\overline{p}m
 \tag{6.20}
 $$
 
-Equation 6.20 is similar to Equation 4.2 for mutation, and its solution in terms of $ p_{0} $ is $$
+Equation 6.20 is similar to Equation 4.2 for mutation, and its solution in terms of $ p_{0} $ is
+
+$$
 p_{t}=\overline{p}+(1-m)^{t}(p_{0}-\overline{p})
 \tag{6.21}
 $$
 
-The similarity with Equation 6.19 is apparent: In fact, the equations are identical except that the role of $ p^* $ in one-way migration is replaced with $ \overline{p} $ in the island model. Perhaps less obvious is the similarity with Equation 4.4 for reversible mutation, in which case $ v/(\mu + v) $ plays the role of $ \overline{p} $ and $ \mu + v $ plays the role of m. The correspondence between the equations again emphasizes the similarity between the effects of migration and those of mutation. The processes result in similar mathematical expressions because both mutation and migration act linearly on allele frequency, which means that $ p_t $ is a linear function of $ p_{t-1} $. Although Equation 6.21 for migration is mathematically similar to Equation 4.4 for mutation, the biological implications are quite different. Because rates of migration are typically much greater than rates of mutation, changes in allele frequency are generally much faster with migration. As an example of the use of Equation 6.21, suppose there are only two populations with initial allele frequencies of A of 0.2 and 0.8, respectively, with m = 0.10. Thus 10 percent of the organisms in either subpopulation in any generation are migrants having an allele frequency of A of $ \bar{p} = (0.2 + 0.8)/2 = 0.5 $. What is the allele frequency of A in the two populations after 10 generations? For the population with initial allele frequency 0.2, we substitute $ p_0 = 0.2 $, $ \bar{p} = 0.5 $, and m = 0.10 into Equation 6.21 to obtain $p_{10}=0.5+(1-0.10) $ ^{10} $(0.2 - 0.5) = 0.395; for the other population, we substitute $ p_{0} = 0.8 $, $ \bar{p} = 0.5 $, and m = 0.10, and so $ p_{10} = 0.5 + (1 - 0.10)^{10}(0.8 - 0.5) = 0.605 $. Another example using Equation 6.21 is shown in Figure 6.19, where there are five subpopulations (initial frequencies 1, 0.75, 0.50, 0.25, and 0), again with m = 0.10. Note how rapidly the allele frequencies converge to the same value, in this case, 0.5.
+The similarity with Equation 6.19 is apparent: In fact, the equations are identical except that the role of $ p^* $ in one-way migration is replaced with $ \overline{p} $ in the island model. Perhaps less obvious is the similarity with Equation 4.4 for reversible mutation, in which case $ v/(\mu + v) $ plays the role of $ \overline{p} $ and $ \mu + v $ plays the role of m. The correspondence between the equations again emphasizes the similarity between the effects of migration and those of mutation. The processes result in similar mathematical expressions because both mutation and migration act linearly on allele frequency, which means that $ p_t $ is a linear function of $ p_{t-1} $. Although Equation 6.21 for migration is mathematically similar to Equation 4.4 for mutation, the biological implications are quite different. Because rates of migration are typically much greater than rates of mutation, changes in allele frequency are generally much faster with migration. As an example of the use of Equation 6.21, suppose there are only two populations with initial allele frequencies of A of 0.2 and 0.8, respectively, with m = 0.10. Thus 10 percent of the organisms in either subpopulation in any generation are migrants having an allele frequency of A of $ \bar{p} = (0.2 + 0.8)/2 = 0.5 $. What is the allele frequency of A in the two populations after 10 generations? For the population with initial allele frequency 0.2, we substitute $ p_0 = 0.2 $, $ \bar{p} = 0.5 $, and m = 0.10 into Equation 6.21 to obtain $ p_{10}=0.5+(1-0.10)^{10}(0.2 - 0.5) = 0.395 $; for the other population, we substitute $ p_{0} = 0.8 $, $ \bar{p} = 0.5 $, and m = 0.10, and so $ p_{10} = 0.5 + (1 - 0.10)^{10}(0.8 - 0.5) = 0.605 $. Another example using Equation 6.21 is shown in Figure 6.19, where there are five subpopulations (initial frequencies 1, 0.75, 0.50, 0.25, and 0), again with m = 0.10. Note how rapidly the allele frequencies converge to the same value, in this case, 0.5.
 
 > **Figure 6.19** · page 43 · source: `PopGen_chapter6`
 >
@@ -548,15 +646,21 @@ The similarity with Equation 6.19 is apparent: In fact, the equations are identi
 
 ## PopGen_chapter6_023 · 6.5 MIGRATION / How Migration Limits Genetic Divergence
 
-It is remarkable how little migration is required to prevent significant genetic divergence among subpopulations as measured by, for example, the fixation index $ F_{ST} $. To understand the homogenizing effect of migration, consider the model in Figure 4.5, in which two alleles drawn at random from a subpopulation in generation $ t + 1 $ are replicas of the same allele in generation $ t $ with probability $ 1/(2N) $ and replicas of different alleles in generation $ t $ with probability $ 1 - 1/(2N) $. In the first case, the alleles are necessarily identical by descent; in the second case, they are identical by descent with probability $ F_{t-1} $, where $ F $ is shorthand for $ F_{ST} $. In either case, the identity by descent is unbroken only if neither allele is replaced by an allele from a migrant, and so $$
+It is remarkable how little migration is required to prevent significant genetic divergence among subpopulations as measured by, for example, the fixation index $ F_{ST} $. To understand the homogenizing effect of migration, consider the model in Figure 4.5, in which two alleles drawn at random from a subpopulation in generation $ t + 1 $ are replicas of the same allele in generation $ t $ with probability $ 1/(2N) $ and replicas of different alleles in generation $ t $ with probability $ 1 - 1/(2N) $. In the first case, the alleles are necessarily identical by descent; in the second case, they are identical by descent with probability $ F_{t-1} $, where $ F $ is shorthand for $ F_{ST} $. In either case, the identity by descent is unbroken only if neither allele is replaced by an allele from a migrant, and so
+
+$$
 F_{t}=\left(\frac{1}{2N}\right)(1-m)^{2}+\left(1-\frac{1}{2N}\right)(1-m)^{2}F_{t-1}
 \tag{6.22}
 $$
 
-Illustrating again the analogy between migration and mutation, Equation 6.22 is identical to Equation 4.8 measuring the effect of mutation on the probability of identity by descent, except that m replaces $ \mu $. The equilibrium value$\hat{F}$ of $F$ can be found by setting $\hat{F}=F_{t}=F_{t-1}$; after expanding the squared terms on the right-hand side, and assuming that $m$ is small enough and $N$ large enough, and that terms in $m^{2}$ and $m/N$ can be ignored, some rearrangement leads to $$
+Illustrating again the analogy between migration and mutation, Equation 6.22 is identical to Equation 4.8 measuring the effect of mutation on the probability of identity by descent, except that m replaces $ \mu $. The equilibrium value$\hat{F}$ of $F$ can be found by setting $\hat{F}=F_{t}=F_{t-1}$; after expanding the squared terms on the right-hand side, and assuming that $m$ is small enough and $N$ large enough, and that terms in $m^{2}$ and $m/N$ can be ignored, some rearrangement leads to
+
+$$
 \hat{F}=\frac{1}{1+4Nm}
 \tag{6.23}
-$$ As might be expected, Equation 5.17 is identical in form to Equation 4.9 for mutation, but the biological implications are very different owing to the fact that the rate of migration is typically much greater than the rate of mutation.
+$$
+
+As might be expected, Equation 5.17 is identical in form to Equation 4.9 for mutation, but the biological implications are very different owing to the fact that the rate of migration is typically much greater than the rate of mutation.
 
 The product Nm in Equation 6.23 has a straightforward biological interpretation. The total number of alleles in a subpopulation of size N diploid organisms is 2N. In any generation, the proportion of alleles that are replaced by alleles from migrant organisms is m; hence the number of migrant alleles in any generation equals 2Nm. However, 2Nm is also the total number of alleles in Nm diploid organisms, and so Nm can be interpreted as the absolute number of migrant organisms that come into each subpopulation in each generation. Because the absolute number of migrants per generation equals $ N_m $, Equation 6.23 implies that $ \hat{F} $ decreases as the number of migrants increases. Indeed, the decrease in $ \hat{F} $ with increasing $ N_m $ is extremely rapid, as shown in Figure 6.20. In the extreme case of complete genetic isolation between the subpopulations, $ N_m = 0 $ and $ \hat{F} = 1 $. The decrease is then so rapid that for: • Nm = 0.25 (one migrant every fourth generation), $ \hat{F} = 0.50 $
 
@@ -636,10 +740,14 @@ The approach of Beerli and Felsenstein (1999, 2001) yields maximum likelihood es
 >
 > FIGURE 6.23 Coalescence when there is population subdivision. At each coalescence, the lineages of two alleles in the same subpopulation may come together in a common ancestral allele, or the lineage of an allele in one subpopulation may merge with the lineage of an allele from the other subpopulation (indicated here by the dashed line), representing a migration event.
 
-In this formulation, we consider three kinds of objects: $D$ is a set consisting of the data, $P$ is a set of parameters in the model (in this case, effective population numbers and migration rates), and $G$ is a genealogy of the ancestral history of alleles in the sample. The objective of the analysis is to maximize the likelihood of the data parameters $P$ given the data $D$, which is represented as $L(P|D)$, through an analysis of all possible genealogies $G$. Rendered as an equation, the method seeks to find the maximum of $$
+In this formulation, we consider three kinds of objects: $D$ is a set consisting of the data, $P$ is a set of parameters in the model (in this case, effective population numbers and migration rates), and $G$ is a genealogy of the ancestral history of alleles in the sample. The objective of the analysis is to maximize the likelihood of the data parameters $P$ given the data $D$, which is represented as $L(P|D)$, through an analysis of all possible genealogies $G$. Rendered as an equation, the method seeks to find the maximum of
+
+$$
 \frac{L(P\mid D)}{L(P_{0}\mid D)}\cong\frac{1}{g}\sum_{i=1}^{g}\frac{\mathrm{Prob}(G_{i}\mid P)}{\mathrm{Prob}(G_{i}\mid P_{0})}
 \tag{6.24}
-$$ where the summation is across all possible genealogies, and $ P_{\theta} $ is the set of parameters used to generate the genealogies.
+$$
+
+where the summation is across all possible genealogies, and $ P_{\theta} $ is the set of parameters used to generate the genealogies.
 
 A method for generating genealogies with random topologies and branch lengths was discussed in Chapter 3. There are infinitely many such topologies, so inferences about the values of the parameters must be based on a sample of genealogies. Even so, the space of possible genealogies is so large that purely random genealogies are likely to be far from the region in which Equation 6.24 is maximized. What is needed is a method for systematically exploring the space of genealogies to find the region in which the likelihood ratio in Equation 6.24 is large, and then concentrating on the genealogies in this region. The most widely used method of this type is called Metropolis-Hastings Markov chain Monte Carlo (Gilks et al. 1996). Implementing, checking, and debugging programs that implement such algorithms is an art in itself, and fortunately most authors make their programs freely available through the Internet. The Beerli and Felsenstein (1999, 2001) program to maximize Equation 6.24 for multiple populations with asymmetric migration is called MIGRATE (see also Beerli 2006).
 
@@ -667,10 +775,14 @@ Just as recurrent mutation to a deleterious allele can maintain the allele in a 
 
 A selection model similar to that used for mutation-selection balance (see Chapter 5) reveals the principal offsetting forces for migration-selection balance. Let AA, Aa, and aa be three genotypes at a locus, where a is a deleterious recessive or partially recessive allele. As in Chapter 5, we denote the relative fitnesses of AA, Aa, and aa as 1, 1 - hs, and 1 - s, respectively, where s is the selection coefficient against aa and h is the degree of dominance of a. When h = 0 the a allele is completely recessive, and when $ h = \frac{1}{2} $ the relative fitness of Aa is the arithmetic mean of those of AA and aa, indicating additive effects of A and a. Let p and q be the allele frequencies of A and a, with $ p + q = 1 $, and suppose that the selection is sufficiently weak, or the recessive allele sufficiently rare, and that the three genotypes are approximately in the Hardy-Weinberg frequencies of $ p^2 $, 2pq, and $ q^2 $.
 
-This model was originally studied by Haldane (1930) and Wright (1931), who showed that the change $ \Delta q $ in the allele frequency of a in the region where it is deleterious is given by $$
+This model was originally studied by Haldane (1930) and Wright (1931), who showed that the change $ \Delta q $ in the allele frequency of a in the region where it is deleterious is given by
+
+$$
 \Delta q=\frac{-spq[q+h(p-q)]}{1-sq(2hp+q)}+m_{i}q^{*}-m_{o}q
 \tag{6.25}
-$$ where $ m_{i} $ is the rate of in-migration of individuals from outside the population, among whom the allele frequency is $ q^{*} $, and $ m_{o} $ is the rate of out-migration of individuals who leave the population.
+$$
+
+where $ m_{i} $ is the rate of in-migration of individuals from outside the population, among whom the allele frequency is $ q^{*} $, and $ m_{o} $ is the rate of out-migration of individuals who leave the population.
 
 An ingenious application of Equation 6.25 is reported in Hoekstra et al. (2004). These authors studied rock-pocket mice (Chaetodipus intermedius) in southern Arizona, where there is a gradient in habitat color from the presence of dark-colored volcanic lava, whereas surrounding regions are light-colored granitic rocks. The mice inhabiting the volcanic rock have dark coats composed of uniformly melanic hair, whereas the mice inhabiting the light areas have light coats composed of hair with only a small band of melanin. The difference in phenotype is presumed to be an adaptation to reduce visibility and hence predation. The genetic basis of the difference is due to four amino acid replacements in the melanocortin-1 receptor protein, encoded in the gene $ Mc1r $. Genotypes denoted DD and Dd have coats that are melanic and dark, whereas the genotype dd coat is nonmelanic and light. In the habitat consisting of dark-colored volcanic lava, the d allele is presumably a harmful recessive allele maintained by migration from the surrounding light areas.
 
@@ -776,11 +888,23 @@ Figure 6.26A shows the inferred relation between s and h for an effective popula
 
 27. Two island populations 1 and 2 are shown in the accompanying diagram. In population 1 the allele frequency of A in generation t is $ x_t $, and in population 2 it is $ y_t $. In every generation, a fraction u > 0 of the alleles in population 1 is removed and replaced with alleles from population 2, and a fraction v > 0 of the alleles in population 2 is removed and replaced with alleles from population 1.
 
-The equations relating $ x_{t} $ to $ x_{t-1} $ and $ y_{t} $ to $ y_{t-1} $ are $$ x_{t}=x_{t-1}(1-u)+y_{t-1}u $$ $$ y_{t}=y_{t-1}(1-v)+x_{t-1}v $$
+The equations relating $ x_{t} $ to $ x_{t-1} $ and $ y_{t} $ to $ y_{t-1} $ are
+
+$$
+x_{t}=x_{t-1}(1-u)+y_{t-1}u
+$$
+
+$$
+y_{t}=y_{t-1}(1-v)+x_{t-1}v
+$$
 
 (a) Derive an expression for $ x_t - y_t $ in terms of $ x_0 - y_0 $, and conclude that the equilibrium frequency $ \hat{x} $ of A in population 1 equals the equilibrium frequency $ \hat{y} $ of A in population 2.
 
-(b) Derive an expression for $ vx_{t} + uy_{t} $ in terms of $ x_{0} $ and $ y_{0} $, and conclude that the equilibrium frequencies are given by $$ \hat{x}=\hat{y}=\frac{v x_{0}+u y_{0}}{u+v} $$
+(b) Derive an expression for $ vx_{t} + uy_{t} $ in terms of $ x_{0} $ and $ y_{0} $, and conclude that the equilibrium frequencies are given by
+
+$$
+\hat{x}=\hat{y}=\frac{v x_{0}+u y_{0}}{u+v}
+$$
 
 (c) Explain how the approach to equilibrium differs between the case 0 < u + v < 1 and the case 1 < u + v < 2.
 

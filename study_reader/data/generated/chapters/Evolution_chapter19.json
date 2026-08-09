@@ -1,0 +1,3079 @@
+{
+  "sections": [
+    {
+      "id": "Evolution_chapter19_section_001",
+      "title": "Chapter 19 · Analysis of Short-term Selection Experiments: 2. Mixed-model and Bayesian Approaches",
+      "nav_label": "Analysis of Short-term Selection Experiments: 2. Mixed-model and",
+      "raw_title": "Chapter 19 · Analysis of Short-term Selection Experiments: 2. Mixed-model and Bayesian Approaches",
+      "level": 1,
+      "depth": 0,
+      "anchor": "evolution_chapter19_section_001",
+      "text_preview": ""
+    },
+    {
+      "id": "Evolution_chapter19_001",
+      "title": "Analysis of Short-term Selection Experiments: 2. Mixed-model and Bayesian Approaches: Introduction",
+      "nav_label": "Analysis of Short-term Selection Experiments: 2. Mixed-model and",
+      "raw_title": "Evolution_chapter19_001 · Analysis of Short-term Selection Experiments: 2. Mixed-model and Bayesian Approaches: Introduction",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_chapter19_001",
+      "text_preview": "Unnecessarily complex analysis should not be used as a foil to disguise lower quality datasets: estimates of genetic parameters are only as good as the data on which they are based. Kruuk (2004) vnnue a least-squares (LS) analysis or a selection experiment versus the data down to the trait mean and variance for each g…"
+    },
+    {
+      "id": "Evolution_chapter19_002",
+      "title": "Analysis of Short-term Selection Experiments: 2. Mixed-model and Bayesian Approaches: Introduction / MIXED-MODEL VERSUS LEAST-SQUARES ANALYSIS",
+      "nav_label": "MIXED-MODEL VERSUS LEAST-SQUARES ANALYSIS",
+      "raw_title": "Evolution_chapter19_002 · Analysis of Short-term Selection Experiments: 2. Mixed-model and Bayesian Approaches: Introduction / MIXED-MODEL VERSUS LEAST-SQUARES ANALYSIS",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_chapter19_002",
+      "text_preview": "Figure 19.1 illustrates the result of a mixed-model analysis of selection response. Note that instead of measuring response from the observed phenotypic means (the LS approach), response is measured from the estimated mean breeding values obtained from BLUP. Further, instead of estimating a realized heritability, a mi…"
+    },
+    {
+      "id": "Evolution_chapter19_003",
+      "title": "MIXED-MODEL VERSUS LEAST-SQUARES ANALYSIS / BLUP Selection",
+      "nav_label": "BLUP Selection",
+      "raw_title": "Evolution_chapter19_003 · MIXED-MODEL VERSUS LEAST-SQUARES ANALYSIS / BLUP Selection",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_chapter19_003",
+      "text_preview": "A previously introduced MM application is BLUP selection (Chapter 13), wherein a mixed model is used to find those individuals with the highest estimated breeding values, which are then used as parents to form the next generation. This is the main route of selection used by animal and tree breeders, and to a growing e…"
+    },
+    {
+      "id": "Evolution_chapter19_004",
+      "title": "Analysis of Short-term Selection Experiments: 2. Mixed-model and Bayesian Approaches: Introduction / BASICS OF MIXED-MODEL ANALYSIS",
+      "nav_label": "BASICS OF MIXED-MODEL ANALYSIS",
+      "raw_title": "Evolution_chapter19_004 · Analysis of Short-term Selection Experiments: 2. Mixed-model and Bayesian Approaches: Introduction / BASICS OF MIXED-MODEL ANALYSIS",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_chapter19_004",
+      "text_preview": "Here, we start with a quick review of some of the key theoretical results of mixed-model analysis and then examine specific applications. We encourage the reader to review LW Chapters 26 and 27 (either before, or after, reading this short introduction). These chapters provide additional worked examples to give a bette…"
+    },
+    {
+      "id": "Evolution_chapter19_005",
+      "title": "Analysis of Short-term Selection Experiments: 2. Mixed-model and Bayesian Approaches: Introduction / BASICS OF MIXED-MODEL ANALYSIS",
+      "nav_label": "BASICS OF MIXED-MODEL ANALYSIS",
+      "raw_title": "Evolution_chapter19_005 · Analysis of Short-term Selection Experiments: 2. Mixed-model and Bayesian Approaches: Introduction / BASICS OF MIXED-MODEL ANALYSIS",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_chapter19_005",
+      "text_preview": "If we again assume that V is exactly known, the best linear unbiased predictor (BLUP) of the vector of random effects is given by $$ \\hat{\\mathbf{a}}=\\mathbf{V}\\mathbf{a}\\mathbf{r}(\\mathbf{a})\\mathbf{Z}^{T}\\mathbf{V}^{-1}\\left(\\mathbf{y}-\\mathbf{X}\\widehat{\\boldsymbol{\\beta}}\\right)=\\sigma {A}^{2}\\mathbf{A}\\mathbf{Z}^…"
+    },
+    {
+      "id": "Evolution_chapter19_006",
+      "title": "BASICS OF MIXED-MODEL ANALYSIS / REML Estimation of Unknown Variance Components",
+      "nav_label": "REML Estimation of Unknown Variance Components",
+      "raw_title": "Evolution_chapter19_006 · BASICS OF MIXED-MODEL ANALYSIS / REML Estimation of Unknown Variance Components",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_chapter19_006",
+      "text_preview": "The variance components ($ \\sigma A^2 $ and $ \\sigma e^2 $), or, at a minimum, the heritability $ h^2 = \\sigma A^2 / (\\sigma A^2 + \\sigma e^2) $, must be specified to obtain $ \\beta $ and $ \\hat{a} $. Although these variances are generally unknown, they can be estimated, for example, by using restricted maximum likeli…"
+    },
+    {
+      "id": "Evolution_chapter19_007",
+      "title": "BASICS OF MIXED-MODEL ANALYSIS / REML Often Returns Variance Estimates Unbiased by Selection",
+      "nav_label": "REML Often Returns Variance Estimates Unbiased by Selection",
+      "raw_title": "Evolution_chapter19_007 · BASICS OF MIXED-MODEL ANALYSIS / REML Often Returns Variance Estimates Unbiased by Selection",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_chapter19_007",
+      "text_preview": "As with BLUPs and BLUEs (which assume the presence of known variances), REML variance estimates are often unbiased by selection. As we will show, under the infinitesimal model, the relationship matrix, A, fully accounts for any change in $ \\sigma A^2 $ from disequilibrium, inbreeding, and drift. As a result, if the ba…"
+    },
+    {
+      "id": "Evolution_chapter19_008",
+      "title": "Analysis of Short-term Selection Experiments: 2. Mixed-model and Bayesian Approaches: Introduction / ANIMAL-MODEL ANALYSIS OF SELECTION EXPERIMENTS",
+      "nav_label": "ANIMAL-MODEL ANALYSIS OF SELECTION EXPERIMENTS",
+      "raw_title": "Evolution_chapter19_008 · Analysis of Short-term Selection Experiments: 2. Mixed-model and Bayesian Approaches: Introduction / ANIMAL-MODEL ANALYSIS OF SELECTION EXPERIMENTS",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_chapter19_008",
+      "text_preview": "The basic building block of a mixed-model analysis of selection experiments is the animal model (Quaas and Pollak 1980), which estimates the breeding (or additive-genetic) values of all individuals measured during the course of the experiment. We examine its simplest version first, and consider various elaborations in…"
+    },
+    {
+      "id": "Evolution_chapter19_009",
+      "title": "ANIMAL-MODEL ANALYSIS OF SELECTION EXPERIMENTS / The Basic Animal Model",
+      "nav_label": "The Basic Animal Model",
+      "raw_title": "Evolution_chapter19_009 · ANIMAL-MODEL ANALYSIS OF SELECTION EXPERIMENTS / The Basic Animal Model",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_chapter19_009",
+      "text_preview": "Mixed-models easily allow for overlapping generations by simply predicting breeding values at discrete time points (e.g., every year or at each natural cohort) rather than in each generation. Hence, in the discussion that follows, one can easily replace “generation” by “year” or some other time measure. To apply the a…"
+    },
+    {
+      "id": "Evolution_chapter19_010",
+      "title": "ANIMAL-MODEL ANALYSIS OF SELECTION EXPERIMENTS / Response Is Measured by Change in Mean Breeding Values",
+      "nav_label": "Response Is Measured by Change in Mean Breeding Values",
+      "raw_title": "Evolution_chapter19_010 · ANIMAL-MODEL ANALYSIS OF SELECTION EXPERIMENTS / Response Is Measured by Change in Mean Breeding Values",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_chapter19_010",
+      "text_preview": "Under a mixed-model analysis, response is measured by the change in the mean breeding value of a selected population over time. The estimated mean breeding value in generation $ k $ (or, alternatively, at time point $ k $) is simply obtained by calculating the average of individual breeding-value estimates for that ge…"
+    },
+    {
+      "id": "Evolution_chapter19_011",
+      "title": "ANIMAL-MODEL ANALYSIS OF SELECTION EXPERIMENTS / Fixed Effects Alter Heritabilities",
+      "nav_label": "Fixed Effects Alter Heritabilities",
+      "raw_title": "Evolution_chapter19_011 · ANIMAL-MODEL ANALYSIS OF SELECTION EXPERIMENTS / Fixed Effects Alter Heritabilities",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_chapter19_011",
+      "text_preview": "Variance components in a mixed model are estimated after any variation introduced by fixed effects is removed, and this has an impact on the estimated heritability. Under the mixed-model framework, $ h^2 = \\sigma A^2 / (\\sigma A^2 + \\sigma e^2) $, where $ \\sigma e^2 $ is the residual variance. Here, the denominator is…"
+    },
+    {
+      "id": "Evolution_chapter19_012",
+      "title": "ANIMAL-MODEL ANALYSIS OF SELECTION EXPERIMENTS / Model Validation",
+      "nav_label": "Model Validation",
+      "raw_title": "Evolution_chapter19_012 · ANIMAL-MODEL ANALYSIS OF SELECTION EXPERIMENTS / Model Validation",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_chapter19_012",
+      "text_preview": "Given the sensitivity of a mixed-model analysis to the validity of the assumptions (in particular, the infinitesimal model), some form of model validation is required to be able to apply these methods with confidence. One approach is to test the infinitesimal-model prediction that estimates of the base population, $ \\…"
+    },
+    {
+      "id": "Evolution_chapter19_013",
+      "title": "ANIMAL-MODEL ANALYSIS OF SELECTION EXPERIMENTS / Separating Genetic and Environmental Trends",
+      "nav_label": "Separating Genetic and Environmental Trends",
+      "raw_title": "Evolution_chapter19_013 · ANIMAL-MODEL ANALYSIS OF SELECTION EXPERIMENTS / Separating Genetic and Environmental Trends",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_chapter19_013",
+      "text_preview": "Observed improvement in a trait over time (such as milk yield) may be due entirely to improvement in the environment (better husbandry and nutrition), entirely from genetic changes (response from selected breeding), or (most likely) a combination of both. Thus, it is critical to partition an observed phenotypic change…"
+    },
+    {
+      "id": "Evolution_chapter19_014",
+      "title": "ANIMAL-MODEL ANALYSIS OF SELECTION EXPERIMENTS / Validation That a Trend Is Indeed Genetic",
+      "nav_label": "Validation That a Trend Is Indeed Genetic",
+      "raw_title": "Evolution_chapter19_014 · ANIMAL-MODEL ANALYSIS OF SELECTION EXPERIMENTS / Validation That a Trend Is Indeed Genetic",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_chapter19_014",
+      "text_preview": "The estimated common-environmental (b) and additive-genetic (a) effects are highly dependent on the estimated (or assumed) base population heritability, $ h^{2} $. Hence, using BLUP to separate genetic from environmental values is highly dependent on the heritability used being close to its true value. Other departure…"
+    },
+    {
+      "id": "Evolution_chapter19_015",
+      "title": "ANIMAL-MODEL ANALYSIS OF SELECTION EXPERIMENTS / Replicate Lines",
+      "nav_label": "Replicate Lines",
+      "raw_title": "Evolution_chapter19_015 · ANIMAL-MODEL ANALYSIS OF SELECTION EXPERIMENTS / Replicate Lines",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_chapter19_015",
+      "text_preview": "It is straightforward to jointly analyze multiple lines simultaneously. For $n$ lines, we write the total vector of observations as $\\mathbf{y}^T = (\\mathbf{y} 1^T, \\mathbf{y} 2^T, \\cdots, \\mathbf{y} n^T)$, where $\\mathbf{y} k$ is the vector of all observations from line $k$. If the generational environmental effects…"
+    },
+    {
+      "id": "Evolution_chapter19_016",
+      "title": "ANIMAL-MODEL ANALYSIS OF SELECTION EXPERIMENTS / Estimating the Additive Variance at Generation t",
+      "nav_label": "Estimating the Additive Variance at Generation t",
+      "raw_title": "Evolution_chapter19_016 · ANIMAL-MODEL ANALYSIS OF SELECTION EXPERIMENTS / Estimating the Additive Variance at Generation t",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_chapter19_016",
+      "text_preview": "Even under the infinitesimal model, the additive variance changes over time by the generation of disequilibrium (Chapter 16) and inbreeding (Chapters 3 and 24), a point more fully explicated in the next section. While REML provides an estimate of the base population additive genic variance, $ \\sigma a^2(0) $ (which is…"
+    },
+    {
+      "id": "Evolution_chapter19_017",
+      "title": "Analysis of Short-term Selection Experiments: 2. Mixed-model and Bayesian Approaches: Introduction / THE RELATIONSHIP MATRIX, A, ACCOUNTS FOR DRIFT AND DISEQUILIBRIUM",
+      "nav_label": "THE RELATIONSHIP MATRIX, A, ACCOUNTS FOR DRIFT AND DISEQUILIBRIU",
+      "raw_title": "Evolution_chapter19_017 · Analysis of Short-term Selection Experiments: 2. Mixed-model and Bayesian Approaches: Introduction / THE RELATIONSHIP MATRIX, A, ACCOUNTS FOR DRIFT AND DISEQUILIBRIUM",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_chapter19_017",
+      "text_preview": "[命题 Proposition] There are three potential sources of change in the additive-genetic variance, $ \\sigma A^2 $, during a selection experiment: allele-frequency change from selection; allele-frequency change from drift; and gametic-phase disequilibrium generated by selection (Chapters 5 and 16). Under the infinitesimal…"
+    },
+    {
+      "id": "Evolution_chapter19_018",
+      "title": "Analysis of Short-term Selection Experiments: 2. Mixed-model and Bayesian Approaches: Introduction / MODIFICATIONS OF THE BASIC ANIMAL MODEL",
+      "nav_label": "MODIFICATIONS OF THE BASIC ANIMAL MODEL",
+      "raw_title": "Evolution_chapter19_018 · Analysis of Short-term Selection Experiments: 2. Mixed-model and Bayesian Approaches: Introduction / MODIFICATIONS OF THE BASIC ANIMAL MODEL",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_chapter19_018",
+      "text_preview": "In many cases, it is prudent to modify the simple animal model by considering additional fixed and random effects to more fully accommodate any relevant biological features. For example, genetic and environmental effects can be separated without a control population by adding fixed effects to account for environmental…"
+    },
+    {
+      "id": "Evolution_chapter19_019",
+      "title": "MODIFICATIONS OF THE BASIC ANIMAL MODEL / Models with Additional Random Effects",
+      "nav_label": "Models with Additional Random Effects",
+      "raw_title": "Evolution_chapter19_019 · MODIFICATIONS OF THE BASIC ANIMAL MODEL / Models with Additional Random Effects",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_chapter19_019",
+      "text_preview": "We have assumed that residuals of a mixed model are uncorrelated and homoscedastic, making their covariance matrix $ \\mathbf{Var}(\\mathbf{e}) = \\sigma e^2 \\mathbf{I} $. When additional random effects are present but ignored by the model, they are inadvertently subsumed into the residuals, introducing correlations and…"
+    },
+    {
+      "id": "Evolution_chapter19_020",
+      "title": "MODIFICATIONS OF THE BASIC ANIMAL MODEL / Common Family and Maternal Effects",
+      "nav_label": "Common Family and Maternal Effects",
+      "raw_title": "Evolution_chapter19_020 · MODIFICATIONS OF THE BASIC ANIMAL MODEL / Common Family and Maternal Effects",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_chapter19_020",
+      "text_preview": "[命题 Proposition] When sibs are present, any common-family environmental effects (if not included directly in the model) are subsumed into the residuals, creating a correlation between the residuals of sibs. For example, if two sibs (i and j) share a common environmental value, $ c $, then $ \\sigma(e i, e j) = \\sigma c…"
+    },
+    {
+      "id": "Evolution_chapter19_021",
+      "title": "MODIFICATIONS OF THE BASIC ANIMAL MODEL / Treating Certain Breeding Values as Fixed Effects",
+      "nav_label": "Treating Certain Breeding Values as Fixed Effects",
+      "raw_title": "Evolution_chapter19_021 · MODIFICATIONS OF THE BASIC ANIMAL MODEL / Treating Certain Breeding Values as Fixed Effects",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_chapter19_021",
+      "text_preview": "How should one proceed if the base population has, itself, been under selection? Graser et al. (1987) suggested that if this is known, or suspected, to be the case, the base population breeding values should be treated as fixed, rather than random, effects. The motivation for this suggestion is that if the parents are…"
+    },
+    {
+      "id": "Evolution_chapter19_022",
+      "title": "MODIFICATIONS OF THE BASIC ANIMAL MODEL / Dominance",
+      "nav_label": "Dominance",
+      "raw_title": "Evolution_chapter19_022 · MODIFICATIONS OF THE BASIC ANIMAL MODEL / Dominance",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_chapter19_022",
+      "text_preview": "Up to this point, we have been assuming that all genetic variation is additive, requiring us to only consider the vector, a, of breeding values and its numerator relationship matrix, A. When nonadditive genetic variance is present, it creates additional genetic correlations between certain relatives beyond those accou…"
+    },
+    {
+      "id": "Evolution_chapter19_023",
+      "title": "Analysis of Short-term Selection Experiments: 2. Mixed-model and Bayesian Approaches: Introduction / BAYESIAN MIXED-MODEL ANALYSIS",
+      "nav_label": "BAYESIAN MIXED-MODEL ANALYSIS",
+      "raw_title": "Evolution_chapter19_023 · Analysis of Short-term Selection Experiments: 2. Mixed-model and Bayesian Approaches: Introduction / BAYESIAN MIXED-MODEL ANALYSIS",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_chapter19_023",
+      "text_preview": "As mentioned throughout this chapter, a standard mixed-model analysis does not fully account for the uncertainty introduced into EBVs by using estimates of the model variance components (instead of their true values). While there are large-sample approximations for the sample variance of a REML variance estimator, it…"
+    },
+    {
+      "id": "Evolution_chapter19_024",
+      "title": "BAYESIAN MIXED-MODEL ANALYSIS / Introduction to Bayesian Statistics",
+      "nav_label": "Introduction to Bayesian Statistics",
+      "raw_title": "Evolution_chapter19_024 · BAYESIAN MIXED-MODEL ANALYSIS / Introduction to Bayesian Statistics",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_chapter19_024",
+      "text_preview": "While very deep (and subtle) differences in philosophy separate hard-core Bayesians from hard-core frequentists (Glymour 1981; Efron 1986), our treatment here of Bayesian methods is motivated simply by their use as a powerful statistical tool. Their introduction into quantitative genetics can be largely credited to th…"
+    },
+    {
+      "id": "Evolution_chapter19_026",
+      "title": "BAYESIAN MIXED-MODEL ANALYSIS / Computing Posteriors and Marginals: MCMC and the Gibbs Sampler",
+      "nav_label": "Computing Posteriors and Marginals: MCMC and the Gibbs Sampler",
+      "raw_title": "Evolution_chapter19_026 · BAYESIAN MIXED-MODEL ANALYSIS / Computing Posteriors and Marginals: MCMC and the Gibbs Sampler",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_chapter19_026",
+      "text_preview": "Historically, the widespread implementation of Bayesian approaches was limited by the difficulty in obtaining marginal posterior distributions, which typically requires the integration of complex, high-dimensional functions (e.g., Equations 19.29a and 19.30). Markov Chain Monte Carlo (MCMC) approaches (Appendix 3) pro…"
+    },
+    {
+      "id": "Evolution_chapter19_027",
+      "title": "BAYESIAN MIXED-MODEL ANALYSIS / Bayesian Analysis of the Animal Model",
+      "nav_label": "Bayesian Analysis of the Animal Model",
+      "raw_title": "Evolution_chapter19_027 · BAYESIAN MIXED-MODEL ANALYSIS / Bayesian Analysis of the Animal Model",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_chapter19_027",
+      "text_preview": "The use of Bayesian approaches for the analysis of selection experiments was first suggested by Sorensen and Johansson (1992). Starting with the standard animal model $$ \\mathbf{y}=\\mathbf{X}\\boldsymbol{\\beta}+\\mathbf{Z}\\mathbf{a}+\\mathbf{e},\\quad where\\quad\\mathbf{y}\\sim MVN(\\mathbf{X}\\boldsymbol{\\beta},\\sigma {A}^{2…"
+    },
+    {
+      "id": "Evolution_chapter19_028",
+      "title": "BAYESIAN MIXED-MODEL ANALYSIS / Application: Estimating Selection Response in Pig Litter-size Components",
+      "nav_label": "Application: Estimating Selection Response in Pig Litter-size Co",
+      "raw_title": "Evolution_chapter19_028 · BAYESIAN MIXED-MODEL ANALYSIS / Application: Estimating Selection Response in Pig Litter-size Components",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_chapter19_028",
+      "text_preview": "Blasco et al. (1998) used the method of Sorensen et al. (1994) to estimate the response to selection on ovulation rate and prenatal survival in French Large White pigs. Three lines were followed, with single lines selected separately on each trait (ovulation rate and survival) and a control line. The relevant selectio…"
+    },
+    {
+      "id": "Evolution_chapter19_029",
+      "title": "BAYESIAN MIXED-MODEL ANALYSIS / LS, MM, OR BAYES?",
+      "nav_label": "LS, MM, OR BAYES?",
+      "raw_title": "Evolution_chapter19_029 · BAYESIAN MIXED-MODEL ANALYSIS / LS, MM, OR BAYES?",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_chapter19_029",
+      "text_preview": "Just what analysis should an investigator use for a selection experiment? Obviously, in the absence of any pedigree information, a least-squares analysis is the only option, although this could also be placed in a Bayesian framework. With the pedigree in hand (either observed or inferred; see Chapter 20), a mixed-mode…"
+    }
+  ],
+  "assets": [
+    {
+      "kind": "figure",
+      "id": "19.1",
+      "anchor": "figure-19.1",
+      "label": "Figure 19.1",
+      "section_id": "Evolution_chapter19_002",
+      "src": "figures/Evolution_19.1.png",
+      "caption": "Figure 19.1 Results from high and low selection on 6-week weight in mice. Left: Observed (filled boxes and circles) and predicted (open boxes and circles) mean phenotypic values in the up- and down-selected lines, expressed as deviations from the control population. The predicted mean for a specific generation is given by the estimated mean breeding value plus the estimated environmental value. Right: Estimated mean breeding values for both selected populations and the control. See Examples 19.2 and 19.7 for more details on this experiment. (After Meyer and Hill 1991.)"
+    },
+    {
+      "kind": "example",
+      "id": "19.1",
+      "anchor": "example-19.1",
+      "label": "Example 19.1",
+      "section_id": "Evolution_chapter19_010",
+      "excerpt": "Example 19.1 · ref: 19.1 · source: Evolution chapter19 010.json · blocks 2–4 Example 19.1. As an example of how one performs a mixed-model analysis of a selection experiment, consider the following, very simple, situation. From a base population of unrelated and noninbred individuals, four (indexed by 1–4) are measured and have trait values of 3, 6, 5, and 2, respectively. The two largest individuals are mated, and their resulting offspring (individuals 5–8) have values of 4…"
+    },
+    {
+      "kind": "example",
+      "id": "19.2",
+      "anchor": "example-19.2",
+      "label": "Example 19.2",
+      "section_id": "Evolution_chapter19_012",
+      "excerpt": "Example 19.2 · ref: 19.2 · source: Evolution chapter19 012.json · blocks 1–3 Example 19.2. One of the first REML/BLUP analyses of a selection experiment was performed by Meyer and Hill (1991), who examined the response to selection for adjusted food intake (AFI) in mice (Figure 19.1). AFI is defined as food intake between 4 and 6 weeks, corrected for 4-week weight. Meyer and Hill had three replicate sets, each consisting of high, low, and control lines, for a total of almost…"
+    },
+    {
+      "kind": "example",
+      "id": "19.3",
+      "anchor": "example-19.3",
+      "label": "Example 19.3",
+      "section_id": "Evolution_chapter19_013",
+      "excerpt": "Example 19.3 · ref: 19.3 · source: Evolution chapter19 013.json · blocks 1–7 Example 19.3. To examine the potential bias from $ G \\times E $ and drift in the control population, Blair and Pollak (1984) examined a seven-generation selection experiment on 14-month greasy fleece weight in sheep. The model they assumed was that the mth individual in generation t, with fixed sex effect (male/female), $ v i $, fixed age of dam effect (mature/immature), $ d j $, rearing rank effect…"
+    },
+    {
+      "kind": "figure",
+      "id": "19.2",
+      "anchor": "figure-19.2",
+      "label": "Figure 19.2",
+      "section_id": "Evolution_chapter19_014",
+      "src": "figures/Evolution_19.2.png",
+      "caption": "Figure 19.2 Trends for the selection experiment in Example 19.3. See the example for details."
+    },
+    {
+      "kind": "example",
+      "id": "19.4",
+      "anchor": "example-19.4",
+      "label": "Example 19.4",
+      "section_id": "Evolution_chapter19_017",
+      "excerpt": "Example 19.4 · ref: 19.4 · source: Evolution chapter19 017.json · blocks 5–12 Example 19.4. Suppose individuals 1 through 4 are from the base population (and assumed unrelated), while individuals 5 and 6 are the offspring from 1 and 2, and 3 and 4, respectively. The offspring breeding values can be written as $$ A {5}=\\frac{1}{2}A {1}+\\frac{1}{2}A {2}+s {5}\\qquad\\mathrm{a n d}\\qquad A {6}=\\frac{1}{2}A {3}+\\frac{1}{2}A {4}+s {6} $$ If individual 7 is the offspring of parents…"
+    },
+    {
+      "kind": "example",
+      "id": "19.5",
+      "anchor": "example-19.5",
+      "label": "Example 19.5",
+      "section_id": "Evolution_chapter19_018",
+      "excerpt": "Example 19.5 · ref: 19.5 · source: Evolution chapter19 018.json · blocks 2–4 Example 19.5. A feature of mixed models is that they can often predict the values of random effects (in this case, a breeding value) for an individual with no records (but whose relatives have records). Let 0 (unmeasured) and 1 (measured) index parents that each have a measured offspring (indexed as 2 and 3, respectively), via unrelated and unmeasured individuals. If we assume that there is a single…"
+    },
+    {
+      "kind": "example",
+      "id": "19.6",
+      "anchor": "example-19.6",
+      "label": "Example 19.6",
+      "section_id": "Evolution_chapter19_019",
+      "excerpt": "Example 19.6 · ref: 19.6 · source: Evolution chapter19 019.json · blocks 5–8 Example 19.6. Often the same trait is measured multiple times in the same individual, for example, the sizes of different litters from a single female. When multiple records are present for at least some individuals, a repeatability model is appropriate (Chapter 13; LW Chapter 26). Repeated measures from the same individual have three components: a breeding value, $ a k $, and a common (permanent) e…"
+    },
+    {
+      "kind": "example",
+      "id": "19.7",
+      "anchor": "example-19.7",
+      "label": "Example 19.7",
+      "section_id": "Evolution_chapter19_020",
+      "excerpt": "Example 19.7 · ref: 19.7 · source: Evolution chapter19 020.json · blocks 1–7 Example 19.7. Meyer and Hill (1991) examined the response to selection on adjusted food intake (AFI) in mice (Example 19.2) and formulated a model incorporating shared family values, c, as random effects. In addition, their model accounts for fixed effects due to common environmental effects associated with generations (b, 22 levels), lines (L, 3 levels), sex (v, male/female), and litter size (l, 7…"
+    },
+    {
+      "kind": "example",
+      "id": "19.9",
+      "anchor": "example-19.9",
+      "label": "Example 19.9",
+      "section_id": "Evolution_chapter19_024",
+      "excerpt": "Example 19.9 · ref: 19.9 · source: Evolution chapter19 024.json · blocks 7–7 Example 19.9. A simulation study by Sorensen et al. (1994) examined the effects on the posterior estimate of heritiability by using different priors on the variance components. To study the impact of sample size, the data were analyzed in two sets: the entire data set (Large) and a partial subset (Small). The simulated heritability was 0.5. Both uniform and scaled inverse- $ \\chi^{2} $ priors for th…"
+    },
+    {
+      "kind": "example",
+      "id": "19.8",
+      "anchor": "example-19.8",
+      "label": "Example 19.8",
+      "section_id": "Evolution_chapter19_024",
+      "excerpt": "Example 19.8 · ref: 19.8 · source: Evolution chapter19 024.json · blocks 6–11 Example 19.8. As an example of a Bayesian analysis, consider the simple case of $n$ observations from a normal distribution with an unknown mean, $\\mu$, but known variance, $\\sigma^2$. The details for this analysis (and more realistic cases, such as those in which both the mean and the variance are unknown) are developed in Appendix 2. Assuming the data $\\mathbf{y} = (y 1, \\cdots, y n)^T$ are $n$ i…"
+    },
+    {
+      "kind": "example",
+      "id": "19.10",
+      "anchor": "example-19.10",
+      "label": "Example 19.10",
+      "section_id": "Evolution_chapter19_024",
+      "excerpt": "Example 19.10 · ref: 19.10 · source: Evolution chapter19 024.json · blocks 8–8 Example 19.10. In the context of analyzing a selection response experiment, the vector of breeding values, a, is of interest, while the q fixed effects ( $ \\beta $) and variances ( $ \\sigma A^2 $, $ \\sigma e^2 $) are often regarded as nuisance parameters. In this case, Equation 19.30 gives the marginal distribution of the breeding values a, given the data y, as $$ p(\\mathbf{a}\\mid\\mathbf{y})=\\int…"
+    },
+    {
+      "kind": "table",
+      "id": "19.1",
+      "anchor": "table-19.1",
+      "label": "Table 19.1",
+      "section_id": "Evolution_chapter19_028",
+      "caption": "Table 19.1 Estimated response to selection for ovulation rate at puberty and prenatal survival in French Large White pigs. Bayesian analysis with three different priors (Figure 19.3 for ovulation and Figure 19.4 for prenatal survival) were used to obtain Monte-Carlo estimates of the mean response and their associated standard deviations (the latter incorporating the additional error from estimating the additive variance and other parameters). For comparison, least-squares (LS) estimates ( $ \\overline{z}_{i+1}-\\overline{z}_i $) and mixed-model (REML/BLUP) estimates are also included. (After Blasco et al. 1998.)",
+      "rows": []
+    },
+    {
+      "kind": "figure",
+      "id": "19.3",
+      "anchor": "figure-19.3",
+      "label": "Figure 19.3",
+      "section_id": "Evolution_chapter19_028",
+      "src": "figures/Evolution_19.3.png",
+      "caption": "Figure 19.3 Analysis of ovulation rate at puberty in French Large White pigs. Left: Assumed priors for  $ \\sigma_{A}^{2} $ (see text for details). Right: The Bayesian estimate of selection response is shown by presenting the marginal posterior density for the mean breeding value in ovulation rate in the last generation of selection as a histogram (all three priors gave very similar results). This distribution is approximately normal (the solid curve). (After Blasco et al. 1998.)"
+    },
+    {
+      "kind": "figure",
+      "id": "19.4",
+      "anchor": "figure-19.4",
+      "label": "Figure 19.4",
+      "section_id": "Evolution_chapter19_028",
+      "src": "figures/Evolution_19.4.png",
+      "caption": "Figure 19.4 Analysis of French Large White pig prenatal survival. Left: Priors for the additive variance (see text for details). Right: Posterior distribution of mean breeding values (at generation 4) in prenatal survival (based on prior 1), which deviates from the best-fitting normal. (After Blasco et al. 1998.)"
+    },
+    {
+      "kind": "formula",
+      "id": "19.1",
+      "anchor": "formula-19.1",
+      "label": "Formula (19.1)",
+      "section_id": "Evolution_chapter19_004",
+      "latex": "\\mathbf{y}=\\mathbf{X}\\boldsymbol{\\beta}+\\mathbf{Z}\\mathbf{a}+\\mathbf{e}",
+      "latex_render": "\\mathbf{y}=\\mathbf{X}\\boldsymbol{\\beta}+\\mathbf{Z}\\mathbf{a}+\\mathbf{e}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.2a",
+      "anchor": "formula-19.2a",
+      "label": "Formula (19.2a)",
+      "section_id": "Evolution_chapter19_004",
+      "latex": "\\mathbf{V}=\\sigma_{A}^{2}\\mathbf{Z}\\mathbf{A}\\mathbf{Z}^{T}+\\sigma_{e}^{2}\\mathbf{I}",
+      "latex_render": "\\mathbf{V}=\\sigma_{A}^{2}\\mathbf{Z}\\mathbf{A}\\mathbf{Z}^{T}+\\sigma_{e}^{2}\\mathbf{I}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.2b",
+      "anchor": "formula-19.2b",
+      "label": "Formula (19.2b)",
+      "section_id": "Evolution_chapter19_004",
+      "latex": "\\mathbf{V}=\\sigma_{z}^{2}\\cdot\\left(h^{2}\\mathbf{Z}\\mathbf{A}\\mathbf{Z}^{T}+(1-h^{2})\\mathbf{I}\\right)",
+      "latex_render": "\\mathbf{V}=\\sigma_{z}^{2}\\cdot\\left(h^{2}\\mathbf{Z}\\mathbf{A}\\mathbf{Z}^{T}+(1-h^{2})\\mathbf{I}\\right)",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.3a",
+      "anchor": "formula-19.3a",
+      "label": "Formula (19.3a)",
+      "section_id": "Evolution_chapter19_004",
+      "latex": "\\hat{\\boldsymbol{\\beta}}=\\left(\\mathbf{X}^{T}\\mathbf{V}^{-1}\\mathbf{X}\\right)^{-1}\\mathbf{X}^{T}\\mathbf{V}^{-1}\\mathbf{y}",
+      "latex_render": "\\hat{\\boldsymbol{\\beta}}=\\left(\\mathbf{X}^{T}\\mathbf{V}^{-1}\\mathbf{X}\\right)^{-1}\\mathbf{X}^{T}\\mathbf{V}^{-1}\\mathbf{y}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.3b",
+      "anchor": "formula-19.3b",
+      "label": "Formula (19.3b)",
+      "section_id": "Evolution_chapter19_004",
+      "latex": "\\hat{\\mathbf{a}}=\\mathbf{V}\\mathbf{a}\\mathbf{r}(\\mathbf{a})\\mathbf{Z}^{T}\\mathbf{V}^{-1}\\left(\\mathbf{y}-\\mathbf{X}\\widehat{\\boldsymbol{\\beta}}\\right)=\\sigma_{A}^{2}\\mathbf{A}\\mathbf{Z}^{T}\\mathbf{V}^{-1}\\left(\\mathbf{y}-\\mathbf{X}\\widehat{\\boldsymbol{\\beta}}\\right)",
+      "latex_render": "\\hat{\\mathbf{a}}=\\mathbf{V}\\mathbf{a}\\mathbf{r}(\\mathbf{a})\\mathbf{Z}^{T}\\mathbf{V}^{-1}\\left(\\mathbf{y}-\\mathbf{X}\\widehat{\\boldsymbol{\\beta}}\\right)=\\sigma_{A}^{2}\\mathbf{A}\\mathbf{Z}^{T}\\mathbf{V}^{-1}\\left(\\mathbf{y}-\\mathbf{X}\\widehat{\\boldsymbol{\\beta}}\\right)",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.3c",
+      "anchor": "formula-19.3c",
+      "label": "Formula (19.3c)",
+      "section_id": "Evolution_chapter19_004",
+      "latex": "\\hat{\\mathbf{a}}=\\left(\\mathbf{Z}^{T}\\mathbf{M}\\mathbf{Z}+\\lambda\\mathbf{A}^{-1}\\right)^{-1}\\mathbf{Z}^{T}\\mathbf{M}\\mathbf{y}",
+      "latex_render": "\\hat{\\mathbf{a}}=\\left(\\mathbf{Z}^{T}\\mathbf{M}\\mathbf{Z}+\\lambda\\mathbf{A}^{-1}\\right)^{-1}\\mathbf{Z}^{T}\\mathbf{M}\\mathbf{y}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.3d",
+      "anchor": "formula-19.3d",
+      "label": "Formula (19.3d)",
+      "section_id": "Evolution_chapter19_004",
+      "latex": "\\mathbf{M}=\\mathbf{I}-\\mathbf{X}\\left(\\mathbf{X}^{T}\\mathbf{X}\\right)^{-1}\\mathbf{X}^{T}",
+      "latex_render": "\\mathbf{M}=\\mathbf{I}-\\mathbf{X}\\left(\\mathbf{X}^{T}\\mathbf{X}\\right)^{-1}\\mathbf{X}^{T}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.3e",
+      "anchor": "formula-19.3e",
+      "label": "Formula (19.3e)",
+      "section_id": "Evolution_chapter19_004",
+      "latex": "\\mathbf{H}=\\mathbf{X}\\left(\\mathbf{X}^{T}\\mathbf{X}\\right)^{-1}\\mathbf{X}^{T}",
+      "latex_render": "\\mathbf{H}=\\mathbf{X}\\left(\\mathbf{X}^{T}\\mathbf{X}\\right)^{-1}\\mathbf{X}^{T}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.3f",
+      "anchor": "formula-19.3f",
+      "label": "Formula (19.3f)",
+      "section_id": "Evolution_chapter19_004",
+      "latex": "\\hat{\\mathbf{y}}=\\mathbf{X}\\hat{\\boldsymbol{\\beta}}=\\mathbf{X}\\left(\\mathbf{X}^{T}\\mathbf{X}\\right)^{-1}\\mathbf{X}^{T}\\mathbf{y}=\\mathbf{H}\\mathbf{y}",
+      "latex_render": "\\hat{\\mathbf{y}}=\\mathbf{X}\\hat{\\boldsymbol{\\beta}}=\\mathbf{X}\\left(\\mathbf{X}^{T}\\mathbf{X}\\right)^{-1}\\mathbf{X}^{T}\\mathbf{y}=\\mathbf{H}\\mathbf{y}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.3g",
+      "anchor": "formula-19.3g",
+      "label": "Formula (19.3g)",
+      "section_id": "Evolution_chapter19_004",
+      "latex": "\\mathbf{M}\\mathbf{y}=(\\mathbf{I}-\\mathbf{H})\\mathbf{y}=\\mathbf{y}-\\widehat{\\mathbf{y}}=\\mathbf{y}-\\mathbf{X}\\widehat{\\boldsymbol{\\beta}}",
+      "latex_render": "\\mathbf{M}\\mathbf{y}=(\\mathbf{I}-\\mathbf{H})\\mathbf{y}=\\mathbf{y}-\\widehat{\\mathbf{y}}=\\mathbf{y}-\\mathbf{X}\\widehat{\\boldsymbol{\\beta}}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.4",
+      "anchor": "formula-19.4",
+      "label": "Formula (19.4)",
+      "section_id": "Evolution_chapter19_004",
+      "latex": "\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{X}&\\mathbf{X}^{T}\\mathbf{Z}\\\\\\mathbf{Z}^{T}\\mathbf{X}&\\mathbf{Z}^{T}\\mathbf{Z}+\\lambda\\mathbf{A}^{-1}\\end{pmatrix}\\begin{pmatrix}\\widehat{\\beta}\\\\\\widehat{\\mathbf{a}}\\end{pmatrix}=\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{y}\\\\\\mathbf{Z}^{T}\\mathbf{y}\\end{pmatrix}",
+      "latex_render": "\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{X}&\\mathbf{X}^{T}\\mathbf{Z}\\\\\\mathbf{Z}^{T}\\mathbf{X}&\\mathbf{Z}^{T}\\mathbf{Z}+\\lambda\\mathbf{A}^{-1}\\end{pmatrix}\\begin{pmatrix}\\widehat{\\beta}\\\\\\widehat{\\mathbf{a}}\\end{pmatrix}=\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{y}\\\\\\mathbf{Z}^{T}\\mathbf{y}\\end{pmatrix}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.5a",
+      "anchor": "formula-19.5a",
+      "label": "Formula (19.5a)",
+      "section_id": "Evolution_chapter19_004",
+      "latex": "\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{X}&\\mathbf{X}^{T}\\mathbf{Z}\\\\\\mathbf{Z}^{T}\\mathbf{X}&\\mathbf{Z}^{T}\\mathbf{Z}+\\lambda\\mathbf{A}^{-1}\\end{pmatrix}^{-1}=\\begin{pmatrix}\\mathbf{C}_{11}&\\mathbf{C}_{12}\\\\\\mathbf{C}_{12}^{T}&\\mathbf{C}_{22}\\end{pmatrix}",
+      "latex_render": "\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{X}&\\mathbf{X}^{T}\\mathbf{Z}\\\\\\mathbf{Z}^{T}\\mathbf{X}&\\mathbf{Z}^{T}\\mathbf{Z}+\\lambda\\mathbf{A}^{-1}\\end{pmatrix}^{-1}=\\begin{pmatrix}\\mathbf{C}_{11}&\\mathbf{C}_{12}\\\\\\mathbf{C}_{12}^{T}&\\mathbf{C}_{22}\\end{pmatrix}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.5b",
+      "anchor": "formula-19.5b",
+      "label": "Formula (19.5b)",
+      "section_id": "Evolution_chapter19_004",
+      "latex": "\\mathbf{V a r}(\\widehat{\\beta})=\\sigma_{e}^{2}\\mathbf{C}_{11}",
+      "latex_render": "\\mathbf{V a r}(\\widehat{\\beta})=\\sigma_{e}^{2}\\mathbf{C}_{11}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.5c",
+      "anchor": "formula-19.5c",
+      "label": "Formula (19.5c)",
+      "section_id": "Evolution_chapter19_004",
+      "latex": "\\mathbf{V a r}(\\widehat{\\mathbf{a}}-\\mathbf{a})=\\sigma_{e}^{2}\\mathbf{C}_{22}",
+      "latex_render": "\\mathbf{V a r}(\\widehat{\\mathbf{a}}-\\mathbf{a})=\\sigma_{e}^{2}\\mathbf{C}_{22}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.5d",
+      "anchor": "formula-19.5d",
+      "label": "Formula (19.5d)",
+      "section_id": "Evolution_chapter19_004",
+      "latex": "\\mathbf{V a r}(\\widehat{\\mathbf{a}})=\\mathbf{V a r}(\\widehat{\\mathbf{a}}-\\mathbf{a})+\\mathbf{V a r}(\\mathbf{a})=\\sigma_{e}^{2}\\mathbf{C}_{22}+\\sigma_{A}^{2}\\mathbf{A}",
+      "latex_render": "\\mathbf{V a r}(\\widehat{\\mathbf{a}})=\\mathbf{V a r}(\\widehat{\\mathbf{a}}-\\mathbf{a})+\\mathbf{V a r}(\\mathbf{a})=\\sigma_{e}^{2}\\mathbf{C}_{22}+\\sigma_{A}^{2}\\mathbf{A}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.5e",
+      "anchor": "formula-19.5e",
+      "label": "Formula (19.5e)",
+      "section_id": "Evolution_chapter19_004",
+      "latex": "\\mathbf{V a r}(\\widehat{\\mathbf{a}}-\\mathbf{a})=\\sigma_{e}^{2}\\left(\\mathbf{Z}^{T}\\mathbf{M}\\mathbf{Z}+\\lambda\\mathbf{A}^{-1}\\right)^{-1}",
+      "latex_render": "\\mathbf{V a r}(\\widehat{\\mathbf{a}}-\\mathbf{a})=\\sigma_{e}^{2}\\left(\\mathbf{Z}^{T}\\mathbf{M}\\mathbf{Z}+\\lambda\\mathbf{A}^{-1}\\right)^{-1}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.5f",
+      "anchor": "formula-19.5f",
+      "label": "Formula (19.5f)",
+      "section_id": "Evolution_chapter19_004",
+      "latex": "\\boldsymbol{\\sigma}(\\widehat{\\boldsymbol{\\beta}},\\widehat{\\mathbf{a}}-\\mathbf{a})=\\sigma_{e}^{2}\\mathbf{C}_{12}",
+      "latex_render": "\\boldsymbol{\\sigma}(\\widehat{\\boldsymbol{\\beta}},\\widehat{\\mathbf{a}}-\\mathbf{a})=\\sigma_{e}^{2}\\mathbf{C}_{12}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.6a",
+      "anchor": "formula-19.6a",
+      "label": "Formula (19.6a)",
+      "section_id": "Evolution_chapter19_005",
+      "latex": "L(\\boldsymbol{\\sigma})=\\mathbf{b}_{0}+\\boldsymbol{\\sigma}^{T}\\mathbf{b}_{1}+\\boldsymbol{\\sigma}^{T}\\mathbf{Q}\\boldsymbol{\\sigma}",
+      "latex_render": "L(\\boldsymbol{\\sigma})=\\mathbf{b}_{0}+\\boldsymbol{\\sigma}^{T}\\mathbf{b}_{1}+\\boldsymbol{\\sigma}^{T}\\mathbf{Q}\\boldsymbol{\\sigma}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.6b",
+      "anchor": "formula-19.6b",
+      "label": "Formula (19.6b)",
+      "section_id": "Evolution_chapter19_005",
+      "latex": "\\mathbf{V a r}(\\widehat{\\boldsymbol{\\sigma}})\\simeq(-2\\mathbf{Q})^{-1}",
+      "latex_render": "\\mathbf{V a r}(\\widehat{\\boldsymbol{\\sigma}})\\simeq(-2\\mathbf{Q})^{-1}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.7a",
+      "anchor": "formula-19.7a",
+      "label": "Formula (19.7a)",
+      "section_id": "Evolution_chapter19_008",
+      "latex": "y_{ij}=\\mu+a_{ij}+e_{ij}",
+      "latex_render": "y_{ij}=\\mu+a_{ij}+e_{ij}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.7b",
+      "anchor": "formula-19.7b",
+      "label": "Formula (19.7b)",
+      "section_id": "Evolution_chapter19_008",
+      "latex": "\\mathbf{y}=\\boldsymbol{\\mu}\\cdot\\mathbf{1}+\\mathbf{a}+\\mathbf{e}",
+      "latex_render": "\\mathbf{y}=\\boldsymbol{\\mu}\\cdot\\mathbf{1}+\\mathbf{a}+\\mathbf{e}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.7c",
+      "anchor": "formula-19.7c",
+      "label": "Formula (19.7c)",
+      "section_id": "Evolution_chapter19_008",
+      "latex": "\\begin{pmatrix}\\widehat{\\mu}\\\\\\widehat{\\mathbf{a}}\\end{pmatrix}=\\begin{pmatrix}n&\\mathbf{1}^{T}\\\\\\mathbf{1}&\\mathbf{I}+\\lambda\\mathbf{A}^{-1}\\end{pmatrix}^{-1}\\begin{pmatrix}n\\overline{y}\\\\\\mathbf{y}\\end{pmatrix}",
+      "latex_render": "\\begin{pmatrix}\\widehat{\\mu}\\\\\\widehat{\\mathbf{a}}\\end{pmatrix}=\\begin{pmatrix}n&\\mathbf{1}^{T}\\\\\\mathbf{1}&\\mathbf{I}+\\lambda\\mathbf{A}^{-1}\\end{pmatrix}^{-1}\\begin{pmatrix}n\\overline{y}\\\\\\mathbf{y}\\end{pmatrix}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.7d",
+      "anchor": "formula-19.7d",
+      "label": "Formula (19.7d)",
+      "section_id": "Evolution_chapter19_008",
+      "latex": "\\begin{pmatrix}\\mathbf{C}_{11}&\\mathbf{C}_{12}\\\\\\mathbf{C}_{12}^{T}&\\mathbf{C}_{22}\\end{pmatrix}=\\begin{pmatrix}n&\\mathbf{1}^{T}\\\\\\mathbf{1}&\\mathbf{I}+\\lambda\\mathbf{A}^{-1}\\end{pmatrix}^{-1}",
+      "latex_render": "\\begin{pmatrix}\\mathbf{C}_{11}&\\mathbf{C}_{12}\\\\\\mathbf{C}_{12}^{T}&\\mathbf{C}_{22}\\end{pmatrix}=\\begin{pmatrix}n&\\mathbf{1}^{T}\\\\\\mathbf{1}&\\mathbf{I}+\\lambda\\mathbf{A}^{-1}\\end{pmatrix}^{-1}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.8a",
+      "anchor": "formula-19.8a",
+      "label": "Formula (19.8a)",
+      "section_id": "Evolution_chapter19_009",
+      "latex": "\\widehat{\\overline{a}}_{k}=\\frac{1}{n_{k}}\\sum_{j=1}^{n_{k}}\\widehat{a}_{kj}",
+      "latex_render": "\\widehat{\\overline{a}}_{k}=\\frac{1}{n_{k}}\\sum_{j=1}^{n_{k}}\\widehat{a}_{kj}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.8b",
+      "anchor": "formula-19.8b",
+      "label": "Formula (19.8b)",
+      "section_id": "Evolution_chapter19_009",
+      "latex": "\\widehat{\\overline{\\mathbf{a}}}=\\begin{pmatrix}\\widehat{\\overline{a}}_{0}\\\\ \\vdots\\\\ \\widehat{\\overline{a}}_{t-1}\\end{pmatrix}=\\mathbf{K}^{T}\\widehat{\\mathbf{a}}",
+      "latex_render": "\\widehat{\\overline{\\mathbf{a}}}=\\begin{pmatrix}\\widehat{\\overline{a}}_{0}\\\\ \\vdots\\\\ \\widehat{\\overline{a}}_{t-1}\\end{pmatrix}=\\mathbf{K}^{T}\\widehat{\\mathbf{a}}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.8c",
+      "anchor": "formula-19.8c",
+      "label": "Formula (19.8c)",
+      "section_id": "Evolution_chapter19_009",
+      "latex": "\\mathbf{V a r}\\left(\\widehat{\\mathbf{a}}\\right)=\\sigma_{e}^{2}\\mathbf{K}^{T}\\mathbf{C}_{22}\\mathbf{K}",
+      "latex_render": "\\mathbf{V a r}\\left(\\widehat{\\mathbf{a}}\\right)=\\sigma_{e}^{2}\\mathbf{K}^{T}\\mathbf{C}_{22}\\mathbf{K}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.9",
+      "anchor": "formula-19.9",
+      "label": "Formula (19.9)",
+      "section_id": "Evolution_chapter19_012",
+      "latex": "y_{j,t k}=\\mu+b_{j,t}+a_{j,t k}+e_{j,t k}",
+      "latex_render": "y_{j,t k}=\\mu+b_{j,t}+a_{j,t k}+e_{j,t k}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.10",
+      "anchor": "formula-19.10",
+      "label": "Formula (19.10)",
+      "section_id": "Evolution_chapter19_012",
+      "latex": "\\overline{y}_{s,t}-\\overline{y}_{c,t}=\\left(\\overline{a}_{s,t}-\\overline{a}_{c,t}\\right)+\\left(e_{s,t}-e_{c,t}\\right)",
+      "latex_render": "\\overline{y}_{s,t}-\\overline{y}_{c,t}=\\left(\\overline{a}_{s,t}-\\overline{a}_{c,t}\\right)+\\left(e_{s,t}-e_{c,t}\\right)",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.11",
+      "anchor": "formula-19.11",
+      "label": "Formula (19.11)",
+      "section_id": "Evolution_chapter19_012",
+      "latex": "y_{t k}=\\mu+b_{t}+a_{t k}+e_{t k}",
+      "latex_render": "y_{t k}=\\mu+b_{t}+a_{t k}+e_{t k}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.12a",
+      "anchor": "formula-19.12a",
+      "label": "Formula (19.12a)",
+      "section_id": "Evolution_chapter19_014",
+      "latex": "y_{k,ti}=\\mu+b_{t}+a_{k,ti}+e_{k,ti}",
+      "latex_render": "y_{k,ti}=\\mu+b_{t}+a_{k,ti}+e_{k,ti}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.12b",
+      "anchor": "formula-19.12b",
+      "label": "Formula (19.12b)",
+      "section_id": "Evolution_chapter19_014",
+      "latex": "y_{k,ti}=\\mu+b_{k,t}+a_{k,ti}+e_{k,ti}",
+      "latex_render": "y_{k,ti}=\\mu+b_{k,t}+a_{k,ti}+e_{k,ti}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.13",
+      "anchor": "formula-19.13",
+      "label": "Formula (19.13)",
+      "section_id": "Evolution_chapter19_015",
+      "latex": "\\mathbf{V a r}\\begin{pmatrix}\\mathbf{a}_{t}\\\\\\mathbf{a}_{t+1}\\\\\\vdots\\\\\\mathbf{a}_{T}\\end{pmatrix}=\\sigma_{A}^{2}(t)\\begin{pmatrix}\\mathbf{I}&\\mathbf{A}_{t,t+1}&\\cdots&\\mathbf{A}_{t,T}\\\\\\mathbf{A}_{t,t+1}&\\mathbf{A}_{t+1,t+1}&\\cdots&\\mathbf{A}_{t+1,T}\\\\\\vdots&\\ddots&\\vdots&\\vdots\\\\\\mathbf{A}_{t,T}&\\mathbf{A}_{t+1,T}&\\cdots&\\mathbf{A}_{T,T}\\end{pmatrix}",
+      "latex_render": "\\mathbf{V a r}\\begin{pmatrix}\\mathbf{a}_{t}\\\\\\mathbf{a}_{t+1}\\\\\\vdots\\\\\\mathbf{a}_{T}\\end{pmatrix}=\\sigma_{A}^{2}(t)\\begin{pmatrix}\\mathbf{I}&\\mathbf{A}_{t,t+1}&\\cdots&\\mathbf{A}_{t,T}\\\\\\mathbf{A}_{t,t+1}&\\mathbf{A}_{t+1,t+1}&\\cdots&\\mathbf{A}_{t+1,T}\\\\\\vdots&\\ddots&\\vdots&\\vdots\\\\\\mathbf{A}_{t,T}&\\mathbf{A}_{t+1,T}&\\cdots&\\mathbf{A}_{T,T}\\end{pmatrix}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.14",
+      "anchor": "formula-19.14",
+      "label": "Formula (19.14)",
+      "section_id": "Evolution_chapter19_015",
+      "latex": "\\mathrm{Var}(A_{t})=\\frac{1}{n-1}\\sum_{i=1}^{n_{t}}\\left(\\widehat{a}_{ti}-\\widehat{\\overline{a}}_{t}\\right)^{2}",
+      "latex_render": "\\mathrm{Var}(A_{t})=\\frac{1}{n-1}\\sum_{i=1}^{n_{t}}\\left(\\widehat{a}_{ti}-\\widehat{\\overline{a}}_{t}\\right)^{2}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.15a",
+      "anchor": "formula-19.15a",
+      "label": "Formula (19.15a)",
+      "section_id": "Evolution_chapter19_016",
+      "latex": "A_{i}=\\frac{1}{2}A_{f_{i}}+\\frac{1}{2}A_{m_{i}}+s_{i}",
+      "latex_render": "A_{i}=\\frac{1}{2}A_{f_{i}}+\\frac{1}{2}A_{m_{i}}+s_{i}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.15b",
+      "anchor": "formula-19.15b",
+      "label": "Formula (19.15b)",
+      "section_id": "Evolution_chapter19_016",
+      "latex": "\\sigma_{s_{i}}^{2}=\\left(1-\\overline{f}_{i}\\right)\\sigma_{a}^{2}/2",
+      "latex_render": "\\sigma_{s_{i}}^{2}=\\left(1-\\overline{f}_{i}\\right)\\sigma_{a}^{2}/2",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.16",
+      "anchor": "formula-19.16",
+      "label": "Formula (19.16)",
+      "section_id": "Evolution_chapter19_016",
+      "latex": "F_{ii}=\\left(1-\\overline{f}_{i}\\right)=\\left(1-\\frac{f_{k}+f_{j}}{2}\\right)=\\left(2-\\frac{A_{kk}+A_{jj}}{2}\\right)",
+      "latex_render": "F_{ii}=\\left(1-\\overline{f}_{i}\\right)=\\left(1-\\frac{f_{k}+f_{j}}{2}\\right)=\\left(2-\\frac{A_{kk}+A_{jj}}{2}\\right)",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.17a",
+      "anchor": "formula-19.17a",
+      "label": "Formula (19.17a)",
+      "section_id": "",
+      "latex": "\\mathbf{a}=\\mathbf{T}\\mathbf{w}=\\mathbf{T}\\begin{pmatrix}\\mathbf{a}_{b}\\\\ \\mathbf{s}\\end{pmatrix}",
+      "latex_render": "\\mathbf{a}=\\mathbf{T}\\mathbf{w}=\\mathbf{T}\\begin{pmatrix}\\mathbf{a}_{b}\\\\ \\mathbf{s}\\end{pmatrix}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.17b",
+      "anchor": "formula-19.17b",
+      "label": "Formula (19.17b)",
+      "section_id": "",
+      "latex": "T_{i,j}=\\frac{1}{2}\\left(T_{f,j}+T_{m,j}\\right)\\quad for\\quad j<i",
+      "latex_render": "T_{i,j}=\\frac{1}{2}\\left(T_{f,j}+T_{m,j}\\right)\\quad for\\quad j<i",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.18a",
+      "anchor": "formula-19.18a",
+      "label": "Formula (19.18a)",
+      "section_id": "",
+      "latex": "\\mathbf{V a r}(\\mathbf{a})=\\mathbf{V a r}(\\mathbf{T}\\mathbf{w})=\\mathbf{T}\\mathbf{V a r}(\\mathbf{w})\\mathbf{T}^{T}",
+      "latex_render": "\\mathbf{V a r}(\\mathbf{a})=\\mathbf{V a r}(\\mathbf{T}\\mathbf{w})=\\mathbf{T}\\mathbf{V a r}(\\mathbf{w})\\mathbf{T}^{T}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.18b",
+      "anchor": "formula-19.18b",
+      "label": "Formula (19.18b)",
+      "section_id": "",
+      "latex": "\\mathbf{V a r}(\\mathbf{w})=\\mathbf{V a r}\\begin{pmatrix}\\mathbf{a}_{b}\\\\ \\mathbf{s}\\end{pmatrix}=\\sigma_{a}^{2}\\begin{pmatrix}\\mathbf{I}&\\mathbf{0}\\\\ \\mathbf{0}&\\mathbf{F}/2\\end{pmatrix}=\\sigma_{a}^{2}\\boldsymbol{A}",
+      "latex_render": "\\mathbf{V a r}(\\mathbf{w})=\\mathbf{V a r}\\begin{pmatrix}\\mathbf{a}_{b}\\\\ \\mathbf{s}\\end{pmatrix}=\\sigma_{a}^{2}\\begin{pmatrix}\\mathbf{I}&\\mathbf{0}\\\\ \\mathbf{0}&\\mathbf{F}/2\\end{pmatrix}=\\sigma_{a}^{2}\\boldsymbol{A}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.18c",
+      "anchor": "formula-19.18c",
+      "label": "Formula (19.18c)",
+      "section_id": "",
+      "latex": "\\mathbf{A}=\\mathbf{T}\\boldsymbol{\\Lambda}\\mathbf{T}^{T}",
+      "latex_render": "\\mathbf{A}=\\mathbf{T}\\boldsymbol{\\Lambda}\\mathbf{T}^{T}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.19",
+      "anchor": "formula-19.19",
+      "label": "Formula (19.19)",
+      "section_id": "",
+      "latex": "\\mathbf{V a r}(\\mathbf{a})=\\mathbf{V a r}\\begin{pmatrix}\\mathbf{a}_{1}\\\\ \\mathbf{a}_{2}\\end{pmatrix}=\\sigma_{a}^{2}(1)\\mathbf{T}\\begin{pmatrix}\\boldsymbol{A}_{1}&\\mathbf{0}\\\\ \\mathbf{0}&\\mathbf{0}\\end{pmatrix}\\mathbf{T}^{T}+\\sigma_{a}^{2}(2)\\mathbf{T}\\begin{pmatrix}\\mathbf{0}&\\mathbf{0}\\\\ \\mathbf{0}&\\boldsymbol{A}_{2}\\end{pmatrix}\\mathbf{T}^{T}",
+      "latex_render": "\\mathbf{V a r}(\\mathbf{a})=\\mathbf{V a r}\\begin{pmatrix}\\mathbf{a}_{1}\\\\ \\mathbf{a}_{2}\\end{pmatrix}=\\sigma_{a}^{2}(1)\\mathbf{T}\\begin{pmatrix}\\boldsymbol{A}_{1}&\\mathbf{0}\\\\ \\mathbf{0}&\\mathbf{0}\\end{pmatrix}\\mathbf{T}^{T}+\\sigma_{a}^{2}(2)\\mathbf{T}\\begin{pmatrix}\\mathbf{0}&\\mathbf{0}\\\\ \\mathbf{0}&\\boldsymbol{A}_{2}\\end{pmatrix}\\mathbf{T}^{T}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.20a",
+      "anchor": "formula-19.20a",
+      "label": "Formula (19.20a)",
+      "section_id": "Evolution_chapter19_018",
+      "latex": "\\mathbf{y}=\\mathbf{X}\\boldsymbol{\\beta}+\\mathbf{Z}\\mathbf{a}+\\mathbf{W}\\mathbf{u}+\\mathbf{e}",
+      "latex_render": "\\mathbf{y}=\\mathbf{X}\\boldsymbol{\\beta}+\\mathbf{Z}\\mathbf{a}+\\mathbf{W}\\mathbf{u}+\\mathbf{e}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.20b",
+      "anchor": "formula-19.20b",
+      "label": "Formula (19.20b)",
+      "section_id": "Evolution_chapter19_018",
+      "latex": "\\operatorname{Var}\\begin{pmatrix}{{{\\mathbf{a}}}} \\\\{{{\\mathbf{u}}}} \\\\{{{\\mathbf{e}}}}\\end{pmatrix}=\\begin{pmatrix}{{{\\sigma_{A}^{2}\\mathbf{A}}}}&{{{0}}}&{{{0}}} \\\\{{{0}}}&{{{\\sigma_{u}^{2}\\mathbf{I}}}}&{{{0}}} \\\\{{{0}}}&{{{0}}}&{{{\\sigma_{e}^{2}\\mathbf{I}}}}\\end{pmatrix}",
+      "latex_render": "\\operatorname{Var}\\begin{pmatrix}{{{\\mathbf{a}}}} \\\\{{{\\mathbf{u}}}} \\\\{{{\\mathbf{e}}}}\\end{pmatrix}=\\begin{pmatrix}{{{\\sigma_{A}^{2}\\mathbf{A}}}}&{{{0}}}&{{{0}}} \\\\{{{0}}}&{{{\\sigma_{u}^{2}\\mathbf{I}}}}&{{{0}}} \\\\{{{0}}}&{{{0}}}&{{{\\sigma_{e}^{2}\\mathbf{I}}}}\\end{pmatrix}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.20c",
+      "anchor": "formula-19.20c",
+      "label": "Formula (19.20c)",
+      "section_id": "Evolution_chapter19_018",
+      "latex": "\\mathbf{V a r}(\\mathbf{y})=\\mathbf{V}=\\sigma_{A}^{2}\\mathbf{Z}\\mathbf{A}\\mathbf{Z}^{T}+\\sigma_{u}^{2}\\mathbf{W}\\mathbf{W}^{T}+\\sigma_{e}^{2}\\mathbf{I}",
+      "latex_render": "\\mathbf{V a r}(\\mathbf{y})=\\mathbf{V}=\\sigma_{A}^{2}\\mathbf{Z}\\mathbf{A}\\mathbf{Z}^{T}+\\sigma_{u}^{2}\\mathbf{W}\\mathbf{W}^{T}+\\sigma_{e}^{2}\\mathbf{I}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.21a",
+      "anchor": "formula-19.21a",
+      "label": "Formula (19.21a)",
+      "section_id": "Evolution_chapter19_018",
+      "latex": "\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{X}&\\mathbf{X}^{T}\\mathbf{Z}&\\mathbf{X}^{T}\\mathbf{W}\\\\\\mathbf{Z}^{T}\\mathbf{X}&\\mathbf{Z}^{T}\\mathbf{Z}+\\lambda_{A}\\mathbf{A}^{-1}&\\mathbf{Z}^{T}\\mathbf{W}\\\\\\mathbf{W}^{T}\\mathbf{X}&\\mathbf{W}^{T}\\mathbf{Z}&\\mathbf{W}^{T}\\mathbf{W}+\\lambda_{u}\\mathbf{I}\\end{pmatrix}\\begin{pmatrix}\\widehat{\\boldsymbol{\\beta}}\\\\\\widehat{\\mathbf{a}}\\\\\\widehat{\\mathbf{u}}\\end{pmatrix}=\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{y}\\\\\\mathbf{Z}^{T}\\mathbf{y}\\\\\\mathbf{W}^{T}\\mathbf{y}\\end{pmatrix}",
+      "latex_render": "\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{X}&\\mathbf{X}^{T}\\mathbf{Z}&\\mathbf{X}^{T}\\mathbf{W}\\\\\\mathbf{Z}^{T}\\mathbf{X}&\\mathbf{Z}^{T}\\mathbf{Z}+\\lambda_{A}\\mathbf{A}^{-1}&\\mathbf{Z}^{T}\\mathbf{W}\\\\\\mathbf{W}^{T}\\mathbf{X}&\\mathbf{W}^{T}\\mathbf{Z}&\\mathbf{W}^{T}\\mathbf{W}+\\lambda_{u}\\mathbf{I}\\end{pmatrix}\\begin{pmatrix}\\widehat{\\boldsymbol{\\beta}}\\\\\\widehat{\\mathbf{a}}\\\\\\widehat{\\mathbf{u}}\\end{pmatrix}=\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{y}\\\\\\mathbf{Z}^{T}\\mathbf{y}\\\\\\mathbf{W}^{T}\\mathbf{y}\\end{pmatrix}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.21b",
+      "anchor": "formula-19.21b",
+      "label": "Formula (19.21b)",
+      "section_id": "Evolution_chapter19_018",
+      "latex": "\\lambda_{A}=\\frac{\\sigma_{e}^{2}}{\\sigma_{A}^{2}}\\quad and\\quad\\lambda_{u}=\\frac{\\sigma_{e}^{2}}{\\sigma_{u}^{2}}",
+      "latex_render": "\\lambda_{A}=\\frac{\\sigma_{e}^{2}}{\\sigma_{A}^{2}}\\quad and\\quad\\lambda_{u}=\\frac{\\sigma_{e}^{2}}{\\sigma_{u}^{2}}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.22",
+      "anchor": "formula-19.22",
+      "label": "Formula (19.22)",
+      "section_id": "Evolution_chapter19_020",
+      "latex": "\\begin{pmatrix}\\mathbf{a}_{\\mathbf{b}}\\\\\\mathbf{a}_{\\mathbf{r}}\\end{pmatrix}=\\begin{pmatrix}\\mathbf{I}&\\mathbf{0}\\\\\\mathbf{P}_{1}&\\mathbf{P}_{2}\\end{pmatrix}\\begin{pmatrix}\\mathbf{a}_{\\mathbf{b}}\\\\\\mathbf{a}_{\\mathbf{r}}\\end{pmatrix}+\\begin{pmatrix}\\mathbf{0}\\\\\\mathbf{s}\\end{pmatrix}",
+      "latex_render": "\\begin{pmatrix}\\mathbf{a}_{\\mathbf{b}}\\\\\\mathbf{a}_{\\mathbf{r}}\\end{pmatrix}=\\begin{pmatrix}\\mathbf{I}&\\mathbf{0}\\\\\\mathbf{P}_{1}&\\mathbf{P}_{2}\\end{pmatrix}\\begin{pmatrix}\\mathbf{a}_{\\mathbf{b}}\\\\\\mathbf{a}_{\\mathbf{r}}\\end{pmatrix}+\\begin{pmatrix}\\mathbf{0}\\\\\\mathbf{s}\\end{pmatrix}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.23",
+      "anchor": "formula-19.23",
+      "label": "Formula (19.23)",
+      "section_id": "Evolution_chapter19_020",
+      "latex": "\\mathbf{y}=\\mathbf{X}\\boldsymbol{\\beta}+\\mathbf{Z}_{1}\\mathbf{a}_{\\mathbf{b}}+\\mathbf{Z}_{2}\\mathbf{a}_{\\mathbf{r}}+\\mathbf{e}",
+      "latex_render": "\\mathbf{y}=\\mathbf{X}\\boldsymbol{\\beta}+\\mathbf{Z}_{1}\\mathbf{a}_{\\mathbf{b}}+\\mathbf{Z}_{2}\\mathbf{a}_{\\mathbf{r}}+\\mathbf{e}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.24a",
+      "anchor": "formula-19.24a",
+      "label": "Formula (19.24a)",
+      "section_id": "Evolution_chapter19_020",
+      "latex": "\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{X}&\\mathbf{X}^{T}\\mathbf{Z}_{1}&\\mathbf{X}^{T}\\mathbf{Z}_{2}\\\\\\mathbf{Z}_{1}^{T}\\mathbf{X}&\\mathbf{Z}_{1}^{T}\\mathbf{Z}_{1}+\\lambda\\mathbf{Q}^{T}\\mathbf{G}^{-1}\\mathbf{Q}&-\\lambda\\mathbf{Q}^{T}\\mathbf{G}^{-1}\\\\\\mathbf{Z}_{2}^{T}\\mathbf{X}&-\\lambda\\mathbf{G}^{-1}\\mathbf{Q}&\\mathbf{Z}_{2}^{T}\\mathbf{Z}_{2}+\\lambda\\mathbf{G}^{-1}\\end{pmatrix}\\begin{pmatrix}\\widehat{\\boldsymbol{\\beta}}\\\\\\widehat{\\mathbf{a}}_{\\mathbf{b}}\\\\\\widehat{\\mathbf{a}}_{\\mathbf{r}}\\end{pmatrix}=\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{y}\\\\\\mathbf{Z}_{1}^{T}\\mathbf{y}\\\\\\mathbf{Z}_{2}^{T}\\mathbf{y}\\end{pmatrix}",
+      "latex_render": "\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{X}&\\mathbf{X}^{T}\\mathbf{Z}_{1}&\\mathbf{X}^{T}\\mathbf{Z}_{2}\\\\\\mathbf{Z}_{1}^{T}\\mathbf{X}&\\mathbf{Z}_{1}^{T}\\mathbf{Z}_{1}+\\lambda\\mathbf{Q}^{T}\\mathbf{G}^{-1}\\mathbf{Q}&-\\lambda\\mathbf{Q}^{T}\\mathbf{G}^{-1}\\\\\\mathbf{Z}_{2}^{T}\\mathbf{X}&-\\lambda\\mathbf{G}^{-1}\\mathbf{Q}&\\mathbf{Z}_{2}^{T}\\mathbf{Z}_{2}+\\lambda\\mathbf{G}^{-1}\\end{pmatrix}\\begin{pmatrix}\\widehat{\\boldsymbol{\\beta}}\\\\\\widehat{\\mathbf{a}}_{\\mathbf{b}}\\\\\\widehat{\\mathbf{a}}_{\\mathbf{r}}\\end{pmatrix}=\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{y}\\\\\\mathbf{Z}_{1}^{T}\\mathbf{y}\\\\\\mathbf{Z}_{2}^{T}\\mathbf{y}\\end{pmatrix}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.24b",
+      "anchor": "formula-19.24b",
+      "label": "Formula (19.24b)",
+      "section_id": "Evolution_chapter19_020",
+      "latex": "\\mathbf{Q}=(\\mathbf{I}-\\mathbf{P}_{2})^{-1}\\mathbf{P}_{1}\\quad and\\quad\\mathbf{G}=(\\mathbf{I}-\\mathbf{P}_{2})^{-1}\\mathbf{F}\\left[(\\mathbf{I}-\\mathbf{P}_{2})^{-1}\\right]^{T}",
+      "latex_render": "\\mathbf{Q}=(\\mathbf{I}-\\mathbf{P}_{2})^{-1}\\mathbf{P}_{1}\\quad and\\quad\\mathbf{G}=(\\mathbf{I}-\\mathbf{P}_{2})^{-1}\\mathbf{F}\\left[(\\mathbf{I}-\\mathbf{P}_{2})^{-1}\\right]^{T}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.25a",
+      "anchor": "formula-19.25a",
+      "label": "Formula (19.25a)",
+      "section_id": "Evolution_chapter19_021",
+      "latex": "\\mathbf{y}=\\mathbf{X}\\boldsymbol{\\beta}+\\mathbf{Z}\\mathbf{a}+\\mathbf{Z}\\mathbf{d}+\\mathbf{e}",
+      "latex_render": "\\mathbf{y}=\\mathbf{X}\\boldsymbol{\\beta}+\\mathbf{Z}\\mathbf{a}+\\mathbf{Z}\\mathbf{d}+\\mathbf{e}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.25b",
+      "anchor": "formula-19.25b",
+      "label": "Formula (19.25b)",
+      "section_id": "Evolution_chapter19_021",
+      "latex": "\\mathbf{V}\\mathbf{a}\\mathbf{r}(\\mathbf{y})=\\mathbf{V}=\\sigma_{A}^{2}\\mathbf{Z}\\mathbf{A}\\mathbf{Z}^{T}+\\sigma_{D}^{2}\\mathbf{Z}\\mathbf{D}\\mathbf{Z}^{T}+\\sigma_{e}^{2}\\mathbf{I}",
+      "latex_render": "\\mathbf{V}\\mathbf{a}\\mathbf{r}(\\mathbf{y})=\\mathbf{V}=\\sigma_{A}^{2}\\mathbf{Z}\\mathbf{A}\\mathbf{Z}^{T}+\\sigma_{D}^{2}\\mathbf{Z}\\mathbf{D}\\mathbf{Z}^{T}+\\sigma_{e}^{2}\\mathbf{I}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.25c",
+      "anchor": "formula-19.25c",
+      "label": "Formula (19.25c)",
+      "section_id": "Evolution_chapter19_021",
+      "latex": "\\mathbf{y}=\\mathbf{X}\\boldsymbol{\\beta}+\\mathbf{Z}\\mathbf{a}+\\mathbf{e}^{*}",
+      "latex_render": "\\mathbf{y}=\\mathbf{X}\\boldsymbol{\\beta}+\\mathbf{Z}\\mathbf{a}+\\mathbf{e}^{*}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.25d",
+      "anchor": "formula-19.25d",
+      "label": "Formula (19.25d)",
+      "section_id": "Evolution_chapter19_021",
+      "latex": "\\mathbf{V a r}(\\mathbf{e}^{*})=\\sigma_{D}^{2}\\mathbf{Z D}\\mathbf{Z}^{T}+\\sigma_{e}^{2}\\mathbf{I}",
+      "latex_render": "\\mathbf{V a r}(\\mathbf{e}^{*})=\\sigma_{D}^{2}\\mathbf{Z D}\\mathbf{Z}^{T}+\\sigma_{e}^{2}\\mathbf{I}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.26a",
+      "anchor": "formula-19.26a",
+      "label": "Formula (19.26a)",
+      "section_id": "Evolution_chapter19_021",
+      "latex": "\\Delta_{i j}=\\Theta_{g k}\\Theta_{h l}+\\Theta_{g l}\\Theta_{h k}",
+      "latex_render": "\\Delta_{i j}=\\Theta_{g k}\\Theta_{h l}+\\Theta_{g l}\\Theta_{h k}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.26b",
+      "anchor": "formula-19.26b",
+      "label": "Formula (19.26b)",
+      "section_id": "Evolution_chapter19_021",
+      "latex": "D_{ij}=\\frac{A_{gk}\\ A_{hl}+A_{gl}\\ A_{hk}}{4}",
+      "latex_render": "D_{ij}=\\frac{A_{gk}\\ A_{hl}+A_{gl}\\ A_{hk}}{4}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.27",
+      "anchor": "formula-19.27",
+      "label": "Formula (19.27)",
+      "section_id": "Evolution_chapter19_021",
+      "latex": "\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{X}&\\mathbf{X}^{T}\\mathbf{Z}&\\mathbf{X}^{T}\\mathbf{Z}\\\\\\mathbf{Z}^{T}\\mathbf{X}&\\mathbf{Z}^{T}\\mathbf{Z}+\\lambda_{A}\\mathbf{A}^{-1}&\\mathbf{Z}^{T}\\mathbf{Z}\\\\\\mathbf{Z}^{T}\\mathbf{X}&\\mathbf{Z}^{T}\\mathbf{Z}&\\mathbf{Z}^{T}\\mathbf{Z}+\\lambda_{D}\\mathbf{D}^{-1}\\end{pmatrix}\\begin{pmatrix}\\widehat{\\boldsymbol{\\beta}}\\\\\\widehat{\\mathbf{a}}\\\\\\widehat{\\mathbf{d}}\\end{pmatrix}=\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{y}\\\\\\mathbf{Z}^{T}\\mathbf{y}\\\\\\mathbf{Z}^{T}\\mathbf{y}\\end{pmatrix}",
+      "latex_render": "\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{X}&\\mathbf{X}^{T}\\mathbf{Z}&\\mathbf{X}^{T}\\mathbf{Z}\\\\\\mathbf{Z}^{T}\\mathbf{X}&\\mathbf{Z}^{T}\\mathbf{Z}+\\lambda_{A}\\mathbf{A}^{-1}&\\mathbf{Z}^{T}\\mathbf{Z}\\\\\\mathbf{Z}^{T}\\mathbf{X}&\\mathbf{Z}^{T}\\mathbf{Z}&\\mathbf{Z}^{T}\\mathbf{Z}+\\lambda_{D}\\mathbf{D}^{-1}\\end{pmatrix}\\begin{pmatrix}\\widehat{\\boldsymbol{\\beta}}\\\\\\widehat{\\mathbf{a}}\\\\\\widehat{\\mathbf{d}}\\end{pmatrix}=\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{y}\\\\\\mathbf{Z}^{T}\\mathbf{y}\\\\\\mathbf{Z}^{T}\\mathbf{y}\\end{pmatrix}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.28",
+      "anchor": "formula-19.28",
+      "label": "Formula (19.28)",
+      "section_id": "Evolution_chapter19_021",
+      "latex": "y_{ti}=\\mu+\\left(B\\cdot f_{ti}\\right)+a_{ti}+b_{ti}+e_{ti}",
+      "latex_render": "y_{ti}=\\mu+\\left(B\\cdot f_{ti}\\right)+a_{ti}+b_{ti}+e_{ti}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.29a",
+      "anchor": "formula-19.29a",
+      "label": "Formula (19.29a)",
+      "section_id": "Evolution_chapter19_023",
+      "latex": "p(\\boldsymbol{\\Theta}\\mid\\mathbf{y})=\\frac{p(\\mathbf{y}\\mid\\boldsymbol{\\Theta})p(\\boldsymbol{\\Theta})}{p(\\mathbf{y})}=\\frac{p(\\mathbf{y}\\mid\\boldsymbol{\\Theta})p(\\boldsymbol{\\Theta})}{\\int p(\\mathbf{y},\\boldsymbol{\\Theta})d\\boldsymbol{\\Theta}}",
+      "latex_render": "p(\\boldsymbol{\\Theta}\\mid\\mathbf{y})=\\frac{p(\\mathbf{y}\\mid\\boldsymbol{\\Theta})p(\\boldsymbol{\\Theta})}{p(\\mathbf{y})}=\\frac{p(\\mathbf{y}\\mid\\boldsymbol{\\Theta})p(\\boldsymbol{\\Theta})}{\\int p(\\mathbf{y},\\boldsymbol{\\Theta})d\\boldsymbol{\\Theta}}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.29b",
+      "anchor": "formula-19.29b",
+      "label": "Formula (19.29b)",
+      "section_id": "",
+      "latex": "p(\\boldsymbol{\\Theta}\\mid\\mathbf{y})\\propto p(\\mathbf{y}\\mid\\boldsymbol{\\Theta})p(\\boldsymbol{\\Theta})",
+      "latex_render": "p(\\boldsymbol{\\Theta}\\mid\\mathbf{y})\\propto p(\\mathbf{y}\\mid\\boldsymbol{\\Theta})p(\\boldsymbol{\\Theta})",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.30",
+      "anchor": "formula-19.30",
+      "label": "Formula (19.30)",
+      "section_id": "Evolution_chapter19_023",
+      "latex": "\\begin{aligned}p(\\boldsymbol{\\Theta}_{1}\\mid\\mathbf{y})&=\\int p(\\boldsymbol{\\Theta}_{1},\\boldsymbol{\\Theta}_{nu}\\mid\\mathbf{y})d\\boldsymbol{\\Theta}_{nu}\\\\&=\\int p(\\boldsymbol{\\Theta}_{1}\\mid\\boldsymbol{\\Theta}_{nu},\\mathbf{y})p(\\boldsymbol{\\Theta}_{nu}\\mid\\mathbf{y})d\\boldsymbol{\\Theta}_{nu}\\\\&=E_{\\boldsymbol{\\Theta}_{nu}}\\left[p(\\boldsymbol{\\Theta}_{1}\\mid\\boldsymbol{\\Theta}_{nu},\\mathbf{y})\\right]\\\\ \\end{aligned}",
+      "latex_render": "\\begin{aligned}p(\\boldsymbol{\\Theta}_{1}\\mid\\mathbf{y})&=\\int p(\\boldsymbol{\\Theta}_{1},\\boldsymbol{\\Theta}_{nu}\\mid\\mathbf{y})d\\boldsymbol{\\Theta}_{nu}\\\\&=\\int p(\\boldsymbol{\\Theta}_{1}\\mid\\boldsymbol{\\Theta}_{nu},\\mathbf{y})p(\\boldsymbol{\\Theta}_{nu}\\mid\\mathbf{y})d\\boldsymbol{\\Theta}_{nu}\\\\&=E_{\\boldsymbol{\\Theta}_{nu}}\\left[p(\\boldsymbol{\\Theta}_{1}\\mid\\boldsymbol{\\Theta}_{nu},\\mathbf{y})\\right]\\\\ \\end{aligned}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.31a",
+      "anchor": "formula-19.31a",
+      "label": "Formula (19.31a)",
+      "section_id": "Evolution_chapter19_024",
+      "latex": "y_{i}\\sim p(y\\mid x=x_{i})",
+      "latex_render": "y_{i}\\sim p(y\\mid x=x_{i})",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.31b",
+      "anchor": "formula-19.31b",
+      "label": "Formula (19.31b)",
+      "section_id": "Evolution_chapter19_024",
+      "latex": "y_{i}\\sim p(y\\mid x=x_{i})",
+      "latex_render": "y_{i}\\sim p(y\\mid x=x_{i})",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.32a",
+      "anchor": "formula-19.32a",
+      "label": "Formula (19.32a)",
+      "section_id": "Evolution_chapter19_024",
+      "latex": "E[f(x)]_{m}=\\frac{1}{m}\\sum_{i=1}^{m}f(x_{i})",
+      "latex_render": "E[f(x)]_{m}=\\frac{1}{m}\\sum_{i=1}^{m}f(x_{i})",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.32b",
+      "anchor": "formula-19.32b",
+      "label": "Formula (19.32b)",
+      "section_id": "Evolution_chapter19_024",
+      "latex": "E[f(\\theta^{(1)},\\cdots,\\theta^{(n)})]_{m}=\\frac{1}{m}\\sum_{i=1}^{m}f(\\theta^{(1)}_{i},\\cdots,\\theta^{(n)}_{i})",
+      "latex_render": "E[f(\\theta^{(1)},\\cdots,\\theta^{(n)})]_{m}=\\frac{1}{m}\\sum_{i=1}^{m}f(\\theta^{(1)}_{i},\\cdots,\\theta^{(n)}_{i})",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.33a",
+      "anchor": "formula-19.33a",
+      "label": "Formula (19.33a)",
+      "section_id": "Evolution_chapter19_025",
+      "latex": "\\mathbf{y}\\mid\\beta,\\mathbf{a},\\sigma_{e}^{2}\\sim\\mathrm{MVN}(\\mathbf{X}\\beta+\\mathbf{Z}\\mathbf{a},\\sigma_{e}^{2}\\mathbf{I})",
+      "latex_render": "\\mathbf{y}\\mid\\beta,\\mathbf{a},\\sigma_{e}^{2}\\sim\\mathrm{MVN}(\\mathbf{X}\\beta+\\mathbf{Z}\\mathbf{a},\\sigma_{e}^{2}\\mathbf{I})",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "19.33b",
+      "anchor": "formula-19.33b",
+      "label": "Formula (19.33b)",
+      "section_id": "Evolution_chapter19_025",
+      "latex": "\\mathbf{a}\\mid\\mathbf{A},\\sigma_{A}^{2}\\sim\\mathrm{MVN}(\\mathbf{0},\\sigma_{A}^{2}\\mathbf{A})",
+      "latex_render": "\\mathbf{a}\\mid\\mathbf{A},\\sigma_{A}^{2}\\sim\\mathrm{MVN}(\\mathbf{0},\\sigma_{A}^{2}\\mathbf{A})",
+      "origin": "paddle"
+    }
+  ],
+  "references": {
+    "Evolution_chapter19_section_001": [
+      {
+        "kind": "chapter",
+        "id": "19",
+        "label": "Chapter 19",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_chapter19_001": [
+      {
+        "kind": "chapter",
+        "id": "26",
+        "label": "LW Chapter 26",
+        "book_hint": "Genetics",
+        "link_scope": "lw"
+      },
+      {
+        "kind": "chapter",
+        "id": "27",
+        "label": "LW Chapter 27",
+        "book_hint": "Genetics",
+        "link_scope": "lw"
+      },
+      {
+        "kind": "chapter",
+        "id": "20",
+        "label": "Chapter 20",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "chapter",
+        "id": "22",
+        "label": "Chapter 22",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "chapter",
+        "id": "10",
+        "label": "Chapter 10",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_chapter19_002": [
+      {
+        "kind": "figure",
+        "id": "19.1",
+        "label": "Figure 19.1",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "19.2",
+        "label": "Example 19.2",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_chapter19_003": [
+      {
+        "kind": "chapter",
+        "id": "13",
+        "label": "Chapter 13",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_chapter19_004": [
+      {
+        "kind": "chapter",
+        "id": "26",
+        "label": "LW Chapter 26",
+        "book_hint": "Genetics",
+        "link_scope": "lw"
+      },
+      {
+        "kind": "chapter",
+        "id": "27",
+        "label": "LW Chapter 27",
+        "book_hint": "Genetics",
+        "link_scope": "lw"
+      },
+      {
+        "kind": "chapter",
+        "id": "8",
+        "label": "LW Chapter 8",
+        "book_hint": "Genetics",
+        "link_scope": "lw"
+      },
+      {
+        "kind": "equation",
+        "id": "19.1",
+        "label": "Equation 19.1",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "19.3a",
+        "label": "Equation 19.3a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "19.2a",
+        "label": "Equation 19.2a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "19.5",
+        "label": "Example 19.5",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "19.2b",
+        "label": "Equation 19.2b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_chapter19_005": [
+      {
+        "kind": "chapter",
+        "id": "20",
+        "label": "Chapter 20",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "19.3b",
+        "label": "Equation 19.3b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "19.1",
+        "label": "Equation 19.1",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "19.3a",
+        "label": "Equation 19.3a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "A6.5",
+        "label": "Example A6.5",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "19.4",
+        "label": "Equation 19.4",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "19.3c",
+        "label": "Equation 19.3c",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "19.5c",
+        "label": "Equation 19.5c",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "19.5b",
+        "label": "Equation 19.5b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_chapter19_006": [
+      {
+        "kind": "chapter",
+        "id": "27",
+        "label": "LW Chapter 27",
+        "book_hint": "Genetics",
+        "link_scope": "lw"
+      },
+      {
+        "kind": "chapter",
+        "id": "30",
+        "label": "Chapter 30",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "19.6a",
+        "label": "Equation 19.6a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A6.7b",
+        "label": "Equation A6.7b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "19.6b",
+        "label": "Equation 19.6b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_chapter19_007": [
+      {
+        "kind": "equation",
+        "id": "16.2",
+        "label": "Equation 16.2",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "16.7a",
+        "label": "Equation 16.7a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_chapter19_008": [
+      {
+        "kind": "chapter",
+        "id": "22",
+        "label": "Chapter 22",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "chapter",
+        "id": "26",
+        "label": "LW Chapter 26",
+        "book_hint": "Genetics",
+        "link_scope": "lw"
+      }
+    ],
+    "Evolution_chapter19_009": [
+      {
+        "kind": "chapter",
+        "id": "7",
+        "label": "LW Chapter 7",
+        "book_hint": "Genetics",
+        "link_scope": "lw"
+      },
+      {
+        "kind": "chapter",
+        "id": "26",
+        "label": "LW Chapter 26",
+        "book_hint": "Genetics",
+        "link_scope": "lw"
+      },
+      {
+        "kind": "equation",
+        "id": "19.1",
+        "label": "Equation 19.1",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "19.5",
+        "label": "Example 19.5",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "19.4",
+        "label": "Equation 19.4",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_chapter19_010": [
+      {
+        "kind": "example",
+        "id": "19.1",
+        "label": "Example 19.1",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "19.5a",
+        "label": "Equation 19.5a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "8.21b",
+        "label": "LW Equation 8.21b",
+        "book_hint": "Genetics",
+        "link_scope": "lw"
+      },
+      {
+        "kind": "equation",
+        "id": "19.7d",
+        "label": "Equation 19.7d",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "19.3a",
+        "label": "Equation 19.3a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "19.2b",
+        "label": "Equation 19.2b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "19.3b",
+        "label": "Equation 19.3b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_chapter19_011": [],
+    "Evolution_chapter19_012": [
+      {
+        "kind": "chapter",
+        "id": "21",
+        "label": "Chapter 21",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "19.2",
+        "label": "Example 19.2",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "figure",
+        "id": "19.1",
+        "label": "Figure 19.1",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "19.7",
+        "label": "Example 19.7",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_chapter19_013": [
+      {
+        "kind": "example",
+        "id": "19.3",
+        "label": "Example 19.3",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "figure",
+        "id": "9.2",
+        "label": "Figure 9.2",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "figure",
+        "id": "19.2",
+        "label": "Figure 19.2",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_chapter19_014": [
+      {
+        "kind": "figure",
+        "id": "19.2",
+        "label": "Figure 19.2",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "19.6",
+        "label": "Example 19.6",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "19.3",
+        "label": "Example 19.3",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_chapter19_015": [
+      {
+        "kind": "chapter",
+        "id": "16",
+        "label": "Chapter 16",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_chapter19_016": [
+      {
+        "kind": "chapter",
+        "id": "16",
+        "label": "Chapter 16",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "chapter",
+        "id": "3",
+        "label": "Chapter 3",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "chapter",
+        "id": "24",
+        "label": "Chapter 24",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "19.14",
+        "label": "Equation 19.14",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "20.23c",
+        "label": "Equation 20.23c",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_chapter19_017": [
+      {
+        "kind": "chapter",
+        "id": "5",
+        "label": "Chapter 5",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "chapter",
+        "id": "16",
+        "label": "Chapter 16",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "chapter",
+        "id": "25",
+        "label": "Chapter 25",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "chapter",
+        "id": "15",
+        "label": "Chapter 15",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "chapter",
+        "id": "24",
+        "label": "Chapter 24",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "16.2",
+        "label": "Equation 16.2",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "16.9c",
+        "label": "Equation 16.9c",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "16.8a",
+        "label": "Equation 16.8a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "16.2",
+        "label": "Example 16.2",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "19.15a",
+        "label": "Equation 19.15a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "19.4",
+        "label": "Example 19.4",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "19.17a",
+        "label": "Equation 19.17a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "19.18a",
+        "label": "Equation 19.18a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "19.18c",
+        "label": "Equation 19.18c",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_chapter19_018": [
+      {
+        "kind": "example",
+        "id": "19.5",
+        "label": "Example 19.5",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "19.3b",
+        "label": "Equation 19.3b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_chapter19_019": [
+      {
+        "kind": "chapter",
+        "id": "26",
+        "label": "LW Chapter 26",
+        "book_hint": "Genetics",
+        "link_scope": "lw"
+      },
+      {
+        "kind": "chapter",
+        "id": "27",
+        "label": "LW Chapter 27",
+        "book_hint": "Genetics",
+        "link_scope": "lw"
+      },
+      {
+        "kind": "chapter",
+        "id": "13",
+        "label": "Chapter 13",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "19.1",
+        "label": "Equation 19.1",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "19.4",
+        "label": "Equation 19.4",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "19.20a",
+        "label": "Equation 19.20a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "19.6",
+        "label": "Example 19.6",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "19.21a",
+        "label": "Equation 19.21a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_chapter19_020": [
+      {
+        "kind": "chapter",
+        "id": "21",
+        "label": "Chapter 21",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "chapter",
+        "id": "15",
+        "label": "Chapter 15",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "chapter",
+        "id": "22",
+        "label": "Chapter 22",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "chapter",
+        "id": "27",
+        "label": "LW Chapter 27",
+        "book_hint": "Genetics",
+        "link_scope": "lw"
+      },
+      {
+        "kind": "example",
+        "id": "19.7",
+        "label": "Example 19.7",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "19.2",
+        "label": "Example 19.2",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "19.6",
+        "label": "Example 19.6",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_chapter19_021": [
+      {
+        "kind": "chapter",
+        "id": "15",
+        "label": "Chapter 15",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "19.15a",
+        "label": "Equation 19.15a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "19.16",
+        "label": "Equation 19.16",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_chapter19_022": [
+      {
+        "kind": "chapter",
+        "id": "10",
+        "label": "LW Chapter 10",
+        "book_hint": "Genetics",
+        "link_scope": "lw"
+      },
+      {
+        "kind": "chapter",
+        "id": "11",
+        "label": "Chapter 11",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "chapter",
+        "id": "23",
+        "label": "Chapter 23",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "chapter",
+        "id": "26",
+        "label": "LW Chapter 26",
+        "book_hint": "Genetics",
+        "link_scope": "lw"
+      },
+      {
+        "kind": "chapter",
+        "id": "27",
+        "label": "LW Chapter 27",
+        "book_hint": "Genetics",
+        "link_scope": "lw"
+      },
+      {
+        "kind": "example",
+        "id": "19.7",
+        "label": "Example 19.7",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "11.13",
+        "label": "Equation 11.13",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "7.7",
+        "label": "LW Equation 7.7",
+        "book_hint": "Genetics",
+        "link_scope": "lw"
+      },
+      {
+        "kind": "equation",
+        "id": "19.26a",
+        "label": "Equation 19.26a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "19.25b",
+        "label": "Equation 19.25b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "19.25c",
+        "label": "Equation 19.25c",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "19.25a",
+        "label": "Equation 19.25a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "19.28",
+        "label": "Equation 19.28",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "11.19a",
+        "label": "Equation 11.19a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "19.27",
+        "label": "Equation 19.27",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "7.12",
+        "label": "LW Equation 7.12",
+        "book_hint": "Genetics",
+        "link_scope": "lw"
+      },
+      {
+        "kind": "table",
+        "id": "11.2",
+        "label": "Table 11.2",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_chapter19_023": [],
+    "Evolution_chapter19_024": [
+      {
+        "kind": "example",
+        "id": "19.9",
+        "label": "Example 19.9",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "19.8",
+        "label": "Example 19.8",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A2.22b",
+        "label": "Equation A2.22b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "19.10",
+        "label": "Example 19.10",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "19.30",
+        "label": "Equation 19.30",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "19.8b",
+        "label": "Equation 19.8b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_chapter19_026": [
+      {
+        "kind": "equation",
+        "id": "19.29a",
+        "label": "Equation 19.29a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_chapter19_027": [
+      {
+        "kind": "equation",
+        "id": "19.33b",
+        "label": "Equation 19.33b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "19.8c",
+        "label": "Equation 19.8c",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_chapter19_028": [
+      {
+        "kind": "equation",
+        "id": "19.8b",
+        "label": "Equation 19.8b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "figure",
+        "id": "19.3",
+        "label": "Figure 19.3",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "figure",
+        "id": "19.4",
+        "label": "Figure 19.4",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "table",
+        "id": "19.1",
+        "label": "Table 19.1",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_chapter19_029": [
+      {
+        "kind": "chapter",
+        "id": "20",
+        "label": "Chapter 20",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ]
+  },
+  "semantic_chapter_links": [
+    {
+      "current_section_id": "Evolution_chapter19_001",
+      "current_anchor": "evolution_chapter19_001",
+      "source_chapter_id": "Genetics_chapter26",
+      "label": "LW Chapter 26",
+      "target_anchor": "genetics_chapter26_section_001",
+      "target_label": "LW Chapter 26",
+      "target_ref_type": "chapter",
+      "target_ref_id": "26",
+      "target_section_title": "Chapter 26 Textbook Mapping",
+      "book_hint": "Genetics",
+      "link_scope": "lw",
+      "context_excerpt": "wherein one first employs REML (LW Chapter 27) or some other method to estimate the appropriate variance components, and then uses these with BLUP (best linear unbiased predictor) to estimate breeding values (LW Chapter 26). With BLUPs for individual breeding values in hand, one can estimate the mean breeding value for any particular generation and directly follow genetic, as opposed to phenotypic, change. This allo…",
+      "match_source": "llm-prerequisite"
+    },
+    {
+      "current_section_id": "Evolution_chapter19_001",
+      "current_anchor": "evolution_chapter19_001",
+      "source_chapter_id": "Genetics_chapter27",
+      "label": "LW Chapter 27",
+      "target_anchor": "genetics_chapter27_section_001",
+      "target_label": "LW Chapter 27",
+      "target_ref_type": "chapter",
+      "target_ref_id": "27",
+      "target_section_title": "Chapter 27 · Variance-Component Estimation with Complex Pedigrees",
+      "book_hint": "Genetics",
+      "link_scope": "lw",
+      "context_excerpt": "g programs is gauged by examining the response using a mixed-model framework. There are two different frameworks for a mixed-model analysis. The first is the two-step approach, wherein one first employs REML (LW Chapter 27) or some other method to estimate the appropriate variance components, and then uses these with BLUP (best linear unbiased predictor) to estimate breeding values (LW Chapter 26). With BLUPs for in…",
+      "match_source": "llm-prerequisite"
+    },
+    {
+      "current_section_id": "Evolution_chapter19_001",
+      "current_anchor": "evolution_chapter19_001",
+      "source_chapter_id": "Evolution_chapter20",
+      "label": "Chapter 20",
+      "target_anchor": "evolution_chapter20_section_001",
+      "target_label": "Chapter 20",
+      "target_ref_type": "chapter",
+      "target_ref_id": "20",
+      "target_section_title": "Chapter 20 · Selection Response in Natural Populations",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "Analysis of Short-term Selection Experiments: 2. Mixed-model and Bayesian Approaches: Introduction Unnecessarily complex analysis should not be used as a foil to disguise lower quality datasets: estimates of genetic parameters are only as good as the data on which they are based. Kruuk (2004) vnnue a least-squares (LS) analysis or a selection experiment versus the data down to the trait mean and variance for each ge…",
+      "match_source": "chapter-overview"
+    },
+    {
+      "current_section_id": "Evolution_chapter19_001",
+      "current_anchor": "evolution_chapter19_001",
+      "source_chapter_id": "Evolution_chapter22",
+      "label": "Chapter 22",
+      "target_anchor": "evolution_chapter22_section_001",
+      "target_label": "Chapter 22",
+      "target_ref_type": "chapter",
+      "target_ref_id": "22",
+      "target_section_title": "Chapter 22 · Associative Effects: Competition, Social Interactions, Group and Kin Selection",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "Analysis of Short-term Selection Experiments: 2. Mixed-model and Bayesian Approaches: Introduction Unnecessarily complex analysis should not be used as a foil to disguise lower quality datasets: estimates of genetic parameters are only as good as the data on which they are based. Kruuk (2004) vnnue a least-squares (LS) analysis or a selection experiment versus the data down to the trait mean and variance for each ge…",
+      "match_source": "chapter-overview"
+    },
+    {
+      "current_section_id": "Evolution_chapter19_001",
+      "current_anchor": "evolution_chapter19_001",
+      "source_chapter_id": "Evolution_chapter10",
+      "label": "Chapter 10",
+      "target_anchor": "evolution_chapter10_section_001",
+      "target_label": "Chapter 10",
+      "target_ref_type": "chapter",
+      "target_ref_id": "10",
+      "target_section_title": "Chapter 10 · Using Molecular Data to Detect Selection: Signatures from Multiple Historical Events",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "apter to review some of the basic statistical machinery behind mixed models (which is also used extensively in Chapters 20 and 22) and to more formally introduce the Bayesian framework (briefly touched upon in Chapter 10, and more fully developed in Appendices 2 and 3). We start with a brief review of the theory of mixed models and then consider various applications of the animal (or individual) model to the analysi…",
+      "match_source": "chapter-overview"
+    },
+    {
+      "current_section_id": "Evolution_chapter19_003",
+      "current_anchor": "evolution_chapter19_003",
+      "source_chapter_id": "Evolution_chapter13",
+      "label": "Chapter 13",
+      "target_anchor": "evolution_chapter13_section_001",
+      "target_label": "Chapter 13",
+      "target_ref_type": "chapter",
+      "target_ref_id": "13",
+      "target_section_title": "Chapter 13 · Short-term Changes in the Mean: 1. The Breeder's Equation",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "MIXED-MODEL VERSUS LEAST-SQUARES ANALYSIS / BLUP Selection A previously introduced MM application is BLUP selection (Chapter 13), wherein a mixed model is used to find those individuals with the highest estimated breeding values, which are then used as parents to form the next generation. This is the main route of selection used by ani",
+      "match_source": "llm-prerequisite"
+    },
+    {
+      "current_section_id": "Evolution_chapter19_004",
+      "current_anchor": "evolution_chapter19_004",
+      "source_chapter_id": "Genetics_chapter26",
+      "label": "LW Chapter 26",
+      "target_anchor": "genetics_chapter26_section_001",
+      "target_label": "LW Chapter 26",
+      "target_ref_type": "chapter",
+      "target_ref_id": "26",
+      "target_section_title": "Chapter 26 Textbook Mapping",
+      "book_hint": "Genetics",
+      "link_scope": "lw",
+      "context_excerpt": "unique estimates of certain linear combinations of the fixed effects (LW Appendix 2). If X has a column rank of $ \\ell \\leq q $, then exactly $ \\ell $ combinations of the q fixed effects can be estimated; see LW Chapter 26, and LW Appendix 2, for further details. Finally, note that although the BLUEs are a function of V (and hence of $ \\sigma A^2 $ and $ \\sigma c^2 $), applying Equation 19.2b shows that the phenotyp…",
+      "match_source": "llm-prerequisite"
+    },
+    {
+      "current_section_id": "Evolution_chapter19_004",
+      "current_anchor": "evolution_chapter19_004",
+      "source_chapter_id": "Genetics_chapter27",
+      "label": "LW Chapter 27",
+      "target_anchor": "genetics_chapter27_section_001",
+      "target_label": "LW Chapter 27",
+      "target_ref_type": "chapter",
+      "target_ref_id": "27",
+      "target_section_title": "Chapter 27 · Variance-Component Estimation with Complex Pedigrees",
+      "book_hint": "Genetics",
+      "link_scope": "lw",
+      "context_excerpt": "Analysis of Short-term Selection Experiments: 2. Mixed-model and Bayesian Approaches: Introduction / BASICS OF MIXED-MODEL ANALYSIS Here, we start with a quick review of some of the key theoretical results of mixed-model analysis and then examine specific applications. We encourage the reader to review LW Chapters 26 and 27 (either before, or after, reading this short introduction). These chapters provide additional…",
+      "match_source": "llm-prerequisite"
+    },
+    {
+      "current_section_id": "Evolution_chapter19_004",
+      "current_anchor": "evolution_chapter19_004",
+      "source_chapter_id": "Genetics_chapter8",
+      "label": "LW Chapter 8",
+      "target_anchor": "genetics_chapter8_section_001",
+      "target_label": "Chapter 8",
+      "target_ref_type": "chapter",
+      "target_ref_id": "8",
+      "target_section_title": "Chapter 8 · Introduction to Matrix Algebra and Linear Models",
+      "book_hint": "Genetics",
+      "link_scope": "lw",
+      "context_excerpt": "g correlated (due to full sibs sharing $ \\sigma D^2/4 $), and we will discuss corrections for this shortly. Assuming V is known exactly, estimation of the vector, $ \\beta $, of fixed effects follows from GLS (LW Chapter 8) $$ \\hat{\\boldsymbol{\\beta}}=\\left(\\mathbf{X}^{T}\\mathbf{V}^{-1}\\mathbf{X}\\right)^{-1}\\mathbf{X}^{T}\\mathbf{V}^{-1}\\mathbf{y} $$ Equation 19.3a is called the best linear unbiased estimator (BLUE) o…",
+      "match_source": "chapter-overview"
+    },
+    {
+      "current_section_id": "Evolution_chapter19_005",
+      "current_anchor": "evolution_chapter19_005",
+      "source_chapter_id": "Evolution_chapter20",
+      "label": "Chapter 20",
+      "target_anchor": "evolution_chapter20_section_001",
+      "target_label": "Chapter 20",
+      "target_ref_type": "chapter",
+      "target_ref_id": "20",
+      "target_section_title": "Chapter 20 · Selection Response in Natural Populations",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "by taking the average of the EBVs over all individuals within each generation. However, individual EBVs can be important when we try to disentangle selection in natural populations, and we will revisit PEVs in Chapter 20. Finally, the covariances between estimated fixed effects and prediction errors are $$ \\boldsymbol{\\sigma}(\\widehat{\\boldsymbol{\\beta}},\\widehat{\\mathbf{a}}-\\mathbf{a})=\\sigma {e}^{2}\\mathbf{C} {12}…",
+      "match_source": "chapter-overview"
+    },
+    {
+      "current_section_id": "Evolution_chapter19_006",
+      "current_anchor": "evolution_chapter19_006",
+      "source_chapter_id": "Genetics_chapter27",
+      "label": "LW Chapter 27",
+      "target_anchor": "genetics_chapter27_section_001",
+      "target_label": "LW Chapter 27",
+      "target_ref_type": "chapter",
+      "target_ref_id": "27",
+      "target_section_title": "Chapter 27 · Variance-Component Estimation with Complex Pedigrees",
+      "book_hint": "Genetics",
+      "link_scope": "lw",
+      "context_excerpt": ", by using restricted maximum likelihood (REML). REML is closely related to BLUP, with (roughly speaking) REML estimates obtained from iterating and updating BLUP estimates until there is suitable convergence (LW Chapter 27). REML maximizes that part of the likelihood function that is unaffected by fixed effects (Patterson and Thompson 1971). Harville (1977) coined the term restricted ML, but Thompson (2008) noted t…",
+      "match_source": "llm-prerequisite"
+    },
+    {
+      "current_section_id": "Evolution_chapter19_006",
+      "current_anchor": "evolution_chapter19_006",
+      "source_chapter_id": "Evolution_chapter30",
+      "label": "Chapter 30",
+      "target_anchor": "evolution_chapter30_section_001",
+      "target_label": "Chapter 30",
+      "target_ref_type": "chapter",
+      "target_ref_id": "30",
+      "target_section_title": "Chapter 30 · Measuring Multivariate Selection",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "symbol{\\sigma}^{T}\\mathbf{Q}\\boldsymbol{\\sigma} $$ With $v$ variance components, $b 0$ and $b 1$ are $v \\times 1$ vectors, and $\\mathbf{Q}$ is an $v \\times v$ symmetric matrix of quadratic regression terms (in Chapter 30 we discuss the fitting of such quadratic surfaces in the context of fitness surface estimation). The approximate covariance matrix for the vector of REMLs, $\\widehat{\\sigma}$, is calculated by $$ \\m…",
+      "match_source": "chapter-overview"
+    },
+    {
+      "current_section_id": "Evolution_chapter19_008",
+      "current_anchor": "evolution_chapter19_008",
+      "source_chapter_id": "Evolution_chapter22",
+      "label": "Chapter 22",
+      "target_anchor": "evolution_chapter22_section_001",
+      "target_label": "Chapter 22",
+      "target_ref_type": "chapter",
+      "target_ref_id": "22",
+      "target_section_title": "Chapter 22 · Associative Effects: Competition, Social Interactions, Group and Kin Selection",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "s the breeding (or additive-genetic) values of all individuals measured during the course of the experiment. We examine its simplest version first, and consider various elaborations in later sections (also see Chapter 22 and LW Chapter 26). While this model has its origin in the animal-breeding literature, it has very widespread applicability. We trust that plant scientists will not be greatly offended, as the “anim…",
+      "match_source": "chapter-overview"
+    },
+    {
+      "current_section_id": "Evolution_chapter19_008",
+      "current_anchor": "evolution_chapter19_008",
+      "source_chapter_id": "Genetics_chapter26",
+      "label": "LW Chapter 26",
+      "target_anchor": "genetics_chapter26_section_001",
+      "target_label": "LW Chapter 26",
+      "target_ref_type": "chapter",
+      "target_ref_id": "26",
+      "target_section_title": "Chapter 26 Textbook Mapping",
+      "book_hint": "Genetics",
+      "link_scope": "lw",
+      "context_excerpt": "(or additive-genetic) values of all individuals measured during the course of the experiment. We examine its simplest version first, and consider various elaborations in later sections (also see Chapter 22 and LW Chapter 26). While this model has its origin in the animal-breeding literature, it has very widespread applicability. We trust that plant scientists will not be greatly offended, as the “animal” (or better…",
+      "match_source": "llm-prerequisite"
+    },
+    {
+      "current_section_id": "Evolution_chapter19_009",
+      "current_anchor": "evolution_chapter19_009",
+      "source_chapter_id": "Genetics_chapter7",
+      "label": "LW Chapter 7",
+      "target_anchor": "genetics_chapter7_section_001",
+      "target_label": "LW Chapter 7",
+      "target_ref_type": "chapter",
+      "target_ref_id": "7",
+      "target_section_title": "Chapter 7 Textbook Mapping",
+      "book_hint": "Genetics",
+      "link_scope": "lw",
+      "context_excerpt": "ANIMAL-MODEL ANALYSIS OF SELECTION EXPERIMENTS / The Basic Animal Model Mixed-models easily allow for overlapping generations by simply predicting breeding values at discrete time points (e.g., every year or at each natural cohort) rather than in each generation. Hence, in the discussion that follows, one can easily replace “generation” by “year” or some other time measure. To apply the animal model to a selection e…",
+      "match_source": "llm-prerequisite"
+    },
+    {
+      "current_section_id": "Evolution_chapter19_009",
+      "current_anchor": "evolution_chapter19_009",
+      "source_chapter_id": "Genetics_chapter26",
+      "label": "LW Chapter 26",
+      "target_anchor": "genetics_chapter26_section_001",
+      "target_label": "LW Chapter 26",
+      "target_ref_type": "chapter",
+      "target_ref_id": "26",
+      "target_section_title": "Chapter 26 Textbook Mapping",
+      "book_hint": "Genetics",
+      "link_scope": "lw",
+      "context_excerpt": "ficient of coancestry; see LW Chapters 7 and 26) describe the relatedness of individuals i and j. Recursive methods for obtaining the elements of A (and $ \\mathbf{A}^{-1} $), given a pedigree, are discussed in LW Chapter 26. The simple animal model assumes that all genetic variance is additive, so there is no genetic covariance between residuals. In this case, it is generally assumed that $ \\mathbf{Var}(\\mathbf{e})…",
+      "match_source": "llm-prerequisite"
+    },
+    {
+      "current_section_id": "Evolution_chapter19_012",
+      "current_anchor": "evolution_chapter19_012",
+      "source_chapter_id": "Evolution_chapter21",
+      "label": "Chapter 21",
+      "target_anchor": "evolution_chapter21_section_001",
+      "target_label": "Chapter 21",
+      "target_ref_type": "chapter",
+      "target_ref_id": "21",
+      "target_section_title": "Chapter 21 · 21",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "rected for 4-week weight. Meyer and Hill had three replicate sets, each consisting of high, low, and control lines, for a total of almost 11,000 mice over the course of the experiment. Within-family selection (Chapter 21) on AFI was followed for 23 generations. Meyer and Hill included a number of fixed effects in their model, as well as adding a random effect to control for common litter (i.e., family) effects (see…",
+      "match_source": "chapter-overview"
+    },
+    {
+      "current_section_id": "Evolution_chapter19_015",
+      "current_anchor": "evolution_chapter19_015",
+      "source_chapter_id": "Evolution_chapter16",
+      "label": "Chapter 16",
+      "target_anchor": "evolution_chapter16_section_001",
+      "target_label": "Chapter 16",
+      "target_ref_type": "chapter",
+      "target_ref_id": "16",
+      "target_section_title": "Chapter 16 · Short-term Changes in the Variance: 1. Changes in the Additive Variance",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "is were proposed by Visscher and Thompson (1990), and extended by Beniwal et al. (1992a, 1992b) and Heath et al. (1995) by allowing the additive genic variance to change over time (discussed below; recall from Chapter 16 that the additive genic variance is the value for $ \\sigma A^2 $ in the absence of LD). For example, one might assume that the additive genic variance remains constant for the first few generations…",
+      "match_source": "llm-prerequisite"
+    },
+    {
+      "current_section_id": "Evolution_chapter19_016",
+      "current_anchor": "evolution_chapter19_016",
+      "source_chapter_id": "Evolution_chapter16",
+      "label": "Chapter 16",
+      "target_anchor": "evolution_chapter16_section_001",
+      "target_label": "Chapter 16",
+      "target_ref_type": "chapter",
+      "target_ref_id": "16",
+      "target_section_title": "Chapter 16 · Short-term Changes in the Variance: 1. Changes in the Additive Variance",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "NIMAL-MODEL ANALYSIS OF SELECTION EXPERIMENTS / Estimating the Additive Variance at Generation t Even under the infinitesimal model, the additive variance changes over time by the generation of disequilibrium (Chapter 16) and inbreeding (Chapters 3 and 24), a point more fully explicated in the next section. While REML provides an estimate of the base population additive genic variance, $ \\sigma a^2(0) $ (which is un…",
+      "match_source": "llm-prerequisite"
+    },
+    {
+      "current_section_id": "Evolution_chapter19_016",
+      "current_anchor": "evolution_chapter19_016",
+      "source_chapter_id": "Evolution_chapter3",
+      "label": "Chapter 3",
+      "target_anchor": "evolution_chapter3_section_001",
+      "target_label": "Chapter 3",
+      "target_ref_type": "chapter",
+      "target_ref_id": "3",
+      "target_section_title": "Chapter 3 · The Genetic Effective Size of a Population",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "ANIMAL-MODEL ANALYSIS OF SELECTION EXPERIMENTS / Estimating the Additive Variance at Generation t Even under the infinitesimal model, the additive variance changes over time by the generation of disequilibrium (Chapter 16) and inbreeding (Chapters 3 and 24), a point more fully explicated in the next section. While REML provides an estimate of the base population additive genic variance, $ \\sigma a^2(0) $ (which is u…",
+      "match_source": "llm-prerequisite"
+    },
+    {
+      "current_section_id": "Evolution_chapter19_016",
+      "current_anchor": "evolution_chapter19_016",
+      "source_chapter_id": "Evolution_chapter24",
+      "label": "Chapter 24",
+      "target_anchor": "evolution_chapter24_section_001",
+      "target_label": "Chapter 24",
+      "target_ref_type": "chapter",
+      "target_ref_id": "24",
+      "target_section_title": "Chapter 24 · The Infinitesimal Model and Its Extensions",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "ANIMAL-MODEL ANALYSIS OF SELECTION EXPERIMENTS / Estimating the Additive Variance at Generation t Even under the infinitesimal model, the additive variance changes over time by the generation of disequilibrium (Chapter 16) and inbreeding (Chapters 3 and 24), a point more fully explicated in the next section. While REML provides an estimate of the base population additive genic variance, $ \\sigma a^2(0) $ (which is u…",
+      "match_source": "chapter-overview"
+    },
+    {
+      "current_section_id": "Evolution_chapter19_017",
+      "current_anchor": "evolution_chapter19_017",
+      "source_chapter_id": "Evolution_chapter5",
+      "label": "Chapter 5",
+      "target_anchor": "evolution_chapter5_section_001",
+      "target_label": "Chapter 5",
+      "target_ref_type": "chapter",
+      "target_ref_id": "5",
+      "target_section_title": "Chapter 5 · The Population Genetics of Selection",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "Analysis of Short-term Selection Experiments: 2. Mixed-model and Bayesian Approaches: Introduction / THE RELATIONSHIP MATRIX, A, ACCOUNTS FOR DRIFT AND DISEQUILIBRIUM [命题 Proposition] There are three potential sources of change in the additive-genetic variance, $ \\sigma A^2 $, during a selection experiment: allele-frequency change from selection; allele-frequency change from drift; and gametic-phase disequilibrium g…",
+      "match_source": "llm-prerequisite"
+    },
+    {
+      "current_section_id": "Evolution_chapter19_017",
+      "current_anchor": "evolution_chapter19_017",
+      "source_chapter_id": "Evolution_chapter16",
+      "label": "Chapter 16",
+      "target_anchor": "evolution_chapter16_section_001",
+      "target_label": "Chapter 16",
+      "target_ref_type": "chapter",
+      "target_ref_id": "16",
+      "target_section_title": "Chapter 16 · Short-term Changes in the Variance: 1. Changes in the Additive Variance",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "d the relationship matrix, $ \\mathrm{Var}(\\mathbf{a}) = \\sigma A^2 \\mathbf{A} $. To both see this point and provide connections among these three potential agents of change, recall two important concepts from Chapter 16. First, the additive-genetic variance can be decomposed as $ \\sigma A^2 = \\sigma a^2 + d $, the sum of the additive genic variance, $ \\sigma a^2 $, and the disequilibrium contribution, $ d $ (Equatio…",
+      "match_source": "llm-prerequisite"
+    },
+    {
+      "current_section_id": "Evolution_chapter19_017",
+      "current_anchor": "evolution_chapter19_017",
+      "source_chapter_id": "Evolution_chapter25",
+      "label": "Chapter 25",
+      "target_anchor": "evolution_chapter25_section_001",
+      "target_label": "Chapter 25",
+      "target_ref_type": "chapter",
+      "target_ref_id": "25",
+      "target_section_title": "Chapter 25 · Long-term Response: 1. Deterministic Aspects",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "Analysis of Short-term Selection Experiments: 2. Mixed-model and Bayesian Approaches: Introduction / THE RELATIONSHIP MATRIX, A, ACCOUNTS FOR DRIFT AND DISEQUILIBRIUM [命题 Proposition] There are three potential sources of change in the additive-genetic variance, $ \\sigma A^2 $, during a selection experiment: allele-frequency change from selection; allele-frequency change from drift; and gametic-phase disequilibrium g…",
+      "match_source": "chapter-overview"
+    },
+    {
+      "current_section_id": "Evolution_chapter19_017",
+      "current_anchor": "evolution_chapter19_017",
+      "source_chapter_id": "Evolution_chapter15",
+      "label": "Chapter 15",
+      "target_anchor": "evolution_chapter15_section_001",
+      "target_label": "Chapter 15",
+      "target_ref_type": "chapter",
+      "target_ref_id": "15",
+      "target_section_title": "Chapter 15 · Short-term Changes in the Mean: 3. Permanent Versus Transient Response",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "s a linear function of the base population breeding values and Mendelian sampling terms (Sorensen and Kennedy 1984a; Kennedy et al. 1988). This is an extension of the idea of ancestral regressions discussed in Chapter 15. Example 19.4 shows a critical consequence of this: because the mean breeding value in the base population is zero (by construction), most of the response in a selection experiment comes, not from b…",
+      "match_source": "chapter-overview"
+    },
+    {
+      "current_section_id": "Evolution_chapter19_017",
+      "current_anchor": "evolution_chapter19_017",
+      "source_chapter_id": "Evolution_chapter24",
+      "label": "Chapter 24",
+      "target_anchor": "evolution_chapter24_section_001",
+      "target_label": "Chapter 24",
+      "target_ref_type": "chapter",
+      "target_ref_id": "24",
+      "target_section_title": "Chapter 24 · The Infinitesimal Model and Its Extensions",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": ", this bias may not be too serious (e.g., Maki-Tanila and Kennedy 1986). Another key assumption from the infinitesimal model is that the distribution of residuals does not significantly deviate from normality. Chapter 24 examines this rather technical issue in some detail. When the genic variance, $ \\sigma {a}^{2} $, itself is changing due to selection, knowledge of A is no longer sufficient to account for all chang…",
+      "match_source": "chapter-overview"
+    },
+    {
+      "current_section_id": "Evolution_chapter19_019",
+      "current_anchor": "evolution_chapter19_019",
+      "source_chapter_id": "Genetics_chapter26",
+      "label": "LW Chapter 26",
+      "target_anchor": "genetics_chapter26_section_001",
+      "target_label": "LW Chapter 26",
+      "target_ref_type": "chapter",
+      "target_ref_id": "26",
+      "target_section_title": "Chapter 26 Textbook Mapping",
+      "book_hint": "Genetics",
+      "link_scope": "lw",
+      "context_excerpt": "imes in the same individual, for example, the sizes of different litters from a single female. When multiple records are present for at least some individuals, a repeatability model is appropriate (Chapter 13; LW Chapter 26). Repeated measures from the same individual have three components: a breeding value, $ a k $, and a common (permanent) environmental value, $ p k $, which are the same in each measurement of ind…",
+      "match_source": "llm-prerequisite"
+    },
+    {
+      "current_section_id": "Evolution_chapter19_019",
+      "current_anchor": "evolution_chapter19_019",
+      "source_chapter_id": "Genetics_chapter27",
+      "label": "LW Chapter 27",
+      "target_anchor": "genetics_chapter27_section_001",
+      "target_label": "LW Chapter 27",
+      "target_ref_type": "chapter",
+      "target_ref_id": "27",
+      "target_section_title": "Chapter 27 · Variance-Component Estimation with Complex Pedigrees",
+      "book_hint": "Genetics",
+      "link_scope": "lw",
+      "context_excerpt": "nd 27 for details. The mixed-model equations again form the basis for iterative REML estimates of the unknown variance components ($ \\sigma A^2 $, $ \\sigma u^2 $, and $ \\sigma c^2 $), as discussed in detail in LW Chapter 27. [示例 Example] Example 19.6 · ref: 19.6 · source: Evolution chapter19 019.json · blocks 5–8 Example 19.6. Often the same trait is measured multiple times in the same individual, for example,",
+      "match_source": "llm-prerequisite"
+    },
+    {
+      "current_section_id": "Evolution_chapter19_019",
+      "current_anchor": "evolution_chapter19_019",
+      "source_chapter_id": "Evolution_chapter13",
+      "label": "Chapter 13",
+      "target_anchor": "evolution_chapter13_section_001",
+      "target_label": "Chapter 13",
+      "target_ref_type": "chapter",
+      "target_ref_id": "13",
+      "target_section_title": "Chapter 13 · Short-term Changes in the Mean: 1. The Breeder's Equation",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "d multiple times in the same individual, for example, the sizes of different litters from a single female. When multiple records are present for at least some individuals, a repeatability model is appropriate (Chapter 13; LW Chapter 26). Repeated measures from the same individual have three components: a breeding value, $ a k $, and a common (permanent) environmental value, $ p k $, which are the same in each measur…",
+      "match_source": "llm-prerequisite"
+    },
+    {
+      "current_section_id": "Evolution_chapter19_020",
+      "current_anchor": "evolution_chapter19_020",
+      "source_chapter_id": "Evolution_chapter21",
+      "label": "Chapter 21",
+      "target_anchor": "evolution_chapter21_section_001",
+      "target_label": "Chapter 21",
+      "target_ref_type": "chapter",
+      "target_ref_id": "21",
+      "target_section_title": "Chapter 21 · 21",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "c^2 / \\sigma z^2 = 0.22 $, where $ \\sigma z^2 = \\sigma A^2 + \\sigma c^2 + \\sigma e^2 $ is the fixed-effects adjusted trait variance. Because the intraclass correlation between sibs is $ (h^2 / 2) + \\gamma^2 $ (Chapter 21), a larger fraction of the resemblance between sibs is due to shared family environments (potentially including maternal effects), rather than due to shared genes. One caveat is that the model assum…",
+      "match_source": "chapter-overview"
+    },
+    {
+      "current_section_id": "Evolution_chapter19_020",
+      "current_anchor": "evolution_chapter19_020",
+      "source_chapter_id": "Evolution_chapter15",
+      "label": "Chapter 15",
+      "target_anchor": "evolution_chapter15_section_001",
+      "target_label": "Chapter 15",
+      "target_ref_type": "chapter",
+      "target_ref_id": "15",
+      "target_section_title": "Chapter 15 · Short-term Changes in the Mean: 3. Permanent Versus Transient Response",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "MODIFICATIONS OF THE BASIC ANIMAL MODEL / Common Family and Maternal Effects [命题 Proposition] When sibs are present, any common-family environmental effects (if not included directly in the model) are subsumed into the residuals, creating a correlation between the residuals of sibs. For example, if two sibs (i and j) share a common environmental value, $ c $, then $ \\sigma(e i, e j) = \\sigma c^2 $. Hence, there are…",
+      "match_source": "chapter-overview"
+    },
+    {
+      "current_section_id": "Evolution_chapter19_020",
+      "current_anchor": "evolution_chapter19_020",
+      "source_chapter_id": "Evolution_chapter22",
+      "label": "Chapter 22",
+      "target_anchor": "evolution_chapter22_section_001",
+      "target_label": "Chapter 22",
+      "target_ref_type": "chapter",
+      "target_ref_id": "22",
+      "target_section_title": "Chapter 22 · Associative Effects: Competition, Social Interactions, Group and Kin Selection",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "}(\\mathbf{a} m) = \\sigma A^2(a m) \\mathbf{A} $. Distinguishing between maternal and direct effects requires that there are paternal, as well as maternal, links in the pedigree (Clément et al. 2001; Kruuk 2004; Chapter 22). A complication is that the breeding values for the focal trait and maternal performance can be correlated. This raises a multiple-trait problem (LW Chapter 27). We discuss maternal effects in grea…",
+      "match_source": "chapter-overview"
+    },
+    {
+      "current_section_id": "Evolution_chapter19_020",
+      "current_anchor": "evolution_chapter19_020",
+      "source_chapter_id": "Genetics_chapter27",
+      "label": "LW Chapter 27",
+      "target_anchor": "genetics_chapter27_section_001",
+      "target_label": "LW Chapter 27",
+      "target_ref_type": "chapter",
+      "target_ref_id": "27",
+      "target_section_title": "Chapter 27 · Variance-Component Estimation with Complex Pedigrees",
+      "book_hint": "Genetics",
+      "link_scope": "lw",
+      "context_excerpt": "s in the pedigree (Clément et al. 2001; Kruuk 2004; Chapter 22). A complication is that the breeding values for the focal trait and maternal performance can be correlated. This raises a multiple-trait problem (LW Chapter 27). We discuss maternal effects in greater detail in Chapter 22 in the context of more general models of associative effects. In summary, from an operational standpoint, if maternal effects are sus…",
+      "match_source": "llm-prerequisite"
+    },
+    {
+      "current_section_id": "Evolution_chapter19_021",
+      "current_anchor": "evolution_chapter19_021",
+      "source_chapter_id": "Evolution_chapter15",
+      "label": "Chapter 15",
+      "target_anchor": "evolution_chapter15_section_001",
+      "target_label": "Chapter 15",
+      "target_ref_type": "chapter",
+      "target_ref_id": "15",
+      "target_section_title": "Chapter 15 · Short-term Changes in the Mean: 3. Permanent Versus Transient Response",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "in the base population, this segregation-based estimate is also, then, an estimate of the additive genetic variance, $ \\sigma A^2 $; otherwise it is biased (as $ \\sigma A^2 \\neq \\sigma a^2 $ when $ d \\neq 0 $; Chapter 15). ---",
+      "match_source": "chapter-overview"
+    },
+    {
+      "current_section_id": "Evolution_chapter19_022",
+      "current_anchor": "evolution_chapter19_022",
+      "source_chapter_id": "Genetics_chapter10",
+      "label": "LW Chapter 10",
+      "target_anchor": "genetics_chapter10_section_001",
+      "target_label": "Chapter 10",
+      "target_ref_type": "chapter",
+      "target_ref_id": "10",
+      "target_section_title": "Chapter 10 · 10 Inbreeding Depression",
+      "book_hint": "Genetics",
+      "link_scope": "lw",
+      "context_excerpt": "hen the only nonadditive genetic interaction is dominance, inbreeding depression is a linear function of the inbreeding level, f, but this relationship is nonlinear when certain types of epistasis are present (LW Chapter 10). Thus, if there is significant epistasis, Equation 19.28 may not appropriately correct for inbreeding depression, especially at very high values of f (those approaching one). If the levels of in…",
+      "match_source": "chapter-overview"
+    },
+    {
+      "current_section_id": "Evolution_chapter19_022",
+      "current_anchor": "evolution_chapter19_022",
+      "source_chapter_id": "Evolution_chapter11",
+      "label": "Chapter 11",
+      "target_anchor": "evolution_chapter11_012",
+      "target_label": "Equation 11.13",
+      "target_ref_type": "equation",
+      "target_ref_id": "11.13",
+      "target_section_title": "Changes in Genetic Variation Induced by Drift: Introduction / COVARIANCE BETWEEN INBRED RELATIVES",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "should be sufficient. A second, and more subtle, complication is that the covariance between inbred relatives with dominance is no longer a function of just $ \\sigma A^2 $ and $ \\sigma D^2 $. As discussed in Chapter 11, these covariances now depend upon four other quadratic components ($ \\sigma {D1}^2 $, $ \\sigma {AD1}^2 $, $ \\imath^2 $), see Equation 11.13 and . While one could formulate a mixed model inco",
+      "match_source": "llm-prerequisite"
+    },
+    {
+      "current_section_id": "Evolution_chapter19_022",
+      "current_anchor": "evolution_chapter19_022",
+      "source_chapter_id": "Evolution_chapter23",
+      "label": "Chapter 23",
+      "target_anchor": "evolution_chapter23_section_001",
+      "target_label": "Chapter 23",
+      "target_ref_type": "chapter",
+      "target_ref_id": "23",
+      "target_section_title": "Chapter 23 · Selection Under Inbreeding",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "h for handling dominance, at least for modest levels of inbreeding (those typically seen in most animal-breeding programs). With highly inbred populations (such as selfed lines), other approaches are required (Chapter 23). The situation with epistasis is even more complex than that for dominance. The encouraging news is that the weighting of the nonadditive-variance component terms for the covariances between even m…",
+      "match_source": "chapter-overview"
+    },
+    {
+      "current_section_id": "Evolution_chapter19_022",
+      "current_anchor": "evolution_chapter19_022",
+      "source_chapter_id": "Genetics_chapter26",
+      "label": "LW Chapter 26",
+      "target_anchor": "genetics_chapter26_section_001",
+      "target_label": "LW Chapter 26",
+      "target_ref_type": "chapter",
+      "target_ref_id": "26",
+      "target_section_title": "Chapter 26 Textbook Mapping",
+      "book_hint": "Genetics",
+      "link_scope": "lw",
+      "context_excerpt": "ially those separated by more than one generation, are very minor and can usually be ignored. In theory, epistatic terms can be included in the mixed-model equations in a similar fashion as with dominance; see LW Chapter 26 for details, and LW Chapter 27 for modifications of the REML equations to estimate nonadditive variances. In practice this is almost never done, as the effects are generally small and the precisi…",
+      "match_source": "llm-prerequisite"
+    },
+    {
+      "current_section_id": "Evolution_chapter19_022",
+      "current_anchor": "evolution_chapter19_022",
+      "source_chapter_id": "Genetics_chapter27",
+      "label": "LW Chapter 27",
+      "target_anchor": "genetics_chapter27_section_001",
+      "target_label": "LW Chapter 27",
+      "target_ref_type": "chapter",
+      "target_ref_id": "27",
+      "target_section_title": "Chapter 27 · Variance-Component Estimation with Complex Pedigrees",
+      "book_hint": "Genetics",
+      "link_scope": "lw",
+      "context_excerpt": "han one generation, are very minor and can usually be ignored. In theory, epistatic terms can be included in the mixed-model equations in a similar fashion as with dominance; see LW Chapter 26 for details, and LW Chapter 27 for modifications of the REML equations to estimate nonadditive variances. In practice this is almost never done, as the effects are generally small and the precision of estimates is quite poor a…",
+      "match_source": "llm-prerequisite"
+    },
+    {
+      "current_section_id": "Evolution_chapter19_029",
+      "current_anchor": "evolution_chapter19_029",
+      "source_chapter_id": "Evolution_chapter20",
+      "label": "Chapter 20",
+      "target_anchor": "evolution_chapter20_section_001",
+      "target_label": "Chapter 20",
+      "target_ref_type": "chapter",
+      "target_ref_id": "20",
+      "target_section_title": "Chapter 20 · Selection Response in Natural Populations",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "in the absence of any pedigree information, a least-squares analysis is the only option, although this could also be placed in a Bayesian framework. With the pedigree in hand (either observed or inferred; see Chapter 20), a mixed-model analysis is much more powerful and is strongly preferred over LS, unless there is strong evidence that model assumptions have been violated. If a mixed-model approach is appropriate a…",
+      "match_source": "chapter-overview"
+    }
+  ],
+  "prerequisites": [
+    {
+      "id": "prereq-evolution_chapter16",
+      "title": "Chapter 16 · Short-term Changes in the Variance: 1. Changes in the Additive Variance",
+      "source_chapter_id": "Evolution_chapter16",
+      "used_in_sections": [
+        "Evolution_chapter19_007",
+        "Evolution_chapter19_015",
+        "Evolution_chapter19_016",
+        "Evolution_chapter19_017"
+      ],
+      "why_needed": "第19章多次引用第16章关于连锁不平衡和漂变对加性方差影响的结论，是理解REML估计和动物模型的基础。",
+      "key_points": [
+        "加性遗传方差在选择的短期变化来源于连锁不平衡和漂变（无限小模型下无等位基因频率变化）",
+        "加性方差可分解为家系间和家系内组分",
+        "选择不改变等位基因频率时，方差变化仅由不平衡和漂变引起",
+        "使用方差组分预测选择响应需从未选择的基础群体开始"
+      ],
+      "source_links": [
+        {
+          "chapter_id": "Evolution_chapter16",
+          "label": "Chapter 16",
+          "markdown_path": "/data/textbook/Evolution_chapter16_textbook.md",
+          "anchor": "evolution_chapter16_section_001",
+          "section_title": "Chapter 16 · Short-term Changes in the Variance: 1. Changes in the Additive Variance",
+          "ref_type": "chapter",
+          "ref_id": "16",
+          "book_hint": "",
+          "link_scope": "current-book",
+          "excerpt": "Chapter 16 · Short-term Changes in the Variance: 1. Changes in the Additive Variance"
+        }
+      ],
+      "source_excerpt": "}^{2}\\end{aligned} $$ where $ \\sigma {A^ }^2(t) $ is the variance of the breeding values of the selected parents (with assortative mating, Equation 16.8b has an additional term, $ \\sigma(A m^ , A f^ )/2 $; see Equation 16.21b). Equation 16.8b shows that additive variance can be decomposed into an among-family component (half the additive genetic variance, $ \\sigma {A^ }^2(t)/2 $), that measures the differences betwe…",
+      "summary_status": "llm-validated",
+      "usage_count": 4,
+      "explicit_asset_refs": 5,
+      "priority_score": 190,
+      "validated_by_llm": true,
+      "concept_title": "Chapter 16 · Short-term Changes in the Variance: 1. Changes in the Additive Variance",
+      "nav_label": "Ch16 Variance Changes",
+      "evidence_summary": "当前章节的多个小节明确引用第16章解释加性方差的变化来源。"
+    },
+    {
+      "id": "prereq-evolution_chapter5",
+      "title": "第5章·选择群体遗传学",
+      "source_chapter_id": "Evolution_chapter5",
+      "used_in_sections": [
+        "Evolution_chapter19_017"
+      ],
+      "why_needed": "当前章节在讨论选择实验中加性遗传方差变化来源时，明确引用第5章解释由选择产生的配子相不平衡（连锁不平衡）。理解该概念需要第5章关于选择如何影响等位基因频率和连锁不平衡的背景知识。",
+      "key_points": [
+        "选择对等位基因频率的影响",
+        "配子相不平衡（连锁不平衡）的产生机制",
+        "选择实验中方差变化的三个来源：等位基因频率变化、漂变、连锁不平衡"
+      ],
+      "source_links": [
+        {
+          "chapter_id": "Evolution_chapter5",
+          "label": "Chapter 5",
+          "markdown_path": "/data/textbook/Evolution_chapter5_textbook.md",
+          "anchor": "evolution_chapter5_section_001",
+          "section_title": "Chapter 5 · The Population Genetics of Selection",
+          "ref_type": "chapter",
+          "ref_id": "5",
+          "book_hint": "",
+          "link_scope": "current-book",
+          "excerpt": "Chapter 5 · The Population Genetics of Selection"
+        }
+      ],
+      "source_excerpt": "Chapter 5 · The Population Genetics of Selection",
+      "summary_status": "llm-validated",
+      "usage_count": 1,
+      "explicit_asset_refs": 0,
+      "priority_score": 180,
+      "validated_by_llm": true,
+      "concept_title": "第5章·选择群体遗传学",
+      "nav_label": "选择遗传学",
+      "evidence_summary": "当前章节直接引用第5章（和16章）作为配子相不平衡的概念来源。"
+    },
+    {
+      "id": "prereq-evolution_chapter13",
+      "title": "BLUP选择",
+      "source_chapter_id": "Evolution_chapter13",
+      "used_in_sections": [
+        "Evolution_chapter19_003",
+        "Evolution_chapter19_019"
+      ],
+      "why_needed": "本章介绍BLUP选择，该方法在第13章中详细定义，是理解混合模型应用的基础。",
+      "key_points": [
+        "BLUP是混合模型的一种应用",
+        "用于选择育种值最高的个体作为亲本",
+        "是动物和树木育种者的主要选择方法"
+      ],
+      "source_links": [
+        {
+          "chapter_id": "Evolution_chapter13",
+          "label": "Chapter 13",
+          "markdown_path": "/data/textbook/Evolution_chapter13_textbook.md",
+          "anchor": "evolution_chapter13_section_001",
+          "section_title": "Chapter 13 · Short-term Changes in the Mean: 1. The Breeder's Equation",
+          "ref_type": "chapter",
+          "ref_id": "13",
+          "book_hint": "",
+          "link_scope": "current-book",
+          "excerpt": "Chapter 13 · Short-term Changes in the Mean: 1. The Breeder's Equation"
+        }
+      ],
+      "source_excerpt": "Chapter 13 · Short-term Changes in the Mean: 1. The Breeder's Equation",
+      "summary_status": "llm-validated",
+      "usage_count": 2,
+      "explicit_asset_refs": 0,
+      "priority_score": 180,
+      "validated_by_llm": true,
+      "concept_title": "BLUP选择",
+      "nav_label": "第13章",
+      "evidence_summary": "第19章明确引用第13章的BLUP选择作为之前介绍的方法。"
+    },
+    {
+      "id": "prereq-evolution_appendix6",
+      "title": "附录6 · 向量导数与混合模型方程",
+      "source_chapter_id": "Evolution_appendix6",
+      "used_in_sections": [
+        "Evolution_chapter19_005",
+        "Evolution_chapter19_006"
+      ],
+      "why_needed": "本章BLUP和REML的推导依赖于附录6中的向量导数运算，特别是混合模型方程的推导过程。",
+      "key_points": [
+        "掌握向量和矩阵求导规则",
+        "理解利用导数推导Henderson方程（19.4）",
+        "熟悉混合模型的标准形式及其组成部分"
+      ],
+      "source_links": [
+        {
+          "chapter_id": "Evolution_appendix6",
+          "label": "Example A6.5",
+          "markdown_path": "/data/textbook/Evolution_appendix6_textbook.md",
+          "anchor": "example-a6.5",
+          "section_title": "Appendix: Introduction / DERIVATIVES OF VECTORS AND VECTOR-VALUED FUNCTIONS",
+          "ref_type": "example",
+          "ref_id": "A6.5",
+          "book_hint": "",
+          "link_scope": "current-book",
+          "excerpt": "Example A6.5 · ref: A6.5 · source: Evolution appendix6 002.json · blocks 6–6 Example A6.5. Here we present one derivation of Henderson's mixed-model equations (Equation 19.4). Consider the mixed model $ \\mathbf{y} = \\mathbf{X}\\beta + \\mathbf{Z}\\mathbf{u} + \\mathbf{e} $, where $ \\mathbf{e} \\sim \\text{MVN}(0, \\mathbf{R}) $, $ \\mathbf{u} \\sim \\text{MVN}(0, \\mathbf{G}) $, and $ \\mathbf{e} $ and $ \\mathbf{u} $ are indepe…"
+        }
+      ],
+      "source_excerpt": "Example A6.5 · ref: A6.5 · source: Evolution appendix6 002.json · blocks 6–6 Example A6.5. Here we present one derivation of Henderson's mixed-model equations (Equation 19.4). Consider the mixed model $ \\mathbf{y} = \\mathbf{X}\\beta + \\mathbf{Z}\\mathbf{u} + \\mathbf{e} $, where $ \\mathbf{e} \\sim \\text{MVN}(0, \\mathbf{R}) $, $ \\mathbf{u} \\sim \\text{MVN}(0, \\mathbf{G}) $, and $ \\mathbf{e} $ and $ \\mathbf{u} $ are indepe…",
+      "summary_status": "llm-validated",
+      "usage_count": 2,
+      "explicit_asset_refs": 2,
+      "priority_score": 180,
+      "validated_by_llm": true,
+      "concept_title": "附录6 · 向量导数与混合模型方程",
+      "nav_label": "附录6",
+      "evidence_summary": "示例A6.5直接推导了本章核心方程19.4，是必要的数学基础。"
+    },
+    {
+      "id": "prereq-genetics_chapter26",
+      "title": "Chapter 26 · Mixed Models and Animal Model Basics",
+      "source_chapter_id": "Genetics_chapter26",
+      "used_in_sections": [
+        "Evolution_chapter19_001",
+        "Evolution_chapter19_004",
+        "Evolution_chapter19_008",
+        "Evolution_chapter19_009",
+        "Evolution_chapter19_019",
+        "Evolution_chapter19_022"
+      ],
+      "why_needed": "本章深入使用混合模型和动物模型分析选择实验，需要提前掌握第26章中混合模型的基本理论和动物模型的构建方法。",
+      "key_points": [
+        "混合模型的基本概念：固定效应与随机效应",
+        "动物模型的构建与育种值估计",
+        "关系矩阵A的作用与计算"
+      ],
+      "source_links": [
+        {
+          "chapter_id": "Genetics_chapter26",
+          "label": "LW Chapter 26",
+          "markdown_path": "/data/textbook/Genetics_chapter26_textbook.md",
+          "anchor": "genetics_chapter26_section_001",
+          "section_title": "Chapter 26 Textbook Mapping",
+          "ref_type": "chapter",
+          "ref_id": "26",
+          "book_hint": "Genetics",
+          "link_scope": "lw",
+          "excerpt": "Chapter 26 Textbook Mapping"
+        }
+      ],
+      "source_excerpt": "Chapter 26 Textbook Mapping",
+      "summary_status": "llm-validated",
+      "usage_count": 6,
+      "explicit_asset_refs": 0,
+      "priority_score": 180,
+      "validated_by_llm": true,
+      "concept_title": "Chapter 26 · Mixed Models and Animal Model Basics",
+      "nav_label": "Ch26 Mixed Models",
+      "evidence_summary": "本章多处明确引用LW第26章，建议读者先阅读该章以掌握混合模型和动物模型的基础知识。"
+    },
+    {
+      "id": "prereq-genetics_chapter27",
+      "title": "Chapter 27 · Variance-Component Estimation with Complex Pedigrees",
+      "source_chapter_id": "Genetics_chapter27",
+      "used_in_sections": [
+        "Evolution_chapter19_001",
+        "Evolution_chapter19_004",
+        "Evolution_chapter19_006",
+        "Evolution_chapter19_019",
+        "Evolution_chapter19_020",
+        "Evolution_chapter19_022"
+      ],
+      "why_needed": "当前章节在混合模型分析中多次引用第27章，用于理解REML和BLUP估计的详细过程。",
+      "key_points": [
+        "REML（限制性最大似然）估计未知方差组分",
+        "BLUP（最佳线性无偏预测）与REML的关系",
+        "复杂系谱数据的方差组分估计"
+      ],
+      "source_links": [
+        {
+          "chapter_id": "Genetics_chapter27",
+          "label": "LW Chapter 27",
+          "markdown_path": "/data/textbook/Genetics_chapter27_textbook.md",
+          "anchor": "genetics_chapter27_section_001",
+          "section_title": "Chapter 27 · Variance-Component Estimation with Complex Pedigrees",
+          "ref_type": "chapter",
+          "ref_id": "27",
+          "book_hint": "Genetics",
+          "link_scope": "lw",
+          "excerpt": "Chapter 27 · Variance-Component Estimation with Complex Pedigrees"
+        }
+      ],
+      "source_excerpt": "Chapter 27 · Variance-Component Estimation with Complex Pedigrees",
+      "summary_status": "llm-validated",
+      "usage_count": 6,
+      "explicit_asset_refs": 0,
+      "priority_score": 180,
+      "validated_by_llm": true,
+      "concept_title": "Chapter 27 · Variance-Component Estimation with Complex Pedigrees",
+      "nav_label": "Chapter 27",
+      "evidence_summary": "当前章节19.004和19.006直接引用LW第27章作为REML和BLUP的参考。"
+    },
+    {
+      "id": "prereq-evolution_chapter3",
+      "title": "Chapter 3 · The Genetic Effective Size of a Population",
+      "source_chapter_id": "Evolution_chapter3",
+      "used_in_sections": [
+        "Evolution_chapter19_016"
+      ],
+      "why_needed": "本节讨论近交对加性方差的影响，这直接依赖于有效群体大小和近交系数的概念，而第3章正是这些概念的基础。",
+      "key_points": [
+        "遗传有效群体大小（Ne）的定义及计算",
+        "近交系数（F）的累积与群体大小关系",
+        "近交导致遗传方差减少的机制"
+      ],
+      "source_links": [
+        {
+          "chapter_id": "Evolution_chapter3",
+          "label": "Chapter 3",
+          "markdown_path": "/data/textbook/Evolution_chapter3_textbook.md",
+          "anchor": "evolution_chapter3_section_001",
+          "section_title": "Chapter 3 · The Genetic Effective Size of a Population",
+          "ref_type": "chapter",
+          "ref_id": "3",
+          "book_hint": "",
+          "link_scope": "current-book",
+          "excerpt": "Chapter 3 · The Genetic Effective Size of a Population"
+        }
+      ],
+      "source_excerpt": "Chapter 3 · The Genetic Effective Size of a Population",
+      "summary_status": "llm-validated",
+      "usage_count": 1,
+      "explicit_asset_refs": 0,
+      "priority_score": 150,
+      "validated_by_llm": true,
+      "concept_title": "Chapter 3 · The Genetic Effective Size of a Population",
+      "nav_label": "Chapter 3: Effective Size",
+      "evidence_summary": "当前文本明确引用第3章来支持近交对加性方差影响的分析。"
+    },
+    {
+      "id": "prereq-evolution_chapter11",
+      "title": "Chapter 11 · Changes in Genetic Variation Induced by Drift",
+      "source_chapter_id": "Evolution_chapter11",
+      "used_in_sections": [
+        "Evolution_chapter19_022"
+      ],
+      "why_needed": "当前章节讨论由显性效应引起的同胞间协方差，这依赖于第11章关于漂变下遗传方差变化及近交亲属间协方差的概念和公式。",
+      "key_points": [
+        "第11章介绍了近交下遗传协方差的二次分量，包括显性方差分量。",
+        "方程11.13量化了不同亲属关系中的显性协方差成分。",
+        "这些概念直接用于第19章理解非加性遗传方差和显性效应。"
+      ],
+      "source_links": [
+        {
+          "chapter_id": "Evolution_chapter11",
+          "label": "Chapter 11",
+          "markdown_path": "/data/textbook/Evolution_chapter11_textbook.md",
+          "anchor": "evolution_chapter11_section_001",
+          "section_title": "Chapter 11 · Changes in Genetic Variation Induced by Drift",
+          "ref_type": "chapter",
+          "ref_id": "11",
+          "book_hint": "",
+          "link_scope": "current-book",
+          "excerpt": "Chapter 11 · Changes in Genetic Variation Induced by Drift"
+        },
+        {
+          "chapter_id": "Evolution_chapter11",
+          "label": "Equation 11.13",
+          "markdown_path": "/data/textbook/Evolution_chapter11_textbook.md",
+          "anchor": "evolution_chapter11_012",
+          "section_title": "Changes in Genetic Variation Induced by Drift: Introduction / COVARIANCE BETWEEN INBRED RELATIVES",
+          "ref_type": "equation",
+          "ref_id": "11.13",
+          "book_hint": "",
+          "link_scope": "current-book",
+          "excerpt": "breeding depression at the same and at different loci. summarizes the expected genetic covariance contributed by the various relationships. One conclusion that can be drawn immediately from Equation 11.13 is that with inbreeding, dominance can contribute to the covariance between many types of inbred relatives. All of the quadratic components in this equation are necessarily positive except $ \\sigma {ADI} $, wh"
+        }
+      ],
+      "source_excerpt": "Chapter 11 · Changes in Genetic Variation Induced by Drift",
+      "summary_status": "llm-validated",
+      "usage_count": 1,
+      "explicit_asset_refs": 3,
+      "priority_score": 150,
+      "validated_by_llm": true,
+      "concept_title": "Chapter 11 · Changes in Genetic Variation Induced by Drift",
+      "nav_label": "Drift & Dominance",
+      "evidence_summary": "当前章节引用了第11章中关于近交亲属间显性协方差的概念和公式，作为理解基础。"
+    },
+    {
+      "id": "prereq-evolution_appendix2",
+      "title": "Appendix 2 · Posterior under Normality",
+      "source_chapter_id": "Evolution_appendix2",
+      "used_in_sections": [
+        "Evolution_chapter19_024"
+      ],
+      "why_needed": "贝叶斯混合模型分析依赖于正态性假设下的后验分布公式，该附录提供了关键的后验均值表达式。",
+      "key_points": [
+        "后验均值是先验均值与样本均值的加权平均，权重由方差决定。",
+        "当先验非常分散或样本量很大时，后验均值趋近于样本均值。",
+        "该公式是贝叶斯统计推断的基础，直接用于混合模型参数估计。"
+      ],
+      "source_links": [
+        {
+          "chapter_id": "Evolution_appendix2",
+          "label": "Equation A2.22b",
+          "markdown_path": "/data/textbook/Evolution_appendix2_textbook.md",
+          "anchor": "evolution_appendix2_013",
+          "section_title": "POSTERIOR DISTRIBUTIONS UNDER NORMALITY ASSUMPTIONS / Gaussian Likelihood With Known Variance and Unknown Mean",
+          "ref_type": "equation",
+          "ref_id": "A2.22b",
+          "book_hint": "",
+          "link_scope": "current-book",
+          "excerpt": "ma {0}^{2}}+\\overline{x}\\frac{\\sigma { }^{2}}{\\sigma^{2}/n} $$ With a very diffuse prior on $ \\mu $ (i.e., $ \\sigma 0^2 \\gg \\sigma^2 $), $ \\sigma \\to \\sigma^2/n $ and $ \\mu \\to \\overline{x} $. Also note from Equation A2.22b that as we collect enough data (i.e., achieve a sufficiently large value of $ n $), $ \\sigma \\to \\sigma^2/n $ and again $ \\mu \\to \\overline{x} $, implying that primarily the data, rather than the…"
+        }
+      ],
+      "source_excerpt": "ma {0}^{2}}+\\overline{x}\\frac{\\sigma { }^{2}}{\\sigma^{2}/n} $$ With a very diffuse prior on $ \\mu $ (i.e., $ \\sigma 0^2 \\gg \\sigma^2 $), $ \\sigma \\to \\sigma^2/n $ and $ \\mu \\to \\overline{x} $. Also note from Equation A2.22b that as we collect enough data (i.e., achieve a sufficiently large value of $ n $), $ \\sigma \\to \\sigma^2/n $ and again $ \\mu \\to \\overline{x} $, implying that primarily the data, rather than the…",
+      "summary_status": "llm-validated",
+      "usage_count": 1,
+      "explicit_asset_refs": 1,
+      "priority_score": 150,
+      "validated_by_llm": true,
+      "concept_title": "Appendix 2 · Posterior under Normality",
+      "nav_label": "Posterior under Normality",
+      "evidence_summary": "等式A2.22b给出了正态似然下后验均值的精确表达式，是贝叶斯分析的直接预备知识。"
+    },
+    {
+      "id": "prereq-genetics_chapter7",
+      "title": "Chapter 7 · 基础数量遗传学",
+      "source_chapter_id": "Genetics_chapter7",
+      "used_in_sections": [
+        "Evolution_chapter19_009",
+        "Evolution_chapter19_022"
+      ],
+      "why_needed": "理解加性遗传方差和显性方差是动物模型分析的基础。",
+      "key_points": [
+        "加性遗传方差与育种值的关系",
+        "显性方差对同胞间协方差的影响",
+        "亲缘关系矩阵A的构建"
+      ],
+      "source_links": [
+        {
+          "chapter_id": "Genetics_chapter7",
+          "label": "LW Chapter 7",
+          "markdown_path": "/data/textbook/Genetics_chapter7_textbook.md",
+          "anchor": "genetics_chapter7_section_001",
+          "section_title": "Chapter 7 Textbook Mapping",
+          "ref_type": "chapter",
+          "ref_id": "7",
+          "book_hint": "Genetics",
+          "link_scope": "lw",
+          "excerpt": "Chapter 7 Textbook Mapping"
+        }
+      ],
+      "source_excerpt": "Chapter 7 Textbook Mapping",
+      "summary_status": "llm-validated",
+      "usage_count": 2,
+      "explicit_asset_refs": 2,
+      "priority_score": 150,
+      "validated_by_llm": true,
+      "concept_title": "Chapter 7 · 基础数量遗传学",
+      "nav_label": "Ch.7 基础",
+      "evidence_summary": "当前章节明确提及加性遗传方差、显性方差和亲缘关系矩阵，这些概念来自基础数量遗传学。"
+    }
+  ],
+  "llm": {
+    "requests_total": 15,
+    "cache_hits": 15,
+    "cache_writes": 0,
+    "remote_calls": 0,
+    "budget_rejections": 0,
+    "prompt_chars_sent": 0,
+    "response_chars_received": 0,
+    "api_prompt_tokens": 0,
+    "api_completion_tokens": 0,
+    "api_total_tokens": 0,
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "cache_enabled": true,
+    "cache_dir": "D:\\大学资料\\大二\\LLM-Agent科学文献系统知识库处理\\tmp\\llm_cache",
+    "max_remote_calls": 0,
+    "max_prompt_chars_total": 0,
+    "max_response_chars_total": 0,
+    "validated_only": true,
+    "preserved_from_previous_build": true
+  }
+}

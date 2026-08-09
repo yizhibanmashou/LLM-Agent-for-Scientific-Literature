@@ -56,10 +56,14 @@ Before proceeding further, it may be helpful to summarize the assumptions that w
 
 Collectively, these assumptions summarize the Hardy-Weinberg model, named after the English mathematician G. H. Hardy (1877–1947) and the German physiologist Wilhelm Weinberg (1862–1937), who, in 1908, independently formulated the model and deduced its theoretical predictions of genotype frequency.
 
-In the Hardy-Weinberg model, the mathematical relation between the allele frequencies and the genotype frequencies is given by $$
+In the Hardy-Weinberg model, the mathematical relation between the allele frequencies and the genotype frequencies is given by
+
+$$
 AA:p^{2}\qquad Aa:2pq\qquad aa:q^{2}
 \tag{2.1}
-$$ in which $ p^{2} $, $ 2pq $, and $ q^{2} $ are the frequencies of the genotypes AA, Aa, and aa in zygotes of any generation, p and q are the allele frequencies of A and a in gametes of the previous generation, and $ p + q = 1 $. The frequencies displayed in Equation 2.1 constitute the Hardy-Weinberg principle or the Hardy-Weinberg equilibrium (HWE).
+$$
+
+in which $ p^{2} $, $ 2pq $, and $ q^{2} $ are the frequencies of the genotypes AA, Aa, and aa in zygotes of any generation, p and q are the allele frequencies of A and a in gametes of the previous generation, and $ p + q = 1 $. The frequencies displayed in Equation 2.1 constitute the Hardy-Weinberg principle or the Hardy-Weinberg equilibrium (HWE).
 
 One rationale for the Hardy-Weinberg principle displayed in Equation 2.1 is based on the outcome of repeated and independent trials. With random mating, the choices of male gamete and female gamete are independent trials, and so pairs of gametes carrying the alleles AA, Aa, or aa are expected in proportions given by $ (pA + qa)^2 = p^2AA + 2pqAa + q^2aa $. A graphical illustration of the rationale of independent trials is shown in Figure 2.2. The chance of two A-bearing gametes coming together is $ p \times p = p^2 $ and that of two a-bearing gametes coming together is $ q \times q = q^2 $; for the heterozygote, the chance is $ p \times q + q \times p = 2pq $ because the female gamete could carry A and the male gamete carry a, or the other way around.
 
@@ -79,14 +83,30 @@ ANSWER For this situation a Punnett square like that in Figure 2.2 would have al
 
 ## PopGen_chapter2_005 · 2.2 THE HARDY-WEINBERG PRINCIPLE / Random Mating of Genotypes versus Random Union of Gametes
 
-Figure 2.2 implicitly assumes the important premise that random mating of genotypes is equivalent to random union of gametes. A demonstration of this premise in the case of two alleles is outlined in *[See Table 2.1 at the end of this section.]*, in which pairs of genotypes are chosen at random to form matings. The genotype frequencies of AA, Aa, and aa in the parental generation are written as P, Q, and R, respectively, where $ P + Q + R = 1 $. In terms of the genotype frequencies, the allele frequencies p of A and q of a are as follows: $$
+Figure 2.2 implicitly assumes the important premise that random mating of genotypes is equivalent to random union of gametes. A demonstration of this premise in the case of two alleles is outlined in *[See Table 2.1 at the end of this section.]*, in which pairs of genotypes are chosen at random to form matings. The genotype frequencies of AA, Aa, and aa in the parental generation are written as P, Q, and R, respectively, where $ P + Q + R = 1 $. In terms of the genotype frequencies, the allele frequencies p of A and q of a are as follows:
+
+$$
 \begin{aligned}&p=(2\times P+Q)/2=P+Q/2\\&q=(2\times R+Q)/2=R+Q/2\\ \end{aligned}
 \tag{2.2}
 $$
 
 Note that $ p + q = P + Q + R = 1.0 $; this result is a consequence of the fact that the gene has only two alleles. With two alleles of a gene, there are six possible types of matings. When mating is random, these matings take place in proportion to the genotypic frequencies in the population, and the types of mating pairs are given by successive terms in the expansion of $ (P\, AA + Q\, Aa + R\, aa)^2 $. For example, the pro-
 
-*[See Table 2.1 at the end of this section.]* therefore $$ P^{\prime}=P^{2}+\frac{2PQ}{2}+\frac{Q^{2}}{4}=(P+\frac{Q}{2})^{2}=p^{2} $$ $$ Q^{\prime}=\frac{2PQ}{2}+2PR+\frac{Q^{2}}{2}+\frac{2QR}{2}=2(P+\frac{Q}{2})(R+\frac{Q}{2})=2pq $$ $$ R^{\prime}=\frac{Q^{2}}{4}+\frac{2Q R}{2}+R^{2}=(R+\frac{Q}{2})^{2}=q^{2} $$ portion of $ AA \times AA $ matings is $ P \times P = P^2 $. Similarly, the proportion of $ AA \times Aa $ matings is $ 2 \times P \times Q $ because the mating can be between either an AA female and an Aa male (proportion $ P \times Q $) or else between an Aa female and an AA male (proportion $ Q \times P $). The frequencies of these and the other types of matings are given in the second column of *[See Table 2.1 at the end of this section.]*.
+*[See Table 2.1 at the end of this section.]* therefore
+
+$$
+P^{\prime}=P^{2}+\frac{2PQ}{2}+\frac{Q^{2}}{4}=(P+\frac{Q}{2})^{2}=p^{2}
+$$
+
+$$
+Q^{\prime}=\frac{2PQ}{2}+2PR+\frac{Q^{2}}{2}+\frac{2QR}{2}=2(P+\frac{Q}{2})(R+\frac{Q}{2})=2pq
+$$
+
+$$
+R^{\prime}=\frac{Q^{2}}{4}+\frac{2Q R}{2}+R^{2}=(R+\frac{Q}{2})^{2}=q^{2}
+$$
+
+portion of $ AA \times AA $ matings is $ P \times P = P^2 $. Similarly, the proportion of $ AA \times Aa $ matings is $ 2 \times P \times Q $ because the mating can be between either an AA female and an Aa male (proportion $ P \times Q $) or else between an Aa female and an AA male (proportion $ Q \times P $). The frequencies of these and the other types of matings are given in the second column of *[See Table 2.1 at the end of this section.]*.
 
 The genotypes of the zygotes produced by the matings are given in the last three columns of *[See Table 2.1 at the end of this section.]*. The offspring frequencies follow from Mendel's law of segregation, which states that an Aa heterozygote produces an equal number of A-bearing and a-bearing gametes. The AA and aa homozygotes produce only A-bearing and only a-bearing gametes, respectively. Thus, the mating AA × aa produces all Aa zygotes, the mating AA × Aa produces $ \frac{1}{2} $ AA and $ \frac{1}{2} $ Aa zygotes, the mating Aa × Aa produces $ \frac{1}{4} $ AA, $ \frac{1}{2} $ Aa, and $ \frac{1}{4} $ aa zygotes, and so forth.
 
@@ -145,14 +165,26 @@ At this point, it is convenient to tabulate the data into three columns:
 > Pro/Pro | 32 | 26.6
 
 
-With the data so arrayed, it is evident that the fit between the observed numbers and the expected numbers, though not perfect because of chance statistical fluctuations in the number of each genotype that may be included in any given sample, is nevertheless very close. To verify this conclusion, we will apply a conventional statistical test to the data in order to assess quantitatively the closeness of fit. A test commonly employed in population genetics is called the chi-square test, which is based on the value of a number, called $ \chi^{2} $, calculated from the data as $$
+With the data so arrayed, it is evident that the fit between the observed numbers and the expected numbers, though not perfect because of chance statistical fluctuations in the number of each genotype that may be included in any given sample, is nevertheless very close. To verify this conclusion, we will apply a conventional statistical test to the data in order to assess quantitatively the closeness of fit. A test commonly employed in population genetics is called the chi-square test, which is based on the value of a number, called $ \chi^{2} $, calculated from the data as
+
+$$
 \chi^{2}=\sum\frac{(observed-expected)^{2}}{expected}
 \tag{2.3}
-$$ where observed and expected refer to the observed and expected numbers in any genotypic class, and the $ \Sigma $ sign denotes that the values are to be summed over all genotypic classes. In the case at hand, $$ \begin{aligned}\chi^{2}&=(166-160.6)^{2}/160.6\\&\quad+(120-130.8)^{2}/130.8\\&\quad+(32-26.6)^{2}/26.6\\&=2.17\end{aligned} $$
+$$
+
+where observed and expected refer to the observed and expected numbers in any genotypic class, and the $ \Sigma $ sign denotes that the values are to be summed over all genotypic classes. In the case at hand,
+
+$$
+\begin{aligned}\chi^{2}&=(166-160.6)^{2}/160.6\\&\quad+(120-130.8)^{2}/130.8\\&\quad+(32-26.6)^{2}/26.6\\&=2.17\end{aligned}
+$$
 
 To be completely unambiguous, some statisticians prefer use of the symbol $ \chi^{2} $ for the realized value of the test statistic defined Equation 2.3, in order to distinguish between the test statistic and the true $ \chi^{2} $ distribution itself. The distinction should certainly be kept in mind, but we will not recognize it formally with different symbols.
 
-Associated with any $ \chi^{2} $ value is a second number called the degrees of freedom for that $ \chi^{2} $. In general, the number of degrees of freedom (df) associated with a $ \chi^{2} $ value equals $$ \begin{aligned}df&=Number of classes of data\\&-Number of parameters estimated from the data\\&-1\end{aligned} $$
+Associated with any $ \chi^{2} $ value is a second number called the degrees of freedom for that $ \chi^{2} $. In general, the number of degrees of freedom (df) associated with a $ \chi^{2} $ value equals
+
+$$
+\begin{aligned}df&=Number of classes of data\\&-Number of parameters estimated from the data\\&-1\end{aligned}
+$$
 
 In the p53 example, there are three classes of data and one parameter (p) estimated from the data, and so $ df = 3 - 1 - 1 = 1 $. Note that a degree of freedom is not subtracted for estimating q because of the relation $ q = 1 - p $; that is, once p has been estimated, the estimate of q is automatically determined, and so we deduct just the one degree of freedom corresponding to p.
 
@@ -176,21 +208,65 @@ ANSWER $ \hat{p}=0.882 $ and $ \hat{q}=0.118 $. The expected numbers of CCR5/CCR
 
 Testing for HWE is important. For example, in studies in human genetics, deviations from HWE of a marker gene among individuals affected with a genetic disease may be helpful in identifying the location of a disease-susceptibility allele near the marker gene along the chromosome (Nielsen et al. 1999). Deviations from HWE may also alert the investigator to possible genotyping errors (Xu et al. 2002). Yet tests for HWE are often unreported or botched (Salanti et al. 2005). There are also complications that can invalidate the simple chi-square calculation in Equation 2.3. Some of the ways of dealing with these complications are examined next.
 
-SAMPLE SIZE TOO SMALL Problem 2.3 illustrates one of the issues that can arise in testing for HWE. The allele frequency of $ CCR5\Delta $ is sufficiently small that, even for a sample size of 338, the observed number of homozygotes was only 7 and the expected number is only 4.7. With such small numbers, chance alone can have a substantial effect on the composition of any actual sample. This is a problem for the formula in Equation 2.3, because this expression has a chi-square distribution only when each of the classes of data has a sufficiently large expected number. What “sufficiently large” means is a matter of judgment, but most statisticians agree that the standard chi-square test should not be trusted when any of the expected numbers is smaller than 5. The $ CCR5\Delta $ example violates this convention. In such cases, many statisticians recommend calculating a chi-square value that is somewhat more conservative than that in Equation 2.3, namely, $$
+SAMPLE SIZE TOO SMALL Problem 2.3 illustrates one of the issues that can arise in testing for HWE. The allele frequency of $ CCR5\Delta $ is sufficiently small that, even for a sample size of 338, the observed number of homozygotes was only 7 and the expected number is only 4.7. With such small numbers, chance alone can have a substantial effect on the composition of any actual sample. This is a problem for the formula in Equation 2.3, because this expression has a chi-square distribution only when each of the classes of data has a sufficiently large expected number. What “sufficiently large” means is a matter of judgment, but most statisticians agree that the standard chi-square test should not be trusted when any of the expected numbers is smaller than 5. The $ CCR5\Delta $ example violates this convention. In such cases, many statisticians recommend calculating a chi-square value that is somewhat more conservative than that in Equation 2.3, namely,
+
+$$
 \chi^{2}=\sum\frac{\left(\left|observed-expected\right|-0.5\right)^{2}}{expected}
 \tag{2.4}
 $$
 
 In this expression, the vertical bars mean absolute value (the magnitude of the enclosed number disregarding the sign). The fact that 0.5 is subtracted from each difference in the numerator before taking the square serves to reduce the value of the chi-square. In the CCR5Δ example, Equation 2.4 yields $ (2.1 - 0.5)^2 / 262.9 + (4.4 - 0.5)^2 / 70.4 + (2.3 - 0.5)^2 / 4.7 = 0.915 $. This value is not found on the chart in Figure 2.3 because the graph begins at $ \chi^2 = 1 $ for clarity. In practice, values of $ \chi^2 $ smaller than 1 are often found (as in the present example), but they are never significant. In this case, a $ \chi^2 $ of 0.915 with one degree of freedom has a corresponding $ P $ value of 0.34. This correction for small sample size has limitations, because if any of the expected numbers is too close to 0, then the correction in Equation 2.4 is unreliable.
 
-EXACT TEST FOR HWE If the sample size is small enough, then it is possible to calculate the exact probability of all possible sample configurations. To be concrete, consider a gene with two alleles A and a, and let the observed numbers of AA, Aa, and aa in one possible sample be $ n_{11} $, $ n_{12} $, and $ n_{22} $, respectively. The total sample size is therefore $ n = n_{11} + n_{12} + n_{22} $, and the observed numbers of A and a alleles are $ n_{1} = 2 \times n_{11} + n_{12} $ and $ n_{2} = n_{12} + 2 \times n_{22} $, respectively. We wish to calculate the probability of any sample configuration ($ n_{11} $, $ n_{12} $, $ n_{22} $) for a fixed sample size n and fixed allele counts $ n_{1} $ and $ n_{2} $. Since the allele counts are fixed, any sample is uniquely specified by the number of heterozygotes observed. In fact, the exact probability of the sample configuration ($ n_{11} $, $ n_{12} $, $ n_{22} $), conditional on the allele counts ($ n_{1} $, $ n_{2} $), is given by $$
+EXACT TEST FOR HWE If the sample size is small enough, then it is possible to calculate the exact probability of all possible sample configurations. To be concrete, consider a gene with two alleles A and a, and let the observed numbers of AA, Aa, and aa in one possible sample be $ n_{11} $, $ n_{12} $, and $ n_{22} $, respectively. The total sample size is therefore $ n = n_{11} + n_{12} + n_{22} $, and the observed numbers of A and a alleles are $ n_{1} = 2 \times n_{11} + n_{12} $ and $ n_{2} = n_{12} + 2 \times n_{22} $, respectively. We wish to calculate the probability of any sample configuration ($ n_{11} $, $ n_{12} $, $ n_{22} $) for a fixed sample size n and fixed allele counts $ n_{1} $ and $ n_{2} $. Since the allele counts are fixed, any sample is uniquely specified by the number of heterozygotes observed. In fact, the exact probability of the sample configuration ($ n_{11} $, $ n_{12} $, $ n_{22} $), conditional on the allele counts ($ n_{1} $, $ n_{2} $), is given by
+
+$$
 \Pr\left\{n_{12}\left|n_{1},n_{2}\right.\right\}=\frac{n!/\left(n_{11}!n_{12}!n_{22}!\right)}{\left(2n\right)!/\left(n_{1}!n_{2}!\right)}2^{n_{12}}.
 \tag{2.5}
 $$
 
-(Emigh 1980; Weir 1996; and see Guo and Thompson 1992 for a multiple-allele version). Once these conditional probabilities have been calculated for all possible values of $ n_{12} $, they are arranged in increasing order, and a cutoff is chosen such that the cumulative probability of all outcomes above the cut-off equals 0.05 (or the number nearest to, but smaller than, 0.05). If the observed genotype counts fall below the cutoff, the hypothesis of HWE is rejected. As an example, consider a sample of size $n=8$ diploid individuals with fixed allele counts of $n_{1}=8$ and $n_{2}=8$. Then there are only five possible sample configurations $(n_{11}, n_{12}, n_{22})$, which are given below along with their probabilities calculated from Equation 2.5. $$ (0,8,0)\qquad\qquad\operatorname*{P r}=0.01989 $$ $$ \begin{array}{r l r l r}{(1,6,1)}&{{}}&{\qquad}&{{}}&{\mathrm{P r}=0.27848}\end{array} $$ $$ (2,4,2)\qquad\qquad\operatorname*{P r}=0.52215 $$ $$ (3,2,3)\qquad\qquad\operatorname*{P r}=0.17404 $$ $$ (4,0,4)\qquad\qquad\operatorname*{P r}=0.00544 $$
+(Emigh 1980; Weir 1996; and see Guo and Thompson 1992 for a multiple-allele version). Once these conditional probabilities have been calculated for all possible values of $ n_{12} $, they are arranged in increasing order, and a cutoff is chosen such that the cumulative probability of all outcomes above the cut-off equals 0.05 (or the number nearest to, but smaller than, 0.05). If the observed genotype counts fall below the cutoff, the hypothesis of HWE is rejected. As an example, consider a sample of size $n=8$ diploid individuals with fixed allele counts of $n_{1}=8$ and $n_{2}=8$. Then there are only five possible sample configurations $(n_{11}, n_{12}, n_{22})$, which are given below along with their probabilities calculated from Equation 2.5.
 
-These should be arranged in increasing order of probability and the cumulative probabilities calculated, as follows: $$ (4,0,4)\quad\operatorname*{P r}=0.00544\qquad\operatorname{C u m u l a t i v e}\operatorname{P r o b}=0.00544 $$ $$ \left(0,8,0\right)\quad\operatorname{Pr}=0.01989\quad\quad\operatorname{Cumulative Prob}=0.00544+0.01989=0.02533 $$ $$ \begin{array}{r l r}{\mathrm{P r}=0.17404}&{{}}&{\mathrm{C u m u l a t i v e~P r o b}=0.02533+0.17404=0.19937}\end{array} $$ $$ \begin{array}{r l}{\operatorname*{P r}=0.27848}&{{}\quad\mathrm{C u m u l a t i v e~P r o b}=0.19937+0.27848=0.47785}\end{array} $$ $$ \begin{array}{r l r}{(2,4,2)}&{{}}&{\operatorname*{P r}=0.52215\qquad\mathrm{C u m u l a t i v e~P r o b}=0.47785+0.52215=1.0000}\end{array} $$
+$$
+(0,8,0)\qquad\qquad\operatorname*{P r}=0.01989
+$$
+
+$$
+\begin{array}{r l r l r}{(1,6,1)}&{{}}&{\qquad}&{{}}&{\mathrm{P r}=0.27848}\end{array}
+$$
+
+$$
+(2,4,2)\qquad\qquad\operatorname*{P r}=0.52215
+$$
+
+$$
+(3,2,3)\qquad\qquad\operatorname*{P r}=0.17404
+$$
+
+$$
+(4,0,4)\qquad\qquad\operatorname*{P r}=0.00544
+$$
+
+These should be arranged in increasing order of probability and the cumulative probabilities calculated, as follows:
+
+$$
+(4,0,4)\quad\operatorname*{P r}=0.00544\qquad\operatorname{C u m u l a t i v e}\operatorname{P r o b}=0.00544
+$$
+
+$$
+\left(0,8,0\right)\quad\operatorname{Pr}=0.01989\quad\quad\operatorname{Cumulative Prob}=0.00544+0.01989=0.02533
+$$
+
+$$
+\begin{array}{r l r}{\mathrm{P r}=0.17404}&{{}}&{\mathrm{C u m u l a t i v e~P r o b}=0.02533+0.17404=0.19937}\end{array}
+$$
+
+$$
+\begin{array}{r l}{\operatorname*{P r}=0.27848}&{{}\quad\mathrm{C u m u l a t i v e~P r o b}=0.19937+0.27848=0.47785}\end{array}
+$$
+
+$$
+\begin{array}{r l r}{(2,4,2)}&{{}}&{\operatorname*{P r}=0.52215\qquad\mathrm{C u m u l a t i v e~P r o b}=0.47785+0.52215=1.0000}\end{array}
+$$
 
 In each row, the cumulative probability value corresponds to the P value of observing a fit as bad (or worse) than the sample configuration given in that row. Hence, an observed sample configuration of $ (4, 0, 4) $ would lead to rejection of the hypothesis of HWE with a significance level of 0.00544, and an observed sample configuration of $ (0, 8, 0) $ would lead to rejection of the hypothesis of HWE with a significance level of 0.02533. As another example, consider again the CCR5 data in Problem 2.3 in which $ (n_{11}, n_{12}, n_{22}) = (265, 66, 7), n_1 = 596 $, and $ n_2 = 80 $. There are exactly 41 sample configurations that are compatible with $ n_1 = 596 $ and $ n_2 = 80 $, which have the form $ (n_{11}, n_{12}, n_{22}) = (298 - x, 2x, 40 - x) $, where $ x $ can assume the values 0, 1, 2,..., 40. Each of these possible samples has a probability of occurrence given by Equation 2.5 and a deviation from HWE given by Equation 2.3. (Here we are using the chi-square only as a measure of the magnitude of the deviation, without assuming that the values are actually distributed as $ \chi^2 $.) Among the 41 possibilities, 37 yield chi-square values as great or greater than the observed value, and these samples have a cumulative probability of 0.290. This is the exact $ P $ value. As we have seen, the conventional chi-square statistic in Equation 2.3 yields a $ P $ value of 0.25, and the chi-square adjusted for small sample size in Equation 2.4 yields a $ P $ value of 0.34. None of the values are statistically significant, but the example shows that Equation 2.3 yields a $ P $ value that is too small, whereas Equation 2.4 yields one that is somewhat too large. The message is that the $ P $ values from Equations 2.3 and 2.4 are best regarded as approximations whose accuracy improves with sample size.
 
@@ -218,7 +294,9 @@ The most effective cutoffs for multiple tests are those that strike a balance be
 
 Dominance obscures a one-to-one relation between phenotype and genotype, but the allele frequencies can still be estimated if one is willing to assume HWE. For a polymorphic gene with two alleles in which one of the alleles is dominant, only two phenotypic classes can be distinguished—the dominant phenotype and the recessive phenotype. An example is found in the Rhesus (Rh) blood groups, which are products of two closely linked genes denoted RhD and RhCE that originated as a gene duplication during primate evolution (Matassi et al. 1999). The human RhD allele encodes a product that elicits formation of antibodies in Rhesus monkeys, whereas a common mutant allele, Rhd, is a deletion. When the phenotype of individuals is assayed by means of cross-reaction with the anti-D antibody, blood cells from genotypes RhD/RhD and RhD/Rhd genotypes cross react and are said to be Rh+ (Rh positive), whereas blood cells from RhD/Rhd genotypes fail to react and are said to be Rh− (Rh negative).
 
-Among American Caucasians, the frequency of Rh⁺ is about 85.8% and the frequency of Rh⁻ is about 14.2% (Roychoudhury and Nei 1988). Given only the phenotype frequencies, the data cannot be used to calculate the genotype frequencies because we have no way of knowing what proportion of Rh⁺ phenotypes are RhD/RhD and what proportion are RhD/Rhd. However, if we are willing to assume random mating, then the relative proportions RhD/RhD and RhD/Rhd genotypes are given by the Hardy-Weinberg principle. Assuming random mating and HWE, the genotype frequencies are given by p², 2pq, and q², where p is the allele frequency of RhD and q that of the RhD deletion. An estimate of q can therefore be obtained by setting q² = 0.142 (the frequency of the homozygous recessive phenotype), and so $ \hat{q} = \sqrt{0.142} = 0.3768 $. More generally, if R is the frequency of homozygous recessive genotypes found in sample of n organisms, then $ \hat{q} $ and its standard error are estimated as $$
+Among American Caucasians, the frequency of Rh⁺ is about 85.8% and the frequency of Rh⁻ is about 14.2% (Roychoudhury and Nei 1988). Given only the phenotype frequencies, the data cannot be used to calculate the genotype frequencies because we have no way of knowing what proportion of Rh⁺ phenotypes are RhD/RhD and what proportion are RhD/Rhd. However, if we are willing to assume random mating, then the relative proportions RhD/RhD and RhD/Rhd genotypes are given by the Hardy-Weinberg principle. Assuming random mating and HWE, the genotype frequencies are given by p², 2pq, and q², where p is the allele frequency of RhD and q that of the RhD deletion. An estimate of q can therefore be obtained by setting q² = 0.142 (the frequency of the homozygous recessive phenotype), and so $ \hat{q} = \sqrt{0.142} = 0.3768 $. More generally, if R is the frequency of homozygous recessive genotypes found in sample of n organisms, then $ \hat{q} $ and its standard error are estimated as
+
+$$
 \begin{aligned}\hat{q}&=\sqrt{R}\quad.\\SE(\hat{q})&=\sqrt{\frac{1-R}{4n}}\end{aligned}
 \tag{2.6}
 $$
@@ -289,9 +367,27 @@ Summed frequencies in zygotes: $ A_{i}A_{i}:p_{i}^{2} $ $ A_{i}A_{j}:2p_{i}p_{j}
 
 Since blood type is determined by presence or absence of the A and B antigens, the genotypes $ I^{A}I^{A} $ and $ I^{A}I^{O} $ have blood type A, genotypes $ I^{B}I^{B} $ and $ I^{B}I^{O} $ have blood type B, genotype $ I^{O}I^{O} $ has blood type O, and genotype $ I^{A}I^{B} $ has blood type AB. The situation is essentially one of three alleles, complicated at the phenotypic level by the dominance of $ I^{A} $ and $ I^{B} $ over $ I^{O} $. In one test for presence of A and B red-cell antigens among 6313 Caucasians in Iowa City, the counts of blood types A, B, O, and AB were 2625, 570, 2892, and 226, respectively (Mourant et al. 1976). The best estimates of allele frequency in this case are $ \hat{p}_{1} = 0.2593 $ (for $ I^{A} $), $ \hat{p}_{2} = 0.0625 $ (for $ I^{B} $), and $ \hat{p}_{3} = 0.6755 $ (for $ I^{O} $). (Estimation of allele frequencies for the ABO blood groups is complicated because of dominance and makes use of a method known as the EM algorithm; see, for example, Cavalli-Sforza and Bodmer 1971 and Vogel and Motulsky 1986.)
 
-The expected (and observed) numbers of the four blood-type phenotypes are therefore: $$ \begin{aligned}A:&\quad[(0.2593)^{2}+2\times0.2593\times0.6755]\times6313=2636.0\quad(observed\ 2625)\end{aligned} $$ $$ \begin{aligned}B:&\quad[(0.0652)^{2}+2\times0.0652\times0.6755]\times6313=582.9\end{aligned} $$ $$ \mathrm{O}:\quad[(0.6755)^{2}\times6313]=2880.6 $$
+The expected (and observed) numbers of the four blood-type phenotypes are therefore:
 
-(observed 2892) $$ AB:\quad(2\times0.2593\times0.0652)\times6313=213.5 $$ (observed 226)
+$$
+\begin{aligned}A:&\quad[(0.2593)^{2}+2\times0.2593\times0.6755]\times6313=2636.0\quad(observed\ 2625)\end{aligned}
+$$
+
+$$
+\begin{aligned}B:&\quad[(0.0652)^{2}+2\times0.0652\times0.6755]\times6313=582.9\end{aligned}
+$$
+
+$$
+\mathrm{O}:\quad[(0.6755)^{2}\times6313]=2880.6
+$$
+
+(observed 2892)
+
+$$
+AB:\quad(2\times0.2593\times0.0652)\times6313=213.5
+$$
+
+(observed 226)
 
 The $\chi^{2}$ for goodness of fit to Hardy-Weinberg proportions is 1.11. There is one degree of freedom for this test: 4 (to start with) - 1 (for fixing the total at 6313) - 1 (for estimating $\hat{p}_{1}$ from the data) - 1 (for estimating $\hat{p}_{2}$ from the data); note that a degree of freedom is not deducted for estimating $\hat{p}_{3}$ because $\hat{p}_{3} = 1 - \hat{p}_{1} - \hat{p}_{2}$. (More generally, when there are $n$ alleles and $m$ possible phenotypes ($m > n$), then the number of degrees of freedom in a chi-square test for HWE is $m - 1 - (n - 1) = m - n$.) For a $\chi^{2}$ of 1.11 with one degree of freedom, the associated probability from Figure 2.3 is about 0.29, and so the Iowa City population gives no evidence against Hardy-Weinberg proportions for this gene.
 
@@ -299,7 +395,13 @@ PROBLEM 2.7 In a sample of 1617 Spanish Basques, the numbers of A, B, O, and AB 
 
 ANSWER The expected numbers of A, B, O, and AB are 710.7, 94.8, 776.1, and 35.4, respectively. The $ \chi^{2} $ equals 9.61 with one degree of freedom, for which the corresponding probability is 0.002. Because a deviation as large or larger than that observed would be expected by chance in only 0.002 samples (that is, about 1 in 500), there is very good reason to reject the hypothesis that the genotypes are in Hardy-Weinberg proportions in this population. The reason for the discrepancy is not known. One likely possibility is migration into the population by people with allele frequencies that are significantly different from those among the Basques themselves.
 
-More generally, in a population that is undergoing random mating for a gene with $n$ alleles $A_1, A_2, \ldots A_n$ having respective frequencies $p_1, p_2, \ldots p_n$ (with $p_1 + p_2 + \cdots + p_n = 1$), then the expected genotype frequencies with HWE are $$ p_{i}^{2}\quad\mathrm{~\ \ \ \ }\quad\mathrm{f o r~}A_{i}A_{i}\mathrm{~h o m o z y g o t e s} $$ $$
+More generally, in a population that is undergoing random mating for a gene with $n$ alleles $A_1, A_2, \ldots A_n$ having respective frequencies $p_1, p_2, \ldots p_n$ (with $p_1 + p_2 + \cdots + p_n = 1$), then the expected genotype frequencies with HWE are
+
+$$
+p_{i}^{2}\quad\mathrm{~\ \ \ \ }\quad\mathrm{f o r~}A_{i}A_{i}\mathrm{~h o m o z y g o t e s}
+$$
+
+$$
 \begin{array}{r l r}{2p_{i}p_{j}}&{{}}&{\mathrm{f o r~}A_{i}A_{j}\mathrm{~h e t e r o z y g o t e s~}}\end{array}
 \tag{2.7}
 $$
@@ -348,10 +450,14 @@ Before leaving the subject of X-linkage, it is necessary to point out that certa
 
 With random mating, the alleles of any gene are combined at random into genotypes according to frequencies given by the Hardy-Weinberg proportions. To be specific, imagine a gene with two alleles, call them A and a, at frequencies $ p_A $ and $ q_a $, respectively, where $ p_A + q_a = 1 $. Then the Hardy-Weinberg principle tells us that genotypes AA, Aa, and aa are expected in the proportions $ p_A^2 $, $ 2p_A q_a $, and $ q_a^2 $, respectively, provided that mating is random.
 
-Similarly, we may consider a different gene with alleles B and b at frequencies $ p_{B} $ and $ q_{b} $, respectively, where $ p_{B} + q_{b} = 1 $. Then the Hardy-Weinberg principle tells us again that the genotype frequencies of BB, Bb, and bb are expected in the proportions $ p_{B}^{2} $, $ 2p_{B}q_{b}^{2} $, and $ q_{b}^{2} $, respectively, provided that mating is random. Thus, the A allele is in random association with the a allele, and the B allele is in random association with the b allele. Strange as it may seem, the alleles of the A gene may nevertheless fail to be in random association with the alleles of the B gene. The precise meaning of “random association” is illustrated in Figure 2.9. In this figure the squares refer to the alleles present in gametes, not to genotypes as in earlier diagrams. When the alleles of the genes are in random association, the frequency of a gamete carrying any particular combination of alleles equals the product of the frequencies of those alleles. Genes that are in random association are said to be in a state of linkage equilibrium, and genes not in random association are said to be in linkage disequilibrium. With linkage equilibrium, therefore, the gametic frequencies are: $$
-\begin{array}{l} A B:\\\begin{array}{l} A b:\\a B:\\a b: \end{array} \quad \begin{array}{l} p_{A}\times p_{B}\\p_{A}\times q_{b}\\q_{a}\times p_{B}\\q_{a}\times q_{b}\end{array}
+Similarly, we may consider a different gene with alleles B and b at frequencies $ p_{B} $ and $ q_{b} $, respectively, where $ p_{B} + q_{b} = 1 $. Then the Hardy-Weinberg principle tells us again that the genotype frequencies of BB, Bb, and bb are expected in the proportions $ p_{B}^{2} $, $ 2p_{B}q_{b}^{2} $, and $ q_{b}^{2} $, respectively, provided that mating is random. Thus, the A allele is in random association with the a allele, and the B allele is in random association with the b allele. Strange as it may seem, the alleles of the A gene may nevertheless fail to be in random association with the alleles of the B gene. The precise meaning of “random association” is illustrated in Figure 2.9. In this figure the squares refer to the alleles present in gametes, not to genotypes as in earlier diagrams. When the alleles of the genes are in random association, the frequency of a gamete carrying any particular combination of alleles equals the product of the frequencies of those alleles. Genes that are in random association are said to be in a state of linkage equilibrium, and genes not in random association are said to be in linkage disequilibrium. With linkage equilibrium, therefore, the gametic frequencies are:
+
+$$
+\begin{array}{ll} AB: & p_{A}\times p_{B}\\Ab: & p_{A}\times q_{b}\\aB: & q_{a}\times p_{B}\\ab: & q_{a}\times q_{b}\end{array}
 \tag{2.8}
-$$ With random mating and the other simplifying assumptions listed earlier (including a large population with no mutation, migration, or selection), linkage equilibrium between genes is eventually attained. However, linkage equilibrium is attained gradually, and the rate of approach can be very slow. The slow approach to linkage equilibrium stands in contrast to the attainment of HWE with alleles of a single gene, which typically requires just one generation (when generations are nonoverlapping) or a relatively small number of generations (when generations are overlapping).
+$$
+
+With random mating and the other simplifying assumptions listed earlier (including a large population with no mutation, migration, or selection), linkage equilibrium between genes is eventually attained. However, linkage equilibrium is attained gradually, and the rate of approach can be very slow. The slow approach to linkage equilibrium stands in contrast to the attainment of HWE with alleles of a single gene, which typically requires just one generation (when generations are nonoverlapping) or a relatively small number of generations (when generations are overlapping).
 
 > **Figure 2.9** · page 30 · source: `PopGen_chapter2`
 >
@@ -383,19 +489,35 @@ PROBLEM 2.10 Consider two linked genes that have a frequency of recombination of
 
 ANSWER The AB/ab genotype produces gametic types AB, ab, Ab, and a B in proportions (1 - 0.005)/2 = 0.4975, (1 - 0.005)/2 = 0.4975, 0.005/2 = 0.0025, and 0.005/2 = 0.0025, respectively. The Ab/aB genotype produces exactly the same gametic types, but their frequencies are 0.0025, 0.0025, 0.4975, and 0.4975, respectively. (Actually, the frequency of recombination in human females is, on the average, about 1.6 times greater than that in males.)
 
-The frequency of recombination between genes is important in population genetics because it governs the rate of approach to linkage equilibrium. To be precise, consider a population in which the actual frequencies of the chromosome types among gametes are as follows: $$ \begin{aligned}&AB:\quad&P_{AB}\\&Ab:\quad&P_{Ab}\\&aB:\quad&P_{aB}\\&ab:\quad&P_{ab}\end{aligned} $$ where $ P_{AB} + P_{Ab} + P_{aB} + P_{ab} = 1 $. In terms of the gametic frequencies, linkage equilibrium is defined as the state in which $ P_{AB} = p_{A}p_{B}, P_{Ab} = p_{A}q_{b}, P_{aB} = q_{a}p_{B} $ and $ P_{ab} = q_{a}q_{b} $ (see Figure 2.9).
+The frequency of recombination between genes is important in population genetics because it governs the rate of approach to linkage equilibrium. To be precise, consider a population in which the actual frequencies of the chromosome types among gametes are as follows:
 
-Suppose that the genes are not in linkage equilibrium. To determine how rapidly linkage equilibrium is approached, we need to deduce the gametic frequencies in the next generation. Consider first the AB gamete. In any one generation, a chromosome carrying AB either could have undergone recombination between the genes (an event with probability r, where r is the frequency of recombination), or could have escaped recombination between the genes (an event with probability 1 - r). Among the AB chromosomes that did not undergo recombination, the frequency of AB is the same as it was in the previous generation ($ P_{AB} $); and among the chromosomes that did undergo recombination, the frequency of AB chromosomes is simply the product of the frequencies of the A and B alleles in the previous generation ($ p_{A}p_{B} $), because the recombination joins alleles from two independent chromosomes. Therefore, the frequency of AB in any generation, call it $ p_{AB}' $, is related to the frequency $ P_{AB} $ in the previous generation by the equation $$ \begin{aligned}P_{AB}^{^{\prime}}&=(1-r)\times P_{AB}\quad&[for the nonrecombinants]\\ &+r\times p_{A}p_{B}\quad&[for the recombinants]\\ \end{aligned} $$
+$$
+\begin{aligned}&AB:\quad&P_{AB}\\&Ab:\quad&P_{Ab}\\&aB:\quad&P_{aB}\\&ab:\quad&P_{ab}\end{aligned}
+$$
 
-Subtraction of $ p_{A}p_{B} $ from both sides leads to $$
+where $ P_{AB} + P_{Ab} + P_{aB} + P_{ab} = 1 $. In terms of the gametic frequencies, linkage equilibrium is defined as the state in which $ P_{AB} = p_{A}p_{B}, P_{Ab} = p_{A}q_{b}, P_{aB} = q_{a}p_{B} $ and $ P_{ab} = q_{a}q_{b} $ (see Figure 2.9).
+
+Suppose that the genes are not in linkage equilibrium. To determine how rapidly linkage equilibrium is approached, we need to deduce the gametic frequencies in the next generation. Consider first the AB gamete. In any one generation, a chromosome carrying AB either could have undergone recombination between the genes (an event with probability r, where r is the frequency of recombination), or could have escaped recombination between the genes (an event with probability 1 - r). Among the AB chromosomes that did not undergo recombination, the frequency of AB is the same as it was in the previous generation ($ P_{AB} $); and among the chromosomes that did undergo recombination, the frequency of AB chromosomes is simply the product of the frequencies of the A and B alleles in the previous generation ($ p_{A}p_{B} $), because the recombination joins alleles from two independent chromosomes. Therefore, the frequency of AB in any generation, call it $ p_{AB}' $, is related to the frequency $ P_{AB} $ in the previous generation by the equation
+
+$$
+\begin{aligned}P_{AB}^{^{\prime}}&=(1-r)\times P_{AB}\quad&[for the nonrecombinants]\\ &+r\times p_{A}p_{B}\quad&[for the recombinants]\\ \end{aligned}
+$$
+
+Subtraction of $ p_{A}p_{B} $ from both sides leads to
+
+$$
 P_{AB}^{^{\prime}}-p_{A}p_{B}=(1-r)(P_{AB}-p_{A}p_{B})
 \tag{2.9}
 $$
 
-Equation 2.9 becomes simplified somewhat by defining $D$ as the difference $P_{AB}-p_{A}p_{B}$. Then $D_{n}$ is the value of $D$ in the $n$th generation, and Equation 2.9 implies that $D_{n}=(1-r)D_{n-1}$. The solution of this equation is found by successive substitution as $$
+Equation 2.9 becomes simplified somewhat by defining $D$ as the difference $P_{AB}-p_{A}p_{B}$. Then $D_{n}$ is the value of $D$ in the $n$th generation, and Equation 2.9 implies that $D_{n}=(1-r)D_{n-1}$. The solution of this equation is found by successive substitution as
+
+$$
 \dot{D}_{n}=(1-r)D_{n-1}=(1-r)^{2}D_{n-2}=\cdots=(1-r)^{n}D_{0}
 \tag{2.10}
-$$ where $D_{0}$ is the value of $D$ in the founding population. Because $1-r<1$, $(1-r)^{n}$ goes to zero as $n$ becomes large, but how rapidly $(1-r)^{n}$ goes to zero depends on $r$; the closer $r$ is to zero, the slower the rate.
+$$
+
+where $D_{0}$ is the value of $D$ in the founding population. Because $1-r<1$, $(1-r)^{n}$ goes to zero as $n$ becomes large, but how rapidly $(1-r)^{n}$ goes to zero depends on $r$; the closer $r$ is to zero, the slower the rate.
 
 This pattern of decrease is known as geometric, and it is closely approximated by exponential decay because $ (1 - r)^n \approx e^{-r n} $, for small r. The geometric decay in linkage disequilibrium is illustrated in Figure 2.10. Recall here that $ r = 0.5 $ corresponds either to genes far apart in the same chromosome or to genes in different chromosomes. The key point is that linkage disequilibrium does not require genes to be physically linked. Linkage disequilibrium can occur even for genes in different chromosomes. For example, if one population is fixed for the alleles A and B of genes in different chromosomes, and another population is fixed for the alternative alleles a and b, then were the populations to fuse, the gametes would initially consist exclusively of AB and ab. This is an extreme form of linkage disequilibrium, and it would dissipate according to Equation 2.10 with r = 0.50. Because linkage disequilibrium does not require physical linkage, some authors choose to call linkage disequilibrium by the term gametic phase disequilibrium. Because $ (1-r)^n $ goes to zero, $ D $ goes to zero, and therefore $ P_{AB} $ goes to $ p_{A}p_{B} $ unless there are other offsetting processes. Analogous arguments hold for gametes containing $ Ab $, $ aB $, or $ ab $, and so $ P_{Ab} $, $ P_{aB'} $ and $ P_{ab} $ go to $ p_{A}q_{b} $, $ q_{a}p_{B} $, and $ q_{a}q_{b} $, respectively. Thus, linkage equilibrium is attained at a rate determined by the value of $ r $.
 
@@ -405,37 +527,99 @@ This pattern of decrease is known as geometric, and it is closely approximated b
 >
 > FIGURE 2.10 Linkage disequilibrium between genes gradually disappears when mating is random, provided there is no countervailing force building it up. The rate of approach to linkage equilibrium depends on the recombination frequency between the genes. The disappearance of linkage disequilibrium is gradual even with free recombination ( $ r = \frac{1}{2} $). In these examples, the frequencies of both alleles at both loci equal  $ \frac{1}{2} $, and the initial linkage disequilibrium is either at its maximum ( $ D = 0.25 $) or minimum ( $ D = -0.25 $) value, given these allele frequencies.
 
-The value of $D$ that holds for $P_{11}-p_{1}q_{1}$ also holds for the other possible gametes, as follows: $$ P_{A B}=p_{A}p_{B}+D\mathrm{(w h i c h~i m p l i e s~t h a t~}D\geq-p_{A}p_{B}) $$ $$
+The value of $D$ that holds for $P_{11}-p_{1}q_{1}$ also holds for the other possible gametes, as follows:
+
+$$
+P_{A B}=p_{A}p_{B}+D\mathrm{(w h i c h~i m p l i e s~t h a t~}D\geq-p_{A}p_{B})
+$$
+
+$$
 P_{A b}=p_{A}q_{b}-D\mathrm{(w h i c h~i m p l i e s~t h a t~}D\leq p_{A}q_{b})
 \tag{2.11}
-$$ $$ P_{a B}=q_{a}p_{B}-D\mathrm{(w h i c h~i m p l i e s~t h a t~}D\leq q_{a}p_{B}) $$ $$ P_{a\; b}=q_{a}q_{b}+D\;(which\; implies\; that\; D\geq-q_{a}q_{b}) $$
+$$
 
-The quantity $D$ is often called the linkage disequilibrium parameter. The implications about the magnitude of $D$ in parentheses in the equations above follow from the fact that each of the gametic frequencies $P_{AB'}, P_{Ab'}, P_{aB'}$ and $P_{aB}$ must be greater than or equal to 0. Because of these implications, the minimum and maximum values of $D$ must satisfy $$
+$$
+P_{a B}=q_{a}p_{B}-D\mathrm{(w h i c h~i m p l i e s~t h a t~}D\leq q_{a}p_{B})
+$$
+
+$$
+P_{a\; b}=q_{a}q_{b}+D\;(which\; implies\; that\; D\geq-q_{a}q_{b})
+$$
+
+The quantity $D$ is often called the linkage disequilibrium parameter. The implications about the magnitude of $D$ in parentheses in the equations above follow from the fact that each of the gametic frequencies $P_{AB'}, P_{Ab'}, P_{aB'}$ and $P_{aB}$ must be greater than or equal to 0. Because of these implications, the minimum and maximum values of $D$ must satisfy
+
+$$
 D_{m i n}=\mathrm{t h e~l a r g e r~o f}-p_{A}p_{B}\mathrm{a n d}-q_{a}q_{b}
 \tag{2.12}
-$$ $$ D_{m a x}=\mathrm{t h e~s m a l l e r~o f~}p_{A}q_{b}\mathrm{~a n d~}q_{a}p_{B} $$
+$$
 
-Furthermore, it follows from the Equations 2.11 that D can also be written as $$
+$$
+D_{m a x}=\mathrm{t h e~s m a l l e r~o f~}p_{A}q_{b}\mathrm{~a n d~}q_{a}p_{B}
+$$
+
+Furthermore, it follows from the Equations 2.11 that D can also be written as
+
+$$
 D=P_{A B}P_{a b}-P_{A b}P_{a B}
 \tag{2.13}
-$$ With random mating and no countervailing forces, the value of D changes according to Equation 2.10, and D = 0 corresponds to linkage equilibrium.
+$$
 
-Linkage disequilibrium is often observed between closely linked single nucleotide polymorphisms or SNPs (The International HapMap Consortium 2005). As an example, consider SNPs in the coding sequence of each of two closely linked genes in human chromosome 4 that encode the proteins for glycophorin A and glycophorin B found on the surface of red blood cells. One SNP is an A to G substitution, which results in an amino acid replacement of serine to leucine (one of two amino acid replacements that distinguish the M and N forms of glycophorin A); the other SNP is a T to C substitution, which results in the amino acid replacement methionine to threonine that distinguishes the S and s forms of glycophorin B. For each SNP considered individually, the genotypes are in HWE. In particular, a sample of 1000 British people yielded genotype counts of 298 AA, 489 AG, and 213 GG for the SNP in glycophorin A, and 99 TT, 418 TC, and 483 CC for the SNP in glycophorin B. The chi-square values for goodness of fit to HWE are 0.22 and 0.38, respectively. From these SNP data, the allele frequencies can be estimated as $ \hat{p}_{A} = 0.5425 $ and $ \hat{q}_{a} = 0.4575 $ for the A and G alleles of the SNP for glycophorin A, and $ \hat{p}_{B} = 0.3080 $ and $ \hat{q}_{b} = 0.6920 $ for the T and C alleles of the SNP for glycophorin B. There are four possible haplotypes (a haplotype is the combination of alleles present in a chromosome), namely A T, A C, G T, and G C, and were the SNPs in linkage equilibrium, the haplotype frequencies would be $ p_{A}p_{B}, p_{A}q_{b}, q_{a}p_{B} $, and $ q_{a}q_{b} $, respectively. Therefore, among the 1000 haplotypes (a total of 2000 chromosomes), the observed (obs) and expected (exp) numbers are as shown in the third column below (the second column gives the observed numbers): $$ \begin{array}{r l r l r l}{{A T}}&{}&{{o b s:474}}&{}&{{e x p:0.5425\times0.3080\times2000=334.2}}\end{array} $$ $$ AC\qquad obs:611\qquad\qquad exp:0.5425\times0.6920\times2000=750.8 $$ $$ \begin{array}{r l r}{G T}&{{}}&{o b s:142}\\ \end{array}\qquad\mathrm{e x p:}0.4575\times0.3080\times2000=281.8 $$ $$ \begin{array}{r l r}{G C}&{{}}&{o b s:773}\\ \end{array}\qquad e x p:0.4575\times0.6920\times2000=633.2 $$
+With random mating and no countervailing forces, the value of D changes according to Equation 2.10, and D = 0 corresponds to linkage equilibrium.
+
+Linkage disequilibrium is often observed between closely linked single nucleotide polymorphisms or SNPs (The International HapMap Consortium 2005). As an example, consider SNPs in the coding sequence of each of two closely linked genes in human chromosome 4 that encode the proteins for glycophorin A and glycophorin B found on the surface of red blood cells. One SNP is an A to G substitution, which results in an amino acid replacement of serine to leucine (one of two amino acid replacements that distinguish the M and N forms of glycophorin A); the other SNP is a T to C substitution, which results in the amino acid replacement methionine to threonine that distinguishes the S and s forms of glycophorin B. For each SNP considered individually, the genotypes are in HWE. In particular, a sample of 1000 British people yielded genotype counts of 298 AA, 489 AG, and 213 GG for the SNP in glycophorin A, and 99 TT, 418 TC, and 483 CC for the SNP in glycophorin B. The chi-square values for goodness of fit to HWE are 0.22 and 0.38, respectively. From these SNP data, the allele frequencies can be estimated as $ \hat{p}_{A} = 0.5425 $ and $ \hat{q}_{a} = 0.4575 $ for the A and G alleles of the SNP for glycophorin A, and $ \hat{p}_{B} = 0.3080 $ and $ \hat{q}_{b} = 0.6920 $ for the T and C alleles of the SNP for glycophorin B. There are four possible haplotypes (a haplotype is the combination of alleles present in a chromosome), namely A T, A C, G T, and G C, and were the SNPs in linkage equilibrium, the haplotype frequencies would be $ p_{A}p_{B}, p_{A}q_{b}, q_{a}p_{B} $, and $ q_{a}q_{b} $, respectively. Therefore, among the 1000 haplotypes (a total of 2000 chromosomes), the observed (obs) and expected (exp) numbers are as shown in the third column below (the second column gives the observed numbers):
+
+$$
+\begin{array}{r l r l r l}{{A T}}&{}&{{o b s:474}}&{}&{{e x p:0.5425\times0.3080\times2000=334.2}}\end{array}
+$$
+
+$$
+AC\qquad obs:611\qquad\qquad exp:0.5425\times0.6920\times2000=750.8
+$$
+
+$$
+\begin{array}{r l r}{G T}&{{}}&{o b s:142}\\ \end{array}\qquad\mathrm{e x p:}0.4575\times0.3080\times2000=281.8
+$$
+
+$$
+\begin{array}{r l r}{G C}&{{}}&{o b s:773}\\ \end{array}\qquad e x p:0.4575\times0.6920\times2000=633.2
+$$
 
 The $ \chi^{2} $ for goodness of fit is 184.7 with one degree of freedom: 4 (to start with) - 1 - 1 (for estimating $ p_{1} $ from the data) - 1 (for estimating $ q_{1} $ from the data) = 1. The associated probability is very much less than 0.0001. This result means that chance alone would produce a fit as poor or poorer in substantially less than one time in ten thousand, and so the hypothesis that the loci are in linkage equilibrium can confidently be rejected.
 
-To quantify the amount of linkage disequilibrium, we must estimate the haplotype frequencies corresponding to $ P_{AB'} $, $ P_{Ab'} $, $ P_{aB'} $, and $ P_{ab'} $: $$ \begin{array}{r l}{A T:}&{{}\quad\hat{P}_{A B}=474/2000=0.2370}\end{array} $$ $$ A C:\quad\hat{P}_{A b}=611/2000=0.3055 $$ $$ GT:\qquad\hat{P}_{aB}=142/2000=0.0710 $$ $$ G C:\qquad\hat{P}_{a b}=773/2000=0.3865 $$
+To quantify the amount of linkage disequilibrium, we must estimate the haplotype frequencies corresponding to $ P_{AB'} $, $ P_{Ab'} $, $ P_{aB'} $, and $ P_{ab'} $:
+
+$$
+\begin{array}{r l}{A T:}&{{}\quad\hat{P}_{A B}=474/2000=0.2370}\end{array}
+$$
+
+$$
+A C:\quad\hat{P}_{A b}=611/2000=0.3055
+$$
+
+$$
+GT:\qquad\hat{P}_{aB}=142/2000=0.0710
+$$
+
+$$
+G C:\qquad\hat{P}_{a b}=773/2000=0.3865
+$$
 
 Thus, $D$ can be estimated from Equation 2.13 as $\hat{D} = \hat{P}_{A B} \hat{P}_{a b} - \hat{P}_{A b} \hat{P}_{a B} = 0.07$. From Equation 2.12, $D_{max}$ is given by $p_{A} q_{b}$ or $q_{a} p_{B}$, whichever is smaller; in this case, $p_{A} q_{b} = 0.38$ and $q_{a} p_{B} = 0.14$, hence $D_{max} = 0.14$. Therefore, $\hat{D} / D_{max} = 0.07 / 0.14 = 50%$, and so we conclude that the amount of disequilibrium between the SNPs in the genes for glycophorin A and glycophorin B is about 50% of its theoretical maximum. In most local populations of sexual organisms that regularly avoid extreme inbreeding (mating between relatives) values of $D$ are typically zero or close to zero (indicating linkage equilibrium) unless the genes are very closely linked.
 
-Another widely used measure of linkage disequilibrium is related to but distinct from D. This measure is usually symbolized as $ r^{2} $, which can potentially cause confusion because the symbol r is also widely used for the frequency of recombination between genes. In the context of linkage disequilibrium, the square symbol in $ r^{2} $ is extremely important, because it signals a measure of linkage disequilibrium rather than a measure of recombination. The value of $ r^{2} $ is defined as $$
+Another widely used measure of linkage disequilibrium is related to but distinct from D. This measure is usually symbolized as $ r^{2} $, which can potentially cause confusion because the symbol r is also widely used for the frequency of recombination between genes. In the context of linkage disequilibrium, the square symbol in $ r^{2} $ is extremely important, because it signals a measure of linkage disequilibrium rather than a measure of recombination. The value of $ r^{2} $ is defined as
+
+$$
 r^{2}=D^{2}/(p_{A}q_{a}p_{B}q_{b})
 \tag{2.14}
 $$
 
 There is a nice intuitive biological interpretation of $ r^2 $ in that its square root (that is, $ \sqrt{r^2} $) is the correlation coefficient in allelic state between alleles in the same gamete. The value of $ r^2 $ is also useful for calculating the $ \chi^2 $ value from the counts of haplotypes, because the value of $ \chi^2 $ is numerically equal to $ r^2N $, where N is the total number of chromosomes examined. This application of $ r^2 $ is illustrated in the problems below.
 
-PROBLEM 2.11 Natural populations of Drosophila melanogaster are polymorphic for coding SNPs that result in amino acid replacements in the enzymes esterase 6, esterase C, and octanol dehydrogenase. An order to avoid ambiguity, we will use the symbols A, B, and C to denote the majority (most frequent) nucleotide of each SNP, and the symbols a, b, and c to denote the minority (least frequent) nucleotide of each SNP. The A, a and B, b SNPs are rather loosely linked (r = 0.122), whereas the B, b and C, c SNPs are tightly linked (r = 0.002). The recombination fractions are those in females, as recombination does not take place in males of this species. For 489 chromosomes examined from a population in North Carolina, Mukai et al. (1974) used protein electrophoresis to identify the SNPs and found the following haplotypes: $$ \begin{array}{lllll} A B C&264&a B C&152\\ A B c&13&a B c&7\\ A b C&29&a b C&15\\ A b c&8&a b c&1 \end{array} $$
+PROBLEM 2.11 Natural populations of Drosophila melanogaster are polymorphic for coding SNPs that result in amino acid replacements in the enzymes esterase 6, esterase C, and octanol dehydrogenase. An order to avoid ambiguity, we will use the symbols A, B, and C to denote the majority (most frequent) nucleotide of each SNP, and the symbols a, b, and c to denote the minority (least frequent) nucleotide of each SNP. The A, a and B, b SNPs are rather loosely linked (r = 0.122), whereas the B, b and C, c SNPs are tightly linked (r = 0.002). The recombination fractions are those in females, as recombination does not take place in males of this species. For 489 chromosomes examined from a population in North Carolina, Mukai et al. (1974) used protein electrophoresis to identify the SNPs and found the following haplotypes:
+
+$$
+\begin{array}{lllll} A B C&264&a B C&152\\ A B c&13&a B c&7\\ A b C&29&a b C&15\\ A b c&8&a b c&1 \end{array}
+$$
 
 Carry out a chi-square test to determine whether there is significant linkage disequilibrium between the A, a SNP and the B, b SNP.
 
@@ -465,7 +649,9 @@ All of the previous examples of estimating linkage disequilibrium are based on a
 
 ## PopGen_chapter2_017 · 2.5 LINKAGE AND LINKAGE DISEQUILIBRIUM / Relative Measures of Linkage Disequilibrium: D' and r²
 
-The value of D as a measure of linkage disequilibrium has the limitation that it depends on the allele frequencies, and its minimum and maximum values are defined in Equation 2.12. For this reason, the magnitude of linkage disequilibrium is often described by a quantity usually called $ D' $, which is defined as $$
+The value of D as a measure of linkage disequilibrium has the limitation that it depends on the allele frequencies, and its minimum and maximum values are defined in Equation 2.12. For this reason, the magnitude of linkage disequilibrium is often described by a quantity usually called $ D' $, which is defined as
+
+$$
 \begin{aligned}&D^{\prime}=D/D_{max}\text{if}D\text{is positive}\\&D^{\prime}=D/D_{min}\text{if}D\text{is negative}\\ \end{aligned}
 \tag{2.15}
 $$
@@ -585,7 +771,23 @@ On the other hand, even a small amount of outcrossing (mating between nonrelativ
 
 9. A number of relationships between the allele frequencies of two alleles follows from the definition of p and q such that $ p + q = 1 $. Show that
 
-(a) $$ p^{2}+pq=p $$ $$ p-q=1-2q $$ $$ p^{2}+q^{2}=1-2pq $$ $$ (p-q)^{2}=1-4pq $$
+(a)
+
+$$
+p^{2}+pq=p
+$$
+
+$$
+p-q=1-2q
+$$
+
+$$
+p^{2}+q^{2}=1-2pq
+$$
+
+$$
+(p-q)^{2}=1-4pq
+$$
 
 10. The accompanying gel diagram shows the banding patterns observed for an esterase enzyme in 1000 individuals of the black-tailed jackrabbit, Lepus californicus, in which four alleles $ A_{1}-A_{4} $ encode polypeptide chains that differ in their electrophoretic mobility. Estimate the allele frequency for each allele, the expected number of each genotype assuming Hardy-Weinberg proportions, the chi-square value for goodness of fit, the number of degrees of freedom, and the corresponding P value. Interpret the P value in terms of whether it supports or rejects the hypothesis of Hardy-Weinberg proportions.
 

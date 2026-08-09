@@ -20,11 +20,29 @@ A useful model for thinking about mutation is the Hardy-Weinberg model of Chapte
 
 Consider a gene with two alleles, A and a, and suppose that A mutates to a at a rate of $ \mu $ mutations per A allele per generation. In other words, each A allele has a probability of $ \mu $ of mutating to a in any generation. We will symbolize the allele frequency of A as p and that of a as q and keep track of generations with subscripts. Hence, $ p_t $ and $ q_t $ are the allele frequencies of A and a, respectively, in the $ t $th generation, where $ t = 0, 1, 2, \ldots $. In any generation, $ p_t + q_t = 1 $ because A and a are the only alleles considered.
 
-Next we will deduce a formula for the allele frequency $ p_{t} $ in terms of the allele frequency $ p_{t-1} $ in the previous generation. In generation t, $ p_{t} $ includes all the A alleles in generation t that did not mutate in that generation, and so $$ p_{t}=p_{t-1}\left(1-\mu\right) $$ $$ \vec{p}_{t} $$ $$ p_{0}=1 $$
+Next we will deduce a formula for the allele frequency $ p_{t} $ in terms of the allele frequency $ p_{t-1} $ in the previous generation. In generation t, $ p_{t} $ includes all the A alleles in generation t that did not mutate in that generation, and so
 
-However, by the same reasoning, $ p_{t-1} $ includes all A alleles in generation t-1 that did not mutate in that generation, and so $ p_{t-1} = p_{t-2} \times (1 - \mu) $. Substituting this equation into the one above yields $$ p_{t}=p_{t-2}\left(1-\mu\right)^{2} $$
+$$
+p_{t}=p_{t-1}\left(1-\mu\right)
+$$
 
-Continuing in the same manner leads eventually to $$
+$$
+\vec{p}_{t}
+$$
+
+$$
+p_{0}=1
+$$
+
+However, by the same reasoning, $ p_{t-1} $ includes all A alleles in generation t-1 that did not mutate in that generation, and so $ p_{t-1} = p_{t-2} \times (1 - \mu) $. Substituting this equation into the one above yields
+
+$$
+p_{t}=p_{t-2}\left(1-\mu\right)^{2}
+$$
+
+Continuing in the same manner leads eventually to
+
+$$
 p_{t}=p_{0}(1-\mu)^{t_{ 环 }}
 \tag{4.1}
 $$
@@ -37,7 +55,13 @@ The effect of mutation pressure on allele frequency is illustrated in Figure 4.1
 >
 > FIGURE 4.1 Change in allele frequency under mutation pressure. In this example, an allele A mutates to a at a rate of μ = 1 × 10^-4 per generation; p_t is the allele frequency of A in generation t. We assume that p_0 = 1. With the given value of μ, the allele frequency decreases by half every 6931 generations.
 
-One instructive way to analyze Equation 4.1 is to consider the time required to reduce the allele frequency of A by half. To find the “half-life” of the process, set $ p_t = 0.5 \times p_0 $; this relationship implies that $ \boxed{0.5} = (1 - \mu)^t $. Taking logarithms of both sides, we obtain $$ t_{\frac{1}{2}}=\ln\left(0.5\right)/\ln\left(1-\mu\right)\approx0.6931/\mu $$ In the example in Figure 4.1, $ t_{\frac{1}{2}} = 6931 $ generations. A decrease in $ \mu $ by a factor of 10 increases $ t_{\frac{1}{2}} $ accordingly, to approximately 69,310 generations for $ \mu = 10^{-5} $ and to approximately 693,100 generations for $ \mu = 10^{-6} $. The feeble effect of mutation pressure alone in changing allele frequency is illustrated by the long half-lives calculated for realistic values of the mutation rate. As noted with reference to Equation 4.1, the approximation $ p_t = p_0(1 - \mu t) $ is quite accurate for small values of $ t $. With respect to the allele frequency of the mutant allele $ a $, the approximation can also be written as $ q_t = q_0 + \mu t $, provided that $ q_{0} $ is small. This approximation implies that the allele frequency of the $ a $ allele increases linearly with time with a slope equal to $ \mu $. Because $ \mu $ is small, however, the linear increase in $ q_{t} $ is difficult to detect experimentally except in very large populations. A large population size can be attained in a bacterial chemostat, which is a device for maintaining a population of bacteria in a continuous state of growth and cell division (Figure 4.2). The linear increase in $ q_{t} $ from mutation pressure observed in a chemostat is shown in Figure 4.3. Note the abrupt increase in mutation rate (indicated by the increase in slope) shortly after the addition of caffeine, a bacterial mutagen.
+One instructive way to analyze Equation 4.1 is to consider the time required to reduce the allele frequency of A by half. To find the “half-life” of the process, set $ p_t = 0.5 \times p_0 $; this relationship implies that $ \boxed{0.5} = (1 - \mu)^t $. Taking logarithms of both sides, we obtain
+
+$$
+t_{\frac{1}{2}}=\ln\left(0.5\right)/\ln\left(1-\mu\right)\approx0.6931/\mu
+$$
+
+In the example in Figure 4.1, $ t_{\frac{1}{2}} = 6931 $ generations. A decrease in $ \mu $ by a factor of 10 increases $ t_{\frac{1}{2}} $ accordingly, to approximately 69,310 generations for $ \mu = 10^{-5} $ and to approximately 693,100 generations for $ \mu = 10^{-6} $. The feeble effect of mutation pressure alone in changing allele frequency is illustrated by the long half-lives calculated for realistic values of the mutation rate. As noted with reference to Equation 4.1, the approximation $ p_t = p_0(1 - \mu t) $ is quite accurate for small values of $ t $. With respect to the allele frequency of the mutant allele $ a $, the approximation can also be written as $ q_t = q_0 + \mu t $, provided that $ q_{0} $ is small. This approximation implies that the allele frequency of the $ a $ allele increases linearly with time with a slope equal to $ \mu $. Because $ \mu $ is small, however, the linear increase in $ q_{t} $ is difficult to detect experimentally except in very large populations. A large population size can be attained in a bacterial chemostat, which is a device for maintaining a population of bacteria in a continuous state of growth and cell division (Figure 4.2). The linear increase in $ q_{t} $ from mutation pressure observed in a chemostat is shown in Figure 4.3. Note the abrupt increase in mutation rate (indicated by the increase in slope) shortly after the addition of caffeine, a bacterial mutagen.
 
 > **Figure 4.2** · page 4 · source: `PopGen_chapter4`
 >
@@ -61,20 +85,30 @@ ANSWER. Let $ p_t $ be the frequency of chromosomes in which the mariner element
 
 In addition to forward mutation of A to a, the model can also allow reverse mutation from a to A. Mutation pressure on the allele frequency p therefore pushes in both directions: Forward mutation tends to decrease p, reverse mutation tends to increase p. Eventually, an equilibrium is reached in which the frequency p remains constant from generation to generation. At this point, the loss of A alleles from forward mutation is exactly offset by the gain of A alleles from reverse mutation.
 
-To deduce the point of equilibrium, suppose that the rate of forward mutation from A to a is $ \mu $ per generation and that the rate of reverse mutation from a to A is v per generation. Let $ p_t $ and $ q_t $ denote the allele frequencies of A and a in generation t, so that $ p_t + q_t = 1 $: An A allele in generation t can originate in either of two ways. It could have been an A allele in generation t - 1 that escaped mutation to a (which happens with probability $ 1 - \mu $), or it could have been an a allele in generation t - 1 that mutated to A (which happens with probability v). In symbols, $$
+To deduce the point of equilibrium, suppose that the rate of forward mutation from A to a is $ \mu $ per generation and that the rate of reverse mutation from a to A is v per generation. Let $ p_t $ and $ q_t $ denote the allele frequencies of A and a in generation t, so that $ p_t + q_t = 1 $: An A allele in generation t can originate in either of two ways. It could have been an A allele in generation t - 1 that escaped mutation to a (which happens with probability $ 1 - \mu $), or it could have been an a allele in generation t - 1 that mutated to A (which happens with probability v). In symbols,
+
+$$
 p_{t}=p_{t-1}(1-\mu)+(1-p_{t-1})\nu
 \tag{4.2}
 $$
 
-To solve this equation for $ p_{t} $, note that Equation 4.2 can be written in the form $$
+To solve this equation for $ p_{t} $, note that Equation 4.2 can be written in the form
+
+$$
 p_{t}-\frac{v}{\mu+v}=\left(p_{t-1}-\frac{v}{\mu+v}\right)(1-\mu-v)
 \tag{4.3}
-$$ Because the relation between $ p_{t-1} $ and $ p_{t-2} $ is the same as that between $ p_{t} $ and $ p_{t-1} $, the solution to Equation 4.3 is obtained by successive substitutions as $$
+$$
+
+Because the relation between $ p_{t-1} $ and $ p_{t-2} $ is the same as that between $ p_{t} $ and $ p_{t-1} $, the solution to Equation 4.3 is obtained by successive substitutions as
+
+$$
 p_{t}-\frac{v}{\mu+v}=\left(p_{0}-\frac{v}{\mu+v}\right)(1-\mu-v)^{t}
 \tag{4.4}
 $$
 
-To understand what happens to the allele frequency in the long run, consider Equation 4.4 in the case when $t$ is very large, for example $10^5$ or $10^6$ generations. Even though $1 - \mu - v$ is ordinarily close to $1$, the value of $t$. eventually becomes so large that $(1 - \mu - v)^t$ becomes approximately 0. Thus, the whole right-hand term in Equation 4.4 goes to 0, and so $p_t$ eventually attains a value that remains the same generation after generation. Such a value of $p$ is called an equilibrium value, which we will denote by $\hat{p}$. In case of reversible mutation, the equilibrium is found by equating the left-hand side of Equation 4.4 to 0, and therefore $$
+To understand what happens to the allele frequency in the long run, consider Equation 4.4 in the case when $t$ is very large, for example $10^5$ or $10^6$ generations. Even though $1 - \mu - v$ is ordinarily close to $1$, the value of $t$. eventually becomes so large that $(1 - \mu - v)^t$ becomes approximately 0. Thus, the whole right-hand term in Equation 4.4 goes to 0, and so $p_t$ eventually attains a value that remains the same generation after generation. Such a value of $p$ is called an equilibrium value, which we will denote by $\hat{p}$. In case of reversible mutation, the equilibrium is found by equating the left-hand side of Equation 4.4 to 0, and therefore
+
+$$
 \hat{p}=\frac{v}{\mu+v}
 \tag{4.5}
 $$
@@ -107,10 +141,16 @@ The assumption of a virtually infinite population size is often unrealistic. An 
 >
 > FIGURE 4.5 Random sampling of alleles in a finite population increases the probability of identity by descent. Two randomly chosen alleles, illustrated in the squares at the bottom, may be identical by descent either because they are replicas of the same allele in the immediately preceding generation ( $ \alpha_{i}\alpha_{i} $) or because they are replicas of the same allele in a more remote generation ( $ \alpha_{i}\alpha_{i} $).
 
-The random sampling from the gamete pool means that some alleles may be overrepresented in generation $ t + 1 $, relative to their frequency in generation $ t $, and some alleles may be underrepresented. Indeed, any particular allele has a good chance of being unrepresented in generation $ t + 1 $, and hence the lineage of that allele is terminated. To be precise, in a population of constant size, each allele in generation $ t $ has a chance of approximately $ e^{-1} = 0.368 $ of not being represented in generation $ t + 1 $. To understand why, consider the allele designated $ \alpha_1 $. The frequency of $ \alpha_1 $ in the gamete pool is $ 1/(2N) $, and the frequency of all other alleles together is therefore $ 1 - 1/(2N) $. Because the genotypes in generation $ t + 1 $ are formed by the random selection of 2N alleles from the pool of gametes, the distribution of the number of $ \alpha_1 $ and non- $ \alpha_1 $ alleles present in generation $ t + 1 $ is given by successive terms in the binomial distribution: $$
+The random sampling from the gamete pool means that some alleles may be overrepresented in generation $ t + 1 $, relative to their frequency in generation $ t $, and some alleles may be underrepresented. Indeed, any particular allele has a good chance of being unrepresented in generation $ t + 1 $, and hence the lineage of that allele is terminated. To be precise, in a population of constant size, each allele in generation $ t $ has a chance of approximately $ e^{-1} = 0.368 $ of not being represented in generation $ t + 1 $. To understand why, consider the allele designated $ \alpha_1 $. The frequency of $ \alpha_1 $ in the gamete pool is $ 1/(2N) $, and the frequency of all other alleles together is therefore $ 1 - 1/(2N) $. Because the genotypes in generation $ t + 1 $ are formed by the random selection of 2N alleles from the pool of gametes, the distribution of the number of $ \alpha_1 $ and non- $ \alpha_1 $ alleles present in generation $ t + 1 $ is given by successive terms in the binomial distribution:
+
+$$
 \left[\frac{1}{2N}\alpha_{1}+\left(1-\frac{1}{2N}\right)\alpha\right]^{2N}
 \tag{4.6}
-$$ in which $ \alpha $ represents the collection of all alleles other than $ \alpha_{1} $. Hence, the probability that $ \alpha_{1} $ is not represented in generation $ t+1 $ is given by $$
+$$
+
+in which $ \alpha $ represents the collection of all alleles other than $ \alpha_{1} $. Hence, the probability that $ \alpha_{1} $ is not represented in generation $ t+1 $ is given by
+
+$$
 \left(1-\frac{1}{2N}\right)^{2N}\approx e^{-1}=0.368.
 \tag{4.7}
 $$
@@ -155,25 +195,39 @@ In the infinite-alleles model, two alleles that are identical in sequence must a
 
 In the literature of population genetics, a genotype in which the alleles are identical by descent is sometimes said to be autozygous, and one in which the alleles are not identical by descent is said to be allozygous. There is some ambiguity in the concept of identity by descent, because the coalescent process implies that every allele of a gene must ultimately derive from DNA replication of a single ancestral allele at some time in the possibly ancient past. In practice the ambiguity is resolved by picking some reference point in time in the past and arbitrarily declaring that at this point in time no allele is identical by descent with any other.
 
-In the infinite-alleles model, in which each mutation produces a new allele not present in the population, homozygous genotypes must have alleles that are autozygous (identical by descent). To measure the homozygosity, therefore, we need only to calculate the autozygosity. This can again be done with reference to the finite-population model in Figure 4.5. Define $F_t$ as the probability that, in generation $t$, two alleles randomly chosen from a population are identical by descent. In the context of Figure 4.5, the randomly chosen alleles are combined in pairs to make genotypes, and so $F_t$ is also the probability of autozygosity in generation $t$. We will use the $\alpha_i\alpha_i$ and $\alpha_i\alpha_j$ genotypes in generation $t$ in Figure 4.5 to derive an expression for $F_t$ in terms of $F_{t-1}, N$, and the mutation rate $\mu$. First, consider the genotype $\alpha_i\alpha_i$. What is the probability that this genotype has alleles that are identical by descent? The alleles must be identical by descent provided that neither allele has mutated in the course of one generation, and so the probability of identity by descent in this case is $(1-\mu)^2$. Now consider the genotype $\alpha_i\alpha_j$. These alleles are identical by descent only if two randomly chosen alleles in generation $t-1$ are identical by descent and if neither allele mutated in the course of one generation. Therefore, the probability of identity by descent in this case is $F_{t-1}(1-\mu)^2$. Because each of the labeled $\alpha's$ in Figure 4.5 has the same frequency in the gamete pool, namely $1/(2N)$, the probability of a combination like $\alpha_i\alpha_j$ is $1/(2N)$ and the probability of a combination like $\alpha_i\alpha_j$ is $1-1/(2N)$. Putting all this together, the recurrence equation for $F_t$ is $$
+In the infinite-alleles model, in which each mutation produces a new allele not present in the population, homozygous genotypes must have alleles that are autozygous (identical by descent). To measure the homozygosity, therefore, we need only to calculate the autozygosity. This can again be done with reference to the finite-population model in Figure 4.5. Define $F_t$ as the probability that, in generation $t$, two alleles randomly chosen from a population are identical by descent. In the context of Figure 4.5, the randomly chosen alleles are combined in pairs to make genotypes, and so $F_t$ is also the probability of autozygosity in generation $t$. We will use the $\alpha_i\alpha_i$ and $\alpha_i\alpha_j$ genotypes in generation $t$ in Figure 4.5 to derive an expression for $F_t$ in terms of $F_{t-1}, N$, and the mutation rate $\mu$. First, consider the genotype $\alpha_i\alpha_i$. What is the probability that this genotype has alleles that are identical by descent? The alleles must be identical by descent provided that neither allele has mutated in the course of one generation, and so the probability of identity by descent in this case is $(1-\mu)^2$. Now consider the genotype $\alpha_i\alpha_j$. These alleles are identical by descent only if two randomly chosen alleles in generation $t-1$ are identical by descent and if neither allele mutated in the course of one generation. Therefore, the probability of identity by descent in this case is $F_{t-1}(1-\mu)^2$. Because each of the labeled $\alpha's$ in Figure 4.5 has the same frequency in the gamete pool, namely $1/(2N)$, the probability of a combination like $\alpha_i\alpha_j$ is $1/(2N)$ and the probability of a combination like $\alpha_i\alpha_j$ is $1-1/(2N)$. Putting all this together, the recurrence equation for $F_t$ is
+
+$$
 F_{t}=\left(\frac{1}{2N}\right)\left(1-\mu\right)^{2}+\left(1-\frac{1}{2N}\right)\left(1-\mu\right)^{2}F_{t-1}
 \tag{4.8}
 $$
 
 **[命题 Proposition]**
 
-Eventually an equilibrium value of $F$, call it $\hat{F}$, is attained in which the increase in autozygosity from random genetic drift in any generation is exactly offset by the decrease in autozygosity from new mutations. The equilibrium can be found by equating $F_t = F_{t-1} = \hat{F}$ in Equation 4.8 and solving. Ignoring terms in $\mu^2$ and those in $\mu/N$ because they are expected to be negligibly small, the solution is $$
+Eventually an equilibrium value of $F$, call it $\hat{F}$, is attained in which the increase in autozygosity from random genetic drift in any generation is exactly offset by the decrease in autozygosity from new mutations. The equilibrium can be found by equating $F_t = F_{t-1} = \hat{F}$ in Equation 4.8 and solving. Ignoring terms in $\mu^2$ and those in $\mu/N$ because they are expected to be negligibly small, the solution is
+
+$$
 \hat{F}=\frac{1}{1+4N\mu}
 \tag{4.9}
-$$ to an excellent approximation. Therefore, the number of selectively neutral alleles increases under mutation pressure until $ \hat{F} $ satisfies Equation 4.9. Since it is the equilibrium value of the probability of identity by descent, $ \hat{F} $ is also the equilibrium value of the autozygosity. Because of the assumption in the infinite-alleles model that each allele in the population arises only once, all genotypes that are homozygotes must also be autozygous. Therefore, $ \hat{F} $ can also be interpreted as the equilibrium value of the proportion of homozygous genotypes.
+$$
 
-In Equation 4.9, N should be interpreted as the effective population size, $ N_{e} $, defined in Chapter 3 as the size of an ideal population that has the same rate of increase in homozygosity as the population in question. In population genetics, the usual symbol for $ 4N_{e}\mu $ is $ \theta $, so that $ \theta = 4N_{e}\mu $, and Equation 4.9 can be rewritten as $$
+to an excellent approximation. Therefore, the number of selectively neutral alleles increases under mutation pressure until $ \hat{F} $ satisfies Equation 4.9. Since it is the equilibrium value of the probability of identity by descent, $ \hat{F} $ is also the equilibrium value of the autozygosity. Because of the assumption in the infinite-alleles model that each allele in the population arises only once, all genotypes that are homozygotes must also be autozygous. Therefore, $ \hat{F} $ can also be interpreted as the equilibrium value of the proportion of homozygous genotypes.
+
+In Equation 4.9, N should be interpreted as the effective population size, $ N_{e} $, defined in Chapter 3 as the size of an ideal population that has the same rate of increase in homozygosity as the population in question. In population genetics, the usual symbol for $ 4N_{e}\mu $ is $ \theta $, so that $ \theta = 4N_{e}\mu $, and Equation 4.9 can be rewritten as
+
+$$
 \hat{F}=\frac{1}{1+\theta}=\frac{1}{1+4N_{e}\mu}
 \tag{4.10}
-$$ Because any genotype that is not homozygous is heterozygous, it follows that the proportion of heterozygous genotypes in a population is given by $ 1 - \hat{F} $. In the infinite-alleles model, therefore, the heterozygosity is given by Equation 4.10 as $$
+$$
+
+Because any genotype that is not homozygous is heterozygous, it follows that the proportion of heterozygous genotypes in a population is given by $ 1 - \hat{F} $. In the infinite-alleles model, therefore, the heterozygosity is given by Equation 4.10 as
+
+$$
 1-\hat{F}=\frac{\theta}{1+\theta}=\frac{4N_{e}\mu}{1+4N_{e}\mu}
 \tag{4.11}
-$$ where again $\theta = 4N_e\mu$. Figure 4.7 shows the equilibrium homozygosity $[1/(1+\theta)]$ and heterozygosity $[\theta/(1+\theta)]$ for a range of values of $\theta = 4N_e\mu$. The illustration shows that there is a rather narrow range of $4N_e\mu$ over which an intermediate level of genetic variation (heterozygosity) is maintained. For example, the equilibrium heterozygosity is in the range 0.2 to 0.8 only when $4N_e\mu$ is in the range 0.25 to 4. In reality, however, as is clear from Figure 1.8, the heterozygosity for electrophoretic variants in protein molecules is smaller than 0.2, and often much smaller than 0.2 (in mammals it is about 0.03).
+$$
+
+where again $\theta = 4N_e\mu$. Figure 4.7 shows the equilibrium homozygosity $[1/(1+\theta)]$ and heterozygosity $[\theta/(1+\theta)]$ for a range of values of $\theta = 4N_e\mu$. The illustration shows that there is a rather narrow range of $4N_e\mu$ over which an intermediate level of genetic variation (heterozygosity) is maintained. For example, the equilibrium heterozygosity is in the range 0.2 to 0.8 only when $4N_e\mu$ is in the range 0.25 to 4. In reality, however, as is clear from Figure 1.8, the heterozygosity for electrophoretic variants in protein molecules is smaller than 0.2, and often much smaller than 0.2 (in mammals it is about 0.03).
 
 > **Figure 4.7** · page 15 · source: `PopGen_chapter4`
 >
@@ -195,7 +249,9 @@ ANSWER The homozygosity estimates are 0.438 for Adk-1, 0.673 for Lap-5, and 0.37
 
 Equation 4.11 shows that the infinite-alleles model has an equilibrium when the heterozygosity equals $ \theta/(1+\theta) $. This is not an “equilibrium” in the usual sense, meaning the absence of change. In reality, it is a dynamic state in which allele frequencies are always changing, new mutations continue to come into the population, alleles previously present are lost, and even alleles that might at one time have been fixed are subject to eventual loss. The term steady state is more appropriate for this kind of situation, since the alleles are not maintained at a constant frequency, but rather new ones enter and old ones are lost from the population. The population remains at a steady state in the sense that the number of alleles and the homozygosity (autozygosity in the infinite-alleles model) remain stationary. But if the number of alleles and the level of autozygosity are in a steady state, then it is reasonable to assume that there is also a steady-state distribution of allele frequencies. When there are multiple alleles, the joint distribution of the allele frequencies present in a population is often called the allele-frequency spectrum in the population. When the allele-frequency spectrum is at a steady state, this implies that the most common allele always has a frequency of $ p_{1} $, and the next most common has a frequency of $ p_{2} $, and so on. The steady-state allele-frequency spectrum has the curious property that, even though the most common allele is expected to have a frequency of $ p_{1} $, the identity of the most common allele will change with time. In the steady-state population, not all alleles are equally frequent, and F is greater than it would be were all alleles equally frequent.
 
-Consider now the steady-state allele-frequency spectrum from the point of view of an experimenter taking a sample from a population. Let the sample size be n genes, and suppose there are k different alleles in this sample. For example, a sample of size n = 20 might consist of k = 10 unique alleles, with one allele present six times in the sample, one allele represented four times, two alleles each represented twice, and six alleles each represented only once. Such a description of the sample is called the allelic configuration of the sample. A remarkable finding of Ewens (1972) was that the expected allelic configuration of a sample drawn from a steady-state population obeying the infinite-alleles model under neutral mutation and random genetic drift (measured as $ \theta = 4N\mu $) is completely determined by the sample size n and the number of observed alleles k. In particular, Ewens (1972) showed that the expected number k of alleles in a sample of size n is a simple function of $ \theta $: $$
+Consider now the steady-state allele-frequency spectrum from the point of view of an experimenter taking a sample from a population. Let the sample size be n genes, and suppose there are k different alleles in this sample. For example, a sample of size n = 20 might consist of k = 10 unique alleles, with one allele present six times in the sample, one allele represented four times, two alleles each represented twice, and six alleles each represented only once. Such a description of the sample is called the allelic configuration of the sample. A remarkable finding of Ewens (1972) was that the expected allelic configuration of a sample drawn from a steady-state population obeying the infinite-alleles model under neutral mutation and random genetic drift (measured as $ \theta = 4N\mu $) is completely determined by the sample size n and the number of observed alleles k. In particular, Ewens (1972) showed that the expected number k of alleles in a sample of size n is a simple function of $ \theta $:
+
+$$
 E(k)=1+\frac{\theta}{\theta+1}+\frac{\theta}{\theta+2}+\cdots+\frac{\theta}{\theta+n-1}
 \tag{4.12}
 $$
@@ -216,10 +272,14 @@ The infinite-alleles model gives a steady-state prediction of $F$ given $\theta$
 >
 > FIGURE 4.9 The infinite-alleles model prediction of the relation between the expected number of alleles  $ E(k) $ and the expected gene identity (homozygosity) F. The three curves represent a range of values of  $ \theta = 4N_e\mu $, starting at  $ \theta = 0.1 $ in the upper left, and ending with  $ \theta = 10 $ in the lower right. For the value of  $ \theta = 1 $, the expected F, given by the relation  $ F = 1/(1 + \theta) $, is  $ \frac{1}{2} $, regardless of the sample size. Larger sample sizes always lead to larger expected numbers of alleles, but the difference is greater in more diverse populations (those with smaller F).
 
-Making use of Ewen's result, Karlin and McGregor (1972) found an explicit formula for the expected allele frequency configuration in samples. In particular, they showed that the probability that a sample of size n containing k distinct alleles will contain exactly $ n_{1} $ alleles of type 1, $ n_{2} $ alleles of type 2,..., $ n_{k} $ alleles is of type k, is given by $$
+Making use of Ewen's result, Karlin and McGregor (1972) found an explicit formula for the expected allele frequency configuration in samples. In particular, they showed that the probability that a sample of size n containing k distinct alleles will contain exactly $ n_{1} $ alleles of type 1, $ n_{2} $ alleles of type 2,..., $ n_{k} $ alleles is of type k, is given by
+
+$$
 \Pr\left\{n_{1},n_{2},\cdots,n_{k},k\right\}=\frac{n!\theta^{k}}{k!n_{1}n_{2}\cdots n_{k}S_{n}(\theta)}
 \tag{4.13}
-$$ where $S_{n}(\theta)=\theta(\theta+1)(\theta+2)\cdots(\theta+n-1)$. This equation provides the basis for comparing the allele configuration observed in samples with those expected under the infinite-alleles model with neutrality. [See Ewens (2004) for additional and more advanced discussion.]
+$$
+
+where $S_{n}(\theta)=\theta(\theta+1)(\theta+2)\cdots(\theta+n-1)$. This equation provides the basis for comparing the allele configuration observed in samples with those expected under the infinite-alleles model with neutrality. [See Ewens (2004) for additional and more advanced discussion.]
 
 ---
 
@@ -265,12 +325,18 @@ In a long sequence of nucleotides, if the mutation rate is sufficiently low, the
 
 To reinforce these ideas, let us consider the very small sample of four aligned allelic DNA sequences shown in *[See Table 4.1 at the end of this section.]*. These are made-up sequences, far shorter than would ever be used in practice, and much more diverse than usually found; they are intended to show as clearly as possible some of the types of information that can be extracted from such sequences. For ease of reading, in each column of aligned nucleotide sites, any nucleotide not matching the majority-rule consensus for that site is underlined. In regard to the infinite-alleles model, two types of information are usually extracted: - The nucleotide sites in the sample that are occupied by two or more nucleotides. These are known as segregating sites, and in Chapters 1 and 3 we denoted the number of segregating sites as S. Among the four sample sequences a–d each of length 16 nucleotides, there are exactly 8 segregating sites (sites 1, 2, 4, 5, 9, 10, and 11, 12), and so S = 8.
 
-- The nucleotide sites in the sample that differ between individual pairs of sequences. These are known as nucleotide mismatches, and in Chapter 1 we denoted the average number of nucleotide mismatches among all pairwise comparisons of aligned sequences as $ \Pi $. Among the four sequences a-d there are 6 (i.e., 4 choose 2) pairwise comparisons, namely a-b, a-c, a-d, b-c, b-d, and c-d. Each of these combinations compares 16 nucleotide sites, and among the 6 pairwise comparisons, the number of mismatches is 0 (a-b), 4 (a-c), 4 (a-d), 4 (b-c), 4 (b-d), and 8 (c-d). The total number of pairwise mismatches is therefore $ 0 + 4 + 4 + 4 + 4 + 8 = 24 $ among a total of 6 pairwise comparisons, and so in this example $ \Pi = 24/6 = 4 $. With the concepts of segregating sites and nucleotide mismatches in mind, we can proceed to examine some of the properties of the infinite-sites model of neutral evolution. First, consider a sample consisting of only two sequences. In this case, the number of segregating sites S and the average number of number of nucleotide mismatches $ \Pi $ are identical, because there is only one pairwise sequence comparison. For a sample of size 2, Watterson (1975) showed that the probability that the number of segregating sites S equals any number i is given by $$
+- The nucleotide sites in the sample that differ between individual pairs of sequences. These are known as nucleotide mismatches, and in Chapter 1 we denoted the average number of nucleotide mismatches among all pairwise comparisons of aligned sequences as $ \Pi $. Among the four sequences a-d there are 6 (i.e., 4 choose 2) pairwise comparisons, namely a-b, a-c, a-d, b-c, b-d, and c-d. Each of these combinations compares 16 nucleotide sites, and among the 6 pairwise comparisons, the number of mismatches is 0 (a-b), 4 (a-c), 4 (a-d), 4 (b-c), 4 (b-d), and 8 (c-d). The total number of pairwise mismatches is therefore $ 0 + 4 + 4 + 4 + 4 + 8 = 24 $ among a total of 6 pairwise comparisons, and so in this example $ \Pi = 24/6 = 4 $. With the concepts of segregating sites and nucleotide mismatches in mind, we can proceed to examine some of the properties of the infinite-sites model of neutral evolution. First, consider a sample consisting of only two sequences. In this case, the number of segregating sites S and the average number of number of nucleotide mismatches $ \Pi $ are identical, because there is only one pairwise sequence comparison. For a sample of size 2, Watterson (1975) showed that the probability that the number of segregating sites S equals any number i is given by
+
+$$
 \Pr\left\{S=i\right\}=\frac{1}{\left(1+\theta\right)}\left(\frac{\theta}{1+\theta}\right)^{i}
 \tag{4.14}
-$$ where $ \theta = 4N_e\mu $. We emphasize that, in this formulation, $ \mu $ is the mutation rate across the entire nucleotide sequence. (Formally, $ \mu $ can be considered as the sum of the per-nucleotide mutation rate across all the nucleotide sites present in the sequence.)
+$$
 
-A particular case of Equation 4.14 gives the probability that two sequences have no mismatches $ (i=0) $, and hence are identical. Substituting i=0 into Equation 4.14, we obtain $$
+where $ \theta = 4N_e\mu $. We emphasize that, in this formulation, $ \mu $ is the mutation rate across the entire nucleotide sequence. (Formally, $ \mu $ can be considered as the sum of the per-nucleotide mutation rate across all the nucleotide sites present in the sequence.)
+
+A particular case of Equation 4.14 gives the probability that two sequences have no mismatches $ (i=0) $, and hence are identical. Substituting i=0 into Equation 4.14, we obtain
+
+$$
 \Pr\left\{S=0\right\}=\frac{1}{1+\theta}
 \tag{4.15}
 $$
@@ -283,29 +349,39 @@ Note that right-hand side of Equation 4.15 for the infinite-sites model is the s
 >
 > FIGURE 4.13 Equilibrium distribution of the number of mismatches between a pair of alleles. Note that free recombination results in a smaller variance than the case of no recombination.
 
-Important sampling properties of the infinite-sites model with neutral evolution and no recombination were first discovered by Watterson (1975), who examined both the number of segregating sites and the average number of pairwise mismatches. The expected number of segregating sites in a sample of size n sequences is given by $$
+Important sampling properties of the infinite-sites model with neutral evolution and no recombination were first discovered by Watterson (1975), who examined both the number of segregating sites and the average number of pairwise mismatches. The expected number of segregating sites in a sample of size n sequences is given by
+
+$$
 E(S)=\theta\sum_{i=1}^{n-1}\frac{1}{i}
 \tag{4.16}
 $$
 
-This equation was already derived in Chapter 3 (see Equation 3.41) based on the expected total length of the branches in a coalescent tree. Here $ \theta = 4N_e\mu $, where $ \mu $ is the mutation rate across the entire nucleotide sequence. The variance in the number of segregating sites in a sample of size $ n $ equals $$
+This equation was already derived in Chapter 3 (see Equation 3.41) based on the expected total length of the branches in a coalescent tree. Here $ \theta = 4N_e\mu $, where $ \mu $ is the mutation rate across the entire nucleotide sequence. The variance in the number of segregating sites in a sample of size $ n $ equals
+
+$$
 V(S)=\theta\sum_{i=1}^{n-1}\frac{1}{i}+\theta^{2}\sum_{i=1}^{n-1}\frac{1}{i^{2}}
 \tag{4.17}
 $$
 
 This expression for the variance is for the case of no recombination. It turns out that recombination does not affect $ E(S) $, but it reduces $ V(S) $. In the extreme case of free recombination between adjacent nucleotide sites, the number of segregating sites along the sequence has a Poisson distribution, and in this case the variance equals the mean.
 
-Now consider the average number of pairwise mismatches $ \Pi $ among a set of sequences. An important result is that in a sample of size n at steady state, $$
+Now consider the average number of pairwise mismatches $ \Pi $ among a set of sequences. An important result is that in a sample of size n at steady state,
+
+$$
 E(\varPi)=\theta
 \tag{4.18}
 $$
 
 Here again in $\theta = 4N_{e}\mu$, the symbol $\mu$ refers to the mutation rate across the entire nucleotide sequence.
 
-When there is no recombination between nucleotide sites, the variance in II was found by Tajima (1983) to be $$
+When there is no recombination between nucleotide sites, the variance in II was found by Tajima (1983) to be
+
+$$
 V(\Pi)=\frac{n+1}{3(n-1)}\theta+\frac{2(n^{2}+n+3)}{9n(n-1)}\theta^{2}
 \tag{4.19}
-$$ where $ \theta $ is defined as in Equation 4.18. Again, recombination reduces the variance in the average number of pairwise mismatches (see Figure 4.13 for the case n = 2). It is not difficult to see intuitively why the variance is reduced—recombination shuffles the variation among alleles, reducing the average number of sites by which random pairs of alleles differ. Wakeley (1997) gives a more advanced treatment of this subject.
+$$
+
+where $ \theta $ is defined as in Equation 4.18. Again, recombination reduces the variance in the average number of pairwise mismatches (see Figure 4.13 for the case n = 2). It is not difficult to see intuitively why the variance is reduced—recombination shuffles the variation among alleles, reducing the average number of sites by which random pairs of alleles differ. Wakeley (1997) gives a more advanced treatment of this subject.
 
 **[Table]**
 
@@ -321,14 +397,18 @@ $$ where $ \theta $ is defined as in Equation 4.18. Again, recombination reduces
 
 ## PopGen_chapter4_012 · 4.5 INFINITE-SITES MODEL / Nucleotide Polymorphism and Nucleotide Diversity
 
-One limitation of S and $ \Pi $ as measures of nucleotide variation in a population is that each quantity depends on the length of the sequences that are compared; these differ from gene to gene and from one study to another. The dependence on sequence length can be eliminated by expressing both the number of segregating sites S and the average number of pairwise mismatches II as a proportion of the total number of sites. To be specific, suppose that a sample consists of n aligned sequences each of length L. Then the proportion of segregating sites among all sites compared equals S/L. There is no established symbol for this quantity, but it is sometimes called the nucleotide polymorphism. For the sake of consistency, we shall denote the nucleotide polymorphism by the symbol $ S^{*} $, so that $ S^{*} = S/L $. Since L is a constant, it follows that the mean and variance of $ S^{*} $ are given by $$
+One limitation of S and $ \Pi $ as measures of nucleotide variation in a population is that each quantity depends on the length of the sequences that are compared; these differ from gene to gene and from one study to another. The dependence on sequence length can be eliminated by expressing both the number of segregating sites S and the average number of pairwise mismatches II as a proportion of the total number of sites. To be specific, suppose that a sample consists of n aligned sequences each of length L. Then the proportion of segregating sites among all sites compared equals S/L. There is no established symbol for this quantity, but it is sometimes called the nucleotide polymorphism. For the sake of consistency, we shall denote the nucleotide polymorphism by the symbol $ S^{*} $, so that $ S^{*} = S/L $. Since L is a constant, it follows that the mean and variance of $ S^{*} $ are given by
+
+$$
 E(S^{*})=E(S)\;/\; L\quad V(S^{*})=V(S)\;/\; L^{2}
 \tag{4.20}
 $$
 
 Expressions for $ E(S) $ and $ V(S) $ in the case of no recombination are found in Equations 4.16 and 4.17. Although $ S^{*} $ does not depend on the sequence length, it does depend on the sample size, as is evident from Equation 4.16. On the other hand, the dependence on sample size is fairly weak unless the samples are very small (see Table 1.2).
 
-Similarly, the average proportion of pairwise mismatches in sequences of length L is given by $ \Pi/L $. This quantity does have an established symbol, namely $ \pi = \Pi/L $, and it is called the nucleotide diversity (Nei and Li 1979). Because L is a constant, the mean and variance of $ \pi $ are given by $$
+Similarly, the average proportion of pairwise mismatches in sequences of length L is given by $ \Pi/L $. This quantity does have an established symbol, namely $ \pi = \Pi/L $, and it is called the nucleotide diversity (Nei and Li 1979). Because L is a constant, the mean and variance of $ \pi $ are given by
+
+$$
 E(\pi)=E(\Pi)/L\quad V(\pi)=V(\Pi)/L^{2}
 \tag{4.21}
 $$
@@ -339,15 +419,23 @@ Expressions for $ E(\Pi) $ and $ V(\Pi) $ in the case of no recombination are gi
 
 ## PopGen_chapter4_013 · 4.5 INFINITE-SITES MODEL / Tajima's D Statistic
 
-Equation 4.16 provides a method for estimating the parameter $ \theta = 4N\mu $ based on the number of segregating sites in a sample S. If we define $$
+Equation 4.16 provides a method for estimating the parameter $ \theta = 4N\mu $ based on the number of segregating sites in a sample S. If we define
+
+$$
 \alpha=\sum_{i=1}^{n-1}\frac{1}{i}=1+\frac{1}{2}+\frac{1}{3}+\cdots+\frac{1}{n-1}
 \tag{4.22}
-$$ then Equation 4.16 yields the estimate $$
+$$
+
+then Equation 4.16 yields the estimate
+
+$$
 \hat{\theta}=S/a
 \tag{4.23}
 $$
 
-Likewise, Equation 4.18 provides a method for estimating $ \theta $ based on the average number of pairwise mismatches $ \Pi $, and in this case the estimate is very direct: $$
+Likewise, Equation 4.18 provides a method for estimating $ \theta $ based on the average number of pairwise mismatches $ \Pi $, and in this case the estimate is very direct:
+
+$$
 \hat{\theta}=\Pi
 \tag{4.24}
 $$
@@ -362,7 +450,9 @@ ANSWER For the data in *[See Table 4.1 at the end of this section.]* we have alr
 
 Data from natural populations often have an excess of segregating sites in which the minority nucleotide is present only once in the sample, constituting what is called a singleton. Although excess singletons can result from recent rapid population growth, more often it suggests that the singletons represent slightly deleterious alleles held at low frequency by selection. When this is observed for nonsynonymous nucleotide polymorphisms in protein-coding regions, it is usually interpreted to imply that many amino acid polymorphisms are slightly deleterious and held at low frequency in the population by a balance between selection tending to drive them out and recurrent mutation producing new deleterious alleles.
 
-Tajima’s (1989) test is actually based on a normalized version of II – S/a, where the magnitude of the difference is expressed as a multiple of the standard deviation of the difference. The resulting statistic is known as Tajima’s D: $$
+Tajima’s (1989) test is actually based on a normalized version of II – S/a, where the magnitude of the difference is expressed as a multiple of the standard deviation of the difference. The resulting statistic is known as Tajima’s D:
+
+$$
 D=\frac{\prod-S/a}{\sqrt{V(\prod-S/a)}}
 \tag{4.25}
 $$
@@ -385,30 +475,52 @@ The trees in Figure 4.14 are “average” trees in the sense that the coalescen
 
 The property used in the Fu and Li (1993) test is based on the expected total length of the external and internal branches. The first row of numbers, positioned beneath each tip, consists of fractions that indicate the expected length of the external branch to that tip, expressed in units of $ 4N_e $ generations. For example, the long external branch at the far left has an expected length of $ \left(\frac{4}{5}\right) \times 4N_e $ generations. The expected branch lengths are based on the fact that the expected time to coalesce from k to k - 1 alleles is given by $ 4N_e / k(k - 1) $, which is implied by Equation 3.35 in Chapter 3.
 
-For each tree structure, the expected length of all the external branches taken together is given in the third row of numbers. In this case the dependence on $ 4N_{e} $ is made explicit. For each tree structure, the multiplier in parentheses is the sum of the expected length of the individual external branches for that tree. Taking the tree at the far left as an example, $$ \left[\left(\frac{4}{5}\right)+\left(\frac{3}{10}\right)+\left(\frac{2}{15}\right)+\left(\frac{1}{20}\right)+\left(\frac{1}{20}\right)\right]\times4N_{e}=\left(\frac{16}{12}\right)\times4N_{e} $$ which is the entry in the third row. The reason that all of the values are expressed with 12 as the common denominator is that it makes it easier to calculate the expected length of the external branches over all possible coalescent trees. In this case, the expected total external branch length is given by $$ \left[\left(\frac{2}{6}\right)\left(\frac{16}{12}\right)+\left(\frac{1}{6}\right)\left(\frac{10}{12}\right)+\left(\frac{1}{6}\right)\left(\frac{8}{12}\right)+\left(\frac{1}{6}\right)\left(\frac{8}{12}\right)+\left(\frac{1}{6}\right)\left(\frac{14}{12}\right)\right]\times4N_{e}=4N_{e} $$
+For each tree structure, the expected length of all the external branches taken together is given in the third row of numbers. In this case the dependence on $ 4N_{e} $ is made explicit. For each tree structure, the multiplier in parentheses is the sum of the expected length of the individual external branches for that tree. Taking the tree at the far left as an example,
+
+$$
+\left[\left(\frac{4}{5}\right)+\left(\frac{3}{10}\right)+\left(\frac{2}{15}\right)+\left(\frac{1}{20}\right)+\left(\frac{1}{20}\right)\right]\times4N_{e}=\left(\frac{16}{12}\right)\times4N_{e}
+$$
+
+which is the entry in the third row. The reason that all of the values are expressed with 12 as the common denominator is that it makes it easier to calculate the expected length of the external branches over all possible coalescent trees. In this case, the expected total external branch length is given by
+
+$$
+\left[\left(\frac{2}{6}\right)\left(\frac{16}{12}\right)+\left(\frac{1}{6}\right)\left(\frac{10}{12}\right)+\left(\frac{1}{6}\right)\left(\frac{8}{12}\right)+\left(\frac{1}{6}\right)\left(\frac{8}{12}\right)+\left(\frac{1}{6}\right)\left(\frac{14}{12}\right)\right]\times4N_{e}=4N_{e}
+$$
 
 Remarkably, this result is completely general and independent of the sample size.
 
-What about the total length of the internal branches? Equation 3.40 in Chapter 3 says that the expected total length of all the branches is equal to $ 4N_e \times a $, where $ a $ is the sum of reciprocals defined in Equation 4.22. Because the length of the internal branches must equal the difference between the length of all branches and the length of the external branches, it follows that the total length of the internal branches must be $ 4N_e \times (a - 1) = (a - 1) \times 4N_e $. In the case of $ n = 5 $ (see Figure 4.14), $ a = \frac{25}{12} $, and therefore the expected length of the internal branches in this case is $ \left[\frac{25}{12} - 1\right] \times 4N_e = \left(\frac{13}{12}\right) \times 4N_e $. This can be verified directly from Figure 4.14 by calculating $$ \left[\left(\frac{2}{6}\right)\left(\frac{9}{12}\right)+\left(\frac{1}{6}\right)\left(\frac{15}{12}\right)+\left(\frac{1}{6}\right)\left(\frac{17}{12}\right)+\left(\frac{1}{6}\right)\left(\frac{17}{12}\right)+\left(\frac{1}{6}\right)\left(\frac{11}{12}\right)\right]\times4N_{e}=\left(\frac{13}{12}\right)4N_{e} $$
+What about the total length of the internal branches? Equation 3.40 in Chapter 3 says that the expected total length of all the branches is equal to $ 4N_e \times a $, where $ a $ is the sum of reciprocals defined in Equation 4.22. Because the length of the internal branches must equal the difference between the length of all branches and the length of the external branches, it follows that the total length of the internal branches must be $ 4N_e \times (a - 1) = (a - 1) \times 4N_e $. In the case of $ n = 5 $ (see Figure 4.14), $ a = \frac{25}{12} $, and therefore the expected length of the internal branches in this case is $ \left[\frac{25}{12} - 1\right] \times 4N_e = \left(\frac{13}{12}\right) \times 4N_e $. This can be verified directly from Figure 4.14 by calculating
+
+$$
+\left[\left(\frac{2}{6}\right)\left(\frac{9}{12}\right)+\left(\frac{1}{6}\right)\left(\frac{15}{12}\right)+\left(\frac{1}{6}\right)\left(\frac{17}{12}\right)+\left(\frac{1}{6}\right)\left(\frac{17}{12}\right)+\left(\frac{1}{6}\right)\left(\frac{11}{12}\right)\right]\times4N_{e}=\left(\frac{13}{12}\right)4N_{e}
+$$
 
 The reason for distinguishing external branches from internal braches is that any mutation along an external branch results in a singleton polymorphism in the sample. Similarly, every mutation along an internal branch results in a nonsingleton polymorphism in the sample. Therefore, the numbers of singleton and nonsingleton polymorphisms in the sample allow a comparison of the total lengths of the external and internal branches of the coalescent tree.
 
-To do this comparison, we need to consider where mutations may occur along the branches, and for this purpose let $ \mu $ represent the rate of mutation along the total length of the DNA sequence in each sampled allele, and as usual let $ \theta = 4N_e\mu $. The number of mutations along the external branches is usually denoted $ \eta_e $, and its expected value is given by the product of the expected external branch lengths and the mutation rate, or $ 4N_e \times \mu $. In other words the expected number of singleton polymorphisms in the sample is given by $$
+To do this comparison, we need to consider where mutations may occur along the branches, and for this purpose let $ \mu $ represent the rate of mutation along the total length of the DNA sequence in each sampled allele, and as usual let $ \theta = 4N_e\mu $. The number of mutations along the external branches is usually denoted $ \eta_e $, and its expected value is given by the product of the expected external branch lengths and the mutation rate, or $ 4N_e \times \mu $. In other words the expected number of singleton polymorphisms in the sample is given by
+
+$$
 E(\eta_{e})=4N_{e}\mu=\theta
 \tag{4.26}
 $$
 
-Letting $ \eta_{i} $ denote the number of mutations along the internal branches, similar reasoning indicates that the expected number of nonsingleton polymorphisms in the sample is given by $$
+Letting $ \eta_{i} $ denote the number of mutations along the internal branches, similar reasoning indicates that the expected number of nonsingleton polymorphisms in the sample is given by
+
+$$
 E(\eta_{i})=(a-1)4N_{e}\mu=(a-1)\theta
 \tag{4.27}
 $$
 
 Equations 4.26 and 4.27 yield estimated $ \theta $ based either on the number of singleton polymorphisms or the number of nonsingleton polymorphism. Furthermore, for samples sizes of about 10 or greater, $ \eta_{e} $ and $ \eta_{i} $ are nearly independent of one another (Li 1997).
 
-The Fu and Li (1993) test is based on the difference between the two estimates of $ \theta $ implied by Equations 4.26 and 4.27, namely, $$
+The Fu and Li (1993) test is based on the difference between the two estimates of $ \theta $ implied by Equations 4.26 and 4.27, namely,
+
+$$
 G=\frac{\eta_{e}-\eta_{i}/(a-1)}{\sqrt{V[\eta_{e}-\eta_{i}/(a-1)]}}
 \tag{4.28}
-$$ where G is the test statistic and V indicates the variance. As with other such tests, perhaps the best way to obtain a P-value is to estimate the null distribution of G from neutral coalescent simulations and then compare the observed value of G with the simulated values.
+$$
+
+where G is the test statistic and V indicates the variance. As with other such tests, perhaps the best way to obtain a P-value is to estimate the null distribution of G from neutral coalescent simulations and then compare the observed value of G with the simulated values.
 
 Fu and Li (1993) suggest that G might be a useful test statistic in cases in which most new mutations are deleterious, because in such cases the number of singletons will be increased relative to the number of nonsingletons. The reasoning is that if most new mutations are harmful, they may appear in samples as singletons, but most of them will be eliminated very quickly. Only the minority of new mutations that are neutral or nearly neutral have much chance of increasing in frequency to a level sufficient to appear in samples as nonsingletons. Hence, in this model, $ \eta_{e} $ is increased relative to $ \eta_{i} $. It should however be noted that the neutral infinite-sites model predicts a large fraction of singletons anyway. *[See Table 4.2 at the end of this section.]* shows the expected proportion of single-
 
@@ -566,7 +678,13 @@ At the beginning of this section, we said that animal mtDNA "is almost always ma
 
 5. Estimation of mutation rates from bacterial cultures can be tricky because, if a mutation occurs early in the life of a culture, the final frequency will be very high, but if it occurs late, the final frequency will be low. The fluctuation test is a method for getting around this problem by growing many smaller cultures and estimating the mutation rate from the proportion of cultures that contain no mutations using the zero term of the Poisson distribution $ P_0 = \exp(-\mu N) $, where $ P_0 $ is the proportion of cultures with no mutations, $ \mu $ is the mutation rate, and N is the average number of cells per culture. In one experiment for bacteriophage T1 resistance, 11/20 cultures contained no mutations and the average number of cells per culture was $ 5.6 \times 10^8 $. Estimate $ \mu $.
 
-6. If recessive lethals occur independently in Drosophila autosomes, and the probability that an autosome contains one or more recessive lethals is 0.35 (a typical figure for chromosomes isolated from natural populations), what is the average number of recessive lethals per chromosome? Assume that the distribution of lethals is Poisson so that the probability of a chromosome containing exactly i lethals is $$ \Pr\left\{\text{exactly }i\text{ lethals}\right\}=\frac{m^{i}}{i!}e^{-m} $$ where m is the mean number of lethals per autosome.
+6. If recessive lethals occur independently in Drosophila autosomes, and the probability that an autosome contains one or more recessive lethals is 0.35 (a typical figure for chromosomes isolated from natural populations), what is the average number of recessive lethals per chromosome? Assume that the distribution of lethals is Poisson so that the probability of a chromosome containing exactly i lethals is
+
+$$
+\Pr\left\{\text{exactly }i\text{ lethals}\right\}=\frac{m^{i}}{i!}e^{-m}
+$$
+
+where m is the mean number of lethals per autosome.
 
 7. The doubling dose of radiation is the quantity of radiation that induces as many mutations as occur spontaneously, so the total mutation rate of organisms exposed to the doubling dose equals two times the spontaneous mutation rate. Below are the induction rates per rad of x-rays (a standard measure of dose) for various genetic end points in irradiated male mice, along with the spontaneous rates. What are the corresponding doubling doses?
 
@@ -608,10 +726,20 @@ At the beginning of this section, we said that animal mtDNA "is almost always ma
 
 20. The accompanying illustration shows a coalescent tree for a sample of size $n = 3$. What are the expected lengths, in units of generations, along each of the labeled branches? Show that the expected total length of all the branches taken together equals $4N a$, where $a = 1 + \frac{1}{2} = \frac{3}{2}$. Show also that the expected length of all the external branches equals $4N$ and that the expected length of all the internal branches equals $4N(a - 1)$. Use the principle that the expected time in generations for $k$ neutral alleles to coalesce into $k - 1$ alleles equals $4N/[k(k - 1)]$.
 
-21. One might naively think that samples from an infinite-alleles neutral model should contain roughly equal numbers of the alleles represented. But this is far from the truth. The expected sample configurations are very unequal, because the representation of each allele depends on the time in evolutionary history when it was created by mutation and the manner in which its frequency was affected by random genetic drift. To take a specific example, consider a sample of size $n = 6$ from a population evolving according to the infinite-alleles neutral model, and suppose that the sample contains only $k = 2$ different alleles. Let the configuration of alleles in the sample be represented as $(a_1, a_2, a_3, a_4, a_5)$, where $a_i$ is the number of alleles represented exactly $i$ times, with $\Sigma a_i = 6$. It can be shown from Ewen's sampling formula that the probability of the configuration $(a_1, a_2, a_3, a_4, a_5)$ equals $$ \Pr\left\{a_{1},a_{2},a_{3},a_{4},a_{5}\mid k=2\right\}=\frac{6!}{274\times1^{a_{1}}2^{a_{2}}3^{a_{3}}4^{a_{4}}5^{a_{5}}\times a_{1}!a_{2}!a_{3}!a_{4}!a_{5}!} $$
+21. One might naively think that samples from an infinite-alleles neutral model should contain roughly equal numbers of the alleles represented. But this is far from the truth. The expected sample configurations are very unequal, because the representation of each allele depends on the time in evolutionary history when it was created by mutation and the manner in which its frequency was affected by random genetic drift. To take a specific example, consider a sample of size $n = 6$ from a population evolving according to the infinite-alleles neutral model, and suppose that the sample contains only $k = 2$ different alleles. Let the configuration of alleles in the sample be represented as $(a_1, a_2, a_3, a_4, a_5)$, where $a_i$ is the number of alleles represented exactly $i$ times, with $\Sigma a_i = 6$. It can be shown from Ewen's sampling formula that the probability of the configuration $(a_1, a_2, a_3, a_4, a_5)$ equals
+
+$$
+\Pr\left\{a_{1},a_{2},a_{3},a_{4},a_{5}\mid k=2\right\}=\frac{6!}{274\times1^{a_{1}}2^{a_{2}}3^{a_{3}}4^{a_{4}}5^{a_{5}}\times a_{1}!a_{2}!a_{3}!a_{4}!a_{5}!}
+$$
 
 (Equation 9.30 in Ewens 2004). In this case only three sample configurations are possible, namely $ x = (1, 0, 0, 0, 1) $, $ y = (0, 1, 0, 1, 0) $, and $ z = (0, 0, 2, 0, 0) $. Calculate the probabilities of x, y, and z, and the expected proportion of samples in which the numbers of the two alleles are not equal.
 
-22. For the infinite-alleles neutral model, the probability that a sample of size n = 6 contains exactly k = 3 alleles in the configuration $ (a_{1}, a_{2}, a_{3}, a_{4}) $ is given by $$ \Pr\left\{a_{1},a_{2},a_{3},a_{4}\mid k=3\right\}=\frac{6!}{225\times1^{a_{1}}2^{a_{2}}3^{a_{3}}4^{a_{4}}\times a_{1}!a_{2}!a_{3}!a_{4}!} $$ where $a_{i}$ is the number of alleles represented $i$ times in the sample, and $\Sigma i a_{i}=6$ (Equation 9.30 in Ewens 2004). What sample configurations $(a_{1}, a_{2}, a_{3}, a_{4})$ are possible, and what are their probabilities?
+22. For the infinite-alleles neutral model, the probability that a sample of size n = 6 contains exactly k = 3 alleles in the configuration $ (a_{1}, a_{2}, a_{3}, a_{4}) $ is given by
+
+$$
+\Pr\left\{a_{1},a_{2},a_{3},a_{4}\mid k=3\right\}=\frac{6!}{225\times1^{a_{1}}2^{a_{2}}3^{a_{3}}4^{a_{4}}\times a_{1}!a_{2}!a_{3}!a_{4}!}
+$$
+
+where $a_{i}$ is the number of alleles represented $i$ times in the sample, and $\Sigma i a_{i}=6$ (Equation 9.30 in Ewens 2004). What sample configurations $(a_{1}, a_{2}, a_{3}, a_{4})$ are possible, and what are their probabilities?
 
 ---

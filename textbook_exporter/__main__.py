@@ -33,6 +33,16 @@ def build_arg_parser() -> argparse.ArgumentParser:
         type=Path,
         help="Optional figure_library.json used to expand [[FIGURE:*]] placeholders.",
     )
+    parser.add_argument(
+        "--book-id",
+        default=None,
+        help="Optional book library override, e.g. Genetics. Defaults to the chapter filename prefix.",
+    )
+    parser.add_argument(
+        "--books",
+        default=None,
+        help="Optional comma-separated book filter, e.g. Evolution,Genetics,PopGen.",
+    )
     return parser
 
 
@@ -40,11 +50,14 @@ def main(argv: list[str] | None = None) -> None:
     parser = build_arg_parser()
     args = parser.parse_args(argv)
     chapters = parse_chapter_filter(args.chapters)
+    books = {part.strip() for part in str(args.books or "").split(",") if part.strip()} or None
     results = export_textbooks(
         structured_dir=args.structured_dir,
         out_dir=args.out_dir,
         chapters=chapters,
         figure_library=args.figure_library,
+        book_id=args.book_id,
+        books=books,
     )
     if not results:
         raise SystemExit("No chapter files matched the requested export.")

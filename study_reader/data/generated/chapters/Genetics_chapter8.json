@@ -1,0 +1,1520 @@
+{
+  "sections": [
+    {
+      "id": "Genetics_chapter8_section_001",
+      "title": "Chapter 8 · Introduction to Matrix Algebra and Linear Models",
+      "nav_label": "Introduction to Matrix Algebra and Linear Models",
+      "raw_title": "Chapter 8 · Introduction to Matrix Algebra and Linear Models",
+      "level": 1,
+      "depth": 0,
+      "anchor": "genetics_chapter8_section_001",
+      "text_preview": ""
+    },
+    {
+      "id": "Genetics_chapter8_001",
+      "title": "Introduction to Matrix Algebra",
+      "nav_label": "Introduction to Matrix Algebra",
+      "raw_title": "Genetics_chapter8_001 · Introduction to Matrix Algebra",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter8_001",
+      "text_preview": "and Linear Models We have already encountered several examples of models in which response variables are linear functions of two or more explanatory (or predictor) variables. For example, we have been routinely expressing an individual's phenotypic value as the sum of genotypic and environmental values. A more complic…"
+    },
+    {
+      "id": "Genetics_chapter8_002",
+      "title": "MULTIPLE REGRESSION",
+      "nav_label": "MULTIPLE REGRESSION",
+      "raw_title": "Genetics_chapter8_002 · MULTIPLE REGRESSION",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter8_002",
+      "text_preview": "As a point of departure, consider the multiple regression $$ y=\\alpha+\\beta {1}z {1}+\\beta {2}z {2}+\\cdots+\\beta {n}z {n}+e \\tag{8.1} $$ where y is the response variable, and the $ z {i} $ are the predictor (or explanatory) variables used to predict the value of the response variable. This multivariate equation is sim…"
+    },
+    {
+      "id": "Genetics_chapter8_003",
+      "title": "MULTIPLE REGRESSION / An Application to Multivariate Selection",
+      "nav_label": "An Application to Multivariate Selection",
+      "raw_title": "Genetics_chapter8_003 · MULTIPLE REGRESSION / An Application to Multivariate Selection",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter8_003",
+      "text_preview": "Karl Pearson developed the technique of multiple regression in 1896, although some of the fundamentals can be traced to his predecessors (Pearson 1920, Stigler 1986). Pearson is perhaps best known as one of the founders of statistical methodology, but his intense interest in evolution may have been the primary motivat…"
+    },
+    {
+      "id": "Genetics_chapter8_004",
+      "title": "ELEMENTARY MATRIX ALGEBRA",
+      "nav_label": "ELEMENTARY MATRIX ALGEBRA",
+      "raw_title": "Genetics_chapter8_004 · ELEMENTARY MATRIX ALGEBRA",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter8_004",
+      "text_preview": "The solutions of systems of linear equations generally involve the use of matrices and vectors of variables. For those with little familiarity with such constructs and their manipulations, the next few pages provide an overview of the basic tools of matrix algebra. ---"
+    },
+    {
+      "id": "Genetics_chapter8_005",
+      "title": "ELEMENTARY MATRIX ALGEBRA / Basic Notation",
+      "nav_label": "Basic Notation",
+      "raw_title": "Genetics_chapter8_005 · ELEMENTARY MATRIX ALGEBRA / Basic Notation",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter8_005",
+      "text_preview": "A matrix is simply a rectangular array of numbers. Some examples are: $$ \\mathbf{a}=\\begin{pmatrix}{{{12}}} \\\\{{{13}}} \\\\{{{47}}}\\end{pmatrix}\\qquad\\mathbf{b}=\\begin{pmatrix}{{{2}}}&{{{0}}}&{{{5}}}&{{{21}}}\\end{pmatrix}\\qquad\\mathbf{C}=\\begin{pmatrix}{{{3}}}&{{{1}}}&{{{2}}} \\\\{{{2}}}&{{{5}}}&{{{4}}} \\\\{{{1}}}&{{{1}}}&…"
+    },
+    {
+      "id": "Genetics_chapter8_006",
+      "title": "ELEMENTARY MATRIX ALGEBRA / Partitioned Matrices",
+      "nav_label": "Partitioned Matrices",
+      "raw_title": "Genetics_chapter8_006 · ELEMENTARY MATRIX ALGEBRA / Partitioned Matrices",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter8_006",
+      "text_preview": "It is often useful to work with partitioned matrices wherein each element in a [[matrix]] is itself a matrix. There are several ways to partition a matrix. For example, we could write the matrix C above as $$ \\mathbf{C}=\\begin{pmatrix}{{{3}}}&{{{1}}}&{{{2}}} \\\\{{{2}}}&{{{5}}}&{{{4}}} \\\\{{{1}}}&{{{1}}}&{{{2}}}\\end{pmat…"
+    },
+    {
+      "id": "Genetics_chapter8_007",
+      "title": "ELEMENTARY MATRIX ALGEBRA / Addition and Subtraction",
+      "nav_label": "Addition and Subtraction",
+      "raw_title": "Genetics_chapter8_007 · ELEMENTARY MATRIX ALGEBRA / Addition and Subtraction",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter8_007",
+      "text_preview": "Addition and subtraction of matrices is straightforward. To form a new [[matrix]] $ \\mathbf{A} + \\mathbf{B} = \\mathbf{C} $, $ \\mathbf{A} $ and $ \\mathbf{B} $ must have the same dimensions. One then simply adds the corresponding elements, $ C {ij} = A {ij} + B {ij} $. Subtraction is defined similarly. For example, if $…"
+    },
+    {
+      "id": "Genetics_chapter8_008",
+      "title": "ELEMENTARY MATRIX ALGEBRA / Multiplication",
+      "nav_label": "Multiplication",
+      "raw_title": "Genetics_chapter8_008 · ELEMENTARY MATRIX ALGEBRA / Multiplication",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter8_008",
+      "text_preview": "Multiplying a matrix by a scalar is also straightforward. If $ M = aN $, where $ a $ is a scalar, then $ M {ij} = aN {ij} $. Each element of $ N $ is simply multiplied by the scalar. For example, $$ \\begin{aligned}(-2)\\begin{pmatrix}{{{1}}}&{{{0}}} \\\\{{{3}}}&{{{1}}}\\end{pmatrix}=\\begin{pmatrix}{{{-2}}}&{{{0}}} \\\\{{{-6…"
+    },
+    {
+      "id": "Genetics_chapter8_009",
+      "title": "ELEMENTARY MATRIX ALGEBRA / Example 2. Compute the product L = MN where",
+      "nav_label": "Example 2. Compute the product L = MN where",
+      "raw_title": "Genetics_chapter8_009 · ELEMENTARY MATRIX ALGEBRA / Example 2. Compute the product L = MN where",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter8_009",
+      "text_preview": "$$ \\mathbf{M}=\\begin{pmatrix}{{{3}}}&{{{1}}}&{{{2}}} \\\\{{{2}}}&{{{5}}}&{{{4}}} \\\\{{{1}}}&{{{1}}}&{{{2}}}\\end{pmatrix}\\qquad and\\qquad\\mathbf{N}=\\begin{pmatrix}{{{4}}}&{{{1}}}&{{{0}}} \\\\{{{1}}}&{{{1}}}&{{{3}}} \\\\{{{3}}}&{{{2}}}&{{{2}}}\\end{pmatrix} $$ Writing $ \\mathbf{M} = \\begin{pmatrix} \\mathbf{m} {1} \\\\ \\mathbf{m}…"
+    },
+    {
+      "id": "Genetics_chapter8_010",
+      "title": "ELEMENTARY MATRIX ALGEBRA / Transposition",
+      "nav_label": "Transposition",
+      "raw_title": "Genetics_chapter8_010 · ELEMENTARY MATRIX ALGEBRA / Transposition",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter8_010",
+      "text_preview": "Another useful matrix operation is transposition. The transpose of a matrix A is written $ \\mathbf{A}^T $ (while not used in this book, the notation $ \\mathbf{A}' $ is also widely used), and is obtained simply by switching rows and columns of the original matrix. For example, $$ \\begin{pmatrix}{{{3}}}&{{{1}}}&{{{2}}}…"
+    },
+    {
+      "id": "Genetics_chapter8_011",
+      "title": "ELEMENTARY MATRIX ALGEBRA / Inverses and Solutions to Systems of Equations",
+      "nav_label": "Inverses and Solutions to Systems of Equations",
+      "raw_title": "Genetics_chapter8_011 · ELEMENTARY MATRIX ALGEBRA / Inverses and Solutions to Systems of Equations",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter8_011",
+      "text_preview": "While matrix multiplication provides a compact way of writing systems of equations, we also need a compact notation for expressing the solutions of such systems. Such solutions utilize the inverse of a matrix, an operation analogous to scalar division. The essential utility of matrix inversion can be noted by first co…"
+    },
+    {
+      "id": "Genetics_chapter8_012",
+      "title": "ELEMENTARY MATRIX ALGEBRA / Determinants and Minors",
+      "nav_label": "Determinants and Minors",
+      "raw_title": "Genetics_chapter8_012 · ELEMENTARY MATRIX ALGEBRA / Determinants and Minors",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter8_012",
+      "text_preview": "For a $ 2 \\times 2 $ matrix, the quantity $$ \\left \\mathbf{A}\\right =A {11}A {22}-A {12}A {21} \\tag{8.12a} $$ is called the \\textit{determinant}, which more generally is denoted by $ \\det(\\mathbf{A}) $ or $ \\mathbf{A} $. As with the 2-dimensional case, $ \\mathbf{A}^{-1} $ exists for a square matrix $ \\mathbf{A} $ (of…"
+    },
+    {
+      "id": "Genetics_chapter8_013",
+      "title": "ELEMENTARY MATRIX ALGEBRA / Example 4. Compute the determinant of",
+      "nav_label": "Example 4. Compute the determinant of",
+      "raw_title": "Genetics_chapter8_013 · ELEMENTARY MATRIX ALGEBRA / Example 4. Compute the determinant of",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter8_013",
+      "text_preview": "$$ \\mathbf{A}=\\begin{pmatrix}{{{1}}}&{{{1}}}&{{{1}}} \\\\{{{1}}}&{{{3}}}&{{{2}}} \\\\{{{1}}}&{{{2}}}&{{{1}}}\\end{pmatrix} $$ Letting $i = 1$, i.e., using the elements in the first row of A, $$ \\left \\mathbf{A}\\right =1\\cdot\\left(-1\\right)^{1+1}\\left \\begin{matrix}{{{3}}}&{{{2}}} \\\\{{{2}}}&{{{1}}}\\end{matrix}\\right +1\\cdot…"
+    },
+    {
+      "id": "Genetics_chapter8_014",
+      "title": "ELEMENTARY MATRIX ALGEBRA / Computing Inverses",
+      "nav_label": "Computing Inverses",
+      "raw_title": "Genetics_chapter8_014 · ELEMENTARY MATRIX ALGEBRA / Computing Inverses",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter8_014",
+      "text_preview": "The general solution of a matrix inverse is $$ A {ij}^{-1}=\\left[\\frac{(-1)^{i+j} \\mathbf{A} {ij} }{ \\mathbf{A} }\\right]^{T} \\tag{8.13} $$ where $ A {ij}^{-1} $ denotes the $ ij $th element of $ A^{-1} $, and $ A {ij} $ denotes the $ ij $th minor of A. It can be seen from Equation 8.13 that a matrix can only be invert…"
+    },
+    {
+      "id": "Genetics_chapter8_015",
+      "title": "ELEMENTARY MATRIX ALGEBRA / Example 5. Compute the inverse of",
+      "nav_label": "Example 5. Compute the inverse of",
+      "raw_title": "Genetics_chapter8_015 · ELEMENTARY MATRIX ALGEBRA / Example 5. Compute the inverse of",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter8_015",
+      "text_preview": "$$ \\mathbf{A}=\\begin{pmatrix}{{{3}}}&{{{1}}}&{{{2}}} \\\\{{{2}}}&{{{5}}}&{{{4}}} \\\\{{{1}}}&{{{1}}}&{{{2}}}\\end{pmatrix} $$ First, find the determinants of the minors, $$ \\left \\mathbf{A} {11}\\right =\\left \\begin{matrix}{{{5}}}&{{{4}}} \\\\{{{1}}}&{{{2}}}\\end{matrix}\\right =6\\qquad\\left \\mathbf{A} {23}\\right =\\left \\begin{…"
+    },
+    {
+      "id": "Genetics_chapter8_016",
+      "title": "EXPECTATIONS OF RANDOM VECTORS AND MATRICES",
+      "nav_label": "EXPECTATIONS OF RANDOM VECTORS AND MATRICES",
+      "raw_title": "Genetics_chapter8_016 · EXPECTATIONS OF RANDOM VECTORS AND MATRICES",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter8_016",
+      "text_preview": "Matrix algebra provides a powerful approach for analyzing linear combinations of random variables. Let x be a column vector containing n random variables, $ \\mathbf{x} = (x 1, x 2, \\cdots, x n)^T $. We may wish to construct a new univariate (scalar) random variable y by taking some linear combination of the elements o…"
+    },
+    {
+      "id": "Genetics_chapter8_017",
+      "title": "COVARIANCE MATRICES OF TRANSFORMED VECTORS",
+      "nav_label": "COVARIANCE MATRICES OF TRANSFORMED VECTORS",
+      "raw_title": "Genetics_chapter8_017 · COVARIANCE MATRICES OF TRANSFORMED VECTORS",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter8_017",
+      "text_preview": "To develop expressions for variances and covariances of linear combinations of random variables, we must first introduce the concept of quadratic forms. Consider an $ n \\times n $ square matrix A and an $ n \\times 1 $ column vector x. From the rules of matrix multiplication, $$ \\mathbf{x}^{T}\\mathbf{A}\\mathbf{x}=\\sum…"
+    },
+    {
+      "id": "Genetics_chapter8_018",
+      "title": "THE MULTIVARIATE NORMAL DISTRIBUTION",
+      "nav_label": "THE MULTIVARIATE NORMAL DISTRIBUTION",
+      "raw_title": "Genetics_chapter8_018 · THE MULTIVARIATE NORMAL DISTRIBUTION",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter8_018",
+      "text_preview": "As we have seen above, matrix notation provides a compact way to express vectors of random variables. We now consider the most commonly assumed distribution for such vectors, the multivariate analog of the normal distribution discussed in Chapter 2. Much of the theory for the evolution of quantitative traits is based…"
+    },
+    {
+      "id": "Genetics_chapter8_019",
+      "title": "THE MULTIVARIATE NORMAL DISTRIBUTION / Properties of the MVN",
+      "nav_label": "Properties of the MVN",
+      "raw_title": "Genetics_chapter8_019 · THE MULTIVARIATE NORMAL DISTRIBUTION / Properties of the MVN",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter8_019",
+      "text_preview": "As in the case of its univariate counterpart, the MVN is expected to arise naturally when the quantities of interest result from a large number of underlying variables. Since this condition seems (at least at first glance) to describe many biological systems, the MVN is a natural starting point in biometrical analysis…"
+    },
+    {
+      "id": "Genetics_chapter8_020",
+      "title": "OVERVIEW OF LINEAR MODELS",
+      "nav_label": "OVERVIEW OF LINEAR MODELS",
+      "raw_title": "Genetics_chapter8_020 · OVERVIEW OF LINEAR MODELS",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter8_020",
+      "text_preview": "[[Linear models]] form the backbone of most estimation procedures in quantitative genetics and will be extensively used throughout the rest of this book. They are generally structured such that a vector of observations of one variable (y) is modeled as a linear combination of other variables observed along with y. The…"
+    },
+    {
+      "id": "Genetics_chapter8_021",
+      "title": "OVERVIEW OF LINEAR MODELS / Ordinary Least Squares",
+      "nav_label": "Ordinary Least Squares",
+      "raw_title": "Genetics_chapter8_021 · OVERVIEW OF LINEAR MODELS / Ordinary Least Squares",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter8_021",
+      "text_preview": "Estimates of the vector $ \\beta $ for the general linear model are usually obtained by the method of least-squares, which uses the observations y and X and makes special assumptions about the covariance structure of the vector of residual errors e. The method of ordinary least squares assumes that the residual errors…"
+    },
+    {
+      "id": "Genetics_chapter8_022",
+      "title": "OVERVIEW OF LINEAR MODELS / Generalized Least Squares",
+      "nav_label": "Generalized Least Squares",
+      "raw_title": "Genetics_chapter8_022 · OVERVIEW OF LINEAR MODELS / Generalized Least Squares",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter8_022",
+      "text_preview": "Under OLS, the unweighted sum of squared residuals is minimized. However, if some residuals are inherently more variable than others (have a higher variance), less weight should be assigned to the more variable data. Correlations between residuals can also influence the weight that should be assigned to each individua…"
+    }
+  ],
+  "assets": [
+    {
+      "kind": "formula",
+      "id": "8.1",
+      "anchor": "formula-8.1",
+      "label": "Formula (8.1)",
+      "section_id": "Genetics_chapter8_001",
+      "latex": "y=\\alpha+\\beta_{1}z_{1}+\\beta_{2}z_{2}+\\cdots+\\beta_{n}z_{n}+e",
+      "latex_render": "y=\\alpha+\\beta_{1}z_{1}+\\beta_{2}z_{2}+\\cdots+\\beta_{n}z_{n}+e",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u048"
+    },
+    {
+      "kind": "formula",
+      "id": "8.2",
+      "anchor": "formula-8.2",
+      "label": "Formula (8.2)",
+      "section_id": "Genetics_chapter8_002",
+      "latex": "\\begin{align*}\\sigma(y,z_{i})&=\\sigma\\left[(\\alpha+\\beta_{1}z_{1}+\\beta_{2}z_{2}+\\cdots+\\beta_{n}z_{n}+e),z_{i}\\right]\\\\&=\\beta_{1}\\sigma(z_{1},z_{i})+\\beta_{2}\\sigma(z_{2},z_{i})+\\cdots+\\beta_{n}\\sigma(z_{n},z_{i})+\\sigma(e,z_{i})\\end{align*}",
+      "latex_render": "\\begin{aligned}\\sigma(y,z_{i})&=\\sigma\\left[(\\alpha+\\beta_{1}z_{1}+\\beta_{2}z_{2}+\\cdots+\\beta_{n}z_{n}+e),z_{i}\\right]\\\\&=\\beta_{1}\\sigma(z_{1},z_{i})+\\beta_{2}\\sigma(z_{2},z_{i})+\\cdots+\\beta_{n}\\sigma(z_{n},z_{i})+\\sigma(e,z_{i})\\end{aligned}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u049"
+    },
+    {
+      "kind": "formula",
+      "id": "8.3",
+      "anchor": "formula-8.3",
+      "label": "Formula (8.3)",
+      "section_id": "Genetics_chapter8_002",
+      "latex": "\\begin{aligned}\\sigma(y,z_{1})&=\\beta_{1}\\sigma^{2}(z_{1})+\\beta_{2}\\sigma(z_{1},z_{2})+\\cdots+\\beta_{n}\\sigma(z_{1},z_{n})+\\sigma(z_{1},e)\\\\\\sigma(y,z_{2})&=\\beta_{1}\\sigma(z_{1},z_{2})+\\beta_{2}\\sigma^{2}(z_{2})+\\cdots+\\beta_{n}\\sigma(z_{2},z_{n})+\\sigma(z_{2},e)\\\\\\vdots&\\quad\\vdots\\quad\\vdots\\quad\\ddots\\quad\\vdots\\quad\\vdots\\\\\\sigma(y,z_{n})&=\\beta_{1}\\sigma(z_{1},z_{n})+\\beta_{2}\\sigma(z_{2},z_{n})+\\cdots+\\beta_{n}\\sigma^{2}(z_{n})+\\sigma(z_{n},e)\\end{aligned}",
+      "latex_render": "\\begin{aligned}\\sigma(y,z_{1})&=\\beta_{1}\\sigma^{2}(z_{1})+\\beta_{2}\\sigma(z_{1},z_{2})+\\cdots+\\beta_{n}\\sigma(z_{1},z_{n})+\\sigma(z_{1},e)\\\\\\sigma(y,z_{2})&=\\beta_{1}\\sigma(z_{1},z_{2})+\\beta_{2}\\sigma^{2}(z_{2})+\\cdots+\\beta_{n}\\sigma(z_{2},z_{n})+\\sigma(z_{2},e)\\\\\\vdots&\\quad\\vdots\\quad\\vdots\\quad\\ddots\\quad\\vdots\\quad\\vdots\\\\\\sigma(y,z_{n})&=\\beta_{1}\\sigma(z_{1},z_{n})+\\beta_{2}\\sigma(z_{2},z_{n})+\\cdots+\\beta_{n}\\sigma^{2}(z_{n})+\\sigma(z_{n},e)\\end{aligned}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u050"
+    },
+    {
+      "kind": "formula",
+      "id": "8.4",
+      "anchor": "formula-8.4",
+      "label": "Formula (8.4)",
+      "section_id": "Genetics_chapter8_002",
+      "latex": "\\begin{pmatrix}\\sigma^{2}(z_{1})&\\sigma(z_{1},z_{2})&\\cdots&\\sigma(z_{1},z_{n})\\\\\\sigma(z_{1},z_{2})&\\sigma^{2}(z_{2})&\\cdots&\\sigma(z_{2},z_{n})\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\\\sigma(z_{1},z_{n})&\\sigma(z_{2},z_{n})&\\cdots&\\sigma^{2}(z_{n})\\end{pmatrix}\\begin{pmatrix}\\beta_{1}\\\\\\beta_{2}\\\\\\vdots\\\\\\beta_{n}\\end{pmatrix}=\\begin{pmatrix}\\sigma(y,z_{1})\\\\\\sigma(y,z_{2})\\\\\\vdots\\\\\\sigma(y,z_{n})\\end{pmatrix}",
+      "latex_render": "\\begin{pmatrix}\\sigma^{2}(z_{1})&\\sigma(z_{1},z_{2})&\\cdots&\\sigma(z_{1},z_{n})\\\\\\sigma(z_{1},z_{2})&\\sigma^{2}(z_{2})&\\cdots&\\sigma(z_{2},z_{n})\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\\\sigma(z_{1},z_{n})&\\sigma(z_{2},z_{n})&\\cdots&\\sigma^{2}(z_{n})\\end{pmatrix}\\begin{pmatrix}\\beta_{1}\\\\\\beta_{2}\\\\\\vdots\\\\\\beta_{n}\\end{pmatrix}=\\begin{pmatrix}\\sigma(y,z_{1})\\\\\\sigma(y,z_{2})\\\\\\vdots\\\\\\sigma(y,z_{n})\\end{pmatrix}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u052"
+    },
+    {
+      "kind": "formula",
+      "id": "8.5",
+      "anchor": "formula-8.5",
+      "label": "Formula (8.5)",
+      "section_id": "Genetics_chapter8_002",
+      "latex": "\\mathbf{V}\\boldsymbol{\\beta}=\\mathbf{c}",
+      "latex_render": "\\mathbf{V}\\boldsymbol{\\beta}=\\mathbf{c}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u053"
+    },
+    {
+      "kind": "formula",
+      "id": "8.6a",
+      "anchor": "formula-8.6a",
+      "label": "Formula (8.6a)",
+      "section_id": "Genetics_chapter8_009",
+      "latex": "L_{i j}=\\mathbf{m_{i}}\\cdot\\mathbf{n_{j}}=\\sum_{k=1}^{c}M_{i k}N_{k j}",
+      "latex_render": "L_{i j}=\\mathbf{m_{i}}\\cdot\\mathbf{n_{j}}=\\sum_{k=1}^{c}M_{i k}N_{k j}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u017"
+    },
+    {
+      "kind": "formula",
+      "id": "8.6b",
+      "anchor": "formula-8.6b",
+      "label": "Formula (8.6b)",
+      "section_id": "Genetics_chapter8_009",
+      "latex": "\\mathbf{L}=\\begin{pmatrix}\\mathbf{m}_{1}\\cdot\\mathbf{n}_{1}&\\mathbf{m}_{1}\\cdot\\mathbf{n}_{2}&\\cdots&\\mathbf{m}_{1}\\cdot\\mathbf{n}_{\\mathbf{b}}\\\\\\mathbf{m}_{2}\\cdot\\mathbf{n}_{1}&\\mathbf{m}_{2}\\cdot\\mathbf{n}_{2}&\\cdots&\\mathbf{m}_{2}\\cdot\\mathbf{n}_{\\mathbf{b}}\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\\\mathbf{m}_{\\mathbf{r}}\\cdot\\mathbf{n}_{1}&\\mathbf{m}_{\\mathbf{r}}\\cdot\\mathbf{n}_{2}&\\cdots&\\mathbf{m}_{\\mathbf{r}}\\cdot\\mathbf{n}_{\\mathbf{b}}\\end{pmatrix}",
+      "latex_render": "\\mathbf{L}=\\begin{pmatrix}\\mathbf{m}_{1}\\cdot\\mathbf{n}_{1}&\\mathbf{m}_{1}\\cdot\\mathbf{n}_{2}&\\cdots&\\mathbf{m}_{1}\\cdot\\mathbf{n}_{\\mathbf{b}}\\\\\\mathbf{m}_{2}\\cdot\\mathbf{n}_{1}&\\mathbf{m}_{2}\\cdot\\mathbf{n}_{2}&\\cdots&\\mathbf{m}_{2}\\cdot\\mathbf{n}_{\\mathbf{b}}\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\\\mathbf{m}_{\\mathbf{r}}\\cdot\\mathbf{n}_{1}&\\mathbf{m}_{\\mathbf{r}}\\cdot\\mathbf{n}_{2}&\\cdots&\\mathbf{m}_{\\mathbf{r}}\\cdot\\mathbf{n}_{\\mathbf{b}}\\end{pmatrix}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u018"
+    },
+    {
+      "kind": "formula",
+      "id": "8.7a",
+      "anchor": "formula-8.7a",
+      "label": "Formula (8.7a)",
+      "section_id": "Genetics_chapter8_011",
+      "latex": "\\left(\\mathbf{A}\\mathbf{B}\\right)^{T}=\\mathbf{B}^{T}\\mathbf{A}^{T}",
+      "latex_render": "\\left(\\mathbf{A}\\mathbf{B}\\right)^{T}=\\mathbf{B}^{T}\\mathbf{A}^{T}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u028"
+    },
+    {
+      "kind": "formula",
+      "id": "8.7b",
+      "anchor": "formula-8.7b",
+      "label": "Formula (8.7b)",
+      "section_id": "Genetics_chapter8_011",
+      "latex": "(\\mathbf{A}\\mathbf{B}\\mathbf{C})^{T}=\\mathbf{C}^{T}\\mathbf{B}^{T}\\mathbf{A}^{T}",
+      "latex_render": "(\\mathbf{A}\\mathbf{B}\\mathbf{C})^{T}=\\mathbf{C}^{T}\\mathbf{B}^{T}\\mathbf{A}^{T}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u029"
+    },
+    {
+      "kind": "formula",
+      "id": "8.8a",
+      "anchor": "formula-8.8a",
+      "label": "Formula (8.8a)",
+      "section_id": "Genetics_chapter8_011",
+      "latex": "\\left(\\begin{array}{l l l}a_{1}&\\cdots&a_{n}\\end{array}\\right)\\left(\\begin{array}{c}b_{1}\\\\ \\vdots\\\\ b_{n}\\end{array}\\right)=\\mathbf{a}^{T}\\mathbf{b}=\\sum_{i=1}^{n}a_{i}b_{i}",
+      "latex_render": "\\left(\\begin{array}{l l l}a_{1}&\\cdots&a_{n}\\end{array}\\right)\\left(\\begin{array}{c}b_{1}\\\\ \\vdots\\\\ b_{n}\\end{array}\\right)=\\mathbf{a}^{T}\\mathbf{b}=\\sum_{i=1}^{n}a_{i}b_{i}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u031"
+    },
+    {
+      "kind": "formula",
+      "id": "8.8b",
+      "anchor": "formula-8.8b",
+      "label": "Formula (8.8b)",
+      "section_id": "Genetics_chapter8_012",
+      "latex": "\\begin{pmatrix}a_{1}\\\\\\vdots\\\\a_{n}\\end{pmatrix}\\begin{pmatrix}b_{1}&\\cdots&b_{n}\\end{pmatrix}=\\mathbf{a}\\mathbf{b}^{T}=\\begin{pmatrix}a_{1}b_{1}&a_{1}b_{2}&\\cdots&a_{1}b_{n}\\\\a_{2}b_{1}&a_{2}b_{2}&\\cdots&a_{2}b_{n}\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\a_{n}b_{1}&a_{n}b_{2}&\\cdots&a_{n}b_{n}\\end{pmatrix}",
+      "latex_render": "\\begin{pmatrix}a_{1}\\\\\\vdots\\\\a_{n}\\end{pmatrix}\\begin{pmatrix}b_{1}&\\cdots&b_{n}\\end{pmatrix}=\\mathbf{a}\\mathbf{b}^{T}=\\begin{pmatrix}a_{1}b_{1}&a_{1}b_{2}&\\cdots&a_{1}b_{n}\\\\a_{2}b_{1}&a_{2}b_{2}&\\cdots&a_{2}b_{n}\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\a_{n}b_{1}&a_{n}b_{2}&\\cdots&a_{n}b_{n}\\end{pmatrix}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u032"
+    },
+    {
+      "kind": "formula",
+      "id": "8.9",
+      "anchor": "formula-8.9",
+      "label": "Formula (8.9)",
+      "section_id": "Genetics_chapter8_012",
+      "latex": "\\left(\\mathbf{A}\\mathbf{B}\\right)^{-1}=\\mathbf{B}^{-1}\\mathbf{A}^{-1}",
+      "latex_render": "\\left(\\mathbf{A}\\mathbf{B}\\right)^{-1}=\\mathbf{B}^{-1}\\mathbf{A}^{-1}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u033"
+    },
+    {
+      "kind": "formula",
+      "id": "8.10a",
+      "anchor": "formula-8.10a",
+      "label": "Formula (8.10a)",
+      "section_id": "Genetics_chapter8_012",
+      "latex": "\\mathbf{x}=\\mathbf{A}^{-1}\\mathbf{A}\\mathbf{x}=\\mathbf{A}^{-1}\\mathbf{c}",
+      "latex_render": "\\mathbf{x}=\\mathbf{A}^{-1}\\mathbf{A}\\mathbf{x}=\\mathbf{A}^{-1}\\mathbf{c}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u034"
+    },
+    {
+      "kind": "formula",
+      "id": "8.10b",
+      "anchor": "formula-8.10b",
+      "label": "Formula (8.10b)",
+      "section_id": "Genetics_chapter8_012",
+      "latex": "\\boldsymbol{\\beta}=\\mathbf{V}^{-1}\\mathbf{c}",
+      "latex_render": "\\boldsymbol{\\beta}=\\mathbf{V}^{-1}\\mathbf{c}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u035"
+    },
+    {
+      "kind": "formula",
+      "id": "8.10c",
+      "anchor": "formula-8.10c",
+      "label": "Formula (8.10c)",
+      "section_id": "Genetics_chapter8_012",
+      "latex": "\\boldsymbol{\\beta}=\\mathbf{P}^{-1}\\mathbf{s}",
+      "latex_render": "\\boldsymbol{\\beta}=\\mathbf{P}^{-1}\\mathbf{s}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u036"
+    },
+    {
+      "kind": "formula",
+      "id": "8.11",
+      "anchor": "formula-8.11",
+      "label": "Formula (8.11)",
+      "section_id": "Genetics_chapter8_012",
+      "latex": "\\mathbf{A}=\\left(\\begin{array}{l l}{a}&{b}\\\\ {c}&{d}\\end{array}\\right)\\qquad\\mathrm{t h e n}\\qquad\\mathbf{A}^{-1}=\\frac{1}{a d-b c}\\left(\\begin{array}{l l}{d}&{-b}\\\\ {-c}&{a}\\end{array}\\right)",
+      "latex_render": "\\mathbf{A}=\\left(\\begin{array}{l l}{a}&{b}\\\\ {c}&{d}\\end{array}\\right)\\qquad\\mathrm{t h e n}\\qquad\\mathbf{A}^{-1}=\\frac{1}{a d-b c}\\left(\\begin{array}{l l}{d}&{-b}\\\\ {-c}&{a}\\end{array}\\right)",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u038"
+    },
+    {
+      "kind": "formula",
+      "id": "8.12a",
+      "anchor": "formula-8.12a",
+      "label": "Formula (8.12a)",
+      "section_id": "Genetics_chapter8_013",
+      "latex": "\\left|\\mathbf{A}\\right|=A_{11}A_{22}-A_{12}A_{21}",
+      "latex_render": "\\left|\\mathbf{A}\\right|=A_{11}A_{22}-A_{12}A_{21}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u046"
+    },
+    {
+      "kind": "formula",
+      "id": "8.12b",
+      "anchor": "formula-8.12b",
+      "label": "Formula (8.12b)",
+      "section_id": "Genetics_chapter8_013",
+      "latex": "|\\mathbf{A}|=\\sum_{j=1}^{n}A_{ij}(-1)^{i+j}|\\mathbf{A}_{ij}|",
+      "latex_render": "|\\mathbf{A}|=\\sum_{j=1}^{n}A_{ij}(-1)^{i+j}|\\mathbf{A}_{ij}|",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u047"
+    },
+    {
+      "kind": "formula",
+      "id": "8.13",
+      "anchor": "formula-8.13",
+      "label": "Formula (8.13)",
+      "section_id": "Genetics_chapter8_014",
+      "latex": "A_{i j}^{-1}=\\left[\\frac{(-1)^{i+j}|\\mathbf{A}_{i j}|}{|\\mathbf{A}|}\\right]^{T}",
+      "latex_render": "A_{i j}^{-1}=\\left[\\frac{(-1)^{i+j}|\\mathbf{A}_{i j}|}{|\\mathbf{A}|}\\right]^{T}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u052"
+    },
+    {
+      "kind": "formula",
+      "id": "8.14",
+      "anchor": "formula-8.14",
+      "label": "Formula (8.14)",
+      "section_id": "Genetics_chapter8_017",
+      "latex": "\\mathbf{Y}_{m\\times\\ell}=\\mathbf{A}_{m\\times n}\\mathbf{X}_{n\\times k}\\mathbf{B}_{k\\times\\ell}",
+      "latex_render": "\\mathbf{Y}_{m\\times\\ell}=\\mathbf{A}_{m\\times n}\\mathbf{X}_{n\\times k}\\mathbf{B}_{k\\times\\ell}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u064"
+    },
+    {
+      "kind": "formula",
+      "id": "8.15",
+      "anchor": "formula-8.15",
+      "label": "Formula (8.15)",
+      "section_id": "Genetics_chapter8_017",
+      "latex": "E(\\mathbf{X}+\\mathbf{Z})=E(\\mathbf{X})+E(\\mathbf{Z})",
+      "latex_render": "E(\\mathbf{X}+\\mathbf{Z})=E(\\mathbf{X})+E(\\mathbf{Z})",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u065"
+    },
+    {
+      "kind": "formula",
+      "id": "8.16a",
+      "anchor": "formula-8.16a",
+      "label": "Formula (8.16a)",
+      "section_id": "Genetics_chapter8_017",
+      "latex": "\\boldsymbol{E}(\\mathbf{Y})=\\boldsymbol{E}(\\mathbf{A}\\mathbf{X}\\mathbf{B})=\\mathbf{A}\\boldsymbol{E}(\\mathbf{X})\\mathbf{B}",
+      "latex_render": "\\boldsymbol{E}(\\mathbf{Y})=\\boldsymbol{E}(\\mathbf{A}\\mathbf{X}\\mathbf{B})=\\mathbf{A}\\boldsymbol{E}(\\mathbf{X})\\mathbf{B}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u066"
+    },
+    {
+      "kind": "formula",
+      "id": "8.16b",
+      "anchor": "formula-8.16b",
+      "label": "Formula (8.16b)",
+      "section_id": "Genetics_chapter8_017",
+      "latex": "\\boldsymbol{E}(\\mathbf{y})=\\boldsymbol{E}(\\mathbf{X}\\mathbf{b})=\\boldsymbol{E}(\\mathbf{X})\\mathbf{b}",
+      "latex_render": "\\boldsymbol{E}(\\mathbf{y})=\\boldsymbol{E}(\\mathbf{X}\\mathbf{b})=\\boldsymbol{E}(\\mathbf{X})\\mathbf{b}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u067"
+    },
+    {
+      "kind": "formula",
+      "id": "8.16c",
+      "anchor": "formula-8.16c",
+      "label": "Formula (8.16c)",
+      "section_id": "Genetics_chapter8_018",
+      "latex": "E(y)=E(\\mathbf{a}^{T}\\mathbf{x})=\\mathbf{a}^{T}E(\\mathbf{x})",
+      "latex_render": "E(y)=E(\\mathbf{a}^{T}\\mathbf{x})=\\mathbf{a}^{T}E(\\mathbf{x})",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u068"
+    },
+    {
+      "kind": "formula",
+      "id": "8.17",
+      "anchor": "formula-8.17",
+      "label": "Formula (8.17)",
+      "section_id": "Genetics_chapter8_018",
+      "latex": "\\mathbf{x}^{T}\\mathbf{A}\\mathbf{x}=\\sum_{i=1}^{n}\\sum_{j=1}^{n}a_{ij}x_{i}x_{j}",
+      "latex_render": "\\mathbf{x}^{T}\\mathbf{A}\\mathbf{x}=\\sum_{i=1}^{n}\\sum_{j=1}^{n}a_{ij}x_{i}x_{j}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u069"
+    },
+    {
+      "kind": "formula",
+      "id": "8.18",
+      "anchor": "formula-8.18",
+      "label": "Formula (8.18)",
+      "section_id": "Genetics_chapter8_018",
+      "latex": "\\mathbf{b}^{T}\\mathbf{A}\\mathbf{a}=\\left(\\mathbf{b}^{T}\\mathbf{A}\\mathbf{a}\\right)^{T}=\\mathbf{a}^{T}\\mathbf{A}^{T}\\mathbf{b}",
+      "latex_render": "\\mathbf{b}^{T}\\mathbf{A}\\mathbf{a}=\\left(\\mathbf{b}^{T}\\mathbf{A}\\mathbf{a}\\right)^{T}=\\mathbf{a}^{T}\\mathbf{A}^{T}\\mathbf{b}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u070"
+    },
+    {
+      "kind": "formula",
+      "id": "8.19",
+      "anchor": "formula-8.19",
+      "label": "Formula (8.19)",
+      "section_id": "Genetics_chapter8_018",
+      "latex": "\\begin{aligned}\\sigma^{2}\\left(\\mathbf{c}^{T}\\mathbf{x}\\right)&=\\sigma^{2}\\left(\\sum_{i=1}^{n}c_{i}x_{i}\\right)=\\sigma\\left(\\sum_{i=1}^{n}c_{i}x_{i},\\sum_{j=1}^{n}c_{j}x_{j}\\right)\\\\&=\\sum_{i=1}^{n}\\sum_{j=1}^{n}\\sigma\\left(c_{i}x_{i},c_{j}x_{j}\\right)=\\sum_{i=1}^{n}\\sum_{j=1}^{n}c_{i}c_{j}\\sigma\\left(x_{i},x_{j}\\right)\\\\&=\\mathbf{c}^{T}\\mathbf{V}\\mathbf{c}\\\\ \\end{aligned}",
+      "latex_render": "\\begin{aligned}\\sigma^{2}\\left(\\mathbf{c}^{T}\\mathbf{x}\\right)&=\\sigma^{2}\\left(\\sum_{i=1}^{n}c_{i}x_{i}\\right)=\\sigma\\left(\\sum_{i=1}^{n}c_{i}x_{i},\\sum_{j=1}^{n}c_{j}x_{j}\\right)\\\\&=\\sum_{i=1}^{n}\\sum_{j=1}^{n}\\sigma\\left(c_{i}x_{i},c_{j}x_{j}\\right)=\\sum_{i=1}^{n}\\sum_{j=1}^{n}c_{i}c_{j}\\sigma\\left(x_{i},x_{j}\\right)\\\\&=\\mathbf{c}^{T}\\mathbf{V}\\mathbf{c}\\\\ \\end{aligned}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u072"
+    },
+    {
+      "kind": "formula",
+      "id": "8.20",
+      "anchor": "formula-8.20",
+      "label": "Formula (8.20)",
+      "section_id": "Genetics_chapter8_018",
+      "latex": "\\sigma(\\mathbf{a}^{T}\\mathbf{x},\\mathbf{b}^{T}\\mathbf{x})=\\mathbf{a}^{T}\\mathbf{V}\\mathbf{b}",
+      "latex_render": "\\sigma(\\mathbf{a}^{T}\\mathbf{x},\\mathbf{b}^{T}\\mathbf{x})=\\mathbf{a}^{T}\\mathbf{V}\\mathbf{b}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u073"
+    },
+    {
+      "kind": "formula",
+      "id": "8.21a",
+      "anchor": "formula-8.21a",
+      "label": "Formula (8.21a)",
+      "section_id": "Genetics_chapter8_018",
+      "latex": "\\begin{aligned}\\boldsymbol{\\sigma}(\\mathbf{y},\\mathbf{z})&=\\boldsymbol{\\sigma}(\\mathbf{A}\\mathbf{x},\\mathbf{B}\\mathbf{x})\\\\&=\\boldsymbol{E}\\left[(\\mathbf{y}-\\boldsymbol{\\mu}_{\\mathbf{y}})(\\mathbf{z}-\\boldsymbol{\\mu}_{\\mathbf{z}})^{T}\\right]\\\\&=\\boldsymbol{E}\\left[\\mathbf{A}(\\mathbf{x}-\\boldsymbol{\\mu})(\\mathbf{x}-\\boldsymbol{\\mu})^{T}\\mathbf{B}^{T}\\right]\\\\&=\\mathbf{A}\\mathbf{V}\\mathbf{B}^{T}\\\\ \\end{aligned}",
+      "latex_render": "\\begin{aligned}\\boldsymbol{\\sigma}(\\mathbf{y},\\mathbf{z})&=\\boldsymbol{\\sigma}(\\mathbf{A}\\mathbf{x},\\mathbf{B}\\mathbf{x})\\\\&=\\boldsymbol{E}\\left[(\\mathbf{y}-\\boldsymbol{\\mu}_{\\mathbf{y}})(\\mathbf{z}-\\boldsymbol{\\mu}_{\\mathbf{z}})^{T}\\right]\\\\&=\\boldsymbol{E}\\left[\\mathbf{A}(\\mathbf{x}-\\boldsymbol{\\mu})(\\mathbf{x}-\\boldsymbol{\\mu})^{T}\\mathbf{B}^{T}\\right]\\\\&=\\mathbf{A}\\mathbf{V}\\mathbf{B}^{T}\\\\ \\end{aligned}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u074"
+    },
+    {
+      "kind": "formula",
+      "id": "8.21b",
+      "anchor": "formula-8.21b",
+      "label": "Formula (8.21b)",
+      "section_id": "Genetics_chapter8_018",
+      "latex": "\\mathbf{\\sigma}(\\mathbf{y},\\mathbf{y})=\\mathbf{A}\\mathbf{V}\\mathbf{A}^{T}",
+      "latex_render": "\\mathbf{\\sigma}(\\mathbf{y},\\mathbf{y})=\\mathbf{A}\\mathbf{V}\\mathbf{A}^{T}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u075"
+    },
+    {
+      "kind": "formula",
+      "id": "8.22",
+      "anchor": "formula-8.22",
+      "label": "Formula (8.22)",
+      "section_id": "Genetics_chapter8_018",
+      "latex": "E(\\mathbf{x}^{T}\\mathbf{A}\\mathbf{x})=\\operatorname{t r}(\\mathbf{A}\\mathbf{V})+\\mu^{T}\\mathbf{A}\\mu",
+      "latex_render": "E(\\mathbf{x}^{T}\\mathbf{A}\\mathbf{x})=\\operatorname{t r}(\\mathbf{A}\\mathbf{V})+\\mu^{T}\\mathbf{A}\\mu",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u076"
+    },
+    {
+      "kind": "formula",
+      "id": "8.23",
+      "anchor": "formula-8.23",
+      "label": "Formula (8.23)",
+      "section_id": "Genetics_chapter8_019",
+      "latex": "\\begin{aligned}p(\\mathbf{x})&=\\prod_{i=1}^{n}(2\\pi)^{-1/2}\\sigma_{i}^{-1}\\exp\\left(-\\frac{(x_{i}-\\mu_{i})^{2}}{2\\sigma_{i}^{2}}\\right)\\\\&=(2\\pi)^{-n/2}\\left(\\prod_{i=1}^{n}\\sigma_{i}\\right)^{-1}\\exp\\left(-\\sum_{i=1}^{n}\\frac{(x_{i}-\\mu_{i})^{2}}{2\\sigma_{i}^{2}}\\right)\\\\ \\end{aligned}",
+      "latex_render": "\\begin{aligned}p(\\mathbf{x})&=\\prod_{i=1}^{n}(2\\pi)^{-1/2}\\sigma_{i}^{-1}\\exp\\left(-\\frac{(x_{i}-\\mu_{i})^{2}}{2\\sigma_{i}^{2}}\\right)\\\\&=(2\\pi)^{-n/2}\\left(\\prod_{i=1}^{n}\\sigma_{i}\\right)^{-1}\\exp\\left(-\\sum_{i=1}^{n}\\frac{(x_{i}-\\mu_{i})^{2}}{2\\sigma_{i}^{2}}\\right)\\\\ \\end{aligned}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u077"
+    },
+    {
+      "kind": "formula",
+      "id": "8.24",
+      "anchor": "formula-8.24",
+      "label": "Formula (8.24)",
+      "section_id": "Genetics_chapter8_019",
+      "latex": "p(\\mathbf{x})=(2\\pi)^{-n/2}|\\mathbf{V}|^{-1/2}\\exp\\left[-{\\frac{1}{2}}(\\mathbf{x}-\\boldsymbol{\\mu})^{T}\\mathbf{V}^{-1}(\\mathbf{x}-\\boldsymbol{\\mu})\\right]",
+      "latex_render": "p(\\mathbf{x})=(2\\pi)^{-n/2}|\\mathbf{V}|^{-1/2}\\exp\\left[-{\\frac{1}{2}}(\\mathbf{x}-\\boldsymbol{\\mu})^{T}\\mathbf{V}^{-1}(\\mathbf{x}-\\boldsymbol{\\mu})\\right]",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u081"
+    },
+    {
+      "kind": "formula",
+      "id": "8.25a",
+      "anchor": "formula-8.25a",
+      "label": "Formula (8.25a)",
+      "section_id": "Genetics_chapter8_020",
+      "latex": "\\mathrm{f o r}\\quad\\mathbf{y}=\\mathbf{x}+\\mathbf{a},\\qquad\\mathbf{y}\\sim\\operatorname{M V N}_{n}(\\mu+\\mathbf{a},\\mathbf{V})",
+      "latex_render": "\\mathrm{f o r}\\quad\\mathbf{y}=\\mathbf{x}+\\mathbf{a},\\qquad\\mathbf{y}\\sim\\operatorname{M V N}_{n}(\\mu+\\mathbf{a},\\mathbf{V})",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u083"
+    },
+    {
+      "kind": "formula",
+      "id": "8.25b",
+      "anchor": "formula-8.25b",
+      "label": "Formula (8.25b)",
+      "section_id": "Genetics_chapter8_020",
+      "latex": "\\mathrm{f o r}\\quad\\mathbf{\\textit{y}}=\\mathbf{a}^{T}\\mathbf{x}=\\sum_{k=1}^{n}a_{i}x_{i},\\qquad\\mathbf{\\textit{y}}\\sim\\mathrm{N}(\\mathbf{a}^{T}\\boldsymbol{\\mu},\\mathbf{a}^{T}\\mathbf{V}\\mathbf{a})",
+      "latex_render": "\\mathrm{f o r}\\quad\\mathbf{\\textit{y}}=\\mathbf{a}^{T}\\mathbf{x}=\\sum_{k=1}^{n}a_{i}x_{i},\\qquad\\mathbf{\\textit{y}}\\sim\\mathrm{N}(\\mathbf{a}^{T}\\boldsymbol{\\mu},\\mathbf{a}^{T}\\mathbf{V}\\mathbf{a})",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u084"
+    },
+    {
+      "kind": "formula",
+      "id": "8.25c",
+      "anchor": "formula-8.25c",
+      "label": "Formula (8.25c)",
+      "section_id": "Genetics_chapter8_020",
+      "latex": "\\mathrm{f o r}\\quad\\mathbf{y}=\\mathbf{A x},\\qquad\\mathbf{y}\\sim\\operatorname{M V N}_{m}\\left(\\mathbf{A}\\mu,\\mathbf{A}^{T}\\mathbf{V}\\mathbf{A}\\right)",
+      "latex_render": "\\mathrm{f o r}\\quad\\mathbf{y}=\\mathbf{A x},\\qquad\\mathbf{y}\\sim\\operatorname{M V N}_{m}\\left(\\mathbf{A}\\mu,\\mathbf{A}^{T}\\mathbf{V}\\mathbf{A}\\right)",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u085"
+    },
+    {
+      "kind": "formula",
+      "id": "8.26",
+      "anchor": "formula-8.26",
+      "label": "Formula (8.26)",
+      "section_id": "Genetics_chapter8_020",
+      "latex": "\\mu=\\left(\\begin{matrix}{\\mu_{1}}\\\\ {\\mu_{2}}\\\\ \\end{matrix}\\right)\\qquad\\mathrm{a n d}\\qquad\\mathbf{V}=\\left(\\begin{matrix}{\\mathbf{V}_{\\mathbf{X}_{1}\\mathbf{X}_{1}}}&{}&{\\mathbf{V}_{\\mathbf{X}_{1}\\mathbf{X}_{2}}}\\\\ {}&{}&{}\\\\ {\\mathbf{V}_{\\mathbf{X}_{1}\\mathbf{X}_{2}}^{T}}&{}&{\\mathbf{V}_{\\mathbf{X}_{2}\\mathbf{X}_{2}}}\\\\ \\end{matrix}\\right)",
+      "latex_render": "\\mu=\\left(\\begin{matrix}{\\mu_{1}}\\\\ {\\mu_{2}}\\\\ \\end{matrix}\\right)\\qquad\\mathrm{a n d}\\qquad\\mathbf{V}=\\left(\\begin{matrix}{\\mathbf{V}_{\\mathbf{X}_{1}\\mathbf{X}_{1}}}&{}&{\\mathbf{V}_{\\mathbf{X}_{1}\\mathbf{X}_{2}}}\\\\ {}&{}&{}\\\\ {\\mathbf{V}_{\\mathbf{X}_{1}\\mathbf{X}_{2}}^{T}}&{}&{\\mathbf{V}_{\\mathbf{X}_{2}\\mathbf{X}_{2}}}\\\\ \\end{matrix}\\right)",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u087"
+    },
+    {
+      "kind": "formula",
+      "id": "8.27",
+      "anchor": "formula-8.27",
+      "label": "Formula (8.27)",
+      "section_id": "Genetics_chapter8_020",
+      "latex": "\\mu_{\\mathbf{X}_{1}|\\mathbf{X}_{2}}=\\mu_{1}+\\mathbf{V}_{\\mathbf{X}_{1}\\mathbf{X}_{2}}\\mathbf{V}_{\\mathbf{X}_{2}\\mathbf{X}_{2}}^{-1}(\\mathbf{x}_{2}-\\boldsymbol\\mu_{2})",
+      "latex_render": "\\mu_{\\mathbf{X}_{1}|\\mathbf{X}_{2}}=\\mu_{1}+\\mathbf{V}_{\\mathbf{X}_{1}\\mathbf{X}_{2}}\\mathbf{V}_{\\mathbf{X}_{2}\\mathbf{X}_{2}}^{-1}(\\mathbf{x}_{2}-\\boldsymbol\\mu_{2})",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u088"
+    },
+    {
+      "kind": "formula",
+      "id": "8.28",
+      "anchor": "formula-8.28",
+      "label": "Formula (8.28)",
+      "section_id": "Genetics_chapter8_020",
+      "latex": "\\mathbf{V}_{\\mathbf{X}_{1}|\\mathbf{X}_{2}}=\\mathbf{V}_{\\mathbf{X}_{1}\\mathbf{X}_{1}}-\\mathbf{V}_{\\mathbf{X}_{1}\\mathbf{X}_{2}}\\mathbf{V}_{\\mathbf{X}_{2}\\mathbf{X}_{2}}^{-1}\\mathbf{V}_{\\mathbf{X}_{1}\\mathbf{X}_{2}}^{T}",
+      "latex_render": "\\mathbf{V}_{\\mathbf{X}_{1}|\\mathbf{X}_{2}}=\\mathbf{V}_{\\mathbf{X}_{1}\\mathbf{X}_{1}}-\\mathbf{V}_{\\mathbf{X}_{1}\\mathbf{X}_{2}}\\mathbf{V}_{\\mathbf{X}_{2}\\mathbf{X}_{2}}^{-1}\\mathbf{V}_{\\mathbf{X}_{1}\\mathbf{X}_{2}}^{T}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u089"
+    },
+    {
+      "kind": "formula",
+      "id": "8.29a",
+      "anchor": "formula-8.29a",
+      "label": "Formula (8.29a)",
+      "section_id": "Genetics_chapter8_020",
+      "latex": "\\mathbf{x_{1}}=\\boldsymbol{\\mu_{1}}+\\mathbf{V}_{\\mathbf{X_{1}X_{2}}}\\mathbf{V}_{\\mathbf{X_{2}X_{2}}}^{-1}(\\mathbf{x_{2}}-\\boldsymbol{\\mu_{2}})+\\mathbf{e}",
+      "latex_render": "\\mathbf{x_{1}}=\\boldsymbol{\\mu_{1}}+\\mathbf{V}_{\\mathbf{X_{1}X_{2}}}\\mathbf{V}_{\\mathbf{X_{2}X_{2}}}^{-1}(\\mathbf{x_{2}}-\\boldsymbol{\\mu_{2}})+\\mathbf{e}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u090"
+    },
+    {
+      "kind": "formula",
+      "id": "8.29b",
+      "anchor": "formula-8.29b",
+      "label": "Formula (8.29b)",
+      "section_id": "Genetics_chapter8_020",
+      "latex": "\\mathbf{e}\\sim\\mathrm{M V N}_{m}\\left(\\mathbf{0},\\mathbf{V}_{\\mathbf{x}_{1}|\\mathbf{x}_{2}}\\right)",
+      "latex_render": "\\mathbf{e}\\sim\\mathrm{M V N}_{m}\\left(\\mathbf{0},\\mathbf{V}_{\\mathbf{x}_{1}|\\mathbf{x}_{2}}\\right)",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u091"
+    },
+    {
+      "kind": "formula",
+      "id": "8.30a",
+      "anchor": "formula-8.30a",
+      "label": "Formula (8.30a)",
+      "section_id": "Genetics_chapter8_020",
+      "latex": "\\begin{align*}z_{o}&=\\mu_{o}+\\frac{h^{2}\\sigma_{z}^{2}}{2}\\left(1\\quad1\\right)\\sigma_{z}^{-2}\\begin{pmatrix}1&0\\\\ 0&1\\end{pmatrix}\\begin{pmatrix}z_{s}-\\mu_{s}\\\\ z_{d}-\\mu_{d}\\end{pmatrix}+e\\\\&=\\mu_{o}+\\frac{h^{2}}{2}\\left(z_{s}-\\mu_{s}\\right)+\\frac{h^{2}}{2}\\left(z_{d}-\\mu_{d}\\right)+e\\end{align*}",
+      "latex_render": "\\begin{aligned}z_{o}&=\\mu_{o}+\\frac{h^{2}\\sigma_{z}^{2}}{2}\\left(1\\quad1\\right)\\sigma_{z}^{-2}\\begin{pmatrix}1&0\\\\ 0&1\\end{pmatrix}\\begin{pmatrix}z_{s}-\\mu_{s}\\\\ z_{d}-\\mu_{d}\\end{pmatrix}+e\\\\&=\\mu_{o}+\\frac{h^{2}}{2}\\left(z_{s}-\\mu_{s}\\right)+\\frac{h^{2}}{2}\\left(z_{d}-\\mu_{d}\\right)+e\\end{aligned}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u095"
+    },
+    {
+      "kind": "formula",
+      "id": "8.30b",
+      "anchor": "formula-8.30b",
+      "label": "Formula (8.30b)",
+      "section_id": "Genetics_chapter8_020",
+      "latex": "\\begin{aligned}\\sigma_{e}^{2}&=\\sigma_{z}^{2}-\\frac{h^{2}\\sigma_{z}^{2}}{2}\\left(1\\quad1\\right)\\sigma_{z}^{-2}\\left(\\begin{matrix}1&0\\\\0&1\\end{matrix}\\right)\\frac{h^{2}\\sigma_{z}^{2}}{2}\\left(\\begin{matrix}1\\\\1\\end{matrix}\\right)\\\\&=\\sigma_{z}^{2}\\left(1-\\frac{h^{4}}{2}\\right)\\end{aligned}",
+      "latex_render": "\\begin{aligned}\\sigma_{e}^{2}&=\\sigma_{z}^{2}-\\frac{h^{2}\\sigma_{z}^{2}}{2}\\left(1\\quad1\\right)\\sigma_{z}^{-2}\\left(\\begin{matrix}1&0\\\\0&1\\end{matrix}\\right)\\frac{h^{2}\\sigma_{z}^{2}}{2}\\left(\\begin{matrix}1\\\\1\\end{matrix}\\right)\\\\&=\\sigma_{z}^{2}\\left(1-\\frac{h^{4}}{2}\\right)\\end{aligned}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u096"
+    },
+    {
+      "kind": "formula",
+      "id": "8.31a",
+      "anchor": "formula-8.31a",
+      "label": "Formula (8.31a)",
+      "section_id": "Genetics_chapter8_020",
+      "latex": "A_{o}=\\mu_{o}+\\frac{A_{s}-\\mu_{s}}{2}+\\frac{A_{d}-\\mu_{d}}{2}+e",
+      "latex_render": "A_{o}=\\mu_{o}+\\frac{A_{s}-\\mu_{s}}{2}+\\frac{A_{d}-\\mu_{d}}{2}+e",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u098"
+    },
+    {
+      "kind": "formula",
+      "id": "8.31b",
+      "anchor": "formula-8.31b",
+      "label": "Formula (8.31b)",
+      "section_id": "Genetics_chapter8_021",
+      "latex": "e\\sim\\mathbf{N}(0,\\sigma_{A}^{2}/2)",
+      "latex_render": "e\\sim\\mathbf{N}(0,\\sigma_{A}^{2}/2)",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u099"
+    },
+    {
+      "kind": "formula",
+      "id": "8.32a",
+      "anchor": "formula-8.32a",
+      "label": "Formula (8.32a)",
+      "section_id": "Genetics_chapter8_021",
+      "latex": "y_{i}=\\sum_{k=1}^{p}\\beta_{k}x_{ik}+e_{i}",
+      "latex_render": "y_{i}=\\sum_{k=1}^{p}\\beta_{k}x_{ik}+e_{i}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u103"
+    },
+    {
+      "kind": "formula",
+      "id": "8.32b",
+      "anchor": "formula-8.32b",
+      "label": "Formula (8.32b)",
+      "section_id": "Genetics_chapter8_021",
+      "latex": "\\mathbf{y}=\\mathbf{X}\\boldsymbol{\\beta}+\\mathbf{e}",
+      "latex_render": "\\mathbf{y}=\\mathbf{X}\\boldsymbol{\\beta}+\\mathbf{e}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u104"
+    },
+    {
+      "kind": "formula",
+      "id": "8.33a",
+      "anchor": "formula-8.33a",
+      "label": "Formula (8.33a)",
+      "section_id": "Genetics_chapter8_022",
+      "latex": "\\mathbf{b}=(\\mathbf{X}^{T}\\mathbf{X})^{-1}\\mathbf{X}^{T}\\mathbf{y}",
+      "latex_render": "\\mathbf{b}=(\\mathbf{X}^{T}\\mathbf{X})^{-1}\\mathbf{X}^{T}\\mathbf{y}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u110"
+    },
+    {
+      "kind": "formula",
+      "id": "8.33b",
+      "anchor": "formula-8.33b",
+      "label": "Formula (8.33b)",
+      "section_id": "Genetics_chapter8_022",
+      "latex": "\\mathbf{V_{b}}=(\\mathbf{X}^{T}\\mathbf{X})^{-1}\\sigma_{e}^{2}",
+      "latex_render": "\\mathbf{V_{b}}=(\\mathbf{X}^{T}\\mathbf{X})^{-1}\\sigma_{e}^{2}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u111"
+    },
+    {
+      "kind": "formula",
+      "id": "8.34",
+      "anchor": "formula-8.34",
+      "label": "Formula (8.34)",
+      "section_id": "Genetics_chapter8_023",
+      "latex": "\\mathbf{b}=\\left(\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{X}\\right)^{-1}\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{y}",
+      "latex_render": "\\mathbf{b}=\\left(\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{X}\\right)^{-1}\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{y}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u122"
+    },
+    {
+      "kind": "formula",
+      "id": "8.35",
+      "anchor": "formula-8.35",
+      "label": "Formula (8.35)",
+      "section_id": "Genetics_chapter8_023",
+      "latex": "\\mathbf{V_{b}}=\\left(\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{X}\\right)^{-1}\\sigma_{e}^{2}",
+      "latex_render": "\\mathbf{V_{b}}=\\left(\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{X}\\right)^{-1}\\sigma_{e}^{2}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u123"
+    },
+    {
+      "kind": "formula",
+      "id": "8.36a",
+      "anchor": "formula-8.36a",
+      "label": "Formula (8.36a)",
+      "section_id": "Genetics_chapter8_023",
+      "latex": "a=\\overline{y}_{w}-b\\overline{x}_{w}",
+      "latex_render": "a=\\overline{y}_{w}-b\\overline{x}_{w}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u130"
+    },
+    {
+      "kind": "formula",
+      "id": "8.36b",
+      "anchor": "formula-8.36b",
+      "label": "Formula (8.36b)",
+      "section_id": "Genetics_chapter8_023",
+      "latex": "b=\\frac{\\overline{x}\\overline{y}_{w}-\\overline{x}_{w}\\overline{y}_{w}}{\\overline{x^{2}}_{w}-\\overline{x}^{2}_{w}}",
+      "latex_render": "b=\\frac{\\overline{x}\\overline{y}_{w}-\\overline{x}_{w}\\overline{y}_{w}}{\\overline{x^{2}}_{w}-\\overline{x}^{2}_{w}}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u131"
+    },
+    {
+      "kind": "formula",
+      "id": "8.37a",
+      "anchor": "formula-8.37a",
+      "label": "Formula (8.37a)",
+      "section_id": "Genetics_chapter8_023",
+      "latex": "\\sigma^{2}(a)=\\frac{\\sigma_{e}^{2}\\cdot\\overline{x^{2}}_{w}}{w\\left(\\overline{x^{2}}_{w}-\\overline{x}_{w}^{2}\\right)}",
+      "latex_render": "\\sigma^{2}(a)=\\frac{\\sigma_{e}^{2}\\cdot\\overline{x^{2}}_{w}}{w\\left(\\overline{x^{2}}_{w}-\\overline{x}_{w}^{2}\\right)}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u132"
+    },
+    {
+      "kind": "formula",
+      "id": "8.37b",
+      "anchor": "formula-8.37b",
+      "label": "Formula (8.37b)",
+      "section_id": "Genetics_chapter8_023",
+      "latex": "\\sigma^{2}(b)=\\frac{\\sigma_{e}^{2}}{w\\left(\\overline{x^{2}}_{w}-\\overline{x}_{w}^{2}\\right)}",
+      "latex_render": "\\sigma^{2}(b)=\\frac{\\sigma_{e}^{2}}{w\\left(\\overline{x^{2}}_{w}-\\overline{x}_{w}^{2}\\right)}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u133"
+    },
+    {
+      "kind": "formula",
+      "id": "8.37c",
+      "anchor": "formula-8.37c",
+      "label": "Formula (8.37c)",
+      "section_id": "Genetics_chapter8_023",
+      "latex": "\\sigma(a,b)=\\frac{-\\sigma_{e}^{2}\\overline{x}_{w}}{w\\left(\\overline{x^{2}}_{w}-\\overline{x}_{w}^{2}\\right)}",
+      "latex_render": "\\sigma(a,b)=\\frac{-\\sigma_{e}^{2}\\overline{x}_{w}}{w\\left(\\overline{x^{2}}_{w}-\\overline{x}_{w}^{2}\\right)}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u134"
+    }
+  ],
+  "references": {
+    "Genetics_chapter8_section_001": [
+      {
+        "kind": "chapter",
+        "id": "8",
+        "label": "Chapter 8",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Genetics_chapter8_001": [
+      {
+        "kind": "chapter",
+        "id": "4",
+        "label": "Chapter 4",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "chapter",
+        "id": "5",
+        "label": "Chapter 5",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "chapter",
+        "id": "17",
+        "label": "Chapter 17",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "chapter",
+        "id": "9",
+        "label": "Chapter 9",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "chapter",
+        "id": "26",
+        "label": "Chapter 26",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Genetics_chapter8_002": [
+      {
+        "kind": "chapter",
+        "id": "17",
+        "label": "Chapter 17",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "chapter",
+        "id": "3",
+        "label": "Chapter 3",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "3.12a",
+        "label": "Equation 3.12a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "8.1",
+        "label": "Equation 8.1",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "8.2",
+        "label": "Equation 8.2",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "8.3",
+        "label": "Equation 8.3",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "8.4",
+        "label": "Equation 8.4",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Genetics_chapter8_003": [
+      {
+        "kind": "chapter",
+        "id": "7",
+        "label": "Chapter 7",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "chapter",
+        "id": "3",
+        "label": "Chapter 3",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "chapter",
+        "id": "11",
+        "label": "Chapter 11",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "8.3",
+        "label": "Equation 8.3",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Genetics_chapter8_004": [],
+    "Genetics_chapter8_005": [],
+    "Genetics_chapter8_006": [],
+    "Genetics_chapter8_007": [],
+    "Genetics_chapter8_008": [
+      {
+        "kind": "equation",
+        "id": "8.4",
+        "label": "Equation 8.4",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "8.3",
+        "label": "Equation 8.3",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Genetics_chapter8_009": [
+      {
+        "kind": "equation",
+        "id": "8.6b",
+        "label": "Equation 8.6b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Genetics_chapter8_010": [],
+    "Genetics_chapter8_011": [
+      {
+        "kind": "equation",
+        "id": "8.5",
+        "label": "Equation 8.5",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "8.11",
+        "label": "Equation 8.11",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "8.10b",
+        "label": "Equation 8.10b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Genetics_chapter8_012": [
+      {
+        "kind": "equation",
+        "id": "8.12b",
+        "label": "Equation 8.12b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Genetics_chapter8_013": [
+      {
+        "kind": "equation",
+        "id": "8.12a",
+        "label": "Equation 8.12a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Genetics_chapter8_014": [
+      {
+        "kind": "equation",
+        "id": "8.13",
+        "label": "Equation 8.13",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "8.4",
+        "label": "Equation 8.4",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Genetics_chapter8_015": [
+      {
+        "kind": "equation",
+        "id": "8.12b",
+        "label": "Equation 8.12b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "8.13",
+        "label": "Equation 8.13",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Genetics_chapter8_016": [
+      {
+        "kind": "equation",
+        "id": "8.14",
+        "label": "Equation 8.14",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Genetics_chapter8_017": [],
+    "Genetics_chapter8_018": [
+      {
+        "kind": "chapter",
+        "id": "2",
+        "label": "Chapter 2",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "8.23",
+        "label": "Equation 8.23",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "8.24",
+        "label": "Equation 8.24",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Genetics_chapter8_019": [
+      {
+        "kind": "chapter",
+        "id": "7",
+        "label": "Chapter 7",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "8.27",
+        "label": "Equation 8.27",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "8.29a",
+        "label": "Equation 8.29a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "8.28",
+        "label": "Equation 8.28",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Genetics_chapter8_020": [
+      {
+        "kind": "chapter",
+        "id": "26",
+        "label": "Chapter 26",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "chapter",
+        "id": "27",
+        "label": "Chapter 27",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Genetics_chapter8_021": [
+      {
+        "kind": "equation",
+        "id": "8.33a",
+        "label": "Equation 8.33a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "3.14b",
+        "label": "Equation 3.14b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "8.10b",
+        "label": "Equation 8.10b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Genetics_chapter8_022": [
+      {
+        "kind": "equation",
+        "id": "8.34",
+        "label": "Equation 8.34",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "3.14",
+        "label": "Equation 3.14",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "8.35",
+        "label": "Equation 8.35",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ]
+  },
+  "semantic_chapter_links": [
+    {
+      "current_section_id": "Genetics_chapter8_001",
+      "current_anchor": "genetics_chapter8_001",
+      "source_chapter_id": "Genetics_chapter4",
+      "label": "Chapter 4",
+      "target_anchor": "genetics_chapter4_section_001",
+      "target_label": "Chapter 4",
+      "target_ref_type": "chapter",
+      "target_ref_id": "4",
+      "target_section_title": "Chapter 4 · 4",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "Introduction to Matrix Algebra and Linear Models We have already encountered several examples of models in which response variables are linear functions of two or more explanatory (or predictor) variables. For example, we have been routinely expressing an individual's phenotypic value as the sum of genotypic and environmental values. A more complicated example is the use of linear regression to decompose an individu…",
+      "match_source": "chapter-overview"
+    },
+    {
+      "current_section_id": "Genetics_chapter8_001",
+      "current_anchor": "genetics_chapter8_001",
+      "source_chapter_id": "Genetics_chapter5",
+      "label": "Chapter 5",
+      "target_anchor": "genetics_chapter5_section_001",
+      "target_label": "Chapter 5",
+      "target_ref_type": "chapter",
+      "target_ref_id": "5",
+      "target_section_title": "Chapter 5 · Sources of Genetic Variation for Multilocus Traits",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "Introduction to Matrix Algebra and Linear Models We have already encountered several examples of models in which response variables are linear functions of two or more explanatory (or predictor) variables. For example, we have been routinely expressing an individual's phenotypic value as the sum of genotypic and environmental values. A more complicated example is the use of linear regression to decompose an individu…",
+      "match_source": "chapter-overview"
+    },
+    {
+      "current_section_id": "Genetics_chapter8_001",
+      "current_anchor": "genetics_chapter8_001",
+      "source_chapter_id": "Genetics_chapter17",
+      "label": "Chapter 17",
+      "target_anchor": "genetics_chapter17_section_001",
+      "target_label": "Chapter 17",
+      "target_ref_type": "chapter",
+      "target_ref_id": "17",
+      "target_section_title": "Chapter 17 · 17",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "Introduction to Matrix Algebra and Linear Models We have already encountered several examples of models in which response variables are linear functions of two or more explanatory (or predictor) variables. For example, we have been routinely expressing an individual's phenotypic value as the sum of genotypic and environmental values. A more complicated example is the use of linear regression to decompose an individu…",
+      "match_source": "chapter-overview"
+    },
+    {
+      "current_section_id": "Genetics_chapter8_001",
+      "current_anchor": "genetics_chapter8_001",
+      "source_chapter_id": "Genetics_chapter9",
+      "label": "Chapter 9",
+      "target_anchor": "genetics_chapter9_section_001",
+      "target_label": "Chapter 9",
+      "target_ref_type": "chapter",
+      "target_ref_id": "9",
+      "target_section_title": "Chapter 9 · 9 Analysis of Line Crosses",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "Introduction to Matrix Algebra and Linear Models We have already encountered several examples of models in which response variables are linear functions of two or more explanatory (or predictor) variables. For example, we have been routinely expressing an individual's phenotypic value as the sum of genotypic and environmental values. A more complicated example is the use of linear regression to decompose an individu…",
+      "match_source": "chapter-overview"
+    },
+    {
+      "current_section_id": "Genetics_chapter8_001",
+      "current_anchor": "genetics_chapter8_001",
+      "source_chapter_id": "Genetics_chapter26",
+      "label": "Chapter 26",
+      "target_anchor": "genetics_chapter26_section_001",
+      "target_label": "Chapter 26",
+      "target_ref_type": "chapter",
+      "target_ref_id": "26",
+      "target_section_title": "Chapter 26 · Genetics_chapter26",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "Introduction to Matrix Algebra and Linear Models We have already encountered several examples of models in which response variables are linear functions of two or more explanatory (or predictor) variables. For example, we have been routinely expressing an individual's phenotypic value as the sum of genotypic and environmental values. A more complicated example is the use of linear regression to decompose an individu…",
+      "match_source": "chapter-overview"
+    },
+    {
+      "current_section_id": "Genetics_chapter8_002",
+      "current_anchor": "genetics_chapter8_002",
+      "source_chapter_id": "Genetics_chapter17",
+      "label": "Chapter 17",
+      "target_anchor": "genetics_chapter17_section_001",
+      "target_label": "Chapter 17",
+      "target_ref_type": "chapter",
+      "target_ref_id": "17",
+      "target_section_title": "Chapter 17 · 17",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "true form of relationship between $ y $ and $ z {1}, \\ldots, z {n} $. It simply gives the best linear approximation. Many statistical techniques, including path analysis (Appendix 2) and analysis of variance (Chapter 17), are based on versions of Equation 8.1. The terms $ \\beta {1},\\ldots,\\beta {n} $ are known as partial regression coefficients. Notice that when all but the ith predictor variable are held constant i…",
+      "match_source": "chapter-overview"
+    },
+    {
+      "current_section_id": "Genetics_chapter8_002",
+      "current_anchor": "genetics_chapter8_002",
+      "source_chapter_id": "Genetics_chapter3",
+      "label": "Chapter 3",
+      "target_anchor": "genetics_chapter3_section_001",
+      "target_label": "Chapter 3",
+      "target_ref_type": "chapter",
+      "target_ref_id": "3",
+      "target_section_title": "Chapter 3 · Covariance, Regression, and Correlation",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "Since it is usually impossible for biologists to evaluate partial regression coefficients by empirically imposing constancy on all extraneous variables, we require a more indirect approach to the problem. From Chapter 3, the covariance of y and a predictor variable is $$ \\begin{aligned}\\sigma(y,z {i})&=\\sigma\\left[(\\alpha+\\beta {1}z {1}+\\beta {2}z {2}+\\cdots+\\beta {n}z {n}+e),z {i}\\right]\\\\&=\\beta {1}\\sigma(z {1},z…",
+      "match_source": "llm-prerequisite"
+    },
+    {
+      "current_section_id": "Genetics_chapter8_003",
+      "current_anchor": "genetics_chapter8_003",
+      "source_chapter_id": "Genetics_chapter7",
+      "label": "Chapter 7",
+      "target_anchor": "genetics_chapter7_section_001",
+      "target_label": "Chapter 7",
+      "target_ref_type": "chapter",
+      "target_ref_id": "7",
+      "target_section_title": "Chapter 7 · Resemblance Between Relatives",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "of data gathered by his contemporaries on matters such as [[resemblance between relatives]], natural selection, correlation between characters, and assortative mating (recall the assortative mating example in Chapter 7). The foresight of these studies is remarkable considering that they were performed prior to the existence of a genetic interpretation for the expression and inheritance of polygenic traits. Pearson’s…",
+      "match_source": "chapter-overview"
+    },
+    {
+      "current_section_id": "Genetics_chapter8_003",
+      "current_anchor": "genetics_chapter8_003",
+      "source_chapter_id": "Genetics_chapter3",
+      "label": "Chapter 3",
+      "target_anchor": "genetics_chapter3_section_001",
+      "target_label": "Chapter 3",
+      "target_ref_type": "chapter",
+      "target_ref_id": "3",
+      "target_section_title": "Chapter 3 · Covariance, Regression, and Correlation",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "earson’s (1896, 1903) invention of multiple regression developed out of the need for a technique to resolve the observed directional selection on a character into its direct and various indirect components. In Chapter 3 we defined the selection differential S (the within-generation change in the mean phenotype due to selection) as a measure of the total directional selection on a character. However, S cannot be cons…",
+      "match_source": "llm-prerequisite"
+    },
+    {
+      "current_section_id": "Genetics_chapter8_003",
+      "current_anchor": "genetics_chapter8_003",
+      "source_chapter_id": "Genetics_chapter11",
+      "label": "Chapter 11",
+      "target_anchor": "genetics_chapter11_section_001",
+      "target_label": "Chapter 11",
+      "target_ref_type": "chapter",
+      "target_ref_id": "11",
+      "target_section_title": "Chapter 11 · 11 Matters of Scale",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "39 were alive. All individuals were measured for four characters: head and thorax width, and scutellum and forewing length. The data were then logarithmically transformed to more closely approximate normality (Chapter 11). All surviving bugs were assumed to have equal fitness (W = 1), and all dead bugs to have zero fitness (W = 0). Hence, mean fitness is the fraction p of individuals that survived, giving relative f…",
+      "match_source": "chapter-overview"
+    },
+    {
+      "current_section_id": "Genetics_chapter8_018",
+      "current_anchor": "genetics_chapter8_018",
+      "source_chapter_id": "Genetics_chapter2",
+      "label": "Chapter 2",
+      "target_anchor": "genetics_chapter2_section_001",
+      "target_label": "Chapter 2",
+      "target_ref_type": "chapter",
+      "target_ref_id": "2",
+      "target_section_title": "Chapter 2 · Properties of Distributions",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "notation provides a compact way to express vectors of random variables. We now consider the most commonly assumed distribution for such vectors, the multivariate analog of the normal distribution discussed in Chapter 2. Much of the theory for the evolution of quantitative traits is based on this distribution, which we hereafter denote as the MVN. Consider the probability density function for $n$ independent normal r…",
+      "match_source": "llm-prerequisite"
+    },
+    {
+      "current_section_id": "Genetics_chapter8_019",
+      "current_anchor": "genetics_chapter8_019",
+      "source_chapter_id": "Genetics_chapter7",
+      "label": "Chapter 7",
+      "target_anchor": "genetics_chapter7_section_001",
+      "target_label": "Chapter 7",
+      "target_ref_type": "chapter",
+      "target_ref_id": "7",
+      "target_section_title": "Chapter 7 · Resemblance Between Relatives",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "riate normal. For the simplest case of noninbred and unrelated parents, no epistasis or genotype-environment correlation, the covariance matrix can be obtained from the theory of correlation between relatives (Chapter 7), giving the joint distribution as $$ \\left(\\begin{array}{l}{{{z {o}}}} \\\\{{{z {s}}}} \\\\{{{z {d}}}}\\end{array}\\right)\\sim\\mathrm{M V N}\\left[\\left(\\begin{array}{l}{{{\\mu {o}}}} \\\\{{{\\mu {s}}}} \\\\{{{\\…",
+      "match_source": "chapter-overview"
+    },
+    {
+      "current_section_id": "Genetics_chapter8_020",
+      "current_anchor": "genetics_chapter8_020",
+      "source_chapter_id": "Genetics_chapter26",
+      "label": "Chapter 26",
+      "target_anchor": "genetics_chapter26_section_001",
+      "target_label": "Chapter 26",
+      "target_ref_type": "chapter",
+      "target_ref_id": "26",
+      "target_section_title": "Chapter 26 · Genetics_chapter26",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "OVERVIEW OF LINEAR MODELS [[Linear models]] form the backbone of most estimation procedures in quantitative genetics and will be extensively used throughout the rest of this book. They are generally structured such that a vector of observations of one variable (y) is modeled as a linear combination of other variables observed along with y. The remainder of this chapter introduces some of the basic tools and key conc…",
+      "match_source": "chapter-overview"
+    },
+    {
+      "current_section_id": "Genetics_chapter8_020",
+      "current_anchor": "genetics_chapter8_020",
+      "source_chapter_id": "Genetics_chapter27",
+      "label": "Chapter 27",
+      "target_anchor": "genetics_chapter27_section_001",
+      "target_label": "Chapter 27",
+      "target_ref_type": "chapter",
+      "target_ref_id": "27",
+      "target_section_title": "Chapter 27 · Variance-Component Estimation with Complex Pedigrees",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "OVERVIEW OF LINEAR MODELS [[Linear models]] form the backbone of most estimation procedures in quantitative genetics and will be extensively used throughout the rest of this book. They are generally structured such that a vector of observations of one variable (y) is modeled as a linear combination of other variables observed along with y. The remainder of this chapter introduces some of the basic tools and key conc…",
+      "match_source": "chapter-overview"
+    }
+  ],
+  "prerequisites": [
+    {
+      "id": "prereq-genetics_chapter2",
+      "title": "第2章 · 分布的性质",
+      "source_chapter_id": "Genetics_chapter2",
+      "used_in_sections": [
+        "Genetics_chapter8_017"
+      ],
+      "why_needed": "第8章引入多元正态分布，直接建立在一元正态分布基础上，需要第2章的正态分布基本概念和性质。",
+      "key_points": [
+        "一元正态分布的概率密度函数及其参数（均值、方差）",
+        "独立正态随机变量的和仍然服从正态分布",
+        "正态分布的标准化变换（Z分数）"
+      ],
+      "source_links": [
+        {
+          "chapter_id": "Genetics_chapter2",
+          "label": "Chapter 2",
+          "markdown_path": "/data/textbook/Genetics_chapter2_textbook.md",
+          "anchor": "genetics_chapter2_section_001",
+          "section_title": "Chapter 2 · Properties of Distributions",
+          "ref_type": "chapter",
+          "ref_id": "2",
+          "book_hint": "",
+          "link_scope": "current-book",
+          "excerpt": "Chapter 2 · Properties of Distributions"
+        }
+      ],
+      "source_excerpt": "Chapter 2 · Properties of Distributions",
+      "summary_status": "llm-validated",
+      "usage_count": 1,
+      "explicit_asset_refs": 0,
+      "priority_score": 150,
+      "validated_by_llm": true,
+      "concept_title": "第2章 · 分布的性质",
+      "nav_label": "第2章",
+      "evidence_summary": "当前章节明确指出多元正态分布是第2章讨论的正态分布的多元推广。"
+    },
+    {
+      "id": "prereq-genetics_chapter3",
+      "title": "Chapter 3 · Covariance, Regression, and Correlation",
+      "source_chapter_id": "Genetics_chapter3",
+      "used_in_sections": [
+        "Genetics_chapter8_002",
+        "Genetics_chapter8_020",
+        "Genetics_chapter8_021"
+      ],
+      "why_needed": "本章介绍了协方差、回归和相关性等基本概念，是理解第8章多元选择和最小二乘法的基础。",
+      "key_points": [
+        "协方差衡量两个变量之间的线性关系方向",
+        "回归分析用于预测和解释变量关系",
+        "最小二乘法用于估计回归参数"
+      ],
+      "source_links": [
+        {
+          "chapter_id": "Genetics_chapter3",
+          "label": "Chapter 3",
+          "markdown_path": "/data/textbook/Genetics_chapter3_textbook.md",
+          "anchor": "genetics_chapter3_section_001",
+          "section_title": "Chapter 3 · Covariance, Regression, and Correlation",
+          "ref_type": "chapter",
+          "ref_id": "3",
+          "book_hint": "",
+          "link_scope": "current-book",
+          "excerpt": "Chapter 3 · Covariance, Regression, and Correlation"
+        }
+      ],
+      "source_excerpt": "Chapter 3 · Covariance, Regression, and Correlation",
+      "summary_status": "llm-validated",
+      "usage_count": 3,
+      "explicit_asset_refs": 2,
+      "priority_score": 150,
+      "validated_by_llm": true,
+      "concept_title": "Chapter 3 · Covariance, Regression, and Correlation",
+      "nav_label": "Chapter 3: Covariance, Regression, and Correlation",
+      "evidence_summary": "第8章使用多元回归和最小二乘法，其基础概念来自第3章的协方差和回归。"
+    }
+  ],
+  "llm": {
+    "requests_total": 3,
+    "cache_hits": 0,
+    "cache_writes": 3,
+    "remote_calls": 3,
+    "budget_rejections": 0,
+    "prompt_chars_sent": 9786,
+    "response_chars_received": 998,
+    "api_prompt_tokens": 2419,
+    "api_completion_tokens": 1112,
+    "api_total_tokens": 3531,
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "cache_enabled": true,
+    "cache_dir": "D:\\大学资料\\大二\\LLM-Agent科学文献系统知识库处理\\tmp\\llm_cache",
+    "max_remote_calls": 0,
+    "max_prompt_chars_total": 0,
+    "max_response_chars_total": 0,
+    "validated_only": true,
+    "preserved_from_previous_build": true
+  }
+}

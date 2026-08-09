@@ -1,0 +1,1389 @@
+{
+  "sections": [
+    {
+      "id": "Evolution_appendix2_section_001",
+      "title": "Appendix 2 · Appendix 2 / Introduction to Bayesian Analysis",
+      "nav_label": "Introduction to Bayesian Analysis",
+      "raw_title": "Appendix 2 · Appendix 2 / Introduction to Bayesian Analysis",
+      "level": 1,
+      "depth": 0,
+      "anchor": "evolution_appendix2_section_001",
+      "text_preview": ""
+    },
+    {
+      "id": "Evolution_appendix2_001",
+      "title": "Appendix: Introduction",
+      "nav_label": "Appendix: Introduction",
+      "raw_title": "Evolution_appendix2_001 · Appendix: Introduction",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix2_001",
+      "text_preview": "Now I've heard a Bayesian is half a man With robustness not on his side, But as the problems get tougher, I just watch and wonder As the frequentists run and hide! — Ain’t Too Proud to Bayes, B. Carlin (ISBA 2000) The history of statistical methods in genetics closely parallels advances in computation. Before the wide…"
+    },
+    {
+      "id": "Evolution_appendix2_002",
+      "title": "Appendix: Introduction / WHY ARE BAYESIAN METHODS BECOMING MORE POPULAR?",
+      "nav_label": "WHY ARE BAYESIAN METHODS BECOMING MORE POPULAR?",
+      "raw_title": "Evolution_appendix2_002 · Appendix: Introduction / WHY ARE BAYESIAN METHODS BECOMING MORE POPULAR?",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix2_002",
+      "text_preview": "In addition to providing a more formal framework for dealing with parameter uncertainty, two specific features have fueled the rapid growth of Bayesian approaches in genetics and genomics. First, under a Bayesian analysis, all parameters are random effects as opposed to fixed effects (Chapter 19). This has profound im…"
+    },
+    {
+      "id": "Evolution_appendix2_003",
+      "title": "Appendix: Introduction / BAYES' THEOREM",
+      "nav_label": "BAYES' THEOREM",
+      "raw_title": "Evolution_appendix2_003 · Appendix: Introduction / BAYES' THEOREM",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix2_003",
+      "text_preview": "[命题 Proposition] The foundation of Bayesian statistics is Bayes' theorem. Suppose we observe a random variable, x, and wish to make inferences about another random variable, $ \\theta $, in the case where $ \\theta $ is drawn from some distribution, $ \\operatorname{Pr}(\\theta) $. From the definition of conditional proba…"
+    },
+    {
+      "id": "Evolution_appendix2_004",
+      "title": "Appendix: Introduction / FROM LIKELIHOOD TO BAYESIAN ANALYSIS",
+      "nav_label": "FROM LIKELIHOOD TO BAYESIAN ANALYSIS",
+      "raw_title": "Evolution_appendix2_004 · Appendix: Introduction / FROM LIKELIHOOD TO BAYESIAN ANALYSIS",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix2_004",
+      "text_preview": "The method of maximum likelihood (LW Appendix 4) and Bayesian analysis are closely related. Suppose $ \\ell(\\boldsymbol{\\varTheta} \\mathbf{x}) $ is the assumed likelihood function. Under ML estimation, we would compute the mode of the likelihood function (the maximal value of $ \\ell $, as a function of $ \\boldsymbol{\\v…"
+    },
+    {
+      "id": "Evolution_appendix2_005",
+      "title": "FROM LIKELIHOOD TO BAYESIAN ANALYSIS / Marginal Posterior Distributions",
+      "nav_label": "Marginal Posterior Distributions",
+      "raw_title": "Evolution_appendix2_005 · FROM LIKELIHOOD TO BAYESIAN ANALYSIS / Marginal Posterior Distributions",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix2_005",
+      "text_preview": "Often only a subset of the unknown parameters is of concern to us, and the rest are nuisance parameters that are of no interest, but still must be fitted in the model. A strong feature of Bayesian analysis is that we can account for all the uncertainty introduced into the parameters of interest by any uncertainty in t…"
+    },
+    {
+      "id": "Evolution_appendix2_006",
+      "title": "Appendix: Introduction / SUMMARIZING THE POSTERIOR DISTRIBUTION",
+      "nav_label": "SUMMARIZING THE POSTERIOR DISTRIBUTION",
+      "raw_title": "Evolution_appendix2_006 · Appendix: Introduction / SUMMARIZING THE POSTERIOR DISTRIBUTION",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix2_006",
+      "text_preview": "How do we extract a Bayesian estimator for some unknown parameter, $ \\theta $? If our mindset is to use some sort of point estimator (as is usually done in classical statistics), then there are a number of candidates. We could follow maximum likelihood and use the mode of the posterior distribution (its maximal value)…"
+    },
+    {
+      "id": "Evolution_appendix2_007",
+      "title": "SUMMARIZING THE POSTERIOR DISTRIBUTION / Highest Density Regions (HDRs)",
+      "nav_label": "Highest Density Regions (HDRs)",
+      "raw_title": "Evolution_appendix2_007 · SUMMARIZING THE POSTERIOR DISTRIBUTION / Highest Density Regions (HDRs)",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix2_007",
+      "text_preview": "Given the posterior distribution, the construction of confidence intervals is straightforward. For example, a $ 100(1 - \\alpha)% $ confidence interval is given by any $ (L {\\alpha/2}, H {\\alpha/2}) $ satisfying $$ \\int {L {\\alpha/2}}^{H {\\alpha/2}}p(\\theta\\mid\\mathbf{x})d\\theta=1-\\alpha $$ To reduce the set of possibl…"
+    },
+    {
+      "id": "Evolution_appendix2_008",
+      "title": "SUMMARIZING THE POSTERIOR DISTRIBUTION / Bayes Factors and Hypothesis Testing",
+      "nav_label": "Bayes Factors and Hypothesis Testing",
+      "raw_title": "Evolution_appendix2_008 · SUMMARIZING THE POSTERIOR DISTRIBUTION / Bayes Factors and Hypothesis Testing",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix2_008",
+      "text_preview": "In the classical hypothesis-testing framework, we have two alternatives. The null hypothesis, $ H 0 $, that the unknown parameter, $ \\theta $, belongs to some set or interval, $ \\Theta 0 $ ($ \\theta \\in \\Theta 0 $), versus the alternative hypothesis, $ H 1 $, that $ \\theta $ belongs to the alternative set, $ \\Theta 1…"
+    },
+    {
+      "id": "Evolution_appendix2_009",
+      "title": "Appendix: Introduction / THE CHOICE OF A PRIOR",
+      "nav_label": "THE CHOICE OF A PRIOR",
+      "raw_title": "Evolution_appendix2_009 · Appendix: Introduction / THE CHOICE OF A PRIOR",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix2_009",
+      "text_preview": "Obviously, a critical feature of any Bayesian analysis is the choice of a prior. The key is that when the data have a sufficiently strong signal, even a poor choice of a prior will still not greatly influence the posterior. In a sense, it is an asymptotic (large-sample) property of Bayesian analysis in that all but pa…"
+    },
+    {
+      "id": "Evolution_appendix2_010",
+      "title": "THE CHOICE OF A PRIOR / Diffuse Priors",
+      "nav_label": "Diffuse Priors",
+      "raw_title": "Evolution_appendix2_010 · THE CHOICE OF A PRIOR / Diffuse Priors",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix2_010",
+      "text_preview": "One of the most commonly used priors is the flat or diffuse (also called uninformative or naive) prior, which is simply a constant $$ p(\\theta)=\\frac{1}{b-a}\\qquad for\\qquad a\\leq\\theta\\leq b $$ This conveys that we have no a priori reason to favor any particular parameter value over another. With a flat prior, the po…"
+    },
+    {
+      "id": "Evolution_appendix2_011",
+      "title": "THE CHOICE OF A PRIOR / The Jeffreys Prior",
+      "nav_label": "The Jeffreys Prior",
+      "raw_title": "Evolution_appendix2_011 · THE CHOICE OF A PRIOR / The Jeffreys Prior",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix2_011",
+      "text_preview": "Jeffreys (1961) proposed a general prior based on the Fisher information information, I, of the likelihood. Recall (LW Appendix 4) that $$ I(\\theta\\mid\\mathbf{x})=-E\\left[\\frac{\\partial^{2}\\ln\\ell(\\theta\\mid\\mathbf{x})}{\\partial\\theta^{2}}\\right] $$ The Jeffreys prior is as follows: $$ p(\\theta)\\propto\\sqrt{I(\\theta\\m…"
+    },
+    {
+      "id": "Evolution_appendix2_012",
+      "title": "Appendix: Introduction / POSTERIOR DISTRIBUTIONS UNDER NORMALITY ASSUMPTIONS",
+      "nav_label": "POSTERIOR DISTRIBUTIONS UNDER NORMALITY ASSUMPTIONS",
+      "raw_title": "Evolution_appendix2_012 · Appendix: Introduction / POSTERIOR DISTRIBUTIONS UNDER NORMALITY ASSUMPTIONS",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix2_012",
+      "text_preview": "[命题 Proposition] To introduce the basic ideas of Bayesian analysis, as well as treating a common assumption in quantitative genetics, consider the case where data are drawn from a normal (Gaussian) distribution, giving the likelihood function for the ith observation, $ x {i} $, as $$ \\ell(\\mu,\\sigma^{2}\\mid x {i})=\\fr…"
+    },
+    {
+      "id": "Evolution_appendix2_013",
+      "title": "POSTERIOR DISTRIBUTIONS UNDER NORMALITY ASSUMPTIONS / Gaussian Likelihood With Known Variance and Unknown Mean",
+      "nav_label": "Gaussian Likelihood With Known Variance and Unknown Mean",
+      "raw_title": "Evolution_appendix2_013 · POSTERIOR DISTRIBUTIONS UNDER NORMALITY ASSUMPTIONS / Gaussian Likelihood With Known Variance and Unknown Mean",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix2_013",
+      "text_preview": "As a starting point, assume that the variance, $ \\sigma^2 $, is known, while the mean, $ \\mu $, is unknown. For a Bayesian analysis, it remains to specify the prior for $ \\mu $, $ p(\\mu) $. Suppose we assume a Gaussian prior, $ \\mu \\sim \\mathrm{N}(\\mu 0, \\sigma 0^2) $, with $$ p(\\mu)=\\frac{1}{\\sqrt{2\\pi\\sigma {0}^{2}}…"
+    },
+    {
+      "id": "Evolution_appendix2_014",
+      "title": "POSTERIOR DISTRIBUTIONS UNDER NORMALITY ASSUMPTIONS / Gamma, $ \\chi^{2} $, Inverse-gamma, and $ \\chi^{-2} $ Distributions",
+      "nav_label": "Gamma, $ \\chi^{2} $, Inverse-gamma, and $ \\chi^{-2} $ Distributi",
+      "raw_title": "Evolution_appendix2_014 · POSTERIOR DISTRIBUTIONS UNDER NORMALITY ASSUMPTIONS / Gamma, $ \\chi^{2} $, Inverse-gamma, and $ \\chi^{-2} $ Distributions",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix2_014",
+      "text_preview": "Before examining the Gaussian likelihood with unknown variance, a brief aside is needed to develop the inverse chi-square distribution, denoted by $ \\chi^{-2} $. We do this via the gamma and inverse-gamma distributions, as both $ \\chi^{2} $ and $ \\chi^{-2} $ are special cases of these distributions. To motivate the ga…"
+    },
+    {
+      "id": "Evolution_appendix2_015",
+      "title": "POSTERIOR DISTRIBUTIONS UNDER NORMALITY ASSUMPTIONS / Gaussian Likelihood With Unknown Variance: Scaled Inverse- $ \\chi^{2} $ Priors",
+      "nav_label": "Gaussian Likelihood With Unknown Variance: Scaled Inverse- $ \\ch",
+      "raw_title": "Evolution_appendix2_015 · POSTERIOR DISTRIBUTIONS UNDER NORMALITY ASSUMPTIONS / Gaussian Likelihood With Unknown Variance: Scaled Inverse- $ \\chi^{2} $ Priors",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix2_015",
+      "text_preview": "Suppose data are drawn from a normal distribution with a known mean, $ \\mu $, but unknown variance, $ \\sigma^{2} $. The resulting likelihood function can be expressed as $$ \\ell(\\sigma^{2}\\mid\\mathbf{x},\\mu)\\propto(\\sigma^{2})^{-n/2}\\exp\\left(-\\frac{nS^{2}}{2\\sigma^{2}}\\right) $$ where $$ S^{2}=\\frac{1}{n}\\sum {i=1}^{…"
+    },
+    {
+      "id": "Evolution_appendix2_016",
+      "title": "POSTERIOR DISTRIBUTIONS UNDER NORMALITY ASSUMPTIONS / Student's t Distribution",
+      "nav_label": "Student's t Distribution",
+      "raw_title": "Evolution_appendix2_016 · POSTERIOR DISTRIBUTIONS UNDER NORMALITY ASSUMPTIONS / Student's t Distribution",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix2_016",
+      "text_preview": "The final distribution needed for a Bayesian analysis of a Gaussian likelihood is the $t$ (or Student's $t$) distribution. Suppose that $x i \\sim N(\\mu, \\sigma^2)$, so for $n$ independent draws, $\\overline{x} \\sim N(\\mu, \\sigma^2/n)$. This implies that $(\\overline{x} - \\mu)/\\sqrt{\\sigma^2/n} \\sim U$, where $U \\sim N(0…"
+    },
+    {
+      "id": "Evolution_appendix2_017",
+      "title": "POSTERIOR DISTRIBUTIONS UNDER NORMALITY ASSUMPTIONS / General Gaussian Likelihood: Unknown Mean and Variance",
+      "nav_label": "General Gaussian Likelihood: Unknown Mean and Variance",
+      "raw_title": "Evolution_appendix2_017 · POSTERIOR DISTRIBUTIONS UNDER NORMALITY ASSUMPTIONS / General Gaussian Likelihood: Unknown Mean and Variance",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix2_017",
+      "text_preview": "If we put all these pieces together, the posterior density for draws from a normal with unknown mean and variance is obtained as follows. First, we write the joint prior by conditioning on the variance, $$ p(\\mu,\\sigma^{2})=p(\\mu\\mid\\sigma^{2})\\cdot p(\\sigma^{2}) $$ As above, we assume a scaled inverse chi-square dist…"
+    },
+    {
+      "id": "Evolution_appendix2_018",
+      "title": "Appendix: Introduction / CONJUGATE PRIORS",
+      "nav_label": "CONJUGATE PRIORS",
+      "raw_title": "Evolution_appendix2_018 · Appendix: Introduction / CONJUGATE PRIORS",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix2_018",
+      "text_preview": "The use of a prior density that conjugates the likelihood allows us to develop analytic expressions of the posterior density. As we will see in Appendix 3, this is critical in developing Gibbs samplers for problems of interest. Table A2.2 summarizes the conjugate priors for several common likelihood functions, with th…"
+    },
+    {
+      "id": "Evolution_appendix2_019",
+      "title": "CONJUGATE PRIORS / The Beta and Dirichlet Distributions",
+      "nav_label": "The Beta and Dirichlet Distributions",
+      "raw_title": "Evolution_appendix2_019 · CONJUGATE PRIORS / The Beta and Dirichlet Distributions",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix2_019",
+      "text_preview": "With a binomial, each trial (observation) has two possible outcomes and the likelihood is a function of the sample size (number of trials), $ n $, and a single success probability, $ p $ (as the two outcomes on any given trial have probabilities of $ p $ and $ 1 - p $). The generalization of this model is the multinom…"
+    },
+    {
+      "id": "Evolution_appendix2_020",
+      "title": "CONJUGATE PRIORS / Wishart and Inverse-Wishart Distributions",
+      "nav_label": "Wishart and Inverse-Wishart Distributions",
+      "raw_title": "Evolution_appendix2_020 · CONJUGATE PRIORS / Wishart and Inverse-Wishart Distributions",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix2_020",
+      "text_preview": "The Wishart distribution can be thought of as the multivariate extension of the $ \\chi^2 $ distribution. Suppose $ \\mathbf{x} 1, \\cdots, \\mathbf{x} n $ are independent and identically distributed vectors, with $ \\mathbf{x} i \\sim \\text{MVN} k(\\mathbf{0}, \\mathbf{V}) $. Using these $ n $ draws, and assuming that the me…"
+    }
+  ],
+  "assets": [
+    {
+      "kind": "example",
+      "id": "A2.1",
+      "anchor": "example-a2.1",
+      "label": "Example A2.1",
+      "section_id": "Evolution_appendix2_003",
+      "excerpt": "Example A2.1 · ref: A2.1 · source: Evolution appendix2 003.json · blocks 7–11 Example A2.1. Consider a recessive color locus in cattle in which the genotypes BB and Bb are black, while bb is red. Two black-coated parents are crossed, and produce some red offspring, which implies that both parents must be Bb. A black-coated son of theirs is crossed to n red dams (bb), and all of his offspring are black. What is the posterior probability that he is BB? To solve this problem us…"
+    },
+    {
+      "kind": "example",
+      "id": "A2.2",
+      "anchor": "example-a2.2",
+      "label": "Example A2.2",
+      "section_id": "Evolution_appendix2_003",
+      "excerpt": "Example A2.2 · ref: A2.2 · source: Evolution appendix2 003.json · blocks 12–14 Example A2.2. Suppose a major gene (with alleles Q and q) underlies a character of interest. The distribution of phenotypic values for each major-locus genotype follows a normal distribution with a variance of 1 and means of 2.1, 3.5, and 1.3 for QQ, Qq, and qq, respectively. Suppose the frequencies of these genotypes for a random individual drawn from the population are 0.3, 0.2, and 0.5 (for QQ,…"
+    },
+    {
+      "kind": "example",
+      "id": "A2.3",
+      "anchor": "example-a2.3",
+      "label": "Example A2.3",
+      "section_id": "Evolution_appendix2_008",
+      "excerpt": "Example A2.3 · ref: A2.3 · source: Evolution appendix2 008.json · blocks 6–11 Example A2.3. Suppose that the prior distribution of $ \\theta $ is such that $ \\Pr(\\theta \\theta 0) = 0.10 $, while for the posterior distribution $ \\Pr(\\theta \\theta 0 \\mid \\mathbf{x}) = 0.05 $. The latter is significant at the 5% level in a classical hypothesis-testing framework, but the data only doubles our confidence in the alternative hypothesis relative to our belief based on prior informati…"
+    },
+    {
+      "kind": "figure",
+      "id": "A2.1",
+      "anchor": "figure-a2.1",
+      "label": "Figure A2.1",
+      "section_id": "Evolution_appendix2_010",
+      "src": "figures/Evolution_A2.1.png",
+      "caption": "Figure A2.1 A uniform prior on one scale does not result in a flat prior on a transformed scale. Suppose a flat prior on  $ (0,10000) $ is assumed for both the additive and residual variances. To mimic what happens under MCMC, we display these priors by using the resulting histograms generated from a large number of random draws, with a uniform expected to return a flat histogram. Left: The resulting prior for the standard deviation of either variance (the square root of a random draw). Right: The resulting prior for  $ h^{2} $, the ratio of a random draw for the additive variance divided by this value plus a random draw for the residual variance. Neither of these priors results in a uniform prior (namely, a flat histogram) on the transformed scale."
+    },
+    {
+      "kind": "example",
+      "id": "A2.4",
+      "anchor": "example-a2.4",
+      "label": "Example A2.4",
+      "section_id": "Evolution_appendix2_011",
+      "excerpt": "Example A2.4 · ref: A2.4 · source: Evolution appendix2 011.json · blocks 5–7 Example A2.4. Consider the likelihood of x successes in n independent draws from a binomial with a success parameter of $ \\theta $, $$ \\ell(\\theta\\mid\\mathbf{x})=C\\theta^{x}(1-\\theta)^{n-x} $$ where the constant C does not involve $ \\theta $. Taking logs gives $$ L(\\theta\\mid\\mathbf{x})=\\ln\\left[\\ell(\\theta\\mid\\mathbf{x})\\right]=\\ln C+x\\ln\\theta+(n-x)\\ln(1-\\theta) $$ Thus $$ \\frac{\\partial L(\\theta\\…"
+    },
+    {
+      "kind": "example",
+      "id": "A2.5",
+      "anchor": "example-a2.5",
+      "label": "Example A2.5",
+      "section_id": "Evolution_appendix2_011",
+      "excerpt": "Example A2.5 · ref: A2.5 · source: Evolution appendix2 011.json · blocks 8–8 Example A2.5. Suppose our data consists of $n$ independent draws from a normal distribution with an unknown mean and variance, $\\mu$ and $\\sigma^{2}$. In LW Appendix 4, we showed that the information matrix in this case is $$ \\mathbf{I}=n\\begin{pmatrix}{{{\\frac{1}{\\sigma^{2}}}}}&{{{0}}} \\\\{{{0}}}&{{{\\frac{1}{2\\sigma^{4}}}}}\\end{pmatrix} $$ Because the determinant of a diagonal matrix is the product…"
+    },
+    {
+      "kind": "figure",
+      "id": "A2.2",
+      "anchor": "figure-a2.2",
+      "label": "Figure A2.2",
+      "section_id": "Evolution_appendix2_014",
+      "src": "figures/Evolution_A2.2.png",
+      "caption": "Figure A2.2 The effect of the shape ( $ \\alpha $) and rate ( $ \\beta = 1/\\lambda $, the inverse of the scale) parameters on the gamma distribution function. For  $ \\alpha = 1 $, the resulting distribution is the simple monotonically decreasing exponential, while for  $ \\alpha > 1 $, the distribution is unimodal. The effect of a change in the rate or scale is to keep the general shape but change the scaling with respect to x."
+    },
+    {
+      "kind": "figure",
+      "id": "A2.3",
+      "anchor": "figure-a2.3",
+      "label": "Figure A2.3",
+      "section_id": "Evolution_appendix2_019",
+      "src": "figures/Evolution_A2.3.png",
+      "caption": "Figure A2.3 For  $ \\alpha = \\beta = 1 $ (long-dashed curve), the beta distribution is simply the uniform distribution over  $ (0, 1) $. The pdf for the beta distribution can also be U-shaped ( $ \\alpha = \\beta = 0.5 $; solid curve), unimodal ( $ \\alpha = 2 $,  $ \\beta = 5 $; short-dashed curve), or L-shaped ( $ \\alpha = 10 $,  $ \\beta = 1 $; dotted curve). Because the beta distribution is symmetric in  $ \\alpha $ and  $ \\beta $, switching their parameter values generates a distribution of the same shape translated about 0.5."
+    },
+    {
+      "kind": "formula",
+      "id": "A2.1a",
+      "anchor": "formula-a2.1a",
+      "label": "Formula (A2.1a)",
+      "section_id": "Evolution_appendix2_003",
+      "latex": "\\Pr(\\theta\\mid x)=\\frac{\\Pr(x,\\theta)}{\\Pr(x)}",
+      "latex_render": "\\Pr(\\theta\\mid x)=\\frac{\\Pr(x,\\theta)}{\\Pr(x)}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.1b",
+      "anchor": "formula-a2.1b",
+      "label": "Formula (A2.1b)",
+      "section_id": "Evolution_appendix2_003",
+      "latex": "\\Pr(x,\\theta)=\\Pr(x\\mid\\theta)\\Pr(\\theta)",
+      "latex_render": "\\Pr(x,\\theta)=\\Pr(x\\mid\\theta)\\Pr(\\theta)",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.2a",
+      "anchor": "formula-a2.2a",
+      "label": "Formula (A2.2a)",
+      "section_id": "Evolution_appendix2_003",
+      "latex": "\\mathrm{Pr}(\\theta\\mid x)=\\frac{\\mathrm{Pr}(x\\mid\\theta)\\mathrm{Pr}(\\theta)}{\\mathrm{Pr}(x)}",
+      "latex_render": "\\mathrm{Pr}(\\theta\\mid x)=\\frac{\\mathrm{Pr}(x\\mid\\theta)\\mathrm{Pr}(\\theta)}{\\mathrm{Pr}(x)}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.2b",
+      "anchor": "formula-a2.2b",
+      "label": "Formula (A2.2b)",
+      "section_id": "Evolution_appendix2_003",
+      "latex": "\\Pr(\\theta_{j}\\mid x)=\\frac{\\Pr(x\\mid\\theta_{j})\\Pr(\\theta_{j})}{\\Pr(x)}=\\frac{\\Pr(x\\mid\\theta_{j})\\Pr(\\theta_{j})}{\\displaystyle\\sum_{i=1}^{k}\\Pr(\\theta_{i})\\Pr(x\\mid\\theta_{i})}\\quad for\\quad1\\leq j\\leq k",
+      "latex_render": "\\Pr(\\theta_{j}\\mid x)=\\frac{\\Pr(x\\mid\\theta_{j})\\Pr(\\theta_{j})}{\\Pr(x)}=\\frac{\\Pr(x\\mid\\theta_{j})\\Pr(\\theta_{j})}{\\displaystyle\\sum_{i=1}^{k}\\Pr(\\theta_{i})\\Pr(x\\mid\\theta_{i})}\\quad for\\quad1\\leq j\\leq k",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.3",
+      "anchor": "formula-a2.3",
+      "label": "Formula (A2.3)",
+      "section_id": "Evolution_appendix2_003",
+      "latex": "p(\\boldsymbol{\\Theta}\\mid\\mathbf{x})=\\frac{p(\\mathbf{x}\\mid\\boldsymbol{\\Theta})p(\\boldsymbol{\\Theta})}{p(\\mathbf{x})}=\\frac{p(\\mathbf{x}\\mid\\boldsymbol{\\Theta})p(\\boldsymbol{\\Theta})}{\\int p(\\mathbf{x},\\boldsymbol{\\Theta})d\\boldsymbol{\\Theta}}",
+      "latex_render": "p(\\boldsymbol{\\Theta}\\mid\\mathbf{x})=\\frac{p(\\mathbf{x}\\mid\\boldsymbol{\\Theta})p(\\boldsymbol{\\Theta})}{p(\\mathbf{x})}=\\frac{p(\\mathbf{x}\\mid\\boldsymbol{\\Theta})p(\\boldsymbol{\\Theta})}{\\int p(\\mathbf{x},\\boldsymbol{\\Theta})d\\boldsymbol{\\Theta}}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.4a",
+      "anchor": "formula-a2.4a",
+      "label": "Formula (A2.4a)",
+      "section_id": "Evolution_appendix2_004",
+      "latex": "p(\\boldsymbol{\\Theta}\\mid\\mathbf{x})=\\frac{1}{p(\\mathbf{x})}\\cdot p(\\mathbf{x}\\mid\\boldsymbol{\\Theta})\\cdot p(\\boldsymbol{\\Theta})",
+      "latex_render": "p(\\boldsymbol{\\Theta}\\mid\\mathbf{x})=\\frac{1}{p(\\mathbf{x})}\\cdot p(\\mathbf{x}\\mid\\boldsymbol{\\Theta})\\cdot p(\\boldsymbol{\\Theta})",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.4b",
+      "anchor": "formula-a2.4b",
+      "label": "Formula (A2.4b)",
+      "section_id": "Evolution_appendix2_004",
+      "latex": "=(normalizing constant)\\cdot p(\\mathbf{x}\\mid\\boldsymbol{\\Theta})\\cdot p(\\boldsymbol{\\Theta})",
+      "latex_render": "=(normalizing constant)\\cdot p(\\mathbf{x}\\mid\\boldsymbol{\\Theta})\\cdot p(\\boldsymbol{\\Theta})",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.4c",
+      "anchor": "formula-a2.4c",
+      "label": "Formula (A2.4c)",
+      "section_id": "Evolution_appendix2_004",
+      "latex": "=constant\\cdot likelihood\\cdot prior",
+      "latex_render": "=constant\\cdot likelihood\\cdot prior",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.4d",
+      "anchor": "formula-a2.4d",
+      "label": "Formula (A2.4d)",
+      "section_id": "Evolution_appendix2_004",
+      "latex": "p(\\boldsymbol{\\Theta}\\mid\\mathbf{x})\\propto\\ell(\\boldsymbol{\\Theta}\\mid\\mathbf{x})~p(\\boldsymbol{\\Theta})",
+      "latex_render": "p(\\boldsymbol{\\Theta}\\mid\\mathbf{x})\\propto\\ell(\\boldsymbol{\\Theta}\\mid\\mathbf{x})~p(\\boldsymbol{\\Theta})",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.5",
+      "anchor": "formula-a2.5",
+      "label": "Formula (A2.5)",
+      "section_id": "Evolution_appendix2_004",
+      "latex": "p(\\mathbf{x})=\\int_{\\boldsymbol{\\varTheta}}p(\\mathbf{x}\\mid\\boldsymbol{\\varTheta})\\cdot p(\\boldsymbol{\\varTheta})d\\boldsymbol{\\varTheta}",
+      "latex_render": "p(\\mathbf{x})=\\int_{\\boldsymbol{\\varTheta}}p(\\mathbf{x}\\mid\\boldsymbol{\\varTheta})\\cdot p(\\boldsymbol{\\varTheta})d\\boldsymbol{\\varTheta}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.6",
+      "anchor": "formula-a2.6",
+      "label": "Formula (A2.6)",
+      "section_id": "Evolution_appendix2_004",
+      "latex": "\\log(posterior)=\\log(likelihood)+\\log(prior)+constant",
+      "latex_render": "\\log(posterior)=\\log(likelihood)+\\log(prior)+constant",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.7",
+      "anchor": "formula-a2.7",
+      "label": "Formula (A2.7)",
+      "section_id": "Evolution_appendix2_005",
+      "latex": "p(\\boldsymbol{\\Theta}_{1}\\mid\\mathbf{y})=\\int_{\\boldsymbol{\\Theta}_{n u}}p(\\boldsymbol{\\Theta}_{1},\\boldsymbol{\\Theta}_{n u}\\mid\\mathbf{y})d\\boldsymbol{\\Theta}_{n u}",
+      "latex_render": "p(\\boldsymbol{\\Theta}_{1}\\mid\\mathbf{y})=\\int_{\\boldsymbol{\\Theta}_{n u}}p(\\boldsymbol{\\Theta}_{1},\\boldsymbol{\\Theta}_{n u}\\mid\\mathbf{y})d\\boldsymbol{\\Theta}_{n u}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.8a",
+      "anchor": "formula-a2.8a",
+      "label": "Formula (A2.8a)",
+      "section_id": "Evolution_appendix2_006",
+      "latex": "\\widehat{\\theta}=\\max_{\\theta}\\left[p(\\boldsymbol{\\theta}\\mid\\mathbf{x})\\right]",
+      "latex_render": "\\widehat{\\theta}=\\max_{\\theta}\\left[p(\\boldsymbol{\\theta}\\mid\\mathbf{x})\\right]",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.8b",
+      "anchor": "formula-a2.8b",
+      "label": "Formula (A2.8b)",
+      "section_id": "Evolution_appendix2_006",
+      "latex": "\\widehat{\\boldsymbol{\\theta}}=\\boldsymbol{E}[\\boldsymbol{\\theta}\\mid\\mathbf{x}]=\\int\\boldsymbol{\\theta}\\boldsymbol{p}(\\boldsymbol{\\theta}\\mid\\mathbf{x})d\\boldsymbol{\\theta}",
+      "latex_render": "\\widehat{\\boldsymbol{\\theta}}=\\boldsymbol{E}[\\boldsymbol{\\theta}\\mid\\mathbf{x}]=\\int\\boldsymbol{\\theta}\\boldsymbol{p}(\\boldsymbol{\\theta}\\mid\\mathbf{x})d\\boldsymbol{\\theta}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.8c",
+      "anchor": "formula-a2.8c",
+      "label": "Formula (A2.8c)",
+      "section_id": "Evolution_appendix2_006",
+      "latex": "\\int_{\\widehat{\\theta}}^{+\\infty}p(\\theta\\mid\\mathbf{x})d\\theta=\\int_{-\\infty}^{\\widehat{\\theta}}p(\\theta\\mid\\mathbf{x})d\\theta=\\frac{1}{2}",
+      "latex_render": "\\int_{\\widehat{\\theta}}^{+\\infty}p(\\theta\\mid\\mathbf{x})d\\theta=\\int_{-\\infty}^{\\widehat{\\theta}}p(\\theta\\mid\\mathbf{x})d\\theta=\\frac{1}{2}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.9a",
+      "anchor": "formula-a2.9a",
+      "label": "Formula (A2.9a)",
+      "section_id": "Evolution_appendix2_008",
+      "latex": "p_{0}=\\Pr(\\theta\\in\\Theta_{0}\\mid\\mathbf{x})\\qquad and\\qquad p_{1}=\\Pr(\\theta\\in\\Theta_{1}\\mid\\mathbf{x})",
+      "latex_render": "p_{0}=\\Pr(\\theta\\in\\Theta_{0}\\mid\\mathbf{x})\\qquad and\\qquad p_{1}=\\Pr(\\theta\\in\\Theta_{1}\\mid\\mathbf{x})",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.9b",
+      "anchor": "formula-a2.9b",
+      "label": "Formula (A2.9b)",
+      "section_id": "Evolution_appendix2_008",
+      "latex": "\\pi_{0}=\\Pr(\\theta\\in\\Theta_{0})\\qquad and\\qquad\\pi_{1}=\\Pr(\\theta\\in\\Theta_{1})",
+      "latex_render": "\\pi_{0}=\\Pr(\\theta\\in\\Theta_{0})\\qquad and\\qquad\\pi_{1}=\\Pr(\\theta\\in\\Theta_{1})",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.10a",
+      "anchor": "formula-a2.10a",
+      "label": "Formula (A2.10a)",
+      "section_id": "Evolution_appendix2_008",
+      "latex": "B_{0}=\\frac{p_{0}/p_{1}}{\\pi_{0}/\\pi_{1}}=\\frac{p_{0}\\pi_{1}}{p_{1}\\pi_{0}}",
+      "latex_render": "B_{0}=\\frac{p_{0}/p_{1}}{\\pi_{0}/\\pi_{1}}=\\frac{p_{0}\\pi_{1}}{p_{1}\\pi_{0}}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.10b",
+      "anchor": "formula-a2.10b",
+      "label": "Formula (A2.10b)",
+      "section_id": "Evolution_appendix2_008",
+      "latex": "B_{0}=\\frac{p_{0}(1-\\pi_{0})}{\\pi_{0}(1-p_{0})}",
+      "latex_render": "B_{0}=\\frac{p_{0}(1-\\pi_{0})}{\\pi_{0}(1-p_{0})}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.11a",
+      "anchor": "formula-a2.11a",
+      "label": "Formula (A2.11a)",
+      "section_id": "Evolution_appendix2_008",
+      "latex": "\\frac{p_{0}}{p_{1}}=\\frac{\\pi_{0}p(\\mathbf{x}\\mid\\theta_{0})}{\\pi_{1}p(\\mathbf{x}\\mid\\theta_{1})}",
+      "latex_render": "\\frac{p_{0}}{p_{1}}=\\frac{\\pi_{0}p(\\mathbf{x}\\mid\\theta_{0})}{\\pi_{1}p(\\mathbf{x}\\mid\\theta_{1})}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.11b",
+      "anchor": "formula-a2.11b",
+      "label": "Formula (A2.11b)",
+      "section_id": "Evolution_appendix2_008",
+      "latex": "B_{0}=\\frac{p(\\mathbf{x}\\mid\\theta_{0})}{p(\\mathbf{x}\\mid\\theta_{1})}",
+      "latex_render": "B_{0}=\\frac{p(\\mathbf{x}\\mid\\theta_{0})}{p(\\mathbf{x}\\mid\\theta_{1})}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.12",
+      "anchor": "formula-a2.12",
+      "label": "Formula (A2.12)",
+      "section_id": "Evolution_appendix2_008",
+      "latex": "p_{i}(\\theta)=p(\\theta)/\\pi_{i}\\qquadfor\\quad i=0,1",
+      "latex_render": "p_{i}(\\theta)=p(\\theta)/\\pi_{i}\\qquadfor\\quad i=0,1",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.13",
+      "anchor": "formula-a2.13",
+      "label": "Formula (A2.13)",
+      "section_id": "Evolution_appendix2_008",
+      "latex": "\\begin{aligned}p_{i}&=\\Pr(\\theta\\in\\Theta_{i}\\mid\\mathbf{x})=\\int_{\\theta\\in\\Theta_{i}}p(\\theta\\mid\\mathbf{x})d\\theta\\\\&=\\frac{1}{p(\\mathbf{x})}\\int_{\\theta\\in\\Theta_{i}}p(\\theta)p(\\mathbf{x}\\mid\\theta)d\\theta\\\\&=\\pi_{i}\\int_{\\theta\\in\\Theta_{i}}p(\\mathbf{x}\\mid\\theta)p_{i}(\\theta)d\\theta\\\\ \\end{aligned}",
+      "latex_render": "\\begin{aligned}p_{i}&=\\Pr(\\theta\\in\\Theta_{i}\\mid\\mathbf{x})=\\int_{\\theta\\in\\Theta_{i}}p(\\theta\\mid\\mathbf{x})d\\theta\\\\&=\\frac{1}{p(\\mathbf{x})}\\int_{\\theta\\in\\Theta_{i}}p(\\theta)p(\\mathbf{x}\\mid\\theta)d\\theta\\\\&=\\pi_{i}\\int_{\\theta\\in\\Theta_{i}}p(\\mathbf{x}\\mid\\theta)p_{i}(\\theta)d\\theta\\\\ \\end{aligned}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.14",
+      "anchor": "formula-a2.14",
+      "label": "Formula (A2.14)",
+      "section_id": "Evolution_appendix2_008",
+      "latex": "B_{0}=\\left(\\frac{p_{0}}{\\pi_{0}}\\right)\\left(\\frac{\\pi_{1}}{p_{1}}\\right)=\\frac{\\int_{\\theta\\in\\Theta_{0}}p(\\mathbf{x}\\mid\\theta)p_{0}(\\theta)d\\theta}{\\int_{\\theta\\in\\Theta_{1}}p(\\mathbf{x}\\mid\\theta)p_{1}(\\theta)d\\theta}",
+      "latex_render": "B_{0}=\\left(\\frac{p_{0}}{\\pi_{0}}\\right)\\left(\\frac{\\pi_{1}}{p_{1}}\\right)=\\frac{\\int_{\\theta\\in\\Theta_{0}}p(\\mathbf{x}\\mid\\theta)p_{0}(\\theta)d\\theta}{\\int_{\\theta\\in\\Theta_{1}}p(\\mathbf{x}\\mid\\theta)p_{1}(\\theta)d\\theta}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.15a",
+      "anchor": "formula-a2.15a",
+      "label": "Formula (A2.15a)",
+      "section_id": "Evolution_appendix2_010",
+      "latex": "p(\\theta)=\\frac{1}{b-a}\\qquad for\\qquad a\\leq\\theta\\leq b",
+      "latex_render": "p(\\theta)=\\frac{1}{b-a}\\qquad for\\qquad a\\leq\\theta\\leq b",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.15b",
+      "anchor": "formula-a2.15b",
+      "label": "Formula (A2.15b)",
+      "section_id": "Evolution_appendix2_010",
+      "latex": "p(\\theta\\mid\\mathbf{x})=C\\ell(\\theta\\mid\\mathbf{x})",
+      "latex_render": "p(\\theta\\mid\\mathbf{x})=C\\ell(\\theta\\mid\\mathbf{x})",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.16",
+      "anchor": "formula-a2.16",
+      "label": "Formula (A2.16)",
+      "section_id": "Evolution_appendix2_011",
+      "latex": "p(\\theta)\\propto\\sqrt{I(\\theta\\mid\\mathbf{x})}",
+      "latex_render": "p(\\theta)\\propto\\sqrt{I(\\theta\\mid\\mathbf{x})}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.17",
+      "anchor": "formula-a2.17",
+      "label": "Formula (A2.17)",
+      "section_id": "Evolution_appendix2_011",
+      "latex": "p(\\boldsymbol{\\Theta})\\propto\\sqrt{\\det[\\mathbf{I}(\\boldsymbol{\\theta}\\mid\\mathbf{x})]}",
+      "latex_render": "p(\\boldsymbol{\\Theta})\\propto\\sqrt{\\det[\\mathbf{I}(\\boldsymbol{\\theta}\\mid\\mathbf{x})]}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.18a",
+      "anchor": "formula-a2.18a",
+      "label": "Formula (A2.18a)",
+      "section_id": "Evolution_appendix2_012",
+      "latex": "\\ell(\\mu,\\sigma^{2}\\mid x_{i})=\\frac{1}{\\sqrt{2\\pi\\sigma^{2}}}\\exp\\left(-\\frac{(x_{i}-\\mu)^{2}}{2\\sigma^{2}}\\right)",
+      "latex_render": "\\ell(\\mu,\\sigma^{2}\\mid x_{i})=\\frac{1}{\\sqrt{2\\pi\\sigma^{2}}}\\exp\\left(-\\frac{(x_{i}-\\mu)^{2}}{2\\sigma^{2}}\\right)",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.18b",
+      "anchor": "formula-a2.18b",
+      "label": "Formula (A2.18b)",
+      "section_id": "Evolution_appendix2_012",
+      "latex": "\\ell(\\mu\\mid\\mathbf{x})=\\frac{1}{\\sqrt{2\\pi\\sigma^{2}}}\\exp\\left(-\\sum_{i=1}^{n}\\frac{(x_{i}-\\mu)^{2}}{2\\sigma^{2}}\\right)",
+      "latex_render": "\\ell(\\mu\\mid\\mathbf{x})=\\frac{1}{\\sqrt{2\\pi\\sigma^{2}}}\\exp\\left(-\\sum_{i=1}^{n}\\frac{(x_{i}-\\mu)^{2}}{2\\sigma^{2}}\\right)",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.18c",
+      "anchor": "formula-a2.18c",
+      "label": "Formula (A2.18c)",
+      "section_id": "Evolution_appendix2_012",
+      "latex": "=\\frac{1}{\\sqrt{2\\pi\\sigma^{2}}}\\exp\\left[-\\frac{1}{2\\sigma^{2}}\\left(\\sum_{i=1}^{n}x_{i}^{2}-2\\mu n\\overline{x}+n\\mu^{2}\\right)\\right]",
+      "latex_render": "=\\frac{1}{\\sqrt{2\\pi\\sigma^{2}}}\\exp\\left[-\\frac{1}{2\\sigma^{2}}\\left(\\sum_{i=1}^{n}x_{i}^{2}-2\\mu n\\overline{x}+n\\mu^{2}\\right)\\right]",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.19",
+      "anchor": "formula-a2.19",
+      "label": "Formula (A2.19)",
+      "section_id": "Evolution_appendix2_013",
+      "latex": "p(\\mu)=\\frac{1}{\\sqrt{2\\pi\\sigma_{0}^{2}}}\\exp\\left(-\\frac{(\\mu-\\mu_{0})^{2}}{2\\sigma_{0}^{2}}\\right)",
+      "latex_render": "p(\\mu)=\\frac{1}{\\sqrt{2\\pi\\sigma_{0}^{2}}}\\exp\\left(-\\frac{(\\mu-\\mu_{0})^{2}}{2\\sigma_{0}^{2}}\\right)",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.20a",
+      "anchor": "formula-a2.20a",
+      "label": "Formula (A2.20a)",
+      "section_id": "Evolution_appendix2_013",
+      "latex": "p(\\boldsymbol{\\Theta}_{2}\\mid\\mathbf{x},\\boldsymbol{\\Theta}_{1})=f(\\mathbf{x},\\boldsymbol{\\Theta}_{1})\\cdot g(\\mathbf{x},\\boldsymbol{\\Theta}_{1},\\boldsymbol{\\Theta}_{2})",
+      "latex_render": "p(\\boldsymbol{\\Theta}_{2}\\mid\\mathbf{x},\\boldsymbol{\\Theta}_{1})=f(\\mathbf{x},\\boldsymbol{\\Theta}_{1})\\cdot g(\\mathbf{x},\\boldsymbol{\\Theta}_{1},\\boldsymbol{\\Theta}_{2})",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.20b",
+      "anchor": "formula-a2.20b",
+      "label": "Formula (A2.20b)",
+      "section_id": "Evolution_appendix2_013",
+      "latex": "p(\\boldsymbol{\\Theta}_{2}\\mid\\mathbf{x},\\boldsymbol{\\Theta}_{1})\\propto g(\\mathbf{x},\\boldsymbol{\\Theta}_{1},\\boldsymbol{\\Theta}_{2})",
+      "latex_render": "p(\\boldsymbol{\\Theta}_{2}\\mid\\mathbf{x},\\boldsymbol{\\Theta}_{1})\\propto g(\\mathbf{x},\\boldsymbol{\\Theta}_{1},\\boldsymbol{\\Theta}_{2})",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.21a",
+      "anchor": "formula-a2.21a",
+      "label": "Formula (A2.21a)",
+      "section_id": "Evolution_appendix2_013",
+      "latex": "\\begin{aligned}p(\\mu\\mid\\mathbf{x})&\\propto\\ell(\\mu\\mid\\mathbf{x})\\cdot p(\\mu)\\\\&\\propto\\exp\\left[-\\frac{(\\mu-\\mu_{0})^{2}}{2\\sigma_{0}^{2}}-\\frac{1}{2\\sigma^{2}}\\left(\\sum_{i=1}^{n}x_{i}^{2}-2\\mu n\\overline{x}+n\\mu^{2}\\right)\\right]\\end{aligned}",
+      "latex_render": "\\begin{aligned}p(\\mu\\mid\\mathbf{x})&\\propto\\ell(\\mu\\mid\\mathbf{x})\\cdot p(\\mu)\\\\&\\propto\\exp\\left[-\\frac{(\\mu-\\mu_{0})^{2}}{2\\sigma_{0}^{2}}-\\frac{1}{2\\sigma^{2}}\\left(\\sum_{i=1}^{n}x_{i}^{2}-2\\mu n\\overline{x}+n\\mu^{2}\\right)\\right]\\end{aligned}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.21b",
+      "anchor": "formula-a2.21b",
+      "label": "Formula (A2.21b)",
+      "section_id": "Evolution_appendix2_013",
+      "latex": "p(\\mu\\mid\\mathbf{x})\\propto\\exp\\left(-\\frac{\\mu^{2}}{2\\sigma_{0}^{2}}+\\frac{\\mu\\mu_{0}}{\\sigma_{0}^{2}}+\\frac{\\mu n\\overline{x}}{\\sigma^{2}}-\\frac{n\\mu^{2}}{2\\sigma^{2}}\\right)",
+      "latex_render": "p(\\mu\\mid\\mathbf{x})\\propto\\exp\\left(-\\frac{\\mu^{2}}{2\\sigma_{0}^{2}}+\\frac{\\mu\\mu_{0}}{\\sigma_{0}^{2}}+\\frac{\\mu n\\overline{x}}{\\sigma^{2}}-\\frac{n\\mu^{2}}{2\\sigma^{2}}\\right)",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.22a",
+      "anchor": "formula-a2.22a",
+      "label": "Formula (A2.22a)",
+      "section_id": "Evolution_appendix2_013",
+      "latex": "-\\frac{\\mu^{2}}{2}\\left(\\frac{1}{\\sigma_{0}^{2}}+\\frac{n}{\\sigma^{2}}\\right)+\\mu\\left(\\frac{\\mu_{0}}{\\sigma_{0}^{2}}+\\frac{n\\overline{x}}{\\sigma^{2}}\\right)=-\\frac{\\mu^{2}}{\\sigma_{*}^{2}}+\\frac{2\\mu\\mu_{*}}{2\\sigma_{*}^{2}}",
+      "latex_render": "-\\frac{\\mu^{2}}{2}\\left(\\frac{1}{\\sigma_{0}^{2}}+\\frac{n}{\\sigma^{2}}\\right)+\\mu\\left(\\frac{\\mu_{0}}{\\sigma_{0}^{2}}+\\frac{n\\overline{x}}{\\sigma^{2}}\\right)=-\\frac{\\mu^{2}}{\\sigma_{*}^{2}}+\\frac{2\\mu\\mu_{*}}{2\\sigma_{*}^{2}}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.22b",
+      "anchor": "formula-a2.22b",
+      "label": "Formula (A2.22b)",
+      "section_id": "Evolution_appendix2_013",
+      "latex": "\\sigma_{*}^{2}=\\left(\\frac{1}{\\sigma_{0}^{2}}+\\frac{n}{\\sigma^{2}}\\right)^{-1}\\quad and\\quad\\mu_{*}=\\sigma_{*}^{2}\\left(\\frac{\\mu_{0}}{\\sigma_{0}^{2}}+\\frac{n\\overline{x}}{\\sigma^{2}}\\right)",
+      "latex_render": "\\sigma_{*}^{2}=\\left(\\frac{1}{\\sigma_{0}^{2}}+\\frac{n}{\\sigma^{2}}\\right)^{-1}\\quad and\\quad\\mu_{*}=\\sigma_{*}^{2}\\left(\\frac{\\mu_{0}}{\\sigma_{0}^{2}}+\\frac{n\\overline{x}}{\\sigma^{2}}\\right)",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.22c",
+      "anchor": "formula-a2.22c",
+      "label": "Formula (A2.22c)",
+      "section_id": "Evolution_appendix2_013",
+      "latex": "p(\\mu\\mid\\mathbf{x})\\propto\\exp\\left[-\\frac{(\\mu-\\mu_{*})^{2}}{2\\sigma_{*}^{2}}+f(\\mathbf{x},\\mu_{0},\\sigma^{2},\\sigma_{0}^{2})\\right]",
+      "latex_render": "p(\\mu\\mid\\mathbf{x})\\propto\\exp\\left[-\\frac{(\\mu-\\mu_{*})^{2}}{2\\sigma_{*}^{2}}+f(\\mathbf{x},\\mu_{0},\\sigma^{2},\\sigma_{0}^{2})\\right]",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.23a",
+      "anchor": "formula-a2.23a",
+      "label": "Formula (A2.23a)",
+      "section_id": "Evolution_appendix2_013",
+      "latex": "p(\\mu\\mid\\mathbf{x})\\propto\\exp\\left[-\\frac{(\\mu-\\mu_{*})^{2}}{2\\sigma_{*}^{2}}\\right]",
+      "latex_render": "p(\\mu\\mid\\mathbf{x})\\propto\\exp\\left[-\\frac{(\\mu-\\mu_{*})^{2}}{2\\sigma_{*}^{2}}\\right]",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.23b",
+      "anchor": "formula-a2.23b",
+      "label": "Formula (A2.23b)",
+      "section_id": "Evolution_appendix2_013",
+      "latex": "\\mu\\mid(\\mathbf{x},\\sigma^{2})\\sim\\mathrm{N}\\left(\\mu_{*},\\sigma_{*}^{2}\\right)",
+      "latex_render": "\\mu\\mid(\\mathbf{x},\\sigma^{2})\\sim\\mathrm{N}\\left(\\mu_{*},\\sigma_{*}^{2}\\right)",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.24",
+      "anchor": "formula-a2.24",
+      "label": "Formula (A2.24)",
+      "section_id": "Evolution_appendix2_013",
+      "latex": "\\mu_{*}=\\mu_{0}\\frac{\\sigma_{*}^{2}}{\\sigma_{0}^{2}}+\\overline{x}\\frac{\\sigma_{*}^{2}}{\\sigma^{2}/n}",
+      "latex_render": "\\mu_{*}=\\mu_{0}\\frac{\\sigma_{*}^{2}}{\\sigma_{0}^{2}}+\\overline{x}\\frac{\\sigma_{*}^{2}}{\\sigma^{2}/n}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.25a",
+      "anchor": "formula-a2.25a",
+      "label": "Formula (A2.25a)",
+      "section_id": "Evolution_appendix2_014",
+      "latex": "\\begin{align*}p(x\\mid\\alpha,\\beta)={\\beta^\\alpha\\over\\Gamma(\\alpha)}x^{\\alpha-1}e^{-\\beta x}\\quad{\\rm for}\\alpha,\\beta,x>0\\end{align*}",
+      "latex_render": "\\begin{aligned}p(x\\mid\\alpha,\\beta)={\\beta^\\alpha\\over\\Gamma(\\alpha)}x^{\\alpha-1}e^{-\\beta x}\\quad{\\rm for}\\alpha,\\beta,x>0\\end{aligned}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.25b",
+      "anchor": "formula-a2.25b",
+      "label": "Formula (A2.25b)",
+      "section_id": "Evolution_appendix2_014",
+      "latex": "p(x\\mid\\alpha,\\beta)\\propto x^{\\alpha-1}e^{-\\beta x}",
+      "latex_render": "p(x\\mid\\alpha,\\beta)\\propto x^{\\alpha-1}e^{-\\beta x}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.25c",
+      "anchor": "formula-a2.25c",
+      "label": "Formula (A2.25c)",
+      "section_id": "Evolution_appendix2_014",
+      "latex": "p(x\\mid\\alpha,\\lambda)\\propto x^{\\alpha-1}e^{-x/\\lambda}",
+      "latex_render": "p(x\\mid\\alpha,\\lambda)\\propto x^{\\alpha-1}e^{-x/\\lambda}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.25d",
+      "anchor": "formula-a2.25d",
+      "label": "Formula (A2.25d)",
+      "section_id": "Evolution_appendix2_014",
+      "latex": "\\mu_{x}=\\frac{\\alpha}{\\beta}=\\alpha\\lambda\\qquad and\\qquad\\sigma_{x}^{2}=\\frac{\\alpha}{\\beta^{2}}=\\alpha\\lambda^{2}",
+      "latex_render": "\\mu_{x}=\\frac{\\alpha}{\\beta}=\\alpha\\lambda\\qquad and\\qquad\\sigma_{x}^{2}=\\frac{\\alpha}{\\beta^{2}}=\\alpha\\lambda^{2}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.25e",
+      "anchor": "formula-a2.25e",
+      "label": "Formula (A2.25e)",
+      "section_id": "Evolution_appendix2_014",
+      "latex": "\\alpha=\\frac{\\mu_{x}^{2}}{\\sigma_{x}^{2}}\\qquad and\\qquad\\beta=\\frac{\\mu_{x}}{\\sigma_{x}^{2}}",
+      "latex_render": "\\alpha=\\frac{\\mu_{x}^{2}}{\\sigma_{x}^{2}}\\qquad and\\qquad\\beta=\\frac{\\mu_{x}}{\\sigma_{x}^{2}}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.26a",
+      "anchor": "formula-a2.26a",
+      "label": "Formula (A2.26a)",
+      "section_id": "Evolution_appendix2_014",
+      "latex": "\\Gamma(\\alpha)=\\int_{0}^{\\infty}y^{\\alpha-1}e^{-y}d y\\qquadfor\\alpha>0",
+      "latex_render": "\\Gamma(\\alpha)=\\int_{0}^{\\infty}y^{\\alpha-1}e^{-y}d y\\qquadfor\\alpha>0",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.26b",
+      "anchor": "formula-a2.26b",
+      "label": "Formula (A2.26b)",
+      "section_id": "Evolution_appendix2_014",
+      "latex": "\\Gamma(\\alpha+1)=\\alpha\\Gamma(\\alpha),\\quad\\Gamma(1)=1,\\quad and\\quad\\Gamma(1/2)=\\sqrt{\\pi}",
+      "latex_render": "\\Gamma(\\alpha+1)=\\alpha\\Gamma(\\alpha),\\quad\\Gamma(1)=1,\\quad and\\quad\\Gamma(1/2)=\\sqrt{\\pi}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.27a",
+      "anchor": "formula-a2.27a",
+      "label": "Formula (A2.27a)",
+      "section_id": "Evolution_appendix2_014",
+      "latex": "p(x\\mid n)=\\frac{2^{-n/2}}{\\Gamma(n/2)}x^{n/2-1}e^{-x/2}",
+      "latex_render": "p(x\\mid n)=\\frac{2^{-n/2}}{\\Gamma(n/2)}x^{n/2-1}e^{-x/2}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.27b",
+      "anchor": "formula-a2.27b",
+      "label": "Formula (A2.27b)",
+      "section_id": "Evolution_appendix2_014",
+      "latex": "p(x)\\propto x^{n/2-1}e^{-x/2}",
+      "latex_render": "p(x)\\propto x^{n/2-1}e^{-x/2}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.28a",
+      "anchor": "formula-a2.28a",
+      "label": "Formula (A2.28a)",
+      "section_id": "Evolution_appendix2_014",
+      "latex": "p(x\\mid\\alpha,\\beta)=\\frac{\\beta^{\\alpha}}{\\Gamma(\\alpha)}x^{-(\\alpha+1)}e^{-\\beta/x}\\quad for\\alpha,\\beta,x>0",
+      "latex_render": "p(x\\mid\\alpha,\\beta)=\\frac{\\beta^{\\alpha}}{\\Gamma(\\alpha)}x^{-(\\alpha+1)}e^{-\\beta/x}\\quad for\\alpha,\\beta,x>0",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.28b",
+      "anchor": "formula-a2.28b",
+      "label": "Formula (A2.28b)",
+      "section_id": "Evolution_appendix2_014",
+      "latex": "\\mu_{x}=\\frac{\\beta}{\\alpha-1}\\quad for\\alpha>1\\quad and\\quad\\sigma_{x}^{2}=\\frac{\\beta^{2}}{(\\alpha-1)^{2}(\\alpha-2)}\\quad for\\alpha>2",
+      "latex_render": "\\mu_{x}=\\frac{\\beta}{\\alpha-1}\\quad for\\alpha>1\\quad and\\quad\\sigma_{x}^{2}=\\frac{\\beta^{2}}{(\\alpha-1)^{2}(\\alpha-2)}\\quad for\\alpha>2",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.28c",
+      "anchor": "formula-a2.28c",
+      "label": "Formula (A2.28c)",
+      "section_id": "Evolution_appendix2_014",
+      "latex": "p(x\\mid\\alpha,\\beta)\\propto x^{-(\\alpha+1)}e^{-\\beta/x}",
+      "latex_render": "p(x\\mid\\alpha,\\beta)\\propto x^{-(\\alpha+1)}e^{-\\beta/x}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.29a",
+      "anchor": "formula-a2.29a",
+      "label": "Formula (A2.29a)",
+      "section_id": "Evolution_appendix2_014",
+      "latex": "p(x\\mid n)=\\frac{2^{-n/2}}{\\Gamma(n/2)}x^{-(n/2+1)}e^{-1/(2x)}",
+      "latex_render": "p(x\\mid n)=\\frac{2^{-n/2}}{\\Gamma(n/2)}x^{-(n/2+1)}e^{-1/(2x)}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.29b",
+      "anchor": "formula-a2.29b",
+      "label": "Formula (A2.29b)",
+      "section_id": "Evolution_appendix2_014",
+      "latex": "\\mu_{x}=\\frac{1}{n-2}\\qquad and\\qquad\\sigma_{x}^{2}=\\frac{2}{(n-2)^{2}(n-4)}",
+      "latex_render": "\\mu_{x}=\\frac{1}{n-2}\\qquad and\\qquad\\sigma_{x}^{2}=\\frac{2}{(n-2)^{2}(n-4)}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.30a",
+      "anchor": "formula-a2.30a",
+      "label": "Formula (A2.30a)",
+      "section_id": "Evolution_appendix2_014",
+      "latex": "p(x\\mid n)\\propto x^{-(n/2+1)}e^{-\\sigma_{0}^{2}/(2x)}",
+      "latex_render": "p(x\\mid n)\\propto x^{-(n/2+1)}e^{-\\sigma_{0}^{2}/(2x)}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.30b",
+      "anchor": "formula-a2.30b",
+      "label": "Formula (A2.30b)",
+      "section_id": "Evolution_appendix2_014",
+      "latex": "x\\sim\\chi_{(n,\\sigma_{0}^{2})}^{-2},\\qquad\\mathrm{t h e n}\\qquad\\sigma_{0}^{2}x\\sim\\chi_{n}^{-2}",
+      "latex_render": "x\\sim\\chi_{(n,\\sigma_{0}^{2})}^{-2},\\qquad\\mathrm{t h e n}\\qquad\\sigma_{0}^{2}x\\sim\\chi_{n}^{-2}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.31a",
+      "anchor": "formula-a2.31a",
+      "label": "Formula (A2.31a)",
+      "section_id": "Evolution_appendix2_015",
+      "latex": "\\ell(\\sigma^{2}\\mid\\mathbf{x},\\mu)\\propto(\\sigma^{2})^{-n/2}\\exp\\left(-\\frac{nS^{2}}{2\\sigma^{2}}\\right)",
+      "latex_render": "\\ell(\\sigma^{2}\\mid\\mathbf{x},\\mu)\\propto(\\sigma^{2})^{-n/2}\\exp\\left(-\\frac{nS^{2}}{2\\sigma^{2}}\\right)",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.31b",
+      "anchor": "formula-a2.31b",
+      "label": "Formula (A2.31b)",
+      "section_id": "Evolution_appendix2_015",
+      "latex": "S^{2}=\\frac{1}{n}\\sum_{i=1}^{n}\\left(x_{i}-\\mu\\right)^{2}",
+      "latex_render": "S^{2}=\\frac{1}{n}\\sum_{i=1}^{n}\\left(x_{i}-\\mu\\right)^{2}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.32a",
+      "anchor": "formula-a2.32a",
+      "label": "Formula (A2.32a)",
+      "section_id": "Evolution_appendix2_015",
+      "latex": "\\begin{align*}p(\\sigma^{2}\\mid\\mathbf{x},\\mu)&\\propto(\\sigma^{2})^{-n/2}\\exp\\left(-\\frac{nS^{2}}{2\\sigma^{2}}\\right)(\\sigma^{2})^{-\\nu_{0}/2-1}\\cdot\\exp\\left(-\\frac{\\sigma_{0}^{2}}{2\\sigma^{2}}\\right)\\\\&=(\\sigma^{2})^{-(n+\\nu_{0})/2-1}\\exp\\left(-\\frac{nS^{2}+\\sigma_{0}^{2}}{2\\sigma^{2}}\\right)\\end{align*}",
+      "latex_render": "\\begin{aligned}p(\\sigma^{2}\\mid\\mathbf{x},\\mu)&\\propto(\\sigma^{2})^{-n/2}\\exp\\left(-\\frac{nS^{2}}{2\\sigma^{2}}\\right)(\\sigma^{2})^{-\\nu_{0}/2-1}\\cdot\\exp\\left(-\\frac{\\sigma_{0}^{2}}{2\\sigma^{2}}\\right)\\\\&=(\\sigma^{2})^{-(n+\\nu_{0})/2-1}\\exp\\left(-\\frac{nS^{2}+\\sigma_{0}^{2}}{2\\sigma^{2}}\\right)\\end{aligned}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.32b",
+      "anchor": "formula-a2.32b",
+      "label": "Formula (A2.32b)",
+      "section_id": "Evolution_appendix2_015",
+      "latex": "\\begin{array}{r l}{\\mathrm{t h e~p r i o r~}\\sigma^{2}\\sim\\chi_{\\nu_{0},\\sigma_{0}^{2}}^{-2}}&{{}\\mathrm{y i e l d s~t h e~p o s t e r i o r}\\quad\\sigma^{2}\\mid(\\mathbf{x},\\mu)\\sim\\chi_{\\nu_{n},\\sigma_{n}^{2}}^{-2}}\\end{array}",
+      "latex_render": "\\begin{array}{r l}{\\mathrm{t h e~p r i o r~}\\sigma^{2}\\sim\\chi_{\\nu_{0},\\sigma_{0}^{2}}^{-2}}&{{}\\mathrm{y i e l d s~t h e~p o s t e r i o r}\\quad\\sigma^{2}\\mid(\\mathbf{x},\\mu)\\sim\\chi_{\\nu_{n},\\sigma_{n}^{2}}^{-2}}\\end{array}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.33a",
+      "anchor": "formula-a2.33a",
+      "label": "Formula (A2.33a)",
+      "section_id": "Evolution_appendix2_016",
+      "latex": "t_{\\nu}=\\frac{U}{\\sqrt{\\chi_{\\nu}^{2}/\\nu}}",
+      "latex_render": "t_{\\nu}=\\frac{U}{\\sqrt{\\chi_{\\nu}^{2}/\\nu}}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.33b",
+      "anchor": "formula-a2.33b",
+      "label": "Formula (A2.33b)",
+      "section_id": "Evolution_appendix2_016",
+      "latex": "t_{\\nu}(\\mu,\\sigma)=\\mu+\\sigma\\cdot t_{\\nu}",
+      "latex_render": "t_{\\nu}(\\mu,\\sigma)=\\mu+\\sigma\\cdot t_{\\nu}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.33c",
+      "anchor": "formula-a2.33c",
+      "label": "Formula (A2.33c)",
+      "section_id": "Evolution_appendix2_016",
+      "latex": "E[t_{\\nu}(\\mu,\\sigma)]=\\mu\\quad and\\quad\\sigma^{2}[t_{\\nu}(\\mu,\\sigma)]=\\sigma^{2}\\frac{\\nu}{\\nu-2}\\quad for\\nu>2",
+      "latex_render": "E[t_{\\nu}(\\mu,\\sigma)]=\\mu\\quad and\\quad\\sigma^{2}[t_{\\nu}(\\mu,\\sigma)]=\\sigma^{2}\\frac{\\nu}{\\nu-2}\\quad for\\nu>2",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.33d",
+      "anchor": "formula-a2.33d",
+      "label": "Formula (A2.33d)",
+      "section_id": "Evolution_appendix2_016",
+      "latex": "p(x\\mid\\nu,\\mu,\\sigma)=\\frac{\\Gamma([\\nu+1]/2)}{\\Gamma(\\nu/2)\\sigma\\sqrt{\\pi\\nu}}\\left[1+\\frac{1}{\\nu}\\left(\\frac{x-\\mu}{\\sigma}\\right)^{2}\\right]^{-(\\nu+1)/2}",
+      "latex_render": "p(x\\mid\\nu,\\mu,\\sigma)=\\frac{\\Gamma([\\nu+1]/2)}{\\Gamma(\\nu/2)\\sigma\\sqrt{\\pi\\nu}}\\left[1+\\frac{1}{\\nu}\\left(\\frac{x-\\mu}{\\sigma}\\right)^{2}\\right]^{-(\\nu+1)/2}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.34a",
+      "anchor": "formula-a2.34a",
+      "label": "Formula (A2.34a)",
+      "section_id": "Evolution_appendix2_017",
+      "latex": "p(\\mu,\\sigma^{2})=p(\\mu\\mid\\sigma^{2})\\cdot p(\\sigma^{2})",
+      "latex_render": "p(\\mu,\\sigma^{2})=p(\\mu\\mid\\sigma^{2})\\cdot p(\\sigma^{2})",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.34b",
+      "anchor": "formula-a2.34b",
+      "label": "Formula (A2.34b)",
+      "section_id": "Evolution_appendix2_017",
+      "latex": "\\sigma^{2}\\sim\\chi_{\\nu_{0},\\sigma_{0}^{2}}^{-2}\\qquad\\mathrm{a n d}\\qquad\\mu\\mid\\sigma^{2}\\sim\\mathrm{N}\\left(\\mu_{0},\\frac{\\sigma^{2}}{\\kappa_{0}}\\right)",
+      "latex_render": "\\sigma^{2}\\sim\\chi_{\\nu_{0},\\sigma_{0}^{2}}^{-2}\\qquad\\mathrm{a n d}\\qquad\\mu\\mid\\sigma^{2}\\sim\\mathrm{N}\\left(\\mu_{0},\\frac{\\sigma^{2}}{\\kappa_{0}}\\right)",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.35",
+      "anchor": "formula-a2.35",
+      "label": "Formula (A2.35)",
+      "section_id": "Evolution_appendix2_017",
+      "latex": "\\sigma^{2}\\left|\\textbf{x}\\sim\\chi_{\\nu_{n},\\sigma_{n}^{2}}^{-2}\\right.\\quad\\mathrm{a n d}\\quad\\mu\\left|\\textbf{x}\\sim\\textbf{t}_{\\nu_{n}}\\left(\\mu_{n},\\frac{\\sigma_{n}^{2}}{\\kappa_{n}}\\right)\\right.",
+      "latex_render": "\\sigma^{2}\\left|\\textbf{x}\\sim\\chi_{\\nu_{n},\\sigma_{n}^{2}}^{-2}\\right.\\quad\\mathrm{a n d}\\quad\\mu\\left|\\textbf{x}\\sim\\textbf{t}_{\\nu_{n}}\\left(\\mu_{n},\\frac{\\sigma_{n}^{2}}{\\kappa_{n}}\\right)\\right.",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.36a",
+      "anchor": "formula-a2.36a",
+      "label": "Formula (A2.36a)",
+      "section_id": "Evolution_appendix2_017",
+      "latex": "\\nu_{n}=\\nu_{0}+n,\\qquad\\kappa_{n}=\\kappa_{0}+n",
+      "latex_render": "\\nu_{n}=\\nu_{0}+n,\\qquad\\kappa_{n}=\\kappa_{0}+n",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.36b",
+      "anchor": "formula-a2.36b",
+      "label": "Formula (A2.36b)",
+      "section_id": "Evolution_appendix2_017",
+      "latex": "\\mu_{n}=\\mu_{0}\\frac{\\kappa_{0}}{\\kappa_{n}}+\\overline{x}\\frac{n}{\\kappa_{n}}=\\mu_{0}\\frac{\\kappa_{0}}{\\kappa_{0}+n}+\\overline{x}\\frac{n}{\\kappa_{0}+n}",
+      "latex_render": "\\mu_{n}=\\mu_{0}\\frac{\\kappa_{0}}{\\kappa_{n}}+\\overline{x}\\frac{n}{\\kappa_{n}}=\\mu_{0}\\frac{\\kappa_{0}}{\\kappa_{0}+n}+\\overline{x}\\frac{n}{\\kappa_{0}+n}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.36c",
+      "anchor": "formula-a2.36c",
+      "label": "Formula (A2.36c)",
+      "section_id": "Evolution_appendix2_017",
+      "latex": "\\sigma_{n}^{2}=\\frac{1}{\\nu_{n}}\\left(\\nu_{0}\\sigma_{0}^{2}+\\sum_{i=1}^{n}\\left(x_{i}-\\overline{x}\\right)^{2}+\\frac{\\kappa_{0}n}{\\kappa_{n}}\\left(\\overline{x}-\\mu_{0}\\right)^{2}\\right)",
+      "latex_render": "\\sigma_{n}^{2}=\\frac{1}{\\nu_{n}}\\left(\\nu_{0}\\sigma_{0}^{2}+\\sum_{i=1}^{n}\\left(x_{i}-\\overline{x}\\right)^{2}+\\frac{\\kappa_{0}n}{\\kappa_{n}}\\left(\\overline{x}-\\mu_{0}\\right)^{2}\\right)",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.37a",
+      "anchor": "formula-a2.37a",
+      "label": "Formula (A2.37a)",
+      "section_id": "Evolution_appendix2_019",
+      "latex": "p(n_{1},\\cdots n_{k})=\\frac{n!}{n_{1}!n_{2}!\\cdots n_{k}!}p_{1}^{n_{1}}\\cdots p_{k}^{n_{k}}\\quad where\\quad\\sum_{i}n_{i}=n\\quad and\\quad\\sum_{i}p_{i}=1",
+      "latex_render": "p(n_{1},\\cdots n_{k})=\\frac{n!}{n_{1}!n_{2}!\\cdots n_{k}!}p_{1}^{n_{1}}\\cdots p_{k}^{n_{k}}\\quad where\\quad\\sum_{i}n_{i}=n\\quad and\\quad\\sum_{i}p_{i}=1",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.37b",
+      "anchor": "formula-a2.37b",
+      "label": "Formula (A2.37b)",
+      "section_id": "Evolution_appendix2_019",
+      "latex": "\\begin{align*}p(x_1,\\cdots x_k\\mid\\alpha_1,\\cdots,\\alpha_k)=\\frac{\\Gamma(\\alpha_0)}{\\Gamma(\\alpha_1)\\cdots\\Gamma(\\alpha_k)}x_1^{\\alpha_1-1}\\cdots x_k^{\\alpha_k-1}\\end{align*}",
+      "latex_render": "\\begin{aligned}p(x_1,\\cdots x_k\\mid\\alpha_1,\\cdots,\\alpha_k)=\\frac{\\Gamma(\\alpha_0)}{\\Gamma(\\alpha_1)\\cdots\\Gamma(\\alpha_k)}x_1^{\\alpha_1-1}\\cdots x_k^{\\alpha_k-1}\\end{aligned}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.37c",
+      "anchor": "formula-a2.37c",
+      "label": "Formula (A2.37c)",
+      "section_id": "Evolution_appendix2_019",
+      "latex": "\\alpha_{0}=\\sum_{i=1}^{k}\\alpha_{i}\\quad with\\quad\\alpha_{i}>0,\\quad and\\quad\\sum_{i=1}^{k}x_{i}=1\\quad with\\quad0\\leq x_{i}\\leq1",
+      "latex_render": "\\alpha_{0}=\\sum_{i=1}^{k}\\alpha_{i}\\quad with\\quad\\alpha_{i}>0,\\quad and\\quad\\sum_{i=1}^{k}x_{i}=1\\quad with\\quad0\\leq x_{i}\\leq1",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.37d",
+      "anchor": "formula-a2.37d",
+      "label": "Formula (A2.37d)",
+      "section_id": "Evolution_appendix2_019",
+      "latex": "\\begin{align*}\\mu_{x_i}={\\alpha_i\\over\\alpha_0},\\quad\\sigma^2(x_i)={\\alpha_i(\\alpha_0-\\alpha_i)\\over\\alpha_0^2(\\alpha_0+1)},\\quad{\\rm and}\\quad\\sigma(x_i,x_j)=-{\\alpha_i\\alpha_j\\over\\alpha_0^2(\\alpha_0+1)}\\end{align*}",
+      "latex_render": "\\begin{aligned}\\mu_{x_i}={\\alpha_i\\over\\alpha_0},\\quad\\sigma^2(x_i)={\\alpha_i(\\alpha_0-\\alpha_i)\\over\\alpha_0^2(\\alpha_0+1)},\\quad{\\rm and}\\quad\\sigma(x_i,x_j)=-{\\alpha_i\\alpha_j\\over\\alpha_0^2(\\alpha_0+1)}\\end{aligned}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.38a",
+      "anchor": "formula-a2.38a",
+      "label": "Formula (A2.38a)",
+      "section_id": "Evolution_appendix2_019",
+      "latex": "\\begin{align*}p(x)=\\frac{\\Gamma(\\alpha+\\beta)}{\\Gamma(\\alpha)\\Gamma(\\beta)}\\;x^{\\alpha-1}(1-x)^{\\beta-1}\\quad{\\rm for}\\quad0\\le x\\le1,\\quad\\alpha,\\;\\beta>0\\end{align*}",
+      "latex_render": "\\begin{aligned}p(x)=\\frac{\\Gamma(\\alpha+\\beta)}{\\Gamma(\\alpha)\\Gamma(\\beta)}\\;x^{\\alpha-1}(1-x)^{\\beta-1}\\quad{\\rm for}\\quad0\\le x\\le1,\\quad\\alpha,\\;\\beta>0\\end{aligned}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.38b",
+      "anchor": "formula-a2.38b",
+      "label": "Formula (A2.38b)",
+      "section_id": "Evolution_appendix2_019",
+      "latex": "\\begin{align*}\\mu=\\frac{\\alpha}{\\alpha+\\beta}\\qquad{\\rm and}\\qquad\\sigma^2=\\frac{\\alpha\\beta}{(\\alpha+\\beta)^2(\\alpha+\\beta-1)}\\end{align*}",
+      "latex_render": "\\begin{aligned}\\mu=\\frac{\\alpha}{\\alpha+\\beta}\\qquad{\\rm and}\\qquad\\sigma^2=\\frac{\\alpha\\beta}{(\\alpha+\\beta)^2(\\alpha+\\beta-1)}\\end{aligned}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.39",
+      "anchor": "formula-a2.39",
+      "label": "Formula (A2.39)",
+      "section_id": "Evolution_appendix2_020",
+      "latex": "\\mathbf{W}=\\sum_{i=1}^{n}\\mathbf{x}_{i}\\mathbf{x}_{i}^{T}\\sim W_{n}(\\mathbf{V})",
+      "latex_render": "\\mathbf{W}=\\sum_{i=1}^{n}\\mathbf{x}_{i}\\mathbf{x}_{i}^{T}\\sim W_{n}(\\mathbf{V})",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.40",
+      "anchor": "formula-a2.40",
+      "label": "Formula (A2.40)",
+      "section_id": "Evolution_appendix2_020",
+      "latex": "p(\\mathbf{W}\\mid\\mathbf{V})=2^{-n k/2}\\pi^{-k(k-1)/k}\\mid\\mathbf{V}\\mid^{-n/2}\\mid\\mathbf{W}\\mid^{(n+k+1)/2}\\frac{\\exp\\left(-\\frac{1}{2}\\mathbf{t}\\mathbf{r}\\left[\\mathbf{V}^{-1}\\mathbf{W}\\right]\\right)}{\\prod_{i=1}^{k}\\Gamma\\left(\\frac{n+1-i}{2}\\right)}",
+      "latex_render": "p(\\mathbf{W}\\mid\\mathbf{V})=2^{-n k/2}\\pi^{-k(k-1)/k}\\mid\\mathbf{V}\\mid^{-n/2}\\mid\\mathbf{W}\\mid^{(n+k+1)/2}\\frac{\\exp\\left(-\\frac{1}{2}\\mathbf{t}\\mathbf{r}\\left[\\mathbf{V}^{-1}\\mathbf{W}\\right]\\right)}{\\prod_{i=1}^{k}\\Gamma\\left(\\frac{n+1-i}{2}\\right)}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A2.41",
+      "anchor": "formula-a2.41",
+      "label": "Formula (A2.41)",
+      "section_id": "Evolution_appendix2_020",
+      "latex": "p(\\mathbf{W}|\\mathbf{V})=2^{-n k/2}\\pi^{-k(k-1)/k}|\\mathbf{V}|^{n/2}|\\mathbf{W}|^{-(n+k+1)/2}\\frac{\\exp\\left(-\\frac{1}{2}\\mathbf{t}\\mathbf{r}\\left[\\mathbf{V}\\mathbf{W}^{-1}\\right]\\right)}{\\prod_{i=1}^{k}\\Gamma\\left(\\frac{n+1-i}{2}\\right)}",
+      "latex_render": "p(\\mathbf{W}|\\mathbf{V})=2^{-n k/2}\\pi^{-k(k-1)/k}|\\mathbf{V}|^{n/2}|\\mathbf{W}|^{-(n+k+1)/2}\\frac{\\exp\\left(-\\frac{1}{2}\\mathbf{t}\\mathbf{r}\\left[\\mathbf{V}\\mathbf{W}^{-1}\\right]\\right)}{\\prod_{i=1}^{k}\\Gamma\\left(\\frac{n+1-i}{2}\\right)}",
+      "origin": "paddle"
+    }
+  ],
+  "references": {
+    "Evolution_appendix2_section_001": [],
+    "Evolution_appendix2_001": [],
+    "Evolution_appendix2_002": [
+      {
+        "kind": "chapter",
+        "id": "19",
+        "label": "Chapter 19",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_appendix2_003": [
+      {
+        "kind": "example",
+        "id": "A2.1",
+        "label": "Example A2.1",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A2.1a",
+        "label": "Equation A2.1a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "A2.2",
+        "label": "Example A2.2",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_appendix2_004": [
+      {
+        "kind": "equation",
+        "id": "A2.4c",
+        "label": "Equation A2.4c",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_appendix2_005": [],
+    "Evolution_appendix2_006": [],
+    "Evolution_appendix2_007": [],
+    "Evolution_appendix2_008": [
+      {
+        "kind": "example",
+        "id": "A2.3",
+        "label": "Example A2.3",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A2.10a",
+        "label": "Equation A2.10a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A2.12",
+        "label": "Equation A2.12",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_appendix2_009": [],
+    "Evolution_appendix2_010": [
+      {
+        "kind": "figure",
+        "id": "A2.1",
+        "label": "Figure A2.1",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_appendix2_011": [
+      {
+        "kind": "example",
+        "id": "A2.4",
+        "label": "Example A2.4",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A2.38a",
+        "label": "Equation A2.38a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "figure",
+        "id": "A2.3",
+        "label": "Figure A2.3",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "A2.5",
+        "label": "Example A2.5",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_appendix2_012": [],
+    "Evolution_appendix2_013": [
+      {
+        "kind": "equation",
+        "id": "A2.19",
+        "label": "Equation A2.19",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A2.20b",
+        "label": "Equation A2.20b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A2.22b",
+        "label": "Equation A2.22b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_appendix2_014": [
+      {
+        "kind": "figure",
+        "id": "A2.2",
+        "label": "Figure A2.2",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A2.26a",
+        "label": "Equation A2.26a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_appendix2_015": [
+      {
+        "kind": "equation",
+        "id": "A2.30a",
+        "label": "Equation A2.30a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_appendix2_016": [
+      {
+        "kind": "equation",
+        "id": "A5.14c",
+        "label": "LW Equation A5.14c",
+        "book_hint": "Genetics",
+        "link_scope": "lw"
+      },
+      {
+        "kind": "equation",
+        "id": "2.12a",
+        "label": "LW Equation 2.12a",
+        "book_hint": "Genetics",
+        "link_scope": "lw"
+      }
+    ],
+    "Evolution_appendix2_017": [],
+    "Evolution_appendix2_018": [
+      {
+        "kind": "table",
+        "id": "A2.2",
+        "label": "Table A2.2",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_appendix2_019": [
+      {
+        "kind": "figure",
+        "id": "A2.3",
+        "label": "Figure A2.3",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_appendix2_020": [
+      {
+        "kind": "chapter",
+        "id": "11",
+        "label": "Chapter 11",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ]
+  },
+  "semantic_chapter_links": [
+    {
+      "current_section_id": "Evolution_appendix2_002",
+      "current_anchor": "evolution_appendix2_002",
+      "source_chapter_id": "Evolution_chapter19",
+      "label": "Chapter 19",
+      "target_anchor": "evolution_chapter19_section_001",
+      "target_label": "Chapter 19",
+      "target_ref_type": "chapter",
+      "target_ref_id": "19",
+      "target_section_title": "Chapter 19 · Analysis of Short-term Selection Experiments: 2. Mixed-model and Bayesian Approaches",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "uncertainty, two specific features have fueled the rapid growth of Bayesian approaches in genetics and genomics. First, under a Bayesian analysis, all parameters are random effects as opposed to fixed effects (Chapter 19). This has profound implications for degrees of freedom. Consider a gene expression study with 30,000 features (genes of interest), whose mRNA levels are contrasted over a set of 100 normal liver ce…",
+      "match_source": "llm-prerequisite"
+    },
+    {
+      "current_section_id": "Evolution_appendix2_020",
+      "current_anchor": "evolution_appendix2_020",
+      "source_chapter_id": "Evolution_chapter11",
+      "label": "Chapter 11",
+      "target_anchor": "evolution_chapter11_section_001",
+      "target_label": "Chapter 11",
+      "target_ref_type": "chapter",
+      "target_ref_id": "11",
+      "target_section_title": "Chapter 11 · Changes in Genetic Variation Induced by Drift",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": ", because $x i \\sim N(0,1)$. The Wishart is the sampling distribution for covariance matrices (just like the $ \\chi^{2} $ is associated with the distribution of a sample variance for data drawn from a normal; Chapter 11). The pdf of the Wishart distribution is $$ p(\\mathbf{W}\\mid\\mathbf{V})=2^{-n k/2}\\pi^{-k(k-1)/k}\\mid\\mathbf{V}\\mid^{-n/2}\\mid\\mathbf{W}\\mid^{(n+k+1)/2}\\frac{\\exp\\left(-\\frac{1}{2}\\mathbf{t}\\mathbf{r…",
+      "match_source": "chapter-overview"
+    }
+  ],
+  "prerequisites": [
+    {
+      "id": "prereq-evolution_chapter19",
+      "title": "Chapter 19 · Fixed vs Random Effects",
+      "source_chapter_id": "Evolution_chapter19",
+      "used_in_sections": [
+        "Evolution_appendix2_002"
+      ],
+      "why_needed": "附录中解释贝叶斯方法时将参数视为随机效应，需先理解固定效应与随机效应的区别。",
+      "key_points": [
+        "固定效应假设参数是常数，随机效应假设参数来自分布",
+        "混合模型同时包含固定和随机效应",
+        "贝叶斯分析将随机效应作为先验分布的一部分"
+      ],
+      "source_links": [
+        {
+          "chapter_id": "Evolution_chapter19",
+          "label": "Chapter 19",
+          "markdown_path": "/data/textbook/Evolution_chapter19_textbook.md",
+          "anchor": "evolution_chapter19_section_001",
+          "section_title": "Chapter 19 · Analysis of Short-term Selection Experiments: 2. Mixed-model and Bayesian Approaches",
+          "ref_type": "chapter",
+          "ref_id": "19",
+          "book_hint": "",
+          "link_scope": "current-book",
+          "excerpt": "Chapter 19 · Analysis of Short-term Selection Experiments: 2. Mixed-model and Bayesian Approaches"
+        }
+      ],
+      "source_excerpt": "Chapter 19 · Analysis of Short-term Selection Experiments: 2. Mixed-model and Bayesian Approaches",
+      "summary_status": "llm-validated",
+      "usage_count": 1,
+      "explicit_asset_refs": 0,
+      "priority_score": 150,
+      "validated_by_llm": true,
+      "concept_title": "Chapter 19 · Fixed vs Random Effects",
+      "nav_label": "Chapter 19: Fixed vs Random",
+      "evidence_summary": "当前章节明确引用第19章关于固定效应与随机效应的区分作为贝叶斯方法的基础。"
+    }
+  ],
+  "llm": {
+    "requests_total": 3,
+    "cache_hits": 0,
+    "cache_writes": 3,
+    "remote_calls": 3,
+    "budget_rejections": 0,
+    "prompt_chars_sent": 6731,
+    "response_chars_received": 845,
+    "api_prompt_tokens": 1735,
+    "api_completion_tokens": 2140,
+    "api_total_tokens": 3875,
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "cache_enabled": true,
+    "cache_dir": "D:\\大学资料\\大二\\LLM-Agent科学文献系统知识库处理\\tmp\\llm_cache",
+    "max_remote_calls": 0,
+    "max_prompt_chars_total": 0,
+    "max_response_chars_total": 0,
+    "validated_only": true,
+    "preserved_from_previous_build": true
+  }
+}

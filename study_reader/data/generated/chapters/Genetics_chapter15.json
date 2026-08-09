@@ -1,0 +1,2386 @@
+{
+  "sections": [
+    {
+      "id": "Genetics_chapter15_section_001",
+      "title": "Chapter 15 · Mapping and Characterizing QTLs: Inbred Line Crosses",
+      "nav_label": "Mapping and Characterizing QTLs: Inbred Line Crosses",
+      "raw_title": "Chapter 15 · Mapping and Characterizing QTLs: Inbred Line Crosses",
+      "level": 1,
+      "depth": 0,
+      "anchor": "genetics_chapter15_section_001",
+      "text_preview": ""
+    },
+    {
+      "id": "Genetics_chapter15_001",
+      "title": "Mapping and Characterizing QTLs: Inbred Line Crosses",
+      "nav_label": "Mapping and Characterizing QTLs: Inbred Line Crosses",
+      "raw_title": "Genetics_chapter15_001 · Mapping and Characterizing QTLs: Inbred Line Crosses",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter15_001",
+      "text_preview": "Crosses between completely inbred lines offer an ideal setting for detecting and mapping QTLs by marker-trait associations, as all $ F {1}s $ are genetically identical and show complete linkage disequilibrium for genes differing between lines. A number of designs have been proposed to exploit these features. While usu…"
+    },
+    {
+      "id": "Genetics_chapter15_002",
+      "title": "FOUNDATIONS OF LINE-CROSS MAPPING",
+      "nav_label": "FOUNDATIONS OF LINE-CROSS MAPPING",
+      "raw_title": "Genetics_chapter15_002 · FOUNDATIONS OF LINE-CROSS MAPPING",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter15_002",
+      "text_preview": "The idea behind using marker information to map and characterize QTLs is quite simple: by crossing two inbred lines, linkage disequilibrium is created between loci that differ between the lines, and this in turn creates associations between marker loci and linked segregating QTLs. A large number of experimental design…"
+    },
+    {
+      "id": "Genetics_chapter15_003",
+      "title": "FOUNDATIONS OF LINE-CROSS MAPPING / Experimental Designs",
+      "nav_label": "Experimental Designs",
+      "raw_title": "Genetics_chapter15_003 · FOUNDATIONS OF LINE-CROSS MAPPING / Experimental Designs",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter15_003",
+      "text_preview": "The large number of possible designs can be categorized by the type of line-cross populations used for generating disequilibrium (e.g., $ F {2} $ vs. backcross populations) and the unit of marker analysis used (e.g., single markers vs. interval mapping). We consider these in turn. Starting with two completely inbred p…"
+    },
+    {
+      "id": "Genetics_chapter15_004",
+      "title": "FOUNDATIONS OF LINE-CROSS MAPPING / Conditional Probabilities of QTL Genotypes",
+      "nav_label": "Conditional Probabilities of QTL Genotypes",
+      "raw_title": "Genetics_chapter15_004 · FOUNDATIONS OF LINE-CROSS MAPPING / Conditional Probabilities of QTL Genotypes",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter15_004",
+      "text_preview": "The basic element upon which the formal theory of QTL mapping is built is the conditional probability that the QTL genotype is $ Q k $, given the observed marker genotype is $ M j $. From the definition of a conditional probability, this is $$ \\Pr(Q {k}\\mid M {j})=\\frac{\\Pr(Q {k}M {j})}{\\Pr(M {j})} \\tag{15.1} $$ The j…"
+    },
+    {
+      "id": "Genetics_chapter15_005",
+      "title": "FOUNDATIONS OF LINE-CROSS MAPPING / Expected Marker-class Means",
+      "nav_label": "Expected Marker-class Means",
+      "raw_title": "Genetics_chapter15_005 · FOUNDATIONS OF LINE-CROSS MAPPING / Expected Marker-class Means",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter15_005",
+      "text_preview": "With these conditional probabilities in hand, the expected trait values for the various marker genotypes follow immediately. Suppose there are $N$ QTL genotypes, $Q {1},\\cdots,Q {N}$, where the mean of the $k$th QTL genotype is $\\mu {Q {k}}$. The mean value for marker genotype $M {j}$ is just $$ \\mu {M {j}}=\\sum {k=1}…"
+    },
+    {
+      "id": "Genetics_chapter15_006",
+      "title": "FOUNDATIONS OF LINE-CROSS MAPPING / Marker Variances and Higher-order Moments",
+      "nav_label": "Marker Variances and Higher-order Moments",
+      "raw_title": "Genetics_chapter15_006 · FOUNDATIONS OF LINE-CROSS MAPPING / Marker Variances and Higher-order Moments",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter15_006",
+      "text_preview": "The same linkage disequilibrium that generates differences in the mean trait values of different marker genotypes can also create differences in the variance and higher moments (e.g., skewness and kurtosis). Such differences are not uncommon. In a cross of tomato species, for example, Weller et al. (1988) found signif…"
+    },
+    {
+      "id": "Genetics_chapter15_007",
+      "title": "FOUNDATIONS OF LINE-CROSS MAPPING / Overall Significance Level with Multiple Tests",
+      "nav_label": "Overall Significance Level with Multiple Tests",
+      "raw_title": "Genetics_chapter15_007 · FOUNDATIONS OF LINE-CROSS MAPPING / Overall Significance Level with Multiple Tests",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter15_007",
+      "text_preview": "The final statistical issue we need to introduce before exploring specific designs in detail is the problem of the proper significance level for an entire mapping experiment. In each mapping experiment, a large number of tests for marker-trait associations are typically performed. Thus, even if the significance level…"
+    },
+    {
+      "id": "Genetics_chapter15_008",
+      "title": "QTL DETECTION AND ESTIMATION USING LINEAR MODELS",
+      "nav_label": "QTL DETECTION AND ESTIMATION USING LINEAR MODELS",
+      "raw_title": "Genetics_chapter15_008 · QTL DETECTION AND ESTIMATION USING LINEAR MODELS",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter15_008",
+      "text_preview": "We now have all of the necessary machinery in place to consider particular estimation methods in greater detail. As noted above, the simplest test for a marker-trait association involves the comparison of the trait means of alternate marker genotypes. This is the basis for linear-model approaches for detecting QTLs. W…"
+    },
+    {
+      "id": "Genetics_chapter15_009",
+      "title": "QTL DETECTION AND ESTIMATION VIA MAXIMUM LIKELIHOOD",
+      "nav_label": "QTL DETECTION AND ESTIMATION VIA MAXIMUM LIKELIHOOD",
+      "raw_title": "Genetics_chapter15_009 · QTL DETECTION AND ESTIMATION VIA MAXIMUM LIKELIHOOD",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter15_009",
+      "text_preview": "Maximum likelihood (ML) methods are especially popular in the QTL mapping literature. While linear models use only marker means, ML uses the full information from the marker-trait distribution and, as such, is expected to be more powerful. The tradeoff is that ML is computationally intensive, requiring rather special…"
+    },
+    {
+      "id": "Genetics_chapter15_010",
+      "title": "QTL DETECTION AND ESTIMATION VIA MAXIMUM LIKELIHOOD / different marker genotypes as",
+      "nav_label": "different marker genotypes as",
+      "raw_title": "Genetics_chapter15_010 · QTL DETECTION AND ESTIMATION VIA MAXIMUM LIKELIHOOD / different marker genotypes as",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter15_010",
+      "text_preview": "$$ \\begin{align }\\ell(z\\mid MM)&=(1-c)^{2}\\varphi(z,\\mu {QQ},\\sigma^{2})+2c(1-c)\\varphi(z,\\mu {Qq},\\sigma^{2})+c^{2}\\varphi(z,\\mu {qq},\\sigma^{2})\\\\\\ell(z\\mid Mm)&=c(1-c)\\varphi(z,\\mu {QQ},\\sigma^{2})+\\left[(1-c)^{2}+c^{2}\\right]\\varphi(z,\\mu {Qq},\\sigma^{2})\\\\&\\quad+c(1-c)\\varphi(z,\\mu {qq},\\sigma^{2})\\\\\\ell(z\\mid mm…"
+    },
+    {
+      "id": "Genetics_chapter15_011",
+      "title": "QTL DETECTION AND ESTIMATION VIA MAXIMUM LIKELIHOOD / Likelihood Maps",
+      "nav_label": "Likelihood Maps",
+      "raw_title": "Genetics_chapter15_011 · QTL DETECTION AND ESTIMATION VIA MAXIMUM LIKELIHOOD / Likelihood Maps",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter15_011",
+      "text_preview": "In the likelihood framework, tests of whether a QTL is linked to the marker(s) under consideration are based on the likelihood-ratio statistic, $$ \\mathrm{LR}=-2\\ln\\left[\\frac{\\max\\ell {r}(\\mathbf{z})}{\\max\\ell(\\mathbf{z})}\\right] $$ where $ \\max \\ell {r}(\\mathbf{z}) $, given by Equation 13.8, is the maximum of the li…"
+    },
+    {
+      "id": "Genetics_chapter15_012",
+      "title": "QTL DETECTION AND ESTIMATION VIA MAXIMUM LIKELIHOOD / Precision of ML Estimates of QTL Position",
+      "nav_label": "Precision of ML Estimates of QTL Position",
+      "raw_title": "Genetics_chapter15_012 · QTL DETECTION AND ESTIMATION VIA MAXIMUM LIKELIHOOD / Precision of ML Estimates of QTL Position",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter15_012",
+      "text_preview": "Since ML estimates are approximately normally distributed for large sample sizes, confidence intervals for QTL effects and position can be constructed using the sampling variances for the ML estimates (Appendix 4). Approximate confidence intervals are often constructed using the one-LOD rule (Figure 15.2), with the co…"
+    },
+    {
+      "id": "Genetics_chapter15_013",
+      "title": "QTL DETECTION AND ESTIMATION VIA MAXIMUM LIKELIHOOD / ML Interval Mapping",
+      "nav_label": "ML Interval Mapping",
+      "raw_title": "Genetics_chapter15_013 · QTL DETECTION AND ESTIMATION VIA MAXIMUM LIKELIHOOD / ML Interval Mapping",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter15_013",
+      "text_preview": "ML mapping with line crosses usually employs the genotypes of a pair of flanking markers as the unit of analysis. The likelihood functions for such ML interval mapping follow from Equation 15.15 using the appropriate conditional probabilities for QTL genotypes given the two-locus marker genotypes (Jensen 1989, Lander…"
+    },
+    {
+      "id": "Genetics_chapter15_014",
+      "title": "QTL DETECTION AND ESTIMATION VIA MAXIMUM LIKELIHOOD / Approximating ML Interval Mapping by Haley-Knott Regressions",
+      "nav_label": "Approximating ML Interval Mapping by Haley-Knott Regressions",
+      "raw_title": "Genetics_chapter15_014 · QTL DETECTION AND ESTIMATION VIA MAXIMUM LIKELIHOOD / Approximating ML Interval Mapping by Haley-Knott Regressions",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter15_014",
+      "text_preview": "One problem with ML estimators is that they can be rather computationally demanding. Among other things, this limits the applicability of resampling methods, which require thousands of ML estimates to be computed per experiment. Fortunately, a simple regression procedure gives an excellent approximation of the likelih…"
+    },
+    {
+      "id": "Genetics_chapter15_015",
+      "title": "QTL DETECTION AND ESTIMATION VIA MAXIMUM LIKELIHOOD / DEALING WITH MULTIPLE QTLs",
+      "nav_label": "DEALING WITH MULTIPLE QTLs",
+      "raw_title": "Genetics_chapter15_015 · QTL DETECTION AND ESTIMATION VIA MAXIMUM LIKELIHOOD / DEALING WITH MULTIPLE QTLs",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter15_015",
+      "text_preview": "All of the methods discussed so far are best characterized as one-at-a-time approaches for mapping QTLs, as they all assume a single QTL linked to the marker(s) of interest. While such methods can detect the presence of multiple QTLs (e.g., finding marker effects on a number of different chromosomes), they cannot disc…"
+    },
+    {
+      "id": "Genetics_chapter15_016",
+      "title": "QTL DETECTION AND ESTIMATION VIA MAXIMUM LIKELIHOOD / Marker-Difference Regression",
+      "nav_label": "Marker-Difference Regression",
+      "raw_title": "Genetics_chapter15_016 · QTL DETECTION AND ESTIMATION VIA MAXIMUM LIKELIHOOD / Marker-Difference Regression",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter15_016",
+      "text_preview": "Two groups (Kearsey and Hyne 1994, Hyne and Kearsey 1995, Wu and Li 1994, 1996) proposed a very simple, yet powerful, regression method that simultaneously considers all of the markers on a single chromosome. While the authors refer to this method as marker regression or joint mapping, we will use the more descriptive…"
+    },
+    {
+      "id": "Genetics_chapter15_017",
+      "title": "QTL DETECTION AND ESTIMATION VIA MAXIMUM LIKELIHOOD / Interval Mapping with Marker Cofactors",
+      "nav_label": "Interval Mapping with Marker Cofactors",
+      "raw_title": "Genetics_chapter15_017 · QTL DETECTION AND ESTIMATION VIA MAXIMUM LIKELIHOOD / Interval Mapping with Marker Cofactors",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter15_017",
+      "text_preview": "The careful reader will note that marker-difference regression does not require knowledge of the multilocus marker genotypes of any individual, as all that enters into the analysis are the population means for each separate marker. An alternative approach for dealing with multiple QTLs that incorporates multilocus mar…"
+    },
+    {
+      "id": "Genetics_chapter15_018",
+      "title": "SAMPLES SIZES REQUIRED FOR QTL DETECTION",
+      "nav_label": "SAMPLES SIZES REQUIRED FOR QTL DETECTION",
+      "raw_title": "Genetics_chapter15_018 · SAMPLES SIZES REQUIRED FOR QTL DETECTION",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter15_018",
+      "text_preview": "Before investing the time and expense in a QTL mapping experiment, it is critical to have an understanding of the sample sizes required for the detection of QTLs of specified effects. The probability of a significant marker-trait association is increased by increasing the difference between means and/or by decreasing…"
+    },
+    {
+      "id": "Genetics_chapter15_019",
+      "title": "SAMPLES SIZES REQUIRED FOR QTL DETECTION / Power under Selective Genotyping",
+      "nav_label": "Power under Selective Genotyping",
+      "raw_title": "Genetics_chapter15_019 · SAMPLES SIZES REQUIRED FOR QTL DETECTION / Power under Selective Genotyping",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter15_019",
+      "text_preview": "The idea behind selective genotyping is that scoring characters is often much less expensive than scoring markers. Hence, if $n$ individuals are scored and genotyped in a normal design, there may be merit in scoring a larger number of individuals $n {z} n$ for the trait value, and then choosing a subset $n {g} \\leq n$…"
+    },
+    {
+      "id": "Genetics_chapter15_020",
+      "title": "SAMPLES SIZES REQUIRED FOR QTL DETECTION / Power and Repeatability of Mapping Experiments",
+      "nav_label": "Power and Repeatability of Mapping Experiments",
+      "raw_title": "Genetics_chapter15_020 · SAMPLES SIZES REQUIRED FOR QTL DETECTION / Power and Repeatability of Mapping Experiments",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter15_020",
+      "text_preview": "Even under designs where power is low, if the number of QTLs is large, it is likely that at least a few will be detected. In such cases of low power, the contributions of detected QTLs can be significantly (often very significantly) overestimated. Such a scenario, wherein we detect a small number of QTLs that appear t…"
+    },
+    {
+      "id": "Genetics_chapter15_021",
+      "title": "SELECTED APPLICATIONS",
+      "nav_label": "SELECTED APPLICATIONS",
+      "raw_title": "Genetics_chapter15_021 · SELECTED APPLICATIONS",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter15_021",
+      "text_preview": "We close by examining some selected applications of QTL mapping using inbred lines, followed by a summary of the conclusions that can be drawn from these studies to date. ---"
+    },
+    {
+      "id": "Genetics_chapter15_022",
+      "title": "SELECTED APPLICATIONS / The Nature of Transgressive Segregation",
+      "nav_label": "The Nature of Transgressive Segregation",
+      "raw_title": "Genetics_chapter15_022 · SELECTED APPLICATIONS / The Nature of Transgressive Segregation",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter15_022",
+      "text_preview": "QTL mapping experiments provide insight into the nature of transgression (or transgressive segregation), whereby some $ F {2} $ individuals show more extreme character values than are seen in either parental line. One explanation for such outliers is nonadditive gene action, i.e., epistasis and/or overdominance. Alter…"
+    },
+    {
+      "id": "Genetics_chapter15_023",
+      "title": "SELECTED APPLICATIONS / QTLs Involved in Reproductive Isolation in Mimulus",
+      "nav_label": "QTLs Involved in Reproductive Isolation in Mimulus",
+      "raw_title": "Genetics_chapter15_023 · SELECTED APPLICATIONS / QTLs Involved in Reproductive Isolation in Mimulus",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter15_023",
+      "text_preview": "Bradshaw et al. (1995) examined the genetic basis of floral differences between sibling species of monkey flower, Mimulus lewisii and M. cardinalis. Although the ranges of these species overlap and laboratory $ F {1} $ hybrids are completely interfertile, hybrid plants are not found in nature. Presumably, this is due…"
+    },
+    {
+      "id": "Genetics_chapter15_024",
+      "title": "SELECTED APPLICATIONS / QTLs Involved in Protein Regulation",
+      "nav_label": "QTLs Involved in Protein Regulation",
+      "raw_title": "Genetics_chapter15_024 · SELECTED APPLICATIONS / QTLs Involved in Protein Regulation",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter15_024",
+      "text_preview": "Quantitative-genetic approaches are often thought to be restricted to phenotypic characters such as body weight, height, or some measure of shape. However, they apply equally well to molecular characters. Damerval et al. (1994) analyzed the spot volumes of 72 anonymous proteins (from a specific seed tissue in maize) s…"
+    },
+    {
+      "id": "Genetics_chapter15_025",
+      "title": "SELECTED APPLICATIONS / QTLs in the Illinois Long-term Selection Lines of Maize",
+      "nav_label": "QTLs in the Illinois Long-term Selection Lines of Maize",
+      "raw_title": "Genetics_chapter15_025 · SELECTED APPLICATIONS / QTLs in the Illinois Long-term Selection Lines of Maize",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter15_025",
+      "text_preview": "In 1896, C. Hopkins initiated a set of maize lines selected for high and low oil and high and low protein content (Hopkins 1899). Selection on these lines continues today, and results from this remarkable study after 76 and 90 generations of selection have been summarized by Dudley (1977) and Dudley and Lambert (1992)…"
+    },
+    {
+      "id": "Genetics_chapter15_026",
+      "title": "SELECTED APPLICATIONS / QTLs Involved in the Differences Between Maize and Teosinte",
+      "nav_label": "QTLs Involved in the Differences Between Maize and Teosinte",
+      "raw_title": "Genetics_chapter15_026 · SELECTED APPLICATIONS / QTLs Involved in the Differences Between Maize and Teosinte",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter15_026",
+      "text_preview": "Maize and teosinte are dramatically different (see Figure 5.2), to the point that they were originally placed in separate genera. Hybrids, however, are fully interfertile and maize is believed to have resulted from domestication of teosinte (Beadle 1980, Doebley 1992). In an elegant series of papers, Doebley and colle…"
+    },
+    {
+      "id": "Genetics_chapter15_027",
+      "title": "SELECTED APPLICATIONS / QTLs for Age-specific Growth in Mice",
+      "nav_label": "QTLs for Age-specific Growth in Mice",
+      "raw_title": "Genetics_chapter15_027 · SELECTED APPLICATIONS / QTLs for Age-specific Growth in Mice",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter15_027",
+      "text_preview": "Cheverud et al. (1996) examined weight and growth using 535 F₂ mice from a cross between two inbred lines differing in size. A total of 75 microsatellite markers were used, generating 55 intervals that averaged around 28 cM in length. ML-interval mapping was used to examine age-specific weight (at ages 1 through 10 we…"
+    },
+    {
+      "id": "Genetics_chapter15_028",
+      "title": "SELECTED APPLICATIONS / Summary of QTL Mapping Experiments",
+      "nav_label": "Summary of QTL Mapping Experiments",
+      "raw_title": "Genetics_chapter15_028 · SELECTED APPLICATIONS / Summary of QTL Mapping Experiments",
+      "level": 2,
+      "depth": 1,
+      "anchor": "genetics_chapter15_028",
+      "text_preview": "QTL mapping using inbred-line crosses has been widely applied in many other Figure 15.12 · page 499 · source: Genetics chapter15 Figure 15.12 Locations for early (E) and late (L) growth QTLs on the 19 mouse autosomes. The marker locations are indicated by hatch marks. (From Cheverud et al. 1996.) species of plants (mo…"
+    }
+  ],
+  "assets": [
+    {
+      "kind": "table",
+      "id": "15.1",
+      "anchor": "table-15.1",
+      "label": "Table 15.1",
+      "section_id": "Genetics_chapter15_006",
+      "caption": "Table 15.1 The expected correlation between marker genotype (coded as $x = 1$ for $MM$, $x = -1$ for $mm$) and phenotypic value $z$ can be used to estimate $c$.",
+      "rows": [
+        [
+          "Genotype",
+          "Freq.",
+          "x",
+          "z"
+        ],
+        [
+          "MMQQ",
+          "$ (1-\\tilde{c})/2 $",
+          "1",
+          "zQQ"
+        ],
+        [
+          "MMqq",
+          "$ \\tilde{c}/2 $",
+          "1",
+          "zqq"
+        ],
+        [
+          "mmQQ",
+          "$ \\tilde{c}/2 $",
+          "-1",
+          "zQQ"
+        ],
+        [
+          "mmqq",
+          "$ (1-\\tilde{c})/2 $",
+          "-1",
+          "zqq"
+        ]
+      ]
+    },
+    {
+      "kind": "figure",
+      "id": "15.1",
+      "anchor": "figure-15.1",
+      "label": "Figure 15.1",
+      "section_id": "Genetics_chapter15_011",
+      "src": "figures/Genetics_15.1.png",
+      "caption": "Figure 15.1 Likelihood map for QTL positions on chromosome 10 in a cross of two tomato species. Evidence for a QTL is provided when the likelihood function exceeds the significance threshold (indicated by the horizontal line). The upper dashed curve gives the LOD score for fruit pH as a function of map position, showing strong evidence of a QTL near the middle of the chromosome. The lower two curves (solid and broken) are for fruit weight and soluble-solid concentration, neither of which shows a significant QTL effect on this chromosome. (After Paterson et al. 1988.)"
+    },
+    {
+      "kind": "figure",
+      "id": "15.2",
+      "anchor": "figure-15.2",
+      "label": "Figure 15.2",
+      "section_id": "Genetics_chapter15_012",
+      "src": "figures/Genetics_15.2.png",
+      "caption": "Figure 15.2 Hypothetical likelihood map for the marker-QTL recombination frequency c in a single-marker analysis. Points connected by straight lines are used to remind the reader that likelihood maps are computed by plotting the maximum of the likelihood function for each c value, usually done by considering steps of 0.01 to 0.05. A QTL is indicated if any part of the likelihood map exceeds a critical value. In such cases, the ML estimate for map position is the value of c giving the highest likelihood. Approximate confidence intervals for QTL position (one-LOD support intervals) are often constructed by including the set of all c values giving likelihoods within one LOD score of the maximum value."
+    },
+    {
+      "kind": "figure",
+      "id": "15.3",
+      "anchor": "figure-15.3",
+      "label": "Figure 15.3",
+      "section_id": "Genetics_chapter15_015",
+      "src": "figures/Genetics_15.3.png",
+      "caption": "Figure 15.3 A false (or ghost) QTL generated by using a single-QTL likelihood function when two linked QTLs are actually present."
+    },
+    {
+      "kind": "figure",
+      "id": "15.4",
+      "anchor": "figure-15.4",
+      "label": "Figure 15.4",
+      "section_id": "Genetics_chapter15_016",
+      "src": "figures/Genetics_15.4.png",
+      "caption": "Figure 15.4 Marker-difference regression plot for the data given in Example 9. Open circles assume a QTL at map position 90 cM, closed circles a QTL at position 60 cM (the true position). Note that the relationship is linear when the correct position is used, but highly nonlinear under the incorrect position."
+    },
+    {
+      "kind": "figure",
+      "id": "15.5",
+      "anchor": "figure-15.5",
+      "label": "Figure 15.5",
+      "section_id": "Genetics_chapter15_017",
+      "src": "figures/Genetics_15.5.png",
+      "caption": "Figure 15.5 Likelihood plots for the X chromosome for QTLs influencing body weight in mice. The likelihood map under standard ML interval mapping (dashed line) shows a single very broad peak. Using the same data, the CIM likelihood map (solid lines) shows two distinct peaks. Bw1 and Bw2 denote the two putative body-weight QTLs, and the dots on the chromosome indicate the positions of the marker loci. (After Dragani et al. 1995.)"
+    },
+    {
+      "kind": "figure",
+      "id": "15.6",
+      "anchor": "figure-15.6",
+      "label": "Figure 15.6",
+      "section_id": "Genetics_chapter15_017",
+      "src": "figures/Genetics_15.6.png",
+      "caption": "Figure 15.6 Suppose the interval being examined by CIM is between markers i and $ i + 1 $. Addition of the adjacent markers i - 1 and $ i + 2 $ as cofactors absorbs the effects of any linked QTLs to the left of marker i - 1 and to the right of marker $ i + 2 $. Their inclusion, however, does not remove the effects of QTLs present in the two intervals, $ (i - 1, i) $ and $ (i + 1, i + 2) $, flanking the interval of interest."
+    },
+    {
+      "kind": "figure",
+      "id": "15.7",
+      "anchor": "figure-15.7",
+      "label": "Figure 15.7",
+      "section_id": "Genetics_chapter15_020",
+      "src": "figures/Genetics_15.7.png",
+      "caption": "Figure 15.7 Under selective genotyping, $n_{z}$ individuals are scored for the trait value, with the uppermost and lowermost fraction $p$ of these being genotyped, giving $n_{g}=2p n_{z}$. Here we plot, as a function of $p$, the number of individuals scored for the trait ($n_{z}$) that yields the same power as scoring and genotyping all individuals in a population of size $n$."
+    },
+    {
+      "kind": "figure",
+      "id": "15.8",
+      "anchor": "figure-15.8",
+      "label": "Figure 15.8",
+      "section_id": "Genetics_chapter15_020",
+      "src": "figures/Genetics_15.8.png",
+      "caption": "Figure 15.8 Relationship between the probability (power) of detecting a QTL and the amount by which the estimated effect of a detected QTL overestimates it actual value. (Based on results from a simulation study of Beavis 1994.)"
+    },
+    {
+      "kind": "figure",
+      "id": "15.9",
+      "anchor": "figure-15.9",
+      "label": "Figure 15.9",
+      "section_id": "Genetics_chapter15_020",
+      "src": "figures/Genetics_15.9.png",
+      "caption": "Figure 15.9 Distribution of the estimated effects of detected QTLs. Here 40 QTLs, each accounting for 1.58% of the variance, are assumed. Using 100 $ F_{2} $ individuals, only 4% of such loci were detected. The average estimated fraction of total variation fraction accounted for by each detected QTLs was 16.3%, with the distribution of estimates skewed towards larger values. (From Beavis 1994.)"
+    },
+    {
+      "kind": "table",
+      "id": "15.3",
+      "anchor": "table-15.3",
+      "label": "Table 15.3",
+      "section_id": "Genetics_chapter15_024",
+      "caption": "Table 15.3 Number of detected QTLs influencing pollination characters involved in reproductive isolation between Mimulus cardinalis and Mimulus lewisii and their estimated individual effects (measured by % of variance explained).",
+      "rows": []
+    },
+    {
+      "kind": "figure",
+      "id": "15.10",
+      "anchor": "figure-15.10",
+      "label": "Figure 15.10",
+      "section_id": "Genetics_chapter15_025",
+      "src": "figures/Genetics_15.10.png",
+      "caption": "Figure 15.10 An example of epistasis for QTLs influencing protein volume in maize. Height indicates the amount of protein volume for each of the genotypes. In this case, the $ M_{1}M_{1}M_{2}M_{2} $ marker genotype had the greatest effect on protein volume, while $ M_{1}M_{1}m_{2}m_{2} $ had the smallest. (After Damerval et al. 1994.)"
+    },
+    {
+      "kind": "figure",
+      "id": "15.11",
+      "anchor": "figure-15.11",
+      "label": "Figure 15.11",
+      "section_id": "Genetics_chapter15_026",
+      "src": "figures/Genetics_15.11.png",
+      "caption": "Figure 15.11 QTLs accounting for differences between maize and teosinte in the nine characters listed in Table 15.4. Each bar represents a detected QTL, with bar height indicating its $ r^{2} $ value. Acronyms for characters are listed in Table 15.4. Chromosome position (chromosome number and short vs. long arm) is indicated under each bar. The upper bars refer to QTLs detected in a cross between a primitive maize strain and one subspecies of teosinte (Z. m. parviglumis), while the lower bars are for a cross involving a different primitive maize strain and another teosinte subspecies (Z. m. mexicana). Aligned bars denote QTLs mapping to very similar positions in both crosses. White bars indicate QTL effects in the opposite direction from parental phenotype, while the cross-hatched bar indicates apparent overdominance. (From Doebley and Stec 1993.)"
+    },
+    {
+      "kind": "table",
+      "id": "15.4",
+      "anchor": "table-15.4",
+      "label": "Table 15.4",
+      "section_id": "Genetics_chapter15_026",
+      "caption": "Table 15.4 Character differences between maize and teosinte (primitive maize race Reventado × Zea mays parviglumis).",
+      "rows": []
+    },
+    {
+      "kind": "table",
+      "id": "15.5",
+      "anchor": "table-15.5",
+      "label": "Table 15.5",
+      "section_id": "Genetics_chapter15_026",
+      "caption": "Table 15.5 QTLs influencing age-specific weight and age-specific growth rates in mice, measured at weekly intervals.",
+      "rows": []
+    },
+    {
+      "kind": "figure",
+      "id": "15.12",
+      "anchor": "figure-15.12",
+      "label": "Figure 15.12",
+      "section_id": "Genetics_chapter15_028",
+      "src": "figures/Genetics_15.12.png",
+      "caption": "Figure 15.12 Locations for early (E) and late (L) growth QTLs on the 19 mouse autosomes. The marker locations are indicated by hatch marks. (From Cheverud et al. 1996.)"
+    },
+    {
+      "kind": "figure",
+      "id": "15.13",
+      "anchor": "figure-15.13",
+      "label": "Figure 15.13",
+      "section_id": "Genetics_chapter15_028",
+      "src": "figures/Genetics_15.13.png",
+      "caption": "Figure 15.13 Summary of results from 52 QTL mapping experiments using inbred-line crosses (mainly crop plants), examining a total of 222 traits. Left: Distribution of $ r^{2} $ values for the QTL of largest effect. Right: Distribution of the total effects accounted for by all detected QTLs."
+    },
+    {
+      "kind": "figure",
+      "id": "15.14",
+      "anchor": "figure-15.14",
+      "label": "Figure 15.14",
+      "section_id": "Genetics_chapter15_028",
+      "src": "figures/Genetics_15.14.png",
+      "caption": "Figure 15.14 Joint distribution of the total percent of variation attributable to detected QTLs and QTL number for 52 experiments (covering 222 traits) from Figure 15.13."
+    },
+    {
+      "kind": "table",
+      "id": "15.6",
+      "anchor": "table-15.6",
+      "label": "Table 15.6",
+      "section_id": "Genetics_chapter15_028",
+      "caption": "Table 15.6 Selected studies examining G × E interaction in detected QTLs.",
+      "rows": [
+        [
+          "Organism/trait",
+          "Reference"
+        ],
+        [
+          "Tomatos"
+        ],
+        [
+          "3 fruit characters in California (2 locations) and Israel.",
+          "Paterson et al. 1991"
+        ],
+        [
+          "4/29 QTLs detected in all three environments, 10/29 in two, 15/29 in one."
+        ]
+      ]
+    },
+    {
+      "kind": "formula",
+      "id": "15.1",
+      "anchor": "formula-15.1",
+      "label": "Formula (15.1)",
+      "section_id": "Genetics_chapter15_004",
+      "latex": "\\Pr(Q_{k}|M_{j})=\\frac{\\Pr(Q_{k}M_{j})}{\\Pr(M_{j})}",
+      "latex_render": "\\Pr(Q_{k}|M_{j})=\\frac{\\Pr(Q_{k}M_{j})}{\\Pr(M_{j})}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u001"
+    },
+    {
+      "kind": "formula",
+      "id": "15.2",
+      "anchor": "formula-15.2",
+      "label": "Formula (15.2)",
+      "section_id": "Genetics_chapter15_005",
+      "latex": "\\begin{aligned}\\Pr(QQ\\mid M_{1}M_{1}M_{2}M_{2})&=\\frac{(1-c_{1})^{2}(1-c_{2})^{2}}{(1-c_{12})^{2}}\\\\\\Pr(Qq\\mid M_{1}M_{1}M_{2}M_{2})&=\\frac{2c_{1}c_{2}(1-c_{1})(1-c_{2})}{(1-c_{12})^{2}}\\\\\\Pr(qq\\mid M_{1}M_{1}M_{2}M_{2})&=\\frac{c_{1}^{2}c_{2}^{2}}{(1-c_{12})^{2}}\\end{aligned}",
+      "latex_render": "\\begin{aligned}\\Pr(QQ\\mid M_{1}M_{1}M_{2}M_{2})&=\\frac{(1-c_{1})^{2}(1-c_{2})^{2}}{(1-c_{12})^{2}}\\\\\\Pr(Qq\\mid M_{1}M_{1}M_{2}M_{2})&=\\frac{2c_{1}c_{2}(1-c_{1})(1-c_{2})}{(1-c_{12})^{2}}\\\\\\Pr(qq\\mid M_{1}M_{1}M_{2}M_{2})&=\\frac{c_{1}^{2}c_{2}^{2}}{(1-c_{12})^{2}}\\end{aligned}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u008"
+    },
+    {
+      "kind": "formula",
+      "id": "15.3a",
+      "anchor": "formula-15.3a",
+      "label": "Formula (15.3a)",
+      "section_id": "Genetics_chapter15_005",
+      "latex": "\\begin{aligned}\\Pr(QQ\\mid MM)&=1-c,\\quad&\\Pr(Qq\\mid MM)&=c\\\\\\Pr(QQ\\mid Mm)&=c,\\quad&\\Pr(Qq\\mid Mm)&=1-c\\end{aligned}",
+      "latex_render": "\\begin{aligned}\\Pr(QQ\\mid MM)&=1-c,\\quad&\\Pr(Qq\\mid MM)&=c\\\\\\Pr(QQ\\mid Mm)&=c,\\quad&\\Pr(Qq\\mid Mm)&=1-c\\end{aligned}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u009"
+    },
+    {
+      "kind": "formula",
+      "id": "15.3b",
+      "anchor": "formula-15.3b",
+      "label": "Formula (15.3b)",
+      "section_id": "Genetics_chapter15_005",
+      "latex": "\\begin{aligned}{\\operatorname*{P r}(q q\\mid m m)}&{{}=1-c,\\qquad}&{\\operatorname*{P r}(Q q\\mid m m)}&{{}=c}\\\\ {\\operatorname*{P r}(q q\\mid M m)}&{{}=c,\\qquad}&{\\operatorname*{P r}(Q q\\mid M m)}&{{}=1-c}\\\\ \\end{aligned}",
+      "latex_render": "\\begin{aligned}{\\operatorname*{P r}(q q\\mid m m)}&{{}=1-c,\\qquad}&{\\operatorname*{P r}(Q q\\mid m m)}&{{}=c}\\\\ {\\operatorname*{P r}(q q\\mid M m)}&{{}=c,\\qquad}&{\\operatorname*{P r}(Q q\\mid M m)}&{{}=1-c}\\\\ \\end{aligned}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u010"
+    },
+    {
+      "kind": "formula",
+      "id": "15.4",
+      "anchor": "formula-15.4",
+      "label": "Formula (15.4)",
+      "section_id": "Genetics_chapter15_005",
+      "latex": "\\widetilde{c}=\\frac{1-(1-c)^{t-2}(1-2c)}{2}\\simeq\\frac{t}{2}c",
+      "latex_render": "\\widetilde{c}=\\frac{1-(1-c)^{t-2}(1-2c)}{2}\\simeq\\frac{t}{2}c",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u011"
+    },
+    {
+      "kind": "formula",
+      "id": "15.5a",
+      "anchor": "formula-15.5a",
+      "label": "Formula (15.5a)",
+      "section_id": "Genetics_chapter15_005",
+      "latex": "\\begin{aligned}\\Pr(QQ\\mid MM)&=1-\\widetilde{c},\\quad&\\Pr(qq\\mid MM)&=\\widetilde{c}\\\\\\Pr(QQ\\mid mm)&=\\widetilde{c},\\quad&\\Pr(qq\\mid mm)&=1-\\widetilde{c}\\end{aligned}",
+      "latex_render": "\\begin{aligned}\\Pr(QQ\\mid MM)&=1-\\widetilde{c},\\quad&\\Pr(qq\\mid MM)&=\\widetilde{c}\\\\\\Pr(QQ\\mid mm)&=\\widetilde{c},\\quad&\\Pr(qq\\mid mm)&=1-\\widetilde{c}\\end{aligned}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u013"
+    },
+    {
+      "kind": "formula",
+      "id": "15.5b",
+      "anchor": "formula-15.5b",
+      "label": "Formula (15.5b)",
+      "section_id": "Genetics_chapter15_006",
+      "latex": "\\widetilde{c}=\\left\\{\\begin{array}{l l}{c}&{\\mathrm{f o r~D H L s}}\\\\ {2c/(1+2c)}&{\\mathrm{f o r~R I L s~f o r m e d~b y~s e l f i n g}}\\\\ {4c/(1+6c)}&{\\mathrm{f o r~R I L s~f o r m e d~b y~b r o t h e r-s i s t e r~m a t i n g}}\\end{array}\\right.",
+      "latex_render": "\\widetilde{c}=\\left\\{\\begin{array}{l l}{c}&{\\mathrm{f o r~D H L s}}\\\\ {2c/(1+2c)}&{\\mathrm{f o r~R I L s~f o r m e d~b y~s e l f i n g}}\\\\ {4c/(1+6c)}&{\\mathrm{f o r~R I L s~f o r m e d~b y~b r o t h e r-s i s t e r~m a t i n g}}\\end{array}\\right.",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u014"
+    },
+    {
+      "kind": "formula",
+      "id": "15.6",
+      "anchor": "formula-15.6",
+      "label": "Formula (15.6)",
+      "section_id": "Genetics_chapter15_006",
+      "latex": "\\mu_{M_{j}}=\\sum_{k=1}^{N}\\mu_{Q_{k}}\\mathrm{Pr}(Q_{k}\\mid M_{j})",
+      "latex_render": "\\mu_{M_{j}}=\\sum_{k=1}^{N}\\mu_{Q_{k}}\\mathrm{Pr}(Q_{k}\\mid M_{j})",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u015"
+    },
+    {
+      "kind": "formula",
+      "id": "15.7a",
+      "anchor": "formula-15.7a",
+      "label": "Formula (15.7a)",
+      "section_id": "Genetics_chapter15_006",
+      "latex": "(\\mu_{M M}-\\mu_{m m})/2=a(1-2c)=a^{*}",
+      "latex_render": "(\\mu_{M M}-\\mu_{m m})/2=a(1-2c)=a^{*}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u020"
+    },
+    {
+      "kind": "formula",
+      "id": "15.7b",
+      "anchor": "formula-15.7b",
+      "label": "Formula (15.7b)",
+      "section_id": "Genetics_chapter15_006",
+      "latex": "\\frac{\\mu_{Mm}-(\\mu_{MM}+\\mu_{mm})/2}{(\\mu_{MM}-\\mu_{mm})/2}=k(1-2c)=k^{*}",
+      "latex_render": "\\frac{\\mu_{Mm}-(\\mu_{MM}+\\mu_{mm})/2}{(\\mu_{MM}-\\mu_{mm})/2}=k(1-2c)=k^{*}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u021"
+    },
+    {
+      "kind": "formula",
+      "id": "15.8a",
+      "anchor": "formula-15.8a",
+      "label": "Formula (15.8a)",
+      "section_id": "Genetics_chapter15_006",
+      "latex": "(\\mu_{M M}-\\mu_{m m})/2=\\sum_{i=1}^{N}a_{i}^{*}",
+      "latex_render": "(\\mu_{M M}-\\mu_{m m})/2=\\sum_{i=1}^{N}a_{i}^{*}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u022"
+    },
+    {
+      "kind": "formula",
+      "id": "15.8b",
+      "anchor": "formula-15.8b",
+      "label": "Formula (15.8b)",
+      "section_id": "Genetics_chapter15_006",
+      "latex": "\\frac{\\mu_{Mm}-(\\mu_{MM}+\\mu_{mm})/2}{(\\mu_{MM}-\\mu_{mm})/2}=\\sum_{i=1}^{N}a_{i}^{*}k_{i}^{*}\\bigg/\\sum_{i=1}^{N}a_{i}^{*}",
+      "latex_render": "\\frac{\\mu_{Mm}-(\\mu_{MM}+\\mu_{mm})/2}{(\\mu_{MM}-\\mu_{mm})/2}=\\sum_{i=1}^{N}a_{i}^{*}k_{i}^{*}\\bigg/\\sum_{i=1}^{N}a_{i}^{*}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u023"
+    },
+    {
+      "kind": "formula",
+      "id": "15.9a",
+      "anchor": "formula-15.9a",
+      "label": "Formula (15.9a)",
+      "section_id": "Genetics_chapter15_006",
+      "latex": "\\mu_{M M}-\\mu_{M m}=(\\mu_{Q Q}-\\mu_{Q q})(1-2c)=a(1-k)(1-2c)",
+      "latex_render": "\\mu_{M M}-\\mu_{M m}=(\\mu_{Q Q}-\\mu_{Q q})(1-2c)=a(1-k)(1-2c)",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u024"
+    },
+    {
+      "kind": "formula",
+      "id": "15.9b",
+      "anchor": "formula-15.9b",
+      "label": "Formula (15.9b)",
+      "section_id": "Genetics_chapter15_006",
+      "latex": "\\mu_{M m}-\\mu_{m m}=(\\mu_{Q q}-\\mu_{q q})(1-2c)=a(1+k)(1-2c)",
+      "latex_render": "\\mu_{M m}-\\mu_{m m}=(\\mu_{Q q}-\\mu_{q q})(1-2c)=a(1+k)(1-2c)",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u025"
+    },
+    {
+      "kind": "formula",
+      "id": "15.10a",
+      "anchor": "formula-15.10a",
+      "label": "Formula (15.10a)",
+      "section_id": "Genetics_chapter15_006",
+      "latex": "\\mu_{M M}=\\mu_{Q Q}\\left(1-\\widetilde{c}\\right)+\\mu_{q q}\\widetilde{c}\\qquad\\mathrm{a n d}\\qquad\\mu_{m m}=\\mu_{Q Q}\\widetilde{c}+\\mu_{q q}\\left(1-\\widetilde{c}\\right)",
+      "latex_render": "\\mu_{M M}=\\mu_{Q Q}\\left(1-\\widetilde{c}\\right)+\\mu_{q q}\\widetilde{c}\\qquad\\mathrm{a n d}\\qquad\\mu_{m m}=\\mu_{Q Q}\\widetilde{c}+\\mu_{q q}\\left(1-\\widetilde{c}\\right)",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u026"
+    },
+    {
+      "kind": "formula",
+      "id": "15.10b",
+      "anchor": "formula-15.10b",
+      "label": "Formula (15.10b)",
+      "section_id": "Genetics_chapter15_006",
+      "latex": "\\frac{\\mu_{M M}-\\mu_{m m}}{2}=a(1-2\\widetilde{c})=a^{*}",
+      "latex_render": "\\frac{\\mu_{M M}-\\mu_{m m}}{2}=a(1-2\\widetilde{c})=a^{*}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u027"
+    },
+    {
+      "kind": "formula",
+      "id": "15.11a",
+      "anchor": "formula-15.11a",
+      "label": "Formula (15.11a)",
+      "section_id": "Genetics_chapter15_006",
+      "latex": "\\begin{aligned}\\frac{\\mu_{M_{1}M_{1}M_{2}M_{2}}-\\mu_{m_{1}m_{1}m_{2}m_{2}}}{2}&=a\\left(\\frac{1-c_{1}-c_{2}}{1-c_{1}-c_{2}+2c_{1}c_{2}}\\right)\\\\&\\simeq a\\left(1-2c_{1}c_{2}\\right)\\end{aligned}",
+      "latex_render": "\\begin{aligned}\\frac{\\mu_{M_{1}M_{1}M_{2}M_{2}}-\\mu_{m_{1}m_{1}m_{2}m_{2}}}{2}&=a\\left(\\frac{1-c_{1}-c_{2}}{1-c_{1}-c_{2}+2c_{1}c_{2}}\\right)\\\\&\\simeq a\\left(1-2c_{1}c_{2}\\right)\\end{aligned}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u028"
+    },
+    {
+      "kind": "formula",
+      "id": "15.11b",
+      "anchor": "formula-15.11b",
+      "label": "Formula (15.11b)",
+      "section_id": "Genetics_chapter15_006",
+      "latex": "\\begin{aligned}c_{1}&=\\frac{1}{2}\\left(1-\\frac{\\mu_{M_{1}M_{1}}-\\mu_{m_{1}m_{1}}}{2a}\\right)\\\\&\\simeq\\frac{1}{2}\\left(1-\\frac{\\mu_{M_{1}M_{1}}-\\mu_{m_{1}m_{1}}}{\\mu_{M_{1}M_{1}M_{2}M_{2}}-\\mu_{m_{1}m_{1}m_{2}m_{2}}}\\right)\\end{aligned}",
+      "latex_render": "\\begin{aligned}c_{1}&=\\frac{1}{2}\\left(1-\\frac{\\mu_{M_{1}M_{1}}-\\mu_{m_{1}m_{1}}}{2a}\\right)\\\\&\\simeq\\frac{1}{2}\\left(1-\\frac{\\mu_{M_{1}M_{1}}-\\mu_{m_{1}m_{1}}}{\\mu_{M_{1}M_{1}M_{2}M_{2}}-\\mu_{m_{1}m_{1}m_{2}m_{2}}}\\right)\\end{aligned}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u029"
+    },
+    {
+      "kind": "formula",
+      "id": "15.12a",
+      "anchor": "formula-15.12a",
+      "label": "Formula (15.12a)",
+      "section_id": "Genetics_chapter15_007",
+      "latex": "\\rho=\\frac{\\sigma(z,x)}{\\sigma(x)\\sigma(z)}=\\frac{a(1-2\\widetilde{c})}{\\sqrt{a^{2}+\\sigma_{e}^{2}}}=\\frac{1-2\\widetilde{c}}{\\sqrt{1+C^{2}}}",
+      "latex_render": "\\rho=\\frac{\\sigma(z,x)}{\\sigma(x)\\sigma(z)}=\\frac{a(1-2\\widetilde{c})}{\\sqrt{a^{2}+\\sigma_{e}^{2}}}=\\frac{1-2\\widetilde{c}}{\\sqrt{1+C^{2}}}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u033"
+    },
+    {
+      "kind": "formula",
+      "id": "15.12b",
+      "anchor": "formula-15.12b",
+      "label": "Formula (15.12b)",
+      "section_id": "Genetics_chapter15_007",
+      "latex": "\\widetilde{c}=\\frac{1-r\\sqrt{1+C^{2}}}{2}\\leq\\frac{1-r}{2}",
+      "latex_render": "\\widetilde{c}=\\frac{1-r\\sqrt{1+C^{2}}}{2}\\leq\\frac{1-r}{2}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u034"
+    },
+    {
+      "kind": "formula",
+      "id": "15.12c",
+      "anchor": "formula-15.12c",
+      "label": "Formula (15.12c)",
+      "section_id": "Genetics_chapter15_007",
+      "latex": "a=\\frac{\\mu_{M M}-\\mu_{m m}}{2(1-2\\widetilde{c})}",
+      "latex_render": "a=\\frac{\\mu_{M M}-\\mu_{m m}}{2(1-2\\widetilde{c})}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u035"
+    },
+    {
+      "kind": "formula",
+      "id": "15.12d",
+      "anchor": "formula-15.12d",
+      "label": "Formula (15.12d)",
+      "section_id": "Genetics_chapter15_008",
+      "latex": "\\frac{\\mu_{MM}-\\mu_{mm}}{2}\\leq a\\leq\\frac{\\mu_{MM}-\\mu_{mm}}{2r}",
+      "latex_render": "\\frac{\\mu_{MM}-\\mu_{mm}}{2}\\leq a\\leq\\frac{\\mu_{MM}-\\mu_{mm}}{2r}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u036"
+    },
+    {
+      "kind": "formula",
+      "id": "15.13a",
+      "anchor": "formula-15.13a",
+      "label": "Formula (15.13a)",
+      "section_id": "Genetics_chapter15_007",
+      "latex": "\\gamma=1-\\left(1-\\alpha\\right)^{n}",
+      "latex_render": "\\gamma=1-\\left(1-\\alpha\\right)^{n}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u037"
+    },
+    {
+      "kind": "formula",
+      "id": "15.13b",
+      "anchor": "formula-15.13b",
+      "label": "Formula (15.13b)",
+      "section_id": "Genetics_chapter15_008",
+      "latex": "\\alpha=1-(1-\\gamma)^{1/n}\\simeq\\frac{\\gamma}{n}",
+      "latex_render": "\\alpha=1-(1-\\gamma)^{1/n}\\simeq\\frac{\\gamma}{n}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u038"
+    },
+    {
+      "kind": "formula",
+      "id": "15.14a",
+      "anchor": "formula-15.14a",
+      "label": "Formula (15.14a)",
+      "section_id": "Genetics_chapter15_009",
+      "latex": "z_{ik}=\\mu+b_{i}+e_{ik}",
+      "latex_render": "z_{ik}=\\mu+b_{i}+e_{ik}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u039"
+    },
+    {
+      "kind": "formula",
+      "id": "15.14b",
+      "anchor": "formula-15.14b",
+      "label": "Formula (15.14b)",
+      "section_id": "Genetics_chapter15_009",
+      "latex": "z_{j}=\\mu+\\sum_{i=1}^{n}b_{i}x_{ij}+e_{j}",
+      "latex_render": "z_{j}=\\mu+\\sum_{i=1}^{n}b_{i}x_{ij}+e_{j}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u040"
+    },
+    {
+      "kind": "formula",
+      "id": "15.14c",
+      "anchor": "formula-15.14c",
+      "label": "Formula (15.14c)",
+      "section_id": "Genetics_chapter15_009",
+      "latex": "z_{j}=\\mu+\\sum_{i}^{n_{1}}a_{i}x_{ij}+\\sum_{k}^{n_{2}}b_{k}y_{kj}+\\sum_{i}^{n_{1}}\\sum_{k}^{n_{2}}d_{ik}x_{ij}y_{kj}+e_{j}",
+      "latex_render": "z_{j}=\\mu+\\sum_{i}^{n_{1}}a_{i}x_{ij}+\\sum_{k}^{n_{2}}b_{k}y_{kj}+\\sum_{i}^{n_{1}}\\sum_{k}^{n_{2}}d_{ik}x_{ij}y_{kj}+e_{j}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u042"
+    },
+    {
+      "kind": "formula",
+      "id": "15.15",
+      "anchor": "formula-15.15",
+      "label": "Formula (15.15)",
+      "section_id": "Genetics_chapter15_010",
+      "latex": "\\ell(z\\mid M_{j})=\\sum_{k=1}^{N}\\varphi(z,\\mu_{Q_{k}},\\sigma^{2})\\Pr(Q_{k}\\mid M_{j})",
+      "latex_render": "\\ell(z\\mid M_{j})=\\sum_{k=1}^{N}\\varphi(z,\\mu_{Q_{k}},\\sigma^{2})\\Pr(Q_{k}\\mid M_{j})",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u043"
+    },
+    {
+      "kind": "formula",
+      "id": "15.16",
+      "anchor": "formula-15.16",
+      "label": "Formula (15.16)",
+      "section_id": "Genetics_chapter15_012",
+      "latex": "\\mathrm{L O D}(c)=\\log_{10}\\left[\\frac{\\max\\ell_{r}(\\mathbf{z})}{\\max\\ell(\\mathbf{z},c)}\\right]=\\frac{\\mathrm{L R}(c)}{2\\ln10}\\simeq\\frac{\\mathrm{L R}(c)}{4.61}",
+      "latex_render": "\\mathrm{L O D}(c)=\\log_{10}\\left[\\frac{\\max\\ell_{r}(\\mathbf{z})}{\\max\\ell(\\mathbf{z},c)}\\right]=\\frac{\\mathrm{L R}(c)}{2\\ln10}\\simeq\\frac{\\mathrm{L R}(c)}{4.61}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u047"
+    },
+    {
+      "kind": "formula",
+      "id": "15.17",
+      "anchor": "formula-15.17",
+      "label": "Formula (15.17)",
+      "section_id": "Genetics_chapter15_014",
+      "latex": "1-(1-\\gamma)^{1/C}\\simeq\\gamma/C",
+      "latex_render": "1-(1-\\gamma)^{1/C}\\simeq\\gamma/C",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u049"
+    },
+    {
+      "kind": "formula",
+      "id": "15.18a",
+      "anchor": "formula-15.18a",
+      "label": "Formula (15.18a)",
+      "section_id": "Genetics_chapter15_014",
+      "latex": "\\mu_{Q Q}=\\mu+a,\\qquad\\mu_{Q q}=\\mu+d,\\qquad\\mu_{q q}=\\mu-a",
+      "latex_render": "\\mu_{Q Q}=\\mu+a,\\qquad\\mu_{Q q}=\\mu+d,\\qquad\\mu_{q q}=\\mu-a",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u050"
+    },
+    {
+      "kind": "formula",
+      "id": "15.18b",
+      "anchor": "formula-15.18b",
+      "label": "Formula (15.18b)",
+      "section_id": "Genetics_chapter15_015",
+      "latex": "z_{j}=\\mu+a\\cdot x(M_{j})+d\\cdot y(M_{j})+e_{j}",
+      "latex_render": "z_{j}=\\mu+a\\cdot x(M_{j})+d\\cdot y(M_{j})+e_{j}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u051"
+    },
+    {
+      "kind": "formula",
+      "id": "15.19a",
+      "anchor": "formula-15.19a",
+      "label": "Formula (15.19a)",
+      "section_id": "Genetics_chapter15_015",
+      "latex": "\\mu_{M_{i}}=\\mu+a\\cdot x(M_{i})+d\\cdot y(M_{i})",
+      "latex_render": "\\mu_{M_{i}}=\\mu+a\\cdot x(M_{i})+d\\cdot y(M_{i})",
+      "origin": "formula-library",
+      "source_label": "Formula 15.6"
+    },
+    {
+      "kind": "formula",
+      "id": "15.19b",
+      "anchor": "formula-15.19b",
+      "label": "Formula (15.19b)",
+      "section_id": "Genetics_chapter15_015",
+      "latex": "\\begin{aligned}\\mu_{M_{i}}&=(\\mu+a)\\Pr(QQ\\mid M_{i})+(\\mu+d)\\Pr(Qq\\mid M_{i})+(\\mu-a)\\Pr(qq\\mid M_{i})\\\\&=\\mu+a\\cdot\\left[\\Pr(QQ\\mid M_{i})-\\Pr(qq\\mid M_{i})\\right]+d\\cdot\\Pr(Qq\\mid M_{i})\\end{aligned}",
+      "latex_render": "\\begin{aligned}\\mu_{M_{i}}&=(\\mu+a)\\Pr(QQ\\mid M_{i})+(\\mu+d)\\Pr(Qq\\mid M_{i})+(\\mu-a)\\Pr(qq\\mid M_{i})\\\\&=\\mu+a\\cdot\\left[\\Pr(QQ\\mid M_{i})-\\Pr(qq\\mid M_{i})\\right]+d\\cdot\\Pr(Qq\\mid M_{i})\\end{aligned}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u052"
+    },
+    {
+      "kind": "formula",
+      "id": "15.20",
+      "anchor": "formula-15.20",
+      "label": "Formula (15.20)",
+      "section_id": "Genetics_chapter15_015",
+      "latex": "x(M_{i})=\\Pr(QQ\\mid M_{i})-\\Pr(qq\\mid M_{i}),\\qquad y(M_{i})=\\Pr(Qq\\mid M_{i})",
+      "latex_render": "x(M_{i})=\\Pr(QQ\\mid M_{i})-\\Pr(qq\\mid M_{i}),\\qquad y(M_{i})=\\Pr(Qq\\mid M_{i})",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u053"
+    },
+    {
+      "kind": "formula",
+      "id": "15.21",
+      "anchor": "formula-15.21",
+      "label": "Formula (15.21)",
+      "section_id": "Genetics_chapter15_015",
+      "latex": "\\mathbf{b}_{c_{1}}=\\begin{pmatrix}\\widehat{\\mu}\\\\ \\widehat{a}\\\\ \\widehat{d}\\end{pmatrix}=\\left(\\mathbf{X}_{c_{1}}^{T}\\mathbf{X}_{c_{1}}\\right)^{-1}\\mathbf{X}_{c_{1}}^{T}\\mathbf{z}",
+      "latex_render": "\\mathbf{b}_{c_{1}}=\\begin{pmatrix}\\widehat{\\mu}\\\\ \\widehat{a}\\\\ \\widehat{d}\\end{pmatrix}=\\left(\\mathbf{X}_{c_{1}}^{T}\\mathbf{X}_{c_{1}}\\right)^{-1}\\mathbf{X}_{c_{1}}^{T}\\mathbf{z}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u056"
+    },
+    {
+      "kind": "formula",
+      "id": "15.22",
+      "anchor": "formula-15.22",
+      "label": "Formula (15.22)",
+      "section_id": "Genetics_chapter15_015",
+      "latex": "\\mathrm{L R}=n\\ln\\left(\\frac{\\mathrm{S S}_{T}}{\\mathrm{S S}_{E}}\\right)=-n\\ln(1-r^{2})",
+      "latex_render": "\\mathrm{L R}=n\\ln\\left(\\frac{\\mathrm{S S}_{T}}{\\mathrm{S S}_{E}}\\right)=-n\\ln(1-r^{2})",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u057"
+    },
+    {
+      "kind": "formula",
+      "id": "15.23",
+      "anchor": "formula-15.23",
+      "label": "Formula (15.23)",
+      "section_id": "Genetics_chapter15_015",
+      "latex": "LR=n\\ln\\left(\\frac{\\mathsf{SS}_{E}(reduced)}{\\mathsf{SS}_{E}(full)}\\right)",
+      "latex_render": "LR=n\\ln\\left(\\frac{\\mathsf{SS}_{E}(reduced)}{\\mathsf{SS}_{E}(full)}\\right)",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u058"
+    },
+    {
+      "kind": "formula",
+      "id": "15.24",
+      "anchor": "formula-15.24",
+      "label": "Formula (15.24)",
+      "section_id": "Genetics_chapter15_017",
+      "latex": "y_{i}=\\overline{z}(M_{i}M_{i})-\\overline{z}(m_{i}m_{i})=\\beta x_{i}+e_{i}",
+      "latex_render": "y_{i}=\\overline{z}(M_{i}M_{i})-\\overline{z}(m_{i}m_{i})=\\beta x_{i}+e_{i}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u064"
+    },
+    {
+      "kind": "formula",
+      "id": "15.25a",
+      "anchor": "formula-15.25a",
+      "label": "Formula (15.25a)",
+      "section_id": "Genetics_chapter15_017",
+      "latex": "\\hat{\\boldsymbol{\\beta}}=\\left(\\mathbf{X}^{T}\\mathbf{V}^{-1}\\mathbf{X}\\right)^{-1}\\mathbf{X}^{T}\\mathbf{V}^{-1}\\mathbf{y}",
+      "latex_render": "\\hat{\\boldsymbol{\\beta}}=\\left(\\mathbf{X}^{T}\\mathbf{V}^{-1}\\mathbf{X}\\right)^{-1}\\mathbf{X}^{T}\\mathbf{V}^{-1}\\mathbf{y}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u065"
+    },
+    {
+      "kind": "formula",
+      "id": "15.25b",
+      "anchor": "formula-15.25b",
+      "label": "Formula (15.25b)",
+      "section_id": "Genetics_chapter15_017",
+      "latex": "\\sigma^{2}(\\widehat{\\boldsymbol{\\beta}})=\\left(\\mathbf{X}^{T}\\mathbf{V}^{-1}\\mathbf{X}\\right)^{-1}",
+      "latex_render": "\\sigma^{2}(\\widehat{\\boldsymbol{\\beta}})=\\left(\\mathbf{X}^{T}\\mathbf{V}^{-1}\\mathbf{X}\\right)^{-1}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u066"
+    },
+    {
+      "kind": "formula",
+      "id": "15.25c",
+      "anchor": "formula-15.25c",
+      "label": "Formula (15.25c)",
+      "section_id": "Genetics_chapter15_017",
+      "latex": "\\mathbf{y}=\\begin{pmatrix}y_{1}\\\\ \\vdots\\\\ y_{n}\\end{pmatrix},\\quad\\mathbf{X}=\\begin{pmatrix}1-2c_{1}\\\\ \\vdots\\\\ 1-2c_{n}\\end{pmatrix}",
+      "latex_render": "\\mathbf{y}=\\begin{pmatrix}y_{1}\\\\ \\vdots\\\\ y_{n}\\end{pmatrix},\\quad\\mathbf{X}=\\begin{pmatrix}1-2c_{1}\\\\ \\vdots\\\\ 1-2c_{n}\\end{pmatrix}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u067"
+    },
+    {
+      "kind": "formula",
+      "id": "15.25d",
+      "anchor": "formula-15.25d",
+      "label": "Formula (15.25d)",
+      "section_id": "Genetics_chapter15_017",
+      "latex": "\\mathrm{V}_{i j}=\\left\\{\\begin{aligned}{}&{{}\\frac{\\operatorname{V a r}(M_{i}M_{i})}{n(M_{i}M_{i})}+\\frac{\\operatorname{V a r}(m_{i}m_{i})}{n(m_{i}m_{i})}}&{i=j}\\\\ {}&{{}(1-2c_{i j})\\sqrt{\\mathrm{V}_{i i}\\mathrm{~V}_{j j}}}&{i\\neq j}\\\\ \\end{aligned}\\right.",
+      "latex_render": "\\mathrm{V}_{i j}=\\left\\{\\begin{aligned}{}&{{}\\frac{\\operatorname{V a r}(M_{i}M_{i})}{n(M_{i}M_{i})}+\\frac{\\operatorname{V a r}(m_{i}m_{i})}{n(m_{i}m_{i})}}&{i=j}\\\\ {}&{{}(1-2c_{i j})\\sqrt{\\mathrm{V}_{i i}\\mathrm{~V}_{j j}}}&{i\\neq j}\\\\ \\end{aligned}\\right.",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u068"
+    },
+    {
+      "kind": "formula",
+      "id": "15.26",
+      "anchor": "formula-15.26",
+      "label": "Formula (15.26)",
+      "section_id": "Genetics_chapter15_017",
+      "latex": "\\mathbf{S}\\mathbf{S}_{E}=\\widehat{\\mathbf{e}}^{T}\\mathbf{V}^{-1}\\widehat{\\mathbf{e}}=(\\mathbf{y}-\\mathbf{X}\\widehat{\\boldsymbol{\\beta}})^{T}\\mathbf{V}^{-1}(\\mathbf{y}-\\mathbf{X}\\widehat{\\boldsymbol{\\beta}})",
+      "latex_render": "\\mathbf{S}\\mathbf{S}_{E}=\\widehat{\\mathbf{e}}^{T}\\mathbf{V}^{-1}\\widehat{\\mathbf{e}}=(\\mathbf{y}-\\mathbf{X}\\widehat{\\boldsymbol{\\beta}})^{T}\\mathbf{V}^{-1}(\\mathbf{y}-\\mathbf{X}\\widehat{\\boldsymbol{\\beta}})",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u069"
+    },
+    {
+      "kind": "formula",
+      "id": "15.27a",
+      "anchor": "formula-15.27a",
+      "label": "Formula (15.27a)",
+      "section_id": "Genetics_chapter15_017",
+      "latex": "y_{i}=\\mu(M_{i}M_{i})-\\mu(m_{i}m_{i})=2a_{1}(1-2c_{1i})+\\cdots+2a_{N}(1-2c_{N i})",
+      "latex_render": "y_{i}=\\mu(M_{i}M_{i})-\\mu(m_{i}m_{i})=2a_{1}(1-2c_{1i})+\\cdots+2a_{N}(1-2c_{N i})",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u070"
+    },
+    {
+      "kind": "formula",
+      "id": "15.27b",
+      "anchor": "formula-15.27b",
+      "label": "Formula (15.27b)",
+      "section_id": "Genetics_chapter15_017",
+      "latex": "y_{i}=\\beta_{1}\\cdot x_{1i}+\\cdots+\\beta_{N}\\cdot x_{Ni}+e_{i}",
+      "latex_render": "y_{i}=\\beta_{1}\\cdot x_{1i}+\\cdots+\\beta_{N}\\cdot x_{Ni}+e_{i}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u071"
+    },
+    {
+      "kind": "formula",
+      "id": "15.28a",
+      "anchor": "formula-15.28a",
+      "label": "Formula (15.28a)",
+      "section_id": "Genetics_chapter15_018",
+      "latex": "\\sum_{k\\neq i,i+1}b_{k}\\cdot x_{kj}",
+      "latex_render": "\\sum_{k\\neq i,i+1}b_{k}\\cdot x_{kj}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u073"
+    },
+    {
+      "kind": "formula",
+      "id": "15.28b",
+      "anchor": "formula-15.28b",
+      "label": "Formula (15.28b)",
+      "section_id": "Genetics_chapter15_018",
+      "latex": "x_{k j}=\\left\\{\\begin{array}{r l}{1}&{\\mathrm{i f~i n d i v i d u a l~}j\\mathrm{~h a s~m a r k e r~g e n o t y p e~}M_{k}M_{k}}\\\\ {0}&{\\mathrm{i f~i n d i v i d u a l~}j\\mathrm{~h a s~m a r k e r~g e n o t y p e~}M_{k}m_{k}}\\\\ {-1}&{\\mathrm{i f~i n d i v i d u a l~}j\\mathrm{~h a s~m a r k e r~g e n o t y p e~}m_{k}m_{k}}\\end{array}\\right.",
+      "latex_render": "x_{k j}=\\left\\{\\begin{array}{r l}{1}&{\\mathrm{i f~i n d i v i d u a l~}j\\mathrm{~h a s~m a r k e r~g e n o t y p e~}M_{k}M_{k}}\\\\ {0}&{\\mathrm{i f~i n d i v i d u a l~}j\\mathrm{~h a s~m a r k e r~g e n o t y p e~}M_{k}m_{k}}\\\\ {-1}&{\\mathrm{i f~i n d i v i d u a l~}j\\mathrm{~h a s~m a r k e r~g e n o t y p e~}m_{k}m_{k}}\\end{array}\\right.",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u074"
+    },
+    {
+      "kind": "formula",
+      "id": "15.29",
+      "anchor": "formula-15.29",
+      "label": "Formula (15.29)",
+      "section_id": "Genetics_chapter15_018",
+      "latex": "z_{j}=\\left[\\mu+a\\cdot x(M_{i})+d\\cdot y(M_{i})\\right]+\\sum_{k\\neq i,i+1}b_{k}\\cdot x_{kj}+e_{j}",
+      "latex_render": "z_{j}=\\left[\\mu+a\\cdot x(M_{i})+d\\cdot y(M_{i})\\right]+\\sum_{k\\neq i,i+1}b_{k}\\cdot x_{kj}+e_{j}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u075"
+    },
+    {
+      "kind": "formula",
+      "id": "15.30",
+      "anchor": "formula-15.30",
+      "label": "Formula (15.30)",
+      "section_id": "Genetics_chapter15_018",
+      "latex": "z_{j}=\\mu+\\sum_{k\\neq i,i+1}b_{k}\\cdot x_{kj}+e_{j}",
+      "latex_render": "z_{j}=\\mu+\\sum_{k\\neq i,i+1}b_{k}\\cdot x_{kj}+e_{j}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u076"
+    },
+    {
+      "kind": "formula",
+      "id": "15.31",
+      "anchor": "formula-15.31",
+      "label": "Formula (15.31)",
+      "section_id": "Genetics_chapter15_018",
+      "latex": "z_{j}^{*}=z_{j}-\\left(\\sum_{k=1}^{n}b_{k}\\cdot x_{kj}\\right)",
+      "latex_render": "z_{j}^{*}=z_{j}-\\left(\\sum_{k=1}^{n}b_{k}\\cdot x_{kj}\\right)",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u077"
+    },
+    {
+      "kind": "formula",
+      "id": "15.32",
+      "anchor": "formula-15.32",
+      "label": "Formula (15.32)",
+      "section_id": "Genetics_chapter15_018",
+      "latex": "z_{j}=\\mu+\\sum_{k=1}^{n}b_{k}\\cdot x_{kj}+e_{j}",
+      "latex_render": "z_{j}=\\mu+\\sum_{k=1}^{n}b_{k}\\cdot x_{kj}+e_{j}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u078"
+    },
+    {
+      "kind": "formula",
+      "id": "15.33a",
+      "anchor": "formula-15.33a",
+      "label": "Formula (15.33a)",
+      "section_id": "Genetics_chapter15_018",
+      "latex": "c_{i}=\\frac{1}{2}\\left[1-\\sqrt{1-\\frac{4b_{i+1}\\theta_{i}\\left(1-\\theta_{i}\\right)}{b_{i+1}+b_{i}\\left(1-2\\theta_{i}\\right)}}\\right]",
+      "latex_render": "c_{i}=\\frac{1}{2}\\left[1-\\sqrt{1-\\frac{4b_{i+1}\\theta_{i}\\left(1-\\theta_{i}\\right)}{b_{i+1}+b_{i}\\left(1-2\\theta_{i}\\right)}}\\right]",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u079"
+    },
+    {
+      "kind": "formula",
+      "id": "15.33b",
+      "anchor": "formula-15.33b",
+      "label": "Formula (15.33b)",
+      "section_id": "Genetics_chapter15_018",
+      "latex": "a^{2}=\\frac{\\left[b_{i}+\\left(1-2\\theta_{i}\\right)b_{i+1}\\right]\\cdot\\left[b_{i+1}+\\left(1-2\\theta_{i}\\right)b_{i}\\right]}{1-2\\theta_{i}}",
+      "latex_render": "a^{2}=\\frac{\\left[b_{i}+\\left(1-2\\theta_{i}\\right)b_{i+1}\\right]\\cdot\\left[b_{i+1}+\\left(1-2\\theta_{i}\\right)b_{i}\\right]}{1-2\\theta_{i}}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u080"
+    },
+    {
+      "kind": "formula",
+      "id": "15.34",
+      "anchor": "formula-15.34",
+      "label": "Formula (15.34)",
+      "section_id": "Genetics_chapter15_019",
+      "latex": "\\sigma^{2}\\left(\\overline{z}_{M M}-\\overline{z}_{m m}\\right)=\\sigma^{2}\\left(\\overline{z}_{M M}\\right)+\\sigma^{2}\\left(\\overline{z}_{m m}\\right)=\\left(\\frac{1}{n_{1}}+\\frac{1}{n_{2}}\\right)\\sigma_{e}^{2}",
+      "latex_render": "\\sigma^{2}\\left(\\overline{z}_{M M}-\\overline{z}_{m m}\\right)=\\sigma^{2}\\left(\\overline{z}_{M M}\\right)+\\sigma^{2}\\left(\\overline{z}_{m m}\\right)=\\left(\\frac{1}{n_{1}}+\\frac{1}{n_{2}}\\right)\\sigma_{e}^{2}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u082"
+    },
+    {
+      "kind": "formula",
+      "id": "15.35a",
+      "anchor": "formula-15.35a",
+      "label": "Formula (15.35a)",
+      "section_id": "Genetics_chapter15_019",
+      "latex": "\\overline{{z}}_{M M}-\\overline{{z}}_{m m}\\sim N\\left[2a,8(1-r_{F_{2}}^{2})\\sigma_{z}^{2}(F_{2})/n\\right]",
+      "latex_render": "\\overline{{z}}_{M M}-\\overline{{z}}_{m m}\\sim N\\left[2a,8(1-r_{F_{2}}^{2})\\sigma_{z}^{2}(F_{2})/n\\right]",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u083"
+    },
+    {
+      "kind": "formula",
+      "id": "15.35b",
+      "anchor": "formula-15.35b",
+      "label": "Formula (15.35b)",
+      "section_id": "Genetics_chapter15_019",
+      "latex": "n_{F_{2}}=\\frac{8(1-r_{F_{2}}^{2})}{\\delta_{F_{2}}^{2}}\\left(\\frac{z_{(1-[\\alpha/2])}}{\\sqrt{1-r_{F_{2}}^{2}}}+z_{(1-\\beta)}\\right)^{2}",
+      "latex_render": "n_{F_{2}}=\\frac{8(1-r_{F_{2}}^{2})}{\\delta_{F_{2}}^{2}}\\left(\\frac{z_{(1-[\\alpha/2])}}{\\sqrt{1-r_{F_{2}}^{2}}}+z_{(1-\\beta)}\\right)^{2}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u084"
+    },
+    {
+      "kind": "formula",
+      "id": "15.36a",
+      "anchor": "formula-15.36a",
+      "label": "Formula (15.36a)",
+      "section_id": "Genetics_chapter15_019",
+      "latex": "\\delta_{F_{2}}=\\frac{\\mu_{Q Q}-\\mu_{q q}}{\\sigma_{z}(F_{2})}=\\frac{2a}{\\sigma_{z}(F_{2})}",
+      "latex_render": "\\delta_{F_{2}}=\\frac{\\mu_{Q Q}-\\mu_{q q}}{\\sigma_{z}(F_{2})}=\\frac{2a}{\\sigma_{z}(F_{2})}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u085"
+    },
+    {
+      "kind": "formula",
+      "id": "15.36b",
+      "anchor": "formula-15.36b",
+      "label": "Formula (15.36b)",
+      "section_id": "Genetics_chapter15_019",
+      "latex": "r_{F_{2}}^{2}=\\frac{\\sigma_{Q}^{2}(F_{2})}{\\sigma_{z}^{2}(F_{2})}=\\frac{a^{2}(2+k^{2})/4}{\\sigma_{z}^{2}(F_{2})}=\\frac{\\delta_{F_{2}}^{2}(2+k^{2})}{16}",
+      "latex_render": "r_{F_{2}}^{2}=\\frac{\\sigma_{Q}^{2}(F_{2})}{\\sigma_{z}^{2}(F_{2})}=\\frac{a^{2}(2+k^{2})/4}{\\sigma_{z}^{2}(F_{2})}=\\frac{\\delta_{F_{2}}^{2}(2+k^{2})}{16}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u086"
+    },
+    {
+      "kind": "formula",
+      "id": "15.37",
+      "anchor": "formula-15.37",
+      "label": "Formula (15.37)",
+      "section_id": "Genetics_chapter15_019",
+      "latex": "n_{F_{2}}=\\left(\\frac{1-r_{F_{2}}^{2}}{r_{F_{2}}^{2}}\\right)\\cdot\\left(\\frac{z_{(1-\\left[\\alpha/2\\right])}}{\\sqrt{1-r_{F_{2}}^{2}}}+z_{(1-\\beta)}\\right)^{2}[1+(k^{2}/2)]",
+      "latex_render": "n_{F_{2}}=\\left(\\frac{1-r_{F_{2}}^{2}}{r_{F_{2}}^{2}}\\right)\\cdot\\left(\\frac{z_{(1-\\left[\\alpha/2\\right])}}{\\sqrt{1-r_{F_{2}}^{2}}}+z_{(1-\\beta)}\\right)^{2}[1+(k^{2}/2)]",
+      "origin": "formula-library",
+      "source_label": "Formula 0.975"
+    },
+    {
+      "kind": "formula",
+      "id": "15.38a",
+      "anchor": "formula-15.38a",
+      "label": "Formula (15.38a)",
+      "section_id": "Genetics_chapter15_019",
+      "latex": "\\overline{{z}}_{M M}-\\overline{{z}}_{M m}\\sim N\\left[a(1-k),4(1-r_{B_{1}}^{2})\\sigma_{z}^{2}(B_{1})/n\\right]",
+      "latex_render": "\\overline{{z}}_{M M}-\\overline{{z}}_{M m}\\sim N\\left[a(1-k),4(1-r_{B_{1}}^{2})\\sigma_{z}^{2}(B_{1})/n\\right]",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u087"
+    },
+    {
+      "kind": "formula",
+      "id": "15.38b",
+      "anchor": "formula-15.38b",
+      "label": "Formula (15.38b)",
+      "section_id": "Genetics_chapter15_019",
+      "latex": "n_{B_{1}}=\\left(\\frac{1-r_{B_{1}}^{2}}{r_{B_{1}}^{2}}\\right)\\left(\\frac{z_{(1-\\left[\\alpha/2\\right])}}{\\sqrt{1-r_{B_{1}}^{2}}}+z_{(1-\\beta)}\\right)^{2}",
+      "latex_render": "n_{B_{1}}=\\left(\\frac{1-r_{B_{1}}^{2}}{r_{B_{1}}^{2}}\\right)\\left(\\frac{z_{(1-\\left[\\alpha/2\\right])}}{\\sqrt{1-r_{B_{1}}^{2}}}+z_{(1-\\beta)}\\right)^{2}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u088"
+    },
+    {
+      "kind": "formula",
+      "id": "15.38c",
+      "anchor": "formula-15.38c",
+      "label": "Formula (15.38c)",
+      "section_id": "Genetics_chapter15_019",
+      "latex": "r_{B_{1}}^{2}=\\frac{\\delta_{B_{1}}^{2}}{4},\\qquad\\mathrm{w h e r e}\\qquad\\delta_{B_{1}}=\\frac{a(1-k)}{\\sigma_{z}(B_{1})}",
+      "latex_render": "r_{B_{1}}^{2}=\\frac{\\delta_{B_{1}}^{2}}{4},\\qquad\\mathrm{w h e r e}\\qquad\\delta_{B_{1}}=\\frac{a(1-k)}{\\sigma_{z}(B_{1})}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u089"
+    },
+    {
+      "kind": "formula",
+      "id": "15.39",
+      "anchor": "formula-15.39",
+      "label": "Formula (15.39)",
+      "section_id": "Genetics_chapter15_019",
+      "latex": "\\frac{n_{B_{1}}}{n_{F_{2}}}\\simeq\\left[\\frac{2}{(1-k)^{2}}\\right]\\left[\\frac{\\sigma_{z}(B_{1})}{\\sigma_{z}(F_{2})}\\right]^{2}",
+      "latex_render": "\\frac{n_{B_{1}}}{n_{F_{2}}}\\simeq\\left[\\frac{2}{(1-k)^{2}}\\right]\\left[\\frac{\\sigma_{z}(B_{1})}{\\sigma_{z}(F_{2})}\\right]^{2}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u090"
+    },
+    {
+      "kind": "formula",
+      "id": "15.40",
+      "anchor": "formula-15.40",
+      "label": "Formula (15.40)",
+      "section_id": "Genetics_chapter15_019",
+      "latex": "E\\left[\\frac{\\mu_{M M}-\\mu_{m m}}{\\sigma\\left(\\overline{{z}}_{M M}-\\overline{{z}}_{m m}\\right)}\\right]\\simeq\\sqrt{n}\\left(1-2c\\right)\\left[\\frac{a}{\\sqrt{2}\\left(1-r_{F_{2}}^{2}\\right)\\sigma_{z}\\left(F_{2}\\right)}\\right]",
+      "latex_render": "E\\left[\\frac{\\mu_{M M}-\\mu_{m m}}{\\sigma\\left(\\overline{{z}}_{M M}-\\overline{{z}}_{m m}\\right)}\\right]\\simeq\\sqrt{n}\\left(1-2c\\right)\\left[\\frac{a}{\\sqrt{2}\\left(1-r_{F_{2}}^{2}\\right)\\sigma_{z}\\left(F_{2}\\right)}\\right]",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u091"
+    },
+    {
+      "kind": "formula",
+      "id": "15.41",
+      "anchor": "formula-15.41",
+      "label": "Formula (15.41)",
+      "section_id": "Genetics_chapter15_019",
+      "latex": "n_{z}=\\frac{n}{2p+2z_{(1-p)}\\varphi(z_{(1-p)})}",
+      "latex_render": "n_{z}=\\frac{n}{2p+2z_{(1-p)}\\varphi(z_{(1-p)})}",
+      "origin": "formula-library",
+      "source_label": "Formula 1.u093"
+    }
+  ],
+  "references": {
+    "Genetics_chapter15_section_001": [
+      {
+        "kind": "chapter",
+        "id": "15",
+        "label": "Chapter 15",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Genetics_chapter15_001": [],
+    "Genetics_chapter15_002": [],
+    "Genetics_chapter15_003": [
+      {
+        "kind": "chapter",
+        "id": "14",
+        "label": "Chapter 14",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "chapter",
+        "id": "20",
+        "label": "Chapter 20",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Genetics_chapter15_004": [
+      {
+        "kind": "chapter",
+        "id": "14",
+        "label": "Chapter 14",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "15.1",
+        "label": "Equation 15.1",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Genetics_chapter15_005": [
+      {
+        "kind": "equation",
+        "id": "15.6",
+        "label": "Equation 15.6",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "15.3a",
+        "label": "Equation 15.3a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "15.3b",
+        "label": "Equation 15.3b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "15.9a",
+        "label": "Equation 15.9a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "15.4",
+        "label": "Equation 15.4",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "15.5b",
+        "label": "Equation 15.5b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "15.5a",
+        "label": "Equation 15.5a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "15.2",
+        "label": "Equation 15.2",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "15.11a",
+        "label": "Equation 15.11a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "15.7a",
+        "label": "Equation 15.7a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Genetics_chapter15_006": [
+      {
+        "kind": "chapter",
+        "id": "3",
+        "label": "Chapter 3",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "table",
+        "id": "15.1",
+        "label": "Table 15.1",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "15.5b",
+        "label": "Equation 15.5b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "15.10b",
+        "label": "Equation 15.10b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Genetics_chapter15_007": [
+      {
+        "kind": "equation",
+        "id": "15.13a",
+        "label": "Equation 15.13a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Genetics_chapter15_008": [
+      {
+        "kind": "chapter",
+        "id": "18",
+        "label": "Chapter 18",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "chapter",
+        "id": "8",
+        "label": "Chapter 8",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "15.14a",
+        "label": "Equation 15.14a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "15.7b",
+        "label": "Equation 15.7b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "15.14c",
+        "label": "Equation 15.14c",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Genetics_chapter15_009": [
+      {
+        "kind": "chapter",
+        "id": "13",
+        "label": "Chapter 13",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "15.15",
+        "label": "Equation 15.15",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Genetics_chapter15_010": [
+      {
+        "kind": "chapter",
+        "id": "13",
+        "label": "Chapter 13",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Genetics_chapter15_011": [
+      {
+        "kind": "equation",
+        "id": "13.8",
+        "label": "Equation 13.8",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "figure",
+        "id": "15.1",
+        "label": "Figure 15.1",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Genetics_chapter15_012": [
+      {
+        "kind": "figure",
+        "id": "15.2",
+        "label": "Figure 15.2",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "15.16",
+        "label": "Equation 15.16",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "15.5b",
+        "label": "Equation 15.5b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "15.4",
+        "label": "Equation 15.4",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Genetics_chapter15_013": [
+      {
+        "kind": "chapter",
+        "id": "14",
+        "label": "Chapter 14",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "15.15",
+        "label": "Equation 15.15",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "15.2",
+        "label": "Equation 15.2",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "figure",
+        "id": "15.1",
+        "label": "Figure 15.1",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "15.13b",
+        "label": "Equation 15.13b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "15.17",
+        "label": "Equation 15.17",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Genetics_chapter15_014": [
+      {
+        "kind": "equation",
+        "id": "15.18b",
+        "label": "Equation 15.18b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "15.6",
+        "label": "Equation 15.6",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "15.19a",
+        "label": "Equation 15.19a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "15.2",
+        "label": "Equation 15.2",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "15.20",
+        "label": "Equation 15.20",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "8.33a",
+        "label": "Equation 8.33a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A3.16a",
+        "label": "Equation A3.16a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A3.15",
+        "label": "Equation A3.15",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "15.22",
+        "label": "Equation 15.22",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "15.21",
+        "label": "Equation 15.21",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Genetics_chapter15_015": [
+      {
+        "kind": "figure",
+        "id": "15.3",
+        "label": "Figure 15.3",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Genetics_chapter15_016": [
+      {
+        "kind": "chapter",
+        "id": "8",
+        "label": "Chapter 8",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "15.7a",
+        "label": "Equation 15.7a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "figure",
+        "id": "15.4",
+        "label": "Figure 15.4",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A3.11a",
+        "label": "Equation A3.11a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "15.25d",
+        "label": "Equation 15.25d",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "14.3",
+        "label": "Equation 14.3",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "15.25",
+        "label": "Equation 15.25",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A3.15",
+        "label": "Equation A3.15",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "15.25a",
+        "label": "Equation 15.25a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "15.25b",
+        "label": "Equation 15.25b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "15.8a",
+        "label": "Equation 15.8a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Genetics_chapter15_017": [
+      {
+        "kind": "chapter",
+        "id": "14",
+        "label": "Chapter 14",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "figure",
+        "id": "15.5",
+        "label": "Figure 15.5",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "figure",
+        "id": "15.6",
+        "label": "Figure 15.6",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "15.20",
+        "label": "Equation 15.20",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "15.29",
+        "label": "Equation 15.29",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "15.23",
+        "label": "Equation 15.23",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "15.28b",
+        "label": "Equation 15.28b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "15.32",
+        "label": "Equation 15.32",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "15.33a",
+        "label": "Equation 15.33a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Genetics_chapter15_018": [
+      {
+        "kind": "equation",
+        "id": "15.36b",
+        "label": "Equation 15.36b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "15.37",
+        "label": "Equation 15.37",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "15.35a",
+        "label": "Equation 15.35a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "15.40",
+        "label": "Equation 15.40",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Genetics_chapter15_019": [
+      {
+        "kind": "figure",
+        "id": "15.7",
+        "label": "Figure 15.7",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Genetics_chapter15_020": [
+      {
+        "kind": "figure",
+        "id": "15.7",
+        "label": "Figure 15.7",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "figure",
+        "id": "15.8",
+        "label": "Figure 15.8",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "figure",
+        "id": "15.9",
+        "label": "Figure 15.9",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Genetics_chapter15_021": [],
+    "Genetics_chapter15_022": [],
+    "Genetics_chapter15_023": [
+      {
+        "kind": "table",
+        "id": "15.3",
+        "label": "Table 15.3",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Genetics_chapter15_024": [
+      {
+        "kind": "figure",
+        "id": "15.10",
+        "label": "Figure 15.10",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "table",
+        "id": "15.3",
+        "label": "Table 15.3",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Genetics_chapter15_025": [
+      {
+        "kind": "figure",
+        "id": "15.10",
+        "label": "Figure 15.10",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "15.14c",
+        "label": "Equation 15.14c",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Genetics_chapter15_026": [
+      {
+        "kind": "chapter",
+        "id": "14",
+        "label": "Chapter 14",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "chapter",
+        "id": "5",
+        "label": "Chapter 5",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "figure",
+        "id": "5.2",
+        "label": "Figure 5.2",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "table",
+        "id": "15.4",
+        "label": "Table 15.4",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "figure",
+        "id": "15.11",
+        "label": "Figure 15.11",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "table",
+        "id": "15.5",
+        "label": "Table 15.5",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Genetics_chapter15_027": [
+      {
+        "kind": "table",
+        "id": "15.5",
+        "label": "Table 15.5",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "figure",
+        "id": "15.12",
+        "label": "Figure 15.12",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Genetics_chapter15_028": [
+      {
+        "kind": "figure",
+        "id": "15.12",
+        "label": "Figure 15.12",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "figure",
+        "id": "15.13",
+        "label": "Figure 15.13",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "figure",
+        "id": "15.14",
+        "label": "Figure 15.14",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "figure",
+        "id": "15.8",
+        "label": "Figure 15.8",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "table",
+        "id": "15.6",
+        "label": "Table 15.6",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ]
+  },
+  "semantic_chapter_links": [
+    {
+      "current_section_id": "Genetics_chapter15_003",
+      "current_anchor": "genetics_chapter15_003",
+      "source_chapter_id": "Genetics_chapter14",
+      "label": "Chapter 14",
+      "target_anchor": "genetics_chapter14_section_001",
+      "target_label": "Equation 14.3",
+      "target_ref_type": "equation",
+      "target_ref_id": "14.3",
+      "target_section_title": "Chapter 14 Textbook Mapping",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "an be used to create recombinant inbred lines (RILs) and doubled haploid lines (DHLs), which allow marker-trait associations to be scored in a completely homozygous background and across multiple environments (Chapter 14). The $ F {2} $ design has an advantage over designs using backcross, RIL, or DHL populations, because it generates three genotypes at each marker locus, which allows the estimation of the degree of…",
+      "match_source": "llm-prerequisite"
+    },
+    {
+      "current_section_id": "Genetics_chapter15_003",
+      "current_anchor": "genetics_chapter15_003",
+      "source_chapter_id": "Genetics_chapter20",
+      "label": "Chapter 20",
+      "target_anchor": "genetics_chapter20_section_001",
+      "target_label": "Chapter 20",
+      "target_ref_type": "chapter",
+      "target_ref_id": "20",
+      "target_section_title": "Chapter 20 · Cross-Classified Designs",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "powerful than those involving a single cross, and as a result, designs using multiple line-cross populations are starting to be considered. Examples include dialel designs whose basic structure is examined in Chapter 20 (Rebai and Goffinet 1993, Rebai et al. 1994a), and Comstock and Robinson's (1952) classic Design III wherein the $ F {2} $ from two inbred lines is backcrossed to both parental lines (Cockerham and Z…",
+      "match_source": "chapter-overview"
+    },
+    {
+      "current_section_id": "Genetics_chapter15_004",
+      "current_anchor": "genetics_chapter15_004",
+      "source_chapter_id": "Genetics_chapter14",
+      "label": "Chapter 14",
+      "target_anchor": "genetics_chapter14_section_001",
+      "target_label": "Equation 14.3",
+      "target_ref_type": "equation",
+      "target_ref_id": "14.3",
+      "target_section_title": "Chapter 14 Textbook Mapping",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "edious as the number of markers and/or QTLs under consideration increases. When computing joint probabilities involving more than two loci, one must also account for recombinational interference between loci (Chapter 14). Consider a single QTL flanked by two markers, $ M {1} $ and $ M {2} $. The gamete frequencies depend on three parameters: the recombination frequency $ c {12} $ between markers, the recombination f…",
+      "match_source": "llm-prerequisite"
+    },
+    {
+      "current_section_id": "Genetics_chapter15_006",
+      "current_anchor": "genetics_chapter15_006",
+      "source_chapter_id": "Genetics_chapter3",
+      "label": "Chapter 3",
+      "target_anchor": "genetics_chapter3_section_001",
+      "target_label": "Chapter 3",
+      "target_ref_type": "chapter",
+      "target_ref_id": "3",
+      "target_section_title": "Chapter 3 · Covariance, Regression, and Correlation",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "hat the phenotypic distributions conditioned on the QTL genotypes have common (within-line) variance $ \\sigma {e}^{2} $. Since $ \\sigma(x, z) $ and $ \\sigma^{2}(z) $ are unchanged by a change in the mean of z (Chapter 3), we can arbitrarily set $ E(z {QQ}) = -E(z {qq}) = a $. Coded this way, $ E(x) = E(z) = 0 $, simplifying calculation of $ \\sigma(x, z) $ and $ \\sigma^{2}(z) $. Several workers have suggested the use…",
+      "match_source": "llm-prerequisite"
+    },
+    {
+      "current_section_id": "Genetics_chapter15_008",
+      "current_anchor": "genetics_chapter15_008",
+      "source_chapter_id": "Genetics_chapter18",
+      "label": "Chapter 18",
+      "target_anchor": "genetics_chapter18_section_001",
+      "target_label": "Chapter 18",
+      "target_ref_type": "chapter",
+      "target_ref_id": "18",
+      "target_section_title": "Chapter 18 · 18",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "$ of the kth individual of marker genotype i as a mean value $ \\mu $ plus a marker effect $ b {i} $ and a residual error $ e {ik} $, $$ z {ik}=\\mu+b {i}+e {ik} \\tag{15.14a} $$ This is a one-way ANOVA model (Chapter 18), with the presence of a linked QTL being indicated by a significant between-marker variance. Equivalently, we can express this model as a multiple regression, with the phenotypic value for individual…",
+      "match_source": "chapter-overview"
+    },
+    {
+      "current_section_id": "Genetics_chapter15_008",
+      "current_anchor": "genetics_chapter15_008",
+      "source_chapter_id": "Genetics_chapter8",
+      "label": "Chapter 8",
+      "target_anchor": "genetics_chapter8_section_001",
+      "target_label": "Chapter 8",
+      "target_ref_type": "chapter",
+      "target_ref_id": "8",
+      "target_section_title": "Chapter 8 · Introduction to Matrix Algebra and Linear Models",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "ypes considered in the analysis. In the regression framework, evidence of a linked QTL is provided by a significant $ r^{2} $, which is the fraction of character variance accounted for by the marker genotypes (Chapter 8). Finally, as mentioned above, the presence of a linked QTL can cause different marker genotypes to have different trait variances. If the difference in variance between marker classes is substantial…",
+      "match_source": "chapter-overview"
+    },
+    {
+      "current_section_id": "Genetics_chapter15_009",
+      "current_anchor": "genetics_chapter15_009",
+      "source_chapter_id": "Genetics_chapter13",
+      "label": "Chapter 13",
+      "target_anchor": "genetics_chapter13_012",
+      "target_label": "Equation 13.8",
+      "target_ref_type": "equation",
+      "target_ref_id": "13.8",
+      "target_section_title": "Introduction / COMPLEX SEGREGATION ANALYSIS",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "94). Alternatively, as we discuss later, a creative use of regressions can often provide excellent approximations to ML solutions. For the remainder of this chapter, we assume that the reader has recently read Chapter 13 and Appendix 4, which introduces much of the ML machinery used here. Assuming that the distribution of phenotypes for an individual with QTL genotype $ Q k $ is normal with mean $ \\mu {Q k} $ and va…",
+      "match_source": "llm-prerequisite"
+    },
+    {
+      "current_section_id": "Genetics_chapter15_010",
+      "current_anchor": "genetics_chapter15_010",
+      "source_chapter_id": "Genetics_chapter13",
+      "label": "Chapter 13",
+      "target_anchor": "genetics_chapter13_012",
+      "target_label": "Equation 13.8",
+      "target_ref_type": "equation",
+      "target_ref_id": "13.8",
+      "target_section_title": "Introduction / COMPLEX SEGREGATION ANALYSIS",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "is a function of just five parameters: the QTL position (c), the three QTL means ( $ \\mu {QQ} $, $ \\mu {Qq} $, $ \\mu {qq} $), and the common variance ( $ \\sigma^{2} $). As in the case of segregation analysis (Chapter 13), the likelihood equations can be modified to account for dichotomous (binary) and polychotomous (ordinal) characters through the use of logistic regressions and probit scales (Ghosh et al. 1993, Hac…",
+      "match_source": "llm-prerequisite"
+    },
+    {
+      "current_section_id": "Genetics_chapter15_013",
+      "current_anchor": "genetics_chapter15_013",
+      "source_chapter_id": "Genetics_chapter14",
+      "label": "Chapter 14",
+      "target_anchor": "genetics_chapter14_section_001",
+      "target_label": "Equation 14.3",
+      "target_ref_type": "equation",
+      "target_ref_id": "14.3",
+      "target_section_title": "Chapter 14 Textbook Mapping",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "nome was within 20 cM of a marker. Six QTLs affecting fruit mass, four affecting concentration of soluble solids, and five affecting fruit pH were detected. A follow-up study (Paterson et al. 1990) using NILs (Chapter 14) detected additional QTLs. However, this finer mapping could not confirm the presence of one putative QTL that showed a highly significant peak on the likelihood map in the 1988 study, suggesting it…",
+      "match_source": "llm-prerequisite"
+    },
+    {
+      "current_section_id": "Genetics_chapter15_016",
+      "current_anchor": "genetics_chapter15_016",
+      "source_chapter_id": "Genetics_chapter8",
+      "label": "Chapter 8",
+      "target_anchor": "genetics_chapter8_section_001",
+      "target_label": "Chapter 8",
+      "target_ref_type": "chapter",
+      "target_ref_id": "8",
+      "target_section_title": "Chapter 8 · Introduction to Matrix Algebra and Linear Models",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "s a QTL at position 60 cM (the true position). Note that the relationship is linear when the correct position is used, but highly nonlinear under the incorrect position. generalized least-squares regression (Chapter 8) must be used, with $$ \\widehat{\\boldsymbol{\\beta}}=\\left(\\mathbf{X}^{T}\\mathbf{V}^{-1}\\mathbf{X}\\right)^{-1}\\mathbf{X}^{T}\\mathbf{V}^{-1}\\mathbf{y} \\tag{15.25a} $$ which has sample variance $$ \\sigma^…",
+      "match_source": "chapter-overview"
+    },
+    {
+      "current_section_id": "Genetics_chapter15_017",
+      "current_anchor": "genetics_chapter15_017",
+      "source_chapter_id": "Genetics_chapter14",
+      "label": "Chapter 14",
+      "target_anchor": "genetics_chapter14_section_001",
+      "target_label": "Equation 14.3",
+      "target_ref_type": "equation",
+      "target_ref_id": "14.3",
+      "target_section_title": "Chapter 14 Textbook Mapping",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "In particular, if an interval contains multiple QTLs, we cannot estimate their effects and positions (or even the correct number of QTLs), a point stressed by McMillan and Robertson (1974). (See Example 2 from Chapter 14.) While one obvious solution is simply to increase the marker density to the point where each QTL is indeed isolated, any increase in the marker density must be accompanied by a sufficient increase…",
+      "match_source": "llm-prerequisite"
+    },
+    {
+      "current_section_id": "Genetics_chapter15_026",
+      "current_anchor": "genetics_chapter15_026",
+      "source_chapter_id": "Genetics_chapter14",
+      "label": "Chapter 14",
+      "target_anchor": "genetics_chapter14_section_001",
+      "target_label": "Equation 14.3",
+      "target_ref_type": "equation",
+      "target_ref_id": "14.3",
+      "target_section_title": "Chapter 14 Textbook Mapping",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "re involved, the expected $ F 2 $ frequency of either parental genotype is $ (1/4)^n + (1/4)^n $. Setting this equal to 1/500 and solving gives n = 5. Focusing on the five major regions, marker-selected NILs (Chapter 14) were constructed to further characterize the QTLs. Doebley's first target was a QTL on chromosome 4, which accounted for 50% of the variance in glume score. A small maize segment containing this reg…",
+      "match_source": "llm-prerequisite"
+    },
+    {
+      "current_section_id": "Genetics_chapter15_026",
+      "current_anchor": "genetics_chapter15_026",
+      "source_chapter_id": "Genetics_chapter5",
+      "label": "Chapter 5",
+      "target_anchor": "genetics_chapter5_section_001",
+      "target_label": "Figure 5.2",
+      "target_ref_type": "figure",
+      "target_ref_id": "5.2",
+      "target_section_title": "Chapter 5 Textbook Mapping",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "inte glume architecture 1. A similar analysis of two other regions, QTL-3L and QTL-1L, showed strong epistasis for a number of key traits separating maize and teosinte (Doebley et al. 1995a; see Example 1 from Chapter 5). By using marker-selected introgressed lines, Figure 15.11 · page 497 · source: Genetics chapter15 Figure 15.11 QTLs accounting for differences bet",
+      "match_source": "llm-prerequisite"
+    }
+  ],
+  "prerequisites": [
+    {
+      "id": "prereq-genetics_chapter13",
+      "title": "Chapter 13 · Complex Segregation Analysis and Likelihood",
+      "source_chapter_id": "Genetics_chapter13",
+      "used_in_sections": [
+        "Genetics_chapter15_008",
+        "Genetics_chapter15_009",
+        "Genetics_chapter15_010"
+      ],
+      "why_needed": "第15章QTL检测使用最大似然比检验，依赖第13章介绍的似然函数框架和公式13.8。",
+      "key_points": [
+        "理解似然比统计量的构造",
+        "掌握公式13.8中受限最大似然的计算",
+        "熟悉复杂分离分析中的假设检验思想"
+      ],
+      "source_links": [
+        {
+          "chapter_id": "Genetics_chapter13",
+          "label": "Chapter 13",
+          "markdown_path": "/data/textbook/Genetics_chapter13_textbook.md",
+          "anchor": "genetics_chapter13_section_001",
+          "section_title": "Chapter 13 Textbook Mapping",
+          "ref_type": "chapter",
+          "ref_id": "13",
+          "book_hint": "",
+          "link_scope": "current-book",
+          "excerpt": "Chapter 13 Textbook Mapping"
+        },
+        {
+          "chapter_id": "Genetics_chapter13",
+          "label": "Equation 13.8",
+          "markdown_path": "/data/textbook/Genetics_chapter13_textbook.md",
+          "anchor": "genetics_chapter13_012",
+          "section_title": "Introduction / COMPLEX SEGREGATION ANALYSIS",
+          "ref_type": "equation",
+          "ref_id": "13.8",
+          "book_hint": "",
+          "link_scope": "current-book",
+          "excerpt": "ibution) as the restricted model and model 2 as the full model. The resulting test statistic has $5 - 2 = 3$ degrees of freedom, with twice the log of the maximum of the restricted likelihood function given by Equation 13.8. If the major-gene model provides a significant improvement, model 4 (major gene plus polygenic background) can next be tested against the major-gene-only model (2), with the test statistic havin…"
+        }
+      ],
+      "source_excerpt": "Chapter 13 Textbook Mapping",
+      "summary_status": "llm-validated",
+      "usage_count": 3,
+      "explicit_asset_refs": 1,
+      "priority_score": 180,
+      "validated_by_llm": true,
+      "concept_title": "Chapter 13 · Complex Segregation Analysis and Likelihood",
+      "nav_label": "Ch13 Segregation",
+      "evidence_summary": "第15章直接引用公式13.8和似然比检验，这些来自第13章的复杂分离分析。"
+    },
+    {
+      "id": "prereq-genetics_chapter14",
+      "title": "Chapter 14 · Linkage and Mapping",
+      "source_chapter_id": "Genetics_chapter14",
+      "used_in_sections": [
+        "Genetics_chapter15_002",
+        "Genetics_chapter15_003",
+        "Genetics_chapter15_012",
+        "Genetics_chapter15_015",
+        "Genetics_chapter15_016",
+        "Genetics_chapter15_025"
+      ],
+      "why_needed": "本章QTL定位基于连锁分析和标记基因型条件概率，需先掌握第14章的连锁与作图基础。",
+      "key_points": [
+        "理解重组率与遗传距离的计算",
+        "掌握标记基因型条件概率的推导",
+        "熟悉连锁图谱构建的基本原理",
+        "了解线交群体（如F2、回交）的遗传结构"
+      ],
+      "source_links": [
+        {
+          "chapter_id": "Genetics_chapter14",
+          "label": "Chapter 14",
+          "markdown_path": "/data/textbook/Genetics_chapter14_textbook.md",
+          "anchor": "genetics_chapter14_section_001",
+          "section_title": "Chapter 14 Textbook Mapping",
+          "ref_type": "chapter",
+          "ref_id": "14",
+          "book_hint": "",
+          "link_scope": "current-book",
+          "excerpt": "Chapter 14 Textbook Mapping"
+        },
+        {
+          "chapter_id": "Genetics_chapter14",
+          "label": "Equation 14.3",
+          "markdown_path": "/data/textbook/Genetics_chapter14_textbook.md",
+          "anchor": "genetics_chapter14_section_001",
+          "section_title": "Chapter 14 Textbook Mapping",
+          "ref_type": "equation",
+          "ref_id": "14.3",
+          "book_hint": "",
+          "link_scope": "current-book",
+          "excerpt": ""
+        }
+      ],
+      "source_excerpt": "Chapter 14 Textbook Mapping",
+      "summary_status": "llm-validated",
+      "usage_count": 6,
+      "explicit_asset_refs": 1,
+      "priority_score": 180,
+      "validated_by_llm": true,
+      "concept_title": "Chapter 14 · Linkage and Mapping",
+      "nav_label": "Ch14: Linkage",
+      "evidence_summary": "当前章节大量引用线交群体设计、条件概率、区间作图等概念，均以第14章的连锁与标记分析为基础。"
+    },
+    {
+      "id": "prereq-genetics_chapter3",
+      "title": "Chapter 3 · Covariance, Regression, and Correlation",
+      "source_chapter_id": "Genetics_chapter3",
+      "used_in_sections": [
+        "Genetics_chapter15_005"
+      ],
+      "why_needed": "理解标记基因型方差和更高阶矩的差异需要掌握协方差、回归和相关等基本统计概念。",
+      "key_points": [
+        "协方差衡量两个变量共同变化的程度",
+        "回归分析用于预测和解释变量关系",
+        "相关系数标准化了协方差，便于比较"
+      ],
+      "source_links": [
+        {
+          "chapter_id": "Genetics_chapter3",
+          "label": "Chapter 3",
+          "markdown_path": "/data/textbook/Genetics_chapter3_textbook.md",
+          "anchor": "genetics_chapter3_section_001",
+          "section_title": "Chapter 3 · Covariance, Regression, and Correlation",
+          "ref_type": "chapter",
+          "ref_id": "3",
+          "book_hint": "",
+          "link_scope": "current-book",
+          "excerpt": "Chapter 3 · Covariance, Regression, and Correlation"
+        }
+      ],
+      "source_excerpt": "Chapter 3 · Covariance, Regression, and Correlation",
+      "summary_status": "llm-validated",
+      "usage_count": 1,
+      "explicit_asset_refs": 0,
+      "priority_score": 150,
+      "validated_by_llm": true,
+      "concept_title": "Chapter 3 · Covariance, Regression, and Correlation",
+      "nav_label": "Covariance, Regression, Correlation",
+      "evidence_summary": "当前章节涉及标记方差和高阶矩，需要协方差、回归和相关的基础知识。"
+    },
+    {
+      "id": "prereq-genetics_chapter5",
+      "title": "Chapter 5 · Maize and Teosinte Genetics",
+      "source_chapter_id": "Genetics_chapter5",
+      "used_in_sections": [
+        "Genetics_chapter15_025"
+      ],
+      "why_needed": "当前第15章引用第5章的图5.2，并基于第5章对玉米和类蜀黍差异的QTL分析展开讨论。",
+      "key_points": [
+        "理解玉米与类蜀黍的遗传差异及其QTL定位方法",
+        "掌握图5.2中展示的关键表型对比",
+        "熟悉关联第5章讨论的驯化基因概念"
+      ],
+      "source_links": [
+        {
+          "chapter_id": "Genetics_chapter5",
+          "label": "Chapter 5",
+          "markdown_path": "/data/textbook/Genetics_chapter5_textbook.md",
+          "anchor": "genetics_chapter5_section_001",
+          "section_title": "Chapter 5 Textbook Mapping",
+          "ref_type": "chapter",
+          "ref_id": "5",
+          "book_hint": "",
+          "link_scope": "current-book",
+          "excerpt": "Chapter 5 Textbook Mapping"
+        },
+        {
+          "chapter_id": "Genetics_chapter5",
+          "label": "Figure 5.2",
+          "markdown_path": "/data/textbook/Genetics_chapter5_textbook.md",
+          "anchor": "genetics_chapter5_section_001",
+          "section_title": "Chapter 5 Textbook Mapping",
+          "ref_type": "figure",
+          "ref_id": "5.2",
+          "book_hint": "",
+          "link_scope": "current-book",
+          "excerpt": ""
+        }
+      ],
+      "source_excerpt": "Chapter 5 Textbook Mapping",
+      "summary_status": "llm-validated",
+      "usage_count": 1,
+      "explicit_asset_refs": 1,
+      "priority_score": 150,
+      "validated_by_llm": true,
+      "concept_title": "Chapter 5 · Maize and Teosinte Genetics",
+      "nav_label": "Ch5 Maize-Teosinte",
+      "evidence_summary": "第15章直接引用第5章的图5.2，并引用了第5章的研究成果。"
+    }
+  ],
+  "llm": {
+    "requests_total": 5,
+    "cache_hits": 0,
+    "cache_writes": 5,
+    "remote_calls": 5,
+    "budget_rejections": 0,
+    "prompt_chars_sent": 18178,
+    "response_chars_received": 1943,
+    "api_prompt_tokens": 4659,
+    "api_completion_tokens": 2195,
+    "api_total_tokens": 6854,
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "cache_enabled": true,
+    "cache_dir": "D:\\大学资料\\大二\\LLM-Agent科学文献系统知识库处理\\tmp\\llm_cache",
+    "max_remote_calls": 0,
+    "max_prompt_chars_total": 0,
+    "max_response_chars_total": 0,
+    "validated_only": true,
+    "preserved_from_previous_build": true
+  }
+}

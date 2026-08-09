@@ -36,6 +36,21 @@ class TextbookExportResult:
     chunk_count: int
 
 
+def book_id_from_chapter(chapter: str) -> str:
+    match = re.match(r"^(?P<book>[A-Za-z]+)_(?:chapter|appendix)\d+", str(chapter or ""), re.IGNORECASE)
+    return match.group("book") if match else ""
+
+
+def canonical_formula_latex(value: str) -> str:
+    value = str(value or "")
+    value = re.sub(r"\$", "", value)
+    value = re.sub(r"\\(?:begin|end)\{[^}]+\}", "", value)
+    value = re.sub(r"\\mathrm\{([^}]*)\}", r"\1", value)
+    value = re.sub(r"\\operatorname\{([^}]*)\}", r"\1", value)
+    value = re.sub(r"\\tag\{[^}]*\}", "", value)
+    return re.sub(r"\s+", "", value)
+
+
 def parse_chapter_filter(raw: str | None) -> set[str] | None:
     if raw is None or not str(raw).strip():
         return None
@@ -60,6 +75,8 @@ def export_textbooks(
     out_dir: str | Path,
     chapters: Iterable[str] | None = None,
     figure_library: str | Path | None = None,
+    book_id: str | None = None,
+    books: Iterable[str] | None = None,
 ) -> list[TextbookExportResult]:
     structured_path = Path(structured_dir)
     output_path = Path(out_dir)
@@ -69,6 +86,7 @@ def export_textbooks(
         if chapters is not None
         else None
     )
+    book_filter = {str(book).strip().lower() for book in (books or []) if str(book).strip()}
 
     grouped: dict[str, list[Path]] = defaultdict(list)
     for path in structured_path.glob("*_*.json"):
@@ -76,6 +94,8 @@ def export_textbooks(
         if not match:
             continue
         chapter = match.group(1)
+        if book_filter and book_id_from_chapter(chapter).lower() not in book_filter:
+            continue
         if chapter_filter is not None and not chapter_matches_filter(chapter, chapter_filter):
             continue
         grouped[chapter].append(path)
@@ -85,6 +105,7 @@ def export_textbooks(
         structured_path,
         figure_library=figure_library_path,
         output_dir=output_path,
+        book_id=book_id,
     )
 
     results: list[TextbookExportResult] = []
@@ -106,18 +127,20 @@ class TextbookRenderer:
         structured_dir: Path,
         figure_library: Path | None = None,
         output_dir: Path | None = None,
+        book_id: str | None = None,
     ):
         self.structured_dir = structured_dir
         self.figure_library_path = figure_library
         self.figure_library_root = figure_library.parent if figure_library else structured_dir
         self.output_dir = output_dir
-        self.formula_map = self._load_formula_map()
-        self.figure_map = self._load_figure_map()
+        self.book_id_override = str(book_id or "").strip()
+        self.active_book_id: str | None = None
+        self.formula_map: dict[str, dict[str, Any]] = {}
+        self.formulas_by_canonical: dict[str, list[dict[str, Any]]] = defaultdict(list)
+        self.figure_map: dict[tuple[str, str], dict[str, Any]] = {}
         self.figure_ids_by_chapter: dict[str, set[str]] = defaultdict(set)
-        for chapter, figure_id in self.figure_map:
-            if chapter:
-                self.figure_ids_by_chapter[chapter].add(figure_id)
-        self.tables_by_id, self.tables_by_chapter_id = self._load_table_maps()
+        self.tables_by_id: dict[str, list[dict[str, Any]]] = defaultdict(list)
+        self.tables_by_chapter_id: dict[tuple[str, str], list[dict[str, Any]]] = defaultdict(list)
         (
             self.examples_by_ref,
             self.examples_by_chapter_ref,
@@ -128,12 +151,15 @@ class TextbookRenderer:
         self.raw_table_replaced_ids: set[str] = set()
         self.raw_table_last_replacement_by_chapter: dict[str, str] = {}
         self.unowned_raw_tables_by_section: dict[str, list[str]] = defaultdict(list)
+        self.embedded_formula_occurrences: dict[str, int] = defaultdict(int)
 
     def render_chapter(self, chapter: str, chunks: list[dict[str, Any]]) -> str:
+        self.activate_book(self.book_id_override or book_id_from_chapter(chapter))
         self.raw_table_overrides = {}
         self.raw_table_replaced_ids = set()
         self.raw_table_last_replacement_by_chapter = {}
         self.unowned_raw_tables_by_section = defaultdict(list)
+        self.embedded_formula_occurrences = defaultdict(int)
         chapter_label = render_chapter_label(chapter)
         chapter_title = self.chapter_title_for_render(chapter, chunks)
         lines = [
@@ -189,11 +215,16 @@ class TextbookRenderer:
                 chunk_lines.append(rendered)
                 chunk_lines.append("")
 
-            if not chunk_lines:
+            heading_only = (
+                str(chunk.get("node_kind") or "").strip().lower() == "heading"
+                and bool(chunk.get("allow_empty"))
+            )
+            if not chunk_lines and not heading_only:
                 continue
             lines.append(f"## {chunk_id} · {display_section}")
             lines.append("")
-            lines.extend(chunk_lines)
+            if chunk_lines:
+                lines.extend(chunk_lines)
             section_key = section_keys[chunk_index] if chunk_index < len(section_keys) else ""
             if last_chunk_index_by_section.get(section_key) == chunk_index:
                 for table_id in sink_tables_by_section.get(section_key, []):
@@ -404,7 +435,7 @@ class TextbookRenderer:
                 self.record_raw_table_override(chapter_key, table_id, raw_table)
                 self.raw_table_last_replacement_by_chapter[chapter_key] = clean_ref_id(table_id)
             if clean_ref_id(table_id) in table_ids:
-                return f"[[SEE_TABLE:{clean_ref_id(table_id)}]]"
+                return f"*[See Table {clean_ref_id(table_id)} at the end of this section.]*"
             return ""
 
         return HTML_TABLE_RE.sub(replace, content)
@@ -539,13 +570,24 @@ class TextbookRenderer:
         explicitly_placed_figures: set[str] | None = None,
     ) -> str:
         content = normalize_latex_for_katex(content)
+        content = self.render_embedded_book_formulas(content, current_chapter, current_chunk_id)
+        content = canonicalize_display_math(content)
         protected_references: list[str] = []
 
         def protect_reference(match: re.Match[str]) -> str:
             token = f"@@TEXTBOOK_REFERENCE_{len(protected_references)}@@"
-            protected_references.append(
-                f"[[{match.group('tag').upper()}:{clean_ref_id(match.group('id'))}]]"
-            )
+            tag = match.group("tag").upper()
+            ref = clean_ref_id(match.group("id"))
+            if tag == "SEE_TABLE":
+                protected_references.append(self.render_table_reference(ref, current_chapter))
+            elif tag == "SEE_FORMULA":
+                protected_references.append(f"*(See Equation {ref}.)*")
+            elif tag == "SEE_FIGURE":
+                protected_references.append(f"*(See Figure {ref}.)*")
+            elif tag == "SEE_EXAMPLE":
+                protected_references.append(f"*(See Example {ref}.)*")
+            else:
+                protected_references.append(f"*({ref})*")
             return token
 
         content = PLACEHOLDER_RE.sub(
@@ -671,6 +713,12 @@ class TextbookRenderer:
         subsection = str(source.get("subsection") or "")
         latex = str(formula.get("latex") or "")
         latex = normalize_latex_math(latex)
+        if formula.get("book") and str(formula.get("render_mode") or "") in {
+            "numbered_equation",
+            "display_equation",
+            "multi_numbered_equation",
+        }:
+            return self.render_book_formula(formula, latex)
         return "\n".join(
             [
                 f"> **Formula {label}** · `{clean_ref_id(formula_id)}` · source: `{unit_id}` · {subsection}",
@@ -679,6 +727,27 @@ class TextbookRenderer:
                 "",
             ]
         )
+
+    def render_book_formula(self, formula: dict[str, Any], fallback_latex: str | None = None) -> str:
+        """Render book-scoped equations as textbook math, never as debug cards."""
+        mode = str(formula.get("render_mode") or "")
+        if mode == "multi_numbered_equation":
+            parts = formula.get("render_parts") if isinstance(formula.get("render_parts"), list) else []
+            rendered = []
+            for part in parts:
+                if not isinstance(part, dict):
+                    continue
+                latex = normalize_latex_math(str(part.get("latex") or ""))
+                number = str(part.get("equation_number") or "")
+                if latex and number:
+                    rendered.append(f"$$\n{latex}\n\\tag{{{number}}}\n$$")
+            if rendered:
+                return "\n\n".join(rendered) + "\n"
+        latex = normalize_latex_math(str(formula.get("latex") or fallback_latex or ""))
+        number = str(formula.get("equation_number") or "")
+        if number:
+            return f"$$\n{latex}\n\\tag{{{number}}}\n$$\n"
+        return f"$$\n{latex}\n$$\n"
 
     def render_table_block(self, table_id: str, current_chapter: str | None) -> str:
         table = self.resolve_table(table_id, current_chapter)
@@ -695,6 +764,7 @@ class TextbookRenderer:
         override_key = f"{normalize_chapter_id(current_chapter or source.get('chapter') or '')}:{resolved_id}"
         html = str(table.get("html") or self.raw_table_overrides.get(override_key) or "")
         markdown_body = normalize_latex_for_katex(str(table.get("markdown_body") or "").strip())
+        notes = table.get("notes") if isinstance(table.get("notes"), list) else []
         table_type = str(table.get("table_type") or "").strip().lower()
 
         lines = [
@@ -703,6 +773,46 @@ class TextbookRenderer:
             ">",
         ]
 
+        parts = table.get("parts") if isinstance(table.get("parts"), list) else []
+        if parts:
+            for index, part in enumerate(parts):
+                if not isinstance(part, dict):
+                    continue
+                if index:
+                    part_page = part.get("page", "?")
+                    lines.extend([">", f"> *(continued, page {part_page})*", ">"])
+                self.append_table_payload(
+                    lines,
+                    rows=normalize_table_rows(part.get("rows")),
+                    html=str(part.get("html") or ""),
+                    notes=part.get("notes") if isinstance(part.get("notes"), list) else [],
+                    markdown_body=normalize_latex_for_katex(str(part.get("markdown_body") or "").strip()),
+                    table_type=table_type,
+                )
+            lines.append("")
+            return "\n".join(lines)
+
+        self.append_table_payload(
+            lines,
+            rows=rows,
+            html=html,
+            notes=notes,
+            markdown_body=markdown_body,
+            table_type=table_type,
+        )
+        lines.append("")
+        return "\n".join(lines)
+
+    def append_table_payload(
+        self,
+        lines: list[str],
+        *,
+        rows: list[list[str]],
+        html: str,
+        notes: list[dict[str, Any]],
+        markdown_body: str,
+        table_type: str,
+    ) -> None:
         if rows:
             column_count = len(rows[0])
             consistent = column_count > 0 and all(len(row) == column_count for row in rows)
@@ -713,32 +823,54 @@ class TextbookRenderer:
                         cell = render_cell(row[0]).strip()
                         if cell:
                             lines.append(f"> {cell}")
-                    lines.append("")
-                    return "\n".join(lines)
+                    self.append_table_notes(lines, notes)
+                    self.append_table_markdown_body(lines, markdown_body)
+                    return
                 lines.append("> " + " | ".join(render_cell(cell) for cell in rows[0]))
                 lines.append("> " + " | ".join("---" for _ in range(column_count)))
                 for row in rows[1:]:
                     lines.append("> " + " | ".join(render_cell(cell) for cell in row))
-                lines.append("")
-                return "\n".join(lines)
-
+                self.append_table_notes(lines, notes)
+                self.append_table_markdown_body(lines, markdown_body)
+                return
         if html:
             for line in html.splitlines() or [html]:
                 lines.append(f"> {line}")
+            self.append_table_notes(lines, notes)
             self.append_table_markdown_body(lines, markdown_body)
-            lines.append("")
-            return "\n".join(lines)
-
+            return
         lines.append("> [Table data not available]")
-        lines.append("")
-        return "\n".join(lines)
+        self.append_table_notes(lines, notes)
+        self.append_table_markdown_body(lines, markdown_body)
+
+    def append_table_notes(self, lines: list[str], notes: list[dict[str, Any]]) -> None:
+        rendered = []
+        for note in notes:
+            if not isinstance(note, dict):
+                continue
+            marker = str(note.get("marker") or "").strip()
+            content = normalize_latex_for_katex(str(note.get("content") or "").strip())
+            if content:
+                rendered.append(f"{marker} {content}".strip())
+        if not rendered:
+            return
+        lines.append(">")
+        for note in rendered:
+            lines.append(f"> {note}")
 
     def append_table_markdown_body(self, lines: list[str], markdown_body: str) -> None:
         if not markdown_body:
             return
+        # Some legacy records store a full Markdown copy of the same table.
+        # Rows/HTML are authoritative; only append body text that is not a
+        # duplicate table representation.
+        body_lines = [line.strip() for line in markdown_body.splitlines() if line.strip()]
+        if body_lines and sum("|" in line for line in body_lines) >= 2:
+            return
         lines.append(">")
         for line in markdown_body.splitlines():
-            lines.append(f"> {line}" if line else ">")
+            rendered = self.render_inline_asset_references(line)
+            lines.append(f"> {rendered}" if rendered else ">")
 
     def markdown_asset_table_cell(self, value: str) -> str:
         return markdown_table_cell(self.render_inline_asset_references(str(value or "")))
@@ -758,7 +890,10 @@ class TextbookRenderer:
         return PLACEHOLDER_RE.sub(repl, value)
 
     def render_table_reference(self, table_id: str, current_chapter: str | None) -> str:
-        return f"[[SEE_TABLE:{clean_ref_id(table_id)}]]"
+        ref = clean_ref_id(table_id)
+        # Audited textbooks sink each complete table to the end of its owning
+        # section. Preserve the semantic position as readable prose.
+        return f"*[See Table {ref} at the end of this section.]*"
 
     def render_unowned_raw_table_block(self, raw_table: str) -> str:
         lines = [
@@ -991,15 +1126,79 @@ class TextbookRenderer:
         if tag in {"SEE_FORMULA", "FORMULA"}:
             return f"*({ref})*"
         if tag in {"SEE_TABLE", "TABLE"}:
-            return f"[[SEE_TABLE:{ref}]]"
+            return f"*[See Table {ref} at the end of this section.]*"
         if tag in {"SEE_EXAMPLE", "EXAMPLE"}:
-            return f"[[SEE_EXAMPLE:{ref}]]"
+            return f"*[See Example {ref} in this section.]*"
         if tag in {"SEE_FIGURE", "FIGURE"}:
             return f"*[Figure {ref} - see above]*"
         return f"*[{ref} - see above]*"
 
-    def _load_formula_map(self) -> dict[str, dict[str, Any]]:
-        library = read_json_if_exists(self.structured_dir / "formula_library.json", {"formulas": []})
+    def activate_book(self, book_id: str | None) -> None:
+        book = str(book_id or "").strip()
+        if self.active_book_id is not None and book == self.active_book_id:
+            return
+        self.active_book_id = book
+        self.formula_map = self._load_formula_map(book)
+        self.formulas_by_canonical = defaultdict(list)
+        for formula in self.formula_map.values():
+            key = canonical_formula_latex(str(formula.get("latex") or ""))
+            if key:
+                self.formulas_by_canonical[key].append(formula)
+        self.figure_map = self._load_figure_map(book)
+        self.figure_ids_by_chapter = defaultdict(set)
+        for chapter, figure_id in self.figure_map:
+            if chapter:
+                self.figure_ids_by_chapter[chapter].add(figure_id)
+        self.tables_by_id, self.tables_by_chapter_id = self._load_table_maps(book)
+
+    def render_embedded_book_formulas(
+        self,
+        content: str,
+        current_chapter: str | None,
+        current_chunk_id: str | None,
+    ) -> str:
+        if not self.active_book_id or not self.formulas_by_canonical:
+            return content
+
+        def replace(match: re.Match[str]) -> str:
+            raw_latex = match.group(1)
+            formula = self.resolve_embedded_formula(raw_latex, current_chapter, current_chunk_id)
+            if not formula:
+                return match.group(0)
+            return self.render_book_formula(formula, raw_latex).strip()
+
+        return re.sub(r"\$\$(.*?)\$\$", replace, content, flags=re.DOTALL)
+
+    def resolve_embedded_formula(
+        self,
+        latex: str,
+        current_chapter: str | None,
+        current_chunk_id: str | None,
+    ) -> dict[str, Any] | None:
+        candidates = self.formulas_by_canonical.get(canonical_formula_latex(latex), [])
+        candidates = [item for item in candidates if str(item.get("render_mode") or "") != "exclude"]
+        if not candidates:
+            return None
+        chapter = normalize_chapter_id(current_chapter or "")
+
+        def same_chapter(formula: dict[str, Any]) -> bool:
+            source = formula.get("source") if isinstance(formula.get("source"), dict) else {}
+            return normalize_chapter_id(source.get("chapter") or "") == chapter
+
+        chapter_candidates = [formula for formula in candidates if same_chapter(formula)]
+        ordered = sorted(
+            chapter_candidates or candidates,
+            key=lambda formula: clean_ref_id(formula.get("id") or ""),
+        )
+        key = canonical_formula_latex(latex)
+        occurrence = self.embedded_formula_occurrences[key]
+        self.embedded_formula_occurrences[key] += 1
+        return ordered[occurrence] if occurrence < len(ordered) else None
+
+    def _load_formula_map(self, book_id: str | None = None) -> dict[str, dict[str, Any]]:
+        dedicated = self.structured_dir / f"{book_id}_formula_library.json" if book_id else None
+        path = dedicated if dedicated and dedicated.exists() else self.structured_dir / "formula_library.json"
+        library = read_json_if_exists(path, {"formulas": []})
         formulas = library.get("formulas") if isinstance(library, dict) else []
         return {
             clean_ref_id(formula.get("id")): formula
@@ -1007,8 +1206,9 @@ class TextbookRenderer:
             if isinstance(formula, dict) and clean_ref_id(formula.get("id"))
         }
 
-    def _load_figure_map(self) -> dict[tuple[str, str], dict[str, Any]]:
-        path = self.figure_library_path or (self.structured_dir / "figure_library.json")
+    def _load_figure_map(self, book_id: str | None = None) -> dict[tuple[str, str], dict[str, Any]]:
+        dedicated = self.structured_dir / f"{book_id}_figure_library.json" if book_id else None
+        path = dedicated if dedicated and dedicated.exists() else (self.figure_library_path or (self.structured_dir / "figure_library.json"))
         library = read_json_if_exists(path, {"figures": {}})
         figures_payload = library.get("figures") if isinstance(library, dict) else {}
         if isinstance(figures_payload, dict):
@@ -1029,8 +1229,11 @@ class TextbookRenderer:
 
     def _load_table_maps(
         self,
+        book_id: str | None = None,
     ) -> tuple[dict[str, list[dict[str, Any]]], dict[tuple[str, str], list[dict[str, Any]]]]:
-        library = read_json_if_exists(self.structured_dir / "table_library.json", {"tables": []})
+        dedicated = self.structured_dir / f"{book_id}_table_library.json" if book_id else None
+        path = dedicated if dedicated and dedicated.exists() else self.structured_dir / "table_library.json"
+        library = read_json_if_exists(path, {"tables": []})
         tables = library.get("tables") if isinstance(library, dict) else []
         by_id: dict[str, list[dict[str, Any]]] = defaultdict(list)
         by_chapter: dict[tuple[str, str], list[dict[str, Any]]] = defaultdict(list)
@@ -1439,3 +1642,50 @@ def normalize_latex_for_katex(text: str) -> str:
         return f"{open_delim}{normalize_latex_math(body)}{close_delim}"
 
     return re.sub(r"(\${1,2})([\s\S]*?)(\1)", repl, str(text or ""))
+
+
+def canonicalize_display_math(text: str) -> str:
+    """Put every balanced ``$$`` delimiter on its own line without changing TeX."""
+    value = str(text or "")
+    parts: list[str] = []
+    cursor = 0
+    text_start = 0
+
+    def escaped(index: int) -> bool:
+        slashes = 0
+        probe = index - 1
+        while probe >= 0 and value[probe] == "\\":
+            slashes += 1
+            probe -= 1
+        return slashes % 2 == 1
+
+    while cursor < len(value) - 1:
+        if value[cursor : cursor + 2] != "$$" or escaped(cursor):
+            cursor += 1
+            continue
+        end = cursor + 2
+        while end < len(value) - 1:
+            if value[end : end + 2] == "$$" and not escaped(end):
+                break
+            end += 1
+        else:
+            cursor += 2
+            continue
+
+        body = value[cursor + 2 : end].strip()
+        if not body:
+            cursor = end + 2
+            continue
+        before = value[text_start:cursor].strip()
+        if before:
+            parts.append(before)
+        parts.append(f"$$\n{body}\n$$")
+        cursor = end + 2
+        text_start = cursor
+
+    remaining = value[text_start:].strip()
+    if remaining:
+        parts.append(remaining)
+    if not parts:
+        return value
+    return "\n\n".join(parts)

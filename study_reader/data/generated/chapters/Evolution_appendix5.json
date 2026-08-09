@@ -1,0 +1,1819 @@
+{
+  "sections": [
+    {
+      "id": "Evolution_appendix5_section_001",
+      "title": "Appendix 5 · Appendix 5 / The Geometry of Vectors and Matrices: Eigenvalues and Eigenvectors",
+      "nav_label": "The Geometry of Vectors and Matrices: Eigenvalues and Eigenvecto",
+      "raw_title": "Appendix 5 · Appendix 5 / The Geometry of Vectors and Matrices: Eigenvalues and Eigenvectors",
+      "level": 1,
+      "depth": 0,
+      "anchor": "evolution_appendix5_section_001",
+      "text_preview": ""
+    },
+    {
+      "id": "Evolution_appendix5_001",
+      "title": "Appendix: Introduction",
+      "nav_label": "Appendix: Introduction",
+      "raw_title": "Evolution_appendix5_001 · Appendix: Introduction",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix5_001",
+      "text_preview": "Much of the presentation that follows is in matrix notation, and for this I offer no apology as this has rapidly become an essential tool of any serious student of animal breeding. Henderson (1973) The basic concepts of matrix algebra were introduced in LW Chapter 8 and LW Appendix A3, and we assume the reader has thi…"
+    },
+    {
+      "id": "Evolution_appendix5_002",
+      "title": "Appendix: Introduction / THE GEOMETRY OF VECTORS AND MATRICES",
+      "nav_label": "THE GEOMETRY OF VECTORS AND MATRICES",
+      "raw_title": "Evolution_appendix5_002 · Appendix: Introduction / THE GEOMETRY OF VECTORS AND MATRICES",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix5_002",
+      "text_preview": "As there are numerous excellent texts on matrix algebra, we made little effort to prove most of the results given below. For statistical applications, concise introductions can be found in the chapters on matrix methods in Johnson and Wichern (1988) and Morrison (1976), while Dhrymes (1978) and Searle (1982) provided…"
+    },
+    {
+      "id": "Evolution_appendix5_003",
+      "title": "THE GEOMETRY OF VECTORS AND MATRICES / Comparing Vectors: Lengths and Angles",
+      "nav_label": "Comparing Vectors: Lengths and Angles",
+      "raw_title": "Evolution_appendix5_003 · THE GEOMETRY OF VECTORS AND MATRICES / Comparing Vectors: Lengths and Angles",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix5_003",
+      "text_preview": "As Figure A5.1 shows, a vector, x, can be treated as a geometric object, consisting of an arrow leading from the origin to an n-dimensional point whose coordinates are given by the elements of x. By changing coordinate systems, we change the resulting vector, potentially changing both its direction (rotating the vecto…"
+    },
+    {
+      "id": "Evolution_appendix5_004",
+      "title": "THE GEOMETRY OF VECTORS AND MATRICES / Matrices Describe Vector Transformations",
+      "nav_label": "Matrices Describe Vector Transformations",
+      "raw_title": "Evolution_appendix5_004 · THE GEOMETRY OF VECTORS AND MATRICES / Matrices Describe Vector Transformations",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix5_004",
+      "text_preview": "When we multiply a vector, x, by a matrix, A, to create a new vector, y = Ax, A rotates and scales the original vector, x, into the new vector, y. A therefore describes a transformation of the original coordinate system of x into a new coordinate system, y (which has a different dimension from x unless A is square). […"
+    },
+    {
+      "id": "Evolution_appendix5_005",
+      "title": "THE GEOMETRY OF VECTORS AND MATRICES / Orthonormal Matrices: Rigid Rotations",
+      "nav_label": "Orthonormal Matrices: Rigid Rotations",
+      "raw_title": "Evolution_appendix5_005 · THE GEOMETRY OF VECTORS AND MATRICES / Orthonormal Matrices: Rigid Rotations",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix5_005",
+      "text_preview": "A key building block on our way to the partitioning of a matrix into its rotational and scaling components is the idea of an orthonormal matrix. Writing a square $ n \\times n $ matrix, U, as a row vector whose n elements are $ 1 \\times n $ column vectors, $ \\mathbf{U} = (\\mathbf{u} 1, \\mathbf{u} 2, \\cdots, \\mathbf{u}…"
+    },
+    {
+      "id": "Evolution_appendix5_006",
+      "title": "THE GEOMETRY OF VECTORS AND MATRICES / Eigenvalues and Eigenvectors",
+      "nav_label": "Eigenvalues and Eigenvectors",
+      "raw_title": "Evolution_appendix5_006 · THE GEOMETRY OF VECTORS AND MATRICES / Eigenvalues and Eigenvectors",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix5_006",
+      "text_preview": "The eigenvalues, and their associated eigenvectors, of a square matrix describe its transformational geometry. Eigenvalues describe how the original coordinate axes are scaled in the new coordinate system that is described by the eigenvectors (i.e., how the original axes are rotated). To more formally introduce eigenv…"
+    },
+    {
+      "id": "Evolution_appendix5_007",
+      "title": "Appendix: Introduction / PROPERTIES OF SYMMETRIC MATRICES",
+      "nav_label": "PROPERTIES OF SYMMETRIC MATRICES",
+      "raw_title": "Evolution_appendix5_007 · Appendix: Introduction / PROPERTIES OF SYMMETRIC MATRICES",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix5_007",
+      "text_preview": "Many of the matrices encountered in quantitative genetics are symmetric, satisfying $ \\mathbf{A} = \\mathbf{A}^T $ (and therefore necessarily square). Examples include covariance matrices and the $ \\gamma $ matrix of quadratic coefficients in the Pearson-Lande-Arnold fitness regression (Chapter 30). Symmetric matrices…"
+    },
+    {
+      "id": "Evolution_appendix5_008",
+      "title": "Appendix: Introduction / 4. A symmetric matrix A can be diagonalized as",
+      "nav_label": "4. A symmetric matrix A can be diagonalized as",
+      "raw_title": "Evolution_appendix5_008 · Appendix: Introduction / 4. A symmetric matrix A can be diagonalized as",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix5_008",
+      "text_preview": "$$ \\mathbf{A}=\\mathbf{U}\\mathbf{A}\\mathbf{U}^{T} $$ where $ \\Lambda $ is a diagonal matrix and $ \\mathbf{U} $ is an orthonormal matrix $ (\\mathbf{U}^{-1} = \\mathbf{U}^T) $. If $ \\lambda i $ and $ \\mathbf{e} i $ are the $ i $th eigenvalue and its associated unit eigenvector of $ \\mathbf{A} $, then $$ \\boldsymbol{A}=dia…"
+    },
+    {
+      "id": "Evolution_appendix5_009",
+      "title": "PROPERTIES OF SYMMETRIC MATRICES / Correlations Can Be Removed by a Matrix Transformation",
+      "nav_label": "Correlations Can Be Removed by a Matrix Transformation",
+      "raw_title": "Evolution_appendix5_009 · PROPERTIES OF SYMMETRIC MATRICES / Correlations Can Be Removed by a Matrix Transformation",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix5_009",
+      "text_preview": "A powerful use of diagonalization is that it allows one to extract a set of $n$ uncorrelated variables for any $n \\times n$ nonsingular covariance matrix, $\\mathbf{V} {\\mathbf{x}}$. Consider the transformation $$ \\mathbf{y}=\\mathbf{U}^{T}\\mathbf{x} $$ where $ \\mathbf{U} = (\\mathbf{e} 1, \\mathbf{e} 2, \\cdots, \\mathbf{e…"
+    },
+    {
+      "id": "Evolution_appendix5_010",
+      "title": "PROPERTIES OF SYMMETRIC MATRICES / Simultaneous Diagonalization",
+      "nav_label": "Simultaneous Diagonalization",
+      "raw_title": "Evolution_appendix5_010 · PROPERTIES OF SYMMETRIC MATRICES / Simultaneous Diagonalization",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix5_010",
+      "text_preview": "An extension of the notion of diagonalization is the simultaneous diagonalization of two symmetric matrices, P and G, of the same dimension. There exists a matrix T such that $$ \\mathbf{T}^{T}\\mathbf{P}\\mathbf{T}=\\mathbf{I}\\quad and\\quad\\mathbf{T}^{T}\\mathbf{G}\\mathbf{T}=\\mathbf{D} $$ where D is a diagonal matrix, who…"
+    },
+    {
+      "id": "Evolution_appendix5_011",
+      "title": "Appendix: Introduction / CANONICAL AXES OF QUADRATIC FORMS",
+      "nav_label": "CANONICAL AXES OF QUADRATIC FORMS",
+      "raw_title": "Evolution_appendix5_011 · Appendix: Introduction / CANONICAL AXES OF QUADRATIC FORMS",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix5_011",
+      "text_preview": "The transformation $ \\mathbf{y} = \\mathbf{U}^T \\mathbf{x} $ given by Equation A5.15a applies to any symmetric matrix, and is referred to as its canonical transformation. This simplifies the interpretation of the quadratic form $ \\mathbf{x}^T \\mathbf{A} \\mathbf{x} $, as rotation of the original axes to align them with…"
+    },
+    {
+      "id": "Evolution_appendix5_012",
+      "title": "CANONICAL AXES OF QUADRATIC FORMS / Implications for the Multivariate Normal Distribution",
+      "nav_label": "Implications for the Multivariate Normal Distribution",
+      "raw_title": "Evolution_appendix5_012 · CANONICAL AXES OF QUADRATIC FORMS / Implications for the Multivariate Normal Distribution",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix5_012",
+      "text_preview": "Recall the probability density function for the multivariate normal distribution (LW Chapter 8) $$ \\begin{align }\\phi(\\mathbf{x})=(2\\pi)^{-n/2}\\left \\mathbf{V} {\\mathbf{x}}\\right ^{-1/2}\\exp\\left[-{1\\over2}(\\mathbf{x}-\\boldsymbol{\\mu})^{T}\\mathbf{V} {\\mathbf{x}}^{-1}\\left(\\mathbf{x}-\\boldsymbol{\\mu}\\right)\\right]\\end{…"
+    },
+    {
+      "id": "Evolution_appendix5_013",
+      "title": "CANONICAL AXES OF QUADRATIC FORMS / Principal Components of the Variance-Covariance Matrix",
+      "nav_label": "Principal Components of the Variance-Covariance Matrix",
+      "raw_title": "Evolution_appendix5_013 · CANONICAL AXES OF QUADRATIC FORMS / Principal Components of the Variance-Covariance Matrix",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix5_013",
+      "text_preview": "We are often interested in how the variance of a random vector can be decomposed into independent components. For example, even though we may be measuring n variables, only one or two of these may account for the majority of the variation. If this is the case, we may wish to exclude those variables contributing very l…"
+    },
+    {
+      "id": "Evolution_appendix5_014",
+      "title": "Appendix: Introduction / TESTING FOR MULTIVARIATE NORMALITY",
+      "nav_label": "TESTING FOR MULTIVARIATE NORMALITY",
+      "raw_title": "Evolution_appendix5_014 · Appendix: Introduction / TESTING FOR MULTIVARIATE NORMALITY",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix5_014",
+      "text_preview": "Multivariate normality is often assumed in statistical procedures, but it is less often tested. In LW Chapter 11 we briefly discussed two approaches for testing univariate normality, one graphical and the other based on deviations of observed skewness and/or kurtosis from Gaussian expectations. As we now demonstrate,…"
+    },
+    {
+      "id": "Evolution_appendix5_015",
+      "title": "TESTING FOR MULTIVARIATE NORMALITY / Graphical Tests: Chi-square Plots",
+      "nav_label": "Graphical Tests: Chi-square Plots",
+      "raw_title": "Evolution_appendix5_015 · TESTING FOR MULTIVARIATE NORMALITY / Graphical Tests: Chi-square Plots",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix5_015",
+      "text_preview": "A fairly simple graphical test can be developed by extending the notion of the normal probability plot that is used to check univariate normality (LW Chapter 11), where observations were ranked and then plotted against their ranked expected values under normality. Departures from linearity signify departures from norm…"
+    },
+    {
+      "id": "Evolution_appendix5_016",
+      "title": "TESTING FOR MULTIVARIATE NORMALITY / Mardia's Test: Multivariate Skewness and Kurtosis",
+      "nav_label": "Mardia's Test: Multivariate Skewness and Kurtosis",
+      "raw_title": "Evolution_appendix5_016 · TESTING FOR MULTIVARIATE NORMALITY / Mardia's Test: Multivariate Skewness and Kurtosis",
+      "level": 2,
+      "depth": 1,
+      "anchor": "evolution_appendix5_016",
+      "text_preview": "As was the case for univariate normality, we can test for multivariate normality by examining the sample skewness and kurtosis. Mardia (1970, 1974) proposed multivariate extensions of skewness and kurtosis measures and suggested a large-sample test based on the asymptotic distribution of these statistics. If there are…"
+    }
+  ],
+  "assets": [
+    {
+      "kind": "figure",
+      "id": "A5.1",
+      "anchor": "figure-a5.1",
+      "label": "Figure A5.1",
+      "section_id": "Evolution_appendix5_003",
+      "src": "figures/Evolution_A5.1.png",
+      "caption": "Figure A5.1 Some basic geometric concepts of vectors. While we use examples from two dimensions, these concepts easily extend to $n$ dimensions. A: A vector $x$ can be thought of as an arrow from the origin to a point in space whose coordinates are given by the elements of $x$. B: Multiplying a vector by $-1$ results in a reflection about the origin. C: One measure of the difference in direction between two vectors is the angle $(\\theta)$ between them. D: Proj($\\mathbf{b}$ on $\\mathbf{a}$) is the vector resulting from the projection of $\\mathbf{b}$ onto a. Note that the resulting projection vector is either in the same direction as $a$ or in the direction of the reflection of $a$, as seen for Proj($\\mathbf{c}$ on $\\mathbf{a}$)."
+    },
+    {
+      "kind": "example",
+      "id": "A5.1",
+      "anchor": "example-a5.1",
+      "label": "Example A5.1",
+      "section_id": "Evolution_appendix5_004",
+      "excerpt": "Example A5.1 · ref: A5.1 · source: Evolution appendix5 004.json · blocks 1–3 Example A5.1. Consider the Lande version of the multivariate breeder’s equation, $ \\mathbf{R} = \\mathbf{G}\\beta $ (Equation 13.26a). Here $ \\mathbf{R} $ is the change in the vector of phenotypic means resulting from selection, $ \\mathbf{G} $ is the covariance matrix of additive-genetic values (breeding values) of the characters, and $ \\beta $ is the directional selection gradient (the direction of c…"
+    },
+    {
+      "kind": "figure",
+      "id": "A5.2",
+      "anchor": "figure-a5.2",
+      "label": "Figure A5.2",
+      "section_id": "Evolution_appendix5_004",
+      "src": "figures/Evolution_A5.2.png",
+      "caption": "Figure A5.2 If we use the values of  $ \\beta $ and G from Example A5.1, observe that G translates the directional selection gradient vector  $ (\\beta) $ into the response vector  $ (R) $ in a counterintuitive fashion. While  $ \\beta $ shows that fitness is maximized by increasing both traits 1 and 2, the resulting response vector, R, increases trait 2 but decreases trait 1. This behavior results from the strong negative additive-genetic covariance between  $ z_1 $ and  $ z_2 $, as will become more obvious shortly, when we consider the eigenvectors of G (Figure A5.3). As shown in Example A5.1, the angle between the vectors  $ \\beta $ and R is 45 degrees."
+    },
+    {
+      "kind": "example",
+      "id": "A5.2",
+      "anchor": "example-a5.2",
+      "label": "Example A5.2",
+      "section_id": "Evolution_appendix5_006",
+      "excerpt": "Example A5.2 · ref: A5.2 · source: Evolution appendix5 006.json · blocks 8–12 Example A5.2. Determine the eigenstructure of the genetic covariance matrix G shown in Example A5.1. Writing the characteristic equation, and recalling the expression for the determinant of a $ 2 \\times 2 $ matrix (LW Equation 8.12a), yields $$ \\begin{aligned}\\left \\mathbf{G}-\\lambda\\mathbf{I}\\right &=\\left \\begin{pmatrix}4-\\lambda&-2\\\\ -2&2-\\lambda\\end{pmatrix}\\right \\\\&=(4-\\lambda)(2-\\lambda)-(-2…"
+    },
+    {
+      "kind": "figure",
+      "id": "A5.3",
+      "anchor": "figure-a5.3",
+      "label": "Figure A5.3",
+      "section_id": "Evolution_appendix5_006",
+      "src": "figures/Evolution_A5.3.png",
+      "caption": "Figure A5.3 Left: The scaled eigenvectors associated with the covariance matrix, G, from Example A5.1, plotted along with the selection gradient,  $ \\beta $. Note that  $ e_1 $ and  $ e_2 $ are orthogonal and hence can be thought of as describing a new coordinate system. Because  $ \\lambda_1 \\gg \\lambda_2 $, the leading eigenvector,  $ e_1 $, largely dominates the transformation. Right: This is shown by taking the projections of  $ \\beta $ on each of these eigenvectors (shown here on a magnified scale relative to the left figure). Even though  $ \\beta $ is nearly parallel to  $ e_2 $ ( $ \\theta | e_1 $,  $ \\beta = 13.2^\\circ $), the projection of  $ \\beta $ on  $ e_1 $ yields a vector of greater length than the projection of  $ \\beta $ on  $ e_2 $ ( $ 3.803 $ versus  $ 2.353 $). From Equation A5.9b, the vector of responses to selection, R, is the sum of these two projections."
+    },
+    {
+      "kind": "example",
+      "id": "A5.3",
+      "anchor": "example-a5.3",
+      "label": "Example A5.3",
+      "section_id": "Evolution_appendix5_008",
+      "excerpt": "Example A5.3 · ref: A5.3 · source: Evolution appendix5 008.json · blocks 8–8 Example A5.3. Consider the additive-genetic covariance matrix G from Examples A5.1 and A5.2. Recalling the results from Example A5.2 and using Equation A5.10a, we can express G as $ U\\Lambda U^{T} $, where $$ \\boldsymbol{A}=\\left(\\begin{array}{cc}{{{5.241}}}&{{{0}}} \\\\{{{0}}}&{{{0.765}}}\\end{array}\\right)\\quad and\\quad\\mathbf{U}=(\\mathbf{e} {1}\\quad\\mathbf{e} {2})=\\left(\\begin{array}{cc}\\left(-0.851…"
+    },
+    {
+      "kind": "figure",
+      "id": "A5.4",
+      "anchor": "figure-a5.4",
+      "label": "Figure A5.4",
+      "section_id": "Evolution_appendix5_009",
+      "src": "figures/Evolution_A5.4.png",
+      "caption": "Figure A5.4 The transformation (Equation A5.15a) generating a set of independent variables for the covariance matrix G from Example A5.4 results in a rigid rotation of axes of the original traits onto the new, uncorrelated set. Left: The direction of the new axes are given by the eigenvectors  $ e_1 $ and  $ e_2 $. The angle between the new axis,  $ e_1 $, and the original  $ z_1 $ axis is given by the angle between  $ e_1 $ and  $ z_1 = (1, 0)^T $. Here,  $ ||e_1|| = ||z_1|| = 1 $ and  $ e_1^T z_1 = 0.851 $, giving  $ \\theta = \\cos^{-1}(0.851) \\simeq 32^\\circ $. As this transformation is a rigid rotation, the angle between  $ e_2 $ and the  $ z_2 = (0, 1)^T $ axis is also also  $ 32^\\circ $. Right: On the  $ (y_1, y_2) $ coordinates, the angle between  $ R $ and  $ \\beta $ remains unchanged. See Example A5.4 for further details."
+    },
+    {
+      "kind": "example",
+      "id": "A5.4",
+      "anchor": "example-a5.4",
+      "label": "Example A5.4",
+      "section_id": "Evolution_appendix5_009",
+      "excerpt": "Example A5.4 · ref: A5.4 · source: Evolution appendix5 009.json · blocks 4–7 Example A5.4. If we apply the change of variables suggested by Equation A5.15a to the vector, z, of characters with associated G matrix used in Example A5.1 and using the eigenvalues and vectors obtained in Example A5.2 yields $$ \\begin{aligned}\\mathbf{y}=\\mathbf{U}^{T}\\mathbf{z}&=\\begin{pmatrix}\\mathbf{e} {1}^{T}\\\\\\mathbf{e} {2}^{T}\\end{pmatrix}\\begin{pmatrix}z {1}\\\\z {2}\\end{pmatrix}\\\\&=\\begin{pma…"
+    },
+    {
+      "kind": "example",
+      "id": "A5.5",
+      "anchor": "example-a5.5",
+      "label": "Example A5.5",
+      "section_id": "Evolution_appendix5_010",
+      "excerpt": "Example A5.5 · ref: A5.5 · source: Evolution appendix5 010.json · blocks 1–4 Example A5.5. To find the matrix, T, that simultaneously diagonalizes both P and G, we first use Equation A5.10a to write $$ \\mathbf{P}=\\mathbf{U}\\boldsymbol{\\Lambda}\\mathbf{U}^{T} $$ where $ A $ is a diagonal matrix and $ \\mathbf{U}^T\\mathbf{U} = \\mathbf{U}\\mathbf{U}^T = \\mathbf{I} $. Defining $ \\mathbf{B} = \\mathbf{U}\\boldsymbol{\\Lambda}^{-1/2} $, Equation A5.15e showed that $ \\mathbf{B}^T\\mathbf{…"
+    },
+    {
+      "kind": "figure",
+      "id": "A5.5",
+      "anchor": "figure-a5.5",
+      "label": "Figure A5.5",
+      "section_id": "Evolution_appendix5_011",
+      "src": "figures/Evolution_A5.5.png",
+      "caption": "Figure A5.5 The general shape of surfaces of constant variance for the additive-genetic covariance matrix, G, given in Example A5.1. Defining a new composite character  $ y = az_1 + bz_2 $, the rotated ellipse represents the set of weights  $ (a, b) $ that give y the same additive-genetic variance,  $ c^2 $. The major axis of the ellipse is along  $ e_2 $, the eigenvector associated with the smallest eigenvalue of G, where  $ \\lambda_2 \\simeq 0.765 $, giving  $ 1/\\sqrt{\\lambda_2} \\simeq 1.143 $. The minor axis of the ellipse is along  $ e_1 $, the eigenvector associated with the largest eigenvalue of G, where  $ \\lambda_1 \\simeq 5.241 $, giving  $ 1/\\sqrt{\\lambda_1} \\simeq 0.437 $."
+    },
+    {
+      "kind": "figure",
+      "id": "A5.6",
+      "anchor": "figure-a5.6",
+      "label": "Figure A5.6",
+      "section_id": "Evolution_appendix5_011",
+      "src": "figures/Evolution_A5.6.png",
+      "caption": "Figure A5.6 Surfaces for a multivariate normal (MVN) distribution. Left: Surfaces of equal probability assuming that the additive-genetic values associated with the characters  $ z_1 $ and  $ z_2 $ in Example A5.1 are  $ \\sim \\mathrm{MVN}(\\mu, \\mathbf{G}) $. These surfaces are ellipses centered at  $ \\mu $, with the major axis of the ellipse along  $ e_1 $ and the minor axis along  $ e_2 $, whose lengths (for a fixed c) are, respectively,  $ \\sqrt{\\lambda_1} = 2.289 $ and  $ \\sqrt{\\lambda_2} = 0.875 $. Right: A plot of the associated probability density. Slicing along either the major or minor axis gives a normal curve. Because the variance in the major axis is greater, the curve is much broader along this axis. The covariance between the breeding values of  $ z_1 $ and  $ z_2 $ rotates the distribution so that the principal axes ( $ e_1 $,  $ e_2 $) do not coincide with the original ( $ z_1 $,  $ z_2 $) axes."
+    },
+    {
+      "kind": "example",
+      "id": "A5.6",
+      "anchor": "example-a5.6",
+      "label": "Example A5.6",
+      "section_id": "Evolution_appendix5_013",
+      "excerpt": "Example A5.6 · ref: A5.6 · source: Evolution appendix5 013.json · blocks 3–4 Example A5.6. Again let us consider the additive-genetic covariance matrix, G, as shown in Examples A5.1 and A5.2. Because $ \\lambda 1 \\simeq 5.241 $, $ \\lambda 2 \\simeq 0.765 $, and $ \\text{tr}(G) = 4 + 2 = 6 $, the first PC explains $ 5.241/6 \\simeq 0.8735 $, or 87% of the variance in G. While the first PC accounts for the majority of variation over the entire space of the variables (x), the amoun…"
+    },
+    {
+      "kind": "example",
+      "id": "A5.7",
+      "anchor": "example-a5.7",
+      "label": "Example A5.7",
+      "section_id": "Evolution_appendix5_013",
+      "excerpt": "Example A5.7 · ref: A5.7 · source: Evolution appendix5 013.json · blocks 5–8 Example A5.7. Jolicoeur and Mosimann (1960) measured three carapace characters in 24 males of the painted turtle (Chrysemys picta marginata). Letting $ z 1 $ be the carapace length, $ z 2 $ be the maximum carapace width, and $ z 3 $ be the carapace height, the resulting sample covariance matrix ( $ S z $, the sample estimate of $ V z $) for these data was found to be $$ \\mathbf{S} {\\mathbf{z}}=\\begi…"
+    },
+    {
+      "kind": "figure",
+      "id": "A5.7",
+      "anchor": "figure-a5.7",
+      "label": "Figure A5.7",
+      "section_id": "Evolution_appendix5_015",
+      "src": "figures/Evolution_A5.7.png",
+      "caption": "Figure A5.7 Plots of ranked distance data  $ (d_{(j)}^{2}) $ being the jth smallest distance) versus the expected corresponding  $ \\chi^{2} $ value for the data of Jolicoeur and Mosimann from Example A5.8. Left: The untransformed data do not appear to depart significantly from linearity, although they depart slightly from the intercept (0) and slope (1) of the expected regression under multivariate normality. Right: Log-transforming the data gives a slightly better linear fit  $ (r^{2} = 0.983 \\text{ versus } r^{2} = 0.952) $, with the best-fitting line passing through the origin as expected if the distance data follow a  $ \\chi^{2} $ distribution, and has a slope of essentially one. See Example A5.8 for more details."
+    },
+    {
+      "kind": "example",
+      "id": "A5.8",
+      "anchor": "example-a5.8",
+      "label": "Example A5.8",
+      "section_id": "Evolution_appendix5_015",
+      "excerpt": "Example A5.8 · ref: A5.8 · source: Evolution appendix5 015.json · blocks 4–7 Example A5.8. Consider again the data of Jolicoeur and Mosimann (1960) on carapace characters in 24 male turtles. Are the characters $ z 1 $ (carapace length) and $ z 2 $ (maximum carapace width) jointly bivariate normally distributed? Here $ n = 2 $ and $ m = 24 $ and $$ \\overline{\\mathbf{z}}=\\left(\\begin{array}{l}113.13.\\\\ 88.29\\end{array}\\right),\\mathbf{S} {\\mathbf{Z}}=\\left(\\begin{array}{l l}138…"
+    },
+    {
+      "kind": "example",
+      "id": "A5.9",
+      "anchor": "example-a5.9",
+      "label": "Example A5.9",
+      "section_id": "Evolution_appendix5_016",
+      "excerpt": "Example A5.9 · ref: A5.9 · source: Evolution appendix5 016.json · blocks 4–4 Example A5.9. Do the data considered in Example A5.8 display significant skewness or kurtosis? Here $n = 2$ and $m = 24$. Applying Equations A5.25a and A5.25b gives $b {1,2} = 0.6792$ and $b {2,2} = 7.6043$. Considering skewness first, from Equation A5.25a it follows that the value $$ \\frac{m}{6}b {1,2}=\\frac{24}{6}0.6792=2.717 $$ is (under MVN) a draw from a chi-square distribution with $ f = 2(2 +…"
+    },
+    {
+      "kind": "formula",
+      "id": "A5.1a",
+      "anchor": "formula-a5.1a",
+      "label": "Formula (A5.1a)",
+      "section_id": "Evolution_appendix5_003",
+      "latex": "\\begin{align*}||\\mathbf{x}||=\\sqrt{x_1^2+x_2^2+\\cdots+x_n^2}=\\sqrt{\\mathbf{x}^T\\mathbf{x}}\\end{align*}",
+      "latex_render": "\\begin{aligned}||\\mathbf{x}||=\\sqrt{x_1^2+x_2^2+\\cdots+x_n^2}=\\sqrt{\\mathbf{x}^T\\mathbf{x}}\\end{aligned}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A5.1b",
+      "anchor": "formula-a5.1b",
+      "label": "Formula (A5.1b)",
+      "section_id": "Evolution_appendix5_003",
+      "latex": "\\begin{align*}\\vert\\vert\\mathbf{x}-\\mathbf{y}\\vert\\vert^{2}=\\sum\\limits_{i=1}^n(x_i-y_i)^{2}=(\\mathbf{x}-\\mathbf{y})^{T}(\\mathbf{x}-\\mathbf{y})=(\\mathbf{y}-\\mathbf{x})^{T}(\\mathbf{y}-\\mathbf{x})\\end{align*}",
+      "latex_render": "\\begin{aligned}\\vert\\vert\\mathbf{x}-\\mathbf{y}\\vert\\vert^{2}=\\sum\\limits_{i=1}^n(x_i-y_i)^{2}=(\\mathbf{x}-\\mathbf{y})^{T}(\\mathbf{x}-\\mathbf{y})=(\\mathbf{y}-\\mathbf{x})^{T}(\\mathbf{y}-\\mathbf{x})\\end{aligned}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A5.2a",
+      "anchor": "formula-a5.2a",
+      "label": "Formula (A5.2a)",
+      "section_id": "Evolution_appendix5_003",
+      "latex": "\\begin{align*}\\cos(\\theta)=\\frac{\\mathbf{x}^T\\mathbf{y}}{||\\mathbf{x}||~||\\mathbf{y}||}=\\frac{\\mathbf{y}^T\\mathbf{x}}{||\\mathbf{x}||~||\\mathbf{y}||}\\end{align*}",
+      "latex_render": "\\begin{aligned}\\cos(\\theta)=\\frac{\\mathbf{x}^T\\mathbf{y}}{||\\mathbf{x}||~||\\mathbf{y}||}=\\frac{\\mathbf{y}^T\\mathbf{x}}{||\\mathbf{x}||~||\\mathbf{y}||}\\end{aligned}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A5.2b",
+      "anchor": "formula-a5.2b",
+      "label": "Formula (A5.2b)",
+      "section_id": "Evolution_appendix5_003",
+      "latex": "\\begin{align*}\\theta=\\cos^{-1}\\left({\\bf{y}^T\\bf{x}\\over||\\bf{x}||~||\\bf{y}||}\\right)\\end{align*}",
+      "latex_render": "\\begin{aligned}\\theta=\\cos^{-1}\\left({\\bf{y}^T\\bf{x}\\over||\\bf{x}||~||\\bf{y}||}\\right)\\end{aligned}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A5.3a",
+      "anchor": "formula-a5.3a",
+      "label": "Formula (A5.3a)",
+      "section_id": "Evolution_appendix5_003",
+      "latex": "\\mathrm{Proj}(\\mathbf{x}\\mathrm{on}\\mathbf{y})=\\frac{\\mathbf{x}^{T}\\mathbf{y}}{\\mathbf{y}^{T}\\mathbf{y}}\\mathbf{y}=\\frac{\\mathbf{x}^{T}\\mathbf{y}}{||\\mathbf{y}||^{2}}\\mathbf{y}=\\left(\\cos(\\theta)\\frac{||\\mathbf{x}||}{||\\mathbf{y}||}\\right)\\mathbf{y}",
+      "latex_render": "\\mathrm{Proj}(\\mathbf{x}\\mathrm{on}\\mathbf{y})=\\frac{\\mathbf{x}^{T}\\mathbf{y}}{\\mathbf{y}^{T}\\mathbf{y}}\\mathbf{y}=\\frac{\\mathbf{x}^{T}\\mathbf{y}}{||\\mathbf{y}||^{2}}\\mathbf{y}=\\left(\\cos(\\theta)\\frac{||\\mathbf{x}||}{||\\mathbf{y}||}\\right)\\mathbf{y}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A5.3b",
+      "anchor": "formula-a5.3b",
+      "label": "Formula (A5.3b)",
+      "section_id": "Evolution_appendix5_003",
+      "latex": "\\mathbf{P r o j}(\\mathbf{x}\\mathbf{o n}\\mathbf{y})=(\\mathbf{x}^{T}\\mathbf{y})\\mathbf{y}=(\\cos(\\theta)\\left|\\left|\\mathbf{x}\\right|\\right|)\\mathbf{y}",
+      "latex_render": "\\mathbf{P r o j}(\\mathbf{x}\\mathbf{o n}\\mathbf{y})=(\\mathbf{x}^{T}\\mathbf{y})\\mathbf{y}=(\\cos(\\theta)\\left|\\left|\\mathbf{x}\\right|\\right|)\\mathbf{y}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A5.3c",
+      "anchor": "formula-a5.3c",
+      "label": "Formula (A5.3c)",
+      "section_id": "Evolution_appendix5_003",
+      "latex": "\\left\\| \\mathbf{Proj}(\\mathbf{x}on\\mathbf{y}) \\right\\|= \\left\\| \\cos(\\theta) \\right\\| \\left\\| \\mathbf{x} \\right\\|\\leq \\left\\| \\mathbf{x} \\right\\|",
+      "latex_render": "\\left\\| \\mathbf{Proj}(\\mathbf{x}on\\mathbf{y}) \\right\\|= \\left\\| \\cos(\\theta) \\right\\| \\left\\| \\mathbf{x} \\right\\|\\leq \\left\\| \\mathbf{x} \\right\\|",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A5.4",
+      "anchor": "formula-a5.4",
+      "label": "Formula (A5.4)",
+      "section_id": "Evolution_appendix5_003",
+      "latex": "\\mathbf{x}=\\sum_{i=1}^{n}Proj(\\mathbf{x}on\\mathbf{y}_{i})",
+      "latex_render": "\\mathbf{x}=\\sum_{i=1}^{n}Proj(\\mathbf{x}on\\mathbf{y}_{i})",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A5.5a",
+      "anchor": "formula-a5.5a",
+      "label": "Formula (A5.5a)",
+      "section_id": "Evolution_appendix5_005",
+      "latex": "\\mathbf{U}^{T}\\mathbf{U}=\\mathbf{U}\\mathbf{U}^{T}=\\mathbf{I}",
+      "latex_render": "\\mathbf{U}^{T}\\mathbf{U}=\\mathbf{U}\\mathbf{U}^{T}=\\mathbf{I}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A5.5b",
+      "anchor": "formula-a5.5b",
+      "label": "Formula (A5.5b)",
+      "section_id": "Evolution_appendix5_005",
+      "latex": "\\mathbf{U}^{T}=\\mathbf{U}^{-1}",
+      "latex_render": "\\mathbf{U}^{T}=\\mathbf{U}^{-1}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A5.5c",
+      "anchor": "formula-a5.5c",
+      "label": "Formula (A5.5c)",
+      "section_id": "Evolution_appendix5_005",
+      "latex": "\\mathbf{y}_{1}^{T}\\mathbf{y}_{2}=\\mathbf{x}_{1}^{T}(\\mathbf{U}^{T}\\mathbf{U})\\mathbf{x}_{2}=\\mathbf{x}_{1}^{T}\\mathbf{x}_{2}",
+      "latex_render": "\\mathbf{y}_{1}^{T}\\mathbf{y}_{2}=\\mathbf{x}_{1}^{T}(\\mathbf{U}^{T}\\mathbf{U})\\mathbf{x}_{2}=\\mathbf{x}_{1}^{T}\\mathbf{x}_{2}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A5.5d",
+      "anchor": "formula-a5.5d",
+      "label": "Formula (A5.5d)",
+      "section_id": "Evolution_appendix5_005",
+      "latex": "\\begin{align*}\\cos(\\theta\\mid\\mathbf{y}_1,\\mathbf{y}_2)=\\frac{\\mathbf{y}_1^T\\mathbf{y}_2}{\\sqrt{\\mid\\mid\\mathbf{y}_1\\mid\\mid\\mid\\mid\\mathbf{y}_2\\mid\\mid}}=\\frac{\\mathbf{x}_1^T\\mathbf{x}_2}{\\sqrt{\\mid\\mid\\mathbf{x}_1\\mid\\mid\\mid\\mid\\mathbf{x}_2\\mid\\mid}}=\\cos(\\theta\\mid\\mathbf{x}_1,\\mathbf{x}_2)\\end{align*}",
+      "latex_render": "\\begin{aligned}\\cos(\\theta\\mid\\mathbf{y}_1,\\mathbf{y}_2)=\\frac{\\mathbf{y}_1^T\\mathbf{y}_2}{\\sqrt{\\mid\\mid\\mathbf{y}_1\\mid\\mid\\mid\\mid\\mathbf{y}_2\\mid\\mid}}=\\frac{\\mathbf{x}_1^T\\mathbf{x}_2}{\\sqrt{\\mid\\mid\\mathbf{x}_1\\mid\\mid\\mid\\mid\\mathbf{x}_2\\mid\\mid}}=\\cos(\\theta\\mid\\mathbf{x}_1,\\mathbf{x}_2)\\end{aligned}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A5.6",
+      "anchor": "formula-a5.6",
+      "label": "Formula (A5.6)",
+      "section_id": "Evolution_appendix5_006",
+      "latex": "\\mathbf{A}\\mathbf{y}=\\lambda\\mathbf{y}",
+      "latex_render": "\\mathbf{A}\\mathbf{y}=\\lambda\\mathbf{y}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A5.7",
+      "anchor": "formula-a5.7",
+      "label": "Formula (A5.7)",
+      "section_id": "Evolution_appendix5_006",
+      "latex": "\\left|\\mathbf{A}-\\lambda\\mathbf{I}\\right|=(-\\lambda)^{n}+S_{1}(-\\lambda)^{n-1}+\\cdots+S_{n-1}(-\\lambda)^{1}+S_{n}=0",
+      "latex_render": "\\left|\\mathbf{A}-\\lambda\\mathbf{I}\\right|=(-\\lambda)^{n}+S_{1}(-\\lambda)^{n-1}+\\cdots+S_{n-1}(-\\lambda)^{1}+S_{n}=0",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A5.8",
+      "anchor": "formula-a5.8",
+      "label": "Formula (A5.8)",
+      "section_id": "Evolution_appendix5_006",
+      "latex": "\\mathbf{tr}(\\mathbf{A})=\\sum_{i=1}^{n}\\lambda_{i}\\qquad and\\qquad|\\mathbf{A}|=\\prod_{i=1}^{n}\\lambda_{i}",
+      "latex_render": "\\mathbf{tr}(\\mathbf{A})=\\sum_{i=1}^{n}\\lambda_{i}\\qquad and\\qquad|\\mathbf{A}|=\\prod_{i=1}^{n}\\lambda_{i}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A5.9a",
+      "anchor": "formula-a5.9a",
+      "label": "Formula (A5.9a)",
+      "section_id": "Evolution_appendix5_006",
+      "latex": "\\mathbf{A}=\\lambda_{1}\\mathbf{e}_{1}\\mathbf{e}_{1}^{T}+\\lambda_{2}\\mathbf{e}_{2}\\mathbf{e}_{2}^{T}+\\cdots+\\lambda_{n}\\mathbf{e}_{n}\\mathbf{e}_{n}^{T}",
+      "latex_render": "\\mathbf{A}=\\lambda_{1}\\mathbf{e}_{1}\\mathbf{e}_{1}^{T}+\\lambda_{2}\\mathbf{e}_{2}\\mathbf{e}_{2}^{T}+\\cdots+\\lambda_{n}\\mathbf{e}_{n}\\mathbf{e}_{n}^{T}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A5.9b",
+      "anchor": "formula-a5.9b",
+      "label": "Formula (A5.9b)",
+      "section_id": "Evolution_appendix5_006",
+      "latex": "\\begin{aligned}\\mathbf{A}\\mathbf{x}&=\\lambda_{1}\\mathbf{e}_{1}\\mathbf{e}_{1}^{T}\\mathbf{x}+\\lambda_{2}\\mathbf{e}_{2}\\mathbf{e}_{2}^{T}\\mathbf{x}+\\cdots+\\lambda_{n}\\mathbf{e}_{n}\\mathbf{e}_{n}^{T}\\mathbf{x}\\\\&=\\lambda_{1}\\left(\\mathbf{e}_{1}^{T}\\mathbf{x}\\right)\\mathbf{e}_{1}+\\lambda_{2}\\left(\\mathbf{e}_{2}^{T}\\mathbf{x}\\right)\\mathbf{e}_{2}+\\cdots+\\lambda_{n}\\left(\\mathbf{e}_{n}^{T}\\mathbf{x}\\right)\\mathbf{e}_{n}\\\\&=\\lambda_{1}Proj(\\mathbf{x}on\\mathbf{e}_{1})+\\lambda_{2}Proj(\\mathbf{x}on\\mathbf{e}_{2})+\\cdots+\\lambda_{n}Proj(\\mathbf{x}on\\mathbf{e}_{n})\\\\ \\end{aligned}",
+      "latex_render": "\\begin{aligned}\\mathbf{A}\\mathbf{x}&=\\lambda_{1}\\mathbf{e}_{1}\\mathbf{e}_{1}^{T}\\mathbf{x}+\\lambda_{2}\\mathbf{e}_{2}\\mathbf{e}_{2}^{T}\\mathbf{x}+\\cdots+\\lambda_{n}\\mathbf{e}_{n}\\mathbf{e}_{n}^{T}\\mathbf{x}\\\\&=\\lambda_{1}\\left(\\mathbf{e}_{1}^{T}\\mathbf{x}\\right)\\mathbf{e}_{1}+\\lambda_{2}\\left(\\mathbf{e}_{2}^{T}\\mathbf{x}\\right)\\mathbf{e}_{2}+\\cdots+\\lambda_{n}\\left(\\mathbf{e}_{n}^{T}\\mathbf{x}\\right)\\mathbf{e}_{n}\\\\&=\\lambda_{1}Proj(\\mathbf{x}on\\mathbf{e}_{1})+\\lambda_{2}Proj(\\mathbf{x}on\\mathbf{e}_{2})+\\cdots+\\lambda_{n}Proj(\\mathbf{x}on\\mathbf{e}_{n})\\\\ \\end{aligned}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A5.9c",
+      "anchor": "formula-a5.9c",
+      "label": "Formula (A5.9c)",
+      "section_id": "Evolution_appendix5_006",
+      "latex": "\\mathbf{A}\\mathbf{x}=||\\mathbf{x}||\\sum_{i=}^{n}\\left[\\lambda_{i}\\cdot\\cos(\\theta|\\mathbf{x},\\mathbf{e}_{i})\\right]\\mathbf{e}_{i}",
+      "latex_render": "\\mathbf{A}\\mathbf{x}=||\\mathbf{x}||\\sum_{i=}^{n}\\left[\\lambda_{i}\\cdot\\cos(\\theta|\\mathbf{x},\\mathbf{e}_{i})\\right]\\mathbf{e}_{i}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A5.10b",
+      "anchor": "formula-a5.10b",
+      "label": "Formula (A5.10b)",
+      "section_id": "Evolution_appendix5_008",
+      "latex": "\\boldsymbol{A}=diag(\\lambda_{1},\\lambda_{2},\\cdots,\\lambda_{n})=\\begin{pmatrix}{{{\\lambda_{1}}}}&{{{0}}}&{{{\\cdots}}}&{{{0}}} \\\\{{{0}}}&{{{\\lambda_{2}}}}&{{{\\cdots}}}&{{{0}}} \\\\{{{\\vdots}}}&{{{\\ddots}}}&{{{\\vdots}}} \\\\{{{0}}}&{{{\\cdots}}}&{{{\\cdots}}}&{{{\\lambda_{n}}}}\\end{pmatrix}",
+      "latex_render": "\\boldsymbol{A}=diag(\\lambda_{1},\\lambda_{2},\\cdots,\\lambda_{n})=\\begin{pmatrix}{{{\\lambda_{1}}}}&{{{0}}}&{{{\\cdots}}}&{{{0}}} \\\\{{{0}}}&{{{\\lambda_{2}}}}&{{{\\cdots}}}&{{{0}}} \\\\{{{\\vdots}}}&{{{\\ddots}}}&{{{\\vdots}}} \\\\{{{0}}}&{{{\\cdots}}}&{{{\\cdots}}}&{{{\\lambda_{n}}}}\\end{pmatrix}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A5.10c",
+      "anchor": "formula-a5.10c",
+      "label": "Formula (A5.10c)",
+      "section_id": "Evolution_appendix5_008",
+      "latex": "\\mathbf{U}=\\left(\\mathbf{e}_{1},\\mathbf{e}_{2},\\cdots,\\mathbf{e}_{n}\\right)",
+      "latex_render": "\\mathbf{U}=\\left(\\mathbf{e}_{1},\\mathbf{e}_{2},\\cdots,\\mathbf{e}_{n}\\right)",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A5.10d",
+      "anchor": "formula-a5.10d",
+      "label": "Formula (A5.10d)",
+      "section_id": "Evolution_appendix5_008",
+      "latex": "\\mathbf{A}=\\mathbf{U}\\left(\\sum_{i=1}^{n}\\boldsymbol{\\Lambda}_{i}\\right)\\mathbf{U}^{T}=\\sum_{i=1}^{n}\\mathbf{U}\\boldsymbol{\\Lambda}_{i}\\mathbf{U}^{T}=\\sum_{i=1}^{n}\\lambda_{i}\\mathbf{e}_{i}\\mathbf{e}_{i}^{T}",
+      "latex_render": "\\mathbf{A}=\\mathbf{U}\\left(\\sum_{i=1}^{n}\\boldsymbol{\\Lambda}_{i}\\right)\\mathbf{U}^{T}=\\sum_{i=1}^{n}\\mathbf{U}\\boldsymbol{\\Lambda}_{i}\\mathbf{U}^{T}=\\sum_{i=1}^{n}\\lambda_{i}\\mathbf{e}_{i}\\mathbf{e}_{i}^{T}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A5.11a",
+      "anchor": "formula-a5.11a",
+      "label": "Formula (A5.11a)",
+      "section_id": "Evolution_appendix5_008",
+      "latex": "\\mathbf{A}^{-1}=\\mathbf{U}\\boldsymbol{\\Lambda}^{-1}\\mathbf{U}^{T}",
+      "latex_render": "\\mathbf{A}^{-1}=\\mathbf{U}\\boldsymbol{\\Lambda}^{-1}\\mathbf{U}^{T}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A5.11b",
+      "anchor": "formula-a5.11b",
+      "label": "Formula (A5.11b)",
+      "section_id": "Evolution_appendix5_008",
+      "latex": "\\mathbf{A}^{1/2}=\\mathbf{U}\\boldsymbol{\\Lambda}^{1/2}\\mathbf{U}^{T}",
+      "latex_render": "\\mathbf{A}^{1/2}=\\mathbf{U}\\boldsymbol{\\Lambda}^{1/2}\\mathbf{U}^{T}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A5.11c",
+      "anchor": "formula-a5.11c",
+      "label": "Formula (A5.11c)",
+      "section_id": "Evolution_appendix5_008",
+      "latex": "\\mathbf{A}^{-1/2}=\\mathbf{U}\\boldsymbol{\\Lambda}^{-1/2}\\mathbf{U}^{T}",
+      "latex_render": "\\mathbf{A}^{-1/2}=\\mathbf{U}\\boldsymbol{\\Lambda}^{-1/2}\\mathbf{U}^{T}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A5.11d",
+      "anchor": "formula-a5.11d",
+      "label": "Formula (A5.11d)",
+      "section_id": "Evolution_appendix5_008",
+      "latex": "\\mathbf{A}^{k}=\\mathbf{U}\\mathbf{A}^{k}\\mathbf{U}^{T}\\quad for any integer k",
+      "latex_render": "\\mathbf{A}^{k}=\\mathbf{U}\\mathbf{A}^{k}\\mathbf{U}^{T}\\quad for any integer k",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A5.12",
+      "anchor": "formula-a5.12",
+      "label": "Formula (A5.12)",
+      "section_id": "Evolution_appendix5_008",
+      "latex": "\\mathbf{U}^{T}\\mathbf{A}\\mathbf{U}=\\mathbf{U}^{T}(\\mathbf{U}\\boldsymbol{\\Lambda}\\mathbf{U}^{T})\\mathbf{U}=(\\mathbf{U}^{T}\\mathbf{U})\\boldsymbol{\\Lambda}(\\mathbf{U}^{T}\\mathbf{U})=\\boldsymbol{\\Lambda}",
+      "latex_render": "\\mathbf{U}^{T}\\mathbf{A}\\mathbf{U}=\\mathbf{U}^{T}(\\mathbf{U}\\boldsymbol{\\Lambda}\\mathbf{U}^{T})\\mathbf{U}=(\\mathbf{U}^{T}\\mathbf{U})\\boldsymbol{\\Lambda}(\\mathbf{U}^{T}\\mathbf{U})=\\boldsymbol{\\Lambda}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A5.10a",
+      "anchor": "formula-a5.10a",
+      "label": "Formula (A5.10a)",
+      "section_id": "Evolution_appendix5_008",
+      "latex": "\\mathbf{A}=\\mathbf{U}\\mathbf{A}\\mathbf{U}^{T}",
+      "latex_render": "\\mathbf{A}=\\mathbf{U}\\mathbf{A}\\mathbf{U}^{T}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A5.13a",
+      "anchor": "formula-a5.13a",
+      "label": "Formula (A5.13a)",
+      "section_id": "Evolution_appendix5_008",
+      "latex": "\\lambda_{1}\\left|\\left|\\mathbf{c}\\right|\\right|\\geq\\mathbf{c}^{T}\\mathbf{A}\\mathbf{c}\\geq\\lambda_{n}\\left|\\left|\\mathbf{c}\\right|\\right|",
+      "latex_render": "\\lambda_{1}\\left|\\left|\\mathbf{c}\\right|\\right|\\geq\\mathbf{c}^{T}\\mathbf{A}\\mathbf{c}\\geq\\lambda_{n}\\left|\\left|\\mathbf{c}\\right|\\right|",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A5.13b",
+      "anchor": "formula-a5.13b",
+      "label": "Formula (A5.13b)",
+      "section_id": "Evolution_appendix5_008",
+      "latex": "\\lambda_{1}\\geq\\mathbf{c}^{T}\\mathbf{A}\\mathbf{c}\\geq\\lambda_{n}",
+      "latex_render": "\\lambda_{1}\\geq\\mathbf{c}^{T}\\mathbf{A}\\mathbf{c}\\geq\\lambda_{n}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A5.14",
+      "anchor": "formula-a5.14",
+      "label": "Formula (A5.14)",
+      "section_id": "Evolution_appendix5_008",
+      "latex": "\\lambda_{1}||\\mathbf{c}||^{2}\\geq\\sigma^{2}(y)\\geq\\lambda_{n}||\\mathbf{c}||^{2}",
+      "latex_render": "\\lambda_{1}||\\mathbf{c}||^{2}\\geq\\sigma^{2}(y)\\geq\\lambda_{n}||\\mathbf{c}||^{2}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A5.15a",
+      "anchor": "formula-a5.15a",
+      "label": "Formula (A5.15a)",
+      "section_id": "Evolution_appendix5_009",
+      "latex": "\\mathbf{y}=\\mathbf{U}^{T}\\mathbf{x}",
+      "latex_render": "\\mathbf{y}=\\mathbf{U}^{T}\\mathbf{x}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A5.15b",
+      "anchor": "formula-a5.15b",
+      "label": "Formula (A5.15b)",
+      "section_id": "Evolution_appendix5_009",
+      "latex": "\\mathbf{V_{y}}=\\mathbf{U}^{T}\\mathbf{V_{x}}\\mathbf{U}=\\boldsymbol{\\Lambda}",
+      "latex_render": "\\mathbf{V_{y}}=\\mathbf{U}^{T}\\mathbf{V_{x}}\\mathbf{U}=\\boldsymbol{\\Lambda}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A5.15c",
+      "anchor": "formula-a5.15c",
+      "label": "Formula (A5.15c)",
+      "section_id": "Evolution_appendix5_009",
+      "latex": "y_{i}=\\mathbf{e}_{i}^{T}\\mathbf{x}",
+      "latex_render": "y_{i}=\\mathbf{e}_{i}^{T}\\mathbf{x}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A5.15d",
+      "anchor": "formula-a5.15d",
+      "label": "Formula (A5.15d)",
+      "section_id": "Evolution_appendix5_009",
+      "latex": "\\mathbf{B}=\\mathbf{U}\\boldsymbol{A}^{-1/2}",
+      "latex_render": "\\mathbf{B}=\\mathbf{U}\\boldsymbol{A}^{-1/2}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A5.15e",
+      "anchor": "formula-a5.15e",
+      "label": "Formula (A5.15e)",
+      "section_id": "Evolution_appendix5_009",
+      "latex": "\\begin{aligned}\\mathbf{V}_{\\mathbf{y}}=\\mathbf{B}^{T}\\mathbf{V}_{\\mathbf{x}}\\mathbf{B}&=\\left(\\mathbf{U}\\boldsymbol{\\Lambda}^{-1/2}\\right)^{T}\\left(\\mathbf{U}\\boldsymbol{\\Lambda}\\mathbf{U}^{T}\\right)\\left(\\mathbf{U}\\boldsymbol{\\Lambda}^{-1/2}\\right)\\\\&=\\boldsymbol{\\Lambda}^{-1/2}\\left(\\mathbf{U}^{T}\\mathbf{U}\\right)\\boldsymbol{\\Lambda}\\left(\\mathbf{U}^{T}\\mathbf{U}\\right)\\boldsymbol{\\Lambda}^{-1/2}\\\\&=\\boldsymbol{\\Lambda}^{-1/2}\\boldsymbol{\\Lambda}\\boldsymbol{\\Lambda}^{-1/2}=\\mathbf{I}\\\\ \\end{aligned}",
+      "latex_render": "\\begin{aligned}\\mathbf{V}_{\\mathbf{y}}=\\mathbf{B}^{T}\\mathbf{V}_{\\mathbf{x}}\\mathbf{B}&=\\left(\\mathbf{U}\\boldsymbol{\\Lambda}^{-1/2}\\right)^{T}\\left(\\mathbf{U}\\boldsymbol{\\Lambda}\\mathbf{U}^{T}\\right)\\left(\\mathbf{U}\\boldsymbol{\\Lambda}^{-1/2}\\right)\\\\&=\\boldsymbol{\\Lambda}^{-1/2}\\left(\\mathbf{U}^{T}\\mathbf{U}\\right)\\boldsymbol{\\Lambda}\\left(\\mathbf{U}^{T}\\mathbf{U}\\right)\\boldsymbol{\\Lambda}^{-1/2}\\\\&=\\boldsymbol{\\Lambda}^{-1/2}\\boldsymbol{\\Lambda}\\boldsymbol{\\Lambda}^{-1/2}=\\mathbf{I}\\\\ \\end{aligned}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A5.16",
+      "anchor": "formula-a5.16",
+      "label": "Formula (A5.16)",
+      "section_id": "Evolution_appendix5_010",
+      "latex": "\\mathbf{T}^{T}\\mathbf{P}\\mathbf{T}=\\mathbf{I}\\quad and\\quad\\mathbf{T}^{T}\\mathbf{G}\\mathbf{T}=\\mathbf{D}",
+      "latex_render": "\\mathbf{T}^{T}\\mathbf{P}\\mathbf{T}=\\mathbf{I}\\quad and\\quad\\mathbf{T}^{T}\\mathbf{G}\\mathbf{T}=\\mathbf{D}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A5.17a",
+      "anchor": "formula-a5.17a",
+      "label": "Formula (A5.17a)",
+      "section_id": "Evolution_appendix5_011",
+      "latex": "\\begin{aligned}\\mathbf{x}^{T}\\mathbf{A}\\mathbf{x}&=(\\mathbf{U}\\mathbf{y})^{T}\\mathbf{A}\\mathbf{U}\\mathbf{y}=\\mathbf{y}^{T}(\\mathbf{U}^{T}\\mathbf{A}\\mathbf{U})\\mathbf{y}\\\\&=\\mathbf{y}^{T}\\mathbf{A}\\mathbf{y}\\\\&=\\sum_{i=1}^{n}\\lambda_{i}y_{i}^{2},\\quad with\\quad y_{i}=\\mathbf{e}_{i}^{T}\\mathbf{x}\\end{aligned}",
+      "latex_render": "\\begin{aligned}\\mathbf{x}^{T}\\mathbf{A}\\mathbf{x}&=(\\mathbf{U}\\mathbf{y})^{T}\\mathbf{A}\\mathbf{U}\\mathbf{y}=\\mathbf{y}^{T}(\\mathbf{U}^{T}\\mathbf{A}\\mathbf{U})\\mathbf{y}\\\\&=\\mathbf{y}^{T}\\mathbf{A}\\mathbf{y}\\\\&=\\sum_{i=1}^{n}\\lambda_{i}y_{i}^{2},\\quad with\\quad y_{i}=\\mathbf{e}_{i}^{T}\\mathbf{x}\\end{aligned}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A5.17b",
+      "anchor": "formula-a5.17b",
+      "label": "Formula (A5.17b)",
+      "section_id": "Evolution_appendix5_011",
+      "latex": "\\begin{align*}\\mathbf{x}^T\\mathbf{A}\\mathbf{x}=\\sum\\limits_{i=1}^n\\sum\\limits_{j=1}^n A_{ij}x_i x_j=c^2\\end{align*}",
+      "latex_render": "\\begin{aligned}\\mathbf{x}^T\\mathbf{A}\\mathbf{x}=\\sum\\limits_{i=1}^n\\sum\\limits_{j=1}^n A_{ij}x_i x_j=c^2\\end{aligned}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A5.17c",
+      "anchor": "formula-a5.17c",
+      "label": "Formula (A5.17c)",
+      "section_id": "Evolution_appendix5_011",
+      "latex": "\\begin{align*}\\mathbf{x}^T\\mathbf{A}\\mathbf{x}=\\sum\\limits_{i=1}^n\\lambda_i y_i^2=c^2\\end{align*}",
+      "latex_render": "\\begin{aligned}\\mathbf{x}^T\\mathbf{A}\\mathbf{x}=\\sum\\limits_{i=1}^n\\lambda_i y_i^2=c^2\\end{aligned}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A5.18a",
+      "anchor": "formula-a5.18a",
+      "label": "Formula (A5.18a)",
+      "section_id": "Evolution_appendix5_012",
+      "latex": "\\begin{align*}\\phi(\\mathbf x)=(2\\pi)^{-n/2}\\left|\\mathbf V_{\\mathbf x}\\right|^{-1/2}\\exp\\left[-{1\\over2}(\\mathbf x-\\boldsymbol\\mu)^T\\mathbf V_{\\mathbf x}^{-1}\\left(\\mathbf x-\\boldsymbol\\mu\\right)\\right]\\end{align*}",
+      "latex_render": "\\begin{aligned}\\phi(\\mathbf x)=(2\\pi)^{-n/2}\\left|\\mathbf V_{\\mathbf x}\\right|^{-1/2}\\exp\\left[-{1\\over2}(\\mathbf x-\\boldsymbol\\mu)^T\\mathbf V_{\\mathbf x}^{-1}\\left(\\mathbf x-\\boldsymbol\\mu\\right)\\right]\\end{aligned}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A5.18b",
+      "anchor": "formula-a5.18b",
+      "label": "Formula (A5.18b)",
+      "section_id": "Evolution_appendix5_012",
+      "latex": "\\left(\\mathbf{x}-\\boldsymbol{\\mu}\\right)^{T}\\mathbf{V}_{\\mathbf{X}}^{-1}\\left(\\mathbf{x}-\\boldsymbol{\\mu}\\right)=c^{2}",
+      "latex_render": "\\left(\\mathbf{x}-\\boldsymbol{\\mu}\\right)^{T}\\mathbf{V}_{\\mathbf{X}}^{-1}\\left(\\mathbf{x}-\\boldsymbol{\\mu}\\right)=c^{2}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A5.19",
+      "anchor": "formula-a5.19",
+      "label": "Formula (A5.19)",
+      "section_id": "Evolution_appendix5_012",
+      "latex": "D=\\sqrt{\\left(\\mathbf{x}-\\boldsymbol{\\mu}\\right)^{T}\\mathbf{V}_{\\mathbf{X}}^{-1}\\left(\\mathbf{x}-\\boldsymbol{\\mu}\\right)}",
+      "latex_render": "D=\\sqrt{\\left(\\mathbf{x}-\\boldsymbol{\\mu}\\right)^{T}\\mathbf{V}_{\\mathbf{X}}^{-1}\\left(\\mathbf{x}-\\boldsymbol{\\mu}\\right)}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A5.20a",
+      "anchor": "formula-a5.20a",
+      "label": "Formula (A5.20a)",
+      "section_id": "Evolution_appendix5_012",
+      "latex": "\\mathbf{y}\\sim MVN(\\mathbf{0},\\boldsymbol{\\Lambda})",
+      "latex_render": "\\mathbf{y}\\sim MVN(\\mathbf{0},\\boldsymbol{\\Lambda})",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A5.20b",
+      "anchor": "formula-a5.20b",
+      "label": "Formula (A5.20b)",
+      "section_id": "Evolution_appendix5_012",
+      "latex": "y_{i}=\\mathbf{e}_{i}^{T}(\\mathbf{x}-\\boldsymbol{\\mu})\\qquad\\mathrm{w h e r e}\\quad y_{i}\\sim\\mathrm{N}(0,\\lambda_{i})",
+      "latex_render": "y_{i}=\\mathbf{e}_{i}^{T}(\\mathbf{x}-\\boldsymbol{\\mu})\\qquad\\mathrm{w h e r e}\\quad y_{i}\\sim\\mathrm{N}(0,\\lambda_{i})",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A5.20c",
+      "anchor": "formula-a5.20c",
+      "label": "Formula (A5.20c)",
+      "section_id": "Evolution_appendix5_012",
+      "latex": "z_{i}=\\frac{\\mathbf{e}_{i}^{T}(\\mathbf{x}-\\boldsymbol{\\mu})}{\\sqrt{\\lambda_{i}}}\\qquad\\mathrm{g i v i n g}\\qquad z_{i}\\sim\\mathrm{N}(0,1)",
+      "latex_render": "z_{i}=\\frac{\\mathbf{e}_{i}^{T}(\\mathbf{x}-\\boldsymbol{\\mu})}{\\sqrt{\\lambda_{i}}}\\qquad\\mathrm{g i v i n g}\\qquad z_{i}\\sim\\mathrm{N}(0,1)",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A5.20d",
+      "anchor": "formula-a5.20d",
+      "label": "Formula (A5.20d)",
+      "section_id": "Evolution_appendix5_012",
+      "latex": "\\mathbf{z}=A^{-1/2}\\mathbf{U}^{T}(\\mathbf{x}-\\boldsymbol{\\mu})",
+      "latex_render": "\\mathbf{z}=A^{-1/2}\\mathbf{U}^{T}(\\mathbf{x}-\\boldsymbol{\\mu})",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A5.21",
+      "anchor": "formula-a5.21",
+      "label": "Formula (A5.21)",
+      "section_id": "Evolution_appendix5_013",
+      "latex": "\\lambda_{i}\\bigg/\\sum_{k=1}^{n}\\lambda_{k}=\\frac{\\lambda_{i}}{\\mathrm{tr}(\\mathbf{V_{x}})}",
+      "latex_render": "\\lambda_{i}\\bigg/\\sum_{k=1}^{n}\\lambda_{k}=\\frac{\\lambda_{i}}{\\mathrm{tr}(\\mathbf{V_{x}})}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A5.22",
+      "anchor": "formula-a5.22",
+      "label": "Formula (A5.22)",
+      "section_id": "Evolution_appendix5_015",
+      "latex": "\\begin{align*}\\left(\\mathbf{z}-\\boldsymbol{\\mu}\\right)^T\\mathbf{V}\\mathbf{\\bar{z}}^{-1}\\left(\\mathbf{z}-\\boldsymbol{\\mu}\\right)&=\\left(\\mathbf{U}\\boldsymbol{\\Lambda}^{1/2}\\mathbf{y}\\right)^T\\left(\\mathbf{U}\\boldsymbol{\\Lambda}^{-1}\\mathbf{U}^T\\right)\\left(\\mathbf{U}\\boldsymbol{\\Lambda}^{1/2}\\mathbf{y}\\right)\\\\&=\\mathbf{y}^T\\boldsymbol{\\Lambda}^{1/2}\\left(\\mathbf{U}^T\\mathbf{U}\\right)\\boldsymbol{\\Lambda}^{-1}\\left(\\mathbf{U}^T\\mathbf{U}\\right)\\boldsymbol{\\Lambda}^{1/2}\\mathbf{y}\\\\&=\\mathbf{y}^T\\mathbf{y}=\\sum_{i=1}^n y_i^2\\end{align*}",
+      "latex_render": "\\begin{aligned}\\left(\\mathbf{z}-\\boldsymbol{\\mu}\\right)^T\\mathbf{V}\\mathbf{\\bar{z}}^{-1}\\left(\\mathbf{z}-\\boldsymbol{\\mu}\\right)&=\\left(\\mathbf{U}\\boldsymbol{\\Lambda}^{1/2}\\mathbf{y}\\right)^T\\left(\\mathbf{U}\\boldsymbol{\\Lambda}^{-1}\\mathbf{U}^T\\right)\\left(\\mathbf{U}\\boldsymbol{\\Lambda}^{1/2}\\mathbf{y}\\right)\\\\&=\\mathbf{y}^T\\boldsymbol{\\Lambda}^{1/2}\\left(\\mathbf{U}^T\\mathbf{U}\\right)\\boldsymbol{\\Lambda}^{-1}\\left(\\mathbf{U}^T\\mathbf{U}\\right)\\boldsymbol{\\Lambda}^{1/2}\\mathbf{y}\\\\&=\\mathbf{y}^T\\mathbf{y}=\\sum_{i=1}^n y_i^2\\end{aligned}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A5.23",
+      "anchor": "formula-a5.23",
+      "label": "Formula (A5.23)",
+      "section_id": "Evolution_appendix5_015",
+      "latex": "\\begin{align*}d_i^2=({\\bf z}_i-{\\bf\\bar z})^T{\\bf S^{-1}_Z}({\\bf z}_i-{\\bf\\bar z})\\end{align*}",
+      "latex_render": "\\begin{aligned}d_i^2=({\\bf z}_i-{\\bf\\bar z})^T{\\bf S^{-1}_Z}({\\bf z}_i-{\\bf\\bar z})\\end{aligned}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A5.24a",
+      "anchor": "formula-a5.24a",
+      "label": "Formula (A5.24a)",
+      "section_id": "Evolution_appendix5_016",
+      "latex": "b_{1,n}=\\frac{1}{m^{2}}\\sum_{i=1}^{m}\\sum_{j=1}^{m}\\left[\\left(\\mathbf{z}_{i}-\\overline{\\mathbf{z}}\\right)^{T}\\mathbf{S}_{\\mathbf{Z}}^{-1}\\left(\\mathbf{z}_{j}-\\overline{\\mathbf{z}}\\right)\\right]^{3}",
+      "latex_render": "b_{1,n}=\\frac{1}{m^{2}}\\sum_{i=1}^{m}\\sum_{j=1}^{m}\\left[\\left(\\mathbf{z}_{i}-\\overline{\\mathbf{z}}\\right)^{T}\\mathbf{S}_{\\mathbf{Z}}^{-1}\\left(\\mathbf{z}_{j}-\\overline{\\mathbf{z}}\\right)\\right]^{3}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A5.24b",
+      "anchor": "formula-a5.24b",
+      "label": "Formula (A5.24b)",
+      "section_id": "Evolution_appendix5_016",
+      "latex": "b_{2,n}=\\frac{1}{m}\\sum_{i=1}^{m}\\left[\\left(\\mathbf{z}_{i}-\\overline{\\mathbf{z}}\\right)^{T}\\mathbf{S}_{\\mathbf{Z}}^{-1}\\left(\\mathbf{z}_{i}-\\overline{\\mathbf{z}}\\right)\\right]^{2}",
+      "latex_render": "b_{2,n}=\\frac{1}{m}\\sum_{i=1}^{m}\\left[\\left(\\mathbf{z}_{i}-\\overline{\\mathbf{z}}\\right)^{T}\\mathbf{S}_{\\mathbf{Z}}^{-1}\\left(\\mathbf{z}_{i}-\\overline{\\mathbf{z}}\\right)\\right]^{2}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A5.25a",
+      "anchor": "formula-a5.25a",
+      "label": "Formula (A5.25a)",
+      "section_id": "Evolution_appendix5_016",
+      "latex": "\\frac{m}{6}b_{1,n}\\sim\\chi_{f}^{2},\\qquad\\mathrm{w h e r e~}f=\\frac{n(n+1)(n+2)}{6}",
+      "latex_render": "\\frac{m}{6}b_{1,n}\\sim\\chi_{f}^{2},\\qquad\\mathrm{w h e r e~}f=\\frac{n(n+1)(n+2)}{6}",
+      "origin": "paddle"
+    },
+    {
+      "kind": "formula",
+      "id": "A5.25b",
+      "anchor": "formula-a5.25b",
+      "label": "Formula (A5.25b)",
+      "section_id": "Evolution_appendix5_016",
+      "latex": "\\frac{b_{2,n}-n(n+2)}{\\sqrt{8n(n+2)/m}}\\sim N(0,1)",
+      "latex_render": "\\frac{b_{2,n}-n(n+2)}{\\sqrt{8n(n+2)/m}}\\sim N(0,1)",
+      "origin": "paddle"
+    }
+  ],
+  "references": {
+    "Evolution_appendix5_section_001": [],
+    "Evolution_appendix5_001": [
+      {
+        "kind": "chapter",
+        "id": "8",
+        "label": "LW Chapter 8",
+        "book_hint": "Genetics",
+        "link_scope": "lw"
+      }
+    ],
+    "Evolution_appendix5_002": [],
+    "Evolution_appendix5_003": [
+      {
+        "kind": "figure",
+        "id": "A5.1",
+        "label": "Figure A5.1",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A5.2a",
+        "label": "Equation A5.2a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_appendix5_004": [
+      {
+        "kind": "chapter",
+        "id": "13",
+        "label": "Chapter 13",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "chapter",
+        "id": "30",
+        "label": "Chapter 30",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "A5.1",
+        "label": "Example A5.1",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "13.26a",
+        "label": "Equation 13.26a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A5.2a",
+        "label": "Equation A5.2a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "figure",
+        "id": "A5.2",
+        "label": "Figure A5.2",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "figure",
+        "id": "A5.3",
+        "label": "Figure A5.3",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_appendix5_005": [],
+    "Evolution_appendix5_006": [
+      {
+        "kind": "chapter",
+        "id": "8",
+        "label": "LW Chapter 8",
+        "book_hint": "Genetics",
+        "link_scope": "lw"
+      },
+      {
+        "kind": "equation",
+        "id": "A5.6",
+        "label": "Equation A5.6",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A5.10d",
+        "label": "Equation A5.10d",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A5.3b",
+        "label": "Equation A5.3b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "A5.2",
+        "label": "Example A5.2",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "A5.1",
+        "label": "Example A5.1",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "8.12a",
+        "label": "LW Equation 8.12a",
+        "book_hint": "Genetics",
+        "link_scope": "lw"
+      },
+      {
+        "kind": "equation",
+        "id": "A5.7",
+        "label": "Equation A5.7",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A5.2a",
+        "label": "Equation A5.2a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "figure",
+        "id": "A5.3",
+        "label": "Figure A5.3",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A5.9b",
+        "label": "Equation A5.9b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "figure",
+        "id": "A5.2",
+        "label": "Figure A5.2",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_appendix5_007": [
+      {
+        "kind": "chapter",
+        "id": "30",
+        "label": "Chapter 30",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A5.9a",
+        "label": "Equation A5.9a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_appendix5_008": [
+      {
+        "kind": "equation",
+        "id": "A5.10a",
+        "label": "Equation A5.10a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A5.9a",
+        "label": "Equation A5.9a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A5.10d",
+        "label": "Equation A5.10d",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A5.11a",
+        "label": "Equation A5.11a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "8.19",
+        "label": "LW Equation 8.19",
+        "book_hint": "Genetics",
+        "link_scope": "lw"
+      },
+      {
+        "kind": "equation",
+        "id": "A5.13a",
+        "label": "Equation A5.13a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "A5.3",
+        "label": "Example A5.3",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "A5.1",
+        "label": "Example A5.1",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "A5.2",
+        "label": "Example A5.2",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A5.11b",
+        "label": "Equation A5.11b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_appendix5_009": [
+      {
+        "kind": "equation",
+        "id": "8.21b",
+        "label": "LW Equation 8.21b",
+        "book_hint": "Genetics",
+        "link_scope": "lw"
+      },
+      {
+        "kind": "equation",
+        "id": "A5.12",
+        "label": "Equation A5.12",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "figure",
+        "id": "A5.4",
+        "label": "Figure A5.4",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A5.15a",
+        "label": "Equation A5.15a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "A5.4",
+        "label": "Example A5.4",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A5.3b",
+        "label": "Equation A5.3b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A5.15d",
+        "label": "Equation A5.15d",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "A5.1",
+        "label": "Example A5.1",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "A5.2",
+        "label": "Example A5.2",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A5.15b",
+        "label": "Equation A5.15b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "A5.3",
+        "label": "Example A5.3",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_appendix5_010": [
+      {
+        "kind": "example",
+        "id": "A5.5",
+        "label": "Example A5.5",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A5.10a",
+        "label": "Equation A5.10a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A5.15e",
+        "label": "Equation A5.15e",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A5.16",
+        "label": "Equation A5.16",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_appendix5_011": [
+      {
+        "kind": "chapter",
+        "id": "30",
+        "label": "Chapter 30",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A5.15a",
+        "label": "Equation A5.15a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A5.5b",
+        "label": "Equation A5.5b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A5.17a",
+        "label": "Equation A5.17a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "figure",
+        "id": "A5.5",
+        "label": "Figure A5.5",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "A5.1",
+        "label": "Example A5.1",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A5.17b",
+        "label": "Equation A5.17b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A5.17c",
+        "label": "Equation A5.17c",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "figure",
+        "id": "A5.6",
+        "label": "Figure A5.6",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_appendix5_012": [
+      {
+        "kind": "chapter",
+        "id": "8",
+        "label": "LW Chapter 8",
+        "book_hint": "Genetics",
+        "link_scope": "lw"
+      },
+      {
+        "kind": "equation",
+        "id": "A5.17c",
+        "label": "Equation A5.17c",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "figure",
+        "id": "A5.6",
+        "label": "Figure A5.6",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A5.18b",
+        "label": "Equation A5.18b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A5.15a",
+        "label": "Equation A5.15a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A5.10b",
+        "label": "Equation A5.10b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A5.20a",
+        "label": "Equation A5.20a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_appendix5_013": [
+      {
+        "kind": "figure",
+        "id": "A5.5",
+        "label": "Figure A5.5",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A5.13b",
+        "label": "Equation A5.13b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "A5.6",
+        "label": "Example A5.6",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "A5.1",
+        "label": "Example A5.1",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "A5.7",
+        "label": "Example A5.7",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_appendix5_014": [
+      {
+        "kind": "chapter",
+        "id": "11",
+        "label": "LW Chapter 11",
+        "book_hint": "Genetics",
+        "link_scope": "lw"
+      }
+    ],
+    "Evolution_appendix5_015": [
+      {
+        "kind": "chapter",
+        "id": "11",
+        "label": "LW Chapter 11",
+        "book_hint": "Genetics",
+        "link_scope": "lw"
+      },
+      {
+        "kind": "equation",
+        "id": "A5.20d",
+        "label": "Equation A5.20d",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "figure",
+        "id": "A5.7",
+        "label": "Figure A5.7",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "A5.8",
+        "label": "Example A5.8",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A5.11a",
+        "label": "Equation A5.11a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A5.22",
+        "label": "Equation A5.22",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A5.19",
+        "label": "Equation A5.19",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A5.23",
+        "label": "Equation A5.23",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ],
+    "Evolution_appendix5_016": [
+      {
+        "kind": "equation",
+        "id": "A5.25a",
+        "label": "Equation A5.25a",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "A5.9",
+        "label": "Example A5.9",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "A5.8",
+        "label": "Example A5.8",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "A5.25b",
+        "label": "Equation A5.25b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      }
+    ]
+  },
+  "semantic_chapter_links": [
+    {
+      "current_section_id": "Evolution_appendix5_001",
+      "current_anchor": "evolution_appendix5_001",
+      "source_chapter_id": "Genetics_chapter8",
+      "label": "LW Chapter 8",
+      "target_anchor": "genetics_chapter8_section_001",
+      "target_label": "LW Equation 8.12a",
+      "target_ref_type": "equation",
+      "target_ref_id": "8.12a",
+      "target_section_title": "Chapter 8 Textbook Mapping",
+      "book_hint": "Genetics",
+      "link_scope": "lw",
+      "context_excerpt": "atrix notation, and for this I offer no apology as this has rapidly become an essential tool of any serious student of animal breeding. Henderson (1973) The basic concepts of matrix algebra were introduced in LW Chapter 8 and LW Appendix A3, and we assume the reader has this level of understanding (which includes matrix multiplication, inverses, and determinants). If not, a quick review of LW Chapter 8 before procee…",
+      "match_source": "llm-prerequisite"
+    },
+    {
+      "current_section_id": "Evolution_appendix5_004",
+      "current_anchor": "evolution_appendix5_004",
+      "source_chapter_id": "Evolution_chapter13",
+      "label": "Chapter 13",
+      "target_anchor": "evolution_chapter13_007",
+      "target_label": "Equation 13.26a",
+      "target_ref_type": "equation",
+      "target_ref_id": "13.26a",
+      "target_section_title": "SINGLE-GENERATION RESPONSE: THE BREEDER'S EQUATION / The Robertson-Price Identity, $ S = \\sigma(w, z) $",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "THE GEOMETRY OF VECTORS AND MATRICES / Matrices Describe Vector Transformations When we multiply a vector, x, by a matrix, A, to create a new vector, y = Ax, A rotates and scales the original vector, x, into the new vector, y. A therefore describes a transformation of the original coordinate system of x into a new coordinate system, y (which has a different dimension from x unless A is square). [示例 Example] Example…",
+      "match_source": "llm-prerequisite"
+    },
+    {
+      "current_section_id": "Evolution_appendix5_004",
+      "current_anchor": "evolution_appendix5_004",
+      "source_chapter_id": "Evolution_chapter30",
+      "label": "Chapter 30",
+      "target_anchor": "evolution_chapter30_section_001",
+      "target_label": "Chapter 30",
+      "target_ref_type": "chapter",
+      "target_ref_id": "30",
+      "target_section_title": "Chapter 30 · Measuring Multivariate Selection",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "THE GEOMETRY OF VECTORS AND MATRICES / Matrices Describe Vector Transformations When we multiply a vector, x, by a matrix, A, to create a new vector, y = Ax, A rotates and scales the original vector, x, into the new vector, y. A therefore describes a transformation of the original coordinate system of x into a new coordinate system, y (which has a different dimension from x unless A is square). [示例 Example] Example…",
+      "match_source": "llm-prerequisite"
+    },
+    {
+      "current_section_id": "Evolution_appendix5_006",
+      "current_anchor": "evolution_appendix5_006",
+      "source_chapter_id": "Genetics_chapter8",
+      "label": "LW Chapter 8",
+      "target_anchor": "genetics_chapter8_section_001",
+      "target_label": "LW Equation 8.12a",
+      "target_ref_type": "equation",
+      "target_ref_id": "8.12a",
+      "target_section_title": "Chapter 8 Textbook Mapping",
+      "book_hint": "Genetics",
+      "link_scope": "lw",
+      "context_excerpt": "denotes the determinant of A and $ S i $ is the sum of all principal minors (minors including diagonal elements of the original matrix) of order i (minors, which are subsets of the full matrix, were defined in LW Chapter 8). Finding the eigenvalues thus requires solving a polynomial equation of order n, implying that there are exactly n eigenvalues (some of which may be identical, i.e., repeated). In practice, for n…",
+      "match_source": "llm-prerequisite"
+    },
+    {
+      "current_section_id": "Evolution_appendix5_007",
+      "current_anchor": "evolution_appendix5_007",
+      "source_chapter_id": "Evolution_chapter30",
+      "label": "Chapter 30",
+      "target_anchor": "evolution_chapter30_section_001",
+      "target_label": "Chapter 30",
+      "target_ref_type": "chapter",
+      "target_ref_id": "30",
+      "target_section_title": "Chapter 30 · Measuring Multivariate Selection",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "sfying $ \\mathbf{A} = \\mathbf{A}^T $ (and therefore necessarily square). Examples include covariance matrices and the $ \\gamma $ matrix of quadratic coefficients in the Pearson-Lande-Arnold fitness regression (Chapter 30). Symmetric matrices have a number of useful properties (proofs of which can be found in Dhrymes 1978; Horn and Johnson 1985; and Wilf 1978): 2. The eigenvalues and eigenvectors of a symmetric matri…",
+      "match_source": "llm-prerequisite"
+    },
+    {
+      "current_section_id": "Evolution_appendix5_011",
+      "current_anchor": "evolution_appendix5_011",
+      "source_chapter_id": "Evolution_chapter30",
+      "label": "Chapter 30",
+      "target_anchor": "evolution_chapter30_section_001",
+      "target_label": "Chapter 30",
+      "target_ref_type": "chapter",
+      "target_ref_id": "30",
+      "target_section_title": "Chapter 30 · Measuring Multivariate Selection",
+      "book_hint": "",
+      "link_scope": "current-book",
+      "context_excerpt": "A {ij}x i x j=c^2\\end{align } $$ arise fairly frequently in quantitative genetics. For example, they describe surfaces of constant variance (Figure A5.5) or constant fitnesses in quadratic fitness regressions (Chapter 30). Solutions to Equation A5.17b describe quadratic surfaces—for two dimensions, these are the familiar conic sections (ellipses, parabolas, or hyperbolas). Equation A5.17a greatly simplifies the inte…",
+      "match_source": "llm-prerequisite"
+    },
+    {
+      "current_section_id": "Evolution_appendix5_012",
+      "current_anchor": "evolution_appendix5_012",
+      "source_chapter_id": "Genetics_chapter8",
+      "label": "LW Chapter 8",
+      "target_anchor": "genetics_chapter8_section_001",
+      "target_label": "LW Equation 8.12a",
+      "target_ref_type": "equation",
+      "target_ref_id": "8.12a",
+      "target_section_title": "Chapter 8 Textbook Mapping",
+      "book_hint": "Genetics",
+      "link_scope": "lw",
+      "context_excerpt": "CANONICAL AXES OF QUADRATIC FORMS / Implications for the Multivariate Normal Distribution Recall the probability density function for the multivariate normal distribution (LW Chapter 8) $$ \\begin{align }\\phi(\\mathbf{x})=(2\\pi)^{-n/2}\\left \\mathbf{V} {\\mathbf{x}}\\right ^{-1/2}\\exp\\left[-{1\\over2}(\\mathbf{x}-\\boldsymbol{\\mu})^{T}\\mathbf{V} {\\mathbf{x}}^{-1}\\left(\\mathbf{x}-\\boldsymbol{\\mu}\\rig",
+      "match_source": "llm-prerequisite"
+    },
+    {
+      "current_section_id": "Evolution_appendix5_014",
+      "current_anchor": "evolution_appendix5_014",
+      "source_chapter_id": "Genetics_chapter11",
+      "label": "LW Chapter 11",
+      "target_anchor": "genetics_chapter11_section_001",
+      "target_label": "LW Chapter 11",
+      "target_ref_type": "chapter",
+      "target_ref_id": "11",
+      "target_section_title": "Chapter 11 · Matters of Scale",
+      "book_hint": "Genetics",
+      "link_scope": "lw",
+      "context_excerpt": "Appendix: Introduction / TESTING FOR MULTIVARIATE NORMALITY Multivariate normality is often assumed in statistical procedures, but it is less often tested. In LW Chapter 11 we briefly discussed two approaches for testing univariate normality, one graphical and the other based on deviations of observed skewness and/or kurtosis from Gaussian expectations. As we now demonstrate, bot",
+      "match_source": "llm-prerequisite"
+    },
+    {
+      "current_section_id": "Evolution_appendix5_015",
+      "current_anchor": "evolution_appendix5_015",
+      "source_chapter_id": "Genetics_chapter11",
+      "label": "LW Chapter 11",
+      "target_anchor": "genetics_chapter11_section_001",
+      "target_label": "LW Chapter 11",
+      "target_ref_type": "chapter",
+      "target_ref_id": "11",
+      "target_section_title": "Chapter 11 · Matters of Scale",
+      "book_hint": "Genetics",
+      "link_scope": "lw",
+      "context_excerpt": "FOR MULTIVARIATE NORMALITY / Graphical Tests: Chi-square Plots A fairly simple graphical test can be developed by extending the notion of the normal probability plot that is used to check univariate normality (LW Chapter 11), where observations were ranked and then plotted against their ranked expected values under normality. Departures from linearity signify departures from normality, and we can apply this same app…",
+      "match_source": "llm-prerequisite"
+    }
+  ],
+  "prerequisites": [
+    {
+      "id": "prereq-genetics_chapter8",
+      "title": "Matrix Algebra Basics",
+      "source_chapter_id": "Genetics_chapter8",
+      "used_in_sections": [
+        "Evolution_appendix5_001",
+        "Evolution_appendix5_006",
+        "Evolution_appendix5_008",
+        "Evolution_appendix5_009",
+        "Evolution_appendix5_012"
+      ],
+      "why_needed": "本章大量使用矩阵运算，包括乘法、逆、行列式等，这些均在LW第8章中介绍。",
+      "key_points": [
+        "矩阵乘法、逆矩阵、行列式计算",
+        "特征值与特征向量",
+        "对称矩阵对角化",
+        "多元正态分布的矩阵表示"
+      ],
+      "source_links": [
+        {
+          "chapter_id": "Genetics_chapter8",
+          "label": "LW Chapter 8",
+          "markdown_path": "/data/textbook/Genetics_chapter8_textbook.md",
+          "anchor": "genetics_chapter8_section_001",
+          "section_title": "Chapter 8 Textbook Mapping",
+          "ref_type": "chapter",
+          "ref_id": "8",
+          "book_hint": "Genetics",
+          "link_scope": "lw",
+          "excerpt": "Chapter 8 Textbook Mapping"
+        },
+        {
+          "chapter_id": "Genetics_chapter8",
+          "label": "LW Equation 8.12a",
+          "markdown_path": "/data/textbook/Genetics_chapter8_textbook.md",
+          "anchor": "genetics_chapter8_section_001",
+          "section_title": "Chapter 8 Textbook Mapping",
+          "ref_type": "equation",
+          "ref_id": "8.12a",
+          "book_hint": "Genetics",
+          "link_scope": "lw",
+          "excerpt": ""
+        },
+        {
+          "chapter_id": "Genetics_chapter8",
+          "label": "LW Equation 8.19",
+          "markdown_path": "/data/textbook/Genetics_chapter8_textbook.md",
+          "anchor": "genetics_chapter8_section_001",
+          "section_title": "Chapter 8 Textbook Mapping",
+          "ref_type": "equation",
+          "ref_id": "8.19",
+          "book_hint": "Genetics",
+          "link_scope": "lw",
+          "excerpt": ""
+        },
+        {
+          "chapter_id": "Genetics_chapter8",
+          "label": "LW Equation 8.21b",
+          "markdown_path": "/data/textbook/Genetics_chapter8_textbook.md",
+          "anchor": "genetics_chapter8_section_001",
+          "section_title": "Chapter 8 Textbook Mapping",
+          "ref_type": "equation",
+          "ref_id": "8.21b",
+          "book_hint": "Genetics",
+          "link_scope": "lw",
+          "excerpt": ""
+        }
+      ],
+      "source_excerpt": "Chapter 8 Textbook Mapping",
+      "summary_status": "llm-validated",
+      "usage_count": 5,
+      "explicit_asset_refs": 3,
+      "priority_score": 200,
+      "validated_by_llm": true,
+      "concept_title": "Matrix Algebra Basics",
+      "nav_label": "LW Ch8 Matrix Alg",
+      "evidence_summary": "附录明确说明需要LW第8章的矩阵代数基础，并推荐读者提前复习。"
+    },
+    {
+      "id": "prereq-evolution_chapter13",
+      "title": "第13章 · 短期均值变化：1. 育种者方程",
+      "source_chapter_id": "Evolution_chapter13",
+      "used_in_sections": [
+        "Evolution_appendix5_004"
+      ],
+      "why_needed": "当前附录详细解释了多变量育种者方程 R=Gβ 的线性代数基础，而该方程正是第13章的核心内容。学习附录前需先理解方程本身的生物学含义。",
+      "key_points": [
+        "理解单变量育种者方程 R = h²S 如何推广到多变量形式 R = Gβ。",
+        "掌握 Robertson-Price 恒等式 S = σ(w, z) 与选择梯度 β 的关系。",
+        "熟悉第13章中多变量 Lande 方程的引入背景（式13.26a）。"
+      ],
+      "source_links": [
+        {
+          "chapter_id": "Evolution_chapter13",
+          "label": "Chapter 13",
+          "markdown_path": "/data/textbook/Evolution_chapter13_textbook.md",
+          "anchor": "evolution_chapter13_section_001",
+          "section_title": "Chapter 13 · Short-term Changes in the Mean: 1. The Breeder's Equation",
+          "ref_type": "chapter",
+          "ref_id": "13",
+          "book_hint": "",
+          "link_scope": "current-book",
+          "excerpt": "Chapter 13 · Short-term Changes in the Mean: 1. The Breeder's Equation"
+        },
+        {
+          "chapter_id": "Evolution_chapter13",
+          "label": "Equation 13.26a",
+          "markdown_path": "/data/textbook/Evolution_chapter13_textbook.md",
+          "anchor": "evolution_chapter13_007",
+          "section_title": "SINGLE-GENERATION RESPONSE: THE BREEDER'S EQUATION / The Robertson-Price Identity, $ S = \\sigma(w, z) $",
+          "ref_type": "equation",
+          "ref_id": "13.26a",
+          "book_hint": "",
+          "link_scope": "current-book",
+          "excerpt": "relates the strength of association, $ \\beta $, between trait value and fitness with the response. This is the univariate version of the multivariate Lande equation (R = G $ \\beta $), to be introduced shortly (Equation 13.26a). ---"
+        }
+      ],
+      "source_excerpt": "Chapter 13 · Short-term Changes in the Mean: 1. The Breeder's Equation",
+      "summary_status": "llm-validated",
+      "usage_count": 1,
+      "explicit_asset_refs": 1,
+      "priority_score": 180,
+      "validated_by_llm": true,
+      "concept_title": "第13章 · 短期均值变化：1. 育种者方程",
+      "nav_label": "第13章 育种者方程",
+      "evidence_summary": "当前附录示例直接引用第13章的多变量育种者方程 R=Gβ，且候选链接明确指向该章节和方程13.26a。"
+    },
+    {
+      "id": "prereq-genetics_chapter11",
+      "title": "Chapter 11 · Matters of Scale (Univariate Normality)",
+      "source_chapter_id": "Genetics_chapter11",
+      "used_in_sections": [
+        "Evolution_appendix5_014",
+        "Evolution_appendix5_015"
+      ],
+      "why_needed": "本附录中的多元正态性检验方法直接扩展了 LW 第11章中介绍的单变量正态性检验（包括图形法和基于偏度/峰度的方法），因此需要先掌握第11章的相关内容。",
+      "key_points": [
+        "复习单变量正态性的图形检验方法（正态概率图）",
+        "复习基于偏度和峰度的正态性检验",
+        "理解正态概率图线性程度与正态性的关系"
+      ],
+      "source_links": [
+        {
+          "chapter_id": "Genetics_chapter11",
+          "label": "LW Chapter 11",
+          "markdown_path": "/data/textbook/Genetics_chapter11_textbook.md",
+          "anchor": "genetics_chapter11_section_001",
+          "section_title": "Chapter 11 · Matters of Scale",
+          "ref_type": "chapter",
+          "ref_id": "11",
+          "book_hint": "Genetics",
+          "link_scope": "lw",
+          "excerpt": "Chapter 11 · Matters of Scale"
+        }
+      ],
+      "source_excerpt": "Chapter 11 · Matters of Scale",
+      "summary_status": "llm-validated",
+      "usage_count": 2,
+      "explicit_asset_refs": 0,
+      "priority_score": 180,
+      "validated_by_llm": true,
+      "concept_title": "Chapter 11 · Matters of Scale (Univariate Normality)",
+      "nav_label": "Ch11",
+      "evidence_summary": "附录两处明确引用 LW 第11章讨论的单变量正态性检验方法，并在此基础上扩展为多元检验。"
+    },
+    {
+      "id": "prereq-evolution_chapter30",
+      "title": "Chapter 30 · Measuring Multivariate Selection",
+      "source_chapter_id": "Evolution_chapter30",
+      "used_in_sections": [
+        "Evolution_appendix5_004",
+        "Evolution_appendix5_007",
+        "Evolution_appendix5_011"
+      ],
+      "why_needed": "本附录提供了向量变换、对称矩阵和规范轴等数学基础，这些直接用于第30章中多元选择分析（如γ矩阵和适应曲面）的推导与理解。",
+      "key_points": [
+        "对称矩阵的特征值和特征向量是第30章中γ矩阵的基础。",
+        "规范变换简化二次型，用于描述适应曲面的形状。",
+        "向量和矩阵的几何解释支持多元育种者方程的应用。"
+      ],
+      "source_links": [
+        {
+          "chapter_id": "Evolution_chapter30",
+          "label": "Chapter 30",
+          "markdown_path": "/data/textbook/Evolution_chapter30_textbook.md",
+          "anchor": "evolution_chapter30_section_001",
+          "section_title": "Chapter 30 · Measuring Multivariate Selection",
+          "ref_type": "chapter",
+          "ref_id": "30",
+          "book_hint": "",
+          "link_scope": "current-book",
+          "excerpt": "Chapter 30 · Measuring Multivariate Selection"
+        }
+      ],
+      "source_excerpt": "Chapter 30 · Measuring Multivariate Selection",
+      "summary_status": "llm-validated",
+      "usage_count": 3,
+      "explicit_asset_refs": 0,
+      "priority_score": 150,
+      "validated_by_llm": true,
+      "concept_title": "Chapter 30 · Measuring Multivariate Selection",
+      "nav_label": "Chapter 30",
+      "evidence_summary": "当前附录明确引用第30章关于Pearson-Lande-Arnold适应回归中的γ矩阵，并通过示例A5.1涉及多元育种者方程，这两者都是第30章的核心内容。"
+    }
+  ],
+  "llm": {
+    "requests_total": 4,
+    "cache_hits": 0,
+    "cache_writes": 4,
+    "remote_calls": 4,
+    "budget_rejections": 0,
+    "prompt_chars_sent": 14818,
+    "response_chars_received": 1749,
+    "api_prompt_tokens": 3835,
+    "api_completion_tokens": 2260,
+    "api_total_tokens": 6095,
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "cache_enabled": true,
+    "cache_dir": "D:\\大学资料\\大二\\LLM-Agent科学文献系统知识库处理\\tmp\\llm_cache",
+    "max_remote_calls": 0,
+    "max_prompt_chars_total": 0,
+    "max_response_chars_total": 0,
+    "validated_only": true,
+    "preserved_from_previous_build": true
+  }
+}
