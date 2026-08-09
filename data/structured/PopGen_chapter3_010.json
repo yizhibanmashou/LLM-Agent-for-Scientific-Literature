@@ -1,0 +1,235 @@
+{
+  "id": "PopGen_chapter3_010",
+  "metadata": {
+    "chapter": "PopGen_chapter3",
+    "section": "3.5 EFFECTIVE POPULATION SIZE",
+    "subsections": [
+      "Fluctuation in Population Size"
+    ],
+    "source_file": "tmp\\popgen\\paddle_output\\PopGen_chapter3_full\\main.tex",
+    "source_title": "Principles of Population Genetics, Fourth Edition",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "3.5 EFFECTIVE POPULATION SIZE",
+    "section_level_2": "Fluctuation in Population Size",
+    "heading_path": [
+      "3.5 EFFECTIVE POPULATION SIZE",
+      "Fluctuation in Population Size"
+    ],
+    "display_heading": "Fluctuation in Population Size"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Correction for fluctuating population size is important because natural populations actually do change in size, sometimes by a factor of 10 or more in a single generation. For the sake of simplicity, assume that the population is ideal in all respects except that its size is not constant. We will consider the situation over just two generations. Suppose that the population sizes in two successive generations are $ N_{0} $ and $ N_{1} $. The arguments laid out in Figure 3.10 imply that $$ 1-F_{2}=\\left(1-\\frac{1}{2N_{1}}\\right)\\binom{1-F_{1}}{.} $$ and $$ 1-F_{1}=\\left(1-\\frac{1}{2N_{0}}\\right)\\left(1-F_{0}\\right) $$",
+      "source_page": 135,
+      "source_pages": [
+        135,
+        136
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p027:b7",
+        "PopGen_chapter3:p028:b2",
+        "PopGen_chapter3:p028:b3",
+        "PopGen_chapter3:p028:b5",
+        "PopGen_chapter3:p028:b6"
+      ],
+      "source_bboxes": [
+        [
+          102.0,
+          1097.0,
+          788.0,
+          1221.0
+        ],
+        [
+          231.0,
+          186.0,
+          914.0,
+          240.0
+        ],
+        [
+          460.0,
+          245.0,
+          687.0,
+          304.0
+        ],
+        [
+          232.0,
+          341.0,
+          276.0,
+          364.0
+        ],
+        [
+          461.0,
+          391.0,
+          688.0,
+          452.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "1321389065666059dd38fc3d6574b1c8900324ed888c09d4fb8cd1c4210c3616"
+    },
+    {
+      "type": "discussion",
+      "content": "Substituting from the second equation into the first leads to $$ 1-F_{2}=\\left(1-\\frac{1}{2N_{1}}\\right)\\left(1-\\frac{1}{2N_{0}}\\right)\\left(1-F_{0}\\right) $$",
+      "source_page": 136,
+      "source_pages": [
+        136
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p028:b8",
+        "PopGen_chapter3:p028:b9"
+      ],
+      "source_bboxes": [
+        [
+          233.0,
+          477.0,
+          769.0,
+          504.0
+        ],
+        [
+          420.0,
+          506.0,
+          735.0,
+          568.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "04bcee6a8e65dd4ca66c8a6c86ef2ebd0adcd1132f04ce7a1eb9e74033d7f1fb"
+    },
+    {
+      "type": "discussion",
+      "content": "By analogy with the constant N case, it is appropriate to try to express this equation in the general form $$ 1-F_{t}=\\left(1-\\frac{1}{2N}\\right)^{t}\\left(1-F_{0}\\right) $$ where N is now the effective population size, usually symbolized as $ N_{e} $. In our example t = 2, so $$ \\dot{1}-F_{2}=\\left(1-\\frac{1}{2N}\\right)^{2}\\left(1-F_{0}\\right) $$",
+      "source_page": 136,
+      "source_pages": [
+        136
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p028:b11",
+        "PopGen_chapter3:p028:b12",
+        "PopGen_chapter3:p028:b14",
+        "PopGen_chapter3:p028:b15"
+      ],
+      "source_bboxes": [
+        [
+          234.0,
+          573.0,
+          917.0,
+          627.0
+        ],
+        [
+          464.0,
+          633.0,
+          689.0,
+          689.0
+        ],
+        [
+          233.0,
+          693.0,
+          917.0,
+          747.0
+        ],
+        [
+          462.0,
+          739.0,
+          692.0,
+          798.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "2a3fab2ac80f21d10f698ba57c0626f8b1aa9239746deed3f21824c6f8e6fd41"
+    },
+    {
+      "type": "discussion",
+      "content": "Setting the two expressions for $1 - F_{2}$ equal to each other, we obtain $$ \\left(1-\\frac{1}{2N}\\right)^{2}=\\left(1-\\frac{1}{2N_{_{0}}}\\right)\\left(1-\\frac{1}{2N_{_{1}}}\\right) $$ from which $ 1/N = \\frac{1}{2}(1/N_{0} + 1/N_{1}) $ turns out to be an excellent approximation. In general, $$ \\frac{1}{N_{e}}=\\frac{1}{t}\\left(\\frac{1}{N_{0}}+\\frac{1}{N_{1}}+\\cdots+\\frac{1}{N_{t-1}}\\right) $$ and so the effective size $ N_{e} $ is the harmonic mean of the actual numbers—the reciprocal of the average of the reciprocals. As illustrated in the problem below, the harmonic mean tends to be dominated by the smallest terms. In biological reality, this means that a single period of small population size, called a bottleneck, can result in a serious loss in heterozygosity. Population bottlenecks are thought to account for the very low levels of polymorphism found in extant populations of the elephant seal (Bonnell and Selander 1974) and the cheetah (O'Brien et al. 1985, 1987). A severe population bottleneck often occurs in nature when a small group of emigrants from an established subpopulation found a new subpopulation; the accompanying random genetic drift is then known as a founder effect (see Holgate 1966; Nei et al. 1975; Chakraborty and Nei 1977; Neel and Thompson 1978). Founder effects in human populations have implications in medical genetics, because human populations derived from small numbers of founders may have an elevated incidence of an otherwise rare genetic disorder. Examples include Tay-Sachs diseases in Ashkenazi Jews, diastrophic dystrophy in Finns, familial hyperchylomicronemia in Quebecois, and congenital total color blindness in Pinge-lap Islanders (reviewed in Scriver 2001). In addition to reducing the effective population size, and thereby increasing F, population bottlenecks and founder effects may affect many other aspects of the genetic variation, including causing a reduced number of alleles, a distorted distribution of allele frequencies, and an increase in linkage disequilibrium.",
+      "source_page": 136,
+      "source_pages": [
+        136,
+        137
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p028:b17",
+        "PopGen_chapter3:p028:b18",
+        "PopGen_chapter3:p028:b20",
+        "PopGen_chapter3:p028:b21",
+        "PopGen_chapter3:p028:b23",
+        "PopGen_chapter3:p029:b2"
+      ],
+      "source_bboxes": [
+        [
+          234.0,
+          814.0,
+          839.0,
+          842.0
+        ],
+        [
+          443.0,
+          843.0,
+          715.0,
+          903.0
+        ],
+        [
+          236.0,
+          909.0,
+          919.0,
+          961.0
+        ],
+        [
+          449.0,
+          953.0,
+          705.0,
+          1012.0
+        ],
+        [
+          236.0,
+          1031.0,
+          922.0,
+          1228.0
+        ],
+        [
+          109.0,
+          179.0,
+          791.0,
+          518.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "f2850dd14ae6614c294cf9e0f2a0e8f2e2e67b46974b96c12c9e391b7977a2e8"
+    },
+    {
+      "type": "discussion",
+      "content": "PROBLEM 3.7 Suppose a population went through a bottleneck as follows: $ N_{0} = 1000 $, $ N_{1} = 10 $, and $ N_{2} = 1000 $. Calculate the effective size of this population across all three generations. ANSWER Using Equation 3.22, we get $ 1/N_e = \\left(\\frac{1}{3}\\right)\\left(\\frac{1}{1000} + \\frac{1}{10} + \\frac{1}{1000}\\right) = 0.034 $, or $ N_e = \\frac{1}{10.034} = 29.4 $. The average effective number over the three-generation period is only 29.4, whereas the arithmetic average number of individuals is $ \\left(\\frac{1}{3}\\right)(1000 + 10 + 1000) = 670 $.",
+      "source_page": 137,
+      "source_pages": [
+        137
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p029:b3",
+        "PopGen_chapter3:p029:b4",
+        "PopGen_chapter3:p029:b5"
+      ],
+      "source_bboxes": [
+        [
+          110.0,
+          536.0,
+          500.0,
+          609.0
+        ],
+        [
+          522.0,
+          536.0,
+          907.0,
+          583.0
+        ],
+        [
+          110.0,
+          636.0,
+          499.0,
+          702.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "ab52c14b8e6a289b34c6decfebbd49c05d04d066d1ed42bd57e424cf021d7a0f"
+    }
+  ]
+}

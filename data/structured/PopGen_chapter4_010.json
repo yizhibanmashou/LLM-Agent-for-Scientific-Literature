@@ -1,0 +1,173 @@
+{
+  "id": "PopGen_chapter4_010",
+  "metadata": {
+    "chapter": "PopGen_chapter4",
+    "section": "4.4 THE INFINITE-ALLELES MODEL",
+    "subsections": [
+      "The Ewens-Watterson Test"
+    ],
+    "source_file": "tmp\\popgen\\paddle_output\\PopGen_chapter4_full\\main.tex",
+    "source_title": "Principles of Population Genetics, Fourth Edition",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "4.4 THE INFINITE-ALLELES MODEL",
+    "section_level_2": "The Ewens-Watterson Test",
+    "heading_path": [
+      "4.4 THE INFINITE-ALLELES MODEL",
+      "The Ewens-Watterson Test"
+    ],
+    "display_heading": "The Ewens-Watterson Test"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "The Ewens (1972) paper is one of the landmarks in the history of population genetics. Because it afforded explicit predictions of expected allele configurations in samples assuming only neutral alleles, these predictions could be compared with actual observations to test the neutral theory. Based on the observed and expected configurations, a number of test statistics can be devised to determine whether an observed sample fits the expected values of the neutral model. Tests based on the infinite-alleles model are most appropriate when a large number of alleles can be distinguished, for example, by protein electrophoresis when the actual differences in DNA sequence are unknown. In such situations, tests based on the Ewens sampling formula (see Equation 4.11) must assume that any alleles that cannot be distinguished must be identical by descent, and this can be a serious limitation.",
+      "source_page": 182,
+      "source_pages": [
+        182,
+        183
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p018:b9",
+        "PopGen_chapter4:p019:b4"
+      ],
+      "source_bboxes": [
+        [
+          243.0,
+          1075.0,
+          928.0,
+          1249.0
+        ],
+        [
+          100.0,
+          834.0,
+          783.0,
+          955.0
+        ]
+      ],
+      "provenance_score": 0.688769,
+      "content_sha256": "df3aa8d02933e135851f1d7613e7285ac419ea4c93e3fe503ece571ae6068d42"
+    },
+    {
+      "type": "discussion",
+      "content": "To give the flavor of such tests, we consider two examples. One type of test compares the observed and expected allele frequency configurations in samples, using the Equation 4.13. Figure 4.10 shows histograms of the observed and expected configurations for polymorphic alleles in a human population, where each allele has a different number of copies of a short tandem repeat in a region of DNA. In this particular example there appears to be a slight excess of the common allele; this excess is consistent with any number of causes of departure from the infinite-alleles model.",
+      "source_page": 183,
+      "source_pages": [
+        183
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p019:b5"
+      ],
+      "source_bboxes": [
+        [
+          98.0,
+          955.0,
+          783.0,
+          1148.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "401788faaf60d0b909a32c1f7d026598ec35f346c489489cc2ca35754089f191"
+    },
+    {
+      "type": "discussion",
+      "content": "A second test is based on an approach pioneered by Watterson (1978), which compares the observed homozygosity in a sample with that expected from Equation 4.13. In one study, a sample of 89 homozygous lines of Drosophila pseudoobscura were collected at the Gundlach-Bundschu Winery in",
+      "source_page": 183,
+      "source_pages": [
+        183
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p019:b6"
+      ],
+      "source_bboxes": [
+        [
+          97.0,
+          1148.0,
+          781.0,
+          1247.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "758bf7e909bf9f04f069583368af119bc1b980b65706e59749682d9ae8e6de11"
+    },
+    {
+      "type": "discussion",
+      "content": "Sonoma Valley, California (Keith et al. 1985). Homogenized tissue from each of these 89 lines was subjected to sequential electrophoresis (a sensitive means of detecting charge and conformation differences among the protein products), and the gels were treated to reveal differences in xanthine dehydrogenase (Xdh) mobility. The authors obtained a common allele that was present in 52 of the lines, one allele that was present in nine lines, one allele that was present in eight lines, two alleles present in four lines each, two alleles that were present in two lines each, and eight singleton or unique alleles.",
+      "source_page": 184,
+      "source_pages": [
+        184
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p020:b4"
+      ],
+      "source_bboxes": [
+        [
+          241.0,
+          529.0,
+          927.0,
+          725.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "feda25d377e42f290dda144fa82a54b859a2e2d0dc71258d6c336463bdd82592"
+    },
+    {
+      "type": "discussion",
+      "content": "To test whether the observed configuration fits the expectation, a computer simulation was run to generate realizations of samples from populations that obey the infinite-alleles model, focusing on simulated samples with the same number of alleles as the observed data. An algorithm to do this simulation is described by F. Stewart in Fuerst et al. (1977), but see also Manly (1985). From each computer-generated sample, F was calculated as the sum of the squared allele frequencies. Figure 4.11 shows a histogram of the computer-generated distribution of F, along with an arrow showing where the Drosophila sample fell. The sample had an observed F that fell in the upper tail of the distribution, and since so few values of F from the neutral hypothesis were larger than the observed F, the researchers rejected the neutrality hypothesis and argued that the data did not fit the infinite-alleles model satisfactorily. The departure was in the direction of excess homozygosity, but since the populations were probably in Hardy-Weinberg proportions, a clearer way to state the result would be to say that there was a deficiency of heterozygotes for the given number of observed alleles. The deficit means that the common allele is more common than expected, and there are also more rare alleles than expected. This pattern of frequencies is consistent with purifying selection acting to reduce the frequency of deleterious alleles that continually enter the population by mutation. It is also consistent with other scenarios, such as population growth. A growing population has more new mutant alleles than a population that is not growing (because a growing population has more allele copies at risk of mutating). Therefore, a growing population is expected to have an excess of low-frequency polymorphisms relative to a stable population.",
+      "source_page": 184,
+      "source_pages": [
+        184,
+        185
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p020:b5",
+        "PopGen_chapter4:p021:b4"
+      ],
+      "source_bboxes": [
+        [
+          244.0,
+          724.0,
+          931.0,
+          1256.0
+        ],
+        [
+          100.0,
+          542.0,
+          781.0,
+          614.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "a7cd0b46aea855459b1157f2d5ad5541f9ae2a57795b6ae164fafa54b13da49b"
+    },
+    {
+      "type": "discussion",
+      "content": "The results of the Ewens-Watterson test can also be reported graphically as in Figure 4.12. Each gene yields a point specified by the number of distinct alleles and the observed F. The two curves represent the 95% confidence interval generated by the Ewens sampling theory. A quick check of the concordance of the data with the model can be made by seeing whether points remain in this confidence region. Although Xdh in Drosophila pseudoobscura provides a dramatic departure from the infinite-alleles model, results like those plotted in Figure 4.12, which show an acceptable fit to neutrality, are more commonly obtained.",
+      "source_page": 185,
+      "source_pages": [
+        185,
+        186
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p021:b5",
+        "PopGen_chapter4:p022:b2"
+      ],
+      "source_bboxes": [
+        [
+          100.0,
+          614.0,
+          782.0,
+          688.0
+        ],
+        [
+          239.0,
+          185.0,
+          925.0,
+          335.0
+        ]
+      ],
+      "provenance_score": 0.720157,
+      "content_sha256": "40ea7b5c04f7bd376283af872f4c6b6f5758a5632e631fb2e16ba9a7f4dc5bd3"
+    }
+  ]
+}

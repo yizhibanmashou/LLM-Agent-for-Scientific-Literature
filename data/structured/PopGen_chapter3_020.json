@@ -1,0 +1,212 @@
+{
+  "id": "PopGen_chapter3_020",
+  "metadata": {
+    "chapter": "PopGen_chapter3",
+    "section": "3.7 THEORETICAL IMPLICATIONS OF COALESCENCE",
+    "subsections": [
+      "Coalescent Models with Recombination"
+    ],
+    "source_file": "tmp\\popgen\\paddle_output\\PopGen_chapter3_full\\main.tex",
+    "source_title": "Principles of Population Genetics, Fourth Edition",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "3.7 THEORETICAL IMPLICATIONS OF COALESCENCE",
+    "section_level_2": "Coalescent Models with Recombination",
+    "heading_path": [
+      "3.7 THEORETICAL IMPLICATIONS OF COALESCENCE",
+      "Coalescent Models with Recombination"
+    ],
+    "display_heading": "Coalescent Models with Recombination"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Coalescence with recombination is among the most difficult problems in modern population genetics (Rosenberg and Nordborg 2002; Stumpf and McVean 2003). To understand why it is so difficult, consider the trees in Figure 3.17. These are conventional coalescent trees, but the nodes and tips are labeled with the identities of two distinct nucleotide sites. The tips are also labeled 1–4 to identify the individual alleles in the sample. The symbols A and a represent a single-nucleotide polymorphism at the site. The A could be a G nucleotide at the site, for example, and the a a T nucleotide at the same site. Likewise, B and b represent a single-nucleotide polymorphism at the second site.",
+      "source_page": 154,
+      "source_pages": [
+        154
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p046:b13"
+      ],
+      "source_bboxes": [
+        [
+          237.0,
+          1033.0,
+          922.0,
+          1256.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "154a31b14ccda870fe3cded855fa87df46eaec9edd8bab1d90e4fdf339cf83cc"
+    },
+    {
+      "type": "discussion",
+      "content": "Tree (A) in Figure 3.17 depicts the coalescences of the samples with respect to the A and a pair of alleles. The time of the a to A nucleotide substitution is indicated by the asterisk. Tree (B) depicts the coalescences with respect to the B and b pair of alleles. In this case the time of mutation of B to b is indicated by the double asterisk. Both tree (A) and tree (B) accurately portray the ancestry of the A, a and B, b pairs of alleles, respectively. The problem is that the trees are different. In tree (A), the first coalescence joins samples 1 and 2, whereas in tree (B) it joins samples 1 and 3.",
+      "source_page": 155,
+      "source_pages": [
+        155
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p047:b4"
+      ],
+      "source_bboxes": [
+        [
+          104.0,
+          735.0,
+          789.0,
+          930.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "9686a235fdae47416718918ab9363d50273397f45198e480b50a95f910c378c3"
+    },
+    {
+      "type": "discussion",
+      "content": "The reason for the discrepancy is that, at the time depicted by the horizontal ticks in (A) and (B), an A B-bearing chromosome underwent recombination with an a b-bearing chromosome to yield recombinant A b and a B products. The tipoff that the nucleotide sites have undergone recombination is that all four possible types of chromosomes (A B, A b, a B, and a b) are present in the sample. The probability that any sample will contain all four types of chromosomes increases with the size of the sample, so large samples are desirable for detecting recombination. Even with large samples, however, many recombination events are likely to be missed. This test for recombination is valid only if the mutation rate is sufficiently low that each site in an ancestral history can mutate no more than once. If recurrent mutation can occur, which happens in viruses with a high mutation rate like HIV-1, then the detection of recombination becomes more difficult (McVean et al. 2002).",
+      "source_page": 155,
+      "source_pages": [
+        155
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p047:b5"
+      ],
+      "source_bboxes": [
+        [
+          99.0,
+          928.0,
+          785.0,
+          1245.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "41a9d06510374a8a050acdaf465f16f25c0a0ca187be8d4dcba80b4b7c17a581"
+    },
+    {
+      "type": "discussion",
+      "content": "How can the inconsistency between tree (A) and tree (B) in Figure 3.17 be resolved? The conventional method of resolution is shown in tree (C) (Hudson 1990). In this case, as the ancestry of each chromosome is traced back in time, when two chromosomes come together, either of two events can happen: the chromosomes either (1) undergo recombination, or (2) undergo coalescence. In tree (C), the arrow indicates the recombination event, which is depicted by the recombinant chromosomes recreating their ancestral parental types. A graph such as that in C is called the ancestral recombination graph for the haplotypes in the sample.",
+      "source_page": 156,
+      "source_pages": [
+        156
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p048:b2"
+      ],
+      "source_bboxes": [
+        [
+          230.0,
+          185.0,
+          915.0,
+          406.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "ec6e7e9a9331410a668de7a5623dd6339ab11f87663ad0538186e6b50b075467"
+    },
+    {
+      "type": "discussion",
+      "content": "The device of allowing recombination or coalescence at each node resolves the inconsistency in the tree, but at the same time it reveals the complexity of the process. Analytical results are possible only in the simplest of cases (Hudson 1990, 2001). Simulation is an alternative, but suppose you were assigned to simulate the ancestral history of a region of DNA in which there were 50 segregating sites and in which recombination can take place. Intuitively you can see that the task is horrendous. You must generate an ancestral history, sprinkle the branches with mutations at sites along the sequence, decide which nodes will result in coalescence and which result in recombination, and keep track of where in the sequence the mutations and the recombination events took place. The simulation therefore yields coalescent tree whose elements are one-dimensional graphs.",
+      "source_page": 156,
+      "source_pages": [
+        156
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p048:b3"
+      ],
+      "source_bboxes": [
+        [
+          232.0,
+          403.0,
+          917.0,
+          695.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "df5af21fd7838fee61b2e61142f1c370c8f42405f9182736e166cc187a9fe4b5"
+    },
+    {
+      "type": "discussion",
+      "content": "Complex as it is, simulation of coalescence with recombination is possible. The problem is that a random coalescent tree is not even remotely likely to generate a simulated sample of alleles showing characteristics such as linkage disequilibrium that are similar to those in the actual sample. This problem can be dealt with in various ways. One way is to ignore coalescences and estimate the rate of recombination based on various characteristics of the sample itself. Just as the relevant parameter for mutation is $ 4N\\mu $, the relevant parameter for recombination is $ 4Nr $, where N is the effective population number and r is the rate of recombination per generation. One estimate of $ 4Nr $ is based on comparing the samples alleles in all possible pairs and for each pair tabulating the number of nucleotide mismatches. The distribution of pairwise mismatches is a basis for estimating the rate of recombination, because the variance in the number of mismatches is reduced by recombination (Wakeley 1997). This point can be appreciated by comparing the mismatch distribution in a sample consisting of $ AB $, $ AB $, $ aB $, and $ ab $, and $ a $, $ b $ with that in a sample consisting of $ AB $, $ AB $, $ aB $, and $ ab $, the latter of which is indicative of recombination. In both samples the mean number of pairwise mismatches is 1.33, but the variances are 0.89 and 0.22, respectively. The advantage of this approach is that it is completely straightforward; the main limitation is that it does not use all of the information in the sample and so has a larger sampling variance than necessary.",
+      "source_page": 156,
+      "source_pages": [
+        156
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p048:b4"
+      ],
+      "source_bboxes": [
+        [
+          235.0,
+          693.0,
+          921.0,
+          1201.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "d7aedc406bb115c63363a0925cad72ce963698a8b4b6e3ae0e6df043f0863050"
+    },
+    {
+      "type": "discussion",
+      "content": "The opposite approach to using summary statistics is to carry out extensive simulations to perform a full likelihood analysis as encapsulated in",
+      "source_page": 156,
+      "source_pages": [
+        156
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p048:b5"
+      ],
+      "source_bboxes": [
+        [
+          238.0,
+          1198.0,
+          923.0,
+          1251.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "5d0e4a6dda1d59fe1f4e6285dafef7539ddda449ab8ea72d151cf28dbdbe78bd"
+    },
+    {
+      "type": "discussion",
+      "content": "Equation 3.39. The problem with this approach, as we have suggested, is that random simulations are extremely unlikely to approximate the actual data. The parameter space is so large that, except in simple cases, a full-blown likelihood approach requires computational capabilities that exceed those of even the most powerful computer systems. This problem has stimulated the implementation of methods that reduce the dimensionality of the problem by collapsing the full data set into summary statistics, and by zeroing in on portions of the parameter space that is the most relevant. Approximate Bayesian coalescence methods collapse the observed data to summary statistics such as the number of distinct haplotypes or the average number of mismatches between pairs of sequences. For each coalescent tree that is simulated, the same summary statistics are calculated. If the difference between the observed data and simulated sample is small enough (based on a somewhat arbitrary threshold), then the parameters from the simulated sample are accepted. Repeating the simulated sampling many times yields what is called the posterior distribution of the parameter estimates.",
+      "source_page": 157,
+      "source_pages": [
+        157
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p049:b2"
+      ],
+      "source_bboxes": [
+        [
+          107.0,
+          178.0,
+          790.0,
+          564.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "64dd3f5ce6d562d42938a1d535330b7b8863dfdf10802f7f2e706cc250fb57e3"
+    },
+    {
+      "type": "proposition",
+      "content": "Two widely used methods that avoid random guesses at the parameter values but instead enable the computer to spend more time in the \"most promising\" regions of the parameter space are Markov Chain Monte Carlo (MCMC) and sequential importance sampling. Even these methods are challenged with the large size of currently available data sets. Both of these methods require a criterion for the goodness of fit between the data and the model, and this is itself sometimes difficult to compute. Instead of calculating the full likelihood, a composite likelihood is sometimes used, in which the simpler problem of calculating the likelihood for each individual nucleotide site is solved, and then the overall likelihood is taken as the product of the likelihood over the set of nucleotides (Kim and Stephan 2000; Hudson 2001; McVean et al. 2002; Zhu and Bustamante 2005; Carvajal-Rodriguez et al. 2006). This approach assumes statistical independence across the nucleotide sites—an assumption that can hardly be justified—but in practice the method provides a reasonable criterion for acceptance, and it seems to perform much better than might be expected.",
+      "source_page": 157,
+      "source_pages": [
+        157
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p049:b3"
+      ],
+      "source_bboxes": [
+        [
+          104.0,
+          563.0,
+          787.0,
+          951.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "1f41537d8304a86e4a2424fb89da0f134db794231b9d18a71f7c5eaddf194d5b"
+    }
+  ]
+}

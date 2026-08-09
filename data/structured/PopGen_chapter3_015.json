@@ -1,0 +1,149 @@
+{
+  "id": "PopGen_chapter3_015",
+  "metadata": {
+    "chapter": "PopGen_chapter3",
+    "section": "3.6 GENE TREES AND COALESCENCE",
+    "subsections": [
+      "Coalescent Effective Size"
+    ],
+    "source_file": "tmp\\popgen\\paddle_output\\PopGen_chapter3_full\\main.tex",
+    "source_title": "Principles of Population Genetics, Fourth Edition",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "3.6 GENE TREES AND COALESCENCE",
+    "section_level_2": "Coalescent Effective Size",
+    "heading_path": [
+      "3.6 GENE TREES AND COALESCENCE",
+      "Coalescent Effective Size"
+    ],
+    "display_heading": "Coalescent Effective Size"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Equation 3.37 says that, as $k$ increases toward $2N$, the expected time for all of the alleles in a population to coalesce into a single common ancestral allele is approximately $4N$. This is the coalescent effective size, which (when it exists) equals the inbreeding effective size (Sjodin et al. 2005).",
+      "source_page": 147,
+      "source_pages": [
+        147
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p039:b5"
+      ],
+      "source_bboxes": [
+        [
+          108.0,
+          539.0,
+          789.0,
+          635.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "4ea7b3c01a978611159e05e6174dcd34070d5c80a584bd5fde32eda90b2f57ce"
+    },
+    {
+      "type": "discussion",
+      "content": "In order to explain when a coalescent effective size does or does not exist, we need to consider the matter of time scale. Equation 3.35 gives the probability distribution of coalescent times, and note that we can eliminate an explicit dependence on 2N by measuring time t in units of 2N generations. With this scaling of time, the mean and variance of the coalescence times in Equation 3.36 become $2/[k(k-1)]$ generations and $4/[k(k-1)]^2$ generations², respectively. Likewise, the time to coalescence of all alleles in a population becomes 2. (Since the units of time are now 2N generations, the actual magnitude of 2 units on this time scale is $ 2 \\times 2N = 4N $ generations.)",
+      "source_page": 147,
+      "source_pages": [
+        147
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p039:b6"
+      ],
+      "source_bboxes": [
+        [
+          105.0,
+          636.0,
+          788.0,
+          852.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "2d7dd0f16e7e53edb4cc40f5d244b6a108c02334cc7351a9ce094bd87e3a9085"
+    },
+    {
+      "type": "discussion",
+      "content": "The coalescent effective size exists for any population process whenever time can be rescaled by a constant to reproduce the standard coalescent embodied in Equation 3.35. We have already considered one such example in which the variance in offspring number does not conform to the binomial distribution assumed in the Wright-Fisher model (see Equation 3.31). To simplify matters, set the mean number of offspring per individual $ \\xi = 1 $ in Equation 3.31 (which means that the population remains constant in size). In this case the effective size is, to a close approximation, $ N_e = N/\\sigma^2 $ where $ \\sigma^2 $ is the variance in offspring number; hence the standard coalescent process is recovered if we scale time in units of $ 2N/\\sigma^2 $ generations. This means that a large variance in offspring number reduces the effective population size and speeds up the process of random genetic drift.",
+      "source_page": 147,
+      "source_pages": [
+        147
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p039:b7"
+      ],
+      "source_bboxes": [
+        [
+          103.0,
+          853.0,
+          786.0,
+          1142.0
+        ]
+      ],
+      "provenance_score": 0.997226,
+      "content_sha256": "029e6da064d5cb6bd21bfb7ac2c91d40da5902fabfb8e3b76220ac73b95d053e"
+    },
+    {
+      "type": "discussion",
+      "content": "There are many processes in which time can be rescaled to recover the standard coalescent process. These include certain models of population growth, age structure, and geographical structure (Emerson et al. 2001; Sagitov and Jagers 2005; Sjodin et al. 2005). The decisive factor is the time scale.",
+      "source_page": 147,
+      "source_pages": [
+        147
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p039:b8"
+      ],
+      "source_bboxes": [
+        [
+          101.0,
+          1142.0,
+          784.0,
+          1240.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "76edbf6c6e14cde14ee921a808dcba8d1868e751dfa8a16e11084ba7aa500b8d"
+    },
+    {
+      "type": "discussion",
+      "content": "Many processes occur on an ecological time scale, which is typically shorter than the coalescent time scale. Among these processes are changes in population age structure or geographical structure when the rate of migration is sufficiently high. In such cases the “fast” process can simply be averaged. Even though the process does affect the coalescent times, it is only through a scaling factor analogous to the $ \\sigma^{2} $ in the case of variance in offspring number. Conversely, some processes occur on a geological time scale, which is typically longer than the coalescent time scale, and in this case the “slow” process can be ignored.",
+      "source_page": 148,
+      "source_pages": [
+        148
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p040:b2"
+      ],
+      "source_bboxes": [
+        [
+          238.0,
+          183.0,
+          923.0,
+          401.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "9cb8829798b5fe6117e4cc076d5e4de21d8e033a4b5492440fd75ce3a1418c3f"
+    },
+    {
+      "type": "discussion",
+      "content": "Trouble arises when the population processes occur on a time scale that is comparable to that of the coalescent time scale, because then there is no linear rescaling of time that yields the Wright-Fisher model, and so there is no coalescent effective size. What happens is that the effective size changes as the population evolves. As a specific example, Sjodin et al. (2005) consider a case in which the population size fluctuates randomly between $ N = 10^3 $ and $ N = 10^5 $ and show that, when the probability of a fluctuation is between $ 10^{-6} $ and $ 10^{-2} $ per generation, then no coalescent effective population size exists. The reason is that the changes in population size occurring on this time scale affect the coalescent times in a nonlinear and random manner. On the other hand, for probabilities greater than $ 10^{-2} $ the fluctuations are fast enough that the coalescent effective size equals the average effective size, and for probabilities smaller than $ 10^{-6} $ the fluctuations are slow enough that the coalescent effective size equals the initial size.",
+      "source_page": 148,
+      "source_pages": [
+        148
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p040:b3"
+      ],
+      "source_bboxes": [
+        [
+          238.0,
+          402.0,
+          926.0,
+          741.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "02ede284b1d37f5011e19233e0156bd7f60a47d94f20022da84e0ef6b4916ac1"
+    }
+  ]
+}

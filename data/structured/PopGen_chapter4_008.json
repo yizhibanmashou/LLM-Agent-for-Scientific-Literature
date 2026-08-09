@@ -1,0 +1,323 @@
+{
+  "id": "PopGen_chapter4_008",
+  "metadata": {
+    "chapter": "PopGen_chapter4",
+    "section": "MUTATION AND THE NEUTRAL THEORY: Introduction",
+    "subsections": [
+      "4.4 THE INFINITE-ALLELES MODEL"
+    ],
+    "source_file": "tmp\\popgen\\paddle_output\\PopGen_chapter4_full\\main.tex",
+    "source_title": "Principles of Population Genetics, Fourth Edition",
+    "formula_references": [],
+    "table_references": [
+      "inline_2"
+    ],
+    "section_level_1": "MUTATION AND THE NEUTRAL THEORY: Introduction",
+    "section_level_2": "4.4 THE INFINITE-ALLELES MODEL",
+    "heading_path": [
+      "MUTATION AND THE NEUTRAL THEORY: Introduction",
+      "4.4 THE INFINITE-ALLELES MODEL"
+    ],
+    "display_heading": "4.4 THE INFINITE-ALLELES MODEL",
+    "table_reference_keys": [
+      "popgen_chapter4:inline_2"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Many genes have more than two alleles represented among the organisms in a natural population. It is therefore of some importance to determine the expected level of genetic variation under mutation pressure. A convenient measure of genetic variation is the proportion of heterozygous genotypes (the heterozygosity). If a gene has a greater heterozygosity than expected from mutation pressure alone, then other forces that operate in nature must tend to preserve genetic variation. On the other hand, if a gene has a smaller heterozygosity than expected, then other forces must tend to eliminate genetic variation.",
+      "source_page": 176,
+      "source_pages": [
+        176
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p012:b5"
+      ],
+      "source_bboxes": [
+        [
+          237.0,
+          639.0,
+          922.0,
+          857.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "0ffca4b3db0abb2269fda7363c0387877001bb217ab76277a06941cd3c8a0ab2"
+    },
+    {
+      "type": "discussion",
+      "content": "The heterozygosity of a gene is a function of the number of alleles and their relative frequencies. In principle, the number of alleles of any gene could be very large. For example, a gene coding for a protein of 300 amino acids has a coding sequence 900 nucleotides in length. Because each nucleotide site could be occupied by either an A, T, G, or C, the total number of possible alleles is 4900, which equals about 10542. Hence, we can suppose that every new mutation creates an allele that does not already exist in the population. This is called the infinite-alleles model of mutation. The infinite-alleles model is but one way to specify the characteristics of new mutations. Although it represents a somewhat simplified view of mutation, it nevertheless provides a useful standard of comparison for other models or for observed allele frequencies.",
+      "source_page": 176,
+      "source_pages": [
+        176
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p012:b6"
+      ],
+      "source_bboxes": [
+        [
+          238.0,
+          857.0,
+          923.0,
+          1145.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "8f5334ee3867badf4f57c6d9bc5c003a6db47a0caebb3d9d26e8bf8eabf114cc"
+    },
+    {
+      "type": "proposition",
+      "content": "In the infinite-alleles model, two alleles that are identical in sequence must also be identical by descent because of the assumption that each mutation creates a unique allele. The concept of identity by descent may be made clear with reference to Figure 4.5, where each allele is assigned a unique identifier, $ \\alpha_{1}, \\alpha_{2}, \\alpha_{3} $, and so forth. At the bottom, the alleles in the genotype $ \\alpha_{i}\\alpha_{i} $ on the left are considered as identical by descent because they descend from a single ancestral allele by DNA replication in a previous generation. In this case the DNA replication that produced $ \\alpha_{i}\\alpha_{i} $ occurred in the immediately preceding generation. Also in Figure 4.5, the alleles in the genotype $ \\alpha_{i}\\alpha_{j} $ might be identical by descent. The different subscripts imply only that they did not derive by DNA replication in the immediately preceding generation, but if they derived by DNA replication in some earlier generation, they are nevertheless identical by descent.",
+      "source_page": 176,
+      "source_pages": [
+        176,
+        177
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p012:b7",
+        "PopGen_chapter4:p013:b2"
+      ],
+      "source_bboxes": [
+        [
+          238.0,
+          1145.0,
+          923.0,
+          1244.0
+        ],
+        [
+          109.0,
+          177.0,
+          791.0,
+          392.0
+        ]
+      ],
+      "provenance_score": 0.998771,
+      "content_sha256": "d7d0f66729578a59d55979c3d77816bb3b8576114facfeb0d49238f730c5743c"
+    },
+    {
+      "type": "discussion",
+      "content": "In the literature of population genetics, a genotype in which the alleles are identical by descent is sometimes said to be autozygous, and one in which the alleles are not identical by descent is said to be allozygous. There is some ambiguity in the concept of identity by descent, because the coalescent process implies that every allele of a gene must ultimately derive from DNA replication of a single ancestral allele at some time in the possibly ancient past. In practice the ambiguity is resolved by picking some reference point in time in the past and arbitrarily declaring that at this point in time no allele is identical by descent with any other.",
+      "source_page": 177,
+      "source_pages": [
+        177
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p013:b3"
+      ],
+      "source_bboxes": [
+        [
+          105.0,
+          392.0,
+          789.0,
+          608.0
+        ]
+      ],
+      "provenance_score": 0.998145,
+      "content_sha256": "c0a275a5654079637e2a300191a58f6eca43cfb0adc458a644dbfb8062ad95c1"
+    },
+    {
+      "type": "discussion",
+      "content": "In the infinite-alleles model, in which each mutation produces a new allele not present in the population, homozygous genotypes must have alleles that are autozygous (identical by descent). To measure the homozygosity, therefore, we need only to calculate the autozygosity. This can again be done with reference to the finite-population model in Figure 4.5. Define $F_t$ as the probability that, in generation $t$, two alleles randomly chosen from a population are identical by descent. In the context of Figure 4.5, the randomly chosen alleles are combined in pairs to make genotypes, and so $F_t$ is also the probability of autozygosity in generation $t$. We will use the $\\alpha_i\\alpha_i$ and $\\alpha_i\\alpha_j$ genotypes in generation $t$ in Figure 4.5 to derive an expression for $F_t$ in terms of $F_{t-1}, N$, and the mutation rate $\\mu$. First, consider the genotype $\\alpha_i\\alpha_i$. What is the probability that this genotype has alleles that are identical by descent? The alleles must be identical by descent provided that neither allele has mutated in the course of one generation, and so the probability of identity by descent in this case is $(1-\\mu)^2$. Now consider the genotype $\\alpha_i\\alpha_j$. These alleles are identical by descent only if two randomly chosen alleles in generation $t-1$ are identical by descent and if neither allele mutated in the course of one generation. Therefore, the probability of identity by descent in this case is $F_{t-1}(1-\\mu)^2$. Because each of the labeled $\\alpha's$ in Figure 4.5 has the same frequency in the gamete pool, namely $1/(2N)$, the probability of a combination like $\\alpha_i\\alpha_j$ is $1/(2N)$ and the probability of a combination like $\\alpha_i\\alpha_j$ is $1-1/(2N)$. Putting all this together, the recurrence equation for $F_t$ is $$ F_{t}=\\left(\\frac{1}{2N}\\right)\\left(1-\\mu\\right)^{2}+\\left(1-\\frac{1}{2N}\\right)\\left(1-\\mu\\right)^{2}F_{t-1} $$",
+      "source_page": 177,
+      "source_pages": [
+        177
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p013:b4",
+        "PopGen_chapter4:p013:b5"
+      ],
+      "source_bboxes": [
+        [
+          103.0,
+          610.0,
+          787.0,
+          1144.0
+        ],
+        [
+          260.0,
+          1146.0,
+          622.0,
+          1200.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "d82007165d2267a4bbfaab65121a4e27c630db5267f19d4b2ec54979b1ca1f29"
+    },
+    {
+      "type": "proposition",
+      "content": "Eventually an equilibrium value of $F$, call it $\\hat{F}$, is attained in which the increase in autozygosity from random genetic drift in any generation is exactly offset by the decrease in autozygosity from new mutations. The equilibrium can be found by equating $F_t = F_{t-1} = \\hat{F}$ in Equation 4.8 and solving. Ignoring terms in $\\mu^2$ and those in $\\mu/N$ because they are expected to be negligibly small, the solution is $$ \\hat{F}=\\frac{1}{1+4N\\mu} $$ to an excellent approximation. Therefore, the number of selectively neutral alleles increases under mutation pressure until $ \\hat{F} $ satisfies Equation 4.9. Since it is the equilibrium value of the probability of identity by descent, $ \\hat{F} $ is also the equilibrium value of the autozygosity. Because of the assumption in the infinite-alleles model that each allele in the population arises only once, all genotypes that are homozygotes must also be autozygous. Therefore, $ \\hat{F} $ can also be interpreted as the equilibrium value of the proportion of homozygous genotypes.",
+      "source_page": 178,
+      "source_pages": [
+        178
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p014:b2",
+        "PopGen_chapter4:p014:b3",
+        "PopGen_chapter4:p014:b5"
+      ],
+      "source_bboxes": [
+        [
+          232.0,
+          183.0,
+          914.0,
+          333.0
+        ],
+        [
+          517.0,
+          332.0,
+          628.0,
+          380.0
+        ],
+        [
+          233.0,
+          401.0,
+          916.0,
+          596.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "42f573411cc49d6267f7809d915edd681e3fdd3214739e80fdc982a9431d3c09"
+    },
+    {
+      "type": "discussion",
+      "content": "In Equation 4.9, N should be interpreted as the effective population size, $ N_{e} $, defined in Chapter 3 as the size of an ideal population that has the same rate of increase in homozygosity as the population in question. In population genetics, the usual symbol for $ 4N_{e}\\mu $ is $ \\theta $, so that $ \\theta = 4N_{e}\\mu $, and Equation 4.9 can be rewritten as $$ \\hat{F}=\\frac{1}{1+\\theta}=\\frac{1}{1+4N_{e}\\mu} $$ Because any genotype that is not homozygous is heterozygous, it follows that the proportion of heterozygous genotypes in a population is given by $ 1 - \\hat{F} $. In the infinite-alleles model, therefore, the heterozygosity is given by Equation 4.10 as $$ 1-\\hat{F}=\\frac{\\theta}{1+\\theta}=\\frac{4N_{e}\\mu}{1+4N_{e}\\mu} $$ where again $\\theta = 4N_e\\mu$. Figure 4.7 shows the equilibrium homozygosity $[1/(1+\\theta)]$ and heterozygosity $[\\theta/(1+\\theta)]$ for a range of values of $\\theta = 4N_e\\mu$. The illustration shows that there is a rather narrow range of $4N_e\\mu$ over which an intermediate level of genetic variation (heterozygosity) is maintained. For example, the equilibrium heterozygosity is in the range 0.2 to 0.8 only when $4N_e\\mu$ is in the range 0.25 to 4. In reality, however, as is clear from Figure 1.8, the heterozygosity for electrophoretic variants in protein molecules is smaller than 0.2, and often much smaller than 0.2 (in mammals it is about 0.03).",
+      "source_page": 178,
+      "source_pages": [
+        178
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p014:b6",
+        "PopGen_chapter4:p014:b7",
+        "PopGen_chapter4:p014:b9",
+        "PopGen_chapter4:p014:b10",
+        "PopGen_chapter4:p014:b12"
+      ],
+      "source_bboxes": [
+        [
+          232.0,
+          594.0,
+          917.0,
+          717.0
+        ],
+        [
+          479.0,
+          716.0,
+          661.0,
+          767.0
+        ],
+        [
+          233.0,
+          786.0,
+          918.0,
+          886.0
+        ],
+        [
+          471.0,
+          882.0,
+          677.0,
+          935.0
+        ],
+        [
+          234.0,
+          956.0,
+          917.0,
+          1152.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "78eb63e67a46e65605fd797853929478abf568586f7f54d6b577a7ee1eb1a6ae"
+    },
+    {
+      "type": "discussion",
+      "content": "This means that the range of realistic values in Figure 4.7 is confined to the extreme left of the graph, where $ \\theta $ is substantially smaller than 1. In fact, for the protein electrophoresis data in Figure 1.8, the estimated range of $ \\theta $ is 0.03–0.16. In other words, the maximum estimated value of $ 4N_e\\mu $ differs from the minimum by a factor of only about five. This is quite unexpected, inasmuch as the population number in different species can differ by factor of $ 10^4 $ or more. The apparently too narrow range of $ \\theta = 4N_e\\mu $ among diverse organisms has been interpreted as implying that the neutrality hypothesis is simply wrong for amino acid polymorphisms (Gillespie 1991). On the other hand, estimates of the effective population number in natural populations are generally imprecise because the studies are very difficult, and estimates of $ \\mu $, which in this case is the mutation rate to neutral amino acid polymorphisms, are even more uncertain. However, the actual distribution of allele frequencies in populations suggests that many segregating amino acid polymorphisms present at low frequency are mildly deleterious and maintained by mutation pressure.",
+      "source_page": 179,
+      "source_pages": [
+        179
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p015:b4"
+      ],
+      "source_bboxes": [
+        [
+          102.0,
+          758.0,
+          788.0,
+          1146.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "d15e507d75679aeba325c1cdf051088eefca02bd95eeeb7b3de3f3568da38e22"
+    },
+    {
+      "type": "discussion",
+      "content": "PROBLEM 4.3 It is an oddity that Equations 4.10 and 4.11 predict the equilibrium homozygosity and heterozygosity without explicit reference to the allele frequencies. If the allele frequencies are estimated in a random-mating population, however, then the homozygosity and heterozygosity can be estimated using the Hardy-Weinberg principle from Chapter 2. In particular, the homozygosity is estimated as $ \\hat{F} = \\Sigma p_i^2 $, where the sum is over all allele frequencies $ p_i $, and the heterozygosity is estimated as $ 1 - \\hat{F} $. A study of electrophoretic protein variants in a Caribbean population of Drosophila willistoni (Ayala and Tracy 1974) yielded the following estimated allele frequencies for the loci Adk-1 (adenylate kinase-1), Lap-5 (leucine aminopeptidase-5), and Xdh (xanthine dehydrogenase):",
+      "source_page": 180,
+      "source_pages": [
+        180
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p016:b2",
+        "PopGen_chapter4:p016:b3"
+      ],
+      "source_bboxes": [
+        [
+          116.0,
+          206.0,
+          506.0,
+          589.0
+        ],
+        [
+          524.0,
+          201.0,
+          911.0,
+          252.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "313303533bfbe7cfbe809d43d4a2fbc9c510ade8c9577818c36d9573a4acdc32"
+    },
+    {
+      "type": "discussion",
+      "content": "Estimate the homozygosity and heterozygosity for each gene, and give the corresponding estimate of $ \\theta $.",
+      "source_page": 180,
+      "source_pages": [
+        180
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p016:b5"
+      ],
+      "source_bboxes": [
+        [
+          526.0,
+          492.0,
+          914.0,
+          562.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "d9001b1346a69b698de66120d1ff2391c771d3fa19d3320603788efd47e6450b"
+    },
+    {
+      "type": "discussion",
+      "content": "ANSWER The homozygosity estimates are 0.438 for Adk-1, 0.673 for Lap-5, and 0.373 for Xdh, and the corresponding heterozygosities are 0.562, 0.327, and 0.626. Because the equilibrium homozygosity $ \\hat{F} $ equals $ 1/(1 + \\theta) $ [see Equation 4.10], then $ \\theta $ can be estimated as $ (1 - \\hat{F})/\\hat{F} $, which equals the ratio of the heterozygosity to the homozygosity. For these three genes the estimates of $ \\theta $ are 1.28, 0.49, and 1.68, respectively. These values are substantially greater than the average for electrophoretic polymorphisms in Drosophila (see Figure 1.8), which is about $ \\theta = 0.16 $.",
+      "source_page": 180,
+      "source_pages": [
+        180
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p016:b6"
+      ],
+      "source_bboxes": [
+        [
+          117.0,
+          619.0,
+          505.0,
+          780.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "0b2738de7ed0ad999bdbaf9e6fa4c1ab035779e3c455ae4b5a1521410a0d7609"
+    }
+  ]
+}

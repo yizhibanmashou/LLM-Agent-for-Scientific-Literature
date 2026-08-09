@@ -1,0 +1,299 @@
+{
+  "id": "PopGen_chapter3_002",
+  "metadata": {
+    "chapter": "PopGen_chapter3",
+    "section": "RANDOM GENETIC DRIFT: Introduction",
+    "subsections": [
+      "3.1 RANDOM GENETIC DRIFT AND BINOMIAL SAMPLING"
+    ],
+    "source_file": "tmp\\popgen\\paddle_output\\PopGen_chapter3_full\\main.tex",
+    "source_title": "Principles of Population Genetics, Fourth Edition",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "RANDOM GENETIC DRIFT: Introduction",
+    "section_level_2": "3.1 RANDOM GENETIC DRIFT AND BINOMIAL SAMPLING",
+    "heading_path": [
+      "RANDOM GENETIC DRIFT: Introduction",
+      "3.1 RANDOM GENETIC DRIFT AND BINOMIAL SAMPLING"
+    ],
+    "display_heading": "3.1 RANDOM GENETIC DRIFT AND BINOMIAL SAMPLING"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "To introduce the process of random genetic drift, we first consider a large population at Hardy-Weinberg equilibrium with alleles A and a at equal frequencies $ p = q = \\frac{1}{2} $. In this population, the genotype frequencies are $ \\frac{1}{4} $ AA, $ \\frac{1}{2} $ Aa and $ \\frac{1}{4} $ aa. Suppose the population were to \"crash,\" and that only four randomly chosen individuals survive to perpetuate the group. It is possible, by chance alone, that the survivors will consist of 4 AA individuals: this possibility has a probability of $ (\\frac{1}{4})^4 = \\frac{1}{256} $. Similarly, it is possible that all four will be aa. Any other possible combination of genotypes could be realized, and it is not difficult to work out the probability for each combination. If the size of the new colony remains at just four individuals in each generation, this type of random sampling occurs each generation. In any reproductive cycle, there is an opportunity for a possibly large change in gene frequency caused purely by the sampling process. One consequence of random drift soon becomes clear: Eventually the population will have either all A alleles or all a alleles. The reason is that, once the population reaches such a “fixation” state, it is stuck. Only new mutations or migrants into the population can reintroduce variation.",
+      "source_page": 109,
+      "source_pages": [
+        109,
+        110
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p001:b4",
+        "PopGen_chapter3:p002:b2"
+      ],
+      "source_bboxes": [
+        [
+          89.0,
+          971.0,
+          774.0,
+          1242.0
+        ],
+        [
+          230.0,
+          182.0,
+          917.0,
+          327.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "678f911f5f223f057091f207ac9df1f6a6a15e92356d9e372feb342b1d8024d0"
+    },
+    {
+      "type": "discussion",
+      "content": "In the example above, we sampled four diploid individuals each generation. If mating takes place at random, sampling four diploid individuals is completely equivalent to sampling eight haploid gametes. When eight gametes are drawn at random from a population with $ p = \\frac{1}{2} $, there are nine possible outcomes, having 0, 1, 2, 3,... 8 copies of the A allele and the remaining copies being the a allele. The probability of each of the nine possibilities is given by the binomial distribution, corresponding to successive terms in the expansion of $ (\\frac{1}{2} A + \\frac{1}{2} a)^8 $. The probability of fixation of the A allele in the next generation corresponds to the probability of drawing eight copies of the A allele. Since each successive draw is considered independent and has a chance of $ \\frac{1}{2} $ of yielding an A, this implies that the probability of drawing eight consecutive A alleles is $ (\\frac{1}{2})^8 = \\frac{1}{256} $. The result is identical to the probability of drawing four AA genotypes calculated earlier, and it illustrates the principle that, with random mating, random sampling of diploid individuals is equivalent to random sampling of twice as many haploid gametes.",
+      "source_page": 110,
+      "source_pages": [
+        110
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p002:b3"
+      ],
+      "source_bboxes": [
+        [
+          230.0,
+          329.0,
+          917.0,
+          690.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "9532dbb4239093f943e00734174b9b1305f64d66c5d8caf5930a3c99a2d6ff14"
+    },
+    {
+      "type": "discussion",
+      "content": "The process of sampling gametes from a finite population is depicted in Figure 3.1. The assumptions are the same as those that yield Hardy-Weinberg frequencies, but in this case the allele frequencies may change from generation to generation because of chance variation due to the finite population size. In the model in Figure 3.1, the reproducing adults in each generation comprise N diploid individuals. These individuals produce an essentially infinite pool of gametes in which the allele frequencies are the same as those in the adults. From this infinite pool of gametes, 2N are drawn and united at random to form the zygotes of the next generation. This model of the sam pling process yields a binomial distribution of all possible combinations of A and a.",
+      "source_page": 110,
+      "source_pages": [
+        110
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p002:b4",
+        "PopGen_chapter3:p002:b6"
+      ],
+      "source_bboxes": [
+        [
+          231.0,
+          689.0,
+          918.0,
+          908.0
+        ],
+        [
+          234.0,
+          1134.0,
+          910.0,
+          1244.0
+        ]
+      ],
+      "provenance_score": 0.942492,
+      "content_sha256": "9b4c583e6bfa95a60ca600cf4b8845287a4c6408a699f543ac4560d79dba1fcb"
+    },
+    {
+      "type": "definition",
+      "content": "To take a specific example, a population of nine diploid organisms arises from a sample of just 18 gametes, but the gametes can be thought of as being sampled from an essentially infinite pool of gametes. Because small samples are frequently not representative, an allele frequency in the sample may differ from that in the entire pool of gametes. Suppose, for example, that a pool of gametes contains the alleles A and a at frequencies p and q, respectively, with $ p + q = 1 $. Then if 2N gametes are drawn at random to produce the zygotes of the next generation, the probability that the sample contains exactly j alleles of type A is the binomial probability $$ \\Pr\\left\\{j a l l e l e s~o f~t y p e~A\\right\\}=\\binom{2N}{j}p^{j}q^{2N-j}=\\frac{(2N)!}{j!(2N-j)!}p^{j}q^{2N-j} $$ where $j$ can take on any integer value between 0 and 2N. The binomial coefficient (in parentheses in the middle expression) is often read as “two N choose $j$,” because it is the number of ways that exactly $j$ elements can be chosen from a total of 2N. After one generation of random sampling as embodied in Equation 3.1, the new allele frequency of $A$ in the population (call it $p$) is given by $j/(2N)$ because, by definition, the allele frequency of $A$ equals the number of $A$ alleles (in this case $j$) divided by the total (in this case 2N). In the subsequent generation, the sampling process occurs anew according to Equation 3.1 with $p$ replaced by $p'$ and $q$ by $1-p'$. In this way, the allele frequency can change at random from generation to generation.",
+      "source_page": 111,
+      "source_pages": [
+        111
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p003:b3",
+        "PopGen_chapter3:p003:b4",
+        "PopGen_chapter3:p003:b6"
+      ],
+      "source_bboxes": [
+        [
+          107.0,
+          228.0,
+          792.0,
+          445.0
+        ],
+        [
+          172.0,
+          455.0,
+          678.0,
+          513.0
+        ],
+        [
+          105.0,
+          538.0,
+          790.0,
+          781.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "dd4b9a155be154cfe051395455b0215c85f908cf8604e66fce6c4ae85d9c97e2"
+    },
+    {
+      "type": "discussion",
+      "content": "Computer-generated examples based on random sampling according to Equation 3.1 are shown in Figure 3.2. Each line in Figure 3.2A gives the number of A alleles in 20 successive generations of random genetic drift in a population of size N = 9 (so 2N = 18). As you can see, individual populations behave very erratically. In seven populations, the A allele becomes fixed (that is, p = 1); in five populations, A becomes lost (that is, p = 0). In the other eight populations remain unfixed or segregating for both A and a; however, the final allele frequency among the unfixed populations is as likely to be one value as any other. Figure 3.2B shows the same kind of simulation, except now with 2N = 100. With a larger population size, the rate at which populations go to fixation is obviously slower. The principal conclusion from Figure 3.2 is that allele frequencies behave so erratically in any one population that prediction is virtually impossible.",
+      "source_page": 111,
+      "source_pages": [
+        111
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p003:b7"
+      ],
+      "source_bboxes": [
+        [
+          103.0,
+          780.0,
+          790.0,
+          1093.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "39ab3e3eb1802ba3ac2e293256a3eb5681fd1a5f72b7bc3441a4d7e6faccf703"
+    },
+    {
+      "type": "discussion",
+      "content": "Although changes in allele frequency due to random genetic drift in any individual population may defy prediction, the average behavior of allele frequencies in a large number of populations can be predicted. Consider a large number of populations all starting at the same time with the same allele frequency and same population size N. Each of these populations is assumed to undergo drift independently of the other populations. Except for their finite size, the subpopulations are assumed to satisfy all the assumptions of the Hardy-Weinberg model, with the additional stipulations that (1) the number of males and females is equal, and (2) each individual has an equal chance of contributing successful gametes to the next generation. The key point—illustrated in Figure 3.3—is that we can describe how these populations change in allele frequency by considering time slices through the graph and tallying a histogram of the counts of populations having each specified allele frequency. Initially, the populations will all be close to the starting allele frequency. As time passes, the populations \"drift\" apart, and eventually they become spread over all possible allele frequencies. Finally, as we will see, each population must go to fixation for one allele or the other.",
+      "source_page": 111,
+      "source_pages": [
+        111,
+        113
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p003:b8",
+        "PopGen_chapter3:p005:b4"
+      ],
+      "source_bboxes": [
+        [
+          102.0,
+          1092.0,
+          789.0,
+          1240.0
+        ],
+        [
+          100.0,
+          849.0,
+          785.0,
+          1115.0
+        ]
+      ],
+      "provenance_score": 0.501901,
+      "content_sha256": "91b0a3c973f224f7a583ece90ebb37f135b35c4de28a80c343a8e0707b07d165"
+    },
+    {
+      "type": "discussion",
+      "content": "To appreciate why ultimate fixation or loss is inevitable, consider an infinitely long bowling alley with minor imperfections that displace an imaginary weightless bowling ball one way or the other. Since the ball has no mass, it has no momentum, and hence at every instant is subject willy-nilly to the bumps and shallows of the alley. This means that, like allele frequencies, the future of the bowling ball depends only on its current position, not on how it got there. The gutters represent the fixation states of p = 0 and p = 1. Once the ball goes into the gutter, it cannot get out again. The imperfections keep the ball from rolling in a straight line, and eventually it rolls into one or the other gutter. In this analogy, the size of the population corresponds to the width of the bowling alley; a larger population implies a wider alley. The imperfections still deflect the ball but, in proportion to the width of the alley, the ball's zigs and zags are of a smaller magnitude. Consequently, the ball remains out of the gutter for a longer time, analogous to the longer time to fixation for a larger population, but eventually the ball will end up in the gutter.",
+      "source_page": 113,
+      "source_pages": [
+        113,
+        114
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p005:b5",
+        "PopGen_chapter3:p006:b2"
+      ],
+      "source_bboxes": [
+        [
+          97.0,
+          1115.0,
+          784.0,
+          1263.0
+        ],
+        [
+          233.0,
+          181.0,
+          913.0,
+          424.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "9980c0679abba5dd900cd5404b787a2e2d93ee362f2e3d94898d4b32c2151715"
+    },
+    {
+      "type": "discussion",
+      "content": "For a full understanding of random genetic drift, we must learn how to deduce the distributions of allele frequencies plotted in Figure 3.3. We just described what would happen after one generation—the set of populations would have a range of allele frequencies as described by the binomial distribution in Equation 3.1. The binomial distribution gives us the probability that a population has allele frequency $ p' $ after one generation of drift. If we consider 1000 populations all starting at p, the binomial distribution gives us the fraction of those populations with allele frequency $ p' $. What about the following generation? For each population, one can imagine the whole sampling process as starting over again. Because no population remembers where it was the previous generation, the binomial sampling occurs anew in each generation. But because the allele frequency changes, the new allele frequency must be used in Equation 3.1. For 1000 populations, Equation 3.1 would have to be applied to each one individually, and then summed across these distributions to obtain the overall probability of each possible outcome of random drift. Fortunately, there is an easier approach that is described after we examine the following experiment.",
+      "source_page": 114,
+      "source_pages": [
+        114
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p006:b3"
+      ],
+      "source_bboxes": [
+        [
+          233.0,
+          424.0,
+          914.0,
+          834.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "3b8ca6dd470353492225d27eedc00da79da3d7f04464171585d3620a7cce91fc"
+    },
+    {
+      "type": "discussion",
+      "content": "An actual experiment designed along the lines of Figure 3.3 yielded the results shown in Figure 3.4. The graph shows the history of 19 generations of random genetic drift in 107 subpopulations of Drosophila melanogaster. Each subpopulation was initiated with 16 heterozygous $ bw^{75}/bw $ flies ($ bw = $ brown eyes) and maintained at a constant size of 16 individuals by randomly choosing eight males and eight females to produce the next generation. Each histogram in Figure 3.4 gives the number of subpopulations containing 0, 1, 2, … 32 $ bw^{75} $ alleles. The pattern of change in allele frequency in Figure 3.4 may at first appear to be complicated, but in reality a simple thing is happening. The initially humped distribution of allele frequency gradually becomes flat as populations fixed for $ bw^{75} $ or bw begin to pile up at the boundaries. The piling up occurs because, once an allele has been fixed or lost, it remains fixed or lost since mutation is negligible over such a small number of generations in small populations. After 19 generations, most of the subpopulations are fixed for one allele or the other, and among the unfixed populations, the distribution of allele frequencies is essentially flat.",
+      "source_page": 114,
+      "source_pages": [
+        114
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p006:b4"
+      ],
+      "source_bboxes": [
+        [
+          233.0,
+          833.0,
+          916.0,
+          1245.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "1e2052b779ced45ef0ab4171432cdf2ad62408fc75b919c2b24194c36ed7e8dc"
+    },
+    {
+      "type": "discussion",
+      "content": "PROBLEM 3.1 Consider a self-pollinating plant population consisting of a single heterozygous (Aa) individual on a small barren island. Suppose the plant reproduces and dies, so that the generations are discrete and the population can only consist of a single plant. What is the probability that the population is homozygous at this genetic locus by the second generation?",
+      "source_page": 115,
+      "source_pages": [
+        115
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p007:b4"
+      ],
+      "source_bboxes": [
+        [
+          109.0,
+          885.0,
+          497.0,
+          1000.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "f896b47a58b2d26cec5da3d6bc364c2b36341ef12086b626399f98976b67abce"
+    },
+    {
+      "type": "discussion",
+      "content": "ANSWER The chance that the first generation offspring is AA is $ \\frac{1}{4} $ and the chance that it is aa is also $ \\frac{1}{4} $, so the chance of fixation in one generation is $ \\frac{1}{2} $. If the first generation offspring is Aa, then the probability of fixation in the second generation (given that the population is not fixed in the first generation) is again $ \\frac{1}{2} $. The probability of not fixing in generation 1 and then fixing in generation 2 is $ \\frac{1}{2} \\times \\frac{1}{2} = \\frac{1}{4} $. Add to this the chance of fixing in one generation $ \\left(\\frac{1}{2}\\right) $, and we get $ \\frac{1}{2} + \\frac{1}{4} = \\frac{3}{4} $ as the probability of fixation by two generations. Note that the probability of not going to fixation each generation is $ \\frac{1}{2} $, and so the chance of not fixing for two generations is $ \\frac{1}{2} \\times \\frac{1}{2} $, which equals $ 1 - \\frac{3}{4} $.",
+      "source_page": 115,
+      "source_pages": [
+        115
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p007:b6"
+      ],
+      "source_bboxes": [
+        [
+          104.0,
+          1033.0,
+          494.0,
+          1214.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "dac0c89bfa0a1cc00f11e66f625ebc366c100ab3bca22554e158b7e0680d1da1"
+    }
+  ]
+}

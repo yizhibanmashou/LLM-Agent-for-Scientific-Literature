@@ -1,0 +1,186 @@
+{
+  "id": "PopGen_chapter6_006",
+  "metadata": {
+    "chapter": "PopGen_chapter6",
+    "section": "6.1 INBREEDING",
+    "subsections": [
+      "Calculation of the Inbreeding Coefficient from Pedigrees"
+    ],
+    "source_file": "tmp\\popgen\\paddle_output\\PopGen_chapter6_full\\main.tex",
+    "source_title": "Principles of Population Genetics, Fourth Edition",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "6.1 INBREEDING",
+    "section_level_2": "Calculation of the Inbreeding Coefficient from Pedigrees",
+    "heading_path": [
+      "6.1 INBREEDING",
+      "Calculation of the Inbreeding Coefficient from Pedigrees"
+    ],
+    "display_heading": "Calculation of the Inbreeding Coefficient from Pedigrees"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Calculation of F from a pedigree is simplified by drawing the pedigree in the form shown in Figure 6.6A, where the lines represent gametes contributed by parents to their offspring. The same pedigree is shown in conventional form in Figure 6.6B. The organisms in gray in part B are not represented in part A. because they have no ancestors in common and therefore do not contribute to the inbreeding of the organism denoted I. The inbreeding coefficient $ F_{I} $ of I is the probability that I is autozygous for the alleles of an autosomal gene under consideration. The first step in calculating $ F_{I} $ is to locate all the common ancestors in the pedigree, because an allele could become autozygous in I only if it were inherited through both of I's parents from a common ancestor; in this case, there is only one common ancestor, namely, A. The next step in calculating $ F_{I} $, which is carried out for each common ancestor in turn, is to trace all the paths of gametes that lead from one of I's parents back to the common ancestor and then down again to the other parent of I. These paths are the paths along which an allele in a common ancestor could become autozygous in I. In Figure 6.6A, there is only one such path: DBACE, in which the common ancestor is underlined for bookkeeping purposes, an especially useful procedure in complex pedigrees.",
+      "source_page": 282,
+      "source_pages": [
+        282,
+        283
+      ],
+      "source_block_ids": [
+        "PopGen_chapter6:p012:b6",
+        "PopGen_chapter6:p013:b7"
+      ],
+      "source_bboxes": [
+        [
+          256.0,
+          1152.0,
+          939.0,
+          1254.0
+        ],
+        [
+          91.0,
+          659.0,
+          778.0,
+          999.0
+        ]
+      ],
+      "provenance_score": 0.97493,
+      "content_sha256": "02120ea618fb5e63632fe515f70bff66a7d4be2ac22cd0a91330929baa8487a6"
+    },
+    {
+      "type": "definition",
+      "content": "The third step in calculating $F_i$ is to calculate the probability of autozygosity in I due to each of the paths in turn. For the path DB$\\hat{\\text{ACE}}$, the reasoning is illustrated in Figure 6.7. Here the black dots represent alleles transmitted along the gametic paths, and the number associated with each step is the probability of identity by descent of the alleles indicated. For all steps except that around the common ancestor, the probability is $\\frac{1}{2}$ because, with Mendelian segregation, the probability that a particular allele present in a parent is transmitted to a specified offspring is $\\frac{1}{2}$. To understand why ($\\frac{1}{2}$)(1 + $F_A$) is the probability associated with the loop around the common ancestor, denote the alleles in the common ancestor as $\\alpha_1$ and $\\alpha_2$. These symbols are used to avoid confusion with conventional allele symbols designating functional types of alleles, such as $A$ for dominant and $a$ for recessive. The pair of gametes contributed by $A$ could contain $\\alpha_{1}\\alpha_{1}$, $\\alpha_{2}\\alpha_{2}$, $\\alpha_{1}\\alpha_{2}$, or $\\alpha_{2}\\alpha_{1}$, each with a probability of $\\frac{1}{4}$ because of Mendelian segregation. In the first two cases, the alleles are clearly identical by descent; in the second two cases, the alleles are identical by descent only if $\\alpha_{1}$ and $\\alpha_{2}$ are already identical by descent, which means that $A$ is autozygous. The probability that $A$ is autozygous is, by definition, the inbreeding coefficient of $A$, $F_{A}$, Hence, the probability for the step around the common ancestor $A$ is $\\left(\\frac{1}{4}\\right)+\\left(\\frac{1}{4}\\right)+\\left(\\frac{1}{4}\\right)F_{A}+\\left(\\frac{1}{4}\\right)F_{A}=\\left(\\frac{1}{2}\\right)+\\left(\\frac{1}{2}\\right)F_{A}=\\left(\\frac{1}{2}\\right)(1+F_{A})$. Because each of the steps in Figure 6.7 is independent of the others, the total probability of autozygosity in I due to the path through $A$ is $\\left(\\frac{1}{2}\\right)\\times\\left(\\frac{1}{2}\\right)\\times\\left(\\frac{1}{2}\\right)(1+F_{A})\\times\\left(\\frac{1}{2}\\right)\\times\\left(\\frac{1}{2}\\right)=\\left(\\frac{1}{2}\\right)^{5}(1+F_{A})$. Make special note that the exponent $\\epsilon$ in the $\\left(\\frac{1}{2}\\right)$ is simply the total number of ancestors in the path. In general, if a path through a common ancestor $A$ contains $i$ individuals, the probability of autozygosity due to that path is $$ (\\tfrac{1}{2})^{i}(1+F_{A}) $$ Thus, the inbreeding coefficient of I in Figure 6.6A is $ \\left(\\frac{1}{2}\\right)^{5}(1 + F_{A}) $. Assuming that A itself is not inbred $ (F_{A} = 0) $, the inbreeding coefficient of I reduces to $ F_{I} = \\left(\\frac{1}{2}\\right)^{5} = \\frac{1}{32} $.",
+      "source_page": 283,
+      "source_pages": [
+        283,
+        284
+      ],
+      "source_block_ids": [
+        "PopGen_chapter6:p013:b8",
+        "PopGen_chapter6:p014:b4",
+        "PopGen_chapter6:p014:b5",
+        "PopGen_chapter6:p014:b6",
+        "PopGen_chapter6:p014:b7"
+      ],
+      "source_bboxes": [
+        [
+          88.0,
+          997.0,
+          774.0,
+          1244.0
+        ],
+        [
+          347.0,
+          404.0,
+          931.0,
+          507.0
+        ],
+        [
+          252.0,
+          500.0,
+          934.0,
+          794.0
+        ],
+        [
+          545.0,
+          800.0,
+          644.0,
+          829.0
+        ],
+        [
+          254.0,
+          837.0,
+          934.0,
+          915.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "ea6e44d8bd6156c81e19b5a8ce1f308599340e2f63225c1ba4ff30b7084813f4"
+    },
+    {
+      "type": "discussion",
+      "content": "In pedigrees of greater complexity, there is more than one common ancestor and there may be more than one path through any of the common ancestors. The paths are mutually exclusive because autozygosity due to an allele inherited along one path excludes autozygosity due to an allele inherited along a different path. Thus, the total inbreeding coefficient is the sum of the probabilities of autozygosity due to each path considered separately. The whole procedure for calculating $F$ is summarized in an example of a first-cousin mating in Figure 6.8. In a first-cousin mating, there are two common ancestors (A and B) and two paths (one each through A and B). The total inbreeding coefficient of I is the sum of the two separate contributions shown in Figure 6.8. If A and B are both noninbred, then $F_A = F_B = 0$, and so $F_I = \\left(\\frac{1}{2}\\right)^5 + \\left(\\frac{1}{2}\\right)^5 = \\frac{1}{16}$. The result $F_I = \\frac{1}{16}$ is the probability that I is autozygous at the specified locus; alternatively, $F_I$ can be interpreted as the average proportion of all genes in I in which the alleles present are autozygous.",
+      "source_page": 284,
+      "source_pages": [
+        284
+      ],
+      "source_block_ids": [
+        "PopGen_chapter6:p014:b8"
+      ],
+      "source_bboxes": [
+        [
+          254.0,
+          913.0,
+          937.0,
+          1252.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "578d4c54282212a619f902c6a96752835c4e0f0c1fed8bde490414fc8d3a21db"
+    },
+    {
+      "type": "discussion",
+      "content": "In general, for any autosomal gene, the formula for calculating the inbreeding coefficient $ F_{1} $ of an inbred organism I is $$ F_{I}=\\sum_{A}\\left(\\frac{1}{2}\\right)^{i}(1+F_{A}) $$ in which the summation over A means summation over all possible paths through all common ancestors, i is the number of organisms in each path, and A is the common ancestor in each path. Figure 6.9 gives the inbreeding coefficient of an offspring produced by mating between any of several common types of relatives in human pedigrees. assuming that none of the common ancestors is inbred. (Altogether, there are four common ancestors and six paths.) ANSWER $ F_{1} = \\left(\\frac{1}{2}\\right)^{3}(1 + F_{C}) + \\left(\\frac{1}{2}\\right)^{3}(1 + F_{D}) + \\left(\\frac{1}{2}\\right)^{5}(1 + F_{A}) + \\left(\\frac{1}{2}\\right)^{5}(1 + F_{B}) + \\left(\\frac{1}{2}\\right)^{5}(1 + F_{A}) + \\left(\\frac{1}{2}\\right)^{5}(1 + F_{B}) $. When the common ancestors are assumed to $$ F_{A}=F_{B}=F_{C}=F_{D}=0 $$ $$ F_{I}=\\tfrac{3}{8} $$",
+      "source_page": 285,
+      "source_pages": [
+        285
+      ],
+      "source_block_ids": [
+        "PopGen_chapter6:p015:b4",
+        "PopGen_chapter6:p015:b5",
+        "PopGen_chapter6:p015:b7",
+        "PopGen_chapter6:p015:b10",
+        "PopGen_chapter6:p015:b11",
+        "PopGen_chapter6:p015:b12",
+        "PopGen_chapter6:p015:b13"
+      ],
+      "source_bboxes": [
+        [
+          98.0,
+          566.0,
+          780.0,
+          619.0
+        ],
+        [
+          351.0,
+          637.0,
+          524.0,
+          698.0
+        ],
+        [
+          94.0,
+          711.0,
+          780.0,
+          836.0
+        ],
+        [
+          581.0,
+          883.0,
+          898.0,
+          977.0
+        ],
+        [
+          94.0,
+          1149.0,
+          481.0,
+          1221.0
+        ],
+        [
+          675.0,
+          1153.0,
+          849.0,
+          1180.0
+        ],
+        [
+          533.0,
+          1173.0,
+          585.0,
+          1200.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "cadf709f5983b6c9d87334a09fbd545100e5fe4513dd5805dec30cfb684c3e29"
+    }
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "id": "PopGen_chapter4_009",
+  "metadata": {
+    "chapter": "PopGen_chapter4",
+    "section": "4.4 THE INFINITE-ALLELES MODEL",
+    "subsections": [
+      "The Ewens Sampling Formula"
+    ],
+    "source_file": "tmp\\popgen\\paddle_output\\PopGen_chapter4_full\\main.tex",
+    "source_title": "Principles of Population Genetics, Fourth Edition",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "4.4 THE INFINITE-ALLELES MODEL",
+    "section_level_2": "The Ewens Sampling Formula",
+    "heading_path": [
+      "4.4 THE INFINITE-ALLELES MODEL",
+      "The Ewens Sampling Formula"
+    ],
+    "display_heading": "The Ewens Sampling Formula"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Equation 4.11 shows that the infinite-alleles model has an equilibrium when the heterozygosity equals $ \\theta/(1+\\theta) $. This is not an “equilibrium” in the usual sense, meaning the absence of change. In reality, it is a dynamic state in which allele frequencies are always changing, new mutations continue to come into the population, alleles previously present are lost, and even alleles that might at one time have been fixed are subject to eventual loss. The term steady state is more appropriate for this kind of situation, since the alleles are not maintained at a constant frequency, but rather new ones enter and old ones are lost from the population. The population remains at a steady state in the sense that the number of alleles and the homozygosity (autozygosity in the infinite-alleles model) remain stationary. But if the number of alleles and the level of autozygosity are in a steady state, then it is reasonable to assume that there is also a steady-state distribution of allele frequencies. When there are multiple alleles, the joint distribution of the allele frequencies present in a population is often called the allele-frequency spectrum in the population. When the allele-frequency spectrum is at a steady state, this implies that the most common allele always has a frequency of $ p_{1} $, and the next most common has a frequency of $ p_{2} $, and so on. The steady-state allele-frequency spectrum has the curious property that, even though the most common allele is expected to have a frequency of $ p_{1} $, the identity of the most common allele will change with time. In the steady-state population, not all alleles are equally frequent, and F is greater than it would be were all alleles equally frequent.",
+      "source_page": 180,
+      "source_pages": [
+        180,
+        181
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p016:b9",
+        "PopGen_chapter4:p017:b2"
+      ],
+      "source_bboxes": [
+        [
+          239.0,
+          885.0,
+          922.0,
+          1252.0
+        ],
+        [
+          108.0,
+          179.0,
+          794.0,
+          372.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "f0ceb2ab405f4713d35a7f22527a2e9bfb8687f5578eccf0fc509bdf2b07f776"
+    },
+    {
+      "type": "discussion",
+      "content": "Consider now the steady-state allele-frequency spectrum from the point of view of an experimenter taking a sample from a population. Let the sample size be n genes, and suppose there are k different alleles in this sample. For example, a sample of size n = 20 might consist of k = 10 unique alleles, with one allele present six times in the sample, one allele represented four times, two alleles each represented twice, and six alleles each represented only once. Such a description of the sample is called the allelic configuration of the sample. A remarkable finding of Ewens (1972) was that the expected allelic configuration of a sample drawn from a steady-state population obeying the infinite-alleles model under neutral mutation and random genetic drift (measured as $ \\theta = 4N\\mu $) is completely determined by the sample size n and the number of observed alleles k. In particular, Ewens (1972) showed that the expected number k of alleles in a sample of size n is a simple function of $ \\theta $: $$ E(k)=1+\\frac{\\theta}{\\theta+1}+\\frac{\\theta}{\\theta+2}+\\cdots+\\frac{\\theta}{\\theta+n-1} $$",
+      "source_page": 181,
+      "source_pages": [
+        181
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p017:b3",
+        "PopGen_chapter4:p017:b4"
+      ],
+      "source_bboxes": [
+        [
+          104.0,
+          372.0,
+          791.0,
+          710.0
+        ],
+        [
+          286.0,
+          709.0,
+          602.0,
+          763.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "8ccc59eb334fcc7b25fde82d4bdca03222ee095acc1faf1127bdb383478f44e1"
+    },
+    {
+      "type": "discussion",
+      "content": "If $ \\theta $ is very small, $ E(k) \\approx 1 $, whereas for very large $ \\theta $, $ E(k) $ approaches n, implying that for a large enough population with a high enough mutation rate, every allele that is sampled will be different. The form of Equation 4.12 suggests that, as the sample size increases, more alleles will be found, but that there is a diminishing return in finding new alleles when the sample size increases. When $ E(k) $ is plotted against $ \\theta $ (Figure 4.8), the increase in the expected number of alleles is greatest for larger sample sizes when the population is highly diverse (large $ \\theta $).",
+      "source_page": 181,
+      "source_pages": [
+        181
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p017:b6"
+      ],
+      "source_bboxes": [
+        [
+          100.0,
+          779.0,
+          785.0,
+          973.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "3c86e86e0e47a85aa8c898e91341d9174d22f1b5ae2be84a6c16e94dad045c4d"
+    },
+    {
+      "type": "discussion",
+      "content": "The infinite-alleles model gives a steady-state prediction of $F$ given $\\theta$ (because $F = 1/(1 + \\theta)$ from Equation 4.10), and a prediction of $k$ from Equation 4.12. Combining these predictions, the expected relation between $F$ and $k$ is plotted in Figure 4.9. The hyperbolic relation is not surprising, because a population with many alleles will generally have a lower probability of identity of a randomly chosen pair of alleles. For $\\theta = 1$, the expected $F$ is $\\frac{1}{2}$ for all sample sizes, but a larger sample size should yield a greater number of distinct alleles. The curves are not dramatically different for different sample sizes $(n)$, mainly because an increase in sample size reveals a greater number of low-frequency alleles, and low-frequency alleles do not contribute very much to the homozygosity $F$.",
+      "source_page": 181,
+      "source_pages": [
+        181
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p017:b7"
+      ],
+      "source_bboxes": [
+        [
+          95.0,
+          973.0,
+          784.0,
+          1241.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "51a5bc78d96a84112c0e71de34fc2d9def5b8e0a7fa01df0da20ec31f3f6cb33"
+    },
+    {
+      "type": "discussion",
+      "content": "Making use of Ewen's result, Karlin and McGregor (1972) found an explicit formula for the expected allele frequency configuration in samples. In particular, they showed that the probability that a sample of size n containing k distinct alleles will contain exactly $ n_{1} $ alleles of type 1, $ n_{2} $ alleles of type 2,..., $ n_{k} $ alleles is of type k, is given by $$ \\Pr\\left\\{n_{1},n_{2},\\cdots,n_{k},k\\right\\}=\\frac{n!\\theta^{k}}{k!n_{1}n_{2}\\cdots n_{k}S_{n}(\\theta)} $$ where $S_{n}(\\theta)=\\theta(\\theta+1)(\\theta+2)\\cdots(\\theta+n-1)$. This equation provides the basis for comparing the allele configuration observed in samples with those expected under the infinite-alleles model with neutrality. [See Ewens (2004) for additional and more advanced discussion.]",
+      "source_page": 182,
+      "source_pages": [
+        182
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p018:b4",
+        "PopGen_chapter4:p018:b5",
+        "PopGen_chapter4:p018:b7"
+      ],
+      "source_bboxes": [
+        [
+          241.0,
+          713.0,
+          924.0,
+          842.0
+        ],
+        [
+          412.0,
+          857.0,
+          754.0,
+          919.0
+        ],
+        [
+          242.0,
+          930.0,
+          924.0,
+          1032.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "f51cf1e2c0261019c01c65b0321cc15b84036e42ed6a6f9fbb72194f15340b30"
+    }
+  ]
+}

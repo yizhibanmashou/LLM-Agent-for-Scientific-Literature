@@ -1,0 +1,162 @@
+{
+  "id": "PopGen_chapter6_003",
+  "metadata": {
+    "chapter": "PopGen_chapter6",
+    "section": "6.1 INBREEDING",
+    "subsections": [
+      "The Inbreeding Coefficient"
+    ],
+    "source_file": "tmp\\popgen\\paddle_output\\PopGen_chapter6_full\\main.tex",
+    "source_title": "Principles of Population Genetics, Fourth Edition",
+    "formula_references": [],
+    "table_references": [
+      "inline_3"
+    ],
+    "section_level_1": "6.1 INBREEDING",
+    "section_level_2": "The Inbreeding Coefficient",
+    "heading_path": [
+      "6.1 INBREEDING",
+      "The Inbreeding Coefficient"
+    ],
+    "display_heading": "The Inbreeding Coefficient",
+    "table_reference_keys": [
+      "popgen_chapter6:inline_3"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "To make the discussion specific, consider the pedigree in Figure 6.1. It represents the closest degree of inbreeding possible, namely self-fertilization. The curved lines emanating from individual A in generation 0 represent gametes, which join to produce the individual I in generation 1. The black dots on the lines represent the alleles of a gene present in the gametes, which come together to form the genotype of the locus in individual I. The dots are both black to symbolize that they are identical by descent, which means that they arose from replication of the same DNA molecule in a previous generation, in this case in generation 0. The inbreeding coefficient, typically denoted by the symbol F, is defined as the probability that the two alleles at a locus in an inbred individual are identical by descent. Later in this chapter we will have a need to denote the inbreeding coefficient as $ F_{IS} $, but for now we do not need the subscript and will suppress it.",
+      "source_page": 272,
+      "source_pages": [
+        272
+      ],
+      "source_block_ids": [
+        "PopGen_chapter6:p002:b4"
+      ],
+      "source_bboxes": [
+        [
+          249.0,
+          399.0,
+          931.0,
+          713.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "a601df1173004d95d59fce4d7035969e3d1873bef1d65f1a229193de91ed0a73"
+    },
+    {
+      "type": "discussion",
+      "content": "The concept of identity by descent conceals a subtlety that requires some explanation. As one traces the ancestries of alleles into the past, their ancestral lineages come together, or coalesce, reducing the number of ancestral alleles, until ultimately only one common ancestral allele remains. Details of the coalescent process are examined in Chapter 3. Because of coalescence, every allele shares a common ancestral allele with every other allele, and they all are related through DNA replication. Superficially, the coalescent process seems to undermine the concept of the inbreeding coefficient, or at least to render it ambiguous. The ambiguity can be resolved by choosing some arbitrary time in the past and declaring that, at that time, every allele in the population is to be considered as being not identical by descent with any other. This clears the slate because it sets F = 0 for all individuals, and thereafter what the inbreeding coefficient actually refers to is the probability of identity by descent subsequent to the time the slate was cleared.",
+      "source_page": 272,
+      "source_pages": [
+        272
+      ],
+      "source_block_ids": [
+        "PopGen_chapter6:p002:b5"
+      ],
+      "source_bboxes": [
+        [
+          249.0,
+          714.0,
+          933.0,
+          1051.0
+        ]
+      ],
+      "provenance_score": 0.99886,
+      "content_sha256": "a5808c73132df0fffc75f8c4c6405ff2e843042f2d8ab7ad62455e7f5b360f0b"
+    },
+    {
+      "type": "definition",
+      "content": "In Figure 6.1, the arbitrary time when all alleles are defined as distinct (not identical by descent) is generation 0. Hence we can write the genotype of individual A in generation 0 as $ \\alpha_1\\alpha_2 $, and so by definition $ \\alpha_1 $ and $ \\alpha_2 $ are not identical by descent. The probability that the alleles in the inbred offspring I are identical by descent can then be deduced from first principles. Individual I has any one of four possible genotypes with the following probabilities: $ \\frac{1}{4} $ $ \\alpha_1\\alpha_1 $, $ \\frac{1}{4} $ $ \\alpha_1\\alpha_2 $, $ \\frac{1}{4} $ $ \\alpha_2\\alpha_1 $, and $ \\frac{1}{4} $ $ \\alpha_2\\alpha_2 $. In the cases $ \\alpha_1\\alpha_1 $ and $ \\alpha_2\\alpha_2 $, the alleles are identical by descent, and the individual is said to be autozygous (the prefix auto means self).",
+      "source_page": 272,
+      "source_pages": [
+        272,
+        273
+      ],
+      "source_block_ids": [
+        "PopGen_chapter6:p002:b6",
+        "PopGen_chapter6:p003:b3"
+      ],
+      "source_bboxes": [
+        [
+          249.0,
+          1050.0,
+          933.0,
+          1245.0
+        ],
+        [
+          391.0,
+          180.0,
+          774.0,
+          334.0
+        ]
+      ],
+      "provenance_score": 0.993266,
+      "content_sha256": "f25a507baf378f05f05c4647538797c5baf0b7bb0bad853762ab0d7123190648"
+    },
+    {
+      "type": "discussion",
+      "content": "In the cases $\\alpha_{1}\\alpha_{2}$ and $\\alpha_{2}\\alpha_{1}$, the alleles are not identical by descent, and the individual is said to be allozygous (the prefix allo means other). Note that the concepts of autozygosity and allozygosity have nothing to do with the state of an allele—whether the allele is $A$ or $a$, for example. The concepts are concerned only with common ancestry. If the alleles are replicas of a single allele in a common ancestor, they are autozygous; otherwise, they are allozygous. Because the inbreeding coefficient is equal to the probability of autozygosity, the inbreeding coefficient of individual I is given by $ F = \\frac{1}{2} $; or to state the result in somewhat different terms, $ F = \\frac{1}{2} $ is the inbreeding coefficient resulting from one generation of self-fertilization. Two equally valid interpretations of F are: - F is the probability that any particular gene in an inbred individual has alleles that are identical by descent, or",
+      "source_page": 273,
+      "source_pages": [
+        273
+      ],
+      "source_block_ids": [
+        "PopGen_chapter6:p003:b5",
+        "PopGen_chapter6:p003:b6",
+        "PopGen_chapter6:p003:b7"
+      ],
+      "source_bboxes": [
+        [
+          98.0,
+          492.0,
+          782.0,
+          663.0
+        ],
+        [
+          95.0,
+          661.0,
+          781.0,
+          786.0
+        ],
+        [
+          97.0,
+          792.0,
+          755.0,
+          844.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "cfe73222d7dcea0b281f55e3d4e3e997ff59e4db873207243fbcbc0418186f77"
+    },
+    {
+      "type": "discussion",
+      "content": "- F is the overall proportion of genes in an inbred individual that have alleles that are identical by descent. Because $ F = \\frac{1}{2} $ in Figure 6.1, this value means that one generation of self-fertilization results in an inbred individual in which 50% of the genes have alleles that are identical by descent (autozygous). Because the span of time in a pedigree is usually short, in this case only one generation, mutation can safely be ignored. Autozygous genotypes must therefore be homozygous, whereas allozygous genotypes can be either homozygous or heterozygous.",
+      "source_page": 273,
+      "source_pages": [
+        273
+      ],
+      "source_block_ids": [
+        "PopGen_chapter6:p003:b8",
+        "PopGen_chapter6:p003:b9"
+      ],
+      "source_bboxes": [
+        [
+          95.0,
+          842.0,
+          774.0,
+          893.0
+        ],
+        [
+          91.0,
+          900.0,
+          778.0,
+          1053.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "f0c564e55633ffaf9e26d27b0b26320768fd5c80b5c4e5c30218ae7dc64ecff7"
+    }
+  ]
+}

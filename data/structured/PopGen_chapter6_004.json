@@ -1,0 +1,443 @@
+{
+  "id": "PopGen_chapter6_004",
+  "metadata": {
+    "chapter": "PopGen_chapter6",
+    "section": "6.1 INBREEDING",
+    "subsections": [
+      "Genotype Frequencies with Inbreeding"
+    ],
+    "source_file": "tmp\\popgen\\paddle_output\\PopGen_chapter6_full\\main.tex",
+    "source_title": "Principles of Population Genetics, Fourth Edition",
+    "formula_references": [],
+    "table_references": [
+      "6.1",
+      "6.2",
+      "inline_1"
+    ],
+    "section_level_1": "6.1 INBREEDING",
+    "section_level_2": "Genotype Frequencies with Inbreeding",
+    "heading_path": [
+      "6.1 INBREEDING",
+      "Genotype Frequencies with Inbreeding"
+    ],
+    "display_heading": "Genotype Frequencies with Inbreeding",
+    "table_reference_keys": [
+      "chapter6:6.1",
+      "chapter6:6.2",
+      "popgen_chapter6:inline_1"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "At the population level, Figure 6.2 illustrates how the concepts of autozygosity and allozygosity are related to those of homozygosity and heterozygosity in a population of inbred organisms. The small circles represent the individuals in a population, with their genotypes indicated for one locus. The population is assumed to be infinite, but to make matters concrete we will focus on these 32 individuals and assume that they are a perfectly reprepresentative sample. Some of the circles are shaded, and these represent autozygous genotypes whose alleles are identical by descent. Other circles are unshaded, and these represent allozygous genotypes whose alleles are not identical by descent. Disregarding the possibility of mutation since the time that F was declared to equal 0 (clearing the slate), all autozygous genotypes must be homozygous, but allozygous genotypes may be either homozygous or heterozygous (see Figure 6.2). Since F is the probability of identity by descent, it is also the proportion of individuals whose alleles are autozygous. In this example, $ F = \\frac{16}{32} = \\frac{1}{2} $, which can be determined by counting. Normally one would not be able to distinguish which homozygous genotypes were autozygous and which were allozygous, and here we have chosen them arbitrarily.",
+      "source_page": 273,
+      "source_pages": [
+        273,
+        274
+      ],
+      "source_block_ids": [
+        "PopGen_chapter6:p003:b11",
+        "PopGen_chapter6:p004:b3"
+      ],
+      "source_bboxes": [
+        [
+          89.0,
+          1095.0,
+          774.0,
+          1248.0
+        ],
+        [
+          248.0,
+          839.0,
+          930.0,
+          1128.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "db0fa0e1b18591bac08d564444e0b3399f01848152112fbb3d5e6d85e1c136d6"
+    },
+    {
+      "type": "discussion",
+      "content": "The essential point of Figure 6.2 is that two alleles can be identical by state, which means that they have the same sequence of nucleotides along the DNA, without being identical by descent. The concept of identity by descent pertains to the ancestral origin of an allele and not to its chemical makeup.",
+      "source_page": 274,
+      "source_pages": [
+        274
+      ],
+      "source_block_ids": [
+        "PopGen_chapter6:p004:b4"
+      ],
+      "source_bboxes": [
+        [
+          249.0,
+          1127.0,
+          930.0,
+          1251.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "76f0ccafad513dcf4dbfedb33b8a4c8bf5d92adee751b39ad80691621155c018"
+    },
+    {
+      "type": "discussion",
+      "content": "Figure 6.2 also illustrates the effect of inbreeding on the genotype frequencies. In this population, the allele frequencies are $ p = \\frac{16}{32} = \\frac{1}{2} $ for A, and $ q = \\frac{16}{32} = \\frac{1}{2} $ for a. These again can be determined by direct counts. With Hardy-Weinberg equilibrium (see Chapter 2), the expected genotype frequencies are $ (\\frac{1}{2})^2 \\times 32 = 8 \\, AA $, $ 2(\\frac{1}{2})(\\frac{1}{2}) \\times 32 = 16 \\, Aa $, and $ (\\frac{1}{2})^2 \\times 32 = 8 \\, aa $. The genotype counts are actually 12 AA, 8 Aa, and 12 aa. The excess of homozygous genotypes, and deficiency of heterozygous genotypes, are a direct consequence and characteristic of inbreeding.",
+      "source_page": 275,
+      "source_pages": [
+        275
+      ],
+      "source_block_ids": [
+        "PopGen_chapter6:p005:b2"
+      ],
+      "source_bboxes": [
+        [
+          103.0,
+          182.0,
+          787.0,
+          374.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "d4ebb9750bdcaa1f285013c0ff2c22aeea31982e31eb730b2b547ad20ab348be"
+    },
+    {
+      "type": "definition",
+      "content": "To understand how inbreeding affects the genotype frequencies, we need only consider the implications of the definition of F for a population of inbred organisms. For this purpose, consider the alleles of a gene present in any one of the inbred organisms. Either of two things must be true: The alleles must either be allozygous (probability 1 - F) or be autozygous (probability F). If the alleles are allozygous, then the probability that the chosen organism has any particular genotype is simply the probability of that genotype in a random-mating population, because, by chance, the inbreeding has not affected this particular gene. On the other hand, if the alleles are autozygous, then the chosen organism must be homozygous, and the probability of homozygosity for any particular allele is simply the frequency of the allele in the subpopulation as a whole. (Because the alleles in question are autozygous, knowing which allele is present in one chromosome immediately tells you that an identical allele is in the homologous chromosome.) These considerations hold regardless of the number of alleles, but to simplify matters, we consider the case of two alleles A and a at frequencies p and q (with $ p + q = 1 $). In this case the genotype frequencies are given by $$ AA:\\quad p^{2}(1-F)+pF=\\quad p^{2}\\ +pqF $$ $$ \\begin{array}{r l r}{A\\dot{a}{:}}&{{}2p q(1-F)}&{{}\\quad=\\quad2p q-2p q F}\\end{array} $$ $$ aa:\\quad q^{2}(1-F)+pF~=~q^{2}~+pqF $$",
+      "source_page": 275,
+      "source_pages": [
+        275
+      ],
+      "source_block_ids": [
+        "PopGen_chapter6:p005:b3",
+        "PopGen_chapter6:p005:b4",
+        "PopGen_chapter6:p005:b6",
+        "PopGen_chapter6:p005:b8"
+      ],
+      "source_bboxes": [
+        [
+          99.0,
+          375.0,
+          784.0,
+          784.0
+        ],
+        [
+          208.0,
+          790.0,
+          515.0,
+          819.0
+        ],
+        [
+          213.0,
+          826.0,
+          529.0,
+          853.0
+        ],
+        [
+          218.0,
+          859.0,
+          512.0,
+          888.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "bcfa36d0205fbb5dbdd02419a808d59010140f18a0c1237c4ce45768208109cc"
+    },
+    {
+      "type": "discussion",
+      "content": "Equation 6.1a is the probability that an organism has genotype AA; the first term refers to cases in which the alleles are allozygous and the second to cases in which the alleles are autozygous. Similarly, Equation 6.1c is the probability that an organism has genotype aa. Heterozygous Aa genotypes then have the frequency given by Equation 6.1b, since alleles that are heterozygous must be allozygous. The expressions at the far right in Equations 6.1a–c can be obtained by multiplying out those on the left and remembering that $ p(1-p)=q(1-q)=pq $.",
+      "source_page": 275,
+      "source_pages": [
+        275
+      ],
+      "source_block_ids": [
+        "PopGen_chapter6:p005:b10"
+      ],
+      "source_bboxes": [
+        [
+          95.0,
+          902.0,
+          780.0,
+          1098.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "6a7b10ee156bb3798553498ef6d61760a795abbb6f36aedec7294e4430bb47c9"
+    },
+    {
+      "type": "discussion",
+      "content": "Applying Equation 6.1 to the example in Figure 6.2, we have already shown that $ F = \\frac{1}{2} $ and also that $ p = q = \\frac{1}{2} $. From the expressions on the far right in Equation 6, therefore, the expected numbers of each of the three genotypes are $ [(\\frac{1}{2})^2 + (\\frac{1}{2})(\\frac{1}{2})(\\frac{1}{2})] \\times 32 = 12 \\, AA $, $ [2(\\frac{1}{2})(\\frac{1}{2}) - 2(\\frac{1}{2})(\\frac{1}{2})(\\frac{1}{2})] \\times 32 = 8 \\, Aa $, and $ [(\\frac{1}{2})^2 + (\\frac{1}{2})(\\frac{1}{2})(\\frac{1}{2})] \\times 32 = 12 \\, aa $. The genotype frequencies shown in Figure 6.2 are therefore in perfect agreement with those expected in the progeny of a population of plants in which each individual had undergone one generation of self-fertilization.",
+      "source_page": 275,
+      "source_pages": [
+        275,
+        276
+      ],
+      "source_block_ids": [
+        "PopGen_chapter6:p005:b11",
+        "PopGen_chapter6:p006:b3"
+      ],
+      "source_bboxes": [
+        [
+          94.0,
+          1098.0,
+          778.0,
+          1245.0
+        ],
+        [
+          253.0,
+          646.0,
+          928.0,
+          818.0
+        ]
+      ],
+      "provenance_score": 0.915289,
+      "content_sha256": "2bd2a1edccfde03fa4f34f7122133f4fabaf2d3e0e98a239dfa3eb6e102ef656"
+    },
+    {
+      "type": "discussion",
+      "content": "The genotype frequencies with inbreeding are summarized graphically in Figure 6.3. The box is divided vertically into two parts, corresponding to genes whose alleles remain allozygous in spite of the inbreeding and those whose alleles are autozygous because of the inbreeding. The division is in the proportion 1 - F: F. Within the allozygous part of the box, the horizontal panels correspond to the allozygous genotypes AA, Aa, and aa, which are the Hardy-Weinberg frequencies. Within the autozygous part of the box, the horizontal panels correspond to the autozygous genotypes AA and aa, which are in the proportions p: q. Some special cases of Equation 6.1 for the genotype frequencies with inbreeding are given in [[SEE_TABLE:6.1]]. When F = 0, the genotype frequencies are identical to those of the Hardy-Weinberg principle; and when F = 1 (complete inbreeding), all individuals are autozygous, and there is a total absence of heterozygous genotypes.",
+      "source_page": 276,
+      "source_pages": [
+        276,
+        277
+      ],
+      "source_block_ids": [
+        "PopGen_chapter6:p006:b5",
+        "PopGen_chapter6:p007:b3"
+      ],
+      "source_bboxes": [
+        [
+          252.0,
+          935.0,
+          935.0,
+          1249.0
+        ],
+        [
+          104.0,
+          209.0,
+          778.0,
+          464.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "74b3118c4cda11971e2fe60a6fc422753486e22a3213dd916b16a5967bcc30f7"
+    },
+    {
+      "type": "proposition",
+      "content": "Note also from Equation 6.1 that, while inbreeding does change the genotype frequencies in a population, it does not change the allele frequencies. This is true because, for any value of F, the allele frequency of A is given by $ [p^2 + pqF] \\div (\\frac{1}{2})[2pq - 2pqF] = p^2 + pq = p(p + q) = p $. This principle requires the assumption that all genotypes have the same fitness, which is to say that no natural selection takes place. If there is selection, then the allele frequencies can change with inbreeding.",
+      "source_page": 277,
+      "source_pages": [
+        277
+      ],
+      "source_block_ids": [
+        "PopGen_chapter6:p007:b4"
+      ],
+      "source_bboxes": [
+        [
+          98.0,
+          537.0,
+          782.0,
+          705.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "2e7080937b536923ed2f90dca0daaec4482f95fac1b8680b53bdb9221abb7dff"
+    },
+    {
+      "type": "discussion",
+      "content": "Equation 6.1 generalizes to multiple alleles in a straightforward way. If a gene has multiple alleles $ A_1, A_2, \\ldots A_n $ at respective frequencies $ p_1, p_2, \\ldots p_n $ (with $ p_1 + p_2 + \\cdots + p_n = 1 $), then in a population with inbreeding coefficient $ F $, the frequencies of $ A_i A_j $ homozygotes and $ A_i A_j $ heterozygotes are as follows: $$ \\begin{array}{r l}{A_{i}A_{i}\\colon}&{{}p_{i}^{2}(1-F)+p_{i}F=p_{i}^{2}\\;+\\; p_{i}(1-p_{i})\\mathrm{F}}\\end{array} $$ $$ \\begin{array}{r l r l}{A_{i}A_{j}:}&{{}2p_{i}p_{j}(1-F)}&{}&{{}=2p_{i}p_{j}-2p_{i}p_{j}F}\\end{array} $$",
+      "source_page": 277,
+      "source_pages": [
+        277
+      ],
+      "source_block_ids": [
+        "PopGen_chapter6:p007:b5",
+        "PopGen_chapter6:p007:b6",
+        "PopGen_chapter6:p007:b8"
+      ],
+      "source_bboxes": [
+        [
+          98.0,
+          706.0,
+          780.0,
+          805.0
+        ],
+        [
+          210.0,
+          808.0,
+          564.0,
+          838.0
+        ],
+        [
+          210.0,
+          842.0,
+          541.0,
+          873.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "34c428e79a3a8b8171e5c68dcce79a404a2c10996d95cc4891c47dca6285274d"
+    },
+    {
+      "type": "definition",
+      "content": "CORRELATION BETWEEN UNITING GAMETES Wright's (1922) original conception of the inbreeding coefficient F was as a measure of the correlation between uniting gametes. That this concept is consistent with the probability interpretation is shown for gene with two alleles in [[SEE_TABLE:6.2]]. The upper part of the table shows all possible pairs of uniting gametes and their frequencies with inbreeding, with the female gamete on the left and the male gamete on the right. The alleles have been coded with numerical values, A with a value 1 and a with value 0. Any arbitrary numerical values lead to the same conclusion, but the assignments in [[SEE_TABLE:6.2]] simplify the formulas. The bottom part of the table shows how various expected values are calculated, with the goal of deducing $ Cov(xy) $, the covariance between x and y, as well as $ V(x) $ and $ V(y) $, the variances. By definition, the correlation between uniting gametes $ r_{UG}(UG $ for uniting gametes) is the ratio of the covariance to the product of the standard deviations, and hence",
+      "source_page": 277,
+      "source_pages": [
+        277,
+        278
+      ],
+      "source_block_ids": [
+        "PopGen_chapter6:p007:b10",
+        "PopGen_chapter6:p008:b2"
+      ],
+      "source_bboxes": [
+        [
+          95.0,
+          899.0,
+          780.0,
+          1240.0
+        ],
+        [
+          124.0,
+          189.0,
+          923.0,
+          483.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "c5e54b2202c10ce300a3de63bf818fd7ed1fdceed7872376a2a8a57938426f62"
+    },
+    {
+      "type": "discussion",
+      "content": "[[SEE_TABLE:6.2]] $$ r_{UG}=\\frac{Cov(x,y)}{\\sqrt{V(x)V(y)}}=\\frac{pqF}{pq}=F $$",
+      "source_page": 278,
+      "source_pages": [
+        278
+      ],
+      "source_block_ids": [
+        "PopGen_chapter6:p008:b2",
+        "PopGen_chapter6:p008:b3"
+      ],
+      "source_bboxes": [
+        [
+          124.0,
+          189.0,
+          923.0,
+          483.0
+        ],
+        [
+          466.0,
+          564.0,
+          712.0,
+          623.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "9d9cc0bbd408596eb90c23c2aeda60e12afd92ebaa4f3ecc164ee1a153347346"
+    },
+    {
+      "type": "discussion",
+      "content": "Wright, to the end of his long and extraordinarily productive life (he died in 1988 at the age of 98), always preferred his own interpretation of F as a correlation, because under some exceptional circumstances $ r_{UG} $ can be negative, and in these cases the probability interpretations fails because a probability cannot be negative.",
+      "source_page": 278,
+      "source_pages": [
+        278
+      ],
+      "source_block_ids": [
+        "PopGen_chapter6:p008:b5"
+      ],
+      "source_bboxes": [
+        [
+          247.0,
+          640.0,
+          931.0,
+          767.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "cec2206f7bdc62d027f867f4662066a6e3ef0034b18a851e77d96d66e7d76e6f"
+    },
+    {
+      "type": "discussion",
+      "content": "REDUCTION IN THE FREQUENCY OF HETEROZYGOUS GENOTYPES One of the main effects of inbreeding is that a group of inbred individuals has reduced frequency of heterozygous genotypes, relative to a group of noninbred individuals (see Equation 6.1b). To examine this effect quantitatively, let $ H_1 $ denote the probability that a gene in an inbred individual is heterozygous, and let $ H_5 $ denote the proportion of heterozygous genotypes expected with random mating in the subpopulation of which I is a member. With two alleles, Equation 6.1b implies that $ H_1 = 2pq - 2pqF $, and the Hardy-Weinberg principle implies that $ H_5 = 2pq $. The proportionate reduction in heterozygosity due to inbreeding, relative to the subpopulation as a whole, is symbolized as $ F_{15} $ and given by the expression $$ F_{IS}=\\frac{H_{S}-H_{I}}{H_{S}}=\\frac{2pq-(2pq-2pqF)}{2pq}=F $$ As we shall see Section 6.2, this formulation is particularly useful in thinking about subdivided populations, when both inbreeding and random genetic drift contribute to the overall probability of identity by descent. of P. cuspidata, two alleles of the phosphoglucomutase-2 gene were observed, which we will designate as the A and a alleles. The sample included were 15 AA, 6 Aa, and 14 aa genotypes (Levin 1978). Are these numbers consistent with the estimate $ F = 0.64 $? (Note: The $ \\chi^{2} $ in this case has one degree of freedom because only the allele frequency is estimated from the data; if F also were estimated from the data, rather than being calculated independently from the degree of self-fertilization, then there would be zero degrees of freedom and no goodness-of-fit test would be possible.)",
+      "source_page": 278,
+      "source_pages": [
+        278,
+        279
+      ],
+      "source_block_ids": [
+        "PopGen_chapter6:p008:b6",
+        "PopGen_chapter6:p008:b7",
+        "PopGen_chapter6:p008:b9",
+        "PopGen_chapter6:p009:b3"
+      ],
+      "source_bboxes": [
+        [
+          245.0,
+          786.0,
+          933.0,
+          1057.0
+        ],
+        [
+          418.0,
+          1077.0,
+          762.0,
+          1134.0
+        ],
+        [
+          247.0,
+          1146.0,
+          932.0,
+          1223.0
+        ],
+        [
+          522.0,
+          207.0,
+          913.0,
+          520.0
+        ]
+      ],
+      "provenance_score": 0.942661,
+      "content_sha256": "1d43b1fea4e3e5a1807697382ac71fdb45d692fe31fc4a461dcaa3a01181c3aa"
+    },
+    {
+      "type": "discussion",
+      "content": "ANSWER The allele frequencies of A and a are estimated as $ (30 + 6)/70 = 0.514 $ and $ 1 - 0.514 = 0.486 $, respectively. The hypothesis is that F = 0.64, and so 1 - F = 0.36. The expected numbers of the genotypes AA, Aa, and aa are, respectively, $ [(0.514)^2(0.36) + (0.514)(0.64)](35) = 14.8 $, $ [2(0.514)(0.486)(0.36)](35) = 6.3 $, and $ [(0.486)^2(0.36) + (0.486)(0.64)](35) = 13.9 $. With these expectations, the $ \\chi^2 = 0.02 $ with one degree of freedom, and the associated probability is about 0.96. The fit to the inbreeding model is excellent.",
+      "source_page": 279,
+      "source_pages": [
+        279
+      ],
+      "source_block_ids": [
+        "PopGen_chapter6:p009:b4"
+      ],
+      "source_bboxes": [
+        [
+          109.0,
+          554.0,
+          501.0,
+          694.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "5aa434c2a8647dd45dd72a9bc533686305d96cb50622674049136b0b71b099c6"
+    },
+    {
+      "type": "table",
+      "content": "[[TABLE:6.1]]",
+      "source_page": 277,
+      "source_pages": [
+        277
+      ],
+      "source_block_ids": [
+        "PopGen_chapter6:p007:b3"
+      ],
+      "source_bboxes": [
+        [
+          104.0,
+          209.0,
+          778.0,
+          464.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "6bc821b3243f50be4654f64e879a389637b1814708c1bc3e0445af5b67ca41b7"
+    }
+  ]
+}

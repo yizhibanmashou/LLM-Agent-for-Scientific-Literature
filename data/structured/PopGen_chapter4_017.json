@@ -1,0 +1,144 @@
+{
+  "id": "PopGen_chapter4_017",
+  "metadata": {
+    "chapter": "PopGen_chapter4",
+    "section": "4.6 MUTATION AND RECOMBINATION",
+    "subsections": [
+      "Muller's Ratchet"
+    ],
+    "source_file": "tmp\\popgen\\paddle_output\\PopGen_chapter4_full\\main.tex",
+    "source_title": "Principles of Population Genetics, Fourth Edition",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "4.6 MUTATION AND RECOMBINATION",
+    "section_level_2": "Muller's Ratchet",
+    "heading_path": [
+      "4.6 MUTATION AND RECOMBINATION",
+      "Muller's Ratchet"
+    ],
+    "display_heading": "Muller's Ratchet"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Clonal interference (in asexual organisms) or the Hill-Robertson effect (in sexual organisms) can decrease the efficiency with which favorable mutations are incorporated into populations. The flip side is that these same processes make it more difficult for a population to get rid of deleterious mutations. The Hill-Robertson effect appears to account for a correlation between intron size and frequency of recombination in Drosophila (Carvalho and Clark 1999). In particular, in D. melanogaster, the largest introns (>> 80 base pairs) and the smallest introns (< 60 base pairs) tend to be found in genes that are located in regions of the genome with low rates of recombination. This finding suggests that both very large introns and very small introns are deleterious, and that deleterious insertion events that make large introns larger and deleterious deletion events that make small introns smaller are less efficiently eliminated in regions of low recombination, as predicted by the Hill-Robertson effect (Carvalho and Clark 1999). An alternative explanation is that larger introns are favored in regions of low recombination because they allow more recombination to take place (Comeron and Kreitman 2002). This model does not explain why genes in the Y chromosome have large introns, because the Y chromosome never undergoes recombination.",
+      "source_page": 199,
+      "source_pages": [
+        199
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p035:b5"
+      ],
+      "source_bboxes": [
+        [
+          96.0,
+          687.0,
+          784.0,
+          1122.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "40f4f136b7879b64002130d206d6a10f05e35558e9ce1020ad6d4d27ace15bab"
+    },
+    {
+      "type": "discussion",
+      "content": "In asexual organisms, the accumulation of deleterious mutations in small populations is known as Muller's ratchet (Muller 1964). To understand this process, consider the experiment diagrammed in Figure 4.16. A clone formed from a single bacterial cell is used to inoculate a liquid culture, and after the population has grown to a large size, an aliquot is diluted to such an extent. that individual cells will be well separated when a small amount of liquid is spread onto the surface of semisolid growth medium in a petri plate. During incubation of the plate, each cell divides multiple times and soon yields a clone of cells, forming a visible colony. At this point a single colony is chosen at random, some of its cells are used to inoculate another flask of liquid medium, and the cycle is repeated.",
+      "source_page": 199,
+      "source_pages": [
+        199,
+        200
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p035:b6",
+        "PopGen_chapter4:p036:b4"
+      ],
+      "source_bboxes": [
+        [
+          94.0,
+          1121.0,
+          782.0,
+          1245.0
+        ],
+        [
+          239.0,
+          739.0,
+          921.0,
+          885.0
+        ]
+      ],
+      "provenance_score": 0.898618,
+      "content_sha256": "05e047a8be88390f4cf9310ae57d54f352194d63604f1aafd4d50b43ba3ebf4d"
+    },
+    {
+      "type": "discussion",
+      "content": "In each generation, new mutations occur, and we may safely assume that, except for any that are neutral or nearly neutral, the great majority of the other mutations are deleterious. Let us assume for simplicity that, in each cycle of liquid growth, the cells undergo enough rounds of DNA replication that the overall genomic mutation rate to deleterious but nonlethal mutations is 1 per cell per experimental cycle. A deleterious mutation rate of 1 per genome per generation is not unrealistic for higher eukaryotes (Kondrashov 2001). At a deleterious mutation rate of 1 per experimental cycle, the probability that a colony chosen at random has no new deleterious mutations after one cycle is $ e^{-1} = 0.37 $, after two cycles it is $ e^{-2} = 0.14 $, and after three cycles it is $ e^{-3} = 0.05 $. In other words, in the experiment in Figure 4.16, the probability that a colony chosen at random in the third cycle has one or more deleterious mutations is about 95%. What's more, once a colony with a deleterious mutation is chosen, that deleterious mutation becomes fixed in the population, except in the very unlikely event of reverse mutation. This process of fixing deleterious mutations is the basis of Muller’s ratchet. Each deleterious mutation that is fixed sets a new base line, and subsequent deleterious fixations can only make matters worse. Eventually, in the absence of recombination to bring nonmutant combinations of alleles back together again, the genome undergoes mutational degeneration.",
+      "source_page": 200,
+      "source_pages": [
+        200,
+        201
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p036:b5",
+        "PopGen_chapter4:p037:b2"
+      ],
+      "source_bboxes": [
+        [
+          239.0,
+          885.0,
+          924.0,
+          1249.0
+        ],
+        [
+          109.0,
+          185.0,
+          795.0,
+          305.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "0c02ab5808f054341725f1a9dfcdf82e964addf60779cdf0e4456c7b05fd161c"
+    },
+    {
+      "type": "discussion",
+      "content": "In the experiment in Figure 4.16, the repeated population bottleneck of size N = 1 is quite extreme, but actual experiments with a range of bottleneck sizes have been carried out using a bacterial virus (bacteriophage $ \\phi6 $) that has an RNA genome (Poon and Chao 2004). This RNA virus is convenient for such experiments because it has a small genome and a high mutation rate. The experiments verified the accumulation of deleterious mutations owing to Muller's ratchet, and showed that bacteriophage populations allowed to undergo recombination usually outperformed asexual populations, with the greatest advantage of recombination in the smallest populations (Poon and Chao 2004). Muller's ratchet also results in the fixation of spontaneous deletions. In an experiment like that in Figure 4.16 carried out in Salmonella enterica, observed deletions ranged in size from 1–200 kb, and the average rate of DNA loss per genome was 0.05 base pairs per generation (Nilsson et al. 2005).",
+      "source_page": 201,
+      "source_pages": [
+        201
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p037:b3"
+      ],
+      "source_bboxes": [
+        [
+          108.0,
+          305.0,
+          795.0,
+          640.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "41221121dacc81ab96c10608e0bbb5d17c99906a9c07a37b0d35573c229e433e"
+    },
+    {
+      "type": "discussion",
+      "content": "Over an evolutionary time scale, the accumulation of deletions owing to Muller's ratchet can result in extreme reductions in genome size. Remarkable examples are found in bacteria that are obligate intracellular pathogens or symbionts that are supplied with nutrients by their host (Ochman 2005). An example is the bacterial endosymbiont of aphids, Buchnera aphidicola, which is transmitted in very small numbers through the aphid oocyte and has no opportunity for recombination. Since its association with aphids 100–250 million years ago, the bacterial genome has undergone many deleterious amino acid substitutions and regulatory changes (Moran 1996; Moran and Degnan 2006). Its genome size has been reduced by deletions to 600 kb, whereas the ancestral genome was approximately ten-fold larger (Ochman 2005).",
+      "source_page": 201,
+      "source_pages": [
+        201
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p037:b4"
+      ],
+      "source_bboxes": [
+        [
+          105.0,
+          641.0,
+          792.0,
+          909.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "2b66468b7555ea342a6bfca56a3372277cb7c5399693b1e35005e606cff92bc8"
+    }
+  ]
+}

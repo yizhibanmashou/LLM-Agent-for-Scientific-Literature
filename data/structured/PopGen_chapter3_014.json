@@ -1,0 +1,453 @@
+{
+  "id": "PopGen_chapter3_014",
+  "metadata": {
+    "chapter": "PopGen_chapter3",
+    "section": "RANDOM GENETIC DRIFT: Introduction",
+    "subsections": [
+      "3.6 GENE TREES AND COALESCENCE"
+    ],
+    "source_file": "tmp\\popgen\\paddle_output\\PopGen_chapter3_full\\main.tex",
+    "source_title": "Principles of Population Genetics, Fourth Edition",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "RANDOM GENETIC DRIFT: Introduction",
+    "section_level_2": "3.6 GENE TREES AND COALESCENCE",
+    "heading_path": [
+      "RANDOM GENETIC DRIFT: Introduction",
+      "3.6 GENE TREES AND COALESCENCE"
+    ],
+    "display_heading": "3.6 GENE TREES AND COALESCENCE"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "The Wright-Fisher model established a way of thinking that dominated population genetics for about 50 years, considering the genealogies of alleles as they proceed forward in time. It is equally valid to think about the ancestry of alleles as the genealogies proceed backward in time, and for some purposes this manner of thinking is much more powerful. A set of alleles sampled from a population furnishes more than an estimate of current allele frequencies. Each allele in the sample has an ancestral history dating back hundreds or thousands of generations. It is possible that a pair of alleles, sampled today, may have come from identical copies of the same allele produced by the same individual just a few generations ago, or the alleles may have had a common ancestor hundreds of generations ago. The term coalescence refers to the process in which, looking backward in time, the genealogies of two alleles merge at a common ancestor. In a sample of k alleles, for example, the first coalescence (looking backward in time) merges the k contemporary genealogies into k - 1 ancestral genealogies, and the second coalescence merges these into k - 2 genealogies, and so forth, until there remains but a single common ancestor for the whole sample of alleles. The idea of coalescent analysis is to consider the ancestral history of genes in a sample by developing a model for the time intervals between each coalescence (Kingman 1980, 1982a,b, 2000; Hudson, 1983; Rosenberg and Nordborg 2002).",
+      "source_page": 142,
+      "source_pages": [
+        142
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p034:b4"
+      ],
+      "source_bboxes": [
+        [
+          239.0,
+          357.0,
+          923.0,
+          842.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "f806263f5015b9f98e6aed102544e6bc72296de6c56f7ad1e25da6e3cd9787da"
+    },
+    {
+      "type": "discussion",
+      "content": "To understand how the coalescent process works, consider in Figure 3.14 what happens as time moves forward in time (down the page). In each generation, there are a number of alleles in the population, and these alleles may be replicated and be present in the following generation; in some cases, however, an allele leaves no descendants and is lost from the population. By chance, some alleles may be sampled twice in constituting the next generation, and the probabilities of these events are the same as those under the Wright-Fisher model of random genetic drift. By a repetition of this process over time, one of the original alleles will eventually become fixed in the population. In the absence of mutation, the population would therefore be fixed for the same allele; however, because mutation may occur during the process, the alleles observed at the present will not all be identical in nucleotide sequence, even though they all descended from a single common ancestral allele.",
+      "source_page": 142,
+      "source_pages": [
+        142
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p034:b5"
+      ],
+      "source_bboxes": [
+        [
+          238.0,
+          841.0,
+          924.0,
+          1176.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "657cdb8a62a501c1d42f52262989162b6cc156760fd442b1ec759cbdd627e50b"
+    },
+    {
+      "type": "discussion",
+      "content": "In reality, we do not usually have the genealogical information enabling us to follow all the alleles through time in a population. Typically what we have is a single \"snapshot\" represented by a small sample of alleles taken at the present time. Now consider Figure 3.14 again, but this time look at what happens when we go backwards in time (up the page). We start with the k = 7 alleles in the sample at generation 0. In going from generation 0 to generation 1 (one generation back), we see that the genealogies of the two rightmost alleles \"coalesced\" into a single ancestral allele. As we go further back in time, the number of ancestral alleles has to either remain the same or decrease, and each reduction in the number of ancestral alleles is called a coalescent event.",
+      "source_page": 142,
+      "source_pages": [
+        142,
+        143
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p034:b6",
+        "PopGen_chapter3:p035:b3"
+      ],
+      "source_bboxes": [
+        [
+          238.0,
+          1176.0,
+          924.0,
+          1251.0
+        ],
+        [
+          110.0,
+          563.0,
+          787.0,
+          799.0
+        ]
+      ],
+      "provenance_score": 0.511327,
+      "content_sha256": "ec712d338ec1ba42f2644d6cc7acf289000401eb8536b5837343d34bc6c8571e"
+    },
+    {
+      "type": "discussion",
+      "content": "Figure 3.14 illustrates one reason why coalescent reasoning is so powerful. If we were to study the process in Figure 3.14 going forward in time by means of computer simulation, many of the alleles that are tracked represent wasted computation, since they do not have descendants in the present generation (generation 0). These alleles are denoted by filled circles, and in this case there are 22 of them. On the other hand, if we were to study the same process going backward in time, none of the alleles tracked would be wasted, because each allele present in any generation must trace back to some allele. present in the previous generation. These alleles are represented by open circles, and in this case there are 27 of them. In other words, the forward simulation wastes nearly half its time generating alleles (22 alleles among a total of 49) that are of no interest because they do not contribute to the ancestry of the alleles present in the current population. This is not a great price in the present case, when the sample size is small, but in samples of hundreds of alleles, the vast majority of lineages simulated in the forward direction are unnecessary. In fact, in an original population of size 2N that has evolved for long enough that one of the alleles has gone to fixation in the contemporary population, it is unnecessary to deal with any of the original 2N−1 lineages that eventually go extinct.",
+      "source_page": 143,
+      "source_pages": [
+        143,
+        144
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p035:b5",
+        "PopGen_chapter3:p036:b2"
+      ],
+      "source_bboxes": [
+        [
+          108.0,
+          1049.0,
+          795.0,
+          1244.0
+        ],
+        [
+          224.0,
+          187.0,
+          907.0,
+          454.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "055a052d2fa48282f6f8d0309b24dc114a78c754e616f00e4387493479aee0cd"
+    },
+    {
+      "type": "discussion",
+      "content": "Since we are interested in the time required for a pair of genealogies to coalesce, we need a model from which the coalescence times can be derived. Let us consider the immediate ancestry of two alleles. The probability that the two alleles came from the same allele in the previous generation is $ \\frac{1}{(2N)} $ (in a diploid population of size N), so the chance that they came from two distinct alleles the previous generation is $ 1 - \\frac{1}{(2N)} $. Similarly, the probability that three alleles in any generation originate from three distinct ancestral alleles in the previous generation is Pr(alleles 1 and 2 have distinct ancestors)Pr(allele 3 has a different ancestor from those of allele 1 and allele 2) = $ \\frac{1}{1 - \\frac{1}{(2N)}} $[1 - $ \\frac{1}{2} $(2N)]. In general, the probability that k alleles had k distinct parental alleles the previous generation is $$ \\Pr(\\stackrel{i}{k})=\\prod_{i=1}^{k-1}\\left(1-\\frac{i}{2N}\\right)\\approx1-\\frac{(k)}{2N} $$",
+      "source_page": 144,
+      "source_pages": [
+        144
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p036:b3",
+        "PopGen_chapter3:p036:b4"
+      ],
+      "source_bboxes": [
+        [
+          224.0,
+          455.0,
+          907.0,
+          719.0
+        ],
+        [
+          440.0,
+          724.0,
+          690.0,
+          784.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "da6460ba36993661506b0e56e00886a2efcb9db4d5d995d28717528398fe8f8f"
+    },
+    {
+      "type": "discussion",
+      "content": "In each generation the sampling process occurs independently of what happened before, and so the probability that k alleles had k distinct parental alleles two generations ago is the square of the right-hand side of Equation 3.33. Consider two alleles again. Suppose we wish to know the probability that the common ancestor of these two alleles occurred exactly $ t + 1 $ generations ago. In this case there must have been no coalescence (i.e., two distinct ancestral lineages exist) for t generations, and then, in the next preceding generation, a coalescence occurred. The chance of two alleles not coalescing for t generations is $ [1 - 1/(2N)]^t $, and the chance that they coalesce in the next generation is $ 1/(2N) $. The desired probability is the product of these or",
+      "source_page": 144,
+      "source_pages": [
+        144
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p036:b6"
+      ],
+      "source_bboxes": [
+        [
+          224.0,
+          791.0,
+          911.0,
+          1035.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "6727eb69018af3a25e0b4b6626f2deb39ca3f6c7c46ecec5cf5c1c055119d1ed"
+    },
+    {
+      "type": "discussion",
+      "content": "Pr (two alleles had common ancestor $ t+1 $ generations ago) $$ =\\frac{1}{2N}\\left[1-\\left(\\frac{1}{2N}\\right)\\right]^{t}\\approx\\frac{1}{2N}e^{-t/(2N)} $$",
+      "source_page": 144,
+      "source_pages": [
+        144
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p036:b7",
+        "PopGen_chapter3:p036:b8"
+      ],
+      "source_bboxes": [
+        [
+          327.0,
+          1049.0,
+          809.0,
+          1074.0
+        ],
+        [
+          432.0,
+          1081.0,
+          703.0,
+          1140.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "ef0fe1399aa31d6a9d5a0a0f7a104dc639ac58d2c043bf3e692d4aa4b375be37"
+    },
+    {
+      "type": "discussion",
+      "content": "The exponential is an approximation that is quite good when $ 1/(2N) $ is small. This distribution has a mean of 2N generations and a variance of $ 4N^{2} $. Note that the confidence interval around the mean time is not very tight, since the standard deviation of the distribution (2N) is equal to the mean.",
+      "source_page": 144,
+      "source_pages": [
+        144
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p036:b10"
+      ],
+      "source_bboxes": [
+        [
+          227.0,
+          1150.0,
+          908.0,
+          1250.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "d9f576fa5c6e8e5e344009849940f5cd479bc6dd52cf02934f8b2eee2965277e"
+    },
+    {
+      "type": "discussion",
+      "content": "Returning to our sample of k alleles, the probability that the k alleles do not coalesce for t generations, and then one pair coalesces to give k - 1 alleles at $ t + 1 $ generations ago is as follows: $$ \\begin{aligned}&=\\Pr\\left(k\\right)^{\\mathrm{t}}\\left[1-\\Pr(k)\\right]\\\\&\\approx\\frac{\\binom{k}{2}}{2\\mathrm{N}}\\exp\\left[-\\frac{\\binom{k}{2}}{2\\mathrm{N}}t\\right]\\\\ \\end{aligned} $$",
+      "source_page": 145,
+      "source_pages": [
+        145
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p037:b2",
+        "PopGen_chapter3:p037:b3"
+      ],
+      "source_bboxes": [
+        [
+          115.0,
+          182.0,
+          798.0,
+          255.0
+        ],
+        [
+          372.0,
+          264.0,
+          539.0,
+          362.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "9cce2065773c8606a7e2716da886c406879ac17db58aeb6aebd8c29c66fc84bc"
+    },
+    {
+      "type": "discussion",
+      "content": "This approximation is valid if $ k \\ll N $ (that is, if the sample size is much smaller than the population size, which is usually the case). The distribution in Equation 3.35 has a mean and variance given by $$ Mean=\\frac{4N}{k(k-1)}generations\\quad Variance=\\frac{16N^{2}}{\\left[k(k-1)\\right]^{2}}generations^{2} $$",
+      "source_page": 145,
+      "source_pages": [
+        145
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p037:b5",
+        "PopGen_chapter3:p037:b6"
+      ],
+      "source_bboxes": [
+        [
+          113.0,
+          374.0,
+          796.0,
+          448.0
+        ],
+        [
+          179.0,
+          455.0,
+          730.0,
+          521.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "835432963dab84549db952282be229cd182106d002aad52bc63fed33feadef9c"
+    },
+    {
+      "type": "discussion",
+      "content": "Felsenstein, in his book Inferring Phylogenies (2004), gives a wonderful bugs-in-a-box analogy for the coalescent process that makes it simple and memorable, and we quote it with his permission.",
+      "source_page": 145,
+      "source_pages": [
+        145
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p037:b8"
+      ],
+      "source_bboxes": [
+        [
+          110.0,
+          542.0,
+          794.0,
+          616.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "afcfc0e2cd475a99b2db2caff78006c2c66c331f9d6ed40a14144d1e5729c5fe"
+    },
+    {
+      "type": "discussion",
+      "content": "We can make a physical analogy (if a somewhat fanciful one) by considering a box containing hyperactive, indiscriminate, voracious, and insatiable bugs. We put k bugs into the box. They run about without paying any attention to where they are going. Occasionally two bugs collide. When they do, one instantly eats the other. Being insatiable, it then resumes running as quickly as before. It is obvious that the number of bugs falls from k to k - 1, to k - 2, as the bugs coalesce, until finally only one bug is left.... The analogy is actually fairly precise. The number of pairs of bugs that can collide is $ k(k - 1)/2 $. If there are 2N \"places\" in the box that can be occupied, the probability of a collision will be proportional to $ k(k - 1)/4N $. The size of the population corresponds to the size of the box. A box with twice as many \"places\" will slow the coalescence process down by a factor of two. So a simpleminded physical analysis of the bugs-in-a-box process will have the Kingman coalescent [our Equation 3.35] as the probability distribution of its outcomes. (p. 460)",
+      "source_page": 145,
+      "source_pages": [
+        145
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p037:b9"
+      ],
+      "source_bboxes": [
+        [
+          139.0,
+          631.0,
+          764.0,
+          943.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "f96ceba282c25521202b07a5fe6641c2936384424b52d0f61242d596e1dd0eff"
+    },
+    {
+      "type": "discussion",
+      "content": "Figure 3.15 shows what the gene genealogy is expected to be in the case of five alleles (k = 5). The genealogy is depicted in two forms, both of which are common in the literature. On the right, the tip of each line represents an allele in the original sample, and moving upwards (backward in time), each node (vertex) represents a coalescence to an ancestral allele. In the depiction on the left, the tips again represent the sampled alleles, but now each coalescent event is represented as a horizontal line. Going backwards in time (up the page), the coalescent time for i alleles to coalesce to i - 1 alleles is denoted $ T_i $ (i = 2 to 5). The probability distribution of these coalescent times is given by Equation 3.35, and the expected values are shown in Figure 3.15. Starting with five alleles, the first coalescence is expected to occur 2N/10 generations. ago, the next at 2N/6 generations prior to that, and so on. The distribution of each of these time intervals is exponential, with ever-increasing means as one goes back in time.",
+      "source_page": 145,
+      "source_pages": [
+        145,
+        146
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p037:b10",
+        "PopGen_chapter3:p038:b2"
+      ],
+      "source_bboxes": [
+        [
+          105.0,
+          975.0,
+          792.0,
+          1243.0
+        ],
+        [
+          103.0,
+          184.0,
+          389.0,
+          594.0
+        ]
+      ],
+      "provenance_score": 0.910758,
+      "content_sha256": "e99c806f4c6f385f831dcfbce97197a67e97711c1bc3e02ba3bf3dbfac4f482f"
+    },
+    {
+      "type": "discussion",
+      "content": "Note that the coalescent times become longer as one goes back farther in time, and the last coalescent time (from 2 alleles to 1) is the longest. This pattern is typical of coalescence in a population of constant size. Quantitatively, it requires a fraction $ (1 - 1/n)/(1 - 1/k) $ of the total time for the last $ n $ of $ k $ alleles in a sample to coalesce (Felsenstein 2004). From this relationship it is easy to see that, if $ k $ is reasonably large (say, $ k \\geq 10 $), almost half the time is required to coalesce the last two alleles $ (n = 2) $.",
+      "source_page": 146,
+      "source_pages": [
+        146
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p038:b5"
+      ],
+      "source_bboxes": [
+        [
+          226.0,
+          813.0,
+          909.0,
+          981.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "6d01092b9fff1c60a5c1f134c996e2ea729476c5b39210213095949fd8dc8ee8"
+    },
+    {
+      "type": "discussion",
+      "content": "For a sample of k alleles, the time to the coalescence of all of the alleles (i.e., the most recent time that the sample of k alleles shared a common ancestor) is $$ t=4N(1-1/k) $$ with variance $$ V=4N^{2}\\prod_{i=2}^{k}\\frac{1}{\\binom{i}{2}^{2}} $$",
+      "source_page": 146,
+      "source_pages": [
+        146
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p038:b6",
+        "PopGen_chapter3:p038:b7",
+        "PopGen_chapter3:p038:b9",
+        "PopGen_chapter3:p038:b10"
+      ],
+      "source_bboxes": [
+        [
+          227.0,
+          981.0,
+          909.0,
+          1054.0
+        ],
+        [
+          497.0,
+          1105.0,
+          640.0,
+          1130.0
+        ],
+        [
+          228.0,
+          1151.0,
+          357.0,
+          1174.0
+        ],
+        [
+          496.0,
+          1173.0,
+          640.0,
+          1231.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "3c049610081acbc5233fe71c442e3e19d0db6d291daa433131694a0e7419faab"
+    },
+    {
+      "type": "discussion",
+      "content": "(Kingman 1982a,b; Tajima 1983). As the sample size $ k $ increases toward the total population size, $ t $ approaches 4N, which equals the expected time to fixation for a newly arisen neutral mutation that is destined to be fixed.",
+      "source_page": 147,
+      "source_pages": [
+        147
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p039:b2"
+      ],
+      "source_bboxes": [
+        [
+          113.0,
+          179.0,
+          792.0,
+          251.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "c15b5d3878538258ce7993a12dcd3651a247c35050ef19942434bb2724c8084a"
+    },
+    {
+      "type": "discussion",
+      "content": "What is the probability that the most recent common ancestor of the sample (i.e., the allele to which all the lineages coalesce) to be also the most recent common ancestor of all the alleles in the entire population? The answer is given by the ratio $ (k-1)/(k+2) $ (Rosenberg and Nordborg 2002). This probability is surprisingly large even for relatively small values of k. For example, for k = 5 it is already 67%, and for k = 9 it is 80%, and finally for k = 19 it is 90%. In other words, the most recent common ancestor in a sample of only 19 alleles has a 90% chance of being the most recent common ancestor of all the alleles in a population, no matter whether the population size is five hundred, a thousand, or a million.",
+      "source_page": 147,
+      "source_pages": [
+        147
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p039:b3"
+      ],
+      "source_bboxes": [
+        [
+          110.0,
+          252.0,
+          792.0,
+          491.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "905dd99ed91484fb2a542e8400777b9e80cf7a3aae7ca42be4995e6afa3a7e8d"
+    }
+  ]
+}

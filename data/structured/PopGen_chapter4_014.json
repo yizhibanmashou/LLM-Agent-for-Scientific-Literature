@@ -1,0 +1,409 @@
+{
+  "id": "PopGen_chapter4_014",
+  "metadata": {
+    "chapter": "PopGen_chapter4",
+    "section": "4.5 INFINITE-SITES MODEL",
+    "subsections": [
+      "The Fu and Li Test of Fit to Neutral Coalescence"
+    ],
+    "source_file": "tmp\\popgen\\paddle_output\\PopGen_chapter4_full\\main.tex",
+    "source_title": "Principles of Population Genetics, Fourth Edition",
+    "formula_references": [],
+    "table_references": [
+      "4.2"
+    ],
+    "section_level_1": "4.5 INFINITE-SITES MODEL",
+    "section_level_2": "The Fu and Li Test of Fit to Neutral Coalescence",
+    "heading_path": [
+      "4.5 INFINITE-SITES MODEL",
+      "The Fu and Li Test of Fit to Neutral Coalescence"
+    ],
+    "display_heading": "The Fu and Li Test of Fit to Neutral Coalescence",
+    "table_reference_keys": [
+      "chapter4:4.2"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "A remarkable property of coalescent trees is the basis of another widely used test of whether a sample configuration of nucleotide polymorphisms is consistent with the neutral infinite-sites model at steady state (Fu and Li 1993). This property is illustrated in Figure 4.14 for a sample of size n = 5. For this sample size there are only five basic tree structures based on the pattern of coalescences, which are laid out as in Figure 3.15. There are actually many more trees (120, to be exact) when one takes into account the number of different ways that the tips of the tree can be labeled with the names of alleles in the sample. When this is taken into account, it happens that there are exactly twice as many trees with the structure on the left as any of the others. The fraction of all trees with each of the structures is summarized in the second row of numbers in Figure 4.14.",
+      "source_page": 192,
+      "source_pages": [
+        192
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p028:b8"
+      ],
+      "source_bboxes": [
+        [
+          243.0,
+          809.0,
+          928.0,
+          1101.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "b5732af3c7ff87f45806cfc32113544bfe85c7c4468da11d073c6e7b8d399ccd"
+    },
+    {
+      "type": "discussion",
+      "content": "The trees in Figure 4.14 are “average” trees in the sense that the coalescent times have been shown in proportion to their expected values. Note that some of the branches are thick, others thin. Each of the thick branches is called an external branch because it emerges from an internal node and terminates at one of the tips. Each of the thin branches is called an internal branch because it connects two internal nodes.",
+      "source_page": 192,
+      "source_pages": [
+        192
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p028:b9"
+      ],
+      "source_bboxes": [
+        [
+          244.0,
+          1099.0,
+          928.0,
+          1247.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "e65d4a20d1b30bbce634fa27020d73a92a784b0315b23643776d087bdf9c4bac"
+    },
+    {
+      "type": "discussion",
+      "content": "The property used in the Fu and Li (1993) test is based on the expected total length of the external and internal branches. The first row of numbers, positioned beneath each tip, consists of fractions that indicate the expected length of the external branch to that tip, expressed in units of $ 4N_e $ generations. For example, the long external branch at the far left has an expected length of $ \\left(\\frac{4}{5}\\right) \\times 4N_e $ generations. The expected branch lengths are based on the fact that the expected time to coalesce from k to k - 1 alleles is given by $ 4N_e / k(k - 1) $, which is implied by Equation 3.35 in Chapter 3.",
+      "source_page": 193,
+      "source_pages": [
+        193
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p029:b4"
+      ],
+      "source_bboxes": [
+        [
+          83.0,
+          977.0,
+          768.0,
+          1173.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "a696ebe97c55ce8d3f98b935423eac9afd2ef1cefc532d90ca6e4d42bcdc59d8"
+    },
+    {
+      "type": "discussion",
+      "content": "For each tree structure, the expected length of all the external branches taken together is given in the third row of numbers. In this case the dependence on $ 4N_{e} $ is made explicit. For each tree structure, the multiplier in parentheses is the sum of the expected length of the individual external branches for that tree. Taking the tree at the far left as an example, $$ \\left[\\left(\\frac{4}{5}\\right)+\\left(\\frac{3}{10}\\right)+\\left(\\frac{2}{15}\\right)+\\left(\\frac{1}{20}\\right)+\\left(\\frac{1}{20}\\right)\\right]\\times4N_{e}=\\left(\\frac{16}{12}\\right)\\times4N_{e} $$ which is the entry in the third row. The reason that all of the values are expressed with 12 as the common denominator is that it makes it easier to calculate the expected length of the external branches over all possible coalescent trees. In this case, the expected total external branch length is given by $$ \\left[\\left(\\frac{2}{6}\\right)\\left(\\frac{16}{12}\\right)+\\left(\\frac{1}{6}\\right)\\left(\\frac{10}{12}\\right)+\\left(\\frac{1}{6}\\right)\\left(\\frac{8}{12}\\right)+\\left(\\frac{1}{6}\\right)\\left(\\frac{8}{12}\\right)+\\left(\\frac{1}{6}\\right)\\left(\\frac{14}{12}\\right)\\right]\\times4N_{e}=4N_{e} $$",
+      "source_page": 193,
+      "source_pages": [
+        193,
+        194
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p029:b5",
+        "PopGen_chapter4:p030:b2",
+        "PopGen_chapter4:p030:b3",
+        "PopGen_chapter4:p030:b4",
+        "PopGen_chapter4:p030:b5"
+      ],
+      "source_bboxes": [
+        [
+          82.0,
+          1171.0,
+          766.0,
+          1249.0
+        ],
+        [
+          241.0,
+          184.0,
+          923.0,
+          236.0
+        ],
+        [
+          352.0,
+          241.0,
+          812.0,
+          299.0
+        ],
+        [
+          242.0,
+          305.0,
+          926.0,
+          431.0
+        ],
+        [
+          296.0,
+          434.0,
+          878.0,
+          493.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "964987beb12e43fa4fab8ac0157a77227d41316167e7e0dd41314f8b78b832ee"
+    },
+    {
+      "type": "discussion",
+      "content": "Remarkably, this result is completely general and independent of the sample size.",
+      "source_page": 194,
+      "source_pages": [
+        194
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p030:b6"
+      ],
+      "source_bboxes": [
+        [
+          244.0,
+          498.0,
+          924.0,
+          549.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "a85cca2edbde9faa22dbdcf4987730b234e3118acdb78ce24c7ca6f2267b63f7"
+    },
+    {
+      "type": "discussion",
+      "content": "What about the total length of the internal branches? Equation 3.40 in Chapter 3 says that the expected total length of all the branches is equal to $ 4N_e \\times a $, where $ a $ is the sum of reciprocals defined in Equation 4.22. Because the length of the internal branches must equal the difference between the length of all branches and the length of the external branches, it follows that the total length of the internal branches must be $ 4N_e \\times (a - 1) = (a - 1) \\times 4N_e $. In the case of $ n = 5 $ (see Figure 4.14), $ a = \\frac{25}{12} $, and therefore the expected length of the internal branches in this case is $ \\left[\\frac{25}{12} - 1\\right] \\times 4N_e = \\left(\\frac{13}{12}\\right) \\times 4N_e $. This can be verified directly from Figure 4.14 by calculating $$ \\left[\\left(\\frac{2}{6}\\right)\\left(\\frac{9}{12}\\right)+\\left(\\frac{1}{6}\\right)\\left(\\frac{15}{12}\\right)+\\left(\\frac{1}{6}\\right)\\left(\\frac{17}{12}\\right)+\\left(\\frac{1}{6}\\right)\\left(\\frac{17}{12}\\right)+\\left(\\frac{1}{6}\\right)\\left(\\frac{11}{12}\\right)\\right]\\times4N_{e}=\\left(\\frac{13}{12}\\right)4N_{e} $$",
+      "source_page": 194,
+      "source_pages": [
+        194
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p030:b7",
+        "PopGen_chapter4:p030:b8"
+      ],
+      "source_bboxes": [
+        [
+          243.0,
+          548.0,
+          928.0,
+          769.0
+        ],
+        [
+          269.0,
+          772.0,
+          904.0,
+          831.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "2a74b765f647dc2d06747a8f7be95c4bc48524e50fddd93174a61bb23f5152e5"
+    },
+    {
+      "type": "discussion",
+      "content": "The reason for distinguishing external branches from internal braches is that any mutation along an external branch results in a singleton polymorphism in the sample. Similarly, every mutation along an internal branch results in a nonsingleton polymorphism in the sample. Therefore, the numbers of singleton and nonsingleton polymorphisms in the sample allow a comparison of the total lengths of the external and internal branches of the coalescent tree.",
+      "source_page": 194,
+      "source_pages": [
+        194
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p030:b9"
+      ],
+      "source_bboxes": [
+        [
+          244.0,
+          836.0,
+          930.0,
+          983.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "795a05716c4226273a95d9eba997e7359bad44d408b09d2b025bee8ee3de663c"
+    },
+    {
+      "type": "discussion",
+      "content": "To do this comparison, we need to consider where mutations may occur along the branches, and for this purpose let $ \\mu $ represent the rate of mutation along the total length of the DNA sequence in each sampled allele, and as usual let $ \\theta = 4N_e\\mu $. The number of mutations along the external branches is usually denoted $ \\eta_e $, and its expected value is given by the product of the expected external branch lengths and the mutation rate, or $ 4N_e \\times \\mu $. In other words the expected number of singleton polymorphisms in the sample is given by $$ E(\\eta_{e})=4N_{e}\\mu=\\theta $$",
+      "source_page": 194,
+      "source_pages": [
+        194
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p030:b10",
+        "PopGen_chapter4:p030:b11"
+      ],
+      "source_bboxes": [
+        [
+          246.0,
+          981.0,
+          932.0,
+          1178.0
+        ],
+        [
+          515.0,
+          1180.0,
+          669.0,
+          1208.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "194d9e694d2cad4a302864474d001e8acd502fed755647ff296e3cbe68effa19"
+    },
+    {
+      "type": "discussion",
+      "content": "Letting $ \\eta_{i} $ denote the number of mutations along the internal branches, similar reasoning indicates that the expected number of nonsingleton polymorphisms in the sample is given by $$ E(\\eta_{i})=(a-1)4N_{e}\\mu=(a-1)\\theta $$",
+      "source_page": 194,
+      "source_pages": [
+        194,
+        195
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p030:b13",
+        "PopGen_chapter4:p031:b2",
+        "PopGen_chapter4:p031:b3"
+      ],
+      "source_bboxes": [
+        [
+          248.0,
+          1219.0,
+          929.0,
+          1251.0
+        ],
+        [
+          110.0,
+          183.0,
+          789.0,
+          233.0
+        ],
+        [
+          326.0,
+          237.0,
+          576.0,
+          265.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "25358b5d93a91464e00d51b752072ad1d287e53774b6e94568e921bd03f96742"
+    },
+    {
+      "type": "discussion",
+      "content": "Equations 4.26 and 4.27 yield estimated $ \\theta $ based either on the number of singleton polymorphisms or the number of nonsingleton polymorphism. Furthermore, for samples sizes of about 10 or greater, $ \\eta_{e} $ and $ \\eta_{i} $ are nearly independent of one another (Li 1997).",
+      "source_page": 195,
+      "source_pages": [
+        195
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p031:b5"
+      ],
+      "source_bboxes": [
+        [
+          109.0,
+          278.0,
+          790.0,
+          374.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "cb9fd0fb4e57d12d1c1474e51135f7b95c594ae97046abec27742c1d00d22385"
+    },
+    {
+      "type": "discussion",
+      "content": "The Fu and Li (1993) test is based on the difference between the two estimates of $ \\theta $ implied by Equations 4.26 and 4.27, namely, $$ G=\\frac{\\eta_{e}-\\eta_{i}/(a-1)}{\\sqrt{V[\\eta_{e}-\\eta_{i}/(a-1)]}} $$ where G is the test statistic and V indicates the variance. As with other such tests, perhaps the best way to obtain a P-value is to estimate the null distribution of G from neutral coalescent simulations and then compare the observed value of G with the simulated values.",
+      "source_page": 195,
+      "source_pages": [
+        195
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p031:b6",
+        "PopGen_chapter4:p031:b7",
+        "PopGen_chapter4:p031:b9"
+      ],
+      "source_bboxes": [
+        [
+          108.0,
+          375.0,
+          786.0,
+          424.0
+        ],
+        [
+          351.0,
+          428.0,
+          548.0,
+          486.0
+        ],
+        [
+          105.0,
+          493.0,
+          787.0,
+          591.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "26b7079a671882efcb688e434b5ddc1c96da2007f3d14cddf79f3c69c18156f8"
+    },
+    {
+      "type": "discussion",
+      "content": "Fu and Li (1993) suggest that G might be a useful test statistic in cases in which most new mutations are deleterious, because in such cases the number of singletons will be increased relative to the number of nonsingletons. The reasoning is that if most new mutations are harmful, they may appear in samples as singletons, but most of them will be eliminated very quickly. Only the minority of new mutations that are neutral or nearly neutral have much chance of increasing in frequency to a level sufficient to appear in samples as nonsingletons. Hence, in this model, $ \\eta_{e} $ is increased relative to $ \\eta_{i} $. It should however be noted that the neutral infinite-sites model predicts a large fraction of singletons anyway. [[SEE_TABLE:4.2]] shows the expected proportion of single-",
+      "source_page": 195,
+      "source_pages": [
+        195
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p031:b10",
+        "PopGen_chapter4:p031:b12"
+      ],
+      "source_bboxes": [
+        [
+          103.0,
+          590.0,
+          787.0,
+          836.0
+        ],
+        [
+          102.0,
+          927.0,
+          897.0,
+          1235.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "2cec2786eb795eda5ee0c303149cdf3181dcae2ede2f60bb9972d347d06afd33"
+    },
+    {
+      "type": "discussion",
+      "content": "[[SEE_TABLE:4.2]] tons (equal to 1/a) in samples of various size. The expected proportion of singletons does not drop below 20% until n = 85.",
+      "source_page": 195,
+      "source_pages": [
+        195,
+        196
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p031:b12",
+        "PopGen_chapter4:p032:b2"
+      ],
+      "source_bboxes": [
+        [
+          102.0,
+          927.0,
+          897.0,
+          1235.0
+        ],
+        [
+          239.0,
+          183.0,
+          922.0,
+          237.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "eb994c2e01f2c3d551144944d7f7b0e8b89f0eaf799764912d5b8c83594895c9"
+    },
+    {
+      "type": "table",
+      "content": "[[TABLE:4.2]]",
+      "source_page": 195,
+      "source_pages": [
+        195
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p031:b12"
+      ],
+      "source_bboxes": [
+        [
+          102.0,
+          927.0,
+          897.0,
+          1235.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "676f9aaabcd24ce909c969dbbfd313ce4dd53ab75c27a41dd0a43918c7b1b8aa"
+    }
+  ]
+}

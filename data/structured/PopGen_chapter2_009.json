@@ -1,0 +1,242 @@
+{
+  "id": "PopGen_chapter2_009",
+  "metadata": {
+    "chapter": "PopGen_chapter2",
+    "section": "2.3 TESTING FOR HARDY-WEINBERG EQUILIBRIUM",
+    "subsections": [
+      "Complications of Dominance"
+    ],
+    "source_file": "tmp\\popgen\\paddle_output\\PopGen_chapter2_full\\main.tex",
+    "source_title": "Principles of Population Genetics, Fourth Edition",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "2.3 TESTING FOR HARDY-WEINBERG EQUILIBRIUM",
+    "section_level_2": "Complications of Dominance",
+    "heading_path": [
+      "2.3 TESTING FOR HARDY-WEINBERG EQUILIBRIUM",
+      "Complications of Dominance"
+    ],
+    "display_heading": "Complications of Dominance"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Dominance obscures a one-to-one relation between phenotype and genotype, but the allele frequencies can still be estimated if one is willing to assume HWE. For a polymorphic gene with two alleles in which one of the alleles is dominant, only two phenotypic classes can be distinguished—the dominant phenotype and the recessive phenotype. An example is found in the Rhesus (Rh) blood groups, which are products of two closely linked genes denoted RhD and RhCE that originated as a gene duplication during primate evolution (Matassi et al. 1999). The human RhD allele encodes a product that elicits formation of antibodies in Rhesus monkeys, whereas a common mutant allele, Rhd, is a deletion. When the phenotype of individuals is assayed by means of cross-reaction with the anti-D antibody, blood cells from genotypes RhD/RhD and RhD/Rhd genotypes cross react and are said to be Rh+ (Rh positive), whereas blood cells from RhD/Rhd genotypes fail to react and are said to be Rh− (Rh negative).",
+      "source_page": 76,
+      "source_pages": [
+        76,
+        77
+      ],
+      "source_block_ids": [
+        "PopGen_chapter2:p018:b7",
+        "PopGen_chapter2:p019:b2"
+      ],
+      "source_bboxes": [
+        [
+          259.0,
+          1103.0,
+          941.0,
+          1227.0
+        ],
+        [
+          105.0,
+          189.0,
+          788.0,
+          405.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "71cc52a595a080b88735f001683c4b3002b6458abbd23a841154ca7fabcc470f"
+    },
+    {
+      "type": "discussion",
+      "content": "Among American Caucasians, the frequency of Rh⁺ is about 85.8% and the frequency of Rh⁻ is about 14.2% (Roychoudhury and Nei 1988). Given only the phenotype frequencies, the data cannot be used to calculate the genotype frequencies because we have no way of knowing what proportion of Rh⁺ phenotypes are RhD/RhD and what proportion are RhD/Rhd. However, if we are willing to assume random mating, then the relative proportions RhD/RhD and RhD/Rhd genotypes are given by the Hardy-Weinberg principle. Assuming random mating and HWE, the genotype frequencies are given by p², 2pq, and q², where p is the allele frequency of RhD and q that of the RhD deletion. An estimate of q can therefore be obtained by setting q² = 0.142 (the frequency of the homozygous recessive phenotype), and so $ \\hat{q} = \\sqrt{0.142} = 0.3768 $. More generally, if R is the frequency of homozygous recessive genotypes found in sample of n organisms, then $ \\hat{q} $ and its standard error are estimated as $$ \\begin{aligned}\\hat{q}&=\\sqrt{R}\\quad.\\\\SE(\\hat{q})&=\\sqrt{\\frac{1-R}{4n}}\\end{aligned} $$",
+      "source_page": 77,
+      "source_pages": [
+        77
+      ],
+      "source_block_ids": [
+        "PopGen_chapter2:p019:b3",
+        "PopGen_chapter2:p019:b4"
+      ],
+      "source_bboxes": [
+        [
+          103.0,
+          406.0,
+          784.0,
+          741.0
+        ],
+        [
+          374.0,
+          742.0,
+          502.0,
+          836.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "fb7c7abc50146a05b8e6accc76a8959e45e86bc50a4a70a592b9437a8c7faa91"
+    },
+    {
+      "type": "discussion",
+      "content": "The expression for the standard error comes from the large-sample formula that the variance of a function $f(x)$, $Var[f(x)]$, is given by $[df(x)/dx]^2 \\times Var(x)$. In this case, we know the variance of $R$: It is the binomial variance $R(1 - R)/n$, and what we desire is the variance of $f(R) = \\sqrt{R}$. Since $d\\sqrt{R/dR} = (\\frac{1}{2}\\sqrt{R})$, it follows that $Var(\\sqrt{R}) = (\\frac{1}{2}\\sqrt{R})^2 \\times R(1 - R)/n = (1 - R)/4n$. Taking the square root of both sides yields the standard error in Equation 2.6. With $\\hat{q}$ estimated from Equation 2.6 as 0.3768, then $\\hat{p}=1-0.3768=0.6232$, and the frequencies of RhD/RhD, RhD/RhD, and Rhd/RhD are expected to be $p^{2}=(0.6232)^{2}=0.3884$, $2pq=2(0.6232)(0.3768)=0.4696$, and $q^{2}=(0.3768)^{2}=0.1420$, respectively. The proportion of Rh+ individuals that are actually heterozygous is therefore $0.4696/(0.4696+0.3884)=54.7%$. However, when there is dominance, there is no possibility for a $\\chi^{2}$ test of goodness of fit to HWE because there are 0 degrees of freedom. Because of the lack of degrees of freedom, the calculated frequencies of Rh+ and Rh- $(0.3884+0.4696=0.858$ and 0.142, respectively) fit the observed frequencies exactly.",
+      "source_page": 77,
+      "source_pages": [
+        77
+      ],
+      "source_block_ids": [
+        "PopGen_chapter2:p019:b6",
+        "PopGen_chapter2:p019:b7"
+      ],
+      "source_bboxes": [
+        [
+          100.0,
+          860.0,
+          779.0,
+          1004.0
+        ],
+        [
+          96.0,
+          1005.0,
+          779.0,
+          1224.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "b071879522c9b3769880177e63dab6325f4efb95ea2dc35090f31254e4745e1e"
+    },
+    {
+      "type": "discussion",
+      "content": "PROBLEM 2.4 The Basque people, who live in the Pyrenees mountains between France and Spain, have one of the highest frequencies of the Rhd deletion so far reported. In one study of 400 Basques, 230 were found to be Rh⁺ and 170 Rh⁻ (Mourant et al. 1976). Assuming HWE, estimate the frequencies of the RhD and RhD alleles, the genotype frequencies, and the proportion of Rh⁺ individuals who are heterozygous Dd. What is the standard error of the estimate $ \\hat{q} $?",
+      "source_page": 78,
+      "source_pages": [
+        78
+      ],
+      "source_block_ids": [
+        "PopGen_chapter2:p020:b2"
+      ],
+      "source_bboxes": [
+        [
+          128.0,
+          201.0,
+          521.0,
+          340.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "392d935f53964bbe9fafb39898c2dbe572ff1234d102df28947789ad3cb7dbe0"
+    },
+    {
+      "type": "discussion",
+      "content": "ANSWER $ \\hat{q} = \\sqrt{170/400} = 0.65 $, $ \\hat{p} = 0.35 $, and the estimated genotype frequencies of RhD/RhD, RhD/Rhd, and Rhd/Rhd are 0.121, 0.454, and 0.425, respectively. The proportion of RhD/Rhd among Rh⁺ phenotypes in the Basque population is 0.454/(0.121 + 0.454) = 79%. The standard error of $ \\hat{q} $ equals $ \\sqrt{[(1 - 0.425)/1600]} = 0.02 $.",
+      "source_page": 78,
+      "source_pages": [
+        78
+      ],
+      "source_block_ids": [
+        "PopGen_chapter2:p020:b4"
+      ],
+      "source_bboxes": [
+        [
+          127.0,
+          373.0,
+          519.0,
+          466.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "ab4c5d23a8ebfbdc86dfa99bc5f4c7db22e4cc8376a3b479f1ffcf6c3abcb8a5"
+    },
+    {
+      "type": "discussion",
+      "content": "The Hardy-Weinberg principle also finds application in studies of industrial melanism, one of the most famous and best-studied cases of evolution in action (Kettlewell 1973). Industrial melanism refers to the evolution of black (melanic) color patterns in several species of moths that accompanied progressive pollution of the environment by coal soot during the industrial revolution. (The various color forms of the moths are known as morphs.) The evolution of melanism has been observed in Great Britain, West Germany, Eastern Europe, the United States, and in other heavily industrialized areas. The species that evolve melanism are typically large night-flying moths. Of nearly 800 species of large moths in the British Isles, where industrial melanism has been most intensively studied, about 100 species are industrial melanics (Bishop and Cook 1975). The best known of these are the peppered moth (Biston et al. 1988). The inference that selection has driven the evolution of industrial melanism is strongly supported by the observation that, in both the United Kingdom and the United States, improved air quality due to emissions regulations has been accompanied by a decrease in the frequency of the melanic forms (Grant et al. 1998). In fact, the decrease in frequency is more thoroughly documented than the previous increase (Grant 1999).",
+      "source_page": 78,
+      "source_pages": [
+        78
+      ],
+      "source_block_ids": [
+        "PopGen_chapter2:p020:b6"
+      ],
+      "source_bboxes": [
+        [
+          246.0,
+          571.0,
+          932.0,
+          1030.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "143b9f43208fb911fd6d5059d78e530151a29c232d2b6e67383acded5ce7f007"
+    },
+    {
+      "type": "discussion",
+      "content": "The agent of selection was once universally thought to be bird predation, because the morphs are dramatically different in conspicuousness on different background (Figure 2.4). The light forms are concealed on normal bark, whereas the dark forms are concealed on bark that is blackened with soot. The problem is that, while birds are visual predators, the moths fly only at night, and when they rest during the day, they do not rest on the trunks of trees. These concerns tend to undermine classic experiments showing differential bird predation by deliberately placing the different morphs at high density on light and dark tree trunks in the daylight hours (Majerus 1998, Coyne 1998). But these are not the only experiments implicating differential bird predation as a selective agent (Majerus 1998; Grant 1999). On the other hand, bird predation may not be the whole story, because there are also environmental correlates of the decline in frequency of the dark morph, most notably a reduction in the level of atmospheric sulfur dioxide (Grant et al. 1998).",
+      "source_page": 78,
+      "source_pages": [
+        78,
+        79
+      ],
+      "source_block_ids": [
+        "PopGen_chapter2:p020:b7",
+        "PopGen_chapter2:p021:b4"
+      ],
+      "source_bboxes": [
+        [
+          247.0,
+          1028.0,
+          932.0,
+          1248.0
+        ],
+        [
+          103.0,
+          761.0,
+          787.0,
+          885.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "0f270e988a628cb2ca406367427e99ce63744ecc1cdb9fa9812664110b0822f0"
+    },
+    {
+      "type": "discussion",
+      "content": "PROBLEM 2.5 In most cases in which the genetic basis of industrial melanism has been analyzed, the melanic color pattern has been found to be due to a single dominant allele. In one study of a heavily polluted area near Birmingham, England, Kettlewell (1956) observed a frequency of 87% melanic Biston betularia. Estimate the frequency of the dominant allele leading to melanism in this population and the frequency of melanics that are heterozygous.",
+      "source_page": 79,
+      "source_pages": [
+        79
+      ],
+      "source_block_ids": [
+        "PopGen_chapter2:p021:b5"
+      ],
+      "source_bboxes": [
+        [
+          105.0,
+          947.0,
+          495.0,
+          1087.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "965b19c05312700b5b5625b0235ae367e7de53b1a34247193cc7f8b146170184"
+    },
+    {
+      "type": "discussion",
+      "content": "ANSWER The observed frequency of homozygous recessives is $R = 0.13$, and so the frequency of recessive allele is estimated as $\\hat{q} = \\sqrt{(0.13)} = 0.36$. Assuming random mating, the expected frequencies of dominant homozygotes, heterozygotes, and recessive homozygotes are 0.41, 0.46, and 0.13, respectively. The proportion of melanics that are heterozygous is 0.46/0.87 = 52.9%.",
+      "source_page": 79,
+      "source_pages": [
+        79
+      ],
+      "source_block_ids": [
+        "PopGen_chapter2:p021:b7"
+      ],
+      "source_bboxes": [
+        [
+          101.0,
+          1111.0,
+          492.0,
+          1227.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "a8264335515007abd2fda53506941e6d6060d4916098da61a376d8ff11e6c64c"
+    }
+  ]
+}

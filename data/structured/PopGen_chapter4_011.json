@@ -1,0 +1,394 @@
+{
+  "id": "PopGen_chapter4_011",
+  "metadata": {
+    "chapter": "PopGen_chapter4",
+    "section": "MUTATION AND THE NEUTRAL THEORY: Introduction",
+    "subsections": [
+      "4.5 INFINITE-SITES MODEL"
+    ],
+    "source_file": "tmp\\popgen\\paddle_output\\PopGen_chapter4_full\\main.tex",
+    "source_title": "Principles of Population Genetics, Fourth Edition",
+    "formula_references": [],
+    "table_references": [
+      "4.1"
+    ],
+    "section_level_1": "MUTATION AND THE NEUTRAL THEORY: Introduction",
+    "section_level_2": "4.5 INFINITE-SITES MODEL",
+    "heading_path": [
+      "MUTATION AND THE NEUTRAL THEORY: Introduction",
+      "4.5 INFINITE-SITES MODEL"
+    ],
+    "display_heading": "4.5 INFINITE-SITES MODEL",
+    "table_reference_keys": [
+      "chapter4:4.1"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "When DNA sequence data are available, then the infinite-sites model is intuitively more appealing than the infinite-alleles model. The infinite-sites model, we consider a very long sequence of nucleotide sites along a DNA molecule, and we assume that each mutation alters a single nucleotide site. This model directly addresses the type of data that molecular population geneticists can access. Moreover, allelic DNA sequences contain considerable information about the evolutionary history of the alleles, which is hidden in the patterns of similarity and differences. The infinite-sites model was first developed by Kimura (1969, 1971), who considered the nucleotide sites as unlinked, and by Watterson (1975), who took account of the nearly complete linkage among sites. If each mutation changes a different nucleotide site in a model with complete linkage between sites, then the infinite-sites model shares many properties with the infinite-alleles model. We discussed the infinite-sites model briefly in Chapter 1 to exemplify the types of inferences that can be made from the DNA sequences of alleles in a population, and again in Chapter 3 in the context of coalescence. In this section we consider the model in somewhat more detail and examine some of the statistical tests of neutrality based on its implications.",
+      "source_page": 186,
+      "source_pages": [
+        186
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p022:b4"
+      ],
+      "source_bboxes": [
+        [
+          242.0,
+          402.0,
+          928.0,
+          840.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "4054d826f8c530763960acb3fe3dcfa7cbbfa2db836c0f8493b231b22b29026e"
+    },
+    {
+      "type": "discussion",
+      "content": "In a long sequence of nucleotides, if the mutation rate is sufficiently low, then most sites will be monomorphic, and all polymorphic sites will be segregating for just two nucleotides. Much of the available data on allelic variation in DNA sequence seems consistent with this view, because few nucleotide sites are segregating for more than two nucleotides. If the DNA sequence is sufficiently long and the frequency of polymorphic sites low, then most of the time new mutations will occur at sites that were previously monomorphic.",
+      "source_page": 186,
+      "source_pages": [
+        186
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p022:b5"
+      ],
+      "source_bboxes": [
+        [
+          244.0,
+          837.0,
+          931.0,
+          1032.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "9f9ed642382b51b25ed6006753990a83541d7a4fdd3e9cd3ba67f6df8a2d9427"
+    },
+    {
+      "type": "discussion",
+      "content": "To reinforce these ideas, let us consider the very small sample of four aligned allelic DNA sequences shown in [[SEE_TABLE:4.1]]. These are made-up sequences, far shorter than would ever be used in practice, and much more diverse than usually found; they are intended to show as clearly as possible some of the types of information that can be extracted from such sequences. For ease of reading, in each column of aligned nucleotide sites, any nucleotide not matching the majority-rule consensus for that site is underlined. In regard to the infinite-alleles model, two types of information are usually extracted: - The nucleotide sites in the sample that are occupied by two or more nucleotides. These are known as segregating sites, and in Chapters 1 and 3 we denoted the number of segregating sites as S. Among the four sample sequences a–d each of length 16 nucleotides, there are exactly 8 segregating sites (sites 1, 2, 4, 5, 9, 10, and 11, 12), and so S = 8.",
+      "source_page": 186,
+      "source_pages": [
+        186,
+        187
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p022:b6",
+        "PopGen_chapter4:p023:b2",
+        "PopGen_chapter4:p023:b9"
+      ],
+      "source_bboxes": [
+        [
+          244.0,
+          1029.0,
+          933.0,
+          1251.0
+        ],
+        [
+          110.0,
+          184.0,
+          784.0,
+          305.0
+        ],
+        [
+          99.0,
+          1042.0,
+          896.0,
+          1234.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "e356ec29df4e0f36f83331cddc067dc97b43936c36cd21d1b25c1b9c48be7414"
+    },
+    {
+      "type": "discussion",
+      "content": "- The nucleotide sites in the sample that differ between individual pairs of sequences. These are known as nucleotide mismatches, and in Chapter 1 we denoted the average number of nucleotide mismatches among all pairwise comparisons of aligned sequences as $ \\Pi $. Among the four sequences a-d there are 6 (i.e., 4 choose 2) pairwise comparisons, namely a-b, a-c, a-d, b-c, b-d, and c-d. Each of these combinations compares 16 nucleotide sites, and among the 6 pairwise comparisons, the number of mismatches is 0 (a-b), 4 (a-c), 4 (a-d), 4 (b-c), 4 (b-d), and 8 (c-d). The total number of pairwise mismatches is therefore $ 0 + 4 + 4 + 4 + 4 + 8 = 24 $ among a total of 6 pairwise comparisons, and so in this example $ \\Pi = 24/6 = 4 $. With the concepts of segregating sites and nucleotide mismatches in mind, we can proceed to examine some of the properties of the infinite-sites model of neutral evolution. First, consider a sample consisting of only two sequences. In this case, the number of segregating sites S and the average number of number of nucleotide mismatches $ \\Pi $ are identical, because there is only one pairwise sequence comparison. For a sample of size 2, Watterson (1975) showed that the probability that the number of segregating sites S equals any number i is given by $$ \\Pr\\left\\{S=i\\right\\}=\\frac{1}{\\left(1+\\theta\\right)}\\left(\\frac{\\theta}{1+\\theta}\\right)^{i} $$ where $ \\theta = 4N_e\\mu $. We emphasize that, in this formulation, $ \\mu $ is the mutation rate across the entire nucleotide sequence. (Formally, $ \\mu $ can be considered as the sum of the per-nucleotide mutation rate across all the nucleotide sites present in the sequence.)",
+      "source_page": 187,
+      "source_pages": [
+        187
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p023:b3",
+        "PopGen_chapter4:p023:b4",
+        "PopGen_chapter4:p023:b5",
+        "PopGen_chapter4:p023:b7"
+      ],
+      "source_bboxes": [
+        [
+          110.0,
+          304.0,
+          786.0,
+          548.0
+        ],
+        [
+          100.0,
+          569.0,
+          786.0,
+          765.0
+        ],
+        [
+          336.0,
+          766.0,
+          552.0,
+          821.0
+        ],
+        [
+          99.0,
+          833.0,
+          784.0,
+          933.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "abc59ebd1d28e753b4c302694f6097d394cc0b72cffadc9808618c25386d76b8"
+    },
+    {
+      "type": "discussion",
+      "content": "A particular case of Equation 4.14 gives the probability that two sequences have no mismatches $ (i=0) $, and hence are identical. Substituting i=0 into Equation 4.14, we obtain $$ \\Pr\\left\\{S=0\\right\\}=\\frac{1}{1+\\theta} $$",
+      "source_page": 188,
+      "source_pages": [
+        188
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p024:b2",
+        "PopGen_chapter4:p024:b3"
+      ],
+      "source_bboxes": [
+        [
+          243.0,
+          188.0,
+          926.0,
+          261.0
+        ],
+        [
+          508.0,
+          272.0,
+          660.0,
+          314.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "b4e0697903fdc0cfb4362256544ca4d8396b12714d5a8df6b435d4a0157cda18"
+    },
+    {
+      "type": "discussion",
+      "content": "Note that right-hand side of Equation 4.15 for the infinite-sites model is the same as the right-hand side of Equation 4.10 for the steady-state autozygosity in the infinite-alleles model. The reason is that, in a sample of size 2 in both models, the probability that the sequences are identical is also the probability of autozygosity. From Equation 4.14 for a sample of size 2, it can be shown that the mean and variance in the number of segregating sites S are given by $ E(S) = \\theta $ and $ V(S) = \\theta + \\theta^2 $. As noted, for a sample of size 2, the average number of pairwise mismatches $ \\Pi $ is equal to the number of segregating sites, and so $ E(\\Pi) = \\theta $ and $ V(\\Pi) = \\theta^2 $ also. The variance $ \\theta + \\theta^2 $ requires complete linkage. If the nucleotide sites can undergo recombination, then the variance is reduced. An example obtained from computer simulation is shown in Figure 4.13, which compares the average number of pairwise mismatches per nucleotide site for a simulated set of data with no recombination (larger variance, black bars) and a simulated set of data with free recombination (smaller variance, gray bars). Because of this difference, the relationship between the mean and the variance in the mismatch distribution has been used to make inferences about the extent of intragenic recombination (Hudson 1987, Wakeley 1997).",
+      "source_page": 188,
+      "source_pages": [
+        188,
+        189
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p024:b5",
+        "PopGen_chapter4:p024:b6",
+        "PopGen_chapter4:p025:b2"
+      ],
+      "source_bboxes": [
+        [
+          242.0,
+          333.0,
+          925.0,
+          455.0
+        ],
+        [
+          242.0,
+          455.0,
+          926.0,
+          721.0
+        ],
+        [
+          103.0,
+          183.0,
+          787.0,
+          235.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "b8b423bcc7bc81f70a1ccd188634748bc8e45605933fae6098eeeacaac868461"
+    },
+    {
+      "type": "discussion",
+      "content": "Important sampling properties of the infinite-sites model with neutral evolution and no recombination were first discovered by Watterson (1975), who examined both the number of segregating sites and the average number of pairwise mismatches. The expected number of segregating sites in a sample of size n sequences is given by $$ E(S)=\\theta\\sum_{i=1}^{n-1}\\frac{1}{i} $$",
+      "source_page": 189,
+      "source_pages": [
+        189
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p025:b3",
+        "PopGen_chapter4:p025:b4"
+      ],
+      "source_bboxes": [
+        [
+          102.0,
+          233.0,
+          788.0,
+          356.0
+        ],
+        [
+          386.0,
+          355.0,
+          503.0,
+          414.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "c9582ebf6fa39a9a613b96bb6dee201652495b1196640b4647b9f373a0d11433"
+    },
+    {
+      "type": "discussion",
+      "content": "This equation was already derived in Chapter 3 (see Equation 3.41) based on the expected total length of the branches in a coalescent tree. Here $ \\theta = 4N_e\\mu $, where $ \\mu $ is the mutation rate across the entire nucleotide sequence. The variance in the number of segregating sites in a sample of size $ n $ equals $$ V(S)=\\theta\\sum_{i=1}^{n-1}\\frac{1}{i}+\\theta^{2}\\sum_{i=1}^{n-1}\\frac{1}{i^{2}} $$",
+      "source_page": 189,
+      "source_pages": [
+        189
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p025:b6",
+        "PopGen_chapter4:p025:b7"
+      ],
+      "source_bboxes": [
+        [
+          99.0,
+          422.0,
+          782.0,
+          525.0
+        ],
+        [
+          338.0,
+          527.0,
+          547.0,
+          587.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "e61c035b2be190d4f64d4f8427d4a07368619b0242d88d3800a7829aa4e702ea"
+    },
+    {
+      "type": "discussion",
+      "content": "This expression for the variance is for the case of no recombination. It turns out that recombination does not affect $ E(S) $, but it reduces $ V(S) $. In the extreme case of free recombination between adjacent nucleotide sites, the number of segregating sites along the sequence has a Poisson distribution, and in this case the variance equals the mean.",
+      "source_page": 189,
+      "source_pages": [
+        189
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p025:b9"
+      ],
+      "source_bboxes": [
+        [
+          95.0,
+          590.0,
+          780.0,
+          715.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "93279ca4fd7161eb7629689a00c254dadc85d87d5a16002401c5faf2d6f86be5"
+    },
+    {
+      "type": "discussion",
+      "content": "Now consider the average number of pairwise mismatches $ \\Pi $ among a set of sequences. An important result is that in a sample of size n at steady state, $$ E(\\varPi)=\\theta $$",
+      "source_page": 189,
+      "source_pages": [
+        189
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p025:b10",
+        "PopGen_chapter4:p025:b11"
+      ],
+      "source_bboxes": [
+        [
+          94.0,
+          712.0,
+          779.0,
+          765.0
+        ],
+        [
+          394.0,
+          770.0,
+          479.0,
+          795.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "fbc300a512ea27ac72c1f152c95543c9e820090b011d856d18885d9d38cd57e0"
+    },
+    {
+      "type": "discussion",
+      "content": "Here again in $\\theta = 4N_{e}\\mu$, the symbol $\\mu$ refers to the mutation rate across the entire nucleotide sequence.",
+      "source_page": 189,
+      "source_pages": [
+        189
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p025:b13"
+      ],
+      "source_bboxes": [
+        [
+          93.0,
+          807.0,
+          776.0,
+          859.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "25668e082b38c6aa6abc96fbec236d902c7ba251c8ccafac610b237afbe410f9"
+    },
+    {
+      "type": "discussion",
+      "content": "When there is no recombination between nucleotide sites, the variance in II was found by Tajima (1983) to be $$ V(\\Pi)=\\frac{n+1}{3(n-1)}\\theta+\\frac{2(n^{2}+n+3)}{9n(n-1)}\\theta^{2} $$ where $ \\theta $ is defined as in Equation 4.18. Again, recombination reduces the variance in the average number of pairwise mismatches (see Figure 4.13 for the case n = 2). It is not difficult to see intuitively why the variance is reduced—recombination shuffles the variation among alleles, reducing the average number of sites by which random pairs of alleles differ. Wakeley (1997) gives a more advanced treatment of this subject.",
+      "source_page": 189,
+      "source_pages": [
+        189
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p025:b14",
+        "PopGen_chapter4:p025:b15",
+        "PopGen_chapter4:p025:b17"
+      ],
+      "source_bboxes": [
+        [
+          92.0,
+          856.0,
+          777.0,
+          907.0
+        ],
+        [
+          283.0,
+          913.0,
+          585.0,
+          970.0
+        ],
+        [
+          89.0,
+          975.0,
+          775.0,
+          1127.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "17aaeac4b8f13450ec3cc1c7b79356acc8c4b96be731e7fb10dd0c2f60785ddf"
+    },
+    {
+      "type": "table",
+      "content": "[[TABLE:4.1]]",
+      "source_page": 187,
+      "source_pages": [
+        187
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p023:b9"
+      ],
+      "source_bboxes": [
+        [
+          99.0,
+          1042.0,
+          896.0,
+          1234.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "929d5852bd67328d111c4d30f0870e682f3cda6f674674302b51699cfe741095"
+    }
+  ]
+}

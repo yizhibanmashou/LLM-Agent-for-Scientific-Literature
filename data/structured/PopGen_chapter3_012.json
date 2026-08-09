@@ -1,0 +1,157 @@
+{
+  "id": "PopGen_chapter3_012",
+  "metadata": {
+    "chapter": "PopGen_chapter3",
+    "section": "3.5 EFFECTIVE POPULATION SIZE",
+    "subsections": [
+      "Variance in Offspring Number"
+    ],
+    "source_file": "tmp\\popgen\\paddle_output\\PopGen_chapter3_full\\main.tex",
+    "source_title": "Principles of Population Genetics, Fourth Edition",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "3.5 EFFECTIVE POPULATION SIZE",
+    "section_level_2": "Variance in Offspring Number",
+    "heading_path": [
+      "3.5 EFFECTIVE POPULATION SIZE",
+      "Variance in Offspring Number"
+    ],
+    "display_heading": "Variance in Offspring Number"
+  },
+  "blocks": [
+    {
+      "type": "proposition",
+      "content": "An ideal population is one in which each breeding individual has an equal chance of contributing offspring to the next generation. Technically, this means that the statistical distribution of the number of offspring per individual is a binomial distribution with mean 1 and variance 1 - 1/N. The distribution is binomial because its range is the fixed interval [0, N], owing to the fact that no individual can have more than N progeny. If N is reasonably large, this binomial distribution is virtually identical to a Poisson distribution with mean and variance equal to 1. Nevertheless, the assumption that each individual has the same distribution of number of progeny is usually unrealistic because, in real organisms, breeding individuals can manifest large differences in their number of progeny. A more realistic model is one in which there are N individuals in the population and in which the ith individual (i = 1, 2,..., N) produces $ n_i $ offspring. In this situation, the effective size of the population is defined as the reciprocal of the probability P that two randomly chosen gametes in the next generation come from the same parent in the previous generation (Crow and Kimura 1970). We will denote the mean and variance of the distribution of offspring number as $ \\xi $ (Greek xi) and $ \\sigma^2 $, respectively. With these definitions, $$ \\xi=\\frac{\\sum n_{1}}{N}\\quad\\text{and}\\quad\\sigma^{2}=\\frac{\\sum n_{1}}{N}-\\left(\\frac{\\sum n_{1}}{N}\\right)^{2} $$",
+      "source_page": 140,
+      "source_pages": [
+        140
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p032:b3",
+        "PopGen_chapter3:p032:b4"
+      ],
+      "source_bboxes": [
+        [
+          245.0,
+          232.0,
+          931.0,
+          671.0
+        ],
+        [
+          435.0,
+          680.0,
+          735.0,
+          742.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "63ed16f0bd87e28db5c17661eae4cdeaa747b2561915b671f44d5ab7e04f7083"
+    },
+    {
+      "type": "discussion",
+      "content": "The probability P that two randomly chosen gametes come from the same parent is given by $$ \\begin{aligned}P=&\\frac{\\Sigma\\binom{n_{i}}{2}}{\\binom{N\\xi}{2}}=\\frac{\\sum n_{i}(n_{i}-1)}{N\\xi(N\\xi-1)}=\\frac{\\sum n_{i}^{2}-\\sum n_{i}}{N\\xi(N\\xi-1)}\\\\。\\end{aligned} $$",
+      "source_page": 140,
+      "source_pages": [
+        140
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p032:b6",
+        "PopGen_chapter3:p032:b7"
+      ],
+      "source_bboxes": [
+        [
+          246.0,
+          762.0,
+          929.0,
+          814.0
+        ],
+        [
+          398.0,
+          828.0,
+          753.0,
+          949.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "a4c51533572e5edd9272d4d3b8e7ef8fe0ed4ba1db16c450855f3cf189417aeb"
+    },
+    {
+      "type": "definition",
+      "content": "The rationale for Equation 3.30 is that the numerator is the number of ways that two randomly chosen alleles can be present in offspring from the same parent, and the denominator is the number of ways that two randomly chosen alleles can have any parents. Substitution of Equation 3.29 into Equation 3.30 and a little rearrangement yields $$ P=\\frac{(\\sigma^{2}/\\xi)+(\\xi-1)}{N-1} $$ But since $ N_{e}=1/P $ by definition, we can write $$ N_{e}=\\frac{N-1}{(\\sigma^{2}/\\xi)+(\\xi-1)} $$ and so, when $ \\xi = 1 $, $ N_e $ is approximately equal to $ N/\\sigma^2 $. Therefore, a large variance in offspring number reduces the effective population size by a factor of $ 1/\\sigma^2 $, thereby speeding up the process of random genetic drift. The flip side of this principle suggests a management strategy for endangered species: Loss of genetic variation can be reduced when the variance in offspring number is minimized, because if $ \\sigma^2 $ is smaller than 1, the effective population size can be larger than the actual population size.",
+      "source_page": 140,
+      "source_pages": [
+        140,
+        141
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p032:b9",
+        "PopGen_chapter3:p032:b10",
+        "PopGen_chapter3:p033:b2",
+        "PopGen_chapter3:p033:b3",
+        "PopGen_chapter3:p033:b4",
+        "PopGen_chapter3:p033:b5"
+      ],
+      "source_bboxes": [
+        [
+          245.0,
+          978.0,
+          932.0,
+          1103.0
+        ],
+        [
+          499.0,
+          1148.0,
+          676.0,
+          1202.0
+        ],
+        [
+          102.0,
+          185.0,
+          518.0,
+          211.0
+        ],
+        [
+          351.0,
+          217.0,
+          533.0,
+          271.0
+        ],
+        [
+          728.0,
+          230.0,
+          784.0,
+          254.0
+        ],
+        [
+          98.0,
+          280.0,
+          786.0,
+          450.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "1c6196b0a8cfdac4313b3d5f5937a8a847b58a847b6cda1f3d650c3cc7cbd61a"
+    },
+    {
+      "type": "discussion",
+      "content": "Variance in offspring number can have a large effect on random genetic drift, as can be seen in particularly important cases in which genes are transmitted by different mechanisms in males and females (for example, in the X and Y chromosomes, or in mitochondrial and chloroplast DNA). Generally, even for nuclear genes, the variance in offspring number of males is far greater than that of females, and one particular consequence is that the effective size for the Y chromosome is much smaller than the theoretical value of $ N_{m}/2 $ implied by Problem 3.8.",
+      "source_page": 141,
+      "source_pages": [
+        141
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p033:b6"
+      ],
+      "source_bboxes": [
+        [
+          97.0,
+          448.0,
+          785.0,
+          643.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "9cf997bf2aec0b40c47ae290476b2b6a2f0a69ec2f17939f0a5e5e647891b453"
+    }
+  ]
+}

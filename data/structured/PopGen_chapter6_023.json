@@ -1,0 +1,275 @@
+{
+  "id": "PopGen_chapter6_023",
+  "metadata": {
+    "chapter": "PopGen_chapter6",
+    "section": "6.5 MIGRATION",
+    "subsections": [
+      "How Migration Limits Genetic Divergence"
+    ],
+    "source_file": "tmp\\popgen\\paddle_output\\PopGen_chapter6_full\\main.tex",
+    "source_title": "Principles of Population Genetics, Fourth Edition",
+    "formula_references": [],
+    "table_references": [
+      "6.5"
+    ],
+    "section_level_1": "6.5 MIGRATION",
+    "section_level_2": "How Migration Limits Genetic Divergence",
+    "heading_path": [
+      "6.5 MIGRATION",
+      "How Migration Limits Genetic Divergence"
+    ],
+    "display_heading": "How Migration Limits Genetic Divergence",
+    "table_reference_keys": [
+      "chapter6:6.5"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "It is remarkable how little migration is required to prevent significant genetic divergence among subpopulations as measured by, for example, the fixation index $ F_{ST} $. To understand the homogenizing effect of migration, consider the model in Figure 4.5, in which two alleles drawn at random from a subpopulation in generation $ t + 1 $ are replicas of the same allele in generation $ t $ with probability $ 1/(2N) $ and replicas of different alleles in generation $ t $ with probability $ 1 - 1/(2N) $. In the first case, the alleles are necessarily identical by descent; in the second case, they are identical by descent with probability $ F_{t-1} $, where $ F $ is shorthand for $ F_{ST} $. In either case, the identity by descent is unbroken only if neither allele is replaced by an allele from a migrant, and so $$ F_{t}=\\left(\\frac{1}{2N}\\right)(1-m)^{2}+\\left(1-\\frac{1}{2N}\\right)(1-m)^{2}F_{t-1} $$",
+      "source_page": 313,
+      "source_pages": [
+        313
+      ],
+      "source_block_ids": [
+        "PopGen_chapter6:p043:b6",
+        "PopGen_chapter6:p043:b7"
+      ],
+      "source_bboxes": [
+        [
+          84.0,
+          832.0,
+          772.0,
+          1096.0
+        ],
+        [
+          244.0,
+          1095.0,
+          611.0,
+          1150.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "20c730ea7b04088996925d12c11c615a1cc4d5c16249ec16c1510e7919d3e5a0"
+    },
+    {
+      "type": "discussion",
+      "content": "Illustrating again the analogy between migration and mutation, Equation 6.22 is identical to Equation 4.8 measuring the effect of mutation on the probability of identity by descent, except that m replaces $ \\mu $. The equilibrium value$\\hat{F}$ of $F$ can be found by setting $\\hat{F}=F_{t}=F_{t-1}$; after expanding the squared terms on the right-hand side, and assuming that $m$ is small enough and $N$ large enough, and that terms in $m^{2}$ and $m/N$ can be ignored, some rearrangement leads to $$ \\hat{F}=\\frac{1}{1+4Nm} $$ As might be expected, Equation 5.17 is identical in form to Equation 4.9 for mutation, but the biological implications are very different owing to the fact that the rate of migration is typically much greater than the rate of mutation.",
+      "source_page": 313,
+      "source_pages": [
+        313,
+        314
+      ],
+      "source_block_ids": [
+        "PopGen_chapter6:p043:b9",
+        "PopGen_chapter6:p044:b1",
+        "PopGen_chapter6:p044:b2",
+        "PopGen_chapter6:p044:b4"
+      ],
+      "source_bboxes": [
+        [
+          83.0,
+          1168.0,
+          767.0,
+          1245.0
+        ],
+        [
+          247.0,
+          185.0,
+          928.0,
+          288.0
+        ],
+        [
+          530.0,
+          289.0,
+          643.0,
+          338.0
+        ],
+        [
+          248.0,
+          357.0,
+          929.0,
+          432.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "10a52cf342058519af3fbd5031b8c7fb524cbe7dea1d52de69b5b96df78c52b2"
+    },
+    {
+      "type": "discussion",
+      "content": "The product Nm in Equation 6.23 has a straightforward biological interpretation. The total number of alleles in a subpopulation of size N diploid organisms is 2N. In any generation, the proportion of alleles that are replaced by alleles from migrant organisms is m; hence the number of migrant alleles in any generation equals 2Nm. However, 2Nm is also the total number of alleles in Nm diploid organisms, and so Nm can be interpreted as the absolute number of migrant organisms that come into each subpopulation in each generation. Because the absolute number of migrants per generation equals $ N_m $, Equation 6.23 implies that $ \\hat{F} $ decreases as the number of migrants increases. Indeed, the decrease in $ \\hat{F} $ with increasing $ N_m $ is extremely rapid, as shown in Figure 6.20. In the extreme case of complete genetic isolation between the subpopulations, $ N_m = 0 $ and $ \\hat{F} = 1 $. The decrease is then so rapid that for: • Nm = 0.25 (one migrant every fourth generation), $ \\hat{F} = 0.50 $",
+      "source_page": 314,
+      "source_pages": [
+        314
+      ],
+      "source_block_ids": [
+        "PopGen_chapter6:p044:b5",
+        "PopGen_chapter6:p044:b6",
+        "PopGen_chapter6:p044:b7"
+      ],
+      "source_bboxes": [
+        [
+          248.0,
+          431.0,
+          930.0,
+          601.0
+        ],
+        [
+          250.0,
+          599.0,
+          931.0,
+          724.0
+        ],
+        [
+          253.0,
+          729.0,
+          790.0,
+          758.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "97cffe07b847eaa6df2aa5af19e43a522cc3d806c777eeb4ba8077cf1d546eb0"
+    },
+    {
+      "type": "discussion",
+      "content": "• Nm = 0.5 (one migrant every second generation), F = 0.33",
+      "source_page": 314,
+      "source_pages": [
+        314
+      ],
+      "source_block_ids": [
+        "PopGen_chapter6:p044:b8"
+      ],
+      "source_bboxes": [
+        [
+          255.0,
+          756.0,
+          786.0,
+          781.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "526821e986cd04b040e16f07d6d2f010987155bfa757d8fdbdeb55fdc203262a"
+    },
+    {
+      "type": "discussion",
+      "content": "• $ Nm = 1 $ (one migrant every generation), $ \\hat{F} = 0.20 $",
+      "source_page": 314,
+      "source_pages": [
+        314
+      ],
+      "source_block_ids": [
+        "PopGen_chapter6:p044:b9"
+      ],
+      "source_bboxes": [
+        [
+          254.0,
+          779.0,
+          705.0,
+          806.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "bc544be32761fa15b5712717e56509b7d4691be169e6c632bfea47486bf552ae"
+    },
+    {
+      "type": "discussion",
+      "content": "• $ Nm = 2 $ (two migrants every generation), $ \\hat{F} = 0.11 $",
+      "source_page": 314,
+      "source_pages": [
+        314
+      ],
+      "source_block_ids": [
+        "PopGen_chapter6:p044:b10"
+      ],
+      "source_bboxes": [
+        [
+          255.0,
+          803.0,
+          714.0,
+          831.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "6ae59e3d69eae432cff86f196245b4caec8bd7b7cb08c314ce6d466e544742ec"
+    },
+    {
+      "type": "discussion",
+      "content": "The implication of Figure 6.20 is that migration is a potent force acting against genetic divergence among subpopulations. The effects are seen dramatically in Figure 6.21. Part A pertains to the moth Biston betularia, part B to the moth Gonodontis bidentata. Both species have evolved melanic (blackened) forms in response to heavy air pollution (industrial melanism, see Chapter 2), and the graphs give the frequency of the melanic forms in the two species. The geographical area in A includes Liverpool and Manchester, as viewed from rural Wales. Note the fall-off in frequency of melanics in the nonindustrial areas toward the front of the graph. Biston betularia exists in low population densities and must fly relatively long distances to find a mate. The resulting high rate of migration hinders differentiation of populations, hence the smooth surface. In contrast, Gonodontis bidentata exists in high population densities and the migration rate is low; hence there is substantial genetic differentiation among populations, as evidenced by the bumpy surface of the graph in part B.",
+      "source_page": 314,
+      "source_pages": [
+        314,
+        316
+      ],
+      "source_block_ids": [
+        "PopGen_chapter6:p044:b11",
+        "PopGen_chapter6:p046:b2"
+      ],
+      "source_bboxes": [
+        [
+          252.0,
+          839.0,
+          932.0,
+          939.0
+        ],
+        [
+          244.0,
+          192.0,
+          926.0,
+          460.0
+        ]
+      ],
+      "provenance_score": 0.720982,
+      "content_sha256": "616cb65cf17d0f43dd25d9b364c90b961da9775d11054e540df0d1971b4fba83"
+    },
+    {
+      "type": "discussion",
+      "content": "The homogenizing effects of migration should not be overestimated, however. The measure of genetic divergence in Figure 6.20 is $ F_{ST} $, the value of which is determined by the variance in allele frequency among subpopulations (see Equation 6.14) and so is affected primarily by polymorphic alleles that are at intermediate frequencies. Rare alleles present in one subpopulation but absent in others have hardly any effect on $ F_{ST} $. Because rare alleles are rare, they are unlikely to be included among migrant organisms unless the migration rate is very great, and so rare alleles will tend to remain present in only one or a few subpopulations in a local area until such time as their frequency may become great enough to be dispersed by migration. An allele found in only one subpopulation is called a private allele. Next we shall see that the rate of migration can be estimated by an examination of the frequency of private alleles.",
+      "source_page": 316,
+      "source_pages": [
+        316
+      ],
+      "source_block_ids": [
+        "PopGen_chapter6:p046:b3",
+        "PopGen_chapter6:p046:b5"
+      ],
+      "source_bboxes": [
+        [
+          245.0,
+          458.0,
+          927.0,
+          680.0
+        ],
+        [
+          248.0,
+          745.0,
+          925.0,
+          1225.0
+        ]
+      ],
+      "provenance_score": 0.836173,
+      "content_sha256": "8b89b0522d2f846001162e2ec484ef52672c627e3bfa8855de9b50fc21551c9d"
+    },
+    {
+      "type": "table",
+      "content": "[[TABLE:6.5]]",
+      "source_page": 316,
+      "source_pages": [
+        316
+      ],
+      "source_block_ids": [
+        "PopGen_chapter6:p046:b5"
+      ],
+      "source_bboxes": [
+        [
+          248.0,
+          745.0,
+          925.0,
+          1225.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "79846fc49927882b9f877af6f9feb5e2eb7a5f156e1dd945be7cc519f510c4b8"
+    }
+  ]
+}

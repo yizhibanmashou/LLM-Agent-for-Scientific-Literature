@@ -1,0 +1,144 @@
+{
+  "id": "PopGen_chapter6_017",
+  "metadata": {
+    "chapter": "PopGen_chapter6",
+    "section": "6.3 THE WAHLUND PRINCIPLE",
+    "subsections": [
+      "Genotype Frequencies in Subdivided Populations"
+    ],
+    "source_file": "tmp\\popgen\\paddle_output\\PopGen_chapter6_full\\main.tex",
+    "source_title": "Principles of Population Genetics, Fourth Edition",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "6.3 THE WAHLUND PRINCIPLE",
+    "section_level_2": "Genotype Frequencies in Subdivided Populations",
+    "heading_path": [
+      "6.3 THE WAHLUND PRINCIPLE",
+      "Genotype Frequencies in Subdivided Populations"
+    ],
+    "display_heading": "Genotype Frequencies in Subdivided Populations"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "In many organisms in which the population structure is hierarchical, it is useful to be able to calculate directly the average genotype frequencies across all subpopulations. Equations 6.12 through 6.14 make it possible to deduce the average genotype frequencies. To do this, first note that $ R_{fused} $ in Equation 6.12 equals $ \\overline{q}^2 $ and $ P_{fused} $ in Equation 6.13 equals $ \\overline{p}^2 $. Hence Equation 6.12 implies the average genotype frequency of aa among the subpopulations is given by $ \\sigma_q^2 + \\bar{p} \\bar{q} $, and Equation 6.13 implies the average genotype frequency of AA among the subpopulations is given by $ \\sigma_p^2 + \\bar{p} \\bar{q} $. Since there are only two alleles, $ \\sigma_q^2 = \\sigma_p^2 = \\sigma^2 $, and Equation 6.14 says that $ \\sigma^2 = F_{\\mathrm{ST}} \\times \\bar{p} \\times \\bar{q} $. Putting all this together, the average genotype frequency of AA across subpopulations must equal $ \\bar{p}^2 + F_{\\mathrm{ST}} \\bar{p} \\bar{q} $, and the average genotype frequency of aa across subpopulations must equal $ \\bar{q}^2 + F_{\\mathrm{ST}} \\bar{p} \\bar{q} $. Because every genotype that is not homozygous must be heterozygous, the average genotype frequency of heterozygotes across subpopulations is given by $ 1 - (\\overline{p}^2 + F_{ST} \\overline{p} \\overline{q}) - (\\overline{q}^2 + F_{ST} \\overline{p} \\overline{q}) $. Note that $ 1 - \\overline{p}^2 - \\overline{q}^2 = 2 \\overline{p} \\overline{q} $, and so the average frequency of heterozygotes simplifies to $ 2 \\overline{p} \\overline{q} - 2 \\overline{p} \\overline{q} F_{ST} $.",
+      "source_page": 305,
+      "source_pages": [
+        305,
+        306
+      ],
+      "source_block_ids": [
+        "PopGen_chapter6:p035:b14",
+        "PopGen_chapter6:p036:b2",
+        "PopGen_chapter6:p036:b3"
+      ],
+      "source_bboxes": [
+        [
+          92.0,
+          1119.0,
+          777.0,
+          1245.0
+        ],
+        [
+          243.0,
+          189.0,
+          922.0,
+          360.0
+        ],
+        [
+          243.0,
+          359.0,
+          922.0,
+          457.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "f09e27838c0ac16bdb74641b126aa0b8bbfdbff7d34df778e12ac034162e4c30"
+    },
+    {
+      "type": "discussion",
+      "content": "Consequently, the genotype frequencies averaged across subpopulations in a subdivided population can be written as: $$ \\begin{aligned}&a a:\\overline{q}^{2}+\\overline{p}\\overline{q}F_{ST}\\\\ &\\\\ &Aa:2\\overline{p}\\overline{q}-2\\overline{p}\\overline{q}F_{ST}\\\\ &\\\\ &aa:\\overline{q}^{2}+\\overline{p}\\overline{q}F_{ST}\\\\ \\end{aligned} $$",
+      "source_page": 306,
+      "source_pages": [
+        306
+      ],
+      "source_block_ids": [
+        "PopGen_chapter6:p036:b4",
+        "PopGen_chapter6:p036:b5"
+      ],
+      "source_bboxes": [
+        [
+          244.0,
+          456.0,
+          921.0,
+          506.0
+        ],
+        [
+          512.0,
+          514.0,
+          667.0,
+          645.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "a60f4e2928de4203683698c562c35b57965bf98733e5b9b39788c4de17ce3d96"
+    },
+    {
+      "type": "discussion",
+      "content": "These genotype frequencies depart from the Hardy-Weinberg principle in having an excess of homozygotes and a deficiency of heterozygotes. This result may seem somewhat paradoxical because, within any particular subpopulation, mating is random and the genotype frequencies do obey the Hardy-Weinberg principle. The reason for the departure from Hardy-Weinberg equilibrium in the population as a whole is that the subpopulations differ in allele frequency. Because the allele frequencies differ, random mating within each subpopulation is not equivalent to random mating among all the organisms in the entire population. From the expressions in Equation 6.15, it is clear that the value of $ F_{ST} $ determines the degree of departure from Hardy-Weinberg equilibrium. If $ F_{ST} = 0 $, the second term in each expression vanishes, and the genotype frequencies reduce to the Hardy-Weinberg frequencies; on the other hand, $ F_{ST} = 0 $ means that there is no variation in allele frequency among the subpopulations for the gene in question. Because $ F_{ST} $ may vary from one gene to the next, other genes in the same subpopulations may have nonzero values of $ F_{ST} $. The extreme case is $ F_{ST} = 1 $, which happens when two subpopulations are fixed for alternative alleles. In this case, the average allele frequencies are $ \\frac{1}{2} $ for each allele, and the average genotype frequencies of AA, Aa, and aa across subpopulations are $ \\frac{1}{2} $, 0, and $ \\frac{1}{2} $, respectively. This case is illustrated in Figure 6.12.",
+      "source_page": 306,
+      "source_pages": [
+        306
+      ],
+      "source_block_ids": [
+        "PopGen_chapter6:p036:b7",
+        "PopGen_chapter6:p036:b8"
+      ],
+      "source_bboxes": [
+        [
+          244.0,
+          671.0,
+          925.0,
+          892.0
+        ],
+        [
+          245.0,
+          890.0,
+          927.0,
+          1178.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "4c13ff808cbcf24558636d7bad62d3624c50faf880e1b8415b617a8030a4b1a4"
+    },
+    {
+      "type": "discussion",
+      "content": "The genotype frequencies in Equation 6.15 may remind you of those in Equation 3.15, where population subdivision was examined from the standpoint of random genetic drift. There we noted that $ F_t $ meant the value of $ F_{ST} $ in generation $ t $, and in Equation 6.15 $ F_{ST} $ is also time dependent, although the time dependence is not explicit. The only other difference is that $ p_0 $ and $ q_0 $ in Equation 3.15 are replaced by $ \\overline{p} $ and $ \\overline{q} $ in Equation 6.15. In the special case when the alleles are selectively neutral, then the equations are identical, because if all subpopulations have the same initial frequency $ p_0 $, then $ E(\\overline{p}) = p_0 $. On the other hand, if there is selection, then $ E(\\overline{p}) $ will not in general equal $ p_0 $, and therein lies an important difference between the equations.",
+      "source_page": 306,
+      "source_pages": [
+        306,
+        307
+      ],
+      "source_block_ids": [
+        "PopGen_chapter6:p036:b9",
+        "PopGen_chapter6:p037:b2"
+      ],
+      "source_bboxes": [
+        [
+          246.0,
+          1176.0,
+          927.0,
+          1230.0
+        ],
+        [
+          100.0,
+          184.0,
+          783.0,
+          378.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "c82215748b8fd58b9e2e3b4554e71f1e19e0bda5392b5032588090d840a645c4"
+    }
+  ]
+}

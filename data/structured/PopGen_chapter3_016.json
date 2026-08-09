@@ -1,0 +1,137 @@
+{
+  "id": "PopGen_chapter3_016",
+  "metadata": {
+    "chapter": "PopGen_chapter3",
+    "section": "3.6 GENE TREES AND COALESCENCE",
+    "subsections": [
+      "Coalescence with Population Growth"
+    ],
+    "source_file": "tmp\\popgen\\paddle_output\\PopGen_chapter3_full\\main.tex",
+    "source_title": "Principles of Population Genetics, Fourth Edition",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "3.6 GENE TREES AND COALESCENCE",
+    "section_level_2": "Coalescence with Population Growth",
+    "heading_path": [
+      "3.6 GENE TREES AND COALESCENCE",
+      "Coalescence with Population Growth"
+    ],
+    "display_heading": "Coalescence with Population Growth"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Changes in population size affect the probability distribution of the coalescent times. In populations of constant size, the coalescent trees typically have a sparse number of nodes and relatively long branches near the root (the root is the allele at which all lineages in the sample ultimately coalesce, the most recent common ancestor of all the alleles in the sample). This pattern can be seen in the “expected” coalescent tree in Figure 3.15.",
+      "source_page": 148,
+      "source_pages": [
+        148
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p040:b5"
+      ],
+      "source_bboxes": [
+        [
+          239.0,
+          786.0,
+          926.0,
+          932.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "b8737194f513139fc41ca9cfd24ce9826e000bceb248cd57006064891a798235"
+    },
+    {
+      "type": "discussion",
+      "content": "In a population that is growing exponentially from an initial size of $ N(0) $, the size at any time t is given by $ N(t) = N(0)\\exp(rt) $, where r is the exponential rate of growth. If both $ N(0) $ and r are large, the coalescent trees are distorted such that they will have more and shorter branches near the root. The reason is that, in an expanding population, it takes longer for alleles to “find” each other starting at the tips and going back in time. Felsenstein’s (2004) bugs-in-a-box analogy helps to understand this point, because in a box that is expanding in size, the bugs will take longer to bump into each other. In the extreme case of a very large $ N(0) $ and r, the coalescences all take place very near the root, resulting in what is often called star phylogeny. (Thinking forward in time about a rapidly expanding population, the lineage of each allele has a very low probability of extinction, and so all the lineages persist and a graph of their genealogical relations resembles a star.) Because coalescent trees in a rapidly expanding population have many short branches near the root, it is reasonable to suppose that, as r decreases, the coalescent events will be less concentrated near the root and will gradually move away from the root toward the tips. The number of branches near the root will decrease, and the branch lengths near the root will become longer until, when r = 0, the coalescent trees will assume the form of those with a constant population size.",
+      "source_page": 148,
+      "source_pages": [
+        148,
+        149
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p040:b6",
+        "PopGen_chapter3:p041:b2"
+      ],
+      "source_bboxes": [
+        [
+          242.0,
+          930.0,
+          928.0,
+          1248.0
+        ],
+        [
+          107.0,
+          189.0,
+          791.0,
+          360.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "babb81f01b190354b0915d825b2eaf154468f76c74cea33456b3a0216242d9cf"
+    },
+    {
+      "type": "discussion",
+      "content": "The pattern of branching in coalescent trees can be used to make inferences about historical patterns of population growth (Pyrus et al. 1999; Emerson et al. 2001). We will illustrate this point using a method proposed by Pybus et al. (1999) for estimating the growth rate of viral populations, in their case human immunodeficiency virus type 1 (HIV-1). They observed that, in simulated coalescent trees in samples of size $k=400$ from populations with a constant population size, the vast majority (=95%) of trees had three or fewer nodes between the root and the mid-depth point of the tree. (The mid-depth point of a tree is halfway between the tree's root and its tips.) A smoothed version of their simulation results is shown in Figure 3.16. This pattern is not expected in population that is undergoing rapid growth with an exponential rate of increase of $r$. In a growing population more nodes are expected near the root. Furthermore, the proportion of trees with three or fewer nodes between the root and the mid-depth point is linearly related to the logarithm of the product of the current population size and the rate of exponential growth, which Pybus et al. (1999) show how to estimate in the case of HIV-1.",
+      "source_page": 149,
+      "source_pages": [
+        149,
+        150
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p041:b3",
+        "PopGen_chapter3:p041:b4",
+        "PopGen_chapter3:p041:b5",
+        "PopGen_chapter3:p042:b2"
+      ],
+      "source_bboxes": [
+        [
+          103.0,
+          357.0,
+          788.0,
+          674.0
+        ],
+        [
+          221.0,
+          710.0,
+          659.0,
+          1057.0
+        ],
+        [
+          93.0,
+          1074.0,
+          774.0,
+          1246.0
+        ],
+        [
+          226.0,
+          189.0,
+          910.0,
+          287.0
+        ]
+      ],
+      "provenance_score": 0.874356,
+      "content_sha256": "976b9548c5f449f0ec77ef869fa22906ad63c41a1a484c9030531fa6df4c6149"
+    },
+    {
+      "type": "discussion",
+      "content": "The mid-depth method has the drawback that it treats the coalescent tree as known, when it would be more appropriate to average over all possible coalescent trees compatible with the data, each weighed in proportion to its probability. Other methods for estimating population growth rates from coalescent trees are examined in Emerson et al. (2001). By comparing data to simulations, it is also possible to fit more complex demographic histories, such as past population bottlenecks (Thornton and Andolfatto 2006).",
+      "source_page": 150,
+      "source_pages": [
+        150
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p042:b3"
+      ],
+      "source_bboxes": [
+        [
+          226.0,
+          286.0,
+          911.0,
+          460.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "36c1cf9ced22ac9b3e2f1aa47060859c51ebdee277099ba6351a4ee490c31d4c"
+    }
+  ]
+}

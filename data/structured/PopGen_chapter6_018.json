@@ -1,0 +1,163 @@
+{
+  "id": "PopGen_chapter6_018",
+  "metadata": {
+    "chapter": "PopGen_chapter6",
+    "section": "6.3 THE WAHLUND PRINCIPLE",
+    "subsections": [
+      "Relation between the Inbreeding Coefficient and the F Statistics"
+    ],
+    "source_file": "tmp\\popgen\\paddle_output\\PopGen_chapter6_full\\main.tex",
+    "source_title": "Principles of Population Genetics, Fourth Edition",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "6.3 THE WAHLUND PRINCIPLE",
+    "section_level_2": "Relation between the Inbreeding Coefficient and the F Statistics",
+    "heading_path": [
+      "6.3 THE WAHLUND PRINCIPLE",
+      "Relation between the Inbreeding Coefficient and the F Statistics"
+    ],
+    "display_heading": "Relation between the Inbreeding Coefficient and the F Statistics"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "So far we have assumed that mating within each subpopulation of a subdivided population is random. What happens when mating between relatives takes place, in addition to the population subdivision? The answer to this question is implicit in Equation 6.4 and Equation 6.11. Equation 6.4 implies that $ 1 - F_{IS} = H_1 / H_S $, where $ F_{IS} $ is the reduction in heterozygosity in an inbred individual, relative to the heterozygosity expected with random mating in the subpopulation to which the inbred individual belongs. The value of $ F_{IS} $ takes into account only the autozygosity due to immediate inbreeding of the individual, not the accumulated autozygosity due to population structure.",
+      "source_page": 307,
+      "source_pages": [
+        307
+      ],
+      "source_block_ids": [
+        "PopGen_chapter6:p037:b4"
+      ],
+      "source_bboxes": [
+        [
+          98.0,
+          448.0,
+          780.0,
+          664.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "dfb1c5901cd7a29022002fd293954e95d767c284416fcdd7423f11b1353abd6c"
+    },
+    {
+      "type": "discussion",
+      "content": "Equation 6.11 implies that $ 1 - F_{ST} = H_{S} / H_{T} $, where $ F_{ST} $ is the reduction in heterozygosity in the subpopulation, relative to that expected with random mating in the population as a whole. The value of $ F_{ST} $ takes into account only the autozygosity due to population subdivision.",
+      "source_page": 307,
+      "source_pages": [
+        307
+      ],
+      "source_block_ids": [
+        "PopGen_chapter6:p037:b5"
+      ],
+      "source_bboxes": [
+        [
+          97.0,
+          664.0,
+          779.0,
+          759.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "00a3e4e96327264d67cc9f8348efba303a5500f0e38aa49907befcbb092ac16e"
+    },
+    {
+      "type": "discussion",
+      "content": "To take both inbreeding and population structure into account, we can define another measure of autozygosity, denoted $ F_{IT} $, which measures the probability of autozygosity of an inbred individual relative to the population as a whole, were all the subpopulations to fuse and undergo random mating. Equation 6.16 asserts that $ F_{IT} $ is equal to $$ F_{IT}=\\frac{H_{T}-H_{I}}{H_{T}} $$ which implies that $1 - F_{IT} = H_{I} / H_{T}$. Considering this expression in light of $1 - F_{IS} = H_{I} / H_{S}$ and $1 - F_{ST} = H_{S} / H_{T}$, it follows that $$ (1-F_{IS})(1-F_{ST})=1-F_{IT} $$",
+      "source_page": 307,
+      "source_pages": [
+        307
+      ],
+      "source_block_ids": [
+        "PopGen_chapter6:p037:b6",
+        "PopGen_chapter6:p037:b7",
+        "PopGen_chapter6:p037:b9",
+        "PopGen_chapter6:p037:b10"
+      ],
+      "source_bboxes": [
+        [
+          95.0,
+          760.0,
+          779.0,
+          883.0
+        ],
+        [
+          368.0,
+          882.0,
+          499.0,
+          938.0
+        ],
+        [
+          94.0,
+          951.0,
+          777.0,
+          1005.0
+        ],
+        [
+          329.0,
+          1023.0,
+          544.0,
+          1052.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "060f22e6f42c613424ee07e8080ffe1bd5368b6ce2ca7080255b0fbf162b8746"
+    },
+    {
+      "type": "discussion",
+      "content": "Hence, if we know both $ F_{IS} $ and $ F_{ST} $, then we can obtain $ F_{IT} $ from Equation 6.17. The value of $ F_{ST} $ measures the autozygosity resulting from random genetic drift in a finite subpopulation, and the value of $ F_{IS} $ measures the autozygosity resulting from inbreeding above and beyond that accounted for in $ F_{ST} $. The value of $ F_{IT} $ is the probability of autozygosity taking both processes into account.",
+      "source_page": 307,
+      "source_pages": [
+        307
+      ],
+      "source_block_ids": [
+        "PopGen_chapter6:p037:b12"
+      ],
+      "source_bboxes": [
+        [
+          94.0,
+          1072.0,
+          776.0,
+          1218.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "b5a514cd926b26afe991cdc0470030c8ff5d2c114e259f7e2871d22f7bef13b5"
+    },
+    {
+      "type": "discussion",
+      "content": "PROBLEM 6.6 Suppose a large population is subdivided into smaller subpopulations within which mating takes place at random, and that random genetic drift takes place until the probability of autozygosity in the subpopulations is $ F_{ST} = \\frac{1}{16} $, which is the value expected from the mating of first cousins. Now suppose that a first-cousin mating takes place in one of the subpopulations, so that inbred progeny have an inbreeding coefficient, relative to the subpopulation, of $ F_{IS} = \\frac{1}{16} $. What is the overall probability of autozygosity in the inbred offspring, $ F_{IT} $? ANSWER Use Equation 6.17 with the values of $ F_{ST} $ and $ F_{IS} $ as given. The result is $ F_{IT} = 1 - \\left(\\frac{15}{16}\\right) \\times \\left(\\frac{15}{16}\\right) = \\frac{31}{256} = 0.121 $. Note that this is smaller than $ F_{IS} + F_{ST} $ by an amount equal to $ F_{IS} \\times F_{ST} $, because the two sources of autozygosity are not mutually exclusive.",
+      "source_page": 308,
+      "source_pages": [
+        308
+      ],
+      "source_block_ids": [
+        "PopGen_chapter6:p038:b2",
+        "PopGen_chapter6:p038:b3",
+        "PopGen_chapter6:p038:b4"
+      ],
+      "source_bboxes": [
+        [
+          122.0,
+          208.0,
+          513.0,
+          366.0
+        ],
+        [
+          534.0,
+          205.0,
+          920.0,
+          345.0
+        ],
+        [
+          123.0,
+          394.0,
+          515.0,
+          467.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "2ac9aeb0c86e72beebc347f41166ef44071051a599aa8d4352bfc4c56318ced7"
+    }
+  ]
+}

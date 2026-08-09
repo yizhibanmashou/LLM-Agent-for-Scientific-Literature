@@ -1,0 +1,94 @@
+{
+  "id": "PopGen_chapter2_016",
+  "metadata": {
+    "chapter": "PopGen_chapter2",
+    "section": "2.5 LINKAGE AND LINKAGE DISEQUILIBRIUM",
+    "subsections": [
+      "Difficulties in Testing for Linkage Equilibrium"
+    ],
+    "source_file": "tmp\\popgen\\paddle_output\\PopGen_chapter2_full\\main.tex",
+    "source_title": "Principles of Population Genetics, Fourth Edition",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "2.5 LINKAGE AND LINKAGE DISEQUILIBRIUM",
+    "section_level_2": "Difficulties in Testing for Linkage Equilibrium",
+    "heading_path": [
+      "2.5 LINKAGE AND LINKAGE DISEQUILIBRIUM",
+      "Difficulties in Testing for Linkage Equilibrium"
+    ],
+    "display_heading": "Difficulties in Testing for Linkage Equilibrium"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "All of the difficulties in testing for Hardy-Weinberg equilibrium that were discussed earlier in this chapter are multiplied when it comes to testing for linkage equilibrium. The term \"multiplied\" can be taken literally. The problem of too small expected numbers is multiplied because the expected frequencies of the gametes are products of the corresponding allele frequencies. This means that the large-sample chi-square test for linkage equilibrium will often be inappropriate, and an exact test (Weir 1996), analogous to the exact test for HWE in Equation 2.5, will be necessary, or else a permutation test analogous to those discussed earlier in the context of HWE.",
+      "source_page": 96,
+      "source_pages": [
+        96
+      ],
+      "source_block_ids": [
+        "PopGen_chapter2:p038:b12"
+      ],
+      "source_bboxes": [
+        [
+          256.0,
+          975.0,
+          939.0,
+          1192.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "ed960af200fe6656434e1de02a57fc3474ae4125190ef27c381e7d73ede7301c"
+    },
+    {
+      "type": "discussion",
+      "content": "Difficulties associated with multiple tests are also multiplied when it comes to linkage equilibrium, because for n SNPs there are $ n(n-1)/2 $ possiable pairwise associations, and $ n(n-1)(n-2)/6 $ possible three-way associations. In other words, the number of pairwise tests grows as $ n^2 $ and the number of three-ways tests as $ n^3 $. This emphasizes the importance of striking a proper balance between the false positive rate and the false discovery rate, so as not to miss too many true associations, but at the same time to minimize the number of false associations. As with HWE, multiple replications in large samples is probably stronger evidence of a robust association than simple statistical significance in a single sample.",
+      "source_page": 96,
+      "source_pages": [
+        96,
+        97
+      ],
+      "source_block_ids": [
+        "PopGen_chapter2:p038:b13",
+        "PopGen_chapter2:p039:b2"
+      ],
+      "source_bboxes": [
+        [
+          258.0,
+          1192.0,
+          940.0,
+          1243.0
+        ],
+        [
+          101.0,
+          184.0,
+          784.0,
+          377.0
+        ]
+      ],
+      "provenance_score": 0.998294,
+      "content_sha256": "3f9d03c532c08a07cdd35ff79b766ce229c5f19101a29eccba4fe5d3c590f514"
+    },
+    {
+      "type": "discussion",
+      "content": "All of the previous examples of estimating linkage disequilibrium are based on actual counts of the four gamete types. Often we know only the counts of genotypes. For two loci, each with two alleles, there are typically nine distinguishable genotypes: AA BB, AA Bb, AA bb, Aa Bb, Aa Bb, aa BB, aa Bb, and aa bb. However, the Aa Bb double heterozygous genotype is ambiguous in regard to gametic phase because some individuals will be A B/a b and others A b/a B; these two classes will have equal frequency only if D = 0. To estimate the frequencies of the four gametic types in this situation, one needs to use the information from the eight unambiguous genotypes as well as the double heterozygotes to obtain estimates of the gametic frequencies that best fit the overall data. If we are willing to assume that the population is in Hardy-Weinberg equilibrium, then there is a maximum likelihood estimator for the gamete frequencies (Hill 1974). If we are not willing to assume Hardy-Weinberg equilibrium, then an estimation method is needed that takes departure from Hardy-Weinberg frequencies and linkage disequilibrium into account simultaneously (Weir 1996; Schaid 2004). Software for making these estimates can be found on the web under such names as LDhat, Haploview, and SAS/Genetics.",
+      "source_page": 97,
+      "source_pages": [
+        97
+      ],
+      "source_block_ids": [
+        "PopGen_chapter2:p039:b3"
+      ],
+      "source_bboxes": [
+        [
+          96.0,
+          375.0,
+          779.0,
+          811.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "3d4eb099bde2ca71ac2ae54f0729ba0ea9f6c6b9bc1982e458c362b94e16e6e4"
+    }
+  ]
+}

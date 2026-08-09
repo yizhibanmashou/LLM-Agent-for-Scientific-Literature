@@ -1,0 +1,298 @@
+{
+  "id": "PopGen_chapter4_003",
+  "metadata": {
+    "chapter": "PopGen_chapter4",
+    "section": "4.1 MUTATION",
+    "subsections": [
+      "Irreversible Mutation"
+    ],
+    "source_file": "tmp\\popgen\\paddle_output\\PopGen_chapter4_full\\main.tex",
+    "source_title": "Principles of Population Genetics, Fourth Edition",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "4.1 MUTATION",
+    "section_level_2": "Irreversible Mutation",
+    "heading_path": [
+      "4.1 MUTATION",
+      "Irreversible Mutation"
+    ],
+    "display_heading": "Irreversible Mutation"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Although mutation may create a new allele, the initial frequency of the mutant allele must be very low when the population size is large. To be specific, a single new mutant allele in a diploid population of size N has an initial frequency of 1/(2N). New mutations in subsequent generations may augment the number of mutant alleles, but recurrent mutation alone increases the allele frequency of the mutant very slowly. Consider a specific example in which A is the wildtype allele and a the mutant form. If there is exactly one new mutation per generation, and random genetic drift is ignored, then the allele frequency of a increases according to the series 1/(2N), 2/(2N), 3/(2N), … and, if N is large (for example, $ N = 10^6 $), then the increase is very slow indeed. Hence, the tendency for allele frequency to change as a result of recurrent mutation (the mutation pressure) is very small. On the other hand, the cumulative effects of mutation over long periods of time can become appreciable.",
+      "source_page": 166,
+      "source_pages": [
+        166
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p002:b4"
+      ],
+      "source_bboxes": [
+        [
+          242.0,
+          479.0,
+          923.0,
+          794.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "998ff769db37f8f968fa283e5d0e81b5b7474a6be6222157c7e703a6b5c77f46"
+    },
+    {
+      "type": "discussion",
+      "content": "A useful model for thinking about mutation is the Hardy-Weinberg model of Chapter 2, but with mutation permitted. For the moment, we focus on mutations that have so little effect on the ability of the organism to survive and reproduce that natural selection does not appreciably influence their frequency. We will also assume that mutation is irreversible, which means that a cannot reverse-mutate to A. To avoid complications resulting from change in allele frequency due to chance, we will also assume a population that is infinite in size.",
+      "source_page": 166,
+      "source_pages": [
+        166
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p002:b5"
+      ],
+      "source_bboxes": [
+        [
+          242.0,
+          792.0,
+          925.0,
+          985.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "556a4dbf0e2a433a34bd499109255ca61b2a75db0f8283dd4d08f1acff7bc71a"
+    },
+    {
+      "type": "discussion",
+      "content": "Consider a gene with two alleles, A and a, and suppose that A mutates to a at a rate of $ \\mu $ mutations per A allele per generation. In other words, each A allele has a probability of $ \\mu $ of mutating to a in any generation. We will symbolize the allele frequency of A as p and that of a as q and keep track of generations with subscripts. Hence, $ p_t $ and $ q_t $ are the allele frequencies of A and a, respectively, in the $ t $th generation, where $ t = 0, 1, 2, \\ldots $. In any generation, $ p_t + q_t = 1 $ because A and a are the only alleles considered.",
+      "source_page": 166,
+      "source_pages": [
+        166
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p002:b6"
+      ],
+      "source_bboxes": [
+        [
+          243.0,
+          985.0,
+          926.0,
+          1156.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "5d7a69168da4d536bc4ffb1df5e0aa4f89456d3866fc1a6b2059ab6c2a5caf21"
+    },
+    {
+      "type": "discussion",
+      "content": "Next we will deduce a formula for the allele frequency $ p_{t} $ in terms of the allele frequency $ p_{t-1} $ in the previous generation. In generation t, $ p_{t} $ includes all the A alleles in generation t that did not mutate in that generation, and so $$ p_{t}=p_{t-1}\\left(1-\\mu\\right) $$ $$ \\vec{p}_{t} $$ $$ p_{0}=1 $$",
+      "source_page": 166,
+      "source_pages": [
+        166,
+        167
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p002:b7",
+        "PopGen_chapter4:p002:b8",
+        "PopGen_chapter4:p003:b3",
+        "PopGen_chapter4:p003:b4"
+      ],
+      "source_bboxes": [
+        [
+          243.0,
+          1154.0,
+          925.0,
+          1227.0
+        ],
+        [
+          515.0,
+          1232.0,
+          654.0,
+          1259.0
+        ],
+        [
+          732.0,
+          226.0,
+          751.0,
+          246.0
+        ],
+        [
+          804.0,
+          244.0,
+          851.0,
+          266.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "75a230ced9d074420b9b6f2247a44d78399a14693a7589d75be8dbffc6099c10"
+    },
+    {
+      "type": "discussion",
+      "content": "However, by the same reasoning, $ p_{t-1} $ includes all A alleles in generation t-1 that did not mutate in that generation, and so $ p_{t-1} = p_{t-2} \\times (1 - \\mu) $. Substituting this equation into the one above yields $$ p_{t}=p_{t-2}\\left(1-\\mu\\right)^{2} $$",
+      "source_page": 167,
+      "source_pages": [
+        167
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p003:b5",
+        "PopGen_chapter4:p003:b6"
+      ],
+      "source_bboxes": [
+        [
+          105.0,
+          564.0,
+          787.0,
+          640.0
+        ],
+        [
+          373.0,
+          641.0,
+          521.0,
+          671.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "8219cecdb6caeeefca623e31cde4c90e67fef4b69d0de38f1933446064aa6ea5"
+    },
+    {
+      "type": "discussion",
+      "content": "Continuing in the same manner leads eventually to $$ p_{t}=p_{0}(1-\\mu)^{t_{ 环 }} $$",
+      "source_page": 167,
+      "source_pages": [
+        167
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p003:b7",
+        "PopGen_chapter4:p003:b8"
+      ],
+      "source_bboxes": [
+        [
+          105.0,
+          684.0,
+          568.0,
+          709.0
+        ],
+        [
+          380.0,
+          713.0,
+          542.0,
+          744.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "c8becc15ef796c4c75dd49eff17a2ea73c1fe6eee005b753152197047a39225e"
+    },
+    {
+      "type": "discussion",
+      "content": "The effect of mutation pressure on allele frequency is illustrated in Figure 4.1 for the case $ \\mu = 10^{-4} $. The allele frequency of $ A $ decreases very slowly, almost linearly at first because the governing term in Equation 4.1, $ (1 - \\mu)^t $, is approximated by $ 1 - \\mu t $ when $ t $ is sufficiently small. After 1000 generations, the allele frequency of $ A $ is still 0.90; however, at $ t = 10,000 $ generations, $ p_t = 0.37 $; and at $ t = 20,000 $ generations, $ p_t = 0.14 $.",
+      "source_page": 167,
+      "source_pages": [
+        167
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p003:b10"
+      ],
+      "source_bboxes": [
+        [
+          103.0,
+          757.0,
+          784.0,
+          902.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "de65d6c33739e816efdfd6e2664030fbca160481cd1ebf0c1bd80c1dc609f7a7"
+    },
+    {
+      "type": "discussion",
+      "content": "One instructive way to analyze Equation 4.1 is to consider the time required to reduce the allele frequency of A by half. To find the “half-life” of the process, set $ p_t = 0.5 \\times p_0 $; this relationship implies that $ \\boxed{0.5} = (1 - \\mu)^t $. Taking logarithms of both sides, we obtain $$ t_{\\frac{1}{2}}=\\ln\\left(0.5\\right)/\\ln\\left(1-\\mu\\right)\\approx0.6931/\\mu $$ In the example in Figure 4.1, $ t_{\\frac{1}{2}} = 6931 $ generations. A decrease in $ \\mu $ by a factor of 10 increases $ t_{\\frac{1}{2}} $ accordingly, to approximately 69,310 generations for $ \\mu = 10^{-5} $ and to approximately 693,100 generations for $ \\mu = 10^{-6} $. The feeble effect of mutation pressure alone in changing allele frequency is illustrated by the long half-lives calculated for realistic values of the mutation rate. As noted with reference to Equation 4.1, the approximation $ p_t = p_0(1 - \\mu t) $ is quite accurate for small values of $ t $. With respect to the allele frequency of the mutant allele $ a $, the approximation can also be written as $ q_t = q_0 + \\mu t $, provided that $ q_{0} $ is small. This approximation implies that the allele frequency of the $ a $ allele increases linearly with time with a slope equal to $ \\mu $. Because $ \\mu $ is small, however, the linear increase in $ q_{t} $ is difficult to detect experimentally except in very large populations. A large population size can be attained in a bacterial chemostat, which is a device for maintaining a population of bacteria in a continuous state of growth and cell division (Figure 4.2). The linear increase in $ q_{t} $ from mutation pressure observed in a chemostat is shown in Figure 4.3. Note the abrupt increase in mutation rate (indicated by the increase in slope) shortly after the addition of caffeine, a bacterial mutagen.",
+      "source_page": 167,
+      "source_pages": [
+        167,
+        168
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p003:b11",
+        "PopGen_chapter4:p003:b12",
+        "PopGen_chapter4:p003:b13",
+        "PopGen_chapter4:p003:b14",
+        "PopGen_chapter4:p004:b4"
+      ],
+      "source_bboxes": [
+        [
+          103.0,
+          901.0,
+          784.0,
+          1000.0
+        ],
+        [
+          292.0,
+          1002.0,
+          593.0,
+          1036.0
+        ],
+        [
+          103.0,
+          1045.0,
+          784.0,
+          1168.0
+        ],
+        [
+          100.0,
+          1167.0,
+          783.0,
+          1243.0
+        ],
+        [
+          238.0,
+          1001.0,
+          923.0,
+          1220.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "837c0ea614c77cd67bc5d556d9f4fc2ffe824ba37845a5e0c7e66420b796883b"
+    },
+    {
+      "type": "discussion",
+      "content": "PROBLEM 4.1 A genetic factor has been described in Drosophila mauritiana that results in the spontaneous deletion of the transposable genetic element mariner at a frequency of approximately 1% per generation for each copy (Hartl 2001). In a population containing an autosomal site at which a mariner insertion is fixed (homozygous), how many generations would be required for the frequency of flies that are homozygous for a deletion of the element to exceed 5%? Assume that the population is large, that mating is random, that the excision factor is fixed, and that deletion of the element does not affect survival or reproduction.",
+      "source_page": 169,
+      "source_pages": [
+        169
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p005:b4"
+      ],
+      "source_bboxes": [
+        [
+          106.0,
+          872.0,
+          497.0,
+          1053.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "6d3b8ff290a12f77bf1668de6fbb07fa3749fb948a41f4def5aee103c878b92a"
+    },
+    {
+      "type": "discussion",
+      "content": "ANSWER. Let $ p_t $ be the frequency of chromosomes in which the mariner element remains undeleted in generation $ t $, and let $ \\mu = 0.01 $ be the probability of deletion of the element per generation. For this situation, Equation 4.1 applies with $ \\mu = 0.01 $ and $ p_0 = 1 $. The frequency of deletion homozygotes is greater than 5% when $ (1 - p_t)^2 > 0.05 $, or $ p_t < 1 - \\sqrt{(0.05)} = 0.776 $. Thus, $ t $ should be greater than $ \\ln(0.776)/\\ln(0.99) = 25.2 $ generations.",
+      "source_page": 169,
+      "source_pages": [
+        169
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p005:b6"
+      ],
+      "source_bboxes": [
+        [
+          104.0,
+          1083.0,
+          495.0,
+          1199.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "8cacc246f5427040f7f95d19580e35bc9a5ced9f0ce7239a35b64da0e8bfc7b5"
+    }
+  ]
+}

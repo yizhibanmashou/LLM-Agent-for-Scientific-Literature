@@ -1,0 +1,489 @@
+{
+  "id": "PopGen_chapter2_008",
+  "metadata": {
+    "chapter": "PopGen_chapter2",
+    "section": "2.3 TESTING FOR HARDY-WEINBERG EQUILIBRIUM",
+    "subsections": [
+      "Difficulties in Testing for Hardy-Weinberg Equilibrium"
+    ],
+    "source_file": "tmp\\popgen\\paddle_output\\PopGen_chapter2_full\\main.tex",
+    "source_title": "Principles of Population Genetics, Fourth Edition",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "2.3 TESTING FOR HARDY-WEINBERG EQUILIBRIUM",
+    "section_level_2": "Difficulties in Testing for Hardy-Weinberg Equilibrium",
+    "heading_path": [
+      "2.3 TESTING FOR HARDY-WEINBERG EQUILIBRIUM",
+      "Difficulties in Testing for Hardy-Weinberg Equilibrium"
+    ],
+    "display_heading": "Difficulties in Testing for Hardy-Weinberg Equilibrium"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Testing for HWE is important. For example, in studies in human genetics, deviations from HWE of a marker gene among individuals affected with a genetic disease may be helpful in identifying the location of a disease-susceptibility allele near the marker gene along the chromosome (Nielsen et al. 1999). Deviations from HWE may also alert the investigator to possible genotyping errors (Xu et al. 2002). Yet tests for HWE are often unreported or botched (Salanti et al. 2005). There are also complications that can invalidate the simple chi-square calculation in Equation 2.3. Some of the ways of dealing with these complications are examined next.",
+      "source_page": 72,
+      "source_pages": [
+        72
+      ],
+      "source_block_ids": [
+        "PopGen_chapter2:p014:b3"
+      ],
+      "source_bboxes": [
+        [
+          247.0,
+          236.0,
+          931.0,
+          460.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "568a339010b5b69797dd0f998968d7ae501a7d1a7261aa9ccaf8657f6f2d8f3a"
+    },
+    {
+      "type": "discussion",
+      "content": "SAMPLE SIZE TOO SMALL Problem 2.3 illustrates one of the issues that can arise in testing for HWE. The allele frequency of $ CCR5\\Delta $ is sufficiently small that, even for a sample size of 338, the observed number of homozygotes was only 7 and the expected number is only 4.7. With such small numbers, chance alone can have a substantial effect on the composition of any actual sample. This is a problem for the formula in Equation 2.3, because this expression has a chi-square distribution only when each of the classes of data has a sufficiently large expected number. What “sufficiently large” means is a matter of judgment, but most statisticians agree that the standard chi-square test should not be trusted when any of the expected numbers is smaller than 5. The $ CCR5\\Delta $ example violates this convention. In such cases, many statisticians recommend calculating a chi-square value that is somewhat more conservative than that in Equation 2.3, namely, $$ \\chi^{2}=\\sum\\frac{\\left(\\left|observed-expected\\right|-0.5\\right)^{2}}{expected} $$",
+      "source_page": 72,
+      "source_pages": [
+        72
+      ],
+      "source_block_ids": [
+        "PopGen_chapter2:p014:b4",
+        "PopGen_chapter2:p014:b5"
+      ],
+      "source_bboxes": [
+        [
+          247.0,
+          478.0,
+          933.0,
+          796.0
+        ],
+        [
+          442.0,
+          810.0,
+          736.0,
+          866.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "01ab6fea5df48ccc5a1eb999785c3ad178195377b3946faa536accbd22b5fa43"
+    },
+    {
+      "type": "discussion",
+      "content": "In this expression, the vertical bars mean absolute value (the magnitude of the enclosed number disregarding the sign). The fact that 0.5 is subtracted from each difference in the numerator before taking the square serves to reduce the value of the chi-square. In the CCR5Δ example, Equation 2.4 yields $ (2.1 - 0.5)^2 / 262.9 + (4.4 - 0.5)^2 / 70.4 + (2.3 - 0.5)^2 / 4.7 = 0.915 $. This value is not found on the chart in Figure 2.3 because the graph begins at $ \\chi^2 = 1 $ for clarity. In practice, values of $ \\chi^2 $ smaller than 1 are often found (as in the present example), but they are never significant. In this case, a $ \\chi^2 $ of 0.915 with one degree of freedom has a corresponding $ P $ value of 0.34. This correction for small sample size has limitations, because if any of the expected numbers is too close to 0, then the correction in Equation 2.4 is unreliable.",
+      "source_page": 72,
+      "source_pages": [
+        72
+      ],
+      "source_block_ids": [
+        "PopGen_chapter2:p014:b7"
+      ],
+      "source_bboxes": [
+        [
+          248.0,
+          886.0,
+          936.0,
+          1156.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "df55c258615a066077aed66f3c09fa2f6a595ca74329850736796a44c62e5605"
+    },
+    {
+      "type": "discussion",
+      "content": "EXACT TEST FOR HWE If the sample size is small enough, then it is possible to calculate the exact probability of all possible sample configurations. To be concrete, consider a gene with two alleles A and a, and let the observed numbers of AA, Aa, and aa in one possible sample be $ n_{11} $, $ n_{12} $, and $ n_{22} $, respectively. The total sample size is therefore $ n = n_{11} + n_{12} + n_{22} $, and the observed numbers of A and a alleles are $ n_{1} = 2 \\times n_{11} + n_{12} $ and $ n_{2} = n_{12} + 2 \\times n_{22} $, respectively. We wish to calculate the probability of any sample configuration ($ n_{11} $, $ n_{12} $, $ n_{22} $) for a fixed sample size n and fixed allele counts $ n_{1} $ and $ n_{2} $. Since the allele counts are fixed, any sample is uniquely specified by the number of heterozygotes observed. In fact, the exact probability of the sample configuration ($ n_{11} $, $ n_{12} $, $ n_{22} $), conditional on the allele counts ($ n_{1} $, $ n_{2} $), is given by $$ \\Pr\\left\\{n_{12}\\left|n_{1},n_{2}\\right.\\right\\}=\\frac{n!/\\left(n_{11}!n_{12}!n_{22}!\\right)}{\\left(2n\\right)!/\\left(n_{1}!n_{2}!\\right)}2^{n_{12}}. $$",
+      "source_page": 72,
+      "source_pages": [
+        72,
+        73
+      ],
+      "source_block_ids": [
+        "PopGen_chapter2:p014:b8",
+        "PopGen_chapter2:p015:b2",
+        "PopGen_chapter2:p015:b3"
+      ],
+      "source_bboxes": [
+        [
+          249.0,
+          1174.0,
+          936.0,
+          1252.0
+        ],
+        [
+          108.0,
+          189.0,
+          795.0,
+          385.0
+        ],
+        [
+          279.0,
+          409.0,
+          620.0,
+          466.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "e7a8f0b19201fa9fbb7806f8fa12c63079cd1ef901e5f9516d62f2ee20937e2e"
+    },
+    {
+      "type": "discussion",
+      "content": "(Emigh 1980; Weir 1996; and see Guo and Thompson 1992 for a multiple-allele version). Once these conditional probabilities have been calculated for all possible values of $ n_{12} $, they are arranged in increasing order, and a cutoff is chosen such that the cumulative probability of all outcomes above the cut-off equals 0.05 (or the number nearest to, but smaller than, 0.05). If the observed genotype counts fall below the cutoff, the hypothesis of HWE is rejected. As an example, consider a sample of size $n=8$ diploid individuals with fixed allele counts of $n_{1}=8$ and $n_{2}=8$. Then there are only five possible sample configurations $(n_{11}, n_{12}, n_{22})$, which are given below along with their probabilities calculated from Equation 2.5. $$ (0,8,0)\\qquad\\qquad\\operatorname*{P r}=0.01989 $$ $$ \\begin{array}{r l r l r}{(1,6,1)}&{{}}&{\\qquad}&{{}}&{\\mathrm{P r}=0.27848}\\end{array} $$ $$ (2,4,2)\\qquad\\qquad\\operatorname*{P r}=0.52215 $$ $$ (3,2,3)\\qquad\\qquad\\operatorname*{P r}=0.17404 $$ $$ (4,0,4)\\qquad\\qquad\\operatorname*{P r}=0.00544 $$",
+      "source_page": 73,
+      "source_pages": [
+        73
+      ],
+      "source_block_ids": [
+        "PopGen_chapter2:p015:b5",
+        "PopGen_chapter2:p015:b6",
+        "PopGen_chapter2:p015:b7",
+        "PopGen_chapter2:p015:b8",
+        "PopGen_chapter2:p015:b9",
+        "PopGen_chapter2:p015:b10",
+        "PopGen_chapter2:p015:b11"
+      ],
+      "source_bboxes": [
+        [
+          105.0,
+          500.0,
+          791.0,
+          668.0
+        ],
+        [
+          103.0,
+          669.0,
+          789.0,
+          765.0
+        ],
+        [
+          275.0,
+          771.0,
+          553.0,
+          797.0
+        ],
+        [
+          273.0,
+          803.0,
+          553.0,
+          829.0
+        ],
+        [
+          273.0,
+          835.0,
+          553.0,
+          862.0
+        ],
+        [
+          273.0,
+          868.0,
+          553.0,
+          894.0
+        ],
+        [
+          273.0,
+          900.0,
+          552.0,
+          925.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "d40c9aec1331f3473383ba2698330e91c10a3af444e5f45d18bb7acb653385b8"
+    },
+    {
+      "type": "discussion",
+      "content": "These should be arranged in increasing order of probability and the cumulative probabilities calculated, as follows: $$ (4,0,4)\\quad\\operatorname*{P r}=0.00544\\qquad\\operatorname{C u m u l a t i v e}\\operatorname{P r o b}=0.00544 $$ $$ \\left(0,8,0\\right)\\quad\\operatorname{Pr}=0.01989\\quad\\quad\\operatorname{Cumulative Prob}=0.00544+0.01989=0.02533 $$ $$ \\begin{array}{r l r}{\\mathrm{P r}=0.17404}&{{}}&{\\mathrm{C u m u l a t i v e~P r o b}=0.02533+0.17404=0.19937}\\end{array} $$ $$ \\begin{array}{r l}{\\operatorname*{P r}=0.27848}&{{}\\quad\\mathrm{C u m u l a t i v e~P r o b}=0.19937+0.27848=0.47785}\\end{array} $$ $$ \\begin{array}{r l r}{(2,4,2)}&{{}}&{\\operatorname*{P r}=0.52215\\qquad\\mathrm{C u m u l a t i v e~P r o b}=0.47785+0.52215=1.0000}\\end{array} $$",
+      "source_page": 73,
+      "source_pages": [
+        73
+      ],
+      "source_block_ids": [
+        "PopGen_chapter2:p015:b12",
+        "PopGen_chapter2:p015:b13",
+        "PopGen_chapter2:p015:b14",
+        "PopGen_chapter2:p015:b15",
+        "PopGen_chapter2:p015:b16",
+        "PopGen_chapter2:p015:b17"
+      ],
+      "source_bboxes": [
+        [
+          101.0,
+          933.0,
+          786.0,
+          982.0
+        ],
+        [
+          102.0,
+          996.0,
+          602.0,
+          1022.0
+        ],
+        [
+          102.0,
+          1030.0,
+          777.0,
+          1056.0
+        ],
+        [
+          101.0,
+          1064.0,
+          778.0,
+          1091.0
+        ],
+        [
+          102.0,
+          1098.0,
+          778.0,
+          1125.0
+        ],
+        [
+          100.0,
+          1133.0,
+          770.0,
+          1159.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "a663ffe299b7bb60e7a0c1780c9c73289d0d7eed3b1eed01b5c0f75ebb71fc50"
+    },
+    {
+      "type": "discussion",
+      "content": "In each row, the cumulative probability value corresponds to the P value of observing a fit as bad (or worse) than the sample configuration given in that row. Hence, an observed sample configuration of $ (4, 0, 4) $ would lead to rejection of the hypothesis of HWE with a significance level of 0.00544, and an observed sample configuration of $ (0, 8, 0) $ would lead to rejection of the hypothesis of HWE with a significance level of 0.02533. As another example, consider again the CCR5 data in Problem 2.3 in which $ (n_{11}, n_{12}, n_{22}) = (265, 66, 7), n_1 = 596 $, and $ n_2 = 80 $. There are exactly 41 sample configurations that are compatible with $ n_1 = 596 $ and $ n_2 = 80 $, which have the form $ (n_{11}, n_{12}, n_{22}) = (298 - x, 2x, 40 - x) $, where $ x $ can assume the values 0, 1, 2,..., 40. Each of these possible samples has a probability of occurrence given by Equation 2.5 and a deviation from HWE given by Equation 2.3. (Here we are using the chi-square only as a measure of the magnitude of the deviation, without assuming that the values are actually distributed as $ \\chi^2 $.) Among the 41 possibilities, 37 yield chi-square values as great or greater than the observed value, and these samples have a cumulative probability of 0.290. This is the exact $ P $ value. As we have seen, the conventional chi-square statistic in Equation 2.3 yields a $ P $ value of 0.25, and the chi-square adjusted for small sample size in Equation 2.4 yields a $ P $ value of 0.34. None of the values are statistically significant, but the example shows that Equation 2.3 yields a $ P $ value that is too small, whereas Equation 2.4 yields one that is somewhat too large. The message is that the $ P $ values from Equations 2.3 and 2.4 are best regarded as approximations whose accuracy improves with sample size.",
+      "source_page": 73,
+      "source_pages": [
+        73,
+        74
+      ],
+      "source_block_ids": [
+        "PopGen_chapter2:p015:b18",
+        "PopGen_chapter2:p016:b2",
+        "PopGen_chapter2:p016:b3"
+      ],
+      "source_bboxes": [
+        [
+          98.0,
+          1174.0,
+          785.0,
+          1250.0
+        ],
+        [
+          260.0,
+          186.0,
+          940.0,
+          260.0
+        ],
+        [
+          260.0,
+          260.0,
+          942.0,
+          671.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "9917fd5b8e495b459e7b37b073bcbe7a943d3083a7bd96f5e8ebe00d7cadfcad"
+    },
+    {
+      "type": "discussion",
+      "content": "The exact test is the most common test of significance for departures from Hardy-Weinberg in small samples, and in practice one calculates the P values using either a standard statistics package or any of a number of web-based calculators that can be accessed by searching for \"exact test for Hardy-Weinberg.\"",
+      "source_page": 74,
+      "source_pages": [
+        74
+      ],
+      "source_block_ids": [
+        "PopGen_chapter2:p016:b4"
+      ],
+      "source_bboxes": [
+        [
+          261.0,
+          671.0,
+          942.0,
+          793.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "eab4a85f6a82a151b1d408dc9b99020a59312a04215d20d9e4ae60463eb6b911"
+    },
+    {
+      "type": "discussion",
+      "content": "PERMUTATION TEST FOR HWE In some cases it is convenient to test for HWE by comparing the sample with random permutations of the data. For example, in a sample of 8 diploid individuals in which $ n_1 = 8 $ and $ n_2 = 8 $, one would consider a large number of random permutations of $ (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16) $, where the even numbers represent one allele $ (A) $ and the odd numbers the other allele $ (a) $. Each successive pair of numbers would then constitute one diploid genotype in the sample. For example, one random permutation is $ (15, 12, 1, 4, 2, 16, 11, 8, 5, 13, 6, 3, 10, 7, 9, 14) $, which corresponds to the genotypes $ aA $, $ aA $, $ AA $, $ aA $, $ aa $, $ Aa $, $ Aa $, $ aA $, or $ (n_{11}, n_{12}, n_{22}) = (1, 6, 1) $. For 16 elements, there are more than $ 10^{13} $ possible permutations. Each random permutation yields a possible sample configuration $ (n_{11}, n_{12}, n_{22}) $ whose chi-square can be compared with an observed value, and with a large number of random permutations, the proportion of samples whose chi-square is as large or larger than that observed approximates the P value.",
+      "source_page": 74,
+      "source_pages": [
+        74
+      ],
+      "source_block_ids": [
+        "PopGen_chapter2:p016:b5"
+      ],
+      "source_bboxes": [
+        [
+          260.0,
+          815.0,
+          943.0,
+          1175.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "e3387d25e6c4d9a260422371b9204924e18fa89de6d1c4a2b20665cb4647acf2"
+    },
+    {
+      "type": "discussion",
+      "content": "To take a more complex example, consider again the CCR5 case in Problem 2.3, where $ n_{1} = 596 $ and $ n_{2} = 80 $. In this case the vector to be randomly permuted has $ 596 + 80 = 676 $ elements, $ (1, 2, 3,..., 676) $, where the integers less than or equal to 596 represent the nonmutant CCR5 allele and those greater than 596 represent the CCR5Δ allele. Again, each successive pair of integers represents a single diploid genotype in the sample. Among 1000 random permutations, in 294 cases the chi-square was as large or larger than that observed, yielding a P value of P = 0.294. This is in good agreement with the exact value of 0.290 calculated earlier, which is not surprising because a large sample of random permutations simulates what the exact test does exactly.",
+      "source_page": 74,
+      "source_pages": [
+        74,
+        75
+      ],
+      "source_block_ids": [
+        "PopGen_chapter2:p016:b6",
+        "PopGen_chapter2:p017:b2"
+      ],
+      "source_bboxes": [
+        [
+          263.0,
+          1175.0,
+          942.0,
+          1226.0
+        ],
+        [
+          102.0,
+          187.0,
+          785.0,
+          402.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "847d00c7af65eca15a2cd1bcdaa1a949de9d31a92b4f7d19343a5e17518e52d5"
+    },
+    {
+      "type": "discussion",
+      "content": "Random permutations are particularly useful when there are multiple alleles, many of them rare, because some heterozygous genotypes will be rare and some homozygous genotypes not represented in the sample. An alternative for such cases is not to compare the individual genotype frequencies with their expectations, but to compare the total number of heterozygous genotypes and homozygous genotypes with the numbers expected under HWE. (Details of HWE for multiple alleles are discussed below.) Finally, there is also an exact test that generalizes Equation 2.5 to multiple alleles (Guo and Thompson 1992).",
+      "source_page": 75,
+      "source_pages": [
+        75
+      ],
+      "source_block_ids": [
+        "PopGen_chapter2:p017:b3"
+      ],
+      "source_bboxes": [
+        [
+          100.0,
+          403.0,
+          784.0,
+          622.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "5bb8a14374c70f72182c61fed3087e213b0bad41a822117a667e54c5f934f942"
+    },
+    {
+      "type": "discussion",
+      "content": "PROBLEMS OF MULTIPLE TESTS One final issue to be addressed is that of multiple tests. The high-throughput genotyping capabilities brought about by genomics has made it possible to assay millions of polymorphisms simultaneously in large samples. For example, the human genome contains an estimated 10 million single-nucleotide polymorphisms (SNPs)—about 1 SNP every 300 base pairs—of which four million have been identified. Each SNP consists of a site in the DNA at which the particular nucleotide pair differs among chromosomes, and in which the least frequent variant (called the minor allele) is relatively common. The most useful SNPs are thought to be those for which the minor allele has a frequency greater than 5%. These SNPs are of great interest because they may allow systematic, genome-wide tests of association between common genetic variants and common diseases, including heart disease, diabetes, autoimmunity disease, Alzheimer disease, and many others.",
+      "source_page": 75,
+      "source_pages": [
+        75
+      ],
+      "source_block_ids": [
+        "PopGen_chapter2:p017:b4"
+      ],
+      "source_bboxes": [
+        [
+          98.0,
+          643.0,
+          783.0,
+          980.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "688d8fbb0b39aac70ec6517d178a35bd00bc7c32399b67624df7b8a68969b9af"
+    },
+    {
+      "type": "discussion",
+      "content": "A pioneering study was based on comprehensive genotyping of more than a million SNPs among a sample of 269 individuals from four populations (The International HapMap Consortium 2005). This amount of data presents a challenging statistical problem. For example, if one million independent SNPs were each tested for HWE, then 50,000 SNPs would lead to rejection of the hypothesis at the P = 0.05 level purely due to chance. For the same reason, in disease-association tests, 50,000 SNPs would appear to be associated with each disease, for no reason other than chance variation in the samples. Furthermore, because of genetic linkage effects, nearby SNPs are not necessarily independent of one another. In such tests, the hypothesis being tested—called the null hypothesis and symbolized $ H_{0} $—is that there is no departure from HWE or no association between a SNP and a disease. The significance level of a test is the conditional probability that the null hypothesis is rejected when it is, in fact, true; or, in symbols, Pr Rejection | $ H_{0} $ is true. But to reject the hypothesis that a SNP has no effect is another way of saying that the SNP does has an effect. Such a spurious inference is known as a false positive.",
+      "source_page": 75,
+      "source_pages": [
+        75,
+        76
+      ],
+      "source_block_ids": [
+        "PopGen_chapter2:p017:b5",
+        "PopGen_chapter2:p018:b2"
+      ],
+      "source_bboxes": [
+        [
+          95.0,
+          981.0,
+          782.0,
+          1224.0
+        ],
+        [
+          257.0,
+          187.0,
+          939.0,
+          357.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "ac9f561b34336380e8459871bd37821f74a5cd99f4b20bb2153e1a337b179aff"
+    },
+    {
+      "type": "discussion",
+      "content": "One approach to the multiple-testing problem is to make the threshold value for significance more stringent (for example, require a larger chi-square value), so that the probability of any single false positive among all the SNPs tested equals 0.05. For example, if we carried out m independent tests with a cutoff P value of 0.05, then the expected number of false positives would be $ 0.05 \\times m $. This suggests that the appropriate cutoff should be adjusted to P = 0.05/m, because then the expected number of false positives is $ (0.05/m) \\times m = 0.05 $. This is the so-called Bonferroni correction, named after the Italian statistician Carlo Emilio Bonferroni (1892–1960). But a cutoff of P = 0.05/m magnifies the opposite problem. In making the null hypothesis harder to reject, only the SNPs with the largest effects are detected, and those with smaller effects escape notice along with those of no effect that are not rejected.",
+      "source_page": 76,
+      "source_pages": [
+        76
+      ],
+      "source_block_ids": [
+        "PopGen_chapter2:p018:b3"
+      ],
+      "source_bboxes": [
+        [
+          257.0,
+          358.0,
+          939.0,
+          647.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "11f84d3a29ad92ead1f0ddce18e0b4a9918a1f72c18c435a5831d498444cc2f2"
+    },
+    {
+      "type": "discussion",
+      "content": "Another important consideration in multiple tests is the extent to which a rejection caused by a statistically significant result implies that the null hypothesis is actually false. In association tests, the probability that the null hypothesis of no association is in fact true, when the data are statistically significant and therefore cause the null hypothesis to be rejected, is called the false discovery rate. This is quite distinct from the false positive rate, as can be seen by expressing the false discovery rate as the conditional probability $ \\Pr\\{H_0 \\text{ is true} \\mid \\text{Rejection}\\} $.",
+      "source_page": 76,
+      "source_pages": [
+        76
+      ],
+      "source_block_ids": [
+        "PopGen_chapter2:p018:b4"
+      ],
+      "source_bboxes": [
+        [
+          257.0,
+          647.0,
+          939.0,
+          841.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "5ff69b4070163856a71d36eb1d7a31710dcdee4eea1a927ab79e1b885bf106f2"
+    },
+    {
+      "type": "discussion",
+      "content": "The most effective cutoffs for multiple tests are those that strike a balance between the false positive rate $ [\\mathrm{Pr}(\\mathrm{Rejection} \\mid H_0 \\text{ is true})] $ and the false discovery rate $ [\\mathrm{Pr}(H_0 \\text{ is true} \\mid \\mathrm{Rejection})] $, because they balance finding true associations against discovering false ones. Further details are beyond the scope of this book, but can be found in Storey and Tibshirani (2003) and Verhoeven et al. (2005). Purely statistical approaches can go only so far, however. As stated in a paper by The International HapMap Consortium (2005): \"Multiple replications in large samples provide the most straightforward path to identifying robust and broadly relevant associations.\"",
+      "source_page": 76,
+      "source_pages": [
+        76
+      ],
+      "source_block_ids": [
+        "PopGen_chapter2:p018:b5"
+      ],
+      "source_bboxes": [
+        [
+          257.0,
+          839.0,
+          941.0,
+          1058.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "92fbf41e77f10198537b0fa657f06eaf9680e2799c941133cbcc3b168df7cc90"
+    }
+  ]
+}

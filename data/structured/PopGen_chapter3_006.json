@@ -1,0 +1,295 @@
+{
+  "id": "PopGen_chapter3_006",
+  "metadata": {
+    "chapter": "PopGen_chapter3",
+    "section": "3.3 THE DIFFUSION APPROXIMATION",
+    "subsections": [
+      "An Approach Looking Backward"
+    ],
+    "source_file": "tmp\\popgen\\paddle_output\\PopGen_chapter3_full\\main.tex",
+    "source_title": "Principles of Population Genetics, Fourth Edition",
+    "formula_references": [],
+    "table_references": [
+      "3.2"
+    ],
+    "section_level_1": "3.3 THE DIFFUSION APPROXIMATION",
+    "section_level_2": "An Approach Looking Backward",
+    "heading_path": [
+      "3.3 THE DIFFUSION APPROXIMATION",
+      "An Approach Looking Backward"
+    ],
+    "display_heading": "An Approach Looking Backward",
+    "table_reference_keys": [
+      "chapter3:3.2"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "To find another equation for $\\phi(p, x; t)$, we may also look backward in time to the beginning of the process and consider what may have happened in the very first increment of time $\\Delta t$. Since the subpopulations initially all begin with an allele frequency of $p$, in the first time increment $\\Delta t$ a particular subpopulation could change its state to a frequency of $p + \\Delta p$, or it could change its state to $p - \\Delta p$, or it could remain at $p$. These possibilities have relative probabilities $M(p) + V(p)/2$, $V(p)/2$, and $1 - M(p) - V(p)$, where again $M(p)$ measures the strength of any systematic force tending to increase the allele frequency and $V(p)$ measures the variance in allele frequency due to random genetic drift.",
+      "source_page": 124,
+      "source_pages": [
+        124
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p016:b3"
+      ],
+      "source_bboxes": [
+        [
+          237.0,
+          235.0,
+          916.0,
+          480.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "6d5c452fe56964022338cfa3e9d7d2ac0cbef49c5f38f6bc0cd14ef2bb746240"
+    },
+    {
+      "type": "discussion",
+      "content": "The bookkeeping is shown in [[SEE_TABLE:3.2]]. If $p$ changed state to $p + \\Delta p$ in the first time increment, then the probability of the subpopulation achieving state $x$ in the subsequent $t - \\Delta t$ time units is proportional to $\\phi(p + \\Delta p, x; t - \\Delta t)$. Similarly, going from state $p - \\Delta p$ to state $x$ in $t - \\Delta t$ time units has a probability proportional to $\\phi(p - \\Delta p, x; t - \\Delta t)$. Finally, going from state $p$ at time $\\Delta t$ to state $x$ at time $t$ has a probability proportional to $\\phi(p, x; t - \\Delta t)$. The relevant equation for $\\phi(p, x; t)$ is obtained by summing the products of columns 2 and 3 in [[SEE_TABLE:3.2]]. After some rearrangement we obtain $$ \\begin{aligned}&\\phi(p,x;t)-\\phi(p,x;t-\\Delta t)=\\\\ &M(p)\\Big[\\phi(p+\\Delta p,x;t-\\Delta t)-\\phi(p,x;t-\\Delta t)\\Big]\\\\ &+\\frac{V(p)}{2}\\Big\\{\\Big[\\phi(p+\\Delta p,x;t-\\Delta t)-\\phi(p,x;t-\\Delta t)\\Big]\\\\ &-\\Big[\\phi(p,x;t-\\Delta t)-\\phi(p-\\Delta p,x;t-\\Delta t)\\Big]\\Big\\}\\\\ \\end{aligned} $$ As before, the left hand side is equal to the change in $ \\phi $ ($ \\Delta\\phi $) for a given change in $ t $ ($ \\Delta t $). On the right-hand side, the first term is $ M(p) $ times the change in $ \\phi $ ($ M\\Delta\\phi $) for a given change in $ p $ ($ \\Delta p $), and the second term is $ V(p) $ times the change in the change in $ \\phi $ ($ V\\Delta\\Delta\\phi $) for a two-step change in $ p $ ($ \\Delta\\Delta p $). In these terms, the difference equation can be written as $$ \\frac{\\Delta\\phi(p,x;t)}{\\Delta t}=M(p)\\frac{\\Delta\\phi(p,x;t)}{\\Delta p}+\\frac{V(p)}{2}\\frac{\\Delta\\left(\\Delta\\phi(p,x;t)\\right)}{\\Delta(\\Delta p)} $$",
+      "source_page": 124,
+      "source_pages": [
+        124,
+        125
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p016:b4",
+        "PopGen_chapter3:p016:b5",
+        "PopGen_chapter3:p016:b6",
+        "PopGen_chapter3:p016:b7",
+        "PopGen_chapter3:p017:b3"
+      ],
+      "source_bboxes": [
+        [
+          238.0,
+          477.0,
+          918.0,
+          674.0
+        ],
+        [
+          393.0,
+          687.0,
+          763.0,
+          841.0
+        ],
+        [
+          241.0,
+          860.0,
+          920.0,
+          987.0
+        ],
+        [
+          370.0,
+          990.0,
+          794.0,
+          1049.0
+        ],
+        [
+          105.0,
+          251.0,
+          901.0,
+          441.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "1691a736caeda70ffbdb66b400eee781867afdaae3cfeb37dc3fce2f4ddcc539"
+    },
+    {
+      "type": "discussion",
+      "content": "Once again we will ignore some technical requirements and simply assert that, in the limit as $ \\Delta t \\to 0 $ and $ \\Delta p \\to 0 $, the difference equation converges to a partial differential equation called the Kolmogorov backward equation: $$ \\frac{\\partial\\phi(p,x;t)}{\\partial t}=M(p)\\frac{\\partial\\phi(p,x;t)}{\\partial p}+\\frac{V(p)}{2}\\frac{\\partial^{2}\\phi(p,x;t)}{\\partial p^{2}} $$",
+      "source_page": 124,
+      "source_pages": [
+        124
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p016:b8",
+        "PopGen_chapter3:p016:b9"
+      ],
+      "source_bboxes": [
+        [
+          242.0,
+          1054.0,
+          922.0,
+          1131.0
+        ],
+        [
+          381.0,
+          1134.0,
+          756.0,
+          1191.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "d0e327c3e50a2be78ce478370f78a5a37c3c5b3ed52810ce76b8f100069fd7cc"
+    },
+    {
+      "type": "discussion",
+      "content": "For answering questions of population genetic interest in random drift, the Kolmogorov backward equation (see Equation 3.5) is often more useful",
+      "source_page": 124,
+      "source_pages": [
+        124
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p016:b11"
+      ],
+      "source_bboxes": [
+        [
+          244.0,
+          1197.0,
+          923.0,
+          1251.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "69c8ca82884516f1247aacba86f6fb43ae87a419ddca500f03b97da701273213"
+    },
+    {
+      "type": "discussion",
+      "content": "[[SEE_TABLE:3.2]] than the forward equation (see Equation 3.4). The quantities of interest include the probability of ultimate fixation of an allele, the average time to fixation of alleles that are eventually fixed, and so forth. To give a sense of how the backward equation is used for these purposes, imagine the form of Equation 3.5 at a time so advanced that the distribution of allele frequencies $ \\phi(p, x; t) $ is no longer changing. Since random drift will continue to change the allele frequencies as long as any subpopulations are still polymorphic, the statement that $ \\phi(p, x; t) $ is no longer changing means that all subpopulations have become fixed for one allele or the other, which furthermore implies that the left-hand side of Equation 3.5 equals 0 and that the right-hand side no longer depends on either x (because no populations are still segregating) or t. To emphasize that we are now dealing with a function of a single variable, population geneticists often rewrite this form of Equation 3.5 as $$ 0=M(p)\\frac{d u(p)}{d p}+\\frac{V(p)}{2}\\frac{d^{2}u(p)}{d p^{2}} $$",
+      "source_page": 125,
+      "source_pages": [
+        125
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p017:b3",
+        "PopGen_chapter3:p017:b4",
+        "PopGen_chapter3:p017:b5"
+      ],
+      "source_bboxes": [
+        [
+          105.0,
+          251.0,
+          901.0,
+          441.0
+        ],
+        [
+          102.0,
+          542.0,
+          786.0,
+          858.0
+        ],
+        [
+          333.0,
+          864.0,
+          579.0,
+          920.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "544bdb9b7603323a826814d1b23cae958e103d540f91ab762593f9db0a62251b"
+    },
+    {
+      "type": "discussion",
+      "content": "In this equation, the symbol $d$ is used instead of $\\partial$ to emphasize that $u(p)$ is a function of a single variable. In words, $u(p)$ is the probability of ultimate fixation of the allele $A$, given an initial frequency of $p$. Alternatively, $u(p)$ may be interpreted as the proportion of all subpopulations in which $A$ eventually becomes fixed. In the case of pure random drift with no systematic force, $M(p) = 0$. Equation 3.6 then becomes $$ 0=\\frac{V(p)}{2}\\frac{d^{2}u(p)}{d p^{2}} $$",
+      "source_page": 125,
+      "source_pages": [
+        125
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p017:b7",
+        "PopGen_chapter3:p017:b8"
+      ],
+      "source_bboxes": [
+        [
+          98.0,
+          926.0,
+          781.0,
+          1073.0
+        ],
+        [
+          373.0,
+          1083.0,
+          508.0,
+          1140.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "47aeff1451c42f618bb9dde2ceb4871f317b9300b2a53a33e710a37fb024b890"
+    },
+    {
+      "type": "discussion",
+      "content": "This equation defines a family of curves, but the one of interest in population genetics has the property $ u(0) = 0 $, which says that an allele that does not exist cannot be fixed, and the property $ u(1) = 1 $, which says that an allele that is already fixed is eventually fixed.",
+      "source_page": 125,
+      "source_pages": [
+        125
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p017:b10"
+      ],
+      "source_bboxes": [
+        [
+          96.0,
+          1143.0,
+          779.0,
+          1243.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "9030b4d291667f2e21a50567f57f2b7e0e71bdce1ffbd57b081d5485c592a20f"
+    },
+    {
+      "type": "discussion",
+      "content": "PROBLEM 3.5 For an initial frequency of the A allele of $p$ ($0 < p < 1$), show that $u(p) = p$ is a solution of the differential equation (see Equation 3.7).",
+      "source_page": 126,
+      "source_pages": [
+        126
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p018:b2"
+      ],
+      "source_bboxes": [
+        [
+          114.0,
+          204.0,
+          506.0,
+          254.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "a7b19cb9a1ff80600938a21b0eeccca51bb8a2a4d95b7b8c31756bc2d76cf909"
+    },
+    {
+      "type": "discussion",
+      "content": "ANSWER What needs to be shown is that Equation 3.7 is satisfied when $ u(p) = p $. Although $ V(p) = p(1 - p)/2N $, this is not relevant to the solution. The solution follows from the fact that, when $ u(p) = p $, then $ du(p)/dp = 1 $ and $ d^2u(p)/dp^2 = 0 $. Hence $ u(p) = p $ is a solution of Equation 3.7 so long as $ V(p) \\neq 0 $. The biological meaning of $ u(p) = p $ is that, because of random genetic drift, an allele present in a population at frequency $ p $ will ultimately be fixed with probability $ p $ and lost with probability $ 1 - p $, provided it has no effects on the organisms' ability to survive and reproduce (such alleles are often called selectively neutral alleles).",
+      "source_page": 126,
+      "source_pages": [
+        126
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p018:b4"
+      ],
+      "source_bboxes": [
+        [
+          113.0,
+          281.0,
+          505.0,
+          466.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "514ecf400154e066e00b6ecbb705f1c75ac2cb709d7e759f54d8a0a3366ea795"
+    },
+    {
+      "type": "table",
+      "content": "[[TABLE:3.2]]",
+      "source_page": 125,
+      "source_pages": [
+        125
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p017:b3"
+      ],
+      "source_bboxes": [
+        [
+          105.0,
+          251.0,
+          901.0,
+          441.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "240b3d90be5eb4d87cd19165d78f981841c96d1b68bfb426667e11a6f4e75323"
+    }
+  ]
+}

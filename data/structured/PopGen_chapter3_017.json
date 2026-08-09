@@ -1,0 +1,185 @@
+{
+  "id": "PopGen_chapter3_017",
+  "metadata": {
+    "chapter": "PopGen_chapter3",
+    "section": "3.6 GENE TREES AND COALESCENCE",
+    "subsections": [
+      "Coalescent Models with Mutation"
+    ],
+    "source_file": "tmp\\popgen\\paddle_output\\PopGen_chapter3_full\\main.tex",
+    "source_title": "Principles of Population Genetics, Fourth Edition",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "3.6 GENE TREES AND COALESCENCE",
+    "section_level_2": "Coalescent Models with Mutation",
+    "heading_path": [
+      "3.6 GENE TREES AND COALESCENCE",
+      "Coalescent Models with Mutation"
+    ],
+    "display_heading": "Coalescent Models with Mutation"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "The principles embodied in Equation 3.35 allows us to generate simulated gene genealogies whose branch lengths correspond to the assumptions of the Wright-Fisher model. It is important to emphasize that we do not usually know the true ancestral relationships among the alleles. The only cases in which the true ancestries are known come from experimental evolution studies carried out in the laboratory with viruses or microbes in which a sample of genomes is isolated and preserved by freezing at intervals during the process. In other contexts when we want to make inferences about a single sample, we simulate a large number of genealogies consistent with the composition of the sample and then make inferences based on the relative likelihoods of these genealogies: To put the method more formally, what we are interested in is maximizing the likelihood L of observing the actual data D (typically DNA sequences) across all possible genealogies, given some model of mutation and population processes (Rosenberg and Nordborg 2002; Felsenstein 2004). Formally, we can write $$ L=\\sum_{G}\\Pr\\left\\{D\\mid G,\\mu\\right\\}\\Pr\\left\\{G,\\alpha\\right\\} $$ where G represents any particular genealogy, $ \\mu $ is the set of parameters that define the mutation model, and $ \\alpha $ is the set of parameters that characterize the population process (i.e., population size, growth rate, number of demes, migration rate, and so forth).",
+      "source_page": 150,
+      "source_pages": [
+        150
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p042:b5",
+        "PopGen_chapter3:p042:b6",
+        "PopGen_chapter3:p042:b7",
+        "PopGen_chapter3:p042:b9"
+      ],
+      "source_bboxes": [
+        [
+          227.0,
+          503.0,
+          912.0,
+          770.0
+        ],
+        [
+          228.0,
+          768.0,
+          913.0,
+          891.0
+        ],
+        [
+          444.0,
+          896.0,
+          696.0,
+          942.0
+        ],
+        [
+          228.0,
+          960.0,
+          913.0,
+          1058.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "7800686d76bfffc4576d55cf386baee095ce8852d87283e865dd4365bd06878a"
+    },
+    {
+      "type": "discussion",
+      "content": "Equation 3.39 is usually intractable analytically, and therefore simulation of many thousands of random genealogies is carried out instead. In order to simulate the genealogies and sequences of alleles in a sample, we need to specify some type of mutation model. One widely used model is known as the infinite-sites model, in which each allele is considered as a sequence of nucleotides with mutation altering any site in the sequence. If the mutation rate is sufficiently low, then most sites will be monomorphic in the sample, and all polymorphic sites will be segregating for just two nucleotides. Much of the available data on allelic variation in DNA sequence seems consistent with this view: Few nucleotide sites are segregating for more than two nucleotides. If the DNA sequence is sufficiently long and the frequency of polymorphic sites low, then most of the time new mutations will occur at sites that were previously monomorphic. The infinite-sites model is based on these assumptions. It was developed originally by Kimura (1969, 1971), who considered nucleotides as unlinked, and by Watterson (1975), who took account of the nearly complete linkage among sites.",
+      "source_page": 150,
+      "source_pages": [
+        150,
+        151
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p042:b10",
+        "PopGen_chapter3:p043:b2"
+      ],
+      "source_bboxes": [
+        [
+          228.0,
+          1056.0,
+          916.0,
+          1254.0
+        ],
+        [
+          110.0,
+          185.0,
+          798.0,
+          377.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "9839b8f884f060f0a4334a47e8d32d987205b65ac8fd98489c636e9f50b95587"
+    },
+    {
+      "type": "discussion",
+      "content": "In order to simulate allele sequence data representing samples drawn from a population obeying the infinite-sites model, Hudson (1990, 1993) showed that one can proceed as follows: 1. Estimate the value of $ \\theta = 4N\\mu $ for the gene or region of interest, where N is the effective population size and $ \\mu $ is the per-site mutation rate; this estimate can be based on the number of segregating sites in the sampled sequences or on the average number of site mismatches when the sequences are compared in all possible pairs. (These methods are discussed in Chapter 4.)",
+      "source_page": 151,
+      "source_pages": [
+        151
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p043:b3",
+        "PopGen_chapter3:p043:b4"
+      ],
+      "source_bboxes": [
+        [
+          108.0,
+          377.0,
+          796.0,
+          450.0
+        ],
+        [
+          109.0,
+          460.0,
+          793.0,
+          603.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "5f878d5588766e01fb35edd486104d3767681606985647674f31d977c109f377"
+    },
+    {
+      "type": "discussion",
+      "content": "2. For the observed sample of k alleles, draw random numbers with appropriate exponential distributions to construct a gene genealogy such that times of coalescence follow Equation 3.35.",
+      "source_page": 151,
+      "source_pages": [
+        151
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p043:b5"
+      ],
+      "source_bboxes": [
+        [
+          115.0,
+          604.0,
+          791.0,
+          676.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "5f0f9d1535dea368e764938611d79a045461de77083b4895f554e97c0faf2d59"
+    },
+    {
+      "type": "discussion",
+      "content": "3. Randomly scatter mutations with a Poisson distribution on each branch of the tree, such that the mean number of mutations on each branch is given by $ \\mu t $, where t is the branch length in units of generations. (For example, the first interval from the root in Figure 3.15 has an expected length of 2N generations; hence each branch from the root has an expected number of mutations of $ 2N\\mu = \\theta/2 $.)",
+      "source_page": 151,
+      "source_pages": [
+        151
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p043:b6"
+      ],
+      "source_bboxes": [
+        [
+          114.0,
+          676.0,
+          790.0,
+          820.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "9b9fa27dcddef29e86173b781807b75281ac5991600183330e98246fe6f41024"
+    },
+    {
+      "type": "discussion",
+      "content": "4. Repeat steps 2 and 3 some 10,000 or more times, and estimate the likelihood of observing the actual data across all genealogies according to Equation 3.39.",
+      "source_page": 151,
+      "source_pages": [
+        151
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p043:b7"
+      ],
+      "source_bboxes": [
+        [
+          113.0,
+          820.0,
+          789.0,
+          894.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "2ac79ef23842b9c58ed765cede6a818ea15c36b0fc6e336571df385a91c6f13d"
+    }
+  ]
+}

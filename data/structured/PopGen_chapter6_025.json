@@ -1,0 +1,187 @@
+{
+  "id": "PopGen_chapter6_025",
+  "metadata": {
+    "chapter": "PopGen_chapter6",
+    "section": "6.5 MIGRATION",
+    "subsections": [
+      "Coalescence-Based Estimates of Migration"
+    ],
+    "source_file": "tmp\\popgen\\paddle_output\\PopGen_chapter6_full\\main.tex",
+    "source_title": "Principles of Population Genetics, Fourth Edition",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "6.5 MIGRATION",
+    "section_level_2": "Coalescence-Based Estimates of Migration",
+    "heading_path": [
+      "6.5 MIGRATION",
+      "Coalescence-Based Estimates of Migration"
+    ],
+    "display_heading": "Coalescence-Based Estimates of Migration"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "An island model of migration of the sort depicted in Figure 6.18 assumes that the subpopulations all have the same population size and that migration between the subpopulations is symmetric. Modern methods based on the coalescence allow these assumptions to be relaxed. For example, Beerli and Felsenstein (1999, 2001) have developed methods that can analyze data from an arbitrary number of subpopulations and estimate the effective population size of each subpopulation and the possibly very unequal rates of migration between any pair of populations. This approach confronts the complexities of migration in nature, where migrants often come primarily from nearby subpopulations. To the extent that neighboring subpopulations have similar allele frequencies, the effects of migration are smaller, and sometimes much smaller, than predicted by the island model. Migration rates are asymmetric because subpopulations may be strung out along one dimension, such as a river bank, or distributed more or less regularly in two dimensions, or there may be one large population with an internal genetic structure caused by the tendency for mating to take place between organisms born in the same region.",
+      "source_page": 317,
+      "source_pages": [
+        317,
+        318
+      ],
+      "source_block_ids": [
+        "PopGen_chapter6:p047:b8",
+        "PopGen_chapter6:p048:b2"
+      ],
+      "source_bboxes": [
+        [
+          89.0,
+          1193.0,
+          771.0,
+          1250.0
+        ],
+        [
+          245.0,
+          194.0,
+          932.0,
+          559.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "712d81905102f68cc7d1dadd14154f5fd7d6f7e4741b30f3e87d93ae7c25dc2d"
+    },
+    {
+      "type": "discussion",
+      "content": "The approach of Beerli and Felsenstein (1999, 2001) yields maximum likelihood estimates of subpopulation sizes and migration rates using coalescence theory (see Chapter 3). In this context, as the lineages of alleles are traced back in time, a coalescent event can consist either of an event in which the ancestral lineages of two alleles within the same subpopulation merge into a common ancestral allele, or it can consist of a migration event in which the lineage of an allele switches from one subpopulation to another. The principle is illustrated in Figure 6.23, in which the merging events are depicted as solid lines and the migration events (in this case only one) are denoted by dashed lines.",
+      "source_page": 318,
+      "source_pages": [
+        318
+      ],
+      "source_block_ids": [
+        "PopGen_chapter6:p048:b3"
+      ],
+      "source_bboxes": [
+        [
+          248.0,
+          556.0,
+          933.0,
+          799.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "dae66d222e93f02358fb5270b566db4d538973ed2c336a8fc01c4387f82f6afe"
+    },
+    {
+      "type": "discussion",
+      "content": "In this formulation, we consider three kinds of objects: $D$ is a set consisting of the data, $P$ is a set of parameters in the model (in this case, effective population numbers and migration rates), and $G$ is a genealogy of the ancestral history of alleles in the sample. The objective of the analysis is to maximize the likelihood of the data parameters $P$ given the data $D$, which is represented as $L(P|D)$, through an analysis of all possible genealogies $G$. Rendered as an equation, the method seeks to find the maximum of $$ \\frac{L(P\\mid D)}{L(P_{0}\\mid D)}\\cong\\frac{1}{g}\\sum_{i=1}^{g}\\frac{\\mathrm{Prob}(G_{i}\\mid P)}{\\mathrm{Prob}(G_{i}\\mid P_{0})} $$ where the summation is across all possible genealogies, and $ P_{\\theta} $ is the set of parameters used to generate the genealogies.",
+      "source_page": 318,
+      "source_pages": [
+        318
+      ],
+      "source_block_ids": [
+        "PopGen_chapter6:p048:b4",
+        "PopGen_chapter6:p048:b5",
+        "PopGen_chapter6:p048:b7"
+      ],
+      "source_bboxes": [
+        [
+          248.0,
+          798.0,
+          934.0,
+          968.0
+        ],
+        [
+          476.0,
+          972.0,
+          714.0,
+          1031.0
+        ],
+        [
+          250.0,
+          1037.0,
+          934.0,
+          1089.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "c8edd72905addcf094523b042a44eafc01252f6fb8850d9b020d07fa53f0ca7f"
+    },
+    {
+      "type": "discussion",
+      "content": "A method for generating genealogies with random topologies and branch lengths was discussed in Chapter 3. There are infinitely many such topologies, so inferences about the values of the parameters must be based on a sample of genealogies. Even so, the space of possible genealogies is so large that purely random genealogies are likely to be far from the region in which Equation 6.24 is maximized. What is needed is a method for systematically exploring the space of genealogies to find the region in which the likelihood ratio in Equation 6.24 is large, and then concentrating on the genealogies in this region. The most widely used method of this type is called Metropolis-Hastings Markov chain Monte Carlo (Gilks et al. 1996). Implementing, checking, and debugging programs that implement such algorithms is an art in itself, and fortunately most authors make their programs freely available through the Internet. The Beerli and Felsenstein (1999, 2001) program to maximize Equation 6.24 for multiple populations with asymmetric migration is called MIGRATE (see also Beerli 2006).",
+      "source_page": 318,
+      "source_pages": [
+        318,
+        319
+      ],
+      "source_block_ids": [
+        "PopGen_chapter6:p048:b8",
+        "PopGen_chapter6:p049:b4"
+      ],
+      "source_bboxes": [
+        [
+          250.0,
+          1086.0,
+          937.0,
+          1260.0
+        ],
+        [
+          90.0,
+          737.0,
+          774.0,
+          935.0
+        ]
+      ],
+      "provenance_score": 0.955056,
+      "content_sha256": "a9a1499b301e3b2366db9720d23267b16ffc29e2a5e490cf38045d85f8fdab33"
+    },
+    {
+      "type": "discussion",
+      "content": "Results from an analysis of a highly variable region of human mitochondrial DNA in a sample of 225 individuals in the Nile valley are shown in Figure 6.24. The groups represented are from Egypt, ancient Nubia, and Sudan, and the number of individuals in each group is shown in parentheses. The authors caution that the groups are themselves assemblages of subpopulations, and that the effective population numbers and migration rates probably vary in time (Beerli and Felsenstein 2001). Because mitochondrial DNA is maternally transmitted, the estimates of effective population size and migration rate are those pertaining only to females. Figure 6.24 shows the estimated number of female immigrants per generation for each of the subpopulations. Gene flow among the groups is on the order of a few females per generation, except for migration into Nubia, which is substantially greater.",
+      "source_page": 319,
+      "source_pages": [
+        319
+      ],
+      "source_block_ids": [
+        "PopGen_chapter6:p049:b5"
+      ],
+      "source_bboxes": [
+        [
+          83.0,
+          929.0,
+          771.0,
+          1251.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "a56ed886d60daba5c9c7b3d7431cc8323ccabca06622895d6ccd8be515ea6a5c"
+    },
+    {
+      "type": "discussion",
+      "content": "Gene flow can also take place between closely related species prior to the time that reproductive isolation becomes complete. Migration resulting in genes flowing from one species into a related species is known as introgression. The principles of coalescence can be applied to this situation, too, using the model diagrammed in Figure 6.25. The model is called the IM model, where IM stands for isolation with migration (Nielsen and Wakeley 2001; Hey and Nielsen 2004). In Figure 6.25, the shaded area represents populations present at various times in the ancestry of two closely related species and their common ancestor. The time scale runs from the earliest time at the top to the present time at the bottom. Six parameters are of interest: the divergence time (t), represented by the horizontal dashed line; three values of $ \\theta = 4N\\mu $, where $ \\theta $ and N are subscripted for the ancestral species A and descendant species 1 and 2; and two values of m, subscripted for introgression from species 1 into species 2 ($ m_{12} $) or species 2 into species 1 ($ m_{21} $). Once again, the approach is to maximize the likelihood ratio in Equation 6.24, where P is a set of the six parameter values, D is the set of data, and G is a genealogy based on some particular set of parameters $ P_{0} $. Application of Metropolis–Hastings Markov chain Monte Carlo to this situation is described by Hey and Nielsen (2004). In their analysis they also explain how the parameters need to be scaled in some consistent manner using the mutation rate $ \\mu $. To illustrate the method, they analyzed data from many loci in the closely related species Drosophila pseudoobscura and D. persimilis. They estimate the divergence time at $ \\sim600{,}000 $ years, very close to the conventional estimate of $ \\sim500{,}000 $ years, and find evidence for low levels of gene flow between the species (average Nm in the range 0.06–0.19), with great variation among loci and the direction of the introgression.",
+      "source_page": 320,
+      "source_pages": [
+        320,
+        321
+      ],
+      "source_block_ids": [
+        "PopGen_chapter6:p050:b4",
+        "PopGen_chapter6:p051:b4"
+      ],
+      "source_bboxes": [
+        [
+          241.0,
+          915.0,
+          930.0,
+          1257.0
+        ],
+        [
+          104.0,
+          781.0,
+          792.0,
+          1075.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "31570401339a86644aa970257ddf8d0e0de866afa7c07157e78159f74714ee59"
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "id": "PopGen_chapter4_005",
+  "metadata": {
+    "chapter": "PopGen_chapter4",
+    "section": "MUTATION AND THE NEUTRAL THEORY: Introduction",
+    "subsections": [
+      "4.2 MUTATION AND RANDOM GENETIC DRIFT"
+    ],
+    "source_file": "tmp\\popgen\\paddle_output\\PopGen_chapter4_full\\main.tex",
+    "source_title": "Principles of Population Genetics, Fourth Edition",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "MUTATION AND THE NEUTRAL THEORY: Introduction",
+    "section_level_2": "4.2 MUTATION AND RANDOM GENETIC DRIFT",
+    "heading_path": [
+      "MUTATION AND THE NEUTRAL THEORY: Introduction",
+      "4.2 MUTATION AND RANDOM GENETIC DRIFT"
+    ],
+    "display_heading": "4.2 MUTATION AND RANDOM GENETIC DRIFT"
+  },
+  "blocks": [
+    {
+      "type": "proposition",
+      "content": "The assumption of a virtually infinite population size is often unrealistic. An improved model makes the population size finite, in which case the change in the frequency of a mutant allele depends not only on the mutation pressure but also on random sampling from generation to generation. The random sampling results in chance changes in allele frequency, a process called random genetic drift discussed in some detail in Chapter 3. To understand the effects of random genetic drift when combined with mutation, consider the diagram in Figure 4.5. The squares represent the 2N alleles in the adult population in generation t. Each allele is assigned a unique label— $ \\alpha_1 $, $ \\alpha_2 $, $ \\alpha_3 $,..., $ \\alpha_{2N} $—to temporarily mask its identity as either A or a. The circles represent the essentially infinite pool of gametes in generation t. In the gamete pool, each labeled allele has a frequency of $ 1/(2N) $. The squares at the bottom represent two diploid genotypes in generation $ t + 1 $ formed by random sampling from the pool of gametes. By chance, the two alleles forming a genotype may be replicas of the same allele in the previous generation, for example, $ \\alpha_i\\alpha_i $. Alternatively, the two alleles forming a genotype may come from different alleles in the previous generation, for example, $ \\alpha_i\\alpha_i $.",
+      "source_page": 172,
+      "source_pages": [
+        172
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p008:b5"
+      ],
+      "source_bboxes": [
+        [
+          235.0,
+          468.0,
+          919.0,
+          879.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "4f15fa3810b38360db6762c629932eb254d0205a261397d1f5911474338d139b"
+    },
+    {
+      "type": "discussion",
+      "content": "The random sampling from the gamete pool means that some alleles may be overrepresented in generation $ t + 1 $, relative to their frequency in generation $ t $, and some alleles may be underrepresented. Indeed, any particular allele has a good chance of being unrepresented in generation $ t + 1 $, and hence the lineage of that allele is terminated. To be precise, in a population of constant size, each allele in generation $ t $ has a chance of approximately $ e^{-1} = 0.368 $ of not being represented in generation $ t + 1 $. To understand why, consider the allele designated $ \\alpha_1 $. The frequency of $ \\alpha_1 $ in the gamete pool is $ 1/(2N) $, and the frequency of all other alleles together is therefore $ 1 - 1/(2N) $. Because the genotypes in generation $ t + 1 $ are formed by the random selection of 2N alleles from the pool of gametes, the distribution of the number of $ \\alpha_1 $ and non- $ \\alpha_1 $ alleles present in generation $ t + 1 $ is given by successive terms in the binomial distribution: $$ \\left[\\frac{1}{2N}\\alpha_{1}+\\left(1-\\frac{1}{2N}\\right)\\alpha\\right]^{2N} $$ in which $ \\alpha $ represents the collection of all alleles other than $ \\alpha_{1} $. Hence, the probability that $ \\alpha_{1} $ is not represented in generation $ t+1 $ is given by $$ \\left(1-\\frac{1}{2N}\\right)^{2N}\\approx e^{-1}=0.368. $$",
+      "source_page": 172,
+      "source_pages": [
+        172,
+        173
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p008:b6",
+        "PopGen_chapter4:p008:b7",
+        "PopGen_chapter4:p009:b4"
+      ],
+      "source_bboxes": [
+        [
+          234.0,
+          879.0,
+          920.0,
+          1190.0
+        ],
+        [
+          467.0,
+          1193.0,
+          686.0,
+          1256.0
+        ],
+        [
+          105.0,
+          994.0,
+          792.0,
+          1046.0
+        ]
+      ],
+      "provenance_score": 0.967975,
+      "content_sha256": "65bf00a733e0afffd6d63a99e82153687eb4ba774603b42f00389bd9d640e806"
+    },
+    {
+      "type": "discussion",
+      "content": "The approximation is very good even when N is quite small. For example, when N = 10, the left-hand side of Equation 4.7 equals 0.358, and, when N = 20, the left-hand side equals 0.363.",
+      "source_page": 173,
+      "source_pages": [
+        173
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p009:b7"
+      ],
+      "source_bboxes": [
+        [
+          104.0,
+          1115.0,
+          789.0,
+          1188.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "1acd8eb29a825fc1ce8748d7a17cce74aa977b5e2a6e77aeeff9867c58082f05"
+    },
+    {
+      "type": "discussion",
+      "content": "The important implication of Equation 4.7 is that, owing to random genetic drift, the ancestral lineage of each allele faces a substantial risk of extinction in each generation. As time goes on, the lineages progressively disappear, one or a few at a time. Eventually, a time is reached at which all lineages except one have become extinct. At that time, every allele in the population is identical by descent with a particular allele present in an ancestral population.",
+      "source_page": 173,
+      "source_pages": [
+        173,
+        174
+      ],
+      "source_block_ids": [
+        "PopGen_chapter4:p009:b8",
+        "PopGen_chapter4:p010:b2"
+      ],
+      "source_bboxes": [
+        [
+          104.0,
+          1189.0,
+          792.0,
+          1238.0
+        ],
+        [
+          237.0,
+          180.0,
+          919.0,
+          304.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "f0e81e642813954348bedbb728f60ab267d3178b7cef0207a3ae9ca89601ac10"
+    }
+  ]
+}

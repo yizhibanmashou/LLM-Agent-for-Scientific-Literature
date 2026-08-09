@@ -1,0 +1,263 @@
+{
+  "id": "PopGen_chapter3_003",
+  "metadata": {
+    "chapter": "PopGen_chapter3",
+    "section": "RANDOM GENETIC DRIFT: Introduction",
+    "subsections": [
+      "3.2 THE WRIGHT-FISHER MODEL OF RANDOM GENETIC DRIFT"
+    ],
+    "source_file": "tmp\\popgen\\paddle_output\\PopGen_chapter3_full\\main.tex",
+    "source_title": "Principles of Population Genetics, Fourth Edition",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "RANDOM GENETIC DRIFT: Introduction",
+    "section_level_2": "3.2 THE WRIGHT-FISHER MODEL OF RANDOM GENETIC DRIFT",
+    "heading_path": [
+      "RANDOM GENETIC DRIFT: Introduction",
+      "3.2 THE WRIGHT-FISHER MODEL OF RANDOM GENETIC DRIFT"
+    ],
+    "display_heading": "3.2 THE WRIGHT-FISHER MODEL OF RANDOM GENETIC DRIFT"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "The model of random genetic drift with binomial sampling described in Equation 3.1 is known as the Wright-Fisher model because Fisher (1930) and Wright (1931) derived the expected distribution of allele frequencies among subpopulations. Although neither author formulated the problem in the manner used here, our approach makes the problem much simpler and gives the same results. If a population contains 2N alleles among which two alleles A and a may be present, then the state of the population can be described by the number of A alleles in the population. The possible states are then 0, 1, 2,... 2N. The states 0 and 2N are special in that these are fixation states, and once the population get into either of these states, it cannot leave unless there is a new mutation (and for the moment we exclude this possibility). The states 0 and 2N are called absorbing states. From any nonfixed allele frequency, it is possible for the population to drift to any other allele frequency. However, the population is more likely to remain close to its present state than to take a large jump. To use an example from Figure 3.4, if 2N = 32, then the chance of drifting from 30 copies of gene A to 29 copies in one generation is 0.186, whereas the chance of drifting to 27 copies is 0.033. The probability of the population drifting from a state having i copies to j copies of allele A is known as the transition probability. The transition probability for the Wright-Fisher model is obtained directly from the binomial distribution (see Equation 3.1). In particular, if a population has i copies of allele A and 2N - i copies of allele a, then the transition probability, $ T_{ij} $, of going from i copies of A to j copies of A in one generation of random genetic drift is given by $$ T_{ij}=\\binom{2N}{j}\\left(\\frac{i}{2N}\\right)^{j}\\left(\\frac{2N-i}{2N}\\right)^{2N-j}=\\frac{(2N)!}{j!(2N-j)!}p^{j}q^{2N-j} $$ where $p = i/2N$ is the initial allele frequency of $A$ and $q = (2N - i)/2N$ is the initial allele frequency of $a$.",
+      "source_page": 116,
+      "source_pages": [
+        116
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p008:b3",
+        "PopGen_chapter3:p008:b4",
+        "PopGen_chapter3:p008:b6"
+      ],
+      "source_bboxes": [
+        [
+          223.0,
+          256.0,
+          908.0,
+          817.0
+        ],
+        [
+          305.0,
+          828.0,
+          756.0,
+          889.0
+        ],
+        [
+          225.0,
+          907.0,
+          909.0,
+          957.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "0cfec4bcb34a00248e756ae10396114657ec5f5e36f0e12bdf97df437c17e9ba"
+    },
+    {
+      "type": "discussion",
+      "content": "The transition probabilities can be put in a square matrix T, with elements $ T_{ij} $ giving the transition probability from state i to state j for i, $ j = 0, 1, 2, \\ldots, 2N $. The matrix T contains everything that is needed to predict the expected distribution of populations like those in Figure 3.4 over a series of generations. This type of model, expressed in terms of discrete states with fixed probabilities of going from one state to another, is known as a Markov chain, and it has some very elegant mathematical properties. Iterations of the Wright-Fisher model give the expected outcome of a pure drift process (Figure 3.5). In a few minutes, we will use the Wright-Fisher model to show an important result regarding fixation probabilities. PROBLEM 3.2 Consider a population of four diploid individuals. Calculate the probability that a population with four copies of allele A (allele frequency $ p = \\frac{1}{2} $) drifts in one generation to having three copies. What is the probability that the population will have four copies of A? Five copies? Now consider a population of the same size, but initially with two copies of A. What is its probability of drifting to one, two, or three copies?",
+      "source_page": 116,
+      "source_pages": [
+        116,
+        117
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p008:b7",
+        "PopGen_chapter3:p009:b4"
+      ],
+      "source_bboxes": [
+        [
+          227.0,
+          956.0,
+          911.0,
+          1200.0
+        ],
+        [
+          93.0,
+          1056.0,
+          483.0,
+          1172.0
+        ]
+      ],
+      "provenance_score": 0.696429,
+      "content_sha256": "d45fa8694bc5fb0e42693e70a787c30f3a130eb54b4a6ab32bfaef6845e7fb10"
+    },
+    {
+      "type": "discussion",
+      "content": "ANSWER Applying Equation 3.2, we get $ T_{43} = [8!/(5!3!)](\\frac{1}{2})^8 = 7/32 = 0.219 $. $ T_{44} = [8!/(4!4!)](\\frac{1}{2})^8 = 70/256 = 0.273 $. $ T_{45} = 0.219 = T_{43} $. (Note that the binomial distribution is symmetric when $ p = \\frac{1}{2} $ so there is equal probability for samples that are symmetrically divergent from $ p = \\frac{1}{2} $.) In the case when the initial frequency is $ \\frac{1}{8} $ we get $ T_{21} = [8!/1!7!](\\frac{1}{4})(\\frac{3}{4})^7 = 0.267 $, $ T_{22} = [8!/(2!6!)](\\frac{1}{4})^2(\\frac{3}{4})^6 = 0.311 $, and $ T_{23} = [8!/(3!5!)](\\frac{1}{4})^3(\\frac{3}{4})^5 = 0.208 $.",
+      "source_page": 118,
+      "source_pages": [
+        118
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p010:b2"
+      ],
+      "source_bboxes": [
+        [
+          109.0,
+          199.0,
+          498.0,
+          315.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "2afaa1cd48d6140331e086abb311467e97e24831cb8ffa7d11685812778ab056"
+    },
+    {
+      "type": "discussion",
+      "content": "PROBLEM 3.3 An alternative formulation of random genetic drift is due to Moran (1958). This model has considerable intuitive appeal, and it also permits explicit expressions to be derived for various quantities of evolutionary interest (Ewens 2004). The Moran model strictly applies only to haploid populations, but to make it comparable to the Wright-Fisher model we will suppose a population of 2N haploid individuals. In each generation, the drift process begins by sampling two individuals at random. The sampling is carried out \"with replacement,\" so the same individual could be chosen twice. If the two sampled individuals are different, pick one of them at random to produce a single offspring, and return the parent and the offspring to the population; discard the other individual. If the two sampled individuals are the same, then return only the offspring to the population. In the Moran model, if a population of 2N haploid individuals contains i of type A and 2N - i of type a, then the only nonzero transition probabilities are $ T_{ij} $ with $ j = i - 1 $, $ j = i $, or $ j = i + 1 $. These transition probabilities are given by $$ T_{ii}=\\frac{i^{2}+(2N-i)^{2}}{(2N)^{2}}=p^{2}+q^{2} $$ $$ T_{ij}=\\frac{i(2N-i)}{(2N)^{2}}=pq\\ for j=i+1or j=i-1 $$",
+      "source_page": 118,
+      "source_pages": [
+        118
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p010:b4",
+        "PopGen_chapter3:p010:b5",
+        "PopGen_chapter3:p010:b6",
+        "PopGen_chapter3:p010:b8"
+      ],
+      "source_bboxes": [
+        [
+          110.0,
+          381.0,
+          502.0,
+          786.0
+        ],
+        [
+          521.0,
+          380.0,
+          912.0,
+          559.0
+        ],
+        [
+          525.0,
+          570.0,
+          766.0,
+          629.0
+        ],
+        [
+          526.0,
+          635.0,
+          873.0,
+          690.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "b8f1867eb0fc58ec8670ea87e660568a9ca582e45b3901244c99c55f26686f87"
+    },
+    {
+      "type": "discussion",
+      "content": "Calculate the transition probabilities in the Moran model for the examples in Problem 3.2.",
+      "source_page": 118,
+      "source_pages": [
+        118
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p010:b9"
+      ],
+      "source_bboxes": [
+        [
+          523.0,
+          697.0,
+          913.0,
+          767.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "348aff683ab196db85fb797f1172eb0f98d3658f4e5991129d3e02cccc688ab0"
+    },
+    {
+      "type": "discussion",
+      "content": "ANSWER Applying Equation 3.3 to the case $ p = \\frac{4}{8} $, we obtain $ T_{34} = 0.25 $, $ T_{44} = 0.50 $, $ T_{45} = 0.25 $, and for the case $ p = \\frac{2}{8} $ we obtain $ T_{34} = 0.1875 $, $ T_{44} = 0.6250 $, $ T_{45} = 0.1875 $. Unlike the Wright-Fisher model, the transition probabilities, for either keeping the same number of alleles or else for increasing or decreasing by exactly 1, sum to 1.",
+      "source_page": 118,
+      "source_pages": [
+        118
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p010:b10"
+      ],
+      "source_bboxes": [
+        [
+          112.0,
+          810.0,
+          501.0,
+          908.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "e50df1f17e99570c245d3b65f956db6e234603d251c6fcb97a8c208659402b94"
+    },
+    {
+      "type": "discussion",
+      "content": "Both the Wright-Fisher model and the Moran model incorporate an important feature of random genetic drift. It is that the magnitude of random change in allele frequency is greater when the allele frequency is $ \\frac{1}{2} $ than when the allele frequency is more skewed. The changes are greater because the variance in the sampling distribution is greatest when $ p = \\frac{1}{2} $. In the Wright-Fisher model, the variance in allele frequency from one generation of random genetic drift is given by $ pq/(2N) $, corresponding to the variance of the proportion in a binomial distribution. The variance drops to zero at p = 0 and p = 1. In the Moran model, the variance resulting from a single birth/death event is $ 2pq/(2N)^2 $. This looks very different from the variance in the Wright-Fisher model, however multiplying by a factor of 2N is needed to convert the individual births and deaths into replacement of the entire population. There is still a factor of 2 in the numerator, which reflects the subtle fact that the variance in offspring number per individual is exactly twice as large in the Moran model as in the Wright-Fisher model (Ewens 2004). In either formulation of random drift, the variance formula makes it clear that a large population will change allele frequency more slowly than a smaller population, because the sampling variance varies as the reciprocal of population size.",
+      "source_page": 118,
+      "source_pages": [
+        118,
+        119
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p010:b12",
+        "PopGen_chapter3:p011:b2"
+      ],
+      "source_bboxes": [
+        [
+          231.0,
+          979.0,
+          917.0,
+          1246.0
+        ],
+        [
+          99.0,
+          184.0,
+          784.0,
+          356.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "4c0716ac80b558e79edac5ddcfd3d02972f44066486e10f3f9b0a357bcf76599"
+    },
+    {
+      "type": "proposition",
+      "content": "PROBLEM 3.4 Simulating random drift can be a very time-consuming proposition. If one wants to simulate a population of 1000 individuals for 1000 generations, one has to draw $ 10^6 $ random numbers and for each decide whether to accept or reject each genotype. Kimura (1980b) came up with a shortcut that relates very closely to how the diffusion approximation works (see the next section). The trick is to use the recursion: $ p' = p + (2U - 1) \\sqrt{(3pq/2N)} $, where U is a random number uniformly distributed in the range between 0 and 1. In each generation, you pick a random number U, and then calculate the realization of the next generation's allele frequency from the above recursion. Why does this approach work? (Hint: The variance in a uniform distribution is the square of the range divided by 12.)",
+      "source_page": 119,
+      "source_pages": [
+        119
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p011:b3"
+      ],
+      "source_bboxes": [
+        [
+          98.0,
+          410.0,
+          490.0,
+          636.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "4668fc6554965c92e3ce5f66ec1b05faac9c1c1bef666c47543b88f70a01b712"
+    },
+    {
+      "type": "discussion",
+      "content": "ANSWER The expression 2U - 1, where U is a number between 0 and 1, yields a value from $ -1 $ to $ +1 $, or a range of 2. The range of $ (2U - 1)\\sqrt{(3pq/2N)} $ is therefore $ 2\\sqrt{(3pq/2N)} $. Squaring this expression and dividing by 12, the variance of this uniform random variable equals $ pq/2N $, which is exactly that from a binomial sampling distribution. Each generation the allele frequency has an equal chance of increasing or decreasing, and the variance in the allele frequency change is $ pq/2N $. Even though the distribution of change in allele frequency is uniform in the pseudosampling simulation instead of binomial (as it is in the Wright-Fisher model), this process can reproduce most of the results of the complete brute-force simulation at a tiny fraction of the computer time. The trade-off is that one must be a little careful when near the fixation states, because the algorithm as described can yield allele frequencies less than 0 or greater than 1.",
+      "source_page": 119,
+      "source_pages": [
+        119
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p011:b5"
+      ],
+      "source_bboxes": [
+        [
+          93.0,
+          664.0,
+          487.0,
+          913.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "5ea7bc2226574d8319ccf27fad5f9799d650f31072b8d9fc0138d8ffbedcbe6c"
+    }
+  ]
+}

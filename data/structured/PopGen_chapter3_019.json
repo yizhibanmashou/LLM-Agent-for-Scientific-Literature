@@ -1,0 +1,284 @@
+{
+  "id": "PopGen_chapter3_019",
+  "metadata": {
+    "chapter": "PopGen_chapter3",
+    "section": "RANDOM GENETIC DRIFT: Introduction",
+    "subsections": [
+      "3.7 THEORETICAL IMPLICATIONS OF COALESCENCE"
+    ],
+    "source_file": "tmp\\popgen\\paddle_output\\PopGen_chapter3_full\\main.tex",
+    "source_title": "Principles of Population Genetics, Fourth Edition",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "RANDOM GENETIC DRIFT: Introduction",
+    "section_level_2": "3.7 THEORETICAL IMPLICATIONS OF COALESCENCE",
+    "heading_path": [
+      "RANDOM GENETIC DRIFT: Introduction",
+      "3.7 THEORETICAL IMPLICATIONS OF COALESCENCE"
+    ],
+    "display_heading": "3.7 THEORETICAL IMPLICATIONS OF COALESCENCE"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "The coalescent approach can be used to derive many fundamental principles in population genetics. For example, Equation 3.36 defines the expected length of each interval $ T_{k} $ in a coalescent tree (see also Figure 3.15), and so the expected sum of the branch lengths $ E(T) $ for the entire tree is given by $$ E(T)=E\\left(\\sum_{i=2}^{k}iT_{i}\\right)=\\sum_{i=2}^{k}iE(T_{i})=\\sum_{i=2}^{k}i\\frac{4N}{i(i-1)}=4N\\sum_{i=1}^{k-1}\\frac{1}{i} $$",
+      "source_page": 152,
+      "source_pages": [
+        152,
+        153
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p044:b6",
+        "PopGen_chapter3:p045:b2",
+        "PopGen_chapter3:p045:b3"
+      ],
+      "source_bboxes": [
+        [
+          243.0,
+          1196.0,
+          927.0,
+          1253.0
+        ],
+        [
+          107.0,
+          187.0,
+          790.0,
+          239.0
+        ],
+        [
+          225.0,
+          248.0,
+          668.0,
+          314.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "09418a57438023d08d33a3b3bbffbe0765661c7068b9b864d96a1d0d63d9c3a0"
+    },
+    {
+      "type": "discussion",
+      "content": "The expected number of segregating sites, $ E(S) $, in a set of aligned DNA sequences is equal to the product of the mutation rate and the expected length of all the branches in the coalescent tree, or $ \\mu E(T) $. The expected number of segregating sites in a sample of k aligned sequences is therefore obtained from Equation 3.40 as $$ E(S)=\\mu E(T)=4N\\mu\\sum_{i=1}^{k-1}\\frac{1}{i}=\\theta\\sum_{i=1}^{k-1}\\frac{1}{i} $$ where $ \\theta = 4N\\mu $. This is the expected number of segregating sites in the infinite-sites model, which we shall discuss again in Chapter 4 in a different context. Note that $ \\mu $ is not the mutation rate per nucleotide site; rather it is the mutation rate across the entire length of the DNA sequence. As another example of the theoretical utility of the coalescent approach, consider a sample of alleles taken from population presently in equilibrium between mutation and random genetic drift, which means that new mutations in each generation occur at the same rate as old mutations are lost due to random drift. Tracing any pair of alleles back to the previous generation, the pair of alleles could either coalesce, with probability 1/(2N), or failing to coalesce, one or the other allele could have undergone mutation with probability 2μ. (The factor 2 is necessary because either of the alleles could mutate.) These are the only two events that affect allele identity by descent, and the sum of their probabilities is 1/(2N) + 2μ. The probability of identity by descent (F) is therefore the fraction of the time that the alleles coalesce, or $$ F=\\frac{\\frac{1}{2N}}{\\frac{1}{2N}+2\\mu}=\\frac{1}{1+\\theta} $$",
+      "source_page": 153,
+      "source_pages": [
+        153
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p045:b5",
+        "PopGen_chapter3:p045:b6",
+        "PopGen_chapter3:p045:b8",
+        "PopGen_chapter3:p045:b9",
+        "PopGen_chapter3:p045:b10"
+      ],
+      "source_bboxes": [
+        [
+          104.0,
+          331.0,
+          791.0,
+          453.0
+        ],
+        [
+          298.0,
+          456.0,
+          593.0,
+          515.0
+        ],
+        [
+          100.0,
+          522.0,
+          787.0,
+          621.0
+        ],
+        [
+          97.0,
+          621.0,
+          785.0,
+          888.0
+        ],
+        [
+          345.0,
+          900.0,
+          543.0,
+          996.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "328538b51fc3c1db29889ebbe762cbd79ccce11bb692cfa8713e3ca71c50406b"
+    },
+    {
+      "type": "discussion",
+      "content": "This expression will also be derived again in Chapter 4 using different methods.",
+      "source_page": 153,
+      "source_pages": [
+        153
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p045:b12"
+      ],
+      "source_bboxes": [
+        [
+          94.0,
+          1027.0,
+          780.0,
+          1078.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "669833baf06e6c6cd94f3791bd42a720b797e05f4acc09fa20ba9dd4a111a755"
+    },
+    {
+      "type": "discussion",
+      "content": "Coalescent methods are not limited to the consideration of the Wright-Fisher model. If one can develop a recursion equation for probabilities of recombination, migration, or other such phenomena in the context of a gene tree, then often powerful insights can be derived from coalescence approaches. For our purposes, suffice it to say that the method can generate classical results, often with much less difficulty, and as we have seen in the previous section, the coalescent approach is especially well suited to making inferences about samples drawn from natural populations by averaging across a large number of simulated trees. The exceptional speed with which computers can simulate samples drawn from a neutral coalescent has yielded unprecedented opportunities for testing the correspondence between observed data and theoretical predictions.",
+      "source_page": 153,
+      "source_pages": [
+        153,
+        154
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p045:b13",
+        "PopGen_chapter3:p046:b2"
+      ],
+      "source_bboxes": [
+        [
+          92.0,
+          1077.0,
+          780.0,
+          1252.0
+        ],
+        [
+          231.0,
+          190.0,
+          913.0,
+          316.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "2ece059a263fcc21d05a7f0ca11ac120567a06b4e4dfe5c5c63703fc85d40802"
+    },
+    {
+      "type": "discussion",
+      "content": "PROBLEM 3.9 In a model of pure random drift, the probability distribution for the number of generations back to the first coalescence in a sample of k genes taken from a haploid population of size N is approximately: Pr $ \\left\\{ \\text{first coalescence occurred } t \\text{ generations ago} \\right\\} $",
+      "source_page": 154,
+      "source_pages": [
+        154
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p046:b3",
+        "PopGen_chapter3:p046:b4"
+      ],
+      "source_bboxes": [
+        [
+          116.0,
+          374.0,
+          505.0,
+          491.0
+        ],
+        [
+          125.0,
+          501.0,
+          498.0,
+          571.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "c8a74113bc4f3069d644dcf3d8b0570d28d4ddcb216aee8556c972213e7189d1"
+    },
+    {
+      "type": "discussion",
+      "content": "$ = ze^{-2t} \\text{ where } z = \\binom{k}{2} / N $ From this one can show that the mean number of generations back to the first coalescence is 1/z. The more genes in the sample, the more likely it will be that a coalescence occurred recently. Calculate the expected time to first coalescence in a population of N = 450 for a sample of 10 genes. How many genes would you have to sample to reduce this coalescence time by half?",
+      "source_page": 154,
+      "source_pages": [
+        154
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p046:b4"
+      ],
+      "source_bboxes": [
+        [
+          125.0,
+          501.0,
+          498.0,
+          571.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "bf7b58fb568df9f324a81924437e677f0e62e1a67a94974eacb4576a715d15c3"
+    },
+    {
+      "type": "discussion",
+      "content": "ANSWER The expected time to first coalescence in a population of N = 450 for a sample of 10 genes is $$ \\begin{aligned}N/\\binom{k}{2}&=450/\\binom{10}{2}=450/(10\\times9/2)\\\\&=10\\text{generations}\\end{aligned} $$",
+      "source_page": 154,
+      "source_pages": [
+        154
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p046:b6",
+        "PopGen_chapter3:p046:b7"
+      ],
+      "source_bboxes": [
+        [
+          115.0,
+          614.0,
+          506.0,
+          686.0
+        ],
+        [
+          168.0,
+          697.0,
+          456.0,
+          758.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "5022c9b1d7ec272bd4ac0f5727f8854ebe5308daf474041fdb51eaa5598fd384"
+    },
+    {
+      "type": "discussion",
+      "content": "To determine how many genes one would have to sample to halve this coalescence time, solve for $$ 5=450\\left/\\binom{k}{2}\\right. $$",
+      "source_page": 154,
+      "source_pages": [
+        154
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p046:b8",
+        "PopGen_chapter3:p046:b9"
+      ],
+      "source_bboxes": [
+        [
+          116.0,
+          767.0,
+          506.0,
+          837.0
+        ],
+        [
+          263.0,
+          840.0,
+          364.0,
+          867.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "15c9194c87b85eae041d0a00e4fa73aa99c02df004479090fc5c4dd74ef0e9e8"
+    },
+    {
+      "type": "discussion",
+      "content": "This is equivalent to $90 = k!/(2!k - 2!)$ or $180 = k(k - 1)$. This is a quadratic equation $k^2 - k = 180$ that fits the general form $ax^2 + bx + c = 0$, where $a = 1$, $b = -1$, $c = -180$. The solutions are given by $[-b \\pm v(b^2 - 4ac)]/(2a)$, and in this case the solution we want is $k = 13.9$ (the other solution is negative). Hence a sample of size 14 will reduce the initial coalescence time to about 5 generations (4.94 to be exact). If you do not know the quadratic formula, you can also get this answer by trial and error. In any case, increasing the sample from 10 to only 14, we expect to find any pair of alleles only half as divergent from each other.",
+      "source_page": 154,
+      "source_pages": [
+        154
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p046:b10"
+      ],
+      "source_bboxes": [
+        [
+          118.0,
+          885.0,
+          507.0,
+          936.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "f7857013bb5a04d845513c790e6254ecf522b1943e0f2267deaa9b0078d438e3"
+    }
+  ]
+}

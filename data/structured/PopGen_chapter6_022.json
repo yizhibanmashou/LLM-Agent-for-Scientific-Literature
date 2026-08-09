@@ -1,0 +1,144 @@
+{
+  "id": "PopGen_chapter6_022",
+  "metadata": {
+    "chapter": "PopGen_chapter6",
+    "section": "6.5 MIGRATION",
+    "subsections": [
+      "The Island Model of Migration"
+    ],
+    "source_file": "tmp\\popgen\\paddle_output\\PopGen_chapter6_full\\main.tex",
+    "source_title": "Principles of Population Genetics, Fourth Edition",
+    "formula_references": [],
+    "table_references": [],
+    "section_level_1": "6.5 MIGRATION",
+    "section_level_2": "The Island Model of Migration",
+    "heading_path": [
+      "6.5 MIGRATION",
+      "The Island Model of Migration"
+    ],
+    "display_heading": "The Island Model of Migration"
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "In the island model of migration, a large population is split into many subpopulations dispersed geographically. Examples of island population structure might include fish in freshwater lakes or slugs in dispersed garden plots. Each subpopulation is assumed to be so large that random genetic drift can be neglected. Figure 6.18 shows an example with five island populations, where $ p_{i} $ denotes the allele frequency of A in the ith subpopulation. Each subpopulation receives an equal proportion of migrants from each subpopulation (including itself), and also contributes an equal proportion to each subpopulation (including itself). In essence, the model is one in which each subpopulation sends out a proportion of migrant individuals or gametes, and the migrants from all the subpopulations form a pool, the members of which then disperse randomly among the subpopulations. In this way, an individual or gamete in the migrant pool can return to the subpopulation it came from originally. Since the total proportion of migrants coming into each subpopulation in every generation is m, the proportion coming from each of the five subpopulations is m/5.",
+      "source_page": 311,
+      "source_pages": [
+        311,
+        312
+      ],
+      "source_block_ids": [
+        "PopGen_chapter6:p041:b6",
+        "PopGen_chapter6:p042:b2"
+      ],
+      "source_bboxes": [
+        [
+          86.0,
+          957.0,
+          774.0,
+          1252.0
+        ],
+        [
+          242.0,
+          192.0,
+          923.0,
+          291.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "b76bf11ff8e04fb5e1c04478a8e5f876782dd481e856a48e84303fbb774d7826"
+    },
+    {
+      "type": "discussion",
+      "content": "Now let $ \\vec{p} $ be the average allele frequency of A among the subpopulations. Since the migrant individuals or gametes form a pool with an equal contribution from each subpopulation, the expected allele frequency among the migrants must equal the average allele frequency among the subpopulations. The parameter m is the probability that a randomly chosen allele in any subpopulation comes from a migrant. Let us consider a particular subpopulation with an allele frequency of A equal to $ p_t $ in generation t. For a randomly chosen allele in this subpopulation in generation t, the allele could have come from the same subpopulation in generation t - 1 with probability 1 - m, in which case it is an A allele with probability $ p_{t-1} $. Alternatively, the allele could have come from the migrant pool in generation t - 1 with probability m, in which case it is an A allele with probability $ \\vec{p} $. Because all evolutionary processes other than migration are ignored, $ \\vec{p} $ stays the same in all generations. Altogether, $$ p_{t}=p_{t-1}(1-m)+\\overline{p}m $$",
+      "source_page": 312,
+      "source_pages": [
+        312
+      ],
+      "source_block_ids": [
+        "PopGen_chapter6:p042:b3",
+        "PopGen_chapter6:p042:b4"
+      ],
+      "source_bboxes": [
+        [
+          243.0,
+          290.0,
+          925.0,
+          633.0
+        ],
+        [
+          489.0,
+          636.0,
+          678.0,
+          664.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "3c9470ee3593b050742e20f37b88b3f662521fbbdeb5289004b04a5b354c32cd"
+    },
+    {
+      "type": "discussion",
+      "content": "Equation 6.20 is similar to Equation 4.2 for mutation, and its solution in terms of $ p_{0} $ is $$ p_{t}=\\overline{p}+(1-m)^{t}(p_{0}-\\overline{p}) $$",
+      "source_page": 312,
+      "source_pages": [
+        312
+      ],
+      "source_block_ids": [
+        "PopGen_chapter6:p042:b6",
+        "PopGen_chapter6:p042:b7"
+      ],
+      "source_bboxes": [
+        [
+          247.0,
+          675.0,
+          925.0,
+          729.0
+        ],
+        [
+          479.0,
+          731.0,
+          685.0,
+          763.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "52dc8d5dcce09335522833c79259630e0c0b8c16d0f25c5d36b06525e27fed6c"
+    },
+    {
+      "type": "discussion",
+      "content": "The similarity with Equation 6.19 is apparent: In fact, the equations are identical except that the role of $ p^* $ in one-way migration is replaced with $ \\overline{p} $ in the island model. Perhaps less obvious is the similarity with Equation 4.4 for reversible mutation, in which case $ v/(\\mu + v) $ plays the role of $ \\overline{p} $ and $ \\mu + v $ plays the role of m. The correspondence between the equations again emphasizes the similarity between the effects of migration and those of mutation. The processes result in similar mathematical expressions because both mutation and migration act linearly on allele frequency, which means that $ p_t $ is a linear function of $ p_{t-1} $. Although Equation 6.21 for migration is mathematically similar to Equation 4.4 for mutation, the biological implications are quite different. Because rates of migration are typically much greater than rates of mutation, changes in allele frequency are generally much faster with migration. As an example of the use of Equation 6.21, suppose there are only two populations with initial allele frequencies of A of 0.2 and 0.8, respectively, with m = 0.10. Thus 10 percent of the organisms in either subpopulation in any generation are migrants having an allele frequency of A of $ \\bar{p} = (0.2 + 0.8)/2 = 0.5 $. What is the allele frequency of A in the two populations after 10 generations? For the population with initial allele frequency 0.2, we substitute $ p_0 = 0.2 $, $ \\bar{p} = 0.5 $, and m = 0.10 into Equation 6.21 to obtain $p_{10}=0.5+(1-0.10) $ ^{10} $(0.2 - 0.5) = 0.395; for the other population, we substitute $ p_{0} = 0.8 $, $ \\bar{p} = 0.5 $, and m = 0.10, and so $ p_{10} = 0.5 + (1 - 0.10)^{10}(0.8 - 0.5) = 0.605 $. Another example using Equation 6.21 is shown in Figure 6.19, where there are five subpopulations (initial frequencies 1, 0.75, 0.50, 0.25, and 0), again with m = 0.10. Note how rapidly the allele frequencies converge to the same value, in this case, 0.5.",
+      "source_page": 312,
+      "source_pages": [
+        312,
+        313
+      ],
+      "source_block_ids": [
+        "PopGen_chapter6:p042:b9",
+        "PopGen_chapter6:p042:b10",
+        "PopGen_chapter6:p043:b4"
+      ],
+      "source_bboxes": [
+        [
+          246.0,
+          773.0,
+          929.0,
+          1088.0
+        ],
+        [
+          248.0,
+          1085.0,
+          931.0,
+          1262.0
+        ],
+        [
+          88.0,
+          636.0,
+          772.0,
+          783.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "6b18e1a89994693d2d2f0882647d824019290267b38cf37c1d15f2b2166aa3c2"
+    }
+  ]
+}

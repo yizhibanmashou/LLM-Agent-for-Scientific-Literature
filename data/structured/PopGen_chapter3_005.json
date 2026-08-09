@@ -1,0 +1,331 @@
+{
+  "id": "PopGen_chapter3_005",
+  "metadata": {
+    "chapter": "PopGen_chapter3",
+    "section": "3.3 THE DIFFUSION APPROXIMATION",
+    "subsections": [
+      "An Approach Looking Forward"
+    ],
+    "source_file": "tmp\\popgen\\paddle_output\\PopGen_chapter3_full\\main.tex",
+    "source_title": "Principles of Population Genetics, Fourth Edition",
+    "formula_references": [],
+    "table_references": [
+      "3.1"
+    ],
+    "section_level_1": "3.3 THE DIFFUSION APPROXIMATION",
+    "section_level_2": "An Approach Looking Forward",
+    "heading_path": [
+      "3.3 THE DIFFUSION APPROXIMATION",
+      "An Approach Looking Forward"
+    ],
+    "display_heading": "An Approach Looking Forward",
+    "table_reference_keys": [
+      "chapter3:3.1"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "An elegant alternative to successive matrix multiplication is based on a diffusion approximation (Fisher 1922; Wright 1945; Kimura 1957, 1964). The diffusion approximation assumes that random drift disperses allele frequencies among subpopulations in a manner analogous to heat diffusing through a metal rod or tiny particles diffusing under Brownian motion (Kolmogorov 1931). The idea is to assume that the subpopulations are large enough that the allele frequencies change smoothly through time, not in large jumps. Then the statistical distribution of allele frequencies at any time is a continuous function that we may denote as $\\phi(p, x; t)$, where $x$ represents the allele frequency at time $t$ among a large number of segregating populations ($0 < x < 1$), and $p$ is the initial frequency among these populations. The theoretical problem is to formulate an equation that describes how $\\phi(p, x; t)$ changes under random genetic drift, and to solve the equation. At any time $t$, the function $\\phi(p, x; t)$ is a smooth, continuous function approximating the histogram of allele frequencies among the subpopulations in Figure 3.5, except that $\\phi(p, x; t)$ pertains only to the unfixed subpopulations still segregating for $A$ and $a$.",
+      "source_page": 120,
+      "source_pages": [
+        120
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p012:b4"
+      ],
+      "source_bboxes": [
+        [
+          236.0,
+          307.0,
+          919.0,
+          696.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "0490d3303cf7d9b584a3095f7e7dbe4436826f463b9e1405f0b0ad9847a4b7b2"
+    },
+    {
+      "type": "discussion",
+      "content": "There are actually two approaches for obtaining a diffusion equation, each of which has advantages and limitations. One approach is to ask how the distribution $\\phi(p, x; t)$ changes as we go forward in time. To explain the meaning of the equation, we will allow $x$ and $t$ to change only in small, discrete increments of $\\Delta x$ and $\\Delta t$. There are two reasons why the state $x$ could change in the time $\\Delta t$. One is random genetic drift, the other is a systematic force that might include mutation or selection. We will assume that $A$ is the favored allele, and define $\\overline{M}(x)$ as the probability that $x$ increases by the amount $\\Delta x$ because of the systematic force. The force of random drift is measured by the probability $V(x)$ that $x$ changes because of drift, either decreasing by the amount $\\Delta x$ with probability $V(x)/2$ or increasing by the amount $\\Delta x$ with probability $V(x)/2$. In any time interval $\\Delta t$, therefore, the probability that $x$ remains at $x$ equals $1 - M(x) - V(x)$.",
+      "source_page": 120,
+      "source_pages": [
+        120
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p012:b5"
+      ],
+      "source_bboxes": [
+        [
+          238.0,
+          694.0,
+          923.0,
+          1009.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "7aad8210ab1870ae300d8e5a8776adf076643cf0df64e4906091408a5dc80c8f"
+    },
+    {
+      "type": "discussion",
+      "content": "The reasoning is outlined in [[SEE_TABLE:3.1]]. Because changes in state are limited to $ \\pm\\Delta x $ or $ -\\Delta x $, a subpopulation can be in state $ x $ at time $ t + \\Delta t $ only if it was in state $ x + \\Delta x $, $ x $, or $ x - \\Delta x $ at time $ t $, and these have probabilities proportional to $ \\phi(p, x + \\Delta t; t) $, $ \\phi(p, x; t) $, and $ \\phi(p, x - \\Delta x; t) $, respectively. A subpopulation in state $ x - \\Delta x $ can change to state $ x $ with probability $ M(x - \\Delta x) + V(x - \\Delta x)/2 $ according to whether it was pushed by a systematic force (for example, mutation or selection), or else changed randomly because of random drift. A subpopulation in state $ x + \\Delta x $ can change to state $ x $ with probability $ V(x - \\Delta x)/2 $ due to random drift. Finally, a subpopulation in state $ x $ can remain in state $ x $ with probability $ 1 - M(x) - V(x) $. The required function $ \\text{for} \\phi(p, x; t) $",
+      "source_page": 120,
+      "source_pages": [
+        120,
+        121
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p012:b6",
+        "PopGen_chapter3:p013:b2",
+        "PopGen_chapter3:p013:b3"
+      ],
+      "source_bboxes": [
+        [
+          240.0,
+          1006.0,
+          927.0,
+          1250.0
+        ],
+        [
+          110.0,
+          190.0,
+          911.0,
+          224.0
+        ],
+        [
+          105.0,
+          203.0,
+          907.0,
+          478.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "04f41c10e8a8dda1340b36bf81a8ec03cad9c13f87e7e1600745694a1c121278"
+    },
+    {
+      "type": "discussion",
+      "content": "[[SEE_TABLE:3.1]] obtained by summing the products of columns 2 and 4 in [[SEE_TABLE:3.1]], which after some simplification yields the difference equation $$ \\begin{aligned}&\\phi(p,x;t+\\Delta t)-\\phi(p,x;t)=\\\\ &\\quad-\\left[M(x)\\phi(p,x;t)-M(x-\\Delta x)\\phi(p,x-\\Delta x;t)\\right]\\\\ &\\quad+\\frac{1}{2}\\left\\{\\left[V(x+\\Delta x)\\phi(p,x+\\Delta x;t)-V(x)\\phi(p,x;t)\\right]\\right.\\\\ &\\quad\\left.-\\left[V(x)\\phi(p,x;t)-V(x-\\Delta x)\\phi(p,x-\\Delta x;t)\\right]\\right\\}\\\\ \\end{aligned} $$",
+      "source_page": 121,
+      "source_pages": [
+        121
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p013:b2",
+        "PopGen_chapter3:p013:b3",
+        "PopGen_chapter3:p013:b4",
+        "PopGen_chapter3:p013:b5"
+      ],
+      "source_bboxes": [
+        [
+          110.0,
+          190.0,
+          911.0,
+          224.0
+        ],
+        [
+          105.0,
+          203.0,
+          907.0,
+          478.0
+        ],
+        [
+          103.0,
+          564.0,
+          788.0,
+          617.0
+        ],
+        [
+          240.0,
+          630.0,
+          645.0,
+          785.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "ac60cb0b472574cf74b22fcd59de0c4fdbf9eda90ce62a7eb21dead65e2b6b68"
+    },
+    {
+      "type": "discussion",
+      "content": "On the left-hand side of the equal sign is the change in $ \\phi $ ($ \\Delta\\phi $) for a given change in $ t $ ($ \\Delta t $). On the right-hand side, the first term is the change in $ M\\phi $ ($ \\Delta M\\phi $) for a given change in $ x $ ($ \\Delta x $), and the second term is the change in the change in $ V\\phi $ ($ \\Delta V\\phi $) for a two-step change in $ x $ ($ \\Delta x $). In symbols, the difference equation can be written as $$ \\frac{\\Delta\\phi(p,x;t)}{\\Delta t}=-\\frac{\\Delta\\left[M(x)\\phi(p,x;t)\\right]}{\\Delta x}+\\frac{1}{2}\\frac{\\Delta\\left\\{\\Delta\\left[V(x)\\phi(p,x;t)\\right]\\right\\}}{\\Delta(\\Delta x)} $$",
+      "source_page": 121,
+      "source_pages": [
+        121
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p013:b6",
+        "PopGen_chapter3:p013:b7"
+      ],
+      "source_bboxes": [
+        [
+          99.0,
+          805.0,
+          786.0,
+          929.0
+        ],
+        [
+          209.0,
+          940.0,
+          671.0,
+          998.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "9163372fe0c0b3b7d5e1c63246fab5d05a8ae67ef3a8aa58d2a52a632a30e3b1"
+    },
+    {
+      "type": "discussion",
+      "content": "At this point we can take the limit as $ \\Delta t \\to 0 $ and $ \\Delta x \\to 0 $ (as we also overlook a number of technical details) to obtain what is called the Kolmogorov forward equation: $$ \\frac{\\partial\\phi(p,x;t)}{\\partial t}=-\\frac{\\partial\\left[M(x)\\phi(p,x;t)\\right]}{\\partial x}+\\frac{1}{2}\\frac{\\partial^{2}\\left[V(x)\\phi(p,x;t)\\right]}{\\partial x^{2}} $$ This is a partial differential equation, and given some initial function $\\phi(p,x;0)$, it can be solved (though not easily) for $\\phi(p,x;t)$. We have not yet specified",
+      "source_page": 121,
+      "source_pages": [
+        121,
+        122
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p013:b8",
+        "PopGen_chapter3:p013:b9",
+        "PopGen_chapter3:p013:b11",
+        "PopGen_chapter3:p014:b6"
+      ],
+      "source_bboxes": [
+        [
+          94.0,
+          1022.0,
+          783.0,
+          1096.0
+        ],
+        [
+          221.0,
+          1108.0,
+          650.0,
+          1168.0
+        ],
+        [
+          93.0,
+          1191.0,
+          779.0,
+          1244.0
+        ],
+        [
+          232.0,
+          652.0,
+          908.0,
+          787.0
+        ]
+      ],
+      "provenance_score": 0.794595,
+      "content_sha256": "dba54132bb26a77da45a2868ba1f2ce9ad38da6e5b1b853a4b83cd9d65bbe6f6"
+    },
+    {
+      "type": "discussion",
+      "content": "$ M(x) $ or $ V(x) $ in terms that have any relation to population genetics. The function $ M(x) $ is a symbol for the change in allele frequency that occurs in one generation due to any systematic force such as mutation, migration, or selection. The function $ V(x) $ also has a straightforward biological interpretation; $ V(x) $ is the variance in allele frequency after one generation of binomial sampling of 2N alleles according to Equation 3.1; hence $ V(x) = x(1 - x)/(2N) $.",
+      "source_page": 122,
+      "source_pages": [
+        122
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p014:b7"
+      ],
+      "source_bboxes": [
+        [
+          232.0,
+          859.0,
+          914.0,
+          1009.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "ed7205181965364863b717d4720f4f2b72055eb38b2981d83dbd78ceadf873fc"
+    },
+    {
+      "type": "discussion",
+      "content": "Many aspects of Equation 3.4 were explored by Wright (1931), and the formal solution to this equation, found by Kimura (1955), required some heavy mathematics. For our purposes, some graphs will illustrate the important properties of the forward diffusion equation. The solutions for $ M(x) = 0 $ are the curves plotted in Figure 3.6, which show the theoretical distributions of allele frequency among unfixed populations after various times (t) measured in units of N generations. In Figure 3.6A, all populations have an initial allele frequency of $ \\frac{1}{2} $, as in the actual populations in Figure 3.4; after about t = 2N generations, the distribution of allele frequency is essentially flat, and by this time about half the populations are still unfixed. The distributions in Fig",
+      "source_page": 122,
+      "source_pages": [
+        122
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p014:b8"
+      ],
+      "source_bboxes": [
+        [
+          233.0,
+          1005.0,
+          916.0,
+          1249.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "531dcee72a690ddebf58cb7ce553a9523f061be6a17880633ebe98addd0aa170"
+    },
+    {
+      "type": "discussion",
+      "content": "The 3.6 refer only to those populations that are unfixed; as time goes on, more and more of the populations become fixed, and the distributions progressively pile up at 0 and 1, as in the histograms in Figure 3.4. Indeed, in Figure 3.6, the area under each curve is equal to the proportion of unfixed populations, which becomes progressively smaller. In particular, the rate at which the height of the distribution decreases once it becomes flat is about $ 1/(2N) $ per generation. To illustrate that the diffusion approximation and the Wright-Fisher model give very similar results, Figure 3.7 shows the diffusion approximation for the data in Figure 3.4, with $ 2N = 32 $, $ p_0 = \\frac{1}{2} $, and t running from generation 1 through generation 19.",
+      "source_page": 123,
+      "source_pages": [
+        123
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p015:b4"
+      ],
+      "source_bboxes": [
+        [
+          91.0,
+          856.0,
+          776.0,
+          1099.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "3a0512ba3d05c50f7667a66a7c73959c17623e60b58886361135f22a08f52209"
+    },
+    {
+      "type": "discussion",
+      "content": "Figure 3:6B shows what happens when the initial allele frequency is 0.1; here the distributions are highly asymmetrical, and the distribution of allele frequency does not become flat until about $ t = 4N $ generations, by which time only about 10% of the populations remain unfixed. Once a flat distribution of allele frequency is reached, the distribution remains flat, but random drift continues until fixation or loss has occurred in all populations.",
+      "source_page": 123,
+      "source_pages": [
+        123
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p015:b5"
+      ],
+      "source_bboxes": [
+        [
+          87.0,
+          1097.0,
+          773.0,
+          1245.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "dfbdab74608d9eda872651c48145b5ad35ea775309bf6d5da19c84f65d16b912"
+    },
+    {
+      "type": "table",
+      "content": "[[TABLE:3.1]]",
+      "source_page": 121,
+      "source_pages": [
+        121
+      ],
+      "source_block_ids": [
+        "PopGen_chapter3:p013:b2",
+        "PopGen_chapter3:p013:b3"
+      ],
+      "source_bboxes": [
+        [
+          110.0,
+          190.0,
+          911.0,
+          224.0
+        ],
+        [
+          105.0,
+          203.0,
+          907.0,
+          478.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "b05512be4c257d55026509f8dd70d069206b6f760777ac80e48224126e126422"
+    }
+  ]
+}
