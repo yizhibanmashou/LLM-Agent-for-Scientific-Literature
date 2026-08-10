@@ -2,14 +2,14 @@
   "id": "Genetics_chapter4_010",
   "metadata": {
     "chapter": "Genetics_chapter4",
-    "section": "CHARACTERIZING THE INFLUENCE OF A LOCUS ON THE PHENOTYPE",
+    "section": "FISHER'S DECOMPOSITION OF THE GENOTYPIC VALUE",
     "subsections": [],
-    "section_level_1": "CHARACTERIZING THE INFLUENCE OF A LOCUS ON THE PHENOTYPE",
+    "section_level_1": "FISHER'S DECOMPOSITION OF THE GENOTYPIC VALUE",
     "section_level_2": null,
     "heading_path": [
-      "CHARACTERIZING THE INFLUENCE OF A LOCUS ON THE PHENOTYPE"
+      "FISHER'S DECOMPOSITION OF THE GENOTYPIC VALUE"
     ],
-    "display_heading": "CHARACTERIZING THE INFLUENCE OF A LOCUS ON THE PHENOTYPE",
+    "display_heading": "FISHER'S DECOMPOSITION OF THE GENOTYPIC VALUE",
     "source_file": "",
     "source_pdf": "data/背景资料/Genetics.pdf",
     "source_title": "Genetics and Analysis of Quantitative Traits",
@@ -18,111 +18,399 @@
       "remote_llm_calls": 0
     },
     "heading_source": {
-      "source_page": 77,
-      "printed_page": 57,
+      "source_page": 81,
+      "printed_page": 61,
       "source_block_ids": [
-        "p77:b8"
+        "p81:b3"
       ],
       "bbox": [
-        23.0,
-        1330.0,
-        982.0,
-        1394.0
+        48.0,
+        438.0,
+        812.0,
+        493.0
       ],
-      "raw_text": "CHARACTERIZING THE INFLUENCE OF A LOCUS ON THE PHENOTYPE"
+      "raw_text": "FISHER'S DECOMPOSITION OF THE GENOTYPIC VALUE"
     }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "In Chapter 3, we encountered the concept of partitioning the phenotype (z) of an individual into a genotypic value (G) and an environmental deviation (E),",
-      "source_page": 77,
-      "printed_page": 57,
+      "content": "The number of copies of a particular allele (say $B_{2}$) in a genotype ($N_{2} = 0$, 1, or 2 for diploids) is referred to as the gene content. As noted above, unless this allele interacts additively with all other alleles, there will be a nonlinear relationship between the gene content and the genotypic value. It is, nevertheless, useful to consider the best linear approximation to this relationship, as this leads to a partitioning of the genotypic values into their “expected” values based on additivity ($\\widehat{G}$) and deviations from those expectations resulting from dominance ($\\delta$) (Figure 4.6).",
+      "source_page": 81,
+      "printed_page": 61,
       "source_block_ids": [
-        "p77:b9"
+        "p81:b4"
+      ],
+      "bbox": [
+        39.0,
+        503.0,
+        1002.0,
+        793.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "The preceding points can be formalized by least-squares regression of genotypic values on the number of $ B_{1} $ and $ B_{2} $ alleles in the genotype ( $ N_{1} $ and $ N_{2} $),",
+      "source_page": 81,
+      "printed_page": 61,
+      "source_block_ids": [
+        "p81:b5"
+      ],
+      "bbox": [
+        36.0,
+        769.0,
+        994.0,
+        859.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter4_formula015]]",
+      "source_page": 81,
+      "printed_page": 61,
+      "source_block_ids": [
+        "p81:b6"
+      ],
+      "bbox": [
+        251.0,
+        865.0,
+        775.0,
+        917.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "The genotypic value of genotype $ B_{i}B_{j} $ is a function of $ \\mu_{G} $, the mean genotypic value in the population, $ \\alpha_{1} $ and $ \\alpha_{2} $, the slopes of the regression, $ N_{1} $ and $ N_{2} $, the predictor variables, and $ \\delta_{ij} $, the residual error. This partitioning of genotypic values into various components is one of several major advances developed in Fisher's 1918 paper. Many of the innovative ideas in this classic paper are presented in a characteristically cursory manner, but a useful interpretative guide has been produced by Moran and Smith (1966).",
+      "source_page": 81,
+      "printed_page": 61,
+      "source_block_ids": [
+        "p81:b8"
+      ],
+      "bbox": [
+        26.0,
+        921.0,
+        993.0,
+        1169.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Unlike the univariate regression discussed in Chapter 3, Equation 4.5a is a multiple regression, the properties of which are discussed in Chapter 8. For the two-allele case, however, we can reduce the model to a standard univariate regression by noting that for any individual, $ N_{1}=2-N_{2} $, so that",
+      "source_page": 81,
+      "printed_page": 61,
+      "source_block_ids": [
+        "p81:b9"
+      ],
+      "bbox": [
+        24.0,
+        1146.0,
+        987.0,
+        1299.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter4_formula016]]",
+      "source_page": 81,
+      "printed_page": 61,
+      "source_block_ids": [
+        "p81:b10"
+      ],
+      "bbox": [
+        274.0,
+        1306.0,
+        727.0,
+        1396.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where $ \\iota = \\mu_{G} + 2\\alpha_{1} $ is the intercept. We denote the slope of this regression by",
+      "source_page": 81,
+      "printed_page": 61,
+      "source_block_ids": [
+        "p81:b12"
       ],
       "bbox": [
         19.0,
-        1395.0,
-        981.0,
-        1490.0
+        1401.0,
+        941.0,
+        1460.0
       ]
     },
     {
       "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter4_formula014]]",
-      "source_page": 77,
-      "printed_page": 57,
+      "content": "[[FORMULA:Genetics_chapter4_formula017]]",
+      "source_page": 81,
+      "printed_page": 61,
       "source_block_ids": [
-        "p77:b10"
+        "p81:b13"
+      ],
+      "bbox": [
+        419.0,
+        1474.0,
+        573.0,
+        1506.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FIGURE:4.6]]",
+      "source_page": 82,
+      "printed_page": 62,
+      "source_block_ids": [
+        "p82:b3"
+      ],
+      "bbox": [
+        209.0,
+        855.0,
+        1076.0,
+        1029.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "and discuss its meaning shortly. The genotypic values predicted by the regression are",
+      "source_page": 82,
+      "printed_page": 62,
+      "source_block_ids": [
+        "p82:b4"
+      ],
+      "bbox": [
+        166.0,
+        1072.0,
+        1126.0,
+        1154.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter4_formula018]]",
+      "source_page": 82,
+      "printed_page": 62,
+      "source_block_ids": [
+        "p82:b5"
+      ],
+      "bbox": [
+        356.0,
+        1134.0,
+        934.0,
+        1261.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "We next show that the weighted mean of the coefficients $ \\alpha_{1} $ and $ \\alpha_{2} $ is equal to zero. To accomplish this, return to Equation 4.5a, and take expectations,",
+      "source_page": 82,
+      "printed_page": 62,
+      "source_block_ids": [
+        "p82:b7"
+      ],
+      "bbox": [
+        173.0,
+        1261.0,
+        1131.0,
+        1350.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter4_formula019]]",
+      "source_page": 82,
+      "printed_page": 62,
+      "source_block_ids": [
+        "p82:b8"
       ],
       "bbox": [
         430.0,
-        1496.0,
-        566.0,
-        1528.0
+        1364.0,
+        878.0,
+        1411.0
       ]
     },
     {
       "type": "discussion",
-      "content": "[[FIGURE:4.4]]",
-      "source_page": 78,
-      "printed_page": 58,
+      "content": "The expected value of the residual $ \\delta_{ij} $ is equal to zero by the properties of least-squares regression, and $ E(N_{1})/2 $ and $ E(N_{2})/2 $ are equivalent, respectively, to $ p_{1} $ and $ p_{2} $, the frequencies of the $ B_{1} $ and $ B_{2} $ alleles. Thus, the previous expression simplifies to",
+      "source_page": 82,
+      "printed_page": 62,
       "source_block_ids": [
-        "p78:b3"
+        "p82:b9",
+        "p83:b2"
       ],
       "bbox": [
-        190.0,
-        358.0,
-        1006.0,
-        414.0
+        175.0,
+        1423.0,
+        1135.0,
+        1544.0
+      ],
+      "source_page_end": 83
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter4_formula020]]",
+      "source_page": 83,
+      "printed_page": 63,
+      "source_block_ids": [
+        "p83:b3"
+      ],
+      "bbox": [
+        437.0,
+        169.0,
+        651.0,
+        200.0
       ]
     },
     {
       "type": "discussion",
-      "content": "where G is the expected phenotype (for a given genotype) resulting from the joint expression of all of the genes underlying the trait. For a multilocus trait, G is a potentially complicated function. For now, however, we are concerned only with the direct contribution of a single autosomal locus, in which case things are quite tractable. We start with the special case in which there are only two alleles. The three genotypic values can then be represented by the scale at the top of Figure 4.4, with 2a representing the difference between the mean phenotypes of $ B_{2}B_{2} $ and $ B_{1}B_{1} $ homozygotes, and k providing a measure of dominance. Alleles $ B_{1} $ and $ B_{2} $ behave in a completely additive fashion when k = 0, whereas k = +1 implies complete dominance of the $ B_{1} $ allele, and k = -1 implies complete dominance of the $ B_{2} $ allele. If k > 1, the phenotypic expression of the heterozygote exceeds that of both homozygotes, and the locus is said to exhibit overdominance, whereas k < -1 implies underdominance.",
-      "source_page": 78,
-      "printed_page": 58,
+      "content": "showing that the mean value of $ \\alpha_{i} $ is indeed zero. Finally, from Equations 4.6 and 4.8 and the fact that $ p_{1} + p_{2} = 1 $, we obtain",
+      "source_page": 83,
+      "printed_page": 63,
       "source_block_ids": [
-        "p78:b4"
+        "p83:b5"
       ],
       "bbox": [
-        145.0,
-        452.0,
-        1116.0,
-        894.0
+        61.0,
+        195.0,
+        1022.0,
+        281.0
       ]
     },
     {
       "type": "discussion",
-      "content": "The fact that we have set the genotypic value of the $B_{1}B_{1}$ homozygote equal to zero may seem troublesome, but it is desirable because it leads to some algebraic simplifications. Although phenotypic measures are often performed on scales where zeros are impossible, genotypic values can always be transformed to the above scale by simply subtracting the observed genotypic value of $B_{1}B_{1}$ from each measure. Such a transformation of a linear scale can be illustrated by considering an alternative scheme often used by quantitative geneticists (bottom of Figure 4.4). Although the genotypic values of the two homozygotes are now denoted by $-a$ and $+a$, the difference between them is still $2a$, as in the previous case. The previous scale can be completely recovered by adding $a$ to all three measures on this new scale and letting $d = ak$. Generally, we will adhere to the first of these two scales.",
-      "source_page": 78,
-      "printed_page": 58,
+      "content": "[[FORMULA:Genetics_chapter4_formula021]]",
+      "source_page": 83,
+      "printed_page": 63,
       "source_block_ids": [
-        "p78:b5"
+        "p83:b6"
       ],
       "bbox": [
-        158.0,
-        870.0,
-        1126.0,
-        1283.0
+        332.0,
+        284.0,
+        750.0,
+        325.0
       ]
     },
     {
-      "type": "example",
-      "content": "[[EXAMPLE:Genetics_chapter4:3]]",
-      "source_page": 78,
+      "type": "discussion",
+      "content": "Now recall from Chapter 3 that the slope of a univariate regression is simply the covariance between response and predictor variable, divided by the variance of the predictor variable. Thus, the slope of the regression in Figure 4.6 is",
+      "source_page": 83,
+      "printed_page": 63,
       "source_block_ids": [
-        "p78:b6",
-        "p78:b7",
-        "p79:b2"
+        "p83:b8"
       ],
       "bbox": [
-        221.0,
-        1343.0,
-        1086.0,
-        1457.0
+        58.0,
+        320.0,
+        1018.0,
+        440.0
       ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter4_formula022]]",
+      "source_page": 83,
+      "printed_page": 63,
+      "source_block_ids": [
+        "p83:b9"
+      ],
+      "bbox": [
+        448.0,
+        437.0,
+        621.0,
+        511.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "The terms $ \\sigma(G, N_{2}) $ and $ \\sigma^{2}(N_{2}) $ are functions of the gene effects (a and k) and frequencies ( $ p_{1} $ and $ p_{2} $). The steps leading up to their computation, under the assumption of random mating, are outlined in Table 4.1. Upon substitution,",
+      "source_page": 83,
+      "printed_page": 63,
+      "source_block_ids": [
+        "p83:b11"
+      ],
+      "bbox": [
+        55.0,
+        508.0,
+        1013.0,
+        631.0
+      ]
+    },
+    {
+      "type": "table",
+      "content": "[[TABLE:4.1]]",
+      "source_page": 83,
+      "printed_page": 63,
+      "source_block_ids": [
+        "p83:b13"
+      ],
+      "bbox": [
+        45.0,
+        722.0,
+        1022.0,
+        1464.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FIGURE:4.7]]",
+      "source_page": 84,
+      "printed_page": 64,
+      "source_block_ids": [
+        "p84:b3"
+      ],
+      "bbox": [
+        202.0,
+        814.0,
+        1071.0,
+        1183.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "we obtain",
+      "source_page": 84,
+      "printed_page": 64,
+      "source_block_ids": [
+        "p84:b4"
+      ],
+      "bbox": [
+        166.0,
+        1246.0,
+        293.0,
+        1278.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter4_formula023]]",
+      "source_page": 84,
+      "printed_page": 64,
+      "source_block_ids": [
+        "p84:b5"
+      ],
+      "bbox": [
+        502.0,
+        1277.0,
+        787.0,
+        1315.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Under the assumption of random mating, $ \\alpha $ is known as the average effect of allelic substitution. It represents the average change in genotypic value that results when a $ B_{2} $ allele is randomly substituted for a $ B_{1} $ allele. For the purely additive case $ (k=0) $, $ \\alpha $ is simply equal to a. However, for all other cases, $ \\alpha $ is also a function of k and of the allele frequencies in the population (Figure 4.7). Such behavior results because, with dominance, the phenotypic effect of a gene substitution depends on the status of the unsubstituted allele. If $ B_{2} $ is a dominant allele $ (k > 0) $, then $ \\alpha $ will be inflated relative to the case of additivity if $ B_{2} $ is rare $ (p_{1} > p_{2}) $, but diminished if $ B_{2} $ is common $ (p_{1} < p_{2}) $. Thus, except in the case of additivity, the average effect of allelic substitution is not simply a function of the inherent physiological properties of the allele. It can only be defined in the context of the population.",
+      "source_page": 84,
+      "printed_page": 64,
+      "source_block_ids": [
+        "p84:b7",
+        "p85:b2"
+      ],
+      "bbox": [
+        167.0,
+        1332.0,
+        1129.0,
+        1540.0
+      ],
+      "source_page_end": 85
     }
   ]
 }

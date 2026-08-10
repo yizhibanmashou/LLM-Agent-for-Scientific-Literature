@@ -4,15 +4,15 @@
     "chapter": "Genetics_chapter18",
     "section": "HALF-SIB ANALYSIS",
     "subsections": [
-      "Sampling Variance and Standard Errors"
+      "Confidence Intervals"
     ],
     "section_level_1": "HALF-SIB ANALYSIS",
-    "section_level_2": "Sampling Variance and Standard Errors",
+    "section_level_2": "Confidence Intervals",
     "heading_path": [
       "HALF-SIB ANALYSIS",
-      "Sampling Variance and Standard Errors"
+      "Confidence Intervals"
     ],
-    "display_heading": "HALF-SIB ANALYSIS / Sampling Variance and Standard Errors",
+    "display_heading": "HALF-SIB ANALYSIS / Confidence Intervals",
     "source_file": "",
     "source_pdf": "data/背景资料/Genetics.pdf",
     "source_title": "Genetics and Analysis of Quantitative Traits",
@@ -21,214 +21,199 @@
       "remote_llm_calls": 0
     },
     "heading_source": {
-      "source_page": 575,
-      "printed_page": 555,
+      "source_page": 576,
+      "printed_page": 556,
       "source_block_ids": [
-        "p575:b3"
+        "p576:b9"
       ],
       "bbox": [
-        69.0,
-        398.0,
-        564.0,
-        439.0
+        140.0,
+        712.0,
+        404.0,
+        745.0
       ],
-      "raw_text": "Sampling Variance and Standard Errors"
+      "raw_text": "Confidence Intervals"
     }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "In the analysis of heritability, a case can be made that hypothesis testing is of little biological relevance. Because polygenic mutation continually introduces genetic variation into populations, the heritabilities of essentially all characters must be nonzero, and the only real issue is their absolute magnitude. If an F-test signals nonsignificance, it most likely is a simple consequence of inadequate sample size.",
-      "source_page": 575,
-      "printed_page": 555,
+      "content": "Under the assumption of normality, approximate confidence intervals for variance-component estimates can be obtained from the expected distributions of the sums of squares (Harville and Fenech 1985, Searle et al. 1992). For the within-family variance, recalling the distribution of $ SS_e/\\sigma_e^2 $ given in Equation 18.17b, the lower and upper values associated with the $ 100(1 - \\alpha)\\% $ confidence level are simply",
+      "source_page": 576,
+      "printed_page": 556,
       "source_block_ids": [
-        "p575:b4"
+        "p576:b10"
       ],
       "bbox": [
-        66.0,
-        442.0,
-        1027.0,
+        139.0,
+        745.0,
+        1100.0,
+        953.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter18_formula032]]",
+      "source_page": 576,
+      "printed_page": 556,
+      "source_block_ids": [
+        "p576:b11"
+      ],
+      "bbox": [
+        381.0,
+        944.0,
+        862.0,
+        1028.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where $ \\chi_{(T-N),(\\alpha/2)}^{2} $ and $ \\chi_{(T-N),(1-\\alpha/2)}^{2} $ are the upper and lower $ \\chi^{2} $ values associated with $ \\alpha $ given $ (T-N) $ degrees of freedom. For example, for a 95% confidence interval (2.5% error on each side of the estimate), $ \\chi_{(T-N),0.025}^{2} $ is the point at which the probability of obtaining a higher $ \\chi_{T-N}^{2} $ by chance is 0.025 and $ \\chi_{(T-N),0.975}^{2} $ is the point at which the probability of obtaining a higher value is 0.975. These values can be found in tabular form in most elementary statistics texts.",
+      "source_page": 576,
+      "printed_page": 556,
+      "source_block_ids": [
+        "p576:b13"
+      ],
+      "bbox": [
+        143.0,
+        1042.0,
+        1105.0,
+        1258.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "For the among-family variance, the lower and upper confidence limits associated with the $ 100(1 - \\alpha)\\% $ level are given by",
+      "source_page": 576,
+      "printed_page": 556,
+      "source_block_ids": [
+        "p576:b14"
+      ],
+      "bbox": [
+        148.0,
+        1248.0,
+        1105.0,
+        1325.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter18_formula033]]",
+      "source_page": 576,
+      "printed_page": 556,
+      "source_block_ids": [
+        "p576:b15"
+      ],
+      "bbox": [
+        169.0,
+        1347.0,
+        1087.0,
+        1434.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "and",
+      "source_page": 577,
+      "printed_page": 557,
+      "source_block_ids": [
+        "p577:b2"
+      ],
+      "bbox": [
+        85.0,
+        120.0,
+        140.0,
+        149.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter18_formula034]]",
+      "source_page": 577,
+      "printed_page": 557,
+      "source_block_ids": [
+        "p577:b3"
+      ],
+      "bbox": [
+        85.0,
+        164.0,
+        1036.0,
+        264.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "respectively, where the unsubscripted F is the ratio of observed mean squares defined by Equation 18.18, and the F values subscripted by their degrees of freedom are the critical values associated with $ \\alpha/2 $. These values are also obtainable from standard tables.",
+      "source_page": 577,
+      "printed_page": 557,
+      "source_block_ids": [
+        "p577:b5"
+      ],
+      "bbox": [
+        78.0,
+        314.0,
+        1036.0,
+        456.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Assuming normality of the underlying data, the $ 100(1 - \\alpha)\\% $ confidence interval for the heritability is given by",
+      "source_page": 577,
+      "printed_page": 557,
+      "source_block_ids": [
+        "p577:b6"
+      ],
+      "bbox": [
+        77.0,
+        444.0,
+        1034.0,
+        519.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter18_formula035]]",
+      "source_page": 577,
+      "printed_page": 557,
+      "source_block_ids": [
+        "p577:b7"
+      ],
+      "bbox": [
+        262.0,
+        531.0,
+        841.0,
         616.0
       ]
     },
     {
       "type": "discussion",
-      "content": "Standard errors provide rough guides to the accuracy of variance-component estimates, and to estimate them, we require the sampling variances of the observed mean squares. Under the assumptions of normality and balanced design, a useful (and general) result is that the observed mean squares extracted from an analysis of variance are distributed independently with expected sampling variance",
-      "source_page": 575,
-      "printed_page": 555,
+      "content": "(Scheffé 1959, Graybill 1961, Williams 1962). In these expressions, $F$ is again the ratio of observed mean squares defined by Equation 18.18, and $F_U$ and $F_L$ are the upper and lower $F$ values associated with $(\\alpha/2)$ at $(N-1)$, $(T-N)$ degrees of freedom. Specifically, $F_U = F_{(N-1),(T-N),(\\alpha/2)}$ whereas $F_L = 1/(F_{(T-N),(N-1),(\\alpha/2)})$. (See Example 2 for an application of this equation.)",
+      "source_page": 577,
+      "printed_page": 557,
       "source_block_ids": [
-        "p575:b5"
+        "p577:b9"
       ],
       "bbox": [
-        62.0,
-        605.0,
-        1023.0,
-        780.0
+        72.0,
+        622.0,
+        1029.0,
+        794.0
       ]
     },
     {
       "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter18_formula026]]",
-      "source_page": 575,
-      "printed_page": 555,
+      "content": "Although somewhat complicated, the preceding expressions are general, provided the data are normally distributed with homogeneous variance (i.e., $ s \\sim \\mathrm{N}(0, \\sigma_{s}^{2}) $ and $ e \\sim \\mathrm{N}(0, \\sigma_{e}^{2}) $ for all families). However, most confidence intervals reported in the literature are approximated by a simpler route. The usual procedure is to assume that the degrees of freedom are large enough that parameter estimates are approximately normally distributed. Then, symmetrical confidence intervals can be computed more simply from the standard errors, e.g., 95% confidence intervals are obtained by multiplying the standard error by 1.96 (Chapter 2). The degree to which this approach can yield biased confidence intervals will be illustrated in Example 2.",
+      "source_page": 577,
+      "printed_page": 557,
       "source_block_ids": [
-        "p575:b6"
+        "p577:b10"
       ],
       "bbox": [
-        400.0,
-        795.0,
-        676.0,
-        867.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "This fundamental relationship has been used in many contexts in quantitative genetics to derive expressions for variances and covariances of variance components extracted from ANOVA (Tukey 1956, 1957; Smith 1956; Bulmer 1957, 1980; Scheffé 1959). Searle et al. (1992) provide a particularly lucid overview of its utility.",
-      "source_page": 575,
-      "printed_page": 555,
-      "source_block_ids": [
-        "p575:b8"
-      ],
-      "bbox": [
-        57.0,
-        880.0,
-        1018.0,
-        1017.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "Since the variance-component estimators, Equations 18.12a–c, are linear functions of the observed mean squares, the rules for obtaining variances and covariances of linear functions (Chapter 3 and Appendix 1) can be used in conjunction with Equation 18.19 to obtain the large-sample approximations",
-      "source_page": 575,
-      "printed_page": 555,
-      "source_block_ids": [
-        "p575:b9"
-      ],
-      "bbox": [
-        56.0,
-        1009.0,
-        1017.0,
-        1148.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter18_formula027]]",
-      "source_page": 575,
-      "printed_page": 555,
-      "source_block_ids": [
-        "p575:b10"
-      ],
-      "bbox": [
-        234.0,
-        1163.0,
-        700.0,
-        1236.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter18_formula028]]",
-      "source_page": 575,
-      "printed_page": 555,
-      "source_block_ids": [
-        "p575:b12"
-      ],
-      "bbox": [
-        231.0,
-        1241.0,
-        747.0,
-        1401.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter18_formula029]]",
-      "source_page": 575,
-      "printed_page": 555,
-      "source_block_ids": [
-        "p575:b14"
-      ],
-      "bbox": [
-        136.0,
-        1408.0,
-        925.0,
-        1560.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter18_formula030]]",
-      "source_page": 576,
-      "printed_page": 556,
-      "source_block_ids": [
-        "p576:b2"
-      ],
-      "bbox": [
-        168.0,
-        124.0,
-        944.0,
-        174.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "The standard errors of the estimated within-family, among-family, and total phenotypic variance estimates are obtained by substituting observed mean squares into Equations 18.20a,c,d and taking square roots. Since the accuracy of the resultant standard errors depends on the accuracy of the observed mean squares, the standard errors are not very reliable if the degrees of freedom are small. Hence, the reference to “large-sample” estimators.",
-      "source_page": 576,
-      "printed_page": 556,
-      "source_block_ids": [
-        "p576:b4"
-      ],
-      "bbox": [
-        126.0,
-        181.0,
-        1088.0,
-        389.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "Using the techniques in Appendix 1, Osborne and Paterson (1952) showed that the large-sample variance of the intraclass correlation from a balanced one-way ANOVA is",
-      "source_page": 576,
-      "printed_page": 556,
-      "source_block_ids": [
-        "p576:b5"
-      ],
-      "bbox": [
-        131.0,
-        373.0,
-        1090.0,
-        488.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter18_formula031]]",
-      "source_page": 576,
-      "printed_page": 556,
-      "source_block_ids": [
-        "p576:b6"
-      ],
-      "bbox": [
-        415.0,
-        479.0,
-        808.0,
-        558.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "The standard error of $ h^{2} $ derived by half-sib analysis is estimated by $ 4\\sqrt{\\mathrm{Var}(t)} $. Again, the accuracy of this expression increases with the number of families in an analysis.",
-      "source_page": 576,
-      "printed_page": 556,
-      "source_block_ids": [
-        "p576:b8"
-      ],
-      "bbox": [
-        137.0,
-        574.0,
-        1093.0,
-        689.0
+        65.0,
+        785.0,
+        1028.0,
+        1117.0
       ]
     }
   ]

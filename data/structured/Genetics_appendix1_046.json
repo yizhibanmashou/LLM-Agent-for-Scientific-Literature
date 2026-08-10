@@ -2,17 +2,14 @@
   "id": "Genetics_appendix1_046",
   "metadata": {
     "chapter": "Genetics_appendix1",
-    "section": "Appendix 5",
-    "subsections": [
-      "Computing the Power of Statistical Tests"
-    ],
-    "section_level_1": "Appendix 5",
-    "section_level_2": "Computing the Power of Statistical Tests",
+    "section": "POWER OF NORMALLY DISTRIBUTED TEST STATISTICS",
+    "subsections": [],
+    "section_level_1": "POWER OF NORMALLY DISTRIBUTED TEST STATISTICS",
+    "section_level_2": null,
     "heading_path": [
-      "Appendix 5",
-      "Computing the Power of Statistical Tests"
+      "POWER OF NORMALLY DISTRIBUTED TEST STATISTICS"
     ],
-    "display_heading": "Appendix 5 / Computing the Power of Statistical Tests",
+    "display_heading": "POWER OF NORMALLY DISTRIBUTED TEST STATISTICS",
     "source_file": "",
     "source_pdf": "data/背景资料/Genetics.pdf",
     "source_title": "Genetics and Analysis of Quantitative Traits",
@@ -21,21 +18,125 @@
       "remote_llm_calls": 0
     },
     "heading_source": {
-      "source_page": 881,
-      "printed_page": 861,
+      "source_page": 882,
+      "printed_page": 862,
       "source_block_ids": [
-        "p881:b0"
+        "p882:b3"
       ],
       "bbox": [
-        363.0,
-        117.0,
-        725.0,
-        191.0
+        138.0,
+        357.0,
+        898.0,
+        390.0
       ],
-      "raw_text": "Appendix 5"
+      "raw_text": "POWER OF NORMALLY DISTRIBUTED TEST STATISTICS"
     }
   },
-  "blocks": [],
-  "node_kind": "heading",
-  "allow_empty": true
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Assume the test statistic $T$ is normally distributed under the null hypothesis, with $T \\sim \\mathrm{N}(\\mu_0, \\sigma_0^2)$. For power calculations, assume the null hypothesis is false and that the test statistic actually has mean $\\mu_1$ and variance $\\sigma_1^2$ but remains normally distributed, so that $T \\sim \\mathrm{N}(\\mu_1, \\sigma_1^2)$. To obtain expressions for the required sample size for a given power, it is convenient to first write the sample variance as a function of sample size $n$, with $\\sigma_i^2 = f_i^2 / n$ for $i = 0, 1$. (Often $\\sigma_0^2 = \\sigma_1^2$, in which case $f_0 = f_1$.) Finally, let $z_{(\\alpha)}$ satisfy",
+      "source_page": 882,
+      "printed_page": 862,
+      "source_block_ids": [
+        "p882:b4"
+      ],
+      "bbox": [
+        137.0,
+        424.0,
+        1095.0,
+        652.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula256]]",
+      "source_page": 882,
+      "printed_page": 862,
+      "source_block_ids": [
+        "p882:b5"
+      ],
+      "bbox": [
+        508.0,
+        681.0,
+        723.0,
+        718.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where $U$ is a unit normal random variable. For example, $\\Pr(U \\leq 1.65) = 0.95$, so that $z_{(0.95)} = 1.65$. Two identities involving $z_\\alpha$ will prove useful in the following discussions. First, note from Figure A5.2 that",
+      "source_page": 882,
+      "printed_page": 862,
+      "source_block_ids": [
+        "p882:b7"
+      ],
+      "bbox": [
+        138.0,
+        748.0,
+        1095.0,
+        845.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula257]]",
+      "source_page": 882,
+      "printed_page": 862,
+      "source_block_ids": [
+        "p882:b8"
+      ],
+      "bbox": [
+        495.0,
+        879.0,
+        737.0,
+        916.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "so that, for example, $ \\Pr(U > 1.65) = 0.05 $. Second, from the symmetry of the normal distribution it can be shown that",
+      "source_page": 882,
+      "printed_page": 862,
+      "source_block_ids": [
+        "p882:b10"
+      ],
+      "bbox": [
+        136.0,
+        946.0,
+        1095.0,
+        1012.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula258]]",
+      "source_page": 882,
+      "printed_page": 862,
+      "source_block_ids": [
+        "p882:b11"
+      ],
+      "bbox": [
+        525.0,
+        1053.0,
+        706.0,
+        1083.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "We now have the all the necessary definitions in hand to consider the power of normally distributed tests. Hypothesis tests generally fall into two categories: one-sided and two-sided, and we examine these in turn before considering specific applications.",
+      "source_page": 882,
+      "printed_page": 862,
+      "source_block_ids": [
+        "p882:b13"
+      ],
+      "bbox": [
+        137.0,
+        1113.0,
+        1095.0,
+        1244.0
+      ]
+    }
+  ]
 }

@@ -18,6 +18,7 @@ from scripts.build_genetics_staging import (
     starts_example_unit,
     mark_index_terms,
     merge_cross_page_hyphenations,
+    normalize_heading_text,
     join_adjacent_source_text,
     rotate_expanded,
     estimate_axis_skew,
@@ -75,7 +76,7 @@ def test_non_genetics_example_hash_ignores_genetics_rows(tmp_path: Path) -> None
     assert non_genetics_examples(path) == (count, digest)
 
 
-def test_exporter_renders_heading_only_and_table_notes(tmp_path: Path) -> None:
+def test_exporter_remains_backward_compatible_with_heading_only_and_table_notes(tmp_path: Path) -> None:
     structured = tmp_path / "structured"
     out = tmp_path / "textbook"
     write_json(
@@ -124,6 +125,57 @@ def test_exporter_renders_heading_only_and_table_notes(tmp_path: Path) -> None:
     rendered = (out / "Genetics_chapter4_textbook.md").read_text(encoding="utf-8")
     assert "THE TRANSMISSION OF GENETIC INFORMATION" in rendered
     assert "* This belongs to the table." in rendered
+
+
+def test_genetics_delivery_has_only_nonempty_contiguous_content_units() -> None:
+    structured = PROJECT_ROOT / "data" / "structured"
+    units = []
+    by_chapter: dict[str, list[dict]] = {}
+    for path in sorted(structured.glob("Genetics_*_[0-9][0-9][0-9].json")):
+        unit = json.loads(path.read_text(encoding="utf-8"))
+        units.append(unit)
+        by_chapter.setdefault(unit["metadata"]["chapter"], []).append(unit)
+
+    assert len(units) == 441
+    assert all(unit.get("blocks") for unit in units)
+    assert all(unit.get("node_kind") != "heading" for unit in units)
+    assert all(not unit.get("allow_empty") for unit in units)
+    for chapter, chapter_units in by_chapter.items():
+        assert [unit["id"] for unit in chapter_units] == [
+            f"{chapter}_{index:03d}" for index in range(1, len(chapter_units) + 1)
+        ]
+
+
+def test_genetics_pdf_confirmed_heading_merges_are_installed() -> None:
+    structured = PROJECT_ROOT / "data" / "structured"
+    units = [
+        json.loads(path.read_text(encoding="utf-8"))
+        for path in sorted(structured.glob("Genetics_*_[0-9][0-9][0-9].json"))
+    ]
+    headings = {
+        unit["metadata"]["display_heading"]: unit
+        for unit in units
+    }
+
+    hardy_heading = "THE TRANSMISSION OF GENETIC INFORMATION / The Hardy-Weinberg Principle"
+    assert headings[hardy_heading]["blocks"]
+    assert set(headings[hardy_heading]["metadata"]["heading_source"]["source_block_ids"]) == {
+        "p70:b2", "p70:b3",
+    }
+
+    wrapped = "FINE MAPPING OF MAJOR GENES USING POPULATION-LEVEL DISEQUILIBRIUM"
+    assert headings[wrapped]["blocks"]
+    assert set(headings[wrapped]["metadata"]["heading_source"]["source_block_ids"]) == {
+        "p427:b3", "p427:b4",
+    }
+
+    for unit in units:
+        path = unit["metadata"].get("heading_path") or []
+        normalized = [normalize_heading_text(item).casefold() for item in path]
+        assert len(normalized) == len(set(normalized))
+        chapter_number = unit["metadata"]["chapter"].removeprefix("Genetics_chapter")
+        if chapter_number.isdigit():
+            assert not path or path[0] != chapter_number
 
 
 def test_page_deskew_chooses_improving_sign_and_expands_canvas() -> None:

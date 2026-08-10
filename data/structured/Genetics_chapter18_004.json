@@ -4,15 +4,15 @@
     "chapter": "Genetics_chapter18",
     "section": "HALF-SIB ANALYSIS",
     "subsections": [
-      "One-way Analysis of Variance"
+      "Hypothesis Testing"
     ],
     "section_level_1": "HALF-SIB ANALYSIS",
-    "section_level_2": "One-way Analysis of Variance",
+    "section_level_2": "Hypothesis Testing",
     "heading_path": [
       "HALF-SIB ANALYSIS",
-      "One-way Analysis of Variance"
+      "Hypothesis Testing"
     ],
-    "display_heading": "HALF-SIB ANALYSIS / One-way Analysis of Variance",
+    "display_heading": "HALF-SIB ANALYSIS / Hypothesis Testing",
     "source_file": "",
     "source_pdf": "data/背景资料/Genetics.pdf",
     "source_title": "Genetics and Analysis of Quantitative Traits",
@@ -21,578 +21,199 @@
       "remote_llm_calls": 0
     },
     "heading_source": {
-      "source_page": 570,
-      "printed_page": 550,
+      "source_page": 574,
+      "printed_page": 554,
       "source_block_ids": [
-        "p570:b7"
+        "p574:b2"
       ],
       "bbox": [
-        119.0,
-        1022.0,
-        498.0,
-        1054.0
+        121.0,
+        136.0,
+        367.0,
+        171.0
       ],
-      "raw_text": "One-way Analysis of Variance"
+      "raw_text": "Hypothesis Testing"
     }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "ANOVA uses sums of squares, the derivation of which we outline below. Throughout, we use SS to denote an observed sum of squares, and $ E(\\mathrm{SS}) $ to denote its expected value. As we will see shortly, scaled sums of squares, known as mean squares, are used to estimate variance components. We use the parallel notation, MS and $ E(\\mathrm{MS}) $, to denote observed and expected mean squares.",
-      "source_page": 570,
-      "printed_page": 550,
+      "content": "In obtaining the variance-component estimators, Equations 18.12a,b, we made no assumptions as to how the data or their underlying components ( $ s_{i} $ and $ e_{ij} $) were distributed, other than the constraint that they are independent of each other. This distribution-free condition illustrates a useful feature of ANOVA that is not shared by many other estimation procedures — it yields variance-component estimates that are unbiased with respect to the true parametric values (although, as just noted, nonlinear functions, such as ratios, of these estimates will be biased). Unfortunately, this distribution-free property does not extend to the estimation of confidence intervals for the variance components, nor to most traditional methods of hypothesis testing.",
+      "source_page": 574,
+      "printed_page": 554,
       "source_block_ids": [
-        "p570:b8"
+        "p574:b3"
       ],
       "bbox": [
-        118.0,
-        1064.0,
-        1075.0,
-        1223.0
+        121.0,
+        169.0,
+        1083.0,
+        498.0
       ]
     },
     {
       "type": "discussion",
-      "content": "Consider the balanced design in which n half sibs are assayed from each of N males, so that there are a total T = Nn individuals in the analysis. The quantity",
-      "source_page": 570,
-      "printed_page": 550,
+      "content": "Most conventional hypothesis tests involving ANOVA assume normality and homogeneity of error variances. Thus, prior to embarking on an analysis of variance, an attempt should always be made to ensure that the observed data are on an appropriate scale of measurement (Chapter 11). It should be realized, however, that normality of the observed data does not guarantee normality of the distributions of the underlying factors $ s_{i} $ and $ e_{ii} $.",
+      "source_page": 574,
+      "printed_page": 554,
       "source_block_ids": [
-        "p570:b9"
+        "p574:b4"
       ],
       "bbox": [
-        120.0,
-        1223.0,
-        1077.0,
-        1288.0
+        127.0,
+        489.0,
+        1087.0,
+        689.0
       ]
     },
     {
       "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter18_formula004]]",
-      "source_page": 570,
-      "printed_page": 550,
+      "content": "Assuming that adequate normalization has been accomplished, standard theoretical results can be used to test the hypothesis that the among-family component of variance, and hence the heritability, is significantly greater than zero. We accomplish this by recalling from Appendix 5 that when normally distributed variables with mean zero and variance one (unit normals) are squared, they follow a $ \\chi^{2} $ distribution. Dividing an observed sum of squares (SS) by its associated E(MS) transforms the SS into a sum of squared unit normals, which is $ \\chi^{2} $-distributed with the associated degrees of freedom. For the one-way ANOVA, from Equations 18.7a, 18.9, and 18.11, the expected mean squares are",
+      "source_page": 574,
+      "printed_page": 554,
       "source_block_ids": [
-        "p570:b10"
+        "p574:b5"
       ],
       "bbox": [
-        451.0,
-        1319.0,
-        739.0,
-        1406.0
+        130.0,
+        683.0,
+        1090.0,
+        982.0
       ]
     },
     {
       "type": "discussion",
-      "content": "defines the observed total sum of squares around the grand mean $ \\overline{z} $. ANOVA partitions $ SS_{T} $ into components describing variation among the $ s_{i} $ (i.e., among families) and among the $ e_{ij} $ within families. This partitioning is readily accom- plished by expanding around the observed family means, $ \\overline{z}_{i} = \\sum_{j=1}^{n} z_{ij}/n $,",
-      "source_page": 570,
-      "printed_page": 550,
+      "content": "[[FORMULA:Genetics_chapter18_formula021]]",
+      "source_page": 574,
+      "printed_page": 554,
       "source_block_ids": [
-        "p570:b12",
-        "p571:b2"
+        "p574:b6"
       ],
       "bbox": [
-        118.0,
-        1439.0,
-        1077.0,
-        1536.0
-      ],
-      "source_page_end": 571
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter18_formula005]]",
-      "source_page": 571,
-      "printed_page": 551,
-      "source_block_ids": [
-        "p571:b3"
-      ],
-      "bbox": [
-        221.0,
-        201.0,
-        913.0,
-        387.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "The middle term of this expression is equal to zero, since by the definition of a mean, $ \\sum_{j=1}^{n}(z_{ij}-\\overline{z_i})=0 $. The third term may be written as $ n\\sum_{i=1}^{N}(\\overline{z}_i-\\overline{z})^2 $ since it does not contain j. Thus, the total sum of squares is partitioned into an among- and a within-family component,",
-      "source_page": 571,
-      "printed_page": 551,
-      "source_block_ids": [
-        "p571:b5"
-      ],
-      "bbox": [
-        89.0,
-        413.0,
-        1048.0,
-        548.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter18_formula006]]",
-      "source_page": 571,
-      "printed_page": 551,
-      "source_block_ids": [
-        "p571:b6"
-      ],
-      "bbox": [
-        318.0,
-        571.0,
-        818.0,
-        699.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "The within-family sum of squares $ (SS_{e}) $ is simply the sum of the squared deviations of individual measures from their observed family means, while the among-family sum of squares $ (SS_{s}) $ is the sum (over all progeny) of the squared deviations of observed family means from the grand mean.",
-      "source_page": 571,
-      "printed_page": 551,
-      "source_block_ids": [
-        "p571:b8"
-      ],
-      "bbox": [
-        90.0,
-        727.0,
-        1049.0,
-        856.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "Assuming that the parents are a random sample of the population at large, the sums of squares can be used to obtain unbiased estimates of the within- and among-family components of variance in the following way. We note first that the expected within-family sum of squares is",
-      "source_page": 571,
-      "printed_page": 551,
-      "source_block_ids": [
-        "p571:b9"
-      ],
-      "bbox": [
-        89.0,
-        857.0,
-        1049.0,
-        986.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter18_formula007]]",
-      "source_page": 571,
-      "printed_page": 551,
-      "source_block_ids": [
-        "p571:b10"
-      ],
-      "bbox": [
-        285.0,
-        1009.0,
-        855.0,
-        1111.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "This result follows from the fact that $ \\sum_{j=1}^{n}(z_{ij} - \\overline{z}_{i})^{2}/(n - 1) $ is an unbiased estimate of the variance among sibs in the ith family (Chapter 2) and from our assumption that the variance within each family is equal to $ \\sigma_{e}^{2} $.",
-      "source_page": 571,
-      "printed_page": 551,
-      "source_block_ids": [
-        "p571:b12"
-      ],
-      "bbox": [
-        90.0,
-        1136.0,
-        1048.0,
-        1233.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "For the among-family sum of squares, similar reasoning leads to",
-      "source_page": 571,
-      "printed_page": 551,
-      "source_block_ids": [
-        "p571:b13"
-      ],
-      "bbox": [
-        142.0,
-        1234.0,
-        916.0,
-        1267.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter18_formula008]]",
-      "source_page": 571,
-      "printed_page": 551,
-      "source_block_ids": [
-        "p571:b14"
-      ],
-      "bbox": [
-        290.0,
-        1293.0,
-        848.0,
-        1380.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "where $ \\sigma^2(\\overline{z}_i) $ is the expected variance of the observed family means, here (with a balanced design) assumed to be the same for all families. Further simplification of this expression is possible. The variance of observed family means is a function of the variance of the true family means, the $ (\\mu + s_i) $, as well as of their sampling error, the $ \\overline{e}_{i}=\\overline{z}_{i}-(\\mu+s_{i}) $. Thus, assuming that the measurement error is independent of the family mean,",
-      "source_page": 571,
-      "printed_page": 551,
-      "source_block_ids": [
-        "p571:b16",
-        "p572:b2"
-      ],
-      "bbox": [
-        89.0,
-        1405.0,
-        1049.0,
-        1536.0
-      ],
-      "source_page_end": 572
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter18_formula009]]",
-      "source_page": 572,
-      "printed_page": 552,
-      "source_block_ids": [
-        "p572:b3"
-      ],
-      "bbox": [
-        421.0,
-        201.0,
-        761.0,
-        240.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "Since $ \\mu $ is a constant, the first term of this expression is the among-family variance, $ \\sigma_{s}^{2} $, while the second is the expected sampling variance of a mean, $ \\sigma_{e}^{2}/n $ (Chapter 2). Substituting into Equation 18.7b,",
-      "source_page": 572,
-      "printed_page": 552,
-      "source_block_ids": [
-        "p572:b5"
-      ],
-      "bbox": [
-        112.0,
-        257.0,
-        1070.0,
-        355.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter18_formula010]]",
-      "source_page": 572,
-      "printed_page": 552,
-      "source_block_ids": [
-        "p572:b6"
-      ],
-      "bbox": [
-        419.0,
-        385.0,
-        762.0,
-        424.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "Finally, rearranging Equations 18.7a and 18.9, the variance components can be expressed in terms of the expected sums of squares,",
-      "source_page": 572,
-      "printed_page": 552,
-      "source_block_ids": [
-        "p572:b8"
-      ],
-      "bbox": [
-        112.0,
-        453.0,
-        1069.0,
-        521.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter18_formula011]]",
-      "source_page": 572,
-      "printed_page": 552,
-      "source_block_ids": [
-        "p572:b9"
-      ],
-      "bbox": [
-        407.0,
-        550.0,
-        594.0,
-        620.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter18_formula012]]",
-      "source_page": 572,
-      "printed_page": 552,
-      "source_block_ids": [
-        "p572:b11"
-      ],
-      "bbox": [
-        407.0,
-        631.0,
-        766.0,
-        704.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "Note that the sums of squares in these expressions are divided by constants. Such weighted sums of squares are the mean squares (MS) referred to above, and the quantities in their denominators are the associated degrees of freedom (df). For the half-sib model,",
-      "source_page": 572,
-      "printed_page": 552,
-      "source_block_ids": [
-        "p572:b13"
-      ],
-      "bbox": [
-        109.0,
-        732.0,
-        1067.0,
-        862.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter18_formula013]]",
-      "source_page": 572,
-      "printed_page": 552,
-      "source_block_ids": [
-        "p572:b14"
-      ],
-      "bbox": [
-        483.0,
-        887.0,
-        656.0,
-        954.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter18_formula014]]",
-      "source_page": 572,
-      "printed_page": 552,
-      "source_block_ids": [
-        "p572:b16"
-      ],
-      "bbox": [
-        484.0,
-        962.0,
-        692.0,
+        491.0,
+        992.0,
+        735.0,
         1033.0
       ]
     },
     {
       "type": "discussion",
-      "content": "are the observed among- and within-family mean squares. Substitution of observed mean squares for their expectations in Equations 18.10a,b yields the following unbiased estimators of $ \\sigma_{s}^{2} $, $ \\sigma_{e}^{2} $, and $ \\sigma_{z}^{2} $,",
-      "source_page": 572,
-      "printed_page": 552,
+      "content": "[[FORMULA:Genetics_chapter18_formula022]]",
+      "source_page": 574,
+      "printed_page": 554,
       "source_block_ids": [
-        "p572:b18"
+        "p574:b8"
       ],
       "bbox": [
-        109.0,
-        1062.0,
-        1070.0,
-        1161.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter18_formula015]]",
-      "source_page": 572,
-      "printed_page": 552,
-      "source_block_ids": [
-        "p572:b19"
-      ],
-      "bbox": [
-        440.0,
-        1188.0,
-        698.0,
-        1253.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter18_formula016]]",
-      "source_page": 572,
-      "printed_page": 552,
-      "source_block_ids": [
-        "p572:b21"
-      ],
-      "bbox": [
-        442.0,
-        1262.0,
-        611.0,
-        1298.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter18_formula017]]",
-      "source_page": 572,
-      "printed_page": 552,
-      "source_block_ids": [
-        "p572:b23"
-      ],
-      "bbox": [
-        439.0,
-        1310.0,
-        739.0,
-        1346.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "A summary of the steps for obtaining the observed mean squares, generalized to allow for unequal family sizes, is given in Table 18.1. This general procedure of estimating variance components from observed mean squares is an example of the method of moments, as the unknown variances can be expressed in terms of observable moments (here, the mean squares).",
-      "source_page": 572,
-      "printed_page": 552,
-      "source_block_ids": [
-        "p572:b25"
-      ],
-      "bbox": [
-        111.0,
-        1378.0,
-        1075.0,
-        1539.0
-      ]
-    },
-    {
-      "type": "table",
-      "content": "[[TABLE:18.1]]",
-      "source_page": 573,
-      "printed_page": 553,
-      "source_block_ids": [
-        "p573:b3"
-      ],
-      "bbox": [
-        73.0,
-        196.0,
+        492.0,
         1041.0,
-        686.0
+        659.0,
+        1081.0
       ]
     },
     {
       "type": "discussion",
-      "content": "The quantity",
-      "source_page": 573,
-      "printed_page": 553,
+      "content": "Thus,",
+      "source_page": 574,
+      "printed_page": 554,
       "source_block_ids": [
-        "p573:b4"
+        "p574:b10"
       ],
       "bbox": [
-        124.0,
-        761.0,
-        287.0,
-        800.0
+        137.0,
+        1106.0,
+        212.0,
+        1137.0
       ]
     },
     {
       "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter18_formula018]]",
-      "source_page": 573,
-      "printed_page": 553,
+      "content": "[[FORMULA:Genetics_chapter18_formula023]]",
+      "source_page": 574,
+      "printed_page": 554,
       "source_block_ids": [
-        "p573:b5"
+        "p574:b11"
       ],
       "bbox": [
-        455.0,
-        797.0,
-        637.0,
-        870.0
+        504.0,
+        1152.0,
+        723.0,
+        1222.0
       ]
     },
     {
       "type": "discussion",
-      "content": "is the intraclass correlation (Fisher 1918, 1925), discussed previously in Chapter 17. It provides an estimate of the fraction of the phenotypic variance attributable to differences among sires. Recalling from above that $ \\sigma_{s}^{2} = \\sigma(\\mathrm{PHS}) \\simeq \\sigma_{A}^{2}/4 $, the paternal half-sib ANOVA estimator of the heritability is",
-      "source_page": 573,
-      "printed_page": 553,
+      "content": "[[FORMULA:Genetics_chapter18_formula024]]",
+      "source_page": 574,
+      "printed_page": 554,
       "source_block_ids": [
-        "p573:b7"
+        "p574:b13"
       ],
       "bbox": [
-        67.0,
-        872.0,
-        1029.0,
-        1012.0
+        570.0,
+        1232.0,
+        728.0,
+        1300.0
       ]
     },
     {
       "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter18_formula019]]",
-      "source_page": 573,
-      "printed_page": 553,
+      "content": "Recall also that the ratio of two $ \\chi^{2} $-distributed variables, each divided by its respective degrees of freedom, follows an F distribution (Appendix 5).",
+      "source_page": 574,
+      "printed_page": 554,
       "source_block_ids": [
-        "p573:b8"
+        "p574:b15"
       ],
       "bbox": [
-        475.0,
-        1024.0,
-        616.0,
-        1064.0
+        138.0,
+        1316.0,
+        1096.0,
+        1388.0
       ]
     },
     {
       "type": "discussion",
-      "content": "This expression again assumes that contributions from epistatic genetic variance are small.",
-      "source_page": 573,
-      "printed_page": 553,
+      "content": "Now notice that if $ \\sigma_{s}^{2}=0 $, the denominators of Equations 18.17a and 18.17b are the same, in which case their ratio is simply $ SS_{s}/SS_{e} $. Recalling that $ SS_{x}/df_{x}=MS_{x} $,",
+      "source_page": 574,
+      "printed_page": 554,
       "source_block_ids": [
-        "p573:b10"
+        "p574:b16"
       ],
       "bbox": [
-        65.0,
-        1075.0,
-        1022.0,
-        1150.0
+        138.0,
+        1381.0,
+        1096.0,
+        1485.0
       ]
     },
     {
       "type": "discussion",
-      "content": "Ratios of quantities estimated with sampling error are usually biased with respect to their parametric values (Appendix 1), and this is true for the intraclass correlation (Ponzoni and James 1978, Wang et al. 1991). Letting $ \\tau $ be the parametric value, the downward bias is approximately",
-      "source_page": 573,
-      "printed_page": 553,
+      "content": "[[FORMULA:Genetics_chapter18_formula025]]",
+      "source_page": 574,
+      "printed_page": 554,
       "source_block_ids": [
-        "p573:b11"
+        "p574:b17"
       ],
       "bbox": [
-        61.0,
-        1142.0,
-        1024.0,
-        1280.0
+        558.0,
+        1474.0,
+        679.0,
+        1538.0
       ]
     },
     {
       "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter18_formula020]]",
-      "source_page": 573,
-      "printed_page": 553,
+      "content": "provides a test of the hypothesis that $ E(\\mathrm{MS}_{s}) = E(\\mathrm{MS}_{e}) $, or equivalently that $ \\sigma_{s}^{2} = 0 $. If $ \\sigma_{s}^{2} > 0 $, we expect the ratio of observed mean squares to be greater than one. However, it needs to be significantly larger than one if we are to be confident in our conclusion that $ MS_{s} > MS_{e} $ did not occur just by chance. An explicit test of the null hypothesis of no sire effects is made by referring to standard F-distribution tables and comparing the observed value of F with the critical values associated with $ (N - 1) $ and $ (T - N) $ degrees of freedom.",
+      "source_page": 575,
+      "printed_page": 555,
       "source_block_ids": [
-        "p573:b12"
+        "p575:b2"
       ],
       "bbox": [
-        275.0,
-        1292.0,
-        806.0,
-        1365.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "In principle, correction for this bias can be made by substituting the observed $ t_{PHS} $ for $ \\tau $ in the preceding expression and adding the estimated bias $ \\Delta_{t} $ to $ t_{PHS} $ prior to estimating the heritability with Equation 18.14. The bias in $ t_{PHS} $ can be considerable if N is very small (less than 20), but for larger designs it is generally no more than a few percent.",
-      "source_page": 573,
-      "printed_page": 553,
-      "source_block_ids": [
-        "p573:b14"
-      ],
-      "bbox": [
-        60.0,
-        1369.0,
-        1019.0,
-        1540.0
+        71.0,
+        149.0,
+        1035.0,
+        385.0
       ]
     }
   ]

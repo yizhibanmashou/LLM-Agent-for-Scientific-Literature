@@ -1,7 +1,6 @@
 # Chapter 13 · 13 Detecting Major Genes
 
-## Genetics_chapter13_001 · 13
-Detecting Major Genes
+## Genetics_chapter13_001 · 13 Detecting Major Genes
 
 In some cases, the bulk of character variation (either total or genetic) can be attributed to one or a few major genes. For a variety of reasons, it is of great interest to detect such genes. From a biological standpoint, the presence of major genes offers the potential for their isolation and genetic characterization, which in turn may be highly informative as to the underlying biological processes generating character variation. From a theoretical standpoint, several quantitative-genetic models (especially those dealing with selection response) assume a large number of loci of roughly equal (and small) effects. The validity of these models is severely compromised by the presence of major genes. If one or two major loci account for most of the genetic variation of a trait, essentially any problem of interest can be correctly modeled using standard machinery of one- and two-locus population genetics.
 

@@ -1,10 +1,6 @@
-# Chapter 3 · 3
+# Chapter 3 · Covariance, Regression, and Correlation
 
-## Genetics_chapter3_001 · 3
-
----
-
-## Genetics_chapter3_002 · 3 / Covariance, Regression, and Correlation
+## Genetics_chapter3_001 · Covariance, Regression, and Correlation
 
 In the previous chapter, the variance was introduced as a measure of the dispersion of a univariate distribution. Additional statistics are required to describe the joint distribution of two or more variables. The covariance provides a natural measure of the association between two variables, and it appears in the analysis of many problems in quantitative genetics including the resemblance between relatives, the correlation between characters, and measures of selection.
 
@@ -12,7 +8,7 @@ As a prelude to the formal theory of covariance and regression, we first provide
 
 ---
 
-## Genetics_chapter3_003 · JOINTLY DISTRIBUTED RANDOM VARIABLES
+## Genetics_chapter3_002 · JOINTLY DISTRIBUTED RANDOM VARIABLES
 
 The probability of joint occurrence of a pair of random variables $ (x, y) $ is specified by the joint probability density function, $ p(x, y) $, where
 
@@ -54,7 +50,7 @@ If $x$ and $y$ are independent, knowledge of $x$ gives no information about the 
 
 ---
 
-## Genetics_chapter3_004 · JOINTLY DISTRIBUTED RANDOM VARIABLES / Expectations of Jointly Distributed Variables
+## Genetics_chapter3_003 · JOINTLY DISTRIBUTED RANDOM VARIABLES / Expectations of Jointly Distributed Variables
 
 The expectation of a bivariate function, $f(x,y)$, is determined by the joint probability density
 
@@ -84,7 +80,7 @@ where $ \alpha $ and $ \beta $ are constants. Thus, the conditional expectation 
 
 ---
 
-## Genetics_chapter3_005 · COVARIANCE
+## Genetics_chapter3_004 · COVARIANCE
 
 Consider a set of paired variables, $ (x, y) $. For each pair, subtract the population mean $ \mu_x $ from the measure of $ x $, and similarly subtract $ \mu_y $ from $ y $. Finally, for each pair of observations, multiply both of these new measures together to obtain $ (x - \mu_x)(y - \mu_y) $. The covariance of $ x $ and $ y $ is defined to be the average of this quantity over all pairs of measures in the population,
 
@@ -129,7 +125,7 @@ The covariance is a measure of association between $x$ and $y$ (Figure 3.1). It 
 
 ---
 
-## Genetics_chapter3_006 · COVARIANCE / Useful Identities for Variances and Covariances
+## Genetics_chapter3_005 · COVARIANCE / Useful Identities for Variances and Covariances
 
 Since $\sigma(x,y)=\sigma(y,x)$, covariances are symmetrical. Furthermore, from the definition of the variance and covariance,
 
@@ -209,7 +205,7 @@ We will make considerable use of the preceding relationships in the remainder of
 
 ---
 
-## Genetics_chapter3_007 · REGRESSION
+## Genetics_chapter3_006 · REGRESSION
 
 Depending on the causal connections between two variables, x and y, their true relationship may be linear or nonlinear. However, regardless of the true pattern of association, a linear model can always serve as a first approximation. In this case, the analysis is particularly simple,
 
@@ -233,7 +229,7 @@ The objective of linear regression analysis is to estimate the model parameters,
 
 ---
 
-## Genetics_chapter3_008 · REGRESSION / Derivation of the Least-Squares Linear Regression
+## Genetics_chapter3_007 · REGRESSION / Derivation of the Least-Squares Linear Regression
 
 The mathematical method of least-squares linear regression provides one such best-fit solution. Without making any assumptions about the true joint distribution of x and y, least-squares regression minimizes the average value of the squared (vertical) deviations of the observed y from the values predicted by the regression line. That is, the least-squares solution yields the values of a and b that minimize the mean squared residual, $ \overline{e^2} $. Other criteria could be used to define “best fit.” For example, one might minimize the mean absolute deviations (or cubed deviations) of observed values from predicted values. However, as we will now see, least-squares regression has the unique and very useful property of maximizing the amount of variance in y that can be explained by a linear model.
 
@@ -302,7 +298,7 @@ Thus, the least-squares estimators for the intercept and slope of a linear regre
 
 ---
 
-## Genetics_chapter3_009 · REGRESSION / Properties of Least-squares Regressions
+## Genetics_chapter3_008 · REGRESSION / Properties of Least-squares Regressions
 
 Here we summarize some fundamental features and useful properties of the least-squares approach to linear regression analysis:
 
@@ -343,7 +339,7 @@ For practical reasons, we have expressed properties 1 – 6 in terms of the esti
 
 **[示例 Example]**
 
-> **Example 1** · ref: `Genetics_chapter3:1` · source: `Genetics_chapter3_009.json` · blocks 12–15
+> **Example 1** · ref: `Genetics_chapter3:1` · source: `Genetics_chapter3_008.json` · blocks 12–15
 >
 > Example 1. Suppose $ \text{Cov}(x, y) = 10 $, $ \text{Var}(x) = 10 $, $ \text{Var}(y) = 15 $, and $ \overline{x} = \overline{y} = 0 $. Compute the least-squares regressions of y on x, and of x on y.
 > 
@@ -359,7 +355,7 @@ For practical reasons, we have expressed properties 1 – 6 in terms of the esti
 
 ---
 
-## Genetics_chapter3_010 · CORRELATION
+## Genetics_chapter3_009 · CORRELATION
 
 For purposes of hypothesis testing, it is often desirable to use a dimensionless measure of association. The most frequently used measure in bivariate analysis is the correlation coefficient,
 
@@ -407,7 +403,7 @@ $$
 
 **[示例 Example]**
 
-> **Example 2** · ref: `Genetics_chapter3:2` · source: `Genetics_chapter3_010.json` · blocks 12–20
+> **Example 2** · ref: `Genetics_chapter3:2` · source: `Genetics_chapter3_009.json` · blocks 12–20
 >
 > Example 2. Returning to Table 2.1, the preceding formulae can be used to characterize the relationship between maternal weight and offspring number in rats. Here we take offspring number as the response variable y and maternal weight as the predictor variable x. The mean and variance for maternal weight were found to be $ \overline{x} = 118.90 $ and $ \operatorname{Var}(x) = 623.06 $ (Table 2.1). For offspring number, $ \overline{y} = 5.49 $ and $ \operatorname{Var}(y) = 2.94 $. In order to obtain an estimate of the covariance, we first require an estimate of $ E(x, y) $. Taking the xy cross-product of all classes in Table 2.1 (using the midpoint of the interval for the value of x) and weighting them by their frequencies,
 > 
@@ -442,11 +438,7 @@ $$
 
 ---
 
-## Genetics_chapter3_011 · A TASTE OF QUANTITATIVE-GENETIC THEORY
-
----
-
-## Genetics_chapter3_012 · A TASTE OF QUANTITATIVE-GENETIC THEORY / Directional Selection Differentials and the Robertson-Price Identity
+## Genetics_chapter3_010 · A TASTE OF QUANTITATIVE-GENETIC THEORY / Directional Selection Differentials and the Robertson-Price Identity
 
 The evolutionary response of a character to selection is a function of the intensity of selection and the fraction of the phenotypic variance attributable to certain genetic effects. As noted at the end of last chapter, the directional selection differential, S, is defined to be the within-generation difference between the mean phenotype
 
@@ -504,7 +496,7 @@ where $ \mu_{o} $ is the mean phenotype of the offspring of the selected parents
 
 ---
 
-## Genetics_chapter3_013 · A TASTE OF QUANTITATIVE-GENETIC THEORY / The Correlation between Genotypic and Phenotypic Values
+## Genetics_chapter3_011 · A TASTE OF QUANTITATIVE-GENETIC THEORY / The Correlation between Genotypic and Phenotypic Values
 
 Equation 3.22 shows that evolution by natural selection requires heritable variation, as no matter how large S is, the response to selection across generations is zero if $ \beta = 0 $. Quantification of the correspondence between phenotypic and genotypic values is related to one of the central goals of quantitative genetics — the partitioning of the phenotypic variance into genetic and nongenetic components. The standard approach is to consider the phenotypic value of an individual, z, to be the sum of the total effects of all loci on the trait, G (the genotypic value), and an environmental deviation E (analogous to the residual error above),
 
@@ -543,7 +535,7 @@ From Equation 3.23, it can be seen that covariance between genotypic values and 
 
 ---
 
-## Genetics_chapter3_014 · A TASTE OF QUANTITATIVE-GENETIC THEORY / Regression of Offspring Phenotype on Midparent Phenotype
+## Genetics_chapter3_012 · A TASTE OF QUANTITATIVE-GENETIC THEORY / Regression of Offspring Phenotype on Midparent Phenotype
 
 Although the previous example has provided some insight into the genetic basis of phenotypic variation without getting bogged down in genetic complexities, in practice that approach is not very useful. Whereas phenotypic values are easily obtained (they are what we measure), the underlying genetic values are essentially unobservable without an extensive breeding program, and even then, they cannot be determined with complete accuracy (Chapter 26).
 

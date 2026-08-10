@@ -4,15 +4,15 @@
     "chapter": "Genetics_chapter18",
     "section": "HALF-SIB ANALYSIS",
     "subsections": [
-      "Hypothesis Testing"
+      "Sampling Variance and Standard Errors"
     ],
     "section_level_1": "HALF-SIB ANALYSIS",
-    "section_level_2": "Hypothesis Testing",
+    "section_level_2": "Sampling Variance and Standard Errors",
     "heading_path": [
       "HALF-SIB ANALYSIS",
-      "Hypothesis Testing"
+      "Sampling Variance and Standard Errors"
     ],
-    "display_heading": "HALF-SIB ANALYSIS / Hypothesis Testing",
+    "display_heading": "HALF-SIB ANALYSIS / Sampling Variance and Standard Errors",
     "source_file": "",
     "source_pdf": "data/背景资料/Genetics.pdf",
     "source_title": "Genetics and Analysis of Quantitative Traits",
@@ -21,199 +21,214 @@
       "remote_llm_calls": 0
     },
     "heading_source": {
-      "source_page": 574,
-      "printed_page": 554,
+      "source_page": 575,
+      "printed_page": 555,
       "source_block_ids": [
-        "p574:b2"
+        "p575:b3"
       ],
       "bbox": [
-        121.0,
-        136.0,
-        367.0,
-        171.0
+        69.0,
+        398.0,
+        564.0,
+        439.0
       ],
-      "raw_text": "Hypothesis Testing"
+      "raw_text": "Sampling Variance and Standard Errors"
     }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "In obtaining the variance-component estimators, Equations 18.12a,b, we made no assumptions as to how the data or their underlying components ( $ s_{i} $ and $ e_{ij} $) were distributed, other than the constraint that they are independent of each other. This distribution-free condition illustrates a useful feature of ANOVA that is not shared by many other estimation procedures — it yields variance-component estimates that are unbiased with respect to the true parametric values (although, as just noted, nonlinear functions, such as ratios, of these estimates will be biased). Unfortunately, this distribution-free property does not extend to the estimation of confidence intervals for the variance components, nor to most traditional methods of hypothesis testing.",
-      "source_page": 574,
-      "printed_page": 554,
-      "source_block_ids": [
-        "p574:b3"
-      ],
-      "bbox": [
-        121.0,
-        169.0,
-        1083.0,
-        498.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "Most conventional hypothesis tests involving ANOVA assume normality and homogeneity of error variances. Thus, prior to embarking on an analysis of variance, an attempt should always be made to ensure that the observed data are on an appropriate scale of measurement (Chapter 11). It should be realized, however, that normality of the observed data does not guarantee normality of the distributions of the underlying factors $ s_{i} $ and $ e_{ii} $.",
-      "source_page": 574,
-      "printed_page": 554,
-      "source_block_ids": [
-        "p574:b4"
-      ],
-      "bbox": [
-        127.0,
-        489.0,
-        1087.0,
-        689.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "Assuming that adequate normalization has been accomplished, standard theoretical results can be used to test the hypothesis that the among-family component of variance, and hence the heritability, is significantly greater than zero. We accomplish this by recalling from Appendix 5 that when normally distributed variables with mean zero and variance one (unit normals) are squared, they follow a $ \\chi^{2} $ distribution. Dividing an observed sum of squares (SS) by its associated E(MS) transforms the SS into a sum of squared unit normals, which is $ \\chi^{2} $-distributed with the associated degrees of freedom. For the one-way ANOVA, from Equations 18.7a, 18.9, and 18.11, the expected mean squares are",
-      "source_page": 574,
-      "printed_page": 554,
-      "source_block_ids": [
-        "p574:b5"
-      ],
-      "bbox": [
-        130.0,
-        683.0,
-        1090.0,
-        982.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter18_formula021]]",
-      "source_page": 574,
-      "printed_page": 554,
-      "source_block_ids": [
-        "p574:b6"
-      ],
-      "bbox": [
-        491.0,
-        992.0,
-        735.0,
-        1033.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter18_formula022]]",
-      "source_page": 574,
-      "printed_page": 554,
-      "source_block_ids": [
-        "p574:b8"
-      ],
-      "bbox": [
-        492.0,
-        1041.0,
-        659.0,
-        1081.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "Thus,",
-      "source_page": 574,
-      "printed_page": 554,
-      "source_block_ids": [
-        "p574:b10"
-      ],
-      "bbox": [
-        137.0,
-        1106.0,
-        212.0,
-        1137.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter18_formula023]]",
-      "source_page": 574,
-      "printed_page": 554,
-      "source_block_ids": [
-        "p574:b11"
-      ],
-      "bbox": [
-        504.0,
-        1152.0,
-        723.0,
-        1222.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter18_formula024]]",
-      "source_page": 574,
-      "printed_page": 554,
-      "source_block_ids": [
-        "p574:b13"
-      ],
-      "bbox": [
-        570.0,
-        1232.0,
-        728.0,
-        1300.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "Recall also that the ratio of two $ \\chi^{2} $-distributed variables, each divided by its respective degrees of freedom, follows an F distribution (Appendix 5).",
-      "source_page": 574,
-      "printed_page": 554,
-      "source_block_ids": [
-        "p574:b15"
-      ],
-      "bbox": [
-        138.0,
-        1316.0,
-        1096.0,
-        1388.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "Now notice that if $ \\sigma_{s}^{2}=0 $, the denominators of Equations 18.17a and 18.17b are the same, in which case their ratio is simply $ SS_{s}/SS_{e} $. Recalling that $ SS_{x}/df_{x}=MS_{x} $,",
-      "source_page": 574,
-      "printed_page": 554,
-      "source_block_ids": [
-        "p574:b16"
-      ],
-      "bbox": [
-        138.0,
-        1381.0,
-        1096.0,
-        1485.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter18_formula025]]",
-      "source_page": 574,
-      "printed_page": 554,
-      "source_block_ids": [
-        "p574:b17"
-      ],
-      "bbox": [
-        558.0,
-        1474.0,
-        679.0,
-        1538.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "provides a test of the hypothesis that $ E(\\mathrm{MS}_{s}) = E(\\mathrm{MS}_{e}) $, or equivalently that $ \\sigma_{s}^{2} = 0 $. If $ \\sigma_{s}^{2} > 0 $, we expect the ratio of observed mean squares to be greater than one. However, it needs to be significantly larger than one if we are to be confident in our conclusion that $ MS_{s} > MS_{e} $ did not occur just by chance. An explicit test of the null hypothesis of no sire effects is made by referring to standard F-distribution tables and comparing the observed value of F with the critical values associated with $ (N - 1) $ and $ (T - N) $ degrees of freedom.",
+      "content": "In the analysis of heritability, a case can be made that hypothesis testing is of little biological relevance. Because polygenic mutation continually introduces genetic variation into populations, the heritabilities of essentially all characters must be nonzero, and the only real issue is their absolute magnitude. If an F-test signals nonsignificance, it most likely is a simple consequence of inadequate sample size.",
       "source_page": 575,
       "printed_page": 555,
       "source_block_ids": [
-        "p575:b2"
+        "p575:b4"
       ],
       "bbox": [
-        71.0,
-        149.0,
-        1035.0,
-        385.0
+        66.0,
+        442.0,
+        1027.0,
+        616.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Standard errors provide rough guides to the accuracy of variance-component estimates, and to estimate them, we require the sampling variances of the observed mean squares. Under the assumptions of normality and balanced design, a useful (and general) result is that the observed mean squares extracted from an analysis of variance are distributed independently with expected sampling variance",
+      "source_page": 575,
+      "printed_page": 555,
+      "source_block_ids": [
+        "p575:b5"
+      ],
+      "bbox": [
+        62.0,
+        605.0,
+        1023.0,
+        780.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter18_formula026]]",
+      "source_page": 575,
+      "printed_page": 555,
+      "source_block_ids": [
+        "p575:b6"
+      ],
+      "bbox": [
+        400.0,
+        795.0,
+        676.0,
+        867.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "This fundamental relationship has been used in many contexts in quantitative genetics to derive expressions for variances and covariances of variance components extracted from ANOVA (Tukey 1956, 1957; Smith 1956; Bulmer 1957, 1980; Scheffé 1959). Searle et al. (1992) provide a particularly lucid overview of its utility.",
+      "source_page": 575,
+      "printed_page": 555,
+      "source_block_ids": [
+        "p575:b8"
+      ],
+      "bbox": [
+        57.0,
+        880.0,
+        1018.0,
+        1017.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Since the variance-component estimators, Equations 18.12a–c, are linear functions of the observed mean squares, the rules for obtaining variances and covariances of linear functions (Chapter 3 and Appendix 1) can be used in conjunction with Equation 18.19 to obtain the large-sample approximations",
+      "source_page": 575,
+      "printed_page": 555,
+      "source_block_ids": [
+        "p575:b9"
+      ],
+      "bbox": [
+        56.0,
+        1009.0,
+        1017.0,
+        1148.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter18_formula027]]",
+      "source_page": 575,
+      "printed_page": 555,
+      "source_block_ids": [
+        "p575:b10"
+      ],
+      "bbox": [
+        234.0,
+        1163.0,
+        700.0,
+        1236.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter18_formula028]]",
+      "source_page": 575,
+      "printed_page": 555,
+      "source_block_ids": [
+        "p575:b12"
+      ],
+      "bbox": [
+        231.0,
+        1241.0,
+        747.0,
+        1401.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter18_formula029]]",
+      "source_page": 575,
+      "printed_page": 555,
+      "source_block_ids": [
+        "p575:b14"
+      ],
+      "bbox": [
+        136.0,
+        1408.0,
+        925.0,
+        1560.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter18_formula030]]",
+      "source_page": 576,
+      "printed_page": 556,
+      "source_block_ids": [
+        "p576:b2"
+      ],
+      "bbox": [
+        168.0,
+        124.0,
+        944.0,
+        174.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "The standard errors of the estimated within-family, among-family, and total phenotypic variance estimates are obtained by substituting observed mean squares into Equations 18.20a,c,d and taking square roots. Since the accuracy of the resultant standard errors depends on the accuracy of the observed mean squares, the standard errors are not very reliable if the degrees of freedom are small. Hence, the reference to “large-sample” estimators.",
+      "source_page": 576,
+      "printed_page": 556,
+      "source_block_ids": [
+        "p576:b4"
+      ],
+      "bbox": [
+        126.0,
+        181.0,
+        1088.0,
+        389.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Using the techniques in Appendix 1, Osborne and Paterson (1952) showed that the large-sample variance of the intraclass correlation from a balanced one-way ANOVA is",
+      "source_page": 576,
+      "printed_page": 556,
+      "source_block_ids": [
+        "p576:b5"
+      ],
+      "bbox": [
+        131.0,
+        373.0,
+        1090.0,
+        488.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter18_formula031]]",
+      "source_page": 576,
+      "printed_page": 556,
+      "source_block_ids": [
+        "p576:b6"
+      ],
+      "bbox": [
+        415.0,
+        479.0,
+        808.0,
+        558.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "The standard error of $ h^{2} $ derived by half-sib analysis is estimated by $ 4\\sqrt{\\mathrm{Var}(t)} $. Again, the accuracy of this expression increases with the number of families in an analysis.",
+      "source_page": 576,
+      "printed_page": 556,
+      "source_block_ids": [
+        "p576:b8"
+      ],
+      "bbox": [
+        137.0,
+        574.0,
+        1093.0,
+        689.0
       ]
     }
   ]

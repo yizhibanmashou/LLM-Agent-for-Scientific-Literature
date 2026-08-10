@@ -1,10 +1,6 @@
-# Chapter 4 · 4
+# Chapter 4 · Properties of Single Loci
 
-## Genetics_chapter4_001 · 4
-
----
-
-## Genetics_chapter4_002 · 4 / Properties of Single Loci
+## Genetics_chapter4_001 · Properties of Single Loci
 
 The fact that most principles of quantitative genetics can be expressed without reference to specific genes is precisely why quantitative-genetic analysis is so popular among those who study complex characters. Since this same feature can be cause for suspicion, a primary goal of the next few chapters is to clarify the ways in which quantitative genetics is grounded in fundamental Mendelian concepts. Prior to illustrating the connections between the properties of single genes and the expression and transmission of polygenic traits, we review some very basic and essential vocabulary.
 
@@ -20,7 +16,7 @@ The remainder of this chapter is concerned with the quantification of various pr
 
 ---
 
-## Genetics_chapter4_003 · ALLELE AND GENOTYPE FREQUENCIES
+## Genetics_chapter4_002 · ALLELE AND GENOTYPE FREQUENCIES
 
 When denoting the genotype at a single locus, we refer to the pair of alleles that a (diploid) individual carries at the locus. Individuals that have two identical alleles are called homozygotes, whereas those that have different alleles are heterozygotes. If, for example, we denote the alleles at a particular diallelic locus as $ B_{1} $ and $ B_{2} $, there are three possible genotypes: $ B_{1}B_{1} $ and $ B_{2}B_{2} $ homozygotes, and $ B_{1}B_{2} $ heterozygotes. There may, of course, be more than two alleles, and hence more than three genotypes, present at a locus.
 
@@ -40,7 +36,7 @@ For complex morphological and behavioral characters influenced by multiple genet
 
 **[示例 Example]**
 
-> **Example 1** · ref: `Genetics_chapter4:1` · source: `Genetics_chapter4_003.json` · blocks 6–10
+> **Example 1** · ref: `Genetics_chapter4:1` · source: `Genetics_chapter4_002.json` · blocks 6–10
 >
 > Example 1. Fisher and Ford (1947) were able to distinguish three wing-color patterns in the moth Panaxia dominula, and through breeding experiments, the polymorphism was found to result from two alleles segregating at a single locus. The following table summarizes the distribution of genotype frequencies observed in a population in 1946.
 > 
@@ -58,11 +54,7 @@ For complex morphological and behavioral characters influenced by multiple genet
 
 ---
 
-## Genetics_chapter4_004 · THE TRANSMISSION OF GENETIC INFORMATION
-
----
-
-## Genetics_chapter4_005 · THE TRANSMISSION OF GENETIC INFORMATION / The Hardy-Weinberg Principle
+## Genetics_chapter4_003 · THE TRANSMISSION OF GENETIC INFORMATION / The Hardy-Weinberg Principle
 
 From the standpoint of evolutionary analysis, it is crucial to understand how allele and genotype frequencies change from generation to generation. Such changes may result from natural selection, mutation, differential migration, inbreeding, or random drift due to gene sampling in finite populations. All of these forces will be considered in due course, but for now we will restrict our attention to a highly idealized situation — an autosomal locus uninfluenced by selection and mutation. By assuming the population to be effectively infinite in size and randomly mating, we also eliminate the possibility of inbreeding and random drift. We will further assume that generations are discrete and that the population is closed to immigrants.
 
@@ -99,7 +91,7 @@ Provided that all of the assumptions of the Hardy-Weinberg model are met, we can
 
 ---
 
-## Genetics_chapter4_006 · THE TRANSMISSION OF GENETIC INFORMATION / Sex-Linked Loci
+## Genetics_chapter4_004 · THE TRANSMISSION OF GENETIC INFORMATION / Sex-Linked Loci
 
 The preceding results do not extend to sex-linked loci. As noted above, when the male is the heterogametic sex, females are diploid for X linked loci, but males are haploid. Thus, for every mating pair, there are three X chromosomes, and the frequency of the $B_{1}$ allele in the population is $p_{1} = [p_{1m}(0) + 2p_{1f}(0)]/3$. In the absence of any forces operating differentially on the alleles, this frequency will be maintained indefinitely. However, the gene frequency will not necessarily be $p_{1}$ in both of the sexes. Since males only receive an X chromosome from their mother, the male frequency of the $B_{1}$ allele in any generation (t) is necessarily equal to the frequency in females in the previous generation (t - 1),
 
@@ -136,7 +128,7 @@ Thus, the approach to the equilibrium allele frequency in the two sexes is gradu
 
 ---
 
-## Genetics_chapter4_007 · THE TRANSMISSION OF GENETIC INFORMATION / Polyploidy
+## Genetics_chapter4_005 · THE TRANSMISSION OF GENETIC INFORMATION / Polyploidy
 
 Another situation in which the Hardy-Weinberg principle is not met exactly arises in polyploid organisms. Because of the high frequency of polyploidy in plants, this case has been examined extensively by Fisher (1947) and Crow (1954) among others. It will only be considered briefly here for a tetraploid species, individuals of which propagate two genes per locus through gametes. The way in which sets of chromosomes assort during meiosis in polyploids depends on the degree of homology between ancestral chromosomes (Marsden et al. 1987). At one extreme are allopolyploids that originate by interspecific hybridization. In this case, provided the chromosomes of the parental species are sufficiently different, they will not pair. Meiosis is then identical to that for diploid organisms, except for the doubled number of chromosomes. At the other extreme, autopolyploids derive both chromosome sets from the same species.
 
@@ -187,7 +179,7 @@ recombination. After chromosomal duplication during gametogenesis, eight chromos
 
 ---
 
-## Genetics_chapter4_008 · THE TRANSMISSION OF GENETIC INFORMATION / Age Structure
+## Genetics_chapter4_006 · THE TRANSMISSION OF GENETIC INFORMATION / Age Structure
 
 One final complication with respect to the idealized model is age structure. Up to now we have been assuming a population with discrete, nonoverlapping generations, such as an annual plant with no seed carry-over across years. In populations composed of several age classes (the majority of higher plants and animals), the generations overlap, and this causes the approach of genotype frequencies towards the Hardy-Weinberg expectations to be gradual, even in the case of an autosomal locus. This property arises because the genotypes of new recruits are a function of the allele frequencies specific to the reproductive age classes. Juvenile age classes only influence the change in genotype frequencies through mortality, but as they mature they begin to add copies of their genes to the population. The genotype frequencies become stable only after the allele frequencies become homogenized across age classes and sexes.
 
@@ -195,7 +187,7 @@ Of equal significance is the fact that the allele frequencies themselves can be 
 
 ---
 
-## Genetics_chapter4_009 · THE TRANSMISSION OF GENETIC INFORMATION / Testing for Hardy-Weinberg Proportions
+## Genetics_chapter4_007 · THE TRANSMISSION OF GENETIC INFORMATION / Testing for Hardy-Weinberg Proportions
 
 When data are available on genotype frequencies in a population, it is standard practice to cross-check these with the Hardy-Weinberg expectations. Lack of concordance between the two implies that at least one of the assumptions of the Hardy-Weinberg model is violated and often instigates further investigation. Several different statistical techniques have been proposed (Weir 1996), the most popular by far being the $ \chi^{2} $ (Chi-square) test. However, the likelihood-ratio test is now becoming more common and appears to be at least as reliable as the former. Likelihood-based tests have a number of desirable statistical features (Appendix 4). Letting $ N_{ij} $ and $ \hat{N}_{ij} $ be the observed and expected numbers of genotype $ B_{i}B_{j} $ in a sample, then the likelihood-ratio test statistic
 
@@ -211,7 +203,7 @@ Regardless of which approach to testing for Hardy-Weinberg frequencies is taken,
 
 **[示例 Example]**
 
-> **Example 2** · ref: `Genetics_chapter4:2` · source: `Genetics_chapter4_009.json` · blocks 4–7
+> **Example 2** · ref: `Genetics_chapter4:2` · source: `Genetics_chapter4_007.json` · blocks 4–7
 >
 > Example 2. As an example of the application of Equation 4.4, we return to the data in the table of Example 1.
 > 
@@ -227,7 +219,7 @@ Regardless of which approach to testing for Hardy-Weinberg frequencies is taken,
 
 ---
 
-## Genetics_chapter4_010 · CHARACTERIZING THE INFLUENCE OF A LOCUS ON THE PHENOTYPE
+## Genetics_chapter4_008 · CHARACTERIZING THE INFLUENCE OF A LOCUS ON THE PHENOTYPE
 
 In Chapter 3, we encountered the concept of partitioning the phenotype (z) of an individual into a genotypic value (G) and an environmental deviation (E),
 
@@ -249,7 +241,7 @@ The fact that we have set the genotypic value of the $B_{1}B_{1}$ homozygote equ
 
 **[示例 Example]**
 
-> **Example 3** · ref: `Genetics_chapter4:3` · source: `Genetics_chapter4_010.json` · blocks 5–7
+> **Example 3** · ref: `Genetics_chapter4:3` · source: `Genetics_chapter4_008.json` · blocks 5–7
 >
 > Example 3. The scaling of genotypic values may be clarified by reference to a particular example — the Booroola (B) gene that influences fecundity in the Merino sheep of Australia (Piper and Bindon 1988).
 > 
@@ -260,7 +252,7 @@ The fact that we have set the genotypic value of the $B_{1}B_{1}$ homozygote equ
 
 ---
 
-## Genetics_chapter4_011 · THE BASIS OF DOMINANCE
+## Genetics_chapter4_009 · THE BASIS OF DOMINANCE
 
 The presence of dominance complicates many formulations in quantitative genetics, but unfortunately it is a fact of life that cannot be ignored. Since the beginning of this century, there has been much debate on the genetic and physiological basis of dominance. In the early days, the only genes subject to detailed genetic analysis were those that had a major phenotypic effect. Loci involving such genes are usually characterized by striking levels of dominance. For example, the vast majority of genes with major, deleterious effects on fitness are recessive. Does this then indicate that new mutations are inherently recessive? Fisher (1928a,b, 1929, 1958) argued that since rare alleles are found almost entirely in the heterozygous state, selection should favor alleles at modifier loci that cause heterozygous carriers of deleterious alleles to resemble the normal homozygote. Implicit in this argument is the assumption that the heterozygote initially encodes for an intermediate phenotype. Using physiological arguments, Wright (1929a,b, 1934a,b) strongly disputed this idea. He also pointed out that although dominance relationships are subject to change, the intensity of selection operating on modifier loci is unlikely to ever be strong enough to be an important evolutionary force. The debate between Fisher and Wright was intense and at times bitter, and it scarred their relationship permanently.
 
@@ -285,7 +277,7 @@ Since the exact form of the relationship in Figure 4.5 can change with a shift i
 
 ---
 
-## Genetics_chapter4_012 · FISHER'S DECOMPOSITION OF THE GENOTYPIC VALUE
+## Genetics_chapter4_010 · FISHER'S DECOMPOSITION OF THE GENOTYPIC VALUE
 
 The number of copies of a particular allele (say $B_{2}$) in a genotype ($N_{2} = 0$, 1, or 2 for diploids) is referred to as the gene content. As noted above, unless this allele interacts additively with all other alleles, there will be a nonlinear relationship between the gene content and the genotypic value. It is, nevertheless, useful to consider the best linear approximation to this relationship, as this leads to a partitioning of the genotypic values into their “expected” values based on additivity ($\widehat{G}$) and deviations from those expectations resulting from dominance ($\delta$) (Figure 4.6).
 
@@ -384,14 +376,14 @@ $$
 
 Under the assumption of random mating, $ \alpha $ is known as the average effect of allelic substitution. It represents the average change in genotypic value that results when a $ B_{2} $ allele is randomly substituted for a $ B_{1} $ allele. For the purely additive case $ (k=0) $, $ \alpha $ is simply equal to a. However, for all other cases, $ \alpha $ is also a function of k and of the allele frequencies in the population (Figure 4.7). Such behavior results because, with dominance, the phenotypic effect of a gene substitution depends on the status of the unsubstituted allele. If $ B_{2} $ is a dominant allele $ (k > 0) $, then $ \alpha $ will be inflated relative to the case of additivity if $ B_{2} $ is rare $ (p_{1} > p_{2}) $, but diminished if $ B_{2} $ is common $ (p_{1} < p_{2}) $. Thus, except in the case of additivity, the average effect of allelic substitution is not simply a function of the inherent physiological properties of the allele. It can only be defined in the context of the population.
 
-> **Table 4.1** · `4.1` · page 83 · source: `Genetics_chapter4_012`
+> **Table 4.1** · `4.1` · page 83 · source: `Genetics_chapter4_010`
 > Table 4.1 Properties of a single segregating diallelic locus under random mating.
 >
 > <table><tr><td rowspan="2">.</td><td colspan="7">Gene</td><td rowspan="3">Dominance Deviation</td></tr><tr><td>Content (N)</td><td colspan="4">Genotypic</td><td rowspan="2">Regression Value ( \widehat{G})</td><td rowspan="2">Dominance Deviation ( \delta = G - \widehat{G})</td></tr><tr><td>Genotype</td><td></td><td>Value (G)</td><td>Freq.</td><td>G · N</td><td>$ N^{2} $</td></tr><tr><td>$ B_{1}B_{1} $</td><td>0</td><td>0</td><td>$ p_{1}^{2} $</td><td>0</td><td>0</td><td>$ \iota $</td><td>$ -\iota $</td><td></td></tr><tr><td>$ B_{1}B_{2} $</td><td>1</td><td>$ (1 + k)a $</td><td>$ 2p_{1}p_{2} $</td><td>$ (1 + k)a $</td><td>1</td><td>$ \iota + \alpha $</td><td>$ (1 + k)a - \iota - \alpha $</td><td></td></tr><tr><td>$ B_{2}B_{2} $</td><td>2</td><td>2a</td><td>$ p_{2}^{2} $</td><td>4a</td><td>4</td><td>$ \iota + 2\alpha $</td><td>$ 2a - \iota - 2\alpha $</td><td></td></tr><tr><td colspan="5">$ \mu_{N} = 2p_{1}p_{2}(1) + p_{2}^{2}(2) $</td><td colspan="3">$ \mu_{\widehat{G}} = \iota + 2p_{1}p_{2}\alpha + 2p_{2}^{2}\alpha $</td><td></td></tr><tr><td colspan="5">$ = 2p_{2} $</td><td colspan="3">$ \iota + 2p_{2}\alpha $</td><td></td></tr><tr><td colspan="5">$ E(N^{2}) = 2p_{1}p_{2}(1) + p_{2}^{2}(4) $</td><td colspan="3">$ \mu_{\delta} = -\iota + 2p_{1}p_{2}[(1 + k)a - \alpha] $</td><td></td></tr><tr><td colspan="5">$ = 2p_{2}(1 + p_{2}) $</td><td colspan="3">$ +2p_{2}^{2}(a - \alpha) = 0 $</td><td></td></tr><tr><td colspan="5">$ \mu_{G} = 2p_{1}p_{2}a(1 + k) + 2p_{2}^{2}a $</td><td colspan="3">$ E(\widehat{G}^{2}) = p_{1}^{2}\iota^{2} + 2p_{1}p_{2}(\iota + \alpha)^{2} + p_{2}^{2}(\iota + 2\alpha)^{2} $</td><td></td></tr><tr><td colspan="5">$ = 2p_{2}a(1 + p_{1}k) $</td><td colspan="3">$ \iota^{2} + 4p_{2}\alpha\iota + 2p_{2}\alpha^{2}(1 + p_{2}) $</td><td></td></tr><tr><td colspan="5">$ E(GN) = 2p_{1}p_{2}a(1 + k) + 4p_{2}^{2}a $</td><td colspan="3">$ E(\delta^{2}) = p_{1}^{2}\iota^{2} + 2p_{1}p_{2}[(1 + k)a - \iota - \alpha]^{2} $</td><td></td></tr><tr><td colspan="5">$ = 2p_{2}a[2p_{2} + p_{1}(1 + k)] $</td><td colspan="3">$ +p_{2}^{2}(2a - \iota - 2\alpha)^{2} = (2p_{1}p_{2}ak)^{2} $</td><td></td></tr><tr><td colspan="5">$ \sigma(G,N) = E(GN) - \mu_{G}\mu_{N} $</td><td colspan="3">$ \sigma_{A}^{2} = E(\widehat{G}^{2}) - \mu_{\widehat{G}}^{2} $</td><td></td></tr><tr><td colspan="5">$ = 2p_{1}p_{2}a[1 + k(p_{1} - p_{2})] $</td><td colspan="3"></td><td></td></tr><tr><td colspan="5">$ \sigma^{2}(N) = E(N^{2}) - \mu_{N}^{2} $</td><td colspan="3">$ \sigma_{D}^{2} = E(\delta^{2}) - \mu_{\delta}^{2} $</td><td></td></tr><tr><td colspan="5">$ = 2p_{1}p_{2} $</td><td colspan="3"></td><td></td></tr></table>
 
 ---
 
-## Genetics_chapter4_013 · PARTITIONING THE GENETIC VARIANCE
+## Genetics_chapter4_011 · PARTITIONING THE GENETIC VARIANCE
 
 Fisher (1918) showed that once the genotypic values have been partitioned in the above manner, it is a relatively simple step to partition the sources of genetic variation at a locus. Recalling the relationship $ G = \widehat{G} + \delta $, the total genetic variance may be written as
 
@@ -439,7 +431,7 @@ A common misconception is that the relative magnitudes of additive and dominance
 
 ---
 
-## Genetics_chapter4_014 · ADDITIVE EFFECTS, AVERAGE EXCESSES, AND BREEDING VALUES
+## Genetics_chapter4_012 · ADDITIVE EFFECTS, AVERAGE EXCESSES, AND BREEDING VALUES
 
 It may still be unclear why we have gone to the trouble of partitioning the genotypic value into additive and dominance components. Such a distinction is useful because, in randomly mating diploid species, a parent donates only one allele per locus to each of its offspring. The transmitted allele exhibits its additive effect when randomly combined with a gene from other parents. The dominance deviation of a parent, which is a function of the interaction between the two parental genes, is eliminated when gametes are produced. Thus, one can think of $ \widehat{G} $ and $ \delta $ as the heritable and nonheritable components of an individual's genotypic value. Before clarifying this concept further, however, we need some formal definitions. Two different measures of the effect of an allele were proposed by Fisher (1918, 1941): the average excess $ \alpha_{i}^{*} $ and the additive effect $ \alpha_{i} $. As will be shown below, these two measures are equivalent in a randomly mating population, the first having a simple biological interpretation, the second being defined as a least-squares regression parameter.
 
@@ -504,7 +496,7 @@ An individual’s breeding value, hereafter denoted by A, is the sum of the addi
 
 **[示例 Example]**
 
-> **Example 4** · ref: `Genetics_chapter4:4` · source: `Genetics_chapter4_014.json` · blocks 17–18
+> **Example 4** · ref: `Genetics_chapter4:4` · source: `Genetics_chapter4_012.json` · blocks 17–18
 >
 > Example 4. Consider the consequences of the Booroola gene (described in Example 3) in two hypothetical random-mating populations with gene frequencies of 0.5 and 0.1. We assume that the phenotypic means within genotypic classes are known without error, so that they are equivalent to the genotypic values. The additive and dominance genetic variances are, respectively, the mean-squared breeding values and the mean-squared dominance deviations because both types of effects have means equal to zero.
 > 
@@ -517,7 +509,7 @@ Although this example is somewhat artificial in that we employed arbitrary gene 
 
 *[See Table 4.2 at the end of this section.]*
 
-> **Table 4.2** · `4.2` · page 90 · source: `Genetics_chapter4_014`
+> **Table 4.2** · `4.2` · page 90 · source: `Genetics_chapter4_012`
 > Table 4.2 Conditional mean genotypic values of progeny under random mating, and their deviations from the mean genotypic value in the population, $ \mu_{G}=2ap_{2}(1+p_{1}k) $.
 >
 > Parental Genotype | Breeding Value | Mean Genotypic Value of Progeny | Deviation of Expected Progeny Mean from $ \mu_{G} $
@@ -528,13 +520,13 @@ Although this example is somewhat artificial in that we employed arbitrary gene 
 
 ---
 
-## Genetics_chapter4_015 · EXTENSIONS FOR MULTIPLE ALLELES AND NONRANDOM MATING
+## Genetics_chapter4_013 · EXTENSIONS FOR MULTIPLE ALLELES AND NONRANDOM MATING
 
 Although the preceding results were obtained under the assumption of a dial-lelic locus, they are readily generalized to situations with an arbitrary number of alleles, as well as to nonrandomly mating populations. The algebra necessarily becomes more tedious, but some very useful principles emerge that will be relied upon heavily in subsequent chapters. In addition to presenting a more general treatment, the remainder of the chapter will serve as a review of the concepts introduced earlier in the chapter.
 
 ---
 
-## Genetics_chapter4_016 · EXTENSIONS FOR MULTIPLE ALLELES AND NONRANDOM MATING / Average Excess
+## Genetics_chapter4_014 · EXTENSIONS FOR MULTIPLE ALLELES AND NONRANDOM MATING / Average Excess
 
 When n alleles are present, the average excess, $ \alpha_{i}^{*} $, for any allele $ B_{i} $ is given by
 
@@ -556,7 +548,7 @@ where $ p_{j} $ is the frequency of the jth allele.
 
 **[示例 Example]**
 
-> **Example 5** · ref: `Genetics_chapter4:5` · source: `Genetics_chapter4_016.json` · blocks 5–12
+> **Example 5** · ref: `Genetics_chapter4:5` · source: `Genetics_chapter4_014.json` · blocks 5–12
 >
 > Example 5. Here we show how the average excess $ \alpha_{i}^{*} $ of an allele i can be related to $ \sigma(G, N_{i}) $, the covariance between genotypic value and the number of copies of that allele. This result will be useful in the following sections.
 > 
@@ -588,7 +580,7 @@ where $ p_{j} $ is the frequency of the jth allele.
 
 ---
 
-## Genetics_chapter4_017 · EXTENSIONS FOR MULTIPLE ALLELES AND NONRANDOM MATING / Additive Effects
+## Genetics_chapter4_015 · EXTENSIONS FOR MULTIPLE ALLELES AND NONRANDOM MATING / Additive Effects
 
 As in the diallelic case, with $n$ alleles the additive effects are defined to be the set of $\alpha_{i}$ that minimizes $E(\delta_{ij}^{2})$, obtained from the least-squares solution for the multiple regression
 
@@ -652,7 +644,7 @@ where f, the inbreeding coefficient, is the fractional reduction of heterozygote
 
 ---
 
-## Genetics_chapter4_018 · EXTENSIONS FOR MULTIPLE ALLELES AND NONRANDOM MATING / Additive Genetic Variance
+## Genetics_chapter4_016 · EXTENSIONS FOR MULTIPLE ALLELES AND NONRANDOM MATING / Additive Genetic Variance
 
 To obtain the variance associated with the additive effects, we first need a result from regression theory. Consider the regression $ y = \mu + \sum \beta_i x_i + e $. Since the total variance of a response variable $ y $ equals the variance accounted for by the regression plus the residual variance $ \sigma_e^2 $ (Chapter 8), it follows that the variance accounted for by the predictor variables is $\sum \beta_i \sigma(y, x_i)$. This can be immediately seen by noting
 
@@ -749,7 +741,7 @@ Summing up, the additive effect of an allele, the breeding value of an individua
 
 the book, nor will we be utilizing the concept of average excess (the latter plays a significant role in considerations of selection response, which is covered in our next book). Unless otherwise noted, we will be dealing with randomly mating populations, so our reference to the additive effect of an allele will be consistent with the conditional mean deviation definition (Equation 4.20b), as well as formally equivalent to a least-squares regression coefficient. Further commentary on the relationship between average excesses and additive effects can be found in Falconer (1985) and Templeton (1987).
 
-> **Table 4.3** · `4.3` · page 95 · source: `Genetics_chapter4_018`
+> **Table 4.3** · `4.3` · page 95 · source: `Genetics_chapter4_016`
 > Table 4.3 Summary of quantities used to measure genetic effects.
 >
 > Homozygous effect, $ a $ | Intrinsic properties of allelic products.

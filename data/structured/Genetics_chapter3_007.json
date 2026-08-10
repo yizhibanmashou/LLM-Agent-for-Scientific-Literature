@@ -3,13 +3,16 @@
   "metadata": {
     "chapter": "Genetics_chapter3",
     "section": "REGRESSION",
-    "subsections": [],
-    "section_level_1": "REGRESSION",
-    "section_level_2": null,
-    "heading_path": [
-      "REGRESSION"
+    "subsections": [
+      "Derivation of the Least-Squares Linear Regression"
     ],
-    "display_heading": "REGRESSION",
+    "section_level_1": "REGRESSION",
+    "section_level_2": "Derivation of the Least-Squares Linear Regression",
+    "heading_path": [
+      "REGRESSION",
+      "Derivation of the Least-Squares Linear Regression"
+    ],
+    "display_heading": "REGRESSION / Derivation of the Least-Squares Linear Regression",
     "source_file": "",
     "source_pdf": "data/背景资料/Genetics.pdf",
     "source_title": "Genetics and Analysis of Quantitative Traits",
@@ -21,106 +24,258 @@
       "source_page": 55,
       "printed_page": 35,
       "source_block_ids": [
-        "p55:b2"
+        "p55:b11"
       ],
       "bbox": [
-        60.0,
-        129.0,
-        252.0,
-        163.0
+        36.0,
+        1020.0,
+        664.0,
+        1067.0
       ],
-      "raw_text": "REGRESSION"
+      "raw_text": "Derivation of the Least-Squares Linear Regression"
     }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Depending on the causal connections between two variables, x and y, their true relationship may be linear or nonlinear. However, regardless of the true pattern of association, a linear model can always serve as a first approximation. In this case, the analysis is particularly simple,",
+      "content": "The mathematical method of least-squares linear regression provides one such best-fit solution. Without making any assumptions about the true joint distribution of x and y, least-squares regression minimizes the average value of the squared (vertical) deviations of the observed y from the values predicted by the regression line. That is, the least-squares solution yields the values of a and b that minimize the mean squared residual, $ \\overline{e^2} $. Other criteria could be used to define “best fit.” For example, one might minimize the mean absolute deviations (or cubed deviations) of observed values from predicted values. However, as we will now see, least-squares regression has the unique and very useful property of maximizing the amount of variance in y that can be explained by a linear model.",
       "source_page": 55,
       "printed_page": 35,
       "source_block_ids": [
-        "p55:b3"
+        "p55:b12"
+      ],
+      "bbox": [
+        27.0,
+        1063.0,
+        993.0,
+        1404.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Consider a sample of n individuals, each of which has been measured for x and y. Recalling the definition of a residual",
+      "source_page": 55,
+      "printed_page": 35,
+      "source_block_ids": [
+        "p55:b13"
+      ],
+      "bbox": [
+        25.0,
+        1384.0,
+        986.0,
+        1467.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter3_formula023]]",
+      "source_page": 55,
+      "printed_page": 35,
+      "source_block_ids": [
+        "p55:b14"
+      ],
+      "bbox": [
+        366.0,
+        1466.0,
+        644.0,
+        1501.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "and then adding and subtracting the quantity $ \\left(\\overline{y}+b\\overline{x}\\right) $ on the right side, we obtain",
+      "source_page": 55,
+      "printed_page": 35,
+      "source_block_ids": [
+        "p55:b16"
+      ],
+      "bbox": [
+        24.0,
+        1493.0,
+        983.0,
+        1551.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FIGURE:3.2]]",
+      "source_page": 56,
+      "printed_page": 36,
+      "source_block_ids": [
+        "p56:b3"
+      ],
+      "bbox": [
+        204.0,
+        828.0,
+        1071.0,
+        938.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter3_formula024]]",
+      "source_page": 56,
+      "printed_page": 36,
+      "source_block_ids": [
+        "p56:b4"
+      ],
+      "bbox": [
+        402.0,
+        1018.0,
+        880.0,
+        1061.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Squaring both sides leads to",
+      "source_page": 56,
+      "printed_page": 36,
+      "source_block_ids": [
+        "p56:b6"
+      ],
+      "bbox": [
+        164.0,
+        1077.0,
+        509.0,
+        1119.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter3_formula025]]",
+      "source_page": 56,
+      "printed_page": 36,
+      "source_block_ids": [
+        "p56:b7"
+      ],
+      "bbox": [
+        250.0,
+        1125.0,
+        1038.0,
+        1220.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, we consider the average value of $ e^{2} $ in the sample. The final two terms in Equation 3.13b drop out here because, by definition, the mean values of $ (x - \\overline{x}) $ and $ (y - \\overline{y}) $ are zero. However, by definition, the mean values of the first three terms are directly related to the sample variances and covariance. Thus,",
+      "source_page": 56,
+      "printed_page": 36,
+      "source_block_ids": [
+        "p56:b9"
+      ],
+      "bbox": [
+        167.0,
+        1230.0,
+        1126.0,
+        1381.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter3_formula026]]",
+      "source_page": 56,
+      "printed_page": 36,
+      "source_block_ids": [
+        "p56:b10"
+      ],
+      "bbox": [
+        205.0,
+        1398.0,
+        1015.0,
+        1475.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "The values of $a$ and $b$ that minimize $\\overline{e^{2}}$ are obtained by taking partial derivatives of this function and setting them equal to zero:",
+      "source_page": 56,
+      "printed_page": 36,
+      "source_block_ids": [
+        "p56:b12",
+        "p57:b2"
+      ],
+      "bbox": [
+        175.0,
+        1487.0,
+        1133.0,
+        1540.0
+      ],
+      "source_page_end": 57
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter3_formula027]]",
+      "source_page": 57,
+      "printed_page": 37,
+      "source_block_ids": [
+        "p57:b3"
+      ],
+      "bbox": [
+        141.0,
+        175.0,
+        950.0,
+        361.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "The solutions to these two equations are",
+      "source_page": 57,
+      "printed_page": 37,
+      "source_block_ids": [
+        "p57:b4"
+      ],
+      "bbox": [
+        64.0,
+        344.0,
+        551.0,
+        391.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter3_formula028]]",
+      "source_page": 57,
+      "printed_page": 37,
+      "source_block_ids": [
+        "p57:b5"
+      ],
+      "bbox": [
+        453.0,
+        407.0,
+        593.0,
+        441.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter3_formula029]]",
+      "source_page": 57,
+      "printed_page": 37,
+      "source_block_ids": [
+        "p57:b7"
+      ],
+      "bbox": [
+        452.0,
+        444.0,
+        625.0,
+        519.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, the least-squares estimators for the intercept and slope of a linear regression are simple functions of the observed means, variances, and covariances. From the standpoint of quantitative genetics, this property is exceedingly useful, since such statistics are readily obtainable from phenotypic data.",
+      "source_page": 57,
+      "printed_page": 37,
+      "source_block_ids": [
+        "p57:b9"
       ],
       "bbox": [
         56.0,
-        192.0,
+        515.0,
         1017.0,
-        342.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter3_formula021]]",
-      "source_page": 55,
-      "printed_page": 35,
-      "source_block_ids": [
-        "p55:b4"
-      ],
-      "bbox": [
-        439.0,
-        341.0,
-        632.0,
-        374.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "where $ \\alpha $ is the y-intercept, $ \\beta $ is the slope of the line (also known as the regression coefficient), and e is the residual error. Letting",
-      "source_page": 55,
-      "printed_page": 35,
-      "source_block_ids": [
-        "p55:b6"
-      ],
-      "bbox": [
-        52.0,
-        369.0,
-        1011.0,
-        454.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter3_formula022]]",
-      "source_page": 55,
-      "printed_page": 35,
-      "source_block_ids": [
-        "p55:b7"
-      ],
-      "bbox": [
-        459.0,
-        451.0,
-        604.0,
-        485.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "be the value of y predicted by the model, then the residual error is the deviation between the observed and predicted y value, i.e., $ e = y - \\hat{y} $. When information on x is used to predict y, x is referred to as the predictor or independent variable and y as the response or dependent variable.",
-      "source_page": 55,
-      "printed_page": 35,
-      "source_block_ids": [
-        "p55:b9"
-      ],
-      "bbox": [
-        49.0,
-        481.0,
-        1010.0,
-        630.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "The objective of linear regression analysis is to estimate the model parameters, $ \\alpha $ and $ \\beta $, that give the “best fit” for the joint distribution of x and y. The true parameters $ \\alpha $ and $ \\beta $ are only obtainable if the entire population is sampled. With an incomplete sample, $ \\alpha $ and $ \\beta $ are approximated by sample estimators, denoted as a and b. Good approximations of $ \\alpha $ and $ \\beta $ are sometimes obtainable by visual inspection of the data, particularly in the physical sciences, where deviations from a simple relationship are due to errors of measurement rather than biological variability. However, in biology many factors are often beyond the investigator’s control. The data in Figure 3.2 provide a good example. While there appears to be a weak positive relationship between maternal weight and offspring number in rats, it is difficult to say anything more precise. An objective definition of “best fit” is required.",
-      "source_page": 55,
-      "printed_page": 35,
-      "source_block_ids": [
-        "p55:b10"
-      ],
-      "bbox": [
-        39.0,
-        612.0,
-        1005.0,
-        1015.0
+        670.0
       ]
     }
   ]

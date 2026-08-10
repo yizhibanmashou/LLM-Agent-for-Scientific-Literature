@@ -2,17 +2,14 @@
   "id": "Genetics_chapter17_005",
   "metadata": {
     "chapter": "Genetics_chapter17",
-    "section": "ESTIMATION PROCEDURES",
-    "subsections": [
-      "Unequal Family Sizes"
-    ],
-    "section_level_1": "ESTIMATION PROCEDURES",
-    "section_level_2": "Unequal Family Sizes",
+    "section": "PRECISION OF ESTIMATES",
+    "subsections": [],
+    "section_level_1": "PRECISION OF ESTIMATES",
+    "section_level_2": null,
     "heading_path": [
-      "ESTIMATION PROCEDURES",
-      "Unequal Family Sizes"
+      "PRECISION OF ESTIMATES"
     ],
-    "display_heading": "ESTIMATION PROCEDURES / Unequal Family Sizes",
+    "display_heading": "PRECISION OF ESTIMATES",
     "source_file": "",
     "source_pdf": "data/背景资料/Genetics.pdf",
     "source_title": "Genetics and Analysis of Quantitative Traits",
@@ -21,366 +18,111 @@
       "remote_llm_calls": 0
     },
     "heading_source": {
-      "source_page": 553,
-      "printed_page": 533,
+      "source_page": 556,
+      "printed_page": 536,
       "source_block_ids": [
-        "p553:b5"
+        "p556:b7"
       ],
       "bbox": [
-        84.0,
-        903.0,
-        362.0,
-        936.0
+        110.0,
+        1394.0,
+        479.0,
+        1425.0
       ],
-      "raw_text": "Unequal Family Sizes"
+      "raw_text": "PRECISION OF ESTIMATES"
     }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "When there is significant variation in family size, one is confronted with the problem of how to weight the information from families of different sizes. With a goal of minimizing the sampling error of the heritability estimate, it is logical that families of larger size should be given more weight in a regression since their mean phenotype estimates are more accurate. Should one simply weight each family by the number of offspring measured, as would be the case if one were to regress each individual on its parent's phenotype? The answer is no — the appropriate weights are less than proportional to the actual family sizes. Once one has measured a very large number of offspring from a family, very little improvement in the precision of the family mean will be obtained by making additional measurements.",
-      "source_page": 553,
-      "printed_page": 533,
-      "source_block_ids": [
-        "p553:b6"
-      ],
-      "bbox": [
-        83.0,
-        943.0,
-        1044.0,
-        1295.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "In one of the first applications of weighted least-squares regression (Chapter 8), Kempthorne and Tandon (1953; see also Bohren et al. 1961) showed that the appropriate weights are proportional to the inverse of the residual sampling variances of family means about the parent-offspring regression. Although more sophisticated maximum-likelihood approaches now exist for the analysis of populations with arbitrary family structures (Chapter 27), these will not be particularly transparent to the reader at this point in the book, so we consider the Kempthorne-",
-      "source_page": 553,
-      "printed_page": 533,
-      "source_block_ids": [
-        "p553:b7"
-      ],
-      "bbox": [
-        84.0,
-        1294.0,
-        1046.0,
-        1520.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "Tandon derivation in some detail. To obtain their result, we require the use of the intraclass correlation, here defined to be the phenotypic correlation between sibs,",
-      "source_page": 554,
-      "printed_page": 534,
-      "source_block_ids": [
-        "p554:b2"
-      ],
-      "bbox": [
-        124.0,
-        136.0,
-        1081.0,
-        211.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter17_formula005]]",
-      "source_page": 554,
-      "printed_page": 534,
-      "source_block_ids": [
-        "p554:b3"
-      ],
-      "bbox": [
-        525.0,
-        224.0,
-        674.0,
-        295.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "where $ \\text{Cov}(S) $ denotes the phenotypic covariance of sibs. The intraclass correlation estimates the fraction of the total phenotypic variance attributable to factors causing resemblance between members of the same sib family. It follows that $ (1-t) $ estimates the fraction of the phenotypic variance due to differences among individuals of the same family. Stated in another way, $ (1-t)\\text{Var}(z) $ and $ t\\cdot\\text{Var}(z) $ are estimates of the within- and among-family components of phenotypic variance.",
-      "source_page": 554,
-      "printed_page": 534,
-      "source_block_ids": [
-        "p554:b5"
-      ],
-      "bbox": [
-        122.0,
-        310.0,
-        1082.0,
-        506.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "Letting $ \\overline{z}_{oi} $ be the mean phenotype of offspring from the ith family, the linear model becomes",
-      "source_page": 554,
-      "printed_page": 534,
-      "source_block_ids": [
-        "p554:b6"
-      ],
-      "bbox": [
-        122.0,
-        503.0,
-        1078.0,
-        570.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter17_formula006]]",
-      "source_page": 554,
-      "printed_page": 534,
-      "source_block_ids": [
-        "p554:b7"
-      ],
-      "bbox": [
-        471.0,
-        571.0,
-        727.0,
-        605.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "To perform a weighted regression, we need expressions for the variance of the residual errors around the regression (the $ e_{i} $) as a function of family size. The residual variance is the sum of two components: (1) the variance of the “true” family mean deviations from the regression, and (2) the sampling variance of the estimated family means around their expectations. The first of these components is independent of family size.",
-      "source_page": 554,
-      "printed_page": 534,
-      "source_block_ids": [
-        "p554:b8"
-      ],
-      "bbox": [
-        120.0,
-        613.0,
-        1078.0,
-        809.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "For a family of size $n$, it follows from above that the second component of the residual variance is simply $(1 - t)\\mathrm{Var}(z)/n$. The first component is easily obtained by process of elimination. The variance of the true offspring family means is estimated by $t\\mathrm{Var}(z)$, and from this we have to subtract the variance accounted for by the regression. For a single-parent regression, Equation 3.17 gives the regression variance as $r_{op}^{2}\\mathrm{Var}(z) = b_{op}^{2}\\mathrm{Var}(z)$. (Under the assumption of equal parent and offspring variances, Equation 3.15b implies the regression and correlation coefficients are the same for the single parent-offspring regression.) For a midparent analysis, the variance due to regression is $r_{op}^{2}\\mathrm{Var}(z) = b_{op}^{2}\\mathrm{Var}(z)/2$. This follows from Equation 3.15b, as",
-      "source_page": 554,
-      "printed_page": 534,
-      "source_block_ids": [
-        "p554:b9"
-      ],
-      "bbox": [
-        116.0,
-        806.0,
-        1078.0,
-        1128.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter17_formula007]]",
-      "source_page": 554,
-      "printed_page": 534,
-      "source_block_ids": [
-        "p554:b10"
-      ],
-      "bbox": [
-        446.0,
-        1147.0,
-        745.0,
-        1222.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "Thus, the variance of “true” family means from the regression is $ (t - B)\\mathrm{Var}(z) $, where $ B = b_{op}^{2} $ or $ b_{o\\overline{p}}^{2}/2 $ depending on whether one or both parents are used. Summing up, we obtain the expression for the conditional variance of the ith family mean,",
-      "source_page": 554,
-      "printed_page": 534,
-      "source_block_ids": [
-        "p554:b11"
-      ],
-      "bbox": [
-        115.0,
-        1235.0,
-        1072.0,
-        1367.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter17_formula008]]",
-      "source_page": 554,
-      "printed_page": 534,
-      "source_block_ids": [
-        "p554:b12"
-      ],
-      "bbox": [
-        389.0,
-        1364.0,
-        799.0,
-        1434.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "The sampling variance of the parent-offspring regression coefficient is minimized by weighting the contribution of different families by the reciprocal of this",
-      "source_page": 554,
-      "printed_page": 534,
-      "source_block_ids": [
-        "p554:b14"
-      ],
-      "bbox": [
-        115.0,
-        1441.0,
-        1073.0,
-        1512.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FIGURE:17.1]]",
-      "source_page": 555,
-      "printed_page": 535,
-      "source_block_ids": [
-        "p555:b3"
-      ],
-      "bbox": [
-        143.0,
-        644.0,
-        1006.0,
-        766.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "quantity (see Example 11, Chapter 8). Since $ \\operatorname{Var}(z) $ is a constant factor, it can be dropped from the analysis. Thus, the weight for the ith family is",
-      "source_page": 555,
-      "printed_page": 535,
-      "source_block_ids": [
-        "p555:b4"
-      ],
-      "bbox": [
-        96.0,
-        826.0,
-        1054.0,
-        893.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter17_formula009]]",
-      "source_page": 555,
-      "printed_page": 535,
-      "source_block_ids": [
-        "p555:b5"
-      ],
-      "bbox": [
-        423.0,
-        916.0,
-        722.0,
-        980.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "and, from Equation 8.36b, the weighted least-squares regression coefficient is",
-      "source_page": 555,
-      "printed_page": 535,
-      "source_block_ids": [
-        "p555:b7"
-      ],
-      "bbox": [
-        95.0,
-        1006.0,
-        1013.0,
-        1040.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter17_formula010]]",
-      "source_page": 555,
-      "printed_page": 535,
-      "source_block_ids": [
-        "p555:b8"
-      ],
-      "bbox": [
-        380.0,
-        1068.0,
-        768.0,
-        1150.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "where",
-      "source_page": 555,
-      "printed_page": 535,
-      "source_block_ids": [
-        "p555:b10"
-      ],
-      "bbox": [
-        95.0,
-        1176.0,
-        179.0,
-        1205.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter17_formula011]]",
-      "source_page": 555,
-      "printed_page": 535,
-      "source_block_ids": [
-        "p555:b11"
-      ],
-      "bbox": [
-        196.0,
-        1230.0,
-        870.0,
-        1319.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "are the weighted mean phenotypes for the parent and offspring generations. (For a midparent regression, $ z_{\\bar{p}i} $ needs to be substituted for $ z_{pi} $.)",
-      "source_page": 555,
-      "printed_page": 535,
-      "source_block_ids": [
-        "p555:b13"
-      ],
-      "bbox": [
-        95.0,
-        1344.0,
-        1052.0,
-        1409.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "Equation 17.5a shows that as $ n_i $ becomes large, the weight $ w_i $ approaches the limiting value $ (t - B)^{-1} $, i.e., once the family size is very large, very little is gained by measuring additional progeny. This asymptotic value is reached more rapidly when $ t $ is large, because in that case, only a few offspring are sufficient to give an accurate estimate of the family mean. The diminishing returns of large family size can be seen especially clearly by considering case (B) in Figure 17.1 in the context of a single-parent regression. Here, since $ B = b_{op}^{2} = 0.05 $, the heritability is moderate ( $ h^{2} \\simeq 2\\sqrt{B} = 0.45 $): Assuming that the families consist of full-sibs, t = 0.5 implies that there is considerable resemblance between sibs due to factors other than additive genetic variance (since the correlation would be expected to be approximately $ h^{2}/2 $ on the basis of additive genetic covariance alone). Under these circumstances, families with 10 measured progeny should only be given twice as much weight as families with single offspring.",
-      "source_page": 555,
-      "printed_page": 535,
-      "source_block_ids": [
-        "p555:b14",
-        "p556:b2"
-      ],
-      "bbox": [
-        95.0,
-        1410.0,
-        1054.0,
-        1537.0
-      ],
-      "source_page_end": 556
-    },
-    {
-      "type": "discussion",
-      "content": "A practical issue that arises in applying the weighted regression technique is that the weighting factor, $ w_{i} $, is a function of both t and B. Although t can be calculated directly as the correlation between sib phenotypes, B is a function of the regression coefficient, precisely the quantity that we want to estimate. Resolution of this difficulty is relatively straightforward. A preliminary estimate of B can be obtained from the slope of an unweighted regression analysis. This B is then substituted into Equation 17.5a to generate some preliminary weights. The new regression coefficient generated by Equation 17.5b is then compared with the initial unweighted estimate, and, if the values are the same, the computation is over. If they are different, the second estimate of B is used to generate new weights and a third regression estimate. The entire procedure is repeated until satisfactory convergence has been attained, which usually requires only a few iterations.",
+      "content": "As in all attempts to estimate parameters, it is always desirable to ascertain the degree of precision of heritability estimates. Since the statistical properties of least-squares regression are well known, this is relatively easy to do with parent-offspring analysis. Provided the data have been measured or transformed so that the joint distribution of parent and offspring phenotypes is bivariate normal, the sampling variance of the single parent-single offspring regression is, from Equation A1.20a, approximately",
       "source_page": 556,
       "printed_page": 536,
       "source_block_ids": [
-        "p556:b3"
+        "p556:b8",
+        "p557:b2"
       ],
       "bbox": [
         109.0,
-        432.0,
-        1070.0,
-        818.0
+        1459.0,
+        1068.0,
+        1525.0
+      ],
+      "source_page_end": 557
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter17_formula012]]",
+      "source_page": 557,
+      "printed_page": 537,
+      "source_block_ids": [
+        "p557:b3"
+      ],
+      "bbox": [
+        396.0,
+        318.0,
+        730.0,
+        392.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where N is the number of parent-offspring pairs. This expression reduces to $ (1 - r^{2})/N $ when the phenotypic variances in the two generations are equal.",
+      "source_page": 557,
+      "printed_page": 537,
+      "source_block_ids": [
+        "p557:b5"
+      ],
+      "bbox": [
+        87.0,
+        412.0,
+        1043.0,
+        477.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Equation 17.6 also applies to regressions involving midparents if $ \\operatorname{Var}(\\overline{z}_p) = \\operatorname{Var}(z_p)/2 $ is substituted for $ \\operatorname{Var}(z_p) $ and $ r_{o\\overline{p}} $ for $ r_{op} $, and it applies to regressions involving multiple progeny when $ \\operatorname{Var}(z_o) \\cdot [t + (1 - t)/n] $ is substituted for $ \\operatorname{Var}(z_o) $. For unequal family sizes, Kempthorne and Tandon (1953) show that, when the convergent regression coefficient has been attained,",
+      "source_page": 557,
+      "printed_page": 537,
+      "source_block_ids": [
+        "p557:b6"
+      ],
+      "bbox": [
+        86.0,
+        476.0,
+        1045.0,
+        638.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter17_formula013]]",
+      "source_page": 557,
+      "printed_page": 537,
+      "source_block_ids": [
+        "p557:b7"
+      ],
+      "bbox": [
+        406.0,
+        655.0,
+        725.0,
+        779.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Provided the joint distribution of offspring and parent phenotypes is bivariate normal, the sampling distribution of a regression coefficient is also normal. The standard error of $b$ can then be used to construct a confidence interval for the heritability estimate. Provided the number of families $N > 15$ (which is generally necessary for any reasonable degree of precision), the 95% confidence interval for a regression coefficient is approximately $b \\pm 2SE(b)$, where $SE(b) = \\sqrt{\\mathrm{Var}(b)}$. For a midparent-offspring regression, the confidence interval for the slope is also the confidence interval for $h^{2}$. For a regression involving single parents, the confidence interval for $h^{2}$ is twice that of the regression coefficient.",
+      "source_page": 557,
+      "printed_page": 537,
+      "source_block_ids": [
+        "p557:b9"
+      ],
+      "bbox": [
+        85.0,
+        800.0,
+        1047.0,
+        1091.0
       ]
     }
   ]

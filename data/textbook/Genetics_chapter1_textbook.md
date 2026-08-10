@@ -1,10 +1,6 @@
-# Chapter 1 · 1
+# Chapter 1 · An Overview of Quantitative Genetics
 
-## Genetics_chapter1_001 · 1
-
----
-
-## Genetics_chapter1_002 · 1 / An Overview of Quantitative Genetics
+## Genetics_chapter1_001 · An Overview of Quantitative Genetics
 
 Studies in most scientific disciplines can be classified into a “how” and “why” dichotomy. In biology, “how” questions are almost always concerned with proximate causes of observations. Since answers to such questions are generally sought at a lower level of organization, by its very nature the “how” approach to biology tends to be reductionistic. Questions of how muscles contract found their answers in the fields of cellular biology and neurobiology. The problem of how a plant develops its characteristic architecture is now being solved by molecular biologists. In principle, exact answers are available for “how” questions, the main limitation being the existence of the appropriate technology.
 
@@ -12,7 +8,7 @@ In contrast, “why” questions are concerned with ultimate causes. This natura
 
 ---
 
-## Genetics_chapter1_003 · THE ADAPTATIONIST APPROACH TO PHENOTYPIC EVOLUTION
+## Genetics_chapter1_002 · THE ADAPTATIONIST APPROACH TO PHENOTYPIC EVOLUTION
 
 Most scientists test their ideas by phrasing them in the form of potentially falsifiable hypotheses, and in evolutionary biology, many such hypotheses are built around optimization principles. Having identified an interesting character or set of characters as well as one or more likely selective pressures, one asks the question, “What is the optimal phenotype?” An implicit assumption underlying the development of such hypotheses is that natural selection is the dominant, if not solitary, force molding the evolution of the phenotype.
 
@@ -22,7 +18,7 @@ While optimization theory can be highly successful at predicting what ought to e
 
 ---
 
-## Genetics_chapter1_004 · QUANTITATIVE GENETICS AND PHENOTYPIC EVOLUTION
+## Genetics_chapter1_003 · QUANTITATIVE GENETICS AND PHENOTYPIC EVOLUTION
 
 This book attempts to provide a “how” approach to “why” problems in evolutionary biology. The central issues to be discussed center on the fundamental nature of the processes that define the evolution of the sorts of morphological, physiological, life-history, and behavioral traits studied by ecologists and ethologists. These same types of traits are the focus of most plant and animal breeding programs (e.g., egg production, oil content, running speed), where man, rather than nature, defines the intensity and direction of selection.
 
@@ -44,7 +40,7 @@ On more than one occasion, we have heard criticism from molecular geneticists th
 
 ---
 
-## Genetics_chapter1_005 · HISTORICAL BACKGROUND
+## Genetics_chapter1_004 · HISTORICAL BACKGROUND
 
 Quantitative genetics developed early in this century in response to a major controversy that still has some remnants today. The rediscovery of Mendelian genetics in 1900 centered attention on the inheritance of discrete characters such as purple vs. white flower color, smooth vs. wrinkled seeds, and so on. This focus was in stark contrast to an independent branch of genetic analysis begun earlier by Francis Galton (1869, 1889), who concentrated on continuously varying characters (those not clearly separable into discrete classes). Galton's approaches marked the founding of the Biometrical school, from which most of modern statistics can be traced (Stigler 1986, Crow 1993a). A series of contentious debates ensued between the Mendelians (led by William Bateson) and the Biometricians (led by Karl Pearson and W. F. R. Weldon). The major issues were whether discrete characters have the same hereditary and evolutionary properties as continuously varying characters. The Mendelians held that variation in discrete characters drove evolution through the appearance of new macromutations (mutations with large effects), while the Biometricians viewed evolution as the result of natural selection acting upon continuously distributed characters. The Mendelian-Biometrician clash, often influenced more by personalities than facts, substantially delayed the fusion of genetics and Darwin's theory of evolution by natural selection (Provine 1971).
 
@@ -106,13 +102,13 @@ However, rayne (1918) soon demonstrated that selection on Drosophila bristle num
 
 ---
 
-## Genetics_chapter1_006 · THE MAJOR GOALS OF QUANTITATIVE GENETICS
+## Genetics_chapter1_005 · THE MAJOR GOALS OF QUANTITATIVE GENETICS
 
 Before proceeding, we give a very brief summary of the main issues to be addressed in the remainder of the book:
 
 ---
 
-## Genetics_chapter1_007 · THE MAJOR GOALS OF QUANTITATIVE GENETICS / The Nature of Quantitative-trait Variation
+## Genetics_chapter1_006 · THE MAJOR GOALS OF QUANTITATIVE GENETICS / The Nature of Quantitative-trait Variation
 
 The preceding paragraphs have provided evidence that the expression of quantitative characters is typically influenced by both genetic and environmental factors, and that patterns of variation are qualitatively consistent with Mendelian expectations. However, many questions remain. An obvious one, of interest from many perspectives, is, How much of the standing variation in populations is due to genetic causes and how much to environmental ones? From the standpoint of evolution and applied breeding programs, genetic components of variance are of particular interest because they determine the rates at which characters respond to selection. Environmental variance reduces the efficiency of the response to selection by causing the phenotypes of selected individuals to deviate from their underlying genotypic values. From the perspective of human genetic disorders, the degree to which the expression of undesirable traits is determined by genetic vs. environmental causes has broad implications for the development of preventative procedures and genetic counseling strategies.
 
@@ -122,7 +118,7 @@ Ultimately, the pool of genetic variation in a population must be due to a quasi
 
 ---
 
-## Genetics_chapter1_008 · THE MAJOR GOALS OF QUANTITATIVE GENETICS / The Consequences of Inbreeding and Outcrossing
+## Genetics_chapter1_007 · THE MAJOR GOALS OF QUANTITATIVE GENETICS / The Consequences of Inbreeding and Outcrossing
 
 The mean phenotypes of progeny from consanguineous matings virtually always differ from those of progeny from random-bred parents. Such inbreeding effects are almost always deleterious, generally increasing linearly with the degree of relatedness between parents (Chapter 10). These observations are consistent with the presence of deleterious recessive alleles segregating at the loci underlying quantitative variation. The mechanisms and consequences of inbreeding have a number of practical implications, e.g., in the design of breeding programs for captive populations of endangered species, the maintenance of inbred lines for biomedical and agricultural research, and the genetic counseling of victims of incest. Patterns of fitness decline with inbreeding can also provide insight into the rate and average effects of deleterious mutation (Chapter 10).
 
@@ -130,25 +126,25 @@ Crosses between isolated lines or populations often exhibit “hybrid vigor” i
 
 ---
 
-## Genetics_chapter1_009 · THE MAJOR GOALS OF QUANTITATIVE GENETICS / The Constraints on the Evolutionary Process
+## Genetics_chapter1_008 · THE MAJOR GOALS OF QUANTITATIVE GENETICS / The Constraints on the Evolutionary Process
 
 Fundamental questions arise in evolutionary biology and in selective breeding programs as to the factors that limit the rate of phenotypic evolution. As noted above, when selection operates on a single trait, the response to selection is roughly proportional to the additive genetic variance for the trait (Chapter 3). However, if the same genes influence the expression of different traits, then an evolutionary change in one trait will necessarily lead to changes in the correlated traits. This can impede the evolutionary process when there is a conflict in the fitness consequences of selection operating directly on a trait and that operating on correlated traits. Questions of evolutionary trade-offs have long been the focus of evolutionary ecology, but many of the ideas in that field (e.g., life-history theory) have developed out of simple energetic arguments or comparative surveys on the phenotypes of different species. An unambiguous understanding of the constraints on the evolution of systems of complex characters requires information on the magnitude and direction of genetic correlations between characters. Quantitative-genetic methodology provides a powerful, but data demanding, means of elucidating these issues (Chapter 21). Ultimately, we would like to know the extent to which patterns of genetic correlations within populations are reflected in multivariate patterns of differentiation among species.
 
 ---
 
-## Genetics_chapter1_010 · THE MAJOR GOALS OF QUANTITATIVE GENETICS / The Estimation of Breeding Values
+## Genetics_chapter1_009 · THE MAJOR GOALS OF QUANTITATIVE GENETICS / The Estimation of Breeding Values
 
 Plant and animal breeding programs are based on the principle that an individual's phenotype provides some insight into its underlying genotypic value. However, because the environment can contribute greatly to phenotypic expression, the amount of genetic information conveyed by a single phenotypic measurement is not necessarily high. On the other hand, if one considers jointly the phenotypes of all of the relatives of a focal individual, a more accurate assessment of that individual's breeding value can be acquired. The identification of elite individuals by BLUP (Chapter 26), in some cases supplemented by information from molecular markers, is now a major goal of applied quantitative genetics.
 
 ---
 
-## Genetics_chapter1_011 · THE MAJOR GOALS OF QUANTITATIVE GENETICS / The Development of Predictive Models for Evolutionary Change
+## Genetics_chapter1_010 · THE MAJOR GOALS OF QUANTITATIVE GENETICS / The Development of Predictive Models for Evolutionary Change
 
 Much attention has been given to the predictive power of quantitative-genetic theory. For breeders facing a large economic investment in an artificial selection program, a fundamental issue is the magnitude of selection gain that is to be expected following a certain period of selection at a specified intensity. Models that provide reasonable predictions, at least for periods of a dozen generations or so, have long been available. These will be taken up in detail in our next book. For now, we simply emphasize that the application of all such models requires information on the components of variation and covariation of the selected traits, the primary topics of this volume.
 
 ---
 
-## Genetics_chapter1_012 · MATHEMATICS IN BIOLOGY
+## Genetics_chapter1_011 · MATHEMATICS IN BIOLOGY
 
 Biologists often become alienated from mathematics at an early stage in their career under the misconception or self-deception that biology is not a mathematical science. The claim is also often made that mathematical theory is overly simplistic, ignoring the inherently complex nature of biological systems. This posture is not very productive, and ironically, those who make such claims frequently devote their entire careers to performing carefully controlled experiments in which only one or two factors are allowed to vary, effectively sweeping biological reality under the rug.
 

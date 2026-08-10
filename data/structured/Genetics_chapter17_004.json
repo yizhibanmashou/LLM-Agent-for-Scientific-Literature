@@ -4,15 +4,15 @@
     "chapter": "Genetics_chapter17",
     "section": "ESTIMATION PROCEDURES",
     "subsections": [
-      "Balanced Data"
+      "Standardization of Data from the Different Sexes"
     ],
     "section_level_1": "ESTIMATION PROCEDURES",
-    "section_level_2": "Balanced Data",
+    "section_level_2": "Standardization of Data from the Different Sexes",
     "heading_path": [
       "ESTIMATION PROCEDURES",
-      "Balanced Data"
+      "Standardization of Data from the Different Sexes"
     ],
-    "display_heading": "ESTIMATION PROCEDURES / Balanced Data",
+    "display_heading": "ESTIMATION PROCEDURES / Standardization of Data from the Different Sexes",
     "source_file": "",
     "source_pdf": "data/背景资料/Genetics.pdf",
     "source_title": "Genetics and Analysis of Quantitative Traits",
@@ -21,199 +21,49 @@
       "remote_llm_calls": 0
     },
     "heading_source": {
-      "source_page": 552,
-      "printed_page": 532,
+      "source_page": 556,
+      "printed_page": 536,
       "source_block_ids": [
-        "p552:b4"
+        "p556:b4"
       ],
       "bbox": [
-        120.0,
-        296.0,
-        305.0,
-        327.0
+        109.0,
+        842.0,
+        720.0,
+        874.0
       ],
-      "raw_text": "Balanced Data"
+      "raw_text": "Standardization of Data from the Different Sexes"
     }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "It is a rather exceptional circumstance when one has the same amount of data from all families, but to simplify discussion, we will start with the assumption that only a single offspring and a single parent are observed in each family. The appropriate linear model for such an analysis is",
-      "source_page": 552,
-      "printed_page": 532,
+      "content": "Often, the mean (and / or the variance) of traits differs between males and females. This can result in different estimates of $ h^{2} $ depending upon which of the sexes is utilized in a parent-offspring regression, since the denominator of the regression coefficient is the phenotypic variance. The problem is sometimes resolved as a scaling issue by using standardized variables, precisely the approach used in Example 5 from Chapter 7 in the analysis of human stature data. For each individual, the observed value minus the mean for that sex is divided by the sex-specific standard deviation. Such a transformation equalizes the phenotypic means and variances across the sexes, to 0 and 1, respectively.",
+      "source_page": 556,
+      "printed_page": 536,
       "source_block_ids": [
-        "p552:b5"
+        "p556:b5"
       ],
       "bbox": [
-        116.0,
-        338.0,
-        1077.0,
-        474.0
+        109.0,
+        884.0,
+        1067.0,
+        1171.0
       ]
     },
     {
       "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter17_formula001]]",
-      "source_page": 552,
-      "printed_page": 532,
+      "content": "Sex-specific corrections do not always equilibrate the parent-offspring regressions involving the four son-daughter and mother-father combinations. Real sex-specific differences in genetic components of variance may occur, for example, due to variation associated with sex chromosomes or to sex-limited expression of specific genes (Chapter 24).",
+      "source_page": 556,
+      "printed_page": 536,
       "source_block_ids": [
-        "p552:b6"
+        "p556:b6"
       ],
       "bbox": [
-        470.0,
-        496.0,
-        722.0,
-        529.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "where $ z_{oi} $ and $ z_{pi} $ represent the offspring and parent phenotypes for the ith family, $ \\alpha = \\mu_o - \\beta_{op} \\mu_p $ is the intercept, $ \\beta_{op} $ is the regression coefficient, and $ e_i $ is the residual deviation from the regression. In statistical terms, from Chapter 3 we know that the least-squares regression coefficient, $ b_{op} = \\text{Cov}(z_o, z_p) / \\text{Var}(z_p) $, provides an estimate of $ \\beta_{op} $. If there are no environmental causes of resemblance between parents and offspring, we then have (from Chapter 7),",
-      "source_page": 552,
-      "printed_page": 532,
-      "source_block_ids": [
-        "p552:b7"
-      ],
-      "bbox": [
-        115.0,
-        549.0,
-        1074.0,
-        745.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter17_formula002]]",
-      "source_page": 552,
-      "printed_page": 532,
-      "source_block_ids": [
-        "p552:b8"
-      ],
-      "bbox": [
-        215.0,
-        763.0,
-        902.0,
-        838.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "Thus, under the stated assumptions, a simple (possibly upwardly biased) estimate of $ h^{2} = \\sigma_{A}^{2} / \\sigma_{z}^{2} $ is twice the (single) parent-offspring regression, $ 2b_{op} $.",
-      "source_page": 552,
-      "printed_page": 532,
-      "source_block_ids": [
-        "p552:b10"
-      ],
-      "bbox": [
-        115.0,
-        855.0,
-        1071.0,
-        924.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "Greater precision is possible when both parents can be measured, as one can then regress offspring phenotypes on the mean phenotypes of their parents (also known as the midparent values). Our model is now slightly altered to become",
-      "source_page": 552,
-      "printed_page": 532,
-      "source_block_ids": [
-        "p552:b11"
-      ],
-      "bbox": [
-        112.0,
-        921.0,
-        1072.0,
-        1020.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter17_formula003]]",
-      "source_page": 552,
-      "printed_page": 532,
-      "source_block_ids": [
-        "p552:b12"
-      ],
-      "bbox": [
-        403.0,
-        1039.0,
-        781.0,
-        1110.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "where $ z_{mi} $ and $ z_{fi} $ refer to the phenotypes of mothers and fathers. The least-squares slope of the midparent-offspring regression, $ b_{o\\overline{p}} $, is a direct estimate of the heritability. To obtain this result, let us assume that the phenotypic variance is the same in both sexes and in both generations and that the resemblance between relatives is independent of their sex. We then have",
-      "source_page": 552,
-      "printed_page": 532,
-      "source_block_ids": [
-        "p552:b13"
-      ],
-      "bbox": [
-        112.0,
-        1129.0,
-        1072.0,
-        1293.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter17_formula004]]",
-      "source_page": 552,
-      "printed_page": 532,
-      "source_block_ids": [
-        "p552:b14"
-      ],
-      "bbox": [
-        374.0,
-        1310.0,
-        808.0,
-        1543.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "In obtaining this result, we have assumed that there is no assortative mating, i.e., $ \\text{Cov}(z_m, z_f) = 0 $. Referring to Equation 17.1, we see that $ b_{o\\overline{p}} \\simeq \\sigma_A^2 / \\sigma_z^2 $, ignoring terms involving epistasis.",
-      "source_page": 553,
-      "printed_page": 533,
-      "source_block_ids": [
-        "p553:b2"
-      ],
-      "bbox": [
-        77.0,
-        137.0,
-        1036.0,
-        236.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "Finally, consider the situation when multiple (n) offspring are measured in each family. The expected phenotypic covariance of a parent i and the average of its $ j = 1, \\cdots, n $ offspring may be written $ \\sigma[(\\sum_{j=1}^{n} z_{oij}/n), z_{p}] $. Under the assumptions of the previous paragraph, all n of the covariance terms contained in this expression have the same expected value, reducing it to $ n\\sigma(z_{o}, z_{p})/n = \\sigma(z_{o}, z_{p}) $, which is the same as the expectation for single offspring. Thus, provided family sizes are equal, the interpretation of a parent-offspring regression is the same whether individual offspring data or the progeny means are used in the analysis.",
-      "source_page": 553,
-      "printed_page": 533,
-      "source_block_ids": [
-        "p553:b3"
-      ],
-      "bbox": [
-        78.0,
-        234.0,
-        1040.0,
-        493.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "The results for the multiple-offspring regression help clarify why heritabilities are usually estimated from regression rather than correlation coefficients. Assuming equal phenotypic variances in the two generations, the correlation between single offspring and single parents, $ r_{op} $, is identical to the regression coefficient $ b_{op} $ (see Equation 3.15b). The single offspring-midparent regression, $ r_{op} $, is equal to $ b_{op} $/√2, a simple transformation. However, with multiple offspring per family, the variance of offspring family means is a function of both the family size and the heritability itself (see next section), rendering the interpretation of the correlation coefficient difficult. Such problems do not arise with the regression coefficient, which does not involve the use of the offspring family variance. The following section provides a broader coverage of the issues that arise when multiple offspring are assayed per family.",
-      "source_page": 553,
-      "printed_page": 533,
-      "source_block_ids": [
-        "p553:b4"
-      ],
-      "bbox": [
-        79.0,
-        491.0,
-        1042.0,
-        880.0
+        108.0,
+        1172.0,
+        1067.0,
+        1335.0
       ]
     }
   ]

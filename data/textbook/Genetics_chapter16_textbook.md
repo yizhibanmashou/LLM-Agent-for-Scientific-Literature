@@ -1170,8 +1170,7 @@ where $ p_{M_{ik}} $ is the frequency of allele $ M_{ik} $. The motivation for t
 
 ---
 
-## Genetics_chapter16_025 · MAPPING DICHOTOMOUS CHARACTERS / III
-Estimation Procedures
+## Genetics_chapter16_025 · MAPPING DICHOTOMOUS CHARACTERS / III Estimation Procedures
 
 **[Source_image]**
 

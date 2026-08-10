@@ -2,17 +2,14 @@
   "id": "Genetics_appendix1_019",
   "metadata": {
     "chapter": "Genetics_appendix1",
-    "section": "Appendix 3",
-    "subsections": [
-      "Further Topics in Matrix Algebra\nand Linear Models"
-    ],
-    "section_level_1": "Appendix 3",
-    "section_level_2": "Further Topics in Matrix Algebra\nand Linear Models",
+    "section": "GENERALIZED INVERSES AND SOLUTIONS TO SINGULAR SYSTEMS OF EQUATIONS",
+    "subsections": [],
+    "section_level_1": "GENERALIZED INVERSES AND SOLUTIONS TO SINGULAR SYSTEMS OF EQUATIONS",
+    "section_level_2": null,
     "heading_path": [
-      "Appendix 3",
-      "Further Topics in Matrix Algebra\nand Linear Models"
+      "GENERALIZED INVERSES AND SOLUTIONS TO SINGULAR SYSTEMS OF EQUATIONS"
     ],
-    "display_heading": "Appendix 3 / Further Topics in Matrix Algebra\nand Linear Models",
+    "display_heading": "GENERALIZED INVERSES AND SOLUTIONS TO SINGULAR SYSTEMS OF EQUATIONS",
     "source_file": "",
     "source_pdf": "data/背景资料/Genetics.pdf",
     "source_title": "Genetics and Analysis of Quantitative Traits",
@@ -24,31 +21,121 @@
       "source_page": 847,
       "printed_page": 827,
       "source_block_ids": [
-        "p847:b1"
+        "p847:b3"
       ],
       "bbox": [
-        174.0,
-        211.0,
-        905.0,
-        337.0
+        59.0,
+        826.0,
+        860.0,
+        895.0
       ],
-      "raw_text": "Further Topics in Matrix Algebra\nand Linear Models"
+      "raw_text": "GENERALIZED INVERSES AND SOLUTIONS TO SINGULAR SYSTEMS OF EQUATIONS"
     }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "This appendix builds on Chapter 8, presenting additional results from matrix algebra and linear models. We start by introducing two useful matrix transforms, generalized inverses (for solving singular systems of equations) and the square root of a matrix (for obtaining a set of uncorrelated variables). These results are then used for a formal derivation of several properties of generalized least-squares (GLS) estimators. We next examine how linear model sums of squares can be written as quadratic forms and how these sums of squares are used in formal hypothesis testing. We conclude with two additional topics, equivalent linear models (which allow calculations for one model to be performed on a potentially much simpler model) and a brief introduction to matrix derivatives.",
+      "content": "Linear systems of equations are ubiquitous in quantitative genetics and we have presented solutions for such systems by assuming that the appropriate matrices are nonsingular, and hence can be inverted. However, in the real world of large, complex, and unbalanced designs, the existence of an inverse is by no means guaranteed. Consider the solution of the matrix equation $ \\mathbf{y} = \\mathbf{A}\\mathbf{x} $ for the unknown vector $ \\mathbf{x} $. If $ \\mathbf{A} $ is a square and nonsingular, then $ \\mathbf{x} = \\mathbf{A}^{-1}\\mathbf{y} $ is the unique solution. However, what happens if $ \\mathbf{A} $ is singular or is nonsquare? In this case either the system has no solution and is said to be inconsistent or else there are an infinite number of solutions. An example of an inconsistent system is",
       "source_page": 847,
       "printed_page": 827,
       "source_block_ids": [
-        "p847:b2"
+        "p847:b4"
       ],
       "bbox": [
-        61.0,
-        459.0,
+        56.0,
+        929.0,
         1018.0,
-        781.0
+        1218.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula095]]",
+      "source_page": 847,
+      "printed_page": 827,
+      "source_block_ids": [
+        "p847:b5"
+      ],
+      "bbox": [
+        461.0,
+        1250.0,
+        609.0,
+        1281.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula096]]",
+      "source_page": 847,
+      "printed_page": 827,
+      "source_block_ids": [
+        "p847:b6"
+      ],
+      "bbox": [
+        461.0,
+        1290.0,
+        611.0,
+        1320.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "which cannot be satisfied by any $ (x_{1}, x_{2}) $. Likewise, a system with an infinite number of solutions is",
+      "source_page": 847,
+      "printed_page": 827,
+      "source_block_ids": [
+        "p847:b7"
+      ],
+      "bbox": [
+        55.0,
+        1350.0,
+        1012.0,
+        1412.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula097]]",
+      "source_page": 847,
+      "printed_page": 827,
+      "source_block_ids": [
+        "p847:b8"
+      ],
+      "bbox": [
+        459.0,
+        1411.0,
+        608.0,
+        1440.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula098]]",
+      "source_page": 847,
+      "printed_page": 827,
+      "source_block_ids": [
+        "p847:b9"
+      ],
+      "bbox": [
+        459.0,
+        1449.0,
+        608.0,
+        1478.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "which has a line of solutions of the form $ x_{2}=1-x_{1} $ for arbitrary $ x_{1} $. While these two simple systems can be solved by inspection, a more systematic approach is required for arbitrary systems. This is provided by using generalized inverses.",
+      "source_page": 848,
+      "printed_page": 828,
+      "source_block_ids": [
+        "p848:b2"
+      ],
+      "bbox": [
+        138.0,
+        135.0,
+        1098.0,
+        234.0
       ]
     }
   ]

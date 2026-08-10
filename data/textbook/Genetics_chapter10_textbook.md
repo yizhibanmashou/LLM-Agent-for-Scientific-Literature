@@ -1,7 +1,6 @@
 # Chapter 10 · 10 Inbreeding Depression
 
-## Genetics_chapter10_001 · 10
-Inbreeding Depression
+## Genetics_chapter10_001 · 10 Inbreeding Depression
 
 The previous chapter reviewed how the mean phenotypes of progeny from crosses between populations often exceed the average of the parents, a phenomenon known as heterosis. A related phenomenon arises within populations — inbred individuals are almost always less fit than progeny of nonrelatives. The decline in the mean phenotype with increasing homozygosity within populations, known as inbreeding depression, is often interpreted as heterosis-in-reverse. However, as will be seen below, there are some important distinctions between the genetic mechanisms contributing to inbreeding depression within populations and heterosis between populations.
 

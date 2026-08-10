@@ -966,16 +966,11 @@ negligibly positive contributions to $w_{26}$. The sum of the direct (diagonal e
 
 ## Genetics_appendix1_018 · Appendix 3 / Further Topics in Matrix Algebra and Linear Models
 
----
-
-## Genetics_appendix1_019 · Appendix 3 / Further Topics in Matrix Algebra
-and Linear Models
-
 This appendix builds on Chapter 8, presenting additional results from matrix algebra and linear models. We start by introducing two useful matrix transforms, generalized inverses (for solving singular systems of equations) and the square root of a matrix (for obtaining a set of uncorrelated variables). These results are then used for a formal derivation of several properties of generalized least-squares (GLS) estimators. We next examine how linear model sums of squares can be written as quadratic forms and how these sums of squares are used in formal hypothesis testing. We conclude with two additional topics, equivalent linear models (which allow calculations for one model to be performed on a potentially much simpler model) and a brief introduction to matrix derivatives.
 
 ---
 
-## Genetics_appendix1_020 · GENERALIZED INVERSES AND SOLUTIONS TO SINGULAR SYSTEMS OF EQUATIONS
+## Genetics_appendix1_019 · GENERALIZED INVERSES AND SOLUTIONS TO SINGULAR SYSTEMS OF EQUATIONS
 
 Linear systems of equations are ubiquitous in quantitative genetics and we have presented solutions for such systems by assuming that the appropriate matrices are nonsingular, and hence can be inverted. However, in the real world of large, complex, and unbalanced designs, the existence of an inverse is by no means guaranteed. Consider the solution of the matrix equation $ \mathbf{y} = \mathbf{A}\mathbf{x} $ for the unknown vector $ \mathbf{x} $. If $ \mathbf{A} $ is a square and nonsingular, then $ \mathbf{x} = \mathbf{A}^{-1}\mathbf{y} $ is the unique solution. However, what happens if $ \mathbf{A} $ is singular or is nonsquare? In this case either the system has no solution and is said to be inconsistent or else there are an infinite number of solutions. An example of an inconsistent system is
 
@@ -1005,7 +1000,7 @@ which has a line of solutions of the form $ x_{2}=1-x_{1} $ for arbitrary $ x_{1
 
 ---
 
-## Genetics_appendix1_021 · GENERALIZED INVERSES AND SOLUTIONS TO SINGULAR SYSTEMS OF EQUATIONS / Generalized Inverses
+## Genetics_appendix1_020 · GENERALIZED INVERSES AND SOLUTIONS TO SINGULAR SYSTEMS OF EQUATIONS / Generalized Inverses
 
 Suppose a matrix $ A^{-} $exists such that
 
@@ -1043,7 +1038,7 @@ Given the analogy with the inverse of a nonsingular square matrix, a matrix $ A^
 
 ---
 
-## Genetics_appendix1_022 · GENERALIZED INVERSES AND SOLUTIONS TO SINGULAR SYSTEMS OF EQUATIONS / Consistency and Solutions to Consistent Systems
+## Genetics_appendix1_021 · GENERALIZED INVERSES AND SOLUTIONS TO SINGULAR SYSTEMS OF EQUATIONS / Consistency and Solutions to Consistent Systems
 
 When dealing with linear models for complex designs, it is not immediately clear if the resulting OLS/GLS equations have solutions. Generalized inverses provide a check of consistency, and hence of whether a system of equations has any solutions. A linear system $ \mathbf{A}\mathbf{x}=\mathbf{y} $ is consistent if and only if
 
@@ -1072,7 +1067,7 @@ which follows from Equations A3.3 and A3.1, respectively.
 
 **[示例 Example]**
 
-> **Example 1** · ref: `Genetics_appendix1:1:occ2` · source: `Genetics_appendix1_022.json` · blocks 7–22
+> **Example 1** · ref: `Genetics_appendix1:1:occ2` · source: `Genetics_appendix1_021.json` · blocks 7–22
 >
 > Example 1. Consider the following system of equations
 > 
@@ -1160,7 +1155,7 @@ which is independent of the arbitrary vector c. Likewise, a vector of contrasts 
 
 **[示例 Example]**
 
-> **Example 2** · ref: `Genetics_appendix1:2:occ2` · source: `Genetics_appendix1_022.json` · blocks 31–43
+> **Example 2** · ref: `Genetics_appendix1:2:occ2` · source: `Genetics_appendix1_021.json` · blocks 31–43
 >
 > Example 2. Consider the system of equations from Example 1. Is there a unique solution for the two linear contrasts $ c_1 = x_2 - 4x_1 $ and $ c_2 = x_3 + 3x_1 $? In matrix form,
 > 
@@ -1209,7 +1204,7 @@ which is independent of the arbitrary vector c. Likewise, a vector of contrasts 
 
 ---
 
-## Genetics_appendix1_023 · GENERALIZED INVERSES AND SOLUTIONS TO SINGULAR SYSTEMS OF EQUATIONS / Estimability of Fixed Factors
+## Genetics_appendix1_022 · GENERALIZED INVERSES AND SOLUTIONS TO SINGULAR SYSTEMS OF EQUATIONS / Estimability of Fixed Factors
 
 The above results have implications for the estimation of (fixed) factors in the general linear model, $ \mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \mathbf{e} $. Recall that the OLS solution for a vector $ \beta $ of fixed effects is $ \widehat{\boldsymbol{\beta}} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{y} $ (Chapters 8, 26). If the design matrix $ \mathbf{X} $ has full column rank (all columns of $ \mathbf{X} $ are independent), $ (\mathbf{X}^T\mathbf{X})^{-1} $ exists and the OLS solution for $ \beta $ is unique. However, when $ (\mathbf{X}^T\mathbf{X}) $ is singular (and hence does not have a unique inverse), it is not possible to obtain unique OLS estimates for all the fixed factors in a model. For example, suppose $ \beta_1 $ indicates a sex effect and $ \beta_2 $ indicates the effect of a particular diet. If the design is such that all females use this diet, we do not have separate information on both sex and diet effects and hence can only estimate $ \beta_1 + \beta_2 $ rather than being able to estimate both $ \beta_1 $ and $ \beta_2 $ separately.
 
@@ -1249,11 +1244,11 @@ is unique and independent of which generalized inverse is actually used.
 
 ---
 
-## Genetics_appendix1_024 · GENERALIZED INVERSES AND SOLUTIONS TO SINGULAR SYSTEMS OF EQUATIONS / Estimability of Fixed Factors
+## Genetics_appendix1_023 · GENERALIZED INVERSES AND SOLUTIONS TO SINGULAR SYSTEMS OF EQUATIONS / Estimability of Fixed Factors
 
 **[示例 Example]**
 
-> **Example 3** · ref: `Genetics_appendix1:3:occ2` · source: `Genetics_appendix1_024.json` · blocks 0–6
+> **Example 3** · ref: `Genetics_appendix1:3:occ2` · source: `Genetics_appendix1_023.json` · blocks 0–6
 >
 > Example 3. Consider the linear model $ y = X\beta $, where
 > 
@@ -1281,7 +1276,7 @@ is unique and independent of which generalized inverse is actually used.
 
 ---
 
-## Genetics_appendix1_025 · THE SQUARE ROOT OF A MATRIX
+## Genetics_appendix1_024 · THE SQUARE ROOT OF A MATRIX
 
 The concept of the square root of a symmetric nonsingular matrix provides another useful matrix tool for the analysis of linear models. In particular, using the square root of the covariance matrix transforms a vector of correlated variables into a new vector of variables with covariance matrix I, implying that the transformed variables are uncorrelated with unit variance.
 
@@ -1331,7 +1326,7 @@ The last step follows by recalling that the sum of $n$ squared unit normal rando
 
 ---
 
-## Genetics_appendix1_026 · DERIVATION OF THE GLS ESTIMATORS
+## Genetics_appendix1_025 · DERIVATION OF THE GLS ESTIMATORS
 
 One important application of the square root of a matrix is that it allows us to obtain generalized least-squares (GLS) estimators from ordinary least-squares (OLS) estimators. Suppose the linear model is
 
@@ -1400,20 +1395,20 @@ Similar modifications extend a number of other OLS results into GLS results (Tab
 
 *[See Table A3.1 at the end of this section.]*
 
-> **Table A3.1** · `A3.1` · page 855 · source: `Genetics_appendix1_026`
+> **Table A3.1** · `A3.1` · page 855 · source: `Genetics_appendix1_025`
 > Table A3.1 Summary of useful results for the general linear model, $ \mathbf{y} = \mathbf{X}\beta + \mathbf{e} $, under ordinary least-squares (OLS) and generalized least-squares (GLS) assumptions about the distribution of residuals.
 >
 > <table><tr><td></td><td>OLS</td><td>GLS</td></tr><tr><td>Assumed distribution of residuals</td><td>$ \mathbf{e} \sim (\mathbf{0}, \sigma_{e}^{2} \mathbf{I}) $</td><td>$ \mathbf{e} \sim (\mathbf{0}, \mathbf{V}) $</td></tr><tr><td>Least-squares estimator of $ \beta $</td><td>$ \widehat{\boldsymbol{\beta}} = (\mathbf{X}^{T} \mathbf{X})^{-1} \mathbf{X}^{T} \mathbf{y} $</td><td>$ \widehat{\boldsymbol{\beta}} = (\mathbf{X}^{T} \mathbf{V}^{-1} \mathbf{X})^{-1} \mathbf{X}^{T} \mathbf{V}^{-1} \mathbf{y} $</td></tr><tr><td>Var( $ \widehat{\boldsymbol{\beta}} $)</td><td>$ (\mathbf{X}^{T} \mathbf{X})^{-1} \sigma_{e}^{2} $</td><td>$ (\mathbf{X}^{T} \mathbf{V}^{-1} \mathbf{X})^{-1} $</td></tr><tr><td>Predicted values, $ \widehat{\mathbf{y}} = \mathbf{X} \widehat{\boldsymbol{\beta}} $</td><td>$ \mathbf{X}(\mathbf{X}^{T} \mathbf{X})^{-1} \mathbf{X}^{T} \mathbf{y} $</td><td>$ \mathbf{X}(\mathbf{X}^{T} \mathbf{V}^{-1} \mathbf{X})^{-1} \mathbf{X}^{T} \mathbf{V}^{-1} \mathbf{y} $</td></tr><tr><td>Var( $ \widehat{\mathbf{y}} $)</td><td>$ \mathbf{X}(\mathbf{X}^{T} \mathbf{X})^{-1} \mathbf{X}^{T} \sigma_{e}^{2} $</td><td>$ \mathbf{X}(\mathbf{X}^{T} \mathbf{V}^{-1} \mathbf{X})^{-1} \mathbf{X}^{T} $</td></tr><tr><td colspan="3">Chi-square goodness-of-fit statistic (assuming $ \mathbf{e} \sim \text{MVN}) $</td></tr><tr><td></td><td>$ \chi^{2} = \sum_{i=1}^{n} \frac{(y_{i} - \widehat{y}_{i})^{2}}{\sigma_{e}^{2}} $</td><td>$ \chi^{2} = (\mathbf{y} - \widehat{\mathbf{y}})^{T} \mathbf{V}^{-1} (\mathbf{y} - \widehat{\mathbf{y}}) $</td></tr></table>
 
 ---
 
-## Genetics_appendix1_027 · QUADRATIC FORMS AND SUMS OF SQUARES
+## Genetics_appendix1_026 · QUADRATIC FORMS AND SUMS OF SQUARES
 
 The analysis of linear models relies very heavily on sums of squares, which can be expressed in matrix notation as quadratic forms. To introduce the reader to the machinery used to work with sums of squares, we first present expressions for the mean and variance of a quadratic form, and then express linear model sums of squares as quadratic forms.
 
 ---
 
-## Genetics_appendix1_028 · QUADRATIC FORMS AND SUMS OF SQUARES / Moments of Quadratic Forms
+## Genetics_appendix1_027 · QUADRATIC FORMS AND SUMS OF SQUARES / Moments of Quadratic Forms
 
 When x is a vector of random variables, the quadratic form $ x^{T}Ax $ is a scalar random variable. If x has mean $ \mu $ and (nonsingular) covariance matrix V, Equation 8.22 gives the expected value of this quadratic form as
 
@@ -1433,7 +1428,7 @@ $$
 
 ---
 
-## Genetics_appendix1_029 · QUADRATIC FORMS AND SUMS OF SQUARES / The Sample Variance Expressed as a Quadratic Form
+## Genetics_appendix1_028 · QUADRATIC FORMS AND SUMS OF SQUARES / The Sample Variance Expressed as a Quadratic Form
 
 As an introduction to expressing sums of squares as quadratic forms, consider the sample variance for n observations,
 
@@ -1483,7 +1478,7 @@ $$
 
 **[示例 Example]**
 
-> **Example 4** · ref: `Genetics_appendix1:4:occ2` · source: `Genetics_appendix1_029.json` · blocks 12–33
+> **Example 4** · ref: `Genetics_appendix1:4:occ2` · source: `Genetics_appendix1_028.json` · blocks 12–33
 >
 > Example 4. Since we have expressed $ \operatorname{Var}(x) $ as a quadratic form, we can use Equation A3.12a to compute its expected value and Equation A3.12b (under the assumption of normality) to compute its sampling variance. If $ \mathbf{x} \sim (\boldsymbol{\mu}, \mathbf{V}) $, the expected value of $ \operatorname{Var}(x) $ is
 > 
@@ -1565,7 +1560,7 @@ $$
 
 ---
 
-## Genetics_appendix1_030 · QUADRATIC FORMS AND SUMS OF SQUARES / Sums of Squares Expressed as Quadratic Forms
+## Genetics_appendix1_029 · QUADRATIC FORMS AND SUMS OF SQUARES / Sums of Squares Expressed as Quadratic Forms
 
 In the same fashion that we decomposed total variance into genetic and phenotypic components (Chapters 3–7), we can decompose the total variance of a response vector y into the variance accounted for by the linear model and the remaining (error or residual) variance. This is typically done by considering the sums of squares, with the total sum of squares $ (SS_{T}) $ being the sum of two components, the error (or residual) sum of squares $ (SS_{E}) $ and the model sum of squares $ (SS_{M}) $,
 
@@ -1667,7 +1662,7 @@ $$
 
 ---
 
-## Genetics_appendix1_031 · TESTING HYPOTHESES ABOUT LINEAR MODELS
+## Genetics_appendix1_030 · TESTING HYPOTHESES ABOUT LINEAR MODELS
 
 Since sums of squares are very closely related to the variances accounted for by the various components of a particular linear model, it should not be surprising that hypothesis testing is based on the sums of squares. Such hypothesis tests can be quite involved, especially if we are evaluating the various components of a complex model. Here we consider the simplest case of testing the fit of the total model to the data.
 
@@ -1711,7 +1706,7 @@ where $ r^{2} $ is the coefficient of determination for the full model (Equation
 
 ---
 
-## Genetics_appendix1_032 · EQUIVALENT LINEAR MODELS
+## Genetics_appendix1_031 · EQUIVALENT LINEAR MODELS
 
 Two linear models are said to be equivalent if they have the same mean vector $ E(\mathbf{y}) $ and covariance matrix $ \sigma(\mathbf{y}, \mathbf{y}) $. The utility of equivalent models is that the parameters of one model can always be expressed as linear combinations of the parameters of any equivalent model. Hence, by choosing an appropriate equivalent model, one can often greatly simplify computations. An example of this approach is the reduced animal model of Quaas and Pollak (1980) discussed in Chapter 26. Likewise, Equation 26.23, for estimating the BLUP values of dominance effects as a function of estimated breeding values, also follows from using equivalent models. Additional examples from BLUP are given by Henderson (1985c). Our purpose here is to briefly introduce the use and construction of equivalent models.
 
@@ -1793,7 +1788,7 @@ where C is the covariance matrix between u* and u, and G is the covariance matri
 
 ---
 
-## Genetics_appendix1_033 · DERIVATIVES OF VECTORS AND MATRICES
+## Genetics_appendix1_032 · DERIVATIVES OF VECTORS AND MATRICES
 
 Our final special topic in matrix algebra concerns the derivatives of vector- and matrix-valued functions, which we use rather extensively in Chapter 27. We present a few simple results here, and the reader is referred to Morrison (1976), Graham (1981), and Searle (1982) for more details. Consider first the simplest function of vector x, namely the product of x and either a vector (a) or matrix (A) of constants. The derivatives of these functions with respect to the vector x become
 
@@ -1839,7 +1834,7 @@ $$
 
 **[示例 Example]**
 
-> **Example 5** · ref: `Genetics_appendix1:5:occ2` · source: `Genetics_appendix1_033.json` · blocks 9–15
+> **Example 5** · ref: `Genetics_appendix1:5:occ2` · source: `Genetics_appendix1_032.json` · blocks 9–15
 >
 > Example 5. The OLS solution for a linear model is the value of $ \beta $ that minimizes the residual sum of squares given y and X. In matrix form,
 > 
@@ -1867,13 +1862,13 @@ $$
 
 ---
 
-## Genetics_appendix1_034 · Appendix 4 / Maximum Likelihood Estimation and Likelihood-ratio Tests
+## Genetics_appendix1_033 · Appendix 4 / Maximum Likelihood Estimation and Likelihood-ratio Tests
 
 The method of maximum likelihood (ML), introduced by Fisher (1921), is widely used in human and quantitative genetics and we draw upon this approach throughout the book, especially in Chapters 13–16 (mixture distributions) and 26–27 (variance component estimation). Weir (1996) gives a useful introduction with genetic applications, while Kendall and Stuart (1979) and Edwards (1992) provide more detailed treatments.
 
 ---
 
-## Genetics_appendix1_035 · LIKELIHOOD, SUPPORT, AND SCORE FUNCTIONS
+## Genetics_appendix1_034 · LIKELIHOOD, SUPPORT, AND SCORE FUNCTIONS
 
 The basic idea underlying ML is quite simple. Usually, when specifying a probability density function (say, a normal with unknown mean $ \mu $ and unit variance), we treat the pdf as a function of z (the value of the random variable) with the distribution parameters $ \Theta $ assumed to be known. (While much of our discussion is in terms of a vector $ \Theta $, we use $ \theta $ to indicate results for a single parameter.) With maximum likelihood estimation, we reverse the roles of the observed value and the distribution parameters by asking: Given a vector of observations z, what can we say about $ \Theta $? To specify this alternative interpretation, the density function is denoted as $ \ell(\Theta|\mathbf{z}) $, the likelihood of $ \Theta $ given the observed vector of data z. This defines a likelihood surface, as $ \ell(\Theta|\mathbf{z}) $ assigns a value to each possible point in the $ \Theta $-parameter space given the observed data z. The maximum likelihood estimate (MLE) of the unknown parameters, $ \widehat{\Theta} $, is the value of $ \Theta $ corresponding to the maximum of $ \ell(\Theta|\mathbf{z}) $, i.e., the MLE is the value of $ \Theta $ that is “most likely” to have produced the data z. It is usually easier to find the maximum of a likelihood function by first taking its log and working with the resulting log-likelihood
 
@@ -1895,7 +1890,7 @@ for a vector of $n$ parameters. From elementary calculus it follows that the sco
 
 **[示例 Example]**
 
-> **Example 1** · ref: `Genetics_appendix1:1:occ3` · source: `Genetics_appendix1_035.json` · blocks 5–11
+> **Example 1** · ref: `Genetics_appendix1:1:occ3` · source: `Genetics_appendix1_034.json` · blocks 5–11
 >
 > Example 1. Suppose $n$ values, $z_1 \cdots z_n$, are sampled independently from an underlying normal with unknown mean $\mu$ and unit variance ($\sigma^2 = 1$). Letting $\mathbf{z} = (z_1, z_2, \cdots, z_n)$, what is the MLE for $\mu$ given $\mathbf{z}$? Since the observations are independent, the resulting probability density function for $\mathbf{z}$ is the product of $n$ normal density functions,
 > 
@@ -1926,7 +1921,7 @@ for a vector of $n$ parameters. From elementary calculus it follows that the sco
 
 ---
 
-## Genetics_appendix1_036 · LIKELIHOOD, SUPPORT, AND SCORE FUNCTIONS / Large-sample Properties of MLEs
+## Genetics_appendix1_035 · LIKELIHOOD, SUPPORT, AND SCORE FUNCTIONS / Large-sample Properties of MLEs
 
 MLEs have several important features when the sample size is large:
 
@@ -1948,7 +1943,7 @@ This is just the reciprocal of the curvature of the log-likelihood surface at th
 
 **[示例 Example]**
 
-> **Example 2** · ref: `Genetics_appendix1:2:occ3` · source: `Genetics_appendix1_036.json` · blocks 7–11
+> **Example 2** · ref: `Genetics_appendix1:2:occ3` · source: `Genetics_appendix1_035.json` · blocks 7–11
 >
 > Example 2. What is the large-sample variance of the MLE for $ \mu $ from Example 1?
 > 
@@ -1969,7 +1964,7 @@ This is just the reciprocal of the curvature of the log-likelihood surface at th
 
 ---
 
-## Genetics_appendix1_037 · LIKELIHOOD, SUPPORT, AND SCORE FUNCTIONS / The Fisher Information Matrix
+## Genetics_appendix1_036 · LIKELIHOOD, SUPPORT, AND SCORE FUNCTIONS / The Fisher Information Matrix
 
 When estimating a vector of parameters, Equation A4.6 can be generalized by using the Hessian matrix, H, the matrix of second partials of the log-likelihood, whose ijth element is given by
 
@@ -2013,7 +2008,7 @@ $$
 
 **[示例 Example]**
 
-> **Example 3** · ref: `Genetics_appendix1:3:occ3` · source: `Genetics_appendix1_037.json` · blocks 10–26
+> **Example 3** · ref: `Genetics_appendix1:3:occ3` · source: `Genetics_appendix1_036.json` · blocks 10–26
 >
 > Example 3. Suppose $n$ values are sampled independently from a normal with unknown mean and variance. What are the MLEs and their sampling variances? Here $\boldsymbol{\Theta} = (\mu, \sigma)^T$. Noting that $\sum_{i=1}^n (z_i - \mu)^2 = n(\overline{z^2} - 2\overline{z}\mu + \mu^2)$, the same logic leading to Equation A4.3 shows that the log-likelihood function is
 > 
@@ -2084,7 +2079,7 @@ $$
 
 ---
 
-## Genetics_appendix1_038 · LIKELIHOOD-RATIO TESTS
+## Genetics_appendix1_037 · LIKELIHOOD-RATIO TESTS
 
 Maximum likelihood provides for extremely convenient tests of hypotheses in the form of likelihood-ratio, or LR, tests (reviewed in Chapter 24 of Kendall and Stuart 1979) that examine whether a reduced model provides the same fit as a full model. The likelihood-ratio test statistic is given by
 
@@ -2098,7 +2093,7 @@ where $\ell(\hat{\Theta}|\mathbf{z})$ is the likelihood evaluated at the MLE and
 
 **[示例 Example]**
 
-> **Example 4** · ref: `Genetics_appendix1:4:occ3` · source: `Genetics_appendix1_038.json` · blocks 3–11
+> **Example 4** · ref: `Genetics_appendix1:4:occ3` · source: `Genetics_appendix1_037.json` · blocks 3–11
 >
 > Example 4. Suppose we wish to test the hypothesis that $ \mu = 0 $ in Example 1. Here the MLE is $ \widehat{\mu} = \overline{z} $ and the LR test statistic becomes
 > 
@@ -2133,7 +2128,7 @@ where $\ell(\hat{\Theta}|\mathbf{z})$ is the likelihood evaluated at the MLE and
 
 ---
 
-## Genetics_appendix1_039 · LIKELIHOOD-RATIO TESTS / The G-test
+## Genetics_appendix1_038 · LIKELIHOOD-RATIO TESTS / The G-test
 
 A common likelihood-ratio-based test is the G-test for goodness of fit. Consider $n$ observations that have been apportioned into a set of $N$ different categories, and denote these by the vector $\mathbf{n} = (n_{1}, n_{2}, \cdots, n_{N})$. Likewise, let $p_{i}$ represent the true population frequency of the $i$th category and let $\mathbf{p} = (p_{1}, p_{2}, \cdots, p_{N})$. From the multinomial distribution, the likelihood of $\mathbf{p}$ given the observations $\mathbf{n}$ is
 
@@ -2171,7 +2166,7 @@ Since the $N$ frequencies sum to one, there are $N-1$ unconstrained parameters i
 
 ---
 
-## Genetics_appendix1_040 · LIKELIHOOD-RATIO TESTS / Likelihood-ratio Tests for the General Linear Model
+## Genetics_appendix1_039 · LIKELIHOOD-RATIO TESTS / Likelihood-ratio Tests for the General Linear Model
 
 As a final example of likelihood-ratio tests, consider the general linear model (Chapters 8, 26, 27), $ \mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \mathbf{e} $, where we assume that the $ n \times 1 $ vector of residual errors e is multivariate normal, with mean vector zero and covariance matrix $ \mathbf{V} $, i.e., $ \mathbf{e} \sim \text{MVN}(0, \mathbf{V}) $. From Equation 8.24, the density function for e is
 
@@ -2210,7 +2205,7 @@ where $ \widehat{y}_f = X_f \widehat{\beta}_f $ and $ \widehat{y}_r = X_r \wideh
 
 **[示例 Example]**
 
-> **Example 5** · ref: `Genetics_appendix1:5:occ3` · source: `Genetics_appendix1_040.json` · blocks 10–14
+> **Example 5** · ref: `Genetics_appendix1:5:occ3` · source: `Genetics_appendix1_039.json` · blocks 10–14
 >
 > Example 5. Suppose the $ y_{i} $ values are the means of n different populations, e.g., data from a series of populations being used in a line-cross analysis (Chapter 9). Assuming the means are independent but with potentially different variances (due to differences in sample sizes, among other things), V is a diagonal matrix whose ith element is the variance of the ith mean. Denoting the variance of the ith mean by $ \operatorname{Var}(y_i) $, then recalling Equation A3.11c, the quadratic product in the LR test reduces to
 > 
@@ -2233,13 +2228,13 @@ where $ \widehat{y}_f = X_f \widehat{\beta}_f $ and $ \widehat{y}_r = X_r \wideh
 
 ---
 
-## Genetics_appendix1_041 · ITERATIVE METHODS FOR SOLVING ML EQUATIONS
+## Genetics_appendix1_040 · ITERATIVE METHODS FOR SOLVING ML EQUATIONS
 
 While ML estimation and hypothesis testing with likelihood ratios is conceptually straightforward, in practice it can be quite difficult to accomplish due to the complexities associated with having to find the maximum of the likelihood function. Ideally, closed-form solutions to the MLEs can be obtained by deriving the score vector, setting it equal to zero, and solving. However, in many cases this is impractical and numerical approaches must be used. In very simple cases with one or two parameters, a brute force approach relying upon a grid search can be used, where one computes a one- or two-dimensional plot of the likelihood surface as a function of the unknown parameters. With more than two variables, this is impractical and a variety of iterative methods have been suggested as alternatives. We discuss two of these here, Newton-Raphson and EM methods (Chapter 27 discusses these methods further in the context of variance-component estimation). A potential problem with all iterative methods is that they may not converge to the true MLEs if the likelihood surface contains several local maxima. Iterative methods require an initial starting value, and a poor choice can result in the iteration converging to a solution that is a local, but not a global, maximum. Hence, when applying iterative methods, several starting points should be used.
 
 ---
 
-## Genetics_appendix1_042 · ITERATIVE METHODS FOR SOLVING ML EQUATIONS / Newton-Raphson Methods
+## Genetics_appendix1_041 · ITERATIVE METHODS FOR SOLVING ML EQUATIONS / Newton-Raphson Methods
 
 Recall from elementary calculus that one can approximate a function $ f(x) $ by expanding it in a power series around a point $ x_{0} $,
 
@@ -2294,7 +2289,7 @@ One advantage of Fisher’s scoring is that F is usually of a simpler form than 
 
 ---
 
-## Genetics_appendix1_043 · ITERATIVE METHODS FOR SOLVING ML EQUATIONS / Expectation-maximization (EM) Methods
+## Genetics_appendix1_042 · ITERATIVE METHODS FOR SOLVING ML EQUATIONS / Expectation-maximization (EM) Methods
 
 Newton-Raphson and related methods require the first and second derivatives of the likelihood function, which can be difficult to obtain and/or computationally demanding (e.g., requiring the repeated inversion of large matrices). An alternative strategy is to use expectation-maximization (EM) methods, which were introduced by Dempster et al. (1977) as a very general iterative approach for data sets with missing (or incomplete) data. The idea is that, in many cases, if we had more information about certain observations, MLEs are easily obtained. For example, if observations are drawn from a mixture distribution (Chapter 13), obtaining the MLEs for the means and variances of the underlying distributions is trivial provided we know from which distribution each individual observation is drawn. Thus the original data set is treated as incomplete data, missing additional information (e.g., for a mixture model, which distribution a specific observation is drawn from). Using a current estimate of the unknown parameter values, the expected value of the incomplete data is computed (e.g., for a mixture model, the category identity of each individual is estimated). This is the expectation, or E step. The result is a set of likelihood equations that are considerably easier to solve than the full likelihood (the maximization, or M step). The new estimates obtained from the M step are then used to update the expected values, and this approach is iterated until convergence. The EM method refers to a general class of approaches, and there can be several EM versions for solving the same problem.
 
@@ -2302,7 +2297,7 @@ While EM methods often have fairly simple forms and hence are easy to program, t
 
 ---
 
-## Genetics_appendix1_044 · ITERATIVE METHODS FOR SOLVING ML EQUATIONS / EM for Mixture Model Likelihoods
+## Genetics_appendix1_043 · ITERATIVE METHODS FOR SOLVING ML EQUATIONS / EM for Mixture Model Likelihoods
 
 Mixture models naturally appear in a number of quantitative-genetic settings, wherein the observed distribution is really a weighted sum of a number of underlying distributions. For example, when a major diallelic locus is segregating in a population, the phenotypic distribution is a weighted sum of the three distributions representing each major locus genotype (Chapter 13). The general likelihood function for a single observation z from the kinds of mixture models considered in this book has the form
 
@@ -2380,7 +2375,7 @@ These updated estimates are then used to compute new weights, and the whole proc
 
 ---
 
-## Genetics_appendix1_045 · ITERATIVE METHODS FOR SOLVING ML EQUATIONS / EM Modifications for QTL Mapping
+## Genetics_appendix1_044 · ITERATIVE METHODS FOR SOLVING ML EQUATIONS / EM Modifications for QTL Mapping
 
 One important application of mixture models involves the use of marker data to map QTLs (Chapters 14–16). Here estimates of the category identity are influenced not only by an individual's trait value z but also by its marker genotype value m. For example, suppose a single diallelic QTL (with alleles Q, q) is linked to a marker, and an inbred-line cross is used in an attempt to map and characterize this QTL. In this case, the likelihood for an individual with marker genotype m and trait value z is
 
@@ -2411,7 +2406,7 @@ Using these weights, updated estimates of the means and variance are obtained as
 
 **[示例 Example]**
 
-> **Example 6** · ref: `Genetics_appendix1:6:occ2` · source: `Genetics_appendix1_045.json` · blocks 8–19
+> **Example 6** · ref: `Genetics_appendix1:6:occ2` · source: `Genetics_appendix1_044.json` · blocks 8–19
 >
 > Example 6. As an example of accounting for missing marker information, consider QTL mapping in an $ F_2 $ design from an inbred-line cross (Chapter 15) using dominant markers (such as RAPDs). Suppose marker allele M is dominant to allele m, so that the observed marker genotypes are mm and M−, the later consisting of the genotypes MM and Mm. Since in the $ F_2 $, $ \Pr(M-) = \Pr(MM) + \Pr(Mm) = 3/4 $,
 > 
@@ -2455,12 +2450,7 @@ Using these weights, updated estimates of the means and variance are obtained as
 
 ---
 
-## Genetics_appendix1_046 · Appendix 5 / Computing the Power of Statistical Tests
-
----
-
-## Genetics_appendix1_047 · Appendix 5 / Computing the Power
-of Statistical Tests
+## Genetics_appendix1_045 · Appendix 5 / Computing the Power of Statistical Tests
 
 There are two types of errors that one can make when performing a statistical test. A false positive (a Type I error) occurs when the null hypothesis is rejected when in fact it is correct. We control for this by setting the significance level $ \alpha $ of a test (the probability of a false positive) to be small. The other source of error is a false negative (a Type II error), failing to reject the null hypothesis when in fact it is false. The power of a test is defined to be the probability that the null hypothesis is rejected when it is indeed false. Hence if $ \beta $ is the probability of a false negative, the power is $ 1 - \beta $ (Figure A5.1).
 
@@ -2477,7 +2467,7 @@ only on sample size and the actual values of the unknown distribution parameters
 
 ---
 
-## Genetics_appendix1_048 · POWER OF NORMALLY DISTRIBUTED TEST STATISTICS
+## Genetics_appendix1_046 · POWER OF NORMALLY DISTRIBUTED TEST STATISTICS
 
 Assume the test statistic $T$ is normally distributed under the null hypothesis, with $T \sim \mathrm{N}(\mu_0, \sigma_0^2)$. For power calculations, assume the null hypothesis is false and that the test statistic actually has mean $\mu_1$ and variance $\sigma_1^2$ but remains normally distributed, so that $T \sim \mathrm{N}(\mu_1, \sigma_1^2)$. To obtain expressions for the required sample size for a given power, it is convenient to first write the sample variance as a function of sample size $n$, with $\sigma_i^2 = f_i^2 / n$ for $i = 0, 1$. (Often $\sigma_0^2 = \sigma_1^2$, in which case $f_0 = f_1$.) Finally, let $z_{(\alpha)}$ satisfy
 
@@ -2507,7 +2497,7 @@ We now have the all the necessary definitions in hand to consider the power of n
 
 ---
 
-## Genetics_appendix1_049 · POWER OF NORMALLY DISTRIBUTED TEST STATISTICS / One-sided Tests
+## Genetics_appendix1_047 · POWER OF NORMALLY DISTRIBUTED TEST STATISTICS / One-sided Tests
 
 Some hypotheses are naturally one-sided. For example, we may wish to test whether heritability $ h^2 $ is significantly different from zero. In this case, true values of $ h^2 < 0 $ cannot occur, so that the alternative to the null hypothesis $ h^2 = 0 $ is $ h^2 > 0 $.
 
@@ -2584,7 +2574,7 @@ Equation A5.4c holds when the sample variances under the null hypothesis and tru
 
 ---
 
-## Genetics_appendix1_050 · POWER OF NORMALLY DISTRIBUTED TEST STATISTICS / Two-sided Tests
+## Genetics_appendix1_048 · POWER OF NORMALLY DISTRIBUTED TEST STATISTICS / Two-sided Tests
 
 Other hypotheses are naturally two-sided. Here, the null hypothesis is $ \mu = \mu_{o} $ versus the alternative of $ \mu \neq \mu_{o} $. A glance at Figure A5.2 shows that under the null hypothesis,
 
@@ -2644,7 +2634,7 @@ Thus, the two-sided expressions are identical to the one-sided expressions with 
 
 **[示例 Example]**
 
-> **Example 1** · ref: `Genetics_appendix1:1:occ4` · source: `Genetics_appendix1_050.json` · blocks 14–16
+> **Example 1** · ref: `Genetics_appendix1:1:occ4` · source: `Genetics_appendix1_048.json` · blocks 14–16
 >
 > Example 1. One approach for detecting QTLs using a marker locus (with alleles M and m) in inbred-line crosses is to use the test statistic $ T = \overline{z}_{MM} - \overline{z}_{mm} $, which compares the mean trait values of alternate marker homozygotes (Chapter 15). This leads to a simple t-test.
 > 
@@ -2668,7 +2658,7 @@ This approach is often used in place of a direct power calculation, but just wha
 
 ---
 
-## Genetics_appendix1_051 · POWER OF NORMALLY DISTRIBUTED TEST STATISTICS / Applications: Parent-offspring Regressions
+## Genetics_appendix1_049 · POWER OF NORMALLY DISTRIBUTED TEST STATISTICS / Applications: Parent-offspring Regressions
 
 As is detailed in Chapters 7 and 17, the slope $ b_{op} $ of the parent-offspring regression provides information on genetic variance components. What is the power of such parent-offspring regressions? We first note that N data points are used to compute the regression. For a single-parent regression, N is the number of parents, while for a midparent regression, N is the number of pairs of parents (we distinguish between these by indexing the regressions by p and $ \bar{p} $, respectively). For each parental point, the offspring value could be that for a single offspring (n = 1) or the mean value of n offspring (indexed by o and $ \bar{o} $, respectively).
 
@@ -2692,7 +2682,7 @@ This expression, which assumes single parents and single offspring, can easily b
 
 **[示例 Example]**
 
-> **Example 2** · ref: `Genetics_appendix1:2:occ4` · source: `Genetics_appendix1_051.json` · blocks 6–24
+> **Example 2** · ref: `Genetics_appendix1:2:occ4` · source: `Genetics_appendix1_049.json` · blocks 6–24
 >
 > Example 2. Suppose 200 (single) parent-offspring pairs are measured (N = 200, n = 1) for a character with $ h^2 = 0.2 $ and no epistasis or maternal effects. Assuming a test with $ \alpha = 0.05 $, what is the power of this design to detect this regression as being significant? Here $ z_{(1-0.05)} = 1.65 $ and from Chapter 7,
 > 
@@ -2762,7 +2752,7 @@ This expression, which assumes single parents and single offspring, can easily b
 
 ---
 
-## Genetics_appendix1_052 · POWER OF NORMALLY DISTRIBUTED TEST STATISTICS / Applications: QTL Detection Tests Using Doubly Affected Sib Pairs
+## Genetics_appendix1_050 · POWER OF NORMALLY DISTRIBUTED TEST STATISTICS / Applications: QTL Detection Tests Using Doubly Affected Sib Pairs
 
 Chapter 16 examines the use of doubly affected full sib pairs to detect QTLs influencing a binary character (typically disease presence/absence, so that both sibs in each pair display the disease). If the marker is linked to a QTL influencing the character, we expect the pair members to share more marker alleles than expected by chance. A number of tests based on the number of ibd (identical by descent) marker alleles shared between pair members have been proposed for detecting a linked QTL. Letting $ p_{2i} $ and $ \widehat{p}_{2i} $ denote the true and estimated fractions of doubly affected pairs sharing i = 0, 1, 2 ibd marker alleles (the leading 2 in the subscript indicates we are restricting attention to pairs where both sibs are affected), we consider two such tests here. One test statistic, $ T_{2} = \widehat{p}_{22} $, is based on the fraction of doubly affected pairs sharing 2 ibd alleles. A second test statistic, $ T_{m} = \widehat{p}_{21}/2 + \widehat{p}_{22} $, corresponds to the mean number of ibd marker alleles shared by a doubly affected pair. The true ibd frequencies can be expressed as deviations from the values expected with no linked QTL,
 
@@ -2815,7 +2805,7 @@ $$
 
 ---
 
-## Genetics_appendix1_053 · POWER OF F-RATIO TESTS
+## Genetics_appendix1_051 · POWER OF F-RATIO TESTS
 
 The analysis of variance (ANOVA) is widely used throughout this book, e.g., in estimating variance components under balanced experimental designs (Chapters 18–24) and in detecting QTLs via marker-trait associations (Chapters 14–16). ANOVA designs are typically based upon sums of squares (SS_x) and their associated mean squares (MS_x = SS_x / n_x, with n_x the associated degrees of freedom). ANOVA test statistics are generally given by ratios of mean squares, F = MS_x / MS_y. Under normality assumptions, sums of squares are $ \chi^2 $-distributed, while under the null hypothesis F is distributed as a (central) F-ratio distribution with $ n_x $ (numerator) and $ n_y $ (denominator) degrees of freedom, and we denote this as $ F \sim F_{n_x, n_y} $. Thus, a test of level $ \alpha $ for the hypothesis of no additional effects on level x (compared to level y) is whether $ F > F_{n_x, n_y, [1-\alpha]} $, where $ F_{n_x, n_y, [\alpha]} $ satisfies
 
@@ -2853,7 +2843,7 @@ In order to compute this probability, we require the distribution of the test st
 
 ---
 
-## Genetics_appendix1_054 · POWER OF F-RATIO TESTS / Central and Noncentral $ \chi^{2} $ Distributions
+## Genetics_appendix1_052 · POWER OF F-RATIO TESTS / Central and Noncentral $ \chi^{2} $ Distributions
 
 The $\chi^2$ distribution arises from sums of squared, normally distributed, random variables — if $x_i \sim \mathrm{N}(0,1)$, then $u = \sum_{i=1}^n x_i^2 \sim \chi_n^2$, a central $\chi^2$ distribution with $n$ degrees of freedom. It follows that the sum of two $\chi^2$ random variables is also $\chi^2$ distributed, so that if $u \sim \chi_n^2$ and $v \sim \chi_m^2$, then
 
@@ -2930,7 +2920,7 @@ $$
 
 ---
 
-## Genetics_appendix1_055 · POWER OF F-RATIO TESTS / Central and Noncentral F Distributions
+## Genetics_appendix1_053 · POWER OF F-RATIO TESTS / Central and Noncentral F Distributions
 
 The ratio of two $\chi^{2}$-distributed variables leads to the $F$ distribution. In particular, if $u \sim \chi_{n}^{2}$ and $v \sim \chi_{m}^{2}$, then the ratio of these two $\chi^{2}$ variables divided by their respective degrees of freedom follows a central $F$ distribution with numerator and denominator degrees of freedom $n$ and $m$ (respectively), i.e., $(u/n)/(v/m) \sim F_{n,m}$. Since
 
@@ -2989,7 +2979,7 @@ $$
 
 ---
 
-## Genetics_appendix1_056 · POWER OF F-RATIO TESTS / Power of Fixed-effects ANOVA Designs
+## Genetics_appendix1_054 · POWER OF F-RATIO TESTS / Power of Fixed-effects ANOVA Designs
 
 We now have the necessary machinery in hand to perform power calculations for ANOVA designs. We consider fixed-effects designs first, using the simple one-way ANOVA to illustrate the basic approach. Letting $ y_{ij} $ denote the value of the
 
@@ -3063,7 +3053,7 @@ To find the sample size required to give this test power $ 1 - \beta $, we equat
 
 **[示例 Example]**
 
-> **Example 3** · ref: `Genetics_appendix1:3:occ4` · source: `Genetics_appendix1_056.json` · blocks 19–35
+> **Example 3** · ref: `Genetics_appendix1:3:occ4` · source: `Genetics_appendix1_054.json` · blocks 19–35
 >
 > Example 3. Consider a fixed-effect design with four factors (N = 4), and suppose that $ \sigma_{\tau}^2/\sigma_e^2 = 1/3 $, so that the treatment effects account for 25% of the total variance ( $ \sigma_{\tau}^2 + \sigma_e^2 $). If each treatment has a sample size of n = 5, what is the power to detect a significant treatment effect using a test of $ \alpha = 0.05 $? Here $ N(n - 1) = 16 $, and we find from F distribution tables that
 > 
@@ -3123,7 +3113,7 @@ To find the sample size required to give this test power $ 1 - \beta $, we equat
 
 ---
 
-## Genetics_appendix1_057 · POWER OF F-RATIO TESTS / Application: Power of QTL Mapping in Half-sib Families
+## Genetics_appendix1_055 · POWER OF F-RATIO TESTS / Application: Power of QTL Mapping in Half-sib Families
 
 As an example of analysis of a more complex design, consider the nested ANOVA design for mapping QTLs in half-sib families (Chapter 16). In the QTL half-sib design, each sire heterozygous for a marker locus is crossed to n dams and a single offspring is scored from each mating. Evidence of a QTL linked to the marker is indicated if the mean trait values for alternative sire alleles at this marker locus are significantly different. Since a different dam is used for each mating, all offspring from the same sire are half-sibs. The model here is
 
@@ -3229,7 +3219,7 @@ $$
 
 **[示例 Example]**
 
-> **Example 4** · ref: `Genetics_appendix1:4:occ4` · source: `Genetics_appendix1_057.json` · blocks 27–30
+> **Example 4** · ref: `Genetics_appendix1:4:occ4` · source: `Genetics_appendix1_055.json` · blocks 27–30
 >
 > Example 4. Suppose we have a completely linked QTL $ (c=0) $ with $ \sigma_A^2/\sigma_e^2=0.1 $. With $ N=20 $ sires and $ n=35 $ sibs/sire, what is the power of this test to detect this QTL using a significance level of $ \alpha=0.05 $? Here $ N(n-2)=560 $, and from central F tables, we find $ F_{20,560,[0.95]}=1.589 $. Since $ \lambda=20\cdot36\cdot0.1/4=15 $, the power is
 > 
@@ -3248,7 +3238,7 @@ $$
 
 ---
 
-## Genetics_appendix1_058 · POWER OF F-RATIO TESTS / Power of a Random-effects ANOVA Design
+## Genetics_appendix1_056 · POWER OF F-RATIO TESTS / Power of a Random-effects ANOVA Design
 
 Under a random-effects model, the simple one-way ANOVA model becomes $ y_{ij} = \mu + t_i + e_{ij} $, where $ t $ is now a random variable drawn from a normal distribution with variance $ \sigma_t^2 $, so that $ t_i \sim \mathrm{N}(0, \sigma_t^2) $. Residuals are assumed independent with $ e_{ij} \sim \mathrm{N}(0, \sigma_e^2) $ as before. Assuming a balanced design with $ n $ replicates for each of the $ N $ $ t_i $ values, the treatment and error sums of squares are also given by Equation A5.18a. As with the fixed-effects model, $ \mathrm{SS}_e \sim \sigma_e^2 \cdot \chi^2_{N(n-1)} $. However, the distribution of the treatment sum of squares remains a central $ \chi^2 $, even when $ \sigma_t^2 > 0 $. To see this, note that $ \overline{y}_i \sim \mathrm{N}(0, \sigma^2) $ with $ \sigma^2 = \sigma_t^2 + \sigma_e^2 / n $. Applying Equation A5.14c, the same logic leading to Equation A5.19 now gives
 
@@ -3316,7 +3306,7 @@ $$
 
 **[示例 Example]**
 
-> **Example 5** · ref: `Genetics_appendix1:5:occ4` · source: `Genetics_appendix1_058.json` · blocks 16–19
+> **Example 5** · ref: `Genetics_appendix1:5:occ4` · source: `Genetics_appendix1_056.json` · blocks 16–19
 >
 > Example 5. Consider a random-effects model with design parameters similar to Example 3, with $ \sigma_e^2 / \sigma_e^2 = 1/3 $, $ N = 4 $, and $ n = 5 $. What is the power of this design for a test with $ \alpha = 0.05 $? Here $ F_{3,16,[0.95]} = 3.24 $ and $ 1 + n (\sigma_t^2 / \sigma_e^2) = 1 + 5/3 = 8/3 $. From Equation A5.30b, the power becomes
 > 
@@ -3335,7 +3325,7 @@ $$
 
 ---
 
-## Genetics_appendix1_059 · POWER OF F-RATIO TESTS / Application: Power of the Half-sib Design for Variance Estimation
+## Genetics_appendix1_057 · POWER OF F-RATIO TESTS / Application: Power of the Half-sib Design for Variance Estimation
 
 As an example of computing the power of random-effects ANOVA designs for estimating variance components, consider the standard half-sib design for estimating additive genetic variance (Chapter 18). Assuming a balanced design, N sires are each mated to n unique and unrelated females. The linear model (Equation 18.1) is $ y_{ij} = \mu + s_i + e_{ij} $, where $ s \sim (0, \sigma_s^2) $ and $ e \sim (0, \sigma_e^2) $. Assume further that s and e are normally distributed. Then, from Equation A5.28, the sire effect sum of squares, $ SS_s $, follows a $ \chi^2 $ distribution, with
 
@@ -3387,7 +3377,7 @@ $$
 
 **[示例 Example]**
 
-> **Example 6** · ref: `Genetics_appendix1:6:occ3` · source: `Genetics_appendix1_059.json` · blocks 12–18
+> **Example 6** · ref: `Genetics_appendix1:6:occ3` · source: `Genetics_appendix1_057.json` · blocks 12–18
 >
 > Example 6. Suppose $ h^2 = 0.25 $, so that the sire variance is $ \sigma_s^2 = h^2/4 = 0.0625 $. What is the probability of detecting a significant sire variance (with a test of $ \alpha = 0.05 $) using 10 sires, each mated to 5 dams? Here $ N = 10 $ and $ n = 5 $, and from $ F $ tables, the critical value of the test is $ F_{N-1,N(n-1),[1-\alpha]} = F_{9,40,[0.95]} = 2.12 $. Applying Equation A5.33c, the power of this design to detect a sire variance at least this large is
 > 
@@ -3425,7 +3415,7 @@ Table A5.1 gives the power under the optimal design for various values of T and 
 
 **[示例 Example]**
 
-> **Example 7** · ref: `Genetics_appendix1:7:occ2` · source: `Genetics_appendix1_059.json` · blocks 22–22
+> **Example 7** · ref: `Genetics_appendix1:7:occ2` · source: `Genetics_appendix1_057.json` · blocks 22–22
 >
 > Example 7. For Example 6, where $ h^{2} = 0.25 $ and T = 50, the optimal number of dams/sire is $ 4/h^{2} = 16 $. Rounding up to approach T = 50, we take N = 3 and n = 17 for T = 51. Under this design, the power is computed to be 0.234. For N = 2 and N = 25 (T = 50) the power is 0.224, while for N = 4 and n = 12 (T = 48) the power is 0.211. As expected, the optimal design (n = 17) does indeed show the largest power.
 
@@ -3434,7 +3424,7 @@ Table A5.1 gives the power under the optimal design for various values of T and 
 
 *[See Table A5.1 at the end of this section.]*
 
-> **Table A5.1** · `A5.1` · page 901 · source: `Genetics_appendix1_059`
+> **Table A5.1** · `A5.1` · page 901 · source: `Genetics_appendix1_057`
 > Table A5.1 The power to detect a significant heritability under the optimal sampling scheme for a half-sib design as a function of $ h^{2} $ and the total number T of individuals measured.
 >
 > <table><tr><td rowspan="2">T</td><td colspan="5">$ h^{2} $</td></tr><tr><td>0.1</td><td>0.25</td><td>0.5</td><td>0.75</td><td>1.0</td></tr><tr><td>50</td><td>0.12</td><td>0.22</td><td>0.36</td><td>0.44</td><td>0.59</td></tr><tr><td>100</td><td>0.22</td><td>0.36</td><td>0.58</td><td>0.68</td><td>0.82</td></tr><tr><td>250</td><td>0.35</td><td>0.65</td><td>0.87</td><td>0.95</td><td>0.99</td></tr><tr><td>500</td><td>0.57</td><td>0.86</td><td>0.99</td><td>1.00</td><td>1.00</td></tr><tr><td>750</td><td>0.70</td><td>0.95</td><td>1.00</td><td>1.00</td><td>1.00</td></tr><tr><td>1000</td><td>0.80</td><td>0.99</td><td>1.00</td><td>1.00</td><td>1.00</td></tr></table>
@@ -3443,7 +3433,7 @@ Table A5.1 gives the power under the optimal design for various values of T and 
 
 ---
 
-## Genetics_appendix1_060 · Literature Cited
+## Genetics_appendix1_058 · Literature Cited
 
 The numbers in brackets following each reference denote the chapters in which the reference is cited.
 
@@ -7611,7 +7601,7 @@ Zuberi, M. I., and J. S. Gale. 1976. Variation in wild populations of Papaver du
 
 ---
 
-## Genetics_appendix1_061 · Author Index
+## Genetics_appendix1_059 · Author Index
 
 Aastveit, A. H. 683
 
@@ -10365,7 +10355,7 @@ Zuberi, M. I. 675
 
 ---
 
-## Genetics_appendix1_062 · Organism and Trait Index
+## Genetics_appendix1_060 · Organism and Trait Index
 
 Organisms are listed by Latin names, with the exception of domesticated plants and animals, which are listed by common name.
 
@@ -12192,7 +12182,7 @@ morphological variance and enzyme heterozygosity, 118, 120
 
 ---
 
-## Genetics_appendix1_063 · Subject Index
+## Genetics_appendix1_061 · Subject Index
 
 Particular organisms and characters are listed in the Organism and Trait index
 

@@ -4,15 +4,15 @@
     "chapter": "Genetics_appendix1",
     "section": "POWER OF F-RATIO TESTS",
     "subsections": [
-      "Power of Fixed-effects ANOVA Designs"
+      "Power of a Random-effects ANOVA Design"
     ],
     "section_level_1": "POWER OF F-RATIO TESTS",
-    "section_level_2": "Power of Fixed-effects ANOVA Designs",
+    "section_level_2": "Power of a Random-effects ANOVA Design",
     "heading_path": [
       "POWER OF F-RATIO TESTS",
-      "Power of Fixed-effects ANOVA Designs"
+      "Power of a Random-effects ANOVA Design"
     ],
-    "display_heading": "POWER OF F-RATIO TESTS / Power of Fixed-effects ANOVA Designs",
+    "display_heading": "POWER OF F-RATIO TESTS / Power of a Random-effects ANOVA Design",
     "source_file": "",
     "source_pdf": "data/背景资料/Genetics.pdf",
     "source_title": "Genetics and Analysis of Quantitative Traits",
@@ -21,334 +21,276 @@
       "remote_llm_calls": 0
     },
     "heading_source": {
-      "source_page": 892,
-      "printed_page": 872,
+      "source_page": 897,
+      "printed_page": 877,
       "source_block_ids": [
-        "p892:b19"
+        "p897:b11"
       ],
       "bbox": [
-        156.0,
-        1420.0,
-        655.0,
-        1458.0
+        50.0,
+        940.0,
+        595.0,
+        979.0
       ],
-      "raw_text": "Power of Fixed-effects ANOVA Designs"
+      "raw_text": "Power of a Random-effects ANOVA Design"
     }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "We now have the necessary machinery in hand to perform power calculations for ANOVA designs. We consider fixed-effects designs first, using the simple one-way ANOVA to illustrate the basic approach. Letting $ y_{ij} $ denote the value of the",
-      "source_page": 892,
-      "printed_page": 872,
+      "content": "Under a random-effects model, the simple one-way ANOVA model becomes $ y_{ij} = \\mu + t_i + e_{ij} $, where $ t $ is now a random variable drawn from a normal distribution with variance $ \\sigma_t^2 $, so that $ t_i \\sim \\mathrm{N}(0, \\sigma_t^2) $. Residuals are assumed independent with $ e_{ij} \\sim \\mathrm{N}(0, \\sigma_e^2) $ as before. Assuming a balanced design with $ n $ replicates for each of the $ N $ $ t_i $ values, the treatment and error sums of squares are also given by Equation A5.18a. As with the fixed-effects model, $ \\mathrm{SS}_e \\sim \\sigma_e^2 \\cdot \\chi^2_{N(n-1)} $. However, the distribution of the treatment sum of squares remains a central $ \\chi^2 $, even when $ \\sigma_t^2 > 0 $. To see this, note that $ \\overline{y}_i \\sim \\mathrm{N}(0, \\sigma^2) $ with $ \\sigma^2 = \\sigma_t^2 + \\sigma_e^2 / n $. Applying Equation A5.14c, the same logic leading to Equation A5.19 now gives",
+      "source_page": 897,
+      "printed_page": 877,
       "source_block_ids": [
-        "p892:b20"
-      ],
-      "bbox": [
-        155.0,
-        1454.0,
-        1117.0,
-        1566.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "$j$th individual with treatment $i$, the model is $y_{ij} = \\mu + \\tau_i + e_{ij}$. We assume $N$ fixed factors (the treatment effects $\\tau_1, \\cdots, \\tau_N$); that the residuals are independent and normally distributed, with $e_{ij} \\sim \\mathrm{N}(0, \\sigma_e^2)$; and that the design is balanced with $n$ observations for each treatment. As discussed in Chapter 18, the resulting treatment (or model) and error sums of squares are given by",
-      "source_page": 893,
-      "printed_page": 873,
-      "source_block_ids": [
-        "p893:b2"
-      ],
-      "bbox": [
-        60.0,
-        132.0,
-        1023.0,
-        307.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula312]]",
-      "source_page": 893,
-      "printed_page": 873,
-      "source_block_ids": [
-        "p893:b3"
-      ],
-      "bbox": [
-        160.0,
-        326.0,
-        814.0,
-        423.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "where $ \\overline{y}_{i} $. is the sample mean for factor i and $ \\overline{y} $. is the overall sample mean. As we will see shortly, these sums of squares have degrees of freedom N - 1 and $ N(n-1) $, respectively. The test for a significant treatment effect (at least one $ \\tau_{i} \\neq 0 $) is the F-ratio statistic",
-      "source_page": 893,
-      "printed_page": 873,
-      "source_block_ids": [
-        "p893:b5"
-      ],
-      "bbox": [
-        56.0,
-        447.0,
-        1015.0,
-        578.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula313]]",
-      "source_page": 893,
-      "printed_page": 873,
-      "source_block_ids": [
-        "p893:b6"
-      ],
-      "bbox": [
-        371.0,
-        569.0,
-        698.0,
-        642.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "The distribution of $F$ depends on the distribution of the sums of squares. Since $\\overline{y}_{i} \\sim \\mathrm{N}(\\tau_{i}, \\sigma_{e}^{2}/n)$, Equation A5.15e gives",
-      "source_page": 893,
-      "printed_page": 873,
-      "source_block_ids": [
-        "p893:b8"
-      ],
-      "bbox": [
-        55.0,
-        650.0,
-        1011.0,
-        724.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula314]]",
-      "source_page": 893,
-      "printed_page": 873,
-      "source_block_ids": [
-        "p893:b9"
-      ],
-      "bbox": [
-        163.0,
-        751.0,
-        812.0,
-        844.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "The noncentrality parameter $ \\lambda $ can also be expressed in terms of amount of the total variance attributable to model (treatment) effects, $ \\sigma_{\\tau}^{2} $. Since $ \\bar{\\tau} = 0 $ (by construction), it follows that",
-      "source_page": 893,
-      "printed_page": 873,
-      "source_block_ids": [
-        "p893:b11"
-      ],
-      "bbox": [
-        50.0,
-        862.0,
-        1012.0,
-        969.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula315]]",
-      "source_page": 893,
-      "printed_page": 873,
-      "source_block_ids": [
-        "p893:b12"
-      ],
-      "bbox": [
-        408.0,
-        965.0,
-        652.0,
-        1053.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "and hence,",
-      "source_page": 893,
-      "printed_page": 873,
-      "source_block_ids": [
-        "p893:b14"
-      ],
-      "bbox": [
-        49.0,
-        1058.0,
-        186.0,
-        1092.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula316]]",
-      "source_page": 893,
-      "printed_page": 873,
-      "source_block_ids": [
-        "p893:b15"
-      ],
-      "bbox": [
-        419.0,
-        1091.0,
-        634.0,
-        1166.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "Finally, noting that $ y_{ij} - \\overline{y}_{i} = e_{ij} - \\overline{e}_{i} $. and that $ e_{ij} \\sim \\mathrm{N}(0, \\sigma_{e}^{2}) $, we have",
-      "source_page": 893,
-      "printed_page": 873,
-      "source_block_ids": [
-        "p893:b17"
+        "p897:b12"
       ],
       "bbox": [
         48.0,
-        1173.0,
-        898.0,
-        1221.0
+        984.0,
+        1012.0,
+        1289.0
       ]
     },
     {
       "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula317]]",
-      "source_page": 893,
-      "printed_page": 873,
+      "content": "[[FORMULA:Genetics_appendix1_formula342]]",
+      "source_page": 897,
+      "printed_page": 877,
       "source_block_ids": [
-        "p893:b18"
+        "p897:b13"
       ],
       "bbox": [
-        120.0,
-        1238.0,
-        836.0,
-        1346.0
+        283.0,
+        1291.0,
+        765.0,
+        1335.0
       ]
     },
     {
       "type": "discussion",
-      "content": "where the last two identities follow from Equations A5.14c and A5.14a, respectively. Thus the $ F $-ratio test statistic is distributed as",
-      "source_page": 893,
-      "printed_page": 873,
+      "content": "Hence, the $ F $-ratio statistic is distributed as",
+      "source_page": 897,
+      "printed_page": 877,
       "source_block_ids": [
-        "p893:b20"
+        "p897:b15"
       ],
       "bbox": [
-        43.0,
-        1365.0,
-        1002.0,
-        1445.0
+        45.0,
+        1337.0,
+        568.0,
+        1375.0
       ]
     },
     {
       "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula318]]",
-      "source_page": 893,
-      "printed_page": 873,
+      "content": "[[FORMULA:Genetics_appendix1_formula343]]",
+      "source_page": 897,
+      "printed_page": 877,
       "source_block_ids": [
-        "p893:b21"
+        "p897:b16"
       ],
       "bbox": [
-        167.0,
-        1464.0,
-        784.0,
-        1554.0
+        226.0,
+        1384.0,
+        818.0,
+        1549.0
       ]
     },
     {
       "type": "discussion",
-      "content": "where the noncentrality parameter is given by Equation A5.20b.",
-      "source_page": 894,
-      "printed_page": 874,
+      "content": "Note that the term in parentheses is just $ E(\\mathrm{MS}_{t})/E(\\mathrm{MS}_{e}) $. Hence",
+      "source_page": 898,
+      "printed_page": 878,
       "source_block_ids": [
-        "p894:b2"
+        "p898:b2"
       ],
       "bbox": [
-        137.0,
+        142.0,
         132.0,
-        903.0,
-        171.0
+        916.0,
+        169.0
       ]
     },
     {
       "type": "discussion",
-      "content": "Under the hypothesis of no treatment effects, $ \\lambda = 0 $ and $ F \\sim F_{(N-1), N(n-1)} $. A test with significance level $ \\alpha $ is thus given by whether $ f > F_{(N-1), N(n-1), [1-\\alpha]} $. When at least one treatment effect is nonzero, the test statistic $ f $ follows a non-central $ F $ distribution, and the power of the test is given by",
-      "source_page": 894,
-      "printed_page": 874,
+      "content": "[[FORMULA:Genetics_appendix1_formula344]]",
+      "source_page": 898,
+      "printed_page": 878,
       "source_block_ids": [
-        "p894:b3"
+        "p898:b3"
       ],
       "bbox": [
-        137.0,
-        168.0,
-        1095.0,
-        301.0
+        445.0,
+        191.0,
+        798.0,
+        263.0
       ]
     },
     {
       "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula319]]",
-      "source_page": 894,
-      "printed_page": 874,
+      "content": "giving the power of this test as",
+      "source_page": 898,
+      "printed_page": 878,
       "source_block_ids": [
-        "p894:b4"
+        "p898:b5"
       ],
       "bbox": [
-        375.0,
-        327.0,
-        859.0,
-        369.0
+        144.0,
+        287.0,
+        518.0,
+        323.0
       ]
     },
     {
       "type": "discussion",
-      "content": "To find the sample size required to give this test power $ 1 - \\beta $, we equate Equation A5.23 to $ 1 - \\beta $ and solve for n given the fixed values of $ \\alpha $, $ \\beta $, N, and $ \\sum \\tau_i^2 / \\sigma_e^2 $ (or, equivalently, $ \\sigma_\\tau^2 / \\sigma_e^2 $).",
-      "source_page": 894,
-      "printed_page": 874,
+      "content": "[[FORMULA:Genetics_appendix1_formula345]]",
+      "source_page": 898,
+      "printed_page": 878,
       "source_block_ids": [
-        "p894:b6"
+        "p898:b6"
       ],
       "bbox": [
-        140.0,
-        396.0,
-        1098.0,
-        503.0
+        383.0,
+        343.0,
+        857.0,
+        416.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Since, by definition (Equation A5.13b),",
+      "source_page": 898,
+      "printed_page": 878,
+      "source_block_ids": [
+        "p898:b8"
+      ],
+      "bbox": [
+        144.0,
+        439.0,
+        608.0,
+        475.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula346]]",
+      "source_page": 898,
+      "printed_page": 878,
+      "source_block_ids": [
+        "p898:b9"
+      ],
+      "bbox": [
+        355.0,
+        496.0,
+        893.0,
+        538.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "to have power $ 1 - \\beta $ requires that",
+      "source_page": 898,
+      "printed_page": 878,
+      "source_block_ids": [
+        "p898:b10"
+      ],
+      "bbox": [
+        147.0,
+        561.0,
+        553.0,
+        597.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula347]]",
+      "source_page": 898,
+      "printed_page": 878,
+      "source_block_ids": [
+        "p898:b11"
+      ],
+      "bbox": [
+        334.0,
+        618.0,
+        916.0,
+        693.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Under more general random-effect models, if the test statistic is $ F = MS_x / MS_y $, then",
+      "source_page": 898,
+      "printed_page": 878,
+      "source_block_ids": [
+        "p898:b13"
+      ],
+      "bbox": [
+        149.0,
+        711.0,
+        1101.0,
+        781.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula348]]",
+      "source_page": 898,
+      "printed_page": 878,
+      "source_block_ids": [
+        "p898:b14"
+      ],
+      "bbox": [
+        380.0,
+        771.0,
+        874.0,
+        840.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "and to obtain power $ 1 - \\beta $ requires choosing sample sizes such that",
+      "source_page": 898,
+      "printed_page": 878,
+      "source_block_ids": [
+        "p898:b16"
+      ],
+      "bbox": [
+        149.0,
+        853.0,
+        955.0,
+        891.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula349]]",
+      "source_page": 898,
+      "printed_page": 878,
+      "source_block_ids": [
+        "p898:b17"
+      ],
+      "bbox": [
+        410.0,
+        911.0,
+        845.0,
+        988.0
       ]
     },
     {
       "type": "example",
-      "content": "[[EXAMPLE:Genetics_appendix1:3:occ4]]",
-      "source_page": 894,
+      "content": "[[EXAMPLE:Genetics_appendix1:5:occ4]]",
+      "source_page": 898,
       "source_block_ids": [
-        "p894:b7",
-        "p894:b8",
-        "p894:b9",
-        "p894:b10",
-        "p894:b11",
-        "p894:b12",
-        "p894:b13",
-        "p894:b14",
-        "p894:b15",
-        "p894:b16",
-        "p894:b17",
-        "p894:b18",
-        "p895:b2",
-        "p895:b3",
-        "p895:b4",
-        "p895:b5",
-        "p895:b6"
+        "p898:b19",
+        "p898:b20",
+        "p898:b21",
+        "p898:b22"
       ],
       "bbox": [
-        191.0,
-        589.0,
-        1053.0,
-        746.0
+        198.0,
+        1057.0,
+        1060.0,
+        1186.0
       ]
     }
   ]

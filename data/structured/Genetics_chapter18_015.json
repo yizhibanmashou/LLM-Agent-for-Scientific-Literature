@@ -4,15 +4,15 @@
     "chapter": "Genetics_chapter18",
     "section": "FULL-SIB ANALYSIS",
     "subsections": [
-      "Sampling Error"
+      "Optimal Design"
     ],
     "section_level_1": "FULL-SIB ANALYSIS",
-    "section_level_2": "Sampling Error",
+    "section_level_2": "Optimal Design",
     "heading_path": [
       "FULL-SIB ANALYSIS",
-      "Sampling Error"
+      "Optimal Design"
     ],
-    "display_heading": "FULL-SIB ANALYSIS / Sampling Error",
+    "display_heading": "FULL-SIB ANALYSIS / Optimal Design",
     "source_file": "",
     "source_pdf": "data/背景资料/Genetics.pdf",
     "source_title": "Genetics and Analysis of Quantitative Traits",
@@ -21,184 +21,100 @@
       "remote_llm_calls": 0
     },
     "heading_source": {
-      "source_page": 590,
-      "printed_page": 570,
+      "source_page": 591,
+      "printed_page": 571,
       "source_block_ids": [
-        "p590:b8"
+        "p591:b11"
       ],
       "bbox": [
-        143.0,
-        962.0,
-        342.0,
-        997.0
+        63.0,
+        904.0,
+        270.0,
+        941.0
       ],
-      "raw_text": "Sampling Error"
+      "raw_text": "Optimal Design"
     }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Under a balanced design (with N sires, M dams per sire, and n progeny per dam), the large-sample variance for $ t_{PHS} $ and $ t_{FS} $ can be obtained from formulae provided by Osborne and Paterson (1952),",
-      "source_page": 590,
-      "printed_page": 570,
-      "source_block_ids": [
-        "p590:b9"
-      ],
-      "bbox": [
-        143.0,
-        991.0,
-        1101.0,
-        1107.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter18_formula067]]",
-      "source_page": 590,
-      "printed_page": 570,
-      "source_block_ids": [
-        "p590:b10"
-      ],
-      "bbox": [
-        154.0,
-        1122.0,
-        971.0,
-        1276.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter18_formula068]]",
-      "source_page": 590,
-      "printed_page": 570,
-      "source_block_ids": [
-        "p590:b12"
-      ],
-      "bbox": [
-        174.0,
-        1289.0,
-        991.0,
-        1443.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "where $ t' = t_{\\mathrm{FS}} - t_{\\mathrm{PHS}} $, and $ \\phi = 1 - t_{\\mathrm{FS}} + nt' $. The standard error of $ h^2 = 4t_{\\mathrm{PHS}} $ is $ 4\\sqrt{\\mathrm{Var}(t_{\\mathrm{PHS}})} $.",
-      "source_page": 590,
-      "printed_page": 570,
-      "source_block_ids": [
-        "p590:b14"
-      ],
-      "bbox": [
-        152.0,
-        1458.0,
-        1109.0,
-        1545.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "A more general procedure for estimating $ \\operatorname{Var}(t_{\\mathrm{PHS}}) $, which allows for unbalanced designs, is to use the large-sample estimator for the variance of a ratio given in Appendix 1. Such a computation requires estimates of the sampling variances and covariances of $ \\operatorname{Var}(s) $, $ \\operatorname{Var}(d) $, and $ \\operatorname{Var}(e) $, expressions for which are given in Hammond and Nicholas (1972) and Searle et al. (1992). If one is willing to assume normality and to ignore the sampling variance of $ \\operatorname{Var}(z) $ and the sampling covariance between $ \\operatorname{Var}(z) $, $ \\operatorname{Var}(s) $, and $ \\operatorname{Var}(d) $, some fairly simple and conservative (upwardly biased) estimates are possible,",
+      "content": "In the now familiar fashion, the optimal design for a nested analysis of variance is defined to be the combination of $N$, $M$, and $n$, subject to some constraint, that minimizes the sampling variance of the intraclass correlation of interest. Since $4t_{\\mathrm{PHS}}$ provides the most reliable estimate of $h^{2}$, it will generally be most desirable to minimize $\\mathrm{Var}(t_{\\mathrm{PHS}})$ as defined in Equation 18.37a, but the solution is quite complicated, as it depends upon both $t_{\\mathrm{PHS}}$ and $t_{\\mathrm{FS}}$. Some feeling for the best design and the sensitivity of $\\mathrm{Var}(t_{\\mathrm{PHS}})$ to nonoptimal designs can be achieved by substituting different values for the design parameters $(N, M, n)$ and for the possible values of $t_{\\mathrm{PHS}}$ and $t_{\\mathrm{FS}}$.",
       "source_page": 591,
       "printed_page": 571,
       "source_block_ids": [
-        "p591:b2"
+        "p591:b12"
       ],
       "bbox": [
-        77.0,
-        120.0,
-        1041.0,
-        394.0
+        56.0,
+        947.0,
+        1022.0,
+        1254.0
       ]
     },
     {
       "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter18_formula069]]",
+      "content": "Robertson (1959a) has shown that when dominance and common environmental effects are absent, the preferred design for estimating $ t_{PHS} $ is to use full-sib families of only single individuals, i.e., to rely on the pure half-sib analysis outlined in the previous section. If on the other hand, one desires approximately equal precision in the estimates of $ t_{PHS} $ and $ t_{FS} $, it is advisable to allocate at least 3 to 4 females/male and to maintain full-sib families of $ \\sim 1/(2t_{PHS}) $ (but no less than 2) progeny/female.",
       "source_page": 591,
       "printed_page": 571,
       "source_block_ids": [
-        "p591:b3"
+        "p591:b13"
       ],
       "bbox": [
-        90.0,
-        408.0,
-        907.0,
-        495.0
+        49.0,
+        1236.0,
+        1012.0,
+        1479.0
       ]
     },
     {
       "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter18_formula070]]",
+      "content": "Bridges and Knapp (1987) performed simulation studies to evaluate the probability of obtaining negative estimates for $ \\sigma_{A}^{2} $ and $ \\sigma_{D}^{2} $ under the nested design.",
       "source_page": 591,
       "printed_page": 571,
       "source_block_ids": [
-        "p591:b5"
+        "p591:b14"
       ],
       "bbox": [
-        103.0,
-        507.0,
-        824.0,
-        591.0
+        48.0,
+        1456.0,
+        1007.0,
+        1546.0
       ]
     },
     {
       "type": "discussion",
-      "content": "with",
-      "source_page": 591,
-      "printed_page": 571,
+      "content": "Assuming no epistatic or common environmental effects, with designs of moderate size, the probability of obtaining a negative estimate of the additive genetic variance is usually on the order of only a few percent. However, the probability of obtaining a negative estimate of $ \\sigma_{D}^{2} $ is typically about an order of magnitude higher. Thus, although the nested design is often relied on as a means for detecting dominance, it is not particularly powerful in this regard.",
+      "source_page": 592,
+      "printed_page": 572,
       "source_block_ids": [
-        "p591:b7"
+        "p592:b2"
       ],
       "bbox": [
-        70.0,
-        607.0,
-        135.0,
-        638.0
+        124.0,
+        118.0,
+        1084.0,
+        334.0
       ]
     },
     {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter18_formula071]]",
-      "source_page": 591,
-      "printed_page": 571,
+      "type": "example",
+      "content": "[[EXAMPLE:Genetics_chapter18:3]]",
+      "source_page": 592,
       "source_block_ids": [
-        "p591:b8"
+        "p592:b3",
+        "p592:b4",
+        "p592:b5",
+        "p592:b6",
+        "p592:b7",
+        "p593:b2",
+        "p593:b3",
+        "p593:b4"
       ],
       "bbox": [
-        285.0,
-        637.0,
-        807.0,
-        715.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "and $ k_{1}, k_{2}, $ and $ k_{3} $ as defined in Table 18.3 (Dickerson 1969).",
-      "source_page": 591,
-      "printed_page": 571,
-      "source_block_ids": [
-        "p591:b9"
-      ],
-      "bbox": [
-        67.0,
-        716.0,
-        779.0,
-        761.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "Graybill et al. (1956), Broemeling (1969), and Graybill and Wang (1979) provide expressions for the confidence limits of $ t_{PHS} $ and $ t_{FS} $ for the special case of a balanced design with normally distributed effects. These expressions are not necessarily very robust to violations of the assumptions of balance and normality.",
-      "source_page": 591,
-      "printed_page": 571,
-      "source_block_ids": [
-        "p591:b10"
-      ],
-      "bbox": [
-        62.0,
-        747.0,
-        1025.0,
-        899.0
+        178.0,
+        411.0,
+        1042.0,
+        659.0
       ]
     }
   ]

@@ -1,7 +1,6 @@
 # Chapter 11 · 11 Matters of Scale
 
-## Genetics_chapter11_001 · 11
-Matters of Scale
+## Genetics_chapter11_001 · 11 Matters of Scale
 
 Generally, the scales on which we take direct measurements are selected more for their convenience than for their biological relevance or for their amenability to statistical analysis. Common artifacts of scale that complicate the analysis and interpretation of results are the dependence of the variance on the mean, departures from normality, and nonadditive interactions. Such complications can often be eliminated by transformation of the raw data to a new scale. A change in scale does not alter the information content of the original data. It simply changes the relationship of character values to one another.
 
@@ -547,11 +546,7 @@ Waddington (1949, 1953, 1957) suggested that changes in canalization could accou
 
 ---
 
-## Genetics_chapter11_016 · II
-
----
-
-## Genetics_chapter11_017 · II / Quantitative Trait Loci
+## Genetics_chapter11_016 · II / Quantitative Trait Loci
 
 **[Source_image]**
 

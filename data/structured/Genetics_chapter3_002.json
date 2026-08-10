@@ -2,17 +2,14 @@
   "id": "Genetics_chapter3_002",
   "metadata": {
     "chapter": "Genetics_chapter3",
-    "section": "3",
-    "subsections": [
-      "Covariance, Regression, and Correlation"
-    ],
-    "section_level_1": "3",
-    "section_level_2": "Covariance, Regression, and Correlation",
+    "section": "JOINTLY DISTRIBUTED RANDOM VARIABLES",
+    "subsections": [],
+    "section_level_1": "JOINTLY DISTRIBUTED RANDOM VARIABLES",
+    "section_level_2": null,
     "heading_path": [
-      "3",
-      "Covariance, Regression, and Correlation"
+      "JOINTLY DISTRIBUTED RANDOM VARIABLES"
     ],
-    "display_heading": "3 / Covariance, Regression, and Correlation",
+    "display_heading": "JOINTLY DISTRIBUTED RANDOM VARIABLES",
     "source_file": "",
     "source_pdf": "data/背景资料/Genetics.pdf",
     "source_title": "Genetics and Analysis of Quantitative Traits",
@@ -24,46 +21,181 @@
       "source_page": 51,
       "printed_page": 31,
       "source_block_ids": [
-        "p51:b1"
+        "p51:b4"
       ],
       "bbox": [
-        93.0,
-        212.0,
-        987.0,
-        283.0
+        42.0,
+        955.0,
+        671.0,
+        999.0
       ],
-      "raw_text": "Covariance, Regression, and Correlation"
+      "raw_text": "JOINTLY DISTRIBUTED RANDOM VARIABLES"
     }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "In the previous chapter, the variance was introduced as a measure of the dispersion of a univariate distribution. Additional statistics are required to describe the joint distribution of two or more variables. The covariance provides a natural measure of the association between two variables, and it appears in the analysis of many problems in quantitative genetics including the resemblance between relatives, the correlation between characters, and measures of selection.",
+      "content": "The probability of joint occurrence of a pair of random variables $ (x, y) $ is specified by the joint probability density function, $ p(x, y) $, where",
       "source_page": 51,
       "printed_page": 31,
       "source_block_ids": [
-        "p51:b2"
+        "p51:b5"
       ],
       "bbox": [
-        51.0,
-        413.0,
-        1015.0,
-        625.0
+        41.0,
+        1019.0,
+        1000.0,
+        1103.0
       ]
     },
     {
       "type": "discussion",
-      "content": "As a prelude to the formal theory of covariance and regression, we first provide a brief review of the theory for the distribution of pairs of random variables. We then give a formal definition of the covariance and its properties. Next, we show how the covariance enters naturally into statistical methods for estimating the linear relationship between two variables (least-squares linear regression) and for estimating the goodness-of-fit of such linear trends (correlation). Finally, we apply the concept of covariance to several problems in quantitative-genetic theory. More advanced topics associated with multivariate distributions involving three or more variables are taken up in Chapter 8.",
+      "content": "[[FORMULA:Genetics_chapter3_formula001]]",
       "source_page": 51,
       "printed_page": 31,
       "source_block_ids": [
-        "p51:b3"
+        "p51:b6"
       ],
       "bbox": [
-        45.0,
-        607.0,
-        1010.0,
-        915.0
+        197.0,
+        1111.0,
+        841.0,
+        1196.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "We often ask questions of the form: What is the distribution of y given that x equals some specified value? For example, we might want to know the probability that parents whose height is 68 inches have offspring with height exceeding 70 inches. To answer such questions, we use $ p(y|x) $, the conditional density of y given x, where",
+      "source_page": 51,
+      "printed_page": 31,
+      "source_block_ids": [
+        "p51:b8"
+      ],
+      "bbox": [
+        35.0,
+        1200.0,
+        998.0,
+        1373.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter3_formula002]]",
+      "source_page": 51,
+      "printed_page": 31,
+      "source_block_ids": [
+        "p51:b9"
+      ],
+      "bbox": [
+        293.0,
+        1361.0,
+        733.0,
+        1437.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Joint probability density functions, $ p(x, y) $, and conditional density functions,",
+      "source_page": 51,
+      "printed_page": 31,
+      "source_block_ids": [
+        "p51:b11"
+      ],
+      "bbox": [
+        31.0,
+        1434.0,
+        990.0,
+        1490.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "$ p(y|x) $, are connected by",
+      "source_page": 52,
+      "printed_page": 32,
+      "source_block_ids": [
+        "p52:b2"
+      ],
+      "bbox": [
+        134.0,
+        134.0,
+        431.0,
+        174.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter3_formula003]]",
+      "source_page": 52,
+      "printed_page": 32,
+      "source_block_ids": [
+        "p52:b3"
+      ],
+      "bbox": [
+        481.0,
+        160.0,
+        745.0,
+        199.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where $ p(x) = \\int_{-\\infty}^{+\\infty} p(y \\mid x) \\, dy $ is the marginal (univariate) density of x.",
+      "source_page": 52,
+      "printed_page": 32,
+      "source_block_ids": [
+        "p52:b5"
+      ],
+      "bbox": [
+        135.0,
+        208.0,
+        976.0,
+        255.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Two random variables, $x$ and $y$, are said to be independent if $p(x, y)$ can be factored into the product of a function of $x$ only and a function of $y$ only, i.e.,",
+      "source_page": 52,
+      "printed_page": 32,
+      "source_block_ids": [
+        "p52:b6"
+      ],
+      "bbox": [
+        137.0,
+        236.0,
+        1095.0,
+        319.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter3_formula004]]",
+      "source_page": 52,
+      "printed_page": 32,
+      "source_block_ids": [
+        "p52:b7"
+      ],
+      "bbox": [
+        504.0,
+        330.0,
+        729.0,
+        369.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "If $x$ and $y$ are independent, knowledge of $x$ gives no information about the value of $y$. From Equations 3.3a and 3.3b, if $p(x, y) = p(x) p(y)$, then $p(y \\mid x) = p(y)$.",
+      "source_page": 52,
+      "printed_page": 32,
+      "source_block_ids": [
+        "p52:b9"
+      ],
+      "bbox": [
+        140.0,
+        381.0,
+        1097.0,
+        465.0
       ]
     }
   ]

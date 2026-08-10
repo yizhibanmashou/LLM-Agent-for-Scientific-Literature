@@ -2,17 +2,14 @@
   "id": "Genetics_appendix1_051",
   "metadata": {
     "chapter": "Genetics_appendix1",
-    "section": "POWER OF NORMALLY DISTRIBUTED TEST STATISTICS",
-    "subsections": [
-      "Applications: Parent-offspring Regressions"
-    ],
-    "section_level_1": "POWER OF NORMALLY DISTRIBUTED TEST STATISTICS",
-    "section_level_2": "Applications: Parent-offspring Regressions",
+    "section": "POWER OF F-RATIO TESTS",
+    "subsections": [],
+    "section_level_1": "POWER OF F-RATIO TESTS",
+    "section_level_2": null,
     "heading_path": [
-      "POWER OF NORMALLY DISTRIBUTED TEST STATISTICS",
-      "Applications: Parent-offspring Regressions"
+      "POWER OF F-RATIO TESTS"
     ],
-    "display_heading": "POWER OF NORMALLY DISTRIBUTED TEST STATISTICS / Applications: Parent-offspring Regressions",
+    "display_heading": "POWER OF F-RATIO TESTS",
     "source_file": "",
     "source_pdf": "data/背景资料/Genetics.pdf",
     "source_title": "Genetics and Analysis of Quantitative Traits",
@@ -21,141 +18,154 @@
       "remote_llm_calls": 0
     },
     "heading_source": {
-      "source_page": 886,
-      "printed_page": 866,
+      "source_page": 889,
+      "printed_page": 869,
       "source_block_ids": [
-        "p886:b2"
+        "p889:b8"
       ],
       "bbox": [
-        136.0,
-        136.0,
-        674.0,
-        168.0
+        52.0,
+        824.0,
+        418.0,
+        860.0
       ],
-      "raw_text": "Applications: Parent-offspring Regressions"
+      "raw_text": "POWER OF F-RATIO TESTS"
     }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "As is detailed in Chapters 7 and 17, the slope $ b_{op} $ of the parent-offspring regression provides information on genetic variance components. What is the power of such parent-offspring regressions? We first note that N data points are used to compute the regression. For a single-parent regression, N is the number of parents, while for a midparent regression, N is the number of pairs of parents (we distinguish between these by indexing the regressions by p and $ \\bar{p} $, respectively). For each parental point, the offspring value could be that for a single offspring (n = 1) or the mean value of n offspring (indexed by o and $ \\bar{o} $, respectively).",
-      "source_page": 886,
-      "printed_page": 866,
+      "content": "The analysis of variance (ANOVA) is widely used throughout this book, e.g., in estimating variance components under balanced experimental designs (Chapters 18–24) and in detecting QTLs via marker-trait associations (Chapters 14–16). ANOVA designs are typically based upon sums of squares (SS_x) and their associated mean squares (MS_x = SS_x / n_x, with n_x the associated degrees of freedom). ANOVA test statistics are generally given by ratios of mean squares, F = MS_x / MS_y. Under normality assumptions, sums of squares are $ \\chi^2 $-distributed, while under the null hypothesis F is distributed as a (central) F-ratio distribution with $ n_x $ (numerator) and $ n_y $ (denominator) degrees of freedom, and we denote this as $ F \\sim F_{n_x, n_y} $. Thus, a test of level $ \\alpha $ for the hypothesis of no additional effects on level x (compared to level y) is whether $ F > F_{n_x, n_y, [1-\\alpha]} $, where $ F_{n_x, n_y, [\\alpha]} $ satisfies",
+      "source_page": 889,
+      "printed_page": 869,
       "source_block_ids": [
-        "p886:b3"
+        "p889:b9"
       ],
       "bbox": [
-        134.0,
-        178.0,
+        44.0,
+        890.0,
+        1006.0,
+        1283.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula293]]",
+      "source_page": 889,
+      "printed_page": 869,
+      "source_block_ids": [
+        "p889:b10"
+      ],
+      "bbox": [
+        348.0,
+        1280.0,
+        697.0,
+        1325.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Two useful identities related to this definition are",
+      "source_page": 889,
+      "printed_page": 869,
+      "source_block_ids": [
+        "p889:b12"
+      ],
+      "bbox": [
+        42.0,
+        1327.0,
+        636.0,
+        1368.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula294]]",
+      "source_page": 889,
+      "printed_page": 869,
+      "source_block_ids": [
+        "p889:b13"
+      ],
+      "bbox": [
+        332.0,
+        1393.0,
+        709.0,
+        1440.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "and",
+      "source_page": 889,
+      "printed_page": 869,
+      "source_block_ids": [
+        "p889:b15"
+      ],
+      "bbox": [
+        41.0,
+        1456.0,
+        97.0,
+        1484.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula295]]",
+      "source_page": 889,
+      "printed_page": 869,
+      "source_block_ids": [
+        "p889:b16"
+      ],
+      "bbox": [
+        370.0,
+        1482.0,
+        664.0,
+        1559.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "The power of the test is the probability that the test statistic $F$ exceeds this critical value,",
+      "source_page": 890,
+      "printed_page": 870,
+      "source_block_ids": [
+        "p890:b2"
+      ],
+      "bbox": [
+        136.0,
+        124.0,
         1093.0,
-        433.0
+        205.0
       ]
     },
     {
       "type": "discussion",
-      "content": "Since the increase in power with sample size results from a reduction in the sampling variance, it is again useful to write the sampling variance of $ b_{op} $ as some function $ f $ divided by the number $ N $ of families, $ \\sigma^2(b_{op}) = f_{op}^2 / N $. From Equation 17.6",
-      "source_page": 886,
-      "printed_page": 866,
+      "content": "[[FORMULA:Genetics_appendix1_formula296]]",
+      "source_page": 890,
+      "printed_page": 870,
       "source_block_ids": [
-        "p886:b4"
+        "p890:b3"
       ],
       "bbox": [
-        136.0,
-        433.0,
-        1091.0,
-        559.0
+        481.0,
+        193.0,
+        746.0,
+        236.0
       ]
     },
     {
       "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula276]]",
-      "source_page": 886,
-      "printed_page": 866,
+      "content": "In order to compute this probability, we require the distribution of the test statistic F under the alternative hypothesis. Here, some sums of squares follow a noncentral $ \\chi^{2} $ distribution, and the resulting F statistic involving these follows a noncentral F distribution. Hence, before considering power, we describe the properties of central and noncentral $ \\chi^{2} $ and F distributions, proofs of which can be found in standard texts such as Scheffé (1959), Searle (1971), and Johnson and Kotz (1970b).",
+      "source_page": 890,
+      "printed_page": 870,
       "source_block_ids": [
-        "p886:b5"
+        "p890:b5"
       ],
       "bbox": [
-        478.0,
-        552.0,
-        745.0,
-        623.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "where $ r_{op} $ is the parent-offspring correlation. The sampling variance under the null hypothesis that $ b_{op} = 0 $ follows by setting $ r_{op} = 0 $. If the parent-offspring regression has true slope $ b_{op} $, what sample size (measured by number of parents) is required for a test to have power $ 1 - \\beta $? Since this is a one-sided test ( $ b_{op} = 0 $ vs. $ b_{op} > 0 $), substituting Equation A5.9 into Equation A5.4c (and hence assuming that the variances under null and alternative hypotheses are essentially equal, i.e., $ \\sigma_{0}^{2} \\simeq \\sigma_{1}^{2} $) gives",
-      "source_page": 886,
-      "printed_page": 866,
-      "source_block_ids": [
-        "p886:b7"
-      ],
-      "bbox": [
-        132.0,
-        629.0,
-        1090.0,
-        855.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula277]]",
-      "source_page": 886,
-      "printed_page": 866,
-      "source_block_ids": [
-        "p886:b8"
-      ],
-      "bbox": [
-        368.0,
-        852.0,
-        856.0,
-        928.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "This expression, which assumes single parents and single offspring, can easily be modified to account for midparents and/or multiple offspring per family. With $n$ measured offspring per family, $\\sigma^{2}(z_{\\bar{o}}) = \\sigma^{2}(z_{o})[t + (1 - t)/n]$ replaces $\\sigma^{2}(z_{o})$, where $t$ is the correlation between full sibs. Likewise, for a midparent-offspring regression, $\\sigma^{2}(z_{\\bar{p}}) = \\sigma^{2}(z_{p})/2$ replaces $\\sigma^{2}(z_{p})$, and $r_{o\\bar{p}}$ and $b_{o\\bar{p}}$ replace $r_{op}$ and $b_{op}$. Chapter 17 discusses these modifications in more detail",
-      "source_page": 886,
-      "printed_page": 866,
-      "source_block_ids": [
-        "p886:b10"
-      ],
-      "bbox": [
-        136.0,
-        933.0,
-        1092.0,
-        1130.0
-      ]
-    },
-    {
-      "type": "example",
-      "content": "[[EXAMPLE:Genetics_appendix1:2:occ4]]",
-      "source_page": 886,
-      "source_block_ids": [
-        "p886:b11",
-        "p886:b12",
-        "p886:b13",
-        "p886:b14",
-        "p887:b2",
-        "p887:b3",
-        "p887:b4",
-        "p887:b5",
-        "p887:b6",
-        "p887:b7",
-        "p887:b8",
-        "p887:b9",
-        "p887:b10",
-        "p887:b11",
-        "p887:b12",
-        "p887:b13",
-        "p887:b14",
-        "p887:b15",
-        "p887:b16"
-      ],
-      "bbox": [
-        184.0,
-        1221.0,
-        1045.0,
-        1344.0
+        137.0,
+        240.0,
+        1099.0,
+        483.0
       ]
     }
   ]

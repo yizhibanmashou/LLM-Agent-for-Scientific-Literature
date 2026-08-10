@@ -3,13 +3,16 @@
   "metadata": {
     "chapter": "Genetics_appendix1",
     "section": "POWER OF F-RATIO TESTS",
-    "subsections": [],
-    "section_level_1": "POWER OF F-RATIO TESTS",
-    "section_level_2": null,
-    "heading_path": [
-      "POWER OF F-RATIO TESTS"
+    "subsections": [
+      "Central and Noncentral F Distributions"
     ],
-    "display_heading": "POWER OF F-RATIO TESTS",
+    "section_level_1": "POWER OF F-RATIO TESTS",
+    "section_level_2": "Central and Noncentral F Distributions",
+    "heading_path": [
+      "POWER OF F-RATIO TESTS",
+      "Central and Noncentral F Distributions"
+    ],
+    "display_heading": "POWER OF F-RATIO TESTS / Central and Noncentral F Distributions",
     "source_file": "",
     "source_pdf": "data/背景资料/Genetics.pdf",
     "source_title": "Genetics and Analysis of Quantitative Traits",
@@ -18,154 +21,229 @@
       "remote_llm_calls": 0
     },
     "heading_source": {
-      "source_page": 889,
-      "printed_page": 869,
+      "source_page": 891,
+      "printed_page": 871,
       "source_block_ids": [
-        "p889:b8"
+        "p891:b13"
       ],
       "bbox": [
-        52.0,
-        824.0,
-        418.0,
-        860.0
+        47.0,
+        1197.0,
+        539.0,
+        1235.0
       ],
-      "raw_text": "POWER OF F-RATIO TESTS"
+      "raw_text": "Central and Noncentral F Distributions"
     }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "The analysis of variance (ANOVA) is widely used throughout this book, e.g., in estimating variance components under balanced experimental designs (Chapters 18–24) and in detecting QTLs via marker-trait associations (Chapters 14–16). ANOVA designs are typically based upon sums of squares (SS_x) and their associated mean squares (MS_x = SS_x / n_x, with n_x the associated degrees of freedom). ANOVA test statistics are generally given by ratios of mean squares, F = MS_x / MS_y. Under normality assumptions, sums of squares are $ \\chi^2 $-distributed, while under the null hypothesis F is distributed as a (central) F-ratio distribution with $ n_x $ (numerator) and $ n_y $ (denominator) degrees of freedom, and we denote this as $ F \\sim F_{n_x, n_y} $. Thus, a test of level $ \\alpha $ for the hypothesis of no additional effects on level x (compared to level y) is whether $ F > F_{n_x, n_y, [1-\\alpha]} $, where $ F_{n_x, n_y, [\\alpha]} $ satisfies",
-      "source_page": 889,
-      "printed_page": 869,
+      "content": "The ratio of two $\\chi^{2}$-distributed variables leads to the $F$ distribution. In particular, if $u \\sim \\chi_{n}^{2}$ and $v \\sim \\chi_{m}^{2}$, then the ratio of these two $\\chi^{2}$ variables divided by their respective degrees of freedom follows a central $F$ distribution with numerator and denominator degrees of freedom $n$ and $m$ (respectively), i.e., $(u/n)/(v/m) \\sim F_{n,m}$. Since",
+      "source_page": 891,
+      "printed_page": 871,
       "source_block_ids": [
-        "p889:b9"
+        "p891:b14"
       ],
       "bbox": [
-        44.0,
-        890.0,
-        1006.0,
-        1283.0
+        43.0,
+        1238.0,
+        1005.0,
+        1411.0
       ]
     },
     {
       "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula293]]",
-      "source_page": 889,
-      "printed_page": 869,
+      "content": "[[FORMULA:Genetics_appendix1_formula305]]",
+      "source_page": 891,
+      "printed_page": 871,
       "source_block_ids": [
-        "p889:b10"
+        "p891:b15"
       ],
       "bbox": [
-        348.0,
-        1280.0,
-        697.0,
-        1325.0
+        415.0,
+        1408.0,
+        627.0,
+        1472.0
       ]
     },
     {
       "type": "discussion",
-      "content": "Two useful identities related to this definition are",
-      "source_page": 889,
-      "printed_page": 869,
+      "content": "the $F$ distribution can be approximated by a $\\chi_{n}^{2}$ when the denominator degrees of freedom is large.",
+      "source_page": 891,
+      "printed_page": 871,
       "source_block_ids": [
-        "p889:b12"
-      ],
-      "bbox": [
-        42.0,
-        1327.0,
-        636.0,
-        1368.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula294]]",
-      "source_page": 889,
-      "printed_page": 869,
-      "source_block_ids": [
-        "p889:b13"
-      ],
-      "bbox": [
-        332.0,
-        1393.0,
-        709.0,
-        1440.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "and",
-      "source_page": 889,
-      "printed_page": 869,
-      "source_block_ids": [
-        "p889:b15"
+        "p891:b16"
       ],
       "bbox": [
         41.0,
-        1456.0,
-        97.0,
-        1484.0
+        1474.0,
+        999.0,
+        1553.0
       ]
     },
     {
       "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula295]]",
-      "source_page": 889,
-      "printed_page": 869,
+      "content": "The noncentral $F$ distribution results when the numerator $\\chi^{2}$ variable is noncentral. If $u \\sim \\chi_{n,\\lambda}^{2}$ and $v \\sim \\chi_{m}^{2}$, then $F = (u/n)/(v/m)$ follows a noncentral $F$ distributed with noncentrality parameter $\\lambda$, and we write $F \\sim F_{n,m,\\lambda}$. As with the noncentral $\\chi^{2}$, increasing $\\lambda$ shifts the distribution further to the right. Again, this is seen in the mean and variance, with",
+      "source_page": 892,
+      "printed_page": 872,
       "source_block_ids": [
-        "p889:b16"
+        "p892:b2"
       ],
       "bbox": [
-        370.0,
-        1482.0,
-        664.0,
-        1559.0
+        133.0,
+        138.0,
+        1095.0,
+        311.0
       ]
     },
     {
       "type": "discussion",
-      "content": "The power of the test is the probability that the test statistic $F$ exceeds this critical value,",
-      "source_page": 890,
-      "printed_page": 870,
+      "content": "[[FORMULA:Genetics_appendix1_formula306]]",
+      "source_page": 892,
+      "printed_page": 872,
       "source_block_ids": [
-        "p890:b2"
+        "p892:b3"
       ],
       "bbox": [
-        136.0,
-        124.0,
-        1093.0,
-        205.0
+        328.0,
+        328.0,
+        643.0,
+        401.0
       ]
     },
     {
       "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula296]]",
-      "source_page": 890,
-      "printed_page": 870,
+      "content": "[[FORMULA:Genetics_appendix1_formula307]]",
+      "source_page": 892,
+      "printed_page": 872,
       "source_block_ids": [
-        "p890:b3"
+        "p892:b5"
       ],
       "bbox": [
-        481.0,
-        193.0,
-        746.0,
-        236.0
+        323.0,
+        416.0,
+        908.0,
+        492.0
       ]
     },
     {
       "type": "discussion",
-      "content": "In order to compute this probability, we require the distribution of the test statistic F under the alternative hypothesis. Here, some sums of squares follow a noncentral $ \\chi^{2} $ distribution, and the resulting F statistic involving these follows a noncentral F distribution. Hence, before considering power, we describe the properties of central and noncentral $ \\chi^{2} $ and F distributions, proofs of which can be found in standard texts such as Scheffé (1959), Searle (1971), and Johnson and Kotz (1970b).",
-      "source_page": 890,
-      "printed_page": 870,
+      "content": "Various mathematical and statistical packages provide routines for computing cumulative probabilities of noncentral $ \\chi^{2} $ and F random variables, and a number of approximations have been suggested (e.g., Patnaik 1949, Severo and Zelen 1960, Tiku 1965). Winer et al. (1991) offer one such approximation based on the unit normal U, with the probability that a noncentral F-distributed random variable exceeds a value $ F_{0} $ being approximately",
+      "source_page": 892,
+      "printed_page": 872,
       "source_block_ids": [
-        "p890:b5"
+        "p892:b7"
       ],
       "bbox": [
-        137.0,
-        240.0,
-        1099.0,
-        483.0
+        142.0,
+        514.0,
+        1101.0,
+        717.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula308]]",
+      "source_page": 892,
+      "printed_page": 872,
+      "source_block_ids": [
+        "p892:b8"
+      ],
+      "bbox": [
+        428.0,
+        734.0,
+        815.0,
+        774.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where",
+      "source_page": 892,
+      "printed_page": 872,
+      "source_block_ids": [
+        "p892:b10"
+      ],
+      "bbox": [
+        146.0,
+        804.0,
+        230.0,
+        835.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula309]]",
+      "source_page": 892,
+      "printed_page": 872,
+      "source_block_ids": [
+        "p892:b11"
+      ],
+      "bbox": [
+        167.0,
+        852.0,
+        980.0,
+        931.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "From this general expression follow simplified approximations for the special cases of central $F$ and noncentral $\\chi^{2}$ variables. Setting $\\lambda = 0$ gives an approximation for the central $F$ distribution as",
+      "source_page": 892,
+      "printed_page": 872,
+      "source_block_ids": [
+        "p892:b13"
+      ],
+      "bbox": [
+        147.0,
+        945.0,
+        1106.0,
+        1054.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula310]]",
+      "source_page": 892,
+      "printed_page": 872,
+      "source_block_ids": [
+        "p892:b14"
+      ],
+      "bbox": [
+        160.0,
+        1064.0,
+        994.0,
+        1143.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Likewise, taking the limit as $ m \\to \\infty $ offers an approximation for the noncentral $ \\chi^2 $, since $ \\chi_{n,\\lambda}^2 \\sim n \\cdot F_{n,\\infty,\\lambda} $. Taking the limit of Equation A5.17c as $ m \\to \\infty $ gives the probability that a noncentral $ \\chi^2 $ exceeds a value $ C_o $ as approximately",
+      "source_page": 892,
+      "printed_page": 872,
+      "source_block_ids": [
+        "p892:b16"
+      ],
+      "bbox": [
+        151.0,
+        1158.0,
+        1109.0,
+        1277.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula311]]",
+      "source_page": 892,
+      "printed_page": 872,
+      "source_block_ids": [
+        "p892:b17"
+      ],
+      "bbox": [
+        166.0,
+        1289.0,
+        994.0,
+        1369.0
       ]
     }
   ]

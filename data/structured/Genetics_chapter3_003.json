@@ -3,13 +3,16 @@
   "metadata": {
     "chapter": "Genetics_chapter3",
     "section": "JOINTLY DISTRIBUTED RANDOM VARIABLES",
-    "subsections": [],
-    "section_level_1": "JOINTLY DISTRIBUTED RANDOM VARIABLES",
-    "section_level_2": null,
-    "heading_path": [
-      "JOINTLY DISTRIBUTED RANDOM VARIABLES"
+    "subsections": [
+      "Expectations of Jointly Distributed Variables"
     ],
-    "display_heading": "JOINTLY DISTRIBUTED RANDOM VARIABLES",
+    "section_level_1": "JOINTLY DISTRIBUTED RANDOM VARIABLES",
+    "section_level_2": "Expectations of Jointly Distributed Variables",
+    "heading_path": [
+      "JOINTLY DISTRIBUTED RANDOM VARIABLES",
+      "Expectations of Jointly Distributed Variables"
+    ],
+    "display_heading": "JOINTLY DISTRIBUTED RANDOM VARIABLES / Expectations of Jointly Distributed Variables",
     "source_file": "",
     "source_pdf": "data/背景资料/Genetics.pdf",
     "source_title": "Genetics and Analysis of Quantitative Traits",
@@ -18,184 +21,124 @@
       "remote_llm_calls": 0
     },
     "heading_source": {
-      "source_page": 51,
-      "printed_page": 31,
+      "source_page": 52,
+      "printed_page": 32,
       "source_block_ids": [
-        "p51:b4"
+        "p52:b10"
       ],
       "bbox": [
-        42.0,
-        955.0,
-        671.0,
-        999.0
+        143.0,
+        480.0,
+        701.0,
+        524.0
       ],
-      "raw_text": "JOINTLY DISTRIBUTED RANDOM VARIABLES"
+      "raw_text": "Expectations of Jointly Distributed Variables"
     }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "The probability of joint occurrence of a pair of random variables $ (x, y) $ is specified by the joint probability density function, $ p(x, y) $, where",
-      "source_page": 51,
-      "printed_page": 31,
-      "source_block_ids": [
-        "p51:b5"
-      ],
-      "bbox": [
-        41.0,
-        1019.0,
-        1000.0,
-        1103.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter3_formula001]]",
-      "source_page": 51,
-      "printed_page": 31,
-      "source_block_ids": [
-        "p51:b6"
-      ],
-      "bbox": [
-        197.0,
-        1111.0,
-        841.0,
-        1196.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "We often ask questions of the form: What is the distribution of y given that x equals some specified value? For example, we might want to know the probability that parents whose height is 68 inches have offspring with height exceeding 70 inches. To answer such questions, we use $ p(y|x) $, the conditional density of y given x, where",
-      "source_page": 51,
-      "printed_page": 31,
-      "source_block_ids": [
-        "p51:b8"
-      ],
-      "bbox": [
-        35.0,
-        1200.0,
-        998.0,
-        1373.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter3_formula002]]",
-      "source_page": 51,
-      "printed_page": 31,
-      "source_block_ids": [
-        "p51:b9"
-      ],
-      "bbox": [
-        293.0,
-        1361.0,
-        733.0,
-        1437.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "Joint probability density functions, $ p(x, y) $, and conditional density functions,",
-      "source_page": 51,
-      "printed_page": 31,
-      "source_block_ids": [
-        "p51:b11"
-      ],
-      "bbox": [
-        31.0,
-        1434.0,
-        990.0,
-        1490.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "$ p(y|x) $, are connected by",
+      "content": "The expectation of a bivariate function, $f(x,y)$, is determined by the joint probability density",
       "source_page": 52,
       "printed_page": 32,
       "source_block_ids": [
-        "p52:b2"
+        "p52:b11"
       ],
       "bbox": [
-        134.0,
-        134.0,
-        431.0,
-        174.0
+        143.0,
+        514.0,
+        1100.0,
+        597.0
       ]
     },
     {
       "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter3_formula003]]",
+      "content": "[[FORMULA:Genetics_chapter3_formula005]]",
       "source_page": 52,
       "printed_page": 32,
       "source_block_ids": [
-        "p52:b3"
+        "p52:b12"
       ],
       "bbox": [
-        481.0,
-        160.0,
-        745.0,
-        199.0
+        355.0,
+        583.0,
+        892.0,
+        663.0
       ]
     },
     {
       "type": "discussion",
-      "content": "where $ p(x) = \\int_{-\\infty}^{+\\infty} p(y \\mid x) \\, dy $ is the marginal (univariate) density of x.",
+      "content": "Most of this chapter is focused on conditional expectation, i.e., the expectation of one variable, given information on another. For example, one may know the value of x (perhaps parental height), and wish to compute the expected value of y (offspring height) given x. In general, conditional expectations are computed by using the conditional density",
       "source_page": 52,
       "printed_page": 32,
       "source_block_ids": [
-        "p52:b5"
+        "p52:b14"
       ],
       "bbox": [
-        135.0,
-        208.0,
-        976.0,
-        255.0
+        144.0,
+        664.0,
+        1107.0,
+        843.0
       ]
     },
     {
       "type": "discussion",
-      "content": "Two random variables, $x$ and $y$, are said to be independent if $p(x, y)$ can be factored into the product of a function of $x$ only and a function of $y$ only, i.e.,",
+      "content": "[[FORMULA:Genetics_chapter3_formula006]]",
       "source_page": 52,
       "printed_page": 32,
       "source_block_ids": [
-        "p52:b6"
+        "p52:b15"
       ],
       "bbox": [
-        137.0,
-        236.0,
-        1095.0,
-        319.0
+        451.0,
+        851.0,
+        808.0,
+        928.0
       ]
     },
     {
       "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter3_formula004]]",
+      "content": "If $x$ and $y$ are independent, then $E(y|x) = E(y)$, the unconditional expectation. Otherwise, $E(y|x)$ is a function of the specified $x$ value. For height in humans (Figure 1.1), Galton (1889) observed a linear relationship,",
       "source_page": 52,
       "printed_page": 32,
       "source_block_ids": [
-        "p52:b7"
+        "p52:b17"
       ],
       "bbox": [
-        504.0,
-        330.0,
-        729.0,
-        369.0
+        149.0,
+        939.0,
+        1112.0,
+        1056.0
       ]
     },
     {
       "type": "discussion",
-      "content": "If $x$ and $y$ are independent, knowledge of $x$ gives no information about the value of $y$. From Equations 3.3a and 3.3b, if $p(x, y) = p(x) p(y)$, then $p(y \\mid x) = p(y)$.",
+      "content": "[[FORMULA:Genetics_chapter3_formula007]]",
       "source_page": 52,
       "printed_page": 32,
       "source_block_ids": [
-        "p52:b9"
+        "p52:b18"
       ],
       "bbox": [
-        140.0,
-        381.0,
-        1097.0,
-        465.0
+        522.0,
+        1064.0,
+        747.0,
+        1101.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where $ \\alpha $ and $ \\beta $ are constants. Thus, the conditional expectation of height in offspring $ (y) $ is linearly related to the average height of the parents $ (x) $.",
+      "source_page": 52,
+      "printed_page": 32,
+      "source_block_ids": [
+        "p52:b20"
+      ],
+      "bbox": [
+        154.0,
+        1113.0,
+        1114.0,
+        1200.0
       ]
     }
   ]

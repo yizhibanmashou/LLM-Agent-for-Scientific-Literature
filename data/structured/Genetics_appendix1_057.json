@@ -4,15 +4,15 @@
     "chapter": "Genetics_appendix1",
     "section": "POWER OF F-RATIO TESTS",
     "subsections": [
-      "Application: Power of QTL Mapping in Half-sib Families"
+      "Application: Power of the Half-sib Design for Variance Estimation"
     ],
     "section_level_1": "POWER OF F-RATIO TESTS",
-    "section_level_2": "Application: Power of QTL Mapping in Half-sib Families",
+    "section_level_2": "Application: Power of the Half-sib Design for Variance Estimation",
     "heading_path": [
       "POWER OF F-RATIO TESTS",
-      "Application: Power of QTL Mapping in Half-sib Families"
+      "Application: Power of the Half-sib Design for Variance Estimation"
     ],
-    "display_heading": "POWER OF F-RATIO TESTS / Application: Power of QTL Mapping in Half-sib Families",
+    "display_heading": "POWER OF F-RATIO TESTS / Application: Power of the Half-sib Design for Variance Estimation",
     "source_file": "",
     "source_pdf": "data/背景资料/Genetics.pdf",
     "source_title": "Genetics and Analysis of Quantitative Traits",
@@ -21,441 +21,293 @@
       "remote_llm_calls": 0
     },
     "heading_source": {
-      "source_page": 895,
-      "printed_page": 875,
+      "source_page": 899,
+      "printed_page": 879,
       "source_block_ids": [
-        "p895:b7"
+        "p899:b2"
       ],
       "bbox": [
-        64.0,
-        518.0,
-        778.0,
-        557.0
+        65.0,
+        136.0,
+        891.0,
+        170.0
       ],
-      "raw_text": "Application: Power of QTL Mapping in Half-sib Families"
+      "raw_text": "Application: Power of the Half-sib Design for Variance Estimation"
     }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "As an example of analysis of a more complex design, consider the nested ANOVA design for mapping QTLs in half-sib families (Chapter 16). In the QTL half-sib design, each sire heterozygous for a marker locus is crossed to n dams and a single offspring is scored from each mating. Evidence of a QTL linked to the marker is indicated if the mean trait values for alternative sire alleles at this marker locus are significantly different. Since a different dam is used for each mating, all offspring from the same sire are half-sibs. The model here is",
-      "source_page": 895,
-      "printed_page": 875,
+      "content": "As an example of computing the power of random-effects ANOVA designs for estimating variance components, consider the standard half-sib design for estimating additive genetic variance (Chapter 18). Assuming a balanced design, N sires are each mated to n unique and unrelated females. The linear model (Equation 18.1) is $ y_{ij} = \\mu + s_i + e_{ij} $, where $ s \\sim (0, \\sigma_s^2) $ and $ e \\sim (0, \\sigma_e^2) $. Assume further that s and e are normally distributed. Then, from Equation A5.28, the sire effect sum of squares, $ SS_s $, follows a $ \\chi^2 $ distribution, with",
+      "source_page": 899,
+      "printed_page": 879,
       "source_block_ids": [
-        "p895:b8"
+        "p899:b3"
       ],
       "bbox": [
-        60.0,
-        562.0,
-        1019.0,
-        796.0
+        62.0,
+        195.0,
+        1025.0,
+        425.0
       ]
     },
     {
       "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula327]]",
-      "source_page": 895,
-      "printed_page": 875,
+      "content": "[[FORMULA:Genetics_appendix1_formula352]]",
+      "source_page": 899,
+      "printed_page": 879,
       "source_block_ids": [
-        "p895:b9"
+        "p899:b4"
       ],
       "bbox": [
-        381.0,
-        813.0,
-        692.0,
-        846.0
+        298.0,
+        432.0,
+        783.0,
+        473.0
       ]
     },
     {
       "type": "discussion",
-      "content": "where $y_{ijk}$ denotes the $k$th offspring of marker genotype $j$ (with $j = 1$ for offspring carrying sire allele 1, $j = 2$ for sire allele 2) from sire $i$. We assume a completely balanced design, with $N$ sires, each of which have $n$ offspring equally distributed over the two alternative genotypes (the alternative sire marker alleles). The residuals are assumed independent with $e_{ijk} \\sim \\mathrm{N}(0, \\sigma_e^2)$ and the test statistic for a significant marker effect is $F \\sim \\mathrm{MS}_m / \\mathrm{MS}_e$. To compute the power of this test, we need to obtain the distributions of sums of squares. Starting with the error sum of squares (see Chapter 18 for details),",
-      "source_page": 895,
-      "printed_page": 875,
+      "content": "Likewise, from Equation A5.29, the resulting test statistic F for a significant sire variance follows an F distribution, with",
+      "source_page": 899,
+      "printed_page": 879,
       "source_block_ids": [
-        "p895:b11"
-      ],
-      "bbox": [
-        55.0,
-        856.0,
-        1017.0,
-        1123.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula328]]",
-      "source_page": 895,
-      "printed_page": 875,
-      "source_block_ids": [
-        "p895:b12"
-      ],
-      "bbox": [
-        179.0,
-        1134.0,
-        882.0,
-        1327.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "The last two identities follow from Equations A5.14c and A5.14a, respectively. Hence, there are $ N(n-2) $ degrees of freedom associated with $ SS_{e} $. Turning to the marker sum of squares,",
-      "source_page": 895,
-      "printed_page": 875,
-      "source_block_ids": [
-        "p895:b14"
-      ],
-      "bbox": [
-        49.0,
-        1338.0,
-        1007.0,
-        1448.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula329]]",
-      "source_page": 895,
-      "printed_page": 875,
-      "source_block_ids": [
-        "p895:b15"
-      ],
-      "bbox": [
-        118.0,
-        1457.0,
-        833.0,
-        1551.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "Since $ \\sigma^{2}(\\overline{e}_{ij.}) = \\sigma_{e}^{2}/(n/2) $, it follows that $ \\overline{y}_{ij.} \\sim \\mathrm{N}(m_{ij}, 2\\sigma_{e}^{2}/n) $. Applying Equation A5.15e gives",
-      "source_page": 896,
-      "printed_page": 876,
-      "source_block_ids": [
-        "p896:b2"
-      ],
-      "bbox": [
-        135.0,
-        130.0,
-        1094.0,
-        204.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula330]]",
-      "source_page": 896,
-      "printed_page": 876,
-      "source_block_ids": [
-        "p896:b3"
-      ],
-      "bbox": [
-        180.0,
-        234.0,
-        946.0,
-        322.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "Substituting this into Equation A5.26a and applying Equation A5.15c gives",
-      "source_page": 896,
-      "printed_page": 876,
-      "source_block_ids": [
-        "p896:b5"
-      ],
-      "bbox": [
-        139.0,
-        350.0,
-        1035.0,
-        389.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula331]]",
-      "source_page": 896,
-      "printed_page": 876,
-      "source_block_ids": [
-        "p896:b6"
-      ],
-      "bbox": [
-        241.0,
-        416.0,
-        892.0,
-        505.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "Hence the marker sum of squares follows a noncentral $ \\chi^{2} $ distribution with N degrees of freedom and noncentrality parameter $ \\lambda $. It thus remains to compute $ \\lambda $ as a function of the unknown QTL parameters.",
-      "source_page": 896,
-      "printed_page": 876,
-      "source_block_ids": [
-        "p896:b8"
-      ],
-      "bbox": [
-        142.0,
-        535.0,
-        1100.0,
-        636.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "If the ith sire has marker-QTL genotype $ Q_{j}M_{1}/Q_{\\ell}M_{2} $, then $ m_{i1} $ is the expected within-sire deviation for offspring carrying sire marker allele 1 given the sire has this genotype, or",
-      "source_page": 896,
-      "printed_page": 876,
-      "source_block_ids": [
-        "p896:b9"
-      ],
-      "bbox": [
-        142.0,
-        632.0,
-        1101.0,
-        739.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula332]]",
-      "source_page": 896,
-      "printed_page": 876,
-      "source_block_ids": [
-        "p896:b10"
-      ],
-      "bbox": [
-        376.0,
-        762.0,
-        864.0,
-        802.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "Recall from Equation 16.8, that",
-      "source_page": 896,
-      "printed_page": 876,
-      "source_block_ids": [
-        "p896:b11"
-      ],
-      "bbox": [
-        145.0,
-        832.0,
-        519.0,
-        867.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula333]]",
-      "source_page": 896,
-      "printed_page": 876,
-      "source_block_ids": [
-        "p896:b12"
-      ],
-      "bbox": [
-        311.0,
-        894.0,
-        934.0,
-        933.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "while $E\\left(\\overline{y}_{i}\\mid\\mathrm{sire}_{i}=Q_{j}/Q_{\\ell}\\right)=\\mu+\\left(\\alpha_{j}+\\alpha_{\\ell}\\right)/2$. Putting these together gives",
-      "source_page": 896,
-      "printed_page": 876,
-      "source_block_ids": [
-        "p896:b13"
-      ],
-      "bbox": [
-        144.0,
-        958.0,
-        1047.0,
-        999.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula334]]",
-      "source_page": 896,
-      "printed_page": 876,
-      "source_block_ids": [
-        "p896:b14"
-      ],
-      "bbox": [
-        209.0,
-        1020.0,
-        1038.0,
-        1101.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "where $ \\alpha_{j} $ is the average effect of allele $ Q_{j} $ and c is the marker-QTL recombination frequency. Since $ E(m_{i}) = 0 $, it follows that $ m_{i1} = -m_{i2} $ and hence",
-      "source_page": 896,
-      "printed_page": 876,
-      "source_block_ids": [
-        "p896:b15"
-      ],
-      "bbox": [
-        147.0,
-        1121.0,
-        1105.0,
-        1197.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula335]]",
-      "source_page": 896,
-      "printed_page": 876,
-      "source_block_ids": [
-        "p896:b16"
-      ],
-      "bbox": [
-        421.0,
-        1216.0,
-        834.0,
-        1260.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "Taking the expected value over all possible sire QTL genotypes,",
-      "source_page": 896,
-      "printed_page": 876,
-      "source_block_ids": [
-        "p896:b17"
-      ],
-      "bbox": [
-        150.0,
-        1287.0,
-        927.0,
-        1327.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula336]]",
-      "source_page": 896,
-      "printed_page": 876,
-      "source_block_ids": [
-        "p896:b18"
-      ],
-      "bbox": [
-        279.0,
-        1344.0,
-        981.0,
-        1392.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "giving the noncentrality parameter for the marker sum of squares as",
-      "source_page": 896,
-      "printed_page": 876,
-      "source_block_ids": [
-        "p896:b19"
-      ],
-      "bbox": [
-        151.0,
-        1417.0,
-        970.0,
-        1459.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula337]]",
-      "source_page": 896,
-      "printed_page": 876,
-      "source_block_ids": [
-        "p896:b20"
-      ],
-      "bbox": [
-        452.0,
-        1477.0,
-        807.0,
-        1553.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "Thus, under the hypothesis of no linkage $ (c = 0.5) $, the test statistic is",
-      "source_page": 897,
-      "printed_page": 877,
-      "source_block_ids": [
-        "p897:b2"
+        "p899:b5"
       ],
       "bbox": [
         61.0,
-        131.0,
-        885.0,
-        171.0
+        481.0,
+        1020.0,
+        549.0
       ]
     },
     {
       "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula338]]",
-      "source_page": 897,
-      "printed_page": 877,
+      "content": "[[FORMULA:Genetics_appendix1_formula353]]",
+      "source_page": 899,
+      "printed_page": 879,
       "source_block_ids": [
-        "p897:b3"
+        "p899:b6"
       ],
       "bbox": [
-        395.0,
-        178.0,
-        683.0,
-        249.0
+        197.0,
+        555.0,
+        780.0,
+        631.0
       ]
     },
     {
       "type": "discussion",
-      "content": "Hence, a sire marker effect is declared to be significant at the $ \\alpha $-level if $ F > F_{N,N(n-2),[1-\\alpha]} $. The power of this test is the probability that the test statistic $ F $ exceeds this critical value,",
-      "source_page": 897,
-      "printed_page": 877,
+      "content": "Expressing the sire variance in terms of additive genetic and environmental variance components (ignoring epistasis),",
+      "source_page": 899,
+      "printed_page": 879,
       "source_block_ids": [
-        "p897:b4"
+        "p899:b8"
+      ],
+      "bbox": [
+        60.0,
+        639.0,
+        1018.0,
+        706.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula354]]",
+      "source_page": 899,
+      "printed_page": 879,
+      "source_block_ids": [
+        "p899:b9"
+      ],
+      "bbox": [
+        401.0,
+        715.0,
+        678.0,
+        755.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Since $ \\sigma_{z}=\\sigma_{s}^{2}+\\sigma_{e}^{2} $, it immediately follows that",
+      "source_page": 899,
+      "printed_page": 879,
+      "source_block_ids": [
+        "p899:b10"
       ],
       "bbox": [
         59.0,
-        254.0,
-        1018.0,
-        355.0
+        763.0,
+        627.0,
+        801.0
       ]
     },
     {
       "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula339]]",
-      "source_page": 897,
-      "printed_page": 877,
+      "content": "[[FORMULA:Genetics_appendix1_formula355]]",
+      "source_page": 899,
+      "printed_page": 879,
       "source_block_ids": [
-        "p897:b5"
+        "p899:b11"
       ],
       "bbox": [
-        322.0,
-        364.0,
-        750.0,
-        409.0
+        363.0,
+        809.0,
+        712.0,
+        852.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Substituting these into Equation A5.33a gives",
+      "source_page": 899,
+      "printed_page": 879,
+      "source_block_ids": [
+        "p899:b12"
+      ],
+      "bbox": [
+        56.0,
+        858.0,
+        608.0,
+        896.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula356]]",
+      "source_page": 899,
+      "printed_page": 879,
+      "source_block_ids": [
+        "p899:b13"
+      ],
+      "bbox": [
+        334.0,
+        906.0,
+        739.0,
+        978.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "From Equation A5.30b, the power of this test is",
+      "source_page": 899,
+      "printed_page": 879,
+      "source_block_ids": [
+        "p899:b15"
+      ],
+      "bbox": [
+        57.0,
+        985.0,
+        623.0,
+        1022.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula357]]",
+      "source_page": 899,
+      "printed_page": 879,
+      "source_block_ids": [
+        "p899:b16"
+      ],
+      "bbox": [
+        294.0,
+        1033.0,
+        769.0,
+        1109.0
       ]
     },
     {
       "type": "example",
-      "content": "[[EXAMPLE:Genetics_appendix1:4:occ4]]",
-      "source_page": 897,
+      "content": "[[EXAMPLE:Genetics_appendix1:6:occ3]]",
+      "source_page": 899,
       "source_block_ids": [
-        "p897:b7",
-        "p897:b8",
-        "p897:b9",
-        "p897:b10"
+        "p899:b18",
+        "p899:b19",
+        "p899:b20",
+        "p900:b2",
+        "p900:b3",
+        "p900:b4",
+        "p900:b5"
       ],
       "bbox": [
-        102.0,
-        516.0,
-        968.0,
-        643.0
+        101.0,
+        1216.0,
+        965.0,
+        1397.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, recall from Chapter 18 that if a total of $T$ individuals are measured, the optimal number of sires per dam is given by $n = 4/h^{4}$. Hence $N = T/n = Th^{2}/4$, and the power under the optimal design for $T$ individuals is",
+      "source_page": 900,
+      "printed_page": 880,
+      "source_block_ids": [
+        "p900:b6"
+      ],
+      "bbox": [
+        142.0,
+        788.0,
+        1098.0,
+        892.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula361]]",
+      "source_page": 900,
+      "printed_page": 880,
+      "source_block_ids": [
+        "p900:b7"
+      ],
+      "bbox": [
+        230.0,
+        925.0,
+        921.0,
+        1000.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Table A5.1 gives the power under the optimal design for various values of T and $ h^{2} $. Note that with modest, but reasonable, heritabilities ( $ h^{2} = 0.25 $), at least 250 individuals must be used to have a reasonable chance of the half-sib design showing a significant sire variance.",
+      "source_page": 900,
+      "printed_page": 880,
+      "source_block_ids": [
+        "p900:b9"
+      ],
+      "bbox": [
+        144.0,
+        1032.0,
+        1103.0,
+        1170.0
+      ]
+    },
+    {
+      "type": "example",
+      "content": "[[EXAMPLE:Genetics_appendix1:7:occ2]]",
+      "source_page": 900,
+      "source_block_ids": [
+        "p900:b10"
+      ],
+      "bbox": [
+        192.0,
+        1261.0,
+        1059.0,
+        1447.0
+      ]
+    },
+    {
+      "type": "table",
+      "content": "[[TABLE:A5.1]]",
+      "source_page": 901,
+      "printed_page": 881,
+      "source_block_ids": [
+        "p901:b3"
+      ],
+      "bbox": [
+        61.0,
+        233.0,
+        1010.0,
+        518.0
       ]
     }
   ]

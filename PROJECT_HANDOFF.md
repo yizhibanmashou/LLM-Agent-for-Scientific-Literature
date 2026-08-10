@@ -277,12 +277,12 @@ Exporter 修改：
 - staging 验证：`tmp/genetics_rebuild/verification.json`，`valid=true`
 - 关键问题验收：`tmp/genetics_rebuild/key_acceptance.json`
 - 安装后验证：`tmp/genetics_rebuild/postinstall_verification.json`，`valid=true`
-- 最终安装前快照：`tmp/genetics_rebuild/preinstall_snapshots/20260809T200021.916456Z/`
+- 最新安装前快照：`tmp/genetics_rebuild/preinstall_snapshots/20260810T032102.007284Z/`
 
 审计覆盖和最终数量：
 
 - 原 PDF：992/992 页已判定；前置内容 1-20，正文 21-818，合并附录 819-992
-- structured：456 个单元、9178 个 block，全部有原页证据，无待判定项
+- structured：441 个非空内容单元、9178 个 block；另有3个 Genetics 专用资源库，共444个 `Genetics_*.json`
 - formulas：1813 条，全部逐项核对
 - tables：75 个逻辑表格，全部逐页核对；Table 6.1 和 Table 15.6 的续表已合并并保留 parts/source_pages
 - figures：152 张，全部比较原页、原裁图和修复图；正式 figures 与 textbook figures 名称和 SHA256 逐文件一致
@@ -297,7 +297,9 @@ Exporter 修改：
 - 修复 `lethal equiv-alents`、`1nus`→`Thus`、`funda-/mental`、`heri-/tability`、`interactions`→`iterations`、PDF 890 页重复前缀等跨页断词和 OCR 错误。
 - 修复 Table 6.1、Table 15.6 跨页续表丢失；所有表格继续执行“小节内沉底”，正文保留语义引用，每个逻辑表只在所属小节末尾完整渲染一次。
 - Table 2.1 星号说明仅作为表格 `notes` 渲染，不再成为普通 discussion。
-- 修复非空单元误标 `node_kind: heading`；只有真正无正文的父标题允许 heading-only。
+- 修复冗余空标题 chunk：15 个原 `node_kind: heading` / `allow_empty` 单元不再单独落盘，标题延迟到首个实际内容 block 才创建单元；所有单元连续重编号，公式、表格和 Example 的单元引用同步重映射。
+- Chapter 1、3、4、17、18、21、23 的纯章节数字只保留为原页标题证据，不进入显示路径；Chapter 4 的 `THE TRANSMISSION OF GENETIC INFORMATION` 保留为 Hardy-Weinberg 等后续小节的父级路径。
+- PDF 第427页双行标题合并为 `FINE MAPPING OF MAJOR GENES USING POPULATION-LEVEL DISEQUILIBRIUM`，并同时绑定 `p427:b3`、`p427:b4` 及各自 bbox；Chapter 14 章标题的重复路径已去重。
 - Subject Index 只提供样式候选定位，`[[...]]` 不由索引自动决定；所有样式以原页字形为准，最终无嵌套或交叉样式标记。
 - deskew 修复 OpenCV `-90°` 归一化、旋转符号、实际写入角度复测、扩边裁切和无改善拒绝替换。
 - 修复 `$…$` / `$$…$$` 混排和残缺定界符：表格单元格一律使用行内数学，块公式定界符独占一行；同时按原 PDF 修复8条损坏块公式和 PDF 282、557、840、861、877页的行内公式。严格 KaTeX 校验覆盖28个 textbook、4167个结构化 block、1813条公式和1225个 Study Reader 公式资产，错误数为0。
@@ -306,9 +308,11 @@ Exporter 修改：
 
 ## 7. 测试与复现命令
 
-Genetics 专项测试 `paper2latex/tests/unit/test_genetics_rebuild.py` 共34项；与 exporter 回归合计63 passed。覆盖跨页表合并、小节沉底、Table 2.1 脚注、断词/OCR 修正、样式不嵌套、非空节点语义、KaTeX 定界符/公式修复、deskew 角度与裁切、安装保护和 stage/install 一致性。
+Genetics 专项测试 `paper2latex/tests/unit/test_genetics_rebuild.py` 共36项；与 exporter 回归合计65 passed。覆盖冗余标题合并、连续编号、跨页表合并、小节沉底、Table 2.1 脚注、断词/OCR 修正、样式不嵌套、非空节点语义、KaTeX 定界符/公式修复、deskew 角度与裁切、安装保护和 stage/install 一致性。
 
-除一个无关且缺少 `tmp/structured_boundary_audit/audit_boundaries.py` 临时 fixture 的旧测试文件外，全套测试结果为240 passed、7 skipped。直接运行未排除的全套测试时，该缺失 fixture 导致19项失败；这些失败不涉及 Genetics 代码或产物。pytest cache 另有一个 Windows `WinError 5` warning，不影响结果。
+排除依赖旧临时 fixture 的 `test_structured_boundary_audit.py` 后，全套测试结果为242 passed、7 skipped。pytest 临时目录显式放入仓库 `tmp/` 后无权限错误。
+
+本轮15个标题案例均已按原 PDF 对应页确认。用户随后明确要求不再重复执行1-992页全量重渲染审计，因此本轮验收采用既有原页结论、staging 全量结构验证、针对性标题证据检查、KaTeX 严格校验和安装保护校验；没有把中止的 `tmp/book_audits/Genetics` 重渲染任务描述为完成。
 
 完整复现：
 
@@ -316,19 +320,17 @@ Genetics 专项测试 `paper2latex/tests/unit/test_genetics_rebuild.py` 共34项
 $env:TEMP=(Resolve-Path tmp).Path
 $env:TMP=$env:TEMP
 python scripts/build_genetics_staging.py
-python scripts/audit_genetics_accuracy.py
 python scripts/rebuild_genetics_book.py --install
-python scripts/audit_genetics_accuracy.py --stage . --skip-render
 node scripts/validate_textbook_math.js --books Genetics
-python -m pytest paper2latex/tests/unit/test_genetics_rebuild.py -q
-python -m pytest paper2latex/tests -q --ignore=paper2latex/tests/unit/test_structured_boundary_audit.py
+python -m pytest paper2latex/tests/unit/test_genetics_rebuild.py paper2latex/tests/unit/test_textbook_exporter.py -q --basetemp tmp/pytest_genetics_heading -p no:cacheprovider
+python -m pytest paper2latex/tests -q --ignore=paper2latex/tests/unit/test_structured_boundary_audit.py --basetemp tmp/pytest_genetics_full -p no:cacheprovider
 ```
 
 ## 8. 后续接管状态与清单
 
-截至 2026-08-10，本轮 Genetics 全量审计、修复、隔离重建、正式安装和安装后验证均已完成，无待核对项或待安装 staging。新对话接管时：
+截至 2026-08-10，本轮 Genetics 冗余标题修复、隔离重建、正式安装和安装后验证均已完成，无待安装 staging。新对话接管时：
 
-1. 先读取 `tmp/genetics_accuracy_audit/report.json` 和 `tmp/genetics_rebuild/postinstall_verification.json`，两者应均为 `valid=true`。
+1. 先读取 `tmp/genetics_rebuild/verification.json` 和 `tmp/genetics_rebuild/postinstall_verification.json`，两者应均为 `valid=true`；后者应记录441个内容单元对应的444个 structured 安装文件、323条非 Genetics Examples 哈希不变。
 2. 所有页面渲染、联系表、角度报告、审计台账、日志、快照和失败产物只能保留在 `tmp/genetics_accuracy_audit/` 或 `tmp/genetics_rebuild/`。
 3. 再次安装会在 `tmp/genetics_rebuild/preinstall_snapshots/` 创建新的时间戳快照，并复核受保护文件、323 条非 Genetics Examples 及 stage/install 哈希。
 4. 不要删除时间戳快照，除非用户明确确认不再需要回溯。

@@ -2,17 +2,14 @@
   "id": "Genetics_appendix1_037",
   "metadata": {
     "chapter": "Genetics_appendix1",
-    "section": "LIKELIHOOD, SUPPORT, AND SCORE FUNCTIONS",
-    "subsections": [
-      "The Fisher Information Matrix"
-    ],
-    "section_level_1": "LIKELIHOOD, SUPPORT, AND SCORE FUNCTIONS",
-    "section_level_2": "The Fisher Information Matrix",
+    "section": "LIKELIHOOD-RATIO TESTS",
+    "subsections": [],
+    "section_level_1": "LIKELIHOOD-RATIO TESTS",
+    "section_level_2": null,
     "heading_path": [
-      "LIKELIHOOD, SUPPORT, AND SCORE FUNCTIONS",
-      "The Fisher Information Matrix"
+      "LIKELIHOOD-RATIO TESTS"
     ],
-    "display_heading": "LIKELIHOOD, SUPPORT, AND SCORE FUNCTIONS / The Fisher Information Matrix",
+    "display_heading": "LIKELIHOOD-RATIO TESTS",
     "source_file": "",
     "source_pdf": "data/背景资料/Genetics.pdf",
     "source_title": "Genetics and Analysis of Quantitative Traits",
@@ -21,199 +18,86 @@
       "remote_llm_calls": 0
     },
     "heading_source": {
-      "source_page": 867,
-      "printed_page": 847,
+      "source_page": 869,
+      "printed_page": 849,
       "source_block_ids": [
-        "p867:b13"
+        "p869:b15"
       ],
       "bbox": [
-        54.0,
-        1397.0,
-        440.0,
-        1430.0
+        60.0,
+        1215.0,
+        437.0,
+        1246.0
       ],
-      "raw_text": "The Fisher Information Matrix"
+      "raw_text": "LIKELIHOOD-RATIO TESTS"
     }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "When estimating a vector of parameters, Equation A4.6 can be generalized by using the Hessian matrix, H, the matrix of second partials of the log-likelihood, whose ijth element is given by",
-      "source_page": 867,
-      "printed_page": 847,
+      "content": "Maximum likelihood provides for extremely convenient tests of hypotheses in the form of likelihood-ratio, or LR, tests (reviewed in Chapter 24 of Kendall and Stuart 1979) that examine whether a reduced model provides the same fit as a full model. The likelihood-ratio test statistic is given by",
+      "source_page": 869,
+      "printed_page": 849,
       "source_block_ids": [
-        "p867:b14"
+        "p869:b16"
       ],
       "bbox": [
-        54.0,
-        1440.0,
-        1011.0,
-        1537.0
+        57.0,
+        1280.0,
+        1018.0,
+        1409.0
       ]
     },
     {
       "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula205]]",
-      "source_page": 868,
-      "printed_page": 848,
+      "content": "[[FORMULA:Genetics_appendix1_formula219]]",
+      "source_page": 869,
+      "printed_page": 849,
       "source_block_ids": [
-        "p868:b2"
+        "p869:b17"
       ],
       "bbox": [
-        516.0,
-        161.0,
-        736.0,
-        232.0
+        78.0,
+        1430.0,
+        919.0,
+        1504.0
       ]
     },
     {
       "type": "discussion",
-      "content": "H( $ \\Theta_{o} $) refers to the Hessian matrix evaluated at the point $ \\Theta_{o} $ and provides a measure of the local curvature of L around that point. The Fisher information matrix (F), the negative of expected value of the Hessian matrix for L,",
-      "source_page": 868,
-      "printed_page": 848,
+      "content": "where $\\ell(\\hat{\\Theta}|\\mathbf{z})$ is the likelihood evaluated at the MLE and $\\ell(\\hat{\\Theta}_{r}|\\mathbf{z})$ is the maximum of the likelihood function, subject to the restriction that $r$ parameters unconstrained in the full likelihood analysis are assigned fixed values. For sufficiently large sample size, the LR test statistic is $\\chi_{r}^{2}$-distributed, a $\\chi^{2}$ with $r$ degrees of freedom (Wald 1943).",
+      "source_page": 870,
+      "printed_page": 850,
       "source_block_ids": [
-        "p868:b4"
+        "p870:b2"
       ],
       "bbox": [
-        148.0,
-        237.0,
-        1108.0,
-        336.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula206]]",
-      "source_page": 868,
-      "printed_page": 848,
-      "source_block_ids": [
-        "p868:b5"
-      ],
-      "bbox": [
-        503.0,
-        343.0,
-        752.0,
-        379.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "provides a measure of the multidimensional curvature of the log-likelihood surface. Alternately, F can be computed as the expected value of the outer product of the score vector,",
-      "source_page": 868,
-      "printed_page": 848,
-      "source_block_ids": [
-        "p868:b7"
-      ],
-      "bbox": [
-        149.0,
-        387.0,
-        1107.0,
-        480.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula207]]",
-      "source_page": 868,
-      "printed_page": 848,
-      "source_block_ids": [
-        "p868:b8"
-      ],
-      "bbox": [
-        474.0,
-        479.0,
-        779.0,
-        517.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "The covariance matrix for the MLEs is simply the inverse of the information matrix, with",
-      "source_page": 868,
-      "printed_page": 848,
-      "source_block_ids": [
-        "p868:b10"
-      ],
-      "bbox": [
-        149.0,
-        523.0,
-        1107.0,
-        585.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula208]]",
-      "source_page": 868,
-      "printed_page": 848,
-      "source_block_ids": [
-        "p868:b11"
-      ],
-      "bbox": [
-        472.0,
-        584.0,
-        782.0,
-        634.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "As in the univariate case, if the likelihood surface is highly curved (very peaked) around the MLE, then the standard errors (being the inverse of the local curvature) are small, while if the likelihood is very flat, the sampling variance is large. For large sample sizes, F is often approximated by the Hessian matrix evaluated at the MLE,",
-      "source_page": 868,
-      "printed_page": 848,
-      "source_block_ids": [
-        "p868:b13"
-      ],
-      "bbox": [
-        148.0,
-        640.0,
-        1107.0,
-        799.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula209]]",
-      "source_page": 868,
-      "printed_page": 848,
-      "source_block_ids": [
-        "p868:b14"
-      ],
-      "bbox": [
-        527.0,
-        798.0,
-        725.0,
-        834.0
+        145.0,
+        134.0,
+        1105.0,
+        298.0
       ]
     },
     {
       "type": "example",
-      "content": "[[EXAMPLE:Genetics_appendix1:3:occ3]]",
-      "source_page": 868,
+      "content": "[[EXAMPLE:Genetics_appendix1:4:occ3]]",
+      "source_page": 870,
       "source_block_ids": [
-        "p868:b16",
-        "p868:b17",
-        "p868:b19",
-        "p868:b20",
-        "p868:b22",
-        "p868:b23",
-        "p869:b2",
-        "p869:b3",
-        "p869:b5",
-        "p869:b7",
-        "p869:b8",
-        "p869:b9",
-        "p869:b10",
-        "p869:b11",
-        "p869:b12",
-        "p869:b13",
-        "p869:b14"
+        "p870:b3",
+        "p870:b4",
+        "p870:b5",
+        "p870:b6",
+        "p870:b7",
+        "p870:b8",
+        "p870:b9",
+        "p870:b10",
+        "p871:b2"
       ],
       "bbox": [
-        195.0,
-        936.0,
-        1059.0,
-        1063.0
+        193.0,
+        391.0,
+        1053.0,
+        451.0
       ]
     }
   ]

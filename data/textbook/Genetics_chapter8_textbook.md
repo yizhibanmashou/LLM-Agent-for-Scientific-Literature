@@ -1,7 +1,6 @@
 # Chapter 8 · Introduction to Matrix Algebra and Linear Models
 
-## Genetics_chapter8_001 · Introduction to Matrix Algebra
-and Linear Models
+## Genetics_chapter8_001 · Introduction to Matrix Algebra and Linear Models
 
 We have already encountered several examples of models in which response variables are linear functions of two or more explanatory (or predictor) variables. For example, we have been routinely expressing an individual's phenotypic value as the sum of genotypic and environmental values. A more complicated example is the use of linear regression to decompose an individual's genotypic value into average effects of individual alleles and residual contributions due to interactions between alleles (Chapters 4 and 5). Such linear models form the backbone of parameter estimation in quantitative genetics (Chapters 17–27).
 

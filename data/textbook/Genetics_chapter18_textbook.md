@@ -1,10 +1,6 @@
-# Chapter 18 · 18
+# Chapter 18 · Sib Analysis
 
-## Genetics_chapter18_001 · 18
-
----
-
-## Genetics_chapter18_002 · 18 / Sib Analysis
+## Genetics_chapter18_001 · Sib Analysis
 
 Situations in which one is unable to acquire information from both parent and offspring generations are common. For example, when the character of interest is age-specific, it can be impractical to study phenotypic correlations with ancestors if the generation time exceeds a few years. This is a common problem in forest genetics. For species with nonoverlapping generations, it is impossible to find adults and their offspring in the field at the same time. Moreover, many animal species lay their eggs externally and then abandon them, making it difficult to ascertain parentage. In all of these cases, the analysis of contemporary (or collateral) relatives, sibs in particular, provides an attractive alternative to parent-offspring regression in estimating quantitative-genetic parameters.
 
@@ -16,7 +12,7 @@ In describing both methods, we follow a similar organization, initially covering
 
 ---
 
-## Genetics_chapter18_003 · HALF-SIB ANALYSIS
+## Genetics_chapter18_002 · HALF-SIB ANALYSIS
 
 The utility of half-sib analysis stems from the close relationship between the additive genetic variance and the covariance between half sibs (Chapter 7). Under random mating and free recombination, four times the genetic covariance between half sibs is $ \sigma_A^2 + (\sigma_{AA}^2 / 4) + (\sigma_{AAA}^2 / 16) + \cdots $, which is approximately equal to twice the genetic covariance between parents and offspring, $ \sigma_A^2 + (\sigma_{AA}^2 / 2) + (\sigma_{AAA}^2 / 4) + \cdots $, provided that the components of epistatic genetic variance are small relative to $ \sigma_A^2 $. Thus, if epistasis is of minor importance and if common environmental effects do not contribute to the phenotypic resemblance of half sibs, $ 4\sigma(\text{HS}) $ provides an estimate of $ \sigma_A^2 $. (Here $ \sigma(\text{HS}) $ denotes the expected covariance between a pair of half sibs. Similar notation is used below for other types of sibs.)
 
@@ -65,7 +61,7 @@ The pure half-sib design employs the simplest possible linear model. However, th
 
 ---
 
-## Genetics_chapter18_004 · HALF-SIB ANALYSIS / One-way Analysis of Variance
+## Genetics_chapter18_003 · HALF-SIB ANALYSIS / One-way Analysis of Variance
 
 ANOVA uses sums of squares, the derivation of which we outline below. Throughout, we use SS to denote an observed sum of squares, and $ E(\mathrm{SS}) $ to denote its expected value. As we will see shortly, scaled sums of squares, known as mean squares, are used to estimate variance components. We use the parallel notation, MS and $ E(\mathrm{MS}) $, to denote observed and expected mean squares.
 
@@ -211,14 +207,14 @@ $$
 
 In principle, correction for this bias can be made by substituting the observed $ t_{PHS} $ for $ \tau $ in the preceding expression and adding the estimated bias $ \Delta_{t} $ to $ t_{PHS} $ prior to estimating the heritability with Equation 18.14. The bias in $ t_{PHS} $ can be considerable if N is very small (less than 20), but for larger designs it is generally no more than a few percent.
 
-> **Table 18.1** · `18.1` · page 573 · source: `Genetics_chapter18_004`
+> **Table 18.1** · `18.1` · page 573 · source: `Genetics_chapter18_003`
 > Table 18.1 Summary of a one-way ANOVA involving N independent families, the ith of which contains $ n_{i} $ individuals.
 >
 > <table><tr><td>Factor</td><td>df</td><td>SS</td><td>MS</td><td>E(MS)</td></tr><tr><td>Among-families</td><td>N - 1</td><td>SS_{s} = \sum_{i=1}^{N} n_{i}(\overline{z}_{i} - \overline{z})^{2}</td><td>SS_{s}/(N - 1)</td><td>\sigma_{e}^{2} + n_{0}\sigma_{s}^{2}</td></tr><tr><td>Within-families</td><td>T - N</td><td>SS_{e} = \sum_{i=1}^{N} \sum_{j=1}^{n_{i}}(z_{ij} - \overline{z}_{i})^{2}</td><td>SS_{e}/(T - N)</td><td>\sigma_{e}^{2}</td></tr><tr><td>Total</td><td>T - 1</td><td>SS_{T} = \sum_{i=1}^{N} \sum_{j=1}^{n_{i}}(z_{ij} - \overline{z})^{2}</td><td>SS_{T}/(T - 1)</td><td>\sigma_{z}^{2}</td></tr><tr><td colspan="5">Note: The total sample size is $ T = \sum_{i=1}^{N} n_{i} $, and $ n_{0} = [T - (\sum n_{i}^{2}/T)]/(N - 1) $, which reduces to $ n $ with equal family sizes. Degrees of freedom are denoted by df, observed sums of squares by SS, and expected mean squares by E(MS).</td></tr></table>
 
 ---
 
-## Genetics_chapter18_005 · HALF-SIB ANALYSIS / Hypothesis Testing
+## Genetics_chapter18_004 · HALF-SIB ANALYSIS / Hypothesis Testing
 
 In obtaining the variance-component estimators, Equations 18.12a,b, we made no assumptions as to how the data or their underlying components ( $ s_{i} $ and $ e_{ij} $) were distributed, other than the constraint that they are independent of each other. This distribution-free condition illustrates a useful feature of ANOVA that is not shared by many other estimation procedures — it yields variance-component estimates that are unbiased with respect to the true parametric values (although, as just noted, nonlinear functions, such as ratios, of these estimates will be biased). Unfortunately, this distribution-free property does not extend to the estimation of confidence intervals for the variance components, nor to most traditional methods of hypothesis testing.
 
@@ -266,7 +262,7 @@ provides a test of the hypothesis that $ E(\mathrm{MS}_{s}) = E(\mathrm{MS}_{e})
 
 ---
 
-## Genetics_chapter18_006 · HALF-SIB ANALYSIS / Sampling Variance and Standard Errors
+## Genetics_chapter18_005 · HALF-SIB ANALYSIS / Sampling Variance and Standard Errors
 
 In the analysis of heritability, a case can be made that hypothesis testing is of little biological relevance. Because polygenic mutation continually introduces genetic variation into populations, the heritabilities of essentially all characters must be nonzero, and the only real issue is their absolute magnitude. If an F-test signals nonsignificance, it most likely is a simple consequence of inadequate sample size.
 
@@ -320,7 +316,7 @@ The standard error of $ h^{2} $ derived by half-sib analysis is estimated by $ 4
 
 ---
 
-## Genetics_chapter18_007 · HALF-SIB ANALYSIS / Confidence Intervals
+## Genetics_chapter18_006 · HALF-SIB ANALYSIS / Confidence Intervals
 
 Under the assumption of normality, approximate confidence intervals for variance-component estimates can be obtained from the expected distributions of the sums of squares (Harville and Fenech 1985, Searle et al. 1992). For the within-family variance, recalling the distribution of $ SS_e/\sigma_e^2 $ given in Equation 18.17b, the lower and upper values associated with the $ 100(1 - \alpha)\% $ confidence level are simply
 
@@ -364,7 +360,7 @@ Although somewhat complicated, the preceding expressions are general, provided t
 
 ---
 
-## Genetics_chapter18_008 · HALF-SIB ANALYSIS / Negative Estimates of Heritability
+## Genetics_chapter18_007 · HALF-SIB ANALYSIS / Negative Estimates of Heritability
 
 Because ANOVA yields unbiased estimates of variance components, sampling error associated with the mean squares sometimes causes the estimated among-family variance to be negative when $ \sigma_{s}^{2} $ is small. Since this, in turn, results in a negative estimate of $ h^{2} $, to avoid embarrassment, investigators often either report negative variance component estimates as zero or do not report them at all. In individual studies, such treatment is reasonable in that the parametric value of a variance component cannot be negative, and at best, a negative estimate means that the results are unreliable. However, the censoring of negative variance component estimates from the literature can only have the cumulative effect of upwardly biasing the reported pool of values. Since the probability of obtaining
 
@@ -384,7 +380,7 @@ $$
 
 where $ F_{(T-N),(N-1)} $ denotes an $ F $-distributed variable with $ (T-N),(N-1) $ degrees of freedom. Thus, the probability of obtaining a negative heritability estimate depends on the true parametric value of $ h^{2} $, as well as on the sampling design $ (N $ and $ n) $. If the true heritability exceeds 0.8 or so, there is very little chance of obtaining a negative estimate if $ Nn = 100 $ or more individuals are assayed. However, if the true heritability is on the order of 0.25 or less, the probability of obtaining a negative estimate can exceed 0.1 if fewer than 200 to 300 observations are made (Table 18.2). Similarly, we note that if the true value of $ h^{2} $ is quite high, there is a possibility that its estimate derived by half-sib analysis will exceed the upper limit of 1.0 (Prabhakaran and Jain 1987).
 
-> **Table 18.2** · `18.2` · page 578 · source: `Genetics_chapter18_008`
+> **Table 18.2** · `18.2` · page 578 · source: `Genetics_chapter18_007`
 > Table 18.2 Probabilities (to the nearest 0.01) of obtaining negative heritability estimates from a balanced half-sib analysis with N families, each containing n offspring.
 >
 > <table><tr><td rowspan="2">N</td><td colspan="2">h^{2}=0.19</td><td colspan="2">h^{2}=0.36</td><td colspan="2">h^{2}=0.80</td></tr><tr><td>n=5</td><td>n=25</td><td>n=5</td><td>n=25</td><td>n=5</td><td>n=25</td></tr><tr><td>5</td><td>0.46</td><td>0.22</td><td>0.38</td><td>0.11</td><td>0.22</td><td>0.03</td></tr><tr><td>10</td><td>0.38</td><td>0.09</td><td>0.27</td><td>0.02</td><td>0.10</td><td>0.00</td></tr><tr><td>25</td><td>0.27</td><td>0.00</td><td>0.11</td><td>0.00</td><td>0.00</td><td>0.00</td></tr><tr><td>50</td><td>0.18</td><td>0.00</td><td>0.05</td><td>0.00</td><td>0.00</td><td>0.00</td></tr></table>
@@ -393,7 +389,7 @@ where $ F_{(T-N),(N-1)} $ denotes an $ F $-distributed variable with $ (T-N),(N-
 
 ---
 
-## Genetics_chapter18_009 · HALF-SIB ANALYSIS / Optimal Experimental Design
+## Genetics_chapter18_008 · HALF-SIB ANALYSIS / Optimal Experimental Design
 
 Robertson (1959a) first addressed the problem of optimal allocation of effort in the half-sib design, the objective being to minimize the sampling variance of the intraclass correlation (defined in Equation 18.21). Assuming that the constraint on the investigator is the total number of individuals that can be measured, $ T = Nn $, the optimal family size is $ \widehat{n} \simeq 1/\tau_{\mathrm{PHS}} \simeq 4/h^2 $. Since $ h^2 $ has an upper limit of one, this result clearly indicates that half-sib experiments with family sizes smaller than four should be avoided. Substituting $ 1/\tau_{\mathrm{PHS}} $ for $ n $ in Equation 18.21, the expected standard error of the intraclass correlation under an optimal design is
 
@@ -411,7 +407,7 @@ Power is also a serious consideration for any experimental design, and this is d
 
 **[示例 Example]**
 
-> **Example 1** · ref: `Genetics_chapter18:1` · source: `Genetics_chapter18_009.json` · blocks 5–6
+> **Example 1** · ref: `Genetics_chapter18:1` · source: `Genetics_chapter18_008.json` · blocks 5–6
 >
 > Example 1. For situations in which the investigator has the option of performing a parent-offspring or a half-sib analysis, an obvious question is, Which protocol will give a more precise estimate of $ h^{2} $?
 > 
@@ -427,7 +423,7 @@ Power is also a serious consideration for any experimental design, and this is d
 
 ---
 
-## Genetics_chapter18_010 · HALF-SIB ANALYSIS / Unbalanced Data
+## Genetics_chapter18_009 · HALF-SIB ANALYSIS / Unbalanced Data
 
 Accidental losses or natural mortality almost always cause inequities in family sizes in sib analyses. With unbalanced data, estimates of variance components can still be obtained by the method of moments, but this requires that the definitions of the expected mean squares first be modified appropriately (Table 18.1). All aspects of the unbalanced one-way ANOVA are identical to those outlined for the balanced design, except for the expected among-family mean square, which is no longer $ (\sigma_{e}^{2} + n\sigma_{s}^{2}) $, but $ (\sigma_{e}^{2} + n_{0}\sigma_{s}^{2}) $, where $ n_{0} $ is a function of the sire-specific family sizes (Table 18.1). Thus, in obtaining estimates of the variance components by the method of moments, we still use Equations 18.12a,b, substituting $ n_{0} $ for n.
 
@@ -467,7 +463,7 @@ In recent years, maximum likelihood procedures have been developed as an alterna
 
 **[示例 Example]**
 
-> **Example 2** · ref: `Genetics_chapter18:2` · source: `Genetics_chapter18_010.json` · blocks 10–17
+> **Example 2** · ref: `Genetics_chapter18:2` · source: `Genetics_chapter18_009.json` · blocks 10–17
 >
 > Example 2. In order to illustrate the application of some of the above techniques, we now consider a specific study, an investigation of the quantitative genetics of chemical, antiherbivore defenses in the wild parsnip Pastinaca sativa (Berenbaum et al. 1986). This example will also highlight some of the interpretative issues that arise in a half-sib analysis.
 > 
@@ -491,7 +487,7 @@ In recent years, maximum likelihood procedures have been developed as an alterna
 
 ---
 
-## Genetics_chapter18_011 · HALF-SIB ANALYSIS / Resampling Procedures
+## Genetics_chapter18_010 · HALF-SIB ANALYSIS / Resampling Procedures
 
 To avoid the interpretative pitfalls that can arise with hypothesis tests involving nonnormal and unbalanced data, several computer-based resampling procedures have been developed that make no assumptions about the form of the distribution of the data or the structure of experimental design (Miller 1968, 1974; Efron 1982; Milliken and Johnson 1984; Wu 1986; Little and Rubin 1987; Manly 1991; Crowley 1992). All of these techniques assume that the sample data provide a reasonably good representation of the distribution in the entire population. The data are then used to generate sampling distributions of desired statistics. Three basic approaches are used:
 
@@ -503,7 +499,7 @@ To avoid the interpretative pitfalls that can arise with hypothesis tests involv
 
 ---
 
-## Genetics_chapter18_012 · FULL-SIB ANALYSIS
+## Genetics_chapter18_011 · FULL-SIB ANALYSIS
 
 The statistical methodology outlined above for half sibs also applies to full-sib analysis, provided the interpretations of the within- and among-family components of variance are modified appropriately. For the special case in which there are no dominance effects and no common environmental effects, twice the intra-class correlation coefficient for full sibs provides an estimate of the narrow-sense heritability. However, since the significance of these two sources of variance is generally unknown in advance of a quantitative-genetic analysis, it is best to avoid the exclusive use of full sibs to estimate $ h^{2} $.
 
@@ -606,7 +602,7 @@ Under this assumption, as in half-sib analysis, four times the sire component of
 
 ---
 
-## Genetics_chapter18_013 · FULL-SIB ANALYSIS / Nested Analysis of Variance
+## Genetics_chapter18_012 · FULL-SIB ANALYSIS / Nested Analysis of Variance
 
 As with one-way ANOVA, estimates of the variance components can be obtained by the method of moments, i.e., by partitioning the total observed sum of squares into components, writing the expected mean squares as linear functions of the variance components, equating the observed mean squares to their expectations, and solving for the variances. Let $ \overline{z}_{ij} $ be the mean phenotype of full-sib family $ ij $, $ \overline{z}_i $ be the mean phenotype of progeny of sire $ i $, and $ \overline{z} $ be the grand mean of the $ z_{ijk} $. The total sum of squared deviations of the $ z_{ijk} $ from $ \overline{z} $ can be partitioned into components describing deviations of observed sire means from the grand mean, deviations of the full-sib family means from their sire group means, and deviations of individual measures from their full-sib family means (Table 18.3).
 
@@ -654,7 +650,7 @@ As in the half-sib design, $ 4t_{PHS} $ provides the best estimate of $ h^{2} $ 
 
 of $ \operatorname{Var}(s) $ and $ \operatorname{Var}(d) $ provides an estimate of $ \sigma_{A}^{2}/4 $, and when multiplied by $ 4/\operatorname{Var}(z) $ provides an estimate of $ h^{2} $. Ideally, such an average should weight the two variance-component estimates by the inverse of their sampling variances (Grossman and Norton 1981).
 
-> **Table 18.3** · `18.3` · page 588 · source: `Genetics_chapter18_013`
+> **Table 18.3** · `18.3` · page 588 · source: `Genetics_chapter18_012`
 > Table 18.3 Summary of a nested analysis of variance involving $N$ sires, $M_{i}$ dams within the ith sire, and $n_{ij}$ offspring within the ith full-sib family.
 >
 > <table><tr><td>Factor</td><td>df</td><td>Sums of Squares</td><td>MS</td><td>E(MS)</td></tr><tr><td>Sires</td><td>N-1</td><td>$ \sum_{i=1}^{N}\sum_{j=1}^{M_i}n_{ij}(\overline{z}_i-\overline{z})^2 $</td><td>SS_s/df_s</td><td>$ \sigma_e^2 + k_2\sigma_d^2 + k_3\sigma_s^2 $</td></tr><tr><td>Dams (sires)</td><td>N(\overline{M}-1)</td><td>$ \sum_{i=1}^{N}\sum_{j=1}^{M_i}n_{ij}(\overline{z}_{ij}-\overline{z}_i)^2 $</td><td>SS_d/df_d</td><td>$ \sigma_e^2 + k_1\sigma_d^2 $</td></tr><tr><td>Sibs (dams)</td><td>T-N $ \overline{M} $</td><td>$ \sum_{i=1}^{N}\sum_{j=1}^{M_i}\sum_{k=1}^{n_{ij}}(z_{ijk}-\overline{z}_{ij})^2 $</td><td>SS_e/df_e</td><td>$ \sigma_e^2 $</td></tr><tr><td>Total</td><td>T-1</td><td>$ \sum_{i=1}^{N}\sum_{j=1}^{M_i}\sum_{k=1}^{n_{ij}}(z_{ijk}-\overline{z})^2 $</td><td></td><td></td></tr><tr><td></td><td colspan="4">$ k_1=\frac{1}{N(\overline{M}-1)}\left(T-\sum_{i=1}^{N}\frac{\sum_{j=1}^{M_i}n_{ij}^2}{n_i}\right) $</td></tr><tr><td></td><td colspan="4">$ k_{2}=\frac{1}{N-1}\left(\sum_{i=1}^{N}\frac{\sum_{j}^{M_{i}}n_{ij}^{2}}{n_{i}}-\frac{\sum_{i}^{N}\sum_{j}^{M_{i}}n_{ij}^{2}}{T}\right) $</td></tr><tr><td></td><td colspan="4">$ k_{3}=\frac{1}{N-1}\left(T-\frac{\sum_{i}^{N}n_{i}^{2}}{N}\right) $</td></tr></table>
@@ -663,7 +659,7 @@ of $ \operatorname{Var}(s) $ and $ \operatorname{Var}(d) $ provides an estimate 
 
 ---
 
-## Genetics_chapter18_014 · FULL-SIB ANALYSIS / Hypothesis Testing
+## Genetics_chapter18_013 · FULL-SIB ANALYSIS / Hypothesis Testing
 
 Under the assumption of normality and balanced design, standard $F$ ratios can be used to test for significant variation associated with sires and dams. In each case, the numerator of the $F$ ratio is the observed mean square at the level containing the factor of interest, and the denominator is the observed mean square at the next lower level (which incorporates all factors except the one of interest). The test statistic for evaluating whether there is significant variance associated with sires is the $F$ ratio $MS_s/MS_d$, since under the null hypothesis of $\sigma_s^2 = 0$, the expected value of the numerator is equal to that of the denominator (see Table 18.3). Similarly, the test statistic for significant dam effects is the ratio $MS_d/MS_e$, as the expected value of the numerator is again equal to that of the denominator under the null hypothesis of $\sigma_d^2 = 0$ (Table 18.3).
 
@@ -723,7 +719,7 @@ Resampling procedures provide an alternative to $F$ ratios for testing for the s
 
 ---
 
-## Genetics_chapter18_015 · FULL-SIB ANALYSIS / Sampling Error
+## Genetics_chapter18_014 · FULL-SIB ANALYSIS / Sampling Error
 
 Under a balanced design (with N sires, M dams per sire, and n progeny per dam), the large-sample variance for $ t_{PHS} $ and $ t_{FS} $ can be obtained from formulae provided by Osborne and Paterson (1952),
 
@@ -769,7 +765,7 @@ Graybill et al. (1956), Broemeling (1969), and Graybill and Wang (1979) provide 
 
 ---
 
-## Genetics_chapter18_016 · FULL-SIB ANALYSIS / Optimal Design
+## Genetics_chapter18_015 · FULL-SIB ANALYSIS / Optimal Design
 
 In the now familiar fashion, the optimal design for a nested analysis of variance is defined to be the combination of $N$, $M$, and $n$, subject to some constraint, that minimizes the sampling variance of the intraclass correlation of interest. Since $4t_{\mathrm{PHS}}$ provides the most reliable estimate of $h^{2}$, it will generally be most desirable to minimize $\mathrm{Var}(t_{\mathrm{PHS}})$ as defined in Equation 18.37a, but the solution is quite complicated, as it depends upon both $t_{\mathrm{PHS}}$ and $t_{\mathrm{FS}}$. Some feeling for the best design and the sensitivity of $\mathrm{Var}(t_{\mathrm{PHS}})$ to nonoptimal designs can be achieved by substituting different values for the design parameters $(N, M, n)$ and for the possible values of $t_{\mathrm{PHS}}$ and $t_{\mathrm{FS}}$.
 
@@ -781,7 +777,7 @@ Assuming no epistatic or common environmental effects, with designs of moderate 
 
 **[示例 Example]**
 
-> **Example 3** · ref: `Genetics_chapter18:3` · source: `Genetics_chapter18_016.json` · blocks 4–10
+> **Example 3** · ref: `Genetics_chapter18:3` · source: `Genetics_chapter18_015.json` · blocks 4–10
 >
 > Example 3. To evaluate the causal sources of variation in developmental rate in the flour beetle Tribolium castaneum, Dawson (1965) estimated the covariances between several types of relatives. Here we focus on the results from a nested design in which 30 males were each mated to three different females, with the goal of assaying 10 progeny per female. Some mortality among the dams and the offspring induced slight inequalities in family sizes, resulting in $ k_{1} = k_{2} = 9.1 $ and $ k_{3} = 25.7 $. Following the layout in Table 18.3, the degrees of freedom and observed and expected mean squares for the nested ANOVA are:
 > 

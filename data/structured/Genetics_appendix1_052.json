@@ -2,17 +2,17 @@
   "id": "Genetics_appendix1_052",
   "metadata": {
     "chapter": "Genetics_appendix1",
-    "section": "POWER OF NORMALLY DISTRIBUTED TEST STATISTICS",
+    "section": "POWER OF F-RATIO TESTS",
     "subsections": [
-      "Applications: QTL Detection Tests Using Doubly Affected Sib Pairs"
+      "Central and Noncentral $ \\chi^{2} $ Distributions"
     ],
-    "section_level_1": "POWER OF NORMALLY DISTRIBUTED TEST STATISTICS",
-    "section_level_2": "Applications: QTL Detection Tests Using Doubly Affected Sib Pairs",
+    "section_level_1": "POWER OF F-RATIO TESTS",
+    "section_level_2": "Central and Noncentral $ \\chi^{2} $ Distributions",
     "heading_path": [
-      "POWER OF NORMALLY DISTRIBUTED TEST STATISTICS",
-      "Applications: QTL Detection Tests Using Doubly Affected Sib Pairs"
+      "POWER OF F-RATIO TESTS",
+      "Central and Noncentral $ \\chi^{2} $ Distributions"
     ],
-    "display_heading": "POWER OF NORMALLY DISTRIBUTED TEST STATISTICS / Applications: QTL Detection Tests Using Doubly Affected Sib Pairs",
+    "display_heading": "POWER OF F-RATIO TESTS / Central and Noncentral $ \\chi^{2} $ Distributions",
     "source_file": "",
     "source_pdf": "data/背景资料/Genetics.pdf",
     "source_title": "Genetics and Analysis of Quantitative Traits",
@@ -21,214 +21,289 @@
       "remote_llm_calls": 0
     },
     "heading_source": {
-      "source_page": 888,
-      "printed_page": 868,
+      "source_page": 890,
+      "printed_page": 870,
       "source_block_ids": [
-        "p888:b2"
+        "p890:b6"
       ],
       "bbox": [
-        137.0,
-        136.0,
-        981.0,
-        169.0
+        143.0,
+        502.0,
+        648.0,
+        540.0
       ],
-      "raw_text": "Applications: QTL Detection Tests Using Doubly Affected Sib Pairs"
+      "raw_text": "Central and Noncentral $ \\chi^{2} $ Distributions"
     }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Chapter 16 examines the use of doubly affected full sib pairs to detect QTLs influencing a binary character (typically disease presence/absence, so that both sibs in each pair display the disease). If the marker is linked to a QTL influencing the character, we expect the pair members to share more marker alleles than expected by chance. A number of tests based on the number of ibd (identical by descent) marker alleles shared between pair members have been proposed for detecting a linked QTL. Letting $ p_{2i} $ and $ \\widehat{p}_{2i} $ denote the true and estimated fractions of doubly affected pairs sharing i = 0, 1, 2 ibd marker alleles (the leading 2 in the subscript indicates we are restricting attention to pairs where both sibs are affected), we consider two such tests here. One test statistic, $ T_{2} = \\widehat{p}_{22} $, is based on the fraction of doubly affected pairs sharing 2 ibd alleles. A second test statistic, $ T_{m} = \\widehat{p}_{21}/2 + \\widehat{p}_{22} $, corresponds to the mean number of ibd marker alleles shared by a doubly affected pair. The true ibd frequencies can be expressed as deviations from the values expected with no linked QTL,",
-      "source_page": 888,
-      "printed_page": 868,
+      "content": "The $\\chi^2$ distribution arises from sums of squared, normally distributed, random variables — if $x_i \\sim \\mathrm{N}(0,1)$, then $u = \\sum_{i=1}^n x_i^2 \\sim \\chi_n^2$, a central $\\chi^2$ distribution with $n$ degrees of freedom. It follows that the sum of two $\\chi^2$ random variables is also $\\chi^2$ distributed, so that if $u \\sim \\chi_n^2$ and $v \\sim \\chi_m^2$, then",
+      "source_page": 890,
+      "printed_page": 870,
       "source_block_ids": [
-        "p888:b3"
+        "p890:b7"
       ],
       "bbox": [
-        137.0,
-        180.0,
-        1096.0,
-        625.0
+        143.0,
+        538.0,
+        1102.0,
+        685.0
       ]
     },
     {
       "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula287]]",
-      "source_page": 888,
-      "printed_page": 868,
+      "content": "[[FORMULA:Genetics_appendix1_formula297]]",
+      "source_page": 890,
+      "printed_page": 870,
       "source_block_ids": [
-        "p888:b4"
+        "p890:b8"
       ],
       "bbox": [
-        302.0,
-        651.0,
-        928.0,
-        714.0
+        529.0,
+        700.0,
+        719.0,
+        743.0
       ]
     },
     {
       "type": "discussion",
-      "content": "Under the null hypotheses (the marker is unlinked to a QTL), the $ d_{2i} $ are zero, while Equation 16.52 gives their values as functions of the QTL effects and distance from the marker if a QTL is linked to the marker. Note from Equation 16.52 that $ d_{2i} \\geq 0 $ under linkage.",
-      "source_page": 888,
-      "printed_page": 868,
+      "content": "Two other useful results are that if $ x_{i} \\sim \\mathrm{N}(0, \\sigma^{2}) $, then",
+      "source_page": 890,
+      "printed_page": 870,
       "source_block_ids": [
-        "p888:b5"
+        "p890:b10"
       ],
       "bbox": [
-        137.0,
-        736.0,
-        1094.0,
-        864.0
+        148.0,
+        768.0,
+        793.0,
+        810.0
       ]
     },
     {
       "type": "discussion",
-      "content": "We examine the power of the test based on $ T_2 = \\widehat{p}_{22} $ first. This test statistic has mean $ p_{22} $ and variance $ p_{22}(1 - p_{22}) / n $, where $ n $ is the number of doubly affected pairs. Expressing the variance of the test statistic as $ \\sigma^2(T) = f^2 / n $, shows that here $ f^2 = p_{22}(1 - p_{22}) $. Under the null hypothesis of no linked QTL, $ p_{22} = 1/4 $, giving the mean and variance as $ \\mu_o = 1/4 $ and $ f_0^2 = (1/4)(3/4) = 3/16 $. When a linked QTL is present, so that $ p_{22} = 1/4 + d_{22} $, the mean and variance become",
-      "source_page": 888,
-      "printed_page": 868,
+      "content": "[[FORMULA:Genetics_appendix1_formula298]]",
+      "source_page": 890,
+      "printed_page": 870,
       "source_block_ids": [
-        "p888:b6"
+        "p890:b11"
       ],
       "bbox": [
-        136.0,
-        865.0,
-        1095.0,
-        1058.0
+        524.0,
+        831.0,
+        727.0,
+        918.0
       ]
     },
     {
       "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula288]]",
-      "source_page": 888,
-      "printed_page": 868,
+      "content": "and for $ \\overline{x}=n^{-1}\\sum_{i=1}^{n}x_{i}, $",
+      "source_page": 890,
+      "printed_page": 870,
       "source_block_ids": [
-        "p888:b7"
+        "p890:b13"
       ],
       "bbox": [
-        152.0,
-        1082.0,
-        978.0,
-        1145.0
+        149.0,
+        944.0,
+        423.0,
+        1033.0
       ]
     },
     {
       "type": "discussion",
-      "content": "Hence, $ (\\mu_1 - \\mu_0)^2 = d_{22}^2 $. The $ T_2 $ test is one-sided, as $ p_{22} > 1/4 $ under linkage to a QTL, and from Equation A5.4b, the required number of doubly affected pairs to have power $ 1 - \\beta $ using a test with significance $ \\alpha $ is",
-      "source_page": 888,
-      "printed_page": 868,
+      "content": "[[FORMULA:Genetics_appendix1_formula299]]",
+      "source_page": 890,
+      "printed_page": 870,
       "source_block_ids": [
-        "p888:b9"
+        "p890:b14"
       ],
       "bbox": [
-        138.0,
-        1169.0,
-        1096.0,
-        1269.0
+        463.0,
+        950.0,
+        791.0,
+        1112.0
       ]
     },
     {
       "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula289]]",
-      "source_page": 888,
-      "printed_page": 868,
+      "content": "In this last case, subtraction of the mean causes the loss of one degree of freedom.",
+      "source_page": 890,
+      "printed_page": 870,
       "source_block_ids": [
-        "p888:b10"
+        "p890:b16"
       ],
       "bbox": [
-        208.0,
-        1296.0,
-        921.0,
-        1383.0
+        150.0,
+        1116.0,
+        1107.0,
+        1160.0
       ]
     },
     {
       "type": "discussion",
-      "content": "In a similar fashion, the expected value for the test statistic $ T_{m} $ is",
-      "source_page": 888,
-      "printed_page": 868,
+      "content": "A noncentral $ \\chi^{2} $ arises when the random variables being considered have nonzero means. In particular, if $ x_{i} \\sim \\mathrm{N}(\\mu_{i}, 1) $, then $ u = \\sum_{i=1}^{n} x_{i}^{2} $ follows a noncentral $ \\chi^{2} $ distribution with n degrees of freedom and noncentrality parameter",
+      "source_page": 890,
+      "printed_page": 870,
       "source_block_ids": [
-        "p888:b12"
+        "p890:b17"
       ],
       "bbox": [
-        192.0,
-        1410.0,
-        963.0,
-        1442.0
+        150.0,
+        1135.0,
+        1111.0,
+        1263.0
       ]
     },
     {
       "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula290]]",
-      "source_page": 888,
-      "printed_page": 868,
+      "content": "[[FORMULA:Genetics_appendix1_formula300]]",
+      "source_page": 890,
+      "printed_page": 870,
       "source_block_ids": [
-        "p888:b13"
+        "p890:b18"
       ],
       "bbox": [
-        192.0,
-        1469.0,
-        939.0,
-        1537.0
+        568.0,
+        1278.0,
+        701.0,
+        1363.0
       ]
     },
     {
       "type": "discussion",
-      "content": "To compute the variance $ \\sigma_{1}^{2} = f_{1}^{2}/n $, let $ x $ denote the fraction of ibd alleles in a randomly chosen individual. Taking expectations gives",
-      "source_page": 889,
-      "printed_page": 869,
+      "content": "and we write $ u \\sim \\chi_{n,\\lambda}^{2} $. As shown in Figure A5.3, increasing the noncentrality parameter $ \\lambda $ shifts the distribution to the right. This is also seen by considering the mean and variance of u,",
+      "source_page": 890,
+      "printed_page": 870,
       "source_block_ids": [
-        "p889:b2"
+        "p890:b20"
       ],
       "bbox": [
-        66.0,
-        126.0,
-        1023.0,
-        211.0
+        156.0,
+        1384.0,
+        1115.0,
+        1496.0
       ]
     },
     {
       "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula291]]",
-      "source_page": 889,
-      "printed_page": 869,
+      "content": "[[FORMULA:Genetics_appendix1_formula301]]",
+      "source_page": 890,
+      "printed_page": 870,
       "source_block_ids": [
-        "p889:b3"
+        "p890:b21"
       ],
       "bbox": [
-        182.0,
-        222.0,
-        900.0,
-        460.0
+        372.0,
+        1509.0,
+        904.0,
+        1551.0
       ]
     },
     {
       "type": "discussion",
-      "content": "Under the null hypothesis of no linked QTLs, $ d_{21} = d_{22} = 0 $, giving $ \\mu_0 = 1/2 $ and $ f_0^2 = 1/2 $. Again, this is a one-sided test, as $ T_m > 1/2 $ for a marker linked to a QTL. Applying Equation A5.4b gives the required number of doubly affected pairs as",
-      "source_page": 889,
-      "printed_page": 869,
+      "content": "[[FIGURE:A5.3]]",
+      "source_page": 891,
+      "printed_page": 871,
       "source_block_ids": [
-        "p889:b5"
+        "p891:b3"
       ],
       "bbox": [
-        55.0,
-        478.0,
-        1017.0,
-        623.0
+        106.0,
+        495.0,
+        970.0,
+        626.0
       ]
     },
     {
       "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula292]]",
-      "source_page": 889,
-      "printed_page": 869,
+      "content": "It follows directly from the definition that sums of noncentral $ \\chi^{2} $ variables also follows a noncentral $ \\chi^{2} $ distribution, so that if $ u \\sim \\chi_{n,\\lambda_{1}}^{2} $ and $ v \\sim \\chi_{m,\\lambda_{2}}^{2} $, then",
+      "source_page": 891,
+      "printed_page": 871,
       "source_block_ids": [
-        "p889:b6"
+        "p891:b4"
       ],
       "bbox": [
-        113.0,
-        646.0,
-        854.0,
-        741.0
+        56.0,
+        678.0,
+        1013.0,
+        766.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula302]]",
+      "source_page": 891,
+      "printed_page": 871,
+      "source_block_ids": [
+        "p891:b5"
+      ],
+      "bbox": [
+        386.0,
+        779.0,
+        681.0,
+        830.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, Equations A5.14b,c can be generalized to noncentral $ \\chi^{2} $ random variables as follows. Suppose $ x_{i} \\sim \\mathrm{N}(\\mu_{i}, \\sigma^{2}) $, then",
+      "source_page": 891,
+      "printed_page": 871,
+      "source_block_ids": [
+        "p891:b7"
+      ],
+      "bbox": [
+        53.0,
+        844.0,
+        1011.0,
+        922.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula303]]",
+      "source_page": 891,
+      "printed_page": 871,
+      "source_block_ids": [
+        "p891:b8"
+      ],
+      "bbox": [
+        264.0,
+        940.0,
+        796.0,
+        1034.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "and",
+      "source_page": 891,
+      "printed_page": 871,
+      "source_block_ids": [
+        "p891:b10"
+      ],
+      "bbox": [
+        50.0,
+        1049.0,
+        106.0,
+        1078.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula304]]",
+      "source_page": 891,
+      "printed_page": 871,
+      "source_block_ids": [
+        "p891:b11"
+      ],
+      "bbox": [
+        144.0,
+        1070.0,
+        808.0,
+        1168.0
       ]
     }
   ]

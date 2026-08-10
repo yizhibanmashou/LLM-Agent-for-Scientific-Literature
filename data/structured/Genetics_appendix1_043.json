@@ -4,15 +4,15 @@
     "chapter": "Genetics_appendix1",
     "section": "ITERATIVE METHODS FOR SOLVING ML EQUATIONS",
     "subsections": [
-      "Expectation-maximization (EM) Methods"
+      "EM for Mixture Model Likelihoods"
     ],
     "section_level_1": "ITERATIVE METHODS FOR SOLVING ML EQUATIONS",
-    "section_level_2": "Expectation-maximization (EM) Methods",
+    "section_level_2": "EM for Mixture Model Likelihoods",
     "heading_path": [
       "ITERATIVE METHODS FOR SOLVING ML EQUATIONS",
-      "Expectation-maximization (EM) Methods"
+      "EM for Mixture Model Likelihoods"
     ],
-    "display_heading": "ITERATIVE METHODS FOR SOLVING ML EQUATIONS / Expectation-maximization (EM) Methods",
+    "display_heading": "ITERATIVE METHODS FOR SOLVING ML EQUATIONS / EM for Mixture Model Likelihoods",
     "source_file": "",
     "source_pdf": "data/背景资料/Genetics.pdf",
     "source_title": "Genetics and Analysis of Quantitative Traits",
@@ -24,46 +24,333 @@
       "source_page": 875,
       "printed_page": 855,
       "source_block_ids": [
-        "p875:b2"
+        "p875:b5"
       ],
       "bbox": [
-        64.0,
-        135.0,
-        578.0,
-        167.0
+        61.0,
+        1193.0,
+        503.0,
+        1225.0
       ],
-      "raw_text": "Expectation-maximization (EM) Methods"
+      "raw_text": "EM for Mixture Model Likelihoods"
     }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Newton-Raphson and related methods require the first and second derivatives of the likelihood function, which can be difficult to obtain and/or computationally demanding (e.g., requiring the repeated inversion of large matrices). An alternative strategy is to use expectation-maximization (EM) methods, which were introduced by Dempster et al. (1977) as a very general iterative approach for data sets with missing (or incomplete) data. The idea is that, in many cases, if we had more information about certain observations, MLEs are easily obtained. For example, if observations are drawn from a mixture distribution (Chapter 13), obtaining the MLEs for the means and variances of the underlying distributions is trivial provided we know from which distribution each individual observation is drawn. Thus the original data set is treated as incomplete data, missing additional information (e.g., for a mixture model, which distribution a specific observation is drawn from). Using a current estimate of the unknown parameter values, the expected value of the incomplete data is computed (e.g., for a mixture model, the category identity of each individual is estimated). This is the expectation, or E step. The result is a set of likelihood equations that are considerably easier to solve than the full likelihood (the maximization, or M step). The new estimates obtained from the M step are then used to update the expected values, and this approach is iterated until convergence. The EM method refers to a general class of approaches, and there can be several EM versions for solving the same problem.",
+      "content": "Mixture models naturally appear in a number of quantitative-genetic settings, wherein the observed distribution is really a weighted sum of a number of underlying distributions. For example, when a major diallelic locus is segregating in a population, the phenotypic distribution is a weighted sum of the three distributions representing each major locus genotype (Chapter 13). The general likelihood function for a single observation z from the kinds of mixture models considered in this book has the form",
       "source_page": 875,
       "printed_page": 855,
       "source_block_ids": [
-        "p875:b3"
+        "p875:b6",
+        "p876:b2"
       ],
       "bbox": [
-        62.0,
-        175.0,
-        1024.0,
-        818.0
+        59.0,
+        1236.0,
+        1021.0,
+        1430.0
+      ],
+      "source_page_end": 876
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula240]]",
+      "source_page": 876,
+      "printed_page": 856,
+      "source_block_ids": [
+        "p876:b3"
+      ],
+      "bbox": [
+        442.0,
+        182.0,
+        798.0,
+        269.0
       ]
     },
     {
       "type": "discussion",
-      "content": "While EM methods often have fairly simple forms and hence are easy to program, they can be extremely slow to converge to a solution. EM methods offer computational advantages over Newton-Raphson methods, as they do not have to compute second derivatives of the likelihood function and they do not directly evaluate the full likelihood function. However, this is a disadvantage in terms of constructing confidence intervals and LR tests, as other approaches must be used to obtain the standard errors of the MLEs and to compute the likelihoods needed for LR tests. Chapter 27 discusses an EM method for computing unknown variance components in linear models, while our focus here is on the other broad class of likelihood models used throughout this book, mixture models (introduced in Chapter 13).",
-      "source_page": 875,
-      "printed_page": 855,
+      "content": "where the distribution is assumed to result from $N$ underlying normals, the $k$th of which has frequency $\\pi_k$, mean $\\mu_k$, and common variance $\\sigma^2$. We assume that the number $N$ of underlying distributions is known and wish to estimate the $2N \\times 1$ vector $\\Theta$ of the $N$ means, the common variance, and the $N-1$ independent mixing proportions (the $\\pi_k$). With $n$ individuals independently drawn from this distribution, the full likelihood is",
+      "source_page": 876,
+      "printed_page": 856,
       "source_block_ids": [
-        "p875:b4"
+        "p876:b5"
       ],
       "bbox": [
-        60.0,
-        816.0,
-        1022.0,
-        1167.0
+        142.0,
+        286.0,
+        1101.0,
+        479.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula241]]",
+      "source_page": 876,
+      "printed_page": 856,
+      "source_block_ids": [
+        "p876:b6"
+      ],
+      "bbox": [
+        486.0,
+        495.0,
+        755.0,
+        577.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "While appearing rather simple, the full likelihood function is complicated to work with analytically, and numerical approaches are usually employed.",
+      "source_page": 876,
+      "printed_page": 856,
+      "source_block_ids": [
+        "p876:b8"
+      ],
+      "bbox": [
+        143.0,
+        593.0,
+        1100.0,
+        657.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "When we observe a particular value, we don’t know which underlying distribution (or category) it was drawn from. If we knew the category identity for each observation, the ML solutions for the mean and variance of the underlying distributions are easily computed. For example, if a single diallelic QTL is segregating, if we could determine whether individuals had QTL genotype QQ, Qq, or qq, then the mean for each genotype and the common variance could easily be estimated. This is the basis of the EM method. We start with some initial guess as to the category identity of each observation, which then allows us to easily compute an ML estimate of the means and variance of the underlying distribution. This guess is in the form of a weight vector for each individual, whose k element, $ w(k \\mid z) $, is the probability that an individual has the kth QTL genotype given they have trait value z. Using these mean and variance estimates, updated weights can be computed using Bayes’ theorem (Equation 13.24) for conditional probabilities. Since $ w(k \\mid z) = \\Pr(k \\mid z) $, applying Bayes’ theorem gives",
+      "source_page": 876,
+      "printed_page": 856,
+      "source_block_ids": [
+        "p876:b9"
+      ],
+      "bbox": [
+        143.0,
+        659.0,
+        1102.0,
+        1109.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula242]]",
+      "source_page": 876,
+      "printed_page": 856,
+      "source_block_ids": [
+        "p876:b10"
+      ],
+      "bbox": [
+        177.0,
+        1121.0,
+        978.0,
+        1248.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "These updated weights are then used to obtain new estimates of the category-specific means and the variance, and this procedure is repeated until convergence. Formally, this EM approach proceeds as follows (Aitkin and Wilson 1980):",
+      "source_page": 876,
+      "printed_page": 856,
+      "source_block_ids": [
+        "p876:b12"
+      ],
+      "bbox": [
+        144.0,
+        1269.0,
+        1100.0,
+        1370.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "(1) Initial step. Choose initial starting values for the MLEs of the variance $ \\widehat{\\sigma}^{2}(0) $ and the vectors of mixture proportions and means,",
+      "source_page": 876,
+      "printed_page": 856,
+      "source_block_ids": [
+        "p876:b13"
+      ],
+      "bbox": [
+        144.0,
+        1410.0,
+        1101.0,
+        1479.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula243]]",
+      "source_page": 876,
+      "printed_page": 856,
+      "source_block_ids": [
+        "p876:b14"
+      ],
+      "bbox": [
+        277.0,
+        1494.0,
+        881.0,
+        1539.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "(2) E-step. Define the weight $ w^{(1)}(k \\mid z_i) $ as the probability that observation $ z_i $ is drawn from distribution $ k $ given the current estimates $ \\widehat{\\sigma}^{2(0)} $, $ \\widehat{\\pi}^{(0)} $, and $ \\widehat{\\mu}^{(0)} $. From Bayes' theorem,",
+      "source_page": 877,
+      "printed_page": 857,
+      "source_block_ids": [
+        "p877:b2"
+      ],
+      "bbox": [
+        56.0,
+        148.0,
+        1014.0,
+        253.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula244]]",
+      "source_page": 877,
+      "printed_page": 857,
+      "source_block_ids": [
+        "p877:b3"
+      ],
+      "bbox": [
+        294.0,
+        266.0,
+        776.0,
+        398.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where $ \\varphi(z_i, \\widehat{\\mu}_k^{(0)}, \\widehat{\\sigma}^{2(0)}) $ is the normal distribution evaluated at the value $ z_i $ using mean $ \\widehat{\\mu}_k^{(0)} $ and variance $ \\widehat{\\sigma}^{2(0)} $.",
+      "source_page": 877,
+      "printed_page": 857,
+      "source_block_ids": [
+        "p877:b5"
+      ],
+      "bbox": [
+        58.0,
+        420.0,
+        1015.0,
+        499.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "(3) M-step. Assuming these weights are correct, the updated estimates of the MLEs are obtained as follows:",
+      "source_page": 877,
+      "printed_page": 857,
+      "source_block_ids": [
+        "p877:b6"
+      ],
+      "bbox": [
+        56.0,
+        542.0,
+        1016.0,
+        609.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "(a) Mixing proportions: Given by the average probability of being in category $ k $,",
+      "source_page": 877,
+      "printed_page": 857,
+      "source_block_ids": [
+        "p877:b7"
+      ],
+      "bbox": [
+        56.0,
+        632.0,
+        1016.0,
+        699.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula245]]",
+      "source_page": 877,
+      "printed_page": 857,
+      "source_block_ids": [
+        "p877:b8"
+      ],
+      "bbox": [
+        345.0,
+        698.0,
+        726.0,
+        778.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "(b) Means: Given by the weighted average of the observations,",
+      "source_page": 877,
+      "printed_page": 857,
+      "source_block_ids": [
+        "p877:b10"
+      ],
+      "bbox": [
+        112.0,
+        799.0,
+        907.0,
+        835.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula246]]",
+      "source_page": 877,
+      "printed_page": 857,
+      "source_block_ids": [
+        "p877:b11"
+      ],
+      "bbox": [
+        349.0,
+        850.0,
+        717.0,
+        936.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "(c) Variance: Given by the weighted variance of the observations,",
+      "source_page": 877,
+      "printed_page": 857,
+      "source_block_ids": [
+        "p877:b13"
+      ],
+      "bbox": [
+        110.0,
+        947.0,
+        927.0,
+        983.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula247]]",
+      "source_page": 877,
+      "printed_page": 857,
+      "source_block_ids": [
+        "p877:b14"
+      ],
+      "bbox": [
+        281.0,
+        1000.0,
+        787.0,
+        1085.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "These updated estimates are then used to compute new weights, and the whole procedure continues until the iterations converge.",
+      "source_page": 877,
+      "printed_page": 857,
+      "source_block_ids": [
+        "p877:b16"
+      ],
+      "bbox": [
+        55.0,
+        1098.0,
+        1014.0,
+        1166.0
       ]
     }
   ]

@@ -4,15 +4,15 @@
     "chapter": "Genetics_chapter18",
     "section": "FULL-SIB ANALYSIS",
     "subsections": [
-      "Hypothesis Testing"
+      "Sampling Error"
     ],
     "section_level_1": "FULL-SIB ANALYSIS",
-    "section_level_2": "Hypothesis Testing",
+    "section_level_2": "Sampling Error",
     "heading_path": [
       "FULL-SIB ANALYSIS",
-      "Hypothesis Testing"
+      "Sampling Error"
     ],
-    "display_heading": "FULL-SIB ANALYSIS / Hypothesis Testing",
+    "display_heading": "FULL-SIB ANALYSIS / Sampling Error",
     "source_file": "",
     "source_pdf": "data/背景资料/Genetics.pdf",
     "source_title": "Genetics and Analysis of Quantitative Traits",
@@ -21,263 +21,184 @@
       "remote_llm_calls": 0
     },
     "heading_source": {
-      "source_page": 588,
-      "printed_page": 568,
+      "source_page": 590,
+      "printed_page": 570,
       "source_block_ids": [
-        "p588:b8"
+        "p590:b8"
       ],
       "bbox": [
-        156.0,
-        1390.0,
-        404.0,
-        1428.0
+        143.0,
+        962.0,
+        342.0,
+        997.0
       ],
-      "raw_text": "Hypothesis Testing"
+      "raw_text": "Sampling Error"
     }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Under the assumption of normality and balanced design, standard $F$ ratios can be used to test for significant variation associated with sires and dams. In each case, the numerator of the $F$ ratio is the observed mean square at the level containing the factor of interest, and the denominator is the observed mean square at the next lower level (which incorporates all factors except the one of interest). The test statistic for evaluating whether there is significant variance associated with sires is the $F$ ratio $MS_s/MS_d$, since under the null hypothesis of $\\sigma_s^2 = 0$, the expected value of the numerator is equal to that of the denominator (see Table 18.3). Similarly, the test statistic for significant dam effects is the ratio $MS_d/MS_e$, as the expected value of the numerator is again equal to that of the denominator under the null hypothesis of $\\sigma_d^2 = 0$ (Table 18.3).",
-      "source_page": 588,
-      "printed_page": 568,
+      "content": "Under a balanced design (with N sires, M dams per sire, and n progeny per dam), the large-sample variance for $ t_{PHS} $ and $ t_{FS} $ can be obtained from formulae provided by Osborne and Paterson (1952),",
+      "source_page": 590,
+      "printed_page": 570,
       "source_block_ids": [
-        "p588:b9",
-        "p589:b2"
+        "p590:b9"
       ],
       "bbox": [
-        155.0,
-        1416.0,
-        1118.0,
-        1564.0
-      ],
-      "source_page_end": 589
-    },
-    {
-      "type": "discussion",
-      "content": "With unbalanced designs, hypothesis testing with F ratios becomes more difficult under the nested model. If the data are normally distributed, the logic developed above tells us that",
-      "source_page": 589,
-      "printed_page": 569,
-      "source_block_ids": [
-        "p589:b3"
-      ],
-      "bbox": [
-        73.0,
-        344.0,
-        1033.0,
-        457.0
+        143.0,
+        991.0,
+        1101.0,
+        1107.0
       ]
     },
     {
       "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter18_formula061]]",
-      "source_page": 589,
-      "printed_page": 569,
+      "content": "[[FORMULA:Genetics_chapter18_formula067]]",
+      "source_page": 590,
+      "printed_page": 570,
       "source_block_ids": [
-        "p589:b4"
+        "p590:b10"
       ],
       "bbox": [
-        398.0,
-        468.0,
-        704.0,
-        541.0
+        154.0,
+        1122.0,
+        971.0,
+        1276.0
       ]
     },
     {
       "type": "discussion",
-      "content": "can still be employed as a test for significant dam effects, since the numerator and denominator have identical expectations under the null hypothesis of $ \\sigma_d^2 = 0 $. However, since the coefficients ( $ k_1 $ and $ k_2 $) associated with $ \\sigma_d^2 $ in the mean squares associated with dams and sires are unequal in an unbalanced design (Table 18.3), the numerator and denominator of MS_s/MS_d no longer have equal expectations under the null hypothesis $ \\sigma_s^2 = 0 $. Nevertheless, a linear function of the mean squares can be constructed for the numerator that does fulfill this requirement, leading to the test statistic",
-      "source_page": 589,
-      "printed_page": 569,
+      "content": "[[FORMULA:Genetics_chapter18_formula068]]",
+      "source_page": 590,
+      "printed_page": 570,
       "source_block_ids": [
-        "p589:b6"
+        "p590:b12"
+      ],
+      "bbox": [
+        174.0,
+        1289.0,
+        991.0,
+        1443.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where $ t' = t_{\\mathrm{FS}} - t_{\\mathrm{PHS}} $, and $ \\phi = 1 - t_{\\mathrm{FS}} + nt' $. The standard error of $ h^2 = 4t_{\\mathrm{PHS}} $ is $ 4\\sqrt{\\mathrm{Var}(t_{\\mathrm{PHS}})} $.",
+      "source_page": 590,
+      "printed_page": 570,
+      "source_block_ids": [
+        "p590:b14"
+      ],
+      "bbox": [
+        152.0,
+        1458.0,
+        1109.0,
+        1545.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "A more general procedure for estimating $ \\operatorname{Var}(t_{\\mathrm{PHS}}) $, which allows for unbalanced designs, is to use the large-sample estimator for the variance of a ratio given in Appendix 1. Such a computation requires estimates of the sampling variances and covariances of $ \\operatorname{Var}(s) $, $ \\operatorname{Var}(d) $, and $ \\operatorname{Var}(e) $, expressions for which are given in Hammond and Nicholas (1972) and Searle et al. (1992). If one is willing to assume normality and to ignore the sampling variance of $ \\operatorname{Var}(z) $ and the sampling covariance between $ \\operatorname{Var}(z) $, $ \\operatorname{Var}(s) $, and $ \\operatorname{Var}(d) $, some fairly simple and conservative (upwardly biased) estimates are possible,",
+      "source_page": 591,
+      "printed_page": 571,
+      "source_block_ids": [
+        "p591:b2"
+      ],
+      "bbox": [
+        77.0,
+        120.0,
+        1041.0,
+        394.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter18_formula069]]",
+      "source_page": 591,
+      "printed_page": 571,
+      "source_block_ids": [
+        "p591:b3"
+      ],
+      "bbox": [
+        90.0,
+        408.0,
+        907.0,
+        495.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter18_formula070]]",
+      "source_page": 591,
+      "printed_page": 571,
+      "source_block_ids": [
+        "p591:b5"
+      ],
+      "bbox": [
+        103.0,
+        507.0,
+        824.0,
+        591.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "with",
+      "source_page": 591,
+      "printed_page": 571,
+      "source_block_ids": [
+        "p591:b7"
+      ],
+      "bbox": [
+        70.0,
+        607.0,
+        135.0,
+        638.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter18_formula071]]",
+      "source_page": 591,
+      "printed_page": 571,
+      "source_block_ids": [
+        "p591:b8"
+      ],
+      "bbox": [
+        285.0,
+        637.0,
+        807.0,
+        715.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "and $ k_{1}, k_{2}, $ and $ k_{3} $ as defined in Table 18.3 (Dickerson 1969).",
+      "source_page": 591,
+      "printed_page": 571,
+      "source_block_ids": [
+        "p591:b9"
       ],
       "bbox": [
         67.0,
-        548.0,
-        1026.0,
-        820.0
+        716.0,
+        779.0,
+        761.0
       ]
     },
     {
       "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter18_formula062]]",
-      "source_page": 589,
-      "printed_page": 569,
+      "content": "Graybill et al. (1956), Broemeling (1969), and Graybill and Wang (1979) provide expressions for the confidence limits of $ t_{PHS} $ and $ t_{FS} $ for the special case of a balanced design with normally distributed effects. These expressions are not necessarily very robust to violations of the assumptions of balance and normality.",
+      "source_page": 591,
+      "printed_page": 571,
       "source_block_ids": [
-        "p589:b7"
+        "p591:b10"
       ],
       "bbox": [
-        323.0,
-        829.0,
-        761.0,
-        907.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "The main problem with this test statistic is the unknown degrees of freedom for the numerator, r. A general solution to this problem was developed by Satterthwaite (1946). Consider a linear function of m observed mean squares",
-      "source_page": 589,
-      "printed_page": 569,
-      "source_block_ids": [
-        "p589:b9"
-      ],
-      "bbox": [
-        60.0,
-        910.0,
-        1022.0,
-        1028.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter18_formula063]]",
-      "source_page": 589,
-      "printed_page": 569,
-      "source_block_ids": [
-        "p589:b10"
-      ],
-      "bbox": [
-        318.0,
-        1035.0,
-        758.0,
-        1077.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "Satterthwaite showed that $ rQ/E(Q) $ is approximately $ \\chi^{2} $-distributed with degrees of freedom equal to",
-      "source_page": 589,
-      "printed_page": 569,
-      "source_block_ids": [
-        "p589:b12"
-      ],
-      "bbox": [
-        59.0,
-        1086.0,
-        1018.0,
-        1165.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter18_formula064]]",
-      "source_page": 589,
-      "printed_page": 569,
-      "source_block_ids": [
-        "p589:b13"
-      ],
-      "bbox": [
-        426.0,
-        1156.0,
-        642.0,
-        1278.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "Thus, for example, for the numerator of Equation 18.34b, the degrees of freedom is estimated by",
-      "source_page": 589,
-      "printed_page": 569,
-      "source_block_ids": [
-        "p589:b15"
-      ],
-      "bbox": [
-        54.0,
-        1279.0,
-        1012.0,
-        1363.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter18_formula065]]",
-      "source_page": 589,
-      "printed_page": 569,
-      "source_block_ids": [
-        "p589:b16"
-      ],
-      "bbox": [
-        366.0,
-        1349.0,
-        693.0,
-        1461.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "where $ c_s = k_1/k_2 $, $ c_e = (k_2 - k_1)/k_2 $, and $ Q = c_s \\text{MS}_s + c_e \\text{MS}_e $. This estimate of $ r $ is really only a first-order approximation, as Satterthwaite’s derivation assumes that the observed mean squares in the function Q are independently distributed, a condition that is not strictly true with an unbalanced design.",
-      "source_page": 589,
-      "printed_page": 569,
-      "source_block_ids": [
-        "p589:b18",
-        "p590:b2"
-      ],
-      "bbox": [
-        49.0,
-        1456.0,
-        1011.0,
-        1543.0
-      ],
-      "source_page_end": 590
-    },
-    {
-      "type": "discussion",
-      "content": "Recalling that the variance associated with sires is an estimate of $ \\sigma_{A}^{2}/4 $, the $ F $ ratio defined by Equation 18.34b with the numerator degrees of freedom defined by Equation 18.35c provides a test for significant additive genetic variance. Provided that both the sire and dam components of variance are significant, the next question is whether the latter is significantly greater than the former. From Equation 18.31b, it can be seen that a test of the null hypothesis $ \\sigma_{s}^{2} = \\sigma_{d}^{2} $ is equivalent to a test for no significant dominance and/or common-environmental effects. This test also requires the construction of a linear function of mean squares whose expectation is equal to the expectation of $ MS_{d} $ under the null hypothesis. The appropriate $ F $ ratio is",
-      "source_page": 590,
-      "printed_page": 570,
-      "source_block_ids": [
-        "p590:b3"
-      ],
-      "bbox": [
-        125.0,
-        184.0,
-        1090.0,
-        530.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter18_formula066]]",
-      "source_page": 590,
-      "printed_page": 570,
-      "source_block_ids": [
-        "p590:b4"
-      ],
-      "bbox": [
-        435.0,
-        539.0,
-        787.0,
-        610.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "where $ c_s = k_1/(k_2 + k_3) $ and $ c_e = (k_2 + k_3 - k_1)/(k_2 + k_3) $. The numerator degrees of freedom is approximated by Equation 18.35c, with $ Q = c_sMS_s + c_eMS_e $.",
-      "source_page": 590,
-      "printed_page": 570,
-      "source_block_ids": [
-        "p590:b6"
-      ],
-      "bbox": [
-        135.0,
-        633.0,
-        1092.0,
-        711.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "Resampling procedures provide an alternative to $F$ ratios for testing for the significance of variance components under the nested design. The jackknife, with deletion around sire families, has been shown to provide a relatively robust approach for testing for significance of the sire component of variance (Arvesen and Schmitz 1970, Knapp and Bridges 1988, Mitchell-Olds and Bergelson 1990). Presumably, the jackknife or the bootstrap can also be used to test the hypothesis that $\\sigma_{s}^{2}=\\sigma_{d}^{2}$, by referring to the sampling distribution of $\\mathrm{Var}(d)-\\mathrm{Var}(s)$.",
-      "source_page": 590,
-      "printed_page": 570,
-      "source_block_ids": [
-        "p590:b7"
-      ],
-      "bbox": [
-        137.0,
-        696.0,
-        1096.0,
-        941.0
+        62.0,
+        747.0,
+        1025.0,
+        899.0
       ]
     }
   ]

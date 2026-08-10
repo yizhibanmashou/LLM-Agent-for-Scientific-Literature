@@ -3,13 +3,16 @@
   "metadata": {
     "chapter": "Genetics_chapter14",
     "section": "GENETIC MAPS",
-    "subsections": [],
-    "section_level_1": "GENETIC MAPS",
-    "section_level_2": null,
-    "heading_path": [
-      "GENETIC MAPS"
+    "subsections": [
+      "Map Distances vs. Recombination Frequencies"
     ],
-    "display_heading": "GENETIC MAPS",
+    "section_level_1": "GENETIC MAPS",
+    "section_level_2": "Map Distances vs. Recombination Frequencies",
+    "heading_path": [
+      "GENETIC MAPS",
+      "Map Distances vs. Recombination Frequencies"
+    ],
+    "display_heading": "GENETIC MAPS / Map Distances vs. Recombination Frequencies",
     "source_file": "",
     "source_pdf": "data/背景资料/Genetics.pdf",
     "source_title": "Genetics and Analysis of Quantitative Traits",
@@ -18,37 +21,277 @@
       "remote_llm_calls": 0
     },
     "heading_source": {
-      "source_page": 407,
-      "printed_page": 387,
+      "source_page": 408,
+      "printed_page": 388,
       "source_block_ids": [
-        "p407:b9"
+        "p408:b3"
       ],
       "bbox": [
-        38.0,
-        1397.0,
-        260.0,
-        1435.0
+        129.0,
+        410.0,
+        711.0,
+        461.0
       ],
-      "raw_text": "GENETIC MAPS"
+      "raw_text": "Map Distances vs. Recombination Frequencies"
     }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Genetic maps show the ordering of loci along a chromosome and the relative distances between them. As detailed throughout the remainder of this chapter, such maps are essential to the localization of QTLs. The lack of genetic markers historically prevented the construction of detailed maps in all but a few well studied species with short generation times. However, as predicted by Botstein et al. (1980), molecular markers have sparked an explosion of genetic maps in humans and economically important plants and animals. The theory for constructing genetic maps is now highly refined, and we only introduce a few important issues here. For more detailed reviews, the reader should consult Bailey (1961), Lalouel (1992), and the excellent text by Ott (1991).",
-      "source_page": 407,
-      "printed_page": 387,
+      "content": "Genetic map construction involves both the ordering of loci and the measurement of distance between them. Ideally, distances should be additive so that when new loci are added to the map, previously obtained distances do not need to be radically adjusted. Unfortunately, recombination frequencies are not additive and hence are inappropriate as distance measures. To illustrate, suppose that three loci are arranged in the order A, B, and C with recombination frequencies $ c_{AB} $, $ c_{AC} $, and $ c_{BC} $. Each recombination frequency is the probability that an odd number of crossovers occurs between the markers, while 1 - c is the probability of an even number (including zero). There are two different ways to get an odd number of crossovers in the interval A-C: an odd number in A-B and an even number in B-C, or an even number in A-B and an odd number in B-C. If there is no interference, so that the presence of a crossover in one region has no effect on the frequency of crossovers in adjacent regions, these probabilities can be related as",
+      "source_page": 408,
+      "printed_page": 388,
       "source_block_ids": [
-        "p407:b10",
-        "p408:b2"
+        "p408:b4"
       ],
       "bbox": [
-        33.0,
-        1461.0,
-        995.0,
-        1557.0
+        130.0,
+        440.0,
+        1099.0,
+        887.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter14_formula001]]",
+      "source_page": 408,
+      "printed_page": 388,
+      "source_block_ids": [
+        "p408:b5"
       ],
-      "source_page_end": 408
+      "bbox": [
+        207.0,
+        886.0,
+        969.0,
+        937.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "This is Trow's formula (Trow 1913). More generally, if the presence of a crossover in one region depresses the probability of a crossover in an adjacent region,",
+      "source_page": 408,
+      "printed_page": 388,
+      "source_block_ids": [
+        "p408:b7"
+      ],
+      "bbox": [
+        144.0,
+        935.0,
+        1104.0,
+        1025.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter14_formula002]]",
+      "source_page": 408,
+      "printed_page": 388,
+      "source_block_ids": [
+        "p408:b8"
+      ],
+      "bbox": [
+        404.0,
+        1027.0,
+        847.0,
+        1071.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where the interference parameter $ \\delta $ ranges from zero if crossovers are independent (no interference) to one if the presence of a crossover in one region completely suppresses crossovers in adjacent regions (complete interference).",
+      "source_page": 408,
+      "printed_page": 388,
+      "source_block_ids": [
+        "p408:b10"
+      ],
+      "bbox": [
+        148.0,
+        1073.0,
+        1108.0,
+        1193.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, in the absence of very strong interference, recombination frequencies can only be considered to be additive if they are small enough that the product $ 2c_{ABC}c_{BC} $ can be ignored. This is not surprising given that the recombination frequency measures only a part of all recombinant events (those that result in an odd number of crossovers). A map distance m, on the other hand, attempts to measure the total number of crossovers (both odd and even) between two markers. This is a naturally additive measure, as the number of crossovers between A and C equals the number of crossovers between A and B plus the number of crossovers between B and C.",
+      "source_page": 408,
+      "printed_page": 388,
+      "source_block_ids": [
+        "p408:b11"
+      ],
+      "bbox": [
+        151.0,
+        1169.0,
+        1118.0,
+        1479.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "A number of mapping functions attempt to predict the number of crossovers (m) from the observed recombination frequency (c). The simplest, derived by Haldane (1919), assumes that crossovers occur randomly and independently over the entire chromosome, i.e., no interference. Let $ p(m, k) $ be the probability of k crossovers between two loci m map units apart. Under the assumptions of this model, Haldane showed that $ p(m, k) $ follows a Poisson distribution, so that the observed fraction of gametes containing an odd number of crossovers is",
+      "source_page": 408,
+      "printed_page": 388,
+      "source_block_ids": [
+        "p408:b12",
+        "p409:b2"
+      ],
+      "bbox": [
+        160.0,
+        1453.0,
+        1120.0,
+        1544.0
+      ],
+      "source_page_end": 409
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter14_formula003]]",
+      "source_page": 409,
+      "printed_page": 389,
+      "source_block_ids": [
+        "p409:b3"
+      ],
+      "bbox": [
+        232.0,
+        301.0,
+        872.0,
+        389.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where m is the expected number of crossovers. Rearranging, we obtain Haldane's mapping function, which yields the (Haldane) map distance m as a function of the observed recombination frequency c,",
+      "source_page": 409,
+      "printed_page": 389,
+      "source_block_ids": [
+        "p409:b5"
+      ],
+      "bbox": [
+        71.0,
+        386.0,
+        1031.0,
+        502.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter14_formula004]]",
+      "source_page": 409,
+      "printed_page": 389,
+      "source_block_ids": [
+        "p409:b6"
+      ],
+      "bbox": [
+        442.0,
+        496.0,
+        653.0,
+        564.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "For small $ c, m \\simeq c $, while for large $ m, c $ approaches $ 1/2 $. Map distance is usually reported in units of Morgans (after T. H. Morgan, who first postulated a chromosomal basis for the existence of linkage groups) or as centiMorgans (cM), where 100 cM = 1 Morgan. For example, a Haldane map distance of 20 cM ( $ m = 0.2 $) corresponds to a recombination frequency of $ c = (1 - e^{-0.2})/2 \\simeq 0.16 $.",
+      "source_page": 409,
+      "printed_page": 389,
+      "source_block_ids": [
+        "p409:b8"
+      ],
+      "bbox": [
+        67.0,
+        556.0,
+        1027.0,
+        735.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Although Haldane’s mapping function is still used frequently, several other functions allow for the possibility of crossover interference in adjacent sites (Bailey 1961, Felsenstein 1979, Karlin 1982, Pascoe and Morton 1987, Ott 1991, Zhao and Speed 1996). For example, geneticists often use Kosambi’s (1944) mapping function, which allows for modest interference,",
+      "source_page": 409,
+      "printed_page": 389,
+      "source_block_ids": [
+        "p409:b9"
+      ],
+      "bbox": [
+        62.0,
+        716.0,
+        1025.0,
+        896.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter14_formula005]]",
+      "source_page": 409,
+      "printed_page": 389,
+      "source_block_ids": [
+        "p409:b10"
+      ],
+      "bbox": [
+        414.0,
+        889.0,
+        661.0,
+        961.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Figure 14.6 compares the Haldane and Kosambi mapping functions. For small $ c(<0.15) $, both give $ m \\simeq c $. For large m, both approach $ c = 1/2 $. The appropriateness of a potential mapping function can be assessed by checking if the computed map distances depart significantly from additivity (e.g., Pascoe and Morton 1987).",
+      "source_page": 409,
+      "printed_page": 389,
+      "source_block_ids": [
+        "p409:b12"
+      ],
+      "bbox": [
+        56.0,
+        954.0,
+        1017.0,
+        1103.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "There is no universal relationship between map distance and the actual physical distance between loci (Table 14.3). A centiMorgan can correspond to a span of between ten thousand to a million nucleotide base pairs (10 kb to 1,000 kb), depending on the species. Even within a chromosome, there can be rather dramatic differences. For example, crossovers are often suppressed in particular chromosomal regions (increasing the number of base pairs per cM), such as near the centromere and telomeres (chromosome ends), e.g., True et al. (1996). Further, the rate of recombination is under genetic control with some modifier genes having a general influence throughout the genome and others having a fine-scaled influence on specific chromosomal regions (Brooks 1988). Thus, there may be considerable variation among individuals and among populations in the strength of linkage. The recombination rate can also vary between the sexes. In mammals, for example, females usually have greater map distances than do males. In male Drosophila, crossing-over is generally entirely suppressed.",
+      "source_page": 409,
+      "printed_page": 389,
+      "source_block_ids": [
+        "p409:b13"
+      ],
+      "bbox": [
+        44.0,
+        1083.0,
+        1017.0,
+        1548.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FIGURE:14.6]]",
+      "source_page": 410,
+      "printed_page": 390,
+      "source_block_ids": [
+        "p410:b3"
+      ],
+      "bbox": [
+        180.0,
+        728.0,
+        1047.0,
+        1014.0
+      ]
+    },
+    {
+      "type": "table",
+      "content": "[[TABLE:14.3]]",
+      "source_page": 410,
+      "printed_page": 390,
+      "source_block_ids": [
+        "p410:b5"
+      ],
+      "bbox": [
+        143.0,
+        1079.0,
+        1100.0,
+        1386.0
+      ]
     }
   ]
 }

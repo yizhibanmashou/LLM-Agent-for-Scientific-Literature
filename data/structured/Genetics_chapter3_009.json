@@ -2,17 +2,14 @@
   "id": "Genetics_chapter3_009",
   "metadata": {
     "chapter": "Genetics_chapter3",
-    "section": "REGRESSION",
-    "subsections": [
-      "Properties of Least-squares Regressions"
-    ],
-    "section_level_1": "REGRESSION",
-    "section_level_2": "Properties of Least-squares Regressions",
+    "section": "CORRELATION",
+    "subsections": [],
+    "section_level_1": "CORRELATION",
+    "section_level_2": null,
     "heading_path": [
-      "REGRESSION",
-      "Properties of Least-squares Regressions"
+      "CORRELATION"
     ],
-    "display_heading": "REGRESSION / Properties of Least-squares Regressions",
+    "display_heading": "CORRELATION",
     "source_file": "",
     "source_pdf": "data/背景资料/Genetics.pdf",
     "source_title": "Genetics and Analysis of Quantitative Traits",
@@ -21,216 +18,221 @@
       "remote_llm_calls": 0
     },
     "heading_source": {
-      "source_page": 57,
-      "printed_page": 37,
+      "source_page": 59,
+      "printed_page": 39,
       "source_block_ids": [
-        "p57:b10"
+        "p59:b11"
       ],
       "bbox": [
-        53.0,
-        675.0,
-        549.0,
-        719.0
+        42.0,
+        1281.0,
+        255.0,
+        1315.0
       ],
-      "raw_text": "Properties of Least-squares Regressions"
+      "raw_text": "CORRELATION"
     }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Here we summarize some fundamental features and useful properties of the least-squares approach to linear regression analysis:",
-      "source_page": 57,
-      "printed_page": 37,
+      "content": "For purposes of hypothesis testing, it is often desirable to use a dimensionless measure of association. The most frequently used measure in bivariate analysis is the correlation coefficient,",
+      "source_page": 59,
+      "printed_page": 39,
       "source_block_ids": [
-        "p57:b11"
+        "p59:b12"
       ],
       "bbox": [
-        52.0,
-        717.0,
-        1010.0,
-        804.0
+        38.0,
+        1345.0,
+        998.0,
+        1457.0
       ]
     },
     {
       "type": "discussion",
-      "content": "1. The regression line passes through the means of both $x$ and $y$. This relationship should be immediately apparent from Equation 3.14a, which implies $\\overline{y} = a + b\\overline{x}$.",
-      "source_page": 57,
-      "printed_page": 37,
+      "content": "[[FORMULA:Genetics_chapter3_formula032]]",
+      "source_page": 59,
+      "printed_page": 39,
       "source_block_ids": [
-        "p57:b12"
+        "p59:b13"
       ],
       "bbox": [
-        64.0,
-        795.0,
+        352.0,
+        1479.0,
+        673.0,
+        1558.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Note that $ r(x,y) $ is symmetrical, i.e., $ r(x,y) = r(y,x) $. Thus, where there is no ambiguity as to the variables being considered, we abbreviate $ r(x,y) $ as $ r $. The parametric correlation coefficient is denoted by $ \\rho(x,y) $ (or $ \\rho $) and equals $ \\sigma(x,y)/\\sigma(x)\\sigma(y) $. The least-squares regression coefficient is related to the correlation coefficient by",
+      "source_page": 60,
+      "printed_page": 40,
+      "source_block_ids": [
+        "p60:b2"
+      ],
+      "bbox": [
+        132.0,
+        119.0,
+        1094.0,
+        302.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter3_formula033]]",
+      "source_page": 60,
+      "printed_page": 40,
+      "source_block_ids": [
+        "p60:b3"
+      ],
+      "bbox": [
+        492.0,
+        290.0,
+        740.0,
+        378.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "An advantage of correlations over covariances is that the former are scale independent. This can be seen by noting that if w and c are constants,",
+      "source_page": 60,
+      "printed_page": 40,
+      "source_block_ids": [
+        "p60:b5"
+      ],
+      "bbox": [
+        142.0,
+        379.0,
+        1098.0,
+        463.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter3_formula034]]",
+      "source_page": 60,
+      "printed_page": 40,
+      "source_block_ids": [
+        "p60:b6"
+      ],
+      "bbox": [
+        179.0,
+        471.0,
+        983.0,
+        557.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Thus scaling $x$ and $y$ by constants does not change the correlation coefficient, although the variances and covariances are affected. Since $r$ is dimensionless with limits of $\\pm1$, it gives a direct measure of the degree of association: if $|r|$ is close to one, $x$ and $y$ are very strongly associated in a linear fashion, while if $|r|$ is close to zero, they are not.",
+      "source_page": 60,
+      "printed_page": 40,
+      "source_block_ids": [
+        "p60:b8"
+      ],
+      "bbox": [
+        145.0,
+        563.0,
+        1106.0,
+        740.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "The correlation coefficient has other useful properties. First, $r$ is a standardized regression coefficient (the regression coefficient resulting from rescaling $x$ and $y$ such that each has unit variance). Letting $x' = x / \\sqrt{\\mathrm{Var}(x)}$ and $y' = y / \\sqrt{\\mathrm{Var}(y)}$ gives $\\mathrm{Var}(x') = \\mathrm{Var}(y') = 1$, implying",
+      "source_page": 60,
+      "printed_page": 40,
+      "source_block_ids": [
+        "p60:b9"
+      ],
+      "bbox": [
+        149.0,
+        725.0,
+        1108.0,
+        874.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter3_formula035]]",
+      "source_page": 60,
+      "printed_page": 40,
+      "source_block_ids": [
+        "p60:b10"
+      ],
+      "bbox": [
+        258.0,
+        883.0,
+        923.0,
+        966.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, when variables are standardized, the regression coefficient is equal to the correlation coefficient regardless of whether $ x' $ or $ y' $ is chosen as the predictor variable.",
+      "source_page": 60,
+      "printed_page": 40,
+      "source_block_ids": [
+        "p60:b12"
+      ],
+      "bbox": [
+        154.0,
         977.0,
-        914.0
+        1113.0,
+        1084.0
       ]
     },
     {
       "type": "discussion",
-      "content": "2. The average value of the residual is zero. From Equation 3.13a, the mean residual is $ \\overline{e} = \\overline{y} - a - b\\overline{x} $, which is constrained to be zero by Equation 3.14a. Thus, the least-squares procedure results in a fit to the data such that the sum of (vertical) deviations above and below the regression line are exactly equal.",
-      "source_page": 57,
-      "printed_page": 37,
+      "content": "Second, the squared correlation coefficient measures the proportion of the variance in y that is explained by assuming that $ E(y|x) $ is linear. The variance of the response variable y has two components: $ r^{2} $ Var(y), the amount of variance accounted for by the linear model (the regression variance), and $ (1 - r^{2}) $ Var(y), the remaining variance not accountable by the regression (the residual variance). To obtain this result, we derive the variance of the residual deviation defined in Equation 3.13a,",
+      "source_page": 60,
+      "printed_page": 40,
       "source_block_ids": [
-        "p57:b13"
+        "p60:b13"
       ],
       "bbox": [
-        61.0,
-        903.0,
-        975.0,
-        1088.0
+        155.0,
+        1073.0,
+        1117.0,
+        1280.0
       ]
     },
     {
       "type": "discussion",
-      "content": "3. For any set of paired data, the least-squares regression parameters, a and b, define the straight line that maximizes the amount of variation in y that can be explained by a linear regression on x. Since $ \\overline{e} = 0 $, it follows that the variance of residual errors about the regression is simply $ \\overline{e^2} $. As noted above, this variance is the quantity minimized by the least-squares procedure.",
-      "source_page": 57,
-      "printed_page": 37,
+      "content": "[[FORMULA:Genetics_chapter3_formula036]]",
+      "source_page": 60,
+      "printed_page": 40,
       "source_block_ids": [
-        "p57:b14"
+        "p60:b14"
       ],
       "bbox": [
-        57.0,
-        1077.0,
-        970.0,
-        1264.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "4. The residual errors around the least-squares regression are uncorrelated with the predictor variable x. This statement follows since",
-      "source_page": 57,
-      "printed_page": 37,
-      "source_block_ids": [
-        "p57:b15"
-      ],
-      "bbox": [
-        54.0,
-        1253.0,
-        964.0,
-        1337.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter3_formula030]]",
-      "source_page": 57,
-      "printed_page": 37,
-      "source_block_ids": [
-        "p57:b16"
-      ],
-      "bbox": [
-        105.0,
-        1330.0,
-        957.0,
-        1502.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FIGURE:3.3]]",
-      "source_page": 58,
-      "printed_page": 38,
-      "source_block_ids": [
-        "p58:b4"
-      ],
-      "bbox": [
-        191.0,
-        543.0,
-        1058.0,
-        710.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "Note, however, that $ \\text{Cov}(x, e) = 0 $ does not guarantee that $ e $ and $ x $ are independent. In Figure 3.3, for example, because of a nonlinear relationship between $ y $ and $ x $, the residual errors associated with extreme values of $ x $ tend to be negative while those for intermediate values are positive. Thus, if the true regression is nonlinear, then $ E(e \\mid x) \\neq 0 $ for some $ x $ values, and the predictive power of the linear model is compromised. Even if the true regression is linear, the variance of the residual errors may vary with $ x $, in which case the regression is said to display heteroscedasticity (Figure 3.4). If the conditional variance of the residual errors given any specified $ x $ value, $ \\sigma^2(e \\mid x) $, is a constant (i.e., independent of the value of $ x $), then the regression is said to be homoscedastic.",
-      "source_page": 58,
-      "printed_page": 38,
-      "source_block_ids": [
-        "p58:b5"
-      ],
-      "bbox": [
-        209.0,
-        733.0,
-        1082.0,
-        1101.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "5. There is an important situation in which the true regression, the value of $ E(y \\mid x) $, is both linear and homoscedastic — when x are y are bivariate normally distributed. The requirements for such a distribution are that the univariate distributions of both x and y are normal and that the conditional distributions of y given x, and x given y, are also normal (Chapter 8). Since statistical testing is simplified enormously, it is generally desirable to work with normally distributed data. For situations in which the raw data are not so distributed, a variety of transformations exist that can render the data close to normality (Chapter 11).",
-      "source_page": 58,
-      "printed_page": 38,
-      "source_block_ids": [
-        "p58:b6"
-      ],
-      "bbox": [
-        173.0,
-        1099.0,
-        1090.0,
-        1405.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "6. It is clear from Equations 3.14a,b that the regression of y on x is different from the regression of x on y unless the means and variances of the two variables are equal. This distinction is made by denoting the regression coefficient by $ b(y, x) $ or $ b_{y,x} $ when x is the predictor and y the response variable.",
-      "source_page": 58,
-      "printed_page": 38,
-      "source_block_ids": [
-        "p58:b7"
-      ],
-      "bbox": [
-        180.0,
-        1399.0,
-        1095.0,
-        1547.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FIGURE:3.4]]",
-      "source_page": 59,
-      "printed_page": 39,
-      "source_block_ids": [
-        "p59:b5"
-      ],
-      "bbox": [
-        106.0,
-        453.0,
-        970.0,
-        591.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "For practical reasons, we have expressed properties 1 – 6 in terms of the estimators $a$, $b$, $\\operatorname{Cov}(x,y)$, and $\\operatorname{Var}(x)$. They also hold when the estimators are replaced by the true parameters $\\alpha$, $\\beta$, $\\sigma(x,y)$, and $\\sigma^{2}(x)$.",
-      "source_page": 59,
-      "printed_page": 39,
-      "source_block_ids": [
-        "p59:b6"
-      ],
-      "bbox": [
-        53.0,
-        670.0,
-        1011.0,
-        787.0
+        306.0,
+        1289.0,
+        976.0,
+        1548.0
       ]
     },
     {
       "type": "example",
-      "content": "[[EXAMPLE:Genetics_chapter3:1]]",
-      "source_page": 59,
+      "content": "[[EXAMPLE:Genetics_chapter3:2]]",
+      "source_page": 61,
       "source_block_ids": [
-        "p59:b7",
-        "p59:b8",
-        "p59:b9",
-        "p59:b10"
+        "p61:b2",
+        "p61:b3",
+        "p61:b4",
+        "p61:b5",
+        "p61:b6",
+        "p61:b7",
+        "p61:b8",
+        "p61:b9",
+        "p61:b10"
       ],
       "bbox": [
-        96.0,
-        868.0,
-        958.0,
-        945.0
+        103.0,
+        198.0,
+        975.0,
+        488.0
       ]
     }
   ]

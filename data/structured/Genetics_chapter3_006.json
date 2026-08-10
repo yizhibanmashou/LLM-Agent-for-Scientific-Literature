@@ -2,17 +2,14 @@
   "id": "Genetics_chapter3_006",
   "metadata": {
     "chapter": "Genetics_chapter3",
-    "section": "COVARIANCE",
-    "subsections": [
-      "Useful Identities for Variances and Covariances"
-    ],
-    "section_level_1": "COVARIANCE",
-    "section_level_2": "Useful Identities for Variances and Covariances",
+    "section": "REGRESSION",
+    "subsections": [],
+    "section_level_1": "REGRESSION",
+    "section_level_2": null,
     "heading_path": [
-      "COVARIANCE",
-      "Useful Identities for Variances and Covariances"
+      "REGRESSION"
     ],
-    "display_heading": "COVARIANCE / Useful Identities for Variances and Covariances",
+    "display_heading": "REGRESSION",
     "source_file": "",
     "source_pdf": "data/背景资料/Genetics.pdf",
     "source_title": "Genetics and Analysis of Quantitative Traits",
@@ -21,319 +18,109 @@
       "remote_llm_calls": 0
     },
     "heading_source": {
-      "source_page": 54,
-      "printed_page": 34,
+      "source_page": 55,
+      "printed_page": 35,
       "source_block_ids": [
-        "p54:b2"
+        "p55:b2"
       ],
       "bbox": [
-        133.0,
-        130.0,
-        726.0,
-        170.0
+        60.0,
+        129.0,
+        252.0,
+        163.0
       ],
-      "raw_text": "Useful Identities for Variances and Covariances"
+      "raw_text": "REGRESSION"
     }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Since $\\sigma(x,y)=\\sigma(y,x)$, covariances are symmetrical. Furthermore, from the definition of the variance and covariance,",
-      "source_page": 54,
-      "printed_page": 34,
+      "content": "Depending on the causal connections between two variables, x and y, their true relationship may be linear or nonlinear. However, regardless of the true pattern of association, a linear model can always serve as a first approximation. In this case, the analysis is particularly simple,",
+      "source_page": 55,
+      "printed_page": 35,
       "source_block_ids": [
-        "p54:b3"
+        "p55:b3"
       ],
       "bbox": [
-        132.0,
-        161.0,
-        1094.0,
-        246.0
+        56.0,
+        192.0,
+        1017.0,
+        342.0
       ]
     },
     {
       "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter3_formula012]]",
-      "source_page": 54,
-      "printed_page": 34,
+      "content": "[[FORMULA:Genetics_chapter3_formula021]]",
+      "source_page": 55,
+      "printed_page": 35,
       "source_block_ids": [
-        "p54:b4"
+        "p55:b4"
       ],
       "bbox": [
-        521.0,
-        258.0,
-        711.0,
-        299.0
+        439.0,
+        341.0,
+        632.0,
+        374.0
       ]
     },
     {
       "type": "discussion",
-      "content": "i.e., the covariance of a variable with itself is the variance of that variable. It also follows from Equation 3.8 that, for any constant a,",
-      "source_page": 54,
-      "printed_page": 34,
+      "content": "where $ \\alpha $ is the y-intercept, $ \\beta $ is the slope of the line (also known as the regression coefficient), and e is the residual error. Letting",
+      "source_page": 55,
+      "printed_page": 35,
       "source_block_ids": [
-        "p54:b6"
+        "p55:b6"
       ],
       "bbox": [
-        138.0,
-        313.0,
-        1098.0,
-        398.0
+        52.0,
+        369.0,
+        1011.0,
+        454.0
       ]
     },
     {
       "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter3_formula013]]",
-      "source_page": 54,
-      "printed_page": 34,
+      "content": "[[FORMULA:Genetics_chapter3_formula022]]",
+      "source_page": 55,
+      "printed_page": 35,
       "source_block_ids": [
-        "p54:b7"
+        "p55:b7"
       ],
       "bbox": [
-        519.0,
-        414.0,
-        659.0,
-        448.0
+        459.0,
+        451.0,
+        604.0,
+        485.0
       ]
     },
     {
       "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter3_formula014]]",
-      "source_page": 54,
-      "printed_page": 34,
+      "content": "be the value of y predicted by the model, then the residual error is the deviation between the observed and predicted y value, i.e., $ e = y - \\hat{y} $. When information on x is used to predict y, x is referred to as the predictor or independent variable and y as the response or dependent variable.",
+      "source_page": 55,
+      "printed_page": 35,
       "source_block_ids": [
-        "p54:b9"
+        "p55:b9"
       ],
       "bbox": [
-        502.0,
-        453.0,
-        739.0,
-        489.0
+        49.0,
+        481.0,
+        1010.0,
+        630.0
       ]
     },
     {
       "type": "discussion",
-      "content": "and if b is also a constant",
-      "source_page": 54,
-      "printed_page": 34,
+      "content": "The objective of linear regression analysis is to estimate the model parameters, $ \\alpha $ and $ \\beta $, that give the “best fit” for the joint distribution of x and y. The true parameters $ \\alpha $ and $ \\beta $ are only obtainable if the entire population is sampled. With an incomplete sample, $ \\alpha $ and $ \\beta $ are approximated by sample estimators, denoted as a and b. Good approximations of $ \\alpha $ and $ \\beta $ are sometimes obtainable by visual inspection of the data, particularly in the physical sciences, where deviations from a simple relationship are due to errors of measurement rather than biological variability. However, in biology many factors are often beyond the investigator’s control. The data in Figure 3.2 provide a good example. While there appears to be a weak positive relationship between maternal weight and offspring number in rats, it is difficult to say anything more precise. An objective definition of “best fit” is required.",
+      "source_page": 55,
+      "printed_page": 35,
       "source_block_ids": [
-        "p54:b11"
+        "p55:b10"
       ],
       "bbox": [
-        145.0,
-        519.0,
-        449.0,
-        554.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter3_formula015]]",
-      "source_page": 54,
-      "printed_page": 34,
-      "source_block_ids": [
-        "p54:b12"
-      ],
-      "bbox": [
-        488.0,
-        571.0,
-        759.0,
-        608.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "From Equations 3.10a and 3.10d,",
-      "source_page": 54,
-      "printed_page": 34,
-      "source_block_ids": [
-        "p54:b14"
-      ],
-      "bbox": [
-        148.0,
-        634.0,
-        541.0,
-        674.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter3_formula016]]",
-      "source_page": 54,
-      "printed_page": 34,
-      "source_block_ids": [
-        "p54:b15"
-      ],
-      "bbox": [
-        516.0,
-        686.0,
-        735.0,
-        726.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "i.e., the variance of the transformed variable $ a x $ is $ a^2 $ times the variance of $ x $. Likewise, for any constant $ a $,",
-      "source_page": 54,
-      "printed_page": 34,
-      "source_block_ids": [
-        "p54:b17"
-      ],
-      "bbox": [
-        149.0,
-        743.0,
-        1106.0,
-        827.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter3_formula017]]",
-      "source_page": 54,
-      "printed_page": 34,
-      "source_block_ids": [
-        "p54:b18"
-      ],
-      "bbox": [
-        492.0,
-        813.0,
-        766.0,
-        853.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "so that simply adding a constant to a variable does not change its covariance with another variable.",
-      "source_page": 54,
-      "printed_page": 34,
-      "source_block_ids": [
-        "p54:b20"
-      ],
-      "bbox": [
-        150.0,
-        855.0,
-        1112.0,
-        936.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "Finally, the covariance of two sums can be written as a sum of covariances,",
-      "source_page": 54,
-      "printed_page": 34,
-      "source_block_ids": [
-        "p54:b21"
-      ],
-      "bbox": [
-        207.0,
-        920.0,
-        1100.0,
-        970.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter3_formula018]]",
-      "source_page": 54,
-      "printed_page": 34,
-      "source_block_ids": [
-        "p54:b22"
-      ],
-      "bbox": [
-        249.0,
-        981.0,
-        937.0,
-        1030.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "Similarly, the variance of a sum can be expressed as the sum of all possible variances and covariances. From Equations 3.10a and 3.10g,",
-      "source_page": 54,
-      "printed_page": 34,
-      "source_block_ids": [
-        "p54:b24"
-      ],
-      "bbox": [
-        156.0,
-        1038.0,
-        1115.0,
-        1121.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter3_formula019]]",
-      "source_page": 54,
-      "printed_page": 34,
-      "source_block_ids": [
-        "p54:b25"
-      ],
-      "bbox": [
-        415.0,
-        1132.0,
-        859.0,
-        1176.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "More generally,",
-      "source_page": 54,
-      "printed_page": 34,
-      "source_block_ids": [
-        "p54:b27"
-      ],
-      "bbox": [
-        161.0,
-        1205.0,
-        355.0,
-        1241.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter3_formula020]]",
-      "source_page": 54,
-      "printed_page": 34,
-      "source_block_ids": [
-        "p54:b28"
-      ],
-      "bbox": [
-        240.0,
-        1254.0,
-        961.0,
-        1351.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "Thus, the variance of a sum of uncorrelated variables is just the sum of the variances of each variable.",
-      "source_page": 54,
-      "printed_page": 34,
-      "source_block_ids": [
-        "p54:b30"
-      ],
-      "bbox": [
-        166.0,
-        1360.0,
-        1125.0,
-        1443.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "We will make considerable use of the preceding relationships in the remainder of this chapter and in chapters to come. Methods for approximating variances and covariances of more complex functions are outlined in Appendix 1.",
-      "source_page": 54,
-      "printed_page": 34,
-      "source_block_ids": [
-        "p54:b31"
-      ],
-      "bbox": [
-        167.0,
-        1422.0,
-        1127.0,
-        1541.0
+        39.0,
+        612.0,
+        1005.0,
+        1015.0
       ]
     }
   ]

@@ -4,15 +4,15 @@
     "chapter": "Genetics_appendix1",
     "section": "QUADRATIC FORMS AND SUMS OF SQUARES",
     "subsections": [
-      "Moments of Quadratic Forms"
+      "The Sample Variance Expressed as a Quadratic Form"
     ],
     "section_level_1": "QUADRATIC FORMS AND SUMS OF SQUARES",
-    "section_level_2": "Moments of Quadratic Forms",
+    "section_level_2": "The Sample Variance Expressed as a Quadratic Form",
     "heading_path": [
       "QUADRATIC FORMS AND SUMS OF SQUARES",
-      "Moments of Quadratic Forms"
+      "The Sample Variance Expressed as a Quadratic Form"
     ],
-    "display_heading": "QUADRATIC FORMS AND SUMS OF SQUARES / Moments of Quadratic Forms",
+    "display_heading": "QUADRATIC FORMS AND SUMS OF SQUARES / The Sample Variance Expressed as a Quadratic Form",
     "source_file": "",
     "source_pdf": "data/背景资料/Genetics.pdf",
     "source_title": "Genetics and Analysis of Quantitative Traits",
@@ -21,79 +21,234 @@
       "remote_llm_calls": 0
     },
     "heading_source": {
-      "source_page": 855,
-      "printed_page": 835,
+      "source_page": 856,
+      "printed_page": 836,
       "source_block_ids": [
-        "p855:b6"
+        "p856:b2"
       ],
       "bbox": [
-        57.0,
-        1170.0,
-        428.0,
-        1201.0
+        143.0,
+        137.0,
+        796.0,
+        169.0
       ],
-      "raw_text": "Moments of Quadratic Forms"
+      "raw_text": "The Sample Variance Expressed as a Quadratic Form"
     }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "When x is a vector of random variables, the quadratic form $ x^{T}Ax $ is a scalar random variable. If x has mean $ \\mu $ and (nonsingular) covariance matrix V, Equation 8.22 gives the expected value of this quadratic form as",
-      "source_page": 855,
-      "printed_page": 835,
+      "content": "As an introduction to expressing sums of squares as quadratic forms, consider the sample variance for n observations,",
+      "source_page": 856,
+      "printed_page": 836,
       "source_block_ids": [
-        "p855:b7"
+        "p856:b3"
       ],
       "bbox": [
-        55.0,
-        1211.0,
-        1016.0,
-        1310.0
+        143.0,
+        179.0,
+        1102.0,
+        243.0
       ]
     },
     {
       "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula143]]",
-      "source_page": 855,
-      "printed_page": 835,
+      "content": "[[FORMULA:Genetics_appendix1_formula145]]",
+      "source_page": 856,
+      "printed_page": 836,
       "source_block_ids": [
-        "p855:b8"
+        "p856:b4"
       ],
       "bbox": [
-        357.0,
-        1327.0,
-        717.0,
-        1366.0
+        448.0,
+        281.0,
+        795.0,
+        361.0
       ]
     },
     {
       "type": "discussion",
-      "content": "where the trace of a square matrix, $ \\mathrm{tr}(\\mathbf{M}) = \\sum M_{ii} $, is the sum of its diagonal elements. Further, if $ x \\sim \\mathrm{MVN}(\\mu, \\mathbf{V}) $, then as shown in Searle (1971), the variance of the quadratic form has a fairly simple form,",
-      "source_page": 855,
-      "printed_page": 835,
+      "content": "Define the unit matrix $ J_{n \\times k} $ as an $ n \\times k $ matrix in which every element is unity, e.g.,",
+      "source_page": 856,
+      "printed_page": 836,
       "source_block_ids": [
-        "p855:b10"
+        "p856:b5"
       ],
       "bbox": [
-        55.0,
-        1384.0,
-        1014.0,
-        1482.0
+        143.0,
+        395.0,
+        1100.0,
+        461.0
       ]
     },
     {
       "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula144]]",
-      "source_page": 855,
-      "printed_page": 835,
+      "content": "[[FORMULA:Genetics_appendix1_formula146]]",
+      "source_page": 856,
+      "printed_page": 836,
       "source_block_ids": [
-        "p855:b11"
+        "p856:b6"
       ],
       "bbox": [
-        285.0,
-        1497.0,
-        782.0,
-        1537.0
+        362.0,
+        467.0,
+        875.0,
+        565.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Likewise, define the matrix",
+      "source_page": 856,
+      "printed_page": 836,
+      "source_block_ids": [
+        "p856:b7"
+      ],
+      "bbox": [
+        144.0,
+        590.0,
+        477.0,
+        621.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula147]]",
+      "source_page": 856,
+      "printed_page": 836,
+      "source_block_ids": [
+        "p856:b8"
+      ],
+      "bbox": [
+        155.0,
+        653.0,
+        968.0,
+        800.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where J is $ n \\times n $. Noting that",
+      "source_page": 856,
+      "printed_page": 836,
+      "source_block_ids": [
+        "p856:b10"
+      ],
+      "bbox": [
+        145.0,
+        833.0,
+        500.0,
+        866.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula148]]",
+      "source_page": 856,
+      "printed_page": 836,
+      "source_block_ids": [
+        "p856:b11"
+      ],
+      "bbox": [
+        295.0,
+        905.0,
+        842.0,
+        1010.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "it follows that",
+      "source_page": 856,
+      "printed_page": 836,
+      "source_block_ids": [
+        "p856:b13"
+      ],
+      "bbox": [
+        145.0,
+        1046.0,
+        320.0,
+        1077.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula149]]",
+      "source_page": 856,
+      "printed_page": 836,
+      "source_block_ids": [
+        "p856:b14"
+      ],
+      "bbox": [
+        524.0,
+        1080.0,
+        720.0,
+        1115.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "To see this, observe that",
+      "source_page": 856,
+      "printed_page": 836,
+      "source_block_ids": [
+        "p856:b16"
+      ],
+      "bbox": [
+        146.0,
+        1139.0,
+        438.0,
+        1171.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula150]]",
+      "source_page": 856,
+      "printed_page": 836,
+      "source_block_ids": [
+        "p856:b17"
+      ],
+      "bbox": [
+        259.0,
+        1210.0,
+        959.0,
+        1492.0
+      ]
+    },
+    {
+      "type": "example",
+      "content": "[[EXAMPLE:Genetics_appendix1:4:occ2]]",
+      "source_page": 857,
+      "source_block_ids": [
+        "p857:b2",
+        "p857:b3",
+        "p857:b4",
+        "p857:b5",
+        "p857:b6",
+        "p857:b7",
+        "p857:b8",
+        "p857:b9",
+        "p857:b10",
+        "p857:b11",
+        "p857:b12",
+        "p857:b13",
+        "p857:b14",
+        "p857:b15",
+        "p857:b16",
+        "p857:b17",
+        "p858:b2",
+        "p858:b3",
+        "p858:b4",
+        "p858:b5",
+        "p858:b6",
+        "p858:b7"
+      ],
+      "bbox": [
+        107.0,
+        203.0,
+        970.0,
+        323.0
       ]
     }
   ]

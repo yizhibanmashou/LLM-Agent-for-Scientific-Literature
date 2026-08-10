@@ -2,44 +2,230 @@
   "id": "Genetics_appendix1_024",
   "metadata": {
     "chapter": "Genetics_appendix1",
-    "section": "GENERALIZED INVERSES AND SOLUTIONS TO SINGULAR SYSTEMS OF EQUATIONS",
-    "subsections": [
-      "Estimability of Fixed Factors"
-    ],
-    "section_level_1": "GENERALIZED INVERSES AND SOLUTIONS TO SINGULAR SYSTEMS OF EQUATIONS",
-    "section_level_2": "Estimability of Fixed Factors",
+    "section": "THE SQUARE ROOT OF A MATRIX",
+    "subsections": [],
+    "section_level_1": "THE SQUARE ROOT OF A MATRIX",
+    "section_level_2": null,
     "heading_path": [
-      "GENERALIZED INVERSES AND SOLUTIONS TO SINGULAR SYSTEMS OF EQUATIONS",
-      "Estimability of Fixed Factors"
+      "THE SQUARE ROOT OF A MATRIX"
     ],
-    "display_heading": "GENERALIZED INVERSES AND SOLUTIONS TO SINGULAR SYSTEMS OF EQUATIONS / Estimability of Fixed Factors",
+    "display_heading": "THE SQUARE ROOT OF A MATRIX",
     "source_file": "",
     "source_pdf": "data/背景资料/Genetics.pdf",
     "source_title": "Genetics and Analysis of Quantitative Traits",
     "rebuild_provenance": {
       "method": "paddle_layout_block_rebuild",
       "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 853,
+      "printed_page": 833,
+      "source_block_ids": [
+        "p853:b3"
+      ],
+      "bbox": [
+        55.0,
+        319.0,
+        523.0,
+        349.0
+      ],
+      "raw_text": "THE SQUARE ROOT OF A MATRIX"
     }
   },
   "blocks": [
     {
-      "type": "example",
-      "content": "[[EXAMPLE:Genetics_appendix1:3:occ2]]",
-      "source_page": 852,
+      "type": "discussion",
+      "content": "The concept of the square root of a symmetric nonsingular matrix provides another useful matrix tool for the analysis of linear models. In particular, using the square root of the covariance matrix transforms a vector of correlated variables into a new vector of variables with covariance matrix I, implying that the transformed variables are uncorrelated with unit variance.",
+      "source_page": 853,
+      "printed_page": 833,
       "source_block_ids": [
-        "p852:b12",
-        "p852:b13",
-        "p852:b14",
-        "p852:b15",
-        "p852:b16",
-        "p852:b17",
-        "p853:b2"
+        "p853:b4"
       ],
       "bbox": [
-        191.0,
-        873.0,
-        805.0,
-        904.0
+        55.0,
+        382.0,
+        1013.0,
+        542.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Consider a symmetric nonsingular matrix V and define $ V^{1/2} $ as the matrix satisfying",
+      "source_page": 853,
+      "printed_page": 833,
+      "source_block_ids": [
+        "p853:b5"
+      ],
+      "bbox": [
+        55.0,
+        542.0,
+        1012.0,
+        606.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula130]]",
+      "source_page": 853,
+      "printed_page": 833,
+      "source_block_ids": [
+        "p853:b6"
+      ],
+      "bbox": [
+        443.0,
+        605.0,
+        626.0,
+        639.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "In effect, $ \\mathbf{V}^{1/2} $ is the square root of a matrix, in that, when squared, we recover $ \\mathbf{V} $. Denoting the inverse of $ \\mathbf{V}^{1/2} $ as $ \\mathbf{V}^{-1/2} $, we have the following properties",
+      "source_page": 853,
+      "printed_page": 833,
+      "source_block_ids": [
+        "p853:b8"
+      ],
+      "bbox": [
+        54.0,
+        656.0,
+        1010.0,
+        729.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula131]]",
+      "source_page": 853,
+      "printed_page": 833,
+      "source_block_ids": [
+        "p853:b9"
+      ],
+      "bbox": [
+        107.0,
+        743.0,
+        871.0,
+        784.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Likewise, both $ \\mathbf{V}^{1/2} $ and its inverse are symmetric.",
+      "source_page": 853,
+      "printed_page": 833,
+      "source_block_ids": [
+        "p853:b11"
+      ],
+      "bbox": [
+        54.0,
+        806.0,
+        660.0,
+        838.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Suppose the random vector y has covariance matrix V and consider the new vector $ \\mathbf{z} = \\mathbf{V}^{-1/2} \\mathbf{y} $. Recalling Equation 8.21b, the resulting covariance matrix for $ \\mathbf{z} $ becomes",
+      "source_page": 853,
+      "printed_page": 833,
+      "source_block_ids": [
+        "p853:b12"
+      ],
+      "bbox": [
+        53.0,
+        841.0,
+        1012.0,
+        937.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula132]]",
+      "source_page": 853,
+      "printed_page": 833,
+      "source_block_ids": [
+        "p853:b13"
+      ],
+      "bbox": [
+        232.0,
+        935.0,
+        840.0,
+        972.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, the transformed variables have unit variance and are uncorrelated. Suppose y is an $ n \\times 1 $ column vector with $ y \\sim \\text{MVN}(\\mu, \\mathbf{V}) $. It follows that",
+      "source_page": 853,
+      "printed_page": 833,
+      "source_block_ids": [
+        "p853:b15"
+      ],
+      "bbox": [
+        53.0,
+        985.0,
+        1011.0,
+        1051.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula133]]",
+      "source_page": 853,
+      "printed_page": 833,
+      "source_block_ids": [
+        "p853:b16"
+      ],
+      "bbox": [
+        338.0,
+        1070.0,
+        724.0,
+        1108.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "so that $ z_{i} \\sim \\mathrm{N}(0,1) $, and hence the transformed variables are independent unit normals. Thus,",
+      "source_page": 853,
+      "printed_page": 833,
+      "source_block_ids": [
+        "p853:b17"
+      ],
+      "bbox": [
+        50.0,
+        1126.0,
+        1011.0,
+        1190.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula134]]",
+      "source_page": 853,
+      "printed_page": 833,
+      "source_block_ids": [
+        "p853:b18"
+      ],
+      "bbox": [
+        216.0,
+        1206.0,
+        850.0,
+        1363.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "The last step follows by recalling that the sum of $n$ squared unit normal random variables follows a $\\chi^{2}$ distribution with $n$ degrees of freedom (Appendix 5). Thus when $y$ is multivariate normal, the quadratic form $(y-\\mu)^{T}\\mathbf{V}^{-1}(\\mathbf{y}-\\mu)$ follows a $\\chi^{2}$ distribution. As we will see shortly, Equation A3.9 is the basis for goodness-of-fit tests of linear models.",
+      "source_page": 853,
+      "printed_page": 833,
+      "source_block_ids": [
+        "p853:b20"
+      ],
+      "bbox": [
+        50.0,
+        1382.0,
+        1011.0,
+        1541.0
       ]
     }
   ]

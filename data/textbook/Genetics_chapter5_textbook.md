@@ -1,7 +1,6 @@
 # Chapter 5 · Sources of Genetic Variation for Multilocus Traits
 
-## Genetics_chapter5_001 · Sources of Genetic Variation
-for Multilocus Traits
+## Genetics_chapter5_001 · Sources of Genetic Variation for Multilocus Traits
 
 As we proceed from single gene loci to quantitative characters, it becomes necessary to introduce several new concepts. First, we must consider whether the genotypic values defined for single loci can be combined additively to explain the phenotypic variation associated with multilocus genotypes or whether important nonlinear interactions exist. Second, we must consider whether the inheritance and distribution of genes at one locus are independent of those at other loci. Third, several sources of environmental variance influence the expression of polygenic traits, and this raises questions as to whether gene expression varies with the environmental context and whether specific genotypes are associated with particular environments.
 

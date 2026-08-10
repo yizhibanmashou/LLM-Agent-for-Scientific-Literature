@@ -4,15 +4,15 @@
     "chapter": "Genetics_appendix1",
     "section": "LIKELIHOOD-RATIO TESTS",
     "subsections": [
-      "The G-test"
+      "Likelihood-ratio Tests for the General Linear Model"
     ],
     "section_level_1": "LIKELIHOOD-RATIO TESTS",
-    "section_level_2": "The G-test",
+    "section_level_2": "Likelihood-ratio Tests for the General Linear Model",
     "heading_path": [
       "LIKELIHOOD-RATIO TESTS",
-      "The G-test"
+      "Likelihood-ratio Tests for the General Linear Model"
     ],
-    "display_heading": "LIKELIHOOD-RATIO TESTS / The G-test",
+    "display_heading": "LIKELIHOOD-RATIO TESTS / Likelihood-ratio Tests for the General Linear Model",
     "source_file": "",
     "source_pdf": "data/背景资料/Genetics.pdf",
     "source_title": "Genetics and Analysis of Quantitative Traits",
@@ -21,153 +21,187 @@
       "remote_llm_calls": 0
     },
     "heading_source": {
-      "source_page": 871,
-      "printed_page": 851,
+      "source_page": 872,
+      "printed_page": 852,
       "source_block_ids": [
-        "p871:b3"
+        "p872:b2"
       ],
       "bbox": [
-        59.0,
-        296.0,
-        196.0,
-        326.0
+        148.0,
+        136.0,
+        792.0,
+        171.0
       ],
-      "raw_text": "The G-test"
+      "raw_text": "Likelihood-ratio Tests for the General Linear Model"
     }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "A common likelihood-ratio-based test is the G-test for goodness of fit. Consider $n$ observations that have been apportioned into a set of $N$ different categories, and denote these by the vector $\\mathbf{n} = (n_{1}, n_{2}, \\cdots, n_{N})$. Likewise, let $p_{i}$ represent the true population frequency of the $i$th category and let $\\mathbf{p} = (p_{1}, p_{2}, \\cdots, p_{N})$. From the multinomial distribution, the likelihood of $\\mathbf{p}$ given the observations $\\mathbf{n}$ is",
-      "source_page": 871,
-      "printed_page": 851,
+      "content": "As a final example of likelihood-ratio tests, consider the general linear model (Chapters 8, 26, 27), $ \\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\mathbf{e} $, where we assume that the $ n \\times 1 $ vector of residual errors e is multivariate normal, with mean vector zero and covariance matrix $ \\mathbf{V} $, i.e., $ \\mathbf{e} \\sim \\text{MVN}(0, \\mathbf{V}) $. From Equation 8.24, the density function for e is",
+      "source_page": 872,
+      "printed_page": 852,
       "source_block_ids": [
-        "p871:b4"
+        "p872:b3"
       ],
       "bbox": [
-        56.0,
-        335.0,
-        1018.0,
-        499.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula224]]",
-      "source_page": 871,
-      "printed_page": 851,
-      "source_block_ids": [
-        "p871:b5"
-      ],
-      "bbox": [
-        374.0,
-        524.0,
-        696.0,
-        562.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "where $k$ is the appropriate multinomial coefficient (which is independent of the $p_i$). It can be shown that the values of $p_i$ that maximize Equation A4.10a (and hence are the MLE's) are $\\widehat{p_i} = n_i/n$. This gives the value of the maximum of the likelihood function as",
-      "source_page": 871,
-      "printed_page": 851,
-      "source_block_ids": [
-        "p871:b7"
-      ],
-      "bbox": [
-        58.0,
-        588.0,
-        1018.0,
-        718.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula225]]",
-      "source_page": 871,
-      "printed_page": 851,
-      "source_block_ids": [
-        "p871:b8"
-      ],
-      "bbox": [
-        296.0,
-        735.0,
-        777.0,
-        798.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "In order to test whether the observed data are consistent with a specified vector q of population frequencies, we need the value of the likelihood function under this constraint. Denoting the expected value for the number of individuals in category i by $ \\widehat{n}_{i} = q_{i}n $, we can write $ q_{i} = \\widehat{n}_{i}/n $. Substitution into Equation A4.10a gives the likelihood under q as",
-      "source_page": 871,
-      "printed_page": 851,
-      "source_block_ids": [
-        "p871:b10"
-      ],
-      "bbox": [
-        56.0,
-        821.0,
-        1019.0,
-        983.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula226]]",
-      "source_page": 871,
-      "printed_page": 851,
-      "source_block_ids": [
-        "p871:b11"
-      ],
-      "bbox": [
-        281.0,
-        1005.0,
-        790.0,
-        1082.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "Applying Equation A4.9 yields the likelihood-ratio test (in this case, it is also called the G-test, for goodness of fit) that the observed data are consistent with q.",
-      "source_page": 871,
-      "printed_page": 851,
-      "source_block_ids": [
-        "p871:b13"
-      ],
-      "bbox": [
-        58.0,
+        146.0,
+        178.0,
         1106.0,
-        1016.0,
-        1173.0
+        312.0
       ]
     },
     {
       "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula227]]",
-      "source_page": 871,
-      "printed_page": 851,
+      "content": "[[FORMULA:Genetics_appendix1_formula228]]",
+      "source_page": 872,
+      "printed_page": 852,
       "source_block_ids": [
-        "p871:b14"
+        "p872:b4"
       ],
       "bbox": [
-        116.0,
-        1201.0,
-        869.0,
-        1285.0
+        408.0,
+        335.0,
+        842.0,
+        405.0
       ]
     },
     {
       "type": "discussion",
-      "content": "Since the $N$ frequencies sum to one, there are $N-1$ unconstrained parameters in the full likelihood, implying that $G$ is asymptotically distributed as a $\\chi_{N-1}^2$ random variable. Since large sample sizes are required to give the likelihood-ratio test a $\\chi^2$ distribution, caution should be exercised in employing this test whenever any expected quantity is less than five (e.g., any $q_i < 5/n$), a problem that can sometimes be avoided by pooling cells. Sokal and Rohlf (1995) provide a thorough overview of these and other matters.",
-      "source_page": 871,
-      "printed_page": 851,
+      "content": "Writing the vector of residuals as $\\mathbf{e} = \\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta}$ gives the resulting likelihood for $\\beta$ and $\\mathbf{V}$, conditional on the observed data $(\\mathbf{y}, \\mathbf{X})$, as",
+      "source_page": 872,
+      "printed_page": 852,
       "source_block_ids": [
-        "p871:b16"
+        "p872:b5"
       ],
       "bbox": [
-        56.0,
-        1314.0,
-        1018.0,
+        146.0,
+        427.0,
+        1106.0,
+        495.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula229]]",
+      "source_page": 872,
+      "printed_page": 852,
+      "source_block_ids": [
+        "p872:b6"
+      ],
+      "bbox": [
+        212.0,
+        518.0,
+        1035.0,
+        587.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "which has log-likelihood",
+      "source_page": 872,
+      "printed_page": 852,
+      "source_block_ids": [
+        "p872:b7"
+      ],
+      "bbox": [
+        146.0,
+        609.0,
+        449.0,
+        642.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula230]]",
+      "source_page": 872,
+      "printed_page": 852,
+      "source_block_ids": [
+        "p872:b8"
+      ],
+      "bbox": [
+        215.0,
+        669.0,
+        946.0,
+        733.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Here $ \\beta $ is a vector of fixed effects and the matrix V is a function of k variance components, with $ \\mathbf{V} = \\sum_{i=1}^{k} \\mathbf{R}_i \\sigma_i^2 $ where the $ \\mathbf{R}_i $ are matrices of known constants. Thus, the parameters to be estimated are the vector $ \\beta $ of fixed effects and the k variances, $ \\sigma_i^2 $.",
+      "source_page": 872,
+      "printed_page": 852,
+      "source_block_ids": [
+        "p872:b10"
+      ],
+      "bbox": [
+        144.0,
+        753.0,
+        1102.0,
+        881.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Suppose we wish to compare the relative fit of two models that assume the same covariance structure (i.e., the same V), but have different vectors of fixed effects, a vector $ \\beta_f $ for the full model vs. a vector $ \\beta_r $ for the reduced model that assumes fewer factors. The resulting likelihood-ratio test statistic is",
+      "source_page": 872,
+      "printed_page": 852,
+      "source_block_ids": [
+        "p872:b11"
+      ],
+      "bbox": [
+        144.0,
+        882.0,
+        1103.0,
+        1011.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula231]]",
+      "source_page": 872,
+      "printed_page": 852,
+      "source_block_ids": [
+        "p872:b12"
+      ],
+      "bbox": [
+        287.0,
+        1037.0,
+        961.0,
+        1164.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where $ \\widehat{y}_f = X_f \\widehat{\\beta}_f $ and $ \\widehat{y}_r = X_r \\widehat{\\beta}_r $ are the predicted means under the full and reduced models. For large sample sizes, this test statistic follows a $ \\chi^2 $ distribution with $ n_f - n_r $ degrees of freedom, where $ n_f $ and $ n_r $ are the degrees of freedom for the full and reduced models, respectively.",
+      "source_page": 872,
+      "printed_page": 852,
+      "source_block_ids": [
+        "p872:b14"
+      ],
+      "bbox": [
+        143.0,
+        1193.0,
+        1102.0,
+        1326.0
+      ]
+    },
+    {
+      "type": "example",
+      "content": "[[EXAMPLE:Genetics_appendix1:5:occ3]]",
+      "source_page": 872,
+      "source_block_ids": [
+        "p872:b15",
+        "p873:b2",
+        "p873:b3",
+        "p873:b4",
+        "p873:b5",
+        "p873:b7"
+      ],
+      "bbox": [
+        192.0,
+        1420.0,
+        1055.0,
         1539.0
       ]
     }

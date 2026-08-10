@@ -1,10 +1,6 @@
-# Chapter 21 · 21
+# Chapter 21 · Correlations Between Characters
 
-## Genetics_chapter21_001 · 21
-
----
-
-## Genetics_chapter21_002 · 21 / Correlations Between Characters
+## Genetics_chapter21_001 · Correlations Between Characters
 
 The phenotypic values of different traits in the same individual are often found to be correlated. In humans, for example, individuals that are tall also tend to have large feet. Such phenotypic correlations can arise from two causes. First, the expression of two characters may be modified by the same environmental factors operating within individuals. Some environmental factors may influence both characters in the same direction, e.g., variation in resource availability during development may influence the growth of all organs. Others may have opposite effects, as when an environmental cue to initiate the allocation of resources to reproduction causes a curtailment of growth. The joint influences of all such factors determine whether a within-individual environmental correlation will exist between the traits. Such a correlation cannot be assumed to be a species-specific constant. Just as the magnitude of the environmental variance for a trait can depend on the nature of the environment in which a population is assayed (Chapter 6), so can the covariance of environmental deviations for two traits.
 
@@ -20,7 +16,7 @@ In this chapter, we first show how additive genetic covariances between traits c
 
 ---
 
-## Genetics_chapter21_003 · THEORETICAL COMPOSITION OF THE GENETIC COVARIANCE
+## Genetics_chapter21_002 · THEORETICAL COMPOSITION OF THE GENETIC COVARIANCE
 
 Assuming the contribution from gametic phase disequilibrium to be negligible, Mode and Robinson (1959) showed how the genetic covariance can be subdivided into various components. Their work is a straightforward extension of the results of Cockerham (1954) and Kempthorne (1954) for single characters. In order to simplify the presentation, recall the procedure used in Chapter 5 for decomposing the total genotypic value of a trait influenced by two loci. For characters 1 and 2, we have
 
@@ -84,13 +80,13 @@ where $ \Theta_{xy} $ is the coefficient of coancestry, and $ \Delta_{xy} $ is t
 
 ---
 
-## Genetics_chapter21_004 · ESTIMATION OF THE GENETIC CORRELATION
+## Genetics_chapter21_003 · ESTIMATION OF THE GENETIC CORRELATION
 
 All of the regression and ANOVA techniques for estimating components of variance reviewed in the last four chapters extend readily to the decomposition of the covariance between two traits, as first recognized by Hazel (1943). Three of the most frequently used approaches will be covered here.
 
 ---
 
-## Genetics_chapter21_005 · ESTIMATION OF THE GENETIC CORRELATION / Pairwise Comparison of Relatives
+## Genetics_chapter21_004 · ESTIMATION OF THE GENETIC CORRELATION / Pairwise Comparison of Relatives
 
 We start with a method that is both conceptually and computationally simple, requiring only that data are available for pairs of relatives. Suppose, for example, that measures of traits 1 and 2 have been obtained for both midparents (denoted by x) and offspring means (denoted by y). Four types of phenotypic covariances can then be computed: trait 1 in midparents and offspring, trait 2 in midparents and offspring, trait 1 in midparents and 2 in offspring, and vice versa. The first two of these relate to the genetic variances of the traits, the second two to the genetic covariance between the traits. Ignoring possible contributions from common environmental effects, their expected values are respectively:
 
@@ -142,7 +138,7 @@ Nonetheless, the above formulation has the same kinds of uncertainties that we h
 
 ---
 
-## Genetics_chapter21_006 · ESTIMATION OF THE GENETIC CORRELATION / Nested Analysis of Variance and Covariance
+## Genetics_chapter21_005 · ESTIMATION OF THE GENETIC CORRELATION / Nested Analysis of Variance and Covariance
 
 The nested full-sib, half-sib design provides an alternative approach to estimating genetic correlations. Recall that with this design, several different females are mated to each sire, and a nested analysis of variance yields estimates of the additive genetic variances (Chapter 18). A parallel analysis can also provide an estimate of the additive genetic covariance. Analysis of covariance is identical in form to analysis of variance except that the former employs mean cross-products of the deviations of traits 1 and 2 rather than mean squared deviations of individual traits (Table 21.1). A lucid overview of the procedure is given by Grossman and Gall (1968).
 
@@ -181,7 +177,7 @@ As discussed in the previous section, this measure of the genetic correlation ca
 
 In principle, as in the case of components of variance, the various components of a genetic covariance can be extracted by comparison of the cross-covariances between different types of relatives, e.g., full vs. half sibs in the nested design. It would then be possible to procure estimates of genetic correlations due to dominance and various forms of epistasis in addition to additive effects. However, previous chapters have amply demonstrated the difficulties in accomplishing such partitioning with components of genetic variance with any reasonable degree of accuracy. Since the sampling variance of cross-covariances is also very high (see below), there appears to be little hope of a further dissection of the genetic correlation unless the number of families sampled is in the thousands.
 
-> **Table 21.1** · `21.1` · page 646 · source: `Genetics_chapter21_006`
+> **Table 21.1** · `21.1` · page 646 · source: `Genetics_chapter21_005`
 > Table 21.1 Summary of a nested analysis of covariance involving $N$ sires, $M_{i}$ dams within the $i$th sire, and $n_{ij}$ offspring within the $ij$th full-sib family.
 >
 > Factor | df | Sums of Cross-products | E(MCP)
@@ -193,7 +189,7 @@ In principle, as in the case of components of variance, the various components o
 
 ---
 
-## Genetics_chapter21_007 · ESTIMATION OF THE GENETIC CORRELATION / Regression of Family Means
+## Genetics_chapter21_006 · ESTIMATION OF THE GENETIC CORRELATION / Regression of Family Means
 
 Because of technical difficulties in acquiring genetic correlation estimates and in testing for their significance, a number of investigators have opted to use the correlation between family mean phenotypes as a surrogate for estimating $ \rho_{A} $. Here one simply regresses the family mean phenotype of character 1 on that of character 2, using the same individuals to compute each mean. The rationale for such an approach is that as the size of a family increases, the sampling error of the mean becomes diminishingly small, leaving the family mean phenotype as an estimate of the family mean genotypic value. However, if the heritability of either trait is low, this approach can yield misleading results because the variances and covariances of family means will be biased estimates of the additive genetic expectations. Although we do not advocate this approach, we elaborate on it somewhat to illustrate the interpretative difficulties that can arise.
 
@@ -231,7 +227,7 @@ A more reasonable path to estimating the genetic correlation from family means i
 
 ---
 
-## Genetics_chapter21_008 · COMPONENTS OF THE PHENOTYPIC CORRELATION
+## Genetics_chapter21_007 · COMPONENTS OF THE PHENOTYPIC CORRELATION
 
 As noted in the introduction, phenotypic covariance between two traits arises from both genetic and environmental causes. We have just seen how the basic machinery for estimating heritabilities can be extended to the estimation of genetic correlations. However, the environmental correlation, $ \rho_{E} $, can only be calculated directly under a very special set of circumstances. If a collection of genetically homogeneous individuals (either a highly inbred line or a single clone) is used, so there is no genetic variance among individuals within the group, the phenotypic and environmental correlations are equivalent.
 
@@ -280,7 +276,7 @@ Since any of the covariance terms can be positive or negative, estimates of envi
 
 ---
 
-## Genetics_chapter21_009 · COMPONENTS OF THE PHENOTYPIC CORRELATION / Phenotypic Correlations as Surrogate Estimates of Genetic Correlations
+## Genetics_chapter21_008 · COMPONENTS OF THE PHENOTYPIC CORRELATION / Phenotypic Correlations as Surrogate Estimates of Genetic Correlations
 
 Because of the inherent difficulties in estimating additive genetic correlations, it is of great interest to know if these have a strong tendency to reflect the more easily acquired phenotypic correlations in magnitude and/or sign. If this were true, phenotypic correlations would provide useful, and more accessible, insight into the directionality of constraints on multivariate evolution. Moreover, because phenotypic correlations can normally be estimated with a high degree of accuracy, while genetic correlations usually have very large standard errors, if the parametric values of genetic and phenotypic correlations tended to be equal, then estimates of the phenotypic correlation could more closely approximate the true genetic correlation than the genetic correlation estimate itself.
 
@@ -290,7 +286,7 @@ Broad surveys of the literature have led Cheverud (1988, 1995) and Roff (1995, 1
 
 ---
 
-## Genetics_chapter21_010 · STATISTICAL ISSUES
+## Genetics_chapter21_009 · STATISTICAL ISSUES
 
 As with any parameter estimates, it is useful to have measures of the sampling variances and/or confidence intervals of the phenotypic, genetic, and environmental correlations to aid in their interpretation. For the genetic and environmental correlations, the problems here are considerable. The estimators for $ \rho_{A} $ and $ \rho_{E} $ generally utilize a combination of results from different applications of ANOVA and/or regression analysis, all employing data on the same individuals. The sampling properties of functions of statistics derived from nonindependent analyses are poorly understood.
 
@@ -303,7 +299,7 @@ As with any parameter estimates, it is useful to have measures of the sampling v
 
 ---
 
-## Genetics_chapter21_011 · STATISTICAL ISSUES / Hypothesis Tests
+## Genetics_chapter21_010 · STATISTICAL ISSUES / Hypothesis Tests
 
 Testing for a significant phenotypic correlation is straightforward, as it is a conventional product-moment correlation, which can be evaluated against critical values widely available in tables in statistics texts. For genetic correlations, the simplest option for testing the hypothesis that $ \rho_{A}=0 $ is based on the principle that significant genetic covariance between two traits implies a significant genetic correlation. With the pairwise-comparison method, the significance of the regression of character 2 in set y on character 1 in set x, and vice versa, can be evaluated by the standard test for a regression slope.
 
@@ -313,7 +309,7 @@ Finally, we note that studies of genetic correlation usually involve the simulta
 
 ---
 
-## Genetics_chapter21_012 · STATISTICAL ISSUES / Standard Errors
+## Genetics_chapter21_011 · STATISTICAL ISSUES / Standard Errors
 
 By Taylor expansion (Appendix 1), Reeve (1955) first obtained an expression for the approximate large-sample variance of $ r_{A} $ for the single parent-offspring regression, and Hammond and Nicholas (1972) subsequently generalized this to include all types of parent-offspring combinations:
 
@@ -365,7 +361,7 @@ The important message of this section is that attaining a reasonable degree of c
 
 ---
 
-## Genetics_chapter21_013 · STATISTICAL ISSUES / Bias Due to Selection
+## Genetics_chapter21_012 · STATISTICAL ISSUES / Bias Due to Selection
 
 Selection in the parental generation on the characters of interest or any other characters correlated with them can lead to biased estimates of the genetic correlation by altering the variances and covariances relative to the expectations prior to selection (Van Vleck 1968, Robertson 1977b, Meyer and Thompson 1984). In principle, this problem can be significant in studies of wild populations exposed to natural selection. Here we consider how serious the bias can be and how it might be corrected for.
 
@@ -440,13 +436,13 @@ The most feasible way to eliminate selection bias is to assay the study populati
 
 ---
 
-## Genetics_chapter21_014 · APPLICATIONS
+## Genetics_chapter21_013 · APPLICATIONS
 
 These warnings are not meant to be totally discouraging. Studies that are appropriately designed and meet with the appropriate precautions can yield substantial insight into the constraints on the evolution of multivariate phenotypes. The following examples will provide a feeling for the diversity of problems that can be evaluated with a genetic covariance analysis.
 
 ---
 
-## Genetics_chapter21_015 · APPLICATIONS / Genetic Basis of Population Differentiation
+## Genetics_chapter21_014 · APPLICATIONS / Genetic Basis of Population Differentiation
 
 Ecologists are well aware that different populations of the same species often exhibit rather different diets. To a large extent this may simply reflect shifts in the relative availabilities of prey types in different areas. An alternative possibility is the existence of genetic differences in feeding behavior. Arnold (1981a–c) studied this issue in garter snakes (Thamnophis). In California, coastal populations of this snake are primarily terrestrial predators of slugs, while inland populations prey more exclusively on fish and amphibians. A dietary shift between these two areas is clearly necessary, since slugs are absent from inland habitats. Arnold made several observations that were consistent with genetic differences in the feeding habits of coastal and inland snakes. For example, about 75% of naive, newborn snakes from the coast would attack slugs in laboratory experiments, while only about 35% of the inland snakes would do so. The slug-refusing individuals were quite persistent in their decision, starving to death unless alternate prey were offered.
 
@@ -468,7 +464,7 @@ If the hypothesized selective pressures due to slugs and leeches are correct, th
 
 This kind of reasoning would not have been reached had Arnold relied solely on phenotypic correlations. The phenotypic correlations between the various chemoreceptive responses were uniformly low in both populations, $ \leq 0.3 $ in all but one case.
 
-> **Table 21.2** · `21.2` · page 661 · source: `Genetics_chapter21_015`
+> **Table 21.2** · `21.2` · page 661 · source: `Genetics_chapter21_014`
 > Table 21.2 A comparison of chemoreceptive responses to prey odors by newborn garter snakes, Thamnophis elegans, from coastal and inland California.
 >
 > <table><tr><td></td><td colspan="3">Mean Tongue-flick Rate</td><td colspan="2">Heritability</td></tr><tr><td></td><td>Coast</td><td>Inland</td><td>Difference</td><td>Coast</td><td>Inland</td></tr><tr><td>Slugs</td><td>30.9</td><td>4.3</td><td>1.72</td><td>0.2</td><td>0.2</td></tr><tr><td>Leeches</td><td>11.8</td><td>2.5</td><td>1.24</td><td>0.6</td><td>0.3</td></tr><tr><td>Salamanders</td><td>9.0</td><td>7.4</td><td>0.21</td><td>0.4</td><td>0.2</td></tr><tr><td>Frogs and tadpoles</td><td>30.5</td><td>25.8</td><td>0.17</td><td>0.4</td><td>0.3</td></tr><tr><td>Control</td><td>1.4</td><td>1.6</td><td>-0.26</td><td>0.0</td><td>0.1</td></tr></table>
@@ -476,7 +472,7 @@ This kind of reasoning would not have been reached had Arnold relied solely on p
 > Source: Arnold (1981a,c).
 > Note: The difference between population mean phenotypes is in units of standard deviations of $ \ln $-transformed values.
 
-> **Table 21.3** · `21.3` · page 661 · source: `Genetics_chapter21_015`
+> **Table 21.3** · `21.3` · page 661 · source: `Genetics_chapter21_014`
 > Table 21.3 A comparison of the genetic correlations for chemoreceptive responses to prey odors in coastal (above diagonal) and inland (below diagonal) populations of Thamnophis elegans.
 >
 >  | Sl | Le | Sa | Fr | Co
@@ -492,7 +488,7 @@ This kind of reasoning would not have been reached had Arnold relied solely on p
 
 ---
 
-## Genetics_chapter21_016 · APPLICATIONS / The Homogeneity of Genetic Covariance Matrices Among Species
+## Genetics_chapter21_015 · APPLICATIONS / The Homogeneity of Genetic Covariance Matrices Among Species
 
 As noted in the previous example, characters evolve in response to natural selection as a direct consequence of the forces of selection operating on the characters themselves and as an indirect consequence of selection operating on all genetically correlated traits (see Chapter 8). Thus, any attempt to project the long-term consequences of selection on specific characters is highly dependent on the degree of constancy of the genetic covariances over time. Such constancy is also required if much progress is to be made in retrospective evaluations of the evolutionary forces that may be responsible for observed changes in the fossil record (Reyment 1991). One approach to evaluating the stability of the genetic covariance matrix is to perform temporal surveys of genetic variances and covariances in individual populations. But such comparisons cannot usually be made on very long time scales. An alternative is to compare the genetic covariance structure of isolated populations or species. Similarity in this case would be consistent with long-term stability.
 
@@ -523,7 +519,7 @@ the power of the bootstrap and other randomization tests exceeds that of the max
 
 ---
 
-## Genetics_chapter21_017 · APPLICATIONS / Evolutionary Allometry
+## Genetics_chapter21_016 · APPLICATIONS / Evolutionary Allometry
 
 As noted in Chapter 11, the scaling of anatomical features to body size (allometry) has long been recognized as an important contributor to shape differences between species. Because of our unusually large heads, a great deal of attention has been focused upon the relationship of brain size to body size. When log-transformed adult brain weights are regressed on log-transformed adult body weights for members of the same species, a linear relationship is observed with the slope generally on the order of 0.2 to 0.4. Usually, this also applies to the mean phenotypes of different species in the same genus. However, when adults of distantly related species (e.g., different genera within an order) are compared, a higher slope of about 0.6 is obtained (Figure 21.4).
 
@@ -546,7 +542,7 @@ Consider, however, Brodie’s (1989, 1993) study of the garter snake Thamnophis 
 
 ---
 
-## Genetics_chapter21_018 · APPLICATIONS / Evolution of Life-history Characters
+## Genetics_chapter21_017 · APPLICATIONS / Evolution of Life-history Characters
 
 A widespread belief in evolutionary ecology is that negative genetic correlations between fitness characters are the rule in natural populations. Indirect and direct evidence of such tradeoffs have indeed been recorded frequently (see reviews in Reznick 1985, Partridge and Harvey 1985, Bell and Koufopanou 1986, Scheiner et al. 1989), but a number of clear cases of positive genetic correlations have also been reported (e.g., Giesel and Zettler 1980, Hegmann and Dingle 1982, Mitchell-Olds 1986, Rausher and Simms 1989, Spitze et al. 1991). In a broad review of the literature, Roff (1996) found that genetic correlations between fitness characters tend to be lower than those between morphological characters. However, there is a broad degree of overlap in the distributions, and the majority of life-history correlations are still positive.
 

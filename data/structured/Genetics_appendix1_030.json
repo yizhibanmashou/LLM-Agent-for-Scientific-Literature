@@ -2,17 +2,14 @@
   "id": "Genetics_appendix1_030",
   "metadata": {
     "chapter": "Genetics_appendix1",
-    "section": "QUADRATIC FORMS AND SUMS OF SQUARES",
-    "subsections": [
-      "Sums of Squares Expressed as Quadratic Forms"
-    ],
-    "section_level_1": "QUADRATIC FORMS AND SUMS OF SQUARES",
-    "section_level_2": "Sums of Squares Expressed as Quadratic Forms",
+    "section": "TESTING HYPOTHESES ABOUT LINEAR MODELS",
+    "subsections": [],
+    "section_level_1": "TESTING HYPOTHESES ABOUT LINEAR MODELS",
+    "section_level_2": null,
     "heading_path": [
-      "QUADRATIC FORMS AND SUMS OF SQUARES",
-      "Sums of Squares Expressed as Quadratic Forms"
+      "TESTING HYPOTHESES ABOUT LINEAR MODELS"
     ],
-    "display_heading": "QUADRATIC FORMS AND SUMS OF SQUARES / Sums of Squares Expressed as Quadratic Forms",
+    "display_heading": "TESTING HYPOTHESES ABOUT LINEAR MODELS",
     "source_file": "",
     "source_pdf": "data/背景资料/Genetics.pdf",
     "source_title": "Genetics and Analysis of Quantitative Traits",
@@ -21,409 +18,199 @@
       "remote_llm_calls": 0
     },
     "heading_source": {
-      "source_page": 858,
-      "printed_page": 838,
+      "source_page": 860,
+      "printed_page": 840,
       "source_block_ids": [
-        "p858:b8"
+        "p860:b8"
       ],
       "bbox": [
         145.0,
-        791.0,
-        735.0,
-        824.0
+        534.0,
+        817.0,
+        566.0
       ],
-      "raw_text": "Sums of Squares Expressed as Quadratic Forms"
+      "raw_text": "TESTING HYPOTHESES ABOUT LINEAR MODELS"
     }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "In the same fashion that we decomposed total variance into genetic and phenotypic components (Chapters 3–7), we can decompose the total variance of a response vector y into the variance accounted for by the linear model and the remaining (error or residual) variance. This is typically done by considering the sums of squares, with the total sum of squares $ (SS_{T}) $ being the sum of two components, the error (or residual) sum of squares $ (SS_{E}) $ and the model sum of squares $ (SS_{M}) $,",
-      "source_page": 858,
-      "printed_page": 838,
+      "content": "Since sums of squares are very closely related to the variances accounted for by the various components of a particular linear model, it should not be surprising that hypothesis testing is based on the sums of squares. Such hypothesis tests can be quite involved, especially if we are evaluating the various components of a complex model. Here we consider the simplest case of testing the fit of the total model to the data.",
+      "source_page": 860,
+      "printed_page": 840,
       "source_block_ids": [
-        "p858:b9"
-      ],
-      "bbox": [
-        143.0,
-        834.0,
-        1105.0,
-        1056.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula162]]",
-      "source_page": 858,
-      "printed_page": 838,
-      "source_block_ids": [
-        "p858:b10"
-      ],
-      "bbox": [
-        514.0,
-        1056.0,
-        733.0,
-        1089.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "The total sum of squares measures the total variability in the data, while the model sum of squares measures the amount of variation accounted for by the linear model. As noted in our discussions of univariate regression in Chapter 3, the fraction of total variance explained by a linear model is given by the coefficient of determination,",
-      "source_page": 858,
-      "printed_page": 838,
-      "source_block_ids": [
-        "p858:b11"
+        "p860:b9"
       ],
       "bbox": [
         144.0,
-        1103.0,
+        600.0,
         1105.0,
-        1262.0
+        789.0
       ]
     },
     {
       "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula163]]",
-      "source_page": 858,
-      "printed_page": 838,
+      "content": "If the residuals are multivariate-normally distributed with",
+      "source_page": 860,
+      "printed_page": 840,
       "source_block_ids": [
-        "p858:b12"
+        "p860:b10"
       ],
       "bbox": [
-        493.0,
-        1256.0,
-        753.0,
-        1323.0
+        199.0,
+        791.0,
+        898.0,
+        822.0
       ]
     },
     {
       "type": "discussion",
-      "content": "The sums of squares have different forms under OLS and GLS. Under OLS, the residuals are assumed to be independent with common variance $ \\sigma_{e}^{2} $. In this case, each observation/residual is weighted equally, and the total sum of squares is simply",
-      "source_page": 858,
-      "printed_page": 838,
+      "content": "[[FORMULA:Genetics_appendix1_formula174]]",
+      "source_page": 860,
+      "printed_page": 840,
       "source_block_ids": [
-        "p858:b14"
+        "p860:b11"
       ],
       "bbox": [
-        145.0,
-        1331.0,
-        1106.0,
-        1463.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula164]]",
-      "source_page": 858,
-      "printed_page": 838,
-      "source_block_ids": [
-        "p858:b15"
-      ],
-      "bbox": [
-        502.0,
-        1459.0,
-        746.0,
-        1542.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "Sums of squares can be expressed as a quadratic form of the vector of observations y, allowing the use of Equations 3A.12a,b to obtain their expectations and variances. Recalling Equation A3.14b and A3.13a,",
-      "source_page": 859,
-      "printed_page": 839,
-      "source_block_ids": [
-        "p859:b2"
-      ],
-      "bbox": [
-        57.0,
-        136.0,
-        1017.0,
-        233.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula165]]",
-      "source_page": 859,
-      "printed_page": 839,
-      "source_block_ids": [
-        "p859:b3"
-      ],
-      "bbox": [
-        396.0,
-        249.0,
-        677.0,
-        318.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "where J is $ n \\times n $.",
-      "source_page": 859,
-      "printed_page": 839,
-      "source_block_ids": [
-        "p859:b5"
-      ],
-      "bbox": [
-        59.0,
-        333.0,
-        265.0,
-        362.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "Now consider the error sum of squares",
-      "source_page": 859,
-      "printed_page": 839,
-      "source_block_ids": [
-        "p859:b6"
-      ],
-      "bbox": [
-        111.0,
-        365.0,
-        584.0,
-        396.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula166]]",
-      "source_page": 859,
-      "printed_page": 839,
-      "source_block_ids": [
-        "p859:b7"
-      ],
-      "bbox": [
-        353.0,
-        412.0,
-        718.0,
-        497.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "Since $ \\hat{\\mathbf{e}} = \\mathbf{y} - \\hat{\\mathbf{y}} $ and $ \\hat{\\mathbf{y}} = \\mathbf{X}\\mathbf{b} = \\mathbf{X}\\left(\\mathbf{X}^T\\mathbf{X}\\right)^{-1}\\mathbf{X}^T\\mathbf{y} $, we have",
-      "source_page": 859,
-      "printed_page": 839,
-      "source_block_ids": [
-        "p859:b8"
-      ],
-      "bbox": [
-        55.0,
-        517.0,
-        767.0,
-        569.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula167]]",
-      "source_page": 859,
-      "printed_page": 839,
-      "source_block_ids": [
-        "p859:b9"
-      ],
-      "bbox": [
-        169.0,
-        587.0,
-        799.0,
-        659.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "Expanding this expression and noting that $ \\mathbf{X}^T\\mathbf{X}\\left(\\mathbf{X}^T\\mathbf{X}\\right)^{-1}=\\mathbf{I} $, this simplifies to",
-      "source_page": 859,
-      "printed_page": 839,
-      "source_block_ids": [
-        "p859:b11"
-      ],
-      "bbox": [
-        56.0,
-        678.0,
-        1015.0,
-        729.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula168]]",
-      "source_page": 859,
-      "printed_page": 839,
-      "source_block_ids": [
-        "p859:b12"
-      ],
-      "bbox": [
-        319.0,
-        745.0,
-        750.0,
-        819.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "Finally, the model sum of squares is the difference between the total and error sums of squares,",
-      "source_page": 859,
-      "printed_page": 839,
-      "source_block_ids": [
-        "p859:b14"
-      ],
-      "bbox": [
-        56.0,
-        831.0,
-        1016.0,
-        897.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula169]]",
-      "source_page": 859,
-      "printed_page": 839,
-      "source_block_ids": [
-        "p859:b15"
-      ],
-      "bbox": [
-        171.0,
-        911.0,
-        796.0,
-        982.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "Note that",
-      "source_page": 859,
-      "printed_page": 839,
-      "source_block_ids": [
-        "p859:b17"
-      ],
-      "bbox": [
-        56.0,
+        255.0,
+        846.0,
         995.0,
-        179.0,
-        1026.0
+        887.0
       ]
     },
     {
       "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula170]]",
-      "source_page": 859,
-      "printed_page": 839,
-      "source_block_ids": [
-        "p859:b18"
-      ],
-      "bbox": [
-        410.0,
-        1022.0,
-        657.0,
-        1102.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "so that (for OLS) the model sum of squares is the sum of squared deviations of the predicted values from the overall mean.",
-      "source_page": 859,
-      "printed_page": 839,
-      "source_block_ids": [
-        "p859:b19"
-      ],
-      "bbox": [
-        55.0,
-        1111.0,
-        1014.0,
-        1176.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "The sums of squares under generalized least-squares (GLS) are slightly different, as we have to correct for heteroscedasticity and/or the lack of independence among the residuals. Assume that the residuals have covariance matrix $ \\sigma_{e}^{2}R $. From Equation A3.10, y is replaced by $ \\mathbf{R}^{-1/2}\\mathbf{y} $ and X is replaced by $ \\mathbf{R}^{-1/2}\\mathbf{X} $ in the above OLS expressions for sums of squares. Hence, the total sum of squares for GLS becomes",
-      "source_page": 859,
-      "printed_page": 839,
-      "source_block_ids": [
-        "p859:b20"
-      ],
-      "bbox": [
-        53.0,
-        1176.0,
-        1013.0,
-        1371.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula171]]",
-      "source_page": 859,
-      "printed_page": 839,
-      "source_block_ids": [
-        "p859:b21"
-      ],
-      "bbox": [
-        297.0,
-        1382.0,
-        767.0,
-        1542.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "Likewise, the error sum of squares becomes",
+      "content": "then (recalling Equation A3.11a and A3.17b), $ SS_{E}/\\sigma_{e}^{2} $ is the sum of squared unit normals and hence is $ \\chi^{2} $-distributed. In particular, with n observations and p estimated parameters,",
       "source_page": 860,
       "printed_page": 840,
       "source_block_ids": [
-        "p860:b2"
+        "p860:b12"
       ],
       "bbox": [
         145.0,
-        136.0,
-        671.0,
-        169.0
+        912.0,
+        1106.0,
+        1009.0
       ]
     },
     {
       "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula172]]",
+      "content": "[[FORMULA:Genetics_appendix1_formula175]]",
       "source_page": 860,
       "printed_page": 840,
       "source_block_ids": [
-        "p860:b3"
+        "p860:b13"
       ],
       "bbox": [
-        308.0,
-        195.0,
-        941.0,
-        344.0
+        550.0,
+        1006.0,
+        703.0,
+        1075.0
       ]
     },
     {
       "type": "discussion",
-      "content": "and the model sum of squares becomes",
+      "content": "as a degree of freedom is lost for each estimated model parameter.",
       "source_page": 860,
       "printed_page": 840,
       "source_block_ids": [
-        "p860:b5"
+        "p860:b15"
+      ],
+      "bbox": [
+        147.0,
+        1088.0,
+        937.0,
+        1118.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Suppose we have $n$ observations and wish to compare two linear models, a full model fitting $p$ parameters and a reduced model which uses only a subset $(q < p)$ of the parameters in the full model. Do the additional $p - q$ fitted parameters provide a significant increase in the amount of variation accounted for by the model? Let $SS_{E_f}$ and $SS_{E_r}$ denote the appropriate (OLS or GLS) error sums of squares for the full and reduced models. Under the null hypothesis (that the full model provides the same fit as the reduced model), the difference in error sums of squares $(SS_{E_r} - SS_{E_f})$ is distributed as constant $(\\sigma_e^2)$ times a $\\chi_{p-q}^2$. Likewise, from Equation A3.18, $SS_{E_f} \\sim \\sigma_e^2 \\chi_{n-p}^2$. Recalling the definition of the $F$ distribution (Appendix 5), it follows that",
+      "source_page": 860,
+      "printed_page": 840,
+      "source_block_ids": [
+        "p860:b16"
       ],
       "bbox": [
         145.0,
-        366.0,
-        620.0,
-        398.0
+        1122.0,
+        1107.0,
+        1442.0
       ]
     },
     {
       "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula173]]",
+      "content": "[[FORMULA:Genetics_appendix1_formula176]]",
       "source_page": 860,
       "printed_page": 840,
       "source_block_ids": [
-        "p860:b6"
+        "p860:b17"
       ],
       "bbox": [
-        189.0,
-        425.0,
-        957.0,
-        495.0
+        338.0,
+        1466.0,
+        916.0,
+        1540.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "is distributed as $ F_{p-q,n-p} $ under the null hypothesis of no improved fit.",
+      "source_page": 861,
+      "printed_page": 841,
+      "source_block_ids": [
+        "p861:b2"
+      ],
+      "bbox": [
+        50.0,
+        135.0,
+        901.0,
+        166.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "For example, we can ask if a particular linear model accounts for a significant fraction of the variation in y by considering that model versus the simplest reduced model $ y_i = \\mu + e_i $. It is easily seen that the least-squares solution for $ \\mu $ is $ \\overline{y} $ for OLS and the weighted mean for GLS, giving $ SS_{E_r} = SS_T $. Since the number of parameters in the reduced model is $ q = 1 $, the test for whether a particular linear model accounts for a significant amount of the variation is",
+      "source_page": 861,
+      "printed_page": 841,
+      "source_block_ids": [
+        "p861:b3"
+      ],
+      "bbox": [
+        50.0,
+        168.0,
+        1012.0,
+        360.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula177]]",
+      "source_page": 861,
+      "printed_page": 841,
+      "source_block_ids": [
+        "p861:b4"
+      ],
+      "bbox": [
+        268.0,
+        383.0,
+        797.0,
+        456.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where $ r^{2} $ is the coefficient of determination for the full model (Equation A3.15). This test statistic follows an $ F_{p-1,n-p} $ distribution.",
+      "source_page": 861,
+      "printed_page": 841,
+      "source_block_ids": [
+        "p861:b6"
+      ],
+      "bbox": [
+        52.0,
+        482.0,
+        1007.0,
+        547.0
       ]
     }
   ]

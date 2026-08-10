@@ -3,13 +3,16 @@
   "metadata": {
     "chapter": "Genetics_appendix1",
     "section": "GENERALIZED INVERSES AND SOLUTIONS TO SINGULAR SYSTEMS OF EQUATIONS",
-    "subsections": [],
-    "section_level_1": "GENERALIZED INVERSES AND SOLUTIONS TO SINGULAR SYSTEMS OF EQUATIONS",
-    "section_level_2": null,
-    "heading_path": [
-      "GENERALIZED INVERSES AND SOLUTIONS TO SINGULAR SYSTEMS OF EQUATIONS"
+    "subsections": [
+      "Generalized Inverses"
     ],
-    "display_heading": "GENERALIZED INVERSES AND SOLUTIONS TO SINGULAR SYSTEMS OF EQUATIONS",
+    "section_level_1": "GENERALIZED INVERSES AND SOLUTIONS TO SINGULAR SYSTEMS OF EQUATIONS",
+    "section_level_2": "Generalized Inverses",
+    "heading_path": [
+      "GENERALIZED INVERSES AND SOLUTIONS TO SINGULAR SYSTEMS OF EQUATIONS",
+      "Generalized Inverses"
+    ],
+    "display_heading": "GENERALIZED INVERSES AND SOLUTIONS TO SINGULAR SYSTEMS OF EQUATIONS / Generalized Inverses",
     "source_file": "",
     "source_pdf": "data/背景资料/Genetics.pdf",
     "source_title": "Genetics and Analysis of Quantitative Traits",
@@ -18,124 +21,154 @@
       "remote_llm_calls": 0
     },
     "heading_source": {
-      "source_page": 847,
-      "printed_page": 827,
+      "source_page": 848,
+      "printed_page": 828,
       "source_block_ids": [
-        "p847:b3"
+        "p848:b3"
       ],
       "bbox": [
-        59.0,
-        826.0,
-        860.0,
-        895.0
+        140.0,
+        260.0,
+        411.0,
+        290.0
       ],
-      "raw_text": "GENERALIZED INVERSES AND SOLUTIONS TO SINGULAR SYSTEMS OF EQUATIONS"
+      "raw_text": "Generalized Inverses"
     }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Linear systems of equations are ubiquitous in quantitative genetics and we have presented solutions for such systems by assuming that the appropriate matrices are nonsingular, and hence can be inverted. However, in the real world of large, complex, and unbalanced designs, the existence of an inverse is by no means guaranteed. Consider the solution of the matrix equation $ \\mathbf{y} = \\mathbf{A}\\mathbf{x} $ for the unknown vector $ \\mathbf{x} $. If $ \\mathbf{A} $ is a square and nonsingular, then $ \\mathbf{x} = \\mathbf{A}^{-1}\\mathbf{y} $ is the unique solution. However, what happens if $ \\mathbf{A} $ is singular or is nonsquare? In this case either the system has no solution and is said to be inconsistent or else there are an infinite number of solutions. An example of an inconsistent system is",
-      "source_page": 847,
-      "printed_page": 827,
-      "source_block_ids": [
-        "p847:b4"
-      ],
-      "bbox": [
-        56.0,
-        929.0,
-        1018.0,
-        1218.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula095]]",
-      "source_page": 847,
-      "printed_page": 827,
-      "source_block_ids": [
-        "p847:b5"
-      ],
-      "bbox": [
-        461.0,
-        1250.0,
-        609.0,
-        1281.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula096]]",
-      "source_page": 847,
-      "printed_page": 827,
-      "source_block_ids": [
-        "p847:b6"
-      ],
-      "bbox": [
-        461.0,
-        1290.0,
-        611.0,
-        1320.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "which cannot be satisfied by any $ (x_{1}, x_{2}) $. Likewise, a system with an infinite number of solutions is",
-      "source_page": 847,
-      "printed_page": 827,
-      "source_block_ids": [
-        "p847:b7"
-      ],
-      "bbox": [
-        55.0,
-        1350.0,
-        1012.0,
-        1412.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula097]]",
-      "source_page": 847,
-      "printed_page": 827,
-      "source_block_ids": [
-        "p847:b8"
-      ],
-      "bbox": [
-        459.0,
-        1411.0,
-        608.0,
-        1440.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula098]]",
-      "source_page": 847,
-      "printed_page": 827,
-      "source_block_ids": [
-        "p847:b9"
-      ],
-      "bbox": [
-        459.0,
-        1449.0,
-        608.0,
-        1478.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "which has a line of solutions of the form $ x_{2}=1-x_{1} $ for arbitrary $ x_{1} $. While these two simple systems can be solved by inspection, a more systematic approach is required for arbitrary systems. This is provided by using generalized inverses.",
+      "content": "Suppose a matrix $ A^{-} $exists such that",
       "source_page": 848,
       "printed_page": 828,
       "source_block_ids": [
-        "p848:b2"
+        "p848:b4"
       ],
       "bbox": [
         138.0,
-        135.0,
-        1098.0,
-        234.0
+        301.0,
+        593.0,
+        335.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula099]]",
+      "source_page": 848,
+      "printed_page": 828,
+      "source_block_ids": [
+        "p848:b5"
+      ],
+      "bbox": [
+        539.0,
+        359.0,
+        698.0,
+        389.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where A is $ p \\times q $ and $ A^{-} $is $ q \\times p $. Premultiplying both sides of the equation Ax = y by $ AA^{-} $gives",
+      "source_page": 848,
+      "printed_page": 828,
+      "source_block_ids": [
+        "p848:b7"
+      ],
+      "bbox": [
+        138.0,
+        416.0,
+        1096.0,
+        482.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula100]]",
+      "source_page": 848,
+      "printed_page": 828,
+      "source_block_ids": [
+        "p848:b8"
+      ],
+      "bbox": [
+        463.0,
+        481.0,
+        773.0,
+        513.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "and hence",
+      "source_page": 848,
+      "printed_page": 828,
+      "source_block_ids": [
+        "p848:b9"
+      ],
+      "bbox": [
+        139.0,
+        529.0,
+        272.0,
+        560.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula101]]",
+      "source_page": 848,
+      "printed_page": 828,
+      "source_block_ids": [
+        "p848:b10"
+      ],
+      "bbox": [
+        512.0,
+        561.0,
+        727.0,
+        593.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "implying that, if the system is consistent, a solution is",
+      "source_page": 848,
+      "printed_page": 828,
+      "source_block_ids": [
+        "p848:b11"
+      ],
+      "bbox": [
+        138.0,
+        608.0,
+        784.0,
+        642.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula102]]",
+      "source_page": 848,
+      "printed_page": 828,
+      "source_block_ids": [
+        "p848:b12"
+      ],
+      "bbox": [
+        557.0,
+        669.0,
+        680.0,
+        698.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Given the analogy with the inverse of a nonsingular square matrix, a matrix $ A^{-} $ satisfying Equation A3.1 is called a generalized inverse (also g-inverse, conditional inverse) of A. Unless A is nonsingular, Equation A3.1 does not define a unique matrix, so we refer to $ A^{-} $ as a generalized inverse instead of the generalized inverse. A unique generalized inverse, the Moore-Penrose inverse, can be obtained by imposing three additional conditions: $ A^{-}AA^{-} = A^{-} $, $ (\\mathbf{AA}^{-})^{T} = \\mathbf{AA}^{-} $, and $ (\\mathbf{A}^{-}\\mathbf{A})^{T} = \\mathbf{A}^{-}\\mathbf{A} $. However, for our purposes any $ A^{-} $ satisfying Equation A3.1 is sufficient. Methods for computing generalized inverses are found in Henderson (1984a). More detailed treatment of the properties of generalized inverses are given by Dhrymes (1978), Searle (1982), Pringle and Rayner (1971), and Rao and Mitra (1971), and we summarize some of these results below.",
+      "source_page": 848,
+      "printed_page": 828,
+      "source_block_ids": [
+        "p848:b14"
+      ],
+      "bbox": [
+        139.0,
+        724.0,
+        1101.0,
+        1077.0
       ]
     }
   ]

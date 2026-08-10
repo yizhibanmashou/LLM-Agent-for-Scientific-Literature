@@ -2,10 +2,6 @@
 
 ## Genetics_chapter14_001 · Principles of Marker-based Analysis
 
----
-
-## Genetics_chapter14_002 · Principles of Marker-based Analysis / Principles of Marker-based Analysis
-
 In classical Mendelian analysis, scorable genetic variants are used to map and characterize genes. This analysis requires that individual phenotypes be highly informative about the underlying genotypes. Quantitative genetics deals with the opposite setting wherein the phenotype provides very little information on the underlying genotype. Here the units of analysis are genetic variances rather than the underlying genes themselves. While this approach is sufficient in many settings, we ultimately would like to move away from this strictly statistical framework towards direct examination of effects of individual quantitative-trait loci (QTLs).
 
 As discussed below, there are occasions when one can choose suitable candidate loci based on biological knowledge of the character, but in most situations this is not possible. However, QTLs can be assayed indirectly by using linked marker loci. This indirect approach has long been recognized, but until recently it has been regarded as of minor importance because of the lack of sufficient genetic markers. Thanks to modern molecular biology, this situation has now changed dramatically. The ability to detect genetic variation directly at the DNA level has resulted in an essentially endless supply of markers for any species of interest. It is now routine to use at least 50–200 molecular markers, and often many more, for fine-scale analysis. Not surprisingly, there has been an explosion in the use of marker-based methods in quantitative genetics.
@@ -14,13 +10,13 @@ This chapter introduces the basics of marker-based mapping, while the next two c
 
 ---
 
-## Genetics_chapter14_003 · CLASSICAL APPROACHES
+## Genetics_chapter14_002 · CLASSICAL APPROACHES
 
 In some species, the clever use of special biological features (e.g., balancer chromosomes and the lack of male recombination in Drosophila) allows one to assay the effects of whole chromosomes on characters of interest. Because such chromosomal assays can be done with just a few markers, they were the main method of marker-based trait analysis before the advent of molecular markers. Although restricted to a few species, such assays nonetheless have provided insight into the genetic architecture of a number of characters.
 
 ---
 
-## Genetics_chapter14_004 · CLASSICAL APPROACHES / Chromosomal Assays
+## Genetics_chapter14_003 · CLASSICAL APPROACHES / Chromosomal Assays
 
 The idea here is straightforward — using genetic markers, a chromosome (or chromosomal segment) from one line is substituted into an otherwise standard genetic background (usually an inbred line to minimize background variance). Drosophila is highly amenable to such studies given its short generation time, few chromosomes, a well-characterized genetic map, the existence of balancer strains (e.g., Figure 5.7), and the lack of recombination in males. Application of these features allows intact chromosomes from one line to be substituted into another line. Chromosome substitution can also be done in wheat using certain genetic tricks that allow construction of individuals carrying an extra chromosome (e.g., Sears 1953, Law 1966, Snape et al. 1977, Law and Gale 1979, Choo 1983). The effects of large chromosomal segments have also been examined in maize through the use of reciprocal translocations (e.g., D. Robertson 1989) and in mice by using marked chromosomes (e.g., Kluge and Geldermann 1982).
 
@@ -34,7 +30,7 @@ Natural chromosomal assays become possible when chromosomal rearrangements are s
 
 ---
 
-## Genetics_chapter14_005 · CLASSICAL APPROACHES / Thoday's Method
+## Genetics_chapter14_004 · CLASSICAL APPROACHES / Thoday's Method
 
 1 today (1961, 1979) introduced a considerable refinement for crude chromosomal assays. His method is of substantial interest for purely historical reasons, but it also points out potential limitations of the flanking-marker mapping methods discussed in subsequent chapters. Consider a hypothetical QTL between two linked markers, with allele Q fixed in one inbred line (the tester line, also fixed for alleles A and B at the flanking marker loci), and q in another line (fixed for markers a and b). Substituting an aqb chromosome into the tester line gives AQB/aqb heterozygotes, and these individuals are subsequently backcrossed to the tester line. Recombinant aB progeny are then scored for the trait of interest. Since these recombinant chromosomes are either aqB or aQB, a QTL with detectable effects is indicated by the presence of two distinct character classes (corresponding to QQ and Qq individuals). The presence of a linked QTL outside of the interval can also generate distinct classes, but this is not an issue if only one recombination event occurs per chromosome. The main limitation of Thoday's method is the difficulty of isolating single recombinant chromosomes and propagating them intact (without further recombination) in organisms other than Drosophila.
 
@@ -44,7 +40,7 @@ Natural chromosomal assays become possible when chromosomal rearrangements are s
 
 **[示例 Example]**
 
-> **Example 1** · ref: `Genetics_chapter14:1` · source: `Genetics_chapter14_005.json` · blocks 2–2
+> **Example 1** · ref: `Genetics_chapter14:1` · source: `Genetics_chapter14_004.json` · blocks 2–2
 >
 > Example 1. A large sample of Ab recombinant chromosomes was generated from a cross between an ab line with negative character value and an AB tester line with mean zero. Each recombinant chromosome was used to create a line with a recombinant Ab chromosome and an AB tester chromosome in an otherwise genetically homogeneous background. Construction of such lines requires the use of balancer chromosomes, which prevent any further recombination from occurring (see Figure 5.7). The mean character values from the resulting lines formed two distinct clusters, one (comprising 43%) clustering around -1.5, the other clustering around 0. Hence, there appears to be a single factor (at our level of resolution), with the 0 mean class corresponding to Q/Q and the -1.5 class corresponding to Q/q, implying $ \mu_{QQ} - \mu_{Qq} = 1.5 $. The frequencies of these classes among Ab recombinant chromosomes imply that the A-Q recombination fraction is 43% of the A-B recombination fraction (assuming no interference).
 
@@ -55,7 +51,7 @@ Thoday’s method can be extended to allow for multiple factors between two mark
 
 **[示例 Example]**
 
-> **Example 2** · ref: `Genetics_chapter14:2` · source: `Genetics_chapter14_005.json` · blocks 5–9
+> **Example 2** · ref: `Genetics_chapter14:2` · source: `Genetics_chapter14_004.json` · blocks 5–9
 >
 > Example 2. Suppose there are three QTLs between the marker loci A and B, as shown in the following figure. Assuming no double crossovers, let $ f_1 $, $ f_2 $, $ f_3 $, and $ 1 - (f_1 + f_2 + f_3) $, respectively, be the fractions of recombination between flanking markers that occur between A and the first QTL, between the first and second QTL, the second and third, and the third and B. Let $ Q_i $ denote alleles from the high line, which have effect $ H_i $ relative to alleles $ q_i $ from the low line.
 > 
@@ -75,7 +71,7 @@ Thoday’s method can be extended to allow for multiple factors between two mark
 > Figure 14.1 Location of head and thoracic bristles in adult Drosophila. The most frequently studied bristle systems in quantitative-genetic experiments are sternopleural bristles (ST) on the side of the thorax between the first and second legs, abdominal bristles on the underside of the abdomen (AB), and scutellar bristles (SC) on the upper side of the last thoracic region. Ocellar bristles (O) on the top of the head are also occasionally used.
 
 
-> **Table 14.1** · `14.1` · page 396 · source: `Genetics_chapter14_005`
+> **Table 14.1** · `14.1` · page 396 · source: `Genetics_chapter14_004`
 > Table 14.1 The genetic architecture of various characters in Drosophila inferred by chromosomal assay.
 >
 > <table><tr><td rowspan="2">Character</td><td colspan="2">Dominance</td><td rowspan="2">Epistasis</td><td rowspan="2">Reference</td></tr><tr><td>Present</td><td>Directional</td></tr><tr><td>Fitness-related Characters</td><td></td><td></td><td></td><td></td></tr><tr><td rowspan="3">Viability</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Breese and Mather 1960</td></tr><tr><td>—</td><td>—</td><td>Yes</td><td>Seager and Ayala 1982</td></tr><tr><td>No</td><td>—</td><td>Weak</td><td>Ferrari 1987</td></tr><tr><td>Male mating activity</td><td>—</td><td>—</td><td>No</td><td>Kosuda 1993</td></tr><tr><td>Egg hatchability</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Kearsey and Kojima 1967</td></tr><tr><td>Fecundity</td><td>Yes</td><td>Yes</td><td>—</td><td>Keller and Mitchell 1964</td></tr><tr><td>Egg-pupal survival</td><td>Yes</td><td>Yes</td><td>—</td><td>Keller and Mitchell 1964</td></tr><tr><td rowspan="2">Development time</td><td>Yes</td><td>Yes</td><td>—</td><td>Keller and Mitchell 1964</td></tr><tr><td>No</td><td>—</td><td>Weak</td><td>Ferrari 1987</td></tr><tr><td>Progeny yield</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Barnes 1966</td></tr><tr><td>Egg production</td><td></td><td></td><td></td><td></td></tr><tr><td>D. melanogaster</td><td>Yes</td><td>Yes</td><td>—</td><td>Keller and Mitchell 1964</td></tr><tr><td>D. pseudoobscura</td><td>Yes</td><td>—</td><td>Yes</td><td>Kojima and Kelleher 1963</td></tr><tr><td>Physiological Characters</td><td></td><td></td><td></td><td></td></tr><tr><td>DDT-resistance</td><td>Yes</td><td>No</td><td>Yes</td><td>Dapkus and Merrell 1977</td></tr><tr><td>ADH activity</td><td>Yes</td><td>Yes</td><td>Yes</td><td>McDonald and Ayala 1978</td></tr><tr><td>G6PD activity</td><td>—</td><td>—</td><td>Yes</td><td>Miyashita and Laurie-Ahlberg 1984</td></tr><tr><td>6PGD activity</td><td>—</td><td>—</td><td>Yes</td><td></td></tr><tr><td>Morphological Characters</td><td></td><td></td><td></td><td></td></tr><tr><td rowspan="2">Abdominal bristles</td><td>Weak</td><td>No</td><td>Weak</td><td>Keller and Mitchell 1962</td></tr><tr><td>Weak</td><td>No</td><td>Weak</td><td>Breese and Mather 1957</td></tr><tr><td rowspan="2">Sternopleural bristles</td><td>Weak</td><td>No</td><td>Weak</td><td>Breese and Mather 1957</td></tr><tr><td>Weak</td><td>No</td><td>No</td><td>J. Hill 1964</td></tr><tr><td rowspan="2">Thorax length</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Robertson 1954</td></tr><tr><td>Weak</td><td>No</td><td>Weak</td><td>Keller and Mitchell 1962</td></tr><tr><td rowspan="2">Wing length</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Robertson 1954</td></tr><tr><td>No</td><td>—</td><td>No</td><td>Keller and Mitchell 1962</td></tr><tr><td>Body weight</td><td></td><td></td><td></td><td></td></tr><tr><td>D. melanogaster</td><td>No</td><td>—</td><td>Weak</td><td>Kearsey and Kojima 1967</td></tr><tr><td>D. pseudoobscura</td><td>Weak</td><td>No</td><td>Weak</td><td>Frahm and Kojima 1966</td></tr></table>
@@ -85,7 +81,7 @@ Thoday’s method can be extended to allow for multiple factors between two mark
 
 ---
 
-## Genetics_chapter14_006 · CLASSICAL APPROACHES / Genetics of Drosophila Bristle Number
+## Genetics_chapter14_005 · CLASSICAL APPROACHES / Genetics of Drosophila Bristle Number
 
 Drosophila possess a large number of bristles regularly distributed over the adult integument. As discussed in Chapter 12, a number of bristle systems, most notably sternopleural, abdominal, and scutellar bristles, have been widely used in quantitative-genetic studies (Figure 14.1).
 
@@ -106,7 +102,7 @@ Spickett (1963) examined the developmental aspects of the isolated factors from 
 
 ---
 
-## Genetics_chapter14_007 · CLASSICAL APPROACHES / Genetics of Drosophila Speciation
+## Genetics_chapter14_006 · CLASSICAL APPROACHES / Genetics of Drosophila Speciation
 
 Considerable debate revolves around the question of whether speciation events are precipitated by a few genes of major effect (Templeton 1980, Carson and Templeton 1984) or by changes at many loci with individually small effects (Charlesworth et al. 1982, Barton and Charlesworth 1984). Most data on the number of genes involved in reproductive isolation come from assays of crosses between Drosophila species that show partial fertility
 
@@ -131,7 +127,7 @@ The second (more general) conclusion, first noted by Haldane (1922), is that whe
 
 ---
 
-## Genetics_chapter14_008 · MOLECULAR MARKERS
+## Genetics_chapter14_007 · MOLECULAR MARKERS
 
 As mentioned in the introduction, the ability to score variation at the molecular level provides a huge increase in the number of available markers in any analysis. The first molecular markers used were allozymes, protein variants detected by differences in migration on starch gels in an electric field. Since the late 1960s, this class of markers has been extensively applied to a variety of population-genetic problems. However, as methods for evaluating variation directly at the DNA level became widely available during the mid-1980s, DNA-based markers largely replaced allozymes in mapping studies. Allozymic variants have the advantage of being relatively inexpensive to score in large numbers of individuals (although DNA markers are rapidly closing this price gap), but there is often insufficient protein variation for high-resolution mapping. On the other hand, there are effectively no limitations on either the genomic location or the number of DNA markers.
 
@@ -167,7 +163,7 @@ Mapping in outbred populations is most efficient with marker loci having a large
 
 While the marker types listed in Table 14.2 are the most commonly used, other categories of markers can be very useful (reviewed in Rafalski and Tingey 1993). For example, several studies have used mobile genetic elements (such as retroviruses) as markers (e.g., Rise et al. 1991, Nuzhdin et al. 1993, Keightley and Bulfield 1993, Ebert et al. 1993, Long et al. 1995). Due to the high rates of movement of some transposable elements, individuals often differ in the presence or absence of elements at particular sites. Scoring sites for the presence or absence of elements yields dominant markers. Finally, important advances in marker scoring are offered by two recently developed methods: representational difference analysis or RDA (Lisitsyn et al. 1993, Lisitsyn 1995) and genomic mismatch scanning or GMS (Nelson et al. 1993). Both methods examine the entire genome, allowing one to isolate only those sequences that are shared by two populations (GMS) or those that differ between populations (RDA). Judicious use of these methods will very likely provide powerful approaches for the isolation of QTLs (Lander 1993, Aldhous 1994).
 
-> **Table 14.2** · `14.2` · page 407 · source: `Genetics_chapter14_008`
+> **Table 14.2** · `14.2` · page 407 · source: `Genetics_chapter14_007`
 > Table 14.2 Properties of the most commonly used classes of molecular marker loci.
 >
 >  | RFLP | RAPD | Microsatellite DNA
@@ -182,13 +178,13 @@ While the marker types listed in Table 14.2 are the most commonly used, other ca
 
 ---
 
-## Genetics_chapter14_009 · GENETIC MAPS
+## Genetics_chapter14_008 · GENETIC MAPS
 
 Genetic maps show the ordering of loci along a chromosome and the relative distances between them. As detailed throughout the remainder of this chapter, such maps are essential to the localization of QTLs. The lack of genetic markers historically prevented the construction of detailed maps in all but a few well studied species with short generation times. However, as predicted by Botstein et al. (1980), molecular markers have sparked an explosion of genetic maps in humans and economically important plants and animals. The theory for constructing genetic maps is now highly refined, and we only introduce a few important issues here. For more detailed reviews, the reader should consult Bailey (1961), Lalouel (1992), and the excellent text by Ott (1991).
 
 ---
 
-## Genetics_chapter14_010 · GENETIC MAPS / Map Distances vs. Recombination Frequencies
+## Genetics_chapter14_009 · GENETIC MAPS / Map Distances vs. Recombination Frequencies
 
 Genetic map construction involves both the ordering of loci and the measurement of distance between them. Ideally, distances should be additive so that when new loci are added to the map, previously obtained distances do not need to be radically adjusted. Unfortunately, recombination frequencies are not additive and hence are inappropriate as distance measures. To illustrate, suppose that three loci are arranged in the order A, B, and C with recombination frequencies $ c_{AB} $, $ c_{AC} $, and $ c_{BC} $. Each recombination frequency is the probability that an odd number of crossovers occurs between the markers, while 1 - c is the probability of an even number (including zero). There are two different ways to get an odd number of crossovers in the interval A-C: an odd number in A-B and an even number in B-C, or an even number in A-B and an odd number in B-C. If there is no interference, so that the presence of a crossover in one region has no effect on the frequency of crossovers in adjacent regions, these probabilities can be related as
 
@@ -251,7 +247,7 @@ There is no universal relationship between map distance and the actual physical 
 
 *[See Table 14.3 at the end of this section.]*
 
-> **Table 14.3** · `14.3` · page 410 · source: `Genetics_chapter14_010`
+> **Table 14.3** · `14.3` · page 410 · source: `Genetics_chapter14_009`
 > Table 14.3 The relationship between map distance and physical distance.
 >
 > Species | Haploid Genome Size (kilobase pairs) | Map Length (centiMorgans) | Kilobases/centiMorgan
@@ -269,7 +265,7 @@ There is no universal relationship between map distance and the actual physical 
 
 ---
 
-## Genetics_chapter14_011 · GENETIC MAPS / How Many Markers Are Needed?
+## Genetics_chapter14_010 · GENETIC MAPS / How Many Markers Are Needed?
 
 For most organisms, genetic maps are not yet available, and one must start with randomly obtained markers. As a rough approximation for the number of random polymorphic markers necessary for a desired saturation of the linkage map, assume a circular linkage map of total length L map units. In order to have a fraction p of all loci within m map units of some marker, the required number of randomly distributed markers is
 
@@ -317,7 +313,7 @@ It is important to note that the above expressions refer to randomly chosen mark
 
 **[示例 Example]**
 
-> **Example 3** · ref: `Genetics_chapter14:3` · source: `Genetics_chapter14_011.json` · blocks 12–16
+> **Example 3** · ref: `Genetics_chapter14:3` · source: `Genetics_chapter14_010.json` · blocks 12–16
 >
 > Example 3. The human linkage map is 33 Morgans long with haploid chromosome number C = 23. How many random markers are required to achieve a 90% probability that at least one marker is within 10 map units (centiMorgans) of a randomly chosen gene?
 > 
@@ -335,7 +331,7 @@ It is important to note that the above expressions refer to randomly chosen mark
 
 ---
 
-## Genetics_chapter14_012 · MARKER-TRAIT ASSOCIATIONS
+## Genetics_chapter14_011 · MARKER-TRAIT ASSOCIATIONS
 
 We now turn our attention to the mapping of individual QTLs. A variety of experimental designs have been proposed, and we consider these in some detail in Chapters 15 (inbred line crosses) and 16 (outbred populations). Since those chapters focus on methods for estimating both QTL effects and map position, we defer further discussion of most statistical issues until then. The remainder of this chapter is concerned with general design strategies for mapping, and eventual cloning, of QTLs.
 
@@ -349,7 +345,7 @@ A number of problems, which are elaborated on in Chapter 16, conspire to make QT
 
 **[示例 Example]**
 
-> **Example 4** · ref: `Genetics_chapter14:4` · source: `Genetics_chapter14_012.json` · blocks 5–11
+> **Example 4** · ref: `Genetics_chapter14:4` · source: `Genetics_chapter14_011.json` · blocks 5–11
 >
 > Example 4. Likelihood functions for QTL mapping follow from standard mixture models (Chapter 13). Consider the simple backcross design, where two completely inbred lines (with marker/QTL genotypes MMQQ and mmqq) are crossed to form an $ F_{1} $ (MQ/mq) which is then backcrossed to the MMQQ population. If c denotes the marker-QTL recombination frequency, then a fraction $ (1 - c) $ of M-bearing $ F_{1} $ gametes contain Q, while c contain q. Likewise $ (1 - c) $ and c of m-bearing gametes contain q and Q, respectively. Because the gamete from the parental population is always MQ, the conditional probabilities of QTL genotypes given marker genotypes are
 > 
@@ -379,14 +375,14 @@ An observed association between alleles at a polymorphic marker locus and the va
 
 **[示例 Example]**
 
-> **Example 5** · ref: `Genetics_chapter14:5` · source: `Genetics_chapter14_012.json` · blocks 13–13
+> **Example 5** · ref: `Genetics_chapter14:5` · source: `Genetics_chapter14_011.json` · blocks 13–13
 >
 > Example 5. Following crosses between inbred lines of barley, Powell et al. (1985a,b) found that two loci with recessive dwarfing alleles (ert and denso) were associated with other quantitative traits: ert with reduced seed weight and denso with reduced height. By crossing different lines to produce an $ F_{2} $, it was found that the ert locus accounted for roughly 84% of the additive genetic variation in seed weight after both one and three generations of recombination, suggesting that the association between ert and seed weight is either due to pleiotropy or very tight linkage. In contrast, the denso locus accounted for 58% of the additive genetic variance for height in lines undergoing a single round of recombination but only 35% in lines undergoing three rounds. Hence, for the denso locus, much of the initial association was due to gametic phase disequilibrium.
 
 
 ---
 
-## Genetics_chapter14_013 · MARKER-TRAIT ASSOCIATIONS / Selective Genotyping and Progeny Testing
+## Genetics_chapter14_012 · MARKER-TRAIT ASSOCIATIONS / Selective Genotyping and Progeny Testing
 
 Many quantitative traits are less expensive to score than marker genotypes. In such cases, if our interest is in a single trait, it pays to first score a number of individuals for the trait and then genotype only a selected subset of these. Known as selective genotyping, this strategy can result in a large increase in power for the simple reason that much of the linkage information resides in individuals with extreme phenotypes (Lebowitz et al. 1987, Lander and Botstein 1989, Carey and Williamson 1991, Darvasi and Soller 1992). However, while selective genotyping offers increased power to detect a QTL, it also produces biased estimates of their effects. Unbiased estimates can be obtained by maximum likelihood, either using a likelihood function that directly accounts for the sampling bias (Darvasi and Soller 1992) or by treating unscored genotypes as missing values (Lander and Botstein 1989).
 
@@ -394,7 +390,7 @@ In those organisms where asexual propagation is possible, progeny testing (or re
 
 ---
 
-## Genetics_chapter14_014 · MARKER-TRAIT ASSOCIATIONS / Recombinant Inbred Lines (RILs)
+## Genetics_chapter14_013 · MARKER-TRAIT ASSOCIATIONS / Recombinant Inbred Lines (RILs)
 
 When asexual propagation is not possible, a related method is to use recombinant inbred lines (RILs). These can be constructed for any organism by taking an $ F_{1} $ line through multiple rounds of selfing (e.g., Burr and Burr 1991) or multiple generations of brother-sister mating (e.g., Bailey 1981). The resulting lines have essentially no within-line genetic variance (ignoring new mutation and small amounts of residual heterozygosity), whereas the genetic variance between lines is considerable, as each RIL represents a different multilocus genotype. A related approach, currently restricted to certain plants and the zebrafish (Streisinger et al. 1981), uses doubled-haploid lines (DHLs). Here haploid gametes from $ F_{1} $ parents are chemically treated to double the chromosome number, instantly producing completely homozygous individuals (Jensen 1989, Knapp et al. 1990, Knapp 1991, Luo and Kearsey 1991).
 
@@ -411,7 +407,7 @@ laboratory needs to characterize the marker genotypes for the set of lines, whil
 
 ---
 
-## Genetics_chapter14_015 · MARKER-TRAIT ASSOCIATIONS / Bulked Segregant Analysis
+## Genetics_chapter14_014 · MARKER-TRAIT ASSOCIATIONS / Bulked Segregant Analysis
 
 A variant of selective genotyping that is especially powerful when using RILs is bulked segregant analysis or BSA (Arnheim et al. 1985, Michelmore et al. 1991). Here individuals are combined (bulked or pooled) into groups based on trait value (Figure 14.7). Marker alleles in linkage disequilibrium with QTL alleles are expected to have a nonrandom distribution across bulks, in the extreme having a particular marker allele present only in one bulk and the alternative allele present only in the other bulk. Unlinked markers (and marker alleles in linkage equilibrium with QTLs) are expected to be randomly distributed across bulks. Generally DNA from each bulk is screened en mass for a number of marker loci, and markers are scored as present/absent. This all/none scoring is not necessarily very stringent, as alleles with frequencies less than 5% to 10% are generally scored as absent. However, methods do exist for quantifying the relative frequencies of marker alleles in each pool (e.g., using optical densities of observed allelic bands), see Pacek et al. (1993), Khatib et al. (1994), and Darvasi and Soller (1994a).
 
@@ -421,21 +417,21 @@ Finally, we note that BSA can be used to find additional markers linked to a par
 
 **[示例 Example]**
 
-> **Example 6** · ref: `Genetics_chapter14:6` · source: `Genetics_chapter14_015.json` · blocks 3–3
+> **Example 6** · ref: `Genetics_chapter14:6` · source: `Genetics_chapter14_014.json` · blocks 3–3
 >
 > Example 6. Yaghoobi et al. (1995) used bulked segregant analysis to map a major gene for root-knot nematode resistance in tomatoes. Forty-eight backcross individuals from a cross between resistant and susceptible strains ( $ F_{1} $ backcrossed to the susceptible parent) were scored, 25 of which were susceptible, and 23 resistant. This 1:1 segregation ratio is consistent with the hypothesis that a single dominant gene underlies resistance. To map this gene, two bulks of DNA, based on six resistant and six susceptible backcross plants were formed. Each bulk was screened for RAPDs using 520 different 10-base primers. Each primer gave on average about eight bands, resulting in 4,160 bands being scored in each pool, about 3% of which varied significantly between pools. These significant primers were then used to probe each of the original 48 backcross plants. One marker was present in 20 of 23 resistant plants and none (out of 25) of the susceptible plants, suggesting linkage to a major resistance gene.
 
 
 **[示例 Example]**
 
-> **Example 7** · ref: `Genetics_chapter14:7` · source: `Genetics_chapter14_015.json` · blocks 4–4
+> **Example 7** · ref: `Genetics_chapter14:7` · source: `Genetics_chapter14_014.json` · blocks 4–4
 >
 > Example 7. As a test of BSA, Mansur et al. (1993) examined four traits — maturity, plant height, lodging (a measure of plant structure), and seed yield — in 284 recombinant inbred lines generated by a cross between two soybean (Glycine max) cultivars. The four chosen traits were measured in each of the 284 RILs grown in two distinct environments (Minnesota and Chile) and the 20 highest-and lowest-performing lines, averaged over both environments, were selected for each trait. DNA was extracted from each of the extreme lines and bulked into a high and low sample for each of the traits. The resulting DNA was tested using radioactive probes for RFLP markers, and the amount of hybridization to each probe was quantified using a phosphoimager. The authors had previously used RFLPs to map a number of QTLs for these and several other traits using maximum-likelihood interval mapping (Chapter 15) in $ F_{2} $ families (Mansur et al. 1993). The previous RFLP marker-QTL associations were confirmed, and one marker that showed marginal linkage to maturity and height under interval mapping showed very strong linkage to these traits as well as to lodging and yield.
 
 
 ---
 
-## Genetics_chapter14_016 · MARKER-TRAIT ASSOCIATIONS / QTL Mapping by Marker Changes in Populations under Selection
+## Genetics_chapter14_015 · MARKER-TRAIT ASSOCIATIONS / QTL Mapping by Marker Changes in Populations under Selection
 
 Selective genotyping amounts to a single-generation selection experiment, as individuals are chosen from the tails of the character distribution. This approach can be generalized by divergently selecting a base population for several generations and testing for significant changes in marker allele frequencies between up- and down-selected lines. Marker loci initially in linkage disequilibrium to a QTL will increase (decrease) in frequency as linked QTL alleles increase (decrease) due to selection.
 
@@ -447,14 +443,14 @@ Marker alleles associated with body size have been found in several studies of d
 
 **[示例 Example]**
 
-> **Example 8** · ref: `Genetics_chapter14:8` · source: `Genetics_chapter14_016.json` · blocks 4–4
+> **Example 8** · ref: `Genetics_chapter14:8` · source: `Genetics_chapter14_015.json` · blocks 4–4
 >
 > Example 8. Nuzhdin et al. (1993) used allele-frequency changes to detect markers associated with fitness in a cross of high and low fitness lines of Drosophila melanogaster. These authors used the presence/absence of the mobile genetic elements mdg1 and copia as markers, finding 19 locations on chromosome 2 where the high and low lines differed in the presence/absence of inserted elements. An F1 was backcrossed to the low line for three generations to generate a base population with high-line alleles at expected frequency 1/32. This base population was then allowed to reproduce, with marker frequencies sampled after 11, 13, and 17 generations of natural selection. The frequencies of nine high-line markers (all located in a region around the centromere of chromosome 2) showed significantly higher values than expected by drift, suggesting linkage to one (or more) QTLs increasing fitness. The associated selection coefficients estimated by the maximum likelihood approach of Keightley and Bulfield ranged from 0.3 to 0.7.
 
 
 ---
 
-## Genetics_chapter14_017 · MARKER-TRAIT ASSOCIATIONS / MARKER-BASED ANALYSIS USING NEARLY ISOGENIC LINES (NILs)
+## Genetics_chapter14_016 · MARKER-TRAIT ASSOCIATIONS / MARKER-BASED ANALYSIS USING NEARLY ISOGENIC LINES (NILs)
 
 Nearly isogenic lines (NILs), inbred lines containing one or more small regions of DNA from a donor parent in an otherwise standard background, play an important and growing role in QTL mapping and cloning. NILs (also referred to as cogenic strains) are constructed by first crossing a donor parent to an inbred line (the recurrent parent) to form an $ F_{1} $. The resulting offspring are then backcrossed to the recurrent parent for several generations. In species where selfing is allowed, the NIL is formed by at least one generation of selfing. Where selfing is not possible, after the backcrossing is complete, individuals are repeatedly sib mated to form the final inbred line. Note that NILs differ significantly from recombinant inbred lines (RILs). While both are inbred and can start from $ F_{1} $ parents, RILs are generated by repeated inbreeding of the descendant lines and hence contain about 50% donor DNA, as opposed to the very small fraction of donor DNA expected in NILs.
 
@@ -470,14 +466,14 @@ Typically, five to seven generations of backcrossing are performed, giving the e
 
 **[示例 Example]**
 
-> **Example 9** · ref: `Genetics_chapter14:9` · source: `Genetics_chapter14_017.json` · blocks 4–4
+> **Example 9** · ref: `Genetics_chapter14:9` · source: `Genetics_chapter14_016.json` · blocks 4–4
 >
 > Example 9. Eshed and Zamir (1995) formed 50 NILs from a cross between the cultivated tomato (Lycopersicon esculentum) and a wild relative (L. pennellii). Based on analysis with 375 markers, each line contained a single RFLP-defined fragment from L. pennellii, averaging around 33 cM (or roughly 3% donor DNA). Comparing the mean value of each NIL against a standard, the authors found 23 QTLs for fruit soluble-solids content and 18 QTLs for fruit mass. By comparison, in an analysis of marker-trait associations in RILs, Goldman et al. (1995) found 7 and 13 QTLs, respectively. Eshed and Zamir subjected two regions to much finer scale mapping, using markers to select for recombinants within these regions. Upon finer analysis, a 55 cM region influencing fruit size was shown to contain at least three separate QTLs. A 37 cM region showing heterosis for soluble-solids yield was shown to result from associative overdominance. This latter region was subdivided by recombination into a partially dominant QTL that increases yield and a linked recessive that reduces yield.
 
 
 **[示例 Example]**
 
-> **Example 10** · ref: `Genetics_chapter14:10` · source: `Genetics_chapter14_017.json` · blocks 5–7
+> **Example 10** · ref: `Genetics_chapter14:10` · source: `Genetics_chapter14_016.json` · blocks 5–7
 >
 > Example 10. The simplest scheme for constructing NILs is to backcross without any selection (intentional or otherwise). A collection of such NILs is expected to be random with regard to the donor regions maintained. Most NILs, however, are produced by a select-and-backcross procedure, and hence are not random with regard to the retained donor DNA. This example shows how such an approach can be exploited for QTL mapping.
 > 
@@ -488,14 +484,14 @@ Typically, five to seven generations of backcrossing are performed, giving the e
 
 **[示例 Example]**
 
-> **Example 11** · ref: `Genetics_chapter14:11` · source: `Genetics_chapter14_017.json` · blocks 8–8
+> **Example 11** · ref: `Genetics_chapter14:11` · source: `Genetics_chapter14_016.json` · blocks 8–8
 >
 > Example 11. Martin et al. (1991) used 144 random primers to generate RAPDs for comparing two tomato NILs, both derived from the same donor and recurrent parents. One NIL contained an introgressed segment for resistance to the bacterial pathogen Pseudomonas syringae, while the other lacked resistance. The random primers generated approximately 625 discrete products, seven of which differed between the two lines. Of the four chosen for further analysis, three were shown by cosegregation between the marker and pathogen resistance to be tightly linked to the resistance gene. The power of this approach can be seen by comparing the time for identification and confirmation of these three markers by this analysis (roughly one month) with the time required to construct a dense genetic map of tomatoes (over 2 years).
 
 
 ---
 
-## Genetics_chapter14_018 · MARKER-TRAIT ASSOCIATIONS / Marker-based Introgressions
+## Genetics_chapter14_017 · MARKER-TRAIT ASSOCIATIONS / Marker-based Introgressions
 
 Although NILs formed by selection have generally focused on phenotypic characters such as disease resistance or a small set of desirable characters, one can also select for the retention of specific donor marker alleles. Such marker selection allows the introgression of a specific region (such as one containing QTLs of
 
@@ -572,7 +568,7 @@ $$
 
 **[示例 Example]**
 
-> **Example 12** · ref: `Genetics_chapter14:12` · source: `Genetics_chapter14_018.json` · blocks 20–25
+> **Example 12** · ref: `Genetics_chapter14:12` · source: `Genetics_chapter14_017.json` · blocks 20–25
 >
 > Example 12. Suppose there are $n = 15$ chromosomes, each of length 75 cM, and that we select for retention of a marker located in the middle of chromosome 1 during five generations of backcrossing and a generation of selfing. Applying Equation 14.10a, the expected fraction of donor DNA on chromosome 1 is
 > 
@@ -613,7 +609,7 @@ Equation 14.10c shows that 99 backcross generations are required to reduce the a
 
 **[示例 Example]**
 
-> **Example 13** · ref: `Genetics_chapter14:13` · source: `Genetics_chapter14_018.json` · blocks 33–34
+> **Example 13** · ref: `Genetics_chapter14:13` · source: `Genetics_chapter14_017.json` · blocks 33–34
 >
 > Example 13. Suppose the region of interest is flanked by markers, each at recombination frequency c from the locus of interest. To have a 95% probability of recovering a double recombinant in a single generation, one must examine roughly $ 3/c^2 $ individuals, or 30,000 individuals for $ c = 0.01 $ (a 2 cM interval). This follows since the probability of no double recombinants among n sampled chromosomes is $ (1 - c^2)^n $, giving the probability of at least one double as $ 1 - (1 - c^2)^n $. Setting this equal to 0.95 and solving for n gives $ n = -\ln(0.05)/\ln(1 - c^2) \simeq 3/c^2 $. How much of a savings can the two-generation method offer?
 > 
@@ -622,11 +618,7 @@ Equation 14.10c shows that 99 backcross generations are required to reduce the a
 
 ---
 
-## Genetics_chapter14_019 · FINE MAPPING OF MAJOR GENES USING
-
----
-
-## Genetics_chapter14_020 · POPULATION-LEVEL DISEQUILIBRIUM
+## Genetics_chapter14_018 · FINE MAPPING OF MAJOR GENES USING POPULATION-LEVEL DISEQUILIBRIUM
 
 In small populations, or in populations that have recently undergone a rapid expansion, the amount of disequilibrium between tightly linked markers generated by random drift may be sufficient to allow for very fine mapping of major genes using a random population sample. This approach is called linkage disequilibrium (LD) or allelic association mapping by human geneticists and is commonly applied to binary (presence/absence) traits. LD mapping can be applied to only a very restricted set of binary traits, as the assumption is that the trait has a very simple genetic basis, such that individuals displaying the trait can be traced to a single allele at one locus. Under this assumption, one tries to find markers that are associated with the allele by comparing the distribution of markers in individuals having the trait versus those lacking the trait. If the trait is influenced by multiple loci, or even multiple alleles at the same locus, marker associations will be obscured. Given its extreme sensitivity to such allelic heterogeneity, it is unlikely that LD mapping can be applied to QTLs of small to moderate effects. Nonetheless, this is an important method for mapping major genes.
 
@@ -646,7 +638,7 @@ where c is the recombination frequency between loci and $ N_{e} $ is the effecti
 
 ---
 
-## Genetics_chapter14_021 · POPULATION-LEVEL DISEQUILIBRIUM / LD Mapping in Expanding Populations
+## Genetics_chapter14_019 · FINE MAPPING OF MAJOR GENES USING POPULATION-LEVEL DISEQUILIBRIUM / LD Mapping in Expanding Populations
 
 The amount of linkage disequilibrium can be considerably greater than that predicted by Equation 14.13 if the population has not yet achieved a balance between drift and recombination. Such is the case in expanding populations, and geneticists have sought out isolated human populations that appear to have recently undergone such expansions for LD mapping of disease genes. The ideal situation occurs when most of the disease alleles descend from a single ancestral mutation, so that all current copies have maintained some of the ancestral marker haplotype. The age of the ancestral mutation from which all current copies derive can neither be too young nor too old. It must be sufficiently old that recombination has reduced the expected size of the retained region to one sufficiently small for fine mapping. However, if the mutation is too old, this region will be too small for analysis (as it will contain no observable linked markers). These conditions are often satisfied in expanding populations that can be traced back to a small number of recent founders. An example is the current Finnish population, which arose from a small founder group about 2000 years ago (reviewed in de la Chapelle 1993), and other such human populations are discussed by Jorde (1995). In a rapidly expanding population, all copies of a mutant disease allele often trace back to a single copy present in the founding population (or originating shortly after the population expansion began).
 
@@ -662,7 +654,7 @@ $$
 
 **[示例 Example]**
 
-> **Example 14** · ref: `Genetics_chapter14:14` · source: `Genetics_chapter14_021.json` · blocks 4–7
+> **Example 14** · ref: `Genetics_chapter14:14` · source: `Genetics_chapter14_019.json` · blocks 4–7
 >
 > Example 14. Hästbacka et al. (1992) examined the gene for diastrophic dysplasia (DTD), an autosomal recessive disease, in Finland. A total of 18 multiplex families (showing two or more affected individuals) allowed the gene to be localized to within 1.6 cM from a marker locus (CSF1R) using standard pedigree methods. To increase the resolution using pedigree methods requires significantly more multiplex families. Given the excellent public health system in Finland, however, it is likely that the investigators had already sampled most of the existing families. As a result, the authors turned to LD mapping.
 > 
@@ -725,7 +717,7 @@ $$
 
 **[示例 Example]**
 
-> **Example 15** · ref: `Genetics_chapter14:15` · source: `Genetics_chapter14_021.json` · blocks 21–27
+> **Example 15** · ref: `Genetics_chapter14:15` · source: `Genetics_chapter14_019.json` · blocks 21–27
 >
 > Example 15. Sulisalo et al. (1994) examined the major gene for cartilage-hair hypoplasia (CHH), an autosomal recessive disease, in the Finnish population. As in Example 14, pedigree information allowed unambiguous determination the haplotypes associated with most CCH-bearing chromosomes. The authors observed that 85% of these contain a particular allele at marker D95163, while only 41% of non-CHH chromosomes carry this allele. Hence,
 > 
@@ -757,13 +749,13 @@ Kaplan and Weir (1995) show that commonly used approximations for the confidence
 
 ---
 
-## Genetics_chapter14_022 · CANDIDATE LOCI
+## Genetics_chapter14_020 · CANDIDATE LOCI
 
 In some cases, there may be sufficient physiological/biochemical information to suspect that certain known loci influence character expression. In human genetics, it is common practice to directly test for population-level associations between trait value and specific alleles at such candidate loci. For example, Boerwinkle and Sing (1987) showed that three common alleles at the human apolipoprotein E locus account for about 8% of the total variation in cholesterol levels. Interestingly, a particular allele of apolipoprotein E also appears to be a major determinant of Alzheimer's disease. The mean age of onset for homozygotes and heterozygotes for this allele is $ 68.4 \pm 1.2 $ and $ 75.5 \pm 1.0 $ years, respectively, while the mean age for individuals with no copies of this allele is $ 84.3 \pm 1.3 $ (Corder et al. 1993). Other candidate loci for Alzheimer's disease are reviewed by Pericak-Vance and Haines (1995). As the next example shows, results using the candidate-locus approach can be rather unexpected.
 
 **[示例 Example]**
 
-> **Example 16** · ref: `Genetics_chapter14:16` · source: `Genetics_chapter14_022.json` · blocks 1–1
+> **Example 16** · ref: `Genetics_chapter14:16` · source: `Genetics_chapter14_020.json` · blocks 1–1
 >
 > Example 16. Winkelman and Hodgetts (1992) examined the growth hormone (GH) gene as a candidate locus for body weight in selected lines of mice. Molecular analysis disclosed the presence of an allele, $ GH^{h} $, present in all four lines selected for increased weight (being fixed in three of these). An alternative allele, $ GH^{c} $, was fixed in all five control lines. One of the up-selected lines was crossed to two separate control lines to create two different $ F_{2} $ populations. The $ GH^{h} $ allele had a significant, but unexpected, effect on body weight in both $ F_{2} $ populations, as it decreased weight. For one population, the genotypes $ GH^{h}GH^{h} $ : $ GH^{h}GH^{c} $ : $ GH^{c}GH^{c} $ had 42-day weights of 29.2 : 30.2 : 31.4, while in the other population these respective weights were 34.6 : 34.9 : 38.8. Thus, the $ GH^{h} $ allele was additive in one of the $ F_{2} $ backgrounds, but dominant in the other. The $ GH^{h} $ allele behaved rather differently once the $ F_{2} $ populations were subjected to selection, again increasing in frequency in up-selected lines, and decreasing in frequency in down-selected lines. Winkelman and Hodgetts suggested that the association between the $ GH^{h} $ allele and increased weight was a product of epistastic interactions in mice selected for high weight.
 
@@ -772,13 +764,13 @@ How are candidate loci chosen? One obvious approach is to consider loci known fr
 
 ---
 
-## Genetics_chapter14_023 · CANDIDATE LOCI / The Transmission/Disequilibrium Test
+## Genetics_chapter14_021 · CANDIDATE LOCI / The Transmission/Disequilibrium Test
 
 When considering genetic disorders, the frequency of a particular candidate (or marker) allele in affected (or case) individuals is often compared with the frequency of this allele in unaffected (or control) individuals. The problem with such association studies is that a disease-marker association can arise simply as a consequence of population structure, rather than as a consequence of linkage. Such population stratification occurs if the total sample consists of a number of divergent populations (e.g., different ethnic groups) which differ in both candidate-gene frequencies and incidences of the disease. Population structure can severely compromise tests of candidate gene associations, as the following example illustrates.
 
 **[示例 Example]**
 
-> **Example 17** · ref: `Genetics_chapter14:17` · source: `Genetics_chapter14_023.json` · blocks 1–6
+> **Example 17** · ref: `Genetics_chapter14:17` · source: `Genetics_chapter14_021.json` · blocks 1–6
 >
 > Example 17. Hanson et al. (1995) used segregation analysis (Chapter 13) to find evidence for a major gene for Type 2 diabetes mellitus segregating at high frequency in members of the Pima and Tohono O'odham tribes of southern Arizona. In an attempt to map this gene, Knowler et al. (1988) examined how the simple presence/absence of a particular haplotype, $ Gm^{+} $, was associated with diabetes. Their sample showed the following associations:
 > 
@@ -809,7 +801,7 @@ How are T and NT determined? Consider an M/m parent with three affected offsprin
 
 **[示例 Example]**
 
-> **Example 18** · ref: `Genetics_chapter14:18` · source: `Genetics_chapter14_023.json` · blocks 12–16
+> **Example 18** · ref: `Genetics_chapter14:18` · source: `Genetics_chapter14_021.json` · blocks 12–16
 >
 > Example 18. Copeman et al. (1995) examined 21 microsatellite marker loci in 455 human families with Type 1 diabetes. One marker locus, D2S152, had three alleles, with one allele (denoted 228) showing a significant effect under the TDT. Parents heterozygous for this marker transmitted allele 228 to diabetic offspring 81 times, while transmitting alternative alleles only 45 times, giving
 > 
@@ -839,7 +831,7 @@ controlling for any segregation distortion. A number of family-based methods for
 
 ---
 
-## Genetics_chapter14_024 · CANDIDATE LOCI / Estimating Effects of Candidate Loci
+## Genetics_chapter14_022 · CANDIDATE LOCI / Estimating Effects of Candidate Loci
 
 While the estimation of genotype means for a candidate locus seems straightforward, there are several potential sources of bias. While it is possible in some settings to distinguish between the direct effects of a candidate locus and its indirect effects due to association with linked QTLs (e.g., Bovenhuis and Weller 1994), as noted above the presence of linkage disequilibrium greatly confounds the interpretation of candidate-locus means. We consider other, more subtle, sources of bias below.
 
@@ -897,7 +889,7 @@ where $ \text{Var}(e) $ is the estimate of the residual variance (within genotyp
 
 ---
 
-## Genetics_chapter14_025 · CANDIDATE LOCI / Templeton and Sing's Method: Using the Historical Information in Haplotypes
+## Genetics_chapter14_023 · CANDIDATE LOCI / Templeton and Sing's Method: Using the Historical Information in Haplotypes
 
 While one can use a single marker to examine whether genetic variation at a candidate locus is associated with character variation, studies typically involve several closely linked markers, often including several polymorphic sites within the gene itself. How should one best extract information from this set of markers? Obviously, it is more powerful to consider haplotypes (the multiple-locus genotypes associated with the region of interest) than single markers. One drawback with this approach is that there can be an enormous number of haplotypes, resulting in small sample sizes for each haplotype and a reduction in the power of tests for haplotype-trait associations. What is needed is a logical way to combine information from different haplotypes. In an interesting series of papers, Templeton and Sing (Templeton et al. 1987, 1988, 1992; Templeton 1995) suggest that this can be done by incorporating information on the inferred evolutionary relationships of the sampled haplotypes. We simply outline their basic idea here.
 
@@ -912,13 +904,13 @@ The sequence information in haplotypes can be used to construct a cladogram esti
 
 ---
 
-## Genetics_chapter14_026 · CANDIDATE LOCI / CLONING QTLs
+## Genetics_chapter14_024 · CANDIDATE LOCI / CLONING QTLs
 
 Cloning a gene (transferring a DNA sequence containing the gene to a plasmid or other manipulable vector) allows the complete power of modern molecular biology to be used in the study of QTLs. With a clone in hand, one can sequence the gene, study its expression in different tissues and at different developmental times, and isolate homologous DNA sequences from other populations/species. More direct manipulation is also possible, such as the placement of modified copies of the gene back into the organism, or into different species, creating transgenic individuals. While a variety of molecular approaches can be used to clone a gene whose product is known (Maniatis et al. 1982), QTLs are of special interest precisely because their products are typically unknown. Two different cloning strategies have been suggested for genes with unknown products but discernible phenotypes: transposon tagging and positional cloning. We discuss these in turn. An interesting review of recent ideas for cloning QTLs is given by Tanksley et al. (1995).
 
 ---
 
-## Genetics_chapter14_027 · CANDIDATE LOCI / Transposon Tagging
+## Genetics_chapter14_025 · CANDIDATE LOCI / Transposon Tagging
 
 When a mobile genetic element (or transposon) inserts itself into or near a gene, it can disrupt expression, creating a visible mutation, and providing the basis for cloning by transposon tagging (Bingham et al. 1981). In several species, it is now possible to introduce transposons modified for high insertion rates into the germline either by genetic or micro-injection techniques. Using these elements as probes, standard molecular techniques can then be used to isolate any region of DNA within which an element has inserted.
 
@@ -928,7 +920,7 @@ Given the need for completely inbred lines, is this approach really of general u
 
 ---
 
-## Genetics_chapter14_028 · CANDIDATE LOCI / Positional Cloning and Comparative Mapping
+## Genetics_chapter14_026 · CANDIDATE LOCI / Positional Cloning and Comparative Mapping
 
 In theory, if we can localize the position of a QTL to a sufficiently small region of DNA, it becomes possible to examine all of the genes in that region. For example, in humans the use of rare chromosome deletions or translocations that correlate with the presence of a disease have been very successfully exploited to delimit the region in which the disease gene resides (Collins 1992, 1995). This is the idea behind positional cloning, which can be done by brute force (sequencing
 

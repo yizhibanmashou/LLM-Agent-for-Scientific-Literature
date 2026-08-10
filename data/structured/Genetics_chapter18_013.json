@@ -4,15 +4,15 @@
     "chapter": "Genetics_chapter18",
     "section": "FULL-SIB ANALYSIS",
     "subsections": [
-      "Nested Analysis of Variance"
+      "Hypothesis Testing"
     ],
     "section_level_1": "FULL-SIB ANALYSIS",
-    "section_level_2": "Nested Analysis of Variance",
+    "section_level_2": "Hypothesis Testing",
     "heading_path": [
       "FULL-SIB ANALYSIS",
-      "Nested Analysis of Variance"
+      "Hypothesis Testing"
     ],
-    "display_heading": "FULL-SIB ANALYSIS / Nested Analysis of Variance",
+    "display_heading": "FULL-SIB ANALYSIS / Hypothesis Testing",
     "source_file": "",
     "source_pdf": "data/背景资料/Genetics.pdf",
     "source_title": "Genetics and Analysis of Quantitative Traits",
@@ -21,199 +21,263 @@
       "remote_llm_calls": 0
     },
     "heading_source": {
-      "source_page": 587,
-      "printed_page": 567,
+      "source_page": 588,
+      "printed_page": 568,
       "source_block_ids": [
-        "p587:b3"
+        "p588:b8"
       ],
       "bbox": [
-        70.0,
-        340.0,
-        425.0,
-        378.0
+        156.0,
+        1390.0,
+        404.0,
+        1428.0
       ],
-      "raw_text": "Nested Analysis of Variance"
+      "raw_text": "Hypothesis Testing"
     }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "As with one-way ANOVA, estimates of the variance components can be obtained by the method of moments, i.e., by partitioning the total observed sum of squares into components, writing the expected mean squares as linear functions of the variance components, equating the observed mean squares to their expectations, and solving for the variances. Let $ \\overline{z}_{ij} $ be the mean phenotype of full-sib family $ ij $, $ \\overline{z}_i $ be the mean phenotype of progeny of sire $ i $, and $ \\overline{z} $ be the grand mean of the $ z_{ijk} $. The total sum of squared deviations of the $ z_{ijk} $ from $ \\overline{z} $ can be partitioned into components describing deviations of observed sire means from the grand mean, deviations of the full-sib family means from their sire group means, and deviations of individual measures from their full-sib family means (Table 18.3).",
-      "source_page": 587,
-      "printed_page": 567,
+      "content": "Under the assumption of normality and balanced design, standard $F$ ratios can be used to test for significant variation associated with sires and dams. In each case, the numerator of the $F$ ratio is the observed mean square at the level containing the factor of interest, and the denominator is the observed mean square at the next lower level (which incorporates all factors except the one of interest). The test statistic for evaluating whether there is significant variance associated with sires is the $F$ ratio $MS_s/MS_d$, since under the null hypothesis of $\\sigma_s^2 = 0$, the expected value of the numerator is equal to that of the denominator (see Table 18.3). Similarly, the test statistic for significant dam effects is the ratio $MS_d/MS_e$, as the expected value of the numerator is again equal to that of the denominator under the null hypothesis of $\\sigma_d^2 = 0$ (Table 18.3).",
+      "source_page": 588,
+      "printed_page": 568,
       "source_block_ids": [
-        "p587:b4"
+        "p588:b9",
+        "p589:b2"
       ],
       "bbox": [
-        61.0,
-        381.0,
-        1024.0,
-        723.0
+        155.0,
+        1416.0,
+        1118.0,
+        1564.0
+      ],
+      "source_page_end": 589
+    },
+    {
+      "type": "discussion",
+      "content": "With unbalanced designs, hypothesis testing with F ratios becomes more difficult under the nested model. If the data are normally distributed, the logic developed above tells us that",
+      "source_page": 589,
+      "printed_page": 569,
+      "source_block_ids": [
+        "p589:b3"
+      ],
+      "bbox": [
+        73.0,
+        344.0,
+        1033.0,
+        457.0
       ]
     },
     {
       "type": "discussion",
-      "content": "The variance-component estimators are given by,",
-      "source_page": 587,
-      "printed_page": 567,
+      "content": "[[FORMULA:Genetics_chapter18_formula061]]",
+      "source_page": 589,
+      "printed_page": 569,
       "source_block_ids": [
-        "p587:b5"
+        "p589:b4"
       ],
       "bbox": [
-        114.0,
+        398.0,
+        468.0,
         704.0,
-        705.0,
-        751.0
+        541.0
       ]
     },
     {
       "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter18_formula054]]",
-      "source_page": 587,
-      "printed_page": 567,
+      "content": "can still be employed as a test for significant dam effects, since the numerator and denominator have identical expectations under the null hypothesis of $ \\sigma_d^2 = 0 $. However, since the coefficients ( $ k_1 $ and $ k_2 $) associated with $ \\sigma_d^2 $ in the mean squares associated with dams and sires are unequal in an unbalanced design (Table 18.3), the numerator and denominator of MS_s/MS_d no longer have equal expectations under the null hypothesis $ \\sigma_s^2 = 0 $. Nevertheless, a linear function of the mean squares can be constructed for the numerator that does fulfill this requirement, leading to the test statistic",
+      "source_page": 589,
+      "printed_page": 569,
       "source_block_ids": [
-        "p587:b6"
+        "p589:b6"
       ],
       "bbox": [
-        269.0,
-        765.0,
-        805.0,
-        841.0
+        67.0,
+        548.0,
+        1026.0,
+        820.0
       ]
     },
     {
       "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter18_formula055]]",
-      "source_page": 587,
-      "printed_page": 567,
+      "content": "[[FORMULA:Genetics_chapter18_formula062]]",
+      "source_page": 589,
+      "printed_page": 569,
       "source_block_ids": [
-        "p587:b8"
+        "p589:b7"
       ],
       "bbox": [
-        266.0,
-        842.0,
-        529.0,
-        917.0
+        323.0,
+        829.0,
+        761.0,
+        907.0
       ]
     },
     {
       "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter18_formula056]]",
-      "source_page": 587,
-      "printed_page": 567,
+      "content": "The main problem with this test statistic is the unknown degrees of freedom for the numerator, r. A general solution to this problem was developed by Satterthwaite (1946). Consider a linear function of m observed mean squares",
+      "source_page": 589,
+      "printed_page": 569,
       "source_block_ids": [
-        "p587:b10"
+        "p589:b9"
       ],
       "bbox": [
-        269.0,
-        920.0,
-        437.0,
-        957.0
+        60.0,
+        910.0,
+        1022.0,
+        1028.0
       ]
     },
     {
       "type": "discussion",
-      "content": "where $ k_{1} $, $ k_{2} $, and $ k_{3} $ are functions of the experimental design (equal to n, n, and Mn under a completely balanced design, where n is the number of offspring per full-sib family, and M is the number of dams per sire). Table 18.3 gives the general expressions for these quantities.",
-      "source_page": 587,
-      "printed_page": 567,
+      "content": "[[FORMULA:Genetics_chapter18_formula063]]",
+      "source_page": 589,
+      "printed_page": 569,
       "source_block_ids": [
-        "p587:b12"
+        "p589:b10"
       ],
       "bbox": [
-        53.0,
-        976.0,
+        318.0,
+        1035.0,
+        758.0,
+        1077.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Satterthwaite showed that $ rQ/E(Q) $ is approximately $ \\chi^{2} $-distributed with degrees of freedom equal to",
+      "source_page": 589,
+      "printed_page": 569,
+      "source_block_ids": [
+        "p589:b12"
+      ],
+      "bbox": [
+        59.0,
+        1086.0,
+        1018.0,
+        1165.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter18_formula064]]",
+      "source_page": 589,
+      "printed_page": 569,
+      "source_block_ids": [
+        "p589:b13"
+      ],
+      "bbox": [
+        426.0,
+        1156.0,
+        642.0,
+        1278.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, for example, for the numerator of Equation 18.34b, the degrees of freedom is estimated by",
+      "source_page": 589,
+      "printed_page": 569,
+      "source_block_ids": [
+        "p589:b15"
+      ],
+      "bbox": [
+        54.0,
+        1279.0,
         1012.0,
-        1123.0
+        1363.0
       ]
     },
     {
       "type": "discussion",
-      "content": "By analogy with $ \\hat{E} $ equation 18.13, the intraclass correlations for paternal half sibs and full sibs are",
-      "source_page": 587,
-      "printed_page": 567,
+      "content": "[[FORMULA:Genetics_chapter18_formula065]]",
+      "source_page": 589,
+      "printed_page": 569,
       "source_block_ids": [
-        "p587:b13"
+        "p589:b16"
       ],
       "bbox": [
-        50.0,
-        1105.0,
+        366.0,
+        1349.0,
+        693.0,
+        1461.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where $ c_s = k_1/k_2 $, $ c_e = (k_2 - k_1)/k_2 $, and $ Q = c_s \\text{MS}_s + c_e \\text{MS}_e $. This estimate of $ r $ is really only a first-order approximation, as Satterthwaite’s derivation assumes that the observed mean squares in the function Q are independently distributed, a condition that is not strictly true with an unbalanced design.",
+      "source_page": 589,
+      "printed_page": 569,
+      "source_block_ids": [
+        "p589:b18",
+        "p590:b2"
+      ],
+      "bbox": [
+        49.0,
+        1456.0,
         1011.0,
-        1189.0
+        1543.0
+      ],
+      "source_page_end": 590
+    },
+    {
+      "type": "discussion",
+      "content": "Recalling that the variance associated with sires is an estimate of $ \\sigma_{A}^{2}/4 $, the $ F $ ratio defined by Equation 18.34b with the numerator degrees of freedom defined by Equation 18.35c provides a test for significant additive genetic variance. Provided that both the sire and dam components of variance are significant, the next question is whether the latter is significantly greater than the former. From Equation 18.31b, it can be seen that a test of the null hypothesis $ \\sigma_{s}^{2} = \\sigma_{d}^{2} $ is equivalent to a test for no significant dominance and/or common-environmental effects. This test also requires the construction of a linear function of mean squares whose expectation is equal to the expectation of $ MS_{d} $ under the null hypothesis. The appropriate $ F $ ratio is",
+      "source_page": 590,
+      "printed_page": 570,
+      "source_block_ids": [
+        "p590:b3"
+      ],
+      "bbox": [
+        125.0,
+        184.0,
+        1090.0,
+        530.0
       ]
     },
     {
       "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter18_formula057]]",
-      "source_page": 587,
-      "printed_page": 567,
+      "content": "[[FORMULA:Genetics_chapter18_formula066]]",
+      "source_page": 590,
+      "printed_page": 570,
       "source_block_ids": [
-        "p587:b14"
+        "p590:b4"
       ],
       "bbox": [
-        311.0,
-        1192.0,
-        657.0,
-        1269.0
+        435.0,
+        539.0,
+        787.0,
+        610.0
       ]
     },
     {
       "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter18_formula058]]",
-      "source_page": 587,
-      "printed_page": 567,
+      "content": "where $ c_s = k_1/(k_2 + k_3) $ and $ c_e = (k_2 + k_3 - k_1)/(k_2 + k_3) $. The numerator degrees of freedom is approximated by Equation 18.35c, with $ Q = c_sMS_s + c_eMS_e $.",
+      "source_page": 590,
+      "printed_page": 570,
       "source_block_ids": [
-        "p587:b16"
+        "p590:b6"
       ],
       "bbox": [
-        324.0,
-        1272.0,
-        737.0,
-        1353.0
+        135.0,
+        633.0,
+        1092.0,
+        711.0
       ]
     },
     {
       "type": "discussion",
-      "content": "As in the half-sib design, $ 4t_{PHS} $ provides the best estimate of $ h^{2} $ since it is not inflated by dominance and/or maternal effects. If, however, $ \\mathrm{Var}(s) $ and $ \\mathrm{Var}(d) $ are found to be approximately equal, then dominance and maternal effects can be ruled out as significant causal sources of covariance. In that case, the average",
-      "source_page": 587,
-      "printed_page": 567,
+      "content": "Resampling procedures provide an alternative to $F$ ratios for testing for the significance of variance components under the nested design. The jackknife, with deletion around sire families, has been shown to provide a relatively robust approach for testing for significance of the sire component of variance (Arvesen and Schmitz 1970, Knapp and Bridges 1988, Mitchell-Olds and Bergelson 1990). Presumably, the jackknife or the bootstrap can also be used to test the hypothesis that $\\sigma_{s}^{2}=\\sigma_{d}^{2}$, by referring to the sampling distribution of $\\mathrm{Var}(d)-\\mathrm{Var}(s)$.",
+      "source_page": 590,
+      "printed_page": 570,
       "source_block_ids": [
-        "p587:b18"
+        "p590:b7"
       ],
       "bbox": [
-        41.0,
-        1362.0,
-        1004.0,
-        1515.0
-      ]
-    },
-    {
-      "type": "table",
-      "content": "[[TABLE:18.3]]",
-      "source_page": 588,
-      "printed_page": 568,
-      "source_block_ids": [
-        "p588:b3"
-      ],
-      "bbox": [
-        129.0,
-        199.0,
-        1103.0,
-        868.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "of $ \\operatorname{Var}(s) $ and $ \\operatorname{Var}(d) $ provides an estimate of $ \\sigma_{A}^{2}/4 $, and when multiplied by $ 4/\\operatorname{Var}(z) $ provides an estimate of $ h^{2} $. Ideally, such an average should weight the two variance-component estimates by the inverse of their sampling variances (Grossman and Norton 1981).",
-      "source_page": 588,
-      "printed_page": 568,
-      "source_block_ids": [
-        "p588:b7"
-      ],
-      "bbox": [
-        150.0,
-        1219.0,
-        1113.0,
-        1367.0
+        137.0,
+        696.0,
+        1096.0,
+        941.0
       ]
     }
   ]

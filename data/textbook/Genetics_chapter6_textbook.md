@@ -1,7 +1,6 @@
 # Chapter 6 · 6 Sources of Environmental Variation
 
-## Genetics_chapter6_001 · 6
-Sources of Environmental Variation
+## Genetics_chapter6_001 · 6 Sources of Environmental Variation
 
 Because all metabolic and developmental pathways are influenced to some degree by aspects of the environment, it stands to reason that the expression of most quantitative traits is not completely under genetic control. In some cases, phenotypic responses to changes in the environment are dramatic. For example, in some populations of the tiger salamander ( $ Ambystoma\ tigrinum\ nebulosum $), larvae develop into atypical cannibalistic morphs when raised at high densities (Collins and Cheek 1983). Clones of many planktonic cladocerans and rotifers can be induced to change their external morphology by means of appropriate physical or chemical stimuli (Hutchinson 1967, Havel 1987), and environmentally controlled flight polymorphisms are well documented in locusts (Kennedy 1956) and corixid bugs (Young 1965). However, more often than not, environmental effects are subtle, causing simple amplifications or reductions in sizes of parts, numbers of progeny, rates of growth, physiological performance, and so on.
 

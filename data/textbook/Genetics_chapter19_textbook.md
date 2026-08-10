@@ -1,7 +1,6 @@
 # Chapter 19 · 19 Twins and Clones
 
-## Genetics_chapter19_001 · 19
-Twins and Clones
+## Genetics_chapter19_001 · 19 Twins and Clones
 
 Starting with Galton (1875), the analysis of twins has been a major focal point for research in human quantitative genetics (Bulmer 1970, Rowe 1994). Since approximately one in 100 humans are twins, substantial data bases can often be acquired through hospital records or through advertisements. One of the utilities of twin research arises from the fact that two types of twins are possible. Monozygotic twins, which are derived from the fragmentation of a single embryo, are genetically identical. Dizygotic twins are genetically equivalent to full sibs since they are derived from two eggs fertilized by different sperm. Thus, for characters that are genetically variable, a greater amount of phenotypic resemblance is expected within pairs of monozygotic twins than dizygotic twins. This is almost always observed.
 

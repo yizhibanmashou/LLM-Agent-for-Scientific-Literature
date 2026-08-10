@@ -1,10 +1,6 @@
-# Chapter 23 · 23
+# Chapter 23 · Maternal Effects
 
-## Genetics_chapter23_001 · 23
-
----
-
-## Genetics_chapter23_002 · 23 / Maternal Effects
+## Genetics_chapter23_001 · Maternal Effects
 
 From the standpoint of genetic analysis, we have already had three main encounters with maternal effects: the nested sib design (Chapter 18), the monozygotic twin half-sib method (Chapter 19), and the factorial designs with reciprocal crosses (Chapter 20). However, none of these techniques provides a full resolution to the issue of quantifying variance associated with maternal effects. For example, under the nested design, the degree by which the dam component of variance exceeds the sire component is a function of dominance and epistatic genetic variance as well as of the variance due to common maternal environment. Thus, with this sort of analysis, excess variance associated with dams cannot be taken as definitive evidence of maternal effects variance. Factorial designs with reciprocal crosses remove this ambiguity, but their application is restricted to inbred lines and populations of hermaphrodites.
 
@@ -31,7 +27,7 @@ Throughout, we assume that the direct and indirect genetic effects, $ G_{ox} $ a
 
 ---
 
-## Genetics_chapter23_003 · COMPONENTS OF VARIANCE AND COVARIANCE
+## Genetics_chapter23_002 · COMPONENTS OF VARIANCE AND COVARIANCE
 
 Because the addition of maternal effects doubles the number of factors in the linear model for the phenotype, it greatly increases the number of causal components that potentially contribute to the resemblance between relatives. Consider the phenotypic covariance between two individuals — x with mother w, and y with mother z. Assuming no genotype × environment interaction, there are still eight causal components of covariance,
 
@@ -91,7 +87,7 @@ Indeed, if $ \sigma_{A_{o},A_{m}} $ were sufficiently negative, the regression o
 
 **[示例 Example]**
 
-> **Example 1** · ref: `Genetics_chapter23:1` · source: `Genetics_chapter23_003.json` · blocks 17–30
+> **Example 1** · ref: `Genetics_chapter23:1` · source: `Genetics_chapter23_002.json` · blocks 17–30
 >
 > Example 1. Consider the genetic covariance between mother y and offspring x. Since maternal effects are assumed present, we also need to consider the mothers z and w of y and x, respectively. Here y = w, whereas z represents individual x's maternal grandmother (as shown in the left of the accompanying figure on the next page).
 > 
@@ -134,7 +130,7 @@ Indeed, if $ \sigma_{A_{o},A_{m}} $ were sufficiently negative, the regression o
 > Let the difference between the regressions of offspring on mother and offspring on father be m. Since the final two terms in the preceding equation are necessarily positive, one would ordinarily expect m to be positive. However, the opposite has sometimes been observed. For example, Falconer (1965a) found the difference between regressions to be -0.13 for litter size in mice, and Janssen et al. (1988) obtained a difference of approximately -0.5 for age at maturity in springtails. Such a pronounced reduction of the mother-offspring regression relative to that for father-offspring provides a strong indication that the covariance between direct and maternal effects is negative, i.e., that genes whose direct effects cause an increase in the expression of the trait have an antagonistic effect on the trait's expression through their maternal effects.
 
 
-> **Table 23.1** · `23.1` · page 703 · source: `Genetics_chapter23_003`
+> **Table 23.1** · `23.1` · page 703 · source: `Genetics_chapter23_002`
 > Table 23.1 Coefficients for the components of covariance and variance contributing to the resemblance between relatives in a model that includes maternal effects.
 >
 >  | $ A_{o} $ | $ D_{o} $ | $ A_{o}, A_{m} $ | $ D_{o}, D_{m} $ | $ A_{m} $ | $ D_{m} $ | $ E_{o} $ | $ E_{o}, E_{m} $ | $ E_{m} $
@@ -155,7 +151,7 @@ Indeed, if $ \sigma_{A_{o},A_{m}} $ were sufficiently negative, the regression o
 
 ---
 
-## Genetics_chapter23_004 · COMPONENTS OF VARIANCE AND COVARIANCE / Cytoplasmic Transmission
+## Genetics_chapter23_003 · COMPONENTS OF VARIANCE AND COVARIANCE / Cytoplasmic Transmission
 
 Throughout this book, including the preceding section, we have been assuming that all of the genes contributing to phenotypic variation reside in the nuclear genome. However, since critical metabolic functions are carried out by products of genes contained in cytoplasmic organelles (mitochondria and chloroplasts), it seems prudent to keep in mind the possibility that some variation in the expression of quantitative traits may owe its origin to variation among organelle lineages. Organelle genomes are almost always inherited uniparentally, usually through the mother, and except in the case of plant mitochondria, usually with little or no recombination. Thus, from the standpoint of quantitative genetics, an organelle genome can be treated as a single haploid locus.
 
@@ -207,7 +203,7 @@ $$
 
 A few attempts have been made to quantify the significance of cytoplasmic gene differences at the phenotypic level. A large survey of dairy cattle, spanning 10 generations, suggested that about 3% of the variance in milk production is attributable to the maternal mitochondrial lineage (Bell et al. 1985). In a study of two strains of tobacco (Nicotiana tabacum), with identical nuclear but different mitochondrial genomes, large (5 to 30%) differences were found in germination rate, growth rate, and age at first flowering (Pollak 1991). On the other hand, Forbes and Allendorf (1991) were unable to detect any morphological differences between mitochondrial haplotypes in a hybrid swarm of trout, despite the rather high (2%) nucleotide divergence between the two mitochondrial types.
 
-> **Table 23.2** · `23.2` · page 706 · source: `Genetics_chapter23_004`
+> **Table 23.2** · `23.2` · page 706 · source: `Genetics_chapter23_003`
 > Table 23.2 Coefficients for the components needed for the expression describing the expected phenotypic covariance between relatives in a model that includes cytoplasmic gene expression.
 >
 >  | $ \kappa_{xy} $ | $ \sigma_{C}^{2} $ | $ \sigma_{AC}^{2} $ | $ \sigma_{DC}^{2} $
@@ -228,7 +224,7 @@ A few attempts have been made to quantify the significance of cytoplasmic gene d
 
 ---
 
-## Genetics_chapter23_005 · COMPONENTS OF VARIANCE AND COVARIANCE / Postpollination Reproductive Traits in Plants
+## Genetics_chapter23_004 · COMPONENTS OF VARIANCE AND COVARIANCE / Postpollination Reproductive Traits in Plants
 
 Quantitative-genetic analyses of seeds and their component parts (ovules, endosperm, seed coats) are perhaps more numerous than those of any other characters. In agronomy, large-scale studies on the genetic properties of grain yield have long been driven by economic interests. In evolutionary ecology, studies on the genetics of seed architecture and maturation have been stimulated by interest in reproductive strategies and parent-offspring conflict. Remarkably, almost all studies of seed properties have been performed as though such traits are properties of the maternal genotype, like any other nonreproductive diploid tissue. This, however, is not the case. Three genetically distinct tissues contribute to the expression of various seed properties: (1) the seed coat is a direct product of the diploid maternal genotype, (2) the endosperm is triploid, having two doses of maternal genes and one of paternal genes, and (3) the embryo is a diploid product of the paternal and maternal gametes. To complicate matters further, the paternal genomes that contribute to endosperm and embryo are derived from different gametes.
 
@@ -238,7 +234,7 @@ The net effect of all of these different degrees of gene sharing is that differe
 
 ---
 
-## Genetics_chapter23_006 · CROSS-FOSTERING EXPERIMENTS
+## Genetics_chapter23_005 · CROSS-FOSTERING EXPERIMENTS
 
 For species in which it is possible to transplant progeny to surrogate mothers, a cross-fostering experiment can reveal whether maternal effects contribute to the resemblance between relatives. In the absence of maternal effects subsequent to the transplantation event, unrelated individuals that are raised by the same mother should exhibit zero phenotypic covariance with each other as well as with their foster mother. Cross-fostering is expected to decrease the phenotypic covariance of parents and their true offspring if maternal effects are significant. The phenotypic covariance between mother and her fostered offspring (FO, raised by a nonrelative) is identical to the father-offspring covariance,
 
@@ -313,7 +309,7 @@ The sum of these three components is equal to the expected phenotypic covariance
 
 Without observations on additional kinds of relatives, further decomposition of these quantities into their subsidiary (additive, dominance, and environmental) components is not possible. Riska et al. (1985) suggest how additional information can be extracted from a cross-fostering experiment when phenotypic data are available for sires and dams as well as their offspring. In this case, separate estimates of $ \sigma_{A_o}^2 $, $ \sigma_{D_o}^2 $, and $ \sigma_{A_m}^2 $ can be acquired, although $ \sigma_{D_m}^2 + (b^2 + c)\sigma_{E_m}^2 $ and $ \sigma_{A_o,A_m} + 2\sigma_{E_o,E_m} $ still appear as composite terms.
 
-> **Table 23.3** · `23.3` · page 711 · source: `Genetics_chapter23_006`
+> **Table 23.3** · `23.3` · page 711 · source: `Genetics_chapter23_005`
 > Table 23.3 Interpretation of the expected mean squares for a replicated two-way analysis of variance of a cross-fostering experiment, assuming a random-effects model and a completely balanced design.
 >
 > <table><tr><td>Factor</td><td>df</td><td>Sums of Squares</td><td>Expected Mean Squares</td></tr><tr><td rowspan="2">Pairs</td><td rowspan="2">$ N_{p} - 1 $</td><td rowspan="2">$ 4n \sum_{i} (\overline{z}_{i} - \overline{z})^{2} $</td><td>$ \sigma_{e}^{2} + n \sigma_{I}^{2} + 2n \sigma_{M}^{2} + 2n \sigma_{N}^{2} $</td></tr><tr><td>+ $ 4n \sigma_{P}^{2} $</td></tr><tr><td>Mothers</td><td>$ N_{p} $</td><td>$ 2n \sum_{i,j} (\overline{z}_{ij} - \overline{z}_{i})^{2} $</td><td>$ \sigma_{e}^{2} + n \sigma_{I}^{2} + 2n \sigma_{M}^{2} $</td></tr><tr><td>Nurses</td><td>$ N_{p} $</td><td>$ 2n \sum_{i,k} (\overline{z}_{ik} - \overline{z}_{i})^{2} $</td><td>$ \sigma_{e}^{2} + n \sigma_{I}^{2} + 2n \sigma_{N}^{2} $</td></tr><tr><td>M \times N</td><td>$ N_{p} $</td><td>$ n \sum_{i,j,k} (\overline{z}_{ijk} - \overline{z}_{ij} - \overline{z}_{ik} + \overline{z}_{i})^{2} $</td><td>$ \sigma_{e}^{2} + n \sigma_{I}^{2} $</td></tr><tr><td>Error</td><td>$ 4N_{p}(n - 1) $</td><td>$ \sum_{i,j,k,l} (z_{ijkl} - \overline{z}_{ijk})^{2} $</td><td>$ \sigma_{e}^{2} $</td></tr></table>
@@ -322,7 +318,7 @@ Without observations on additional kinds of relatives, further decomposition of 
 
 ---
 
-## Genetics_chapter23_007 · CROSS-FOSTERING EXPERIMENTS / Body Weight in Mice
+## Genetics_chapter23_006 · CROSS-FOSTERING EXPERIMENTS / Body Weight in Mice
 
 The cross-fostering design has been used extensively to evaluate the sources of variance for body weight in laboratory populations and domesticated species of mammals. Here we consider the results from an experiment with an outbred laboratory mouse strain (ICR), in which Rutledge et al. (1972) mated a large number of virgin females to unrelated males. Pairs of unrelated females that released litters within a 12-hour period were treated as cross-foster groups. Their litters were standardized to four males and four females, and then half of each sex were exchanged randomly between mothers. Twenty-eight such pairs were constructed. For identification purposes, all offspring were toe-clipped. Weaning was enforced at 21 days, and subsequently all offspring were weighed to the nearest gram at 3 to 7 day intervals. The results of the analysis of variance for each time interval
 
@@ -352,13 +348,13 @@ The conclusions from these studies appear to be broadly generalizable. Working w
 
 ---
 
-## Genetics_chapter23_008 · EISEN'S APPROACH
+## Genetics_chapter23_007 · EISEN'S APPROACH
 
 For situations in which cross-fostering is unfeasible, estimates of the maternal-effects variance and covariance components can be acquired by the method of moments, provided that measures of phenotypic covariance can be obtained for enough relationships (Eisen 1967). The causal components of variance are estimated in the usual way, by setting the observed phenotypic covariances equal to their expectations, and solving the set of linear equations for estimates of the underlying causal components. For example, from Table 23.1, the father-offspring covariance minus twice the covariance between paternal half-sibs provides an estimate of $ \sigma_{A_{o},A_{m}}/4 $. A complete solution for all nine of the causal components of variance and covariance in Table 23.1 requires observations on at least nine types of relatives, and hence, data of a multigenerational nature. Data sets of a smaller scope can nevertheless be revealing. We present the following example simply to illustrate one powerful design for applying Eisen's (1967) method.
 
 ---
 
-## Genetics_chapter23_009 · EISEN'S APPROACH / Bondari's Experiment
+## Genetics_chapter23_008 · EISEN'S APPROACH / Bondari's Experiment
 
 Starting with 331 males of the flour beetle Tribolium castaneum, each of which was mated to two unrelated females, Bondari et al. (1978) developed three types of mating structures to estimate the causal components of variance for pupal weight (Figure 23.4). As shown in Table 23.4, each design provides the basis for a nested analysis of variance, details of which have been covered in Chapter 18.
 
@@ -393,7 +389,7 @@ The remaining $N = 123$ fathers from Design I served as grandsires in this exper
 
 All three experiments yielded similar estimates of the phenotypic variance, the average of which is $ \mathrm{Var}(z) = 35,280 $. Thus, from the results of Design I, an estimate of the heritability of pupal weight, unbiased by maternal effects, is $ h^2 = 13,536 / 35,280 = 0.38 $. An estimate of the additive genetic correlation between direct and maternal effects is $ \mathrm{Cov}(A_o, A_m) / \sqrt{\mathrm{Var}(A_o) \mathrm{Var}(A_m)} = -0.27 $. Thus, in this species, genes that increase pupal weight through their direct effects decrease it through maternal effects. Although the authors did not pursue it, this multigenerational experiment could have yielded estimates of the covariance between several other types of relatives, and hence of additional causal sources of variance.
 
-> **Table 23.4** · `23.4` · page 717 · source: `Genetics_chapter23_009`
+> **Table 23.4** · `23.4` · page 717 · source: `Genetics_chapter23_008`
 > Table 23.4 Summary of nested analyses of variance involving the three experimental designs employed by Bondari et al. (1978).
 >
 > <table><tr><td>Factor</td><td>Degrees of Freedom</td><td>Mean Squares</td><td>Expected Mean Squares</td></tr><tr><td>Design I</td><td></td><td></td><td></td></tr><tr><td>Sires</td><td>$ (N_{a} - 1) = 330 $</td><td>54,418</td><td>$ \sigma_{e}^{2} + n\sigma_{b}^{2} + N_{b}n\sigma_{a}^{2} $</td></tr><tr><td>Dams (sires)</td><td>$ N_{a}(N_{b} - 1) = 331 $</td><td>40,880</td><td>$ \sigma_{e}^{2} + n\sigma_{b}^{2} $</td></tr><tr><td>Sibs (dams)</td><td>$ N_{a}N_{b}(n - 1) = 330 $</td><td>25,852</td><td>$ \sigma_{e}^{2} $</td></tr><tr><td></td><td colspan="3">$ \sigma_{a}^{2} = \sigma(\text{PHS}) = \frac{\sigma_{A_{o}}^{2}}{4} $</td></tr><tr><td>Design II</td><td></td><td></td><td></td></tr><tr><td>Grandsires</td><td>$ (N_{a} - 1) = 207 $</td><td>48,499</td><td>$ \sigma_{e}^{2} + n\sigma_{b}^{2} + N_{b}n\sigma_{a}^{2} $</td></tr><tr><td>Parents (grandsires)</td><td>$ N_{a}(N_{b} - 1) = 208 $</td><td>46,672</td><td>$ \sigma_{e}^{2} + n\sigma_{b}^{2} $</td></tr><tr><td>Sibs (parents)</td><td>$ N_{a}N_{b}(n - 1) = 416 $</td><td>23,867</td><td>$ \sigma_{e}^{2} $</td></tr><tr><td></td><td colspan="3">$ \sigma_{a}^{2} = \sigma(\text{HFC}, \text{II}) = \frac{\sigma_{A_{o}}^{2}}{16} + \frac{\sigma_{A_{o},A_{m}}}{8} $</td></tr><tr><td>Design III</td><td></td><td></td><td></td></tr><tr><td>Grandsires</td><td>$ (N_{a} - 1) = 122 $</td><td>48,336</td><td>$ \sigma_{e}^{2} + n\sigma_{b}^{2} + N_{b}n\sigma_{a}^{2} $</td></tr><tr><td>Parents (grandsires)</td><td>$ N_{a}(N_{b} - 1) = 123 $</td><td>38,495</td><td>$ \sigma_{e}^{2} + n\sigma_{b}^{2} $</td></tr><tr><td>Sibs (parents)</td><td>$ N_{a}N_{b}(n - 1) = 246 $</td><td>23,310</td><td>$ \sigma_{e}^{2} $</td></tr><tr><td></td><td colspan="3">$ \sigma_{a}^{2} = \sigma(\text{HFC}, \text{III}) = \frac{\sigma_{A_{o}}^{2}}{16} + \frac{\sigma_{A_{o},A_{m}}}{4} + \frac{\sigma_{A_{m}}^{2}}{4} $</td></tr></table>
@@ -402,7 +398,7 @@ All three experiments yielded similar estimates of the phenotypic variance, the 
 
 ---
 
-## Genetics_chapter23_010 · FALCONER'S APPROACH
+## Genetics_chapter23_009 · FALCONER'S APPROACH
 
 In all of the procedures discussed above, the maternal effect was treated as a general feature of the mother, with no specific character in the mother being identified as contributing to the effect. An alternative approach is to identify explicitly one or more maternal characters that are likely to be the source of the maternal effect, and to consider how these modify the expression of other characters in offspring. Falconer (1965a) introduced a simple model in which a single maternal character affects its own expression, e.g., maternal body size influencing the size of offspring via maternal care effects. Under this model, an individual's phenotype is described in the usual way, with the addition of a third term describing the maternal effect,
 
@@ -529,7 +525,7 @@ Since M contains $ n^{2} $ coefficients, where n is the number of traits under c
 
 **[示例 Example]**
 
-> **Example 2** · ref: `Genetics_chapter23:2` · source: `Genetics_chapter23_010.json` · blocks 33–41
+> **Example 2** · ref: `Genetics_chapter23:2` · source: `Genetics_chapter23_009.json` · blocks 33–41
 >
 > Example 2. Here we consider a two-character situation (from Lande and Price 1989) in which only one of the four possible maternal effect coefficients is nonzero. Adult size (character 1) of a mother has a direct maternal effect on her offspring's size at birth (character 2) so that $ m_{21} = m \neq 0 $, but no direct effect on the offspring's size at maturity ( $ m_{11} = 0 $). Furthermore, the mother's size at birth has no maternal influence on her offspring's size at birth ( $ m_{22} = 0 $) or maturity ( $ m_{12} = 0 $). Thus, all of the elements of M are zero but $ m_{21} $. If there are no other maternal characters influencing size at birth or maturity, and the other assumptions of the Kirkpatrick-Lande model are met, then unbiased definitions of the expected values of the parent-offspring covariance matrices are given by Equations 23.16a,b, which reduce to
 > 
@@ -567,7 +563,7 @@ Since M contains $ n^{2} $ coefficients, where n is the number of traits under c
 
 ---
 
-## Genetics_chapter23_011 · EXTENSION TO OTHER TYPES OF RELATIVES
+## Genetics_chapter23_010 · EXTENSION TO OTHER TYPES OF RELATIVES
 
 With its focus on maternal effects, this entire chapter has concentrated on one particular way in which an individual can modify the phenotype of another by means other than direct inheritance. Extension of these ideas to effects from other types of intrafamilial interactions, such as paternal effects (in species with paternal care) or sib effects (in species where sibs compete or cooperate for resources) is relatively straightforward. Consider an individual x living in a typical nuclear family with social interactions. At various stages of development, the individual's phenotype may be influenced by the direct expression of its own genotype and environmental effects ( $ z_{ox} $), by maternal ( $ M_{x} $) and/or paternal ( $ P_{x} $) effects, by effects from sibs with which it is raised ( $ S_{x} $), and later in life, by indirect effects of its mate ( $ H_{x} $) and its progeny ( $ R_{x} $). Thus, Equation 23.1, which contains only maternal effects, can be expanded to include these other contributions,
 
@@ -583,7 +579,7 @@ As in the case of maternal effects, each of the new terms in Equation 23.19 can 
 
 **[示例 Example]**
 
-> **Example 3** · ref: `Genetics_chapter23:3` · source: `Genetics_chapter23_011.json` · blocks 4–18
+> **Example 3** · ref: `Genetics_chapter23:3` · source: `Genetics_chapter23_010.json` · blocks 4–18
 >
 > Example 3. Consider the case in which the only intrafamilial effects on the phenotype derive from fathers and mothers. Equation 23.19 then reduces to
 > 
@@ -633,7 +629,7 @@ As in the case of maternal effects, each of the new terms in Equation 23.19 can 
 
 **[示例 Example]**
 
-> **Example 4** · ref: `Genetics_chapter23:4` · source: `Genetics_chapter23_011.json` · blocks 19–24
+> **Example 4** · ref: `Genetics_chapter23:4` · source: `Genetics_chapter23_010.json` · blocks 19–24
 >
 > Example 4. For organisms that invest substantially in postnatal parental care, it is conceivable that progeny, through their demands on parental resources, can affect aspects of a parent's phenotype. A simple way to test for such effects is to consider pairs of unrelated parents mated to the same individual:
 > 

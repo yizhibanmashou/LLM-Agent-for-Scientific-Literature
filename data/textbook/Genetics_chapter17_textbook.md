@@ -1,10 +1,6 @@
-# Chapter 17 · 17
+# Chapter 17 · Parent-Offspring Regression
 
-## Genetics_chapter17_001 · 17
-
----
-
-## Genetics_chapter17_002 · 17 / Parent-Offspring Regression
+## Genetics_chapter17_001 · Parent-Offspring Regression
 
 As we will see in upcoming chapters, the number of techniques for estimating the components of variance for quantitative traits is quite large. In choosing among the alternatives, two issues arise. First, consideration has to be given to the kinds of relatives that should be analyzed. There are often practical limitations to this problem. Certain kinds of relationships are observed more readily in some species than in others, and some types of phenotypic covariances between relatives are more likely to approximate desired quantities than others. Second, prior to performing an actual analysis, attention should be given to the experimental design. The degree of precision that can be achieved in a quantitative-genetic survey is a function of the number of individuals that are measured, and the way in which effort is allocated to numbers of families versus numbers of individuals within families.
 
@@ -14,11 +10,7 @@ It is often the case, particularly in natural populations, that the identity of 
 
 ---
 
-## Genetics_chapter17_003 · ESTIMATION PROCEDURES
-
----
-
-## Genetics_chapter17_004 · ESTIMATION PROCEDURES / Balanced Data
+## Genetics_chapter17_002 · ESTIMATION PROCEDURES / Balanced Data
 
 It is a rather exceptional circumstance when one has the same amount of data from all families, but to simplify discussion, we will start with the assumption that only a single offspring and a single parent are observed in each family. The appropriate linear model for such an analysis is
 
@@ -60,7 +52,7 @@ The results for the multiple-offspring regression help clarify why heritabilitie
 
 ---
 
-## Genetics_chapter17_005 · ESTIMATION PROCEDURES / Unequal Family Sizes
+## Genetics_chapter17_003 · ESTIMATION PROCEDURES / Unequal Family Sizes
 
 When there is significant variation in family size, one is confronted with the problem of how to weight the information from families of different sizes. With a goal of minimizing the sampling error of the heritability estimate, it is logical that families of larger size should be given more weight in a regression since their mean phenotype estimates are more accurate. Should one simply weight each family by the number of offspring measured, as would be the case if one were to regress each individual on its parent's phenotype? The answer is no — the appropriate weights are less than proportional to the actual family sizes. Once one has measured a very large number of offspring from a family, very little improvement in the precision of the family mean will be obtained by making additional measurements.
 
@@ -141,7 +133,7 @@ A practical issue that arises in applying the weighted regression technique is t
 
 ---
 
-## Genetics_chapter17_006 · ESTIMATION PROCEDURES / Standardization of Data from the Different Sexes
+## Genetics_chapter17_004 · ESTIMATION PROCEDURES / Standardization of Data from the Different Sexes
 
 Often, the mean (and / or the variance) of traits differs between males and females. This can result in different estimates of $ h^{2} $ depending upon which of the sexes is utilized in a parent-offspring regression, since the denominator of the regression coefficient is the phenotypic variance. The problem is sometimes resolved as a scaling issue by using standardized variables, precisely the approach used in Example 5 from Chapter 7 in the analysis of human stature data. For each individual, the observed value minus the mean for that sex is divided by the sex-specific standard deviation. Such a transformation equalizes the phenotypic means and variances across the sexes, to 0 and 1, respectively.
 
@@ -149,7 +141,7 @@ Sex-specific corrections do not always equilibrate the parent-offspring regressi
 
 ---
 
-## Genetics_chapter17_007 · PRECISION OF ESTIMATES
+## Genetics_chapter17_005 · PRECISION OF ESTIMATES
 
 As in all attempts to estimate parameters, it is always desirable to ascertain the degree of precision of heritability estimates. Since the statistical properties of least-squares regression are well known, this is relatively easy to do with parent-offspring analysis. Provided the data have been measured or transformed so that the joint distribution of parent and offspring phenotypes is bivariate normal, the sampling variance of the single parent-single offspring regression is, from Equation A1.20a, approximately
 
@@ -173,7 +165,7 @@ Provided the joint distribution of offspring and parent phenotypes is bivariate 
 
 ---
 
-## Genetics_chapter17_008 · OPTIMUM EXPERIMENTAL DESIGN
+## Genetics_chapter17_006 · OPTIMUM EXPERIMENTAL DESIGN
 
 Prior to embarking on a long-term, labor-intensive study, it is important to consider how the sampling variance of the parent-offspring regression coefficient might be minimized. Given the constraint of being able to measure a certain number of individuals, the primary question is, How should one's resources be allocated to measuring numbers of families versus numbers of offspring/family? Klein et al. (1973) and Klein (1974) present a useful series of tables outlining the expected standard errors of parent-offspring regressions under various experimental designs.
 
@@ -269,7 +261,7 @@ Hill (1990) has suggested that a further reduction in the standard error of a pa
 
 ---
 
-## Genetics_chapter17_009 · OPTIMUM EXPERIMENTAL DESIGN / Assortative Mating
+## Genetics_chapter17_007 · OPTIMUM EXPERIMENTAL DESIGN / Assortative Mating
 
 Reeve (1961) and Hill (1970) have suggested the use of assortative mating to improve the accuracy of heritability estimates derived from midparent-offspring regressions. The rationale for this approach is that it increases the variance of midparent values from $ \sigma^2(z_p)/2 $ to $ (1+\rho_z)\sigma^2(z_p)/2 $, where $ \rho_z $ is the phenotypic correlation between mates. Since the variance of a regression coefficient is inversely proportional to the variance of the explanatory variable (Equation 17.6), assortative mating should reduce the sampling variance of $ b_{o\bar{p}} $ by a factor of $ (1+\rho_z)^{-1} $, e.g., by 50% with full assortative mating.
 
@@ -279,7 +271,7 @@ With nonadditive gene action, some caution is needed with this approach, as asso
 
 ---
 
-## Genetics_chapter17_010 · ESTIMATION OF HERITABILITY IN NATURAL POPULATIONS
+## Genetics_chapter17_008 · ESTIMATION OF HERITABILITY IN NATURAL POPULATIONS
 
 Because it determines the potential response to natural selection, the genetic variation that exists for quantitative characters in natural populations is of fundamental interest to evolutionary biologists. Unfortunately, for many species, it is nearly impossible to carry out a quantitative-genetic analysis in the wild. Many individuals may die before expressing the character of interest, and in mobile animals, a large fraction of the population may be capable of avoiding capture. It is also extremely difficult to identify parentage with certainty in the field, although the situation is improving with the development of new molecular-marker methods.
 
@@ -310,7 +302,7 @@ $$
 
 to be the additive genetic correlation between environments (Chapter 21). The expected value of $ h_{min}^{2} $ is then $ \gamma^{2}h_{n}^{2} $, which is necessarily $ \leq h_{n}^{2} $, the heritability in the wild. $ h_{min}^{2} $ is an unbiased estimate of $ h_{n}^{2} $ only if the genetic correlation across environments is equal to one.
 
-> **Table 17.1** · `17.1` · page 563 · source: `Genetics_chapter17_010`
+> **Table 17.1** · `17.1` · page 563 · source: `Genetics_chapter17_008`
 > Table 17.1 Heritability estimates ( $ \pm $SE) for natural populations of birds obtained by parent-offspring regression.
 >
 > Species | Mother-Daughter | Father-Son | Reference
@@ -342,7 +334,7 @@ to be the additive genetic correlation between environments (Chapter 21). The ex
 
 ---
 
-## Genetics_chapter17_011 · LINEARITY OF THE PARENT-OFFSPRING REGRESSION
+## Genetics_chapter17_009 · LINEARITY OF THE PARENT-OFFSPRING REGRESSION
 
 We have been operating under the assumption that the true relationship between parent and offspring phenotypes is linear, and indeed, when such data are plotted, there is normally little evidence of nonlinearity (Figure 17.4). There are good statistical reasons for this, including the central limit theorem (Chapter 2) — when multiple independent factors jointly influence the expression of a character, the pairwise distribution of phenotypes in relatives will approach bivariate normality in a randomly mating population, insuring a linear regression (Chapter 8). Such conditions will be approximated as the number of freely recombining loci increases. For purely additive loci, the expected regression is always linear, and dominance is unlikely to cause significant nonlinearity unless the character is strongly influenced by a few rare recessive alleles, all with effects in the same direction (Bulmer 1980, Gimelfarb 1986). Bulmer (1976, 1980) has shown that linkage influences the residual variance but not the linearity of the parent-offspring regression, provided that the loci are in gametic phase equilibrium.
 

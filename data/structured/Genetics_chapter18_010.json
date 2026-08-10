@@ -4,15 +4,15 @@
     "chapter": "Genetics_chapter18",
     "section": "HALF-SIB ANALYSIS",
     "subsections": [
-      "Unbalanced Data"
+      "Resampling Procedures"
     ],
     "section_level_1": "HALF-SIB ANALYSIS",
-    "section_level_2": "Unbalanced Data",
+    "section_level_2": "Resampling Procedures",
     "heading_path": [
       "HALF-SIB ANALYSIS",
-      "Unbalanced Data"
+      "Resampling Procedures"
     ],
-    "display_heading": "HALF-SIB ANALYSIS / Unbalanced Data",
+    "display_heading": "HALF-SIB ANALYSIS / Resampling Procedures",
     "source_file": "",
     "source_pdf": "data/背景资料/Genetics.pdf",
     "source_title": "Genetics and Analysis of Quantitative Traits",
@@ -21,190 +21,81 @@
       "remote_llm_calls": 0
     },
     "heading_source": {
-      "source_page": 580,
-      "printed_page": 560,
+      "source_page": 583,
+      "printed_page": 563,
       "source_block_ids": [
-        "p580:b4"
+        "p583:b4"
       ],
       "bbox": [
-        146.0,
-        1114.0,
-        367.0,
-        1146.0
+        59.0,
+        1081.0,
+        359.0,
+        1117.0
       ],
-      "raw_text": "Unbalanced Data"
+      "raw_text": "Resampling Procedures"
     }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Accidental losses or natural mortality almost always cause inequities in family sizes in sib analyses. With unbalanced data, estimates of variance components can still be obtained by the method of moments, but this requires that the definitions of the expected mean squares first be modified appropriately (Table 18.1). All aspects of the unbalanced one-way ANOVA are identical to those outlined for the balanced design, except for the expected among-family mean square, which is no longer $ (\\sigma_{e}^{2} + n\\sigma_{s}^{2}) $, but $ (\\sigma_{e}^{2} + n_{0}\\sigma_{s}^{2}) $, where $ n_{0} $ is a function of the sire-specific family sizes (Table 18.1). Thus, in obtaining estimates of the variance components by the method of moments, we still use Equations 18.12a,b, substituting $ n_{0} $ for n.",
-      "source_page": 580,
-      "printed_page": 560,
+      "content": "To avoid the interpretative pitfalls that can arise with hypothesis tests involving nonnormal and unbalanced data, several computer-based resampling procedures have been developed that make no assumptions about the form of the distribution of the data or the structure of experimental design (Miller 1968, 1974; Efron 1982; Milliken and Johnson 1984; Wu 1986; Little and Rubin 1987; Manly 1991; Crowley 1992). All of these techniques assume that the sample data provide a reasonably good representation of the distribution in the entire population. The data are then used to generate sampling distributions of desired statistics. Three basic approaches are used:",
+      "source_page": 583,
+      "printed_page": 563,
       "source_block_ids": [
-        "p580:b5"
+        "p583:b5"
       ],
       "bbox": [
-        145.0,
-        1148.0,
-        1108.0,
-        1448.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "Provided the data are normally distributed, the sums of squares obtained from an unbalanced one-way ANOVA are still independent, and expressions for the sampling variances and covariance of the variance components analogous to",
-      "source_page": 580,
-      "printed_page": 560,
-      "source_block_ids": [
-        "p580:b6"
-      ],
-      "bbox": [
-        151.0,
-        1435.0,
-        1112.0,
-        1542.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "Equations 18.20a–d are obtainable,",
-      "source_page": 581,
-      "printed_page": 561,
-      "source_block_ids": [
-        "p581:b2"
-      ],
-      "bbox": [
-        77.0,
-        145.0,
-        497.0,
-        186.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter18_formula038]]",
-      "source_page": 581,
-      "printed_page": 561,
-      "source_block_ids": [
-        "p581:b3"
-      ],
-      "bbox": [
-        177.0,
-        200.0,
-        493.0,
-        274.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter18_formula039]]",
-      "source_page": 581,
-      "printed_page": 561,
-      "source_block_ids": [
-        "p581:b5"
-      ],
-      "bbox": [
-        176.0,
-        280.0,
-        912.0,
-        443.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter18_formula040]]",
-      "source_page": 581,
-      "printed_page": 561,
-      "source_block_ids": [
-        "p581:b7"
-      ],
-      "bbox": [
-        77.0,
-        440.0,
-        556.0,
-        519.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter18_formula041]]",
-      "source_page": 581,
-      "printed_page": 561,
-      "source_block_ids": [
-        "p581:b9"
-      ],
-      "bbox": [
-        170.0,
-        519.0,
-        774.0,
-        618.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "where the summations in Equation 18.27b are over sires. (These expressions contain corrections to results given in Searle et al. 1992).",
-      "source_page": 581,
-      "printed_page": 561,
-      "source_block_ids": [
-        "p581:b11"
-      ],
-      "bbox": [
-        66.0,
-        623.0,
-        1025.0,
-        704.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "Comparison of Equation 18.27a with 18.20a shows that the sampling variance of the within-family component of variance is unaffected by lack of balance. In fact, lack of balance does not alter the fact that the within-family sum of squares is $ \\chi^{2} $-distributed. Thus, Equation 18.22 can still be used to obtain confidence intervals for the within-family component of variance. Unfortunately, the situation is not so simple with the among-family statistics. If $ \\sigma_{s}^{2}=0 $, the ratio $ F=MS_{s}/MS_{e} $ still has an F distribution with $ (N-1) $ and $ (T-N) $ degrees of freedom, so even with an unbalanced design, the ratio of mean squares provides a basis for testing the null hypothesis that $ \\sigma_{s}^{2}=0 $. Searle et al. (1992, pp. 76–78) outline procedures for estimating confidence intervals for the among-family variance component and for $ t_{PHS} $, but these procedures are quite complicated.",
-      "source_page": 581,
-      "printed_page": 561,
-      "source_block_ids": [
-        "p581:b12"
-      ],
-      "bbox": [
-        60.0,
-        689.0,
-        1023.0,
-        1058.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "In recent years, maximum likelihood procedures have been developed as an alternative to ANOVA approaches for variance-component estimation. As a consequence of their relative insensitivity to unbalanced designs, these methods have been embraced widely by animal breeders. Unlike ANOVA, maximum likelihood techniques assume normality in both the estimation of parameters and hypothesis testing. A broad overview of the use of maximum likelihood methods in quantitative genetics is given in Chapters 26 and 27. For historical completeness, we note that Smith (1956) long ago introduced a weighted ANOVA procedure for unbalanced data that is closely related to maximum likelihood estimation. For the computation of the among-family sum of squares, he proposed that the family means be weighted by the inverse of their sampling variance. As in the case of weighted regression (discussed in the preceding chapter), the weights turn out to be a function of the variance components to be estimated, so an iterative solution is used in the estimation of the variance components. The weights proposed in Smith's (1956) paper are identical to those used in the maximum likelihood solution to the one-factor model (Searle et al. 1992).",
-      "source_page": 581,
-      "printed_page": 561,
-      "source_block_ids": [
-        "p581:b13"
-      ],
-      "bbox": [
-        48.0,
-        1042.0,
+        54.0,
+        1120.0,
         1017.0,
-        1565.0
+        1429.0
       ]
     },
     {
-      "type": "example",
-      "content": "[[EXAMPLE:Genetics_chapter18:2]]",
-      "source_page": 582,
+      "type": "discussion",
+      "content": "1. The jackknife procedure iteratively deletes one unit of the data set, each time using the truncated data to obtain a set of parameter estimates. For the one-way ANOVA, a different paternal half-sib family is deleted in each analysis, and from the resultant N sets of parameter estimates, one obtains a mean estimate and a standard error for each variance component, heritability, and so on.",
+      "source_page": 583,
+      "printed_page": 563,
       "source_block_ids": [
-        "p582:b2",
-        "p582:b3",
-        "p582:b4",
-        "p582:b5",
-        "p582:b6",
-        "p582:b7",
-        "p583:b2",
-        "p583:b3"
+        "p583:b6",
+        "p584:b2"
       ],
       "bbox": [
-        177.0,
-        193.0,
-        1043.0,
-        355.0
+        65.0,
+        1427.0,
+        982.0,
+        1511.0
+      ],
+      "source_page_end": 584
+    },
+    {
+      "type": "discussion",
+      "content": "2. The bootstrap procedure repeatedly draws random samples from the original data set with replacement. With reasonably large sample sizes, the number of ways the data set can be sampled is effectively infinite, and usually a thousand or more analyses are performed to arrive at stable average values for the parameter estimates and their standard errors. Confidence intervals are constructed from the cumulative distribution of the individual estimates. For the one-way ANOVA, bootstrapping would be done over families, as our interest is in the among-family variance.",
+      "source_page": 584,
+      "printed_page": 564,
+      "source_block_ids": [
+        "p584:b3"
+      ],
+      "bbox": [
+        144.0,
+        289.0,
+        1041.0,
+        589.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "3. Permutation tests randomize the individual data with respect to families, while keeping the overall data structure (number of families and progeny per family) constant. Again, an essentially unlimited number of data sets can be constructed in this way, and from a large number of them, the distribution of the estimated among-family variance can be established under the null hypothesis that $ \\sigma_{s}^{2}=0 $. This distribution is then used to evaluate the probability of obtaining by chance an estimate of $ \\sigma_{s}^{2} $ with a value as extreme as that found with the original data set. Mitchell-Olds (1986) used this approach in a sib analysis of life-history variation in the annual plant Impatiens capensis to test for significant heritabilities; later, the delete-one jackknife was applied to the same data (Mitchell-Olds and Bergelson 1990). The two types of analyses led to similar, although not identical, conclusions.",
+      "source_page": 584,
+      "printed_page": 564,
+      "source_block_ids": [
+        "p584:b4"
+      ],
+      "bbox": [
+        146.0,
+        592.0,
+        1050.0,
+        1020.0
       ]
     }
   ]

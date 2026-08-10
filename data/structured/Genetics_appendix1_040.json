@@ -2,17 +2,14 @@
   "id": "Genetics_appendix1_040",
   "metadata": {
     "chapter": "Genetics_appendix1",
-    "section": "LIKELIHOOD-RATIO TESTS",
-    "subsections": [
-      "Likelihood-ratio Tests for the General Linear Model"
-    ],
-    "section_level_1": "LIKELIHOOD-RATIO TESTS",
-    "section_level_2": "Likelihood-ratio Tests for the General Linear Model",
+    "section": "ITERATIVE METHODS FOR SOLVING ML EQUATIONS",
+    "subsections": [],
+    "section_level_1": "ITERATIVE METHODS FOR SOLVING ML EQUATIONS",
+    "section_level_2": null,
     "heading_path": [
-      "LIKELIHOOD-RATIO TESTS",
-      "Likelihood-ratio Tests for the General Linear Model"
+      "ITERATIVE METHODS FOR SOLVING ML EQUATIONS"
     ],
-    "display_heading": "LIKELIHOOD-RATIO TESTS / Likelihood-ratio Tests for the General Linear Model",
+    "display_heading": "ITERATIVE METHODS FOR SOLVING ML EQUATIONS",
     "source_file": "",
     "source_pdf": "data/背景资料/Genetics.pdf",
     "source_title": "Genetics and Analysis of Quantitative Traits",
@@ -21,188 +18,34 @@
       "remote_llm_calls": 0
     },
     "heading_source": {
-      "source_page": 872,
-      "printed_page": 852,
+      "source_page": 873,
+      "printed_page": 853,
       "source_block_ids": [
-        "p872:b2"
+        "p873:b8"
       ],
       "bbox": [
-        148.0,
-        136.0,
-        792.0,
-        171.0
+        65.0,
+        741.0,
+        796.0,
+        773.0
       ],
-      "raw_text": "Likelihood-ratio Tests for the General Linear Model"
+      "raw_text": "ITERATIVE METHODS FOR SOLVING ML EQUATIONS"
     }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "As a final example of likelihood-ratio tests, consider the general linear model (Chapters 8, 26, 27), $ \\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\mathbf{e} $, where we assume that the $ n \\times 1 $ vector of residual errors e is multivariate normal, with mean vector zero and covariance matrix $ \\mathbf{V} $, i.e., $ \\mathbf{e} \\sim \\text{MVN}(0, \\mathbf{V}) $. From Equation 8.24, the density function for e is",
-      "source_page": 872,
-      "printed_page": 852,
+      "content": "While ML estimation and hypothesis testing with likelihood ratios is conceptually straightforward, in practice it can be quite difficult to accomplish due to the complexities associated with having to find the maximum of the likelihood function. Ideally, closed-form solutions to the MLEs can be obtained by deriving the score vector, setting it equal to zero, and solving. However, in many cases this is impractical and numerical approaches must be used. In very simple cases with one or two parameters, a brute force approach relying upon a grid search can be used, where one computes a one- or two-dimensional plot of the likelihood surface as a function of the unknown parameters. With more than two variables, this is impractical and a variety of iterative methods have been suggested as alternatives. We discuss two of these here, Newton-Raphson and EM methods (Chapter 27 discusses these methods further in the context of variance-component estimation). A potential problem with all iterative methods is that they may not converge to the true MLEs if the likelihood surface contains several local maxima. Iterative methods require an initial starting value, and a poor choice can result in the iteration converging to a solution that is a local, but not a global, maximum. Hence, when applying iterative methods, several starting points should be used.",
+      "source_page": 873,
+      "printed_page": 853,
       "source_block_ids": [
-        "p872:b3"
+        "p873:b9"
       ],
       "bbox": [
-        146.0,
-        178.0,
-        1106.0,
-        312.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula228]]",
-      "source_page": 872,
-      "printed_page": 852,
-      "source_block_ids": [
-        "p872:b4"
-      ],
-      "bbox": [
-        408.0,
-        335.0,
-        842.0,
-        405.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "Writing the vector of residuals as $\\mathbf{e} = \\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta}$ gives the resulting likelihood for $\\beta$ and $\\mathbf{V}$, conditional on the observed data $(\\mathbf{y}, \\mathbf{X})$, as",
-      "source_page": 872,
-      "printed_page": 852,
-      "source_block_ids": [
-        "p872:b5"
-      ],
-      "bbox": [
-        146.0,
-        427.0,
-        1106.0,
-        495.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula229]]",
-      "source_page": 872,
-      "printed_page": 852,
-      "source_block_ids": [
-        "p872:b6"
-      ],
-      "bbox": [
-        212.0,
-        518.0,
-        1035.0,
-        587.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "which has log-likelihood",
-      "source_page": 872,
-      "printed_page": 852,
-      "source_block_ids": [
-        "p872:b7"
-      ],
-      "bbox": [
-        146.0,
-        609.0,
-        449.0,
-        642.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula230]]",
-      "source_page": 872,
-      "printed_page": 852,
-      "source_block_ids": [
-        "p872:b8"
-      ],
-      "bbox": [
-        215.0,
-        669.0,
-        946.0,
-        733.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "Here $ \\beta $ is a vector of fixed effects and the matrix V is a function of k variance components, with $ \\mathbf{V} = \\sum_{i=1}^{k} \\mathbf{R}_i \\sigma_i^2 $ where the $ \\mathbf{R}_i $ are matrices of known constants. Thus, the parameters to be estimated are the vector $ \\beta $ of fixed effects and the k variances, $ \\sigma_i^2 $.",
-      "source_page": 872,
-      "printed_page": 852,
-      "source_block_ids": [
-        "p872:b10"
-      ],
-      "bbox": [
-        144.0,
-        753.0,
-        1102.0,
-        881.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "Suppose we wish to compare the relative fit of two models that assume the same covariance structure (i.e., the same V), but have different vectors of fixed effects, a vector $ \\beta_f $ for the full model vs. a vector $ \\beta_r $ for the reduced model that assumes fewer factors. The resulting likelihood-ratio test statistic is",
-      "source_page": 872,
-      "printed_page": 852,
-      "source_block_ids": [
-        "p872:b11"
-      ],
-      "bbox": [
-        144.0,
-        882.0,
-        1103.0,
-        1011.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula231]]",
-      "source_page": 872,
-      "printed_page": 852,
-      "source_block_ids": [
-        "p872:b12"
-      ],
-      "bbox": [
-        287.0,
-        1037.0,
-        961.0,
-        1164.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "where $ \\widehat{y}_f = X_f \\widehat{\\beta}_f $ and $ \\widehat{y}_r = X_r \\widehat{\\beta}_r $ are the predicted means under the full and reduced models. For large sample sizes, this test statistic follows a $ \\chi^2 $ distribution with $ n_f - n_r $ degrees of freedom, where $ n_f $ and $ n_r $ are the degrees of freedom for the full and reduced models, respectively.",
-      "source_page": 872,
-      "printed_page": 852,
-      "source_block_ids": [
-        "p872:b14"
-      ],
-      "bbox": [
-        143.0,
-        1193.0,
-        1102.0,
-        1326.0
-      ]
-    },
-    {
-      "type": "example",
-      "content": "[[EXAMPLE:Genetics_appendix1:5:occ3]]",
-      "source_page": 872,
-      "source_block_ids": [
-        "p872:b15",
-        "p873:b2",
-        "p873:b3",
-        "p873:b4",
-        "p873:b5",
-        "p873:b7"
-      ],
-      "bbox": [
-        192.0,
-        1420.0,
-        1055.0,
-        1539.0
+        62.0,
+        804.0,
+        1023.0,
+        1354.0
       ]
     }
   ]

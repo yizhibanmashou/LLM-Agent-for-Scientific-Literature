@@ -3,13 +3,16 @@
   "metadata": {
     "chapter": "Genetics_appendix1",
     "section": "LIKELIHOOD, SUPPORT, AND SCORE FUNCTIONS",
-    "subsections": [],
-    "section_level_1": "LIKELIHOOD, SUPPORT, AND SCORE FUNCTIONS",
-    "section_level_2": null,
-    "heading_path": [
-      "LIKELIHOOD, SUPPORT, AND SCORE FUNCTIONS"
+    "subsections": [
+      "Large-sample Properties of MLEs"
     ],
-    "display_heading": "LIKELIHOOD, SUPPORT, AND SCORE FUNCTIONS",
+    "section_level_1": "LIKELIHOOD, SUPPORT, AND SCORE FUNCTIONS",
+    "section_level_2": "Large-sample Properties of MLEs",
+    "heading_path": [
+      "LIKELIHOOD, SUPPORT, AND SCORE FUNCTIONS",
+      "Large-sample Properties of MLEs"
+    ],
+    "display_heading": "LIKELIHOOD, SUPPORT, AND SCORE FUNCTIONS / Large-sample Properties of MLEs",
     "source_file": "",
     "source_pdf": "data/背景资料/Genetics.pdf",
     "source_title": "Genetics and Analysis of Quantitative Traits",
@@ -18,116 +21,142 @@
       "remote_llm_calls": 0
     },
     "heading_source": {
-      "source_page": 865,
-      "printed_page": 845,
+      "source_page": 866,
+      "printed_page": 846,
       "source_block_ids": [
-        "p865:b3"
+        "p866:b16"
       ],
       "bbox": [
-        55.0,
-        733.0,
-        736.0,
-        763.0
+        146.0,
+        1366.0,
+        564.0,
+        1402.0
       ],
-      "raw_text": "LIKELIHOOD, SUPPORT, AND SCORE FUNCTIONS"
+      "raw_text": "Large-sample Properties of MLEs"
     }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "The basic idea underlying ML is quite simple. Usually, when specifying a probability density function (say, a normal with unknown mean $ \\mu $ and unit variance), we treat the pdf as a function of z (the value of the random variable) with the distribution parameters $ \\Theta $ assumed to be known. (While much of our discussion is in terms of a vector $ \\Theta $, we use $ \\theta $ to indicate results for a single parameter.) With maximum likelihood estimation, we reverse the roles of the observed value and the distribution parameters by asking: Given a vector of observations z, what can we say about $ \\Theta $? To specify this alternative interpretation, the density function is denoted as $ \\ell(\\Theta|\\mathbf{z}) $, the likelihood of $ \\Theta $ given the observed vector of data z. This defines a likelihood surface, as $ \\ell(\\Theta|\\mathbf{z}) $ assigns a value to each possible point in the $ \\Theta $-parameter space given the observed data z. The maximum likelihood estimate (MLE) of the unknown parameters, $ \\widehat{\\Theta} $, is the value of $ \\Theta $ corresponding to the maximum of $ \\ell(\\Theta|\\mathbf{z}) $, i.e., the MLE is the value of $ \\Theta $ that is “most likely” to have produced the data z. It is usually easier to find the maximum of a likelihood function by first taking its log and working with the resulting log-likelihood",
-      "source_page": 865,
-      "printed_page": 845,
-      "source_block_ids": [
-        "p865:b4"
-      ],
-      "bbox": [
-        51.0,
-        797.0,
-        1013.0,
-        1286.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula197]]",
-      "source_page": 865,
-      "printed_page": 845,
-      "source_block_ids": [
-        "p865:b5"
-      ],
-      "bbox": [
-        395.0,
-        1315.0,
-        668.0,
-        1350.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "L is also referred to as the support. Since the natural log is a monotonic function, $ \\ell(\\boldsymbol{\\Theta}) $ has the same maxima as $ \\ln\\left[\\ell(\\boldsymbol{\\Theta})\\right] $, so that the maximum of L also corresponds to the maximum of the likelihood function. The score S of a likelihood function is the first derivative of $L$ with respect to the likelihood parameters, with $S(\\theta) = \\partial L(\\theta)/\\partial\\theta$ for a single parameter likelihood function, and",
-      "source_page": 865,
-      "printed_page": 845,
-      "source_block_ids": [
-        "p865:b7",
-        "p866:b2"
-      ],
-      "bbox": [
-        51.0,
-        1381.0,
-        1011.0,
-        1478.0
-      ],
-      "source_page_end": 866
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula198]]",
+      "content": "MLEs have several important features when the sample size is large:",
       "source_page": 866,
       "printed_page": 846,
       "source_block_ids": [
-        "p866:b3"
+        "p866:b17"
       ],
       "bbox": [
-        407.0,
-        227.0,
-        832.0,
-        345.0
+        145.0,
+        1424.0,
+        967.0,
+        1458.0
       ]
     },
     {
       "type": "discussion",
-      "content": "for a vector of $n$ parameters. From elementary calculus it follows that the score evaluated at the MLE is zero, $\\mathbf{S}(\\widehat{\\boldsymbol{\\Theta}})=\\mathbf{0}$. This provides one approach for obtaining MLEs.",
+      "content": "1. Consistency: As the sample size increases, the MLE converges to the true parameter value, e.g., $ \\hat{\\Theta} \\to \\Theta $.",
       "source_page": 866,
       "printed_page": 846,
       "source_block_ids": [
-        "p866:b5"
+        "p866:b18"
       ],
       "bbox": [
-        144.0,
-        366.0,
-        1102.0,
-        470.0
+        159.0,
+        1468.0,
+        1072.0,
+        1539.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "2. Invariance: If $f(\\boldsymbol{\\Theta})$ is a function of the unknown parameters of the distribution, then the MLE of $f(\\boldsymbol{\\Theta})$ is $f(\\widehat{\\boldsymbol{\\Theta}})$, i.e., the MLE of a function of the parameters is simply that function evaluated at the MLE. For example, the MLE of $\\sqrt{\\theta} = (\\widehat{\\theta})^{1/2}$.",
+      "source_page": 867,
+      "printed_page": 847,
+      "source_block_ids": [
+        "p867:b2"
+      ],
+      "bbox": [
+        68.0,
+        136.0,
+        981.0,
+        274.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "3. Asymptotic normality and efficiency: As the sample size increases, the sampling distribution of the MLE converges to a normal and (generally) no other estimation procedure has a smaller variance. Hence, for sufficiently large sample sizes, estimates obtained via maximum likelihood typically have the smallest confidence intervals.",
+      "source_page": 867,
+      "printed_page": 847,
+      "source_block_ids": [
+        "p867:b3"
+      ],
+      "bbox": [
+        69.0,
+        285.0,
+        982.0,
+        448.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "4. Variance: For large sample sizes, the variance of an MLE (assuming a single unknown parameter) is approximately the negative of the reciprocal of the second derivative of the log-likelihood function evaluated at the MLE $ \\widehat{\\theta} $,",
+      "source_page": 867,
+      "printed_page": 847,
+      "source_block_ids": [
+        "p867:b4"
+      ],
+      "bbox": [
+        70.0,
+        457.0,
+        982.0,
+        590.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula202]]",
+      "source_page": 867,
+      "printed_page": 847,
+      "source_block_ids": [
+        "p867:b5"
+      ],
+      "bbox": [
+        345.0,
+        586.0,
+        752.0,
+        664.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "This is just the reciprocal of the curvature of the log-likelihood surface at the MLE. The flatter the likelihood surface around its maximum value (the MLE), the larger the variance; the steeper the surface, the smaller the variance. The minus sign appears because the second derivative is negative (downward curvature) at the maximum of the likelihood function.",
+      "source_page": 867,
+      "printed_page": 847,
+      "source_block_ids": [
+        "p867:b7"
+      ],
+      "bbox": [
+        118.0,
+        674.0,
+        983.0,
+        839.0
       ]
     },
     {
       "type": "example",
-      "content": "[[EXAMPLE:Genetics_appendix1:1:occ3]]",
-      "source_page": 866,
+      "content": "[[EXAMPLE:Genetics_appendix1:2:occ3]]",
+      "source_page": 867,
       "source_block_ids": [
-        "p866:b6",
-        "p866:b7",
-        "p866:b9",
-        "p866:b10",
-        "p866:b12",
-        "p866:b13",
-        "p866:b15"
+        "p867:b8",
+        "p867:b9",
+        "p867:b10",
+        "p867:b11",
+        "p867:b12"
       ],
       "bbox": [
-        191.0,
-        556.0,
-        1057.0,
-        706.0
+        102.0,
+        928.0,
+        964.0,
+        986.0
       ]
     }
   ]

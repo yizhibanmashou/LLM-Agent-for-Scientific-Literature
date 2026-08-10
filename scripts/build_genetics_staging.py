@@ -319,6 +319,21 @@ CHAPTER_TITLES = {
     22: "Genotype \u00d7 Environment Interaction",
 }
 
+# Source-PDF page 427 prints one section title across two consecutive Paddle
+# heading blocks.  This is an exact visual correction, not a general rule for
+# adjacent uppercase headings (which are often genuine parent/child levels).
+SOURCE_HEADING_CONTINUATIONS: dict[tuple[int, int], dict[str, Any]] = {
+    (427, 4): {
+        "previous_source_block_id": "p427:b3",
+        "previous_text": "FINE MAPPING OF MAJOR GENES USING",
+        "previous_bbox": [79.0, 331.0, 646.0, 370.0],
+        "expected_text": "POPULATION-LEVEL DISEQUILIBRIUM",
+        "bbox": [78.0, 373.0, 617.0, 413.0],
+        "combined": "FINE MAPPING OF MAJOR GENES USING POPULATION-LEVEL DISEQUILIBRIUM",
+        "reason": "PDF page 427 prints a single section heading across two lines",
+    },
+}
+
 
 def read_json(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
@@ -336,6 +351,11 @@ def clean_text(value: Any) -> str:
     text = re.sub(r"<div[^>]*>\s*", "", text, flags=re.I)
     text = re.sub(r"\s*</div>\s*", "", text, flags=re.I)
     return re.sub(r"[ \t]+", " ", text).strip()
+
+
+def normalize_heading_text(value: Any) -> str:
+    """Normalize layout line breaks without changing heading wording."""
+    return re.sub(r"\s+", " ", clean_text(value)).strip()
 
 
 def page_rows(page: dict[str, Any]) -> list[dict[str, Any]]:
@@ -370,6 +390,19 @@ def attach_heading_source(unit: dict[str, Any], label: str, source_page: int, ro
     existing.setdefault("source_block_ids", []).extend(
         item for item in incoming["source_block_ids"] if item not in existing["source_block_ids"]
     )
+    if "source_blocks" not in existing:
+        existing["source_blocks"] = [{
+            "source_page": existing.get("source_page"),
+            "source_block_id": (existing.get("source_block_ids") or [None])[0],
+            "bbox": existing.get("bbox"),
+            "raw_text": existing.get("raw_text"),
+        }]
+    existing["source_blocks"].append({
+        "source_page": source_page,
+        "source_block_id": incoming["source_block_ids"][0],
+        "bbox": incoming.get("bbox"),
+        "raw_text": incoming.get("raw_text"),
+    })
     existing["source_page_end"] = source_page
     existing["raw_text"] = " / ".join(filter(None, [str(existing.get("raw_text") or ""), incoming["raw_text"]]))
     boxes = [item for item in (existing.get("bbox"), incoming.get("bbox")) if isinstance(item, list)]
@@ -1007,23 +1040,34 @@ def build_book(workspace: Path, stage: Path) -> dict[str, Any]:
         units: list[dict[str, Any]] = []
         heading_path: list[str] = []
         current: dict[str, Any] | None = None
+        pending_heading_sources: list[tuple[str, int, dict[str, Any]]] = []
         pending_table: dict[str, Any] | None = None
         suppressed_formula_blocks: dict[str, str] = {}
         formula_index = 0
         example_image_dir = figures_dir / "examples"
         example_image_dir.mkdir(parents=True, exist_ok=True)
 
-        def new_unit(path: list[str], *, heading_only: bool = False) -> dict[str, Any]:
+        def queue_heading_source(source_label: str, source_page: int, row: dict[str, Any]) -> None:
+            source_id = f"p{source_page}:b{row.get('block_id', '?')}"
+            if any(
+                f"p{pending_page}:b{pending_row.get('block_id', '?')}" == source_id
+                for _, pending_page, pending_row in pending_heading_sources
+            ):
+                return
+            pending_heading_sources.append((source_label, source_page, row))
+
+        def new_unit(path: list[str]) -> dict[str, Any]:
+            normalized_path = [normalize_heading_text(item) for item in path if normalize_heading_text(item)]
             unit = {
                 "id": "",
                 "metadata": {
                     "chapter": chapter,
-                    "section": path[0] if path else chapter,
-                    "subsections": path[1:],
-                    "section_level_1": path[0] if path else chapter,
-                    "section_level_2": path[1] if len(path) > 1 else None,
-                    "heading_path": path,
-                    "display_heading": " / ".join(path) if path else chapter,
+                    "section": normalized_path[0] if normalized_path else chapter,
+                    "subsections": normalized_path[1:],
+                    "section_level_1": normalized_path[0] if normalized_path else chapter,
+                    "section_level_2": normalized_path[1] if len(normalized_path) > 1 else None,
+                    "heading_path": normalized_path,
+                    "display_heading": " / ".join(normalized_path) if normalized_path else chapter,
                     "source_file": "",
                     "source_pdf": "data/背景资料/Genetics.pdf",
                     "source_title": "Genetics and Analysis of Quantitative Traits",
@@ -1031,9 +1075,9 @@ def build_book(workspace: Path, stage: Path) -> dict[str, Any]:
                 },
                 "blocks": [],
             }
-            if heading_only:
-                unit["node_kind"] = "heading"
-                unit["allow_empty"] = True
+            for pending_label, pending_page, pending_row in pending_heading_sources:
+                attach_heading_source(unit, pending_label, pending_page, pending_row)
+            pending_heading_sources.clear()
             units.append(unit)
             return unit
 
@@ -1041,8 +1085,8 @@ def build_book(workspace: Path, stage: Path) -> dict[str, Any]:
             source_page = start_page + page_index
             forced = appendix_heading(source_page) if label == "appendix1" else None
             if forced:
-                heading_path = list(forced)
-                current = new_unit(heading_path, heading_only=True)
+                heading_path = [normalize_heading_text(item) for item in forced]
+                current = None
             rows = page_rows(raw_page)
             for row_index, row in enumerate(rows):
                 kind = str(row.get("block_label") or "").strip().lower()
@@ -1081,10 +1125,10 @@ def build_book(workspace: Path, stage: Path) -> dict[str, Any]:
                     })
                 block_split = apply_source_block_split(source_page, row, kind, text)
                 if block_split:
-                    split_heading = str(block_split["heading"])
+                    split_heading = normalize_heading_text(block_split["heading"])
                     heading_path = [heading_path[0], split_heading] if heading_path else [split_heading]
-                    current = new_unit(heading_path, heading_only=True)
-                    attach_heading_source(current, label, source_page, row)
+                    current = None
+                    queue_heading_source(label, source_page, row)
                     kind = "text"
                     text = str(block_split["body"])
                     applied_source_corrections.append({
@@ -1119,8 +1163,9 @@ def build_book(workspace: Path, stage: Path) -> dict[str, Any]:
                 # they must be handled before the generic empty-text filter.
                 if kind in {"image", "chart"}:
                     if current is None:
-                        title = CHAPTER_TITLES.get(int(label[7:])) if label.startswith("chapter") else None
-                        heading_path = [title or chapter]
+                        if not heading_path:
+                            title = CHAPTER_TITLES.get(int(label[7:])) if label.startswith("chapter") else None
+                            heading_path = [title or chapter]
                         current = new_unit(heading_path)
                     block_id = row.get("block_id", "?")
                     asset_name = f"Genetics_p{source_page}_b{block_id}.png"
@@ -1141,27 +1186,68 @@ def build_book(workspace: Path, stage: Path) -> dict[str, Any]:
                     current = new_unit(heading_path)
                 if is_source_heading(kind, text):
                     if label == "appendix1" and source_page in APPENDIX_BOUNDARIES:
-                        expected = " / ".join(APPENDIX_BOUNDARIES[source_page]).lower()
-                        if text.lower() in expected or expected in text.lower():
-                            if current is not None:
-                                attach_heading_source(current, label, source_page, row)
+                        expected = normalize_heading_text(" / ".join(APPENDIX_BOUNDARIES[source_page])).lower()
+                        normalized_text = normalize_heading_text(text)
+                        if normalized_text.lower() in expected or expected in normalized_text.lower():
+                            current = None
+                            queue_heading_source(label, source_page, row)
                             continue
                     if re.fullmatch(r"(?:CHAPTER|Appendix)\s+\w+", text, re.I):
                         continue
                     if label == "chapter4" and text.strip().lower() == "introduction":
                         continue
+                    normalized_text = normalize_heading_text(text)
+                    if label.startswith("chapter"):
+                        chapter_number = int(label[7:])
+                        if re.fullmatch(rf"(?:CHAPTER\s+)?{chapter_number}", normalized_text, re.I):
+                            current = None
+                            queue_heading_source(label, source_page, row)
+                            continue
                     if kind == "doc_title" and label.startswith("chapter"):
-                        text = CHAPTER_TITLES.get(int(label[7:]), text)
-                    if text.isupper() or not heading_path:
-                        heading_path = [text]
+                        normalized_text = normalize_heading_text(
+                            CHAPTER_TITLES.get(int(label[7:]), normalized_text)
+                        )
+                    continuation = SOURCE_HEADING_CONTINUATIONS.get(
+                        (source_page, int(row.get("block_id", -1)))
+                    )
+                    if continuation:
+                        previous = pending_heading_sources[-1] if pending_heading_sources else None
+                        previous_id = (
+                            f"p{previous[1]}:b{previous[2].get('block_id', '?')}" if previous else ""
+                        )
+                        if (
+                            previous_id != continuation["previous_source_block_id"]
+                            or not heading_path
+                            or normalize_heading_text(heading_path[-1]) != continuation["previous_text"]
+                            or bbox(previous[2]) != continuation["previous_bbox"]
+                            or normalized_text != continuation["expected_text"]
+                            or bbox(row) != continuation["bbox"]
+                        ):
+                            raise RuntimeError(
+                                f"heading continuation evidence drifted at p{source_page}:b{row.get('block_id')}"
+                            )
+                        heading_path = [continuation["combined"]]
+                        applied_source_corrections.append({
+                            "type": "wrapped_heading_join",
+                            "source_page": source_page,
+                            "source_block_ids": [previous_id, f"p{source_page}:b{row.get('block_id')}"],
+                            "bboxes": [continuation["previous_bbox"], continuation["bbox"]],
+                            "replacement": continuation["combined"],
+                            "reason": continuation["reason"],
+                            "verification": "human_visual_check_against_source_pdf",
+                        })
+                    elif normalized_text.isupper() or not heading_path:
+                        heading_path = [normalized_text]
                     else:
-                        heading_path = [heading_path[0], text]
-                    current = new_unit(heading_path, heading_only=True)
-                    attach_heading_source(current, label, source_page, row)
+                        root = normalize_heading_text(heading_path[0])
+                        heading_path = [root] if root.casefold() == normalized_text.casefold() else [root, normalized_text]
+                    current = None
+                    queue_heading_source(label, source_page, row)
                     continue
                 if current is None:
-                    title = CHAPTER_TITLES.get(int(label[7:])) if label.startswith("chapter") else None
-                    heading_path = [title or chapter]
+                    if not heading_path:
+                        title = CHAPTER_TITLES.get(int(label[7:])) if label.startswith("chapter") else None
+                        heading_path = [title or chapter]
                     current = new_unit(heading_path)
 
                 # A prose paragraph may legitimately start with “Table 11.1
@@ -1527,12 +1613,13 @@ def build_book(workspace: Path, stage: Path) -> dict[str, Any]:
                     current["blocks"].append(block)
 
         merge_cross_page_hyphenations(units)
-        # Drop synthetic empty roots but retain intentional heading-only nodes.
-        units = [unit for unit in units if unit["blocks"] or unit.get("allow_empty")]
-        for unit in units:
-            if unit["blocks"]:
-                unit.pop("node_kind", None)
-                unit.pop("allow_empty", None)
+        if pending_heading_sources:
+            unresolved_ids = [
+                f"p{pending_page}:b{pending_row.get('block_id', '?')}"
+                for _, pending_page, pending_row in pending_heading_sources
+            ]
+            raise RuntimeError(f"heading has no following content unit: {unresolved_ids}")
+        units = [unit for unit in units if unit["blocks"]]
         for index, unit in enumerate(units, 1):
             unit_id = f"{chapter}_{index:03d}"
             unit["id"] = unit_id
@@ -1653,9 +1740,6 @@ def build_book(workspace: Path, stage: Path) -> dict[str, Any]:
                 for block_index, block in enumerate(unit["blocks"])
                 if block_index not in removals[unit["id"]] or (unit["id"], block_index) in replacements
             ]
-            if unit["blocks"]:
-                unit.pop("node_kind", None)
-                unit.pop("allow_empty", None)
             write_json(structured / f"{unit['id']}.json", unit)
 
     write_json(structured / "Genetics_formula_library.json", {"version": 1, "book": "Genetics", "asset_type": "formula", "formulas": formulas})
@@ -1825,13 +1909,38 @@ def verify(stage: Path, build: dict[str, Any], style: dict[str, Any]) -> dict[st
         first = next(iter(sorted(structured.glob(f"{chapter}_*.json"))), None)
         if not first or title not in str((read_json(first).get("metadata") or {}).get("display_heading") or ""):
             errors.append(f"wrong title: {chapter}")
-    chapter4_units = [read_json(path) for path in sorted(structured.glob("Genetics_chapter4_*.json"))]
-    if not any(
-        unit.get("allow_empty") and not unit.get("blocks")
-        and (unit.get("metadata") or {}).get("display_heading") == "THE TRANSMISSION OF GENETIC INFORMATION"
-        for unit in chapter4_units
+    content_units = [
+        read_json(path)
+        for path in sorted(structured.glob("Genetics_*_[0-9][0-9][0-9].json"))
+    ]
+    if len(content_units) != 441:
+        errors.append(f"wrong content unit count: {len(content_units)} (expected 441)")
+    if any(not unit.get("blocks") for unit in content_units):
+        errors.append("empty Genetics content unit remains")
+    if any(unit.get("node_kind") == "heading" or unit.get("allow_empty") for unit in content_units):
+        errors.append("heading-only Genetics unit remains")
+    if any(
+        len(normalized := [normalize_heading_text(item).casefold() for item in (unit.get("metadata") or {}).get("heading_path", [])])
+        != len(set(normalized))
+        for unit in content_units
     ):
-        errors.append("empty transmission parent heading missing")
+        errors.append("duplicate normalized heading path remains")
+    chapter4_units = [unit for unit in content_units if (unit.get("metadata") or {}).get("chapter") == "Genetics_chapter4"]
+    hardy = next((
+        unit for unit in chapter4_units
+        if (unit.get("metadata") or {}).get("display_heading")
+        == "THE TRANSMISSION OF GENETIC INFORMATION / The Hardy-Weinberg Principle"
+    ), None)
+    if not hardy or not hardy.get("blocks"):
+        errors.append("Hardy-Weinberg content unit did not inherit the transmission heading")
+    wrapped_heading = "FINE MAPPING OF MAJOR GENES USING POPULATION-LEVEL DISEQUILIBRIUM"
+    if not any(
+        (unit.get("metadata") or {}).get("display_heading") == wrapped_heading
+        and set(((unit.get("metadata") or {}).get("heading_source") or {}).get("source_block_ids") or [])
+        == {"p427:b3", "p427:b4"}
+        for unit in content_units
+    ):
+        errors.append("PDF page 427 wrapped heading was not merged with both source blocks")
     if not any(
         "Organisms with ploidy levels" in str(block.get("content") or "")
         for unit in chapter4_units for block in unit.get("blocks", [])

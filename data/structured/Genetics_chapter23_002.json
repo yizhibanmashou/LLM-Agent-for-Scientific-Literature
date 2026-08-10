@@ -2,17 +2,14 @@
   "id": "Genetics_chapter23_002",
   "metadata": {
     "chapter": "Genetics_chapter23",
-    "section": "23",
-    "subsections": [
-      "Maternal Effects"
-    ],
-    "section_level_1": "23",
-    "section_level_2": "Maternal Effects",
+    "section": "COMPONENTS OF VARIANCE AND COVARIANCE",
+    "subsections": [],
+    "section_level_1": "COMPONENTS OF VARIANCE AND COVARIANCE",
+    "section_level_2": null,
     "heading_path": [
-      "23",
-      "Maternal Effects"
+      "COMPONENTS OF VARIANCE AND COVARIANCE"
     ],
-    "display_heading": "23 / Maternal Effects",
+    "display_heading": "COMPONENTS OF VARIANCE AND COVARIANCE",
     "source_file": "",
     "source_pdf": "data/背景资料/Genetics.pdf",
     "source_title": "Genetics and Analysis of Quantitative Traits",
@@ -21,124 +18,303 @@
       "remote_llm_calls": 0
     },
     "heading_source": {
-      "source_page": 699,
-      "printed_page": 679,
+      "source_page": 701,
+      "printed_page": 681,
       "source_block_ids": [
-        "p699:b1"
+        "p701:b2"
       ],
       "bbox": [
-        357.0,
-        181.0,
-        725.0,
-        229.0
+        65.0,
+        135.0,
+        740.0,
+        165.0
       ],
-      "raw_text": "Maternal Effects"
+      "raw_text": "COMPONENTS OF VARIANCE AND COVARIANCE"
     }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "From the standpoint of genetic analysis, we have already had three main encounters with maternal effects: the nested sib design (Chapter 18), the monozygotic twin half-sib method (Chapter 19), and the factorial designs with reciprocal crosses (Chapter 20). However, none of these techniques provides a full resolution to the issue of quantifying variance associated with maternal effects. For example, under the nested design, the degree by which the dam component of variance exceeds the sire component is a function of dominance and epistatic genetic variance as well as of the variance due to common maternal environment. Thus, with this sort of analysis, excess variance associated with dams cannot be taken as definitive evidence of maternal effects variance. Factorial designs with reciprocal crosses remove this ambiguity, but their application is restricted to inbred lines and populations of hermaphrodites.",
-      "source_page": 699,
-      "printed_page": 679,
+      "content": "Because the addition of maternal effects doubles the number of factors in the linear model for the phenotype, it greatly increases the number of causal components that potentially contribute to the resemblance between relatives. Consider the phenotypic covariance between two individuals — x with mother w, and y with mother z. Assuming no genotype × environment interaction, there are still eight causal components of covariance,",
+      "source_page": 701,
+      "printed_page": 681,
       "source_block_ids": [
-        "p699:b2"
+        "p701:b3"
       ],
       "bbox": [
         61.0,
-        346.0,
+        200.0,
+        1023.0,
+        394.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter23_formula002]]",
+      "source_page": 701,
+      "printed_page": 681,
+      "source_block_ids": [
+        "p701:b4"
+      ],
+      "bbox": [
+        107.0,
+        413.0,
+        922.0,
+        490.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "We first consider the four sources of environmental covariance given in the second line of this formula:",
+      "source_page": 701,
+      "printed_page": 681,
+      "source_block_ids": [
+        "p701:b6"
+      ],
+      "bbox": [
+        64.0,
+        509.0,
         1020.0,
-        731.0
+        572.0
       ]
     },
     {
       "type": "discussion",
-      "content": "This chapter expands our discussion of maternal effects by presenting additional methods for their analysis. We start by extending our previous descriptions of the causal sources of phenotypic variance and covariance between relatives (Chapter 7) to allow for maternal effects in a wide variety of contexts. Although we restrict attention to situations in which epistatic sources of maternal genetic variation are of negligible importance, it will be seen that there are still a large number of ways in which maternal effects contribute to the phenotypic variance in populations. We then consider several empirical approaches for acquiring estimates of the causal components of variance (or functions of them). Examples throughout the chapter will emphasize the significance of maternal effects in organisms ranging from mammals with extended maternal care to seed plants provisioning their young with endosperm, showing how the failure to account for such effects can result in gross misunderstandings about the mode of phenotypic inheritance. We close the chapter by demonstrating how the models and methods for analyzing maternal effects can be extended to indirect effects of other relatives, including fathers, grandparents, and sibs.",
-      "source_page": 699,
-      "printed_page": 679,
+      "content": "1. $ \\sigma_{E_o}(x,y) $ is the covariance of the direct effect of the environment on individuals x and y. It will generally be zero, except when x and y are the same individual, in which case it is part of the environmental variance, $ \\sigma_{E_o}^2 $.",
+      "source_page": 701,
+      "printed_page": 681,
       "source_block_ids": [
-        "p699:b3"
+        "p701:b7"
       ],
       "bbox": [
-        58.0,
-        733.0,
-        1020.0,
-        1246.0
+        75.0,
+        586.0,
+        988.0,
+        717.0
       ]
     },
     {
       "type": "discussion",
-      "content": "Early theoretical work on the subject of maternal effects was done by Dickerson (1947), Koch and Clark (1955), and Kempthorne (1955), and later generalized by Willham (1963, 1972), whose approach we initially adhere to (Figure 23.1). Letting w denote the mother of individual x, the phenotypic value of a character of x can be viewed as the sum of two components. The first component is a function of the direct expression of x's genotype and special environmental effects, $ z_{ox} = \\mu + G_{ox} + E_{ox} $, where o denotes a direct effect, and $ \\mu $ is the",
-      "source_page": 699,
-      "printed_page": 679,
+      "content": "2. $ \\sigma_{E_o,E_m}(x,z) $ is the covariance of the direct effect of the environment on individual x with the environmental contribution of the maternal effect transmitted by y's mother. It may be of significance in a number of situations. For example, if x is the mother of y, then x = z, and $ \\sigma_{E_o,E_m}(x,z) = \\sigma_{E_o,E_m}(x,x) = \\sigma_{E_o,E_m} $, the covariance between the direct environmental effect on a female and the maternal environmental effect that she contributes to her offspring. As another example, if x and y share the same mother z, $ \\sigma_{E_o,E_m}(x,z) $ will be unequal to zero if the direct effect of the environment on sib x influences the mother's treatment of sib y. Because of symmetry with $ \\sigma_{E_o,E_m}(x,z) $, the preceding arguments also apply to $ \\sigma_{E_o,E_m}(y,w) $.",
+      "source_page": 701,
+      "printed_page": 681,
       "source_block_ids": [
-        "p699:b4"
+        "p701:b8"
       ],
       "bbox": [
-        56.0,
-        1247.0,
-        1018.0,
-        1470.0
+        74.0,
+        727.0,
+        989.0,
+        1082.0
       ]
     },
     {
       "type": "discussion",
-      "content": "[[FIGURE:23.1]]",
-      "source_page": 700,
-      "printed_page": 680,
+      "content": "3. $ \\sigma_{E_m}(w,z) $ is the covariance of the environmental component of the maternal effects on x and y. If x and y are the same individual, then w = z and $ \\sigma_{E_m}(w,z) = \\sigma_{E_m}^2 $, the variance of environmental maternal effects. For other relationships involving direct ancestors, the situation is less clear-cut, but a simple approach suggested by Falconer (1965a) can be utilized as a first approximation. Here it is assumed that the environmental maternal effect transmitted by an individual x consists of two components: a residual fraction (b) of the maternal effect from x's mother ( $ bE_{mw} $), and a unique contribution ( $ E'_{mx} $), so $ E_{mx} = bE_{mw} + E'_{mx} $. Suppose, for example, that x is the mother of y, then x = z, and $ \\sigma_{E_m}(w,z) = \\sigma_{E_m}(w,x) = \\sigma[E_{mw}, (bE_{mw} + E'_{mx})] = b\\sigma_{E_m}^2 $. In the case of maternal sibs, w = z, and if the unique components of $ E_{mw} $ transmitted to each offspring are independent, we would expect that $ \\sigma_{E_m}(w,z) = b^2\\sigma_{E_m}^2 $. However, through sib competition and/or cooperation, the maternal effect transmitted to $x$ may depend on that transmitted to $y$. Thus, a more general approach is to define the covariance of environmental maternal effects on maternal sibs as $(b^2 + c)\\sigma_{E_m}^2$, where $c\\sigma_{E_m}^2$ is the covariance of unique maternal environmental effects dispensed on sibs. The quantity $(b^2 + c)\\sigma_{E_m}^2$ is equivalent to the variance due to common maternal environment used in previous chapters.",
+      "source_page": 701,
+      "printed_page": 681,
       "source_block_ids": [
-        "p700:b3"
+        "p701:b9",
+        "p702:b2"
       ],
       "bbox": [
-        190.0,
-        589.0,
-        1056.0,
-        741.0
+        71.0,
+        1093.0,
+        986.0,
+        1513.0
+      ],
+      "source_page_end": 702
+    },
+    {
+      "type": "discussion",
+      "content": "To obtain a description of the genetic components of covariance between relatives, we will adhere to the usual assumptions of gametic phase equilibrium and random mating. Recalling Equation 7.12, the genetic covariance due to direct effects is",
+      "source_page": 702,
+      "printed_page": 682,
+      "source_block_ids": [
+        "p702:b3"
+      ],
+      "bbox": [
+        136.0,
+        394.0,
+        1097.0,
+        521.0
       ]
     },
     {
       "type": "discussion",
-      "content": "population mean phenotype. The second component, the maternal effect, is an indirect effect of the maternal phenotype, and it too can have genetic and environmental components, $ M_x = G_{mw} + E_{mw} $. In what follows, it is important to keep in mind that a maternal effect is a composite function of many possible aspects of the maternal phenotype, none of which may be the character being evaluated in the progeny. Although they may have a genetic component, maternal effects are an environmental source of variance from the standpoint of the offspring. Thus, $ M_x $, a property of the mother, is expressed in the offspring. Summing up, the phenotype of individual x is represented by",
-      "source_page": 700,
-      "printed_page": 680,
+      "content": "[[FORMULA:Genetics_chapter23_formula003]]",
+      "source_page": 702,
+      "printed_page": 682,
       "source_block_ids": [
-        "p700:b4"
+        "p702:b4"
       ],
       "bbox": [
-        142.0,
-        840.0,
-        1103.0,
-        1132.0
+        424.0,
+        519.0,
+        803.0,
+        558.0
       ]
     },
     {
       "type": "discussion",
-      "content": "[[FORMULA:Genetics_chapter23_formula001]]",
-      "source_page": 700,
-      "printed_page": 680,
+      "content": "where $ \\Theta_{xy} $ and $ \\Delta_{xy} $ are the coefficients of coancestry and fraternity for individuals x and y, and $ \\sigma_{A_o}^2 $ and $ \\sigma_{D_o}^2 $ are the additive and dominance components of variance involving direct genetic effects. The next two genetic covariance terms in Equation 23.2 can be expanded by noting that they involve the direct genetic effects of one individual and the maternal genetic effects contributed by the mother of the second individual,",
+      "source_page": 702,
+      "printed_page": 682,
       "source_block_ids": [
-        "p700:b5"
+        "p702:b6"
       ],
       "bbox": [
-        317.0,
-        1145.0,
-        927.0,
-        1178.0
+        136.0,
+        572.0,
+        1096.0,
+        767.0
       ]
     },
     {
       "type": "discussion",
-      "content": "Throughout, we assume that the direct and indirect genetic effects, $ G_{ox} $ and $ G_{mw} $, are random variables, potentially containing additive and dominance effects, but exhibiting no epistasis. A genetic covariance, which we denote by $ \\sigma_{G_{o},G_{m}} $, may exist between the two effects, as for example when genes with direct effects on maternal body size also affect characters that influence the provisioning of offspring. A fuller description of the genetic variances and covariances is given in the following section. The environmental effects, $ E_{ox} $ and $ E_{mw} $, are also assumed to be random deviates with expectations zero, and they too may exhibit a covariance, which we denote by $ \\sigma_{E_{o},E_{m}} $. However, we will assume that the genetic and environmental effects are independently distributed with no interactions between them.",
-      "source_page": 700,
-      "printed_page": 680,
+      "content": "[[FORMULA:Genetics_chapter23_formula004]]",
+      "source_page": 702,
+      "printed_page": 682,
       "source_block_ids": [
-        "p700:b7"
+        "p702:b7"
       ],
       "bbox": [
-        143.0,
-        1192.0,
-        1106.0,
-        1545.0
+        361.0,
+        796.0,
+        863.0,
+        832.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter23_formula005]]",
+      "source_page": 702,
+      "printed_page": 682,
+      "source_block_ids": [
+        "p702:b9"
+      ],
+      "bbox": [
+        357.0,
+        844.0,
+        872.0,
+        880.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "The final genetic term in Equation 23.2 describes the covariance of the maternal genetic effects contributed by the two mothers,",
+      "source_page": 702,
+      "printed_page": 682,
+      "source_block_ids": [
+        "p702:b11"
+      ],
+      "bbox": [
+        137.0,
+        905.0,
+        1096.0,
+        972.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter23_formula006]]",
+      "source_page": 702,
+      "printed_page": 682,
+      "source_block_ids": [
+        "p702:b12"
+      ],
+      "bbox": [
+        409.0,
+        997.0,
+        819.0,
+        1038.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Table 23.1 summarizes the coefficients for the different causal components of variance and covariance that contribute to the phenotypic covariances between several types of relatives. Expressions for many other kinds of relatives are given by Willham (1963, 1972), Eisen (1967), and Thompson (1976).",
+      "source_page": 702,
+      "printed_page": 682,
+      "source_block_ids": [
+        "p702:b14"
+      ],
+      "bbox": [
+        138.0,
+        1062.0,
+        1097.0,
+        1191.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Some interesting and counterintuitive relationships can be seen in Table 23.1. For example, the presence of maternal effects causes the expected phenotypic covariance between father and offspring to be $ (\\sigma_{A_o}^2/2) + (\\sigma_{A_o,A_m}/4) $ rather than $ (\\sigma_{A_o}^2/2) $. Why should the resemblance between father and offspring be influenced by maternal effects genes? The answer resides in the paternal grandmother's genes. These fully determine the maternal effect on the father's phenotype, and also comprise 25% of the offspring's genome, where their direct effects are expressed. Thus, a genetic correlation between the direct and maternal effects of genes modifies the phenotypic covariance between a male and his descendants. Note further that because $ \\sigma_{A_o,A_m} $ is a covariance, it may be negative.",
+      "source_page": 702,
+      "printed_page": 682,
+      "source_block_ids": [
+        "p702:b15"
+      ],
+      "bbox": [
+        137.0,
+        1190.0,
+        1100.0,
+        1513.0
+      ]
+    },
+    {
+      "type": "table",
+      "content": "[[TABLE:23.1]]",
+      "source_page": 703,
+      "printed_page": 683,
+      "source_block_ids": [
+        "p703:b3"
+      ],
+      "bbox": [
+        64.0,
+        219.0,
+        1034.0,
+        776.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Indeed, if $ \\sigma_{A_{o},A_{m}} $ were sufficiently negative, the regression of offspring on father could be negative. Similar arguments apply to the mother-offspring regression. Such negative regressions have been observed on occasion. For example, Gibbs (1988) observed significant negative mother-offspring regressions for clutch size in Darwin's medium ground finches.",
+      "source_page": 703,
+      "printed_page": 683,
+      "source_block_ids": [
+        "p703:b5"
+      ],
+      "bbox": [
+        61.0,
+        951.0,
+        1024.0,
+        1115.0
+      ]
+    },
+    {
+      "type": "example",
+      "content": "[[EXAMPLE:Genetics_chapter23:1]]",
+      "source_page": 703,
+      "source_block_ids": [
+        "p703:b6",
+        "p703:b7",
+        "p704:b2",
+        "p704:b3",
+        "p704:b4",
+        "p704:b5",
+        "p704:b6",
+        "p704:b7",
+        "p704:b8",
+        "p704:b9",
+        "p704:b10",
+        "p704:b11",
+        "p704:b12",
+        "p705:b2"
+      ],
+      "bbox": [
+        110.0,
+        1208.0,
+        974.0,
+        1358.0
       ]
     }
   ]

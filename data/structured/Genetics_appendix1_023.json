@@ -19,171 +19,27 @@
     "rebuild_provenance": {
       "method": "paddle_layout_block_rebuild",
       "remote_llm_calls": 0
-    },
-    "heading_source": {
-      "source_page": 851,
-      "printed_page": 831,
-      "source_block_ids": [
-        "p851:b11"
-      ],
-      "bbox": [
-        56.0,
-        1012.0,
-        415.0,
-        1043.0
-      ],
-      "raw_text": "Estimability of Fixed Factors"
     }
   },
   "blocks": [
     {
-      "type": "discussion",
-      "content": "The above results have implications for the estimation of (fixed) factors in the general linear model, $ \\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\mathbf{e} $. Recall that the OLS solution for a vector $ \\beta $ of fixed effects is $ \\widehat{\\boldsymbol{\\beta}} = (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{y} $ (Chapters 8, 26). If the design matrix $ \\mathbf{X} $ has full column rank (all columns of $ \\mathbf{X} $ are independent), $ (\\mathbf{X}^T\\mathbf{X})^{-1} $ exists and the OLS solution for $ \\beta $ is unique. However, when $ (\\mathbf{X}^T\\mathbf{X}) $ is singular (and hence does not have a unique inverse), it is not possible to obtain unique OLS estimates for all the fixed factors in a model. For example, suppose $ \\beta_1 $ indicates a sex effect and $ \\beta_2 $ indicates the effect of a particular diet. If the design is such that all females use this diet, we do not have separate information on both sex and diet effects and hence can only estimate $ \\beta_1 + \\beta_2 $ rather than being able to estimate both $ \\beta_1 $ and $ \\beta_2 $ separately.",
-      "source_page": 851,
-      "printed_page": 831,
-      "source_block_ids": [
-        "p851:b12"
-      ],
-      "bbox": [
-        55.0,
-        1055.0,
-        1016.0,
-        1408.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "A linear combination of factors $ b^{T}\\beta $ is said to be $ \\text{estimable} $ for a given design matrix X if there exists some column vector a that satisfies",
-      "source_page": 851,
-      "printed_page": 831,
-      "source_block_ids": [
-        "p851:b13"
-      ],
-      "bbox": [
-        53.0,
-        1412.0,
-        1012.0,
-        1477.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula123]]",
-      "source_page": 851,
-      "printed_page": 831,
-      "source_block_ids": [
-        "p851:b14"
-      ],
-      "bbox": [
-        439.0,
-        1497.0,
-        629.0,
-        1535.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "Estimability thus implies that there is some linear combination $ \\mathbf{a}^T \\mathbf{y} $ of the original data whose expected value equals the desired linear combination of factors. Since $ E(\\mathbf{y}) = \\mathbf{X}\\boldsymbol{\\beta} $, this definition implies that $ \\mathbf{b}^T \\boldsymbol{\\beta} $ is estimable if there exists a column vector $ \\mathbf{a} $ that satisfies $ E(\\mathbf{a}^T \\mathbf{y}) = \\mathbf{a}^T \\mathbf{X}\\boldsymbol{\\beta} = \\mathbf{b}^T \\boldsymbol{\\beta} $, implying $ (\\mathbf{a}^T \\mathbf{X} - \\mathbf{b}^T)\\boldsymbol{\\beta} = \\mathbf{0} $, or",
+      "type": "example",
+      "content": "[[EXAMPLE:Genetics_appendix1:3:occ2]]",
       "source_page": 852,
-      "printed_page": 832,
       "source_block_ids": [
-        "p852:b2"
+        "p852:b12",
+        "p852:b13",
+        "p852:b14",
+        "p852:b15",
+        "p852:b16",
+        "p852:b17",
+        "p853:b2"
       ],
       "bbox": [
-        142.0,
-        136.0,
-        1100.0,
-        274.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula124]]",
-      "source_page": 852,
-      "printed_page": 832,
-      "source_block_ids": [
-        "p852:b3"
-      ],
-      "bbox": [
-        562.0,
-        294.0,
-        680.0,
-        327.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "An alternative (and equivalent) condition is that b satisfies",
-      "source_page": 852,
-      "printed_page": 832,
-      "source_block_ids": [
-        "p852:b5"
-      ],
-      "bbox": [
-        142.0,
-        355.0,
-        846.0,
-        387.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula125]]",
-      "source_page": 852,
-      "printed_page": 832,
-      "source_block_ids": [
-        "p852:b6"
-      ],
-      "bbox": [
-        469.0,
-        410.0,
-        770.0,
-        449.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "Henderson (1984a) gives other equivalent conditions. Equation A3.6c implies that if $ \\mathbf{X}^T\\mathbf{X} $ is nonsingular, all linear combinations of $ \\beta $ are estimable. Note that Equation A3.6c is identical to the condition given by Equation A3.5a (taking $ \\mathbf{A} = \\mathbf{X}^T\\mathbf{X} $), implying that these solutions are also unique estimates. If estimable, the OLS solution of the vector $ \\mathbf{b}^T\\beta $ given by",
-      "source_page": 852,
-      "printed_page": 832,
-      "source_block_ids": [
-        "p852:b8"
-      ],
-      "bbox": [
-        143.0,
-        474.0,
-        1101.0,
-        638.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "[[FORMULA:Genetics_appendix1_formula126]]",
-      "source_page": 852,
-      "printed_page": 832,
-      "source_block_ids": [
-        "p852:b9"
-      ],
-      "bbox": [
-        428.0,
-        667.0,
-        812.0,
-        721.0
-      ]
-    },
-    {
-      "type": "discussion",
-      "content": "is unique and independent of which generalized inverse is actually used.",
-      "source_page": 852,
-      "printed_page": 832,
-      "source_block_ids": [
-        "p852:b11"
-      ],
-      "bbox": [
-        143.0,
-        743.0,
-        1012.0,
-        777.0
+        191.0,
+        873.0,
+        805.0,
+        904.0
       ]
     }
   ]

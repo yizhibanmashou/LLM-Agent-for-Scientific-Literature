@@ -1,7 +1,6 @@
 # Chapter 9 · 9 Analysis of Line Crosses
 
-## Genetics_chapter9_001 · 9
-Analysis of Line Crosses
+## Genetics_chapter9_001 · 9 Analysis of Line Crosses
 
 Distinct populations, such as the isolated demes that comprise some natural populations, often exhibit remarkable phenotypic divergence. Such differences are sometimes a simple consequence of environmental influences on phenotypic expression, but genetic differences may arise as a result of local adaptation and/or random genetic drift. The genetic basis of interdemic differentiation is of interest for several reasons. With nonadditive gene action, the mean phenotypes of progeny of interdemic crosses ( $ F_{1} $ hybrids) will not be intermediate to those of their parents. Depending upon the relation between phenotype and fitness, hybridization can lead to outbreeding depression (reduced fitness) or outbreeding enhancement (increased fitness) in the $ F_{1} $ or later generations. For populations that do not normally have an opportunity to interbreed in nature, such properties may evolve passively as an indirect consequence of local adaptation. However, when opportunities for interdemic exchange are common, natural selection may favor specific mating system properties, including dispersal strategies or reproductive isolation, which enhance or discourage outcrossing. Thus, understanding the genetic basis of interdemic differentiation is a key to deciphering the mechanisms of speciation.
 
